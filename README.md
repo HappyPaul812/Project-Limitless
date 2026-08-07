@@ -1,18 +1,36 @@
 # Project-Limitless
 
-Repository foundation for a long-term Unity 6 RPG project.
+## 프로젝트명
 
-## Repository layout
+Project-Limitless
 
-- `Unity/` — Unity project workspace.
-- `Server/` — Future server-side workspace.
-- `Docs/` — Project documentation, organized by discipline.
-- `Art/` — Source art organized by asset type.
-- `Audio/` — Audio source assets organized by type.
-- `Tools/` — Development and content-production tools.
+## 목표
 
-## Current status
+장기적인 Unity 6 RPG 프로젝트를 위한 확장 가능하고 체계적인 개발 기반을 마련합니다.
 
-🟡 Draft
+## 개발 엔진
 
-This initial commit establishes only repository organization and documentation entry points. It intentionally contains no gameplay code, Unity systems, lore, characters, or game design decisions.
+Unity 6
+
+## 개발 언어
+
+C#
+
+## 플랫폼
+
+향후 결정 예정입니다.
+
+## 프로젝트 철학
+
+문서화, 일관된 구조, 확장성을 바탕으로 장기 개발을 지원합니다.
+
+## 폴더 구조 설명
+
+- `Unity/Client/`: Unity 클라이언트 프로젝트를 위한 작업 공간입니다.
+- `Server/`: 향후 서버 관련 작업을 위한 공간입니다.
+- `문서/`: 분야별 프로젝트 문서를 관리합니다.
+- `아트/`: 유형별 원본 아트 에셋을 관리합니다.
+- `오디오/`: BGM, 효과음, 음성 에셋을 관리합니다.
+- `도구/`: 개발 및 콘텐츠 제작 도구를 관리합니다.
+
+현재 저장소는 초기 구조만 포함하며, 게임플레이 코드, Unity 기능, 세계관 및 캐릭터 설정은 포함하지 않습니다.
