@@ -13,6 +13,9 @@ namespace ProjectLimitless.Player
         private Rigidbody2D body;
         private Vector2 movement;
 
+        /// <summary>현재 입력된 이동 방향이다. 시각 애니메이션에서만 읽는다.</summary>
+        public Vector2 Movement => movement;
+
         private void Awake()
         {
             body = GetComponent<Rigidbody2D>();

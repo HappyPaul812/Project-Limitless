@@ -7,6 +7,7 @@ using ProjectLimitless.NPC;
 using ProjectLimitless.Player;
 using ProjectLimitless.UI;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,9 @@ namespace ProjectLimitless.EditorTools
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
+        private const string PlayerSpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk.png";
+        private const string PlayerAnimationFolder = "Assets/_Project/Animations/Player";
+        private const string PlayerAnimatorPath = PlayerAnimationFolder + "/Player.controller";
         private const string KenneyRoot = "Assets/ThirdParty/Kenney/RPGBase/PNG/";
         private const string BackupRoot = "Assets/_Project/Backup/Milestone01";
         private static readonly string[] ManagedAssetPaths =
@@ -192,12 +196,19 @@ namespace ProjectLimitless.EditorTools
 
         private static void CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab)
         {
-            GameObject playerSource = CreatePlaceholder("PlayerPlaceholder", Vector2.zero, new Vector2(0.7f, 0.9f), new Color(0.2f, 0.65f, 1f), "플레이어", 5, false);
+            Sprite[][] directionalSprites = PreparePlayerSpriteAssets();
+            GameObject playerSource = new GameObject("PlayerPlaceholder", typeof(SpriteRenderer));
+            SpriteRenderer playerRenderer = playerSource.GetComponent<SpriteRenderer>();
+            playerRenderer.sprite = directionalSprites[0][0];
+            playerRenderer.sortingOrder = 5;
+            Animator animator = playerSource.AddComponent<Animator>();
+            animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(PlayerAnimatorPath);
             Rigidbody2D body = playerSource.AddComponent<Rigidbody2D>();
             body.gravityScale = 0f;
             body.freezeRotation = true;
             playerSource.AddComponent<CircleCollider2D>().radius = 0.5f;
             playerSource.AddComponent<PlayerController>();
+            playerSource.AddComponent<PlayerSpriteAnimator>();
             playerSource.AddComponent<InteractionSystem>();
             playerPrefab = PrefabUtility.SaveAsPrefabAsset(playerSource, PlayerPrefabPath);
             UnityObject.DestroyImmediate(playerSource);
@@ -208,6 +219,120 @@ namespace ProjectLimitless.EditorTools
             npcSource.AddComponent<NpcInteractionPrompt>();
             npcPrefab = PrefabUtility.SaveAsPrefabAsset(npcSource, NpcPrefabPath);
             UnityObject.DestroyImmediate(npcSource);
+        }
+
+        private static Sprite[][] PreparePlayerSpriteAssets()
+        {
+            EnsureFolder("Assets/_Project/Animations");
+            EnsureFolder(PlayerAnimationFolder);
+
+            TextureImporter importer = AssetImporter.GetAtPath(PlayerSpritePath) as TextureImporter;
+            if (importer == null || importer.spriteImportMode != SpriteImportMode.Multiple || importer.spritePixelsPerUnit != 48)
+            {
+                throw new InvalidOperationException("Player_Male_Base_Walk.png는 Multiple Sprite, PPU 48로 Import되어야 합니다.");
+            }
+
+            string[] directions = { "Down", "Left", "Right", "Up" };
+            UnityObject[] allAssets = AssetDatabase.LoadAllAssetsAtPath(PlayerSpritePath);
+            Sprite[] importedSprites = Array.ConvertAll(
+                Array.FindAll(allAssets, asset => asset is Sprite),
+                asset => (Sprite)asset);
+            Array.Sort(importedSprites, (left, right) =>
+            {
+                int row = right.rect.y.CompareTo(left.rect.y);
+                return row != 0 ? row : left.rect.x.CompareTo(right.rect.x);
+            });
+            if (importedSprites.Length != 16)
+            {
+                throw new InvalidOperationException($"Player_Male_Base_Walk.png 재Import 후 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
+            }
+
+            Sprite[][] result = new Sprite[4][];
+            for (int row = 0; row < directions.Length; row++)
+            {
+                result[row] = new Sprite[4];
+                Array.Copy(importedSprites, row * 4, result[row], 0, 4);
+            }
+
+            CreatePlayerAnimationClips(directions, result);
+            CreatePlayerAnimatorController(directions);
+            return result;
+        }
+
+        private static void CreatePlayerAnimationClips(string[] directions, Sprite[][] directionalSprites)
+        {
+            for (int directionIndex = 0; directionIndex < directions.Length; directionIndex++)
+            {
+                CreatePlayerClip($"Idle_{directions[directionIndex]}", new[] { directionalSprites[directionIndex][0] }, false);
+                CreatePlayerClip($"Walk_{directions[directionIndex]}", directionalSprites[directionIndex], true);
+            }
+        }
+
+        private static void CreatePlayerClip(string clipName, Sprite[] frames, bool loop)
+        {
+            string path = $"{PlayerAnimationFolder}/{clipName}.anim";
+            AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
+            if (clip == null)
+            {
+                clip = new AnimationClip { name = clipName, frameRate = 8f };
+                AssetDatabase.CreateAsset(clip, path);
+            }
+
+            ObjectReferenceKeyframe[] keys = new ObjectReferenceKeyframe[frames.Length];
+            for (int i = 0; i < frames.Length; i++)
+            {
+                keys[i] = new ObjectReferenceKeyframe { time = i / 8f, value = frames[i] };
+            }
+
+            EditorCurveBinding binding = new EditorCurveBinding
+            {
+                type = typeof(SpriteRenderer),
+                path = string.Empty,
+                propertyName = "m_Sprite",
+            };
+            AnimationUtility.SetObjectReferenceCurve(clip, binding, keys);
+            AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(clip);
+            settings.loopTime = loop;
+            AnimationUtility.SetAnimationClipSettings(clip, settings);
+            EditorUtility.SetDirty(clip);
+        }
+
+        private static void CreatePlayerAnimatorController(string[] directions)
+        {
+            AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(PlayerAnimatorPath);
+            if (controller == null)
+            {
+                controller = AnimatorController.CreateAnimatorControllerAtPath(PlayerAnimatorPath);
+            }
+
+            controller.parameters = new[]
+            {
+                new AnimatorControllerParameter { name = "Speed", type = AnimatorControllerParameterType.Float },
+                new AnimatorControllerParameter { name = "MoveX", type = AnimatorControllerParameterType.Float },
+                new AnimatorControllerParameter { name = "MoveY", type = AnimatorControllerParameterType.Float },
+            };
+            AnimatorStateMachine stateMachine = controller.layers[0].stateMachine;
+            foreach (ChildAnimatorState state in stateMachine.states)
+            {
+                stateMachine.RemoveState(state.state);
+            }
+
+            AnimatorState defaultState = null;
+            foreach (string direction in directions)
+            {
+                foreach (string action in new[] { "Idle", "Walk" })
+                {
+                    AnimatorState state = stateMachine.AddState($"{action}_{direction}");
+                    state.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>($"{PlayerAnimationFolder}/{action}_{direction}.anim");
+                    if (action == "Idle" && direction == "Down")
+                    {
+                        defaultState = state;
+                    }
+                }
+            }
+
+            stateMachine.defaultState = defaultState;
+            EditorUtility.SetDirty(controller);
         }
 
         private static void CreateCamera(out CameraFollow cameraFollow)
