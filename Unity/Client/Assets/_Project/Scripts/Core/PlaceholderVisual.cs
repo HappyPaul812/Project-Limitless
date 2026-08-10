@@ -58,7 +58,7 @@ namespace ProjectLimitless.Core
             textMesh.alignment = TextAlignment.Center;
             textMesh.characterSize = 0.12f;
             textMesh.fontSize = 48;
-            textMesh.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            textMesh.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             textMesh.color = Color.white;
             textMesh.GetComponent<MeshRenderer>().sortingOrder = order;
         }

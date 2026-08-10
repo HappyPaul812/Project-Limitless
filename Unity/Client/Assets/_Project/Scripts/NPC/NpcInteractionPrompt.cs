@@ -7,6 +7,8 @@ namespace ProjectLimitless.NPC
     [RequireComponent(typeof(NpcController))]
     public sealed class NpcInteractionPrompt : MonoBehaviour
     {
+        [SerializeField] private Font promptFont;
+
         private GameObject promptRoot;
 
         public static NpcInteractionPrompt GetOrAdd(NpcController npc)
@@ -52,7 +54,9 @@ namespace ProjectLimitless.NPC
             GameObject textObject = new GameObject("PromptText", typeof(Text));
             textObject.transform.SetParent(backgroundObject.transform, false);
             Text promptText = textObject.GetComponent<Text>();
-            promptText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            promptText.font = promptFont != null
+                ? promptFont
+                : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             promptText.fontSize = 28;
             promptText.color = Color.white;
             promptText.alignment = TextAnchor.MiddleCenter;

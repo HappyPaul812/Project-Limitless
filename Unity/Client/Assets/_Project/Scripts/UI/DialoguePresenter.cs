@@ -8,6 +8,7 @@ namespace ProjectLimitless.UI
     {
         public static DialoguePresenter Instance { get; private set; }
 
+        [SerializeField] private Font dialogueFont;
         private GameObject panel;
         private Text dialogueText;
 
@@ -60,7 +61,9 @@ namespace ProjectLimitless.UI
             GameObject textObject = new GameObject("DialogueText", typeof(Text));
             textObject.transform.SetParent(panel.transform, false);
             dialogueText = textObject.GetComponent<Text>();
-            dialogueText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            dialogueText.font = dialogueFont != null
+                ? dialogueFont
+                : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             dialogueText.fontSize = 28;
             dialogueText.color = Color.white;
             dialogueText.alignment = TextAnchor.MiddleLeft;

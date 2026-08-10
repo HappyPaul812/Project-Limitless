@@ -44,6 +44,8 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 
 NPC 상호작용 가능 여부는 색상이나 NPC의 정면 방향에 의존하지 않는다. 플레이어가 어느 방향에서든 `interactionRadius` 안에 들어오면 `[E] 대화하기` UI Text가 표시된다. 여러 NPC가 범위에 있으면 가장 가까운 NPC만 현재 대상으로 표시한다.
 
+NPC 안내와 대화 UI는 Unity 6의 `LegacyRuntime.ttf`를 기본 폰트로 사용한다. `NpcInteractionPrompt`와 `DialoguePresenter`의 Font 필드는 Inspector에서 프로젝트 전용 폰트로 교체할 수 있다.
+
 ## 테스트 결과
 
 - 코드 구조 및 Unity 패키지 의존성(Input System, uGUI)을 정적 검토했다.
