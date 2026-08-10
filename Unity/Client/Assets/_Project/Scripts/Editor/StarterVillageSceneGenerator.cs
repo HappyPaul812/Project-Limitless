@@ -10,6 +10,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityObject = UnityEngine.Object;
 
 namespace ProjectLimitless.EditorTools
 {
@@ -170,7 +171,7 @@ namespace ProjectLimitless.EditorTools
             GameObject existingEnvironment = GameObject.Find("KenneyStarterVillage");
             if (existingEnvironment != null)
             {
-                Object.DestroyImmediate(existingEnvironment);
+                UnityObject.DestroyImmediate(existingEnvironment);
             }
 
             string[] legacyNames = { "VillageFloor", "BoundaryTop", "BoundaryBottom", "BoundaryLeft", "BoundaryRight", "BuildingNorthWest", "BuildingNorthEast", "BuildingSouthEast", "Well", "Crate" };
@@ -179,7 +180,7 @@ namespace ProjectLimitless.EditorTools
                 GameObject legacyObject = GameObject.Find(legacyName);
                 if (legacyObject != null)
                 {
-                    Object.DestroyImmediate(legacyObject);
+                    UnityObject.DestroyImmediate(legacyObject);
                 }
             }
 
@@ -199,14 +200,14 @@ namespace ProjectLimitless.EditorTools
             playerSource.AddComponent<PlayerController>();
             playerSource.AddComponent<InteractionSystem>();
             playerPrefab = PrefabUtility.SaveAsPrefabAsset(playerSource, PlayerPrefabPath);
-            Object.DestroyImmediate(playerSource);
+            UnityObject.DestroyImmediate(playerSource);
 
             GameObject npcSource = CreatePlaceholder("VillageNpcPlaceholder", Vector2.zero, new Vector2(0.7f, 0.9f), new Color(1f, 0.75f, 0.2f), "마을 주민", 5, false);
             npcSource.AddComponent<CircleCollider2D>().isTrigger = true;
             npcSource.AddComponent<NpcController>().Configure("마을 주민", "어서 오세요. 여기는 우리의 첫 번째 마을입니다.");
             npcSource.AddComponent<NpcInteractionPrompt>();
             npcPrefab = PrefabUtility.SaveAsPrefabAsset(npcSource, NpcPrefabPath);
-            Object.DestroyImmediate(npcSource);
+            UnityObject.DestroyImmediate(npcSource);
         }
 
         private static void CreateCamera(out CameraFollow cameraFollow)
