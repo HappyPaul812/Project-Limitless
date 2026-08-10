@@ -9,6 +9,7 @@ using ProjectLimitless.UI;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEditor.SceneManagement;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityObject = UnityEngine.Object;
@@ -25,7 +26,11 @@ namespace ProjectLimitless.EditorTools
         private const string PlayerSpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk.png";
         private const string PlayerAnimationFolder = "Assets/_Project/Animations/Player";
         private const string PlayerAnimatorPath = PlayerAnimationFolder + "/Player.controller";
-        private const string KenneyRoot = "Assets/ThirdParty/Kenney/RPGBase/PNG/";
+        private const string BasicHandDrawnRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
+        private const string EssentialRpgRoot = "Assets/ThirdParty/Xariami/EssentialRPG/";
+        private const string GrassTilesPath = BasicHandDrawnRoot + "tiles/tiles_grass.png";
+        private const string HouseTilesPath = BasicHandDrawnRoot + "tiles/house_tiles_new.png";
+        private const string FenceTilesPath = BasicHandDrawnRoot + "tiles/fence_tiles.png";
         private const string BackupRoot = "Assets/_Project/Backup/Milestone01";
         private static readonly string[] ManagedAssetPaths =
         {
@@ -45,7 +50,7 @@ namespace ProjectLimitless.EditorTools
                 backupPath = BackupExistingMilestoneAssets();
                 DeleteExistingMilestoneAssets();
 
-                ConfigureKenneyImportSettings();
+                ConfigureStarterVillageImportSettings();
                 CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab);
                 CreateBootstrapScene();
                 CreateStarterVillageScene(playerPrefab, npcPrefab);
@@ -146,7 +151,7 @@ namespace ProjectLimitless.EditorTools
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
             CreateCamera(out CameraFollow cameraFollow);
-            CreateKenneyStarterVillage();
+            CreateHandDrawnStarterVillage();
 
             GameObject player = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab);
             player.name = "Player";
@@ -161,8 +166,8 @@ namespace ProjectLimitless.EditorTools
             EditorSceneManager.SaveScene(scene, WorldScenePath);
         }
 
-        [MenuItem("Project-Limitless/Milestone 01/Apply Kenney Village Environment")]
-        private static void ApplyKenneyVillageEnvironment()
+        [MenuItem("Project-Limitless/Milestone 01/Apply Hand-Drawn Village Environment")]
+        private static void ApplyHandDrawnVillageEnvironment()
         {
             if (AssetDatabase.LoadAssetAtPath<SceneAsset>(WorldScenePath) == null)
             {
@@ -170,9 +175,9 @@ namespace ProjectLimitless.EditorTools
                 return;
             }
 
-            ConfigureKenneyImportSettings();
+            ConfigureStarterVillageImportSettings();
             Scene scene = EditorSceneManager.OpenScene(WorldScenePath, OpenSceneMode.Single);
-            GameObject existingEnvironment = GameObject.Find("KenneyStarterVillage");
+            GameObject existingEnvironment = GameObject.Find("HandDrawnStarterVillage");
             if (existingEnvironment != null)
             {
                 UnityObject.DestroyImmediate(existingEnvironment);
@@ -188,10 +193,10 @@ namespace ProjectLimitless.EditorTools
                 }
             }
 
-            CreateKenneyStarterVillage();
+            CreateHandDrawnStarterVillage();
             EditorSceneManager.SaveScene(scene);
             AssetDatabase.SaveAssets();
-            Debug.Log("Kenney RPG Base 환경을 World_StarterVillage에 적용했습니다.");
+            Debug.Log("Schwarnhild/Xariami 환경을 World_StarterVillage에 적용했습니다.");
         }
 
         private static void CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab)
@@ -353,47 +358,51 @@ namespace ProjectLimitless.EditorTools
             cameraObject.transform.position = new Vector3(0f, 0f, -10f);
             Camera camera = cameraObject.AddComponent<Camera>();
             camera.orthographic = true;
-            camera.orthographicSize = 6f;
+            camera.orthographicSize = 4.75f;
             camera.backgroundColor = new Color(0.08f, 0.12f, 0.18f);
             cameraObject.AddComponent<AudioListener>();
             cameraFollow = cameraObject.AddComponent<CameraFollow>();
         }
 
-        private static void CreateKenneyStarterVillage()
+        private static void CreateHandDrawnStarterVillage()
         {
-            GameObject root = new GameObject("KenneyStarterVillage");
+            GameObject root = new GameObject("HandDrawnStarterVillage");
             CreateGround(root.transform);
             CreatePath(root.transform);
-            CreateHouse(root.transform, "HouseNorthWest", new Vector2(-7f, 4f));
-            CreateHouse(root.transform, "HouseNorthEast", new Vector2(7f, 4f));
-            CreateKenneySprite(root.transform, "Well", "rpgTile184.png", new Vector2(0f, 1.75f), 4, new Vector2(0.55f, 0.3f), new Vector2(0f, -0.2f));
-            CreateKenneySprite(root.transform, "Crate", "rpgTile163.png", new Vector2(-3f, -1.5f), 4, new Vector2(0.6f, 0.5f), new Vector2(0f, -0.2f));
-            CreateTree(root.transform, "TreeWest", "rpgTile195.png", new Vector2(-10.5f, 0.5f));
-            CreateTree(root.transform, "TreeEast", "rpgTile197.png", new Vector2(10.5f, 0.5f));
-            CreateTree(root.transform, "TreeSouthWest", "rpgTile200.png", new Vector2(-10f, -5.5f));
-            CreateFence(root.transform, new Vector2(-12.5f, 7.5f), "rpgTile181.png");
-            CreateFence(root.transform, new Vector2(-11.5f, 7.5f), "rpgTile182.png");
-            CreateFence(root.transform, new Vector2(11.5f, 7.5f), "rpgTile215.png");
-            CreateFence(root.transform, new Vector2(12.5f, 7.5f), "rpgTile216.png");
+            CreateHouse(root.transform, "HouseNorthWest", new Vector2(-4.5f, 3.5f));
+            CreateHouse(root.transform, "HouseNorthEast", new Vector2(4.5f, 3.5f));
+            CreateBasicSprite(root.transform, "TreeWest", "assets/tree_big.png", new Vector2(-7.5f, 1.8f), 4, new Vector2(0.45f, 0.3f), new Vector2(0f, -0.75f));
+            CreateBasicSprite(root.transform, "TreeEast", "assets/tree_medium.png", new Vector2(7.5f, 1.5f), 4, new Vector2(0.4f, 0.25f), new Vector2(0f, -0.5f));
+            CreateBasicSprite(root.transform, "TreeSouthWest", "assets/tree_medium.png", new Vector2(-7f, -4.2f), 4, new Vector2(0.4f, 0.25f), new Vector2(0f, -0.5f));
+            CreateBasicSprite(root.transform, "BushWest", "assets/bush_01.png", new Vector2(-5.5f, -1.2f), 1);
+            CreateBasicSprite(root.transform, "BushEast", "assets/bush_02.png", new Vector2(5.6f, -1f), 1);
+            CreateBasicSprite(root.transform, "RockNorth", "assets/rock_01.png", new Vector2(-1.7f, 2.1f), 1);
+            CreateEssentialSprite(root.transform, "Chest", "Village_and_Camp/Wooden_Chest_Type_A.png", new Vector2(-2.3f, -1.4f), 3, new Vector2(0.45f, 0.3f), new Vector2(0f, -0.3f));
+            CreateEssentialSprite(root.transform, "Barrel", "Village_and_Camp/Wooden_Barrel_Type_A.png", new Vector2(2.5f, -1.3f), 3, new Vector2(0.35f, 0.3f), new Vector2(0f, -0.3f));
+            CreateEssentialSprite(root.transform, "Campfire", "Props_and_Loot/Campfire_Type_A.png", new Vector2(0f, 1.1f), 2);
+            CreateFence(root.transform, new Vector2(-7.5f, 5.3f));
+            CreateFence(root.transform, new Vector2(-6.5f, 5.3f));
+            CreateFence(root.transform, new Vector2(6.5f, 5.3f));
+            CreateFence(root.transform, new Vector2(7.5f, 5.3f));
         }
 
         private static void CreateGround(Transform parent)
         {
-            for (int x = -13; x <= 13; x++)
+            for (int x = -9; x <= 9; x++)
             {
-                for (int y = -8; y <= 8; y++)
+                for (int y = -6; y <= 6; y++)
                 {
-                    CreateKenneySprite(parent, $"Grass_{x}_{y}", "rpgTile003.png", new Vector2(x, y), -10);
+                    CreateGridSprite(parent, $"Grass_{x}_{y}", GrassTilesPath, "tiles_grass_4_0", new Vector2(x, y), -10);
                 }
             }
         }
 
         private static void CreatePath(Transform parent)
         {
-            for (int y = -8; y <= 1; y++)
+            for (int y = -6; y <= 1; y++)
             {
-                CreateKenneySprite(parent, $"PathLeft_{y}", "rpgTile008.png", new Vector2(-0.5f, y), -8);
-                CreateKenneySprite(parent, $"PathRight_{y}", "rpgTile008.png", new Vector2(0.5f, y), -8);
+                CreateGridSprite(parent, $"PathLeft_{y}", GrassTilesPath, "tiles_grass_4_4", new Vector2(-0.5f, y), -8);
+                CreateGridSprite(parent, $"PathRight_{y}", GrassTilesPath, "tiles_grass_5_4", new Vector2(0.5f, y), -8);
             }
         }
 
@@ -401,30 +410,38 @@ namespace ProjectLimitless.EditorTools
         {
             GameObject house = new GameObject(houseName);
             house.transform.SetParent(parent);
-            CreateKenneySprite(house.transform, "RoofLeft", "rpgTile101.png", position + new Vector2(-1f, 1f), 2);
-            CreateKenneySprite(house.transform, "RoofCenter", "rpgTile103.png", position + new Vector2(0f, 1f), 2);
-            CreateKenneySprite(house.transform, "RoofRight", "rpgTile105.png", position + new Vector2(1f, 1f), 2);
-            CreateKenneySprite(house.transform, "WallLeft", "rpgTile120.png", position + new Vector2(-1f, 0f), 2);
-            CreateKenneySprite(house.transform, "WallCenter", "rpgTile122.png", position, 2, new Vector2(2.5f, 0.35f), new Vector2(0f, -0.25f));
-            CreateKenneySprite(house.transform, "WallRight", "rpgTile124.png", position + new Vector2(1f, 0f), 2);
+            CreateGridSprite(house.transform, "Roof", HouseTilesPath, "house_tiles_new_4_4", position + new Vector2(0f, 1f), 2);
+            CreateGridSprite(house.transform, "WallLeft", HouseTilesPath, "house_tiles_new_1_3", position + new Vector2(-0.5f, 0f), 2);
+            CreateGridSprite(house.transform, "WallRight", HouseTilesPath, "house_tiles_new_1_3", position + new Vector2(0.5f, 0f), 2);
+            CreateGridSprite(house.transform, "Door", HouseTilesPath, "house_tiles_new_1_1", position + new Vector2(0f, 0f), 2, new Vector2(1.5f, 0.3f), new Vector2(0f, -0.35f));
         }
 
-        private static void CreateTree(Transform parent, string objectName, string fileName, Vector2 position)
+        private static void CreateFence(Transform parent, Vector2 position)
         {
-            CreateKenneySprite(parent, objectName, fileName, position, 3, new Vector2(0.3f, 0.25f), new Vector2(0f, -0.35f));
+            CreateGridSprite(parent, $"Fence_{position.x}_{position.y}", FenceTilesPath, "fence_tiles_2_2", position, 2, new Vector2(0.9f, 0.2f), new Vector2(0f, -0.35f));
         }
 
-        private static void CreateFence(Transform parent, Vector2 position, string fileName)
+        private static GameObject CreateBasicSprite(Transform parent, string objectName, string relativePath, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            CreateKenneySprite(parent, $"Fence_{position.x}_{position.y}", fileName, position, 2, new Vector2(0.9f, 0.2f), new Vector2(0f, -0.2f));
+            return CreateSprite(parent, objectName, AssetDatabase.LoadAssetAtPath<Sprite>(BasicHandDrawnRoot + relativePath), position, sortingOrder, colliderSize, colliderOffset);
         }
 
-        private static GameObject CreateKenneySprite(Transform parent, string objectName, string fileName, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
+        private static GameObject CreateEssentialSprite(Transform parent, string objectName, string relativePath, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(KenneyRoot + fileName);
+            return CreateSprite(parent, objectName, AssetDatabase.LoadAssetAtPath<Sprite>(EssentialRpgRoot + relativePath), position, sortingOrder, colliderSize, colliderOffset);
+        }
+
+        private static GameObject CreateGridSprite(Transform parent, string objectName, string assetPath, string spriteName, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
+        {
+            Sprite sprite = Array.Find(AssetDatabase.LoadAllAssetsAtPath(assetPath), asset => asset is Sprite && asset.name == spriteName) as Sprite;
+            return CreateSprite(parent, objectName, sprite, position, sortingOrder, colliderSize, colliderOffset);
+        }
+
+        private static GameObject CreateSprite(Transform parent, string objectName, Sprite sprite, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
+        {
             if (sprite == null)
             {
-                throw new System.InvalidOperationException($"Kenney Sprite를 찾지 못했습니다: {fileName}");
+                throw new InvalidOperationException($"Starter Village Sprite를 찾지 못했습니다: {objectName}");
             }
 
             GameObject gameObject = new GameObject(objectName, typeof(SpriteRenderer));
@@ -444,26 +461,81 @@ namespace ProjectLimitless.EditorTools
             return gameObject;
         }
 
-        private static void ConfigureKenneyImportSettings()
+        private static void ConfigureStarterVillageImportSettings()
         {
-            string[] guids = AssetDatabase.FindAssets("t:Texture2D", new[] { KenneyRoot.TrimEnd('/') });
-            foreach (string guid in guids)
+            ConfigureGridImport(GrassTilesPath, 10, 6);
+            ConfigureGridImport(HouseTilesPath, 6, 5);
+            ConfigureGridImport(FenceTilesPath, 5, 5);
+            string[] individualPaths =
             {
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
-                if (importer == null)
-                {
-                    continue;
-                }
-
-                importer.textureType = TextureImporterType.Sprite;
-                importer.spriteImportMode = SpriteImportMode.Single;
-                importer.spritePixelsPerUnit = 64;
-                importer.filterMode = FilterMode.Point;
-                importer.textureCompression = TextureImporterCompression.Uncompressed;
-                importer.mipmapEnabled = false;
-                importer.SaveAndReimport();
+                BasicHandDrawnRoot + "assets/tree_big.png", BasicHandDrawnRoot + "assets/tree_medium.png",
+                BasicHandDrawnRoot + "assets/bush_01.png", BasicHandDrawnRoot + "assets/bush_02.png", BasicHandDrawnRoot + "assets/rock_01.png",
+                EssentialRpgRoot + "Village_and_Camp/Wooden_Chest_Type_A.png", EssentialRpgRoot + "Village_and_Camp/Wooden_Barrel_Type_A.png",
+                EssentialRpgRoot + "Props_and_Loot/Campfire_Type_A.png",
+            };
+            foreach (string path in individualPaths)
+            {
+                ConfigureSingleSpriteImport(path);
             }
+        }
+
+        private static void ConfigureSingleSpriteImport(string path)
+        {
+            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
+            if (importer == null)
+            {
+                throw new InvalidOperationException($"Texture Importer를 찾지 못했습니다: {path}");
+            }
+
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Single;
+            importer.spritePixelsPerUnit = 128;
+            importer.filterMode = FilterMode.Point;
+            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.mipmapEnabled = false;
+            importer.SaveAndReimport();
+        }
+
+        private static void ConfigureGridImport(string path, int columns, int rows)
+        {
+            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
+            Texture2D texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+            if (importer == null || texture == null || texture.width != columns * 128 || texture.height != rows * 128)
+            {
+                throw new InvalidOperationException($"128x128 Grid Texture 규격이 올바르지 않습니다: {path}");
+            }
+
+            SpriteRect[] sprites = new SpriteRect[columns * rows];
+            string textureName = System.IO.Path.GetFileNameWithoutExtension(path);
+            for (int y = 0; y < rows; y++)
+            {
+                for (int x = 0; x < columns; x++)
+                {
+                    int index = y * columns + x;
+                    sprites[index] = new SpriteRect
+                    {
+                        name = $"{textureName}_{x}_{y}",
+                        rect = new Rect(x * 128, y * 128, 128, 128),
+                        alignment = (int)SpriteAlignment.Center,
+                        pivot = new Vector2(0.5f, 0.5f),
+                        spriteID = GUID.Generate(),
+                    };
+                }
+            }
+
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spritePixelsPerUnit = 128;
+            importer.filterMode = FilterMode.Point;
+            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.mipmapEnabled = false;
+            SpriteDataProviderFactories factories = new SpriteDataProviderFactories();
+            factories.Init();
+            var dataProvider = factories.GetSpriteEditorDataProviderFromObject(importer);
+            dataProvider.InitSpriteEditorDataProvider();
+            dataProvider.SetSpriteRects(sprites);
+            dataProvider.Apply();
+            importer.SaveAndReimport();
         }
 
         private static GameObject CreatePlaceholder(string objectName, Vector2 position, Vector2 size, Color color, string label, int order, bool addCollider)
