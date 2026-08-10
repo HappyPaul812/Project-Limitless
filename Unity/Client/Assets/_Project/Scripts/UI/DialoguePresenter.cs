@@ -33,7 +33,7 @@ namespace ProjectLimitless.UI
 
         public void Show(string speaker, string message)
         {
-            dialogueText.text = $"{speaker}\n{message}\n\n[E/F 또는 게임패드 A: 대화 보기 | Esc 또는 게임패드 B: 닫기]";
+            dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
             panel.SetActive(true);
         }
 

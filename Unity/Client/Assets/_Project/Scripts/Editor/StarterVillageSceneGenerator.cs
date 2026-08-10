@@ -84,6 +84,7 @@ namespace ProjectLimitless.EditorTools
             GameObject npcSource = CreatePlaceholder("VillageNpcPlaceholder", Vector2.zero, new Vector2(0.7f, 0.9f), new Color(1f, 0.75f, 0.2f), "마을 주민", 5, false);
             npcSource.AddComponent<CircleCollider2D>().isTrigger = true;
             npcSource.AddComponent<NpcController>().Configure("마을 주민", "어서 오세요. 여기는 우리의 첫 번째 마을입니다.");
+            npcSource.AddComponent<NpcInteractionPrompt>();
             npcPrefab = PrefabUtility.SaveAsPrefabAsset(npcSource, NpcPrefabPath);
             Object.DestroyImmediate(npcSource);
         }

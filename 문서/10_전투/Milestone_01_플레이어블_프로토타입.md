@@ -13,6 +13,8 @@ Unity 실행 시 첫 번째 마을에서 플레이어를 자유롭게 이동시�
 - 부드러운 2D Orthographic 카메라 추적
 - 마을 외곽, 건물, 우물, 상자의 Collider2D
 - 고정 NPC 한 명과 시간 제한 없는 대화 상호작용
+- 플레이어와 가장 가까운 NPC를 `interactionRadius` 안에서 현재 상호작용 대상으로 선택
+- 대상 NPC 위에 UI Text로 `[E] 대화하기`를 표시하고, 범위를 벗어나면 숨김
 - E/F 또는 게임패드 A로 상호작용, Esc 또는 게임패드 B로 대화 닫기
 
 ## Scene 구조
@@ -31,13 +33,16 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/Player/PlayerController.cs`: Input System과 Rigidbody2D 이동을 담당한다.
 - `Scripts/Camera/CameraFollow.cs`: 카메라 추적을 담당한다.
 - `Scripts/NPC/NpcController.cs`: NPC 이름과 대사를 보관한다.
-- `Scripts/NPC/InteractionSystem.cs`: 가까운 NPC와의 상호작용을 담당한다.
+- `Scripts/NPC/InteractionSystem.cs`: 가장 가까운 현재 상호작용 대상과의 상호작용을 담당한다.
+- `Scripts/NPC/NpcInteractionPrompt.cs`: NPC 주변에 `[E] 대화하기` UI Text를 표시한다.
 - `Scripts/UI/DialoguePresenter.cs`: 최소 대화 UI를 표시한다.
 - `Scripts/Editor/StarterVillageSceneGenerator.cs`: 실제 Unity Scene과 Build Settings를 생성하는 Editor 메뉴 도구다.
 
 ## Placeholder 사용 현황
 
 바닥, 경계, 건물, 장애물, 플레이어, NPC는 `PlaceholderVisual`의 단색 SpriteRenderer를 사용한다. 실제 Sprite를 준비하면 각 SpriteRenderer의 Sprite를 Inspector에서 지정할 수 있으며, 비어 있을 때만 placeholder가 생성된다. 텍스트 레이블을 함께 표시하여 색상만으로 대상을 구분하지 않는다.
+
+NPC 상호작용 가능 여부는 색상이나 NPC의 정면 방향에 의존하지 않는다. 플레이어가 어느 방향에서든 `interactionRadius` 안에 들어오면 `[E] 대화하기` UI Text가 표시된다. 여러 NPC가 범위에 있으면 가장 가까운 NPC만 현재 대상으로 표시한다.
 
 ## 테스트 결과
 
