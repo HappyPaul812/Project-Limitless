@@ -34,6 +34,8 @@ Unity 프로젝트 버전은 `Unity/Client/ProjectSettings/ProjectVersion.txt`�
 
 Unity 프로젝트 파일을 직접 수정하기 전에 현재 구조를 확인한다.
 
+ThirdParty 외부 에셋의 원본 파일은 직접 수정하지 않는다. 프로젝트 전용 수정본이 필요하면 `Assets/_Project/` 아래에 복사하여 사용한다.
+
 ## 5. 코드 규칙
 
 - C#을 사용한다.

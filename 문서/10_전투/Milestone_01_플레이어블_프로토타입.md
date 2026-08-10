@@ -38,9 +38,25 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/UI/DialoguePresenter.cs`: 최소 대화 UI를 표시한다.
 - `Scripts/Editor/StarterVillageSceneGenerator.cs`: 실제 Unity Scene과 Build Settings를 생성하는 Editor 메뉴 도구다.
 
+## 환경 그래픽
+
+Starter Village 환경은 `Assets/ThirdParty/Kenney/RPGBase/PNG/`의 Kenney RPG Base 원본 Sprite를 참조한다. 원본 PNG는 수정하지 않는다.
+
+- 잔디 바닥: `rpgTile003.png`
+- 흙길: `rpgTile008.png`
+- 집 구성: `rpgTile101.png`, `rpgTile103.png`, `rpgTile105.png`, `rpgTile120.png`, `rpgTile122.png`, `rpgTile124.png`
+- 우물: `rpgTile184.png`
+- 상자: `rpgTile163.png`
+- 나무: `rpgTile195.png`, `rpgTile197.png`, `rpgTile200.png`
+- 울타리: `rpgTile181.png`, `rpgTile182.png`, `rpgTile215.png`, `rpgTile216.png`
+
+Kenney PNG는 64×64 픽셀이므로 Sprite, Pixels Per Unit 64, Point Filter, 압축 없음, Mipmap 비활성화로 가져온다. 1 타일을 월드 1 단위로 유지해 기존 플레이어 크기 및 2D 물리 스케일과 일관되게 맞춘다.
+
+독립적인 돌 타일은 이 패키지의 실제 PNG 목록에서 확인하지 못해 배치하지 않았다.
+
 ## Placeholder 사용 현황
 
-바닥, 경계, 건물, 장애물, 플레이어, NPC는 `PlaceholderVisual`의 단색 SpriteRenderer를 사용한다. 실제 Sprite를 준비하면 각 SpriteRenderer의 Sprite를 Inspector에서 지정할 수 있으며, 비어 있을 때만 placeholder가 생성된다. 텍스트 레이블을 함께 표시하여 색상만으로 대상을 구분하지 않는다.
+플레이어와 NPC는 `PlaceholderVisual`의 단색 SpriteRenderer를 유지한다. 실제 Sprite를 준비하면 각 SpriteRenderer의 Sprite를 Inspector에서 지정할 수 있으며, 비어 있을 때만 placeholder가 생성된다. 텍스트 레이블을 함께 표시하여 색상만으로 대상을 구분하지 않는다.
 
 NPC 상호작용 가능 여부는 색상이나 NPC의 정면 방향에 의존하지 않는다. 플레이어가 어느 방향에서든 `interactionRadius` 안에 들어오면 `[E] 대화하기` UI Text가 표시된다. 여러 NPC가 범위에 있으면 가장 가까운 NPC만 현재 대상으로 표시한다.
 
