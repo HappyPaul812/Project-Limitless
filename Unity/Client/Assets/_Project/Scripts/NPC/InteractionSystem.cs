@@ -14,6 +14,12 @@ namespace ProjectLimitless.NPC
         private NpcController currentTarget;
 
         public NpcController CurrentTarget => currentTarget;
+        public float InteractionRadius => interactionRadius;
+
+        public void Configure(float radius)
+        {
+            interactionRadius = Mathf.Max(0.1f, radius);
+        }
 
         private void Awake()
         {
@@ -33,6 +39,7 @@ namespace ProjectLimitless.NPC
         {
             interactAction?.Enable();
             cancelAction?.Enable();
+            RefreshCurrentTarget();
         }
 
         private void OnDisable()
@@ -54,15 +61,22 @@ namespace ProjectLimitless.NPC
 
         private void Update()
         {
-            SetCurrentTarget(FindNearestNpc());
+            RefreshCurrentTarget();
         }
 
         private void OnInteract(InputAction.CallbackContext _)
         {
+            // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
+            RefreshCurrentTarget();
             if (currentTarget != null)
             {
                 DialoguePresenter.Instance?.Show(currentTarget.DisplayName, currentTarget.Dialogue);
             }
+        }
+
+        private void RefreshCurrentTarget()
+        {
+            SetCurrentTarget(FindNearestNpc());
         }
 
         private void SetCurrentTarget(NpcController newTarget)

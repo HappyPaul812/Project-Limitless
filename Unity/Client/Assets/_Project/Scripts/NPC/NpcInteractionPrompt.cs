@@ -23,8 +23,22 @@ namespace ProjectLimitless.NPC
             SetVisible(false);
         }
 
+        private void OnEnable()
+        {
+            if (promptRoot == null)
+            {
+                CreatePrompt();
+                promptRoot.SetActive(false);
+            }
+        }
+
         public void SetVisible(bool isVisible)
         {
+            if (promptRoot == null)
+            {
+                CreatePrompt();
+            }
+
             if (promptRoot != null)
             {
                 promptRoot.SetActive(isVisible);
@@ -33,6 +47,11 @@ namespace ProjectLimitless.NPC
 
         private void CreatePrompt()
         {
+            if (promptRoot != null)
+            {
+                return;
+            }
+
             promptRoot = new GameObject("InteractionPrompt", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             promptRoot.transform.SetParent(transform, false);
             promptRoot.transform.localPosition = new Vector3(0f, 1.1f, 0f);
