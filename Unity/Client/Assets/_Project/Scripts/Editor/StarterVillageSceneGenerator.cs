@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
+using System;
 using ProjectLimitless.CameraSystem;
 using ProjectLimitless.Core;
 using ProjectLimitless.NPC;
@@ -20,26 +21,112 @@ namespace ProjectLimitless.EditorTools
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
         private const string KenneyRoot = "Assets/ThirdParty/Kenney/RPGBase/PNG/";
+        private const string BackupRoot = "Assets/_Project/Backup/Milestone01";
+        private static readonly string[] ManagedAssetPaths =
+        {
+            BootstrapScenePath,
+            WorldScenePath,
+            PlayerPrefabPath,
+            NpcPrefabPath,
+        };
 
         [MenuItem("Project-Limitless/Milestone 01/Generate Scenes")]
         private static void GenerateScenes()
         {
-            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(BootstrapScenePath) != null ||
-                AssetDatabase.LoadAssetAtPath<SceneAsset>(WorldScenePath) != null ||
-                AssetDatabase.LoadAssetAtPath<GameObject>(PlayerPrefabPath) != null ||
-                AssetDatabase.LoadAssetAtPath<GameObject>(NpcPrefabPath) != null)
+            string backupPath = null;
+            try
             {
-                Debug.LogError("Milestone 01 Scene 또는 Prefab이 이미 있습니다. 기존 Asset을 덮어쓰지 않았습니다.");
+                EnsureNoUnsavedMilestoneScenes();
+                backupPath = BackupExistingMilestoneAssets();
+                DeleteExistingMilestoneAssets();
+
+                ConfigureKenneyImportSettings();
+                CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab);
+                CreateBootstrapScene();
+                CreateStarterVillageScene(playerPrefab, npcPrefab);
+                ConfigureBuildSettings();
+                AssetDatabase.SaveAssets();
+                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, World_StarterVillage. 백업: {backupPath ?? "없음"}");
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError($"Milestone 01 재생성 실패: {exception.Message}\n백업 위치: {backupPath ?? "생성 전 또는 기존 Asset 없음"}");
+                Debug.LogException(exception);
+            }
+        }
+
+        private static void EnsureNoUnsavedMilestoneScenes()
+        {
+            foreach (string scenePath in new[] { BootstrapScenePath, WorldScenePath })
+            {
+                Scene scene = SceneManager.GetSceneByPath(scenePath);
+                if (scene.IsValid() && scene.isDirty)
+                {
+                    throw new InvalidOperationException($"저장되지 않은 Scene이 열려 있습니다. 먼저 저장하세요: {scenePath}");
+                }
+            }
+        }
+
+        private static string BackupExistingMilestoneAssets()
+        {
+            List<string> existingPaths = new List<string>();
+            foreach (string path in ManagedAssetPaths)
+            {
+                if (AssetDatabase.LoadMainAssetAtPath(path) != null)
+                {
+                    existingPaths.Add(path);
+                }
+            }
+
+            if (existingPaths.Count == 0)
+            {
+                return null;
+            }
+
+            EnsureFolder("Assets/_Project/Backup");
+            EnsureFolder(BackupRoot);
+            string backupPath = $"{BackupRoot}/{DateTime.Now:yyyyMMdd_HHmmss}";
+            EnsureFolder(backupPath);
+
+            foreach (string sourcePath in existingPaths)
+            {
+                string destinationPath = $"{backupPath}/{System.IO.Path.GetFileName(sourcePath)}";
+                if (!AssetDatabase.CopyAsset(sourcePath, destinationPath) || AssetDatabase.LoadMainAssetAtPath(destinationPath) == null)
+                {
+                    throw new InvalidOperationException($"Asset 백업에 실패했습니다: {sourcePath}");
+                }
+            }
+
+            AssetDatabase.SaveAssets();
+            return backupPath;
+        }
+
+        private static void DeleteExistingMilestoneAssets()
+        {
+            foreach (string path in ManagedAssetPaths)
+            {
+                if (AssetDatabase.LoadMainAssetAtPath(path) != null && !AssetDatabase.DeleteAsset(path))
+                {
+                    throw new InvalidOperationException($"백업 후 기존 Asset 제거에 실패했습니다: {path}");
+                }
+            }
+        }
+
+        private static void EnsureFolder(string path)
+        {
+            if (AssetDatabase.IsValidFolder(path))
+            {
                 return;
             }
 
-            ConfigureKenneyImportSettings();
-            CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab);
-            CreateBootstrapScene();
-            CreateStarterVillageScene(playerPrefab, npcPrefab);
-            ConfigureBuildSettings();
-            AssetDatabase.SaveAssets();
-            Debug.Log("Milestone 01 Scene 생성 완료: Bootstrap, World_StarterVillage");
+            string parent = System.IO.Path.GetDirectoryName(path)?.Replace('\\', '/');
+            string folderName = System.IO.Path.GetFileName(path);
+            if (string.IsNullOrEmpty(parent) || !AssetDatabase.IsValidFolder(parent))
+            {
+                throw new InvalidOperationException($"백업 폴더의 상위 경로를 찾지 못했습니다: {path}");
+            }
+
+            AssetDatabase.CreateFolder(parent, folderName);
         }
 
         private static void CreateBootstrapScene()

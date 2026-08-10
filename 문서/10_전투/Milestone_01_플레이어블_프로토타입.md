@@ -26,6 +26,8 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 
 생성 도구는 플레이어와 NPC의 `SpriteRenderer`, `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다.
 
+`Project-Limitless/Milestone 01/Generate Scenes`는 기존 Milestone 01 Scene/Prefab이 있으면 `Assets/_Project/Backup/Milestone01/<timestamp>/`에 먼저 복사해 확인한 뒤 새로 생성한다. 저장되지 않은 해당 Scene이 열려 있으면 작업을 중단하고 저장을 요청한다.
+
 ## Script 구조
 
 - `Scripts/Core/BootstrapLoader.cs`: 시작 Scene에서 월드를 로드한다.
