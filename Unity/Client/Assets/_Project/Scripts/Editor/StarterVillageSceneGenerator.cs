@@ -23,7 +23,7 @@ namespace ProjectLimitless.EditorTools
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
-        private const string PlayerSpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk.png";
+        private const string Player128SpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk_128.png";
         private const string PlayerAnimationFolder = "Assets/_Project/Animations/Player";
         private const string PlayerAnimatorPath = PlayerAnimationFolder + "/Player.controller";
         private const string BasicHandDrawnRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
@@ -62,6 +62,41 @@ namespace ProjectLimitless.EditorTools
             {
                 Debug.LogError($"Milestone 01 재생성 실패: {exception.Message}\n백업 위치: {backupPath ?? "생성 전 또는 기존 Asset 없음"}");
                 Debug.LogException(exception);
+            }
+        }
+
+        [MenuItem("Project-Limitless/Milestone 01/Apply Player 128 Visuals")]
+        private static void ApplyPlayer128Visuals()
+        {
+            GameObject playerPrefab = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
+            try
+            {
+                Sprite[][] directionalSprites = PreparePlayerSpriteAssets();
+                SpriteRenderer renderer = playerPrefab.GetComponent<SpriteRenderer>();
+                Animator animator = playerPrefab.GetComponent<Animator>();
+                if (renderer == null || animator == null || playerPrefab.GetComponent<PlayerController>() == null ||
+                    playerPrefab.GetComponent<Rigidbody2D>() == null || playerPrefab.GetComponent<CircleCollider2D>() == null ||
+                    playerPrefab.GetComponent<InteractionSystem>() == null)
+                {
+                    throw new InvalidOperationException("Player Prefab의 기존 이동 또는 상호작용 Component를 찾지 못했습니다.");
+                }
+
+                PlaceholderVisual placeholder = playerPrefab.GetComponent<PlaceholderVisual>();
+                if (placeholder != null)
+                {
+                    UnityObject.DestroyImmediate(placeholder);
+                }
+
+                renderer.sprite = directionalSprites[0][0];
+                renderer.sortingOrder = 5;
+                animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(PlayerAnimatorPath);
+                PrefabUtility.SaveAsPrefabAsset(playerPrefab, PlayerPrefabPath);
+                AssetDatabase.SaveAssets();
+                Debug.Log("Player 128x128 Sprite와 Animator를 Player Prefab에 적용했습니다.");
+            }
+            finally
+            {
+                PrefabUtility.UnloadPrefabContents(playerPrefab);
             }
         }
 
@@ -233,14 +268,14 @@ namespace ProjectLimitless.EditorTools
             EnsureFolder("Assets/_Project/Animations");
             EnsureFolder(PlayerAnimationFolder);
 
-            TextureImporter importer = AssetImporter.GetAtPath(PlayerSpritePath) as TextureImporter;
-            if (importer == null || importer.spriteImportMode != SpriteImportMode.Multiple || importer.spritePixelsPerUnit != 48)
+            TextureImporter importer = AssetImporter.GetAtPath(Player128SpritePath) as TextureImporter;
+            if (importer == null || importer.spriteImportMode != SpriteImportMode.Multiple || importer.spritePixelsPerUnit != 128)
             {
-                throw new InvalidOperationException("Player_Male_Base_Walk.png는 Multiple Sprite, PPU 48로 Import되어야 합니다.");
+                throw new InvalidOperationException("Player_Male_Base_Walk_128.png는 Multiple Sprite, PPU 128로 Import되어야 합니다.");
             }
 
             string[] directions = { "Down", "Left", "Right", "Up" };
-            UnityObject[] allAssets = AssetDatabase.LoadAllAssetsAtPath(PlayerSpritePath);
+            UnityObject[] allAssets = AssetDatabase.LoadAllAssetsAtPath(Player128SpritePath);
             Sprite[] importedSprites = Array.ConvertAll(
                 Array.FindAll(allAssets, asset => asset is Sprite),
                 asset => (Sprite)asset);
@@ -251,17 +286,18 @@ namespace ProjectLimitless.EditorTools
             });
             if (importedSprites.Length != 16)
             {
-                throw new InvalidOperationException($"Player_Male_Base_Walk.png 재Import 후 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
+                throw new InvalidOperationException($"Player_Male_Base_Walk_128.png의 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
             }
 
             for (int index = 0; index < importedSprites.Length; index++)
             {
                 Rect rect = importedSprites[index].rect;
-                float expectedX = (index % 4) * 48f;
-                float expectedY = (3 - index / 4) * 48f;
-                if (rect.width != 48f || rect.height != 48f || rect.x != expectedX || rect.y != expectedY)
+                float expectedX = (index % 4) * 128f;
+                float expectedY = (3 - index / 4) * 128f;
+                if (rect.width != 128f || rect.height != 128f || rect.x != expectedX || rect.y != expectedY ||
+                    importedSprites[index].pivot != new Vector2(64f, 0f))
                 {
-                    throw new InvalidOperationException($"Player_Male_Base_Walk.png의 {index}번 Sprite Grid가 올바르지 않습니다. 48x48 Grid 16개로 다시 Slice하세요.");
+                    throw new InvalidOperationException($"Player_Male_Base_Walk_128.png의 {index}번 Sprite 설정이 올바르지 않습니다. 128x128 Grid 16개와 Bottom Center Pivot을 확인하세요.");
                 }
             }
 
@@ -281,8 +317,8 @@ namespace ProjectLimitless.EditorTools
         {
             for (int directionIndex = 0; directionIndex < directions.Length; directionIndex++)
             {
-                CreatePlayerClip($"Idle_{directions[directionIndex]}", new[] { directionalSprites[directionIndex][0] }, false);
-                CreatePlayerClip($"Walk_{directions[directionIndex]}", directionalSprites[directionIndex], true);
+                CreatePlayerClip(GetPlayer128ClipName("Idle", directions[directionIndex]), new[] { directionalSprites[directionIndex][0] }, false);
+                CreatePlayerClip(GetPlayer128ClipName("Walk", directions[directionIndex]), directionalSprites[directionIndex], true);
             }
         }
 
@@ -292,9 +328,11 @@ namespace ProjectLimitless.EditorTools
             AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
             if (clip == null)
             {
-                clip = new AnimationClip { name = clipName, frameRate = 8f };
+                clip = new AnimationClip { name = clipName, frameRate = 6f };
                 AssetDatabase.CreateAsset(clip, path);
             }
+
+            clip.frameRate = 6f;
 
             ObjectReferenceKeyframe[] keys = new ObjectReferenceKeyframe[frames.Length];
             for (int i = 0; i < frames.Length; i++)
@@ -341,7 +379,7 @@ namespace ProjectLimitless.EditorTools
                 foreach (string action in new[] { "Idle", "Walk" })
                 {
                     AnimatorState state = stateMachine.AddState($"{action}_{direction}");
-                    state.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>($"{PlayerAnimationFolder}/{action}_{direction}.anim");
+                    state.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>($"{PlayerAnimationFolder}/{GetPlayer128ClipName(action, direction)}.anim");
                     if (action == "Idle" && direction == "Down")
                     {
                         defaultState = state;
@@ -351,6 +389,11 @@ namespace ProjectLimitless.EditorTools
 
             stateMachine.defaultState = defaultState;
             EditorUtility.SetDirty(controller);
+        }
+
+        private static string GetPlayer128ClipName(string action, string direction)
+        {
+            return $"Player_Male_128_{action}_{direction}";
         }
 
         private static void CreateCamera(out CameraFollow cameraFollow)
