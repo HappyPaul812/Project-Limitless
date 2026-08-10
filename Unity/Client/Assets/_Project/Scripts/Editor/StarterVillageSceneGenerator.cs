@@ -247,6 +247,17 @@ namespace ProjectLimitless.EditorTools
                 throw new InvalidOperationException($"Player_Male_Base_Walk.png 재Import 후 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
             }
 
+            for (int index = 0; index < importedSprites.Length; index++)
+            {
+                Rect rect = importedSprites[index].rect;
+                float expectedX = (index % 4) * 48f;
+                float expectedY = (3 - index / 4) * 48f;
+                if (rect.width != 48f || rect.height != 48f || rect.x != expectedX || rect.y != expectedY)
+                {
+                    throw new InvalidOperationException($"Player_Male_Base_Walk.png의 {index}번 Sprite Grid가 올바르지 않습니다. 48x48 Grid 16개로 다시 Slice하세요.");
+                }
+            }
+
             Sprite[][] result = new Sprite[4][];
             for (int row = 0; row < directions.Length; row++)
             {
