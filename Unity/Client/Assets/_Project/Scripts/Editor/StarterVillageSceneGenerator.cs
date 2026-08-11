@@ -118,7 +118,7 @@ namespace ProjectLimitless.EditorTools
                 UpdateBootstrapStartScene();
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log("외형 선택과 이름 입력을 포함한 CharacterCreation Scene 생성 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
+                Debug.Log("판타지 RPG 디자인의 외형 선택·이름 입력 CharacterCreation Scene 생성 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
             }
             catch (Exception exception)
             {
@@ -221,7 +221,7 @@ namespace ProjectLimitless.EditorTools
             EditorSceneManager.SaveScene(scene, BootstrapScenePath);
         }
 
-        /// <summary>Male/Female 미리보기와 이름 입력 UI, Game View 렌더링용 Camera가 있는 Character Creation Scene을 만듭니다.</summary>
+        /// <summary>판타지 RPG 디자인의 Male/Female 카드·이름 입력 UI와 Game View 렌더링용 Camera가 있는 Scene을 만듭니다.</summary>
         private static void CreateCharacterCreationScene()
         {
             PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();

@@ -25,9 +25,12 @@ namespace ProjectLimitless.UI
         [SerializeField] private Sprite femalePreviewSprite;
         [SerializeField] private string worldSceneName = DefaultWorldSceneName;
 
-        private readonly Color normalButtonColor = new Color(0.14f, 0.18f, 0.27f, 1f);
-        private readonly Color selectedButtonColor = new Color(0.22f, 0.34f, 0.52f, 1f);
-        private readonly Color accentColor = new Color(0.42f, 0.78f, 1f, 1f);
+        // 화면 전체에서 반복해서 사용하는 판타지 RPG 색상입니다. 충분한 명암 차이로 글자를 쉽게 읽을 수 있게 합니다.
+        private readonly Color normalButtonColor = new Color(0.075f, 0.105f, 0.17f, 0.97f);
+        private readonly Color selectedButtonColor = new Color(0.13f, 0.2f, 0.3f, 1f);
+        private readonly Color accentColor = new Color(0.88f, 0.7f, 0.32f, 1f);
+        private readonly Color mutedBorderColor = new Color(0.32f, 0.4f, 0.52f, 1f);
+        private readonly Color focusColor = new Color(1f, 0.86f, 0.48f, 1f);
 
         private Button maleButton;
         private Button femaleButton;
@@ -41,6 +44,8 @@ namespace ProjectLimitless.UI
         private Image femaleBackground;
         private Outline maleOutline;
         private Outline femaleOutline;
+        private Outline nameInputOutline;
+        private Outline startButtonOutline;
         private PlayerVisualType selectedVisual = PlayerVisualType.Male;
         private bool isStarting;
 
@@ -165,8 +170,8 @@ namespace ProjectLimitless.UI
         private void SetChoiceAppearance(Image background, Outline outline, bool isSelected)
         {
             background.color = isSelected ? selectedButtonColor : normalButtonColor;
-            outline.effectColor = isSelected ? accentColor : new Color(0.38f, 0.42f, 0.5f, 1f);
-            outline.effectDistance = isSelected ? new Vector2(5f, -5f) : new Vector2(2f, -2f);
+            outline.effectColor = isSelected ? accentColor : mutedBorderColor;
+            outline.effectDistance = isSelected ? new Vector2(4f, -4f) : new Vector2(2f, -2f);
         }
 
         /// <summary>Tab 또는 Shift+Tab으로 Male, Female, 이름 입력, 게임 시작 순서로 이동합니다.</summary>
@@ -199,7 +204,7 @@ namespace ProjectLimitless.UI
             inputModule.AssignDefaultActions();
         }
 
-        /// <summary>큰 버튼과 명확한 한글 문구를 사용하는 Character Creation 화면을 만듭니다.</summary>
+        /// <summary>외부 이미지 없이 uGUI 패널을 겹쳐 판타지 RPG 분위기의 Character Creation 화면을 만듭니다.</summary>
         private void CreateInterface()
         {
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
@@ -210,28 +215,50 @@ namespace ProjectLimitless.UI
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>();
             scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution = new Vector2(1280f, 720f);
+            scaler.screenMatchMode = CanvasScaler.ScreenMatchMode.MatchWidthOrHeight;
+            scaler.matchWidthOrHeight = 0.5f;
 
-            Image background = CreateImage(canvasObject.transform, "Background", new Color(0.045f, 0.065f, 0.11f, 1f));
-            Stretch(background.rectTransform);
-            CreateText(canvasObject.transform, "Title", "Project-Limitless", font, 46, new Vector2(0.5f, 0.88f), new Vector2(720f, 70f));
-            CreateText(canvasObject.transform, "Subtitle", "캐릭터 선택", font, 34, new Vector2(0.5f, 0.78f), new Vector2(520f, 58f));
+            CreateLayeredBackground(canvasObject.transform);
+            Image contentPanel = CreateImage(canvasObject.transform, "ContentPanel", new Color(0.025f, 0.045f, 0.08f, 0.78f));
+            SetRect(contentPanel.rectTransform, new Vector2(0.5f, 0.49f), new Vector2(900f, 650f));
+            Outline contentOutline = contentPanel.gameObject.AddComponent<Outline>();
+            contentOutline.effectColor = new Color(0.25f, 0.35f, 0.5f, 0.55f);
+            contentOutline.effectDistance = new Vector2(2f, -2f);
 
-            maleButton = CreateChoiceButton(canvasObject.transform, "MaleButton", "남성", malePreviewSprite, font, new Vector2(0.35f, 0.585f), out maleLabel, out maleBackground, out maleOutline);
-            femaleButton = CreateChoiceButton(canvasObject.transform, "FemaleButton", "여성", femalePreviewSprite, font, new Vector2(0.65f, 0.585f), out femaleLabel, out femaleBackground, out femaleOutline);
+            Text title = CreateText(canvasObject.transform, "Title", "PROJECT LIMITLESS", font, 44, new Vector2(0.5f, 0.915f), new Vector2(760f, 58f));
+            title.color = new Color(0.95f, 0.82f, 0.5f, 1f);
+            title.fontStyle = FontStyle.Bold;
+            Text subtitle = CreateText(canvasObject.transform, "Subtitle", "캐릭터 생성", font, 25, new Vector2(0.5f, 0.845f), new Vector2(520f, 42f));
+            subtitle.color = new Color(0.82f, 0.88f, 0.96f, 1f);
+            CreateDivider(canvasObject.transform, new Vector2(0.5f, 0.805f), 460f);
+
+            maleButton = CreateChoiceButton(canvasObject.transform, "MaleButton", "남성", malePreviewSprite, font, new Vector2(0.35f, 0.615f), out maleLabel, out maleBackground, out maleOutline);
+            femaleButton = CreateChoiceButton(canvasObject.transform, "FemaleButton", "여성", femalePreviewSprite, font, new Vector2(0.65f, 0.615f), out femaleLabel, out femaleBackground, out femaleOutline);
             maleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Male));
             femaleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Female));
 
-            selectionLabel = CreateText(canvasObject.transform, "SelectionLabel", "현재 선택: 남성", font, 26, new Vector2(0.5f, 0.355f), new Vector2(500f, 46f));
-            CreateText(canvasObject.transform, "NameLabel", "캐릭터 이름", font, 23, new Vector2(0.5f, 0.295f), new Vector2(460f, 38f));
-            nameInputField = CreateNameInputField(canvasObject.transform, font, new Vector2(0.5f, 0.235f));
-            nameInputField.onValueChanged.AddListener(_ => nameErrorLabel.text = string.Empty);
-            nameErrorLabel = CreateText(canvasObject.transform, "NameError", string.Empty, font, 19, new Vector2(0.5f, 0.18f), new Vector2(700f, 34f));
+            selectionLabel = CreateText(canvasObject.transform, "SelectionLabel", "현재 선택: 남성", font, 21, new Vector2(0.5f, 0.405f), new Vector2(500f, 34f));
+            selectionLabel.color = new Color(0.76f, 0.84f, 0.94f, 1f);
+
+            Image namePanel = CreateImage(canvasObject.transform, "NamePanel", new Color(0.055f, 0.08f, 0.13f, 0.96f));
+            SetRect(namePanel.rectTransform, new Vector2(0.5f, 0.285f), new Vector2(560f, 126f));
+            Outline namePanelOutline = namePanel.gameObject.AddComponent<Outline>();
+            namePanelOutline.effectColor = new Color(0.28f, 0.38f, 0.52f, 0.9f);
+            namePanelOutline.effectDistance = new Vector2(2f, -2f);
+            Text nameLabel = CreateText(canvasObject.transform, "NameLabel", "캐릭터 이름", font, 22, new Vector2(0.5f, 0.335f), new Vector2(460f, 34f));
+            nameLabel.fontStyle = FontStyle.Bold;
+            nameLabel.color = new Color(0.94f, 0.83f, 0.57f, 1f);
+            nameInputField = CreateNameInputField(canvasObject.transform, font, new Vector2(0.5f, 0.275f), out nameInputOutline);
+            nameErrorLabel = CreateText(canvasObject.transform, "NameError", string.Empty, font, 18, new Vector2(0.5f, 0.225f), new Vector2(700f, 28f));
             nameErrorLabel.color = new Color(1f, 0.65f, 0.62f, 1f);
-            startButton = CreateTextButton(canvasObject.transform, "StartButton", "게임 시작", font, new Vector2(0.5f, 0.105f), new Vector2(340f, 64f));
+            nameInputField.onValueChanged.AddListener(_ => nameErrorLabel.text = string.Empty);
+            startButton = CreateTextButton(canvasObject.transform, "StartButton", "게임 시작", font, new Vector2(0.5f, 0.125f), new Vector2(380f, 68f), out startButtonOutline);
             startButton.onClick.AddListener(StartGame);
-            CreateText(canvasObject.transform, "KeyboardHelp", "Tab/방향키: 이동   Enter/Space: 선택", font, 18, new Vector2(0.5f, 0.035f), new Vector2(700f, 32f));
+            Text keyboardHelp = CreateText(canvasObject.transform, "KeyboardHelp", "Tab / 방향키 : 이동     Enter / Space : 선택", font, 18, new Vector2(0.5f, 0.04f), new Vector2(760f, 30f));
+            keyboardHelp.color = new Color(0.7f, 0.77f, 0.86f, 1f);
 
             ConfigureNavigation();
+            ConfigureFocusFeedback();
         }
 
         /// <summary>방향키를 누를 때 두 외형과 시작 버튼 사이를 예측 가능한 순서로 이동하게 합니다.</summary>
@@ -247,44 +274,91 @@ namespace ProjectLimitless.UI
             startButton.navigation = startNavigation;
         }
 
+        /// <summary>키보드 Focus를 선택 상태와 별도로 밝은 금색 테두리로 보여 줍니다.</summary>
+        private void ConfigureFocusFeedback()
+        {
+            AddFocusFeedback(maleButton.gameObject, maleOutline, () => SetChoiceAppearance(maleBackground, maleOutline, selectedVisual == PlayerVisualType.Male));
+            AddFocusFeedback(femaleButton.gameObject, femaleOutline, () => SetChoiceAppearance(femaleBackground, femaleOutline, selectedVisual == PlayerVisualType.Female));
+            AddFocusFeedback(nameInputField.gameObject, nameInputOutline, () =>
+            {
+                nameInputOutline.effectColor = new Color(0.36f, 0.52f, 0.7f, 1f);
+                nameInputOutline.effectDistance = new Vector2(2f, -2f);
+            });
+            AddFocusFeedback(startButton.gameObject, startButtonOutline, () =>
+            {
+                startButtonOutline.effectColor = accentColor;
+                startButtonOutline.effectDistance = new Vector2(2f, -2f);
+            });
+        }
+
+        /// <summary>Selectable이 Focus를 얻고 잃을 때 기존 클릭 동작과 무관한 테두리 변화만 추가합니다.</summary>
+        private void AddFocusFeedback(GameObject target, Outline outline, System.Action restoreAppearance)
+        {
+            EventTrigger trigger = target.GetComponent<EventTrigger>() ?? target.AddComponent<EventTrigger>();
+            AddEventTrigger(trigger, EventTriggerType.Select, _ =>
+            {
+                outline.effectColor = focusColor;
+                outline.effectDistance = new Vector2(4f, -4f);
+            });
+            AddEventTrigger(trigger, EventTriggerType.Deselect, _ => restoreAppearance());
+        }
+
+        /// <summary>EventTrigger에 한 종류의 UI 이벤트와 실행할 동작을 연결합니다.</summary>
+        private static void AddEventTrigger(EventTrigger trigger, EventTriggerType eventType, System.Action<BaseEventData> callback)
+        {
+            EventTrigger.Entry entry = new EventTrigger.Entry { eventID = eventType };
+            entry.callback.AddListener(eventData => callback(eventData));
+            trigger.triggers.Add(entry);
+        }
+
         private static Button CreateChoiceButton(Transform parent, string name, string label, Sprite previewSprite, Font font, Vector2 anchor, out Text labelText, out Image background, out Outline outline)
         {
             GameObject buttonObject = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             buttonObject.transform.SetParent(parent, false);
-            SetRect(buttonObject.GetComponent<RectTransform>(), anchor, new Vector2(280f, 250f));
+            SetRect(buttonObject.GetComponent<RectTransform>(), anchor, new Vector2(300f, 270f));
             background = buttonObject.GetComponent<Image>();
             Button button = buttonObject.GetComponent<Button>();
             button.targetGraphic = background;
+            button.colors = CreateSelectableColors(new Color(0.11f, 0.16f, 0.24f, 1f), new Color(0.18f, 0.25f, 0.35f, 1f));
             outline = buttonObject.GetComponent<Outline>();
 
+            Image previewBackground = CreateImage(buttonObject.transform, "PreviewBackground", new Color(0.035f, 0.06f, 0.1f, 0.85f));
+            SetRect(previewBackground.rectTransform, new Vector2(0.5f, 0.61f), new Vector2(212f, 202f));
+            Outline previewOutline = previewBackground.gameObject.AddComponent<Outline>();
+            previewOutline.effectColor = new Color(0.26f, 0.34f, 0.46f, 0.75f);
+            previewOutline.effectDistance = new Vector2(1f, -1f);
             Image preview = CreateImage(buttonObject.transform, "Preview", Color.white);
             preview.sprite = previewSprite;
             preview.preserveAspect = true;
-            SetRect(preview.rectTransform, new Vector2(0.5f, 0.63f), new Vector2(170f, 170f));
-            labelText = CreateText(buttonObject.transform, "Label", label, font, 27, new Vector2(0.5f, 0.13f), new Vector2(250f, 62f));
+            SetRect(preview.rectTransform, new Vector2(0.5f, 0.62f), new Vector2(194f, 194f));
+            Image divider = CreateImage(buttonObject.transform, "CardDivider", new Color(0.72f, 0.57f, 0.27f, 0.8f));
+            SetRect(divider.rectTransform, new Vector2(0.5f, 0.245f), new Vector2(220f, 2f));
+            labelText = CreateText(buttonObject.transform, "Label", label, font, 25, new Vector2(0.5f, 0.115f), new Vector2(270f, 58f));
+            labelText.fontStyle = FontStyle.Bold;
             return button;
         }
 
         /// <summary>LegacyRuntime 글꼴과 한글 IME를 사용하는 한 줄 이름 입력란을 만듭니다.</summary>
-        private static InputField CreateNameInputField(Transform parent, Font font, Vector2 anchor)
+        private static InputField CreateNameInputField(Transform parent, Font font, Vector2 anchor, out Outline outline)
         {
             GameObject inputObject = new GameObject("NameInputField", typeof(Image), typeof(InputField), typeof(Outline));
             inputObject.transform.SetParent(parent, false);
-            SetRect(inputObject.GetComponent<RectTransform>(), anchor, new Vector2(460f, 52f));
+            SetRect(inputObject.GetComponent<RectTransform>(), anchor, new Vector2(500f, 54f));
             Image background = inputObject.GetComponent<Image>();
-            background.color = new Color(0.1f, 0.14f, 0.22f, 1f);
-            Outline outline = inputObject.GetComponent<Outline>();
-            outline.effectColor = new Color(0.42f, 0.6f, 0.76f, 1f);
+            background.color = new Color(0.025f, 0.045f, 0.08f, 1f);
+            outline = inputObject.GetComponent<Outline>();
+            outline.effectColor = new Color(0.36f, 0.52f, 0.7f, 1f);
             outline.effectDistance = new Vector2(2f, -2f);
 
-            Text inputText = CreateText(inputObject.transform, "Text", string.Empty, font, 24, Vector2.one * 0.5f, new Vector2(420f, 44f));
+            Text inputText = CreateText(inputObject.transform, "Text", string.Empty, font, 23, Vector2.one * 0.5f, new Vector2(454f, 44f));
             inputText.alignment = TextAnchor.MiddleLeft;
-            Text placeholder = CreateText(inputObject.transform, "Placeholder", "이름을 입력하세요", font, 24, Vector2.one * 0.5f, new Vector2(420f, 44f));
+            Text placeholder = CreateText(inputObject.transform, "Placeholder", "이름을 입력하세요", font, 22, Vector2.one * 0.5f, new Vector2(454f, 44f));
             placeholder.alignment = TextAnchor.MiddleLeft;
-            placeholder.color = new Color(0.68f, 0.72f, 0.78f, 1f);
+            placeholder.color = new Color(0.62f, 0.69f, 0.78f, 1f);
 
             InputField inputField = inputObject.GetComponent<InputField>();
             inputField.targetGraphic = background;
+            inputField.colors = CreateSelectableColors(new Color(0.05f, 0.08f, 0.13f, 1f), new Color(0.1f, 0.15f, 0.22f, 1f));
             inputField.textComponent = inputText;
             inputField.placeholder = placeholder;
             inputField.characterLimit = MaximumPlayerNameLength;
@@ -293,20 +367,71 @@ namespace ProjectLimitless.UI
             return inputField;
         }
 
-        private static Button CreateTextButton(Transform parent, string name, string label, Font font, Vector2 anchor, Vector2 size)
+        private Button CreateTextButton(Transform parent, string name, string label, Font font, Vector2 anchor, Vector2 size, out Outline outline)
         {
             GameObject buttonObject = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             buttonObject.transform.SetParent(parent, false);
             SetRect(buttonObject.GetComponent<RectTransform>(), anchor, size);
             Image image = buttonObject.GetComponent<Image>();
-            image.color = new Color(0.16f, 0.42f, 0.65f, 1f);
+            image.color = new Color(0.12f, 0.32f, 0.5f, 1f);
             Button button = buttonObject.GetComponent<Button>();
             button.targetGraphic = image;
-            Outline outline = buttonObject.GetComponent<Outline>();
-            outline.effectColor = Color.white;
+            button.colors = CreateSelectableColors(new Color(0.16f, 0.42f, 0.62f, 1f), new Color(0.22f, 0.5f, 0.7f, 1f));
+            outline = buttonObject.GetComponent<Outline>();
+            outline.effectColor = accentColor;
             outline.effectDistance = new Vector2(2f, -2f);
-            CreateText(buttonObject.transform, "Label", label, font, 30, Vector2.one * 0.5f, size - new Vector2(20f, 12f));
+            Text buttonLabel = CreateText(buttonObject.transform, "Label", label, font, 29, Vector2.one * 0.5f, size - new Vector2(20f, 12f));
+            buttonLabel.fontStyle = FontStyle.Bold;
             return button;
+        }
+
+        /// <summary>마우스 Hover와 키보드 Focus가 기본 상태와 충분히 다르게 보이는 공통 색 변화를 만듭니다.</summary>
+        private static ColorBlock CreateSelectableColors(Color highlighted, Color selected)
+        {
+            ColorBlock colors = ColorBlock.defaultColorBlock;
+            colors.normalColor = Color.white;
+            colors.highlightedColor = highlighted;
+            colors.selectedColor = selected;
+            colors.pressedColor = new Color(0.72f, 0.72f, 0.72f, 1f);
+            colors.disabledColor = new Color(0.45f, 0.45f, 0.45f, 0.7f);
+            colors.colorMultiplier = 1f;
+            colors.fadeDuration = 0.12f;
+            return colors;
+        }
+
+        /// <summary>
+        /// 단색 Image 여러 장을 위아래로 겹쳐 외부 이미지 없이 짙은 네이비 그라데이션과 약한 비네트 느낌을 냅니다.
+        /// 가장자리 장식은 반투명이라 중앙 UI와 글자의 대비를 해치지 않습니다.
+        /// </summary>
+        private static void CreateLayeredBackground(Transform parent)
+        {
+            Image baseLayer = CreateImage(parent, "BackgroundBase", new Color(0.018f, 0.03f, 0.06f, 1f));
+            Stretch(baseLayer.rectTransform);
+
+            Image upperBlue = CreateImage(parent, "BackgroundUpperBlue", new Color(0.035f, 0.075f, 0.13f, 0.9f));
+            SetArea(upperBlue.rectTransform, new Vector2(0f, 0.54f), Vector2.one);
+            Image middleBlue = CreateImage(parent, "BackgroundMiddleBlue", new Color(0.025f, 0.055f, 0.1f, 0.72f));
+            SetArea(middleBlue.rectTransform, new Vector2(0f, 0.28f), new Vector2(1f, 0.68f));
+            Image lowerShade = CreateImage(parent, "BackgroundLowerShade", new Color(0.008f, 0.018f, 0.04f, 0.78f));
+            SetArea(lowerShade.rectTransform, Vector2.zero, new Vector2(1f, 0.34f));
+
+            Image topVignette = CreateImage(parent, "VignetteTop", new Color(0f, 0.005f, 0.02f, 0.42f));
+            SetArea(topVignette.rectTransform, new Vector2(0f, 0.9f), Vector2.one);
+            Image bottomVignette = CreateImage(parent, "VignetteBottom", new Color(0f, 0f, 0.01f, 0.58f));
+            SetArea(bottomVignette.rectTransform, Vector2.zero, new Vector2(1f, 0.1f));
+            Image leftVignette = CreateImage(parent, "VignetteLeft", new Color(0f, 0.005f, 0.02f, 0.32f));
+            SetArea(leftVignette.rectTransform, Vector2.zero, new Vector2(0.08f, 1f));
+            Image rightVignette = CreateImage(parent, "VignetteRight", new Color(0f, 0.005f, 0.02f, 0.32f));
+            SetArea(rightVignette.rectTransform, new Vector2(0.92f, 0f), Vector2.one);
+        }
+
+        /// <summary>제목 아래에 금색 중앙선과 양쪽 푸른 보조선을 배치합니다.</summary>
+        private static void CreateDivider(Transform parent, Vector2 anchor, float width)
+        {
+            Image line = CreateImage(parent, "TitleDivider", new Color(0.76f, 0.61f, 0.3f, 0.9f));
+            SetRect(line.rectTransform, anchor, new Vector2(width, 2f));
+            Image centerMark = CreateImage(parent, "TitleDividerMark", new Color(0.98f, 0.83f, 0.48f, 1f));
+            SetRect(centerMark.rectTransform, anchor, new Vector2(54f, 4f));
         }
 
         private static Text CreateText(Transform parent, string name, string value, Font font, int fontSize, Vector2 anchor, Vector2 size)
@@ -345,6 +470,15 @@ namespace ProjectLimitless.UI
         {
             rectTransform.anchorMin = Vector2.zero;
             rectTransform.anchorMax = Vector2.one;
+            rectTransform.offsetMin = Vector2.zero;
+            rectTransform.offsetMax = Vector2.zero;
+        }
+
+        /// <summary>부모 화면의 정규화된 두 지점 사이를 Image가 채우게 합니다.</summary>
+        private static void SetArea(RectTransform rectTransform, Vector2 anchorMin, Vector2 anchorMax)
+        {
+            rectTransform.anchorMin = anchorMin;
+            rectTransform.anchorMax = anchorMax;
             rectTransform.offsetMin = Vector2.zero;
             rectTransform.offsetMax = Vector2.zero;
         }
