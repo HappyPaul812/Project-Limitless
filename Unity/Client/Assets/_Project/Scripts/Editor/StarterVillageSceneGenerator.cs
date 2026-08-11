@@ -25,6 +25,7 @@ namespace ProjectLimitless.EditorTools
     {
         // 자동 생성하거나 참조할 프로젝트 Asset 경로를 한곳에서 관리합니다.
         private const string BootstrapScenePath = "Assets/_Project/Scenes/Bootstrap.unity";
+        private const string CharacterCreationScenePath = "Assets/_Project/Scenes/CharacterCreation.unity";
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
@@ -43,6 +44,7 @@ namespace ProjectLimitless.EditorTools
         private static readonly string[] ManagedAssetPaths =
         {
             BootstrapScenePath,
+            CharacterCreationScenePath,
             WorldScenePath,
             PlayerPrefabPath,
             NpcPrefabPath,
@@ -63,10 +65,11 @@ namespace ProjectLimitless.EditorTools
                 ConfigureStarterVillageImportSettings();
                 CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab);
                 CreateBootstrapScene();
+                CreateCharacterCreationScene();
                 CreateStarterVillageScene(playerPrefab, npcPrefab);
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, World_StarterVillage. 백업: {backupPath ?? "없음"}");
+                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, CharacterCreation, World_StarterVillage. 백업: {backupPath ?? "없음"}");
             }
             catch (Exception exception)
             {
@@ -102,10 +105,38 @@ namespace ProjectLimitless.EditorTools
             }
         }
 
+        /// <summary>
+        /// 기존 World Scene은 건드리지 않고 Character Creation Scene, Bootstrap 시작 대상, Build Settings만 갱신합니다.
+        /// </summary>
+        [MenuItem("Project-Limitless/Milestone 01/Generate Character Creation Scene")]
+        public static void GenerateCharacterCreationSceneAssets()
+        {
+            try
+            {
+                EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath);
+                CreateCharacterCreationScene();
+                UpdateBootstrapStartScene();
+                ConfigureBuildSettings();
+                AssetDatabase.SaveAssets();
+                Debug.Log("CharacterCreation Scene 생성과 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
+            }
+            catch (Exception exception)
+            {
+                Debug.LogError($"CharacterCreation Scene 생성 실패: {exception.Message}");
+                Debug.LogException(exception);
+            }
+        }
+
         /// <summary>자동 생성 대상 Scene에 저장되지 않은 변경이 있으면 덮어쓰기 전에 작업을 중단합니다.</summary>
         private static void EnsureNoUnsavedMilestoneScenes()
         {
-            foreach (string scenePath in new[] { BootstrapScenePath, WorldScenePath })
+            EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, WorldScenePath);
+        }
+
+        /// <summary>지정한 자동 생성 대상 중 열려 있고 저장하지 않은 Scene이 있는지 확인합니다.</summary>
+        private static void EnsureNoUnsavedScenes(params string[] scenePaths)
+        {
+            foreach (string scenePath in scenePaths)
             {
                 Scene scene = SceneManager.GetSceneByPath(scenePath);
                 if (scene.IsValid() && scene.isDirty)
@@ -185,8 +216,72 @@ namespace ProjectLimitless.EditorTools
         private static void CreateBootstrapScene()
         {
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            new GameObject("Bootstrap").AddComponent<BootstrapLoader>();
+            BootstrapLoader loader = new GameObject("Bootstrap").AddComponent<BootstrapLoader>();
+            loader.ConfigureStartScene("CharacterCreation");
             EditorSceneManager.SaveScene(scene, BootstrapScenePath);
+        }
+
+        /// <summary>Male/Female Down Idle 미리보기가 연결된 최소 Character Creation Scene을 만듭니다.</summary>
+        private static void CreateCharacterCreationScene()
+        {
+            PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
+            Scene previousActiveScene = SceneManager.GetActiveScene();
+            Scene existingScene = SceneManager.GetSceneByPath(CharacterCreationScenePath);
+            if (existingScene.IsValid())
+            {
+                EditorSceneManager.CloseScene(existingScene, true);
+            }
+
+            bool hasEmptyUntitledScene = previousActiveScene.IsValid() &&
+                string.IsNullOrEmpty(previousActiveScene.path) &&
+                !previousActiveScene.isDirty &&
+                previousActiveScene.rootCount == 0;
+            // 저장된 작업 Scene은 Additive로 보존합니다. Unity가 처음 연 빈 Scene만 안전하게 교체합니다.
+            NewSceneMode creationMode = hasEmptyUntitledScene ? NewSceneMode.Single : NewSceneMode.Additive;
+            Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, creationMode);
+            SceneManager.SetActiveScene(scene);
+            CharacterCreationController controller = new GameObject("CharacterCreationSystem").AddComponent<CharacterCreationController>();
+            controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "World_StarterVillage");
+            EditorSceneManager.SaveScene(scene, CharacterCreationScenePath);
+            if (!hasEmptyUntitledScene)
+            {
+                EditorSceneManager.CloseScene(scene, true);
+                if (previousActiveScene.IsValid() && previousActiveScene.isLoaded)
+                {
+                    SceneManager.SetActiveScene(previousActiveScene);
+                }
+            }
+        }
+
+        /// <summary>기존 Bootstrap Scene의 다른 내용은 유지하고 시작 Scene 이름만 CharacterCreation으로 바꿉니다.</summary>
+        private static void UpdateBootstrapStartScene()
+        {
+            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(BootstrapScenePath) == null)
+            {
+                CreateBootstrapScene();
+                return;
+            }
+
+            Scene scene = SceneManager.GetSceneByPath(BootstrapScenePath);
+            bool wasAlreadyLoaded = scene.IsValid();
+            if (!wasAlreadyLoaded)
+            {
+                scene = EditorSceneManager.OpenScene(BootstrapScenePath, OpenSceneMode.Additive);
+            }
+
+            BootstrapLoader loader = UnityObject.FindFirstObjectByType<BootstrapLoader>();
+            if (loader == null)
+            {
+                throw new InvalidOperationException("Bootstrap Scene에서 BootstrapLoader를 찾지 못했습니다.");
+            }
+
+            loader.ConfigureStartScene("CharacterCreation");
+            EditorUtility.SetDirty(loader);
+            EditorSceneManager.SaveScene(scene);
+            if (!wasAlreadyLoaded)
+            {
+                EditorSceneManager.CloseScene(scene, true);
+            }
         }
 
         /// <summary>카메라, 환경, 플레이어, NPC, 대화 UI를 배치한 Starter Village Scene을 저장합니다.</summary>
@@ -744,16 +839,17 @@ namespace ProjectLimitless.EditorTools
             return gameObject;
         }
 
-        /// <summary>Bootstrap과 월드 Scene을 빌드 목록 앞에 넣고 기존의 다른 Scene은 뒤에 보존합니다.</summary>
+        /// <summary>게임 흐름 순서대로 Bootstrap, Character Creation, 월드 Scene을 빌드 목록 앞에 둡니다.</summary>
         private static void ConfigureBuildSettings()
         {
             List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
             scenes.Add(new EditorBuildSettingsScene(BootstrapScenePath, true));
+            scenes.Add(new EditorBuildSettingsScene(CharacterCreationScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(WorldScenePath, true));
 
             foreach (EditorBuildSettingsScene existingScene in EditorBuildSettings.scenes)
             {
-                if (existingScene.path != BootstrapScenePath && existingScene.path != WorldScenePath)
+                if (existingScene.path != BootstrapScenePath && existingScene.path != CharacterCreationScenePath && existingScene.path != WorldScenePath)
                 {
                     scenes.Add(existingScene);
                 }

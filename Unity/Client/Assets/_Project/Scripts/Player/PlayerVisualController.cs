@@ -1,4 +1,5 @@
 using UnityEngine;
+using ProjectLimitless.Core;
 
 namespace ProjectLimitless.Player
 {
@@ -29,10 +30,10 @@ namespace ProjectLimitless.Player
         /// <summary>현재 선택된 외형입니다. 향후 캐릭터 생성 화면이나 저장 시스템에서 읽을 수 있습니다.</summary>
         public PlayerVisualType VisualType => visualType;
 
-        /// <summary>게임이 시작될 때 Inspector에서 선택한 외형을 적용합니다.</summary>
+        /// <summary>게임이 시작될 때 Character Creation에서 세션에 저장한 외형을 읽어 적용합니다.</summary>
         private void Awake()
         {
-            ApplyVisual();
+            SetVisual(GameSessionData.SelectedPlayerVisual);
         }
 
         /// <summary>Inspector에서 값을 바꾸면 Play Mode 전에도 선택 결과를 미리 볼 수 있게 합니다.</summary>
