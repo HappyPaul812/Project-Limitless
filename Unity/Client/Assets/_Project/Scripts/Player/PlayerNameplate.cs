@@ -12,8 +12,8 @@ namespace ProjectLimitless.Player
     {
         private const string FallbackPlayerName = "플레이어";
 
-        // 128x128, PPU 128인 현재 캐릭터의 머리보다 조금 위쪽인 공통 위치입니다.
-        private static readonly Vector3 NameplatePosition = new Vector3(0f, 1.2f, 0f);
+        // 128x128, PPU 128인 현재 캐릭터의 머리 바로 위쪽인 공통 위치입니다.
+        private static readonly Vector3 NameplatePosition = new Vector3(0f, 1.16f, 0f);
 
         private GameObject nameplateRoot;
         private Text nameText;
@@ -44,9 +44,8 @@ namespace ProjectLimitless.Player
         /// <summary>GameSessionData의 이름을 읽고, 비어 있으면 안전한 기본 이름을 반환합니다.</summary>
         public static string GetDisplayName()
         {
-            return string.IsNullOrWhiteSpace(GameSessionData.PlayerName)
-                ? FallbackPlayerName
-                : GameSessionData.PlayerName;
+            string playerName = GameSessionData.PlayerName?.Trim();
+            return string.IsNullOrEmpty(playerName) ? FallbackPlayerName : playerName;
         }
 
         /// <summary>Player의 공통 자식으로 배경과 글자가 들어 있는 World Space Canvas를 만듭니다.</summary>
@@ -69,8 +68,8 @@ namespace ProjectLimitless.Player
             nameplateRoot.transform.SetParent(transform, false);
             nameplateRoot.transform.localPosition = NameplatePosition;
             nameplateRoot.layer = gameObject.layer;
-            // 기존 0.005 배율은 실제 Game View에서 글자가 지나치게 작았습니다. NPC 안내와 같은 0.01로 키워 읽을 수 있게 합니다.
-            nameplateRoot.transform.localScale = Vector3.one * 0.01f;
+            // RectTransform과 함께 조정한 배율입니다. 긴 이름 공간은 확보하면서 캐릭터보다 과도하게 커지지 않습니다.
+            nameplateRoot.transform.localScale = Vector3.one * 0.0065f;
 
             Canvas canvas = nameplateRoot.GetComponent<Canvas>();
             canvas.renderMode = RenderMode.WorldSpace;
@@ -84,32 +83,29 @@ namespace ProjectLimitless.Player
             scaler.dynamicPixelsPerUnit = 100f;
 
             RectTransform canvasRect = nameplateRoot.GetComponent<RectTransform>();
-            canvasRect.sizeDelta = new Vector2(220f, 38f);
+            canvasRect.sizeDelta = new Vector2(280f, 44f);
 
-            GameObject backgroundObject = new GameObject("Background", typeof(Image), typeof(Outline));
-            backgroundObject.transform.SetParent(nameplateRoot.transform, false);
-            Image background = backgroundObject.GetComponent<Image>();
-            background.color = new Color(0.035f, 0.07f, 0.12f, 0.88f);
-            Outline border = backgroundObject.GetComponent<Outline>();
-            border.effectColor = new Color(0.35f, 0.75f, 1f, 0.95f);
-            border.effectDistance = new Vector2(2f, -2f);
-            Stretch(backgroundObject.GetComponent<RectTransform>(), Vector2.zero, Vector2.zero);
-
-            GameObject textObject = new GameObject("NameText", typeof(Text), typeof(Shadow));
-            textObject.transform.SetParent(backgroundObject.transform, false);
+            // 배경 Image가 글자 렌더링을 방해할 가능성을 없애기 위해 이름은 Canvas의 직접 자식으로 둡니다.
+            GameObject textObject = new GameObject("NameText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text), typeof(Outline));
+            textObject.transform.SetParent(nameplateRoot.transform, false);
             nameText = textObject.GetComponent<Text>();
             // Unity 6에서 Arial.ttf 대신 프로젝트의 기존 한글 대응 기본 폰트를 사용합니다.
             nameText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            nameText.fontSize = 24;
-            nameText.resizeTextForBestFit = true;
-            nameText.resizeTextMinSize = 16;
-            nameText.resizeTextMaxSize = 24;
-            nameText.color = new Color(0.85f, 0.95f, 1f, 1f);
+            nameText.fontSize = 28;
+            nameText.resizeTextForBestFit = false;
+            nameText.horizontalOverflow = HorizontalWrapMode.Overflow;
+            nameText.verticalOverflow = VerticalWrapMode.Overflow;
+            nameText.color = Color.white;
             nameText.alignment = TextAnchor.MiddleCenter;
-            Shadow shadow = textObject.GetComponent<Shadow>();
-            shadow.effectColor = new Color(0f, 0f, 0f, 0.9f);
-            shadow.effectDistance = new Vector2(2f, -2f);
-            Stretch(textObject.GetComponent<RectTransform>(), new Vector2(10f, 3f), new Vector2(-10f, -3f));
+            Outline outline = textObject.GetComponent<Outline>();
+            outline.effectColor = new Color(0f, 0f, 0f, 0.95f);
+            outline.effectDistance = new Vector2(2f, -2f);
+            RectTransform textRect = textObject.GetComponent<RectTransform>();
+            Stretch(textRect, Vector2.zero, Vector2.zero);
+            textRect.pivot = new Vector2(0.5f, 0.5f);
+            textRect.anchoredPosition = Vector2.zero;
+            // UI는 뒤에 생성된 sibling이 위에 그려집니다. 이름을 마지막에 두어 다른 요소가 덮지 못하게 합니다.
+            textRect.SetAsLastSibling();
             RefreshName();
         }
 
@@ -120,6 +116,9 @@ namespace ProjectLimitless.Player
             {
                 nameText.text = GetDisplayName();
                 nameText.enabled = true;
+                nameText.gameObject.SetActive(true);
+                nameText.SetAllDirty();
+                Canvas.ForceUpdateCanvases();
             }
         }
 
