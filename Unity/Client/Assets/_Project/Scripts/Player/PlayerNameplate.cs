@@ -83,6 +83,10 @@ namespace ProjectLimitless.Player
             scaler.dynamicPixelsPerUnit = 100f;
 
             RectTransform canvasRect = nameplateRoot.GetComponent<RectTransform>();
+            // Canvas도 고정된 중앙 기준 크기를 가져야 자식 Text의 좌표 기준이 0이 되지 않습니다.
+            canvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+            canvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+            canvasRect.pivot = new Vector2(0.5f, 0.5f);
             canvasRect.sizeDelta = new Vector2(280f, 44f);
 
             // 배경 Image가 글자 렌더링을 방해할 가능성을 없애기 위해 이름은 Canvas의 직접 자식으로 둡니다.
@@ -97,13 +101,19 @@ namespace ProjectLimitless.Player
             nameText.verticalOverflow = VerticalWrapMode.Overflow;
             nameText.color = Color.white;
             nameText.alignment = TextAnchor.MiddleCenter;
+            nameText.raycastTarget = false;
             Outline outline = textObject.GetComponent<Outline>();
             outline.effectColor = new Color(0f, 0f, 0f, 0.95f);
             outline.effectDistance = new Vector2(2f, -2f);
             RectTransform textRect = textObject.GetComponent<RectTransform>();
-            Stretch(textRect, Vector2.zero, Vector2.zero);
+            // Stretch를 사용하면 sizeDelta가 Left/Right/Top/Bottom 여백으로 해석됩니다.
+            // 고정 중앙 Anchor를 먼저 지정한 뒤 실제 폭과 높이를 명시해 Inspector에서도 280×44로 보이게 합니다.
+            textRect.anchorMin = new Vector2(0.5f, 0.5f);
+            textRect.anchorMax = new Vector2(0.5f, 0.5f);
             textRect.pivot = new Vector2(0.5f, 0.5f);
             textRect.anchoredPosition = Vector2.zero;
+            textRect.sizeDelta = new Vector2(280f, 44f);
+            textRect.localScale = Vector3.one;
             // UI는 뒤에 생성된 sibling이 위에 그려집니다. 이름을 마지막에 두어 다른 요소가 덮지 못하게 합니다.
             textRect.SetAsLastSibling();
             RefreshName();
@@ -122,13 +132,5 @@ namespace ProjectLimitless.Player
             }
         }
 
-        /// <summary>UI 요소가 부모 사각형을 채우도록 기준점과 안쪽 여백을 설정합니다.</summary>
-        private static void Stretch(RectTransform rectTransform, Vector2 offsetMin, Vector2 offsetMax)
-        {
-            rectTransform.anchorMin = Vector2.zero;
-            rectTransform.anchorMax = Vector2.one;
-            rectTransform.offsetMin = offsetMin;
-            rectTransform.offsetMax = offsetMax;
-        }
     }
 }
