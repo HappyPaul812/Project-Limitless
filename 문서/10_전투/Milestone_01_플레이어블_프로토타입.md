@@ -12,6 +12,7 @@ Unity 실행 시 첫 번째 마을에서 플레이어를 자유롭게 이동시�
 - Inspector에서 변경 가능한 플레이어 이동 속도
 - 게임플레이 Component와 분리된 128×128 Male/Female Player Visual 선택
 - Character Creation 화면에서 선택한 외형과 이름을 런타임 세션에 유지하고 외형을 Starter Village Player에 적용
+- Starter Village의 플레이어 머리 위에 세션의 캐릭터 이름을 표시
 - 부드러운 2D Orthographic 카메라 추적
 - 마을 외곽, 건물, 우물, 상자의 Collider2D
 - 고정 NPC 한 명과 시간 제한 없는 대화 상호작용
@@ -27,7 +28,7 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Assets/_Project/Scenes/CharacterCreation.unity`: Male/Female 외형을 선택하고 게임 시작 버튼으로 월드에 입장한다.
 - `Assets/_Project/Scenes/World_StarterVillage.unity`: 마을 바닥, 경계, 건물, 장애물, 플레이어, NPC, 카메라, 대화 UI를 포함한다.
 
-생성 도구는 플레이어와 NPC의 `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다. 플레이어의 `SpriteRenderer`와 `Animator`는 게임플레이 Component와 분리된 `Visual` 자식에 둔다.
+생성 도구는 플레이어와 NPC의 `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다. 플레이어의 `SpriteRenderer`와 `Animator`는 게임플레이 Component와 분리된 `Visual` 자식에 두고, 이름표는 외형에 관계없이 따라오도록 Player 부모의 공통 `PlayerNameplate`가 만든다.
 
 `Project-Limitless/Milestone 01/Generate Scenes`는 기존 Milestone 01 Scene/Prefab이 있으면 `Assets/_Project/Backup/Milestone01/<timestamp>/`에 먼저 복사해 확인한 뒤 새로 생성한다. 저장되지 않은 해당 Scene이 열려 있으면 작업을 중단하고 저장을 요청한다.
 
@@ -38,6 +39,7 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/Core/PlaceholderVisual.cs`: 실제 Sprite가 없을 때 SpriteRenderer에 단색 placeholder를 제공한다.
 - `Scripts/Player/PlayerController.cs`: Input System과 Rigidbody2D 이동을 담당한다.
 - `Scripts/Player/PlayerVisualController.cs`: 이동 로직과 독립적으로 Male/Female Sprite와 Animator를 선택한다.
+- `Scripts/Player/PlayerNameplate.cs`: 세션의 플레이어 이름을 공통 World Space 이름표로 표시한다.
 - `Scripts/Player/PlayerSpriteAnimator.cs`: 선택된 Visual에서 공통 이동 방향에 맞는 애니메이션을 재생한다.
 - `Scripts/Camera/CameraFollow.cs`: 카메라 추적을 담당한다.
 - `Scripts/NPC/NpcController.cs`: NPC 이름과 대사를 보관한다.
@@ -65,7 +67,9 @@ Kenney PNG는 64×64 픽셀이므로 Sprite, Pixels Per Unit 64, Point Filter, �
 
 ## Player Visual 구조
 
-플레이어 부모에는 `Rigidbody2D`, `CircleCollider2D`, `PlayerController`, `InteractionSystem`, `PlayerVisualController`를 둔다. `Visual` 자식에는 `SpriteRenderer`, `Animator`, `PlayerSpriteAnimator`를 둔다. 외형을 바꾸어도 이동 속도, 충돌 크기, NPC 상호작용, 카메라 추적 대상은 바뀌지 않는다.
+플레이어 부모에는 `Rigidbody2D`, `CircleCollider2D`, `PlayerController`, `InteractionSystem`, `PlayerVisualController`, `PlayerNameplate`를 둔다. `Visual` 자식에는 `SpriteRenderer`, `Animator`, `PlayerSpriteAnimator`를 둔다. 외형을 바꾸어도 이동 속도, 충돌 크기, NPC 상호작용, 카메라 추적 대상과 이름표는 바뀌지 않는다.
+
+`PlayerNameplate`는 실행 시 Player 공통 자식에 World Space Canvas를 만들고 `GameSessionData.PlayerName`을 표시한다. 이름이 비어 있는 예외 상황에는 `플레이어`를 표시한다. 128×128 Sprite의 머리 위인 로컬 Y 1.2에 중앙 정렬하며, 긴 이름은 글자 크기를 자동으로 줄인다. 어두운 반투명 배경과 파란 테두리·그림자를 사용해 NPC 상호작용 안내와 구분하면서 배경 위에서도 읽을 수 있게 한다. 글꼴은 Unity 6의 `LegacyRuntime.ttf`를 사용한다.
 
 `PlayerVisualController`의 `Visual Type`을 Inspector에서 `Male` 또는 `Female`로 선택할 수 있으며 기본값은 `Male`이다. 각 외형은 동일한 `Speed`, `MoveX`, `MoveY` Parameter와 `Idle/Walk` 4방향 State 구조를 가진 전용 Animator Controller를 사용한다. 캐릭터 생성 화면과 선택 저장은 이후 시스템에서 `SetVisual`을 호출하는 방식으로 연결할 수 있다.
 

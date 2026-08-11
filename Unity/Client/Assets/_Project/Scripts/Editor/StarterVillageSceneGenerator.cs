@@ -221,7 +221,7 @@ namespace ProjectLimitless.EditorTools
             EditorSceneManager.SaveScene(scene, BootstrapScenePath);
         }
 
-        /// <summary>Male/Female 미리보기와 이름 입력 UI를 만드는 Controller가 연결된 Character Creation Scene을 만듭니다.</summary>
+        /// <summary>Male/Female 미리보기와 이름 입력 UI, Game View 렌더링용 Camera가 있는 Character Creation Scene을 만듭니다.</summary>
         private static void CreateCharacterCreationScene()
         {
             PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
@@ -240,6 +240,7 @@ namespace ProjectLimitless.EditorTools
             NewSceneMode creationMode = hasEmptyUntitledScene ? NewSceneMode.Single : NewSceneMode.Additive;
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, creationMode);
             SceneManager.SetActiveScene(scene);
+            CreateCharacterCreationCamera();
             CharacterCreationController controller = new GameObject("CharacterCreationSystem").AddComponent<CharacterCreationController>();
             controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "World_StarterVillage");
             EditorSceneManager.SaveScene(scene, CharacterCreationScenePath);
@@ -251,6 +252,21 @@ namespace ProjectLimitless.EditorTools
                     SceneManager.SetActiveScene(previousActiveScene);
                 }
             }
+        }
+
+        /// <summary>
+        /// Screen Space Overlay UI는 Camera 없이도 보이지만 Unity Game View는 Camera가 없으면
+        /// "No cameras rendering" 안내를 겹쳐 표시하므로, UI 뒤쪽을 담당할 최소 Camera를 둡니다.
+        /// </summary>
+        private static void CreateCharacterCreationCamera()
+        {
+            GameObject cameraObject = new GameObject("Main Camera");
+            cameraObject.tag = "MainCamera";
+            cameraObject.transform.position = new Vector3(0f, 0f, -10f);
+            Camera camera = cameraObject.AddComponent<Camera>();
+            camera.orthographic = true;
+            camera.orthographicSize = 5f;
+            camera.backgroundColor = new Color(0.045f, 0.065f, 0.11f);
         }
 
         /// <summary>기존 Bootstrap Scene의 다른 내용은 유지하고 시작 Scene 이름만 CharacterCreation으로 바꿉니다.</summary>
@@ -352,6 +368,8 @@ namespace ProjectLimitless.EditorTools
             playerSource.AddComponent<CircleCollider2D>().radius = 0.5f;
             playerSource.AddComponent<PlayerController>();
             playerSource.AddComponent<InteractionSystem>().Configure(2f);
+            // 이름표는 외형 Visual이 아니라 공통 Player 부모에 두어 Male/Female 모두 같은 위치와 이름을 사용합니다.
+            playerSource.AddComponent<PlayerNameplate>();
             ConfigurePlayerVisualHierarchy(playerSource, visualAssets);
             playerPrefab = PrefabUtility.SaveAsPrefabAsset(playerSource, PlayerPrefabPath);
             UnityObject.DestroyImmediate(playerSource);
@@ -595,6 +613,12 @@ namespace ProjectLimitless.EditorTools
                 assets.FemaleAnimatorController,
                 assets.MaleDefaultSprite,
                 assets.FemaleDefaultSprite);
+
+            // 기존 Prefab에 외형만 다시 적용하는 메뉴를 실행해도 이름표 기능이 빠지지 않게 보완합니다.
+            if (player.GetComponent<PlayerNameplate>() == null)
+            {
+                player.AddComponent<PlayerNameplate>();
+            }
         }
 
         /// <summary>두 외형의 기본 Sprite와 Animator Controller를 생성 단계 사이에서 묶어 전달합니다.</summary>

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4490535211775574495}
   - component: {fileID: 5295998417642897609}
   - component: {fileID: 3197661021078269233}
+  - component: {fileID: 6719842563274173050}
   m_Layer: 0
   m_Name: PlayerPlaceholder
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
   femaleAnimatorController: {fileID: 9100000, guid: b1069ef33d3c54443aa1778de0862f26, type: 2}
   maleDefaultSprite: {fileID: 5249180244662576433, guid: 67d92138ffadaac4ebc6cc295a7719f6, type: 3}
   femaleDefaultSprite: {fileID: -4202641690109842950, guid: 08b87531155d89246b5290f0c8dc08c5, type: 3}
+--- !u!114 &6719842563274173050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998318717798673311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92cba31e96c4c89905f67369bb274aa, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Player.PlayerNameplate
 --- !u!1 &5036197112250486763
 GameObject:
   m_ObjectHideFlags: 0
