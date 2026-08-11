@@ -6,7 +6,7 @@ Unity 실행 시 첫 번째 마을에서 플레이어를 자유롭게 이동시�
 
 ## 구현된 기능
 
-- Bootstrap Scene에서 Character Creation을 거쳐 첫 번째 마을 Scene을 단일 로드
+- Bootstrap Scene에서 기본 정보와 Path 선택으로 이어지는 다단계 Character Creation 흐름 시작
 - Input System 기반 키보드(WASD/방향키) 및 게임패드 왼쪽 스틱 8방향 이동
 - Rigidbody2D 기반 이동과 대각선 입력 정규화
 - Inspector에서 변경 가능한 플레이어 이동 속도
@@ -25,7 +25,8 @@ Unity 실행 시 첫 번째 마을에서 플레이어를 자유롭게 이동시�
 Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 
 - `Assets/_Project/Scenes/Bootstrap.unity`: `BootstrapLoader`로 `CharacterCreation`을 로드한다.
-- `Assets/_Project/Scenes/CharacterCreation.unity`: Male/Female 외형을 선택하고 게임 시작 버튼으로 월드에 입장한다.
+- `Assets/_Project/Scenes/CharacterCreation.unity`: Male/Female 외형과 이름을 정하고 `다음` 버튼으로 PathSelection에 입장한다.
+- `Assets/_Project/Scenes/PathSelection.unity`: 이전 캐릭터 정보를 요약하고 개발용 Path 카드 선택을 보관한다.
 - `Assets/_Project/Scenes/World_StarterVillage.unity`: 마을 바닥, 경계, 건물, 장애물, 플레이어, NPC, 카메라, 대화 UI를 포함한다.
 
 생성 도구는 플레이어와 NPC의 `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다. 플레이어의 `SpriteRenderer`와 `Animator`는 게임플레이 Component와 분리된 `Visual` 자식에 두고, 이름표는 외형에 관계없이 따라오도록 Player 부모의 공통 `PlayerNameplate`가 만든다.
@@ -36,6 +37,7 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 
 - `Scripts/Core/BootstrapLoader.cs`: 시작 Scene에서 월드를 로드한다.
 - `Scripts/Core/GameSessionData.cs`: Character Creation의 외형과 이름 선택을 Scene 사이에 유지한다.
+- `Scripts/Core/PlayerPathDefinition.cs`: 확장 가능한 개발용 Path 식별자와 카드 표시 데이터를 정의한다.
 - `Scripts/Core/PlaceholderVisual.cs`: 실제 Sprite가 없을 때 SpriteRenderer에 단색 placeholder를 제공한다.
 - `Scripts/Player/PlayerController.cs`: Input System과 Rigidbody2D 이동을 담당한다.
 - `Scripts/Player/PlayerVisualController.cs`: 이동 로직과 독립적으로 Male/Female Sprite와 Animator를 선택한다.
@@ -46,7 +48,8 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/NPC/InteractionSystem.cs`: 가장 가까운 현재 상호작용 대상과의 상호작용을 담당한다.
 - `Scripts/NPC/NpcInteractionPrompt.cs`: NPC 주변에 `[E] 대화하기` UI Text를 표시한다.
 - `Scripts/UI/DialoguePresenter.cs`: 최소 대화 UI를 표시한다.
-- `Scripts/UI/CharacterCreationController.cs`: 접근 가능한 외형·이름 입력 UI, 이름 검증, 월드 입장을 담당한다.
+- `Scripts/UI/CharacterCreationController.cs`: 접근 가능한 외형·이름 입력 UI, 이름 검증, PathSelection 입장을 담당한다.
+- `Scripts/UI/PathSelectionController.cs`: Path 카드, 캐릭터 요약, 이전/다음 단계 UI와 접근성 입력을 담당한다.
 - `Scripts/Editor/StarterVillageSceneGenerator.cs`: 실제 Unity Scene과 Build Settings를 생성하는 Editor 메뉴 도구다.
 
 ## 환경 그래픽

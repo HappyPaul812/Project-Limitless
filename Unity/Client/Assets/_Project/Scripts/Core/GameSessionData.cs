@@ -15,6 +15,9 @@ namespace ProjectLimitless.Core
         /// <summary>Character Creation에서 확정한 이름이며, Starter Village와 이후 시스템에서 읽을 수 있습니다.</summary>
         public static string PlayerName { get; private set; } = string.Empty;
 
+        /// <summary>Path Selection에서 고른 개발용 길 식별자이며, 아직 선택하지 않았으면 None입니다.</summary>
+        public static PlayerPathType SelectedPlayerPath { get; private set; } = PlayerPathType.None;
+
         /// <summary>게임 시작 버튼을 누르기 전에 현재 외형 선택을 세션에 기록합니다.</summary>
         public static void SelectPlayerVisual(PlayerVisualType visualType)
         {
@@ -28,11 +31,18 @@ namespace ProjectLimitless.Core
             PlayerName = playerName;
         }
 
+        /// <summary>Path Selection의 카드 선택을 이후 캐릭터 생성 단계에서도 읽을 수 있게 보관합니다.</summary>
+        public static void SelectPlayerPath(PlayerPathType pathType)
+        {
+            SelectedPlayerPath = pathType;
+        }
+
         /// <summary>새 Play 세션의 초기 상태를 명시적으로 Male로 되돌립니다.</summary>
         public static void Reset()
         {
             SelectedPlayerVisual = PlayerVisualType.Male;
             PlayerName = string.Empty;
+            SelectedPlayerPath = PlayerPathType.None;
         }
     }
 }

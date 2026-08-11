@@ -21,6 +21,9 @@ namespace ProjectLimitless.Core
         /// <summary>GameObject가 처음 활성화된 뒤 월드 Scene을 비동기로 불러옵니다.</summary>
         private void Start()
         {
+            // Bootstrap은 새 캐릭터 생성 흐름의 최초 진입점이므로 여기서만 이전 실행의 임시 선택값을 초기화합니다.
+            // PathSelection에서 CharacterCreation으로 돌아올 때는 Bootstrap을 거치지 않아 입력값이 유지됩니다.
+            GameSessionData.Reset();
             // Single 모드는 현재 Bootstrap Scene을 내리고 지정한 월드 하나만 남깁니다.
             SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single);
         }

@@ -11,19 +11,19 @@ using System.Text.RegularExpressions;
 namespace ProjectLimitless.UI
 {
     /// <summary>
-    /// CharacterCreation Scene에서 Male/Female 외형을 고르고 Starter Village로 이동하는 최소 화면을 만듭니다.
-    /// 선택값은 GameSessionData에 기록되어 Scene이 바뀐 뒤 PlayerVisualController가 읽을 수 있습니다.
+    /// CharacterCreation Scene에서 Male/Female 외형과 이름을 정한 뒤 다음 PathSelection 단계로 이동합니다.
+    /// 선택값은 GameSessionData에 기록되어 여러 캐릭터 생성 Scene 사이에서 유지됩니다.
     /// 실제 Player Prefab을 복제하지 않고 각 외형의 Down Idle Sprite 한 장만 미리보기로 사용합니다.
     /// </summary>
     public sealed class CharacterCreationController : MonoBehaviour
     {
-        private const string DefaultWorldSceneName = "World_StarterVillage";
+        private const string DefaultNextSceneName = "PathSelection";
         private const int MaximumPlayerNameLength = 12;
 
         // Editor 생성 도구가 실제 Male/Female Down Idle Sprite를 연결합니다.
         [SerializeField] private Sprite malePreviewSprite;
         [SerializeField] private Sprite femalePreviewSprite;
-        [SerializeField] private string worldSceneName = DefaultWorldSceneName;
+        [SerializeField] private string nextSceneName = DefaultNextSceneName;
 
         // 화면 전체에서 반복해서 사용하는 판타지 RPG 색상입니다. 충분한 명암 차이로 글자를 쉽게 읽을 수 있게 합니다.
         private readonly Color normalButtonColor = new Color(0.075f, 0.105f, 0.17f, 0.97f);
@@ -50,20 +50,22 @@ namespace ProjectLimitless.UI
         private bool isStarting;
 
         /// <summary>Editor 생성 도구가 미리보기 Sprite와 입장할 월드 Scene을 연결합니다.</summary>
-        public void Configure(Sprite maleSprite, Sprite femaleSprite, string targetWorldSceneName)
+        public void Configure(Sprite maleSprite, Sprite femaleSprite, string targetNextSceneName)
         {
             malePreviewSprite = maleSprite;
             femalePreviewSprite = femaleSprite;
-            worldSceneName = targetWorldSceneName;
+            nextSceneName = targetNextSceneName;
         }
 
         /// <summary>Canvas, 선택 버튼, 미리보기, 상태 문구, 시작 버튼을 코드로 구성합니다.</summary>
         private void Awake()
         {
-            GameSessionData.Reset();
             CreateEventSystem();
             CreateInterface();
-            SelectVisual(PlayerVisualType.Male);
+            // 이전 단계에서 돌아온 경우 세션의 Female/Male과 이름을 그대로 UI에 복원합니다.
+            selectedVisual = GameSessionData.SelectedPlayerVisual;
+            nameInputField.text = GameSessionData.PlayerName;
+            SelectVisual(selectedVisual);
             EventSystem.current.SetSelectedGameObject(maleButton.gameObject);
         }
 
@@ -113,7 +115,7 @@ namespace ProjectLimitless.UI
             SetChoiceAppearance(femaleBackground, femaleOutline, !isMale);
         }
 
-        /// <summary>선택한 외형을 확정한 뒤 Starter Village를 한 번만 불러옵니다.</summary>
+        /// <summary>선택한 외형과 이름을 확정한 뒤 다음 Path Selection Scene을 한 번만 불러옵니다.</summary>
         private void StartGame()
         {
             if (isStarting)
@@ -134,7 +136,7 @@ namespace ProjectLimitless.UI
             nameErrorLabel.text = string.Empty;
             GameSessionData.ConfigurePlayer(selectedVisual, normalizedName);
             startButton.interactable = false;
-            SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
         }
 
         /// <summary>
@@ -252,13 +254,34 @@ namespace ProjectLimitless.UI
             nameErrorLabel = CreateText(canvasObject.transform, "NameError", string.Empty, font, 18, new Vector2(0.5f, 0.225f), new Vector2(700f, 28f));
             nameErrorLabel.color = new Color(1f, 0.65f, 0.62f, 1f);
             nameInputField.onValueChanged.AddListener(_ => nameErrorLabel.text = string.Empty);
-            startButton = CreateTextButton(canvasObject.transform, "StartButton", "게임 시작", font, new Vector2(0.5f, 0.125f), new Vector2(380f, 68f), out startButtonOutline);
+            startButton = CreateTextButton(canvasObject.transform, "StartButton", "다음", font, new Vector2(0.5f, 0.125f), new Vector2(380f, 68f), out startButtonOutline);
             startButton.onClick.AddListener(StartGame);
             Text keyboardHelp = CreateText(canvasObject.transform, "KeyboardHelp", "Tab / 방향키 : 이동     Enter / Space : 선택", font, 18, new Vector2(0.5f, 0.04f), new Vector2(760f, 30f));
             keyboardHelp.color = new Color(0.7f, 0.77f, 0.86f, 1f);
 
+            CreateStepIndicator(canvasObject.transform, font, 1);
+
             ConfigureNavigation();
             ConfigureFocusFeedback();
+        }
+
+        /// <summary>전체 4단계 중 현재 화면이 1단계임을 텍스트와 테두리로 함께 표시합니다.</summary>
+        private static void CreateStepIndicator(Transform parent, Font font, int currentStep)
+        {
+            string[] steps = { "1 기본 정보", "2 길", "3 직업", "4 확인" };
+            for (int index = 0; index < steps.Length; index++)
+            {
+                bool isCurrent = index + 1 == currentStep;
+                Image stepPanel = CreateImage(parent, $"Step{index + 1}", isCurrent
+                    ? new Color(0.18f, 0.25f, 0.34f, 0.98f)
+                    : new Color(0.04f, 0.065f, 0.11f, 0.88f));
+                SetRect(stepPanel.rectTransform, new Vector2(0.35f + index * 0.1f, 0.975f), new Vector2(122f, 28f));
+                Outline outline = stepPanel.gameObject.AddComponent<Outline>();
+                outline.effectColor = isCurrent ? new Color(0.95f, 0.76f, 0.36f, 1f) : new Color(0.25f, 0.32f, 0.42f, 1f);
+                outline.effectDistance = isCurrent ? new Vector2(2f, -2f) : Vector2.one;
+                Text label = CreateText(stepPanel.transform, "Label", isCurrent ? $"{steps[index]} · 현재" : steps[index], font, 15, Vector2.one * 0.5f, new Vector2(118f, 26f));
+                label.color = isCurrent ? new Color(1f, 0.88f, 0.58f, 1f) : new Color(0.63f, 0.7f, 0.79f, 1f);
+            }
         }
 
         /// <summary>방향키를 누를 때 두 외형과 시작 버튼 사이를 예측 가능한 순서로 이동하게 합니다.</summary>

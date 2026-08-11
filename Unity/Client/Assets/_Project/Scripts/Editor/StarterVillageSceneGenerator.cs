@@ -26,6 +26,7 @@ namespace ProjectLimitless.EditorTools
         // 자동 생성하거나 참조할 프로젝트 Asset 경로를 한곳에서 관리합니다.
         private const string BootstrapScenePath = "Assets/_Project/Scenes/Bootstrap.unity";
         private const string CharacterCreationScenePath = "Assets/_Project/Scenes/CharacterCreation.unity";
+        private const string PathSelectionScenePath = "Assets/_Project/Scenes/PathSelection.unity";
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
@@ -45,6 +46,7 @@ namespace ProjectLimitless.EditorTools
         {
             BootstrapScenePath,
             CharacterCreationScenePath,
+            PathSelectionScenePath,
             WorldScenePath,
             PlayerPrefabPath,
             NpcPrefabPath,
@@ -66,10 +68,11 @@ namespace ProjectLimitless.EditorTools
                 CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab);
                 CreateBootstrapScene();
                 CreateCharacterCreationScene();
+                CreatePathSelectionScene();
                 CreateStarterVillageScene(playerPrefab, npcPrefab);
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, CharacterCreation, World_StarterVillage. 백업: {backupPath ?? "없음"}");
+                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, CharacterCreation, PathSelection, World_StarterVillage. 백업: {backupPath ?? "없음"}");
             }
             catch (Exception exception)
             {
@@ -113,12 +116,13 @@ namespace ProjectLimitless.EditorTools
         {
             try
             {
-                EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath);
+                EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath);
                 CreateCharacterCreationScene();
+                CreatePathSelectionScene();
                 UpdateBootstrapStartScene();
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log("판타지 RPG 디자인의 외형 선택·이름 입력 CharacterCreation Scene 생성 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
+                Debug.Log("CharacterCreation과 PathSelection 2단계 흐름 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
             }
             catch (Exception exception)
             {
@@ -130,7 +134,7 @@ namespace ProjectLimitless.EditorTools
         /// <summary>자동 생성 대상 Scene에 저장되지 않은 변경이 있으면 덮어쓰기 전에 작업을 중단합니다.</summary>
         private static void EnsureNoUnsavedMilestoneScenes()
         {
-            EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, WorldScenePath);
+            EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath, WorldScenePath);
         }
 
         /// <summary>지정한 자동 생성 대상 중 열려 있고 저장하지 않은 Scene이 있는지 확인합니다.</summary>
@@ -242,8 +246,43 @@ namespace ProjectLimitless.EditorTools
             SceneManager.SetActiveScene(scene);
             CreateCharacterCreationCamera();
             CharacterCreationController controller = new GameObject("CharacterCreationSystem").AddComponent<CharacterCreationController>();
-            controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "World_StarterVillage");
+            controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "PathSelection");
             EditorSceneManager.SaveScene(scene, CharacterCreationScenePath);
+            if (!hasEmptyUntitledScene)
+            {
+                EditorSceneManager.CloseScene(scene, true);
+                if (previousActiveScene.IsValid() && previousActiveScene.isLoaded)
+                {
+                    SceneManager.SetActiveScene(previousActiveScene);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 기존 작업 Scene은 보존하면서 Path 카드와 이전 단계 요약 UI를 런타임에 만드는 Controller Scene을 생성합니다.
+        /// Path의 정식 이름은 확정되지 않았으므로 Controller의 개발용 Path01~Path04 데이터만 사용합니다.
+        /// </summary>
+        private static void CreatePathSelectionScene()
+        {
+            PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
+            Scene previousActiveScene = SceneManager.GetActiveScene();
+            Scene existingScene = SceneManager.GetSceneByPath(PathSelectionScenePath);
+            if (existingScene.IsValid())
+            {
+                EditorSceneManager.CloseScene(existingScene, true);
+            }
+
+            bool hasEmptyUntitledScene = previousActiveScene.IsValid() &&
+                string.IsNullOrEmpty(previousActiveScene.path) &&
+                !previousActiveScene.isDirty &&
+                previousActiveScene.rootCount == 0;
+            NewSceneMode creationMode = hasEmptyUntitledScene ? NewSceneMode.Single : NewSceneMode.Additive;
+            Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, creationMode);
+            SceneManager.SetActiveScene(scene);
+            CreateCharacterCreationCamera();
+            PathSelectionController controller = new GameObject("PathSelectionSystem").AddComponent<PathSelectionController>();
+            controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "CharacterCreation", "JobSelection");
+            EditorSceneManager.SaveScene(scene, PathSelectionScenePath);
             if (!hasEmptyUntitledScene)
             {
                 EditorSceneManager.CloseScene(scene, true);
@@ -863,17 +902,18 @@ namespace ProjectLimitless.EditorTools
             return gameObject;
         }
 
-        /// <summary>게임 흐름 순서대로 Bootstrap, Character Creation, 월드 Scene을 빌드 목록 앞에 둡니다.</summary>
+        /// <summary>게임 흐름 순서대로 Bootstrap, 기본 정보, Path 선택, 월드 Scene을 빌드 목록 앞에 둡니다.</summary>
         private static void ConfigureBuildSettings()
         {
             List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
             scenes.Add(new EditorBuildSettingsScene(BootstrapScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(CharacterCreationScenePath, true));
+            scenes.Add(new EditorBuildSettingsScene(PathSelectionScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(WorldScenePath, true));
 
             foreach (EditorBuildSettingsScene existingScene in EditorBuildSettings.scenes)
             {
-                if (existingScene.path != BootstrapScenePath && existingScene.path != CharacterCreationScenePath && existingScene.path != WorldScenePath)
+                if (existingScene.path != BootstrapScenePath && existingScene.path != CharacterCreationScenePath && existingScene.path != PathSelectionScenePath && existingScene.path != WorldScenePath)
                 {
                     scenes.Add(existingScene);
                 }

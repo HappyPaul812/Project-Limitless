@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1191903218
+--- !u!1 &1067671491
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,37 +127,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1191903220}
-  - component: {fileID: 1191903219}
+  - component: {fileID: 1067671493}
+  - component: {fileID: 1067671492}
   m_Layer: 0
-  m_Name: CharacterCreationSystem
+  m_Name: PathSelectionSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1191903219
+--- !u!114 &1067671492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191903218}
+  m_GameObject: {fileID: 1067671491}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf75b2f4643b7e4b8b648d6b95c5b76, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f8c3ccf6d3a4b36aa2fdff908580381, type: 3}
   m_Name:
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.UI.CharacterCreationController
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.UI.PathSelectionController
   malePreviewSprite: {fileID: 5249180244662576433, guid: 67d92138ffadaac4ebc6cc295a7719f6, type: 3}
   femalePreviewSprite: {fileID: -4202641690109842950, guid: 08b87531155d89246b5290f0c8dc08c5, type: 3}
-  nextSceneName: PathSelection
---- !u!4 &1191903220
+  previousSceneName: CharacterCreation
+  nextSceneName: JobSelection
+  pathDefinitions: []
+--- !u!4 &1067671493
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191903218}
+  m_GameObject: {fileID: 1067671491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -253,5 +255,5 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1191903220}
+  - {fileID: 1067671493}
   - {fileID: 2100000003}
