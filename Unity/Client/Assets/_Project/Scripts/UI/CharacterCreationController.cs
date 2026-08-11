@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 namespace ProjectLimitless.UI
 {
@@ -17,6 +18,7 @@ namespace ProjectLimitless.UI
     public sealed class CharacterCreationController : MonoBehaviour
     {
         private const string DefaultWorldSceneName = "World_StarterVillage";
+        private const int MaximumPlayerNameLength = 12;
 
         // Editor 생성 도구가 실제 Male/Female Down Idle Sprite를 연결합니다.
         [SerializeField] private Sprite malePreviewSprite;
@@ -33,6 +35,8 @@ namespace ProjectLimitless.UI
         private Text maleLabel;
         private Text femaleLabel;
         private Text selectionLabel;
+        private InputField nameInputField;
+        private Text nameErrorLabel;
         private Image maleBackground;
         private Image femaleBackground;
         private Outline maleOutline;
@@ -58,7 +62,7 @@ namespace ProjectLimitless.UI
             EventSystem.current.SetSelectedGameObject(maleButton.gameObject);
         }
 
-        /// <summary>Tab과 Space도 사용할 수 있게 하여 마우스 없이 모든 항목을 조작할 수 있게 합니다.</summary>
+        /// <summary>Tab, Space, 이름 입력 중 Enter를 처리하여 마우스 없이도 화면을 완료할 수 있게 합니다.</summary>
         private void Update()
         {
             if (Keyboard.current == null)
@@ -66,9 +70,22 @@ namespace ProjectLimitless.UI
                 return;
             }
 
+            bool isEditingName = nameInputField != null && nameInputField.isFocused;
             if (Keyboard.current.tabKey.wasPressedThisFrame)
             {
                 MoveToNextControl(Keyboard.current.shiftKey.isPressed ? -1 : 1);
+                return;
+            }
+
+            if (isEditingName)
+            {
+                // 이름 입력 중에는 문자와 방향키가 외형 선택 단축키로 전달되지 않게 합니다.
+                if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
+                {
+                    StartGame();
+                }
+
+                return;
             }
 
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -99,10 +116,49 @@ namespace ProjectLimitless.UI
                 return;
             }
 
+            if (!TryValidatePlayerName(nameInputField.text, out string normalizedName, out string errorMessage))
+            {
+                nameErrorLabel.text = errorMessage;
+                EventSystem.current.SetSelectedGameObject(nameInputField.gameObject);
+                nameInputField.ActivateInputField();
+                return;
+            }
+
             isStarting = true;
-            GameSessionData.SelectPlayerVisual(selectedVisual);
+            nameInputField.text = normalizedName;
+            nameErrorLabel.text = string.Empty;
+            GameSessionData.ConfigurePlayer(selectedVisual, normalizedName);
             startButton.interactable = false;
             SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single);
+        }
+
+        /// <summary>
+        /// 앞뒤 공백을 제거한 이름이 1~12자의 한글, 영문, 숫자로만 이루어졌는지 확인합니다.
+        /// 검증 로직을 별도 메서드로 두어 UI 밖에서도 같은 규칙을 시험할 수 있습니다.
+        /// </summary>
+        public static bool TryValidatePlayerName(string input, out string normalizedName, out string errorMessage)
+        {
+            normalizedName = input?.Trim() ?? string.Empty;
+            if (normalizedName.Length == 0)
+            {
+                errorMessage = "캐릭터 이름을 입력해주세요.";
+                return false;
+            }
+
+            if (normalizedName.Length > MaximumPlayerNameLength)
+            {
+                errorMessage = "캐릭터 이름은 12자 이하로 입력해주세요.";
+                return false;
+            }
+
+            if (!Regex.IsMatch(normalizedName, "^[가-힣A-Za-z0-9]+$"))
+            {
+                errorMessage = "이름은 한글, 영문, 숫자만 사용할 수 있습니다.";
+                return false;
+            }
+
+            errorMessage = string.Empty;
+            return true;
         }
 
         /// <summary>선택된 버튼은 색상뿐 아니라 굵은 테두리로도 구분합니다.</summary>
@@ -113,12 +169,12 @@ namespace ProjectLimitless.UI
             outline.effectDistance = isSelected ? new Vector2(5f, -5f) : new Vector2(2f, -2f);
         }
 
-        /// <summary>Tab 또는 Shift+Tab으로 Male, Female, 게임 시작 버튼을 순환합니다.</summary>
+        /// <summary>Tab 또는 Shift+Tab으로 Male, Female, 이름 입력, 게임 시작 순서로 이동합니다.</summary>
         private void MoveToNextControl(int direction)
         {
-            Button[] controls = { maleButton, femaleButton, startButton };
+            Selectable[] controls = { maleButton, femaleButton, nameInputField, startButton };
             GameObject current = EventSystem.current.currentSelectedGameObject;
-            int index = System.Array.FindIndex(controls, button => button.gameObject == current);
+            int index = System.Array.FindIndex(controls, control => control.gameObject == current);
             int nextIndex = (index + direction + controls.Length) % controls.Length;
             EventSystem.current.SetSelectedGameObject(controls[nextIndex].gameObject);
         }
@@ -160,15 +216,20 @@ namespace ProjectLimitless.UI
             CreateText(canvasObject.transform, "Title", "Project-Limitless", font, 46, new Vector2(0.5f, 0.88f), new Vector2(720f, 70f));
             CreateText(canvasObject.transform, "Subtitle", "캐릭터 선택", font, 34, new Vector2(0.5f, 0.78f), new Vector2(520f, 58f));
 
-            maleButton = CreateChoiceButton(canvasObject.transform, "MaleButton", "남성", malePreviewSprite, font, new Vector2(0.35f, 0.49f), out maleLabel, out maleBackground, out maleOutline);
-            femaleButton = CreateChoiceButton(canvasObject.transform, "FemaleButton", "여성", femalePreviewSprite, font, new Vector2(0.65f, 0.49f), out femaleLabel, out femaleBackground, out femaleOutline);
+            maleButton = CreateChoiceButton(canvasObject.transform, "MaleButton", "남성", malePreviewSprite, font, new Vector2(0.35f, 0.585f), out maleLabel, out maleBackground, out maleOutline);
+            femaleButton = CreateChoiceButton(canvasObject.transform, "FemaleButton", "여성", femalePreviewSprite, font, new Vector2(0.65f, 0.585f), out femaleLabel, out femaleBackground, out femaleOutline);
             maleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Male));
             femaleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Female));
 
-            selectionLabel = CreateText(canvasObject.transform, "SelectionLabel", "현재 선택: 남성", font, 28, new Vector2(0.5f, 0.24f), new Vector2(500f, 52f));
-            startButton = CreateTextButton(canvasObject.transform, "StartButton", "게임 시작", font, new Vector2(0.5f, 0.13f), new Vector2(340f, 76f));
+            selectionLabel = CreateText(canvasObject.transform, "SelectionLabel", "현재 선택: 남성", font, 26, new Vector2(0.5f, 0.355f), new Vector2(500f, 46f));
+            CreateText(canvasObject.transform, "NameLabel", "캐릭터 이름", font, 23, new Vector2(0.5f, 0.295f), new Vector2(460f, 38f));
+            nameInputField = CreateNameInputField(canvasObject.transform, font, new Vector2(0.5f, 0.235f));
+            nameInputField.onValueChanged.AddListener(_ => nameErrorLabel.text = string.Empty);
+            nameErrorLabel = CreateText(canvasObject.transform, "NameError", string.Empty, font, 19, new Vector2(0.5f, 0.18f), new Vector2(700f, 34f));
+            nameErrorLabel.color = new Color(1f, 0.65f, 0.62f, 1f);
+            startButton = CreateTextButton(canvasObject.transform, "StartButton", "게임 시작", font, new Vector2(0.5f, 0.105f), new Vector2(340f, 64f));
             startButton.onClick.AddListener(StartGame);
-            CreateText(canvasObject.transform, "KeyboardHelp", "Tab/방향키: 이동   Enter/Space: 선택", font, 20, new Vector2(0.5f, 0.045f), new Vector2(700f, 38f));
+            CreateText(canvasObject.transform, "KeyboardHelp", "Tab/방향키: 이동   Enter/Space: 선택", font, 18, new Vector2(0.5f, 0.035f), new Vector2(700f, 32f));
 
             ConfigureNavigation();
         }
@@ -176,11 +237,13 @@ namespace ProjectLimitless.UI
         /// <summary>방향키를 누를 때 두 외형과 시작 버튼 사이를 예측 가능한 순서로 이동하게 합니다.</summary>
         private void ConfigureNavigation()
         {
-            Navigation maleNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnRight = femaleButton, selectOnDown = startButton };
-            Navigation femaleNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnLeft = maleButton, selectOnDown = startButton };
-            Navigation startNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnUp = maleButton };
+            Navigation maleNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnRight = femaleButton, selectOnDown = nameInputField };
+            Navigation femaleNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnLeft = maleButton, selectOnDown = nameInputField };
+            Navigation nameNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnUp = maleButton, selectOnDown = startButton };
+            Navigation startNavigation = new Navigation { mode = Navigation.Mode.Explicit, selectOnUp = nameInputField };
             maleButton.navigation = maleNavigation;
             femaleButton.navigation = femaleNavigation;
+            nameInputField.navigation = nameNavigation;
             startButton.navigation = startNavigation;
         }
 
@@ -188,7 +251,7 @@ namespace ProjectLimitless.UI
         {
             GameObject buttonObject = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             buttonObject.transform.SetParent(parent, false);
-            SetRect(buttonObject.GetComponent<RectTransform>(), anchor, new Vector2(300f, 280f));
+            SetRect(buttonObject.GetComponent<RectTransform>(), anchor, new Vector2(280f, 250f));
             background = buttonObject.GetComponent<Image>();
             Button button = buttonObject.GetComponent<Button>();
             button.targetGraphic = background;
@@ -197,9 +260,37 @@ namespace ProjectLimitless.UI
             Image preview = CreateImage(buttonObject.transform, "Preview", Color.white);
             preview.sprite = previewSprite;
             preview.preserveAspect = true;
-            SetRect(preview.rectTransform, new Vector2(0.5f, 0.62f), new Vector2(190f, 190f));
-            labelText = CreateText(buttonObject.transform, "Label", label, font, 28, new Vector2(0.5f, 0.13f), new Vector2(260f, 70f));
+            SetRect(preview.rectTransform, new Vector2(0.5f, 0.63f), new Vector2(170f, 170f));
+            labelText = CreateText(buttonObject.transform, "Label", label, font, 27, new Vector2(0.5f, 0.13f), new Vector2(250f, 62f));
             return button;
+        }
+
+        /// <summary>LegacyRuntime 글꼴과 한글 IME를 사용하는 한 줄 이름 입력란을 만듭니다.</summary>
+        private static InputField CreateNameInputField(Transform parent, Font font, Vector2 anchor)
+        {
+            GameObject inputObject = new GameObject("NameInputField", typeof(Image), typeof(InputField), typeof(Outline));
+            inputObject.transform.SetParent(parent, false);
+            SetRect(inputObject.GetComponent<RectTransform>(), anchor, new Vector2(460f, 52f));
+            Image background = inputObject.GetComponent<Image>();
+            background.color = new Color(0.1f, 0.14f, 0.22f, 1f);
+            Outline outline = inputObject.GetComponent<Outline>();
+            outline.effectColor = new Color(0.42f, 0.6f, 0.76f, 1f);
+            outline.effectDistance = new Vector2(2f, -2f);
+
+            Text inputText = CreateText(inputObject.transform, "Text", string.Empty, font, 24, Vector2.one * 0.5f, new Vector2(420f, 44f));
+            inputText.alignment = TextAnchor.MiddleLeft;
+            Text placeholder = CreateText(inputObject.transform, "Placeholder", "이름을 입력하세요", font, 24, Vector2.one * 0.5f, new Vector2(420f, 44f));
+            placeholder.alignment = TextAnchor.MiddleLeft;
+            placeholder.color = new Color(0.68f, 0.72f, 0.78f, 1f);
+
+            InputField inputField = inputObject.GetComponent<InputField>();
+            inputField.targetGraphic = background;
+            inputField.textComponent = inputText;
+            inputField.placeholder = placeholder;
+            inputField.characterLimit = MaximumPlayerNameLength;
+            inputField.lineType = InputField.LineType.SingleLine;
+            inputField.contentType = InputField.ContentType.Standard;
+            return inputField;
         }
 
         private static Button CreateTextButton(Transform parent, string name, string label, Font font, Vector2 anchor, Vector2 size)
