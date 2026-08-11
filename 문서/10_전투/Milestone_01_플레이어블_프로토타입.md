@@ -39,7 +39,7 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/Core/PlaceholderVisual.cs`: 실제 Sprite가 없을 때 SpriteRenderer에 단색 placeholder를 제공한다.
 - `Scripts/Player/PlayerController.cs`: Input System과 Rigidbody2D 이동을 담당한다.
 - `Scripts/Player/PlayerVisualController.cs`: 이동 로직과 독립적으로 Male/Female Sprite와 Animator를 선택한다.
-- `Scripts/Player/PlayerNameplate.cs`: 세션의 플레이어 이름을 공통 World Space 이름표로 표시한다.
+- `Scripts/Player/PlayerNameplate.cs`: 세션의 플레이어 이름을 전용 Screen Space Overlay 이름표로 표시한다.
 - `Scripts/Player/PlayerSpriteAnimator.cs`: 선택된 Visual에서 공통 이동 방향에 맞는 애니메이션을 재생한다.
 - `Scripts/Camera/CameraFollow.cs`: 카메라 추적을 담당한다.
 - `Scripts/NPC/NpcController.cs`: NPC 이름과 대사를 보관한다.
@@ -69,7 +69,7 @@ Kenney PNG는 64×64 픽셀이므로 Sprite, Pixels Per Unit 64, Point Filter, �
 
 플레이어 부모에는 `Rigidbody2D`, `CircleCollider2D`, `PlayerController`, `InteractionSystem`, `PlayerVisualController`, `PlayerNameplate`를 둔다. `Visual` 자식에는 `SpriteRenderer`, `Animator`, `PlayerSpriteAnimator`를 둔다. 외형을 바꾸어도 이동 속도, 충돌 크기, NPC 상호작용, 카메라 추적 대상과 이름표는 바뀌지 않는다.
 
-`PlayerNameplate`는 실행 시 Player 공통 자식에 World Space Canvas와 직접 자식인 uGUI `Text`를 만들고 `GameSessionData.PlayerName`을 표시한다. 이름 앞뒤 공백을 제거한 결과가 비어 있을 때만 `플레이어`를 표시한다. 128×128 Sprite의 머리 위인 로컬 Y 1.16에 중앙 정렬하고, Canvas와 NameText 모두 중앙 고정 Anchor와 280×44 크기를 사용한다. World Space 배율은 0.0065이며 Canvas의 독립 정렬 순서는 1000으로 고정해 환경 Sprite보다 앞에 표시한다. 배경 Image 없이 흰 글자와 검은 Outline을 사용하며, 글꼴은 Unity 6의 `LegacyRuntime.ttf`이다.
+`PlayerNameplate`는 실행 시 Scene 루트에 전용 `PlayerNameOverlayCanvas`를 만들고 Screen Space Overlay 방식의 uGUI `Text`에 `GameSessionData.PlayerName`을 표시한다. 이름 앞뒤 공백을 제거한 결과가 비어 있을 때만 `플레이어`를 사용한다. `LateUpdate`에서 Player 위치에 월드 Y 1.15를 더한 뒤 `Camera.main.WorldToScreenPoint`로 화면 좌표를 계산한다. 따라서 Player와 Camera가 이동해도 머리 위를 따라가며 Camera 확대·축소와 무관하게 24px 글자 크기를 유지한다. NameText 크기는 240×36이고 배경 없이 흰 글자와 1px 검은 Outline을 사용한다. 글꼴은 Unity 6의 `LegacyRuntime.ttf`이다.
 
 `PlayerVisualController`의 `Visual Type`을 Inspector에서 `Male` 또는 `Female`로 선택할 수 있으며 기본값은 `Male`이다. 각 외형은 동일한 `Speed`, `MoveX`, `MoveY` Parameter와 `Idle/Walk` 4방향 State 구조를 가진 전용 Animator Controller를 사용한다. 캐릭터 생성 화면과 선택 저장은 이후 시스템에서 `SetVisual`을 호출하는 방식으로 연결할 수 있다.
 

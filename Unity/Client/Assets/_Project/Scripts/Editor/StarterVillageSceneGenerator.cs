@@ -368,7 +368,7 @@ namespace ProjectLimitless.EditorTools
             playerSource.AddComponent<CircleCollider2D>().radius = 0.5f;
             playerSource.AddComponent<PlayerController>();
             playerSource.AddComponent<InteractionSystem>().Configure(2f);
-            // 이름표는 외형 Visual이 아니라 공통 Player 부모에 둡니다. 런타임에는 단순한 World Space uGUI Text 자식을 만듭니다.
+            // 이름 데이터 추적은 공통 Player 부모가 맡고, 실제 글자는 런타임에 별도 Screen Space Overlay Canvas에 만듭니다.
             playerSource.AddComponent<PlayerNameplate>();
             ConfigurePlayerVisualHierarchy(playerSource, visualAssets);
             playerPrefab = PrefabUtility.SaveAsPrefabAsset(playerSource, PlayerPrefabPath);

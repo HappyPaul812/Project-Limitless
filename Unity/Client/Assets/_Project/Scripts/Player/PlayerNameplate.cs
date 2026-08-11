@@ -11,24 +11,38 @@ namespace ProjectLimitless.Player
     public sealed class PlayerNameplate : MonoBehaviour
     {
         private const string FallbackPlayerName = "플레이어";
+        private const string OverlayCanvasName = "PlayerNameOverlayCanvas";
 
-        // 128x128, PPU 128인 현재 캐릭터의 머리 바로 위쪽인 공통 위치입니다.
-        private static readonly Vector3 NameplatePosition = new Vector3(0f, 1.16f, 0f);
+        // 128x128, PPU 128인 현재 캐릭터의 머리 바로 위를 가리키는 월드 좌표 오프셋입니다.
+        private static readonly Vector3 NameWorldOffset = new Vector3(0f, 1.15f, 0f);
 
-        private GameObject nameplateRoot;
+        private GameObject overlayCanvasObject;
+        private RectTransform nameTextRect;
         private Text nameText;
+        private Camera worldCamera;
+        private bool ownsOverlayCanvas;
 
-        /// <summary>Player가 만들어질 때 현재 세션 이름으로 World Space 이름표를 준비합니다.</summary>
+        /// <summary>Player가 만들어질 때 월드 크기와 무관한 Screen Space Overlay 이름표를 준비합니다.</summary>
         private void Awake()
         {
-            EnsureNameplate();
+            RemoveLegacyWorldSpaceNameplate();
+            EnsureOverlayNameplate();
         }
 
         /// <summary>비활성화 후 다시 켜졌을 때 이름표가 사라진 예외 상황을 복구합니다.</summary>
         private void OnEnable()
         {
-            EnsureNameplate();
+            EnsureOverlayNameplate();
             RefreshName();
+        }
+
+        /// <summary>Player가 비활성화된 동안 화면에 이름만 남지 않도록 Text도 함께 숨깁니다.</summary>
+        private void OnDisable()
+        {
+            if (nameText != null)
+            {
+                nameText.gameObject.SetActive(false);
+            }
         }
 
         /// <summary>
@@ -37,8 +51,47 @@ namespace ProjectLimitless.Player
         /// </summary>
         private void Start()
         {
-            EnsureNameplate();
+            EnsureOverlayNameplate();
             RefreshName();
+        }
+
+        /// <summary>
+        /// Player와 Camera가 모두 이동한 뒤 머리 위 월드 좌표를 화면 좌표로 바꿉니다.
+        /// Overlay UI이므로 Camera 확대·축소가 바뀌어도 글자 자체의 픽셀 크기는 변하지 않습니다.
+        /// </summary>
+        private void LateUpdate()
+        {
+            if (nameTextRect == null)
+            {
+                EnsureOverlayNameplate();
+            }
+
+            if (worldCamera == null)
+            {
+                worldCamera = Camera.main;
+            }
+
+            if (worldCamera == null || nameTextRect == null)
+            {
+                return;
+            }
+
+            Vector3 screenPosition = worldCamera.WorldToScreenPoint(transform.position + NameWorldOffset);
+            bool isInFrontOfCamera = screenPosition.z > 0f;
+            nameText.gameObject.SetActive(isInFrontOfCamera);
+            if (isInFrontOfCamera)
+            {
+                nameTextRect.position = screenPosition;
+            }
+        }
+
+        /// <summary>이 Player가 만든 전용 Overlay Canvas를 Scene 종료 시 함께 정리합니다.</summary>
+        private void OnDestroy()
+        {
+            if (ownsOverlayCanvas && overlayCanvasObject != null)
+            {
+                Destroy(overlayCanvasObject);
+            }
         }
 
         /// <summary>GameSessionData의 이름을 읽고, 비어 있으면 안전한 기본 이름을 반환합니다.</summary>
@@ -48,75 +101,69 @@ namespace ProjectLimitless.Player
             return string.IsNullOrEmpty(playerName) ? FallbackPlayerName : playerName;
         }
 
-        /// <summary>Player의 공통 자식으로 배경과 글자가 들어 있는 World Space Canvas를 만듭니다.</summary>
-        private void EnsureNameplate()
+        /// <summary>Scene 루트에 이름표 전용 Screen Space Overlay Canvas와 uGUI Text를 만듭니다.</summary>
+        private void EnsureOverlayNameplate()
         {
-            if (nameplateRoot == null)
+            if (overlayCanvasObject == null)
             {
-                Transform existingNameplate = transform.Find("PlayerNameplate");
-                nameplateRoot = existingNameplate != null ? existingNameplate.gameObject : null;
+                overlayCanvasObject = GameObject.Find(OverlayCanvasName);
             }
 
-            if (nameplateRoot != null)
+            if (overlayCanvasObject == null)
             {
-                nameplateRoot.SetActive(true);
-                nameText = nameplateRoot.GetComponentInChildren<Text>(true);
-                return;
+                overlayCanvasObject = new GameObject(OverlayCanvasName, typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
+                ownsOverlayCanvas = true;
             }
 
-            nameplateRoot = new GameObject("PlayerNameplate", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler));
-            nameplateRoot.transform.SetParent(transform, false);
-            nameplateRoot.transform.localPosition = NameplatePosition;
-            nameplateRoot.layer = gameObject.layer;
-            // RectTransform과 함께 조정한 배율입니다. 긴 이름 공간은 확보하면서 캐릭터보다 과도하게 커지지 않습니다.
-            nameplateRoot.transform.localScale = Vector3.one * 0.0065f;
-
-            Canvas canvas = nameplateRoot.GetComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
-            // 독립 World Space Canvas의 정렬을 강제로 사용해 Sprite와 환경 오브젝트보다 항상 앞에 표시합니다.
-            canvas.overrideSorting = true;
-            canvas.sortingLayerName = "Default";
-            canvas.sortingOrder = 1000;
+            overlayCanvasObject.SetActive(true);
+            Canvas canvas = overlayCanvasObject.GetComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = 5;
             canvas.enabled = true;
 
-            CanvasScaler scaler = nameplateRoot.GetComponent<CanvasScaler>();
-            scaler.dynamicPixelsPerUnit = 100f;
+            CanvasScaler scaler = overlayCanvasObject.GetComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+            scaler.scaleFactor = 1f;
 
-            RectTransform canvasRect = nameplateRoot.GetComponent<RectTransform>();
-            // Canvas도 고정된 중앙 기준 크기를 가져야 자식 Text의 좌표 기준이 0이 되지 않습니다.
-            canvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            canvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            canvasRect.pivot = new Vector2(0.5f, 0.5f);
-            canvasRect.sizeDelta = new Vector2(280f, 44f);
+            Transform existingText = overlayCanvasObject.transform.Find("NameText");
+            if (existingText == null)
+            {
+                GameObject textObject = new GameObject("NameText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text), typeof(Outline));
+                textObject.transform.SetParent(overlayCanvasObject.transform, false);
+                existingText = textObject.transform;
+            }
 
-            // 배경 Image가 글자 렌더링을 방해할 가능성을 없애기 위해 이름은 Canvas의 직접 자식으로 둡니다.
-            GameObject textObject = new GameObject("NameText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text), typeof(Outline));
-            textObject.transform.SetParent(nameplateRoot.transform, false);
-            nameText = textObject.GetComponent<Text>();
+            nameTextRect = existingText.GetComponent<RectTransform>();
+            nameText = existingText.GetComponent<Text>();
             // Unity 6에서 Arial.ttf 대신 프로젝트의 기존 한글 대응 기본 폰트를 사용합니다.
             nameText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            nameText.fontSize = 28;
+            nameText.fontSize = 24;
             nameText.resizeTextForBestFit = false;
             nameText.horizontalOverflow = HorizontalWrapMode.Overflow;
             nameText.verticalOverflow = VerticalWrapMode.Overflow;
             nameText.color = Color.white;
             nameText.alignment = TextAnchor.MiddleCenter;
             nameText.raycastTarget = false;
-            Outline outline = textObject.GetComponent<Outline>();
+            Outline outline = existingText.GetComponent<Outline>();
             outline.effectColor = new Color(0f, 0f, 0f, 0.95f);
-            outline.effectDistance = new Vector2(2f, -2f);
-            RectTransform textRect = textObject.GetComponent<RectTransform>();
-            // Stretch를 사용하면 sizeDelta가 Left/Right/Top/Bottom 여백으로 해석됩니다.
-            // 고정 중앙 Anchor를 먼저 지정한 뒤 실제 폭과 높이를 명시해 Inspector에서도 280×44로 보이게 합니다.
-            textRect.anchorMin = new Vector2(0.5f, 0.5f);
-            textRect.anchorMax = new Vector2(0.5f, 0.5f);
-            textRect.pivot = new Vector2(0.5f, 0.5f);
-            textRect.anchoredPosition = Vector2.zero;
-            textRect.sizeDelta = new Vector2(280f, 44f);
-            textRect.localScale = Vector3.one;
-            // UI는 뒤에 생성된 sibling이 위에 그려집니다. 이름을 마지막에 두어 다른 요소가 덮지 못하게 합니다.
-            textRect.SetAsLastSibling();
+            outline.effectDistance = new Vector2(1f, -1f);
+            nameTextRect.anchorMin = new Vector2(0.5f, 0.5f);
+            nameTextRect.anchorMax = new Vector2(0.5f, 0.5f);
+            nameTextRect.pivot = new Vector2(0.5f, 0.5f);
+            nameTextRect.sizeDelta = new Vector2(240f, 36f);
+            nameTextRect.localScale = Vector3.one;
+            nameTextRect.SetAsLastSibling();
             RefreshName();
+        }
+
+        /// <summary>이전 버전이 Player 자식으로 만들던 World Space Canvas가 남아 있으면 중복 표시 전에 제거합니다.</summary>
+        private void RemoveLegacyWorldSpaceNameplate()
+        {
+            Transform legacyNameplate = transform.Find("PlayerNameplate");
+            if (legacyNameplate != null)
+            {
+                Destroy(legacyNameplate.gameObject);
+            }
         }
 
         /// <summary>현재 GameSessionData.PlayerName을 Text에 넣고, 이름이 비었을 때만 기본값을 사용합니다.</summary>
