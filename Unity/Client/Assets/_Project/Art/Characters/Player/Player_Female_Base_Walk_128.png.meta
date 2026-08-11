@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 08b87531155d89246b5290f0c8dc08c5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4202641690109842950
+    second: Player_Female_Base_Walk_128_0
+  - first:
+      213: 8611828421756873458
+    second: Player_Female_Base_Walk_128_1
+  - first:
+      213: -840070343257269168
+    second: Player_Female_Base_Walk_128_2
+  - first:
+      213: 8512983397342075672
+    second: Player_Female_Base_Walk_128_3
+  - first:
+      213: 3648937152405422612
+    second: Player_Female_Base_Walk_128_4
+  - first:
+      213: 4248042101749301371
+    second: Player_Female_Base_Walk_128_5
+  - first:
+      213: 7323656188231780458
+    second: Player_Female_Base_Walk_128_6
+  - first:
+      213: -1455506636225540441
+    second: Player_Female_Base_Walk_128_7
+  - first:
+      213: 5841432975076295016
+    second: Player_Female_Base_Walk_128_8
+  - first:
+      213: 7100799259560503365
+    second: Player_Female_Base_Walk_128_9
+  - first:
+      213: 783254784627019884
+    second: Player_Female_Base_Walk_128_10
+  - first:
+      213: 7371365696269157146
+    second: Player_Female_Base_Walk_128_11
+  - first:
+      213: -2900598965721749520
+    second: Player_Female_Base_Walk_128_12
+  - first:
+      213: 2016619724991255899
+    second: Player_Female_Base_Walk_128_13
+  - first:
+      213: -5145284388544102691
+    second: Player_Female_Base_Walk_128_14
+  - first:
+      213: -1252678101895499988
+    second: Player_Female_Base_Walk_128_15
+  - first:
+      213: 7365505670417025315
+    second: Player_Female_Base_Walk_128_16
+  - first:
+      213: 7661901985421153993
+    second: Player_Female_Base_Walk_128_17
+  - first:
+      213: 2261238916106673880
+    second: Player_Female_Base_Walk_128_18
+  - first:
+      213: 2863789575679256235
+    second: Player_Female_Base_Walk_128_19
+  - first:
+      213: -7319115615719784570
+    second: Player_Female_Base_Walk_128_20
+  - first:
+      213: -8018416372624417040
+    second: Player_Female_Base_Walk_128_21
+  - first:
+      213: -7738935759537696061
+    second: Player_Female_Base_Walk_128_22
+  - first:
+      213: -17545140488603777
+    second: Player_Female_Base_Walk_128_23
+  - first:
+      213: -5821894448312459960
+    second: Player_Female_Base_Walk_128_24
+  - first:
+      213: 3741595660220953103
+    second: Player_Female_Base_Walk_128_25
+  - first:
+      213: -6872259911539804503
+    second: Player_Female_Base_Walk_128_26
+  - first:
+      213: -4296220121435519011
+    second: Player_Female_Base_Walk_128_27
+  - first:
+      213: -1235615539171023677
+    second: Player_Female_Base_Walk_128_28
+  - first:
+      213: -7228189817901370561
+    second: Player_Female_Base_Walk_128_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af961ce36a73da5c0800000000000000
+      internalID: -4202641690109842950
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa6e69725c538770800000000000000
+      internalID: 8611828421756873458
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c5fc349787754f0800000000000000
+      internalID: -840070343257269168
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b5f51db41342670800000000000000
+      internalID: 8512983397342075672
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412c9d8d101a3a230800000000000000
+      internalID: 3648937152405422612
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b70cba1d8c314fa30800000000000000
+      internalID: 4248042101749301371
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_6
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6885a4308ad2a560800000000000000
+      internalID: 7323656188231780458
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae8d8b0d600dcbe0800000000000000
+      internalID: -1455506636225540441
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8610da27750f01150800000000000000
+      internalID: 5841432975076295016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548e57f0e4b1b8260800000000000000
+      internalID: 7100799259560503365
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c609156a31eaeda00800000000000000
+      internalID: 783254784627019884
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a138f9bab0a5c4660800000000000000
+      internalID: 7371365696269157146
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f72a44db900fb7d0800000000000000
+      internalID: -2900598965721749520
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b55562394f87cfb10800000000000000
+      internalID: 2016619724991255899
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde37780c174898b0800000000000000
+      internalID: -5145284388544102691
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Base_Walk_128_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fab9e37e79d9ee0800000000000000
+      internalID: -1252678101895499988
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: dd9b063208765f74c8a94dfd9ba631ec
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Player_Female_Base_Walk_128_0: -4202641690109842950
+      Player_Female_Base_Walk_128_1: 8611828421756873458
+      Player_Female_Base_Walk_128_10: 783254784627019884
+      Player_Female_Base_Walk_128_11: 7371365696269157146
+      Player_Female_Base_Walk_128_12: -2900598965721749520
+      Player_Female_Base_Walk_128_13: 2016619724991255899
+      Player_Female_Base_Walk_128_14: -5145284388544102691
+      Player_Female_Base_Walk_128_15: -1252678101895499988
+      Player_Female_Base_Walk_128_2: -840070343257269168
+      Player_Female_Base_Walk_128_3: 8512983397342075672
+      Player_Female_Base_Walk_128_4: 3648937152405422612
+      Player_Female_Base_Walk_128_5: 4248042101749301371
+      Player_Female_Base_Walk_128_6: 7323656188231780458
+      Player_Female_Base_Walk_128_7: -1455506636225540441
+      Player_Female_Base_Walk_128_8: 5841432975076295016
+      Player_Female_Base_Walk_128_9: 7100799259560503365
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

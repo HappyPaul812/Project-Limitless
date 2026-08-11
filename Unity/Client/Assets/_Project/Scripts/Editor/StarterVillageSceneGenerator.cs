@@ -28,9 +28,11 @@ namespace ProjectLimitless.EditorTools
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
-        private const string Player128SpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk_128.png";
+        private const string MalePlayerSpritePath = "Assets/_Project/Art/Characters/Player/Player_Male_Base_Walk_128.png";
+        private const string FemalePlayerSpritePath = "Assets/_Project/Art/Characters/Player/Player_Female_Base_Walk_128.png";
         private const string PlayerAnimationFolder = "Assets/_Project/Animations/Player";
-        private const string PlayerAnimatorPath = PlayerAnimationFolder + "/Player.controller";
+        private const string MalePlayerAnimatorPath = PlayerAnimationFolder + "/Player_Male.controller";
+        private const string FemalePlayerAnimatorPath = PlayerAnimationFolder + "/Player_Female.controller";
         private const string BasicHandDrawnRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
         private const string EssentialRpgRoot = "Assets/ThirdParty/Xariami/EssentialRPG/";
         private const string GrassTilesPath = BasicHandDrawnRoot + "tiles/tiles_grass.png";
@@ -73,36 +75,26 @@ namespace ProjectLimitless.EditorTools
             }
         }
 
-        /// <summary>기존 플레이어 Prefab의 기능은 유지하고 128×128 Sprite와 Animator만 연결합니다.</summary>
-        [MenuItem("Project-Limitless/Milestone 01/Apply Player 128 Visuals")]
-        private static void ApplyPlayer128Visuals()
+        /// <summary>기존 플레이어의 게임 기능은 유지하고 Male/Female Visual 자식과 전용 Animator를 연결합니다.</summary>
+        [MenuItem("Project-Limitless/Milestone 01/Apply Male-Female Player Visuals")]
+        public static void ApplyMaleFemalePlayerVisuals()
         {
             // Prefab 내용을 임시 편집 공간에 열고 finally에서 반드시 닫습니다.
             GameObject playerPrefab = PrefabUtility.LoadPrefabContents(PlayerPrefabPath);
             try
             {
-                Sprite[][] directionalSprites = PreparePlayerSpriteAssets();
-                SpriteRenderer renderer = playerPrefab.GetComponent<SpriteRenderer>();
-                Animator animator = playerPrefab.GetComponent<Animator>();
-                if (renderer == null || animator == null || playerPrefab.GetComponent<PlayerController>() == null ||
-                    playerPrefab.GetComponent<Rigidbody2D>() == null || playerPrefab.GetComponent<CircleCollider2D>() == null ||
+                PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
+                if (playerPrefab.GetComponent<PlayerController>() == null || playerPrefab.GetComponent<Rigidbody2D>() == null ||
+                    playerPrefab.GetComponent<CircleCollider2D>() == null ||
                     playerPrefab.GetComponent<InteractionSystem>() == null)
                 {
                     throw new InvalidOperationException("Player Prefab의 기존 이동 또는 상호작용 Component를 찾지 못했습니다.");
                 }
 
-                PlaceholderVisual placeholder = playerPrefab.GetComponent<PlaceholderVisual>();
-                if (placeholder != null)
-                {
-                    UnityObject.DestroyImmediate(placeholder);
-                }
-
-                renderer.sprite = directionalSprites[0][0];
-                renderer.sortingOrder = 5;
-                animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(PlayerAnimatorPath);
+                ConfigurePlayerVisualHierarchy(playerPrefab, visualAssets);
                 PrefabUtility.SaveAsPrefabAsset(playerPrefab, PlayerPrefabPath);
                 AssetDatabase.SaveAssets();
-                Debug.Log("Player 128x128 Sprite와 Animator를 Player Prefab에 적용했습니다.");
+                Debug.Log("Male/Female 128x128 Visual과 전용 Animator를 Player Prefab에 적용했습니다. 기본값은 Male입니다.");
             }
             finally
             {
@@ -256,21 +248,16 @@ namespace ProjectLimitless.EditorTools
         /// <summary>필요한 컴포넌트를 조합해 플레이어와 NPC의 재사용 가능한 Prefab을 만듭니다.</summary>
         private static void CreatePlaceholderPrefabs(out GameObject playerPrefab, out GameObject npcPrefab)
         {
-            Sprite[][] directionalSprites = PreparePlayerSpriteAssets();
-            GameObject playerSource = new GameObject("PlayerPlaceholder", typeof(SpriteRenderer));
-            SpriteRenderer playerRenderer = playerSource.GetComponent<SpriteRenderer>();
-            playerRenderer.sprite = directionalSprites[0][0];
-            playerRenderer.sortingOrder = 5;
-            Animator animator = playerSource.AddComponent<Animator>();
-            animator.runtimeAnimatorController = AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(PlayerAnimatorPath);
+            PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
+            GameObject playerSource = new GameObject("PlayerPlaceholder");
             // Rigidbody2D와 Collider2D는 플레이어의 2D 물리 이동과 벽 충돌 범위를 담당합니다.
             Rigidbody2D body = playerSource.AddComponent<Rigidbody2D>();
             body.gravityScale = 0f;
             body.freezeRotation = true;
             playerSource.AddComponent<CircleCollider2D>().radius = 0.5f;
             playerSource.AddComponent<PlayerController>();
-            playerSource.AddComponent<PlayerSpriteAnimator>();
             playerSource.AddComponent<InteractionSystem>().Configure(2f);
+            ConfigurePlayerVisualHierarchy(playerSource, visualAssets);
             playerPrefab = PrefabUtility.SaveAsPrefabAsset(playerSource, PlayerPrefabPath);
             UnityObject.DestroyImmediate(playerSource);
 
@@ -289,19 +276,32 @@ namespace ProjectLimitless.EditorTools
         /// 4×4 Sprite 시트가 올바르게 잘렸는지 검사하고 방향별 배열, Animation Clip, Animator를 준비합니다.
         /// Sprite Slice는 한 장의 큰 이미지에서 각 애니메이션 프레임의 사각형을 나누는 작업입니다.
         /// </summary>
-        private static Sprite[][] PreparePlayerSpriteAssets()
+        private static PlayerVisualAssets PrepareAllPlayerVisualAssets()
         {
             EnsureFolder("Assets/_Project/Animations");
             EnsureFolder(PlayerAnimationFolder);
 
-            TextureImporter importer = AssetImporter.GetAtPath(Player128SpritePath) as TextureImporter;
+            Sprite[][] maleSprites = PreparePlayerSpriteAssets(MalePlayerSpritePath, "Male");
+            Sprite[][] femaleSprites = PreparePlayerSpriteAssets(FemalePlayerSpritePath, "Female");
+            return new PlayerVisualAssets(
+                maleSprites[0][0],
+                femaleSprites[0][0],
+                AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(MalePlayerAnimatorPath),
+                AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>(FemalePlayerAnimatorPath));
+        }
+
+        /// <summary>한 외형의 4×4 Sprite 시트를 검증하고 전용 Clip과 Animator Controller를 준비합니다.</summary>
+        private static Sprite[][] PreparePlayerSpriteAssets(string spritePath, string visualName)
+        {
+
+            TextureImporter importer = AssetImporter.GetAtPath(spritePath) as TextureImporter;
             if (importer == null || importer.spriteImportMode != SpriteImportMode.Multiple || importer.spritePixelsPerUnit != 128)
             {
-                throw new InvalidOperationException("Player_Male_Base_Walk_128.png는 Multiple Sprite, PPU 128로 Import되어야 합니다.");
+                throw new InvalidOperationException($"{spritePath}는 Multiple Sprite, PPU 128로 Import되어야 합니다.");
             }
 
             string[] directions = { "Down", "Left", "Right", "Up" };
-            UnityObject[] allAssets = AssetDatabase.LoadAllAssetsAtPath(Player128SpritePath);
+            UnityObject[] allAssets = AssetDatabase.LoadAllAssetsAtPath(spritePath);
             Sprite[] importedSprites = Array.ConvertAll(
                 Array.FindAll(allAssets, asset => asset is Sprite),
                 asset => (Sprite)asset);
@@ -313,7 +313,7 @@ namespace ProjectLimitless.EditorTools
             });
             if (importedSprites.Length != 16)
             {
-                throw new InvalidOperationException($"Player_Male_Base_Walk_128.png의 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
+                throw new InvalidOperationException($"{spritePath}의 Sprite 수가 16개가 아닙니다: {importedSprites.Length}");
             }
 
             for (int index = 0; index < importedSprites.Length; index++)
@@ -325,7 +325,7 @@ namespace ProjectLimitless.EditorTools
                 if (rect.width != 128f || rect.height != 128f || rect.x != expectedX || rect.y != expectedY ||
                     importedSprites[index].pivot != new Vector2(64f, 0f))
                 {
-                    throw new InvalidOperationException($"Player_Male_Base_Walk_128.png의 {index}번 Sprite 설정이 올바르지 않습니다. 128x128 Grid 16개와 Bottom Center Pivot을 확인하세요.");
+                    throw new InvalidOperationException($"{spritePath}의 {index}번 Sprite 설정이 올바르지 않습니다. 128x128 Grid 16개와 Bottom Center Pivot을 확인하세요.");
                 }
             }
 
@@ -336,18 +336,18 @@ namespace ProjectLimitless.EditorTools
                 Array.Copy(importedSprites, row * 4, result[row], 0, 4);
             }
 
-            CreatePlayerAnimationClips(directions, result);
-            CreatePlayerAnimatorController(directions);
+            CreatePlayerAnimationClips(visualName, directions, result);
+            CreatePlayerAnimatorController(visualName, directions);
             return result;
         }
 
         /// <summary>각 방향에 정지 1프레임과 반복 걷기 4프레임 Animation Clip을 만듭니다.</summary>
-        private static void CreatePlayerAnimationClips(string[] directions, Sprite[][] directionalSprites)
+        private static void CreatePlayerAnimationClips(string visualName, string[] directions, Sprite[][] directionalSprites)
         {
             for (int directionIndex = 0; directionIndex < directions.Length; directionIndex++)
             {
-                CreatePlayerClip(GetPlayer128ClipName("Idle", directions[directionIndex]), new[] { directionalSprites[directionIndex][0] }, false);
-                CreatePlayerClip(GetPlayer128ClipName("Walk", directions[directionIndex]), directionalSprites[directionIndex], true);
+                CreatePlayerClip(GetPlayer128ClipName(visualName, "Idle", directions[directionIndex]), new[] { directionalSprites[directionIndex][0] }, false);
+                CreatePlayerClip(GetPlayer128ClipName(visualName, "Walk", directions[directionIndex]), directionalSprites[directionIndex], true);
             }
         }
 
@@ -385,12 +385,13 @@ namespace ProjectLimitless.EditorTools
         }
 
         /// <summary>Animator Controller에 이동 매개변수와 4방향 대기·걷기 상태를 다시 구성합니다.</summary>
-        private static void CreatePlayerAnimatorController(string[] directions)
+        private static void CreatePlayerAnimatorController(string visualName, string[] directions)
         {
-            AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(PlayerAnimatorPath);
+            string animatorPath = visualName == "Female" ? FemalePlayerAnimatorPath : MalePlayerAnimatorPath;
+            AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(animatorPath);
             if (controller == null)
             {
-                controller = AnimatorController.CreateAnimatorControllerAtPath(PlayerAnimatorPath);
+                controller = AnimatorController.CreateAnimatorControllerAtPath(animatorPath);
             }
 
             controller.parameters = new[]
@@ -412,7 +413,7 @@ namespace ProjectLimitless.EditorTools
                 foreach (string action in new[] { "Idle", "Walk" })
                 {
                     AnimatorState state = stateMachine.AddState($"{action}_{direction}");
-                    state.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>($"{PlayerAnimationFolder}/{GetPlayer128ClipName(action, direction)}.anim");
+                    state.motion = AssetDatabase.LoadAssetAtPath<AnimationClip>($"{PlayerAnimationFolder}/{GetPlayer128ClipName(visualName, action, direction)}.anim");
                     if (action == "Idle" && direction == "Down")
                     {
                         defaultState = state;
@@ -425,9 +426,101 @@ namespace ProjectLimitless.EditorTools
         }
 
         /// <summary>동작과 방향을 프로젝트의 Animation Clip 파일명 규칙으로 조합합니다.</summary>
-        private static string GetPlayer128ClipName(string action, string direction)
+        private static string GetPlayer128ClipName(string visualName, string action, string direction)
         {
-            return $"Player_Male_128_{action}_{direction}";
+            return $"Player_{visualName}_128_{action}_{direction}";
+        }
+
+        /// <summary>
+        /// 물리·입력·상호작용 Component는 Player 부모에 보존하고, 그림과 Animator만 Visual 자식으로 옮깁니다.
+        /// 이미 적용된 Prefab에 다시 실행해도 같은 Visual 자식을 재사용하므로 중복 구조를 만들지 않습니다.
+        /// </summary>
+        private static void ConfigurePlayerVisualHierarchy(GameObject player, PlayerVisualAssets assets)
+        {
+            PlayerSpriteAnimator rootSpriteAnimator = player.GetComponent<PlayerSpriteAnimator>();
+            if (rootSpriteAnimator != null)
+            {
+                UnityObject.DestroyImmediate(rootSpriteAnimator);
+            }
+
+            Animator rootAnimator = player.GetComponent<Animator>();
+            if (rootAnimator != null)
+            {
+                UnityObject.DestroyImmediate(rootAnimator);
+            }
+
+            SpriteRenderer rootRenderer = player.GetComponent<SpriteRenderer>();
+            if (rootRenderer != null)
+            {
+                UnityObject.DestroyImmediate(rootRenderer);
+            }
+
+            PlaceholderVisual placeholder = player.GetComponent<PlaceholderVisual>();
+            if (placeholder != null)
+            {
+                UnityObject.DestroyImmediate(placeholder);
+            }
+
+            Transform visualTransform = player.transform.Find("Visual");
+            GameObject visual = visualTransform != null ? visualTransform.gameObject : new GameObject("Visual");
+            visual.transform.SetParent(player.transform, false);
+            visual.transform.localPosition = Vector3.zero;
+            visual.transform.localRotation = Quaternion.identity;
+            visual.transform.localScale = Vector3.one;
+
+            SpriteRenderer renderer = visual.GetComponent<SpriteRenderer>();
+            if (renderer == null)
+            {
+                renderer = visual.AddComponent<SpriteRenderer>();
+            }
+
+            renderer.sortingOrder = 5;
+            Animator animator = visual.GetComponent<Animator>();
+            if (animator == null)
+            {
+                animator = visual.AddComponent<Animator>();
+            }
+
+            PlayerSpriteAnimator spriteAnimator = visual.GetComponent<PlayerSpriteAnimator>();
+            if (spriteAnimator == null)
+            {
+                visual.AddComponent<PlayerSpriteAnimator>();
+            }
+
+            PlayerVisualController visualController = player.GetComponent<PlayerVisualController>();
+            if (visualController == null)
+            {
+                visualController = player.AddComponent<PlayerVisualController>();
+            }
+
+            visualController.Configure(
+                renderer,
+                animator,
+                assets.MaleAnimatorController,
+                assets.FemaleAnimatorController,
+                assets.MaleDefaultSprite,
+                assets.FemaleDefaultSprite);
+        }
+
+        /// <summary>두 외형의 기본 Sprite와 Animator Controller를 생성 단계 사이에서 묶어 전달합니다.</summary>
+        private readonly struct PlayerVisualAssets
+        {
+            public PlayerVisualAssets(
+                Sprite maleDefaultSprite,
+                Sprite femaleDefaultSprite,
+                RuntimeAnimatorController maleAnimatorController,
+                RuntimeAnimatorController femaleAnimatorController)
+            {
+                MaleDefaultSprite = maleDefaultSprite;
+                FemaleDefaultSprite = femaleDefaultSprite;
+                MaleAnimatorController = maleAnimatorController;
+                FemaleAnimatorController = femaleAnimatorController;
+            }
+
+            public Sprite MaleDefaultSprite { get; }
+            public Sprite FemaleDefaultSprite { get; }
+            public RuntimeAnimatorController MaleAnimatorController { get; }
+            public RuntimeAnimatorController FemaleAnimatorController { get; }
         }
 
         /// <summary>2D Orthographic 카메라와 소리 수신기, 플레이어 추적 컴포넌트를 만듭니다.</summary>

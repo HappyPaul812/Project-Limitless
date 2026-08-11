@@ -10,6 +10,7 @@ Unity 실행 시 첫 번째 마을에서 플레이어를 자유롭게 이동시�
 - Input System 기반 키보드(WASD/방향키) 및 게임패드 왼쪽 스틱 8방향 이동
 - Rigidbody2D 기반 이동과 대각선 입력 정규화
 - Inspector에서 변경 가능한 플레이어 이동 속도
+- 게임플레이 Component와 분리된 128×128 Male/Female Player Visual 선택
 - 부드러운 2D Orthographic 카메라 추적
 - 마을 외곽, 건물, 우물, 상자의 Collider2D
 - 고정 NPC 한 명과 시간 제한 없는 대화 상호작용
@@ -24,7 +25,7 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Assets/_Project/Scenes/Bootstrap.unity`: `BootstrapLoader`로 `World_StarterVillage`를 로드한다.
 - `Assets/_Project/Scenes/World_StarterVillage.unity`: 마을 바닥, 경계, 건물, 장애물, 플레이어, NPC, 카메라, 대화 UI를 포함한다.
 
-생성 도구는 플레이어와 NPC의 `SpriteRenderer`, `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다.
+생성 도구는 플레이어와 NPC의 `Collider2D`, 관련 Controller를 각각 `Assets/_Project/Prefabs/PlayerPlaceholder.prefab`, `Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab`으로 만든 뒤 월드 Scene에 배치한다. 플레이어의 `SpriteRenderer`와 `Animator`는 게임플레이 Component와 분리된 `Visual` 자식에 둔다.
 
 `Project-Limitless/Milestone 01/Generate Scenes`는 기존 Milestone 01 Scene/Prefab이 있으면 `Assets/_Project/Backup/Milestone01/<timestamp>/`에 먼저 복사해 확인한 뒤 새로 생성한다. 저장되지 않은 해당 Scene이 열려 있으면 작업을 중단하고 저장을 요청한다.
 
@@ -33,6 +34,8 @@ Unity Editor 메뉴 생성 후 다음 Scene을 사용한다.
 - `Scripts/Core/BootstrapLoader.cs`: 시작 Scene에서 월드를 로드한다.
 - `Scripts/Core/PlaceholderVisual.cs`: 실제 Sprite가 없을 때 SpriteRenderer에 단색 placeholder를 제공한다.
 - `Scripts/Player/PlayerController.cs`: Input System과 Rigidbody2D 이동을 담당한다.
+- `Scripts/Player/PlayerVisualController.cs`: 이동 로직과 독립적으로 Male/Female Sprite와 Animator를 선택한다.
+- `Scripts/Player/PlayerSpriteAnimator.cs`: 선택된 Visual에서 공통 이동 방향에 맞는 애니메이션을 재생한다.
 - `Scripts/Camera/CameraFollow.cs`: 카메라 추적을 담당한다.
 - `Scripts/NPC/NpcController.cs`: NPC 이름과 대사를 보관한다.
 - `Scripts/NPC/InteractionSystem.cs`: 가장 가까운 현재 상호작용 대상과의 상호작용을 담당한다.
@@ -56,9 +59,13 @@ Kenney PNG는 64×64 픽셀이므로 Sprite, Pixels Per Unit 64, Point Filter, �
 
 독립적인 돌 타일은 이 패키지의 실제 PNG 목록에서 확인하지 못해 배치하지 않았다.
 
-## Placeholder 사용 현황
+## Player Visual 구조
 
-플레이어와 NPC는 `PlaceholderVisual`의 단색 SpriteRenderer를 유지한다. 실제 Sprite를 준비하면 각 SpriteRenderer의 Sprite를 Inspector에서 지정할 수 있으며, 비어 있을 때만 placeholder가 생성된다. 텍스트 레이블을 함께 표시하여 색상만으로 대상을 구분하지 않는다.
+플레이어 부모에는 `Rigidbody2D`, `CircleCollider2D`, `PlayerController`, `InteractionSystem`, `PlayerVisualController`를 둔다. `Visual` 자식에는 `SpriteRenderer`, `Animator`, `PlayerSpriteAnimator`를 둔다. 외형을 바꾸어도 이동 속도, 충돌 크기, NPC 상호작용, 카메라 추적 대상은 바뀌지 않는다.
+
+`PlayerVisualController`의 `Visual Type`을 Inspector에서 `Male` 또는 `Female`로 선택할 수 있으며 기본값은 `Male`이다. 각 외형은 동일한 `Speed`, `MoveX`, `MoveY` Parameter와 `Idle/Walk` 4방향 State 구조를 가진 전용 Animator Controller를 사용한다. 캐릭터 생성 화면과 선택 저장은 이후 시스템에서 `SetVisual`을 호출하는 방식으로 연결할 수 있다.
+
+NPC는 실제 Sprite가 준비되기 전까지 `PlaceholderVisual`의 단색 SpriteRenderer와 글자 레이블을 유지한다. 텍스트 레이블을 함께 표시하여 색상만으로 대상을 구분하지 않는다.
 
 NPC 상호작용 가능 여부는 색상이나 NPC의 정면 방향에 의존하지 않는다. 플레이어가 어느 방향에서든 `interactionRadius` 안에 들어오면 `[E] 대화하기` UI Text가 표시된다. 여러 NPC가 범위에 있으면 가장 가까운 NPC만 현재 대상으로 표시한다.
 
