@@ -69,7 +69,7 @@ Kenney PNG는 64×64 픽셀이므로 Sprite, Pixels Per Unit 64, Point Filter, �
 
 플레이어 부모에는 `Rigidbody2D`, `CircleCollider2D`, `PlayerController`, `InteractionSystem`, `PlayerVisualController`, `PlayerNameplate`를 둔다. `Visual` 자식에는 `SpriteRenderer`, `Animator`, `PlayerSpriteAnimator`를 둔다. 외형을 바꾸어도 이동 속도, 충돌 크기, NPC 상호작용, 카메라 추적 대상과 이름표는 바뀌지 않는다.
 
-`PlayerNameplate`는 실행 시 Player 공통 자식에 World Space Canvas를 만들고 `GameSessionData.PlayerName`을 표시한다. 이름이 비어 있는 예외 상황에는 `플레이어`를 표시한다. 128×128 Sprite의 머리 위인 로컬 Y 1.2에 중앙 정렬하며, 긴 이름은 글자 크기를 자동으로 줄인다. 어두운 반투명 배경과 파란 테두리·그림자를 사용해 NPC 상호작용 안내와 구분하면서 배경 위에서도 읽을 수 있게 한다. 글꼴은 Unity 6의 `LegacyRuntime.ttf`를 사용한다.
+`PlayerNameplate`는 실행 시 Player 공통 자식에 World Space Canvas를 만들고 `GameSessionData.PlayerName`을 표시한다. 이름이 비어 있는 예외 상황에는 `플레이어`를 표시한다. 128×128 Sprite의 머리 위인 로컬 Y 1.2에 중앙 정렬하며, 긴 이름은 글자 크기를 자동으로 줄인다. World Space 배율은 0.01이고 Canvas의 독립 정렬 순서는 1000으로 고정해 환경 Sprite보다 앞에 표시한다. 어두운 반투명 배경과 파란 테두리·그림자를 사용해 NPC 상호작용 안내와 구분하면서 배경 위에서도 읽을 수 있게 한다. 글꼴은 Unity 6의 `LegacyRuntime.ttf`를 사용한다.
 
 `PlayerVisualController`의 `Visual Type`을 Inspector에서 `Male` 또는 `Female`로 선택할 수 있으며 기본값은 `Male`이다. 각 외형은 동일한 `Speed`, `MoveX`, `MoveY` Parameter와 `Idle/Walk` 4방향 State 구조를 가진 전용 Animator Controller를 사용한다. 캐릭터 생성 화면과 선택 저장은 이후 시스템에서 `SetVisual`을 호출하는 방식으로 연결할 수 있다.
 
