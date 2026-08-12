@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467f4b879b1e4c6ba476865f0a587dd9, type: 3}
+  m_Name: 01_Guardian
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.JobDefinition
+  jobId: guardian
+  displayName: 수호자
+  roleName: 탱커
+  shortDescription: 적의 공격을 받아내고 아군을 보호합니다.
+  detailedDescription: 방어와 보호를 중심으로 적의 움직임을 통제합니다.
+  primaryStats: [0, 5]
+  keywords: [방어, 보호, 적 통제]
+  icon: {fileID: 0}
+  futureStatBonuses: []
+  futurePassive:
+  futureStartingSkills: []

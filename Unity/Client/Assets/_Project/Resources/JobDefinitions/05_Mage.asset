@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467f4b879b1e4c6ba476865f0a587dd9, type: 3}
+  m_Name: 05_Mage
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.JobDefinition
+  jobId: mage
+  displayName: 마도사
+  roleName: 마법 딜러 / 전장 제어
+  shortDescription: 마력을 이용해 적에게 피해를 주고 전장의 흐름을 제어합니다.
+  detailedDescription: 광역 마법과 제어 효과로 전장의 흐름을 바꿉니다.
+  primaryStats: [4, 3]
+  keywords: [마법, 광역, 제어]
+  icon: {fileID: 0}
+  futureStatBonuses: []
+  futurePassive:
+  futureStartingSkills: []

@@ -195,11 +195,21 @@ namespace ProjectLimitless.UI
         {
             previousButton = TextButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .105f)); nextButton = TextButton(parent, "NextButton", "다음", font, new Vector2(.66f, .105f));
             previousButton.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single));
-            nextButton.onClick.AddListener(() => noticeLabel.text = string.IsNullOrEmpty(selectedPathId) ? "먼저 길을 선택해주세요." : "직업 선택 화면은 다음 단계에서 구현됩니다.");
+            nextButton.onClick.AddListener(OpenJobSelection);
             AddFocusFeedback(previousButton.gameObject, previousButton.GetComponent<Outline>(), () => RestoreButton(previousButton)); AddFocusFeedback(nextButton.gameObject, nextButton.GetComponent<Outline>(), () => RestoreButton(nextButton));
             tabControls.Add(previousButton); tabControls.Add(nextButton);
             noticeLabel = Text(parent, "Notice", "", font, 17, new Vector2(.53f, .045f), new Vector2(700, 28)); noticeLabel.color = new Color(1, .77f, .5f, 1);
             Text help = Text(parent, "Help", "Tab / Shift+Tab / 방향키: 이동   Enter / Space: 선택", font, 15, new Vector2(.53f, .015f), new Vector2(760, 24)); help.color = new Color(.7f, .77f, .86f, 1);
+        }
+
+        private void OpenJobSelection()
+        {
+            if (string.IsNullOrEmpty(selectedPathId))
+            {
+                noticeLabel.text = "먼저 길을 선택해주세요.";
+                return;
+            }
+            SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
         }
 
         private void ConfigureNavigation()

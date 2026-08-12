@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467f4b879b1e4c6ba476865f0a587dd9, type: 3}
+  m_Name: 04_Fighter
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.JobDefinition
+  jobId: fighter
+  displayName: 투사
+  roleName: 근거리 물리 딜러
+  shortDescription: 적에게 빠르게 접근해 강력한 근접 공격을 펼칩니다.
+  detailedDescription: 기동력과 연속 공격으로 가까운 적을 압박합니다.
+  primaryStats: [1, 2]
+  keywords: [근접, 연속 공격, 기동]
+  icon: {fileID: 0}
+  futureStatBonuses: []
+  futurePassive:
+  futureStartingSkills: []

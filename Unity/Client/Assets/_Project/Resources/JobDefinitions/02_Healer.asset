@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467f4b879b1e4c6ba476865f0a587dd9, type: 3}
+  m_Name: 02_Healer
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.JobDefinition
+  jobId: healer
+  displayName: 치유사
+  roleName: 힐러 / 지원
+  shortDescription: 회복과 보호를 통해 아군이 전투를 이어가도록 돕습니다.
+  detailedDescription: 회복과 지원으로 파티의 전투 지속력을 높입니다.
+  primaryStats: [5, 4]
+  keywords: [회복, 보호, 지원]
+  icon: {fileID: 0}
+  futureStatBonuses: []
+  futurePassive:
+  futureStartingSkills: []

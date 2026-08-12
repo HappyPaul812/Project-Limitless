@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467f4b879b1e4c6ba476865f0a587dd9, type: 3}
+  m_Name: 03_Sharpshooter
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.JobDefinition
+  jobId: sharpshooter
+  displayName: 사수
+  roleName: 원거리 물리 딜러
+  shortDescription: 거리와 정확성을 활용해 적의 약점을 노립니다.
+  detailedDescription: 안전한 거리를 유지하며 정밀 공격을 펼칩니다.
+  primaryStats: [3, 2]
+  keywords: [원거리, 정밀, 약점 공격]
+  icon: {fileID: 0}
+  futureStatBonuses: []
+  futurePassive:
+  futureStartingSkills: []
