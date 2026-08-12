@@ -14,6 +14,25 @@ MonoBehaviour:
   primaryStats: [1, 2]
   keywords: [근접, 연속 공격, 기동]
   icon: {fileID: 0}
-  futureStatBonuses: []
-  futurePassive:
-  futureStartingSkills: []
+  statBonuses:
+  - stat: 1
+    amount: 2
+  - stat: 2
+    amount: 2
+  passive:
+    passiveId: fighter_killing_intent
+    passiveName: 살기
+    passiveDescription: 난도 3중첩 적에게 회심의 일격을 사용하면 추가로 강화됩니다. 정확한 강화율은 추후 확정합니다.
+  startingSkills:
+  - skillId: fighter_slash_stack
+    skillName: 난도
+    skillType: 단일 물리 공격 / 표식
+    skillDescription: 적 1명에게 피해를 주고 대상별 최대 3중첩인 난도 1중첩을 부여합니다.
+  - skillId: fighter_finishing_strike
+    skillName: 회심의 일격
+    skillType: 단일 물리 공격 / 마무리
+    skillDescription: 난도 중첩을 모두 소비하고 중첩이 많을수록 강해집니다. 보스에게 즉사는 적용하지 않습니다.
+  - skillId: fighter_whirlwind
+    skillName: 회오리 베기
+    skillType: 광역 물리 공격 / 표식
+    skillDescription: 주변 모든 적을 공격하고 적중한 적마다 난도 1중첩을 부여합니다.

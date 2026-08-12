@@ -14,6 +14,25 @@ MonoBehaviour:
   primaryStats: [0, 5]
   keywords: [방어, 보호, 적 통제]
   icon: {fileID: 0}
-  futureStatBonuses: []
-  futurePassive:
-  futureStartingSkills: []
+  statBonuses:
+  - stat: 0
+    amount: 2
+  - stat: 5
+    amount: 2
+  passive:
+    passiveId: guardian_stalwart_guard
+    passiveName: 굳건한 수호
+    passiveDescription: 피해를 받은 뒤 다음에 받는 피해를 10% 감소시키는 방향의 1차 설계입니다.
+  startingSkills:
+  - skillId: guardian_taunt
+    skillName: 도발
+    skillType: 방어 / 적 통제
+    skillDescription: 5턴 동안 단일 대상 공격이 수호자를 우선하게 하며, 지속 중 받는 피해가 20% 감소합니다. 광역 공격은 영향을 받지 않습니다.
+  - skillId: guardian_iron_defense
+    skillName: 철벽 방어
+    skillType: 방어
+    skillDescription: 1턴 동안 받는 피해를 크게 감소시킵니다. 정확한 감소율은 추후 확정합니다.
+  - skillId: guardian_intercept
+    skillName: 대신 막기
+    skillType: 보호
+    skillDescription: 지정한 아군이 다음에 받을 단일 대상 공격을 대신 받습니다. 광역 공격에는 적용하지 않습니다.

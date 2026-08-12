@@ -14,6 +14,25 @@ MonoBehaviour:
   primaryStats: [4, 3]
   keywords: [마법, 광역, 제어]
   icon: {fileID: 0}
-  futureStatBonuses: []
-  futurePassive:
-  futureStartingSkills: []
+  statBonuses:
+  - stat: 4
+    amount: 2
+  - stat: 3
+    amount: 2
+  passive:
+    passiveId: mage_mana_resonance
+    passiveName: 마력 공명
+    passiveDescription: 마법 스킬마다 공명 1중첩을 얻고 최대 3중첩에서 다음 공격 마법을 강화한 뒤 소비합니다.
+  startingSkills:
+  - skillId: mage_fireball
+    skillName: 파이어 볼
+    skillType: 단일 마법 공격
+    skillDescription: 불의 마력을 응축해 적 1명에게 강력한 마법 피해를 줍니다.
+  - skillId: mage_thunderbolt
+    skillName: 썬더볼트
+    skillType: 광역 마법 공격
+    skillDescription: 적 전체에 강력한 번개 피해를 줍니다. 높은 자원 소모나 재사용 대기시간은 추후 조정합니다.
+  - skillId: mage_gaia_wall
+    skillName: 가이아 웰
+    skillType: 자기 보호
+    skillDescription: 2턴 동안 암석 방벽으로 자신을 보호해 받는 피해를 40% 감소시킵니다.

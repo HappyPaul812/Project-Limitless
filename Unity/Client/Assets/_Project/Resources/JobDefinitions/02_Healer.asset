@@ -14,6 +14,25 @@ MonoBehaviour:
   primaryStats: [5, 4]
   keywords: [회복, 보호, 지원]
   icon: {fileID: 0}
-  futureStatBonuses: []
-  futurePassive:
-  futureStartingSkills: []
+  statBonuses:
+  - stat: 5
+    amount: 2
+  - stat: 4
+    amount: 2
+  passive:
+    passiveId: healer_desperate_touch
+    passiveName: 간절한 손길
+    passiveDescription: HP가 50% 이하인 아군을 치유할 때 해당 대상의 회복량이 15% 증가합니다. 광역 치유는 대상별로 판정합니다.
+  startingSkills:
+  - skillId: healer_healing_light
+    skillName: 치유의 빛
+    skillType: 단일 치유
+    skillDescription: 아군 1명의 체력을 크게 회복하는 안정적인 단일 대상 회복기입니다.
+  - skillId: healer_healing_wave
+    skillName: 회복의 파동
+    skillType: 광역 치유
+    skillDescription: 자신을 포함한 모든 아군을 단일 힐의 약 60%만큼 회복합니다. 재사용 대기시간은 3턴입니다.
+  - skillId: healer_cleanse
+    skillName: 정화
+    skillType: 상태이상 해제
+    skillDescription: 아군 1명의 제거 가능한 해로운 상태이상 1개를 제거합니다.
