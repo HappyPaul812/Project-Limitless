@@ -38,8 +38,6 @@ namespace ProjectLimitless.UI
         private Text detailName;
         private Text detailRole;
         private Text detailDescription;
-        private Text detailStats;
-        private Text detailKeywords;
         private Text detailBonuses;
         private Text detailPassive;
         private Text detailSkills;
@@ -99,12 +97,12 @@ namespace ProjectLimitless.UI
             }
             JobDefinition detail = jobDefinitions.FirstOrDefault(job => job.JobId == selectedJobId) ?? jobDefinitions.FirstOrDefault();
             if (detail == null) return;
-            detailName.text = detail.DisplayName; detailRole.text = "역할\n" + detail.RoleName; detailDescription.text = detail.ShortDescription;
-            detailStats.text = "주 능력치\n" + string.Join(" · ", detail.PrimaryStats.Select(StatName));
-            detailKeywords.text = "전투 성향\n" + string.Join(" · ", detail.Keywords);
-            detailBonuses.text = "능력치 보너스  " + string.Join(" · ", detail.StatBonuses.Select(bonus => $"{StatName(bonus.Stat)} +{bonus.Amount}"));
-            detailPassive.text = $"고유 패시브 · {detail.Passive.PassiveName}\n{detail.Passive.PassiveDescription}";
-            detailSkills.text = "시작 스킬  " + string.Join(" · ", detail.StartingSkills.Select(skill => skill.SkillName));
+            detailName.text = detail.DisplayName;
+            detailRole.text = "역할\n" + detail.RoleName;
+            detailDescription.text = detail.ShortDescription;
+            detailBonuses.text = "능력치 보너스\n" + string.Join(" · ", detail.StatBonuses.Select(bonus => $"{StatName(bonus.Stat)} +{bonus.Amount}"));
+            detailPassive.text = $"고유 패시브\n{detail.Passive.PassiveName}\n{GetUiSummary(detail.Passive.PassiveDescription)}";
+            detailSkills.text = "시작 스킬\n" + string.Join("\n", detail.StartingSkills.Select(skill => $"• {skill.SkillName}"));
             detailFinalStats.text = "길 + 직업 최종 능력치\n" + FormatFinalStats(detail);
             detailRecommendation.text = recommendedJobIds.Contains(detail.JobId) ? "현재 길의 추천 직업" : string.Empty;
         }
@@ -117,7 +115,15 @@ namespace ProjectLimitless.UI
                 int pathValue = selectedPath == null ? 10 : selectedPath.GetPreviewStat(stat);
                 return job.ApplyStatBonus(stat, pathValue);
             }
-            return $"체력 {Value(CharacterStatType.Health)}  힘 {Value(CharacterStatType.Strength)}  민첩 {Value(CharacterStatType.Agility)}\n감각 {Value(CharacterStatType.Sense)}  지능 {Value(CharacterStatType.Intelligence)}  의지 {Value(CharacterStatType.Willpower)}";
+            return $"체력 {Value(CharacterStatType.Health)}        힘 {Value(CharacterStatType.Strength)}\n민첩 {Value(CharacterStatType.Agility)}        감각 {Value(CharacterStatType.Sense)}\n지능 {Value(CharacterStatType.Intelligence)}        의지 {Value(CharacterStatType.Willpower)}";
+        }
+
+        /// <summary>원본 데이터는 보존하고 직업 선택 화면에는 첫 문장만 보여 가독성을 유지합니다.</summary>
+        private static string GetUiSummary(string description)
+        {
+            if (string.IsNullOrWhiteSpace(description)) return string.Empty;
+            int sentenceEnd = description.IndexOf('.');
+            return sentenceEnd >= 0 ? description.Substring(0, sentenceEnd + 1) : description;
         }
 
         private void CreateInterface()
@@ -156,17 +162,15 @@ namespace ProjectLimitless.UI
 
         private void CreateDetail(Transform parent, Font font)
         {
-            Image panel = Image(parent, "DetailPanel", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.72f, .50f), new Vector2(500, 455)); AddOutline(panel.gameObject, mutedColor, 2);
-            detailName = Text(panel.transform, "Name", "", font, 25, new Vector2(.5f, .94f), new Vector2(450, 34)); detailName.color = accentColor; detailName.fontStyle = FontStyle.Bold;
-            detailRole = Text(panel.transform, "Role", "", font, 15, new Vector2(.5f, .855f), new Vector2(440, 42));
-            detailDescription = Text(panel.transform, "Description", "", font, 15, new Vector2(.5f, .765f), new Vector2(440, 40));
-            detailStats = Text(panel.transform, "Stats", "", font, 15, new Vector2(.5f, .675f), new Vector2(440, 42));
-            detailKeywords = Text(panel.transform, "Keywords", "", font, 15, new Vector2(.5f, .575f), new Vector2(440, 44));
-            detailBonuses = Text(panel.transform, "Bonuses", "", font, 16, new Vector2(.5f, .485f), new Vector2(440, 34)); detailBonuses.color = new Color(1, .86f, .54f, 1);
-            detailPassive = Text(panel.transform, "Passive", "", font, 14, new Vector2(.5f, .375f), new Vector2(450, 62));
-            detailSkills = Text(panel.transform, "StartingSkills", "", font, 15, new Vector2(.5f, .265f), new Vector2(450, 38)); detailSkills.fontStyle = FontStyle.Bold;
-            detailFinalStats = Text(panel.transform, "FinalStats", "", font, 15, new Vector2(.5f, .145f), new Vector2(450, 58));
-            detailRecommendation = Text(panel.transform, "Recommendation", "", font, 15, new Vector2(.5f, .045f), new Vector2(440, 28)); detailRecommendation.color = new Color(1, .86f, .54f, 1); detailRecommendation.fontStyle = FontStyle.Bold;
+            Image panel = Image(parent, "DetailPanel", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.735f, .505f), new Vector2(535, 490)); AddOutline(panel.gameObject, mutedColor, 2);
+            detailName = Text(panel.transform, "Name", "", font, 28, new Vector2(.5f, .90f), new Vector2(490, 38)); detailName.color = accentColor; detailName.fontStyle = FontStyle.Bold;
+            detailRole = Text(panel.transform, "Role", "", font, 17, new Vector2(.5f, .81f), new Vector2(480, 48)); detailRole.fontStyle = FontStyle.Bold;
+            detailDescription = Text(panel.transform, "Description", "", font, 17, new Vector2(.5f, .71f), new Vector2(485, 42));
+            detailBonuses = Text(panel.transform, "Bonuses", "", font, 18, new Vector2(.5f, .60f), new Vector2(480, 54)); detailBonuses.color = new Color(1, .86f, .54f, 1); detailBonuses.fontStyle = FontStyle.Bold;
+            detailPassive = Text(panel.transform, "Passive", "", font, 16, new Vector2(.5f, .46f), new Vector2(490, 78));
+            detailSkills = Text(panel.transform, "StartingSkills", "", font, 17, new Vector2(.5f, .29f), new Vector2(470, 94)); detailSkills.alignment = TextAnchor.MiddleLeft; detailSkills.fontStyle = FontStyle.Bold;
+            detailFinalStats = Text(panel.transform, "FinalStats", "", font, 17, new Vector2(.5f, .11f), new Vector2(390, 102)); detailFinalStats.fontStyle = FontStyle.Bold;
+            detailRecommendation = Text(panel.transform, "Recommendation", "", font, 16, new Vector2(.5f, .025f), new Vector2(470, 28)); detailRecommendation.color = new Color(1, .86f, .54f, 1); detailRecommendation.fontStyle = FontStyle.Bold;
         }
 
         private void CreateBottom(Transform parent, Font font)
