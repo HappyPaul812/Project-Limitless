@@ -16,6 +16,15 @@ namespace ProjectLimitless.UI
     public sealed class PathSelectionController : MonoBehaviour
     {
         private const string ResourcePath = "PathDefinitions";
+        // 저장용 ID는 바꾸지 않고 화면에서만 이 순서로 정렬합니다. 목록에 없는 새 길은 뒤에 ID 순으로 붙습니다.
+        private static readonly string[] DisplayOrder =
+        {
+            "path.emotional-scar",
+            "path.hearing",
+            "path.vision",
+            "path.mobility",
+            "path.intellectual",
+        };
         [SerializeField] private Sprite malePreviewSprite;
         [SerializeField] private Sprite femalePreviewSprite;
         [SerializeField] private string previousSceneName = "CharacterCreation";
@@ -74,13 +83,23 @@ namespace ProjectLimitless.UI
                 EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         }
 
-        /// <summary>Resources 폴더에 에셋 하나를 추가하는 것만으로 목록이 확장되며 ID 순서로 안정적으로 표시됩니다.</summary>
+        /// <summary>Resources의 길을 불러와 지정된 화면 순서로 정렬하며, 새 길은 목록 뒤에 안정적으로 추가합니다.</summary>
         private void LoadDefinitions()
         {
             if (pathDefinitions == null || pathDefinitions.Length == 0)
                 pathDefinitions = Resources.LoadAll<PlayerPathDefinition>(ResourcePath);
-            pathDefinitions = pathDefinitions.Where(item => item != null && !string.IsNullOrWhiteSpace(item.Id)).OrderBy(item => item.Id).ToArray();
+            pathDefinitions = pathDefinitions
+                .Where(item => item != null && !string.IsNullOrWhiteSpace(item.Id))
+                .OrderBy(GetDisplayOrder)
+                .ThenBy(item => item.Id)
+                .ToArray();
             if (pathDefinitions.Length == 0) Debug.LogError($"길 데이터가 없습니다. Resources/{ResourcePath}를 확인해주세요.");
+        }
+
+        private static int GetDisplayOrder(PlayerPathDefinition definition)
+        {
+            int order = Array.IndexOf(DisplayOrder, definition.Id);
+            return order >= 0 ? order : DisplayOrder.Length;
         }
 
         private void SelectPath(PlayerPathDefinition definition)
@@ -192,7 +211,40 @@ namespace ProjectLimitless.UI
         private void RestoreButton(Button button) { Outline o = button.GetComponent<Outline>(); o.effectColor = accentColor; o.effectDistance = new Vector2(2, -2); }
         private static Navigation Nav(Selectable left, Selectable right, Selectable up, Selectable down) => new Navigation { mode = Navigation.Mode.Explicit, selectOnLeft = left, selectOnRight = right, selectOnUp = up, selectOnDown = down };
         private static void CreateEventSystem() { if (EventSystem.current != null) return; InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
-        private static Button TextButton(Transform parent, string name, string label, Font font, Vector2 anchor) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(230, 52)); Button button = obj.GetComponent<Button>(); button.targetGraphic = obj.GetComponent<Image>(); button.colors = SelectableColors(); Outline o = obj.GetComponent<Outline>(); o.effectColor = new Color(.88f, .7f, .32f, 1); o.effectDistance = new Vector2(2, -2); Text(obj.transform, "Label", label, font, 22, Vector2.one * .5f, new Vector2(210, 44)).fontStyle = FontStyle.Bold; return button; }
+        /// <summary>CharacterCreation의 주요 CTA와 같은 청색 바탕, 금색 테두리, 굵은 밝은 글자를 사용합니다.</summary>
+        private static Button TextButton(Transform parent, string name, string label, Font font, Vector2 anchor)
+        {
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
+            obj.transform.SetParent(parent, false);
+            SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(230, 52));
+
+            Image image = obj.GetComponent<Image>();
+            image.color = new Color(.12f, .32f, .5f, 1f);
+            Button button = obj.GetComponent<Button>();
+            button.targetGraphic = image;
+            button.colors = CtaSelectableColors();
+
+            Outline outline = obj.GetComponent<Outline>();
+            outline.effectColor = new Color(.88f, .7f, .32f, 1f);
+            outline.effectDistance = new Vector2(2, -2);
+            Text buttonLabel = Text(obj.transform, "Label", $"[ {label} ]", font, 22, Vector2.one * .5f, new Vector2(210, 44));
+            buttonLabel.color = new Color(.98f, .94f, .82f, 1f);
+            buttonLabel.fontStyle = FontStyle.Bold;
+            return button;
+        }
+
+        private static ColorBlock CtaSelectableColors()
+        {
+            ColorBlock colors = ColorBlock.defaultColorBlock;
+            colors.normalColor = Color.white;
+            colors.highlightedColor = new Color(1.25f, 1.18f, 1.08f, 1f);
+            colors.selectedColor = new Color(1.18f, 1.12f, 1.02f, 1f);
+            colors.pressedColor = new Color(.62f, .72f, .82f, 1f);
+            colors.disabledColor = new Color(.48f, .52f, .58f, .72f);
+            colors.colorMultiplier = 1f;
+            colors.fadeDuration = .12f;
+            return colors;
+        }
         private static ColorBlock SelectableColors() { ColorBlock c = ColorBlock.defaultColorBlock; c.normalColor = Color.white; c.highlightedColor = new Color(.82f, .88f, .98f, 1); c.selectedColor = new Color(.92f, .82f, .58f, 1); c.pressedColor = new Color(.68f, .68f, .68f, 1); return c; }
         private static void CreateSteps(Transform parent, Font font) { string[] steps = { "1 기본 정보", "2 길 · 현재", "3 직업", "4 확인" }; for (int i = 0; i < steps.Length; i++) { Image p = Image(parent, $"Step{i + 1}", i == 1 ? new Color(.18f, .25f, .34f, 1) : new Color(.04f, .065f, .11f, .88f)); SetRect(p.rectTransform, new Vector2(.35f + i * .1f, .975f), new Vector2(122, 28)); AddOutline(p.gameObject, i == 1 ? new Color(.95f, .76f, .36f, 1) : new Color(.25f, .32f, .42f, 1), i == 1 ? 2 : 1); Text(p.transform, "Label", steps[i], font, 15, Vector2.one * .5f, new Vector2(118, 26)); } }
         private static Text Text(Transform parent, string name, string value, Font font, int size, Vector2 anchor, Vector2 dimensions) { GameObject obj = new GameObject(name, typeof(Text)); obj.transform.SetParent(parent, false); Text text = obj.GetComponent<Text>(); text.font = font; text.fontSize = size; text.color = Color.white; text.alignment = TextAnchor.MiddleCenter; text.text = value; text.raycastTarget = false; SetRect(text.rectTransform, anchor, dimensions); return text; }
