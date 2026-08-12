@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b53872592d34ae3be574c139b3e6286, type: 3}
+  m_Name: 02_HearingPath
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.PlayerPathDefinition
+  id: path.hearing
+  displayName: 청각의 길
+  motifDescription: 청각장애
+  shortDescription: 세상을 더욱 세밀하게 바라보고 작은 움직임과 변화를 놓치지 않는다.
+  detailedDescription: 위험 행동을 일찍 파악하고 정밀하게 대응합니다.
+  statBonuses:
+  - stat: 3
+    amount: 2
+  - stat: 4
+    amount: 1
+  passiveName: 고요한 관찰
+  passiveDescription: 적의 강력한 행동이나 위험 행동을 다른 길보다 일찍 파악합니다.
+  keywords: [관찰, 예측, 정밀, 전술]
+  icon: {fileID: 0}
+  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 약점 파악과 연계됩니다.

@@ -259,8 +259,8 @@ namespace ProjectLimitless.EditorTools
         }
 
         /// <summary>
-        /// 기존 작업 Scene은 보존하면서 Path 카드와 이전 단계 요약 UI를 런타임에 만드는 Controller Scene을 생성합니다.
-        /// Path의 정식 이름은 확정되지 않았으므로 Controller의 개발용 Path01~Path04 데이터만 사용합니다.
+        /// 기존 작업 Scene은 보존하면서 데이터 기반 Path 목록과 상세 UI를 런타임에 만드는 Controller Scene을 생성합니다.
+        /// 실제 길 데이터는 Resources/PathDefinitions의 ScriptableObject에서 자동으로 불러옵니다.
         /// </summary>
         private static void CreatePathSelectionScene()
         {

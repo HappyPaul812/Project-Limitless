@@ -1,53 +1,72 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectLimitless.Core
 {
-    /// <summary>
-    /// 아직 세계관의 정식 길 이름이 확정되지 않았으므로 사용하는 개발용 식별자입니다.
-    /// Path01~Path04는 UI Prototype 슬롯이며 실제 길의 수나 순서를 확정하지 않습니다.
-    /// </summary>
-    public enum PlayerPathType
+    /// <summary>캐릭터 생성 미리보기에서 사용하는 여섯 가지 기본 능력치입니다.</summary>
+    public enum CharacterStatType
     {
-        None,
-        Path01,
-        Path02,
-        Path03,
-        Path04,
+        Health,
+        Strength,
+        Agility,
+        Sense,
+        Intelligence,
+        Willpower,
+    }
+
+    [Serializable]
+    public struct StatBonus
+    {
+        [SerializeField] private CharacterStatType stat;
+        [SerializeField] private int amount;
+
+        public CharacterStatType Stat => stat;
+        public int Amount => amount;
     }
 
     /// <summary>
-    /// 한 Path 카드에 표시할 데이터를 UI 동작과 분리해 보관합니다.
-    /// 향후 이름·설명·아이콘·특징·관련 직업이 확정되어도 선택 코드를 고치지 않고 데이터만 교체할 수 있습니다.
+    /// 길의 표시 정보와 1차 프로토타입 수치를 UI 코드에서 분리해 보관하는 데이터 에셋입니다.
+    /// 길은 기본 성향과 패시브를, 직업은 전투 방식과 액티브 스킬을 담당하므로 서로 독립적으로 조합됩니다.
+    /// 새 길은 이 에셋을 Resources/PathDefinitions에 추가하면 선택 화면에 자동으로 나타납니다.
     /// </summary>
-    [Serializable]
-    public sealed class PlayerPathDefinition
+    [CreateAssetMenu(fileName = "PathDefinition", menuName = "Project Limitless/Path Definition")]
+    public sealed class PlayerPathDefinition : ScriptableObject
     {
-        [SerializeField] private PlayerPathType pathType;
+        [SerializeField] private string id;
         [SerializeField] private string displayName;
-        [SerializeField] private Sprite icon;
-        [SerializeField] private string shortDescription;
+        [SerializeField] private string motifDescription;
+        [SerializeField, TextArea] private string shortDescription;
         [SerializeField, TextArea] private string detailedDescription;
-        [SerializeField] private string features;
-        [SerializeField] private string relatedJobInformation;
+        [SerializeField] private StatBonus[] statBonuses;
+        [SerializeField] private string passiveName;
+        [SerializeField, TextArea] private string passiveDescription;
+        [SerializeField] private string[] keywords;
+        [SerializeField] private Sprite icon;
+        [SerializeField, TextArea] private string relatedJobInformation;
 
-        public PlayerPathType PathType => pathType;
+        public string Id => id;
         public string DisplayName => displayName;
-        public Sprite Icon => icon;
+        public string MotifDescription => motifDescription;
         public string ShortDescription => shortDescription;
         public string DetailedDescription => detailedDescription;
-        public string Features => features;
+        public IReadOnlyList<StatBonus> StatBonuses => statBonuses;
+        public string PassiveName => passiveName;
+        public string PassiveDescription => passiveDescription;
+        public IReadOnlyList<string> Keywords => keywords;
+        public Sprite Icon => icon;
         public string RelatedJobInformation => relatedJobInformation;
 
-        /// <summary>현재 Prototype의 임시 카드 데이터를 만듭니다. 정식 설정 확정 후 교체할 값입니다.</summary>
-        public PlayerPathDefinition(PlayerPathType type, string temporaryName)
+        /// <summary>모든 기본값 10에 이 길의 보너스만 더합니다. 현재 길은 능력치를 감소시키지 않습니다.</summary>
+        public int GetPreviewStat(CharacterStatType stat, int baseValue = 10)
         {
-            pathType = type;
-            displayName = temporaryName;
-            shortDescription = "설명 준비 중";
-            detailedDescription = string.Empty;
-            features = string.Empty;
-            relatedJobInformation = string.Empty;
+            int result = baseValue;
+            if (statBonuses == null) return result;
+            foreach (StatBonus bonus in statBonuses)
+            {
+                if (bonus.Stat == stat) result += bonus.Amount;
+            }
+            return result;
         }
     }
 }

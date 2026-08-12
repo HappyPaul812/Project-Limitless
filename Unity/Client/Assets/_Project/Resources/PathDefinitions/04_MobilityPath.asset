@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b53872592d34ae3be574c139b3e6286, type: 3}
+  m_Name: 04_MobilityPath
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.PlayerPathDefinition
+  id: path.mobility
+  displayName: 지체의 길
+  motifDescription: 지체장애 / 휠체어
+  shortDescription: 자신의 이동 수단을 도구이자 무기로 발전시키며 전장을 설계한다.
+  detailedDescription: 이동 수단을 성장 및 개조 가능한 장비로 발전시킵니다.
+  statBonuses:
+  - stat: 4
+    amount: 2
+  - stat: 5
+    amount: 1
+  passiveName: 흔들리지 않는 축
+  passiveDescription: 밀치기와 끌어당기기 등 강제 이동 효과가 30% 감소합니다.
+  keywords: [공학, 마법, 장치, 전술, 안정성]
+  icon: {fileID: 0}
+  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 이동장치 개조와 연계됩니다.

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b53872592d34ae3be574c139b3e6286, type: 3}
+  m_Name: 03_IntellectualPath
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.PlayerPathDefinition
+  id: path.intellectual
+  displayName: 지적의 길
+  motifDescription: 지적장애
+  shortDescription: 혼자 앞서가기보다 동료와 함께할 때 더 큰 힘을 만들어 낸다.
+  detailedDescription: 협력, 신뢰, 관계를 중심으로 동료와 함께 성장합니다.
+  statBonuses:
+  - stat: 5
+    amount: 2
+  - stat: 0
+    amount: 1
+  passiveName: 함께하는 힘
+  passiveDescription: 동료와 연계 행동 시 협동 효과가 20% 증가합니다.
+  keywords: [협동, 보호, 끈기, 관계]
+  icon: {fileID: 0}
+  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 파티 협동과 연계됩니다.

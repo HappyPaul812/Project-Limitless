@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b53872592d34ae3be574c139b3e6286, type: 3}
+  m_Name: 01_VisionPath
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.PlayerPathDefinition
+  id: path.vision
+  displayName: 시각의 길
+  motifDescription: 시각장애
+  shortDescription: 눈에 보이는 것보다 소리와 기척, 공간의 변화를 읽으며 싸운다.
+  detailedDescription: 주변의 기척과 공간 변화를 읽습니다.
+  statBonuses:
+  - stat: 3
+    amount: 2
+  - stat: 2
+    amount: 1
+  passiveName: 기척의 결
+  passiveDescription: 전투 중 처음 받는 공격 피해가 10% 감소합니다.
+  keywords: [감지, 반응, 회피, 공간 인식]
+  icon: {fileID: 0}
+  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 감지 시스템과 연계됩니다.
