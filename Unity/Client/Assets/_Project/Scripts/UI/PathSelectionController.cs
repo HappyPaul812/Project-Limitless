@@ -129,7 +129,7 @@ namespace ProjectLimitless.UI
             detailStats.text = "능력치 미리보기\n" + FormatStatPreview(definition);
             detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
             detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
-            detailRecommendedJobs.text = "추천 직업\n" + string.Join("   ", definition.RecommendedJobs.Select(job => $"[추천] {job.DisplayName}"));
+            detailRecommendedJobs.text = "추천 직업\n" + string.Join(" · ", definition.RecommendedJobs.Select(job => job.DisplayName));
         }
 
         private static string FormatBonuses(PlayerPathDefinition definition) => string.Join("   ", definition.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
