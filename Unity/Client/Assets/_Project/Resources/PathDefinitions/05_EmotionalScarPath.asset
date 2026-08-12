@@ -22,7 +22,7 @@ MonoBehaviour:
   recommendedJobs:
   - id: healer
     displayName: 치유사
-  - id: guardian
-    displayName: 수호자
+  - id: fighter
+    displayName: 투사
   icon: {fileID: 0}
   relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 상태이상 회복과 연계됩니다.

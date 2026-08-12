@@ -22,7 +22,7 @@ MonoBehaviour:
   recommendedJobs:
   - id: fighter
     displayName: 투사
-  - id: guardian
-    displayName: 수호자
+  - id: sharpshooter
+    displayName: 사수
   icon: {fileID: 0}
   relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 감지 시스템과 연계됩니다.
