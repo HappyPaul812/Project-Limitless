@@ -19,5 +19,10 @@ MonoBehaviour:
   passiveName: 흔들리지 않는 축
   passiveDescription: 밀치기와 끌어당기기 등 강제 이동 효과가 30% 감소합니다.
   keywords: [공학, 마법, 장치, 전술, 안정성]
+  recommendedJobs:
+  - id: mage
+    displayName: 마도사
+  - id: guardian
+    displayName: 수호자
   icon: {fileID: 0}
   relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 이동장치 개조와 연계됩니다.

@@ -49,6 +49,7 @@ namespace ProjectLimitless.UI
         private Text detailStats;
         private Text detailPassive;
         private Text detailKeywords;
+        private Text detailRecommendedJobs;
         private Text noticeLabel;
         private string selectedPathId = string.Empty;
 
@@ -128,6 +129,7 @@ namespace ProjectLimitless.UI
             detailStats.text = "능력치 미리보기\n" + FormatStatPreview(definition);
             detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
             detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
+            detailRecommendedJobs.text = "추천 직업\n" + string.Join("   ", definition.RecommendedJobs.Select(job => $"[추천] {job.DisplayName}"));
         }
 
         private static string FormatBonuses(PlayerPathDefinition definition) => string.Join("   ", definition.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
@@ -178,12 +180,15 @@ namespace ProjectLimitless.UI
 
         private void CreateDetailPanel(Transform parent, Font font)
         {
-            Image panel = Image(parent, "DetailPanel", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.72f, .48f), new Vector2(500, 390)); AddOutline(panel.gameObject, mutedColor, 2);
-            detailName = Text(panel.transform, "PathName", "", font, 27, new Vector2(.5f, .89f), new Vector2(450, 42)); detailName.color = accentColor; detailName.fontStyle = FontStyle.Bold;
-            detailDescription = Text(panel.transform, "Description", "", font, 18, new Vector2(.5f, .73f), new Vector2(440, 70));
-            detailStats = Text(panel.transform, "Stats", "", font, 18, new Vector2(.5f, .50f), new Vector2(440, 92));
-            detailPassive = Text(panel.transform, "Passive", "", font, 18, new Vector2(.5f, .27f), new Vector2(440, 92));
-            detailKeywords = Text(panel.transform, "Keywords", "", font, 16, new Vector2(.5f, .08f), new Vector2(450, 45)); detailKeywords.color = new Color(.76f, .83f, .92f, 1);
+            Image panel = Image(parent, "DetailPanel", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.72f, .50f), new Vector2(500, 420)); AddOutline(panel.gameObject, mutedColor, 2);
+            detailName = Text(panel.transform, "PathName", "", font, 27, new Vector2(.5f, .91f), new Vector2(450, 40)); detailName.color = accentColor; detailName.fontStyle = FontStyle.Bold;
+            detailDescription = Text(panel.transform, "Description", "", font, 17, new Vector2(.5f, .78f), new Vector2(440, 58));
+            detailStats = Text(panel.transform, "Stats", "", font, 17, new Vector2(.5f, .61f), new Vector2(440, 72));
+            detailPassive = Text(panel.transform, "Passive", "", font, 17, new Vector2(.5f, .43f), new Vector2(440, 76));
+            detailKeywords = Text(panel.transform, "Keywords", "", font, 15, new Vector2(.5f, .30f), new Vector2(450, 34)); detailKeywords.color = new Color(.76f, .83f, .92f, 1);
+            detailRecommendedJobs = Text(panel.transform, "RecommendedJobs", "", font, 17, new Vector2(.5f, .18f), new Vector2(450, 58)); detailRecommendedJobs.color = new Color(1f, .86f, .54f, 1f); detailRecommendedJobs.fontStyle = FontStyle.Bold;
+            Text recommendationNotice = Text(panel.transform, "RecommendationNotice", "추천은 안내일 뿐이며, 모든 직업을 자유롭게 선택할 수 있습니다.", font, 14, new Vector2(.5f, .055f), new Vector2(455, 34));
+            recommendationNotice.color = new Color(.72f, .80f, .90f, 1f);
         }
 
         private void CreateBottomControls(Transform parent, Font font)

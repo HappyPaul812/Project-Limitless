@@ -19,5 +19,10 @@ MonoBehaviour:
   passiveName: 다시 중심을 잡다
   passiveDescription: 상태이상 회복 후 2턴 동안 같은 종류 상태이상 저항이 25% 증가합니다.
   keywords: [회복, 적응, 지원, 위기 대응]
+  recommendedJobs:
+  - id: healer
+    displayName: 치유사
+  - id: guardian
+    displayName: 수호자
   icon: {fileID: 0}
   relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 상태이상 회복과 연계됩니다.

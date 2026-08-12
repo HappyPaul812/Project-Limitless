@@ -19,5 +19,10 @@ MonoBehaviour:
   passiveName: 기척의 결
   passiveDescription: 전투 중 처음 받는 공격 피해가 10% 감소합니다.
   keywords: [감지, 반응, 회피, 공간 인식]
+  recommendedJobs:
+  - id: fighter
+    displayName: 투사
+  - id: guardian
+    displayName: 수호자
   icon: {fileID: 0}
   relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 감지 시스템과 연계됩니다.
