@@ -93,7 +93,8 @@ namespace ProjectLimitless.UI
                 jobBackgrounds[i].color = selected ? selectedColor : normalColor;
                 jobOutlines[i].effectColor = selected ? accentColor : mutedColor;
                 jobOutlines[i].effectDistance = selected ? new Vector2(4, -4) : new Vector2(2, -2);
-                jobLabels[i].text = $"{job.DisplayName}{(recommended ? "   추천" : "")}\n{job.RoleName}{(selected ? "   ✓ 선택됨" : "")}";
+                string recommendationBadge = recommended ? " <color=#FFDB8A>[추천 직업]</color>" : string.Empty;
+                jobLabels[i].text = $"{job.DisplayName}{recommendationBadge}\n{job.RoleName}{(selected ? "   ✓ 선택됨" : "")}";
             }
             JobDefinition detail = jobDefinitions.FirstOrDefault(job => job.JobId == selectedJobId) ?? jobDefinitions.FirstOrDefault();
             if (detail == null) return;
@@ -155,7 +156,7 @@ namespace ProjectLimitless.UI
             {
                 int captured = i; GameObject card = new GameObject($"JobCard{i + 1}", typeof(Image), typeof(Button), typeof(Outline)); card.transform.SetParent(parent, false); SetRect(card.GetComponent<RectTransform>(), new Vector2(.355f, .70f - i * .085f), new Vector2(300, 56));
                 Image image = card.GetComponent<Image>(); Button button = card.GetComponent<Button>(); button.targetGraphic = image; button.colors = SelectableColors(); Outline outline = card.GetComponent<Outline>();
-                Text label = Text(card.transform, "Label", "", font, 17, Vector2.one * .5f, new Vector2(275, 50)); label.fontStyle = FontStyle.Bold; button.onClick.AddListener(() => SelectJob(jobDefinitions[captured])); AddFocus(card, outline, RefreshSelection);
+                Text label = Text(card.transform, "Label", "", font, 17, Vector2.one * .5f, new Vector2(275, 50)); label.supportRichText = true; label.fontStyle = FontStyle.Bold; button.onClick.AddListener(() => SelectJob(jobDefinitions[captured])); AddFocus(card, outline, RefreshSelection);
                 jobButtons.Add(button); jobLabels.Add(label); jobBackgrounds.Add(image); jobOutlines.Add(outline); tabControls.Add(button);
             }
         }
