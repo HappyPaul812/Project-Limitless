@@ -69,7 +69,15 @@ namespace ProjectLimitless.UI
         {
             Image panel = Panel(parent, "CharacterPanel", new Vector2(.13f, .48f), new Vector2(245, 420));
             Heading(panel.transform, font, "캐릭터", .92f);
-            Image preview = MakeImage(panel.transform, "Preview", Color.white); preview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; preview.preserveAspect = true; SetRect(preview.rectTransform, new Vector2(.5f, .66f), new Vector2(165, 180));
+            Image previewFrame = MakeImage(panel.transform, "PreviewFrame", new Color(.025f, .045f, .075f, 1)); SetRect(previewFrame.rectTransform, new Vector2(.5f, .66f), new Vector2(175, 190)); AddOutline(previewFrame.gameObject, new Color(.32f, .4f, .52f, 1), 2);
+            Sprite selectedSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
+            Image characterImage = MakeImage(previewFrame.transform, "CharacterImage", Color.white); characterImage.sprite = selectedSprite; characterImage.preserveAspect = true; SetRect(characterImage.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
+            if (selectedSprite == null)
+            {
+                // Sprite 참조가 끊겨도 불투명한 흰 사각형이 캐릭터처럼 보이지 않게 하고 원인을 Console에 남깁니다.
+                characterImage.color = Color.clear;
+                Debug.LogError($"FinalConfirmation: {GameSessionData.SelectedPlayerVisual} Down Idle Sprite가 연결되지 않았습니다.");
+            }
             string playerName = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "이름 미설정" : GameSessionData.PlayerName;
             string visual = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? "여성" : "남성";
             Text summary = MakeText(panel.transform, "Summary", $"{playerName}\n\n성별  {visual}", font, 20, new Vector2(.5f, .25f), new Vector2(210, 110)); summary.fontStyle = FontStyle.Bold;

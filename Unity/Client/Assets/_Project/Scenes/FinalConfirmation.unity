@@ -134,8 +134,8 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a8c8bb9621649e18768755e6e6fd203, type: 3}
   m_Name:
-  m_EditorClassIdentifier:
-  malePreviewSprite: {fileID: 5249180244662576433, guid: 67d921d8a965608469b3be98d8aab52a, type: 3}
-  femalePreviewSprite: {fileID: -4202640963977440277, guid: 08b875ce522a60b4e8f409e721b97a49, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.UI.FinalConfirmationController
+  malePreviewSprite: {fileID: 5249180244662576433, guid: 67d92138ffadaac4ebc6cc295a7719f6, type: 3}
+  femalePreviewSprite: {fileID: -4202641690109842950, guid: 08b87531155d89246b5290f0c8dc08c5, type: 3}
   previousSceneName: JobSelection
   worldSceneName: World_StarterVillage
