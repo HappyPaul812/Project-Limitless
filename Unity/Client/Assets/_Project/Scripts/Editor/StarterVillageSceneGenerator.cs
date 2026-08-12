@@ -28,6 +28,7 @@ namespace ProjectLimitless.EditorTools
         private const string CharacterCreationScenePath = "Assets/_Project/Scenes/CharacterCreation.unity";
         private const string PathSelectionScenePath = "Assets/_Project/Scenes/PathSelection.unity";
         private const string JobSelectionScenePath = "Assets/_Project/Scenes/JobSelection.unity";
+        private const string FinalConfirmationScenePath = "Assets/_Project/Scenes/FinalConfirmation.unity";
         private const string WorldScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string NpcPrefabPath = "Assets/_Project/Prefabs/VillageNpcPlaceholder.prefab";
@@ -49,6 +50,7 @@ namespace ProjectLimitless.EditorTools
             CharacterCreationScenePath,
             PathSelectionScenePath,
             JobSelectionScenePath,
+            FinalConfirmationScenePath,
             WorldScenePath,
             PlayerPrefabPath,
             NpcPrefabPath,
@@ -72,10 +74,11 @@ namespace ProjectLimitless.EditorTools
                 CreateCharacterCreationScene();
                 CreatePathSelectionScene();
                 CreateJobSelectionScene();
+                CreateFinalConfirmationScene();
                 CreateStarterVillageScene(playerPrefab, npcPrefab);
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, CharacterCreation, PathSelection, JobSelection, World_StarterVillage. 백업: {backupPath ?? "없음"}");
+                Debug.Log($"Milestone 01 Scene 생성 완료: Bootstrap, CharacterCreation, PathSelection, JobSelection, FinalConfirmation, World_StarterVillage. 백업: {backupPath ?? "없음"}");
             }
             catch (Exception exception)
             {
@@ -119,14 +122,15 @@ namespace ProjectLimitless.EditorTools
         {
             try
             {
-                EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath, JobSelectionScenePath);
+                EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath, JobSelectionScenePath, FinalConfirmationScenePath);
                 CreateCharacterCreationScene();
                 CreatePathSelectionScene();
                 CreateJobSelectionScene();
+                CreateFinalConfirmationScene();
                 UpdateBootstrapStartScene();
                 ConfigureBuildSettings();
                 AssetDatabase.SaveAssets();
-                Debug.Log("CharacterCreation, PathSelection, JobSelection 3단계 흐름 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
+                Debug.Log("CharacterCreation, PathSelection, JobSelection, FinalConfirmation 4단계 흐름 및 Bootstrap 연결을 완료했습니다. 기존 World Scene은 변경하지 않았습니다.");
             }
             catch (Exception exception)
             {
@@ -138,7 +142,7 @@ namespace ProjectLimitless.EditorTools
         /// <summary>자동 생성 대상 Scene에 저장되지 않은 변경이 있으면 덮어쓰기 전에 작업을 중단합니다.</summary>
         private static void EnsureNoUnsavedMilestoneScenes()
         {
-            EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath, JobSelectionScenePath, WorldScenePath);
+            EnsureNoUnsavedScenes(BootstrapScenePath, CharacterCreationScenePath, PathSelectionScenePath, JobSelectionScenePath, FinalConfirmationScenePath, WorldScenePath);
         }
 
         /// <summary>지정한 자동 생성 대상 중 열려 있고 저장하지 않은 Scene이 있는지 확인합니다.</summary>
@@ -311,6 +315,27 @@ namespace ProjectLimitless.EditorTools
             JobSelectionController controller = new GameObject("JobSelectionSystem").AddComponent<JobSelectionController>();
             controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "PathSelection", "FinalConfirmation");
             EditorSceneManager.SaveScene(scene, JobSelectionScenePath);
+            if (!hasEmptyUntitledScene)
+            {
+                EditorSceneManager.CloseScene(scene, true);
+                if (previousActiveScene.IsValid() && previousActiveScene.isLoaded) SceneManager.SetActiveScene(previousActiveScene);
+            }
+        }
+
+        /// <summary>세션과 데이터 에셋을 읽는 캐릭터 생성 최종 확인 Scene을 생성합니다.</summary>
+        private static void CreateFinalConfirmationScene()
+        {
+            PlayerVisualAssets visualAssets = PrepareAllPlayerVisualAssets();
+            Scene previousActiveScene = SceneManager.GetActiveScene();
+            Scene existingScene = SceneManager.GetSceneByPath(FinalConfirmationScenePath);
+            if (existingScene.IsValid()) EditorSceneManager.CloseScene(existingScene, true);
+            bool hasEmptyUntitledScene = previousActiveScene.IsValid() && string.IsNullOrEmpty(previousActiveScene.path) && !previousActiveScene.isDirty && previousActiveScene.rootCount == 0;
+            Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, hasEmptyUntitledScene ? NewSceneMode.Single : NewSceneMode.Additive);
+            SceneManager.SetActiveScene(scene);
+            CreateCharacterCreationCamera();
+            FinalConfirmationController controller = new GameObject("FinalConfirmationSystem").AddComponent<FinalConfirmationController>();
+            controller.Configure(visualAssets.MaleDefaultSprite, visualAssets.FemaleDefaultSprite, "JobSelection", "World_StarterVillage");
+            EditorSceneManager.SaveScene(scene, FinalConfirmationScenePath);
             if (!hasEmptyUntitledScene)
             {
                 EditorSceneManager.CloseScene(scene, true);
@@ -927,7 +952,7 @@ namespace ProjectLimitless.EditorTools
             return gameObject;
         }
 
-        /// <summary>게임 흐름 순서대로 Bootstrap, 기본 정보, Path, 직업, 월드 Scene을 빌드 목록 앞에 둡니다.</summary>
+        /// <summary>게임 흐름 순서대로 Bootstrap, 기본 정보, Path, 직업, 최종 확인, 월드 Scene을 빌드 목록 앞에 둡니다.</summary>
         private static void ConfigureBuildSettings()
         {
             List<EditorBuildSettingsScene> scenes = new List<EditorBuildSettingsScene>();
@@ -935,11 +960,12 @@ namespace ProjectLimitless.EditorTools
             scenes.Add(new EditorBuildSettingsScene(CharacterCreationScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(PathSelectionScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(JobSelectionScenePath, true));
+            scenes.Add(new EditorBuildSettingsScene(FinalConfirmationScenePath, true));
             scenes.Add(new EditorBuildSettingsScene(WorldScenePath, true));
 
             foreach (EditorBuildSettingsScene existingScene in EditorBuildSettings.scenes)
             {
-                if (existingScene.path != BootstrapScenePath && existingScene.path != CharacterCreationScenePath && existingScene.path != PathSelectionScenePath && existingScene.path != JobSelectionScenePath && existingScene.path != WorldScenePath)
+                if (existingScene.path != BootstrapScenePath && existingScene.path != CharacterCreationScenePath && existingScene.path != PathSelectionScenePath && existingScene.path != JobSelectionScenePath && existingScene.path != FinalConfirmationScenePath && existingScene.path != WorldScenePath)
                 {
                     scenes.Add(existingScene);
                 }

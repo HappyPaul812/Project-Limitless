@@ -113,8 +113,7 @@ namespace ProjectLimitless.UI
         {
             int Value(CharacterStatType stat)
             {
-                int pathValue = selectedPath == null ? 10 : selectedPath.GetPreviewStat(stat);
-                return job.ApplyStatBonus(stat, pathValue);
+                return CharacterCreationStatsCalculator.GetFinalStat(selectedPath, job, stat);
             }
             return $"체력 {Value(CharacterStatType.Health)}        힘 {Value(CharacterStatType.Strength)}\n민첩 {Value(CharacterStatType.Agility)}        감각 {Value(CharacterStatType.Sense)}\n지능 {Value(CharacterStatType.Intelligence)}        의지 {Value(CharacterStatType.Willpower)}";
         }
@@ -177,13 +176,17 @@ namespace ProjectLimitless.UI
         private void CreateBottom(Transform parent, Font font)
         {
             previousButton = TextButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .105f)); nextButton = TextButton(parent, "NextButton", "다음", font, new Vector2(.66f, .105f));
-            previousButton.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single)); nextButton.onClick.AddListener(ShowNextNotice);
+            previousButton.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single)); nextButton.onClick.AddListener(OpenFinalConfirmation);
             AddFocus(previousButton.gameObject, previousButton.GetComponent<Outline>(), () => RestoreButton(previousButton)); AddFocus(nextButton.gameObject, nextButton.GetComponent<Outline>(), () => RestoreButton(nextButton)); tabControls.Add(previousButton); tabControls.Add(nextButton);
             noticeLabel = Text(parent, "Notice", "", font, 17, new Vector2(.53f, .045f), new Vector2(700, 28)); noticeLabel.color = new Color(1, .77f, .5f, 1);
             Text help = Text(parent, "Help", "Tab / Shift+Tab / 방향키: 이동   Enter / Space: 선택", font, 15, new Vector2(.53f, .015f), new Vector2(760, 24)); help.color = new Color(.7f, .77f, .86f, 1);
         }
 
-        private void ShowNextNotice() => noticeLabel.text = string.IsNullOrEmpty(selectedJobId) ? "직업을 선택해주세요." : "최종 확인 화면은 다음 단계에서 구현됩니다.";
+        private void OpenFinalConfirmation()
+        {
+            if (string.IsNullOrEmpty(selectedJobId)) { noticeLabel.text = "직업을 선택해주세요."; return; }
+            SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
+        }
         private void ConfigureNavigation() { for (int i = 0; i < jobButtons.Count; i++) jobButtons[i].navigation = Nav(null, null, i > 0 ? jobButtons[i - 1] : null, i + 1 < jobButtons.Count ? jobButtons[i + 1] : previousButton); Selectable last = jobButtons.Count > 0 ? jobButtons[jobButtons.Count - 1] : null; previousButton.navigation = Nav(null, nextButton, last, null); nextButton.navigation = Nav(previousButton, null, last, null); }
         private Button GetInitialFocus() { int i = Array.FindIndex(jobDefinitions, job => job.JobId == selectedJobId); return jobButtons[i >= 0 ? i : 0]; }
         private void MoveTab(int direction) { int i = tabControls.FindIndex(c => c.gameObject == EventSystem.current.currentSelectedGameObject); EventSystem.current.SetSelectedGameObject(tabControls[(i + direction + tabControls.Count) % tabControls.Count].gameObject); }

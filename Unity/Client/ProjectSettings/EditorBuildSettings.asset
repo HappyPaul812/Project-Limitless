@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/_Project/Scenes/JobSelection.unity
     guid: 3e3506b45a814b87ba486d987cefc601
   - enabled: 1
+    path: Assets/_Project/Scenes/FinalConfirmation.unity
+    guid: c5ab839c063d4fcf8a3f84e5968e412b
+  - enabled: 1
     path: Assets/_Project/Scenes/World_StarterVillage.unity
     guid: d4a08be9af5ce2b4988023a66f57091c
   - enabled: 1
