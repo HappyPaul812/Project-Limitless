@@ -34,6 +34,10 @@ namespace ProjectLimitless.Player
         private void Awake()
         {
             SetVisual(GameSessionData.SelectedPlayerVisual);
+            if (GetComponent<PlayerPathVisualController>() == null)
+            {
+                gameObject.AddComponent<PlayerPathVisualController>();
+            }
         }
 
         /// <summary>Inspector에서 값을 바꾸면 Play Mode 전에도 선택 결과를 미리 볼 수 있게 합니다.</summary>
@@ -82,6 +86,7 @@ namespace ProjectLimitless.Player
 
             // Controller가 바뀌면 같은 상태 이름이라도 새 외형에서 다시 재생해야 합니다.
             visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
+            GetComponent<PlayerPathVisualController>()?.Apply(GameSessionData.SelectedPlayerPathId);
         }
     }
 }

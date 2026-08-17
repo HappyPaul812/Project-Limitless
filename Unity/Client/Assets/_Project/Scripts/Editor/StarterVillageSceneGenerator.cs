@@ -703,6 +703,11 @@ namespace ProjectLimitless.EditorTools
                 assets.MaleDefaultSprite,
                 assets.FemaleDefaultSprite);
 
+            if (player.GetComponent<PlayerPathVisualController>() == null)
+            {
+                player.AddComponent<PlayerPathVisualController>();
+            }
+
             // 기존 Prefab에 외형만 다시 적용하는 메뉴를 실행해도 이름표 기능이 빠지지 않게 보완합니다.
             if (player.GetComponent<PlayerNameplate>() == null)
             {

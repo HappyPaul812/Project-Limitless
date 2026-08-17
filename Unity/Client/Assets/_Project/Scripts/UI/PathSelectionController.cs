@@ -51,6 +51,9 @@ namespace ProjectLimitless.UI
         private Text detailKeywords;
         private Text detailRecommendedJobs;
         private Text noticeLabel;
+        private Image characterPreview;
+        private Image pathVisualPreview;
+        private Image pathSymbolPreview;
         private string selectedPathId = string.Empty;
 
         public void Configure(Sprite maleSprite, Sprite femaleSprite, string previousScene, string futureNextScene)
@@ -130,6 +133,7 @@ namespace ProjectLimitless.UI
             detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
             detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
             detailRecommendedJobs.text = "추천 직업\n" + string.Join(" · ", definition.RecommendedJobs.Select(job => job.DisplayName));
+            PathVisualPreview.Apply(characterPreview, pathVisualPreview, pathSymbolPreview, definition.Id, GameSessionData.SelectedPlayerVisual);
         }
 
         private static string FormatBonuses(PlayerPathDefinition definition) => string.Join("   ", definition.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
@@ -158,7 +162,9 @@ namespace ProjectLimitless.UI
         {
             Image panel = Image(parent, "CharacterSummary", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.13f, .48f), new Vector2(190, 390)); AddOutline(panel.gameObject, mutedColor, 2);
             Text heading = Text(panel.transform, "Heading", "캐릭터", font, 20, new Vector2(.5f, .91f), new Vector2(160, 32)); heading.color = accentColor;
-            Image preview = Image(panel.transform, "Preview", Color.white); preview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; preview.preserveAspect = true; SetRect(preview.rectTransform, new Vector2(.5f, .62f), new Vector2(150, 170));
+            characterPreview = Image(panel.transform, "Preview", Color.white); characterPreview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; characterPreview.preserveAspect = true; SetRect(characterPreview.rectTransform, new Vector2(.5f, .62f), new Vector2(150, 170));
+            pathVisualPreview = Image(panel.transform, "PathVisualPreview", Color.clear); SetRect(pathVisualPreview.rectTransform, new Vector2(.5f, .62f), new Vector2(150, 170));
+            pathSymbolPreview = Image(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbolPreview.rectTransform, new Vector2(.78f, .42f), new Vector2(42, 42));
             string name = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "이름 미설정" : GameSessionData.PlayerName;
             string visual = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? "여성" : "남성";
             Text summary = Text(panel.transform, "Summary", $"{name}\n{visual}", font, 20, new Vector2(.5f, .22f), new Vector2(165, 80)); summary.fontStyle = FontStyle.Bold;

@@ -72,6 +72,9 @@ namespace ProjectLimitless.UI
             Image previewFrame = MakeImage(panel.transform, "PreviewFrame", new Color(.025f, .045f, .075f, 1)); SetRect(previewFrame.rectTransform, new Vector2(.5f, .66f), new Vector2(175, 190)); AddOutline(previewFrame.gameObject, new Color(.32f, .4f, .52f, 1), 2);
             Sprite selectedSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
             Image characterImage = MakeImage(previewFrame.transform, "CharacterImage", Color.white); characterImage.sprite = selectedSprite; characterImage.preserveAspect = true; SetRect(characterImage.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
+            Image pathVisual = MakeImage(previewFrame.transform, "PathVisualPreview", Color.clear); SetRect(pathVisual.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
+            Image pathSymbol = MakeImage(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.78f, .42f), new Vector2(42, 42));
+            PathVisualPreview.Apply(characterImage, pathVisual, pathSymbol, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
             if (selectedSprite == null)
             {
                 // Sprite 참조가 끊겨도 불투명한 흰 사각형이 캐릭터처럼 보이지 않게 하고 원인을 Console에 남깁니다.
@@ -91,7 +94,7 @@ namespace ProjectLimitless.UI
             string skills = job == null ? "• 데이터 없음" : string.Join("\n", job.StartingSkills.Select(s => $"• {s.SkillName}"));
             bool recommended = path != null && job != null && path.RecommendedJobs.Any(item => item.Id == job.JobId);
             Text content = MakeText(panel.transform, "SelectionSummary",
-                $"선택한 길\n{path?.DisplayName ?? "길 미선택"}\n능력치  {pathBonuses}\n패시브  {path?.PassiveName ?? "-"}\n\n선택한 직업{(recommended ? "   <color=#FFDB8A>[추천 직업]</color>" : "")}\n{job?.DisplayName ?? "직업 미선택"}\n역할  {job?.RoleName ?? "-"}\n능력치  {jobBonuses}\n패시브  {(job == null ? "-" : job.Passive.PassiveName)}\n\n시작 스킬\n{skills}",
+                $"선택한 길\n{path?.DisplayName ?? "길 미선택"}\n외형  {PathVisualPreview.GetDisplayName(GameSessionData.SelectedPlayerPathId)}\n능력치  {pathBonuses}\n패시브  {path?.PassiveName ?? "-"}\n\n선택한 직업{(recommended ? "   <color=#FFDB8A>[추천 직업]</color>" : "")}\n{job?.DisplayName ?? "직업 미선택"}\n역할  {job?.RoleName ?? "-"}\n능력치  {jobBonuses}\n패시브  {(job == null ? "-" : job.Passive.PassiveName)}\n\n시작 스킬\n{skills}",
                 font, 18, new Vector2(.5f, .5f), new Vector2(480, 400));
             content.supportRichText = true; content.alignment = TextAnchor.MiddleLeft; content.fontStyle = FontStyle.Bold;
         }

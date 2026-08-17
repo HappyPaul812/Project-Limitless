@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a134f2a4e5e04b83bd63a438113fbbee, type: 3}
+  m_Name: 05_EmotionalScarVisual
+  pathId: path.emotional-scar
+  visualMode: 3
+  visualDisplayName: 이어진 심장석
+  maleSprites: {down: {fileID: 0}, left: {fileID: 0}, right: {fileID: 0}, up: {fileID: 0}}
+  femaleSprites: {down: {fileID: 0}, left: {fileID: 0}, right: {fileID: 0}, up: {fileID: 0}}
+  symbolSprite: {fileID: 0}
