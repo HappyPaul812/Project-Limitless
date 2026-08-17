@@ -145,7 +145,7 @@ namespace ProjectLimitless.UI
             Image preview = Image(panel.transform, "Preview", Color.white); preview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; preview.preserveAspect = true; SetRect(preview.rectTransform, new Vector2(.5f, .67f), new Vector2(145, 155));
             Image pathVisual = Image(panel.transform, "PathVisualPreview", Color.clear); SetRect(pathVisual.rectTransform, new Vector2(.5f, .67f), new Vector2(145, 155));
             Image pathSymbol = Image(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.78f, .45f), new Vector2(38, 38));
-            PathVisualPreview.Apply(preview, pathVisual, pathSymbol, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
+            PathVisualPreview.Apply(preview, pathVisual, pathSymbol, preview.sprite, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
             string name = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "이름 미설정" : GameSessionData.PlayerName;
             string visual = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? "여성" : "남성";
             string path = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").FirstOrDefault(item => item.Id == GameSessionData.SelectedPlayerPathId)?.DisplayName ?? "길 미선택";

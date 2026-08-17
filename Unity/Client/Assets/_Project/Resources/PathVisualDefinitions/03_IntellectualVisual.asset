@@ -8,6 +8,6 @@ MonoBehaviour:
   pathId: path.intellectual
   visualMode: 3
   visualDisplayName: 동행의 문장
-  maleSprites: {down: {fileID: 0}, left: {fileID: 0}, right: {fileID: 0}, up: {fileID: 0}}
-  femaleSprites: {down: {fileID: 0}, left: {fileID: 0}, right: {fileID: 0}, up: {fileID: 0}}
+  maleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
+  femaleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
   symbolSprite: {fileID: 0}

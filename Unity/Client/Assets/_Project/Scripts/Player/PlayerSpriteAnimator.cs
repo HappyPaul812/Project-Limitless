@@ -1,5 +1,4 @@
 using UnityEngine;
-using ProjectLimitless.Core;
 
 namespace ProjectLimitless.Player
 {
@@ -19,17 +18,6 @@ namespace ProjectLimitless.Player
         private Animator animator;
         private Vector2 facing = Vector2.down;
         private string currentState;
-
-        public FacingDirection CurrentFacingDirection
-        {
-            get
-            {
-                if (facing.y > 0f) return FacingDirection.Up;
-                if (facing.x < 0f) return FacingDirection.Left;
-                if (facing.x > 0f) return FacingDirection.Right;
-                return FacingDirection.Down;
-            }
-        }
 
         /// <summary>부모 Player의 이동 처리와 같은 Visual GameObject의 Animator를 찾아 보관합니다.</summary>
         private void Awake()

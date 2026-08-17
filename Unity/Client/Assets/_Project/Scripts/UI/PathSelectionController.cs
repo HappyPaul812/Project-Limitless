@@ -133,7 +133,8 @@ namespace ProjectLimitless.UI
             detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
             detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
             detailRecommendedJobs.text = "추천 직업\n" + string.Join(" · ", definition.RecommendedJobs.Select(job => job.DisplayName));
-            PathVisualPreview.Apply(characterPreview, pathVisualPreview, pathSymbolPreview, definition.Id, GameSessionData.SelectedPlayerVisual);
+            Sprite baseSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
+            PathVisualPreview.Apply(characterPreview, pathVisualPreview, pathSymbolPreview, baseSprite, definition.Id, GameSessionData.SelectedPlayerVisual);
         }
 
         private static string FormatBonuses(PlayerPathDefinition definition) => string.Join("   ", definition.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));

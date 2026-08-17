@@ -30,6 +30,25 @@ namespace ProjectLimitless.Player
         /// <summary>현재 선택된 외형입니다. 향후 캐릭터 생성 화면이나 저장 시스템에서 읽을 수 있습니다.</summary>
         public PlayerVisualType VisualType => visualType;
 
+        public void ApplyPathVariant(RuntimeAnimatorController controller, Sprite defaultSprite)
+        {
+            if (visualRenderer == null || visualAnimator == null || controller == null || defaultSprite == null) return;
+            visualRenderer.enabled = true;
+            visualRenderer.sprite = defaultSprite;
+            visualAnimator.runtimeAnimatorController = controller;
+            visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
+        }
+
+        public void ResetPathVariant()
+        {
+            if (visualRenderer == null || visualAnimator == null) return;
+            bool useFemale = visualType == PlayerVisualType.Female;
+            visualRenderer.enabled = true;
+            visualRenderer.sprite = useFemale ? femaleDefaultSprite : maleDefaultSprite;
+            visualAnimator.runtimeAnimatorController = useFemale ? femaleAnimatorController : maleAnimatorController;
+            visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
+        }
+
         /// <summary>게임이 시작될 때 Character Creation에서 세션에 저장한 외형을 읽어 적용합니다.</summary>
         private void Awake()
         {
@@ -80,12 +99,7 @@ namespace ProjectLimitless.Player
                 return;
             }
 
-            bool useFemale = visualType == PlayerVisualType.Female;
-            visualRenderer.sprite = useFemale ? femaleDefaultSprite : maleDefaultSprite;
-            visualAnimator.runtimeAnimatorController = useFemale ? femaleAnimatorController : maleAnimatorController;
-
-            // Controller가 바뀌면 같은 상태 이름이라도 새 외형에서 다시 재생해야 합니다.
-            visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
+            ResetPathVariant();
             GetComponent<PlayerPathVisualController>()?.Apply(GameSessionData.SelectedPlayerPathId);
         }
     }
