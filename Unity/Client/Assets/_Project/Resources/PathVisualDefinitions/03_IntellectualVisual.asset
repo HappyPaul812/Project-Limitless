@@ -10,4 +10,4 @@ MonoBehaviour:
   visualDisplayName: 동행의 문장
   maleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
   femaleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
-  symbolSprite: {fileID: 0}
+  symbolSprite: {fileID: 21300000, guid: e88d6e7ce8a84846a334279fd09eecea, type: 3}

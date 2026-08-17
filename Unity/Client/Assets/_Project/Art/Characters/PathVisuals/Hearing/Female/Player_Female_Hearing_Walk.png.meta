@@ -1,0 +1,639 @@
+fileFormatVersion: 2
+guid: 7921a59236097524b9558cd891abeb34
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4616484113956541028
+    second: Player_Female_Hearing_Walk_0
+  - first:
+      213: -758576913012308997
+    second: Player_Female_Hearing_Walk_1
+  - first:
+      213: -8923771421682920282
+    second: Player_Female_Hearing_Walk_2
+  - first:
+      213: 1589491105228753464
+    second: Player_Female_Hearing_Walk_3
+  - first:
+      213: -3336197858428422151
+    second: Player_Female_Hearing_Walk_4
+  - first:
+      213: -3352656371571589429
+    second: Player_Female_Hearing_Walk_5
+  - first:
+      213: -7698798105929713400
+    second: Player_Female_Hearing_Walk_6
+  - first:
+      213: -5116401325880463600
+    second: Player_Female_Hearing_Walk_7
+  - first:
+      213: -9008712789159132644
+    second: Player_Female_Hearing_Walk_8
+  - first:
+      213: -8244729775210464290
+    second: Player_Female_Hearing_Walk_9
+  - first:
+      213: -5917217521003937070
+    second: Player_Female_Hearing_Walk_10
+  - first:
+      213: 3226374648140621858
+    second: Player_Female_Hearing_Walk_11
+  - first:
+      213: 3706642262927395216
+    second: Player_Female_Hearing_Walk_12
+  - first:
+      213: -4631475928283494874
+    second: Player_Female_Hearing_Walk_13
+  - first:
+      213: -500162202773550657
+    second: Player_Female_Hearing_Walk_14
+  - first:
+      213: 2260743110495244209
+    second: Player_Female_Hearing_Walk_15
+  - first:
+      213: -8888562864944479255
+    second: Player_Female_Hearing_Walk_16
+  - first:
+      213: 407279762077100067
+    second: Player_Female_Hearing_Walk_17
+  - first:
+      213: -7844949801246691693
+    second: Player_Female_Hearing_Walk_18
+  - first:
+      213: 4637206219247103711
+    second: Player_Female_Hearing_Walk_19
+  - first:
+      213: 9036211677649839365
+    second: Player_Female_Hearing_Walk_20
+  - first:
+      213: 7747615732475586346
+    second: Player_Female_Hearing_Walk_21
+  - first:
+      213: 2274626032009448028
+    second: Player_Female_Hearing_Walk_22
+  - first:
+      213: -5251142180558334608
+    second: Player_Female_Hearing_Walk_23
+  - first:
+      213: -5547280368087482131
+    second: Player_Female_Hearing_Walk_24
+  - first:
+      213: 161817484040275079
+    second: Player_Female_Hearing_Walk_25
+  - first:
+      213: 2663898118572089165
+    second: Player_Female_Hearing_Walk_26
+  - first:
+      213: 3023976464237325609
+    second: Player_Female_Hearing_Walk_27
+  - first:
+      213: 7001331727326927204
+    second: Player_Female_Hearing_Walk_28
+  - first:
+      213: 2039100370391386087
+    second: Player_Female_Hearing_Walk_29
+  - first:
+      213: 6654399153612374862
+    second: Player_Female_Hearing_Walk_30
+  - first:
+      213: -5043594957982844354
+    second: Player_Female_Hearing_Walk_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 314
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24f2e6627ae38747afe1b6dfe7197b1
+      internalID: -2065301134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Down_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4918efd48cf40c1408037b624c09ad91
+      internalID: 320447592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Down_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11eef2c94da0f24ab327984a7fff7a2
+      internalID: -1802553953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Down_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f9f5182bd188542b5c6597491023c9
+      internalID: 336232251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e442acdb68e30894b80d11499879602a
+      internalID: 516669942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Left_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce343ae1422c944f8e21c1a8b7aedf0
+      internalID: -688742449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Left_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a557d857502df042b6a0b4bcfe614f5
+      internalID: 378316291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Left_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5387bc8ad12cc4796e39f20e3d35eb
+      internalID: 1386773067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da51bc28a91f3b643b48b808bde76e65
+      internalID: 1715771759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Right_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba08efa2401235e43b5a1fc16502db96
+      internalID: 188116538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Right_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c73f042d0a8cf64ab47935d08cf82da
+      internalID: 1836543352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Right_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d9a1f7a1a371a42ab92a9e73e4ad6c
+      internalID: -460506301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4b6b5945b342f46a9a7572ab6dd433
+      internalID: 504423831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Up_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55cf2159366d9104a9217c30615e3200
+      internalID: -183383226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Up_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a69cd8d2104b6468fd8c720f789470
+      internalID: -1100837327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Hearing_Up_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3a0add1ca1aa344b52fc717dcafe0a
+      internalID: -1541278211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2cafc72a1ae3b8e47aea8ea4f02dbcba
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_Female_Hearing_Down_0: -2065301134
+      Player_Female_Hearing_Down_1: 320447592
+      Player_Female_Hearing_Down_2: -1802553953
+      Player_Female_Hearing_Down_3: 336232251
+      Player_Female_Hearing_Left_0: 516669942
+      Player_Female_Hearing_Left_1: -688742449
+      Player_Female_Hearing_Left_2: 378316291
+      Player_Female_Hearing_Left_3: 1386773067
+      Player_Female_Hearing_Right_0: 1715771759
+      Player_Female_Hearing_Right_1: 188116538
+      Player_Female_Hearing_Right_2: 1836543352
+      Player_Female_Hearing_Right_3: -460506301
+      Player_Female_Hearing_Up_0: 504423831
+      Player_Female_Hearing_Up_1: -183383226
+      Player_Female_Hearing_Up_2: -1100837327
+      Player_Female_Hearing_Up_3: -1541278211
+      Player_Female_Hearing_Walk_0: 4616484113956541028
+      Player_Female_Hearing_Walk_1: -758576913012308997
+      Player_Female_Hearing_Walk_10: -5917217521003937070
+      Player_Female_Hearing_Walk_11: 3226374648140621858
+      Player_Female_Hearing_Walk_12: 3706642262927395216
+      Player_Female_Hearing_Walk_13: -4631475928283494874
+      Player_Female_Hearing_Walk_14: -500162202773550657
+      Player_Female_Hearing_Walk_15: 2260743110495244209
+      Player_Female_Hearing_Walk_16: -8888562864944479255
+      Player_Female_Hearing_Walk_17: 407279762077100067
+      Player_Female_Hearing_Walk_18: -7844949801246691693
+      Player_Female_Hearing_Walk_19: 4637206219247103711
+      Player_Female_Hearing_Walk_2: -8923771421682920282
+      Player_Female_Hearing_Walk_20: 9036211677649839365
+      Player_Female_Hearing_Walk_21: 7747615732475586346
+      Player_Female_Hearing_Walk_22: 2274626032009448028
+      Player_Female_Hearing_Walk_23: -5251142180558334608
+      Player_Female_Hearing_Walk_24: -5547280368087482131
+      Player_Female_Hearing_Walk_25: 161817484040275079
+      Player_Female_Hearing_Walk_26: 2663898118572089165
+      Player_Female_Hearing_Walk_27: 3023976464237325609
+      Player_Female_Hearing_Walk_28: 7001331727326927204
+      Player_Female_Hearing_Walk_29: 2039100370391386087
+      Player_Female_Hearing_Walk_3: 1589491105228753464
+      Player_Female_Hearing_Walk_30: 6654399153612374862
+      Player_Female_Hearing_Walk_31: -5043594957982844354
+      Player_Female_Hearing_Walk_4: -3336197858428422151
+      Player_Female_Hearing_Walk_5: -3352656371571589429
+      Player_Female_Hearing_Walk_6: -7698798105929713400
+      Player_Female_Hearing_Walk_7: -5116401325880463600
+      Player_Female_Hearing_Walk_8: -9008712789159132644
+      Player_Female_Hearing_Walk_9: -8244729775210464290
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

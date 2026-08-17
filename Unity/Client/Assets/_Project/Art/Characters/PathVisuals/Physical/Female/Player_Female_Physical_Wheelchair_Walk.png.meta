@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 149f8210628e9e74e985d75f3912b080
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 80103491563860809
+    second: Player_Female_Physical_Wheelchair_Walk_0
+  - first:
+      213: -3979162166018694945
+    second: Player_Female_Physical_Wheelchair_Walk_1
+  - first:
+      213: -2913587923740600220
+    second: Player_Female_Physical_Wheelchair_Walk_2
+  - first:
+      213: -5413551701796800409
+    second: Player_Female_Physical_Wheelchair_Walk_3
+  - first:
+      213: 927874214027713751
+    second: Player_Female_Physical_Wheelchair_Walk_4
+  - first:
+      213: -4605329755139397326
+    second: Player_Female_Physical_Wheelchair_Walk_5
+  - first:
+      213: 6940755929963593265
+    second: Player_Female_Physical_Wheelchair_Walk_6
+  - first:
+      213: 3915862664774129095
+    second: Player_Female_Physical_Wheelchair_Walk_7
+  - first:
+      213: 2339014305521917664
+    second: Player_Female_Physical_Wheelchair_Walk_8
+  - first:
+      213: 7439688405390877079
+    second: Player_Female_Physical_Wheelchair_Walk_9
+  - first:
+      213: -6239340135854621522
+    second: Player_Female_Physical_Wheelchair_Walk_10
+  - first:
+      213: 4507109195580087436
+    second: Player_Female_Physical_Wheelchair_Walk_11
+  - first:
+      213: 3590894200738277477
+    second: Player_Female_Physical_Wheelchair_Walk_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 314
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f277d9892ec852b4daaa79b55373b34b
+      internalID: 984686741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Down_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447c206239ec6de4d82568f24db4e20e
+      internalID: -1266186262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Down_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893995a97186c354fb73370d935599a3
+      internalID: 2009208341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Down_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fafe816f2ca32045b0eadf2b266ee65
+      internalID: 182771247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2691dc33efe2c4188f24ac3c603c44
+      internalID: -65409999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Left_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d2caf9b388e9e4aae588301725a681
+      internalID: 1850439919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Left_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121533d6697d48944ae5156f3bb69a68
+      internalID: 2069146796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Left_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bbebe0e6bff94345b259b681ea4659c
+      internalID: -1007989858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0309c180afb6dc4ba863bfdceb36970
+      internalID: -992613436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Right_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51e218f88e143c4899b377e510d35c6
+      internalID: 195250051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Right_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c1af3b4452ed748b59ff13330b6343
+      internalID: 970797811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Right_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d2d61e4272bc54ab3f91cab9c31775
+      internalID: -1098824107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c340965d1761f874287d83a804499ea4
+      internalID: 1534642271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Up_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba82cc6e2ec5dc4eaabf57069e01f79
+      internalID: 1151404714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Up_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24144df9479df34dacc372a63c95af4
+      internalID: 1899883152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Female_Physical_Wheelchair_Up_3
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3011bd592e70645ac9466d21af1cb6
+      internalID: -1330995913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 36312e0f954a1a34095bdf43318df882
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Player_Female_Physical_Wheelchair_Down_0: 984686741
+      Player_Female_Physical_Wheelchair_Down_1: -1266186262
+      Player_Female_Physical_Wheelchair_Down_2: 2009208341
+      Player_Female_Physical_Wheelchair_Down_3: 182771247
+      Player_Female_Physical_Wheelchair_Left_0: -65409999
+      Player_Female_Physical_Wheelchair_Left_1: 1850439919
+      Player_Female_Physical_Wheelchair_Left_2: 2069146796
+      Player_Female_Physical_Wheelchair_Left_3: -1007989858
+      Player_Female_Physical_Wheelchair_Right_0: -992613436
+      Player_Female_Physical_Wheelchair_Right_1: 195250051
+      Player_Female_Physical_Wheelchair_Right_2: 970797811
+      Player_Female_Physical_Wheelchair_Right_3: -1098824107
+      Player_Female_Physical_Wheelchair_Up_0: 1534642271
+      Player_Female_Physical_Wheelchair_Up_1: 1151404714
+      Player_Female_Physical_Wheelchair_Up_2: 1899883152
+      Player_Female_Physical_Wheelchair_Up_3: -1330995913
+      Player_Female_Physical_Wheelchair_Walk_0: 80103491563860809
+      Player_Female_Physical_Wheelchair_Walk_1: -3979162166018694945
+      Player_Female_Physical_Wheelchair_Walk_10: -6239340135854621522
+      Player_Female_Physical_Wheelchair_Walk_11: 4507109195580087436
+      Player_Female_Physical_Wheelchair_Walk_12: 3590894200738277477
+      Player_Female_Physical_Wheelchair_Walk_2: -2913587923740600220
+      Player_Female_Physical_Wheelchair_Walk_3: -5413551701796800409
+      Player_Female_Physical_Wheelchair_Walk_4: 927874214027713751
+      Player_Female_Physical_Wheelchair_Walk_5: -4605329755139397326
+      Player_Female_Physical_Wheelchair_Walk_6: 6940755929963593265
+      Player_Female_Physical_Wheelchair_Walk_7: 3915862664774129095
+      Player_Female_Physical_Wheelchair_Walk_8: 2339014305521917664
+      Player_Female_Physical_Wheelchair_Walk_9: 7439688405390877079
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

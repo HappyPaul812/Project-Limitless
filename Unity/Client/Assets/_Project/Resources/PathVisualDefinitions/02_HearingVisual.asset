@@ -3,11 +3,22 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a134f2a4e5e04b83bd63a438113fbbee, type: 3}
   m_Name: 02_HearingVisual
+  m_EditorClassIdentifier:
   pathId: path.hearing
   visualMode: 1
-  visualDisplayName: 마도공학 헤드폰
-  maleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
-  femaleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
+  visualDisplayName: "\uB9C8\uB3C4\uACF5\uD559 \uD5E4\uB4DC\uD3F0"
+  maleVariant:
+    animatorController: {fileID: 9100000, guid: e8b188a859790184e9c50e5a63b129f5, type: 2}
+    defaultDownSprite: {fileID: 736440820, guid: 3bd7b30bb03ac6e4e85d5d75b53ef65a, type: 3}
+  femaleVariant:
+    animatorController: {fileID: 9100000, guid: 90e7ce9dd1ad4ac43ba05a7a5799b2cd, type: 2}
+    defaultDownSprite: {fileID: -2065301134, guid: 7921a59236097524b9558cd891abeb34, type: 3}
   symbolSprite: {fileID: 0}

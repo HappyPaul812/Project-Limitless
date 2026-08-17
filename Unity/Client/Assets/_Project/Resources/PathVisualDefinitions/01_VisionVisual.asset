@@ -3,11 +3,22 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a134f2a4e5e04b83bd63a438113fbbee, type: 3}
   m_Name: 01_VisionVisual
+  m_EditorClassIdentifier:
   pathId: path.vision
   visualMode: 1
-  visualDisplayName: 마도공학 바이저
-  maleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
-  femaleVariant: {animatorController: {fileID: 0}, defaultDownSprite: {fileID: 0}}
+  visualDisplayName: "\uB9C8\uB3C4\uACF5\uD559 \uBC14\uC774\uC800"
+  maleVariant:
+    animatorController: {fileID: 9100000, guid: 79fcbb50860c5c349a2ec849400e5a2e, type: 2}
+    defaultDownSprite: {fileID: -2089349847, guid: 51f428a0ff8d3284282e8daab7f9f3f3, type: 3}
+  femaleVariant:
+    animatorController: {fileID: 9100000, guid: de1ad0473e10da24aaf1c3b35b4a04c3, type: 2}
+    defaultDownSprite: {fileID: -564992554, guid: 6dee08c08f3714c43a2682c9219e2627, type: 3}
   symbolSprite: {fileID: 0}
