@@ -17,6 +17,7 @@ namespace ProjectLimitless.Editor
         private const string FieldScenePath = "Assets/_Project/Scenes/Field_01.unity";
         private const string VillageScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
+        private const string VillageGatePrefabPath = "Assets/_Project/Resources/World/StarterVillageSouthGate.prefab";
         private const string BasicRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
         private const string GrassTilesPath = BasicRoot + "tiles/tiles_grass.png";
         private const string FenceTilesPath = BasicRoot + "tiles/fence_tiles.png";
@@ -27,11 +28,13 @@ namespace ProjectLimitless.Editor
             GameObject playerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(PlayerPrefabPath);
             if (playerPrefab == null) throw new InvalidOperationException($"Player Prefab을 찾지 못했습니다: {PlayerPrefabPath}");
 
+            CreateStarterVillageSouthGatePrefab();
+
             Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             CreateFieldEnvironment();
             GameObject player = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab, scene);
             player.name = "Player";
-            player.transform.position = new Vector3(0f, -4.7f, 0f);
+            player.transform.position = new Vector3(0f, 4.7f, 0f);
             CreateCamera(player.transform);
             CreateSpawnAndTransitions();
             CreateBoundaries();
@@ -59,11 +62,21 @@ namespace ProjectLimitless.Editor
                 throw new InvalidOperationException("Field_01 마을 진입 Spawn Point가 누락됐습니다.");
             if (FindObject("Entrance_To_StarterVillage")?.GetComponent<SceneTransitionTrigger>() == null)
                 throw new InvalidOperationException("Field_01 마을 복귀 Trigger가 누락됐습니다.");
+            if (FindObject("Spawn_From_StarterVillage").transform.position.y <= 0f || FindObject("Entrance_To_StarterVillage").transform.position.y <= 0f)
+                throw new InvalidOperationException("Field_01 마을 Spawn과 복귀 Trigger가 북쪽에 있지 않습니다.");
             if (roots.SelectMany(root => root.GetComponentsInChildren<Collider2D>(true)).Count() < 10)
                 throw new InvalidOperationException("Field_01 장애물 Collider가 예상보다 적습니다.");
 
             int missingScripts = roots.Sum(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount);
             if (missingScripts != 0) throw new InvalidOperationException($"Field_01 Missing Script 수: {missingScripts}");
+
+            GameObject gatePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(VillageGatePrefabPath);
+            if (gatePrefab == null || gatePrefab.GetComponentInChildren<SceneSpawnPoint>(true) == null || gatePrefab.GetComponentInChildren<SceneTransitionTrigger>(true) == null)
+                throw new InvalidOperationException("Starter Village 남문 Prefab 또는 Spawn/Transition이 누락됐습니다.");
+            if (gatePrefab.GetComponentInChildren<TextMesh>(true) != null)
+                throw new InvalidOperationException("Starter Village 남문에 글씨 기반 출구 표식이 남아 있습니다.");
+            if (gatePrefab.GetComponentsInChildren<Collider2D>(true).Length < 10 || GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(gatePrefab) != 0)
+                throw new InvalidOperationException("Starter Village 남문 Collider 또는 Script 구성이 올바르지 않습니다.");
 
             string[] buildPaths = EditorBuildSettings.scenes.Where(item => item.enabled).Select(item => item.path).ToArray();
             int villageIndex = Array.IndexOf(buildPaths, VillageScenePath);
@@ -91,8 +104,8 @@ namespace ProjectLimitless.Editor
             CreateBasic(root.transform, "RockWest", "assets/rock_01.png", new Vector2(-5.8f, -2.2f), 3, new Vector2(.45f, .25f), new Vector2(0f, -.25f));
             CreateBasic(root.transform, "RockNorth", "assets/rock_02.png", new Vector2(4.5f, 4.4f), 3, new Vector2(.4f, .22f), new Vector2(0f, -.22f));
 
-            foreach (float x in new[] { -4f, -3f, 3f, 4f }) CreateFence(root.transform, new Vector2(x, -5.7f));
-            foreach (float x in new[] { -6f, -5f, 5f, 6f }) CreateFence(root.transform, new Vector2(x, 5.8f));
+            foreach (float x in new[] { -4f, -3f, 3f, 4f }) CreateFence(root.transform, new Vector2(x, 5.7f));
+            foreach (float x in new[] { -6f, -5f, 5f, 6f }) CreateFence(root.transform, new Vector2(x, -5.8f));
         }
 
         private static void CreateGround(Transform parent)
@@ -122,18 +135,18 @@ namespace ProjectLimitless.Editor
         private static void CreateSpawnAndTransitions()
         {
             GameObject spawn = new GameObject("Spawn_From_StarterVillage");
-            spawn.transform.position = new Vector3(0f, -4.7f, 0f);
+            spawn.transform.position = new Vector3(0f, 4.7f, 0f);
             spawn.AddComponent<SceneSpawnPoint>().Configure("Spawn_From_StarterVillage");
 
             GameObject returnTrigger = new GameObject("Entrance_To_StarterVillage", typeof(BoxCollider2D));
-            returnTrigger.transform.position = new Vector3(0f, -6.65f, 0f);
+            returnTrigger.transform.position = new Vector3(0f, 6.65f, 0f);
             BoxCollider2D trigger = returnTrigger.GetComponent<BoxCollider2D>();
             trigger.size = new Vector2(2.5f, .9f);
             trigger.isTrigger = true;
             returnTrigger.AddComponent<SceneTransitionTrigger>().Configure("World_StarterVillage", "Spawn_From_Field01");
 
-            GameObject futureExit = new GameObject("FutureNorthExit_TODO");
-            futureExit.transform.position = new Vector3(0f, 6.6f, 0f);
+            GameObject futureExit = new GameObject("FutureSouthExit_TODO");
+            futureExit.transform.position = new Vector3(0f, -6.6f, 0f);
         }
 
         private static void CreateCamera(Transform target)
@@ -153,9 +166,48 @@ namespace ProjectLimitless.Editor
         {
             CreateBoundary("BoundaryLeft", new Vector2(-10.7f, 0f), new Vector2(1f, 16f));
             CreateBoundary("BoundaryRight", new Vector2(10.7f, 0f), new Vector2(1f, 16f));
-            CreateBoundary("BoundaryTop", new Vector2(0f, 7.7f), new Vector2(22f, 1f));
-            CreateBoundary("BoundaryBottomLeft", new Vector2(-6.5f, -7.7f), new Vector2(9f, 1f));
-            CreateBoundary("BoundaryBottomRight", new Vector2(6.5f, -7.7f), new Vector2(9f, 1f));
+            CreateBoundary("BoundaryTopLeft", new Vector2(-6.5f, 7.7f), new Vector2(9f, 1f));
+            CreateBoundary("BoundaryTopRight", new Vector2(6.5f, 7.7f), new Vector2(9f, 1f));
+            CreateBoundary("BoundaryBottom", new Vector2(0f, -7.7f), new Vector2(22f, 1f));
+        }
+
+        private static void CreateStarterVillageSouthGatePrefab()
+        {
+            EnsureAssetFolder("Assets/_Project/Resources/World");
+            GameObject root = new GameObject("StarterVillageSouthGate");
+
+            for (int x = -10; x <= 10; x++)
+            {
+                if (x >= -1 && x <= 1) continue;
+                CreateFence(root.transform, new Vector2(x, -5.7f));
+            }
+
+            GameObject spawn = new GameObject("Spawn_From_Field01");
+            spawn.transform.SetParent(root.transform);
+            spawn.transform.position = new Vector3(0f, -4.65f, 0f);
+            spawn.AddComponent<SceneSpawnPoint>().Configure("Spawn_From_Field01");
+
+            GameObject exit = new GameObject("Exit_To_Field01", typeof(BoxCollider2D));
+            exit.transform.SetParent(root.transform);
+            exit.transform.position = new Vector3(0f, -6.5f, 0f);
+            BoxCollider2D collider = exit.GetComponent<BoxCollider2D>();
+            collider.size = new Vector2(2.5f, .9f);
+            collider.isTrigger = true;
+            exit.AddComponent<SceneTransitionTrigger>().Configure("Field_01", "Spawn_From_StarterVillage");
+
+            PrefabUtility.SaveAsPrefabAsset(root, VillageGatePrefabPath);
+            UnityEngine.Object.DestroyImmediate(root);
+        }
+
+        private static void EnsureAssetFolder(string path)
+        {
+            string current = "Assets";
+            foreach (string part in path.Split('/').Skip(1))
+            {
+                string next = current + "/" + part;
+                if (!AssetDatabase.IsValidFolder(next)) AssetDatabase.CreateFolder(current, part);
+                current = next;
+            }
         }
 
         private static void CreateBoundary(string name, Vector2 position, Vector2 size)

@@ -7,8 +7,8 @@ namespace ProjectLimitless.World
     public static class StarterVillageFieldConnection
     {
         private const string VillageScene = "World_StarterVillage";
-        private const string FieldScene = "Field_01";
         private const string RootName = "Milestone02_FieldConnection";
+        private const string SouthGateResourcePath = "World/StarterVillageSouthGate";
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
@@ -21,33 +21,16 @@ namespace ProjectLimitless.World
         {
             if (scene.name != VillageScene || GameObject.Find(RootName) != null) return;
 
-            GameObject root = new GameObject(RootName);
+            GameObject prefab = Resources.Load<GameObject>(SouthGateResourcePath);
+            if (prefab == null)
+            {
+                Debug.LogError($"마을 남문 Prefab을 찾지 못했습니다: Resources/{SouthGateResourcePath}");
+                return;
+            }
+
+            GameObject root = Object.Instantiate(prefab);
+            root.name = RootName;
             SceneManager.MoveGameObjectToScene(root, scene);
-
-            GameObject spawn = new GameObject("Spawn_From_Field01");
-            spawn.transform.SetParent(root.transform);
-            spawn.transform.position = new Vector3(0f, -4.75f, 0f);
-            spawn.AddComponent<SceneSpawnPoint>().Configure("Spawn_From_Field01");
-
-            GameObject exit = new GameObject("Exit_To_Field01", typeof(BoxCollider2D));
-            exit.transform.SetParent(root.transform);
-            exit.transform.position = new Vector3(0f, -6.65f, 0f);
-            BoxCollider2D collider = exit.GetComponent<BoxCollider2D>();
-            collider.size = new Vector2(2.5f, 0.9f);
-            collider.isTrigger = true;
-            exit.AddComponent<SceneTransitionTrigger>().Configure(FieldScene, "Spawn_From_StarterVillage");
-
-            GameObject marker = new GameObject("FieldExitMarker", typeof(TextMesh));
-            marker.transform.SetParent(root.transform);
-            marker.transform.position = new Vector3(0f, -5.75f, 0f);
-            TextMesh label = marker.GetComponent<TextMesh>();
-            label.text = "FIELD";
-            label.anchor = TextAnchor.MiddleCenter;
-            label.alignment = TextAlignment.Center;
-            label.characterSize = 0.08f;
-            label.fontSize = 48;
-            label.color = new Color(0.32f, 0.2f, 0.08f, 1f);
-            marker.GetComponent<MeshRenderer>().sortingOrder = 3;
         }
     }
 }
