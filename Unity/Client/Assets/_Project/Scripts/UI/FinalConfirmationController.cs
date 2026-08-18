@@ -73,7 +73,7 @@ namespace ProjectLimitless.UI
             Sprite selectedSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
             Image characterImage = MakeImage(previewFrame.transform, "CharacterImage", Color.white); characterImage.sprite = selectedSprite; characterImage.preserveAspect = true; SetRect(characterImage.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
             Image pathVisual = MakeImage(previewFrame.transform, "PathVisualPreview", Color.clear); SetRect(pathVisual.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
-            Image pathSymbol = MakeImage(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.78f, .42f), new Vector2(42, 42));
+            Image pathSymbol = MakeImage(previewFrame.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.82f, .72f), new Vector2(34, 34));
             PathVisualPreview.Apply(characterImage, pathVisual, pathSymbol, selectedSprite, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
             if (selectedSprite == null)
             {
