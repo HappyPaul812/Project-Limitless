@@ -176,7 +176,7 @@ namespace ProjectLimitless.Editor
             EnsureAssetFolder("Assets/_Project/Resources/World");
             GameObject root = new GameObject("StarterVillageSouthGate");
 
-            for (int x = -10; x <= 10; x++)
+            for (int x = -9; x <= 9; x++)
             {
                 if (x >= -1 && x <= 1) continue;
                 CreateFence(root.transform, new Vector2(x, -5.7f));

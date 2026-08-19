@@ -1,3 +1,4 @@
+using ProjectLimitless.CameraSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,7 @@ namespace ProjectLimitless.World
         private const string VillageScene = "World_StarterVillage";
         private const string RootName = "Milestone02_FieldConnection";
         private const string SouthGateResourcePath = "World/StarterVillageSouthGate";
+        private static readonly Bounds VillageBounds = new Bounds(Vector3.zero, new Vector3(19f, 13f, 0f));
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
@@ -30,8 +32,25 @@ namespace ProjectLimitless.World
 
             GameObject root = Object.Instantiate(prefab);
             root.name = RootName;
+            HideFenceOutsideVillage(root.transform, "Fence_-10_-5.7");
+            HideFenceOutsideVillage(root.transform, "Fence_10_-5.7");
             CreateVillageBoundaries(root.transform);
             SceneManager.MoveGameObjectToScene(root, scene);
+
+            CameraFollow cameraFollow = Object.FindFirstObjectByType<CameraFollow>();
+            if (cameraFollow == null)
+            {
+                Debug.LogError("World_StarterVillage CameraFollow를 찾지 못해 카메라 경계를 설정할 수 없습니다.");
+                return;
+            }
+
+            cameraFollow.SetMovementBounds(VillageBounds);
+        }
+
+        private static void HideFenceOutsideVillage(Transform parent, string fenceName)
+        {
+            Transform fence = parent.Find(fenceName);
+            if (fence != null) fence.gameObject.SetActive(false);
         }
 
         /// <summary>
