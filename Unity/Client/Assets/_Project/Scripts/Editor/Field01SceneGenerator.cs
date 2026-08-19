@@ -11,18 +11,27 @@ using UnityEngine.SceneManagement;
 
 namespace ProjectLimitless.Editor
 {
-    /// <summary>Milestone 02의 첫 야외 필드만 생성하며 기존 Starter Village Scene은 수정하지 않습니다.</summary>
+    /// <summary>
+    /// Unity Editor 메뉴에서 Milestone 02의 첫 야외 필드 Scene과 마을 남문 Prefab을 자동 생성합니다.
+    /// 게임 실행 중에는 사용되지 않으며, 기존 StarterVillage Scene Asset은 직접 수정하지 않습니다.
+    /// </summary>
     public static class Field01SceneGenerator
     {
+        // 생성·검증·Build Settings 등록에 사용하는 프로젝트 전용 Asset 경로입니다.
         private const string FieldScenePath = "Assets/_Project/Scenes/Field_01.unity";
         private const string VillageScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string VillageGatePrefabPath = "Assets/_Project/Resources/World/StarterVillageSouthGate.prefab";
+        // Field 환경을 그릴 ThirdParty Sprite 원본 위치입니다. 원본 Asset 자체는 수정하지 않습니다.
         private const string BasicRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
         private const string GrassTilesPath = BasicRoot + "tiles/tiles_grass.png";
         private const string FenceTilesPath = BasicRoot + "tiles/fence_tiles.png";
 
         [MenuItem("Project-Limitless/Milestone 02/Generate Field 01")]
+        /// <summary>
+        /// Unity Editor 메뉴를 선택할 때 호출되어 Field_01의 환경, Player, Camera, 출입구와 경계를 생성합니다.
+        /// 완성된 Scene을 저장하고 Build Settings에서 StarterVillage 바로 다음 순서로 등록합니다.
+        /// </summary>
         public static void GenerateField01()
         {
             GameObject playerPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(PlayerPrefabPath);
@@ -46,6 +55,10 @@ namespace ProjectLimitless.Editor
             Debug.Log("Milestone 02 Field_01 생성 및 Build Settings 등록을 완료했습니다. Starter Village Scene은 변경하지 않았습니다.");
         }
 
+        /// <summary>
+        /// 생성된 Field_01을 열어 Player 외형, Camera, Bounds, 출입구, Collider와 Missing Script를 검사합니다.
+        /// 필수 구성이 빠졌으면 예외를 발생시켜 잘못된 Scene이 정상 결과처럼 사용되지 않게 합니다.
+        /// </summary>
         public static void ValidateField01()
         {
             Scene scene = EditorSceneManager.OpenScene(FieldScenePath, OpenSceneMode.Single);
@@ -90,6 +103,7 @@ namespace ProjectLimitless.Editor
             Debug.Log($"Field_01 검증 완료: Player/Visual/Nameplate/Camera/Spawn/Transition 정상, Collider {roots.SelectMany(root => root.GetComponentsInChildren<Collider2D>(true)).Count()}개, Missing Script 0개.");
         }
 
+        /// <summary>필드의 바닥, 길, 나무와 소품을 FieldEnvironment 아래에 배치합니다.</summary>
         private static void CreateFieldEnvironment()
         {
             GameObject root = new GameObject("FieldEnvironment");
@@ -111,6 +125,7 @@ namespace ProjectLimitless.Editor
             foreach (float x in new[] { -6f, -5f, 5f, 6f }) CreateFence(root.transform, new Vector2(x, -5.8f));
         }
 
+        /// <summary>플레이 영역 전체를 덮는 잔디 Tile을 좌표별로 생성합니다.</summary>
         private static void CreateGround(Transform parent)
         {
             string[] grass = { "tiles_grass_4_0", "tiles_grass_5_0", "tiles_grass_6_0" };
@@ -123,6 +138,7 @@ namespace ProjectLimitless.Editor
             }
         }
 
+        /// <summary>북쪽 마을 입구에서 남쪽까지 이어지는 굽은 길을 Tile로 배치합니다.</summary>
         private static void CreateRoad(Transform parent)
         {
             int[] roadCenter = { 0, 0, -1, -1, 0, 0, 1, 1, 1, 0, 0, -1, -1, 0, 0 };
@@ -135,6 +151,10 @@ namespace ProjectLimitless.Editor
             }
         }
 
+        /// <summary>
+        /// 마을에서 들어올 때의 Spawn Point와 북쪽 마을 복귀 Trigger를 서로 떨어뜨려 배치합니다.
+        /// 이렇게 해야 Scene 진입 직후 같은 Trigger에 닿아 이전 Scene으로 되돌아가는 일을 막을 수 있습니다.
+        /// </summary>
         private static void CreateSpawnAndTransitions()
         {
             GameObject spawn = new GameObject("Spawn_From_StarterVillage");
@@ -152,6 +172,7 @@ namespace ProjectLimitless.Editor
             futureExit.transform.position = new Vector3(0f, -6.6f, 0f);
         }
 
+        /// <summary>Player를 따라가는 Orthographic Main Camera를 생성하고 추적 대상을 연결합니다.</summary>
         private static void CreateCamera(Transform target)
         {
             GameObject cameraObject = new GameObject("Main Camera", typeof(Camera), typeof(AudioListener), typeof(CameraFollow));
@@ -165,6 +186,7 @@ namespace ProjectLimitless.Editor
             cameraObject.GetComponent<CameraFollow>().SetTarget(target);
         }
 
+        /// <summary>Field Tile 크기의 WorldBounds와 북쪽 중앙 입구를 제외한 네 면 Collider를 생성합니다.</summary>
         private static void CreateBoundaries()
         {
             WorldBoundaryGeneratorUtility.Create(
@@ -175,6 +197,10 @@ namespace ProjectLimitless.Editor
                 new WorldBoundaryOpening(WorldBoundarySide.Top, 0f, 4f));
         }
 
+        /// <summary>
+        /// StarterVillage에서 런타임에 설치할 남문 Prefab을 생성합니다.
+        /// 중앙 통로만 비운 울타리, Field 복귀 Spawn, Field_01 전환 Trigger를 함께 저장합니다.
+        /// </summary>
         private static void CreateStarterVillageSouthGatePrefab()
         {
             EnsureAssetFolder("Assets/_Project/Resources/World");
@@ -203,6 +229,7 @@ namespace ProjectLimitless.Editor
             UnityEngine.Object.DestroyImmediate(root);
         }
 
+        /// <summary>Prefab 저장 경로의 폴더가 없을 때 상위 폴더부터 순서대로 만듭니다.</summary>
         private static void EnsureAssetFolder(string path)
         {
             string current = "Assets";
@@ -244,6 +271,7 @@ namespace ProjectLimitless.Editor
             return result;
         }
 
+        /// <summary>Field_01을 중복 없이 StarterVillage 바로 다음 Build 순서에 등록합니다.</summary>
         private static void AddFieldToBuildSettings()
         {
             List<EditorBuildSettingsScene> scenes = EditorBuildSettings.scenes.ToList();

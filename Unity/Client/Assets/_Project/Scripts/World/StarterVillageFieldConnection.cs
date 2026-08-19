@@ -3,14 +3,22 @@ using UnityEngine.SceneManagement;
 
 namespace ProjectLimitless.World
 {
-    /// <summary>사용자 수정 마을 Scene을 덮어쓰지 않고 남쪽 Field 출구와 복귀 Spawn을 설치합니다.</summary>
+    /// <summary>
+    /// World_StarterVillage가 열릴 때 남문, Field 복귀 지점, 월드 경계를 런타임에 설치합니다.
+    /// 마을 Scene Asset을 다시 저장하지 않고도 Field_01 연결 구조를 항상 같은 상태로 유지하기 위한 초기화 코드입니다.
+    /// </summary>
     public static class StarterVillageFieldConnection
     {
+        // 이 연결 구조를 설치해야 하는 대상 Scene 이름입니다.
         private const string VillageScene = "World_StarterVillage";
+        // 중복 설치를 막기 위해 런타임에 생성한 최상위 GameObject에 붙이는 고정 이름입니다.
         private const string RootName = "Milestone02_FieldConnection";
+        // Resources 폴더에서 불러올 남문 Prefab의 확장자 없는 경로입니다.
         private const string SouthGateResourcePath = "World/StarterVillageSouthGate";
+        // 마을의 실제 배경 Tile 전체 크기이며 카메라와 외곽 Collider가 함께 사용합니다.
         private static readonly Vector2 VillageSize = new Vector2(19f, 13f);
 
+        // 게임 실행 시 Scene 로드 이벤트를 한 번 정리해 등록하여 재생이나 재초기화 때 중복 호출되지 않게 합니다.
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
         {
@@ -18,6 +26,10 @@ namespace ProjectLimitless.World
             SceneManager.sceneLoaded += Install;
         }
 
+        /// <summary>
+        /// Scene 로드가 끝날 때 호출되며, StarterVillage인 경우에만 남문 Prefab과 공통 경계를 설치합니다.
+        /// 이미 설치된 루트가 있으면 아무것도 만들지 않아 Trigger와 Collider가 중복되지 않습니다.
+        /// </summary>
         private static void Install(Scene scene, LoadSceneMode mode)
         {
             if (scene.name != VillageScene || GameObject.Find(RootName) != null) return;
@@ -37,6 +49,7 @@ namespace ProjectLimitless.World
             SceneManager.MoveGameObjectToScene(root, scene);
         }
 
+        /// <summary>이전 Prefab에 남아 있을 수 있는 Tile 영역 밖 끝 울타리를 화면에서 숨깁니다.</summary>
         private static void HideFenceOutsideVillage(Transform parent, string fenceName)
         {
             Transform fence = parent.Find(fenceName);
@@ -65,6 +78,7 @@ namespace ProjectLimitless.World
             CreateBoundary(parent, "SouthGate_SafetyStop", new Vector2(0f, -7.65f), new Vector2(3.4f, .5f));
         }
 
+        /// <summary>남문 통로를 보조하는 개별 사각 Collider GameObject를 런타임에 만듭니다.</summary>
         private static void CreateBoundary(Transform parent, string name, Vector2 position, Vector2 size)
         {
             GameObject boundary = new GameObject(name, typeof(BoxCollider2D));

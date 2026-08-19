@@ -5,13 +5,22 @@ using UnityEngine;
 
 namespace ProjectLimitless.World
 {
-    /// <summary>PendingSpawnPointId와 ID가 일치하면 Scene의 플레이어를 이 위치로 옮깁니다.</summary>
+    /// <summary>
+    /// Scene 이동 후 플레이어가 나타날 안전한 위치를 표시하는 Component입니다.
+    /// GameSessionData에 전달된 PendingSpawnPointId와 자신의 ID가 같을 때만 플레이어를 이 위치로 옮깁니다.
+    /// </summary>
     public sealed class SceneSpawnPoint : MonoBehaviour
     {
+        // 여러 Spawn Point 중 목적지 Trigger가 선택한 지점을 구분하는 고유 문자열입니다.
         [SerializeField] private string spawnPointId;
 
+        /// <summary>Scene Generator가 이 Spawn Point의 ID를 지정할 때 호출합니다.</summary>
         public void Configure(string id) => spawnPointId = id;
 
+        /// <summary>
+        /// Scene의 첫 프레임부터 실행되며, 생성 순서 차이를 고려해 플레이어를 최대 10프레임 동안 찾습니다.
+        /// 일치하는 목적지라면 플레이어를 배치하고 PendingSpawnPointId를 지워 재사용을 막습니다.
+        /// </summary>
         private IEnumerator Start()
         {
             if (string.IsNullOrWhiteSpace(spawnPointId) || GameSessionData.PendingSpawnPointId != spawnPointId) yield break;
@@ -32,6 +41,8 @@ namespace ProjectLimitless.World
             Rigidbody2D body = player.GetComponent<Rigidbody2D>();
             if (body != null)
             {
+                // 물리 오브젝트는 Rigidbody2D 위치를 바꾸고 이전 Scene에서 남은 속도도 제거해야
+                // Spawn 직후 의도하지 않은 방향으로 미끄러지지 않습니다.
                 body.position = transform.position;
                 body.linearVelocity = Vector2.zero;
             }
