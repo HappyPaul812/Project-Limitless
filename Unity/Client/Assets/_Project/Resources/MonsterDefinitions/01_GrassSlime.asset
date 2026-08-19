@@ -17,6 +17,7 @@ MonoBehaviour:
   fieldMoveSpeed: 0.8
   minimumIdleTime: 0.8
   maximumIdleTime: 2
-  fieldSprite: {fileID: 0}
+  fieldSprite: {fileID: 736440820, guid: a4c90ca490a24b93a71de44a7f1e1762, type: 3}
+  fieldAnimatorController: {fileID: 9100000, guid: 91dbe642eebf4e80bb43f0e2279d081e, type: 2}
   placeholderColor: {r: 0.35, g: 0.8, b: 0.35, a: 1}
   visualSize: {x: 0.8, y: 0.65}

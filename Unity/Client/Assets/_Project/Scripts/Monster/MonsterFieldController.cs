@@ -12,12 +12,15 @@ namespace ProjectLimitless.Monster
     {
         private MonsterDefinition definition;
         private Rigidbody2D body;
+        private Animator animator;
         private Vector2 activityCenter;
         private Vector2 destination;
         private float activityRadius;
         private float waitUntil;
         private float nextObstacleRedirectTime;
         private bool encountered;
+        private Vector2 facingDirection = Vector2.down;
+        private string currentAnimationState;
 
         public MonsterDefinition Definition => definition;
         public bool HasEncounteredPlayer => encountered;
@@ -42,10 +45,25 @@ namespace ProjectLimitless.Monster
             waitUntil = Time.time + Random.Range(definition.MinimumIdleTime, definition.MaximumIdleTime);
         }
 
+        /// <summary>
+        /// 설치기가 Visual 자식에 만든 Animator를 전달한 직후 호출합니다.
+        /// 몬스터의 이동 방향과 대기 상태에 맞는 방향별 Animation을 재생할 준비를 합니다.
+        /// </summary>
+        public void ConfigureAnimator(Animator visualAnimator)
+        {
+            animator = visualAnimator;
+            PlayDirectionalAnimation(false);
+        }
+
         /// <summary>일정한 물리 갱신 간격마다 현재 목적지를 향해 이동합니다.</summary>
         private void FixedUpdate()
         {
-            if (definition == null || encountered || Time.time < waitUntil) return;
+            if (definition == null || encountered) return;
+            if (Time.time < waitUntil)
+            {
+                PlayDirectionalAnimation(false);
+                return;
+            }
 
             // 다른 물체에 밀려 활동 범위 밖으로 나가면 새 임의 목적지보다 중심 복귀를 우선합니다.
             if ((body.position - activityCenter).sqrMagnitude > activityRadius * activityRadius)
@@ -55,15 +73,41 @@ namespace ProjectLimitless.Monster
 
             if (Vector2.Distance(body.position, destination) <= .08f)
             {
+                PlayDirectionalAnimation(false);
                 ChooseNextDestination();
                 return;
             }
+
+            Vector2 movement = destination - body.position;
+            if (movement.sqrMagnitude > 0f) facingDirection = movement.normalized;
+            PlayDirectionalAnimation(true);
 
             Vector2 nextPosition = Vector2.MoveTowards(
                 body.position,
                 destination,
                 definition.FieldMoveSpeed * Time.fixedDeltaTime);
             body.MovePosition(nextPosition);
+        }
+
+        /// <summary>
+        /// 마지막으로 바라본 방향과 현재 이동 여부를 Animator의 상태 이름으로 바꿉니다.
+        /// 같은 상태를 매 물리 프레임마다 다시 시작하지 않아 Walk Animation이 자연스럽게 이어집니다.
+        /// </summary>
+        private void PlayDirectionalAnimation(bool isMoving)
+        {
+            if (animator == null || animator.runtimeAnimatorController == null) return;
+
+            string direction;
+            if (Mathf.Abs(facingDirection.x) > Mathf.Abs(facingDirection.y))
+                direction = facingDirection.x < 0f ? "Left" : "Right";
+            else
+                direction = facingDirection.y > 0f ? "Up" : "Down";
+
+            string stateName = $"{(isMoving ? "Walk" : "Idle")}_{direction}";
+            if (stateName == currentAnimationState) return;
+
+            currentAnimationState = stateName;
+            animator.Play(stateName);
         }
 
         /// <summary>활동 중심을 기준으로 원 안의 새 목적지를 선택하고 잠시 쉬었다가 이동합니다.</summary>
@@ -106,6 +150,7 @@ namespace ProjectLimitless.Monster
             encountered = true;
             body.linearVelocity = Vector2.zero;
             body.constraints = RigidbodyConstraints2D.FreezeAll;
+            PlayDirectionalAnimation(false);
             MonsterEncounterService.Raise(definition);
         }
     }

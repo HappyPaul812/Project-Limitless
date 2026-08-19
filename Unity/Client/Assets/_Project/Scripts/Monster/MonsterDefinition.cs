@@ -18,8 +18,10 @@ namespace ProjectLimitless.Monster
         // 목적지에 도착한 뒤 다음 이동을 시작하기 전 최소·최대 대기 시간입니다.
         [SerializeField, Min(0f)] private float minimumIdleTime = 0.8f;
         [SerializeField, Min(0f)] private float maximumIdleTime = 2f;
-        // 실제 몬스터 그림이 준비되면 연결합니다. 비어 있으면 명시적인 개발용 Placeholder를 사용합니다.
+        // 필드에서 처음 표시할 기본 Sprite와 방향별 동작을 재생할 Animator Controller입니다.
+        // 둘 다 연결된 몬스터는 Placeholder 대신 실제 Visual과 Animation을 사용합니다.
         [SerializeField] private Sprite fieldSprite;
+        [SerializeField] private RuntimeAnimatorController fieldAnimatorController;
         [SerializeField] private Color placeholderColor = new Color(.35f, .8f, .35f, 1f);
         [SerializeField] private Vector2 visualSize = new Vector2(.8f, .65f);
 
@@ -29,6 +31,7 @@ namespace ProjectLimitless.Monster
         public float MinimumIdleTime => minimumIdleTime;
         public float MaximumIdleTime => Mathf.Max(minimumIdleTime, maximumIdleTime);
         public Sprite FieldSprite => fieldSprite;
+        public RuntimeAnimatorController FieldAnimatorController => fieldAnimatorController;
         public Color PlaceholderColor => placeholderColor;
         public Vector2 VisualSize => visualSize;
     }

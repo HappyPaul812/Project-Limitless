@@ -51,7 +51,9 @@
 - 시작 위치 중심 활동 반경 안의 느린 무작위 배회
 - Rigidbody2D 기반 장애물 Collider 충돌
 - 플레이어 접촉 시 이동 정지와 `MonsterEncounterService.EncounterStarted` Event 발생
-- 적절한 Slime Sprite가 없어 기존 `PlaceholderVisual`로 임시 표시
+- 사용자 제공 4×4 Sprite 시트 기반 초원 슬라임 방향별 Idle/Walk Animation
+- 배회 방향·이동/대기 상태와 `GrassSlime.controller` 동기화
+- 초원 슬라임 데이터에 실제 Sprite/Animator 연결 및 녹색 Placeholder 미사용
 
 ## 데이터만 있고 실행 로직이 없는 항목
 
@@ -79,6 +81,7 @@
 
 - 월드 전환 Scene/Spawn ID, Missing Script, Bounds 참조와 viewport 계산은 정적으로 확인했다.
 - 초원 슬라임 Script GUID, Monster/Spawn Asset 연결, Field_01 대상 Scene과 조우 Event 구조를 정적으로 확인했다.
+- 초원 슬라임 PNG를 1256×1256, 314×314 Cell의 4×4 구조로 확인하고 Sprite 16개, Animation Clip 8개, Animator와 데이터 참조를 정적으로 교차 확인했다.
 - 관련 C# 변경은 `git diff --check`를 통과했다.
 - 현재 작업 환경의 Unity Hub에 설치된 Editor가 등록되어 있지 않아 Unity Compile과 Play Mode는 실행하지 못했다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
@@ -88,7 +91,9 @@
 - Male/Female 및 각 Path Visual, Wheelchair Variant의 실제 이동·Animation
 - StarterVillage 좌·우·상·남쪽 끝에서 검은 외부 영역이 보이지 않는지
 - Field_01 네 방향 끝에서 Camera와 Collider가 정상인지
-- 초원 슬라임이 중앙에 나타나 활동 범위 안을 천천히 배회하는지
+- 초원 슬라임이 녹색 Placeholder가 아닌 실제 Sprite로 중앙에 나타나는지
+- 정지 시 바라보는 방향의 Idle, 이동 시 Down/Left/Right/Up 방향의 4프레임 Walk가 약 6 FPS로 반복되는지
+- 초원 슬라임이 활동 범위 안을 천천히 배회하는지
 - 슬라임이 나무·바위·울타리를 통과하지 않는지
 - Male/Female 및 Wheelchair Variant Player 접촉 시 슬라임이 멈추고 Console에 `몬스터 조우: 초원 슬라임`이 한 번 표시되는지
 - 마을 남문과 Field_01 북쪽 입구의 양방향 전환

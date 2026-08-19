@@ -67,10 +67,16 @@ namespace ProjectLimitless.Monster
             visual.SetActive(false);
             visual.transform.SetParent(monsterObject.transform, false);
             SpriteRenderer renderer = visual.AddComponent<SpriteRenderer>();
+            Animator animator = null;
             renderer.sortingOrder = 3;
             if (monster.FieldSprite != null)
             {
                 renderer.sprite = monster.FieldSprite;
+                if (monster.FieldAnimatorController != null)
+                {
+                    animator = visual.AddComponent<Animator>();
+                    animator.runtimeAnimatorController = monster.FieldAnimatorController;
+                }
             }
             else
             {
@@ -84,6 +90,8 @@ namespace ProjectLimitless.Monster
             }
 
             visual.SetActive(true);
+            if (animator != null)
+                monsterObject.GetComponent<MonsterFieldController>().ConfigureAnimator(animator);
         }
     }
 }
