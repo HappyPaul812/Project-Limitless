@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.CameraSystem;
+using ProjectLimitless.Monster;
 using ProjectLimitless.Player;
 using ProjectLimitless.World;
 using UnityEditor;
@@ -22,6 +23,8 @@ namespace ProjectLimitless.Editor
         private const string VillageScenePath = "Assets/_Project/Scenes/World_StarterVillage.unity";
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string VillageGatePrefabPath = "Assets/_Project/Resources/World/StarterVillageSouthGate.prefab";
+        private const string GrassSlimeDefinitionPath = "Assets/_Project/Resources/MonsterDefinitions/01_GrassSlime.asset";
+        private const string GrassSlimeSpawnPath = "Assets/_Project/Resources/MonsterSpawns/Field01_GrassSlime_01.asset";
         // Field 환경을 그릴 ThirdParty Sprite 원본 위치입니다. 원본 Asset 자체는 수정하지 않습니다.
         private const string BasicRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
         private const string GrassTilesPath = BasicRoot + "tiles/tiles_grass.png";
@@ -82,6 +85,13 @@ namespace ProjectLimitless.Editor
                 throw new InvalidOperationException("Field_01 마을 Spawn과 복귀 Trigger가 북쪽에 있지 않습니다.");
             if (roots.SelectMany(root => root.GetComponentsInChildren<Collider2D>(true)).Count() < 10)
                 throw new InvalidOperationException("Field_01 장애물 Collider가 예상보다 적습니다.");
+
+            MonsterDefinition slime = AssetDatabase.LoadAssetAtPath<MonsterDefinition>(GrassSlimeDefinitionPath);
+            FieldMonsterSpawnDefinition slimeSpawn = AssetDatabase.LoadAssetAtPath<FieldMonsterSpawnDefinition>(GrassSlimeSpawnPath);
+            if (slime == null || slime.MonsterId != "grass_slime" || slime.DisplayName != "초원 슬라임")
+                throw new InvalidOperationException("초원 슬라임 MonsterDefinition이 누락됐거나 올바르지 않습니다.");
+            if (slimeSpawn == null || slimeSpawn.SceneName != "Field_01" || slimeSpawn.Monster != slime)
+                throw new InvalidOperationException("Field_01 초원 슬라임 배치 데이터가 누락됐거나 올바르지 않습니다.");
 
             int missingScripts = roots.Sum(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount);
             if (missingScripts != 0) throw new InvalidOperationException($"Field_01 Missing Script 수: {missingScripts}");
