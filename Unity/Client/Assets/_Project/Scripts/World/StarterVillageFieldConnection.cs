@@ -30,7 +30,35 @@ namespace ProjectLimitless.World
 
             GameObject root = Object.Instantiate(prefab);
             root.name = RootName;
+            CreateVillageBoundaries(root.transform);
             SceneManager.MoveGameObjectToScene(root, scene);
+        }
+
+        /// <summary>
+        /// 마을 바닥(-9..9, -6..6)의 외곽을 막고 남쪽 중앙만 남문 통로로 남깁니다.
+        /// 남문 통로는 긴 전환 Trigger 양옆의 가이드와 끝의 안전벽으로 감싸므로
+        /// 플레이어가 Trigger를 비껴 검은 영역으로 나갈 수 없습니다.
+        /// </summary>
+        private static void CreateVillageBoundaries(Transform parent)
+        {
+            CreateBoundary(parent, "Boundary_Top", new Vector2(0f, 6.65f), new Vector2(20f, .5f));
+            CreateBoundary(parent, "Boundary_Left", new Vector2(-9.65f, 0f), new Vector2(.5f, 13.8f));
+            CreateBoundary(parent, "Boundary_Right", new Vector2(9.65f, 0f), new Vector2(.5f, 13.8f));
+
+            CreateBoundary(parent, "Boundary_SouthLeft", new Vector2(-5.5f, -6.35f), new Vector2(8f, .5f));
+            CreateBoundary(parent, "Boundary_SouthRight", new Vector2(5.5f, -6.35f), new Vector2(8f, .5f));
+
+            CreateBoundary(parent, "SouthGate_GuideLeft", new Vector2(-1.7f, -6.9f), new Vector2(.4f, 1.6f));
+            CreateBoundary(parent, "SouthGate_GuideRight", new Vector2(1.7f, -6.9f), new Vector2(.4f, 1.6f));
+            CreateBoundary(parent, "SouthGate_SafetyStop", new Vector2(0f, -7.65f), new Vector2(3.4f, .5f));
+        }
+
+        private static void CreateBoundary(Transform parent, string name, Vector2 position, Vector2 size)
+        {
+            GameObject boundary = new GameObject(name, typeof(BoxCollider2D));
+            boundary.transform.SetParent(parent, false);
+            boundary.transform.localPosition = position;
+            boundary.GetComponent<BoxCollider2D>().size = size;
         }
     }
 }
