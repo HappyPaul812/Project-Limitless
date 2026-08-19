@@ -58,6 +58,9 @@ namespace ProjectLimitless.Editor
                 throw new InvalidOperationException("Field_01 Player에 이동, 외형 또는 Nameplate Component가 누락됐습니다.");
             if (Find<CameraFollow>() == null || Camera.main == null)
                 throw new InvalidOperationException("Field_01 Main Camera 또는 CameraFollow가 누락됐습니다.");
+            WorldBounds2D worldBounds = Find<WorldBounds2D>();
+            if (worldBounds == null || worldBounds.Bounds.size != new Vector3(21f, 15f, 0f))
+                throw new InvalidOperationException("Field_01 WorldBounds2D가 누락됐거나 크기가 올바르지 않습니다.");
             if (FindObject("Spawn_From_StarterVillage")?.GetComponent<SceneSpawnPoint>() == null)
                 throw new InvalidOperationException("Field_01 마을 진입 Spawn Point가 누락됐습니다.");
             if (FindObject("Entrance_To_StarterVillage")?.GetComponent<SceneTransitionTrigger>() == null)
@@ -164,11 +167,12 @@ namespace ProjectLimitless.Editor
 
         private static void CreateBoundaries()
         {
-            CreateBoundary("BoundaryLeft", new Vector2(-10.7f, 0f), new Vector2(1f, 16f));
-            CreateBoundary("BoundaryRight", new Vector2(10.7f, 0f), new Vector2(1f, 16f));
-            CreateBoundary("BoundaryTopLeft", new Vector2(-6.5f, 7.7f), new Vector2(9f, 1f));
-            CreateBoundary("BoundaryTopRight", new Vector2(6.5f, 7.7f), new Vector2(9f, 1f));
-            CreateBoundary("BoundaryBottom", new Vector2(0f, -7.7f), new Vector2(22f, 1f));
+            WorldBoundaryGeneratorUtility.Create(
+                "WorldBounds",
+                Vector2.zero,
+                new Vector2(21f, 15f),
+                1f,
+                new WorldBoundaryOpening(WorldBoundarySide.Top, 0f, 4f));
         }
 
         private static void CreateStarterVillageSouthGatePrefab()
@@ -208,13 +212,6 @@ namespace ProjectLimitless.Editor
                 if (!AssetDatabase.IsValidFolder(next)) AssetDatabase.CreateFolder(current, part);
                 current = next;
             }
-        }
-
-        private static void CreateBoundary(string name, Vector2 position, Vector2 size)
-        {
-            GameObject boundary = new GameObject(name, typeof(BoxCollider2D));
-            boundary.transform.position = position;
-            boundary.GetComponent<BoxCollider2D>().size = size;
         }
 
         private static GameObject CreateBasic(Transform parent, string name, string relativePath, Vector2 position, int order, Vector2? colliderSize = null, Vector2? colliderOffset = null)

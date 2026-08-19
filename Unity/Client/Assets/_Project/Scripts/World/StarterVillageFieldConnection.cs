@@ -1,4 +1,3 @@
-using ProjectLimitless.CameraSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +9,7 @@ namespace ProjectLimitless.World
         private const string VillageScene = "World_StarterVillage";
         private const string RootName = "Milestone02_FieldConnection";
         private const string SouthGateResourcePath = "World/StarterVillageSouthGate";
-        private static readonly Bounds VillageBounds = new Bounds(Vector3.zero, new Vector3(19f, 13f, 0f));
+        private static readonly Vector2 VillageSize = new Vector2(19f, 13f);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Initialize()
@@ -34,17 +33,8 @@ namespace ProjectLimitless.World
             root.name = RootName;
             HideFenceOutsideVillage(root.transform, "Fence_-10_-5.7");
             HideFenceOutsideVillage(root.transform, "Fence_10_-5.7");
-            CreateVillageBoundaries(root.transform);
+            CreateVillageBounds(root.transform);
             SceneManager.MoveGameObjectToScene(root, scene);
-
-            CameraFollow cameraFollow = Object.FindFirstObjectByType<CameraFollow>();
-            if (cameraFollow == null)
-            {
-                Debug.LogError("World_StarterVillage CameraFollow를 찾지 못해 카메라 경계를 설정할 수 없습니다.");
-                return;
-            }
-
-            cameraFollow.SetMovementBounds(VillageBounds);
         }
 
         private static void HideFenceOutsideVillage(Transform parent, string fenceName)
@@ -58,14 +48,17 @@ namespace ProjectLimitless.World
         /// 남문 통로는 긴 전환 Trigger 양옆의 가이드와 끝의 안전벽으로 감싸므로
         /// 플레이어가 Trigger를 비껴 검은 영역으로 나갈 수 없습니다.
         /// </summary>
-        private static void CreateVillageBoundaries(Transform parent)
+        private static void CreateVillageBounds(Transform parent)
         {
-            CreateBoundary(parent, "Boundary_Top", new Vector2(0f, 6.65f), new Vector2(20f, .5f));
-            CreateBoundary(parent, "Boundary_Left", new Vector2(-9.65f, 0f), new Vector2(.5f, 13.8f));
-            CreateBoundary(parent, "Boundary_Right", new Vector2(9.65f, 0f), new Vector2(.5f, 13.8f));
-
-            CreateBoundary(parent, "Boundary_SouthLeft", new Vector2(-5.5f, -6.35f), new Vector2(8f, .5f));
-            CreateBoundary(parent, "Boundary_SouthRight", new Vector2(5.5f, -6.35f), new Vector2(8f, .5f));
+            GameObject boundsObject = new GameObject("WorldBounds", typeof(WorldBounds2D));
+            boundsObject.transform.SetParent(parent, false);
+            WorldBounds2D worldBounds = boundsObject.GetComponent<WorldBounds2D>();
+            worldBounds.Configure(Vector2.zero, VillageSize);
+            WorldBounds2D.CreateBoundaryColliders(
+                boundsObject.transform,
+                worldBounds.Bounds,
+                .5f,
+                new WorldBoundaryOpening(WorldBoundarySide.Bottom, 0f, 3f));
 
             CreateBoundary(parent, "SouthGate_GuideLeft", new Vector2(-1.7f, -6.9f), new Vector2(.4f, 1.6f));
             CreateBoundary(parent, "SouthGate_GuideRight", new Vector2(1.7f, -6.9f), new Vector2(.4f, 1.6f));

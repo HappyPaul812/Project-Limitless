@@ -1,4 +1,5 @@
 using UnityEngine;
+using ProjectLimitless.World;
 
 namespace ProjectLimitless.CameraSystem
 {
@@ -14,20 +15,25 @@ namespace ProjectLimitless.CameraSystem
         [SerializeField, Min(0.1f)] private float followSpeed = 8f;
 
         private Camera attachedCamera;
-        private Bounds movementBounds;
+        [SerializeField] private WorldBounds2D worldBounds;
         private float defaultOrthographicSize;
-        private bool useMovementBounds;
 
         /// <summary>Scene 생성 도구 등이 카메라의 추적 대상을 지정할 때 사용합니다.</summary>
         public void SetTarget(Transform followTarget) => target = followTarget;
 
-        /// <summary>카메라 화면 전체가 지정 영역 안에 머물도록 이동 범위를 설정합니다.</summary>
-        public void SetMovementBounds(Bounds bounds)
+        private void Awake() => CacheCamera();
+
+        private void CacheCamera()
         {
-            movementBounds = bounds;
             attachedCamera = GetComponent<Camera>();
             defaultOrthographicSize = attachedCamera != null ? attachedCamera.orthographicSize : 0f;
-            useMovementBounds = true;
+        }
+
+        /// <summary>카메라 화면 전체가 지정 영역 안에 머물도록 이동 범위를 설정합니다.</summary>
+        public void SetWorldBounds(WorldBounds2D bounds)
+        {
+            worldBounds = bounds;
+            if (attachedCamera == null) CacheCamera();
         }
 
         /// <summary>
@@ -43,8 +49,9 @@ namespace ProjectLimitless.CameraSystem
 
             // 2D 평면의 X, Y만 따라가고 카메라의 앞뒤 거리인 Z는 그대로 유지합니다.
             Vector3 destination = new Vector3(target.position.x, target.position.y, transform.position.z);
-            if (useMovementBounds && attachedCamera != null && attachedCamera.orthographic)
+            if (worldBounds != null && attachedCamera != null && attachedCamera.orthographic)
             {
+                Bounds movementBounds = worldBounds.Bounds;
                 FitCameraInsideBounds();
                 float halfHeight = attachedCamera.orthographicSize;
                 float halfWidth = halfHeight * attachedCamera.aspect;
@@ -58,6 +65,7 @@ namespace ProjectLimitless.CameraSystem
 
         private void FitCameraInsideBounds()
         {
+            Bounds movementBounds = worldBounds.Bounds;
             float maximumSize = Mathf.Min(movementBounds.extents.y, movementBounds.extents.x / attachedCamera.aspect);
             attachedCamera.orthographicSize = Mathf.Min(defaultOrthographicSize, maximumSize);
         }
