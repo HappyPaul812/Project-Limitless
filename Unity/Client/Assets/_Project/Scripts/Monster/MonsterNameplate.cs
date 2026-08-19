@@ -98,7 +98,8 @@ namespace ProjectLimitless.Monster
             if (nameText == null)
             {
                 GameObject textObject = new GameObject(
-                    $"NameText_{GetInstanceID()}",
+                    // Unity 6.5에서는 기존 Instance ID 대신 새 Entity ID를 사용해 Text 이름을 구분합니다.
+                    $"NameText_{GetEntityId()}",
                     typeof(RectTransform),
                     typeof(CanvasRenderer),
                     typeof(Text),
