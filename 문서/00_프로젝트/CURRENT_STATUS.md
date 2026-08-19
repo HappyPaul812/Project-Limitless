@@ -5,7 +5,8 @@
 - 갱신일: 2026-08-19
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `5d54e25` (`Feature: 필드 몬스터 이름표 추가`)
-- 마지막 관련 문서 commit: `bdbd352` (`Docs: 월드 전환 및 경계 코드 한국어 주석 보강`)
+- 마지막 오류 수정 commit: `8fa4c09` (`Fix: 몬스터 이름표 Unity 6.5 컴파일 오류 수정`)
+- 마지막 관련 문서 commit: `ed1cc21` (`Docs: 필드 몬스터 이름표 상태 갱신`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
@@ -85,8 +86,10 @@
 - 초원 슬라임 Script GUID, Monster/Spawn Asset 연결, Field_01 대상 Scene과 조우 Event 구조를 정적으로 확인했다.
 - 초원 슬라임 PNG를 1256×1256, 314×314 Cell의 4×4 구조로 확인하고 Sprite 16개, Animation Clip 8개, Animator와 데이터 참조를 정적으로 교차 확인했다.
 - `MonsterNameplate`가 몬스터별 Text를 분리하고 `DisplayName`을 받으며 Camera 이동 뒤 화면 좌표를 갱신하는 구조를 정적으로 확인했다.
+- Unity 6.5에서 오류가 된 `GetInstanceID()`를 권장 API인 `GetEntityId()`로 교체했다.
+- Unity 6000.5.7f1이 사용하는 Roslyn과 전체 `Assembly-CSharp` 응답 파일로 재컴파일하여 Compiler Error 0개와 종료 코드 0을 확인했다.
+- 최신 Unity Editor 로그에서 `MissingReferenceException`과 `NullReferenceException` 기록이 없음을 확인했다. 실제 Play Mode 기능 검증은 사용자가 직접 확인해야 한다.
 - 관련 C# 변경은 `git diff --check`를 통과했다.
-- 현재 작업 환경의 Unity Hub에 설치된 Editor가 등록되어 있지 않아 Unity Compile과 Play Mode는 실행하지 못했다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
