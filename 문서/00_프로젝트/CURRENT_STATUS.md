@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-19
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `3cdb893` (`Feature: Field_01 초원 슬라임 배회 및 조우 추가`)
+- 마지막 기능 관련 commit: `5d54e25` (`Feature: 필드 몬스터 이름표 추가`)
 - 마지막 관련 문서 commit: `bdbd352` (`Docs: 월드 전환 및 경계 코드 한국어 주석 보강`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
@@ -54,6 +54,8 @@
 - 사용자 제공 4×4 Sprite 시트 기반 초원 슬라임 방향별 Idle/Walk Animation
 - 배회 방향·이동/대기 상태와 `GrassSlime.controller` 동기화
 - 초원 슬라임 데이터에 실제 Sprite/Animator 연결 및 녹색 Placeholder 미사용
+- `MonsterDefinition.DisplayName`을 표시하는 재사용 가능한 필드 몬스터 Overlay 이름표
+- 흰색 글자·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
 
 ## 데이터만 있고 실행 로직이 없는 항목
 
@@ -82,6 +84,7 @@
 - 월드 전환 Scene/Spawn ID, Missing Script, Bounds 참조와 viewport 계산은 정적으로 확인했다.
 - 초원 슬라임 Script GUID, Monster/Spawn Asset 연결, Field_01 대상 Scene과 조우 Event 구조를 정적으로 확인했다.
 - 초원 슬라임 PNG를 1256×1256, 314×314 Cell의 4×4 구조로 확인하고 Sprite 16개, Animation Clip 8개, Animator와 데이터 참조를 정적으로 교차 확인했다.
+- `MonsterNameplate`가 몬스터별 Text를 분리하고 `DisplayName`을 받으며 Camera 이동 뒤 화면 좌표를 갱신하는 구조를 정적으로 확인했다.
 - 관련 C# 변경은 `git diff --check`를 통과했다.
 - 현재 작업 환경의 Unity Hub에 설치된 Editor가 등록되어 있지 않아 Unity Compile과 Play Mode는 실행하지 못했다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
@@ -92,6 +95,8 @@
 - StarterVillage 좌·우·상·남쪽 끝에서 검은 외부 영역이 보이지 않는지
 - Field_01 네 방향 끝에서 Camera와 Collider가 정상인지
 - 초원 슬라임이 녹색 Placeholder가 아닌 실제 Sprite로 중앙에 나타나는지
+- 초원 슬라임 머리 위에 흰색·검은 외곽선의 `초원 슬라임` 이름이 한글로 표시되고 이동 중 정상 추적되는지
+- 필드 이름표에 HP Bar가 표시되지 않는지
 - 정지 시 바라보는 방향의 Idle, 이동 시 Down/Left/Right/Up 방향의 4프레임 Walk가 약 6 FPS로 반복되는지
 - 초원 슬라임이 활동 범위 안을 천천히 배회하는지
 - 슬라임이 나무·바위·울타리를 통과하지 않는지
