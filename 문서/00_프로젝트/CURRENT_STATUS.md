@@ -7,7 +7,7 @@
 - 마지막 기능 관련 commit: `3b60106` (`Feature: 1차 턴제 전투 시스템 추가`)
 - 마지막 오류 수정 commit: `728454c` (`Fix: 치유사 기본 공격 사거리 수정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
-- 마지막 전투 UI 관련 commit: `062942b` (`Refactor: Battle 사이드뷰 UI 구성`)
+- 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
@@ -77,6 +77,7 @@
 - 이름·현재/최대 HP 숫자·HP Bar를 별도 HUD로 분리하고 전투불능·낮은 HP 상태 표시
 - 공격 가능 대상은 금색 바닥 마커, 선택 대상은 화살표, 공격 불가 대상은 어두운 Sprite로 표현
 - 상단 한글 `전투` 제목과 현재 행동자 강조·이후 순서 타임라인, 하단 전용 명령 패널
+- 조작 안내를 14px 글씨로 명령 패널 내부 하단에 배치하고 버튼과 하단 padding을 확보
 - 외부 신규 에셋 없이 남색·금색 하늘·원경·지면 층의 임시 전투 배경 구성
 
 ## 데이터만 있고 실행 로직이 없는 항목
@@ -118,6 +119,7 @@
 - 사용자가 Unity Play Mode에서 `Field_01 → 초원 슬라임 → Battle` 진입, 기본 공격, 적 자동 공격, 턴 순환을 정상 검증했다.
 - 사용자가 방어 시 받는 피해가 10에서 5로 감소해 50% 방어 규칙이 정상임을 확인했다.
 - 사이드뷰 UI 변경 후 Unity 전체 `Assembly-CSharp` 참조로 Compiler Error 0개를 확인했다. 실제 사이드뷰 화면 배치와 입력 회귀는 사용자가 다시 확인해야 한다.
+- 조작 안내를 명령 패널 내부로 옮긴 뒤 동일한 Unity 전체 참조로 Compiler Error 0개를 확인했다. 16:9에서의 하단 padding과 버튼 간격은 사용자가 직접 확인해야 한다.
 - `BattleCore.cs`와 `BattleSceneFlow.cs` hash가 HEAD와 같고 Battle Scene·Monster 코드가 변경되지 않아 전투 계산·Formation·TargetResolver·TurnOrderQueue·조우/복귀 로직 무변경을 정적으로 확인했다.
 
 - 월드 전환 Scene/Spawn ID, Missing Script, Bounds 참조와 viewport 계산은 정적으로 확인했다.
@@ -141,14 +143,14 @@
 7. 공격 선택 시 가능한 적 Sprite가 밝아지고 금색 바닥 마커와 선택 화살표가 표시되며, Esc로 선택을 취소할 수 있는지 확인한다.
 8. 기본 공격, 적 자동 공격, 턴 순환과 방어 시 피해 10 → 5 감소가 UI 변경 전과 동일한지 회귀 확인한다.
 9. 도망·승리·패배 후 `Field_01` 복귀와 즉시 재조우 방지가 그대로 동작하는지 확인한다.
-10. 16:9 Game View에서 HUD·전장·명령 패널이 겹치지 않고 한글이 깨지지 않는지 확인한다.
+10. 16:9 Game View에서 조작 안내가 명령 패널 내부 하단에 완전히 표시되고, 버튼과 겹치거나 화면 아래로 잘리지 않으며 한글이 깨지지 않는지 확인한다.
 11. Console에 Compiler Error, Missing Reference, NullReferenceException이 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity Play Mode에서 사이드뷰 좌우 배치, Sprite 크기, HUD와 명령 패널 겹침, 대상 금색 강조·선택 화살표·Esc 취소를 우선 검증한다. 확인 후 공격 이동·타격 Animation과 최종 전투 배경 아트는 별도 후속 작업으로 진행한다.
+Unity Play Mode의 16:9 Game View에서 명령 버튼과 조작 안내 사이 간격, 패널 하단 padding과 잘림 여부를 우선 검증한다. 확인 후 공격 이동·타격 Animation과 최종 전투 배경 아트는 별도 후속 작업으로 진행한다.
 
 ## 갱신 규칙
 
