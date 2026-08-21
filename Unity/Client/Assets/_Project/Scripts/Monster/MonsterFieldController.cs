@@ -147,11 +147,13 @@ namespace ProjectLimitless.Monster
         {
             if (encountered) return;
 
+            // 전투 복귀 유예 중인 접촉은 무시하고 계속 배회할 수 있게 둡니다.
+            if (!MonsterEncounterService.TryRaise(definition)) return;
+
             encountered = true;
             body.linearVelocity = Vector2.zero;
             body.constraints = RigidbodyConstraints2D.FreezeAll;
             PlayDirectionalAnimation(false);
-            MonsterEncounterService.Raise(definition);
         }
     }
 }
