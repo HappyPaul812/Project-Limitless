@@ -5,7 +5,7 @@
 - 갱신일: 2026-08-21
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `3b60106` (`Feature: 1차 턴제 전투 시스템 추가`)
-- 마지막 오류 수정 commit: `728454c` (`Fix: 치유사 기본 공격 사거리 수정`)
+- 마지막 오류 수정 commit: `967eb66` (`Fix: Battle HP와 필드 몬스터 상태 연동`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
 
@@ -49,13 +49,14 @@
 ### 첫 필드 몬스터
 
 - 데이터 기반 `MonsterDefinition`과 Scene별 `FieldMonsterSpawnDefinition`
-- Field_01 중앙의 `초원 슬라임` 1마리 런타임 배치
-- 시작 위치 중심 활동 반경 안의 느린 무작위 배회
+- Field_01 여러 빈터의 `초원 슬라임` 5마리 데이터 기반 런타임 배치
+- 스폰별 시작 위치와 활동 반경 안의 독립적인 느린 무작위 배회
 - Rigidbody2D 기반 장애물 Collider 충돌
 - 플레이어 접촉 시 이동 정지와 `MonsterEncounterService.EncounterStarted` Event 발생
 - 사용자 제공 4×4 Sprite 시트 기반 초원 슬라임 방향별 Idle/Walk Animation
 - 배회 방향·이동/대기 상태와 `GrassSlime.controller` 동기화
 - 초원 슬라임 데이터에 실제 Sprite/Animator 연결 및 녹색 Placeholder 미사용
+- 승리한 스폰만 제거하고 데이터 기본값 30초 후 원래 위치에 독립 리스폰, 도망 시 스폰 유지
 - `MonsterDefinition.DisplayName`을 표시하는 재사용 가능한 필드 몬스터 Overlay 이름표
 - 흰색 글자·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
 
@@ -74,7 +75,7 @@
 - 스킬 버튼과 NPC 직접 지시 확장용 `IsPlayerControlled` 구조
 - 기본 공격 사거리: 수호자·투사 근거리, 사수 원거리, 마도사·치유사 마법. 치유사는 낮은 피해의 마법 공격
 - 논리 2×3 Formation을 숨기고 적 왼쪽·아군 오른쪽의 사이드뷰 전장 좌표로 Sprite 배치
-- 이름·현재/최대 HP 숫자·HP Bar를 별도 HUD로 분리하고 전투불능·낮은 HP 상태 표시
+- 이름·현재/최대 HP 숫자·HP Bar를 별도 HUD로 분리하고, HP 비율에 따라 실제 Bar 길이를 100%~0%로 갱신
 - 공격 가능 대상은 금색 바닥 마커, 선택 대상은 화살표, 공격 불가 대상은 어두운 Sprite로 표현
 - 상단 한글 `전투` 제목과 현재 행동자 강조·이후 순서 타임라인, 하단 전용 명령 패널
 - 조작 안내를 14px 글씨로 명령 패널 내부 하단에 배치하고 버튼과 하단 padding을 확보
@@ -120,7 +121,9 @@
 - 사용자가 방어 시 받는 피해가 10에서 5로 감소해 50% 방어 규칙이 정상임을 확인했다.
 - 사이드뷰 UI 변경 후 Unity 전체 `Assembly-CSharp` 참조로 Compiler Error 0개를 확인했다. 실제 사이드뷰 화면 배치와 입력 회귀는 사용자가 다시 확인해야 한다.
 - 조작 안내를 명령 패널 내부로 옮긴 뒤 동일한 Unity 전체 참조로 Compiler Error 0개를 확인했다. 16:9에서의 하단 padding과 버튼 간격은 사용자가 직접 확인해야 한다.
-- `BattleCore.cs`와 `BattleSceneFlow.cs` hash가 HEAD와 같고 Battle Scene·Monster 코드가 변경되지 않아 전투 계산·Formation·TargetResolver·TurnOrderQueue·조우/복귀 로직 무변경을 정적으로 확인했다.
+- HP Fill의 실제 Rect 폭 갱신과 스폰 ID별 처치·30초 리스폰 구조를 적용한 뒤 Unity 전체 `Assembly-CSharp` 참조로 Compiler Error 0개를 확인했다.
+- `BattleCore.cs`가 변경되지 않았으며 공격 10, 방어 50%, Formation·TargetResolver·TurnOrderQueue 계산 규칙을 유지했다. 실제 HP Bar 비율과 필드 리스폰 시간은 Play Mode에서 사용자가 확인해야 한다.
+- 이전 사이드뷰 UI 작업에서는 `BattleCore.cs`와 조우/복귀 코드가 변경되지 않았음을 정적으로 확인했다. 이번 작업은 `BattleSceneFlow.cs`의 승리·도망 결과 전달만 확장했으며 전투 계산 규칙은 변경하지 않았다.
 
 - 월드 전환 Scene/Spawn ID, Missing Script, Bounds 참조와 viewport 계산은 정적으로 확인했다.
 - 초원 슬라임 Script GUID, Monster/Spawn Asset 연결, Field_01 대상 Scene과 조우 Event 구조를 정적으로 확인했다.
@@ -134,23 +137,20 @@
 
 ## Unity에서 사용자가 직접 확인할 사항
 
-1. 기존 흐름으로 `Field_01`의 초원 슬라임과 접촉해 Battle에 진입한다.
-2. 큰 2×3 사각 슬롯 UI가 사라지고 초원 슬라임은 화면 왼쪽, 현재 Player Sprite는 오른쪽 전장 위에 표시되는지 확인한다.
-3. 적 전열은 중앙 왼쪽, 아군 전열은 중앙 오른쪽에 배치되고 남색·금색 임시 배경 위에서 Sprite가 잘리지 않는지 확인한다.
-4. 적과 아군 HUD에 이름, 현재 HP / 최대 HP 숫자와 HP Bar가 표시되고 피해에 따라 Bar가 감소하는지 확인한다.
-5. 상단 제목이 `전투`로 표시되고 현재 행동자는 금색으로 강조되며 이후 행동 순서가 화살표로 이어지는지 확인한다.
-6. 하단 명령 패널의 공격·스킬·방어·도망과 현재 캐릭터 행동 안내가 기존처럼 동작하는지 확인한다.
-7. 공격 선택 시 가능한 적 Sprite가 밝아지고 금색 바닥 마커와 선택 화살표가 표시되며, Esc로 선택을 취소할 수 있는지 확인한다.
-8. 기본 공격, 적 자동 공격, 턴 순환과 방어 시 피해 10 → 5 감소가 UI 변경 전과 동일한지 회귀 확인한다.
-9. 도망·승리·패배 후 `Field_01` 복귀와 즉시 재조우 방지가 그대로 동작하는지 확인한다.
-10. 16:9 Game View에서 조작 안내가 명령 패널 내부 하단에 완전히 표시되고, 버튼과 겹치거나 화면 아래로 잘리지 않으며 한글이 깨지지 않는지 확인한다.
-11. Console에 Compiler Error, Missing Reference, NullReferenceException이 없는지 확인한다.
+1. HP가 100%에서 50%가 되었을 때 숫자와 함께 HP Bar 길이도 정확히 절반이 되는지 확인한다.
+2. Player와 초원 슬라임 양쪽 HP Bar가 피해 직후 정상 감소하고, HP 0에서 완전히 비는지 확인한다.
+3. 슬라임 처치 후 `Field_01` 복귀 시 조우했던 해당 슬라임만 사라져 있는지 확인한다.
+4. 처치하지 않은 다른 슬라임들은 그대로 존재하며 계속 배회하는지 확인한다.
+5. 약 30초 후 처치한 스폰의 시작 위치에서 슬라임이 다시 나타나는지 확인한다.
+6. 도망한 경우 조우했던 슬라임이 사라지지 않고, 기존 2초 재조우 유예 뒤 정상 배회하는지 확인한다.
+7. `Field_01`에 총 5마리의 초원 슬라임이 서로 다른 활동 반경 안에서 독립적으로 배회하는지 확인한다.
+8. Console에 Compiler Error, MissingReferenceException, NullReferenceException이 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity Play Mode의 16:9 Game View에서 명령 버튼과 조작 안내 사이 간격, 패널 하단 padding과 잘림 여부를 우선 검증한다. 확인 후 공격 이동·타격 Animation과 최종 전투 배경 아트는 별도 후속 작업으로 진행한다.
+Unity Play Mode에서 양측 HP Bar의 실제 길이, 승리·도망에 따른 정확한 스폰 유지 여부, 30초 독립 리스폰과 5마리 배회를 우선 검증한다. 확인 후 공격 이동·타격 Animation과 최종 전투 배경 아트는 별도 후속 작업으로 진행한다.
 
 ## 갱신 규칙
 
