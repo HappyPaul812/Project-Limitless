@@ -24,7 +24,7 @@ namespace ProjectLimitless.Editor
         private const string PlayerPrefabPath = "Assets/_Project/Prefabs/PlayerPlaceholder.prefab";
         private const string VillageGatePrefabPath = "Assets/_Project/Resources/World/StarterVillageSouthGate.prefab";
         private const string GrassSlimeDefinitionPath = "Assets/_Project/Resources/MonsterDefinitions/01_GrassSlime.asset";
-        private const string GrassSlimeSpawnPath = "Assets/_Project/Resources/MonsterSpawns/Field01_GrassSlime_01.asset";
+        private const string MonsterSpawnFolder = "Assets/_Project/Resources/MonsterSpawns";
         // Field 환경을 그릴 ThirdParty Sprite 원본 위치입니다. 원본 Asset 자체는 수정하지 않습니다.
         private const string BasicRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
         private const string GrassTilesPath = BasicRoot + "tiles/tiles_grass.png";
@@ -87,11 +87,26 @@ namespace ProjectLimitless.Editor
                 throw new InvalidOperationException("Field_01 장애물 Collider가 예상보다 적습니다.");
 
             MonsterDefinition slime = AssetDatabase.LoadAssetAtPath<MonsterDefinition>(GrassSlimeDefinitionPath);
-            FieldMonsterSpawnDefinition slimeSpawn = AssetDatabase.LoadAssetAtPath<FieldMonsterSpawnDefinition>(GrassSlimeSpawnPath);
             if (slime == null || slime.MonsterId != "grass_slime" || slime.DisplayName != "초원 슬라임")
                 throw new InvalidOperationException("초원 슬라임 MonsterDefinition이 누락됐거나 올바르지 않습니다.");
-            if (slimeSpawn == null || slimeSpawn.SceneName != "Field_01" || slimeSpawn.Monster != slime)
-                throw new InvalidOperationException("Field_01 초원 슬라임 배치 데이터가 누락됐거나 올바르지 않습니다.");
+
+            FieldMonsterSpawnDefinition[] slimeSpawns = AssetDatabase.FindAssets("t:FieldMonsterSpawnDefinition", new[] { MonsterSpawnFolder })
+                .Select(AssetDatabase.GUIDToAssetPath)
+                .Select(AssetDatabase.LoadAssetAtPath<FieldMonsterSpawnDefinition>)
+                .Where(item => item != null && item.SceneName == "Field_01" && item.Monster == slime)
+                .OrderBy(item => item.SpawnId)
+                .ToArray();
+            string[] expectedSpawnIds = { "grass_slime_01", "grass_slime_02", "grass_slime_03", "grass_slime_04", "grass_slime_05" };
+            if (slimeSpawns.Length != expectedSpawnIds.Length || !slimeSpawns.Select(item => item.SpawnId).SequenceEqual(expectedSpawnIds))
+                throw new InvalidOperationException($"Field_01 초원 슬라임 배치는 고유 ID 5개여야 합니다. 현재: {string.Join(", ", slimeSpawns.Select(item => item.SpawnId))}");
+            if (slimeSpawns.Any(item => item.RespawnSeconds != 30f))
+                throw new InvalidOperationException("Field_01 초원 슬라임 배치의 기본 리스폰 시간은 모두 30초여야 합니다.");
+            for (int first = 0; first < slimeSpawns.Length; first++)
+            for (int second = first + 1; second < slimeSpawns.Length; second++)
+            {
+                if (Vector2.Distance(slimeSpawns[first].Position, slimeSpawns[second].Position) < 3f)
+                    throw new InvalidOperationException($"초원 슬라임 배치가 너무 가깝습니다: {slimeSpawns[first].SpawnId}, {slimeSpawns[second].SpawnId}");
+            }
 
             int missingScripts = roots.Sum(GameObjectUtility.GetMonoBehavioursWithMissingScriptCount);
             if (missingScripts != 0) throw new InvalidOperationException($"Field_01 Missing Script 수: {missingScripts}");
@@ -110,7 +125,7 @@ namespace ProjectLimitless.Editor
             if (villageIndex < 0 || fieldIndex != villageIndex + 1)
                 throw new InvalidOperationException("Build Settings에서 Field_01이 Starter Village 바로 뒤에 있지 않습니다.");
 
-            Debug.Log($"Field_01 검증 완료: Player/Visual/Nameplate/Camera/Spawn/Transition 정상, Collider {roots.SelectMany(root => root.GetComponentsInChildren<Collider2D>(true)).Count()}개, Missing Script 0개.");
+            Debug.Log($"Field_01 검증 완료: Player/Visual/Nameplate/Camera/Spawn/Transition 정상, 초원 슬라임 스폰 {slimeSpawns.Length}개, Collider {roots.SelectMany(root => root.GetComponentsInChildren<Collider2D>(true)).Count()}개, Missing Script 0개.");
         }
 
         /// <summary>필드의 바닥, 길, 나무와 소품을 FieldEnvironment 아래에 배치합니다.</summary>

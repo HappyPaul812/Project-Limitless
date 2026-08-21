@@ -35,6 +35,18 @@ namespace ProjectLimitless.Monster
                 .ToArray();
             if (spawns.Length == 0) return;
 
+            string[] invalidSpawnIds = spawns
+                .Where(item => string.IsNullOrWhiteSpace(item.SpawnId))
+                .Select(item => item.name)
+                .Concat(spawns.GroupBy(item => item.SpawnId).Where(group => group.Count() > 1).Select(group => group.Key))
+                .ToArray();
+            if (invalidSpawnIds.Length > 0)
+            {
+                Debug.LogError($"{scene.name} 몬스터 배치 ID가 비었거나 중복됐습니다: {string.Join(", ", invalidSpawnIds)}");
+                return;
+            }
+
+            Debug.Log($"필드 몬스터 배치 로드: {scene.name}, {spawns.Length}개 [{string.Join(", ", spawns.Select(item => item.SpawnId))}]");
             GameObject root = new GameObject(RootName, typeof(FieldMonsterSpawnRuntime));
             SceneManager.MoveGameObjectToScene(root, scene);
             root.GetComponent<FieldMonsterSpawnRuntime>().Configure(spawns);
