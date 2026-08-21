@@ -128,7 +128,6 @@ namespace ProjectLimitless.Battle
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
             CreateCommandPanel(canvasObject.transform, font);
-            MakeText(canvasObject.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 14, new Vector2(.5f, .012f), new Vector2(1000, 22)).color = new Color(.68f, .75f, .84f, 1f);
         }
 
         private void CreateTimeline(Transform parent, Font font)
@@ -215,12 +214,13 @@ namespace ProjectLimitless.Battle
 
         private void CreateCommandPanel(Transform parent, Font font)
         {
-            Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .105f), new Vector2(1100, 126)); AddOutline(commandPanel.gameObject, gold, 2);
-            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 17, new Vector2(.5f, .76f), new Vector2(1030, 34)); messageText.fontStyle = FontStyle.Bold;
-            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .3f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .3f), ShowSkillPlaceholder);
-            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .3f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .3f), Flee);
+            Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .12f), new Vector2(1100, 148)); AddOutline(commandPanel.gameObject, gold, 2);
+            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 17, new Vector2(.5f, .8f), new Vector2(1030, 30)); messageText.fontStyle = FontStyle.Bold;
+            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .42f), BeginAttack);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .42f), ShowSkillPlaceholder);
+            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .42f), Defend);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .42f), Flee);
+            MakeText(commandPanel.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 14, new Vector2(.5f, .11f), new Vector2(1030, 22)).color = new Color(.68f, .75f, .84f, 1f);
         }
 
         private void AdvanceTurn()
