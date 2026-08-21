@@ -13,25 +13,29 @@ using UnityEngine.UI;
 namespace ProjectLimitless.Battle
 {
     /// <summary>
-    /// Battle Scene의 1차 전투 흐름과 남색·금색 UI를 구성합니다.
-    /// 전투 규칙은 BattleCore에 두고 이 클래스는 화면 표시와 플레이어 명령 연결만 담당합니다.
+    /// Battle Scene의 사이드뷰 전장과 남색·금색 HUD를 구성합니다.
+    /// 전투 규칙은 BattleCore에 그대로 두고 이 클래스는 Sprite, HUD, 대상 강조와 명령 입력만 담당합니다.
     /// </summary>
     public sealed class BattleSceneController : MonoBehaviour
     {
-        private sealed class SlotView
+        private sealed class CombatantView
         {
-            public Button Button;
-            public Image Background;
-            public Text Label;
+            public Button HitArea;
+            public Image SpriteImage;
+            public Image GroundMarker;
+            public Text TargetArrow;
+            public Text TurnMarker;
+            public Text HudName;
+            public Text HudHp;
+            public Image HudHpFill;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
-        private readonly Dictionary<Combatant, SlotView> slotViews = new Dictionary<Combatant, SlotView>();
+        private readonly Dictionary<Combatant, CombatantView> combatantViews = new Dictionary<Combatant, CombatantView>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
         private readonly Color gold = new Color(.88f, .7f, .32f, 1f);
-        private readonly Color available = new Color(.12f, .35f, .32f, 1f);
-        private readonly Color unavailable = new Color(.22f, .24f, .29f, 1f);
+        private readonly Color focusGold = new Color(1f, .86f, .48f, 1f);
         private Formation allies;
         private Formation enemies;
         private TurnOrderQueue turnOrder;
@@ -64,8 +68,8 @@ namespace ProjectLimitless.Battle
             {
                 choosingTarget = false;
                 SetCommandButtons(true);
-                RefreshSlotViews(null);
-                messageText.text = "행동을 선택하세요.";
+                RefreshCombatantViews(null);
+                messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
                 EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
             }
         }
@@ -108,6 +112,7 @@ namespace ProjectLimitless.Battle
                 default: return TargetRangeType.MeleePhysical;
             }
         }
+
         private void CreateInterface()
         {
             CreateCameraIfMissing();
@@ -116,57 +121,106 @@ namespace ProjectLimitless.Battle
             Canvas canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
             Image background = MakeImage(canvasObject.transform, "Background", navy); Stretch(background.rectTransform);
-            Text title = MakeText(canvasObject.transform, "Title", "BATTLE", font, 32, new Vector2(.5f, .95f), new Vector2(400, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
-            timelineText = MakeText(canvasObject.transform, "Timeline", string.Empty, font, 17, new Vector2(.5f, .89f), new Vector2(1050, 36)); timelineText.color = new Color(.78f, .84f, .92f, 1f);
 
-            CreateFormationPanel(canvasObject.transform, font, allies, "아군 진형", new Vector2(.25f, .57f));
-            CreateFormationPanel(canvasObject.transform, font, enemies, "적 진형", new Vector2(.75f, .57f));
-
-            Image commandPanel = MakeImage(canvasObject.transform, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .17f), new Vector2(1080, 180)); AddOutline(commandPanel.gameObject, new Color(.3f, .4f, .54f, 1f), 2);
-            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 18, new Vector2(.5f, .73f), new Vector2(1000, 42));
-            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .31f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .31f), ShowSkillPlaceholder);
-            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .31f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .31f), Flee);
-            MakeText(canvasObject.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 15, new Vector2(.5f, .025f), new Vector2(1000, 24)).color = new Color(.7f, .77f, .86f, 1f);
+            Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
+            CreateTimeline(canvasObject.transform, font);
+            Image battlefield = CreateBattlefield(canvasObject.transform);
+            CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
+            CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
+            CreateCommandPanel(canvasObject.transform, font);
+            MakeText(canvasObject.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 14, new Vector2(.5f, .012f), new Vector2(1000, 22)).color = new Color(.68f, .75f, .84f, 1f);
         }
 
-        private void CreateFormationPanel(Transform parent, Font font, Formation formation, string heading, Vector2 anchor)
+        private void CreateTimeline(Transform parent, Font font)
         {
-            Image root = MakeImage(parent, heading.Replace(" ", string.Empty), panel); SetRect(root.rectTransform, anchor, new Vector2(540, 360)); AddOutline(root.gameObject, gold, 2);
-            Text title = MakeText(root.transform, "Heading", heading, font, 22, new Vector2(.5f, .93f), new Vector2(300, 34)); title.color = gold; title.fontStyle = FontStyle.Bold;
-            MakeText(root.transform, "RearLabel", "후열", font, 16, new Vector2(.08f, .67f), new Vector2(58, 28)).color = new Color(.7f, .77f, .86f, 1f);
-            MakeText(root.transform, "FrontLabel", "전열", font, 16, new Vector2(.08f, .29f), new Vector2(58, 28)).color = new Color(.7f, .77f, .86f, 1f);
-            for (int rowIndex = 0; rowIndex < 2; rowIndex++)
+            Image timelinePanel = MakeImage(parent, "TurnTimelinePanel", new Color(.035f, .055f, .09f, .98f)); SetRect(timelinePanel.rectTransform, new Vector2(.5f, .895f), new Vector2(1080, 62)); AddOutline(timelinePanel.gameObject, new Color(.35f, .43f, .56f, 1f), 1);
+            timelineText = MakeText(timelinePanel.transform, "Timeline", string.Empty, font, 17, Vector2.one * .5f, new Vector2(1040, 54)); timelineText.supportRichText = true;
+        }
+
+        /// <summary>외부 배경 에셋 없이 하늘·원경·지면 층을 만들어 임시 전투 공간을 표현합니다.</summary>
+        private Image CreateBattlefield(Transform parent)
+        {
+            Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .56f), new Vector2(1180, 410)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
+            Image sky = MakeImage(battlefield.transform, "NightSky", new Color(.055f, .105f, .16f, 1f)); sky.rectTransform.anchorMin = new Vector2(0, .42f); sky.rectTransform.anchorMax = Vector2.one; sky.rectTransform.offsetMin = Vector2.zero; sky.rectTransform.offsetMax = Vector2.zero;
+            Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
+            Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
+            Image horizon = MakeImage(battlefield.transform, "GoldenHorizon", new Color(.65f, .5f, .22f, .7f)); horizon.rectTransform.anchorMin = new Vector2(0, .415f); horizon.rectTransform.anchorMax = new Vector2(1, .425f); horizon.rectTransform.offsetMin = Vector2.zero; horizon.rectTransform.offsetMax = Vector2.zero;
+            MakeText(battlefield.transform, "EnemySide", "적군", Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"), 15, new Vector2(.06f, .94f), new Vector2(70, 24)).color = new Color(.78f, .82f, .88f, .8f);
+            MakeText(battlefield.transform, "AllySide", "아군", Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"), 15, new Vector2(.94f, .94f), new Vector2(70, 24)).color = new Color(.78f, .82f, .88f, .8f);
+            return battlefield;
+        }
+
+        private void CreateFormationViews(Transform battlefield, Transform canvas, Font font, Formation formation)
+        {
+            foreach (Combatant combatant in formation.Members)
             {
-                FormationRow row = rowIndex == 0 ? FormationRow.Rear : FormationRow.Front;
-                float y = row == FormationRow.Rear ? .67f : .29f;
-                for (int column = 0; column < 3; column++)
-                {
-                    Combatant combatant = formation.Get(row, column);
-                    SlotView view = CreateSlot(root.transform, font, combatant, new Vector2(.28f + column * .27f, y), row, column);
-                    if (combatant != null) slotViews.Add(combatant, view);
-                }
+                Vector2 anchor = GetBattlefieldAnchor(combatant.Side, combatant.Slot);
+                CombatantView view = CreateCombatantView(battlefield, canvas, font, combatant, anchor);
+                combatantViews.Add(combatant, view);
             }
         }
 
-        private SlotView CreateSlot(Transform parent, Font font, Combatant combatant, Vector2 anchor, FormationRow row, int column)
+        /// <summary>논리 2×3 슬롯을 사이드뷰 전장의 실제 화면 좌표로 변환합니다.</summary>
+        private static Vector2 GetBattlefieldAnchor(BattleSide side, FormationSlot slot)
         {
-            GameObject obj = new GameObject($"Slot_{row}_{column}", typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(128, 112));
-            Image image = obj.GetComponent<Image>(); image.color = unavailable;
-            Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.interactable = false;
-            obj.GetComponent<Outline>().effectColor = new Color(.3f, .4f, .54f, 1f); obj.GetComponent<Outline>().effectDistance = new Vector2(2, -2);
-            string label = combatant == null ? $"빈 슬롯\n{(row == FormationRow.Front ? "전열" : "후열")} {column + 1}" : CombatantLabel(combatant);
-            Vector2 labelAnchor = combatant == null ? Vector2.one * .5f : new Vector2(.5f, .25f);
-            Vector2 labelSize = combatant == null ? new Vector2(120, 104) : new Vector2(120, 58);
-            Text text = MakeText(obj.transform, "Label", label, font, 16, labelAnchor, labelSize); text.fontStyle = combatant == null ? FontStyle.Normal : FontStyle.Bold;
-            if (combatant != null)
+            float x;
+            if (side == BattleSide.Enemies) x = slot.Row == FormationRow.Rear ? .14f : .32f;
+            else x = slot.Row == FormationRow.Front ? .68f : .86f;
+            float y = .72f - slot.Column * .22f;
+            return new Vector2(x, y);
+        }
+
+        private CombatantView CreateCombatantView(Transform battlefield, Transform canvas, Font font, Combatant combatant, Vector2 anchor)
+        {
+            GameObject hitObject = new GameObject($"Combatant_{combatant.Id}", typeof(Image), typeof(Button)); hitObject.transform.SetParent(battlefield, false); SetRect(hitObject.GetComponent<RectTransform>(), anchor, new Vector2(165, 150));
+            Image hitImage = hitObject.GetComponent<Image>(); hitImage.color = new Color(1f, 1f, 1f, .001f);
+            Button hitArea = hitObject.GetComponent<Button>(); hitArea.targetGraphic = hitImage; hitArea.interactable = false; hitArea.transition = Selectable.Transition.None; hitArea.onClick.AddListener(() => SelectTarget(combatant));
+
+            Image marker = MakeImage(hitObject.transform, "GroundMarker", new Color(.4f, .47f, .56f, .45f)); SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 15)); AddOutline(marker.gameObject, new Color(.65f, .72f, .8f, .7f), 1);
+            Sprite sprite = combatant.Side == BattleSide.Allies ? BattleEncounterContext.PlayerSprite : BattleEncounterContext.Monster?.FieldSprite;
+            Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", sprite == null ? Color.clear : Color.white); spriteImage.sprite = sprite; spriteImage.preserveAspect = true; SetRect(spriteImage.rectTransform, new Vector2(.5f, .49f), combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
+            Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, .98f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
+            Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, .9f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
+
+            EventTrigger trigger = hitObject.AddComponent<EventTrigger>();
+            AddTrigger(trigger, EventTriggerType.Select, _ => targetArrow.gameObject.SetActive(choosingTarget && hitArea.interactable));
+            AddTrigger(trigger, EventTriggerType.Deselect, _ => targetArrow.gameObject.SetActive(false));
+
+            CombatantView view = new CombatantView { HitArea = hitArea, SpriteImage = spriteImage, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
+            CreateCombatantHud(canvas, font, combatant, view);
+            return view;
+        }
+
+        private void CreateCombatantHud(Transform canvas, Font font, Combatant combatant, CombatantView view)
+        {
+            Vector2 anchor;
+            Vector2 size;
+            if (combatant.Side == BattleSide.Enemies)
             {
-                Sprite sprite = combatant.Side == BattleSide.Allies ? BattleEncounterContext.PlayerSprite : BattleEncounterContext.Monster?.FieldSprite;
-                Image portrait = MakeImage(obj.transform, "Portrait", sprite == null ? Color.clear : Color.white); portrait.sprite = sprite; portrait.preserveAspect = true; SetRect(portrait.rectTransform, new Vector2(.5f, .72f), new Vector2(58, 48));
-                button.onClick.AddListener(() => SelectTarget(combatant));
+                anchor = new Vector2(.11f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .805f : .745f);
+                size = new Vector2(190, 58);
             }
-            return new SlotView { Button = button, Background = image, Label = text };
+            else
+            {
+                anchor = new Vector2(.63f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .265f : .205f);
+                size = new Vector2(190, 62);
+            }
+
+            Image hud = MakeImage(canvas, $"Hud_{combatant.Id}", new Color(.035f, .055f, .09f, .96f)); SetRect(hud.rectTransform, anchor, size); AddOutline(hud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
+            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName, font, 15, new Vector2(.5f, .75f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
+            view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .43f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
+            Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .16f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
+            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f)); Stretch(view.HudHpFill.rectTransform); view.HudHpFill.type = Image.Type.Filled; view.HudHpFill.fillMethod = Image.FillMethod.Horizontal; view.HudHpFill.fillOrigin = 0;
+        }
+
+        private void CreateCommandPanel(Transform parent, Font font)
+        {
+            Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .105f), new Vector2(1100, 126)); AddOutline(commandPanel.gameObject, gold, 2);
+            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 17, new Vector2(.5f, .76f), new Vector2(1030, 34)); messageText.fontStyle = FontStyle.Bold;
+            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .3f), BeginAttack);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .3f), ShowSkillPlaceholder);
+            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .3f), Defend);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .3f), Flee);
         }
 
         private void AdvanceTurn()
@@ -179,7 +233,7 @@ namespace ProjectLimitless.Battle
             if (currentActor == null) return;
             currentActor.BeginTurn();
             UpdateTimeline();
-            RefreshSlotViews(null);
+            RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
             {
                 messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
@@ -201,9 +255,9 @@ namespace ProjectLimitless.Battle
             if (targets.Count == 0) { messageText.text = "현재 기본 공격으로 지정할 수 있는 대상이 없습니다."; return; }
             choosingTarget = true;
             SetCommandButtons(false);
-            RefreshSlotViews(targets);
-            messageText.text = "공격할 대상을 선택하세요. 공격 불가능한 대상은 비활성화됩니다.";
-            EventSystem.current.SetSelectedGameObject(slotViews[targets[0]].Button.gameObject);
+            RefreshCombatantViews(targets);
+            messageText.text = "공격할 대상을 선택하세요. 금색으로 밝게 표시된 적을 선택할 수 있습니다.";
+            EventSystem.current.SetSelectedGameObject(combatantViews[targets[0]].HitArea.gameObject);
         }
 
         private void SelectTarget(Combatant target)
@@ -214,7 +268,7 @@ namespace ProjectLimitless.Battle
             choosingTarget = false;
             int damage = target.TakeDamage(currentActor.Attack);
             messageText.text = $"{currentActor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-            RefreshSlotViews(null);
+            RefreshCombatantViews(null);
             FinishCurrentAction();
         }
 
@@ -249,7 +303,7 @@ namespace ProjectLimitless.Battle
             {
                 int damage = target.TakeDamage(currentActor.Attack);
                 messageText.text = $"{currentActor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-                RefreshSlotViews(null);
+                RefreshCombatantViews(null);
             }
             FinishCurrentAction();
         }
@@ -273,22 +327,31 @@ namespace ProjectLimitless.Battle
 
         private IEnumerator ReturnAfterDelay() { yield return new WaitForSeconds(1.2f); BattleSceneFlow.ReturnToField(); }
 
-        private void RefreshSlotViews(IReadOnlyList<Combatant> attackable)
+        private void RefreshCombatantViews(IReadOnlyList<Combatant> attackable)
         {
-            foreach (KeyValuePair<Combatant, SlotView> pair in slotViews)
+            foreach (KeyValuePair<Combatant, CombatantView> pair in combatantViews)
             {
-                Combatant combatant = pair.Key; SlotView view = pair.Value;
-                bool canAttack = attackable != null && attackable.Contains(combatant);
-                view.Label.text = CombatantLabel(combatant) + (attackable == null ? string.Empty : canAttack ? "\n[공격 가능]" : "\n[보호됨/사거리 밖]");
-                view.Background.color = !combatant.IsAlive ? new Color(.16f, .12f, .14f, 1f) : canAttack ? available : unavailable;
-                view.Button.interactable = canAttack && combatant.IsAlive;
+                Combatant combatant = pair.Key;
+                CombatantView view = pair.Value;
+                bool targetSelection = attackable != null && combatant.Side == BattleSide.Enemies;
+                bool canAttack = targetSelection && attackable.Contains(combatant);
+                view.HitArea.interactable = canAttack && combatant.IsAlive;
+                view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : Color.white;
+                view.GroundMarker.color = canAttack ? new Color(1f, .78f, .28f, .92f) : new Color(.4f, .47f, .56f, combatant.IsAlive ? .45f : .18f);
+                view.TargetArrow.gameObject.SetActive(false);
+                view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
+                view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : "  [전투불능]");
+                view.HudHp.text = $"HP {combatant.CurrentHp} / {combatant.MaxHp}";
+                view.HudHpFill.fillAmount = combatant.MaxHp <= 0 ? 0f : (float)combatant.CurrentHp / combatant.MaxHp;
+                view.HudHpFill.color = view.HudHpFill.fillAmount <= .3f ? new Color(.82f, .28f, .24f, 1f) : new Color(.25f, .72f, .46f, 1f);
             }
         }
 
         private void UpdateTimeline()
         {
             string upcoming = string.Join("  →  ", turnOrder.Upcoming.Take(7).Select(item => item.DisplayName));
-            timelineText.text = $"현재: {currentActor.DisplayName}" + (string.IsNullOrEmpty(upcoming) ? string.Empty : $"   |   다음: {upcoming}");
+            if (string.IsNullOrEmpty(upcoming)) upcoming = "다음 라운드 순서 갱신";
+            timelineText.text = $"<color=#FFD66F><b>현재 행동  ◆ {currentActor.DisplayName}</b></color>\n<color=#C7D4E6>다음 순서  {upcoming}</color>";
         }
 
         private void SetCommandButtons(bool enabled)
@@ -298,17 +361,17 @@ namespace ProjectLimitless.Battle
 
         private Button MakeCommandButton(Transform parent, string name, string label, Font font, Vector2 anchor, Action action)
         {
-            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(205, 58));
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(205, 48));
             Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1f);
             Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.onClick.AddListener(() => action()); button.colors = ColorBlock.defaultColorBlock;
             Outline outline = obj.GetComponent<Outline>(); outline.effectColor = gold; outline.effectDistance = new Vector2(2, -2);
-            Text text = MakeText(obj.transform, "Label", $"[ {label} ]", font, 21, Vector2.one * .5f, new Vector2(195, 50)); text.fontStyle = FontStyle.Bold;
+            Text text = MakeText(obj.transform, "Label", $"[ {label} ]", font, 20, Vector2.one * .5f, new Vector2(195, 42)); text.fontStyle = FontStyle.Bold;
             commandButtons.Add(button); return button;
         }
 
-        private static string CombatantLabel(Combatant combatant) => $"{combatant.DisplayName}\nHP {combatant.CurrentHp} / {combatant.MaxHp}" + (combatant.IsAlive ? string.Empty : "\n[전투불능]");
         private static void CreateEventSystem() { if (EventSystem.current != null) return; InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
         private static void CreateCameraIfMissing() { if (Camera.main != null) { Camera.main.backgroundColor = new Color(.018f, .03f, .06f, 1f); return; } GameObject obj = new GameObject("Main Camera"); obj.tag = "MainCamera"; obj.transform.position = new Vector3(0, 0, -10); Camera camera = obj.AddComponent<Camera>(); camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = new Color(.018f, .03f, .06f, 1f); camera.orthographic = true; }
+        private static void AddTrigger(EventTrigger trigger, EventTriggerType type, Action<BaseEventData> action) { EventTrigger.Entry entry = new EventTrigger.Entry { eventID = type }; entry.callback.AddListener(data => action(data)); trigger.triggers.Add(entry); }
         private static Text MakeText(Transform parent, string name, string value, Font font, int size, Vector2 anchor, Vector2 dimensions) { GameObject obj = new GameObject(name, typeof(Text)); obj.transform.SetParent(parent, false); Text text = obj.GetComponent<Text>(); text.font = font; text.fontSize = size; text.color = Color.white; text.alignment = TextAnchor.MiddleCenter; text.text = value; text.raycastTarget = false; SetRect(text.rectTransform, anchor, dimensions); return text; }
         private static Image MakeImage(Transform parent, string name, Color color) { GameObject obj = new GameObject(name, typeof(Image)); obj.transform.SetParent(parent, false); Image image = obj.GetComponent<Image>(); image.color = color; image.raycastTarget = false; return image; }
         private static Outline AddOutline(GameObject target, Color color, float distance) { Outline outline = target.AddComponent<Outline>(); outline.effectColor = color; outline.effectDistance = new Vector2(distance, -distance); return outline; }
