@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.Core;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace ProjectLimitless.Monster
             SceneManager.sceneLoaded += Install;
         }
 
-        /// <summary>로드된 Scene 이름과 일치하는 모든 배치 데이터를 찾아 몬스터를 생성합니다.</summary>
+        /// <summary>로드된 Scene 이름과 일치하는 모든 배치 데이터를 찾아 독립 리스폰 관리기에 전달합니다.</summary>
         private static void Install(Scene scene, LoadSceneMode mode)
         {
             if (scene.GetRootGameObjects().Any(item => item.name == RootName)) return;
@@ -34,22 +35,13 @@ namespace ProjectLimitless.Monster
                 .ToArray();
             if (spawns.Length == 0) return;
 
-            GameObject root = new GameObject(RootName);
+            GameObject root = new GameObject(RootName, typeof(FieldMonsterSpawnRuntime));
             SceneManager.MoveGameObjectToScene(root, scene);
-            foreach (FieldMonsterSpawnDefinition spawn in spawns)
-            {
-                if (spawn.Monster == null)
-                {
-                    Debug.LogError($"몬스터 배치 '{spawn.SpawnId}'에 MonsterDefinition이 없습니다.");
-                    continue;
-                }
-
-                CreateMonster(root.transform, spawn);
-            }
+            root.GetComponent<FieldMonsterSpawnRuntime>().Configure(spawns);
         }
 
         /// <summary>배치 데이터 한 개를 Rigidbody2D, Collider, Visual과 배회 Controller가 있는 GameObject로 만듭니다.</summary>
-        private static void CreateMonster(Transform parent, FieldMonsterSpawnDefinition spawn)
+        internal static GameObject CreateMonster(Transform parent, FieldMonsterSpawnDefinition spawn)
         {
             MonsterDefinition monster = spawn.Monster;
             GameObject monsterObject = new GameObject(
@@ -60,7 +52,7 @@ namespace ProjectLimitless.Monster
             monsterObject.transform.SetParent(parent, false);
             monsterObject.transform.position = spawn.Position;
             monsterObject.GetComponent<CircleCollider2D>().radius = .4f;
-            monsterObject.GetComponent<MonsterFieldController>().Configure(monster, spawn.Position, spawn.ActivityRadius);
+            monsterObject.GetComponent<MonsterFieldController>().Configure(spawn);
             monsterObject.AddComponent<MonsterNameplate>().Configure(monster.DisplayName);
 
             GameObject visual = new GameObject("Visual");
@@ -81,8 +73,7 @@ namespace ProjectLimitless.Monster
             }
             else
             {
-                // 적절한 Slime Sprite가 아직 없으므로 최종 그림을 임의 제작하지 않고
-                // 프로젝트의 공통 Placeholder와 이름표로 개발 중인 대상임을 분명히 표시합니다.
+                // 최종 그림이 없는 몬스터만 프로젝트의 공통 Placeholder로 표시합니다.
                 visual.AddComponent<PlaceholderVisual>().Configure(
                     monster.PlaceholderColor,
                     monster.VisualSize,
@@ -93,6 +84,41 @@ namespace ProjectLimitless.Monster
             visual.SetActive(true);
             if (animator != null)
                 monsterObject.GetComponent<MonsterFieldController>().ConfigureAnimator(animator);
+            return monsterObject;
+        }
+    }
+
+    /// <summary>
+    /// 현재 Field Scene에 속한 각 스폰을 독립적으로 확인하고, 처치 시간이 끝난 스폰만 다시 생성합니다.
+    /// </summary>
+    internal sealed class FieldMonsterSpawnRuntime : MonoBehaviour
+    {
+        private readonly Dictionary<FieldMonsterSpawnDefinition, GameObject> instances = new Dictionary<FieldMonsterSpawnDefinition, GameObject>();
+        private FieldMonsterSpawnDefinition[] spawns = Array.Empty<FieldMonsterSpawnDefinition>();
+
+        public void Configure(FieldMonsterSpawnDefinition[] definitions)
+        {
+            spawns = definitions ?? Array.Empty<FieldMonsterSpawnDefinition>();
+            RefreshSpawns();
+        }
+
+        private void Update() => RefreshSpawns();
+
+        private void RefreshSpawns()
+        {
+            foreach (FieldMonsterSpawnDefinition spawn in spawns)
+            {
+                if (spawn == null || instances.TryGetValue(spawn, out GameObject instance) && instance != null) continue;
+                if (spawn.Monster == null)
+                {
+                    Debug.LogError($"몬스터 배치 '{spawn.SpawnId}'에 MonsterDefinition이 없습니다.");
+                    instances[spawn] = gameObject;
+                    continue;
+                }
+                if (!MonsterEncounterService.IsSpawnAvailable(spawn)) continue;
+
+                instances[spawn] = FieldMonsterInstaller.CreateMonster(transform, spawn);
+            }
         }
     }
 }

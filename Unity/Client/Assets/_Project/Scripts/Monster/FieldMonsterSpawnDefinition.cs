@@ -18,11 +18,14 @@ namespace ProjectLimitless.Monster
         // 몬스터가 처음 나타나는 위치와 그 위치를 중심으로 허용할 배회 반경입니다.
         [SerializeField] private Vector2 position;
         [SerializeField, Min(.5f)] private float activityRadius = 2.5f;
+        // 처치된 뒤 같은 배치 위치에서 다시 나타날 때까지의 시간입니다.
+        [SerializeField, Min(0f)] private float respawnSeconds = 30f;
 
         public string SceneName => sceneName;
         public string SpawnId => spawnId;
         public MonsterDefinition Monster => monster;
         public Vector2 Position => position;
         public float ActivityRadius => activityRadius;
+        public float RespawnSeconds => respawnSeconds;
     }
 }

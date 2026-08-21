@@ -11,6 +11,7 @@ namespace ProjectLimitless.Monster
     public sealed class MonsterFieldController : MonoBehaviour
     {
         private MonsterDefinition definition;
+        private FieldMonsterSpawnDefinition spawnDefinition;
         private Rigidbody2D body;
         private Animator animator;
         private Vector2 activityCenter;
@@ -23,6 +24,7 @@ namespace ProjectLimitless.Monster
         private string currentAnimationState;
 
         public MonsterDefinition Definition => definition;
+        public FieldMonsterSpawnDefinition SpawnDefinition => spawnDefinition;
         public bool HasEncounteredPlayer => encountered;
 
         /// <summary>GameObject가 준비될 때 중력 없는 Top-Down 물리 이동 설정을 적용합니다.</summary>
@@ -36,12 +38,13 @@ namespace ProjectLimitless.Monster
         }
 
         /// <summary>Scene 설치기가 몬스터 종류, 활동 중심과 반경을 지정한 직후 호출합니다.</summary>
-        public void Configure(MonsterDefinition monster, Vector2 center, float radius)
+        public void Configure(FieldMonsterSpawnDefinition spawn)
         {
-            definition = monster;
-            activityCenter = center;
-            activityRadius = Mathf.Max(.5f, radius);
-            destination = center;
+            spawnDefinition = spawn;
+            definition = spawn.Monster;
+            activityCenter = spawn.Position;
+            activityRadius = Mathf.Max(.5f, spawn.ActivityRadius);
+            destination = spawn.Position;
             waitUntil = Time.time + Random.Range(definition.MinimumIdleTime, definition.MaximumIdleTime);
         }
 
@@ -148,7 +151,7 @@ namespace ProjectLimitless.Monster
             if (encountered) return;
 
             // 전투 복귀 유예 중인 접촉은 무시하고 계속 배회할 수 있게 둡니다.
-            if (!MonsterEncounterService.TryRaise(definition)) return;
+            if (!MonsterEncounterService.TryRaise(definition, spawnDefinition)) return;
 
             encountered = true;
             body.linearVelocity = Vector2.zero;

@@ -10,14 +10,16 @@ namespace ProjectLimitless.Battle
     public static class BattleEncounterContext
     {
         public static MonsterDefinition Monster { get; private set; }
+        public static FieldMonsterSpawnDefinition Spawn { get; private set; }
         public static Sprite PlayerSprite { get; private set; }
         public static Vector2 PlayerFieldPosition { get; private set; }
         public static Vector2 MonsterFieldPosition { get; private set; }
         private static bool pendingFieldReturn;
 
-        public static void Set(MonsterDefinition monster, Sprite playerSprite, Vector2 playerPosition, Vector2 monsterPosition)
+        public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, Sprite playerSprite, Vector2 playerPosition, Vector2 monsterPosition)
         {
             Monster = monster;
+            Spawn = spawn;
             PlayerSprite = playerSprite;
             PlayerFieldPosition = playerPosition;
             MonsterFieldPosition = monsterPosition;
@@ -54,9 +56,9 @@ namespace ProjectLimitless.Battle
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        private static void EnterBattle(MonsterDefinition monster)
+        private static void EnterBattle(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn)
         {
-            if (transitioning || monster == null) return;
+            if (transitioning || monster == null || spawn == null) return;
             PlayerController player = Object.FindAnyObjectByType<PlayerController>();
             if (player == null)
             {
@@ -65,32 +67,27 @@ namespace ProjectLimitless.Battle
             }
 
             SpriteRenderer renderer = player.GetComponentInChildren<SpriteRenderer>();
-            MonsterFieldController fieldMonster = FindEncounteredMonster(monster, player.transform.position);
+            MonsterFieldController fieldMonster = FindEncounteredMonster(spawn);
             Vector2 monsterPosition = fieldMonster == null ? (Vector2)player.transform.position : fieldMonster.transform.position;
-            BattleEncounterContext.Set(monster, renderer == null ? null : renderer.sprite, player.transform.position, monsterPosition);
+            BattleEncounterContext.Set(monster, spawn, renderer == null ? null : renderer.sprite, player.transform.position, monsterPosition);
             transitioning = true;
             SceneManager.LoadSceneAsync(BattleSceneName, LoadSceneMode.Single);
         }
 
-        private static MonsterFieldController FindEncounteredMonster(MonsterDefinition definition, Vector3 playerPosition)
+        private static MonsterFieldController FindEncounteredMonster(FieldMonsterSpawnDefinition spawn)
         {
-            MonsterFieldController nearest = null;
-            float nearestDistance = float.PositiveInfinity;
             foreach (MonsterFieldController controller in Object.FindObjectsByType<MonsterFieldController>())
             {
-                if (controller.Definition != definition) continue;
-                float distance = (controller.transform.position - playerPosition).sqrMagnitude;
-                if (distance >= nearestDistance) continue;
-                nearest = controller;
-                nearestDistance = distance;
+                if (controller.SpawnDefinition == spawn) return controller;
             }
-            return nearest;
+            return null;
         }
 
         /// <summary>승리 또는 도망 뒤 필드 전투 상태를 새로 만들고 즉시 재조우를 막으며 복귀합니다.</summary>
-        public static void ReturnToField()
+        public static void ReturnToField(bool defeatedEncounteredMonster)
         {
             if (transitioning) return;
+            if (defeatedEncounteredMonster) MonsterEncounterService.MarkDefeated(BattleEncounterContext.Spawn);
             transitioning = true;
             MonsterEncounterService.SuppressForSeconds(2f);
             BattleEncounterContext.PrepareFieldReturn();

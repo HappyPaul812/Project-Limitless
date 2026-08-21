@@ -209,7 +209,7 @@ namespace ProjectLimitless.Battle
             view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName, font, 15, new Vector2(.5f, .75f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
             view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .43f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
             Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .16f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
-            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f)); Stretch(view.HudHpFill.rectTransform); view.HudHpFill.type = Image.Type.Filled; view.HudHpFill.fillMethod = Image.FillMethod.Horizontal; view.HudHpFill.fillOrigin = 0;
+            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f)); Stretch(view.HudHpFill.rectTransform);
         }
 
         private void CreateCommandPanel(Transform parent, Font font)
@@ -226,8 +226,8 @@ namespace ProjectLimitless.Battle
         private void AdvanceTurn()
         {
             if (battleEnded) return;
-            if (enemies.IsDefeated) { EndBattle("승리! 초원 슬라임을 쓰러뜨렸습니다."); return; }
-            if (allies.IsDefeated) { EndBattle("전투불능. Field_01로 복귀합니다."); return; }
+            if (enemies.IsDefeated) { EndBattle("승리! 초원 슬라임을 쓰러뜨렸습니다.", true); return; }
+            if (allies.IsDefeated) { EndBattle("전투불능. Field_01로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
@@ -291,7 +291,7 @@ namespace ProjectLimitless.Battle
             battleEnded = true;
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. Field_01로 복귀합니다.";
-            StartCoroutine(ReturnAfterDelay());
+            StartCoroutine(ReturnAfterDelay(false));
         }
 
         private IEnumerator EnemyAction()
@@ -317,15 +317,19 @@ namespace ProjectLimitless.Battle
 
         private IEnumerator AdvanceAfterDelay() { yield return new WaitForSeconds(.65f); AdvanceTurn(); }
 
-        private void EndBattle(string message)
+        private void EndBattle(string message, bool defeatedEncounteredMonster)
         {
             battleEnded = true;
             SetCommandButtons(false);
             messageText.text = message + " 전투 상태를 초기화하고 Field_01로 복귀합니다.";
-            StartCoroutine(ReturnAfterDelay());
+            StartCoroutine(ReturnAfterDelay(defeatedEncounteredMonster));
         }
 
-        private IEnumerator ReturnAfterDelay() { yield return new WaitForSeconds(1.2f); BattleSceneFlow.ReturnToField(); }
+        private IEnumerator ReturnAfterDelay(bool defeatedEncounteredMonster)
+        {
+            yield return new WaitForSeconds(1.2f);
+            BattleSceneFlow.ReturnToField(defeatedEncounteredMonster);
+        }
 
         private void RefreshCombatantViews(IReadOnlyList<Combatant> attackable)
         {
@@ -342,8 +346,13 @@ namespace ProjectLimitless.Battle
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
                 view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : "  [전투불능]");
                 view.HudHp.text = $"HP {combatant.CurrentHp} / {combatant.MaxHp}";
-                view.HudHpFill.fillAmount = combatant.MaxHp <= 0 ? 0f : (float)combatant.CurrentHp / combatant.MaxHp;
-                view.HudHpFill.color = view.HudHpFill.fillAmount <= .3f ? new Color(.82f, .28f, .24f, 1f) : new Color(.25f, .72f, .46f, 1f);
+                float healthRatio = combatant.MaxHp <= 0 ? 0f : Mathf.Clamp01((float)combatant.CurrentHp / combatant.MaxHp);
+                RectTransform hpFillRect = view.HudHpFill.rectTransform;
+                hpFillRect.anchorMin = Vector2.zero;
+                hpFillRect.anchorMax = new Vector2(healthRatio, 1f);
+                hpFillRect.offsetMin = Vector2.zero;
+                hpFillRect.offsetMax = Vector2.zero;
+                view.HudHpFill.color = healthRatio <= .3f ? new Color(.82f, .28f, .24f, 1f) : new Color(.25f, .72f, .46f, 1f);
             }
         }
 

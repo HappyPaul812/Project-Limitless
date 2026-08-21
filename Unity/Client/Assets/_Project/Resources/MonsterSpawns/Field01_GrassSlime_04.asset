@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9aff533e0f0c4e91a17a57cb14010833, type: 3}
-  m_Name: Field01_GrassSlime_01
+  m_Name: Field01_GrassSlime_04
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.FieldMonsterSpawnDefinition
   sceneName: Field_01
-  spawnId: grass_slime_01
+  spawnId: grass_slime_04
   monster: {fileID: 11400000, guid: 1d593441524742128470c5d2b2e4c508, type: 2}
-  position: {x: 2.5, y: 0}
-  activityRadius: 1.8
+  position: {x: 5.5, y: -3.3}
+  activityRadius: 1.5
   respawnSeconds: 30
