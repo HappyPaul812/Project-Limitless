@@ -79,12 +79,15 @@ namespace ProjectLimitless.Battle
             int strength = CharacterCreationStatsCalculator.GetFinalStat(path, job, CharacterStatType.Strength);
             int agility = CharacterCreationStatsCalculator.GetFinalStat(path, job, CharacterStatType.Agility);
             string playerName = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
-            TargetRangeType playerRange = GameSessionData.SelectedJobId == "sharpshooter" ? TargetRangeType.RangedPhysical : GameSessionData.SelectedJobId == "mage" ? TargetRangeType.Magic : TargetRangeType.MeleePhysical;
+            TargetRangeType playerRange = GetBasicAttackRange(GameSessionData.SelectedJobId);
+            int playerAttack = 12 + Math.Max(0, strength - 10) * 2;
+            // 치유사의 기본 공격은 같은 능력치 기준에서도 다른 직업보다 낮은 피해를 주는 1차 검증값을 사용합니다.
+            if (GameSessionData.SelectedJobId == "healer") playerAttack = Math.Max(1, playerAttack - 4);
 
             allies = new Formation(BattleSide.Allies);
             enemies = new Formation(BattleSide.Enemies);
             // HP와 공격력 환산은 전투 흐름 검증용 임시값이며 최종 밸런스 데이터가 아닙니다.
-            allies.Place(new Combatant("player", playerName, BattleSide.Allies, new FormationSlot(FormationRow.Front, 1), 80 + health * 4, 12 + Math.Max(0, strength - 10) * 2, agility, 0, playerRange, true));
+            allies.Place(new Combatant("player", playerName, BattleSide.Allies, new FormationSlot(FormationRow.Front, 1), 80 + health * 4, playerAttack, agility, 0, playerRange, true));
 
             MonsterDefinition monster = BattleEncounterContext.Monster ?? Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").FirstOrDefault();
             string monsterId = monster == null ? "grass_slime" : monster.MonsterId;
@@ -92,6 +95,19 @@ namespace ProjectLimitless.Battle
             enemies.Place(new Combatant(monsterId, monsterName, BattleSide.Enemies, new FormationSlot(FormationRow.Front, 1), 55, 10, 11, 0, TargetRangeType.MeleePhysical, false));
         }
 
+        /// <summary>선택한 기본 직업을 확정된 기본 공격 사거리로 변환합니다.</summary>
+        private static TargetRangeType GetBasicAttackRange(string jobId)
+        {
+            switch (jobId)
+            {
+                case "sharpshooter": return TargetRangeType.RangedPhysical;
+                case "mage":
+                case "healer": return TargetRangeType.Magic;
+                case "guardian":
+                case "fighter":
+                default: return TargetRangeType.MeleePhysical;
+            }
+        }
         private void CreateInterface()
         {
             CreateCameraIfMissing();
