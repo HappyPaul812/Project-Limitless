@@ -5,7 +5,7 @@
 - 갱신일: 2026-08-24
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `3f82aae` (`Feature: 사수 기본 공격 Projectile 연출 추가`)
-- 마지막 오류 수정 commit: `875db5b` (`Fix: Battle 진입 전투 Idle 방향 초기화`)
+- 마지막 오류 수정 commit: `25a8d5d` (`Fix: Battle Idle Sprite 해석 오류 수정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
 
@@ -144,6 +144,7 @@
 - `BattleCore.cs`, `TargetResolver`, `Formation`, 피해·방어 계산은 변경하지 않았다. 근거리 연출을 유지하고 사수 원거리 기본 공격만 Projectile 연출에 연결했으며, 마법 기본 공격은 기존 즉시 처리 흐름을 유지했다.
 - 사수 Projectile 코드를 Unity 6000.5.7f1의 전체 `Assembly-CSharp` 참조와 Roslyn으로 컴파일해 오류 0개를 확인했다. 조준 시간·Projectile 위치와 방향·입력 잠금은 Play Mode 확인이 필요하다.
 - 기본·Path Variant·휠체어·초원 슬라임 Animator Controller에서 `Idle_Left`·`Idle_Right` 상태를 확인하고, `BattleVisualResolver`를 포함한 전체 `Assembly-CSharp` 컴파일 오류 0개를 확인했다. 실제 방향과 첫 프레임은 Play Mode 확인이 필요하다.
+- `AnimationClip.SampleAnimation`이 Sprite PPtr 곡선을 적용하지 못하던 경로를 임시 Animator 상태 평가로 교체하고, Path Variant 기본 Sprite fallback과 null UI 투명 처리를 추가했다. 전체 `Assembly-CSharp` 컴파일 오류 0개이며 흰 사각형·경고 제거는 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -167,12 +168,13 @@
 17. 필드에서 플레이어가 걷거나 상·하·우 방향을 보는 중 조우해도 Battle에서는 기본·Path Variant·휠체어 모두 Left Idle 첫 프레임인지 확인한다.
 18. 초원 슬라임이 필드에서 이동하거나 다른 방향을 보는 중 조우해도 Battle에서는 Right Idle 첫 프레임인지 확인한다.
 19. 근거리·Projectile 공격 종료 후 양측이 각자의 Left/Right 전투 Idle Sprite로 복귀하는지 확인한다.
+20. 남자 지체의 길 수호자와 초원 슬라임이 흰 사각형 없이 표시되고, `Battle Visual` Warning·NullReference·Compile Error가 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity가 새 스크립트를 import한 뒤 여러 필드 방향·Walk 상태에서 조우해 기본·Path Variant·휠체어는 Left Idle, 초원 슬라임은 Right Idle로 시작하고 공격 뒤에도 복구되는지 우선 검증한다. 이어 근거리·Projectile, HP Bar, 승리·도망과 리스폰 회귀를 확인한다. 실제 전투 전용 Sprite/Animator 데이터와 화살 Sprite 교체는 후속 작업으로 남긴다.
+Unity가 새 스크립트를 import한 뒤 남자 지체의 길 수호자로 조우해 휠체어 Left Idle과 초원 슬라임 Right Idle이 흰 사각형·`Battle Visual` 경고 없이 표시되는지 우선 검증한다. 이어 다른 기본·Path Variant 외형과 공격 후 Idle 복구, 근거리·Projectile, HP Bar, 승리·도망과 리스폰 회귀를 확인한다.
 
 ## 갱신 규칙
 
