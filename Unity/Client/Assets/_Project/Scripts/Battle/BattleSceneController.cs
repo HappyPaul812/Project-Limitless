@@ -28,7 +28,6 @@ namespace ProjectLimitless.Battle
             public Text TargetArrow;
             public Text TurnMarker;
             public Text HudName;
-            public Text HudHp;
             public Text HudStatus;
             public Image HudHpFill;
             public bool UsesPlaceholderVisual;
@@ -65,6 +64,12 @@ namespace ProjectLimitless.Battle
         private BattleActionPresenter actionPresenter;
         private BattleSkillExecutor skillExecutor;
         private Font battleFont;
+        private RectTransform battleCanvasRect;
+        private Image detailPopup;
+        private Text detailPopupText;
+        private Combatant hoveredCombatant;
+        private Combatant focusedCombatant;
+        private Combatant detailCombatant;
 
         private IEnumerable<Combatant> AllCombatants => allies.Members.Concat(enemies.Members);
 
@@ -141,6 +146,7 @@ namespace ProjectLimitless.Battle
             battleFont = font;
             GameObject canvasObject = new GameObject("BattleCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             Canvas canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            battleCanvasRect = canvasObject.GetComponent<RectTransform>();
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
             Image background = MakeImage(canvasObject.transform, "Background", navy); Stretch(background.rectTransform);
 
@@ -149,6 +155,7 @@ namespace ProjectLimitless.Battle
             Image battlefield = CreateBattlefield(canvasObject.transform);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
+            CreateDetailPopup(canvasObject.transform, font);
             CreateCommandPanel(canvasObject.transform, font);
         }
 
@@ -213,41 +220,127 @@ namespace ProjectLimitless.Battle
                 initial.color = focusGold;
                 initial.fontStyle = FontStyle.Bold;
             }
-            Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, .98f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
-            Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, .9f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
+            Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, 1.2f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
+            Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, 1.14f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
 
             EventTrigger trigger = hitObject.AddComponent<EventTrigger>();
-            AddTrigger(trigger, EventTriggerType.Select, _ => targetArrow.gameObject.SetActive(choosingTarget && hitArea.interactable));
-            AddTrigger(trigger, EventTriggerType.Deselect, _ => targetArrow.gameObject.SetActive(false));
+            AddTrigger(trigger, EventTriggerType.PointerEnter, _ => OnCombatantPointerEnter(combatant));
+            AddTrigger(trigger, EventTriggerType.PointerExit, _ => OnCombatantPointerExit(combatant));
+            AddTrigger(trigger, EventTriggerType.Select, _ => OnCombatantFocused(combatant));
+            AddTrigger(trigger, EventTriggerType.Deselect, _ => OnCombatantFocusLost(combatant));
 
             CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
-            CreateCombatantHud(canvas, font, combatant, view);
+            CreateCombatantMiniHud(font, combatant, view);
             return view;
         }
-        private void CreateCombatantHud(Transform canvas, Font font, Combatant combatant, CombatantView view)
+        /// <summary>캐릭터 가까이에 이름과 작은 HP Bar, 즉시 확인할 상태 표식만 배치합니다.</summary>
+        private void CreateCombatantMiniHud(Font font, Combatant combatant, CombatantView view)
         {
-            Vector2 anchor;
-            Vector2 size;
-            if (combatant.Side == BattleSide.Enemies)
-            {
-                anchor = new Vector2(.10f + combatant.Slot.Column * .145f, combatant.Slot.Row == FormationRow.Front ? .80f : .70f);
-                size = new Vector2(170, 72);
-            }
-            else
-            {
-                anchor = new Vector2(.61f + combatant.Slot.Column * .145f, combatant.Slot.Row == FormationRow.Front ? .35f : .25f);
-                size = new Vector2(170, 72);
-            }
+            Image miniHud = MakeImage(view.ActionRoot, $"MiniHud_{combatant.Id}", new Color(.025f, .045f, .075f, .88f));
+            SetRect(miniHud.rectTransform, new Vector2(.5f, .98f), new Vector2(144, 52));
+            AddOutline(miniHud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
 
-            Image hud = MakeImage(canvas, $"Hud_{combatant.Id}", new Color(.035f, .055f, .09f, .96f)); SetRect(hud.rectTransform, anchor, size); AddOutline(hud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
-            string jobLabel = combatantJobs.TryGetValue(combatant, out JobDefinition job) ? $" · {job.DisplayName}" : string.Empty;
-            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName + jobLabel, font, 14, new Vector2(.5f, .8f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
-            view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .53f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
-            view.HudStatus = MakeText(hud.transform, "StatusText", string.Empty, font, 13, new Vector2(.5f, .28f), new Vector2(size.x - 14, 18)); view.HudStatus.alignment = TextAnchor.MiddleLeft; view.HudStatus.color = focusGold; view.HudStatus.fontStyle = FontStyle.Bold;
-            Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .1f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
-            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f)); Stretch(view.HudHpFill.rectTransform);
+            view.HudName = MakeText(miniHud.transform, "Name", combatant.DisplayName, font, 13,
+                new Vector2(.5f, .77f), new Vector2(134, 19));
+            view.HudName.fontStyle = FontStyle.Bold;
+            Image hpBackground = MakeImage(miniHud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f));
+            SetRect(hpBackground.rectTransform, new Vector2(.5f, .45f), new Vector2(126, 9));
+            AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
+            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f));
+            Stretch(view.HudHpFill.rectTransform);
+            view.HudStatus = MakeText(miniHud.transform, "ImportantStatus", string.Empty, font, 12,
+                new Vector2(.5f, .15f), new Vector2(134, 18));
+            view.HudStatus.color = focusGold;
+            view.HudStatus.fontStyle = FontStyle.Bold;
         }
 
+        /// <summary>모든 참가자가 공유하는 상세 상태 팝업을 하나만 생성합니다.</summary>
+        private void CreateDetailPopup(Transform canvas, Font font)
+        {
+            detailPopup = MakeImage(canvas, "CombatantDetailPopup", new Color(.035f, .06f, .1f, .98f));
+            SetRect(detailPopup.rectTransform, Vector2.one * .5f, new Vector2(270, 140));
+            AddOutline(detailPopup.gameObject, gold, 2);
+            detailPopupText = MakeText(detailPopup.transform, "DetailText", string.Empty, font, 16,
+                Vector2.one * .5f, new Vector2(244, 118));
+            detailPopupText.alignment = TextAnchor.MiddleLeft;
+            detailPopupText.lineSpacing = 1.15f;
+            detailPopup.gameObject.SetActive(false);
+        }
+
+        private void OnCombatantPointerEnter(Combatant combatant)
+        {
+            hoveredCombatant = combatant;
+            RefreshDetailPopupPreference();
+        }
+
+        private void OnCombatantPointerExit(Combatant combatant)
+        {
+            if (hoveredCombatant == combatant) hoveredCombatant = null;
+            RefreshDetailPopupPreference();
+        }
+
+        private void OnCombatantFocused(Combatant combatant)
+        {
+            focusedCombatant = combatant;
+            if (combatantViews.TryGetValue(combatant, out CombatantView view))
+                view.TargetArrow.gameObject.SetActive(choosingTarget && view.HitArea.interactable);
+            RefreshDetailPopupPreference();
+        }
+
+        private void OnCombatantFocusLost(Combatant combatant)
+        {
+            if (focusedCombatant == combatant) focusedCombatant = null;
+            if (combatantViews.TryGetValue(combatant, out CombatantView view))
+                view.TargetArrow.gameObject.SetActive(false);
+            RefreshDetailPopupPreference();
+        }
+
+        /// <summary>키보드 포커스를 Hover보다 우선하여 동시에 하나의 팝업만 표시합니다.</summary>
+        private void RefreshDetailPopupPreference()
+        {
+            Combatant preferred = focusedCombatant ?? hoveredCombatant;
+            if (preferred == null)
+            {
+                detailCombatant = null;
+                if (detailPopup != null) detailPopup.gameObject.SetActive(false);
+                return;
+            }
+            ShowDetailPopup(preferred);
+        }
+
+        private void ShowDetailPopup(Combatant combatant)
+        {
+            if (detailPopup == null || detailPopupText == null || !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
+            combatantJobs.TryGetValue(combatant, out JobDefinition job);
+            participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
+            BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(combatant, job, setup, skillCooldowns);
+            detailCombatant = combatant;
+            detailPopupText.text = model.DetailText;
+            int lineCount = model.DetailText.Count(character => character == '\n') + 1;
+            detailPopup.rectTransform.sizeDelta = new Vector2(270, Mathf.Max(116, 34 + lineCount * 23));
+            detailPopupText.rectTransform.sizeDelta = new Vector2(244, detailPopup.rectTransform.sizeDelta.y - 20);
+            detailPopup.gameObject.SetActive(true);
+            detailPopup.rectTransform.SetAsLastSibling();
+            PositionDetailPopup(view.ActionRoot);
+        }
+
+        /// <summary>화면 좌우 가장자리에서는 캐릭터 반대쪽 안쪽에 놓고 Canvas 경계 안으로 위치를 제한합니다.</summary>
+        private void PositionDetailPopup(RectTransform source)
+        {
+            if (battleCanvasRect == null || detailPopup == null || source == null) return;
+            Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(null, source.position);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(battleCanvasRect, screenPoint, null, out Vector2 localPoint);
+            RectTransform popupRect = detailPopup.rectTransform;
+            float direction = screenPoint.x < Screen.width * .5f ? 1f : -1f;
+            localPoint.x += direction * (source.rect.width * .5f + popupRect.rect.width * .5f + 14f);
+
+            float halfWidth = popupRect.rect.width * .5f;
+            float halfHeight = popupRect.rect.height * .5f;
+            Rect canvasBounds = battleCanvasRect.rect;
+            localPoint.x = Mathf.Clamp(localPoint.x, canvasBounds.xMin + halfWidth + 12f, canvasBounds.xMax - halfWidth - 12f);
+            localPoint.y = Mathf.Clamp(localPoint.y, canvasBounds.yMin + halfHeight + 12f, canvasBounds.yMax - halfHeight - 12f);
+            popupRect.anchoredPosition = localPoint;
+        }
         private void CreateCommandPanel(Transform parent, Font font)
         {
             Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .12f), new Vector2(1100, 148)); AddOutline(commandPanel.gameObject, gold, 2);
@@ -256,7 +349,7 @@ namespace ProjectLimitless.Battle
             skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .42f), ShowSkillMenu);
             defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .42f), Defend);
             fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .42f), Flee);
-            MakeText(commandPanel.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 14, new Vector2(.5f, .11f), new Vector2(1030, 22)).color = new Color(.68f, .75f, .84f, 1f);
+            MakeText(commandPanel.transform, "Help", "마우스/방향키: 이동   캐릭터 Hover/포커스: 상세   Esc: 취소   시간제한 없음", font, 14, new Vector2(.5f, .11f), new Vector2(1030, 22)).color = new Color(.68f, .75f, .84f, 1f);
             skillMenuPanel = MakeImage(commandPanel.transform, "SkillMenu", new Color(.045f, .075f, .12f, 1f));
             SetRect(skillMenuPanel.rectTransform, new Vector2(.5f, .42f), new Vector2(1030, 62));
             AddOutline(skillMenuPanel.gameObject, gold, 1);
@@ -598,16 +691,18 @@ namespace ProjectLimitless.Battle
                 CombatantView view = pair.Value;
                 bool targetSelection = attackable != null;
                 bool canAttack = targetSelection && attackable.Contains(combatant);
-                view.HitArea.interactable = canAttack && combatant.IsAlive;
+                bool canInspect = !battleEnded && !actionPlaying && currentActor != null && currentActor.IsPlayerControlled && !choosingSkill;
+                view.HitArea.interactable = combatant.IsAlive && (targetSelection ? canAttack : canInspect);
                 Color normalVisual = view.UsesPlaceholderVisual ? new Color(.12f, .3f, .48f, 1f) : view.SpriteImage.sprite == null ? Color.clear : Color.white;
                 view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : normalVisual;
                 view.GroundMarker.color = canAttack ? new Color(1f, .78f, .28f, .92f) : new Color(.4f, .47f, .56f, combatant.IsAlive ? .45f : .18f);
                 view.TargetArrow.gameObject.SetActive(false);
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
-                view.HudName.text = GetCombatantDisplayName(combatant) + (combatant.IsAlive ? string.Empty : "  [전투불능]");
-                view.HudHp.text = $"HP {combatant.CurrentHp} / {combatant.MaxHp}";
-                bool taunted = combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive;
-                view.HudStatus.text = taunted ? $"도발 {combatant.ForcedTargetActionsRemaining}" : string.Empty;
+                view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : " [전투불능]");
+                combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
+                participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
+                BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns);
+                view.HudStatus.text = statusModel.CompactStatus;
                 float healthRatio = combatant.MaxHp <= 0 ? 0f : Mathf.Clamp01((float)combatant.CurrentHp / combatant.MaxHp);
                 RectTransform hpFillRect = view.HudHpFill.rectTransform;
                 hpFillRect.anchorMin = Vector2.zero;
@@ -616,15 +711,9 @@ namespace ProjectLimitless.Battle
                 hpFillRect.offsetMax = Vector2.zero;
                 view.HudHpFill.color = healthRatio <= .3f ? new Color(.82f, .28f, .24f, 1f) : new Color(.25f, .72f, .46f, 1f);
             }
+            if (detailCombatant != null) ShowDetailPopup(detailCombatant);
         }
 
-
-        private string GetCombatantDisplayName(Combatant combatant)
-        {
-            return combatantJobs.TryGetValue(combatant, out JobDefinition job)
-                ? $"{combatant.DisplayName} · {job.DisplayName}"
-                : combatant.DisplayName;
-        }
         private void UpdateTimeline()
         {
             string upcoming = string.Join("  →  ", turnOrder.Upcoming.Take(7).Select(item => item.DisplayName));
