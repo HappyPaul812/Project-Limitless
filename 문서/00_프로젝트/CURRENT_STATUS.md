@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-24
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `9a59e14` (`Feature: 치유사 Magical Projectile VFX 적용`)
+- 마지막 기능 관련 commit: `f4f50f6` (`Feature: 수호자 도발 스킬 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
@@ -90,6 +90,9 @@
 - 시작·목표 X 좌표 비교 기반 공용 Projectile 좌우 반전과 GIF 프레임 지연 재생
 - PVFX Foundry 0.3.0 CC0 원본·라이선스 보존, Magical Projectile travel 5프레임을 치유사 기본 공격에 적용
 - Radiant Heal은 기본 공격에서 제외하고 향후 치유사 치유의 빛 스킬 VFX 후보로 보류
+- JobDefinition 프리뷰를 사용하는 재사용 가능한 전투 스킬 카탈로그·실행기·참가자별 쿨타임·상태효과 런타임
+- 실제 스킬 메뉴와 Esc 복귀, 미구현 스킬 비활성 표시, 수호자 도발 제자리 강조 연출
+- 수호자 도발의 적 전체 적용, 적별 다음 2회 행동 소모, 수호자 행동 기준 3턴 쿨타임과 적 HUD 상태 표시
 
 ## 데이터만 있고 실행 로직이 없는 항목
 
@@ -111,8 +114,7 @@
 
 ## 미구현
 
-- 실제 직업별 스킬 효과와 길 패시브
-- 수호자 도발 스킬 적용과 재사용 대기시간 실행
+- 수호자 도발 외 나머지 직업별 스킬 효과와 길 패시브
 - NPC 동료 실제 캐릭터·AI·파티 편성
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
@@ -154,6 +156,7 @@
 - golden arrow 8프레임(80ms), fireball 7프레임(60ms)을 원본 32×32 크기로 추출하고 복사 전후 SHA-256 일치를 확인했다. 실제 에셋 연결 후 전체 Assembly-CSharp 컴파일 오류 0개이며 표시 크기·방향·프레임 재생은 Play Mode 확인이 필요하다.
 - 사수 golden arrow와 마도사 fireball 이동시간을 각각 0.35초로 조정하고, 프레임 간격·도착 후 피해 적용·치유사 Projectile 0.24초·근거리 속도는 유지했다. 전체 Assembly-CSharp 컴파일 오류 0개이며 체감 속도는 Play Mode 확인이 필요하다.
 - 치유사 임시 Orb를 PVFX Magical Projectile의 96×96 travel 프레임 5개로 교체했다. manifest 픽셀 해시 일치, Point Filter·투명 Sprite·50ms 프레임·0.24초 이동 유지와 전체 Assembly-CSharp 컴파일 오류 0개를 확인했다.
+- 수호자 도발 스킬 구조를 Unity 전체 Assembly-CSharp 참조로 컴파일해 오류 0개를 확인했다. Combatant·TargetResolver 기존 도발 우선 판정을 재사용하고 BattleCore·Formation·TurnOrderQueue는 수정하지 않았다. 메뉴 조작·HUD 배치·2회 소모·3턴 쿨타임은 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -182,12 +185,19 @@
 22. 치유사 기본 공격 시 PVFX Magical Projectile이 0.24초 동안 왼쪽 대상을 향해 재생되고, 도착 순간 피해와 기존 낮은 피해량·마법 자유 대상 규칙이 유지되는지 확인한다.
 23. 두 마법 연출 중 입력이 잠기고 완료 후 Left Idle과 다음 턴이 복구되며, 치유사 Magical Projectile과 근거리 연출도 정상인지 확인한다.
 24. 테스트용으로 시작 X보다 목표 X가 큰 배치를 구성할 수 있을 때 golden arrow와 fireball이 원본 오른쪽 방향으로 표시되는지 확인한다.
+25. 수호자로 Battle에 진입해 스킬 → 도발을 마우스와 키보드로 선택하고, Esc로 명령 메뉴에 복귀되는지 확인한다.
+26. 도발 사용 시 수호자가 제자리에서 강조되고 도발! 텍스트 뒤 슬라임 HUD에 도발 2가 표시되는지 확인한다.
+27. 슬라임 첫 행동 완료 후 도발 1, 두 번째 행동 완료 후 표시 제거를 확인한다.
+28. 수호자 다음 행동 차례의 메뉴에 도발 [재사용 2턴], 이후 1턴, 종료 후 다시 사용 가능 상태가 표시되는지 확인한다.
+29. 쿨타임 중 도발 버튼이 실행되지 않으며 철벽 방어·대신 막기와 다른 직업 스킬이 [미구현]으로 안전하게 표시되는지 확인한다.
+30. 공격·방어·도망과 기존 근거리/Projectile 연출, HP Bar, 승리·패배·Field_01 복귀·30초 리스폰을 회귀 확인한다.
+31. Console에 Compile Error, NullReferenceException, MissingReferenceException이 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity가 새 Sprite를 import한 뒤 치유사 Magical Projectile의 50ms 프레임 재생·왼쪽 방향 반전·0.24초 이동·도착 시 피해를 우선 검증한다. 이어 사수 golden arrow, 마도사 fireball, 근거리 연출, 입력 잠금, HP Bar, 승리·도망과 리스폰 회귀를 확인한다.
+Unity Play Mode에서 수호자 스킬 메뉴, 도발 2→1→해제, 수호자 행동 기준 쿨타임 2→1→사용 가능과 Esc 복귀를 우선 검증한다. 이어 기존 기본 공격·방어·도망·Projectile·승패·필드 복귀와 리스폰 회귀를 확인한다.
 
 ## 갱신 규칙
 
