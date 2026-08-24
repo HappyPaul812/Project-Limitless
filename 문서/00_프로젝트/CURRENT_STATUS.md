@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-24
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `f4f50f6` (`Feature: 수호자 도발 스킬 구현`)
+- 마지막 기능 관련 commit: `f98746f` (`Feature: 3대3 프로토타입 전투 확장`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
@@ -93,6 +93,10 @@
 - JobDefinition 프리뷰를 사용하는 재사용 가능한 전투 스킬 카탈로그·실행기·참가자별 쿨타임·상태효과 런타임
 - 실제 스킬 메뉴와 Esc 복귀, 미구현 스킬 비활성 표시, 수호자 도발 제자리 강조 연출
 - 수호자 도발의 적 전체 적용, 적별 다음 2회 행동 소모, 수호자 행동 기준 3턴 쿨타임과 적 HUD 상태 표시
+- 참가자 목록 기반 `BattleEncounterSetup`과 3대3 프로토타입 Factory, 기존 2×3 Formation을 사용하는 실제 N대N 전투 생성
+- 플레이어·태온(수호자)·미엘(치유사)의 플레이어 직접 조작과 이름·직업·독립 HP HUD
+- 전열 슬라임 2명·후열 슬라임 1명의 독립 Combatant·턴·HP·도발 상태와 6명 전체 행동 타임라인
+- 적·아군 후보를 공통 처리하는 대상 선택 UI 기반과 태온·미엘 코드 생성 임시 Visual
 
 ## 데이터만 있고 실행 로직이 없는 항목
 
@@ -115,7 +119,7 @@
 ## 미구현
 
 - 수호자 도발 외 나머지 직업별 스킬 효과와 길 패시브
-- NPC 동료 실제 캐릭터·AI·파티 편성
+- NPC 동료 정식 CompanionDefinition·파티 편성·최종 Sprite
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
 - 멀티플레이 네트워크 전투
@@ -157,6 +161,8 @@
 - 사수 golden arrow와 마도사 fireball 이동시간을 각각 0.35초로 조정하고, 프레임 간격·도착 후 피해 적용·치유사 Projectile 0.24초·근거리 속도는 유지했다. 전체 Assembly-CSharp 컴파일 오류 0개이며 체감 속도는 Play Mode 확인이 필요하다.
 - 치유사 임시 Orb를 PVFX Magical Projectile의 96×96 travel 프레임 5개로 교체했다. manifest 픽셀 해시 일치, Point Filter·투명 Sprite·50ms 프레임·0.24초 이동 유지와 전체 Assembly-CSharp 컴파일 오류 0개를 확인했다.
 - 수호자 도발 스킬 구조를 Unity 전체 Assembly-CSharp 참조로 컴파일해 오류 0개를 확인했다. Combatant·TargetResolver 기존 도발 우선 판정을 재사용하고 BattleCore·Formation·TurnOrderQueue는 수정하지 않았다. 메뉴 조작·HUD 배치·2회 소모·3턴 쿨타임은 Play Mode 확인이 필요하다.
+
+- 3대3 Encounter와 공용 대상 선택 변경을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. `BattleCore`·기존 스킬 런타임·ActionPresenter·BattleVisualResolver는 변경하지 않았으며 실제 3대3 UI·입력·도발 분산은 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -193,11 +199,20 @@
 30. 공격·방어·도망과 기존 근거리/Projectile 연출, HP Bar, 승리·패배·Field_01 복귀·30초 리스폰을 회귀 확인한다.
 31. Console에 Compile Error, NullReferenceException, MissingReferenceException이 없는지 확인한다.
 
+32. Battle 진입 시 플레이어·태온·미엘과 초원 슬라임 A·B·C가 3대3으로 겹치지 않고 표시되며 각 HUD에 이름·직업·HP가 보이는지 확인한다.
+33. 타임라인에 여섯 참가자의 민첩 기반 순서가 표시되고 플레이어·태온·미엘 차례마다 시간제한 없이 직접 명령할 수 있는지 확인한다.
+34. 전열 슬라임 A·B와 후열 슬라임 C에 근거리·원거리·마법 기본 공격 대상 규칙이 기존대로 적용되는지 확인한다.
+35. 슬라임 하나의 HP가 0이 되어도 다른 두 슬라임의 HP·행동이 유지되고, 세 마리 전멸 때만 승리하는지 확인한다.
+36. 태온 또는 플레이어 수호자의 도발 후 세 슬라임 HUD가 모두 도발 2가 되고, 각 슬라임 행동 때 자기 표시만 1로 감소한 뒤 두 번째 행동 후 사라지는지 확인한다.
+37. 도발 중 세 슬라임의 단일 공격이 시전자 수호자에게 집중되고, 시전자 행동 기준 재사용 2턴→1턴→사용 가능인지 확인한다.
+38. 아군 한 명 전투불능 시 그 참가자만 행동에서 제외되고 나머지 전투가 계속되며, 아군 세 명 전멸 때만 패배하는지 확인한다.
+39. Console에 Compile Error, NullReferenceException, MissingReferenceException이 없는지 확인한다.
+
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity Play Mode에서 수호자 스킬 메뉴, 도발 2→1→해제, 수호자 행동 기준 쿨타임 2→1→사용 가능과 Esc 복귀를 우선 검증한다. 이어 기존 기본 공격·방어·도망·Projectile·승패·필드 복귀와 리스폰 회귀를 확인한다.
+Unity Play Mode에서 3대3 배치·여섯 명 타임라인·동료 직접 조작·독립 HP와 전투불능 지속을 우선 검증한다. 이어 태온 또는 플레이어 수호자 도발의 세 적 독립 2→1→해제와 강제 타깃·쿨타임을 확인하고, 다음 작업으로 미엘의 치유의 빛을 공용 아군 대상 선택 흐름에 연결한다.
 
 ## 갱신 규칙
 
