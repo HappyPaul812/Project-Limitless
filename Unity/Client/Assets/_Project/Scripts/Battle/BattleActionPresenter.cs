@@ -15,6 +15,8 @@ namespace ProjectLimitless.Battle
         private const float ImpactPause = .09f;
         private const float ReturnDuration = .18f;
         private const float TargetGap = 145f;
+        private const float AimDuration = .2f;
+        private const float ProjectileDuration = .24f;
 
         /// <summary>
         /// 공격자를 대상 앞까지 이동시키고 타격 순간에 기존 피해 처리를 호출한 뒤 원위치로 복귀합니다.
@@ -52,6 +54,50 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 공격자는 제자리에 둔 채 조준 후 Projectile을 목표까지 이동시킵니다.
+        /// projectileSprite가 없으면 임시 Graphic을 만들며, 이후 화살이나 마법탄 Sprite를 같은 인자로 교체할 수 있습니다.
+        /// </summary>
+        public IEnumerator PlayProjectileAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
+            Sprite projectileSprite, Color projectileColor, Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+        {
+            if (attacker == null || target == null || targetSprite == null)
+            {
+                int fallbackDamage = applyImpact == null ? 0 : applyImpact();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            yield return new WaitForSeconds(AimDuration);
+
+            Vector3 start = attacker.localPosition;
+            Vector3 destination = target.localPosition;
+            Vector3 direction = destination - start;
+            GameObject projectileObject = new GameObject("BattleProjectile", typeof(Image));
+            projectileObject.transform.SetParent(attacker.parent, false);
+            Image projectileImage = projectileObject.GetComponent<Image>();
+            projectileImage.sprite = projectileSprite;
+            projectileImage.color = projectileColor;
+            projectileImage.raycastTarget = false;
+            RectTransform projectile = projectileImage.rectTransform;
+            projectile.anchorMin = Vector2.one * .5f;
+            projectile.anchorMax = Vector2.one * .5f;
+            projectile.pivot = Vector2.one * .5f;
+            projectile.sizeDelta = projectileSprite == null ? new Vector2(46f, 8f) : new Vector2(52f, 20f);
+            projectile.localPosition = start;
+            projectile.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+
+            yield return Move(projectile, start, destination, ProjectileDuration);
+            Destroy(projectileObject);
+
+            Color targetOriginalColor = targetSprite.color;
+            int damage = applyImpact == null ? 0 : applyImpact();
+            onImpact?.Invoke(damage);
+            if (damage > 0) StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+            yield return PlayHitReaction(target, targetSprite, destination, targetOriginalColor);
+            onComplete?.Invoke();
+        }
         private static IEnumerator Move(RectTransform subject, Vector3 from, Vector3 to, float duration)
         {
             float elapsed = 0f;

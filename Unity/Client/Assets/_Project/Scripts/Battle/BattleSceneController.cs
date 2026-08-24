@@ -318,8 +318,8 @@ namespace ProjectLimitless.Battle
         /// </summary>
         private void PlayBasicAttack(Combatant actor, Combatant target)
         {
-            // 1단계는 근거리 기본 공격만 다룹니다. 원거리·마법 기본 공격은 기존 즉시 처리 흐름을 유지합니다.
-            if (actor.BasicRange != TargetRangeType.MeleePhysical)
+            // 마법 기본 공격은 이번 범위가 아니므로 기존 즉시 처리 흐름을 유지합니다.
+            if (actor.BasicRange == TargetRangeType.Magic)
             {
                 int damage = target.TakeDamage(actor.Attack);
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
@@ -336,24 +336,42 @@ namespace ProjectLimitless.Battle
             CombatantView actorView = combatantViews[actor];
             CombatantView targetView = combatantViews[target];
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            Func<int> applyImpact = () => target.TakeDamage(actor.Attack);
+            Action<int> onImpact = damage =>
+            {
+                messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
+                RefreshCombatantViews(null);
+            };
+            Action onComplete = () =>
+            {
+                actionPlaying = false;
+                FinishCurrentAction();
+            };
+
+            if (actor.BasicRange == TargetRangeType.RangedPhysical)
+            {
+                StartCoroutine(actionPresenter.PlayProjectileAttack(
+                    actorView.ActionRoot,
+                    targetView.ActionRoot,
+                    targetView.SpriteImage,
+                    battleFont,
+                    null,
+                    new Color(1f, .78f, .28f, 1f),
+                    applyImpact,
+                    onImpact,
+                    onComplete));
+                return;
+            }
+
             StartCoroutine(actionPresenter.PlayMeleeAttack(
                 actorView.ActionRoot,
                 targetView.ActionRoot,
                 targetView.SpriteImage,
                 battleFont,
-                () => target.TakeDamage(actor.Attack),
-                damage =>
-                {
-                    messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-                    RefreshCombatantViews(null);
-                },
-                () =>
-                {
-                    actionPlaying = false;
-                    FinishCurrentAction();
-                }));
+                applyImpact,
+                onImpact,
+                onComplete));
         }
-
         private void FinishCurrentAction()
         {
             currentActor?.CompleteAction();
