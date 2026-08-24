@@ -29,11 +29,16 @@ namespace ProjectLimitless.Battle
             public Text TurnMarker;
             public Text HudName;
             public Text HudHp;
+            public Text HudStatus;
             public Image HudHpFill;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
         private readonly Dictionary<Combatant, CombatantView> combatantViews = new Dictionary<Combatant, CombatantView>();
+        private readonly Dictionary<Combatant, JobDefinition> combatantJobs = new Dictionary<Combatant, JobDefinition>();
+        private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
+        private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
+        private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
         private readonly Color gold = new Color(.88f, .7f, .32f, 1f);
@@ -48,16 +53,20 @@ namespace ProjectLimitless.Battle
         private Button skillButton;
         private Button defendButton;
         private Button fleeButton;
+        private Image skillMenuPanel;
         private bool choosingTarget;
+        private bool choosingSkill;
         private bool battleEnded;
         private bool actionPlaying;
         private BattleActionPresenter actionPresenter;
+        private BattleSkillExecutor skillExecutor;
         private Font battleFont;
 
         private IEnumerable<Combatant> AllCombatants => allies.Members.Concat(enemies.Members);
 
         private void Awake()
         {
+            skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects);
             CreateParticipants();
             CreateEventSystem();
             CreateInterface();
@@ -69,13 +78,19 @@ namespace ProjectLimitless.Battle
         private void Update()
         {
             if (Keyboard.current == null || battleEnded || actionPlaying) return;
-            if (Keyboard.current.escapeKey.wasPressedThisFrame && choosingTarget)
+            if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
+            if (choosingSkill)
+            {
+                CloseSkillMenu();
+                return;
+            }
+            if (choosingTarget)
             {
                 choosingTarget = false;
                 SetCommandButtons(true);
                 RefreshCombatantViews(null);
                 messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
-                EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
+                if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
             }
         }
 
@@ -96,7 +111,9 @@ namespace ProjectLimitless.Battle
             allies = new Formation(BattleSide.Allies);
             enemies = new Formation(BattleSide.Enemies);
             // HP와 공격력 환산은 전투 흐름 검증용 임시값이며 최종 밸런스 데이터가 아닙니다.
-            allies.Place(new Combatant("player", playerName, BattleSide.Allies, new FormationSlot(FormationRow.Front, 1), 80 + health * 4, playerAttack, agility, 0, playerRange, true));
+            Combatant player = new Combatant("player", playerName, BattleSide.Allies, new FormationSlot(FormationRow.Front, 1), 80 + health * 4, playerAttack, agility, 0, playerRange, true);
+            allies.Place(player);
+            if (job != null) combatantJobs[player] = job;
 
             MonsterDefinition monster = BattleEncounterContext.Monster ?? Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").FirstOrDefault();
             string monsterId = monster == null ? "grass_slime" : monster.MonsterId;
@@ -203,18 +220,19 @@ namespace ProjectLimitless.Battle
             if (combatant.Side == BattleSide.Enemies)
             {
                 anchor = new Vector2(.11f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .805f : .745f);
-                size = new Vector2(190, 58);
+                size = new Vector2(190, 76);
             }
             else
             {
                 anchor = new Vector2(.63f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .265f : .205f);
-                size = new Vector2(190, 62);
+                size = new Vector2(190, 76);
             }
 
             Image hud = MakeImage(canvas, $"Hud_{combatant.Id}", new Color(.035f, .055f, .09f, .96f)); SetRect(hud.rectTransform, anchor, size); AddOutline(hud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
-            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName, font, 15, new Vector2(.5f, .75f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
-            view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .43f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
-            Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .16f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
+            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName, font, 15, new Vector2(.5f, .8f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
+            view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .53f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
+            view.HudStatus = MakeText(hud.transform, "StatusText", string.Empty, font, 13, new Vector2(.5f, .28f), new Vector2(size.x - 14, 18)); view.HudStatus.alignment = TextAnchor.MiddleLeft; view.HudStatus.color = focusGold; view.HudStatus.fontStyle = FontStyle.Bold;
+            Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .1f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
             view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f)); Stretch(view.HudHpFill.rectTransform);
         }
 
@@ -223,10 +241,14 @@ namespace ProjectLimitless.Battle
             Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .12f), new Vector2(1100, 148)); AddOutline(commandPanel.gameObject, gold, 2);
             messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 17, new Vector2(.5f, .8f), new Vector2(1030, 30)); messageText.fontStyle = FontStyle.Bold;
             attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .42f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .42f), ShowSkillPlaceholder);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .42f), ShowSkillMenu);
             defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .42f), Defend);
             fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .42f), Flee);
             MakeText(commandPanel.transform, "Help", "마우스 또는 방향키: 이동   Enter/Space: 선택   Esc: 대상 선택 취소   행동 시간제한 없음", font, 14, new Vector2(.5f, .11f), new Vector2(1030, 22)).color = new Color(.68f, .75f, .84f, 1f);
+            skillMenuPanel = MakeImage(commandPanel.transform, "SkillMenu", new Color(.045f, .075f, .12f, 1f));
+            SetRect(skillMenuPanel.rectTransform, new Vector2(.5f, .42f), new Vector2(1030, 62));
+            AddOutline(skillMenuPanel.gameObject, gold, 1);
+            skillMenuPanel.gameObject.SetActive(false);
         }
 
         private void AdvanceTurn()
@@ -238,6 +260,7 @@ namespace ProjectLimitless.Battle
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
             currentActor.BeginTurn();
+            skillCooldowns.BeginActorTurn(currentActor);
             UpdateTimeline();
             RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
@@ -275,11 +298,107 @@ namespace ProjectLimitless.Battle
             PlayBasicAttack(currentActor, target);
         }
 
-        private void ShowSkillPlaceholder()
+        private void ShowSkillMenu()
         {
-            if (actionPlaying) return;
-            messageText.text = "스킬 메뉴 확장 구조만 준비되어 있으며 직업별 효과는 아직 구현되지 않았습니다.";
-            EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
+            if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
+            choosingSkill = true;
+            SetCommandButtons(false);
+            RefreshCombatantViews(null);
+            RebuildSkillMenu();
+            skillMenuPanel.gameObject.SetActive(true);
+            messageText.text = "사용할 스킬을 선택하세요. Esc로 이전 명령 메뉴로 돌아갑니다.";
+
+            Button focus = skillMenuButtons.FirstOrDefault(button => button.interactable) ?? skillMenuButtons.LastOrDefault();
+            if (EventSystem.current != null && focus != null) EventSystem.current.SetSelectedGameObject(focus.gameObject);
+        }
+
+        private void RebuildSkillMenu()
+        {
+            foreach (Transform child in skillMenuPanel.transform) Destroy(child.gameObject);
+            skillMenuButtons.Clear();
+
+            combatantJobs.TryGetValue(currentActor, out JobDefinition job);
+            IReadOnlyList<BattleSkillDefinition> skills = BattleSkillCatalog.GetSkills(job);
+            int itemCount = Math.Max(1, skills.Count) + 1;
+            for (int index = 0; index < skills.Count; index++)
+            {
+                BattleSkillDefinition skill = skills[index];
+                int remaining = skillCooldowns.GetRemaining(currentActor, skill.Id);
+                string label = !skill.IsImplemented ? $"{skill.DisplayName}\n[미구현]"
+                    : remaining > 0 ? $"{skill.DisplayName}\n[재사용 {remaining}턴]" : skill.DisplayName;
+                BattleSkillDefinition selectedSkill = skill;
+                Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label,
+                    new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill));
+                button.interactable = skill.IsImplemented && remaining == 0;
+                skillMenuButtons.Add(button);
+            }
+
+            if (skills.Count == 0)
+            {
+                Button empty = MakeSkillMenuButton(skillMenuPanel.transform, "NoSkills", "사용 가능한 스킬 없음",
+                    new Vector2(.25f, .5f), () => messageText.text = "아직 사용할 수 없습니다.");
+                empty.interactable = false;
+                skillMenuButtons.Add(empty);
+            }
+
+            Button back = MakeSkillMenuButton(skillMenuPanel.transform, "Back", "돌아가기",
+                new Vector2((itemCount - .5f) / itemCount, .5f), CloseSkillMenu);
+            skillMenuButtons.Add(back);
+        }
+
+        private void CloseSkillMenu()
+        {
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            SetCommandButtons(true);
+            messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
+        }
+
+        private void UseSkill(BattleSkillDefinition skill)
+        {
+            if (actionPlaying || !choosingSkill) return;
+            if (!skillExecutor.CanUse(currentActor, skill, out string reason))
+            {
+                messageText.text = reason;
+                RebuildSkillMenu();
+                return;
+            }
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            CombatantView actorView = combatantViews[actor];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlaySkillEmphasis(
+                actorView.ActionRoot,
+                actorView.SpriteImage,
+                battleFont,
+                skill.EffectType == BattleSkillEffectType.Taunt ? "도발!" : skill.DisplayName,
+                () =>
+                {
+                    executed = skillExecutor.Execute(actor, skill, opponents, out string result);
+                    messageText.text = result;
+                    RefreshCombatantViews(null);
+                },
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        SetCommandButtons(true);
+                        if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
+                    }
+                }));
         }
 
         private void Defend()
@@ -407,6 +526,8 @@ namespace ProjectLimitless.Battle
         private void FinishCurrentAction()
         {
             currentActor?.CompleteAction();
+            statusEffects.RemoveInvalidTaunts(AllCombatants);
+            RefreshCombatantViews(null);
             SetCommandButtons(false);
             StartCoroutine(AdvanceAfterDelay());
         }
@@ -429,6 +550,7 @@ namespace ProjectLimitless.Battle
 
         private void RefreshCombatantViews(IReadOnlyList<Combatant> attackable)
         {
+            statusEffects.RemoveInvalidTaunts(AllCombatants);
             foreach (KeyValuePair<Combatant, CombatantView> pair in combatantViews)
             {
                 Combatant combatant = pair.Key;
@@ -442,6 +564,8 @@ namespace ProjectLimitless.Battle
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
                 view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : "  [전투불능]");
                 view.HudHp.text = $"HP {combatant.CurrentHp} / {combatant.MaxHp}";
+                bool taunted = combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive;
+                view.HudStatus.text = taunted ? $"도발 {combatant.ForcedTargetActionsRemaining}" : string.Empty;
                 float healthRatio = combatant.MaxHp <= 0 ? 0f : Mathf.Clamp01((float)combatant.CurrentHp / combatant.MaxHp);
                 RectTransform hpFillRect = view.HudHpFill.rectTransform;
                 hpFillRect.anchorMin = Vector2.zero;
@@ -474,6 +598,23 @@ namespace ProjectLimitless.Battle
             commandButtons.Add(button); return button;
         }
 
+        private Button MakeSkillMenuButton(Transform parent, string name, string label, Vector2 anchor, Action action)
+        {
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
+            obj.transform.SetParent(parent, false);
+            SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(225, 48));
+            Image image = obj.GetComponent<Image>();
+            image.color = new Color(.1f, .27f, .43f, 1f);
+            Button button = obj.GetComponent<Button>();
+            button.targetGraphic = image;
+            button.onClick.AddListener(() => action());
+            Outline outline = obj.GetComponent<Outline>();
+            outline.effectColor = gold;
+            outline.effectDistance = new Vector2(1, -1);
+            Text text = MakeText(obj.transform, "Label", label, battleFont, 15, Vector2.one * .5f, new Vector2(215, 44));
+            text.fontStyle = FontStyle.Bold;
+            return button;
+        }
         private static void CreateEventSystem() { if (EventSystem.current != null) return; InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
         private static void CreateCameraIfMissing() { if (Camera.main != null) { Camera.main.backgroundColor = new Color(.018f, .03f, .06f, 1f); return; } GameObject obj = new GameObject("Main Camera"); obj.tag = "MainCamera"; obj.transform.position = new Vector3(0, 0, -10); Camera camera = obj.AddComponent<Camera>(); camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = new Color(.018f, .03f, .06f, 1f); camera.orthographic = true; }
         private static void AddTrigger(EventTrigger trigger, EventTriggerType type, Action<BaseEventData> action) { EventTrigger.Entry entry = new EventTrigger.Entry { eventID = type }; entry.callback.AddListener(data => action(data)); trigger.triggers.Add(entry); }

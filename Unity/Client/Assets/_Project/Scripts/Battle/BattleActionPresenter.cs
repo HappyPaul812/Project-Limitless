@@ -107,6 +107,70 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>스킬 사용자를 제자리에서 짧게 밝히고 텍스트를 표시한 뒤 지정 시점에 효과를 적용합니다.</summary>
+        public IEnumerator PlaySkillEmphasis(RectTransform actor, Image actorSprite, Font font, string callout,
+            Action applyEffect, Action onComplete)
+        {
+            if (actor == null || actorSprite == null)
+            {
+                applyEffect?.Invoke();
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Color originalColor = actorSprite.color;
+            Text calloutText = CreateSkillCallout(actor, font, callout);
+            const float duration = .34f;
+            const float effectTime = .14f;
+            float elapsed = 0f;
+            bool effectApplied = false;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                float pulse = Mathf.Sin(t * Mathf.PI);
+                actorSprite.color = Color.Lerp(originalColor, new Color(1f, .9f, .48f, originalColor.a), pulse);
+                if (calloutText != null)
+                {
+                    calloutText.rectTransform.anchoredPosition = new Vector2(0f, 82f + 18f * t);
+                    Color color = calloutText.color;
+                    color.a = 1f - Mathf.Clamp01((t - .65f) / .35f);
+                    calloutText.color = color;
+                }
+                if (!effectApplied && elapsed >= effectTime)
+                {
+                    effectApplied = true;
+                    applyEffect?.Invoke();
+                }
+                yield return null;
+            }
+
+            if (!effectApplied) applyEffect?.Invoke();
+            actorSprite.color = originalColor;
+            if (calloutText != null) Destroy(calloutText.gameObject);
+            onComplete?.Invoke();
+        }
+
+        private static Text CreateSkillCallout(RectTransform actor, Font font, string callout)
+        {
+            if (font == null || string.IsNullOrEmpty(callout)) return null;
+            GameObject obj = new GameObject("SkillCallout", typeof(Text));
+            obj.transform.SetParent(actor, false);
+            Text text = obj.GetComponent<Text>();
+            text.font = font;
+            text.fontSize = 24;
+            text.fontStyle = FontStyle.Bold;
+            text.alignment = TextAnchor.MiddleCenter;
+            text.color = new Color(1f, .84f, .36f, 1f);
+            text.text = callout;
+            text.raycastTarget = false;
+            text.rectTransform.anchorMin = Vector2.one * .5f;
+            text.rectTransform.anchorMax = Vector2.one * .5f;
+            text.rectTransform.pivot = Vector2.one * .5f;
+            text.rectTransform.sizeDelta = new Vector2(150f, 38f);
+            text.rectTransform.anchoredPosition = new Vector2(0f, 82f);
+            return text;
+        }
         /// <summary>원본이 오른쪽을 향한다는 전제에서 수평 반전 뒤에도 이동 기울기가 유지되도록 각도를 계산합니다.</summary>
         private static float GetDirectionalAngle(Vector3 direction)
         {
