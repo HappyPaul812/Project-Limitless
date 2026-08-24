@@ -58,10 +58,11 @@ namespace ProjectLimitless.Battle
 
         /// <summary>
         /// 공격자는 제자리에 둔 채 조준 후 Projectile을 목표까지 이동시킵니다.
-        /// projectileSprite가 없으면 임시 Graphic을 만들며, 이후 화살이나 마법탄 Sprite를 같은 인자로 교체할 수 있습니다.
+        /// Sprite 프레임이 없으면 임시 Graphic을 만들며, 실제 에셋도 같은 이동/도착 처리를 재사용합니다.
         /// </summary>
         public IEnumerator PlayProjectileAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
-            Sprite projectileSprite, Color projectileColor, BattleProjectileStyle projectileStyle, float preparationDuration,
+            Sprite[] projectileFrames, float frameDuration, Vector2 projectileSize, bool directional,
+            Color projectileColor, BattleProjectileStyle projectileStyle, float preparationDuration,
             Func<int> applyImpact, Action<int> onImpact, Action onComplete)
         {
             if (attacker == null || target == null || targetSprite == null)
@@ -77,23 +78,26 @@ namespace ProjectLimitless.Battle
             Vector3 start = attacker.localPosition;
             Vector3 destination = target.localPosition;
             Vector3 direction = destination - start;
+            Sprite firstFrame = projectileFrames != null && projectileFrames.Length > 0 ? projectileFrames[0] : null;
             GameObject projectileObject = new GameObject("BattleProjectile", typeof(Image));
             projectileObject.transform.SetParent(attacker.parent, false);
             Image projectileImage = projectileObject.GetComponent<Image>();
-            projectileImage.sprite = projectileSprite != null ? projectileSprite : projectileStyle == BattleProjectileStyle.Orb ? GetOrbSprite() : null;
+            projectileImage.sprite = firstFrame != null ? firstFrame : projectileStyle == BattleProjectileStyle.Orb ? GetOrbSprite() : null;
             projectileImage.color = projectileColor;
             projectileImage.raycastTarget = false;
+            projectileImage.preserveAspect = true;
             RectTransform projectile = projectileImage.rectTransform;
             projectile.anchorMin = Vector2.one * .5f;
             projectile.anchorMax = Vector2.one * .5f;
             projectile.pivot = Vector2.one * .5f;
-            projectile.sizeDelta = projectileSprite != null ? new Vector2(52f, 20f) : projectileStyle == BattleProjectileStyle.Orb ? new Vector2(30f, 30f) : new Vector2(46f, 8f);
+            projectile.sizeDelta = firstFrame != null ? projectileSize : projectileStyle == BattleProjectileStyle.Orb ? new Vector2(30f, 30f) : new Vector2(46f, 8f);
             projectile.localPosition = start;
+            projectile.localScale = directional && destination.x < start.x ? new Vector3(-1f, 1f, 1f) : Vector3.one;
             projectile.localRotation = projectileStyle == BattleProjectileStyle.Arrow
-                ? Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)
+                ? Quaternion.Euler(0f, 0f, GetDirectionalAngle(direction))
                 : Quaternion.identity;
 
-            yield return Move(projectile, start, destination, ProjectileDuration);
+            yield return MoveProjectile(projectile, projectileImage, projectileFrames, frameDuration, start, destination);
             Destroy(projectileObject);
 
             Color targetOriginalColor = targetSprite.color;
@@ -104,6 +108,29 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>원본이 오른쪽을 향한다는 전제에서 수평 반전 뒤에도 이동 기울기가 유지되도록 각도를 계산합니다.</summary>
+        private static float GetDirectionalAngle(Vector3 direction)
+        {
+            float horizontal = Mathf.Abs(direction.x);
+            float angle = Mathf.Atan2(direction.y, horizontal) * Mathf.Rad2Deg;
+            return direction.x < 0f ? -angle : angle;
+        }
+
+        private static IEnumerator MoveProjectile(RectTransform subject, Image image, Sprite[] frames, float frameDuration,
+            Vector3 from, Vector3 to)
+        {
+            float elapsed = 0f;
+            while (elapsed < ProjectileDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / ProjectileDuration);
+                subject.localPosition = Vector3.LerpUnclamped(from, to, 1f - Mathf.Pow(1f - t, 3f));
+                if (frames != null && frames.Length > 0 && frameDuration > 0f)
+                    image.sprite = frames[Mathf.FloorToInt(elapsed / frameDuration) % frames.Length];
+                yield return null;
+            }
+            subject.localPosition = to;
+        }
         /// <summary>파일을 만들지 않고 임시 빛 구체용 원형 Sprite를 한 번만 생성합니다.</summary>
         private static Sprite GetOrbSprite()
         {

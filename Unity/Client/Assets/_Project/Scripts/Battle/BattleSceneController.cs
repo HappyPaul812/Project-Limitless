@@ -348,8 +348,11 @@ namespace ProjectLimitless.Battle
                     targetView.ActionRoot,
                     targetView.SpriteImage,
                     battleFont,
-                    null,
-                    new Color(1f, .78f, .28f, 1f),
+                    LoadProjectileFrames("BattleProjectiles/GoldenArrow"),
+                    .08f,
+                    new Vector2(52f, 52f),
+                    true,
+                    Color.white,
                     BattleProjectileStyle.Arrow,
                     .2f,
                     applyImpact,
@@ -361,13 +364,16 @@ namespace ProjectLimitless.Battle
             if (actor.BasicRange == TargetRangeType.Magic)
             {
                 bool healerAttack = actor.IsPlayerControlled && GameSessionData.SelectedJobId == "healer";
-                Color magicColor = healerAttack ? new Color(1f, .94f, .62f, 1f) : new Color(.42f, .52f, 1f, 1f);
+                Color magicColor = healerAttack ? new Color(1f, .94f, .62f, 1f) : Color.white;
                 StartCoroutine(actionPresenter.PlayProjectileAttack(
                     actorView.ActionRoot,
                     targetView.ActionRoot,
                     targetView.SpriteImage,
                     battleFont,
-                    null,
+                    healerAttack ? Array.Empty<Sprite>() : LoadProjectileFrames("BattleProjectiles/Fireball"),
+                    .06f,
+                    healerAttack ? new Vector2(30f, 30f) : new Vector2(52f, 52f),
+                    !healerAttack,
                     magicColor,
                     BattleProjectileStyle.Orb,
                     .26f,
@@ -385,6 +391,11 @@ namespace ProjectLimitless.Battle
                 applyImpact,
                 onImpact,
                 onComplete));
+        }
+        /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
+        private static Sprite[] LoadProjectileFrames(string resourcesPath)
+        {
+            return Resources.LoadAll<Sprite>(resourcesPath).OrderBy(sprite => sprite.name).ToArray();
         }
         /// <summary>공격 연출 뒤 필드 프레임이 아닌 진영별 전투 Idle Sprite를 다시 적용합니다.</summary>
         private static void RestoreBattleIdle(CombatantView view)
