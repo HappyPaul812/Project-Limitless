@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-24
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `3f82aae` (`Feature: 사수 기본 공격 Projectile 연출 추가`)
+- 마지막 기능 관련 commit: `0020646` (`Feature: 마도사와 치유사 기본 마법 연출 추가`)
 - 마지막 오류 수정 commit: `25a8d5d` (`Fix: Battle Idle Sprite 해석 오류 수정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `b69ac53` (`Fix: Battle 조작 안내 배치 수정`)
@@ -84,6 +84,7 @@
 - 근거리 기본 공격의 짧은 전진·타격 대기·원위치 복귀, 피격 좌우 흔들림·점멸, 떠오르는 피해 숫자
 - 연출 중 명령·대상 선택·취소 입력 잠금과 연출 완료 후 다음 턴 진행
 - 사수 기본 공격의 짧은 조준, 재사용 가능한 UI Projectile 이동, 도착 시 피해·피격 연출과 다음 턴 연결
+- 마도사·치유사 기본 공격의 짧은 캐스팅과 Orb Projectile, 푸른 마법탄·밝은 금빛 구체 시각 구분
 - 필드 Animator 현재 상태와 분리된 전투 Sprite 해석기, 아군 Left Idle·적 Right Idle 진입 및 공격 후 복구
 
 ## 데이터만 있고 실행 로직이 없는 항목
@@ -145,6 +146,7 @@
 - 사수 Projectile 코드를 Unity 6000.5.7f1의 전체 `Assembly-CSharp` 참조와 Roslyn으로 컴파일해 오류 0개를 확인했다. 조준 시간·Projectile 위치와 방향·입력 잠금은 Play Mode 확인이 필요하다.
 - 기본·Path Variant·휠체어·초원 슬라임 Animator Controller에서 `Idle_Left`·`Idle_Right` 상태를 확인하고, `BattleVisualResolver`를 포함한 전체 `Assembly-CSharp` 컴파일 오류 0개를 확인했다. 실제 방향과 첫 프레임은 Play Mode 확인이 필요하다.
 - `AnimationClip.SampleAnimation`이 Sprite PPtr 곡선을 적용하지 못하던 경로를 임시 Animator 상태 평가로 교체하고, Path Variant 기본 Sprite fallback과 null UI 투명 처리를 추가했다. 전체 `Assembly-CSharp` 컴파일 오류 0개이며 흰 사각형·경고 제거는 Play Mode 확인이 필요하다.
+- 마도사·치유사 기본 마법 Projectile과 런타임 Orb Graphic을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 피해·치유사 감소값·마법 사거리 계산은 변경하지 않았으며 색상·도착 시점·Idle 복구는 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -169,12 +171,15 @@
 18. 초원 슬라임이 필드에서 이동하거나 다른 방향을 보는 중 조우해도 Battle에서는 Right Idle 첫 프레임인지 확인한다.
 19. 근거리·Projectile 공격 종료 후 양측이 각자의 Left/Right 전투 Idle Sprite로 복귀하는지 확인한다.
 20. 남자 지체의 길 수호자와 초원 슬라임이 흰 사각형 없이 표시되고, `Battle Visual` Warning·NullReference·Compile Error가 없는지 확인한다.
+21. 마도사 기본 공격 시 제자리 캐스팅 후 푸른·보랏빛 Orb가 전열 또는 후열 대상까지 이동하고, 도착 순간에만 HP·피해 숫자가 갱신되는지 확인한다.
+22. 치유사 기본 공격 시 밝은 금빛·백색 Orb가 표시되고 기존 낮은 피해량과 마법 자유 대상 규칙이 유지되는지 확인한다.
+23. 두 마법 연출 중 입력이 잠기고 완료 후 Left Idle과 다음 턴이 복구되며, 사수 화살형과 근거리 연출도 유지되는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity가 새 스크립트를 import한 뒤 남자 지체의 길 수호자로 조우해 휠체어 Left Idle과 초원 슬라임 Right Idle이 흰 사각형·`Battle Visual` 경고 없이 표시되는지 우선 검증한다. 이어 다른 기본·Path Variant 외형과 공격 후 Idle 복구, 근거리·Projectile, HP Bar, 승리·도망과 리스폰 회귀를 확인한다.
+Unity가 새 스크립트를 import한 뒤 마도사와 치유사의 캐스팅·Orb 색상 구분·도착 시 피해와 Idle 복구를 우선 검증한다. 이어 사수 화살형, 근거리 연출, 마법 전열·후열 대상 판정, HP Bar, 승리·도망과 리스폰 회귀를 확인한다. 실제 마법탄 Sprite와 Effect Asset 교체는 후속 작업으로 남긴다.
 
 ## 갱신 규칙
 
