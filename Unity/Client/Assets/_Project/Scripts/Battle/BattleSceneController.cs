@@ -21,6 +21,7 @@ namespace ProjectLimitless.Battle
         private sealed class CombatantView
         {
             public Button HitArea;
+            public RectTransform ActionRoot;
             public Image SpriteImage;
             public Image GroundMarker;
             public Text TargetArrow;
@@ -48,6 +49,9 @@ namespace ProjectLimitless.Battle
         private Button fleeButton;
         private bool choosingTarget;
         private bool battleEnded;
+        private bool actionPlaying;
+        private BattleActionPresenter actionPresenter;
+        private Font battleFont;
 
         private IEnumerable<Combatant> AllCombatants => allies.Members.Concat(enemies.Members);
 
@@ -63,7 +67,7 @@ namespace ProjectLimitless.Battle
 
         private void Update()
         {
-            if (Keyboard.current == null || battleEnded) return;
+            if (Keyboard.current == null || battleEnded || actionPlaying) return;
             if (Keyboard.current.escapeKey.wasPressedThisFrame && choosingTarget)
             {
                 choosingTarget = false;
@@ -117,6 +121,7 @@ namespace ProjectLimitless.Battle
         {
             CreateCameraIfMissing();
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            battleFont = font;
             GameObject canvasObject = new GameObject("BattleCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             Canvas canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
@@ -185,7 +190,7 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Select, _ => targetArrow.gameObject.SetActive(choosingTarget && hitArea.interactable));
             AddTrigger(trigger, EventTriggerType.Deselect, _ => targetArrow.gameObject.SetActive(false));
 
-            CombatantView view = new CombatantView { HitArea = hitArea, SpriteImage = spriteImage, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
+            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
             CreateCombatantHud(canvas, font, combatant, view);
             return view;
         }
@@ -250,7 +255,7 @@ namespace ProjectLimitless.Battle
 
         private void BeginAttack()
         {
-            if (currentActor == null || !currentActor.IsPlayerControlled) return;
+            if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, enemies, currentActor.BasicRange);
             if (targets.Count == 0) { messageText.text = "현재 기본 공격으로 지정할 수 있는 대상이 없습니다."; return; }
             choosingTarget = true;
@@ -262,24 +267,23 @@ namespace ProjectLimitless.Battle
 
         private void SelectTarget(Combatant target)
         {
-            if (!choosingTarget || target == null || !target.IsAlive) return;
+            if (actionPlaying || !choosingTarget || target == null || !target.IsAlive) return;
             IReadOnlyList<Combatant> valid = TargetResolver.ResolveHostileTargets(currentActor, enemies, currentActor.BasicRange);
             if (!valid.Contains(target)) return;
             choosingTarget = false;
-            int damage = target.TakeDamage(currentActor.Attack);
-            messageText.text = $"{currentActor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-            RefreshCombatantViews(null);
-            FinishCurrentAction();
+            PlayBasicAttack(currentActor, target);
         }
 
         private void ShowSkillPlaceholder()
         {
+            if (actionPlaying) return;
             messageText.text = "스킬 메뉴 확장 구조만 준비되어 있으며 직업별 효과는 아직 구현되지 않았습니다.";
             EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
         }
 
         private void Defend()
         {
+            if (actionPlaying) return;
             currentActor.Defend();
             messageText.text = $"{currentActor.DisplayName}이(가) 방어합니다. 다음 행동 차례까지 받는 피해가 50% 감소합니다.";
             FinishCurrentAction();
@@ -287,6 +291,7 @@ namespace ProjectLimitless.Battle
 
         private void Flee()
         {
+            if (actionPlaying) return;
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
             battleEnded = true;
             SetCommandButtons(false);
@@ -301,11 +306,52 @@ namespace ProjectLimitless.Battle
             Combatant target = targets.FirstOrDefault();
             if (target != null)
             {
-                int damage = target.TakeDamage(currentActor.Attack);
-                messageText.text = $"{currentActor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-                RefreshCombatantViews(null);
+                PlayBasicAttack(currentActor, target);
+                yield break;
             }
             FinishCurrentAction();
+        }
+
+        /// <summary>
+        /// 기본 공격 계산은 기존 Combatant에 맡기고, 공용 Presenter에는 표시 대상과 타격 시점만 전달합니다.
+        /// 현재 1단계 범위에서는 플레이어와 초원 슬라임의 근거리 기본 공격에 같은 연출을 사용합니다.
+        /// </summary>
+        private void PlayBasicAttack(Combatant actor, Combatant target)
+        {
+            // 1단계는 근거리 기본 공격만 다룹니다. 원거리·마법 기본 공격은 기존 즉시 처리 흐름을 유지합니다.
+            if (actor.BasicRange != TargetRangeType.MeleePhysical)
+            {
+                int damage = target.TakeDamage(actor.Attack);
+                messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            StartCoroutine(actionPresenter.PlayMeleeAttack(
+                actorView.ActionRoot,
+                targetView.ActionRoot,
+                targetView.SpriteImage,
+                battleFont,
+                () => target.TakeDamage(actor.Attack),
+                damage =>
+                {
+                    messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
+                    RefreshCombatantViews(null);
+                },
+                () =>
+                {
+                    actionPlaying = false;
+                    FinishCurrentAction();
+                }));
         }
 
         private void FinishCurrentAction()
