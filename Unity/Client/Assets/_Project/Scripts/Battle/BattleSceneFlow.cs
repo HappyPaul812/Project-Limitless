@@ -17,11 +17,11 @@ namespace ProjectLimitless.Battle
         public static Vector2 MonsterFieldPosition { get; private set; }
         private static bool pendingFieldReturn;
 
-        public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, RuntimeAnimatorController playerAnimatorController, Vector2 playerPosition, Vector2 monsterPosition)
+        public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, RuntimeAnimatorController playerAnimatorController, Sprite playerFallbackSprite, Vector2 playerPosition, Vector2 monsterPosition)
         {
             Monster = monster;
             Spawn = spawn;
-            PlayerBattleSprite = BattleVisualResolver.ResolveIdleSprite(playerAnimatorController, BattleVisualResolver.AllyIdleState, null);
+            PlayerBattleSprite = BattleVisualResolver.ResolveIdleSprite(playerAnimatorController, BattleVisualResolver.AllyIdleState, playerFallbackSprite);
             MonsterBattleSprite = BattleVisualResolver.ResolveIdleSprite(monster?.FieldAnimatorController, BattleVisualResolver.EnemyIdleState, monster?.FieldSprite);
             PlayerFieldPosition = playerPosition;
             MonsterFieldPosition = monsterPosition;
@@ -69,9 +69,10 @@ namespace ProjectLimitless.Battle
             }
 
             Animator animator = player.GetComponentInChildren<Animator>();
+            PlayerVisualController visualController = player.GetComponent<PlayerVisualController>();
             MonsterFieldController fieldMonster = FindEncounteredMonster(spawn);
             Vector2 monsterPosition = fieldMonster == null ? (Vector2)player.transform.position : fieldMonster.transform.position;
-            BattleEncounterContext.Set(monster, spawn, animator == null ? null : animator.runtimeAnimatorController, player.transform.position, monsterPosition);
+            BattleEncounterContext.Set(monster, spawn, animator == null ? null : animator.runtimeAnimatorController, visualController == null ? null : visualController.ActiveDefaultSprite, player.transform.position, monsterPosition);
             transitioning = true;
             SceneManager.LoadSceneAsync(BattleSceneName, LoadSceneMode.Single);
         }

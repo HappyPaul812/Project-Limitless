@@ -26,15 +26,20 @@ namespace ProjectLimitless.Player
         [SerializeField] private RuntimeAnimatorController femaleAnimatorController;
         [SerializeField] private Sprite maleDefaultSprite;
         [SerializeField] private Sprite femaleDefaultSprite;
+        private Sprite activeDefaultSprite;
 
         /// <summary>현재 선택된 외형입니다. 향후 캐릭터 생성 화면이나 저장 시스템에서 읽을 수 있습니다.</summary>
         public PlayerVisualType VisualType => visualType;
+
+        /// <summary>필드 이동 프레임과 무관한 현재 외형 데이터의 안정적인 기본 Sprite입니다.</summary>
+        public Sprite ActiveDefaultSprite => activeDefaultSprite;
 
         public void ApplyPathVariant(RuntimeAnimatorController controller, Sprite defaultSprite)
         {
             if (visualRenderer == null || visualAnimator == null || controller == null || defaultSprite == null) return;
             visualRenderer.enabled = true;
             visualRenderer.sprite = defaultSprite;
+            activeDefaultSprite = defaultSprite;
             visualAnimator.runtimeAnimatorController = controller;
             visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
         }
@@ -44,7 +49,8 @@ namespace ProjectLimitless.Player
             if (visualRenderer == null || visualAnimator == null) return;
             bool useFemale = visualType == PlayerVisualType.Female;
             visualRenderer.enabled = true;
-            visualRenderer.sprite = useFemale ? femaleDefaultSprite : maleDefaultSprite;
+            activeDefaultSprite = useFemale ? femaleDefaultSprite : maleDefaultSprite;
+            visualRenderer.sprite = activeDefaultSprite;
             visualAnimator.runtimeAnimatorController = useFemale ? femaleAnimatorController : maleAnimatorController;
             visualAnimator.GetComponent<PlayerSpriteAnimator>()?.RefreshVisual();
         }

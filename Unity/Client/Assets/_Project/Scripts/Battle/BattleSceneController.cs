@@ -413,7 +413,7 @@ namespace ProjectLimitless.Battle
                 bool targetSelection = attackable != null && combatant.Side == BattleSide.Enemies;
                 bool canAttack = targetSelection && attackable.Contains(combatant);
                 view.HitArea.interactable = canAttack && combatant.IsAlive;
-                view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : Color.white;
+                view.SpriteImage.color = view.SpriteImage.sprite == null ? Color.clear : !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : Color.white;
                 view.GroundMarker.color = canAttack ? new Color(1f, .78f, .28f, .92f) : new Color(.4f, .47f, .56f, combatant.IsAlive ? .45f : .18f);
                 view.TargetArrow.gameObject.SetActive(false);
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);

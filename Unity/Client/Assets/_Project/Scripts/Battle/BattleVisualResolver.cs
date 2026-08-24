@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using UnityEngine;
 
 namespace ProjectLimitless.Battle
@@ -13,28 +11,27 @@ namespace ProjectLimitless.Battle
         public const string AllyIdleState = "Idle_Left";
         public const string EnemyIdleState = "Idle_Right";
 
-        /// <summary>Animator Controller에서 지정한 Idle Clip의 첫 프레임을 얻습니다.</summary>
+        /// <summary>
+        /// 임시 Animator에서 지정한 Idle 상태를 직접 평가해 첫 Sprite를 얻습니다.
+        /// 상태 평가가 불가능해도 필드의 현재 프레임이 아닌 외형 데이터의 안정적인 기본 Sprite를 사용합니다.
+        /// </summary>
         public static Sprite ResolveIdleSprite(RuntimeAnimatorController controller, string idleStateName, Sprite fallbackSprite)
         {
-            AnimationClip clip = controller?.animationClips.FirstOrDefault(item =>
-                item != null && (string.Equals(item.name, idleStateName, StringComparison.OrdinalIgnoreCase)
-                    || item.name.EndsWith("_" + idleStateName, StringComparison.OrdinalIgnoreCase)));
-            if (clip == null)
-            {
-                Debug.LogWarning($"Battle Visual: '{idleStateName}' Clip을 찾지 못해 데이터의 기본 Sprite를 사용합니다.");
-                return fallbackSprite;
-            }
+            if (controller == null) return fallbackSprite;
 
-            GameObject sampleObject = new GameObject("BattleIdleSpriteSample", typeof(SpriteRenderer));
+            GameObject sampleObject = new GameObject("BattleIdleSpriteSample", typeof(SpriteRenderer), typeof(Animator));
             sampleObject.hideFlags = HideFlags.HideAndDontSave;
             SpriteRenderer renderer = sampleObject.GetComponent<SpriteRenderer>();
-            clip.SampleAnimation(sampleObject, 0f);
+            Animator animator = sampleObject.GetComponent<Animator>();
+            animator.runtimeAnimatorController = controller;
+            animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
+            animator.Rebind();
+            animator.Play(idleStateName, 0, 0f);
+            animator.Update(0f);
+
             Sprite idleSprite = renderer.sprite;
             UnityEngine.Object.Destroy(sampleObject);
-
-            if (idleSprite != null) return idleSprite;
-            Debug.LogWarning($"Battle Visual: '{clip.name}'에서 Sprite를 읽지 못해 데이터의 기본 Sprite를 사용합니다.");
-            return fallbackSprite;
+            return idleSprite != null ? idleSprite : fallbackSprite;
         }
     }
 }
