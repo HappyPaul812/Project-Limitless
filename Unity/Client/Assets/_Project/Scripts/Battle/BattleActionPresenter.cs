@@ -17,7 +17,6 @@ namespace ProjectLimitless.Battle
         private const float ImpactPause = .09f;
         private const float ReturnDuration = .18f;
         private const float TargetGap = 145f;
-        private const float ProjectileDuration = .24f;
         private static Sprite orbSprite;
 
         /// <summary>
@@ -61,7 +60,7 @@ namespace ProjectLimitless.Battle
         /// Sprite 프레임이 없으면 임시 Graphic을 만들며, 실제 에셋도 같은 이동/도착 처리를 재사용합니다.
         /// </summary>
         public IEnumerator PlayProjectileAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
-            Sprite[] projectileFrames, float frameDuration, Vector2 projectileSize, bool directional,
+            Sprite[] projectileFrames, float frameDuration, float travelDuration, Vector2 projectileSize, bool directional,
             Color projectileColor, BattleProjectileStyle projectileStyle, float preparationDuration,
             Func<int> applyImpact, Action<int> onImpact, Action onComplete)
         {
@@ -97,7 +96,7 @@ namespace ProjectLimitless.Battle
                 ? Quaternion.Euler(0f, 0f, GetDirectionalAngle(direction))
                 : Quaternion.identity;
 
-            yield return MoveProjectile(projectile, projectileImage, projectileFrames, frameDuration, start, destination);
+            yield return MoveProjectile(projectile, projectileImage, projectileFrames, frameDuration, travelDuration, start, destination);
             Destroy(projectileObject);
 
             Color targetOriginalColor = targetSprite.color;
@@ -117,13 +116,14 @@ namespace ProjectLimitless.Battle
         }
 
         private static IEnumerator MoveProjectile(RectTransform subject, Image image, Sprite[] frames, float frameDuration,
-            Vector3 from, Vector3 to)
+            float travelDuration, Vector3 from, Vector3 to)
         {
+            travelDuration = Mathf.Max(.01f, travelDuration);
             float elapsed = 0f;
-            while (elapsed < ProjectileDuration)
+            while (elapsed < travelDuration)
             {
                 elapsed += Time.deltaTime;
-                float t = Mathf.Clamp01(elapsed / ProjectileDuration);
+                float t = Mathf.Clamp01(elapsed / travelDuration);
                 subject.localPosition = Vector3.LerpUnclamped(from, to, 1f - Mathf.Pow(1f - t, 3f));
                 if (frames != null && frames.Length > 0 && frameDuration > 0f)
                     image.sprite = frames[Mathf.FloorToInt(elapsed / frameDuration) % frames.Length];
