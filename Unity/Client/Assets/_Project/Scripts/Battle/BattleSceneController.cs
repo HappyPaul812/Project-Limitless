@@ -31,11 +31,13 @@ namespace ProjectLimitless.Battle
             public Text HudHp;
             public Text HudStatus;
             public Image HudHpFill;
+            public bool UsesPlaceholderVisual;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
         private readonly Dictionary<Combatant, CombatantView> combatantViews = new Dictionary<Combatant, CombatantView>();
         private readonly Dictionary<Combatant, JobDefinition> combatantJobs = new Dictionary<Combatant, JobDefinition>();
+        private readonly Dictionary<Combatant, BattleParticipantSetup> participantSetups = new Dictionary<Combatant, BattleParticipantSetup>();
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
@@ -58,6 +60,8 @@ namespace ProjectLimitless.Battle
         private bool choosingSkill;
         private bool battleEnded;
         private bool actionPlaying;
+        private IReadOnlyList<Combatant> selectableTargets = Array.Empty<Combatant>();
+        private Action<Combatant> targetSelectedAction;
         private BattleActionPresenter actionPresenter;
         private BattleSkillExecutor skillExecutor;
         private Font battleFont;
@@ -87,6 +91,8 @@ namespace ProjectLimitless.Battle
             if (choosingTarget)
             {
                 choosingTarget = false;
+                selectableTargets = Array.Empty<Combatant>();
+                targetSelectedAction = null;
                 SetCommandButtons(true);
                 RefreshCombatantViews(null);
                 messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
@@ -94,47 +100,40 @@ namespace ProjectLimitless.Battle
             }
         }
 
-        /// <summary>캐릭터 생성 능력치와 조우 몬스터를 1차 검증용 전투 참가자로 변환합니다.</summary>
+        /// <summary>캐릭터 생성 정보와 전투 전용 3대3 Encounter 데이터를 실제 Formation 참가자로 변환합니다.</summary>
         private void CreateParticipants()
         {
             PlayerPathDefinition path = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").FirstOrDefault(item => item.Id == GameSessionData.SelectedPlayerPathId);
-            JobDefinition job = Resources.LoadAll<JobDefinition>("JobDefinitions").FirstOrDefault(item => item.JobId == GameSessionData.SelectedJobId);
-            int health = CharacterCreationStatsCalculator.GetFinalStat(path, job, CharacterStatType.Health);
-            int strength = CharacterCreationStatsCalculator.GetFinalStat(path, job, CharacterStatType.Strength);
-            int agility = CharacterCreationStatsCalculator.GetFinalStat(path, job, CharacterStatType.Agility);
+            JobDefinition playerJob = Resources.LoadAll<JobDefinition>("JobDefinitions").FirstOrDefault(item => item.JobId == GameSessionData.SelectedJobId);
+            int health = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Health);
+            int strength = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Strength);
+            int agility = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Agility);
             string playerName = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
-            TargetRangeType playerRange = GetBasicAttackRange(GameSessionData.SelectedJobId);
             int playerAttack = 12 + Math.Max(0, strength - 10) * 2;
-            // 치유사의 기본 공격은 같은 능력치 기준에서도 다른 직업보다 낮은 피해를 주는 1차 검증값을 사용합니다.
+            // 치유사의 기본 공격은 같은 능력치 기준에서도 다른 직업보다 낮은 피해를 주는 기존 검증값을 유지합니다.
             if (GameSessionData.SelectedJobId == "healer") playerAttack = Math.Max(1, playerAttack - 4);
 
             allies = new Formation(BattleSide.Allies);
             enemies = new Formation(BattleSide.Enemies);
-            // HP와 공격력 환산은 전투 흐름 검증용 임시값이며 최종 밸런스 데이터가 아닙니다.
-            Combatant player = new Combatant("player", playerName, BattleSide.Allies, new FormationSlot(FormationRow.Front, 1), 80 + health * 4, playerAttack, agility, 0, playerRange, true);
-            allies.Place(player);
-            if (job != null) combatantJobs[player] = job;
-
             MonsterDefinition monster = BattleEncounterContext.Monster ?? Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").FirstOrDefault();
             string monsterId = monster == null ? "grass_slime" : monster.MonsterId;
             string monsterName = monster == null ? "초원 슬라임" : monster.DisplayName;
-            enemies.Place(new Combatant(monsterId, monsterName, BattleSide.Enemies, new FormationSlot(FormationRow.Front, 1), 55, 10, 11, 0, TargetRangeType.MeleePhysical, false));
-        }
+            BattleEncounterSetup setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
+                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, monsterId, monsterName);
 
-        /// <summary>선택한 기본 직업을 확정된 기본 공격 사거리로 변환합니다.</summary>
-        private static TargetRangeType GetBasicAttackRange(string jobId)
-        {
-            switch (jobId)
+            Dictionary<string, JobDefinition> jobs = Resources.LoadAll<JobDefinition>("JobDefinitions")
+                .ToDictionary(item => item.JobId, StringComparer.Ordinal);
+            foreach (BattleParticipantSetup participant in setup.Allies.Concat(setup.Enemies))
             {
-                case "sharpshooter": return TargetRangeType.RangedPhysical;
-                case "mage":
-                case "healer": return TargetRangeType.Magic;
-                case "guardian":
-                case "fighter":
-                default: return TargetRangeType.MeleePhysical;
+                Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
+                    participant.Slot, participant.MaxHp, participant.Attack, participant.Agility,
+                    participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled);
+                (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
+                participantSetups.Add(combatant, participant);
+                if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
+                    combatantJobs.Add(combatant, participantJob);
             }
         }
-
         private void CreateInterface()
         {
             CreateCameraIfMissing();
@@ -199,8 +198,21 @@ namespace ProjectLimitless.Battle
             Button hitArea = hitObject.GetComponent<Button>(); hitArea.targetGraphic = hitImage; hitArea.interactable = false; hitArea.transition = Selectable.Transition.None; hitArea.onClick.AddListener(() => SelectTarget(combatant));
 
             Image marker = MakeImage(hitObject.transform, "GroundMarker", new Color(.4f, .47f, .56f, .45f)); SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 15)); AddOutline(marker.gameObject, new Color(.65f, .72f, .8f, .7f), 1);
-            Sprite sprite = combatant.Side == BattleSide.Allies ? BattleEncounterContext.PlayerBattleSprite : BattleEncounterContext.MonsterBattleSprite;
-            Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", sprite == null ? Color.clear : Color.white); spriteImage.sprite = sprite; spriteImage.preserveAspect = true; SetRect(spriteImage.rectTransform, new Vector2(.5f, .49f), combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
+            BattleParticipantSetup setup = participantSetups[combatant];
+            Sprite sprite = setup.VisualType == BattleParticipantVisualType.Player ? BattleEncounterContext.PlayerBattleSprite
+                : setup.VisualType == BattleParticipantVisualType.EncounterMonster ? BattleEncounterContext.MonsterBattleSprite : null;
+            bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
+            Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
+            spriteImage.sprite = sprite;
+            spriteImage.preserveAspect = true;
+            SetRect(spriteImage.rectTransform, new Vector2(.5f, .49f), placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
+            if (placeholder)
+            {
+                AddOutline(spriteImage.gameObject, gold, 2);
+                Text initial = MakeText(spriteImage.transform, "PrototypeInitial", setup.PlaceholderLabel, font, 34, Vector2.one * .5f, new Vector2(72, 72));
+                initial.color = focusGold;
+                initial.fontStyle = FontStyle.Bold;
+            }
             Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, .98f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
             Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, .9f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
 
@@ -208,28 +220,28 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Select, _ => targetArrow.gameObject.SetActive(choosingTarget && hitArea.interactable));
             AddTrigger(trigger, EventTriggerType.Deselect, _ => targetArrow.gameObject.SetActive(false));
 
-            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
+            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
             CreateCombatantHud(canvas, font, combatant, view);
             return view;
         }
-
         private void CreateCombatantHud(Transform canvas, Font font, Combatant combatant, CombatantView view)
         {
             Vector2 anchor;
             Vector2 size;
             if (combatant.Side == BattleSide.Enemies)
             {
-                anchor = new Vector2(.11f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .805f : .745f);
-                size = new Vector2(190, 76);
+                anchor = new Vector2(.10f + combatant.Slot.Column * .145f, combatant.Slot.Row == FormationRow.Front ? .80f : .70f);
+                size = new Vector2(170, 72);
             }
             else
             {
-                anchor = new Vector2(.63f + combatant.Slot.Column * .13f, combatant.Slot.Row == FormationRow.Front ? .265f : .205f);
-                size = new Vector2(190, 76);
+                anchor = new Vector2(.61f + combatant.Slot.Column * .145f, combatant.Slot.Row == FormationRow.Front ? .35f : .25f);
+                size = new Vector2(170, 72);
             }
 
             Image hud = MakeImage(canvas, $"Hud_{combatant.Id}", new Color(.035f, .055f, .09f, .96f)); SetRect(hud.rectTransform, anchor, size); AddOutline(hud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
-            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName, font, 15, new Vector2(.5f, .8f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
+            string jobLabel = combatantJobs.TryGetValue(combatant, out JobDefinition job) ? $" · {job.DisplayName}" : string.Empty;
+            view.HudName = MakeText(hud.transform, "Name", combatant.DisplayName + jobLabel, font, 14, new Vector2(.5f, .8f), new Vector2(size.x - 14, 22)); view.HudName.alignment = TextAnchor.MiddleLeft; view.HudName.fontStyle = FontStyle.Bold;
             view.HudHp = MakeText(hud.transform, "HpText", string.Empty, font, 13, new Vector2(.5f, .53f), new Vector2(size.x - 14, 20)); view.HudHp.alignment = TextAnchor.MiddleRight;
             view.HudStatus = MakeText(hud.transform, "StatusText", string.Empty, font, 13, new Vector2(.5f, .28f), new Vector2(size.x - 14, 18)); view.HudStatus.alignment = TextAnchor.MiddleLeft; view.HudStatus.color = focusGold; view.HudStatus.fontStyle = FontStyle.Bold;
             Image hpBackground = MakeImage(hud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f)); SetRect(hpBackground.rectTransform, new Vector2(.5f, .1f), new Vector2(size.x - 18, 10)); AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
@@ -280,22 +292,40 @@ namespace ProjectLimitless.Battle
         private void BeginAttack()
         {
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
-            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, enemies, currentActor.BasicRange);
-            if (targets.Count == 0) { messageText.text = "현재 기본 공격으로 지정할 수 있는 대상이 없습니다."; return; }
+            Formation opponents = currentActor.Side == BattleSide.Allies ? enemies : allies;
+            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, opponents, currentActor.BasicRange);
+            BeginTargetSelection(targets, target => PlayBasicAttack(currentActor, target),
+                "공격할 대상을 선택하세요. 금색으로 밝게 표시된 적을 선택할 수 있습니다.");
+        }
+
+        /// <summary>
+        /// 적 공격과 향후 아군 치유가 같은 마우스·키보드 대상 선택 흐름을 공유하도록 후보와 완료 동작을 받습니다.
+        /// 사거리나 스킬 대상 규칙은 호출자가 계산하며 이 메서드는 UI 선택만 담당합니다.
+        /// </summary>
+        private void BeginTargetSelection(IReadOnlyList<Combatant> targets, Action<Combatant> onSelected, string prompt)
+        {
+            if (targets == null || targets.Count == 0)
+            {
+                messageText.text = "현재 지정할 수 있는 대상이 없습니다.";
+                return;
+            }
             choosingTarget = true;
+            selectableTargets = targets;
+            targetSelectedAction = onSelected;
             SetCommandButtons(false);
             RefreshCombatantViews(targets);
-            messageText.text = "공격할 대상을 선택하세요. 금색으로 밝게 표시된 적을 선택할 수 있습니다.";
-            EventSystem.current.SetSelectedGameObject(combatantViews[targets[0]].HitArea.gameObject);
+            messageText.text = prompt;
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(combatantViews[targets[0]].HitArea.gameObject);
         }
 
         private void SelectTarget(Combatant target)
         {
-            if (actionPlaying || !choosingTarget || target == null || !target.IsAlive) return;
-            IReadOnlyList<Combatant> valid = TargetResolver.ResolveHostileTargets(currentActor, enemies, currentActor.BasicRange);
-            if (!valid.Contains(target)) return;
+            if (actionPlaying || !choosingTarget || target == null || !target.IsAlive || !selectableTargets.Contains(target)) return;
+            Action<Combatant> selectedAction = targetSelectedAction;
             choosingTarget = false;
-            PlayBasicAttack(currentActor, target);
+            selectableTargets = Array.Empty<Combatant>();
+            targetSelectedAction = null;
+            selectedAction?.Invoke(target);
         }
 
         private void ShowSkillMenu()
@@ -423,7 +453,7 @@ namespace ProjectLimitless.Battle
         {
             yield return new WaitForSeconds(.55f);
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, allies, currentActor.BasicRange);
-            Combatant target = targets.FirstOrDefault();
+            Combatant target = ChooseEnemyTarget(currentActor, targets);
             if (target != null)
             {
                 PlayBasicAttack(currentActor, target);
@@ -432,6 +462,17 @@ namespace ProjectLimitless.Battle
             FinishCurrentAction();
         }
 
+        /// <summary>
+        /// 도발로 후보가 한 명이면 그 대상을 그대로 사용합니다.
+        /// 평상시에는 적의 진형 열을 이용해 여러 유효 아군에게 공격이 분산되어 강제 타깃 여부를 확인할 수 있게 합니다.
+        /// </summary>
+        private static Combatant ChooseEnemyTarget(Combatant actor, IReadOnlyList<Combatant> targets)
+        {
+            if (targets == null || targets.Count == 0) return null;
+            if (targets.Count == 1) return targets[0];
+            int targetIndex = Mathf.Abs(actor.Slot.Column) % targets.Count;
+            return targets[targetIndex];
+        }
         /// <summary>
         /// 기본 공격 계산은 기존 Combatant에 맡기고, 공용 Presenter에는 표시 대상과 타격 시점만 전달합니다.
         /// 현재 1단계 범위에서는 플레이어와 초원 슬라임의 근거리 기본 공격에 같은 연출을 사용합니다.
@@ -483,7 +524,7 @@ namespace ProjectLimitless.Battle
 
             if (actor.BasicRange == TargetRangeType.Magic)
             {
-                bool healerAttack = actor.IsPlayerControlled && GameSessionData.SelectedJobId == "healer";
+                bool healerAttack = combatantJobs.TryGetValue(actor, out JobDefinition actorJob) && actorJob.JobId == "healer";
                 StartCoroutine(actionPresenter.PlayProjectileAttack(
                     actorView.ActionRoot,
                     targetView.ActionRoot,
@@ -520,7 +561,7 @@ namespace ProjectLimitless.Battle
         /// <summary>공격 연출 뒤 필드 프레임이 아닌 진영별 전투 Idle Sprite를 다시 적용합니다.</summary>
         private static void RestoreBattleIdle(CombatantView view)
         {
-            if (view?.SpriteImage != null) view.SpriteImage.sprite = view.IdleSprite;
+            if (view?.SpriteImage != null && !view.UsesPlaceholderVisual) view.SpriteImage.sprite = view.IdleSprite;
         }
 
         private void FinishCurrentAction()
@@ -555,14 +596,15 @@ namespace ProjectLimitless.Battle
             {
                 Combatant combatant = pair.Key;
                 CombatantView view = pair.Value;
-                bool targetSelection = attackable != null && combatant.Side == BattleSide.Enemies;
+                bool targetSelection = attackable != null;
                 bool canAttack = targetSelection && attackable.Contains(combatant);
                 view.HitArea.interactable = canAttack && combatant.IsAlive;
-                view.SpriteImage.color = view.SpriteImage.sprite == null ? Color.clear : !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : Color.white;
+                Color normalVisual = view.UsesPlaceholderVisual ? new Color(.12f, .3f, .48f, 1f) : view.SpriteImage.sprite == null ? Color.clear : Color.white;
+                view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : normalVisual;
                 view.GroundMarker.color = canAttack ? new Color(1f, .78f, .28f, .92f) : new Color(.4f, .47f, .56f, combatant.IsAlive ? .45f : .18f);
                 view.TargetArrow.gameObject.SetActive(false);
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
-                view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : "  [전투불능]");
+                view.HudName.text = GetCombatantDisplayName(combatant) + (combatant.IsAlive ? string.Empty : "  [전투불능]");
                 view.HudHp.text = $"HP {combatant.CurrentHp} / {combatant.MaxHp}";
                 bool taunted = combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive;
                 view.HudStatus.text = taunted ? $"도발 {combatant.ForcedTargetActionsRemaining}" : string.Empty;
@@ -576,6 +618,13 @@ namespace ProjectLimitless.Battle
             }
         }
 
+
+        private string GetCombatantDisplayName(Combatant combatant)
+        {
+            return combatantJobs.TryGetValue(combatant, out JobDefinition job)
+                ? $"{combatant.DisplayName} · {job.DisplayName}"
+                : combatant.DisplayName;
+        }
         private void UpdateTimeline()
         {
             string upcoming = string.Join("  →  ", turnOrder.Upcoming.Take(7).Select(item => item.DisplayName));
