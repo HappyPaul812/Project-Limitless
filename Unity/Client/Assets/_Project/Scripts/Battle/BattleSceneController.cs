@@ -23,6 +23,7 @@ namespace ProjectLimitless.Battle
             public Button HitArea;
             public RectTransform ActionRoot;
             public Image SpriteImage;
+            public Sprite IdleSprite;
             public Image GroundMarker;
             public Text TargetArrow;
             public Text TurnMarker;
@@ -181,7 +182,7 @@ namespace ProjectLimitless.Battle
             Button hitArea = hitObject.GetComponent<Button>(); hitArea.targetGraphic = hitImage; hitArea.interactable = false; hitArea.transition = Selectable.Transition.None; hitArea.onClick.AddListener(() => SelectTarget(combatant));
 
             Image marker = MakeImage(hitObject.transform, "GroundMarker", new Color(.4f, .47f, .56f, .45f)); SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 15)); AddOutline(marker.gameObject, new Color(.65f, .72f, .8f, .7f), 1);
-            Sprite sprite = combatant.Side == BattleSide.Allies ? BattleEncounterContext.PlayerSprite : BattleEncounterContext.Monster?.FieldSprite;
+            Sprite sprite = combatant.Side == BattleSide.Allies ? BattleEncounterContext.PlayerBattleSprite : BattleEncounterContext.MonsterBattleSprite;
             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", sprite == null ? Color.clear : Color.white); spriteImage.sprite = sprite; spriteImage.preserveAspect = true; SetRect(spriteImage.rectTransform, new Vector2(.5f, .49f), combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
             Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, .98f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
             Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, .9f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
@@ -190,7 +191,7 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Select, _ => targetArrow.gameObject.SetActive(choosingTarget && hitArea.interactable));
             AddTrigger(trigger, EventTriggerType.Deselect, _ => targetArrow.gameObject.SetActive(false));
 
-            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
+            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker };
             CreateCombatantHud(canvas, font, combatant, view);
             return view;
         }
@@ -344,6 +345,8 @@ namespace ProjectLimitless.Battle
             };
             Action onComplete = () =>
             {
+                RestoreBattleIdle(actorView);
+                RestoreBattleIdle(targetView);
                 actionPlaying = false;
                 FinishCurrentAction();
             };
@@ -372,6 +375,12 @@ namespace ProjectLimitless.Battle
                 onImpact,
                 onComplete));
         }
+        /// <summary>공격 연출 뒤 필드 프레임이 아닌 진영별 전투 Idle Sprite를 다시 적용합니다.</summary>
+        private static void RestoreBattleIdle(CombatantView view)
+        {
+            if (view?.SpriteImage != null) view.SpriteImage.sprite = view.IdleSprite;
+        }
+
         private void FinishCurrentAction()
         {
             currentActor?.CompleteAction();

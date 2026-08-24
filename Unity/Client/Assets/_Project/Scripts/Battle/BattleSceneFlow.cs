@@ -11,16 +11,18 @@ namespace ProjectLimitless.Battle
     {
         public static MonsterDefinition Monster { get; private set; }
         public static FieldMonsterSpawnDefinition Spawn { get; private set; }
-        public static Sprite PlayerSprite { get; private set; }
+        public static Sprite PlayerBattleSprite { get; private set; }
+        public static Sprite MonsterBattleSprite { get; private set; }
         public static Vector2 PlayerFieldPosition { get; private set; }
         public static Vector2 MonsterFieldPosition { get; private set; }
         private static bool pendingFieldReturn;
 
-        public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, Sprite playerSprite, Vector2 playerPosition, Vector2 monsterPosition)
+        public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, RuntimeAnimatorController playerAnimatorController, Vector2 playerPosition, Vector2 monsterPosition)
         {
             Monster = monster;
             Spawn = spawn;
-            PlayerSprite = playerSprite;
+            PlayerBattleSprite = BattleVisualResolver.ResolveIdleSprite(playerAnimatorController, BattleVisualResolver.AllyIdleState, null);
+            MonsterBattleSprite = BattleVisualResolver.ResolveIdleSprite(monster?.FieldAnimatorController, BattleVisualResolver.EnemyIdleState, monster?.FieldSprite);
             PlayerFieldPosition = playerPosition;
             MonsterFieldPosition = monsterPosition;
             pendingFieldReturn = false;
@@ -66,10 +68,10 @@ namespace ProjectLimitless.Battle
                 return;
             }
 
-            SpriteRenderer renderer = player.GetComponentInChildren<SpriteRenderer>();
+            Animator animator = player.GetComponentInChildren<Animator>();
             MonsterFieldController fieldMonster = FindEncounteredMonster(spawn);
             Vector2 monsterPosition = fieldMonster == null ? (Vector2)player.transform.position : fieldMonster.transform.position;
-            BattleEncounterContext.Set(monster, spawn, renderer == null ? null : renderer.sprite, player.transform.position, monsterPosition);
+            BattleEncounterContext.Set(monster, spawn, animator == null ? null : animator.runtimeAnimatorController, player.transform.position, monsterPosition);
             transitioning = true;
             SceneManager.LoadSceneAsync(BattleSceneName, LoadSceneMode.Single);
         }
