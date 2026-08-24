@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 namespace ProjectLimitless.Battle
 {
+    /// <summary>실제 Projectile Sprite가 없을 때 사용할 임시 Graphic 형태입니다.</summary>
+    public enum BattleProjectileStyle { Arrow, Orb }
     /// <summary>
     /// 전투 계산과 분리된 공용 행동 연출기입니다.
     /// 플레이어, NPC, 몬스터의 UI 위치와 Sprite 표시만 전달받아 같은 연출을 재사용합니다.
@@ -15,8 +17,8 @@ namespace ProjectLimitless.Battle
         private const float ImpactPause = .09f;
         private const float ReturnDuration = .18f;
         private const float TargetGap = 145f;
-        private const float AimDuration = .2f;
         private const float ProjectileDuration = .24f;
+        private static Sprite orbSprite;
 
         /// <summary>
         /// 공격자를 대상 앞까지 이동시키고 타격 순간에 기존 피해 처리를 호출한 뒤 원위치로 복귀합니다.
@@ -59,7 +61,8 @@ namespace ProjectLimitless.Battle
         /// projectileSprite가 없으면 임시 Graphic을 만들며, 이후 화살이나 마법탄 Sprite를 같은 인자로 교체할 수 있습니다.
         /// </summary>
         public IEnumerator PlayProjectileAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
-            Sprite projectileSprite, Color projectileColor, Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+            Sprite projectileSprite, Color projectileColor, BattleProjectileStyle projectileStyle, float preparationDuration,
+            Func<int> applyImpact, Action<int> onImpact, Action onComplete)
         {
             if (attacker == null || target == null || targetSprite == null)
             {
@@ -69,7 +72,7 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
 
-            yield return new WaitForSeconds(AimDuration);
+            yield return new WaitForSeconds(Mathf.Max(0f, preparationDuration));
 
             Vector3 start = attacker.localPosition;
             Vector3 destination = target.localPosition;
@@ -77,16 +80,18 @@ namespace ProjectLimitless.Battle
             GameObject projectileObject = new GameObject("BattleProjectile", typeof(Image));
             projectileObject.transform.SetParent(attacker.parent, false);
             Image projectileImage = projectileObject.GetComponent<Image>();
-            projectileImage.sprite = projectileSprite;
+            projectileImage.sprite = projectileSprite != null ? projectileSprite : projectileStyle == BattleProjectileStyle.Orb ? GetOrbSprite() : null;
             projectileImage.color = projectileColor;
             projectileImage.raycastTarget = false;
             RectTransform projectile = projectileImage.rectTransform;
             projectile.anchorMin = Vector2.one * .5f;
             projectile.anchorMax = Vector2.one * .5f;
             projectile.pivot = Vector2.one * .5f;
-            projectile.sizeDelta = projectileSprite == null ? new Vector2(46f, 8f) : new Vector2(52f, 20f);
+            projectile.sizeDelta = projectileSprite != null ? new Vector2(52f, 20f) : projectileStyle == BattleProjectileStyle.Orb ? new Vector2(30f, 30f) : new Vector2(46f, 8f);
             projectile.localPosition = start;
-            projectile.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+            projectile.localRotation = projectileStyle == BattleProjectileStyle.Arrow
+                ? Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)
+                : Quaternion.identity;
 
             yield return Move(projectile, start, destination, ProjectileDuration);
             Destroy(projectileObject);
@@ -98,6 +103,40 @@ namespace ProjectLimitless.Battle
             yield return PlayHitReaction(target, targetSprite, destination, targetOriginalColor);
             onComplete?.Invoke();
         }
+
+        /// <summary>파일을 만들지 않고 임시 빛 구체용 원형 Sprite를 한 번만 생성합니다.</summary>
+        private static Sprite GetOrbSprite()
+        {
+            if (orbSprite != null) return orbSprite;
+
+            const int size = 32;
+            Texture2D texture = new Texture2D(size, size, TextureFormat.RGBA32, false)
+            {
+                name = "BattleProjectileOrbTexture",
+                filterMode = FilterMode.Bilinear,
+                wrapMode = TextureWrapMode.Clamp,
+                hideFlags = HideFlags.HideAndDontSave,
+            };
+            Color[] pixels = new Color[size * size];
+            Vector2 center = Vector2.one * (size - 1) * .5f;
+            float radius = size * .5f;
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    float distance = Vector2.Distance(new Vector2(x, y), center) / radius;
+                    float alpha = Mathf.Clamp01(1f - distance);
+                    pixels[y * size + x] = new Color(1f, 1f, 1f, alpha * alpha);
+                }
+            }
+            texture.SetPixels(pixels);
+            texture.Apply(false, true);
+            orbSprite = Sprite.Create(texture, new Rect(0f, 0f, size, size), Vector2.one * .5f, size);
+            orbSprite.name = "BattleProjectileOrbSprite";
+            orbSprite.hideFlags = HideFlags.HideAndDontSave;
+            return orbSprite;
+        }
+
         private static IEnumerator Move(RectTransform subject, Vector3 from, Vector3 to, float duration)
         {
             float elapsed = 0f;

@@ -319,16 +319,6 @@ namespace ProjectLimitless.Battle
         /// </summary>
         private void PlayBasicAttack(Combatant actor, Combatant target)
         {
-            // 마법 기본 공격은 이번 범위가 아니므로 기존 즉시 처리 흐름을 유지합니다.
-            if (actor.BasicRange == TargetRangeType.Magic)
-            {
-                int damage = target.TakeDamage(actor.Attack);
-                messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
-                RefreshCombatantViews(null);
-                FinishCurrentAction();
-                return;
-            }
-
             actionPlaying = true;
             SetCommandButtons(false);
             RefreshCombatantViews(null);
@@ -360,6 +350,27 @@ namespace ProjectLimitless.Battle
                     battleFont,
                     null,
                     new Color(1f, .78f, .28f, 1f),
+                    BattleProjectileStyle.Arrow,
+                    .2f,
+                    applyImpact,
+                    onImpact,
+                    onComplete));
+                return;
+            }
+
+            if (actor.BasicRange == TargetRangeType.Magic)
+            {
+                bool healerAttack = actor.IsPlayerControlled && GameSessionData.SelectedJobId == "healer";
+                Color magicColor = healerAttack ? new Color(1f, .94f, .62f, 1f) : new Color(.42f, .52f, 1f, 1f);
+                StartCoroutine(actionPresenter.PlayProjectileAttack(
+                    actorView.ActionRoot,
+                    targetView.ActionRoot,
+                    targetView.SpriteImage,
+                    battleFont,
+                    null,
+                    magicColor,
+                    BattleProjectileStyle.Orb,
+                    .26f,
                     applyImpact,
                     onImpact,
                     onComplete));
