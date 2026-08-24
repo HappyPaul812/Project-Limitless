@@ -365,18 +365,17 @@ namespace ProjectLimitless.Battle
             if (actor.BasicRange == TargetRangeType.Magic)
             {
                 bool healerAttack = actor.IsPlayerControlled && GameSessionData.SelectedJobId == "healer";
-                Color magicColor = healerAttack ? new Color(1f, .94f, .62f, 1f) : Color.white;
                 StartCoroutine(actionPresenter.PlayProjectileAttack(
                     actorView.ActionRoot,
                     targetView.ActionRoot,
                     targetView.SpriteImage,
                     battleFont,
-                    healerAttack ? Array.Empty<Sprite>() : LoadProjectileFrames("BattleProjectiles/Fireball"),
-                    .06f,
+                    healerAttack ? LoadProjectileFrames("BattleProjectiles/HealerMagicalProjectile") : LoadProjectileFrames("BattleProjectiles/Fireball"),
+                    healerAttack ? .05f : .06f,
                     healerAttack ? .24f : .35f,
-                    healerAttack ? new Vector2(30f, 30f) : new Vector2(52f, 52f),
-                    !healerAttack,
-                    magicColor,
+                    healerAttack ? new Vector2(72f, 72f) : new Vector2(52f, 52f),
+                    true,
+                    Color.white,
                     BattleProjectileStyle.Orb,
                     .26f,
                     applyImpact,
