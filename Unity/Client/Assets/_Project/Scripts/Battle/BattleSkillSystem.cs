@@ -13,7 +13,7 @@ namespace ProjectLimitless.Battle
     {
         public BattleSkillDefinition(string id, string displayName, string description, bool implemented,
             BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
-            int attackDamagePercent = 0)
+            int attackDamagePercent = 0, string iconId = null)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -24,6 +24,7 @@ namespace ProjectLimitless.Battle
             EffectDuration = Math.Max(0, effectDuration);
             MaxHpHealRatio = Math.Max(0f, maxHpHealRatio);
             AttackDamagePercent = Math.Max(0, attackDamagePercent);
+            IconId = iconId ?? string.Empty;
         }
 
         public string Id { get; }
@@ -37,6 +38,12 @@ namespace ProjectLimitless.Battle
         public float MaxHpHealRatio { get; }
         /// <summary>기본 공격력에 적용할 정수 퍼센트입니다. 160은 기본 공격 피해의 160%입니다.</summary>
         public int AttackDamagePercent { get; }
+        /// <summary>
+        /// 스킬 버튼에 표시할 그림의 역할 식별자입니다. PNG 파일명 자체를 넣지 않고 카탈로그의 ID를
+        /// 저장하므로, 화면 코드는 직업명이나 스킬명을 비교하지 않아도 알맞은 Sprite를 찾을 수 있습니다.
+        /// 나중에 그림을 교체할 때는 스킬 데이터나 아이콘 카탈로그만 바꾸면 됩니다.
+        /// </summary>
+        public string IconId { get; }
     }
 
     /// <summary>
@@ -57,18 +64,20 @@ namespace ProjectLimitless.Battle
             {
                 if (preview.SkillId == GuardianTauntId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
-                        BattleSkillEffectType.Taunt, 3, 2);
+                        BattleSkillEffectType.Taunt, 3, 2, iconId: BattleUiIconCatalog.GuardianTauntSkill);
                 if (preview.SkillId == HealerHealingLightId)
                     // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
-                        BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f);
+                        BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f,
+                        iconId: BattleUiIconCatalog.HealerHealingLightSkill);
                 if (preview.SkillId == SharpshooterAimId)
                     // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
                     // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
                     // 시작에 1, 그다음 시작에 0이 되므로 HUD와 실행기가 같은 2턴 흐름을 공유합니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
-                        BattleSkillEffectType.SingleRangedPhysicalAttack, 2, 0, 0f, 160);
+                        BattleSkillEffectType.SingleRangedPhysicalAttack, 2, 0, 0f, 160,
+                        BattleUiIconCatalog.SharpshooterAimSkill);
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();

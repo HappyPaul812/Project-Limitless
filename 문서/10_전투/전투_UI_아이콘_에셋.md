@@ -23,8 +23,11 @@
 | 재사용 진행 | Board Game Icons `PNG/Default (64px)/hourglass.png` | `status.cooldown.progress` |
 | 재사용 마지막 | Board Game Icons `PNG/Default (64px)/hourglass_bottom.png` | `status.cooldown.end` |
 | 방어 상태 | 공격 명령과 같은 Board Game Icons `shield.png` 재사용 | `command.defend` |
+| 수호자 도발 스킬 | Board Game Icons `PNG/Default (64px)/pawn_left.png` | `skill.guardian.taunt` |
+| 치유사 치유의 빛 | Board Game Icons `PNG/Default (64px)/suit_hearts.png` | `skill.healer.healing_light` |
+| 사수 정조준 | Game Icons `PNG/White/1x/target.png` | `skill.sharpshooter.aim` |
 
-파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 도발은 기존 `target.png` 대신 특정 방향을 향한 말을 표현하는 `pawn_right.png`로 통일한다. `target.png` 원본은 ThirdParty에 남지만 도발 표시에는 더 이상 연결하지 않는다.
+파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 
@@ -32,9 +35,10 @@
 
 - 필요한 PNG만 각 팩의 `Resources/KenneyBattleIcons/`에 복사한다.
 - Texture Type은 `Sprite (2D and UI)`, Mesh Type은 `Full Rect`, Filter Mode는 `Point`, Compression은 `None`, Max Size는 `512`로 둔다.
-- `BattleUiIconCatalog`가 명령·상태 역할 ID를 `Resources` 경로와 연결하고 한 번 읽은 Sprite를 재사용한다.
+- `BattleUiIconCatalog`가 명령·상태·직업 스킬 역할 ID를 `Resources` 경로와 연결하고 한 번 읽은 Sprite를 재사용한다.
 - 버튼과 HP HUD는 파일명을 직접 쓰지 않고 역할 ID만 요청한다. 향후 그림 교체는 카탈로그 경로와 ThirdParty PNG만 바꾸면 된다.
-- 향후 `BattleSkillDefinition`에 아이콘 역할 ID를 추가하면 같은 카탈로그 로딩 방식을 재사용할 수 있다. 이번 작업에서는 스킬 전투 규칙이나 데이터 구조를 변경하지 않았다.
+- `BattleSkillDefinition.IconId`가 스킬별 역할 ID를 보관하고 스킬 메뉴는 그 값만 `BattleUiIconCatalog.Load`에 전달한다. 따라서 메뉴 코드에는 직업명·스킬명 비교나 PNG 파일명이 없다.
+- 향후 스킬 아이콘은 해당 스킬 정의의 `IconId`와 카탈로그 매핑만 추가하거나 교체하면 된다. 아이콘 데이터는 표시 전용이며 피해·회복·쿨타임·대상 판정에는 관여하지 않는다.
 - Sprite가 누락되면 아이콘 Image만 숨기고 한글 텍스트는 유지한다. 폰트 기호 fallback은 사용하지 않는다.
 
 ## 변경하지 않은 전투 영역
@@ -51,3 +55,5 @@
 6. 전투불능 즉시 모든 상태 아이콘과 텍스트가 사라지고 회색 `전투불능`만 남는지 확인한다.
 7. 취소 버튼과 Esc가 기존과 같은 대상/스킬 선택 복귀 흐름을 실행하는지 확인한다.
 8. Console에 Compile Error, `NullReferenceException`, `MissingReferenceException`이 없는지 확인한다.
+9. 스킬 메뉴에서 수호자 도발=`pawn_left`, 치유의 빛=`suit_hearts`, 정조준=`target` Sprite가 각각 스킬 이름 왼쪽에 표시되는지 확인한다.
+10. 적의 도발 상태에는 기존 `pawn_right`가 유지되고, 스킬 버튼 아이콘 변경이 도발 2→1·회복·정조준 피해와 쿨타임에 영향을 주지 않는지 확인한다.

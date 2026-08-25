@@ -23,6 +23,9 @@ namespace ProjectLimitless.Battle
         public const string CooldownStart = "status.cooldown.start";
         public const string CooldownProgress = "status.cooldown.progress";
         public const string CooldownEnd = "status.cooldown.end";
+        public const string GuardianTauntSkill = "skill.guardian.taunt";
+        public const string HealerHealingLightSkill = "skill.healer.healing_light";
+        public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -39,7 +42,12 @@ namespace ProjectLimitless.Battle
             { Taunt, "KenneyBattleIcons/pawn_right" },
             { CooldownStart, "KenneyBattleIcons/hourglass_top" },
             { CooldownProgress, "KenneyBattleIcons/hourglass" },
-            { CooldownEnd, "KenneyBattleIcons/hourglass_bottom" }
+            { CooldownEnd, "KenneyBattleIcons/hourglass_bottom" },
+            // 아래 세 항목은 스킬 버튼 전용입니다. 같은 도발이라도 적에게 남은 상태는 pawn_right,
+            // 수호자가 누르는 스킬은 pawn_left를 사용해 서로 다른 화면 역할을 구분합니다.
+            { GuardianTauntSkill, "KenneyBattleIcons/pawn_left" },
+            { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
+            { SharpshooterAimSkill, "KenneyBattleIcons/target" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();

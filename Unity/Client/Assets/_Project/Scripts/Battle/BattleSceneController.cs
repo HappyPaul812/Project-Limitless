@@ -603,7 +603,7 @@ namespace ProjectLimitless.Battle
                     : skill.EffectType == BattleSkillEffectType.SingleRangedPhysicalAttack
                         ? $"{skill.DisplayName}\n강한 원거리 · 160% · {skill.CooldownTurns}턴" : skill.DisplayName;
                 BattleSkillDefinition selectedSkill = skill;
-                Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label,
+                Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label, skill.IconId,
                     new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill));
                 button.interactable = skill.IsImplemented && remaining == 0;
                 skillMenuButtons.Add(button);
@@ -611,13 +611,13 @@ namespace ProjectLimitless.Battle
 
             if (skills.Count == 0)
             {
-                Button empty = MakeSkillMenuButton(skillMenuPanel.transform, "NoSkills", "사용 가능한 스킬 없음",
+                Button empty = MakeSkillMenuButton(skillMenuPanel.transform, "NoSkills", "사용 가능한 스킬 없음", null,
                     new Vector2(.25f, .5f), () => messageText.text = "아직 사용할 수 없습니다.");
                 empty.interactable = false;
                 skillMenuButtons.Add(empty);
             }
 
-            Button back = MakeSkillMenuButton(skillMenuPanel.transform, "Back", "돌아가기",
+            Button back = MakeSkillMenuButton(skillMenuPanel.transform, "Back", "돌아가기", null,
                 new Vector2((itemCount - .5f) / itemCount, .5f), CloseSkillMenu);
             skillMenuButtons.Add(back);
         }
@@ -1251,7 +1251,14 @@ namespace ProjectLimitless.Battle
             return image;
         }
 
-        private Button MakeSkillMenuButton(Transform parent, string name, string label, Vector2 anchor, Action action)
+        /// <summary>
+        /// BattleSkillDefinition이 가진 아이콘 ID를 실제 Sprite로 바꾸어 스킬 이름 왼쪽에 놓습니다.
+        /// 이 메서드는 "도발인지 정조준인지"를 판단하지 않습니다. 데이터가 전달한 ID만 읽기 때문에
+        /// 새 직업 스킬이 늘어나도 메뉴 배치 코드를 계속 수정하지 않아도 됩니다.
+        /// Sprite를 찾지 못하면 아이콘만 숨기고 한글 이름을 가운데 표시해 조작 기능은 유지합니다.
+        /// </summary>
+        private Button MakeSkillMenuButton(Transform parent, string name, string label, string iconId,
+            Vector2 anchor, Action action)
         {
             GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             obj.transform.SetParent(parent, false);
@@ -1264,7 +1271,16 @@ namespace ProjectLimitless.Battle
             Outline outline = obj.GetComponent<Outline>();
             outline.effectColor = gold;
             outline.effectDistance = new Vector2(1, -1);
-            Text text = MakeText(obj.transform, "Label", label, battleFont, 15, Vector2.one * .5f, new Vector2(215, 44));
+            Sprite iconSprite = BattleUiIconCatalog.Load(iconId);
+            bool hasIcon = iconSprite != null;
+            if (hasIcon)
+            {
+                // 18px 아이콘은 현재 225x48 버튼 안에서 보조 정보로 읽히면서도 버튼 크기를 늘리지 않습니다.
+                MakeSpriteIcon(obj.transform, "SkillIcon", iconSprite, new Vector2(.14f, .5f), new Vector2(18, 18));
+            }
+            Text text = MakeText(obj.transform, "Label", label, battleFont, 15,
+                hasIcon ? new Vector2(.6f, .5f) : Vector2.one * .5f,
+                hasIcon ? new Vector2(174, 44) : new Vector2(215, 44));
             text.fontStyle = FontStyle.Bold;
             return button;
         }
