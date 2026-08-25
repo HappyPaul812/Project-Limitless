@@ -73,6 +73,14 @@ namespace ProjectLimitless.Battle
 
             string category = job != null ? job.DisplayName
                 : setup != null && setup.VisualType == BattleParticipantVisualType.EncounterMonster ? "몬스터" : "전투 참가자";
+
+            // 전투불능 참가자에게 도발·방어·재사용 표시가 남으면 실제 전투 상태와 화면 정보가 달라집니다.
+            // HP와 분류는 상세 팝업에서 계속 확인할 수 있게 두되, 행동에 의미가 있는 상태 목록은 즉시 비웁니다.
+            // Combatant 내부 값을 억지로 바꾸지 않고 표시 모델의 경계에서 정리하므로 전투 계산 규칙에는 영향이 없습니다.
+            if (!combatant.IsAlive)
+                return new BattleCombatantStatusViewModel(combatant.DisplayName, category,
+                    combatant.CurrentHp, combatant.MaxHp, Array.Empty<BattleStatusMarker>(), Array.Empty<string>());
+
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
             if (combatant.IsDefending) markers.Add(new BattleStatusMarker("defend", "방어"));
             if (combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive)
