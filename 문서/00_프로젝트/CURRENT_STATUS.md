@@ -7,7 +7,7 @@
 - 마지막 기능 관련 commit: `f98746f` (`Feature: 3대3 프로토타입 전투 확장`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
-- 마지막 전투 UI 관련 commit: `f3c0a5f` (`Refactor: 전투 UI Kenney 아이콘 적용`)
+- 마지막 전투 UI 관련 commit: `7223089` (`Refactor: 전투 상태 아이콘 단계 통일`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
@@ -86,6 +86,7 @@
 - 약 17% 축소한 공용 명령 버튼·축소 명령 패널과 대상/스킬 선택 중 Esc와 같은 흐름을 실행하는 마우스 `취소` 버튼
 - Kenney Game Icons·Board Game Icons CC0 실제 Sprite와 한글을 함께 사용하는 공격·스킬·방어·도망·취소 버튼 및 HP HUD 상태 배지
 - 역할 ID와 Resources 경로를 한곳에서 연결하는 `BattleUiIconCatalog`, Sprite 누락 시 문자 기호 없이 한글만 남기는 fallback
+- HP HUD 도발은 `pawn_right`, 3턴 재사용은 표시값 3=`hourglass_top`·2=`hourglass`·1=`hourglass_bottom`으로 구분
 - 외부 신규 에셋 없이 남색·금색 하늘·원경·지면 층의 임시 전투 배경 구성
 - 플레이어·NPC·몬스터가 공통 사용 가능한 `BattleActionPresenter`와 전투 계산 분리
 - 근거리 기본 공격의 짧은 전진·타격 대기·원위치 복귀, 피격 좌우 흔들림·점멸, 떠오르는 피해 숫자
@@ -178,6 +179,7 @@
 - 대상 화살표 정렬·HP HUD 상태 요약·명령 버튼 축소·공용 취소 흐름을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. `BattleSceneController`의 UI와 입력 단계만 변경했으며 전투 계산·N대N·도발/방어 판정·행동 실행은 변경하지 않았다.
 - 전투불능 상태 정리·회색 발판 숨김·단색 버튼/상태 아이콘·죽은 대상 선택 정리를 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. ViewModel과 UI 갱신만 변경했으며 Combatant·Formation·TargetResolver·TurnOrderQueue와 피해/도발/방어 계산은 변경하지 않았다.
 - Kenney 실제 Sprite 카탈로그·명령 버튼·HP HUD 상태 배지 변경을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 유지되며 `BattleCore`·Combatant 계산·Formation·TargetResolver·TurnOrderQueue·Projectile/VFX·취소 흐름은 변경하지 않았다. 실제 import와 화면 정렬은 Play Mode 확인이 필요하다.
+- 도발 pawn_right와 재사용 3단계 모래시계 표시를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. `BattleSkillCooldowns`의 시작·감소 계산은 변경하지 않고 ViewModel이 남은 턴과 총 턴을 UI에 전달하며, 전투불능 목록 제거와 텍스트 fallback을 유지한다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -237,12 +239,14 @@
 51. 대상/스킬 선택의 취소 버튼·Esc와 공격·방어·도발 수치, Projectile·승패·필드 복귀가 기존과 같고 Console 오류가 없는지 확인한다.
 52. 도발의 target 아이콘과 `2→1→제거`, 행동 중 arrowRight, 방어 shield, 재사용 hourglass가 상태와 함께 갱신되는지 확인한다.
 53. 전투불능 즉시 모든 상태 Sprite와 글자가 사라지고 회색 `전투불능`만 남으며 Console에 MissingReference·NullReference가 없는지 확인한다.
+54. 도발 상태에 pawn_right가 표시되고 기존 target은 나오지 않으며, 도발 2→1→제거가 유지되는지 확인한다.
+55. 도발 사용 직후 재사용 3턴=hourglass_top, 다음 자기 차례 2턴=hourglass, 마지막 1턴=hourglass_bottom, 0턴=아이콘·텍스트 제거인지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 Kenney Sprite import, 명령 버튼 아이콘·한글 정렬, HP HUD의 target/shield/arrowRight/hourglass 갱신과 전투불능 정리를 우선 검증한다. 이어 적 4~6명 배치와 3대3 전투 회귀를 확인한 뒤 미엘의 치유의 빛을 공용 아군 대상 선택 흐름에 연결한다.
+Unity 16:9 Play Mode에서 HP HUD의 pawn_right 도발과 hourglass_top→hourglass→hourglass_bottom 재사용 단계, 전투불능 정리를 우선 검증한다. 이어 적 4~6명 배치와 3대3 전투 회귀를 확인한 뒤 미엘의 치유의 빛을 공용 아군 대상 선택 흐름에 연결한다.
 
 ## 갱신 규칙
 
