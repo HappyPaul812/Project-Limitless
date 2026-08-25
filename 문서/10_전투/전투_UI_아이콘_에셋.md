@@ -17,12 +17,16 @@
 | 방어 | Board Game Icons `PNG/Default (64px)/shield.png` | `command.defend` |
 | 도망 | Game Icons `PNG/White/1x/exitRight.png` | `command.flee` |
 | 취소 | Game Icons `PNG/White/1x/cross.png` | `command.cancel` |
-| 도발 | Game Icons `PNG/White/1x/target.png` | `status.taunt` |
+| 도발 | Board Game Icons `PNG/Default (64px)/pawn_right.png` | `status.taunt` |
 | 행동 중 | Game Icons `PNG/White/1x/arrowRight.png` | `status.acting` |
-| 재사용 대기 | Board Game Icons `PNG/Default (64px)/hourglass.png` | `status.cooldown` |
+| 재사용 시작 | Board Game Icons `PNG/Default (64px)/hourglass_top.png` | `status.cooldown.start` |
+| 재사용 진행 | Board Game Icons `PNG/Default (64px)/hourglass.png` | `status.cooldown.progress` |
+| 재사용 마지막 | Board Game Icons `PNG/Default (64px)/hourglass_bottom.png` | `status.cooldown.end` |
 | 방어 상태 | 공격 명령과 같은 Board Game Icons `shield.png` 재사용 | `command.defend` |
 
-파일명은 다운로드된 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 특히 Game Icons에는 `sword`, `shield`, `hourglass`가 없어 해당 세 항목은 Board Game Icons의 실제 파일을 사용한다.
+파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 도발은 기존 `target.png` 대신 특정 방향을 향한 말을 표현하는 `pawn_right.png`로 통일한다. `target.png` 원본은 ThirdParty에 남지만 도발 표시에는 더 이상 연결하지 않는다.
+
+재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 
 ## Unity Import와 코드 연결
 
@@ -41,8 +45,9 @@
 
 1. 공격·스킬·방어·도망 버튼과 대상/스킬 선택 중 취소 버튼에 실제 Sprite와 한글이 함께 보이는지 확인한다.
 2. 아이콘이 약 16~18px 크기로 원본 비율을 유지하며 기존 버튼 크기와 간격을 바꾸지 않는지 확인한다.
-3. 도발 후 target 아이콘과 `도발 2 → 도발 1 → 제거`가 일치하는지 확인한다.
-4. 방어·행동 중·재사용 상태에 각각 shield·arrowRight·hourglass Sprite와 텍스트가 한 줄로 표시되는지 확인한다.
-5. 전투불능 즉시 모든 상태 아이콘과 텍스트가 사라지고 회색 `전투불능`만 남는지 확인한다.
-6. 취소 버튼과 Esc가 기존과 같은 대상/스킬 선택 복귀 흐름을 실행하는지 확인한다.
-7. Console에 Compile Error, `NullReferenceException`, `MissingReferenceException`이 없는지 확인한다.
+3. 도발 후 pawn_right 아이콘과 `도발 2 → 도발 1 → 제거`가 일치하며 target 아이콘이 나오지 않는지 확인한다.
+4. 스킬 사용 직후 3턴=hourglass_top, 진행 2턴=hourglass, 마지막 1턴=hourglass_bottom으로 바뀌고 0에서 모두 사라지는지 확인한다.
+5. 방어·행동 중 상태에 각각 shield·arrowRight Sprite와 텍스트가 한 줄로 표시되는지 확인한다.
+6. 전투불능 즉시 모든 상태 아이콘과 텍스트가 사라지고 회색 `전투불능`만 남는지 확인한다.
+7. 취소 버튼과 Esc가 기존과 같은 대상/스킬 선택 복귀 흐름을 실행하는지 확인한다.
+8. Console에 Compile Error, `NullReferenceException`, `MissingReferenceException`이 없는지 확인한다.

@@ -20,7 +20,9 @@ namespace ProjectLimitless.Battle
         public const string Cancel = "command.cancel";
         public const string Acting = "status.acting";
         public const string Taunt = "status.taunt";
-        public const string Cooldown = "status.cooldown";
+        public const string CooldownStart = "status.cooldown.start";
+        public const string CooldownProgress = "status.cooldown.progress";
+        public const string CooldownEnd = "status.cooldown.end";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -32,8 +34,12 @@ namespace ProjectLimitless.Battle
             { Flee, "KenneyBattleIcons/exitRight" },
             { Cancel, "KenneyBattleIcons/cross" },
             { Acting, "KenneyBattleIcons/arrowRight" },
-            { Taunt, "KenneyBattleIcons/target" },
-            { Cooldown, "KenneyBattleIcons/hourglass" }
+            // 도발은 조준점보다 "한 참가자가 특정 방향을 향하게 됨"을 보여 주는 pawn_right를 사용합니다.
+            // 실제 강제 대상 판정은 Combatant가 담당하고, 이 경로는 그 결과를 읽어 보여 주기만 합니다.
+            { Taunt, "KenneyBattleIcons/pawn_right" },
+            { CooldownStart, "KenneyBattleIcons/hourglass_top" },
+            { CooldownProgress, "KenneyBattleIcons/hourglass" },
+            { CooldownEnd, "KenneyBattleIcons/hourglass_bottom" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
@@ -52,6 +58,18 @@ namespace ProjectLimitless.Battle
             Sprite sprite = Resources.Load<Sprite>(resourcePath);
             Cache[iconId] = sprite;
             return sprite;
+        }
+
+        /// <summary>
+        /// 화면에 표시되는 남은 턴 값만 보고 모래시계 단계를 고릅니다.
+        /// 예를 들어 총 3턴이면 3은 막 시작한 top, 2는 진행 중인 기본 모양, 1은 다음 감소 때
+        /// 사라지는 bottom입니다. 여기서는 쿨타임을 감소시키지 않으므로 전투 계산과 UI 표현이 분리됩니다.
+        /// </summary>
+        public static string GetCooldownIconId(int remainingTurns, int totalTurns)
+        {
+            if (remainingTurns <= 1) return CooldownEnd;
+            if (totalTurns > 0 && remainingTurns >= totalTurns) return CooldownStart;
+            return CooldownProgress;
         }
     }
 }

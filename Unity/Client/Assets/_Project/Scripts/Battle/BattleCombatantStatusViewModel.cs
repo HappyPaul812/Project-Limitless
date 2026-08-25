@@ -25,6 +25,25 @@ namespace ProjectLimitless.Battle
     }
 
     /// <summary>
+    /// 쿨타임 계산 결과를 UI에 전달하는 읽기 전용 묶음입니다. 남은 턴과 원래 총 턴을 함께 보관하면
+    /// HP HUD는 전투 값을 다시 계산하지 않고도 시작·진행·마지막 아이콘을 고를 수 있습니다.
+    /// </summary>
+    public readonly struct BattleCooldownStatus
+    {
+        public BattleCooldownStatus(string skillName, int remainingTurns, int totalTurns)
+        {
+            SkillName = skillName ?? string.Empty;
+            RemainingTurns = Math.Max(0, remainingTurns);
+            TotalTurns = Math.Max(0, totalTurns);
+        }
+
+        public string SkillName { get; }
+        public int RemainingTurns { get; }
+        public int TotalTurns { get; }
+        public string DisplayText => $"{SkillName} 재사용 {RemainingTurns}턴";
+    }
+
+    /// <summary>
     /// 현재 구현된 전투 정보만 모아 UI에 전달하는 읽기 전용 표시 모델입니다.
     /// BattleCore의 값을 복사해 보여 주기만 하므로 고정 HP 목록이나 향후 보스 HP Bar를 추가해도
     /// 피해·방어·도발 계산 코드와 UI 코드가 서로 얽히지 않습니다.
@@ -32,14 +51,14 @@ namespace ProjectLimitless.Battle
     public sealed class BattleCombatantStatusViewModel
     {
         public BattleCombatantStatusViewModel(string title, string category, int currentHp, int maxHp,
-            IReadOnlyList<BattleStatusMarker> markers, IReadOnlyList<string> cooldowns)
+            IReadOnlyList<BattleStatusMarker> markers, IReadOnlyList<BattleCooldownStatus> cooldowns)
         {
             Title = title ?? string.Empty;
             Category = category ?? string.Empty;
             CurrentHp = currentHp;
             MaxHp = maxHp;
             Markers = markers ?? Array.Empty<BattleStatusMarker>();
-            Cooldowns = cooldowns ?? Array.Empty<string>();
+            Cooldowns = cooldowns ?? Array.Empty<BattleCooldownStatus>();
         }
 
         public string Title { get; }
@@ -47,7 +66,7 @@ namespace ProjectLimitless.Battle
         public int CurrentHp { get; }
         public int MaxHp { get; }
         public IReadOnlyList<BattleStatusMarker> Markers { get; }
-        public IReadOnlyList<string> Cooldowns { get; }
+        public IReadOnlyList<BattleCooldownStatus> Cooldowns { get; }
 
         public string CompactStatus => string.Join("  ", Markers.Select(marker => marker.DisplayText));
 
@@ -57,7 +76,7 @@ namespace ProjectLimitless.Battle
             {
                 List<string> lines = new List<string> { $"{Title} · {Category}", $"HP {CurrentHp} / {MaxHp}" };
                 lines.AddRange(Markers.Select(marker => marker.DisplayText));
-                lines.AddRange(Cooldowns);
+                lines.AddRange(Cooldowns.Select(cooldown => cooldown.DisplayText));
                 return string.Join("\n", lines);
             }
         }
@@ -79,18 +98,19 @@ namespace ProjectLimitless.Battle
             // Combatant 내부 값을 억지로 바꾸지 않고 표시 모델의 경계에서 정리하므로 전투 계산 규칙에는 영향이 없습니다.
             if (!combatant.IsAlive)
                 return new BattleCombatantStatusViewModel(combatant.DisplayName, category,
-                    combatant.CurrentHp, combatant.MaxHp, Array.Empty<BattleStatusMarker>(), Array.Empty<string>());
+                    combatant.CurrentHp, combatant.MaxHp, Array.Empty<BattleStatusMarker>(), Array.Empty<BattleCooldownStatus>());
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
             if (combatant.IsDefending) markers.Add(new BattleStatusMarker("defend", "방어"));
             if (combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive)
                 markers.Add(new BattleStatusMarker("taunt", "도발", combatant.ForcedTargetActionsRemaining));
 
-            List<string> cooldownLines = new List<string>();
+            List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();
             foreach (BattleSkillDefinition skill in BattleSkillCatalog.GetSkills(job).Where(skill => skill.IsImplemented))
             {
                 int remaining = cooldowns?.GetRemaining(combatant, skill.Id) ?? 0;
-                if (remaining > 0) cooldownLines.Add($"{skill.DisplayName} 재사용 {remaining}턴");
+                if (remaining > 0)
+                    cooldownLines.Add(new BattleCooldownStatus(skill.DisplayName, remaining, skill.CooldownTurns));
             }
 
             return new BattleCombatantStatusViewModel(combatant.DisplayName, category,

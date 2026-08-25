@@ -959,7 +959,10 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
-            summaries.AddRange(statusModel.Cooldowns.Select(cooldown => (BattleUiIconCatalog.Cooldown, cooldown)));
+            // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.
+            // Sprite 파일이 빠진 경우 RefreshStatusBadges가 아이콘만 숨기고 같은 재사용 텍스트를 유지합니다.
+            summaries.AddRange(statusModel.Cooldowns.Select(cooldown =>
+                (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns), cooldown.DisplayText)));
             RefreshStatusBadges(row, summaries);
         }
 
