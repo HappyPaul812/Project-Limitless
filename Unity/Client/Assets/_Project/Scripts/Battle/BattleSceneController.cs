@@ -56,6 +56,10 @@ namespace ProjectLimitless.Battle
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
         private readonly Color gold = new Color(.88f, .7f, .32f, 1f);
         private readonly Color focusGold = new Color(1f, .86f, .48f, 1f);
+        // 1280×720 기준으로 HP HUD 아래와 명령 패널 위에 확보한 상세 팝업 전용 세로 범위입니다.
+        // CanvasScaler가 화면 비율에 맞춰 함께 확대·축소하므로 16:9 해상도에서도 같은 UI 관계를 유지합니다.
+        private const float DetailAreaBottom = 171f;
+        private const float DetailAreaTop = 491f;
         private Formation allies;
         private Formation enemies;
         private TurnOrderQueue turnOrder;
@@ -167,8 +171,7 @@ namespace ProjectLimitless.Battle
             Image battlefield = CreateBattlefield(canvasObject.transform);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
-            CreateHpRoster(canvasObject.transform, font, enemies, 6, new Vector2(.075f, .57f), "적군 HP");
-            CreateHpRoster(canvasObject.transform, font, allies, 3, new Vector2(.925f, .57f), "아군 HP");
+            CreateTopHpHud(canvasObject.transform, font);
             CreateDetailPopup(canvasObject.transform, font);
             CreateCommandPanel(canvasObject.transform, font);
         }
@@ -182,7 +185,9 @@ namespace ProjectLimitless.Battle
         /// <summary>외부 배경 에셋 없이 하늘·원경·지면 층을 만들어 임시 전투 공간을 표현합니다.</summary>
         private Image CreateBattlefield(Transform parent)
         {
-            Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .56f), new Vector2(1180, 410)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
+            // HP 정보는 바로 위의 전용 HUD가 맡습니다. 전장은 HUD 아래와 명령 패널 위에만 배치해
+            // 참가자가 6명으로 늘어나도 HP 항목이 Sprite나 도발 표시 위에 그려지지 않게 합니다.
+            Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .46f), new Vector2(1180, 320)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
             Image sky = MakeImage(battlefield.transform, "NightSky", new Color(.055f, .105f, .16f, 1f)); sky.rectTransform.anchorMin = new Vector2(0, .42f); sky.rectTransform.anchorMax = Vector2.one; sky.rectTransform.offsetMin = Vector2.zero; sky.rectTransform.offsetMax = Vector2.zero;
             Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
@@ -208,7 +213,8 @@ namespace ProjectLimitless.Battle
             float x;
             if (side == BattleSide.Enemies) x = slot.Row == FormationRow.Rear ? .14f : .32f;
             else x = slot.Row == FormationRow.Front ? .68f : .86f;
-            float y = .72f - slot.Column * .22f;
+            // 세로 공간이 줄어든 전장 안에서도 상태 Anchor가 위쪽 HUD와 닿지 않도록 첫 줄을 조금 내립니다.
+            float y = .68f - slot.Column * .21f;
             return new Vector2(x, y);
         }
 
@@ -226,7 +232,8 @@ namespace ProjectLimitless.Battle
             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
             spriteImage.sprite = sprite;
             spriteImage.preserveAspect = true;
-            SetRect(spriteImage.rectTransform, new Vector2(.5f, .49f), placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
+            // Sprite를 HitArea 중앙보다 조금 아래에 두어 위쪽 StatusAnchor와 시각적으로 분리합니다.
+            SetRect(spriteImage.rectTransform, new Vector2(.5f, .45f), placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
             if (placeholder)
             {
                 AddOutline(spriteImage.gameObject, gold, 2);
@@ -234,8 +241,22 @@ namespace ProjectLimitless.Battle
                 initial.color = focusGold;
                 initial.fontStyle = FontStyle.Bold;
             }
-            Text targetArrow = MakeText(hitObject.transform, "TargetArrow", "▼", font, 28, new Vector2(.5f, 1.2f), new Vector2(50, 34)); targetArrow.color = focusGold; targetArrow.fontStyle = FontStyle.Bold; targetArrow.gameObject.SetActive(false);
-            Text turnMarker = MakeText(hitObject.transform, "TurnMarker", "◆ 행동 중", font, 14, new Vector2(.5f, 1.14f), new Vector2(110, 26)); turnMarker.color = gold; turnMarker.fontStyle = FontStyle.Bold; turnMarker.gameObject.SetActive(false);
+            // 상태 Anchor는 전장 안에서 Sprite 위쪽에만 존재하는 별도 공간입니다. HP HUD와 부모가 다르므로
+            // 도발·방어·향후 상태이상 아이콘이 늘어나도 상단 HP 패널 뒤에 가려지지 않습니다.
+            GameObject statusAnchorObject = new GameObject("StatusAnchor", typeof(RectTransform));
+            statusAnchorObject.transform.SetParent(hitObject.transform, false);
+            RectTransform statusAnchor = statusAnchorObject.GetComponent<RectTransform>();
+            SetRect(statusAnchor, new Vector2(.5f, .98f), new Vector2(190, 42));
+            Text targetArrow = MakeText(statusAnchor, "TargetArrow", "▼", font, 25,
+                new Vector2(.08f, .5f), new Vector2(34, 34));
+            targetArrow.color = focusGold;
+            targetArrow.fontStyle = FontStyle.Bold;
+            targetArrow.gameObject.SetActive(false);
+            Text turnMarker = MakeText(statusAnchor, "TurnMarker", "◆ 행동 중", font, 13,
+                new Vector2(.55f, .73f), new Vector2(126, 18));
+            turnMarker.color = gold;
+            turnMarker.fontStyle = FontStyle.Bold;
+            turnMarker.gameObject.SetActive(false);
 
             EventTrigger trigger = hitObject.AddComponent<EventTrigger>();
             AddTrigger(trigger, EventTriggerType.PointerEnter, _ => OnCombatantPointerEnter(combatant));
@@ -244,49 +265,60 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Deselect, _ => OnCombatantFocusLost(combatant));
 
             CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
-            // 전장 위에는 즉시 판단해야 하는 상태만 둡니다. 이름과 HP는 좌우 고정 목록에서 표시해
-            // 캐릭터 Sprite를 가리지 않고, 시선이 흔들리지 않는 위치에서 체력을 비교하게 합니다.
-            view.ImportantStatus = MakeText(hitObject.transform, "ImportantStatus", string.Empty, font, 12,
-                new Vector2(.5f, 1.02f), new Vector2(134, 20));
+            // 행동 문구와 도발/방어 표식을 두 줄로 나누고 화살표는 왼쪽에 둡니다. 이후 상태이상은
+            // 이 Anchor 안에 작은 아이콘 행을 추가할 수 있어 Sprite 전체를 덮는 세로 목록이 되지 않습니다.
+            view.ImportantStatus = MakeText(statusAnchor, "ImportantStatus", string.Empty, font, 12,
+                new Vector2(.55f, .24f), new Vector2(142, 18));
             view.ImportantStatus.color = focusGold;
             view.ImportantStatus.fontStyle = FontStyle.Bold;
             return view;
         }
 
         /// <summary>
-        /// 한 진영의 고정 HP 목록을 만듭니다. 참가자 수만큼만 행을 생성하므로 빈 슬롯은 보이지 않습니다.
-        /// 이 메서드는 Formation을 읽기만 하며, 최대 행 수는 화면 표현 한도입니다. 따라서 향후 보스 전용
-        /// 대형 HP Bar가 필요하면 CombatantHpRow와 갱신 규칙을 재사용한 별도 생성 메서드를 추가할 수 있습니다.
+        /// 타임라인과 전장 사이에 HP만 담당하는 상단 HUD를 만듭니다.
+        /// HP HUD와 전장의 부모를 분리하면 어느 진영의 참가자가 늘어나도 목록이 캐릭터 상태표시를 침범하지 않습니다.
         /// </summary>
-        private void CreateHpRoster(Transform canvas, Font font, Formation formation, int maximumRows,
-            Vector2 anchor, string title)
+        private void CreateTopHpHud(Transform canvas, Font font)
         {
-            List<Combatant> members = formation.Members.Take(maximumRows).ToList();
+            Image hpHud = MakeImage(canvas, "TopHpHud", new Color(.025f, .045f, .075f, .97f));
+            SetRect(hpHud.rectTransform, new Vector2(.5f, .765f), new Vector2(1080, 108));
+            AddOutline(hpHud.gameObject, new Color(.35f, .43f, .56f, 1f), 1);
+
+            CreateHpRoster(hpHud.transform, font, enemies, 6, 3, .72f, .28f, "적군");
+            CreateHpRoster(hpHud.transform, font, allies, 3, 3, .15f, 0f, "아군");
+        }
+
+        /// <summary>
+        /// 한 진영의 참가자를 상단 HUD의 가로 격자에 배치합니다.
+        /// index를 열 수(3)로 나눈 나머지는 가로 위치, 몫은 세로 줄이 됩니다.
+        /// 따라서 적 1~3명은 첫 줄만, 4~6명은 둘째 줄까지 사용하고 아군 1~3명은 항상 한 줄만 사용합니다.
+        /// Formation은 읽기만 하므로 이 표시 순서와 크기는 N대N 전투 판정에 영향을 주지 않습니다.
+        /// </summary>
+        private void CreateHpRoster(Transform hpHud, Font font, Formation formation, int maximumItems,
+            int columnsPerRow, float firstRowY, float rowStep, string title)
+        {
+            List<Combatant> members = formation.Members.Take(maximumItems).ToList();
             if (members.Count == 0) return;
 
-            const float rowHeight = 38f;
-            float panelHeight = 34f + members.Count * rowHeight;
-            Image rosterPanel = MakeImage(canvas, $"{formation.Side}HpRoster", new Color(.025f, .045f, .075f, .94f));
-            SetRect(rosterPanel.rectTransform, anchor, new Vector2(170, panelHeight));
-            AddOutline(rosterPanel.gameObject,
-                formation.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
-            Text rosterTitle = MakeText(rosterPanel.transform, "Title", title, font, 14,
-                new Vector2(.5f, 1f), new Vector2(154, 26));
-            rosterTitle.rectTransform.anchoredPosition = new Vector2(0f, -15f);
+            Text rosterTitle = MakeText(hpHud, $"{formation.Side}Title", title, font, 13,
+                new Vector2(.055f, firstRowY), new Vector2(72, 24));
             rosterTitle.fontStyle = FontStyle.Bold;
 
             for (int index = 0; index < members.Count; index++)
             {
                 Combatant combatant = members[index];
-                Image row = MakeImage(rosterPanel.transform, $"HpRow_{combatant.Id}", new Color(.055f, .08f, .13f, .96f));
-                SetRect(row.rectTransform, new Vector2(.5f, 1f), new Vector2(154, 32));
-                row.rectTransform.anchoredPosition = new Vector2(0f, -34f - index * rowHeight);
+                int column = index % columnsPerRow;
+                int rowIndex = index / columnsPerRow;
+                float x = .22f + column * .29f;
+                float y = firstRowY - rowIndex * rowStep;
+                Image row = MakeImage(hpHud, $"HpRow_{combatant.Id}", new Color(.055f, .08f, .13f, .96f));
+                SetRect(row.rectTransform, new Vector2(x, y), new Vector2(286, 27));
                 Outline border = AddOutline(row.gameObject, new Color(.2f, .27f, .36f, 1f), 1);
                 Text name = MakeText(row.transform, "Name", combatant.DisplayName, font, 12,
-                    new Vector2(.5f, .72f), new Vector2(142, 17));
+                    new Vector2(.29f, .5f), new Vector2(150, 20));
                 name.fontStyle = FontStyle.Bold;
                 Image hpBackground = MakeImage(row.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f));
-                SetRect(hpBackground.rectTransform, new Vector2(.5f, .27f), new Vector2(138, 8));
+                SetRect(hpBackground.rectTransform, new Vector2(.75f, .5f), new Vector2(126, 9));
                 AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
                 Image hpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f));
                 Stretch(hpFill.rectTransform);
@@ -388,7 +420,10 @@ namespace ProjectLimitless.Battle
             PositionDetailPopup(view.ActionRoot);
         }
 
-        /// <summary>화면 좌우 가장자리에서는 캐릭터 반대쪽 안쪽에 놓고 Canvas 경계 안으로 위치를 제한합니다.</summary>
+        /// <summary>
+        /// 화면 좌우 가장자리에서는 캐릭터 반대쪽에 팝업을 놓습니다.
+        /// 세로 위치는 HP HUD 아래와 명령 패널 위로 제한해 상세 정보가 항상 전장 내부에서만 열리게 합니다.
+        /// </summary>
         private void PositionDetailPopup(RectTransform source)
         {
             if (battleCanvasRect == null || detailPopup == null || source == null) return;
@@ -402,7 +437,9 @@ namespace ProjectLimitless.Battle
             float halfHeight = popupRect.rect.height * .5f;
             Rect canvasBounds = battleCanvasRect.rect;
             localPoint.x = Mathf.Clamp(localPoint.x, canvasBounds.xMin + halfWidth + 12f, canvasBounds.xMax - halfWidth - 12f);
-            localPoint.y = Mathf.Clamp(localPoint.y, canvasBounds.yMin + halfHeight + 12f, canvasBounds.yMax - halfHeight - 12f);
+            float safeBottom = canvasBounds.yMin + DetailAreaBottom;
+            float safeTop = canvasBounds.yMin + DetailAreaTop;
+            localPoint.y = Mathf.Clamp(localPoint.y, safeBottom + halfHeight + 10f, safeTop - halfHeight - 10f);
             popupRect.anchoredPosition = localPoint;
         }
         private void CreateCommandPanel(Transform parent, Font font)
