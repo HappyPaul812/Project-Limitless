@@ -27,12 +27,11 @@ namespace ProjectLimitless.Battle
             public Image GroundMarker;
             public Text TargetArrow;
             public Text TurnMarker;
-            public Text ImportantStatus;
             public bool UsesPlaceholderVisual;
         }
 
         /// <summary>
-        /// 화면 가장자리의 고정 HP 목록에서 참가자 한 명을 표현합니다.
+        /// 상단 HP HUD에서 참가자 한 명을 표현합니다.
         /// 전장 위 Sprite와 목록 행을 Combatant 하나로 연결해 두므로, 피해를 받거나 키보드 포커스가
         /// 이동해도 별도의 전투 계산 없이 같은 참가자의 표시만 함께 갱신할 수 있습니다.
         /// </summary>
@@ -42,6 +41,7 @@ namespace ProjectLimitless.Battle
             public Outline Border;
             public Text Name;
             public Image HpFill;
+            public Text Status;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
@@ -70,6 +70,7 @@ namespace ProjectLimitless.Battle
         private Button skillButton;
         private Button defendButton;
         private Button fleeButton;
+        private Button cancelButton;
         private Image skillMenuPanel;
         private bool choosingTarget;
         private bool choosingSkill;
@@ -104,21 +105,7 @@ namespace ProjectLimitless.Battle
         {
             if (Keyboard.current == null || battleEnded || actionPlaying) return;
             if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
-            if (choosingSkill)
-            {
-                CloseSkillMenu();
-                return;
-            }
-            if (choosingTarget)
-            {
-                choosingTarget = false;
-                selectableTargets = Array.Empty<Combatant>();
-                targetSelectedAction = null;
-                SetCommandButtons(true);
-                RefreshCombatantViews(null);
-                messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
-                if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
-            }
+            CancelCurrentSelection();
         }
 
         /// <summary>캐릭터 생성 정보와 전투 전용 3대3 Encounter 데이터를 실제 Formation 참가자로 변환합니다.</summary>
@@ -241,19 +228,24 @@ namespace ProjectLimitless.Battle
                 initial.color = focusGold;
                 initial.fontStyle = FontStyle.Bold;
             }
-            // 상태 Anchor는 전장 안에서 Sprite 위쪽에만 존재하는 별도 공간입니다. HP HUD와 부모가 다르므로
-            // 도발·방어·향후 상태이상 아이콘이 늘어나도 상단 HP 패널 뒤에 가려지지 않습니다.
-            GameObject statusAnchorObject = new GameObject("StatusAnchor", typeof(RectTransform));
-            statusAnchorObject.transform.SetParent(hitObject.transform, false);
-            RectTransform statusAnchor = statusAnchorObject.GetComponent<RectTransform>();
-            SetRect(statusAnchor, new Vector2(.5f, .98f), new Vector2(190, 42));
-            Text targetArrow = MakeText(statusAnchor, "TargetArrow", "▼", font, 25,
-                new Vector2(.08f, .5f), new Vector2(34, 34));
+            // 대상 화살표는 넓은 HitArea나 상태 표시판이 아니라 SpriteImage의 자식입니다.
+            // 부모 Sprite의 가로 중앙(anchor x = 0.5)과 위쪽(anchor y = 1)을 기준으로 삼기 때문에
+            // 전열/후열이나 Sprite 크기가 달라도 선택 대상의 실제 표시 영역 중앙 위에 정확히 따라갑니다.
+            Text targetArrow = MakeText(spriteImage.transform, "TargetArrow", "▼", font, 25,
+                new Vector2(.5f, 1f), new Vector2(34, 30));
+            targetArrow.rectTransform.anchoredPosition = new Vector2(0f, 13f);
             targetArrow.color = focusGold;
             targetArrow.fontStyle = FontStyle.Bold;
             targetArrow.gameObject.SetActive(false);
+
+            // 전장 주변에는 꼭 필요한 행동 중 표시만 남깁니다. 도발·방어·재사용 정보는 상단 HP HUD가
+            // 담당하므로 Sprite를 가리지 않고, 상세 수치는 Hover/포커스 팝업에서 다시 확인할 수 있습니다.
+            GameObject statusAnchorObject = new GameObject("StatusAnchor", typeof(RectTransform));
+            statusAnchorObject.transform.SetParent(hitObject.transform, false);
+            RectTransform statusAnchor = statusAnchorObject.GetComponent<RectTransform>();
+            SetRect(statusAnchor, new Vector2(.5f, .98f), new Vector2(150, 24));
             Text turnMarker = MakeText(statusAnchor, "TurnMarker", "◆ 행동 중", font, 13,
-                new Vector2(.55f, .73f), new Vector2(126, 18));
+                new Vector2(.5f, .5f), new Vector2(126, 18));
             turnMarker.color = gold;
             turnMarker.fontStyle = FontStyle.Bold;
             turnMarker.gameObject.SetActive(false);
@@ -265,12 +257,6 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Deselect, _ => OnCombatantFocusLost(combatant));
 
             CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
-            // 행동 문구와 도발/방어 표식을 두 줄로 나누고 화살표는 왼쪽에 둡니다. 이후 상태이상은
-            // 이 Anchor 안에 작은 아이콘 행을 추가할 수 있어 Sprite 전체를 덮는 세로 목록이 되지 않습니다.
-            view.ImportantStatus = MakeText(statusAnchor, "ImportantStatus", string.Empty, font, 12,
-                new Vector2(.55f, .24f), new Vector2(142, 18));
-            view.ImportantStatus.color = focusGold;
-            view.ImportantStatus.fontStyle = FontStyle.Bold;
             return view;
         }
 
@@ -281,11 +267,11 @@ namespace ProjectLimitless.Battle
         private void CreateTopHpHud(Transform canvas, Font font)
         {
             Image hpHud = MakeImage(canvas, "TopHpHud", new Color(.025f, .045f, .075f, .97f));
-            SetRect(hpHud.rectTransform, new Vector2(.5f, .765f), new Vector2(1080, 108));
+            SetRect(hpHud.rectTransform, new Vector2(.5f, .765f), new Vector2(1080, 116));
             AddOutline(hpHud.gameObject, new Color(.35f, .43f, .56f, 1f), 1);
 
-            CreateHpRoster(hpHud.transform, font, enemies, 6, 3, .72f, .28f, "적군");
-            CreateHpRoster(hpHud.transform, font, allies, 3, 3, .15f, 0f, "아군");
+            CreateHpRoster(hpHud.transform, font, enemies, 6, 3, .74f, .31f, "적군");
+            CreateHpRoster(hpHud.transform, font, allies, 3, 3, .14f, 0f, "아군");
         }
 
         /// <summary>
@@ -312,22 +298,32 @@ namespace ProjectLimitless.Battle
                 float x = .22f + column * .29f;
                 float y = firstRowY - rowIndex * rowStep;
                 Image row = MakeImage(hpHud, $"HpRow_{combatant.Id}", new Color(.055f, .08f, .13f, .96f));
-                SetRect(row.rectTransform, new Vector2(x, y), new Vector2(286, 27));
+                SetRect(row.rectTransform, new Vector2(x, y), new Vector2(286, 32));
                 Outline border = AddOutline(row.gameObject, new Color(.2f, .27f, .36f, 1f), 1);
                 Text name = MakeText(row.transform, "Name", combatant.DisplayName, font, 12,
-                    new Vector2(.29f, .5f), new Vector2(150, 20));
+                    new Vector2(.27f, .68f), new Vector2(140, 17));
                 name.fontStyle = FontStyle.Bold;
                 Image hpBackground = MakeImage(row.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f));
-                SetRect(hpBackground.rectTransform, new Vector2(.75f, .5f), new Vector2(126, 9));
+                SetRect(hpBackground.rectTransform, new Vector2(.74f, .68f), new Vector2(128, 9));
                 AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
                 Image hpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f));
                 Stretch(hpFill.rectTransform);
+                // 상단 HUD는 한눈에 판단할 짧은 요약만 담당합니다. 정확한 HP 숫자와 모든 현재 정보는
+                // 기존 상세 팝업에 남겨 두어 작은 칸이 긴 설명으로 복잡해지지 않게 합니다.
+                Text status = MakeText(row.transform, "Status", string.Empty, font, 10,
+                    new Vector2(.5f, .19f), new Vector2(274, 13));
+                status.color = focusGold;
+                status.fontStyle = FontStyle.Bold;
+                status.resizeTextForBestFit = true;
+                status.resizeTextMinSize = 8;
+                status.resizeTextMaxSize = 10;
                 combatantHpRows.Add(combatant, new CombatantHpRow
                 {
                     Background = row,
                     Border = border,
                     Name = name,
-                    HpFill = hpFill
+                    HpFill = hpFill,
+                    Status = status
                 });
             }
         }
@@ -444,15 +440,20 @@ namespace ProjectLimitless.Battle
         }
         private void CreateCommandPanel(Transform parent, Font font)
         {
-            Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .12f), new Vector2(1100, 148)); AddOutline(commandPanel.gameObject, gold, 2);
-            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 17, new Vector2(.5f, .8f), new Vector2(1030, 30)); messageText.fontStyle = FontStyle.Bold;
-            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.17f, .42f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.39f, .42f), ShowSkillMenu);
-            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.61f, .42f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.83f, .42f), Flee);
-            MakeText(commandPanel.transform, "Help", "마우스/방향키: 이동   캐릭터 Hover/포커스: 상세   Esc: 취소   시간제한 없음", font, 14, new Vector2(.5f, .11f), new Vector2(1030, 22)).color = new Color(.68f, .75f, .84f, 1f);
+            Image commandPanel = MakeImage(parent, "CommandPanel", panel); SetRect(commandPanel.rectTransform, new Vector2(.5f, .105f), new Vector2(1100, 126)); AddOutline(commandPanel.gameObject, gold, 2);
+            messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 16, new Vector2(.5f, .79f), new Vector2(1030, 26)); messageText.fontStyle = FontStyle.Bold;
+            // 기존 205×48 버튼에서 가로·세로를 약 17% 줄였습니다. 글자는 18px을 유지하고
+            // 네 버튼 간 중심 간격을 다시 맞춰 클릭 영역은 충분하면서 패널이 덜 답답하게 보이게 합니다.
+            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "공격", font, new Vector2(.15f, .42f), BeginAttack);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "스킬", font, new Vector2(.35f, .42f), ShowSkillMenu);
+            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "방어", font, new Vector2(.55f, .42f), Defend);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "도망", font, new Vector2(.75f, .42f), Flee);
+            cancelButton = MakeAuxiliaryButton(commandPanel.transform, "CancelButton", "취소", font,
+                new Vector2(.92f, .42f), CancelCurrentSelection);
+            cancelButton.gameObject.SetActive(false);
+            MakeText(commandPanel.transform, "Help", "마우스/방향키: 이동   캐릭터 Hover/포커스: 상세   Esc/취소: 이전   시간제한 없음", font, 13, new Vector2(.5f, .1f), new Vector2(1030, 20)).color = new Color(.68f, .75f, .84f, 1f);
             skillMenuPanel = MakeImage(commandPanel.transform, "SkillMenu", new Color(.045f, .075f, .12f, 1f));
-            SetRect(skillMenuPanel.rectTransform, new Vector2(.5f, .42f), new Vector2(1030, 62));
+            SetRect(skillMenuPanel.rectTransform, new Vector2(.45f, .42f), new Vector2(850, 54));
             AddOutline(skillMenuPanel.gameObject, gold, 1);
             skillMenuPanel.gameObject.SetActive(false);
         }
@@ -471,6 +472,7 @@ namespace ProjectLimitless.Battle
             RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
             {
+                SetCancelButtonVisible(false);
                 messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
                 SetCommandButtons(true);
                 EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
@@ -507,6 +509,7 @@ namespace ProjectLimitless.Battle
             selectableTargets = targets;
             targetSelectedAction = onSelected;
             SetCommandButtons(false);
+            SetCancelButtonVisible(true);
             RefreshCombatantViews(targets);
             messageText.text = prompt;
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(combatantViews[targets[0]].HitArea.gameObject);
@@ -519,6 +522,7 @@ namespace ProjectLimitless.Battle
             choosingTarget = false;
             selectableTargets = Array.Empty<Combatant>();
             targetSelectedAction = null;
+            SetCancelButtonVisible(false);
             selectedAction?.Invoke(target);
         }
 
@@ -527,10 +531,11 @@ namespace ProjectLimitless.Battle
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
             choosingSkill = true;
             SetCommandButtons(false);
+            SetCancelButtonVisible(true);
             RefreshCombatantViews(null);
             RebuildSkillMenu();
             skillMenuPanel.gameObject.SetActive(true);
-            messageText.text = "사용할 스킬을 선택하세요. Esc로 이전 명령 메뉴로 돌아갑니다.";
+            messageText.text = "사용할 스킬을 선택하세요. Esc 또는 취소로 이전 명령 메뉴로 돌아갑니다.";
 
             Button focus = skillMenuButtons.FirstOrDefault(button => button.interactable) ?? skillMenuButtons.LastOrDefault();
             if (EventSystem.current != null && focus != null) EventSystem.current.SetSelectedGameObject(focus.gameObject);
@@ -574,9 +579,41 @@ namespace ProjectLimitless.Battle
         {
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
+            SetCancelButtonVisible(false);
             SetCommandButtons(true);
             messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
+        }
+
+        /// <summary>
+        /// Esc 키와 화면의 취소 버튼이 함께 사용하는 단 하나의 복귀 흐름입니다.
+        /// 스킬 메뉴에서는 기존 CloseSkillMenu를 재사용하고, 대상 선택에서는 후보와 완료 함수를 비운 뒤
+        /// 기본 명령으로 돌아갑니다. 두 입력이 같은 메서드를 호출하므로 마우스와 키보드 결과가 달라지지 않습니다.
+        /// </summary>
+        private void CancelCurrentSelection()
+        {
+            if (battleEnded || actionPlaying) return;
+            if (choosingSkill)
+            {
+                CloseSkillMenu();
+                return;
+            }
+            if (!choosingTarget) return;
+
+            choosingTarget = false;
+            selectableTargets = Array.Empty<Combatant>();
+            targetSelectedAction = null;
+            SetCancelButtonVisible(false);
+            SetCommandButtons(true);
+            RefreshCombatantViews(null);
+            messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
+        }
+
+        /// <summary>취소할 수 있는 하위 UI 단계에서만 보조 버튼을 보여 기본 명령 화면의 복잡도를 줄입니다.</summary>
+        private void SetCancelButtonVisible(bool visible)
+        {
+            if (cancelButton != null) cancelButton.gameObject.SetActive(visible);
         }
 
         private void UseSkill(BattleSkillDefinition skill)
@@ -591,6 +628,7 @@ namespace ProjectLimitless.Battle
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
+            SetCancelButtonVisible(false);
             actionPlaying = true;
             SetCommandButtons(false);
             RefreshCombatantViews(null);
@@ -802,8 +840,7 @@ namespace ProjectLimitless.Battle
                 combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
                 participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
                 BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns);
-                view.ImportantStatus.text = statusModel.CompactStatus;
-                RefreshHpRow(combatant);
+                RefreshHpRow(combatant, statusModel);
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (detailCombatant != null) ShowDetailPopup(detailCombatant);
@@ -813,7 +850,7 @@ namespace ProjectLimitless.Battle
         /// Combatant의 현재 HP를 고정 목록 행에 반영합니다. 전투 로직은 CurrentHp만 변경하고,
         /// 이 UI 메서드가 실제 비율을 0~1 범위로 바꿔 Bar의 가로 길이를 줄입니다.
         /// </summary>
-        private void RefreshHpRow(Combatant combatant)
+        private void RefreshHpRow(Combatant combatant, BattleCombatantStatusViewModel statusModel)
         {
             if (!combatantHpRows.TryGetValue(combatant, out CombatantHpRow row)) return;
             row.Name.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : " [전투불능]");
@@ -826,6 +863,14 @@ namespace ProjectLimitless.Battle
             row.HpFill.color = healthRatio <= .3f
                 ? new Color(.82f, .28f, .24f, 1f)
                 : new Color(.25f, .72f, .46f, 1f);
+
+            // HUD 상태는 현재 구현된 정보만 한 줄로 합칩니다. 행동 중은 UI 흐름의 currentActor에서,
+            // 도발·방어·재사용 턴은 읽기 전용 ViewModel에서 가져오므로 전투 판정값을 바꾸지 않습니다.
+            List<string> summaries = new List<string>();
+            if (combatant == currentActor && combatant.IsAlive) summaries.Add("행동 중");
+            if (!string.IsNullOrEmpty(statusModel.CompactStatus)) summaries.Add(statusModel.CompactStatus);
+            summaries.AddRange(statusModel.Cooldowns);
+            row.Status.text = string.Join("  ·  ", summaries);
         }
 
         private void UpdateTimeline()
@@ -842,12 +887,31 @@ namespace ProjectLimitless.Battle
 
         private Button MakeCommandButton(Transform parent, string name, string label, Font font, Vector2 anchor, Action action)
         {
-            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(205, 48));
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(170, 40));
             Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1f);
             Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.onClick.AddListener(() => action()); button.colors = ColorBlock.defaultColorBlock;
             Outline outline = obj.GetComponent<Outline>(); outline.effectColor = gold; outline.effectDistance = new Vector2(2, -2);
-            Text text = MakeText(obj.transform, "Label", $"[ {label} ]", font, 20, Vector2.one * .5f, new Vector2(195, 42)); text.fontStyle = FontStyle.Bold;
+            Text text = MakeText(obj.transform, "Label", $"[ {label} ]", font, 18, Vector2.one * .5f, new Vector2(162, 34)); text.fontStyle = FontStyle.Bold;
             commandButtons.Add(button); return button;
+        }
+
+        /// <summary>메인 명령과 구분되는 작은 보조 버튼을 만듭니다. 취소는 전투 행동이 아니라 UI 단계만 되돌립니다.</summary>
+        private Button MakeAuxiliaryButton(Transform parent, string name, string label, Font font, Vector2 anchor, Action action)
+        {
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
+            obj.transform.SetParent(parent, false);
+            SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(118, 36));
+            Image image = obj.GetComponent<Image>();
+            image.color = new Color(.22f, .25f, .3f, 1f);
+            Button button = obj.GetComponent<Button>();
+            button.targetGraphic = image;
+            button.onClick.AddListener(() => action());
+            Outline outline = obj.GetComponent<Outline>();
+            outline.effectColor = new Color(.65f, .72f, .8f, 1f);
+            outline.effectDistance = new Vector2(1, -1);
+            Text text = MakeText(obj.transform, "Label", "[ 취소 ]", font, 16, Vector2.one * .5f, new Vector2(108, 30));
+            text.fontStyle = FontStyle.Bold;
+            return button;
         }
 
         private Button MakeSkillMenuButton(Transform parent, string name, string label, Vector2 anchor, Action action)
