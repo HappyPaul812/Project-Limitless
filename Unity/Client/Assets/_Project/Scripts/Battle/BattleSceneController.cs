@@ -41,7 +41,16 @@ namespace ProjectLimitless.Battle
             public Outline Border;
             public Text Name;
             public Image HpFill;
-            public Text Status;
+            public Text FallenStatus;
+            public List<BattleHudStatusBadge> StatusBadges;
+        }
+
+        /// <summary>상단 HP 한 칸 안에서 작은 Sprite와 짧은 설명을 함께 보여 주는 고정 자리입니다.</summary>
+        private sealed class BattleHudStatusBadge
+        {
+            public GameObject Root;
+            public Image Icon;
+            public Text Label;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
@@ -313,22 +322,49 @@ namespace ProjectLimitless.Battle
                 Stretch(hpFill.rectTransform);
                 // 상단 HUD는 한눈에 판단할 짧은 요약만 담당합니다. 정확한 HP 숫자와 모든 현재 정보는
                 // 기존 상세 팝업에 남겨 두어 작은 칸이 긴 설명으로 복잡해지지 않게 합니다.
-                Text status = MakeText(row.transform, "Status", string.Empty, font, 10,
-                    new Vector2(.5f, .19f), new Vector2(274, 13));
-                status.color = focusGold;
-                status.fontStyle = FontStyle.Bold;
-                status.resizeTextForBestFit = true;
-                status.resizeTextMinSize = 8;
-                status.resizeTextMaxSize = 10;
+                Text fallenStatus = MakeText(row.transform, "FallenStatus", string.Empty, font, 10,
+                     new Vector2(.5f, .19f), new Vector2(274, 13));
+                fallenStatus.color = focusGold;
+                fallenStatus.fontStyle = FontStyle.Bold;
+                fallenStatus.gameObject.SetActive(false);
                 combatantHpRows.Add(combatant, new CombatantHpRow
                 {
                     Background = row,
                     Border = border,
                     Name = name,
                     HpFill = hpFill,
-                    Status = status
+                    FallenStatus = fallenStatus,
+                    StatusBadges = CreateStatusBadgeSlots(row.transform, font)
                 });
             }
+        }
+
+        /// <summary>
+        /// 상태는 최대 네 칸을 미리 만들어 두고 필요한 칸만 켭니다. 매 갱신마다 오브젝트를 만들고 지우지 않아
+        /// 화면 깜박임을 피하며, 도발·방어·행동·재사용이 한 줄 안에서 서로 밀어내지 않게 합니다.
+        /// 상단 HUD는 즉시 판단할 요약이고 상세 팝업은 정확한 수치와 설명을 담당하므로 둘의 역할도 유지됩니다.
+        /// </summary>
+        private List<BattleHudStatusBadge> CreateStatusBadgeSlots(Transform parent, Font font)
+        {
+            List<BattleHudStatusBadge> badges = new List<BattleHudStatusBadge>();
+            for (int index = 0; index < 4; index++)
+            {
+                GameObject root = new GameObject($"StatusBadge_{index}", typeof(RectTransform));
+                root.transform.SetParent(parent, false);
+                SetRect(root.GetComponent<RectTransform>(), new Vector2(.145f + index * .235f, .19f), new Vector2(66, 13));
+                Image icon = MakeSpriteIcon(root.transform, "Icon", null, new Vector2(.11f, .5f), new Vector2(12, 12));
+                Text label = MakeText(root.transform, "Label", string.Empty, font, 10,
+                    new Vector2(.62f, .5f), new Vector2(50, 13));
+                label.color = focusGold;
+                label.fontStyle = FontStyle.Bold;
+                label.alignment = TextAnchor.MiddleLeft;
+                label.resizeTextForBestFit = true;
+                label.resizeTextMinSize = 8;
+                label.resizeTextMaxSize = 10;
+                root.SetActive(false);
+                badges.Add(new BattleHudStatusBadge { Root = root, Icon = icon, Label = label });
+            }
+            return badges;
         }
 
         /// <summary>모든 참가자가 공유하는 상세 상태 팝업을 하나만 생성합니다.</summary>
@@ -447,12 +483,12 @@ namespace ProjectLimitless.Battle
             messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 16, new Vector2(.5f, .79f), new Vector2(1030, 26)); messageText.fontStyle = FontStyle.Bold;
             // 기존 205×48 버튼에서 가로·세로를 약 17% 줄였습니다. 글자는 18px을 유지하고
             // 네 버튼 간 중심 간격을 다시 맞춰 클릭 영역은 충분하면서 패널이 덜 답답하게 보이게 합니다.
-            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", "▲", "공격", font, new Vector2(.15f, .42f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", "✦", "스킬", font, new Vector2(.35f, .42f), ShowSkillMenu);
-            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", "■", "방어", font, new Vector2(.55f, .42f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", "→", "도망", font, new Vector2(.75f, .42f), Flee);
+            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", BattleUiIconCatalog.Attack, "공격", font, new Vector2(.15f, .42f), BeginAttack);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", BattleUiIconCatalog.Skill, "스킬", font, new Vector2(.35f, .42f), ShowSkillMenu);
+            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", BattleUiIconCatalog.Defend, "방어", font, new Vector2(.55f, .42f), Defend);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, "도망", font, new Vector2(.75f, .42f), Flee);
             cancelButton = MakeAuxiliaryButton(commandPanel.transform, "CancelButton", "취소", font,
-                new Vector2(.92f, .42f), "×", CancelCurrentSelection);
+                new Vector2(.92f, .42f), BattleUiIconCatalog.Cancel, CancelCurrentSelection);
             cancelButton.gameObject.SetActive(false);
             MakeText(commandPanel.transform, "Help", "마우스/방향키: 이동   캐릭터 Hover/포커스: 상세   Esc/취소: 이전   시간제한 없음", font, 13, new Vector2(.5f, .1f), new Vector2(1030, 20)).color = new Color(.68f, .75f, .84f, 1f);
             skillMenuPanel = MakeImage(commandPanel.transform, "SkillMenu", new Color(.045f, .075f, .12f, 1f));
@@ -903,26 +939,59 @@ namespace ProjectLimitless.Battle
 
             if (!combatant.IsAlive)
             {
-                // 전투불능은 하나의 결과 상태이므로 도발·방어·행동 중·재사용 아이콘을 모두 대체합니다.
-                row.Status.text = "전투불능";
-                row.Status.color = new Color(.62f, .65f, .7f, 1f);
+                // 전투불능은 하나의 결과 상태이므로 도발·방어·행동 중·재사용 아이콘을 모두 끕니다.
+                // 실제 Combatant 상태와 화면이 어긋나지 않도록 별도의 회색 결과 텍스트만 남깁니다.
+                HideStatusBadges(row);
+                row.FallenStatus.text = "전투불능";
+                row.FallenStatus.color = new Color(.62f, .65f, .7f, 1f);
+                row.FallenStatus.gameObject.SetActive(true);
                 return;
             }
 
-            // HUD 상태는 현재 구현된 정보만 한 줄로 합칩니다. 행동 중은 UI 흐름의 currentActor에서,
-            // 도발·방어·재사용 턴은 읽기 전용 ViewModel에서 가져오므로 전투 판정값을 바꾸지 않습니다.
-            List<string> summaries = new List<string>();
-            if (combatant == currentActor) summaries.Add("▶ 행동 중");
+            row.FallenStatus.gameObject.SetActive(false);
+            // HUD는 전투 값을 변경하지 않고 읽기 전용 ViewModel의 결과에 Sprite와 짧은 글자를 붙입니다.
+            // 아이콘만으로 뜻을 전달하지 않도록 한글을 함께 두며, 상세 팝업은 기존 텍스트 중심 설명을 유지합니다.
+            List<(string IconId, string Label)> summaries = new List<(string, string)>();
+            if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, "행동 중"));
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {
-                // 작은 단색 기호는 현재 폰트로 그려져 별도 아이콘 자산이나 라이선스가 필요 없습니다.
-                // 상세 팝업은 기존 텍스트를 유지하므로 기호의 뜻을 색상이나 모양만으로 전달하지 않습니다.
-                string icon = marker.Id == "defend" ? "■" : marker.Id == "taunt" ? "!" : "·";
-                summaries.Add($"{icon} {marker.DisplayText}");
+                string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
+                    : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt : null;
+                summaries.Add((iconId, marker.DisplayText));
             }
-            summaries.AddRange(statusModel.Cooldowns.Select(cooldown => $"↻ {cooldown}"));
-            row.Status.color = focusGold;
-            row.Status.text = string.Join("  ·  ", summaries);
+            summaries.AddRange(statusModel.Cooldowns.Select(cooldown => (BattleUiIconCatalog.Cooldown, cooldown)));
+            RefreshStatusBadges(row, summaries);
+        }
+
+        /// <summary>
+        /// 상태 자료와 미리 만든 배지 자리를 순서대로 연결합니다. Sprite가 없으면 해당 Image만 숨기고
+        /// 텍스트 폭을 넓혀 표시하므로, 외부 에셋 누락이 전투 입력이나 상태 판정에 영향을 주지 않습니다.
+        /// </summary>
+        private void RefreshStatusBadges(CombatantHpRow row, IReadOnlyList<(string IconId, string Label)> summaries)
+        {
+            for (int index = 0; index < row.StatusBadges.Count; index++)
+            {
+                BattleHudStatusBadge badge = row.StatusBadges[index];
+                if (index >= summaries.Count)
+                {
+                    badge.Root.SetActive(false);
+                    continue;
+                }
+
+                (string iconId, string label) = summaries[index];
+                Sprite sprite = BattleUiIconCatalog.Load(iconId);
+                badge.Icon.sprite = sprite;
+                badge.Icon.gameObject.SetActive(sprite != null);
+                badge.Label.text = label;
+                SetRect(badge.Label.rectTransform, sprite == null ? new Vector2(.5f, .5f) : new Vector2(.62f, .5f),
+                    sprite == null ? new Vector2(64, 13) : new Vector2(50, 13));
+                badge.Root.SetActive(true);
+            }
+        }
+
+        private static void HideStatusBadges(CombatantHpRow row)
+        {
+            foreach (BattleHudStatusBadge badge in row.StatusBadges) badge.Root.SetActive(false);
         }
 
         private void UpdateTimeline()
@@ -937,23 +1006,21 @@ namespace ProjectLimitless.Battle
             foreach (Selectable selectable in commandButtons) selectable.interactable = enabled;
         }
 
-        private Button MakeCommandButton(Transform parent, string name, string icon, string label, Font font, Vector2 anchor, Action action)
+        private Button MakeCommandButton(Transform parent, string name, string iconId, string label, Font font, Vector2 anchor, Action action)
         {
             GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(170, 40));
             Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1f);
             Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.onClick.AddListener(() => action()); button.colors = ColorBlock.defaultColorBlock;
             Outline outline = obj.GetComponent<Outline>(); outline.effectColor = gold; outline.effectDistance = new Vector2(2, -2);
-            // 아이콘은 텍스트보다 작고 왼쪽, 명령명은 중앙 오른쪽에 둡니다. 버튼 크기는 그대로 유지해
-            // 장식 때문에 클릭 영역이 다시 커지지 않으며, 텍스트를 함께 보여 아이콘만으로 의미를 추측하게 하지 않습니다.
-            Text iconText = MakeText(obj.transform, "Icon", icon, font, 14, new Vector2(.22f, .5f), new Vector2(30, 28));
-            iconText.color = focusGold;
-            iconText.fontStyle = FontStyle.Bold;
+            // 실제 Kenney Sprite를 텍스트보다 작은 18px 보조 요소로 왼쪽에 둡니다. preserveAspect를 켜서
+            // 검이나 방패의 원본 비율을 유지하고, 기존 170×40 클릭 영역은 키우지 않습니다.
+            MakeSpriteIcon(obj.transform, "Icon", BattleUiIconCatalog.Load(iconId), new Vector2(.22f, .5f), new Vector2(18, 18));
             Text text = MakeText(obj.transform, "Label", label, font, 18, new Vector2(.62f, .5f), new Vector2(112, 34)); text.fontStyle = FontStyle.Bold;
             commandButtons.Add(button); return button;
         }
 
         /// <summary>메인 명령과 구분되는 작은 보조 버튼을 만듭니다. 취소는 전투 행동이 아니라 UI 단계만 되돌립니다.</summary>
-        private Button MakeAuxiliaryButton(Transform parent, string name, string label, Font font, Vector2 anchor, string icon, Action action)
+        private Button MakeAuxiliaryButton(Transform parent, string name, string label, Font font, Vector2 anchor, string iconId, Action action)
         {
             GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             obj.transform.SetParent(parent, false);
@@ -966,11 +1033,28 @@ namespace ProjectLimitless.Battle
             Outline outline = obj.GetComponent<Outline>();
             outline.effectColor = new Color(.65f, .72f, .8f, 1f);
             outline.effectDistance = new Vector2(1, -1);
-            Text iconText = MakeText(obj.transform, "Icon", icon, font, 13, new Vector2(.2f, .5f), new Vector2(24, 26));
-            iconText.color = focusGold;
+            MakeSpriteIcon(obj.transform, "Icon", BattleUiIconCatalog.Load(iconId), new Vector2(.2f, .5f), new Vector2(16, 16));
             Text text = MakeText(obj.transform, "Label", label, font, 16, new Vector2(.62f, .5f), new Vector2(76, 30));
             text.fontStyle = FontStyle.Bold;
             return button;
+        }
+
+        /// <summary>
+        /// Unity UI Image에 외부 Sprite를 연결하는 공통 도우미입니다. Sprite가 없으면 빈 사각형을 보여 주지
+        /// 않도록 Image만 숨기며, 한글 Label은 별도 오브젝트라 그대로 남습니다.
+        /// </summary>
+        private Image MakeSpriteIcon(Transform parent, string name, Sprite sprite, Vector2 anchor, Vector2 size)
+        {
+            GameObject obj = new GameObject(name, typeof(Image));
+            obj.transform.SetParent(parent, false);
+            Image image = obj.GetComponent<Image>();
+            image.sprite = sprite;
+            image.color = focusGold;
+            image.preserveAspect = true;
+            image.raycastTarget = false;
+            SetRect(image.rectTransform, anchor, size);
+            image.gameObject.SetActive(sprite != null);
+            return image;
         }
 
         private Button MakeSkillMenuButton(Transform parent, string name, string label, Vector2 anchor, Action action)
