@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-25
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `f373c76` (`Feature: 사수 정조준 구현`)
+- 마지막 기능 관련 commit: `0aef654` (`Feature: 직업 스킬 버튼 아이콘 연결`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `7223089` (`Refactor: 전투 상태 아이콘 단계 통일`)
@@ -87,6 +87,7 @@
 - Kenney Game Icons·Board Game Icons CC0 실제 Sprite와 한글을 함께 사용하는 공격·스킬·방어·도망·취소 버튼 및 HP HUD 상태 배지
 - 역할 ID와 Resources 경로를 한곳에서 연결하는 `BattleUiIconCatalog`, Sprite 누락 시 문자 기호 없이 한글만 남기는 fallback
 - HP HUD 도발은 `pawn_right`, 3턴 재사용은 표시값 3=`hourglass_top`·2=`hourglass`·1=`hourglass_bottom`으로 구분
+- 직업 스킬 데이터의 `IconId`를 통해 수호자 도발=`pawn_left`, 치유의 빛=`suit_hearts`, 정조준=`target` Sprite를 스킬 이름 왼쪽에 표시
 - 외부 신규 에셋 없이 남색·금색 하늘·원경·지면 층의 임시 전투 배경 구성
 - 플레이어·NPC·몬스터가 공통 사용 가능한 `BattleActionPresenter`와 전투 계산 분리
 - 근거리 기본 공격의 짧은 전진·타격 대기·원위치 복귀, 피격 좌우 흔들림·점멸, 떠오르는 피해 숫자
@@ -258,12 +259,13 @@
 64. 기본 공격력 12 기준 정조준 raw 피해가 20이며 방어 중 대상에는 기존 50% 감소가 적용되고 방어 무시·치명타·상태이상이 없는지 확인한다.
 65. 사용 직후 HUD에 재사용 2턴/hourglass_top, 다음 사수 행동에 1턴/hourglass_bottom, 그다음 사용 가능 및 표시 제거인지 확인한다.
 66. 정조준 대상 선택 중 Esc/취소는 스킬 메뉴, 스킬 메뉴 Esc/취소는 기본 명령으로 돌아가며 연출 중 입력이 잠기는지 확인한다.
+67. 수호자·치유사·사수 스킬 메뉴에서 각각 pawn_left·suit_hearts·target 아이콘과 한글 스킬명이 함께 보이고, 적 도발 HUD에는 기존 pawn_right가 유지되는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 사수 정조준의 후열 우선 대상, 160% 올림 피해, golden_arrow 도착 적용, 2→1 쿨타임과 단계별 취소를 우선 검증한다. 이어 치유의 빛·도발·기본 공격·방어·Projectile·승패·필드 복귀의 3대3 회귀를 확인하고 다음 직업 스킬을 선정한다.
+Unity 16:9 Play Mode에서 수호자 도발·치유의 빛·정조준 스킬 버튼의 실제 Sprite와 이름 정렬을 우선 확인한다. 이어 적 도발 상태의 pawn_right 유지와 세 스킬의 피해·회복·쿨타임·대상 판정 회귀를 확인하고 다음 직업 스킬을 선정한다.
 
 ## 갱신 규칙
 
