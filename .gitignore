@@ -9,6 +9,10 @@
 MemoryCaptures/
 Recordings/
 
+# Codex가 Unity 전체 C# 참조로 임시 컴파일할 때만 만드는 출력 폴더입니다.
+# 게임 Asset이나 빌드 입력이 아니며, 검증 명령이 필요할 때 폴더를 다시 생성합니다.
+Unity/Client/.codex-ui-compile/
+
 # Unity generated solution and project files
 *.csproj
 *.sln
