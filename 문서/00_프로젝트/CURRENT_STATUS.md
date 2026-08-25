@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-25
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `b8bc2dc` (`Feature: 치유사 치유의 빛 구현`)
+- 마지막 기능 관련 commit: `f373c76` (`Feature: 사수 정조준 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `7223089` (`Refactor: 전투 상태 아이콘 단계 통일`)
@@ -100,6 +100,8 @@
 - 치유사 치유의 빛: 자신 포함 살아 있는 단일 아군, 최대 HP 35% 올림 회복, 최대 HP·전투불능 안전 처리
 - PVFX Radiant Heal 96×96 14프레임을 대상 위치에서 재생하고 peak 7프레임에 회복·`+회복량`·HUD 갱신
 - 치유 대상 선택 중 Esc/취소는 스킬 메뉴로, 스킬 메뉴 취소는 기본 명령으로 돌아가는 단계별 입력 흐름
+- 사수 정조준: 기존 원거리 TargetResolver 후열 우선, 기본 공격력 160% 정수 올림, 사수 행동 기준 2턴 쿨타임
+- `정조준!` 강조와 기존 golden_arrow 0.42초 이동, 도착 순간 피해·HP HUD·피격 연출 적용
 - JobDefinition 프리뷰를 사용하는 재사용 가능한 전투 스킬 카탈로그·실행기·참가자별 쿨타임·상태효과 런타임
 - 실제 스킬 메뉴와 Esc 복귀, 미구현 스킬 비활성 표시, 수호자 도발 제자리 강조 연출
 - 수호자 도발의 적 전체 적용, 적별 다음 2회 행동 소모, 수호자 행동 기준 3턴 쿨타임과 적 HUD 상태 표시
@@ -130,7 +132,7 @@
 
 ## 미구현
 
-- 수호자 도발·치유사 치유의 빛 외 나머지 직업별 스킬 효과와 길 패시브
+- 수호자 도발·치유사 치유의 빛·사수 정조준 외 나머지 직업별 스킬 효과와 길 패시브
 - NPC 동료 정식 CompanionDefinition·파티 편성·최종 Sprite
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
@@ -183,6 +185,7 @@
 - Kenney 실제 Sprite 카탈로그·명령 버튼·HP HUD 상태 배지 변경을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 유지되며 `BattleCore`·Combatant 계산·Formation·TargetResolver·TurnOrderQueue·Projectile/VFX·취소 흐름은 변경하지 않았다. 실제 import와 화면 정렬은 Play Mode 확인이 필요하다.
 - 도발 pawn_right와 재사용 3단계 모래시계 표시를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. `BattleSkillCooldowns`의 시작·감소 계산은 변경하지 않고 ViewModel이 남은 턴과 총 턴을 UI에 전달하며, 전투불능 목록 제거와 텍스트 fallback을 유지한다.
 - 치유의 빛 회복 API·아군 대상 선택·Radiant Heal Presenter 확장을 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 원본 grid sheet SHA-256 일치와 96×96 프레임 14개를 확인했으며, `TakeDamage`·방어 50%·TargetResolver·Formation·TurnOrderQueue·도발·기존 Projectile/VFX는 변경하지 않았다. 실제 회복 시점과 화면 위치는 Play Mode 확인이 필요하다.
+- 사수 정조준 데이터·원거리 대상 연결·golden_arrow 도착 피해를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 정수 퍼센트식은 Attack 12→20, 15→24, 20→32를 확인했으며 TargetResolver·Formation·BattleCore·Presenter·기본 공격과 기존 Projectile 에셋은 변경하지 않았다. 실제 후열/전열 선택과 2→1→사용 가능 흐름은 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -249,12 +252,18 @@
 58. 최대 HP 아군 선택 시 `이미 HP가 가득 찼습니다` 안내 후 스킬 메뉴로 돌아가며 행동이 소비되지 않는지 확인한다.
 59. 전투불능 아군과 적은 대상이 아니며, 대상 선택 중 Esc/취소는 스킬 메뉴로, 스킬 메뉴 Esc/취소는 기본 명령으로 돌아가는지 확인한다.
 60. Radiant Heal이 대상 위치에서 14프레임으로 재생되고 peak 뒤 연출 종료 시 다음 턴으로 진행하며, 연출 중 중복 입력과 Console 오류가 없는지 확인한다.
+61. 플레이어 사수 차례에 스킬→정조준이 활성화되고 `강한 원거리 · 160% · 2턴` 안내가 보이는지 확인한다.
+62. 후열 슬라임이 살아 있으면 후열만 선택되고, 후열 전멸 뒤 전열만 선택되며 전투불능 적은 후보에서 빠지는지 확인한다.
+63. 정조준 선택 후 즉시 HP가 줄지 않고 `정조준!`→golden_arrow 0.42초 이동→도착 순간에만 피해·HP Bar·상세 HP·피해 숫자·피격 연출이 갱신되는지 확인한다.
+64. 기본 공격력 12 기준 정조준 raw 피해가 20이며 방어 중 대상에는 기존 50% 감소가 적용되고 방어 무시·치명타·상태이상이 없는지 확인한다.
+65. 사용 직후 HUD에 재사용 2턴/hourglass_top, 다음 사수 행동에 1턴/hourglass_bottom, 그다음 사용 가능 및 표시 제거인지 확인한다.
+66. 정조준 대상 선택 중 Esc/취소는 스킬 메뉴, 스킬 메뉴 Esc/취소는 기본 명령으로 돌아가며 연출 중 입력이 잠기는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 미엘·플레이어 치유사의 치유의 빛 대상 제한, 35% 회복, 최대 HP 무소비 복귀, Radiant Heal peak 동기화와 단계별 취소를 우선 검증한다. 이어 도발·공격·방어·Projectile·승패·필드 복귀의 3대3 회귀를 확인하고 다음 직업 스킬을 선정한다.
+Unity 16:9 Play Mode에서 사수 정조준의 후열 우선 대상, 160% 올림 피해, golden_arrow 도착 적용, 2→1 쿨타임과 단계별 취소를 우선 검증한다. 이어 치유의 빛·도발·기본 공격·방어·Projectile·승패·필드 복귀의 3대3 회귀를 확인하고 다음 직업 스킬을 선정한다.
 
 ## 갱신 규칙
 
