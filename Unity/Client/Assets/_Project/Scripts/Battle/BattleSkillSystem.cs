@@ -13,7 +13,8 @@ namespace ProjectLimitless.Battle
     {
         public BattleSkillDefinition(string id, string displayName, string description, bool implemented,
             BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
-            int attackDamagePercent = 0, string iconId = null)
+            int attackDamagePercent = 0, string iconId = null, string targetDescription = null,
+            string effectDescription = null, string typeDescription = null, string durationDescription = null)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -25,6 +26,10 @@ namespace ProjectLimitless.Battle
             MaxHpHealRatio = Math.Max(0f, maxHpHealRatio);
             AttackDamagePercent = Math.Max(0, attackDamagePercent);
             IconId = iconId ?? string.Empty;
+            TargetDescription = targetDescription ?? string.Empty;
+            EffectDescription = effectDescription ?? string.Empty;
+            TypeDescription = typeDescription ?? string.Empty;
+            DurationDescription = durationDescription ?? string.Empty;
         }
 
         public string Id { get; }
@@ -44,6 +49,15 @@ namespace ProjectLimitless.Battle
         /// 나중에 그림을 교체할 때는 스킬 데이터나 아이콘 카탈로그만 바꾸면 됩니다.
         /// </summary>
         public string IconId { get; }
+        /// <summary>
+        /// 아래 문자열은 버튼이 아니라 설명 팝업에서 사용하는 표시 데이터입니다. 전투 화면은 스킬 이름을
+        /// 비교하지 않고 이 값을 순서대로 보여 주므로, 향후 난도나 파이어 볼도 같은 팝업을 재사용할 수 있습니다.
+        /// 실제 대상 판정과 수치 계산은 기존 Executor와 TargetResolver가 계속 담당합니다.
+        /// </summary>
+        public string TargetDescription { get; }
+        public string EffectDescription { get; }
+        public string TypeDescription { get; }
+        public string DurationDescription { get; }
     }
 
     /// <summary>
@@ -63,21 +77,33 @@ namespace ProjectLimitless.Battle
             return job.StartingSkills.Select(preview =>
             {
                 if (preview.SkillId == GuardianTauntId)
-                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
-                        BattleSkillEffectType.Taunt, 3, 2, iconId: BattleUiIconCatalog.GuardianTauntSkill);
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "적 전체를 도발합니다.\n도발에 걸린 각 적의 다음 2회 행동 동안 단일 적대 행동의 대상이 수호자로 강제됩니다.\n광역 공격에는 적용되지 않습니다.",
+                        true, BattleSkillEffectType.Taunt, 3, 2,
+                        iconId: BattleUiIconCatalog.GuardianTauntSkill,
+                        targetDescription: "대상: 적 전체",
+                        effectDescription: "효과: 단일 적대 행동의 대상 강제",
+                        durationDescription: "지속: 각 적의 다음 2회 행동");
                 if (preview.SkillId == HealerHealingLightId)
                     // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
-                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "살아 있는 아군 1명의 HP를 대상 최대 HP의 35%만큼 회복합니다.\n전투불능 상태의 아군은 대상으로 선택할 수 없습니다.", true,
                         BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f,
-                        iconId: BattleUiIconCatalog.HealerHealingLightSkill);
+                        iconId: BattleUiIconCatalog.HealerHealingLightSkill,
+                        targetDescription: "대상: 살아 있는 아군 1명",
+                        effectDescription: "회복량: 최대 HP의 35%");
                 if (preview.SkillId == SharpshooterAimId)
                     // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
                     // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
                     // 시작에 1, 그다음 시작에 0이 되므로 HUD와 실행기가 같은 2턴 흐름을 공유합니다.
-                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "정확히 조준해 강력한 화살을 발사합니다.\n후열 적이 살아 있으면 후열만 공격할 수 있고, 후열이 전멸하면 전열을 공격할 수 있습니다.", true,
                         BattleSkillEffectType.SingleRangedPhysicalAttack, 2, 0, 0f, 160,
-                        BattleUiIconCatalog.SharpshooterAimSkill);
+                        BattleUiIconCatalog.SharpshooterAimSkill,
+                        targetDescription: "대상: 적 1명",
+                        effectDescription: "피해: 기본 공격의 160%",
+                        typeDescription: "유형: 원거리 물리");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();

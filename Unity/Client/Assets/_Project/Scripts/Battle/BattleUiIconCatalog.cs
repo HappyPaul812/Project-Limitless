@@ -35,7 +35,9 @@ namespace ProjectLimitless.Battle
             { Skill, "KenneyBattleIcons/star" },
             { Defend, "KenneyBattleIcons/shield" },
             { Flee, "KenneyBattleIcons/exitRight" },
-            { Cancel, "KenneyBattleIcons/cross" },
+            // 취소는 X보다 "한 단계 뒤로 이동" 의미가 분명한 왼쪽 화살표를 사용합니다.
+            // cross.png는 삭제하지 않고 향후 투사 '난도' 스킬 아이콘 후보로만 남겨 둡니다.
+            { Cancel, "KenneyBattleIcons/arrowLeft" },
             { Acting, "KenneyBattleIcons/arrowRight" },
             // 도발은 조준점보다 "한 참가자가 특정 방향을 향하게 됨"을 보여 주는 pawn_right를 사용합니다.
             // 실제 강제 대상 판정은 Combatant가 담당하고, 이 경로는 그 결과를 읽어 보여 주기만 합니다.

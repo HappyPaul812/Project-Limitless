@@ -96,9 +96,14 @@ namespace ProjectLimitless.Battle
         private RectTransform battleCanvasRect;
         private Image detailPopup;
         private Text detailPopupText;
+        private Image skillDetailPopup;
+        private Image skillDetailIcon;
+        private Text skillDetailText;
         private Combatant hoveredCombatant;
         private Combatant focusedCombatant;
         private Combatant detailCombatant;
+        private BattleSkillDefinition hoveredSkill;
+        private BattleSkillDefinition focusedSkill;
 
         private IEnumerable<Combatant> AllCombatants => allies.Members.Concat(enemies.Members);
 
@@ -173,6 +178,7 @@ namespace ProjectLimitless.Battle
             CreateTopHpHud(canvasObject.transform, font);
             CreateDetailPopup(canvasObject.transform, font);
             CreateCommandPanel(canvasObject.transform, font);
+            CreateSkillDetailPopup(canvasObject.transform, font);
         }
 
         private void CreateTimeline(Transform parent, Font font)
@@ -500,6 +506,25 @@ namespace ProjectLimitless.Battle
             skillMenuPanel.gameObject.SetActive(false);
         }
 
+        /// <summary>
+        /// 스킬 버튼은 빠른 선택을 위해 이름만 보여 주고, 긴 설명은 이 공용 팝업 한 개가 담당합니다.
+        /// 전장 중앙의 안전 영역에 고정해 하단 명령 패널과 상단 HP HUD를 가리지 않으며, 여러 스킬을
+        /// 오갈 때 오브젝트를 새로 만들지 않고 내용만 교체합니다.
+        /// </summary>
+        private void CreateSkillDetailPopup(Transform canvas, Font font)
+        {
+            skillDetailPopup = MakeImage(canvas, "SkillDetailPopup", new Color(.035f, .06f, .1f, .98f));
+            SetRect(skillDetailPopup.rectTransform, new Vector2(.5f, .37f), new Vector2(430, 220));
+            AddOutline(skillDetailPopup.gameObject, gold, 2);
+            skillDetailIcon = MakeSpriteIcon(skillDetailPopup.transform, "SkillIcon", null,
+                new Vector2(.08f, .86f), new Vector2(30, 30));
+            skillDetailText = MakeText(skillDetailPopup.transform, "SkillDetailText", string.Empty, font, 14,
+                new Vector2(.56f, .48f), new Vector2(360, 194));
+            skillDetailText.alignment = TextAnchor.UpperLeft;
+            skillDetailText.lineSpacing = 1.08f;
+            skillDetailPopup.gameObject.SetActive(false);
+        }
+
         private void AdvanceTurn()
         {
             if (battleEnded) return;
@@ -588,6 +613,7 @@ namespace ProjectLimitless.Battle
 
         private void RebuildSkillMenu()
         {
+            HideSkillDetailPopup();
             foreach (Transform child in skillMenuPanel.transform) Destroy(child.gameObject);
             skillMenuButtons.Clear();
 
@@ -598,14 +624,21 @@ namespace ProjectLimitless.Battle
             {
                 BattleSkillDefinition skill = skills[index];
                 int remaining = skillCooldowns.GetRemaining(currentActor, skill.Id);
-                string label = !skill.IsImplemented ? $"{skill.DisplayName}\n[미구현]"
-                    : remaining > 0 ? $"{skill.DisplayName}\n[재사용 {remaining}턴]"
-                    : skill.EffectType == BattleSkillEffectType.SingleRangedPhysicalAttack
-                        ? $"{skill.DisplayName}\n강한 원거리 · 160% · {skill.CooldownTurns}턴" : skill.DisplayName;
+                // 버튼은 빠르게 훑는 선택 목록이므로 이름만 기본 표시합니다. 재사용 중일 때만 현재 조작
+                // 가능 여부를 즉시 알 수 있도록 짧은 남은 턴을 붙이고, 나머지 설명은 공용 팝업으로 옮깁니다.
+                string label = remaining > 0 ? $"{skill.DisplayName}\n재사용 {remaining}턴" : skill.DisplayName;
                 BattleSkillDefinition selectedSkill = skill;
                 Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label, skill.IconId,
-                    new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill));
-                button.interactable = skill.IsImplemented && remaining == 0;
+                    new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill), selectedSkill);
+                bool canExecute = skill.IsImplemented && remaining == 0;
+                // Unity의 interactable=false 버튼은 키보드 포커스도 받을 수 없어 설명을 읽을 수 없습니다.
+                // 버튼 자체는 포커스 가능하게 두되 어둡게 표시하고, 실행 시 기존 CanUse가 미구현·쿨타임을
+                // 차단합니다. 즉 접근 가능한 설명과 실제 사용 가능 여부를 서로 분리한 것입니다.
+                if (!canExecute)
+                {
+                    button.targetGraphic.color = new Color(.055f, .1f, .15f, 1f);
+                    button.GetComponent<Outline>().effectColor = new Color(.28f, .3f, .34f, 1f);
+                }
                 skillMenuButtons.Add(button);
             }
 
@@ -626,6 +659,7 @@ namespace ProjectLimitless.Battle
         {
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
+            HideSkillDetailPopup();
             SetCancelButtonVisible(false);
             SetCommandButtons(true);
             messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
@@ -672,6 +706,73 @@ namespace ProjectLimitless.Battle
             if (cancelButton != null) cancelButton.gameObject.SetActive(visible);
         }
 
+        private void OnSkillPointerEnter(BattleSkillDefinition skill)
+        {
+            hoveredSkill = skill;
+            RefreshSkillDetailPopupPreference();
+        }
+
+        private void OnSkillPointerExit(BattleSkillDefinition skill)
+        {
+            if (hoveredSkill == skill) hoveredSkill = null;
+            RefreshSkillDetailPopupPreference();
+        }
+
+        private void OnSkillFocused(BattleSkillDefinition skill)
+        {
+            focusedSkill = skill;
+            RefreshSkillDetailPopupPreference();
+        }
+
+        private void OnSkillFocusLost(BattleSkillDefinition skill)
+        {
+            if (focusedSkill == skill) focusedSkill = null;
+            RefreshSkillDetailPopupPreference();
+        }
+
+        /// <summary>
+        /// 키보드 포커스를 마우스 Hover보다 우선합니다. 두 입력이 같은 표시 메서드를 사용하므로
+        /// 마우스를 쓸 수 없는 사용자도 방향키로 동일한 설명을 읽을 수 있고, 팝업은 항상 하나만 열립니다.
+        /// </summary>
+        private void RefreshSkillDetailPopupPreference()
+        {
+            BattleSkillDefinition preferred = focusedSkill ?? hoveredSkill;
+            if (!choosingSkill || preferred == null)
+            {
+                if (skillDetailPopup != null) skillDetailPopup.gameObject.SetActive(false);
+                return;
+            }
+
+            ShowSkillDetailPopup(preferred);
+        }
+
+        private void ShowSkillDetailPopup(BattleSkillDefinition skill)
+        {
+            if (skillDetailPopup == null || skillDetailText == null || skill == null) return;
+
+            List<string> lines = new List<string> { skill.DisplayName, skill.Description };
+            if (!string.IsNullOrWhiteSpace(skill.TypeDescription)) lines.Add(skill.TypeDescription);
+            if (!string.IsNullOrWhiteSpace(skill.TargetDescription)) lines.Add(skill.TargetDescription);
+            if (!string.IsNullOrWhiteSpace(skill.EffectDescription)) lines.Add(skill.EffectDescription);
+            if (!string.IsNullOrWhiteSpace(skill.DurationDescription)) lines.Add(skill.DurationDescription);
+            lines.Add(skill.CooldownTurns > 0 ? $"재사용: {skill.CooldownTurns}턴" : "재사용: 없음");
+            lines.Add(skill.IsImplemented ? "구현: 사용 가능" : "구현: 미구현");
+
+            skillDetailText.text = string.Join("\n", lines.Where(line => !string.IsNullOrWhiteSpace(line)));
+            Sprite sprite = BattleUiIconCatalog.Load(skill.IconId);
+            skillDetailIcon.sprite = sprite;
+            skillDetailIcon.gameObject.SetActive(sprite != null);
+            skillDetailPopup.gameObject.SetActive(true);
+            skillDetailPopup.rectTransform.SetAsLastSibling();
+        }
+
+        private void HideSkillDetailPopup()
+        {
+            hoveredSkill = null;
+            focusedSkill = null;
+            if (skillDetailPopup != null) skillDetailPopup.gameObject.SetActive(false);
+        }
+
         private void UseSkill(BattleSkillDefinition skill)
         {
             if (actionPlaying || !choosingSkill) return;
@@ -682,6 +783,8 @@ namespace ProjectLimitless.Battle
                 return;
             }
 
+            // 스킬 메뉴를 벗어나 대상 선택이나 연출로 이동할 때 설명 팝업이 전장에 남지 않게 정리합니다.
+            HideSkillDetailPopup();
             if (skill.EffectType == BattleSkillEffectType.SingleAllyHeal)
             {
                 BeginSingleAllyHealSelection(skill);
@@ -1258,7 +1361,7 @@ namespace ProjectLimitless.Battle
         /// Sprite를 찾지 못하면 아이콘만 숨기고 한글 이름을 가운데 표시해 조작 기능은 유지합니다.
         /// </summary>
         private Button MakeSkillMenuButton(Transform parent, string name, string label, string iconId,
-            Vector2 anchor, Action action)
+            Vector2 anchor, Action action, BattleSkillDefinition skill = null)
         {
             GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
             obj.transform.SetParent(parent, false);
@@ -1282,6 +1385,16 @@ namespace ProjectLimitless.Battle
                 hasIcon ? new Vector2(.6f, .5f) : Vector2.one * .5f,
                 hasIcon ? new Vector2(174, 44) : new Vector2(215, 44));
             text.fontStyle = FontStyle.Bold;
+            if (skill != null)
+            {
+                // PointerEnter/Exit은 마우스, Select/Deselect는 키보드·게임패드 포커스입니다.
+                // 어느 입력이든 같은 BattleSkillDefinition을 전달하므로 UI에 스킬 이름 비교가 생기지 않습니다.
+                EventTrigger trigger = obj.AddComponent<EventTrigger>();
+                AddTrigger(trigger, EventTriggerType.PointerEnter, _ => OnSkillPointerEnter(skill));
+                AddTrigger(trigger, EventTriggerType.PointerExit, _ => OnSkillPointerExit(skill));
+                AddTrigger(trigger, EventTriggerType.Select, _ => OnSkillFocused(skill));
+                AddTrigger(trigger, EventTriggerType.Deselect, _ => OnSkillFocusLost(skill));
+            }
             return button;
         }
         private static void CreateEventSystem() { if (EventSystem.current != null) return; InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
