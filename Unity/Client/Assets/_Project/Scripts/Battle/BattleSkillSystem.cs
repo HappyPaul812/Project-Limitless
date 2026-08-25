@@ -6,13 +6,14 @@ using ProjectLimitless.Core;
 namespace ProjectLimitless.Battle
 {
     /// <summary>실제 전투에서 실행할 스킬 효과 종류입니다. 구현된 효과만 이 열거형에 추가합니다.</summary>
-    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal }
+    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
     {
         public BattleSkillDefinition(string id, string displayName, string description, bool implemented,
-            BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f)
+            BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
+            int attackDamagePercent = 0)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -22,6 +23,7 @@ namespace ProjectLimitless.Battle
             CooldownTurns = Math.Max(0, cooldownTurns);
             EffectDuration = Math.Max(0, effectDuration);
             MaxHpHealRatio = Math.Max(0f, maxHpHealRatio);
+            AttackDamagePercent = Math.Max(0, attackDamagePercent);
         }
 
         public string Id { get; }
@@ -33,6 +35,8 @@ namespace ProjectLimitless.Battle
         public int EffectDuration { get; }
         /// <summary>최대 HP 중 몇 %를 회복할지 나타내는 데이터입니다. 0.35는 최대 HP의 35%입니다.</summary>
         public float MaxHpHealRatio { get; }
+        /// <summary>기본 공격력에 적용할 정수 퍼센트입니다. 160은 기본 공격 피해의 160%입니다.</summary>
+        public int AttackDamagePercent { get; }
     }
 
     /// <summary>
@@ -43,6 +47,7 @@ namespace ProjectLimitless.Battle
     {
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
+        public const string SharpshooterAimId = "sharpshooter_aim";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -58,6 +63,12 @@ namespace ProjectLimitless.Battle
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
                         BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f);
+                if (preview.SkillId == SharpshooterAimId)
+                    // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
+                    // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
+                    // 시작에 1, 그다음 시작에 0이 되므로 HUD와 실행기가 같은 2턴 흐름을 공유합니다.
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
+                        BattleSkillEffectType.SingleRangedPhysicalAttack, 2, 0, 0f, 160);
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -218,6 +229,34 @@ namespace ProjectLimitless.Battle
 
             if (skill.CooldownTurns > 0) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 HP가 {recoveredHp} 회복되었습니다.";
+            return true;
+        }
+
+        /// <summary>
+        /// Projectile이 대상에 도착한 순간 호출하는 정조준 피해 처리입니다. 대상 후보는 앞 단계에서
+        /// TargetResolver가 정하지만, 도착 시점에도 적·생존 여부를 다시 확인해 무효 대상에 피해를 주지 않습니다.
+        /// UI나 Projectile은 피해 공식을 모르고 이 메서드의 결과만 표시하므로 계산과 연출이 분리됩니다.
+        /// </summary>
+        public bool ExecuteSingleRangedPhysicalAttack(Combatant actor, Combatant target, BattleSkillDefinition skill,
+            out int damage, out string message)
+        {
+            damage = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleRangedPhysicalAttack || target == null ||
+                target.Side == actor.Side || !target.IsAlive)
+            {
+                message = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return false;
+            }
+
+            // (공격력×160 + 99) / 100은 정수만으로 160%를 계산하면서 나머지가 있으면 올림하는 식입니다.
+            // 예: 12×160=1920 → (1920+99)/100=20, 15×160=2400 → 24입니다. float 오차로 24가 25가 되는
+            // 일을 피하며, 이후 TakeDamage가 기존 방어 50%를 그대로 적용해 방어 무시 효과도 생기지 않습니다.
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            damage = target.TakeDamage(rawDamage);
+            cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
             return true;
         }
     }

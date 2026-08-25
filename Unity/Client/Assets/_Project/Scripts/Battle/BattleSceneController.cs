@@ -83,8 +83,8 @@ namespace ProjectLimitless.Battle
         private Image skillMenuPanel;
         private bool choosingTarget;
         private bool choosingSkill;
-        // 공격 대상 취소는 기본 명령으로, 스킬이 연 아군 대상 취소는 스킬 목록으로 돌아가야 합니다.
-        // 같은 대상 선택 UI를 쓰되 돌아갈 화면만 기억하면 향후 아군 버프·광역 회복도 이 흐름을 재사용할 수 있습니다.
+        // 기본 공격 대상 취소는 명령으로, 정조준·치유처럼 스킬이 연 대상 취소는 스킬 목록으로 돌아갑니다.
+        // 같은 대상 선택 UI를 쓰되 돌아갈 화면만 기억하면 향후 아군 버프·다른 단일 공격도 이 흐름을 재사용할 수 있습니다.
         private bool targetSelectionReturnsToSkillMenu;
         private bool battleEnded;
         private bool actionPlaying;
@@ -599,7 +599,9 @@ namespace ProjectLimitless.Battle
                 BattleSkillDefinition skill = skills[index];
                 int remaining = skillCooldowns.GetRemaining(currentActor, skill.Id);
                 string label = !skill.IsImplemented ? $"{skill.DisplayName}\n[미구현]"
-                    : remaining > 0 ? $"{skill.DisplayName}\n[재사용 {remaining}턴]" : skill.DisplayName;
+                    : remaining > 0 ? $"{skill.DisplayName}\n[재사용 {remaining}턴]"
+                    : skill.EffectType == BattleSkillEffectType.SingleRangedPhysicalAttack
+                        ? $"{skill.DisplayName}\n강한 원거리 · 160% · {skill.CooldownTurns}턴" : skill.DisplayName;
                 BattleSkillDefinition selectedSkill = skill;
                 Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label,
                     new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill));
@@ -683,6 +685,11 @@ namespace ProjectLimitless.Battle
             if (skill.EffectType == BattleSkillEffectType.SingleAllyHeal)
             {
                 BeginSingleAllyHealSelection(skill);
+                return;
+            }
+            if (skill.EffectType == BattleSkillEffectType.SingleRangedPhysicalAttack)
+            {
+                BeginSingleRangedAttackSelection(skill);
                 return;
             }
 
@@ -793,6 +800,89 @@ namespace ProjectLimitless.Battle
                         messageText.text = string.IsNullOrEmpty(failureMessage) ? "치유의 빛을 사용할 수 없습니다." : failureMessage;
                     }
                 }));
+        }
+
+        /// <summary>
+        /// 정조준 후보는 기존 원거리 물리 TargetResolver에 맡깁니다. Resolver는 후열 생존자가 하나라도
+        /// 있으면 후열 목록만 반환하고, 후열이 모두 전투불능일 때만 전열을 반환합니다. 따라서 3명이나
+        /// 향후 최대 6명 적 모두 같은 Formation 규칙을 사용하며 정조준 전용 열 판정을 중복 작성하지 않습니다.
+        /// </summary>
+        private void BeginSingleRangedAttackSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(
+                actor, opponents, TargetRangeType.RangedPhysical);
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            BeginTargetSelection(targets, target => PlayAimedShot(actor, target, skill),
+                "정조준 대상을 선택하세요. 후열이 살아 있으면 후열만 선택할 수 있습니다.", true);
+        }
+
+        /// <summary>
+        /// 짧은 "정조준!" 강조 뒤 기존 golden_arrow Projectile을 발사합니다. 실제 피해 함수는 화살이
+        /// 도착할 때 Presenter가 호출하므로 선택 순간에는 HP가 줄지 않습니다. 도착 콜백에서 전투 데이터를
+        /// 갱신한 뒤 HUD와 상세 팝업이 같은 Combatant.CurrentHp를 다시 읽어 즉시 같은 값을 보여 줍니다.
+        /// </summary>
+        private void PlayAimedShot(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null || !target.IsAlive || target.Side == actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlaySkillEmphasis(
+                actorView.ActionRoot,
+                actorView.SpriteImage,
+                battleFont,
+                "정조준!",
+                null,
+                () => StartCoroutine(actionPresenter.PlayProjectileAttack(
+                    actorView.ActionRoot,
+                    targetView.ActionRoot,
+                    targetView.SpriteImage,
+                    battleFont,
+                    LoadProjectileFrames("BattleProjectiles/GoldenArrow"),
+                    .08f,
+                    .42f,
+                    new Vector2(52f, 52f),
+                    true,
+                    Color.white,
+                    BattleProjectileStyle.Arrow,
+                    .08f,
+                    () =>
+                    {
+                        executed = skillExecutor.ExecuteSingleRangedPhysicalAttack(
+                            actor, target, skill, out int damage, out string result);
+                        messageText.text = result;
+                        return damage;
+                    },
+                    damage => RefreshCombatantViews(null),
+                    () =>
+                    {
+                        RestoreBattleIdle(actorView);
+                        RestoreBattleIdle(targetView);
+                        actionPlaying = false;
+                        if (executed) FinishCurrentAction();
+                        else
+                        {
+                            string failureMessage = messageText.text;
+                            ShowSkillMenu();
+                            messageText.text = string.IsNullOrEmpty(failureMessage) ? "정조준을 사용할 수 없습니다." : failureMessage;
+                        }
+                    }))));
         }
 
         private void Defend()
