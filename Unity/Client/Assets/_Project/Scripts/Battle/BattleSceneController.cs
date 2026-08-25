@@ -27,14 +27,26 @@ namespace ProjectLimitless.Battle
             public Image GroundMarker;
             public Text TargetArrow;
             public Text TurnMarker;
-            public Text HudName;
-            public Text HudStatus;
-            public Image HudHpFill;
+            public Text ImportantStatus;
             public bool UsesPlaceholderVisual;
+        }
+
+        /// <summary>
+        /// 화면 가장자리의 고정 HP 목록에서 참가자 한 명을 표현합니다.
+        /// 전장 위 Sprite와 목록 행을 Combatant 하나로 연결해 두므로, 피해를 받거나 키보드 포커스가
+        /// 이동해도 별도의 전투 계산 없이 같은 참가자의 표시만 함께 갱신할 수 있습니다.
+        /// </summary>
+        private sealed class CombatantHpRow
+        {
+            public Image Background;
+            public Outline Border;
+            public Text Name;
+            public Image HpFill;
         }
 
         private readonly List<Selectable> commandButtons = new List<Selectable>();
         private readonly Dictionary<Combatant, CombatantView> combatantViews = new Dictionary<Combatant, CombatantView>();
+        private readonly Dictionary<Combatant, CombatantHpRow> combatantHpRows = new Dictionary<Combatant, CombatantHpRow>();
         private readonly Dictionary<Combatant, JobDefinition> combatantJobs = new Dictionary<Combatant, JobDefinition>();
         private readonly Dictionary<Combatant, BattleParticipantSetup> participantSetups = new Dictionary<Combatant, BattleParticipantSetup>();
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
@@ -155,6 +167,8 @@ namespace ProjectLimitless.Battle
             Image battlefield = CreateBattlefield(canvasObject.transform);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
+            CreateHpRoster(canvasObject.transform, font, enemies, 6, new Vector2(.075f, .57f), "적군 HP");
+            CreateHpRoster(canvasObject.transform, font, allies, 3, new Vector2(.925f, .57f), "아군 HP");
             CreateDetailPopup(canvasObject.transform, font);
             CreateCommandPanel(canvasObject.transform, font);
         }
@@ -230,28 +244,60 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Deselect, _ => OnCombatantFocusLost(combatant));
 
             CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
-            CreateCombatantMiniHud(font, combatant, view);
+            // 전장 위에는 즉시 판단해야 하는 상태만 둡니다. 이름과 HP는 좌우 고정 목록에서 표시해
+            // 캐릭터 Sprite를 가리지 않고, 시선이 흔들리지 않는 위치에서 체력을 비교하게 합니다.
+            view.ImportantStatus = MakeText(hitObject.transform, "ImportantStatus", string.Empty, font, 12,
+                new Vector2(.5f, 1.02f), new Vector2(134, 20));
+            view.ImportantStatus.color = focusGold;
+            view.ImportantStatus.fontStyle = FontStyle.Bold;
             return view;
         }
-        /// <summary>캐릭터 가까이에 이름과 작은 HP Bar, 즉시 확인할 상태 표식만 배치합니다.</summary>
-        private void CreateCombatantMiniHud(Font font, Combatant combatant, CombatantView view)
-        {
-            Image miniHud = MakeImage(view.ActionRoot, $"MiniHud_{combatant.Id}", new Color(.025f, .045f, .075f, .88f));
-            SetRect(miniHud.rectTransform, new Vector2(.5f, .98f), new Vector2(144, 52));
-            AddOutline(miniHud.gameObject, combatant.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
 
-            view.HudName = MakeText(miniHud.transform, "Name", combatant.DisplayName, font, 13,
-                new Vector2(.5f, .77f), new Vector2(134, 19));
-            view.HudName.fontStyle = FontStyle.Bold;
-            Image hpBackground = MakeImage(miniHud.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f));
-            SetRect(hpBackground.rectTransform, new Vector2(.5f, .45f), new Vector2(126, 9));
-            AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
-            view.HudHpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f));
-            Stretch(view.HudHpFill.rectTransform);
-            view.HudStatus = MakeText(miniHud.transform, "ImportantStatus", string.Empty, font, 12,
-                new Vector2(.5f, .15f), new Vector2(134, 18));
-            view.HudStatus.color = focusGold;
-            view.HudStatus.fontStyle = FontStyle.Bold;
+        /// <summary>
+        /// 한 진영의 고정 HP 목록을 만듭니다. 참가자 수만큼만 행을 생성하므로 빈 슬롯은 보이지 않습니다.
+        /// 이 메서드는 Formation을 읽기만 하며, 최대 행 수는 화면 표현 한도입니다. 따라서 향후 보스 전용
+        /// 대형 HP Bar가 필요하면 CombatantHpRow와 갱신 규칙을 재사용한 별도 생성 메서드를 추가할 수 있습니다.
+        /// </summary>
+        private void CreateHpRoster(Transform canvas, Font font, Formation formation, int maximumRows,
+            Vector2 anchor, string title)
+        {
+            List<Combatant> members = formation.Members.Take(maximumRows).ToList();
+            if (members.Count == 0) return;
+
+            const float rowHeight = 38f;
+            float panelHeight = 34f + members.Count * rowHeight;
+            Image rosterPanel = MakeImage(canvas, $"{formation.Side}HpRoster", new Color(.025f, .045f, .075f, .94f));
+            SetRect(rosterPanel.rectTransform, anchor, new Vector2(170, panelHeight));
+            AddOutline(rosterPanel.gameObject,
+                formation.Side == BattleSide.Allies ? gold : new Color(.48f, .55f, .65f, 1f), 1);
+            Text rosterTitle = MakeText(rosterPanel.transform, "Title", title, font, 14,
+                new Vector2(.5f, 1f), new Vector2(154, 26));
+            rosterTitle.rectTransform.anchoredPosition = new Vector2(0f, -15f);
+            rosterTitle.fontStyle = FontStyle.Bold;
+
+            for (int index = 0; index < members.Count; index++)
+            {
+                Combatant combatant = members[index];
+                Image row = MakeImage(rosterPanel.transform, $"HpRow_{combatant.Id}", new Color(.055f, .08f, .13f, .96f));
+                SetRect(row.rectTransform, new Vector2(.5f, 1f), new Vector2(154, 32));
+                row.rectTransform.anchoredPosition = new Vector2(0f, -34f - index * rowHeight);
+                Outline border = AddOutline(row.gameObject, new Color(.2f, .27f, .36f, 1f), 1);
+                Text name = MakeText(row.transform, "Name", combatant.DisplayName, font, 12,
+                    new Vector2(.5f, .72f), new Vector2(142, 17));
+                name.fontStyle = FontStyle.Bold;
+                Image hpBackground = MakeImage(row.transform, "HpBarBackground", new Color(.08f, .1f, .13f, 1f));
+                SetRect(hpBackground.rectTransform, new Vector2(.5f, .27f), new Vector2(138, 8));
+                AddOutline(hpBackground.gameObject, new Color(.25f, .3f, .38f, 1f), 1);
+                Image hpFill = MakeImage(hpBackground.transform, "HpFill", new Color(.25f, .72f, .46f, 1f));
+                Stretch(hpFill.rectTransform);
+                combatantHpRows.Add(combatant, new CombatantHpRow
+                {
+                    Background = row,
+                    Border = border,
+                    Name = name,
+                    HpFill = hpFill
+                });
+            }
         }
 
         /// <summary>모든 참가자가 공유하는 상세 상태 팝업을 하나만 생성합니다.</summary>
@@ -299,6 +345,7 @@ namespace ProjectLimitless.Battle
         private void RefreshDetailPopupPreference()
         {
             Combatant preferred = focusedCombatant ?? hoveredCombatant;
+            RefreshHpRowHighlights(preferred);
             if (preferred == null)
             {
                 detailCombatant = null;
@@ -306,6 +353,23 @@ namespace ProjectLimitless.Battle
                 return;
             }
             ShowDetailPopup(preferred);
+        }
+
+        /// <summary>
+        /// 캐릭터 Hover보다 키보드/대상 선택 포커스를 우선하는 기존 규칙을 HP 목록에도 적용합니다.
+        /// 색상만 바꾸지 않고 밝은 테두리와 배경을 함께 바꿔 현재 행을 알아보기 쉽게 합니다.
+        /// </summary>
+        private void RefreshHpRowHighlights(Combatant preferred)
+        {
+            foreach (KeyValuePair<Combatant, CombatantHpRow> pair in combatantHpRows)
+            {
+                bool highlighted = pair.Key == preferred;
+                pair.Value.Background.color = highlighted
+                    ? new Color(.14f, .23f, .34f, 1f)
+                    : new Color(.055f, .08f, .13f, .96f);
+                pair.Value.Border.effectColor = highlighted ? focusGold : new Color(.2f, .27f, .36f, 1f);
+                pair.Value.Border.effectDistance = highlighted ? new Vector2(2f, -2f) : new Vector2(1f, -1f);
+            }
         }
 
         private void ShowDetailPopup(Combatant combatant)
@@ -698,20 +762,33 @@ namespace ProjectLimitless.Battle
                 view.GroundMarker.color = canAttack ? new Color(1f, .78f, .28f, .92f) : new Color(.4f, .47f, .56f, combatant.IsAlive ? .45f : .18f);
                 view.TargetArrow.gameObject.SetActive(false);
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
-                view.HudName.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : " [전투불능]");
                 combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
                 participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
                 BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns);
-                view.HudStatus.text = statusModel.CompactStatus;
-                float healthRatio = combatant.MaxHp <= 0 ? 0f : Mathf.Clamp01((float)combatant.CurrentHp / combatant.MaxHp);
-                RectTransform hpFillRect = view.HudHpFill.rectTransform;
-                hpFillRect.anchorMin = Vector2.zero;
-                hpFillRect.anchorMax = new Vector2(healthRatio, 1f);
-                hpFillRect.offsetMin = Vector2.zero;
-                hpFillRect.offsetMax = Vector2.zero;
-                view.HudHpFill.color = healthRatio <= .3f ? new Color(.82f, .28f, .24f, 1f) : new Color(.25f, .72f, .46f, 1f);
+                view.ImportantStatus.text = statusModel.CompactStatus;
+                RefreshHpRow(combatant);
             }
+            RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (detailCombatant != null) ShowDetailPopup(detailCombatant);
+        }
+
+        /// <summary>
+        /// Combatant의 현재 HP를 고정 목록 행에 반영합니다. 전투 로직은 CurrentHp만 변경하고,
+        /// 이 UI 메서드가 실제 비율을 0~1 범위로 바꿔 Bar의 가로 길이를 줄입니다.
+        /// </summary>
+        private void RefreshHpRow(Combatant combatant)
+        {
+            if (!combatantHpRows.TryGetValue(combatant, out CombatantHpRow row)) return;
+            row.Name.text = combatant.DisplayName + (combatant.IsAlive ? string.Empty : " [전투불능]");
+            float healthRatio = combatant.MaxHp <= 0 ? 0f : Mathf.Clamp01((float)combatant.CurrentHp / combatant.MaxHp);
+            RectTransform hpFillRect = row.HpFill.rectTransform;
+            hpFillRect.anchorMin = Vector2.zero;
+            hpFillRect.anchorMax = new Vector2(healthRatio, 1f);
+            hpFillRect.offsetMin = Vector2.zero;
+            hpFillRect.offsetMax = Vector2.zero;
+            row.HpFill.color = healthRatio <= .3f
+                ? new Color(.82f, .28f, .24f, 1f)
+                : new Color(.25f, .72f, .46f, 1f);
         }
 
         private void UpdateTimeline()
