@@ -85,6 +85,19 @@ namespace ProjectLimitless.Battle
             return damage;
         }
 
+        /// <summary>
+        /// 살아 있는 참가자의 HP를 회복하고 실제로 증가한 양을 돌려줍니다.
+        /// 최대 HP보다 커지지 않도록 Math.Min으로 상한을 막으며, HP 0인 참가자는 부활 대상이 아니므로
+        /// 0을 반환합니다. 피해·방어 계산은 TakeDamage에 그대로 남겨 회복 규칙과 서로 섞이지 않습니다.
+        /// </summary>
+        public int RecoverHp(int requestedAmount)
+        {
+            if (!IsAlive || requestedAmount <= 0) return 0;
+            int previousHp = CurrentHp;
+            CurrentHp = Math.Min(MaxHp, CurrentHp + requestedAmount);
+            return CurrentHp - previousHp;
+        }
+
         /// <summary>단일 적대 행동을 지정 대상에게 강제하는 도발 상태를 기록합니다.</summary>
         public void ApplyTaunt(Combatant forcedTarget, int affectedActions = 2)
         {

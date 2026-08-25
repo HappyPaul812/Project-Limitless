@@ -151,6 +151,65 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 선택한 아군 위치에서 회복 Sprite 프레임을 재생합니다. manifest의 peak 프레임에 도달했을 때
+        /// applyHealing을 한 번만 호출하여 가장 밝게 피어나는 순간과 실제 HP 증가 시점을 맞춥니다.
+        /// Presenter는 회복 공식을 알지 못하고 전달받은 함수를 호출하므로 전투 계산과 연출이 분리됩니다.
+        /// </summary>
+        public IEnumerator PlayHealingEffect(RectTransform target, Font font, Sprite[] frames, float frameDuration,
+            int peakFrame, Vector2 effectSize, Func<int> applyHealing, Action<int> onImpact, Action onComplete)
+        {
+            if (target == null || frames == null || frames.Length == 0)
+            {
+                int fallbackHealing = applyHealing == null ? 0 : applyHealing();
+                onImpact?.Invoke(fallbackHealing);
+                if (fallbackHealing > 0) StartCoroutine(ShowHealingNumber(target, font, fallbackHealing));
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            GameObject effectObject = new GameObject("RadiantHealEffect", typeof(Image));
+            effectObject.transform.SetParent(target, false);
+            Image effectImage = effectObject.GetComponent<Image>();
+            effectImage.sprite = frames[0];
+            effectImage.preserveAspect = true;
+            effectImage.raycastTarget = false;
+            RectTransform effectRect = effectImage.rectTransform;
+            effectRect.anchorMin = Vector2.one * .5f;
+            effectRect.anchorMax = Vector2.one * .5f;
+            effectRect.pivot = new Vector2(.5f, 29f / 96f);
+            effectRect.anchoredPosition = new Vector2(0f, -42f);
+            effectRect.sizeDelta = effectSize;
+
+            float safeFrameDuration = Mathf.Max(.01f, frameDuration);
+            float totalDuration = frames.Length * safeFrameDuration;
+            float elapsed = 0f;
+            bool healingApplied = false;
+            while (elapsed < totalDuration)
+            {
+                int frameIndex = Mathf.Min(frames.Length - 1, Mathf.FloorToInt(elapsed / safeFrameDuration));
+                effectImage.sprite = frames[frameIndex];
+                if (!healingApplied && frameIndex >= Mathf.Clamp(peakFrame, 0, frames.Length - 1))
+                {
+                    healingApplied = true;
+                    int recoveredHp = applyHealing == null ? 0 : applyHealing();
+                    onImpact?.Invoke(recoveredHp);
+                    if (recoveredHp > 0) StartCoroutine(ShowHealingNumber(target, font, recoveredHp));
+                }
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!healingApplied)
+            {
+                int recoveredHp = applyHealing == null ? 0 : applyHealing();
+                onImpact?.Invoke(recoveredHp);
+                if (recoveredHp > 0) StartCoroutine(ShowHealingNumber(target, font, recoveredHp));
+            }
+            Destroy(effectObject);
+            onComplete?.Invoke();
+        }
+
         private static Text CreateSkillCallout(RectTransform actor, Font font, string callout)
         {
             if (font == null || string.IsNullOrEmpty(callout)) return null;
@@ -270,6 +329,45 @@ namespace ProjectLimitless.Battle
             text.alignment = TextAnchor.MiddleCenter;
             text.color = new Color(1f, .82f, .38f, 1f);
             text.text = $"-{damage}";
+            text.raycastTarget = false;
+            RectTransform rect = text.rectTransform;
+            rect.anchorMin = target.anchorMin;
+            rect.anchorMax = target.anchorMax;
+            rect.pivot = Vector2.one * .5f;
+            rect.sizeDelta = new Vector2(100f, 40f);
+            Vector2 start = target.anchoredPosition + new Vector2(0f, 70f);
+
+            const float duration = .55f;
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                rect.anchoredPosition = start + Vector2.up * (42f * t);
+                Color color = text.color;
+                color.a = 1f - Mathf.Clamp01((t - .55f) / .45f);
+                text.color = color;
+                yield return null;
+            }
+            Destroy(numberObject);
+        }
+
+        /// <summary>
+        /// 회복량은 색상뿐 아니라 반드시 + 기호를 붙여 피해 숫자와 구분합니다.
+        /// target이 없는 예외 경로에서는 숫자 오브젝트를 만들지 않아 NullReference를 피합니다.
+        /// </summary>
+        private static IEnumerator ShowHealingNumber(RectTransform target, Font font, int recoveredHp)
+        {
+            if (target == null || font == null || recoveredHp <= 0) yield break;
+            GameObject numberObject = new GameObject("HealingNumber", typeof(Text));
+            numberObject.transform.SetParent(target.parent, false);
+            Text text = numberObject.GetComponent<Text>();
+            text.font = font;
+            text.fontSize = 25;
+            text.fontStyle = FontStyle.Bold;
+            text.alignment = TextAnchor.MiddleCenter;
+            text.color = new Color(.45f, 1f, .62f, 1f);
+            text.text = $"+{recoveredHp}";
             text.raycastTarget = false;
             RectTransform rect = text.rectTransform;
             rect.anchorMin = target.anchorMin;

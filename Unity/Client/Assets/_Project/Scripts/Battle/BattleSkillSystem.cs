@@ -6,13 +6,13 @@ using ProjectLimitless.Core;
 namespace ProjectLimitless.Battle
 {
     /// <summary>실제 전투에서 실행할 스킬 효과 종류입니다. 구현된 효과만 이 열거형에 추가합니다.</summary>
-    public enum BattleSkillEffectType { None, Taunt }
+    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
     {
         public BattleSkillDefinition(string id, string displayName, string description, bool implemented,
-            BattleSkillEffectType effectType, int cooldownTurns, int effectDuration)
+            BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -21,6 +21,7 @@ namespace ProjectLimitless.Battle
             EffectType = effectType;
             CooldownTurns = Math.Max(0, cooldownTurns);
             EffectDuration = Math.Max(0, effectDuration);
+            MaxHpHealRatio = Math.Max(0f, maxHpHealRatio);
         }
 
         public string Id { get; }
@@ -30,6 +31,8 @@ namespace ProjectLimitless.Battle
         public BattleSkillEffectType EffectType { get; }
         public int CooldownTurns { get; }
         public int EffectDuration { get; }
+        /// <summary>최대 HP 중 몇 %를 회복할지 나타내는 데이터입니다. 0.35는 최대 HP의 35%입니다.</summary>
+        public float MaxHpHealRatio { get; }
     }
 
     /// <summary>
@@ -39,16 +42,25 @@ namespace ProjectLimitless.Battle
     public static class BattleSkillCatalog
     {
         public const string GuardianTauntId = "guardian_taunt";
+        public const string HealerHealingLightId = "healer_healing_light";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
             if (job == null) return Array.Empty<BattleSkillDefinition>();
 
-            return job.StartingSkills.Select(preview => preview.SkillId == GuardianTauntId
-                ? new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
-                    BattleSkillEffectType.Taunt, 3, 2)
-                : new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
-                    BattleSkillEffectType.None, 0, 0)).ToArray();
+            return job.StartingSkills.Select(preview =>
+            {
+                if (preview.SkillId == GuardianTauntId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
+                        BattleSkillEffectType.Taunt, 3, 2);
+                if (preview.SkillId == HealerHealingLightId)
+                    // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
+                    // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, true,
+                        BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f);
+                return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
+                    BattleSkillEffectType.None, 0, 0);
+            }).ToArray();
         }
     }
 
@@ -166,6 +178,47 @@ namespace ProjectLimitless.Battle
                     message = "아직 사용할 수 없습니다.";
                     return false;
             }
+        }
+
+        /// <summary>
+        /// 단일 아군 회복을 실행합니다. 공격용 TargetResolver는 적대 사거리와 도발을 판단하므로 사용하지 않고,
+        /// 같은 진영·생존 여부를 직접 확인합니다. 최대 HP 대상은 선택까지 허용하지만 여기서 거절하여 행동과
+        /// 쿨타임을 소비하지 않습니다.
+        /// </summary>
+        public bool ExecuteSingleAllyHeal(Combatant actor, Combatant target, BattleSkillDefinition skill,
+            out int recoveredHp, out string message)
+        {
+            recoveredHp = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleAllyHeal || target == null || target.Side != actor.Side)
+            {
+                message = "살아 있는 아군만 치유할 수 있습니다.";
+                return false;
+            }
+            if (!target.IsAlive)
+            {
+                message = "전투불능 아군은 치유의 빛으로 부활시킬 수 없습니다.";
+                return false;
+            }
+            if (target.CurrentHp >= target.MaxHp)
+            {
+                message = $"{target.DisplayName}은(는) 이미 HP가 가득 찼습니다.";
+                return false;
+            }
+
+            // Ceiling은 소수점이 생겼을 때 항상 올림합니다. 예를 들어 최대 HP 101의 35%인 35.35는
+            // 36으로 안정적으로 정수화하며, Combatant.RecoverHp가 남은 빈 HP보다 많이 채워지지 않게 막습니다.
+            int requestedHp = Math.Max(1, (int)Math.Ceiling(target.MaxHp * skill.MaxHpHealRatio));
+            recoveredHp = target.RecoverHp(requestedHp);
+            if (recoveredHp <= 0)
+            {
+                message = "회복할 HP가 없습니다.";
+                return false;
+            }
+
+            if (skill.CooldownTurns > 0) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 HP가 {recoveredHp} 회복되었습니다.";
+            return true;
         }
     }
 }

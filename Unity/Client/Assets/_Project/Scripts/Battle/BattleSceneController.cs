@@ -83,6 +83,9 @@ namespace ProjectLimitless.Battle
         private Image skillMenuPanel;
         private bool choosingTarget;
         private bool choosingSkill;
+        // 공격 대상 취소는 기본 명령으로, 스킬이 연 아군 대상 취소는 스킬 목록으로 돌아가야 합니다.
+        // 같은 대상 선택 UI를 쓰되 돌아갈 화면만 기억하면 향후 아군 버프·광역 회복도 이 흐름을 재사용할 수 있습니다.
+        private bool targetSelectionReturnsToSkillMenu;
         private bool battleEnded;
         private bool actionPlaying;
         private IReadOnlyList<Combatant> selectableTargets = Array.Empty<Combatant>();
@@ -537,7 +540,8 @@ namespace ProjectLimitless.Battle
         /// 적 공격과 향후 아군 치유가 같은 마우스·키보드 대상 선택 흐름을 공유하도록 후보와 완료 동작을 받습니다.
         /// 사거리나 스킬 대상 규칙은 호출자가 계산하며 이 메서드는 UI 선택만 담당합니다.
         /// </summary>
-        private void BeginTargetSelection(IReadOnlyList<Combatant> targets, Action<Combatant> onSelected, string prompt)
+        private void BeginTargetSelection(IReadOnlyList<Combatant> targets, Action<Combatant> onSelected, string prompt,
+            bool returnToSkillMenuOnCancel = false)
         {
             if (targets == null || targets.Count == 0)
             {
@@ -545,6 +549,7 @@ namespace ProjectLimitless.Battle
                 return;
             }
             choosingTarget = true;
+            targetSelectionReturnsToSkillMenu = returnToSkillMenuOnCancel;
             selectableTargets = targets;
             targetSelectedAction = onSelected;
             SetCommandButtons(false);
@@ -559,6 +564,7 @@ namespace ProjectLimitless.Battle
             if (actionPlaying || !choosingTarget || target == null || !target.IsAlive || !selectableTargets.Contains(target)) return;
             Action<Combatant> selectedAction = targetSelectedAction;
             choosingTarget = false;
+            targetSelectionReturnsToSkillMenu = false;
             selectableTargets = Array.Empty<Combatant>();
             targetSelectedAction = null;
             SetCancelButtonVisible(false);
@@ -639,10 +645,19 @@ namespace ProjectLimitless.Battle
             }
             if (!choosingTarget) return;
 
+            bool returnToSkillMenu = targetSelectionReturnsToSkillMenu;
             choosingTarget = false;
+            targetSelectionReturnsToSkillMenu = false;
             selectableTargets = Array.Empty<Combatant>();
             targetSelectedAction = null;
             SetCancelButtonVisible(false);
+            // 치유의 빛에서 대상을 고르던 중이면 스킬 자체를 취소한 것이 아니므로 스킬 목록으로 돌아갑니다.
+            // Esc와 화면 취소 버튼 모두 이 메서드를 호출해 키보드와 마우스의 복귀 단계가 동일합니다.
+            if (returnToSkillMenu)
+            {
+                ShowSkillMenu();
+                return;
+            }
             SetCommandButtons(true);
             RefreshCombatantViews(null);
             messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
@@ -662,6 +677,12 @@ namespace ProjectLimitless.Battle
             {
                 messageText.text = reason;
                 RebuildSkillMenu();
+                return;
+            }
+
+            if (skill.EffectType == BattleSkillEffectType.SingleAllyHeal)
+            {
+                BeginSingleAllyHealSelection(skill);
                 return;
             }
 
@@ -698,6 +719,78 @@ namespace ProjectLimitless.Battle
                     {
                         SetCommandButtons(true);
                         if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(skillButton.gameObject);
+                    }
+                }));
+        }
+
+        /// <summary>
+        /// 공격은 TargetResolver가 적 진형·사거리·도발을 계산하지만, 단일 회복은 같은 편의 살아 있는
+        /// 참가자 전체가 후보입니다. 따라서 공격 규칙을 억지로 바꾸지 않고 Formation.LivingMembers를
+        /// 공용 대상 선택 UI에 전달합니다. 자신도 같은 Formation 구성원이므로 자연스럽게 포함됩니다.
+        /// </summary>
+        private void BeginSingleAllyHealSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation friendlyFormation = actor.Side == BattleSide.Allies ? allies : enemies;
+            IReadOnlyList<Combatant> livingAllies = friendlyFormation.LivingMembers.ToArray();
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            BeginTargetSelection(livingAllies, target => PlayHealingLight(actor, target, skill),
+                "치유의 빛 대상을 선택하세요. 자신을 포함한 살아 있는 아군을 선택할 수 있습니다.", true);
+        }
+
+        /// <summary>
+        /// 대상이 가득 찬 경우에는 안내 후 스킬 메뉴로 돌아가 행동을 소비하지 않습니다. 실제 회복은
+        /// Radiant Heal의 peak 프레임 콜백에서 실행되고, 곧바로 RefreshCombatantViews를 호출하므로
+        /// Combatant HP를 읽는 상단 Bar와 상세 팝업 숫자가 같은 프레임에 갱신됩니다.
+        /// </summary>
+        private void PlayHealingLight(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null || !target.IsAlive || target.Side != actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "살아 있는 아군만 치유할 수 있습니다.";
+                return;
+            }
+            if (target.CurrentHp >= target.MaxHp)
+            {
+                ShowSkillMenu();
+                messageText.text = $"{target.DisplayName}은(는) 이미 HP가 가득 찼습니다. 행동은 소비되지 않았습니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayHealingEffect(
+                targetView.ActionRoot,
+                battleFont,
+                LoadProjectileFrames("BattleSkillEffects/RadiantHeal"),
+                .05f,
+                7,
+                new Vector2(96f, 96f),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSingleAllyHeal(actor, target, skill, out int recoveredHp, out string result);
+                    messageText.text = result;
+                    return recoveredHp;
+                },
+                recoveredHp => RefreshCombatantViews(null),
+                () =>
+                {
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage) ? "치유의 빛을 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }
@@ -901,9 +994,17 @@ namespace ProjectLimitless.Battle
             selectableTargets = livingTargets;
             if (livingTargets.Count == 0)
             {
+                bool returnToSkillMenu = targetSelectionReturnsToSkillMenu;
                 choosingTarget = false;
+                targetSelectionReturnsToSkillMenu = false;
                 targetSelectedAction = null;
                 SetCancelButtonVisible(false);
+                if (returnToSkillMenu)
+                {
+                    ShowSkillMenu();
+                    messageText.text = "현재 치유할 수 있는 살아 있는 아군이 없습니다.";
+                    return null;
+                }
                 SetCommandButtons(true);
                 messageText.text = "현재 지정할 수 있는 대상이 없습니다.";
                 if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(attackButton.gameObject);
