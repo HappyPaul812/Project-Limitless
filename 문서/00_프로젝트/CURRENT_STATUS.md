@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-25
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `f98746f` (`Feature: 3대3 프로토타입 전투 확장`)
+- 마지막 기능 관련 commit: `b8bc2dc` (`Feature: 치유사 치유의 빛 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `7223089` (`Refactor: 전투 상태 아이콘 단계 통일`)
@@ -97,7 +97,9 @@
 - CC0 Polar_34 - Projectiles 원본 GIF 보존, 32×32 PNG Sprite 프레임 변환 및 사수 golden arrow·마도사 fireball 기본 공격 적용
 - 시작·목표 X 좌표 비교 기반 공용 Projectile 좌우 반전과 GIF 프레임 지연 재생
 - PVFX Foundry 0.3.0 CC0 원본·라이선스 보존, Magical Projectile travel 5프레임을 치유사 기본 공격에 적용
-- Radiant Heal은 기본 공격에서 제외하고 향후 치유사 치유의 빛 스킬 VFX 후보로 보류
+- 치유사 치유의 빛: 자신 포함 살아 있는 단일 아군, 최대 HP 35% 올림 회복, 최대 HP·전투불능 안전 처리
+- PVFX Radiant Heal 96×96 14프레임을 대상 위치에서 재생하고 peak 7프레임에 회복·`+회복량`·HUD 갱신
+- 치유 대상 선택 중 Esc/취소는 스킬 메뉴로, 스킬 메뉴 취소는 기본 명령으로 돌아가는 단계별 입력 흐름
 - JobDefinition 프리뷰를 사용하는 재사용 가능한 전투 스킬 카탈로그·실행기·참가자별 쿨타임·상태효과 런타임
 - 실제 스킬 메뉴와 Esc 복귀, 미구현 스킬 비활성 표시, 수호자 도발 제자리 강조 연출
 - 수호자 도발의 적 전체 적용, 적별 다음 2회 행동 소모, 수호자 행동 기준 3턴 쿨타임과 적 HUD 상태 표시
@@ -128,7 +130,7 @@
 
 ## 미구현
 
-- 수호자 도발 외 나머지 직업별 스킬 효과와 길 패시브
+- 수호자 도발·치유사 치유의 빛 외 나머지 직업별 스킬 효과와 길 패시브
 - NPC 동료 정식 CompanionDefinition·파티 편성·최종 Sprite
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
@@ -180,6 +182,7 @@
 - 전투불능 상태 정리·회색 발판 숨김·단색 버튼/상태 아이콘·죽은 대상 선택 정리를 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. ViewModel과 UI 갱신만 변경했으며 Combatant·Formation·TargetResolver·TurnOrderQueue와 피해/도발/방어 계산은 변경하지 않았다.
 - Kenney 실제 Sprite 카탈로그·명령 버튼·HP HUD 상태 배지 변경을 Unity 6000.5.7f1 전체 `Assembly-CSharp` 참조로 별도 출력 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 유지되며 `BattleCore`·Combatant 계산·Formation·TargetResolver·TurnOrderQueue·Projectile/VFX·취소 흐름은 변경하지 않았다. 실제 import와 화면 정렬은 Play Mode 확인이 필요하다.
 - 도발 pawn_right와 재사용 3단계 모래시계 표시를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. `BattleSkillCooldowns`의 시작·감소 계산은 변경하지 않고 ViewModel이 남은 턴과 총 턴을 UI에 전달하며, 전투불능 목록 제거와 텍스트 fallback을 유지한다.
+- 치유의 빛 회복 API·아군 대상 선택·Radiant Heal Presenter 확장을 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 원본 grid sheet SHA-256 일치와 96×96 프레임 14개를 확인했으며, `TakeDamage`·방어 50%·TargetResolver·Formation·TurnOrderQueue·도발·기존 Projectile/VFX는 변경하지 않았다. 실제 회복 시점과 화면 위치는 Play Mode 확인이 필요하다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -237,16 +240,21 @@
 49. 공격=sword, 스킬=star, 방어=shield, 도망=exitRight, 취소=cross Sprite와 한글이 함께 보이며 비율·정렬이 깨지거나 버튼 크기가 커지지 않았는지 확인한다.
 50. 대상 선택 중 포커스된 참가자가 전투불능이 되면 강조가 제거되고 다음 유효 대상으로 이동하거나 후보가 없을 때 기본 명령으로 복귀하는지 확인한다.
 51. 대상/스킬 선택의 취소 버튼·Esc와 공격·방어·도발 수치, Projectile·승패·필드 복귀가 기존과 같고 Console 오류가 없는지 확인한다.
-52. 도발의 target 아이콘과 `2→1→제거`, 행동 중 arrowRight, 방어 shield, 재사용 hourglass가 상태와 함께 갱신되는지 확인한다.
+52. 행동 중 arrowRight, 방어 shield와 재사용 단계별 hourglass가 상태와 함께 갱신되는지 확인한다.
 53. 전투불능 즉시 모든 상태 Sprite와 글자가 사라지고 회색 `전투불능`만 남으며 Console에 MissingReference·NullReference가 없는지 확인한다.
 54. 도발 상태에 pawn_right가 표시되고 기존 target은 나오지 않으며, 도발 2→1→제거가 유지되는지 확인한다.
 55. 도발 사용 직후 재사용 3턴=hourglass_top, 다음 자기 차례 2턴=hourglass, 마지막 1턴=hourglass_bottom, 0턴=아이콘·텍스트 제거인지 확인한다.
+56. 미엘 또는 플레이어 치유사 차례에 스킬→치유의 빛이 활성화되고 자신·플레이어·태온·미엘 중 살아 있는 아군만 선택되는지 확인한다.
+57. 피해를 받은 아군에게 사용하면 최대 HP의 35% 올림 값만큼 회복하되 최대 HP를 넘지 않고, peak 순간 HP Bar·상세 HP와 `+회복량`이 함께 갱신되는지 확인한다.
+58. 최대 HP 아군 선택 시 `이미 HP가 가득 찼습니다` 안내 후 스킬 메뉴로 돌아가며 행동이 소비되지 않는지 확인한다.
+59. 전투불능 아군과 적은 대상이 아니며, 대상 선택 중 Esc/취소는 스킬 메뉴로, 스킬 메뉴 Esc/취소는 기본 명령으로 돌아가는지 확인한다.
+60. Radiant Heal이 대상 위치에서 14프레임으로 재생되고 peak 뒤 연출 종료 시 다음 턴으로 진행하며, 연출 중 중복 입력과 Console 오류가 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 HP HUD의 pawn_right 도발과 hourglass_top→hourglass→hourglass_bottom 재사용 단계, 전투불능 정리를 우선 검증한다. 이어 적 4~6명 배치와 3대3 전투 회귀를 확인한 뒤 미엘의 치유의 빛을 공용 아군 대상 선택 흐름에 연결한다.
+Unity 16:9 Play Mode에서 미엘·플레이어 치유사의 치유의 빛 대상 제한, 35% 회복, 최대 HP 무소비 복귀, Radiant Heal peak 동기화와 단계별 취소를 우선 검증한다. 이어 도발·공격·방어·Projectile·승패·필드 복귀의 3대3 회귀를 확인하고 다음 직업 스킬을 선정한다.
 
 ## 갱신 규칙
 
