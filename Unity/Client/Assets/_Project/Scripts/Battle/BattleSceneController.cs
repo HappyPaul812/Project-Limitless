@@ -1218,7 +1218,14 @@ namespace ProjectLimitless.Battle
                     RestoreBattleIdle(actorView);
                     foreach (CombatantView targetView in targetViews) RestoreBattleIdle(targetView);
                     actionPlaying = false;
-                    if (executed) FinishCurrentAction();
+                    if (executed)
+                    {
+                        // 낙하·피해·모든 피격 반응이 끝난 이 시점이 화살비 사용 성공의 경계입니다.
+                        // 여기서만 2턴을 등록하므로 후열 0명 거절에는 쿨타임이 없고, HUD도 실제 계산을
+                        // 직접 만들지 않고 BattleSkillCooldowns에 저장된 결과를 다음 갱신에서 읽습니다.
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
                     else
                     {
                         string failureMessage = messageText.text;

@@ -145,12 +145,15 @@ namespace ProjectLimitless.Battle
                 if (preview.SkillId == SharpshooterArrowRainId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "화살을 하늘로 쏘아 올려 적 후열에 비처럼 쏟아냅니다.\n살아 있는 적 후열 전체에 일반 공격의 120% 피해를 줍니다.", true,
-                        BattleSkillEffectType.AreaRangedPhysicalAttack, 0, 0, 0f, 120,
+                        // 대상당 120%라는 공격 성능은 유지하고, 강한 후열 광역기를 반복하는 빈도만
+                        // 사수 행동 기준 2턴으로 제한합니다. 수치와 사용 빈도를 데이터에서 따로 조절하면
+                        // 향후 밸런스 테스트에서도 피해 계산이나 Projectile 연출을 다시 고칠 필요가 없습니다.
+                        BattleSkillEffectType.AreaRangedPhysicalAttack, 2, 0, 0f, 120,
                         iconId: BattleUiIconCatalog.SharpshooterArrowRainSkill,
                         targetDescription: "대상: 적 후열 전체",
                         effectDescription: "피해: 일반 공격의 120%",
                         typeDescription: "유형: 원거리 물리",
-                        durationDescription: "재사용 대기시간: 없음",
+                        durationDescription: "재사용 대기시간: 2턴",
                         targetRange: BattleSkillTargetRange.EnemyRearRowAll);
                 if (preview.SkillId == FighterNandoId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
@@ -369,6 +372,21 @@ namespace ProjectLimitless.Battle
 
             reason = string.Empty;
             return true;
+        }
+
+        /// <summary>
+        /// 피해뿐 아니라 모든 피격 연출까지 끝나 행동 성공이 확정된 스킬의 쿨타임을 등록합니다.
+        /// 화살비는 유효 후열이 없으면 연출 자체를 시작하지 않으므로 이 메서드도 호출되지 않습니다.
+        /// 스킬 버튼을 누른 즉시 시작하면 거절된 행동에도 쿨타임이 생길 수 있어 완료 경계를 분리합니다.
+        ///
+        /// BattleSkillCooldowns는 Combatant와 Skill ID를 함께 키로 사용합니다. 따라서 같은 사수의
+        /// 정조준과 화살비도 서로 다른 남은 턴을 저장하고, 다른 캐릭터 행동에는 BeginActorTurn이 그
+        /// 사수를 받지 않으므로 화살비 쿨타임도 감소하지 않습니다.
+        /// </summary>
+        public void RegisterCooldownAfterSuccessfulUse(Combatant actor, BattleSkillDefinition skill)
+        {
+            if (actor == null || skill == null || skill.CooldownTurns <= 0) return;
+            cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
         }
 
         public bool Execute(Combatant actor, BattleSkillDefinition skill, Formation opponents, out string message)

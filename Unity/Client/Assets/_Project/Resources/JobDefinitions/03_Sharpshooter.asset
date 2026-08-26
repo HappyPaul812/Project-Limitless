@@ -31,7 +31,7 @@ MonoBehaviour:
   - skillId: sharpshooter_arrow_rain
     skillName: 화살비
     skillType: 후열 광역 원거리 물리 공격
-    skillDescription: 화살을 하늘로 쏘아 올려 살아 있는 적 후열 전체에 일반 공격의 120% 피해를 줍니다. 후열이 없으면 사용할 수 없습니다.
+    skillDescription: 화살을 하늘로 쏘아 올려 살아 있는 적 후열 전체에 일반 공격의 120% 피해를 줍니다. 후열이 없으면 사용할 수 없으며 재사용 대기시간은 2턴입니다.
   - skillId: sharpshooter_companion_attack
     skillName: 동료의 습격
     skillType: 단일 물리 공격
