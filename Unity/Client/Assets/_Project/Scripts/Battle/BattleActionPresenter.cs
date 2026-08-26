@@ -247,6 +247,161 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// 상승 화살과 여러 대상 위의 낙하 화살을 하나의 연출로 관리합니다. 화면의 화살들은 모두 장식이고
+        /// 실제 피해는 낙하가 끝난 뒤 applyImpacts를 딱 한 번 호출해 대상별 한 번만 계산합니다. 여러 개의
+        /// 단일 Projectile 코루틴을 따로 실행하면 각 코루틴이 피해·완료·다음 턴을 반복할 수 있으므로,
+        /// 광역 행동 전체가 끝나는 시점을 이 메서드 하나가 책임집니다.
+        /// </summary>
+        public IEnumerator PlayProjectileVolleyAttack(RectTransform attacker, Image attackerSprite,
+            IReadOnlyList<RectTransform> targets, IReadOnlyList<Image> targetSprites, Font damageFont,
+            Sprite[] projectileFrames, float frameDuration, Func<IReadOnlyList<int>> applyImpacts,
+            Action<IReadOnlyList<int>> onImpact, Action onComplete)
+        {
+            if (attacker == null || attackerSprite == null || targets == null || targetSprites == null)
+            {
+                IReadOnlyList<int> fallback = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+                onImpact?.Invoke(fallback);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Color attackerOriginalColor = attackerSprite.color;
+            Text callout = CreateSkillCallout(attacker, damageFont, "화살비!");
+
+            // 조준은 입력을 요구하는 구간이 아니라 짧은 시각적 예고입니다. 이 시간에도 Controller의
+            // actionPlaying이 유지되어 플레이어가 같은 행동을 중복 입력할 수 없습니다.
+            const float aimDuration = .1f;
+            float elapsed = 0f;
+            while (elapsed < aimDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / aimDuration);
+                attackerSprite.color = Color.Lerp(attackerOriginalColor,
+                    new Color(1f, .88f, .42f, attackerOriginalColor.a), Mathf.Sin(t * Mathf.PI));
+                yield return null;
+            }
+
+            RectTransform projectileParent = attacker.parent as RectTransform;
+            List<Image> risingArrows = new List<Image>();
+            float[] risingOffsets = { -20f, 0f, 20f };
+            for (int index = 0; index < risingOffsets.Length; index++)
+            {
+                Vector3 start = attacker.localPosition + new Vector3(risingOffsets[index], 18f, 0f);
+                risingArrows.Add(CreateVolleyProjectile(projectileParent, projectileFrames, start, 90f));
+            }
+
+            const float riseDuration = .13f;
+            elapsed = 0f;
+            while (elapsed < riseDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / riseDuration);
+                for (int index = 0; index < risingArrows.Count; index++)
+                {
+                    Image arrow = risingArrows[index];
+                    if (arrow == null) continue;
+                    Vector3 start = attacker.localPosition + new Vector3(risingOffsets[index], 18f, 0f);
+                    arrow.rectTransform.localPosition = Vector3.Lerp(start, start + Vector3.up * 220f, t);
+                    SetProjectileFrame(arrow, projectileFrames, elapsed, frameDuration);
+                }
+                yield return null;
+            }
+            foreach (Image arrow in risingArrows) if (arrow != null) Destroy(arrow.gameObject);
+
+            yield return new WaitForSeconds(.16f);
+
+            // 대상마다 세 발을 만들되 X 위치와 시작 시점을 조금씩 다르게 합니다. 화살 수는 순수 연출이며
+            // 아래의 applyImpacts 호출 횟수나 BattleSkillExecutor의 피해량에는 관여하지 않습니다.
+            List<Image> fallingArrows = new List<Image>();
+            List<Vector3> fallStarts = new List<Vector3>();
+            List<Vector3> fallEnds = new List<Vector3>();
+            List<float> fallDelays = new List<float>();
+            float[] fallOffsets = { -22f, 0f, 22f };
+            int targetCount = Mathf.Min(targets.Count, targetSprites.Count);
+            for (int targetIndex = 0; targetIndex < targetCount; targetIndex++)
+            {
+                if (targets[targetIndex] == null || targetSprites[targetIndex] == null) continue;
+                for (int arrowIndex = 0; arrowIndex < fallOffsets.Length; arrowIndex++)
+                {
+                    Vector3 end = targets[targetIndex].localPosition + new Vector3(fallOffsets[arrowIndex], 20f, 0f);
+                    Vector3 start = end + Vector3.up * (175f + arrowIndex * 8f);
+                    Image arrow = CreateVolleyProjectile(projectileParent, projectileFrames, start, -90f);
+                    if (arrow != null) arrow.gameObject.SetActive(arrowIndex == 0);
+                    fallingArrows.Add(arrow);
+                    fallStarts.Add(start);
+                    fallEnds.Add(end);
+                    fallDelays.Add(arrowIndex * .03f);
+                }
+            }
+
+            const float fallDuration = .18f;
+            elapsed = 0f;
+            while (elapsed < fallDuration)
+            {
+                elapsed += Time.deltaTime;
+                for (int index = 0; index < fallingArrows.Count; index++)
+                {
+                    Image arrow = fallingArrows[index];
+                    if (arrow == null || elapsed < fallDelays[index]) continue;
+                    if (!arrow.gameObject.activeSelf) arrow.gameObject.SetActive(true);
+                    float availableDuration = Mathf.Max(.01f, fallDuration - fallDelays[index]);
+                    float t = Mathf.Clamp01((elapsed - fallDelays[index]) / availableDuration);
+                    arrow.rectTransform.localPosition = Vector3.Lerp(fallStarts[index], fallEnds[index],
+                        1f - Mathf.Pow(1f - t, 3f));
+                    SetProjectileFrame(arrow, projectileFrames, elapsed - fallDelays[index], frameDuration);
+                }
+                yield return null;
+            }
+            foreach (Image arrow in fallingArrows) if (arrow != null) Destroy(arrow.gameObject);
+
+            // 모든 낙하가 끝난 공유 타격 시점에 계산을 한 번 실행합니다. 반환된 배열의 한 원소가 한 대상의
+            // 120% 피해이며, 이 시점에 HP HUD도 한 번 갱신됩니다.
+            IReadOnlyList<int> damages = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+            onImpact?.Invoke(damages);
+
+            Vector3[] targetOrigins = new Vector3[targetCount];
+            Color[] targetOriginalColors = new Color[targetCount];
+            for (int index = 0; index < targetCount; index++)
+            {
+                if (targets[index] == null || targetSprites[index] == null) continue;
+                targetOrigins[index] = targets[index].localPosition;
+                targetOriginalColors[index] = targetSprites[index].color;
+                if (index < damages.Count && damages[index] > 0)
+                    StartCoroutine(ShowDamageNumber(targets[index], damageFont, damages[index]));
+            }
+
+            const float reactionDuration = .18f;
+            elapsed = 0f;
+            while (elapsed < reactionDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / reactionDuration);
+                float shake = Mathf.Sin(t * Mathf.PI * 6f) * (1f - t) * 10f;
+                for (int index = 0; index < targetCount; index++)
+                {
+                    if (targets[index] == null || targetSprites[index] == null) continue;
+                    targets[index].localPosition = targetOrigins[index] + Vector3.right * shake;
+                    Color flash = new Color(targetOriginalColors[index].r, targetOriginalColors[index].g,
+                        targetOriginalColors[index].b, .35f);
+                    targetSprites[index].color = t < .55f
+                        ? flash : Color.Lerp(flash, targetOriginalColors[index], (t - .55f) / .45f);
+                }
+                yield return null;
+            }
+
+            for (int index = 0; index < targetCount; index++)
+            {
+                if (targets[index] == null || targetSprites[index] == null) continue;
+                targets[index].localPosition = targetOrigins[index];
+                targetSprites[index].color = targetOriginalColors[index];
+            }
+            attackerSprite.color = attackerOriginalColor;
+            if (callout != null) Destroy(callout.gameObject);
+            // 상승·대기·낙하·모든 피격 반응이 끝난 뒤 완료를 한 번만 알리므로 다음 턴도 한 번만 진행됩니다.
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
         /// 선택한 아군 위치에서 회복 Sprite 프레임을 재생합니다. manifest의 peak 프레임에 도달했을 때
         /// applyHealing을 한 번만 호출하여 가장 밝게 피어나는 순간과 실제 HP 증가 시점을 맞춥니다.
         /// Presenter는 회복 공식을 알지 못하고 전달받은 함수를 호출하므로 전투 계산과 연출이 분리됩니다.
@@ -331,6 +486,30 @@ namespace ProjectLimitless.Battle
             float horizontal = Mathf.Abs(direction.x);
             float angle = Mathf.Atan2(direction.y, horizontal) * Mathf.Rad2Deg;
             return direction.x < 0f ? -angle : angle;
+        }
+
+        /// <summary>원본 golden_arrow Sprite는 그대로 두고 개별 UI 인스턴스의 회전만 바꿉니다.</summary>
+        private static Image CreateVolleyProjectile(RectTransform parent, Sprite[] frames, Vector3 position, float angle)
+        {
+            if (parent == null) return null;
+            GameObject projectileObject = new GameObject("BattleVolleyProjectile", typeof(Image));
+            projectileObject.transform.SetParent(parent, false);
+            Image image = projectileObject.GetComponent<Image>();
+            image.sprite = frames != null && frames.Length > 0 ? frames[0] : null;
+            image.preserveAspect = true;
+            image.raycastTarget = false;
+            RectTransform rect = image.rectTransform;
+            rect.anchorMin = rect.anchorMax = rect.pivot = Vector2.one * .5f;
+            rect.sizeDelta = new Vector2(52f, 52f);
+            rect.localPosition = position;
+            rect.localRotation = Quaternion.Euler(0f, 0f, angle);
+            return image;
+        }
+
+        private static void SetProjectileFrame(Image image, Sprite[] frames, float elapsed, float frameDuration)
+        {
+            if (image == null || frames == null || frames.Length == 0 || frameDuration <= 0f) return;
+            image.sprite = frames[Mathf.FloorToInt(Mathf.Max(0f, elapsed) / frameDuration) % frames.Length];
         }
 
         private static IEnumerator MoveProjectile(RectTransform subject, Image image, Sprite[] frames, float frameDuration,

@@ -30,8 +30,8 @@ MonoBehaviour:
     skillDescription: 적 1명에게 매우 강한 단일 물리 피해를 주는 보스·엘리트 상대 기술입니다.
   - skillId: sharpshooter_arrow_rain
     skillName: 화살비
-    skillType: 광역 물리 공격
-    skillDescription: 투사체를 공중으로 쏘아 적 전체를 공격합니다. 대상별 피해는 정조준보다 낮습니다.
+    skillType: 후열 광역 원거리 물리 공격
+    skillDescription: 화살을 하늘로 쏘아 올려 살아 있는 적 후열 전체에 일반 공격의 120% 피해를 줍니다. 후열이 없으면 사용할 수 없습니다.
   - skillId: sharpshooter_companion_attack
     skillName: 동료의 습격
     skillType: 단일 물리 공격

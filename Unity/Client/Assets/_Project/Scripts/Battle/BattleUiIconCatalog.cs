@@ -26,6 +26,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntSkill = "skill.guardian.taunt";
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
         public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
+        public const string SharpshooterArrowRainSkill = "skill.sharpshooter.arrow_rain";
         public const string FighterNandoSkill = "skill.fighter.nando";
         public const string FighterMomentum = "status.fighter.momentum";
         public const string FighterCriticalStrikeSkill = "skill.fighter.critical_strike";
@@ -54,6 +55,7 @@ namespace ProjectLimitless.Battle
             { GuardianTauntSkill, "KenneyBattleIcons/pawn_left" },
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
+            { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
             { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },

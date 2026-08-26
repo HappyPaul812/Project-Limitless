@@ -815,6 +815,11 @@ namespace ProjectLimitless.Battle
                 PlayFighterWhirlwind(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.AreaRangedPhysicalAttack)
+            {
+                PlaySharpshooterArrowRain(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -1154,6 +1159,72 @@ namespace ProjectLimitless.Battle
                         ShowSkillMenu();
                         messageText.text = string.IsNullOrEmpty(failureMessage)
                             ? "회오리 베기를 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
+        /// <summary>
+        /// 화살비는 기본 사수 공격의 TargetResolver를 호출하지 않고 스킬 데이터의 EnemyRearRowAll을
+        /// 해석합니다. 기본 원거리 공격은 후열이 없으면 전열로 전환되지만, 화살비는 "후열이라는 공간"을
+        /// 공격하는 기술이므로 후열이 비었다고 다른 행을 대신 공격하지 않습니다.
+        /// </summary>
+        private void PlaySharpshooterArrowRain(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            Combatant[] targets = BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, opponents).ToArray();
+            if (targets.Length == 0)
+            {
+                messageText.text = "화살비로 공격할 후열 적이 없습니다.";
+                RebuildSkillMenu();
+                return;
+            }
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView[] targetViews = targets.Select(target => combatantViews[target]).ToArray();
+            RectTransform[] targetRects = targetViews.Select(view => view.ActionRoot).ToArray();
+            Image[] targetSprites = targetViews.Select(view => view.SpriteImage).ToArray();
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+
+            StartCoroutine(actionPresenter.PlayProjectileVolleyAttack(
+                actorView.ActionRoot,
+                actorView.SpriteImage,
+                targetRects,
+                targetSprites,
+                battleFont,
+                LoadProjectileFrames("BattleProjectiles/GoldenArrow"),
+                .08f,
+                () =>
+                {
+                    // 여러 화살 인스턴스는 시각 효과일 뿐입니다. Executor를 공유 타격 시점에 한 번만 호출해
+                    // 각 후열 대상이 화살 개수와 관계없이 정확히 120% 피해를 한 번 받게 합니다.
+                    executed = skillExecutor.ExecuteAreaRangedPhysicalAttack(
+                        actor, targets, skill, out IReadOnlyList<int> damages, out string result);
+                    messageText.text = result;
+                    return damages;
+                },
+                damages => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    foreach (CombatantView targetView in targetViews) RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "화살비를 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }

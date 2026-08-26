@@ -14,7 +14,8 @@ namespace ProjectLimitless.Battle
         SingleRangedPhysicalAttack,
         SingleMeleePhysicalAttackWithMomentumGain,
         SingleMeleePhysicalAttackConsumingMomentum,
-        AreaMeleePhysicalAttackWithMomentumGain
+        AreaMeleePhysicalAttackWithMomentumGain,
+        AreaRangedPhysicalAttack
     }
 
     /// <summary>
@@ -102,6 +103,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string SharpshooterAimId = "sharpshooter_aim";
+        public const string SharpshooterArrowRainId = "sharpshooter_arrow_rain";
         public const string FighterNandoId = "fighter_slash_stack";
         public const string FighterCriticalStrikeId = "fighter_finishing_strike";
         public const string FighterWhirlwindId = "fighter_whirlwind";
@@ -140,6 +142,16 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 적 1명",
                         effectDescription: "피해: 기본 공격의 160%",
                         typeDescription: "유형: 원거리 물리");
+                if (preview.SkillId == SharpshooterArrowRainId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "화살을 하늘로 쏘아 올려 적 후열에 비처럼 쏟아냅니다.\n살아 있는 적 후열 전체에 일반 공격의 120% 피해를 줍니다.", true,
+                        BattleSkillEffectType.AreaRangedPhysicalAttack, 0, 0, 0f, 120,
+                        iconId: BattleUiIconCatalog.SharpshooterArrowRainSkill,
+                        targetDescription: "대상: 적 후열 전체",
+                        effectDescription: "피해: 일반 공격의 120%",
+                        typeDescription: "유형: 원거리 물리",
+                        durationDescription: "재사용 대기시간: 없음",
+                        targetRange: BattleSkillTargetRange.EnemyRearRowAll);
                 if (preview.SkillId == FighterNandoId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "적 1명에게 일반 공격의 150% 피해를 주고 기세를 1 얻습니다.\n기세는 최대 3까지 쌓이며 회심의 일격을 강화합니다.\n난도 스킬을 세 번째 직접 사용하면 2턴 동안 재사용할 수 없습니다.", true,
@@ -555,6 +567,43 @@ namespace ProjectLimitless.Battle
             gainedMomentum = fighterResources.AddMomentum(actor, livingEnemies.Length);
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해. 현재 기세 {fighterResources.GetMomentum(actor)}.";
+            return true;
+        }
+
+        /// <summary>
+        /// 화살비의 마지막 낙하 시점에 후열 대상마다 120% 피해를 한 번만 적용합니다. 화면에는 대상당
+        /// 여러 화살이 보이지만 그것은 밀도를 만드는 연출입니다. Projectile 하나마다 TakeDamage를 호출하면
+        /// 화살 수가 2개인 대상과 4개인 대상의 실제 피해가 달라지므로, 스킬 데이터가 약속한 "대상당 120%"
+        /// 규칙을 지킬 수 없습니다. 따라서 Controller가 확정한 후열 대상 목록을 한 번 순회합니다.
+        /// </summary>
+        public bool ExecuteAreaRangedPhysicalAttack(Combatant actor, IReadOnlyList<Combatant> targets,
+            BattleSkillDefinition skill, out IReadOnlyList<int> damages, out string message)
+        {
+            damages = Array.Empty<int>();
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.AreaRangedPhysicalAttack || targets == null)
+            {
+                message = "화살비로 공격할 후열 적이 없습니다.";
+                return false;
+            }
+
+            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            if (livingEnemies.Length == 0)
+            {
+                message = "화살비로 공격할 후열 적이 없습니다.";
+                return false;
+            }
+
+            // 다른 퍼센트 공격과 같은 올림 정책입니다. 예를 들어 Attack 12는
+            // (12×120+99)/100 = 15가 되며, TakeDamage가 방어 중 50% 감소를 그대로 담당합니다.
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int[] appliedDamages = new int[livingEnemies.Length];
+            for (int index = 0; index < livingEnemies.Length; index++)
+                appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
+
+            damages = appliedDamages;
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 후열 {livingEnemies.Length}명에게 피해.";
             return true;
         }
     }

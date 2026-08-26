@@ -26,6 +26,7 @@
 | 수호자 도발 스킬 | Board Game Icons `PNG/Default (64px)/pawn_left.png` | `skill.guardian.taunt` |
 | 치유사 치유의 빛 | Board Game Icons `PNG/Default (64px)/suit_hearts.png` | `skill.healer.healing_light` |
 | 사수 정조준 | Game Icons `PNG/White/1x/target.png` | `skill.sharpshooter.aim` |
+| 사수 화살비 | Board Game Icons `PNG/Default (64px)/bow.png` | `skill.sharpshooter.arrow_rain` |
 | 투사 난도 스킬 | Game Icons `PNG/White/1x/cross.png` | `skill.fighter.nando` |
 | 투사 기세 상태 | Board Game Icons `PNG/Default (64px)/skull.png` | `status.fighter.momentum` |
 | 투사 회심의 일격 | Board Game Icons `PNG/Default (64px)/skull.png` | `skill.fighter.critical_strike` |
@@ -33,7 +34,7 @@
 
 파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
-취소는 동작 의미가 더 분명한 `arrowLeft.png`를 유지한다. `cross.png`는 투사 `난도`, `spinner.png`는 적 전체를 도는 `회오리 베기` 스킬에 사용하고, `skull.png`는 투사 개인 자원 `기세`와 이를 소비하는 `회심의 일격`에 사용한다. 상단 HUD는 아이콘과 `기세 n` 한글을 함께 보여 그림만으로 상태를 전달하지 않는다.
+취소는 동작 의미가 더 분명한 `arrowLeft.png`를 유지한다. `bow.png`는 사수 `화살비`, `cross.png`는 투사 `난도`, `spinner.png`는 전열을 도는 `회오리 베기` 스킬에 사용하고, `skull.png`는 투사 개인 자원 `기세`와 이를 소비하는 `회심의 일격`에 사용한다. 상단 HUD는 아이콘과 `기세 n` 한글을 함께 보여 그림만으로 상태를 전달하지 않는다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 
