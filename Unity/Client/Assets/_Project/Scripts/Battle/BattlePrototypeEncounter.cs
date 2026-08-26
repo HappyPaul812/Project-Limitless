@@ -88,8 +88,11 @@ namespace ProjectLimitless.Battle
 
             BattleParticipantSetup[] enemies =
             {
+                // 화살비의 다중 후열 Play Mode 검증을 위해 몬스터 수는 그대로 두고 A만 전열,
+                // B와 C를 후열에 둡니다. 이는 임시 Encounter 배치 데이터만 바꾸는 것으로,
+                // EnemyRearRowAll 대상 판정이나 120% 피해·다중 Projectile 전투 로직은 수정하지 않습니다.
                 CreateSlime(monsterId + "_a", monsterName + " A", FormationRow.Front, 0, 11),
-                CreateSlime(monsterId + "_b", monsterName + " B", FormationRow.Front, 1, 10),
+                CreateSlime(monsterId + "_b", monsterName + " B", FormationRow.Rear, 0, 10),
                 CreateSlime(monsterId + "_c", monsterName + " C", FormationRow.Rear, 1, 12)
             };
             return new BattleEncounterSetup(allies, enemies);
