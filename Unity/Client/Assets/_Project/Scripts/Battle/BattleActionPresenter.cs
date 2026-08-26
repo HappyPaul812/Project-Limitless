@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,6 +53,100 @@ namespace ProjectLimitless.Battle
             attacker.localPosition = attackerOrigin;
             target.localPosition = targetOrigin;
             targetSprite.color = targetOriginalColor;
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
+        /// 회오리 베기는 대상 선택이나 Projectile 없이 제자리에서 짧게 회전하고 모든 적을 거의 동시에
+        /// 타격합니다. 실제 HP/기세 계산은 applyImpacts에 남겨 Presenter가 80% 공식이나 전투 자원을
+        /// 알지 않게 하고, 여기서는 타격 시점·피해 숫자·피격 반응이 끝나는 순서만 책임집니다.
+        /// </summary>
+        public IEnumerator PlayWhirlwindAttack(RectTransform attacker, Image attackerSprite,
+            IReadOnlyList<RectTransform> targets, IReadOnlyList<Image> targetSprites, Font damageFont,
+            Func<IReadOnlyList<int>> applyImpacts, Action<IReadOnlyList<int>> onImpact, Action onComplete)
+        {
+            if (attacker == null || attackerSprite == null || targets == null || targetSprites == null)
+            {
+                IReadOnlyList<int> fallback = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+                onImpact?.Invoke(fallback);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Color attackerOriginalColor = attackerSprite.color;
+            Text callout = CreateSkillCallout(attacker, damageFont, "회오리 베기!");
+            GameObject slashObject = new GameObject("WhirlwindSlash", typeof(Image));
+            slashObject.transform.SetParent(attacker, false);
+            Image slashImage = slashObject.GetComponent<Image>();
+            slashImage.sprite = GetOrbSprite();
+            slashImage.color = new Color(1f, .7f, .16f, .75f);
+            slashImage.raycastTarget = false;
+            RectTransform slash = slashImage.rectTransform;
+            slash.anchorMin = slash.anchorMax = slash.pivot = Vector2.one * .5f;
+            slash.sizeDelta = new Vector2(155f, 18f);
+
+            // 준비 시간은 반응 속도를 요구하는 입력 구간이 아니라 짧은 시각적 예고입니다.
+            const float preparationDuration = .1f;
+            float elapsed = 0f;
+            while (elapsed < preparationDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / preparationDuration);
+                attackerSprite.color = Color.Lerp(attackerOriginalColor,
+                    new Color(1f, .86f, .4f, attackerOriginalColor.a), t);
+                slash.localRotation = Quaternion.Euler(0f, 0f, 120f * t);
+                slash.localScale = Vector3.one * (.5f + .5f * t);
+                yield return null;
+            }
+
+            IReadOnlyList<int> damages = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+            onImpact?.Invoke(damages);
+
+            int count = Mathf.Min(targets.Count, targetSprites.Count);
+            Vector3[] origins = new Vector3[count];
+            Color[] originalColors = new Color[count];
+            for (int index = 0; index < count; index++)
+            {
+                if (targets[index] == null || targetSprites[index] == null) continue;
+                origins[index] = targets[index].localPosition;
+                originalColors[index] = targetSprites[index].color;
+                if (index < damages.Count && damages[index] > 0)
+                    StartCoroutine(ShowDamageNumber(targets[index], damageFont, damages[index]));
+            }
+
+            // 모든 대상의 흔들림을 한 루프에서 갱신해 순차 공격처럼 보이지 않게 합니다. 이 루프가 끝난 뒤에만
+            // onComplete를 호출하므로 Controller는 피격 반응과 기세 HUD 갱신이 끝나기 전에 다음 턴을 열지 않습니다.
+            const float impactDuration = .2f;
+            elapsed = 0f;
+            while (elapsed < impactDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / impactDuration);
+                float shake = Mathf.Sin(t * Mathf.PI * 6f) * (1f - t) * 10f;
+                for (int index = 0; index < count; index++)
+                {
+                    if (targets[index] == null || targetSprites[index] == null) continue;
+                    targets[index].localPosition = origins[index] + Vector3.right * shake;
+                    Color flash = new Color(originalColors[index].r, originalColors[index].g,
+                        originalColors[index].b, .35f);
+                    targetSprites[index].color = t < .55f
+                        ? flash : Color.Lerp(flash, originalColors[index], (t - .55f) / .45f);
+                }
+                slash.localRotation = Quaternion.Euler(0f, 0f, 120f + 720f * t);
+                slash.sizeDelta = Vector2.Lerp(new Vector2(155f, 18f), new Vector2(230f, 8f), t);
+                slashImage.color = new Color(1f, Mathf.Lerp(.7f, 1f, t), .2f, 1f - t);
+                yield return null;
+            }
+
+            for (int index = 0; index < count; index++)
+            {
+                if (targets[index] == null || targetSprites[index] == null) continue;
+                targets[index].localPosition = origins[index];
+                targetSprites[index].color = originalColors[index];
+            }
+            attackerSprite.color = attackerOriginalColor;
+            if (callout != null) Destroy(callout.gameObject);
+            Destroy(slashObject);
             onComplete?.Invoke();
         }
 

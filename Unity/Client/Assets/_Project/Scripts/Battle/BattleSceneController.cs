@@ -810,6 +810,11 @@ namespace ProjectLimitless.Battle
                 BeginFighterMeleeSkillSelection(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.AreaMeleePhysicalAttackWithMomentumGain)
+            {
+                PlayFighterWhirlwind(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -1084,6 +1089,69 @@ namespace ProjectLimitless.Battle
                         ShowSkillMenu();
                         messageText.text = string.IsNullOrEmpty(failureMessage)
                             ? $"{skill.DisplayName}을(를) 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
+        /// <summary>
+        /// 광역기는 한 명을 고르는 TargetResolver 규칙이 아니라 Formation이 이미 제공하는 살아 있는 참가자
+        /// 목록을 사용합니다. 전열/후열을 모두 포함하되 전투불능은 LivingMembers 단계에서 빠지므로 같은
+        /// 판정을 Controller에 반복 구현하지 않습니다. 목록은 연출 시작 전에 고정하여 계산 대상과 화면
+        /// 대상의 순서가 일치하게 유지합니다.
+        /// </summary>
+        private void PlayFighterWhirlwind(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            Combatant[] targets = opponents.LivingMembers.ToArray();
+            if (targets.Length == 0)
+            {
+                messageText.text = "공격할 수 있는 살아 있는 적이 없습니다.";
+                RebuildSkillMenu();
+                return;
+            }
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView[] targetViews = targets.Select(target => combatantViews[target]).ToArray();
+            RectTransform[] targetRects = targetViews.Select(view => view.ActionRoot).ToArray();
+            Image[] targetSprites = targetViews.Select(view => view.SpriteImage).ToArray();
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+
+            StartCoroutine(actionPresenter.PlayWhirlwindAttack(
+                actorView.ActionRoot,
+                actorView.SpriteImage,
+                targetRects,
+                targetSprites,
+                battleFont,
+                () =>
+                {
+                    executed = skillExecutor.ExecuteAreaMeleePhysicalAttackWithMomentumGain(
+                        actor, targets, skill, out IReadOnlyList<int> damages, out _, out string result);
+                    messageText.text = result;
+                    return damages;
+                },
+                damages => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    foreach (CombatantView targetView in targetViews) RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "회오리 베기를 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }

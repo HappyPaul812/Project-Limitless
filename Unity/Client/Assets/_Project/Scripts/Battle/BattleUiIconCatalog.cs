@@ -29,6 +29,7 @@ namespace ProjectLimitless.Battle
         public const string FighterNandoSkill = "skill.fighter.nando";
         public const string FighterMomentum = "status.fighter.momentum";
         public const string FighterCriticalStrikeSkill = "skill.fighter.critical_strike";
+        public const string FighterWhirlwindSkill = "skill.fighter.whirlwind";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -55,7 +56,8 @@ namespace ProjectLimitless.Battle
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
-            { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" }
+            { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },
+            { FighterWhirlwindSkill, "KenneyBattleIcons/spinner" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();

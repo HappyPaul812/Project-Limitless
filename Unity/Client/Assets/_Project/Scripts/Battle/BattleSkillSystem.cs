@@ -13,7 +13,8 @@ namespace ProjectLimitless.Battle
         SingleAllyHeal,
         SingleRangedPhysicalAttack,
         SingleMeleePhysicalAttackWithMomentumGain,
-        SingleMeleePhysicalAttackConsumingMomentum
+        SingleMeleePhysicalAttackConsumingMomentum,
+        AreaMeleePhysicalAttackWithMomentumGain
     }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
@@ -86,6 +87,7 @@ namespace ProjectLimitless.Battle
         public const string SharpshooterAimId = "sharpshooter_aim";
         public const string FighterNandoId = "fighter_slash_stack";
         public const string FighterCriticalStrikeId = "fighter_finishing_strike";
+        public const string FighterWhirlwindId = "fighter_whirlwind";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -139,6 +141,15 @@ namespace ProjectLimitless.Battle
                         effectDescription: "기세 0: 일반 공격의 100%\n기세 1: 일반 공격의 130%\n기세 2: 일반 공격의 160%\n기세 3: 일반 공격의 190%\n효과: 공격 적중 후 기세 전부 소모",
                         typeDescription: "유형: 근거리 물리",
                         momentumDamagePercents: new[] { 100, 130, 160, 190 });
+                if (preview.SkillId == FighterWhirlwindId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "살아 있는 모든 적에게 일반 공격의 80% 피해를 줍니다.\n실제로 맞힌 적 1명당 기세를 1 얻으며, 기세는 최대 3입니다.\n회오리 베기로 기세 3이 되어도 난도의 재사용 대기시간은 발생하지 않습니다.", true,
+                        BattleSkillEffectType.AreaMeleePhysicalAttackWithMomentumGain, 0, 0, 0f, 80,
+                        iconId: BattleUiIconCatalog.FighterWhirlwindSkill,
+                        targetDescription: "대상: 살아 있는 적 전체",
+                        effectDescription: "피해: 적마다 일반 공격의 80%\n효과: 맞힌 적 1명당 기세 +1\n기세 최대: 3",
+                        typeDescription: "유형: 광역 근거리 물리",
+                        durationDescription: "재사용 대기시간: 없음");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -448,6 +459,50 @@ namespace ProjectLimitless.Battle
             damage = target.TakeDamage(rawDamage);
             consumedMomentum = fighterResources.ConsumeAllMomentum(actor);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 기세 {momentum}으로 {target.DisplayName}에게 {damage} 피해.";
+            return true;
+        }
+
+        /// <summary>
+        /// 회오리 베기의 타격 순간 살아 있는 적 전체에 같은 80% 물리 피해를 적용합니다. 정수식
+        /// `(Attack×80+99)/100`은 소수점을 올림하므로 Attack 12라면 9.6이 10이 되고, 각 대상의
+        /// TakeDamage가 방어 중 50% 감소를 기존 규칙 그대로 처리합니다.
+        ///
+        /// 기세는 실제 피해 처리를 통과한 대상 수만큼 한 번에 AddMomentum으로 올립니다. 이 공용 자원
+        /// 진입점은 최대 3을 보장하지만 RecordDirectNandoUse를 부르지 않습니다. 그래서 회오리 베기로
+        /// 기세가 3이 되어도 "난도를 직접 세 번 사용"한 기록이나 난도 쿨타임은 생기지 않습니다.
+        /// 향후 다른 다중 타격 기술도 같은 AddMomentum 경로를 재사용할 수 있습니다.
+        /// </summary>
+        public bool ExecuteAreaMeleePhysicalAttackWithMomentumGain(Combatant actor,
+            IReadOnlyList<Combatant> targets, BattleSkillDefinition skill, out IReadOnlyList<int> damages,
+            out int gainedMomentum, out string message)
+        {
+            damages = Array.Empty<int>();
+            gainedMomentum = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.AreaMeleePhysicalAttackWithMomentumGain || targets == null)
+            {
+                message = "공격할 수 있는 살아 있는 적이 없습니다.";
+                return false;
+            }
+
+            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            if (livingEnemies.Length == 0)
+            {
+                message = "공격할 수 있는 살아 있는 적이 없습니다.";
+                return false;
+            }
+
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int[] appliedDamages = new int[livingEnemies.Length];
+            for (int index = 0; index < livingEnemies.Length; index++)
+                appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
+
+            // 자원은 적에게 붙는 상태가 아니라 공격한 투사 Combatant를 키로 저장합니다. 같은 편에 투사가
+            // 여러 명 있어도 서로의 기세가 섞이지 않고, 회심의 일격도 자기 기세만 읽고 소비할 수 있습니다.
+            gainedMomentum = fighterResources.AddMomentum(actor, livingEnemies.Length);
+            damages = appliedDamages;
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해. 현재 기세 {fighterResources.GetMomentum(actor)}.";
             return true;
         }
     }
