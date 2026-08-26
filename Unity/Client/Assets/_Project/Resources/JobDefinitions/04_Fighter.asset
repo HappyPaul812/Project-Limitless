@@ -35,4 +35,4 @@ MonoBehaviour:
   - skillId: fighter_whirlwind
     skillName: 회오리 베기
     skillType: 광역 근거리 물리 / 전투 자원
-    skillDescription: 살아 있는 모든 적에게 일반 공격의 80% 피해를 주고 맞힌 적 1명당 기세를 1 얻습니다. 쿨타임이 없으며 이 기세는 난도 스킬 쿨타임을 발생시키지 않습니다.
+    skillDescription: 적 전열 전체에게 일반 공격의 80% 피해를 주고 맞힌 적 1명당 기세를 1 얻습니다. 쿨타임이 없으며 이 기세는 난도 스킬 쿨타임을 발생시키지 않습니다.

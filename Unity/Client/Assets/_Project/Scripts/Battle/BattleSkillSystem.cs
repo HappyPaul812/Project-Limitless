@@ -17,6 +17,20 @@ namespace ProjectLimitless.Battle
         AreaMeleePhysicalAttackWithMomentumGain
     }
 
+    /// <summary>
+    /// 광역 스킬이 어느 적 행을 공격하는지 나타내는 데이터입니다. 기본 공격의 TargetRangeType은
+    /// "전열이 비면 노출된 후열을 근거리로 공격" 같은 접근 규칙을 담당하지만, 스킬 범위는 회오리 베기처럼
+    /// 전열에 고정될 수 있습니다. 두 의미를 분리해야 기본 공격 규칙을 바꾸지 않고 화살비·썬더볼트도
+    /// 각각 EnemyRearRowAll·EnemyAll 데이터만 지정해 같은 해석기를 재사용할 수 있습니다.
+    /// </summary>
+    public enum BattleSkillTargetRange
+    {
+        None,
+        EnemyFrontRowAll,
+        EnemyRearRowAll,
+        EnemyAll
+    }
+
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
     {
@@ -24,7 +38,7 @@ namespace ProjectLimitless.Battle
             BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
             int attackDamagePercent = 0, string iconId = null, string targetDescription = null,
             string effectDescription = null, string typeDescription = null, string durationDescription = null,
-            IReadOnlyList<int> momentumDamagePercents = null)
+            IReadOnlyList<int> momentumDamagePercents = null, BattleSkillTargetRange targetRange = BattleSkillTargetRange.None)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -41,6 +55,7 @@ namespace ProjectLimitless.Battle
             TypeDescription = typeDescription ?? string.Empty;
             DurationDescription = durationDescription ?? string.Empty;
             MomentumDamagePercents = momentumDamagePercents ?? Array.Empty<int>();
+            TargetRange = targetRange;
         }
 
         public string Id { get; }
@@ -74,6 +89,8 @@ namespace ProjectLimitless.Battle
         /// 같은 목록을 읽기 때문에 설명의 수치와 실제 피해가 따로 어긋나지 않습니다.
         /// </summary>
         public IReadOnlyList<int> MomentumDamagePercents { get; }
+        /// <summary>광역 스킬의 행 범위입니다. UI 문구가 아니라 전투 대상 해석기가 읽는 실행 데이터입니다.</summary>
+        public BattleSkillTargetRange TargetRange { get; }
     }
 
     /// <summary>
@@ -143,16 +160,50 @@ namespace ProjectLimitless.Battle
                         momentumDamagePercents: new[] { 100, 130, 160, 190 });
                 if (preview.SkillId == FighterWhirlwindId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
-                        "살아 있는 모든 적에게 일반 공격의 80% 피해를 줍니다.\n실제로 맞힌 적 1명당 기세를 1 얻으며, 기세는 최대 3입니다.\n회오리 베기로 기세 3이 되어도 난도의 재사용 대기시간은 발생하지 않습니다.", true,
+                        "회전하며 적 전열 전체를 베어 각 대상에게 일반 공격의 80% 피해를 줍니다.\n실제로 적중한 적 수만큼 기세를 얻으며, 기세는 최대 3까지 쌓입니다.\n회오리 베기로 기세 3이 되어도 난도의 재사용 대기시간은 발생하지 않습니다.", true,
                         BattleSkillEffectType.AreaMeleePhysicalAttackWithMomentumGain, 0, 0, 0f, 80,
                         iconId: BattleUiIconCatalog.FighterWhirlwindSkill,
-                        targetDescription: "대상: 살아 있는 적 전체",
+                        targetDescription: "대상: 적 전열 전체",
                         effectDescription: "피해: 적마다 일반 공격의 80%\n효과: 맞힌 적 1명당 기세 +1\n기세 최대: 3",
                         typeDescription: "유형: 광역 근거리 물리",
-                        durationDescription: "재사용 대기시간: 없음");
+                        durationDescription: "재사용 대기시간: 없음",
+                        targetRange: BattleSkillTargetRange.EnemyFrontRowAll);
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
+        }
+    }
+
+    /// <summary>BattleSkillDefinition의 광역 범위 데이터를 실제 Formation 참가자 목록으로 변환합니다.</summary>
+    public static class BattleSkillTargetResolver
+    {
+        public static IReadOnlyList<Combatant> ResolveHostileAreaTargets(BattleSkillDefinition skill, Formation opponents)
+        {
+            if (skill == null || opponents == null) return Array.Empty<Combatant>();
+
+            // Formation 자체에 새 규칙을 넣지 않고 공개된 슬롯 조회만 사용합니다. 회오리 베기는 전열이
+            // 비어도 후열로 범위를 넓히지 않습니다. 이는 "접근 가능한 적"을 찾는 기본 근거리 공격과 달리,
+            // 스킬 데이터가 지정한 공간인 전열만 베는 광역 공격이기 때문입니다.
+            IEnumerable<FormationRow> rows;
+            switch (skill.TargetRange)
+            {
+                case BattleSkillTargetRange.EnemyFrontRowAll:
+                    rows = new[] { FormationRow.Front };
+                    break;
+                case BattleSkillTargetRange.EnemyRearRowAll:
+                    rows = new[] { FormationRow.Rear };
+                    break;
+                case BattleSkillTargetRange.EnemyAll:
+                    rows = new[] { FormationRow.Front, FormationRow.Rear };
+                    break;
+                default:
+                    return Array.Empty<Combatant>();
+            }
+
+            return rows.SelectMany(row => Enumerable.Range(0, 3)
+                    .Select(column => opponents.Get(row, column)))
+                .Where(target => target != null && target.IsAlive)
+                .ToArray();
         }
     }
 
@@ -463,11 +514,12 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 회오리 베기의 타격 순간 살아 있는 적 전체에 같은 80% 물리 피해를 적용합니다. 정수식
+        /// 회오리 베기의 타격 순간 범위 해석기가 넘긴 살아 있는 전열 적 모두에게 같은 80% 물리 피해를 적용합니다. 정수식
         /// `(Attack×80+99)/100`은 소수점을 올림하므로 Attack 12라면 9.6이 10이 되고, 각 대상의
         /// TakeDamage가 방어 중 50% 감소를 기존 규칙 그대로 처리합니다.
         ///
-        /// 기세는 실제 피해 처리를 통과한 대상 수만큼 한 번에 AddMomentum으로 올립니다. 이 공용 자원
+        /// 기세는 실제 피해 처리를 통과한 전열 대상 수만큼 한 번에 AddMomentum으로 올립니다. 후열은 대상
+        /// 배열에 들어오지 않으므로 피해뿐 아니라 기세 계산에도 포함되지 않습니다. 이 공용 자원
         /// 진입점은 최대 3을 보장하지만 RecordDirectNandoUse를 부르지 않습니다. 그래서 회오리 베기로
         /// 기세가 3이 되어도 "난도를 직접 세 번 사용"한 기록이나 난도 쿨타임은 생기지 않습니다.
         /// 향후 다른 다중 타격 기술도 같은 AddMomentum 경로를 재사용할 수 있습니다.

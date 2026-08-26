@@ -1094,19 +1094,21 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 광역기는 한 명을 고르는 TargetResolver 규칙이 아니라 Formation이 이미 제공하는 살아 있는 참가자
-        /// 목록을 사용합니다. 전열/후열을 모두 포함하되 전투불능은 LivingMembers 단계에서 빠지므로 같은
-        /// 판정을 Controller에 반복 구현하지 않습니다. 목록은 연출 시작 전에 고정하여 계산 대상과 화면
-        /// 대상의 순서가 일치하게 유지합니다.
+        /// 광역기는 기본 공격용 TargetResolver가 아니라 스킬 정의의 TargetRange를 공용 스킬 대상 해석기에
+        /// 전달합니다. 따라서 Controller가 "회오리 베기"라는 이름을 비교하지 않으며, 향후 화살비와
+        /// 썬더볼트도 같은 흐름에서 후열 전체·적 전체 범위를 데이터로 선택할 수 있습니다.
+        /// 목록은 연출 시작 전에 고정하여 계산 대상과 화면 대상의 순서가 일치하게 유지합니다.
         /// </summary>
         private void PlayFighterWhirlwind(BattleSkillDefinition skill)
         {
             Combatant actor = currentActor;
             Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
-            Combatant[] targets = opponents.LivingMembers.ToArray();
+            Combatant[] targets = BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, opponents).ToArray();
             if (targets.Length == 0)
             {
-                messageText.text = "공격할 수 있는 살아 있는 적이 없습니다.";
+                // 기본 근거리 공격은 전열이 비면 일부 후열을 공격할 수 있지만 회오리 베기의 공간은 전열로
+                // 고정됩니다. 여기서 스킬 메뉴를 유지하므로 안내만 보이고 행동과 턴은 소비하지 않습니다.
+                messageText.text = "회오리 베기로 공격할 전열 적이 없습니다.";
                 RebuildSkillMenu();
                 return;
             }
