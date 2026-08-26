@@ -22,17 +22,17 @@ MonoBehaviour:
   passive:
     passiveId: fighter_killing_intent
     passiveName: 살기
-    passiveDescription: 자신에게 쌓인 난도를 소비해 회심의 일격을 강화합니다.
+    passiveDescription: 자신에게 쌓인 기세를 소비해 회심의 일격을 강화합니다.
   startingSkills:
   - skillId: fighter_slash_stack
     skillName: 난도
     skillType: 단일 근거리 물리 / 전투 자원
-    skillDescription: 적 1명에게 일반 공격의 150% 피해를 주고 적중 후 자신이 난도 1중첩을 얻습니다. 세 번째 직접 사용 후 2턴 동안 재사용할 수 없습니다.
+    skillDescription: 적 1명에게 일반 공격의 150% 피해를 주고 적중 후 기세를 1 얻습니다. 세 번째 직접 사용 후 2턴 동안 재사용할 수 없습니다.
   - skillId: fighter_finishing_strike
     skillName: 회심의 일격
     skillType: 단일 물리 공격 / 마무리
-    skillDescription: 자신의 난도를 모두 소비하며 0/1/2/3중첩에 따라 최종 피해가 100/130/160/190%가 됩니다.
+    skillDescription: 자신의 기세를 모두 소비하며 기세 0/1/2/3에 따라 일반 공격의 100/130/160/190% 피해를 줍니다.
   - skillId: fighter_whirlwind
     skillName: 회오리 베기
     skillType: 광역 물리 공격 / 표식
-    skillDescription: 주변 모든 적을 공격하고 명중한 적 1명당 자신이 난도 1중첩을 얻습니다. 이 중첩은 난도 스킬 쿨타임을 발생시키지 않습니다.
+    skillDescription: 주변 모든 적을 공격하고 명중한 적 1명당 기세를 1 얻습니다. 이 기세는 난도 스킬 쿨타임을 발생시키지 않습니다.

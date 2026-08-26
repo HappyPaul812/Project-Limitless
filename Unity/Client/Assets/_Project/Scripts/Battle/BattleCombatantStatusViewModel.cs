@@ -78,9 +78,9 @@ namespace ProjectLimitless.Battle
             get
             {
                 List<string> lines = new List<string> { $"{Title} · {Category}", $"HP {CurrentHp} / {MaxHp}" };
-                // 난도는 상세 전용 `현재/최대` 줄이 있으므로 요약용 `난도 n`을 중복해서 넣지 않습니다.
+                // 기세는 상세 전용 `현재/최대` 줄이 있으므로 요약용 `기세 n`을 중복해서 넣지 않습니다.
                 // 다른 상태는 기존처럼 같은 표식을 재사용해 HUD와 상세 정보가 어긋나지 않게 합니다.
-                lines.AddRange(Markers.Where(marker => marker.Id != "fighter.edge").Select(marker => marker.DisplayText));
+                lines.AddRange(Markers.Where(marker => marker.Id != "fighter.momentum").Select(marker => marker.DisplayText));
                 lines.AddRange(ResourceDetails);
                 lines.AddRange(Cooldowns.Select(cooldown => cooldown.DisplayText));
                 return string.Join("\n", lines);
@@ -112,12 +112,12 @@ namespace ProjectLimitless.Battle
                 markers.Add(new BattleStatusMarker("taunt", "도발", combatant.ForcedTargetActionsRemaining));
             // UI는 실제 자원을 바꾸지 않고 참가자별 런타임 값을 읽어 표시만 합니다. 계산과 표시를 나누면
             // HUD를 고쳐도 회오리 베기·회심의 일격의 중첩 판정에는 영향을 주지 않습니다.
-            int edgeStacks = fighterResources?.GetEdgeStacks(combatant) ?? 0;
-            if (edgeStacks > 0) markers.Add(new BattleStatusMarker("fighter.edge", "난도", edgeStacks));
+            int momentum = fighterResources?.GetMomentum(combatant) ?? 0;
+            if (momentum > 0) markers.Add(new BattleStatusMarker("fighter.momentum", "기세", momentum));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             IReadOnlyList<string> resourceDetails = job != null && job.JobId == "fighter"
-                ? new[] { $"난도 {edgeStacks}/{BattleFighterResourceRuntime.MaxEdgeStacks}" }
+                ? new[] { $"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}" }
                 : Array.Empty<string>();
 
             List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();

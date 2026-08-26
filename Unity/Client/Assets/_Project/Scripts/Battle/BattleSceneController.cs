@@ -756,6 +756,14 @@ namespace ProjectLimitless.Battle
             if (!string.IsNullOrWhiteSpace(skill.TargetDescription)) lines.Add(skill.TargetDescription);
             if (!string.IsNullOrWhiteSpace(skill.EffectDescription)) lines.Add(skill.EffectDescription);
             if (!string.IsNullOrWhiteSpace(skill.DurationDescription)) lines.Add(skill.DurationDescription);
+            // 기세별 피해 데이터가 있는 스킬만 현재값을 덧붙입니다. 스킬 이름을 비교하지 않으므로 같은 데이터
+            // 구조를 쓰는 후속 기술도 자동으로 현재 기세와 예상 배율을 표시할 수 있습니다.
+            if (skill.MomentumDamagePercents.Count == BattleFighterResourceRuntime.MaxMomentum + 1 && currentActor != null)
+            {
+                int momentum = fighterResources.GetMomentum(currentActor);
+                lines.Add($"현재 기세: {momentum}");
+                lines.Add($"현재 예상 피해: 일반 공격의 {skill.MomentumDamagePercents[momentum]}%");
+            }
             lines.Add(skill.CooldownTurns > 0 ? $"재사용: {skill.CooldownTurns}턴" : "재사용: 없음");
             lines.Add(skill.IsImplemented ? "구현: 사용 가능" : "구현: 미구현");
 
@@ -796,9 +804,10 @@ namespace ProjectLimitless.Battle
                 BeginSingleRangedAttackSelection(skill);
                 return;
             }
-            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge)
+            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain ||
+                skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum)
             {
-                BeginFighterEdgeAttackSelection(skill);
+                BeginFighterMeleeSkillSelection(skill);
                 return;
             }
 
@@ -998,7 +1007,7 @@ namespace ProjectLimitless.Battle
         /// 난도는 투사의 기본 근거리 사거리와 같은 TargetResolver 결과를 사용합니다. 따라서 전열 보호와
         /// 같은 열의 후열 개방 규칙을 스킬 코드에 복제하지 않고, Formation 변경도 기존 공격과 똑같이 반영됩니다.
         /// </summary>
-        private void BeginFighterEdgeAttackSelection(BattleSkillDefinition skill)
+        private void BeginFighterMeleeSkillSelection(BattleSkillDefinition skill)
         {
             Combatant actor = currentActor;
             Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
@@ -1006,16 +1015,16 @@ namespace ProjectLimitless.Battle
                 actor, opponents, TargetRangeType.MeleePhysical);
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
-            BeginTargetSelection(targets, target => PlayFighterEdgeAttack(actor, target, skill),
-                "난도로 공격할 적을 선택하세요. 기존 근거리 공격 범위를 따릅니다.", true);
+            BeginTargetSelection(targets, target => PlayFighterMeleeSkill(actor, target, skill),
+                $"{skill.DisplayName}(으)로 공격할 적을 선택하세요. 기존 근거리 공격 범위를 따릅니다.", true);
         }
 
         /// <summary>
         /// 기존 근거리 기본 공격 Presenter를 그대로 사용해 전진, 타격, 피격, 복귀 순서를 유지합니다.
-        /// Executor는 타격 콜백에서만 150% 피해와 난도 증가를 적용하므로 대상 선택 순간에는 HP와 자원이
+        /// Executor는 타격 콜백에서만 피해와 기세 변경을 적용하므로 대상 선택 순간에는 HP와 자원이
         /// 바뀌지 않으며, 실패하면 행동을 소비하지 않고 스킬 메뉴로 돌아갑니다.
         /// </summary>
-        private void PlayFighterEdgeAttack(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        private void PlayFighterMeleeSkill(Combatant actor, Combatant target, BattleSkillDefinition skill)
         {
             if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null ||
                 !target.IsAlive || target.Side == actor.Side)
@@ -1042,8 +1051,23 @@ namespace ProjectLimitless.Battle
                 battleFont,
                 () =>
                 {
-                    executed = skillExecutor.ExecuteSingleMeleePhysicalAttackWithFighterEdge(
-                        actor, target, skill, out int damage, out string result);
+                    int damage;
+                    string result;
+                    if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain)
+                    {
+                        executed = skillExecutor.ExecuteSingleMeleePhysicalAttackWithMomentumGain(
+                            actor, target, skill, out damage, out result);
+                    }
+                    else if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum)
+                    {
+                        executed = skillExecutor.ExecuteSingleMeleePhysicalAttackConsumingMomentum(
+                            actor, target, skill, out damage, out _, out result);
+                    }
+                    else
+                    {
+                        damage = 0;
+                        result = "아직 사용할 수 없습니다.";
+                    }
                     messageText.text = result;
                     return damage;
                 },
@@ -1058,7 +1082,8 @@ namespace ProjectLimitless.Battle
                     {
                         string failureMessage = messageText.text;
                         ShowSkillMenu();
-                        messageText.text = string.IsNullOrEmpty(failureMessage) ? "난도를 사용할 수 없습니다." : failureMessage;
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? $"{skill.DisplayName}을(를) 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }
@@ -1326,7 +1351,7 @@ namespace ProjectLimitless.Battle
             {
                 string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
-                    : marker.Id == "fighter.edge" ? BattleUiIconCatalog.FighterEdgeSkill : null;
+                    : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.

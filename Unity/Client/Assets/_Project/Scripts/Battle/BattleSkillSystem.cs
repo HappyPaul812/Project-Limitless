@@ -6,7 +6,15 @@ using ProjectLimitless.Core;
 namespace ProjectLimitless.Battle
 {
     /// <summary>실제 전투에서 실행할 스킬 효과 종류입니다. 구현된 효과만 이 열거형에 추가합니다.</summary>
-    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack, SingleMeleePhysicalAttackWithFighterEdge }
+    public enum BattleSkillEffectType
+    {
+        None,
+        Taunt,
+        SingleAllyHeal,
+        SingleRangedPhysicalAttack,
+        SingleMeleePhysicalAttackWithMomentumGain,
+        SingleMeleePhysicalAttackConsumingMomentum
+    }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
@@ -14,7 +22,8 @@ namespace ProjectLimitless.Battle
         public BattleSkillDefinition(string id, string displayName, string description, bool implemented,
             BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
             int attackDamagePercent = 0, string iconId = null, string targetDescription = null,
-            string effectDescription = null, string typeDescription = null, string durationDescription = null)
+            string effectDescription = null, string typeDescription = null, string durationDescription = null,
+            IReadOnlyList<int> momentumDamagePercents = null)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -30,6 +39,7 @@ namespace ProjectLimitless.Battle
             EffectDescription = effectDescription ?? string.Empty;
             TypeDescription = typeDescription ?? string.Empty;
             DurationDescription = durationDescription ?? string.Empty;
+            MomentumDamagePercents = momentumDamagePercents ?? Array.Empty<int>();
         }
 
         public string Id { get; }
@@ -58,6 +68,11 @@ namespace ProjectLimitless.Battle
         public string EffectDescription { get; }
         public string TypeDescription { get; }
         public string DurationDescription { get; }
+        /// <summary>
+        /// 기세 0부터 차례대로 적용할 피해 배율입니다. 회심의 일격 데이터만 네 값을 가지며, UI와 Executor가
+        /// 같은 목록을 읽기 때문에 설명의 수치와 실제 피해가 따로 어긋나지 않습니다.
+        /// </summary>
+        public IReadOnlyList<int> MomentumDamagePercents { get; }
     }
 
     /// <summary>
@@ -69,7 +84,8 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string SharpshooterAimId = "sharpshooter_aim";
-        public const string FighterEdgeId = "fighter_slash_stack";
+        public const string FighterNandoId = "fighter_slash_stack";
+        public const string FighterCriticalStrikeId = "fighter_finishing_strike";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -105,15 +121,24 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 적 1명",
                         effectDescription: "피해: 기본 공격의 160%",
                         typeDescription: "유형: 원거리 물리");
-                if (preview.SkillId == FighterEdgeId)
+                if (preview.SkillId == FighterNandoId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
-                        "적 1명을 베어 일반 공격 피해의 150%를 주고, 적중 후 자신이 난도 1중첩을 얻습니다.\n난도는 최대 3중첩이며 향후 회심의 일격을 강화합니다.\n난도 스킬을 직접 세 번째 사용해 3중첩이 되면 재사용 대기시간이 발생합니다.", true,
-                        BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge, 2, 0, 0f, 150,
-                        iconId: BattleUiIconCatalog.FighterEdgeSkill,
+                        "적 1명에게 일반 공격의 150% 피해를 주고 기세를 1 얻습니다.\n기세는 최대 3까지 쌓이며 회심의 일격을 강화합니다.\n난도 스킬을 세 번째 직접 사용하면 2턴 동안 재사용할 수 없습니다.", true,
+                        BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain, 2, 0, 0f, 150,
+                        iconId: BattleUiIconCatalog.FighterNandoSkill,
                         targetDescription: "대상: 적 1명",
-                        effectDescription: "피해: 일반 공격의 150%\n적중 후: 자신에게 난도 +1\n최대 중첩: 3",
+                        effectDescription: "피해: 일반 공격의 150%\n효과: 기세 +1\n기세 최대: 3",
                         typeDescription: "유형: 근거리 물리",
-                        durationDescription: "세 번째 사용 후 재사용: 2턴");
+                        durationDescription: "세 번째 직접 사용 후 재사용: 2턴");
+                if (preview.SkillId == FighterCriticalStrikeId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "보유한 기세를 모두 소모하여 강력한 일격을 가합니다.\n기세가 높을수록 피해가 증가합니다.", true,
+                        BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum, 0, 0,
+                        iconId: BattleUiIconCatalog.FighterCriticalStrikeSkill,
+                        targetDescription: "대상: 적 1명",
+                        effectDescription: "기세 0: 일반 공격의 100%\n기세 1: 일반 공격의 130%\n기세 2: 일반 공격의 160%\n기세 3: 일반 공격의 190%\n효과: 공격 적중 후 기세 전부 소모",
+                        typeDescription: "유형: 근거리 물리",
+                        momentumDamagePercents: new[] { 100, 130, 160, 190 });
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -121,50 +146,50 @@ namespace ProjectLimitless.Battle
     }
 
     /// <summary>
-    /// 투사마다 자기 난도와 난도 스킬 직접 사용 횟수를 보관하는 전투 자원 저장소입니다.
-    /// 난도는 특정 적에게 붙는 약화 효과가 아니라 투사 본인의 다음 기술을 강화하는 자원이므로 Combatant를
+    /// 투사마다 자기 기세와 난도 스킬 직접 사용 횟수를 보관하는 전투 자원 저장소입니다.
+    /// "난도"는 공격 스킬 이름이고 "기세"는 투사 본인의 다음 기술을 강화하는 자원이므로 Combatant를
     /// 키로 사용합니다. 이렇게 해야 같은 전투에 투사가 여러 명 있어도 각자의 중첩이 섞이지 않습니다.
     /// </summary>
     public sealed class BattleFighterResourceRuntime
     {
-        public const int MaxEdgeStacks = 3;
-        private readonly Dictionary<Combatant, int> edgeStacksByActor = new Dictionary<Combatant, int>();
-        private readonly Dictionary<Combatant, int> directUsesByActor = new Dictionary<Combatant, int>();
+        public const int MaxMomentum = 3;
+        private readonly Dictionary<Combatant, int> momentumByActor = new Dictionary<Combatant, int>();
+        private readonly Dictionary<Combatant, int> directNandoUsesByActor = new Dictionary<Combatant, int>();
 
-        public int GetEdgeStacks(Combatant actor) => actor != null && edgeStacksByActor.TryGetValue(actor, out int stacks) ? stacks : 0;
+        public int GetMomentum(Combatant actor) => actor != null && momentumByActor.TryGetValue(actor, out int momentum) ? momentum : 0;
 
         /// <summary>
-        /// 회오리 베기처럼 다른 기술이 적중 수만큼 난도를 줄 때 재사용할 공용 진입점입니다. Math.Min으로
-        /// 3중첩 상한을 지키되 직접 사용 횟수는 건드리지 않으므로, 이 경로로 3이 되어도 난도 스킬 쿨타임은
+        /// 회오리 베기처럼 다른 기술이 적중 수만큼 기세를 줄 때 재사용할 공용 진입점입니다. Math.Min으로
+        /// 최대 3을 지키되 난도 직접 사용 횟수는 건드리지 않으므로, 이 경로로 3이 되어도 난도 쿨타임은
         /// 생기지 않습니다. 반환값은 UI나 연출이 실제 증가량을 알 수 있게 합니다.
         /// </summary>
-        public int AddEdgeStacks(Combatant actor, int requestedStacks)
+        public int AddMomentum(Combatant actor, int requestedMomentum)
         {
-            if (actor == null || requestedStacks <= 0) return 0;
-            int previous = GetEdgeStacks(actor);
-            int next = Math.Min(MaxEdgeStacks, previous + requestedStacks);
-            edgeStacksByActor[actor] = next;
+            if (actor == null || requestedMomentum <= 0) return 0;
+            int previous = GetMomentum(actor);
+            int next = Math.Min(MaxMomentum, previous + requestedMomentum);
+            momentumByActor[actor] = next;
             return next - previous;
         }
 
         /// <summary>난도 스킬의 성공한 직접 사용만 기록하며, 세 번째인지 호출자에게 알려 줍니다.</summary>
-        public bool RecordDirectEdgeUse(Combatant actor)
+        public bool RecordDirectNandoUse(Combatant actor)
         {
             if (actor == null) return false;
-            int uses = directUsesByActor.TryGetValue(actor, out int current) ? current + 1 : 1;
+            int uses = directNandoUsesByActor.TryGetValue(actor, out int current) ? current + 1 : 1;
             bool thirdUse = uses >= 3;
-            directUsesByActor[actor] = thirdUse ? 0 : uses;
+            directNandoUsesByActor[actor] = thirdUse ? 0 : uses;
             return thirdUse;
         }
 
         /// <summary>
-        /// 향후 회심의 일격이 배율 계산 전에 현재 난도를 읽고, 성공 후 전부 소비할 때 사용하는 API입니다.
-        /// 자원 소비는 쿨타임이나 직접 사용 횟수를 바꾸지 않아 두 규칙이 서로 독립적으로 유지됩니다.
+        /// 회심의 일격이 피해 배율을 정한 뒤 기세를 전부 소비할 때 사용합니다. 이 메서드는 난도 쿨타임이나
+        /// 직접 사용 횟수를 건드리지 않으므로, 기세를 0으로 만들어도 이미 시작된 난도 쿨타임은 유지됩니다.
         /// </summary>
-        public int ConsumeAllEdgeStacks(Combatant actor)
+        public int ConsumeAllMomentum(Combatant actor)
         {
-            int consumed = GetEdgeStacks(actor);
-            if (actor != null) edgeStacksByActor[actor] = 0;
+            int consumed = GetMomentum(actor);
+            if (actor != null) momentumByActor[actor] = 0;
             return consumed;
         }
     }
@@ -261,10 +286,10 @@ namespace ProjectLimitless.Battle
                 reason = $"{skill.DisplayName}은(는) {remaining}턴 뒤 다시 사용할 수 있습니다.";
                 return false;
             }
-            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge &&
-                fighterResources.GetEdgeStacks(actor) >= BattleFighterResourceRuntime.MaxEdgeStacks)
+            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain &&
+                fighterResources.GetMomentum(actor) >= BattleFighterResourceRuntime.MaxMomentum)
             {
-                reason = "난도가 이미 최대입니다.";
+                reason = "기세가 이미 최대입니다.";
                 return false;
             }
 
@@ -368,12 +393,12 @@ namespace ProjectLimitless.Battle
         /// 현재 투사의 Attack에 곱하므로 성장한 일반 공격 피해를 그대로 따라갑니다. `(Attack×150+99)/100`은
         /// 소수점이 생기면 올림하는 정수 계산이며, 마지막 TakeDamage가 기존 방어 50%를 그대로 적용합니다.
         /// </summary>
-        public bool ExecuteSingleMeleePhysicalAttackWithFighterEdge(Combatant actor, Combatant target,
+        public bool ExecuteSingleMeleePhysicalAttackWithMomentumGain(Combatant actor, Combatant target,
             BattleSkillDefinition skill, out int damage, out string message)
         {
             damage = 0;
             if (!CanUse(actor, skill, out message)) return false;
-            if (skill.EffectType != BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge || target == null ||
+            if (skill.EffectType != BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain || target == null ||
                 target.Side == actor.Side || !target.IsAlive)
             {
                 message = "공격할 수 있는 살아 있는 적이 아닙니다.";
@@ -384,15 +409,45 @@ namespace ProjectLimitless.Battle
             int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
             damage = target.TakeDamage(rawDamage);
 
-            // 피해가 적용된 뒤에만 난도를 올립니다. 자원 증가 API는 회오리 베기도 재사용할 수 있지만,
-            // 직접 사용 기록은 이 난도 스킬 경로에서만 남겨 두 효과가 같은 3중첩을 만들더라도 구분됩니다.
-            fighterResources.AddEdgeStacks(actor, 1);
-            bool thirdDirectUse = fighterResources.RecordDirectEdgeUse(actor);
-            int currentStacks = fighterResources.GetEdgeStacks(actor);
-            if (thirdDirectUse && currentStacks >= BattleFighterResourceRuntime.MaxEdgeStacks)
-                cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+            // 피해가 적용된 뒤에만 기세를 올립니다. AddMomentum은 회오리 베기도 재사용할 수 있지만,
+            // 직접 사용 기록은 이 난도 스킬 경로에서만 남겨 두 효과가 같은 기세 3을 만들더라도 구분됩니다.
+            fighterResources.AddMomentum(actor, 1);
+            bool thirdDirectUse = fighterResources.RecordDirectNandoUse(actor);
+            int currentMomentum = fighterResources.GetMomentum(actor);
+            // 쿨타임 조건은 현재 기세가 아니라 난도 스킬의 세 번째 직접 사용입니다. 회심의 일격으로 기세를
+            // 먼저 소비했거나 회오리 베기로 기세 3이 되어도 이 직접 사용 기록과 쿨타임 규칙은 흔들리지 않습니다.
+            if (thirdDirectUse) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
 
-            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해. 현재 난도 {currentStacks}중첩.";
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해. 현재 기세 {currentMomentum}.";
+            return true;
+        }
+
+        /// <summary>
+        /// 회심의 일격은 타격 순간의 기세를 먼저 읽어 0/1/2/3을 100/130/160/190%로 변환합니다.
+        /// 피해 계산 전에 기세를 없애면 항상 100%가 되므로, 배율과 피해를 확정한 뒤 성공한 타격에서만
+        /// ConsumeAllMomentum을 호출합니다. 기세 저장소는 쿨타임 저장소와 달라 난도의 남은 턴은 변하지 않습니다.
+        /// </summary>
+        public bool ExecuteSingleMeleePhysicalAttackConsumingMomentum(Combatant actor, Combatant target,
+            BattleSkillDefinition skill, out int damage, out int consumedMomentum, out string message)
+        {
+            damage = 0;
+            consumedMomentum = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum || target == null ||
+                target.Side == actor.Side || !target.IsAlive ||
+                skill.MomentumDamagePercents.Count != BattleFighterResourceRuntime.MaxMomentum + 1)
+            {
+                message = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return false;
+            }
+
+            int momentum = Math.Min(BattleFighterResourceRuntime.MaxMomentum, fighterResources.GetMomentum(actor));
+            int damagePercent = skill.MomentumDamagePercents[momentum];
+            long scaledDamage = (long)actor.Attack * damagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            damage = target.TakeDamage(rawDamage);
+            consumedMomentum = fighterResources.ConsumeAllMomentum(actor);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 기세 {momentum}으로 {target.DisplayName}에게 {damage} 피해.";
             return true;
         }
     }
