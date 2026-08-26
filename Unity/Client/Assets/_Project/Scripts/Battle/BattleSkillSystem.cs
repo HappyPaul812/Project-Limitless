@@ -6,7 +6,7 @@ using ProjectLimitless.Core;
 namespace ProjectLimitless.Battle
 {
     /// <summary>실제 전투에서 실행할 스킬 효과 종류입니다. 구현된 효과만 이 열거형에 추가합니다.</summary>
-    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack, GainFighterEdge }
+    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack, SingleMeleePhysicalAttackWithFighterEdge }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
@@ -107,11 +107,12 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 원거리 물리");
                 if (preview.SkillId == FighterEdgeId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
-                        "전투 감각을 끌어올려 난도를 1중첩 얻습니다.\n난도는 최대 3중첩까지 쌓이며,\n향후 회심의 일격을 강화하는 데 사용됩니다.\n난도 스킬을 세 번째 사용하면 재사용 대기시간이 발생합니다.", true,
-                        BattleSkillEffectType.GainFighterEdge, 2, 0,
+                        "적 1명을 베어 일반 공격 피해의 150%를 주고, 적중 후 자신이 난도 1중첩을 얻습니다.\n난도는 최대 3중첩이며 향후 회심의 일격을 강화합니다.\n난도 스킬을 직접 세 번째 사용해 3중첩이 되면 재사용 대기시간이 발생합니다.", true,
+                        BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge, 2, 0, 0f, 150,
                         iconId: BattleUiIconCatalog.FighterEdgeSkill,
-                        targetDescription: "대상: 자신",
-                        effectDescription: "효과: 난도 +1\n최대 중첩: 3",
+                        targetDescription: "대상: 적 1명",
+                        effectDescription: "피해: 일반 공격의 150%\n적중 후: 자신에게 난도 +1\n최대 중첩: 3",
+                        typeDescription: "유형: 근거리 물리",
                         durationDescription: "세 번째 사용 후 재사용: 2턴");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
@@ -260,7 +261,7 @@ namespace ProjectLimitless.Battle
                 reason = $"{skill.DisplayName}은(는) {remaining}턴 뒤 다시 사용할 수 있습니다.";
                 return false;
             }
-            if (skill.EffectType == BattleSkillEffectType.GainFighterEdge &&
+            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge &&
                 fighterResources.GetEdgeStacks(actor) >= BattleFighterResourceRuntime.MaxEdgeStacks)
             {
                 reason = "난도가 이미 최대입니다.";
@@ -286,19 +287,6 @@ namespace ProjectLimitless.Battle
                     }
                     cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
                     message = $"{actor.DisplayName}의 도발! 적 {affected}명은 각자 다음 {skill.EffectDuration}회 행동 동안 단일 적대 행동의 대상을 수호자로 지정합니다.";
-                    return true;
-                case BattleSkillEffectType.GainFighterEdge:
-                    // 자원 증가와 직접 사용 횟수를 별도로 처리합니다. 회오리 베기는 AddEdgeStacks만 호출할 수
-                    // 있지만, 쿨타임은 이 난도 스킬 실행 경로에서 세 번째 성공을 기록했을 때만 시작됩니다.
-                    int gained = fighterResources.AddEdgeStacks(actor, 1);
-                    if (gained <= 0)
-                    {
-                        message = "난도가 이미 최대입니다.";
-                        return false;
-                    }
-                    bool thirdDirectUse = fighterResources.RecordDirectEdgeUse(actor);
-                    if (thirdDirectUse) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
-                    message = $"{actor.DisplayName}의 난도! 현재 난도 {fighterResources.GetEdgeStacks(actor)}중첩.";
                     return true;
                 default:
                     message = "아직 사용할 수 없습니다.";
@@ -372,6 +360,39 @@ namespace ProjectLimitless.Battle
             damage = target.TakeDamage(rawDamage);
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
+            return true;
+        }
+
+        /// <summary>
+        /// 난도의 칼이 실제로 닿는 순간 피해와 자원 획득을 함께 확정합니다. 150%는 고정 피해 15가 아니라
+        /// 현재 투사의 Attack에 곱하므로 성장한 일반 공격 피해를 그대로 따라갑니다. `(Attack×150+99)/100`은
+        /// 소수점이 생기면 올림하는 정수 계산이며, 마지막 TakeDamage가 기존 방어 50%를 그대로 적용합니다.
+        /// </summary>
+        public bool ExecuteSingleMeleePhysicalAttackWithFighterEdge(Combatant actor, Combatant target,
+            BattleSkillDefinition skill, out int damage, out string message)
+        {
+            damage = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge || target == null ||
+                target.Side == actor.Side || !target.IsAlive)
+            {
+                message = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return false;
+            }
+
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            damage = target.TakeDamage(rawDamage);
+
+            // 피해가 적용된 뒤에만 난도를 올립니다. 자원 증가 API는 회오리 베기도 재사용할 수 있지만,
+            // 직접 사용 기록은 이 난도 스킬 경로에서만 남겨 두 효과가 같은 3중첩을 만들더라도 구분됩니다.
+            fighterResources.AddEdgeStacks(actor, 1);
+            bool thirdDirectUse = fighterResources.RecordDirectEdgeUse(actor);
+            int currentStacks = fighterResources.GetEdgeStacks(actor);
+            if (thirdDirectUse && currentStacks >= BattleFighterResourceRuntime.MaxEdgeStacks)
+                cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해. 현재 난도 {currentStacks}중첩.";
             return true;
         }
     }

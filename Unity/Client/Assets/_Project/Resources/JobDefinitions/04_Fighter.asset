@@ -26,8 +26,8 @@ MonoBehaviour:
   startingSkills:
   - skillId: fighter_slash_stack
     skillName: 난도
-    skillType: 자신 / 전투 자원
-    skillDescription: 자신에게 최대 3중첩인 난도를 1중첩 얻습니다. 세 번째 직접 사용 후 2턴 동안 재사용할 수 없습니다.
+    skillType: 단일 근거리 물리 / 전투 자원
+    skillDescription: 적 1명에게 일반 공격의 150% 피해를 주고 적중 후 자신이 난도 1중첩을 얻습니다. 세 번째 직접 사용 후 2턴 동안 재사용할 수 없습니다.
   - skillId: fighter_finishing_strike
     skillName: 회심의 일격
     skillType: 단일 물리 공격 / 마무리

@@ -51,7 +51,8 @@ namespace ProjectLimitless.Battle
     public sealed class BattleCombatantStatusViewModel
     {
         public BattleCombatantStatusViewModel(string title, string category, int currentHp, int maxHp,
-            IReadOnlyList<BattleStatusMarker> markers, IReadOnlyList<BattleCooldownStatus> cooldowns)
+            IReadOnlyList<BattleStatusMarker> markers, IReadOnlyList<BattleCooldownStatus> cooldowns,
+            IReadOnlyList<string> resourceDetails = null)
         {
             Title = title ?? string.Empty;
             Category = category ?? string.Empty;
@@ -59,6 +60,7 @@ namespace ProjectLimitless.Battle
             MaxHp = maxHp;
             Markers = markers ?? Array.Empty<BattleStatusMarker>();
             Cooldowns = cooldowns ?? Array.Empty<BattleCooldownStatus>();
+            ResourceDetails = resourceDetails ?? Array.Empty<string>();
         }
 
         public string Title { get; }
@@ -67,6 +69,7 @@ namespace ProjectLimitless.Battle
         public int MaxHp { get; }
         public IReadOnlyList<BattleStatusMarker> Markers { get; }
         public IReadOnlyList<BattleCooldownStatus> Cooldowns { get; }
+        public IReadOnlyList<string> ResourceDetails { get; }
 
         public string CompactStatus => string.Join("  ", Markers.Select(marker => marker.DisplayText));
 
@@ -75,7 +78,10 @@ namespace ProjectLimitless.Battle
             get
             {
                 List<string> lines = new List<string> { $"{Title} · {Category}", $"HP {CurrentHp} / {MaxHp}" };
-                lines.AddRange(Markers.Select(marker => marker.DisplayText));
+                // 난도는 상세 전용 `현재/최대` 줄이 있으므로 요약용 `난도 n`을 중복해서 넣지 않습니다.
+                // 다른 상태는 기존처럼 같은 표식을 재사용해 HUD와 상세 정보가 어긋나지 않게 합니다.
+                lines.AddRange(Markers.Where(marker => marker.Id != "fighter.edge").Select(marker => marker.DisplayText));
+                lines.AddRange(ResourceDetails);
                 lines.AddRange(Cooldowns.Select(cooldown => cooldown.DisplayText));
                 return string.Join("\n", lines);
             }
@@ -108,6 +114,11 @@ namespace ProjectLimitless.Battle
             // HUD를 고쳐도 회오리 베기·회심의 일격의 중첩 판정에는 영향을 주지 않습니다.
             int edgeStacks = fighterResources?.GetEdgeStacks(combatant) ?? 0;
             if (edgeStacks > 0) markers.Add(new BattleStatusMarker("fighter.edge", "난도", edgeStacks));
+            // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
+            // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
+            IReadOnlyList<string> resourceDetails = job != null && job.JobId == "fighter"
+                ? new[] { $"난도 {edgeStacks}/{BattleFighterResourceRuntime.MaxEdgeStacks}" }
+                : Array.Empty<string>();
 
             List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();
             foreach (BattleSkillDefinition skill in BattleSkillCatalog.GetSkills(job).Where(skill => skill.IsImplemented))
@@ -118,7 +129,7 @@ namespace ProjectLimitless.Battle
             }
 
             return new BattleCombatantStatusViewModel(combatant.DisplayName, category,
-                combatant.CurrentHp, combatant.MaxHp, markers, cooldownLines);
+                combatant.CurrentHp, combatant.MaxHp, markers, cooldownLines, resourceDetails);
         }
     }
 }

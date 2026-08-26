@@ -796,6 +796,11 @@ namespace ProjectLimitless.Battle
                 BeginSingleRangedAttackSelection(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithFighterEdge)
+            {
+                BeginFighterEdgeAttackSelection(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -814,8 +819,7 @@ namespace ProjectLimitless.Battle
                 actorView.ActionRoot,
                 actorView.SpriteImage,
                 battleFont,
-                skill.EffectType == BattleSkillEffectType.Taunt ? "도발!"
-                    : skill.EffectType == BattleSkillEffectType.GainFighterEdge ? "난도!" : skill.DisplayName,
+                skill.EffectType == BattleSkillEffectType.Taunt ? "도발!" : skill.DisplayName,
                 () =>
                 {
                     executed = skillExecutor.Execute(actor, skill, opponents, out string result);
@@ -988,6 +992,75 @@ namespace ProjectLimitless.Battle
                             messageText.text = string.IsNullOrEmpty(failureMessage) ? "정조준을 사용할 수 없습니다." : failureMessage;
                         }
                     }))));
+        }
+
+        /// <summary>
+        /// 난도는 투사의 기본 근거리 사거리와 같은 TargetResolver 결과를 사용합니다. 따라서 전열 보호와
+        /// 같은 열의 후열 개방 규칙을 스킬 코드에 복제하지 않고, Formation 변경도 기존 공격과 똑같이 반영됩니다.
+        /// </summary>
+        private void BeginFighterEdgeAttackSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(
+                actor, opponents, TargetRangeType.MeleePhysical);
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            BeginTargetSelection(targets, target => PlayFighterEdgeAttack(actor, target, skill),
+                "난도로 공격할 적을 선택하세요. 기존 근거리 공격 범위를 따릅니다.", true);
+        }
+
+        /// <summary>
+        /// 기존 근거리 기본 공격 Presenter를 그대로 사용해 전진, 타격, 피격, 복귀 순서를 유지합니다.
+        /// Executor는 타격 콜백에서만 150% 피해와 난도 증가를 적용하므로 대상 선택 순간에는 HP와 자원이
+        /// 바뀌지 않으며, 실패하면 행동을 소비하지 않고 스킬 메뉴로 돌아갑니다.
+        /// </summary>
+        private void PlayFighterEdgeAttack(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null ||
+                !target.IsAlive || target.Side == actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayMeleeAttack(
+                actorView.ActionRoot,
+                targetView.ActionRoot,
+                targetView.SpriteImage,
+                battleFont,
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSingleMeleePhysicalAttackWithFighterEdge(
+                        actor, target, skill, out int damage, out string result);
+                    messageText.text = result;
+                    return damage;
+                },
+                damage => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage) ? "난도를 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
         }
 
         private void Defend()
