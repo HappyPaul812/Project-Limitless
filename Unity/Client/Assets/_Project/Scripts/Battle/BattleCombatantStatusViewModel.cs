@@ -86,7 +86,7 @@ namespace ProjectLimitless.Battle
     public static class BattleCombatantStatusViewModelFactory
     {
         public static BattleCombatantStatusViewModel Create(Combatant combatant, JobDefinition job,
-            BattleParticipantSetup setup, BattleSkillCooldowns cooldowns)
+            BattleParticipantSetup setup, BattleSkillCooldowns cooldowns, BattleFighterResourceRuntime fighterResources)
         {
             if (combatant == null) throw new ArgumentNullException(nameof(combatant));
 
@@ -104,6 +104,10 @@ namespace ProjectLimitless.Battle
             if (combatant.IsDefending) markers.Add(new BattleStatusMarker("defend", "방어"));
             if (combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive)
                 markers.Add(new BattleStatusMarker("taunt", "도발", combatant.ForcedTargetActionsRemaining));
+            // UI는 실제 자원을 바꾸지 않고 참가자별 런타임 값을 읽어 표시만 합니다. 계산과 표시를 나누면
+            // HUD를 고쳐도 회오리 베기·회심의 일격의 중첩 판정에는 영향을 주지 않습니다.
+            int edgeStacks = fighterResources?.GetEdgeStacks(combatant) ?? 0;
+            if (edgeStacks > 0) markers.Add(new BattleStatusMarker("fighter.edge", "난도", edgeStacks));
 
             List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();
             foreach (BattleSkillDefinition skill in BattleSkillCatalog.GetSkills(job).Where(skill => skill.IsImplemented))

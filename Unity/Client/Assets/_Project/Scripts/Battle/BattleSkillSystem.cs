@@ -6,7 +6,7 @@ using ProjectLimitless.Core;
 namespace ProjectLimitless.Battle
 {
     /// <summary>실제 전투에서 실행할 스킬 효과 종류입니다. 구현된 효과만 이 열거형에 추가합니다.</summary>
-    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack }
+    public enum BattleSkillEffectType { None, Taunt, SingleAllyHeal, SingleRangedPhysicalAttack, GainFighterEdge }
 
     /// <summary>JobDefinition의 프리뷰와 전투 실행 정보를 연결하는 읽기 전용 런타임 스킬 데이터입니다.</summary>
     public sealed class BattleSkillDefinition
@@ -69,6 +69,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string SharpshooterAimId = "sharpshooter_aim";
+        public const string FighterEdgeId = "fighter_slash_stack";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -104,9 +105,66 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 적 1명",
                         effectDescription: "피해: 기본 공격의 160%",
                         typeDescription: "유형: 원거리 물리");
+                if (preview.SkillId == FighterEdgeId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "전투 감각을 끌어올려 난도를 1중첩 얻습니다.\n난도는 최대 3중첩까지 쌓이며,\n향후 회심의 일격을 강화하는 데 사용됩니다.\n난도 스킬을 세 번째 사용하면 재사용 대기시간이 발생합니다.", true,
+                        BattleSkillEffectType.GainFighterEdge, 2, 0,
+                        iconId: BattleUiIconCatalog.FighterEdgeSkill,
+                        targetDescription: "대상: 자신",
+                        effectDescription: "효과: 난도 +1\n최대 중첩: 3",
+                        durationDescription: "세 번째 사용 후 재사용: 2턴");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
+        }
+    }
+
+    /// <summary>
+    /// 투사마다 자기 난도와 난도 스킬 직접 사용 횟수를 보관하는 전투 자원 저장소입니다.
+    /// 난도는 특정 적에게 붙는 약화 효과가 아니라 투사 본인의 다음 기술을 강화하는 자원이므로 Combatant를
+    /// 키로 사용합니다. 이렇게 해야 같은 전투에 투사가 여러 명 있어도 각자의 중첩이 섞이지 않습니다.
+    /// </summary>
+    public sealed class BattleFighterResourceRuntime
+    {
+        public const int MaxEdgeStacks = 3;
+        private readonly Dictionary<Combatant, int> edgeStacksByActor = new Dictionary<Combatant, int>();
+        private readonly Dictionary<Combatant, int> directUsesByActor = new Dictionary<Combatant, int>();
+
+        public int GetEdgeStacks(Combatant actor) => actor != null && edgeStacksByActor.TryGetValue(actor, out int stacks) ? stacks : 0;
+
+        /// <summary>
+        /// 회오리 베기처럼 다른 기술이 적중 수만큼 난도를 줄 때 재사용할 공용 진입점입니다. Math.Min으로
+        /// 3중첩 상한을 지키되 직접 사용 횟수는 건드리지 않으므로, 이 경로로 3이 되어도 난도 스킬 쿨타임은
+        /// 생기지 않습니다. 반환값은 UI나 연출이 실제 증가량을 알 수 있게 합니다.
+        /// </summary>
+        public int AddEdgeStacks(Combatant actor, int requestedStacks)
+        {
+            if (actor == null || requestedStacks <= 0) return 0;
+            int previous = GetEdgeStacks(actor);
+            int next = Math.Min(MaxEdgeStacks, previous + requestedStacks);
+            edgeStacksByActor[actor] = next;
+            return next - previous;
+        }
+
+        /// <summary>난도 스킬의 성공한 직접 사용만 기록하며, 세 번째인지 호출자에게 알려 줍니다.</summary>
+        public bool RecordDirectEdgeUse(Combatant actor)
+        {
+            if (actor == null) return false;
+            int uses = directUsesByActor.TryGetValue(actor, out int current) ? current + 1 : 1;
+            bool thirdUse = uses >= 3;
+            directUsesByActor[actor] = thirdUse ? 0 : uses;
+            return thirdUse;
+        }
+
+        /// <summary>
+        /// 향후 회심의 일격이 배율 계산 전에 현재 난도를 읽고, 성공 후 전부 소비할 때 사용하는 API입니다.
+        /// 자원 소비는 쿨타임이나 직접 사용 횟수를 바꾸지 않아 두 규칙이 서로 독립적으로 유지됩니다.
+        /// </summary>
+        public int ConsumeAllEdgeStacks(Combatant actor)
+        {
+            int consumed = GetEdgeStacks(actor);
+            if (actor != null) edgeStacksByActor[actor] = 0;
+            return consumed;
         }
     }
 
@@ -173,11 +231,14 @@ namespace ProjectLimitless.Battle
     {
         private readonly BattleSkillCooldowns cooldowns;
         private readonly BattleStatusEffectRuntime statusEffects;
+        private readonly BattleFighterResourceRuntime fighterResources;
 
-        public BattleSkillExecutor(BattleSkillCooldowns cooldowns, BattleStatusEffectRuntime statusEffects)
+        public BattleSkillExecutor(BattleSkillCooldowns cooldowns, BattleStatusEffectRuntime statusEffects,
+            BattleFighterResourceRuntime fighterResources)
         {
             this.cooldowns = cooldowns ?? throw new ArgumentNullException(nameof(cooldowns));
             this.statusEffects = statusEffects ?? throw new ArgumentNullException(nameof(statusEffects));
+            this.fighterResources = fighterResources ?? throw new ArgumentNullException(nameof(fighterResources));
         }
 
         public bool CanUse(Combatant actor, BattleSkillDefinition skill, out string reason)
@@ -197,6 +258,12 @@ namespace ProjectLimitless.Battle
             if (remaining > 0)
             {
                 reason = $"{skill.DisplayName}은(는) {remaining}턴 뒤 다시 사용할 수 있습니다.";
+                return false;
+            }
+            if (skill.EffectType == BattleSkillEffectType.GainFighterEdge &&
+                fighterResources.GetEdgeStacks(actor) >= BattleFighterResourceRuntime.MaxEdgeStacks)
+            {
+                reason = "난도가 이미 최대입니다.";
                 return false;
             }
 
@@ -219,6 +286,19 @@ namespace ProjectLimitless.Battle
                     }
                     cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
                     message = $"{actor.DisplayName}의 도발! 적 {affected}명은 각자 다음 {skill.EffectDuration}회 행동 동안 단일 적대 행동의 대상을 수호자로 지정합니다.";
+                    return true;
+                case BattleSkillEffectType.GainFighterEdge:
+                    // 자원 증가와 직접 사용 횟수를 별도로 처리합니다. 회오리 베기는 AddEdgeStacks만 호출할 수
+                    // 있지만, 쿨타임은 이 난도 스킬 실행 경로에서 세 번째 성공을 기록했을 때만 시작됩니다.
+                    int gained = fighterResources.AddEdgeStacks(actor, 1);
+                    if (gained <= 0)
+                    {
+                        message = "난도가 이미 최대입니다.";
+                        return false;
+                    }
+                    bool thirdDirectUse = fighterResources.RecordDirectEdgeUse(actor);
+                    if (thirdDirectUse) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+                    message = $"{actor.DisplayName}의 난도! 현재 난도 {fighterResources.GetEdgeStacks(actor)}중첩.";
                     return true;
                 default:
                     message = "아직 사용할 수 없습니다.";

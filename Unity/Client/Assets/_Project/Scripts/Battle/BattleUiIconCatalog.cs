@@ -26,6 +26,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntSkill = "skill.guardian.taunt";
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
         public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
+        public const string FighterEdgeSkill = "skill.fighter.edge";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -36,7 +37,7 @@ namespace ProjectLimitless.Battle
             { Defend, "KenneyBattleIcons/shield" },
             { Flee, "KenneyBattleIcons/exitRight" },
             // 취소는 X보다 "한 단계 뒤로 이동" 의미가 분명한 왼쪽 화살표를 사용합니다.
-            // cross.png는 삭제하지 않고 향후 투사 '난도' 스킬 아이콘 후보로만 남겨 둡니다.
+            // cross.png는 투사 '난도'의 준비 동작과 누적되는 전투 감각을 나타내는 스킬·상태 아이콘으로 씁니다.
             { Cancel, "KenneyBattleIcons/arrowLeft" },
             { Acting, "KenneyBattleIcons/arrowRight" },
             // 도발은 조준점보다 "한 참가자가 특정 방향을 향하게 됨"을 보여 주는 pawn_right를 사용합니다.
@@ -49,7 +50,8 @@ namespace ProjectLimitless.Battle
             // 수호자가 누르는 스킬은 pawn_left를 사용해 서로 다른 화면 역할을 구분합니다.
             { GuardianTauntSkill, "KenneyBattleIcons/pawn_left" },
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
-            { SharpshooterAimSkill, "KenneyBattleIcons/target" }
+            { SharpshooterAimSkill, "KenneyBattleIcons/target" },
+            { FighterEdgeSkill, "KenneyBattleIcons/cross" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();

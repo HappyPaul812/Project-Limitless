@@ -59,6 +59,7 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, JobDefinition> combatantJobs = new Dictionary<Combatant, JobDefinition>();
         private readonly Dictionary<Combatant, BattleParticipantSetup> participantSetups = new Dictionary<Combatant, BattleParticipantSetup>();
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
+        private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
@@ -109,7 +110,7 @@ namespace ProjectLimitless.Battle
 
         private void Awake()
         {
-            skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects);
+            skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources);
             CreateParticipants();
             CreateEventSystem();
             CreateInterface();
@@ -453,7 +454,7 @@ namespace ProjectLimitless.Battle
             if (detailPopup == null || detailPopupText == null || !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
             combatantJobs.TryGetValue(combatant, out JobDefinition job);
             participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
-            BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(combatant, job, setup, skillCooldowns);
+            BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(combatant, job, setup, skillCooldowns, fighterResources);
             detailCombatant = combatant;
             detailPopupText.text = model.DetailText;
             int lineCount = model.DetailText.Count(character => character == '\n') + 1;
@@ -813,7 +814,8 @@ namespace ProjectLimitless.Battle
                 actorView.ActionRoot,
                 actorView.SpriteImage,
                 battleFont,
-                skill.EffectType == BattleSkillEffectType.Taunt ? "도발!" : skill.DisplayName,
+                skill.EffectType == BattleSkillEffectType.Taunt ? "도발!"
+                    : skill.EffectType == BattleSkillEffectType.GainFighterEdge ? "난도!" : skill.DisplayName,
                 () =>
                 {
                     executed = skillExecutor.Execute(actor, skill, opponents, out string result);
@@ -1167,7 +1169,7 @@ namespace ProjectLimitless.Battle
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
                 combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
                 participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
-                BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns);
+                BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns, fighterResources);
                 RefreshHpRow(combatant, statusModel);
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
@@ -1250,7 +1252,8 @@ namespace ProjectLimitless.Battle
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {
                 string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
-                    : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt : null;
+                    : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
+                    : marker.Id == "fighter.edge" ? BattleUiIconCatalog.FighterEdgeSkill : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.

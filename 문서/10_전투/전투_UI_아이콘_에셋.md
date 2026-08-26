@@ -26,10 +26,11 @@
 | 수호자 도발 스킬 | Board Game Icons `PNG/Default (64px)/pawn_left.png` | `skill.guardian.taunt` |
 | 치유사 치유의 빛 | Board Game Icons `PNG/Default (64px)/suit_hearts.png` | `skill.healer.healing_light` |
 | 사수 정조준 | Game Icons `PNG/White/1x/target.png` | `skill.sharpshooter.aim` |
+| 투사 난도 스킬·상태 | Game Icons `PNG/White/1x/cross.png` | `skill.fighter.edge` |
 
 파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
-취소는 동작 의미가 더 분명한 `arrowLeft.png`로 교체했다. 기존 `cross.png`는 런타임 원본을 삭제하지 않지만 `command.cancel`에서는 더 이상 사용하지 않으며, 향후 투사 `난도` 스킬 아이콘 후보로 예약한다. 실제 난도 구현 전에는 이 후보를 확정 매핑으로 간주하지 않는다.
+취소는 동작 의미가 더 분명한 `arrowLeft.png`를 유지한다. 기존 `cross.png`는 `command.cancel`에 다시 연결하지 않고 투사 `난도` 스킬 버튼과 참가자 난도 상태에 같은 역할 ID로 사용한다. 아이콘과 `난도 n` 한글을 함께 보여 색상이나 그림만으로 상태를 전달하지 않는다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 
