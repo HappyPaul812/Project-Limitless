@@ -465,7 +465,8 @@ namespace ProjectLimitless.Battle
                 !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
             combatantJobs.TryGetValue(combatant, out JobDefinition job);
             participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
-            BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(combatant, job, setup, skillCooldowns, fighterResources);
+            BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(
+                combatant, job, setup, skillCooldowns, fighterResources, statusEffects);
             detailCombatant = combatant;
             detailPopupText.text = model.DetailText;
             int lineCount = model.DetailText.Count(character => character == '\n') + 1;
@@ -861,6 +862,11 @@ namespace ProjectLimitless.Battle
                 BeginCompanionAssaultSelection(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.SingleMagicAttackWithBurn)
+            {
+                BeginFireballSelection(skill);
+                return;
+            }
             if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain ||
                 skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum)
             {
@@ -1085,6 +1091,76 @@ namespace ProjectLimitless.Battle
             skillMenuPanel.gameObject.SetActive(false);
             BeginTargetSelection(targets, target => PlayCompanionAssault(actor, target, skill),
                 "동료의 습격 대상을 선택하세요. 전열과 후열 모두 선택할 수 있으며 도발은 우선 적용됩니다.", true);
+        }
+
+        /// <summary>
+        /// 파이어 볼은 전열과 후열을 자유롭게 고르는 단일 마법입니다. 공용 TargetResolver의 Magic 범위를
+        /// 사용하면 자유 대상 규칙을 복사하지 않으면서도, 단일 적대 행동에 적용되는 기존 도발이 먼저 처리됩니다.
+        /// </summary>
+        private void BeginFireballSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(
+                actor, opponents, TargetRangeType.Magic);
+            BeginTargetSelection(targets, target => PlayFireball(actor, target, skill),
+                "파이어 볼 대상을 선택하세요. 전열과 후열 모두 선택할 수 있으며 도발은 우선 적용됩니다.", true);
+        }
+
+        /// <summary>
+        /// 충전과 Projectile은 화면 연출만 담당하고, Warm Explosion index 4 콜백에서만 Executor를 호출합니다.
+        /// 따라서 대상 선택이나 비행 중에는 HP·화상·쿨타임이 바뀌지 않으며 성공한 명중만 행동을 소비합니다.
+        /// </summary>
+        private void PlayFireball(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null ||
+                !target.IsAlive || target.Side == actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayFireballSkill(
+                actorView.ActionRoot,
+                targetView.ActionRoot,
+                targetView.SpriteImage,
+                battleFont,
+                LoadProjectileFrames("BattleProjectiles/Fireball"),
+                BattleFireballVisuals.LoadChargeFrames(),
+                BattleFireballVisuals.LoadExplosionFrames(),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSingleMagicAttackWithBurn(
+                        actor, target, skill, out int damage, out string result);
+                    messageText.text = result;
+                    return damage;
+                },
+                damage => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "파이어 볼을 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
         }
 
         /// <summary>
@@ -1501,10 +1577,41 @@ namespace ProjectLimitless.Battle
             // 행동 완료 뒤 기본 명령으로 돌아갈 때 이전 스킬의 Hover/포커스 정보가 되살아나지 않게 합니다.
             // 다음에 사용자가 스킬 메뉴를 다시 열고 버튼에 새로 포커스할 때만 설명이 표시됩니다.
             HideSkillDetailPopup();
-            currentActor?.CompleteAction();
+            Combatant completedActor = currentActor;
+            completedActor?.CompleteAction();
             statusEffects.RemoveInvalidTaunts(AllCombatants);
-            RefreshCombatantViews(null);
             SetCommandButtons(false);
+            // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
+            // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.
+            if (completedActor != null && statusEffects.HasActiveBurn(completedActor) && combatantViews.TryGetValue(completedActor, out CombatantView burnedView))
+            {
+                actionPlaying = true;
+                RefreshCombatantViews(null);
+                if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+                StartCoroutine(actionPresenter.PlayBurnTick(
+                    burnedView.ActionRoot,
+                    burnedView.SpriteImage,
+                    battleFont,
+                    LoadProjectileFrames("BattleProjectiles/Fireball"),
+                    () => statusEffects.ApplyBurnTickAtActionEnd(completedActor, out _),
+                    damage =>
+                    {
+                        int remaining = statusEffects.GetBurnRemaining(completedActor);
+                        messageText.text = $"{completedActor.DisplayName}의 화상 피해 {damage}. 남은 화상 {remaining}회.";
+                        statusEffects.RemoveInvalidTaunts(AllCombatants);
+                        RefreshCombatantViews(null);
+                    },
+                    () =>
+                    {
+                        RestoreBattleIdle(burnedView);
+                        actionPlaying = false;
+                        RefreshCombatantViews(null);
+                        StartCoroutine(AdvanceAfterDelay());
+                    }));
+                return;
+            }
+
+            RefreshCombatantViews(null);
             StartCoroutine(AdvanceAfterDelay());
         }
 
@@ -1548,7 +1655,8 @@ namespace ProjectLimitless.Battle
                 view.TurnMarker.gameObject.SetActive(combatant == currentActor && combatant.IsAlive);
                 combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
                 participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
-                BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(combatant, statusJob, statusSetup, skillCooldowns, fighterResources);
+                BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(
+                    combatant, statusJob, statusSetup, skillCooldowns, fighterResources, statusEffects);
                 RefreshHpRow(combatant, statusModel);
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
@@ -1632,7 +1740,8 @@ namespace ProjectLimitless.Battle
             {
                 string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
-                    : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum : null;
+                    : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum
+                    : marker.Id == "burn" ? BattleUiIconCatalog.Burn : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.

@@ -353,6 +353,147 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 파이어 볼의 충전·큰 Projectile·명중 폭발을 한 행동으로 묶습니다. 실제 피해 함수는 Warm Explosion의
+        /// index 4에서만 호출하므로 화염탄이 날아가는 동안 HP가 먼저 줄지 않습니다.
+        /// </summary>
+        public IEnumerator PlayFireballSkill(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
+            Sprite[] projectileFrames, Sprite[] chargeFrames, Sprite[] explosionFrames,
+            Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+        {
+            if (attacker == null || target == null || targetSprite == null)
+            {
+                int fallbackDamage = applyImpact == null ? 0 : applyImpact();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(attacker, damageFont, "파이어 볼!");
+            Image charge = CreateEffectImage(attacker, "FireballCharge", chargeFrames,
+                BattleFireballVisuals.ChargeSize, new Vector2(0f, -2f));
+            // Solar Shrapnel의 초기 Charge 두 장만 20FPS로 세 번 반복해, 마도사가 제자리에서 힘을
+            // 모으는 단계가 짧게 지나가 버리지 않으면서도 원본 프레임 속도를 유지합니다.
+            for (int index = 0; index < 6; index++)
+            {
+                if (charge != null && chargeFrames != null && chargeFrames.Length > 0)
+                    charge.sprite = chargeFrames[index % chargeFrames.Length];
+                yield return new WaitForSeconds(BattleFireballVisuals.FrameDuration);
+            }
+            if (charge != null) Destroy(charge.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+
+            Vector3 start = attacker.localPosition;
+            Vector3 destination = target.localPosition;
+            GameObject projectileObject = new GameObject("SkillFireballProjectile", typeof(Image));
+            projectileObject.transform.SetParent(attacker.parent, false);
+            Image projectileImage = projectileObject.GetComponent<Image>();
+            projectileImage.sprite = projectileFrames != null && projectileFrames.Length > 0 ? projectileFrames[0] : GetOrbSprite();
+            projectileImage.preserveAspect = true;
+            projectileImage.raycastTarget = false;
+            RectTransform projectile = projectileImage.rectTransform;
+            projectile.anchorMin = projectile.anchorMax = projectile.pivot = Vector2.one * .5f;
+            projectile.sizeDelta = BattleFireballVisuals.ProjectileSize;
+            projectile.localPosition = start;
+            projectile.localScale = destination.x < start.x ? new Vector3(-1f, 1f, 1f) : Vector3.one;
+            yield return MoveProjectile(projectile, projectileImage, projectileFrames, .06f, .42f, start, destination);
+            Destroy(projectileObject);
+
+            Image explosion = CreateEffectImage(target, "WarmExplosion", explosionFrames,
+                BattleFireballVisuals.ExplosionSize, Vector2.zero);
+            Color targetOriginalColor = targetSprite.color;
+            bool impactApplied = false;
+            int frameCount = explosionFrames?.Length ?? 0;
+            for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
+            {
+                if (explosion != null) explosion.sprite = explosionFrames[frameIndex];
+                if (!impactApplied && frameIndex >= BattleFireballVisuals.ExplosionPeakFrame)
+                {
+                    impactApplied = true;
+                    // 폭발 그림이 가장 커지는 한 프레임에서만 170% 피해와 화상 부여를 확정합니다.
+                    int damage = applyImpact == null ? 0 : applyImpact();
+                    onImpact?.Invoke(damage);
+                    if (damage > 0)
+                    {
+                        StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+                        StartCoroutine(PlayHitReaction(target, targetSprite, destination, targetOriginalColor));
+                    }
+                }
+                yield return new WaitForSeconds(BattleFireballVisuals.FrameDuration);
+            }
+            if (!impactApplied)
+            {
+                int damage = applyImpact == null ? 0 : applyImpact();
+                onImpact?.Invoke(damage);
+            }
+            if (explosion != null) Destroy(explosion.gameObject);
+            targetSprite.color = targetOriginalColor;
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
+        /// 화상 틱은 새 화염탄이나 큰 폭발을 만들지 않고 기존 작은 fireball 프레임을 대상 위에서만 재생합니다.
+        /// 작은 불꽃의 중간 시점에 저장된 화상 피해를 적용한 뒤 피격 반응까지 보여 줍니다.
+        /// </summary>
+        public IEnumerator PlayBurnTick(RectTransform target, Image targetSprite, Font damageFont, Sprite[] flameFrames,
+            Func<int> applyTick, Action<int> onImpact, Action onComplete)
+        {
+            if (target == null || targetSprite == null)
+            {
+                int fallbackDamage = applyTick == null ? 0 : applyTick();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Image flame = CreateEffectImage(target, "BurnTickFlame", flameFrames,
+                BattleFireballVisuals.BurnTickSize, new Vector2(0f, 12f));
+            Color originalColor = targetSprite.color;
+            bool applied = false;
+            int count = flameFrames?.Length ?? 0;
+            for (int index = 0; index < count; index++)
+            {
+                if (flame != null) flame.sprite = flameFrames[index];
+                if (!applied && index >= 3)
+                {
+                    applied = true;
+                    int damage = applyTick == null ? 0 : applyTick();
+                    onImpact?.Invoke(damage);
+                    if (damage > 0)
+                    {
+                        StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+                        StartCoroutine(PlayHitReaction(target, targetSprite, target.localPosition, originalColor));
+                    }
+                }
+                yield return new WaitForSeconds(.06f);
+            }
+            if (!applied)
+            {
+                int damage = applyTick == null ? 0 : applyTick();
+                onImpact?.Invoke(damage);
+            }
+            if (flame != null) Destroy(flame.gameObject);
+            targetSprite.color = originalColor;
+            onComplete?.Invoke();
+        }
+
+        private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
+            Vector2 size, Vector2 anchoredPosition)
+        {
+            if (parent == null || frames == null || frames.Length == 0) return null;
+            GameObject obj = new GameObject(objectName, typeof(Image));
+            obj.transform.SetParent(parent, false);
+            Image image = obj.GetComponent<Image>();
+            image.sprite = frames[0];
+            image.preserveAspect = true;
+            image.raycastTarget = false;
+            RectTransform rect = image.rectTransform;
+            rect.anchorMin = rect.anchorMax = rect.pivot = Vector2.one * .5f;
+            rect.sizeDelta = size;
+            rect.anchoredPosition = anchoredPosition;
+            return image;
+        }
+
         /// <summary>스킬 사용자를 제자리에서 짧게 밝히고 텍스트를 표시한 뒤 지정 시점에 효과를 적용합니다.</summary>
         public IEnumerator PlaySkillEmphasis(RectTransform actor, Image actorSprite, Font font, string callout,
             Action applyEffect, Action onComplete)

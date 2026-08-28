@@ -16,7 +16,8 @@ namespace ProjectLimitless.Battle
         SingleMeleePhysicalAttackConsumingMomentum,
         AreaMeleePhysicalAttackWithMomentumGain,
         AreaRangedPhysicalAttack,
-        SingleBeastPhysicalAttack
+        SingleBeastPhysicalAttack,
+        SingleMagicAttackWithBurn
     }
 
     /// <summary>
@@ -40,7 +41,8 @@ namespace ProjectLimitless.Battle
             BattleSkillEffectType effectType, int cooldownTurns, int effectDuration, float maxHpHealRatio = 0f,
             int attackDamagePercent = 0, string iconId = null, string targetDescription = null,
             string effectDescription = null, string typeDescription = null, string durationDescription = null,
-            IReadOnlyList<int> momentumDamagePercents = null, BattleSkillTargetRange targetRange = BattleSkillTargetRange.None)
+            IReadOnlyList<int> momentumDamagePercents = null, BattleSkillTargetRange targetRange = BattleSkillTargetRange.None,
+            int burnDamagePercent = 0)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -58,6 +60,7 @@ namespace ProjectLimitless.Battle
             DurationDescription = durationDescription ?? string.Empty;
             MomentumDamagePercents = momentumDamagePercents ?? Array.Empty<int>();
             TargetRange = targetRange;
+            BurnDamagePercent = Math.Max(0, burnDamagePercent);
         }
 
         public string Id { get; }
@@ -93,6 +96,8 @@ namespace ProjectLimitless.Battle
         public IReadOnlyList<int> MomentumDamagePercents { get; }
         /// <summary>광역 스킬의 행 범위입니다. UI 문구가 아니라 전투 대상 해석기가 읽는 실행 데이터입니다.</summary>
         public BattleSkillTargetRange TargetRange { get; }
+        /// <summary>화상 한 번이 명중 당시 공격력의 몇 %인지 나타냅니다. 30이면 당시 Attack의 30%입니다.</summary>
+        public int BurnDamagePercent { get; }
     }
 
     /// <summary>
@@ -109,6 +114,7 @@ namespace ProjectLimitless.Battle
         public const string FighterNandoId = "fighter_slash_stack";
         public const string FighterCriticalStrikeId = "fighter_finishing_strike";
         public const string FighterWhirlwindId = "fighter_whirlwind";
+        public const string MageFireballId = "mage_fireball";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -196,6 +202,16 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 광역 근거리 물리",
                         durationDescription: "재사용 대기시간: 없음",
                         targetRange: BattleSkillTargetRange.EnemyFrontRowAll);
+                if (preview.SkillId == MageFireballId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "불의 마력을 충전해 큰 화염탄을 발사합니다.\n적 하나에게 일반 공격의 170% 피해를 주고 화상을 2회 부여합니다.\n화상은 대상 행동 종료 시 명중 당시 공격력의 30% 피해를 주며, 다시 맞으면 중첩하지 않고 2회로 갱신됩니다.", true,
+                        BattleSkillEffectType.SingleMagicAttackWithBurn, 3, 2, 0f, 170,
+                        iconId: BattleUiIconCatalog.MageFireballSkill,
+                        targetDescription: "대상: 적 1명",
+                        effectDescription: "범위: 전열/후열 자유\n즉발 피해: 일반 공격의 170%\n화상: 대상 행동 종료 시 30% 피해 × 2회",
+                        typeDescription: "유형: 단일 마법",
+                        durationDescription: "재사용 대기시간: 3턴",
+                        burnDamagePercent: 30);
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -322,6 +338,14 @@ namespace ProjectLimitless.Battle
     /// <summary>도발처럼 전투 참가자에게 남는 상태의 적용과 무효 상태 정리를 담당합니다.</summary>
     public sealed class BattleStatusEffectRuntime
     {
+        private sealed class BurnState
+        {
+            public int RemainingTicks;
+            public int RawDamagePerTick;
+        }
+
+        private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
+
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
             if (source == null || !source.IsAlive || opponents == null) return 0;
@@ -339,6 +363,41 @@ namespace ProjectLimitless.Battle
                 if (combatant.ForcedTarget != null && !combatant.ForcedTarget.IsAlive)
                     combatant.ApplyTaunt(null, 0);
             }
+        }
+
+        /// <summary>
+        /// 화상은 같은 대상에게 여러 묶음을 쌓지 않습니다. 이미 화상 중이라도 새 파이어 볼이 맞으면
+        /// 남은 횟수를 2로 되돌리고, 새 명중 당시 마도사의 공격력으로 계산한 피해를 덮어씁니다.
+        /// 이렇게 저장해야 이후 마도사의 능력치가 바뀌어도 이미 붙은 화상 피해가 소급 변경되지 않습니다.
+        /// </summary>
+        public void ApplyOrRefreshBurn(Combatant target, int rawDamagePerTick, int ticks)
+        {
+            if (target == null || !target.IsAlive || rawDamagePerTick <= 0 || ticks <= 0) return;
+            burns[target] = new BurnState
+            {
+                RemainingTicks = ticks,
+                RawDamagePerTick = rawDamagePerTick
+            };
+        }
+
+        public int GetBurnRemaining(Combatant target) => target != null && burns.TryGetValue(target, out BurnState burn)
+            ? burn.RemainingTicks : 0;
+
+        public bool HasActiveBurn(Combatant target) => target != null && target.IsAlive && GetBurnRemaining(target) > 0;
+
+        /// <summary>
+        /// 대상 행동이 끝난 정확한 시점에 한 번만 호출합니다. 저장된 원시 피해를 기존 TakeDamage로 전달해
+        /// HP 감소 규칙을 재사용하고, 적용 뒤 남은 횟수를 줄여 0이면 상태를 제거합니다.
+        /// </summary>
+        public int ApplyBurnTickAtActionEnd(Combatant target, out int remainingTicks)
+        {
+            remainingTicks = 0;
+            if (!HasActiveBurn(target) || !burns.TryGetValue(target, out BurnState burn)) return 0;
+            int damage = target.TakeDamage(burn.RawDamagePerTick);
+            burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
+            remainingTicks = burn.RemainingTicks;
+            if (burn.RemainingTicks == 0 || !target.IsAlive) burns.Remove(target);
+            return damage;
         }
     }
 
@@ -518,6 +577,40 @@ namespace ProjectLimitless.Battle
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
+            return true;
+        }
+
+        /// <summary>
+        /// Warm Explosion이 가장 커지는 index 4에서 호출되는 파이어 볼 계산입니다. 즉발 170%와 화상 30%는
+        /// 모두 현재 마도사의 Attack으로 정수 올림 계산하지만, 화상 쪽은 계산 결과 자체를 상태 저장소에 넣습니다.
+        /// 재적중하면 상태 저장소가 기존 묶음을 더하지 않고 새 피해·2회로 교체합니다.
+        /// </summary>
+        public bool ExecuteSingleMagicAttackWithBurn(Combatant actor, Combatant target, BattleSkillDefinition skill,
+            out int damage, out string message)
+        {
+            damage = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleMagicAttackWithBurn || target == null ||
+                target.Side == actor.Side || !target.IsAlive)
+            {
+                message = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return false;
+            }
+
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            damage = target.TakeDamage(rawDamage);
+
+            // 즉발 피해로 쓰러진 대상에게는 이후 행동도 없으므로 화상을 남기지 않습니다.
+            if (target.IsAlive)
+            {
+                long scaledBurn = (long)actor.Attack * skill.BurnDamagePercent;
+                int storedBurnDamage = (int)Math.Max(1L, (scaledBurn + 99L) / 100L);
+                statusEffects.ApplyOrRefreshBurn(target, storedBurnDamage, skill.EffectDuration);
+            }
+
+            cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해와 화상 {skill.EffectDuration}회.";
             return true;
         }
 

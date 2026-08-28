@@ -32,12 +32,16 @@
 | 투사 기세 상태 | Board Game Icons `PNG/Default (64px)/skull.png` | `status.fighter.momentum` |
 | 투사 회심의 일격 | Board Game Icons `PNG/Default (64px)/skull.png` | `skill.fighter.critical_strike` |
 | 투사 회오리 베기 | Board Game Icons `PNG/Default (64px)/spinner.png` | `skill.fighter.whirlwind` |
+| 마도사 파이어 볼 | PVFX Foundry `warm-explosion` peak index 4 런타임 Sprite | `skill.mage.fireball` |
+| 화상 상태 | 파이어 볼과 같은 `warm-explosion` peak index 4 | `status.burn` |
 
 파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
 취소는 동작 의미가 더 분명한 `arrowLeft.png`를 유지한다. `bow.png`는 사수 `화살비`, `cross.png`는 투사 `난도`, `spinner.png`는 전열을 도는 `회오리 베기` 스킬에 사용하고, `skull.png`는 투사 개인 자원 `기세`와 이를 소비하는 `회심의 일격`에 사용한다. 상단 HUD는 아이콘과 `기세 n` 한글을 함께 보여 그림만으로 상태를 전달하지 않는다.
 
 동료의 습격은 전투 연출과 같은 원본 Texture에서 몸통·머리·꼬리·다리 간격이 작은 버튼에서도 비교적 잘 보이는 다섯 번째 Run 프레임(index 4)을 런타임에 잘라 실제 Wolf 아이콘으로 표시한다. 별도 PNG를 만들거나 원본 SpriteSheet를 수정하지 않는다. 리소스 경로·프레임 폭·아이콘 프레임 번호는 `BeastCompanionDefinition`이 제공하므로 UI와 `BattleSceneController`에 Wolf 경로를 하드코딩하지 않으며, 사수 정조준은 기존 Kenney `target.png` 연결을 그대로 유지한다.
+
+파이어 볼은 PVFX Foundry 0.3.0 CC0 `warm-explosion/grid/sprite-sheet.png`의 폭발 최대 프레임 index 4를 런타임에 잘라 버튼과 화상 상태 아이콘으로 사용한다. 버튼은 고정 한 장이고 실제 명중 연출은 15프레임 전체이므로 서로 섞이지 않는다. HUD에는 그림과 `화상 n` 한글을 함께 표시해 색상만으로 상태를 전달하지 않는다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 

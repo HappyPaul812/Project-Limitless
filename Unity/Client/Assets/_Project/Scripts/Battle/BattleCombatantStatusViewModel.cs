@@ -92,7 +92,8 @@ namespace ProjectLimitless.Battle
     public static class BattleCombatantStatusViewModelFactory
     {
         public static BattleCombatantStatusViewModel Create(Combatant combatant, JobDefinition job,
-            BattleParticipantSetup setup, BattleSkillCooldowns cooldowns, BattleFighterResourceRuntime fighterResources)
+            BattleParticipantSetup setup, BattleSkillCooldowns cooldowns, BattleFighterResourceRuntime fighterResources,
+            BattleStatusEffectRuntime statusEffects)
         {
             if (combatant == null) throw new ArgumentNullException(nameof(combatant));
 
@@ -114,6 +115,10 @@ namespace ProjectLimitless.Battle
             // HUD를 고쳐도 회오리 베기·회심의 일격의 중첩 판정에는 영향을 주지 않습니다.
             int momentum = fighterResources?.GetMomentum(combatant) ?? 0;
             if (momentum > 0) markers.Add(new BattleStatusMarker("fighter.momentum", "기세", momentum));
+            // 화상 숫자는 "몇 턴"이 아니라 앞으로 대상 행동 종료 시 피해가 발생할 남은 횟수입니다.
+            // 계산은 상태 저장소가 담당하고 UI는 읽기만 하므로 HUD 표시가 화상 횟수를 소모하지 않습니다.
+            int burnRemaining = statusEffects?.GetBurnRemaining(combatant) ?? 0;
+            if (burnRemaining > 0) markers.Add(new BattleStatusMarker("burn", "화상", burnRemaining));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             IReadOnlyList<string> resourceDetails = job != null && job.JobId == "fighter"

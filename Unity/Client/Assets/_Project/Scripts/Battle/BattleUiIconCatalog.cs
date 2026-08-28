@@ -32,6 +32,8 @@ namespace ProjectLimitless.Battle
         public const string FighterMomentum = "status.fighter.momentum";
         public const string FighterCriticalStrikeSkill = "skill.fighter.critical_strike";
         public const string FighterWhirlwindSkill = "skill.fighter.whirlwind";
+        public const string MageFireballSkill = "skill.mage.fireball";
+        public const string Burn = "status.burn";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -63,7 +65,11 @@ namespace ProjectLimitless.Battle
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
             { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },
-            { FighterWhirlwindSkill, "KenneyBattleIcons/spinner" }
+            { FighterWhirlwindSkill, "KenneyBattleIcons/spinner" },
+            // 파이어 볼 버튼과 화상 상태는 Warm Explosion의 가장 큰 index 4를 함께 사용합니다.
+            // 불꽃 그림과 한글 상태명을 같이 보여 주므로 색상만으로 화상을 구분하지 않습니다.
+            { MageFireballSkill, string.Empty },
+            { Burn, string.Empty }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
@@ -92,6 +98,12 @@ namespace ProjectLimitless.Battle
                     new Rect(frameIndex * beast.FrameWidth, 0f, beast.FrameWidth, runSheet.height),
                     new Vector2(.5f, .5f), beast.FrameWidth, 0, SpriteMeshType.FullRect);
                 if (sprite != null) sprite.name = $"{beast.DisplayName}_CompanionAssault_Icon";
+            }
+            else if (iconId == MageFireballSkill || iconId == Burn)
+            {
+                // 전체 15프레임 중 폭발이 가장 큰 한 장만 UI 아이콘으로 사용합니다. 전투 VFX는 별도로
+                // 15장을 순서대로 재생하므로 고정 버튼 그림과 실제 폭발 Animation이 서로 섞이지 않습니다.
+                sprite = BattleFireballVisuals.LoadSkillIcon();
             }
             else
             {
