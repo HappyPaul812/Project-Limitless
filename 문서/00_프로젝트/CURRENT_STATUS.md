@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-28
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `be76146` (`Fix: 동료의 습격 Wolf 연출 조정`)
+- 마지막 기능 관련 commit: `3131aca` (`Fix: 동료의 습격 Wolf 아이콘 개선`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -112,7 +112,7 @@
 - 정조준과 화살비 쿨타임은 같은 `BattleSkillCooldowns`에서 참가자·Skill ID별로 독립 관리하며, 화살비는 모든 피격 반응 완료 후 성공 확정 시 2턴 등록
 - 사수 `동료의 습격`: 전후열 자유 단일 적, 도발 강제 대상 우선, 일반 공격 180%, 사수 행동 기준 3턴 쿨타임
 - 별도 Combatant가 아닌 기본 Wolf가 사수 근처에서 Run 12 FPS+기존 2/3 속도 Transform 이동으로 대상 바로 앞까지 달려 타격 후 잠시 정지·제거되며, `BeastCompanionDefinition` 경계로 Bear/Fox 교체 가능
-- 동료의 습격 버튼은 Wolf Run 첫 프레임 기반 실제 동물 아이콘을 사용하고 정조준은 기존 Kenney `target.png` 유지
+- 동료의 습격 버튼은 작은 버튼에서 실루엣이 선명한 Wolf Run 다섯 번째 프레임(index 4) 기반 실제 동물 아이콘을 사용하고 정조준은 기존 Kenney `target.png` 유지. Wolf 경로와 아이콘 프레임 번호는 `BeastCompanionDefinition`에서 제공
 - 투사 `난도`: 기존 근거리 TargetResolver로 적 1명을 선택하고 전진 타격 순간 일반 공격 150% 피해와 자신 기세 +1 적용
 - 기존 근거리 기본 공격 Presenter를 재사용하는 전진→타격·피해 숫자·피격 반응→원위치 복귀→다음 턴 흐름
 - `난도`는 스킬명, `기세`는 Combatant별 0~3 개인 자원이며 난도 직접 세 번째 사용 기준 2턴 쿨타임과 독립 관리
@@ -219,7 +219,7 @@
 - 사용자가 Unity Play Mode에서 화살비가 후열 여러 명을 정상 공격하는 것을 확인했다.
 - 화살비 성공 완료 후 2턴 쿨타임 등록과 설명 데이터를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 120%·EnemyRearRowAll·golden_arrow 연출은 변경하지 않았고 기존 deprecated API 경고 4개만 있었다. 2→1→사용 가능과 정조준 독립 표시는 Play Mode 확인이 필요하다.
 - **동료의 습격 구현**: `BeastCompanionDefinition`·카탈로그, 자유 단일 대상+도발 우선, 180% `TakeDamage`, 3턴 쿨타임과 Wolf Run+이동+도착 타격 구조를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 있으며 실제 화면 위치·속도·입력 잠금·쿨타임 흐름은 Play Mode 확인이 필요하다.
-- **동료의 습격 Wolf 연출 조정**: Wolf 실물 프레임 아이콘, 사수 근처 출발, 이동 속도 2/3, 대상 바로 앞 정지·도착 타격·0.12초 여운 뒤 제거를 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 대상·180% 피해·도발·3턴 쿨타임 코드는 변경하지 않았으며 실제 간격과 체감 속도는 Play Mode 확인이 필요하다.
+- **동료의 습격 Wolf 연출 조정**: 선명한 Wolf Run index 4 실물 프레임 아이콘, 사수 근처 출발, 이동 속도 2/3, 대상 바로 앞 정지·도착 타격·0.12초 여운 뒤 제거를 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 원본 SpriteSheet는 수정하지 않고 야수 정의가 경로·아이콘 프레임을 제공하며, 대상·180% 피해·도발·3턴 쿨타임 코드는 변경하지 않았다. 실제 아이콘 가독성·간격·체감 속도는 Play Mode 확인이 필요하다.
 - **동료의 습격 Run 검증 환경 유지**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 Wolf/Bear/Fox 자산을 보존하고, 실제 Battle과 분리된 `CompanionAssaultRunValidation` Scene을 유지한다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 확인은 남아 있다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
