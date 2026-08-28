@@ -71,10 +71,11 @@
 - 살아 있는 적 1명을 전열/후열 구분 없이 선택하되 단일 적대 행동이므로 공용 `TargetResolver`의 도발 강제 대상을 우선
 - 기본 공격의 180%를 정수 올림으로 계산하고 접촉 순간 `TakeDamage()`를 호출해 기존 방어 50% 감소 유지
 - 사수 자신의 행동 기준 3턴 쿨타임이며 다른 스킬 쿨타임과 Skill ID별로 독립
-- 1차 구현은 기본 Wolf가 사수 위치 근처에서 대상 바로 앞까지 Run 12 FPS와 Transform 이동을 함께 사용해 돌진하며, 최초 구현 이동 속도의 3/4을 사용
+- 1차 구현은 기본 Wolf가 매 사용 시 현재 행동 중인 사수 `ActionRoot`의 실제 위치·표시 크기에서 계산한 근처 지점에서 출발해 대상 바로 앞까지 돌진하며, 최초 구현 이동 속도의 3/4(570 UI 단위/초)을 사용
+- 전투 Run은 384×40 원본을 64×40의 서로 다른 6개 Sprite로 런타임 분할하고, 별도 Coroutine이 12 FPS로 0→1→2→3→4→5→0 순환한다. 위치를 바꾸는 Transform Coroutine과 독립적으로 동시에 실행하므로 Formation이나 표시 위치가 달라져도 사수 옆에서 다리를 움직이며 달린다.
 - 대상 바로 앞 도착 순간에만 피해를 적용하고 Wolf가 관통하지 않고 잠깐 멈춘 뒤 제거되며, 피격·제거 완료 뒤 다음 턴 진행
 - `BeastCompanionCatalog`가 `BeastCompanionDefinition`을 제공하므로 `BattleSceneController`에는 Wolf 경로가 없고 향후 Bear/Fox 장착 데이터로 교체 가능
-- 아이콘은 Wolf Run 원본 SpriteSheet에서 작은 버튼에서도 몸통·머리·꼬리·다리가 비교적 잘 구분되는 다섯 번째 프레임(index 4)을 런타임에 잘라 표시하며 원본 PNG는 수정하지 않음. 경로와 프레임 번호는 `BeastCompanionDefinition`이 제공하고 정조준은 기존 Kenney `target.png` 유지
+- 아이콘은 Wolf Run 원본 SpriteSheet에서 작은 버튼에서도 몸통·머리·꼬리·다리가 비교적 잘 구분되는 다섯 번째 프레임(index 4)을 런타임에 잘라 고정 표시하며 원본 PNG는 수정하지 않음. 전투 연출은 이 고정 아이콘 Sprite가 아니라 별도로 만든 6개 Run Sprite 전체를 사용한다. 경로와 프레임 번호는 `BeastCompanionDefinition`이 제공하고 정조준은 기존 Kenney `target.png` 유지
 - 야수별 기본 피해를 크게 차등화하지 않고 패시브 성향과 플레이 스타일을 선택의 중심으로 유지
 - 야수 선택 UI, 장착·저장, Wolf 공격력 계열·Bear 방어/최대 HP 계열·Fox 민첩/행동 우선도/치명 계열의 실제 버프와 정확한 수치는 미구현
 

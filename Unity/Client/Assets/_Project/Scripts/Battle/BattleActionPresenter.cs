@@ -21,6 +21,15 @@ namespace ProjectLimitless.Battle
         private static Sprite orbSprite;
 
         /// <summary>
+        /// Run 애니메이션 Coroutine과 실제 이동 Coroutine이 공유하는 작은 종료 신호입니다.
+        /// Transform이 목표에 도착하면 IsRunning을 끄고, Sprite 교체도 같은 시점에 멈춥니다.
+        /// </summary>
+        private sealed class BeastRunPlayback
+        {
+            public bool IsRunning = true;
+        }
+
+        /// <summary>
         /// 사수는 움직이지 않고 야수만 사수 근처에서 나타나 대상 바로 앞까지 달립니다.
         /// Run 프레임 교체는 제자리에서 다리가 달리는 모습을 만들고, RectTransform 이동은 실제 전장 위치를
         /// 바꿉니다. 둘을 함께 사용하되 독립 값으로 두어 Bear/Fox의 보폭과 이동 속도도 데이터로 조절할 수 있습니다.
@@ -58,15 +67,33 @@ namespace ProjectLimitless.Battle
             beastRect.sizeDelta = new Vector2(beast.FrameWidth * beast.DisplayScale,
                 runSheet.height * beast.DisplayScale);
 
-            // 원본 Wolf Run은 왼쪽을 바라봅니다. 사수의 왼쪽 가까이에서 출발하고, 왼쪽에 있는 적의
-            // 오른쪽 앞에서 멈추게 하여 화면 밖에서 갑자기 나타나거나 대상을 관통하지 않게 합니다.
-            Vector3 start = actor.localPosition + new Vector3(-62f, -54f, 0f);
-            Vector3 contact = target.localPosition + new Vector3(126f, -54f, 0f);
+            // 출발점은 고정 화면 좌표가 아닙니다. 매 사용 시 현재 행동 중인 사수 ActionRoot의 실제 위치와
+            // 표시 크기를 읽어 그 옆 지면을 계산하므로, Formation이나 전투 배치가 바뀌어도 사수를 따라갑니다.
+            float moveDirection = target.localPosition.x < actor.localPosition.x ? -1f : 1f;
+            float startSideGap = actor.rect.width * .5f + beastRect.rect.width * .1f;
+            float startGroundOffset = actor.rect.height * .5f - 2f;
+            Vector3 start = actor.localPosition + new Vector3(moveDirection * startSideGap, -startGroundOffset, 0f);
+
+            // 정지점도 대상 ActionRoot와 Wolf 표시 폭에서 계산합니다. 서로의 반 너비를 고려해 Wolf가 대상
+            // 몸 안으로 들어가지 않고 진행 방향 쪽 바로 앞에 멈춥니다.
+            float contactSideGap = target.rect.width * .5f + beastRect.rect.width * .45f;
+            float contactGroundOffset = target.rect.height * .5f - 2f;
+            Vector3 contact = target.localPosition - new Vector3(moveDirection * contactSideGap, contactGroundOffset, 0f);
             beastRect.localPosition = start;
+            // 원본 Wolf는 왼쪽을 향합니다. 향후 반대편 사수가 같은 Presenter를 사용하면 원본 PNG를
+            // 수정하지 않고 Transform만 뒤집어 실제 이동 방향을 바라보게 합니다.
+            beastRect.localScale = moveDirection < 0f ? Vector3.one : new Vector3(-1f, 1f, 1f);
             Text callout = CreateSkillCallout(actor, damageFont, "동료의 습격!");
 
-            yield return MoveBeastWithRunAnimation(beastRect, beastImage, runFrames, beast,
-                start, contact);
+            // Sprite 애니메이션과 Transform 이동은 서로 다른 일입니다. 전자는 12FPS로 다리 그림을 바꾸고,
+            // 후자는 매 렌더 프레임 570 UI 단위/초로 위치를 바꿉니다. 두 Coroutine을 동시에 실행해야
+            // 제자리 달리기 그림이 아니라 실제로 다리를 움직이며 전장을 달리는 모습이 됩니다.
+            BeastRunPlayback runPlayback = new BeastRunPlayback();
+            Coroutine runAnimation = StartCoroutine(PlayBeastRunAnimation(
+                beastImage, runFrames, beast.FramesPerSecond, runPlayback));
+            yield return MoveBeastTransform(beastRect, start, contact, beast.TravelSpeed);
+            runPlayback.IsRunning = false;
+            if (runAnimation != null) StopCoroutine(runAnimation);
 
             // 접촉 이전에는 HP를 건드리지 않습니다. 이 한 지점에서만 Executor를 호출해 Run 프레임 수와
             // 무관하게 180% 피해가 정확히 한 번 발생하고 기존 방어 판정도 같은 순간 적용됩니다.
@@ -89,17 +116,38 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
-        private static IEnumerator MoveBeastWithRunAnimation(RectTransform beastRect, Image beastImage,
-            Sprite[] frames, BeastCompanionDefinition beast, Vector3 from, Vector3 to)
+        /// <summary>
+        /// 384×40 한 줄 SpriteSheet를 64×40 여섯 장으로 나눈 Sprite 배열을 0→1→2→3→4→5→0 순서로
+        /// 반복합니다. 여기서는 위치를 바꾸지 않고 Image.sprite만 교체하므로 이동 속도와 독립된 12FPS를 유지합니다.
+        /// UI 아이콘은 별도로 고른 index 4 한 장만 사용하지만, 전투 Run은 이 여섯 장 전체를 사용합니다.
+        /// </summary>
+        private static IEnumerator PlayBeastRunAnimation(Image beastImage, Sprite[] frames, float framesPerSecond,
+            BeastRunPlayback playback)
         {
-            float duration = Mathf.Abs(to.x - from.x) / beast.TravelSpeed;
+            if (beastImage == null || frames == null || frames.Length == 0 || playback == null) yield break;
+
+            float frameInterval = 1f / Mathf.Max(1f, framesPerSecond);
+            int frameIndex = 0;
+            beastImage.sprite = frames[frameIndex];
+            while (playback.IsRunning)
+            {
+                yield return new WaitForSeconds(frameInterval);
+                if (!playback.IsRunning) yield break;
+                frameIndex = (frameIndex + 1) % frames.Length;
+                // 배열의 서로 다른 Sprite를 실제 전장 Image에 대입해야 화면에서 다리 모양이 바뀝니다.
+                beastImage.sprite = frames[frameIndex];
+            }
+        }
+
+        /// <summary>Sprite 프레임은 건드리지 않고 Wolf UI Transform의 위치만 지정 속도로 이동합니다.</summary>
+        private static IEnumerator MoveBeastTransform(RectTransform beastRect, Vector3 from, Vector3 to, float speed)
+        {
+            float duration = Vector3.Distance(from, to) / Mathf.Max(1f, speed);
             float moveElapsed = 0f;
             while (moveElapsed < duration)
             {
-                float delta = Time.deltaTime;
-                moveElapsed += delta;
+                moveElapsed += Time.deltaTime;
                 beastRect.localPosition = Vector3.Lerp(from, to, Mathf.Clamp01(moveElapsed / duration));
-                beastImage.sprite = frames[Mathf.FloorToInt(moveElapsed * beast.FramesPerSecond) % frames.Length];
                 yield return null;
             }
             beastRect.localPosition = to;
@@ -112,8 +160,9 @@ namespace ProjectLimitless.Battle
             Sprite[] frames = new Sprite[count];
             for (int index = 0; index < count; index++)
             {
-                // ThirdParty 원본을 수정하지 않고 런타임에 가로 프레임을 자릅니다. 아래 중앙 Pivot은 발이
-                // 지면에 닿는 기준을 일정하게 해 프레임 높이가 달라도 몸 전체가 흔들리는 현상을 줄입니다.
+                // 1행 6열 Wolf 시트는 전체 384×40이고 각 칸은 64×40입니다. 원본 파일을 수정하지 않고
+                // x=0,64,128,192,256,320 영역을 각각 별도 Sprite로 만들어 Run Coroutine에 전달합니다.
+                // 아래 중앙 Pivot은 여섯 프레임 모두 발이 닿는 기준을 일정하게 유지합니다.
                 frames[index] = Sprite.Create(sheet,
                     new Rect(index * beast.FrameWidth, 0f, beast.FrameWidth, sheet.height),
                     new Vector2(.5f, 0f), 1f, 0, SpriteMeshType.FullRect);
