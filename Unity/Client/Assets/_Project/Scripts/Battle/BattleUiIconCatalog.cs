@@ -34,6 +34,8 @@ namespace ProjectLimitless.Battle
         public const string FighterWhirlwindSkill = "skill.fighter.whirlwind";
         public const string MageFireballSkill = "skill.mage.fireball";
         public const string Burn = "status.burn";
+        public const string MageThunderboltSkill = "skill.mage.thunderbolt";
+        public const string Shock = "status.shock";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -69,7 +71,11 @@ namespace ProjectLimitless.Battle
             // 파이어 볼 버튼과 화상 상태는 Warm Explosion의 가장 큰 index 4를 함께 사용합니다.
             // 불꽃 그림과 한글 상태명을 같이 보여 주므로 색상만으로 화상을 구분하지 않습니다.
             { MageFireballSkill, string.Empty },
-            { Burn, string.Empty }
+            { Burn, string.Empty },
+            // 스킬 그림은 electric-impact의 Peak를 런타임에 자른 고정 Sprite이고, 감전 상태는
+            // Kenney power.png를 사용합니다. 같은 번개 계열이라도 전투 Animation과 UI 표식을 분리합니다.
+            { MageThunderboltSkill, string.Empty },
+            { Shock, "KenneyBattleIcons/power" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
@@ -104,6 +110,12 @@ namespace ProjectLimitless.Battle
                 // 전체 15프레임 중 폭발이 가장 큰 한 장만 UI 아이콘으로 사용합니다. 전투 VFX는 별도로
                 // 15장을 순서대로 재생하므로 고정 버튼 그림과 실제 폭발 Animation이 서로 섞이지 않습니다.
                 sprite = BattleFireballVisuals.LoadSkillIcon();
+            }
+            else if (iconId == MageThunderboltSkill)
+            {
+                // 14장 전투 VFX 가운데 Peak index 1 한 장만 버튼에 고정합니다. 버튼 Sprite가 애니메이션
+                // 프레임 배열과 섞이지 않아 메뉴를 열었다고 전투용 프레임 재생 상태가 변하지 않습니다.
+                sprite = BattleThunderboltVisuals.LoadSkillIcon();
             }
             else
             {

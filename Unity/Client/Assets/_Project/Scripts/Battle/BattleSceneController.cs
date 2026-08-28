@@ -883,6 +883,11 @@ namespace ProjectLimitless.Battle
                 PlaySharpshooterArrowRain(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.AreaMagicAttackWithShock)
+            {
+                PlayMageThunderbolt(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -1439,6 +1444,71 @@ namespace ProjectLimitless.Battle
                 }));
         }
 
+        /// <summary>
+        /// EnemyAll 데이터를 공용 광역 해석기에 전달하여 살아 있는 전열·후열 적을 한 목록으로 고정합니다.
+        /// 단일 적대 행동용 TargetResolver를 거치지 않으므로 도발자가 있어도 전체 범위를 그대로 공격합니다.
+        /// 이는 도발을 예외 처리한 것이 아니라 "한 명을 고르는 기술만 강제 대상 적용"이라는 기존 규칙입니다.
+        /// </summary>
+        private void PlayMageThunderbolt(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            Combatant[] targets = BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, opponents).ToArray();
+            if (targets.Length == 0)
+            {
+                messageText.text = "썬더볼트로 공격할 살아 있는 적이 없습니다.";
+                RebuildSkillMenu();
+                return;
+            }
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView[] targetViews = targets.Select(target => combatantViews[target]).ToArray();
+            RectTransform[] targetRects = targetViews.Select(view => view.ActionRoot).ToArray();
+            Image[] targetSprites = targetViews.Select(view => view.SpriteImage).ToArray();
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+
+            StartCoroutine(actionPresenter.PlayThunderboltAttack(
+                actorView.ActionRoot, targetRects, targetSprites, battleFont,
+                BattleThunderboltVisuals.LoadImpactFrames(),
+                () =>
+                {
+                    // electric-impact가 가장 강한 index 1에 도달한 한 순간에 Executor를 한 번만 호출합니다.
+                    // 모든 대상의 HP와 감전이 같은 콜백에서 바뀌므로 순차 타격처럼 턴 상태가 끼어들지 않습니다.
+                    executed = skillExecutor.ExecuteAreaMagicAttackWithShock(
+                        actor, targets, skill, out IReadOnlyList<int> damages, out string result);
+                    messageText.text = result;
+                    return damages;
+                },
+                damages => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    foreach (CombatantView targetView in targetViews) RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "썬더볼트를 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
         private void Defend()
         {
             if (actionPlaying) return;
@@ -1495,7 +1565,9 @@ namespace ProjectLimitless.Battle
             CombatantView actorView = combatantViews[actor];
             CombatantView targetView = combatantViews[target];
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
-            Func<int> applyImpact = () => target.TakeDamage(actor.Attack);
+            // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
+            // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
+            Func<int> applyImpact = () => target.TakeDamage(statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
             Action<int> onImpact = damage =>
             {
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
@@ -1579,7 +1651,10 @@ namespace ProjectLimitless.Battle
             HideSkillDetailPopup();
             Combatant completedActor = currentActor;
             completedActor?.CompleteAction();
-            statusEffects.RemoveInvalidTaunts(AllCombatants);
+            // 감전은 공격 여부가 아니라 행동 기회를 약화시키는 상태이므로 방어·회복 행동도 여기서 소비합니다.
+            // 피해 계산과 광역 타격이 모두 끝난 다음 제거해야 해당 행동의 모든 주는 피해가 15% 감소합니다.
+            statusEffects.CompleteActorAction(completedActor);
+            statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
             SetCommandButtons(false);
             // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
             // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.
@@ -1598,7 +1673,7 @@ namespace ProjectLimitless.Battle
                     {
                         int remaining = statusEffects.GetBurnRemaining(completedActor);
                         messageText.text = $"{completedActor.DisplayName}의 화상 피해 {damage}. 남은 화상 {remaining}회.";
-                        statusEffects.RemoveInvalidTaunts(AllCombatants);
+                        statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
                         RefreshCombatantViews(null);
                     },
                     () =>
@@ -1636,7 +1711,7 @@ namespace ProjectLimitless.Battle
             // 모든 Battle Action은 actionPlaying을 켠 뒤 전투 화면을 갱신합니다. 따라서 이 한 경계에서
             // 두 종류 정보 팝업을 함께 닫으면 Wolf뿐 아니라 기본 공격·치유·Projectile·광역 VFX도 보호됩니다.
             if (actionPlaying) SuppressInformationPopupsDuringAction();
-            statusEffects.RemoveInvalidTaunts(AllCombatants);
+            statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
             attackable = ReconcileTargetSelection(attackable);
             foreach (KeyValuePair<Combatant, CombatantView> pair in combatantViews)
             {
@@ -1741,7 +1816,8 @@ namespace ProjectLimitless.Battle
                 string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
                     : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum
-                    : marker.Id == "burn" ? BattleUiIconCatalog.Burn : null;
+                    : marker.Id == "burn" ? BattleUiIconCatalog.Burn
+                    : marker.Id == "shock" ? BattleUiIconCatalog.Shock : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.

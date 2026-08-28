@@ -17,7 +17,8 @@ namespace ProjectLimitless.Battle
         AreaMeleePhysicalAttackWithMomentumGain,
         AreaRangedPhysicalAttack,
         SingleBeastPhysicalAttack,
-        SingleMagicAttackWithBurn
+        SingleMagicAttackWithBurn,
+        AreaMagicAttackWithShock
     }
 
     /// <summary>
@@ -115,6 +116,7 @@ namespace ProjectLimitless.Battle
         public const string FighterCriticalStrikeId = "fighter_finishing_strike";
         public const string FighterWhirlwindId = "fighter_whirlwind";
         public const string MageFireballId = "mage_fireball";
+        public const string MageThunderboltId = "mage_thunderbolt";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -212,6 +214,18 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 단일 마법",
                         durationDescription: "재사용 대기시간: 3턴",
                         burnDamagePercent: 30);
+                if (preview.SkillId == MageThunderboltId)
+                    // 적 전열과 후열을 모두 덮는 기술은 한 번에 3~6명을 맞힐 수 있으므로 대상당 피해를
+                    // 단일 공격보다 낮은 90%로 둡니다. 범위의 이득과 대상별 피해를 분리해 조정하는 값입니다.
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "청백색 번개를 적 진영 전체에 떨어뜨립니다.\n살아 있는 모든 적에게 일반 공격의 90% 피해를 주고 감전 1을 부여합니다.", true,
+                        BattleSkillEffectType.AreaMagicAttackWithShock, 3, 1, 0f, 90,
+                        iconId: BattleUiIconCatalog.MageThunderboltSkill,
+                        targetDescription: "대상: 적 전체",
+                        effectDescription: "피해: 일반 공격의 90%\n효과: 감전 1\n감전: 다음 행동에서 주는 피해 15% 감소",
+                        typeDescription: "유형: 광역 마법",
+                        durationDescription: "재사용 대기시간: 3턴",
+                        targetRange: BattleSkillTargetRange.EnemyAll);
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -345,6 +359,7 @@ namespace ProjectLimitless.Battle
         }
 
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
+        private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
@@ -362,6 +377,47 @@ namespace ProjectLimitless.Battle
             {
                 if (combatant.ForcedTarget != null && !combatant.ForcedTarget.IsAlive)
                     combatant.ApplyTaunt(null, 0);
+            }
+        }
+
+        /// <summary>
+        /// 감전은 지속 피해가 아니라 다음 행동의 "주는 피해"를 약하게 만드는 제어 디버프입니다.
+        /// 대상별 Combatant를 Set에 따로 저장하므로 여러 적의 감전이 서로 섞이지 않습니다. 이미 들어 있는
+        /// 대상을 다시 Add해도 복제되지 않으므로 중첩 대신 감전 1로 자연스럽게 갱신됩니다.
+        /// </summary>
+        public void ApplyOrRefreshShock(Combatant target)
+        {
+            if (target != null && target.IsAlive) shockedTargets.Add(target);
+        }
+
+        public bool HasShock(Combatant target) => target != null && target.IsAlive && shockedTargets.Contains(target);
+
+        /// <summary>감전된 행동자의 모든 공격 피해를 85%로 만든 뒤 기존 TakeDamage로 넘길 값입니다.</summary>
+        public int ModifyOutgoingDamage(Combatant source, int rawDamage)
+        {
+            if (rawDamage <= 0 || !HasShock(source)) return rawDamage;
+            return (int)Math.Max(1L, ((long)rawDamage * 85L + 99L) / 100L);
+        }
+
+        /// <summary>
+        /// 공격·방어·회복처럼 무엇을 했는지와 관계없이 그 참가자의 행동이 끝나면 감전 1을 소비합니다.
+        /// 행동 도중에는 계속 남겨 두어 여러 대상을 때리는 광역 공격도 모든 피해에 같은 15% 감소를 받습니다.
+        /// </summary>
+        public void CompleteActorAction(Combatant actor)
+        {
+            if (actor != null) shockedTargets.Remove(actor);
+        }
+
+        /// <summary>전투불능 참가자는 다음 행동이 없으므로 화면과 저장소 양쪽에서 상태를 즉시 제거합니다.</summary>
+        public void RemoveInvalidPersistentEffects(IEnumerable<Combatant> combatants)
+        {
+            if (combatants == null) return;
+            Combatant[] members = combatants.Where(combatant => combatant != null).ToArray();
+            RemoveInvalidTaunts(members);
+            foreach (Combatant dead in members.Where(combatant => !combatant.IsAlive))
+            {
+                burns.Remove(dead);
+                shockedTargets.Remove(dead);
             }
         }
 
@@ -461,6 +517,13 @@ namespace ProjectLimitless.Battle
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
         }
 
+        private int CalculateOutgoingAttackDamage(Combatant actor, int damagePercent)
+        {
+            long scaledDamage = (long)actor.Attack * damagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            return statusEffects.ModifyOutgoingDamage(actor, rawDamage);
+        }
+
         public bool Execute(Combatant actor, BattleSkillDefinition skill, Formation opponents, out string message)
         {
             if (!CanUse(actor, skill, out message)) return false;
@@ -544,8 +607,7 @@ namespace ProjectLimitless.Battle
             // (공격력×160 + 99) / 100은 정수만으로 160%를 계산하면서 나머지가 있으면 올림하는 식입니다.
             // 예: 12×160=1920 → (1920+99)/100=20, 15×160=2400 → 24입니다. float 오차로 24가 25가 되는
             // 일을 피하며, 이후 TakeDamage가 기존 방어 50%를 그대로 적용해 방어 무시 효과도 생기지 않습니다.
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             damage = target.TakeDamage(rawDamage);
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
@@ -570,8 +632,7 @@ namespace ProjectLimitless.Battle
             }
 
             // 일반 공격력의 180%를 소수점 없이 올림합니다. 실제 감소는 기존 Combatant.TakeDamage가 담당합니다.
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             damage = target.TakeDamage(rawDamage);
 
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
@@ -597,15 +658,13 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             damage = target.TakeDamage(rawDamage);
 
             // 즉발 피해로 쓰러진 대상에게는 이후 행동도 없으므로 화상을 남기지 않습니다.
             if (target.IsAlive)
             {
-                long scaledBurn = (long)actor.Attack * skill.BurnDamagePercent;
-                int storedBurnDamage = (int)Math.Max(1L, (scaledBurn + 99L) / 100L);
+                int storedBurnDamage = CalculateOutgoingAttackDamage(actor, skill.BurnDamagePercent);
                 statusEffects.ApplyOrRefreshBurn(target, storedBurnDamage, skill.EffectDuration);
             }
 
@@ -631,8 +690,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             damage = target.TakeDamage(rawDamage);
 
             // 피해가 적용된 뒤에만 기세를 올립니다. AddMomentum은 회오리 베기도 재사용할 수 있지만,
@@ -669,8 +727,7 @@ namespace ProjectLimitless.Battle
 
             int momentum = Math.Min(BattleFighterResourceRuntime.MaxMomentum, fighterResources.GetMomentum(actor));
             int damagePercent = skill.MomentumDamagePercents[momentum];
-            long scaledDamage = (long)actor.Attack * damagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, damagePercent);
             damage = target.TakeDamage(rawDamage);
             consumedMomentum = fighterResources.ConsumeAllMomentum(actor);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 기세 {momentum}으로 {target.DisplayName}에게 {damage} 피해.";
@@ -708,8 +765,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
                 appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
@@ -748,14 +804,52 @@ namespace ProjectLimitless.Battle
 
             // 다른 퍼센트 공격과 같은 올림 정책입니다. 예를 들어 Attack 12는
             // (12×120+99)/100 = 15가 되며, TakeDamage가 방어 중 50% 감소를 그대로 담당합니다.
-            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
-            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
                 appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
 
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 후열 {livingEnemies.Length}명에게 피해.";
+            return true;
+        }
+
+        /// <summary>
+        /// 썬더볼트의 Peak 한 번에 살아 있는 전열·후열 적 모두를 처리합니다. 대상당 90%는 적 전체를
+        /// 동시에 맞히는 범위 이득을 고려한 수치이며, 각 대상의 TakeDamage가 방어 감소를 그대로 담당합니다.
+        /// 광역 목록은 TargetResolver의 단일 강제 대상 경로를 통과하지 않으므로 도발도 적용되지 않습니다.
+        /// </summary>
+        public bool ExecuteAreaMagicAttackWithShock(Combatant actor, IReadOnlyList<Combatant> targets,
+            BattleSkillDefinition skill, out IReadOnlyList<int> damages, out string message)
+        {
+            damages = Array.Empty<int>();
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.AreaMagicAttackWithShock || targets == null)
+            {
+                message = "썬더볼트로 공격할 적이 없습니다.";
+                return false;
+            }
+
+            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            if (livingEnemies.Length == 0)
+            {
+                message = "썬더볼트로 공격할 살아 있는 적이 없습니다.";
+                return false;
+            }
+
+            int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
+            int[] appliedDamages = new int[livingEnemies.Length];
+            for (int index = 0; index < livingEnemies.Length; index++)
+            {
+                Combatant target = livingEnemies[index];
+                appliedDamages[index] = target.TakeDamage(rawDamage);
+                // 쓰러진 적은 다음 행동이 없으므로 감전을 남기지 않습니다. 살아남은 대상별 Set 항목만
+                // 갱신하여 여러 번 맞아도 감전 2가 되지 않고 각자 감전 1을 유지합니다.
+                if (target.IsAlive) statusEffects.ApplyOrRefreshShock(target);
+            }
+
+            damages = appliedDamages;
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해와 감전 1.";
             return true;
         }
     }

@@ -477,6 +477,87 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 짧은 청백색 예고 뒤 모든 대상에서 electric-impact를 같은 프레임 번호로 재생합니다. 대상마다
+        /// 코루틴을 따로 시작하면 프레임 시간에 따라 타격 순서가 벌어질 수 있으므로, 하나의 반복문이 모든
+        /// Image를 함께 갱신합니다. Peak index 1에서 계산 콜백도 한 번만 호출해 화면의 가장 강한 섬광과
+        /// 실제 HP 감소가 일치하도록 합니다.
+        /// </summary>
+        public IEnumerator PlayThunderboltAttack(RectTransform attacker, IReadOnlyList<RectTransform> targets,
+            IReadOnlyList<Image> targetSprites, Font damageFont, Sprite[] impactFrames,
+            Func<IReadOnlyList<int>> applyImpacts, Action<IReadOnlyList<int>> onImpact, Action onComplete)
+        {
+            if (targets == null || targetSprites == null || targets.Count == 0)
+            {
+                IReadOnlyList<int> fallback = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+                onImpact?.Invoke(fallback);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(attacker, damageFont, "썬더볼트!");
+            List<Image> telegraphs = new List<Image>();
+            Sprite[] telegraphFrame = { GetOrbSprite() };
+            for (int index = 0; index < targets.Count; index++)
+            {
+                Image flash = CreateEffectImage(targets[index], "ThunderboltTelegraph", telegraphFrame,
+                    BattleThunderboltVisuals.TelegraphSize, new Vector2(0f, 18f));
+                if (flash != null)
+                {
+                    flash.color = new Color(.58f, .88f, 1f, .82f);
+                    telegraphs.Add(flash);
+                }
+            }
+            yield return new WaitForSeconds(.14f);
+            foreach (Image flash in telegraphs) if (flash != null) Destroy(flash.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+
+            List<Image> impacts = new List<Image>();
+            Color[] originalColors = new Color[targetSprites.Count];
+            for (int index = 0; index < targets.Count; index++)
+            {
+                impacts.Add(CreateEffectImage(targets[index], "ElectricImpact", impactFrames,
+                    BattleThunderboltVisuals.ImpactSize, new Vector2(0f, 18f)));
+                originalColors[index] = targetSprites[index] == null ? Color.white : targetSprites[index].color;
+            }
+
+            bool applied = false;
+            int frameCount = impactFrames?.Length ?? 0;
+            for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
+            {
+                foreach (Image impact in impacts) if (impact != null) impact.sprite = impactFrames[frameIndex];
+                if (!applied && frameIndex >= BattleThunderboltVisuals.PeakFrame)
+                {
+                    applied = true;
+                    // 한 번 받은 피해 배열을 같은 순서의 대상에 배분하여 3~6명의 HP가 거의 동시에 줄고,
+                    // 각 피격 반응도 같은 Peak 프레임에서 시작합니다.
+                    IReadOnlyList<int> damages = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+                    onImpact?.Invoke(damages);
+                    for (int index = 0; index < targets.Count; index++)
+                    {
+                        int damage = index < damages.Count ? damages[index] : 0;
+                        if (damage <= 0 || targetSprites[index] == null) continue;
+                        StartCoroutine(ShowDamageNumber(targets[index], damageFont, damage));
+                        StartCoroutine(PlayHitReaction(targets[index], targetSprites[index],
+                            targets[index].localPosition, originalColors[index]));
+                    }
+                }
+                yield return new WaitForSeconds(BattleThunderboltVisuals.FrameDuration);
+            }
+            if (!applied)
+            {
+                IReadOnlyList<int> damages = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+                onImpact?.Invoke(damages);
+            }
+
+            foreach (Image impact in impacts) if (impact != null) Destroy(impact.gameObject);
+            for (int index = 0; index < targetSprites.Count; index++)
+                if (targetSprites[index] != null) targetSprites[index].color = originalColors[index];
+            // 14프레임 재생과 피격 반응이 모두 끝난 뒤에만 Controller가 다음 턴으로 넘어갑니다.
+            yield return new WaitForSeconds(.04f);
+            onComplete?.Invoke();
+        }
+
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
             Vector2 size, Vector2 anchoredPosition)
         {
