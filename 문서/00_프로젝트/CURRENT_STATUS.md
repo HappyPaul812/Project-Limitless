@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-28
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `160080f` (`Feature: 동료의 습격 Run 후보 검증 환경 추가`)
+- 마지막 기능 관련 commit: `6eae5b8` (`Feature: 사수 동료의 습격 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -110,6 +110,8 @@
 - 다중 Projectile은 순수 연출로 관리하고 실제 피해는 마지막 낙하 시점에 후열 대상마다 한 번만 적용한 뒤 전체 피격 완료 후 다음 턴 진행
 - 화살비 다중 후열 실검증용 프로토타입 배치: 초원 슬라임 A는 전열 0열, B·C는 후열 0·1열에 배치하여 전열 1명+후열 2명 유지
 - 정조준과 화살비 쿨타임은 같은 `BattleSkillCooldowns`에서 참가자·Skill ID별로 독립 관리하며, 화살비는 모든 피격 반응 완료 후 성공 확정 시 2턴 등록
+- 사수 `동료의 습격`: 전후열 자유 단일 적, 도발 강제 대상 우선, 일반 공격 180%, 사수 행동 기준 3턴 쿨타임
+- 별도 Combatant가 아닌 기본 Wolf가 오른쪽→왼쪽 Run+Transform 이동으로 접촉 타격 후 화면 밖 퇴장하며, `BeastCompanionDefinition` 경계로 Bear/Fox 교체 가능
 - 투사 `난도`: 기존 근거리 TargetResolver로 적 1명을 선택하고 전진 타격 순간 일반 공격 150% 피해와 자신 기세 +1 적용
 - 기존 근거리 기본 공격 Presenter를 재사용하는 전진→타격·피해 숫자·피격 반응→원위치 복귀→다음 턴 흐름
 - `난도`는 스킬명, `기세`는 Combatant별 0~3 개인 자원이며 난도 직접 세 번째 사용 기준 2턴 쿨타임과 독립 관리
@@ -152,7 +154,7 @@
 ## 미구현
 
 - 투사 시작 스킬 3종을 제외한 나머지 직업별 스킬 효과와 길 패시브
-- 사수 `동료의 습격` 실제 공격, `BeastCompanion` 선택·장착·저장 UI와 Wolf/Bear/Fox 패시브 수치·능력치 계산
+- `BeastCompanion` 선택·장착·저장 UI와 Wolf/Bear/Fox 패시브 수치·능력치 계산
 - NPC 동료 정식 CompanionDefinition·파티 편성·최종 Sprite
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
@@ -215,7 +217,7 @@
 - 화살비 다중 후열 실검증용 프로토타입 적 배치를 전열 1명+후열 2명으로 바꾼 뒤 Unity 전체 `Assembly-CSharp` 참조 컴파일 오류 0개를 확인했다. 전투 계산·범위·연출 코드는 변경하지 않았으며 실제 동시 타격과 후열 전투불능 제외는 Play Mode 확인이 필요하다.
 - 사용자가 Unity Play Mode에서 화살비가 후열 여러 명을 정상 공격하는 것을 확인했다.
 - 화살비 성공 완료 후 2턴 쿨타임 등록과 설명 데이터를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 120%·EnemyRearRowAll·golden_arrow 연출은 변경하지 않았고 기존 deprecated API 경고 4개만 있었다. 2→1→사용 가능과 정조준 독립 표시는 Play Mode 확인이 필요하다.
-- **사수 전용 야수 동료 설계 확정**: 사수는 원거리 물리·적 후열 압박·`BeastCompanion`을 직업 정체성으로 사용한다. 일반 파티 동료 `Companion`과 분리하며 야수는 3인 파티 슬롯, 별도 `Combatant`·HP·Formation·독립 턴 없이 패시브와 사수 스킬 연출에만 참여한다. Wolf/Bear/Fox 3종을 유지하고 기본 Wolf=공격형, Bear=방어·생존형, Fox=민첩·기동형으로 정했다. 1차 `동료의 습격`은 Wolf를 사용하되 향후 장착 야수 데이터를 받을 수 있게 설계하며, 실제 공격·패시브 수치·선택/장착 UI는 미구현이다.
+- **동료의 습격 구현**: `BeastCompanionDefinition`·카탈로그, 자유 단일 대상+도발 우선, 180% `TakeDamage`, 3턴 쿨타임, Wolf Run+이동+접촉 타격+화면 밖 퇴장을 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 있으며 실제 화면 위치·속도·입력 잠금·쿨타임 흐름은 Play Mode 확인이 필요하다.
 - **동료의 습격 Run 검증 환경 유지**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 Wolf/Bear/Fox 자산을 보존하고, 실제 Battle과 분리된 `CompanionAssaultRunValidation` Scene을 유지한다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 확인은 남아 있다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
@@ -325,12 +327,19 @@
 100. `Assets/_Project/Scenes/Validation/CompanionAssaultRunValidation.unity`를 열고 Play 시 Wolf/Fox/Bear가 같은 속도로 오른쪽→왼쪽을 반복하며 픽셀 흐림이나 발 기준점의 불필요한 흔들림 없이 보이는지 확인한다.
 101. `Space` 일시정지, `+/-` Run FPS 조절, `F` 좌우 Flip이 동작하고 Wolf/Fox/Bear의 속도감·타격감·현재 Battle Sprite 표시 크기와의 조화를 직접 비교한다.
 102. 검증 Scene 실행 뒤 기존 `Battle.unity`의 사수 기본 공격·정조준·화살비와 다른 직업 스킬, Formation·대상·턴·승패/도망/Field 복귀에 회귀가 없는지 확인한다.
+103. 사수 스킬 메뉴에서 `target` 아이콘+동료의 습격과 설명의 야수/단일 물리·적 1명·전후열 자유·180%·3턴이 표시되는지 확인한다.
+104. 전열과 후열 생존 적을 모두 선택할 수 있고, 사수에게 도발 강제 대상이 있으면 그 적만 선택되는지 확인한다.
+105. 사수는 제자리에 있고 Wolf가 아군 측 오른쪽에서 왼쪽으로 Run 프레임과 실제 이동을 함께 사용해 달리는지 확인한다.
+106. Wolf가 대상에 접촉하기 전 HP가 줄지 않고 접촉 순간 한 번만 180% 피해·피해 숫자·피격 반응이 발생하며, 방어 중 대상에는 기존 50% 감소가 적용되는지 확인한다.
+107. Wolf가 타격 후에도 왼쪽 화면 밖까지 달려 퇴장하고 피격·퇴장이 모두 끝날 때까지 입력이 잠긴 뒤 다음 턴이 한 번만 진행되는지 확인한다.
+108. 사용 직후 재사용 3턴/hourglass_top, 다음 사수 행동마다 2/hourglass→1/hourglass_bottom→0/사용 가능 순서이며 정조준·화살비 쿨타임과 독립인지 확인한다.
+109. 대상 선택 중 Esc/취소가 스킬 메뉴로 복귀하고, 기존 도발·치유의 빛·투사 스킬·Formation·턴 순서·HP HUD·승리/도망/Field 복귀에 회귀와 Console 오류가 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-다음 기능 작업에서는 1차 기본 야수 Wolf로 `동료의 습격`을 구현하되 `BattleSceneController`에 Wolf를 직접 고정하지 않고, 향후 `BeastCompanionDefinition` 또는 동등한 장착 야수 데이터가 연출 리소스를 제공할 수 있는 최소 경계를 먼저 정한다. 야수 선택 UI·장착·패시브 수치와 별도 Combatant/턴/Formation은 이번 단계에도 추가하지 않는다.
+다음 권장 작업은 마도사 `파이어 볼`의 실제 전투 효과 구현이다. 야수 쪽은 Play Mode에서 Wolf 접촉 위치·속도·크기를 먼저 검증한 뒤, 별도 기획이 확정되면 선택·장착·저장 UI와 Wolf/Bear/Fox 패시브를 `BeastCompanionCatalog` 경계에 연결한다.
 
 ## 갱신 규칙
 
