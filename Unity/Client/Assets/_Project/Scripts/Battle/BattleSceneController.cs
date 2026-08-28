@@ -421,6 +421,14 @@ namespace ProjectLimitless.Battle
         /// <summary>키보드 포커스를 Hover보다 우선하여 동시에 하나의 팝업만 표시합니다.</summary>
         private void RefreshDetailPopupPreference()
         {
+            // Hover 이벤트는 마우스가 HUD 위에 남아 있으면 연출 중에도 다시 전달될 수 있습니다. 이때 단순히
+            // 팝업만 숨기면 다음 화면 갱신에서 이전 대상을 다시 열 수 있으므로 포커스 정보까지 함께 비웁니다.
+            if (actionPlaying)
+            {
+                HideCombatantDetailPopupForAction();
+                return;
+            }
+
             Combatant preferred = focusedCombatant ?? hoveredCombatant;
             RefreshHpRowHighlights(preferred);
             if (preferred == null)
@@ -451,7 +459,10 @@ namespace ProjectLimitless.Battle
 
         private void ShowDetailPopup(Combatant combatant)
         {
-            if (detailPopup == null || detailPopupText == null || !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
+            // 실제 공격·회복·Projectile·VFX를 보는 동안에는 정보창이 연출을 덮지 않게 합니다.
+            // 이벤트 경로를 놓치더라도 마지막 표시 함수에서 한 번 더 막아 연출 중 재오픈을 방지합니다.
+            if (actionPlaying || detailPopup == null || detailPopupText == null ||
+                !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
             combatantJobs.TryGetValue(combatant, out JobDefinition job);
             participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
             BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(combatant, job, setup, skillCooldowns, fighterResources);
@@ -741,7 +752,7 @@ namespace ProjectLimitless.Battle
         private void RefreshSkillDetailPopupPreference()
         {
             BattleSkillDefinition preferred = focusedSkill ?? hoveredSkill;
-            if (!choosingSkill || preferred == null)
+            if (actionPlaying || !choosingSkill || preferred == null)
             {
                 if (skillDetailPopup != null) skillDetailPopup.gameObject.SetActive(false);
                 return;
@@ -752,7 +763,7 @@ namespace ProjectLimitless.Battle
 
         private void ShowSkillDetailPopup(BattleSkillDefinition skill)
         {
-            if (skillDetailPopup == null || skillDetailText == null || skill == null) return;
+            if (actionPlaying || skillDetailPopup == null || skillDetailText == null || skill == null) return;
 
             List<string> lines = new List<string> { skill.DisplayName, skill.Description };
             if (!string.IsNullOrWhiteSpace(skill.TypeDescription)) lines.Add(skill.TypeDescription);
@@ -783,6 +794,31 @@ namespace ProjectLimitless.Battle
             hoveredSkill = null;
             focusedSkill = null;
             if (skillDetailPopup != null) skillDetailPopup.gameObject.SetActive(false);
+        }
+
+        /// <summary>
+        /// 행동 연출은 피해·회복 시점과 캐릭터 움직임을 읽어야 하는 화면이므로 Hover 정보창과 동시에
+        /// 보여 주지 않습니다. 팝업만 끄지 않고 기존 Hover·키보드 포커스 대상도 비워야, 마우스가 HUD 위에
+        /// 계속 머물러 있어도 화면 갱신이 과거 대상을 사용해 팝업을 다시 여는 일을 막을 수 있습니다.
+        /// 연출 종료 뒤에는 사용자가 새로 Hover하거나 포커스할 때 이벤트가 다시 대상을 설정합니다.
+        /// </summary>
+        private void HideCombatantDetailPopupForAction()
+        {
+            hoveredCombatant = null;
+            focusedCombatant = null;
+            detailCombatant = null;
+            if (detailPopup != null) detailPopup.gameObject.SetActive(false);
+            RefreshHpRowHighlights(null);
+        }
+
+        /// <summary>
+        /// 스킬 설명과 캐릭터 상태 설명은 내용은 다르지만 둘 다 전장 위에 뜨는 정보 팝업입니다.
+        /// 공용 actionPlaying 상태에서 한 메서드로 닫아 기본 공격·회복·모든 스킬 Presenter가 같은 규칙을 따릅니다.
+        /// </summary>
+        private void SuppressInformationPopupsDuringAction()
+        {
+            HideSkillDetailPopup();
+            HideCombatantDetailPopupForAction();
         }
 
         /// <summary>
@@ -1490,6 +1526,9 @@ namespace ProjectLimitless.Battle
 
         private void RefreshCombatantViews(IReadOnlyList<Combatant> attackable)
         {
+            // 모든 Battle Action은 actionPlaying을 켠 뒤 전투 화면을 갱신합니다. 따라서 이 한 경계에서
+            // 두 종류 정보 팝업을 함께 닫으면 Wolf뿐 아니라 기본 공격·치유·Projectile·광역 VFX도 보호됩니다.
+            if (actionPlaying) SuppressInformationPopupsDuringAction();
             statusEffects.RemoveInvalidTaunts(AllCombatants);
             attackable = ReconcileTargetSelection(attackable);
             foreach (KeyValuePair<Combatant, CombatantView> pair in combatantViews)
@@ -1513,7 +1552,7 @@ namespace ProjectLimitless.Battle
                 RefreshHpRow(combatant, statusModel);
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
-            if (detailCombatant != null) ShowDetailPopup(detailCombatant);
+            if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);
         }
 
         /// <summary>
