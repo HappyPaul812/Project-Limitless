@@ -6,7 +6,7 @@
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `160080f` (`Feature: 동료의 습격 Run 후보 검증 환경 추가`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
-- 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
+- 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
@@ -152,6 +152,7 @@
 ## 미구현
 
 - 투사 시작 스킬 3종을 제외한 나머지 직업별 스킬 효과와 길 패시브
+- 사수 `동료의 습격` 실제 공격, `BeastCompanion` 선택·장착·저장 UI와 Wolf/Bear/Fox 패시브 수치·능력치 계산
 - NPC 동료 정식 CompanionDefinition·파티 편성·최종 Sprite
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
@@ -214,7 +215,8 @@
 - 화살비 다중 후열 실검증용 프로토타입 적 배치를 전열 1명+후열 2명으로 바꾼 뒤 Unity 전체 `Assembly-CSharp` 참조 컴파일 오류 0개를 확인했다. 전투 계산·범위·연출 코드는 변경하지 않았으며 실제 동시 타격과 후열 전투불능 제외는 Play Mode 확인이 필요하다.
 - 사용자가 Unity Play Mode에서 화살비가 후열 여러 명을 정상 공격하는 것을 확인했다.
 - 화살비 성공 완료 후 2턴 쿨타임 등록과 설명 데이터를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 120%·EnemyRearRowAll·golden_arrow 연출은 변경하지 않았고 기존 deprecated API 경고 4개만 있었다. 2→1→사용 가능과 정조준 독립 표시는 Play Mode 확인이 필요하다.
-- **동료의 습격 동물 Run 애니메이션 후보 검증 중**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 출처를 ThirdParty에 보존하고 Wolf/Fox/Bear Run을 실제 전투와 분리된 `CompanionAssaultRunValidation` Scene에서 12 FPS·2배 크기·오른쪽→왼쪽 이동으로 비교하도록 준비했다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 비교가 남아 있다. 실제 `동료의 습격` 피해·대상·턴 기능과 기존 Battle 코드는 변경하지 않았다.
+- **사수 전용 야수 동료 설계 확정**: 사수는 원거리 물리·적 후열 압박·`BeastCompanion`을 직업 정체성으로 사용한다. 일반 파티 동료 `Companion`과 분리하며 야수는 3인 파티 슬롯, 별도 `Combatant`·HP·Formation·독립 턴 없이 패시브와 사수 스킬 연출에만 참여한다. Wolf/Bear/Fox 3종을 유지하고 기본 Wolf=공격형, Bear=방어·생존형, Fox=민첩·기동형으로 정했다. 1차 `동료의 습격`은 Wolf를 사용하되 향후 장착 야수 데이터를 받을 수 있게 설계하며, 실제 공격·패시브 수치·선택/장착 UI는 미구현이다.
+- **동료의 습격 Run 검증 환경 유지**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 Wolf/Bear/Fox 자산을 보존하고, 실제 Battle과 분리된 `CompanionAssaultRunValidation` Scene을 유지한다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 확인은 남아 있다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -328,7 +330,7 @@
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 `CompanionAssaultRunValidation` Scene의 Wolf/Fox/Bear를 같은 조건으로 비교하고 `동료의 습격` 최종 동물을 사용자가 선택한다. 현재 정적 분석 1순위는 Wolf지만 코드와 실제 스킬 데이터에는 고정하지 않는다. 선택 뒤 검증용 임시 폴더의 유지/제거 범위를 정하고 실제 피해·대상·턴 연출 설계를 별도 작업으로 진행한다.
+다음 기능 작업에서는 1차 기본 야수 Wolf로 `동료의 습격`을 구현하되 `BattleSceneController`에 Wolf를 직접 고정하지 않고, 향후 `BeastCompanionDefinition` 또는 동등한 장착 야수 데이터가 연출 리소스를 제공할 수 있는 최소 경계를 먼저 정한다. 야수 선택 UI·장착·패시브 수치와 별도 Combatant/턴/Formation은 이번 단계에도 추가하지 않는다.
 
 ## 갱신 규칙
 
