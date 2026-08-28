@@ -74,7 +74,7 @@
 - 1차 구현은 기본 Wolf가 사수 위치 근처에서 대상 바로 앞까지 Run 12 FPS와 Transform 이동을 함께 사용해 돌진하며, 최초 구현 이동 속도의 2/3을 사용
 - 대상 바로 앞 도착 순간에만 피해를 적용하고 Wolf가 관통하지 않고 잠깐 멈춘 뒤 제거되며, 피격·제거 완료 뒤 다음 턴 진행
 - `BeastCompanionCatalog`가 `BeastCompanionDefinition`을 제공하므로 `BattleSceneController`에는 Wolf 경로가 없고 향후 Bear/Fox 장착 데이터로 교체 가능
-- 아이콘은 Wolf Run 원본 SpriteSheet의 첫 프레임을 런타임에 잘라 실제 Wolf 모습으로 표시하며 원본 PNG는 수정하지 않음. 정조준은 기존 Kenney `target.png` 유지
+- 아이콘은 Wolf Run 원본 SpriteSheet에서 작은 버튼에서도 몸통·머리·꼬리·다리가 비교적 잘 구분되는 다섯 번째 프레임(index 4)을 런타임에 잘라 표시하며 원본 PNG는 수정하지 않음. 경로와 프레임 번호는 `BeastCompanionDefinition`이 제공하고 정조준은 기존 Kenney `target.png` 유지
 - 야수별 기본 피해를 크게 차등화하지 않고 패시브 성향과 플레이 스타일을 선택의 중심으로 유지
 - 야수 선택 UI, 장착·저장, Wolf 공격력 계열·Bear 방어/최대 HP 계열·Fox 민첩/행동 우선도/치명 계열의 실제 버프와 정확한 수치는 미구현
 

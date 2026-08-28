@@ -57,9 +57,9 @@ namespace ProjectLimitless.Battle
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
-            // 이 ID는 아래 Load에서 Wolf Run 원본의 첫 프레임을 아이콘용 Sprite로 잘라 사용합니다.
+            // 이 ID는 아래 Load에서 현재 기본 야수 정의가 고른 Run 프레임을 아이콘용 Sprite로 잘라 사용합니다.
             // 정조준은 계속 Kenney target.png 경로를 사용하므로 두 스킬의 그림이 서로 영향을 주지 않습니다.
-            { SharpshooterCompanionAssaultSkill, "CompanionAssaultValidation/Wolf_Run" },
+            { SharpshooterCompanionAssaultSkill, string.Empty },
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
             { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },
@@ -82,13 +82,16 @@ namespace ProjectLimitless.Battle
             Sprite sprite;
             if (iconId == SharpshooterCompanionAssaultSkill)
             {
-                // Wolf 원본 SpriteSheet를 수정하거나 별도 PNG로 재생성하지 않습니다. 첫 64×40 프레임만
-                // 런타임에 잘라 실제 동물 모습을 아이콘으로 사용하고, 중앙 Pivot으로 버튼 안에 정렬합니다.
-                Texture2D wolfRunSheet = Resources.Load<Texture2D>(resourcePath);
-                sprite = wolfRunSheet == null ? null : Sprite.Create(wolfRunSheet,
-                    new Rect(0f, 0f, 64f, wolfRunSheet.height), new Vector2(.5f, .5f), 64f,
-                    0, SpriteMeshType.FullRect);
-                if (sprite != null) sprite.name = "Wolf_CompanionAssault_Icon";
+                // ThirdParty 원본을 수정하거나 별도 PNG로 재생성하지 않습니다. 야수 정의가 제공하는 경로와
+                // 아이콘 프레임 번호를 읽어 런타임에 한 칸만 잘라 쓰므로 Bear/Fox도 같은 코드를 재사용합니다.
+                BeastCompanionDefinition beast = BeastCompanionCatalog.GetDefaultDefinition();
+                Texture2D runSheet = Resources.Load<Texture2D>(beast.RunResourcePath);
+                int frameCount = runSheet == null ? 0 : runSheet.width / beast.FrameWidth;
+                int frameIndex = Mathf.Clamp(beast.IconFrameIndex, 0, Mathf.Max(0, frameCount - 1));
+                sprite = runSheet == null || frameCount == 0 ? null : Sprite.Create(runSheet,
+                    new Rect(frameIndex * beast.FrameWidth, 0f, beast.FrameWidth, runSheet.height),
+                    new Vector2(.5f, .5f), beast.FrameWidth, 0, SpriteMeshType.FullRect);
+                if (sprite != null) sprite.name = $"{beast.DisplayName}_CompanionAssault_Icon";
             }
             else
             {
