@@ -57,8 +57,9 @@ namespace ProjectLimitless.Battle
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
-            // 현재 Kenney 팩에는 동물/발자국 PNG가 없고 추적 계열 실제 PNG인 target.png가 가장 가깝습니다.
-            { SharpshooterCompanionAssaultSkill, "KenneyBattleIcons/target" },
+            // 이 ID는 아래 Load에서 Wolf Run 원본의 첫 프레임을 아이콘용 Sprite로 잘라 사용합니다.
+            // 정조준은 계속 Kenney target.png 경로를 사용하므로 두 스킬의 그림이 서로 영향을 주지 않습니다.
+            { SharpshooterCompanionAssaultSkill, "CompanionAssaultValidation/Wolf_Run" },
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
             { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },
@@ -78,7 +79,21 @@ namespace ProjectLimitless.Battle
                 return null;
             if (Cache.TryGetValue(iconId, out Sprite cached)) return cached;
 
-            Sprite sprite = Resources.Load<Sprite>(resourcePath);
+            Sprite sprite;
+            if (iconId == SharpshooterCompanionAssaultSkill)
+            {
+                // Wolf 원본 SpriteSheet를 수정하거나 별도 PNG로 재생성하지 않습니다. 첫 64×40 프레임만
+                // 런타임에 잘라 실제 동물 모습을 아이콘으로 사용하고, 중앙 Pivot으로 버튼 안에 정렬합니다.
+                Texture2D wolfRunSheet = Resources.Load<Texture2D>(resourcePath);
+                sprite = wolfRunSheet == null ? null : Sprite.Create(wolfRunSheet,
+                    new Rect(0f, 0f, 64f, wolfRunSheet.height), new Vector2(.5f, .5f), 64f,
+                    0, SpriteMeshType.FullRect);
+                if (sprite != null) sprite.name = "Wolf_CompanionAssault_Icon";
+            }
+            else
+            {
+                sprite = Resources.Load<Sprite>(resourcePath);
+            }
             Cache[iconId] = sprite;
             return sprite;
         }

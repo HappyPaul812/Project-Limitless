@@ -36,7 +36,9 @@ namespace ProjectLimitless.Battle
     public static class BeastCompanionCatalog
     {
         private static readonly BeastCompanionDefinition DefaultWolf = new BeastCompanionDefinition(
-            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run", 64, 12f, 2f, 760f);
+            // Run 재생은 기존 12 FPS를 유지하고, 실제 Transform 이동만 최초 구현 속도의 2/3로 낮춥니다.
+            // 프레임 속도와 이동 속도가 분리되어 있으므로 발 동작은 유지하면서 돌진 거리만 천천히 이동합니다.
+            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run", 64, 12f, 2f, 760f * 2f / 3f);
 
         public static BeastCompanionDefinition GetEquippedOrDefault(Combatant owner)
         {

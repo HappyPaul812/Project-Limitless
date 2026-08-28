@@ -71,10 +71,10 @@
 - 살아 있는 적 1명을 전열/후열 구분 없이 선택하되 단일 적대 행동이므로 공용 `TargetResolver`의 도발 강제 대상을 우선
 - 기본 공격의 180%를 정수 올림으로 계산하고 접촉 순간 `TakeDamage()`를 호출해 기존 방어 50% 감소 유지
 - 사수 자신의 행동 기준 3턴 쿨타임이며 다른 스킬 쿨타임과 Skill ID별로 독립
-- 1차 구현은 기본 Wolf가 아군 측 오른쪽에서 왼쪽으로 Run 애니메이션과 Transform 이동을 함께 사용해 돌진
-- 대상 접촉 순간에만 피해를 적용하고 Wolf가 계속 왼쪽 화면 밖으로 퇴장하며, 피격·퇴장 완료 뒤 다음 턴 진행
+- 1차 구현은 기본 Wolf가 사수 위치 근처에서 대상 바로 앞까지 Run 12 FPS와 Transform 이동을 함께 사용해 돌진하며, 최초 구현 이동 속도의 2/3을 사용
+- 대상 바로 앞 도착 순간에만 피해를 적용하고 Wolf가 관통하지 않고 잠깐 멈춘 뒤 제거되며, 피격·제거 완료 뒤 다음 턴 진행
 - `BeastCompanionCatalog`가 `BeastCompanionDefinition`을 제공하므로 `BattleSceneController`에는 Wolf 경로가 없고 향후 Bear/Fox 장착 데이터로 교체 가능
-- 아이콘은 현재 Kenney 원본 팩에서 동물·발자국 PNG가 존재하지 않아 실제 추적 계열 `PNG/White/1x/target.png`의 런타임 복사본 `target.png`를 사용
+- 아이콘은 Wolf Run 원본 SpriteSheet의 첫 프레임을 런타임에 잘라 실제 Wolf 모습으로 표시하며 원본 PNG는 수정하지 않음. 정조준은 기존 Kenney `target.png` 유지
 - 야수별 기본 피해를 크게 차등화하지 않고 패시브 성향과 플레이 스타일을 선택의 중심으로 유지
 - 야수 선택 UI, 장착·저장, Wolf 공격력 계열·Bear 방어/최대 HP 계열·Fox 민첩/행동 우선도/치명 계열의 실제 버프와 정확한 수치는 미구현
 

@@ -21,7 +21,7 @@ namespace ProjectLimitless.Battle
         private static Sprite orbSprite;
 
         /// <summary>
-        /// 사수는 움직이지 않고 야수만 아군 측 오른쪽에서 나타나 적을 지나 왼쪽 화면 밖으로 달립니다.
+        /// 사수는 움직이지 않고 야수만 사수 근처에서 나타나 대상 바로 앞까지 달립니다.
         /// Run 프레임 교체는 제자리에서 다리가 달리는 모습을 만들고, RectTransform 이동은 실제 전장 위치를
         /// 바꿉니다. 둘을 함께 사용하되 독립 값으로 두어 Bear/Fox의 보폭과 이동 속도도 데이터로 조절할 수 있습니다.
         /// </summary>
@@ -46,9 +46,8 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
 
-            RectTransform battlefield = actor.parent as RectTransform;
             GameObject beastObject = new GameObject($"BeastCompanion_{beast.Id}", typeof(Image));
-            beastObject.transform.SetParent(battlefield, false);
+            beastObject.transform.SetParent(actor.parent, false);
             Image beastImage = beastObject.GetComponent<Image>();
             beastImage.sprite = runFrames[0];
             beastImage.preserveAspect = true;
@@ -59,13 +58,10 @@ namespace ProjectLimitless.Battle
             beastRect.sizeDelta = new Vector2(beast.FrameWidth * beast.DisplayScale,
                 runSheet.height * beast.DisplayScale);
 
-            // 원본 Wolf Run은 왼쪽을 바라보므로 SpriteSheet를 수정하거나 뒤집지 않고 그대로 사용합니다.
-            float rightEdge = battlefield != null ? battlefield.rect.width * .5f + beastRect.sizeDelta.x : 760f;
-            float leftEdge = battlefield != null ? -battlefield.rect.width * .5f - beastRect.sizeDelta.x : -760f;
-            float groundY = Mathf.Min(actor.localPosition.y, target.localPosition.y) - 54f;
-            Vector3 start = new Vector3(rightEdge, groundY, 0f);
-            Vector3 contact = new Vector3(target.localPosition.x + 34f, groundY, 0f);
-            Vector3 exit = new Vector3(leftEdge, groundY, 0f);
+            // 원본 Wolf Run은 왼쪽을 바라봅니다. 사수의 왼쪽 가까이에서 출발하고, 왼쪽에 있는 적의
+            // 오른쪽 앞에서 멈추게 하여 화면 밖에서 갑자기 나타나거나 대상을 관통하지 않게 합니다.
+            Vector3 start = actor.localPosition + new Vector3(-62f, -54f, 0f);
+            Vector3 contact = target.localPosition + new Vector3(126f, -54f, 0f);
             beastRect.localPosition = start;
             Text callout = CreateSkillCallout(actor, damageFont, "동료의 습격!");
 
@@ -80,26 +76,10 @@ namespace ProjectLimitless.Battle
             onImpact?.Invoke(damage);
             if (damage > 0) StartCoroutine(ShowDamageNumber(target, damageFont, damage));
 
-            // Wolf의 화면 밖 퇴장과 대상의 피격 반응을 같은 시간대에 진행한 뒤 둘 다 끝나야 완료합니다.
-            float exitDistance = Mathf.Abs(exit.x - contact.x);
-            float exitDuration = exitDistance / beast.TravelSpeed;
-            float exitElapsed = 0f;
-            float animationElapsed = Mathf.Abs(contact.x - start.x) / beast.TravelSpeed;
-            while (exitElapsed < exitDuration)
-            {
-                exitElapsed += Time.deltaTime;
-                animationElapsed += Time.deltaTime;
-                float t = Mathf.Clamp01(exitElapsed / exitDuration);
-                beastRect.localPosition = Vector3.Lerp(contact, exit, t);
-                beastImage.sprite = runFrames[Mathf.FloorToInt(animationElapsed * beast.FramesPerSecond) % runFrames.Length];
-
-                float hitT = Mathf.Clamp01(exitElapsed / .18f);
-                float shake = Mathf.Sin(hitT * Mathf.PI * 6f) * (1f - hitT) * 10f;
-                target.localPosition = targetOrigin + Vector3.right * shake;
-                Color flash = new Color(targetOriginalColor.r, targetOriginalColor.g, targetOriginalColor.b, .35f);
-                targetSprite.color = hitT < .55f ? flash : Color.Lerp(flash, targetOriginalColor, (hitT - .55f) / .45f);
-                yield return null;
-            }
+            // Wolf는 접촉 위치를 관통하지 않고 그대로 멈춥니다. 피격 반응 동안 자리를 유지하고 아주 짧은
+            // 여운 뒤 제거한 다음 완료를 알리므로, 제거 전에 다음 턴 입력이 열리지 않습니다.
+            yield return PlayHitReaction(target, targetSprite, targetOrigin, targetOriginalColor);
+            yield return new WaitForSeconds(.12f);
 
             target.localPosition = targetOrigin;
             targetSprite.color = targetOriginalColor;
