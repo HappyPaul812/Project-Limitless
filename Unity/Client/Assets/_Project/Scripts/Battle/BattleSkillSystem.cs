@@ -18,7 +18,8 @@ namespace ProjectLimitless.Battle
         AreaRangedPhysicalAttack,
         SingleBeastPhysicalAttack,
         SingleMagicAttackWithBurn,
-        AreaMagicAttackWithShock
+        AreaMagicAttackWithShock,
+        SelfDamageReduction
     }
 
     /// <summary>
@@ -117,6 +118,7 @@ namespace ProjectLimitless.Battle
         public const string FighterWhirlwindId = "fighter_whirlwind";
         public const string MageFireballId = "mage_fireball";
         public const string MageThunderboltId = "mage_thunderbolt";
+        public const string MageGaiaWallId = "mage_gaia_wall";
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -226,6 +228,15 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 광역 마법",
                         durationDescription: "재사용 대기시간: 3턴",
                         targetRange: BattleSkillTargetRange.EnemyAll);
+                if (preview.SkillId == MageGaiaWallId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "대지의 힘으로 자신을 보호합니다.\n다음 2회 행동 동안 받는 피해가 40% 감소합니다.", true,
+                        BattleSkillEffectType.SelfDamageReduction, 4, 2,
+                        iconId: BattleUiIconCatalog.MageGaiaWallSkill,
+                        targetDescription: "대상: 자신",
+                        effectDescription: "효과: 받는 피해 40% 감소",
+                        typeDescription: "유형: 자기 보호",
+                        durationDescription: "지속: 자신의 다음 2회 행동\n재사용 대기시간: 4턴");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
                     BattleSkillEffectType.None, 0, 0);
             }).ToArray();
@@ -358,8 +369,15 @@ namespace ProjectLimitless.Battle
             public int RawDamagePerTick;
         }
 
+        private sealed class GaiaWallState
+        {
+            public int RemainingActions;
+            public bool IgnoreCurrentActionCompletion;
+        }
+
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
+        private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>();
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
@@ -392,6 +410,35 @@ namespace ProjectLimitless.Battle
 
         public bool HasShock(Combatant target) => target != null && target.IsAlive && shockedTargets.Contains(target);
 
+        /// <summary>
+        /// 가이아 웰은 다른 아군을 대신 막거나 적의 대상을 바꾸는 기술이 아니라 마도사 자신에게만 붙는
+        /// 피해 감소 상태입니다. Combatant를 키로 저장하므로 다른 참가자의 행동에는 남은 횟수가 줄지 않습니다.
+        /// </summary>
+        public void ApplyGaiaWall(Combatant target, int protectedActions)
+        {
+            if (target == null || !target.IsAlive || protectedActions <= 0) return;
+            gaiaWalls[target] = new GaiaWallState
+            {
+                RemainingActions = protectedActions,
+                // 상태를 건 현재 행동은 "다음 2회"에 포함되지 않으므로 첫 완료 알림만 건너뜁니다.
+                IgnoreCurrentActionCompletion = true
+            };
+        }
+
+        public int GetGaiaWallRemaining(Combatant target) => target != null && target.IsAlive &&
+            gaiaWalls.TryGetValue(target, out GaiaWallState state) ? state.RemainingActions : 0;
+
+        /// <summary>
+        /// 가이아 웰은 원시 피해를 먼저 60%로 줄이고, 그 결과를 기존 TakeDamage에 전달합니다. 따라서
+        /// 일반 방어의 50% 계산은 Combatant 안에서 변경 없이 뒤이어 적용됩니다. 두 효과를 합산해 90%로
+        /// 만드는 새 규칙을 발명하지 않고, 독립된 두 보호 효과를 기존 처리 순서대로 곱연산하는 방식입니다.
+        /// </summary>
+        public int ModifyIncomingDamage(Combatant target, int rawDamage)
+        {
+            if (rawDamage <= 0 || GetGaiaWallRemaining(target) <= 0) return rawDamage;
+            return (int)Math.Max(1L, ((long)rawDamage * 60L + 99L) / 100L);
+        }
+
         /// <summary>감전된 행동자의 모든 공격 피해를 85%로 만든 뒤 기존 TakeDamage로 넘길 값입니다.</summary>
         public int ModifyOutgoingDamage(Combatant source, int rawDamage)
         {
@@ -405,7 +452,19 @@ namespace ProjectLimitless.Battle
         /// </summary>
         public void CompleteActorAction(Combatant actor)
         {
-            if (actor != null) shockedTargets.Remove(actor);
+            if (actor == null) return;
+            shockedTargets.Remove(actor);
+
+            if (!gaiaWalls.TryGetValue(actor, out GaiaWallState gaia)) return;
+            if (gaia.IgnoreCurrentActionCompletion)
+            {
+                gaia.IgnoreCurrentActionCompletion = false;
+                return;
+            }
+
+            // 공격·스킬 등 무엇을 선택했든 마도사 자신의 행동 기회 하나를 마쳤을 때만 2→1→제거합니다.
+            gaia.RemainingActions = Math.Max(0, gaia.RemainingActions - 1);
+            if (gaia.RemainingActions == 0) gaiaWalls.Remove(actor);
         }
 
         /// <summary>전투불능 참가자는 다음 행동이 없으므로 화면과 저장소 양쪽에서 상태를 즉시 제거합니다.</summary>
@@ -418,6 +477,7 @@ namespace ProjectLimitless.Battle
             {
                 burns.Remove(dead);
                 shockedTargets.Remove(dead);
+                gaiaWalls.Remove(dead);
             }
         }
 
@@ -449,7 +509,7 @@ namespace ProjectLimitless.Battle
         {
             remainingTicks = 0;
             if (!HasActiveBurn(target) || !burns.TryGetValue(target, out BurnState burn)) return 0;
-            int damage = target.TakeDamage(burn.RawDamagePerTick);
+            int damage = target.TakeDamage(ModifyIncomingDamage(target, burn.RawDamagePerTick));
             burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
             remainingTicks = burn.RemainingTicks;
             if (burn.RemainingTicks == 0 || !target.IsAlive) burns.Remove(target);
@@ -522,6 +582,11 @@ namespace ProjectLimitless.Battle
             long scaledDamage = (long)actor.Attack * damagePercent;
             int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
             return statusEffects.ModifyOutgoingDamage(actor, rawDamage);
+        }
+
+        private int ApplyDamage(Combatant target, int rawDamage)
+        {
+            return target.TakeDamage(statusEffects.ModifyIncomingDamage(target, rawDamage));
         }
 
         public bool Execute(Combatant actor, BattleSkillDefinition skill, Formation opponents, out string message)
@@ -608,7 +673,7 @@ namespace ProjectLimitless.Battle
             // 예: 12×160=1920 → (1920+99)/100=20, 15×160=2400 → 24입니다. float 오차로 24가 25가 되는
             // 일을 피하며, 이후 TakeDamage가 기존 방어 50%를 그대로 적용해 방어 무시 효과도 생기지 않습니다.
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = target.TakeDamage(rawDamage);
+            damage = ApplyDamage(target, rawDamage);
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
             return true;
@@ -633,7 +698,7 @@ namespace ProjectLimitless.Battle
 
             // 일반 공격력의 180%를 소수점 없이 올림합니다. 실제 감소는 기존 Combatant.TakeDamage가 담당합니다.
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = target.TakeDamage(rawDamage);
+            damage = ApplyDamage(target, rawDamage);
 
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
@@ -659,7 +724,7 @@ namespace ProjectLimitless.Battle
             }
 
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = target.TakeDamage(rawDamage);
+            damage = ApplyDamage(target, rawDamage);
 
             // 즉발 피해로 쓰러진 대상에게는 이후 행동도 없으므로 화상을 남기지 않습니다.
             if (target.IsAlive)
@@ -691,7 +756,7 @@ namespace ProjectLimitless.Battle
             }
 
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = target.TakeDamage(rawDamage);
+            damage = ApplyDamage(target, rawDamage);
 
             // 피해가 적용된 뒤에만 기세를 올립니다. AddMomentum은 회오리 베기도 재사용할 수 있지만,
             // 직접 사용 기록은 이 난도 스킬 경로에서만 남겨 두 효과가 같은 기세 3을 만들더라도 구분됩니다.
@@ -728,7 +793,7 @@ namespace ProjectLimitless.Battle
             int momentum = Math.Min(BattleFighterResourceRuntime.MaxMomentum, fighterResources.GetMomentum(actor));
             int damagePercent = skill.MomentumDamagePercents[momentum];
             int rawDamage = CalculateOutgoingAttackDamage(actor, damagePercent);
-            damage = target.TakeDamage(rawDamage);
+            damage = ApplyDamage(target, rawDamage);
             consumedMomentum = fighterResources.ConsumeAllMomentum(actor);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 기세 {momentum}으로 {target.DisplayName}에게 {damage} 피해.";
             return true;
@@ -768,7 +833,7 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-                appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
+                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
 
             // 자원은 적에게 붙는 상태가 아니라 공격한 투사 Combatant를 키로 저장합니다. 같은 편에 투사가
             // 여러 명 있어도 서로의 기세가 섞이지 않고, 회심의 일격도 자기 기세만 읽고 소비할 수 있습니다.
@@ -807,7 +872,7 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-                appliedDamages[index] = livingEnemies[index].TakeDamage(rawDamage);
+                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
 
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 후열 {livingEnemies.Length}명에게 피해.";
@@ -842,7 +907,7 @@ namespace ProjectLimitless.Battle
             for (int index = 0; index < livingEnemies.Length; index++)
             {
                 Combatant target = livingEnemies[index];
-                appliedDamages[index] = target.TakeDamage(rawDamage);
+                appliedDamages[index] = ApplyDamage(target, rawDamage);
                 // 쓰러진 적은 다음 행동이 없으므로 감전을 남기지 않습니다. 살아남은 대상별 Set 항목만
                 // 갱신하여 여러 번 맞아도 감전 2가 되지 않고 각자 감전 1을 유지합니다.
                 if (target.IsAlive) statusEffects.ApplyOrRefreshShock(target);
@@ -850,6 +915,24 @@ namespace ProjectLimitless.Battle
 
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해와 감전 1.";
+            return true;
+        }
+
+        /// <summary>
+        /// VFX의 보호막이 완성되는 시점에 자기 자신에게만 상태를 적용합니다. Presenter는 그림만 재생하고
+        /// 실제 2회 지속·40% 계산은 상태 저장소가 담당하므로, 연출 속도를 바꿔도 전투 규칙은 변하지 않습니다.
+        /// </summary>
+        public bool ExecuteSelfDamageReduction(Combatant actor, BattleSkillDefinition skill, out string message)
+        {
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SelfDamageReduction)
+            {
+                message = "자신에게 보호 효과를 적용할 수 없습니다.";
+                return false;
+            }
+
+            statusEffects.ApplyGaiaWall(actor, skill.EffectDuration);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 40% 감소.";
             return true;
         }
     }

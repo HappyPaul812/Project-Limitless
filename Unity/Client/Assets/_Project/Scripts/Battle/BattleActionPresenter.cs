@@ -558,6 +558,43 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 가이아 웰은 Projectile 없이 사용자 위치에서 arcane-parry를 한 번 재생합니다. VFX는 상태가
+        /// 적용되었다는 시각 안내만 담당하며, 실제 40% 감소와 2회 수명은 applyEffect가 연결한 전투
+        /// 상태 저장소가 계산합니다. 이렇게 나누면 프레임 속도나 크기를 바꿔도 전투 수치가 변하지 않습니다.
+        /// </summary>
+        public IEnumerator PlayGaiaWall(RectTransform actor, Font font, Sprite[] frames,
+            Action applyEffect, Action onComplete)
+        {
+            if (actor == null || frames == null || frames.Length == 0)
+            {
+                applyEffect?.Invoke();
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(actor, font, "가이아 웰!");
+            Image barrier = CreateEffectImage(actor, "ArcaneParry", frames,
+                BattleGaiaWallVisuals.EffectSize, new Vector2(0f, 12f));
+            bool applied = false;
+            for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
+            {
+                if (barrier != null) barrier.sprite = frames[frameIndex];
+                if (!applied && frameIndex >= BattleGaiaWallVisuals.PeakFrame)
+                {
+                    applied = true;
+                    // 보호막이 가장 분명한 peak index 8과 상태 적용 시점을 맞춰 사용자가 효과 발생을
+                    // 눈으로 확인할 수 있게 합니다. 단, 수치 계산 자체는 Presenter가 알지 않습니다.
+                    applyEffect?.Invoke();
+                }
+                yield return new WaitForSeconds(BattleGaiaWallVisuals.FrameDuration);
+            }
+            if (!applied) applyEffect?.Invoke();
+            if (barrier != null) Destroy(barrier.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+            onComplete?.Invoke();
+        }
+
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
             Vector2 size, Vector2 anchoredPosition)
         {

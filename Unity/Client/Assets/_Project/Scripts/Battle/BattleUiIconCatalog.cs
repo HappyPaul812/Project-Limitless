@@ -36,6 +36,8 @@ namespace ProjectLimitless.Battle
         public const string Burn = "status.burn";
         public const string MageThunderboltSkill = "skill.mage.thunderbolt";
         public const string Shock = "status.shock";
+        public const string MageGaiaWallSkill = "skill.mage.gaia_wall";
+        public const string GaiaWall = "status.gaia_wall";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -75,7 +77,10 @@ namespace ProjectLimitless.Battle
             // 스킬 그림은 electric-impact의 Peak를 런타임에 자른 고정 Sprite이고, 감전 상태는
             // Kenney power.png를 사용합니다. 같은 번개 계열이라도 전투 Animation과 UI 표식을 분리합니다.
             { MageThunderboltSkill, string.Empty },
-            { Shock, "KenneyBattleIcons/power" }
+            { Shock, "KenneyBattleIcons/power" },
+            // 기본 방어의 큰 외곽선 shield.png와 구분되는 실제 Board Game Icons의 dice_shield.png입니다.
+            { MageGaiaWallSkill, "KenneyBattleIcons/dice_shield" },
+            { GaiaWall, "KenneyBattleIcons/dice_shield" }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();

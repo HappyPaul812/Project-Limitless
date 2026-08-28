@@ -123,6 +123,10 @@ namespace ProjectLimitless.Battle
             // 어느 한쪽만 남는 일이 없고, 행동 종료 시 런타임에서 제거되면 두 화면에서도 함께 사라집니다.
             if (statusEffects?.HasShock(combatant) == true)
                 markers.Add(new BattleStatusMarker("shock", "감전", 1));
+            // 남은 수치는 전체 라운드가 아니라 이 마도사가 앞으로 마칠 행동 횟수입니다. 다른 참가자의
+            // 차례에는 값이 변하지 않으며 HUD와 상세 팝업은 같은 Marker를 사용합니다.
+            int gaiaRemaining = statusEffects?.GetGaiaWallRemaining(combatant) ?? 0;
+            if (gaiaRemaining > 0) markers.Add(new BattleStatusMarker("gaia", "가이아", gaiaRemaining));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             IReadOnlyList<string> resourceDetails = job != null && job.JobId == "fighter"

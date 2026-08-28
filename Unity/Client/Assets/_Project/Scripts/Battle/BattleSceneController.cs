@@ -888,6 +888,11 @@ namespace ProjectLimitless.Battle
                 PlayMageThunderbolt(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.SelfDamageReduction)
+            {
+                PlayMageGaiaWall(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -1509,6 +1514,55 @@ namespace ProjectLimitless.Battle
                 }));
         }
 
+        /// <summary>
+        /// 자기 보호 스킬은 대상 선택 화면이나 TargetResolver가 필요하지 않습니다. 따라서 도발·Formation을
+        /// 건드리지 않고 현재 행동 중인 마도사에게만 상태를 적용하며, VFX가 끝날 때까지 입력을 잠급니다.
+        /// </summary>
+        private void PlayMageGaiaWall(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive) return;
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayGaiaWall(
+                actorView.ActionRoot, battleFont, BattleGaiaWallVisuals.LoadFrames(),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSelfDamageReduction(actor, skill, out string result);
+                    messageText.text = result;
+                    RefreshCombatantViews(null);
+                },
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        // 성공한 연출 완료 뒤에만 4턴 쿨타임을 등록합니다. 현재 행동 종료는 상태 저장소가
+                        // 건너뛰므로 가이아 2가 즉시 1로 줄지 않고 다음 두 행동을 온전히 보호합니다.
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "가이아 웰을 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
         private void Defend()
         {
             if (actionPlaying) return;
@@ -1567,7 +1621,8 @@ namespace ProjectLimitless.Battle
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
-            Func<int> applyImpact = () => target.TakeDamage(statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
+            Func<int> applyImpact = () => target.TakeDamage(statusEffects.ModifyIncomingDamage(target,
+                statusEffects.ModifyOutgoingDamage(actor, actor.Attack)));
             Action<int> onImpact = damage =>
             {
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
@@ -1817,7 +1872,8 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
                     : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum
                     : marker.Id == "burn" ? BattleUiIconCatalog.Burn
-                    : marker.Id == "shock" ? BattleUiIconCatalog.Shock : null;
+                    : marker.Id == "shock" ? BattleUiIconCatalog.Shock
+                    : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.
