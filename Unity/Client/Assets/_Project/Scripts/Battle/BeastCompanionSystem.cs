@@ -42,11 +42,11 @@ namespace ProjectLimitless.Battle
     public static class BeastCompanionCatalog
     {
         private static readonly BeastCompanionDefinition DefaultWolf = new BeastCompanionDefinition(
-            // Run 재생은 기존 12 FPS를 유지하고, 실제 Transform 이동만 최초 구현 속도의 2/3로 낮춥니다.
+            // Run 재생은 기존 12 FPS를 유지하고, 실제 Transform 이동만 최초 구현 속도의 3/4로 사용합니다.
             // 프레임 속도와 이동 속도가 분리되어 있으므로 발 동작은 유지하면서 돌진 거리만 천천히 이동합니다.
             // 0부터 세는 4번 프레임(실제 다섯 번째)은 몸통과 네 다리의 간격이 비교적 분명해
             // 40px 안팎의 작은 스킬 버튼에서도 달리는 늑대 형태를 알아보기 쉽습니다.
-            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run", 64, 4, 12f, 2f, 760f * 2f / 3f);
+            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run", 64, 4, 12f, 2f, 760f * 3f / 4f);
 
         /// <summary>
         /// 현재 기본 야수를 UI 아이콘 같은 비전투 표시에도 제공합니다. 호출자는 Wolf 경로나 프레임 번호를

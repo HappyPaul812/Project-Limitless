@@ -574,6 +574,9 @@ namespace ProjectLimitless.Battle
                 messageText.text = "현재 지정할 수 있는 대상이 없습니다.";
                 return;
             }
+            // 대상 선택은 스킬 정보를 읽는 단계가 아니라 실제 전장을 보며 목표를 정하는 단계입니다.
+            // 어떤 스킬이 이 메서드를 호출하더라도 상세 팝업을 다시 닫아, 전장과 대상 표시를 가리지 않게 합니다.
+            HideSkillDetailPopup();
             choosingTarget = true;
             targetSelectionReturnsToSkillMenu = returnToSkillMenuOnCancel;
             selectableTargets = targets;
@@ -782,6 +785,18 @@ namespace ProjectLimitless.Battle
             if (skillDetailPopup != null) skillDetailPopup.gameObject.SetActive(false);
         }
 
+        /// <summary>
+        /// 스킬 설명은 선택하기 전에 판단을 돕는 정보 UI이고, 대상 선택과 행동 연출은 전장을 보여 주는 실행 UI입니다.
+        /// 두 역할을 분리하기 위해 스킬을 확정한 순간 메뉴·Hover·키보드 포커스·상세 팝업을 한 번에 정리합니다.
+        /// 이 공통 경계를 사용하면 동료의 습격뿐 아니라 도발·치유·단일기·광역기 모두 같은 규칙을 따릅니다.
+        /// </summary>
+        private void CloseSkillInspectionForAction()
+        {
+            choosingSkill = false;
+            if (skillMenuPanel != null) skillMenuPanel.gameObject.SetActive(false);
+            HideSkillDetailPopup();
+        }
+
         private void UseSkill(BattleSkillDefinition skill)
         {
             if (actionPlaying || !choosingSkill) return;
@@ -792,8 +807,9 @@ namespace ProjectLimitless.Battle
                 return;
             }
 
-            // 스킬 메뉴를 벗어나 대상 선택이나 연출로 이동할 때 설명 팝업이 전장에 남지 않게 정리합니다.
-            HideSkillDetailPopup();
+            // 여기부터는 정보를 살펴보는 단계가 끝났습니다. 이후 스킬 종류와 관계없이 대상 선택과 연출이
+            // 같은 넓은 전장 화면을 사용하도록 메뉴와 상세 팝업을 공통으로 닫습니다.
+            CloseSkillInspectionForAction();
             if (skill.EffectType == BattleSkillEffectType.SingleAllyHeal)
             {
                 BeginSingleAllyHealSelection(skill);
@@ -1446,6 +1462,9 @@ namespace ProjectLimitless.Battle
 
         private void FinishCurrentAction()
         {
+            // 행동 완료 뒤 기본 명령으로 돌아갈 때 이전 스킬의 Hover/포커스 정보가 되살아나지 않게 합니다.
+            // 다음에 사용자가 스킬 메뉴를 다시 열고 버튼에 새로 포커스할 때만 설명이 표시됩니다.
+            HideSkillDetailPopup();
             currentActor?.CompleteAction();
             statusEffects.RemoveInvalidTaunts(AllCombatants);
             RefreshCombatantViews(null);
