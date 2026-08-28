@@ -27,6 +27,7 @@ namespace ProjectLimitless.Battle
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
         public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
         public const string SharpshooterArrowRainSkill = "skill.sharpshooter.arrow_rain";
+        public const string SharpshooterCompanionAssaultSkill = "skill.sharpshooter.companion_assault";
         public const string FighterNandoSkill = "skill.fighter.nando";
         public const string FighterMomentum = "status.fighter.momentum";
         public const string FighterCriticalStrikeSkill = "skill.fighter.critical_strike";
@@ -56,6 +57,8 @@ namespace ProjectLimitless.Battle
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
+            // 현재 Kenney 팩에는 동물/발자국 PNG가 없고 추적 계열 실제 PNG인 target.png가 가장 가깝습니다.
+            { SharpshooterCompanionAssaultSkill, "KenneyBattleIcons/target" },
             { FighterNandoSkill, "KenneyBattleIcons/cross" },
             { FighterMomentum, "KenneyBattleIcons/skull" },
             { FighterCriticalStrikeSkill, "KenneyBattleIcons/skull" },

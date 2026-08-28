@@ -21,6 +21,128 @@ namespace ProjectLimitless.Battle
         private static Sprite orbSprite;
 
         /// <summary>
+        /// 사수는 움직이지 않고 야수만 아군 측 오른쪽에서 나타나 적을 지나 왼쪽 화면 밖으로 달립니다.
+        /// Run 프레임 교체는 제자리에서 다리가 달리는 모습을 만들고, RectTransform 이동은 실제 전장 위치를
+        /// 바꿉니다. 둘을 함께 사용하되 독립 값으로 두어 Bear/Fox의 보폭과 이동 속도도 데이터로 조절할 수 있습니다.
+        /// </summary>
+        public IEnumerator PlayBeastCompanionAssault(RectTransform actor, RectTransform target, Image targetSprite,
+            Font damageFont, BeastCompanionDefinition beast, Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+        {
+            if (actor == null || target == null || targetSprite == null || beast == null)
+            {
+                int fallbackDamage = applyImpact == null ? 0 : applyImpact();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Texture2D runSheet = Resources.Load<Texture2D>(beast.RunResourcePath);
+            Sprite[] runFrames = SliceBeastRunSheet(runSheet, beast);
+            if (runFrames.Length == 0)
+            {
+                int fallbackDamage = applyImpact == null ? 0 : applyImpact();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            RectTransform battlefield = actor.parent as RectTransform;
+            GameObject beastObject = new GameObject($"BeastCompanion_{beast.Id}", typeof(Image));
+            beastObject.transform.SetParent(battlefield, false);
+            Image beastImage = beastObject.GetComponent<Image>();
+            beastImage.sprite = runFrames[0];
+            beastImage.preserveAspect = true;
+            beastImage.raycastTarget = false;
+            RectTransform beastRect = beastImage.rectTransform;
+            beastRect.anchorMin = beastRect.anchorMax = Vector2.one * .5f;
+            beastRect.pivot = new Vector2(.5f, 0f);
+            beastRect.sizeDelta = new Vector2(beast.FrameWidth * beast.DisplayScale,
+                runSheet.height * beast.DisplayScale);
+
+            // 원본 Wolf Run은 왼쪽을 바라보므로 SpriteSheet를 수정하거나 뒤집지 않고 그대로 사용합니다.
+            float rightEdge = battlefield != null ? battlefield.rect.width * .5f + beastRect.sizeDelta.x : 760f;
+            float leftEdge = battlefield != null ? -battlefield.rect.width * .5f - beastRect.sizeDelta.x : -760f;
+            float groundY = Mathf.Min(actor.localPosition.y, target.localPosition.y) - 54f;
+            Vector3 start = new Vector3(rightEdge, groundY, 0f);
+            Vector3 contact = new Vector3(target.localPosition.x + 34f, groundY, 0f);
+            Vector3 exit = new Vector3(leftEdge, groundY, 0f);
+            beastRect.localPosition = start;
+            Text callout = CreateSkillCallout(actor, damageFont, "동료의 습격!");
+
+            yield return MoveBeastWithRunAnimation(beastRect, beastImage, runFrames, beast,
+                start, contact);
+
+            // 접촉 이전에는 HP를 건드리지 않습니다. 이 한 지점에서만 Executor를 호출해 Run 프레임 수와
+            // 무관하게 180% 피해가 정확히 한 번 발생하고 기존 방어 판정도 같은 순간 적용됩니다.
+            Vector3 targetOrigin = target.localPosition;
+            Color targetOriginalColor = targetSprite.color;
+            int damage = applyImpact == null ? 0 : applyImpact();
+            onImpact?.Invoke(damage);
+            if (damage > 0) StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+
+            // Wolf의 화면 밖 퇴장과 대상의 피격 반응을 같은 시간대에 진행한 뒤 둘 다 끝나야 완료합니다.
+            float exitDistance = Mathf.Abs(exit.x - contact.x);
+            float exitDuration = exitDistance / beast.TravelSpeed;
+            float exitElapsed = 0f;
+            float animationElapsed = Mathf.Abs(contact.x - start.x) / beast.TravelSpeed;
+            while (exitElapsed < exitDuration)
+            {
+                exitElapsed += Time.deltaTime;
+                animationElapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(exitElapsed / exitDuration);
+                beastRect.localPosition = Vector3.Lerp(contact, exit, t);
+                beastImage.sprite = runFrames[Mathf.FloorToInt(animationElapsed * beast.FramesPerSecond) % runFrames.Length];
+
+                float hitT = Mathf.Clamp01(exitElapsed / .18f);
+                float shake = Mathf.Sin(hitT * Mathf.PI * 6f) * (1f - hitT) * 10f;
+                target.localPosition = targetOrigin + Vector3.right * shake;
+                Color flash = new Color(targetOriginalColor.r, targetOriginalColor.g, targetOriginalColor.b, .35f);
+                targetSprite.color = hitT < .55f ? flash : Color.Lerp(flash, targetOriginalColor, (hitT - .55f) / .45f);
+                yield return null;
+            }
+
+            target.localPosition = targetOrigin;
+            targetSprite.color = targetOriginalColor;
+            if (callout != null) Destroy(callout.gameObject);
+            Destroy(beastObject);
+            foreach (Sprite frame in runFrames) Destroy(frame);
+            onComplete?.Invoke();
+        }
+
+        private static IEnumerator MoveBeastWithRunAnimation(RectTransform beastRect, Image beastImage,
+            Sprite[] frames, BeastCompanionDefinition beast, Vector3 from, Vector3 to)
+        {
+            float duration = Mathf.Abs(to.x - from.x) / beast.TravelSpeed;
+            float moveElapsed = 0f;
+            while (moveElapsed < duration)
+            {
+                float delta = Time.deltaTime;
+                moveElapsed += delta;
+                beastRect.localPosition = Vector3.Lerp(from, to, Mathf.Clamp01(moveElapsed / duration));
+                beastImage.sprite = frames[Mathf.FloorToInt(moveElapsed * beast.FramesPerSecond) % frames.Length];
+                yield return null;
+            }
+            beastRect.localPosition = to;
+        }
+
+        private static Sprite[] SliceBeastRunSheet(Texture2D sheet, BeastCompanionDefinition beast)
+        {
+            if (sheet == null || sheet.width % beast.FrameWidth != 0) return Array.Empty<Sprite>();
+            int count = sheet.width / beast.FrameWidth;
+            Sprite[] frames = new Sprite[count];
+            for (int index = 0; index < count; index++)
+            {
+                // ThirdParty 원본을 수정하지 않고 런타임에 가로 프레임을 자릅니다. 아래 중앙 Pivot은 발이
+                // 지면에 닿는 기준을 일정하게 해 프레임 높이가 달라도 몸 전체가 흔들리는 현상을 줄입니다.
+                frames[index] = Sprite.Create(sheet,
+                    new Rect(index * beast.FrameWidth, 0f, beast.FrameWidth, sheet.height),
+                    new Vector2(.5f, 0f), 1f, 0, SpriteMeshType.FullRect);
+                frames[index].name = $"{beast.DisplayName}_Run_{index:00}";
+            }
+            return frames;
+        }
+
+        /// <summary>
         /// 공격자를 대상 앞까지 이동시키고 타격 순간에 기존 피해 처리를 호출한 뒤 원위치로 복귀합니다.
         /// 완료 콜백은 모든 표시 상태가 복구된 뒤 호출되므로 다음 턴 진행 시점으로 사용할 수 있습니다.
         /// </summary>

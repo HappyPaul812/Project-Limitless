@@ -15,7 +15,8 @@ namespace ProjectLimitless.Battle
         SingleMeleePhysicalAttackWithMomentumGain,
         SingleMeleePhysicalAttackConsumingMomentum,
         AreaMeleePhysicalAttackWithMomentumGain,
-        AreaRangedPhysicalAttack
+        AreaRangedPhysicalAttack,
+        SingleBeastPhysicalAttack
     }
 
     /// <summary>
@@ -104,6 +105,7 @@ namespace ProjectLimitless.Battle
         public const string HealerHealingLightId = "healer_healing_light";
         public const string SharpshooterAimId = "sharpshooter_aim";
         public const string SharpshooterArrowRainId = "sharpshooter_arrow_rain";
+        public const string SharpshooterCompanionAssaultId = "sharpshooter_companion_attack";
         public const string FighterNandoId = "fighter_slash_stack";
         public const string FighterCriticalStrikeId = "fighter_finishing_strike";
         public const string FighterWhirlwindId = "fighter_whirlwind";
@@ -155,6 +157,17 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 원거리 물리",
                         durationDescription: "재사용 대기시간: 2턴",
                         targetRange: BattleSkillTargetRange.EnemyRearRowAll);
+                if (preview.SkillId == SharpshooterCompanionAssaultId)
+                    // 야수의 종류는 이 스킬 정의나 BattleSceneController에 넣지 않습니다. 현재 장착 야수를
+                    // BeastCompanionCatalog에서 받도록 분리해 두면 Bear/Fox가 추가되어도 대상·피해 코드는 같습니다.
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "야수 동료에게 명령해 적 하나를 습격하게 합니다.\n야수가 직접 전장으로 달려들어 일반 공격의 180% 피해를 줍니다.", true,
+                        BattleSkillEffectType.SingleBeastPhysicalAttack, 3, 0, 0f, 180,
+                        iconId: BattleUiIconCatalog.SharpshooterCompanionAssaultSkill,
+                        targetDescription: "대상: 적 1명",
+                        effectDescription: "범위: 전열/후열 자유\n피해: 일반 공격의 180%",
+                        typeDescription: "유형: 야수 / 단일 물리",
+                        durationDescription: "재사용 대기시간: 3턴");
                 if (preview.SkillId == FighterNandoId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "적 1명에게 일반 공격의 150% 피해를 주고 기세를 1 얻습니다.\n기세는 최대 3까지 쌓이며 회심의 일격을 강화합니다.\n난도 스킬을 세 번째 직접 사용하면 2턴 동안 재사용할 수 없습니다.", true,
@@ -475,6 +488,34 @@ namespace ProjectLimitless.Battle
             long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
             int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
             damage = target.TakeDamage(rawDamage);
+            cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
+            return true;
+        }
+
+        /// <summary>
+        /// Wolf가 대상에게 접촉한 프레임에만 호출되는 동료의 습격 피해 처리입니다. Wolf는 사수의 명령을
+        /// 화면으로 보여 주는 BeastCompanion이지 Combatant가 아니므로 HP·턴·Formation을 만들지 않습니다.
+        /// 피해의 주체와 쿨타임 기준은 사수이며, TakeDamage를 거쳐 기존 방어의 50% 감소도 그대로 유지합니다.
+        /// </summary>
+        public bool ExecuteSingleBeastPhysicalAttack(Combatant actor, Combatant target, BattleSkillDefinition skill,
+            out int damage, out string message)
+        {
+            damage = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.SingleBeastPhysicalAttack || target == null ||
+                target.Side == actor.Side || !target.IsAlive)
+            {
+                message = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return false;
+            }
+
+            // 일반 공격력의 180%를 소수점 없이 올림합니다. 실제 감소는 기존 Combatant.TakeDamage가 담당합니다.
+            long scaledDamage = (long)actor.Attack * skill.AttackDamagePercent;
+            int rawDamage = (int)Math.Max(1L, (scaledDamage + 99L) / 100L);
+            damage = target.TakeDamage(rawDamage);
+
+            // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
             return true;

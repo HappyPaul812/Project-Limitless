@@ -804,6 +804,11 @@ namespace ProjectLimitless.Battle
                 BeginSingleRangedAttackSelection(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.SingleBeastPhysicalAttack)
+            {
+                BeginCompanionAssaultSelection(skill);
+                return;
+            }
             if (skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackWithMomentumGain ||
                 skill.EffectType == BattleSkillEffectType.SingleMeleePhysicalAttackConsumingMomentum)
             {
@@ -1011,6 +1016,76 @@ namespace ProjectLimitless.Battle
                             messageText.text = string.IsNullOrEmpty(failureMessage) ? "정조준을 사용할 수 없습니다." : failureMessage;
                         }
                     }))));
+        }
+
+        /// <summary>
+        /// 동료의 습격은 전열/후열을 자유롭게 고르므로 Magic의 자유 대상 범위만 재사용합니다. 다만 이 호출도
+        /// 공용 TargetResolver를 통과하므로 사수에게 유효한 도발 강제 대상이 있으면 그 한 명만 반환됩니다.
+        /// Wolf 자체는 대상 목록이나 Formation에 넣지 않습니다.
+        /// </summary>
+        private void BeginCompanionAssaultSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
+            IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(
+                actor, opponents, TargetRangeType.Magic);
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            BeginTargetSelection(targets, target => PlayCompanionAssault(actor, target, skill),
+                "동료의 습격 대상을 선택하세요. 전열과 후열 모두 선택할 수 있으며 도발은 우선 적용됩니다.", true);
+        }
+
+        /// <summary>
+        /// 사수는 제자리에 남고, 장착 야수 데이터가 제공한 Run SpriteSheet만 별도 UI 오브젝트로 재생합니다.
+        /// Wolf가 대상에 닿은 순간 Executor가 180% 피해를 한 번 적용하고, Wolf가 왼쪽 화면 밖으로 완전히
+        /// 퇴장하고 피격 반응도 끝난 뒤에만 입력 잠금을 풀고 다음 턴으로 진행합니다.
+        /// </summary>
+        private void PlayCompanionAssault(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null || !target.IsAlive || target.Side == actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "공격할 수 있는 살아 있는 적이 아닙니다.";
+                return;
+            }
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            CombatantView targetView = combatantViews[target];
+            BeastCompanionDefinition beast = BeastCompanionCatalog.GetEquippedOrDefault(actor);
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayBeastCompanionAssault(
+                actorView.ActionRoot, targetView.ActionRoot, targetView.SpriteImage, battleFont, beast,
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSingleBeastPhysicalAttack(
+                        actor, target, skill, out int damage, out string result);
+                    messageText.text = result;
+                    return damage;
+                },
+                damage => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    RestoreBattleIdle(targetView);
+                    actionPlaying = false;
+                    if (executed) FinishCurrentAction();
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "동료의 습격을 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
         }
 
         /// <summary>
