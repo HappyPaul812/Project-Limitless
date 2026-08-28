@@ -560,7 +560,7 @@ namespace ProjectLimitless.Battle
 
         /// <summary>
         /// 가이아 웰은 Projectile 없이 사용자 위치에서 arcane-parry를 한 번 재생합니다. VFX는 상태가
-        /// 적용되었다는 시각 안내만 담당하며, 실제 40% 감소와 2회 수명은 applyEffect가 연결한 전투
+        /// 적용되었다는 시각 안내만 담당하며, 실제 60% 감소와 2회 수명은 applyEffect가 연결한 전투
         /// 상태 저장소가 계산합니다. 이렇게 나누면 프레임 속도나 크기를 바꿔도 전투 수치가 변하지 않습니다.
         /// </summary>
         public IEnumerator PlayGaiaWall(RectTransform actor, Font font, Sprite[] frames,

@@ -76,11 +76,15 @@ namespace ProjectLimitless.Battle
         /// <summary>자신의 새 행동 차례가 시작되면 이전 차례에 사용한 방어를 종료합니다.</summary>
         public void BeginTurn() => IsDefending = false;
 
-        /// <summary>피해를 적용합니다. 방어 중이면 확정 규칙에 따라 절반으로 줄입니다.</summary>
-        public int TakeDamage(int rawDamage)
+        /// <summary>
+        /// 피해를 적용합니다. 기본값에서는 방어 중 피해를 절반으로 줄입니다. 가이아 웰처럼 더 강한
+        /// 전용 보호 효과가 이미 최종 피해를 계산한 경우에만 applyDefending=false로 기존 방어 단계를
+        /// 건너뜁니다. 이 선택값을 두어 두 방어 효과가 실수로 중첩되는 것을 계산 경계에서 막습니다.
+        /// </summary>
+        public int TakeDamage(int rawDamage, bool applyDefending = true)
         {
             int damage = Math.Max(1, rawDamage);
-            if (IsDefending) damage = Math.Max(1, (int)Math.Ceiling(damage * .5f));
+            if (applyDefending && IsDefending) damage = Math.Max(1, (int)Math.Ceiling(damage * .5f));
             CurrentHp = Math.Max(0, CurrentHp - damage);
             return damage;
         }

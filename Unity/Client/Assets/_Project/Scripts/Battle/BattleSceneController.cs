@@ -1566,6 +1566,13 @@ namespace ProjectLimitless.Battle
         private void Defend()
         {
             if (actionPlaying) return;
+            if (statusEffects.GetGaiaWallRemaining(currentActor) > 0)
+            {
+                // 가이아 웰은 공용 방어보다 강한 마도사 전용 생존기입니다. 두 효과를 겹치면 생존력이
+                // 의도보다 커지고 규칙도 읽기 어려워지므로 입력만 거절하고 행동·턴은 그대로 남깁니다.
+                messageText.text = "더 강한 방어 효과가 이미 적용 중이라 방어를 사용할 수 없습니다.";
+                return;
+            }
             currentActor.Defend();
             messageText.text = $"{currentActor.DisplayName}이(가) 방어합니다. 다음 행동 차례까지 받는 피해가 50% 감소합니다.";
             FinishCurrentAction();
@@ -1621,8 +1628,8 @@ namespace ProjectLimitless.Battle
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
-            Func<int> applyImpact = () => target.TakeDamage(statusEffects.ModifyIncomingDamage(target,
-                statusEffects.ModifyOutgoingDamage(actor, actor.Attack)));
+            Func<int> applyImpact = () => statusEffects.ApplyIncomingDamage(target,
+                statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
             Action<int> onImpact = damage =>
             {
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
@@ -1924,6 +1931,21 @@ namespace ProjectLimitless.Battle
         private void SetCommandButtons(bool enabled)
         {
             foreach (Selectable selectable in commandButtons) selectable.interactable = enabled;
+            if (!enabled || defendButton == null) return;
+
+            bool gaiaBlocksDefend = statusEffects.GetGaiaWallRemaining(currentActor) > 0;
+            // interactable=false로 만들면 마우스 클릭과 키보드 Submit이 모두 사라져 차단 이유를 안내할 수
+            // 없습니다. 입력은 Defend()까지 전달하되 색상을 비활성처럼 바꿔 "사용 불가"를 미리 보여 줍니다.
+            ColorBlock colors = ColorBlock.defaultColorBlock;
+            if (gaiaBlocksDefend)
+            {
+                Color unavailable = new Color(.42f, .45f, .5f, 1f);
+                colors.normalColor = unavailable;
+                colors.highlightedColor = unavailable;
+                colors.selectedColor = unavailable;
+                colors.pressedColor = new Color(.36f, .38f, .42f, 1f);
+            }
+            defendButton.colors = colors;
         }
 
         private Button MakeCommandButton(Transform parent, string name, string iconId, string label, Font font, Vector2 anchor, Action action)

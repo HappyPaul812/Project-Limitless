@@ -230,11 +230,11 @@ namespace ProjectLimitless.Battle
                         targetRange: BattleSkillTargetRange.EnemyAll);
                 if (preview.SkillId == MageGaiaWallId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
-                        "대지의 힘으로 자신을 보호합니다.\n다음 2회 행동 동안 받는 피해가 40% 감소합니다.", true,
+                        "대지의 힘으로 자신을 보호합니다.\n다음 2회 행동 동안 받는 피해가 60% 감소합니다.", true,
                         BattleSkillEffectType.SelfDamageReduction, 4, 2,
                         iconId: BattleUiIconCatalog.MageGaiaWallSkill,
                         targetDescription: "대상: 자신",
-                        effectDescription: "효과: 받는 피해 40% 감소",
+                        effectDescription: "효과: 받는 피해 60% 감소",
                         typeDescription: "유형: 자기 보호",
                         durationDescription: "지속: 자신의 다음 2회 행동\n재사용 대기시간: 4턴");
                 return new BattleSkillDefinition(preview.SkillId, preview.SkillName, preview.SkillDescription, false,
@@ -429,14 +429,16 @@ namespace ProjectLimitless.Battle
             gaiaWalls.TryGetValue(target, out GaiaWallState state) ? state.RemainingActions : 0;
 
         /// <summary>
-        /// 가이아 웰은 원시 피해를 먼저 60%로 줄이고, 그 결과를 기존 TakeDamage에 전달합니다. 따라서
-        /// 일반 방어의 50% 계산은 Combatant 안에서 변경 없이 뒤이어 적용됩니다. 두 효과를 합산해 90%로
-        /// 만드는 새 규칙을 발명하지 않고, 독립된 두 보호 효과를 기존 처리 순서대로 곱연산하는 방식입니다.
+        /// 가이아 웰은 공용 방어 50%보다 강한 마도사 전용 생존기이므로 원시 피해의 40%만 받습니다.
+        /// 활성 중에는 방어를 함께 적용하지 않는 확정 규칙에 따라 TakeDamage의 방어 단계를 건너뜁니다.
+        /// UI 차단 외에도 계산 경계에서 중첩을 막아 외부 호출이 있어도 60% 감소만 적용되게 합니다.
         /// </summary>
-        public int ModifyIncomingDamage(Combatant target, int rawDamage)
+        public int ApplyIncomingDamage(Combatant target, int rawDamage)
         {
-            if (rawDamage <= 0 || GetGaiaWallRemaining(target) <= 0) return rawDamage;
-            return (int)Math.Max(1L, ((long)rawDamage * 60L + 99L) / 100L);
+            if (target == null) return 0;
+            if (GetGaiaWallRemaining(target) <= 0) return target.TakeDamage(rawDamage);
+            int reducedDamage = (int)Math.Max(1L, ((long)Math.Max(1, rawDamage) * 40L + 99L) / 100L);
+            return target.TakeDamage(reducedDamage, applyDefending: false);
         }
 
         /// <summary>감전된 행동자의 모든 공격 피해를 85%로 만든 뒤 기존 TakeDamage로 넘길 값입니다.</summary>
@@ -509,7 +511,7 @@ namespace ProjectLimitless.Battle
         {
             remainingTicks = 0;
             if (!HasActiveBurn(target) || !burns.TryGetValue(target, out BurnState burn)) return 0;
-            int damage = target.TakeDamage(ModifyIncomingDamage(target, burn.RawDamagePerTick));
+            int damage = ApplyIncomingDamage(target, burn.RawDamagePerTick);
             burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
             remainingTicks = burn.RemainingTicks;
             if (burn.RemainingTicks == 0 || !target.IsAlive) burns.Remove(target);
@@ -586,7 +588,7 @@ namespace ProjectLimitless.Battle
 
         private int ApplyDamage(Combatant target, int rawDamage)
         {
-            return target.TakeDamage(statusEffects.ModifyIncomingDamage(target, rawDamage));
+            return statusEffects.ApplyIncomingDamage(target, rawDamage);
         }
 
         public bool Execute(Combatant actor, BattleSkillDefinition skill, Formation opponents, out string message)
@@ -920,7 +922,7 @@ namespace ProjectLimitless.Battle
 
         /// <summary>
         /// VFX의 보호막이 완성되는 시점에 자기 자신에게만 상태를 적용합니다. Presenter는 그림만 재생하고
-        /// 실제 2회 지속·40% 계산은 상태 저장소가 담당하므로, 연출 속도를 바꿔도 전투 규칙은 변하지 않습니다.
+        /// 실제 2회 지속·60% 계산은 상태 저장소가 담당하므로, 연출 속도를 바꿔도 전투 규칙은 변하지 않습니다.
         /// </summary>
         public bool ExecuteSelfDamageReduction(Combatant actor, BattleSkillDefinition skill, out string message)
         {
@@ -932,7 +934,7 @@ namespace ProjectLimitless.Battle
             }
 
             statusEffects.ApplyGaiaWall(actor, skill.EffectDuration);
-            message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 40% 감소.";
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 60% 감소.";
             return true;
         }
     }
