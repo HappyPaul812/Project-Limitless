@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-28
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `3af4a50` (`Fix: Wolf 속도와 스킬 팝업 흐름 조정`)
+- 마지막 기능 관련 commit: `95ef972` (`Fix: 전투 연출 중 정보 팝업 억제`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -113,6 +113,7 @@
 - 사수 `동료의 습격`: 전후열 자유 단일 적, 도발 강제 대상 우선, 일반 공격 180%, 사수 행동 기준 3턴 쿨타임
 - 별도 Combatant가 아닌 기본 Wolf가 사수 근처에서 Run 12 FPS+최초 속도의 3/4(570 UI 단위/초) Transform 이동으로 대상 바로 앞까지 달려 타격 후 잠시 정지·제거되며, `BeastCompanionDefinition` 경계로 Bear/Fox 교체 가능
 - 모든 스킬 설명 팝업은 메뉴 Hover/키보드 포커스 중에만 표시하고, 스킬 확정 즉시 공통 경계에서 닫아 대상 선택·연출·행동 종료 뒤 기본 명령 화면까지 숨김 유지
+- 모든 Battle Action의 `actionPlaying` 중 스킬 설명과 캐릭터/상태 상세 팝업을 함께 억제하고 기존 Hover·포커스 대상을 비워, 마우스가 HUD 위에 남아 있어도 공격·회복·Projectile·VFX를 가리지 않음
 - 동료의 습격 버튼은 작은 버튼에서 실루엣이 선명한 Wolf Run 다섯 번째 프레임(index 4) 기반 실제 동물 아이콘을 사용하고 정조준은 기존 Kenney `target.png` 유지. Wolf 경로와 아이콘 프레임 번호는 `BeastCompanionDefinition`에서 제공
 - 투사 `난도`: 기존 근거리 TargetResolver로 적 1명을 선택하고 전진 타격 순간 일반 공격 150% 피해와 자신 기세 +1 적용
 - 기존 근거리 기본 공격 Presenter를 재사용하는 전진→타격·피해 숫자·피격 반응→원위치 복귀→다음 턴 흐름
@@ -222,6 +223,7 @@
 - **동료의 습격 구현**: `BeastCompanionDefinition`·카탈로그, 자유 단일 대상+도발 우선, 180% `TakeDamage`, 3턴 쿨타임과 Wolf Run+이동+도착 타격 구조를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 기존 deprecated API 경고 4개만 있으며 실제 화면 위치·속도·입력 잠금·쿨타임 흐름은 Play Mode 확인이 필요하다.
 - **동료의 습격 Wolf 연출 조정**: 선명한 Wolf Run index 4 실물 프레임 아이콘, 사수 근처 출발, 최초 이동 속도의 3/4, 대상 바로 앞 정지·도착 타격·0.12초 여운 뒤 제거를 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 원본 SpriteSheet는 수정하지 않고 야수 정의가 경로·아이콘 프레임을 제공하며, 대상·180% 피해·도발·3턴 쿨타임 코드는 변경하지 않았다. 실제 아이콘 가독성·간격·체감 속도는 Play Mode 확인이 필요하다.
 - **공통 스킬 설명 팝업 흐름 조정**: 스킬 확정 시 정보 UI를 닫는 공통 경계와 대상 선택·행동 완료 안전 숨김을 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 스킬별 설명 내용·효과·대상·쿨타임은 변경하지 않았으며 실제 Hover/키보드 포커스와 취소 복귀 흐름은 Play Mode 확인이 필요하다.
+- **전투 연출 중 정보 팝업 억제**: `actionPlaying` 화면 갱신에서 스킬 설명·캐릭터 상태 상세 팝업과 기존 Hover/포커스 대상을 함께 정리하고 두 표시 함수의 재오픈을 차단하는 코드를 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. Wolf 570·Run 12 FPS·출발/정지 위치와 모든 전투 계산은 변경하지 않았으며 실제 마우스 잔류·새 Hover 복귀는 Play Mode 확인이 필요하다.
 - **동료의 습격 Run 검증 환경 유지**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 Wolf/Bear/Fox 자산을 보존하고, 실제 Battle과 분리된 `CompanionAssaultRunValidation` Scene을 유지한다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 확인은 남아 있다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
@@ -339,6 +341,7 @@
 108. 사용 직후 재사용 3턴/hourglass_top, 다음 사수 행동마다 2/hourglass→1/hourglass_bottom→0/사용 가능 순서이며 정조준·화살비 쿨타임과 독립인지 확인한다.
 109. 대상 선택 중 Esc/취소가 스킬 메뉴로 복귀하고, 기존 도발·치유의 빛·투사 스킬·Formation·턴 순서·HP HUD·승리/도망/Field 복귀에 회귀와 Console 오류가 없는지 확인한다.
 110. 모든 스킬 메뉴에서 Hover/키보드 포커스 중 설명이 보이고, 스킬 선택 즉시 대상 선택 또는 연출 전에 사라지며 연출 종료·기본 명령 복귀 뒤에도 숨겨졌다가 다음 스킬 메뉴의 새 Hover/포커스에서만 다시 표시되는지 확인한다.
+111. 캐릭터/상태 상세 팝업을 연 채 기본 공격·도발·치유의 빛·정조준·화살비·동료의 습격·난도·회심의 일격·회오리 베기를 시작하면 즉시 닫히고, 마우스를 기존 HUD 위에 계속 둬도 연출 중 재오픈되지 않으며 연출 종료 뒤 새 Hover/포커스에서 다시 열리는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
