@@ -2,9 +2,9 @@
 
 ## 기준
 
-- 갱신일: 2026-08-26
+- 갱신일: 2026-08-28
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `b8115d6` (`Feature: 화살비 2턴 쿨타임 추가`)
+- 마지막 기능 관련 commit: `160080f` (`Feature: 동료의 습격 Run 후보 검증 환경 추가`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `246300e` (`Docs: 전투 설계 규칙 정리`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -214,6 +214,7 @@
 - 화살비 다중 후열 실검증용 프로토타입 적 배치를 전열 1명+후열 2명으로 바꾼 뒤 Unity 전체 `Assembly-CSharp` 참조 컴파일 오류 0개를 확인했다. 전투 계산·범위·연출 코드는 변경하지 않았으며 실제 동시 타격과 후열 전투불능 제외는 Play Mode 확인이 필요하다.
 - 사용자가 Unity Play Mode에서 화살비가 후열 여러 명을 정상 공격하는 것을 확인했다.
 - 화살비 성공 완료 후 2턴 쿨타임 등록과 설명 데이터를 Unity 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 120%·EnemyRearRowAll·golden_arrow 연출은 변경하지 않았고 기존 deprecated API 경고 4개만 있었다. 2→1→사용 가능과 정조준 독립 표시는 Play Mode 확인이 필요하다.
+- **동료의 습격 동물 Run 애니메이션 후보 검증 중**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 출처를 ThirdParty에 보존하고 Wolf/Fox/Bear Run을 실제 전투와 분리된 `CompanionAssaultRunValidation` Scene에서 12 FPS·2배 크기·오른쪽→왼쪽 이동으로 비교하도록 준비했다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 비교가 남아 있다. 실제 `동료의 습격` 피해·대상·턴 기능과 기존 Battle 코드는 변경하지 않았다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
 ## Unity에서 사용자가 직접 확인할 사항
@@ -319,12 +320,15 @@
 97. 다른 아군·적 행동에는 2턴이 유지되고 다음 사수 행동에 1턴/hourglass_bottom, 그다음 사수 행동에 0으로 사라져 다시 사용 가능한지 확인한다.
 98. 화살비 쿨타임 중 정조준이 사용 가능하면 정상 사용되고, 정조준 사용·쿨타임이 화살비 남은 턴을 변경하지 않는지 확인한다.
 99. 후열 0명에서 화살비 거절 후 쿨타임 표시가 생기지 않고 행동이 그대로 유지되는지 확인한다.
+100. `Assets/_Project/Scenes/Validation/CompanionAssaultRunValidation.unity`를 열고 Play 시 Wolf/Fox/Bear가 같은 속도로 오른쪽→왼쪽을 반복하며 픽셀 흐림이나 발 기준점의 불필요한 흔들림 없이 보이는지 확인한다.
+101. `Space` 일시정지, `+/-` Run FPS 조절, `F` 좌우 Flip이 동작하고 Wolf/Fox/Bear의 속도감·타격감·현재 Battle Sprite 표시 크기와의 조화를 직접 비교한다.
+102. 검증 Scene 실행 뒤 기존 `Battle.unity`의 사수 기본 공격·정조준·화살비와 다른 직업 스킬, Formation·대상·턴·승패/도망/Field 복귀에 회귀가 없는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-Unity 16:9 Play Mode에서 화살비 성공 후 재사용 2→다음 사수 행동 1→그다음 사용 가능, hourglass_top/bottom 표시와 정조준 쿨타임 독립을 우선 확인한다. 이어 후열 0명 쿨타임 미발생과 기존 120% 다중 후열 공격·golden_arrow 연출·다른 직업 스킬 회귀를 확인한다.
+Unity 16:9 Play Mode에서 `CompanionAssaultRunValidation` Scene의 Wolf/Fox/Bear를 같은 조건으로 비교하고 `동료의 습격` 최종 동물을 사용자가 선택한다. 현재 정적 분석 1순위는 Wolf지만 코드와 실제 스킬 데이터에는 고정하지 않는다. 선택 뒤 검증용 임시 폴더의 유지/제거 범위를 정하고 실제 피해·대상·턴 연출 설계를 별도 작업으로 진행한다.
 
 ## 갱신 규칙
 
