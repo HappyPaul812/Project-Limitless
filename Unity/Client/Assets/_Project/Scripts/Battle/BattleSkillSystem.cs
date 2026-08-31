@@ -11,6 +11,7 @@ namespace ProjectLimitless.Battle
         None,
         Taunt,
         SingleAllyHeal,
+        AreaAllyHeal,
         SingleRangedPhysicalAttack,
         SingleMeleePhysicalAttackWithMomentumGain,
         SingleMeleePhysicalAttackConsumingMomentum,
@@ -110,6 +111,7 @@ namespace ProjectLimitless.Battle
     {
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
+        public const string HealerHealingWaveId = "healer_healing_wave";
         public const string SharpshooterAimId = "sharpshooter_aim";
         public const string SharpshooterArrowRainId = "sharpshooter_arrow_rain";
         public const string SharpshooterCompanionAssaultId = "sharpshooter_companion_attack";
@@ -119,6 +121,11 @@ namespace ProjectLimitless.Battle
         public const string MageFireballId = "mage_fireball";
         public const string MageThunderboltId = "mage_thunderbolt";
         public const string MageGaiaWallId = "mage_gaia_wall";
+
+        // 광역 회복 수치는 단일 회복의 기준값에서 파생합니다. 치유의 빛이 조정되면 회복의 파동도
+        // 같은 비율로 따라가므로 두 스킬의 밸런스가 서로 다른 숫자로 흩어지지 않습니다.
+        public const float HealingLightMaxHpHealRatio = .35f;
+        public const float HealingWaveOfHealingLightRatio = .6f;
 
         public static IReadOnlyList<BattleSkillDefinition> GetSkills(JobDefinition job)
         {
@@ -139,10 +146,20 @@ namespace ProjectLimitless.Battle
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "살아 있는 아군 1명의 HP를 대상 최대 HP의 35%만큼 회복합니다.\n전투불능 상태의 아군은 대상으로 선택할 수 없습니다.", true,
-                        BattleSkillEffectType.SingleAllyHeal, 0, 0, .35f,
+                        BattleSkillEffectType.SingleAllyHeal, 0, 0, HealingLightMaxHpHealRatio,
                         iconId: BattleUiIconCatalog.HealerHealingLightSkill,
                         targetDescription: "대상: 살아 있는 아군 1명",
                         effectDescription: "회복량: 최대 HP의 35%");
+                if (preview.SkillId == HealerHealingWaveId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "치유사를 중심으로 회복의 파동을 일으켜 살아 있는 아군 전체의 HP를 회복합니다.\n전투불능 아군은 회복하거나 부활시키지 않습니다.", true,
+                        BattleSkillEffectType.AreaAllyHeal, 3, 0,
+                        HealingLightMaxHpHealRatio * HealingWaveOfHealingLightRatio,
+                        iconId: BattleUiIconCatalog.HealerHealingWaveSkill,
+                        targetDescription: "대상: 살아 있는 아군 전체(자신 포함)",
+                        effectDescription: "효과: 치유의 빛 기본 회복량의 60%",
+                        typeDescription: "유형: 광역 회복",
+                        durationDescription: "재사용 대기시간: 3턴");
                 if (preview.SkillId == SharpshooterAimId)
                     // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
                     // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
@@ -652,6 +669,49 @@ namespace ProjectLimitless.Battle
             if (skill.CooldownTurns > 0) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 HP가 {recoveredHp} 회복되었습니다.";
             return true;
+        }
+
+        /// <summary>
+        /// Formation에서 확정한 살아 있는 같은 편 전체를 한 번에 회복합니다. 화면에 보이는 인원 수를
+        /// 전제로 하지 않고 전달받은 목록을 순회하므로 현재 3명뿐 아니라 6명 이상으로 확장해도 같은
+        /// 계산을 사용합니다. HP가 가득 찬 아군은 0 회복으로 남기고, 적어도 한 명의 HP가 실제로
+        /// 증가할 때만 성공으로 처리하여 실패한 사용이 행동이나 쿨타임을 소비하지 않게 합니다.
+        /// </summary>
+        public bool ExecuteAreaAllyHeal(Combatant actor, IReadOnlyList<Combatant> targets,
+            BattleSkillDefinition skill, out IReadOnlyList<int> recoveredAmounts, out string message)
+        {
+            recoveredAmounts = Array.Empty<int>();
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.AreaAllyHeal || targets == null)
+            {
+                message = "회복할 수 있는 살아 있는 아군이 없습니다.";
+                return false;
+            }
+
+            Combatant[] livingAllies = targets
+                .Where(target => target != null && target.IsAlive && target.Side == actor.Side)
+                .ToArray();
+            if (!livingAllies.Any(target => target.CurrentHp < target.MaxHp))
+            {
+                message = "HP를 회복할 수 있는 살아 있는 아군이 없습니다.";
+                return false;
+            }
+
+            int[] results = new int[livingAllies.Length];
+            for (int index = 0; index < livingAllies.Length; index++)
+            {
+                Combatant target = livingAllies[index];
+                // 치유의 빛과 같은 올림 정책입니다. MaxHpHealRatio 자체가 35% × 60%에서 파생되므로
+                // 최대 HP 101이라면 21.21을 올린 22를 요청하고 RecoverHp가 최대 HP를 넘지 않게 막습니다.
+                int requestedHp = Math.Max(1, (int)Math.Ceiling(target.MaxHp * skill.MaxHpHealRatio));
+                results[index] = target.RecoverHp(requestedHp);
+            }
+
+            recoveredAmounts = results;
+            int healedCount = results.Count(amount => amount > 0);
+            int totalRecovered = results.Sum();
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 아군 {healedCount}명의 HP가 총 {totalRecovered} 회복되었습니다.";
+            return healedCount > 0;
         }
 
         /// <summary>

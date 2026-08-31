@@ -843,6 +843,20 @@ namespace ProjectLimitless.Battle
                 RebuildSkillMenu();
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.AreaAllyHeal)
+            {
+                Formation friendlyFormation = currentActor.Side == BattleSide.Allies ? allies : enemies;
+                bool hasRecoverableAlly = friendlyFormation.LivingMembers
+                    .Any(ally => ally.CurrentHp < ally.MaxHp);
+                if (!hasRecoverableAlly)
+                {
+                    // 메뉴를 닫기 전에 거절하므로 행동·턴·쿨타임을 전혀 소비하지 않고, 사용자는 다른
+                    // 스킬을 바로 고를 수 있습니다. 전투불능자는 LivingMembers에 들어오지 않습니다.
+                    messageText.text = "HP를 회복할 수 있는 살아 있는 아군이 없습니다. 행동은 소비되지 않았습니다.";
+                    RebuildSkillMenu();
+                    return;
+                }
+            }
 
             // 여기부터는 정보를 살펴보는 단계가 끝났습니다. 이후 스킬 종류와 관계없이 대상 선택과 연출이
             // 같은 넓은 전장 화면을 사용하도록 메뉴와 상세 팝업을 공통으로 닫습니다.
@@ -850,6 +864,11 @@ namespace ProjectLimitless.Battle
             if (skill.EffectType == BattleSkillEffectType.SingleAllyHeal)
             {
                 BeginSingleAllyHealSelection(skill);
+                return;
+            }
+            if (skill.EffectType == BattleSkillEffectType.AreaAllyHeal)
+            {
+                PlayHealingWave(skill);
                 return;
             }
             if (skill.EffectType == BattleSkillEffectType.SingleRangedPhysicalAttack)
@@ -999,6 +1018,69 @@ namespace ProjectLimitless.Battle
                         string failureMessage = messageText.text;
                         ShowSkillMenu();
                         messageText.text = string.IsNullOrEmpty(failureMessage) ? "치유의 빛을 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
+        /// <summary>
+        /// 같은 편 Formation의 살아 있는 구성원을 배열로 고정한 뒤 중앙 파동 1회와 대상별 회복 이펙트를
+        /// 함께 재생합니다. 특정 파티 슬롯이나 3명이라는 숫자를 사용하지 않으므로 Formation이 수용하는
+        /// 인원이 늘어나도 대상 수만 자연스럽게 증가하며, 연출 시간은 대상 수와 관계없이 동일합니다.
+        /// </summary>
+        private void PlayHealingWave(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation friendlyFormation = actor.Side == BattleSide.Allies ? allies : enemies;
+            Combatant[] targets = friendlyFormation.LivingMembers.ToArray();
+            if (!targets.Any(target => target.CurrentHp < target.MaxHp))
+            {
+                ShowSkillMenu();
+                messageText.text = "HP를 회복할 수 있는 살아 있는 아군이 없습니다. 행동은 소비되지 않았습니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            RectTransform[] targetRects = targets.Select(target => combatantViews[target].ActionRoot).ToArray();
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayHealingWave(
+                actorView.ActionRoot,
+                actorView.SpriteImage,
+                targetRects,
+                battleFont,
+                BattleGaiaWallVisuals.LoadFrames(),
+                LoadProjectileFrames("BattleSkillEffects/RadiantHeal"),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteAreaAllyHeal(
+                        actor, targets, skill, out IReadOnlyList<int> recovered, out string result);
+                    messageText.text = result;
+                    return recovered;
+                },
+                recovered => RefreshCombatantViews(null),
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        // 성공한 광역 회복이 모두 끝난 뒤에만 쿨타임을 등록합니다. 공용 저장소가 참가자와
+                        // Skill ID를 함께 키로 삼고 자신의 행동 시작에만 감소시키는 기존 규칙을 그대로 씁니다.
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "회복의 파동을 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }

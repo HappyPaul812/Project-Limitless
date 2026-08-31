@@ -25,6 +25,7 @@ namespace ProjectLimitless.Battle
         public const string CooldownEnd = "status.cooldown.end";
         public const string GuardianTauntSkill = "skill.guardian.taunt";
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
+        public const string HealerHealingWaveSkill = "skill.healer.healing_wave";
         public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
         public const string SharpshooterArrowRainSkill = "skill.sharpshooter.arrow_rain";
         public const string SharpshooterCompanionAssaultSkill = "skill.sharpshooter.companion_assault";
@@ -61,6 +62,9 @@ namespace ProjectLimitless.Battle
             // 수호자가 누르는 스킬은 pawn_left를 사용해 서로 다른 화면 역할을 구분합니다.
             { GuardianTauntSkill, "KenneyBattleIcons/pawn_left" },
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
+            // 버튼은 Radiant Heal의 가장 밝은 peak 한 장을 고정 그림으로 사용하고, 실제 전투에서는
+            // 같은 계열의 전체 프레임을 별도로 재생합니다.
+            { HealerHealingWaveSkill, string.Empty },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
             // 이 ID는 아래 Load에서 현재 기본 야수 정의가 고른 Run 프레임을 아이콘용 Sprite로 잘라 사용합니다.
@@ -109,6 +113,12 @@ namespace ProjectLimitless.Battle
                     new Rect(frameIndex * beast.FrameWidth, 0f, beast.FrameWidth, runSheet.height),
                     new Vector2(.5f, .5f), beast.FrameWidth, 0, SpriteMeshType.FullRect);
                 if (sprite != null) sprite.name = $"{beast.DisplayName}_CompanionAssault_Icon";
+            }
+            else if (iconId == HealerHealingWaveSkill)
+            {
+                Sprite[] radiantFrames = Resources.LoadAll<Sprite>("BattleSkillEffects/RadiantHeal");
+                System.Array.Sort(radiantFrames, (left, right) => string.CompareOrdinal(left.name, right.name));
+                sprite = radiantFrames.Length == 0 ? null : radiantFrames[Mathf.Min(7, radiantFrames.Length - 1)];
             }
             else if (iconId == MageFireballSkill || iconId == Burn)
             {

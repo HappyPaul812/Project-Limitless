@@ -870,6 +870,98 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 회복의 파동 전체를 하나의 Coroutine으로 재생합니다. 중앙 Arcane Parry는 치유사 위치에서 한 번,
+        /// Radiant Heal은 대상 수만큼 동시에 만들기 때문에 아군이 3명에서 6명 이상으로 늘어나도 연출
+        /// 시간이 길어지지 않습니다. Radiant Heal의 peak에 계산 콜백을 딱 한 번 호출하여 모든 HP와
+        /// Bar가 같은 프레임에 바뀌고, 모든 이펙트가 끝난 뒤에만 완료를 알립니다.
+        /// </summary>
+        public IEnumerator PlayHealingWave(RectTransform actor, Image actorSprite,
+            IReadOnlyList<RectTransform> targets, Font font, Sprite[] waveFrames, Sprite[] healFrames,
+            Func<IReadOnlyList<int>> applyHealing, Action<IReadOnlyList<int>> onImpact, Action onComplete)
+        {
+            if (actor == null || targets == null)
+            {
+                IReadOnlyList<int> fallback = applyHealing == null ? Array.Empty<int>() : applyHealing();
+                onImpact?.Invoke(fallback);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            const float frameDuration = .05f;
+            const int healPeakFrame = 7;
+            Text callout = CreateSkillCallout(actor, font, "회복의 파동!");
+            Color actorOriginalColor = actorSprite == null ? Color.white : actorSprite.color;
+            Image wave = CreateEffectImage(actor, "HealingWaveArcaneParry", waveFrames,
+                new Vector2(180f, 180f), new Vector2(0f, 12f));
+
+            List<Image> heals = new List<Image>();
+            for (int index = 0; index < targets.Count; index++)
+            {
+                RectTransform target = targets[index];
+                if (target == null || healFrames == null || healFrames.Length == 0)
+                {
+                    heals.Add(null);
+                    continue;
+                }
+
+                GameObject effectObject = new GameObject($"RadiantHealWave_{index}", typeof(Image));
+                effectObject.transform.SetParent(target, false);
+                Image image = effectObject.GetComponent<Image>();
+                image.sprite = healFrames[0];
+                image.preserveAspect = true;
+                image.raycastTarget = false;
+                RectTransform rect = image.rectTransform;
+                rect.anchorMin = rect.anchorMax = Vector2.one * .5f;
+                rect.pivot = new Vector2(.5f, 29f / 96f);
+                rect.anchoredPosition = new Vector2(0f, -42f);
+                rect.sizeDelta = new Vector2(78f, 78f);
+                heals.Add(image);
+            }
+
+            int waveCount = waveFrames?.Length ?? 0;
+            int healCount = healFrames?.Length ?? 0;
+            int totalFrames = Mathf.Max(1, Mathf.Max(waveCount, healCount));
+            bool applied = false;
+            for (int frameIndex = 0; frameIndex < totalFrames; frameIndex++)
+            {
+                if (wave != null && waveCount > 0) wave.sprite = waveFrames[Mathf.Min(frameIndex, waveCount - 1)];
+                for (int index = 0; index < heals.Count; index++)
+                    if (heals[index] != null && healCount > 0)
+                        heals[index].sprite = healFrames[Mathf.Min(frameIndex, healCount - 1)];
+
+                if (actorSprite != null)
+                {
+                    float pulse = Mathf.Sin(Mathf.Clamp01((frameIndex + 1f) / totalFrames) * Mathf.PI);
+                    actorSprite.color = Color.Lerp(actorOriginalColor,
+                        new Color(1f, .92f, .55f, actorOriginalColor.a), pulse);
+                }
+
+                if (!applied && frameIndex >= Mathf.Min(healPeakFrame, Mathf.Max(0, healCount - 1)))
+                {
+                    applied = true;
+                    IReadOnlyList<int> recovered = applyHealing == null ? Array.Empty<int>() : applyHealing();
+                    onImpact?.Invoke(recovered);
+                    int count = Mathf.Min(targets.Count, recovered.Count);
+                    for (int index = 0; index < count; index++)
+                        if (recovered[index] > 0)
+                            StartCoroutine(ShowHealingNumber(targets[index], font, recovered[index]));
+                }
+                yield return new WaitForSeconds(frameDuration);
+            }
+
+            if (!applied)
+            {
+                IReadOnlyList<int> recovered = applyHealing == null ? Array.Empty<int>() : applyHealing();
+                onImpact?.Invoke(recovered);
+            }
+            if (wave != null) Destroy(wave.gameObject);
+            foreach (Image heal in heals) if (heal != null) Destroy(heal.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+            if (actorSprite != null) actorSprite.color = actorOriginalColor;
+            onComplete?.Invoke();
+        }
+
         private static Text CreateSkillCallout(RectTransform actor, Font font, string callout)
         {
             if (font == null || string.IsNullOrEmpty(callout)) return null;
