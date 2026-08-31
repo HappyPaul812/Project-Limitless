@@ -642,6 +642,41 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// 철벽 사용 순간 Earth Rupture 20프레임을 발밑에서 한 번만 재생합니다. 암석 그림을 계속 남기면
+        /// 캐릭터와 대상 표식을 가리므로 연출 종료 때 제거하지만, 실제 철벽 상태는 별도 런타임에 남습니다.
+        /// </summary>
+        public IEnumerator PlayIronWall(RectTransform actor, Font font, Sprite[] frames,
+            Action applyEffect, Action onComplete)
+        {
+            if (actor == null || frames == null || frames.Length == 0)
+            {
+                applyEffect?.Invoke();
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(actor, font, "철벽!");
+            Image rocks = CreateEffectImage(actor, "EarthRupture", frames,
+                BattleIronWallVisuals.EffectSize, new Vector2(0f, -34f));
+            bool applied = false;
+            for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
+            {
+                if (rocks != null) rocks.sprite = frames[frameIndex];
+                if (!applied && frameIndex >= BattleIronWallVisuals.PeakFrame)
+                {
+                    applied = true;
+                    // 돌벽이 가장 높이 솟은 peak에서 HUD와 실제 방어 상태를 함께 갱신합니다.
+                    applyEffect?.Invoke();
+                }
+                yield return new WaitForSeconds(BattleIronWallVisuals.FrameDuration);
+            }
+            if (!applied) applyEffect?.Invoke();
+            if (rocks != null) Destroy(rocks.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
         /// 선택한 아군 위치에서 spectral-bloom 16프레임을 한 번 재생합니다. release 프레임에서 전달받은
         /// 정화 함수를 호출해 독·화상·감전 HUD가 빛이 흩어지는 순간 함께 사라집니다. Presenter는 어떤
         /// 상태를 지우는지 알지 않으므로 향후 출혈·저주·마비가 추가되어도 이 연출 코드는 바뀌지 않습니다.

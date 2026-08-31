@@ -937,6 +937,11 @@ namespace ProjectLimitless.Battle
                 PlayMageGaiaWall(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.GuardianIronWall)
+            {
+                PlayGuardianIronWall(skill);
+                return;
+            }
 
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
@@ -1744,12 +1749,60 @@ namespace ProjectLimitless.Battle
                 }));
         }
 
+        /// <summary>
+        /// 철벽은 적이나 아군을 고르는 기술이 아니라 현재 수호자 자신을 보호하므로 대상 선택 단계를 만들지
+        /// 않습니다. VFX가 사라진 뒤에도 실제 상태는 남습니다. 그림은 효과 적용을 알리는 짧은 신호이고,
+        /// 2회 행동 지속은 전투 규칙이 담당해야 프레임 속도가 달라져도 방어 시간이 바뀌지 않기 때문입니다.
+        /// </summary>
+        private void PlayGuardianIronWall(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive) return;
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayIronWall(
+                actorView.ActionRoot, battleFont, BattleIronWallVisuals.LoadFrames(),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteGuardianIronWall(actor, skill, out string result);
+                    messageText.text = result;
+                    RefreshCombatantViews(null);
+                },
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "철벽을 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
         private void Defend()
         {
             if (actionPlaying) return;
-            if (statusEffects.GetGaiaWallRemaining(currentActor) > 0)
+            if (statusEffects.HasStrongerSelfDefense(currentActor))
             {
-                // 가이아 웰은 공용 방어보다 강한 마도사 전용 생존기입니다. 두 효과를 겹치면 생존력이
+                // 가이아 웰과 철벽은 공용 방어보다 강한 직업 전용 생존기입니다. 두 효과를 겹치면 생존력이
                 // 의도보다 커지고 규칙도 읽기 어려워지므로 입력만 거절하고 행동·턴은 그대로 남깁니다.
                 messageText.text = "더 강한 방어 효과가 이미 적용 중이라 방어를 사용할 수 없습니다.";
                 return;
@@ -2123,7 +2176,8 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "burn" ? BattleUiIconCatalog.Burn
                     : marker.Id == "poison" ? BattleUiIconCatalog.Poison
                     : marker.Id == "shock" ? BattleUiIconCatalog.Shock
-                    : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall : null;
+                    : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall
+                    : marker.Id == "iron_wall" ? BattleUiIconCatalog.IronWall : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.
@@ -2176,11 +2230,11 @@ namespace ProjectLimitless.Battle
             foreach (Selectable selectable in commandButtons) selectable.interactable = enabled;
             if (!enabled || defendButton == null) return;
 
-            bool gaiaBlocksDefend = statusEffects.GetGaiaWallRemaining(currentActor) > 0;
+            bool strongerDefenseBlocksDefend = statusEffects.HasStrongerSelfDefense(currentActor);
             // interactable=false로 만들면 마우스 클릭과 키보드 Submit이 모두 사라져 차단 이유를 안내할 수
             // 없습니다. 입력은 Defend()까지 전달하되 색상을 비활성처럼 바꿔 "사용 불가"를 미리 보여 줍니다.
             ColorBlock colors = ColorBlock.defaultColorBlock;
-            if (gaiaBlocksDefend)
+            if (strongerDefenseBlocksDefend)
             {
                 Color unavailable = new Color(.42f, .45f, .5f, 1f);
                 colors.normalColor = unavailable;

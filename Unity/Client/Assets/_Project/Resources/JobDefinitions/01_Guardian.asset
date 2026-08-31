@@ -29,9 +29,9 @@ MonoBehaviour:
     skillType: 방어 / 적 통제
     skillDescription: 5턴 동안 단일 대상 공격이 수호자를 우선하게 하며, 지속 중 받는 피해가 20% 감소합니다. 광역 공격은 영향을 받지 않습니다.
   - skillId: guardian_iron_defense
-    skillName: 철벽 방어
-    skillType: 방어
-    skillDescription: 1턴 동안 받는 피해를 크게 감소시킵니다. 정확한 감소율은 추후 확정합니다.
+    skillName: 철벽
+    skillType: 자기 보호
+    skillDescription: 굳건한 방벽으로 몸을 지켜 받는 피해를 70% 감소시킵니다. 자신의 다음 2회 행동 동안 지속되며 공용 방어와 중첩되지 않습니다.
   - skillId: guardian_intercept
     skillName: 대신 막기
     skillType: 보호

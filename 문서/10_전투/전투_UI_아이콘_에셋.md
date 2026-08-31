@@ -40,6 +40,8 @@
 | 치유사 정화 | PVFX Foundry `spectral-bloom` grid peak index 5 런타임 Sprite | `skill.healer.cleanse` |
 | 마도사 가이아 웰 | Board Game Icons `PNG/Default (64px)/dice_shield.png` | `skill.mage.gaia_wall` |
 | 가이아 웰 상태 | 스킬과 같은 `dice_shield.png` | `status.gaia_wall` |
+| 수호자 철벽 | Board Game Icons `PNG/Default (64px)/structure_wall.png` | `skill.guardian.iron_wall` |
+| 철벽 상태 | 스킬과 같은 `structure_wall.png` | `status.guardian.iron_wall` |
 
 파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
@@ -56,6 +58,8 @@
 정화 버튼과 상세 팝업은 PVFX Foundry 0.3.0 CC0 `spectral-bloom/grid/sprite-sheet.png`의 peak index 5를 고정 Sprite로 사용한다. 실제 정화 연출은 같은 원본의 16프레임 전체를 20 FPS로 재생하고 release index 7에서 상태를 제거하므로, 고정 UI 아이콘과 재생용 Animation이 서로 영향을 주지 않는다. 원본 ZIP은 수정하지 않고 `Assets/_Project/Resources/BattleSkillEffects/SpectralBloom/`의 프로젝트용 사본을 런타임 분할한다.
 
 가이아 웰은 기본 방어 명령의 큰 외곽선 `shield.png`와 혼동을 줄이기 위해 같은 CC0 Board Game Icons 팩에 실제 존재하는 작은 채움형 방패 `dice_shield.png`를 사용한다. HUD에는 아이콘과 `가이아 2/1` 한글을 함께 표시해 모양이나 색상만으로 상태를 구분하지 않는다.
+
+철벽은 같은 CC0 Board Game Icons 팩의 실제 성벽 실루엣 `structure_wall.png`를 버튼과 상태 HUD에 함께 사용한다. 공용 방어 `shield.png`, 가이아 웰 `dice_shield.png`와 형태를 구분하고 `철벽 2/1` 한글을 함께 표시한다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 

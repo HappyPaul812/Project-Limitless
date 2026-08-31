@@ -21,6 +21,7 @@ namespace ProjectLimitless.Battle
         SingleMagicAttackWithBurn,
         AreaMagicAttackWithShock,
         SelfDamageReduction,
+        GuardianIronWall,
         RemoveAllHarmfulStatuses
     }
 
@@ -111,6 +112,7 @@ namespace ProjectLimitless.Battle
     public static class BattleSkillCatalog
     {
         public const string GuardianTauntId = "guardian_taunt";
+        public const string GuardianIronWallId = "guardian_iron_defense";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string HealerHealingWaveId = "healer_healing_wave";
         public const string HealerCleanseId = "healer_cleanse";
@@ -143,6 +145,15 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 적 전체",
                         effectDescription: "효과: 단일 적대 행동의 대상 강제",
                         durationDescription: "지속: 각 적의 다음 2회 행동");
+                if (preview.SkillId == GuardianIronWallId)
+                    return new BattleSkillDefinition(preview.SkillId, "철벽",
+                        "굳건한 방벽으로 몸을 지켜 받는 피해를 크게 줄입니다.", true,
+                        BattleSkillEffectType.GuardianIronWall, 4, 2,
+                        iconId: BattleUiIconCatalog.GuardianIronWallSkill,
+                        targetDescription: "대상: 자신",
+                        effectDescription: "효과: 받는 피해 70% 감소",
+                        typeDescription: "유형: 자기 보호",
+                        durationDescription: "지속: 자신의 다음 2회 행동\n재사용 대기시간: 4턴\n공용 방어와 중첩 불가");
                 if (preview.SkillId == HealerHealingLightId)
                     // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
@@ -415,6 +426,12 @@ namespace ProjectLimitless.Battle
             public bool IgnoreCurrentActionCompletion;
         }
 
+        private sealed class IronWallState
+        {
+            public int RemainingActions;
+            public bool IgnoreCurrentActionCompletion;
+        }
+
         private sealed class PoisonState
         {
             public int RemainingActions;
@@ -423,6 +440,7 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>();
+        private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>();
         private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>();
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
@@ -475,6 +493,27 @@ namespace ProjectLimitless.Battle
             gaiaWalls.TryGetValue(target, out GaiaWallState state) ? state.RemainingActions : 0;
 
         /// <summary>
+        /// 철벽은 수호자 자신에게만 붙는 전문 방어 상태입니다. 공용 방어보다 강한 이유는 아군의 공격을
+        /// 받아내는 탱커가 위험한 순간을 버티는 직업 고유 선택지이기 때문이며, 대신 4턴 재사용 제한을 둡니다.
+        /// 사용한 현재 행동은 "다음 2회 행동"에 포함하지 않아 처음부터 철벽 2를 온전히 보장합니다.
+        /// </summary>
+        public void ApplyIronWall(Combatant target, int protectedActions)
+        {
+            if (target == null || !target.IsAlive || protectedActions <= 0) return;
+            ironWalls[target] = new IronWallState
+            {
+                RemainingActions = protectedActions,
+                IgnoreCurrentActionCompletion = true
+            };
+        }
+
+        public int GetIronWallRemaining(Combatant target) => target != null && target.IsAlive &&
+            ironWalls.TryGetValue(target, out IronWallState state) ? state.RemainingActions : 0;
+
+        public bool HasStrongerSelfDefense(Combatant target) =>
+            GetGaiaWallRemaining(target) > 0 || GetIronWallRemaining(target) > 0;
+
+        /// <summary>
         /// 가이아 웰은 공용 방어 50%보다 강한 마도사 전용 생존기이므로 원시 피해의 40%만 받습니다.
         /// 활성 중에는 방어를 함께 적용하지 않는 확정 규칙에 따라 TakeDamage의 방어 단계를 건너뜁니다.
         /// UI 차단 외에도 계산 경계에서 중첩을 막아 외부 호출이 있어도 60% 감소만 적용되게 합니다.
@@ -482,6 +521,14 @@ namespace ProjectLimitless.Battle
         public int ApplyIncomingDamage(Combatant target, int rawDamage)
         {
             if (target == null) return 0;
+            if (GetIronWallRemaining(target) > 0)
+            {
+                // 철벽 70%와 공용 방어 50%를 곱하면 의도보다 지나치게 강해지고 UI 설명과 실제 결과도
+                // 달라집니다. 따라서 원시 피해의 30%만 기존 올림·최소 1 규칙으로 계산한 뒤,
+                // TakeDamage에는 공용 방어를 적용하지 말라고 알려 언제나 10→3 한 번만 감소시킵니다.
+                int ironWallDamage = (int)Math.Max(1L, ((long)Math.Max(1, rawDamage) * 30L + 99L) / 100L);
+                return target.TakeDamage(ironWallDamage, applyDefending: false);
+            }
             if (GetGaiaWallRemaining(target) <= 0) return target.TakeDamage(rawDamage);
             int reducedDamage = (int)Math.Max(1L, ((long)Math.Max(1, rawDamage) * 40L + 99L) / 100L);
             return target.TakeDamage(reducedDamage, applyDefending: false);
@@ -503,16 +550,33 @@ namespace ProjectLimitless.Battle
             if (actor == null) return;
             shockedTargets.Remove(actor);
 
-            if (!gaiaWalls.TryGetValue(actor, out GaiaWallState gaia)) return;
-            if (gaia.IgnoreCurrentActionCompletion)
+            if (gaiaWalls.TryGetValue(actor, out GaiaWallState gaia))
             {
-                gaia.IgnoreCurrentActionCompletion = false;
+                if (gaia.IgnoreCurrentActionCompletion)
+                    gaia.IgnoreCurrentActionCompletion = false;
+                else
+                {
+                    // 공격·스킬 등 무엇을 선택했든 마도사 자신의 행동 기회 하나를 마쳤을 때만 2→1→제거합니다.
+                    gaia.RemainingActions = Math.Max(0, gaia.RemainingActions - 1);
+                    if (gaia.RemainingActions == 0) gaiaWalls.Remove(actor);
+                }
+            }
+            CompleteIronWallAction(actor);
+        }
+
+        private void CompleteIronWallAction(Combatant actor)
+        {
+            if (!ironWalls.TryGetValue(actor, out IronWallState ironWall)) return;
+            if (ironWall.IgnoreCurrentActionCompletion)
+            {
+                ironWall.IgnoreCurrentActionCompletion = false;
                 return;
             }
 
-            // 공격·스킬 등 무엇을 선택했든 마도사 자신의 행동 기회 하나를 마쳤을 때만 2→1→제거합니다.
-            gaia.RemainingActions = Math.Max(0, gaia.RemainingActions - 1);
-            if (gaia.RemainingActions == 0) gaiaWalls.Remove(actor);
+            // 전체 라운드가 아니라 수호자 자신의 행동 횟수를 기준으로 해야 파티·적 수가 늘어나도 실제로
+            // 두 번의 선택 기회를 같은 보호 아래 사용할 수 있습니다. 다른 참가자의 행동은 이 키를 건드리지 않습니다.
+            ironWall.RemainingActions = Math.Max(0, ironWall.RemainingActions - 1);
+            if (ironWall.RemainingActions == 0) ironWalls.Remove(actor);
         }
 
         /// <summary>전투불능 참가자는 다음 행동이 없으므로 화면과 저장소 양쪽에서 상태를 즉시 제거합니다.</summary>
@@ -526,6 +590,7 @@ namespace ProjectLimitless.Battle
                 burns.Remove(dead);
                 shockedTargets.Remove(dead);
                 gaiaWalls.Remove(dead);
+                ironWalls.Remove(dead);
                 poisons.Remove(dead);
             }
         }
@@ -1135,6 +1200,21 @@ namespace ProjectLimitless.Battle
 
             statusEffects.ApplyGaiaWall(actor, skill.EffectDuration);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 60% 감소.";
+            return true;
+        }
+
+        /// <summary>Earth Rupture의 방벽이 솟는 시점에 철벽 상태만 적용합니다. 도발은 별도 저장소이므로 유지됩니다.</summary>
+        public bool ExecuteGuardianIronWall(Combatant actor, BattleSkillDefinition skill, out string message)
+        {
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.GuardianIronWall)
+            {
+                message = "철벽을 자신에게 적용할 수 없습니다.";
+                return false;
+            }
+
+            statusEffects.ApplyIronWall(actor, skill.EffectDuration);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 70% 감소.";
             return true;
         }
     }

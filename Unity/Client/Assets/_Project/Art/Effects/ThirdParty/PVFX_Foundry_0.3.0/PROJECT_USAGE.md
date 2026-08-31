@@ -16,6 +16,7 @@
 - 마도사 `썬더볼트`: `electric-impact` grid 96×96 14프레임을 20 FPS로 적 전체 위치에서 거의 동시에 재생
 - `electric-impact`의 `marker.peak` index 1에서 전체 90% 피해와 감전 1을 적용하며, 버튼은 같은 index 1 고정 Sprite 사용
 - 마도사 `가이아 웰`: `arcane-parry` grid 96×96 16프레임을 20 FPS로 마도사 자신 위치에서 재생하고 `marker.peak` index 8에서 자기 보호 상태 적용
+- 수호자 `철벽`: `earth-rupture` grid 96×96 20프레임을 20 FPS로 수호자 발밑에서 한 번 재생하고 `marker.peak` index 9에서 자기 보호 상태 적용. VFX 종료 뒤 암석 이미지는 제거하고 실제 상태는 다음 2회 행동 동안 별도로 유지
 - 독 상태 아이콘: `venom-ward` grid 96×96 16프레임 중 index 6을 고정 Sprite로 사용
 - 독 행동 종료 틱: `acid-splash` grid 14프레임 중 접촉·확산 index 3~8만 52×52, 20 FPS로 짧게 재생
 - 독 Resources 사본 SHA-256: `venom_ward_sheet.png`=`C1BF19FDCFCBC917623ADAFE3A12D38FBFC914BBE7DE228B26CBE946DB1808EF`, `acid_splash_sheet.png`=`6698DDF555D7FFD7C865F9219DDC0A69064264AE3ABEE327E91AA27A4687F4CD`
