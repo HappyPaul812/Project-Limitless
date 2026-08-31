@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-08-31
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `3fc172f` (`Feature: 치유사 회복의 파동 구현`)
+- 마지막 기능 관련 commit: `19179f4` (`Feature: Field와 Battle에 독침벌 추가`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -64,6 +64,8 @@
 - 독 몬스터 후보 원본 보존: Pilot Bee(CC BY, 라이선스 버전 표기 충돌 기록)·2D Spider(CC0)·Simple Green Snake(CC0). 벌은 Field_01 1순위, 거미는 숲/동굴·Field_02 이후, 뱀은 숲/습지·Field_03 이후 후보이며 실제 몬스터·독·정화는 미구현
 - Pilot Bee 검증 Scene: Idle 238×215×10·Attack 315×253×10·기본 우향 구조를 런타임 분할하고 현재 초원 슬라임과 나란히 비교. Point Filter·무압축·투명·Read/Write 검증 복사본과 기본 Scale 0.85 제공, Field/Battle 미연결
 - Pilot Bee 검증 Scene 입력을 새 Input System의 null 안전 `Keyboard.current` 방식으로 수정하고 메인 키보드·Numpad +/-를 지원. Scene 전용 직교 Main Camera를 연결해 `No cameras rendering` 표시 제거
+- Field_01에 데이터 기반 독침벌 3개 스폰(`venom_bee_01`~`03`)을 추가해 기존 초원 슬라임 5개와 총 8개 배치. 공용 설치기·배회·접촉 조우·개별 30초 리스폰·도망 유지·2초 재조우 유예 재사용
+- `02_VenomBee` MonsterDefinition이 Pilot Bee Idle/Attack 시트 구조와 Scale 0.85를 Field/Battle에 공통 제공. 런타임 분할 재생으로 원본 PNG를 수정하지 않으며 독 상태이상은 아직 미구현
 
 ### 1차 턴제 전투
 
@@ -102,6 +104,7 @@
 - 사수 기본 공격의 짧은 조준, 재사용 가능한 UI Projectile 이동, 도착 시 피해·피격 연출과 다음 턴 연결
 - 마도사·치유사 기본 공격의 짧은 캐스팅과 Projectile, Fireball·밝은 금빛 구체 시각 구분
 - 필드 Animator 현재 상태와 분리된 전투 Sprite 해석기, 아군 Left Idle·적 Right Idle 진입 및 공격 후 복구
+- 전투 적 구성을 전열 초원 슬라임 A/B와 후열 독침벌 1로 변경. 독침벌은 원본 우향 Idle을 반복하고 기본 공격 중 Attack 10프레임으로 전환한 뒤 Idle 복귀, 피해 계산은 기존 적 기본 공격 유지
 - CC0 Polar_34 - Projectiles 원본 GIF 보존, 32×32 PNG Sprite 프레임 변환 및 사수 golden arrow·마도사 fireball 기본 공격 적용
 - 시작·목표 X 좌표 비교 기반 공용 Projectile 좌우 반전과 GIF 프레임 지연 재생
 - PVFX Foundry 0.3.0 CC0 원본·라이선스 보존, Magical Projectile travel 5프레임을 치유사 기본 공격에 적용
@@ -390,12 +393,16 @@
 134. 가이아 웰이 다른 아군 피해를 줄이거나 도발 대상을 바꾸지 않고, 마도사 전투불능 시 `가이아 n` HUD·상세 상태가 즉시 제거되는지 확인한다.
 135. 사용 직후 재사용 4턴 표시가 생기고 다음 마도사 행동 시작마다 3→2→1→0으로 감소하며, 쿨타임 중 다시 사용할 수 없고 다른 참가자 행동에는 감소하지 않는지 확인한다.
 136. 연출 중 입력과 두 정보 팝업이 억제되고 완료 후 다음 턴이 한 번만 진행되며, 기존 파이어 볼/화상·썬더볼트/감전·도발·치유·사수/투사 스킬·승리/도망/Field 복귀에 회귀가 없는지 확인한다.
+137. Field_01에서 기존 초원 슬라임 5마리와 독침벌 3마리, 총 8마리가 서로 과도하게 겹치지 않고 Bounds 안에서 배회하며 독침벌 Idle 날갯짓과 Scale 0.85가 자연스러운지 확인한다.
+138. 각 독침벌과 접촉해 Battle로 진입하고 전열 초원 슬라임 A/B·후열 독침벌 1 배치, 이름·HP HUD·대상 판정과 독침벌 우향 Idle 반복을 확인한다.
+139. 독침벌 기본 공격에서 실제 Attack 시트가 재생되고 공격 완료 뒤 Idle로 복귀하며, 피해량과 턴 진행은 기존 적 기본 공격 규칙이고 독 상태가 생기지 않는지 확인한다.
+140. 독침벌 조우 승리 시 접촉한 필드 스폰만 사라졌다 30초 뒤 자기 시작 위치에 리스폰하고, 도망 시 제거되지 않으며 복귀 직후 2초 재조우 유예가 유지되는지 확인한다.
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
 ## 다음 권장 작업
 
-다음 권장 작업은 `PilotBeeComparisonValidation.unity` Play Mode에서 Input System 예외와 `No cameras rendering` 표시가 사라졌는지 확인하고, 초원 슬라임 대비 Pilot Bee 기본 Scale 0.85, 픽셀 밀도·색감과 Idle/Attack 자연스러움을 판단하는 것이다. 채택 전까지 실제 Field_01 몬스터·독 수치·정화 기능은 구현하지 않는다. 이어 치유사 `회복의 파동`과 마도사 상태 스킬의 Play Mode 통합 검증을 진행한다.
+다음 권장 작업은 Field_01 Play Mode에서 총 8개 스폰의 위치·배회·조우와 독침벌 개별 승리/도망/30초 리스폰을 확인하고, Battle에서 전열 슬라임 2+후열 독침벌 1 배치와 Idle→Attack→Idle 복귀를 검증하는 것이다. 이후 별도 기획에서 독침 공격의 피해·지속시간을 확정하고 치유사 정화와 함께 구현한다.
 
 ## 갱신 규칙
 
