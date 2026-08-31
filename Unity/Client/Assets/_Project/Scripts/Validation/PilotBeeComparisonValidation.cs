@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace ProjectLimitless.Validation
@@ -42,16 +43,27 @@ namespace ProjectLimitless.Validation
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space)) paused = !paused;
-            if (Input.GetKeyDown(KeyCode.A))
+            // 이 프로젝트는 새 Input System만 사용하므로 legacy UnityEngine.Input을 호출하면
+            // Player 설정과 충돌해 매 프레임 InvalidOperationException이 발생합니다.
+            // 새 Input System은 현재 연결된 키보드를 Keyboard.current로 읽으며, 키보드가 없는
+            // 환경도 있을 수 있으므로 null일 때는 입력만 건너뛰고 애니메이션은 계속 갱신합니다.
+            Keyboard keyboard = Keyboard.current;
+            if (keyboard != null)
             {
-                attackPlaying = !attackPlaying;
-                elapsed = 0f;
+                if (keyboard.spaceKey.wasPressedThisFrame) paused = !paused;
+                if (keyboard.aKey.wasPressedThisFrame)
+                {
+                    attackPlaying = !attackPlaying;
+                    elapsed = 0f;
+                }
+
+                // 메인 키보드의 +/-는 각각 Equals/Minus 키로 들어오며,
+                // 숫자 키패드가 있는 키보드는 별도의 NumpadPlus/NumpadMinus 키로 처리합니다.
+                if (keyboard.equalsKey.wasPressedThisFrame || keyboard.numpadPlusKey.wasPressedThisFrame)
+                    beeScale = Mathf.Min(1.5f, beeScale + .05f);
+                if (keyboard.minusKey.wasPressedThisFrame || keyboard.numpadMinusKey.wasPressedThisFrame)
+                    beeScale = Mathf.Max(.3f, beeScale - .05f);
             }
-            if (Input.GetKeyDown(KeyCode.Equals) || Input.GetKeyDown(KeyCode.KeypadPlus))
-                beeScale = Mathf.Min(1.5f, beeScale + .05f);
-            if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
-                beeScale = Mathf.Max(.3f, beeScale - .05f);
 
             if (!paused) elapsed += Time.unscaledDeltaTime;
             int frameIndex = Mathf.FloorToInt(elapsed * FramesPerSecond);
