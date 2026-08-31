@@ -28,6 +28,7 @@ namespace ProjectLimitless.Battle
             public Text TargetArrow;
             public Text TurnMarker;
             public bool UsesPlaceholderVisual;
+            public MonsterSpriteSheetAnimation MonsterAnimation;
         }
 
         /// <summary>
@@ -141,11 +142,11 @@ namespace ProjectLimitless.Battle
 
             allies = new Formation(BattleSide.Allies);
             enemies = new Formation(BattleSide.Enemies);
-            MonsterDefinition monster = BattleEncounterContext.Monster ?? Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").FirstOrDefault();
-            string monsterId = monster == null ? "grass_slime" : monster.MonsterId;
-            string monsterName = monster == null ? "초원 슬라임" : monster.DisplayName;
+            MonsterDefinition[] monsterDefinitions = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions");
+            MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
+            MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
             BattleEncounterSetup setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
-                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, monsterId, monsterName);
+                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, slime, venomBee);
 
             Dictionary<string, JobDefinition> jobs = Resources.LoadAll<JobDefinition>("JobDefinitions")
                 .ToDictionary(item => item.JobId, StringComparer.Ordinal);
@@ -236,13 +237,29 @@ namespace ProjectLimitless.Battle
             SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 7));
             BattleParticipantSetup setup = participantSetups[combatant];
             Sprite sprite = setup.VisualType == BattleParticipantVisualType.Player ? BattleEncounterContext.PlayerBattleSprite
-                : setup.VisualType == BattleParticipantVisualType.EncounterMonster ? BattleEncounterContext.MonsterBattleSprite : null;
+                : setup.VisualType == BattleParticipantVisualType.EncounterMonster
+                    ? BattleVisualResolver.ResolveMonsterIdleSprite(setup.MonsterDefinition, BattleEncounterContext.MonsterBattleSprite)
+                    : null;
             bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
             spriteImage.sprite = sprite;
             spriteImage.preserveAspect = true;
             // Sprite를 HitArea 중앙보다 조금 아래에 두어 위쪽 StatusAnchor와 시각적으로 분리합니다.
-            SetRect(spriteImage.rectTransform, new Vector2(.5f, .45f), placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies ? new Vector2(112, 126) : new Vector2(136, 112));
+            Vector2 displaySize = placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies
+                ? new Vector2(112, 126) : new Vector2(136, 112);
+            if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
+                displaySize *= setup.MonsterDefinition.VisualScale;
+            SetRect(spriteImage.rectTransform, new Vector2(.5f, .45f), displaySize);
+            MonsterSpriteSheetAnimation monsterAnimation = null;
+            if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
+            {
+                monsterAnimation = spriteImage.gameObject.AddComponent<MonsterSpriteSheetAnimation>();
+                monsterAnimation.Configure(spriteImage, setup.MonsterDefinition);
+                // 적은 화면 왼쪽에서 오른쪽의 아군을 바라봅니다. Pilot Bee 원본이 우향이므로 그대로 두고,
+                // 반대 방향 원본인 새 몬스터만 X축을 런타임에 뒤집어 별도 PNG를 만들지 않습니다.
+                float direction = setup.MonsterDefinition.SourceFacesRight ? 1f : -1f;
+                spriteImage.rectTransform.localScale = new Vector3(direction, 1f, 1f);
+            }
             if (placeholder)
             {
                 AddOutline(spriteImage.gameObject, gold, 2);
@@ -278,7 +295,9 @@ namespace ProjectLimitless.Battle
             AddTrigger(trigger, EventTriggerType.Select, _ => OnCombatantFocused(combatant));
             AddTrigger(trigger, EventTriggerType.Deselect, _ => OnCombatantFocusLost(combatant));
 
-            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder };
+            // 공용 시트 재생기는 Configure 시점에 첫 Idle 프레임을 넣으므로, 최초 지역 변수보다
+            // 실제 Image에 표시된 프레임을 복귀 기준으로 보관해야 Attack 뒤 그림이 비지 않습니다.
+            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = spriteImage.sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder, MonsterAnimation = monsterAnimation };
             return view;
         }
 
@@ -1719,11 +1738,16 @@ namespace ProjectLimitless.Battle
             };
             Action onComplete = () =>
             {
+                actorView.MonsterAnimation?.StopAttackAndReturnToIdle();
                 RestoreBattleIdle(actorView);
                 RestoreBattleIdle(targetView);
                 actionPlaying = false;
                 FinishCurrentAction();
             };
+
+            // 독침벌처럼 Attack 시트를 가진 몬스터만 실제 공격 프레임으로 전환합니다.
+            // 피해 계산과 이동 연출은 기존 Presenter가 그대로 담당하므로 독 효과를 미리 만들지 않습니다.
+            actorView.MonsterAnimation?.PlayAttack();
 
             if (actor.BasicRange == TargetRangeType.RangedPhysical)
             {

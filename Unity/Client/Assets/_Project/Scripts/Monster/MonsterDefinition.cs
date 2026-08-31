@@ -24,6 +24,20 @@ namespace ProjectLimitless.Monster
         [SerializeField] private RuntimeAnimatorController fieldAnimatorController;
         [SerializeField] private Color placeholderColor = new Color(.35f, .8f, .35f, 1f);
         [SerializeField] private Vector2 visualSize = new Vector2(.8f, .65f);
+        [Header("공용 SpriteSheet Animation")]
+        // 같은 시트 정보를 Field와 Battle이 함께 읽습니다. 한 곳에서 프레임 구조를 고치면 두 화면이
+        // 함께 바뀌므로 Scene마다 경로나 프레임 수를 다시 적다가 서로 달라지는 문제를 막습니다.
+        [SerializeField] private Texture2D idleSpriteSheet;
+        [SerializeField] private Vector2Int idleFrameSize;
+        [SerializeField, Min(1)] private int idleColumns = 1;
+        [SerializeField, Min(1)] private int idleFrameCount = 1;
+        [SerializeField] private Texture2D attackSpriteSheet;
+        [SerializeField] private Vector2Int attackFrameSize;
+        [SerializeField, Min(1)] private int attackColumns = 1;
+        [SerializeField, Min(1)] private int attackFrameCount = 1;
+        [SerializeField, Min(1f)] private float animationFramesPerSecond = 10f;
+        [SerializeField, Min(.1f)] private float visualScale = 1f;
+        [SerializeField] private bool sourceFacesRight = true;
 
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
@@ -34,5 +48,17 @@ namespace ProjectLimitless.Monster
         public RuntimeAnimatorController FieldAnimatorController => fieldAnimatorController;
         public Color PlaceholderColor => placeholderColor;
         public Vector2 VisualSize => visualSize;
+        public Texture2D IdleSpriteSheet => idleSpriteSheet;
+        public Vector2Int IdleFrameSize => idleFrameSize;
+        public int IdleColumns => Mathf.Max(1, idleColumns);
+        public int IdleFrameCount => Mathf.Max(1, idleFrameCount);
+        public Texture2D AttackSpriteSheet => attackSpriteSheet;
+        public Vector2Int AttackFrameSize => attackFrameSize;
+        public int AttackColumns => Mathf.Max(1, attackColumns);
+        public int AttackFrameCount => Mathf.Max(1, attackFrameCount);
+        public float AnimationFramesPerSecond => Mathf.Max(1f, animationFramesPerSecond);
+        public float VisualScale => Mathf.Max(.1f, visualScale);
+        public bool SourceFacesRight => sourceFacesRight;
+        public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0;
     }
 }

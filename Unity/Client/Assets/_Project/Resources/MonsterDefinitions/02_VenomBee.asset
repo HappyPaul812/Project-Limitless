@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: 02_VenomBee
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: venom_bee
+  displayName: "\uB3C5\uCE68\uBC8C"
+  fieldMoveSpeed: 0.8
+  minimumIdleTime: 0.6
+  maximumIdleTime: 1.5
+  fieldSprite: {fileID: 0}
+  fieldAnimatorController: {fileID: 0}
+  placeholderColor: {r: 0.9, g: 0.7, b: 0.15, a: 1}
+  visualSize: {x: 0.85, y: 0.75}
+  idleSpriteSheet: {fileID: 2800000, guid: 24000000000000000000000000000004, type: 3}
+  idleFrameSize: {x: 238, y: 215}
+  idleColumns: 8
+  idleFrameCount: 10
+  attackSpriteSheet: {fileID: 2800000, guid: 24000000000000000000000000000005, type: 3}
+  attackFrameSize: {x: 315, y: 253}
+  attackColumns: 10
+  attackFrameCount: 10
+  animationFramesPerSecond: 10
+  visualScale: 0.85
+  sourceFacesRight: 1

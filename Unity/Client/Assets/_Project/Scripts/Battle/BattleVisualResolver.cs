@@ -1,4 +1,5 @@
 using UnityEngine;
+using ProjectLimitless.Monster;
 
 namespace ProjectLimitless.Battle
 {
@@ -32,6 +33,18 @@ namespace ProjectLimitless.Battle
             Sprite idleSprite = renderer.sprite;
             UnityEngine.Object.Destroy(sampleObject);
             return idleSprite != null ? idleSprite : fallbackSprite;
+        }
+
+        /// <summary>
+        /// MonsterDefinition의 공용 시트 몬스터는 재생기가 곧 첫 Idle 프레임을 지정하므로 fallback을 사용하고,
+        /// 기존 방향별 Animator 몬스터는 EnemyIdleState를 평가합니다. 전투 화면이 몬스터 ID나 경로를 몰라도 됩니다.
+        /// </summary>
+        public static Sprite ResolveMonsterIdleSprite(MonsterDefinition monster, Sprite encounterFallback)
+        {
+            if (monster == null) return encounterFallback;
+            if (monster.UsesSpriteSheetAnimation) return monster.FieldSprite;
+            return ResolveIdleSprite(monster.FieldAnimatorController, EnemyIdleState,
+                monster.FieldSprite != null ? monster.FieldSprite : encounterFallback);
         }
     }
 }

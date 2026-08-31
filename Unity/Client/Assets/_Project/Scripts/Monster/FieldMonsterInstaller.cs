@@ -74,7 +74,14 @@ namespace ProjectLimitless.Monster
             SpriteRenderer renderer = visual.AddComponent<SpriteRenderer>();
             Animator animator = null;
             renderer.sortingOrder = 3;
-            if (monster.FieldSprite != null)
+            if (monster.UsesSpriteSheetAnimation)
+            {
+                // Field의 개체는 스폰 데이터가 만들지만 외형은 MonsterDefinition에서 읽습니다.
+                // 같은 독침벌 정의를 세 스폰과 Battle이 공유해도 각 개체의 위치·리스폰 상태는 서로 독립입니다.
+                visual.transform.localScale = Vector3.one * monster.VisualScale;
+                visual.AddComponent<MonsterSpriteSheetAnimation>().Configure(renderer, monster);
+            }
+            else if (monster.FieldSprite != null)
             {
                 renderer.sprite = monster.FieldSprite;
                 if (monster.FieldAnimatorController != null)
