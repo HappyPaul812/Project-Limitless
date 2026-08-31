@@ -26,6 +26,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntSkill = "skill.guardian.taunt";
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
         public const string HealerHealingWaveSkill = "skill.healer.healing_wave";
+        public const string HealerCleanseSkill = "skill.healer.cleanse";
         public const string SharpshooterAimSkill = "skill.sharpshooter.aim";
         public const string SharpshooterArrowRainSkill = "skill.sharpshooter.arrow_rain";
         public const string SharpshooterCompanionAssaultSkill = "skill.sharpshooter.companion_assault";
@@ -66,6 +67,8 @@ namespace ProjectLimitless.Battle
             // 버튼은 Radiant Heal의 가장 밝은 peak 한 장을 고정 그림으로 사용하고, 실제 전투에서는
             // 같은 계열의 전체 프레임을 별도로 재생합니다.
             { HealerHealingWaveSkill, string.Empty },
+            // spectral-bloom Peak index 5는 버튼용 고정 그림입니다. 실제 정화는 별도의 16프레임 배열을 재생합니다.
+            { HealerCleanseSkill, string.Empty },
             { SharpshooterAimSkill, "KenneyBattleIcons/target" },
             { SharpshooterArrowRainSkill, "KenneyBattleIcons/bow" },
             // 이 ID는 아래 Load에서 현재 기본 야수 정의가 고른 Run 프레임을 아이콘용 Sprite로 잘라 사용합니다.
@@ -121,6 +124,10 @@ namespace ProjectLimitless.Battle
                 Sprite[] radiantFrames = Resources.LoadAll<Sprite>("BattleSkillEffects/RadiantHeal");
                 System.Array.Sort(radiantFrames, (left, right) => string.CompareOrdinal(left.name, right.name));
                 sprite = radiantFrames.Length == 0 ? null : radiantFrames[Mathf.Min(7, radiantFrames.Length - 1)];
+            }
+            else if (iconId == HealerCleanseSkill)
+            {
+                sprite = BattleCleanseVisuals.LoadSkillIcon();
             }
             else if (iconId == MageFireballSkill || iconId == Burn)
             {

@@ -641,6 +641,47 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>
+        /// 선택한 아군 위치에서 spectral-bloom 16프레임을 한 번 재생합니다. release 프레임에서 전달받은
+        /// 정화 함수를 호출해 독·화상·감전 HUD가 빛이 흩어지는 순간 함께 사라집니다. Presenter는 어떤
+        /// 상태를 지우는지 알지 않으므로 향후 출혈·저주·마비가 추가되어도 이 연출 코드는 바뀌지 않습니다.
+        /// </summary>
+        public IEnumerator PlayCleanse(RectTransform target, Font font, Sprite[] frames,
+            Action applyCleanse, Action onImpact, Action onComplete)
+        {
+            if (target == null || frames == null || frames.Length == 0)
+            {
+                applyCleanse?.Invoke();
+                onImpact?.Invoke();
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(target, font, "정화!");
+            Image effect = CreateEffectImage(target, "SpectralBloomCleanse", frames,
+                BattleCleanseVisuals.EffectSize, new Vector2(0f, -8f));
+            bool applied = false;
+            for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
+            {
+                if (effect != null) effect.sprite = frames[frameIndex];
+                if (!applied && frameIndex >= BattleCleanseVisuals.ReleaseFrame)
+                {
+                    applied = true;
+                    applyCleanse?.Invoke();
+                    onImpact?.Invoke();
+                }
+                yield return new WaitForSeconds(BattleCleanseVisuals.FrameDuration);
+            }
+            if (!applied)
+            {
+                applyCleanse?.Invoke();
+                onImpact?.Invoke();
+            }
+            if (effect != null) Destroy(effect.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+            onComplete?.Invoke();
+        }
+
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
             Vector2 size, Vector2 anchoredPosition)
         {

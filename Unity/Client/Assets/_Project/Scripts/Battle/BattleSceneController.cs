@@ -885,6 +885,11 @@ namespace ProjectLimitless.Battle
                 BeginSingleAllyHealSelection(skill);
                 return;
             }
+            if (skill.EffectType == BattleSkillEffectType.RemoveAllHarmfulStatuses)
+            {
+                BeginSingleAllyCleanseSelection(skill);
+                return;
+            }
             if (skill.EffectType == BattleSkillEffectType.AreaAllyHeal)
             {
                 PlayHealingWave(skill);
@@ -983,6 +988,80 @@ namespace ProjectLimitless.Battle
             skillMenuPanel.gameObject.SetActive(false);
             BeginTargetSelection(livingAllies, target => PlayHealingLight(actor, target, skill),
                 "치유의 빛 대상을 선택하세요. 자신을 포함한 살아 있는 아군을 선택할 수 있습니다.", true);
+        }
+
+        /// <summary>
+        /// 정화 대상은 공격 사거리와 무관한 같은 편 생존자입니다. Formation의 LivingMembers를 그대로 사용해
+        /// 자신을 포함하고 전투불능자는 제외하며, 파티가 3명에서 6명 이상으로 늘어나도 슬롯 수를 고정하지 않습니다.
+        /// </summary>
+        private void BeginSingleAllyCleanseSelection(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            Formation friendlyFormation = actor.Side == BattleSide.Allies ? allies : enemies;
+            IReadOnlyList<Combatant> livingAllies = friendlyFormation.LivingMembers.ToArray();
+            BeginTargetSelection(livingAllies, target => PlayCleanse(actor, target, skill),
+                "정화할 아군을 선택하세요. 자신을 포함한 살아 있는 아군을 선택할 수 있습니다.", true);
+        }
+
+        /// <summary>
+        /// 대상에게 해로운 상태가 없으면 연출 전에 스킬 메뉴로 복귀합니다. 아무 효과도 없는 선택에 행동·턴·
+        /// 쿨타임을 쓰지 않아 사용자가 다른 행동을 다시 고를 수 있게 하기 위함입니다. 정상 대상만 입력을 잠그고,
+        /// spectral-bloom release에서 공통 상태 API를 실행한 뒤 HUD를 즉시 갱신합니다.
+        /// </summary>
+        private void PlayCleanse(Combatant actor, Combatant target, BattleSkillDefinition skill)
+        {
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null ||
+                !target.IsAlive || target.Side != actor.Side)
+            {
+                ShowSkillMenu();
+                messageText.text = "살아 있는 아군만 정화할 수 있습니다.";
+                return;
+            }
+            if (statusEffects.GetHarmfulStatuses(target).Count == 0)
+            {
+                ShowSkillMenu();
+                messageText.text = "정화할 해로운 상태가 없습니다.";
+                return;
+            }
+
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView targetView = combatantViews[target];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayCleanse(
+                targetView.ActionRoot,
+                battleFont,
+                BattleCleanseVisuals.LoadFrames(),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteSingleAllyCleanse(
+                        actor, target, skill, out _, out string result);
+                    messageText.text = result;
+                },
+                () => RefreshCombatantViews(null),
+                () =>
+                {
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        // 성공한 연출이 끝난 뒤에만 2턴 쿨타임을 등록합니다. 공용 쿨타임 저장소는 치유사
+                        // 자신의 다음 행동 시작에만 감소하므로 다른 아군과 적의 행동에는 영향을 받지 않습니다.
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "정화를 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
         }
 
         /// <summary>

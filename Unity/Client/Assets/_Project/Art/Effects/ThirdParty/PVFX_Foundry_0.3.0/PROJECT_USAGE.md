@@ -5,6 +5,8 @@
 - 원본 SHA-256: `CF52AFAEAFF593CD800C29A36179175ED50F8CA1ECDDE12069AED06B2FDD5BDA`
 - 라이선스: 포함된 `LICENSE.txt` 범위에 따른 CC0 1.0 Universal
 - 권장 출처 표기: `VFX from PVFX Foundry by Pixel VFX Studio`
+- 치유사 정화: `spectral-bloom/grid/sprite-sheet.png` 96×96, 16프레임 전체를 대상 위치에서 재생하고 release index 7에 해로운 상태를 제거한다. 버튼 아이콘은 peak index 5를 고정 Sprite로 사용한다.
+- 원본 ZIP은 수정하지 않으며 런타임용 사본은 `Assets/_Project/Resources/BattleSkillEffects/SpectralBloom/spectral_bloom_sheet.png`에 둔다.
 - 치유사 기본 공격 선택: `magical-projectile`의 `phase.travel` 프레임 2~6
 - 프레임 규격: 96×96, 20 FPS(프레임당 50ms), 투명 PNG
 - `radiant-heal`: grid 원본의 96×96 14프레임을 `BattleSkillEffects/RadiantHeal`로 추출해 치유사 `치유의 빛`에 사용

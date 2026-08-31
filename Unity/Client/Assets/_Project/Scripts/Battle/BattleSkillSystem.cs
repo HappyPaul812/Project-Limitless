@@ -20,7 +20,8 @@ namespace ProjectLimitless.Battle
         SingleBeastPhysicalAttack,
         SingleMagicAttackWithBurn,
         AreaMagicAttackWithShock,
-        SelfDamageReduction
+        SelfDamageReduction,
+        RemoveAllHarmfulStatuses
     }
 
     /// <summary>
@@ -112,6 +113,7 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntId = "guardian_taunt";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string HealerHealingWaveId = "healer_healing_wave";
+        public const string HealerCleanseId = "healer_cleanse";
         public const string SharpshooterAimId = "sharpshooter_aim";
         public const string SharpshooterArrowRainId = "sharpshooter_arrow_rain";
         public const string SharpshooterCompanionAssaultId = "sharpshooter_companion_attack";
@@ -160,6 +162,15 @@ namespace ProjectLimitless.Battle
                         effectDescription: "효과: 치유의 빛 기본 회복량의 60%",
                         typeDescription: "유형: 광역 회복",
                         durationDescription: "재사용 대기시간: 3턴");
+                if (preview.SkillId == HealerCleanseId)
+                    return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
+                        "빛으로 아군을 정화하여 해로운 상태이상을 모두 제거합니다.", true,
+                        BattleSkillEffectType.RemoveAllHarmfulStatuses, 2, 0,
+                        iconId: BattleUiIconCatalog.HealerCleanseSkill,
+                        targetDescription: "대상: 살아 있는 아군 1명",
+                        effectDescription: "효과: 해로운 상태이상 모두 제거\n현재 제거 가능: 독 / 화상 / 감전",
+                        typeDescription: "유형: 상태이상 해제",
+                        durationDescription: "재사용 대기시간: 2턴");
                 if (preview.SkillId == SharpshooterAimId)
                     // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
                     // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
@@ -377,6 +388,18 @@ namespace ProjectLimitless.Battle
         }
     }
 
+    /// <summary>
+    /// 정화가 제거할 수 있는 해로운 상태의 공통 이름입니다. 독·화상·감전은 저장 방식과 작동 방식이
+    /// 서로 다르지만, 정화 입장에서는 모두 제거 대상이라는 한 가지 공통점이 있습니다. 향후 출혈·저주·마비를
+    /// 구현할 때 이 목록과 아래 공통 조회·제거 메서드에 연결하면 정화 스킬 코드는 그대로 재사용할 수 있습니다.
+    /// </summary>
+    public enum HarmfulStatusType
+    {
+        Poison,
+        Burn,
+        Shock
+    }
+
     /// <summary>도발처럼 전투 참가자에게 남는 상태의 적용과 무효 상태 정리를 담당합니다.</summary>
     public sealed class BattleStatusEffectRuntime
     {
@@ -559,6 +582,51 @@ namespace ProjectLimitless.Battle
         public bool HasActivePoison(Combatant target) => GetPoisonRemaining(target) > 0;
 
         /// <summary>
+        /// 대상에게 현재 걸린 해로운 상태만 공통 목록으로 돌려줍니다. 기존 Dictionary와 HashSet을 하나의
+        /// 거대한 새 저장소로 옮기지 않는 이유는, 이미 검증된 독 틱·화상 저장 피해·감전 행동 종료 규칙을
+        /// 그대로 보호하기 위해서입니다. 이 메서드는 저장 방식을 바꾸지 않고 정화가 읽을 공통 창구만 제공합니다.
+        /// </summary>
+        public IReadOnlyList<HarmfulStatusType> GetHarmfulStatuses(Combatant target)
+        {
+            if (target == null || !target.IsAlive) return Array.Empty<HarmfulStatusType>();
+            List<HarmfulStatusType> results = new List<HarmfulStatusType>(3);
+            if (HasActivePoison(target)) results.Add(HarmfulStatusType.Poison);
+            if (HasActiveBurn(target)) results.Add(HarmfulStatusType.Burn);
+            if (HasShock(target)) results.Add(HarmfulStatusType.Shock);
+            return results;
+        }
+
+        /// <summary>
+        /// 지정한 해로운 상태 하나만 기존 저장소에서 제거합니다. 방어·가이아 웰·도발·기세·쿨타임은
+        /// 전투 전략을 이루는 이로운 상태나 별도 자원이므로 이 분류에 들어오지 않으며 정화로 지워지지 않습니다.
+        /// </summary>
+        public bool RemoveHarmfulStatus(Combatant target, HarmfulStatusType statusType)
+        {
+            if (target == null) return false;
+            switch (statusType)
+            {
+                case HarmfulStatusType.Poison:
+                    return poisons.Remove(target);
+                case HarmfulStatusType.Burn:
+                    return burns.Remove(target);
+                case HarmfulStatusType.Shock:
+                    return shockedTargets.Remove(target);
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>현재 등록된 해로운 상태를 모두 제거하고 실제로 없앤 종류 수를 반환합니다.</summary>
+        public int RemoveAllHarmfulStatuses(Combatant target)
+        {
+            HarmfulStatusType[] active = GetHarmfulStatuses(target).ToArray();
+            int removed = 0;
+            foreach (HarmfulStatusType statusType in active)
+                if (RemoveHarmfulStatus(target, statusType)) removed++;
+            return removed;
+        }
+
+        /// <summary>
         /// 독 피해는 대상의 현재 HP가 아니라 최대 HP의 5%를 올림 계산합니다. long으로 먼저 곱해 큰 HP에서도
         /// 정수 범위를 넘는 중간 계산을 피하고 최소 1을 보장합니다. 상태 고유 피해이므로 방어·가이아 웰을
         /// 거치지 않고 TakeDamage가 최종 HP를 0 아래로 내리지 않도록 맡깁니다.
@@ -708,6 +776,38 @@ namespace ProjectLimitless.Battle
 
             if (skill.CooldownTurns > 0) cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 HP가 {recoveredHp} 회복되었습니다.";
+            return true;
+        }
+
+        /// <summary>
+        /// 살아 있는 같은 편 한 명의 해로운 상태를 모두 제거합니다. 상태가 없을 때 행동을 소비하지 않는 것은
+        /// 아무 변화도 만들지 못한 실수 입력에 턴과 쿨타임이라는 비용을 부과하지 않기 위함입니다. 실제 쿨타임은
+        /// VFX까지 정상 완료된 뒤 Controller가 등록하므로, 이 메서드는 상태 제거 성공 여부만 반환합니다.
+        /// </summary>
+        public bool ExecuteSingleAllyCleanse(Combatant actor, Combatant target, BattleSkillDefinition skill,
+            out int removedCount, out string message)
+        {
+            removedCount = 0;
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.RemoveAllHarmfulStatuses || target == null ||
+                target.Side != actor.Side || !target.IsAlive)
+            {
+                message = "살아 있는 아군만 정화할 수 있습니다.";
+                return false;
+            }
+            if (statusEffects.GetHarmfulStatuses(target).Count == 0)
+            {
+                message = "정화할 해로운 상태가 없습니다.";
+                return false;
+            }
+
+            removedCount = statusEffects.RemoveAllHarmfulStatuses(target);
+            if (removedCount <= 0)
+            {
+                message = "정화할 해로운 상태가 없습니다.";
+                return false;
+            }
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 해로운 상태이상 {removedCount}개를 제거했습니다.";
             return true;
         }
 

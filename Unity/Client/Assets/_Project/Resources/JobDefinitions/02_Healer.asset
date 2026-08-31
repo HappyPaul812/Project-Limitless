@@ -35,4 +35,4 @@ MonoBehaviour:
   - skillId: healer_cleanse
     skillName: 정화
     skillType: 상태이상 해제
-    skillDescription: 아군 1명의 제거 가능한 해로운 상태이상 1개를 제거합니다.
+    skillDescription: 살아 있는 아군 1명의 제거 가능한 해로운 상태이상을 모두 제거합니다. 재사용 대기시간은 2턴입니다.

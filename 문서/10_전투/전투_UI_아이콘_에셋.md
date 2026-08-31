@@ -37,6 +37,7 @@
 | 마도사 썬더볼트 | PVFX Foundry `electric-impact` peak index 1 런타임 Sprite | `skill.mage.thunderbolt` |
 | 감전 상태 | Kenney Game Icons `PNG/White/1x/power.png` | `status.shock` |
 | 독 상태 | PVFX Foundry `venom-ward` grid index 6 런타임 Sprite | `status.poison` |
+| 치유사 정화 | PVFX Foundry `spectral-bloom` grid peak index 5 런타임 Sprite | `skill.healer.cleanse` |
 | 마도사 가이아 웰 | Board Game Icons `PNG/Default (64px)/dice_shield.png` | `skill.mage.gaia_wall` |
 | 가이아 웰 상태 | 스킬과 같은 `dice_shield.png` | `status.gaia_wall` |
 
@@ -51,6 +52,8 @@
 썬더볼트 버튼은 PVFX Foundry 0.3.0 CC0 `electric-impact/grid/sprite-sheet.png`의 peak index 1을 고정 Sprite로 잘라 사용하고, 전투 연출은 같은 원본의 14프레임 전체를 별도로 순환한다. 감전 상태는 CC0 Kenney `power.png`를 사용하며 HUD와 상세 팝업에 `감전 1` 한글을 함께 표시한다. 원본 ThirdParty 파일은 수정하지 않고 Resources용 사본과 런타임 Sprite만 사용한다.
 
 독 상태는 PVFX Foundry 0.3.0 CC0 `venom-ward/grid/sprite-sheet.png` 16프레임 중 녹색 고리가 가장 조밀한 index 6을 고정 아이콘으로 사용한다. HUD에는 `독 3/2/1` 한글을 함께 표시하고, 실제 행동 종료 틱은 별도 `acid-splash` index 3~8의 짧은 52×52 연출을 사용해 큰 방어막 모양이 반복되지 않게 한다.
+
+정화 버튼과 상세 팝업은 PVFX Foundry 0.3.0 CC0 `spectral-bloom/grid/sprite-sheet.png`의 peak index 5를 고정 Sprite로 사용한다. 실제 정화 연출은 같은 원본의 16프레임 전체를 20 FPS로 재생하고 release index 7에서 상태를 제거하므로, 고정 UI 아이콘과 재생용 Animation이 서로 영향을 주지 않는다. 원본 ZIP은 수정하지 않고 `Assets/_Project/Resources/BattleSkillEffects/SpectralBloom/`의 프로젝트용 사본을 런타임 분할한다.
 
 가이아 웰은 기본 방어 명령의 큰 외곽선 `shield.png`와 혼동을 줄이기 위해 같은 CC0 Board Game Icons 팩에 실제 존재하는 작은 채움형 방패 `dice_shield.png`를 사용한다. HUD에는 아이콘과 `가이아 2/1` 한글을 함께 표시해 모양이나 색상만으로 상태를 구분하지 않는다.
 
