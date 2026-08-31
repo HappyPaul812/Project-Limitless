@@ -9,6 +9,7 @@
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
+- 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
@@ -62,6 +63,7 @@
 - 흰색 글자·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
 - 독 몬스터 후보 원본 보존: Pilot Bee(CC BY, 라이선스 버전 표기 충돌 기록)·2D Spider(CC0)·Simple Green Snake(CC0). 벌은 Field_01 1순위, 거미는 숲/동굴·Field_02 이후, 뱀은 숲/습지·Field_03 이후 후보이며 실제 몬스터·독·정화는 미구현
 - Pilot Bee 검증 Scene: Idle 238×215×10·Attack 315×253×10·기본 우향 구조를 런타임 분할하고 현재 초원 슬라임과 나란히 비교. Point Filter·무압축·투명·Read/Write 검증 복사본과 기본 Scale 0.85 제공, Field/Battle 미연결
+- Pilot Bee 검증 Scene 입력을 새 Input System의 null 안전 `Keyboard.current` 방식으로 수정하고 메인 키보드·Numpad +/-를 지원. Scene 전용 직교 Main Camera를 연결해 `No cameras rendering` 표시 제거
 
 ### 1차 턴제 전투
 
@@ -393,7 +395,7 @@
 
 ## 다음 권장 작업
 
-다음 권장 작업은 `PilotBeeComparisonValidation.unity` Play Mode에서 초원 슬라임 대비 Pilot Bee 기본 Scale 0.85, 픽셀 밀도·색감과 Idle/Attack 자연스러움을 먼저 판단하는 것이다. 채택 전까지 실제 Field_01 몬스터·독 수치·정화 기능은 구현하지 않는다. 이어 치유사 `회복의 파동`과 마도사 상태 스킬의 Play Mode 통합 검증을 진행한다.
+다음 권장 작업은 `PilotBeeComparisonValidation.unity` Play Mode에서 Input System 예외와 `No cameras rendering` 표시가 사라졌는지 확인하고, 초원 슬라임 대비 Pilot Bee 기본 Scale 0.85, 픽셀 밀도·색감과 Idle/Attack 자연스러움을 판단하는 것이다. 채택 전까지 실제 Field_01 몬스터·독 수치·정화 기능은 구현하지 않는다. 이어 치유사 `회복의 파동`과 마도사 상태 스킬의 Play Mode 통합 검증을 진행한다.
 
 ## 갱신 규칙
 
