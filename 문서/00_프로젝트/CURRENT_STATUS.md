@@ -8,6 +8,7 @@
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
+- 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
@@ -59,6 +60,8 @@
 - 승리한 스폰만 제거하고 데이터 기본값 30초 후 원래 위치에 독립 리스폰, 도망 시 스폰 유지
 - `MonsterDefinition.DisplayName`을 표시하는 재사용 가능한 필드 몬스터 Overlay 이름표
 - 흰색 글자·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
+- 독 몬스터 후보 원본 보존: Pilot Bee(CC BY, 라이선스 버전 표기 충돌 기록)·2D Spider(CC0)·Simple Green Snake(CC0). 벌은 Field_01 1순위, 거미는 숲/동굴·Field_02 이후, 뱀은 숲/습지·Field_03 이후 후보이며 실제 몬스터·독·정화는 미구현
+- Pilot Bee 검증 Scene: Idle 238×215×10·Attack 315×253×10·기본 우향 구조를 런타임 분할하고 현재 초원 슬라임과 나란히 비교. Point Filter·무압축·투명·Read/Write 검증 복사본과 기본 Scale 0.85 제공, Field/Battle 미연결
 
 ### 1차 턴제 전투
 
@@ -240,6 +243,7 @@
 - **공통 스킬 설명 팝업 흐름 조정**: 스킬 확정 시 정보 UI를 닫는 공통 경계와 대상 선택·행동 완료 안전 숨김을 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. 스킬별 설명 내용·효과·대상·쿨타임은 변경하지 않았으며 실제 Hover/키보드 포커스와 취소 복귀 흐름은 Play Mode 확인이 필요하다.
 - **전투 연출 중 정보 팝업 억제**: `actionPlaying` 화면 갱신에서 스킬 설명·캐릭터 상태 상세 팝업과 기존 Hover/포커스 대상을 함께 정리하고 두 표시 함수의 재오픈을 차단하는 코드를 전체 `Assembly-CSharp` 참조로 컴파일해 오류 0개를 확인했다. Wolf 570·Run 12 FPS·출발/정지 위치와 모든 전투 계산은 변경하지 않았으며 실제 마우스 잔류·새 Hover 복귀는 Play Mode 확인이 필요하다.
 - **치유사 회복의 파동 구현**: 단일힐 35%에서 파생한 대상별 21% 올림 광역 회복, Formation 생존 아군 동적 목록, 치유사 행동 기준 3턴 쿨타임과 Arcane Parry+Radiant Heal 병렬 연출을 연결했다. 전체 `Assembly-CSharp` 참조 컴파일 오류 0개(기존 deprecated API 경고 4개)를 확인했으며 대상 수·동시 HP 갱신·팝업 억제·쿨타임은 Play Mode 확인이 필요하다.
+- **독 몬스터 후보 에셋 보존 및 Pilot Bee 검증 준비**: F:\Downloads 원본과 프로젝트 복사본 SHA-256 일치를 확인하고 벌·거미·뱀을 제작자별 ThirdParty 폴더에 분리했다. Pilot Bee 검증 스크립트를 포함한 전체 `Assembly-CSharp` 참조 컴파일 오류 0개(기존 deprecated API 경고 4개), Point·무압축·투명 Import 설정을 정적으로 확인했다. Unity 프로젝트가 이미 열려 있어 두 번째 배치 인스턴스는 안전하게 중단했으며 실제 화면의 Scale·픽셀 밀도·Idle/Attack 자연스러움은 전용 Scene Play Mode 확인이 필요하다.
 - **동료의 습격 Run 검증 환경 유지**: ScratchIO `Animated Wild Animals` CC0 원본 ZIP과 Wolf/Bear/Fox 자산을 보존하고, 실제 Battle과 분리된 `CompanionAssaultRunValidation` Scene을 유지한다. 원본/복사본 SHA-256, 64px 프레임 구조, Point·무압축·투명 Import와 통일된 아래 중앙 Pivot은 정적으로 확인했으며 Unity Play Mode 직접 확인은 남아 있다.
 - Working Tree에는 이번 문서 작업과 무관한 사용자 Asset·Scene·ProjectSettings 변경이 남아 있으며 이 상태 문서는 해당 미커밋 변경의 완성 여부를 판단하지 않는다.
 
@@ -389,7 +393,7 @@
 
 ## 다음 권장 작업
 
-다음 권장 작업은 Play Mode에서 치유사 `회복의 파동`의 1명·3명·전투불능 혼합 대상, 동시 HP 갱신, 팝업 억제와 치유사 행동 기준 3턴 쿨타임을 우선 검증하는 것이다. 이어 마도사 `파이어 볼`·`썬더볼트`·`가이아 웰`의 VFX peak와 상태 수명을 통합 검증하고, 야수 선택·장착·저장 UI 및 Wolf/Bear/Fox 패시브는 별도 기획 확정 뒤 `BeastCompanionCatalog` 경계에 연결한다.
+다음 권장 작업은 `PilotBeeComparisonValidation.unity` Play Mode에서 초원 슬라임 대비 Pilot Bee 기본 Scale 0.85, 픽셀 밀도·색감과 Idle/Attack 자연스러움을 먼저 판단하는 것이다. 채택 전까지 실제 Field_01 몬스터·독 수치·정화 기능은 구현하지 않는다. 이어 치유사 `회복의 파동`과 마도사 상태 스킬의 Play Mode 통합 검증을 진행한다.
 
 ## 갱신 규칙
 
