@@ -62,6 +62,7 @@ namespace ProjectLimitless.Battle
         private readonly BattleSkillCooldowns skillCooldowns = new BattleSkillCooldowns();
         private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
+        private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
@@ -1812,12 +1813,18 @@ namespace ProjectLimitless.Battle
                 statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
             Action<int> onImpact = damage =>
             {
-                // 기본 공격 참가자가 독 부여 횟수를 가진 MonsterDefinition을 참조할 때만 독을 갱신합니다.
-                // 독침벌 이름을 비교하지 않으므로 이후 다른 독 몬스터도 같은 데이터 필드만 설정하면 됩니다.
+                // 기본 공격 피해는 매 행동 그대로 적용하고, 독 부여만 공격자 자신의 별도 대기시간을 확인합니다.
+                // 독 대상의 지속시간을 정화해도 공격자인 벌의 저장소는 건드리지 않으므로 정화 직후 재독을 막습니다.
                 if (damage > 0 && target.IsAlive && participantSetups.TryGetValue(actor, out BattleParticipantSetup attackerSetup))
                 {
                     int poisonActions = attackerSetup.MonsterDefinition?.BasicAttackPoisonActions ?? 0;
-                    if (poisonActions > 0) statusEffects.ApplyOrRefreshPoison(target, poisonActions);
+                    int poisonCooldown = attackerSetup.MonsterDefinition?.BasicAttackPoisonCooldownActions ?? 0;
+                    if (poisonActions > 0 && monsterAbilities.CanInflictPoison(actor))
+                    {
+                        // 대상이 이미 독이어도 기존 Dictionary 값을 독 3으로 덮어쓰며 중첩 4 이상은 만들지 않습니다.
+                        statusEffects.ApplyOrRefreshPoison(target, poisonActions);
+                        monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
+                    }
                 }
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
                 RefreshCombatantViews(null);
@@ -1909,6 +1916,10 @@ namespace ProjectLimitless.Battle
             // 피해 계산과 광역 타격이 모두 끝난 다음 제거해야 해당 행동의 모든 주는 피해가 15% 감소합니다.
             statusEffects.CompleteActorAction(completedActor);
             statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
+            // 독침 대기시간은 독 상태와 달리 공격자인 벌의 행동 종료에만 감소합니다. 다른 참가자 행동에서는
+            // completedActor가 다른 Combatant이므로 해당 벌의 Dictionary 값에 접근하지 않습니다.
+            monsterAbilities.CompleteActorAction(completedActor);
+            monsterAbilities.RemoveInvalidCombatants(AllCombatants);
             SetCommandButtons(false);
             // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
             // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.

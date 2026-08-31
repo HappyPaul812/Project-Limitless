@@ -34,3 +34,4 @@ MonoBehaviour:
   sourceFacesRight: 1
   battleAttackPercent: 120
   basicAttackPoisonActions: 3
+  basicAttackPoisonCooldownActions: 2

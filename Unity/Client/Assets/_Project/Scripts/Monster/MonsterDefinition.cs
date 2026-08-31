@@ -3,8 +3,9 @@ using UnityEngine;
 namespace ProjectLimitless.Monster
 {
     /// <summary>
-    /// 몬스터 한 종류가 필드에서 어떻게 보이고 움직이는지를 보관하는 데이터 Asset입니다.
-    /// 향후 전투 능력치는 별도 전투 데이터로 연결하며, 이 클래스에는 아직 HP나 공격 수치를 넣지 않습니다.
+    /// 몬스터 한 종류가 필드와 전투에서 공유하는 외형·이동·기본 공격 차이를 보관하는 데이터 Asset입니다.
+    /// HP 같은 Encounter별 수치는 전투 구성에 남기고, 독침벌처럼 종류 자체의 특징인 공격 배율과 독 부여
+    /// 규칙만 이곳에 두어 Field 개체와 Battle 참가자가 같은 몬스터 정의를 재사용하게 합니다.
     /// </summary>
     [CreateAssetMenu(fileName = "MonsterDefinition", menuName = "Project Limitless/Monster Definition")]
     public sealed class MonsterDefinition : ScriptableObject
@@ -44,6 +45,9 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(1)] private int battleAttackPercent = 100;
         // 0이면 독을 걸지 않고, 양수이면 정상 기본 공격 적중 시 그 횟수로 독을 부여·갱신합니다.
         [SerializeField, Min(0)] private int basicAttackPoisonActions;
+        // 독을 정상 부여한 뒤 이 몬스터 자신의 행동 몇 회 동안 다시 부여하지 못하는지 나타냅니다.
+        // 독 대상의 지속시간과 별도 데이터라서 정화나 독 자연 종료가 이 값을 바꾸지 않습니다.
+        [SerializeField, Min(0)] private int basicAttackPoisonCooldownActions;
 
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
@@ -68,5 +72,6 @@ namespace ProjectLimitless.Monster
         public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0;
         public int BattleAttackPercent => Mathf.Max(1, battleAttackPercent);
         public int BasicAttackPoisonActions => Mathf.Max(0, basicAttackPoisonActions);
+        public int BasicAttackPoisonCooldownActions => Mathf.Max(0, basicAttackPoisonCooldownActions);
     }
 }
