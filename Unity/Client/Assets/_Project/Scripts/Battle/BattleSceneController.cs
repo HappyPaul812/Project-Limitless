@@ -560,7 +560,7 @@ namespace ProjectLimitless.Battle
         private void AdvanceTurn()
         {
             if (battleEnded) return;
-            if (enemies.IsDefeated) { EndBattle("승리! 초원 슬라임을 쓰러뜨렸습니다.", true); return; }
+            if (enemies.IsDefeated) { EndBattle("승리! 적을 모두 쓰러뜨렸습니다.", true); return; }
             if (allies.IsDefeated) { EndBattle("전투불능. Field_01로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
@@ -1733,6 +1733,13 @@ namespace ProjectLimitless.Battle
                 statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
             Action<int> onImpact = damage =>
             {
+                // 기본 공격 참가자가 독 부여 횟수를 가진 MonsterDefinition을 참조할 때만 독을 갱신합니다.
+                // 독침벌 이름을 비교하지 않으므로 이후 다른 독 몬스터도 같은 데이터 필드만 설정하면 됩니다.
+                if (damage > 0 && target.IsAlive && participantSetups.TryGetValue(actor, out BattleParticipantSetup attackerSetup))
+                {
+                    int poisonActions = attackerSetup.MonsterDefinition?.BasicAttackPoisonActions ?? 0;
+                    if (poisonActions > 0) statusEffects.ApplyOrRefreshPoison(target, poisonActions);
+                }
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
                 RefreshCombatantViews(null);
             };
@@ -1847,6 +1854,44 @@ namespace ProjectLimitless.Battle
                     () =>
                     {
                         RestoreBattleIdle(burnedView);
+                        ContinueEndOfActionEffects(completedActor);
+                    }));
+                return;
+            }
+
+            ContinueEndOfActionEffects(completedActor);
+        }
+
+        /// <summary>
+        /// 한 참가자에게 화상과 독이 함께 있어도 각각 정확히 한 번씩 순서대로 처리한 뒤 다음 턴으로 갑니다.
+        /// 화상 처리 뒤 이 메서드를 다시 호출하므로 독을 건너뛰지 않으며, 어느 틱에서 전투불능이 되면
+        /// RemoveInvalidPersistentEffects가 남은 해로운 상태와 UI를 즉시 지웁니다.
+        /// </summary>
+        private void ContinueEndOfActionEffects(Combatant completedActor)
+        {
+            statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
+            if (completedActor != null && statusEffects.HasActivePoison(completedActor) &&
+                combatantViews.TryGetValue(completedActor, out CombatantView poisonedView))
+            {
+                actionPlaying = true;
+                RefreshCombatantViews(null);
+                if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+                StartCoroutine(actionPresenter.PlayPoisonTick(
+                    poisonedView.ActionRoot,
+                    poisonedView.SpriteImage,
+                    battleFont,
+                    BattlePoisonVisuals.LoadTickFrames(),
+                    () => statusEffects.ApplyPoisonTickAtActionEnd(completedActor, out _),
+                    damage =>
+                    {
+                        int remaining = statusEffects.GetPoisonRemaining(completedActor);
+                        messageText.text = $"{completedActor.DisplayName}의 독 피해 {damage}. 남은 독 {remaining}회.";
+                        statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
+                        RefreshCombatantViews(null);
+                    },
+                    () =>
+                    {
+                        RestoreBattleIdle(poisonedView);
                         actionPlaying = false;
                         RefreshCombatantViews(null);
                         StartCoroutine(AdvanceAfterDelay());
@@ -1854,6 +1899,7 @@ namespace ProjectLimitless.Battle
                 return;
             }
 
+            actionPlaying = false;
             RefreshCombatantViews(null);
             StartCoroutine(AdvanceAfterDelay());
         }
@@ -1985,6 +2031,7 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "taunt" ? BattleUiIconCatalog.Taunt
                     : marker.Id == "fighter.momentum" ? BattleUiIconCatalog.FighterMomentum
                     : marker.Id == "burn" ? BattleUiIconCatalog.Burn
+                    : marker.Id == "poison" ? BattleUiIconCatalog.Poison
                     : marker.Id == "shock" ? BattleUiIconCatalog.Shock
                     : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall : null;
                 summaries.Add((iconId, marker.DisplayText));

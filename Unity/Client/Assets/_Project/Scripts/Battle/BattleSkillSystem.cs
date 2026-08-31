@@ -392,9 +392,15 @@ namespace ProjectLimitless.Battle
             public bool IgnoreCurrentActionCompletion;
         }
 
+        private sealed class PoisonState
+        {
+            public int RemainingActions;
+        }
+
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>();
+        private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>();
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
@@ -497,6 +503,7 @@ namespace ProjectLimitless.Battle
                 burns.Remove(dead);
                 shockedTargets.Remove(dead);
                 gaiaWalls.Remove(dead);
+                poisons.Remove(dead);
             }
         }
 
@@ -532,6 +539,39 @@ namespace ProjectLimitless.Battle
             burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
             remainingTicks = burn.RemainingTicks;
             if (burn.RemainingTicks == 0 || !target.IsAlive) burns.Remove(target);
+            return damage;
+        }
+
+        /// <summary>
+        /// 독은 여러 묶음을 더하지 않습니다. 이미 독 1/2/3인 대상도 새 독침벌 공격에 맞으면
+        /// Dictionary의 같은 대상 값을 3으로 덮어써 독 4 이상으로 올라가지 않게 합니다.
+        /// 향후 정화는 이 저장소에서 해당 대상의 PoisonState만 제거하면 됩니다.
+        /// </summary>
+        public void ApplyOrRefreshPoison(Combatant target, int affectedActions)
+        {
+            if (target == null || !target.IsAlive || affectedActions <= 0) return;
+            poisons[target] = new PoisonState { RemainingActions = affectedActions };
+        }
+
+        public int GetPoisonRemaining(Combatant target) => target != null && target.IsAlive &&
+            poisons.TryGetValue(target, out PoisonState poison) ? poison.RemainingActions : 0;
+
+        public bool HasActivePoison(Combatant target) => GetPoisonRemaining(target) > 0;
+
+        /// <summary>
+        /// 독 피해는 대상의 현재 HP가 아니라 최대 HP의 5%를 올림 계산합니다. long으로 먼저 곱해 큰 HP에서도
+        /// 정수 범위를 넘는 중간 계산을 피하고 최소 1을 보장합니다. 상태 고유 피해이므로 방어·가이아 웰을
+        /// 거치지 않고 TakeDamage가 최종 HP를 0 아래로 내리지 않도록 맡깁니다.
+        /// </summary>
+        public int ApplyPoisonTickAtActionEnd(Combatant target, out int remainingActions)
+        {
+            remainingActions = 0;
+            if (!HasActivePoison(target) || !poisons.TryGetValue(target, out PoisonState poison)) return 0;
+            int rawDamage = (int)Math.Max(1L, ((long)Math.Max(1, target.MaxHp) * 5L + 99L) / 100L);
+            int damage = target.TakeDamage(rawDamage, applyDefending: false);
+            poison.RemainingActions = Math.Max(0, poison.RemainingActions - 1);
+            remainingActions = poison.RemainingActions;
+            if (poison.RemainingActions == 0 || !target.IsAlive) poisons.Remove(target);
             return damage;
         }
     }

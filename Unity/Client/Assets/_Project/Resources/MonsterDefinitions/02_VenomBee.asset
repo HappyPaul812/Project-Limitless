@@ -32,3 +32,5 @@ MonoBehaviour:
   animationFramesPerSecond: 10
   visualScale: 0.85
   sourceFacesRight: 1
+  battleAttackPercent: 120
+  basicAttackPoisonActions: 3

@@ -74,6 +74,8 @@ namespace ProjectLimitless.Battle
     /// </summary>
     public static class BattlePrototypeEncounterFactory
     {
+        private const int SlimeBaseAttack = 10;
+
         public static BattleEncounterSetup CreateThreeVsThree(string playerName, string playerJobId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
         {
@@ -108,8 +110,10 @@ namespace ProjectLimitless.Battle
             if (fallbackId.EndsWith("_a", StringComparison.Ordinal)) name += " A";
             else if (fallbackId.EndsWith("_b", StringComparison.Ordinal)) name += " B";
             else if (fallbackId.EndsWith("_1", StringComparison.Ordinal)) name += " 1";
+            int attackPercent = monster == null ? 100 : monster.BattleAttackPercent;
+            int attack = (int)Math.Max(1L, ((long)SlimeBaseAttack * attackPercent + 99L) / 100L);
             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
-                new FormationSlot(row, column), 55, 10, agility, 0,
+                new FormationSlot(row, column), 55, attack, agility, 0,
                 TargetRangeType.MeleePhysical, false, BattleParticipantVisualType.EncounterMonster,
                 monsterDefinition: monster);
         }

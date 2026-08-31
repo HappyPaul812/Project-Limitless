@@ -478,6 +478,52 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// 독 틱은 매 행동 종료마다 큰 지속 효과를 반복하지 않고 Acid Splash의 짧은 접촉 구간만 보여 줍니다.
+        /// 중간 프레임에서 피해 숫자와 피격 반응을 시작하고, 모두 예약한 뒤 다음 상태 처리로 넘깁니다.
+        /// </summary>
+        public IEnumerator PlayPoisonTick(RectTransform target, Image targetSprite, Font damageFont,
+            Sprite[] acidFrames, Func<int> applyTick, Action<int> onImpact, Action onComplete)
+        {
+            if (target == null || targetSprite == null)
+            {
+                int fallbackDamage = applyTick == null ? 0 : applyTick();
+                onImpact?.Invoke(fallbackDamage);
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Image acid = CreateEffectImage(target, "PoisonTickAcid", acidFrames,
+                BattlePoisonVisuals.TickEffectSize, new Vector2(0f, 8f));
+            Color originalColor = targetSprite.color;
+            bool applied = false;
+            int count = acidFrames?.Length ?? 0;
+            for (int index = 0; index < count; index++)
+            {
+                if (acid != null) acid.sprite = acidFrames[index];
+                if (!applied && index >= 3)
+                {
+                    applied = true;
+                    int damage = applyTick == null ? 0 : applyTick();
+                    onImpact?.Invoke(damage);
+                    if (damage > 0)
+                    {
+                        StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+                        StartCoroutine(PlayHitReaction(target, targetSprite, target.localPosition, originalColor));
+                    }
+                }
+                yield return new WaitForSeconds(BattlePoisonVisuals.TickFrameDuration);
+            }
+            if (!applied)
+            {
+                int damage = applyTick == null ? 0 : applyTick();
+                onImpact?.Invoke(damage);
+            }
+            if (acid != null) Destroy(acid.gameObject);
+            targetSprite.color = originalColor;
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
         /// 짧은 청백색 예고 뒤 모든 대상에서 electric-impact를 같은 프레임 번호로 재생합니다. 대상마다
         /// 코루틴을 따로 시작하면 프레임 시간에 따라 타격 순서가 벌어질 수 있으므로, 하나의 반복문이 모든
         /// Image를 함께 갱신합니다. Peak index 1에서 계산 콜백도 한 번만 호출해 화면의 가장 강한 섬광과

@@ -119,6 +119,8 @@ namespace ProjectLimitless.Battle
             // 계산은 상태 저장소가 담당하고 UI는 읽기만 하므로 HUD 표시가 화상 횟수를 소모하지 않습니다.
             int burnRemaining = statusEffects?.GetBurnRemaining(combatant) ?? 0;
             if (burnRemaining > 0) markers.Add(new BattleStatusMarker("burn", "화상", burnRemaining));
+            int poisonRemaining = statusEffects?.GetPoisonRemaining(combatant) ?? 0;
+            if (poisonRemaining > 0) markers.Add(new BattleStatusMarker("poison", "독", poisonRemaining));
             // 감전은 대상마다 독립적으로 감전 1만 유지합니다. HUD와 상세 팝업이 같은 Marker를 읽으므로
             // 어느 한쪽만 남는 일이 없고, 행동 종료 시 런타임에서 제거되면 두 화면에서도 함께 사라집니다.
             if (statusEffects?.HasShock(combatant) == true)
@@ -129,9 +131,10 @@ namespace ProjectLimitless.Battle
             if (gaiaRemaining > 0) markers.Add(new BattleStatusMarker("gaia", "가이아", gaiaRemaining));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
-            IReadOnlyList<string> resourceDetails = job != null && job.JobId == "fighter"
-                ? new[] { $"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}" }
-                : Array.Empty<string>();
+            List<string> resourceDetails = new List<string>();
+            if (poisonRemaining > 0) resourceDetails.Add("독: 행동 종료 시 최대 HP 5% 피해");
+            if (job != null && job.JobId == "fighter")
+                resourceDetails.Add($"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}");
 
             List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();
             foreach (BattleSkillDefinition skill in BattleSkillCatalog.GetSkills(job).Where(skill => skill.IsImplemented))

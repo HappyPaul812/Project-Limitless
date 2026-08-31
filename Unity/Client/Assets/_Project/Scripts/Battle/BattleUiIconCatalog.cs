@@ -39,6 +39,7 @@ namespace ProjectLimitless.Battle
         public const string Shock = "status.shock";
         public const string MageGaiaWallSkill = "skill.mage.gaia_wall";
         public const string GaiaWall = "status.gaia_wall";
+        public const string Poison = "status.poison";
 
         // Resources 폴더 아래의 상대 경로만 보관합니다. 원본 압축과 라이선스는 ThirdParty에 그대로
         // 보존하고, 런타임에 필요한 PNG만 Resources에서 Sprite로 불러오는 구조입니다.
@@ -84,7 +85,8 @@ namespace ProjectLimitless.Battle
             { Shock, "KenneyBattleIcons/power" },
             // 기본 방어의 큰 외곽선 shield.png와 구분되는 실제 Board Game Icons의 dice_shield.png입니다.
             { MageGaiaWallSkill, "KenneyBattleIcons/dice_shield" },
-            { GaiaWall, "KenneyBattleIcons/dice_shield" }
+            { GaiaWall, "KenneyBattleIcons/dice_shield" },
+            { Poison, string.Empty }
         };
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
@@ -131,6 +133,12 @@ namespace ProjectLimitless.Battle
                 // 14장 전투 VFX 가운데 Peak index 1 한 장만 버튼에 고정합니다. 버튼 Sprite가 애니메이션
                 // 프레임 배열과 섞이지 않아 메뉴를 열었다고 전투용 프레임 재생 상태가 변하지 않습니다.
                 sprite = BattleThunderboltVisuals.LoadSkillIcon();
+            }
+            else if (iconId == Poison)
+            {
+                // Venom Ward 16장 중 녹색 고리가 가장 조밀한 index 6을 고정 아이콘으로 사용합니다.
+                // 독 틱의 Acid Splash 재생과 분리해 HUD가 애니메이션처럼 깜박이지 않게 합니다.
+                sprite = BattlePoisonVisuals.LoadStatusIcon();
             }
             else
             {

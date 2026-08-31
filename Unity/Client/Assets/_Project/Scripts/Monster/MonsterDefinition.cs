@@ -38,6 +38,12 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(1f)] private float animationFramesPerSecond = 10f;
         [SerializeField, Min(.1f)] private float visualScale = 1f;
         [SerializeField] private bool sourceFacesRight = true;
+        [Header("전투 기본 공격")]
+        // 슬라임의 기준 공격력을 100으로 보며 몬스터 종류별 차이만 데이터에 둡니다.
+        // 독침벌은 120으로 설정해 전투 생성 코드에 이름별 피해 숫자를 흩어 놓지 않습니다.
+        [SerializeField, Min(1)] private int battleAttackPercent = 100;
+        // 0이면 독을 걸지 않고, 양수이면 정상 기본 공격 적중 시 그 횟수로 독을 부여·갱신합니다.
+        [SerializeField, Min(0)] private int basicAttackPoisonActions;
 
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
@@ -60,5 +66,7 @@ namespace ProjectLimitless.Monster
         public float VisualScale => Mathf.Max(.1f, visualScale);
         public bool SourceFacesRight => sourceFacesRight;
         public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0;
+        public int BattleAttackPercent => Mathf.Max(1, battleAttackPercent);
+        public int BasicAttackPoisonActions => Mathf.Max(0, basicAttackPoisonActions);
     }
 }
