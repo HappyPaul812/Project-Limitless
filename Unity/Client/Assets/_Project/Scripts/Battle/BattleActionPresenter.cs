@@ -677,6 +677,73 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// Frost Nova의 원형 중간 프레임을 금백색으로 낮게 재생해 파티 전체 보호 시작을 알립니다.
+        /// 넓은 그림은 즉시 제거하고 지속 상태는 HUD에 맡겨 인원이 늘어나도 전장을 계속 가리지 않습니다.
+        /// </summary>
+        public IEnumerator PlayGuardianCover(RectTransform guardian, Font font, Sprite[] frames,
+            Action applyEffect, Action onComplete)
+        {
+            if (guardian == null || frames == null || frames.Length == 0)
+            {
+                applyEffect?.Invoke();
+                onComplete?.Invoke();
+                yield break;
+            }
+
+            Text callout = CreateSkillCallout(guardian, font, "대신 막기!");
+            Image ring = CreateEffectImage(guardian, "GuardianCoverPartyRing", frames,
+                BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f));
+            if (ring != null) ring.color = BattleGuardianCoverVisuals.ProtectiveTint;
+            bool applied = false;
+            for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
+            {
+                if (ring != null) ring.sprite = frames[frameIndex];
+                if (!applied && frameIndex >= BattleGuardianCoverVisuals.ApplyFrame)
+                {
+                    applied = true;
+                    applyEffect?.Invoke();
+                }
+                yield return new WaitForSeconds(BattleGuardianCoverVisuals.FrameDuration);
+            }
+            if (!applied) applyEffect?.Invoke();
+            if (ring != null) Destroy(ring.gameObject);
+            if (callout != null) Destroy(callout.gameObject);
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
+        /// 실제 이전이 생긴 순간에만 피격 동료에서 수호자로 향하는 짧은 금색 선과 섬광을 만듭니다.
+        /// 별도 외부 에셋 없이 UI Image를 사용하며 계산과 독립된 안내 연출이라 피해 수치를 바꾸지 않습니다.
+        /// </summary>
+        public IEnumerator PlayGuardianTransfer(RectTransform protectedAlly, RectTransform guardian)
+        {
+            if (protectedAlly == null || guardian == null || protectedAlly.parent != guardian.parent) yield break;
+            RectTransform parent = protectedAlly.parent as RectTransform;
+            if (parent == null) yield break;
+
+            Vector2 start = protectedAlly.anchoredPosition;
+            Vector2 end = guardian.anchoredPosition;
+            Vector2 delta = end - start;
+            GameObject lineObject = new GameObject("GuardianTransferLine", typeof(Image));
+            lineObject.transform.SetParent(parent, false);
+            Image line = lineObject.GetComponent<Image>();
+            line.color = new Color(1f, .82f, .3f, .9f);
+            line.raycastTarget = false;
+            RectTransform lineRect = line.rectTransform;
+            lineRect.anchorMin = lineRect.anchorMax = lineRect.pivot = Vector2.one * .5f;
+            lineRect.anchoredPosition = (start + end) * .5f;
+            lineRect.sizeDelta = new Vector2(delta.magnitude, 4f);
+            lineRect.localEulerAngles = new Vector3(0f, 0f, Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg);
+
+            Image flash = CreateEffectImage(guardian, "GuardianTransferFlash", new Sprite[] { null },
+                new Vector2(34f, 34f), Vector2.zero);
+            if (flash != null) flash.color = new Color(1f, .92f, .62f, .75f);
+            yield return new WaitForSeconds(.16f);
+            if (line != null) Destroy(line.gameObject);
+            if (flash != null) Destroy(flash.gameObject);
+        }
+
+        /// <summary>
         /// 선택한 아군 위치에서 spectral-bloom 16프레임을 한 번 재생합니다. release 프레임에서 전달받은
         /// 정화 함수를 호출해 독·화상·감전 HUD가 빛이 흩어지는 순간 함께 사라집니다. Presenter는 어떤
         /// 상태를 지우는지 알지 않으므로 향후 출혈·저주·마비가 추가되어도 이 연출 코드는 바뀌지 않습니다.

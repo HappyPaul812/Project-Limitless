@@ -133,11 +133,15 @@ namespace ProjectLimitless.Battle
             // 별도 상태이므로 두 표식이 동시에 존재해도 서로를 지우거나 감소시키지 않습니다.
             int ironWallRemaining = statusEffects?.GetIronWallRemaining(combatant) ?? 0;
             if (ironWallRemaining > 0) markers.Add(new BattleStatusMarker("iron_wall", "철벽", ironWallRemaining));
+            bool guardianCoverActive = statusEffects?.HasGuardianCover(combatant) == true;
+            if (guardianCoverActive) markers.Add(new BattleStatusMarker("guardian_cover", "대신 막기"));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
             if (poisonRemaining > 0) resourceDetails.Add("독: 행동 종료 시 최대 HP 5% 피해");
             if (ironWallRemaining > 0) resourceDetails.Add($"철벽: 남은 자신의 행동 {ironWallRemaining}회 · 받는 피해 70% 감소");
+            if (guardianCoverActive)
+                resourceDetails.Add($"보호 가능 이전량: {statusEffects.GetGuardianCoverRemainingBudget(combatant)} / {statusEffects.GetGuardianCoverMaximumBudget(combatant)}");
             if (job != null && job.JobId == "fighter")
                 resourceDetails.Add($"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}");
 

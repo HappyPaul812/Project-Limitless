@@ -14,7 +14,7 @@
 - `BattleSkillCatalog`: 프리뷰를 전투 메뉴용 정의로 변환하고 실제 구현 여부·효과·쿨타임·지속값 연결
 - `BattleSkillExecutor`: 사용 가능 여부와 효과 실행 담당
 - `BattleSkillCooldowns`: 참가자별·스킬별 쿨타임을 해당 참가자의 행동 차례 기준으로 관리
-- `BattleStatusEffectRuntime`: 도발과 대상별 화상 잔여 횟수·저장 피해, 감전 1, 가이아 웰·철벽의 남은 자기 행동 관리
+- `BattleStatusEffectRuntime`: 도발과 대상별 화상 잔여 횟수·저장 피해, 감전 1, 가이아 웰·철벽, 대신 막기의 수호자·이전 예산 관리
 - `BattleFighterResourceRuntime`: 참가자별 기세와 난도 스킬 직접 사용 횟수를 서로 분리해 관리
 - `BattleSceneController`: 현재 행동자의 직업 스킬 메뉴, 입력, HUD 표시 연결
 - `BattleActionPresenter`: 계산과 분리된 공용 스킬 강조 연출
@@ -160,6 +160,19 @@
 - 수호자 자신의 행동 기준 4턴 쿨타임
 - PVFX `earth-rupture` 96×96 20프레임을 발밑에서 20 FPS로 한 번 재생하고 peak index 9에서 상태 적용
 - Kenney Board Game Icons의 실제 `structure_wall.png`를 스킬 버튼과 `철벽 n` HUD·상세 상태에 사용
+
+### 수호자 대신 막기 (`guardian_intercept`)
+
+- 사용 즉시 수호자 자신을 제외한 같은 진영의 살아 있는 아군 전체를 보호하며, 수호자의 다음 행동 시작 직전에 종료
+- 보호 대상 목록을 3명으로 저장하지 않고 직접 피격 순간 진영·생존 여부를 판정해 향후 6명 이상 Formation도 같은 구조로 지원
+- `BattleDamageOrigin.DirectCombatAction`인 기본 공격·공격 스킬만 보호하고 화상·독 등 DoT, 향후 반사·환경 피해는 제외
+- 원래 직접 피해의 최대 50%를 감소시키고 그 감소량의 50%를 수호자의 이전 예정 피해로 계산
+- 이전 예산은 사용 시 수호자 최대 HP 40%를 올림 계산하며, 남은 예산이 부족하면 실제 이전량 이하와 그 두 배 이하의 감소만 적용. 예산 0이면 즉시 종료
+- 이전 예산은 철벽 적용 전 예정 피해로 소비하고 실제 수호자 HP 피해만 기존 철벽 70%·공용 방어 등 개인 방어 계산을 통과하므로 철벽이 보호 한도를 늘리지 않음
+- 도발·철벽과 동시에 유지할 수 있고 수호자 전투불능 시 즉시 제거, 수호자 행동 기준 재사용 4턴
+- PVFX `frost-nova` grid의 index 4~10만 금백색 Tint·낮은 알파로 넓고 짧게 재생하며 지속 중 큰 VFX는 남기지 않음
+- 실제 이전 발생 시 피격 아군에서 수호자로 향하는 짧은 금색 UI 선·섬광을 표시
+- Kenney Board Game Icons의 실제 `pawns.png`를 스킬 버튼과 수호자 상태 HUD에 사용하고 상세 팝업에 `보호 가능 이전량: 남음 / 최대` 표시
 
 ### 향후 직업별 광역 범위
 

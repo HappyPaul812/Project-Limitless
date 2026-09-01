@@ -22,6 +22,7 @@ namespace ProjectLimitless.Battle
         AreaMagicAttackWithShock,
         SelfDamageReduction,
         GuardianIronWall,
+        GuardianCoverAllies,
         RemoveAllHarmfulStatuses
     }
 
@@ -113,6 +114,7 @@ namespace ProjectLimitless.Battle
     {
         public const string GuardianTauntId = "guardian_taunt";
         public const string GuardianIronWallId = "guardian_iron_defense";
+        public const string GuardianCoverAlliesId = "guardian_intercept";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string HealerHealingWaveId = "healer_healing_wave";
         public const string HealerCleanseId = "healer_cleanse";
@@ -154,6 +156,15 @@ namespace ProjectLimitless.Battle
                         effectDescription: "효과: 받는 피해 70% 감소",
                         typeDescription: "유형: 자기 보호",
                         durationDescription: "지속: 자신의 다음 2회 행동\n재사용 대기시간: 4턴\n공용 방어와 중첩 불가");
+                if (preview.SkillId == GuardianCoverAlliesId)
+                    return new BattleSkillDefinition(preview.SkillId, "대신 막기",
+                        "동료들의 피해를 대신 감당합니다.\n수호자의 다음 행동 전까지 살아 있는 아군 전체가 직접 공격과 공격 스킬로 받는 피해를 최대 50% 줄이고, 줄인 피해의 절반을 수호자가 대신 받습니다.", true,
+                        BattleSkillEffectType.GuardianCoverAllies, 4, 0,
+                        iconId: BattleUiIconCatalog.GuardianCoverAlliesSkill,
+                        targetDescription: "대상: 자신을 제외한 살아 있는 아군 전체",
+                        effectDescription: "효과: 직접 피해 최대 50% 감소\n이전 피해: 감소량의 50%\n이전 상한: 수호자 최대 HP의 40%\nDoT 보호 불가",
+                        typeDescription: "유형: 광역 보호",
+                        durationDescription: "지속: 수호자의 다음 행동 전까지\n재사용 대기시간: 4턴");
                 if (preview.SkillId == HealerHealingLightId)
                     // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
                     // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
@@ -411,6 +422,40 @@ namespace ProjectLimitless.Battle
         Shock
     }
 
+    /// <summary>
+    /// HP를 줄이는 원인을 구분합니다. 대신 막기는 적이 선택한 직접 전투 행동만 보호해야 하므로
+    /// 화상·독 같은 지속 피해를 같은 TakeDamage 호출이라는 이유만으로 가로채지 않습니다. 향후 출혈,
+    /// 반사 피해, 환경 피해도 새 원인을 추가해 보호 여부를 명시할 수 있습니다.
+    /// </summary>
+    public enum BattleDamageOrigin
+    {
+        DirectCombatAction,
+        DamageOverTime,
+        Reflected,
+        Environmental,
+        GuardianTransfer
+    }
+
+    /// <summary>한 번의 대신 막기 계산 결과를 연출 계층에 전달하는 읽기 전용 자료입니다.</summary>
+    public readonly struct GuardianInterceptionResult
+    {
+        public GuardianInterceptionResult(Combatant protectedAlly, Combatant guardian, int reducedDamage,
+            int scheduledTransfer, int appliedGuardianDamage)
+        {
+            ProtectedAlly = protectedAlly;
+            Guardian = guardian;
+            ReducedDamage = Math.Max(0, reducedDamage);
+            ScheduledTransfer = Math.Max(0, scheduledTransfer);
+            AppliedGuardianDamage = Math.Max(0, appliedGuardianDamage);
+        }
+
+        public Combatant ProtectedAlly { get; }
+        public Combatant Guardian { get; }
+        public int ReducedDamage { get; }
+        public int ScheduledTransfer { get; }
+        public int AppliedGuardianDamage { get; }
+    }
+
     /// <summary>도발처럼 전투 참가자에게 남는 상태의 적용과 무효 상태 정리를 담당합니다.</summary>
     public sealed class BattleStatusEffectRuntime
     {
@@ -437,11 +482,23 @@ namespace ProjectLimitless.Battle
             public int RemainingActions;
         }
 
+        private sealed class GuardianCoverState
+        {
+            public Combatant Guardian;
+            public int MaximumTransferBudget;
+            public int RemainingTransferBudget;
+        }
+
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>();
         private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>();
         private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>();
+        private readonly Dictionary<BattleSide, GuardianCoverState> guardianCovers =
+            new Dictionary<BattleSide, GuardianCoverState>();
+
+        /// <summary>계산 결과만 화면에 알려 주어 피해 규칙이 UI 오브젝트를 직접 참조하지 않게 합니다.</summary>
+        public event Action<GuardianInterceptionResult> GuardianInterceptionOccurred;
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
@@ -514,11 +571,81 @@ namespace ProjectLimitless.Battle
             GetGaiaWallRemaining(target) > 0 || GetIronWallRemaining(target) > 0;
 
         /// <summary>
+        /// 수호자와 이전 예산만 저장합니다. 보호 대상 배열이나 세 자리 슬롯을 저장하지 않으므로 실제 피격
+        /// 순간 같은 진영·생존·수호자 자신 제외 조건을 판정하며 6명 이상 파티도 같은 코드로 처리합니다.
+        /// </summary>
+        public bool ApplyGuardianCover(Combatant guardian)
+        {
+            if (guardian == null || !guardian.IsAlive) return false;
+            int budget = (int)Math.Max(1L, ((long)Math.Max(1, guardian.MaxHp) * 40L + 99L) / 100L);
+            guardianCovers[guardian.Side] = new GuardianCoverState
+            {
+                Guardian = guardian,
+                MaximumTransferBudget = budget,
+                RemainingTransferBudget = budget
+            };
+            return true;
+        }
+
+        public bool HasGuardianCover(Combatant guardian) => guardian != null && guardian.IsAlive &&
+            guardianCovers.TryGetValue(guardian.Side, out GuardianCoverState state) && state.Guardian == guardian &&
+            state.RemainingTransferBudget > 0;
+
+        public int GetGuardianCoverMaximumBudget(Combatant guardian) => HasGuardianCover(guardian) &&
+            guardianCovers.TryGetValue(guardian.Side, out GuardianCoverState state) ? state.MaximumTransferBudget : 0;
+
+        public int GetGuardianCoverRemainingBudget(Combatant guardian) => HasGuardianCover(guardian) &&
+            guardianCovers.TryGetValue(guardian.Side, out GuardianCoverState state) ? state.RemainingTransferBudget : 0;
+
+        /// <summary>수호자의 다음 행동이 시작되는 경계에서 보호를 끝내 지속시간이 한 행동 늘지 않게 합니다.</summary>
+        public void BeginActorAction(Combatant actor)
+        {
+            if (actor == null) return;
+            if (guardianCovers.TryGetValue(actor.Side, out GuardianCoverState state) && state.Guardian == actor)
+                guardianCovers.Remove(actor.Side);
+        }
+
+        /// <summary>
         /// 가이아 웰은 공용 방어 50%보다 강한 마도사 전용 생존기이므로 원시 피해의 40%만 받습니다.
         /// 활성 중에는 방어를 함께 적용하지 않는 확정 규칙에 따라 TakeDamage의 방어 단계를 건너뜁니다.
         /// UI 차단 외에도 계산 경계에서 중첩을 막아 외부 호출이 있어도 60% 감소만 적용되게 합니다.
         /// </summary>
-        public int ApplyIncomingDamage(Combatant target, int rawDamage)
+        public int ApplyIncomingDamage(Combatant target, int rawDamage,
+            BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction)
+        {
+            if (target == null) return 0;
+            int damageAfterCover = Math.Max(1, rawDamage);
+            GuardianInterceptionResult? interception = null;
+            if (origin == BattleDamageOrigin.DirectCombatAction &&
+                guardianCovers.TryGetValue(target.Side, out GuardianCoverState cover) &&
+                cover.Guardian != null && cover.Guardian.IsAlive && cover.Guardian != target &&
+                cover.RemainingTransferBudget > 0)
+            {
+                int desiredReduction = damageAfterCover / 2;
+                int desiredTransfer = (desiredReduction + 1) / 2;
+                int scheduledTransfer = Math.Min(cover.RemainingTransferBudget, desiredTransfer);
+                int actualReduction = Math.Min(desiredReduction, scheduledTransfer * 2);
+                if (scheduledTransfer > 0 && actualReduction > 0)
+                {
+                    damageAfterCover -= actualReduction;
+                    // 예산은 철벽 적용 뒤 HP 피해가 아니라 적용 전 이전 예정량으로 소비합니다. 철벽이 실제
+                    // 피해를 줄였다는 이유로 예산이 되돌아오면 최대 HP 40%라는 보호 위험 상한이 커집니다.
+                    cover.RemainingTransferBudget -= scheduledTransfer;
+                    int guardianDamage = ApplyPersonalDefense(cover.Guardian, scheduledTransfer);
+                    interception = new GuardianInterceptionResult(target, cover.Guardian, actualReduction,
+                        scheduledTransfer, guardianDamage);
+                    if (cover.RemainingTransferBudget <= 0 || !cover.Guardian.IsAlive)
+                        guardianCovers.Remove(target.Side);
+                }
+            }
+
+            int appliedDamage = ApplyPersonalDefense(target, damageAfterCover);
+            if (interception.HasValue) GuardianInterceptionOccurred?.Invoke(interception.Value);
+            return appliedDamage;
+        }
+
+        /// <summary>철벽·가이아 웰·공용 방어의 기존 우선순위를 한곳에서 유지합니다.</summary>
+        private int ApplyPersonalDefense(Combatant target, int rawDamage)
         {
             if (target == null) return 0;
             if (GetIronWallRemaining(target) > 0)
@@ -592,6 +719,8 @@ namespace ProjectLimitless.Battle
                 gaiaWalls.Remove(dead);
                 ironWalls.Remove(dead);
                 poisons.Remove(dead);
+                if (guardianCovers.TryGetValue(dead.Side, out GuardianCoverState cover) && cover.Guardian == dead)
+                    guardianCovers.Remove(dead.Side);
             }
         }
 
@@ -623,7 +752,8 @@ namespace ProjectLimitless.Battle
         {
             remainingTicks = 0;
             if (!HasActiveBurn(target) || !burns.TryGetValue(target, out BurnState burn)) return 0;
-            int damage = ApplyIncomingDamage(target, burn.RawDamagePerTick);
+            // 화상은 직접 공격이 끝난 뒤 상태가 만드는 DoT이므로 대신 막기 보호 계산을 명시적으로 건너뜁니다.
+            int damage = ApplyIncomingDamage(target, burn.RawDamagePerTick, BattleDamageOrigin.DamageOverTime);
             burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
             remainingTicks = burn.RemainingTicks;
             if (burn.RemainingTicks == 0 || !target.IsAlive) burns.Remove(target);
@@ -1215,6 +1345,21 @@ namespace ProjectLimitless.Battle
 
             statusEffects.ApplyIronWall(actor, skill.EffectDuration);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 {skill.EffectDuration}회 행동 동안 받는 피해 70% 감소.";
+            return true;
+        }
+
+        /// <summary>대상 목록을 고정하지 않고 수호자 쪽에 광역 보호 상태와 최대 HP 40% 예산을 시작합니다.</summary>
+        public bool ExecuteGuardianCover(Combatant actor, BattleSkillDefinition skill, out string message)
+        {
+            if (!CanUse(actor, skill, out message)) return false;
+            if (skill.EffectType != BattleSkillEffectType.GuardianCoverAllies || !statusEffects.ApplyGuardianCover(actor))
+            {
+                message = "대신 막기를 적용할 수 없습니다.";
+                return false;
+            }
+
+            int budget = statusEffects.GetGuardianCoverMaximumBudget(actor);
+            message = $"{actor.DisplayName}의 {skill.DisplayName}! 다음 행동 전까지 동료들을 보호합니다. 이전 예산 {budget}.";
             return true;
         }
     }

@@ -26,6 +26,8 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntSkill = "skill.guardian.taunt";
         public const string GuardianIronWallSkill = "skill.guardian.iron_wall";
         public const string IronWall = "status.guardian.iron_wall";
+        public const string GuardianCoverAlliesSkill = "skill.guardian.cover_allies";
+        public const string GuardianCover = "status.guardian.cover_allies";
         public const string HealerHealingLightSkill = "skill.healer.healing_light";
         public const string HealerHealingWaveSkill = "skill.healer.healing_wave";
         public const string HealerCleanseSkill = "skill.healer.cleanse";
@@ -69,6 +71,9 @@ namespace ProjectLimitless.Battle
             // 공용 방어 shield와 가이아 웰 dice_shield는 기존 경로를 그대로 유지합니다.
             { GuardianIronWallSkill, "KenneyBattleIcons/structure_wall" },
             { IronWall, "KenneyBattleIcons/structure_wall" },
+            // 세 개의 말을 함께 보여 주는 pawns는 방패 하나가 아니라 수호자와 여러 동료의 관계를 표현합니다.
+            { GuardianCoverAlliesSkill, "KenneyBattleIcons/pawns" },
+            { GuardianCover, "KenneyBattleIcons/pawns" },
             { HealerHealingLightSkill, "KenneyBattleIcons/suit_hearts" },
             // 버튼은 Radiant Heal의 가장 밝은 peak 한 장을 고정 그림으로 사용하고, 실제 전투에서는
             // 같은 계열의 전체 프레임을 별도로 재생합니다.

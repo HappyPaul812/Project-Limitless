@@ -42,6 +42,8 @@
 | 가이아 웰 상태 | 스킬과 같은 `dice_shield.png` | `status.gaia_wall` |
 | 수호자 철벽 | Board Game Icons `PNG/Default (64px)/structure_wall.png` | `skill.guardian.iron_wall` |
 | 철벽 상태 | 스킬과 같은 `structure_wall.png` | `status.guardian.iron_wall` |
+| 수호자 대신 막기 | Board Game Icons `PNG/Default (64px)/pawns.png` | `skill.guardian.cover_allies` |
+| 대신 막기 상태 | 스킬과 같은 `pawns.png` | `status.guardian.cover_allies` |
 
 파일명은 프로젝트에 보존한 압축 내부에서 실제 존재 여부를 확인한 뒤 선택했다. 적에게 남는 도발 **상태**는 `pawn_right.png`를 계속 사용하고, 수호자가 누르는 도발 **스킬 버튼**은 `pawn_left.png`를 사용한다. `target.png`는 도발 상태가 아니라 사수 정조준 버튼에 연결한다. 같은 전투 개념이라도 상태 요약과 실행 버튼의 역할 ID가 다르므로 서로의 아이콘이 바뀌지 않는다.
 
@@ -60,6 +62,8 @@
 가이아 웰은 기본 방어 명령의 큰 외곽선 `shield.png`와 혼동을 줄이기 위해 같은 CC0 Board Game Icons 팩에 실제 존재하는 작은 채움형 방패 `dice_shield.png`를 사용한다. HUD에는 아이콘과 `가이아 2/1` 한글을 함께 표시해 모양이나 색상만으로 상태를 구분하지 않는다.
 
 철벽은 같은 CC0 Board Game Icons 팩의 실제 성벽 실루엣 `structure_wall.png`를 버튼과 상태 HUD에 함께 사용한다. 공용 방어 `shield.png`, 가이아 웰 `dice_shield.png`와 형태를 구분하고 `철벽 2/1` 한글을 함께 표시한다.
+
+대신 막기는 같은 팩의 실제 `pawns.png`를 버튼과 수호자 상태 HUD에 사용한다. 세 인물 실루엣으로 여러 동료 보호를 표현하고, 공용 방어 `shield.png`·가이아 웰 `dice_shield.png`·철벽 `structure_wall.png`는 변경하지 않는다. HUD는 아이콘과 `대신 막기` 한글을 함께 표시하고 상세 팝업에서 남은 이전 예산을 확인한다.
 
 재사용 대기는 실제 HUD 숫자를 기준으로 단계를 고른다. 현재 구현된 3턴 스킬은 사용 직후 `재사용 3턴`이므로 `hourglass_top`, 다음 자기 행동 시작 뒤 `2턴`은 `hourglass`, 마지막 `1턴`은 `hourglass_bottom`을 표시한다. 다음 감소로 0이 되면 텍스트와 아이콘을 함께 숨긴다. 이 선택은 UI 표현이며 `BattleSkillCooldowns`의 저장·감소 방식은 변경하지 않는다.
 

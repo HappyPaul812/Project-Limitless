@@ -116,9 +116,15 @@ namespace ProjectLimitless.Battle
             CreateParticipants();
             CreateEventSystem();
             CreateInterface();
+            statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
             turnOrder = new TurnOrderQueue();
             turnOrder.Build(AllCombatants);
             AdvanceTurn();
+        }
+
+        private void OnDestroy()
+        {
+            statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
         }
 
         private void Update()
@@ -568,6 +574,9 @@ namespace ProjectLimitless.Battle
             if (currentActor == null) return;
             currentActor.BeginTurn();
             skillCooldowns.BeginActorTurn(currentActor);
+            // 대신 막기는 수호자가 새 행동을 시작하기 직전에 끝납니다. 다른 참가자의 차례나 행동 종료에서는
+            // 지우지 않으므로 적·아군 수가 늘어나도 확정된 시간 동안 모든 직접 피해를 보호합니다.
+            statusEffects.BeginActorAction(currentActor);
             UpdateTimeline();
             RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
@@ -940,6 +949,11 @@ namespace ProjectLimitless.Battle
             if (skill.EffectType == BattleSkillEffectType.GuardianIronWall)
             {
                 PlayGuardianIronWall(skill);
+                return;
+            }
+            if (skill.EffectType == BattleSkillEffectType.GuardianCoverAllies)
+            {
+                PlayGuardianCover(skill);
                 return;
             }
 
@@ -1797,6 +1811,63 @@ namespace ProjectLimitless.Battle
                 }));
         }
 
+        /// <summary>
+        /// 대상 선택 없이 현재 수호자에게 광역 보호 상태를 시작합니다. VFX는 파티 범위를 한 번 보여 줄 뿐이고
+        /// 실제 대상은 각 피격 순간 같은 진영의 살아 있는 참가자를 판정하므로 현재 3인 슬롯에 묶이지 않습니다.
+        /// </summary>
+        private void PlayGuardianCover(BattleSkillDefinition skill)
+        {
+            Combatant actor = currentActor;
+            if (battleEnded || actionPlaying || actor == null || !actor.IsAlive) return;
+
+            choosingSkill = false;
+            skillMenuPanel.gameObject.SetActive(false);
+            actionPlaying = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(false);
+            RefreshCombatantViews(null);
+            if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+
+            CombatantView actorView = combatantViews[actor];
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            bool executed = false;
+            StartCoroutine(actionPresenter.PlayGuardianCover(
+                actorView.ActionRoot, battleFont, BattleGuardianCoverVisuals.LoadProtectionFrames(),
+                () =>
+                {
+                    executed = skillExecutor.ExecuteGuardianCover(actor, skill, out string result);
+                    messageText.text = result;
+                    RefreshCombatantViews(null);
+                },
+                () =>
+                {
+                    RestoreBattleIdle(actorView);
+                    actionPlaying = false;
+                    if (executed)
+                    {
+                        skillExecutor.RegisterCooldownAfterSuccessfulUse(actor, skill);
+                        FinishCurrentAction();
+                    }
+                    else
+                    {
+                        string failureMessage = messageText.text;
+                        ShowSkillMenu();
+                        messageText.text = string.IsNullOrEmpty(failureMessage)
+                            ? "대신 막기를 사용할 수 없습니다." : failureMessage;
+                    }
+                }));
+        }
+
+        /// <summary>공통 직접 피해 경계가 알려 준 실제 이전에만 짧은 금색 연결 연출을 재생합니다.</summary>
+        private void OnGuardianInterceptionOccurred(GuardianInterceptionResult result)
+        {
+            if (battleEnded || actionPresenter == null ||
+                !combatantViews.TryGetValue(result.ProtectedAlly, out CombatantView allyView) ||
+                !combatantViews.TryGetValue(result.Guardian, out CombatantView guardianView)) return;
+
+            StartCoroutine(actionPresenter.PlayGuardianTransfer(allyView.ActionRoot, guardianView.ActionRoot));
+        }
+
         private void Defend()
         {
             if (actionPlaying) return;
@@ -2177,7 +2248,8 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "poison" ? BattleUiIconCatalog.Poison
                     : marker.Id == "shock" ? BattleUiIconCatalog.Shock
                     : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall
-                    : marker.Id == "iron_wall" ? BattleUiIconCatalog.IronWall : null;
+                    : marker.Id == "iron_wall" ? BattleUiIconCatalog.IronWall
+                    : marker.Id == "guardian_cover" ? BattleUiIconCatalog.GuardianCover : null;
                 summaries.Add((iconId, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.
