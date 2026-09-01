@@ -19,6 +19,17 @@ namespace ProjectLimitless.Core
         /// <summary>다음 Scene에서 플레이어를 배치할 Spawn Point ID입니다.</summary>
         public static string PendingSpawnPointId { get; private set; } = string.Empty;
 
+        /// <summary>향후 레벨업 시스템이 붙기 전에도 저장 형식을 다시 깨지 않도록 준비한 진행 값입니다.</summary>
+        public static int Level { get; private set; } = 1;
+        public static int CurrentExperience { get; private set; }
+
+        /// <summary>
+        /// 현재 실행 중 마지막으로 안전하게 도착한 월드 Scene과 Spawn입니다. PendingSpawnPointId는
+        /// "지금 이동 중인 목적지"이고, 이 두 값은 "다음 실행에서 이어갈 위치"라는 차이가 있습니다.
+        /// </summary>
+        public static string CurrentSceneId { get; private set; } = string.Empty;
+        public static string LastSpawnPointId { get; private set; } = string.Empty;
+
         public static void SelectPlayerVisual(PlayerVisualType visualType) => SelectedPlayerVisual = visualType;
 
         public static void ConfigurePlayer(PlayerVisualType visualType, string playerName)
@@ -35,6 +46,18 @@ namespace ProjectLimitless.Core
 
         public static void ClearPendingSpawnPoint() => PendingSpawnPointId = string.Empty;
 
+        public static void ConfigureProgress(int level, int currentExperience)
+        {
+            Level = System.Math.Max(1, level);
+            CurrentExperience = System.Math.Max(0, currentExperience);
+        }
+
+        public static void RecordLocation(string sceneId, string spawnPointId)
+        {
+            CurrentSceneId = sceneId ?? string.Empty;
+            LastSpawnPointId = spawnPointId ?? string.Empty;
+        }
+
         public static void Reset()
         {
             SelectedPlayerVisual = PlayerVisualType.Male;
@@ -42,6 +65,10 @@ namespace ProjectLimitless.Core
             SelectedPlayerPathId = string.Empty;
             SelectedJobId = string.Empty;
             PendingSpawnPointId = string.Empty;
+            Level = 1;
+            CurrentExperience = 0;
+            CurrentSceneId = string.Empty;
+            LastSpawnPointId = string.Empty;
         }
     }
 }

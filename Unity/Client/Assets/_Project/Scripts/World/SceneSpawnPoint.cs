@@ -52,6 +52,9 @@ namespace ProjectLimitless.World
             }
 
             GameSessionData.ClearPendingSpawnPoint();
+            // Field/마을 전환은 Scene 로드뿐 아니라 Player가 목적 Spawn에 놓여야 정상 완료입니다.
+            // 이 뒤에만 저장하여 다음 이어하기가 검증된 SpawnPoint에서 시작하도록 합니다.
+            GameSaveService.SaveCurrentSession(gameObject.scene.name, spawnPointId);
         }
     }
 }

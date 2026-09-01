@@ -112,9 +112,18 @@ namespace ProjectLimitless.UI
             Button previous = MakeButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .095f)); Button start = MakeButton(parent, "StartButton", "게임 시작", font, new Vector2(.66f, .095f));
             previous.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single));
             start.interactable = path != null && job != null && !string.IsNullOrWhiteSpace(GameSessionData.PlayerName);
-            start.onClick.AddListener(() => SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single)); controls.Add(previous); controls.Add(start);
+            start.onClick.AddListener(StartConfirmedGame); controls.Add(previous); controls.Add(start);
             previous.navigation = Nav(start, start); start.navigation = Nav(previous, previous);
             MakeText(parent, "Help", "Tab / Shift+Tab / 방향키: 이동   Enter / Space: 선택", font, 15, new Vector2(.53f, .02f), new Vector2(760, 24)).color = new Color(.7f, .77f, .86f, 1);
+        }
+
+        private void StartConfirmedGame()
+        {
+            // 캐릭터 생성이 모두 확정된 이 시점에만 첫 저장을 만듭니다. 중간 선택 화면마다 저장하면
+            // 미완성 Path/Job ID가 이어하기 파일에 남을 수 있으므로 자동 저장 시점을 제한합니다.
+            GameSessionData.ConfigureProgress(1, 0);
+            GameSaveService.SaveCurrentSession(worldSceneName, string.Empty);
+            SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single);
         }
 
         private void MoveFocus(int direction) { int index = controls.FindIndex(item => item.gameObject == EventSystem.current.currentSelectedGameObject); EventSystem.current.SetSelectedGameObject(controls[(index + direction + controls.Count) % controls.Count].gameObject); }

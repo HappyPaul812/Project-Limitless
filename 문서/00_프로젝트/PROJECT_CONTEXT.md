@@ -19,7 +19,9 @@
 
 `Bootstrap → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage`
 
-`GameSessionData`가 이름, Male/Female 외형, 길 ID, 직업 ID와 Scene 전환용 Spawn ID를 실행 중에 유지한다. 이는 아직 영구 저장 데이터가 아니다.
+`GameSessionData`가 이름, Male/Female 외형, 길 ID, 직업 ID와 Scene 전환용 Spawn ID를 실행 중에 유지한다. 이 세션 객체 자체는 영구 저장 데이터가 아니다.
+
+1차 로컬 저장은 `GameSaveData`와 `GameSaveService`가 담당한다. `Application.persistentDataPath/project_limitless_save.json` 단일 슬롯에 안정적인 문자열 ID와 숫자만 기록하며, `GameSessionData`는 계속 현재 실행의 메모리 상태로 사용한다. Bootstrap 이어하기는 저장을 검증한 뒤 Session을 복원하고 마지막 World/Field Scene과 SpawnPoint로 바로 이동한다.
 
 ## 길
 
