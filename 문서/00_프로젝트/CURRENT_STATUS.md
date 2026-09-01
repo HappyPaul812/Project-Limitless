@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-01
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `de015ea` (`Feature: 수호자 대신 막기 스킬 구현`)
+- 마지막 기능 관련 commit: `37971b5` (`Feature: Field_02와 출입구 안전지대 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -49,6 +49,11 @@
 - 마을 외곽 울타리의 Tile 영역 밖 돌출 방지
 
 ### 첫 필드 몬스터
+
+- 모든 Field 출입구에 데이터 기반 원형 몬스터 안전지대 적용. 생성점과 활동 반경 전체를 보정하며 2초 재조우 유예와 별도로 유지
+- Field_01 북/남 안전지대와 Field_01↔Field_02 데이터 기반 양방향 연결
+- Field_02 숲길 기본 Scene·그늘 테마·World/Camera Bounds 재사용, 숲거미 4개 스폰
+- CC0 Spider Idle/Walk/Attack/Shoot 선별 프레임 연결, `독액 분사` 생존 아군 전체 직접 피해 20 구현
 
 - 데이터 기반 `MonsterDefinition`과 Scene별 `FieldMonsterSpawnDefinition`
 - Field_01 여러 빈터의 `초원 슬라임` 5마리 데이터 기반 런타임 배치
@@ -458,7 +463,7 @@
 
 ## 다음 권장 작업
 
-다음 권장 작업은 Battle Play Mode에서 대신 막기의 피해 20→아군 10+수호자 예정 5, 최대 HP 40% 예산 소진, 철벽 적용 후 실제 이전 피해, DoT 제외, 다음 수호자 행동 시작 종료와 Frost Nova/금색 이전선을 우선 검증하는 것이다. 철벽·독침벌·정화 회귀도 함께 확인한다.
+Unity Play Mode에서 마을→Field_01→Field_02 왕복과 각 출입구 안전지대, 거미 Idle/Walk·접촉·리스폰을 확인한다. 이어 독액 분사 20이 대신 막기 사용 전 각 아군 20, 사용 후 아군 최대 10과 수호자 이전 예정 5로 처리되고 철벽은 실제 이전 피해만 70% 줄이는지 확인한다. 정적 검증 외 실제 Play Mode 확인은 남아 있다.
 
 ## 갱신 규칙
 
