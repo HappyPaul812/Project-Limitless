@@ -1,0 +1,12 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5f2188c80b4ab6a05f7a39c9d9f001, type: 3}
+  m_Name: Field02_North
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.FieldEntranceSafetyZoneDefinition
+  sceneName: Field_02
+  zoneId: north_field01
+  center: {x: 0, y: 5.65}
+  radius: 2.2

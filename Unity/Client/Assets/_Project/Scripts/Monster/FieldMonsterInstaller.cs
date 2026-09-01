@@ -14,6 +14,7 @@ namespace ProjectLimitless.Monster
     public static class FieldMonsterInstaller
     {
         private const string SpawnResourcePath = "MonsterSpawns";
+        private const string SafetyZoneResourcePath = "FieldEntranceSafetyZones";
         private const string RootName = "FieldMonsters";
 
         // 게임 시작 전에 Scene 로드 Event를 중복 없이 등록합니다.
@@ -34,6 +35,10 @@ namespace ProjectLimitless.Monster
                 .OrderBy(item => item.SpawnId)
                 .ToArray();
             if (spawns.Length == 0) return;
+            FieldEntranceSafetyZoneDefinition[] safetyZones = Resources.LoadAll<FieldEntranceSafetyZoneDefinition>(SafetyZoneResourcePath)
+                .Where(item => item.SceneName == scene.name)
+                .OrderBy(item => item.ZoneId)
+                .ToArray();
 
             string[] invalidSpawnIds = spawns
                 .Where(item => string.IsNullOrWhiteSpace(item.SpawnId))
@@ -49,11 +54,11 @@ namespace ProjectLimitless.Monster
             Debug.Log($"필드 몬스터 배치 로드: {scene.name}, {spawns.Length}개 [{string.Join(", ", spawns.Select(item => item.SpawnId))}]");
             GameObject root = new GameObject(RootName, typeof(FieldMonsterSpawnRuntime));
             SceneManager.MoveGameObjectToScene(root, scene);
-            root.GetComponent<FieldMonsterSpawnRuntime>().Configure(spawns);
+            root.GetComponent<FieldMonsterSpawnRuntime>().Configure(spawns, safetyZones);
         }
 
         /// <summary>배치 데이터 한 개를 Rigidbody2D, Collider, Visual과 배회 Controller가 있는 GameObject로 만듭니다.</summary>
-        internal static GameObject CreateMonster(Transform parent, FieldMonsterSpawnDefinition spawn)
+        internal static GameObject CreateMonster(Transform parent, FieldMonsterSpawnDefinition spawn, Vector2 resolvedPosition)
         {
             MonsterDefinition monster = spawn.Monster;
             GameObject monsterObject = new GameObject(
@@ -62,9 +67,9 @@ namespace ProjectLimitless.Monster
                 typeof(CircleCollider2D),
                 typeof(MonsterFieldController));
             monsterObject.transform.SetParent(parent, false);
-            monsterObject.transform.position = spawn.Position;
+            monsterObject.transform.position = resolvedPosition;
             monsterObject.GetComponent<CircleCollider2D>().radius = .4f;
-            monsterObject.GetComponent<MonsterFieldController>().Configure(spawn);
+            monsterObject.GetComponent<MonsterFieldController>().Configure(spawn, resolvedPosition);
             monsterObject.AddComponent<MonsterNameplate>().Configure(monster.DisplayName);
 
             GameObject visual = new GameObject("Visual");
@@ -79,7 +84,9 @@ namespace ProjectLimitless.Monster
                 // Field의 개체는 스폰 데이터가 만들지만 외형은 MonsterDefinition에서 읽습니다.
                 // 같은 독침벌 정의를 세 스폰과 Battle이 공유해도 각 개체의 위치·리스폰 상태는 서로 독립입니다.
                 visual.transform.localScale = Vector3.one * monster.VisualScale;
-                visual.AddComponent<MonsterSpriteSheetAnimation>().Configure(renderer, monster);
+                MonsterSpriteSheetAnimation frameAnimation = visual.AddComponent<MonsterSpriteSheetAnimation>();
+                frameAnimation.Configure(renderer, monster);
+                monsterObject.GetComponent<MonsterFieldController>().ConfigureFrameAnimation(frameAnimation);
             }
             else if (monster.FieldSprite != null)
             {
@@ -114,10 +121,12 @@ namespace ProjectLimitless.Monster
     {
         private readonly Dictionary<FieldMonsterSpawnDefinition, GameObject> instances = new Dictionary<FieldMonsterSpawnDefinition, GameObject>();
         private FieldMonsterSpawnDefinition[] spawns = Array.Empty<FieldMonsterSpawnDefinition>();
+        private FieldEntranceSafetyZoneDefinition[] safetyZones = Array.Empty<FieldEntranceSafetyZoneDefinition>();
 
-        public void Configure(FieldMonsterSpawnDefinition[] definitions)
+        public void Configure(FieldMonsterSpawnDefinition[] definitions, FieldEntranceSafetyZoneDefinition[] zones)
         {
             spawns = definitions ?? Array.Empty<FieldMonsterSpawnDefinition>();
+            safetyZones = zones ?? Array.Empty<FieldEntranceSafetyZoneDefinition>();
             RefreshSpawns();
         }
 
@@ -136,8 +145,34 @@ namespace ProjectLimitless.Monster
                 }
                 if (!MonsterEncounterService.IsSpawnAvailable(spawn)) continue;
 
-                instances[spawn] = FieldMonsterInstaller.CreateMonster(transform, spawn);
+                Vector2 safePosition = ResolveSafeActivityCenter(spawn);
+                instances[spawn] = FieldMonsterInstaller.CreateMonster(transform, spawn, safePosition);
             }
+        }
+
+        private Vector2 ResolveSafeActivityCenter(FieldMonsterSpawnDefinition spawn)
+        {
+            Vector2 center = spawn.Position;
+            foreach (FieldEntranceSafetyZoneDefinition zone in safetyZones)
+            {
+                // 몬스터 한 점만 밖으로 밀면 배회 중 다시 출입구에 들어옵니다. 따라서 안전 반경과
+                // 활동 반경을 더한 거리만큼 중심을 밀어 배회 원 전체가 안전지대를 침범하지 않게 합니다.
+                float requiredDistance = zone.Radius + Mathf.Max(.5f, spawn.ActivityRadius);
+                Vector2 offset = center - zone.Center;
+                if (offset.sqrMagnitude >= requiredDistance * requiredDistance) continue;
+                if (offset.sqrMagnitude < .0001f)
+                    offset = StableDirection(spawn.SpawnId);
+                center = zone.Center + offset.normalized * requiredDistance;
+            }
+            return center;
+        }
+
+        private static Vector2 StableDirection(string spawnId)
+        {
+            int value = 0;
+            foreach (char character in spawnId ?? string.Empty) value = (value * 31 + character) & 0x7fffffff;
+            float angle = (value % 360) * Mathf.Deg2Rad;
+            return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
         }
     }
 }

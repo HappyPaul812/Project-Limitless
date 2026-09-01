@@ -14,6 +14,7 @@ namespace ProjectLimitless.Monster
         private FieldMonsterSpawnDefinition spawnDefinition;
         private Rigidbody2D body;
         private Animator animator;
+        private MonsterSpriteSheetAnimation frameAnimation;
         private Vector2 activityCenter;
         private Vector2 destination;
         private float activityRadius;
@@ -38,13 +39,13 @@ namespace ProjectLimitless.Monster
         }
 
         /// <summary>Scene 설치기가 몬스터 종류, 활동 중심과 반경을 지정한 직후 호출합니다.</summary>
-        public void Configure(FieldMonsterSpawnDefinition spawn)
+        public void Configure(FieldMonsterSpawnDefinition spawn, Vector2 resolvedActivityCenter)
         {
             spawnDefinition = spawn;
             definition = spawn.Monster;
-            activityCenter = spawn.Position;
+            activityCenter = resolvedActivityCenter;
             activityRadius = Mathf.Max(.5f, spawn.ActivityRadius);
-            destination = spawn.Position;
+            destination = resolvedActivityCenter;
             waitUntil = Time.time + Random.Range(definition.MinimumIdleTime, definition.MaximumIdleTime);
         }
 
@@ -56,6 +57,12 @@ namespace ProjectLimitless.Monster
         {
             animator = visualAnimator;
             PlayDirectionalAnimation(false);
+        }
+
+        public void ConfigureFrameAnimation(MonsterSpriteSheetAnimation animation)
+        {
+            frameAnimation = animation;
+            frameAnimation?.SetFieldMoving(false);
         }
 
         /// <summary>일정한 물리 갱신 간격마다 현재 목적지를 향해 이동합니다.</summary>
@@ -98,6 +105,7 @@ namespace ProjectLimitless.Monster
         /// </summary>
         private void PlayDirectionalAnimation(bool isMoving)
         {
+            frameAnimation?.SetFieldMoving(isMoving);
             if (animator == null || animator.runtimeAnimatorController == null) return;
 
             string direction;

@@ -77,7 +77,8 @@ namespace ProjectLimitless.Battle
         private const int SlimeBaseAttack = 10;
 
         public static BattleEncounterSetup CreateThreeVsThree(string playerName, string playerJobId,
-            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee,
+            MonsterDefinition encounteredMonster)
         {
             BattleParticipantSetup[] allies =
             {
@@ -92,11 +93,14 @@ namespace ProjectLimitless.Battle
                     TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미")
             };
 
+            bool spiderEncounter = encounteredMonster != null && encounteredMonster.MonsterId == "forest_spider";
             BattleParticipantSetup[] enemies =
             {
                 CreateMonster(slime, "grass_slime_a", "초원 슬라임", FormationRow.Front, 0, 11),
                 CreateMonster(slime, "grass_slime_b", "초원 슬라임", FormationRow.Front, 1, 10),
-                CreateMonster(venomBee, "venom_bee_1", "독침벌", FormationRow.Rear, 0, 12)
+                CreateMonster(spiderEncounter ? encounteredMonster : venomBee,
+                    spiderEncounter ? "forest_spider_1" : "venom_bee_1",
+                    spiderEncounter ? "숲거미" : "독침벌", FormationRow.Rear, 0, 12)
             };
             return new BattleEncounterSetup(allies, enemies);
         }

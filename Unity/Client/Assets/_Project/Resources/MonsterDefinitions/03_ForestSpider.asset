@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: 03_ForestSpider
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: forest_spider
+  displayName: "\uC232\uAC70\uBBF8"
+  fieldMoveSpeed: 0.65
+  minimumIdleTime: 0.8
+  maximumIdleTime: 1.8
+  fieldSprite: {fileID: 0}
+  fieldAnimatorController: {fileID: 0}
+  placeholderColor: {r: 0.25, g: 0.42, b: 0.18, a: 1}
+  visualSize: {x: 0.9, y: 0.75}
+  idleSpriteSheet: {fileID: 0}
+  idleFrameSize: {x: 0, y: 0}
+  idleColumns: 1
+  idleFrameCount: 1
+  attackSpriteSheet: {fileID: 0}
+  attackFrameSize: {x: 0, y: 0}
+  attackColumns: 1
+  attackFrameCount: 1
+  animationFramesPerSecond: 10
+  visualScale: 0.7
+  sourceFacesRight: 1
+  idleFrameResourcePath: MonsterAnimations/Spider/Idle
+  walkFrameResourcePath: MonsterAnimations/Spider/Walk
+  attackFrameResourcePath: MonsterAnimations/Spider/Attack
+  shootFrameResourcePath: MonsterAnimations/Spider/Shoot
+  battleAttackPercent: 100
+  basicAttackPoisonActions: 0
+  basicAttackPoisonCooldownActions: 0
+  directAreaAttackName: "\uB3C5\uC561 \uBD84\uC0AC"
+  directAreaAttackDamage: 20

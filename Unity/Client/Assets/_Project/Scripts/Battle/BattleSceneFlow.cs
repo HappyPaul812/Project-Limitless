@@ -15,6 +15,7 @@ namespace ProjectLimitless.Battle
         public static Sprite MonsterBattleSprite { get; private set; }
         public static Vector2 PlayerFieldPosition { get; private set; }
         public static Vector2 MonsterFieldPosition { get; private set; }
+        public static string FieldSceneName { get; private set; }
         private static bool pendingFieldReturn;
 
         public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, RuntimeAnimatorController playerAnimatorController, Sprite playerFallbackSprite, Vector2 playerPosition, Vector2 monsterPosition)
@@ -25,6 +26,7 @@ namespace ProjectLimitless.Battle
             MonsterBattleSprite = BattleVisualResolver.ResolveIdleSprite(monster?.FieldAnimatorController, BattleVisualResolver.EnemyIdleState, monster?.FieldSprite);
             PlayerFieldPosition = playerPosition;
             MonsterFieldPosition = monsterPosition;
+            FieldSceneName = spawn == null ? string.Empty : spawn.SceneName;
             pendingFieldReturn = false;
         }
 
@@ -45,7 +47,6 @@ namespace ProjectLimitless.Battle
     public static class BattleSceneFlow
     {
         public const string BattleSceneName = "Battle";
-        public const string FieldSceneName = "Field_01";
         private static bool transitioning;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -94,7 +95,9 @@ namespace ProjectLimitless.Battle
             transitioning = true;
             MonsterEncounterService.SuppressForSeconds(2f);
             BattleEncounterContext.PrepareFieldReturn();
-            SceneManager.LoadSceneAsync(FieldSceneName, LoadSceneMode.Single);
+            string fieldSceneName = BattleEncounterContext.FieldSceneName;
+            if (string.IsNullOrWhiteSpace(fieldSceneName)) fieldSceneName = "Field_01";
+            SceneManager.LoadSceneAsync(fieldSceneName, LoadSceneMode.Single);
         }
 
         private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -102,12 +105,12 @@ namespace ProjectLimitless.Battle
             transitioning = false;
             if (scene.name == BattleSceneName && Object.FindAnyObjectByType<BattleSceneController>() == null)
                 new GameObject("BattleSystem", typeof(BattleSceneController));
-            else if (scene.name == FieldSceneName && BattleEncounterContext.ConsumeFieldReturn())
+            else if (scene.name == BattleEncounterContext.FieldSceneName && BattleEncounterContext.ConsumeFieldReturn())
                 new GameObject("BattleReturnSafety", typeof(BattleReturnSafety));
         }
     }
 
-    /// <summary>Field_01 복귀 뒤 Player를 접촉 지점에서 조금 떼어 즉시 같은 슬라임과 다시 충돌하지 않게 합니다.</summary>
+    /// <summary>조우했던 Field 복귀 뒤 Player를 접촉 지점에서 조금 떼어 즉시 같은 몬스터와 다시 충돌하지 않게 합니다.</summary>
     public sealed class BattleReturnSafety : MonoBehaviour
     {
         private IEnumerator Start()

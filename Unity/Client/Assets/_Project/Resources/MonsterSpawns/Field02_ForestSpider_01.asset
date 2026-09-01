@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aff533e0f0c4e91a17a57cb14010833, type: 3}
+  m_Name: Field02_ForestSpider_01
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.FieldMonsterSpawnDefinition
+  sceneName: Field_02
+  spawnId: forest_spider_01
+  monster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fc03, type: 2}
+  position: {x: -6.2, y: 2}
+  activityRadius: 1.4
+  respawnSeconds: 30

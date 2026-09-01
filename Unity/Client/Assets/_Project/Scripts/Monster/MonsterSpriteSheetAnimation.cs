@@ -16,8 +16,12 @@ namespace ProjectLimitless.Monster
         private Image battleImage;
         private Sprite[] idleFrames = Array.Empty<Sprite>();
         private Sprite[] attackFrames = Array.Empty<Sprite>();
+        private Sprite[] walkFrames = Array.Empty<Sprite>();
+        private Sprite[] shootFrames = Array.Empty<Sprite>();
         private float elapsed;
         private bool attacking;
+        private bool shooting;
+        private bool fieldMoving;
 
         public void Configure(SpriteRenderer target, MonsterDefinition monster)
         {
@@ -38,8 +42,16 @@ namespace ProjectLimitless.Monster
                 monster?.IdleColumns ?? 1, monster?.IdleFrameCount ?? 0, $"{monster?.MonsterId}_Idle");
             attackFrames = CreateFrames(monster?.AttackSpriteSheet, monster?.AttackFrameSize ?? Vector2Int.zero,
                 monster?.AttackColumns ?? 1, monster?.AttackFrameCount ?? 0, $"{monster?.MonsterId}_Attack");
+            if (monster != null && !string.IsNullOrWhiteSpace(monster.IdleFrameResourcePath))
+                idleFrames = LoadFrames(monster.IdleFrameResourcePath);
+            if (monster != null) walkFrames = LoadFrames(monster.WalkFrameResourcePath);
+            if (monster != null && !string.IsNullOrWhiteSpace(monster.AttackFrameResourcePath))
+                attackFrames = LoadFrames(monster.AttackFrameResourcePath);
+            if (monster != null) shootFrames = LoadFrames(monster.ShootFrameResourcePath);
             ShowFrame(idleFrames, 0);
         }
+
+        public void SetFieldMoving(bool moving) => fieldMoving = moving;
 
         /// <summary>
         /// Battle 기본 공격이 시작될 때 Attack 프레임으로 전환합니다. 공격 연출이 끝나면
@@ -49,13 +61,24 @@ namespace ProjectLimitless.Monster
         {
             if (attackFrames.Length == 0) return;
             attacking = true;
+            shooting = false;
             elapsed = 0f;
             ShowFrame(attackFrames, 0);
+        }
+
+        public void PlayShoot()
+        {
+            if (shootFrames.Length == 0) { PlayAttack(); return; }
+            shooting = true;
+            attacking = false;
+            elapsed = 0f;
+            ShowFrame(shootFrames, 0);
         }
 
         public void StopAttackAndReturnToIdle()
         {
             attacking = false;
+            shooting = false;
             elapsed = 0f;
             ShowFrame(idleFrames, 0);
         }
@@ -63,17 +86,26 @@ namespace ProjectLimitless.Monster
         private void Update()
         {
             if (definition == null) return;
-            Sprite[] frames = attacking ? attackFrames : idleFrames;
+            Sprite[] frames = attacking ? attackFrames : shooting ? shootFrames
+                : fieldMoving && walkFrames.Length > 0 ? walkFrames : idleFrames;
             if (frames.Length == 0) return;
 
             elapsed += Time.unscaledDeltaTime;
             int frameIndex = Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
-            if (attacking && frameIndex >= frames.Length)
+            if ((attacking || shooting) && frameIndex >= frames.Length)
             {
                 StopAttackAndReturnToIdle();
                 return;
             }
             ShowFrame(frames, frameIndex % frames.Length);
+        }
+
+        private static Sprite[] LoadFrames(string resourcePath)
+        {
+            if (string.IsNullOrWhiteSpace(resourcePath)) return Array.Empty<Sprite>();
+            Sprite[] frames = Resources.LoadAll<Sprite>(resourcePath);
+            Array.Sort(frames, (left, right) => string.CompareOrdinal(left.name, right.name));
+            return frames;
         }
 
         private void ShowFrame(Sprite[] frames, int index)

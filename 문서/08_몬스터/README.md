@@ -24,3 +24,8 @@
 ## 설명
 
 필드 배치와 외형은 `문서/20_월드/첫_필드.md`, 전투 상태 및 턴 처리 세부 규칙은 `문서/10_전투/전투시스템.md`를 따른다.
+# Field_02 숲거미
+
+- `forest_spider`: Field_02에 4개 스폰한다.
+- CC0 2D Spider 원본 ZIP은 ThirdParty에 보존하고 프로젝트 Resources에는 Idle/Walk/Attack/Shoot에서 각각 8프레임을 선별 복사한다.
+- `독액 분사`는 `Formation.LivingMembers`로 수집한 생존 아군 전체에 기본 20의 `DirectCombatAction` 피해를 거의 동시에 적용한다. 독 상태와 DoT는 추가하지 않는다.

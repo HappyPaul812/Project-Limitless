@@ -605,6 +605,46 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// 교체 가능한 최소 광역 연출입니다. 한 코루틴에서 모든 표식을 만들고 같은 시점에 계산하므로
+        /// 대상 수가 늘어나도 피격 순서가 프레임마다 벌어지지 않습니다. 현재는 보유한 공용 원형 Sprite를
+        /// 독액 색으로 사용하고, 향후 전용 Projectile/VFX가 준비되면 이 메서드 내부만 바꿀 수 있습니다.
+        /// </summary>
+        public IEnumerator PlayMonsterAreaAttack(RectTransform attacker, IReadOnlyList<RectTransform> targets,
+            IReadOnlyList<Image> targetSprites, Font damageFont, string skillName,
+            Func<IReadOnlyList<int>> applyImpacts, Action<IReadOnlyList<int>> onImpact, Action onComplete)
+        {
+            Text callout = CreateSkillCallout(attacker, damageFont, $"{skillName}!");
+            List<Image> splashes = new List<Image>();
+            Color[] originalColors = new Color[targetSprites?.Count ?? 0];
+            for (int index = 0; targets != null && index < targets.Count; index++)
+            {
+                Image splash = CreateEffectImage(targets[index], "MonsterAreaImpact", new[] { GetOrbSprite() },
+                    new Vector2(70f, 70f), new Vector2(0f, 16f));
+                if (splash != null) splash.color = new Color(.58f, .86f, .28f, .68f);
+                splashes.Add(splash);
+                if (targetSprites != null && index < targetSprites.Count && targetSprites[index] != null)
+                    originalColors[index] = targetSprites[index].color;
+            }
+
+            yield return new WaitForSeconds(.22f);
+            IReadOnlyList<int> damages = applyImpacts == null ? Array.Empty<int>() : applyImpacts();
+            onImpact?.Invoke(damages);
+            for (int index = 0; targets != null && index < targets.Count; index++)
+            {
+                int damage = index < damages.Count ? damages[index] : 0;
+                if (damage <= 0 || targetSprites == null || index >= targetSprites.Count || targetSprites[index] == null) continue;
+                StartCoroutine(ShowDamageNumber(targets[index], damageFont, damage));
+                StartCoroutine(PlayHitReaction(targets[index], targetSprites[index], targets[index].localPosition, originalColors[index]));
+            }
+            yield return new WaitForSeconds(.24f);
+            if (callout != null) Destroy(callout.gameObject);
+            foreach (Image splash in splashes) if (splash != null) Destroy(splash.gameObject);
+            for (int index = 0; targetSprites != null && index < targetSprites.Count; index++)
+                if (targetSprites[index] != null) targetSprites[index].color = originalColors[index];
+            onComplete?.Invoke();
+        }
+
+        /// <summary>
         /// 가이아 웰은 Projectile 없이 사용자 위치에서 arcane-parry를 한 번 재생합니다. VFX는 상태가
         /// 적용되었다는 시각 안내만 담당하며, 실제 60% 감소와 2회 수명은 applyEffect가 연결한 전투
         /// 상태 저장소가 계산합니다. 이렇게 나누면 프레임 속도나 크기를 바꿔도 전투 수치가 변하지 않습니다.

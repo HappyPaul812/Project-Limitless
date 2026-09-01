@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31bb33f258e4e70ae1242a34ec22001, type: 3}
+  m_Name: Field02_NorthToField01
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.World.FieldConnectionDefinition
+  sceneName: Field_02
+  connectionId: north_to_field01
+  spawnPointId: Spawn_From_Field01
+  spawnPosition: {x: 0, y: 4.6}
+  transitionPosition: {x: 0, y: 6.8}
+  transitionSize: {x: 3, y: 1}
+  targetSceneName: Field_01
+  targetSpawnPointId: Spawn_From_Field02
+  replaceExistingSceneConnections: 1

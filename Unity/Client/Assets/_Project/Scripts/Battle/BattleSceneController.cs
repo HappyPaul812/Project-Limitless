@@ -153,7 +153,8 @@ namespace ProjectLimitless.Battle
             MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
             BattleEncounterSetup setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
-                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, slime, venomBee);
+                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, slime, venomBee,
+                BattleEncounterContext.Monster);
 
             Dictionary<string, JobDefinition> jobs = Resources.LoadAll<JobDefinition>("JobDefinitions")
                 .ToDictionary(item => item.JobId, StringComparer.Ordinal);
@@ -568,7 +569,7 @@ namespace ProjectLimitless.Battle
         {
             if (battleEnded) return;
             if (enemies.IsDefeated) { EndBattle("승리! 적을 모두 쓰러뜨렸습니다.", true); return; }
-            if (allies.IsDefeated) { EndBattle("전투불능. Field_01로 복귀합니다.", false); return; }
+            if (allies.IsDefeated) { EndBattle("전투불능. 조우했던 필드로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
@@ -1889,13 +1890,19 @@ namespace ProjectLimitless.Battle
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
             battleEnded = true;
             SetCommandButtons(false);
-            messageText.text = "도망에 성공했습니다. Field_01로 복귀합니다.";
+            messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(false));
         }
 
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup setup)
+                && setup.MonsterDefinition != null && setup.MonsterDefinition.HasDirectAreaAttack)
+            {
+                PlayMonsterDirectAreaAttack(currentActor, setup.MonsterDefinition);
+                yield break;
+            }
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(currentActor, allies, currentActor.BasicRange);
             Combatant target = ChooseEnemyTarget(currentActor, targets);
             if (target != null)
@@ -1904,6 +1911,44 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
             FinishCurrentAction();
+        }
+
+        private void PlayMonsterDirectAreaAttack(Combatant actor, MonsterDefinition monster)
+        {
+            actionPlaying = true;
+            SetCommandButtons(false);
+            RefreshCombatantViews(null);
+            CombatantView actorView = combatantViews[actor];
+            Combatant[] targets = allies.LivingMembers.ToArray();
+            // 파티가 3명이라는 현재 화면 구성은 임시일 뿐입니다. 살아 있는 참가자를 매번 수집해야
+            // 향후 6명 이상 편성에서도 누락 없이 같은 광역 공격 규칙이 적용됩니다.
+            RectTransform[] targetRects = targets.Select(item => combatantViews[item].ActionRoot).ToArray();
+            Image[] targetImages = targets.Select(item => combatantViews[item].SpriteImage).ToArray();
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+
+            Func<IReadOnlyList<int>> applyImpacts = () => targets.Select(target =>
+                // 독·화상 틱은 상태이상 경로를 사용하지만 독액 분사는 전투 행동이 직접 HP를 깎는 공격입니다.
+                // Origin을 명시해 대신 막기가 직접 공격만 보호하고 DoT는 보호하지 않는 경계를 검증합니다.
+                statusEffects.ApplyIncomingDamage(target,
+                    statusEffects.ModifyOutgoingDamage(actor, monster.DirectAreaAttackDamage),
+                    BattleDamageOrigin.DirectCombatAction)).ToArray();
+            Action<IReadOnlyList<int>> onImpact = damages =>
+            {
+                messageText.text = $"{actor.DisplayName}의 {monster.DirectAreaAttackName}! 생존 아군 전체가 공격받았습니다.";
+                RefreshCombatantViews(null);
+            };
+            Action onComplete = () =>
+            {
+                actorView.MonsterAnimation?.StopAttackAndReturnToIdle();
+                foreach (Combatant target in targets) RestoreBattleIdle(combatantViews[target]);
+                RestoreBattleIdle(actorView);
+                actionPlaying = false;
+                FinishCurrentAction();
+            };
+
+            actorView.MonsterAnimation?.PlayShoot();
+            StartCoroutine(actionPresenter.PlayMonsterAreaAttack(actorView.ActionRoot, targetRects, targetImages,
+                battleFont, monster.DirectAreaAttackName, applyImpacts, onImpact, onComplete));
         }
 
         /// <summary>
@@ -2124,7 +2169,7 @@ namespace ProjectLimitless.Battle
         {
             battleEnded = true;
             SetCommandButtons(false);
-            messageText.text = message + " 전투 상태를 초기화하고 Field_01로 복귀합니다.";
+            messageText.text = message + " 전투 상태를 초기화하고 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(defeatedEncounteredMonster));
         }
 

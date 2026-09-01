@@ -39,6 +39,11 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(1f)] private float animationFramesPerSecond = 10f;
         [SerializeField, Min(.1f)] private float visualScale = 1f;
         [SerializeField] private bool sourceFacesRight = true;
+        [Header("개별 프레임 Animation (Resources 경로)")]
+        [SerializeField] private string idleFrameResourcePath;
+        [SerializeField] private string walkFrameResourcePath;
+        [SerializeField] private string attackFrameResourcePath;
+        [SerializeField] private string shootFrameResourcePath;
         [Header("전투 기본 공격")]
         // 슬라임의 기준 공격력을 100으로 보며 몬스터 종류별 차이만 데이터에 둡니다.
         // 독침벌은 120으로 설정해 전투 생성 코드에 이름별 피해 숫자를 흩어 놓지 않습니다.
@@ -48,6 +53,9 @@ namespace ProjectLimitless.Monster
         // 독을 정상 부여한 뒤 이 몬스터 자신의 행동 몇 회 동안 다시 부여하지 못하는지 나타냅니다.
         // 독 대상의 지속시간과 별도 데이터라서 정화나 독 자연 종료가 이 값을 바꾸지 않습니다.
         [SerializeField, Min(0)] private int basicAttackPoisonCooldownActions;
+        [Header("광역 직접 공격")]
+        [SerializeField] private string directAreaAttackName;
+        [SerializeField, Min(0)] private int directAreaAttackDamage;
 
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
@@ -69,9 +77,17 @@ namespace ProjectLimitless.Monster
         public float AnimationFramesPerSecond => Mathf.Max(1f, animationFramesPerSecond);
         public float VisualScale => Mathf.Max(.1f, visualScale);
         public bool SourceFacesRight => sourceFacesRight;
-        public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0;
+        public string IdleFrameResourcePath => idleFrameResourcePath;
+        public string WalkFrameResourcePath => walkFrameResourcePath;
+        public string AttackFrameResourcePath => attackFrameResourcePath;
+        public string ShootFrameResourcePath => shootFrameResourcePath;
+        public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0
+            || !string.IsNullOrWhiteSpace(idleFrameResourcePath);
         public int BattleAttackPercent => Mathf.Max(1, battleAttackPercent);
         public int BasicAttackPoisonActions => Mathf.Max(0, basicAttackPoisonActions);
         public int BasicAttackPoisonCooldownActions => Mathf.Max(0, basicAttackPoisonCooldownActions);
+        public string DirectAreaAttackName => directAreaAttackName;
+        public int DirectAreaAttackDamage => Mathf.Max(0, directAreaAttackDamage);
+        public bool HasDirectAreaAttack => DirectAreaAttackDamage > 0 && !string.IsNullOrWhiteSpace(directAreaAttackName);
     }
 }
