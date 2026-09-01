@@ -13,6 +13,9 @@ Recordings/
 # 게임 Asset이나 빌드 입력이 아니며, 검증 명령이 필요할 때 폴더를 다시 생성합니다.
 Unity/Client/.codex-ui-compile/
 
+# Unity Editor가 프로젝트 안에 만드는 로컬 캐릭터 저장 파일입니다.
+Unity/Client/UserData/Saves/
+
 # Unity generated solution and project files
 *.csproj
 *.sln

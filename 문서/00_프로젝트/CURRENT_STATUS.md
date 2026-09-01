@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-01
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `4d68e42` (`Feature: 단일 슬롯 로컬 저장과 이어하기 구현`)
+- 마지막 기능 관련 commit: 작업 중 (`Feature: 5개 캐릭터 저장 슬롯 구현`)
 - 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -17,11 +17,13 @@
 
 ### 캐릭터 생성과 선택
 
-- Bootstrap의 유효 저장 감지와 `이어하기 / 새 게임` 런타임 UI. 새 게임은 기존 4단계 생성 흐름 유지
-- `GameSaveData` Version 1 단일 JSON 슬롯에 이름·Visual/Path/Job ID·Level 1·경험치 0·현재 Scene/Spawn 저장
+- Bootstrap의 5개 캐릭터 슬롯 목록과 슬롯별 `이어하기 / 새 캐릭터` 런타임 UI. 새 캐릭터는 기존 4단계 생성 흐름 유지
+- `GameSaveData` Version 1 JSON을 Unity Editor 프로젝트 로컬 `UserData/Saves/save_slot_01.json`~`05.json`에 독립 저장
+- 선택 슬롯만 자동 저장하며 손상 슬롯은 다른 슬롯에 영향을 주지 않고 사용 불가로 표시
+- 기존 `Application.persistentDataPath/project_limitless_save.json`은 슬롯 1이 비었을 때만 검증·복사하고 원본 유지
 - FinalConfirmation 확정, 정상 마을/Field 전환 완료, Battle 종료 뒤 Field 복구 시 자동 저장하며 Battle 중간 상태는 제외
 - 손상 JSON·Version 불일치·잘못된 Visual/Path/Job/Scene을 삭제·덮어쓰기 없이 거부하고 새 게임으로 안전 복귀
-- Editor 전용 `Project Limitless/Test/Delete Local Save` 테스트 메뉴
+- Editor 전용 `Project Limitless/Test/Manage Local Saves` 창의 슬롯별/전체 삭제 기능
 
 - `Bootstrap → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage` Scene 흐름
 - 이름 입력과 검증
