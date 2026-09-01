@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-01
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `COMMIT_PENDING` (`Feature: 수호자 대신 막기 스킬 구현`)
+- 마지막 기능 관련 commit: `de015ea` (`Feature: 수호자 대신 막기 스킬 구현`)
 - 마지막 오류 수정 commit: `1594054` (`Fix: Projectile 이동시간 조정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
