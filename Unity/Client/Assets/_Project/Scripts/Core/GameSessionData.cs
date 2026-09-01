@@ -29,6 +29,9 @@ namespace ProjectLimitless.Core
         /// </summary>
         public static string CurrentSceneId { get; private set; } = string.Empty;
         public static string LastSpawnPointId { get; private set; } = string.Empty;
+        public static bool HasSavedWorldPosition { get; private set; }
+        public static float SavedPositionX { get; private set; }
+        public static float SavedPositionY { get; private set; }
 
         public static void SelectPlayerVisual(PlayerVisualType visualType) => SelectedPlayerVisual = visualType;
 
@@ -58,6 +61,25 @@ namespace ProjectLimitless.Core
             LastSpawnPointId = spawnPointId ?? string.Empty;
         }
 
+        /// <summary>
+        /// Scene ID는 어느 지도에 있는지만 알려주고, 이 두 float는 그 지도 안의 실제 위치를 알려줍니다.
+        /// Transform 자체는 디스크에 저장하지 않고 실행 환경과 무관한 숫자만 세션에 보관합니다.
+        /// </summary>
+        public static void RecordWorldPosition(float x, float y)
+        {
+            HasSavedWorldPosition = true;
+            SavedPositionX = x;
+            SavedPositionY = y;
+        }
+
+        /// <summary>Scene 전환 전에는 이전 지도의 좌표가 새 지도에 적용되지 않도록 먼저 무효화합니다.</summary>
+        public static void ClearWorldPosition()
+        {
+            HasSavedWorldPosition = false;
+            SavedPositionX = 0f;
+            SavedPositionY = 0f;
+        }
+
         public static void Reset()
         {
             SelectedPlayerVisual = PlayerVisualType.Male;
@@ -69,6 +91,7 @@ namespace ProjectLimitless.Core
             CurrentExperience = 0;
             CurrentSceneId = string.Empty;
             LastSpawnPointId = string.Empty;
+            ClearWorldPosition();
         }
     }
 }

@@ -28,6 +28,11 @@ namespace ProjectLimitless.Player
             body.freezeRotation = true;
             body.interpolation = RigidbodyInterpolation2D.Interpolate;
 
+            // 월드 Player에만 주기 저장기를 붙입니다. Battle에는 이 PlayerController가 없으므로 전투 좌표나
+            // 적 HP·턴 상태가 월드 저장을 덮어쓰지 않습니다.
+            if (GetComponent<ProjectLimitless.World.WorldPositionSaveController>() == null)
+                gameObject.AddComponent<ProjectLimitless.World.WorldPositionSaveController>();
+
             moveAction = new InputAction("Move", InputActionType.Value);
             AddKeyboardBindings("<Keyboard>/w", "<Keyboard>/s", "<Keyboard>/a", "<Keyboard>/d");
             AddKeyboardBindings("<Keyboard>/upArrow", "<Keyboard>/downArrow", "<Keyboard>/leftArrow", "<Keyboard>/rightArrow");

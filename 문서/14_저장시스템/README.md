@@ -26,8 +26,9 @@
 - `Version`, `PlayerName`, `PlayerVisualId`, `PathId`, `JobId`
 - `Level` 기본 1, `CurrentExperience` 기본 0
 - `CurrentSceneId`, `SpawnPointId`
+- `HasSavedWorldPosition`, `SavedPositionX`, `SavedPositionY`
 
-Version은 향후 저장 구조 변경과 명시적 마이그레이션을 구분하기 위해 필요합니다. 지원하지 않는 Version은 자동 변환·덮어쓰기하지 않습니다.
+좌표는 `Vector2`나 `Transform` 참조가 아니라 float 두 개로 저장합니다. 기존 Version 1 JSON에는 좌표 필드가 없으므로 `HasSavedWorldPosition=false` 기본값으로 읽고 기존 SpawnPoint를 사용합니다. 이 호환 가능한 필드 추가는 Version을 올리지 않으며, 향후 형식 자체가 바뀌면 Version 마이그레이션을 사용합니다.
 
 ## 슬롯 선택과 자동 저장
 
@@ -35,6 +36,7 @@ Version은 향후 저장 구조 변경과 명시적 마이그레이션을 구분
 - 빈 슬롯을 고르면 현재 슬롯 번호를 먼저 기억한 뒤 기존 CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World 흐름을 유지합니다. 이미 저장된 슬롯을 새 게임으로 덮어쓰는 UI는 제공하지 않습니다.
 - 이어하기는 선택한 슬롯만 Session으로 복원하며, 이후 자동 저장도 현재 선택 슬롯 파일만 갱신합니다.
 - FinalConfirmation 확정 직전, Field/마을 SceneTransition 성공 직후, Battle 종료 뒤 Field Player 복구 완료 후 저장합니다.
+- WorldBounds가 있는 마을/Field에서 약 5초마다 실제 위치를 저장하고 Application Pause/Quit 때 가능한 범위에서 한 번 더 저장합니다. 매 프레임 JSON을 쓰지 않습니다.
 - Battle 도중 적 HP·턴·상태이상은 저장하지 않습니다.
 - 향후 레벨업은 `GameSessionData.ConfigureProgress`와 `GameSaveService.SaveCurrentSession` 공용 API를 사용합니다.
 
@@ -43,6 +45,14 @@ Version은 향후 저장 구조 변경과 명시적 마이그레이션을 구분
 파일 없음은 빈 슬롯으로 처리합니다. JSON 손상, Version 불일치, 잘못된 Visual/Path/Job/Scene ID는 해당 슬롯만 사용 불가로 표시하고 다른 슬롯은 유지합니다. 문제 파일은 자동 삭제·덮어쓰기하지 않습니다.
 
 Editor의 `Project Limitless/Test/Manage Local Saves` 창에서 슬롯별 삭제와 전체 슬롯 삭제를 할 수 있습니다. 저장 폴더와 JSON은 `.gitignore` 대상입니다.
+
+Bootstrap의 유효 슬롯에는 `이어하기`와 `삭제` 버튼이 함께 표시됩니다. 삭제는 캐릭터 이름·직업·레벨과 복구 불가 안내를 담은 확인창을 거쳐 해당 슬롯 JSON 하나만 지우며, 성공 즉시 빈 슬롯 행으로 갱신합니다.
+
+## 실제 월드 위치와 SpawnPoint fallback
+
+이어하기는 저장 Scene과 좌표가 현재 `WorldBounds2D` 안에 있을 때 실제 좌표를 우선 사용합니다. 좌표가 없거나 NaN/Infinity이거나 Bounds 밖이면 기존 `PendingSpawnPointId`를 지우지 않아 SpawnPoint가 안전한 위치에 배치합니다. SceneTransition을 시작할 때 이전 Scene 좌표를 무효화하고, 목적지 Spawn 배치가 끝난 뒤 그 새 좌표를 저장하므로 Field 간 좌표가 섞이지 않습니다.
+
+Battle Scene에는 월드 위치 저장기를 두지 않습니다. 전투 도중 종료하면 마지막 안전 월드 위치를 유지하고, 승리·패배·도망으로 Field Player 복구가 끝난 뒤 새 위치를 저장합니다.
 
 ## 기존 단일 저장 마이그레이션
 

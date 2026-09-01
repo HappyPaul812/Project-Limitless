@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-01
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `083e875` (`Feature: 5개 캐릭터 저장 슬롯 구현`)
+- 마지막 기능 관련 commit: 작업 중 (`Feature: 월드 위치 저장과 슬롯 삭제 구현`)
 - 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -24,6 +24,10 @@
 - FinalConfirmation 확정, 정상 마을/Field 전환 완료, Battle 종료 뒤 Field 복구 시 자동 저장하며 Battle 중간 상태는 제외
 - 손상 JSON·Version 불일치·잘못된 Visual/Path/Job/Scene을 삭제·덮어쓰기 없이 거부하고 새 게임으로 안전 복귀
 - Editor 전용 `Project Limitless/Test/Manage Local Saves` 창의 슬롯별/전체 삭제 기능
+- WorldBounds가 있는 마을/Field에서 5초 주기·Pause/Quit·Scene 도착·Battle 복귀 시 실제 float 좌표를 선택 슬롯에 저장
+- 이어하기는 같은 Scene의 Bounds 안 유효 좌표를 우선하고 좌표 없음·NaN/Infinity·Bounds 밖이면 기존 SpawnPoint로 fallback
+- SceneTransition 시작 시 이전 Scene 좌표를 무효화하고 목적지 Spawn 배치 뒤 새 좌표 저장
+- Bootstrap 저장 슬롯의 `삭제` 버튼, 캐릭터 정보·복구 불가 경고 확인창, 해당 슬롯만 삭제 후 즉시 빈 슬롯 갱신
 
 - `Bootstrap → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage` Scene 흐름
 - 이름 입력과 검증
@@ -474,7 +478,7 @@
 
 ## 다음 권장 작업
 
-Unity Play Mode에서 새 게임 생성 후 JSON 생성, 종료·재실행 뒤 이어하기로 마지막 마을/Field Spawn 복원, Field 전환 및 Battle 복귀 자동 저장을 확인한다. 손상 JSON·Version/ID 오류에서 파일을 보존하고 새 게임만 제공하는지, Editor 삭제 메뉴가 동작하는지 확인한다. 이후 Field_02 감전 독립 적용과 기존 전투·외형·리스폰 회귀도 확인한다.
+Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/재실행 뒤 실제 위치 복원, Bounds 밖 좌표의 SpawnPoint fallback, Field 전환 뒤 새 Scene 좌표 저장, Battle 중 종료 시 마지막 안전 좌표 유지를 확인한다. Bootstrap 삭제 확인의 취소·단일 슬롯 삭제·즉시 빈 슬롯 갱신과 Editor 관리 창도 함께 확인한다. 이후 Field_02 감전 독립 적용과 기존 전투·외형·리스폰 회귀도 확인한다.
 
 ## 갱신 규칙
 

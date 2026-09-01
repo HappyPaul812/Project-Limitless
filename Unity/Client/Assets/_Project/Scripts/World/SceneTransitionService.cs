@@ -36,6 +36,8 @@ namespace ProjectLimitless.World
             isLoading = true;
             requestedSceneId = targetScene;
             requestedSpawnPointId = targetSpawnPointId ?? string.Empty;
+            // 이전 Field 좌표가 새 Field에 적용되는 것을 막고, 새 Scene의 SpawnPoint를 우선 사용합니다.
+            GameSessionData.ClearWorldPosition();
             GameSessionData.SetPendingSpawnPoint(targetSpawnPointId);
             SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
         }

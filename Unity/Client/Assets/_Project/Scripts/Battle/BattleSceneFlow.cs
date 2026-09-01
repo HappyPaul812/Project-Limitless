@@ -125,8 +125,8 @@ namespace ProjectLimitless.Battle
                     if (away.sqrMagnitude < .01f) away = Vector2.down;
                     player.transform.position = BattleEncounterContext.PlayerFieldPosition + away.normalized * 1.2f;
                     // Battle 내부 상태는 저장하지 않고 정상적으로 Field Player가 복구된 뒤에만 저장합니다.
-                    // 이어하기는 전투 접촉 좌표가 아니라 마지막으로 검증된 Field SpawnPoint에서 시작합니다.
-                    GameSaveService.SaveCurrentSession(gameObject.scene.name, GameSessionData.LastSpawnPointId);
+                    // 전투 상태는 저장하지 않지만, 정상 Field 복귀가 끝났으므로 안전하게 떨어뜨린 실제 위치는 저장합니다.
+                    GameSaveService.SaveCurrentWorldPosition(player.transform.position, gameObject.scene.name, GameSessionData.LastSpawnPointId);
                     Destroy(gameObject);
                     yield break;
                 }

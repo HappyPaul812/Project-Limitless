@@ -20,6 +20,10 @@ namespace ProjectLimitless.Core
         public int CurrentExperience;
         public string CurrentSceneId = string.Empty;
         public string SpawnPointId = string.Empty;
+        // Version 1 파일에 이 필드가 없어도 JsonUtility는 false/0으로 채우므로 기존 저장은 SpawnPoint fallback을 사용합니다.
+        public bool HasSavedWorldPosition;
+        public float SavedPositionX;
+        public float SavedPositionY;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -107,7 +111,10 @@ namespace ProjectLimitless.Core
                 Level = GameSessionData.Level,
                 CurrentExperience = GameSessionData.CurrentExperience,
                 CurrentSceneId = resolvedScene,
-                SpawnPointId = resolvedSpawn
+                SpawnPointId = resolvedSpawn,
+                HasSavedWorldPosition = GameSessionData.HasSavedWorldPosition,
+                SavedPositionX = GameSessionData.SavedPositionX,
+                SavedPositionY = GameSessionData.SavedPositionY
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -145,7 +152,41 @@ namespace ProjectLimitless.Core
             GameSessionData.SelectJob(data.JobId);
             GameSessionData.ConfigureProgress(data.Level, data.CurrentExperience);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
+            // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
+            // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.
+            if (data.HasSavedWorldPosition && IsFinite(data.SavedPositionX) && IsFinite(data.SavedPositionY))
+                GameSessionData.RecordWorldPosition(data.SavedPositionX, data.SavedPositionY);
+            else GameSessionData.ClearWorldPosition();
             GameSessionData.SetPendingSpawnPoint(data.SpawnPointId);
+        }
+
+        /// <summary>현재 월드 좌표를 Session에 기록한 뒤 현재 슬롯에 저장합니다.</summary>
+        public static bool SaveCurrentWorldPosition(Vector2 position, string sceneId, string spawnPointId = null)
+        {
+            if (!IsFinite(position.x) || !IsFinite(position.y)) { Debug.LogWarning("NaN 또는 Infinity 월드 좌표는 저장하지 않습니다."); return false; }
+            GameSessionData.RecordWorldPosition(position.x, position.y);
+            return SaveCurrentSession(sceneId, spawnPointId);
+        }
+
+        /// <summary>
+        /// 캐릭터 삭제는 선택한 JSON 하나만 지웁니다. 다른 슬롯까지 함께 지우면 서로 독립적인 캐릭터 진행이 훼손됩니다.
+        /// </summary>
+        public static bool DeleteSlot(int slotIndex, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                string path = GetSaveFilePath(slotIndex);
+                if (File.Exists(path)) File.Delete(path);
+                if (CurrentSlotIndex == slotIndex) CurrentSlotIndex = 0;
+                return true;
+            }
+            catch (Exception exception)
+            {
+                error = exception.Message;
+                Debug.LogError($"슬롯 {slotIndex} 저장을 삭제하지 못했습니다: {exception.Message}");
+                return false;
+            }
         }
 
         /// <summary>
@@ -194,6 +235,8 @@ namespace ProjectLimitless.Core
             if (data.SpawnPointId != null && (data.SpawnPointId.Length > 128 || data.SpawnPointId.Contains("/") || data.SpawnPointId.Contains("\\"))) { error = "SpawnPoint ID 형식이 올바르지 않습니다."; return false; }
             error = string.Empty; return true;
         }
+
+        private static bool IsFinite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
 
         private static bool IsNonWorldSaveScene(string sceneId)
         {

@@ -13,6 +13,7 @@ namespace ProjectLimitless.Core
     {
         [SerializeField] private string worldSceneName = "CharacterCreation";
         private readonly List<Button> slotButtons = new List<Button>();
+        private GameObject startMenuCanvas;
 
         public void ConfigureStartScene(string sceneName) { worldSceneName = sceneName; }
 
@@ -48,6 +49,7 @@ namespace ProjectLimitless.Core
             CreateCameraAndEventSystem();
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             GameObject canvasObject = new GameObject("StartMenuCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+            startMenuCanvas = canvasObject;
             canvasObject.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720);
             Stretch(MakeImage(canvasObject.transform, "Background", new Color(.018f, .03f, .06f, 1)).rectTransform);
@@ -61,19 +63,56 @@ namespace ProjectLimitless.Core
 
         private void CreateSlotRow(Transform parent, Font font, SaveSlotInfo info, float anchorY)
         {
-            Image panel = MakeImage(parent, $"Slot{info.SlotIndex:00}", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.5f, anchorY), new Vector2(880, 82));
+            Image panel = MakeImage(parent, $"Slot{info.SlotIndex:00}", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.5f, anchorY), new Vector2(1020, 82));
             Outline outline = panel.gameObject.AddComponent<Outline>(); outline.effectColor = new Color(.3f, .39f, .52f, 1);
             string details; string action; bool interactable = info.State != SaveSlotState.Invalid;
             if (info.State == SaveSlotState.Valid) { details = $"{info.Data.PlayerName}  ·  {GetJobName(info.Data.JobId)}  ·  Lv.{info.Data.Level}  ·  {GetSceneName(info.Data.CurrentSceneId)}"; action = "이어하기"; }
             else if (info.State == SaveSlotState.Empty) { details = "빈 슬롯"; action = "새 캐릭터"; }
             else { details = "저장 파일을 읽을 수 없습니다 (Console 확인)"; action = "사용 불가"; Debug.LogWarning($"슬롯 {info.SlotIndex} 오류: {info.Error}"); }
             Text number = MakeText(panel.transform, "Number", $"슬롯 {info.SlotIndex}", font, 21, new Vector2(.1f, .5f), new Vector2(140, 50)); number.color = new Color(1, .82f, .4f, 1); number.fontStyle = FontStyle.Bold;
-            MakeText(panel.transform, "Summary", details, font, 18, new Vector2(.48f, .5f), new Vector2(510, 50)).alignment = TextAnchor.MiddleLeft;
-            Button button = MakeButton(panel.transform, "Action", action, font, new Vector2(.86f, .5f)); button.interactable = interactable;
+            MakeText(panel.transform, "Summary", details, font, 18, new Vector2(.43f, .5f), new Vector2(500, 50)).alignment = TextAnchor.MiddleLeft;
+            Button button = MakeButton(panel.transform, "Action", action, font, new Vector2(.78f, .5f), 170); button.interactable = interactable;
             int selectedSlot = info.SlotIndex;
             if (info.State == SaveSlotState.Valid) button.onClick.AddListener(() => ContinueGame(selectedSlot));
             else if (info.State == SaveSlotState.Empty) button.onClick.AddListener(() => StartNewGame(selectedSlot));
             if (interactable) slotButtons.Add(button);
+            if (info.State == SaveSlotState.Valid)
+            {
+                Button delete = MakeButton(panel.transform, "Delete", "삭제", font, new Vector2(.92f, .5f), 100);
+                delete.GetComponent<Image>().color = new Color(.48f, .14f, .16f, 1f);
+                delete.onClick.AddListener(() => ShowDeleteConfirmation(info));
+                slotButtons.Add(delete);
+            }
+        }
+
+        private void ShowDeleteConfirmation(SaveSlotInfo info)
+        {
+            // 삭제 버튼 즉시 파일을 지우지 않고 한 번 더 캐릭터 정보를 보여 실수로 잃는 일을 막습니다.
+            Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            GameObject overlay = new GameObject("DeleteConfirmation", typeof(Image)); overlay.transform.SetParent(startMenuCanvas.transform, false);
+            Image shade = overlay.GetComponent<Image>(); shade.color = new Color(0, 0, 0, .82f); Stretch(shade.rectTransform);
+            Image panel = MakeImage(overlay.transform, "Panel", new Color(.06f, .08f, .13f, 1)); SetRect(panel.rectTransform, Vector2.one * .5f, new Vector2(560, 300)); panel.raycastTarget = true;
+            MakeText(panel.transform, "Title", "이 캐릭터를 삭제하시겠습니까?", font, 24, new Vector2(.5f, .8f), new Vector2(500, 42)).fontStyle = FontStyle.Bold;
+            MakeText(panel.transform, "Character", $"{info.Data.PlayerName}\n{GetJobName(info.Data.JobId)} · Lv.{info.Data.Level}\n\n삭제한 저장 데이터는 복구할 수 없습니다.", font, 19, new Vector2(.5f, .53f), new Vector2(500, 125));
+            Button cancel = MakeButton(panel.transform, "Cancel", "취소", font, new Vector2(.32f, .17f), 170);
+            Button delete = MakeButton(panel.transform, "ConfirmDelete", "삭제", font, new Vector2(.68f, .17f), 170); delete.GetComponent<Image>().color = new Color(.55f, .12f, .15f, 1);
+            cancel.onClick.AddListener(() => { Destroy(overlay); if (slotButtons.Count > 0) EventSystem.current.SetSelectedGameObject(slotButtons[0].gameObject); });
+            delete.onClick.AddListener(() => DeleteSlot(info.SlotIndex, overlay));
+            EventSystem.current.SetSelectedGameObject(cancel.gameObject);
+        }
+
+        private void DeleteSlot(int slotIndex, GameObject confirmation)
+        {
+            if (!GameSaveService.DeleteSlot(slotIndex, out string error))
+            {
+                Debug.LogError($"캐릭터 삭제 실패: {error}");
+                Destroy(confirmation);
+                return;
+            }
+            // 해당 JSON만 삭제한 뒤 전체 슬롯을 다시 조사하면 삭제된 행은 즉시 빈 슬롯으로 바뀌고 나머지는 유지됩니다.
+            slotButtons.Clear();
+            Destroy(startMenuCanvas);
+            CreateStartInterface();
         }
 
         private void LinkVerticalNavigation()
@@ -84,7 +123,7 @@ namespace ProjectLimitless.Core
         private static string GetJobName(string id) { JobDefinition item = Resources.LoadAll<JobDefinition>("JobDefinitions").FirstOrDefault(value => value.JobId == id); return item == null ? id : item.DisplayName; }
         private static string GetSceneName(string id) { if (id == "World_StarterVillage") return "시작 마을"; if (id == "Field_01") return "초원"; if (id == "Field_02") return "그늘진 숲길"; return id; }
         private static void CreateCameraAndEventSystem() { if (Camera.main == null) { GameObject obj = new GameObject("Main Camera"); obj.tag = "MainCamera"; obj.transform.position = new Vector3(0, 0, -10); Camera camera = obj.AddComponent<Camera>(); camera.orthographic = true; camera.backgroundColor = new Color(.018f, .03f, .06f, 1); } if (EventSystem.current == null) { InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); } }
-        private static Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(190, 50)); Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1); Button button = obj.GetComponent<Button>(); button.targetGraphic = image; Outline outline = obj.GetComponent<Outline>(); outline.effectColor = new Color(.88f, .7f, .32f, 1); outline.effectDistance = new Vector2(2, -2); MakeText(obj.transform, "Label", $"[ {label} ]", font, 19, Vector2.one * .5f, new Vector2(180, 44)).fontStyle = FontStyle.Bold; return button; }
+        private static Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor, float width = 190) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(width, 50)); Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1); Button button = obj.GetComponent<Button>(); button.targetGraphic = image; Outline outline = obj.GetComponent<Outline>(); outline.effectColor = new Color(.88f, .7f, .32f, 1); outline.effectDistance = new Vector2(2, -2); MakeText(obj.transform, "Label", $"[ {label} ]", font, 19, Vector2.one * .5f, new Vector2(width - 10, 44)).fontStyle = FontStyle.Bold; return button; }
         private static Image MakeImage(Transform parent, string name, Color color) { GameObject obj = new GameObject(name, typeof(Image)); obj.transform.SetParent(parent, false); Image image = obj.GetComponent<Image>(); image.color = color; image.raycastTarget = false; return image; }
         private static Text MakeText(Transform parent, string name, string value, Font font, int fontSize, Vector2 anchor, Vector2 dimensions) { GameObject obj = new GameObject(name, typeof(Text)); obj.transform.SetParent(parent, false); Text text = obj.GetComponent<Text>(); text.font = font; text.fontSize = fontSize; text.color = Color.white; text.alignment = TextAnchor.MiddleCenter; text.text = value; text.raycastTarget = false; SetRect(text.rectTransform, anchor, dimensions); return text; }
         private static void SetRect(RectTransform rect, Vector2 anchor, Vector2 size) { rect.anchorMin = anchor; rect.anchorMax = anchor; rect.pivot = Vector2.one * .5f; rect.anchoredPosition = Vector2.zero; rect.sizeDelta = size; }
