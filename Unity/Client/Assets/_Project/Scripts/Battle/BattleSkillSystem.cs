@@ -489,11 +489,11 @@ namespace ProjectLimitless.Battle
             public int RemainingTransferBudget;
         }
 
-        private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>();
-        private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>();
-        private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>();
-        private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>();
-        private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>();
+        private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>(CombatantReferenceComparer.Instance);
+        private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>(CombatantReferenceComparer.Instance);
+        private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>(CombatantReferenceComparer.Instance);
+        private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<BattleSide, GuardianCoverState> guardianCovers =
             new Dictionary<BattleSide, GuardianCoverState>();
 
@@ -1302,13 +1302,14 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-            {
-                Combatant target = livingEnemies[index];
-                appliedDamages[index] = ApplyDamage(target, rawDamage);
-                // 쓰러진 적은 다음 행동이 없으므로 감전을 남기지 않습니다. 살아남은 대상별 Set 항목만
-                // 갱신하여 여러 번 맞아도 감전 2가 되지 않고 각자 감전 1을 유지합니다.
+                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
+
+            // 피해와 상태 부여를 서로 다른 단계로 처리합니다. 한 대상의 피해 처리 중 일어난 변화가 다음
+            // 대상의 감전 등록을 건너뛰게 하지 않으며, 같은 MonsterDefinition을 공유하는 A/B도 실제
+            // Combatant 참조가 다르므로 각자 Set에 감전 1을 저장합니다. 재적용은 같은 참조를 다시 Add해
+            // 중첩 없이 1로 갱신하고, 전투불능자는 다음 행동이 없으므로 저장하지 않습니다.
+            foreach (Combatant target in livingEnemies)
                 if (target.IsAlive) statusEffects.ApplyOrRefreshShock(target);
-            }
 
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해와 감전 1.";

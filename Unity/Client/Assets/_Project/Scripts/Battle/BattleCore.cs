@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ProjectLimitless.Battle
 {
@@ -116,6 +117,20 @@ namespace ProjectLimitless.Battle
             ForcedTargetActionsRemaining--;
             if (ForcedTargetActionsRemaining == 0) ForcedTarget = null;
         }
+    }
+
+    /// <summary>
+    /// 전투 상태 Dictionary와 Set이 표시 이름, 참가자 ID, MonsterDefinition이 아니라 실제 참가자 객체를
+    /// 기준으로 구분하게 합니다. 같은 독침벌 정의를 공유해도 A와 B는 서로 다른 전투 참가자이므로
+    /// 감전·독·화상·독침 대기시간을 각각 따로 가져야 합니다.
+    /// </summary>
+    public sealed class CombatantReferenceComparer : IEqualityComparer<Combatant>
+    {
+        public static readonly CombatantReferenceComparer Instance = new CombatantReferenceComparer();
+        private CombatantReferenceComparer() { }
+
+        public bool Equals(Combatant left, Combatant right) => ReferenceEquals(left, right);
+        public int GetHashCode(Combatant combatant) => combatant == null ? 0 : RuntimeHelpers.GetHashCode(combatant);
     }
 
     /// <summary>한 진영의 전열 3칸과 후열 3칸을 관리합니다.</summary>

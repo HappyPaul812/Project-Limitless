@@ -21,7 +21,7 @@ namespace ProjectLimitless.Battle
 
         // Combatant를 키로 사용하므로 향후 독침벌이 여러 마리 등장해도 각 벌의 2→1→0이 서로 섞이지 않습니다.
         private readonly Dictionary<Combatant, PoisonInflictionCooldownState> poisonInflictionCooldowns =
-            new Dictionary<Combatant, PoisonInflictionCooldownState>();
+            new Dictionary<Combatant, PoisonInflictionCooldownState>(CombatantReferenceComparer.Instance);
 
         public int GetPoisonInflictionCooldown(Combatant actor)
         {
