@@ -96,8 +96,15 @@ namespace ProjectLimitless.Battle
             bool spiderEncounter = encounteredMonster != null && encounteredMonster.MonsterId == "forest_spider";
             BattleParticipantSetup[] enemies =
             {
-                CreateMonster(slime, "grass_slime_a", "초원 슬라임", FormationRow.Front, 0, 11),
-                CreateMonster(slime, "grass_slime_b", "초원 슬라임", FormationRow.Front, 1, 10),
+                // 새 Field의 신규 몬스터 전투에는 바로 이전 Field의 최강 일반 몬스터를 함께 둡니다.
+                // Field_02에서는 전열 독침벌 둘이 익숙한 압박을 유지하고, 후열 거미가 광역 공격을 사용해
+                // 수호자의 대신 막기와 철벽을 확인하기 좋은 3대3 진형을 만듭니다.
+                CreateMonster(spiderEncounter ? venomBee : slime,
+                    spiderEncounter ? "venom_bee_a" : "grass_slime_a",
+                    spiderEncounter ? "독침벌" : "초원 슬라임", FormationRow.Front, 0, 11),
+                CreateMonster(spiderEncounter ? venomBee : slime,
+                    spiderEncounter ? "venom_bee_b" : "grass_slime_b",
+                    spiderEncounter ? "독침벌" : "초원 슬라임", FormationRow.Front, 1, 10),
                 CreateMonster(spiderEncounter ? encounteredMonster : venomBee,
                     spiderEncounter ? "forest_spider_1" : "venom_bee_1",
                     spiderEncounter ? "숲거미" : "독침벌", FormationRow.Rear, 0, 12)

@@ -30,7 +30,7 @@ MonoBehaviour:
   walkFrameResourcePath: MonsterAnimations/Spider/Walk
   attackFrameResourcePath: MonsterAnimations/Spider/Attack
   shootFrameResourcePath: MonsterAnimations/Spider/Shoot
-  battleAttackPercent: 100
+  battleAttackPercent: 140
   basicAttackPoisonActions: 0
   basicAttackPoisonCooldownActions: 0
   directAreaAttackName: "\uB3C5\uC561 \uBD84\uC0AC"
