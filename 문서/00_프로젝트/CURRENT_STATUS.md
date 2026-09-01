@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-01
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `90aa9b9` (`Feature: Field_02 몬스터 성장 구성 조정`)
+- 마지막 기능 관련 commit: `4d68e42` (`Feature: 단일 슬롯 로컬 저장과 이어하기 구현`)
 - 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -16,6 +16,12 @@
 ## 구현 확인된 항목
 
 ### 캐릭터 생성과 선택
+
+- Bootstrap의 유효 저장 감지와 `이어하기 / 새 게임` 런타임 UI. 새 게임은 기존 4단계 생성 흐름 유지
+- `GameSaveData` Version 1 단일 JSON 슬롯에 이름·Visual/Path/Job ID·Level 1·경험치 0·현재 Scene/Spawn 저장
+- FinalConfirmation 확정, 정상 마을/Field 전환 완료, Battle 종료 뒤 Field 복구 시 자동 저장하며 Battle 중간 상태는 제외
+- 손상 JSON·Version 불일치·잘못된 Visual/Path/Job/Scene을 삭제·덮어쓰기 없이 거부하고 새 게임으로 안전 복귀
+- Editor 전용 `Project Limitless/Test/Delete Local Save` 테스트 메뉴
 
 - `Bootstrap → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage` Scene 흐름
 - 이름 입력과 검증
@@ -466,7 +472,7 @@
 
 ## 다음 권장 작업
 
-Unity Play Mode에서 Field_02의 생존 독침벌 A/B·숲거미에 썬더볼트 사용 시 세 대상 모두 감전 1인지 확인한다. 각 몬스터가 행동한 뒤 자신의 감전만 제거되고 다른 두 대상 상태는 유지되는지, 같은 종류의 독·화상·도발·독침 대기시간도 개체별 독립인지 확인한다. Field_02 배치·공격력·독액 분사·대신 막기 및 Field 회귀 확인도 남아 있다.
+Unity Play Mode에서 새 게임 생성 후 JSON 생성, 종료·재실행 뒤 이어하기로 마지막 마을/Field Spawn 복원, Field 전환 및 Battle 복귀 자동 저장을 확인한다. 손상 JSON·Version/ID 오류에서 파일을 보존하고 새 게임만 제공하는지, Editor 삭제 메뉴가 동작하는지 확인한다. 이후 Field_02 감전 독립 적용과 기존 전투·외형·리스폰 회귀도 확인한다.
 
 ## 갱신 규칙
 
