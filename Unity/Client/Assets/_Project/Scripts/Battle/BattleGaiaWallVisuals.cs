@@ -8,6 +8,7 @@ namespace ProjectLimitless.Battle
         public const float FrameDuration = .05f;
         public const int PeakFrame = 8;
         public static readonly Vector2 EffectSize = new Vector2(150f, 150f);
+        public static readonly Color EffectTint = new Color(.72f, 1f, 1f, 1f);
 
         private const int CellSize = 96;
         private const int Columns = 5;

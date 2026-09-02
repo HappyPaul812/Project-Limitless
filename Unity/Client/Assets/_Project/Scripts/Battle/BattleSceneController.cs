@@ -147,16 +147,29 @@ namespace ProjectLimitless.Battle
             title.fontStyle = FontStyle.Bold;
             Text body = MakeText(panel.transform, "Body", "민첩이 같습니다.\n먼저 행동할 대상을 결정합니다.",
                 battleFont, 19, new Vector2(.5f, .63f), new Vector2(450, 62));
-            Image dice = MakeSpriteIcon(panel.transform, "Dice",
-                Resources.Load<Sprite>("KenneyBattleIcons/dice_shield"), new Vector2(.5f, .38f), new Vector2(76, 76));
+            Image dice = MakeImage(panel.transform, "DiceFace", new Color(.94f, .96f, 1f, 1f));
+            SetRect(dice.rectTransform, new Vector2(.5f, .38f), new Vector2(76, 76));
+            AddOutline(dice.gameObject, new Color(.25f, .32f, .42f, 1f), 2f);
+            Text pips = MakeText(dice.transform, "Pips", "●", battleFont, 30,
+                new Vector2(.5f, .5f), new Vector2(64, 64));
+            pips.color = new Color(.07f, .1f, .16f, 1f);
             float elapsed = 0f;
-            while (elapsed < 1f)
+            int shownFace = 0;
+            while (elapsed < 1.2f)
             {
                 elapsed += Time.unscaledDeltaTime;
-                dice.rectTransform.localRotation = Quaternion.Euler(0f, 0f, elapsed * 540f);
-                dice.rectTransform.localScale = Vector3.one * (1f + Mathf.Sin(elapsed * 18f) * .12f);
+                // 화면의 1~6 눈은 짧은 대표 연출일 뿐입니다. 실제 우선순위는 이미 생성된 넓은 범위의
+                // Tie Break 값을 계속 사용하므로, 표시 눈 때문에 판정 정밀도를 6단계로 낮추지 않습니다.
+                int face = 1 + Mathf.FloorToInt(elapsed / .09f) % 6;
+                if (face != shownFace)
+                {
+                    shownFace = face;
+                    pips.text = GetDicePips(face);
+                }
+                dice.rectTransform.localScale = Vector3.one * (1f + Mathf.Sin(elapsed * 22f) * .06f);
                 yield return null;
             }
+            dice.rectTransform.localScale = Vector3.one;
             Combatant first = turnOrder.Upcoming.FirstOrDefault();
             body.text = first != null && first.Id == "player"
                 ? $"{first.DisplayName}님이 먼저 시작합니다."
@@ -165,6 +178,20 @@ namespace ProjectLimitless.Battle
             Destroy(overlay.gameObject);
             actionPlaying = false;
             AdvanceTurn();
+        }
+
+        private static string GetDicePips(int face)
+        {
+            // 별도 이미지 없이 기존 UI 요소를 조합해 1~6 눈을 확실히 구분합니다.
+            switch (face)
+            {
+                case 1: return "    \n ● \n    ";
+                case 2: return "●  \n   \n  ●";
+                case 3: return "●  \n ● \n  ●";
+                case 4: return "● ●\n   \n● ●";
+                case 5: return "● ●\n ● \n● ●";
+                default: return "● ●\n● ●\n● ●";
+            }
         }
 
         private void Update()

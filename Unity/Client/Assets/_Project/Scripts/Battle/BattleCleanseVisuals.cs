@@ -12,6 +12,7 @@ namespace ProjectLimitless.Battle
         public const int ReleaseFrame = 7;
         public const int IconPeakFrame = 5;
         public static readonly Vector2 EffectSize = new Vector2(132f, 132f);
+        public static readonly Color EffectTint = new Color(.68f, 1f, .86f, 1f);
 
         private const int CellSize = 96;
         private const int Columns = 5;

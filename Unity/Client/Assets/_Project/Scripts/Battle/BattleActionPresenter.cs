@@ -661,7 +661,7 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(actor, font, "가이아 웰!");
             Image barrier = CreateEffectImage(actor, "ArcaneParry", frames,
-                BattleGaiaWallVisuals.EffectSize, new Vector2(0f, 12f));
+                BattleGaiaWallVisuals.EffectSize, new Vector2(0f, 12f), BattleGaiaWallVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
@@ -697,7 +697,7 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(actor, font, "철벽!");
             Image rocks = CreateEffectImage(actor, "EarthRupture", frames,
-                BattleIronWallVisuals.EffectSize, new Vector2(0f, -34f));
+                BattleIronWallVisuals.EffectSize, new Vector2(0f, -34f), BattleIronWallVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
@@ -732,8 +732,8 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(guardian, font, "대신 막기!");
             Image ring = CreateEffectImage(guardian, "GuardianCoverPartyRing", frames,
-                BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f));
-            if (ring != null) ring.color = BattleGuardianCoverVisuals.ProtectiveTint;
+                BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f),
+                BattleGuardianCoverVisuals.ProtectiveTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
@@ -801,7 +801,7 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(target, font, "정화!");
             Image effect = CreateEffectImage(target, "SpectralBloomCleanse", frames,
-                BattleCleanseVisuals.EffectSize, new Vector2(0f, -8f));
+                BattleCleanseVisuals.EffectSize, new Vector2(0f, -8f), BattleCleanseVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
@@ -825,13 +825,17 @@ namespace ProjectLimitless.Battle
         }
 
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
-            Vector2 size, Vector2 anchoredPosition)
+            Vector2 size, Vector2 anchoredPosition, Color? tint = null)
         {
             if (parent == null || frames == null || frames.Length == 0) return null;
             GameObject obj = new GameObject(objectName, typeof(Image));
             obj.transform.SetParent(parent, false);
             Image image = obj.GetComponent<Image>();
             image.sprite = frames[0];
+            // UI Image의 Color는 Sprite RGB를 대체하는 값이 아니라 곱하는 Tint입니다. Color.white면 원본색이
+            // 그대로지만, 아군 VFX처럼 생성 경로마다 의도색 적용 시점이 달라지면 흰 실루엣으로 보일 수 있어
+            // 공통 생성 시점에 Tint를 확정합니다. 이후 sprite 프레임만 바꿔도 Image.color는 유지됩니다.
+            image.color = tint ?? Color.white;
             image.preserveAspect = true;
             image.raycastTarget = false;
             RectTransform rect = image.rectTransform;
@@ -1122,7 +1126,7 @@ namespace ProjectLimitless.Battle
             Text callout = CreateSkillCallout(actor, font, "회복의 파동!");
             Color actorOriginalColor = actorSprite == null ? Color.white : actorSprite.color;
             Image wave = CreateEffectImage(actor, "HealingWaveArcaneParry", waveFrames,
-                new Vector2(180f, 180f), new Vector2(0f, 12f));
+                new Vector2(180f, 180f), new Vector2(0f, 12f), new Color(.72f, 1f, 1f, 1f));
 
             List<Image> heals = new List<Image>();
             for (int index = 0; index < targets.Count; index++)
@@ -1138,6 +1142,7 @@ namespace ProjectLimitless.Battle
                 effectObject.transform.SetParent(target, false);
                 Image image = effectObject.GetComponent<Image>();
                 image.sprite = healFrames[0];
+                image.color = new Color(1f, .94f, .62f, 1f);
                 image.preserveAspect = true;
                 image.raycastTarget = false;
                 RectTransform rect = image.rectTransform;
