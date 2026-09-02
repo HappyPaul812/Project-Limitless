@@ -2,9 +2,9 @@
 
 ## 기준
 
-- 갱신일: 2026-09-01
+- 갱신일: 2026-09-02
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `40ade21` (`Feature: 월드 위치 저장과 슬롯 삭제 구현`)
+- 마지막 기능 관련 commit: `9b8abeb` (`Feature: 레벨 성장 MP와 민첩 동률 판정 구현`)
 - 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -16,6 +16,9 @@
 ## 구현 확인된 항목
 
 ### 캐릭터 생성과 선택
+
+- `Level + JobId` 기반 결정적 6능력치 성장과 Lv50 중앙 상한 구현. 딜러 주 스탯 평균 +1.5 정수 패턴, 체력 HP, 직업별 HP 성장, 수호자/치유사 의지 파생 수치를 계산하며 Path는 성장 계산에서 제외. 수호자·치유사의 미확정 6능력치 레벨 성장은 적용하지 않음
+- 파생 능력치는 저장하지 않고 각 슬롯의 기존 Level/JobId로 복원. 경험치 곡선·몬스터 EXP·분배 정책은 미확정 상태 유지
 
 - Bootstrap의 5개 캐릭터 슬롯 목록과 슬롯별 `이어하기 / 새 캐릭터` 런타임 UI. 새 캐릭터는 기존 4단계 생성 흐름 유지
 - `GameSaveData` Version 1 JSON을 Unity Editor 프로젝트 로컬 `UserData/Saves/save_slot_01.json`~`05.json`에 독립 저장
@@ -88,6 +91,9 @@
 - `02_VenomBee` MonsterDefinition이 Pilot Bee Idle/Attack 시트 구조와 Scale 0.85를 Field/Battle에 공통 제공. 런타임 분할 재생으로 원본 PNG를 수정하지 않으며 독 상태이상은 아직 미구현
 
 ### 1차 턴제 전투
+
+- 치유사 전용 MP 런타임 자원과 `MP 현재/최대` HUD 구현. 지능 기반 최대치·자기 행동 종료 회복 및 치유의 빛/회복의 파동/정화 선검사·성공 차감 적용. 수치들은 중앙 임시 상수이며 최종 밸런스 미확정
+- 행동 우선도→민첩→전투 시작 1회 Tie Break 순서 구현. 실제 Combatant 참조별 값을 전투 동안 유지하고, 민첩 동률 전투에서만 Kenney 주사위 Overlay와 첫 행동 결과를 약 1.8초 표시
 
 - 재사용 가능한 `Battle` Scene과 Build Settings 연결
 - `Combatant`, 전열/후열 2×3 `Formation`, `TargetResolver`, `TurnOrderQueue` 분리
@@ -219,6 +225,7 @@
 
 ## 현재 검증 상태
 
+- 성장 능력치·치유사 MP·민첩 Tie Break 변경은 관련 파일 `git diff --check`를 통과했고 Unity 6000.5.7f1 배치 실행이 종료 코드 0으로 완료됐다. 실제 Play Mode의 Lv별 표시, MP HUD/회복/부족 거절, 동률 유무별 Overlay와 Timeline 일치는 사용자가 직접 확인해야 한다.
 - Unity 6000.5.7f1의 전체 `Assembly-CSharp` 참조 응답과 Roslyn으로 새 전투 코드를 포함해 컴파일했으며 Compiler Error 0개를 확인했다.
 - 치유사 기본 공격을 마법 사거리로 매핑하고 기존 검증용 공격력보다 4 낮게 적용한 뒤 동일한 Unity 참조로 Compiler Error 0개를 재확인했다.
 - 임시 실행 테스트로 근거리 보호·후열 개방, 원거리 후열 우선, 마법 자유 대상, 도발 우선·2회 지속, 방어 50%, 행동 우선도·민첩 정렬의 12개 검증을 모두 통과했다.
