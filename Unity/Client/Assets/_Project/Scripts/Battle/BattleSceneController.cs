@@ -990,6 +990,19 @@ namespace ProjectLimitless.Battle
                     return;
                 }
             }
+            if (IsHostileAreaSkill(skill))
+            {
+                Formation areaOpponents = currentActor.Side == BattleSide.Allies ? enemies : allies;
+                IReadOnlyList<Combatant> areaTargets =
+                    BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, areaOpponents);
+                if (areaTargets.Count == 0)
+                {
+                    // 유효 대상 검사는 메뉴를 닫거나 actionPlaying을 켜기 전에 끝내야 합니다. 먼저 UI 상태를
+                    // 바꾸면 거절된 행동인데도 Targeting과 Skill Menu 사이의 조작 불가능한 상태가 남습니다.
+                    RestoreSkillMenuAfterInvalidAction(GetNoAreaTargetMessage(skill));
+                    return;
+                }
+            }
 
             // 여기부터는 정보를 살펴보는 단계가 끝났습니다. 이후 스킬 종류와 관계없이 대상 선택과 연출이
             // 같은 넓은 전장 화면을 사용하도록 메뉴와 상세 팝업을 공통으로 닫습니다.
@@ -1614,6 +1627,42 @@ namespace ProjectLimitless.Battle
                 }));
         }
 
+        private static bool IsHostileAreaSkill(BattleSkillDefinition skill)
+        {
+            if (skill == null) return false;
+            return skill.EffectType == BattleSkillEffectType.AreaMeleePhysicalAttackWithMomentumGain ||
+                skill.EffectType == BattleSkillEffectType.AreaRangedPhysicalAttack ||
+                skill.EffectType == BattleSkillEffectType.AreaMagicAttackWithShock;
+        }
+
+        private static string GetNoAreaTargetMessage(BattleSkillDefinition skill)
+        {
+            if (skill == null) return "공격할 수 있는 대상이 없습니다.";
+            switch (skill.TargetRange)
+            {
+                case BattleSkillTargetRange.EnemyRearRowAll:
+                    return $"{skill.DisplayName}로 공격할 후열 적이 없습니다.";
+                case BattleSkillTargetRange.EnemyFrontRowAll:
+                    return $"{skill.DisplayName}로 공격할 전열 적이 없습니다.";
+                default:
+                    return $"{skill.DisplayName}로 공격할 살아 있는 적이 없습니다.";
+            }
+        }
+
+        private void RestoreSkillMenuAfterInvalidAction(string message)
+        {
+            // Invalid Action은 정상 행동과 달리 행동·턴·자원·쿨타임·VFX를 전혀 시작하지 않습니다. 취소 버튼만
+            // 억지로 켜면 어떤 메뉴를 취소하는지 나타내는 choosingSkill 상태가 false라 근본 해결이 아니므로,
+            // 스킬 메뉴 상태와 키보드 포커스를 함께 복원한 뒤 거절 이유를 다시 표시합니다.
+            actionPlaying = false;
+            choosingTarget = false;
+            targetSelectionReturnsToSkillMenu = false;
+            selectableTargets = Array.Empty<Combatant>();
+            targetSelectedAction = null;
+            ShowSkillMenu();
+            messageText.text = message;
+        }
+
         /// <summary>
         /// 광역기는 기본 공격용 TargetResolver가 아니라 스킬 정의의 TargetRange를 공용 스킬 대상 해석기에
         /// 전달합니다. 따라서 Controller가 "회오리 베기"라는 이름을 비교하지 않으며, 향후 화살비와
@@ -1628,9 +1677,8 @@ namespace ProjectLimitless.Battle
             if (targets.Length == 0)
             {
                 // 기본 근거리 공격은 전열이 비면 일부 후열을 공격할 수 있지만 회오리 베기의 공간은 전열로
-                // 고정됩니다. 여기서 스킬 메뉴를 유지하므로 안내만 보이고 행동과 턴은 소비하지 않습니다.
-                messageText.text = "회오리 베기로 공격할 전열 적이 없습니다.";
-                RebuildSkillMenu();
+                // 고정됩니다. 실행 직전 대상이 사라져도 공용 Invalid Action 복구로 메뉴와 포커스를 되돌립니다.
+                RestoreSkillMenuAfterInvalidAction(GetNoAreaTargetMessage(skill));
                 return;
             }
 
@@ -1691,8 +1739,7 @@ namespace ProjectLimitless.Battle
             Combatant[] targets = BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, opponents).ToArray();
             if (targets.Length == 0)
             {
-                messageText.text = "화살비로 공격할 후열 적이 없습니다.";
-                RebuildSkillMenu();
+                RestoreSkillMenuAfterInvalidAction(GetNoAreaTargetMessage(skill));
                 return;
             }
 
@@ -1764,8 +1811,7 @@ namespace ProjectLimitless.Battle
             Combatant[] targets = BattleSkillTargetResolver.ResolveHostileAreaTargets(skill, opponents).ToArray();
             if (targets.Length == 0)
             {
-                messageText.text = "썬더볼트로 공격할 살아 있는 적이 없습니다.";
-                RebuildSkillMenu();
+                RestoreSkillMenuAfterInvalidAction(GetNoAreaTargetMessage(skill));
                 return;
             }
 
