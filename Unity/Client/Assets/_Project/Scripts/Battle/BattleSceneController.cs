@@ -155,20 +155,28 @@ namespace ProjectLimitless.Battle
             pips.color = new Color(.07f, .1f, .16f, 1f);
             float elapsed = 0f;
             int shownFace = 0;
+            float nextFaceChange = 0f;
+            // System.Random은 UnityEngine.Random의 전투용 난수 상태를 소비하지 않는 별도 시각 RNG입니다.
+            // 지역 변수이므로 Domain Reload를 끈 반복 Play에서도 이전 전투의 마지막 눈을 보관하지 않습니다.
+            System.Random visualDiceRandom = new System.Random(Guid.NewGuid().GetHashCode());
             while (elapsed < 1.2f)
             {
                 elapsed += Time.unscaledDeltaTime;
                 // 화면의 1~6 눈은 짧은 대표 연출일 뿐입니다. 실제 우선순위는 이미 생성된 넓은 범위의
                 // Tie Break 값을 계속 사용하므로, 표시 눈 때문에 판정 정밀도를 6단계로 낮추지 않습니다.
-                int face = 1 + Mathf.FloorToInt(elapsed / .09f) % 6;
-                if (face != shownFace)
+                if (elapsed >= nextFaceChange)
                 {
-                    shownFace = face;
-                    pips.text = GetDicePips(face);
+                    shownFace = GetNextVisualDiceFace(visualDiceRandom, shownFace);
+                    pips.text = GetDicePips(shownFace);
+                    nextFaceChange += .09f;
                 }
                 dice.rectTransform.localScale = Vector3.one * (1f + Mathf.Sin(elapsed * 22f) * .06f);
                 yield return null;
             }
+            // 고정 순환의 시간 index를 마지막 눈으로 쓰면 매번 같은 값에서 끝납니다. 최종 눈도 별도로
+            // 추첨하되 직전 눈만 피하고, 실제 Tie Break 값이나 행동 순서에는 전달하지 않습니다.
+            shownFace = GetNextVisualDiceFace(visualDiceRandom, shownFace);
+            pips.text = GetDicePips(shownFace);
             dice.rectTransform.localScale = Vector3.one;
             Combatant first = turnOrder.Upcoming.FirstOrDefault();
             body.text = first != null && first.Id == "player"
@@ -192,6 +200,14 @@ namespace ProjectLimitless.Battle
                 case 5: return "● ●\n ● \n● ●";
                 default: return "● ●\n● ●\n● ●";
             }
+        }
+
+        private static int GetNextVisualDiceFace(System.Random random, int previousFace)
+        {
+            int face;
+            do face = random.Next(1, 7);
+            while (face == previousFace);
+            return face;
         }
 
         private void Update()
@@ -1257,7 +1273,6 @@ namespace ProjectLimitless.Battle
             bool executed = false;
             StartCoroutine(actionPresenter.PlayHealingWave(
                 actorView.ActionRoot,
-                actorView.SpriteImage,
                 targetRects,
                 battleFont,
                 BattleGaiaWallVisuals.LoadFrames(),
