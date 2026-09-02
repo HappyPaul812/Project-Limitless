@@ -38,7 +38,7 @@ namespace ProjectLimitless.Battle
     /// </summary>
     public sealed class Combatant
     {
-        public Combatant(string id, string displayName, BattleSide side, FormationSlot slot, int maxHp, int attack, int agility, int actionPriority, TargetRangeType basicRange, bool playerControlled, bool boss = false)
+        public Combatant(string id, string displayName, BattleSide side, FormationSlot slot, int maxHp, int attack, int agility, int actionPriority, TargetRangeType basicRange, bool playerControlled, bool boss = false, int defense = 0, int healingPower = 0, int maxMp = 0, int mpRecoveryPerAction = 0)
         {
             Id = id;
             DisplayName = displayName;
@@ -52,6 +52,11 @@ namespace ProjectLimitless.Battle
             BasicRange = basicRange;
             IsPlayerControlled = playerControlled;
             IsBoss = boss;
+            Defense = Math.Max(0, defense);
+            HealingPower = Math.Max(0, healingPower);
+            MaxMp = Math.Max(0, maxMp);
+            CurrentMp = MaxMp;
+            MpRecoveryPerAction = Math.Max(0, mpRecoveryPerAction);
         }
 
         public string Id { get; }
@@ -66,6 +71,12 @@ namespace ProjectLimitless.Battle
         public TargetRangeType BasicRange { get; }
         public bool IsPlayerControlled { get; }
         public bool IsBoss { get; }
+        public int Defense { get; }
+        public int HealingPower { get; }
+        public int MaxMp { get; }
+        public int CurrentMp { get; private set; }
+        public int MpRecoveryPerAction { get; }
+        public bool UsesMp => MaxMp > 0;
         public bool IsDefending { get; private set; }
         public Combatant ForcedTarget { get; private set; }
         public int ForcedTargetActionsRemaining { get; private set; }
@@ -113,9 +124,19 @@ namespace ProjectLimitless.Battle
         /// <summary>도발에 걸린 참가자가 행동을 마칠 때 남은 행동 횟수를 줄입니다.</summary>
         public void CompleteAction()
         {
+            // MP는 초당 회복하지 않고 이 참가자가 정상적으로 행동을 끝낸 경계에서만 회복합니다.
+            if (UsesMp) CurrentMp = Math.Min(MaxMp, CurrentMp + MpRecoveryPerAction);
             if (ForcedTargetActionsRemaining <= 0) return;
             ForcedTargetActionsRemaining--;
             if (ForcedTargetActionsRemaining == 0) ForcedTarget = null;
+        }
+
+        public bool CanSpendMp(int amount) => amount <= 0 || (UsesMp && CurrentMp >= amount);
+        public bool SpendMp(int amount)
+        {
+            if (!CanSpendMp(amount)) return false;
+            CurrentMp -= Math.Max(0, amount);
+            return true;
         }
     }
 
@@ -192,8 +213,26 @@ namespace ProjectLimitless.Battle
     public sealed class TurnOrderQueue
     {
         private readonly List<Combatant> order = new List<Combatant>();
+        private readonly Dictionary<Combatant, int> tieBreaks = new Dictionary<Combatant, int>(CombatantReferenceComparer.Instance);
+        private readonly Random random = new Random();
         private int nextIndex;
         public IReadOnlyList<Combatant> Upcoming => order.Skip(nextIndex).Where(item => item.IsAlive).ToArray();
+        public bool HasAgilityTie { get; private set; }
+        public int GetTieBreak(Combatant combatant) => combatant != null && tieBreaks.TryGetValue(combatant, out int value) ? value : 0;
+
+        public void InitializeBattle(IEnumerable<Combatant> combatants)
+        {
+            Combatant[] instances = combatants.Where(item => item != null).ToArray();
+            HasAgilityTie = instances.GroupBy(item => item.Agility).Any(group => group.Count() > 1);
+            tieBreaks.Clear();
+            HashSet<int> used = new HashSet<int>();
+            foreach (Combatant combatant in instances)
+            {
+                int value;
+                do value = random.Next(1, int.MaxValue); while (!used.Add(value));
+                tieBreaks.Add(combatant, value);
+            }
+        }
 
         public void Build(IEnumerable<Combatant> combatants)
         {
@@ -201,6 +240,7 @@ namespace ProjectLimitless.Battle
             order.AddRange(combatants.Where(item => item.IsAlive)
                 .OrderByDescending(item => item.ActionPriority)
                 .ThenByDescending(item => item.Agility)
+                .ThenByDescending(GetTieBreak)
                 .ThenBy(item => item.Id, StringComparer.Ordinal));
             nextIndex = 0;
         }

@@ -231,7 +231,8 @@ namespace ProjectLimitless.Core
             if (!Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Any(item => item.Id == data.PathId)) { error = $"알 수 없는 Path ID입니다: {data.PathId}"; return false; }
             if (!Resources.LoadAll<JobDefinition>("JobDefinitions").Any(item => item.JobId == data.JobId)) { error = $"알 수 없는 Job ID입니다: {data.JobId}"; return false; }
             if (string.IsNullOrWhiteSpace(data.CurrentSceneId) || IsNonWorldSaveScene(data.CurrentSceneId) || !Application.CanStreamedLevelBeLoaded(data.CurrentSceneId)) { error = $"이어갈 수 없는 Scene ID입니다: {data.CurrentSceneId}"; return false; }
-            if (data.Level < 1 || data.CurrentExperience < 0) { error = "레벨 또는 경험치 값이 올바르지 않습니다."; return false; }
+            if (data.Level < 1 || data.Level > CharacterGrowthCalculator.MaxLevel || data.CurrentExperience < 0)
+            { error = $"레벨은 1~{CharacterGrowthCalculator.MaxLevel} 범위이고 경험치는 0 이상이어야 합니다."; return false; }
             if (data.SpawnPointId != null && (data.SpawnPointId.Length > 128 || data.SpawnPointId.Contains("/") || data.SpawnPointId.Contains("\\"))) { error = "SpawnPoint ID 형식이 올바르지 않습니다."; return false; }
             error = string.Empty; return true;
         }

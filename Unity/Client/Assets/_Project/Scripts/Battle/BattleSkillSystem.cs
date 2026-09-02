@@ -48,7 +48,7 @@ namespace ProjectLimitless.Battle
             int attackDamagePercent = 0, string iconId = null, string targetDescription = null,
             string effectDescription = null, string typeDescription = null, string durationDescription = null,
             IReadOnlyList<int> momentumDamagePercents = null, BattleSkillTargetRange targetRange = BattleSkillTargetRange.None,
-            int burnDamagePercent = 0)
+            int burnDamagePercent = 0, int mpCost = 0)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
@@ -67,6 +67,7 @@ namespace ProjectLimitless.Battle
             MomentumDamagePercents = momentumDamagePercents ?? Array.Empty<int>();
             TargetRange = targetRange;
             BurnDamagePercent = Math.Max(0, burnDamagePercent);
+            MpCost = Math.Max(0, mpCost);
         }
 
         public string Id { get; }
@@ -104,6 +105,7 @@ namespace ProjectLimitless.Battle
         public BattleSkillTargetRange TargetRange { get; }
         /// <summary>화상 한 번이 명중 당시 공격력의 몇 %인지 나타냅니다. 30이면 당시 Attack의 30%입니다.</summary>
         public int BurnDamagePercent { get; }
+        public int MpCost { get; }
     }
 
     /// <summary>
@@ -173,7 +175,7 @@ namespace ProjectLimitless.Battle
                         BattleSkillEffectType.SingleAllyHeal, 0, 0, HealingLightMaxHpHealRatio,
                         iconId: BattleUiIconCatalog.HealerHealingLightSkill,
                         targetDescription: "대상: 살아 있는 아군 1명",
-                        effectDescription: "회복량: 최대 HP의 35%");
+                        effectDescription: "회복량: 최대 HP의 35%", mpCost: CharacterGrowthCalculator.TemporaryHealingLightMpCost);
                 if (preview.SkillId == HealerHealingWaveId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "치유사를 중심으로 회복의 파동을 일으켜 살아 있는 아군 전체의 HP를 회복합니다.\n전투불능 아군은 회복하거나 부활시키지 않습니다.", true,
@@ -183,7 +185,7 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 살아 있는 아군 전체(자신 포함)",
                         effectDescription: "효과: 치유의 빛 기본 회복량의 60%",
                         typeDescription: "유형: 광역 회복",
-                        durationDescription: "재사용 대기시간: 3턴");
+                        durationDescription: "재사용 대기시간: 3턴", mpCost: CharacterGrowthCalculator.TemporaryHealingWaveMpCost);
                 if (preview.SkillId == HealerCleanseId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "빛으로 아군을 정화하여 해로운 상태이상을 모두 제거합니다.", true,
@@ -192,7 +194,7 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 살아 있는 아군 1명",
                         effectDescription: "효과: 해로운 상태이상 모두 제거\n현재 제거 가능: 독 / 화상 / 감전",
                         typeDescription: "유형: 상태이상 해제",
-                        durationDescription: "재사용 대기시간: 2턴");
+                        durationDescription: "재사용 대기시간: 2턴", mpCost: CharacterGrowthCalculator.TemporaryCleanseMpCost);
                 if (preview.SkillId == SharpshooterAimId)
                     // 기본 공격력과 스킬 배율을 분리하면 캐릭터 성장으로 Attack이 달라져도 정조준은 항상
                     // 그 시점 기본 공격의 160%를 사용합니다. 성공 직후 쿨타임 2를 저장하고 사수의 다음 행동
@@ -866,6 +868,11 @@ namespace ProjectLimitless.Battle
                 reason = "아직 사용할 수 없습니다.";
                 return false;
             }
+            if (!actor.CanSpendMp(skill.MpCost))
+            {
+                reason = $"MP가 부족하여 {skill.DisplayName}을(를) 사용할 수 없습니다. 필요 MP: {skill.MpCost}.";
+                return false;
+            }
 
             int remaining = cooldowns.GetRemaining(actor, skill.Id);
             if (remaining > 0)
@@ -962,6 +969,7 @@ namespace ProjectLimitless.Battle
             // Ceiling은 소수점이 생겼을 때 항상 올림합니다. 예를 들어 최대 HP 101의 35%인 35.35는
             // 36으로 안정적으로 정수화하며, Combatant.RecoverHp가 남은 빈 HP보다 많이 채워지지 않게 막습니다.
             int requestedHp = Math.Max(1, (int)Math.Ceiling(target.MaxHp * skill.MaxHpHealRatio));
+            actor.SpendMp(skill.MpCost);
             recoveredHp = target.RecoverHp(requestedHp);
             if (recoveredHp <= 0)
             {
@@ -1002,6 +1010,7 @@ namespace ProjectLimitless.Battle
                 message = "정화할 해로운 상태가 없습니다.";
                 return false;
             }
+            actor.SpendMp(skill.MpCost);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}의 해로운 상태이상 {removedCount}개를 제거했습니다.";
             return true;
         }
@@ -1032,6 +1041,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
+            actor.SpendMp(skill.MpCost);
             int[] results = new int[livingAllies.Length];
             for (int index = 0; index < livingAllies.Length; index++)
             {

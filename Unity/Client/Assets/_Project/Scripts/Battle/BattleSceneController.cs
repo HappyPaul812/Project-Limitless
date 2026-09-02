@@ -118,13 +118,53 @@ namespace ProjectLimitless.Battle
             CreateInterface();
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
             turnOrder = new TurnOrderQueue();
+            turnOrder.InitializeBattle(AllCombatants);
             turnOrder.Build(AllCombatants);
-            AdvanceTurn();
+            if (turnOrder.HasAgilityTie) StartCoroutine(PlayTieBreakOpening());
+            else AdvanceTurn();
         }
 
         private void OnDestroy()
         {
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
+        }
+
+        /// <summary>
+        /// 실제 민첩 동률이 있을 때만 전투 입력 전에 한 번 표시합니다. Tie Break는 이미 모든 실제
+        /// Combatant 인스턴스에 배정되었으므로 연출 결과와 타임라인이 같은 순서를 읽습니다.
+        /// </summary>
+        private IEnumerator PlayTieBreakOpening()
+        {
+            actionPlaying = true;
+            Image overlay = MakeImage(battleCanvasRect, "TieBreakOverlay", new Color(.02f, .035f, .07f, .94f));
+            Stretch(overlay.rectTransform);
+            Image panel = MakeImage(overlay.transform, "Panel", new Color(.07f, .13f, .22f, 1f));
+            SetRect(panel.rectTransform, new Vector2(.5f, .5f), new Vector2(520, 300));
+            AddOutline(panel.gameObject, gold, 3);
+            Text title = MakeText(panel.transform, "Title", "우선순위 결정", battleFont, 28,
+                new Vector2(.5f, .82f), new Vector2(440, 42));
+            title.color = gold;
+            title.fontStyle = FontStyle.Bold;
+            Text body = MakeText(panel.transform, "Body", "민첩이 같습니다.\n먼저 행동할 대상을 결정합니다.",
+                battleFont, 19, new Vector2(.5f, .63f), new Vector2(450, 62));
+            Image dice = MakeSpriteIcon(panel.transform, "Dice",
+                Resources.Load<Sprite>("KenneyBattleIcons/dice_shield"), new Vector2(.5f, .38f), new Vector2(76, 76));
+            float elapsed = 0f;
+            while (elapsed < 1f)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                dice.rectTransform.localRotation = Quaternion.Euler(0f, 0f, elapsed * 540f);
+                dice.rectTransform.localScale = Vector3.one * (1f + Mathf.Sin(elapsed * 18f) * .12f);
+                yield return null;
+            }
+            Combatant first = turnOrder.Upcoming.FirstOrDefault();
+            body.text = first != null && first.Id == "player"
+                ? $"{first.DisplayName}님이 먼저 시작합니다."
+                : $"첫 행동: {first?.DisplayName}";
+            yield return new WaitForSecondsRealtime(.8f);
+            Destroy(overlay.gameObject);
+            actionPlaying = false;
+            AdvanceTurn();
         }
 
         private void Update()
@@ -137,15 +177,10 @@ namespace ProjectLimitless.Battle
         /// <summary>캐릭터 생성 정보와 전투 전용 3대3 Encounter 데이터를 실제 Formation 참가자로 변환합니다.</summary>
         private void CreateParticipants()
         {
-            PlayerPathDefinition path = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").FirstOrDefault(item => item.Id == GameSessionData.SelectedPlayerPathId);
-            JobDefinition playerJob = Resources.LoadAll<JobDefinition>("JobDefinitions").FirstOrDefault(item => item.JobId == GameSessionData.SelectedJobId);
-            int health = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Health);
-            int strength = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Strength);
-            int agility = CharacterCreationStatsCalculator.GetFinalStat(path, playerJob, CharacterStatType.Agility);
+            CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, GameSessionData.Level);
+            int agility = growth.Agility;
             string playerName = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
-            int playerAttack = 12 + Math.Max(0, strength - 10) * 2;
-            // 치유사의 기본 공격은 같은 능력치 기준에서도 다른 직업보다 낮은 피해를 주는 기존 검증값을 유지합니다.
-            if (GameSessionData.SelectedJobId == "healer") playerAttack = Math.Max(1, playerAttack - 4);
+            int playerAttack = CharacterGrowthCalculator.CalculateAttack(GameSessionData.SelectedJobId, growth);
 
             allies = new Formation(BattleSide.Allies);
             enemies = new Formation(BattleSide.Enemies);
@@ -153,16 +188,24 @@ namespace ProjectLimitless.Battle
             MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
             BattleEncounterSetup setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
-                playerName, GameSessionData.SelectedJobId, 80 + health * 4, playerAttack, agility, slime, venomBee,
+                playerName, GameSessionData.SelectedJobId,
+                CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility, slime, venomBee,
                 BattleEncounterContext.Monster);
 
             Dictionary<string, JobDefinition> jobs = Resources.LoadAll<JobDefinition>("JobDefinitions")
                 .ToDictionary(item => item.JobId, StringComparer.Ordinal);
             foreach (BattleParticipantSetup participant in setup.Allies.Concat(setup.Enemies))
             {
+                bool isSavedPlayer = participant.Id == "player";
+                CharacterGrowthStats participantGrowth = isSavedPlayer
+                    ? growth : CharacterGrowthCalculator.Calculate(participant.JobId, 1);
                 Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
                     participant.Slot, participant.MaxHp, participant.Attack, participant.Agility,
-                    participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled);
+                    participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, false,
+                    CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
+                    CharacterGrowthCalculator.CalculateHealingPower(participant.JobId, participantGrowth),
+                    CharacterGrowthCalculator.CalculateMaxMp(participant.JobId, participantGrowth),
+                    CharacterGrowthCalculator.CalculateMpRecovery(participant.JobId, participantGrowth));
                 (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
                 participantSetups.Add(combatant, participant);
                 if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
@@ -2283,6 +2326,7 @@ namespace ProjectLimitless.Battle
             // HUD는 전투 값을 변경하지 않고 읽기 전용 ViewModel의 결과에 Sprite와 짧은 글자를 붙입니다.
             // 아이콘만으로 뜻을 전달하지 않도록 한글을 함께 두며, 상세 팝업은 기존 텍스트 중심 설명을 유지합니다.
             List<(string IconId, string Label)> summaries = new List<(string, string)>();
+            if (combatant.UsesMp) summaries.Add((null, $"MP {combatant.CurrentMp}/{combatant.MaxMp}"));
             if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, "행동 중"));
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {

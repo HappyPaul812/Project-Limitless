@@ -51,7 +51,7 @@ namespace ProjectLimitless.Core
 
         public static void ConfigureProgress(int level, int currentExperience)
         {
-            Level = System.Math.Max(1, level);
+            Level = System.Math.Max(1, System.Math.Min(CharacterGrowthCalculator.MaxLevel, level));
             CurrentExperience = System.Math.Max(0, currentExperience);
         }
 
