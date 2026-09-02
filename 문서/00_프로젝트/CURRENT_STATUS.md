@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-02
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `8826e19` (`Fix: 아군 VFX 합성과 주사위 최종 눈 수정`)
+- 마지막 기능 관련 commit: `850cbc9` (`Fix: 아군 VFX Image 생명주기 수정`)
 - 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -98,7 +98,7 @@
 - 치유사 전용 MP 런타임 자원과 `MP 현재/최대` HUD 구현. MaxMP는 `임시 기본값 + (Level-1)×1 + 지능×2`로 재계산하며 레벨 성장 +1과 지능 계수 +2는 확정. 자기 행동 종료 회복 및 치유의 빛/회복의 파동/정화 선검사·성공 차감 적용
 - 치유사 스킬은 고정 비용으로 `정화 < 치유의 빛 < 회복의 파동`을 유지한다. 치유의 빛은 쿨타임 없음, 회복의 파동 3턴·정화 2턴은 유지하며 기본 MP·회복량·실제 비용 숫자는 임시값, 레벨업 시 MP 완전 회복 여부는 미확정
 - 행동 우선도→민첩→전투 시작 1회 Tie Break 순서 구현. 실제 Combatant 참조별 값을 전투 동안 유지하고, 민첩 동률 전투에서만 Overlay를 열어 전투 RNG와 분리된 지역 `System.Random`으로 1~6 눈을 0.09초 간격으로 1.2초간 변경. 최종 눈도 직전 값과 다르게 별도 추첨하며 입력 잠금과 실제 첫 행동/Timeline 판정 유지
-- 회복의 파동·정화·철벽·대신 막기·가이아 웰은 기존 Sprite와 적용 프레임을 유지하고 공용 Presenter가 임시 VFX Tint와 CharacterSprite보다 뒤쪽인 렌더 순서를 함께 확정. 회복의 파동 본체 Color pulse를 제거했으며 VFX 종료 시 임시 Image를 파괴해 반복 Play에서도 본체 Tint와 잔존 Overlay 방지
+- 회복의 파동·정화·철벽·대신 막기·가이아 웰 VFX는 캐릭터 본체와 독립된 Image만 사용한다. Image는 생성 즉시 숨기고 첫 유효 Sprite·Tint 설정 뒤 표시하며, null 프레임은 숨기고 종료 즉시 비활성화·파괴한다. CharacterSprite 뒤 강제 배치를 제거해 원본 후광의 안쪽이 가려져 바깥 색 레이어처럼 분리되는 현상을 방지했고, 대신 막기 이전 섬광의 의도적 null Sprite도 유효 Orb Sprite로 교체
 
 - 재사용 가능한 `Battle` Scene과 Build Settings 연결
 - `Combatant`, 전열/후열 2×3 `Formation`, `TargetResolver`, `TurnOrderQueue` 분리
@@ -490,12 +490,12 @@
 
 기존 Male/Female, Path Visual과 Wheelchair Variant, 이름표, 월드 경계·전환·초원 슬라임 필드 Animation도 회귀가 없는지 함께 확인한다.
 
-181. Play→Stop을 최소 3회 반복하며 회복의 파동·정화·철벽·대신 막기·가이아 웰에서 캐릭터 본체 색이 변하지 않고 VFX만 원본/의도 색조로 보이며, 종료 뒤 임시 Overlay가 남지 않는지 확인한다.
+181. 한 번의 Play Mode에서 회복의 파동·정화·철벽·대신 막기·가이아 웰을 각각 3회 이상 사용해 캐릭터 본체 색 변화·흰 네모·단색 사각형·잔존 Image·반복 누적이 없고 원본 VFX 후광만 정상 표시되는지 확인한다. 이어서 Play→Stop을 최소 3회 반복해 같은 항목을 재확인한다.
 182. 파이어 볼·썬더볼트·화살비·동료의 습격·독/화상/감전·숲거미 독액 분사의 기존 색과 피해 횟수가 유지되는지 확인한다.
 183. 민첩 동률 전투를 여러 번 새로 시작해 주사위가 순차 반복이 아닌 1~6 랜덤 눈으로 바뀌고 최종 눈도 항상 1이 아닌지, 결과 문구·Timeline·첫 행동자가 일치하고 다음 라운드에는 재표시되지 않는지 확인한다.
 184. 민첩 동률이 없는 전투에서는 Overlay가 없고 바로 정상 입력으로 시작하는지 확인한다.
 
-관련 코드·전투 문서는 `git diff --check`를 통과했고 Unity 6000.5.7f1 배치 명령은 종료 코드 0이었다. 실제 반복 Play의 VFX 합성·잔존 객체, 주사위 최종 눈 다양성 및 위 181~184 항목은 Play Mode에서 직접 확인해야 한다.
+VFX PNG 전부가 RGBA Alpha 0~255이고 Sprite Import의 Alpha Is Transparency가 켜져 있으며, Arcane Parry 16·Radiant Heal 14·Spectral Bloom 16·Earth Rupture 20·Frost Nova index 4~10의 선언 범위가 실제 시트 크기 안에 있음을 확인했다. 코드·전투 문서는 관련 파일 기준 `git diff --check`를 통과했고 Unity 6000.5.7f1 배치 명령은 종료 코드 0이었다. Tie Break는 `System.Random` 기반 1~6 시각 RNG와 직전 눈 회피·별도 최종 눈 구조가 유지되며 코드 변경이 없다. 실제 반복 Play의 VFX 합성·잔존 객체, 다른 VFX 회귀, 주사위 최종 눈 다양성 및 위 181~184 항목은 Play Mode에서 직접 확인해야 한다.
 
 ## 다음 권장 작업
 
