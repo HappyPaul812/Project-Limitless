@@ -3,7 +3,7 @@ using UnityEngine;
 namespace ProjectLimitless.Battle
 {
     /// <summary>
-    /// 대신 막기가 사용하는 CC0 PVFX Frost Nova Grid를 짧은 보호 테두리로 준비합니다.
+    /// 수호의 맹세가 사용하는 CC0 PVFX Frost Nova Grid를 짧은 보호 테두리로 준비합니다.
     /// 공격처럼 터지는 처음·마지막 프레임은 제외하고 원형 테두리가 형성된 중간 프레임만 사용합니다.
     /// 실제 보호 시간은 VFX가 아니라 상태 런타임이 관리하므로 큰 그림을 화면에 계속 남기지 않습니다.
     /// </summary>

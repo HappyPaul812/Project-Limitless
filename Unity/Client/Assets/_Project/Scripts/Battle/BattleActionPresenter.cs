@@ -730,7 +730,7 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
 
-            Text callout = CreateSkillCallout(guardian, font, "대신 막기!");
+            Text callout = CreateSkillCallout(guardian, font, $"{BattleSkillCatalog.GuardianOathDisplayName}!");
             Image ring = CreateEffectImage(guardian, "GuardianCoverPartyRing", frames,
                 BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f),
                 BattleGuardianCoverVisuals.ProtectiveTint);
@@ -755,7 +755,8 @@ namespace ProjectLimitless.Battle
         /// 실제 이전이 생긴 순간에만 피격 동료에서 수호자로 향하는 짧은 금색 선과 섬광을 만듭니다.
         /// 별도 외부 에셋 없이 UI Image를 사용하며 계산과 독립된 안내 연출이라 피해 수치를 바꾸지 않습니다.
         /// </summary>
-        public IEnumerator PlayGuardianTransfer(RectTransform protectedAlly, RectTransform guardian)
+        public IEnumerator PlayGuardianTransfer(RectTransform protectedAlly, RectTransform guardian, Font font,
+            int reducedDamage)
         {
             if (protectedAlly == null || guardian == null || protectedAlly.parent != guardian.parent) yield break;
             RectTransform parent = protectedAlly.parent as RectTransform;
@@ -778,9 +779,14 @@ namespace ProjectLimitless.Battle
             Image flash = CreateEffectImage(guardian, "GuardianTransferFlash", new[] { GetOrbSprite() },
                 new Vector2(34f, 34f), Vector2.zero);
             if (flash != null) flash.color = new Color(1f, .92f, .62f, .75f);
+            Text feedback = CreateSkillCallout(protectedAlly, font,
+                $"{BattleSkillCatalog.GuardianOathDisplayName} -{Mathf.Max(0, reducedDamage)}");
             yield return new WaitForSeconds(.16f);
             if (line != null) Destroy(line.gameObject);
             DestroyEffectImage(flash);
+            // 광역 공격에서는 대상마다 한 줄만 띄워 화면을 덜 가리면서도 실제 감소량을 바로 확인하게 합니다.
+            yield return new WaitForSeconds(.24f);
+            if (feedback != null) Destroy(feedback.gameObject);
         }
 
         /// <summary>

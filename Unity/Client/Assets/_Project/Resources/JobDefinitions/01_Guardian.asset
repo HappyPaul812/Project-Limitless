@@ -33,6 +33,6 @@ MonoBehaviour:
     skillType: 자기 보호
     skillDescription: 굳건한 방벽으로 몸을 지켜 받는 피해를 70% 감소시킵니다. 자신의 다음 2회 행동 동안 지속되며 공용 방어와 중첩되지 않습니다.
   - skillId: guardian_intercept
-    skillName: 대신 막기
+    skillName: 수호의 맹세
     skillType: 광역 보호
     skillDescription: 수호자의 다음 행동 전까지 자신을 제외한 살아 있는 아군 전체의 직접 피해를 최대 50% 줄이고, 줄인 피해의 절반을 최대 HP 40%의 이전 예산 안에서 대신 받습니다. DoT는 보호하지 않습니다.

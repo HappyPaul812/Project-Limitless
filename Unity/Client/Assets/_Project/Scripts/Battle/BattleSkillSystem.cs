@@ -117,6 +117,8 @@ namespace ProjectLimitless.Battle
         public const string GuardianTauntId = "guardian_taunt";
         public const string GuardianIronWallId = "guardian_iron_defense";
         public const string GuardianCoverAlliesId = "guardian_intercept";
+        // 저장·쿨타임에서 쓰는 안정적인 Skill ID는 유지하되, 플레이어에게 보이는 이름은 한곳에서 공유합니다.
+        public const string GuardianOathDisplayName = "수호의 맹세";
         public const string HealerHealingLightId = "healer_healing_light";
         public const string HealerHealingWaveId = "healer_healing_wave";
         public const string HealerCleanseId = "healer_cleanse";
@@ -159,12 +161,12 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 자기 보호",
                         durationDescription: "지속: 자신의 다음 2회 행동\n재사용 대기시간: 4턴\n공용 방어와 중첩 불가");
                 if (preview.SkillId == GuardianCoverAlliesId)
-                    return new BattleSkillDefinition(preview.SkillId, "대신 막기",
-                        "동료들의 피해를 대신 감당합니다.\n수호자의 다음 행동 전까지 살아 있는 아군 전체가 직접 공격과 공격 스킬로 받는 피해를 최대 50% 줄이고, 줄인 피해의 절반을 수호자가 대신 받습니다.", true,
+                    return new BattleSkillDefinition(preview.SkillId, GuardianOathDisplayName,
+                        "수호자를 제외한 살아 있는 아군을 보호합니다.\n아군이 받는 직접 피해를 최대 50% 감소시키고, 감소시킨 피해의 일부를 수호자가 대신 부담합니다.", true,
                         BattleSkillEffectType.GuardianCoverAllies, 4, 0,
                         iconId: BattleUiIconCatalog.GuardianCoverAlliesSkill,
                         targetDescription: "대상: 자신을 제외한 살아 있는 아군 전체",
-                        effectDescription: "효과: 직접 피해 최대 50% 감소\n이전 피해: 감소량의 50%\n이전 상한: 수호자 최대 HP의 40%\nDoT 보호 불가",
+                        effectDescription: "효과: 직접 피해 최대 50% 감소\n피해 전이: 감소량의 50%\n보호 예산: 수호자 최대 HP의 40%\nDoT 피해: 보호하지 않음",
                         typeDescription: "유형: 광역 보호",
                         durationDescription: "지속: 수호자의 다음 행동 전까지\n재사용 대기시간: 4턴");
                 if (preview.SkillId == HealerHealingLightId)
@@ -432,7 +434,7 @@ namespace ProjectLimitless.Battle
     }
 
     /// <summary>
-    /// HP를 줄이는 원인을 구분합니다. 대신 막기는 적이 선택한 직접 전투 행동만 보호해야 하므로
+    /// HP를 줄이는 원인을 구분합니다. 수호의 맹세는 적이 선택한 직접 전투 행동만 보호해야 하므로
     /// 화상·독 같은 지속 피해를 같은 TakeDamage 호출이라는 이유만으로 가로채지 않습니다. 향후 출혈,
     /// 반사 피해, 환경 피해도 새 원인을 추가해 보호 여부를 명시할 수 있습니다.
     /// </summary>
@@ -445,7 +447,7 @@ namespace ProjectLimitless.Battle
         GuardianTransfer
     }
 
-    /// <summary>한 번의 대신 막기 계산 결과를 연출 계층에 전달하는 읽기 전용 자료입니다.</summary>
+    /// <summary>한 번의 수호의 맹세 계산 결과를 연출 계층에 전달하는 읽기 전용 자료입니다.</summary>
     public readonly struct GuardianInterceptionResult
     {
         public GuardianInterceptionResult(Combatant protectedAlly, Combatant guardian, int reducedDamage,
@@ -623,6 +625,8 @@ namespace ProjectLimitless.Battle
             BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction)
         {
             if (target == null) return 0;
+            // 원래 피해는 보호가 없었다면 동료가 받을 값이고, 실제 피해는 수호의 맹세 감소와 동료 자신의
+            // 방어를 차례로 거친 값입니다. 둘을 분리해야 UI가 "얼마를 막았는지" 정확히 알려 줄 수 있습니다.
             int damageAfterCover = Math.Max(1, rawDamage);
             GuardianInterceptionResult? interception = null;
             if (origin == BattleDamageOrigin.DirectCombatAction &&
@@ -637,7 +641,8 @@ namespace ProjectLimitless.Battle
                 if (scheduledTransfer > 0 && actualReduction > 0)
                 {
                     damageAfterCover -= actualReduction;
-                    // 예산은 철벽 적용 뒤 HP 피해가 아니라 적용 전 이전 예정량으로 소비합니다. 철벽이 실제
+                    // 보호 대상의 감소량과 수호자의 피해 전이는 서로 다른 값입니다. 예산은 철벽 적용 뒤 HP
+                    // 피해가 아니라 적용 전 이전 예정량으로 소비합니다. 철벽이 실제
                     // 피해를 줄였다는 이유로 예산이 되돌아오면 최대 HP 40%라는 보호 위험 상한이 커집니다.
                     cover.RemainingTransferBudget -= scheduledTransfer;
                     int guardianDamage = ApplyPersonalDefense(cover.Guardian, scheduledTransfer);
@@ -761,7 +766,7 @@ namespace ProjectLimitless.Battle
         {
             remainingTicks = 0;
             if (!HasActiveBurn(target) || !burns.TryGetValue(target, out BurnState burn)) return 0;
-            // 화상은 직접 공격이 끝난 뒤 상태가 만드는 DoT이므로 대신 막기 보호 계산을 명시적으로 건너뜁니다.
+            // 화상은 직접 공격이 끝난 뒤 상태가 만드는 DoT이므로 수호의 맹세 보호 계산을 명시적으로 건너뜁니다.
             int damage = ApplyIncomingDamage(target, burn.RawDamagePerTick, BattleDamageOrigin.DamageOverTime);
             burn.RemainingTicks = Math.Max(0, burn.RemainingTicks - 1);
             remainingTicks = burn.RemainingTicks;
@@ -1382,7 +1387,7 @@ namespace ProjectLimitless.Battle
             if (!CanUse(actor, skill, out message)) return false;
             if (skill.EffectType != BattleSkillEffectType.GuardianCoverAllies || !statusEffects.ApplyGuardianCover(actor))
             {
-                message = "대신 막기를 적용할 수 없습니다.";
+                message = $"{BattleSkillCatalog.GuardianOathDisplayName}를 적용할 수 없습니다.";
                 return false;
             }
 

@@ -666,8 +666,8 @@ namespace ProjectLimitless.Battle
             if (currentActor == null) return;
             currentActor.BeginTurn();
             skillCooldowns.BeginActorTurn(currentActor);
-            // 대신 막기는 수호자가 새 행동을 시작하기 직전에 끝납니다. 다른 참가자의 차례나 행동 종료에서는
-            // 지우지 않으므로 적·아군 수가 늘어나도 확정된 시간 동안 모든 직접 피해를 보호합니다.
+            // 수호의 맹세는 수호자가 새 행동을 시작하기 직전에 끝납니다. 사용 행동 종료나 다른 참가자의
+            // 차례에는 제거하지 않아 적과 동료가 여러 번 행동해도 약속한 보호 시간을 온전히 보장합니다.
             statusEffects.BeginActorAction(currentActor);
             UpdateTimeline();
             RefreshCombatantViews(null);
@@ -1956,7 +1956,7 @@ namespace ProjectLimitless.Battle
                         string failureMessage = messageText.text;
                         ShowSkillMenu();
                         messageText.text = string.IsNullOrEmpty(failureMessage)
-                            ? "대신 막기를 사용할 수 없습니다." : failureMessage;
+                            ? $"{BattleSkillCatalog.GuardianOathDisplayName}를 사용할 수 없습니다." : failureMessage;
                     }
                 }));
         }
@@ -1968,7 +1968,8 @@ namespace ProjectLimitless.Battle
                 !combatantViews.TryGetValue(result.ProtectedAlly, out CombatantView allyView) ||
                 !combatantViews.TryGetValue(result.Guardian, out CombatantView guardianView)) return;
 
-            StartCoroutine(actionPresenter.PlayGuardianTransfer(allyView.ActionRoot, guardianView.ActionRoot));
+            StartCoroutine(actionPresenter.PlayGuardianTransfer(allyView.ActionRoot, guardianView.ActionRoot,
+                battleFont, result.ReducedDamage));
         }
 
         private void Defend()
@@ -2033,7 +2034,7 @@ namespace ProjectLimitless.Battle
 
             Func<IReadOnlyList<int>> applyImpacts = () => targets.Select(target =>
                 // 독·화상 틱은 상태이상 경로를 사용하지만 독액 분사는 전투 행동이 직접 HP를 깎는 공격입니다.
-                // Origin을 명시해 대신 막기가 직접 공격만 보호하고 DoT는 보호하지 않는 경계를 검증합니다.
+                // Origin을 명시해 수호의 맹세가 직접 공격만 보호하고 DoT는 보호하지 않는 경계를 검증합니다.
                 statusEffects.ApplyIncomingDamage(target,
                     statusEffects.ModifyOutgoingDamage(actor, monster.DirectAreaAttackDamage),
                     BattleDamageOrigin.DirectCombatAction)).ToArray();
