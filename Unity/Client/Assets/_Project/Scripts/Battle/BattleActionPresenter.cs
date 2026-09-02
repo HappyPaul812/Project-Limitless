@@ -377,7 +377,7 @@ namespace ProjectLimitless.Battle
             for (int index = 0; index < 6; index++)
             {
                 if (charge != null && chargeFrames != null && chargeFrames.Length > 0)
-                    charge.sprite = chargeFrames[index % chargeFrames.Length];
+                    SetEffectSprite(charge, chargeFrames[index % chargeFrames.Length]);
                 yield return new WaitForSeconds(BattleFireballVisuals.FrameDuration);
             }
             if (charge != null) Destroy(charge.gameObject);
@@ -406,7 +406,7 @@ namespace ProjectLimitless.Battle
             int frameCount = explosionFrames?.Length ?? 0;
             for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
             {
-                if (explosion != null) explosion.sprite = explosionFrames[frameIndex];
+                SetEffectSprite(explosion, explosionFrames[frameIndex]);
                 if (!impactApplied && frameIndex >= BattleFireballVisuals.ExplosionPeakFrame)
                 {
                     impactApplied = true;
@@ -453,7 +453,7 @@ namespace ProjectLimitless.Battle
             int count = flameFrames?.Length ?? 0;
             for (int index = 0; index < count; index++)
             {
-                if (flame != null) flame.sprite = flameFrames[index];
+                SetEffectSprite(flame, flameFrames[index]);
                 if (!applied && index >= 3)
                 {
                     applied = true;
@@ -499,7 +499,7 @@ namespace ProjectLimitless.Battle
             int count = acidFrames?.Length ?? 0;
             for (int index = 0; index < count; index++)
             {
-                if (acid != null) acid.sprite = acidFrames[index];
+                SetEffectSprite(acid, acidFrames[index]);
                 if (!applied && index >= 3)
                 {
                     applied = true;
@@ -571,7 +571,7 @@ namespace ProjectLimitless.Battle
             int frameCount = impactFrames?.Length ?? 0;
             for (int frameIndex = 0; frameIndex < frameCount; frameIndex++)
             {
-                foreach (Image impact in impacts) if (impact != null) impact.sprite = impactFrames[frameIndex];
+                foreach (Image impact in impacts) SetEffectSprite(impact, impactFrames[frameIndex]);
                 if (!applied && frameIndex >= BattleThunderboltVisuals.PeakFrame)
                 {
                     applied = true;
@@ -661,11 +661,11 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(actor, font, "가이아 웰!");
             Image barrier = CreateEffectImage(actor, "ArcaneParry", frames,
-                BattleGaiaWallVisuals.EffectSize, new Vector2(0f, 12f), BattleGaiaWallVisuals.EffectTint, true);
+                BattleGaiaWallVisuals.EffectSize, new Vector2(0f, 12f), BattleGaiaWallVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
-                if (barrier != null) barrier.sprite = frames[frameIndex];
+                SetEffectSprite(barrier, frames[frameIndex]);
                 if (!applied && frameIndex >= BattleGaiaWallVisuals.PeakFrame)
                 {
                     applied = true;
@@ -676,7 +676,7 @@ namespace ProjectLimitless.Battle
                 yield return new WaitForSeconds(BattleGaiaWallVisuals.FrameDuration);
             }
             if (!applied) applyEffect?.Invoke();
-            if (barrier != null) Destroy(barrier.gameObject);
+            DestroyEffectImage(barrier);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }
@@ -697,11 +697,11 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(actor, font, "철벽!");
             Image rocks = CreateEffectImage(actor, "EarthRupture", frames,
-                BattleIronWallVisuals.EffectSize, new Vector2(0f, -34f), BattleIronWallVisuals.EffectTint, true);
+                BattleIronWallVisuals.EffectSize, new Vector2(0f, -34f), BattleIronWallVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
-                if (rocks != null) rocks.sprite = frames[frameIndex];
+                SetEffectSprite(rocks, frames[frameIndex]);
                 if (!applied && frameIndex >= BattleIronWallVisuals.PeakFrame)
                 {
                     applied = true;
@@ -711,7 +711,7 @@ namespace ProjectLimitless.Battle
                 yield return new WaitForSeconds(BattleIronWallVisuals.FrameDuration);
             }
             if (!applied) applyEffect?.Invoke();
-            if (rocks != null) Destroy(rocks.gameObject);
+            DestroyEffectImage(rocks);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }
@@ -733,11 +733,11 @@ namespace ProjectLimitless.Battle
             Text callout = CreateSkillCallout(guardian, font, "대신 막기!");
             Image ring = CreateEffectImage(guardian, "GuardianCoverPartyRing", frames,
                 BattleGuardianCoverVisuals.PartyEffectSize, new Vector2(-95f, -20f),
-                BattleGuardianCoverVisuals.ProtectiveTint, true);
+                BattleGuardianCoverVisuals.ProtectiveTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
-                if (ring != null) ring.sprite = frames[frameIndex];
+                SetEffectSprite(ring, frames[frameIndex]);
                 if (!applied && frameIndex >= BattleGuardianCoverVisuals.ApplyFrame)
                 {
                     applied = true;
@@ -746,7 +746,7 @@ namespace ProjectLimitless.Battle
                 yield return new WaitForSeconds(BattleGuardianCoverVisuals.FrameDuration);
             }
             if (!applied) applyEffect?.Invoke();
-            if (ring != null) Destroy(ring.gameObject);
+            DestroyEffectImage(ring);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }
@@ -775,12 +775,12 @@ namespace ProjectLimitless.Battle
             lineRect.sizeDelta = new Vector2(delta.magnitude, 4f);
             lineRect.localEulerAngles = new Vector3(0f, 0f, Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg);
 
-            Image flash = CreateEffectImage(guardian, "GuardianTransferFlash", new Sprite[] { null },
+            Image flash = CreateEffectImage(guardian, "GuardianTransferFlash", new[] { GetOrbSprite() },
                 new Vector2(34f, 34f), Vector2.zero);
             if (flash != null) flash.color = new Color(1f, .92f, .62f, .75f);
             yield return new WaitForSeconds(.16f);
             if (line != null) Destroy(line.gameObject);
-            if (flash != null) Destroy(flash.gameObject);
+            DestroyEffectImage(flash);
         }
 
         /// <summary>
@@ -801,11 +801,11 @@ namespace ProjectLimitless.Battle
 
             Text callout = CreateSkillCallout(target, font, "정화!");
             Image effect = CreateEffectImage(target, "SpectralBloomCleanse", frames,
-                BattleCleanseVisuals.EffectSize, new Vector2(0f, -8f), BattleCleanseVisuals.EffectTint, true);
+                BattleCleanseVisuals.EffectSize, new Vector2(0f, -8f), BattleCleanseVisuals.EffectTint);
             bool applied = false;
             for (int frameIndex = 0; frameIndex < frames.Length; frameIndex++)
             {
-                if (effect != null) effect.sprite = frames[frameIndex];
+                SetEffectSprite(effect, frames[frameIndex]);
                 if (!applied && frameIndex >= BattleCleanseVisuals.ReleaseFrame)
                 {
                     applied = true;
@@ -819,22 +819,21 @@ namespace ProjectLimitless.Battle
                 applyCleanse?.Invoke();
                 onImpact?.Invoke();
             }
-            if (effect != null) Destroy(effect.gameObject);
+            DestroyEffectImage(effect);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }
 
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
-            Vector2 size, Vector2 anchoredPosition, Color? tint = null, bool renderBehindCharacter = false)
+            Vector2 size, Vector2 anchoredPosition, Color? tint = null)
         {
             if (parent == null || frames == null || frames.Length == 0) return null;
             GameObject obj = new GameObject(objectName, typeof(Image));
             obj.transform.SetParent(parent, false);
             Image image = obj.GetComponent<Image>();
-            image.sprite = frames[0];
-            // UI Image의 Color는 Sprite RGB를 대체하는 값이 아니라 곱하는 Tint입니다. Color.white면 원본색이
-            // 그대로지만, 아군 VFX처럼 생성 경로마다 의도색 적용 시점이 달라지면 흰 실루엣으로 보일 수 있어
-            // 공통 생성 시점에 Tint를 확정합니다. 이후 sprite 프레임만 바꿔도 Image.color는 유지됩니다.
+            // Unity UI Image는 Sprite가 없어도 기본 흰 Graphic을 그릴 수 있습니다. 그래서 컴포넌트가
+            // 생성되는 순간부터 숨기고, 첫 유효 Sprite와 Tint가 모두 준비된 뒤에만 화면에 보이게 합니다.
+            image.enabled = false;
             image.color = tint ?? Color.white;
             image.preserveAspect = true;
             image.raycastTarget = false;
@@ -842,20 +841,35 @@ namespace ProjectLimitless.Battle
             rect.anchorMin = rect.anchorMax = rect.pivot = Vector2.one * .5f;
             rect.sizeDelta = size;
             rect.anchoredPosition = anchoredPosition;
-            if (renderBehindCharacter) PlaceEffectBehindCharacter(image, parent);
+            SetEffectSprite(image, FindFirstValidSprite(frames));
             return image;
         }
 
-        private static void PlaceEffectBehindCharacter(Image effect, RectTransform actionRoot)
+        private static Sprite FindFirstValidSprite(Sprite[] frames)
         {
-            if (effect == null || actionRoot == null) return;
-            Transform character = actionRoot.Find("CharacterSprite");
-            if (character == null) return;
+            if (frames == null) return null;
+            for (int index = 0; index < frames.Length; index++)
+                if (frames[index] != null) return frames[index];
+            return null;
+        }
 
-            // Unity UI는 같은 부모에서 뒤쪽 형제가 나중에 그려집니다. 임시 VFX가 CharacterSprite 뒤에
-            // 생성되면 반투명 Tint가 본체 위에 합성되어 본체 색이 바뀐 것처럼 보이므로 앞 형제로 옮깁니다.
-            // VFX Image와 캐릭터 Image는 서로 다른 객체이며, 본체 Color는 저장·복원조차 하지 않습니다.
-            effect.transform.SetSiblingIndex(character.GetSiblingIndex());
+        private static void SetEffectSprite(Image image, Sprite frame)
+        {
+            if (image == null) return;
+            // PNG의 투명 Alpha와 Image Color/Tint는 서로 곱해져 최종 픽셀이 됩니다. null 프레임은
+            // 곱할 Alpha 자체가 없으므로 적용하지 않고 Image를 숨겨 기본 흰 사각형을 차단합니다.
+            image.enabled = false;
+            if (frame == null) return;
+            image.sprite = frame;
+            image.enabled = true;
+        }
+
+        private static void DestroyEffectImage(Image image)
+        {
+            if (image == null) return;
+            // 종료 즉시 숨긴 뒤 파괴해야 같은 렌더 프레임에 임시 VFX가 잔존하거나 다음 사용에 누적되지 않습니다.
+            image.enabled = false;
+            Destroy(image.gameObject);
         }
 
         /// <summary>스킬 사용자를 제자리에서 짧게 밝히고 텍스트를 표시한 뒤 지정 시점에 효과를 적용합니다.</summary>
@@ -1074,18 +1088,18 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
 
-            GameObject effectObject = new GameObject("RadiantHealEffect", typeof(Image));
-            effectObject.transform.SetParent(target, false);
-            Image effectImage = effectObject.GetComponent<Image>();
-            effectImage.sprite = frames[0];
-            effectImage.preserveAspect = true;
-            effectImage.raycastTarget = false;
+            Image effectImage = CreateEffectImage(target, "RadiantHealEffect", frames, effectSize,
+                new Vector2(0f, -42f));
+            if (effectImage == null)
+            {
+                int fallbackHealing = applyHealing == null ? 0 : applyHealing();
+                onImpact?.Invoke(fallbackHealing);
+                if (fallbackHealing > 0) StartCoroutine(ShowHealingNumber(target, font, fallbackHealing));
+                onComplete?.Invoke();
+                yield break;
+            }
             RectTransform effectRect = effectImage.rectTransform;
-            effectRect.anchorMin = Vector2.one * .5f;
-            effectRect.anchorMax = Vector2.one * .5f;
             effectRect.pivot = new Vector2(.5f, 29f / 96f);
-            effectRect.anchoredPosition = new Vector2(0f, -42f);
-            effectRect.sizeDelta = effectSize;
 
             float safeFrameDuration = Mathf.Max(.01f, frameDuration);
             float totalDuration = frames.Length * safeFrameDuration;
@@ -1094,7 +1108,7 @@ namespace ProjectLimitless.Battle
             while (elapsed < totalDuration)
             {
                 int frameIndex = Mathf.Min(frames.Length - 1, Mathf.FloorToInt(elapsed / safeFrameDuration));
-                effectImage.sprite = frames[frameIndex];
+                SetEffectSprite(effectImage, frames[frameIndex]);
                 if (!healingApplied && frameIndex >= Mathf.Clamp(peakFrame, 0, frames.Length - 1))
                 {
                     healingApplied = true;
@@ -1112,7 +1126,7 @@ namespace ProjectLimitless.Battle
                 onImpact?.Invoke(recoveredHp);
                 if (recoveredHp > 0) StartCoroutine(ShowHealingNumber(target, font, recoveredHp));
             }
-            Destroy(effectObject);
+            DestroyEffectImage(effectImage);
             onComplete?.Invoke();
         }
 
@@ -1150,19 +1164,15 @@ namespace ProjectLimitless.Battle
                     continue;
                 }
 
-                GameObject effectObject = new GameObject($"RadiantHealWave_{index}", typeof(Image));
-                effectObject.transform.SetParent(target, false);
-                Image image = effectObject.GetComponent<Image>();
-                image.sprite = healFrames[0];
-                image.color = new Color(1f, .94f, .62f, 1f);
-                image.preserveAspect = true;
-                image.raycastTarget = false;
+                Image image = CreateEffectImage(target, $"RadiantHealWave_{index}", healFrames,
+                    new Vector2(78f, 78f), new Vector2(0f, -42f), new Color(1f, .94f, .62f, 1f));
+                if (image == null)
+                {
+                    heals.Add(null);
+                    continue;
+                }
                 RectTransform rect = image.rectTransform;
-                rect.anchorMin = rect.anchorMax = Vector2.one * .5f;
                 rect.pivot = new Vector2(.5f, 29f / 96f);
-                rect.anchoredPosition = new Vector2(0f, -42f);
-                rect.sizeDelta = new Vector2(78f, 78f);
-                PlaceEffectBehindCharacter(image, target);
                 heals.Add(image);
             }
 
@@ -1172,10 +1182,11 @@ namespace ProjectLimitless.Battle
             bool applied = false;
             for (int frameIndex = 0; frameIndex < totalFrames; frameIndex++)
             {
-                if (wave != null && waveCount > 0) wave.sprite = waveFrames[Mathf.Min(frameIndex, waveCount - 1)];
+                if (wave != null && waveCount > 0)
+                    SetEffectSprite(wave, waveFrames[Mathf.Min(frameIndex, waveCount - 1)]);
                 for (int index = 0; index < heals.Count; index++)
                     if (heals[index] != null && healCount > 0)
-                        heals[index].sprite = healFrames[Mathf.Min(frameIndex, healCount - 1)];
+                        SetEffectSprite(heals[index], healFrames[Mathf.Min(frameIndex, healCount - 1)]);
 
                 if (!applied && frameIndex >= Mathf.Min(healPeakFrame, Mathf.Max(0, healCount - 1)))
                 {
@@ -1195,8 +1206,8 @@ namespace ProjectLimitless.Battle
                 IReadOnlyList<int> recovered = applyHealing == null ? Array.Empty<int>() : applyHealing();
                 onImpact?.Invoke(recovered);
             }
-            if (wave != null) Destroy(wave.gameObject);
-            foreach (Image heal in heals) if (heal != null) Destroy(heal.gameObject);
+            DestroyEffectImage(wave);
+            foreach (Image heal in heals) DestroyEffectImage(heal);
             if (callout != null) Destroy(callout.gameObject);
             onComplete?.Invoke();
         }
