@@ -538,8 +538,13 @@ namespace ProjectLimitless.Battle
             BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(
                 combatant, job, setup, skillCooldowns, fighterResources, statusEffects);
             detailCombatant = combatant;
-            detailPopupText.text = model.DetailText;
-            int lineCount = model.DetailText.Count(character => character == '\n') + 1;
+            List<string> detailLines = model.DetailText.Split('\n').ToList();
+            // 상단 HUD는 빠른 상태 아이콘만 남기고 정확한 MP는 Hover/Focus 상세 정보에서 확인합니다.
+            // 직업 이름을 비교하지 않고 런타임 자원 여부를 읽으므로 향후 다른 MP 사용자도 자동 표시됩니다.
+            if (combatant.UsesMp) detailLines.Insert(Math.Min(2, detailLines.Count), $"MP {combatant.CurrentMp} / {combatant.MaxMp}");
+            string detailText = string.Join("\n", detailLines);
+            detailPopupText.text = detailText;
+            int lineCount = detailLines.Count;
             detailPopup.rectTransform.sizeDelta = new Vector2(270, Mathf.Max(116, 34 + lineCount * 23));
             detailPopupText.rectTransform.sizeDelta = new Vector2(244, detailPopup.rectTransform.sizeDelta.y - 20);
             detailPopup.gameObject.SetActive(true);
@@ -715,7 +720,7 @@ namespace ProjectLimitless.Battle
                 int remaining = skillCooldowns.GetRemaining(currentActor, skill.Id);
                 // 버튼은 빠르게 훑는 선택 목록이므로 이름만 기본 표시합니다. 재사용 중일 때만 현재 조작
                 // 가능 여부를 즉시 알 수 있도록 짧은 남은 턴을 붙이고, 나머지 설명은 공용 팝업으로 옮깁니다.
-                string label = remaining > 0 ? $"{skill.DisplayName}\n재사용 {remaining}턴" : skill.DisplayName;
+                string label = remaining > 0 ? $"{skill.DisplayName}\n재사용 대기시간 {remaining}턴" : skill.DisplayName;
                 BattleSkillDefinition selectedSkill = skill;
                 Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label, skill.IconId,
                     new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill), selectedSkill);
@@ -843,7 +848,15 @@ namespace ProjectLimitless.Battle
             if (!string.IsNullOrWhiteSpace(skill.TypeDescription)) lines.Add(skill.TypeDescription);
             if (!string.IsNullOrWhiteSpace(skill.TargetDescription)) lines.Add(skill.TargetDescription);
             if (!string.IsNullOrWhiteSpace(skill.EffectDescription)) lines.Add(skill.EffectDescription);
-            if (!string.IsNullOrWhiteSpace(skill.DurationDescription)) lines.Add(skill.DurationDescription);
+            if (!string.IsNullOrWhiteSpace(skill.DurationDescription))
+            {
+                // 예전 데이터의 `재사용`, `쿨타임` 줄은 공통 표기와 중복되므로 표시 경계에서 제외합니다.
+                // 플레이어용 문구는 내부 Cooldown 변수명과 무관하게 아래 한 형식만 사용합니다.
+                lines.AddRange(skill.DurationDescription.Split('\n')
+                    .Select(line => line.Replace("재사용:", "재사용 대기시간:")
+                        .Replace("쿨타임:", "재사용 대기시간:"))
+                    .Where(line => !line.TrimStart().StartsWith("재사용 대기시간", StringComparison.Ordinal)));
+            }
             // 기세별 피해 데이터가 있는 스킬만 현재값을 덧붙입니다. 스킬 이름을 비교하지 않으므로 같은 데이터
             // 구조를 쓰는 후속 기술도 자동으로 현재 기세와 예상 배율을 표시할 수 있습니다.
             if (skill.MomentumDamagePercents.Count == BattleFighterResourceRuntime.MaxMomentum + 1 && currentActor != null)
@@ -852,8 +865,12 @@ namespace ProjectLimitless.Battle
                 lines.Add($"현재 기세: {momentum}");
                 lines.Add($"현재 예상 피해: 일반 공격의 {skill.MomentumDamagePercents[momentum]}%");
             }
-            lines.Add(skill.CooldownTurns > 0 ? $"재사용: {skill.CooldownTurns}턴" : "재사용: 없음");
-            lines.Add(skill.IsImplemented ? "구현: 사용 가능" : "구현: 미구현");
+            if (skill.MpCost > 0) lines.Add($"MP: {skill.MpCost}");
+            lines.Add(skill.CooldownTurns > 0
+                ? $"재사용 대기시간: {skill.CooldownTurns}턴"
+                : "재사용 대기시간: 없음");
+            // 구현 여부는 버튼 활성 상태를 정하는 개발 데이터일 뿐 게임 효과가 아닙니다. 따라서
+            // 플레이어 Tooltip에는 `구현: 사용 가능/미구현` 같은 내부 개발 상태를 노출하지 않습니다.
 
             skillDetailText.text = string.Join("\n", lines.Where(line => !string.IsNullOrWhiteSpace(line)));
             Sprite sprite = BattleUiIconCatalog.Load(skill.IconId);
@@ -1962,9 +1979,12 @@ namespace ProjectLimitless.Battle
             SetCommandButtons(false);
             RefreshCombatantViews(null);
             CombatantView actorView = combatantViews[actor];
-            Combatant[] targets = allies.LivingMembers.ToArray();
+            Combatant[] targets = allies.LivingMembers
+                .Distinct(CombatantReferenceComparer.Instance)
+                .ToArray();
             // 파티가 3명이라는 현재 화면 구성은 임시일 뿐입니다. 살아 있는 참가자를 매번 수집해야
-            // 향후 6명 이상 편성에서도 누락 없이 같은 광역 공격 규칙이 적용됩니다.
+            // 향후 6명 이상 편성에서도 누락 없이 같은 광역 공격 규칙이 적용됩니다. 독액 분사도 실제
+            // Combatant 참조를 한 번만 남겨 같은 대상에게 직접 피해가 중복 적용되지 않게 합니다.
             RectTransform[] targetRects = targets.Select(item => combatantViews[item].ActionRoot).ToArray();
             Image[] targetImages = targets.Select(item => combatantViews[item].SpriteImage).ToArray();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
@@ -2326,7 +2346,6 @@ namespace ProjectLimitless.Battle
             // HUD는 전투 값을 변경하지 않고 읽기 전용 ViewModel의 결과에 Sprite와 짧은 글자를 붙입니다.
             // 아이콘만으로 뜻을 전달하지 않도록 한글을 함께 두며, 상세 팝업은 기존 텍스트 중심 설명을 유지합니다.
             List<(string IconId, string Label)> summaries = new List<(string, string)>();
-            if (combatant.UsesMp) summaries.Add((null, $"MP {combatant.CurrentMp}/{combatant.MaxMp}"));
             if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, "행동 중"));
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {

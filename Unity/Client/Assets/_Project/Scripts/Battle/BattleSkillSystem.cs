@@ -241,7 +241,7 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 적 1명",
                         effectDescription: "피해: 일반 공격의 150%\n효과: 기세 +1\n기세 최대: 3",
                         typeDescription: "유형: 근거리 물리",
-                        durationDescription: "세 번째 직접 사용 후 재사용: 2턴");
+                        durationDescription: "세 번째 직접 사용 후 재사용 대기시간: 2턴");
                 if (preview.SkillId == FighterCriticalStrikeId)
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "보유한 기세를 모두 소모하여 강력한 일격을 가합니다.\n기세가 높을수록 피해가 증가합니다.", true,
@@ -325,8 +325,12 @@ namespace ProjectLimitless.Battle
             }
 
             return rows.SelectMany(row => Enumerable.Range(0, 3)
-                    .Select(column => opponents.Get(row, column)))
+                     .Select(column => opponents.Get(row, column)))
                 .Where(target => target != null && target.IsAlive)
+                // 빈 Formation 칸은 null이라 대상이 아니며, 같은 실제 Combatant 참조가 여러 칸에서
+                // 들어와도 한 행동에서는 한 번만 남깁니다. 같은 MonsterDefinition을 공유하더라도
+                // 독침벌 A/B는 서로 다른 객체이므로 comparer가 둘을 합치지 않습니다.
+                .Distinct(CombatantReferenceComparer.Instance)
                 .ToArray();
         }
     }
@@ -1233,7 +1237,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            Combatant[] livingEnemies = GetUniqueLivingEnemies(actor, targets);
             if (livingEnemies.Length == 0)
             {
                 message = "공격할 수 있는 살아 있는 적이 없습니다.";
@@ -1270,7 +1274,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            Combatant[] livingEnemies = GetUniqueLivingEnemies(actor, targets);
             if (livingEnemies.Length == 0)
             {
                 message = "화살비로 공격할 후열 적이 없습니다.";
@@ -1305,7 +1309,7 @@ namespace ProjectLimitless.Battle
                 return false;
             }
 
-            Combatant[] livingEnemies = targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side).ToArray();
+            Combatant[] livingEnemies = GetUniqueLivingEnemies(actor, targets);
             if (livingEnemies.Length == 0)
             {
                 message = "썬더볼트로 공격할 살아 있는 적이 없습니다.";
@@ -1328,6 +1332,16 @@ namespace ProjectLimitless.Battle
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 {livingEnemies.Length}명에게 피해와 감전 1.";
             return true;
         }
+
+        /// <summary>
+        /// 광역 피해 직전에 실제 참가자 참조를 다시 한 번 중복 제거합니다. Resolver가 정상이어도 후속 스킬이나
+        /// 테스트 코드가 중복 목록을 직접 넘길 수 있으므로, 피해를 바꾸는 마지막 경계에서도 대상당 한 번을
+        /// 보장합니다. VFX 수·Formation 빈 칸 수는 이 배열 길이나 피해 횟수를 늘리지 않습니다.
+        /// </summary>
+        private static Combatant[] GetUniqueLivingEnemies(Combatant actor, IEnumerable<Combatant> targets) =>
+            targets.Where(target => target != null && target.IsAlive && target.Side != actor.Side)
+                .Distinct(CombatantReferenceComparer.Instance)
+                .ToArray();
 
         /// <summary>
         /// VFX의 보호막이 완성되는 시점에 자기 자신에게만 상태를 적용합니다. Presenter는 그림만 재생하고

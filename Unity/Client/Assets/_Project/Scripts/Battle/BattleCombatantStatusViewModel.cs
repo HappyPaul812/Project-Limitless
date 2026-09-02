@@ -40,7 +40,7 @@ namespace ProjectLimitless.Battle
         public string SkillName { get; }
         public int RemainingTurns { get; }
         public int TotalTurns { get; }
-        public string DisplayText => $"{SkillName} 재사용 {RemainingTurns}턴";
+        public string DisplayText => $"{SkillName} 재사용 대기시간 {RemainingTurns}턴";
     }
 
     /// <summary>
