@@ -168,8 +168,8 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 광역 보호",
                         durationDescription: "지속: 수호자의 다음 행동 전까지\n재사용 대기시간: 4턴");
                 if (preview.SkillId == HealerHealingLightId)
-                    // 1차 밸런스 값 35%는 화면 코드가 아니라 스킬 정의에 둡니다. 나중에 수치를 조정해도
-                    // 대상 선택이나 VFX 코드를 다시 고칠 필요가 없습니다. 별도 쿨타임은 현재 기획에 없어 0입니다.
+                    // 치유의 빛은 기본 단일 힐이라 쿨타임 없이 연속 사용을 허용하고, 전투 전체 지속력은
+                    // MP가 제한합니다. MP 비용은 레벨과 무관한 고정값이며 유효 대상 확인 뒤에만 소비합니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "살아 있는 아군 1명의 HP를 대상 최대 HP의 35%만큼 회복합니다.\n전투불능 상태의 아군은 대상으로 선택할 수 없습니다.", true,
                         BattleSkillEffectType.SingleAllyHeal, 0, 0, HealingLightMaxHpHealRatio,
@@ -177,6 +177,7 @@ namespace ProjectLimitless.Battle
                         targetDescription: "대상: 살아 있는 아군 1명",
                         effectDescription: "회복량: 최대 HP의 35%", mpCost: CharacterGrowthCalculator.TemporaryHealingLightMpCost);
                 if (preview.SkillId == HealerHealingWaveId)
+                    // 광역 회복은 강력하므로 전투 전체 자원인 MP와 연속 사용 제한인 3턴 쿨타임을 함께 씁니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "치유사를 중심으로 회복의 파동을 일으켜 살아 있는 아군 전체의 HP를 회복합니다.\n전투불능 아군은 회복하거나 부활시키지 않습니다.", true,
                         BattleSkillEffectType.AreaAllyHeal, 3, 0,
@@ -187,6 +188,8 @@ namespace ProjectLimitless.Battle
                         typeDescription: "유형: 광역 회복",
                         durationDescription: "재사용 대기시간: 3턴", mpCost: CharacterGrowthCalculator.TemporaryHealingWaveMpCost);
                 if (preview.SkillId == HealerCleanseId)
+                    // 정화는 피해나 HP 회복이 없는 보조 기술이므로 세 치유사 스킬 중 가장 낮은 임시 MP 비용을
+                    // 사용합니다. 제거할 상태가 없으면 Executor가 거절하므로 MP와 쿨타임 모두 시작하지 않습니다.
                     return new BattleSkillDefinition(preview.SkillId, preview.SkillName,
                         "빛으로 아군을 정화하여 해로운 상태이상을 모두 제거합니다.", true,
                         BattleSkillEffectType.RemoveAllHarmfulStatuses, 2, 0,

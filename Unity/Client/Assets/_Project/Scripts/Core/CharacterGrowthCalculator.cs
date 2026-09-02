@@ -18,9 +18,13 @@ namespace ProjectLimitless.Core
         public const float HealerWillAttackCoefficient = .5f;
         public const float HealerWillHealingCoefficient = 1.5f;
 
-        // 아래 MP 수치는 기능 검증용 임시 밸런스입니다. 확정 전에는 이 한 곳만 조정합니다.
+        // 최대 MP도 HP처럼 "직업 기본값 + 레벨 성장 + 능력치 보너스"로 분리합니다. 이렇게 하면
+        // 장비나 확장팩이 추가되어도 어느 항목이 MaxMP를 올렸는지 계산식을 다시 뜯지 않고 확인할 수 있습니다.
         public const int TemporaryHealerBaseMp = 20;
-        public const int TemporaryHealerMpPerIntelligence = 2;
+        public const int HealerMpGrowthPerLevel = 1;
+        public const int HealerIntelligenceMaxMpCoefficient = 2;
+
+        // 행동 종료 회복과 스킬 비용 숫자는 아직 기능 검증용 임시 밸런스입니다. 확정 전에는 이 한 곳만 조정합니다.
         public const int TemporaryHealerBaseMpRecovery = 2;
         public const int TemporaryHealerIntelligencePerRecovery = 10;
         public const int TemporaryHealingLightMpCost = 6;
@@ -69,9 +73,17 @@ namespace ProjectLimitless.Core
             return Math.Max(1, baseHp + (stats.Level - 1) * growth + stats.Health * VitalityHpCoefficient);
         }
 
+        /// <summary>
+        /// 현재 MP 사용자는 치유사뿐입니다. 마도사의 지능은 공격 주 스탯이고 스킬 쿨타임으로 연속 사용을
+        /// 제한하므로 MP를 이중으로 붙이지 않습니다. 지능 1당 +2와 레벨당 +1은 치유사가 성장할수록
+        /// 고정 비용 스킬을 더 오래 사용할 수 있게 하며, 스킬 비용 자체는 레벨에 따라 커지지 않습니다.
+        /// </summary>
         public static bool UsesMp(string jobId) => jobId == "healer";
         public static int CalculateMaxMp(string jobId, CharacterGrowthStats stats) => UsesMp(jobId)
-            ? TemporaryHealerBaseMp + stats.Intelligence * TemporaryHealerMpPerIntelligence : 0;
+            ? TemporaryHealerBaseMp
+              + (stats.Level - 1) * HealerMpGrowthPerLevel
+              + stats.Intelligence * HealerIntelligenceMaxMpCoefficient
+            : 0;
         public static int CalculateMpRecovery(string jobId, CharacterGrowthStats stats) => UsesMp(jobId)
             ? TemporaryHealerBaseMpRecovery + stats.Intelligence / TemporaryHealerIntelligencePerRecovery : 0;
 
