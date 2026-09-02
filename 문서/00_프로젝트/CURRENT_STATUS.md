@@ -5,7 +5,7 @@
 - 갱신일: 2026-09-02
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `850cbc9` (`Fix: 아군 VFX Image 생명주기 수정`)
-- 마지막 오류 수정 commit: `0d92bd7` (`Fix: 복수 몬스터 감전 상태 독립 적용`)
+- 마지막 오류 수정 commit: `b4c45cd` (`Fix: 회복의 파동 VFX 호출 인수 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
@@ -495,7 +495,7 @@
 183. 민첩 동률 전투를 여러 번 새로 시작해 주사위가 순차 반복이 아닌 1~6 랜덤 눈으로 바뀌고 최종 눈도 항상 1이 아닌지, 결과 문구·Timeline·첫 행동자가 일치하고 다음 라운드에는 재표시되지 않는지 확인한다.
 184. 민첩 동률이 없는 전투에서는 Overlay가 없고 바로 정상 입력으로 시작하는지 확인한다.
 
-VFX PNG 전부가 RGBA Alpha 0~255이고 Sprite Import의 Alpha Is Transparency가 켜져 있으며, Arcane Parry 16·Radiant Heal 14·Spectral Bloom 16·Earth Rupture 20·Frost Nova index 4~10의 선언 범위가 실제 시트 크기 안에 있음을 확인했다. 코드·전투 문서는 관련 파일 기준 `git diff --check`를 통과했고 Unity 6000.5.7f1 배치 명령은 종료 코드 0이었다. Tie Break는 `System.Random` 기반 1~6 시각 RNG와 직전 눈 회피·별도 최종 눈 구조가 유지되며 코드 변경이 없다. 실제 반복 Play의 VFX 합성·잔존 객체, 다른 VFX 회귀, 주사위 최종 눈 다양성 및 위 181~184 항목은 Play Mode에서 직접 확인해야 한다.
+VFX PNG 전부가 RGBA Alpha 0~255이고 Sprite Import의 Alpha Is Transparency가 켜져 있으며, Arcane Parry 16·Radiant Heal 14·Spectral Bloom 16·Earth Rupture 20·Frost Nova index 4~10의 선언 범위가 실제 시트 크기 안에 있음을 확인했다. 회복의 파동 중앙 VFX에 남아 있던 구형 `CreateEffectImage` 일곱 번째 인수를 제거했고 프로젝트 내 15개 호출이 현재 5/6개 인수 시그니처와 일치하며 관련 파일 `git diff --check`를 통과했다. Unity 6000.5.7f1 배치 명령은 실행 중인 Editor 때문에 실제 컴파일 로그 없이 즉시 종료되어 Editor 재컴파일 확인이 필요하다. Tie Break는 `System.Random` 기반 1~6 시각 RNG와 직전 눈 회피·별도 최종 눈 구조가 유지되며 코드 변경이 없다. 실제 반복 Play의 VFX 합성·잔존 객체, 다른 VFX 회귀, 주사위 최종 눈 다양성 및 위 181~184 항목은 Play Mode에서 직접 확인해야 한다.
 
 ## 다음 권장 작업
 
