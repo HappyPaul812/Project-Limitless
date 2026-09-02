@@ -1152,7 +1152,7 @@ namespace ProjectLimitless.Battle
             const int healPeakFrame = 7;
             Text callout = CreateSkillCallout(actor, font, "회복의 파동!");
             Image wave = CreateEffectImage(actor, "HealingWaveArcaneParry", waveFrames,
-                new Vector2(180f, 180f), new Vector2(0f, 12f), new Color(.72f, 1f, 1f, 1f), true);
+                new Vector2(180f, 180f), new Vector2(0f, 12f), new Color(.72f, 1f, 1f, 1f));
 
             List<Image> heals = new List<Image>();
             for (int index = 0; index < targets.Count; index++)
