@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-07
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `12296b8` (`Feature: 수호의 맹세 발동 피드백 개선`)
+- 마지막 기능 관련 commit: `5c5a34c` (`Feature: 초반 경험치 성장과 맹독뱀 공용 독 구현`)
 - 마지막 오류 수정 commit: `c870aaa` (`Fix: 스킬 선택 버튼 런타임 아이콘 캐시 복구`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -12,6 +12,18 @@
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 초반 성장과 공용 독 구현
+
+- MaxLevel 50, 다음 레벨 요구 EXP `100 + 25*(L-1) + 5*(L-1)^2`(Lv1~49). CurrentExperience는 현재 레벨 진행량이며 초과분 이월·다중 레벨 업·Lv50 EXP 0을 처리한다.
+- 슬라임/독침벌/숲거미/맹독뱀의 Level은 1/2/3/4, Base EXP는 8/12/16/20, HP는 60/70/80/95, 기본 공격은 10/12/14/16이다. Field_01 권장 Lv1~3, Field_02 Lv3~5.
+- 몬스터와 플레이어의 레벨 차이로 이름색과 EXP 배율을 공용 판정한다. 회색/녹색/노랑/주황/빨강은 각각 0/50/100/125/150%이며 몬스터 이름에 Lv를 표시한다. 흰색은 플레이어/NPC용으로 유지한다.
+- Field_02 기존 거미 4개를 유지하고 맹독뱀 2개를 추가했다. 원본 CC0 이동 4프레임을 프로젝트 전용 복사본에서 재사용하고 전투에서는 오른쪽을 향한다. 뱀 조우는 거미 2+뱀 1, 처치 후 30초 리스폰이다.
+- 공용 PoisonDefinition으로 일반 독 최대 HP 5%×3회·맹독 7%×3회를 처리한다. 강한 독은 교체, 약한 독은 거절, 동급은 지속시간만 갱신하며 중첩하지 않는다. 정화·방어 무시 Tick·개체별 부여 대기시간을 유지한다. 향후 투사 독칼/사수 독화살도 같은 구조를 사용할 예정이다.
+- 승리 시 실제 처치 개체별 EXP를 합산하고 결과 패널에 EXP/레벨 업/진행량을 표시한다. 현재 슬롯에 Level/EXP와 마지막 월드 위치를 즉시 저장하며 다른 슬롯과 전투 중간 상태는 저장하지 않는다.
+- 정적 Assembly-CSharp 컴파일 오류 0개, 기존 CS0618 경고 4개. 격리 Unity 프로젝트에서 성장/배율/독/5개 슬롯/15개 버튼 감사와 실제 Field→Battle→승리→Field→31초 리스폰 자동 Play 검증 통과. Editor Search 패키지 시작 예외 1건은 별도로 관찰됐으며 게임 감사 실패는 없었다.
+- 실제 사용자 Editor의 정상 전투 입력·시각적 애니메이션·전 직업 스킬/VFX/Timeline/Targeting 회귀는 수동 확인이 남았다. 자동 전투 검증은 적을 테스트 코드로 처치했다. 레벨 업 HP/MP 완전 회복은 미확정이며 기존 새 전투 시작 시 최대 HP/MP 생성 규칙을 변경하지 않았다.
+- 상세 규칙·수정 파일·검증 범위: `문서/08_몬스터/초반_성장과_공용_독.md`. 마지막 관련 commit: `5c5a34c`.
 
 ## 최근 스킬 선택 버튼 아이콘 수정
 
@@ -28,7 +40,7 @@
 ### 캐릭터 생성과 선택
 
 - `Level + JobId` 기반 결정적 6능력치 성장과 Lv50 중앙 상한 구현. 딜러 주 스탯 평균 +1.5 정수 패턴, 체력 HP, 직업별 HP 성장, 수호자/치유사 의지 파생 수치를 계산하며 Path는 성장 계산에서 제외. 수호자·치유사의 미확정 6능력치 레벨 성장은 적용하지 않음
-- 파생 능력치는 저장하지 않고 각 슬롯의 기존 Level/JobId로 복원. 경험치 곡선·몬스터 EXP·분배 정책은 미확정 상태 유지
+- 파생 능력치는 저장하지 않고 각 슬롯의 Level/JobId로 복원. 경험치 곡선·몬스터 EXP·현재 캐릭터 승리 보상을 구현했으며 향후 파티 EXP 분배 정책은 미확정
 
 - Bootstrap의 5개 캐릭터 슬롯 목록과 슬롯별 `이어하기 / 새 캐릭터` 런타임 UI. 새 캐릭터는 기존 4단계 생성 흐름 유지
 - `GameSaveData` Version 1 JSON을 Unity Editor 프로젝트 로컬 `UserData/Saves/save_slot_01.json`~`05.json`에 독립 저장
@@ -93,12 +105,12 @@
 - 초원 슬라임 데이터에 실제 Sprite/Animator 연결 및 녹색 Placeholder 미사용
 - 승리한 스폰만 제거하고 데이터 기본값 30초 후 원래 위치에 독립 리스폰, 도망 시 스폰 유지
 - `MonsterDefinition.DisplayName`을 표시하는 재사용 가능한 필드 몬스터 Overlay 이름표
-- 흰색 글자·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
-- 독 몬스터 후보 원본 보존: Pilot Bee(CC BY, 라이선스 버전 표기 충돌 기록)·2D Spider(CC0)·Simple Green Snake(CC0). 벌은 Field_01 독침벌로 구현했고, 거미는 숲/동굴·Field_02 이후, 뱀은 숲/습지·Field_03 이후 후보로 보존
+- 레벨 차이별 이름색·Lv 표기·검은 외곽선의 이동 추적 이름표, 필드 HP Bar 미포함
+- 독 몬스터 원본 보존: Pilot Bee(CC BY, 라이선스 버전 표기 충돌 기록)·2D Spider(CC0)·Simple Green Snake(CC0). 벌은 Field_01, 거미와 맹독뱀은 Field_02에 구현
 - Pilot Bee 검증 Scene: Idle 238×215×10·Attack 315×253×10·기본 우향 구조를 런타임 분할하고 현재 초원 슬라임과 나란히 비교. Point Filter·무압축·투명·Read/Write 검증 복사본과 기본 Scale 0.85 제공, Field/Battle 미연결
 - Pilot Bee 검증 Scene 입력을 새 Input System의 null 안전 `Keyboard.current` 방식으로 수정하고 메인 키보드·Numpad +/-를 지원. Scene 전용 직교 Main Camera를 연결해 `No cameras rendering` 표시 제거
 - Field_01에 데이터 기반 독침벌 3개 스폰(`venom_bee_01`~`03`)을 추가해 기존 초원 슬라임 5개와 총 8개 배치. 공용 설치기·배회·접촉 조우·개별 30초 리스폰·도망 유지·2초 재조우 유예 재사용
-- `02_VenomBee` MonsterDefinition이 Pilot Bee Idle/Attack 시트 구조와 Scale 0.85를 Field/Battle에 공통 제공. 런타임 분할 재생으로 원본 PNG를 수정하지 않으며 독 상태이상은 아직 미구현
+- `02_VenomBee` MonsterDefinition이 Pilot Bee Idle/Attack 시트 구조와 Scale 0.85를 Field/Battle에 공통 제공. 런타임 분할 재생으로 원본 PNG를 수정하지 않으며 공용 일반 독을 부여
 
 ### 1차 턴제 전투
 
@@ -235,7 +247,7 @@
 - 여러 몬스터 배치 전투와 보스전 실제 콘텐츠
 - AP와 상태이상, 행동·협동 기술, 보스 패턴
 - 멀티플레이 네트워크 전투
-- 인벤토리·아이템·경험치·보상·성장
+- 인벤토리·아이템·아이템 보상·파티 EXP 분배 정책
 - 퀘스트와 영구 저장·불러오기
 - 인스턴스 던전과 Field_02 이후 지역
 
@@ -512,7 +524,7 @@ VFX PNG 전부가 RGBA Alpha 0~255이고 Sprite Import의 Alpha Is Transparency�
 
 ## 다음 권장 작업
 
-우선 실제 Battle에서 위 15개 스킬 버튼의 가독성·Esc 재진입·다음 턴/새 전투 아이콘 유지를 확인한다. 썬더볼트 버튼 Electric Impact와 감전 상태 power.png의 구분을 유지한다.
+우선 실제 정상 입력으로 Field_01/02 전투 승리·레벨 업·즉시 저장/재실행 복원·맹독 교체/정화·뱀 이동/공격/리스폰을 확인한다. 이어 실제 Battle에서 위 15개 스킬 버튼의 가독성·Esc 재진입·다음 턴/새 전투 아이콘 유지를 확인한다. 썬더볼트 버튼 Electric Impact와 감전 상태 power.png의 구분을 유지한다.
 
 Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/재실행 뒤 실제 위치 복원, Bounds 밖 좌표의 SpawnPoint fallback, Field 전환 뒤 새 Scene 좌표 저장, Battle 중 종료 시 마지막 안전 좌표 유지를 확인한다. Bootstrap 삭제 확인의 취소·단일 슬롯 삭제·즉시 빈 슬롯 갱신과 Editor 관리 창도 함께 확인한다. 이후 Field_02 감전 독립 적용과 기존 전투·외형·리스폰 회귀도 확인한다.
 
