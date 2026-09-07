@@ -2,16 +2,26 @@
 
 ## 기준
 
-- 갱신일: 2026-09-02
+- 갱신일: 2026-09-07
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `12296b8` (`Feature: 수호의 맹세 발동 피드백 개선`)
-- 마지막 오류 수정 commit: `a78a57e` (`Fix: 광역 스킬 대상 없음 입력 잠금 수정`)
+- 마지막 오류 수정 commit: `c870aaa` (`Fix: 스킬 선택 버튼 런타임 아이콘 캐시 복구`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 스킬 선택 버튼 아이콘 수정
+
+- 파이어 볼 Warm Explosion index 4·썬더볼트 Electric Impact index 1·정화 Spectral Bloom index 5를 버튼 전용 고정 Sprite로 생성하고 null/파괴된 캐시는 다시 읽는다. 상세·상태·VFX 로더와 전투 계산은 변경하지 않았다.
+- 기존 캐시는 파괴된 Sprite도 그대로 반환해 버튼 자식 Image가 생성되지 않았고, Rebuild로 복구되지 않았다. 수정 전 파괴 캐시 재현 실패를 확인했다. 실제 사용자 세션에서 최초 무효화를 일으킨 이벤트는 미확정이다.
+- 추가로 Play 진입 때 동료의 습격 Wolf 버튼의 무효 캐시 재사용을 확인·복구했다. Wolf Run index 4와 나머지 정상 매핑은 유지한다. 현재 코드/문서 기준 도발은 pawn_left, 치유의 빛은 suit_hearts다.
+- 15개 스킬의 실제 버튼 생성 감사: Edit Mode 및 빈 Scene Play Mode 2회, 각각 3회 재생성/부모 닫기·열기에서 Sprite 할당·enabled·activeSelf·alpha·캐시 재사용 통과. 세 Grid 버튼의 파괴/null 캐시 복구 후 Image 재할당도 통과했다.
+- 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 deprecated API 경고 4개. Unity 배치 Editor 컴파일 및 관련 staged diff 검사 통과. 상세 매핑/검증 범위는 `문서/10_전투/전투_UI_아이콘_에셋.md` 참조.
+- 실제 Battle의 마도사 → 치유사 → 수호자/사수/투사 각 3개 버튼을 눈으로 확인하고, `열기 → Esc → 다시 열기` 반복·다음 턴·다음 전투 유지 여부를 수동 확인해야 한다. 자동 감사는 전투 진행을 실행하지 않았다.
+- 마지막 관련 commit: `c870aaa`.
 
 ## 구현 확인된 항목
 
@@ -501,6 +511,8 @@
 VFX PNG 전부가 RGBA Alpha 0~255이고 Sprite Import의 Alpha Is Transparency가 켜져 있으며, Arcane Parry 16·Radiant Heal 14·Spectral Bloom 16·Earth Rupture 20·Frost Nova index 4~10의 선언 범위가 실제 시트 크기 안에 있음을 확인했다. 회복의 파동 중앙 VFX에 남아 있던 구형 `CreateEffectImage` 일곱 번째 인수를 제거했고 프로젝트 내 15개 호출이 현재 5/6개 인수 시그니처와 일치한다. 광역 스킬 0 Target 입력 복구까지 Unity 6000.5.7f1의 전체 `Assembly-CSharp` 응답 파일로 별도 출력 컴파일해 오류 0개, 기존 deprecated API 경고 4개만 확인했으며 관련 파일 `git diff --check`를 통과했다. Tie Break와 수호의 맹세 계산·피드백·VFX 코드는 변경하지 않았다. 실제 Play Mode의 화살비·회오리 베기 Invalid Action 메뉴 복구와 Esc·취소, 수호의 맹세 및 위 171~186 항목은 직접 확인해야 한다.
 
 ## 다음 권장 작업
+
+우선 실제 Battle에서 위 15개 스킬 버튼의 가독성·Esc 재진입·다음 턴/새 전투 아이콘 유지를 확인한다. 썬더볼트 버튼 Electric Impact와 감전 상태 power.png의 구분을 유지한다.
 
 Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/재실행 뒤 실제 위치 복원, Bounds 밖 좌표의 SpawnPoint fallback, Field 전환 뒤 새 Scene 좌표 저장, Battle 중 종료 시 마지막 안전 좌표 유지를 확인한다. Bootstrap 삭제 확인의 취소·단일 슬롯 삭제·즉시 빈 슬롯 갱신과 Editor 관리 창도 함께 확인한다. 이후 Field_02 감전 독립 적용과 기존 전투·외형·리스폰 회귀도 확인한다.
 
