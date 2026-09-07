@@ -77,11 +77,20 @@ namespace ProjectLimitless.EditorTools
                 "Lv1 HUD 이름");
             Check(canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<Text>().text == "EXP 0 / 100",
                 "Lv1 EXP 숫자");
-            Check(WorldExperienceHud.CalculateProgress(3, 85) == .5f, "Lv3 EXP Bar 50%");
+            WorldExperienceHud hud = canvasObject.transform.Find("WorldExperienceHud").GetComponent<WorldExperienceHud>();
+            Image fill = canvasObject.transform.Find("WorldExperienceHud/BarBackground/BarFill").GetComponent<Image>();
+            CheckFill(hud, fill, 1, 0, 0f);
+            CheckFill(hud, fill, 1, 24, .24f);
+            CheckFill(hud, fill, 1, 50, .5f);
+            CheckFill(hud, fill, 1, 75, .75f);
+            CheckFill(hud, fill, 1, 99, .99f);
+            CheckFill(hud, fill, 3, 85, .5f);
+            ExperienceGain levelUp = ExperienceProgression.Add(1, 90, 30);
+            Check(levelUp.Level == 2 && levelUp.CurrentExperience == 20, "90/100 + 30의 Lv2 EXP 20 이월");
+            CheckFill(hud, fill, levelUp.Level, levelUp.CurrentExperience, 20f / 130f);
 
             GameSessionData.ConfigureProgress(3, 20);
             typeof(PlayerNameplate).GetMethod("LateUpdate", BindingFlags.NonPublic | BindingFlags.Instance).Invoke(nameplate, null);
-            WorldExperienceHud hud = canvasObject.transform.Find("WorldExperienceHud").GetComponent<WorldExperienceHud>();
             hud.Refresh();
             Check(canvasObject.transform.Find("NameText").GetComponent<Text>().text == "Lv.3 마도바울이", "레벨업 이름표 즉시 갱신");
             Check(canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<Text>().text == "EXP 20 / 170",
@@ -99,6 +108,24 @@ namespace ProjectLimitless.EditorTools
             // PlayerNameplate의 실제 OnDestroy는 Canvas를 지연 파괴합니다. Scene 전환 프레임 안에서는
             // Unity가 이를 정리하므로, 감사 종료 시 남은 예약 대상만 즉시 치워 빈 Scene을 유지합니다.
             if (canvasObject != null) UnityEngine.Object.DestroyImmediate(canvasObject);
+        }
+
+        /// <summary>숫자 속성뿐 아니라 CanvasRenderer가 만든 실제 Fill 메시 폭도 요청 비율인지 확인합니다.</summary>
+        private static void CheckFill(WorldExperienceHud hud, Image fill, int level, int experience, float expected)
+        {
+            GameSessionData.ConfigureProgress(level, experience);
+            hud.Refresh();
+            Canvas.ForceUpdateCanvases();
+            Check(Mathf.Abs(fill.fillAmount - expected) < .0001f, $"Lv{level} EXP {experience} fillAmount {expected:P0}");
+            Check(fill.sprite != null && fill.type == Image.Type.Filled
+                && fill.fillMethod == Image.FillMethod.Horizontal
+                && fill.fillOrigin == (int)Image.OriginHorizontal.Left, "왼쪽 시작 Filled Image 구성");
+
+            if (expected <= 0f) return;
+            Mesh mesh = fill.canvasRenderer.GetMesh();
+            float visualRatio = mesh.bounds.size.x / fill.rectTransform.rect.width;
+            Check(Mathf.Abs(visualRatio - expected) < .01f,
+                $"Lv{level} EXP {experience} 실제 메시 폭 {visualRatio:P1}, 예상 {expected:P1}");
         }
 
         private static void Check(bool condition, string message)

@@ -18,6 +18,7 @@ namespace ProjectLimitless.Player
         private Text identityText;
         private Text experienceText;
         private Image fillImage;
+        private Sprite fillSprite;
         private string displayedName = string.Empty;
         private int displayedLevel = -1;
         private int displayedExperience = -1;
@@ -60,6 +61,14 @@ namespace ProjectLimitless.Player
                 || displayedExperience != GameSessionData.CurrentExperience)
             {
                 Refresh();
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (fillSprite != null)
+            {
+                Destroy(fillSprite);
             }
         }
 
@@ -133,9 +142,14 @@ namespace ProjectLimitless.Player
             fillRect.offsetMax = new Vector2(-1f, -1f);
             fillImage = GetOrAddImage(fill);
             fillImage.color = FillColor;
+            // Sprite가 없는 uGUI Image는 단순 사각형 메시로 그려져 Filled 타입과 fillAmount를 무시합니다.
+            // 흰색 1픽셀 Sprite를 Source로 제공해 실제 메시가 왼쪽부터 진행률만큼 잘리게 합니다.
+            fillSprite = Sprite.Create(Texture2D.whiteTexture, new Rect(0f, 0f, 1f, 1f), new Vector2(0.5f, 0.5f), 1f);
+            fillSprite.name = "WorldExperienceFillSprite";
+            fillImage.sprite = fillSprite;
             fillImage.type = Image.Type.Filled;
             fillImage.fillMethod = Image.FillMethod.Horizontal;
-            fillImage.fillOrigin = 0;
+            fillImage.fillOrigin = (int)Image.OriginHorizontal.Left;
             fillImage.raycastTarget = false;
         }
 
