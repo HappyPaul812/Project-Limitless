@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.Core;
-using ProjectLimitless.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -12,18 +11,12 @@ using UnityEngine.UI;
 
 namespace ProjectLimitless.UI
 {
-    /// <summary>캐릭터 생성 2단계에서 데이터 에셋을 읽어 길 목록과 상세 정보를 만듭니다.</summary>
+    /// <summary>공식 아이콘·이름·특성을 함께 보여 주는 캐릭터 생성 2단계입니다.</summary>
     public sealed class PathSelectionController : MonoBehaviour
     {
-        private const string ResourcePath = "PathDefinitions";
-        // 저장용 ID는 바꾸지 않고 화면에서만 이 순서로 정렬합니다. 목록에 없는 새 길은 뒤에 ID 순으로 붙습니다.
         private static readonly string[] DisplayOrder =
         {
-            "path.emotional-scar",
-            "path.hearing",
-            "path.vision",
-            "path.mobility",
-            "path.intellectual",
+            "path.emotional-scar", "path.hearing", "path.vision", "path.mobility", "path.intellectual"
         };
         [SerializeField] private Sprite malePreviewSprite;
         [SerializeField] private Sprite femalePreviewSprite;
@@ -31,29 +24,22 @@ namespace ProjectLimitless.UI
         [SerializeField] private string nextSceneName = "JobSelection";
         [SerializeField] private PlayerPathDefinition[] pathDefinitions;
 
-        private readonly List<Button> pathButtons = new List<Button>();
-        private readonly List<Text> pathLabels = new List<Text>();
-        private readonly List<Image> pathBackgrounds = new List<Image>();
-        private readonly List<Outline> pathOutlines = new List<Outline>();
-        private readonly List<Selectable> tabControls = new List<Selectable>();
-        private readonly Color normalColor = new Color(0.075f, 0.105f, 0.17f, 0.97f);
-        private readonly Color selectedColor = new Color(0.13f, 0.2f, 0.3f, 1f);
-        private readonly Color accentColor = new Color(0.88f, 0.7f, 0.32f, 1f);
-        private readonly Color focusColor = new Color(1f, 0.86f, 0.48f, 1f);
-        private readonly Color mutedColor = new Color(0.32f, 0.4f, 0.52f, 1f);
-
-        private Button previousButton;
-        private Button nextButton;
+        private readonly List<Button> cards = new List<Button>();
+        private readonly List<Outline> cardOutlines = new List<Outline>();
+        private readonly List<Text> cardChecks = new List<Text>();
+        private readonly List<Selectable> controls = new List<Selectable>();
+        private readonly Color gold = new Color(.88f, .7f, .32f, 1f);
+        private readonly Color focusGold = new Color(1f, .86f, .48f, 1f);
+        private readonly Color normal = new Color(.06f, .09f, .15f, .98f);
+        private readonly Color selected = new Color(.13f, .2f, .3f, 1f);
         private Text detailName;
+        private Text detailTrait;
         private Text detailDescription;
-        private Text detailStats;
-        private Text detailPassive;
-        private Text detailKeywords;
-        private Text detailRecommendedJobs;
-        private Text noticeLabel;
-        private Image characterPreview;
-        private Image pathVisualPreview;
-        private Image pathSymbolPreview;
+        private Text detailRecommended;
+        private Text notice;
+        private Image detailIcon;
+        private Button previousButton;
+        private Button chooseButton;
         private string selectedPathId = string.Empty;
 
         public void Configure(Sprite maleSprite, Sprite femaleSprite, string previousScene, string futureNextScene)
@@ -66,209 +52,129 @@ namespace ProjectLimitless.UI
 
         private void Awake()
         {
-            LoadDefinitions();
+            if (pathDefinitions == null || pathDefinitions.Length == 0)
+                pathDefinitions = PathPresentationResolver.All.ToArray();
+            pathDefinitions = pathDefinitions.Where(item => item != null)
+                .OrderBy(item => Array.IndexOf(DisplayOrder, item.Id) is int index && index >= 0 ? index : DisplayOrder.Length)
+                .ThenBy(item => item.Id).ToArray();
             CreateEventSystem();
             CreateInterface();
             selectedPathId = GameSessionData.SelectedPlayerPathId;
-            if (!pathDefinitions.Any(definition => definition.Id == selectedPathId)) selectedPathId = string.Empty;
-            RefreshSelection();
-            if (pathButtons.Count > 0) EventSystem.current.SetSelectedGameObject(GetInitialFocusButton().gameObject);
+            if (!pathDefinitions.Any(item => item.Id == selectedPathId)) selectedPathId = string.Empty;
+            Refresh();
+            if (cards.Count > 0) EventSystem.current.SetSelectedGameObject(cards[Math.Max(0, Array.FindIndex(pathDefinitions, item => item.Id == selectedPathId))].gameObject);
         }
 
         private void Update()
         {
-            if (Keyboard.current == null || tabControls.Count == 0) return;
-            if (Keyboard.current.tabKey.wasPressedThisFrame)
-            {
-                MoveToNextControl(Keyboard.current.shiftKey.isPressed ? -1 : 1);
-                return;
-            }
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
-                EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
+            if (Keyboard.current == null || controls.Count == 0 || !Keyboard.current.tabKey.wasPressedThisFrame) return;
+            int direction = Keyboard.current.shiftKey.isPressed ? -1 : 1;
+            int index = controls.FindIndex(item => item.gameObject == EventSystem.current.currentSelectedGameObject);
+            EventSystem.current.SetSelectedGameObject(controls[(index + direction + controls.Count) % controls.Count].gameObject);
         }
 
-        /// <summary>Resources의 길을 불러와 지정된 화면 순서로 정렬하며, 새 길은 목록 뒤에 안정적으로 추가합니다.</summary>
-        private void LoadDefinitions()
+        private void SelectPath(int index)
         {
-            if (pathDefinitions == null || pathDefinitions.Length == 0)
-                pathDefinitions = Resources.LoadAll<PlayerPathDefinition>(ResourcePath);
-            pathDefinitions = pathDefinitions
-                .Where(item => item != null && !string.IsNullOrWhiteSpace(item.Id))
-                .OrderBy(GetDisplayOrder)
-                .ThenBy(item => item.Id)
-                .ToArray();
-            if (pathDefinitions.Length == 0) Debug.LogError($"길 데이터가 없습니다. Resources/{ResourcePath}를 확인해주세요.");
-        }
-
-        private static int GetDisplayOrder(PlayerPathDefinition definition)
-        {
-            int order = Array.IndexOf(DisplayOrder, definition.Id);
-            return order >= 0 ? order : DisplayOrder.Length;
-        }
-
-        private void SelectPath(PlayerPathDefinition definition)
-        {
-            selectedPathId = definition.Id;
+            selectedPathId = pathDefinitions[index].Id;
             GameSessionData.SelectPlayerPath(selectedPathId);
-            noticeLabel.text = string.Empty;
-            RefreshSelection();
+            notice.text = string.Empty;
+            Refresh();
         }
 
-        private void RefreshSelection()
+        private void Refresh()
         {
-            for (int i = 0; i < pathDefinitions.Length; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
-                bool selected = pathDefinitions[i].Id == selectedPathId;
-                pathBackgrounds[i].color = selected ? selectedColor : normalColor;
-                pathOutlines[i].effectColor = selected ? accentColor : mutedColor;
-                pathOutlines[i].effectDistance = selected ? new Vector2(4f, -4f) : new Vector2(2f, -2f);
-                pathLabels[i].text = selected ? $"{pathDefinitions[i].DisplayName}   ✓ 선택됨\n{pathDefinitions[i].PassiveName}" : $"{pathDefinitions[i].DisplayName}\n{pathDefinitions[i].PassiveName}";
+                bool active = pathDefinitions[i].Id == selectedPathId;
+                cards[i].GetComponent<Image>().color = active ? selected : normal;
+                cardOutlines[i].effectColor = active ? focusGold : new Color(.28f, .35f, .45f, 1f);
+                cardOutlines[i].effectDistance = active ? new Vector2(4, -4) : new Vector2(2, -2);
+                cards[i].transform.localScale = active ? Vector3.one * 1.03f : Vector3.one;
+                cardChecks[i].text = active ? "✓ 선택됨" : string.Empty;
             }
-
-            PlayerPathDefinition definition = pathDefinitions.FirstOrDefault(item => item.Id == selectedPathId) ?? pathDefinitions.FirstOrDefault();
-            if (definition == null) return;
-            detailName.text = definition.DisplayName;
-            detailDescription.text = definition.ShortDescription;
-            detailStats.text = "기본 능력치 직접 보너스 없음\n길은 전투 행동에 고유 효과를 더합니다.";
-            detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
-            detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
-            detailRecommendedJobs.text = "추천 직업\n" + string.Join(" · ", definition.RecommendedJobs.Select(job => job.DisplayName));
-            Sprite baseSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
-            PathVisualPreview.Apply(characterPreview, pathVisualPreview, pathSymbolPreview, baseSprite, definition.Id, GameSessionData.SelectedPlayerVisual);
+            PlayerPathDefinition path = PathPresentationResolver.Find(selectedPathId) ?? pathDefinitions.FirstOrDefault();
+            if (path == null) return;
+            detailName.text = path.DisplayName;
+            detailTrait.text = path.PassiveName;
+            detailDescription.text = path.PassiveDescription;
+            detailRecommended.text = $"[추천: {string.Join(" · ", path.RecommendedJobs.Select(item => item.DisplayName))}]";
+            detailIcon.sprite = path.Icon;
+            detailIcon.color = detailIcon.sprite == null ? Color.clear : Color.white;
         }
-
 
         private void CreateInterface()
         {
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             GameObject canvasObject = new GameObject("PathSelectionCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
-            canvasObject.transform.SetParent(transform, false);
             Canvas canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = 0.5f;
-            Image background = Image(canvasObject.transform, "Background", new Color(0.018f, 0.03f, 0.06f, 1)); Stretch(background.rectTransform);
-            Text title = Text(canvasObject.transform, "Title", "PROJECT LIMITLESS", font, 36, new Vector2(.5f, .92f), new Vector2(650, 48)); title.color = accentColor; title.fontStyle = FontStyle.Bold;
-            Text(canvasObject.transform, "Subtitle", "당신의 길을 선택하세요", font, 22, new Vector2(.5f, .86f), new Vector2(500, 34));
-            CreateSteps(canvasObject.transform, font);
-            CreateCharacterSummary(canvasObject.transform, font);
-            CreatePathCards(canvasObject.transform, font);
-            CreateDetailPanel(canvasObject.transform, font);
-            CreateBottomControls(canvasObject.transform, font);
+            CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
+            Image background = MakeImage(canvas.transform, "Background", new Color(.018f, .03f, .06f, 1f)); Stretch(background.rectTransform);
+            Text title = MakeText(canvas.transform, "Title", "길 선택", font, 34, new Vector2(.5f, .94f), new Vector2(600, 44)); title.color = gold; title.fontStyle = FontStyle.Bold;
+            MakeText(canvas.transform, "Guide", "당신이 걸어갈 길을 선택하세요.\n길은 전투 특성에 영향을 주지만, 직업 선택을 제한하지 않습니다.", font, 17, new Vector2(.5f, .865f), new Vector2(900, 58));
+            CreateCards(canvas.transform, font);
+            CreateDetail(canvas.transform, font);
+            previousButton = MakeButton(canvas.transform, "PreviousButton", "[ 이전 ]", font, new Vector2(.35f, .055f), () => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single));
+            chooseButton = MakeButton(canvas.transform, "ChooseButton", "[ 이 길을 선택 ]", font, new Vector2(.65f, .055f), Confirm);
+            controls.Add(previousButton); controls.Add(chooseButton);
+            notice = MakeText(canvas.transform, "Notice", string.Empty, font, 15, new Vector2(.5f, .012f), new Vector2(700, 22)); notice.color = new Color(1f, .7f, .45f, 1f);
             ConfigureNavigation();
         }
 
-        private void CreateCharacterSummary(Transform parent, Font font)
-        {
-            Image panel = Image(parent, "CharacterSummary", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.13f, .48f), new Vector2(190, 390)); AddOutline(panel.gameObject, mutedColor, 2);
-            Text heading = Text(panel.transform, "Heading", "캐릭터", font, 20, new Vector2(.5f, .91f), new Vector2(160, 32)); heading.color = accentColor;
-            characterPreview = Image(panel.transform, "Preview", Color.white); characterPreview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; characterPreview.preserveAspect = true; SetRect(characterPreview.rectTransform, new Vector2(.5f, .62f), new Vector2(150, 170));
-            pathVisualPreview = Image(panel.transform, "PathVisualPreview", Color.clear); SetRect(pathVisualPreview.rectTransform, new Vector2(.5f, .62f), new Vector2(150, 170));
-            pathSymbolPreview = Image(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbolPreview.rectTransform, new Vector2(.78f, .42f), new Vector2(42, 42));
-            string name = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "이름 미설정" : GameSessionData.PlayerName;
-            string visual = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? "여성" : "남성";
-            Text summary = Text(panel.transform, "Summary", $"{name}\n{visual}", font, 20, new Vector2(.5f, .22f), new Vector2(165, 80)); summary.fontStyle = FontStyle.Bold;
-        }
-
-        private void CreatePathCards(Transform parent, Font font)
+        private void CreateCards(Transform parent, Font font)
         {
             for (int i = 0; i < pathDefinitions.Length; i++)
             {
                 int captured = i;
-                GameObject card = new GameObject($"PathCard{i + 1}", typeof(Image), typeof(Button), typeof(Outline)); card.transform.SetParent(parent, false);
-                SetRect(card.GetComponent<RectTransform>(), new Vector2(.355f, .70f - i * .085f), new Vector2(300, 56));
-                Image image = card.GetComponent<Image>(); Button button = card.GetComponent<Button>(); button.targetGraphic = image; button.colors = SelectableColors();
-                Outline outline = card.GetComponent<Outline>(); Text label = Text(card.transform, "Label", "", font, 17, Vector2.one * .5f, new Vector2(275, 50)); label.fontStyle = FontStyle.Bold;
-                button.onClick.AddListener(() => SelectPath(pathDefinitions[captured])); AddFocusFeedback(card, outline, RefreshSelection);
-                pathButtons.Add(button); pathLabels.Add(label); pathBackgrounds.Add(image); pathOutlines.Add(outline); tabControls.Add(button);
+                PlayerPathDefinition path = pathDefinitions[i];
+                GameObject cardObject = new GameObject($"PathCard{i + 1}", typeof(Image), typeof(Button), typeof(Outline));
+                cardObject.transform.SetParent(parent, false);
+                SetRect(cardObject.GetComponent<RectTransform>(), new Vector2(.15f + i * .175f, .64f), new Vector2(190, 190));
+                Button card = cardObject.GetComponent<Button>(); card.targetGraphic = cardObject.GetComponent<Image>(); card.onClick.AddListener(() => SelectPath(captured));
+                Outline outline = cardObject.GetComponent<Outline>();
+                Image icon = MakeImage(cardObject.transform, "OfficialIcon", Color.clear); icon.sprite = path.Icon; icon.color = icon.sprite == null ? Color.clear : Color.white; icon.preserveAspect = true; SetRect(icon.rectTransform, new Vector2(.5f, .73f), new Vector2(66, 66));
+                if (path.Icon == null) { Text todo = MakeText(cardObject.transform, "IconTodo", "아이콘 준비 중", font, 12, new Vector2(.5f, .73f), new Vector2(130, 24)); todo.color = new Color(.65f, .7f, .78f, 1f); }
+                Text name = MakeText(cardObject.transform, "PathName", path.DisplayName, font, 20, new Vector2(.5f, .45f), new Vector2(170, 28)); name.fontStyle = FontStyle.Bold;
+                Text trait = MakeText(cardObject.transform, "Trait", path.PassiveName, font, 16, new Vector2(.5f, .29f), new Vector2(170, 24)); trait.color = new Color(.82f, .88f, .96f, 1f);
+                Text recommended = MakeText(cardObject.transform, "Recommended", $"[추천: {string.Join(" · ", path.RecommendedJobs.Select(item => item.DisplayName))}]", font, 13, new Vector2(.5f, .13f), new Vector2(180, 24)); recommended.color = new Color(1f, .84f, .46f, 1f);
+                Text check = MakeText(cardObject.transform, "Selected", string.Empty, font, 13, new Vector2(.5f, .025f), new Vector2(160, 20)); check.fontStyle = FontStyle.Bold;
+                cards.Add(card); cardOutlines.Add(outline); cardChecks.Add(check); controls.Add(card);
             }
         }
 
-        private void CreateDetailPanel(Transform parent, Font font)
+        private void CreateDetail(Transform parent, Font font)
         {
-            Image panel = Image(parent, "DetailPanel", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.72f, .50f), new Vector2(500, 420)); AddOutline(panel.gameObject, mutedColor, 2);
-            detailName = Text(panel.transform, "PathName", "", font, 27, new Vector2(.5f, .91f), new Vector2(450, 40)); detailName.color = accentColor; detailName.fontStyle = FontStyle.Bold;
-            detailDescription = Text(panel.transform, "Description", "", font, 17, new Vector2(.5f, .78f), new Vector2(440, 58));
-            detailStats = Text(panel.transform, "Stats", "", font, 17, new Vector2(.5f, .61f), new Vector2(440, 72));
-            detailPassive = Text(panel.transform, "Passive", "", font, 17, new Vector2(.5f, .43f), new Vector2(440, 76));
-            detailKeywords = Text(panel.transform, "Keywords", "", font, 15, new Vector2(.5f, .30f), new Vector2(450, 34)); detailKeywords.color = new Color(.76f, .83f, .92f, 1);
-            detailRecommendedJobs = Text(panel.transform, "RecommendedJobs", "", font, 17, new Vector2(.5f, .18f), new Vector2(450, 58)); detailRecommendedJobs.color = new Color(1f, .86f, .54f, 1f); detailRecommendedJobs.fontStyle = FontStyle.Bold;
-            Text recommendationNotice = Text(panel.transform, "RecommendationNotice", "추천은 안내일 뿐이며, 모든 직업을 자유롭게 선택할 수 있습니다.", font, 14, new Vector2(.5f, .055f), new Vector2(455, 34));
-            recommendationNotice.color = new Color(.72f, .80f, .90f, 1f);
+            Image panel = MakeImage(parent, "PathDetailPanel", new Color(.05f, .075f, .12f, .98f)); SetRect(panel.rectTransform, new Vector2(.5f, .285f), new Vector2(1040, 210)); AddOutline(panel.gameObject, gold, 2);
+            detailIcon = MakeImage(panel.transform, "OfficialIcon", Color.clear); detailIcon.preserveAspect = true; SetRect(detailIcon.rectTransform, new Vector2(.1f, .55f), new Vector2(110, 110));
+            detailName = MakeText(panel.transform, "PathName", string.Empty, font, 27, new Vector2(.27f, .72f), new Vector2(260, 38)); detailName.color = gold; detailName.fontStyle = FontStyle.Bold;
+            detailTrait = MakeText(panel.transform, "TraitName", string.Empty, font, 21, new Vector2(.27f, .48f), new Vector2(260, 32)); detailTrait.fontStyle = FontStyle.Bold;
+            detailRecommended = MakeText(panel.transform, "Recommended", string.Empty, font, 16, new Vector2(.27f, .24f), new Vector2(290, 28)); detailRecommended.color = new Color(1f, .84f, .46f, 1f);
+            detailDescription = MakeText(panel.transform, "Description", string.Empty, font, 17, new Vector2(.68f, .61f), new Vector2(560, 90)); detailDescription.alignment = TextAnchor.MiddleLeft;
+            Text guide = MakeText(panel.transform, "Guide", "추천은 시너지 안내이며 모든 직업을 자유롭게 선택할 수 있습니다.", font, 14, new Vector2(.68f, .23f), new Vector2(560, 28)); guide.color = new Color(.72f, .8f, .9f, 1f);
         }
 
-        private void CreateBottomControls(Transform parent, Font font)
+        private void Confirm()
         {
-            previousButton = TextButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .105f)); nextButton = TextButton(parent, "NextButton", "다음", font, new Vector2(.66f, .105f));
-            previousButton.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single));
-            nextButton.onClick.AddListener(OpenJobSelection);
-            AddFocusFeedback(previousButton.gameObject, previousButton.GetComponent<Outline>(), () => RestoreButton(previousButton)); AddFocusFeedback(nextButton.gameObject, nextButton.GetComponent<Outline>(), () => RestoreButton(nextButton));
-            tabControls.Add(previousButton); tabControls.Add(nextButton);
-            noticeLabel = Text(parent, "Notice", "", font, 17, new Vector2(.53f, .045f), new Vector2(700, 28)); noticeLabel.color = new Color(1, .77f, .5f, 1);
-            Text help = Text(parent, "Help", "Tab / Shift+Tab / 방향키: 이동   Enter / Space: 선택", font, 15, new Vector2(.53f, .015f), new Vector2(760, 24)); help.color = new Color(.7f, .77f, .86f, 1);
-        }
-
-        private void OpenJobSelection()
-        {
-            if (string.IsNullOrEmpty(selectedPathId))
-            {
-                noticeLabel.text = "먼저 길을 선택해주세요.";
-                return;
-            }
+            if (string.IsNullOrEmpty(selectedPathId)) { notice.text = "먼저 길 카드를 선택해주세요."; return; }
             SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
         }
 
         private void ConfigureNavigation()
         {
-            for (int i = 0; i < pathButtons.Count; i++) pathButtons[i].navigation = Nav(null, null, i > 0 ? pathButtons[i - 1] : null, i + 1 < pathButtons.Count ? pathButtons[i + 1] : previousButton);
-            Selectable last = pathButtons.Count > 0 ? pathButtons[pathButtons.Count - 1] : null;
-            previousButton.navigation = Nav(null, nextButton, last, null); nextButton.navigation = Nav(previousButton, null, last, null);
+            for (int i = 0; i < cards.Count; i++) cards[i].navigation = Nav(i > 0 ? cards[i - 1] : cards[cards.Count - 1], i + 1 < cards.Count ? cards[i + 1] : cards[0], chooseButton, chooseButton);
+            previousButton.navigation = Nav(chooseButton, chooseButton, cards[0], cards[0]);
+            chooseButton.navigation = Nav(previousButton, previousButton, cards[cards.Count - 1], cards[cards.Count - 1]);
         }
 
-        private Button GetInitialFocusButton() { int i = Array.FindIndex(pathDefinitions, d => d.Id == selectedPathId); return pathButtons[i >= 0 ? i : 0]; }
-        private void MoveToNextControl(int direction) { int i = tabControls.FindIndex(c => c.gameObject == EventSystem.current.currentSelectedGameObject); EventSystem.current.SetSelectedGameObject(tabControls[(i + direction + tabControls.Count) % tabControls.Count].gameObject); }
-        private void AddFocusFeedback(GameObject target, Outline outline, Action restore) { EventTrigger trigger = target.AddComponent<EventTrigger>(); AddTrigger(trigger, EventTriggerType.Select, _ => { outline.effectColor = focusColor; outline.effectDistance = new Vector2(5, -5); }); AddTrigger(trigger, EventTriggerType.Deselect, _ => restore()); }
-        private static void AddTrigger(EventTrigger trigger, EventTriggerType type, Action<BaseEventData> action) { EventTrigger.Entry entry = new EventTrigger.Entry { eventID = type }; entry.callback.AddListener(data => action(data)); trigger.triggers.Add(entry); }
-        private void RestoreButton(Button button) { Outline o = button.GetComponent<Outline>(); o.effectColor = accentColor; o.effectDistance = new Vector2(2, -2); }
+        private static Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor, Action action)
+        {
+            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(250, 48));
+            obj.GetComponent<Image>().color = new Color(.12f, .32f, .5f, 1f); AddOutline(obj, new Color(.88f, .7f, .32f, 1f), 2); Button button = obj.GetComponent<Button>(); button.onClick.AddListener(() => action()); MakeText(obj.transform, "Label", label, font, 20, Vector2.one * .5f, new Vector2(230, 40)).fontStyle = FontStyle.Bold; return button;
+        }
         private static Navigation Nav(Selectable left, Selectable right, Selectable up, Selectable down) => new Navigation { mode = Navigation.Mode.Explicit, selectOnLeft = left, selectOnRight = right, selectOnUp = up, selectOnDown = down };
         private static void CreateEventSystem() { if (EventSystem.current != null) return; InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
-        /// <summary>CharacterCreation의 주요 CTA와 같은 청색 바탕, 금색 테두리, 굵은 밝은 글자를 사용합니다.</summary>
-        private static Button TextButton(Transform parent, string name, string label, Font font, Vector2 anchor)
-        {
-            GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline));
-            obj.transform.SetParent(parent, false);
-            SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(230, 52));
-
-            Image image = obj.GetComponent<Image>();
-            image.color = new Color(.12f, .32f, .5f, 1f);
-            Button button = obj.GetComponent<Button>();
-            button.targetGraphic = image;
-            button.colors = CtaSelectableColors();
-
-            Outline outline = obj.GetComponent<Outline>();
-            outline.effectColor = new Color(.88f, .7f, .32f, 1f);
-            outline.effectDistance = new Vector2(2, -2);
-            Text buttonLabel = Text(obj.transform, "Label", $"[ {label} ]", font, 22, Vector2.one * .5f, new Vector2(210, 44));
-            buttonLabel.color = new Color(.98f, .94f, .82f, 1f);
-            buttonLabel.fontStyle = FontStyle.Bold;
-            return button;
-        }
-
-        private static ColorBlock CtaSelectableColors()
-        {
-            ColorBlock colors = ColorBlock.defaultColorBlock;
-            colors.normalColor = Color.white;
-            colors.highlightedColor = new Color(1.25f, 1.18f, 1.08f, 1f);
-            colors.selectedColor = new Color(1.18f, 1.12f, 1.02f, 1f);
-            colors.pressedColor = new Color(.62f, .72f, .82f, 1f);
-            colors.disabledColor = new Color(.48f, .52f, .58f, .72f);
-            colors.colorMultiplier = 1f;
-            colors.fadeDuration = .12f;
-            return colors;
-        }
-        private static ColorBlock SelectableColors() { ColorBlock c = ColorBlock.defaultColorBlock; c.normalColor = Color.white; c.highlightedColor = new Color(.82f, .88f, .98f, 1); c.selectedColor = new Color(.92f, .82f, .58f, 1); c.pressedColor = new Color(.68f, .68f, .68f, 1); return c; }
-        private static void CreateSteps(Transform parent, Font font) { string[] steps = { "1 기본 정보", "2 길 · 현재", "3 직업", "4 확인" }; for (int i = 0; i < steps.Length; i++) { Image p = Image(parent, $"Step{i + 1}", i == 1 ? new Color(.18f, .25f, .34f, 1) : new Color(.04f, .065f, .11f, .88f)); SetRect(p.rectTransform, new Vector2(.35f + i * .1f, .975f), new Vector2(122, 28)); AddOutline(p.gameObject, i == 1 ? new Color(.95f, .76f, .36f, 1) : new Color(.25f, .32f, .42f, 1), i == 1 ? 2 : 1); Text(p.transform, "Label", steps[i], font, 15, Vector2.one * .5f, new Vector2(118, 26)); } }
-        private static Text Text(Transform parent, string name, string value, Font font, int size, Vector2 anchor, Vector2 dimensions) { GameObject obj = new GameObject(name, typeof(Text)); obj.transform.SetParent(parent, false); Text text = obj.GetComponent<Text>(); text.font = font; text.fontSize = size; text.color = Color.white; text.alignment = TextAnchor.MiddleCenter; text.text = value; text.raycastTarget = false; SetRect(text.rectTransform, anchor, dimensions); return text; }
-        private static Image Image(Transform parent, string name, Color color) { GameObject obj = new GameObject(name, typeof(Image)); obj.transform.SetParent(parent, false); Image image = obj.GetComponent<Image>(); image.color = color; image.raycastTarget = false; return image; }
-        private static Outline AddOutline(GameObject target, Color color, float distance) { Outline o = target.AddComponent<Outline>(); o.effectColor = color; o.effectDistance = new Vector2(distance, -distance); return o; }
+        private static Text MakeText(Transform parent, string name, string value, Font font, int size, Vector2 anchor, Vector2 dimensions) { GameObject obj = new GameObject(name, typeof(Text)); obj.transform.SetParent(parent, false); Text text = obj.GetComponent<Text>(); text.font = font; text.fontSize = size; text.color = Color.white; text.alignment = TextAnchor.MiddleCenter; text.text = value; text.raycastTarget = false; SetRect(text.rectTransform, anchor, dimensions); return text; }
+        private static Image MakeImage(Transform parent, string name, Color color) { GameObject obj = new GameObject(name, typeof(Image)); obj.transform.SetParent(parent, false); Image image = obj.GetComponent<Image>(); image.color = color; image.raycastTarget = false; return image; }
+        private static Outline AddOutline(GameObject target, Color color, float distance) { Outline outline = target.GetComponent<Outline>() ?? target.AddComponent<Outline>(); outline.effectColor = color; outline.effectDistance = new Vector2(distance, -distance); return outline; }
         private static void SetRect(RectTransform rect, Vector2 anchor, Vector2 size) { rect.anchorMin = anchor; rect.anchorMax = anchor; rect.pivot = Vector2.one * .5f; rect.anchoredPosition = Vector2.zero; rect.sizeDelta = size; }
         private static void Stretch(RectTransform rect) { rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one; rect.offsetMin = Vector2.zero; rect.offsetMax = Vector2.zero; }
     }

@@ -101,6 +101,7 @@ namespace ProjectLimitless.Battle
         private RectTransform battleCanvasRect;
         private Image detailPopup;
         private Text detailPopupText;
+        private Image detailPathIcon;
         private Image skillDetailPopup;
         private Image skillDetailIcon;
         private Text skillDetailText;
@@ -115,8 +116,9 @@ namespace ProjectLimitless.Battle
         private void Awake()
         {
             CreateParticipants();
-            Combatant player = allies.Members.FirstOrDefault(item => item.Id == "player");
-            pathTraits = new PathCombatTraitRuntime(player, GameSessionData.SelectedPlayerPathId, allies.Members);
+            pathTraits = new PathCombatTraitRuntime(participantSetups
+                .Where(pair => !string.IsNullOrWhiteSpace(pair.Value.PathId))
+                .Select(pair => new KeyValuePair<Combatant, string>(pair.Key, pair.Value.PathId)), AllCombatants);
             pathTraits.FeedbackOccurred += OnPathFeedbackOccurred;
             skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources, pathTraits);
             CreateEventSystem();
@@ -242,7 +244,7 @@ namespace ProjectLimitless.Battle
             MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
             BattleEncounterSetup setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
-                playerName, GameSessionData.SelectedJobId,
+                playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                 CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility, slime, venomBee,
                 BattleEncounterContext.Monster);
 
@@ -505,12 +507,15 @@ namespace ProjectLimitless.Battle
         private void CreateDetailPopup(Transform canvas, Font font)
         {
             detailPopup = MakeImage(canvas, "CombatantDetailPopup", new Color(.035f, .06f, .1f, .98f));
-            SetRect(detailPopup.rectTransform, Vector2.one * .5f, new Vector2(270, 140));
+            SetRect(detailPopup.rectTransform, Vector2.one * .5f, new Vector2(310, 140));
             AddOutline(detailPopup.gameObject, gold, 2);
             detailPopupText = MakeText(detailPopup.transform, "DetailText", string.Empty, font, 16,
-                Vector2.one * .5f, new Vector2(244, 118));
+                new Vector2(.44f, .5f), new Vector2(238, 118));
             detailPopupText.alignment = TextAnchor.MiddleLeft;
             detailPopupText.lineSpacing = 1.15f;
+            detailPathIcon = MakeImage(detailPopup.transform, "PathOfficialIcon", Color.clear);
+            SetRect(detailPathIcon.rectTransform, new Vector2(.84f, .8f), new Vector2(38, 38));
+            detailPathIcon.preserveAspect = true;
             detailPopup.gameObject.SetActive(false);
         }
 
@@ -589,6 +594,7 @@ namespace ProjectLimitless.Battle
                 !combatantViews.TryGetValue(combatant, out CombatantView view)) return;
             combatantJobs.TryGetValue(combatant, out JobDefinition job);
             participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
+            PlayerPathDefinition path = PathPresentationResolver.Find(setup?.PathId);
             BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(
                 combatant, job, setup, skillCooldowns, fighterResources, statusEffects, pathTraits);
             detailCombatant = combatant;
@@ -598,9 +604,14 @@ namespace ProjectLimitless.Battle
             if (combatant.UsesMp) detailLines.Insert(Math.Min(2, detailLines.Count), $"MP {combatant.CurrentMp} / {combatant.MaxMp}");
             string detailText = string.Join("\n", detailLines);
             detailPopupText.text = detailText;
+            if (detailPathIcon != null)
+            {
+                detailPathIcon.sprite = path?.Icon;
+                detailPathIcon.color = detailPathIcon.sprite == null ? Color.clear : Color.white;
+            }
             int lineCount = detailLines.Count;
-            detailPopup.rectTransform.sizeDelta = new Vector2(270, Mathf.Max(116, 34 + lineCount * 23));
-            detailPopupText.rectTransform.sizeDelta = new Vector2(244, detailPopup.rectTransform.sizeDelta.y - 20);
+            detailPopup.rectTransform.sizeDelta = new Vector2(310, Mathf.Max(116, 34 + lineCount * 23));
+            detailPopupText.rectTransform.sizeDelta = new Vector2(238, detailPopup.rectTransform.sizeDelta.y - 20);
             detailPopup.gameObject.SetActive(true);
             detailPopup.rectTransform.SetAsLastSibling();
             PositionDetailPopup(view.ActionRoot);

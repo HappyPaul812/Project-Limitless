@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjectLimitless.Battle
 {
-    /// <summary>저장된 플레이어 길을 전투 한 판 동안만 해석하는 공통 런타임입니다.</summary>
+    /// <summary>PathId가 명시된 참가자들의 길 효과와 전투별 임시 상태를 함께 관리합니다.</summary>
     public sealed class PathCombatTraitRuntime
     {
         public const string VisionPathId = "path.vision";
@@ -12,40 +13,58 @@ namespace ProjectLimitless.Battle
         public const string MobilityPathId = "path.mobility";
         public const string EmotionalScarPathId = "path.emotional-scar";
 
-        // 길은 직업 ID를 전혀 보지 않습니다. 추천 직업은 사용법을 안내하는 시너지일 뿐 기능 잠금이 아닙니다.
-        private readonly Combatant owner;
-        private readonly Combatant[] ownerAllies;
-        private readonly string pathId;
-        // 같은 정의의 몬스터 A/B도 별개 상태를 가져야 하므로 ID나 이름 대신 실제 Combatant 참조를 키로 씁니다.
-        private readonly HashSet<Combatant> echoes = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
-        private readonly HashSet<Combatant> enemiesThatAttacked = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
-        private readonly Dictionary<Combatant, Combatant> lastTargetByEnemy = new Dictionary<Combatant, Combatant>(CombatantReferenceComparer.Instance);
-        private readonly Dictionary<Combatant, Combatant> patternEnemyByAlly = new Dictionary<Combatant, Combatant>(CombatantReferenceComparer.Instance);
-        private bool resilienceTriggered;
-        private int resilienceActionsRemaining;
-        private Combatant focusTarget;
-        private int focusStacks;
-
-        public PathCombatTraitRuntime(Combatant owner, string pathId, IEnumerable<Combatant> ownerAllies = null)
+        private sealed class TraitState
         {
-            this.owner = owner;
-            this.pathId = pathId ?? string.Empty;
-            this.ownerAllies = ownerAllies == null ? Array.Empty<Combatant>() : new List<Combatant>(ownerAllies).ToArray();
+            public Combatant Owner;
+            public string PathId;
+            public bool ResilienceTriggered;
+            public int ResilienceActionsRemaining;
+            public readonly HashSet<Combatant> Echoes = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+            public readonly HashSet<Combatant> EnemiesThatAttacked = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+            public Combatant FocusTarget;
+            public int FocusStacks;
+            public readonly Dictionary<Combatant, Combatant> LastTargetByEnemy = new Dictionary<Combatant, Combatant>(CombatantReferenceComparer.Instance);
+            public readonly Dictionary<Combatant, Combatant> PatternEnemyByAlly = new Dictionary<Combatant, Combatant>(CombatantReferenceComparer.Instance);
+        }
+
+        private readonly Dictionary<Combatant, TraitState> states = new Dictionary<Combatant, TraitState>(CombatantReferenceComparer.Instance);
+        private readonly Combatant[] combatants;
+
+        /// <summary>
+        /// 이름으로 태온·미엘을 판정하면 번역이나 개명 때 기능이 깨집니다. 참가자 데이터의 PathId와 실제
+        /// Combatant 참조를 묶어 두면 플레이어와 NPC가 같은 규칙을 쓰면서도 각 상태가 서로 섞이지 않습니다.
+        /// </summary>
+        public PathCombatTraitRuntime(IEnumerable<KeyValuePair<Combatant, string>> bindings, IEnumerable<Combatant> combatants)
+        {
+            this.combatants = combatants?.Where(item => item != null).ToArray() ?? Array.Empty<Combatant>();
+            if (bindings == null) return;
+            foreach (KeyValuePair<Combatant, string> binding in bindings)
+                if (binding.Key != null && !string.IsNullOrWhiteSpace(binding.Value))
+                    states[binding.Key] = new TraitState { Owner = binding.Key, PathId = binding.Value };
         }
 
         public event Action<string> FeedbackOccurred;
-        public Combatant Owner => owner;
-        public string PathId => pathId;
-        public int ResilienceActionsRemaining => resilienceActionsRemaining;
-        public Combatant FocusTarget => focusTarget != null && focusTarget.IsAlive ? focusTarget : null;
-        public int FocusStacks => FocusTarget == null ? 0 : focusStacks;
-        public bool HasEcho(Combatant combatant) => combatant != null && echoes.Contains(combatant);
-        public Combatant GetPatternEnemy(Combatant ally) => ally != null && patternEnemyByAlly.TryGetValue(ally, out Combatant enemy) && enemy.IsAlive ? enemy : null;
+        public string GetPathId(Combatant owner) => Find(owner)?.PathId ?? string.Empty;
+        public int GetResilienceActionsRemaining(Combatant owner) => Find(owner)?.ResilienceActionsRemaining ?? 0;
+        public Combatant GetFocusTarget(Combatant owner)
+        {
+            TraitState state = Find(owner);
+            return state?.FocusTarget != null && state.FocusTarget.IsAlive ? state.FocusTarget : null;
+        }
+        public int GetFocusStacks(Combatant owner) => GetFocusTarget(owner) == null ? 0 : Find(owner).FocusStacks;
+        public bool HasEcho(Combatant target) => target != null && states.Values.Any(state => state.Echoes.Contains(target));
+        public Combatant GetPatternEnemy(Combatant owner, Combatant ally)
+        {
+            TraitState state = Find(owner);
+            return state != null && ally != null && state.PatternEnemyByAlly.TryGetValue(ally, out Combatant enemy) && enemy.IsAlive ? enemy : null;
+        }
+        public Combatant GetAnyPatternEnemy(Combatant ally) => states.Values.Select(state =>
+            state.PatternEnemyByAlly.TryGetValue(ally, out Combatant enemy) && enemy.IsAlive ? enemy : null).FirstOrDefault(enemy => enemy != null);
 
         public void BeginActorAction(Combatant actor)
         {
             if (actor == null) return;
-            if (actor.Side != owner?.Side && echoes.Remove(actor))
+            foreach (TraitState state in states.Values.Where(item => item.PathId == HearingPathId && item.Echoes.Remove(actor)))
                 FeedbackOccurred?.Invoke($"{actor.DisplayName}의 잔향이 사라졌습니다.");
             ClearInvalidState();
         }
@@ -53,77 +72,72 @@ namespace ProjectLimitless.Battle
         public void CompleteActorAction(Combatant actor)
         {
             if (actor == null) return;
-            if (ReferenceEquals(actor, owner) && resilienceActionsRemaining > 0)
-                resilienceActionsRemaining--;
-            if (actor.Side != owner?.Side && actor.IsAlive && enemiesThatAttacked.Remove(actor) && pathId == HearingPathId)
+            TraitState ownerState = Find(actor);
+            if (ownerState?.ResilienceActionsRemaining > 0) ownerState.ResilienceActionsRemaining--;
+            foreach (TraitState state in states.Values.Where(item => item.PathId == HearingPathId && actor.IsAlive && item.EnemiesThatAttacked.Remove(actor)))
             {
-                echoes.Add(actor);
-                FeedbackOccurred?.Invoke($"{actor.DisplayName}의 움직임에서 잔향을 포착했습니다.");
+                state.Echoes.Add(actor);
+                FeedbackOccurred?.Invoke($"{state.Owner.DisplayName}이(가) {actor.DisplayName}의 잔향을 포착했습니다.");
             }
             ClearInvalidState();
         }
 
-        public int ApplyDirectDamage(BattleStatusEffectRuntime statusEffects, Combatant source, Combatant target,
-            int rawDamage, bool areaAttack = false)
+        /// <summary>길 배율을 먼저 한 번 계산한 뒤 기존 방어·상태 경로에 실제 피해를 한 번만 전달합니다.</summary>
+        public int ApplyDirectDamage(BattleStatusEffectRuntime statusEffects, Combatant source, Combatant target, int rawDamage, bool areaAttack = false)
         {
             if (statusEffects == null) throw new ArgumentNullException(nameof(statusEffects));
             if (source == null || target == null) return 0;
-
-            bool consumeEcho = false;
             int modified = rawDamage;
-            if (ReferenceEquals(source, owner))
+            TraitState sourceState = Find(source);
+            bool consumeEcho = false;
+            if (sourceState != null)
             {
-                if (pathId == EmotionalScarPathId && resilienceActionsRemaining > 0) modified = Increase(modified, 10);
-                else if (pathId == HearingPathId && echoes.Contains(target)) { modified = Increase(modified, 10); consumeEcho = true; }
-                else if (pathId == VisionPathId && ReferenceEquals(target, FocusTarget)) modified = Increase(modified, focusStacks * 3);
-                else if (pathId == MobilityPathId && owner.Slot.Row == FormationRow.Rear) modified = Increase(modified, 5);
+                if (sourceState.PathId == EmotionalScarPathId && sourceState.ResilienceActionsRemaining > 0) modified = Increase(modified, 10);
+                else if (sourceState.PathId == HearingPathId && sourceState.Echoes.Contains(target)) { modified = Increase(modified, 10); consumeEcho = true; }
+                else if (sourceState.PathId == VisionPathId && ReferenceEquals(target, GetFocusTarget(source))) modified = Increase(modified, sourceState.FocusStacks * 3);
+                else if (sourceState.PathId == MobilityPathId && source.Slot.Row == FormationRow.Rear) modified = Increase(modified, 5);
             }
+            TraitState targetState = Find(target);
+            if (targetState?.PathId == MobilityPathId && target.Slot.Row == FormationRow.Front) modified = Reduce(modified, 5);
 
-            bool consumedPattern = false;
-            if (ReferenceEquals(target, owner) && pathId == MobilityPathId && owner.Slot.Row == FormationRow.Front)
-                modified = Reduce(modified, 5);
-            if (pathId == IntellectualPathId && patternEnemyByAlly.TryGetValue(target, out Combatant patternEnemy) && ReferenceEquals(source, patternEnemy))
+            List<TraitState> consumedPatterns = states.Values.Where(state => state.PathId == IntellectualPathId &&
+                state.PatternEnemyByAlly.TryGetValue(target, out Combatant enemy) && ReferenceEquals(enemy, source)).ToList();
+            if (consumedPatterns.Count > 0)
             {
                 modified = Reduce(modified, 10);
-                patternEnemyByAlly.Remove(target);
-                consumedPattern = true;
+                foreach (TraitState state in consumedPatterns) state.PatternEnemyByAlly.Remove(target);
                 FeedbackOccurred?.Invoke($"{target.DisplayName}이(가) 익힌 {source.DisplayName}의 패턴으로 피해를 줄였습니다.");
             }
 
-            // 수호의 맹세가 다른 아군에게 피해를 이전할 수 있어 플레이어 편 전체의 실제 HP 변화를 관찰합니다.
-            Dictionary<Combatant, int> allyHpBefore = new Dictionary<Combatant, int>(CombatantReferenceComparer.Instance);
-            foreach (Combatant ally in ownerAllies)
-                if (ally != null) allyHpBefore[ally] = ally.CurrentHp;
+            Dictionary<Combatant, int> hpBefore = combatants.ToDictionary(item => item, item => item.CurrentHp, CombatantReferenceComparer.Instance);
             int applied = statusEffects.ApplyIncomingDamage(target, modified, BattleDamageOrigin.DirectCombatAction);
-            foreach (KeyValuePair<Combatant, int> pair in allyHpBefore) ObserveThresholdCrossing(pair.Key, pair.Value);
+            foreach (TraitState state in states.Values.Where(item => item.PathId == EmotionalScarPathId))
+                foreach (KeyValuePair<Combatant, int> pair in hpBefore.Where(pair => pair.Key.Side == state.Owner.Side))
+                    ObserveThresholdCrossing(state, pair.Key, pair.Value);
 
-            if (source.Side != owner?.Side && target.Side == owner?.Side && applied > 0)
+            if (applied > 0)
             {
-                enemiesThatAttacked.Add(source);
-                if (pathId == IntellectualPathId)
+                foreach (TraitState state in states.Values.Where(item => source.Side != item.Owner.Side && target.Side == item.Owner.Side))
                 {
-                    bool sameTarget = lastTargetByEnemy.TryGetValue(source, out Combatant previous) && ReferenceEquals(previous, target);
-                    lastTargetByEnemy[source] = target;
-                    if (sameTarget && !consumedPattern && target.IsAlive)
+                    state.EnemiesThatAttacked.Add(source);
+                    if (state.PathId != IntellectualPathId) continue;
+                    bool sameTarget = state.LastTargetByEnemy.TryGetValue(source, out Combatant previous) && ReferenceEquals(previous, target);
+                    state.LastTargetByEnemy[source] = target;
+                    if (sameTarget && !consumedPatterns.Contains(state) && target.IsAlive)
                     {
-                        patternEnemyByAlly[target] = source;
-                        FeedbackOccurred?.Invoke($"{target.DisplayName}이(가) {source.DisplayName}의 공격 패턴을 익혔습니다.");
+                        state.PatternEnemyByAlly[target] = source;
+                        FeedbackOccurred?.Invoke($"{state.Owner.DisplayName}이(가) {source.DisplayName}의 공격 패턴을 익혔습니다.");
                     }
                 }
-            }
-
-            if (ReferenceEquals(source, owner) && applied > 0)
-            {
-                if (consumeEcho)
+                if (sourceState != null)
                 {
-                    echoes.Remove(target);
-                    FeedbackOccurred?.Invoke($"{target.DisplayName}의 잔향을 이용해 피해를 높였습니다.");
-                }
-                if (pathId == VisionPathId && !areaAttack)
-                {
-                    // 광역 공격은 여러 적을 동시에 맞히므로 집중 대상을 새로 정하거나 중첩을 쌓지 않습니다.
-                    if (ReferenceEquals(focusTarget, target)) focusStacks = Math.Min(3, focusStacks + 1);
-                    else { focusTarget = target; focusStacks = 1; }
+                    if (consumeEcho) { sourceState.Echoes.Remove(target); FeedbackOccurred?.Invoke($"{target.DisplayName}의 잔향을 이용했습니다."); }
+                    // 광역은 여러 대상을 동시에 맞히므로 기존 집중 대상만 강화하고 대상을 선택하거나 중첩시키지 않습니다.
+                    if (sourceState.PathId == VisionPathId && !areaAttack)
+                    {
+                        if (ReferenceEquals(sourceState.FocusTarget, target)) sourceState.FocusStacks = Math.Min(3, sourceState.FocusStacks + 1);
+                        else { sourceState.FocusTarget = target; sourceState.FocusStacks = 1; }
+                    }
                 }
             }
             ClearInvalidState();
@@ -132,42 +146,44 @@ namespace ProjectLimitless.Battle
 
         public int ModifyDirectHealing(Combatant source, Combatant target, int rawHealing)
         {
-            if (!ReferenceEquals(source, owner) || target == null) return rawHealing;
-            if (pathId == EmotionalScarPathId && resilienceActionsRemaining > 0) return Increase(rawHealing, 10);
-            if (pathId == MobilityPathId && owner.Slot.Row == FormationRow.Rear) return Increase(rawHealing, 5);
-            if (pathId == IntellectualPathId && GetPatternEnemy(target) != null) return Increase(rawHealing, 10);
+            TraitState state = Find(source);
+            if (state == null || target == null) return rawHealing;
+            if (state.PathId == EmotionalScarPathId && state.ResilienceActionsRemaining > 0) return Increase(rawHealing, 10);
+            if (state.PathId == MobilityPathId && source.Slot.Row == FormationRow.Rear) return Increase(rawHealing, 5);
+            if (state.PathId == IntellectualPathId && GetPatternEnemy(source, target) != null) return Increase(rawHealing, 10);
             return rawHealing;
         }
 
-        /// <summary>화상·독에는 길 배율을 섞지 않고, HP 50% 통과라는 실제 사건만 관찰합니다.</summary>
+        /// <summary>화상·독에는 길 배율을 적용하지 않고 회복탄력의 실제 HP 경계 통과만 관찰합니다.</summary>
         public int ObserveHealthChange(Combatant target, Func<int> applyChange)
         {
             if (applyChange == null) return 0;
             int beforeHp = target?.CurrentHp ?? 0;
             int result = applyChange();
-            ObserveThresholdCrossing(target, beforeHp);
+            foreach (TraitState state in states.Values.Where(item => item.PathId == EmotionalScarPathId && target?.Side == item.Owner.Side))
+                ObserveThresholdCrossing(state, target, beforeHp);
             return result;
         }
 
-        private void ObserveThresholdCrossing(Combatant target, int beforeHp)
+        private TraitState Find(Combatant owner) => owner != null && states.TryGetValue(owner, out TraitState state) ? state : null;
+        private void ObserveThresholdCrossing(TraitState state, Combatant target, int beforeHp)
         {
-            if (pathId != EmotionalScarPathId || resilienceTriggered || owner == null || target == null ||
-                target.Side != owner.Side || beforeHp <= 0 || beforeHp * 2 <= target.MaxHp || target.CurrentHp * 2 > target.MaxHp) return;
-            resilienceTriggered = true;
-            // 이 값은 SaveData가 아닌 전투 런타임에만 있어 새 전투마다 '전투당 1회'가 자연스럽게 초기화됩니다.
-            resilienceActionsRemaining = 2;
-            FeedbackOccurred?.Invoke($"{owner.DisplayName}의 회복탄력이 발동했습니다. 다음 2회 행동이 강화됩니다.");
+            if (state.ResilienceTriggered || target == null || beforeHp <= 0 || beforeHp * 2 <= target.MaxHp || target.CurrentHp * 2 > target.MaxHp) return;
+            state.ResilienceTriggered = true;
+            state.ResilienceActionsRemaining = 2;
+            FeedbackOccurred?.Invoke($"{state.Owner.DisplayName}의 회복탄력이 발동했습니다. 다음 2회 행동이 강화됩니다.");
         }
 
         private void ClearInvalidState()
         {
-            echoes.RemoveWhere(item => item == null || !item.IsAlive);
-            enemiesThatAttacked.RemoveWhere(item => item == null || !item.IsAlive);
-            if (focusTarget != null && !focusTarget.IsAlive) { focusTarget = null; focusStacks = 0; }
-            List<Combatant> invalidAllies = new List<Combatant>();
-            foreach (KeyValuePair<Combatant, Combatant> pair in patternEnemyByAlly)
-                if (pair.Key == null || !pair.Key.IsAlive || pair.Value == null || !pair.Value.IsAlive) invalidAllies.Add(pair.Key);
-            foreach (Combatant ally in invalidAllies) patternEnemyByAlly.Remove(ally);
+            foreach (TraitState state in states.Values)
+            {
+                state.Echoes.RemoveWhere(item => item == null || !item.IsAlive);
+                state.EnemiesThatAttacked.RemoveWhere(item => item == null || !item.IsAlive);
+                if (state.FocusTarget != null && !state.FocusTarget.IsAlive) { state.FocusTarget = null; state.FocusStacks = 0; }
+                foreach (Combatant ally in state.PatternEnemyByAlly.Where(pair => pair.Key == null || !pair.Key.IsAlive || pair.Value == null || !pair.Value.IsAlive).Select(pair => pair.Key).ToArray())
+                    state.PatternEnemyByAlly.Remove(ally);
+            }
         }
 
         private static int Increase(int value, int percent) => Math.Max(1, (int)Math.Ceiling(value * (100 + percent) / 100f));

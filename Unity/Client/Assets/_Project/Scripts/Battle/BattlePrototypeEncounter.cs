@@ -21,7 +21,7 @@ namespace ProjectLimitless.Battle
         public BattleParticipantSetup(string id, string displayName, string jobId, BattleSide side, FormationSlot slot,
             int maxHp, int attack, int agility, int actionPriority, TargetRangeType basicRange,
             bool playerControlled, BattleParticipantVisualType visualType, string placeholderLabel = "",
-            MonsterDefinition monsterDefinition = null)
+            MonsterDefinition monsterDefinition = null, string pathId = "")
         {
             Id = id;
             DisplayName = displayName;
@@ -37,6 +37,7 @@ namespace ProjectLimitless.Battle
             VisualType = visualType;
             PlaceholderLabel = placeholderLabel ?? string.Empty;
             MonsterDefinition = monsterDefinition;
+            PathId = pathId ?? string.Empty;
         }
 
         public string Id { get; }
@@ -53,6 +54,8 @@ namespace ProjectLimitless.Battle
         public BattleParticipantVisualType VisualType { get; }
         public string PlaceholderLabel { get; }
         public MonsterDefinition MonsterDefinition { get; }
+        /// <summary>NPC 이름이 바뀌어도 고정 길이 유지되도록 참가자 데이터에 안정적인 ID를 보관합니다.</summary>
+        public string PathId { get; }
     }
 
     /// <summary>아군과 적 참가자 목록을 함께 전달하는 Encounter 단위 데이터입니다.</summary>
@@ -78,19 +81,27 @@ namespace ProjectLimitless.Battle
 
         public static BattleEncounterSetup CreateThreeVsThree(string playerName, string playerJobId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee,
+            MonsterDefinition encounteredMonster) =>
+            CreateThreeVsThree(playerName, playerJobId, string.Empty, playerMaxHp, playerAttack, playerAgility,
+                slime, venomBee, encounteredMonster);
+
+        public static BattleEncounterSetup CreateThreeVsThree(string playerName, string playerJobId, string playerPathId,
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee,
             MonsterDefinition encounteredMonster)
         {
             BattleParticipantSetup[] allies =
             {
                 new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
-                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태"),
+                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
+                    pathId: PathCombatTraitRuntime.IntellectualPathId),
                 new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
-                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player),
+                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
                 new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
                     new FormationSlot(FormationRow.Rear, 0), 104, 8, 12, 0,
-                    TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미")
+                    TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미",
+                    pathId: PathCombatTraitRuntime.EmotionalScarPathId)
             };
 
             MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;

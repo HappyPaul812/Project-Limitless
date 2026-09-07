@@ -52,7 +52,7 @@ namespace ProjectLimitless.Battle
     {
         public BattleCombatantStatusViewModel(string title, string category, int currentHp, int maxHp,
             IReadOnlyList<BattleStatusMarker> markers, IReadOnlyList<BattleCooldownStatus> cooldowns,
-            IReadOnlyList<string> resourceDetails = null)
+            IReadOnlyList<string> resourceDetails = null, string pathName = "", string pathTraitName = "")
         {
             Title = title ?? string.Empty;
             Category = category ?? string.Empty;
@@ -61,6 +61,8 @@ namespace ProjectLimitless.Battle
             Markers = markers ?? Array.Empty<BattleStatusMarker>();
             Cooldowns = cooldowns ?? Array.Empty<BattleCooldownStatus>();
             ResourceDetails = resourceDetails ?? Array.Empty<string>();
+            PathName = pathName ?? string.Empty;
+            PathTraitName = pathTraitName ?? string.Empty;
         }
 
         public string Title { get; }
@@ -70,6 +72,8 @@ namespace ProjectLimitless.Battle
         public IReadOnlyList<BattleStatusMarker> Markers { get; }
         public IReadOnlyList<BattleCooldownStatus> Cooldowns { get; }
         public IReadOnlyList<string> ResourceDetails { get; }
+        public string PathName { get; }
+        public string PathTraitName { get; }
 
         public string CompactStatus => string.Join("  ", Markers.Select(marker => marker.DisplayText));
 
@@ -78,6 +82,8 @@ namespace ProjectLimitless.Battle
             get
             {
                 List<string> lines = new List<string> { $"{Title} · {Category}", $"HP {CurrentHp} / {MaxHp}" };
+                // 공식 길은 고정 정체성이고 아래 Marker는 전투 중 변하는 상태이므로 별도 줄로 구분합니다.
+                if (!string.IsNullOrEmpty(PathName)) lines.Add($"길: {PathName} · {PathTraitName}");
                 // 기세는 상세 전용 `현재/최대` 줄이 있으므로 요약용 `기세 n`을 중복해서 넣지 않습니다.
                 // 다른 상태는 기존처럼 같은 표식을 재사용해 HUD와 상세 정보가 어긋나지 않게 합니다.
                 lines.AddRange(Markers.Where(marker => marker.Id != "fighter.momentum").Select(marker => marker.DisplayText));
@@ -99,13 +105,16 @@ namespace ProjectLimitless.Battle
 
             string category = job != null ? job.DisplayName
                 : setup != null && setup.VisualType == BattleParticipantVisualType.EncounterMonster ? "몬스터" : "전투 참가자";
+            string pathId = setup?.PathId ?? string.Empty;
+            PlayerPathDefinition path = PathPresentationResolver.Find(pathId);
 
             // 전투불능 참가자에게 도발·방어·재사용 표시가 남으면 실제 전투 상태와 화면 정보가 달라집니다.
             // HP와 분류는 상세 팝업에서 계속 확인할 수 있게 두되, 행동에 의미가 있는 상태 목록은 즉시 비웁니다.
             // Combatant 내부 값을 억지로 바꾸지 않고 표시 모델의 경계에서 정리하므로 전투 계산 규칙에는 영향이 없습니다.
             if (!combatant.IsAlive)
                 return new BattleCombatantStatusViewModel(combatant.DisplayName, category,
-                    combatant.CurrentHp, combatant.MaxHp, Array.Empty<BattleStatusMarker>(), Array.Empty<BattleCooldownStatus>());
+                    combatant.CurrentHp, combatant.MaxHp, Array.Empty<BattleStatusMarker>(), Array.Empty<BattleCooldownStatus>(),
+                    pathName: path?.DisplayName, pathTraitName: path?.PassiveName);
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
             if (combatant.IsDefending) markers.Add(new BattleStatusMarker("defend", "방어"));
@@ -137,20 +146,19 @@ namespace ProjectLimitless.Battle
             bool guardianCoverActive = statusEffects?.HasGuardianCover(combatant) == true;
             if (guardianCoverActive)
                 markers.Add(new BattleStatusMarker("guardian_cover", BattleSkillCatalog.GuardianOathDisplayName));
-            if (pathTraits != null)
+            if (pathTraits != null && !string.IsNullOrEmpty(pathId))
             {
-                if (ReferenceEquals(combatant, pathTraits.Owner))
-                {
-                    if (pathTraits.PathId == PathCombatTraitRuntime.EmotionalScarPathId && pathTraits.ResilienceActionsRemaining > 0)
-                        markers.Add(new BattleStatusMarker("path.resilience", "회복탄력", pathTraits.ResilienceActionsRemaining));
-                    if (pathTraits.PathId == PathCombatTraitRuntime.VisionPathId && pathTraits.FocusStacks > 0)
-                        markers.Add(new BattleStatusMarker("path.focus", "집중", pathTraits.FocusStacks));
-                    if (pathTraits.PathId == PathCombatTraitRuntime.MobilityPathId)
-                        markers.Add(new BattleStatusMarker("path.steady", "굳건한 자리"));
-                }
-                if (pathTraits.HasEcho(combatant)) markers.Add(new BattleStatusMarker("path.echo", "잔향"));
-                if (pathTraits.GetPatternEnemy(combatant) != null) markers.Add(new BattleStatusMarker("path.pattern", "패턴 익히기"));
+                int resilience = pathTraits.GetResilienceActionsRemaining(combatant);
+                int focus = pathTraits.GetFocusStacks(combatant);
+                if (pathId == PathCombatTraitRuntime.EmotionalScarPathId && resilience > 0)
+                    markers.Add(new BattleStatusMarker("path.resilience", "회복탄력", resilience));
+                if (pathId == PathCombatTraitRuntime.VisionPathId && focus > 0)
+                    markers.Add(new BattleStatusMarker("path.focus", "집중", focus));
+                if (pathId == PathCombatTraitRuntime.MobilityPathId)
+                    markers.Add(new BattleStatusMarker("path.steady", "굳건한 자리"));
             }
+            if (pathTraits?.HasEcho(combatant) == true) markers.Add(new BattleStatusMarker("path.echo", "잔향"));
+            if (pathTraits?.GetAnyPatternEnemy(combatant) != null) markers.Add(new BattleStatusMarker("path.pattern", "패턴 익히기"));
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
@@ -160,15 +168,17 @@ namespace ProjectLimitless.Battle
                 resourceDetails.Add($"남은 보호 예산: {statusEffects.GetGuardianCoverRemainingBudget(combatant)} / {statusEffects.GetGuardianCoverMaximumBudget(combatant)}");
             if (job != null && job.JobId == "fighter")
                 resourceDetails.Add($"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}");
-            if (pathTraits != null && ReferenceEquals(combatant, pathTraits.Owner))
+            if (pathTraits != null)
             {
-                if (pathTraits.PathId == PathCombatTraitRuntime.VisionPathId && pathTraits.FocusTarget != null)
-                    resourceDetails.Add($"집중 대상: {pathTraits.FocusTarget.DisplayName} · 다음 직접 공격 +{pathTraits.FocusStacks * 3}%");
-                if (pathTraits.PathId == PathCombatTraitRuntime.MobilityPathId)
-                    resourceDetails.Add(pathTraits.Owner.Slot.Row == FormationRow.Front
+                Combatant focusTarget = pathTraits.GetFocusTarget(combatant);
+                int focusStacks = pathTraits.GetFocusStacks(combatant);
+                if (pathId == PathCombatTraitRuntime.VisionPathId && focusTarget != null)
+                    resourceDetails.Add($"집중 대상: {focusTarget.DisplayName} · 다음 직접 공격 +{focusStacks * 3}%");
+                if (pathId == PathCombatTraitRuntime.MobilityPathId)
+                    resourceDetails.Add(combatant.Slot.Row == FormationRow.Front
                         ? "굳건한 자리: 직접 피해 5% 감소" : "굳건한 자리: 직접 피해·치유 5% 증가");
             }
-            Combatant learnedEnemy = pathTraits?.GetPatternEnemy(combatant);
+            Combatant learnedEnemy = pathTraits?.GetAnyPatternEnemy(combatant);
             if (learnedEnemy != null)
                 resourceDetails.Add($"패턴 대상: {learnedEnemy.DisplayName} · 다음 직접 피해 10% 감소 · 받는 직접 치유 10% 증가");
 
@@ -181,7 +191,8 @@ namespace ProjectLimitless.Battle
             }
 
             return new BattleCombatantStatusViewModel(combatant.DisplayName, category,
-                combatant.CurrentHp, combatant.MaxHp, markers, cooldownLines, resourceDetails);
+                combatant.CurrentHp, combatant.MaxHp, markers, cooldownLines, resourceDetails,
+                path?.DisplayName, path?.PassiveName);
         }
     }
 }
