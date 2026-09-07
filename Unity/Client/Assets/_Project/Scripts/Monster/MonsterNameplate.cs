@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using ProjectLimitless.Core;
 
 namespace ProjectLimitless.Monster
 {
@@ -21,6 +22,9 @@ namespace ProjectLimitless.Monster
         private Text nameText;
         private Camera worldCamera;
         private string displayName = FallbackMonsterName;
+        private MonsterDefinition definition;
+        private int shownPlayerLevel = -1;
+        private int shownMonsterLevel = -1;
 
         /// <summary>몬스터가 생성될 때 이름표가 사용할 공용 Overlay Canvas와 전용 Text를 준비합니다.</summary>
         private void Awake()
@@ -45,11 +49,14 @@ namespace ProjectLimitless.Monster
         /// 설치기가 MonsterDefinition을 읽은 직후 호출하여 표시 이름을 전달합니다.
         /// 같은 컴포넌트를 다른 몬스터 종류에 재사용하면 해당 데이터의 DisplayName이 그대로 표시됩니다.
         /// </summary>
-        public void Configure(string monsterDisplayName)
+        public void Configure(MonsterDefinition monster)
         {
+            definition = monster;
+            string monsterDisplayName = monster?.DisplayName;
             string trimmedName = monsterDisplayName?.Trim();
             displayName = string.IsNullOrEmpty(trimmedName) ? FallbackMonsterName : trimmedName;
             RefreshName();
+            RefreshLevel();
         }
 
         /// <summary>
@@ -59,6 +66,7 @@ namespace ProjectLimitless.Monster
         private void LateUpdate()
         {
             if (nameTextRect == null) EnsureOverlayNameplate();
+            RefreshLevel();
             if (worldCamera == null) worldCamera = Camera.main;
             if (worldCamera == null || nameTextRect == null) return;
 
@@ -115,7 +123,7 @@ namespace ProjectLimitless.Monster
             nameText.resizeTextForBestFit = false;
             nameText.horizontalOverflow = HorizontalWrapMode.Overflow;
             nameText.verticalOverflow = VerticalWrapMode.Overflow;
-            nameText.color = Color.white;
+            nameText.color = ExperienceProgression.GetNameColor(LevelDifferenceCategory.Yellow);
             nameText.alignment = TextAnchor.MiddleCenter;
             nameText.raycastTarget = false;
 
@@ -136,10 +144,23 @@ namespace ProjectLimitless.Monster
         {
             if (nameText == null) return;
 
-            nameText.text = displayName;
+            nameText.text = $"Lv.{definition?.MonsterLevel ?? 1} {displayName}";
             nameText.enabled = true;
             nameText.gameObject.SetActive(isActiveAndEnabled);
             nameText.SetAllDirty();
+        }
+
+        private void RefreshLevel()
+        {
+            if (nameText == null) return;
+            int monsterLevel = definition?.MonsterLevel ?? 1;
+            if (shownPlayerLevel == GameSessionData.Level && shownMonsterLevel == monsterLevel) return;
+            shownPlayerLevel = GameSessionData.Level;
+            shownMonsterLevel = monsterLevel;
+            // 색만으로 난도를 전달하지 않도록 실제 몬스터 레벨도 함께 표시합니다.
+            nameText.text = $"Lv.{monsterLevel} {displayName}";
+            nameText.color = ExperienceProgression.GetNameColor(
+                ExperienceProgression.GetCategory(shownPlayerLevel, monsterLevel));
         }
     }
 }

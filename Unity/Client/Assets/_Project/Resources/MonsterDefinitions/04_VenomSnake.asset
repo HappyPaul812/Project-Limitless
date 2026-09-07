@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: 04_VenomSnake
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: venom_snake
+  displayName: 맹독뱀
+  monsterLevel: 4
+  baseExperience: 20
+  maxHp: 95
+  encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fc03, type: 2}
+  fieldMoveSpeed: 0.7
+  minimumIdleTime: 0.8
+  maximumIdleTime: 1.8
+  fieldSprite: {fileID: 0}
+  fieldAnimatorController: {fileID: 0}
+  visualSize: {x: 0.9, y: 0.75}
+  idleSpriteSheet: {fileID: 2800000, guid: 4eebc05f001d494daecb632a39bcfb95, type: 3}
+  idleFrameSize: {x: 32, y: 32}
+  idleColumns: 4
+  idleFrameCount: 4
+  attackSpriteSheet: {fileID: 2800000, guid: 4eebc05f001d494daecb632a39bcfb95, type: 3}
+  attackFrameSize: {x: 32, y: 32}
+  attackColumns: 4
+  attackFrameCount: 4
+  animationFramesPerSecond: 8
+  visualScale: 1
+  sourceFacesRight: 0
+  battleAttackPercent: 160
+  basicAttackPoisonActions: 3
+  basicAttackPoisonCooldownActions: 2
+  basicAttackPoison:
+    id: venom
+    displayName: 맹독
+    damageMode: 0
+    power: 7
+    strength: 7

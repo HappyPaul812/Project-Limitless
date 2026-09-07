@@ -38,7 +38,9 @@
 - FinalConfirmation 확정 직전, Field/마을 SceneTransition 성공 직후, Battle 종료 뒤 Field Player 복구 완료 후 저장합니다.
 - WorldBounds가 있는 마을/Field에서 약 5초마다 실제 위치를 저장하고 Application Pause/Quit 때 가능한 범위에서 한 번 더 저장합니다. 매 프레임 JSON을 쓰지 않습니다.
 - Battle 도중 적 HP·턴·상태이상은 저장하지 않습니다.
-- 향후 레벨업은 `GameSessionData.ConfigureProgress`와 `GameSaveService.SaveCurrentSession` 공용 API를 사용합니다.
+- 승리 EXP 및 레벨업은 `GameSessionData.ConfigureProgress`와 `GameSaveService.SaveCurrentSession` 공용 API를 사용합니다. 현재 슬롯에 Level과 현재 레벨 진행 EXP를 즉시 저장하며 마지막 안전 월드 Scene/좌표는 유지합니다. Battle 중간 상태 저장은 추가하지 않습니다.
+
+`CurrentExperience`는 평생 누적 경험치가 아니라 현재 레벨 진행치입니다. 비용을 뺀 초과 EXP는 이월하며 연속 레벨업을 허용하고 Lv50에서 진행치는 0입니다. 기존 Version 1 필드와 5슬롯 경로는 그대로입니다. 성장 상세는 `문서/08_몬스터/초반_성장과_공용_독.md`를 따릅니다.
 
 ## 오류와 개발 테스트
 

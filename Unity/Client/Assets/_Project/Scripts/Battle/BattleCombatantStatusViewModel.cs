@@ -120,7 +120,8 @@ namespace ProjectLimitless.Battle
             int burnRemaining = statusEffects?.GetBurnRemaining(combatant) ?? 0;
             if (burnRemaining > 0) markers.Add(new BattleStatusMarker("burn", "화상", burnRemaining));
             int poisonRemaining = statusEffects?.GetPoisonRemaining(combatant) ?? 0;
-            if (poisonRemaining > 0) markers.Add(new BattleStatusMarker("poison", "독", poisonRemaining));
+            PoisonDefinition poison = statusEffects?.GetPoisonDefinition(combatant);
+            if (poisonRemaining > 0) markers.Add(new BattleStatusMarker("poison", poison.DisplayName, poisonRemaining));
             // 감전은 대상마다 독립적으로 감전 1만 유지합니다. HUD와 상세 팝업이 같은 Marker를 읽으므로
             // 어느 한쪽만 남는 일이 없고, 행동 종료 시 런타임에서 제거되면 두 화면에서도 함께 사라집니다.
             if (statusEffects?.HasShock(combatant) == true)
@@ -139,7 +140,7 @@ namespace ProjectLimitless.Battle
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
-            if (poisonRemaining > 0) resourceDetails.Add("독: 행동 종료 시 최대 HP 5% 피해");
+            if (poisonRemaining > 0) resourceDetails.Add($"{poison.DisplayName}: 행동 종료 시 최대 HP {poison.Power}% 피해");
             if (ironWallRemaining > 0) resourceDetails.Add($"철벽: 남은 자신의 행동 {ironWallRemaining}회 · 받는 피해 70% 감소");
             if (guardianCoverActive)
                 resourceDetails.Add($"남은 보호 예산: {statusEffects.GetGuardianCoverRemainingBudget(combatant)} / {statusEffects.GetGuardianCoverMaximumBudget(combatant)}");

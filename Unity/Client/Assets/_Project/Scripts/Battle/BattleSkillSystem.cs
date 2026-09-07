@@ -491,6 +491,8 @@ namespace ProjectLimitless.Battle
         private sealed class PoisonState
         {
             public int RemainingActions;
+            public PoisonDefinition Definition;
+            public Combatant Source;
         }
 
         private sealed class GuardianCoverState
@@ -775,15 +777,28 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 독은 여러 묶음을 더하지 않습니다. 이미 독 1/2/3인 대상도 새 독침벌 공격에 맞으면
-        /// Dictionary의 같은 대상 값을 3으로 덮어써 독 4 이상으로 올라가지 않게 합니다.
-        /// 향후 정화는 이 저장소에서 해당 대상의 PoisonState만 제거하면 됩니다.
+        /// 독은 대상별 한 개만 유지합니다. 강한 독을 약한 독으로 덮으면 적중할수록 유리해지는 역효과가
+        /// 생기므로 거부합니다. 같은 강도는 남은 Tick을 갱신하고 강한 독은 종류·위력까지 교체합니다.
         /// </summary>
-        public void ApplyOrRefreshPoison(Combatant target, int affectedActions)
+        public bool ApplyOrRefreshPoison(Combatant target, int affectedActions,
+            PoisonDefinition definition = null, Combatant source = null)
         {
-            if (target == null || !target.IsAlive || affectedActions <= 0) return;
-            poisons[target] = new PoisonState { RemainingActions = affectedActions };
+            if (target == null || !target.IsAlive || affectedActions <= 0) return false;
+            definition ??= new PoisonDefinition();
+            if (definition.DamageMode != PoisonDamageMode.MaxHpPercent) return false;
+            if (poisons.TryGetValue(target, out PoisonState existing) &&
+                existing.Definition.Strength > definition.Strength) return false;
+            if (existing != null && existing.Definition.Strength == definition.Strength)
+                definition = existing.Definition;
+            // Combatant 참조별 저장이므로 같은 몬스터 Asset을 공유해도 독 상태가 서로 섞이지 않습니다.
+            poisons[target] = new PoisonState { RemainingActions = affectedActions, Definition = definition, Source = source };
+            return true;
         }
+
+        public PoisonDefinition GetPoisonDefinition(Combatant target) => HasActivePoison(target)
+            && poisons.TryGetValue(target, out PoisonState state) ? state.Definition : null;
+        public Combatant GetPoisonSource(Combatant target) => HasActivePoison(target)
+            && poisons.TryGetValue(target, out PoisonState state) ? state.Source : null;
 
         public int GetPoisonRemaining(Combatant target) => target != null && target.IsAlive &&
             poisons.TryGetValue(target, out PoisonState poison) ? poison.RemainingActions : 0;
@@ -836,7 +851,7 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 독 피해는 대상의 현재 HP가 아니라 최대 HP의 5%를 올림 계산합니다. long으로 먼저 곱해 큰 HP에서도
+        /// 독 피해는 대상의 현재 HP가 아니라 정의의 최대 HP 비율을 올림 계산합니다. long으로 먼저 곱해 큰 HP에서도
         /// 정수 범위를 넘는 중간 계산을 피하고 최소 1을 보장합니다. 상태 고유 피해이므로 방어·가이아 웰을
         /// 거치지 않고 TakeDamage가 최종 HP를 0 아래로 내리지 않도록 맡깁니다.
         /// </summary>
@@ -844,7 +859,8 @@ namespace ProjectLimitless.Battle
         {
             remainingActions = 0;
             if (!HasActivePoison(target) || !poisons.TryGetValue(target, out PoisonState poison)) return 0;
-            int rawDamage = (int)Math.Max(1L, ((long)Math.Max(1, target.MaxHp) * 5L + 99L) / 100L);
+            int rawDamage = (int)Math.Min(int.MaxValue, Math.Max(1L,
+                ((long)Math.Max(1, target.MaxHp) * poison.Definition.Power + 99L) / 100L));
             int damage = target.TakeDamage(rawDamage, applyDefending: false);
             poison.RemainingActions = Math.Max(0, poison.RemainingActions - 1);
             remainingActions = poison.RemainingActions;

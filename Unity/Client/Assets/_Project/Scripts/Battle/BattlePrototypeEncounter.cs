@@ -93,21 +93,14 @@ namespace ProjectLimitless.Battle
                     TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미")
             };
 
-            bool spiderEncounter = encounteredMonster != null && encounteredMonster.MonsterId == "forest_spider";
+            MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;
+            MonsterDefinition support = leader?.EncounterSupportMonster ?? leader;
             BattleParticipantSetup[] enemies =
             {
-                // 새 Field의 신규 몬스터 전투에는 바로 이전 Field의 최강 일반 몬스터를 함께 둡니다.
-                // Field_02에서는 전열 독침벌 둘이 익숙한 압박을 유지하고, 후열 거미가 광역 공격을 사용해
-                // 수호자의 수호의 맹세와 철벽을 확인하기 좋은 3대3 진형을 만듭니다.
-                CreateMonster(spiderEncounter ? venomBee : slime,
-                    spiderEncounter ? "venom_bee_a" : "grass_slime_a",
-                    spiderEncounter ? "독침벌" : "초원 슬라임", FormationRow.Front, 0, 11),
-                CreateMonster(spiderEncounter ? venomBee : slime,
-                    spiderEncounter ? "venom_bee_b" : "grass_slime_b",
-                    spiderEncounter ? "독침벌" : "초원 슬라임", FormationRow.Front, 1, 10),
-                CreateMonster(spiderEncounter ? encounteredMonster : venomBee,
-                    spiderEncounter ? "forest_spider_1" : "venom_bee_1",
-                    spiderEncounter ? "숲거미" : "독침벌", FormationRow.Rear, 0, 12)
+                // 신규 몬스터의 지원 종류를 데이터로 연결해 다음 Field에서도 이름 분기 없이 확장합니다.
+                CreateMonster(support, $"{support?.MonsterId}_a", "몬스터", FormationRow.Front, 0, 11),
+                CreateMonster(support, $"{support?.MonsterId}_b", "몬스터", FormationRow.Front, 1, 10),
+                CreateMonster(leader, $"{leader?.MonsterId}_1", "몬스터", FormationRow.Rear, 0, 12)
             };
             return new BattleEncounterSetup(allies, enemies);
         }
@@ -124,7 +117,7 @@ namespace ProjectLimitless.Battle
             int attackPercent = monster == null ? 100 : monster.BattleAttackPercent;
             int attack = (int)Math.Max(1L, ((long)SlimeBaseAttack * attackPercent + 99L) / 100L);
             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
-                new FormationSlot(row, column), 55, attack, agility, 0,
+                new FormationSlot(row, column), monster?.MaxHp ?? 60, attack, agility, 0,
                 TargetRangeType.MeleePhysical, false, BattleParticipantVisualType.EncounterMonster,
                 monsterDefinition: monster);
         }

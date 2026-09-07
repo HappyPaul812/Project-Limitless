@@ -19,7 +19,7 @@ namespace ProjectLimitless.Core
         /// <summary>다음 Scene에서 플레이어를 배치할 Spawn Point ID입니다.</summary>
         public static string PendingSpawnPointId { get; private set; } = string.Empty;
 
-        /// <summary>향후 레벨업 시스템이 붙기 전에도 저장 형식을 다시 깨지 않도록 준비한 진행 값입니다.</summary>
+        /// <summary>현재 레벨과 그 레벨 안에서 진행 중인 경험치입니다. 평생 누적 경험치가 아닙니다.</summary>
         public static int Level { get; private set; } = 1;
         public static int CurrentExperience { get; private set; }
 
@@ -52,7 +52,7 @@ namespace ProjectLimitless.Core
         public static void ConfigureProgress(int level, int currentExperience)
         {
             Level = System.Math.Max(1, System.Math.Min(CharacterGrowthCalculator.MaxLevel, level));
-            CurrentExperience = System.Math.Max(0, currentExperience);
+            CurrentExperience = Level == CharacterGrowthCalculator.MaxLevel ? 0 : System.Math.Max(0, currentExperience);
         }
 
         public static void RecordLocation(string sceneId, string spawnPointId)

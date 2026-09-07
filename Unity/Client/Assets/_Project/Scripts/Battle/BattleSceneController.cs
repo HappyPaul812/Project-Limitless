@@ -2142,9 +2142,10 @@ namespace ProjectLimitless.Battle
                     int poisonCooldown = attackerSetup.MonsterDefinition?.BasicAttackPoisonCooldownActions ?? 0;
                     if (poisonActions > 0 && monsterAbilities.CanInflictPoison(actor))
                     {
-                        // 대상이 이미 독이어도 기존 Dictionary 값을 독 3으로 덮어쓰며 중첩 4 이상은 만들지 않습니다.
-                        statusEffects.ApplyOrRefreshPoison(target, poisonActions);
-                        monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
+                        // 강한 독 때문에 부여가 거부되면 성공 쿨타임도 시작하지 않습니다.
+                        if (statusEffects.ApplyOrRefreshPoison(target, poisonActions,
+                            attackerSetup.MonsterDefinition.BasicAttackPoison, actor))
+                            monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
                     }
                 }
                 messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
@@ -2287,6 +2288,7 @@ namespace ProjectLimitless.Battle
                 actionPlaying = true;
                 RefreshCombatantViews(null);
                 if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+                string poisonName = statusEffects.GetPoisonDefinition(completedActor)?.DisplayName ?? "독";
                 StartCoroutine(actionPresenter.PlayPoisonTick(
                     poisonedView.ActionRoot,
                     poisonedView.SpriteImage,
@@ -2296,7 +2298,7 @@ namespace ProjectLimitless.Battle
                     damage =>
                     {
                         int remaining = statusEffects.GetPoisonRemaining(completedActor);
-                        messageText.text = $"{completedActor.DisplayName}의 독 피해 {damage}. 남은 독 {remaining}회.";
+                        messageText.text = $"{completedActor.DisplayName}의 {poisonName} 피해 {damage}. 남은 {poisonName} {remaining}회.";
                         statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
                         RefreshCombatantViews(null);
                     },
@@ -2319,10 +2321,36 @@ namespace ProjectLimitless.Battle
 
         private void EndBattle(string message, bool defeatedEncounteredMonster)
         {
+            if (battleEnded) return;
             battleEnded = true;
             SetCommandButtons(false);
-            messageText.text = message + " 전투 상태를 초기화하고 조우했던 필드로 복귀합니다.";
-            StartCoroutine(ReturnAfterDelay(defeatedEncounteredMonster));
+            if (defeatedEncounteredMonster)
+            {
+                int reward = BattleExperienceReward.Calculate(true, GameSessionData.Level, enemies.Members, participantSetups);
+                ExperienceGain gain = ExperienceProgression.Add(GameSessionData.Level, GameSessionData.CurrentExperience, reward);
+                GameSessionData.ConfigureProgress(gain.Level, gain.CurrentExperience);
+                // 승리가 확정된 뒤 진행 값만 현재 슬롯에 저장합니다. Scene/좌표는 마지막 안전 월드를
+                // 유지하므로 Battle HP·턴·상태이상은 저장하지 않습니다. Field 복귀 저장도 그대로 유지합니다.
+                GameSaveService.SaveCurrentSession();
+                message += $"\n획득 EXP: {reward}";
+                if (gain.LeveledUp) message += $"\n레벨 상승! Lv.{gain.PreviousLevel} → Lv.{gain.Level}";
+                message += gain.Level >= CharacterGrowthCalculator.MaxLevel ? "\n최고 레벨" :
+                    $"\nEXP {gain.CurrentExperience} / {ExperienceProgression.RequiredExp(gain.Level)}";
+                // 읽는 시간을 강요하지 않고 명시적인 입력으로 결과를 닫습니다.
+                Image resultPanel = MakeImage(battleCanvasRect, "VictoryResult", panel);
+                resultPanel.raycastTarget = true;
+                SetRect(resultPanel.rectTransform, Vector2.one * .5f, new Vector2(600, 250));
+                AddOutline(resultPanel.gameObject, gold, 2f);
+                MakeText(resultPanel.transform, "Result", message, battleFont, 20,
+                    new Vector2(.5f, .62f), new Vector2(570, 170));
+                Button returnButton = MakeAuxiliaryButton(resultPanel.transform, "VictoryReturn", "필드로", battleFont,
+                    new Vector2(.5f, .14f), BattleUiIconCatalog.Cancel,
+                    () => BattleSceneFlow.ReturnToField(true));
+                if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(returnButton.gameObject);
+                message = "승리! 결과를 확인한 뒤 필드로 돌아가세요.";
+            }
+            else StartCoroutine(ReturnAfterDelay(false));
+            messageText.text = message;
         }
 
         private IEnumerator ReturnAfterDelay(bool defeatedEncounteredMonster)

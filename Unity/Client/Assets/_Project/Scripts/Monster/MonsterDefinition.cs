@@ -1,11 +1,11 @@
 using UnityEngine;
+using ProjectLimitless.Battle;
 
 namespace ProjectLimitless.Monster
 {
     /// <summary>
     /// 몬스터 한 종류가 필드와 전투에서 공유하는 외형·이동·기본 공격 차이를 보관하는 데이터 Asset입니다.
-    /// HP 같은 Encounter별 수치는 전투 구성에 남기고, 독침벌처럼 종류 자체의 특징인 공격 배율과 독 부여
-    /// 규칙만 이곳에 두어 Field 개체와 Battle 참가자가 같은 몬스터 정의를 재사용하게 합니다.
+    /// 성장·보상·HP와 독 부여 규칙을 Field 개체와 Battle 참가자가 같은 정의에서 읽습니다.
     /// </summary>
     [CreateAssetMenu(fileName = "MonsterDefinition", menuName = "Project Limitless/Monster Definition")]
     public sealed class MonsterDefinition : ScriptableObject
@@ -14,6 +14,12 @@ namespace ProjectLimitless.Monster
         [SerializeField] private string monsterId;
         // 필드 이름표와 향후 전투 UI에 보여 줄 이름입니다.
         [SerializeField] private string displayName;
+        [Header("성장과 보상")]
+        [SerializeField, Min(1)] private int monsterLevel = 1;
+        [SerializeField, Min(0)] private int baseExperience;
+        [SerializeField, Min(1)] private int maxHp = 60;
+        // 조우 주 몬스터 앞에 배치할 직전 단계 몬스터입니다. null이면 같은 종류 세 마리를 사용합니다.
+        [SerializeField] private MonsterDefinition encounterSupportMonster;
         // 필드에서 1초 동안 이동하는 거리입니다.
         [SerializeField, Min(0.1f)] private float fieldMoveSpeed = 0.8f;
         // 목적지에 도착한 뒤 다음 이동을 시작하기 전 최소·최대 대기 시간입니다.
@@ -53,12 +59,18 @@ namespace ProjectLimitless.Monster
         // 독을 정상 부여한 뒤 이 몬스터 자신의 행동 몇 회 동안 다시 부여하지 못하는지 나타냅니다.
         // 독 대상의 지속시간과 별도 데이터라서 정화나 독 자연 종료가 이 값을 바꾸지 않습니다.
         [SerializeField, Min(0)] private int basicAttackPoisonCooldownActions;
+        [SerializeField] private PoisonDefinition basicAttackPoison = new PoisonDefinition();
         [Header("광역 직접 공격")]
         [SerializeField] private string directAreaAttackName;
         [SerializeField, Min(0)] private int directAreaAttackDamage;
 
         public string MonsterId => monsterId;
         public string DisplayName => displayName;
+        public int MonsterLevel => Mathf.Max(1, monsterLevel);
+        public int BaseExperience => Mathf.Max(0, baseExperience);
+        public int MaxHp => Mathf.Max(1, maxHp);
+        public MonsterDefinition EncounterSupportMonster => encounterSupportMonster;
+        public PoisonDefinition BasicAttackPoison => basicAttackPoison;
         public float FieldMoveSpeed => fieldMoveSpeed;
         public float MinimumIdleTime => minimumIdleTime;
         public float MaximumIdleTime => Mathf.Max(minimumIdleTime, maximumIdleTime);

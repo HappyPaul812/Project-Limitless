@@ -21,3 +21,7 @@ MonoBehaviour:
   fieldAnimatorController: {fileID: 9100000, guid: 91dbe642eebf4e80bb43f0e2279d081e, type: 2}
   placeholderColor: {r: 0.35, g: 0.8, b: 0.35, a: 1}
   visualSize: {x: 0.8, y: 0.65}
+  monsterLevel: 1
+  baseExperience: 8
+  maxHp: 60
+  encounterSupportMonster: {fileID: 0}

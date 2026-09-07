@@ -70,7 +70,7 @@ namespace ProjectLimitless.Monster
             monsterObject.transform.position = resolvedPosition;
             monsterObject.GetComponent<CircleCollider2D>().radius = .4f;
             monsterObject.GetComponent<MonsterFieldController>().Configure(spawn, resolvedPosition);
-            monsterObject.AddComponent<MonsterNameplate>().Configure(monster.DisplayName);
+            monsterObject.AddComponent<MonsterNameplate>().Configure(monster);
 
             GameObject visual = new GameObject("Visual");
             // PlaceholderVisual의 Awake보다 먼저 색·크기·이름표를 설정할 수 있도록 준비 중에는 비활성화합니다.

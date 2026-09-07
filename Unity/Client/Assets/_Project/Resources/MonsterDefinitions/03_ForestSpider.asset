@@ -35,3 +35,7 @@ MonoBehaviour:
   basicAttackPoisonCooldownActions: 0
   directAreaAttackName: "\uB3C5\uC561 \uBD84\uC0AC"
   directAreaAttackDamage: 20
+  monsterLevel: 3
+  baseExperience: 16
+  maxHp: 80
+  encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fd30, type: 2}

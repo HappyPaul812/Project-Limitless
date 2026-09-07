@@ -35,3 +35,13 @@ MonoBehaviour:
   battleAttackPercent: 120
   basicAttackPoisonActions: 3
   basicAttackPoisonCooldownActions: 2
+  monsterLevel: 2
+  baseExperience: 12
+  maxHp: 70
+  encounterSupportMonster: {fileID: 11400000, guid: 1d593441524742128470c5d2b2e4c508, type: 2}
+  basicAttackPoison:
+    id: poison
+    displayName: 독
+    damageMode: 0
+    power: 5
+    strength: 5
