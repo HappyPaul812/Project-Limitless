@@ -105,6 +105,61 @@ namespace ProjectLimitless.Battle
 
         private static readonly Dictionary<string, Sprite> Cache = new Dictionary<string, Sprite>();
 
+        private static readonly Dictionary<string, Sprite> SkillButtonCache = new Dictionary<string, Sprite>();
+
+        /// <summary>
+        /// 세 Grid 아이콘은 버튼 전용 고정 Sprite로 만듭니다. 정적 배열에 남은 파괴된 프레임이나
+        /// 첫 로드 실패가 메뉴 재생성까지 전파되지 않도록 살아 있는 Sprite만 재사용합니다.
+        /// 나머지 버튼의 확정 매핑과 기존 상세/상태/VFX 로더는 그대로 유지합니다.
+        /// </summary>
+        public static Sprite LoadSkillButtonIcon(string iconId)
+        {
+            string path;
+            int index;
+            switch (iconId)
+            {
+                case MageFireballSkill:
+                    path = "BattleSkillEffects/WarmExplosion/warm_explosion_sheet";
+                    index = 4;
+                    break;
+                case MageThunderboltSkill:
+                    path = "BattleSkillEffects/ElectricImpact/electric_impact_sheet";
+                    index = 1;
+                    break;
+                case HealerCleanseSkill:
+                    path = "BattleSkillEffects/SpectralBloom/spectral_bloom_sheet";
+                    index = 5;
+                    break;
+                default:
+                    // Wolf처럼 기존 로더에서 만든 런타임 Sprite도 Play 전환 후 파괴될 수 있습니다.
+                    // 정상 항목은 유지하고 무효 캐시만 지워 기존 매핑으로 다시 읽습니다.
+                    if (!string.IsNullOrEmpty(iconId) && Cache.TryGetValue(iconId, out Sprite existing) &&
+                        (existing == null || existing.texture == null)) Cache.Remove(iconId);
+                    return Load(iconId);
+            }
+
+            if (SkillButtonCache.TryGetValue(iconId, out Sprite cached) && cached != null && cached.texture != null)
+                return cached;
+            SkillButtonCache.Remove(iconId);
+
+            Texture2D sheet = Resources.Load<Texture2D>(path);
+            const int cellSize = 96;
+            const int columns = 5;
+            int x = index % columns * cellSize;
+            int y = sheet == null ? -1 : sheet.height - (index / columns + 1) * cellSize;
+            // 실패를 캐시하지 않아 Import가 끝난 뒤 다음 메뉴 생성에서 다시 시도할 수 있습니다.
+            if (sheet == null || y < 0 || x + cellSize > sheet.width) return null;
+
+            Sprite sprite = Sprite.Create(sheet, new Rect(x, y, cellSize, cellSize),
+                Vector2.one * .5f, cellSize, 0, SpriteMeshType.FullRect);
+            if (sprite != null)
+            {
+                sprite.name = $"{iconId}_Button_{index:00}";
+                SkillButtonCache[iconId] = sprite;
+            }
+            return sprite;
+        }
+
         /// <summary>
         /// 역할 식별자에 맞는 Sprite를 한 번만 읽고 재사용합니다.
         /// 에셋이 빠졌거나 Import가 아직 끝나지 않았으면 null을 반환합니다. 호출 쪽은 유니코드 기호를

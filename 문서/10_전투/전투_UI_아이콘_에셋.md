@@ -69,11 +69,43 @@
 
 ## Unity Import와 코드 연결
 
+### 2026-09-07 스킬 버튼 아이콘 수명 수정 및 15개 감사
+
+스킬 메뉴 버튼만 `BattleSkillDefinition.IconId → BattleUiIconCatalog.LoadSkillButtonIcon → MakeSkillMenuButton → SkillIcon Image.sprite`를 사용한다. 상세 팝업·상태 HUD는 기존 `Load`를 유지한다.
+
+파이어 볼·썬더볼트·정화의 기존 로더는 정적 프레임 배열의 Sprite를 정적 카탈로그에 보관했고, null/파괴된 Unity Object도 캐시 적중으로 반환했다. 이 경우 버튼 생성의 `hasIcon`이 false라서 자식 Image가 생성되지 않는다. 반복 Rebuild는 동일한 무효 캐시를 받아 복구되지 않는다. 파괴된 캐시 재현 검증에서 수정 전 실패를 확인했다. 현재 Editor 설정은 Domain Reload 비활성(`m_EnterPlayModeOptionsEnabled: 1`, `m_EnterPlayModeOptions: 1`)이다. 다만 사용자가 관찰한 세션에서 최초 파괴/로드 실패를 일으킨 정확한 이벤트는 확보하지 못했다.
+
+세 버튼은 기존 원본 시트의 지정된 한 프레임만 별도의 버튼 Sprite로 생성·캐시하고, null과 파괴된 Sprite/Texture는 재사용하지 않는다. 다른 버튼은 기존 매핑을 유지하며 무효 캐시만 제거한 뒤 기존 로더를 재호출한다. Play 진입 감사에서 Wolf도 무효 Sprite를 재사용하는 추가 문제가 발견되어 이 복구 경로를 적용했다. 정상 캐시·아이콘 색·크기·배치와 PNG/Import/VFX는 변경하지 않았다.
+
+| 직업 | 스킬 | 감사한 버튼 매핑 | 결과 |
+|---|---|---|---|
+| 수호자 | 도발 | pawn_left.png (현재 코드·문서 확정) | 유지/통과 |
+| 수호자 | 철벽 | structure_wall.png | 유지/통과 |
+| 수호자 | 수호의 맹세 | pawns.png | 유지/통과 |
+| 치유사 | 치유의 빛 | suit_hearts.png (현재 코드·문서 확정) | 유지/통과 |
+| 치유사 | 회복의 파동 | radiant_heal_07 | 유지/통과 |
+| 치유사 | 정화 | Spectral Bloom index 5 | 버튼 전용 캐시/통과 |
+| 사수 | 정조준 | target.png | 유지/통과 |
+| 사수 | 화살비 | bow.png | 유지/통과 |
+| 사수 | 동료의 습격 | Wolf Run index 4 | 무효 캐시 복구/통과 |
+| 투사 | 난도 | cross.png | 유지/통과 |
+| 투사 | 회심의 일격 | skull.png | 유지/통과 |
+| 투사 | 회오리 베기 | spinner.png | 유지/통과 |
+| 마도사 | 파이어 볼 | Warm Explosion index 4 | 버튼 전용 캐시/통과 |
+| 마도사 | 썬더볼트 | Electric Impact index 1 | 버튼 전용 캐시/통과 |
+| 마도사 | 가이아 웰 | dice_shield.png | 유지/통과 |
+
+`BattleSkillButtonIconAudit.RunBatch`로 실제 JobDefinition 5개/스킬 15개를 읽고 실제 버튼 생성 메서드를 호출했다. Edit Mode와 빈 Scene Play Mode 2회에서 각각 3회 버튼 재생성·부모 닫기/열기, Sprite non-null·실제 Image 할당·enabled·activeSelf·alpha > 0 및 정상 캐시 재사용을 통과했다. 세 Grid 버튼의 파괴/null 캐시 복구 후 Image 재할당도 통과했다. 모든 버튼은 새 Image의 기본 enabled=true, focusGold alpha=1을 사용하며 쿨타임 색상은 버튼 배경에만 적용된다. Rebuild는 버튼 GameObject만 파괴하고 Sprite를 null로 초기화하거나 파괴하지 않는다.
+
+위 검증은 전투를 실행하지 않는 격리된 실제 버튼 생성 감사다. 실제 전투 메뉴의 Esc 입력·다음 턴·다음 전투·눈으로 보는 가독성은 별도 수동 확인이 필요하다. 마도사 3개 → 치유사 3개 → 나머지 직업 각 3개를 확인하고 `열기 → Esc → 다시 열기`를 반복한 뒤 다음 턴/새 전투에서 재확인한다. 썬더볼트 버튼은 Electric Impact이며 감전 상태의 power.png는 변경하지 않는다.
+
+Unity 6000.5.7f1 전체 Assembly-CSharp 별도 출력 정적 컴파일 오류 0개, 기존 deprecated API 경고 4개 및 Unity 배치 Editor 컴파일/감사 통과. 실행 로그는 로컬 `Unity/Client/Logs/skill-button-before.log`, `skill-button-after.log`에 있으며 Git에는 포함하지 않는다.
+
 - 필요한 PNG만 각 팩의 `Resources/KenneyBattleIcons/`에 복사한다.
 - Texture Type은 `Sprite (2D and UI)`, Mesh Type은 `Full Rect`, Filter Mode는 `Point`, Compression은 `None`, Max Size는 `512`로 둔다.
 - `BattleUiIconCatalog`가 명령·상태·직업 스킬 역할 ID를 `Resources` 경로와 연결하고 한 번 읽은 Sprite를 재사용한다.
 - 버튼과 HP HUD는 파일명을 직접 쓰지 않고 역할 ID만 요청한다. 향후 그림 교체는 카탈로그 경로와 ThirdParty PNG만 바꾸면 된다.
-- `BattleSkillDefinition.IconId`가 스킬별 역할 ID를 보관하고 스킬 메뉴는 그 값만 `BattleUiIconCatalog.Load`에 전달한다. 따라서 메뉴 코드에는 직업명·스킬명 비교나 PNG 파일명이 없다.
+- `BattleSkillDefinition.IconId`가 스킬별 역할 ID를 보관하고 스킬 메뉴는 그 값만 `BattleUiIconCatalog.LoadSkillButtonIcon`에 전달한다. 따라서 메뉴 코드에는 직업명·스킬명 비교나 PNG 파일명이 없다.
 - 향후 스킬 아이콘은 해당 스킬 정의의 `IconId`와 카탈로그 매핑만 추가하거나 교체하면 된다. 아이콘 데이터는 표시 전용이며 피해·회복·쿨타임·대상 판정에는 관여하지 않는다.
 - Sprite가 누락되면 아이콘 Image만 숨기고 한글 텍스트는 유지한다. 폰트 기호 fallback은 사용하지 않는다.
 

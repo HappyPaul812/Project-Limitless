@@ -2585,7 +2585,7 @@ namespace ProjectLimitless.Battle
             Outline outline = obj.GetComponent<Outline>();
             outline.effectColor = gold;
             outline.effectDistance = new Vector2(1, -1);
-            Sprite iconSprite = BattleUiIconCatalog.Load(iconId);
+            Sprite iconSprite = BattleUiIconCatalog.LoadSkillButtonIcon(iconId);
             bool hasIcon = iconSprite != null;
             if (hasIcon)
             {
