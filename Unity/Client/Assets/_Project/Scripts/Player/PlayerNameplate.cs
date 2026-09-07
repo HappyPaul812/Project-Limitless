@@ -21,6 +21,8 @@ namespace ProjectLimitless.Player
         private Text nameText;
         private Camera worldCamera;
         private bool ownsOverlayCanvas;
+        private string displayedName = string.Empty;
+        private int displayedLevel = -1;
 
         /// <summary>Player가 만들어질 때 월드 크기와 무관한 Screen Space Overlay 이름표를 준비합니다.</summary>
         private void Awake()
@@ -61,6 +63,10 @@ namespace ProjectLimitless.Player
         /// </summary>
         private void LateUpdate()
         {
+            // 전투 보상이나 저장 불러오기가 세션 값을 바꾸면 Scene을 다시 열지 않아도 갱신합니다.
+            // 매 프레임 문자열을 새로 만들지 않고 실제 이름이나 레벨이 달라졌을 때만 Text를 다시 그립니다.
+            RefreshNameIfChanged();
+
             if (nameTextRect == null)
             {
                 EnsureOverlayNameplate();
@@ -153,6 +159,7 @@ namespace ProjectLimitless.Player
             nameTextRect.sizeDelta = new Vector2(240f, 36f);
             nameTextRect.localScale = Vector3.one;
             nameTextRect.SetAsLastSibling();
+            WorldExperienceHud.EnsureOn(overlayCanvasObject);
             RefreshName();
         }
 
@@ -166,16 +173,27 @@ namespace ProjectLimitless.Player
             }
         }
 
-        /// <summary>현재 GameSessionData.PlayerName을 Text에 넣고, 이름이 비었을 때만 기본값을 사용합니다.</summary>
+        /// <summary>현재 저장 슬롯에서 복원된 레벨과 이름을 함께 표시합니다.</summary>
         private void RefreshName()
         {
             if (nameText != null)
             {
-                nameText.text = GetDisplayName();
+                displayedName = GetDisplayName();
+                displayedLevel = GameSessionData.Level;
+                nameText.text = $"Lv.{displayedLevel} {displayedName}";
                 nameText.enabled = true;
                 nameText.gameObject.SetActive(true);
                 nameText.SetAllDirty();
                 Canvas.ForceUpdateCanvases();
+            }
+        }
+
+        /// <summary>같은 Scene 안에서 레벨이 바뀐 경우에만 이름표 문자열을 다시 만듭니다.</summary>
+        private void RefreshNameIfChanged()
+        {
+            if (nameText == null || displayedLevel != GameSessionData.Level || displayedName != GetDisplayName())
+            {
+                RefreshName();
             }
         }
 
