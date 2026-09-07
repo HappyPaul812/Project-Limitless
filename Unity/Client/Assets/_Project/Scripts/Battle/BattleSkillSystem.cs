@@ -875,13 +875,15 @@ namespace ProjectLimitless.Battle
         private readonly BattleSkillCooldowns cooldowns;
         private readonly BattleStatusEffectRuntime statusEffects;
         private readonly BattleFighterResourceRuntime fighterResources;
+        private readonly PathCombatTraitRuntime pathTraits;
 
         public BattleSkillExecutor(BattleSkillCooldowns cooldowns, BattleStatusEffectRuntime statusEffects,
-            BattleFighterResourceRuntime fighterResources)
+            BattleFighterResourceRuntime fighterResources, PathCombatTraitRuntime pathTraits = null)
         {
             this.cooldowns = cooldowns ?? throw new ArgumentNullException(nameof(cooldowns));
             this.statusEffects = statusEffects ?? throw new ArgumentNullException(nameof(statusEffects));
             this.fighterResources = fighterResources ?? throw new ArgumentNullException(nameof(fighterResources));
+            this.pathTraits = pathTraits;
         }
 
         public bool CanUse(Combatant actor, BattleSkillDefinition skill, out string reason)
@@ -941,9 +943,11 @@ namespace ProjectLimitless.Battle
             return statusEffects.ModifyOutgoingDamage(actor, rawDamage);
         }
 
-        private int ApplyDamage(Combatant target, int rawDamage)
+        private int ApplyDamage(Combatant actor, Combatant target, int rawDamage, bool areaAttack = false)
         {
-            return statusEffects.ApplyIncomingDamage(target, rawDamage);
+            return pathTraits == null
+                ? statusEffects.ApplyIncomingDamage(target, rawDamage, BattleDamageOrigin.DirectCombatAction)
+                : pathTraits.ApplyDirectDamage(statusEffects, actor, target, rawDamage, areaAttack);
         }
 
         public bool Execute(Combatant actor, BattleSkillDefinition skill, Formation opponents, out string message)
@@ -998,7 +1002,7 @@ namespace ProjectLimitless.Battle
             // 36으로 안정적으로 정수화하며, Combatant.RecoverHp가 남은 빈 HP보다 많이 채워지지 않게 막습니다.
             int requestedHp = Math.Max(1, (int)Math.Ceiling(target.MaxHp * skill.MaxHpHealRatio));
             actor.SpendMp(skill.MpCost);
-            recoveredHp = target.RecoverHp(requestedHp);
+            recoveredHp = target.RecoverHp(pathTraits?.ModifyDirectHealing(actor, target, requestedHp) ?? requestedHp);
             if (recoveredHp <= 0)
             {
                 message = "회복할 HP가 없습니다.";
@@ -1077,7 +1081,7 @@ namespace ProjectLimitless.Battle
                 // 치유의 빛과 같은 올림 정책입니다. MaxHpHealRatio 자체가 35% × 60%에서 파생되므로
                 // 최대 HP 101이라면 21.21을 올린 22를 요청하고 RecoverHp가 최대 HP를 넘지 않게 막습니다.
                 int requestedHp = Math.Max(1, (int)Math.Ceiling(target.MaxHp * skill.MaxHpHealRatio));
-                results[index] = target.RecoverHp(requestedHp);
+                results[index] = target.RecoverHp(pathTraits?.ModifyDirectHealing(actor, target, requestedHp) ?? requestedHp);
             }
 
             recoveredAmounts = results;
@@ -1108,7 +1112,7 @@ namespace ProjectLimitless.Battle
             // 예: 12×160=1920 → (1920+99)/100=20, 15×160=2400 → 24입니다. float 오차로 24가 25가 되는
             // 일을 피하며, 이후 TakeDamage가 기존 방어 50%를 그대로 적용해 방어 무시 효과도 생기지 않습니다.
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = ApplyDamage(target, rawDamage);
+            damage = ApplyDamage(actor, target, rawDamage);
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
             return true;
@@ -1133,7 +1137,7 @@ namespace ProjectLimitless.Battle
 
             // 일반 공격력의 180%를 소수점 없이 올림합니다. 실제 감소는 기존 Combatant.TakeDamage가 담당합니다.
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = ApplyDamage(target, rawDamage);
+            damage = ApplyDamage(actor, target, rawDamage);
 
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
@@ -1159,7 +1163,7 @@ namespace ProjectLimitless.Battle
             }
 
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = ApplyDamage(target, rawDamage);
+            damage = ApplyDamage(actor, target, rawDamage);
 
             // 즉발 피해로 쓰러진 대상에게는 이후 행동도 없으므로 화상을 남기지 않습니다.
             if (target.IsAlive)
@@ -1191,7 +1195,7 @@ namespace ProjectLimitless.Battle
             }
 
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
-            damage = ApplyDamage(target, rawDamage);
+            damage = ApplyDamage(actor, target, rawDamage);
 
             // 피해가 적용된 뒤에만 기세를 올립니다. AddMomentum은 회오리 베기도 재사용할 수 있지만,
             // 직접 사용 기록은 이 난도 스킬 경로에서만 남겨 두 효과가 같은 기세 3을 만들더라도 구분됩니다.
@@ -1228,7 +1232,7 @@ namespace ProjectLimitless.Battle
             int momentum = Math.Min(BattleFighterResourceRuntime.MaxMomentum, fighterResources.GetMomentum(actor));
             int damagePercent = skill.MomentumDamagePercents[momentum];
             int rawDamage = CalculateOutgoingAttackDamage(actor, damagePercent);
-            damage = ApplyDamage(target, rawDamage);
+            damage = ApplyDamage(actor, target, rawDamage);
             consumedMomentum = fighterResources.ConsumeAllMomentum(actor);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 기세 {momentum}으로 {target.DisplayName}에게 {damage} 피해.";
             return true;
@@ -1268,7 +1272,7 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
+                appliedDamages[index] = ApplyDamage(actor, livingEnemies[index], rawDamage, areaAttack: true);
 
             // 자원은 적에게 붙는 상태가 아니라 공격한 투사 Combatant를 키로 저장합니다. 같은 편에 투사가
             // 여러 명 있어도 서로의 기세가 섞이지 않고, 회심의 일격도 자기 기세만 읽고 소비할 수 있습니다.
@@ -1307,7 +1311,7 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
+                appliedDamages[index] = ApplyDamage(actor, livingEnemies[index], rawDamage, areaAttack: true);
 
             damages = appliedDamages;
             message = $"{actor.DisplayName}의 {skill.DisplayName}! 적 후열 {livingEnemies.Length}명에게 피해.";
@@ -1340,7 +1344,7 @@ namespace ProjectLimitless.Battle
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
             int[] appliedDamages = new int[livingEnemies.Length];
             for (int index = 0; index < livingEnemies.Length; index++)
-                appliedDamages[index] = ApplyDamage(livingEnemies[index], rawDamage);
+                appliedDamages[index] = ApplyDamage(actor, livingEnemies[index], rawDamage, areaAttack: true);
 
             // 피해와 상태 부여를 서로 다른 단계로 처리합니다. 한 대상의 피해 처리 중 일어난 변화가 다음
             // 대상의 감전 등록을 건너뛰게 하지 않으며, 같은 MonsterDefinition을 공유하는 A/B도 실제

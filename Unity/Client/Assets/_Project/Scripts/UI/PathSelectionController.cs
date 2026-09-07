@@ -122,14 +122,14 @@ namespace ProjectLimitless.UI
                 pathBackgrounds[i].color = selected ? selectedColor : normalColor;
                 pathOutlines[i].effectColor = selected ? accentColor : mutedColor;
                 pathOutlines[i].effectDistance = selected ? new Vector2(4f, -4f) : new Vector2(2f, -2f);
-                pathLabels[i].text = selected ? $"{pathDefinitions[i].DisplayName}   ✓ 선택됨\n{FormatBonuses(pathDefinitions[i])}" : $"{pathDefinitions[i].DisplayName}\n{FormatBonuses(pathDefinitions[i])}";
+                pathLabels[i].text = selected ? $"{pathDefinitions[i].DisplayName}   ✓ 선택됨\n{pathDefinitions[i].PassiveName}" : $"{pathDefinitions[i].DisplayName}\n{pathDefinitions[i].PassiveName}";
             }
 
             PlayerPathDefinition definition = pathDefinitions.FirstOrDefault(item => item.Id == selectedPathId) ?? pathDefinitions.FirstOrDefault();
             if (definition == null) return;
             detailName.text = definition.DisplayName;
             detailDescription.text = definition.ShortDescription;
-            detailStats.text = "능력치 미리보기\n" + FormatStatPreview(definition);
+            detailStats.text = "기본 능력치 직접 보너스 없음\n길은 전투 행동에 고유 효과를 더합니다.";
             detailPassive.text = $"고유 능력 · {definition.PassiveName}\n{definition.PassiveDescription}";
             detailKeywords.text = "키워드  " + string.Join(" / ", definition.Keywords);
             detailRecommendedJobs.text = "추천 직업\n" + string.Join(" · ", definition.RecommendedJobs.Select(job => job.DisplayName));
@@ -137,9 +137,6 @@ namespace ProjectLimitless.UI
             PathVisualPreview.Apply(characterPreview, pathVisualPreview, pathSymbolPreview, baseSprite, definition.Id, GameSessionData.SelectedPlayerVisual);
         }
 
-        private static string FormatBonuses(PlayerPathDefinition definition) => string.Join("   ", definition.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
-        private static string FormatStatPreview(PlayerPathDefinition d) => $"체력 {d.GetPreviewStat(CharacterStatType.Health)}   힘 {d.GetPreviewStat(CharacterStatType.Strength)}   민첩 {d.GetPreviewStat(CharacterStatType.Agility)}\n감각 {d.GetPreviewStat(CharacterStatType.Sense)}   지능 {d.GetPreviewStat(CharacterStatType.Intelligence)}   의지 {d.GetPreviewStat(CharacterStatType.Willpower)}";
-        private static string StatName(CharacterStatType stat) => new[] { "체력", "힘", "민첩", "감각", "지능", "의지" }[(int)stat];
 
         private void CreateInterface()
         {

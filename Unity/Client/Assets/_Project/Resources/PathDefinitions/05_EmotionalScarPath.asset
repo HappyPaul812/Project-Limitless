@@ -11,18 +11,14 @@ MonoBehaviour:
   motifDescription: 비장애 / 트라우마
   shortDescription: 마음에 남은 상처와 함께 살아가며 다시 앞으로 나아가는 법을 배운다.
   detailedDescription: 경험 이후의 회복 과정과 대응 능력을 중심으로 성장합니다.
-  statBonuses:
-  - stat: 5
-    amount: 2
-  - stat: 3
-    amount: 1
-  passiveName: 다시 중심을 잡다
-  passiveDescription: 상태이상 회복 후 2턴 동안 같은 종류 상태이상 저항이 25% 증가합니다.
+  statBonuses: []
+  passiveName: 회복탄력
+  passiveDescription: 자신이나 생존 아군의 HP가 처음 50% 이하로 내려가면 발동합니다. 다음 2회 성공 행동 동안 주는 직접 피해와 직접 치유가 10% 증가합니다.
   keywords: [회복, 적응, 지원, 위기 대응]
   recommendedJobs:
-  - id: healer
-    displayName: 치유사
   - id: fighter
     displayName: 투사
+  - id: healer
+    displayName: 치유사
   icon: {fileID: 0}
-  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 상태이상 회복과 연계됩니다.
+  relatedJobInformation: 모든 직업과 조합할 수 있습니다. 투사는 위기 뒤 반격에, 치유사는 회복 행동 강화에 활용하기 좋습니다.

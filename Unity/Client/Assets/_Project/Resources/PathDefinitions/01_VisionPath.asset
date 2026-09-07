@@ -11,13 +11,9 @@ MonoBehaviour:
   motifDescription: 시각장애
   shortDescription: 눈에 보이는 것보다 소리와 기척, 공간의 변화를 읽으며 싸운다.
   detailedDescription: 주변의 기척과 공간 변화를 읽습니다.
-  statBonuses:
-  - stat: 3
-    amount: 2
-  - stat: 2
-    amount: 1
-  passiveName: 기척의 결
-  passiveDescription: 전투 중 처음 받는 공격 피해가 10% 감소합니다.
+  statBonuses: []
+  passiveName: 집중
+  passiveDescription: 같은 적을 단일 직접 공격으로 연속 공격하면 집중이 3중첩까지 쌓이며, 현재 중첩에 따라 해당 공격 피해가 최대 9% 증가합니다.
   keywords: [감지, 반응, 회피, 공간 인식]
   recommendedJobs:
   - id: fighter
@@ -25,4 +21,4 @@ MonoBehaviour:
   - id: sharpshooter
     displayName: 사수
   icon: {fileID: 0}
-  relatedJobInformation: 모든 직업과 조합할 수 있으며 향후 감지 시스템과 연계됩니다.
+  relatedJobInformation: 모든 직업과 조합할 수 있습니다. 투사와 사수는 단일 대상 공격을 이어가기 쉬워 집중을 안정적으로 유지합니다.

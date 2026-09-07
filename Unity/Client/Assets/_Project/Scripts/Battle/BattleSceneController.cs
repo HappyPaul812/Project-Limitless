@@ -95,6 +95,8 @@ namespace ProjectLimitless.Battle
         private Action<Combatant> targetSelectedAction;
         private BattleActionPresenter actionPresenter;
         private BattleSkillExecutor skillExecutor;
+        private PathCombatTraitRuntime pathTraits;
+        private string pendingPathFeedback = string.Empty;
         private Font battleFont;
         private RectTransform battleCanvasRect;
         private Image detailPopup;
@@ -112,8 +114,11 @@ namespace ProjectLimitless.Battle
 
         private void Awake()
         {
-            skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources);
             CreateParticipants();
+            Combatant player = allies.Members.FirstOrDefault(item => item.Id == "player");
+            pathTraits = new PathCombatTraitRuntime(player, GameSessionData.SelectedPlayerPathId, allies.Members);
+            pathTraits.FeedbackOccurred += OnPathFeedbackOccurred;
+            skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources, pathTraits);
             CreateEventSystem();
             CreateInterface();
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
@@ -127,6 +132,12 @@ namespace ProjectLimitless.Battle
         private void OnDestroy()
         {
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
+            if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
+        }
+
+        private void OnPathFeedbackOccurred(string message)
+        {
+            if (!string.IsNullOrWhiteSpace(message)) pendingPathFeedback = message;
         }
 
         /// <summary>
@@ -579,7 +590,7 @@ namespace ProjectLimitless.Battle
             combatantJobs.TryGetValue(combatant, out JobDefinition job);
             participantSetups.TryGetValue(combatant, out BattleParticipantSetup setup);
             BattleCombatantStatusViewModel model = BattleCombatantStatusViewModelFactory.Create(
-                combatant, job, setup, skillCooldowns, fighterResources, statusEffects);
+                combatant, job, setup, skillCooldowns, fighterResources, statusEffects, pathTraits);
             detailCombatant = combatant;
             List<string> detailLines = model.DetailText.Split('\n').ToList();
             // 상단 HUD는 빠른 상태 아이콘만 남기고 정확한 MP는 Hover/Focus 상세 정보에서 확인합니다.
@@ -669,6 +680,7 @@ namespace ProjectLimitless.Battle
             // 수호의 맹세는 수호자가 새 행동을 시작하기 직전에 끝납니다. 사용 행동 종료나 다른 참가자의
             // 차례에는 제거하지 않아 적과 동료가 여러 번 행동해도 약속한 보호 시간을 온전히 보장합니다.
             statusEffects.BeginActorAction(currentActor);
+            pathTraits.BeginActorAction(currentActor);
             UpdateTimeline();
             RefreshCombatantViews(null);
             if (currentActor.IsPlayerControlled)
@@ -2081,9 +2093,8 @@ namespace ProjectLimitless.Battle
             Func<IReadOnlyList<int>> applyImpacts = () => targets.Select(target =>
                 // 독·화상 틱은 상태이상 경로를 사용하지만 독액 분사는 전투 행동이 직접 HP를 깎는 공격입니다.
                 // Origin을 명시해 수호의 맹세가 직접 공격만 보호하고 DoT는 보호하지 않는 경계를 검증합니다.
-                statusEffects.ApplyIncomingDamage(target,
-                    statusEffects.ModifyOutgoingDamage(actor, monster.DirectAreaAttackDamage),
-                    BattleDamageOrigin.DirectCombatAction)).ToArray();
+                pathTraits.ApplyDirectDamage(statusEffects, actor, target,
+                    statusEffects.ModifyOutgoingDamage(actor, monster.DirectAreaAttackDamage), areaAttack: true)).ToArray();
             Action<IReadOnlyList<int>> onImpact = damages =>
             {
                 messageText.text = $"{actor.DisplayName}의 {monster.DirectAreaAttackName}! 생존 아군 전체가 공격받았습니다.";
@@ -2130,7 +2141,7 @@ namespace ProjectLimitless.Battle
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
-            Func<int> applyImpact = () => statusEffects.ApplyIncomingDamage(target,
+            Func<int> applyImpact = () => pathTraits.ApplyDirectDamage(statusEffects, actor, target,
                 statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
             Action<int> onImpact = damage =>
             {
@@ -2237,6 +2248,7 @@ namespace ProjectLimitless.Battle
             // 감전은 공격 여부가 아니라 행동 기회를 약화시키는 상태이므로 방어·회복 행동도 여기서 소비합니다.
             // 피해 계산과 광역 타격이 모두 끝난 다음 제거해야 해당 행동의 모든 주는 피해가 15% 감소합니다.
             statusEffects.CompleteActorAction(completedActor);
+            pathTraits.CompleteActorAction(completedActor);
             statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
             // 독침 대기시간은 독 상태와 달리 공격자인 벌의 행동 종료에만 감소합니다. 다른 참가자 행동에서는
             // completedActor가 다른 Combatant이므로 해당 벌의 Dictionary 값에 접근하지 않습니다.
@@ -2255,7 +2267,8 @@ namespace ProjectLimitless.Battle
                     burnedView.SpriteImage,
                     battleFont,
                     LoadProjectileFrames("BattleProjectiles/Fireball"),
-                    () => statusEffects.ApplyBurnTickAtActionEnd(completedActor, out _),
+                    () => pathTraits.ObserveHealthChange(completedActor,
+                        () => statusEffects.ApplyBurnTickAtActionEnd(completedActor, out _)),
                     damage =>
                     {
                         int remaining = statusEffects.GetBurnRemaining(completedActor);
@@ -2294,7 +2307,8 @@ namespace ProjectLimitless.Battle
                     poisonedView.SpriteImage,
                     battleFont,
                     BattlePoisonVisuals.LoadTickFrames(),
-                    () => statusEffects.ApplyPoisonTickAtActionEnd(completedActor, out _),
+                    () => pathTraits.ObserveHealthChange(completedActor,
+                        () => statusEffects.ApplyPoisonTickAtActionEnd(completedActor, out _)),
                     damage =>
                     {
                         int remaining = statusEffects.GetPoisonRemaining(completedActor);
@@ -2384,11 +2398,17 @@ namespace ProjectLimitless.Battle
                 combatantJobs.TryGetValue(combatant, out JobDefinition statusJob);
                 participantSetups.TryGetValue(combatant, out BattleParticipantSetup statusSetup);
                 BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(
-                    combatant, statusJob, statusSetup, skillCooldowns, fighterResources, statusEffects);
+                    combatant, statusJob, statusSetup, skillCooldowns, fighterResources, statusEffects, pathTraits);
                 RefreshHpRow(combatant, statusModel);
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);
+            if (messageText != null && !string.IsNullOrEmpty(pendingPathFeedback))
+            {
+                messageText.text = string.IsNullOrWhiteSpace(messageText.text)
+                    ? pendingPathFeedback : $"{messageText.text}\n{pendingPathFeedback}";
+                pendingPathFeedback = string.Empty;
+            }
         }
 
         /// <summary>

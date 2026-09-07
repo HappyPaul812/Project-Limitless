@@ -7,7 +7,8 @@ namespace ProjectLimitless.Core
 
         public static int GetFinalStat(PlayerPathDefinition path, JobDefinition job, CharacterStatType stat)
         {
-            int value = path == null ? BaseStatValue : path.GetPreviewStat(stat, BaseStatValue);
+            // 길은 전투 행동 규칙만 제공하며 기본 능력치를 직접 올리지 않습니다.
+            int value = BaseStatValue;
             return job == null ? value : job.ApplyStatBonus(stat, value);
         }
     }

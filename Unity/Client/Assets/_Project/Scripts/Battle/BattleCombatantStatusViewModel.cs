@@ -93,7 +93,7 @@ namespace ProjectLimitless.Battle
     {
         public static BattleCombatantStatusViewModel Create(Combatant combatant, JobDefinition job,
             BattleParticipantSetup setup, BattleSkillCooldowns cooldowns, BattleFighterResourceRuntime fighterResources,
-            BattleStatusEffectRuntime statusEffects)
+            BattleStatusEffectRuntime statusEffects, PathCombatTraitRuntime pathTraits = null)
         {
             if (combatant == null) throw new ArgumentNullException(nameof(combatant));
 
@@ -137,6 +137,20 @@ namespace ProjectLimitless.Battle
             bool guardianCoverActive = statusEffects?.HasGuardianCover(combatant) == true;
             if (guardianCoverActive)
                 markers.Add(new BattleStatusMarker("guardian_cover", BattleSkillCatalog.GuardianOathDisplayName));
+            if (pathTraits != null)
+            {
+                if (ReferenceEquals(combatant, pathTraits.Owner))
+                {
+                    if (pathTraits.PathId == PathCombatTraitRuntime.EmotionalScarPathId && pathTraits.ResilienceActionsRemaining > 0)
+                        markers.Add(new BattleStatusMarker("path.resilience", "회복탄력", pathTraits.ResilienceActionsRemaining));
+                    if (pathTraits.PathId == PathCombatTraitRuntime.VisionPathId && pathTraits.FocusStacks > 0)
+                        markers.Add(new BattleStatusMarker("path.focus", "집중", pathTraits.FocusStacks));
+                    if (pathTraits.PathId == PathCombatTraitRuntime.MobilityPathId)
+                        markers.Add(new BattleStatusMarker("path.steady", "굳건한 자리"));
+                }
+                if (pathTraits.HasEcho(combatant)) markers.Add(new BattleStatusMarker("path.echo", "잔향"));
+                if (pathTraits.GetPatternEnemy(combatant) != null) markers.Add(new BattleStatusMarker("path.pattern", "패턴 익히기"));
+            }
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
@@ -146,6 +160,17 @@ namespace ProjectLimitless.Battle
                 resourceDetails.Add($"남은 보호 예산: {statusEffects.GetGuardianCoverRemainingBudget(combatant)} / {statusEffects.GetGuardianCoverMaximumBudget(combatant)}");
             if (job != null && job.JobId == "fighter")
                 resourceDetails.Add($"기세 {momentum}/{BattleFighterResourceRuntime.MaxMomentum}");
+            if (pathTraits != null && ReferenceEquals(combatant, pathTraits.Owner))
+            {
+                if (pathTraits.PathId == PathCombatTraitRuntime.VisionPathId && pathTraits.FocusTarget != null)
+                    resourceDetails.Add($"집중 대상: {pathTraits.FocusTarget.DisplayName} · 다음 직접 공격 +{pathTraits.FocusStacks * 3}%");
+                if (pathTraits.PathId == PathCombatTraitRuntime.MobilityPathId)
+                    resourceDetails.Add(pathTraits.Owner.Slot.Row == FormationRow.Front
+                        ? "굳건한 자리: 직접 피해 5% 감소" : "굳건한 자리: 직접 피해·치유 5% 증가");
+            }
+            Combatant learnedEnemy = pathTraits?.GetPatternEnemy(combatant);
+            if (learnedEnemy != null)
+                resourceDetails.Add($"패턴 대상: {learnedEnemy.DisplayName} · 다음 직접 피해 10% 감소 · 받는 직접 치유 10% 증가");
 
             List<BattleCooldownStatus> cooldownLines = new List<BattleCooldownStatus>();
             foreach (BattleSkillDefinition skill in BattleSkillCatalog.GetSkills(job).Where(skill => skill.IsImplemented))

@@ -40,7 +40,7 @@ namespace ProjectLimitless.Core
     }
 
     /// <summary>
-    /// 길의 표시 정보와 1차 프로토타입 수치를 UI 코드에서 분리해 보관하는 데이터 에셋입니다.
+    /// 길의 표시 정보와 전투 패시브를 UI 코드에서 분리해 보관하는 데이터 에셋입니다.
     /// 길은 기본 성향과 패시브를, 직업은 전투 방식과 액티브 스킬을 담당하므로 서로 독립적으로 조합됩니다.
     /// 새 길은 이 에셋을 Resources/PathDefinitions에 추가하면 선택 화면에 자동으로 나타납니다.
     /// </summary>
@@ -73,16 +73,10 @@ namespace ProjectLimitless.Core
         public Sprite Icon => icon;
         public string RelatedJobInformation => relatedJobInformation;
 
-        /// <summary>모든 기본값 10에 이 길의 보너스만 더합니다. 현재 길은 능력치를 감소시키지 않습니다.</summary>
+        /// <summary>길은 직접 능력치 보너스를 주지 않으므로 기본값을 그대로 돌려줍니다.</summary>
         public int GetPreviewStat(CharacterStatType stat, int baseValue = 10)
         {
-            int result = baseValue;
-            if (statBonuses == null) return result;
-            foreach (StatBonus bonus in statBonuses)
-            {
-                if (bonus.Stat == stat) result += bonus.Amount;
-            }
-            return result;
+            return baseValue;
         }
     }
 }

@@ -89,7 +89,7 @@ namespace ProjectLimitless.UI
         private void CreateSelection(Transform parent, Font font)
         {
             Image panel = Panel(parent, "SelectionPanel", new Vector2(.49f, .49f), new Vector2(535, 440));
-            string pathBonuses = path == null ? "데이터 없음" : string.Join(" · ", path.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
+            string pathBonuses = path == null ? "데이터 없음" : "직접 보너스 없음";
             string jobBonuses = job == null ? "데이터 없음" : string.Join(" · ", job.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
             string skills = job == null ? "• 데이터 없음" : string.Join("\n", job.StartingSkills.Select(s => $"• {s.SkillName}"));
             bool recommended = path != null && job != null && path.RecommendedJobs.Any(item => item.Id == job.JobId);
@@ -102,7 +102,7 @@ namespace ProjectLimitless.UI
         private void CreateStats(Transform parent, Font font)
         {
             Image panel = Panel(parent, "StatsPanel", new Vector2(.82f, .49f), new Vector2(300, 400)); Heading(panel.transform, font, "최종 능력치", .9f);
-            Text note = MakeText(panel.transform, "Note", "기본 10 + 길 + 직업", font, 15, new Vector2(.5f, .8f), new Vector2(260, 28)); note.color = new Color(.72f, .78f, .88f, 1);
+            Text note = MakeText(panel.transform, "Note", "기본 10 + 직업", font, 15, new Vector2(.5f, .8f), new Vector2(260, 28)); note.color = new Color(.72f, .78f, .88f, 1);
             int V(CharacterStatType stat) => CharacterCreationStatsCalculator.GetFinalStat(path, job, stat);
             Text stats = MakeText(panel.transform, "Stats", $"체력  {V(CharacterStatType.Health)}      힘  {V(CharacterStatType.Strength)}\n\n민첩  {V(CharacterStatType.Agility)}      감각  {V(CharacterStatType.Sense)}\n\n지능  {V(CharacterStatType.Intelligence)}      의지  {V(CharacterStatType.Willpower)}", font, 21, new Vector2(.5f, .49f), new Vector2(270, 210)); stats.fontStyle = FontStyle.Bold;
         }

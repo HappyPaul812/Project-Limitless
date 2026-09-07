@@ -104,11 +104,11 @@ namespace ProjectLimitless.UI
             detailBonuses.text = "능력치 보너스\n" + string.Join(" · ", detail.StatBonuses.Select(bonus => $"{StatName(bonus.Stat)} +{bonus.Amount}"));
             detailPassive.text = $"고유 패시브\n{detail.Passive.PassiveName}\n{GetUiSummary(detail.Passive.PassiveDescription)}";
             detailSkills.text = "시작 스킬\n" + string.Join("\n", detail.StartingSkills.Select(skill => $"• {skill.SkillName}"));
-            detailFinalStats.text = "길 + 직업 최종 능력치\n" + FormatFinalStats(detail);
+            detailFinalStats.text = "직업 적용 최종 능력치\n" + FormatFinalStats(detail);
             detailRecommendation.text = recommendedJobIds.Contains(detail.JobId) ? "[ 현재 길 추천 ]" : string.Empty;
         }
 
-        /// <summary>전투 스탯을 만들지 않고 기본 10 + 길 + 직업 보너스만 캐릭터 생성용으로 계산합니다.</summary>
+        /// <summary>전투 스탯을 만들지 않고 기본 10 + 직업 보너스만 캐릭터 생성용으로 계산합니다.</summary>
         private string FormatFinalStats(JobDefinition job)
         {
             int Value(CharacterStatType stat)
