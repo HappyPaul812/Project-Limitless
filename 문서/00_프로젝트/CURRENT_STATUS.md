@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-07
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `c86e931` (`Feature: 길 전투 특성 구현`)
+- 마지막 기능 관련 commit: `a77c17d` (`Feature: 길 공식 표시와 동료 길 적용`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -12,6 +12,17 @@
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 길 공식 표시와 동료 길 적용
+
+- `PathPresentationResolver`가 PathId로 공식 아이콘·길 이름·특성·추천·설명을 같은 `PlayerPathDefinition`에서 제공한다. PathSelection과 전투 상세가 같은 Resolver를 사용한다.
+- PathSelection을 상단 안내, 가로 5개 카드, 하단 상세 패널과 `이 길을 선택` 버튼 구조로 개편했다. 아이콘·이름·특성·한 줄 추천을 함께 표시하고 선택 시 배경, 굵은 테두리, 1.03배 확대, `✓ 선택됨`을 함께 사용한다.
+- 공식 아이콘 방향은 Heart Shield, Sound Waves, Eye Target, Cog, Mesh Network다. 저장소와 Kenney 압축 원본을 검색했지만 정확한 파일이 없어 다른 의미의 아이콘을 대체 사용하지 않았다. `PlayerPathDefinition.Icon` 슬롯은 유지하며 카드에는 `아이콘 준비 중`을 표시한다. 외부 파일을 사용하지 않아 라이선스 문서는 변경하지 않았다.
+- `BattleParticipantSetup.PathId`를 추가해 플레이어는 저장 PathId, 태온은 지적의 길, 미엘은 마음의 상처를 데이터로 전달한다. 이름 문자열 비교와 추천 강제는 없다.
+- `PathCombatTraitRuntime`은 PathId가 있는 여러 실제 Combatant를 한 전투에서 독립 관리한다. 태온의 패턴 익히기와 미엘의 회복탄력·행동 2회 소비가 플레이어와 동일한 피해·치유 경로에 실제 연결된다.
+- 전투 상세 팝업은 공식 길 아이콘 슬롯과 `길 이름 · 특성 이름`을 고정 정보로 표시하고, 집중·잔향·패턴 등 임시 상태는 기존 상태 영역에 따로 표시한다. Field 이름표 `Lv.n 이름`은 변경하지 않았다.
+- 전체 Assembly-CSharp 응답 파일 별도 컴파일 오류 0개, 기존 deprecated API 경고 4개. 관련 파일 `git diff --check` 통과. 실제 Game View의 5카드 배치와 태온·미엘 패시브 발동, 저장 이어하기는 수동 확인이 남았다.
+- 상세: `문서/02_세계관/Path_시스템.md`, `문서/11_UI/길_선택.md`, `문서/10_전투/전투시스템.md`. 마지막 기능 commit: `a77c17d`.
 
 ## 최근 길 전투 특성 구현
 
