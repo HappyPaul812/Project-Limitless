@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-07
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `5c5a34c` (`Feature: 초반 경험치 성장과 맹독뱀 공용 독 구현`)
+- 마지막 기능 관련 commit: `abd0175` (`Feature: 월드 레벨과 경험치 HUD 구현`)
 - 마지막 오류 수정 commit: `c870aaa` (`Fix: 스킬 선택 버튼 런타임 아이콘 캐시 복구`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -12,6 +12,14 @@
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 월드 레벨·EXP UI 구현
+
+- 기존 Screen Space Overlay `PlayerNameplate`에 현재 슬롯의 Level을 연결해 머리 위에 `Lv.n 이름`을 흰색으로 표시한다. 위치·피벗·Camera 추적은 유지하고 몬스터 난도 색은 적용하지 않는다.
+- 같은 Overlay Canvas 하단 중앙에 `Lv.n 이름`, `EXP 현재 / 필요`, 금색 진행 Bar를 표시하는 얇은 World HUD를 추가했다. 필요 EXP와 만렙은 기존 중앙 성장 API를 사용하며 Lv50은 `MAX LEVEL`과 Bar 100%로 표시한다.
+- 이름·Level·CurrentExperience 값이 실제로 달라졌을 때만 갱신한다. Scene별 Player/Canvas 생명주기와 이름 기반 재사용으로 World 전환 중 중복을 막으며 Battle에는 생성하지 않는다.
+- 격리 Unity 6000.5.7f1 빈 Scene Play Mode에서 Lv1 초기화, Lv3 EXP 20/170 즉시 갱신, 85/170 Bar 50%, Lv50 표시, HUD 단일 생성을 통과했다. 실제 Game View의 배치와 저장 슬롯 이어하기·SceneTransition·정상 전투 복귀는 수동 확인이 남았다.
+- 상세: `문서/11_UI/월드_레벨과_EXP_HUD.md`. 마지막 관련 commit: `abd0175`.
 
 ## 최근 초반 성장과 공용 독 구현
 
