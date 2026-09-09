@@ -10,8 +10,16 @@
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
+- 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 MeloTTS 오프라인 음성 제작 시험
+
+- 공식 MeloTTS `main` commit `209145371cff8fc3bd60d7be902ea69cbdb7965a`, 패키지 0.1.2를 Unity 밖 `F:/study/tts/MeloTTS`에 두고 전용 Conda `melotts` Python 3.9.25 CPU 환경에서 한국어 `KR` 모델을 로드했다. 기존 `py3_12` Python 3.12.0에는 설치하지 않았다.
+- `태초에, 신은 세상을 창조했다.`를 speed 0.85/0.95/1.00으로 각각 44.1kHz·모노·16비트 WAV로 생성했다. 길이는 4.111/3.687/3.603초이며 RMS가 모두 0보다 커 실제 신호가 있다. 시험 WAV와 모델·캐시는 저장소 및 Unity Assets에 넣지 않았다.
+- `Tools/TTS/melotts_batch.py`가 UTF-8 CSV/JSON의 `id,text,speaker,speed`를 읽어 모델 한 번 로드 후 `id.wav`를 만든다. Colab Notebook은 시스템 Python 대신 `uv`의 격리 Python 3.9를 사용하고 Drive mount는 선택 셀로 둔다.
+- Windows에서는 `g2pkk`의 `eunjeon` 빌드가 MSVC 부재로 실패해 전용 KR 환경에 `python-mecab-ko` wheel과 최소 import shim을 사용했다. Notebook JSON·Python 구문·CSV/JSON 입력은 검증했으나 실제 Colab 런타임 실행은 별도 확인이 필요하다. 상세: `문서/00_프로젝트/MeloTTS_오프라인_음성_제작.md`. 마지막 관련 commit: `272b473`.
 
 ## 최근 정식 시작 이야기 구현
 
