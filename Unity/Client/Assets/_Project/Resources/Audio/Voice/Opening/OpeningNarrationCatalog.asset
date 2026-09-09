@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b27dd7a4894a31a17a26f113aa2b99, type: 3}
+  m_Name: OpeningNarrationCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Audio.VoiceClipCatalog
+  entries:
+  - id: opening_001
+    clip: {fileID: 8300000, guid: 898a4dc5497d4cb89e69e12a3b775454, type: 3}
+  - id: opening_002
+    clip: {fileID: 8300000, guid: 6d60a144bd8f4cd4829e46775d17749f, type: 3}
+  - id: opening_003
+    clip: {fileID: 8300000, guid: b160e6e630bd46b1bc0ec62ec4f25a2f, type: 3}
+  - id: opening_004
+    clip: {fileID: 8300000, guid: ab7d8b89bc2a4030845802c462a866d9, type: 3}
+  - id: opening_005
+    clip: {fileID: 8300000, guid: 6ab436724ad54c988981dcc955675a84, type: 3}
+  - id: opening_006
+    clip: {fileID: 8300000, guid: a9a1d71cb4234fe2916222ed673964b9, type: 3}
+  - id: opening_007
+    clip: {fileID: 8300000, guid: d7b78bb93e5a44e2bb6881a5455baf36, type: 3}
+  - id: opening_008
+    clip: {fileID: 8300000, guid: af25648b3a3a4439b06adae3a184669f, type: 3}
+  - id: opening_009
+    clip: {fileID: 8300000, guid: 1bd4e4be00544f36b37abfca1a275ddd, type: 3}
+  - id: opening_010
+    clip: {fileID: 8300000, guid: c14e94ebcb1447279492ae87ff6466af, type: 3}
+  - id: opening_011
+    clip: {fileID: 8300000, guid: 56ea0ef7c1ea4440bff2555168092651, type: 3}
+  - id: opening_012
+    clip: {fileID: 8300000, guid: b6b90e6dfc3241a49333fc34c25a728c, type: 3}
+  - id: opening_013
+    clip: {fileID: 8300000, guid: 32bdcbfa215e41fcad3fb552a2a5857b, type: 3}
+  - id: opening_014
+    clip: {fileID: 8300000, guid: bf47465911e34e25a98f2b7e8eb8be81, type: 3}
+  - id: opening_015
+    clip: {fileID: 8300000, guid: 5f085a66aaa24d5dbd22994323623ef3, type: 3}
+  - id: opening_016
+    clip: {fileID: 8300000, guid: 6223342999d7401b89a9fb8edc7f92b1, type: 3}
+  - id: opening_017
+    clip: {fileID: 8300000, guid: fc6c3fc29e86496cb252ee6c8f30274d, type: 3}
+  - id: opening_018
+    clip: {fileID: 8300000, guid: 1c3c8094ed314d9abe729fd92016d1ae, type: 3}

@@ -17,7 +17,7 @@ MeloTTS는 개발자가 한국어 대사를 WAV로 미리 만드는 외부 제�
 
 ## 로컬 생성
 
-공식 소스와 모델 캐시는 `F:/study/tts/MeloTTS`, 시험 WAV는 `F:/study/tts/MeloTTS/output/limitless`에서 관리한다. 저장소의 `Tools/TTS/melotts_batch.py`는 UTF-8 CSV 또는 JSON을 읽고 모델을 한 번만 로드한 뒤 `id.wav`를 만든다.
+공식 소스와 모델 캐시는 `F:/study/tts/MeloTTS`, 시험 WAV는 `F:/study/tts/MeloTTS/output/limitless`에서 관리한다. 저장소의 `Tools/TTS/melotts_batch.py`는 UTF-8 CSV 또는 JSON을 읽고 모델을 한 번만 로드한 뒤 `id.wav`를 만든다. OpeningIntro 음질 확인 결과는 `intro_test_speed100.wav`를 기준으로 확정했으며, 제작 기준은 MeloTTS `0.1.2`, Python `3.9.25`, language/speaker `KR`, speed `1.00`, CPU다.
 
 CSV 열은 `id,text,speaker,speed`이며 `speaker` 기본값은 `KR`, `speed` 기본값은 `1.0`이다. ID에는 영문·숫자·점·밑줄·하이픈만 허용해 출력 폴더 밖으로 파일이 생성되지 않게 한다.
 
@@ -26,6 +26,12 @@ conda run --no-capture-output -n melotts python Tools/TTS/melotts_batch.py Tools
 ```
 
 JSON은 레코드 배열 또는 `{ "lines": [...] }` 구조를 지원한다. 수백 개 대사도 같은 모델 인스턴스를 재사용하며 각 레코드를 `id.wav`로 출력한다.
+
+OpeningIntro 전체 대사는 `Tools/TTS/opening_narration.csv`에서 관리하고 외부 작업 결과는 `F:/study/tts/MeloTTS/output/limitless/opening`에 생성한다. WAV의 문장·샘플레이트·채널·비트 깊이·무음 여부를 확인한 뒤에만 `Unity/Client/Assets/_Project/Audio/Voice/Opening`으로 복사한다. 현재 18개 파일은 44.1kHz, 모노, 16비트이며 최종 `LIMITLESS` 제목 장면에는 내레이션을 사용하지 않는다.
+
+```powershell
+conda run --no-capture-output -n melotts python Tools/TTS/melotts_batch.py Tools/TTS/opening_narration.csv --output-dir F:/study/tts/MeloTTS/output/limitless/opening --device cpu
+```
 
 ## Google Colab
 

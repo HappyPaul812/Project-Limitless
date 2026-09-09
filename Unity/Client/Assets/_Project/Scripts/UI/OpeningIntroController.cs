@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq;
+using ProjectLimitless.Audio;
 using ProjectLimitless.Core;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,6 +18,8 @@ namespace ProjectLimitless.UI
     public sealed class OpeningIntroController : MonoBehaviour
     {
         private const float FadeSeconds = .8f;
+        private const float NarrationTailSeconds = .5f;
+        private const string NarrationCatalogResourcePath = "Audio/Voice/Opening/OpeningNarrationCatalog";
         private const float CaptionAnchorY = .31f;
         private const float CaptionMaxTextWidth = 820f;
         private const float CaptionHorizontalPadding = 42f;
@@ -27,6 +30,8 @@ namespace ProjectLimitless.UI
         private Image glow;
         private Image glowCore;
         private Image captionShade;
+        private VoiceClipCatalog narrationCatalog;
+        private VoicePlaybackSource voicePlayback;
         private readonly Image[] pathSymbols = new Image[5];
         private static Sprite radialGlowSprite;
         private int slideIndex = -1;
@@ -66,7 +71,10 @@ namespace ProjectLimitless.UI
                 ApplySlide(slide);
                 yield return Fade(0f, 1f);
                 float elapsed = 0f;
-                while (elapsed < slide.Duration && !advanceRequested)
+                // 음성이 긴 문장은 고정 자막 시간 때문에 잘리지 않도록 Clip 길이와 짧은 여유를 우선합니다.
+                // 음성이 없어도 자막만으로 전체 이야기를 이해할 수 있게 기존 최소 시간은 항상 유지합니다.
+                float displaySeconds = Mathf.Max(slide.Duration, voicePlayback.ClipLength + NarrationTailSeconds);
+                while (elapsed < displaySeconds && !advanceRequested)
                 {
                     if (!paused)
                     {
@@ -75,6 +83,7 @@ namespace ProjectLimitless.UI
                     }
                     yield return null;
                 }
+                voicePlayback.Stop();
                 yield return Fade(1f, 0f);
             }
             Finish();
@@ -86,6 +95,10 @@ namespace ProjectLimitless.UI
             narration.fontSize = slide.Visual == OpeningIntroVisual.Title ? 66 : slide.Visual == OpeningIntroVisual.Limit ? 52 : 30;
             narration.fontStyle = slide.Visual == OpeningIntroVisual.Title || slide.Visual == OpeningIntroVisual.Limit ? FontStyle.Bold : FontStyle.Normal;
             UpdateCaptionLayout();
+            AudioClip narrationClip = narrationCatalog != null ? narrationCatalog.Find(slide.VoiceClipId) : null;
+            if (!string.IsNullOrWhiteSpace(slide.VoiceClipId) && narrationClip == null)
+                Debug.LogWarning($"OpeningIntro 음성 참조를 찾지 못했습니다: {slide.VoiceClipId}. 자막과 기존 시간으로 계속 진행합니다.");
+            voicePlayback.Play(narrationClip);
             bool showGlow = slide.Visual == OpeningIntroVisual.Light || slide.Visual == OpeningIntroVisual.Gift || slide.Visual == OpeningIntroVisual.Limit;
             glow.gameObject.SetActive(showGlow);
             glowCore.gameObject.SetActive(showGlow);
@@ -126,13 +139,18 @@ namespace ProjectLimitless.UI
 
         private void RequestAdvance()
         {
-            if (!transitioning && !paused) advanceRequested = true;
+            if (transitioning || paused) return;
+            // 수동 진행은 현재 문장을 즉시 끊어 다음 문장과 음성이 겹치지 않게 합니다.
+            voicePlayback.Stop();
+            advanceRequested = true;
         }
 
         private void TogglePause()
         {
             paused = !paused;
             pauseLabel.text = paused ? "일시정지됨 · P로 계속" : string.Empty;
+            if (paused) voicePlayback.Pause();
+            else voicePlayback.Resume();
         }
 
         private void Finish()
@@ -140,6 +158,7 @@ namespace ProjectLimitless.UI
             if (transitioning) return;
             transitioning = true;
             if (sequence != null) StopCoroutine(sequence);
+            voicePlayback.Stop();
             // Esc/버튼은 이번 재생만 끝냅니다. 체크 설정은 Toggle callback에서만 저장합니다.
             SceneManager.LoadSceneAsync(OpeningIntroLaunchContext.IsReplay ? "Bootstrap" : "CharacterCreation", LoadSceneMode.Single);
         }
@@ -148,6 +167,8 @@ namespace ProjectLimitless.UI
         {
             if (Camera.main == null) { GameObject cameraObject = new GameObject("Main Camera"); cameraObject.tag = "MainCamera"; cameraObject.AddComponent<Camera>().backgroundColor = Color.black; }
             if (EventSystem.current == null) { InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
+            narrationCatalog = Resources.Load<VoiceClipCatalog>(NarrationCatalogResourcePath);
+            voicePlayback = gameObject.AddComponent<VoicePlaybackSource>();
             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             GameObject canvasObject = new GameObject("OpeningIntroCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             canvasObject.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
