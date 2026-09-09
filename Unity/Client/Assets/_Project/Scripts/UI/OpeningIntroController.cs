@@ -17,11 +17,16 @@ namespace ProjectLimitless.UI
     public sealed class OpeningIntroController : MonoBehaviour
     {
         private const float FadeSeconds = .8f;
+        private const float CaptionAnchorY = .31f;
+        private const float CaptionMaxTextWidth = 820f;
+        private const float CaptionHorizontalPadding = 42f;
+        private const float CaptionVerticalPadding = 20f;
         private CanvasGroup content;
         private Text narration;
         private Text pauseLabel;
         private Image glow;
         private Image glowCore;
+        private Image captionShade;
         private readonly Image[] pathSymbols = new Image[5];
         private static Sprite radialGlowSprite;
         private int slideIndex = -1;
@@ -80,6 +85,7 @@ namespace ProjectLimitless.UI
             narration.text = slide.Text;
             narration.fontSize = slide.Visual == OpeningIntroVisual.Title ? 66 : slide.Visual == OpeningIntroVisual.Limit ? 52 : 30;
             narration.fontStyle = slide.Visual == OpeningIntroVisual.Title || slide.Visual == OpeningIntroVisual.Limit ? FontStyle.Bold : FontStyle.Normal;
+            UpdateCaptionLayout();
             bool showGlow = slide.Visual == OpeningIntroVisual.Light || slide.Visual == OpeningIntroVisual.Gift || slide.Visual == OpeningIntroVisual.Limit;
             glow.gameObject.SetActive(showGlow);
             glowCore.gameObject.SetActive(showGlow);
@@ -152,8 +158,8 @@ namespace ProjectLimitless.UI
             Sprite glowSprite = GetRadialGlowSprite();
             glow = MakeImage(content.transform, "AbstractLight", new Color(1f, .72f, .27f, .1f)); glow.sprite = glowSprite; glow.preserveAspect = true; SetRect(glow.rectTransform, new Vector2(.5f, .59f), new Vector2(500, 500));
             glowCore = MakeImage(content.transform, "AbstractLightCore", new Color(1f, .9f, .62f, .16f)); glowCore.sprite = glowSprite; glowCore.preserveAspect = true; SetRect(glowCore.rectTransform, new Vector2(.5f, .59f), new Vector2(220, 220));
-            Image caption = MakeImage(content.transform, "CaptionShade", new Color(.01f, .02f, .04f, .86f)); SetRect(caption.rectTransform, new Vector2(.5f, .36f), new Vector2(1000, 220));
-            narration = MakeText(content.transform, "Narration", string.Empty, font, 30, new Vector2(.5f, .36f), new Vector2(900, 190)); narration.lineSpacing = 1.25f;
+            captionShade = MakeImage(content.transform, "CaptionShade", new Color(.01f, .02f, .04f, .68f)); captionShade.sprite = glowSprite; SetRect(captionShade.rectTransform, new Vector2(.5f, CaptionAnchorY), new Vector2(300, 80));
+            narration = MakeText(content.transform, "Narration", string.Empty, font, 30, new Vector2(.5f, CaptionAnchorY), new Vector2(CaptionMaxTextWidth, 150)); narration.lineSpacing = 1.25f; narration.verticalOverflow = VerticalWrapMode.Overflow;
             string[] order = { "path.emotional-scar", "path.hearing", "path.vision", "path.mobility", "path.intellectual" };
             for (int i = 0; i < order.Length; i++) { pathSymbols[i] = MakeImage(content.transform, $"PathSymbol{i + 1}", Color.clear); pathSymbols[i].sprite = PathPresentationResolver.Find(order[i])?.PathSymbol; pathSymbols[i].preserveAspect = true; SetRect(pathSymbols[i].rectTransform, new Vector2(.27f + i * .115f, .69f), new Vector2(112, 112)); }
             Button skip = MakeButton(canvasObject.transform, "Skip", "건너뛰기", font, new Vector2(.9f, .06f), Finish);
@@ -164,6 +170,17 @@ namespace ProjectLimitless.UI
             pauseLabel = MakeText(canvasObject.transform, "PauseState", string.Empty, font, 18, new Vector2(.5f, .92f), new Vector2(500, 34)); pauseLabel.color = new Color(1f, .82f, .4f, 1f);
             MakeText(canvasObject.transform, "Controls", "클릭 / Enter / Space: 다음   P: 일시정지   Esc: 건너뛰기", font, 14, new Vector2(.5f, .02f), new Vector2(620, 24)).color = new Color(.72f, .78f, .88f, 1f);
             EventSystem.current.SetSelectedGameObject(skip.gameObject);
+        }
+
+        private void UpdateCaptionLayout()
+        {
+            float textWidth = Mathf.Clamp(Mathf.Ceil(narration.preferredWidth), 140f, CaptionMaxTextWidth);
+            narration.rectTransform.sizeDelta = new Vector2(textWidth, 150f);
+            float textHeight = Mathf.Max(narration.fontSize * 1.25f, Mathf.Ceil(narration.preferredHeight));
+            narration.rectTransform.sizeDelta = new Vector2(textWidth, textHeight);
+            captionShade.rectTransform.sizeDelta = new Vector2(
+                textWidth + CaptionHorizontalPadding * 2f,
+                textHeight + CaptionVerticalPadding * 2f);
         }
 
         private static Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor, UnityEngine.Events.UnityAction action) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(170, 44)); obj.GetComponent<Image>().color = new Color(.12f, .32f, .5f, 1f); Button button = obj.GetComponent<Button>(); button.onClick.AddListener(action); MakeText(obj.transform, "Label", $"[ {label} ]", font, 17, Vector2.one * .5f, new Vector2(160, 38)); return button; }
