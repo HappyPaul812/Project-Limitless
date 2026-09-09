@@ -227,7 +227,7 @@ namespace ProjectLimitless.UI
             contentOutline.effectColor = new Color(0.25f, 0.35f, 0.5f, 0.55f);
             contentOutline.effectDistance = new Vector2(2f, -2f);
 
-            Text title = CreateText(canvasObject.transform, "Title", "PROJECT LIMITLESS", font, 44, new Vector2(0.5f, 0.915f), new Vector2(760f, 58f));
+            Text title = CreateText(canvasObject.transform, "Title", "LIMITLESS", font, 44, new Vector2(0.5f, 0.915f), new Vector2(760f, 58f));
             title.color = new Color(0.95f, 0.82f, 0.5f, 1f);
             title.fontStyle = FontStyle.Bold;
             Text subtitle = CreateText(canvasObject.transform, "Subtitle", "캐릭터 생성", font, 25, new Vector2(0.5f, 0.845f), new Vector2(520f, 42f));

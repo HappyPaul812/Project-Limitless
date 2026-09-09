@@ -17,7 +17,9 @@
 
 현재 Scene 흐름은 다음과 같다.
 
-`Bootstrap → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage`
+`Bootstrap → OpeningIntro → CharacterCreation → PathSelection → JobSelection → FinalConfirmation → World_StarterVillage`
+
+`OpeningIntro`는 빈 슬롯의 새 캐릭터에만 나타나며 전역 사용자 설정에서 자동 건너뛰기를 선택하면 CharacterCreation으로 바로 이동한다. 기존 캐릭터 이어하기에는 표시하지 않는다. 플레이어에게 노출하는 공식 게임명은 `LIMITLESS`이고 `Project Limitless`는 저장소·namespace·개발 도구용 내부 명칭으로 유지한다.
 
 `GameSessionData`가 이름, Male/Female 외형, 길 ID, 직업 ID와 Scene 전환용 Spawn ID를 실행 중에 유지한다. 이 세션 객체 자체는 영구 저장 데이터가 아니다.
 

@@ -133,7 +133,7 @@ namespace ProjectLimitless.UI
             canvasObject.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
             Image background = Image(canvasObject.transform, "Background", new Color(.018f, .03f, .06f, 1)); Stretch(background.rectTransform);
-            Text title = Text(canvasObject.transform, "Title", "PROJECT LIMITLESS", font, 36, new Vector2(.5f, .92f), new Vector2(650, 48)); title.color = accentColor; title.fontStyle = FontStyle.Bold;
+            Text title = Text(canvasObject.transform, "Title", "LIMITLESS", font, 36, new Vector2(.5f, .92f), new Vector2(650, 48)); title.color = accentColor; title.fontStyle = FontStyle.Bold;
             Text(canvasObject.transform, "Subtitle", "당신의 직업을 선택하세요", font, 22, new Vector2(.5f, .86f), new Vector2(500, 34));
             CreateSteps(canvasObject.transform, font); CreateSummary(canvasObject.transform, font); CreateCards(canvasObject.transform, font); CreateDetail(canvasObject.transform, font); CreateBottom(canvasObject.transform, font); ConfigureNavigation();
         }

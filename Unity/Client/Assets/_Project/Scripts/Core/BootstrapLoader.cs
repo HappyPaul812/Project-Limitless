@@ -11,11 +11,12 @@ namespace ProjectLimitless.Core
     /// <summary>Bootstrap에서 다섯 캐릭터 슬롯을 독립적으로 조사하고 새 게임 또는 이어하기를 시작합니다.</summary>
     public sealed class BootstrapLoader : MonoBehaviour
     {
-        [SerializeField] private string worldSceneName = "CharacterCreation";
+        [SerializeField] private string characterCreationSceneName = "CharacterCreation";
+        [SerializeField] private string openingIntroSceneName = "OpeningIntro";
         private readonly List<Button> slotButtons = new List<Button>();
         private GameObject startMenuCanvas;
 
-        public void ConfigureStartScene(string sceneName) { worldSceneName = sceneName; }
+        public void ConfigureStartScene(string sceneName) { characterCreationSceneName = sceneName; }
 
         private void Start()
         {
@@ -26,10 +27,16 @@ namespace ProjectLimitless.Core
 
         private void StartNewGame(int slotIndex)
         {
-            // 빈 슬롯을 먼저 선택해 두면 FinalConfirmation과 이후 자동 저장이 해당 파일만 갱신합니다.
+            // Intro보다 먼저 빈 슬롯을 선택해 두면 Scene을 하나 더 거쳐도 FinalConfirmation이 정확한 슬롯에 저장합니다.
             if (!GameSaveService.SelectSlot(slotIndex)) return;
             GameSessionData.Reset();
-            SceneManager.LoadSceneAsync(worldSceneName, LoadSceneMode.Single);
+            if (UserSettingsService.SkipOpeningIntro)
+                SceneManager.LoadSceneAsync(characterCreationSceneName, LoadSceneMode.Single);
+            else
+            {
+                OpeningIntroLaunchContext.BeginNewCharacter();
+                SceneManager.LoadSceneAsync(openingIntroSceneName, LoadSceneMode.Single);
+            }
         }
 
         private void ContinueGame(int slotIndex)
@@ -53,12 +60,15 @@ namespace ProjectLimitless.Core
             canvasObject.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720);
             Stretch(MakeImage(canvasObject.transform, "Background", new Color(.018f, .03f, .06f, 1)).rectTransform);
-            Text title = MakeText(canvasObject.transform, "Title", "PROJECT LIMITLESS", font, 36, new Vector2(.5f, .93f), new Vector2(720, 50)); title.color = new Color(1, .82f, .4f, 1); title.fontStyle = FontStyle.Bold;
+            Text title = MakeText(canvasObject.transform, "Title", "LIMITLESS", font, 36, new Vector2(.5f, .93f), new Vector2(720, 50)); title.color = new Color(1, .82f, .4f, 1); title.fontStyle = FontStyle.Bold;
             MakeText(canvasObject.transform, "Subtitle", "캐릭터 저장 슬롯", font, 20, new Vector2(.5f, .87f), new Vector2(500, 34));
             for (int slot = 1; slot <= GameSaveService.DefaultSaveSlotCount; slot++) CreateSlotRow(canvasObject.transform, font, GameSaveService.InspectSlot(slot), .75f - (slot - 1) * .135f);
+            Button replay = MakeButton(canvasObject.transform, "ReplayOpening", "시작 이야기 다시 보기", font, new Vector2(.17f, .035f), 260);
+            replay.onClick.AddListener(() => { OpeningIntroLaunchContext.BeginReplay(); SceneManager.LoadSceneAsync(openingIntroSceneName, LoadSceneMode.Single); });
+            slotButtons.Add(replay);
             LinkVerticalNavigation();
             if (slotButtons.Count > 0) EventSystem.current.SetSelectedGameObject(slotButtons[0].gameObject);
-            MakeText(canvasObject.transform, "Help", "방향키: 슬롯 이동   Enter / Space: 선택", font, 15, new Vector2(.5f, .035f), new Vector2(760, 26)).color = new Color(.7f, .77f, .86f, 1);
+            MakeText(canvasObject.transform, "Help", "방향키: 이동   Enter / Space: 선택", font, 15, new Vector2(.58f, .035f), new Vector2(620, 26)).color = new Color(.7f, .77f, .86f, 1);
         }
 
         private void CreateSlotRow(Transform parent, Font font, SaveSlotInfo info, float anchorY)

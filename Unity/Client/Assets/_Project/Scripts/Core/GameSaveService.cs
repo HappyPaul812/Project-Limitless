@@ -242,7 +242,7 @@ namespace ProjectLimitless.Core
         private static bool IsNonWorldSaveScene(string sceneId)
         {
             // 생성 중간이나 Battle을 저장하면 미완성 선택·전투 상태까지 복원해야 하므로 자동 저장 시점을 제한합니다.
-            return sceneId == "Bootstrap" || sceneId == "CharacterCreation" || sceneId == "PathSelection" || sceneId == "JobSelection" || sceneId == "FinalConfirmation" || sceneId == "Battle" || sceneId == "SampleScene";
+            return sceneId == "Bootstrap" || sceneId == "OpeningIntro" || sceneId == "CharacterCreation" || sceneId == "PathSelection" || sceneId == "JobSelection" || sceneId == "FinalConfirmation" || sceneId == "Battle" || sceneId == "SampleScene";
         }
     }
 }

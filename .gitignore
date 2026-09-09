@@ -15,6 +15,7 @@ Unity/Client/.codex-ui-compile/
 
 # Unity Editor가 프로젝트 안에 만드는 로컬 캐릭터 저장 파일입니다.
 Unity/Client/UserData/Saves/
+Unity/Client/UserData/Settings/
 
 # Unity generated solution and project files
 *.csproj

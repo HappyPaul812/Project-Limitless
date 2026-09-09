@@ -13,6 +13,16 @@
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
 
+## 최근 정식 시작 이야기 구현
+
+- 플레이어 표시명을 `LIMITLESS`로 확정하고 Bootstrap·CharacterCreation·JobSelection·FinalConfirmation의 기존 제목을 변경했다. 저장소·namespace·Editor 메뉴의 개발명 `Project Limitless`는 유지한다.
+- 빈 슬롯 새 캐릭터 흐름에 `OpeningIntro`를 추가했다. 확정 서사 19개 Slide는 `OpeningIntroSequence` 한 곳에서 문장·시간·연출을 관리하며 Fade, 느린 확대, 추상 빛과 공식 PathSymbol 5개를 사용한다. 클릭·Enter·Space 진행, P 일시정지, Esc·버튼 건너뛰기를 지원하고 중복 종료를 막는다.
+- 슬롯과 분리된 `UserSettingsService`가 `SkipOpeningIntro`를 별도 JSON에 원자적으로 저장한다. 파일 누락·손상·버전 불일치는 false, I/O 실패는 경고 후 계속 진행한다. Esc는 설정을 바꾸지 않는다.
+- Bootstrap에 `시작 이야기 다시 보기`를 추가했다. 설정을 무시하고 재생하며 완료·건너뛰기 뒤 Bootstrap으로 복귀한다. Editor 메뉴 `Project Limitless/Test/Play Opening Intro`도 다시 보기로 안전하게 진입한다.
+- OpeningIntro를 Build Settings와 저장 금지 Scene에 등록했다. 기존 Continue, 선택 슬롯, 캐릭터 생성 이후 흐름과 Path·전투·성장 수치는 변경하지 않았다.
+- 전체 Assembly-CSharp 정적 컴파일 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개. 실제 Play Mode의 자동/수동 진행, 설정 재실행 유지, 새 슬롯·다시 보기 복귀와 화면 배치는 직접 확인해야 한다.
+- 상세: `문서/11_UI/시작_이야기.md`. 마지막 관련 commit은 작업 완료 후 기록한다.
+
 ## 최근 길 공식 표시와 동료 길 적용
 
 - 2026-09-09: `PlayerPathDefinition` 표현 자료를 자체 제작 공식 `PathSymbol`과 Game-icons.net 전투 `TraitIcon`으로 분리했다. 새 청각·시각·지체 심볼과 기존 마음의 상처·지적 심볼로 5개 공식 문장을 완성했으며, 캐릭터 Variant 외형을 공식 문장으로 사용하지 않는다.
