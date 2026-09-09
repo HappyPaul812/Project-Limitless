@@ -57,7 +57,13 @@ namespace ProjectLimitless.Core
         [SerializeField, TextArea] private string passiveDescription;
         [SerializeField] private string[] keywords;
         [SerializeField] private RecommendedJob[] recommendedJobs;
-        [SerializeField] private Sprite icon;
+        // PathSymbol은 길 자체의 정체성을 나타내는 프로젝트 자체 제작 문장입니다. 캐릭터 외형과
+        // 별개로 보관하므로 어떤 외형을 사용하더라도 길 이름과 같은 공식 상징을 계속 쓸 수 있습니다.
+        [SerializeField] private Sprite pathSymbol;
+        // TraitIcon은 전투 중 패시브의 기능과 상태를 빠르게 알아보게 하는 아이콘입니다. 공식 문장과
+        // 한 Icon 필드를 공유하면 화면마다 뜻이 뒤바뀌므로 두 Sprite를 명시적으로 분리합니다.
+        [SerializeField] private Sprite traitIcon;
+        [SerializeField] private string[] traitStatusMarkerIds;
         [SerializeField, TextArea] private string relatedJobInformation;
 
         public string Id => id;
@@ -70,7 +76,9 @@ namespace ProjectLimitless.Core
         public string PassiveDescription => passiveDescription;
         public IReadOnlyList<string> Keywords => keywords;
         public IReadOnlyList<RecommendedJob> RecommendedJobs => recommendedJobs ?? Array.Empty<RecommendedJob>();
-        public Sprite Icon => icon;
+        public Sprite PathSymbol => pathSymbol;
+        public Sprite TraitIcon => traitIcon;
+        public IReadOnlyList<string> TraitStatusMarkerIds => traitStatusMarkerIds ?? Array.Empty<string>();
         public string RelatedJobInformation => relatedJobInformation;
 
         /// <summary>길은 직접 능력치 보너스를 주지 않으므로 기본값을 그대로 돌려줍니다.</summary>

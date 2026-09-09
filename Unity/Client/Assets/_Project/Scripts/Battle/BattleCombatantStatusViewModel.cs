@@ -82,8 +82,10 @@ namespace ProjectLimitless.Battle
             get
             {
                 List<string> lines = new List<string> { $"{Title} · {Category}", $"HP {CurrentHp} / {MaxHp}" };
-                // 공식 길은 고정 정체성이고 아래 Marker는 전투 중 변하는 상태이므로 별도 줄로 구분합니다.
-                if (!string.IsNullOrEmpty(PathName)) lines.Add($"길: {PathName} · {PathTraitName}");
+                // Path는 캐릭터의 고정 정체성이고 Trait은 그 길이 전투에서 발휘하는 기능입니다.
+                // 아래 Marker는 현재 중첩처럼 계속 변하는 상태이므로 각각 별도 줄로 읽히게 합니다.
+                if (!string.IsNullOrEmpty(PathName)) lines.Add($"길: {PathName}");
+                if (!string.IsNullOrEmpty(PathTraitName)) lines.Add($"특성: {PathTraitName}");
                 // 기세는 상세 전용 `현재/최대` 줄이 있으므로 요약용 `기세 n`을 중복해서 넣지 않습니다.
                 // 다른 상태는 기존처럼 같은 표식을 재사용해 HUD와 상세 정보가 어긋나지 않게 합니다.
                 lines.AddRange(Markers.Where(marker => marker.Id != "fighter.momentum").Select(marker => marker.DisplayText));

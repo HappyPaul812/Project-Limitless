@@ -20,5 +20,7 @@ MonoBehaviour:
     displayName: 사수
   - id: mage
     displayName: 마도사
-  icon: {fileID: 21300000, guid: e54a40b325884dfe94b051148ef04d14, type: 3}
+  pathSymbol: {fileID: 21300000, guid: a6e19ddf349142dd87a7ea01c78561f0, type: 3}
+  traitIcon: {fileID: 21300000, guid: e54a40b325884dfe94b051148ef04d14, type: 3}
+  traitStatusMarkerIds: [path.echo]
   relatedJobInformation: 모든 직업과 조합할 수 있습니다. 사수와 마도사는 여러 적 중 잔향이 남은 대상을 골라 공격하기 쉽습니다.

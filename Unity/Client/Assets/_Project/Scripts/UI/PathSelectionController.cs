@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 namespace ProjectLimitless.UI
 {
-    /// <summary>공식 아이콘·이름·특성을 함께 보여 주는 캐릭터 생성 2단계입니다.</summary>
+    /// <summary>길 공식 문장과 전투 특성 아이콘·텍스트를 서로 구분해 보여 주는 캐릭터 생성 2단계입니다.</summary>
     public sealed class PathSelectionController : MonoBehaviour
     {
         private static readonly string[] DisplayOrder =
@@ -37,7 +37,8 @@ namespace ProjectLimitless.UI
         private Text detailDescription;
         private Text detailRecommended;
         private Text notice;
-        private Image detailIcon;
+        private Image detailPathSymbol;
+        private Image detailTraitIcon;
         private Button previousButton;
         private Button chooseButton;
         private string selectedPathId = string.Empty;
@@ -98,8 +99,10 @@ namespace ProjectLimitless.UI
             detailTrait.text = path.PassiveName;
             detailDescription.text = path.PassiveDescription;
             detailRecommended.text = $"[추천: {string.Join(" · ", path.RecommendedJobs.Select(item => item.DisplayName))}]";
-            detailIcon.sprite = path.Icon;
-            detailIcon.color = detailIcon.sprite == null ? Color.clear : Color.white;
+            detailPathSymbol.sprite = path.PathSymbol;
+            detailPathSymbol.color = detailPathSymbol.sprite == null ? Color.clear : Color.white;
+            detailTraitIcon.sprite = path.TraitIcon;
+            detailTraitIcon.color = detailTraitIcon.sprite == null ? Color.clear : Color.white;
         }
 
         private void CreateInterface()
@@ -131,10 +134,11 @@ namespace ProjectLimitless.UI
                 SetRect(cardObject.GetComponent<RectTransform>(), new Vector2(.15f + i * .175f, .64f), new Vector2(190, 190));
                 Button card = cardObject.GetComponent<Button>(); card.targetGraphic = cardObject.GetComponent<Image>(); card.onClick.AddListener(() => SelectPath(captured));
                 Outline outline = cardObject.GetComponent<Outline>();
-                Image icon = MakeImage(cardObject.transform, "OfficialIcon", Color.clear); icon.sprite = path.Icon; icon.color = icon.sprite == null ? Color.clear : Color.white; icon.preserveAspect = true; SetRect(icon.rectTransform, new Vector2(.5f, .73f), new Vector2(66, 66));
-                if (path.Icon == null) { Text todo = MakeText(cardObject.transform, "IconTodo", "아이콘 준비 중", font, 12, new Vector2(.5f, .73f), new Vector2(130, 24)); todo.color = new Color(.65f, .7f, .78f, 1f); }
+                Image symbol = MakeImage(cardObject.transform, "PathSymbol", Color.clear); symbol.sprite = path.PathSymbol; symbol.color = symbol.sprite == null ? Color.clear : Color.white; symbol.preserveAspect = true; SetRect(symbol.rectTransform, new Vector2(.5f, .75f), new Vector2(76, 76));
+                if (path.PathSymbol == null) { Text todo = MakeText(cardObject.transform, "SymbolTodo", "공식 심볼 준비 중", font, 11, new Vector2(.5f, .75f), new Vector2(140, 22)); todo.color = new Color(.65f, .7f, .78f, 1f); }
                 Text name = MakeText(cardObject.transform, "PathName", path.DisplayName, font, 20, new Vector2(.5f, .45f), new Vector2(170, 28)); name.fontStyle = FontStyle.Bold;
-                Text trait = MakeText(cardObject.transform, "Trait", path.PassiveName, font, 16, new Vector2(.5f, .29f), new Vector2(170, 24)); trait.color = new Color(.82f, .88f, .96f, 1f);
+                Image traitIcon = MakeImage(cardObject.transform, "TraitIcon", Color.clear); traitIcon.sprite = path.TraitIcon; traitIcon.color = traitIcon.sprite == null ? Color.clear : Color.white; traitIcon.preserveAspect = true; SetRect(traitIcon.rectTransform, new Vector2(.29f, .29f), new Vector2(24, 24));
+                Text trait = MakeText(cardObject.transform, "Trait", path.PassiveName, font, 16, new Vector2(.57f, .29f), new Vector2(105, 24)); trait.color = new Color(.82f, .88f, .96f, 1f);
                 Text recommended = MakeText(cardObject.transform, "Recommended", $"[추천: {string.Join(" · ", path.RecommendedJobs.Select(item => item.DisplayName))}]", font, 13, new Vector2(.5f, .13f), new Vector2(180, 24)); recommended.color = new Color(1f, .84f, .46f, 1f);
                 Text check = MakeText(cardObject.transform, "Selected", string.Empty, font, 13, new Vector2(.5f, .025f), new Vector2(160, 20)); check.fontStyle = FontStyle.Bold;
                 cards.Add(card); cardOutlines.Add(outline); cardChecks.Add(check); controls.Add(card);
@@ -144,9 +148,10 @@ namespace ProjectLimitless.UI
         private void CreateDetail(Transform parent, Font font)
         {
             Image panel = MakeImage(parent, "PathDetailPanel", new Color(.05f, .075f, .12f, .98f)); SetRect(panel.rectTransform, new Vector2(.5f, .285f), new Vector2(1040, 210)); AddOutline(panel.gameObject, gold, 2);
-            detailIcon = MakeImage(panel.transform, "OfficialIcon", Color.clear); detailIcon.preserveAspect = true; SetRect(detailIcon.rectTransform, new Vector2(.1f, .55f), new Vector2(110, 110));
+            detailPathSymbol = MakeImage(panel.transform, "PathSymbol", Color.clear); detailPathSymbol.preserveAspect = true; SetRect(detailPathSymbol.rectTransform, new Vector2(.1f, .55f), new Vector2(110, 110));
             detailName = MakeText(panel.transform, "PathName", string.Empty, font, 27, new Vector2(.27f, .72f), new Vector2(260, 38)); detailName.color = gold; detailName.fontStyle = FontStyle.Bold;
-            detailTrait = MakeText(panel.transform, "TraitName", string.Empty, font, 21, new Vector2(.27f, .48f), new Vector2(260, 32)); detailTrait.fontStyle = FontStyle.Bold;
+            detailTraitIcon = MakeImage(panel.transform, "TraitIcon", Color.clear); detailTraitIcon.preserveAspect = true; SetRect(detailTraitIcon.rectTransform, new Vector2(.205f, .48f), new Vector2(30, 30));
+            detailTrait = MakeText(panel.transform, "TraitName", string.Empty, font, 21, new Vector2(.31f, .48f), new Vector2(210, 32)); detailTrait.fontStyle = FontStyle.Bold;
             detailRecommended = MakeText(panel.transform, "Recommended", string.Empty, font, 16, new Vector2(.27f, .24f), new Vector2(290, 28)); detailRecommended.color = new Color(1f, .84f, .46f, 1f);
             detailDescription = MakeText(panel.transform, "Description", string.Empty, font, 17, new Vector2(.68f, .61f), new Vector2(560, 90)); detailDescription.alignment = TextAnchor.MiddleLeft;
             Text guide = MakeText(panel.transform, "Guide", "추천은 시너지 안내이며 모든 직업을 자유롭게 선택할 수 있습니다.", font, 14, new Vector2(.68f, .23f), new Vector2(560, 28)); guide.color = new Color(.72f, .8f, .9f, 1f);

@@ -20,5 +20,7 @@ MonoBehaviour:
     displayName: 투사
   - id: healer
     displayName: 치유사
-  icon: {fileID: 21300000, guid: ecc84d2dd627400cb76d063c617fff46, type: 3}
+  pathSymbol: {fileID: 21300000, guid: f4eabf7b484442698c961bbd8fe7d252, type: 3}
+  traitIcon: {fileID: 21300000, guid: ecc84d2dd627400cb76d063c617fff46, type: 3}
+  traitStatusMarkerIds: [path.resilience]
   relatedJobInformation: 모든 직업과 조합할 수 있습니다. 투사는 위기 뒤 반격에, 치유사는 회복 행동 강화에 활용하기 좋습니다.

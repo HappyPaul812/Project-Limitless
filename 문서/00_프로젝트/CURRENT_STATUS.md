@@ -15,17 +15,20 @@
 
 ## 최근 길 공식 표시와 동료 길 적용
 
-- 2026-09-09: Game-icons.net 공식 아이콘 5종의 White/Black PNG 총 10개와 동일 라이선스 한 부만 가져왔다. `PlayerPathDefinition.Icon`에 White `heart-shield`, `sound-waves`, `eye-target`, `cog`, `mesh-network`를 연결해 공통 Resolver를 사용하는 선택 카드·큰 상세·플레이어/태온/미엘 전투 상세에 제공한다. 짙은 남색 UI에 맞춰 White를 기본으로 선택했다.
+- 2026-09-09: `PlayerPathDefinition` 표현 자료를 자체 제작 공식 `PathSymbol`과 Game-icons.net 전투 `TraitIcon`으로 분리했다. 새 청각·시각·지체 심볼과 기존 마음의 상처·지적 심볼로 5개 공식 문장을 완성했으며, 캐릭터 Variant 외형을 공식 문장으로 사용하지 않는다.
+- PathSelection 카드와 상세는 큰 PathSymbol·길 이름·작은 TraitIcon·특성 이름·추천 순서로 표시한다. 전투 상세는 두 아이콘과 두 이름을 분리하고, HUD의 `path.*` 상태는 TraitIcon과 한글 상태명을 함께 표시한다. 플레이어와 태온(지적/패턴 익히기), 미엘(마음의 상처/회복탄력)은 같은 Resolver를 사용한다.
+- SaveData는 기존 PathId만 유지한다. `traitStatusMarkerIds`로 런타임 상태와 TraitIcon을 연결하며 Sprite 누락 시 Image만 숨기고 텍스트는 유지한다. Path 전투 수치와 NPC Runtime은 변경하지 않았다.
+- 새 자체 제작 원본 3개는 `Assets/_Project/Art/Characters/PathVisuals/Symbols/`, 기존 2개는 원래 위치를 유지한다. Game-icons.net White/Black 10개와 라이선스도 원본 그대로 유지한다.
 - 위치: `Assets/ThirdParty/GameIconsNet/Path/{White,Black}/`, 라이선스: `Assets/ThirdParty/GameIconsNet/license.txt`. 저작자·정확한 압축 내부 경로는 `외부에셋.md` 참조. 원본 PNG 10개 및 두 압축 라이선스의 SHA256 일치, 5개 Sprite GUID 연결을 확인했다. Sprite/Single·Bilinear·무압축·Alpha·비율 유지와 기존 Null 방어를 확인했다.
-- 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개. 실제 Unity Import/Play Mode는 실행하지 않았다. 사용자 변경 영역의 기존 trailing whitespace 때문에 저장소 전체 diff 검사는 실패하며 이번 작업 staged diff 검사는 통과했다. C#·NPC Path Runtime·전투 효과는 변경하지 않았다. 마지막 기능 commit: `4027d2a`.
-- 다음 확인: Bootstrap 새 캐릭터 → PathSelection 카드 5개와 선택별 큰 아이콘 → 임의 직업 → Battle 플레이어 상세 → 태온(수호자/지적의 길/Mesh Network/패턴 익히기) → 미엘(치유사/마음의 상처/Heart Shield/회복탄력). 재진입과 Console 오류, 임시 상태 아이콘 분리도 확인한다.
+- 새 PNG 3개가 다운로드 원본과 SHA256 일치하며 5개 PathSymbol·5개 TraitIcon GUID가 각각 한 Sprite `.meta`로 해석됨을 확인했다. 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개이며 관련 diff 검사를 통과했다. 실제 Unity Play Mode의 다섯 카드, 상세, HUD는 수동 확인한다.
+- 다음 확인: Bootstrap 새 캐릭터 → PathSelection의 서로 다른 공식 심볼 5개와 작은 TraitIcon → 임의 직업 → Battle 플레이어 상세 → 태온(수호자/지적/Companion Emblem/Mesh Network) → 미엘(치유사/마음의 상처/Heart/Heart Shield) → 런타임 상태 TraitIcon과 Console 오류.
 
-- `PathPresentationResolver`가 PathId로 공식 아이콘·길 이름·특성·추천·설명을 같은 `PlayerPathDefinition`에서 제공한다. PathSelection과 전투 상세가 같은 Resolver를 사용한다.
+- `PathPresentationResolver`가 PathId로 공식 PathSymbol·길 이름·TraitIcon·특성·추천·설명을 같은 `PlayerPathDefinition`에서 제공한다. PathSelection과 전투 상세가 같은 Resolver를 사용한다.
 - PathSelection을 상단 안내, 가로 5개 카드, 하단 상세 패널과 `이 길을 선택` 버튼 구조로 개편했다. 아이콘·이름·특성·한 줄 추천을 함께 표시하고 선택 시 배경, 굵은 테두리, 1.03배 확대, `✓ 선택됨`을 함께 사용한다.
-- 공식 아이콘은 Heart Shield, Sound Waves, Eye Target, Cog, Mesh Network다. 이전 슬롯 준비 단계에서 실제 White Sprite 연결을 완료했으며 누락 시 `아이콘 준비 중` 방어는 유지한다.
+- 공식 PathSymbol은 자체 제작 5종이며 Heart Shield, Sound Waves, Eye Target, Cog, Mesh Network는 White 기본의 TraitIcon이다. 누락 시 텍스트를 유지하는 방어도 유지한다.
 - `BattleParticipantSetup.PathId`를 추가해 플레이어는 저장 PathId, 태온은 지적의 길, 미엘은 마음의 상처를 데이터로 전달한다. 이름 문자열 비교와 추천 강제는 없다.
 - `PathCombatTraitRuntime`은 PathId가 있는 여러 실제 Combatant를 한 전투에서 독립 관리한다. 태온의 패턴 익히기와 미엘의 회복탄력·행동 2회 소비가 플레이어와 동일한 피해·치유 경로에 실제 연결된다.
-- 전투 상세 팝업은 공식 길 아이콘 슬롯과 `길 이름 · 특성 이름`을 고정 정보로 표시하고, 집중·잔향·패턴 등 임시 상태는 기존 상태 영역에 따로 표시한다. Field 이름표 `Lv.n 이름`은 변경하지 않았다.
+- 전투 상세 팝업은 PathSymbol·길 이름과 TraitIcon·특성 이름을 분리하고, 집중·잔향·패턴 등 임시 상태는 TraitIcon을 쓰는 기존 상태 영역에 따로 표시한다. Field 이름표 `Lv.n 이름`은 변경하지 않았다.
 - 전체 Assembly-CSharp 응답 파일 별도 컴파일 오류 0개, 기존 deprecated API 경고 4개. 관련 파일 `git diff --check` 통과. 실제 Game View의 5카드 배치와 태온·미엘 패시브 발동, 저장 이어하기는 수동 확인이 남았다.
 - 상세: `문서/02_세계관/Path_시스템.md`, `문서/11_UI/길_선택.md`, `문서/10_전투/전투시스템.md`. 마지막 기능 commit: `a77c17d`.
 

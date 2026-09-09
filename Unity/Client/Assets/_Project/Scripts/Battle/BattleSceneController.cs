@@ -102,6 +102,7 @@ namespace ProjectLimitless.Battle
         private Image detailPopup;
         private Text detailPopupText;
         private Image detailPathIcon;
+        private Image detailTraitIcon;
         private Image skillDetailPopup;
         private Image skillDetailIcon;
         private Text skillDetailText;
@@ -513,9 +514,12 @@ namespace ProjectLimitless.Battle
                 new Vector2(.44f, .5f), new Vector2(238, 118));
             detailPopupText.alignment = TextAnchor.MiddleLeft;
             detailPopupText.lineSpacing = 1.15f;
-            detailPathIcon = MakeImage(detailPopup.transform, "PathOfficialIcon", Color.clear);
-            SetRect(detailPathIcon.rectTransform, new Vector2(.84f, .8f), new Vector2(38, 38));
+            detailPathIcon = MakeImage(detailPopup.transform, "PathSymbol", Color.clear);
+            SetRect(detailPathIcon.rectTransform, new Vector2(.84f, .82f), new Vector2(42, 42));
             detailPathIcon.preserveAspect = true;
+            detailTraitIcon = MakeImage(detailPopup.transform, "TraitIcon", Color.clear);
+            SetRect(detailTraitIcon.rectTransform, new Vector2(.84f, .52f), new Vector2(30, 30));
+            detailTraitIcon.preserveAspect = true;
             detailPopup.gameObject.SetActive(false);
         }
 
@@ -606,8 +610,15 @@ namespace ProjectLimitless.Battle
             detailPopupText.text = detailText;
             if (detailPathIcon != null)
             {
-                detailPathIcon.sprite = path?.Icon;
+                // 큰 공식 문장은 캐릭터의 고정 Path 정체성을, 작은 아이콘은 전투 특성을 나타냅니다.
+                // 전투 중 변하는 Marker와 고정 Path 정보가 같은 그림을 공유하지 않도록 분리합니다.
+                detailPathIcon.sprite = path?.PathSymbol;
                 detailPathIcon.color = detailPathIcon.sprite == null ? Color.clear : Color.white;
+            }
+            if (detailTraitIcon != null)
+            {
+                detailTraitIcon.sprite = path?.TraitIcon;
+                detailTraitIcon.color = detailTraitIcon.sprite == null ? Color.clear : Color.white;
             }
             int lineCount = detailLines.Count;
             detailPopup.rectTransform.sizeDelta = new Vector2(310, Mathf.Max(116, 34 + lineCount * 23));
@@ -2493,8 +2504,8 @@ namespace ProjectLimitless.Battle
             row.FallenStatus.gameObject.SetActive(false);
             // HUD는 전투 값을 변경하지 않고 읽기 전용 ViewModel의 결과에 Sprite와 짧은 글자를 붙입니다.
             // 아이콘만으로 뜻을 전달하지 않도록 한글을 함께 두며, 상세 팝업은 기존 텍스트 중심 설명을 유지합니다.
-            List<(string IconId, string Label)> summaries = new List<(string, string)>();
-            if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, "행동 중"));
+            List<(string IconId, Sprite DirectIcon, string Label)> summaries = new List<(string, Sprite, string)>();
+            if (combatant == currentActor) summaries.Add((BattleUiIconCatalog.Acting, null, "행동 중"));
             foreach (BattleStatusMarker marker in statusModel.Markers)
             {
                 string iconId = marker.Id == "defend" ? BattleUiIconCatalog.Defend
@@ -2506,12 +2517,17 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "gaia" ? BattleUiIconCatalog.GaiaWall
                     : marker.Id == "iron_wall" ? BattleUiIconCatalog.IronWall
                     : marker.Id == "guardian_cover" ? BattleUiIconCatalog.GuardianCover : null;
-                summaries.Add((iconId, marker.DisplayText));
+                // path.* 상태에는 Game-icons.net TraitIcon을 사용합니다. 아이콘이 없어도 한글 상태명은 남아
+                // 색상이나 그림만으로 전투 정보를 판단하지 않게 합니다.
+                Sprite traitIcon = marker.Id.StartsWith("path.", StringComparison.Ordinal)
+                    ? PathPresentationResolver.FindTraitIcon(marker.Id) : null;
+                summaries.Add((iconId, traitIcon, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.
             // Sprite 파일이 빠진 경우 RefreshStatusBadges가 아이콘만 숨기고 같은 재사용 텍스트를 유지합니다.
             summaries.AddRange(statusModel.Cooldowns.Select(cooldown =>
-                (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns), cooldown.DisplayText)));
+                (BattleUiIconCatalog.GetCooldownIconId(cooldown.RemainingTurns, cooldown.TotalTurns),
+                    (Sprite)null, cooldown.DisplayText)));
             RefreshStatusBadges(row, summaries);
         }
 
@@ -2519,7 +2535,7 @@ namespace ProjectLimitless.Battle
         /// 상태 자료와 미리 만든 배지 자리를 순서대로 연결합니다. Sprite가 없으면 해당 Image만 숨기고
         /// 텍스트 폭을 넓혀 표시하므로, 외부 에셋 누락이 전투 입력이나 상태 판정에 영향을 주지 않습니다.
         /// </summary>
-        private void RefreshStatusBadges(CombatantHpRow row, IReadOnlyList<(string IconId, string Label)> summaries)
+        private void RefreshStatusBadges(CombatantHpRow row, IReadOnlyList<(string IconId, Sprite DirectIcon, string Label)> summaries)
         {
             for (int index = 0; index < row.StatusBadges.Count; index++)
             {
@@ -2530,8 +2546,8 @@ namespace ProjectLimitless.Battle
                     continue;
                 }
 
-                (string iconId, string label) = summaries[index];
-                Sprite sprite = BattleUiIconCatalog.Load(iconId);
+                (string iconId, Sprite directIcon, string label) = summaries[index];
+                Sprite sprite = directIcon != null ? directIcon : BattleUiIconCatalog.Load(iconId);
                 badge.Icon.sprite = sprite;
                 badge.Icon.gameObject.SetActive(sprite != null);
                 badge.Label.text = label;

@@ -8,7 +8,10 @@ namespace ProjectLimitless.Player
     {
         private PlayerVisualController baseVisual;
         private PlayerPathVisualDefinition definition;
-        public Sprite SymbolSprite => definition?.SymbolSprite;
+        private string currentPathId;
+        // 외형 Definition의 심볼 슬롯은 이전 구조와의 호환을 위해 남아 있지만, 공식 문장은 모든 길이
+        // 공통으로 사용하는 PlayerPathDefinition에서 찾습니다. 이로써 캐릭터 외형과 Path 정체성이 분리됩니다.
+        public Sprite SymbolSprite => PathPresentationResolver.Find(currentPathId)?.PathSymbol;
 
         private void Awake()
         {
@@ -19,6 +22,7 @@ namespace ProjectLimitless.Player
         public void Apply(string pathId)
         {
             baseVisual.ResetPathVariant();
+            currentPathId = pathId;
             definition = PathVisualCatalog.Find(pathId);
             if (definition != null && (definition.VisualMode == PathVisualMode.CharacterVariant || definition.VisualMode == PathVisualMode.WheelchairVariant))
             {
