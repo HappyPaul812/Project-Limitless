@@ -12,21 +12,34 @@ namespace ProjectLimitless.Audio
         private AudioSource source;
 
         public float ClipLength => source != null && source.clip != null ? source.clip.length : 0f;
+        public AudioClip Clip => source != null ? source.clip : null;
+        public bool IsPlaying => source != null && source.isPlaying;
+        public bool IsAudible => source != null && source.enabled && source.gameObject.activeInHierarchy
+            && !source.mute && source.volume > 0f && Mathf.Approximately(source.spatialBlend, 0f);
 
         private void Awake()
         {
             source = gameObject.AddComponent<AudioSource>();
+            source.enabled = true;
             source.playOnAwake = false;
             source.loop = false;
+            source.volume = 1f;
+            source.mute = false;
             source.spatialBlend = 0f;
+            // 아직 Voice AudioMixer가 없으므로 음소거된 Group에 잘못 연결될 가능성을 없앱니다.
+            // 향후 음성 음량 설정을 만들 때 이 한 지점만 Voice Group으로 교체하면 됩니다.
+            source.outputAudioMixerGroup = null;
         }
 
-        public void Play(AudioClip clip)
+        public bool Play(AudioClip clip)
         {
             // 다음 대사 전에 이전 음성을 멈춰 두 문장이 겹치지 않게 합니다.
             Stop();
             source.clip = clip;
-            if (clip != null) source.Play();
+            if (clip == null) return false;
+
+            source.Play();
+            return source.isPlaying;
         }
 
         public void Pause()

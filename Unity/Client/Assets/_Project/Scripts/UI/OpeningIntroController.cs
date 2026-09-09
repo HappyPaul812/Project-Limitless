@@ -98,7 +98,9 @@ namespace ProjectLimitless.UI
             AudioClip narrationClip = narrationCatalog != null ? narrationCatalog.Find(slide.VoiceClipId) : null;
             if (!string.IsNullOrWhiteSpace(slide.VoiceClipId) && narrationClip == null)
                 Debug.LogWarning($"OpeningIntro 음성 참조를 찾지 못했습니다: {slide.VoiceClipId}. 자막과 기존 시간으로 계속 진행합니다.");
-            voicePlayback.Play(narrationClip);
+            bool started = voicePlayback.Play(narrationClip);
+            if (narrationClip != null && !started)
+                Debug.LogError($"OpeningIntro 음성을 재생하지 못했습니다: {slide.VoiceClipId} / {narrationClip.name}");
             bool showGlow = slide.Visual == OpeningIntroVisual.Light || slide.Visual == OpeningIntroVisual.Gift || slide.Visual == OpeningIntroVisual.Limit;
             glow.gameObject.SetActive(showGlow);
             glowCore.gameObject.SetActive(showGlow);
@@ -165,7 +167,7 @@ namespace ProjectLimitless.UI
 
         private void CreateInterface()
         {
-            if (Camera.main == null) { GameObject cameraObject = new GameObject("Main Camera"); cameraObject.tag = "MainCamera"; cameraObject.AddComponent<Camera>().backgroundColor = Color.black; }
+            EnsureAudioOutput();
             if (EventSystem.current == null) { InputSystemUIInputModule module = new GameObject("EventSystem", typeof(EventSystem)).AddComponent<InputSystemUIInputModule>(); module.AssignDefaultActions(); }
             narrationCatalog = Resources.Load<VoiceClipCatalog>(NarrationCatalogResourcePath);
             voicePlayback = gameObject.AddComponent<VoicePlaybackSource>();
@@ -191,6 +193,33 @@ namespace ProjectLimitless.UI
             pauseLabel = MakeText(canvasObject.transform, "PauseState", string.Empty, font, 18, new Vector2(.5f, .92f), new Vector2(500, 34)); pauseLabel.color = new Color(1f, .82f, .4f, 1f);
             MakeText(canvasObject.transform, "Controls", "클릭 / Enter / Space: 다음   P: 일시정지   Esc: 건너뛰기", font, 14, new Vector2(.5f, .02f), new Vector2(620, 24)).color = new Color(.72f, .78f, .88f, 1f);
             EventSystem.current.SetSelectedGameObject(skip.gameObject);
+        }
+
+        private static void EnsureAudioOutput()
+        {
+            Camera mainCamera = Camera.main;
+            if (mainCamera == null)
+            {
+                // OpeningIntro Scene은 UI Controller만 저장하므로 화면과 소리를 받을 Camera를 런타임에 만듭니다.
+                GameObject cameraObject = new GameObject("Main Camera", typeof(Camera), typeof(AudioListener));
+                cameraObject.tag = "MainCamera";
+                mainCamera = cameraObject.GetComponent<Camera>();
+                mainCamera.backgroundColor = Color.black;
+            }
+
+            AudioListener[] listeners = Object.FindObjectsByType<AudioListener>(FindObjectsInactive.Exclude);
+            if (listeners.Length == 0)
+            {
+                // AudioSource가 재생 중이어도 활성 AudioListener가 없으면 최종 출력은 완전한 무음입니다.
+                mainCamera.gameObject.AddComponent<AudioListener>();
+                listeners = Object.FindObjectsByType<AudioListener>(FindObjectsInactive.Exclude);
+            }
+
+            if (listeners.Length != 1)
+                Debug.LogWarning($"OpeningIntro의 활성 AudioListener 수가 {listeners.Length}개입니다. 정확히 1개여야 합니다.");
+
+            AudioListener.volume = 1f;
+            AudioListener.pause = false;
         }
 
         private void UpdateCaptionLayout()
