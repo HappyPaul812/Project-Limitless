@@ -20,5 +20,5 @@ MonoBehaviour:
     displayName: 마도사
   - id: guardian
     displayName: 수호자
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 765c9dee6e494a2cbc30f76d637b5066, type: 3}
   relatedJobInformation: 모든 직업과 조합할 수 있습니다. 수호자는 전열 방어, 마도사는 후열 공격 강화와 자연스럽게 맞습니다.

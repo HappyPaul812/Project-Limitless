@@ -20,5 +20,5 @@ MonoBehaviour:
     displayName: 투사
   - id: sharpshooter
     displayName: 사수
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: c94e7ffd3ad84d729b36c90c4ca0f80e, type: 3}
   relatedJobInformation: 모든 직업과 조합할 수 있습니다. 투사와 사수는 단일 대상 공격을 이어가기 쉬워 집중을 안정적으로 유지합니다.

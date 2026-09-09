@@ -28,6 +28,6 @@ Path(길)는 한 사람이 삶을 경험해 온 방식이며 직업을 고정하
 
 ## 공식 상징과 주요 동료
 
-모든 길은 외형과 별개인 공식 아이콘과 길 이름을 함께 사용한다. 마음의 상처=Heart Shield, 청각의 길=Sound Waves, 시각의 길=Eye Target, 지체의 길=Cog, 지적의 길=Mesh Network를 확정 방향으로 삼는다. 현재 저장소에는 정확히 일치하는 다섯 Sprite가 없으므로 `PlayerPathDefinition.Icon`과 공통 Resolver, UI 슬롯만 준비했으며 다른 의미의 아이콘으로 대체하지 않는다.
+모든 길은 외형과 별개인 공식 아이콘과 길 이름을 함께 사용한다. `PlayerPathDefinition.Icon`에 Game-icons.net 흰색 Sprite를 연결했다. 마음의 상처=`heart-shield.png`, 청각의 길=`sound-waves.png`, 시각의 길=`eye-target.png`, 지체의 길=`cog.png`, 지적의 길=`mesh-network.png`다. 공통 `PathPresentationResolver`를 통해 길 선택 카드·상세와 플레이어·태온·미엘 전투 상세에 같은 데이터를 제공한다. 짙은 남색 UI에 맞춰 White를 기본으로 사용하며 Black도 보관한다. 위치는 `Assets/ThirdParty/GameIconsNet/Path/{White,Black}/`, 라이선스 원본은 `Assets/ThirdParty/GameIconsNet/license.txt`, 저작자·원본 경로는 `문서/00_프로젝트/외부에셋.md`에 기록한다.
 
 주요 동료도 명시된 PathId를 가질 수 있다. 태온은 수호자+지적의 길, 미엘은 치유사+마음의 상처다. 이 고정 PathId는 동료 전투 참가자 데이터에 있고 플레이어 SaveData에는 중복 저장하지 않는다. NPC 이름이나 추천 여부로 자동 판정하지 않으며, 추천 외 길을 가진 미래 NPC도 코드에서 제한하지 않는다. 태온의 패턴 익히기와 미엘의 회복탄력은 플레이어와 동일한 전투 규칙을 실제 적용한다.

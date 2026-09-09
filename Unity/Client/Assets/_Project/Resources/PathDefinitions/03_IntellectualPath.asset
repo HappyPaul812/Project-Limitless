@@ -20,5 +20,5 @@ MonoBehaviour:
     displayName: 수호자
   - id: healer
     displayName: 치유사
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b5ddb75c1df7465fb0494dfd5c76a6e7, type: 3}
   relatedJobInformation: 모든 직업과 조합할 수 있습니다. 수호자와 치유사는 집중 공격을 받는 아군을 보호하고 회복하는 흐름과 잘 맞습니다.
