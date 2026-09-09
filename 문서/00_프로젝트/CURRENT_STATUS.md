@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `4027d2a` (`Feature: 길 공식 아이콘 Sprite 연결`)
+- 마지막 기능 관련 commit: `00f4810` (`Feature: Path 공식 심볼과 전투 특성 아이콘 분리`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -20,7 +20,7 @@
 - SaveData는 기존 PathId만 유지한다. `traitStatusMarkerIds`로 런타임 상태와 TraitIcon을 연결하며 Sprite 누락 시 Image만 숨기고 텍스트는 유지한다. Path 전투 수치와 NPC Runtime은 변경하지 않았다.
 - 새 자체 제작 원본 3개는 `Assets/_Project/Art/Characters/PathVisuals/Symbols/`, 기존 2개는 원래 위치를 유지한다. Game-icons.net White/Black 10개와 라이선스도 원본 그대로 유지한다.
 - 위치: `Assets/ThirdParty/GameIconsNet/Path/{White,Black}/`, 라이선스: `Assets/ThirdParty/GameIconsNet/license.txt`. 저작자·정확한 압축 내부 경로는 `외부에셋.md` 참조. 원본 PNG 10개 및 두 압축 라이선스의 SHA256 일치, 5개 Sprite GUID 연결을 확인했다. Sprite/Single·Bilinear·무압축·Alpha·비율 유지와 기존 Null 방어를 확인했다.
-- 새 PNG 3개가 다운로드 원본과 SHA256 일치하며 5개 PathSymbol·5개 TraitIcon GUID가 각각 한 Sprite `.meta`로 해석됨을 확인했다. 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개이며 관련 diff 검사를 통과했다. 실제 Unity Play Mode의 다섯 카드, 상세, HUD는 수동 확인한다.
+- 새 PNG 3개가 다운로드 원본과 SHA256 일치하며 5개 PathSymbol·5개 TraitIcon GUID가 각각 한 Sprite `.meta`로 해석됨을 확인했다. 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개이며 관련 diff 검사를 통과했다. 실제 Unity Play Mode의 다섯 카드, 상세, HUD는 수동 확인한다. 마지막 기능 commit: `00f4810`.
 - 다음 확인: Bootstrap 새 캐릭터 → PathSelection의 서로 다른 공식 심볼 5개와 작은 TraitIcon → 임의 직업 → Battle 플레이어 상세 → 태온(수호자/지적/Companion Emblem/Mesh Network) → 미엘(치유사/마음의 상처/Heart/Heart Shield) → 런타임 상태 TraitIcon과 Console 오류.
 
 - `PathPresentationResolver`가 PathId로 공식 PathSymbol·길 이름·TraitIcon·특성·추천·설명을 같은 `PlayerPathDefinition`에서 제공한다. PathSelection과 전투 상세가 같은 Resolver를 사용한다.
