@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `0be1d7b` (`Fix: 인트로 광원 사각형 제거`)
+- 마지막 기능 관련 commit: `cec069f` (`Fix: 인트로 자막 배경 영역 축소`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -15,6 +15,8 @@
 
 ## 최근 정식 시작 이야기 구현
 
+- 2026-09-09: 고정 1000×220 크기와 알파 0.86의 `CaptionShade`를 문장 실제 크기+좌우 42px·상하 20px로 자동 조절하도록 바꿨다. 화면 위 기준 약 69% 지점으로 내리고 알파 0.68의 방사형 배경을 사용해 중앙 Glow와 PathSymbol을 가리는 큰 사각 패널 인상을 줄였다. 렌더 순서는 배경→Glow→CaptionShade→자막→조작 UI다.
+- 방사형 Glow Sprite·색·알파·확대와 기존 서사·입력·설정·Scene 흐름은 유지했다. Assembly-CSharp 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개이며 관련 diff 검사를 통과했다. 실제 Play Mode에서 문장별 배경 크기, Glow 원형, PathSymbol·하단 UI 간격과 자막 가독성을 확인해야 한다.
 - 2026-09-09: 스프라이트가 없는 단색 uGUI Image가 RectTransform 전체를 칠해 `AbstractLight`가 노란 사각형으로 보이던 문제를 수정했다. 런타임 방사형 알파 Sprite를 바깥 빛과 중심 빛 두 겹에 적용해 가장자리 알파가 0이 되도록 했으며, 광원을 `SlideContent` 아래로 옮겨 자막과 같은 Fade를 적용한다. 은은한 알파 변화와 확대만 사용하며 자막 패널 뒤에 배치한다.
 - 기존 19개 Slide 데이터, PathSymbol, `LIMITLESS`, 자동 진행, 클릭·Enter·Space, P, Esc, 체크박스 저장, 새 게임·이어하기·다시 보기 정책은 변경하지 않았다. Assembly-CSharp 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개로 별도 컴파일했다. 실제 Play Mode의 광원 외형과 입력은 직접 확인해야 한다.
 - 플레이어 표시명을 `LIMITLESS`로 확정하고 Bootstrap·CharacterCreation·JobSelection·FinalConfirmation의 기존 제목을 변경했다. 저장소·namespace·Editor 메뉴의 개발명 `Project Limitless`는 유지한다.
@@ -23,7 +25,7 @@
 - Bootstrap에 `시작 이야기 다시 보기`를 추가했다. 설정을 무시하고 재생하며 완료·건너뛰기 뒤 Bootstrap으로 복귀한다. Editor 메뉴 `Project Limitless/Test/Play Opening Intro`도 다시 보기로 안전하게 진입한다.
 - OpeningIntro를 Build Settings와 저장 금지 Scene에 등록했다. 기존 Continue, 선택 슬롯, 캐릭터 생성 이후 흐름과 Path·전투·성장 수치는 변경하지 않았다.
 - 전체 Assembly-CSharp 정적 컴파일 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개. 실제 Play Mode의 자동/수동 진행, 설정 재실행 유지, 새 슬롯·다시 보기 복귀와 화면 배치는 직접 확인해야 한다.
-- 상세: `문서/11_UI/시작_이야기.md`. 마지막 관련 commit: `0be1d7b`.
+- 상세: `문서/11_UI/시작_이야기.md`. 마지막 관련 commit: `cec069f`.
 
 ## 최근 길 공식 표시와 동료 길 적용
 
