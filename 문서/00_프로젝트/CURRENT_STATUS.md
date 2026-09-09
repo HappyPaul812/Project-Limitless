@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `cec069f` (`Fix: 인트로 자막 배경 영역 축소`)
+- 마지막 기능 관련 commit: `47d8594` (`Feature: 오프닝 한국어 내레이션 연결`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -16,6 +16,9 @@
 
 ## 최근 MeloTTS 오프라인 음성 제작 시험
 
+- 사용자가 선택한 speed 1.00 기준으로 현재 OpeningIntro 19개 Slide 중 실제 내레이션 문장 18개를 생성했다. `opening_001.wav`~`opening_018.wav`는 44.1kHz·모노·16비트이며 외부 검증 후 `Assets/_Project/Audio/Voice/Opening`에 복사했다. 마지막 `LIMITLESS` 제목 장면은 무음이다.
+- `VoiceClipCatalog`의 직접 AudioClip 참조로 문장 ID와 WAV를 1:1 연결하고 `VoicePlaybackSource`가 재생·일시정지·재개·정지를 맡는다. 자동 진행은 `max(기존 시간, Clip 길이 + 0.5초)`이고 수동 진행·Esc·건너뛰기는 즉시 정지한다. 자막은 항상 유지하며 다시 보기에서도 음성을 재생한다.
+- Catalog 18/18 참조와 WAV 신호·형식을 확인했다. Unity Editor가 Assembly-CSharp와 Assembly-CSharp-Editor를 오류 0개로 컴파일했고 OpeningIntro 진입과 CharacterCreation 전환 로그에 누락 참조 경고나 런타임 예외가 없었다. 실제 청취 품질, 전 문장 순서, Enter/P/Esc, 다시 보기와 자동 Skip은 Play Mode에서 직접 확인해야 한다. 마지막 관련 commit: `47d8594`.
 - 공식 MeloTTS `main` commit `209145371cff8fc3bd60d7be902ea69cbdb7965a`, 패키지 0.1.2를 Unity 밖 `F:/study/tts/MeloTTS`에 두고 전용 Conda `melotts` Python 3.9.25 CPU 환경에서 한국어 `KR` 모델을 로드했다. 기존 `py3_12` Python 3.12.0에는 설치하지 않았다.
 - `태초에, 신은 세상을 창조했다.`를 speed 0.85/0.95/1.00으로 각각 44.1kHz·모노·16비트 WAV로 생성했다. 길이는 4.111/3.687/3.603초이며 RMS가 모두 0보다 커 실제 신호가 있다. 시험 WAV와 모델·캐시는 저장소 및 Unity Assets에 넣지 않았다.
 - `Tools/TTS/melotts_batch.py`가 UTF-8 CSV/JSON의 `id,text,speaker,speed`를 읽어 모델 한 번 로드 후 `id.wav`를 만든다. Colab Notebook은 시스템 Python 대신 `uv`의 격리 Python 3.9를 사용하고 Drive mount는 선택 셀로 둔다.
