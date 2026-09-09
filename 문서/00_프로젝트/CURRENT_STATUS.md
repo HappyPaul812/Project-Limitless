@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `00f4810` (`Feature: Path 공식 심볼과 전투 특성 아이콘 분리`)
+- 마지막 기능 관련 commit: `3b7e2f8` (`Feature: LIMITLESS 시작 이야기 구현`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -21,7 +21,7 @@
 - Bootstrap에 `시작 이야기 다시 보기`를 추가했다. 설정을 무시하고 재생하며 완료·건너뛰기 뒤 Bootstrap으로 복귀한다. Editor 메뉴 `Project Limitless/Test/Play Opening Intro`도 다시 보기로 안전하게 진입한다.
 - OpeningIntro를 Build Settings와 저장 금지 Scene에 등록했다. 기존 Continue, 선택 슬롯, 캐릭터 생성 이후 흐름과 Path·전투·성장 수치는 변경하지 않았다.
 - 전체 Assembly-CSharp 정적 컴파일 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개. 실제 Play Mode의 자동/수동 진행, 설정 재실행 유지, 새 슬롯·다시 보기 복귀와 화면 배치는 직접 확인해야 한다.
-- 상세: `문서/11_UI/시작_이야기.md`. 마지막 관련 commit은 작업 완료 후 기록한다.
+- 상세: `문서/11_UI/시작_이야기.md`. 마지막 기능 commit: `3b7e2f8`.
 
 ## 최근 길 공식 표시와 동료 길 적용
 
