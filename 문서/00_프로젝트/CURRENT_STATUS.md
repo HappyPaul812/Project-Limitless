@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `a77c17d` (`Feature: 길 공식 표시와 동료 길 적용`)
+- 마지막 기능 관련 commit: `4027d2a` (`Feature: 길 공식 아이콘 Sprite 연결`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -17,7 +17,7 @@
 
 - 2026-09-09: Game-icons.net 공식 아이콘 5종의 White/Black PNG 총 10개와 동일 라이선스 한 부만 가져왔다. `PlayerPathDefinition.Icon`에 White `heart-shield`, `sound-waves`, `eye-target`, `cog`, `mesh-network`를 연결해 공통 Resolver를 사용하는 선택 카드·큰 상세·플레이어/태온/미엘 전투 상세에 제공한다. 짙은 남색 UI에 맞춰 White를 기본으로 선택했다.
 - 위치: `Assets/ThirdParty/GameIconsNet/Path/{White,Black}/`, 라이선스: `Assets/ThirdParty/GameIconsNet/license.txt`. 저작자·정확한 압축 내부 경로는 `외부에셋.md` 참조. 원본 PNG 10개 및 두 압축 라이선스의 SHA256 일치, 5개 Sprite GUID 연결을 확인했다. Sprite/Single·Bilinear·무압축·Alpha·비율 유지와 기존 Null 방어를 확인했다.
-- 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개. 실제 Unity Import/Play Mode는 실행하지 않았다. 사용자 변경 영역의 기존 trailing whitespace 때문에 저장소 전체 diff 검사는 실패하며 이번 작업 파일만 별도로 검사한다. C#·NPC Path Runtime·전투 효과는 변경하지 않았다.
+- 전체 Assembly-CSharp 정적 컴파일 오류 0개, 기존 CS0618 경고 4개. 실제 Unity Import/Play Mode는 실행하지 않았다. 사용자 변경 영역의 기존 trailing whitespace 때문에 저장소 전체 diff 검사는 실패하며 이번 작업 staged diff 검사는 통과했다. C#·NPC Path Runtime·전투 효과는 변경하지 않았다. 마지막 기능 commit: `4027d2a`.
 - 다음 확인: Bootstrap 새 캐릭터 → PathSelection 카드 5개와 선택별 큰 아이콘 → 임의 직업 → Battle 플레이어 상세 → 태온(수호자/지적의 길/Mesh Network/패턴 익히기) → 미엘(치유사/마음의 상처/Heart Shield/회복탄력). 재진입과 Console 오류, 임시 상태 아이콘 분리도 확인한다.
 
 - `PathPresentationResolver`가 PathId로 공식 아이콘·길 이름·특성·추천·설명을 같은 `PlayerPathDefinition`에서 제공한다. PathSelection과 전투 상세가 같은 Resolver를 사용한다.
