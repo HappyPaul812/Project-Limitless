@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-09
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `47d8594` (`Feature: 오프닝 한국어 내레이션 연결`)
+- 마지막 기능 관련 commit: `a8dca02` (`Fix: 오프닝 내레이션 출력 복구`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -16,6 +16,8 @@
 
 ## 최근 MeloTTS 오프라인 음성 제작 시험
 
+- 2026-09-09: OpeningIntro Scene과 런타임 생성 Camera에 AudioListener가 0개여서 AudioSource가 재생되어도 최종 출력이 무음이던 문제를 수정했다. Main Camera 생성 시 AudioListener를 함께 만들고 기존 활성 Listener가 있으면 재사용한다. AudioSource는 enabled, volume 1, mute false, 2D, Mixer 미연결을 명시하며 Listener volume 1·pause false로 시작한다.
+- 기존 Editor 로그에서 `There are no audio listeners in the scene` 경고가 반복된 직접 증거를 확인했다. 첫 Clip은 외부 원본과 Unity 파일의 SHA256·크기가 같고 44.1kHz·모노·16비트 실제 신호다. 두 Assembly 컴파일 오류 0개이며 실제 소리, isPlaying, Enter/P/Esc는 수정 후 Play Mode에서 직접 확인해야 한다. 마지막 수정 commit: `a8dca02`.
 - 사용자가 선택한 speed 1.00 기준으로 현재 OpeningIntro 19개 Slide 중 실제 내레이션 문장 18개를 생성했다. `opening_001.wav`~`opening_018.wav`는 44.1kHz·모노·16비트이며 외부 검증 후 `Assets/_Project/Audio/Voice/Opening`에 복사했다. 마지막 `LIMITLESS` 제목 장면은 무음이다.
 - `VoiceClipCatalog`의 직접 AudioClip 참조로 문장 ID와 WAV를 1:1 연결하고 `VoicePlaybackSource`가 재생·일시정지·재개·정지를 맡는다. 자동 진행은 `max(기존 시간, Clip 길이 + 0.5초)`이고 수동 진행·Esc·건너뛰기는 즉시 정지한다. 자막은 항상 유지하며 다시 보기에서도 음성을 재생한다.
 - Catalog 18/18 참조와 WAV 신호·형식을 확인했다. Unity Editor가 Assembly-CSharp와 Assembly-CSharp-Editor를 오류 0개로 컴파일했고 OpeningIntro 진입과 CharacterCreation 전환 로그에 누락 참조 경고나 런타임 예외가 없었다. 실제 청취 품질, 전 문장 순서, Enter/P/Esc, 다시 보기와 자동 Skip은 Play Mode에서 직접 확인해야 한다. 마지막 관련 commit: `47d8594`.
