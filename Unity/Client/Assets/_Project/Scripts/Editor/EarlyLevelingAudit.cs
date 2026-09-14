@@ -98,6 +98,13 @@ namespace ProjectLimitless.EditorTools
                     Check(!(bool)Field(snakeAnimation, "attacking"), "맹독뱀 Idle 복귀");
                     var formation = (Formation)Field(controller, "enemies");
                     Check(formation.Members.Count() == 3, "실제 3마리 조우");
+                    var allyFormation = (Formation)Field(controller, "allies");
+                    Combatant auditPlayer = allyFormation.Members.Single(a => a.Id == PartyResourceService.PlayerCharacterId);
+                    Combatant taeon = allyFormation.Members.Single(a => a.Id == "companion_taeon");
+                    Combatant miel = allyFormation.Members.Single(a => a.Id == "companion_miel");
+                    auditPlayer.TakeDamage(10, false);
+                    taeon.TakeDamage(20, false);
+                    Check(miel.SpendMp(10), "미엘 MP 소비 준비");
                     foreach (var enemy in formation.Members) enemy.TakeDamage(int.MaxValue, false);
                     // 입력/피해 연출 타이밍과 무관하게 확정 승리 경계만 호출해 중복 보상을 검증합니다.
                     controller.StopAllCoroutines();
@@ -105,6 +112,13 @@ namespace ProjectLimitless.EditorTools
                     Check(GameSessionData.Level == 4 && GameSessionData.CurrentExperience == 42, "실제 승리 52 EXP와 이월");
                     GameSaveData saved = GameSaveService.InspectSlot(3).Data;
                     Check(saved != null && saved.Level == 4 && saved.CurrentExperience == 42 && saved.CurrentSceneId == "Field_02", "승리 직후 현재 슬롯/안전 Scene 저장");
+                    CharacterGrowthStats levelFourGrowth = CharacterGrowthCalculator.Calculate("mage", 4);
+                    Check(saved.PartyResources.Single(r => r.CharacterId == PartyResourceService.PlayerCharacterId).CurrentHp
+                        == CharacterGrowthCalculator.CalculateMaxHp("mage", levelFourGrowth), "레벨업 플레이어 새 MaxHP 완전 회복 저장");
+                    Check(saved.PartyResources.Single(r => r.CharacterId == "companion_taeon").CurrentHp == 112,
+                        "레벨업하지 않은 태온 피해 유지 저장");
+                    Check(saved.PartyResources.Single(r => r.CharacterId == "companion_miel").CurrentMp == miel.MaxMp - 10,
+                        "미엘 MP 소비 유지 저장");
                     for (int slot = 1; slot <= GameSaveService.DefaultSaveSlotCount; slot++)
                         if (slot != 3) Check(File.ReadAllText(GameSaveService.GetSaveFilePath(slot)) == SessionState.GetString(Key + slot, ""), "다른 슬롯 불변");
                     Call(controller, "EndBattle", "승리!", true);
@@ -132,6 +146,8 @@ namespace ProjectLimitless.EditorTools
                     Check(GameSaveService.TryLoadSlot(3, out GameSaveData restored), "슬롯 재로드");
                     GameSaveService.RestoreSession(3, restored);
                     Check(GameSessionData.Level == 4 && GameSessionData.CurrentExperience == 42 && GameSessionData.HasSavedWorldPosition, "진행/위치 복원");
+                    Check(PartyResourceService.TryGet("companion_taeon", out PartyMemberResourceSnapshot restoredTaeon)
+                        && restoredTaeon.CurrentHp == 112, "Continue 뒤 동료 HP 복원");
                     EditorApplication.update -= Tick;
                     SessionState.EraseBool(Key);
                     Debug.Log("EARLY_LEVELING_AUDIT ALL PASS (Edit + Play + Field/Battle/Respawn)");
@@ -148,6 +164,7 @@ namespace ProjectLimitless.EditorTools
             var gain = ExperienceProgression.Add(4, 200, 50);
             Check(gain.Level == 5 && gain.CurrentExperience == 30, "초과 EXP");
             gain = ExperienceProgression.Add(1, 0, 400);
+            AuditPartyResources();
             Check(gain.Level == 4 && gain.CurrentExperience == 0, "연속 레벨업");
             gain = ExperienceProgression.Add(49, 0, int.MaxValue);
             Check(gain.Level == CharacterGrowthCalculator.MaxLevel && gain.CurrentExperience == 0
@@ -231,6 +248,42 @@ namespace ProjectLimitless.EditorTools
             }
             Debug.Log("EARLY_LEVELING_AUDIT rules PASS");
             typeof(BattleSkillButtonIconAudit).GetMethod("Audit", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, null);
+        }
+
+        private static void AuditPartyResources()
+        {
+            PartyResourceService.Reset();
+            PartyMemberResourceSnapshot player = PartyResourceService.ResolveForBattle(
+                PartyResourceService.PlayerCharacterId, 100, 44);
+            Check(player.CurrentHp == 100 && player.CurrentMp == 44, "신규/구버전 자원 최대치 초기화");
+
+            PartyResourceService.RecordBattleResult(PartyResourceService.PlayerCharacterId, 37, 11, 100, 44);
+            player = PartyResourceService.ResolveForBattle(PartyResourceService.PlayerCharacterId, 90, 40);
+            Check(player.CurrentHp == 37 && player.CurrentMp == 11, "전투 간 HP/MP 유지");
+            PartyResourceService.RecordBattleResult("companion.audit", 0, 0, 104, 0);
+            Check(PartyResourceService.TryGet("companion.audit", out PartyMemberResourceSnapshot companion)
+                && companion.CurrentHp == 1, "전투불능 파티원 HP 1 복귀");
+
+            PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId, 120, 45);
+            Check(PartyResourceService.TryGet(PartyResourceService.PlayerCharacterId, out player)
+                && player.CurrentHp == 120 && player.CurrentMp == 45
+                && PartyResourceService.TryGet("companion.audit", out companion) && companion.CurrentHp == 1,
+                "레벨업 캐릭터만 새 최대치 완전 회복");
+            PartyResourceService.HealPartyFully();
+            Check(PartyResourceService.TryGet("companion.audit", out companion) && companion.CurrentHp == 104,
+                "패배/치유소 공통 파티 완전 회복");
+
+            PartyMemberResourceSaveData[] saved = PartyResourceService.ExportSaveData();
+            PartyResourceService.Reset();
+            PartyResourceService.ImportSaveData(saved);
+            Check(PartyResourceService.TryGet(PartyResourceService.PlayerCharacterId, out player)
+                && player.CurrentHp == 120 && player.CurrentMp == 45, "HP/MP JSON용 값 왕복");
+            GameSaveData oldSave = JsonUtility.FromJson<GameSaveData>("{\"Version\":1}");
+            Check(oldSave.PartyResources == null, "Version 1 구버전 JSON의 누락 자원 배열 호환");
+            PartyResourceService.ImportSaveData(oldSave.PartyResources);
+            player = PartyResourceService.ResolveForBattle(PartyResourceService.PlayerCharacterId, 100, 44);
+            Check(player.CurrentHp == 100 && player.CurrentMp == 44, "구버전 Save 첫 전투 완전 회복 기본값");
+            PartyResourceService.Reset();
         }
 
         private static void PrepareTestSaves()

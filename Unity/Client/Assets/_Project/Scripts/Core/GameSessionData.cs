@@ -82,6 +82,7 @@ namespace ProjectLimitless.Core
 
         public static void Reset()
         {
+            PartyResourceService.Reset();
             SelectedPlayerVisual = PlayerVisualType.Male;
             PlayerName = string.Empty;
             SelectedPlayerPathId = string.Empty;

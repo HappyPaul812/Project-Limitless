@@ -24,6 +24,9 @@ namespace ProjectLimitless.Core
         public bool HasSavedWorldPosition;
         public float SavedPositionX;
         public float SavedPositionY;
+        // Version 1의 옛 JSON에는 이 배열이 없어 null이 됩니다. 복원 시 null을 "아직 자원 기록 없음"으로
+        // 해석하고 첫 전투 최대치로 초기화하므로 기존 슬롯을 강제로 삭제하지 않습니다.
+        public PartyMemberResourceSaveData[] PartyResources;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -114,7 +117,8 @@ namespace ProjectLimitless.Core
                 SpawnPointId = resolvedSpawn,
                 HasSavedWorldPosition = GameSessionData.HasSavedWorldPosition,
                 SavedPositionX = GameSessionData.SavedPositionX,
-                SavedPositionY = GameSessionData.SavedPositionY
+                SavedPositionY = GameSessionData.SavedPositionY,
+                PartyResources = PartyResourceService.ExportSaveData()
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -151,6 +155,7 @@ namespace ProjectLimitless.Core
             GameSessionData.SelectPlayerPath(data.PathId);
             GameSessionData.SelectJob(data.JobId);
             GameSessionData.ConfigureProgress(data.Level, data.CurrentExperience);
+            PartyResourceService.ImportSaveData(data.PartyResources);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
             // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
             // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.
@@ -233,6 +238,16 @@ namespace ProjectLimitless.Core
             if (string.IsNullOrWhiteSpace(data.CurrentSceneId) || IsNonWorldSaveScene(data.CurrentSceneId) || !Application.CanStreamedLevelBeLoaded(data.CurrentSceneId)) { error = $"이어갈 수 없는 Scene ID입니다: {data.CurrentSceneId}"; return false; }
             if (data.Level < 1 || data.Level > CharacterGrowthCalculator.MaxLevel || data.CurrentExperience < 0)
             { error = $"레벨은 1~{CharacterGrowthCalculator.MaxLevel} 범위이고 경험치는 0 이상이어야 합니다."; return false; }
+            if (data.PartyResources != null)
+            {
+                var ids = new System.Collections.Generic.HashSet<string>(StringComparer.Ordinal);
+                foreach (PartyMemberResourceSaveData resource in data.PartyResources)
+                {
+                    if (resource == null || string.IsNullOrWhiteSpace(resource.CharacterId) || !ids.Add(resource.CharacterId)
+                        || resource.CurrentHp < 1 || resource.CurrentMp < 0)
+                    { error = "파티 HP/MP 저장값이 올바르지 않습니다."; return false; }
+                }
+            }
             if (data.SpawnPointId != null && (data.SpawnPointId.Length > 128 || data.SpawnPointId.Contains("/") || data.SpawnPointId.Contains("\\"))) { error = "SpawnPoint ID 형식이 올바르지 않습니다."; return false; }
             error = string.Empty; return true;
         }

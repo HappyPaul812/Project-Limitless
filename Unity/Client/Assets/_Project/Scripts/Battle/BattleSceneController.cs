@@ -253,16 +253,25 @@ namespace ProjectLimitless.Battle
                 .ToDictionary(item => item.JobId, StringComparer.Ordinal);
             foreach (BattleParticipantSetup participant in setup.Allies.Concat(setup.Enemies))
             {
-                bool isSavedPlayer = participant.Id == "player";
+                bool isSavedPlayer = participant.Id == PartyResourceService.PlayerCharacterId;
                 CharacterGrowthStats participantGrowth = isSavedPlayer
                     ? growth : CharacterGrowthCalculator.Calculate(participant.JobId, 1);
+                int maxMp = CharacterGrowthCalculator.CalculateMaxMp(participant.JobId, participantGrowth);
                 Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
                     participant.Slot, participant.MaxHp, participant.Attack, participant.Agility,
                     participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, false,
                     CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
                     CharacterGrowthCalculator.CalculateHealingPower(participant.JobId, participantGrowth),
-                    CharacterGrowthCalculator.CalculateMaxMp(participant.JobId, participantGrowth),
+                    maxMp,
                     CharacterGrowthCalculator.CalculateMpRecovery(participant.JobId, participantGrowth));
+                if (participant.Side == BattleSide.Allies)
+                {
+                    // Combatant는 이번 Battle에서만 존재합니다. stable ID로 보존한 현재 HP/MP를 여기서
+                    // 다시 적용해야 승리·도망·Scene 전환 뒤의 다음 전투가 무조건 풀피로 시작하지 않습니다.
+                    PartyMemberResourceSnapshot resources = PartyResourceService.ResolveForBattle(
+                        participant.Id, participant.MaxHp, maxMp);
+                    combatant.RestoreCurrentResources(resources.CurrentHp, resources.CurrentMp);
+                }
                 (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
                 participantSetups.Add(combatant, participant);
                 if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
@@ -2071,6 +2080,7 @@ namespace ProjectLimitless.Battle
         {
             if (actionPlaying) return;
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
+            RecordAllyResources();
             battleEnded = true;
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
@@ -2362,11 +2372,21 @@ namespace ProjectLimitless.Battle
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
             {
+                RecordAllyResources();
                 int reward = BattleExperienceReward.Calculate(true, GameSessionData.Level, enemies.Members, participantSetups);
                 ExperienceGain gain = ExperienceProgression.Add(GameSessionData.Level, GameSessionData.CurrentExperience, reward);
                 GameSessionData.ConfigureProgress(gain.Level, gain.CurrentExperience);
-                // 승리가 확정된 뒤 진행 값만 현재 슬롯에 저장합니다. Scene/좌표는 마지막 안전 월드를
-                // 유지하므로 Battle HP·턴·상태이상은 저장하지 않습니다. Field 복귀 저장도 그대로 유지합니다.
+                if (gain.LeveledUp)
+                {
+                    // 먼저 최종 Level을 확정한 뒤 새 능력치에서 MaxHP/MaxMP를 다시 계산하고, 실제로 성장한
+                    // 플레이어 한 명만 그 새 최대치까지 회복합니다. 여러 레벨이 올라도 최종값으로 한 번 처리합니다.
+                    CharacterGrowthStats newGrowth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, gain.Level);
+                    PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId,
+                        CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, newGrowth),
+                        CharacterGrowthCalculator.CalculateMaxMp(GameSessionData.SelectedJobId, newGrowth));
+                }
+                // 승리 직후 EXP와 현재 HP/MP를 같은 슬롯에 저장합니다. 독·화상·도발·쿨타임 등은
+                // Battle Runtime 객체와 함께 폐기되어 다음 전투나 SaveData로 넘어가지 않습니다.
                 GameSaveService.SaveCurrentSession();
                 message += $"\n획득 EXP: {reward}";
                 if (gain.LeveledUp) message += $"\n레벨 상승! Lv.{gain.PreviousLevel} → Lv.{gain.Level}";
@@ -2385,8 +2405,25 @@ namespace ProjectLimitless.Battle
                 if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(returnButton.gameObject);
                 message = "승리! 결과를 확인한 뒤 필드로 돌아가세요.";
             }
-            else StartCoroutine(ReturnAfterDelay(false));
+            else
+            {
+                RecordAllyResources();
+                // 전멸 뒤 0 HP 상태로 필드에 복귀하지 않도록 현재 파티 전체를 등록된 최대치로 회복합니다.
+                // 소모품·몬스터와 기존 조우 필드 복귀 처리는 건드리지 않습니다.
+                PartyResourceService.HealPartyFully();
+                StartCoroutine(ReturnAfterDelay(false));
+            }
             messageText.text = message;
+        }
+
+        private void RecordAllyResources()
+        {
+            foreach (Combatant ally in allies.Members)
+            {
+                if (!participantSetups.TryGetValue(ally, out BattleParticipantSetup setup)) continue;
+                // 표시 이름은 번역·개명될 수 있으므로 저장 키로 쓰지 않고 Encounter의 stable ID를 사용합니다.
+                PartyResourceService.RecordBattleResult(setup.Id, ally.CurrentHp, ally.CurrentMp, ally.MaxHp, ally.MaxMp);
+            }
         }
 
         private IEnumerator ReturnAfterDelay(bool defeatedEncounteredMonster)

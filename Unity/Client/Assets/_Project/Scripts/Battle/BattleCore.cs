@@ -82,6 +82,16 @@ namespace ProjectLimitless.Battle
         public int ForcedTargetActionsRemaining { get; private set; }
         public bool IsAlive => CurrentHp > 0;
 
+        /// <summary>
+        /// 생성자의 최대치 초기화 뒤 전투 밖에 보존된 HP/MP를 적용합니다. Battle Runtime의 상태이상은
+        /// 새로 만들어진 다른 객체에 남아 있지 않으며, 현재 자원만 유효 범위로 제한해 이어받습니다.
+        /// </summary>
+        public void RestoreCurrentResources(int currentHp, int currentMp)
+        {
+            CurrentHp = Math.Max(1, Math.Min(MaxHp, currentHp));
+            CurrentMp = Math.Max(0, Math.Min(MaxMp, currentMp));
+        }
+
         /// <summary>방어는 선택한 시점부터 이 참가자의 다음 행동 차례가 시작될 때까지 유지됩니다.</summary>
         public void Defend() => IsDefending = true;
 
