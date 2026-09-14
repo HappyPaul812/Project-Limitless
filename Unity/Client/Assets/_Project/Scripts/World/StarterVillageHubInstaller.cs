@@ -105,7 +105,7 @@ namespace ProjectLimitless.World
             npc.GetComponent<NpcController>().Configure(displayName, dialogue);
             VillageNpcRole roleData = npc.GetComponent<VillageNpcRole>() ?? npc.AddComponent<VillageNpcRole>();
             roleData.Configure(npcId, role, true);
-            VillageNpcAppearanceCatalog.Apply(npc, npcId, displayName);
+            VillageNpcAppearanceCatalog.Apply(npc, npcId, displayName, role);
         }
     }
 }

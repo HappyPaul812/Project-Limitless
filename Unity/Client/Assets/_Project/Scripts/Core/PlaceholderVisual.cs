@@ -55,12 +55,18 @@ namespace ProjectLimitless.Core
         /// <summary>색상만으로 대상을 구분하지 않아도 되도록 오브젝트 위에 글자 이름표를 만듭니다.</summary>
         private void CreateLabel(int order)
         {
-            GameObject labelObject = new GameObject("Label");
-            labelObject.transform.SetParent(transform, false);
+            // 활성 NPC Prefab을 복제하면 런타임에 만든 Label 자식도 함께 복제됩니다.
+            // 기존 Label을 재사용해야 "주민"과 "마을 주민"이 중복 생성되지 않습니다.
+            Transform existingLabel = transform.Find("Label");
+            GameObject labelObject = existingLabel != null
+                ? existingLabel.gameObject
+                : new GameObject("Label");
+            if (existingLabel == null) labelObject.transform.SetParent(transform, false);
             labelObject.transform.localScale = Vector3.one;
             labelObject.transform.localPosition = new Vector3(0f, 0.65f, 0f);
 
-            TextMesh textMesh = labelObject.AddComponent<TextMesh>();
+            TextMesh textMesh = labelObject.GetComponent<TextMesh>();
+            if (textMesh == null) textMesh = labelObject.AddComponent<TextMesh>();
             textMesh.text = label;
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;

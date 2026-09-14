@@ -26,15 +26,21 @@ namespace ProjectLimitless.NPC
                 ["starter-village-bank"] = "VillageNpcSprites/Eldiran/OGA16_Bank",
                 ["starter-village-party-manager"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
                 ["starter-village-training-guide"] = "VillageNpcSprites/Eldiran/OGA02_TrainingGuide",
+                ["starter-village-resident-01"] = "VillageNpcSprites/Eldiran/OGA07_Resident01",
+                ["starter-village-resident-02"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
+                ["starter-village-resident-03"] = "VillageNpcSprites/Eldiran/OGA13_Resident03",
+                ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04",
                 ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
                 ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative",
             };
 
-        public static bool Apply(GameObject npc, string stableNpcId, string displayName)
+        public static bool Apply(
+            GameObject npc,
+            string stableNpcId,
+            string displayName,
+            VillageNpcRoleType role)
         {
-            // 전용 외형이 없는 일반 주민도 같은 이름표 규칙을 사용해야 하므로
-            // Sprite 검색보다 먼저 시작 마을 NPC 이름표를 공통 정리합니다.
-            ConfigureNameplate(npc, displayName);
+            ConfigureNameplate(npc, displayName, role);
 
             if (!ResourcePaths.TryGetValue(stableNpcId, out string resourcePath)) return false;
 
@@ -71,15 +77,34 @@ namespace ProjectLimitless.NPC
         /// 시작 마을 NPC의 기존 TextMesh 이름표를 한 줄·중앙 정렬로 통일하고,
         /// 스프라이트와 겹치지 않는 머리 위 위치와 얇은 그림자를 적용합니다.
         /// </summary>
-        private static void ConfigureNameplate(GameObject npc, string displayName)
+        private static void ConfigureNameplate(
+            GameObject npc,
+            string displayName,
+            VillageNpcRoleType role)
         {
             Transform labelTransform = npc.transform.Find("Label");
             TextMesh label = labelTransform != null ? labelTransform.GetComponent<TextMesh>() : null;
             if (label == null) return;
 
+            // 활성 Prefab을 복제할 때 PlaceholderVisual.Awake가 만들었던 구형 Label이
+            // 함께 복제된 경우에는 한 개만 남겨 역할명과 공통 주민명이 겹치지 않게 합니다.
+            for (int index = npc.transform.childCount - 1; index >= 0; index--)
+            {
+                Transform child = npc.transform.GetChild(index);
+                if (child == labelTransform || child.name != "Label") continue;
+                child.gameObject.SetActive(false);
+                Object.Destroy(child.gameObject);
+            }
+
+            // 일반 배경 주민은 상시 이름표를 숨기고, 기능 NPC와 주민 대표는
+            // 역할명 또는 향후 확정될 정식 이름 한 줄만 표시합니다.
+            label.text = displayName;
+            bool showNameplate = role != VillageNpcRoleType.Resident;
+            labelTransform.gameObject.SetActive(showNameplate);
+            if (!showNameplate) return;
+
             labelTransform.localPosition = NameplateOffset;
             labelTransform.localScale = Vector3.one;
-            label.text = displayName;
             label.anchor = TextAnchor.MiddleCenter;
             label.alignment = TextAlignment.Center;
             label.fontSize = NameplateFontSize;

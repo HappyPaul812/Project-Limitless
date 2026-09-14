@@ -1,9 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
-- 시작 마을 NPC 이름표를 공통으로 축소·상향했다. TextMesh 폰트 40, 기본 character size 0.075(7자 이상 0.065), Y 1.02, 가운데 정렬, 검은 그림자를 적용하며 한 줄을 유지한다. 상호작용 안내는 Y 1.48로 분리했고 플레이어 이름표·레벨 HUD는 변경하지 않았다.
+- 시작 마을 일반 주민 4명에 stable ID 기준 OGA-07/11/13/19 외형을 연결하고 주황 Placeholder를 제거했다. 일반 주민은 상시 이름표 없음, 기능 NPC·주민 대표는 역할명 한 줄 정책이며 Interaction Prompt는 별도로 유지한다.
+- 표시되는 시작 마을 NPC 이름표는 TextMesh 폰트 40, 기본 character size 0.075(7자 이상 0.065), Y 1.02, 가운데 정렬, 검은 그림자를 적용한다. 상호작용 안내는 Y 1.48로 분리했고 플레이어 이름표·레벨 HUD는 변경하지 않았다.
 - 시작 마을 역할 NPC 8명에 Eldiran CC0 외형을 stable ID 기반으로 연결했다: 잡화상 OGA-03, 장비상 OGA-17, 치유사 OGA-06, 은행 OGA-16, 동료 편성 OGA-10, 훈련장 관리 OGA-02, 남문 경비 OGA-20, 주민 대표 OGA-09.
-- 원본 시트는 `Assets/ThirdParty/Eldiran/RPGCharacters32/Original`에 보존하고, 선택된 정면 32×32 셀의 정확한 마젠타만 투명화한 파생본은 `Assets/_Project/Resources/VillageNpcSprites/Eldiran`에서 관리한다. Point·PPU 28·발 기준 Pivot을 사용하며 일반 주민 4명과 핵심 캐릭터 외형은 변경하지 않았다.
-- 2026-09-15 Unity 6000.5.7f1에서 프로젝트를 다시 열어 ScriptAssemblies 빌드 성공과 Domain Reload 완료를 확인했다. 새 Editor 로그에 C# 컴파일 오류·`NullReferenceException`·`MissingReferenceException`은 없다. 다만 현재 Codex 세션에 Unity MCP와 네이티브 앱 제어가 노출되지 않아 Play Mode·Game View·상호작용·Field 왕복은 연결 복구 후 직접 확인해야 한다.
+- 원본 시트는 `Assets/ThirdParty/Eldiran/RPGCharacters32/Original`에 보존하고, 선택된 정면 32×32 셀의 정확한 마젠타만 투명화한 파생본은 `Assets/_Project/Resources/VillageNpcSprites/Eldiran`에서 관리한다. Point·PPU 28·발 기준 Pivot을 사용하며 태온·미엘 등 핵심 캐릭터 외형은 변경하지 않았다.
+- 2026-09-15 Unity 6000.5.7f1에서 ScriptAssemblies 빌드·Domain Reload와 Unity MCP Play Mode 검증을 완료했다. C# 컴파일 오류와 기능 관련 런타임 Error는 없다.
 
 ## 기준
 
@@ -23,12 +24,16 @@
 
 ## 최근 시작 마을 1차 허브
 
+- 일반 주민 stable ID 01~04에 OGA-07/11/13/19 정면 Sprite를 연결했다. 기존과 같은 32×32, Point, PPU 28, Mipmap Off, 발 Pivot, 정확한 마젠타 Alpha 0 파생 규칙을 사용하며 원본 PNG는 변경하지 않았다.
+- 이름표 정책은 `VillageNpcRoleType`으로 공통 처리한다. 일반 주민 Label은 비활성, 기능 NPC와 주민 대표는 역할명 한 줄이다. `PlaceholderVisual`은 복제된 기존 Label을 재사용하고 카탈로그도 중복 Label을 정리해 `주민`/`마을 주민` 동시 표시를 막는다. Interaction Prompt와 주민 대화는 독립 유지한다.
 - 역할 외형 적용 경로에서 전용 Sprite 유무와 관계없이 주민·상인·안내인 전원의 기존 `Label` TextMesh를 공통 정규화한다. 기존 폰트 48/character size 0.12/Y 0.65를 폰트 40/기본 0.075/Y 1.02로 줄이고 올렸으며, 7자 이상 이름은 0.065로 축소한다. 중앙 한 줄 정렬과 검은 그림자를 사용하고 `[E] 대화하기`는 Y 1.48로 올려 이름표와 분리했다. `PlayerNameplate`와 World EXP HUD는 변경하지 않았다.
 - `World_StarterVillage`의 기존 19×13 환경·Player·Camera·남문 `Field_01` 연결을 보존하고, `Chapter01_StarterVillageHub` 아래에 중앙 광장, 시장, 치유소/여관, 은행·파티 관리 안전 서비스, 훈련 구역, 주민 생활 구역, 남문 역할을 구분했다.
 - `VillageNpcRole`이 표시 이름과 분리된 stable NPC ID·역할 데이터를 제공한다. 메인 안내, 잡화점, 장비점, 은행, 파티 관리, 훈련, 주민, 남문 경비는 후속 시스템의 진입점/중립 대사만 제공하며 퀘스트·거래·보관·편성 내용을 확정하지 않았다. Taeon/Miel은 배치하지 않았다.
 - 치유사는 시간 제한 없는 `치료한다`/`괜찮습니다` 확인 UI를 제공한다. 확인하면 `PartyResourceService.HealPartyFully()`로 등록된 파티 HP/MP를 무료 완전 회복하고 `GameSaveService.SaveCurrentSession()`으로 즉시 저장한 뒤 중립 완료 메시지를 표시한다.
 - Unity 컴파일 오류 0개를 확인했다. Unity MCP Play Mode에서 역할 12개가 모두 2m 대상 탐색으로 선택되고 NPC Collider 겹침 0건, 7개 Zone 런타임 설치, 19×13 Bounds·남문 Trigger·복귀 Spawn을 확인했다. 치유는 검증값 HP/MP 35/12→100/50, 슬롯 저장 100/50, Continue 복원 100/50이었고 마을→`Field_01`→마을 왕복 뒤에도 100/50을 유지했다. 최종 Console은 Error 0개·Warning 0개다. 실제 화면에서 NPC 간 시각 간격과 1280×720 선택지 가독성은 사용자가 확인하면 좋다. 상세: `문서/20_월드/시작_마을.md`.
-- 이름표 변경은 Unity 6000.5.7f1의 전체 `Assembly-CSharp` 응답 파일로 별도 출력 컴파일해 오류 0개·기존 deprecated API 경고 5개를 확인했고 관련 파일 `git diff --check`를 통과했다. 현재 세션에는 Unity MCP와 네이티브 앱 제어가 노출되지 않아 실제 Game View의 전체 NPC 동시 표시·플레이어 근접·상호작용 안내 간격은 직접 확인해야 한다.
+- 이름표·주민 외형 변경은 Unity 6000.5.7f1 전체 응답 파일의 `Assembly-CSharp`·`Assembly-CSharp-Editor` 별도 출력과 Unity Editor ScriptAssemblies 컴파일에서 오류 0개를 확인했다. 신규 경고는 없고 기존 CS0618 경고는 Runtime 5개·Editor 1개이며 관련 파일 `git diff --check`를 통과했다.
+- Unity MCP Play Mode에서 주민 1~4 Sprite OGA-07/11/13/19, 주황 Placeholder·마젠타 배경 0개, 주민 Label 비활성 4/4, 기능 NPC·주민 대표 단일 활성 Label 8/8, 주민 대사 호출 4/4, BoxCollider2D `(0.50, 0.34)`와 Circle Trigger, `Field_01` 왕복 재설치를 확인했다. 전체 화면에서 일반 주민 텍스트가 제거되어 혼잡도가 줄고 PlayerNameplate·EXP HUD는 기존 상태를 유지했다. 스크린샷은 `Unity/Client/ValidationCaptures/`에 보존한다.
+- 기능 관련 Console Error는 0개다. 저장 슬롯 없이 World Scene을 직접 실행한 검증 경로에서 기존 `선택된 저장 슬롯이 없어 자동 저장을 건너뜁니다.` 경고가 3회 발생했으며 NPC 외형·이름표 신규 경고는 없다.
 
 ## 최근 전투 간 파티 HP/MP 지속
 
