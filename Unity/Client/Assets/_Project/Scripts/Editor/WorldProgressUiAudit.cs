@@ -64,6 +64,7 @@ namespace ProjectLimitless.EditorTools
         private static void Audit()
         {
             GameSessionData.ConfigurePlayer(PlayerVisualType.Male, "마도바울이");
+            GameSessionData.SelectPlayerPath("path.vision");
             GameSessionData.ConfigureProgress(1, 0);
             GameObject player = new GameObject("WorldProgressAuditPlayer");
             PlayerNameplate nameplate = player.AddComponent<PlayerNameplate>();
@@ -75,6 +76,10 @@ namespace ProjectLimitless.EditorTools
                 "Lv1 이름표 초기화");
             Check(canvasObject.transform.Find("WorldExperienceHud/Identity").GetComponent<Text>().text == "Lv.1  마도바울이",
                 "Lv1 HUD 이름");
+            Image pathSymbol = canvasObject.transform.Find("WorldExperienceHud/PathSymbol").GetComponent<Image>();
+            Check(pathSymbol.enabled && pathSymbol.sprite == PathPresentationResolver.Find("path.vision")?.PathSymbol
+                && pathSymbol.preserveAspect && pathSymbol.rectTransform.sizeDelta == new Vector2(32f, 32f),
+                "선택한 길의 32px PathSymbol 표시");
             Check(canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<Text>().text == "EXP 0 / 100",
                 "Lv1 EXP 숫자");
             WorldExperienceHud hud = canvasObject.transform.Find("WorldExperienceHud").GetComponent<WorldExperienceHud>();
@@ -85,6 +90,12 @@ namespace ProjectLimitless.EditorTools
             CheckFill(hud, fill, 1, 75, .75f);
             CheckFill(hud, fill, 1, 99, .99f);
             CheckFill(hud, fill, 3, 85, .5f);
+            GameSessionData.SelectPlayerPath("path.invalid-audit");
+            hud.Refresh();
+            Check(!pathSymbol.enabled && pathSymbol.sprite == null
+                && canvasObject.transform.Find("WorldExperienceHud/Identity").GetComponent<Text>().text == "Lv.3  마도바울이",
+                "잘못된 PathId에서는 심볼만 숨기고 기존 레벨·이름 유지");
+            GameSessionData.SelectPlayerPath("path.vision");
             ExperienceGain levelUp = ExperienceProgression.Add(1, 90, 30);
             Check(levelUp.Level == 2 && levelUp.CurrentExperience == 20, "90/100 + 30의 Lv2 EXP 20 이월");
             CheckFill(hud, fill, levelUp.Level, levelUp.CurrentExperience, 20f / 130f);

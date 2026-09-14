@@ -17,9 +17,11 @@ namespace ProjectLimitless.Player
 
         private Text identityText;
         private Text experienceText;
+        private Image pathSymbolImage;
         private Image fillImage;
         private Sprite fillSprite;
         private string displayedName = string.Empty;
+        private string displayedPathId = string.Empty;
         private int displayedLevel = -1;
         private int displayedExperience = -1;
 
@@ -57,6 +59,7 @@ namespace ProjectLimitless.Player
         {
             // 세션의 숫자만 비교하므로 비용이 작고, 값이 그대로인 프레임에는 UI 문자열이나 오브젝트를 만들지 않습니다.
             if (displayedName != PlayerNameplate.GetDisplayName()
+                || displayedPathId != GameSessionData.SelectedPlayerPathId
                 || displayedLevel != GameSessionData.Level
                 || displayedExperience != GameSessionData.CurrentExperience)
             {
@@ -77,9 +80,11 @@ namespace ProjectLimitless.Player
         {
             BuildIfNeeded();
             displayedName = PlayerNameplate.GetDisplayName();
+            displayedPathId = GameSessionData.SelectedPlayerPathId;
             displayedLevel = GameSessionData.Level;
             displayedExperience = GameSessionData.CurrentExperience;
 
+            RefreshPathSymbol();
             identityText.text = $"Lv.{displayedLevel}  {displayedName}";
             if (displayedLevel >= CharacterGrowthCalculator.MaxLevel)
             {
@@ -109,7 +114,7 @@ namespace ProjectLimitless.Player
 
         private void BuildIfNeeded()
         {
-            if (identityText != null && experienceText != null && fillImage != null)
+            if (identityText != null && experienceText != null && pathSymbolImage != null && fillImage != null)
             {
                 return;
             }
@@ -128,7 +133,13 @@ namespace ProjectLimitless.Player
             panelOutline.effectColor = BorderColor;
             panelOutline.effectDistance = new Vector2(2f, -2f);
 
-            identityText = CreateText("Identity", new Vector2(16f, 40f), new Vector2(388f, 26f), TextAnchor.MiddleLeft, 20);
+            GameObject pathSymbol = CreateRect("PathSymbol", new Vector2(16f, 36f), new Vector2(32f, 32f));
+            pathSymbolImage = GetOrAddImage(pathSymbol);
+            pathSymbolImage.preserveAspect = true;
+            pathSymbolImage.color = Color.white;
+            // EXP HUD는 전투 상태가 아니라 플레이어의 고정 정체성을 보여 주므로 TraitIcon 대신
+            // 선택한 길 자체의 공식 문장인 PathSymbol만 이름 왼쪽에 표시합니다.
+            identityText = CreateText("Identity", new Vector2(56f, 40f), new Vector2(348f, 26f), TextAnchor.MiddleLeft, 20);
             experienceText = CreateText("Experience", new Vector2(16f, 16f), new Vector2(388f, 22f), TextAnchor.MiddleRight, 17);
 
             GameObject barBackground = CreateRect("BarBackground", new Vector2(16f, 8f), new Vector2(388f, 8f));
@@ -151,6 +162,17 @@ namespace ProjectLimitless.Player
             fillImage.fillMethod = Image.FillMethod.Horizontal;
             fillImage.fillOrigin = (int)Image.OriginHorizontal.Left;
             fillImage.raycastTarget = false;
+        }
+
+        private void RefreshPathSymbol()
+        {
+            // 저장 파일에는 바뀔 수 있는 Sprite 자체가 아니라 안정적인 PathId만 보관합니다.
+            // 새 게임과 이어하기 모두 그 ID를 세션에 복원하므로 공통 Resolver가 언제나 같은 공식 심볼을 찾습니다.
+            PlayerPathDefinition selectedPath = PathPresentationResolver.Find(displayedPathId);
+            Sprite symbol = selectedPath?.PathSymbol;
+            pathSymbolImage.sprite = symbol;
+            // 개발용 세션이나 오래된 저장에 길 정보가 없어도 흰 네모나 예외 대신 기존 레벨·이름만 남깁니다.
+            pathSymbolImage.enabled = symbol != null;
         }
 
         private Text CreateText(string objectName, Vector2 position, Vector2 size, TextAnchor alignment, int fontSize)
