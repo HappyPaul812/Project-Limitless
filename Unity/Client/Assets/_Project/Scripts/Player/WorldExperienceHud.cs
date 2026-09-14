@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ProjectLimitless.Core;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,9 @@ namespace ProjectLimitless.Player
         private static readonly Color PanelColor = new Color(0.055f, 0.065f, 0.09f, 0.94f);
         private static readonly Color BorderColor = new Color(0.82f, 0.66f, 0.25f, 1f);
         private static readonly Color FillColor = new Color(0.9f, 0.7f, 0.22f, 1f);
+        private static readonly HashSet<Object> InteractionUiOwners = new HashSet<Object>();
 
+        private CanvasGroup canvasGroup;
         private Text identityText;
         private Text experienceText;
         private Image pathSymbolImage;
@@ -43,16 +46,56 @@ namespace ProjectLimitless.Player
             return hudObject.GetComponent<WorldExperienceHud>();
         }
 
+        /// <summary>
+        /// 대화·상점·은행처럼 월드 HUD보다 우선하는 UI의 열림 상태를 소유자별로 등록합니다.
+        /// 같은 소유자의 중복 호출은 한 번으로 처리하고, 모든 UI가 닫힌 뒤에만 HUD를 복귀시킵니다.
+        /// </summary>
+        public static void SetInteractionUiOpen(Object owner, bool isOpen)
+        {
+            if (owner == null)
+            {
+                return;
+            }
+
+            if (isOpen)
+            {
+                InteractionUiOwners.Add(owner);
+            }
+            else
+            {
+                InteractionUiOwners.Remove(owner);
+            }
+
+            ApplyVisibilityToInstances();
+        }
+
+        /// <summary>HUD의 렌더링과 입력 차단을 함께 제어합니다.</summary>
+        public void SetVisible(bool visible)
+        {
+            BuildIfNeeded();
+            canvasGroup.alpha = visible ? 1f : 0f;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetStaticState()
+        {
+            InteractionUiOwners.Clear();
+        }
+
         private void Awake()
         {
             BuildIfNeeded();
             Refresh();
+            ApplyInteractionVisibility();
         }
 
         private void OnEnable()
         {
             BuildIfNeeded();
             Refresh();
+            ApplyInteractionVisibility();
         }
 
         private void Update()
@@ -114,6 +157,12 @@ namespace ProjectLimitless.Player
 
         private void BuildIfNeeded()
         {
+            canvasGroup = GetComponent<CanvasGroup>();
+            if (canvasGroup == null)
+            {
+                canvasGroup = gameObject.AddComponent<CanvasGroup>();
+            }
+
             if (identityText != null && experienceText != null && pathSymbolImage != null && fillImage != null)
             {
                 return;
@@ -162,6 +211,24 @@ namespace ProjectLimitless.Player
             fillImage.fillMethod = Image.FillMethod.Horizontal;
             fillImage.fillOrigin = (int)Image.OriginHorizontal.Left;
             fillImage.raycastTarget = false;
+        }
+
+        private void ApplyInteractionVisibility()
+        {
+            SetVisible(InteractionUiOwners.Count == 0);
+        }
+
+        private static void ApplyVisibilityToInstances()
+        {
+            bool visible = InteractionUiOwners.Count == 0;
+            WorldExperienceHud[] huds = FindObjectsByType<WorldExperienceHud>(FindObjectsInactive.Include);
+            foreach (WorldExperienceHud hud in huds)
+            {
+                if (hud != null)
+                {
+                    hud.SetVisible(visible);
+                }
+            }
         }
 
         private void RefreshPathSymbol()

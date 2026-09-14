@@ -1,4 +1,5 @@
 using System;
+using ProjectLimitless.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -38,6 +39,7 @@ namespace ProjectLimitless.UI
         /// <summary>현재 공용 Instance가 제거되는 객체라면 참조를 비웁니다.</summary>
         private void OnDestroy()
         {
+            WorldExperienceHud.SetInteractionUiOpen(this, false);
             if (Instance == this)
             {
                 Instance = null;
@@ -50,6 +52,8 @@ namespace ProjectLimitless.UI
             dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
             choiceRow.SetActive(false);
             panel.SetActive(true);
+            panel.transform.SetAsLastSibling();
+            WorldExperienceHud.SetInteractionUiOpen(this, true);
         }
 
         /// <summary>시간 제한 없이 마우스·키보드·게임패드로 고를 수 있는 두 선택지를 표시합니다.</summary>
@@ -69,11 +73,23 @@ namespace ProjectLimitless.UI
             });
             ConfigureButton(cancelButton, cancelText, Hide);
             panel.SetActive(true);
+            panel.transform.SetAsLastSibling();
+            WorldExperienceHud.SetInteractionUiOpen(this, true);
             confirmButton.Select();
         }
 
         /// <summary>대화 내용을 유지한 채 패널을 화면에서 숨깁니다.</summary>
-        public void Hide() => panel.SetActive(false);
+        public void Hide()
+        {
+            panel.SetActive(false);
+            WorldExperienceHud.SetInteractionUiOpen(this, false);
+        }
+
+        /// <summary>Scene 전환이나 객체 비활성화 중에도 HUD 억제 상태가 남지 않게 해제합니다.</summary>
+        private void OnDisable()
+        {
+            WorldExperienceHud.SetInteractionUiOpen(this, false);
+        }
 
         /// <summary>해상도에 맞춰 크기가 조절되는 Canvas와 대화 배경·글자를 코드로 구성합니다.</summary>
         private void CreatePanel()
@@ -88,7 +104,10 @@ namespace ProjectLimitless.UI
             GameObject canvasObject = new GameObject("DialogueCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             canvasObject.transform.SetParent(transform, false);
             // Screen Space Overlay는 카메라 위치와 관계없이 UI를 화면 위에 고정해 표시합니다.
-            canvasObject.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+            Canvas dialogueCanvas = canvasObject.GetComponent<Canvas>();
+            dialogueCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            // World HUD(5)보다 높게 두어 표시 억제가 실패해도 상호작용 UI가 앞에 남습니다.
+            dialogueCanvas.sortingOrder = 10;
             canvasObject.GetComponent<CanvasScaler>().uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
             canvasObject.GetComponent<CanvasScaler>().referenceResolution = new Vector2(1280, 720);
 
