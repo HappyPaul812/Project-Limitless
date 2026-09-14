@@ -2,9 +2,9 @@
 
 ## 기준
 
-- 갱신일: 2026-09-09
+- 갱신일: 2026-09-14
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `a8dca02` (`Fix: 오프닝 내레이션 출력 복구`)
+- 마지막 기능 관련 commit: `88965c6` (`Feature: 최종 확인 정보 위계 개선`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -13,6 +13,13 @@
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 FinalConfirmation UI 폴리싱
+
+- 중앙 패널을 큰 PathSymbol(64px)·길 이름, 작은 TraitIcon(26px)·특성 이름·설명, 직업 역할·보너스·패시브·시작 스킬 순서로 분리했다. 길 표현은 `PathPresentationResolver`와 `PlayerPathDefinition.PassiveDescription`을 재사용하며 Path별 문자열 분기는 없다.
+- 오른쪽 최종 능력치는 이름과 숫자를 별도 고정 열로 정렬하고 `기본 10 + 직업` 정책을 유지했다. 길 능력치 보너스와 기존 계산·저장·Scene 전환은 변경하지 않았다. `게임 시작`은 이전보다 큰 Primary Action으로 구분하되 기존 키보드 Focus·Enter·Space 입력을 유지했다.
+- 5개 PathDefinition의 PathSymbol·TraitIcon GUID가 각각 실제 Sprite `.meta` 하나로 해석되고 JobDefinition 5개가 존재함을 확인했다. 전체 Assembly-CSharp 컴파일 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개이며 관련 `git diff --check`를 통과했다.
+- 1280×720 기준 RectTransform 영역상 중앙 패널·능력치·버튼은 겹치지 않는다. 실제 Play Mode에서 5개 길과 5개 직업의 텍스트 렌더링, 긴 특성 설명, 캐릭터 Sprite, 이전·게임 시작과 Console 오류를 직접 확인해야 한다. 상세: `문서/11_UI/최종_확인.md`. 마지막 기능 commit: `88965c6`.
 
 ## 최근 MeloTTS 오프라인 음성 제작 시험
 
