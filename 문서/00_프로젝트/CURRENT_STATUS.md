@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-14
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `88965c6` (`Feature: 최종 확인 정보 위계 개선`)
+- 마지막 기능 관련 commit: `6b52c74` (`Feature: 월드 경험치 HUD에 길 심볼 표시`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -13,6 +13,13 @@
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 World EXP HUD PathSymbol 표시
+
+- 화면 하단 `WorldExperienceHud`의 `Lv.n 이름` 왼쪽에 현재 세션 PathId의 공식 PathSymbol을 32×32px, 원본 비율·색상 유지로 표시한다. 전투 기능용 TraitIcon과 Path 이름은 추가하지 않았고 머리 위 PlayerNameplate도 변경하지 않았다.
+- `PathPresentationResolver`가 저장에서 복원된 안정적인 PathId로 `PlayerPathDefinition.PathSymbol`을 찾는다. 이름·레벨·EXP와 함께 PathId 변경만 감시하며 Scene 전환, 이어하기와 레벨업 시 새 세션 상태로 갱신된다. 잘못된 PathId나 누락 Sprite는 Image만 숨겨 기존 HUD를 유지한다.
+- 5개 PathDefinition의 PathSymbol fileID가 모두 유효하고 각 GUID가 실제 Sprite `.meta` 하나로 해석됨을 확인했다. 전체 Assembly-CSharp 컴파일 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개이며 관련 `git diff --check`를 통과했다.
+- 실제 Play Mode에서 1280×720 크기·텍스트 겹침, EXP 획득·레벨업, StarterVillage/Field_01/Field_02 전환, 저장 후 Continue, Battle 진입 시 HUD 정리와 Console 오류를 직접 확인해야 한다. 상세: `문서/11_UI/월드_레벨과_EXP_HUD.md`. 마지막 기능 commit: `6b52c74`.
 
 ## 최근 FinalConfirmation UI 폴리싱
 
