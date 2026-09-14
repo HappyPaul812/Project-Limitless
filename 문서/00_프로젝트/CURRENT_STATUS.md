@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-14
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `6b52c74` (`Feature: 월드 경험치 HUD에 길 심볼 표시`)
+- 마지막 기능 관련 commit: `9e36ec0` (`Feature: 전투 간 파티 자원 지속`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -13,6 +13,14 @@
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 전투 간 파티 HP/MP 지속
+
+- `PartyResourceService`가 플레이어와 동료의 CurrentHP/CurrentMP를 `BattleParticipantSetup.Id` 기준으로 관리한다. Battle 생성은 저장값을 HP 1~MaxHP, MP 0~MaxMP로 Clamp해 적용하고, 값이 없는 신규 캐릭터·구버전 Save는 현재 최대치로 시작한다.
+- 일반 승리와 도망은 실제 종료 자원을 유지한다. 승리 시 전투불능 캐릭터는 HP 1로 복귀하며, 실제 레벨업한 플레이어만 연속 상승 후 최종 Level의 새 MaxHP/MaxMP까지 완전 회복한다. 패배는 파티 전체를 완전 회복한다. 휴식 경험치는 없다.
+- Version 1 Save에 `PartyResources(CharacterId, CurrentHp, CurrentMp)` 선택 배열을 추가했다. 옛 JSON의 누락 배열은 호환 기본값으로 처리하며 게임 재실행은 무료 회복 수단이 아니다. 전투 상태이상·도발·방어·쿨타임·기세·Path Runtime은 저장하지 않는다. 향후 치유소는 `HealPartyFully()`를 재사용할 수 있지만 NPC와 아이템은 아직 구현하지 않았다.
+- 현재 프로젝트에는 요청에 언급된 별도 최근 거점/체크포인트 패배 복귀 시스템이 없고 조우 Field 복귀가 구현되어 있어, 기존 복귀 흐름은 변경하지 않고 자원 완전 회복만 연결했다.
+- 신규 소스를 포함하도록 현재 Bee 응답 파일을 보완한 전체 정적 컴파일에서 Assembly-CSharp 오류 0개·기존 CS0618 경고 4개, Assembly-CSharp-Editor 오류 0개·기존 CS0618 경고 1개를 확인했고 관련 `git diff --check`를 통과했다. 실제 승리·도망·전투불능 승리·레벨업·패배·저장/Continue 시나리오는 Play Mode에서 직접 확인해야 한다. 마지막 기능 commit: `9e36ec0`.
 
 ## 최근 World EXP HUD PathSymbol 표시
 
