@@ -35,9 +35,6 @@ namespace ProjectLimitless.World
             SceneManager.MoveGameObjectToScene(root, scene);
 
             Transform plaza = CreateZone(root.transform, "Zone_CentralPlaza");
-            ConfigureNpc(template.gameObject, "Npc_VillageRepresentative", "starter-village-main-guide",
-                "주민 대표", "마을에 오신 것을 환영합니다. 준비를 마치면 남문 경비병에게 길을 물어보세요.",
-                VillageNpcRoleType.VillageRepresentative, new Vector2(0f, 1.5f), plaza);
 
             Transform market = CreateZone(root.transform, "Zone_Market");
             CreateNpc(template, market, "Npc_GeneralShop", "starter-village-general-shop", "잡화 상인",
@@ -77,6 +74,12 @@ namespace ProjectLimitless.World
             CreateNpc(template, gate, "Npc_GateGuard", "starter-village-gate-guard", "남문 경비병",
                 "이 길은 초원으로 이어집니다. 마을로 돌아올 때도 같은 문을 이용하세요.",
                 VillageNpcRoleType.GateGuard, new Vector2(2.4f, -5.1f));
+
+            // 모든 복제본을 원래 Placeholder 상태에서 만든 뒤 기준 NPC에 실제 외형을 적용합니다.
+            // 기준 NPC를 먼저 바꾸면 전용 외형이 없는 일반 주민도 대표 외형을 상속합니다.
+            ConfigureNpc(template.gameObject, "Npc_VillageRepresentative", "starter-village-main-guide",
+                "주민 대표", "마을에 오신 것을 환영합니다. 준비를 마치면 남문 경비병에게 길을 물어보세요.",
+                VillageNpcRoleType.VillageRepresentative, new Vector2(0f, 1.5f), plaza);
         }
 
         private static Transform CreateZone(Transform parent, string name)

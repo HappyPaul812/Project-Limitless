@@ -50,7 +50,10 @@ namespace ProjectLimitless.NPC
             if (label != null) label.text = displayName;
 
             // 기존 원형 Trigger는 E 상호작용 감지용으로 두고, 작은 물리 Collider만 별도로 둡니다.
-            BoxCollider2D body = npc.GetComponent<BoxCollider2D>() ?? npc.AddComponent<BoxCollider2D>();
+            // Scene의 기존 Collider가 다른 초기화 코드에서 Destroy된 경우 Unity 객체는
+            // C# null은 아니지만 Unity null로 판정되므로 ?? 대신 명시적으로 확인합니다.
+            BoxCollider2D body = npc.GetComponent<BoxCollider2D>();
+            if (body == null) body = npc.AddComponent<BoxCollider2D>();
             body.isTrigger = false;
             body.size = new Vector2(0.5f, 0.34f);
             body.offset = new Vector2(0f, 0.17f);
