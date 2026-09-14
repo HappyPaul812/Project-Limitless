@@ -35,9 +35,9 @@ namespace ProjectLimitless.World
             SceneManager.MoveGameObjectToScene(root, scene);
 
             Transform plaza = CreateZone(root.transform, "Zone_CentralPlaza");
-            ConfigureNpc(template.gameObject, "Npc_MainQuestGuide", "starter-village-main-guide",
-                "마을 안내인", "마을에 오신 것을 환영합니다. 준비를 마치면 남문 경비병에게 길을 물어보세요.",
-                VillageNpcRoleType.MainQuestGuide, new Vector2(0f, 1.5f), plaza);
+            ConfigureNpc(template.gameObject, "Npc_VillageRepresentative", "starter-village-main-guide",
+                "주민 대표", "마을에 오신 것을 환영합니다. 준비를 마치면 남문 경비병에게 길을 물어보세요.",
+                VillageNpcRoleType.VillageRepresentative, new Vector2(0f, 1.5f), plaza);
 
             Transform market = CreateZone(root.transform, "Zone_Market");
             CreateNpc(template, market, "Npc_GeneralShop", "starter-village-general-shop", "잡화 상인",
@@ -102,6 +102,7 @@ namespace ProjectLimitless.World
             npc.GetComponent<NpcController>().Configure(displayName, dialogue);
             VillageNpcRole roleData = npc.GetComponent<VillageNpcRole>() ?? npc.AddComponent<VillageNpcRole>();
             roleData.Configure(npcId, role, true);
+            VillageNpcAppearanceCatalog.Apply(npc, npcId, displayName);
         }
     }
 }

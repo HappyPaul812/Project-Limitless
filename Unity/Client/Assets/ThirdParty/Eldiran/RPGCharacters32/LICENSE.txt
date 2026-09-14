@@ -1,0 +1,14 @@
+Asset: 32x32 RPG Character Sprites
+Creator: Eldiran
+Original page: https://opengameart.org/content/32x32-rpg-character-sprites
+License: Creative Commons Zero v1.0 Universal (CC0 1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+The OpenGameArt original page lists this asset under CC0. Commercial use and
+modification are permitted, and attribution is not required.
+
+Project usage:
+- The unmodified source sheet is stored in Original/RPGCharacterSprites32x32.png.
+- Transparent project derivatives are stored outside ThirdParty under
+  Assets/_Project/Resources/VillageNpcSprites/Eldiran/.
+- Derivatives only replace exact RGB (255, 0, 255) chroma-key pixels with alpha 0.

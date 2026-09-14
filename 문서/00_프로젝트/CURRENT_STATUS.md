@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- 시작 마을 역할 NPC 8명에 Eldiran CC0 외형을 stable ID 기반으로 연결했다: 잡화상 OGA-03, 장비상 OGA-17, 치유사 OGA-06, 은행 OGA-16, 동료 편성 OGA-10, 훈련장 관리 OGA-02, 남문 경비 OGA-20, 주민 대표 OGA-09.
+- 원본 시트는 `Assets/ThirdParty/Eldiran/RPGCharacters32/Original`에 보존하고, 선택된 정면 32×32 셀의 정확한 마젠타만 투명화한 파생본은 `Assets/_Project/Resources/VillageNpcSprites/Eldiran`에서 관리한다. Point·PPU 28·발 기준 Pivot을 사용하며 일반 주민 4명과 핵심 캐릭터 외형은 변경하지 않았다.
+- Unity MCP가 현재 세션에 노출되지 않아 Editor Play Mode·Game View·상호작용·Field 왕복·Console 최종 검증은 연결 복구 후 수행해야 한다.
+
 ## 기준
 
 - 갱신일: 2026-09-14
