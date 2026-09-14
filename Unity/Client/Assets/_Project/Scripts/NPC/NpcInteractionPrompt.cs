@@ -63,7 +63,8 @@ namespace ProjectLimitless.NPC
 
             promptRoot = new GameObject("InteractionPrompt", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             promptRoot.transform.SetParent(transform, false);
-            promptRoot.transform.localPosition = new Vector3(0f, 1.1f, 0f);
+            // NPC 이름표보다 위에 두어 가까이 접근해도 두 문구가 겹치지 않게 합니다.
+            promptRoot.transform.localPosition = new Vector3(0f, 1.48f, 0f);
             // UI 픽셀 크기를 게임 월드 단위에 맞게 작게 줄입니다.
             promptRoot.transform.localScale = Vector3.one * 0.01f;
 
