@@ -4,7 +4,7 @@
 
 - 갱신일: 2026-09-14
 - 기준 브랜치: `main`
-- 마지막 기능 관련 commit: `9e36ec0` (`Feature: 전투 간 파티 자원 지속`)
+- 마지막 기능 관련 commit: `6ab4525` (`Feature: 시작 마을 1차 허브 구성`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -13,6 +13,13 @@
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
 
 이 문서는 완료된 기능과 미구현 범위를 빠르게 파악하기 위한 상태 요약이다. 세부 설계는 각 시스템 문서를 따른다.
+
+## 최근 시작 마을 1차 허브
+
+- `World_StarterVillage`의 기존 19×13 환경·Player·Camera·남문 `Field_01` 연결을 보존하고, `Chapter01_StarterVillageHub` 아래에 중앙 광장, 시장, 치유소/여관, 은행·파티 관리 안전 서비스, 훈련 구역, 주민 생활 구역, 남문 역할을 구분했다.
+- `VillageNpcRole`이 표시 이름과 분리된 stable NPC ID·역할 데이터를 제공한다. 메인 안내, 잡화점, 장비점, 은행, 파티 관리, 훈련, 주민, 남문 경비는 후속 시스템의 진입점/중립 대사만 제공하며 퀘스트·거래·보관·편성 내용을 확정하지 않았다. Taeon/Miel은 배치하지 않았다.
+- 치유사는 시간 제한 없는 `치료한다`/`괜찮습니다` 확인 UI를 제공한다. 확인하면 `PartyResourceService.HealPartyFully()`로 등록된 파티 HP/MP를 무료 완전 회복하고 `GameSaveService.SaveCurrentSession()`으로 즉시 저장한 뒤 중립 완료 메시지를 표시한다.
+- Unity 컴파일 오류 0개를 확인했다. Unity MCP Play Mode에서 역할 12개가 모두 2m 대상 탐색으로 선택되고 NPC Collider 겹침 0건, 7개 Zone 런타임 설치, 19×13 Bounds·남문 Trigger·복귀 Spawn을 확인했다. 치유는 검증값 HP/MP 35/12→100/50, 슬롯 저장 100/50, Continue 복원 100/50이었고 마을→`Field_01`→마을 왕복 뒤에도 100/50을 유지했다. 최종 Console은 Error 0개·Warning 0개다. 실제 화면에서 NPC 간 시각 간격과 1280×720 선택지 가독성은 사용자가 확인하면 좋다. 상세: `문서/20_월드/시작_마을.md`.
 
 ## 최근 전투 간 파티 HP/MP 지속
 

@@ -81,6 +81,13 @@ namespace ProjectLimitless.NPC
             RefreshCurrentTarget();
             if (currentTarget != null)
             {
+                VillageNpcRole role = currentTarget.GetComponent<VillageNpcRole>();
+                if (role != null)
+                {
+                    role.Interact(currentTarget);
+                    return;
+                }
+
                 DialoguePresenter.Instance?.Show(currentTarget.DisplayName, currentTarget.Dialogue);
             }
         }

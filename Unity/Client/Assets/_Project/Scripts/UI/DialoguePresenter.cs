@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 namespace ProjectLimitless.UI
@@ -15,6 +18,9 @@ namespace ProjectLimitless.UI
         [SerializeField] private Font dialogueFont;
         private GameObject panel;
         private Text dialogueText;
+        private GameObject choiceRow;
+        private Button confirmButton;
+        private Button cancelButton;
 
         /// <summary>중복 대화 UI를 제거하고, 이 객체를 공용 Instance로 등록한 뒤 패널을 만듭니다.</summary>
         private void Awake()
@@ -42,7 +48,28 @@ namespace ProjectLimitless.UI
         public void Show(string speaker, string message)
         {
             dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
+            choiceRow.SetActive(false);
             panel.SetActive(true);
+        }
+
+        /// <summary>시간 제한 없이 마우스·키보드·게임패드로 고를 수 있는 두 선택지를 표시합니다.</summary>
+        public void ShowConfirmation(
+            string speaker,
+            string message,
+            string confirmText,
+            string cancelText,
+            Action onConfirmed)
+        {
+            dialogueText.text = $"{speaker}\n{message}";
+            choiceRow.SetActive(true);
+            ConfigureButton(confirmButton, confirmText, () =>
+            {
+                choiceRow.SetActive(false);
+                onConfirmed?.Invoke();
+            });
+            ConfigureButton(cancelButton, cancelText, Hide);
+            panel.SetActive(true);
+            confirmButton.Select();
         }
 
         /// <summary>대화 내용을 유지한 채 패널을 화면에서 숨깁니다.</summary>
@@ -51,6 +78,13 @@ namespace ProjectLimitless.UI
         /// <summary>해상도에 맞춰 크기가 조절되는 Canvas와 대화 배경·글자를 코드로 구성합니다.</summary>
         private void CreatePanel()
         {
+            if (EventSystem.current == null)
+            {
+                InputSystemUIInputModule inputModule = new GameObject("EventSystem", typeof(EventSystem))
+                    .AddComponent<InputSystemUIInputModule>();
+                inputModule.AssignDefaultActions();
+            }
+
             GameObject canvasObject = new GameObject("DialogueCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             canvasObject.transform.SetParent(transform, false);
             // Screen Space Overlay는 카메라 위치와 관계없이 UI를 화면 위에 고정해 표시합니다.
@@ -83,9 +117,57 @@ namespace ProjectLimitless.UI
             textRect.anchorMin = Vector2.zero;
             textRect.anchorMax = Vector2.one;
             textRect.offsetMin = new Vector2(28f, 20f);
-            textRect.offsetMax = new Vector2(-28f, -20f);
+            textRect.offsetMax = new Vector2(-28f, -62f);
+
+            choiceRow = new GameObject("ChoiceRow", typeof(RectTransform));
+            choiceRow.transform.SetParent(panel.transform, false);
+            RectTransform choiceRect = choiceRow.GetComponent<RectTransform>();
+            choiceRect.anchorMin = new Vector2(0.48f, 0f);
+            choiceRect.anchorMax = new Vector2(0.98f, 0f);
+            choiceRect.pivot = new Vector2(1f, 0f);
+            choiceRect.anchoredPosition = new Vector2(0f, 14f);
+            choiceRect.sizeDelta = new Vector2(520f, 52f);
+
+            confirmButton = CreateChoiceButton(choiceRow.transform, "ConfirmButton", new Vector2(-270f, 0f));
+            cancelButton = CreateChoiceButton(choiceRow.transform, "CancelButton", Vector2.zero);
 
             panel.SetActive(false);
+        }
+
+        /// <summary>선택지 버튼의 공통 크기와 읽기 쉬운 글자 스타일을 구성합니다.</summary>
+        private Button CreateChoiceButton(Transform parent, string objectName, Vector2 position)
+        {
+            GameObject buttonObject = new GameObject(objectName, typeof(Image), typeof(Button));
+            buttonObject.transform.SetParent(parent, false);
+            RectTransform rect = buttonObject.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(1f, 0f);
+            rect.anchorMax = new Vector2(1f, 0f);
+            rect.pivot = new Vector2(1f, 0f);
+            rect.anchoredPosition = position;
+            rect.sizeDelta = new Vector2(250f, 48f);
+            buttonObject.GetComponent<Image>().color = new Color(0.18f, 0.24f, 0.34f, 1f);
+
+            GameObject labelObject = new GameObject("Label", typeof(Text));
+            labelObject.transform.SetParent(buttonObject.transform, false);
+            Text label = labelObject.GetComponent<Text>();
+            label.font = dialogueFont != null ? dialogueFont : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            label.fontSize = 22;
+            label.color = Color.white;
+            label.alignment = TextAnchor.MiddleCenter;
+            RectTransform labelRect = labelObject.GetComponent<RectTransform>();
+            labelRect.anchorMin = Vector2.zero;
+            labelRect.anchorMax = Vector2.one;
+            labelRect.offsetMin = Vector2.zero;
+            labelRect.offsetMax = Vector2.zero;
+            return buttonObject.GetComponent<Button>();
+        }
+
+        /// <summary>이전 상호작용의 Listener가 다음 선택에서 다시 실행되지 않도록 교체합니다.</summary>
+        private static void ConfigureButton(Button button, string label, UnityEngine.Events.UnityAction action)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(action);
+            button.GetComponentInChildren<Text>().text = label;
         }
     }
 }
