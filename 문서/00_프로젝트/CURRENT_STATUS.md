@@ -13,6 +13,7 @@
 - 마지막 기능 관련 commit: `0454af8` (`Feature: 시작 마을 NPC 외형 적용`)
 - 마지막 기능 수정 commit: `ac11356` (`Fix: 시작 마을 NPC 외형 런타임 설치 수정`)
 - 마지막 NPC UI 수정 commit: `41df219` (`Fix: 시작 마을 NPC 이름표 가독성 개선`)
+- 마지막 NPC 외형 마무리 commit: `23281a5` (`Feature: 시작 마을 일반 주민 외형 완성`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
