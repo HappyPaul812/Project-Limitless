@@ -31,7 +31,9 @@ namespace ProjectLimitless.UI
 
         private void Awake()
         {
-            path = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").FirstOrDefault(item => item.Id == GameSessionData.SelectedPlayerPathId);
+            // PathSymbol, TraitIcon, 특성 이름과 설명은 선택 화면과 같은 Resolver에서 가져와
+            // 화면마다 길 정보를 따로 하드코딩하거나 서로 다른 아이콘을 보여 주지 않게 합니다.
+            path = PathPresentationResolver.Find(GameSessionData.SelectedPlayerPathId);
             job = Resources.LoadAll<JobDefinition>("JobDefinitions").FirstOrDefault(item => item.JobId == GameSessionData.SelectedJobId);
             ValidateSession(); CreateEventSystem(); CreateInterface();
             Selectable initialFocus = controls.Last().interactable ? controls.Last() : controls.First();
@@ -89,14 +91,38 @@ namespace ProjectLimitless.UI
         private void CreateSelection(Transform parent, Font font)
         {
             Image panel = Panel(parent, "SelectionPanel", new Vector2(.49f, .49f), new Vector2(535, 440));
-            string pathBonuses = path == null ? "데이터 없음" : "직접 보너스 없음";
             string jobBonuses = job == null ? "데이터 없음" : string.Join(" · ", job.StatBonuses.Select(b => $"{StatName(b.Stat)} +{b.Amount}"));
             string skills = job == null ? "• 데이터 없음" : string.Join("\n", job.StartingSkills.Select(s => $"• {s.SkillName}"));
             bool recommended = path != null && job != null && path.RecommendedJobs.Any(item => item.Id == job.JobId);
-            Text content = MakeText(panel.transform, "SelectionSummary",
-                $"선택한 길\n{path?.DisplayName ?? "길 미선택"}\n외형  {PathVisualPreview.GetDisplayName(GameSessionData.SelectedPlayerPathId)}\n능력치  {pathBonuses}\n패시브  {path?.PassiveName ?? "-"}\n\n선택한 직업{(recommended ? "   <color=#FFDB8A>[추천 직업]</color>" : "")}\n{job?.DisplayName ?? "직업 미선택"}\n역할  {job?.RoleName ?? "-"}\n능력치  {jobBonuses}\n패시브  {(job == null ? "-" : job.Passive.PassiveName)}\n\n시작 스킬\n{skills}",
-                font, 18, new Vector2(.5f, .5f), new Vector2(480, 400));
-            content.supportRichText = true; content.alignment = TextAnchor.MiddleLeft; content.fontStyle = FontStyle.Bold;
+
+            Heading(panel.transform, font, "선택한 길", .94f);
+            // PathSymbol은 선택한 길 자체의 공식 문장이고, TraitIcon은 전투 특성의 기능 표식입니다.
+            // 최종 확인에서도 크기와 위치를 분리해 두 의미를 한눈에 구분할 수 있게 합니다.
+            Image pathSymbol = MakeImage(panel.transform, "PathSymbol", Color.clear);
+            pathSymbol.sprite = path?.PathSymbol; pathSymbol.color = pathSymbol.sprite == null ? Color.clear : Color.white; pathSymbol.preserveAspect = true;
+            SetRect(pathSymbol.rectTransform, new Vector2(.14f, .785f), new Vector2(64, 64));
+            Text pathName = MakeText(panel.transform, "PathName", path?.DisplayName ?? "길 미선택", font, 25, new Vector2(.47f, .81f), new Vector2(270, 38));
+            pathName.color = gold; pathName.fontStyle = FontStyle.Bold; pathName.alignment = TextAnchor.MiddleLeft;
+            Image traitIcon = MakeImage(panel.transform, "TraitIcon", Color.clear);
+            traitIcon.sprite = path?.TraitIcon; traitIcon.color = traitIcon.sprite == null ? Color.clear : Color.white; traitIcon.preserveAspect = true;
+            SetRect(traitIcon.rectTransform, new Vector2(.31f, .69f), new Vector2(26, 26));
+            Text traitName = MakeText(panel.transform, "TraitName", path?.PassiveName ?? "특성 없음", font, 18, new Vector2(.52f, .69f), new Vector2(190, 28));
+            traitName.fontStyle = FontStyle.Bold; traitName.alignment = TextAnchor.MiddleLeft;
+            Text traitDescription = MakeText(panel.transform, "TraitDescription", path?.PassiveDescription ?? "길 데이터를 확인할 수 없습니다.", font, 14, new Vector2(.57f, .57f), new Vector2(420, 68));
+            traitDescription.color = new Color(.78f, .83f, .9f, 1f); traitDescription.alignment = TextAnchor.UpperLeft; traitDescription.horizontalOverflow = HorizontalWrapMode.Wrap; traitDescription.verticalOverflow = VerticalWrapMode.Truncate;
+
+            Image divider = MakeImage(panel.transform, "SectionDivider", new Color(.28f, .36f, .47f, 1f));
+            SetRect(divider.rectTransform, new Vector2(.5f, .465f), new Vector2(475, 2));
+            Text jobHeading = MakeText(panel.transform, "JobHeading", "선택한 직업", font, 20, new Vector2(.2f, .405f), new Vector2(170, 30));
+            jobHeading.color = gold; jobHeading.fontStyle = FontStyle.Bold; jobHeading.alignment = TextAnchor.MiddleLeft;
+            Text recommendation = MakeText(panel.transform, "Recommendation", recommended ? "추천 조합" : string.Empty, font, 12, new Vector2(.77f, .405f), new Vector2(120, 22));
+            recommendation.color = new Color(1f, .84f, .46f, 1f);
+            Text jobName = MakeText(panel.transform, "JobName", job?.DisplayName ?? "직업 미선택", font, 23, new Vector2(.19f, .335f), new Vector2(160, 32));
+            jobName.fontStyle = FontStyle.Bold; jobName.alignment = TextAnchor.MiddleLeft;
+            Text jobDetails = MakeText(panel.transform, "JobDetails", $"역할  {job?.RoleName ?? "-"}\n능력치  {jobBonuses}\n패시브  {(job == null ? "-" : job.Passive.PassiveName)}", font, 15, new Vector2(.3f, .21f), new Vector2(280, 100));
+            jobDetails.alignment = TextAnchor.UpperLeft;
+            Text skillList = MakeText(panel.transform, "StartingSkills", $"시작 스킬\n{skills}", font, 15, new Vector2(.75f, .2f), new Vector2(210, 112));
+            skillList.alignment = TextAnchor.UpperLeft;
         }
 
         private void CreateStats(Transform parent, Font font)
@@ -104,12 +130,25 @@ namespace ProjectLimitless.UI
             Image panel = Panel(parent, "StatsPanel", new Vector2(.82f, .49f), new Vector2(300, 400)); Heading(panel.transform, font, "최종 능력치", .9f);
             Text note = MakeText(panel.transform, "Note", "기본 10 + 직업", font, 15, new Vector2(.5f, .8f), new Vector2(260, 28)); note.color = new Color(.72f, .78f, .88f, 1);
             int V(CharacterStatType stat) => CharacterCreationStatsCalculator.GetFinalStat(path, job, stat);
-            Text stats = MakeText(panel.transform, "Stats", $"체력  {V(CharacterStatType.Health)}      힘  {V(CharacterStatType.Strength)}\n\n민첩  {V(CharacterStatType.Agility)}      감각  {V(CharacterStatType.Sense)}\n\n지능  {V(CharacterStatType.Intelligence)}      의지  {V(CharacterStatType.Willpower)}", font, 21, new Vector2(.5f, .49f), new Vector2(270, 210)); stats.fontStyle = FontStyle.Bold;
+            CreateStat(panel.transform, font, "체력", V(CharacterStatType.Health), .27f, .65f);
+            CreateStat(panel.transform, font, "힘", V(CharacterStatType.Strength), .72f, .65f);
+            CreateStat(panel.transform, font, "민첩", V(CharacterStatType.Agility), .27f, .49f);
+            CreateStat(panel.transform, font, "감각", V(CharacterStatType.Sense), .72f, .49f);
+            CreateStat(panel.transform, font, "지능", V(CharacterStatType.Intelligence), .27f, .33f);
+            CreateStat(panel.transform, font, "의지", V(CharacterStatType.Willpower), .72f, .33f);
+        }
+
+        private void CreateStat(Transform parent, Font font, string label, int value, float x, float y)
+        {
+            Text name = MakeText(parent, $"{label}Label", label, font, 17, new Vector2(x - .07f, y), new Vector2(68, 30));
+            name.color = new Color(.78f, .83f, .9f, 1f); name.alignment = TextAnchor.MiddleLeft;
+            Text number = MakeText(parent, $"{label}Value", value.ToString(), font, 22, new Vector2(x + .12f, y), new Vector2(48, 34));
+            number.fontStyle = FontStyle.Bold; number.alignment = TextAnchor.MiddleRight;
         }
 
         private void CreateButtons(Transform parent, Font font)
         {
-            Button previous = MakeButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .095f)); Button start = MakeButton(parent, "StartButton", "게임 시작", font, new Vector2(.66f, .095f));
+            Button previous = MakeButton(parent, "PreviousButton", "이전", font, new Vector2(.39f, .095f), false); Button start = MakeButton(parent, "StartButton", "게임 시작", font, new Vector2(.66f, .095f), true);
             previous.onClick.AddListener(() => SceneManager.LoadSceneAsync(previousSceneName, LoadSceneMode.Single));
             start.interactable = path != null && job != null && !string.IsNullOrWhiteSpace(GameSessionData.PlayerName);
             start.onClick.AddListener(StartConfirmedGame); controls.Add(previous); controls.Add(start);
@@ -129,7 +168,7 @@ namespace ProjectLimitless.UI
         private void MoveFocus(int direction) { int index = controls.FindIndex(item => item.gameObject == EventSystem.current.currentSelectedGameObject); EventSystem.current.SetSelectedGameObject(controls[(index + direction + controls.Count) % controls.Count].gameObject); }
         private Image Panel(Transform parent, string name, Vector2 anchor, Vector2 size) { Image panel = MakeImage(parent, name, new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, anchor, size); AddOutline(panel.gameObject, new Color(.32f, .4f, .52f, 1), 2); return panel; }
         private void Heading(Transform parent, Font font, string label, float y) { Text text = MakeText(parent, "Heading", label, font, 22, new Vector2(.5f, y), new Vector2(260, 34)); text.color = gold; text.fontStyle = FontStyle.Bold; }
-        private Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, new Vector2(240, 56)); Image image = obj.GetComponent<Image>(); image.color = new Color(.12f, .32f, .5f, 1); Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.colors = CtaColors(); Outline outline = obj.GetComponent<Outline>(); outline.effectColor = gold; outline.effectDistance = new Vector2(2, -2); MakeText(obj.transform, "Label", $"[ {label} ]", font, 22, Vector2.one * .5f, new Vector2(220, 48)).fontStyle = FontStyle.Bold; EventTrigger trigger = obj.AddComponent<EventTrigger>(); AddTrigger(trigger, EventTriggerType.Select, _ => { outline.effectColor = focusGold; outline.effectDistance = new Vector2(5, -5); }); AddTrigger(trigger, EventTriggerType.Deselect, _ => { outline.effectColor = gold; outline.effectDistance = new Vector2(2, -2); }); return button; }
+        private Button MakeButton(Transform parent, string name, string label, Font font, Vector2 anchor, bool primary) { GameObject obj = new GameObject(name, typeof(Image), typeof(Button), typeof(Outline)); obj.transform.SetParent(parent, false); SetRect(obj.GetComponent<RectTransform>(), anchor, primary ? new Vector2(260, 60) : new Vector2(220, 52)); Image image = obj.GetComponent<Image>(); image.color = primary ? new Color(.16f, .4f, .58f, 1f) : new Color(.075f, .16f, .25f, 1f); Button button = obj.GetComponent<Button>(); button.targetGraphic = image; button.colors = CtaColors(); Outline outline = obj.GetComponent<Outline>(); outline.effectColor = primary ? focusGold : new Color(.48f, .55f, .64f, 1f); outline.effectDistance = new Vector2(primary ? 3 : 1, primary ? -3 : -1); MakeText(obj.transform, "Label", $"[ {label} ]", font, primary ? 22 : 19, Vector2.one * .5f, new Vector2(240, 48)).fontStyle = FontStyle.Bold; EventTrigger trigger = obj.AddComponent<EventTrigger>(); AddTrigger(trigger, EventTriggerType.Select, _ => { outline.effectColor = focusGold; outline.effectDistance = new Vector2(5, -5); }); AddTrigger(trigger, EventTriggerType.Deselect, _ => { outline.effectColor = primary ? focusGold : new Color(.48f, .55f, .64f, 1f); outline.effectDistance = new Vector2(primary ? 3 : 1, primary ? -3 : -1); }); return button; }
         private static Navigation Nav(Selectable left, Selectable right) => new Navigation { mode = Navigation.Mode.Explicit, selectOnLeft = left, selectOnRight = right, selectOnUp = left, selectOnDown = right };
         private static ColorBlock CtaColors() { ColorBlock c = ColorBlock.defaultColorBlock; c.normalColor = Color.white; c.highlightedColor = new Color(1.25f, 1.18f, 1.08f, 1); c.selectedColor = new Color(1.18f, 1.12f, 1.02f, 1); c.pressedColor = new Color(.62f, .72f, .82f, 1); c.disabledColor = new Color(.48f, .52f, .58f, .72f); return c; }
         private static void CreateSteps(Transform parent, Font font) { string[] steps = { "1 기본 정보", "2 길", "3 직업", "4 확인 · 현재" }; for (int i = 0; i < steps.Length; i++) { bool current = i == 3; Image panel = MakeImage(parent, $"Step{i + 1}", current ? new Color(.18f, .25f, .34f, 1) : new Color(.04f, .065f, .11f, .88f)); SetRect(panel.rectTransform, new Vector2(.35f + i * .1f, .975f), new Vector2(122, 28)); AddOutline(panel.gameObject, current ? new Color(.95f, .76f, .36f, 1) : new Color(.25f, .32f, .42f, 1), current ? 2 : 1); MakeText(panel.transform, "Label", steps[i], font, 15, Vector2.one * .5f, new Vector2(118, 26)); } }
