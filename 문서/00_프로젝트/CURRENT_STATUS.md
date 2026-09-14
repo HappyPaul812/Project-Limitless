@@ -5,6 +5,7 @@
 - 시작 마을 역할 NPC 8명에 Eldiran CC0 외형을 stable ID 기반으로 연결했다: 잡화상 OGA-03, 장비상 OGA-17, 치유사 OGA-06, 은행 OGA-16, 동료 편성 OGA-10, 훈련장 관리 OGA-02, 남문 경비 OGA-20, 주민 대표 OGA-09.
 - 원본 시트는 `Assets/ThirdParty/Eldiran/RPGCharacters32/Original`에 보존하고, 선택된 정면 32×32 셀의 정확한 마젠타만 투명화한 파생본은 `Assets/_Project/Resources/VillageNpcSprites/Eldiran`에서 관리한다. Point·PPU 28·발 기준 Pivot을 사용하며 태온·미엘 등 핵심 캐릭터 외형은 변경하지 않았다.
 - 2026-09-15 Unity 6000.5.7f1에서 ScriptAssemblies 빌드·Domain Reload와 Unity MCP Play Mode 검증을 완료했다. C# 컴파일 오류와 기능 관련 런타임 Error는 없다.
+- NPC 대화·치유 확인 등 상호작용 UI가 열리면 World EXP HUD를 CanvasGroup으로 숨기고 입력 간섭도 차단하며, 종료·비활성화·Scene 전환 시 복귀한다. 소유자별 공통 API라 향후 상점·은행·동료 편성·퀘스트 UI도 같은 규칙을 재사용할 수 있다.
 
 ## 기준
 
@@ -14,6 +15,7 @@
 - 마지막 기능 수정 commit: `ac11356` (`Fix: 시작 마을 NPC 외형 런타임 설치 수정`)
 - 마지막 NPC UI 수정 commit: `41df219` (`Fix: 시작 마을 NPC 이름표 가독성 개선`)
 - 마지막 NPC 외형 마무리 commit: `23281a5` (`Feature: 시작 마을 일반 주민 외형 완성`)
+- 마지막 상호작용 UI 우선순위 commit: `fcf5cf9` (`Fix: 상호작용 중 월드 EXP HUD 숨김`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
@@ -35,6 +37,9 @@
 - 이름표·주민 외형 변경은 Unity 6000.5.7f1 전체 응답 파일의 `Assembly-CSharp`·`Assembly-CSharp-Editor` 별도 출력과 Unity Editor ScriptAssemblies 컴파일에서 오류 0개를 확인했다. 신규 경고는 없고 기존 CS0618 경고는 Runtime 5개·Editor 1개이며 관련 파일 `git diff --check`를 통과했다.
 - Unity MCP Play Mode에서 주민 1~4 Sprite OGA-07/11/13/19, 주황 Placeholder·마젠타 배경 0개, 주민 Label 비활성 4/4, 기능 NPC·주민 대표 단일 활성 Label 8/8, 주민 대사 호출 4/4, BoxCollider2D `(0.50, 0.34)`와 Circle Trigger, `Field_01` 왕복 재설치를 확인했다. 전체 화면에서 일반 주민 텍스트가 제거되어 혼잡도가 줄고 PlayerNameplate·EXP HUD는 기존 상태를 유지했다. 스크린샷은 `Unity/Client/ValidationCaptures/`에 보존한다.
 - 기능 관련 Console Error는 0개다. 저장 슬롯 없이 World Scene을 직접 실행한 검증 경로에서 기존 `선택된 저장 슬롯이 없어 자동 저장을 건너뜁니다.` 경고가 3회 발생했으며 NPC 외형·이름표 신규 경고는 없다.
+- World EXP HUD는 탐험 중 표시하고 대화·확인 UI가 열리면 소유자별 억제 상태로 숨긴다. HUD CanvasGroup은 alpha 0·interactable false·blocksRaycasts false이며 모든 상호작용 UI 종료 후 alpha 1로 복귀한다. DialoguePresenter는 Hide, OnDisable, OnDestroy에서 상태를 해제한다.
+- 대화 Canvas sortingOrder 10을 World HUD Canvas 5보다 높게 두고 Panel을 열 때 마지막 sibling으로 올렸다. Unity MCP Play Mode에서 일반 주민·잡화 상인·주민 대표, 3회 반복, `StarterVillage→Field_01→StarterVillage` 왕복 후 재대화를 검증했고 모두 숨김/복귀가 정상이다.
+- 전체 Assembly-CSharp·Assembly-CSharp-Editor 정적 컴파일 오류 0개, 기존 CS0618 경고 Runtime 5개·Editor 1개다. Play Mode 기능 관련 Error 0개이며 직접 World Scene 실행으로 인한 기존 자동 저장 건너뜀 Warning 1개만 확인했다. 상세: `문서/11_UI/월드_레벨과_EXP_HUD.md`.
 
 ## 최근 전투 간 파티 HP/MP 지속
 
