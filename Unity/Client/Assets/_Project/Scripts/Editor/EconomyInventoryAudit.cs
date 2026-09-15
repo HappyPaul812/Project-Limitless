@@ -12,6 +12,8 @@ namespace ProjectLimitless.Editor
         [MenuItem("Project Limitless/Test/Economy Inventory Audit")]
         private static void Audit()
         {
+            Check(CurrencyPresentation.DisplayName == "탈렌트", "화폐 표시명");
+            Check(CurrencyPresentation.Icon != null, "공용 화폐 아이콘");
             ItemDefinition[] assets = Resources.LoadAll<ItemDefinition>("ItemDefinitions");
             Check(assets.All(x => x != null && !string.IsNullOrWhiteSpace(x.ItemId)), "빈 ItemId 없음");
             Check(assets.Select(x => x.ItemId).Distinct(StringComparer.Ordinal).Count() == assets.Length, "중복 ItemId 없음");
