@@ -55,24 +55,34 @@ namespace ProjectLimitless.Editor
             EconomyService.Reset(); InventoryService.Reset();
 
             EconomyService.AddCurrency(100);
-            Check(ShopService.TryBuy("item_healing_potion_small") == ShopTransactionResult.Success
-                && EconomyService.GetCurrency() == 80 && InventoryService.GetItemCount("item_healing_potion_small") == 1,
-                "상점 회복약 구매 100→80, 0→1");
-            Check(ShopService.TryBuy("item_mana_potion_small") == ShopTransactionResult.Success
-                && EconomyService.GetCurrency() == 50 && InventoryService.GetItemCount("item_mana_potion_small") == 1,
-                "상점 마력 회복약 구매 80→50, 0→1");
-            Check(ShopService.TrySell("item_healing_potion_small") == ShopTransactionResult.Success
-                && EconomyService.GetCurrency() == 60 && InventoryService.GetItemCount("item_healing_potion_small") == 0,
-                "상점 회복약 판매 50→60, 1→0");
-            ShopService.TryBuy("item_mana_potion_small"); ShopService.TryBuy("item_mana_potion_small");
+            ShopDefinition starterShop = shops.First(x => x.ShopId == "shop_general_starter_village");
+            EconomyService.Reset(); InventoryService.Reset(); EconomyService.AddCurrency(200);
+            Check(ShopService.TryBuy(starterShop, "item_healing_potion_small", 3) == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 140 && InventoryService.GetItemCount("item_healing_potion_small") == 3,
+                "상점 회복약 3개 구매 200→140, 0→3");
+            Check(ShopService.TryBuy(starterShop, "item_mana_potion_small", 4) == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 20 && InventoryService.GetItemCount("item_mana_potion_small") == 4,
+                "상점 마력 회복약 4개 구매 140→20, 0→4");
+            Check(ShopService.GetMaximumBuyQuantity(starterShop, "item_mana_potion_small") == 0, "20 탈렌트에서 마력 회복약 최대 0");
             int currencyBeforeFailure = EconomyService.GetCurrency();
             int manaBeforeFailure = InventoryService.GetItemCount("item_mana_potion_small");
-            Check(ShopService.TryBuy("item_mana_potion_small") == ShopTransactionResult.InsufficientCurrency
+            Check(ShopService.TryBuy(starterShop, "item_mana_potion_small", 1) == ShopTransactionResult.InsufficientCurrency
                 && EconomyService.GetCurrency() == currencyBeforeFailure
                 && InventoryService.GetItemCount("item_mana_potion_small") == manaBeforeFailure, "돈 부족 구매 원자성");
-            Check(ShopService.TrySell("item_healing_potion_small") == ShopTransactionResult.NoItem
-                && EconomyService.GetCurrency() == currencyBeforeFailure
-                && InventoryService.GetItemCount("item_healing_potion_small") == 0, "보유 0 판매 원자성");
+            Check(ShopService.TrySell("item_healing_potion_small", 2) == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 40 && InventoryService.GetItemCount("item_healing_potion_small") == 1,
+                "상점 회복약 2개 판매 20→40, 3→1");
+            Check(ShopService.GetMaximumSellQuantity("item_healing_potion_small") == 1
+                && ShopService.TrySell("item_healing_potion_small", 2) == ShopTransactionResult.NoItem
+                && InventoryService.GetItemCount("item_healing_potion_small") == 1, "보유 수량 초과 판매 방어");
+            Check(!ShopService.TryCalculateTotal(int.MaxValue, 2, out _), "가격×수량 overflow 방어");
+            InventoryService.Reset();
+            ItemDefinition stackItem = ScriptableObject.CreateInstance<ItemDefinition>();
+            stackItem.ConfigureForAudit("audit_stack_item", 99);
+            ItemCatalog.RegisterForAudit(stackItem);
+            Check(InventoryService.TryAddItem("audit_stack_item", 99) && !InventoryService.TryAddItem("audit_stack_item", 1), "Inventory MaxStack 강제");
+            UnityEngine.Object.DestroyImmediate(stackItem);
+            ItemCatalog.ReloadForAudit();
             EconomyService.Reset(); InventoryService.Reset();
             Debug.Log("ECONOMY_INVENTORY_AUDIT ALL PASS");
         }

@@ -261,7 +261,8 @@ namespace ProjectLimitless.Core
                 var itemIds = new System.Collections.Generic.HashSet<string>(StringComparer.Ordinal);
                 foreach (InventoryEntry entry in data.Inventory)
                     if (entry == null || string.IsNullOrWhiteSpace(entry.ItemId) || entry.Count <= 0
-                        || !itemIds.Add(entry.ItemId) || !ItemCatalog.TryGet(entry.ItemId, out _))
+                        || !itemIds.Add(entry.ItemId) || !ItemCatalog.TryGet(entry.ItemId, out ItemDefinition item)
+                        || entry.Count > item.MaxStack)
                     { error = "인벤토리 저장값이 올바르지 않습니다."; return false; }
             }
             if (data.SpawnPointId != null && (data.SpawnPointId.Length > 128 || data.SpawnPointId.Contains("/") || data.SpawnPointId.Contains("\\"))) { error = "SpawnPoint ID 형식이 올바르지 않습니다."; return false; }

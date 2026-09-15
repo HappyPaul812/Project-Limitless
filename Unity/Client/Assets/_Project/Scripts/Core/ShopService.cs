@@ -8,30 +8,56 @@ namespace ProjectLimitless.Core
     /// </summary>
     public static class ShopService
     {
-        public static ShopTransactionResult TryBuy(string itemId)
+        public static int GetMaximumBuyQuantity(ShopDefinition shop, string itemId)
         {
-            if (!ItemCatalog.TryGet(itemId, out ItemDefinition item)) return ShopTransactionResult.InvalidItem;
-            // 가격은 상점 코드가 아니라 ItemDefinition에서 읽어 밸런스 조정을 데이터 변경으로 끝냅니다.
-            if (!EconomyService.CanAfford(item.BuyPrice)) return ShopTransactionResult.InsufficientCurrency;
-            if (!InventoryService.CanAddItem(itemId, 1)) return ShopTransactionResult.InventoryFull;
+            if (!IsSoldBy(shop, itemId) || !ItemCatalog.TryGet(itemId, out ItemDefinition item)) return 0;
+            int affordable = item.BuyPrice == 0 ? int.MaxValue : EconomyService.GetCurrency() / item.BuyPrice;
+            return System.Math.Min(affordable, InventoryService.GetAddableAmount(itemId));
+        }
 
-            // 위 검증 뒤에는 두 작업이 모두 성공할 수 있습니다. 예상 밖 실패에는 즉시 원상복구합니다.
-            if (!EconomyService.TrySpendCurrency(item.BuyPrice)) return ShopTransactionResult.InsufficientCurrency;
-            if (InventoryService.TryAddItem(itemId, 1)) return ShopTransactionResult.Success;
-            EconomyService.AddCurrency(item.BuyPrice);
+        public static int GetMaximumSellQuantity(string itemId) => InventoryService.GetItemCount(itemId);
+
+        public static ShopTransactionResult TryBuy(ShopDefinition shop, string itemId, int quantity)
+        {
+            if (quantity <= 0 || !IsSoldBy(shop, itemId) || !ItemCatalog.TryGet(itemId, out ItemDefinition item))
+                return ShopTransactionResult.InvalidItem;
+            // 총 가격을 거래 전에 long으로 계산해 int 곱셈 overflow와 부분 적용을 함께 막습니다.
+            if (!TryCalculateTotal(item.BuyPrice, quantity, out int total)) return ShopTransactionResult.CurrencyOverflow;
+            if (!EconomyService.CanAfford(total)) return ShopTransactionResult.InsufficientCurrency;
+            if (!InventoryService.CanAddItem(itemId, quantity)) return ShopTransactionResult.InventoryFull;
+
+            // 수량별 거래를 공용 서비스에서 처리해야 모든 Shop UI가 같은 원자성 규칙을 공유합니다.
+            if (!EconomyService.TrySpendCurrency(total)) return ShopTransactionResult.InsufficientCurrency;
+            if (InventoryService.TryAddItem(itemId, quantity)) return ShopTransactionResult.Success;
+            EconomyService.AddCurrency(total);
             return ShopTransactionResult.InventoryFull;
         }
 
-        public static ShopTransactionResult TrySell(string itemId)
+        public static ShopTransactionResult TrySell(string itemId, int quantity)
         {
-            if (!ItemCatalog.TryGet(itemId, out ItemDefinition item)) return ShopTransactionResult.InvalidItem;
-            if (!InventoryService.HasItem(itemId, 1)) return ShopTransactionResult.NoItem;
-            if (EconomyService.GetCurrency() > int.MaxValue - item.SellPrice) return ShopTransactionResult.CurrencyOverflow;
+            if (quantity <= 0 || !ItemCatalog.TryGet(itemId, out ItemDefinition item)) return ShopTransactionResult.InvalidItem;
+            if (!InventoryService.HasItem(itemId, quantity)) return ShopTransactionResult.NoItem;
+            if (!TryCalculateTotal(item.SellPrice, quantity, out int total)
+                || EconomyService.GetCurrency() > int.MaxValue - total) return ShopTransactionResult.CurrencyOverflow;
 
-            if (!InventoryService.TryRemoveItem(itemId, 1)) return ShopTransactionResult.NoItem;
-            if (EconomyService.AddCurrency(item.SellPrice)) return ShopTransactionResult.Success;
-            InventoryService.TryAddItem(itemId, 1);
+            if (!InventoryService.TryRemoveItem(itemId, quantity)) return ShopTransactionResult.NoItem;
+            if (EconomyService.AddCurrency(total)) return ShopTransactionResult.Success;
+            InventoryService.TryAddItem(itemId, quantity);
             return ShopTransactionResult.CurrencyOverflow;
+        }
+
+        public static bool TryCalculateTotal(int unitPrice, int quantity, out int total)
+        {
+            long calculated = (long)unitPrice * quantity;
+            total = calculated >= 0 && calculated <= int.MaxValue ? (int)calculated : 0;
+            return quantity > 0 && unitPrice >= 0 && calculated <= int.MaxValue;
+        }
+
+        private static bool IsSoldBy(ShopDefinition shop, string itemId)
+        {
+            if (shop == null || string.IsNullOrEmpty(itemId)) return false;
+            for (int i = 0; i < shop.ItemIds.Count; i++) if (shop.ItemIds[i] == itemId) return true;
+            return false;
         }
     }
 }

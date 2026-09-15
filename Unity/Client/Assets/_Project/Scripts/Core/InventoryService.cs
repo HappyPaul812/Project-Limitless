@@ -20,7 +20,16 @@ namespace ProjectLimitless.Core
         public static bool HasItem(string itemId, int amount) => amount >= 0 && GetItemCount(itemId) >= amount;
         public static bool CanAddItem(string itemId, int amount)
         {
-            return amount > 0 && ItemCatalog.TryGet(itemId, out _) && GetItemCount(itemId) <= int.MaxValue - amount;
+            if (amount <= 0 || !ItemCatalog.TryGet(itemId, out ItemDefinition item)) return false;
+            int current = GetItemCount(itemId);
+            // UI와 공용 Inventory API가 같은 MaxStack을 지켜야 상점 밖의 보상도 Stack 제한을 우회하지 못합니다.
+            return current <= int.MaxValue - amount && current + amount <= item.MaxStack;
+        }
+        public static int GetAddableAmount(string itemId)
+        {
+            return ItemCatalog.TryGet(itemId, out ItemDefinition item)
+                ? Math.Max(0, item.MaxStack - GetItemCount(itemId))
+                : 0;
         }
         public static bool TryAddItem(string itemId, int amount)
         {
@@ -41,7 +50,8 @@ namespace ProjectLimitless.Core
             Counts.Clear();
             if (entries == null) return;
             foreach (InventoryEntry entry in entries)
-                if (entry != null && entry.Count > 0 && ItemCatalog.TryGet(entry.ItemId, out _))
+                if (entry != null && entry.Count > 0 && ItemCatalog.TryGet(entry.ItemId, out ItemDefinition item)
+                    && entry.Count <= item.MaxStack)
                     Counts[entry.ItemId] = entry.Count;
         }
         public static void Reset() => Counts.Clear();
