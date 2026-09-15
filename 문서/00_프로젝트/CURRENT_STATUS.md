@@ -9,6 +9,7 @@
 - NPC 대화는 실제 Player/NPC Transform을 추적하며 상호작용 거리 2.0보다 넓은 3.0을 넘으면 이동을 막지 않고 자동 종료한다. 자동 종료도 공통 Hide 경로라 EXP HUD가 복귀하고 범위 밖 Prompt는 숨겨진다.
 - 경제·인벤토리 최소 기반을 추가했다. Currency는 음수/overflow/실패 지출을 방어하고 Inventory는 stable ItemId+Count 배열로 저장한다. ItemDefinition/Catalog와 원자적 RewardBundle 연결점을 제공하며 상점·은행·장비·실제 아이템은 아직 구현하지 않았다.
 - Save Version 1 선택 필드로 Currency/Inventory를 추가해 구버전 누락 필드는 0/빈 목록으로 호환한다. Inventory Capacity는 미확정·무제한이며 패배 화폐 손실과 휴식 EXP는 없다. 상세: `문서/12_시스템/경제와_인벤토리.md`.
+- 사용자 표시 화폐명은 `탈렌트`로 확정했다. `CurrencyPresentation`이 표시명, 금색 tint와 Kenney Board Game Icons CC0 원형 토큰 Sprite를 공통 제공하며 World EXP HUD에는 추가하지 않았다.
 
 ## 기준
 
@@ -21,6 +22,7 @@
 - 마지막 상호작용 UI 우선순위 commit: `fcf5cf9` (`Fix: 상호작용 중 월드 EXP HUD 숨김`)
 - 마지막 NPC 거리 대화 종료 commit: `6b42c26` (`Fix: NPC 거리 이탈 시 대화 종료`)
 - 마지막 경제·인벤토리 기반 commit: `dcb76e6` (`Feature: 경제와 인벤토리 최소 기반 추가`)
+- 마지막 탈렌트 표시 참조 commit: `0277317` (`Feature: 탈렌트 화폐 표시 참조 추가`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
