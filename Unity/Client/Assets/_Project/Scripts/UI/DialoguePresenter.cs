@@ -22,6 +22,10 @@ namespace ProjectLimitless.UI
         private GameObject choiceRow;
         private Button confirmButton;
         private Button cancelButton;
+        private Transform dialogueViewer;
+        private Transform dialogueOwner;
+        private float dialogueBreakDistance;
+        private bool isDistanceTracked;
 
         /// <summary>중복 대화 UI를 제거하고, 이 객체를 공용 Instance로 등록한 뒤 패널을 만듭니다.</summary>
         private void Awake()
@@ -82,7 +86,48 @@ namespace ProjectLimitless.UI
         public void Hide()
         {
             panel.SetActive(false);
+            ClearDistanceTracking();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
+        }
+
+        /// <summary>현재 대화의 실제 참여자 참조와 공통 종료 거리를 등록합니다.</summary>
+        public void TrackDistance(Transform viewer, Transform owner, float breakDistance)
+        {
+            dialogueViewer = viewer;
+            dialogueOwner = owner;
+            dialogueBreakDistance = Mathf.Max(0.1f, breakDistance);
+            isDistanceTracked = true;
+        }
+
+        /// <summary>대화 중 상대가 사라지거나 종료 거리를 벗어나면 공통 종료 경로로 닫습니다.</summary>
+        private void Update()
+        {
+            if (panel == null || !panel.activeSelf || !isDistanceTracked)
+            {
+                return;
+            }
+
+            if (dialogueOwner == null || dialogueViewer == null)
+            {
+                Hide();
+                return;
+            }
+
+            if (!dialogueOwner.gameObject.activeInHierarchy
+                || !dialogueViewer.gameObject.activeInHierarchy
+                || (dialogueOwner.position - dialogueViewer.position).sqrMagnitude
+                    > dialogueBreakDistance * dialogueBreakDistance)
+            {
+                Hide();
+            }
+        }
+
+        private void ClearDistanceTracking()
+        {
+            dialogueViewer = null;
+            dialogueOwner = null;
+            dialogueBreakDistance = 0f;
+            isDistanceTracked = false;
         }
 
         /// <summary>Scene 전환이나 객체 비활성화 중에도 HUD 억제 상태가 남지 않게 해제합니다.</summary>

@@ -12,6 +12,8 @@ namespace ProjectLimitless.NPC
     {
         // 이 거리 안에 들어온 NPC만 대화 대상으로 봅니다. Inspector에서 0.1 이상으로 조절할 수 있습니다.
         [SerializeField, Min(0.1f)] private float interactionRadius = 2f;
+        // 진입 반경보다 넓게 두어 경계에서 조금 움직여도 대화가 즉시 끊기지 않게 합니다.
+        [SerializeField, Min(0.2f)] private float dialogueBreakDistance = 3f;
 
         private InputAction interactAction;
         private InputAction cancelAction;
@@ -19,11 +21,13 @@ namespace ProjectLimitless.NPC
 
         public NpcController CurrentTarget => currentTarget;
         public float InteractionRadius => interactionRadius;
+        public float DialogueBreakDistance => dialogueBreakDistance;
 
         /// <summary>Scene 생성 도구가 상호작용 가능 거리를 설정할 때 사용합니다.</summary>
         public void Configure(float radius)
         {
             interactionRadius = Mathf.Max(0.1f, radius);
+            dialogueBreakDistance = Mathf.Max(dialogueBreakDistance, interactionRadius + 0.1f);
         }
 
         /// <summary>대화 시작·닫기 키와 게임패드 버튼을 Input System에 등록합니다.</summary>
@@ -54,6 +58,8 @@ namespace ProjectLimitless.NPC
         {
             interactAction?.Disable();
             cancelAction?.Disable();
+            DialoguePresenter.Instance?.Hide();
+            SetCurrentTarget(null);
         }
 
         /// <summary>등록한 입력 이벤트를 해제하고 InputAction의 메모리를 정리합니다.</summary>
@@ -85,10 +91,12 @@ namespace ProjectLimitless.NPC
                 if (role != null)
                 {
                     role.Interact(currentTarget);
+                    DialoguePresenter.Instance?.TrackDistance(transform, currentTarget.transform, dialogueBreakDistance);
                     return;
                 }
 
                 DialoguePresenter.Instance?.Show(currentTarget.DisplayName, currentTarget.Dialogue);
+                DialoguePresenter.Instance?.TrackDistance(transform, currentTarget.transform, dialogueBreakDistance);
             }
         }
 
