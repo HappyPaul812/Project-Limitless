@@ -10,6 +10,8 @@
 - 경제·인벤토리 최소 기반을 추가했다. Currency는 음수/overflow/실패 지출을 방어하고 Inventory는 stable ItemId+Count 배열로 저장한다. ItemDefinition/Catalog와 원자적 RewardBundle 연결점을 제공하며 상점·은행·장비·실제 아이템은 아직 구현하지 않았다.
 - Save Version 1 선택 필드로 Currency/Inventory를 추가해 구버전 누락 필드는 0/빈 목록으로 호환한다. Inventory Capacity는 미확정·무제한이며 패배 화폐 손실과 휴식 EXP는 없다. 상세: `문서/12_시스템/경제와_인벤토리.md`.
 - 사용자 표시 화폐명은 `탈렌트`로 확정했다. `CurrencyPresentation`이 표시명, 금색 tint와 Kenney Board Game Icons CC0 원형 토큰 Sprite를 공통 제공하며 World EXP HUD에는 추가하지 않았다.
+- 시작 마을 `GeneralShop` 역할에 실제 잡화상 Shop을 연결했다. `ShopDefinition`/`ShopService`/공용 Modal UI를 분리하고 회복약 Buy20·Sell10, 마력 회복약 Buy30·Sell15를 ItemDefinition 데이터로 제공한다. 거래는 1개 단위이며 성공 시 현재 슬롯 저장, 상점 중 World EXP HUD·플레이어 이동 억제와 키보드/게임패드 Focus를 지원한다. 장비상·아이템 사용은 아직 미구현이다.
+- Unity MCP Play Mode에서 100→80(회복약 0→1)→50(마력 회복약 0→1)→60(회복약 1→0), 잔액 0의 재구매 실패와 보유 0 판매 실패 무변경을 확인했다. Open/Close 5회, NPC 비활성화 자동 Close, HUD/이동 잠금 복귀, `Field_01` 왕복 재진입, 실제 빈 슬롯 5 Save/Restore 60 탈렌트·마력 회복약 3개 복원을 확인하고 검증 슬롯은 삭제했다. Audit ALL PASS, 최종 Console Error/Warning 0이며 기능 commit은 `c0a5b6a`다.
 
 ## 기준
 
