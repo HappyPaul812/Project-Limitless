@@ -1,3 +1,4 @@
+using ProjectLimitless.Core;
 using ProjectLimitless.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -44,7 +45,8 @@ namespace ProjectLimitless.NPC
             cancelAction.AddBinding("<Gamepad>/buttonEast");
             cancelAction.performed += _ =>
             {
-                if (ShopPresenter.Instance != null && ShopPresenter.Instance.IsOpen) ShopPresenter.Instance.Close();
+                if (InventoryPresenter.Instance != null && InventoryPresenter.Instance.IsOpen) InventoryPresenter.Instance.Close();
+                else if (ShopPresenter.Instance != null && ShopPresenter.Instance.IsOpen) ShopPresenter.Instance.Close();
                 else DialoguePresenter.Instance?.Hide();
             };
         }
@@ -63,6 +65,7 @@ namespace ProjectLimitless.NPC
             interactAction?.Disable();
             cancelAction?.Disable();
             ShopPresenter.Instance?.Close();
+            InventoryPresenter.Instance?.Close();
             DialoguePresenter.Instance?.Hide();
             SetCurrentTarget(null);
         }
@@ -88,7 +91,7 @@ namespace ProjectLimitless.NPC
         /// <summary>상호작용 버튼을 누른 순간의 대상 이름과 대사를 대화 UI에 표시합니다.</summary>
         private void OnInteract(InputAction.CallbackContext _)
         {
-            if (ShopPresenter.Instance != null && ShopPresenter.Instance.IsOpen) return;
+            if (WorldModalState.IsOpen) return;
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();
             if (currentTarget != null)

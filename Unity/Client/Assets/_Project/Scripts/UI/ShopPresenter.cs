@@ -85,6 +85,7 @@ namespace ProjectLimitless.UI
         {
             if (definition == null || shopOwner == null) return;
             DialoguePresenter.Instance?.Hide();
+            if (!WorldModalState.TryAcquire(this)) return;
             shop = definition;
             owner = shopOwner;
             titleLabel.text = definition.DisplayName;
@@ -114,6 +115,7 @@ namespace ProjectLimitless.UI
         {
             WorldExperienceHud.SetInteractionUiOpen(this, false);
             PlayerController.SetMovementLocked(this, false);
+            WorldModalState.Release(this);
         }
 
         private void BuildItemRows()

@@ -1,4 +1,5 @@
 using System;
+using ProjectLimitless.Core;
 using ProjectLimitless.Player;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -44,6 +45,7 @@ namespace ProjectLimitless.UI
         private void OnDestroy()
         {
             WorldExperienceHud.SetInteractionUiOpen(this, false);
+            WorldModalState.Release(this);
             if (Instance == this)
             {
                 Instance = null;
@@ -53,6 +55,7 @@ namespace ProjectLimitless.UI
         /// <summary>화자와 대사를 넣고 대화 패널을 화면에 표시합니다.</summary>
         public void Show(string speaker, string message)
         {
+            if (!WorldModalState.TryAcquire(this)) return;
             dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
             choiceRow.SetActive(false);
             panel.SetActive(true);
@@ -68,6 +71,7 @@ namespace ProjectLimitless.UI
             string cancelText,
             Action onConfirmed)
         {
+            if (!WorldModalState.TryAcquire(this)) return;
             dialogueText.text = $"{speaker}\n{message}";
             choiceRow.SetActive(true);
             ConfigureButton(confirmButton, confirmText, () =>
@@ -88,6 +92,7 @@ namespace ProjectLimitless.UI
             panel.SetActive(false);
             ClearDistanceTracking();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
+            WorldModalState.Release(this);
         }
 
         /// <summary>현재 대화의 실제 참여자 참조와 공통 종료 거리를 등록합니다.</summary>
@@ -134,6 +139,7 @@ namespace ProjectLimitless.UI
         private void OnDisable()
         {
             WorldExperienceHud.SetInteractionUiOpen(this, false);
+            WorldModalState.Release(this);
         }
 
         /// <summary>해상도에 맞춰 크기가 조절되는 Canvas와 대화 배경·글자를 코드로 구성합니다.</summary>

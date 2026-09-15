@@ -110,6 +110,19 @@ namespace ProjectLimitless.Editor
             int manaPotionBefore = InventoryService.GetItemCount("item_mana_potion_small");
             Check(ItemUseService.TryUse("item_mana_potion_small", "audit_hp").Result == ItemUseResult.TargetDoesNotUseMp
                 && InventoryService.GetItemCount("item_mana_potion_small") == manaPotionBefore, "MP 미사용 대상 소비 방지");
+            PartyResourceService.ConfigureForAudit("audit_ko", 0, 0, 104, 0);
+            InventoryService.TryAddItem("item_healing_potion_small", 1);
+            hpPotionBefore = InventoryService.GetItemCount("item_healing_potion_small");
+            Check(ItemUseService.TryUse("item_healing_potion_small", "audit_ko").Result == ItemUseResult.TargetKnockedOut
+                && InventoryService.GetItemCount("item_healing_potion_small") == hpPotionBefore, "HP 0 대상 소비 방지");
+
+            InventoryEntry[] inventoryAfterUse = InventoryService.ExportSaveData();
+            PartyMemberResourceSaveData[] resourcesAfterUse = PartyResourceService.ExportSaveData();
+            InventoryService.Reset(); PartyResourceService.Reset();
+            InventoryService.ImportSaveData(inventoryAfterUse); PartyResourceService.ImportSaveData(resourcesAfterUse);
+            Check(InventoryService.GetItemCount("item_mana_potion_small") == manaPotionBefore
+                && PartyResourceService.TryGet("audit_mp", out PartyMemberResourceSnapshot restoredMp)
+                && restoredMp.CurrentMp == 44, "아이템 사용 뒤 Inventory/PartyResources Save Restore");
             InventoryService.Reset();
             ItemDefinition stackItem = ScriptableObject.CreateInstance<ItemDefinition>();
             stackItem.ConfigureForAudit("audit_stack_item", 99);

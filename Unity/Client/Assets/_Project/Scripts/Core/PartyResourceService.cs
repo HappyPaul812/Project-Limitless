@@ -145,6 +145,15 @@ namespace ProjectLimitless.Core
 
         public static void Reset() => States.Clear();
 
+#if UNITY_EDITOR
+        public static void ConfigureForAudit(string characterId, int currentHp, int currentMp, int maxHp, int maxMp)
+        {
+            ValidateCharacterId(characterId);
+            States[characterId] = new RuntimeState
+            { CurrentHp = currentHp, CurrentMp = currentMp, MaxHp = maxHp, MaxMp = maxMp };
+        }
+#endif
+
         /// <summary>필드 소비 아이템이 Battle과 같은 지속 자원을 안전하게 회복합니다.</summary>
         public static bool TryRecover(string characterId, ItemEffectType effectType, int requestedAmount, out int actualAmount)
         {
