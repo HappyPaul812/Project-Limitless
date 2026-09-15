@@ -19,6 +19,9 @@ namespace ProjectLimitless.Editor
             Check(assets.Select(x => x.ItemId).Distinct(StringComparer.Ordinal).Count() == assets.Length, "중복 ItemId 없음");
             Check(assets.All(x => x.MaxStack > 0 && x.BuyPrice >= 0 && x.SellPrice >= 0), "가격/MaxStack 유효");
             Check(assets.All(x => x.SellPrice <= x.BuyPrice), "판매가가 구매가 이하");
+            Check(assets.Where(x => x.Category == ItemCategory.Consumable).All(x => x.UseType != ItemUseType.None), "Consumable UseType 지정");
+            Check(assets.Where(x => x.EffectType == ItemEffectType.RecoverHp || x.EffectType == ItemEffectType.RecoverMp)
+                .All(x => x.EffectAmount > 0), "회복 효과량 양수");
 
             ShopDefinition[] shops = Resources.LoadAll<ShopDefinition>("ShopDefinitions");
             Check(shops.Any(x => x.ShopId == "shop_general_starter_village"), "시작 마을 잡화상 데이터");
@@ -76,6 +79,37 @@ namespace ProjectLimitless.Editor
                 && ShopService.TrySell("item_healing_potion_small", 2) == ShopTransactionResult.NoItem
                 && InventoryService.GetItemCount("item_healing_potion_small") == 1, "보유 수량 초과 판매 방어");
             Check(!ShopService.TryCalculateTotal(int.MaxValue, 2, out _), "가격×수량 overflow 방어");
+            InventoryService.Reset();
+            PartyResourceService.Reset();
+            PartyResourceService.ResolveForBattle("audit_hp", 104, 0);
+            PartyResourceService.RecordBattleResult("audit_hp", 50, 0, 104, 0);
+            InventoryService.TryAddItem("item_healing_potion_small", 3);
+            ItemUseOutcome hpUse = ItemUseService.TryUse("item_healing_potion_small", "audit_hp");
+            Check(hpUse.Succeeded && hpUse.ActualAmount == 30
+                && PartyResourceService.TryGet("audit_hp", out PartyMemberResourceSnapshot hpAfter) && hpAfter.CurrentHp == 80
+                && InventoryService.GetItemCount("item_healing_potion_small") == 2, "회복약 50/104→80/104, 3→2");
+            PartyResourceService.RecordBattleResult("audit_hp", 90, 0, 104, 0);
+            hpUse = ItemUseService.TryUse("item_healing_potion_small", "audit_hp");
+            Check(hpUse.Succeeded && hpUse.ActualAmount == 14
+                && PartyResourceService.TryGet("audit_hp", out hpAfter) && hpAfter.CurrentHp == 104, "회복약 초과 회복 Clamp");
+            int hpPotionBefore = InventoryService.GetItemCount("item_healing_potion_small");
+            Check(ItemUseService.TryUse("item_healing_potion_small", "audit_hp").Result == ItemUseResult.AlreadyFull
+                && InventoryService.GetItemCount("item_healing_potion_small") == hpPotionBefore, "풀 HP 소비 방지");
+
+            PartyResourceService.ResolveForBattle("audit_mp", 104, 44);
+            PartyResourceService.RecordBattleResult("audit_mp", 104, 20, 104, 44);
+            InventoryService.TryAddItem("item_mana_potion_small", 3);
+            ItemUseOutcome mpUse = ItemUseService.TryUse("item_mana_potion_small", "audit_mp");
+            Check(mpUse.Succeeded && mpUse.ActualAmount == 12
+                && PartyResourceService.TryGet("audit_mp", out PartyMemberResourceSnapshot mpAfter) && mpAfter.CurrentMp == 32
+                && InventoryService.GetItemCount("item_mana_potion_small") == 2, "마력 회복약 20/44→32/44, 3→2");
+            PartyResourceService.RecordBattleResult("audit_mp", 104, 40, 104, 44);
+            mpUse = ItemUseService.TryUse("item_mana_potion_small", "audit_mp");
+            Check(mpUse.Succeeded && mpUse.ActualAmount == 4
+                && PartyResourceService.TryGet("audit_mp", out mpAfter) && mpAfter.CurrentMp == 44, "마력 회복약 초과 회복 Clamp");
+            int manaPotionBefore = InventoryService.GetItemCount("item_mana_potion_small");
+            Check(ItemUseService.TryUse("item_mana_potion_small", "audit_hp").Result == ItemUseResult.TargetDoesNotUseMp
+                && InventoryService.GetItemCount("item_mana_potion_small") == manaPotionBefore, "MP 미사용 대상 소비 방지");
             InventoryService.Reset();
             ItemDefinition stackItem = ScriptableObject.CreateInstance<ItemDefinition>();
             stackItem.ConfigureForAudit("audit_stack_item", 99);

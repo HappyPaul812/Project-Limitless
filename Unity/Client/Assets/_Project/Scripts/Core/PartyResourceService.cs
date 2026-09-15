@@ -16,12 +16,14 @@ namespace ProjectLimitless.Core
     /// <summary>Battle과 향후 World UI가 같은 현재 자원을 읽을 때 사용하는 읽기 전용 값입니다.</summary>
     public readonly struct PartyMemberResourceSnapshot
     {
-        public PartyMemberResourceSnapshot(string characterId, int currentHp, int currentMp)
-        { CharacterId = characterId; CurrentHp = currentHp; CurrentMp = currentMp; }
+        public PartyMemberResourceSnapshot(string characterId, int currentHp, int currentMp, int maxHp = 0, int maxMp = 0)
+        { CharacterId = characterId; CurrentHp = currentHp; CurrentMp = currentMp; MaxHp = maxHp; MaxMp = maxMp; }
 
         public string CharacterId { get; }
         public int CurrentHp { get; }
         public int CurrentMp { get; }
+        public int MaxHp { get; }
+        public int MaxMp { get; }
     }
 
     /// <summary>
@@ -62,7 +64,7 @@ namespace ProjectLimitless.Core
             state.MaxMp = maxMp;
             state.CurrentHp = Math.Max(1, Math.Min(maxHp, state.CurrentHp));
             state.CurrentMp = Math.Max(0, Math.Min(maxMp, state.CurrentMp));
-            return new PartyMemberResourceSnapshot(characterId, state.CurrentHp, state.CurrentMp);
+            return CreateSnapshot(characterId, state);
         }
 
         /// <summary>
@@ -112,7 +114,7 @@ namespace ProjectLimitless.Core
         {
             if (!string.IsNullOrWhiteSpace(characterId) && States.TryGetValue(characterId, out RuntimeState state))
             {
-                snapshot = new PartyMemberResourceSnapshot(characterId, state.CurrentHp, state.CurrentMp);
+                snapshot = CreateSnapshot(characterId, state);
                 return true;
             }
             snapshot = default;
@@ -142,6 +144,36 @@ namespace ProjectLimitless.Core
         }
 
         public static void Reset() => States.Clear();
+
+        /// <summary>필드 소비 아이템이 Battle과 같은 지속 자원을 안전하게 회복합니다.</summary>
+        public static bool TryRecover(string characterId, ItemEffectType effectType, int requestedAmount, out int actualAmount)
+        {
+            actualAmount = 0;
+            if (requestedAmount <= 0 || !States.TryGetValue(characterId ?? string.Empty, out RuntimeState state)
+                || state.CurrentHp <= 0 || state.MaxHp <= 0)
+                return false;
+
+            if (effectType == ItemEffectType.RecoverHp)
+            {
+                actualAmount = Math.Min(requestedAmount, state.MaxHp - state.CurrentHp);
+                if (actualAmount <= 0) return false;
+                state.CurrentHp += actualAmount;
+                return true;
+            }
+
+            if (effectType == ItemEffectType.RecoverMp)
+            {
+                if (state.MaxMp <= 0) return false;
+                actualAmount = Math.Min(requestedAmount, state.MaxMp - state.CurrentMp);
+                if (actualAmount <= 0) return false;
+                state.CurrentMp += actualAmount;
+                return true;
+            }
+            return false;
+        }
+
+        private static PartyMemberResourceSnapshot CreateSnapshot(string characterId, RuntimeState state) =>
+            new PartyMemberResourceSnapshot(characterId, state.CurrentHp, state.CurrentMp, state.MaxHp, state.MaxMp);
 
         private static void ValidateCharacterId(string characterId)
         {

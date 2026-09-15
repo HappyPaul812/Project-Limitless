@@ -22,5 +22,7 @@ MonoBehaviour:
   sellPrice: 10
   icon: {fileID: 21300000, guid: a9ac67de65b88774ea6e90e22805af16, type: 3}
   iconTint: {r: 0.95, g: 0.3, b: 0.3, a: 1}
-  useType: 0
+  useType: 1
+  effectType: 1
+  effectAmount: 30
   effectPreview: HP +30
