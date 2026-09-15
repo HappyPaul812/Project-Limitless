@@ -12,6 +12,8 @@
 - 사용자 표시 화폐명은 `탈렌트`로 확정했다. `CurrencyPresentation`이 표시명, 금색 tint와 Kenney Board Game Icons CC0 원형 토큰 Sprite를 공통 제공하며 World EXP HUD에는 추가하지 않았다.
 - 시작 마을 `GeneralShop` 역할에 실제 잡화상 Shop을 연결했다. `ShopDefinition`/`ShopService`/공용 Modal UI를 분리하고 회복약 Buy20·Sell10, 마력 회복약 Buy30·Sell15를 ItemDefinition 데이터로 제공한다. 거래는 1개 단위이며 성공 시 현재 슬롯 저장, 상점 중 World EXP HUD·플레이어 이동 억제와 키보드/게임패드 Focus를 지원한다. 장비상·아이템 사용은 아직 미구현이다.
 - Unity MCP Play Mode에서 100→80(회복약 0→1)→50(마력 회복약 0→1)→60(회복약 1→0), 잔액 0의 재구매 실패와 보유 0 판매 실패 무변경을 확인했다. Open/Close 5회, NPC 비활성화 자동 Close, HUD/이동 잠금 복귀, `Field_01` 왕복 재진입, 실제 빈 슬롯 5 Save/Restore 60 탈렌트·마력 회복약 3개 복원을 확인하고 검증 슬롯은 삭제했다. Audit ALL PASS, 최종 Console Error/Warning 0이며 기능 commit은 `c0a5b6a`다.
+- 잡화상 거래 수량을 구매/판매 모드별 `TradeQuantity`로 일반화했다. 기본/아이템 전환 시 1, `-`·`+`·`최대` 조작, 선택 수량 총액과 거래 가능 문구를 표시하며 구매 최대는 자금·남은 MaxStack, 판매 최대는 보유량이다. `ShopService`는 Shop 포함 여부와 long 총액 overflow를 사전 검증하고 `InventoryService`도 MaxStack을 강제한다.
+- Unity MCP Play Mode에서 회복약 3개 구매 200→140·0→3, 마력 회복약 4개 구매 140→20·0→4, 마력 회복약 구매 최대 0, 회복약 2개 판매 20→40·3→1과 수량 2→1 Clamp를 확인했다. MaxStack 98/99에서 추가 2개와 Shop 2개 구매가 모두 거부됐고, 빈 슬롯 5 Save/Restore 40 탈렌트·회복약 1·마력 회복약 4 복원 후 검증 슬롯을 삭제했다. Open/Close 5회와 아이템 전환 수량 초기화, HUD/이동/Focus 복귀, Audit ALL PASS를 확인했으며 기능 commit은 `e741bda`다.
 
 ## 기준
 
