@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 namespace ProjectLimitless.Player
 {
@@ -10,6 +11,7 @@ namespace ProjectLimitless.Player
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public sealed class PlayerController : MonoBehaviour
     {
+        private static readonly HashSet<object> MovementLockOwners = new HashSet<object>();
         // 플레이어가 1초 동안 이동할 거리입니다. Inspector에서 0.1 이상의 값으로 조절할 수 있습니다.
         [SerializeField, Min(0.1f)] private float moveSpeed = 4f;
 
@@ -19,6 +21,14 @@ namespace ProjectLimitless.Player
 
         /// <summary>현재 입력된 이동 방향입니다. PlayerSpriteAnimator가 걷는 방향을 정할 때 읽습니다.</summary>
         public Vector2 Movement => movement;
+        public static bool IsMovementLocked => MovementLockOwners.Count > 0;
+
+        /// <summary>상점 같은 메뉴가 열린 동안 방향 입력이 UI와 캐릭터에 동시에 전달되지 않게 합니다.</summary>
+        public static void SetMovementLocked(object owner, bool locked)
+        {
+            if (owner == null) return;
+            if (locked) MovementLockOwners.Add(owner); else MovementLockOwners.Remove(owner);
+        }
 
         /// <summary>필요한 2D 물리 컴포넌트를 준비하고 이동 키를 Input System에 등록합니다.</summary>
         private void Awake()
@@ -48,6 +58,11 @@ namespace ProjectLimitless.Player
         /// <summary>매 화면 프레임마다 현재 키보드 또는 게임패드 방향을 읽습니다.</summary>
         private void Update()
         {
+            if (MovementLockOwners.Count > 0)
+            {
+                movement = Vector2.zero;
+                return;
+            }
             movement = moveAction.ReadValue<Vector2>();
             // 가로와 세로를 동시에 누를 때 대각선 속도가 더 빨라지지 않도록 방향 벡터의 길이를 1로 맞춥니다.
             if (movement.sqrMagnitude > 1f)

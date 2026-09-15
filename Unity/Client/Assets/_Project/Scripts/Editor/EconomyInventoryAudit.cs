@@ -18,6 +18,16 @@ namespace ProjectLimitless.Editor
             Check(assets.All(x => x != null && !string.IsNullOrWhiteSpace(x.ItemId)), "빈 ItemId 없음");
             Check(assets.Select(x => x.ItemId).Distinct(StringComparer.Ordinal).Count() == assets.Length, "중복 ItemId 없음");
             Check(assets.All(x => x.MaxStack > 0 && x.BuyPrice >= 0 && x.SellPrice >= 0), "가격/MaxStack 유효");
+            Check(assets.All(x => x.SellPrice <= x.BuyPrice), "판매가가 구매가 이하");
+
+            ShopDefinition[] shops = Resources.LoadAll<ShopDefinition>("ShopDefinitions");
+            Check(shops.Any(x => x.ShopId == "shop_general_starter_village"), "시작 마을 잡화상 데이터");
+            foreach (ShopDefinition shop in shops)
+            {
+                Check(!string.IsNullOrWhiteSpace(shop.ShopId), "빈 ShopId 없음");
+                Check(shop.ItemIds.Distinct(StringComparer.Ordinal).Count() == shop.ItemIds.Count, "중복 Shop Item 없음");
+                Check(shop.ItemIds.All(id => ItemCatalog.TryGet(id, out _)), "Shop ItemId가 Catalog에 존재");
+            }
 
             ItemDefinition testItem = ScriptableObject.CreateInstance<ItemDefinition>();
             testItem.ConfigureForAudit("audit_item", 99);
@@ -42,6 +52,27 @@ namespace ProjectLimitless.Editor
             Check(InventoryService.ExportSaveData().All(x => x.Count > 0), "음수 Count 없음");
             UnityEngine.Object.DestroyImmediate(testItem);
             ItemCatalog.ReloadForAudit();
+            EconomyService.Reset(); InventoryService.Reset();
+
+            EconomyService.AddCurrency(100);
+            Check(ShopService.TryBuy("item_healing_potion_small") == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 80 && InventoryService.GetItemCount("item_healing_potion_small") == 1,
+                "상점 회복약 구매 100→80, 0→1");
+            Check(ShopService.TryBuy("item_mana_potion_small") == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 50 && InventoryService.GetItemCount("item_mana_potion_small") == 1,
+                "상점 마력 회복약 구매 80→50, 0→1");
+            Check(ShopService.TrySell("item_healing_potion_small") == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 60 && InventoryService.GetItemCount("item_healing_potion_small") == 0,
+                "상점 회복약 판매 50→60, 1→0");
+            ShopService.TryBuy("item_mana_potion_small"); ShopService.TryBuy("item_mana_potion_small");
+            int currencyBeforeFailure = EconomyService.GetCurrency();
+            int manaBeforeFailure = InventoryService.GetItemCount("item_mana_potion_small");
+            Check(ShopService.TryBuy("item_mana_potion_small") == ShopTransactionResult.InsufficientCurrency
+                && EconomyService.GetCurrency() == currencyBeforeFailure
+                && InventoryService.GetItemCount("item_mana_potion_small") == manaBeforeFailure, "돈 부족 구매 원자성");
+            Check(ShopService.TrySell("item_healing_potion_small") == ShopTransactionResult.NoItem
+                && EconomyService.GetCurrency() == currencyBeforeFailure
+                && InventoryService.GetItemCount("item_healing_potion_small") == 0, "보유 0 판매 원자성");
             EconomyService.Reset(); InventoryService.Reset();
             Debug.Log("ECONOMY_INVENTORY_AUDIT ALL PASS");
         }

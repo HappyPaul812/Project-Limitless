@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38e4cc860fdfae438565bb4db3b8eb0, type: 3}
+  m_Name: HealingPotionSmall
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
+  itemId: item_healing_potion_small
+  displayName: "\uD68C\uBCF5\uC57D"
+  description: "\uD55C \uBA85\uC758 HP\uB97C \uD68C\uBCF5\uD558\uB294 \uC791\uC740
+    \uBB3C\uC57D."
+  category: 0
+  maxStack: 99
+  buyPrice: 20
+  sellPrice: 10
+  icon: {fileID: 21300000, guid: a9ac67de65b88774ea6e90e22805af16, type: 3}
+  iconTint: {r: 0.95, g: 0.3, b: 0.3, a: 1}
+  useType: 0
+  effectPreview: HP +30

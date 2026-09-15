@@ -17,7 +17,9 @@ namespace ProjectLimitless.Core
         [SerializeField, Min(0)] private int buyPrice;
         [SerializeField, Min(0)] private int sellPrice;
         [SerializeField] private Sprite icon;
+        [SerializeField] private Color iconTint = Color.white;
         [SerializeField] private ItemUseType useType;
+        [SerializeField] private string effectPreview = string.Empty;
         public string ItemId => itemId;
         public string DisplayName => displayName;
         public string Description => description;
@@ -26,9 +28,19 @@ namespace ProjectLimitless.Core
         public int BuyPrice => buyPrice;
         public int SellPrice => sellPrice;
         public Sprite Icon => icon;
+        public Color IconTint => iconTint;
         public ItemUseType UseType => useType;
+        public string EffectPreview => effectPreview;
 #if UNITY_EDITOR
         public void ConfigureForAudit(string id, int stack = 99) { itemId = id; maxStack = stack; }
+        public void ConfigureContent(string id, string name, string details, ItemCategory itemCategory,
+            int stack, int purchasePrice, int resalePrice, Sprite itemIcon, Color tint,
+            ItemUseType itemUseType, string preview)
+        {
+            itemId = id; displayName = name; description = details; category = itemCategory;
+            maxStack = stack; buyPrice = purchasePrice; sellPrice = resalePrice;
+            icon = itemIcon; iconTint = tint; useType = itemUseType; effectPreview = preview;
+        }
 #endif
     }
 }

@@ -38,7 +38,7 @@ namespace ProjectLimitless.World
 
             Transform market = CreateZone(root.transform, "Zone_Market");
             CreateNpc(template, market, "Npc_GeneralShop", "starter-village-general-shop", "잡화 상인",
-                "여행에 필요한 물품을 준비하고 있습니다. 정식 거래는 다음 단계에서 열립니다.",
+                "필요한 물건이 있으신가요?",
                 VillageNpcRoleType.GeneralShop, new Vector2(-5.8f, 1.2f));
             CreateNpc(template, market, "Npc_EquipmentShop", "starter-village-equipment-shop", "장비 상인",
                 "장비를 손질하고 있습니다. 정식 거래는 다음 단계에서 열립니다.",

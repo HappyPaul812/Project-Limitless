@@ -42,7 +42,11 @@ namespace ProjectLimitless.NPC
             cancelAction = new InputAction("CloseDialogue", InputActionType.Button);
             cancelAction.AddBinding("<Keyboard>/escape");
             cancelAction.AddBinding("<Gamepad>/buttonEast");
-            cancelAction.performed += _ => DialoguePresenter.Instance?.Hide();
+            cancelAction.performed += _ =>
+            {
+                if (ShopPresenter.Instance != null && ShopPresenter.Instance.IsOpen) ShopPresenter.Instance.Close();
+                else DialoguePresenter.Instance?.Hide();
+            };
         }
 
         /// <summary>활성화될 때 입력을 켜고 현재 가장 가까운 NPC를 즉시 확인합니다.</summary>
@@ -58,6 +62,7 @@ namespace ProjectLimitless.NPC
         {
             interactAction?.Disable();
             cancelAction?.Disable();
+            ShopPresenter.Instance?.Close();
             DialoguePresenter.Instance?.Hide();
             SetCurrentTarget(null);
         }
@@ -83,6 +88,7 @@ namespace ProjectLimitless.NPC
         /// <summary>상호작용 버튼을 누른 순간의 대상 이름과 대사를 대화 UI에 표시합니다.</summary>
         private void OnInteract(InputAction.CallbackContext _)
         {
+            if (ShopPresenter.Instance != null && ShopPresenter.Instance.IsOpen) return;
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();
             if (currentTarget != null)
