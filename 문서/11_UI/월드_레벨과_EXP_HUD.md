@@ -15,6 +15,7 @@
 - HUD의 `CanvasGroup`은 숨김 중 alpha 0, interactable false, blocksRaycasts false를 사용한다. 따라서 보이지 않는 HUD가 상호작용 UI 입력을 가로막지 않는다.
 - 대화 Canvas sortingOrder는 10, PlayerNameplate와 World EXP HUD의 Overlay Canvas는 5다. 표시 억제가 실패해도 대화창이 HUD보다 앞에 오며, 대화 Panel은 열릴 때 Canvas의 마지막 sibling으로 보정한다.
 - Scene 전환이나 DialoguePresenter 비활성화·파괴 시 해당 소유자의 억제 상태를 해제한다. 새 World Scene의 HUD는 현재 열려 있는 상호작용 UI가 없으면 정상 표시되고 Battle에는 생성되지 않는다.
+- NPC 대화는 플레이어와 실제 대화 상대 Transform을 추적한다. 상호작용 거리 2.0보다 넓은 3.0을 유지 거리로 사용해 이동을 막지 않으면서 작은 이탈은 허용하고, 거리 초과·상대 제거/비활성·플레이어 비활성에는 공통 Hide 경로로 닫아 HUD를 복귀시킨다.
 
 ## 데이터와 갱신
 
