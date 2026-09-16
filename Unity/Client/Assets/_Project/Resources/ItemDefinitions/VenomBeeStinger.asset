@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: VenomBeeStinger
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
   itemId: material_venom_bee_stinger
-  displayName: 독침벌의 침
-  description: 독침벌에게서 얻은 단단하고 날카로운 침.
+  displayName: "\uB3C5\uCE68\uBC8C\uC758 \uCE68"
+  description: "\uB3C5\uCE68\uBC8C\uC5D0\uAC8C\uC11C \uC5BB\uC740 \uB2E8\uB2E8\uD558\uACE0
+    \uB0A0\uCE74\uB85C\uC6B4 \uCE68."
   category: 2
   maxStack: 999
   buyPrice: 0
   sellPrice: 3
-  icon: {fileID: 0}
-  iconTint: {r: 1, g: 1, b: 1, a: 1}
+  icon: {fileID: 21300000, guid: 73b52f1f2998f6646a226eed86602ed4, type: 3}
+  iconTint: {r: 1, g: 0.72, b: 0.18, a: 1}
   useType: 0
   effectType: 0
   effectAmount: 0
-  effectPreview: 사용 불가
+  effectPreview: "\uC0AC\uC6A9 \uBD88\uAC00"

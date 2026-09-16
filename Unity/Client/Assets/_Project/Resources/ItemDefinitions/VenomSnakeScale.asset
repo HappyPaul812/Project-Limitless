@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: VenomSnakeScale
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
   itemId: material_venom_snake_scale
-  displayName: 맹독뱀 비늘
-  description: 맹독뱀에게서 얻은 단단한 비늘.
+  displayName: "\uB9F9\uB3C5\uBC40 \uBE44\uB298"
+  description: "\uB9F9\uB3C5\uBC40\uC5D0\uAC8C\uC11C \uC5BB\uC740 \uB2E8\uB2E8\uD55C
+    \uBE44\uB298."
   category: 2
   maxStack: 999
   buyPrice: 0
   sellPrice: 5
-  icon: {fileID: 0}
-  iconTint: {r: 1, g: 1, b: 1, a: 1}
+  icon: {fileID: 21300000, guid: aeb1ca89347241c4289e2bbb53e91c8a, type: 3}
+  iconTint: {r: 0.3, g: 0.82, b: 0.45, a: 1}
   useType: 0
   effectType: 0
   effectAmount: 0
-  effectPreview: 사용 불가
+  effectPreview: "\uC0AC\uC6A9 \uBD88\uAC00"

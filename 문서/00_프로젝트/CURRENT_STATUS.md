@@ -1,7 +1,7 @@
 # Project-Limitless 현재 개발 상태
 
 - 몬스터 처치 보상을 기존 승리 EXP 흐름에 통합했다. 실제 전투불능 `Combatant`의 stable `MonsterDefinition`을 한 번 집계해 EXP·탈렌트·개체별 전리품 Roll을 `RewardBundle`로 만들고, 실제 적용 결과를 Victory UI와 Save가 함께 사용한다. 도망·패배는 세 보상 모두 0이며 EXP 레벨 차이 배율은 Currency/Loot에 적용하지 않는다.
-- 초원 슬라임 3/점액 50%, 독침벌 4/침 45%, 숲거미 5/거미줄 40%, 맹독뱀 6/비늘 35%를 데이터로 추가했다. 네 Material은 MaxStack 999·SellPrice 2/3/4/5·사용 불가이며 ShopDefinition에는 넣지 않았다. 의미와 라이선스가 함께 확실한 기존 재료 아이콘 조합이 없어 Icon은 비워 두고 새 외부 Asset은 받지 않았다.
+- 초원 슬라임 3/점액 50%, 독침벌 4/침 45%, 숲거미 5/거미줄 40%, 맹독뱀 6/비늘 35%를 데이터로 추가했다. 네 Material은 MaxStack 999·SellPrice 2/3/4/5·사용 불가이며 ShopDefinition에는 넣지 않았다. 기존 Game-icons.net White 원본의 `dripping-goo`/`wasp-sting`/`spider-web`/`dorsal-scales`를 ItemDefinition.Icon에 연결하고 Material별 tint를 적용했다.
 - Victory UI는 EXP, CurrencyIcon+탈렌트 텍스트, ItemId별 합산 이름·수량 또는 `없음`, 레벨 진행을 620×390 패널에 표시한다. Inventory 수용 실패 시 EXP/탈렌트는 유지하고 들어가는 전리품만 실제 지급 결과에 포함한다.
 - Unity 6000.5.7f1 응답 파일 기준 Runtime/Editor 전체 정적 컴파일은 오류 0개, 기존 deprecated API 경고 Runtime 5개·Editor 1개다. Economy Inventory Audit에 조우 탈렌트 9/10/13/16, deterministic 0/1/동일 Item 3 Drop, Reward 데이터와 Material/Shop/부분 수용 검사를 추가했다. 실제 Audit/Play Mode 실행은 두 차례 시도했으나 이 PC의 Unity Licensing Client IPC가 반복 단절되어 Domain Reload 도중 진행되지 못했으며, Unity MCP 도구도 현재 세션에 노출되지 않았다. 따라서 실제 Victory UI·Save/Continue·Console 런타임 검증은 완료로 표시하지 않는다.
 - 시작 마을 일반 주민 4명에 stable ID 기준 OGA-07/11/13/19 외형을 연결하고 주황 Placeholder를 제거했다. 일반 주민은 상시 이름표 없음, 기능 NPC·주민 대표는 역할명 한 줄 정책이며 Interaction Prompt는 별도로 유지한다.
@@ -19,7 +19,8 @@
 - 잡화상 거래 수량을 구매/판매 모드별 `TradeQuantity`로 일반화했다. 기본/아이템 전환 시 1, `-`·`+`·`최대` 조작, 선택 수량 총액과 거래 가능 문구를 표시하며 구매 최대는 자금·남은 MaxStack, 판매 최대는 보유량이다. `ShopService`는 Shop 포함 여부와 long 총액 overflow를 사전 검증하고 `InventoryService`도 MaxStack을 강제한다.
 - Unity MCP Play Mode에서 회복약 3개 구매 200→140·0→3, 마력 회복약 4개 구매 140→20·0→4, 마력 회복약 구매 최대 0, 회복약 2개 판매 20→40·3→1과 수량 2→1 Clamp를 확인했다. MaxStack 98/99에서 추가 2개와 Shop 2개 구매가 모두 거부됐고, 빈 슬롯 5 Save/Restore 40 탈렌트·회복약 1·마력 회복약 4 복원 후 검증 슬롯을 삭제했다. Open/Close 5회와 아이템 전환 수량 초기화, HUD/이동/Focus 복귀, Audit ALL PASS를 확인했으며 기능 commit은 `e741bda`다.
 - 잡화상 판매 탭을 `ShopDefinition`이 아니라 현재 Inventory 기반으로 전환했다. Count 양수·SellPrice 양수인 Consumable/Material만 이름과 수량으로 표시하고 Quest/KeyItem은 제외한다. 전량 판매 행 제거·다음 선택 이동·빈 목록 안내, 모드/아이템 전환 수량 1 초기화, `[구매]`/`[판매]` 텍스트 상태를 지원한다.
-- Unity 6000.5.7f1의 열린 Editor와 Unity MCP에서 컴파일 오류 0, Economy Inventory Audit ALL PASS를 확인했다. Play Mode에서 점액 3개 판매 10→16·3→0과 품절 행 제거, 거미줄 2개 판매 16→24·4→2, 반복 모드 전환 수량 1 복귀, 빈 판매 목록 안내·조작 비활성, 테스트 슬롯 Save/Restore의 Currency·Inventory·Level/EXP·PartyResources 유지를 확인했다. Material 아이콘은 의도대로 비워 두었고 기능 오류는 없었다.
+- Unity 6000.5.7f1의 열린 Editor와 Unity MCP에서 컴파일 오류 0, Economy Inventory Audit ALL PASS를 확인했다. Play Mode에서 점액 3개 판매 10→16·3→0과 품절 행 제거, 거미줄 2개 판매 16→24·4→2, 반복 모드 전환 수량 1 복귀, 빈 판매 목록 안내·조작 비활성, 테스트 슬롯 Save/Restore의 Currency·Inventory·Level/EXP·PartyResources 유지를 확인했다. 당시 Material 아이콘 미연결 상태도 기능 오류 없이 동작했다.
+- Material 아이콘 연결 뒤 Unity MCP Play Mode에서 Inventory와 잡화상 판매 탭의 4개 Sprite 참조·동일 tint·`preserveAspect`를 짧게 확인했다. 기존 null Icon fallback과 판매/보상 로직은 변경하지 않았다.
 - 월드/필드 소지품 UI와 소비 아이템 실제 사용을 완료했다. `ItemUseService`가 데이터 기반 HP +30/MP +12, 최대치 Clamp, 풀 자원·HP 0·MP 미사용 대상 실패 시 무소비를 공통 처리하고 `PartyResourceService`에 반영한다. `I`로 열며 아이콘·이름·수량·설명·효과·현재 파티 대상·탈렌트를 표시한다.
 - Dialogue·Shop·Inventory는 `WorldModalState`의 단일 Modal 정책을 공유한다. Inventory 중 World EXP HUD와 이동을 억제하고 닫기·Scene 전환 시 복귀한다. Unity MCP에서 1280×720 Game View, 3회 반복, 상호 차단, `Field_01` 재설치, Audit ALL PASS 및 사용 뒤 Inventory/PartyResources 복원을 확인했다. 기능 commit은 `c5fe8fd`, UI commit은 `c089443`이다.
 
