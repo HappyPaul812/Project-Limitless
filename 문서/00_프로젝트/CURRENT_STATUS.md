@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- 몬스터 처치 보상을 기존 승리 EXP 흐름에 통합했다. 실제 전투불능 `Combatant`의 stable `MonsterDefinition`을 한 번 집계해 EXP·탈렌트·개체별 전리품 Roll을 `RewardBundle`로 만들고, 실제 적용 결과를 Victory UI와 Save가 함께 사용한다. 도망·패배는 세 보상 모두 0이며 EXP 레벨 차이 배율은 Currency/Loot에 적용하지 않는다.
+- 초원 슬라임 3/점액 50%, 독침벌 4/침 45%, 숲거미 5/거미줄 40%, 맹독뱀 6/비늘 35%를 데이터로 추가했다. 네 Material은 MaxStack 999·SellPrice 2/3/4/5·사용 불가이며 ShopDefinition에는 넣지 않았다. 의미와 라이선스가 함께 확실한 기존 재료 아이콘 조합이 없어 Icon은 비워 두고 새 외부 Asset은 받지 않았다.
+- Victory UI는 EXP, CurrencyIcon+탈렌트 텍스트, ItemId별 합산 이름·수량 또는 `없음`, 레벨 진행을 620×390 패널에 표시한다. Inventory 수용 실패 시 EXP/탈렌트는 유지하고 들어가는 전리품만 실제 지급 결과에 포함한다.
+- Unity 6000.5.7f1 응답 파일 기준 Runtime/Editor 전체 정적 컴파일은 오류 0개, 기존 deprecated API 경고 Runtime 5개·Editor 1개다. Economy Inventory Audit에 조우 탈렌트 9/10/13/16, deterministic 0/1/동일 Item 3 Drop, Reward 데이터와 Material/Shop/부분 수용 검사를 추가했다. 실제 Audit/Play Mode 실행은 두 차례 시도했으나 이 PC의 Unity Licensing Client IPC가 반복 단절되어 Domain Reload 도중 진행되지 못했으며, Unity MCP 도구도 현재 세션에 노출되지 않았다. 따라서 실제 Victory UI·Save/Continue·Console 런타임 검증은 완료로 표시하지 않는다.
 - 시작 마을 일반 주민 4명에 stable ID 기준 OGA-07/11/13/19 외형을 연결하고 주황 Placeholder를 제거했다. 일반 주민은 상시 이름표 없음, 기능 NPC·주민 대표는 역할명 한 줄 정책이며 Interaction Prompt는 별도로 유지한다.
 - 표시되는 시작 마을 NPC 이름표는 TextMesh 폰트 40, 기본 character size 0.075(7자 이상 0.065), Y 1.02, 가운데 정렬, 검은 그림자를 적용한다. 상호작용 안내는 Y 1.48로 분리했고 플레이어 이름표·레벨 HUD는 변경하지 않았다.
 - 시작 마을 역할 NPC 8명에 Eldiran CC0 외형을 stable ID 기반으로 연결했다: 잡화상 OGA-03, 장비상 OGA-17, 치유사 OGA-06, 은행 OGA-16, 동료 편성 OGA-10, 훈련장 관리 OGA-02, 남문 경비 OGA-20, 주민 대표 OGA-09.
@@ -19,7 +23,7 @@
 
 ## 기준
 
-- 갱신일: 2026-09-15
+- 갱신일: 2026-09-16
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `0454af8` (`Feature: 시작 마을 NPC 외형 적용`)
 - 마지막 기능 수정 commit: `ac11356` (`Fix: 시작 마을 NPC 외형 런타임 설치 수정`)
@@ -28,6 +32,7 @@
 - 마지막 상호작용 UI 우선순위 commit: `fcf5cf9` (`Fix: 상호작용 중 월드 EXP HUD 숨김`)
 - 마지막 NPC 거리 대화 종료 commit: `6b42c26` (`Fix: NPC 거리 이탈 시 대화 종료`)
 - 마지막 경제·인벤토리 기반 commit: `dcb76e6` (`Feature: 경제와 인벤토리 최소 기반 추가`)
+- 마지막 몬스터 보상 commit: `e7d3526` (`Feature: 몬스터 탈렌트와 전리품 보상 추가`)
 - 마지막 탈렌트 표시 참조 commit: `0277317` (`Feature: 탈렌트 화폐 표시 참조 추가`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)

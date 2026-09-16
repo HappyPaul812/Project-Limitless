@@ -2373,9 +2373,13 @@ namespace ProjectLimitless.Battle
             if (defeatedEncounteredMonster)
             {
                 RecordAllyResources();
-                int reward = BattleExperienceReward.Calculate(true, GameSessionData.Level, enemies.Members, participantSetups);
-                ExperienceGain gain = ExperienceProgression.Add(GameSessionData.Level, GameSessionData.CurrentExperience, reward);
-                GameSessionData.ConfigureProgress(gain.Level, gain.CurrentExperience);
+                // 실제 전투불능 몬스터를 stable MonsterDefinition으로 한 번 집계한 결과만 적용·표시·저장합니다.
+                // 이름 문자열은 번역이나 개명으로 바뀔 수 있어 보상 판정 키로 사용하지 않습니다.
+                RewardBundle rolledReward = BattleVictoryReward.Calculate(
+                    true, GameSessionData.Level, enemies.Members, participantSetups);
+                RewardApplicationResult application = rolledReward.ApplyBestEffort();
+                RewardBundle appliedReward = application.AppliedReward;
+                ExperienceGain gain = application.ExperienceGain;
                 if (gain.LeveledUp)
                 {
                     // 먼저 최종 Level을 확정한 뒤 새 능력치에서 MaxHP/MaxMP를 다시 계산하고, 실제로 성장한
@@ -2388,19 +2392,38 @@ namespace ProjectLimitless.Battle
                 // 승리 직후 EXP와 현재 HP/MP를 같은 슬롯에 저장합니다. 독·화상·도발·쿨타임 등은
                 // Battle Runtime 객체와 함께 폐기되어 다음 전투나 SaveData로 넘어가지 않습니다.
                 GameSaveService.SaveCurrentSession();
-                message += $"\n획득 EXP: {reward}";
+                message = $"전투 승리!\n\n획득 EXP: {appliedReward.Experience}";
+                message += $"\n획득 탈렌트: {CurrencyPresentation.FormatAmount(appliedReward.Currency)}";
+                message += "\n\n획득 아이템";
+                if (appliedReward.Items == null || appliedReward.Items.Length == 0) message += "\n없음";
+                else
+                {
+                    foreach (ItemReward item in appliedReward.Items)
+                    {
+                        string itemName = ItemCatalog.TryGet(item.ItemId, out ItemDefinition definition)
+                            ? definition.DisplayName : item.ItemId;
+                        message += $"\n{itemName} ×{item.Count}";
+                    }
+                }
                 if (gain.LeveledUp) message += $"\n레벨 상승! Lv.{gain.PreviousLevel} → Lv.{gain.Level}";
                 message += gain.Level >= CharacterGrowthCalculator.MaxLevel ? "\n최고 레벨" :
                     $"\nEXP {gain.CurrentExperience} / {ExperienceProgression.RequiredExp(gain.Level)}";
                 // 읽는 시간을 강요하지 않고 명시적인 입력으로 결과를 닫습니다.
                 Image resultPanel = MakeImage(battleCanvasRect, "VictoryResult", panel);
                 resultPanel.raycastTarget = true;
-                SetRect(resultPanel.rectTransform, Vector2.one * .5f, new Vector2(600, 250));
+                SetRect(resultPanel.rectTransform, Vector2.one * .5f, new Vector2(620, 390));
                 AddOutline(resultPanel.gameObject, gold, 2f);
                 MakeText(resultPanel.transform, "Result", message, battleFont, 20,
-                    new Vector2(.5f, .62f), new Vector2(570, 170));
+                    new Vector2(.5f, .59f), new Vector2(570, 285));
+                // 아이콘이 없어도 바로 옆의 "획득 탈렌트" 텍스트가 같은 정보를 전달합니다.
+                Image rewardCurrencyIcon = MakeImage(resultPanel.transform, "CurrencyIcon", Color.white);
+                rewardCurrencyIcon.sprite = CurrencyPresentation.Icon;
+                rewardCurrencyIcon.color = CurrencyPresentation.IconTint;
+                rewardCurrencyIcon.preserveAspect = true;
+                rewardCurrencyIcon.raycastTarget = false;
+                SetRect(rewardCurrencyIcon.rectTransform, new Vector2(.245f, .684f), new Vector2(25, 25));
                 Button returnButton = MakeAuxiliaryButton(resultPanel.transform, "VictoryReturn", "필드로", battleFont,
-                    new Vector2(.5f, .14f), BattleUiIconCatalog.Cancel,
+                    new Vector2(.5f, .08f), BattleUiIconCatalog.Cancel,
                     () => BattleSceneFlow.ReturnToField(true));
                 if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(returnButton.gameObject);
                 message = "승리! 결과를 확인한 뒤 필드로 돌아가세요.";

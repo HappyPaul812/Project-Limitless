@@ -10,6 +10,12 @@ MonoBehaviour:
   displayName: 맹독뱀
   monsterLevel: 4
   baseExperience: 20
+  currencyReward: 6
+  lootEntries:
+  - itemId: material_venom_snake_scale
+    dropChance: 0.35
+    minCount: 1
+    maxCount: 1
   maxHp: 95
   encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fc03, type: 2}
   fieldMoveSpeed: 0.7

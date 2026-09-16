@@ -37,5 +37,11 @@ MonoBehaviour:
   directAreaAttackDamage: 20
   monsterLevel: 3
   baseExperience: 16
+  currencyReward: 5
+  lootEntries:
+  - itemId: material_forest_spider_silk
+    dropChance: 0.4
+    minCount: 1
+    maxCount: 1
   maxHp: 80
   encounterSupportMonster: {fileID: 11400000, guid: b33f06912b2a48d0afcd626d1d88fd30, type: 2}

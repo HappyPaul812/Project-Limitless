@@ -4,6 +4,24 @@ using ProjectLimitless.Battle;
 namespace ProjectLimitless.Monster
 {
     /// <summary>
+    /// 몬스터 한 마리가 독립적으로 굴리는 전리품 규칙입니다.
+    /// 확률과 수량을 데이터로 두면 새 몬스터를 추가할 때 전투 코드를 고치지 않아도 됩니다.
+    /// </summary>
+    [System.Serializable]
+    public sealed class MonsterLootEntry
+    {
+        [SerializeField] private string itemId = string.Empty;
+        [SerializeField, Range(0f, 1f)] private float dropChance;
+        [SerializeField, Min(1)] private int minCount = 1;
+        [SerializeField, Min(1)] private int maxCount = 1;
+
+        public string ItemId => itemId;
+        public float DropChance => dropChance;
+        public int MinCount => minCount;
+        public int MaxCount => maxCount;
+    }
+
+    /// <summary>
     /// 몬스터 한 종류가 필드와 전투에서 공유하는 외형·이동·기본 공격 차이를 보관하는 데이터 Asset입니다.
     /// 성장·보상·HP와 독 부여 규칙을 Field 개체와 Battle 참가자가 같은 정의에서 읽습니다.
     /// </summary>
@@ -17,6 +35,8 @@ namespace ProjectLimitless.Monster
         [Header("성장과 보상")]
         [SerializeField, Min(1)] private int monsterLevel = 1;
         [SerializeField, Min(0)] private int baseExperience;
+        [SerializeField, Min(0)] private int currencyReward;
+        [SerializeField] private MonsterLootEntry[] lootEntries = System.Array.Empty<MonsterLootEntry>();
         [SerializeField, Min(1)] private int maxHp = 60;
         // 조우 주 몬스터 앞에 배치할 직전 단계 몬스터입니다. null이면 같은 종류 세 마리를 사용합니다.
         [SerializeField] private MonsterDefinition encounterSupportMonster;
@@ -68,6 +88,8 @@ namespace ProjectLimitless.Monster
         public string DisplayName => displayName;
         public int MonsterLevel => Mathf.Max(1, monsterLevel);
         public int BaseExperience => Mathf.Max(0, baseExperience);
+        public int CurrencyReward => Mathf.Max(0, currencyReward);
+        public System.Collections.Generic.IReadOnlyList<MonsterLootEntry> LootEntries => lootEntries ?? System.Array.Empty<MonsterLootEntry>();
         public int MaxHp => Mathf.Max(1, maxHp);
         public MonsterDefinition EncounterSupportMonster => encounterSupportMonster;
         public PoisonDefinition BasicAttackPoison => basicAttackPoison;

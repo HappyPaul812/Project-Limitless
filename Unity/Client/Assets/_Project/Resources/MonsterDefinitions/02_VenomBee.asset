@@ -37,6 +37,12 @@ MonoBehaviour:
   basicAttackPoisonCooldownActions: 2
   monsterLevel: 2
   baseExperience: 12
+  currencyReward: 4
+  lootEntries:
+  - itemId: material_venom_bee_stinger
+    dropChance: 0.45
+    minCount: 1
+    maxCount: 1
   maxHp: 70
   encounterSupportMonster: {fileID: 11400000, guid: 1d593441524742128470c5d2b2e4c508, type: 2}
   basicAttackPoison:
