@@ -89,6 +89,31 @@ namespace ProjectLimitless.Editor
             Check(ShopService.GetMaximumSellQuantity("item_healing_potion_small") == 1
                 && ShopService.TrySell("item_healing_potion_small", 2) == ShopTransactionResult.NoItem
                 && InventoryService.GetItemCount("item_healing_potion_small") == 1, "보유 수량 초과 판매 방어");
+            ItemDefinition blockedItem = ScriptableObject.CreateInstance<ItemDefinition>();
+            blockedItem.ConfigureContent("audit_blocked_item", "판매 금지", "", ItemCategory.Quest,
+                99, 0, 10, null, Color.white, ItemUseType.None, "");
+            Check(!ShopService.IsSellable(blockedItem), "Quest 판매 목록 제외");
+            blockedItem.ConfigureContent("audit_blocked_item", "판매 금지", "", ItemCategory.KeyItem,
+                99, 0, 10, null, Color.white, ItemUseType.None, "");
+            Check(!ShopService.IsSellable(blockedItem), "KeyItem 판매 목록 제외");
+            blockedItem.ConfigureContent("audit_blocked_item", "판매가 없음", "", ItemCategory.Material,
+                99, 0, 0, null, Color.white, ItemUseType.None, "");
+            Check(!ShopService.IsSellable(blockedItem), "판매가 0 판매 목록 제외");
+            UnityEngine.Object.DestroyImmediate(blockedItem);
+
+            EconomyService.Reset(); InventoryService.Reset(); EconomyService.AddCurrency(10);
+            Check(InventoryService.TryAddItem("material_grass_slime_gel", 3)
+                && InventoryService.TryAddItem("material_forest_spider_silk", 4), "판매 목록 수량 준비");
+            Check(ShopService.GetMaximumSellQuantity("material_grass_slime_gel") == 3
+                && ShopService.TrySell("material_grass_slime_gel", 3) == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 16
+                && InventoryService.GetItemCount("material_grass_slime_gel") == 0,
+                "슬라임 점액 3개 판매 10→16, 품절 0");
+            Check(ShopService.GetMaximumSellQuantity("material_forest_spider_silk") == 4
+                && ShopService.TrySell("material_forest_spider_silk", 2) == ShopTransactionResult.Success
+                && EconomyService.GetCurrency() == 24
+                && InventoryService.GetItemCount("material_forest_spider_silk") == 2,
+                "숲거미 거미줄 2개 판매 16→24, 4→2");
             Check(!ShopService.TryCalculateTotal(int.MaxValue, 2, out _), "가격×수량 overflow 방어");
             InventoryService.Reset();
             PartyResourceService.Reset();

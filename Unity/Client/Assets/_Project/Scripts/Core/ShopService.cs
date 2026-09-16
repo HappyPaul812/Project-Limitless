@@ -15,7 +15,16 @@ namespace ProjectLimitless.Core
             return System.Math.Min(affordable, InventoryService.GetAddableAmount(itemId));
         }
 
-        public static int GetMaximumSellQuantity(string itemId) => InventoryService.GetItemCount(itemId);
+        public static int GetMaximumSellQuantity(string itemId) =>
+            ItemCatalog.TryGet(itemId, out ItemDefinition item) && IsSellable(item)
+                ? InventoryService.GetItemCount(itemId)
+                : 0;
+
+        /// <summary>판매 목록과 실제 거래가 같은 규칙을 사용하도록 공용 판정을 제공합니다.</summary>
+        public static bool IsSellable(ItemDefinition item) => item != null
+            && item.SellPrice > 0
+            && item.Category != ItemCategory.Quest
+            && item.Category != ItemCategory.KeyItem;
 
         public static ShopTransactionResult TryBuy(ShopDefinition shop, string itemId, int quantity)
         {
@@ -35,7 +44,8 @@ namespace ProjectLimitless.Core
 
         public static ShopTransactionResult TrySell(string itemId, int quantity)
         {
-            if (quantity <= 0 || !ItemCatalog.TryGet(itemId, out ItemDefinition item)) return ShopTransactionResult.InvalidItem;
+            if (quantity <= 0 || !ItemCatalog.TryGet(itemId, out ItemDefinition item) || !IsSellable(item))
+                return ShopTransactionResult.InvalidItem;
             if (!InventoryService.HasItem(itemId, quantity)) return ShopTransactionResult.NoItem;
             if (!TryCalculateTotal(item.SellPrice, quantity, out int total)
                 || EconomyService.GetCurrency() > int.MaxValue - total) return ShopTransactionResult.CurrencyOverflow;

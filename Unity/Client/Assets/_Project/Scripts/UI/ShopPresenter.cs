@@ -20,6 +20,7 @@ namespace ProjectLimitless.UI
         public static ShopPresenter Instance { get; private set; }
 
         private readonly List<Button> itemButtons = new List<Button>();
+        private readonly List<ItemDefinition> displayedItems = new List<ItemDefinition>();
         private readonly List<Selectable> focusOrder = new List<Selectable>();
         private GameObject panel;
         private Text titleLabel;
@@ -89,7 +90,6 @@ namespace ProjectLimitless.UI
             shop = definition;
             owner = shopOwner;
             titleLabel.text = definition.DisplayName;
-            BuildItemRows();
             panel.SetActive(true);
             panel.transform.SetAsLastSibling();
             // CurrencyPresentation을 공용으로 써 화면마다 화폐명과 아이콘이 달라지는 일을 막습니다.
@@ -98,7 +98,7 @@ namespace ProjectLimitless.UI
             WorldExperienceHud.SetInteractionUiOpen(this, true);
             // 메뉴 방향키가 캐릭터 이동까지 일으키지 않도록 상점이 소유한 잠금을 겁니다.
             PlayerController.SetMovementLocked(this, true);
-            SelectItem(0);
+            SelectTradeMode(true);
         }
 
         public void Close()
@@ -122,12 +122,29 @@ namespace ProjectLimitless.UI
         {
             foreach (Transform child in itemList) Destroy(child.gameObject);
             itemButtons.Clear();
+            displayedItems.Clear();
             focusOrder.Clear();
-            for (int i = 0; i < shop.ItemIds.Count; i++)
+
+            if (tradeMode == TradeMode.Buy)
             {
-                if (!ItemCatalog.TryGet(shop.ItemIds[i], out ItemDefinition item)) continue;
+                for (int i = 0; i < shop.ItemIds.Count; i++)
+                    if (ItemCatalog.TryGet(shop.ItemIds[i], out ItemDefinition item)) displayedItems.Add(item);
+            }
+            else
+            {
+                foreach (InventoryEntry entry in InventoryService.ExportSaveData())
+                    if (entry != null && entry.Count > 0 && ItemCatalog.TryGet(entry.ItemId, out ItemDefinition item)
+                        && ShopService.IsSellable(item)) displayedItems.Add(item);
+            }
+
+            for (int i = 0; i < displayedItems.Count; i++)
+            {
+                ItemDefinition item = displayedItems[i];
                 int index = itemButtons.Count;
-                Button row = CreateButton(itemList, "Item_" + item.ItemId, item.DisplayName, new Vector2(0f, -index * 92f), new Vector2(430f, 82f));
+                string rowLabel = tradeMode == TradeMode.Sell
+                    ? $"{item.DisplayName}  ×{InventoryService.GetItemCount(item.ItemId)}"
+                    : item.DisplayName;
+                Button row = CreateButton(itemList, "Item_" + item.ItemId, rowLabel, new Vector2(0f, -index * 92f), new Vector2(430f, 82f));
                 Image icon = CreateImage(row.transform, "Icon", item.Icon, item.IconTint, new Vector2(18f, 9f), new Vector2(64f, 64f));
                 icon.raycastTarget = false;
                 Text label = row.GetComponentInChildren<Text>();
@@ -137,21 +154,22 @@ namespace ProjectLimitless.UI
                 labelRect.offsetMin = new Vector2(96f, 8f);
                 labelRect.offsetMax = new Vector2(-12f, -8f);
                 label.alignment = TextAnchor.MiddleLeft;
-                int captured = i;
+                int captured = index;
                 row.onClick.AddListener(() => SelectItem(captured));
                 itemButtons.Add(row);
-            focusOrder.Add(row);
+                focusOrder.Add(row);
             }
             focusOrder.Add(buyModeButton); focusOrder.Add(sellModeButton);
             focusOrder.Add(decreaseButton); focusOrder.Add(increaseButton); focusOrder.Add(maxButton);
-            focusOrder.Add(buyButton); focusOrder.Add(sellButton); focusOrder.Add(closeButton);
+            focusOrder.Add(tradeMode == TradeMode.Buy ? buyButton : sellButton);
+            focusOrder.Add(closeButton);
         }
 
         private void SelectItem(int index)
         {
-            if (shop == null || index < 0 || index >= shop.ItemIds.Count || !ItemCatalog.TryGet(shop.ItemIds[index], out selectedItem)) return;
+            if (shop == null || index < 0 || index >= displayedItems.Count) return;
+            selectedItem = displayedItems[index];
             // 수량을 UI 문구에 고정하지 않고 선택 상태로 관리하며, 아이템이 바뀌면 이전 수량이 새 품목으로 새지 않게 1로 되돌립니다.
-            tradeMode = TradeMode.Buy;
             tradeQuantity = 1;
             messageLabel.text = string.Empty;
             Refresh();
@@ -162,7 +180,19 @@ namespace ProjectLimitless.UI
         private void Refresh()
         {
             currencyLabel.text = CurrencyPresentation.FormatAmount(EconomyService.GetCurrency());
-            if (selectedItem == null) return;
+            bool buying = tradeMode == TradeMode.Buy;
+            buyModeButton.GetComponentInChildren<Text>().text = buying ? "[구매]" : "구매";
+            sellModeButton.GetComponentInChildren<Text>().text = buying ? "판매" : "[판매]";
+            buyButton.gameObject.SetActive(buying);
+            sellButton.gameObject.SetActive(!buying);
+            if (selectedItem == null)
+            {
+                detailsLabel.text = buying ? "구매할 상품이 없습니다." : "판매할 수 있는 아이템이 없습니다.";
+                quantityLabel.text = "수량: 1";
+                decreaseButton.interactable = increaseButton.interactable = maxButton.interactable = false;
+                buyButton.interactable = sellButton.interactable = false;
+                return;
+            }
             int count = InventoryService.GetItemCount(selectedItem.ItemId);
             string effect = string.IsNullOrWhiteSpace(selectedItem.EffectPreview) ? string.Empty : $"\n예정 효과: {selectedItem.EffectPreview}";
             ShopService.TryCalculateTotal(selectedItem.BuyPrice, tradeQuantity, out int totalBuy);
@@ -171,7 +201,9 @@ namespace ProjectLimitless.UI
             int maximumSell = ShopService.GetMaximumSellQuantity(selectedItem.ItemId);
             bool canBuy = tradeQuantity <= maximumBuy;
             bool canSell = tradeQuantity <= maximumSell;
-            detailsLabel.text = $"{selectedItem.DisplayName}\n{selectedItem.Description}{effect}\n\n보유: {count}\n구매 단가: {CurrencyPresentation.FormatAmount(selectedItem.BuyPrice)}\n총 구매가: {CurrencyPresentation.FormatAmount(totalBuy)} ({(canBuy ? "가능" : "불가")})\n판매 단가: {CurrencyPresentation.FormatAmount(selectedItem.SellPrice)}\n총 판매가: {CurrencyPresentation.FormatAmount(totalSell)} ({(canSell ? "가능" : "불가")})";
+            detailsLabel.text = buying
+                ? $"{selectedItem.DisplayName}\n{selectedItem.Description}{effect}\n\n보유: {count}\n구매 단가: {CurrencyPresentation.FormatAmount(selectedItem.BuyPrice)}\n선택 수량: {tradeQuantity}\n총 구매가:\n{CurrencyPresentation.FormatAmount(totalBuy)} ({(canBuy ? "가능" : "불가")})"
+                : $"{selectedItem.DisplayName}\n{selectedItem.Description}\n\n보유: {count}\n판매 단가: {CurrencyPresentation.FormatAmount(selectedItem.SellPrice)}\n선택 수량: {tradeQuantity}\n총 판매가:\n{CurrencyPresentation.FormatAmount(totalSell)} ({(canSell ? "가능" : "불가")})";
             quantityLabel.text = $"수량: {tradeQuantity}";
             decreaseButton.interactable = tradeQuantity > 1;
             increaseButton.interactable = tradeQuantity < GetCurrentMaximum();
@@ -195,8 +227,27 @@ namespace ProjectLimitless.UI
             ShopTransactionResult result = selectedItem == null ? ShopTransactionResult.InvalidItem : ShopService.TrySell(selectedItem.ItemId, tradeQuantity);
             messageLabel.text = ResultMessage(result, false);
             if (result == ShopTransactionResult.Success) GameSaveService.SaveCurrentSession();
-            ClampQuantity();
-            Refresh();
+            if (result == ShopTransactionResult.Success)
+            {
+                string soldItemId = selectedItem.ItemId;
+                int previousIndex = displayedItems.FindIndex(item => item.ItemId == soldItemId);
+                BuildItemRows();
+                int remainingIndex = displayedItems.FindIndex(item => item.ItemId == soldItemId);
+                if (displayedItems.Count > 0)
+                    SelectItem(remainingIndex >= 0 ? remainingIndex : Mathf.Clamp(previousIndex, 0, displayedItems.Count - 1));
+                else
+                {
+                    selectedItem = null;
+                    tradeQuantity = 1;
+                    Refresh();
+                }
+                messageLabel.text = "선택한 수량을 판매했습니다.";
+            }
+            else
+            {
+                ClampQuantity();
+                Refresh();
+            }
         }
 
         private static string ResultMessage(ShopTransactionResult result, bool buying)
@@ -213,9 +264,15 @@ namespace ProjectLimitless.UI
         {
             tradeMode = buying ? TradeMode.Buy : TradeMode.Sell;
             tradeQuantity = 1;
-            messageLabel.text = buying ? "구매 수량을 조절합니다." : "판매 수량을 조절합니다.";
-            Refresh();
-            SetLimitMessageIfUnavailable();
+            selectedItem = null;
+            BuildItemRows();
+            if (displayedItems.Count > 0) SelectItem(0);
+            else
+            {
+                messageLabel.text = buying ? "구매할 상품이 없습니다." : "판매할 수 있는 아이템이 없습니다.";
+                Refresh();
+                if (buying) buyModeButton.Select(); else sellModeButton.Select();
+            }
         }
 
         public void SetTradeQuantity(int quantity)
@@ -257,7 +314,11 @@ namespace ProjectLimitless.UI
             for (int step = 1; step <= focusOrder.Count; step++)
             {
                 int next = (current + direction * step + focusOrder.Count) % focusOrder.Count;
-                if (focusOrder[next] != null && focusOrder[next].IsInteractable()) { focusOrder[next].Select(); return; }
+                if (focusOrder[next] != null && focusOrder[next].gameObject.activeInHierarchy && focusOrder[next].IsInteractable())
+                {
+                    focusOrder[next].Select();
+                    return;
+                }
             }
         }
 
@@ -276,15 +337,15 @@ namespace ProjectLimitless.UI
             itemList = new GameObject("ItemList", typeof(RectTransform)).transform; itemList.SetParent(panel.transform, false);
             RectTransform listRect = (RectTransform)itemList; listRect.anchorMin = new Vector2(0f, 1f); listRect.anchorMax = new Vector2(0f, 1f); listRect.pivot = new Vector2(0f, 1f); listRect.anchoredPosition = new Vector2(30f, -115f); listRect.sizeDelta = new Vector2(430f, 330f);
             detailsLabel = CreateText(panel.transform, "Details", font, 21, TextAnchor.UpperLeft, new Vector2(490f, -125f), new Vector2(370f, 285f));
-            buyModeButton = CreateButton(panel.transform, "BuyModeButton", "구매 수량", new Vector2(490f, -390f), new Vector2(170f, 48f)); buyModeButton.onClick.AddListener(() => SelectTradeMode(true));
-            sellModeButton = CreateButton(panel.transform, "SellModeButton", "판매 수량", new Vector2(680f, -390f), new Vector2(170f, 48f)); sellModeButton.onClick.AddListener(() => SelectTradeMode(false));
+            buyModeButton = CreateButton(panel.transform, "BuyModeButton", "[구매]", new Vector2(490f, -390f), new Vector2(170f, 48f)); buyModeButton.onClick.AddListener(() => SelectTradeMode(true));
+            sellModeButton = CreateButton(panel.transform, "SellModeButton", "판매", new Vector2(680f, -390f), new Vector2(170f, 48f)); sellModeButton.onClick.AddListener(() => SelectTradeMode(false));
             quantityLabel = CreateText(panel.transform, "Quantity", font, 27, TextAnchor.MiddleCenter, new Vector2(490f, -446f), new Vector2(170f, 54f));
             decreaseButton = CreateButton(panel.transform, "DecreaseQuantityButton", "−", new Vector2(680f, -446f), new Vector2(54f, 54f)); decreaseButton.onClick.AddListener(() => AdjustQuantity(-1));
             increaseButton = CreateButton(panel.transform, "IncreaseQuantityButton", "+", new Vector2(744f, -446f), new Vector2(54f, 54f)); increaseButton.onClick.AddListener(() => AdjustQuantity(1));
             maxButton = CreateButton(panel.transform, "MaxQuantityButton", "최대", new Vector2(808f, -446f), new Vector2(54f, 54f)); maxButton.onClick.AddListener(SetMaximumQuantity);
             messageLabel = CreateText(panel.transform, "Message", font, 21, TextAnchor.MiddleCenter, new Vector2(30f, -380f), new Vector2(430f, 90f)); messageLabel.color = new Color(1f, .85f, .35f);
             buyButton = CreateButton(panel.transform, "BuyButton", "구매", new Vector2(220f, -520f), new Vector2(180f, 58f)); buyButton.onClick.AddListener(Buy);
-            sellButton = CreateButton(panel.transform, "SellButton", "판매", new Vector2(420f, -520f), new Vector2(180f, 58f)); sellButton.onClick.AddListener(Sell);
+            sellButton = CreateButton(panel.transform, "SellButton", "판매", new Vector2(220f, -520f), new Vector2(180f, 58f)); sellButton.onClick.AddListener(Sell);
             closeButton = CreateButton(panel.transform, "CloseButton", "닫기", new Vector2(620f, -520f), new Vector2(180f, 58f)); closeButton.onClick.AddListener(Close);
             panel.SetActive(false);
         }
