@@ -36,6 +36,7 @@
 - 마지막 NPC 거리 대화 종료 commit: `6b42c26` (`Fix: NPC 거리 이탈 시 대화 종료`)
 - 마지막 경제·인벤토리 기반 commit: `dcb76e6` (`Feature: 경제와 인벤토리 최소 기반 추가`)
 - 마지막 인벤토리 기반 상점 판매 commit: `f6dbcca` (`Feature: 인벤토리 기반 상점 판매 목록`)
+- 마지막 몬스터 Material 아이콘 commit: `82d60fe` (`Feature: 몬스터 Material 아이콘 연결`)
 - 마지막 몬스터 보상 commit: `298f023` (`Feature: 몬스터 탈렌트와 전리품 보상 추가`)
 - 마지막 탈렌트 표시 참조 commit: `0277317` (`Feature: 탈렌트 화폐 표시 참조 추가`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
