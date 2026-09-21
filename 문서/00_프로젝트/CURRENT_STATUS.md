@@ -11,6 +11,7 @@
 - 주민 대표·남문 경비병을 포함한 `VillageNpcRole`과 Main 01 연속 대화가 stable NPC ID를 전달하도록 연결했다. 대화/확인/연속 대화, 모달 소유권, 거리 이탈 종료, World HUD 숨김·복귀 경로는 유지했으며 Save 스키마는 변경하지 않았다.
 - Unity 6000.5.7f1에서 컴파일 Error 0, 핵심 정의 4개 로드와 null Sprite를 확인했다. Play Mode에서 네 ID에 임시 Sprite를 각각 주입해 슬롯 표시·본문 여백 190을 확인하고, null 자동 숨김·본문 여백 28 복귀·모달 획득/해제·거리 이탈 자동 종료·HUD owner 1→0을 확인했다. 검증 Sprite는 저장하지 않았고 최종 Console Error/Warning은 0이다. 마지막 기능 commit: `f9d1437`.
 - Unity에서 최종 초상화 Sprite를 연결한 뒤 실제 다양한 해상도에서 얼굴 크롭·150×150 프레임 가독성·긴 대사 줄바꿈·선택지와의 겹침을 직접 확인해야 한다. 다음 권장 작업은 태온·미엘 초상화 → 주민 대표·남문 경비병 초상화 → 태온·미엘 전투 애셋 순서다. 일반 주민·생활 NPC 초상화는 후순위다.
+- 태온 공식 전투 Sprite `Taeon_Battle_Final.png`를 `companion_taeon` 전용 전투 비주얼에 적용했다. 기본 방향은 Left이며 Idle·Attack·Guard·Skill·Hit·Defeat 6개 애니메이션을 사용한다. 실제 Battle Scene Play Mode에서 재생·복귀와 Guardian 스킬 연결을 확인했고 최종 Console Error/Warning은 0이다. 마지막 기능 commit: `4854591`.
 - Main 02 `main_02_grassland_anomaly` 「초원의 이상」을 실제 구현했다. Main 01 완료 뒤 자동 시작하며 `Field_01`의 넓은 조사 구역 도달 → 지정 `grass_slime_01` 조우 승리 → 흔적 상호작용 순서로 진행한다. 일반 Kill Count가 아니며 다른 Encounter·도망·패배는 진행시키지 않는다.
 - 조사 구역은 `(.4, 1)`, stable ID `field01_main02_investigation_area`이고, 지정 조우는 `field01_main02_investigation_encounter`, 흔적은 `(5.1, -1.2)`의 `field01_main02_tracks`다. 사용자 수정 Field Scene과 Monster Spawn/Respawn 데이터는 바꾸지 않고 런타임 연결로 분리했다.
 - 흔적에는 `◇ 흩어진 흔적`과 `[E/F] 조사`를 함께 표시해 색상만으로 찾지 않게 했다. 다섯 Path별 1문장 반응은 표현만 다르고, 모두 "몬스터들이 마을을 공격하러 온 것이 아니라 무언가를 피해 밀려온 것 같다"는 같은 결론으로 합류한다. 원인·배후·오염 여부는 미확정이다.
@@ -69,6 +70,7 @@
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
+- 마지막 태온 전투 애니메이션 commit: `4854591` (`Feature: 태온 공식 전투 애니메이션 적용`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
