@@ -1,5 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
+- 데이터 기반 퀘스트 기반을 구현했다. `QuestDefinition`/`QuestObjectiveDefinition`/`QuestCatalog`/`QuestRuntimeState`/`QuestService`를 분리했고, stable QuestId·ObjectiveId와 `TalkToNpc`·`ReachLocation`·`DefeatEncounter`·`Interact`·`GenericSignal` Notify로 Scene 검색 없이 순차 목표를 진행한다.
+- 메인은 한 개만 Active인 직렬 진행과 선행 완료 해금을 사용하고, 서브는 여러 개를 동시에 진행할 수 있다. Active Main, Active Side, Completed 목록과 추적 Quest 변경 API를 제공하며 길은 진행·보상 우열에 관여하지 않는다.
+- 마지막 목표 완료 시 기존 `RewardBundle`로 EXP·탈렌트·아이템을 지급하고 Completed를 기록해 반복 Signal의 중복 보상을 막는다. Save Version 1의 선택 `QuestProgress` 필드에 Active/Completed/Objective/Tracked 상태를 저장하며 구버전 null 필드는 빈 퀘스트 상태로 복원한다.
+- World Overlay Canvas 왼쪽 위에 `[메인]`/`[서브]`, 퀘스트명, 현재 목표 하나를 표시하는 `QuestHudPresenter`를 추가했다. 메인 시작을 기본 추적하고 Dialogue·Shop·Inventory가 공유하는 `WorldModalState`가 열리면 HUD를 숨긴다. 실제 Main 01 데이터와 NPC·장소·Encounter 연결은 아직 추가하지 않았다.
+- Unity MCP에서 빈 Scene Play Mode 감사로 시작, 잘못된 ID 무시, 순차 목표 이동, 완료, Reward 1회, 반복 Signal 중복 방지, 서브 2개 동시 Active, 메인 선행 해금, JSON 저장/복원, 구버전 null 호환, HUD 텍스트와 Modal 숨김을 확인했다. `QUEST_SYSTEM_AUDIT Play Mode PASS`/`ALL PASS`, 최종 Console Error 0·Warning 0이다. 기능 commit은 `80227e6`이다.
 - 몬스터 처치 보상을 기존 승리 EXP 흐름에 통합했다. 실제 전투불능 `Combatant`의 stable `MonsterDefinition`을 한 번 집계해 EXP·탈렌트·개체별 전리품 Roll을 `RewardBundle`로 만들고, 실제 적용 결과를 Victory UI와 Save가 함께 사용한다. 도망·패배는 세 보상 모두 0이며 EXP 레벨 차이 배율은 Currency/Loot에 적용하지 않는다.
 - 초원 슬라임 3/점액 50%, 독침벌 4/침 45%, 숲거미 5/거미줄 40%, 맹독뱀 6/비늘 35%를 데이터로 추가했다. 네 Material은 MaxStack 999·SellPrice 2/3/4/5·사용 불가이며 ShopDefinition에는 넣지 않았다. 기존 Game-icons.net White 원본의 `dripping-goo`/`wasp-sting`/`spider-web`/`dorsal-scales`를 ItemDefinition.Icon에 연결하고 Material별 tint를 적용했다.
 - Victory UI는 EXP, CurrencyIcon+탈렌트 텍스트, ItemId별 합산 이름·수량 또는 `없음`, 레벨 진행을 620×390 패널에 표시한다. Inventory 수용 실패 시 EXP/탈렌트는 유지하고 들어가는 전리품만 실제 지급 결과에 포함한다.
@@ -26,7 +31,7 @@
 
 ## 기준
 
-- 갱신일: 2026-09-16
+- 갱신일: 2026-09-21
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `0454af8` (`Feature: 시작 마을 NPC 외형 적용`)
 - 마지막 기능 수정 commit: `ac11356` (`Fix: 시작 마을 NPC 외형 런타임 설치 수정`)
@@ -38,6 +43,7 @@
 - 마지막 인벤토리 기반 상점 판매 commit: `f6dbcca` (`Feature: 인벤토리 기반 상점 판매 목록`)
 - 마지막 몬스터 Material 아이콘 commit: `82d60fe` (`Feature: 몬스터 Material 아이콘 연결`)
 - 마지막 몬스터 보상 commit: `298f023` (`Feature: 몬스터 탈렌트와 전리품 보상 추가`)
+- 마지막 퀘스트 시스템 기반 commit: `80227e6` (`Feature: 데이터 기반 퀘스트 시스템 기반 추가`)
 - 마지막 탈렌트 표시 참조 commit: `0277317` (`Feature: 탈렌트 화폐 표시 참조 추가`)
 - 마지막 오류 수정 commit: `486ff5a` (`Fix: 월드 경험치 바 채움 비율 수정`)
 - 마지막 관련 문서 commit: `ace782e` (`Docs: 사수 전용 야수 동료 설계 확정`)
