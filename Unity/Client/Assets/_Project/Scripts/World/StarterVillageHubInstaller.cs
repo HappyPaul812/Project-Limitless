@@ -102,10 +102,12 @@ namespace ProjectLimitless.World
             npc.name = objectName;
             npc.transform.SetParent(parent, true);
             npc.transform.position = position;
-            npc.GetComponent<NpcController>().Configure(displayName, dialogue);
+            NpcController controller = npc.GetComponent<NpcController>();
+            controller.Configure(displayName, dialogue);
             VillageNpcRole roleData = npc.GetComponent<VillageNpcRole>() ?? npc.AddComponent<VillageNpcRole>();
             roleData.Configure(npcId, role, true);
             VillageNpcAppearanceCatalog.Apply(npc, npcId, displayName, role);
+            NpcQuestMarkerPresenter.GetOrAdd(controller, roleData);
         }
     }
 }

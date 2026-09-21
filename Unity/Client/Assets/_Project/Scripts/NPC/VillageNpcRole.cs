@@ -43,6 +43,7 @@ namespace ProjectLimitless.NPC
         /// <summary>상호작용은 표시 이름이 아니라 직렬화된 역할로 분기합니다.</summary>
         public void Interact(NpcController npc)
         {
+            if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;
             if (role == VillageNpcRoleType.GeneralShop)
             {
                 DialoguePresenter.Instance?.ShowConfirmation(

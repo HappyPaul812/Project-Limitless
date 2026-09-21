@@ -44,6 +44,8 @@ namespace ProjectLimitless.Core
         [SerializeField] private RewardBundle reward = new RewardBundle();
         [SerializeField] private string[] prerequisiteQuestIds = Array.Empty<string>();
         [SerializeField] private string nextMainQuestId = string.Empty;
+        [SerializeField] private string startNpcId = string.Empty;
+        [SerializeField] private string turnInNpcId = string.Empty;
 
         public string QuestId => questId;
         public string DisplayName => displayName;
@@ -53,6 +55,8 @@ namespace ProjectLimitless.Core
         public RewardBundle Reward => reward;
         public IReadOnlyList<string> PrerequisiteQuestIds => prerequisiteQuestIds;
         public string NextMainQuestId => nextMainQuestId;
+        public string StartNpcId => startNpcId;
+        public string TurnInNpcId => turnInNpcId;
 
 #if UNITY_EDITOR
         public void ConfigureForAudit(string id, string title, QuestType type, QuestObjectiveDefinition[] steps,
@@ -64,6 +68,9 @@ namespace ProjectLimitless.Core
             prerequisiteQuestIds = prerequisites ?? Array.Empty<string>();
             nextMainQuestId = nextQuestId ?? string.Empty;
         }
+
+        public void ConfigureNpcFlow(string questStartNpcId, string questTurnInNpcId = "")
+        { startNpcId = questStartNpcId ?? string.Empty; turnInNpcId = questTurnInNpcId ?? string.Empty; }
 #endif
     }
 }

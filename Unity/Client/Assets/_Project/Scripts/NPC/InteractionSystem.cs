@@ -91,6 +91,11 @@ namespace ProjectLimitless.NPC
         /// <summary>상호작용 버튼을 누른 순간의 대상 이름과 대사를 대화 UI에 표시합니다.</summary>
         private void OnInteract(InputAction.CallbackContext _)
         {
+            if (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen)
+            {
+                DialoguePresenter.Instance.Advance();
+                return;
+            }
             if (WorldModalState.IsOpen) return;
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();

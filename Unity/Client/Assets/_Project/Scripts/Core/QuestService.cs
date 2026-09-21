@@ -5,6 +5,7 @@ using System.Linq;
 namespace ProjectLimitless.Core
 {
     public enum QuestState { Locked, Available, Active, Completed }
+    public enum NpcQuestMarkerState { None, Available, ActiveObjective, ReadyToTurnIn }
 
     [Serializable]
     public sealed class QuestObjectiveProgressData
@@ -113,6 +114,25 @@ namespace ProjectLimitless.Core
             return main ?? active.Values.FirstOrDefault();
         }
 
+        /// <summary>
+        /// NPC 이름이나 GameObject 이름을 보지 않고 stable ID와 퀘스트 데이터만 비교합니다.
+        /// Presenter가 상태 변경 이벤트 때만 호출하므로 매 프레임 Catalog 전체를 훑지 않습니다.
+        /// </summary>
+        public static NpcQuestMarkerState GetNpcMarkerState(string npcId)
+        {
+            if (string.IsNullOrWhiteSpace(npcId)) return NpcQuestMarkerState.None;
+            if (active.Values.Any(x => x.CurrentObjective == null
+                && string.Equals(x.Definition.TurnInNpcId, npcId, StringComparison.Ordinal)))
+                return NpcQuestMarkerState.ReadyToTurnIn;
+            if (active.Values.Any(x => x.CurrentObjective?.ObjectiveType == QuestObjectiveType.TalkToNpc
+                && string.Equals(x.CurrentObjective.TargetId, npcId, StringComparison.Ordinal)))
+                return NpcQuestMarkerState.ActiveObjective;
+            if (QuestCatalog.All.Any(x => GetState(x.QuestId) == QuestState.Available
+                && string.Equals(x.StartNpcId, npcId, StringComparison.Ordinal)))
+                return NpcQuestMarkerState.Available;
+            return NpcQuestMarkerState.None;
+        }
+
         public static void NotifyNpcTalked(string npcId) => Notify(QuestObjectiveType.TalkToNpc, npcId);
         public static void NotifyLocationReached(string locationId) => Notify(QuestObjectiveType.ReachLocation, locationId);
         public static void NotifyEncounterWon(string encounterId) => Notify(QuestObjectiveType.DefeatEncounter, encounterId);
@@ -124,8 +144,15 @@ namespace ProjectLimitless.Core
             if (string.IsNullOrWhiteSpace(targetId)) return;
             foreach (QuestRuntimeState state in active.Values.ToArray())
             {
+                if (state.CurrentObjective == null
+                    && type == QuestObjectiveType.TalkToNpc
+                    && string.Equals(state.Definition.TurnInNpcId, targetId, StringComparison.Ordinal))
+                {
+                    Complete(state);
+                    continue;
+                }
                 if (!state.Notify(type, targetId)) continue;
-                if (state.CurrentObjective == null) Complete(state);
+                if (state.CurrentObjective == null && string.IsNullOrEmpty(state.Definition.TurnInNpcId)) Complete(state);
                 else Changed?.Invoke();
             }
         }

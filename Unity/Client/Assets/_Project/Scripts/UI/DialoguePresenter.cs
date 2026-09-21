@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 namespace ProjectLimitless.UI
 {
@@ -27,6 +28,12 @@ namespace ProjectLimitless.UI
         private Transform dialogueOwner;
         private float dialogueBreakDistance;
         private bool isDistanceTracked;
+        private InputAction advanceAction;
+        private string sequenceSpeaker = string.Empty;
+        private string[] sequencePages = Array.Empty<string>();
+        private int sequencePageIndex;
+        private Action onSequenceCompleted;
+        public bool IsOpen => panel != null && panel.activeSelf;
 
         /// <summary>중복 대화 UI를 제거하고, 이 객체를 공용 Instance로 등록한 뒤 패널을 만듭니다.</summary>
         private void Awake()
@@ -39,6 +46,10 @@ namespace ProjectLimitless.UI
 
             Instance = this;
             CreatePanel();
+            advanceAction = new InputAction("AdvanceDialogue", InputActionType.Button);
+            advanceAction.AddBinding("<Keyboard>/enter");
+            advanceAction.AddBinding("<Keyboard>/space");
+            advanceAction.performed += _ => Advance();
         }
 
         /// <summary>현재 공용 Instance가 제거되는 객체라면 참조를 비웁니다.</summary>
@@ -46,6 +57,7 @@ namespace ProjectLimitless.UI
         {
             WorldExperienceHud.SetInteractionUiOpen(this, false);
             WorldModalState.Release(this);
+            advanceAction?.Dispose();
             if (Instance == this)
             {
                 Instance = null;
@@ -55,12 +67,43 @@ namespace ProjectLimitless.UI
         /// <summary>화자와 대사를 넣고 대화 패널을 화면에 표시합니다.</summary>
         public void Show(string speaker, string message)
         {
+            ClearSequence();
             if (!WorldModalState.TryAcquire(this)) return;
             dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
             choiceRow.SetActive(false);
             panel.SetActive(true);
             panel.transform.SetAsLastSibling();
             WorldExperienceHud.SetInteractionUiOpen(this, true);
+        }
+
+        /// <summary>긴 대사를 읽기 쉬운 여러 쪽으로 보여 주며, 마지막 쪽을 넘겼을 때만 완료 사건을 알립니다.</summary>
+        public void ShowSequence(string speaker, string[] pages, Action onCompleted)
+        {
+            if (pages == null || pages.Length == 0 || !WorldModalState.TryAcquire(this)) return;
+            sequenceSpeaker = speaker ?? string.Empty;
+            sequencePages = pages;
+            sequencePageIndex = 0;
+            onSequenceCompleted = onCompleted;
+            choiceRow.SetActive(false);
+            panel.SetActive(true);
+            panel.transform.SetAsLastSibling();
+            WorldExperienceHud.SetInteractionUiOpen(this, true);
+            RefreshSequenceText();
+        }
+
+        public void Advance()
+        {
+            if (!IsOpen || sequencePages.Length == 0) return;
+            if (sequencePageIndex + 1 < sequencePages.Length)
+            {
+                sequencePageIndex++;
+                RefreshSequenceText();
+                return;
+            }
+
+            Action completed = onSequenceCompleted;
+            Hide();
+            completed?.Invoke();
         }
 
         /// <summary>시간 제한 없이 마우스·키보드·게임패드로 고를 수 있는 두 선택지를 표시합니다.</summary>
@@ -91,8 +134,22 @@ namespace ProjectLimitless.UI
         {
             panel.SetActive(false);
             ClearDistanceTracking();
+            ClearSequence();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
             WorldModalState.Release(this);
+        }
+
+        private void RefreshSequenceText()
+        {
+            dialogueText.text = $"{sequenceSpeaker}\n{sequencePages[sequencePageIndex]}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
+        }
+
+        private void ClearSequence()
+        {
+            sequenceSpeaker = string.Empty;
+            sequencePages = Array.Empty<string>();
+            sequencePageIndex = 0;
+            onSequenceCompleted = null;
         }
 
         /// <summary>현재 대화의 실제 참여자 참조와 공통 종료 거리를 등록합니다.</summary>
@@ -138,8 +195,17 @@ namespace ProjectLimitless.UI
         /// <summary>Scene 전환이나 객체 비활성화 중에도 HUD 억제 상태가 남지 않게 해제합니다.</summary>
         private void OnDisable()
         {
+            advanceAction?.Disable();
+            ClearSequence();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
             WorldModalState.Release(this);
+        }
+
+        private void OnEnable() => advanceAction?.Enable();
+
+        private void OnApplicationFocus(bool hasFocus)
+        {
+            if (hasFocus) advanceAction?.Enable();
         }
 
         /// <summary>해상도에 맞춰 크기가 조절되는 Canvas와 대화 배경·글자를 코드로 구성합니다.</summary>
