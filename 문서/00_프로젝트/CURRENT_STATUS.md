@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 05 `main_05_return_of_three` 「돌아온 세 사람」을 실제 구현해 Main 01~05의 1장 도입부를 마무리했다. Main 04 완료 뒤 `Field_01`에서 시작해 시작 마을 귀환 → 남문 경비병 보고 → 주민 대표 최종 보고의 stable Objective 3개로 진행한다.
+- 보고 대화는 Main 04의 다중 화자 구조를 재사용한다. 남문 경비병·주민 대표는 Sprite 미연결 시 null-safe 글자 배치, 태온은 `Portrait_Taeon`, 미엘은 `Portrait_Miel`, 플레이어는 초상화 숨김으로 전환된다. 결론은 초원 너머 숲 `Field_02`에서도 비슷한 일이 있다는 방향까지만 제시하고 이상 이동의 원인은 확정하지 않는다.
+- Main 05 완료 보상은 기존 `RewardBundle`의 EXP 40·탈렌트 40·`item_healing_potion_small` 회복약 1개다. 보상 지급 뒤 `companion_taeon`·`companion_miel`을 stable ID 기반 정식 동료로 해금하고 기본 파티를 Player·Taeon·Miel로 저장한다. 기존 Version 1 Save에 동료 필드가 없으면 미해금 상태로 호환하며 Main 03/04 Story Encounter의 임시 참가 구조는 유지한다.
+- Unity MCP Play Mode에서 Quest Log 목표·보상, Field 귀환, 경비병/주민 대표 Marker, 두 보고 대사와 Portrait 전환, Field_02 대사, Quest 완료, EXP 40·탈렌트 40·회복약 1 지급, 합류 알림 큐, 정식 동료·기본 파티 저장을 확인했다. 임시 슬롯 5로 A~E 진행 복원과 실제 Bootstrap Continue, 반복 주민 대표 대화·Scene 왕복의 보상 중복 방지, Field_01 Story Actor 비활성, 레벨업 시 새 MaxHP 완전 회복을 확인한 뒤 슬롯을 삭제했다. 최종 Console Error/Warning 0. 기능 commit: `b47c2da`. 다음 작업은 Field_02 후속 Main Quest 설계다.
 - Main 04 `main_04_three_people` 「세 사람」을 실제 구현했다. Main 03 완료 뒤 `Field_01`에서 앞서간 흔적 도달 → 부상자를 치료 중인 미엘과 첫 다중 화자 대화 → 플레이어·태온·미엘의 지정 3대3 Story Encounter → 전투 후 단서 결합·마을 귀환 결정 순서로 진행한다. stable Location/NPC/Encounter ID 4개로 저장하며 Main 04 자체 완료 보상은 없다.
 - 미엘은 구조 대기 대상이 아니라 도착 전부터 부상자를 치료하는 능동적 치유사로 등장하며, 전투 뒤 자기 상처도 확인하겠다고 말한다. 세 사람의 관찰을 합쳐 초원 안쪽의 이상만 추론하고 원인·배후·오염은 확정하지 않는다. 태온·미엘은 기존 공식 초상화와 전투 애셋을 사용하지만 아직 영구 파티가 아닌 Story Temporary Companion이다.
 - 지정 전투 `field01_main04_three_people_encounter`는 초원 슬라임 1·독침벌 2와 싸우며 승리만 진행한다. 도주·패배는 같은 목표에서 재도전하고 기존 몬스터 EXP·탈렌트·Material Loot 정책을 유지한다. 완료 뒤 최소 데이터만 준비한 Main 05 `main_05_return_of_three` 「돌아온 세 사람」이 Available이 되며 실제 Main 05 내용과 정식 동료 합류는 구현하지 않았다.
@@ -83,6 +87,7 @@
 - 마지막 미엘 전투 애니메이션 commit: `34b7e06` (`Feature: 미엘 공식 전투 애니메이션 적용`)
 - 마지막 Main 03 구현 commit: `372d1fe` (`Feature: Main 03 낯선 동행 구현`)
 - 마지막 Main 04 구현 commit: `d0dd615` (`Feature: Main 04 세 사람 구현`)
+- 마지막 Main 05 구현 commit: `b47c2da` (`Feature: Main 05 돌아온 세 사람 구현`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
