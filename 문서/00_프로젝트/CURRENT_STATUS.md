@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 04 `main_04_three_people` 「세 사람」을 실제 구현했다. Main 03 완료 뒤 `Field_01`에서 앞서간 흔적 도달 → 부상자를 치료 중인 미엘과 첫 다중 화자 대화 → 플레이어·태온·미엘의 지정 3대3 Story Encounter → 전투 후 단서 결합·마을 귀환 결정 순서로 진행한다. stable Location/NPC/Encounter ID 4개로 저장하며 Main 04 자체 완료 보상은 없다.
+- 미엘은 구조 대기 대상이 아니라 도착 전부터 부상자를 치료하는 능동적 치유사로 등장하며, 전투 뒤 자기 상처도 확인하겠다고 말한다. 세 사람의 관찰을 합쳐 초원 안쪽의 이상만 추론하고 원인·배후·오염은 확정하지 않는다. 태온·미엘은 기존 공식 초상화와 전투 애셋을 사용하지만 아직 영구 파티가 아닌 Story Temporary Companion이다.
+- 지정 전투 `field01_main04_three_people_encounter`는 초원 슬라임 1·독침벌 2와 싸우며 승리만 진행한다. 도주·패배는 같은 목표에서 재도전하고 기존 몬스터 EXP·탈렌트·Material Loot 정책을 유지한다. 완료 뒤 최소 데이터만 준비한 Main 05 `main_05_return_of_three` 「돌아온 세 사람」이 Available이 되며 실제 Main 05 내용과 정식 동료 합류는 구현하지 않았다.
+- Unity MCP Play Mode에서 목표 4개·Quest Log, 화자별 태온/미엘 초상화와 플레이어 null-safe 배치, 실제 3대3 참가자·Formation, 미엘 회복/MP, 태온·미엘 공식 전투 애니메이션, 패배·도주 무진행, 승리 보상과 후속 대화, Main 04 Completed/Main 05 Available을 확인했다. 임시 슬롯 5에서 A~E 저장/이어하기를 모두 확인하고 삭제했으며, C/D 마을 왕복 재진입 시 대화·전투가 반복 실행되지 않고 승리 신호 중복도 진행을 건너뛰지 않음을 확인했다. 최종 Console Error/Warning 0. 기능 commit: `d0dd615`. 다음 작업은 Main 05 「돌아온 세 사람」이다.
 - Main 03 `main_03_unfamiliar_companion` 「낯선 동행」을 실제 구현했다. Main 02 완료 뒤 `Field_01`에서 태온 첫 발견 → 첫 대화 → 지정 Story Encounter → 전투 후 단서 결합 → 태온 임시 동행 → 다음 조사 지점 순서로 진행한다. 목표는 stable Location/NPC/Encounter ID 5개로 저장하며 Main 03 자체 보상은 없다.
 - 태온은 Main 02 흔적보다 안쪽 `(7.5, -0.8)`에서 공식 Field Sprite와 `Portrait_Taeon.png`를 사용한다. `관찰 → 이해 → 보호`를 중심으로 플레이어의 흔적과 태온의 반복 행동 관찰을 결합하고, 원인·배후·오염은 확정하지 않는다. 미엘은 등장하지 않으며 Main 04 「세 사람」에서 처음 등장한다.
 - `field01_main03_taeon_encounter`는 일반 Field Encounter와 분리된 플레이어+태온 대 초원 슬라임+독침벌 2대2 전투다. 태온은 아직 정식 동료가 아닌 Story Temporary Companion이며 기존 수호자·지적의 길·공식 Left 전투 애니메이션을 그대로 쓴다. 승리만 Objective를 진행하고 도주·패배는 같은 목표에서 재도전한다.
@@ -78,6 +82,7 @@
 - 마지막 태온 전투 애니메이션 commit: `4854591` (`Feature: 태온 공식 전투 애니메이션 적용`)
 - 마지막 미엘 전투 애니메이션 commit: `34b7e06` (`Feature: 미엘 공식 전투 애니메이션 적용`)
 - 마지막 Main 03 구현 commit: `372d1fe` (`Feature: Main 03 낯선 동행 구현`)
+- 마지막 Main 04 구현 commit: `d0dd615` (`Feature: Main 04 세 사람 구현`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
