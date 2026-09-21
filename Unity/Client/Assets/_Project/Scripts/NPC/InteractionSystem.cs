@@ -1,5 +1,6 @@
 using ProjectLimitless.Core;
 using ProjectLimitless.UI;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -101,6 +102,8 @@ namespace ProjectLimitless.NPC
             RefreshCurrentTarget();
             if (currentTarget != null)
             {
+                MainQuest03TaeonActor storyActor = currentTarget.GetComponent<MainQuest03TaeonActor>();
+                if (storyActor != null && storyActor.TryInteract(transform, dialogueBreakDistance)) return;
                 VillageNpcRole role = currentTarget.GetComponent<VillageNpcRole>();
                 if (role != null)
                 {

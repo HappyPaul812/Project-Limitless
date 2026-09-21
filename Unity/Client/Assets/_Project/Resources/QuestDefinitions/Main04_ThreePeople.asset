@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main04_ThreePeople
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_04_three_people
+  displayName: "\uC138 \uC0AC\uB78C"
+  description: "\uD0DC\uC628\uACFC \uD568\uAED8 \uBC1C\uACAC\uD55C \uC0AC\uB78C\uC758
+    \uD754\uC801\uC744 \uB530\uB77C\uAC04\uB2E4. \uC2E4\uC81C \uBAA9\uD45C\uC640
+    \uBBF8\uC5D8 \uB4F1\uC7A5\uC740 \uD6C4\uC18D \uC791\uC5C5\uC5D0\uC11C \uAD6C\uD604\uD55C\uB2E4."
+  questType: 0
+  objectives: []
+  reward:
+    Experience: 0
+    Currency: 0
+    Items: []
+  prerequisiteQuestIds:
+  - main_03_unfamiliar_companion
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

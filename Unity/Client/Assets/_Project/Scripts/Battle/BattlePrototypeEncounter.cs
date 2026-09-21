@@ -116,6 +116,31 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(allies, enemies);
         }
 
+        /// <summary>
+        /// Main 03에서만 사용하는 최초 2인 파티 구성입니다. 태온은 아직 정식 해금 동료가 아니므로
+        /// 저장 파티를 바꾸지 않고, 이 Story Encounter의 참가자 목록에만 명시적으로 포함합니다.
+        /// </summary>
+        public static BattleEncounterSetup CreateMain03TwoVsTwo(string playerName, string playerJobId, string playerPathId,
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
+        {
+            BattleParticipantSetup[] allies =
+            {
+                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
+                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
+                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
+                    pathId: PathCombatTraitRuntime.IntellectualPathId),
+                new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
+                    new FormationSlot(FormationRow.Rear, 0), playerMaxHp, playerAttack, playerAgility, 0,
+                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId)
+            };
+            BattleParticipantSetup[] enemies =
+            {
+                CreateMonster(slime, "main03_grass_slime", "초원 슬라임", FormationRow.Front, 0, 10),
+                CreateMonster(venomBee, "main03_venom_bee", "독침벌", FormationRow.Rear, 0, 12)
+            };
+            return new BattleEncounterSetup(allies, enemies);
+        }
+
         private static BattleParticipantSetup CreateMonster(MonsterDefinition monster, string fallbackId,
             string fallbackName, FormationRow row, int column, int agility)
         {

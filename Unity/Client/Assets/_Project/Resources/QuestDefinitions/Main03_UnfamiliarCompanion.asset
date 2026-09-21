@@ -14,15 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_03_unfamiliar_companion
   displayName: "\uB0AF\uC120 \uB3D9\uD589"
-  description:
+  description: "\uCD08\uC6D0 \uC548\uCABD\uC5D0\uC11C \uBAAC\uC2A4\uD130\uC758 \uC6C0\uC9C1\uC784\uC744
+    \uAD00\uCC30\uD558\uB358 \uD0DC\uC628\uACFC \uB9CC\uB098 \uC11C\uB85C\uC758 \uB2E8\uC11C\uB97C
+    \uD569\uCE58\uACE0, \uD568\uAED8 \uB2E4\uC74C \uC870\uC0AC \uC9C0\uC810\uC73C\uB85C
+    \uC774\uB3D9\uD55C\uB2E4."
   questType: 0
-  objectives: []
+  objectives:
+  - objectiveId: reach_taeon_meeting
+    description: "\uCD08\uC6D0 \uC548\uCABD\uC758 \uC0C8\uB85C\uC6B4 \uD754\uC801\uC744
+      \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field01_main03_taeon_meeting
+    requiredCount: 1
+  - objectiveId: talk_to_taeon_first
+    description: "\uD0DC\uC628\uACFC \uB300\uD654\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_taeon
+    requiredCount: 1
+  - objectiveId: win_taeon_encounter
+    description: "\uD0DC\uC628\uACFC \uD568\uAED8 \uB2E4\uAC00\uC624\uB294 \uBAAC\uC2A4\uD130
+      \uBB34\uB9AC\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
+    objectiveType: 2
+    targetId: field01_main03_taeon_encounter
+    requiredCount: 1
+  - objectiveId: talk_to_taeon_after_battle
+    description: "\uC804\uD22C\uAC00 \uB05D\uB09C \uB4A4 \uD0DC\uC628\uACFC \uB300\uD654\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_taeon
+    requiredCount: 1
+  - objectiveId: reach_next_clue
+    description: "\uD0DC\uC628\uACFC \uD568\uAED8 \uCD08\uC6D0 \uC548\uCABD\uC73C\uB85C
+      \uC774\uB3D9\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field01_main03_next_clue
+    requiredCount: 1
   reward:
     Experience: 0
     Currency: 0
     Items: []
   prerequisiteQuestIds:
   - main_02_grassland_anomaly
-  nextMainQuestId:
+  nextMainQuestId: main_04_three_people
   startNpcId:
   turnInNpcId:

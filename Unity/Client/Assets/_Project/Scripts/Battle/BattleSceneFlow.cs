@@ -17,6 +17,8 @@ namespace ProjectLimitless.Battle
         public static Vector2 PlayerFieldPosition { get; private set; }
         public static Vector2 MonsterFieldPosition { get; private set; }
         public static string FieldSceneName { get; private set; }
+        public static string StoryEncounterId { get; private set; }
+        public static bool IsStoryEncounter => !string.IsNullOrEmpty(StoryEncounterId);
         private static bool pendingFieldReturn;
 
         public static void Set(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn, RuntimeAnimatorController playerAnimatorController, Sprite playerFallbackSprite, Vector2 playerPosition, Vector2 monsterPosition)
@@ -28,7 +30,16 @@ namespace ProjectLimitless.Battle
             PlayerFieldPosition = playerPosition;
             MonsterFieldPosition = monsterPosition;
             FieldSceneName = spawn == null ? string.Empty : spawn.SceneName;
+            StoryEncounterId = string.Empty;
             pendingFieldReturn = false;
+        }
+
+        public static void SetStoryEncounter(string storyEncounterId, MonsterDefinition monster,
+            FieldMonsterSpawnDefinition returnSpawn, RuntimeAnimatorController playerAnimatorController,
+            Sprite playerFallbackSprite, Vector2 playerPosition, Vector2 encounterPosition)
+        {
+            Set(monster, returnSpawn, playerAnimatorController, playerFallbackSprite, playerPosition, encounterPosition);
+            StoryEncounterId = storyEncounterId ?? string.Empty;
         }
 
         public static void PrepareFieldReturn() => pendingFieldReturn = true;
@@ -79,6 +90,24 @@ namespace ProjectLimitless.Battle
             SceneManager.LoadSceneAsync(BattleSceneName, LoadSceneMode.Single);
         }
 
+        /// <summary>일반 몬스터 접촉과 구분되는 stable Story Encounter ID를 보존해 전투 승리만 퀘스트에 알립니다.</summary>
+        public static bool EnterStoryBattle(string storyEncounterId, MonsterDefinition monster,
+            FieldMonsterSpawnDefinition returnSpawn, Vector2 encounterPosition)
+        {
+            if (transitioning || string.IsNullOrWhiteSpace(storyEncounterId) || monster == null || returnSpawn == null) return false;
+            PlayerController player = Object.FindAnyObjectByType<PlayerController>();
+            if (player == null) return false;
+            Animator animator = player.GetComponentInChildren<Animator>();
+            PlayerVisualController visualController = player.GetComponent<PlayerVisualController>();
+            BattleEncounterContext.SetStoryEncounter(storyEncounterId, monster, returnSpawn,
+                animator == null ? null : animator.runtimeAnimatorController,
+                visualController == null ? null : visualController.ActiveDefaultSprite,
+                player.transform.position, encounterPosition);
+            transitioning = true;
+            SceneManager.LoadSceneAsync(BattleSceneName, LoadSceneMode.Single);
+            return true;
+        }
+
         private static MonsterFieldController FindEncounteredMonster(FieldMonsterSpawnDefinition spawn)
         {
             foreach (MonsterFieldController controller in Object.FindObjectsByType<MonsterFieldController>())
@@ -92,7 +121,8 @@ namespace ProjectLimitless.Battle
         public static void ReturnToField(bool defeatedEncounteredMonster)
         {
             if (transitioning) return;
-            if (defeatedEncounteredMonster) MonsterEncounterService.MarkDefeated(BattleEncounterContext.Spawn);
+            if (defeatedEncounteredMonster && !BattleEncounterContext.IsStoryEncounter)
+                MonsterEncounterService.MarkDefeated(BattleEncounterContext.Spawn);
             transitioning = true;
             MonsterEncounterService.SuppressForSeconds(2f);
             BattleEncounterContext.PrepareFieldReturn();
