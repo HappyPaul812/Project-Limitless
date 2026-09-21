@@ -47,31 +47,32 @@ namespace ProjectLimitless.NPC
             if (role == VillageNpcRoleType.GeneralShop)
             {
                 DialoguePresenter.Instance?.ShowConfirmation(
-                    npc.DisplayName, "필요한 물건이 있으신가요?", "물건을 본다", "괜찮습니다",
+                    npcId, npc.DisplayName, "필요한 물건이 있으신가요?", "물건을 본다", "괜찮습니다",
                     () => ShopPresenter.OpenStarterGeneralShop(npc.transform));
                 return;
             }
 
             if (role != VillageNpcRoleType.Healer)
             {
-                DialoguePresenter.Instance?.Show(npc.DisplayName, npc.Dialogue);
+                DialoguePresenter.Instance?.Show(npcId, npc.DisplayName, npc.Dialogue);
                 return;
             }
 
             DialoguePresenter.Instance?.ShowConfirmation(
+                npcId,
                 npc.DisplayName,
                 "상처를 치료하시겠습니까?",
                 "치료한다",
                 "괜찮습니다",
-                () => HealAndSave(npc.DisplayName));
+                () => HealAndSave(npcId, npc.DisplayName));
         }
 
         /// <summary>공용 자원 API로 파티 전체를 회복한 직후 현재 슬롯에 결과를 저장합니다.</summary>
-        private static void HealAndSave(string speaker)
+        private static void HealAndSave(string npcId, string speaker)
         {
             PartyResourceService.HealPartyFully();
             GameSaveService.SaveCurrentSession();
-            DialoguePresenter.Instance?.Show(speaker, "치료가 끝났습니다. 편안히 쉬었다 가세요.");
+            DialoguePresenter.Instance?.Show(npcId, speaker, "치료가 끝났습니다. 편안히 쉬었다 가세요.");
         }
     }
 }

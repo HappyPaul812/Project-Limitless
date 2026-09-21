@@ -40,7 +40,7 @@ namespace ProjectLimitless.NPC
 
             string[] pages = npcId == RepresentativeId ? RepresentativeDialogue : GuardDialogue;
             ProjectLimitless.UI.DialoguePresenter.Instance?.ShowSequence(
-                npc.DisplayName, pages, () =>
+                npcId, npc.DisplayName, pages, () =>
                 {
                     QuestService.NotifyNpcTalked(npcId);
                     // Main 01의 마지막 대화가 끝난 직후 다음 조사 목표를 HUD에 자연스럽게 이어 줍니다.

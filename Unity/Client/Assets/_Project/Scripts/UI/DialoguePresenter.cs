@@ -21,6 +21,9 @@ namespace ProjectLimitless.UI
         [SerializeField] private Font dialogueFont;
         private GameObject panel;
         private Text dialogueText;
+        private RectTransform dialogueTextRect;
+        private GameObject portraitRoot;
+        private Image portraitImage;
         private GameObject choiceRow;
         private Button confirmButton;
         private Button cancelButton;
@@ -66,9 +69,14 @@ namespace ProjectLimitless.UI
 
         /// <summary>화자와 대사를 넣고 대화 패널을 화면에 표시합니다.</summary>
         public void Show(string speaker, string message)
+            => Show(string.Empty, speaker, message);
+
+        /// <summary>stable ID에 연결된 초상화와 함께 대사를 표시합니다. Sprite가 없으면 기존 글자 전용 배치를 사용합니다.</summary>
+        public void Show(string speakerId, string speaker, string message)
         {
             ClearSequence();
             if (!WorldModalState.TryAcquire(this)) return;
+            ApplyPortrait(speakerId);
             dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
             choiceRow.SetActive(false);
             panel.SetActive(true);
@@ -78,8 +86,12 @@ namespace ProjectLimitless.UI
 
         /// <summary>긴 대사를 읽기 쉬운 여러 쪽으로 보여 주며, 마지막 쪽을 넘겼을 때만 완료 사건을 알립니다.</summary>
         public void ShowSequence(string speaker, string[] pages, Action onCompleted)
+            => ShowSequence(string.Empty, speaker, pages, onCompleted);
+
+        public void ShowSequence(string speakerId, string speaker, string[] pages, Action onCompleted)
         {
             if (pages == null || pages.Length == 0 || !WorldModalState.TryAcquire(this)) return;
+            ApplyPortrait(speakerId);
             sequenceSpeaker = speaker ?? string.Empty;
             sequencePages = pages;
             sequencePageIndex = 0;
@@ -113,8 +125,18 @@ namespace ProjectLimitless.UI
             string confirmText,
             string cancelText,
             Action onConfirmed)
+            => ShowConfirmation(string.Empty, speaker, message, confirmText, cancelText, onConfirmed);
+
+        public void ShowConfirmation(
+            string speakerId,
+            string speaker,
+            string message,
+            string confirmText,
+            string cancelText,
+            Action onConfirmed)
         {
             if (!WorldModalState.TryAcquire(this)) return;
+            ApplyPortrait(speakerId);
             dialogueText.text = $"{speaker}\n{message}";
             choiceRow.SetActive(true);
             ConfigureButton(confirmButton, confirmText, () =>
@@ -133,6 +155,7 @@ namespace ProjectLimitless.UI
         public void Hide()
         {
             panel.SetActive(false);
+            ApplyPortrait(string.Empty);
             ClearDistanceTracking();
             ClearSequence();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
@@ -249,11 +272,13 @@ namespace ProjectLimitless.UI
             dialogueText.alignment = TextAnchor.MiddleLeft;
             dialogueText.horizontalOverflow = HorizontalWrapMode.Wrap;
             dialogueText.verticalOverflow = VerticalWrapMode.Overflow;
-            RectTransform textRect = textObject.GetComponent<RectTransform>();
-            textRect.anchorMin = Vector2.zero;
-            textRect.anchorMax = Vector2.one;
-            textRect.offsetMin = new Vector2(28f, 20f);
-            textRect.offsetMax = new Vector2(-28f, -62f);
+            dialogueTextRect = textObject.GetComponent<RectTransform>();
+            dialogueTextRect.anchorMin = Vector2.zero;
+            dialogueTextRect.anchorMax = Vector2.one;
+            dialogueTextRect.offsetMin = new Vector2(28f, 20f);
+            dialogueTextRect.offsetMax = new Vector2(-28f, -62f);
+
+            CreatePortraitSlot();
 
             choiceRow = new GameObject("ChoiceRow", typeof(RectTransform));
             choiceRow.transform.SetParent(panel.transform, false);
@@ -268,6 +293,43 @@ namespace ProjectLimitless.UI
             cancelButton = CreateChoiceButton(choiceRow.transform, "CancelButton", Vector2.zero);
 
             panel.SetActive(false);
+        }
+
+        /// <summary>초상화 영역은 Sprite가 있을 때만 활성화하며, 없을 때에는 빈 여백도 남기지 않습니다.</summary>
+        private void CreatePortraitSlot()
+        {
+            portraitRoot = new GameObject("PortraitSlot", typeof(Image));
+            portraitRoot.transform.SetParent(panel.transform, false);
+            Image frame = portraitRoot.GetComponent<Image>();
+            frame.color = new Color(0.14f, 0.19f, 0.28f, 1f);
+            frame.raycastTarget = false;
+            RectTransform frameRect = portraitRoot.GetComponent<RectTransform>();
+            frameRect.anchorMin = new Vector2(0f, 0.5f);
+            frameRect.anchorMax = new Vector2(0f, 0.5f);
+            frameRect.pivot = new Vector2(0f, 0.5f);
+            frameRect.anchoredPosition = new Vector2(20f, 0f);
+            frameRect.sizeDelta = new Vector2(150f, 150f);
+
+            GameObject imageObject = new GameObject("PortraitImage", typeof(Image));
+            imageObject.transform.SetParent(portraitRoot.transform, false);
+            portraitImage = imageObject.GetComponent<Image>();
+            portraitImage.preserveAspect = true;
+            portraitImage.raycastTarget = false;
+            RectTransform imageRect = imageObject.GetComponent<RectTransform>();
+            imageRect.anchorMin = Vector2.zero;
+            imageRect.anchorMax = Vector2.one;
+            imageRect.offsetMin = new Vector2(6f, 6f);
+            imageRect.offsetMax = new Vector2(-6f, -6f);
+            portraitRoot.SetActive(false);
+        }
+
+        private void ApplyPortrait(string speakerId)
+        {
+            Sprite portrait = DialoguePortraitCatalog.GetPortrait(speakerId);
+            bool hasPortrait = portrait != null;
+            portraitImage.sprite = portrait;
+            portraitRoot.SetActive(hasPortrait);
+            dialogueTextRect.offsetMin = new Vector2(hasPortrait ? 190f : 28f, 20f);
         }
 
         /// <summary>선택지 버튼의 공통 크기와 읽기 쉬운 글자 스타일을 구성합니다.</summary>
