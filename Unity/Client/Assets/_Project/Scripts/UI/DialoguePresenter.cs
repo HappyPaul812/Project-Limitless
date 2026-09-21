@@ -9,6 +9,21 @@ using UnityEngine.InputSystem;
 
 namespace ProjectLimitless.UI
 {
+    /// <summary>연속 대화 한 쪽의 화자 ID·표시 이름·본문을 함께 보관합니다.</summary>
+    public sealed class DialogueLine
+    {
+        public DialogueLine(string speakerId, string speakerName, string message)
+        {
+            SpeakerId = speakerId ?? string.Empty;
+            SpeakerName = speakerName ?? string.Empty;
+            Message = message ?? string.Empty;
+        }
+
+        public string SpeakerId { get; }
+        public string SpeakerName { get; }
+        public string Message { get; }
+    }
+
     /// <summary>
     /// DialogueSystem GameObject에 붙어 화자 이름과 대사를 화면 아래쪽 패널에 표시합니다.
     /// Scene 어디서든 하나의 Instance를 통해 같은 대화 UI를 사용하도록 관리합니다.
@@ -32,8 +47,7 @@ namespace ProjectLimitless.UI
         private float dialogueBreakDistance;
         private bool isDistanceTracked;
         private InputAction advanceAction;
-        private string sequenceSpeaker = string.Empty;
-        private string[] sequencePages = Array.Empty<string>();
+        private DialogueLine[] sequenceLines = Array.Empty<DialogueLine>();
         private int sequencePageIndex;
         private Action onSequenceCompleted;
         public bool IsOpen => panel != null && panel.activeSelf;
@@ -90,10 +104,17 @@ namespace ProjectLimitless.UI
 
         public void ShowSequence(string speakerId, string speaker, string[] pages, Action onCompleted)
         {
-            if (pages == null || pages.Length == 0 || !WorldModalState.TryAcquire(this)) return;
-            ApplyPortrait(speakerId);
-            sequenceSpeaker = speaker ?? string.Empty;
-            sequencePages = pages;
+            if (pages == null || pages.Length == 0) return;
+            DialogueLine[] lines = new DialogueLine[pages.Length];
+            for (int i = 0; i < pages.Length; i++) lines[i] = new DialogueLine(speakerId, speaker, pages[i]);
+            ShowSequence(lines, onCompleted);
+        }
+
+        /// <summary>페이지마다 화자와 초상화를 바꿀 수 있는 범용 연속 대화입니다.</summary>
+        public void ShowSequence(DialogueLine[] lines, Action onCompleted)
+        {
+            if (lines == null || lines.Length == 0 || !WorldModalState.TryAcquire(this)) return;
+            sequenceLines = lines;
             sequencePageIndex = 0;
             onSequenceCompleted = onCompleted;
             choiceRow.SetActive(false);
@@ -105,8 +126,8 @@ namespace ProjectLimitless.UI
 
         public void Advance()
         {
-            if (!IsOpen || sequencePages.Length == 0) return;
-            if (sequencePageIndex + 1 < sequencePages.Length)
+            if (!IsOpen || sequenceLines.Length == 0) return;
+            if (sequencePageIndex + 1 < sequenceLines.Length)
             {
                 sequencePageIndex++;
                 RefreshSequenceText();
@@ -164,13 +185,14 @@ namespace ProjectLimitless.UI
 
         private void RefreshSequenceText()
         {
-            dialogueText.text = $"{sequenceSpeaker}\n{sequencePages[sequencePageIndex]}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
+            DialogueLine line = sequenceLines[sequencePageIndex];
+            ApplyPortrait(line.SpeakerId);
+            dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
         }
 
         private void ClearSequence()
         {
-            sequenceSpeaker = string.Empty;
-            sequencePages = Array.Empty<string>();
+            sequenceLines = Array.Empty<DialogueLine>();
             sequencePageIndex = 0;
             onSequenceCompleted = null;
         }

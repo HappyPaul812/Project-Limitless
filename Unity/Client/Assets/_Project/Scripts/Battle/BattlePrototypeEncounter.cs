@@ -141,6 +141,36 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(allies, enemies);
         }
 
+        /// <summary>
+        /// Main 04에서만 세 임시 동행자를 참가시킵니다. 정식 Party Unlock은 Main 05의 책임이므로
+        /// 저장 파티를 변경하지 않고 이 Story Encounter의 참가자 목록만 완성합니다.
+        /// </summary>
+        public static BattleEncounterSetup CreateMain04ThreeVsThree(string playerName, string playerJobId, string playerPathId,
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
+        {
+            BattleParticipantSetup[] allies =
+            {
+                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
+                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
+                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
+                    pathId: PathCombatTraitRuntime.IntellectualPathId),
+                new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
+                    new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
+                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
+                new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
+                    new FormationSlot(FormationRow.Rear, 0), 104, 8, 12, 0,
+                    TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미",
+                    pathId: PathCombatTraitRuntime.EmotionalScarPathId)
+            };
+            BattleParticipantSetup[] enemies =
+            {
+                CreateMonster(slime, "main04_grass_slime", "초원 슬라임", FormationRow.Front, 0, 10),
+                CreateMonster(venomBee, "main04_venom_bee_a", "독침벌", FormationRow.Rear, 0, 12),
+                CreateMonster(venomBee, "main04_venom_bee_b", "독침벌", FormationRow.Rear, 1, 11)
+            };
+            return new BattleEncounterSetup(allies, enemies);
+        }
+
         private static BattleParticipantSetup CreateMonster(MonsterDefinition monster, string fallbackId,
             string fallbackName, FormationRow row, int column, int agility)
         {

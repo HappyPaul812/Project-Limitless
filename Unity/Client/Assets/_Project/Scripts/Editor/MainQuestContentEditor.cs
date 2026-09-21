@@ -54,14 +54,28 @@ namespace ProjectLimitless.Editor
 
             QuestDefinition main04 = LoadOrCreate("Main04_ThreePeople");
             main04.ConfigureForAudit(MainQuest03FieldFlow.NextQuestId, "세 사람", QuestType.Main,
-                System.Array.Empty<QuestObjectiveDefinition>(), new RewardBundle(), new[] { MainQuest03FieldFlow.QuestId });
+                new[]
+                {
+                    Objective("reach_miel_meeting", "앞서간 사람의 흔적을 따라가세요.", QuestObjectiveType.ReachLocation, MainQuest04FieldFlow.MeetingLocationId),
+                    Objective("talk_to_miel_first", "부상자를 돌보고 있는 미엘과 대화하세요.", QuestObjectiveType.TalkToNpc, MainQuest04FieldFlow.MielId),
+                    Objective("win_three_people_encounter", "태온, 미엘과 함께 다가오는 몬스터 무리를 물리치세요.", QuestObjectiveType.DefeatEncounter, MainQuest04FieldFlow.EncounterId),
+                    Objective("talk_to_miel_after_battle", "전투가 끝난 뒤 미엘과 대화하세요.", QuestObjectiveType.TalkToNpc, MainQuest04FieldFlow.MielId)
+                }, new RewardBundle { Experience = 0, Currency = 0, Items = System.Array.Empty<ItemReward>() },
+                new[] { MainQuest03FieldFlow.QuestId }, MainQuest04FieldFlow.NextQuestId);
             main04.ConfigureNpcFlow(string.Empty);
-            main04.ConfigureDescription("태온과 함께 발견한 사람의 흔적을 따라간다. 실제 목표와 미엘 등장은 후속 작업에서 구현한다.");
+            main04.ConfigureDescription("태온과 함께 앞서간 사람의 흔적을 따라가 미엘을 만나고, 세 사람이 가진 현장 정보를 합쳐 마을에 보고하기로 결정한다.");
+
+            QuestDefinition main05 = LoadOrCreate("Main05_ReturnOfThree");
+            main05.ConfigureForAudit(MainQuest04FieldFlow.NextQuestId, "돌아온 세 사람", QuestType.Main,
+                System.Array.Empty<QuestObjectiveDefinition>(), new RewardBundle(), new[] { MainQuest04FieldFlow.QuestId });
+            main05.ConfigureNpcFlow(string.Empty);
+            main05.ConfigureDescription("태온, 미엘과 함께 시작 마을로 돌아가 조사 결과를 보고한다. 실제 목표와 정식 동료 합류는 후속 작업에서 구현한다.");
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);
             EditorUtility.SetDirty(main03);
             EditorUtility.SetDirty(main04);
+            EditorUtility.SetDirty(main05);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("Main 01·02 퀘스트 데이터와 Quest Log용 설명·목표 문구가 준비되었습니다.");

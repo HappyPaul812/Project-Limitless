@@ -246,12 +246,19 @@ namespace ProjectLimitless.Battle
             MonsterDefinition[] monsterDefinitions = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions");
             MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
-            BattleEncounterSetup setup = BattleEncounterContext.StoryEncounterId == MainQuest03EncounterBridge.EncounterId
-                ? BattlePrototypeEncounterFactory.CreateMain03TwoVsTwo(
+            BattleEncounterSetup setup;
+            if (BattleEncounterContext.StoryEncounterId == MainQuest03EncounterBridge.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateMain03TwoVsTwo(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
-                    slime, venomBee)
-                : BattlePrototypeEncounterFactory.CreateThreeVsThree(
+                    slime, venomBee);
+            else if (BattleEncounterContext.StoryEncounterId == MainQuest04EncounterBridge.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateMain04ThreeVsThree(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    slime, venomBee);
+            else
+                setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     slime, venomBee, BattleEncounterContext.Monster);
@@ -2407,6 +2414,7 @@ namespace ProjectLimitless.Battle
                 // 아무 전투가 아니라 지정된 조사 조우를 이겼을 때만 Main 02가 진행됩니다.
                 MainQuest02EncounterBridge.NotifyVictory(BattleEncounterContext.Spawn);
                 MainQuest03EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
+                MainQuest04EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 RecordAllyResources();
                 // 실제 전투불능 몬스터를 stable MonsterDefinition으로 한 번 집계한 결과만 적용·표시·저장합니다.
                 // 이름 문자열은 번역이나 개명으로 바뀔 수 있어 보상 판정 키로 사용하지 않습니다.

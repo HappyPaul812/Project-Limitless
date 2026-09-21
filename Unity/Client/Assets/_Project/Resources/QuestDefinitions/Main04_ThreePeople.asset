@@ -14,17 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_04_three_people
   displayName: "\uC138 \uC0AC\uB78C"
-  description: "\uD0DC\uC628\uACFC \uD568\uAED8 \uBC1C\uACAC\uD55C \uC0AC\uB78C\uC758
-    \uD754\uC801\uC744 \uB530\uB77C\uAC04\uB2E4. \uC2E4\uC81C \uBAA9\uD45C\uC640
-    \uBBF8\uC5D8 \uB4F1\uC7A5\uC740 \uD6C4\uC18D \uC791\uC5C5\uC5D0\uC11C \uAD6C\uD604\uD55C\uB2E4."
+  description: "\uD0DC\uC628\uACFC \uD568\uAED8 \uC55E\uC11C\uAC04 \uC0AC\uB78C\uC758
+    \uD754\uC801\uC744 \uB530\uB77C\uAC00 \uBBF8\uC5D8\uC744 \uB9CC\uB098\uACE0,
+    \uC138 \uC0AC\uB78C\uC774 \uAC00\uC9C4 \uD604\uC7A5 \uC815\uBCF4\uB97C \uD569\uCCD0
+    \uB9C8\uC744\uC5D0 \uBCF4\uACE0\uD558\uAE30\uB85C \uACB0\uC815\uD55C\uB2E4."
   questType: 0
-  objectives: []
+  objectives:
+  - objectiveId: reach_miel_meeting
+    description: "\uC55E\uC11C\uAC04 \uC0AC\uB78C\uC758 \uD754\uC801\uC744 \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field01_main04_miel_meeting
+    requiredCount: 1
+  - objectiveId: talk_to_miel_first
+    description: "\uBD80\uC0C1\uC790\uB97C \uB3CC\uBCF4\uACE0 \uC788\uB294 \uBBF8\uC5D8\uACFC \uB300\uD654\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_miel
+    requiredCount: 1
+  - objectiveId: win_three_people_encounter
+    description: "\uD0DC\uC628, \uBBF8\uC5D8\uACFC \uD568\uAED8 \uB2E4\uAC00\uC624\uB294 \uBAAC\uC2A4\uD130 \uBB34\uB9AC\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
+    objectiveType: 2
+    targetId: field01_main04_three_people_encounter
+    requiredCount: 1
+  - objectiveId: talk_to_miel_after_battle
+    description: "\uC804\uD22C\uAC00 \uB05D\uB09C \uB4A4 \uBBF8\uC5D8\uACFC \uB300\uD654\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_miel
+    requiredCount: 1
   reward:
     Experience: 0
     Currency: 0
     Items: []
   prerequisiteQuestIds:
   - main_03_unfamiliar_companion
-  nextMainQuestId:
+  nextMainQuestId: main_05_return_of_three
   startNpcId:
   turnInNpcId:

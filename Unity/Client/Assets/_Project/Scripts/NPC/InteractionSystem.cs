@@ -104,6 +104,8 @@ namespace ProjectLimitless.NPC
             {
                 MainQuest03TaeonActor storyActor = currentTarget.GetComponent<MainQuest03TaeonActor>();
                 if (storyActor != null && storyActor.TryInteract(transform, dialogueBreakDistance)) return;
+                MainQuest04MielActor mielActor = currentTarget.GetComponent<MainQuest04MielActor>();
+                if (mielActor != null && mielActor.TryInteract(transform, dialogueBreakDistance)) return;
                 VillageNpcRole role = currentTarget.GetComponent<VillageNpcRole>();
                 if (role != null)
                 {
