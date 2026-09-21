@@ -1,5 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 02 `main_02_grassland_anomaly` 「초원의 이상」을 실제 구현했다. Main 01 완료 뒤 자동 시작하며 `Field_01`의 넓은 조사 구역 도달 → 지정 `grass_slime_01` 조우 승리 → 흔적 상호작용 순서로 진행한다. 일반 Kill Count가 아니며 다른 Encounter·도망·패배는 진행시키지 않는다.
+- 조사 구역은 `(.4, 1)`, stable ID `field01_main02_investigation_area`이고, 지정 조우는 `field01_main02_investigation_encounter`, 흔적은 `(5.1, -1.2)`의 `field01_main02_tracks`다. 사용자 수정 Field Scene과 Monster Spawn/Respawn 데이터는 바꾸지 않고 런타임 연결로 분리했다.
+- 흔적에는 `◇ 흩어진 흔적`과 `[E/F] 조사`를 함께 표시해 색상만으로 찾지 않게 했다. 다섯 Path별 1문장 반응은 표현만 다르고, 모두 "몬스터들이 마을을 공격하러 온 것이 아니라 무언가를 피해 밀려온 것 같다"는 같은 결론으로 합류한다. 원인·배후·오염 여부는 미확정이다.
+- Main 02 자체 보상은 0이고 지정 전투의 기존 EXP·탈렌트·Material Loot는 유지한다. 완료 뒤 Main 03 `main_03_unfamiliar_companion` 「낯선 동행」이 Available이 되는 최소 데이터만 추가했으며 실제 내용은 아직 없다.
+- Unity MCP Play Mode와 임시 슬롯 5에서 시작 전/조사 구역 후/지정 조우 후/완료 네 상태 저장·복원, 다른 Encounter 무시, 지정 Encounter 진행, 반복 조사 중복 완료 방지, Main 03 해금을 확인했다. 임시 슬롯과 캡처는 정리했다. 마지막 기능 commit: `d5e7417`.
 - Main 01 `main_01_call_reaches` 「부름이 닿은 곳」을 실제 데이터로 추가했다. 시작 마을 주민 대표(`starter-village-main-guide`)에게 말을 걸면 별도 수락 창 없이 Active가 되고, 주민 대표 대사를 끝까지 진행하면 목표가 남문 경비병(`starter-village-gate-guard`)으로 바뀐다. 경비병 대사를 끝까지 진행하면 Completed가 되며 보상은 EXP 0·탈렌트 0·아이템 없음이다.
 - Main 01 완료 뒤 Main 02 `main_02_grassland_anomaly` 「초원의 이상」이 Available이 되는 최소 해금 데이터만 추가했다. Main 02의 실제 목표·대사·Field 조사 내용은 아직 구현하지 않았다.
 - 범용 NPC Quest Marker를 추가했다. `Available=✦ 새 이야기`, `ActiveObjective=◆ 현재 목표`, `ReadyToTurnIn=✓ 완료 보고`, `None=숨김`이며 색상 외에도 서로 다른 기호와 텍스트로 구분한다. stable NPC ID와 QuestDefinition의 Start/Objective/TurnIn ID를 연결하고 `QuestService.Changed` 때만 갱신한다.
