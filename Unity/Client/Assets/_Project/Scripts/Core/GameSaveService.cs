@@ -30,6 +30,8 @@ namespace ProjectLimitless.Core
         public int Currency;
         // ItemDefinition Asset 자체가 아니라 읽기 쉬운 ItemId/Count 배열만 JSON에 기록합니다.
         public InventoryEntry[] Inventory;
+        // Version 1의 기존 저장에는 이 필드가 없으며, null은 아직 퀘스트를 시작하지 않은 상태로 복원합니다.
+        public QuestProgressSaveData QuestProgress;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -124,6 +126,7 @@ namespace ProjectLimitless.Core
                 PartyResources = PartyResourceService.ExportSaveData()
                 ,Currency = EconomyService.GetCurrency()
                 ,Inventory = InventoryService.ExportSaveData()
+                ,QuestProgress = QuestService.ExportSaveData()
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -163,6 +166,7 @@ namespace ProjectLimitless.Core
             PartyResourceService.ImportSaveData(data.PartyResources);
             EconomyService.Import(data.Currency);
             InventoryService.ImportSaveData(data.Inventory);
+            QuestService.ImportSaveData(data.QuestProgress);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
             // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
             // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.

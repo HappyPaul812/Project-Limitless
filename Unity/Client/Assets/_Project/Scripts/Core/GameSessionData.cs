@@ -85,6 +85,7 @@ namespace ProjectLimitless.Core
             PartyResourceService.Reset();
             EconomyService.Reset();
             InventoryService.Reset();
+            QuestService.Reset();
             WorldModalState.Reset();
             SelectedPlayerVisual = PlayerVisualType.Male;
             PlayerName = string.Empty;

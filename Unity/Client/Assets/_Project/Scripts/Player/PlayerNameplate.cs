@@ -160,6 +160,7 @@ namespace ProjectLimitless.Player
             nameTextRect.localScale = Vector3.one;
             nameTextRect.SetAsLastSibling();
             WorldExperienceHud.EnsureOn(overlayCanvasObject);
+            QuestHudPresenter.EnsureOn(overlayCanvasObject);
             RefreshName();
         }
 
