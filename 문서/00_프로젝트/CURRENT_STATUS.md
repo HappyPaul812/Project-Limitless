@@ -1,9 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 01 `main_01_call_reaches` 「부름이 닿은 곳」을 실제 데이터로 추가했다. 시작 마을 주민 대표(`starter-village-main-guide`)에게 말을 걸면 별도 수락 창 없이 Active가 되고, 주민 대표 대사를 끝까지 진행하면 목표가 남문 경비병(`starter-village-gate-guard`)으로 바뀐다. 경비병 대사를 끝까지 진행하면 Completed가 되며 보상은 EXP 0·탈렌트 0·아이템 없음이다.
+- Main 01 완료 뒤 Main 02 `main_02_grassland_anomaly` 「초원의 이상」이 Available이 되는 최소 해금 데이터만 추가했다. Main 02의 실제 목표·대사·Field 조사 내용은 아직 구현하지 않았다.
+- 범용 NPC Quest Marker를 추가했다. `Available=✦ 새 이야기`, `ActiveObjective=◆ 현재 목표`, `ReadyToTurnIn=✓ 완료 보고`, `None=숨김`이며 색상 외에도 서로 다른 기호와 텍스트로 구분한다. stable NPC ID와 QuestDefinition의 Start/Objective/TurnIn ID를 연결하고 `QuestService.Changed` 때만 갱신한다.
+- Marker는 기존 Nameplate Y 1.02, Interaction Prompt Y 1.48 위인 Y 1.92에 World Space uGUI로 배치했다. Main 01 시작 전 주민 대표만 표시되고, 첫 대화 뒤 경비병으로 이동하며, 완료 뒤 모두 사라진다.
+- Unity MCP Play Mode에서 Main 01 전/주민 대표 후/완료 상태를 임시 슬롯 5에 실제 저장·불러오기해 `Available → ActiveObjective → Completed`, Main 02 Available, 반복 NPC 알림 중복 완료 방지를 확인했다. Available Marker Game View와 1.92 배치를 확인했으며 기능 코드 컴파일 Error 0이다. 프로젝트 기존 deprecated API Warning 6건은 이번 변경과 무관하게 남아 있다. 마지막 기능 commit: `30d0064`.
 - 데이터 기반 퀘스트 기반을 구현했다. `QuestDefinition`/`QuestObjectiveDefinition`/`QuestCatalog`/`QuestRuntimeState`/`QuestService`를 분리했고, stable QuestId·ObjectiveId와 `TalkToNpc`·`ReachLocation`·`DefeatEncounter`·`Interact`·`GenericSignal` Notify로 Scene 검색 없이 순차 목표를 진행한다.
 - 메인은 한 개만 Active인 직렬 진행과 선행 완료 해금을 사용하고, 서브는 여러 개를 동시에 진행할 수 있다. Active Main, Active Side, Completed 목록과 추적 Quest 변경 API를 제공하며 길은 진행·보상 우열에 관여하지 않는다.
 - 마지막 목표 완료 시 기존 `RewardBundle`로 EXP·탈렌트·아이템을 지급하고 Completed를 기록해 반복 Signal의 중복 보상을 막는다. Save Version 1의 선택 `QuestProgress` 필드에 Active/Completed/Objective/Tracked 상태를 저장하며 구버전 null 필드는 빈 퀘스트 상태로 복원한다.
-- World Overlay Canvas 왼쪽 위에 `[메인]`/`[서브]`, 퀘스트명, 현재 목표 하나를 표시하는 `QuestHudPresenter`를 추가했다. 메인 시작을 기본 추적하고 Dialogue·Shop·Inventory가 공유하는 `WorldModalState`가 열리면 HUD를 숨긴다. 실제 Main 01 데이터와 NPC·장소·Encounter 연결은 아직 추가하지 않았다.
+- World Overlay Canvas 왼쪽 위에 `[메인]`/`[서브]`, 퀘스트명, 현재 목표 하나를 표시하는 `QuestHudPresenter`를 추가했다. 메인 시작을 기본 추적하고 Dialogue·Shop·Inventory가 공유하는 `WorldModalState`가 열리면 HUD를 숨긴다. Main 01에서 주민 대표 목표가 경비병 목표로 즉시 바뀌고 완료 뒤 숨는다.
 - Unity MCP에서 빈 Scene Play Mode 감사로 시작, 잘못된 ID 무시, 순차 목표 이동, 완료, Reward 1회, 반복 Signal 중복 방지, 서브 2개 동시 Active, 메인 선행 해금, JSON 저장/복원, 구버전 null 호환, HUD 텍스트와 Modal 숨김을 확인했다. `QUEST_SYSTEM_AUDIT Play Mode PASS`/`ALL PASS`, 최종 Console Error 0·Warning 0이다. 기능 commit은 `80227e6`이다.
 - 몬스터 처치 보상을 기존 승리 EXP 흐름에 통합했다. 실제 전투불능 `Combatant`의 stable `MonsterDefinition`을 한 번 집계해 EXP·탈렌트·개체별 전리품 Roll을 `RewardBundle`로 만들고, 실제 적용 결과를 Victory UI와 Save가 함께 사용한다. 도망·패배는 세 보상 모두 0이며 EXP 레벨 차이 배율은 Currency/Loot에 적용하지 않는다.
 - 초원 슬라임 3/점액 50%, 독침벌 4/침 45%, 숲거미 5/거미줄 40%, 맹독뱀 6/비늘 35%를 데이터로 추가했다. 네 Material은 MaxStack 999·SellPrice 2/3/4/5·사용 불가이며 ShopDefinition에는 넣지 않았다. 기존 Game-icons.net White 원본의 `dripping-goo`/`wasp-sting`/`spider-web`/`dorsal-scales`를 ItemDefinition.Icon에 연결하고 Material별 tint를 적용했다.
