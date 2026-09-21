@@ -2372,6 +2372,8 @@ namespace ProjectLimitless.Battle
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
             {
+                // 아무 전투가 아니라 지정된 조사 조우를 이겼을 때만 Main 02가 진행됩니다.
+                MainQuest02EncounterBridge.NotifyVictory(BattleEncounterContext.Spawn);
                 RecordAllyResources();
                 // 실제 전투불능 몬스터를 stable MonsterDefinition으로 한 번 집계한 결과만 적용·표시·저장합니다.
                 // 이름 문자열은 번역이나 개명으로 바뀔 수 있어 보상 판정 키로 사용하지 않습니다.

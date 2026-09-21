@@ -16,13 +16,29 @@ MonoBehaviour:
   displayName: "\uCD08\uC6D0\uC758 \uC774\uC0C1"
   description:
   questType: 0
-  objectives: []
+  objectives:
+  - objectiveId: reach_investigation_area
+    description: "\uCD08\uC6D0 \uC548\uCABD\uC744 \uC870\uC0AC\uD558\uAE30"
+    objectiveType: 1
+    targetId: field01_main02_investigation_area
+    requiredCount: 1
+  - objectiveId: win_investigation_encounter
+    description: "\uC8FC\uBCC0 \uBAAC\uC2A4\uD130\uC758 \uC6C0\uC9C1\uC784\uC744
+      \uD655\uC778\uD558\uAE30"
+    objectiveType: 2
+    targetId: field01_main02_investigation_encounter
+    requiredCount: 1
+  - objectiveId: inspect_tracks
+    description: "\uCD08\uC6D0 \uC548\uCABD\uC758 \uD754\uC801 \uC870\uC0AC\uD558\uAE30"
+    objectiveType: 3
+    targetId: field01_main02_tracks
+    requiredCount: 1
   reward:
     Experience: 0
     Currency: 0
     Items: []
   prerequisiteQuestIds:
   - main_01_call_reaches
-  nextMainQuestId:
+  nextMainQuestId: main_03_unfamiliar_companion
   startNpcId:
   turnInNpcId:

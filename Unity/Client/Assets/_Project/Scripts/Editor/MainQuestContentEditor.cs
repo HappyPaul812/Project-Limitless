@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 using ProjectLimitless.Core;
 using ProjectLimitless.NPC;
+using ProjectLimitless.World;
 using UnityEditor;
 using UnityEngine;
 
@@ -27,18 +28,33 @@ namespace ProjectLimitless.Editor
             // Main 02는 해금 상태만 확인할 수 있는 빈 껍데기이며 실제 목표와 대사는 다음 작업에서 추가합니다.
             QuestDefinition main02 = LoadOrCreate("Main02_GrasslandAnomaly");
             main02.ConfigureForAudit("main_02_grassland_anomaly", "초원의 이상", QuestType.Main,
-                System.Array.Empty<QuestObjectiveDefinition>(), new RewardBundle(), new[] { MainQuest01NpcFlow.QuestId });
+                new[]
+                {
+                    Objective("reach_investigation_area", "초원 안쪽을 조사하기", QuestObjectiveType.ReachLocation, MainQuest02FieldFlow.InvestigationAreaId),
+                    Objective("win_investigation_encounter", "주변 몬스터의 움직임을 확인하기", QuestObjectiveType.DefeatEncounter, MainQuest02FieldFlow.EncounterId),
+                    Objective("inspect_tracks", "초원 안쪽의 흔적 조사하기", QuestObjectiveType.Interact, MainQuest02FieldFlow.TracksId)
+                }, new RewardBundle { Experience = 0, Currency = 0, Items = System.Array.Empty<ItemReward>() },
+                new[] { MainQuest01NpcFlow.QuestId }, "main_03_unfamiliar_companion");
             main02.ConfigureNpcFlow(string.Empty);
+
+            QuestDefinition main03 = LoadOrCreate("Main03_UnfamiliarCompanion");
+            main03.ConfigureForAudit("main_03_unfamiliar_companion", "낯선 동행", QuestType.Main,
+                System.Array.Empty<QuestObjectiveDefinition>(), new RewardBundle(), new[] { MainQuest02FieldFlow.QuestId });
+            main03.ConfigureNpcFlow(string.Empty);
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);
+            EditorUtility.SetDirty(main03);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("Main 01 퀘스트 데이터와 Main 02 해금용 데이터가 준비되었습니다.");
         }
 
         private static QuestObjectiveDefinition Objective(string id, string text, string target)
-        { var objective = new QuestObjectiveDefinition(); objective.ConfigureForAudit(id, text, QuestObjectiveType.TalkToNpc, target); return objective; }
+            => Objective(id, text, QuestObjectiveType.TalkToNpc, target);
+
+        private static QuestObjectiveDefinition Objective(string id, string text, QuestObjectiveType type, string target)
+        { var objective = new QuestObjectiveDefinition(); objective.ConfigureForAudit(id, text, type, target); return objective; }
 
         private static QuestDefinition LoadOrCreate(string assetName)
         {
