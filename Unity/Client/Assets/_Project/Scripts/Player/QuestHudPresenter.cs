@@ -1,15 +1,24 @@
+using System.Collections.Generic;
+using System.Linq;
 using ProjectLimitless.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace ProjectLimitless.Player
 {
-    /// <summary>월드 화면에 현재 추적 중인 퀘스트와 순차 목표 하나만 간결하게 표시합니다.</summary>
+    /// <summary>퀘스트 목록을 상시 표시하지 않고 시작·목표 갱신·완료만 잠깐 알리는 월드 Toast입니다.</summary>
     public sealed class QuestHudPresenter : MonoBehaviour
     {
         private const string ObjectName = "QuestHud";
+        private const float ToastSeconds = 4f;
+        private readonly Dictionary<string, int> knownObjectives = new Dictionary<string, int>();
+        private readonly HashSet<string> knownActive = new HashSet<string>();
         private CanvasGroup canvasGroup;
         private Text questText;
+        private double hideAtRealtime;
+        private bool toastActive;
+
+        public bool IsToastActive => toastActive;
 
         public static QuestHudPresenter EnsureOn(GameObject overlayCanvasObject)
         {
@@ -21,29 +30,85 @@ namespace ProjectLimitless.Player
             return hud.GetComponent<QuestHudPresenter>();
         }
 
-        private void Awake() { BuildIfNeeded(); Refresh(); }
-        private void OnEnable() { QuestService.Changed += Refresh; Refresh(); }
-        private void OnDisable() => QuestService.Changed -= Refresh;
+        private void Awake() { BuildIfNeeded(); CaptureSnapshot(); HideImmediately(); }
 
-        private void Update() => RefreshVisibility();
-
-        /// <summary>대화·상점·인벤토리의 공용 Modal 상태를 즉시 화면에 반영합니다.</summary>
-        public void RefreshVisibility()
+        private void OnEnable()
         {
-            // 기존 대화·상점·인벤토리가 공유하는 Modal 상태를 그대로 따라 별도 UI 규칙을 만들지 않습니다.
-            canvasGroup.alpha = WorldModalState.IsOpen || QuestService.GetTrackedQuest() == null ? 0f : 1f;
+            QuestService.Changed += OnQuestChanged;
+            CaptureSnapshot();
+            HideImmediately();
         }
 
-        public void Refresh()
+        private void OnDisable()
+        {
+            QuestService.Changed -= OnQuestChanged;
+            toastActive = false;
+        }
+
+        private void Update()
+        {
+            if (toastActive && Time.realtimeSinceStartupAsDouble >= hideAtRealtime) HideImmediately();
+            RefreshVisibility();
+        }
+
+        /// <summary>Modal이 열린 동안 Toast가 입력이나 화면을 가리지 않도록 숨깁니다.</summary>
+        public void RefreshVisibility()
+        {
+            if (canvasGroup != null) canvasGroup.alpha = toastActive && !WorldModalState.IsOpen ? 1f : 0f;
+        }
+
+        /// <summary>기존 감사 코드와 호환되는 명시적 갱신 진입점입니다.</summary>
+        public void Refresh() => RefreshVisibility();
+
+        private void OnQuestChanged()
+        {
+            QuestRuntimeState[] current = QuestService.ActiveQuests.ToArray();
+            HashSet<string> activeIds = current.Select(x => x.Definition.QuestId).ToHashSet();
+            HashSet<string> completedIds = QuestService.CompletedQuestIds.ToHashSet();
+            string completedId = knownActive.FirstOrDefault(id => !activeIds.Contains(id) && completedIds.Contains(id));
+
+            if (!string.IsNullOrEmpty(completedId) && QuestCatalog.TryGet(completedId, out QuestDefinition completed))
+                ShowToast($"[{TypeLabel(completed)} 퀘스트 완료]\n{completed.DisplayName}");
+            else
+            {
+                QuestRuntimeState started = current.FirstOrDefault(x => !knownActive.Contains(x.Definition.QuestId));
+                if (started != null) ShowToast($"[{TypeLabel(started.Definition)} 퀘스트 시작]\n{started.Definition.DisplayName}");
+                else
+                {
+                    QuestRuntimeState changed = current.FirstOrDefault(x => knownObjectives.TryGetValue(x.Definition.QuestId, out int index)
+                        && index != x.CurrentObjectiveIndex);
+                    if (changed?.CurrentObjective != null) ShowToast($"[목표 갱신]\n{changed.CurrentObjective.Description}");
+                }
+            }
+
+            CaptureSnapshot();
+        }
+
+        private static string TypeLabel(QuestDefinition definition) => definition.QuestType == QuestType.Main ? "메인" : "서브";
+
+        private void CaptureSnapshot()
+        {
+            knownActive.Clear(); knownObjectives.Clear();
+            foreach (QuestRuntimeState state in QuestService.ActiveQuests)
+            {
+                knownActive.Add(state.Definition.QuestId);
+                knownObjectives[state.Definition.QuestId] = state.CurrentObjectiveIndex;
+            }
+        }
+
+        private void ShowToast(string message)
         {
             BuildIfNeeded();
-            QuestRuntimeState state = QuestService.GetTrackedQuest();
-            if (state == null) { questText.text = string.Empty; canvasGroup.alpha = 0f; return; }
-            string type = state.Definition.QuestType == QuestType.Main ? "메인" : "서브";
-            QuestObjectiveDefinition objective = state.CurrentObjective;
-            questText.text = objective == null ? $"[{type}] {state.Definition.DisplayName}"
-                : $"[{type}] {state.Definition.DisplayName}\n{objective.Description}";
-            canvasGroup.alpha = WorldModalState.IsOpen ? 0f : 1f;
+            questText.text = message;
+            toastActive = true;
+            hideAtRealtime = Time.realtimeSinceStartupAsDouble + ToastSeconds;
+            RefreshVisibility();
+        }
+
+        private void HideImmediately()
+        {
+            toastActive = false;
+            if (canvasGroup != null) canvasGroup.alpha = 0f;
         }
 
         private void BuildIfNeeded()
@@ -53,26 +118,20 @@ namespace ProjectLimitless.Player
             if (questText != null) return;
 
             RectTransform root = GetComponent<RectTransform>();
-            root.anchorMin = new Vector2(0f, 1f); root.anchorMax = new Vector2(0f, 1f);
-            root.pivot = new Vector2(0f, 1f); root.anchoredPosition = new Vector2(22f, -22f);
-            root.sizeDelta = new Vector2(390f, 82f);
+            root.anchorMin = new Vector2(0.5f, 1f); root.anchorMax = new Vector2(0.5f, 1f);
+            root.pivot = new Vector2(0.5f, 1f); root.anchoredPosition = new Vector2(0f, -24f); root.sizeDelta = new Vector2(560f, 88f);
             UnityEngine.UI.Image panel = GetComponent<UnityEngine.UI.Image>();
-            panel.color = new Color(0.055f, 0.065f, 0.09f, 0.94f); panel.raycastTarget = false;
-            Outline border = GetComponent<Outline>(); border.effectColor = new Color(0.82f, 0.66f, 0.25f, 1f);
-            border.effectDistance = new Vector2(2f, -2f);
+            panel.color = new Color(0.055f, 0.065f, 0.09f, 0.96f); panel.raycastTarget = false;
+            Outline border = GetComponent<Outline>(); border.effectColor = new Color(0.82f, 0.66f, 0.25f, 1f); border.effectDistance = new Vector2(2f, -2f);
 
             GameObject textObject = new GameObject("QuestText", typeof(RectTransform), typeof(CanvasRenderer), typeof(Text), typeof(Outline));
             textObject.transform.SetParent(transform, false);
-            RectTransform rect = textObject.GetComponent<RectTransform>();
-            rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one;
-            rect.offsetMin = new Vector2(14f, 10f); rect.offsetMax = new Vector2(-14f, -10f);
             questText = textObject.GetComponent<Text>();
-            questText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            questText.fontSize = 18; questText.color = Color.white; questText.alignment = TextAnchor.MiddleLeft;
-            questText.raycastTarget = false; questText.horizontalOverflow = HorizontalWrapMode.Wrap;
-            questText.verticalOverflow = VerticalWrapMode.Truncate;
-            Outline textOutline = textObject.GetComponent<Outline>();
-            textOutline.effectColor = new Color(0f, 0f, 0f, 0.9f); textOutline.effectDistance = new Vector2(1f, -1f);
+            questText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); questText.fontSize = 25;
+            questText.color = Color.white; questText.alignment = TextAnchor.MiddleCenter; questText.raycastTarget = false;
+            RectTransform rect = textObject.GetComponent<RectTransform>();
+            rect.anchorMin = Vector2.zero; rect.anchorMax = Vector2.one; rect.offsetMin = new Vector2(18f, 10f); rect.offsetMax = new Vector2(-18f, -10f);
+            Outline textOutline = textObject.GetComponent<Outline>(); textOutline.effectColor = Color.black; textOutline.effectDistance = new Vector2(1f, -1f);
         }
     }
 }

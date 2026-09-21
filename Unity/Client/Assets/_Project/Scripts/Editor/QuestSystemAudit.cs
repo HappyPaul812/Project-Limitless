@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using ProjectLimitless.Core;
 using ProjectLimitless.Player;
+using ProjectLimitless.UI;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -74,14 +75,49 @@ namespace ProjectLimitless.Editor
             QuestHudPresenter hud = QuestHudPresenter.EnsureOn(canvasObject);
             hud.Refresh();
             Text text = canvasObject.transform.Find("QuestHud/QuestText").GetComponent<Text>();
-            Check(text.text.Contains("[메인]") && text.text.Contains("테스트 장소 도착"), "HUD 유형/현재 Objective 텍스트");
+            Check(!hud.IsToastActive && canvasObject.transform.Find("QuestHud").GetComponent<CanvasGroup>().alpha == 0f,
+                "월드 HUD 상시 Quest 표시 제거");
+
+            GameObject questLogObject = new GameObject("QuestLogAudit");
+            QuestLogPresenter questLog = questLogObject.AddComponent<QuestLogPresenter>();
+            questLog.Open();
+            Check(questLog.IsOpen && questLog.VisibleQuestCount == 3, "Quest Log Main 1/Side 2 동적 목록");
+            Check(questLog.SelectedQuestId == "dev_main_01" && questLog.Details.Contains("[메인 퀘스트]")
+                && questLog.Details.Contains("테스트 장소 도착"), "Active Main 기본 선택과 상세 목표");
+            Text[] logTexts = questLogObject.GetComponentsInChildren<Text>(true);
+            Check(logTexts.Any(x => x.text == "[메인 퀘스트]") && logTexts.Any(x => x.text == "[서브 퀘스트]"), "Main/Side Section 표시");
+            Check(PlayerController.IsMovementLocked && WorldModalState.IsOwnedBy(questLog), "Quest Log Modal과 이동 잠금");
             object modalOwner = new object(); WorldModalState.TryAcquire(modalOwner);
-            hud.RefreshVisibility();
-            Check(canvasObject.transform.Find("QuestHud").GetComponent<CanvasGroup>().alpha == 0f, "Modal 중 HUD 숨김");
-            WorldModalState.Release(modalOwner); UnityEngine.Object.DestroyImmediate(canvasObject);
+            Check(!WorldModalState.IsOwnedBy(modalOwner), "다른 Modal 동시 획득 방지");
+            questLog.Close();
+            Check(!questLog.IsOpen && !PlayerController.IsMovementLocked && !WorldModalState.IsOpen, "Quest Log 닫기 상태 복구");
+
+            QuestService.Reset();
+            questLog.Open();
+            Check(questLog.VisibleQuestCount == 0 && questLog.Details.Contains("진행 중인 퀘스트가 없습니다."), "Quest 0개 안전 표시");
+            questLog.Close();
+
+            QuestDefinition toastQuest = MakeQuest("dev_toast", "알림 검증", QuestType.Side, null, "", 0,
+                Step("toast_a", "첫 알림 목표", QuestObjectiveType.GenericSignal, "toast_a"),
+                Step("toast_b", "두 번째 알림 목표", QuestObjectiveType.GenericSignal, "toast_b"));
+            QuestCatalog.RegisterForAudit(toastQuest);
+            Check(QuestService.TryStart(toastQuest.QuestId) && hud.IsToastActive
+                && text.text.Contains("[서브 퀘스트 시작]"), "Quest 시작 Toast");
+            QuestService.NotifySignal("toast_a");
+            Check(text.text.Contains("[목표 갱신]") && text.text.Contains("두 번째 알림 목표"), "Objective 변경 Toast");
+            QuestService.NotifySignal("toast_b");
+            Check(text.text.Contains("[서브 퀘스트 완료]") && text.text.Contains("알림 검증"), "Quest 완료 Toast");
+            typeof(QuestHudPresenter).GetField("hideAtRealtime", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                ?.SetValue(hud, 0d);
+            hud.SendMessage("Update");
+            Check(!hud.IsToastActive && hud.GetComponent<CanvasGroup>().alpha == 0f, "Quest Toast 자동 숨김");
+
+            UnityEngine.Object.DestroyImmediate(questLogObject);
+            UnityEngine.Object.DestroyImmediate(canvasObject);
 
             QuestService.Reset();
             foreach (QuestDefinition quest in new[] { main1, main2, side1, side2 }) UnityEngine.Object.DestroyImmediate(quest);
+            UnityEngine.Object.DestroyImmediate(toastQuest);
             QuestCatalog.ReloadForAudit(); EconomyService.Reset(); InventoryService.Reset();
         }
 

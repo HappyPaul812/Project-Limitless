@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_01_call_reaches
   displayName: "\uBD80\uB984\uC774 \uB2FF\uC740 \uACF3"
-  description:
+  description: "\uC2DC\uC791 \uB9C8\uC744\uC758 \uC8FC\uBBFC \uB300\uD45C\uC640 \uB0A8\uBB38
+    \uACBD\uBE44\uBCD1\uC5D0\uAC8C \uCD5C\uADFC \uCD08\uC6D0\uC758 \uBAAC\uC2A4\uD130\uB4E4\uC774
+    \uB9C8\uC744 \uAC00\uAE4C\uC774 \uB098\uD0C0\uB098\uB294 \uC0C1\uD669\uC744 \uD655\uC778\uD55C\uB2E4."
   questType: 0
   objectives:
   - objectiveId: talk_representative
-    description: "\uC8FC\uBBFC \uB300\uD45C\uC640 \uB300\uD654\uD558\uAE30"
+    description: "\uC8FC\uBBFC \uB300\uD45C\uC640 \uB300\uD654\uD558\uC138\uC694."
     objectiveType: 0
     targetId: starter-village-main-guide
     requiredCount: 1
   - objectiveId: talk_south_gate_guard
-    description: "\uB0A8\uBB38 \uACBD\uBE44\uBCD1\uACFC \uB300\uD654\uD558\uAE30"
+    description: "\uB0A8\uBB38 \uACBD\uBE44\uBCD1\uACFC \uB300\uD654\uD558\uC138\uC694."
     objectiveType: 0
     targetId: starter-village-gate-guard
     requiredCount: 1

@@ -71,6 +71,8 @@ namespace ProjectLimitless.Core
 
         public void ConfigureNpcFlow(string questStartNpcId, string questTurnInNpcId = "")
         { startNpcId = questStartNpcId ?? string.Empty; turnInNpcId = questTurnInNpcId ?? string.Empty; }
+
+        public void ConfigureDescription(string questDescription) => description = questDescription ?? string.Empty;
 #endif
     }
 }

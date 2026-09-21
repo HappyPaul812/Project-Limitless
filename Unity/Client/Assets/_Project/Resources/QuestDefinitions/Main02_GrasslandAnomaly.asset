@@ -14,22 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_02_grassland_anomaly
   displayName: "\uCD08\uC6D0\uC758 \uC774\uC0C1"
-  description:
+  description: "\uCD5C\uADFC \uCD08\uC6D0\uC758 \uBAAC\uC2A4\uD130\uB4E4\uC774 \uB9C8\uC744
+    \uAC00\uAE4C\uC774\uAE4C\uC9C0 \uB0B4\uB824\uC624\uACE0 \uC788\uB2E4. \uB0A8\uBB38
+    \uACBD\uBE44\uBCD1\uC5D0\uAC8C \uB4E4\uC740 \uC0C1\uD669\uC744 \uBC14\uD0D5\uC73C\uB85C
+    \uCD08\uC6D0 \uC548\uCABD\uC5D0\uC11C \uC6D0\uC778\uC744 \uC870\uC0AC\uD55C\uB2E4."
   questType: 0
   objectives:
   - objectiveId: reach_investigation_area
-    description: "\uCD08\uC6D0 \uC548\uCABD\uC744 \uC870\uC0AC\uD558\uAE30"
+    description: "\uCD08\uC6D0 \uC548\uCABD\uC758 \uC870\uC0AC \uC9C0\uC810\uC73C\uB85C
+      \uC774\uB3D9\uD558\uC138\uC694."
     objectiveType: 1
     targetId: field01_main02_investigation_area
     requiredCount: 1
   - objectiveId: win_investigation_encounter
-    description: "\uC8FC\uBCC0 \uBAAC\uC2A4\uD130\uC758 \uC6C0\uC9C1\uC784\uC744
-      \uD655\uC778\uD558\uAE30"
+    description: "\uC870\uC0AC \uC9C0\uC810 \uC8FC\uBCC0\uC758 \uBAAC\uC2A4\uD130
+      \uBB34\uB9AC\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
     objectiveType: 2
     targetId: field01_main02_investigation_encounter
     requiredCount: 1
   - objectiveId: inspect_tracks
-    description: "\uCD08\uC6D0 \uC548\uCABD\uC758 \uD754\uC801 \uC870\uC0AC\uD558\uAE30"
+    description: "\uC804\uD22C \uC9C0\uC810 \uB108\uBA38\uC758 \uD754\uC801\uC744
+      \uC870\uC0AC\uD558\uC138\uC694."
     objectiveType: 3
     targetId: field01_main02_tracks
     requiredCount: 1
