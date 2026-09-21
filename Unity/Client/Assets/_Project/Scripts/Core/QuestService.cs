@@ -160,7 +160,15 @@ namespace ProjectLimitless.Core
         private static void Complete(QuestRuntimeState state)
         {
             // 보상을 먼저 원자적으로 지급해야 인벤토리 부족 시 완료 기록만 남는 손실을 피할 수 있습니다.
+            int previousLevel = GameSessionData.Level;
             if (!state.Definition.Reward.TryApply()) return;
+            if (GameSessionData.Level > previousLevel)
+            {
+                CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, GameSessionData.Level);
+                PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    CharacterGrowthCalculator.CalculateMaxMp(GameSessionData.SelectedJobId, growth));
+            }
             active.Remove(state.Definition.QuestId);
             completed.Add(state.Definition.QuestId);
             if (trackedQuestId == state.Definition.QuestId) trackedQuestId = string.Empty;

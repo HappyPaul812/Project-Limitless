@@ -67,9 +67,19 @@ namespace ProjectLimitless.Editor
 
             QuestDefinition main05 = LoadOrCreate("Main05_ReturnOfThree");
             main05.ConfigureForAudit(MainQuest04FieldFlow.NextQuestId, "돌아온 세 사람", QuestType.Main,
-                System.Array.Empty<QuestObjectiveDefinition>(), new RewardBundle(), new[] { MainQuest04FieldFlow.QuestId });
+                new[]
+                {
+                    Objective("return_to_starter_village", "태온, 미엘과 함께 시작 마을로 돌아가세요.", QuestObjectiveType.ReachLocation, MainQuest05ReturnFlow.StarterVillageLocationId),
+                    Objective("report_to_south_gate_guard", "남문 경비병에게 조사 결과를 알려주세요.", MainQuest01NpcFlow.GuardId),
+                    Objective("report_to_village_representative", "주민 대표에게 조사 결과를 보고하세요.", MainQuest01NpcFlow.RepresentativeId)
+                }, new RewardBundle
+                {
+                    Experience = 40,
+                    Currency = 40,
+                    Items = new[] { new ItemReward { ItemId = "item_healing_potion_small", Count = 1 } }
+                }, new[] { MainQuest04FieldFlow.QuestId });
             main05.ConfigureNpcFlow(string.Empty);
-            main05.ConfigureDescription("태온, 미엘과 함께 시작 마을로 돌아가 조사 결과를 보고한다. 실제 목표와 정식 동료 합류는 후속 작업에서 구현한다.");
+            main05.ConfigureDescription("태온, 미엘과 함께 시작 마을로 돌아가 남문 경비병과 주민 대표에게 조사 결과를 보고하고, 초원 너머 숲의 다음 이상을 확인한다.");
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);

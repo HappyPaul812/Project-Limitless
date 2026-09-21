@@ -83,6 +83,7 @@ namespace ProjectLimitless.Core
         public static void Reset()
         {
             PartyResourceService.Reset();
+            CompanionRosterService.Reset();
             EconomyService.Reset();
             InventoryService.Reset();
             QuestService.Reset();

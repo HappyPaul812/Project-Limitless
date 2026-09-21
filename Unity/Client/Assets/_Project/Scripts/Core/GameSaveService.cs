@@ -32,6 +32,8 @@ namespace ProjectLimitless.Core
         public InventoryEntry[] Inventory;
         // Version 1의 기존 저장에는 이 필드가 없으며, null은 아직 퀘스트를 시작하지 않은 상태로 복원합니다.
         public QuestProgressSaveData QuestProgress;
+        // 기존 Version 1 Save에서 null이면 Main 05 이전의 미해금 상태로 안전하게 복원합니다.
+        public CompanionRosterSaveData CompanionRoster;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -127,6 +129,7 @@ namespace ProjectLimitless.Core
                 ,Currency = EconomyService.GetCurrency()
                 ,Inventory = InventoryService.ExportSaveData()
                 ,QuestProgress = QuestService.ExportSaveData()
+                ,CompanionRoster = CompanionRosterService.ExportSaveData()
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -167,6 +170,7 @@ namespace ProjectLimitless.Core
             EconomyService.Import(data.Currency);
             InventoryService.ImportSaveData(data.Inventory);
             QuestService.ImportSaveData(data.QuestProgress);
+            CompanionRosterService.ImportSaveData(data.CompanionRoster);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
             // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
             // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.
@@ -268,6 +272,17 @@ namespace ProjectLimitless.Core
                         || !itemIds.Add(entry.ItemId) || !ItemCatalog.TryGet(entry.ItemId, out ItemDefinition item)
                         || entry.Count > item.MaxStack)
                     { error = "인벤토리 저장값이 올바르지 않습니다."; return false; }
+            }
+            if (data.CompanionRoster != null)
+            {
+                var unlockedIds = new System.Collections.Generic.HashSet<string>(StringComparer.Ordinal);
+                foreach (string id in data.CompanionRoster.UnlockedCharacterIds ?? Array.Empty<string>())
+                    if (string.IsNullOrWhiteSpace(id) || !unlockedIds.Add(id))
+                    { error = "동료 해금 저장값이 올바르지 않습니다."; return false; }
+                var partyIds = new System.Collections.Generic.HashSet<string>(StringComparer.Ordinal);
+                foreach (string id in data.CompanionRoster.ActivePartyCharacterIds ?? Array.Empty<string>())
+                    if (string.IsNullOrWhiteSpace(id) || !unlockedIds.Contains(id) || !partyIds.Add(id) || partyIds.Count > 2)
+                    { error = "기본 파티 저장값이 올바르지 않습니다."; return false; }
             }
             if (data.SpawnPointId != null && (data.SpawnPointId.Length > 128 || data.SpawnPointId.Contains("/") || data.SpawnPointId.Contains("\\"))) { error = "SpawnPoint ID 형식이 올바르지 않습니다."; return false; }
             error = string.Empty; return true;

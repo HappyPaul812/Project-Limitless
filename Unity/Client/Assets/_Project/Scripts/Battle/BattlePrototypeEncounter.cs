@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
 
 namespace ProjectLimitless.Battle
@@ -89,20 +90,20 @@ namespace ProjectLimitless.Battle
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee,
             MonsterDefinition encounteredMonster)
         {
-            BattleParticipantSetup[] allies =
-            {
-                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
+            var allies = new List<BattleParticipantSetup>();
+            if (CompanionRosterService.IsActivePartyMember(CompanionRosterService.TaeonId))
+                allies.Add(new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
                     TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
-                    pathId: PathCombatTraitRuntime.IntellectualPathId),
-                new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
+                    pathId: PathCombatTraitRuntime.IntellectualPathId));
+            allies.Add(new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
-                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
-                new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
+                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId));
+            if (CompanionRosterService.IsActivePartyMember(CompanionRosterService.MielId))
+                allies.Add(new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
                     new FormationSlot(FormationRow.Rear, 0), 104, 8, 12, 0,
                     TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미",
-                    pathId: PathCombatTraitRuntime.EmotionalScarPathId)
-            };
+                    pathId: PathCombatTraitRuntime.EmotionalScarPathId));
 
             MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;
             MonsterDefinition support = leader?.EncounterSupportMonster ?? leader;
@@ -113,7 +114,7 @@ namespace ProjectLimitless.Battle
                 CreateMonster(support, $"{support?.MonsterId}_b", "몬스터", FormationRow.Front, 1, 10),
                 CreateMonster(leader, $"{leader?.MonsterId}_1", "몬스터", FormationRow.Rear, 0, 12)
             };
-            return new BattleEncounterSetup(allies, enemies);
+            return new BattleEncounterSetup(allies.ToArray(), enemies);
         }
 
         /// <summary>

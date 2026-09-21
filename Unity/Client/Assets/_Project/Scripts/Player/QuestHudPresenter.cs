@@ -13,6 +13,7 @@ namespace ProjectLimitless.Player
         private const float ToastSeconds = 4f;
         private readonly Dictionary<string, int> knownObjectives = new Dictionary<string, int>();
         private readonly HashSet<string> knownActive = new HashSet<string>();
+        private readonly Queue<string> pendingNotifications = new Queue<string>();
         private CanvasGroup canvasGroup;
         private Text questText;
         private double hideAtRealtime;
@@ -43,11 +44,16 @@ namespace ProjectLimitless.Player
         {
             QuestService.Changed -= OnQuestChanged;
             toastActive = false;
+            pendingNotifications.Clear();
         }
 
         private void Update()
         {
-            if (toastActive && Time.realtimeSinceStartupAsDouble >= hideAtRealtime) HideImmediately();
+            if (toastActive && Time.realtimeSinceStartupAsDouble >= hideAtRealtime)
+            {
+                HideImmediately();
+                if (pendingNotifications.Count > 0) ShowToast(pendingNotifications.Dequeue());
+            }
             RefreshVisibility();
         }
 
@@ -103,6 +109,15 @@ namespace ProjectLimitless.Player
             toastActive = true;
             hideAtRealtime = Time.realtimeSinceStartupAsDouble + ToastSeconds;
             RefreshVisibility();
+        }
+
+        /// <summary>퀘스트 완료 Toast가 표시 중이면 접근 가능한 텍스트 알림을 다음 순서로 예약합니다.</summary>
+        public static void Notify(string message)
+        {
+            QuestHudPresenter presenter = FindAnyObjectByType<QuestHudPresenter>();
+            if (presenter == null || string.IsNullOrWhiteSpace(message)) return;
+            if (presenter.toastActive) presenter.pendingNotifications.Enqueue(message);
+            else presenter.ShowToast(message);
         }
 
         private void HideImmediately()

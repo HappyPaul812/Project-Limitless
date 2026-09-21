@@ -14,13 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_05_return_of_three
   displayName: "\uB3CC\uC544\uC628 \uC138 \uC0AC\uB78C"
-  description: "\uD0DC\uC628, \uBBF8\uC5D8\uACFC \uD568\uAED8 \uC2DC\uC791 \uB9C8\uC744\uB85C \uB3CC\uC544\uAC00 \uC870\uC0AC \uACB0\uACFC\uB97C \uBCF4\uACE0\uD55C\uB2E4. \uC2E4\uC81C \uBAA9\uD45C\uC640 \uC815\uC2DD \uB3D9\uB8CC \uD569\uB958\uB294 \uD6C4\uC18D \uC791\uC5C5\uC5D0\uC11C \uAD6C\uD604\uD55C\uB2E4."
+  description: "태온, 미엘과 함께 시작 마을로 돌아가 남문 경비병과 주민 대표에게 조사 결과를 보고하고, 초원 너머 숲의 다음 이상을 확인한다."
   questType: 0
-  objectives: []
+  objectives:
+  - objectiveId: return_to_starter_village
+    description: "태온, 미엘과 함께 시작 마을로 돌아가세요."
+    objectiveType: 1
+    targetId: starter_village_main05_return
+    requiredCount: 1
+  - objectiveId: report_to_south_gate_guard
+    description: "남문 경비병에게 조사 결과를 알려주세요."
+    objectiveType: 0
+    targetId: starter-village-gate-guard
+    requiredCount: 1
+  - objectiveId: report_to_village_representative
+    description: "주민 대표에게 조사 결과를 보고하세요."
+    objectiveType: 0
+    targetId: starter-village-main-guide
+    requiredCount: 1
   reward:
-    Experience: 0
-    Currency: 0
-    Items: []
+    Experience: 40
+    Currency: 40
+    Items:
+    - ItemId: item_healing_potion_small
+      Count: 1
   prerequisiteQuestIds:
   - main_04_three_people
   nextMainQuestId:
