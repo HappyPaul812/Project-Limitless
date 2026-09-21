@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 03 `main_03_unfamiliar_companion` 「낯선 동행」을 실제 구현했다. Main 02 완료 뒤 `Field_01`에서 태온 첫 발견 → 첫 대화 → 지정 Story Encounter → 전투 후 단서 결합 → 태온 임시 동행 → 다음 조사 지점 순서로 진행한다. 목표는 stable Location/NPC/Encounter ID 5개로 저장하며 Main 03 자체 보상은 없다.
+- 태온은 Main 02 흔적보다 안쪽 `(7.5, -0.8)`에서 공식 Field Sprite와 `Portrait_Taeon.png`를 사용한다. `관찰 → 이해 → 보호`를 중심으로 플레이어의 흔적과 태온의 반복 행동 관찰을 결합하고, 원인·배후·오염은 확정하지 않는다. 미엘은 등장하지 않으며 Main 04 「세 사람」에서 처음 등장한다.
+- `field01_main03_taeon_encounter`는 일반 Field Encounter와 분리된 플레이어+태온 대 초원 슬라임+독침벌 2대2 전투다. 태온은 아직 정식 동료가 아닌 Story Temporary Companion이며 기존 수호자·지적의 길·공식 Left 전투 애니메이션을 그대로 쓴다. 승리만 Objective를 진행하고 도주·패배는 같은 목표에서 재도전한다.
+- Unity MCP Play Mode에서 Quest Log/목표 5개, Marker, 태온 초상화·공식 Sprite, 실제 2대2 참가자, Idle·Attack·Guard·Skill·Hit, 기존 몬스터 EXP 20·탈렌트 7 지급, 두 번째 대화, 안전한 다음 지점 재배치, 치료 흔적, Main 03 Completed와 Main 04 Available을 확인했다. 임시 슬롯 5에서 A~E 저장/불러오기를 모두 확인한 뒤 삭제했고, 마을 왕복 재진입과 도주·패배 무진행도 확인했다. 기능 commit: `372d1fe`. 다음 작업은 Main 04 「세 사람」이다.
 - 월드 상시 Quest Tracker를 정식 Quest Log로 교체했다. 키보드 `Q`와 게임패드 View/Back 계열 `<Gamepad>/select`로 열고 닫으며, `Esc`/게임패드 Cancel로 닫는다. 요청의 `<Gamepad>/selectButton`은 현재 Input System 장치에 없는 경로여서 실제 유효한 `select`를 사용했다.
 - Quest Log는 왼쪽 ScrollRect에 `[메인 퀘스트]`/`[서브 퀘스트]`와 동적 제목 행, 오른쪽에 QuestDefinition 기반 이름·유형·설명·현재 Objective·단계·보상을 표시한다. Active Main을 기본 선택하고 Main이 없으면 첫 Side, 0개면 `진행 중인 퀘스트가 없습니다.`를 표시한다. 선택은 색상과 `▶`를 함께 쓰며 방향키·D-pad·Left Stick·Tab·Submit을 지원한다.
 - 기존 Quest HUD는 상시 내용을 제거하고 Quest 시작·Objective 갱신·완료 시 4초 Toast만 표시한다. Quest Log는 `WorldModalState`를 재사용해 Dialogue·Shop·Inventory와 상호 배제되고, 열림 중 Player 이동과 World HUD를 잠근 뒤 닫을 때 Focus·잠금·Modal 소유권을 해제한다. Quest Save 구조와 NPC Quest Marker는 변경하지 않았다.
@@ -54,7 +58,7 @@
 
 ## 기준
 
-- 갱신일: 2026-09-21
+- 갱신일: 2026-09-22
 - 기준 브랜치: `main`
 - 마지막 기능 관련 commit: `0454af8` (`Feature: 시작 마을 NPC 외형 적용`)
 - 마지막 기능 수정 commit: `ac11356` (`Fix: 시작 마을 NPC 외형 런타임 설치 수정`)
@@ -73,6 +77,7 @@
 - 마지막 전투 UI 관련 commit: `7de1918` (`Refactor: 전투 스킬 설명 UI 정리`)
 - 마지막 태온 전투 애니메이션 commit: `4854591` (`Feature: 태온 공식 전투 애니메이션 적용`)
 - 마지막 미엘 전투 애니메이션 commit: `34b7e06` (`Feature: 미엘 공식 전투 애니메이션 적용`)
+- 마지막 Main 03 구현 commit: `372d1fe` (`Feature: Main 03 낯선 동행 구현`)
 - 마지막 몬스터 후보 에셋 commit: `849bc12` (`Chore: 독 몬스터 후보 에셋 보존`)
 - 마지막 Pilot Bee 검증 오류 수정 commit: `7a07f2a` (`Fix: Pilot Bee 검증 Scene 입력과 Camera 수정`)
 - 마지막 음성 제작 도구 commit: `272b473` (`Chore: MeloTTS 오프라인 제작 도구 추가`)
