@@ -1,5 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
+- 대화 UI에 150×150 초상화 슬롯을 추가했다. `DialoguePortraitDefinition`/`DialoguePortraitCatalog`가 표시 이름과 분리된 stable ID로 Sprite를 조회하며, Sprite가 null이거나 정의가 없으면 프레임과 왼쪽 여백을 함께 숨겨 기존 글자 배치를 유지한다. 기존 ID 없는 `Show` 호출도 호환 오버로드로 유지한다.
+- 주민 대표 `starter-village-main-guide`, 남문 경비병 `starter-village-gate-guard`, 태온 `companion_taeon`, 미엘 `companion_miel`의 Resources 정의를 준비했다. 현재 Sprite는 의도적으로 비어 있으며, 각 asset의 `portrait`에 최종 Sprite만 연결하면 코드·Scene·Save 변경 없이 표시된다. 콘텐츠 생성 메뉴는 기존 연결 Sprite를 보존한다.
+- 주민 대표·남문 경비병을 포함한 `VillageNpcRole`과 Main 01 연속 대화가 stable NPC ID를 전달하도록 연결했다. 대화/확인/연속 대화, 모달 소유권, 거리 이탈 종료, World HUD 숨김·복귀 경로는 유지했으며 Save 스키마는 변경하지 않았다.
+- Unity 6000.5.7f1에서 컴파일 Error 0, 핵심 정의 4개 로드와 null Sprite를 확인했다. Play Mode에서 네 ID에 임시 Sprite를 각각 주입해 슬롯 표시·본문 여백 190을 확인하고, null 자동 숨김·본문 여백 28 복귀·모달 획득/해제·거리 이탈 자동 종료·HUD owner 1→0을 확인했다. 검증 Sprite는 저장하지 않았고 최종 Console Error/Warning은 0이다. 마지막 기능 commit: `f9d1437`.
+- Unity에서 최종 초상화 Sprite를 연결한 뒤 실제 다양한 해상도에서 얼굴 크롭·150×150 프레임 가독성·긴 대사 줄바꿈·선택지와의 겹침을 직접 확인해야 한다. 다음 권장 작업은 태온·미엘 초상화 → 주민 대표·남문 경비병 초상화 → 태온·미엘 전투 애셋 순서다. 일반 주민·생활 NPC 초상화는 후순위다.
 - Main 02 `main_02_grassland_anomaly` 「초원의 이상」을 실제 구현했다. Main 01 완료 뒤 자동 시작하며 `Field_01`의 넓은 조사 구역 도달 → 지정 `grass_slime_01` 조우 승리 → 흔적 상호작용 순서로 진행한다. 일반 Kill Count가 아니며 다른 Encounter·도망·패배는 진행시키지 않는다.
 - 조사 구역은 `(.4, 1)`, stable ID `field01_main02_investigation_area`이고, 지정 조우는 `field01_main02_investigation_encounter`, 흔적은 `(5.1, -1.2)`의 `field01_main02_tracks`다. 사용자 수정 Field Scene과 Monster Spawn/Respawn 데이터는 바꾸지 않고 런타임 연결로 분리했다.
 - 흔적에는 `◇ 흩어진 흔적`과 `[E/F] 조사`를 함께 표시해 색상만으로 찾지 않게 했다. 다섯 Path별 1문장 반응은 표현만 다르고, 모두 "몬스터들이 마을을 공격하러 온 것이 아니라 무언가를 피해 밀려온 것 같다"는 같은 결론으로 합류한다. 원인·배후·오염 여부는 미확정이다.
