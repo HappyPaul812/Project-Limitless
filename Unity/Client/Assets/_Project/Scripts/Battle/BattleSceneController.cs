@@ -1220,7 +1220,9 @@ namespace ProjectLimitless.Battle
             RefreshCombatantViews(null);
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
+            CombatantView actorView = combatantViews[actor];
             CombatantView targetView = combatantViews[target];
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlayCleanse(
@@ -1236,6 +1238,7 @@ namespace ProjectLimitless.Battle
                 () => RefreshCombatantViews(null),
                 () =>
                 {
+                    RestoreBattleIdle(actorView);
                     actionPlaying = false;
                     if (executed)
                     {
@@ -1280,7 +1283,9 @@ namespace ProjectLimitless.Battle
             RefreshCombatantViews(null);
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
+            CombatantView actorView = combatantViews[actor];
             CombatantView targetView = combatantViews[target];
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlayHealingEffect(
@@ -1299,6 +1304,7 @@ namespace ProjectLimitless.Battle
                 recoveredHp => RefreshCombatantViews(null),
                 () =>
                 {
+                    RestoreBattleIdle(actorView);
                     actionPlaying = false;
                     if (executed) FinishCurrentAction();
                     else
@@ -1335,6 +1341,7 @@ namespace ProjectLimitless.Battle
 
             CombatantView actorView = combatantViews[actor];
             RectTransform[] targetRects = targets.Select(target => combatantViews[target].ActionRoot).ToArray();
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlayHealingWave(

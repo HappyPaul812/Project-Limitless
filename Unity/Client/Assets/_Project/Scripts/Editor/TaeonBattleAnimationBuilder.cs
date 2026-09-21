@@ -10,14 +10,26 @@ using UnityEngine.UI;
 
 namespace ProjectLimitless.EditorTools
 {
-    /// <summary>태온 최종 전투 시트를 명시적 209px Grid와 발 기준 Pivot으로 재생성합니다.</summary>
+    /// <summary>동료별 최종 전투 시트를 같은 명시적 Grid·Pivot·Animator 규칙으로 생성합니다.</summary>
     public static class TaeonBattleAnimationBuilder
     {
-        private const string SheetPath = "Assets/_Project/Resources/BattleCharacters/Taeon/Taeon_Battle_Final.png";
-        private const string AnimationFolder = "Assets/_Project/Resources/BattleCharacters/Taeon/Animations";
-        private const string ControllerPath = AnimationFolder + "/Taeon_Battle.controller";
         private const int CellSize = 209;
         private const float FramesPerSecond = 10f;
+
+        private readonly struct CharacterBuildDefinition
+        {
+            public CharacterBuildDefinition(string name, string sheetPath, string animationFolder)
+            {
+                Name = name;
+                SheetPath = sheetPath;
+                AnimationFolder = animationFolder;
+            }
+
+            public string Name { get; }
+            public string SheetPath { get; }
+            public string AnimationFolder { get; }
+            public string ControllerPath => $"{AnimationFolder}/{Name}_Battle.controller";
+        }
 
         private static readonly (string Name, int Row, int Count, bool Loop)[] Motions =
         {
@@ -32,20 +44,35 @@ namespace ProjectLimitless.EditorTools
         [MenuItem("Project Limitless/Content/Build Taeon Battle Animation")]
         public static void Build()
         {
-            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
-            ConfigureImporterAndSlices();
-            EnsureFolder(AnimationFolder);
-            Dictionary<string, AnimationClip> clips = CreateClips();
-            CreateController(clips);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
-            Debug.Log("[Taeon Battle] 209x209 Grid, 30 Sprites, 6 Clips, Left 방향 Controller 생성 완료");
+            BuildCharacter(new CharacterBuildDefinition("Taeon",
+                "Assets/_Project/Resources/BattleCharacters/Taeon/Taeon_Battle_Final.png",
+                "Assets/_Project/Resources/BattleCharacters/Taeon/Animations"));
         }
 
-        private static void ConfigureImporterAndSlices()
+        /// <summary>Unity MCP에서 호출해 미엘 전투 Sprite와 Animator Asset을 생성합니다.</summary>
+        public static void BuildMiel()
         {
-            TextureImporter importer = AssetImporter.GetAtPath(SheetPath) as TextureImporter;
-            if (importer == null) throw new InvalidOperationException($"TextureImporter를 찾을 수 없습니다: {SheetPath}");
+            BuildCharacter(new CharacterBuildDefinition("Miel",
+                "Assets/_Project/Resources/BattleCharacters/Miel/Miel_Battle_Final.png",
+                "Assets/_Project/Resources/BattleCharacters/Miel/Animations"));
+        }
+
+        private static void BuildCharacter(CharacterBuildDefinition definition)
+        {
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            ConfigureImporterAndSlices(definition);
+            EnsureFolder(definition.AnimationFolder);
+            Dictionary<string, AnimationClip> clips = CreateClips(definition);
+            CreateController(definition, clips);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            Debug.Log($"[{definition.Name} Battle] 209x209 Grid, 30 Sprites, 6 Clips, Left 방향 Controller 생성 완료");
+        }
+
+        private static void ConfigureImporterAndSlices(CharacterBuildDefinition definition)
+        {
+            TextureImporter importer = AssetImporter.GetAtPath(definition.SheetPath) as TextureImporter;
+            if (importer == null) throw new InvalidOperationException($"TextureImporter를 찾을 수 없습니다: {definition.SheetPath}");
             importer.textureType = TextureImporterType.Sprite;
             importer.spriteImportMode = SpriteImportMode.Multiple;
             importer.alphaSource = TextureImporterAlphaSource.FromInput;
@@ -60,11 +87,26 @@ namespace ProjectLimitless.EditorTools
             importer.spritePixelsPerUnit = 100f;
             importer.SaveAndReimport();
 
-            Texture2D texture = AssetDatabase.LoadAssetAtPath<Texture2D>(SheetPath);
+            Texture2D texture = AssetDatabase.LoadAssetAtPath<Texture2D>(definition.SheetPath);
+            if (texture == null || texture.width != CellSize * 6 || texture.height != CellSize * 6)
+                throw new InvalidOperationException($"예상한 6x6 209px Grid가 아닙니다: {texture?.width}x{texture?.height}");
             SpriteDataProviderFactories factories = new SpriteDataProviderFactories();
             factories.Init();
             ISpriteEditorDataProvider provider = factories.GetSpriteEditorDataProviderFromObject(importer);
+            if (provider == null) throw new InvalidOperationException("Sprite Data Provider를 만들 수 없습니다.");
             provider.InitSpriteEditorDataProvider();
+            ISpriteFrameEditCapability editCapability = provider.GetDataProvider<ISpriteFrameEditCapability>();
+            if (editCapability == null) throw new InvalidOperationException("Sprite 편집 capability를 지원하지 않습니다.");
+            EditCapability capability = editCapability.GetEditCapability();
+            foreach (EEditCapability required in new[]
+                     {
+                         EEditCapability.CreateAndDeleteSprite, EEditCapability.EditSpriteName,
+                         EEditCapability.EditSpriteRect, EEditCapability.EditPivot
+                     })
+            {
+                if (!capability.HasCapability(required))
+                    throw new InvalidOperationException($"필요한 Sprite 편집 capability가 없습니다: {required}");
+            }
             List<SpriteRect> spriteRects = new List<SpriteRect>();
             foreach ((string motion, int row, int count, bool _) in Motions)
             {
@@ -72,7 +114,7 @@ namespace ProjectLimitless.EditorTools
                 {
                     spriteRects.Add(new SpriteRect
                     {
-                        name = $"Taeon_{motion}_{frame:00}",
+                        name = $"{definition.Name}_{motion}_{frame:00}",
                         rect = new Rect(frame * CellSize, texture.height - ((row + 1) * CellSize), CellSize, CellSize),
                         alignment = SpriteAlignment.Custom,
                         pivot = new Vector2(.5f, 0f),
@@ -85,22 +127,22 @@ namespace ProjectLimitless.EditorTools
             importer.SaveAndReimport();
         }
 
-        private static Dictionary<string, AnimationClip> CreateClips()
+        private static Dictionary<string, AnimationClip> CreateClips(CharacterBuildDefinition definition)
         {
-            Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(SheetPath).OfType<Sprite>().ToArray();
+            Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(definition.SheetPath).OfType<Sprite>().ToArray();
             Dictionary<string, AnimationClip> result = new Dictionary<string, AnimationClip>(StringComparer.Ordinal);
             foreach ((string motion, int _, int count, bool loop) in Motions)
             {
-                string path = $"{AnimationFolder}/Taeon_{motion}.anim";
+                string path = $"{definition.AnimationFolder}/{definition.Name}_{motion}.anim";
                 AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
                 if (clip == null)
                 {
-                    clip = new AnimationClip { name = $"Taeon_{motion}" };
+                    clip = new AnimationClip { name = $"{definition.Name}_{motion}" };
                     AssetDatabase.CreateAsset(clip, path);
                 }
                 clip.frameRate = FramesPerSecond;
                 Sprite[] frames = Enumerable.Range(0, count)
-                    .Select(index => sprites.First(sprite => sprite.name == $"Taeon_{motion}_{index:00}"))
+                    .Select(index => sprites.First(sprite => sprite.name == $"{definition.Name}_{motion}_{index:00}"))
                     .ToArray();
                 ObjectReferenceKeyframe[] keys = frames.Select((sprite, index) => new ObjectReferenceKeyframe
                 {
@@ -124,10 +166,10 @@ namespace ProjectLimitless.EditorTools
             return result;
         }
 
-        private static void CreateController(IReadOnlyDictionary<string, AnimationClip> clips)
+        private static void CreateController(CharacterBuildDefinition definition, IReadOnlyDictionary<string, AnimationClip> clips)
         {
-            AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(ControllerPath);
-            if (controller == null) controller = AnimatorController.CreateAnimatorControllerAtPath(ControllerPath);
+            AnimatorController controller = AssetDatabase.LoadAssetAtPath<AnimatorController>(definition.ControllerPath);
+            if (controller == null) controller = AnimatorController.CreateAnimatorControllerAtPath(definition.ControllerPath);
             foreach (AnimatorControllerParameter parameter in controller.parameters)
                 controller.RemoveParameter(parameter);
             foreach (string trigger in new[] { "Attack", "Guard", "Skill", "Hit", "Defeat" })

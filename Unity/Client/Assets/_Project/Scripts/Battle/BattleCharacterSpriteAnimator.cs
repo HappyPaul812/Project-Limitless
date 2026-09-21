@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,9 +7,30 @@ namespace ProjectLimitless.Battle
     /// <summary>stable Character ID에 연결된 전투 전용 Animator를 uGUI Image에서 재생합니다.</summary>
     public sealed class BattleCharacterSpriteAnimator : MonoBehaviour
     {
-        public const string TaeonId = "companion_taeon";
-        private const string TaeonControllerPath = "BattleCharacters/Taeon/Animations/Taeon_Battle";
-        private const string TaeonIdleSpritePath = "BattleCharacters/Taeon/Taeon_Battle_Final";
+        private readonly struct CharacterVisualDefinition
+        {
+            public CharacterVisualDefinition(string characterId, string controllerPath, string sheetPath, string spritePrefix)
+            {
+                CharacterId = characterId;
+                ControllerPath = controllerPath;
+                SheetPath = sheetPath;
+                SpritePrefix = spritePrefix;
+            }
+
+            public string CharacterId { get; }
+            public string ControllerPath { get; }
+            public string SheetPath { get; }
+            public string SpritePrefix { get; }
+        }
+
+        // 캐릭터별 차이는 Resources 경로와 Sprite 접두사 데이터로만 관리합니다.
+        private static readonly CharacterVisualDefinition[] CharacterVisuals =
+        {
+            new CharacterVisualDefinition("companion_taeon", "BattleCharacters/Taeon/Animations/Taeon_Battle",
+                "BattleCharacters/Taeon/Taeon_Battle_Final", "Taeon"),
+            new CharacterVisualDefinition("companion_miel", "BattleCharacters/Miel/Animations/Miel_Battle",
+                "BattleCharacters/Miel/Miel_Battle_Final", "Miel")
+        };
 
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");
         private static readonly int GuardTrigger = Animator.StringToHash("Guard");
@@ -29,13 +51,23 @@ namespace ProjectLimitless.Battle
         {
             playback = null;
             firstIdleFrame = null;
-            if (characterId != TaeonId || targetImage == null) return false;
+            if (targetImage == null) return false;
 
-            RuntimeAnimatorController controller = Resources.Load<RuntimeAnimatorController>(TaeonControllerPath);
-            Sprite[] sprites = Resources.LoadAll<Sprite>(TaeonIdleSpritePath);
+            CharacterVisualDefinition? matchedDefinition = null;
+            foreach (CharacterVisualDefinition definition in CharacterVisuals)
+            {
+                if (!string.Equals(characterId, definition.CharacterId, StringComparison.Ordinal)) continue;
+                matchedDefinition = definition;
+                break;
+            }
+            if (!matchedDefinition.HasValue) return false;
+            CharacterVisualDefinition visual = matchedDefinition.Value;
+
+            RuntimeAnimatorController controller = Resources.Load<RuntimeAnimatorController>(visual.ControllerPath);
+            Sprite[] sprites = Resources.LoadAll<Sprite>(visual.SheetPath);
             foreach (Sprite sprite in sprites)
             {
-                if (sprite != null && sprite.name == "Taeon_Idle_00")
+                if (sprite != null && sprite.name == $"{visual.SpritePrefix}_Idle_00")
                 {
                     firstIdleFrame = sprite;
                     break;
