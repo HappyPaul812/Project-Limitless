@@ -29,6 +29,8 @@ namespace ProjectLimitless.Battle
             public Text TurnMarker;
             public bool UsesPlaceholderVisual;
             public MonsterSpriteSheetAnimation MonsterAnimation;
+            public BattleCharacterSpriteAnimator CharacterAnimation;
+            public int LastHp;
         }
 
         /// <summary>
@@ -359,10 +361,17 @@ namespace ProjectLimitless.Battle
                     : null;
             bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
+            BattleCharacterSpriteAnimator characterAnimation = null;
+            if (BattleCharacterSpriteAnimator.TryAttach(setup.Id, spriteImage, out characterAnimation, out Sprite characterIdleSprite))
+            {
+                sprite = characterIdleSprite;
+                placeholder = false;
+                spriteImage.color = Color.white;
+            }
             spriteImage.sprite = sprite;
             spriteImage.preserveAspect = true;
             // Sprite를 HitArea 중앙보다 조금 아래에 두어 위쪽 StatusAnchor와 시각적으로 분리합니다.
-            Vector2 displaySize = placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies
+            Vector2 displaySize = characterAnimation != null ? new Vector2(145, 145) : placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies
                 ? new Vector2(112, 126) : new Vector2(136, 112);
             if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
                 displaySize *= setup.MonsterDefinition.VisualScale;
@@ -414,7 +423,7 @@ namespace ProjectLimitless.Battle
 
             // 공용 시트 재생기는 Configure 시점에 첫 Idle 프레임을 넣으므로, 최초 지역 변수보다
             // 실제 Image에 표시된 프레임을 복귀 기준으로 보관해야 Attack 뒤 그림이 비지 않습니다.
-            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = spriteImage.sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder, MonsterAnimation = monsterAnimation };
+            CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = spriteImage.sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder, MonsterAnimation = monsterAnimation, CharacterAnimation = characterAnimation, LastHp = combatant.CurrentHp };
             return view;
         }
 
@@ -1128,6 +1137,7 @@ namespace ProjectLimitless.Battle
             Combatant actor = currentActor;
             Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
             CombatantView actorView = combatantViews[actor];
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlaySkillEmphasis(
@@ -1974,6 +1984,7 @@ namespace ProjectLimitless.Battle
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
             CombatantView actorView = combatantViews[actor];
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlayIronWall(
@@ -2021,6 +2032,7 @@ namespace ProjectLimitless.Battle
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
             CombatantView actorView = combatantViews[actor];
+            actorView.CharacterAnimation?.PlaySkill();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
             StartCoroutine(actionPresenter.PlayGuardianCover(
@@ -2071,6 +2083,8 @@ namespace ProjectLimitless.Battle
                 messageText.text = "더 강한 방어 효과가 이미 적용 중이라 방어를 사용할 수 없습니다.";
                 return;
             }
+            if (combatantViews.TryGetValue(currentActor, out CombatantView defenderView))
+                defenderView.CharacterAnimation?.PlayGuard();
             currentActor.Defend();
             messageText.text = $"{currentActor.DisplayName}이(가) 방어합니다. 다음 행동 차례까지 받는 피해가 50% 감소합니다.";
             FinishCurrentAction();
@@ -2170,6 +2184,7 @@ namespace ProjectLimitless.Battle
 
             CombatantView actorView = combatantViews[actor];
             CombatantView targetView = combatantViews[target];
+            actorView.CharacterAnimation?.PlayAttack();
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
@@ -2267,6 +2282,11 @@ namespace ProjectLimitless.Battle
         /// <summary>공격 연출 뒤 필드 프레임이 아닌 진영별 전투 Idle Sprite를 다시 적용합니다.</summary>
         private static void RestoreBattleIdle(CombatantView view)
         {
+            if (view?.CharacterAnimation != null)
+            {
+                view.CharacterAnimation.PlayIdle();
+                return;
+            }
             if (view?.SpriteImage != null && !view.UsesPlaceholderVisual) view.SpriteImage.sprite = view.IdleSprite;
         }
 
@@ -2471,6 +2491,12 @@ namespace ProjectLimitless.Battle
                 bool targetSelection = attackable != null;
                 bool canAttack = targetSelection && attackable.Contains(combatant);
                 bool canInspect = !battleEnded && !actionPlaying && currentActor != null && currentActor.IsPlayerControlled && !choosingSkill;
+                if (view.CharacterAnimation != null)
+                {
+                    if (!combatant.IsAlive) view.CharacterAnimation.PlayDefeat();
+                    else if (combatant.CurrentHp < view.LastHp) view.CharacterAnimation.PlayHit();
+                    view.LastHp = combatant.CurrentHp;
+                }
                 view.HitArea.interactable = combatant.IsAlive && (targetSelection ? canAttack : canInspect);
                 Color normalVisual = view.UsesPlaceholderVisual ? new Color(.12f, .3f, .48f, 1f) : view.SpriteImage.sprite == null ? Color.clear : Color.white;
                 view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : normalVisual;
