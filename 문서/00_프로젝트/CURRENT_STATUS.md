@@ -1,5 +1,11 @@
 # Project-Limitless 현재 개발 상태
 
+- 월드 상시 Quest Tracker를 정식 Quest Log로 교체했다. 키보드 `Q`와 게임패드 View/Back 계열 `<Gamepad>/select`로 열고 닫으며, `Esc`/게임패드 Cancel로 닫는다. 요청의 `<Gamepad>/selectButton`은 현재 Input System 장치에 없는 경로여서 실제 유효한 `select`를 사용했다.
+- Quest Log는 왼쪽 ScrollRect에 `[메인 퀘스트]`/`[서브 퀘스트]`와 동적 제목 행, 오른쪽에 QuestDefinition 기반 이름·유형·설명·현재 Objective·단계·보상을 표시한다. Active Main을 기본 선택하고 Main이 없으면 첫 Side, 0개면 `진행 중인 퀘스트가 없습니다.`를 표시한다. 선택은 색상과 `▶`를 함께 쓰며 방향키·D-pad·Left Stick·Tab·Submit을 지원한다.
+- 기존 Quest HUD는 상시 내용을 제거하고 Quest 시작·Objective 갱신·완료 시 4초 Toast만 표시한다. Quest Log는 `WorldModalState`를 재사용해 Dialogue·Shop·Inventory와 상호 배제되고, 열림 중 Player 이동과 World HUD를 잠근 뒤 닫을 때 Focus·잠금·Modal 소유권을 해제한다. Quest Save 구조와 NPC Quest Marker는 변경하지 않았다.
+- Main 01 목표를 `주민 대표와 대화하세요.` → `남문 경비병과 대화하세요.`, Main 02 목표를 `초원 안쪽의 조사 지점으로 이동하세요.` → `조사 지점 주변의 몬스터 무리를 물리치세요.` → `전투 지점 너머의 흔적을 조사하세요.`로 명확히 했고 기존 스토리 문서 범위 안의 Quest 설명을 Definition에 추가했다.
+- Unity MCP에서 Bootstrap 정상 시작, Q Toggle/Esc, 게임패드 Select Open/Cancel Close, Main 기본 선택, Main/Side 3개와 임시 Side 10개 동적 목록·Scroll, 0개 상태, 방향키·D-pad Focus, Tab Close Focus, Dialogue/Shop/Inventory 양방향 상호 배제, 이동 잠금/복구를 확인했다. Quest System Audit로 Main 01/02 진행·Save/Continue·구버전 Save·Toast 시작/갱신/완료/자동 숨김을 재검증했고 임시 Side 데이터는 저장하지 않았다. Console Error/Warning 0. 마지막 기능 commit: `b63d6b4`.
+- 다음 직접 확인은 실제 1280×720 및 다른 화면 비율에서 긴 한글 설명 줄바꿈, 실제 연결 게임패드의 View/Back·D-pad·Left Stick 감각, Quest Toast의 4초 체감 시간이다.
 - 대화 UI에 150×150 초상화 슬롯을 추가했다. `DialoguePortraitDefinition`/`DialoguePortraitCatalog`가 표시 이름과 분리된 stable ID로 Sprite를 조회하며, Sprite가 null이거나 정의가 없으면 프레임과 왼쪽 여백을 함께 숨겨 기존 글자 배치를 유지한다. 기존 ID 없는 `Show` 호출도 호환 오버로드로 유지한다.
 - 주민 대표 `starter-village-main-guide`, 남문 경비병 `starter-village-gate-guard`, 태온 `companion_taeon`, 미엘 `companion_miel`의 Resources 정의를 준비했다. 현재 Sprite는 의도적으로 비어 있으며, 각 asset의 `portrait`에 최종 Sprite만 연결하면 코드·Scene·Save 변경 없이 표시된다. 콘텐츠 생성 메뉴는 기존 연결 Sprite를 보존한다.
 - 주민 대표·남문 경비병을 포함한 `VillageNpcRole`과 Main 01 연속 대화가 stable NPC ID를 전달하도록 연결했다. 대화/확인/연속 대화, 모달 소유권, 거리 이탈 종료, World HUD 숨김·복귀 경로는 유지했으며 Save 스키마는 변경하지 않았다.
