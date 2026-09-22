@@ -1,9 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 07 `main_07_deep_tracks` 「깊게 패인 흔적」을 구현했다. Main 06 완료 뒤 `Field_02`에서 두 줄 바퀴 자국 조사 → 부상자 확인 → 자국 추적 → 폴 첫 대화 → 지정 전투 → 미엘에게 복귀 → 미엘·폴 첫 만남 → 폴 작별 순서로 진행하며, stable Objective/Actor/Encounter ID 8개로 저장한다.
+- 폴(`companion_paul`)은 28세 남성 마도사·이동의 길 휠체어 사용자다. 공식 `Portrait_Paul.png`와 `Paul_Battle_Final.png`를 연결했고, 전투 시 후열에서 기존 파이어볼·썬더볼트·가이아의 벽과 이동의 길 보정을 사용한다. Main 07에서는 Player·Taeon·Paul 대 숲거미 2·맹독뱀 1의 Story Temporary Companion으로만 참가하며, 미엘은 전투에서 제외되고 폴은 영구 해금/기본 파티에 추가되지 않는다.
+- Main 07 보상은 EXP 30·탈렌트 25·아이템 없음이며 완료 신호 반복에도 한 번만 지급된다. 임시 슬롯 5에서 A~G(Available, 각 핵심 진행 단계, Completed)를 실제 저장→로드→복원해 Scene·Objective·파티·보상과 중복 방지를 확인하고 삭제했다.
+- Unity MCP에서 폴 초상화 stable ID 조회, 전투 시트 33프레임, Idle·Attack·Guard·Skill·Hit·Defeat Animator, 후열 마도사/이동의 길, 마도사 3스킬, Main 07 참가자 구성을 확인했다. Main 07 필드 진행·대화 Modal·보상도 Play Mode에서 검증했으며 최종 Console Error/Warning 0이다. 기능 commit: `48420ea`. 다음 권장 작업은 Main 08 상세 설계다.
 - Main 06 `main_06_into_the_forest` 「숲으로」를 구현했다. Main 05 완료 직후에는 Available을 유지하고 정상 동선으로 `Field_01`에 나서면 시작된다. `Field_02` 진입 → `field02_main06_anomaly_trace` 조사 두 목표를 stable ID로 진행하며, 흔적은 몬스터들이 평소 길을 벗어나 한 방향으로 넓게 퍼진 사실만 전달한다.
 - 조사 대화는 태온 2쪽·미엘 1쪽·플레이어 1쪽으로 구성했다. 태온·미엘 공식 초상화와 플레이어 null-safe 배치를 기존 `DialoguePortraitCatalog`로 사용하고, 대화 완료 뒤에만 퀘스트를 완료한다. 보상은 EXP 20·탈렌트 20·아이템 없음이며 반복 신호에도 한 번만 지급된다.
 - Unity MCP Play Mode에서 Main 05 완료→Main 06 Available, Field_01 시작, Field_02 진입 목표 갱신, 조사 대화 Modal 열기/닫기, 완료와 EXP/탈렌트 20 지급, 중복 방지를 확인했다. 임시 슬롯 5를 재사용해 A~E 상태를 각각 저장→로드→복원하고 Scene·Objective·태온/미엘 정식 동료·보상을 확인한 뒤 삭제했다. Field_02 기존 몬스터 6개 로드와 최종 Console Error/Warning 0을 확인했다. 기능 commit: `a4b50a5`.
-- Main 07은 문서 방향만 기록했다. 숲 안쪽의 깊게 팬 두 줄 바퀴 자국과 진흙에 바퀴가 빠진 남성 NPC 폴(마도사·이동의 길)을 다루되, 실제 Quest·대사·오브젝트·애셋은 아직 구현하지 않는다. 다음 권장 작업은 Main 07 상세 설계와 폴의 캐릭터/접근성 표현 검토다.
 - Main 05 `main_05_return_of_three` 「돌아온 세 사람」을 실제 구현해 Main 01~05의 1장 도입부를 마무리했다. Main 04 완료 뒤 `Field_01`에서 시작해 시작 마을 귀환 → 남문 경비병 보고 → 주민 대표 최종 보고의 stable Objective 3개로 진행한다.
 - 보고 대화는 Main 04의 다중 화자 구조를 재사용한다. 남문 경비병·주민 대표는 Sprite 미연결 시 null-safe 글자 배치, 태온은 `Portrait_Taeon`, 미엘은 `Portrait_Miel`, 플레이어는 초상화 숨김으로 전환된다. 결론은 초원 너머 숲 `Field_02`에서도 비슷한 일이 있다는 방향까지만 제시하고 이상 이동의 원인은 확정하지 않는다.
 - Main 05 완료 보상은 기존 `RewardBundle`의 EXP 40·탈렌트 40·`item_healing_potion_small` 회복약 1개다. 보상 지급 뒤 `companion_taeon`·`companion_miel`을 stable ID 기반 정식 동료로 해금하고 기본 파티를 Player·Taeon·Miel로 저장한다. 기존 Version 1 Save에 동료 필드가 없으면 미해금 상태로 호환하며 Main 03/04 Story Encounter의 임시 참가 구조는 유지한다.
