@@ -1,5 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
+- Main 02 지정 전투 진행을 `FieldMonsterSpawnDefinition` 객체 참조가 아니라 전투 진입 시 보존한 stable encounter ID로 판정하도록 수정했다. `field01_main02_investigation_encounter` 승리만 Objective 2→3을 진행하며 다른 일반 조우·도주·패배는 진행하지 않는다.
+- 추적 중인 Quest Objective의 실제 Transform을 stable ID Registry로 연결하고, 화면 안 `◆ 현재 목표 + 대상명`, 화면 밖 방향 화살표·거리 Indicator를 표시하는 공용 Quest Navigation을 추가했다. Quest Log의 선택과 추적을 분리하고 `추적` 버튼·T·게임패드 Y를 지원하며 Modal 중에는 안내를 숨긴다.
+- Main 01~08의 현재 Scene에서 안전하게 식별되는 NPC, 조사 지점, 흔적, 지정 Story Encounter를 연결했다. Scene 밖 목적지로 향하는 출구 안내는 후속 확장 대상으로 남겼다.
+- Unity Play Mode에서 Main 02 지정/일반 encounter 분리, Objective 1/2/3/완료 JSON 저장·복원, 화면 안 Marker, 화면 밖 Clamp Indicator, Quest Log 추적 표시를 검증했다. 기능 commit: `ba9ef7c`.
+
 - Field 03 `침묵의 숲길`과 Main 08 `main_08_what_they_avoid` 「피하고 있는 것」을 구현했다. 회피 흔적 3개, 폴의 안정적인 바퀴 자국, Field 03 조사 흔적, 깊은 구역의 푸른 빛까지 stable ID 7개로 진행하며 보상은 EXP 30·탈렌트 30·아이템 없음이다.
 - 사용자 최종 원본 `Moss_Beetle_Battle_Final.png`, `Shade_Bat_Battle_Final.png`를 수정 없이 등록하고 이끼갑충·그늘박쥐의 명시적 Idle/Walk/Attack/Hit/Defeat, 민첩·보상·재료 Loot를 연결했다. Field 03 조우 수는 초입 3 > 중간 2 > 깊은 곳 1이다.
 - Unity 정적 로드와 Field 03 Play Mode에서 Scene·Player·전환 1개·몬스터 6개·프레임 애니메이터 6개, 그늘박쥐 일반 전투 진입과 화면 방향을 확인했다. 두 몬스터의 Attack·Hit·Defeat 최종 프레임 전환과 Encounter A/B/C 구성을 런타임 검사했다. 직접 Scene 진입 검증에서는 저장 슬롯이 없어 자동 저장 생략 Warning 2건이 발생했으며 기능 오류는 없었다. Save A~G의 실제 Bootstrap 왕복과 모든 승패/도주 조작은 후속 수동 확인이 필요하다. 기능 commit: `1c10492`.
