@@ -248,8 +248,15 @@ namespace ProjectLimitless.Battle
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
             MonsterDefinition forestSpider = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "forest_spider");
             MonsterDefinition venomSnake = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_snake");
+            MonsterDefinition graveWight = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_grave_wight");
             BattleEncounterSetup setup;
-            if (BattleEncounterContext.StoryEncounterId == MainQuest03EncounterBridge.EncounterId)
+            if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
+                || BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightTwoValidationId)
+                setup = BattlePrototypeEncounterFactory.CreateGraveWightValidation(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    graveWight, BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightTwoValidationId ? 2 : 1);
+            else if (BattleEncounterContext.StoryEncounterId == MainQuest03EncounterBridge.EncounterId)
                 setup = BattlePrototypeEncounterFactory.CreateMain03TwoVsTwo(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,

@@ -84,8 +84,8 @@ namespace ProjectLimitless.Monster
         public void PlayDefeat()
         {
             defeated = true; reacting = false; attacking = false; shooting = false; elapsed = 0f;
-            ShowFrame(defeatFrames.Length > 0 ? defeatFrames : idleFrames,
-                Mathf.Max(0, (defeatFrames.Length > 0 ? defeatFrames : idleFrames).Length - 1));
+            // Defeat는 첫 프레임부터 한 번만 재생하고 Update에서 마지막 프레임을 계속 유지합니다.
+            ShowFrame(defeatFrames.Length > 0 ? defeatFrames : idleFrames, 0);
         }
 
         public void PlayShoot()
@@ -121,7 +121,7 @@ namespace ProjectLimitless.Monster
                 StopAttackAndReturnToIdle();
                 return;
             }
-            ShowFrame(frames, defeated ? frames.Length - 1 : frameIndex % frames.Length);
+            ShowFrame(frames, defeated ? Mathf.Min(frameIndex, frames.Length - 1) : frameIndex % frames.Length);
         }
 
         private static Sprite[] LoadFrames(string resourcePath)

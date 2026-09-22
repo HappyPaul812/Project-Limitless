@@ -1,0 +1,1069 @@
+fileFormatVersion: 2
+guid: dfd1fd40ff1eeda4fb5f2885bd280a76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2907858685557472404
+    second: Grave_Wight_Battle_Final_0
+  - first:
+      213: -2299879234022238665
+    second: Grave_Wight_Battle_Final_1
+  - first:
+      213: 8955374373354423875
+    second: Grave_Wight_Battle_Final_2
+  - first:
+      213: -3818785032737117613
+    second: Grave_Wight_Battle_Final_3
+  - first:
+      213: -6123287680528262275
+    second: Grave_Wight_Battle_Final_4
+  - first:
+      213: 8948896311343895394
+    second: Grave_Wight_Battle_Final_5
+  - first:
+      213: -4943314529249757341
+    second: Grave_Wight_Battle_Final_6
+  - first:
+      213: -1223149694047558987
+    second: Grave_Wight_Battle_Final_7
+  - first:
+      213: -961694929531467339
+    second: Grave_Wight_Battle_Final_8
+  - first:
+      213: -5546585882235235446
+    second: Grave_Wight_Battle_Final_9
+  - first:
+      213: 1767277493677862170
+    second: Grave_Wight_Battle_Final_10
+  - first:
+      213: 1739893021948178097
+    second: Grave_Wight_Battle_Final_11
+  - first:
+      213: -8181335607124726373
+    second: Grave_Wight_Battle_Final_12
+  - first:
+      213: 5789130245115013397
+    second: Grave_Wight_Battle_Final_13
+  - first:
+      213: 2473565045419431909
+    second: Grave_Wight_Battle_Final_14
+  - first:
+      213: -6405107753776736067
+    second: Grave_Wight_Battle_Final_15
+  - first:
+      213: -30857743639973871
+    second: Grave_Wight_Battle_Final_16
+  - first:
+      213: 7054119868778414338
+    second: Grave_Wight_Battle_Final_17
+  - first:
+      213: -7893834297134740903
+    second: Grave_Wight_Battle_Final_18
+  - first:
+      213: -4561693845485866264
+    second: Grave_Wight_Battle_Final_19
+  - first:
+      213: 4323809291691189592
+    second: Grave_Wight_Battle_Final_20
+  - first:
+      213: -6773756094670050147
+    second: Grave_Wight_Battle_Final_21
+  - first:
+      213: -5275493275499495881
+    second: Grave_Wight_Battle_Final_22
+  - first:
+      213: -1973004693580606367
+    second: Grave_Wight_Battle_Final_23
+  - first:
+      213: -4289839510624063936
+    second: Grave_Wight_Battle_Final_24
+  - first:
+      213: 249661094690812795
+    second: Grave_Wight_Battle_Final_25
+  - first:
+      213: -473776801412373659
+    second: Grave_Wight_Battle_Final_26
+  - first:
+      213: 1689085480071287137
+    second: Grave_Wight_Battle_Final_27
+  - first:
+      213: 6219349229163795408
+    second: Grave_Wight_Battle_Final_28
+  - first:
+      213: -7985255290423350927
+    second: Grave_Wight_Battle_Final_29
+  - first:
+      213: 7385605845837020013
+    second: Grave_Wight_Battle_Final_30
+  - first:
+      213: -2022889905991073307
+    second: Grave_Wight_Battle_Final_31
+  - first:
+      213: -8215037592583542680
+    second: Grave_Wight_Battle_Final_32
+  - first:
+      213: 7791299361613900597
+    second: Grave_Wight_Battle_Final_33
+  - first:
+      213: 6429384281316325044
+    second: Grave_Wight_Battle_Final_34
+  - first:
+      213: 5369194652251181778
+    second: Grave_Wight_Battle_Final_35
+  - first:
+      213: -104712209207181743
+    second: Grave_Wight_Battle_Final_36
+  - first:
+      213: -7594800480778410272
+    second: Grave_Wight_Battle_Final_37
+  - first:
+      213: -1033976197478981355
+    second: Grave_Wight_Battle_Final_38
+  - first:
+      213: 5425337446502610421
+    second: Grave_Wight_Battle_Final_39
+  - first:
+      213: 4220507389662078320
+    second: Grave_Wight_Battle_Final_40
+  - first:
+      213: 8702513534904510282
+    second: Grave_Wight_Battle_Final_41
+  - first:
+      213: -4042922020227069386
+    second: Grave_Wight_Battle_Final_42
+  - first:
+      213: 6359039184447920441
+    second: Grave_Wight_Battle_Final_43
+  - first:
+      213: 7496004526587190139
+    second: Grave_Wight_Battle_Final_44
+  - first:
+      213: 7400954351252139481
+    second: Grave_Wight_Battle_Final_45
+  - first:
+      213: -9014017229927567102
+    second: Grave_Wight_Battle_Final_46
+  - first:
+      213: 14654091287513703
+    second: Grave_Wight_Battle_Final_47
+  - first:
+      213: 5359263636370238990
+    second: Grave_Wight_Battle_Final_48
+  - first:
+      213: 3656968011678105293
+    second: Grave_Wight_Battle_Final_49
+  - first:
+      213: 7966095041874969657
+    second: Grave_Wight_Battle_Final_50
+  - first:
+      213: 7655219161449401110
+    second: Grave_Wight_Battle_Final_51
+  - first:
+      213: 8381103997337635646
+    second: Grave_Wight_Battle_Final_52
+  - first:
+      213: -6644243937691925027
+    second: Grave_Wight_Battle_Final_53
+  - first:
+      213: 2498671100504315681
+    second: Grave_Wight_Battle_Final_54
+  - first:
+      213: -6797651773359016714
+    second: Grave_Wight_Battle_Final_55
+  - first:
+      213: -5177952596960361081
+    second: Grave_Wight_Battle_Final_56
+  - first:
+      213: -8607794494434584500
+    second: Grave_Wight_Battle_Final_57
+  - first:
+      213: -8818278721556688697
+    second: Grave_Wight_Battle_Final_58
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 209
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GraveWight_R0_F00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c35369640ac25d43906d583aeb7285a
+      internalID: 782331739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R0_F01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9302bfb6d3f977d4d919ab5d3ca7c513
+      internalID: 761921041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R0_F02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c39c50600d8e44f90a8d8994c0deb6
+      internalID: -770323796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R0_F03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f33cfabd1464f44c9da7dd498085518
+      internalID: 944145473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R0_F04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a49221db46d7c418c2b5a362897276
+      internalID: 239951918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R0_F05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1014
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1ab1642cdc7114f84b715ae92f2348
+      internalID: 1910329081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cc7556da2b22f4cbafd78ee76e03dc
+      internalID: -297959013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86455137aa8b5ab498935550baf1ae9e
+      internalID: -2006184784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41a20f8dc4153c847bd98ffccbee94be
+      internalID: -1736777901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea00e583c6211145897a1e222a316d2
+      internalID: -395069851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85701fb780a7c0845bb318a868c291ce
+      internalID: 1261434362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R1_F05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 789
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a001680217b894e959a189ef10ba72
+      internalID: 1866279237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75e813e2ffdaf94dba2d44c003bdb05
+      internalID: -136133669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809031e0781f69c48b6cf502bc41dd76
+      internalID: 595983048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a203c877f31ab945ad9f4c9eece5bb9
+      internalID: -2064458704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01c411ff5fb32a418602e70d5e2067d
+      internalID: -1403077525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2281d9c039a6b48458655b4b757ca161
+      internalID: 272889334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R2_F05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 579
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f631d051bdbba54ba89575351f9dc76
+      internalID: 1309653669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96852f11805d6fe4d95b26ec02baa13a
+      internalID: -2034689848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb719ad532a89974e9cbd073f7f4ae21
+      internalID: 1005850183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16cb1d28d7e39e4398a5040b12062d9
+      internalID: -738113119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbf2a18f4ed5474d86c375c743275ec
+      internalID: -1118501989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f4dbf05b946b54aad0e03a7dc277d1
+      internalID: -2058771995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R3_F05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 354
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348f03f978f2e434486898d3fa0d7222
+      internalID: -139841492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376844325b6b3bd4792b3e7d526685c6
+      internalID: -448642339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a02460f136380046a80b3311448a27e
+      internalID: 644244126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 691a57da2f0193b41ab1479456a6d803
+      internalID: -1018391845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaf504aa4cafce4391ca5932ce1fc80
+      internalID: -1173016475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb527cb0a78da99428f2900e0ffa3c16
+      internalID: -1089985115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GraveWight_R4_F05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 144
+        width: 209
+        height: 220
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8b171f453fbd2478320e37faab71f1
+      internalID: 1025436186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4ca105f010dc0d047b41e30561cd7d07
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GraveWight_R0_F00: 782331739
+      GraveWight_R0_F01: 761921041
+      GraveWight_R0_F02: -770323796
+      GraveWight_R0_F03: 944145473
+      GraveWight_R0_F04: 239951918
+      GraveWight_R0_F05: 1910329081
+      GraveWight_R1_F00: -297959013
+      GraveWight_R1_F01: -2006184784
+      GraveWight_R1_F02: -1736777901
+      GraveWight_R1_F03: -395069851
+      GraveWight_R1_F04: 1261434362
+      GraveWight_R1_F05: 1866279237
+      GraveWight_R2_F00: -136133669
+      GraveWight_R2_F01: 595983048
+      GraveWight_R2_F02: -2064458704
+      GraveWight_R2_F03: -1403077525
+      GraveWight_R2_F04: 272889334
+      GraveWight_R2_F05: 1309653669
+      GraveWight_R3_F00: -2034689848
+      GraveWight_R3_F01: 1005850183
+      GraveWight_R3_F02: -738113119
+      GraveWight_R3_F03: -1118501989
+      GraveWight_R3_F04: -2058771995
+      GraveWight_R3_F05: -139841492
+      GraveWight_R4_F00: -448642339
+      GraveWight_R4_F01: 644244126
+      GraveWight_R4_F02: -1018391845
+      GraveWight_R4_F03: -1173016475
+      GraveWight_R4_F04: -1089985115
+      GraveWight_R4_F05: 1025436186
+      Grave_Wight_Battle_Final_0: -2907858685557472404
+      Grave_Wight_Battle_Final_1: -2299879234022238665
+      Grave_Wight_Battle_Final_10: 1767277493677862170
+      Grave_Wight_Battle_Final_11: 1739893021948178097
+      Grave_Wight_Battle_Final_12: -8181335607124726373
+      Grave_Wight_Battle_Final_13: 5789130245115013397
+      Grave_Wight_Battle_Final_14: 2473565045419431909
+      Grave_Wight_Battle_Final_15: -6405107753776736067
+      Grave_Wight_Battle_Final_16: -30857743639973871
+      Grave_Wight_Battle_Final_17: 7054119868778414338
+      Grave_Wight_Battle_Final_18: -7893834297134740903
+      Grave_Wight_Battle_Final_19: -4561693845485866264
+      Grave_Wight_Battle_Final_2: 8955374373354423875
+      Grave_Wight_Battle_Final_20: 4323809291691189592
+      Grave_Wight_Battle_Final_21: -6773756094670050147
+      Grave_Wight_Battle_Final_22: -5275493275499495881
+      Grave_Wight_Battle_Final_23: -1973004693580606367
+      Grave_Wight_Battle_Final_24: -4289839510624063936
+      Grave_Wight_Battle_Final_25: 249661094690812795
+      Grave_Wight_Battle_Final_26: -473776801412373659
+      Grave_Wight_Battle_Final_27: 1689085480071287137
+      Grave_Wight_Battle_Final_28: 6219349229163795408
+      Grave_Wight_Battle_Final_29: -7985255290423350927
+      Grave_Wight_Battle_Final_3: -3818785032737117613
+      Grave_Wight_Battle_Final_30: 7385605845837020013
+      Grave_Wight_Battle_Final_31: -2022889905991073307
+      Grave_Wight_Battle_Final_32: -8215037592583542680
+      Grave_Wight_Battle_Final_33: 7791299361613900597
+      Grave_Wight_Battle_Final_34: 6429384281316325044
+      Grave_Wight_Battle_Final_35: 5369194652251181778
+      Grave_Wight_Battle_Final_36: -104712209207181743
+      Grave_Wight_Battle_Final_37: -7594800480778410272
+      Grave_Wight_Battle_Final_38: -1033976197478981355
+      Grave_Wight_Battle_Final_39: 5425337446502610421
+      Grave_Wight_Battle_Final_4: -6123287680528262275
+      Grave_Wight_Battle_Final_40: 4220507389662078320
+      Grave_Wight_Battle_Final_41: 8702513534904510282
+      Grave_Wight_Battle_Final_42: -4042922020227069386
+      Grave_Wight_Battle_Final_43: 6359039184447920441
+      Grave_Wight_Battle_Final_44: 7496004526587190139
+      Grave_Wight_Battle_Final_45: 7400954351252139481
+      Grave_Wight_Battle_Final_46: -9014017229927567102
+      Grave_Wight_Battle_Final_47: 14654091287513703
+      Grave_Wight_Battle_Final_48: 5359263636370238990
+      Grave_Wight_Battle_Final_49: 3656968011678105293
+      Grave_Wight_Battle_Final_5: 8948896311343895394
+      Grave_Wight_Battle_Final_50: 7966095041874969657
+      Grave_Wight_Battle_Final_51: 7655219161449401110
+      Grave_Wight_Battle_Final_52: 8381103997337635646
+      Grave_Wight_Battle_Final_53: -6644243937691925027
+      Grave_Wight_Battle_Final_54: 2498671100504315681
+      Grave_Wight_Battle_Final_55: -6797651773359016714
+      Grave_Wight_Battle_Final_56: -5177952596960361081
+      Grave_Wight_Battle_Final_57: -8607794494434584500
+      Grave_Wight_Battle_Final_58: -8818278721556688697
+      Grave_Wight_Battle_Final_6: -4943314529249757341
+      Grave_Wight_Battle_Final_7: -1223149694047558987
+      Grave_Wight_Battle_Final_8: -961694929531467339
+      Grave_Wight_Battle_Final_9: -5546585882235235446
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

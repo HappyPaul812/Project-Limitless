@@ -79,6 +79,8 @@ namespace ProjectLimitless.Battle
     public static class BattlePrototypeEncounterFactory
     {
         private const int SlimeBaseAttack = 10;
+        public const string GraveWightOneValidationId = "validation_grave_wight_one";
+        public const string GraveWightTwoValidationId = "validation_grave_wight_two";
 
         public static BattleEncounterSetup CreateThreeVsThree(string playerName, string playerJobId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee,
@@ -126,6 +128,21 @@ namespace ProjectLimitless.Battle
         {
             BattleEncounterSetup baseSetup=CreateThreeVsThree(playerName,playerJobId,playerPathId,playerMaxHp,playerAttack,playerAgility,null,null,bat);
             return new BattleEncounterSetup(baseSetup.Allies,new[]{CreateMonster(snake,"venom_snake_1","맹독뱀",FormationRow.Front,0,12),CreateMonster(beetle,"monster_moss_beetle_1","이끼갑충",FormationRow.Front,1,7),CreateMonster(bat,"monster_shade_bat_1","그늘박쥐",FormationRow.Rear,0,15)});
+        }
+
+        /// <summary>Dungeon Scene 없이 묘지 망자 한 마리 또는 두 마리를 실제 Battle에서 검증합니다.</summary>
+        public static BattleEncounterSetup CreateGraveWightValidation(string playerName, string playerJobId, string playerPathId,
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition graveWight, int count)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, playerJobId, playerPathId,
+                playerMaxHp, playerAttack, playerAgility, null, null, graveWight);
+            BattleParticipantSetup first = CreateMonster(graveWight, "monster_grave_wight_a", "묘지 망자", FormationRow.Front, 0, 8);
+            if (count <= 1) return new BattleEncounterSetup(party.Allies, new[] { first });
+            return new BattleEncounterSetup(party.Allies, new[]
+            {
+                first,
+                CreateMonster(graveWight, "monster_grave_wight_b", "묘지 망자", FormationRow.Front, 1, 8)
+            });
         }
 
         /// <summary>
