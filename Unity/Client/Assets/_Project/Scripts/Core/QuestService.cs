@@ -103,6 +103,7 @@ namespace ProjectLimitless.Core
         {
             if (!active.ContainsKey(questId ?? string.Empty)) return false;
             trackedQuestId = questId;
+            if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
             Changed?.Invoke();
             return true;
         }

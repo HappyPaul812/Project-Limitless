@@ -35,10 +35,12 @@ namespace ProjectLimitless.UI
         private Text detailsText;
         private Text emptyText;
         private Button closeButton;
+        private Button trackButton;
         private QuestRuntimeState selectedQuest;
         private InputAction toggleAction;
         private InputAction cancelAction;
         private InputAction navigateAction;
+        private InputAction trackAction;
 
         public bool IsOpen => panel != null && panel.activeSelf;
         public int VisibleQuestCount => displayedQuests.Count;
@@ -87,6 +89,11 @@ namespace ProjectLimitless.UI
                 float vertical = context.ReadValue<Vector2>().y;
                 if (Mathf.Abs(vertical) > 0.5f) MoveQuestSelection(vertical > 0f ? -1 : 1);
             };
+
+            trackAction = new InputAction("TrackSelectedQuest", InputActionType.Button);
+            trackAction.AddBinding("<Keyboard>/t");
+            trackAction.AddBinding("<Gamepad>/buttonNorth");
+            trackAction.performed += _ => { if (IsOpen) TrackSelectedQuest(); };
         }
 
         private void OnEnable()
@@ -96,6 +103,7 @@ namespace ProjectLimitless.UI
             toggleAction?.Enable();
             cancelAction?.Enable();
             navigateAction?.Enable();
+            trackAction?.Enable();
             QuestService.Changed += RefreshWhileOpen;
         }
 
@@ -104,6 +112,7 @@ namespace ProjectLimitless.UI
             toggleAction?.Disable();
             cancelAction?.Disable();
             navigateAction?.Disable();
+            trackAction?.Disable();
             QuestService.Changed -= RefreshWhileOpen;
             ReleaseModal();
         }
@@ -114,6 +123,7 @@ namespace ProjectLimitless.UI
             toggleAction?.Dispose();
             cancelAction?.Dispose();
             navigateAction?.Dispose();
+            trackAction?.Dispose();
             if (Instance == this) Instance = null;
         }
 
@@ -187,6 +197,7 @@ namespace ProjectLimitless.UI
             }
 
             focusOrder.Add(closeButton);
+            focusOrder.Add(trackButton);
             emptyText.gameObject.SetActive(displayedQuests.Count == 0);
             detailsText.text = displayedQuests.Count == 0 ? "진행 중인 퀘스트가 없습니다." : string.Empty;
             Canvas.ForceUpdateCanvases();
@@ -240,7 +251,7 @@ namespace ProjectLimitless.UI
             labelObject.transform.SetParent(rowObject.transform, false);
             Text label = labelObject.GetComponent<Text>();
             ConfigureText(label, 25, Color.white, TextAnchor.MiddleLeft);
-            label.text = "  " + state.Definition.DisplayName;
+            label.text = (IsTracked(state) ? "◆ " : "  ") + state.Definition.DisplayName;
             label.raycastTarget = false;
             Stretch(label.rectTransform, 16f, 10f, -16f, -10f);
             button.onClick.AddListener(() => SelectQuest(index));
@@ -261,7 +272,8 @@ namespace ProjectLimitless.UI
             for (int i = 0; i < questButtons.Count; i++)
             {
                 questButtons[i].GetComponent<Image>().color = i == index ? SelectedColor : RowColor;
-                questButtons[i].GetComponentInChildren<Text>().text = (i == index ? "▶ " : "  ")
+                string tracked = IsTracked(displayedQuests[i]) ? "◆ " : "";
+                questButtons[i].GetComponentInChildren<Text>().text = (i == index ? "▶ " : "  ") + tracked
                     + displayedQuests[i].Definition.DisplayName;
             }
             detailsText.text = BuildDetails(selectedQuest);
@@ -279,6 +291,7 @@ namespace ProjectLimitless.UI
             text.AppendLine(string.IsNullOrWhiteSpace(definition.Description) ? "등록된 설명이 없습니다." : definition.Description);
             text.AppendLine().AppendLine("현재 목표");
             text.AppendLine(state.CurrentObjective?.Description ?? "완료 보고를 기다리고 있습니다.");
+            text.AppendLine(IsTracked(state) ? "◆ 현재 위치 안내 중" : "[T / 게임패드 Y] 이 퀘스트 추적");
             if (definition.Objectives.Count > 1)
                 text.AppendLine($"진행 단계  {Mathf.Min(state.CurrentObjectiveIndex + 1, definition.Objectives.Count)} / {definition.Objectives.Count}");
             text.AppendLine().AppendLine("보상");
@@ -304,6 +317,9 @@ namespace ProjectLimitless.UI
             }
             return parts.Count == 0 ? "없음" : string.Join("\n", parts);
         }
+
+        private static bool IsTracked(QuestRuntimeState state)
+            => state != null && QuestService.GetTrackedQuest()?.Definition.QuestId == state.Definition.QuestId;
 
         private void MoveFocus(int direction)
         {
@@ -356,7 +372,18 @@ namespace ProjectLimitless.UI
             closeButton.onClick.AddListener(Close);
             SetRect(closeButton.GetComponent<RectTransform>(), new Vector2(0.18f, 0f), new Vector2(0.18f, 0f),
                 new Vector2(0.5f, 0f), new Vector2(0f, 26f), new Vector2(320f, 48f));
+            trackButton = CreateButton(panel.transform, "TrackButton", "추적  [T / 게임패드 Y]", new Vector2(300f, 48f));
+            trackButton.navigation = new Navigation { mode = Navigation.Mode.None };
+            trackButton.onClick.AddListener(TrackSelectedQuest);
+            SetRect(trackButton.GetComponent<RectTransform>(), new Vector2(0.82f, 0f), new Vector2(0.82f, 0f),
+                new Vector2(0.5f, 0f), new Vector2(0f, 26f), new Vector2(300f, 48f));
             panel.SetActive(false);
+        }
+
+        private void TrackSelectedQuest()
+        {
+            if (selectedQuest == null || !QuestService.TryTrack(selectedQuest.Definition.QuestId)) return;
+            RefreshWhileOpen();
         }
 
         private void CreateList(Transform parent)

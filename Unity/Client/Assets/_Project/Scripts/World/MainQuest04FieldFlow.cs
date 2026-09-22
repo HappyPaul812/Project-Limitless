@@ -43,12 +43,14 @@ namespace ProjectLimitless.World
             BoxCollider2D area = meeting.GetComponent<BoxCollider2D>();
             area.isTrigger = true;
             area.size = new Vector2(2.6f, 2.4f);
+            QuestNavigationTarget.Attach(meeting, MeetingLocationId, "미엘이 있는 곳");
 
             CreateStoryActor(root.transform, "Main04_Taeon", "태온", TaeonId,
                 "BattleCharacters/Taeon/Taeon_Battle_Final", "Taeon_Idle_00", MeetingPosition + new Vector2(-1.25f, .1f), false);
             GameObject miel = CreateStoryActor(root.transform, "Main04_Miel", "미엘", MielId,
                 "BattleCharacters/Miel/Miel_Battle_Final", "Miel_Idle_00", MeetingPosition + new Vector2(.35f, .1f), true);
             miel.AddComponent<MainQuest04MielActor>();
+            QuestNavigationTarget.Attach(miel, EncounterId, "미엘 주변 몬스터", new Vector3(0f, 1.9f, 0f));
             CreateWoundedTraveler(root.transform);
             root.AddComponent<MainQuest04Coordinator>();
         }

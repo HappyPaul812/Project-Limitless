@@ -63,6 +63,7 @@ namespace ProjectLimitless.World
             CircleCollider2D collider = trace.GetComponent<CircleCollider2D>();
             collider.isTrigger = true;
             collider.radius = 1.35f;
+            QuestNavigationTarget.Attach(trace, AnomalyTraceId, "이상한 이동 흔적", new Vector3(0f, 1.4f, 0f));
         }
     }
 

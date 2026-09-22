@@ -1,4 +1,5 @@
 using ProjectLimitless.Player;
+using ProjectLimitless.World;
 using UnityEngine;
 
 namespace ProjectLimitless.Monster
@@ -47,6 +48,8 @@ namespace ProjectLimitless.Monster
             activityRadius = Mathf.Max(.5f, spawn.ActivityRadius);
             destination = resolvedActivityCenter;
             waitUntil = Time.time + Random.Range(definition.MinimumIdleTime, definition.MaximumIdleTime);
+            if (spawn.SceneName == "Field_01" && spawn.SpawnId == MainQuest02FieldFlow.QuestSpawnId)
+                QuestNavigationTarget.Attach(gameObject, MainQuest02FieldFlow.EncounterId, "몬스터 무리", new Vector3(0f, 1.35f, 0f));
         }
 
         /// <summary>

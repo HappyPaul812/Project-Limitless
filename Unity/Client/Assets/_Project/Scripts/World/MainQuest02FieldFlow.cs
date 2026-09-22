@@ -41,6 +41,7 @@ namespace ProjectLimitless.World
             areaCollider.isTrigger = true;
             areaCollider.size = new Vector2(2.4f, 2.4f);
             area.GetComponent<QuestLocationTrigger>().Configure(QuestId, InvestigationAreaId);
+            QuestNavigationTarget.Attach(area, InvestigationAreaId, "조사 지점");
 
             GameObject tracks = new GameObject("Main02Tracks", typeof(CircleCollider2D), typeof(MainQuest02Tracks));
             tracks.transform.SetParent(root.transform, false);
@@ -48,6 +49,7 @@ namespace ProjectLimitless.World
             CircleCollider2D tracksCollider = tracks.GetComponent<CircleCollider2D>();
             tracksCollider.isTrigger = true;
             tracksCollider.radius = 1.35f;
+            QuestNavigationTarget.Attach(tracks, TracksId, "흩어진 흔적", new Vector3(0f, 1.35f, 0f));
         }
     }
 

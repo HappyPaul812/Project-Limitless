@@ -161,6 +161,7 @@ namespace ProjectLimitless.Player
             nameTextRect.SetAsLastSibling();
             WorldExperienceHud.EnsureOn(overlayCanvasObject);
             QuestHudPresenter.EnsureOn(overlayCanvasObject);
+            QuestNavigationPresenter.EnsureOn(overlayCanvasObject);
             RefreshName();
         }
 

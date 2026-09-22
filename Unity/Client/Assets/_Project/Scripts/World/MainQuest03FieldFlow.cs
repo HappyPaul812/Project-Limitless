@@ -51,6 +51,7 @@ namespace ProjectLimitless.World
             taeon.GetComponent<NpcController>().Configure("태온", "몬스터의 움직임을 관찰하고 있습니다.");
             VillageNpcRole role = taeon.GetComponent<VillageNpcRole>();
             role.Configure(TaeonId, VillageNpcRoleType.Resident, false);
+            QuestNavigationTarget.Attach(taeon, EncounterId, "태온 주변 몬스터", new Vector3(0f, 1.9f, 0f));
             SpriteRenderer renderer = new GameObject("OfficialTaeonVisual", typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
             renderer.transform.SetParent(taeon.transform, false);
             renderer.sprite = Resources.LoadAll<Sprite>("BattleCharacters/Taeon/Taeon_Battle_Final")
@@ -71,6 +72,7 @@ namespace ProjectLimitless.World
             collider.isTrigger = true;
             collider.size = size;
             location.GetComponent<MainQuest03Location>().Configure(locationId, finalClue);
+            QuestNavigationTarget.Attach(location, locationId, finalClue ? "마지막 단서" : "태온이 있는 곳");
         }
     }
 

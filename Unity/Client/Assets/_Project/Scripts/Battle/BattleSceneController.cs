@@ -2418,8 +2418,10 @@ namespace ProjectLimitless.Battle
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
             {
+                // Scene 전환 뒤 ScriptableObject 참조가 달라져도 진입 시 보존한 stable ID로 정확한 조우만 진행합니다.
+                if (!string.IsNullOrEmpty(BattleEncounterContext.StableEncounterId))
+                    QuestService.NotifyEncounterWon(BattleEncounterContext.StableEncounterId);
                 // 아무 전투가 아니라 지정된 조사 조우를 이겼을 때만 Main 02가 진행됩니다.
-                MainQuest02EncounterBridge.NotifyVictory(BattleEncounterContext.Spawn);
                 MainQuest03EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest04EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);

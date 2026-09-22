@@ -18,6 +18,7 @@ namespace ProjectLimitless.Battle
         public static Vector2 MonsterFieldPosition { get; private set; }
         public static string FieldSceneName { get; private set; }
         public static string StoryEncounterId { get; private set; }
+        public static string StableEncounterId { get; private set; }
         public static bool IsStoryEncounter => !string.IsNullOrEmpty(StoryEncounterId);
         private static bool pendingFieldReturn;
 
@@ -31,6 +32,7 @@ namespace ProjectLimitless.Battle
             MonsterFieldPosition = monsterPosition;
             FieldSceneName = spawn == null ? string.Empty : spawn.SceneName;
             StoryEncounterId = string.Empty;
+            StableEncounterId = ResolveStableEncounterId(spawn);
             pendingFieldReturn = false;
         }
 
@@ -40,6 +42,14 @@ namespace ProjectLimitless.Battle
         {
             Set(monster, returnSpawn, playerAnimatorController, playerFallbackSprite, playerPosition, encounterPosition);
             StoryEncounterId = storyEncounterId ?? string.Empty;
+            StableEncounterId = StoryEncounterId;
+        }
+
+        private static string ResolveStableEncounterId(FieldMonsterSpawnDefinition spawn)
+        {
+            if (spawn != null && spawn.SceneName == "Field_01" && spawn.SpawnId == ProjectLimitless.World.MainQuest02FieldFlow.QuestSpawnId)
+                return ProjectLimitless.World.MainQuest02FieldFlow.EncounterId;
+            return string.Empty;
         }
 
         public static void PrepareFieldReturn() => pendingFieldReturn = true;

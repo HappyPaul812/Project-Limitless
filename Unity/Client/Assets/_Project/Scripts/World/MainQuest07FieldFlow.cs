@@ -41,6 +41,8 @@ namespace ProjectLimitless.World
             CreateSite(root.transform, "Main07WoundedTraveler", WoundedTravelerId, WoundedPosition, "◆ 부상당한 여행자");
             CreateLocation(root.transform, "Main07PaulTrail", PaulTrailId, PaulPosition);
             CreateSite(root.transform, "Main07Paul", PaulId, PaulPosition, "◆ 폴");
+            Transform paulSite = root.transform.Find("Main07Paul");
+            if (paulSite != null) QuestNavigationTarget.Attach(paulSite.gameObject, EncounterId, "폴 주변 몬스터", new Vector3(0f, 1.5f, 0f));
             CreateLocation(root.transform, "Main07ReturnToMiel", ReturnToMielId, WoundedPosition);
             CreateSite(root.transform, "Main07Miel", MielMeetingId, WoundedPosition + new Vector2(-.8f, 0f), "◆ 미엘");
             CreateSite(root.transform, "Main07PaulFarewell", PaulFarewellId, WoundedPosition + new Vector2(.8f, 0f), "◆ 폴");
@@ -66,6 +68,7 @@ namespace ProjectLimitless.World
             site.transform.SetParent(parent, false); site.transform.position = position;
             site.GetComponent<CircleCollider2D>().isTrigger = true; site.GetComponent<CircleCollider2D>().radius = 1.25f;
             site.GetComponent<MainQuest07Interactable>().Configure(targetId, label);
+            QuestNavigationTarget.Attach(site, targetId, label.TrimStart('◆', '◇', ' '), new Vector3(0f, 1.45f, 0f));
         }
 
         private static void CreateLocation(Transform parent, string name, string targetId, Vector2 position)
@@ -74,6 +77,7 @@ namespace ProjectLimitless.World
             site.transform.SetParent(parent, false); site.transform.position = position;
             site.GetComponent<CircleCollider2D>().isTrigger = true; site.GetComponent<CircleCollider2D>().radius = 1.4f;
             site.GetComponent<MainQuest07Location>().Configure(targetId);
+            QuestNavigationTarget.Attach(site, targetId, targetId == PaulTrailId ? "바퀴 자국" : "미엘에게 돌아가기");
         }
 
         private static void CreateStoryVisual(Transform parent, string name, string path, string spriteName, Vector2 position)

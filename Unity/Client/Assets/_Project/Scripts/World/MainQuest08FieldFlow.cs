@@ -50,10 +50,10 @@ namespace ProjectLimitless.World
 
         private static void Site(Transform parent,string name,string id,Vector2 at,string label)
         { var go=new GameObject(name,typeof(CircleCollider2D),typeof(MainQuest08Interactable)); go.transform.SetParent(parent,false); go.transform.position=at;
-          go.GetComponent<CircleCollider2D>().isTrigger=true; go.GetComponent<CircleCollider2D>().radius=1.15f; go.GetComponent<MainQuest08Interactable>().Configure(id,label); }
+          go.GetComponent<CircleCollider2D>().isTrigger=true; go.GetComponent<CircleCollider2D>().radius=1.15f; go.GetComponent<MainQuest08Interactable>().Configure(id,label); QuestNavigationTarget.Attach(go,id,label.TrimStart('◆','◇',' '),new Vector3(0,1.45f,0)); }
         private static void Location(Transform parent,string name,string id,Vector2 at)
         { var go=new GameObject(name,typeof(CircleCollider2D),typeof(MainQuest08Location)); go.transform.SetParent(parent,false); go.transform.position=at;
-          go.GetComponent<CircleCollider2D>().isTrigger=true; go.GetComponent<CircleCollider2D>().radius=1.4f; go.GetComponent<MainQuest08Location>().Configure(id); }
+          go.GetComponent<CircleCollider2D>().isTrigger=true; go.GetComponent<CircleCollider2D>().radius=1.4f; go.GetComponent<MainQuest08Location>().Configure(id); QuestNavigationTarget.Attach(go,id,"깊은 구역"); }
         private static void DrawTracks(Transform parent,Vector2 at)
         { foreach(float x in new[]{-.28f,.28f}) { var q=GameObject.CreatePrimitive(PrimitiveType.Quad); q.name="StableWheelTrack"; q.transform.SetParent(parent,false); q.transform.position=at+new Vector2(x,0);
             q.transform.localScale=new Vector3(.12f,1.5f,1); Object.Destroy(q.GetComponent<MeshCollider>()); var r=q.GetComponent<Renderer>(); r.material=new Material(Shader.Find("Sprites/Default")); r.material.color=new Color(.13f,.09f,.05f,.55f); r.sortingOrder=4; } }
