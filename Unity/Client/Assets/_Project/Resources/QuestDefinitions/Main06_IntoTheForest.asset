@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main06_IntoTheForest
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_06_into_the_forest
+  displayName: "\uC232\uC73C\uB85C"
+  description: "태온, 미엘과 함께 초원 너머 그늘숲으로 이동해, 평소 길을 벗어나 한 방향으로 퍼진 몬스터의 이동 흔적을 확인한다."
+  questType: 0
+  objectives:
+  - objectiveId: reach_shaded_forest
+    description: "태온, 미엘과 함께 초원 너머 그늘숲으로 이동하세요."
+    objectiveType: 1
+    targetId: field02_main06_entry
+    requiredCount: 1
+  - objectiveId: inspect_anomaly_trace
+    description: "숲길 안쪽의 이상한 흔적을 확인하세요."
+    objectiveType: 3
+    targetId: field02_main06_anomaly_trace
+    requiredCount: 1
+  reward:
+    Experience: 20
+    Currency: 20
+    Items: []
+  prerequisiteQuestIds:
+  - main_05_return_of_three
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

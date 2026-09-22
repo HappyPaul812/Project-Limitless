@@ -40,6 +40,6 @@ MonoBehaviour:
       Count: 1
   prerequisiteQuestIds:
   - main_04_three_people
-  nextMainQuestId:
+  nextMainQuestId: main_06_into_the_forest
   startNpcId:
   turnInNpcId:

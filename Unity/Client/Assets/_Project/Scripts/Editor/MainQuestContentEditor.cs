@@ -77,15 +77,27 @@ namespace ProjectLimitless.Editor
                     Experience = 40,
                     Currency = 40,
                     Items = new[] { new ItemReward { ItemId = "item_healing_potion_small", Count = 1 } }
-                }, new[] { MainQuest04FieldFlow.QuestId });
+                }, new[] { MainQuest04FieldFlow.QuestId }, MainQuest06ForestFlow.QuestId);
             main05.ConfigureNpcFlow(string.Empty);
             main05.ConfigureDescription("태온, 미엘과 함께 시작 마을로 돌아가 남문 경비병과 주민 대표에게 조사 결과를 보고하고, 초원 너머 숲의 다음 이상을 확인한다.");
+
+            QuestDefinition main06 = LoadOrCreate("Main06_IntoTheForest");
+            main06.ConfigureForAudit(MainQuest06ForestFlow.QuestId, "숲으로", QuestType.Main,
+                new[]
+                {
+                    Objective("reach_shaded_forest", "태온, 미엘과 함께 초원 너머 그늘숲으로 이동하세요.", QuestObjectiveType.ReachLocation, MainQuest06ForestFlow.ForestLocationId),
+                    Objective("inspect_anomaly_trace", "숲길 안쪽의 이상한 흔적을 확인하세요.", QuestObjectiveType.Interact, MainQuest06ForestFlow.AnomalyTraceId)
+                }, new RewardBundle { Experience = 20, Currency = 20, Items = System.Array.Empty<ItemReward>() },
+                new[] { MainQuest05ReturnFlow.QuestId });
+            main06.ConfigureNpcFlow(string.Empty);
+            main06.ConfigureDescription("태온, 미엘과 함께 초원 너머 그늘숲으로 이동해, 평소 길을 벗어나 한 방향으로 퍼진 몬스터의 이동 흔적을 확인한다.");
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);
             EditorUtility.SetDirty(main03);
             EditorUtility.SetDirty(main04);
             EditorUtility.SetDirty(main05);
+            EditorUtility.SetDirty(main06);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("Main 01·02 퀘스트 데이터와 Quest Log용 설명·목표 문구가 준비되었습니다.");
