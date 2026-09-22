@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- Field 03 `침묵의 숲길`과 Main 08 `main_08_what_they_avoid` 「피하고 있는 것」을 구현했다. 회피 흔적 3개, 폴의 안정적인 바퀴 자국, Field 03 조사 흔적, 깊은 구역의 푸른 빛까지 stable ID 7개로 진행하며 보상은 EXP 30·탈렌트 30·아이템 없음이다.
+- 사용자 최종 원본 `Moss_Beetle_Battle_Final.png`, `Shade_Bat_Battle_Final.png`를 수정 없이 등록하고 이끼갑충·그늘박쥐의 명시적 Idle/Walk/Attack/Hit/Defeat, 민첩·보상·재료 Loot를 연결했다. Field 03 조우 수는 초입 3 > 중간 2 > 깊은 곳 1이다.
+- Unity 정적 로드와 Field 03 Play Mode에서 Scene·Player·전환 1개·몬스터 6개·프레임 애니메이터 6개, 그늘박쥐 일반 전투 진입과 화면 방향을 확인했다. 두 몬스터의 Attack·Hit·Defeat 최종 프레임 전환과 Encounter A/B/C 구성을 런타임 검사했다. 직접 Scene 진입 검증에서는 저장 슬롯이 없어 자동 저장 생략 Warning 2건이 발생했으며 기능 오류는 없었다. Save A~G의 실제 Bootstrap 왕복과 모든 승패/도주 조작은 후속 수동 확인이 필요하다. 기능 commit: `1c10492`.
+
 - Main 07 `main_07_deep_tracks` 「깊게 패인 흔적」을 구현했다. Main 06 완료 뒤 `Field_02`에서 두 줄 바퀴 자국 조사 → 부상자 확인 → 자국 추적 → 폴 첫 대화 → 지정 전투 → 미엘에게 복귀 → 미엘·폴 첫 만남 → 폴 작별 순서로 진행하며, stable Objective/Actor/Encounter ID 8개로 저장한다.
 - 폴(`companion_paul`)은 28세 남성 마도사·이동의 길 휠체어 사용자다. 공식 `Portrait_Paul.png`와 `Paul_Battle_Final.png`를 연결했고, 전투 시 후열에서 기존 파이어볼·썬더볼트·가이아의 벽과 이동의 길 보정을 사용한다. Main 07에서는 Player·Taeon·Paul 대 숲거미 2·맹독뱀 1의 Story Temporary Companion으로만 참가하며, 미엘은 전투에서 제외되고 폴은 영구 해금/기본 파티에 추가되지 않는다.
 - Main 07 보상은 EXP 30·탈렌트 25·아이템 없음이며 완료 신호 반복에도 한 번만 지급된다. 임시 슬롯 5에서 A~G(Available, 각 핵심 진행 단계, Completed)를 실제 저장→로드→복원해 Scene·Objective·파티·보상과 중복 방지를 확인하고 삭제했다.
