@@ -6,6 +6,7 @@
 
 - `material_moss_beetle_shell` / 이끼갑충의 등껍질: 판매 6 탈렌트, 40% 드롭.
 - `material_shade_bat_wing` / 그늘박쥐의 날개막: 판매 7 탈렌트, 35% 드롭.
+- `material_grave_wight_fragment` / 망자의 파편: 판매 8 탈렌트, 35% 드롭. 전용 아이콘은 아직 없으며 공용 fallback 표시를 사용한다.
 - 적절한 기존 라이선스 아이콘을 확정하지 못해 Icon은 null/TODO로 두며 외부 아이콘은 다운로드하지 않는다.
 
 아이템 관련 문서를 관리합니다.

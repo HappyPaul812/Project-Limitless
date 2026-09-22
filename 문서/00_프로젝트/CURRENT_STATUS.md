@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+- `Grave_Wight_Battle_Final.png` 사용자 최종 원본을 수정 없이 정식 등록하고 `monster_grave_wight` 묘지 망자를 구현했다. Lv7·HP125·공격20·민첩8·EXP32·탈렌트9의 느린 전열형 언데드이며 향후 `Dungeon_01` 「침묵의 지하묘지」에서 사용한다.
+- 실제 1254×1254 RGBA의 Alpha 배치를 분석해 209×220px 6프레임씩 Idle/Walk/Attack/Hit/Defeat를 연결했다. Defeat는 왼쪽→오른쪽 F00→F05로 한 번 재생한 뒤 마지막 프레임을 유지한다. Point·Clamp·Mip Map Off·sRGB/Alpha On·Uncompressed·PPU 209로 Import했다.
+- `material_grave_wight_fragment` 망자의 파편(판매 8 탈렌트, 드롭 35%, 아이콘 null/fallback)을 추가했다. 격리된 Battle 검증에서 묘지 망자 1마리와 전열 2마리 구성, 우향, 애니메이션 전환, HP/공격/민첩, 2마리 EXP64·탈렌트18·드롭 집계를 확인했다. 기존 6종 Definition과 이끼갑충·그늘박쥐 프레임 연결을 회귀 검사했으며 최종 Console Error/Warning 0이다. 기능 commit: `e80943f`.
+
 - Main 02 지정 전투 진행을 `FieldMonsterSpawnDefinition` 객체 참조가 아니라 전투 진입 시 보존한 stable encounter ID로 판정하도록 수정했다. `field01_main02_investigation_encounter` 승리만 Objective 2→3을 진행하며 다른 일반 조우·도주·패배는 진행하지 않는다.
 - 추적 중인 Quest Objective의 실제 Transform을 stable ID Registry로 연결하고, 화면 안 `◆ 현재 목표 + 대상명`, 화면 밖 방향 화살표·거리 Indicator를 표시하는 공용 Quest Navigation을 추가했다. Quest Log의 선택과 추적을 분리하고 `추적` 버튼·T·게임패드 Y를 지원하며 Modal 중에는 안내를 숨긴다.
 - Main 01~08의 현재 Scene에서 안전하게 식별되는 NPC, 조사 지점, 흔적, 지정 Story Encounter를 연결했다. Scene 밖 목적지로 향하는 출구 안내는 후속 확장 대상으로 남겼다.
