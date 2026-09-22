@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using ProjectLimitless.Core;
 using ProjectLimitless.NPC;
 using ProjectLimitless.UI;
 using UnityEditor;
@@ -21,6 +22,7 @@ namespace ProjectLimitless.Editor
             CreateOrUpdate("SouthGateGuard", MainQuest01NpcFlow.GuardId, "남문 경비병");
             CreateOrUpdate("Taeon", DialoguePortraitCatalog.TaeonId, "태온");
             CreateOrUpdate("Miel", DialoguePortraitCatalog.MielId, "미엘");
+            CreateOrUpdate("Paul", CompanionRosterService.PaulId, "폴");
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             DialoguePortraitCatalog.ReloadInEditor();

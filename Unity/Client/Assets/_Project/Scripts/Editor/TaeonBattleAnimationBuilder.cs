@@ -18,20 +18,23 @@ namespace ProjectLimitless.EditorTools
 
         private readonly struct CharacterBuildDefinition
         {
-            public CharacterBuildDefinition(string name, string sheetPath, string animationFolder)
+            public CharacterBuildDefinition(string name, string sheetPath, string animationFolder,
+                (string Name, int Row, int Count, bool Loop)[] motions = null)
             {
                 Name = name;
                 SheetPath = sheetPath;
                 AnimationFolder = animationFolder;
+                Motions = motions ?? DefaultMotions;
             }
 
             public string Name { get; }
             public string SheetPath { get; }
             public string AnimationFolder { get; }
+            public (string Name, int Row, int Count, bool Loop)[] Motions { get; }
             public string ControllerPath => $"{AnimationFolder}/{Name}_Battle.controller";
         }
 
-        private static readonly (string Name, int Row, int Count, bool Loop)[] Motions =
+        private static readonly (string Name, int Row, int Count, bool Loop)[] DefaultMotions =
         {
             ("Idle", 0, 4, true),
             ("Attack", 1, 6, false),
@@ -55,6 +58,19 @@ namespace ProjectLimitless.EditorTools
             BuildCharacter(new CharacterBuildDefinition("Miel",
                 "Assets/_Project/Resources/BattleCharacters/Miel/Miel_Battle_Final.png",
                 "Assets/_Project/Resources/BattleCharacters/Miel/Animations"));
+        }
+
+        /// <summary>Paul 공식 6×6 시트를 휠체어 바닥 기준 Pivot과 실제 유효 프레임 수로 생성합니다.</summary>
+        public static void BuildPaul()
+        {
+            BuildCharacter(new CharacterBuildDefinition("Paul",
+                "Assets/_Project/Resources/BattleCharacters/Paul/Paul_Battle_Final.png",
+                "Assets/_Project/Resources/BattleCharacters/Paul/Animations",
+                new[]
+                {
+                    ("Idle", 0, 6, true), ("Attack", 1, 6, false), ("Guard", 2, 5, false),
+                    ("Skill", 3, 6, false), ("Hit", 4, 4, false), ("Defeat", 5, 6, false)
+                }));
         }
 
         private static void BuildCharacter(CharacterBuildDefinition definition)
@@ -108,7 +124,7 @@ namespace ProjectLimitless.EditorTools
                     throw new InvalidOperationException($"필요한 Sprite 편집 capability가 없습니다: {required}");
             }
             List<SpriteRect> spriteRects = new List<SpriteRect>();
-            foreach ((string motion, int row, int count, bool _) in Motions)
+            foreach ((string motion, int row, int count, bool _) in definition.Motions)
             {
                 for (int frame = 0; frame < count; frame++)
                 {
@@ -131,7 +147,7 @@ namespace ProjectLimitless.EditorTools
         {
             Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(definition.SheetPath).OfType<Sprite>().ToArray();
             Dictionary<string, AnimationClip> result = new Dictionary<string, AnimationClip>(StringComparer.Ordinal);
-            foreach ((string motion, int _, int count, bool loop) in Motions)
+            foreach ((string motion, int _, int count, bool loop) in definition.Motions)
             {
                 string path = $"{definition.AnimationFolder}/{definition.Name}_{motion}.anim";
                 AnimationClip clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
@@ -180,7 +196,7 @@ namespace ProjectLimitless.EditorTools
             foreach (AnimatorStateTransition transition in machine.anyStateTransitions.ToArray()) machine.RemoveAnyStateTransition(transition);
 
             Dictionary<string, AnimatorState> states = new Dictionary<string, AnimatorState>(StringComparer.Ordinal);
-            foreach ((string motion, int _, int _, bool loop) in Motions)
+            foreach ((string motion, int _, int _, bool loop) in definition.Motions)
             {
                 AnimatorState state = machine.AddState(motion);
                 state.motion = clips[motion];

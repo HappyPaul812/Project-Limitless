@@ -1,0 +1,902 @@
+fileFormatVersion: 2
+guid: b137f54eb54f4f6b8ebbc58c82a1f50f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Paul_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff75abf980ec7c4db21c5275ea9999d
+      internalID: 6593106853712615597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625f8dcaa5ea54f4e8404aabf6c00928
+      internalID: 7329209939299502479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94decdf06c4faa34ba56ddf66cd8692d
+      internalID: 7084198495780482249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa90f99f2f04d3439a1ccc36110eecf
+      internalID: -2813259373645102681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Idle_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819656aa35a23004494b7abded482e81
+      internalID: -2778473359218159307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Idle_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0c64769c536a44bad6fa72466a9fe6
+      internalID: 8184432141897281673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67e0f4b35f50ed40826042fa9f1ef3b
+      internalID: 5443144651743322576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a760f7023fed4d459ec271dc478397a
+      internalID: 7572281835665175886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0db3a5ab0e55940856a57f628da073
+      internalID: 8154676811728133727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f2b97d7718fb444a53a3592d018230
+      internalID: 8730553626306089065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48fadcd624987e4e9e5f5190217d3e3
+      internalID: -4899611446453859766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Attack_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10faa43784d18d4ba41a934736f8fc2
+      internalID: -982043308419704695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Guard_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438e78f26d06f964f9b98b60b51a5564
+      internalID: -5823513574871621018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Guard_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae324da7cdbc9db4abe38d6f4562815d
+      internalID: 7634517471743880212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Guard_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06495f191eb1ab84a9040fc07d5647d8
+      internalID: 1007369196637731296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Guard_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12caed6f016f0474aa132f8612f84528
+      internalID: -8046361725527401762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Guard_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4775a4406a34a04792322a7a87d01e2
+      internalID: -7265431095228033125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88218796021657147945d53f014d34a7
+      internalID: -8970410292230859384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd2da1f6ad7e27408c085f8cfa29134
+      internalID: 6260781622753989848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc914257f644c6249a0353121618ed2f
+      internalID: 370427979388296461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159897bbb8234064db07a7acf31483b6
+      internalID: 3802227997058603483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff856d64c57ea854597a355d3f7a216a
+      internalID: 7375724378864281516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Skill_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec005e37225797946b27d3a9adc531ec
+      internalID: -7097906028759883642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1006fe5263735004299cd7872da62ba7
+      internalID: 2969394974602105071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3adce0746212b4c9471928ae86514f
+      internalID: -6250735043668190689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80fa689452b404c4fbddd66043d0dd4a
+      internalID: 1415384815224726938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bb2ce9c36020447997c350b519792d
+      internalID: 1906188735590236537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f122b9847ac834a8c44321d64c8ea6
+      internalID: 9005408710895453392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591fbed0856b9f14fbf8f19339312428
+      internalID: -6629891660187141748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94809a5da666dd488a46acd265683fa
+      internalID: 4938564105137060914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552e34b4a82d10c46bcfc00253697193
+      internalID: -3837599185093937254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f15c7aead11d48f4199bc6936bd3a883
+      internalID: 1776562810142379757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Paul_Defeat_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8a561ccc0c46b41b6398e03fd081e0
+      internalID: -2989475625503985861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aa206f2af385f67438b1dc348ad8aeea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Paul_Attack_00: 5443144651743322576
+      Paul_Attack_01: 7572281835665175886
+      Paul_Attack_02: 8154676811728133727
+      Paul_Attack_03: 8730553626306089065
+      Paul_Attack_04: -4899611446453859766
+      Paul_Attack_05: -982043308419704695
+      Paul_Defeat_00: 9005408710895453392
+      Paul_Defeat_01: -6629891660187141748
+      Paul_Defeat_02: 4938564105137060914
+      Paul_Defeat_03: -3837599185093937254
+      Paul_Defeat_04: 1776562810142379757
+      Paul_Defeat_05: -2989475625503985861
+      Paul_Guard_00: -5823513574871621018
+      Paul_Guard_01: 7634517471743880212
+      Paul_Guard_02: 1007369196637731296
+      Paul_Guard_03: -8046361725527401762
+      Paul_Guard_04: -7265431095228033125
+      Paul_Hit_00: 2969394974602105071
+      Paul_Hit_01: -6250735043668190689
+      Paul_Hit_02: 1415384815224726938
+      Paul_Hit_03: 1906188735590236537
+      Paul_Idle_00: 6593106853712615597
+      Paul_Idle_01: 7329209939299502479
+      Paul_Idle_02: 7084198495780482249
+      Paul_Idle_03: -2813259373645102681
+      Paul_Idle_04: -2778473359218159307
+      Paul_Idle_05: 8184432141897281673
+      Paul_Skill_00: -8970410292230859384
+      Paul_Skill_01: 6260781622753989848
+      Paul_Skill_02: 370427979388296461
+      Paul_Skill_03: 3802227997058603483
+      Paul_Skill_04: 7375724378864281516
+      Paul_Skill_05: -7097906028759883642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

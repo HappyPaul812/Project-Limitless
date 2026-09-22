@@ -172,6 +172,31 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(allies, enemies);
         }
 
+        /// <summary>Main 07에서 미엘을 제외하고 후열 마도사 Paul을 임시 참가시키는 Story Battle 구성입니다.</summary>
+        public static BattleEncounterSetup CreateMain07ThreeVsThree(string playerName, string playerJobId, string playerPathId,
+            int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition spider, MonsterDefinition snake)
+        {
+            BattleParticipantSetup[] allies =
+            {
+                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
+                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0, TargetRangeType.MeleePhysical, true,
+                    BattleParticipantVisualType.PrototypeCompanion, "태", pathId: PathCombatTraitRuntime.IntellectualPathId),
+                new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
+                    new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
+                    ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
+                new BattleParticipantSetup("companion_paul", "폴", "mage", BattleSide.Allies,
+                    new FormationSlot(FormationRow.Rear, 0), 96, 14, 10, 0, TargetRangeType.Magic, true,
+                    BattleParticipantVisualType.PrototypeCompanion, "폴", pathId: PathCombatTraitRuntime.MobilityPathId)
+            };
+            BattleParticipantSetup[] enemies =
+            {
+                CreateMonster(spider, "main07_forest_spider_a", "숲거미", FormationRow.Front, 0, 11),
+                CreateMonster(spider, "main07_forest_spider_b", "숲거미", FormationRow.Front, 1, 10),
+                CreateMonster(snake, "main07_venom_snake", "맹독뱀", FormationRow.Rear, 0, 12)
+            };
+            return new BattleEncounterSetup(allies, enemies);
+        }
+
         private static BattleParticipantSetup CreateMonster(MonsterDefinition monster, string fallbackId,
             string fallbackName, FormationRow row, int column, int agility)
         {

@@ -10,6 +10,7 @@ namespace ProjectLimitless.UI
         public const string ResourceFolder = "DialoguePortraitDefinitions";
         public const string TaeonId = "companion_taeon";
         public const string MielId = "companion_miel";
+        public const string PaulId = "companion_paul";
 
         private static Dictionary<string, DialoguePortraitDefinition> definitions;
 

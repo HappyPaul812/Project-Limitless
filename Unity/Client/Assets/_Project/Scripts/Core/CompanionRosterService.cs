@@ -20,6 +20,7 @@ namespace ProjectLimitless.Core
     {
         public const string TaeonId = "companion_taeon";
         public const string MielId = "companion_miel";
+        public const string PaulId = "companion_paul";
         private static readonly HashSet<string> Unlocked = new HashSet<string>(StringComparer.Ordinal);
         private static readonly List<string> ActiveParty = new List<string>();
 

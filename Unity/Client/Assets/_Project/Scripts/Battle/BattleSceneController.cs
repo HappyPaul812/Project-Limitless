@@ -246,6 +246,8 @@ namespace ProjectLimitless.Battle
             MonsterDefinition[] monsterDefinitions = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions");
             MonsterDefinition slime = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "grass_slime");
             MonsterDefinition venomBee = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_bee");
+            MonsterDefinition forestSpider = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "forest_spider");
+            MonsterDefinition venomSnake = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_snake");
             BattleEncounterSetup setup;
             if (BattleEncounterContext.StoryEncounterId == MainQuest03EncounterBridge.EncounterId)
                 setup = BattlePrototypeEncounterFactory.CreateMain03TwoVsTwo(
@@ -257,6 +259,11 @@ namespace ProjectLimitless.Battle
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     slime, venomBee);
+            else if (BattleEncounterContext.StoryEncounterId == MainQuest07EncounterBridge.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateMain07ThreeVsThree(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    forestSpider, venomSnake);
             else
                 setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
@@ -2415,6 +2422,7 @@ namespace ProjectLimitless.Battle
                 MainQuest02EncounterBridge.NotifyVictory(BattleEncounterContext.Spawn);
                 MainQuest03EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest04EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
+                MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 RecordAllyResources();
                 // 실제 전투불능 몬스터를 stable MonsterDefinition으로 한 번 집계한 결과만 적용·표시·저장합니다.
                 // 이름 문자열은 번역이나 개명으로 바뀔 수 있어 보상 판정 키로 사용하지 않습니다.

@@ -33,6 +33,6 @@ MonoBehaviour:
     Items: []
   prerequisiteQuestIds:
   - main_05_return_of_three
-  nextMainQuestId:
+  nextMainQuestId: main_07_deep_tracks
   startNpcId:
   turnInNpcId:

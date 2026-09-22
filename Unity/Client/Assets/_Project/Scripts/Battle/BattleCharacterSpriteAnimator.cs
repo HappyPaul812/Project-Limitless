@@ -29,7 +29,9 @@ namespace ProjectLimitless.Battle
             new CharacterVisualDefinition("companion_taeon", "BattleCharacters/Taeon/Animations/Taeon_Battle",
                 "BattleCharacters/Taeon/Taeon_Battle_Final", "Taeon"),
             new CharacterVisualDefinition("companion_miel", "BattleCharacters/Miel/Animations/Miel_Battle",
-                "BattleCharacters/Miel/Miel_Battle_Final", "Miel")
+                "BattleCharacters/Miel/Miel_Battle_Final", "Miel"),
+            new CharacterVisualDefinition("companion_paul", "BattleCharacters/Paul/Animations/Paul_Battle",
+                "BattleCharacters/Paul/Paul_Battle_Final", "Paul")
         };
 
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");

@@ -88,9 +88,26 @@ namespace ProjectLimitless.Editor
                     Objective("reach_shaded_forest", "태온, 미엘과 함께 초원 너머 그늘숲으로 이동하세요.", QuestObjectiveType.ReachLocation, MainQuest06ForestFlow.ForestLocationId),
                     Objective("inspect_anomaly_trace", "숲길 안쪽의 이상한 흔적을 확인하세요.", QuestObjectiveType.Interact, MainQuest06ForestFlow.AnomalyTraceId)
                 }, new RewardBundle { Experience = 20, Currency = 20, Items = System.Array.Empty<ItemReward>() },
-                new[] { MainQuest05ReturnFlow.QuestId });
+                new[] { MainQuest05ReturnFlow.QuestId }, MainQuest07FieldFlow.QuestId);
             main06.ConfigureNpcFlow(string.Empty);
             main06.ConfigureDescription("태온, 미엘과 함께 초원 너머 그늘숲으로 이동해, 평소 길을 벗어나 한 방향으로 퍼진 몬스터의 이동 흔적을 확인한다.");
+
+            QuestDefinition main07 = LoadOrCreate("Main07_DeepTracks");
+            main07.ConfigureForAudit(MainQuest07FieldFlow.QuestId, "깊게 패인 흔적", QuestType.Main,
+                new[]
+                {
+                    Objective("inspect_wheel_tracks", "숲길에 남은 두 줄의 깊은 흔적을 조사하세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.WheelTracksId),
+                    Objective("help_wounded_traveler", "숲길의 부상자에게 다가가세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.WoundedTravelerId),
+                    Objective("follow_wheel_tracks", "숲길에 남은 두 줄의 깊은 흔적을 따라가세요.", QuestObjectiveType.ReachLocation, MainQuest07FieldFlow.PaulTrailId),
+                    Objective("talk_to_paul", "진흙에 빠진 폴과 대화하세요.", QuestObjectiveType.TalkToNpc, MainQuest07FieldFlow.PaulId),
+                    Objective("win_paul_encounter", "주변 몬스터 무리를 물리치세요.", QuestObjectiveType.DefeatEncounter, MainQuest07FieldFlow.EncounterId),
+                    Objective("return_to_miel", "미엘에게 돌아가세요.", QuestObjectiveType.ReachLocation, MainQuest07FieldFlow.ReturnToMielId),
+                    Objective("miel_meets_paul", "미엘과 폴의 상태를 확인하세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.MielMeetingId),
+                    Objective("say_farewell_to_paul", "떠나기 전 폴과 대화하세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.PaulFarewellId)
+                }, new RewardBundle { Experience = 30, Currency = 25, Items = System.Array.Empty<ItemReward>() },
+                new[] { MainQuest06ForestFlow.QuestId });
+            main07.ConfigureNpcFlow(string.Empty);
+            main07.ConfigureDescription("숲길의 깊은 두 줄 바퀴 자국을 따라가 부상자를 돕고, 진흙에 빠진 마도사 폴과 만나 함께 몬스터를 물리친다.");
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);
@@ -98,6 +115,7 @@ namespace ProjectLimitless.Editor
             EditorUtility.SetDirty(main04);
             EditorUtility.SetDirty(main05);
             EditorUtility.SetDirty(main06);
+            EditorUtility.SetDirty(main07);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("Main 01·02 퀘스트 데이터와 Quest Log용 설명·목표 문구가 준비되었습니다.");
