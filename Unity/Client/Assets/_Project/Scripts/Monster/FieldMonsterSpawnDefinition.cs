@@ -27,5 +27,9 @@ namespace ProjectLimitless.Monster
         public Vector2 Position => position;
         public float ActivityRadius => activityRadius;
         public float RespawnSeconds => respawnSeconds;
+#if UNITY_EDITOR
+        public void Configure(string scene, string id, MonsterDefinition definition, Vector2 at, float radius, float respawn)
+        { sceneName=scene; spawnId=id; monster=definition; position=at; activityRadius=radius; respawnSeconds=respawn; }
+#endif
     }
 }

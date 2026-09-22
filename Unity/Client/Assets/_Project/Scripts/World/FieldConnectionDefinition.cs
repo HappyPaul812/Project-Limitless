@@ -25,5 +25,11 @@ namespace ProjectLimitless.World
         public string TargetSceneName => targetSceneName;
         public string TargetSpawnPointId => targetSpawnPointId;
         public bool ReplaceExistingSceneConnections => replaceExistingSceneConnections;
+#if UNITY_EDITOR
+        public void Configure(string scene, string id, string spawnId, Vector2 spawn, Vector2 exit,
+            Vector2 size, string targetScene, string targetSpawn, bool replace)
+        { sceneName=scene; connectionId=id; spawnPointId=spawnId; spawnPosition=spawn; transitionPosition=exit;
+          transitionSize=size; targetSceneName=targetScene; targetSpawnPointId=targetSpawn; replaceExistingSceneConnections=replace; }
+#endif
     }
 }

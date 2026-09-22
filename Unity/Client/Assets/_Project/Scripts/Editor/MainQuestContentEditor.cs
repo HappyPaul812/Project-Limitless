@@ -105,9 +105,25 @@ namespace ProjectLimitless.Editor
                     Objective("miel_meets_paul", "미엘과 폴의 상태를 확인하세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.MielMeetingId),
                     Objective("say_farewell_to_paul", "떠나기 전 폴과 대화하세요.", QuestObjectiveType.Interact, MainQuest07FieldFlow.PaulFarewellId)
                 }, new RewardBundle { Experience = 30, Currency = 25, Items = System.Array.Empty<ItemReward>() },
-                new[] { MainQuest06ForestFlow.QuestId });
+                new[] { MainQuest06ForestFlow.QuestId }, MainQuest08FieldFlow.QuestId);
             main07.ConfigureNpcFlow(string.Empty);
             main07.ConfigureDescription("숲길의 깊은 두 줄 바퀴 자국을 따라가 부상자를 돕고, 진흙에 빠진 마도사 폴과 만나 함께 몬스터를 물리친다.");
+
+            QuestDefinition main08 = LoadOrCreate("Main08_WhatTheyAvoid");
+            main08.ConfigureForAudit(MainQuest08FieldFlow.QuestId, "피하고 있는 것", QuestType.Main,
+                new[]
+                {
+                    Objective("inspect_avoid_trace_01", "몬스터들의 이동 흔적을 확인하세요. (1/3)", QuestObjectiveType.Interact, MainQuest08FieldFlow.Trace01),
+                    Objective("inspect_avoid_trace_02", "몬스터들의 이동 흔적을 확인하세요. (2/3)", QuestObjectiveType.Interact, MainQuest08FieldFlow.Trace02),
+                    Objective("inspect_avoid_trace_03", "몬스터들의 이동 흔적을 확인하세요. (3/3)", QuestObjectiveType.Interact, MainQuest08FieldFlow.Trace03),
+                    Objective("inspect_paul_tracks", "폴의 바퀴 자국을 따라가세요.", QuestObjectiveType.Interact, MainQuest08FieldFlow.WheelTracks),
+                    Objective("enter_silent_forest", "바퀴 자국을 따라 침묵의 숲길로 이동하세요.", QuestObjectiveType.ReachLocation, MainQuest08FieldFlow.Field03Entry),
+                    Objective("inspect_field03_trace", "침묵의 숲길 안쪽의 조사 흔적을 확인하세요.", QuestObjectiveType.Interact, MainQuest08FieldFlow.Investigation),
+                    Objective("reach_quiet_depths", "몬스터들이 사라진 숲길 안쪽으로 이동하세요.", QuestObjectiveType.ReachLocation, MainQuest08FieldFlow.DeepZone)
+                }, new RewardBundle { Experience = 30, Currency = 30, Items = System.Array.Empty<ItemReward>() },
+                new[] { MainQuest07FieldFlow.QuestId });
+            main08.ConfigureNpcFlow(string.Empty);
+            main08.ConfigureDescription("몬스터들이 특정 지역을 둥글게 피해 가는 흔적과 폴의 안정적인 바퀴 자국을 따라 침묵의 숲길 안쪽을 조사한다.");
 
             EditorUtility.SetDirty(main01);
             EditorUtility.SetDirty(main02);
@@ -116,6 +132,7 @@ namespace ProjectLimitless.Editor
             EditorUtility.SetDirty(main05);
             EditorUtility.SetDirty(main06);
             EditorUtility.SetDirty(main07);
+            EditorUtility.SetDirty(main08);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log("Main 01·02 퀘스트 데이터와 Quest Log용 설명·목표 문구가 준비되었습니다.");

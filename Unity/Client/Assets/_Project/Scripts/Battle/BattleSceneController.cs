@@ -2524,8 +2524,13 @@ namespace ProjectLimitless.Battle
                 {
                     if (!combatant.IsAlive) view.CharacterAnimation.PlayDefeat();
                     else if (combatant.CurrentHp < view.LastHp) view.CharacterAnimation.PlayHit();
-                    view.LastHp = combatant.CurrentHp;
                 }
+                if (view.MonsterAnimation != null)
+                {
+                    if (!combatant.IsAlive) view.MonsterAnimation.PlayDefeat();
+                    else if (combatant.CurrentHp < view.LastHp) view.MonsterAnimation.PlayHit();
+                }
+                view.LastHp = combatant.CurrentHp;
                 view.HitArea.interactable = combatant.IsAlive && (targetSelection ? canAttack : canInspect);
                 Color normalVisual = view.UsesPlaceholderVisual ? new Color(.12f, .3f, .48f, 1f) : view.SpriteImage.sprite == null ? Color.clear : Color.white;
                 view.SpriteImage.color = !combatant.IsAlive ? new Color(.35f, .35f, .4f, .45f) : targetSelection && !canAttack ? new Color(.42f, .45f, .5f, .42f) : normalVisual;

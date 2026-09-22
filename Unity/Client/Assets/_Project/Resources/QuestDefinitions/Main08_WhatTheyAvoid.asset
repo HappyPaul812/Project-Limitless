@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main08_WhatTheyAvoid
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_08_what_they_avoid
+  displayName: "\uD53C\uD558\uACE0 \uC788\uB294 \uAC83"
+  description: "\uBAAC\uC2A4\uD130\uB4E4\uC774 \uD2B9\uC815 \uC9C0\uC5ED\uC744 \uB465\uAE00\uAC8C
+    \uD53C\uD574 \uAC00\uB294 \uD754\uC801\uACFC \uD3F4\uC758 \uC548\uC815\uC801\uC778
+    \uBC14\uD034 \uC790\uAD6D\uC744 \uB530\uB77C \uCE68\uBB35\uC758 \uC232\uAE38
+    \uC548\uCABD\uC744 \uC870\uC0AC\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: inspect_avoid_trace_01
+    description: "\uBAAC\uC2A4\uD130\uB4E4\uC758 \uC774\uB3D9 \uD754\uC801\uC744
+      \uD655\uC778\uD558\uC138\uC694. (1/3)"
+    objectiveType: 3
+    targetId: field02_main08_avoid_trace_01
+    requiredCount: 1
+  - objectiveId: inspect_avoid_trace_02
+    description: "\uBAAC\uC2A4\uD130\uB4E4\uC758 \uC774\uB3D9 \uD754\uC801\uC744
+      \uD655\uC778\uD558\uC138\uC694. (2/3)"
+    objectiveType: 3
+    targetId: field02_main08_avoid_trace_02
+    requiredCount: 1
+  - objectiveId: inspect_avoid_trace_03
+    description: "\uBAAC\uC2A4\uD130\uB4E4\uC758 \uC774\uB3D9 \uD754\uC801\uC744
+      \uD655\uC778\uD558\uC138\uC694. (3/3)"
+    objectiveType: 3
+    targetId: field02_main08_avoid_trace_03
+    requiredCount: 1
+  - objectiveId: inspect_paul_tracks
+    description: "\uD3F4\uC758 \uBC14\uD034 \uC790\uAD6D\uC744 \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 3
+    targetId: field02_main08_paul_wheel_tracks
+    requiredCount: 1
+  - objectiveId: enter_silent_forest
+    description: "\uBC14\uD034 \uC790\uAD6D\uC744 \uB530\uB77C \uCE68\uBB35\uC758
+      \uC232\uAE38\uB85C \uC774\uB3D9\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field03_main08_entry
+    requiredCount: 1
+  - objectiveId: inspect_field03_trace
+    description: "\uCE68\uBB35\uC758 \uC232\uAE38 \uC548\uCABD\uC758 \uC870\uC0AC
+      \uD754\uC801\uC744 \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main08_investigation_trace
+    requiredCount: 1
+  - objectiveId: reach_quiet_depths
+    description: "\uBAAC\uC2A4\uD130\uB4E4\uC774 \uC0AC\uB77C\uC9C4 \uC232\uAE38
+      \uC548\uCABD\uC73C\uB85C \uC774\uB3D9\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field03_main08_deep_zone
+    requiredCount: 1
+  reward:
+    Experience: 30
+    Currency: 30
+    Items: []
+  prerequisiteQuestIds:
+  - main_07_deep_tracks
+  nextMainQuestId: 
+  startNpcId: 
+  turnInNpcId: 

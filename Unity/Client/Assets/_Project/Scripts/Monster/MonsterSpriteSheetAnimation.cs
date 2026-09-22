@@ -18,10 +18,14 @@ namespace ProjectLimitless.Monster
         private Sprite[] attackFrames = Array.Empty<Sprite>();
         private Sprite[] walkFrames = Array.Empty<Sprite>();
         private Sprite[] shootFrames = Array.Empty<Sprite>();
+        private Sprite[] hitFrames = Array.Empty<Sprite>();
+        private Sprite[] defeatFrames = Array.Empty<Sprite>();
         private float elapsed;
         private bool attacking;
         private bool shooting;
         private bool fieldMoving;
+        private bool reacting;
+        private bool defeated;
 
         public void Configure(SpriteRenderer target, MonsterDefinition monster)
         {
@@ -48,6 +52,11 @@ namespace ProjectLimitless.Monster
             if (monster != null && !string.IsNullOrWhiteSpace(monster.AttackFrameResourcePath))
                 attackFrames = LoadFrames(monster.AttackFrameResourcePath);
             if (monster != null) shootFrames = LoadFrames(monster.ShootFrameResourcePath);
+            if (monster != null && monster.ExplicitIdleFrames.Length > 0) idleFrames = monster.ExplicitIdleFrames;
+            if (monster != null && monster.ExplicitWalkFrames.Length > 0) walkFrames = monster.ExplicitWalkFrames;
+            if (monster != null && monster.ExplicitAttackFrames.Length > 0) attackFrames = monster.ExplicitAttackFrames;
+            if (monster != null) hitFrames = monster.ExplicitHitFrames;
+            if (monster != null) defeatFrames = monster.ExplicitDefeatFrames;
             ShowFrame(idleFrames, 0);
         }
 
@@ -66,10 +75,24 @@ namespace ProjectLimitless.Monster
             ShowFrame(attackFrames, 0);
         }
 
+        public void PlayHit()
+        {
+            if (defeated || hitFrames.Length == 0) return;
+            reacting = true; attacking = false; shooting = false; elapsed = 0f; ShowFrame(hitFrames, 0);
+        }
+
+        public void PlayDefeat()
+        {
+            defeated = true; reacting = false; attacking = false; shooting = false; elapsed = 0f;
+            ShowFrame(defeatFrames.Length > 0 ? defeatFrames : idleFrames,
+                Mathf.Max(0, (defeatFrames.Length > 0 ? defeatFrames : idleFrames).Length - 1));
+        }
+
         public void PlayShoot()
         {
             if (shootFrames.Length == 0) { PlayAttack(); return; }
             shooting = true;
+            if (defeated) return;
             attacking = false;
             elapsed = 0f;
             ShowFrame(shootFrames, 0);
@@ -86,18 +109,19 @@ namespace ProjectLimitless.Monster
         private void Update()
         {
             if (definition == null) return;
-            Sprite[] frames = attacking ? attackFrames : shooting ? shootFrames
+            Sprite[] frames = defeated ? defeatFrames : reacting ? hitFrames : attacking ? attackFrames : shooting ? shootFrames
                 : fieldMoving && walkFrames.Length > 0 ? walkFrames : idleFrames;
             if (frames.Length == 0) return;
 
             elapsed += Time.unscaledDeltaTime;
             int frameIndex = Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
-            if ((attacking || shooting) && frameIndex >= frames.Length)
+            if ((attacking || shooting || reacting) && frameIndex >= frames.Length)
             {
+                reacting = false;
                 StopAttackAndReturnToIdle();
                 return;
             }
-            ShowFrame(frames, frameIndex % frames.Length);
+            ShowFrame(frames, defeated ? frames.Length - 1 : frameIndex % frames.Length);
         }
 
         private static Sprite[] LoadFrames(string resourcePath)

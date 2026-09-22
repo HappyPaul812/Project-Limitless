@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: 06_ShadeBat
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: monster_shade_bat
+  displayName: "\uADF8\uB298\uBC15\uC950"
+  monsterLevel: 6
+  baseExperience: 28
+  currencyReward: 8
+  lootEntries:
+  - itemId: material_shade_bat_wing
+    dropChance: 0.35
+    minCount: 1
+    maxCount: 1
+  maxHp: 90
+  encounterSupportMonster: {fileID: 11400000, guid: d928b715e50287449ac9a5975b18b28a, type: 2}
+  fieldMoveSpeed: 1.05
+  minimumIdleTime: 0.8
+  maximumIdleTime: 2
+  fieldSprite: {fileID: -471355972, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  fieldAnimatorController: {fileID: 0}
+  placeholderColor: {r: 0.35, g: 0.8, b: 0.35, a: 1}
+  visualSize: {x: 0.95, y: 0.82}
+  idleSpriteSheet: {fileID: 0}
+  idleFrameSize: {x: 0, y: 0}
+  idleColumns: 1
+  idleFrameCount: 1
+  attackSpriteSheet: {fileID: 0}
+  attackFrameSize: {x: 0, y: 0}
+  attackColumns: 1
+  attackFrameCount: 1
+  animationFramesPerSecond: 8
+  visualScale: 0.72
+  sourceFacesRight: 1
+  explicitIdleFrames:
+  - {fileID: -471355972, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 468954469, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 132459498, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1505895101, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1274379570, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 1203110653, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  explicitWalkFrames:
+  - {fileID: 287362814, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 400572911, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -80493357, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 2136233386, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1748678016, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1182459954, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  explicitAttackFrames:
+  - {fileID: -1946107875, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1905288400, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 1007332372, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -173603788, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -2065647201, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -799645032, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  explicitHitFrames:
+  - {fileID: 341980307, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1818996786, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1445518606, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 1855976066, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -782767058, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -582387640, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  explicitDefeatFrames:
+  - {fileID: 1636676329, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -165581705, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 874335787, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 151427230, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: -1244416430, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  - {fileID: 1212296875, guid: 69746e837dc89fb46ae720df9e5b09bd, type: 3}
+  idleFrameResourcePath: 
+  walkFrameResourcePath: 
+  attackFrameResourcePath: 
+  shootFrameResourcePath: 
+  battleAttackPercent: 190
+  battleAgility: 15
+  useDefinitionBattleAgility: 1
+  basicAttackPoisonActions: 0
+  basicAttackPoisonCooldownActions: 0
+  basicAttackPoison:
+    id: poison
+    displayName: "\uB3C5"
+    damageMode: 0
+    power: 5
+    strength: 5
+  directAreaAttackName: 
+  directAreaAttackDamage: 0

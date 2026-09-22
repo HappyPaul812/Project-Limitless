@@ -19,6 +19,10 @@ namespace ProjectLimitless.Monster
         public float DropChance => dropChance;
         public int MinCount => minCount;
         public int MaxCount => maxCount;
+#if UNITY_EDITOR
+        public void Configure(string id, float chance, int minimum = 1, int maximum = 1)
+        { itemId = id; dropChance = Mathf.Clamp01(chance); minCount = Mathf.Max(1, minimum); maxCount = Mathf.Max(minCount, maximum); }
+#endif
     }
 
     /// <summary>
@@ -65,6 +69,12 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(1f)] private float animationFramesPerSecond = 10f;
         [SerializeField, Min(.1f)] private float visualScale = 1f;
         [SerializeField] private bool sourceFacesRight = true;
+        [Header("명시적 Sprite Frame Animation")]
+        [SerializeField] private Sprite[] explicitIdleFrames = System.Array.Empty<Sprite>();
+        [SerializeField] private Sprite[] explicitWalkFrames = System.Array.Empty<Sprite>();
+        [SerializeField] private Sprite[] explicitAttackFrames = System.Array.Empty<Sprite>();
+        [SerializeField] private Sprite[] explicitHitFrames = System.Array.Empty<Sprite>();
+        [SerializeField] private Sprite[] explicitDefeatFrames = System.Array.Empty<Sprite>();
         [Header("개별 프레임 Animation (Resources 경로)")]
         [SerializeField] private string idleFrameResourcePath;
         [SerializeField] private string walkFrameResourcePath;
@@ -74,6 +84,8 @@ namespace ProjectLimitless.Monster
         // 슬라임의 기준 공격력을 100으로 보며 몬스터 종류별 차이만 데이터에 둡니다.
         // 독침벌은 120으로 설정해 전투 생성 코드에 이름별 피해 숫자를 흩어 놓지 않습니다.
         [SerializeField, Min(1)] private int battleAttackPercent = 100;
+        [SerializeField, Min(1)] private int battleAgility = 10;
+        [SerializeField] private bool useDefinitionBattleAgility;
         // 0이면 독을 걸지 않고, 양수이면 정상 기본 공격 적중 시 그 횟수로 독을 부여·갱신합니다.
         [SerializeField, Min(0)] private int basicAttackPoisonActions;
         // 독을 정상 부여한 뒤 이 몬스터 자신의 행동 몇 회 동안 다시 부여하지 못하는지 나타냅니다.
@@ -111,17 +123,45 @@ namespace ProjectLimitless.Monster
         public float AnimationFramesPerSecond => Mathf.Max(1f, animationFramesPerSecond);
         public float VisualScale => Mathf.Max(.1f, visualScale);
         public bool SourceFacesRight => sourceFacesRight;
+        public Sprite[] ExplicitIdleFrames => explicitIdleFrames ?? System.Array.Empty<Sprite>();
+        public Sprite[] ExplicitWalkFrames => explicitWalkFrames ?? System.Array.Empty<Sprite>();
+        public Sprite[] ExplicitAttackFrames => explicitAttackFrames ?? System.Array.Empty<Sprite>();
+        public Sprite[] ExplicitHitFrames => explicitHitFrames ?? System.Array.Empty<Sprite>();
+        public Sprite[] ExplicitDefeatFrames => explicitDefeatFrames ?? System.Array.Empty<Sprite>();
         public string IdleFrameResourcePath => idleFrameResourcePath;
         public string WalkFrameResourcePath => walkFrameResourcePath;
         public string AttackFrameResourcePath => attackFrameResourcePath;
         public string ShootFrameResourcePath => shootFrameResourcePath;
-        public bool UsesSpriteSheetAnimation => idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0
+        public bool UsesSpriteSheetAnimation => ExplicitIdleFrames.Length > 0
+            || idleSpriteSheet != null && idleFrameSize.x > 0 && idleFrameSize.y > 0
             || !string.IsNullOrWhiteSpace(idleFrameResourcePath);
         public int BattleAttackPercent => Mathf.Max(1, battleAttackPercent);
+        public int BattleAgility => Mathf.Max(1, battleAgility);
+        public bool UseDefinitionBattleAgility => useDefinitionBattleAgility;
         public int BasicAttackPoisonActions => Mathf.Max(0, basicAttackPoisonActions);
         public int BasicAttackPoisonCooldownActions => Mathf.Max(0, basicAttackPoisonCooldownActions);
         public string DirectAreaAttackName => directAreaAttackName;
         public int DirectAreaAttackDamage => Mathf.Max(0, directAreaAttackDamage);
         public bool HasDirectAreaAttack => DirectAreaAttackDamage > 0 && !string.IsNullOrWhiteSpace(directAreaAttackName);
+
+#if UNITY_EDITOR
+        public void ConfigureContent(string id, string name, int level, int experience, int talent, int hp,
+            int attackPercent, int agility, float moveSpeed, Vector2 size, float scale, Sprite fieldVisual,
+            Sprite[] idle, Sprite[] walk, Sprite[] attack, Sprite[] hit, Sprite[] defeat,
+            MonsterDefinition support, MonsterLootEntry[] loot)
+        {
+            monsterId = id; displayName = name; monsterLevel = level; baseExperience = experience;
+            currencyReward = talent; maxHp = hp; battleAttackPercent = attackPercent; battleAgility = agility; useDefinitionBattleAgility = true;
+            fieldMoveSpeed = moveSpeed; visualSize = size; visualScale = scale; fieldSprite = fieldVisual;
+            explicitIdleFrames = idle ?? System.Array.Empty<Sprite>();
+            explicitWalkFrames = walk ?? System.Array.Empty<Sprite>();
+            explicitAttackFrames = attack ?? System.Array.Empty<Sprite>();
+            explicitHitFrames = hit ?? System.Array.Empty<Sprite>();
+            explicitDefeatFrames = defeat ?? System.Array.Empty<Sprite>();
+            encounterSupportMonster = support; lootEntries = loot ?? System.Array.Empty<MonsterLootEntry>();
+            sourceFacesRight = true; basicAttackPoisonActions = 0; basicAttackPoisonCooldownActions = 0;
+            directAreaAttackName = string.Empty; directAreaAttackDamage = 0; animationFramesPerSecond = 8f;
+        }
+#endif
     }
 }

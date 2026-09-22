@@ -21,5 +21,11 @@ namespace ProjectLimitless.World
         public string BushTemplateName => bushTemplateName;
         public Vector2[] ExtraTreePositions => extraTreePositions ?? new Vector2[0];
         public Vector2[] ExtraBushPositions => extraBushPositions ?? new Vector2[0];
+#if UNITY_EDITOR
+        public void Configure(string scene, Color ground, Color background, string tree, string bush,
+            Vector2[] trees, Vector2[] bushes)
+        { sceneName=scene; groundTint=ground; cameraColor=background; treeTemplateName=tree; bushTemplateName=bush;
+          extraTreePositions=trees; extraBushPositions=bushes; }
+#endif
     }
 }

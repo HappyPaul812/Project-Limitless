@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38e4cc860fdfae438565bb4db3b8eb0, type: 3}
+  m_Name: ShadeBatWing
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
+  itemId: material_shade_bat_wing
+  displayName: "\uADF8\uB298\uBC15\uC950\uC758 \uB0A0\uAC1C\uB9C9"
+  description: "\uADF8\uB298\uBC15\uC950\uC758 \uC587\uACE0 \uC9C8\uAE34 \uB0A0\uAC1C\uB9C9."
+  category: 2
+  maxStack: 99
+  buyPrice: 0
+  sellPrice: 7
+  icon: {fileID: 0}
+  iconTint: {r: 1, g: 1, b: 1, a: 1}
+  useType: 0
+  effectType: 0
+  effectAmount: 0
+  effectPreview: "\uD310\uB9E4 \uC7AC\uB8CC"

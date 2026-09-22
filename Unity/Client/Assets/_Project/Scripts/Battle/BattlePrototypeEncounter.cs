@@ -107,14 +107,25 @@ namespace ProjectLimitless.Battle
 
             MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;
             MonsterDefinition support = leader?.EncounterSupportMonster ?? leader;
-            BattleParticipantSetup[] enemies =
+            BattleParticipantSetup[] enemies;
+            if (leader?.MonsterId == "monster_moss_beetle")
+                enemies = new[] { CreateMonster(leader,"monster_moss_beetle_a","이끼갑충",FormationRow.Front,0,7), CreateMonster(leader,"monster_moss_beetle_b","이끼갑충",FormationRow.Front,1,7), CreateMonster(support,"forest_spider_1","숲거미",FormationRow.Rear,0,11) };
+            else if (leader?.MonsterId == "monster_shade_bat")
+                enemies = new[] { CreateMonster(support,"monster_moss_beetle_1","이끼갑충",FormationRow.Front,0,7), CreateMonster(leader,"monster_shade_bat_a","그늘박쥐",FormationRow.Rear,0,15), CreateMonster(leader,"monster_shade_bat_b","그늘박쥐",FormationRow.Rear,1,15) };
+            else enemies = new[]
             {
-                // 신규 몬스터의 지원 종류를 데이터로 연결해 다음 Field에서도 이름 분기 없이 확장합니다.
                 CreateMonster(support, $"{support?.MonsterId}_a", "몬스터", FormationRow.Front, 0, 11),
                 CreateMonster(support, $"{support?.MonsterId}_b", "몬스터", FormationRow.Front, 1, 10),
                 CreateMonster(leader, $"{leader?.MonsterId}_1", "몬스터", FormationRow.Rear, 0, 12)
             };
             return new BattleEncounterSetup(allies.ToArray(), enemies);
+        }
+
+        public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
+            int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
+        {
+            BattleEncounterSetup baseSetup=CreateThreeVsThree(playerName,playerJobId,playerPathId,playerMaxHp,playerAttack,playerAgility,null,null,bat);
+            return new BattleEncounterSetup(baseSetup.Allies,new[]{CreateMonster(snake,"venom_snake_1","맹독뱀",FormationRow.Front,0,12),CreateMonster(beetle,"monster_moss_beetle_1","이끼갑충",FormationRow.Front,1,7),CreateMonster(bat,"monster_shade_bat_1","그늘박쥐",FormationRow.Rear,0,15)});
         }
 
         /// <summary>
@@ -209,7 +220,8 @@ namespace ProjectLimitless.Battle
             int attackPercent = monster == null ? 100 : monster.BattleAttackPercent;
             int attack = (int)Math.Max(1L, ((long)SlimeBaseAttack * attackPercent + 99L) / 100L);
             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
-                new FormationSlot(row, column), monster?.MaxHp ?? 60, attack, agility, 0,
+                new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
+                monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
                 TargetRangeType.MeleePhysical, false, BattleParticipantVisualType.EncounterMonster,
                 monsterDefinition: monster);
         }
