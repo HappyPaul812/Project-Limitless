@@ -172,6 +172,9 @@ namespace ProjectLimitless.Core
             }
             active.Remove(state.Definition.QuestId);
             completed.Add(state.Definition.QuestId);
+            // 완료 기록·영구 해금·자동 편성을 같은 저장 경계 안에서 확정합니다.
+            if (state.Definition.QuestId == "main_09_reunion_in_silence")
+                CompanionRosterService.UnlockPaul(GameSessionData.SelectedJobId);
             if (trackedQuestId == state.Definition.QuestId) trackedQuestId = string.Empty;
             if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
             Changed?.Invoke();

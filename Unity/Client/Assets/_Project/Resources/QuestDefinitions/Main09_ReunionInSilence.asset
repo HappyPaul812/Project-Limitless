@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main09_ReunionInSilence
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_09_reunion_in_silence
+  displayName: "\uCE68\uBB35 \uC18D\uC758 \uC7AC\uD68C"
+  description: "\uD478\uB978 \uBE5B\uC758 \uD754\uC801\uC744 \uB530\uB77C \uD3F4\uACFC
+    \uC7AC\uD68C\uD558\uACE0, \uAC01\uC790 \uD655\uC778\uD55C \uC0AC\uC2E4\uC744
+    \uBAA8\uC544 \uC232 \uC548\uCABD\uC758 \uAC00\uACF5\uB41C \uC11D\uC7AC \uD754\uC801\uC744
+    \uC870\uC0AC\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: follow_blue_trace
+    description: "\uD478\uB978 \uBE5B\uC774 \uC0AC\uB77C\uC9C4 \uBC29\uD5A5\uC744
+      \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main09_blue_trace
+    requiredCount: 1
+  - objectiveId: inspect_paul_tracks
+    description: "\uC232\uAE38\uC5D0 \uB0A8\uC740 \uBC14\uD034 \uC790\uAD6D\uC744
+      \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main09_paul_tracks
+    requiredCount: 1
+  - objectiveId: reunite_with_paul
+    description: "\uC55E\uCABD\uC5D0\uC11C \uB4E4\uB824\uC624\uB294 \uBAA9\uC18C\uB9AC\uB97C
+      \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_paul
+    requiredCount: 1
+  - objectiveId: exchange_information
+    description: "\uD3F4\uACFC \uC11C\uB85C \uD655\uC778\uD55C \uC815\uBCF4\uB97C
+      \uC815\uB9AC\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_paul
+    requiredCount: 1
+  - objectiveId: inspect_structural_trace
+    description: "\uD3F4\uC774 \uBC1C\uACAC\uD55C \uBE44\uC815\uC0C1\uC801\uC778
+      \uAD6C\uC870\uBB3C\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main09_structural_trace
+    requiredCount: 1
+  - objectiveId: decide_to_continue_together
+    description: "\uD3F4\uACFC \uB2E4\uC74C \uC870\uC0AC\uC5D0 \uB300\uD574 \uC774\uC57C\uAE30\uD558\uC138\uC694."
+    objectiveType: 0
+    targetId: companion_paul
+    requiredCount: 1
+  reward:
+    Experience: 35
+    Currency: 35
+    Items: []
+  prerequisiteQuestIds:
+  - main_08_what_they_avoid
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:
