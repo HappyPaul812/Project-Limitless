@@ -113,7 +113,11 @@ namespace ProjectLimitless.Core
                 : new SaveSlotInfo(slotIndex, SaveSlotState.Invalid, null, error);
         }
 
-        /// <summary>향후 레벨업도 호출할 공용 API이며 현재 선택 슬롯 하나만 갱신합니다.</summary>
+        /// <summary>
+        /// 현재 실행 중인 Session과 각 시스템의 진행값을 안정적인 ID 중심 JSON으로 모읍니다.
+        /// 임시 파일을 먼저 쓴 뒤 선택 슬롯에 복사하므로 저장 도중 실패하면 기존 슬롯을 가능한 한 보존합니다.
+        /// 슬롯을 선택하지 않은 Editor 직접 진입에서는 사용자 슬롯을 임의로 만들지 않고 저장을 건너뜁니다.
+        /// </summary>
         public static bool SaveCurrentSession(string sceneId = null, string spawnPointId = null)
         {
             if (!IsValidSlotIndex(CurrentSlotIndex))
@@ -170,6 +174,9 @@ namespace ProjectLimitless.Core
 
         public static void RestoreSession(int slotIndex, GameSaveData data)
         {
+            // 기본 캐릭터와 성장값을 먼저 복원한 뒤, 각 서비스가 자기 저장 부분을 해석합니다.
+            // 마지막의 Quest 완료 확인은 예전 Save에 동료 명단 필드가 없어도 Main05/09 해금 결과를
+            // 재구성하기 위한 호환 경로이며, 수동 편성은 CompanionRosterService가 보존합니다.
             if (!Validate(data, out string error)) throw new InvalidOperationException(error);
             if (!SelectSlot(slotIndex)) throw new InvalidOperationException($"존재하지 않는 저장 슬롯입니다: {slotIndex}");
             Enum.TryParse(data.PlayerVisualId, true, out PlayerVisualType visual);

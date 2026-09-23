@@ -43,6 +43,8 @@ namespace ProjectLimitless.Player
 
         private void RefreshTarget()
         {
+            // 저장된 추적 Quest의 현재 목표 ID를 Scene의 실제 위치 등록부에 연결합니다.
+            // Scene 밖 목표처럼 위치가 없으면 임의 좌표를 가리키지 않고 안내를 숨깁니다.
             QuestRuntimeState tracked = QuestService.GetTrackedQuest();
             string id = tracked?.CurrentObjective?.TargetId;
             hasTarget = QuestNavigationTargetRegistry.TryGet(id, out target);
@@ -51,6 +53,8 @@ namespace ProjectLimitless.Player
 
         private void LateUpdate()
         {
+            // 카메라가 움직여도 대상의 화면 좌표를 매 프레임 다시 계산합니다. 화면 밖에서는
+            // 가장자리 방향 안내로 바꾸고, 대화 등 Modal 중에는 월드 안내를 숨깁니다.
             if (!hasTarget || target.Transform == null) { RefreshTarget(); return; }
             Camera camera = Camera.main;
             if (camera == null) { group.alpha = 0f; return; }

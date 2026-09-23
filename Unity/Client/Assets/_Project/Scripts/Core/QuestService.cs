@@ -7,6 +7,8 @@ namespace ProjectLimitless.Core
     public enum QuestState { Locked, Available, Active, Completed }
     public enum NpcQuestMarkerState { None, Available, ActiveObjective, ReadyToTurnIn }
 
+    // 저장 파일에는 Scene 오브젝트 대신 안정적인 목표 ID와 진행 횟수만 남깁니다.
+    // 불러올 때 QuestDefinition의 현재 목표 목록에 다시 맞춰 오래된 저장도 읽을 수 있습니다.
     [Serializable]
     public sealed class QuestObjectiveProgressData
     {
@@ -14,6 +16,7 @@ namespace ProjectLimitless.Core
         public int CurrentCount;
     }
 
+    // 진행 중인 퀘스트 한 개의 목표별 스냅샷입니다. 완료한 퀘스트는 아래 CompletedQuestIds로 옮깁니다.
     [Serializable]
     public sealed class ActiveQuestSaveData
     {
@@ -21,6 +24,7 @@ namespace ProjectLimitless.Core
         public QuestObjectiveProgressData[] Objectives = Array.Empty<QuestObjectiveProgressData>();
     }
 
+    // 메인·서브 퀘스트의 진행 상태와 화면에서 추적할 퀘스트 ID를 함께 저장합니다.
     [Serializable]
     public sealed class QuestProgressSaveData
     {
@@ -54,6 +58,8 @@ namespace ProjectLimitless.Core
             ? Definition.Objectives[CurrentObjectiveIndex] : null;
         internal bool Notify(QuestObjectiveType type, string targetId)
         {
+            // 이전 목표를 다시 조사해도 진행되지 않도록 현재 순서의 목표 하나만 비교합니다.
+            // 대화가 끝나거나 전투 승리가 확정된 호출자가 사건을 알릴 때만 횟수를 올립니다.
             int index = CurrentObjectiveIndex;
             if (index >= Definition.Objectives.Count) return false;
             QuestObjectiveDefinition objective = Definition.Objectives[index];

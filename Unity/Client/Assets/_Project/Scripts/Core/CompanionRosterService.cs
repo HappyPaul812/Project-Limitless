@@ -118,6 +118,8 @@ namespace ProjectLimitless.Core
 
         public static void ImportSaveData(CompanionRosterSaveData data)
         {
+            // 저장된 ID를 현재 동료 카탈로그와 대조하면서 중복·미해금·인원 초과를 걸러냅니다.
+            // null은 구버전 Save에 이 필드가 없었다는 뜻으로 받아 빈 편성에서 다시 시작합니다.
             Reset();
             if (data == null) return; // 구버전 Version 1 Save는 정식 동료가 없는 상태로 호환합니다.
             if (data.UnlockedCharacterIds != null)

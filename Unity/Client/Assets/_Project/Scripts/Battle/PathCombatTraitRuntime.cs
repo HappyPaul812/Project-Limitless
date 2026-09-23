@@ -63,6 +63,8 @@ namespace ProjectLimitless.Battle
 
         public void BeginActorAction(Combatant actor)
         {
+            // 잔향은 적별로 보관합니다. 그 적의 새 행동이 시작되면 미사용 잔향만 만료되고,
+            // 다른 적의 잔향과 길 소유자의 전투 상태는 그대로 유지됩니다.
             if (actor == null) return;
             foreach (TraitState state in states.Values.Where(item => item.PathId == HearingPathId && item.Echoes.Remove(actor)))
                 FeedbackOccurred?.Invoke($"{actor.DisplayName}의 잔향이 사라졌습니다.");
@@ -71,6 +73,8 @@ namespace ProjectLimitless.Battle
 
         public void CompleteActorAction(Combatant actor)
         {
+            // 회복탄력은 길 소유자의 성공 행동만 소비합니다. 잔향은 공격했던 적이 자기 행동을
+            // 마친 뒤 생성되므로 피해 계산 중에 미리 소비되지 않습니다.
             if (actor == null) return;
             TraitState ownerState = Find(actor);
             if (ownerState?.ResilienceActionsRemaining > 0) ownerState.ResilienceActionsRemaining--;
@@ -146,6 +150,8 @@ namespace ProjectLimitless.Battle
 
         public int ModifyDirectHealing(Combatant source, Combatant target, int rawHealing)
         {
+            // 치유는 공격 대상 선택과 별도 흐름입니다. 패턴은 같은 아군에게 남아 있는 적·아군 쌍을
+            // 읽기만 하며, 치유했다고 다음 직접 공격을 막을 기회가 사라지지 않습니다.
             TraitState state = Find(source);
             if (state == null || target == null) return rawHealing;
             if (state.PathId == EmotionalScarPathId && state.ResilienceActionsRemaining > 0) return Increase(rawHealing, 10);
