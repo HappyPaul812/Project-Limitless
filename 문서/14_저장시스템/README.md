@@ -1,5 +1,9 @@
 # 로컬 저장 시스템
 
+## Main09·파티 편성 확장
+
+Version1을 유지하고 `CompanionRoster`에 선택 필드 `Formation`(CharacterId + 기존 FormationRow), `HasManualComposition`, `PaulDefaultApplied`를 추가한다. 활성 동료 ID는 기존 `ActivePartyCharacterIds`를 그대로 사용한다. Formation 누락은 기존 기본 행으로, roster 누락은 완료 Quest에 맞는 해금 상태로 복원한다. Main09 마지막 대화에서 보상·완료 ID·Paul 해금·기본 편성을 같은 저장 시점에 확정하며 이미 수동 확정한 파티를 덮어쓰지 않는다. 일반 Battle만 저장 편성을 읽고 Story Override는 이를 변경하지 않는다. 세부 규칙은 `문서/10_전투/동료_파티_편성.md`를 따른다.
+
 ## 목적
 
 게임을 종료했다 다시 실행해도 기존 캐릭터로 테스트를 이어갈 수 있게 합니다.

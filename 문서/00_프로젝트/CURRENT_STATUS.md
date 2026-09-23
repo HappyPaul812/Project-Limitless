@@ -1,5 +1,11 @@
 # Project-Limitless 현재 개발 상태
 
+- Main09 `main_09_reunion_in_silence` 「침묵 속의 재회」 구현: Field03의 푸른 빛 방향→평행 바퀴 자국→폴 재회→정보 교환→가공된 석재→폴의 합류 결정, stable Objective 6개. 원인·배후·빛의 정체는 미확정이다. 완료 보상 EXP35·탈렌트35·아이템 없음, `companion_paul` 1회 영구 해금. Main10 「침묵의 중심」은 문서 제안만 남겼다.
+- Main05 완료 후 시작 마을의 기존 파티 안내인에서 Player 고정+해금 동료 최대 2명 편성, 전열/후열, 초상화·직업·길·선택 상태, 확정/취소, 공격 역할 부족 경고를 제공한다. Guardian는 폴 최초 해금 시 미엘+폴, Healer는 태온+폴, Sharpshooter/Fighter/Mage는 태온+미엘을 기본 선택하며 수동 편성은 보존한다.
+- 일반 Battle은 저장한 동료·행을 사용한다. Main03/04/07 Story 임시 편성은 독립적으로 유지된다. Save Version1에 선택적 Formation·수동 편성 플래그를 추가했고 구버전 누락 필드는 기본값으로 복원한다. `UserData/Main09Audit` 격리 폴더에서 A~E Save→Bootstrap→Continue, 세 일반 전투 조합 승리, 폴 마도사 스킬, Main07 Story 참가 구성, Main08→09 같은 Scene 연결을 Unity Play Mode 115개 검사로 확인했다. 상점·인벤토리 및 기존 퀘스트 서비스 감사도 통과했다.
+- 사용자 확인: 마을 파티 화면의 실제 해상도별 글자·초상화 배치와 Field03의 조사 표식이 지형과 겹치지 않는지 Game View에서 시각 확인. MCP 화면 캡처가 오래된 프레임을 반환하고 외부 패키지의 PlayerLoop 진단을 남겨 자동 시각 QA는 제외했다. 추가 전투·Main10 구현은 다음 작업 후보가 아니다. 다음 권장 작업은 Main09 실제 이동 경로의 시각 QA와 Main10의 별도 기획 확정이다.
+- 관련 기능 commit: `a93fef8`(파티), `6b9829d`(Main09). GitHub push는 하지 않았다.
+
 - `Grave_Wight_Battle_Final.png` 사용자 최종 원본을 수정 없이 정식 등록하고 `monster_grave_wight` 묘지 망자를 구현했다. Lv7·HP125·공격20·민첩8·EXP32·탈렌트9의 느린 전열형 언데드이며 향후 `Dungeon_01` 「침묵의 지하묘지」에서 사용한다.
 - 실제 1254×1254 RGBA의 Alpha 배치를 분석해 209×220px 6프레임씩 Idle/Walk/Attack/Hit/Defeat를 연결했다. Defeat는 왼쪽→오른쪽 F00→F05로 한 번 재생한 뒤 마지막 프레임을 유지한다. Point·Clamp·Mip Map Off·sRGB/Alpha On·Uncompressed·PPU 209로 Import했다.
 - `material_grave_wight_fragment` 망자의 파편(판매 8 탈렌트, 드롭 35%, 아이콘 null/fallback)을 추가했다. 격리된 Battle 검증에서 묘지 망자 1마리와 전열 2마리 구성, 우향, 애니메이션 전환, HP/공격/민첩, 2마리 EXP64·탈렌트18·드롭 집계를 확인했다. 기존 6종 Definition과 이끼갑충·그늘박쥐 프레임 연결을 회귀 검사했으며 최종 Console Error/Warning 0이다. 기능 commit: `e80943f`.
