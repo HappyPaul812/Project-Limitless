@@ -1,12 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+- 2026-09-24 유지보수: 실제 `BattleSkillCatalog`·상태 런타임·길 특성과 문서를 대조해 스킬/전투 정본, 미구현 후보, 과거 프리뷰를 분리했다. 프로젝트 전용 핵심 C#의 Quest·Save·Battle 길 특성·Companion·Navigation 설명 주석을 보강하고, `AGENTS.md`에 비전공자용 주석과 백그라운드 검증·화면 포커스 보호 규칙을 추가했다. 기능 동작은 변경하지 않았다. 백그라운드 Roslyn 전체 Runtime 컴파일 오류 0, 변경 Markdown 상대 링크와 관련 파일 diff 검사는 통과했다. Unity Editor가 실행 중이지 않아 Test Runner·Console·Main10 최종 Game View는 이번 세션에 재확인하지 못했다. 입구 시각 확인은 사용자 직접 확인 사항이다. 공식 `마음의 상처의 길`과 현재 Path Asset 표시명 `마음의 상처`의 불일치는 별도 Asset 수정 사항이다. 관련 commit: `d6e2fb2`(문서), `95ae1df`(규칙), `39ca7bd`(주석).
+
 - Main10 `main_10_center_of_silence` 「침묵의 중심」의 7개 순차 조사 목표를 Field03에 구현했다. Main09 석재를 재사용하고 입구를 단계별로 공개한다. 완료 보상은 EXP40·탈렌트40·아이템 없음이며 Dungeon_01 Scene이 없을 때 입구는 안내 대사로 안전하게 끝난다. 원인·배후·빛의 정체는 공개하지 않았다.
 - 어제 Unity Play Mode의 격리 저장 감사에서 61개 검사가 통과했고, 입구 위치를 위로 조정한 뒤 재실행한 감사도 통과했다. 이번 세션에는 Unity MCP와 Editor가 연결되지 않아 조정 후 최종 Game View 시각 확인 및 Console 재확인은 수행하지 못했다. 사용자 확인: Field03 실제 화면에서 입구와 HUD의 겹침, 조사 표식의 가독성을 확인한다. 다음 권장 작업은 이 시각 확인 후 Dungeon_01 별도 기획이다. 기능 commit: `91eee5f`.
 
-- Main09 `main_09_reunion_in_silence` 「침묵 속의 재회」 구현: Field03의 푸른 빛 방향→평행 바퀴 자국→폴 재회→정보 교환→가공된 석재→폴의 합류 결정, stable Objective 6개. 원인·배후·빛의 정체는 미확정이다. 완료 보상 EXP35·탈렌트35·아이템 없음, `companion_paul` 1회 영구 해금. Main10 「침묵의 중심」은 문서 제안만 남겼다.
+- Main09 `main_09_reunion_in_silence` 「침묵 속의 재회」 구현: Field03의 푸른 빛 방향→평행 바퀴 자국→폴 재회→정보 교환→가공된 석재→폴의 합류 결정, stable Objective 6개. 원인·배후·빛의 정체는 미확정이다. 완료 보상 EXP35·탈렌트35·아이템 없음, `companion_paul` 1회 영구 해금. 이후 Main10도 위에 기록한 범위로 구현되었다.
 - Main05 완료 후 시작 마을의 기존 파티 안내인에서 Player 고정+해금 동료 최대 2명 편성, 전열/후열, 초상화·직업·길·선택 상태, 확정/취소, 공격 역할 부족 경고를 제공한다. Guardian는 폴 최초 해금 시 미엘+폴, Healer는 태온+폴, Sharpshooter/Fighter/Mage는 태온+미엘을 기본 선택하며 수동 편성은 보존한다.
 - 일반 Battle은 저장한 동료·행을 사용한다. Main03/04/07 Story 임시 편성은 독립적으로 유지된다. Save Version1에 선택적 Formation·수동 편성 플래그를 추가했고 구버전 누락 필드는 기본값으로 복원한다. `UserData/Main09Audit` 격리 폴더에서 A~E Save→Bootstrap→Continue, 세 일반 전투 조합 승리, 폴 마도사 스킬, Main07 Story 참가 구성, Main08→09 같은 Scene 연결을 Unity Play Mode 115개 검사로 확인했다. 상점·인벤토리 및 기존 퀘스트 서비스 감사도 통과했다.
-- 사용자 확인: 마을 파티 화면의 실제 해상도별 글자·초상화 배치와 Field03의 조사 표식이 지형과 겹치지 않는지 Game View에서 시각 확인. MCP 화면 캡처가 오래된 프레임을 반환하고 외부 패키지의 PlayerLoop 진단을 남겨 자동 시각 QA는 제외했다. 추가 전투·Main10 구현은 다음 작업 후보가 아니다. 다음 권장 작업은 Main09 실제 이동 경로의 시각 QA와 Main10의 별도 기획 확정이다.
+- 사용자 확인: 마을 파티 화면의 실제 해상도별 글자·초상화 배치와 Field03의 조사 표식이 지형과 겹치지 않는지 Game View에서 시각 확인. MCP 화면 캡처가 오래된 프레임을 반환하고 외부 패키지의 PlayerLoop 진단을 남겨 자동 시각 QA는 제외했다. 이 문단의 다음 작업 제안은 Main10 구현 전 기록이며 현재 계획은 문서 상단을 따른다.
 - 관련 기능 commit: `a93fef8`(파티), `6b9829d`(Main09). GitHub push는 하지 않았다.
 
 - `Grave_Wight_Battle_Final.png` 사용자 최종 원본을 수정 없이 정식 등록하고 `monster_grave_wight` 묘지 망자를 구현했다. Lv7·HP125·공격20·민첩8·EXP32·탈렌트9의 느린 전열형 언데드이며 향후 `Dungeon_01` 「침묵의 지하묘지」에서 사용한다.
@@ -23,9 +25,9 @@
 - Unity 정적 로드와 Field 03 Play Mode에서 Scene·Player·전환 1개·몬스터 6개·프레임 애니메이터 6개, 그늘박쥐 일반 전투 진입과 화면 방향을 확인했다. 두 몬스터의 Attack·Hit·Defeat 최종 프레임 전환과 Encounter A/B/C 구성을 런타임 검사했다. 직접 Scene 진입 검증에서는 저장 슬롯이 없어 자동 저장 생략 Warning 2건이 발생했으며 기능 오류는 없었다. Save A~G의 실제 Bootstrap 왕복과 모든 승패/도주 조작은 후속 수동 확인이 필요하다. 기능 commit: `1c10492`.
 
 - Main 07 `main_07_deep_tracks` 「깊게 패인 흔적」을 구현했다. Main 06 완료 뒤 `Field_02`에서 두 줄 바퀴 자국 조사 → 부상자 확인 → 자국 추적 → 폴 첫 대화 → 지정 전투 → 미엘에게 복귀 → 미엘·폴 첫 만남 → 폴 작별 순서로 진행하며, stable Objective/Actor/Encounter ID 8개로 저장한다.
-- 폴(`companion_paul`)은 28세 남성 마도사·이동의 길 휠체어 사용자다. 공식 `Portrait_Paul.png`와 `Paul_Battle_Final.png`를 연결했고, 전투 시 후열에서 기존 파이어볼·썬더볼트·가이아의 벽과 이동의 길 보정을 사용한다. Main 07에서는 Player·Taeon·Paul 대 숲거미 2·맹독뱀 1의 Story Temporary Companion으로만 참가하며, 미엘은 전투에서 제외되고 폴은 영구 해금/기본 파티에 추가되지 않는다.
+- 폴(`companion_paul`)은 28세 남성 마도사·지체의 길 휠체어 사용자다. 공식 `Portrait_Paul.png`와 `Paul_Battle_Final.png`를 연결했고, 전투 시 후열에서 기존 파이어볼·썬더볼트·가이아 웰과 지체의 길 보정을 사용한다. Main 07에서는 Player·Taeon·Paul 대 숲거미 2·맹독뱀 1의 Story Temporary Companion으로만 참가하며, 미엘은 전투에서 제외되고 폴은 영구 해금/기본 파티에 추가되지 않는다.
 - Main 07 보상은 EXP 30·탈렌트 25·아이템 없음이며 완료 신호 반복에도 한 번만 지급된다. 임시 슬롯 5에서 A~G(Available, 각 핵심 진행 단계, Completed)를 실제 저장→로드→복원해 Scene·Objective·파티·보상과 중복 방지를 확인하고 삭제했다.
-- Unity MCP에서 폴 초상화 stable ID 조회, 전투 시트 33프레임, Idle·Attack·Guard·Skill·Hit·Defeat Animator, 후열 마도사/이동의 길, 마도사 3스킬, Main 07 참가자 구성을 확인했다. Main 07 필드 진행·대화 Modal·보상도 Play Mode에서 검증했으며 최종 Console Error/Warning 0이다. 기능 commit: `48420ea`. 다음 권장 작업은 Main 08 상세 설계다.
+- Unity MCP에서 폴 초상화 stable ID 조회, 전투 시트 33프레임, Idle·Attack·Guard·Skill·Hit·Defeat Animator, 후열 마도사/지체의 길, 마도사 3스킬, Main 07 참가자 구성을 확인했다. Main 07 필드 진행·대화 Modal·보상도 Play Mode에서 검증했으며 최종 Console Error/Warning 0이다. 기능 commit: `48420ea`. 이 문단의 다음 작업 제안은 당시 기록이다.
 - Main 06 `main_06_into_the_forest` 「숲으로」를 구현했다. Main 05 완료 직후에는 Available을 유지하고 정상 동선으로 `Field_01`에 나서면 시작된다. `Field_02` 진입 → `field02_main06_anomaly_trace` 조사 두 목표를 stable ID로 진행하며, 흔적은 몬스터들이 평소 길을 벗어나 한 방향으로 넓게 퍼진 사실만 전달한다.
 - 조사 대화는 태온 2쪽·미엘 1쪽·플레이어 1쪽으로 구성했다. 태온·미엘 공식 초상화와 플레이어 null-safe 배치를 기존 `DialoguePortraitCatalog`로 사용하고, 대화 완료 뒤에만 퀘스트를 완료한다. 보상은 EXP 20·탈렌트 20·아이템 없음이며 반복 신호에도 한 번만 지급된다.
 - Unity MCP Play Mode에서 Main 05 완료→Main 06 Available, Field_01 시작, Field_02 진입 목표 갱신, 조사 대화 Modal 열기/닫기, 완료와 EXP/탈렌트 20 지급, 중복 방지를 확인했다. 임시 슬롯 5를 재사용해 A~E 상태를 각각 저장→로드→복원하고 Scene·Objective·태온/미엘 정식 동료·보상을 확인한 뒤 삭제했다. Field_02 기존 몬스터 6개 로드와 최종 Console Error/Warning 0을 확인했다. 기능 commit: `a4b50a5`.
