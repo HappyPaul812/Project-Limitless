@@ -136,3 +136,13 @@ Project-Limitless 작업을 시작할 때 다음 순서로 현재 맥락을 확�
 - Camera 화면 전체가 맵 밖 검은 영역을 보여주지 않도록 viewport 크기를 고려한다.
 - 실제 Exit 구간만 Boundary Collider를 통과할 수 있게 한다.
 - `SceneSpawnPoint`와 `SceneTransitionTrigger`를 겹치지 않게 배치한다.
+
+## 13. 프로젝트 C# 설명 주석
+
+`Assets/_Project/`의 C# 코드는 비전공자인 프로젝트 소유자가 흐름을 따라갈 수 있도록 중요한 로직에 한국어 설명 주석을 작성한다. 클래스의 역할, 처리 이유, 데이터와 상태값의 의미, 실패 시 처리, 다른 시스템과의 연결을 설명한다. 특히 Quest 단계 전환, Save/Load와 구버전 호환, Battle 대상과 전열/후열, 버프·디버프·쿨타임, Party/Companion과 Story Battle 임시 편성, World 전환과 Navigation을 우선한다. 기존 코드를 수정할 때 관련 주석도 현재 동작에 맞게 갱신한다. 명백한 한 줄을 번역하는 주석은 반복하지 않는다.
+
+## 14. 백그라운드 검증과 화면 포커스
+
+모든 자동 검증은 가능한 한 백그라운드·비대화형으로 실행한다. 사용자 요청 없이 Unity 창이나 Game View를 앞으로 띄우거나 OS 창 활성화, 키보드·마우스 포커스 전환, Computer Use 화면 조작을 검증 목적으로 수행하지 않는다. Play Mode도 가능한 한 백그라운드로 실행한다.
+
+검증 수단은 Command Line/Batch Mode → Unity Test Framework 백그라운드 실행 → 포커스 전환 없는 Unity MCP 상태·Console·Play Mode 조회 → 로그·결과 파일 분석 순으로 선택한다. 시각 확인에 foreground가 필수이거나 백그라운드 실행이 불가능하면 자동 검증하지 않고 사용자 직접 확인 항목으로 보고한다. 이 규칙은 앞으로 모든 Codex 작업에 적용한다.
