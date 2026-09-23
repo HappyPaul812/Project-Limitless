@@ -93,19 +93,14 @@ namespace ProjectLimitless.Battle
             MonsterDefinition encounteredMonster)
         {
             var allies = new List<BattleParticipantSetup>();
-            if (CompanionRosterService.IsActivePartyMember(CompanionRosterService.TaeonId))
-                allies.Add(new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
-                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
-                    pathId: PathCombatTraitRuntime.IntellectualPathId));
             allies.Add(new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
-                    new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
+                    CompanionRosterService.GetSlot("player"), playerMaxHp, playerAttack, playerAgility, 0,
                     ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId));
-            if (CompanionRosterService.IsActivePartyMember(CompanionRosterService.MielId))
-                allies.Add(new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Rear, 0), 104, 8, 12, 0,
-                    TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미",
-                    pathId: PathCombatTraitRuntime.EmotionalScarPathId));
+            foreach (string id in CompanionRosterService.ActivePartyCharacterIds)
+            {
+                CompanionDefinition definition = CompanionCatalog.Find(id);
+                if (definition != null) allies.Add(definition.CreateParticipant(CompanionRosterService.GetSlot(id)));
+            }
 
             MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;
             MonsterDefinition support = leader?.EncounterSupportMonster ?? leader;

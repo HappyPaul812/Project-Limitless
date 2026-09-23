@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d29285d5e6cd64aa2c6eb0340b50d7, type: 3}
+  m_Name: 03_Paul
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.CompanionDefinition
+  CharacterId: companion_paul
+  DisplayName: "\uD3F4"
+  JobId: mage
+  JobName: "\uB9C8\uB3C4\uC0AC"
+  PathId: path.mobility
+  PathName: "\uC9C0\uCCB4\uC758 \uAE38"
+  DefaultRow: 1
+  BasicRange: 2
+  MaxHp: 96
+  Attack: 14
+  Agility: 10

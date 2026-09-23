@@ -61,12 +61,24 @@ namespace ProjectLimitless.Core
 
         /// <summary>0은 아직 Bootstrap에서 슬롯을 고르지 않았다는 뜻입니다.</summary>
         public static int CurrentSlotIndex { get; private set; }
+#if UNITY_EDITOR
+        // Play Mode 감사는 사용자 슬롯과 분리된 폴더에서 실제 Save/Continue 경로를 실행합니다.
+        public static string AuditSaveDirectory { get; set; }
+
+        /// <summary>Editor 감사 뒤 선택 슬롯과 격리 폴더를 함께 해제해 실제 게임 세션으로 새지 않게 합니다.</summary>
+        public static void FinishAudit()
+        {
+            CurrentSlotIndex = 0;
+            AuditSaveDirectory = null;
+        }
+#endif
 
         public static string SaveDirectoryPath
         {
             get
             {
 #if UNITY_EDITOR
+                if (!string.IsNullOrEmpty(AuditSaveDirectory)) return AuditSaveDirectory;
                 // dataPath는 .../Unity/Client/Assets입니다. 부모에서 계산하므로 PC의 드라이브 경로를 하드코딩하지 않습니다.
                 string clientRoot = Directory.GetParent(Application.dataPath)?.FullName ?? Application.dataPath;
                 return Path.Combine(clientRoot, "UserData", "Saves");
@@ -171,6 +183,10 @@ namespace ProjectLimitless.Core
             InventoryService.ImportSaveData(data.Inventory);
             QuestService.ImportSaveData(data.QuestProgress);
             CompanionRosterService.ImportSaveData(data.CompanionRoster);
+            if (QuestService.GetState("main_05_return_of_three") == QuestState.Completed)
+                CompanionRosterService.UnlockIntroCompanions();
+            if (QuestService.GetState("main_09_reunion_in_silence") == QuestState.Completed)
+                CompanionRosterService.UnlockPaul(GameSessionData.SelectedJobId);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
             // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
             // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.
@@ -215,6 +231,9 @@ namespace ProjectLimitless.Core
         /// </summary>
         public static void TryMigrateLegacySaveToSlotOne()
         {
+#if UNITY_EDITOR
+            if (!string.IsNullOrEmpty(AuditSaveDirectory)) return;
+#endif
             string slotOnePath = GetSaveFilePath(1);
             if (File.Exists(slotOnePath) || !File.Exists(LegacySaveFilePath)) return;
             if (!TryRead(LegacySaveFilePath, out _, out string error)) { Debug.LogWarning($"기존 단일 저장을 슬롯 1로 옮기지 않았습니다: {error}"); return; }

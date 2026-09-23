@@ -148,7 +148,7 @@ namespace ProjectLimitless.NPC
         /// <summary>Scene의 모든 NPC 중 상호작용 반경 안에서 가장 가까운 한 명을 찾습니다.</summary>
         private NpcController FindNearestNpc()
         {
-            NpcController[] npcs = FindObjectsByType<NpcController>(FindObjectsSortMode.None);
+            NpcController[] npcs = FindObjectsByType<NpcController>();
             NpcController nearestNpc = null;
             // 제곱 거리를 비교하면 실제 거리 계산에 필요한 제곱근 연산을 피하면서 같은 결과를 얻습니다.
             float closestDistance = interactionRadius * interactionRadius;

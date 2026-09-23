@@ -48,6 +48,13 @@ namespace ProjectLimitless.NPC
         {
             if (MainQuest05ReturnFlow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;
+            if (role == VillageNpcRoleType.PartyManager)
+            {
+                if (QuestService.GetState(MainQuest05ReturnFlow.QuestId) == QuestState.Completed)
+                    PartyManagementPresenter.OpenAt(npc.transform);
+                else DialoguePresenter.Instance?.Show(npcId, npc.DisplayName, "동료와 함께 돌아오시면 편성을 도와드리겠습니다.");
+                return;
+            }
             if (role == VillageNpcRoleType.GeneralShop)
             {
                 DialoguePresenter.Instance?.ShowConfirmation(

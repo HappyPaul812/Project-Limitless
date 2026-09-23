@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d29285d5e6cd64aa2c6eb0340b50d7, type: 3}
+  m_Name: 01_Taeon
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.CompanionDefinition
+  CharacterId: companion_taeon
+  DisplayName: "\uD0DC\uC628"
+  JobId: guardian
+  JobName: "\uC218\uD638\uC790"
+  PathId: path.intellectual
+  PathName: "\uC9C0\uC801\uC758 \uAE38"
+  DefaultRow: 0
+  BasicRange: 0
+  MaxHp: 132
+  Attack: 10
+  Agility: 9

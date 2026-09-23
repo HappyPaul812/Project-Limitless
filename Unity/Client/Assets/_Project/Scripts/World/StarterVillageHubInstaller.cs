@@ -24,7 +24,7 @@ namespace ProjectLimitless.World
         {
             if (scene.name != SceneName || GameObject.Find(RootName) != null) return;
 
-            NpcController template = Object.FindFirstObjectByType<NpcController>();
+            NpcController template = Object.FindAnyObjectByType<NpcController>();
             if (template == null)
             {
                 Debug.LogError("시작 마을 허브의 기준 NPC를 찾지 못했습니다.");

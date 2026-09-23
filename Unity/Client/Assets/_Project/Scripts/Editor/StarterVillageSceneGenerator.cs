@@ -374,7 +374,7 @@ namespace ProjectLimitless.EditorTools
                 scene = EditorSceneManager.OpenScene(BootstrapScenePath, OpenSceneMode.Additive);
             }
 
-            BootstrapLoader loader = UnityObject.FindFirstObjectByType<BootstrapLoader>();
+            BootstrapLoader loader = UnityObject.FindAnyObjectByType<BootstrapLoader>();
             if (loader == null)
             {
                 throw new InvalidOperationException("Bootstrap Scene에서 BootstrapLoader를 찾지 못했습니다.");

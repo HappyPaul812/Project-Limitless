@@ -28,7 +28,7 @@ namespace ProjectLimitless.World
             PlayerController player = null;
             for (int frame = 0; frame < 10 && player == null; frame++)
             {
-                player = FindFirstObjectByType<PlayerController>();
+                player = FindAnyObjectByType<PlayerController>();
                 if (player == null) yield return null;
             }
 

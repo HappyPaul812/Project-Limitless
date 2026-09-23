@@ -67,7 +67,7 @@ namespace ProjectLimitless.World
         {
             if (size.x <= 0f || size.y <= 0f) return;
 
-            CameraFollow cameraFollow = FindFirstObjectByType<CameraFollow>();
+            CameraFollow cameraFollow = FindAnyObjectByType<CameraFollow>();
             if (cameraFollow != null) cameraFollow.SetWorldBounds(this);
         }
 
