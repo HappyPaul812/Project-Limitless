@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main10_CenterOfSilence
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_10_center_of_silence
+  displayName: "\uCE68\uBB35\uC758 \uC911\uC2EC"
+  description: "Field_03 \uAE4A\uC740 \uACF3\uC5D0\uC11C \uAC00\uACF5\uB41C \uC11D\uC7AC\uC758
+    \uC5F0\uACB0\uACFC \uACE0\uC694\uD574\uC9C0\uB294 \uBC29\uD5A5\uC744 \uB530\uB77C\uAC00
+    \uCE68\uBB35\uC758 \uC9C0\uD558\uBB18\uC9C0 \uC785\uAD6C\uB97C \uD655\uC778\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: return_to_structural_trace
+    description: "\uD3F4\uC774 \uBC1C\uACAC\uD55C \uAD6C\uC870\uBB3C\uC744 \uB2E4\uC2DC
+      \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main09_structural_trace
+    requiredCount: 1
+  - objectiveId: examine_stonework
+    description: "\uAC00\uACF5\uB41C \uB3CC\uC758 \uD754\uC801\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_stonework
+    requiredCount: 1
+  - objectiveId: follow_the_silence
+    description: "\uC18C\uB9AC\uAC00 \uC0AC\uB77C\uC9C0\uB294 \uBC29\uD5A5\uC744
+      \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_silence_direction
+    requiredCount: 1
+  - objectiveId: find_underground_descent
+    description: "\uC9C0\uD558\uB85C \uC774\uC5B4\uC9C0\uB294 \uD754\uC801\uC744
+      \uCC3E\uC73C\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_underground_descent
+    requiredCount: 1
+  - objectiveId: reveal_catacomb_entrance
+    description: "\uAC00\uB824\uC9C4 \uAD6C\uC870\uBB3C\uC758 \uC785\uAD6C\uB97C
+      \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_catacomb_entrance
+    requiredCount: 1
+  - objectiveId: inspect_catacomb_entrance
+    description: "\uC9C0\uD558\uBB18\uC9C0 \uC785\uAD6C\uB97C \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_catacomb_entrance
+    requiredCount: 1
+  - objectiveId: prepare_to_enter_catacomb
+    description: "\uCE68\uBB35\uC758 \uC9C0\uD558\uBB18\uC9C0 \uC785\uAD6C\uB97C
+      \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field03_main10_catacomb_entrance
+    requiredCount: 1
+  reward:
+    Experience: 40
+    Currency: 40
+    Items: []
+  prerequisiteQuestIds:
+  - main_09_reunion_in_silence
+  nextMainQuestId: 
+  startNpcId: 
+  turnInNpcId: 

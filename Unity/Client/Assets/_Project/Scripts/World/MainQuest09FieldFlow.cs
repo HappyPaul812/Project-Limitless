@@ -54,7 +54,11 @@ namespace ProjectLimitless.World
             QuestRuntimeState quest = QuestService.ActiveMainQuest;
             int index = quest?.Definition.QuestId == QuestId ? quest.CurrentObjectiveIndex : -1;
             blue.SetActive(index == 0); tracks.SetActive(index == 1);
-            paul.SetActive(index >= 2 && index <= 5); structure.SetActive(index == 4);
+            paul.SetActive(index >= 2 && index <= 5);
+            // Main10의 첫 조사에서 같은 석재를 다시 사용합니다. 복제 오브젝트는 만들지 않습니다.
+            bool revisiting = QuestService.ActiveMainQuest?.Definition.QuestId == MainQuest10FieldFlow.QuestId
+                && QuestService.ActiveMainQuest.CurrentObjectiveIndex == 0;
+            structure.SetActive(index == 4 || revisiting);
         }
 
         private GameObject Site(string id, string label, Vector2 position)
