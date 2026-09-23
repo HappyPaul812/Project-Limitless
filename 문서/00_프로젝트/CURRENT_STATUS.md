@@ -1,5 +1,8 @@
 # Project-Limitless 현재 개발 상태
 
+- Main10 `main_10_center_of_silence` 「침묵의 중심」의 7개 순차 조사 목표를 Field03에 구현했다. Main09 석재를 재사용하고 입구를 단계별로 공개한다. 완료 보상은 EXP40·탈렌트40·아이템 없음이며 Dungeon_01 Scene이 없을 때 입구는 안내 대사로 안전하게 끝난다. 원인·배후·빛의 정체는 공개하지 않았다.
+- 어제 Unity Play Mode의 격리 저장 감사에서 61개 검사가 통과했고, 입구 위치를 위로 조정한 뒤 재실행한 감사도 통과했다. 이번 세션에는 Unity MCP와 Editor가 연결되지 않아 조정 후 최종 Game View 시각 확인 및 Console 재확인은 수행하지 못했다. 사용자 확인: Field03 실제 화면에서 입구와 HUD의 겹침, 조사 표식의 가독성을 확인한다. 다음 권장 작업은 이 시각 확인 후 Dungeon_01 별도 기획이다. 기능 commit: `91eee5f`.
+
 - Main09 `main_09_reunion_in_silence` 「침묵 속의 재회」 구현: Field03의 푸른 빛 방향→평행 바퀴 자국→폴 재회→정보 교환→가공된 석재→폴의 합류 결정, stable Objective 6개. 원인·배후·빛의 정체는 미확정이다. 완료 보상 EXP35·탈렌트35·아이템 없음, `companion_paul` 1회 영구 해금. Main10 「침묵의 중심」은 문서 제안만 남겼다.
 - Main05 완료 후 시작 마을의 기존 파티 안내인에서 Player 고정+해금 동료 최대 2명 편성, 전열/후열, 초상화·직업·길·선택 상태, 확정/취소, 공격 역할 부족 경고를 제공한다. Guardian는 폴 최초 해금 시 미엘+폴, Healer는 태온+폴, Sharpshooter/Fighter/Mage는 태온+미엘을 기본 선택하며 수동 편성은 보존한다.
 - 일반 Battle은 저장한 동료·행을 사용한다. Main03/04/07 Story 임시 편성은 독립적으로 유지된다. Save Version1에 선택적 Formation·수동 편성 플래그를 추가했고 구버전 누락 필드는 기본값으로 복원한다. `UserData/Main09Audit` 격리 폴더에서 A~E Save→Bootstrap→Continue, 세 일반 전투 조합 승리, 폴 마도사 스킬, Main07 Story 참가 구성, Main08→09 같은 Scene 연결을 Unity Play Mode 115개 검사로 확인했다. 상점·인벤토리 및 기존 퀘스트 서비스 감사도 통과했다.
