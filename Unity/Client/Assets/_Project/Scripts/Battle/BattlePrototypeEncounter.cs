@@ -141,6 +141,26 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
+        /// 지하묘지의 일반 필드 스폰 ID만 보고 기존 적 정의로 전투 편성을 만듭니다.
+        /// 접촉·승리 제거·도망·리스폰은 원래 필드 흐름이 계속 담당합니다.
+        /// </summary>
+        public static BattleEncounterSetup CreateDungeon01(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition wight, MonsterDefinition bat, string spawnId)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility,
+                null, null, wight);
+            var enemies = new List<BattleParticipantSetup>();
+            enemies.Add(CreateMonster(wight, "dungeon01_wight_a", "묘지 망자", FormationRow.Front, 0, 8));
+            if (spawnId == "dungeon01_b1_03")
+                enemies.Add(CreateMonster(wight, "dungeon01_wight_b", "묘지 망자", FormationRow.Front, 1, 8));
+            if (spawnId == "dungeon01_b1_02" || spawnId == "dungeon01_b1_04")
+                enemies.Add(CreateMonster(bat, "dungeon01_bat_a", "그늘박쥐", FormationRow.Rear, 0, 15));
+            if (spawnId == "dungeon01_b1_04")
+                enemies.Add(CreateMonster(bat, "dungeon01_bat_b", "그늘박쥐", FormationRow.Rear, 1, 15));
+            return new BattleEncounterSetup(party.Allies, enemies.ToArray());
+        }
+
+        /// <summary>
         /// Main 03에서만 사용하는 최초 2인 파티 구성입니다. 태온은 아직 정식 해금 동료가 아니므로
         /// 저장 파티를 바꾸지 않고, 이 Story Encounter의 참가자 목록에만 명시적으로 포함합니다.
         /// </summary>

@@ -34,6 +34,10 @@ namespace ProjectLimitless.World
                 spawn.GetComponent<SceneSpawnPoint>().Configure(definition.SpawnPointId);
                 SceneManager.MoveGameObjectToScene(spawn, scene);
 
+                // Main10 입구는 Quest 상호작용이 전환을 통제하므로 복귀 Spawn만 설치합니다.
+                // 여기서 자동 Trigger를 만들면 완료 전에 던전에 들어갈 수 있습니다.
+                if (definition.SpawnOnly) continue;
+
                 GameObject transition = new GameObject($"Transition_{definition.ConnectionId}",
                     typeof(BoxCollider2D), typeof(SceneTransitionTrigger));
                 transition.transform.position = definition.TransitionPosition;

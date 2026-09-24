@@ -271,6 +271,12 @@ namespace ProjectLimitless.Battle
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     forestSpider, venomSnake);
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == "Dungeon_01")
+                setup = BattlePrototypeEncounterFactory.CreateDungeon01(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
+                    BattleEncounterContext.Spawn.SpawnId);
             else
                 setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,

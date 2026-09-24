@@ -15,6 +15,7 @@ namespace ProjectLimitless.World
         [SerializeField] private string targetSceneName;
         [SerializeField] private string targetSpawnPointId;
         [SerializeField] private bool replaceExistingSceneConnections;
+        [SerializeField] private bool spawnOnly;
 
         public string SceneName => sceneName;
         public string ConnectionId => connectionId;
@@ -25,11 +26,15 @@ namespace ProjectLimitless.World
         public string TargetSceneName => targetSceneName;
         public string TargetSpawnPointId => targetSpawnPointId;
         public bool ReplaceExistingSceneConnections => replaceExistingSceneConnections;
+        public bool SpawnOnly => spawnOnly;
 #if UNITY_EDITOR
         public void Configure(string scene, string id, string spawnId, Vector2 spawn, Vector2 exit,
             Vector2 size, string targetScene, string targetSpawn, bool replace)
         { sceneName=scene; connectionId=id; spawnPointId=spawnId; spawnPosition=spawn; transitionPosition=exit;
-          transitionSize=size; targetSceneName=targetScene; targetSpawnPointId=targetSpawn; replaceExistingSceneConnections=replace; }
+          transitionSize=size; targetSceneName=targetScene; targetSpawnPointId=targetSpawn; replaceExistingSceneConnections=replace; spawnOnly=false; }
+        public void ConfigureSpawnOnly(string scene, string id, string spawnId, Vector2 spawn)
+        { Configure(scene, id, spawnId, spawn, Vector2.zero, Vector2.zero, string.Empty, string.Empty, false);
+          spawnOnly = true; }
 #endif
     }
 }
