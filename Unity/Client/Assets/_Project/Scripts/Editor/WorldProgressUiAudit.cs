@@ -83,6 +83,14 @@ namespace ProjectLimitless.EditorTools
             Check(canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<Text>().text == "EXP 0 / 100",
                 "Lv1 EXP 숫자");
             WorldExperienceHud hud = canvasObject.transform.Find("WorldExperienceHud").GetComponent<WorldExperienceHud>();
+            RectTransform hudRect = hud.GetComponent<RectTransform>();
+            RectTransform toastRect = canvasObject.transform.Find("QuestHud").GetComponent<RectTransform>();
+            Check(hudRect.anchorMin == new Vector2(0f, 1f) && hudRect.anchorMax == new Vector2(0f, 1f)
+                && hudRect.pivot == new Vector2(0f, 1f) && hudRect.anchoredPosition == new Vector2(24f, -128f),
+                "EXP HUD 좌상단 Anchor와 Quest Toast 아래 여백");
+            Check(toastRect.anchorMin == new Vector2(.5f, 1f) && toastRect.anchorMax == new Vector2(.5f, 1f)
+                && hudRect.anchoredPosition.y < toastRect.anchoredPosition.y - toastRect.sizeDelta.y,
+                "EXP HUD와 상단 중앙 Quest Toast 세로 영역 분리");
             Image fill = canvasObject.transform.Find("WorldExperienceHud/BarBackground/BarFill").GetComponent<Image>();
             CheckFill(hud, fill, 1, 0, 0f);
             CheckFill(hud, fill, 1, 24, .24f);
@@ -113,7 +121,8 @@ namespace ProjectLimitless.EditorTools
                 "만렙 분모 숨김");
             Check(canvasObject.transform.Find("WorldExperienceHud/BarBackground/BarFill").GetComponent<Image>().fillAmount == 1f,
                 "만렙 Bar 가득 참");
-            Check(canvasObject.transform.childCount == 2, "이름표와 HUD 중복 없음");
+            Check(canvasObject.GetComponentsInChildren<WorldExperienceHud>().Length == 1,
+                "EXP HUD 중복 없음");
 
             UnityEngine.Object.DestroyImmediate(player);
             // PlayerNameplate의 실제 OnDestroy는 Canvas를 지연 파괴합니다. Scene 전환 프레임 안에서는

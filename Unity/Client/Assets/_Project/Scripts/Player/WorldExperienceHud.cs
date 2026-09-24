@@ -6,12 +6,14 @@ using UnityEngine.UI;
 namespace ProjectLimitless.Player
 {
     /// <summary>
-    /// 마을과 필드 화면 아래에 현재 캐릭터의 레벨과 경험치 진행을 표시합니다.
+    /// 마을과 필드 화면 왼쪽 위에 현재 캐릭터의 레벨과 경험치 진행을 표시합니다.
     /// 머리 위 이름표와 달리 화면에 고정되어 이동 중에도 성장 정보를 쉽게 확인할 수 있습니다.
     /// </summary>
     public sealed class WorldExperienceHud : MonoBehaviour
     {
         private const string ObjectName = "WorldExperienceHud";
+        private const float LeftSafeMargin = 24f;
+        private const float TopOffsetBelowQuestToast = 128f;
         private static readonly Color PanelColor = new Color(0.055f, 0.065f, 0.09f, 0.94f);
         private static readonly Color BorderColor = new Color(0.82f, 0.66f, 0.25f, 1f);
         private static readonly Color FillColor = new Color(0.9f, 0.7f, 0.22f, 1f);
@@ -169,10 +171,13 @@ namespace ProjectLimitless.Player
             }
 
             RectTransform root = GetComponent<RectTransform>();
-            root.anchorMin = new Vector2(0.5f, 0f);
-            root.anchorMax = new Vector2(0.5f, 0f);
-            root.pivot = new Vector2(0.5f, 0f);
-            root.anchoredPosition = new Vector2(0f, 22f);
+            // 화면 좌상단 Anchor와 같은 모서리 Pivot을 쓰면 해상도나 화면 비율이 바뀌어도
+            // 패널의 왼쪽 거리는 일정합니다. 위쪽은 중앙 Quest Toast(24~112px) 아래로 내려
+            // 겹침을 피합니다. 향후 다른 위치 프리셋은 이 Anchor/Pivot/여백만 바꾸면 됩니다.
+            root.anchorMin = new Vector2(0f, 1f);
+            root.anchorMax = new Vector2(0f, 1f);
+            root.pivot = new Vector2(0f, 1f);
+            root.anchoredPosition = new Vector2(LeftSafeMargin, -TopOffsetBelowQuestToast);
             root.sizeDelta = new Vector2(420f, 76f);
 
             Image panel = GetOrAddImage(gameObject);
