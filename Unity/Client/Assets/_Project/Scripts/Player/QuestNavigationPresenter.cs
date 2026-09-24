@@ -13,6 +13,8 @@ namespace ProjectLimitless.Player
         private RectTransform marker;
         private Text markerText;
         private Text arrowText;
+        private RectTransform experienceHud;
+        private readonly Vector3[] experienceHudCorners = new Vector3[4];
         private QuestNavigationTargetRegistry.Target target;
         private bool hasTarget;
 
@@ -69,12 +71,30 @@ namespace ProjectLimitless.Player
             bool onScreen = !behind && screen.x >= halfSize.x && screen.x <= Screen.width - halfSize.x
                 && screen.y >= halfSize.y && screen.y <= Screen.height - halfSize.y;
             Vector2 position = onScreen ? (Vector2)screen : ClampToEdge(center, direction, halfSize);
+            position = AvoidExperienceHud(position, halfSize);
             marker.position = position;
             float distance = Vector2.Distance(camera.transform.position, target.Transform.position);
             markerText.text = onScreen ? $"◆ 현재 목표\n{target.Label}" : $"◆ 현재 목표  {distance:0}m";
             arrowText.gameObject.SetActive(!onScreen);
             if (!onScreen) arrowText.rectTransform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f);
             group.alpha = 1f;
+        }
+
+        private Vector2 AvoidExperienceHud(Vector2 position, Vector2 halfSize)
+        {
+            if (experienceHud == null) experienceHud = transform.parent.Find("WorldExperienceHud") as RectTransform;
+            if (experienceHud == null || experienceHud.GetComponent<CanvasGroup>().alpha <= 0f) return position;
+
+            // 목표가 화면 좌상단에 있어도 방향 마커가 경험치 정보를 덮지 않도록
+            // 겹치는 경우에만 패널 아래로 옮깁니다. HUD 위치 프리셋이 바뀌어도 실제 모서리를 읽습니다.
+            experienceHud.GetWorldCorners(experienceHudCorners);
+            Rect hudArea = Rect.MinMaxRect(experienceHudCorners[0].x, experienceHudCorners[0].y,
+                experienceHudCorners[2].x, experienceHudCorners[2].y);
+            Rect markerArea = Rect.MinMaxRect(position.x - halfSize.x, position.y - halfSize.y,
+                position.x + halfSize.x, position.y + halfSize.y);
+            if (hudArea.Overlaps(markerArea))
+                position.y = Mathf.Max(halfSize.y, hudArea.yMin - EdgePadding - halfSize.y);
+            return position;
         }
 
         private static Vector2 ClampToEdge(Vector2 center, Vector2 direction, Vector2 halfSize)
