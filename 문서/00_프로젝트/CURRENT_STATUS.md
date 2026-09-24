@@ -1,5 +1,7 @@
 # Project-Limitless 현재 개발 상태
 
+- 공용 해로운 상태 `침묵 1`을 구현했다. 다음 성공한 실제 행동까지 Skill 명령만 차단하고 공격·방어는 허용하며, 완료 때 제거한다. 재적용은 중첩 없이 갱신하고 정화는 독·화상·감전·침묵을 한 번에 제거한다. 침묵 치유사는 자기 정화를 사용할 수 없다. HUD·상세에는 아이콘 없이 한글 fallback을 표시한다. 새 몬스터·부여 스킬·Dungeon·Quest는 추가하지 않았다. Runtime/Editor 백그라운드 컴파일 오류 0, Scene·저장 비변경 Editor 감사 통과, Unity Console 오류·경고 0. 실제 Battle Game View의 배지 가독성과 입력 포커스는 사용자 확인 사항이며 다음 작업은 별도 기획에 따라 침묵 부여 수단을 연결하는 것이다. 기능 commit: `3c8de16`.
+
 - World EXP HUD를 좌상단 Anchor `(0,1)`, 좌·상단 24px 여백, 320×72 패널과 280×9 EXP Bar로 조정했다. 아이콘·레벨·이름·EXP 숫자를 첫 줄에 분리하고 EXP/레벨/저장 로직은 변경하지 않았다. 좁은 화면의 Quest Toast는 위쪽 24px을 유지하면서 오른쪽으로 옮겨 가로 간격 16px을 확보하고, Quest Navigation 마커는 EXP 패널과 겹칠 때만 아래로 피한다. 향후 EXP 위치 프리셋은 Anchor·Pivot·여백으로 확장할 수 있다. 백그라운드 Runtime/Editor Roslyn 컴파일 오류 0, 사용자 승인 후 1016×569 Game View 배치와 Play Mode HUD 감사·마커 회피 검사 통과, Console 오류·경고 0. `AGENTS.md`는 백그라운드 우선과 foreground 사전 승인 원칙으로 보완했다. HUD commit: `a4e5a63`, Toast 충돌 수정: `1fd64f3`, Navigation 충돌 수정: `96b90f9`, 규칙 commit: `046ca33`.
 
 - 2026-09-24 유지보수: 실제 `BattleSkillCatalog`·상태 런타임·길 특성과 문서를 대조해 스킬/전투 정본, 미구현 후보, 과거 프리뷰를 분리했다. 프로젝트 전용 핵심 C#의 Quest·Save·Battle 길 특성·Companion·Navigation 설명 주석을 보강하고, `AGENTS.md`에 비전공자용 주석과 백그라운드 검증·화면 포커스 보호 규칙을 추가했다. 기능 동작은 변경하지 않았다. 백그라운드 Roslyn 전체 Runtime 컴파일 오류 0, 변경 Markdown 상대 링크와 관련 파일 diff 검사는 통과했다. Unity Editor가 실행 중이지 않아 Test Runner·Console·Main10 최종 Game View는 이번 세션에 재확인하지 못했다. 입구 시각 확인은 사용자 직접 확인 사항이다. 공식 `마음의 상처의 길`과 현재 Path Asset 표시명 `마음의 상처`의 불일치는 별도 Asset 수정 사항이다. 관련 commit: `d6e2fb2`(문서), `95ae1df`(규칙), `39ca7bd`(주석).
