@@ -521,18 +521,18 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 상태는 최대 네 칸을 미리 만들어 두고 필요한 칸만 켭니다. 매 갱신마다 오브젝트를 만들고 지우지 않아
+        /// 상태는 최대 다섯 칸을 미리 만들어 두고 필요한 칸만 켭니다. 매 갱신마다 오브젝트를 만들고 지우지 않아
         /// 화면 깜박임을 피하며, 도발·방어·행동·재사용이 한 줄 안에서 서로 밀어내지 않게 합니다.
         /// 상단 HUD는 즉시 판단할 요약이고 상세 팝업은 정확한 수치와 설명을 담당하므로 둘의 역할도 유지됩니다.
         /// </summary>
         private List<BattleHudStatusBadge> CreateStatusBadgeSlots(Transform parent, Font font)
         {
             List<BattleHudStatusBadge> badges = new List<BattleHudStatusBadge>();
-            for (int index = 0; index < 4; index++)
+            for (int index = 0; index < 5; index++)
             {
                 GameObject root = new GameObject($"StatusBadge_{index}", typeof(RectTransform));
                 root.transform.SetParent(parent, false);
-                SetRect(root.GetComponent<RectTransform>(), new Vector2(.145f + index * .235f, .19f), new Vector2(66, 13));
+                SetRect(root.GetComponent<RectTransform>(), new Vector2(.12f + index * .19f, .19f), new Vector2(56, 13));
                 Image icon = MakeSpriteIcon(root.transform, "Icon", null, new Vector2(.11f, .5f), new Vector2(12, 12));
                 Text label = MakeText(root.transform, "Label", string.Empty, font, 10,
                     new Vector2(.62f, .5f), new Vector2(50, 13));
@@ -814,6 +814,13 @@ namespace ProjectLimitless.Battle
         private void ShowSkillMenu()
         {
             if (actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
+            // 버튼은 포커스와 클릭을 유지해 차단 이유를 읽을 수 있게 합니다. 실제 행동을 시작하기 전에
+            // 여기서 거절하므로 침묵 1회, 턴, MP, 스킬 쿨타임 어느 것도 소비하지 않습니다.
+            if (statusEffects.HasSilence(currentActor))
+            {
+                messageText.text = "침묵 상태에서는 스킬을 사용할 수 없습니다.";
+                return;
+            }
             choosingSkill = true;
             SetCommandButtons(false);
             SetCancelButtonVisible(true);
@@ -2330,8 +2337,8 @@ namespace ProjectLimitless.Battle
             HideSkillDetailPopup();
             Combatant completedActor = currentActor;
             completedActor?.CompleteAction();
-            // 감전은 공격 여부가 아니라 행동 기회를 약화시키는 상태이므로 방어·회복 행동도 여기서 소비합니다.
-            // 피해 계산과 광역 타격이 모두 끝난 다음 제거해야 해당 행동의 모든 주는 피해가 15% 감소합니다.
+            // 감전과 침묵은 성공한 실제 행동을 마친 여기서만 소비합니다. 취소 입력은 이 메서드에
+            // 도달하지 않으며, 감전은 광역 타격이 모두 끝날 때까지 피해 감소를 유지합니다.
             statusEffects.CompleteActorAction(completedActor);
             pathTraits.CompleteActorAction(completedActor);
             statusEffects.RemoveInvalidPersistentEffects(AllCombatants);
@@ -2703,7 +2710,25 @@ namespace ProjectLimitless.Battle
         private void SetCommandButtons(bool enabled)
         {
             foreach (Selectable selectable in commandButtons) selectable.interactable = enabled;
-            if (!enabled || defendButton == null) return;
+            if (!enabled) return;
+
+            // 방어의 기존 Invalid Action UX처럼 스킬도 누를 수 있는 상태로 두고 흐린 색과 안내를
+            // 함께 제공합니다. 단순 비활성 버튼은 키보드 포커스가 사라져 이유를 알 수 없습니다.
+            if (skillButton != null)
+            {
+                bool silenceBlocksSkill = statusEffects.HasSilence(currentActor);
+                ColorBlock skillColors = ColorBlock.defaultColorBlock;
+                if (silenceBlocksSkill)
+                {
+                    Color unavailable = new Color(.42f, .45f, .5f, 1f);
+                    skillColors.normalColor = unavailable;
+                    skillColors.highlightedColor = unavailable;
+                    skillColors.selectedColor = unavailable;
+                    skillColors.pressedColor = new Color(.36f, .38f, .42f, 1f);
+                }
+                skillButton.colors = skillColors;
+            }
+            if (defendButton == null) return;
 
             bool strongerDefenseBlocksDefend = statusEffects.HasStrongerSelfDefense(currentActor);
             // interactable=false로 만들면 마우스 클릭과 키보드 Submit이 모두 사라져 차단 이유를 안내할 수

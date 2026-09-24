@@ -119,6 +119,10 @@ namespace ProjectLimitless.Battle
                     pathName: path?.DisplayName, pathTraitName: path?.PassiveName);
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
+            // 스킬 차단은 현재 행동자의 선택을 즉시 바꾸므로 다른 요약 상태보다 먼저 보여 줍니다.
+            // 아이콘 Asset이 없어도 `침묵 1` 텍스트가 HUD와 상세 팝업에 동일하게 남습니다.
+            if (statusEffects?.HasSilence(combatant) == true)
+                markers.Add(new BattleStatusMarker("silence", "침묵", 1));
             if (combatant.IsDefending) markers.Add(new BattleStatusMarker("defend", "방어"));
             if (combatant.ForcedTargetActionsRemaining > 0 && combatant.ForcedTarget != null && combatant.ForcedTarget.IsAlive)
                 markers.Add(new BattleStatusMarker("taunt", "도발", combatant.ForcedTargetActionsRemaining));
@@ -164,6 +168,8 @@ namespace ProjectLimitless.Battle
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
+            if (statusEffects?.HasSilence(combatant) == true)
+                resourceDetails.Add("침묵: 다음 행동에서 스킬을 사용할 수 없습니다.");
             if (poisonRemaining > 0) resourceDetails.Add($"{poison.DisplayName}: 행동 종료 시 최대 HP {poison.Power}% 피해");
             if (ironWallRemaining > 0) resourceDetails.Add($"철벽: 남은 자신의 행동 {ironWallRemaining}회 · 받는 피해 70% 감소");
             if (guardianCoverActive)

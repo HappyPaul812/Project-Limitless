@@ -197,7 +197,7 @@ namespace ProjectLimitless.Battle
                         BattleSkillEffectType.RemoveAllHarmfulStatuses, 2, 0,
                         iconId: BattleUiIconCatalog.HealerCleanseSkill,
                         targetDescription: "대상: 살아 있는 아군 1명",
-                        effectDescription: "효과: 해로운 상태이상 모두 제거\n현재 제거 가능: 독 / 화상 / 감전",
+                        effectDescription: "효과: 해로운 상태이상 모두 제거\n현재 제거 가능: 독 / 화상 / 감전 / 침묵",
                         typeDescription: "유형: 상태이상 해제",
                         durationDescription: "재사용 대기시간: 2턴", mpCost: CharacterGrowthCalculator.TemporaryCleanseMpCost);
                 if (preview.SkillId == SharpshooterAimId)
@@ -422,7 +422,7 @@ namespace ProjectLimitless.Battle
     }
 
     /// <summary>
-    /// 정화가 제거할 수 있는 해로운 상태의 공통 이름입니다. 독·화상·감전은 저장 방식과 작동 방식이
+    /// 정화가 제거할 수 있는 해로운 상태의 공통 이름입니다. 독·화상·감전·침묵은 저장 방식과 작동 방식이
     /// 서로 다르지만, 정화 입장에서는 모두 제거 대상이라는 한 가지 공통점이 있습니다. 향후 출혈·저주·마비를
     /// 구현할 때 이 목록과 아래 공통 조회·제거 메서드에 연결하면 정화 스킬 코드는 그대로 재사용할 수 있습니다.
     /// </summary>
@@ -430,7 +430,8 @@ namespace ProjectLimitless.Battle
     {
         Poison,
         Burn,
-        Shock
+        Shock,
+        Silence
     }
 
     /// <summary>
@@ -504,6 +505,7 @@ namespace ProjectLimitless.Battle
 
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        private readonly HashSet<Combatant> silencedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>(CombatantReferenceComparer.Instance);
@@ -543,6 +545,17 @@ namespace ProjectLimitless.Battle
         }
 
         public bool HasShock(Combatant target) => target != null && target.IsAlive && shockedTargets.Contains(target);
+
+        /// <summary>
+        /// 침묵은 피해나 행동 기회를 없애지 않고 스킬 명령만 한 번 막습니다. 같은 대상을 다시 Add해도
+        /// 중첩되지 않으며, 다음에 성공한 실제 행동 하나를 마칠 때까지 남은 효과를 갱신합니다.
+        /// </summary>
+        public void ApplyOrRefreshSilence(Combatant target)
+        {
+            if (target != null && target.IsAlive) silencedTargets.Add(target);
+        }
+
+        public bool HasSilence(Combatant target) => target != null && target.IsAlive && silencedTargets.Contains(target);
 
         /// <summary>
         /// 가이아 웰은 다른 아군을 대신 막거나 적의 대상을 바꾸는 기술이 아니라 마도사 자신에게만 붙는
@@ -685,13 +698,15 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 공격·방어·회복처럼 무엇을 했는지와 관계없이 그 참가자의 행동이 끝나면 감전 1을 소비합니다.
+        /// 공격·방어·회복처럼 무엇을 했는지와 관계없이 그 참가자의 행동이 끝나면 감전 1과 침묵 1을 소비합니다.
         /// 행동 도중에는 계속 남겨 두어 여러 대상을 때리는 광역 공격도 모든 피해에 같은 15% 감소를 받습니다.
+        /// 메뉴 취소나 잘못된 입력은 이 완료 경계를 호출하지 않으므로 침묵을 소모하지 않습니다.
         /// </summary>
         public void CompleteActorAction(Combatant actor)
         {
             if (actor == null) return;
             shockedTargets.Remove(actor);
+            silencedTargets.Remove(actor);
 
             if (gaiaWalls.TryGetValue(actor, out GaiaWallState gaia))
             {
@@ -732,6 +747,7 @@ namespace ProjectLimitless.Battle
             {
                 burns.Remove(dead);
                 shockedTargets.Remove(dead);
+                silencedTargets.Remove(dead);
                 gaiaWalls.Remove(dead);
                 ironWalls.Remove(dead);
                 poisons.Remove(dead);
@@ -813,10 +829,11 @@ namespace ProjectLimitless.Battle
         public IReadOnlyList<HarmfulStatusType> GetHarmfulStatuses(Combatant target)
         {
             if (target == null || !target.IsAlive) return Array.Empty<HarmfulStatusType>();
-            List<HarmfulStatusType> results = new List<HarmfulStatusType>(3);
+            List<HarmfulStatusType> results = new List<HarmfulStatusType>(4);
             if (HasActivePoison(target)) results.Add(HarmfulStatusType.Poison);
             if (HasActiveBurn(target)) results.Add(HarmfulStatusType.Burn);
             if (HasShock(target)) results.Add(HarmfulStatusType.Shock);
+            if (HasSilence(target)) results.Add(HarmfulStatusType.Silence);
             return results;
         }
 
@@ -835,6 +852,8 @@ namespace ProjectLimitless.Battle
                     return burns.Remove(target);
                 case HarmfulStatusType.Shock:
                     return shockedTargets.Remove(target);
+                case HarmfulStatusType.Silence:
+                    return silencedTargets.Remove(target);
                 default:
                     return false;
             }
@@ -896,6 +915,13 @@ namespace ProjectLimitless.Battle
             if (skill == null || !skill.IsImplemented)
             {
                 reason = "아직 사용할 수 없습니다.";
+                return false;
+            }
+            // 정화도 예외 없는 스킬입니다. UI를 통하지 않는 실행 호출까지 여기서 막아
+            // 침묵한 치유사가 자기 침묵을 스스로 정화하는 경로를 남기지 않습니다.
+            if (statusEffects.HasSilence(actor))
+            {
+                reason = "침묵 상태에서는 스킬을 사용할 수 없습니다.";
                 return false;
             }
             if (!actor.CanSpendMp(skill.MpCost))
