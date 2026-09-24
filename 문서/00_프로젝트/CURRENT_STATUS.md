@@ -1,5 +1,7 @@
 # Project-Limitless 현재 개발 상태
 
+- `Dungeon_01` 「침묵의 지하묘지 B1」의 입구 홀·중앙 회랑·서쪽 안치실·동쪽 무너진 묘실·북쪽 봉인실 Scene을 추가했다. Field03 Main10 완료 입구에서 진입하고 남쪽 출구로 복귀한다. 기존 묘지 망자·그늘박쥐의 일반 조우 4개를 연결했다. Bounds·Camera·Spawn 간격·4개 전투 편성과 Missing Script를 Editor에서 확인했고, 승인 후 Game View·양방향 Scene 이동·일반 Battle 진입·승리/도망 복귀 정책·격리 Save/Continue 좌표 및 fallback을 Play Mode에서 확인했다. 실제 전투 턴을 끝까지 진행한 승리/도망 입력은 별도 확인 사항이다. 전용 묘지 Prop이 없어 기존 Kenney 회색 석재 Sprite로 단순한 석재 형태를 표현했다. B2·Main11·새 몬스터·보스는 구현하지 않았다. 다음 작업은 실제 플레이 난이도와 석재 미관 확인 뒤 별도 Main11 기획이다. 기능 commit: `c72d771`.
+
 - 공용 해로운 상태 `침묵 1`을 구현했다. 다음 성공한 실제 행동까지 Skill 명령만 차단하고 공격·방어는 허용하며, 완료 때 제거한다. 재적용은 중첩 없이 갱신하고 정화는 독·화상·감전·침묵을 한 번에 제거한다. 침묵 치유사는 자기 정화를 사용할 수 없다. HUD·상세에는 아이콘 없이 한글 fallback을 표시한다. 새 몬스터·부여 스킬·Dungeon·Quest는 추가하지 않았다. Runtime/Editor 백그라운드 컴파일 오류 0, Scene·저장 비변경 Editor 감사 통과, Unity Console 오류·경고 0. 실제 Battle Game View의 배지 가독성과 입력 포커스는 사용자 확인 사항이며 다음 작업은 별도 기획에 따라 침묵 부여 수단을 연결하는 것이다. 기능 commit: `3c8de16`.
 
 - World EXP HUD를 좌상단 Anchor `(0,1)`, 좌·상단 24px 여백, 320×72 패널과 280×9 EXP Bar로 조정했다. 아이콘·레벨·이름·EXP 숫자를 첫 줄에 분리하고 EXP/레벨/저장 로직은 변경하지 않았다. 좁은 화면의 Quest Toast는 위쪽 24px을 유지하면서 오른쪽으로 옮겨 가로 간격 16px을 확보하고, Quest Navigation 마커는 EXP 패널과 겹칠 때만 아래로 피한다. 향후 EXP 위치 프리셋은 Anchor·Pivot·여백으로 확장할 수 있다. 백그라운드 Runtime/Editor Roslyn 컴파일 오류 0, 사용자 승인 후 1016×569 Game View 배치와 Play Mode HUD 감사·마커 회피 검사 통과, Console 오류·경고 0. `AGENTS.md`는 백그라운드 우선과 foreground 사전 승인 원칙으로 보완했다. HUD commit: `a4e5a63`, Toast 충돌 수정: `1fd64f3`, Navigation 충돌 수정: `96b90f9`, 규칙 commit: `046ca33`.
