@@ -1,6 +1,6 @@
 # Project-Limitless 현재 개발 상태
 
-- `Dungeon_01` 「침묵의 지하묘지 B1」의 입구 홀·중앙 회랑·서쪽 안치실·동쪽 무너진 묘실·북쪽 봉인실 Scene을 추가했다. Field03 Main10 완료 입구에서 진입하고 남쪽 출구로 복귀한다. 기존 묘지 망자·그늘박쥐의 일반 조우 4개를 연결했다. Bounds·Camera·Spawn 간격·4개 전투 편성과 Missing Script를 Editor에서 확인했고, 승인 후 Game View·양방향 Scene 이동·일반 Battle 진입·승리/도망 복귀 정책·격리 Save/Continue 좌표 및 fallback을 Play Mode에서 확인했다. 실제 전투 턴을 끝까지 진행한 승리/도망 입력은 별도 확인 사항이다. 전용 묘지 Prop이 없어 기존 Kenney 회색 석재 Sprite로 단순한 석재 형태를 표현했다. B2·Main11·새 몬스터·보스는 구현하지 않았다. 다음 작업은 실제 플레이 난이도와 석재 미관 확인 뒤 별도 Main11 기획이다. 기능 commit: `c72d771`.
+- `Dungeon_01` 「침묵의 지하묘지 B1」의 입구 홀·중앙 회랑·서쪽 안치실·동쪽 무너진 묘실·북쪽 봉인실 Scene과 기존 몬스터 일반 조우 4개를 구현했다. Main10 완료 격리 슬롯의 Field03 입구 상호작용→Dungeon Spawn, B1-01 실제 충돌·UI 공격/스킬/방어·승리(EXP16·탈렌트9·드롭 없음, Lv12), 결과 버튼 복귀·해당 스폰 제거, B1-02 UI 도망·스폰 유지·복귀 직후 1.99초 재조우 유예, B1 남쪽 출구 Trigger→Field03 복귀를 Play Mode에서 확인했다. Bootstrap Continue의 던전 좌표 복원과 Bounds 밖 좌표의 Spawn fallback도 확인했다. 기능 버그·코드 변경은 없었다. 감사 중 예상된 좌표 fallback/슬롯 해제 경고 2건을 기록했고 최종 Console 오류·경고 0건이다. 전용 묘지 Prop이 없어 기존 Kenney 회색 석재 Sprite로 단순하게 표현했으며 B2·Main11·새 몬스터·보스는 없다. 다음 작업은 별도 Main11 기획 전 실제 이동 난이도·석재 미관 확인이다. 기능 commit: `c72d771`.
 
 - 공용 해로운 상태 `침묵 1`을 구현했다. 다음 성공한 실제 행동까지 Skill 명령만 차단하고 공격·방어는 허용하며, 완료 때 제거한다. 재적용은 중첩 없이 갱신하고 정화는 독·화상·감전·침묵을 한 번에 제거한다. 침묵 치유사는 자기 정화를 사용할 수 없다. HUD·상세에는 아이콘 없이 한글 fallback을 표시한다. 새 몬스터·부여 스킬·Dungeon·Quest는 추가하지 않았다. Runtime/Editor 백그라운드 컴파일 오류 0, Scene·저장 비변경 Editor 감사 통과, Unity Console 오류·경고 0. 실제 Battle Game View의 배지 가독성과 입력 포커스는 사용자 확인 사항이며 다음 작업은 별도 기획에 따라 침묵 부여 수단을 연결하는 것이다. 기능 commit: `3c8de16`.
 
