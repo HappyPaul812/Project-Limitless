@@ -1,6 +1,6 @@
 # Project-Limitless 현재 개발 상태
 
-- World EXP HUD 기본 위치를 하단 중앙에서 화면 좌상단 Anchor `(0,1)`, 왼쪽 24px·위쪽 128px 여백으로 옮겼다. 상단 중앙 Quest Toast 아래 16px 간격을 두며 이름·레벨·EXP 숫자·Bar 계산과 저장/성장 로직은 그대로다. 향후 다른 모서리 프리셋은 Anchor·Pivot·여백만 교체하면 된다. 비대화형 Runtime/Editor Roslyn 컴파일 오류 0, Unity Console 오류·경고 0. Unity MCP Play Mode 전환이 예상과 달리 Unity 창에 포커스를 가져와 즉시 중단했으므로 Play Mode HUD 감사와 최종 Game View 배치는 사용자 직접 확인이 필요하다. 기능 commit: `895c062`.
+- World EXP HUD를 좌상단 Anchor `(0,1)`, 좌·상단 24px 여백, 320×72 패널과 280×9 EXP Bar로 조정했다. 아이콘·레벨·이름·EXP 숫자를 첫 줄에 분리하고 상단 중앙 Quest Toast의 위치는 유지했다. EXP/레벨/저장 로직은 변경하지 않았으며 향후 모서리 프리셋은 Anchor·Pivot·여백으로 확장할 수 있다. 백그라운드 Runtime/Editor Roslyn 컴파일 오류 0. 실제 Game View 미관과 Play Mode HUD 감사는 foreground 승인 후 확인이 필요하다. `AGENTS.md`는 백그라운드 우선과 foreground 사전 승인 원칙으로 보완했다. HUD commit: `a4e5a63`, 규칙 commit: `046ca33`.
 
 - 2026-09-24 유지보수: 실제 `BattleSkillCatalog`·상태 런타임·길 특성과 문서를 대조해 스킬/전투 정본, 미구현 후보, 과거 프리뷰를 분리했다. 프로젝트 전용 핵심 C#의 Quest·Save·Battle 길 특성·Companion·Navigation 설명 주석을 보강하고, `AGENTS.md`에 비전공자용 주석과 백그라운드 검증·화면 포커스 보호 규칙을 추가했다. 기능 동작은 변경하지 않았다. 백그라운드 Roslyn 전체 Runtime 컴파일 오류 0, 변경 Markdown 상대 링크와 관련 파일 diff 검사는 통과했다. Unity Editor가 실행 중이지 않아 Test Runner·Console·Main10 최종 Game View는 이번 세션에 재확인하지 못했다. 입구 시각 확인은 사용자 직접 확인 사항이다. 공식 `마음의 상처의 길`과 현재 Path Asset 표시명 `마음의 상처`의 불일치는 별도 Asset 수정 사항이다. 관련 commit: `d6e2fb2`(문서), `95ae1df`(규칙), `39ca7bd`(주석).
 
