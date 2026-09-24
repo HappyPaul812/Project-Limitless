@@ -60,7 +60,24 @@ namespace ProjectLimitless.Player
         /// <summary>Modal이 열린 동안 Toast가 입력이나 화면을 가리지 않도록 숨깁니다.</summary>
         public void RefreshVisibility()
         {
+            UpdateToastPosition();
             if (canvasGroup != null) canvasGroup.alpha = toastActive && !WorldModalState.IsOpen ? 1f : 0f;
+        }
+
+        private void UpdateToastPosition()
+        {
+            RectTransform root = GetComponent<RectTransform>();
+            RectTransform canvasRect = transform.parent as RectTransform;
+            if (canvasRect == null) return;
+
+            // 넓은 화면에서는 중앙을 유지합니다. 좁아지면 Toast만 오른쪽으로 옮겨
+            // 좌상단 EXP 패널과 가로 영역을 나누고, 아래로 밀어 월드 화면을 더 가리지 않습니다.
+            float canvasWidth = canvasRect.rect.width;
+            float toastWidth = Mathf.Min(560f, Mathf.Max(200f, canvasWidth - 384f));
+            float centeredLeft = (canvasWidth - toastWidth) * 0.5f;
+            float toastLeft = Mathf.Max(centeredLeft, 360f);
+            root.sizeDelta = new Vector2(toastWidth, 88f);
+            root.anchoredPosition = new Vector2(toastLeft - centeredLeft, -24f);
         }
 
         /// <summary>기존 감사 코드와 호환되는 명시적 갱신 진입점입니다.</summary>
@@ -135,6 +152,7 @@ namespace ProjectLimitless.Player
             RectTransform root = GetComponent<RectTransform>();
             root.anchorMin = new Vector2(0.5f, 1f); root.anchorMax = new Vector2(0.5f, 1f);
             root.pivot = new Vector2(0.5f, 1f); root.anchoredPosition = new Vector2(0f, -24f); root.sizeDelta = new Vector2(560f, 88f);
+            UpdateToastPosition();
             UnityEngine.UI.Image panel = GetComponent<UnityEngine.UI.Image>();
             panel.color = new Color(0.055f, 0.065f, 0.09f, 0.96f); panel.raycastTarget = false;
             Outline border = GetComponent<Outline>(); border.effectColor = new Color(0.82f, 0.66f, 0.25f, 1f); border.effectDistance = new Vector2(2f, -2f);

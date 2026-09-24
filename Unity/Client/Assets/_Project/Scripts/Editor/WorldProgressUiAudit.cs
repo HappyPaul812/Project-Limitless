@@ -85,14 +85,18 @@ namespace ProjectLimitless.EditorTools
             WorldExperienceHud hud = canvasObject.transform.Find("WorldExperienceHud").GetComponent<WorldExperienceHud>();
             RectTransform hudRect = hud.GetComponent<RectTransform>();
             RectTransform toastRect = canvasObject.transform.Find("QuestHud").GetComponent<RectTransform>();
+            Canvas.ForceUpdateCanvases();
+            toastRect.GetComponent<QuestHudPresenter>().Refresh();
             Check(hudRect.anchorMin == new Vector2(0f, 1f) && hudRect.anchorMax == new Vector2(0f, 1f)
                 && hudRect.pivot == new Vector2(0f, 1f) && hudRect.anchoredPosition == new Vector2(24f, -24f)
                 && hudRect.sizeDelta == new Vector2(320f, 72f),
                 "EXP HUD 좌상단 Anchor와 24px 안전 여백, 320x72 패널");
+            float canvasWidth = canvasObject.GetComponent<RectTransform>().rect.width;
+            float toastLeft = (canvasWidth - toastRect.sizeDelta.x) * .5f + toastRect.anchoredPosition.x;
             Check(toastRect.anchorMin == new Vector2(.5f, 1f) && toastRect.anchorMax == new Vector2(.5f, 1f)
-                && toastRect.anchoredPosition == new Vector2(0f, -24f)
-                && hudRect.anchoredPosition.x + hudRect.sizeDelta.x < 640f - toastRect.sizeDelta.x / 2f,
-                "1280px 화면에서 EXP HUD와 상단 중앙 Quest Toast 가로 영역 분리");
+                && toastRect.anchoredPosition.y == -24f
+                && hudRect.anchoredPosition.x + hudRect.sizeDelta.x + 16f <= toastLeft,
+                "현재 화면 폭에서 EXP HUD와 Quest Toast 가로 영역 16px 이상 분리");
             RectTransform identityRect = canvasObject.transform.Find("WorldExperienceHud/Identity").GetComponent<RectTransform>();
             RectTransform experienceRect = canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<RectTransform>();
             RectTransform barRect = canvasObject.transform.Find("WorldExperienceHud/BarBackground").GetComponent<RectTransform>();
