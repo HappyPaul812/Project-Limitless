@@ -13,7 +13,7 @@ namespace ProjectLimitless.Player
     {
         private const string ObjectName = "WorldExperienceHud";
         private const float LeftSafeMargin = 24f;
-        private const float TopOffsetBelowQuestToast = 128f;
+        private const float TopSafeMargin = 24f;
         private static readonly Color PanelColor = new Color(0.055f, 0.065f, 0.09f, 0.94f);
         private static readonly Color BorderColor = new Color(0.82f, 0.66f, 0.25f, 1f);
         private static readonly Color FillColor = new Color(0.9f, 0.7f, 0.22f, 1f);
@@ -171,14 +171,14 @@ namespace ProjectLimitless.Player
             }
 
             RectTransform root = GetComponent<RectTransform>();
-            // 화면 좌상단 Anchor와 같은 모서리 Pivot을 쓰면 해상도나 화면 비율이 바뀌어도
-            // 패널의 왼쪽 거리는 일정합니다. 위쪽은 중앙 Quest Toast(24~112px) 아래로 내려
-            // 겹침을 피합니다. 향후 다른 위치 프리셋은 이 Anchor/Pivot/여백만 바꾸면 됩니다.
+            // Canvas의 좌상단 Anchor와 같은 Pivot을 사용해 화면 크기가 바뀌어도
+            // 왼쪽·위쪽 여백을 일정하게 유지합니다. 중앙 Quest Toast와는 가로 영역을 분리합니다.
+            // 향후 모서리 위치 프리셋은 이 Anchor/Pivot/여백 조합을 바꾸면 됩니다.
             root.anchorMin = new Vector2(0f, 1f);
             root.anchorMax = new Vector2(0f, 1f);
             root.pivot = new Vector2(0f, 1f);
-            root.anchoredPosition = new Vector2(LeftSafeMargin, -TopOffsetBelowQuestToast);
-            root.sizeDelta = new Vector2(420f, 76f);
+            root.anchoredPosition = new Vector2(LeftSafeMargin, -TopSafeMargin);
+            root.sizeDelta = new Vector2(320f, 72f);
 
             Image panel = GetOrAddImage(gameObject);
             panel.color = PanelColor;
@@ -187,16 +187,25 @@ namespace ProjectLimitless.Player
             panelOutline.effectColor = BorderColor;
             panelOutline.effectDistance = new Vector2(2f, -2f);
 
-            GameObject pathSymbol = CreateRect("PathSymbol", new Vector2(16f, 36f), new Vector2(32f, 32f));
+            GameObject pathSymbol = CreateRect("PathSymbol", new Vector2(12f, 34f), new Vector2(32f, 32f));
             pathSymbolImage = GetOrAddImage(pathSymbol);
             pathSymbolImage.preserveAspect = true;
             pathSymbolImage.color = Color.white;
             // EXP HUD는 전투 상태가 아니라 플레이어의 고정 정체성을 보여 주므로 TraitIcon 대신
             // 선택한 길 자체의 공식 문장인 PathSymbol만 이름 왼쪽에 표시합니다.
-            identityText = CreateText("Identity", new Vector2(56f, 40f), new Vector2(348f, 26f), TextAnchor.MiddleLeft, 20);
-            experienceText = CreateText("Experience", new Vector2(16f, 16f), new Vector2(388f, 22f), TextAnchor.MiddleRight, 17);
+            identityText = CreateText("Identity", new Vector2(50f, 37f), new Vector2(150f, 26f), TextAnchor.MiddleLeft, 16);
+            experienceText = CreateText("Experience", new Vector2(202f, 37f), new Vector2(106f, 26f), TextAnchor.MiddleRight, 14);
+            // 좁아진 첫 줄에서도 이름과 EXP가 각자의 칸 안에서 글자 크기를 조절해 겹치지 않게 합니다.
+            identityText.resizeTextForBestFit = true;
+            identityText.resizeTextMinSize = 10;
+            identityText.resizeTextMaxSize = 16;
+            experienceText.resizeTextForBestFit = true;
+            experienceText.resizeTextMinSize = 11;
+            experienceText.resizeTextMaxSize = 14;
+            identityText.horizontalOverflow = HorizontalWrapMode.Wrap;
+            experienceText.horizontalOverflow = HorizontalWrapMode.Wrap;
 
-            GameObject barBackground = CreateRect("BarBackground", new Vector2(16f, 8f), new Vector2(388f, 8f));
+            GameObject barBackground = CreateRect("BarBackground", new Vector2(20f, 11f), new Vector2(280f, 9f));
             GetOrAddImage(barBackground).color = new Color(0.13f, 0.14f, 0.18f, 1f);
 
             GameObject fill = CreateRect("BarFill", Vector2.zero, Vector2.zero, barBackground.transform);

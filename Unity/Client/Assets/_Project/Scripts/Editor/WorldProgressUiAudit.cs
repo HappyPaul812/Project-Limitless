@@ -86,11 +86,19 @@ namespace ProjectLimitless.EditorTools
             RectTransform hudRect = hud.GetComponent<RectTransform>();
             RectTransform toastRect = canvasObject.transform.Find("QuestHud").GetComponent<RectTransform>();
             Check(hudRect.anchorMin == new Vector2(0f, 1f) && hudRect.anchorMax == new Vector2(0f, 1f)
-                && hudRect.pivot == new Vector2(0f, 1f) && hudRect.anchoredPosition == new Vector2(24f, -128f),
-                "EXP HUD 좌상단 Anchor와 Quest Toast 아래 여백");
+                && hudRect.pivot == new Vector2(0f, 1f) && hudRect.anchoredPosition == new Vector2(24f, -24f)
+                && hudRect.sizeDelta == new Vector2(320f, 72f),
+                "EXP HUD 좌상단 Anchor와 24px 안전 여백, 320x72 패널");
             Check(toastRect.anchorMin == new Vector2(.5f, 1f) && toastRect.anchorMax == new Vector2(.5f, 1f)
-                && hudRect.anchoredPosition.y < toastRect.anchoredPosition.y - toastRect.sizeDelta.y,
-                "EXP HUD와 상단 중앙 Quest Toast 세로 영역 분리");
+                && toastRect.anchoredPosition == new Vector2(0f, -24f)
+                && hudRect.anchoredPosition.x + hudRect.sizeDelta.x < 640f - toastRect.sizeDelta.x / 2f,
+                "1280px 화면에서 EXP HUD와 상단 중앙 Quest Toast 가로 영역 분리");
+            RectTransform identityRect = canvasObject.transform.Find("WorldExperienceHud/Identity").GetComponent<RectTransform>();
+            RectTransform experienceRect = canvasObject.transform.Find("WorldExperienceHud/Experience").GetComponent<RectTransform>();
+            RectTransform barRect = canvasObject.transform.Find("WorldExperienceHud/BarBackground").GetComponent<RectTransform>();
+            Check(identityRect.anchoredPosition.x + identityRect.sizeDelta.x < experienceRect.anchoredPosition.x
+                && barRect.sizeDelta == new Vector2(280f, 9f),
+                "첫 줄 텍스트 영역 분리와 280px EXP Bar");
             Image fill = canvasObject.transform.Find("WorldExperienceHud/BarBackground/BarFill").GetComponent<Image>();
             CheckFill(hud, fill, 1, 0, 0f);
             CheckFill(hud, fill, 1, 24, .24f);
