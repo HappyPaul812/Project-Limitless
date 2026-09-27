@@ -124,6 +124,15 @@ namespace ProjectLimitless.Battle
             return CurrentHp - previousHp;
         }
 
+        /// <summary>공용 소비 아이템이 실제로 회복한 MP만 확인하도록 최대치에서 제한합니다.</summary>
+        public int RecoverMp(int requestedAmount)
+        {
+            if (!IsAlive || !UsesMp || requestedAmount <= 0) return 0;
+            int previousMp = CurrentMp;
+            CurrentMp = Math.Min(MaxMp, CurrentMp + requestedAmount);
+            return CurrentMp - previousMp;
+        }
+
         /// <summary>단일 적대 행동을 지정 대상에게 강제하는 도발 상태를 기록합니다.</summary>
         public void ApplyTaunt(Combatant forcedTarget, int affectedActions = 2)
         {

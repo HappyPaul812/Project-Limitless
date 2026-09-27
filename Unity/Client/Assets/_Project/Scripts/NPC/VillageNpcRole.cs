@@ -50,7 +50,8 @@ namespace ProjectLimitless.NPC
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;
             if (role == VillageNpcRoleType.PartyManager)
             {
-                if (QuestService.GetState(MainQuest05ReturnFlow.QuestId) == QuestState.Completed)
+                if (npcId.StartsWith("safezone-catacomb-")
+                    || QuestService.GetState(MainQuest05ReturnFlow.QuestId) == QuestState.Completed)
                     PartyManagementPresenter.OpenAt(npc.transform);
                 else DialoguePresenter.Instance?.Show(npcId, npc.DisplayName, "동료와 함께 돌아오시면 편성을 도와드리겠습니다.");
                 return;
@@ -59,7 +60,12 @@ namespace ProjectLimitless.NPC
             {
                 DialoguePresenter.Instance?.ShowConfirmation(
                     npcId, npc.DisplayName, "필요한 물건이 있으신가요?", "물건을 본다", "괜찮습니다",
-                    () => ShopPresenter.OpenStarterGeneralShop(npc.transform));
+                    () =>
+                    {
+                        if (npcId.StartsWith("safezone-catacomb-"))
+                            ShopPresenter.OpenCatalog("ShopDefinitions/CatacombEntranceSupply", npc.transform);
+                        else ShopPresenter.OpenStarterGeneralShop(npc.transform);
+                    });
                 return;
             }
 

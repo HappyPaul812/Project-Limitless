@@ -32,6 +32,10 @@ namespace ProjectLimitless.NPC
                 ["starter-village-resident-04"] = "VillageNpcSprites/Eldiran/OGA19_Resident04",
                 ["starter-village-gate-guard"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
                 ["starter-village-main-guide"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative",
+                ["safezone-catacomb-supply"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop",
+                ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
+                ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer",
+                ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
             };
 
         public static bool Apply(

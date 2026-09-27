@@ -56,6 +56,15 @@ namespace ProjectLimitless.UI
             Instance.Open(definition, shopOwner);
         }
 
+        /// <summary>지역별 판매 목록만 바꾸고 기존 구매·판매 UI와 거래 검증은 그대로 공유합니다.</summary>
+        public static void OpenCatalog(string resourcePath, Transform shopOwner)
+        {
+            ShopDefinition definition = Resources.Load<ShopDefinition>(resourcePath);
+            if (definition == null) { Debug.LogError($"상점 데이터를 찾지 못했습니다: {resourcePath}"); return; }
+            if (Instance == null) new GameObject("ShopSystem").AddComponent<ShopPresenter>();
+            Instance.Open(definition, shopOwner);
+        }
+
         private void Awake()
         {
             if (Instance != null && Instance != this) { Destroy(gameObject); return; }

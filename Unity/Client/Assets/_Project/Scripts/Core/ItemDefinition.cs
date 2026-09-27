@@ -4,7 +4,8 @@ namespace ProjectLimitless.Core
 {
     public enum ItemCategory { Consumable, Equipment, Material, Quest, KeyItem }
     public enum ItemUseType { None, World, Battle, WorldAndBattle }
-    public enum ItemEffectType { None, RecoverHp, RecoverMp }
+    public enum ItemEffectType { None, RecoverHp, RecoverMp, RemovePoison, RemoveBurn, RemoveShock, RemoveSilence }
+    public enum ItemTargetType { LivingAllySingle, DeadAllySingle, AllLivingAllies }
 
     /// <summary>표시 이름이 바뀌어도 저장이 깨지지 않도록 안정적인 ItemId와 화면용 문구를 분리합니다.</summary>
     [CreateAssetMenu(menuName = "Project Limitless/Item Definition")]
@@ -21,6 +22,7 @@ namespace ProjectLimitless.Core
         [SerializeField] private Color iconTint = Color.white;
         [SerializeField] private ItemUseType useType;
         [SerializeField] private ItemEffectType effectType;
+        [SerializeField] private ItemTargetType targetType = ItemTargetType.LivingAllySingle;
         [SerializeField, Min(0)] private int effectAmount;
         [SerializeField] private string effectPreview = string.Empty;
         public string ItemId => itemId;
@@ -34,6 +36,7 @@ namespace ProjectLimitless.Core
         public Color IconTint => iconTint;
         public ItemUseType UseType => useType;
         public ItemEffectType EffectType => effectType;
+        public ItemTargetType TargetType => targetType;
         public int EffectAmount => effectAmount;
         public string EffectPreview => effectPreview;
 #if UNITY_EDITOR

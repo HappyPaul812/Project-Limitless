@@ -2,6 +2,7 @@ using System.Collections;
 using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
 using ProjectLimitless.Player;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -139,6 +140,17 @@ namespace ProjectLimitless.Battle
             string fieldSceneName = BattleEncounterContext.FieldSceneName;
             if (string.IsNullOrWhiteSpace(fieldSceneName)) fieldSceneName = "Field_01";
             SceneManager.LoadSceneAsync(fieldSceneName, LoadSceneMode.Single);
+        }
+
+        /// <summary>전멸은 승리 알림과 몬스터 제거를 거치지 않고 최근 안전지대의 Spawn으로 이동합니다.</summary>
+        public static void ReturnAfterDefeat()
+        {
+            if (transitioning) return;
+            transitioning = true;
+            MonsterEncounterService.SuppressForSeconds(2f);
+            // Battle 런타임은 Scene 교체로 폐기됩니다. 이미 사용한 공용 Inventory는 세션과 저장에 남습니다.
+            SceneTransitionService.Load(GameSessionData.LastSafeZoneSceneId,
+                GameSessionData.LastSafeZoneSpawnPointId);
         }
 
         private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)

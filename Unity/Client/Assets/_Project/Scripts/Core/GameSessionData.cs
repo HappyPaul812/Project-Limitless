@@ -29,6 +29,9 @@ namespace ProjectLimitless.Core
         /// </summary>
         public static string CurrentSceneId { get; private set; } = string.Empty;
         public static string LastSpawnPointId { get; private set; } = string.Empty;
+        public static string LastSafeZoneId { get; private set; } = string.Empty;
+        public static string LastSafeZoneSceneId { get; private set; } = "World_StarterVillage";
+        public static string LastSafeZoneSpawnPointId { get; private set; } = "Spawn_From_Field01";
         public static bool HasSavedWorldPosition { get; private set; }
         public static float SavedPositionX { get; private set; }
         public static float SavedPositionY { get; private set; }
@@ -59,6 +62,15 @@ namespace ProjectLimitless.Core
         {
             CurrentSceneId = sceneId ?? string.Empty;
             LastSpawnPointId = spawnPointId ?? string.Empty;
+        }
+
+        /// <summary>실제 안전 영역에 진입했을 때만 전멸 복귀 지점을 갱신합니다. 평소 월드 위치 저장과는 별개입니다.</summary>
+        public static void ActivateSafeZone(string id, string sceneId, string spawnPointId)
+        {
+            if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(sceneId) || string.IsNullOrWhiteSpace(spawnPointId)) return;
+            LastSafeZoneId = id;
+            LastSafeZoneSceneId = sceneId;
+            LastSafeZoneSpawnPointId = spawnPointId;
         }
 
         /// <summary>
@@ -97,6 +109,9 @@ namespace ProjectLimitless.Core
             CurrentExperience = 0;
             CurrentSceneId = string.Empty;
             LastSpawnPointId = string.Empty;
+            LastSafeZoneId = string.Empty;
+            LastSafeZoneSceneId = "World_StarterVillage";
+            LastSafeZoneSpawnPointId = "Spawn_From_Field01";
             ClearWorldPosition();
         }
     }

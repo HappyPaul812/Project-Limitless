@@ -37,8 +37,10 @@ namespace ProjectLimitless.UI
         public static bool OpenAt(Transform safeAreaSource)
         {
             // 향후 캠프는 같은 진입점의 안전지역 정책을 확장합니다. 필드 단축키는 제공하지 않습니다.
-            if (safeAreaSource == null || safeAreaSource.gameObject.scene.name != "World_StarterVillage"
-                || SceneManager.GetActiveScene().name != "World_StarterVillage") return false;
+            if (safeAreaSource == null) return false;
+            string sceneName = safeAreaSource.gameObject.scene.name;
+            if ((sceneName != "World_StarterVillage" && sceneName != "Field_03")
+                || SceneManager.GetActiveScene().name != sceneName) return false;
             if (Instance == null) new GameObject("PartyManagementSystem").AddComponent<PartyManagementPresenter>();
             return Instance.Open(safeAreaSource);
         }

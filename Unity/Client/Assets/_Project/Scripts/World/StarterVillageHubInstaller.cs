@@ -1,4 +1,5 @@
 using ProjectLimitless.NPC;
+using ProjectLimitless.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +24,7 @@ namespace ProjectLimitless.World
         private static void Install(Scene scene, LoadSceneMode mode)
         {
             if (scene.name != SceneName || GameObject.Find(RootName) != null) return;
+            GameSessionData.ActivateSafeZone("safezone_starter_village", SceneName, "Spawn_From_Field01");
 
             NpcController template = Object.FindAnyObjectByType<NpcController>();
             if (template == null)

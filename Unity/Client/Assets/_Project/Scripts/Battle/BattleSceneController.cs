@@ -82,10 +82,15 @@ namespace ProjectLimitless.Battle
         private Text messageText;
         private Button attackButton;
         private Button skillButton;
+        private Button itemButton;
         private Button defendButton;
         private Button fleeButton;
         private Button cancelButton;
         private Image skillMenuPanel;
+        private Image itemMenuPanel;
+        private readonly List<Button> itemMenuButtons = new List<Button>();
+        private bool choosingItem;
+        private bool targetSelectionReturnsToItemMenu;
         private bool choosingTarget;
         private bool choosingSkill;
         // 기본 공격 대상 취소는 명령으로, 정조준·치유처럼 스킬이 연 대상 취소는 스킬 목록으로 돌아갑니다.
@@ -706,10 +711,11 @@ namespace ProjectLimitless.Battle
             messageText = MakeText(commandPanel.transform, "Message", "행동을 선택하세요.", font, 16, new Vector2(.5f, .79f), new Vector2(1030, 26)); messageText.fontStyle = FontStyle.Bold;
             // 기존 205×48 버튼에서 가로·세로를 약 17% 줄였습니다. 글자는 18px을 유지하고
             // 네 버튼 간 중심 간격을 다시 맞춰 클릭 영역은 충분하면서 패널이 덜 답답하게 보이게 합니다.
-            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", BattleUiIconCatalog.Attack, "공격", font, new Vector2(.15f, .42f), BeginAttack);
-            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", BattleUiIconCatalog.Skill, "스킬", font, new Vector2(.35f, .42f), ShowSkillMenu);
-            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", BattleUiIconCatalog.Defend, "방어", font, new Vector2(.55f, .42f), Defend);
-            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, "도망", font, new Vector2(.75f, .42f), Flee);
+            attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", BattleUiIconCatalog.Attack, "공격", font, new Vector2(.10f, .42f), BeginAttack);
+            skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", BattleUiIconCatalog.Skill, "스킬", font, new Vector2(.29f, .42f), ShowSkillMenu);
+            itemButton = MakeCommandButton(commandPanel.transform, "ItemButton", null, "아이템", font, new Vector2(.48f, .42f), ShowItemMenu);
+            defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", BattleUiIconCatalog.Defend, "방어", font, new Vector2(.67f, .42f), Defend);
+            fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, "도망", font, new Vector2(.86f, .42f), Flee);
             cancelButton = MakeAuxiliaryButton(commandPanel.transform, "CancelButton", "취소", font,
                 new Vector2(.92f, .42f), BattleUiIconCatalog.Cancel, CancelCurrentSelection);
             cancelButton.gameObject.SetActive(false);
@@ -718,6 +724,10 @@ namespace ProjectLimitless.Battle
             SetRect(skillMenuPanel.rectTransform, new Vector2(.45f, .42f), new Vector2(850, 54));
             AddOutline(skillMenuPanel.gameObject, gold, 1);
             skillMenuPanel.gameObject.SetActive(false);
+            itemMenuPanel = MakeImage(parent, "ItemMenu", new Color(.045f, .075f, .12f, .99f));
+            SetRect(itemMenuPanel.rectTransform, new Vector2(.5f, .48f), new Vector2(540, 390));
+            AddOutline(itemMenuPanel.gameObject, gold, 2);
+            itemMenuPanel.gameObject.SetActive(false);
         }
 
         /// <summary>
@@ -743,7 +753,7 @@ namespace ProjectLimitless.Battle
         {
             if (battleEnded) return;
             if (enemies.IsDefeated) { EndBattle("승리! 적을 모두 쓰러뜨렸습니다.", true); return; }
-            if (allies.IsDefeated) { EndBattle("전투불능. 조우했던 필드로 복귀합니다.", false); return; }
+            if (allies.IsDefeated) { EndBattle("전투불능. 최근 안전지대로 복귀합니다.", false); return; }
 
             currentActor = turnOrder.TakeNext(AllCombatants);
             if (currentActor == null) return;
@@ -784,7 +794,7 @@ namespace ProjectLimitless.Battle
         /// 사거리나 스킬 대상 규칙은 호출자가 계산하며 이 메서드는 UI 선택만 담당합니다.
         /// </summary>
         private void BeginTargetSelection(IReadOnlyList<Combatant> targets, Action<Combatant> onSelected, string prompt,
-            bool returnToSkillMenuOnCancel = false)
+            bool returnToSkillMenuOnCancel = false, bool returnToItemMenuOnCancel = false)
         {
             if (targets == null || targets.Count == 0)
             {
@@ -796,6 +806,7 @@ namespace ProjectLimitless.Battle
             HideSkillDetailPopup();
             choosingTarget = true;
             targetSelectionReturnsToSkillMenu = returnToSkillMenuOnCancel;
+            targetSelectionReturnsToItemMenu = returnToItemMenuOnCancel;
             selectableTargets = targets;
             targetSelectedAction = onSelected;
             SetCommandButtons(false);
@@ -811,6 +822,7 @@ namespace ProjectLimitless.Battle
             Action<Combatant> selectedAction = targetSelectedAction;
             choosingTarget = false;
             targetSelectionReturnsToSkillMenu = false;
+            targetSelectionReturnsToItemMenu = false;
             selectableTargets = Array.Empty<Combatant>();
             targetSelectedAction = null;
             SetCancelButtonVisible(false);
@@ -837,6 +849,76 @@ namespace ProjectLimitless.Battle
 
             Button focus = skillMenuButtons.FirstOrDefault(button => button.interactable) ?? skillMenuButtons.LastOrDefault();
             if (EventSystem.current != null && focus != null) EventSystem.current.SetSelectedGameObject(focus.gameObject);
+        }
+
+        /// <summary>공용 Inventory의 현재 수량만 목록에 표시합니다. 선택 단계에서는 아직 행동과 수량을 바꾸지 않습니다.</summary>
+        private void ShowItemMenu()
+        {
+            if (battleEnded || actionPlaying || currentActor == null || !currentActor.IsPlayerControlled) return;
+            choosingItem = true;
+            SetCommandButtons(false);
+            SetCancelButtonVisible(true);
+            foreach (Transform child in itemMenuPanel.transform) Destroy(child.gameObject);
+            itemMenuButtons.Clear();
+            ItemDefinition[] available = ItemCatalog.All
+                .Where(item => item.Category == ItemCategory.Consumable
+                    && (item.UseType == ItemUseType.Battle || item.UseType == ItemUseType.WorldAndBattle)
+                    && InventoryService.GetItemCount(item.ItemId) > 0)
+                .OrderBy(item => item.DisplayName).ToArray();
+            int count = available.Length + 1;
+            float spacing = Mathf.Min(48f, 350f / count);
+            for (int index = 0; index < available.Length; index++)
+            {
+                ItemDefinition item = available[index];
+                Button button = MakeSkillMenuButton(itemMenuPanel.transform, $"Item_{item.ItemId}",
+                    $"{item.DisplayName} ×{InventoryService.GetItemCount(item.ItemId)}  {item.EffectPreview}", null,
+                    new Vector2(.5f, .88f - index * spacing / 390f), () => SelectItem(item));
+                SetRect(button.GetComponent<RectTransform>(), new Vector2(.5f, .88f - index * spacing / 390f), new Vector2(500, spacing - 4f));
+                SetRect(button.transform.Find("Label").GetComponent<RectTransform>(), Vector2.one * .5f, new Vector2(475, spacing - 4f));
+                itemMenuButtons.Add(button);
+            }
+            Button back = MakeSkillMenuButton(itemMenuPanel.transform, "ItemBack",
+                available.Length == 0 ? "보유한 전투 아이템이 없습니다.  돌아가기" : "돌아가기", null,
+                new Vector2(.5f, .88f - available.Length * spacing / 390f), CloseItemMenu);
+            SetRect(back.GetComponent<RectTransform>(), new Vector2(.5f, .88f - available.Length * spacing / 390f), new Vector2(500, spacing - 4f));
+            SetRect(back.transform.Find("Label").GetComponent<RectTransform>(), Vector2.one * .5f, new Vector2(475, spacing - 4f));
+            itemMenuButtons.Add(back);
+            itemMenuPanel.gameObject.SetActive(true);
+            messageText.text = "사용할 아이템을 선택하세요. Esc 또는 취소로 명령으로 돌아갑니다.";
+            EventSystem.current?.SetSelectedGameObject(itemMenuButtons[0].gameObject);
+        }
+
+        private void CloseItemMenu()
+        {
+            choosingItem = false;
+            itemMenuPanel.gameObject.SetActive(false);
+            SetCancelButtonVisible(false);
+            SetCommandButtons(true);
+            messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
+            EventSystem.current?.SetSelectedGameObject(itemButton.gameObject);
+        }
+
+        private void SelectItem(ItemDefinition item)
+        {
+            if (!choosingItem || item == null) return;
+            // 현재 구현된 대상 유형은 생존 아군 단일이다. 나머지 유형은 데이터 확장 자리만 마련하고 실행을 막는다.
+            if (item.TargetType != ItemTargetType.LivingAllySingle)
+            { messageText.text = "이 아이템의 대상 방식은 아직 사용할 수 없습니다."; return; }
+            choosingItem = false;
+            itemMenuPanel.gameObject.SetActive(false);
+            BeginTargetSelection(allies.LivingMembers.ToArray(), target => UseBattleItem(item, target),
+                $"{item.DisplayName}을 사용할 아군을 선택하세요. 자신과 전열·후열 모두 가능합니다.", false, true);
+        }
+
+        /// <summary>효과를 낼 수 있는 대상인지 먼저 확인하고, 실제 효과가 성공한 뒤에만 공용 수량을 차감합니다.</summary>
+        private void UseBattleItem(ItemDefinition item, Combatant target)
+        {
+            if (!BattleItemUseService.TryUse(item, target, statusEffects, out string result))
+            { ShowItemMenu(); messageText.text = result; return; }
+            if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
+            messageText.text = $"{currentActor.DisplayName}: {result}";
+            RefreshCombatantViews(null);
+            FinishCurrentAction();
         }
 
         private void RebuildSkillMenu()
@@ -907,11 +989,14 @@ namespace ProjectLimitless.Battle
                 CloseSkillMenu();
                 return;
             }
+            if (choosingItem) { CloseItemMenu(); return; }
             if (!choosingTarget) return;
 
             bool returnToSkillMenu = targetSelectionReturnsToSkillMenu;
+            bool returnToItemMenu = targetSelectionReturnsToItemMenu;
             choosingTarget = false;
             targetSelectionReturnsToSkillMenu = false;
+            targetSelectionReturnsToItemMenu = false;
             selectableTargets = Array.Empty<Combatant>();
             targetSelectedAction = null;
             SetCancelButtonVisible(false);
@@ -922,6 +1007,7 @@ namespace ProjectLimitless.Battle
                 ShowSkillMenu();
                 return;
             }
+            if (returnToItemMenu) { ShowItemMenu(); return; }
             SetCommandButtons(true);
             RefreshCombatantViews(null);
             messageText.text = $"{currentActor.DisplayName}의 행동을 선택하세요.";
@@ -2505,9 +2591,13 @@ namespace ProjectLimitless.Battle
             {
                 RecordAllyResources();
                 // 전멸 뒤 0 HP 상태로 필드에 복귀하지 않도록 현재 파티 전체를 등록된 최대치로 회복합니다.
-                // 소모품·몬스터와 기존 조우 필드 복귀 처리는 건드리지 않습니다.
+                // 이미 쓴 소모품은 공용 Inventory에 남고 몬스터 처치 알림은 승리 분기에서만 발생합니다.
                 PartyResourceService.HealPartyFully();
-                StartCoroutine(ReturnAfterDelay(false));
+                GameSessionData.ClearWorldPosition();
+                if (GameSaveService.CurrentSlotIndex > 0)
+                    GameSaveService.SaveCurrentSession(GameSessionData.LastSafeZoneSceneId,
+                        GameSessionData.LastSafeZoneSpawnPointId);
+                StartCoroutine(ReturnAfterDefeatDelay());
             }
             messageText.text = message;
         }
@@ -2526,6 +2616,12 @@ namespace ProjectLimitless.Battle
         {
             yield return new WaitForSeconds(1.2f);
             BattleSceneFlow.ReturnToField(defeatedEncounteredMonster);
+        }
+
+        private IEnumerator ReturnAfterDefeatDelay()
+        {
+            yield return new WaitForSeconds(1.2f);
+            BattleSceneFlow.ReturnAfterDefeat();
         }
 
         private void RefreshCombatantViews(IReadOnlyList<Combatant> attackable)

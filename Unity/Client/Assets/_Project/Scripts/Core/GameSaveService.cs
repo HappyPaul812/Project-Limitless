@@ -20,6 +20,9 @@ namespace ProjectLimitless.Core
         public int CurrentExperience;
         public string CurrentSceneId = string.Empty;
         public string SpawnPointId = string.Empty;
+        public string LastSafeZoneId = string.Empty;
+        public string LastSafeZoneSceneId = string.Empty;
+        public string LastSafeZoneSpawnPointId = string.Empty;
         // Version 1 파일에 이 필드가 없어도 JsonUtility는 false/0으로 채우므로 기존 저장은 SpawnPoint fallback을 사용합니다.
         public bool HasSavedWorldPosition;
         public float SavedPositionX;
@@ -138,6 +141,9 @@ namespace ProjectLimitless.Core
                 CurrentExperience = GameSessionData.CurrentExperience,
                 CurrentSceneId = resolvedScene,
                 SpawnPointId = resolvedSpawn,
+                LastSafeZoneId = GameSessionData.LastSafeZoneId,
+                LastSafeZoneSceneId = GameSessionData.LastSafeZoneSceneId,
+                LastSafeZoneSpawnPointId = GameSessionData.LastSafeZoneSpawnPointId,
                 HasSavedWorldPosition = GameSessionData.HasSavedWorldPosition,
                 SavedPositionX = GameSessionData.SavedPositionX,
                 SavedPositionY = GameSessionData.SavedPositionY,
@@ -195,6 +201,8 @@ namespace ProjectLimitless.Core
             if (QuestService.GetState("main_09_reunion_in_silence") == QuestState.Completed)
                 CompanionRosterService.UnlockPaul(GameSessionData.SelectedJobId);
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
+            // Version 1의 이전 JSON에는 세 필드가 없습니다. 그 경우 Reset의 시작 마을 fallback을 유지합니다.
+            GameSessionData.ActivateSafeZone(data.LastSafeZoneId, data.LastSafeZoneSceneId, data.LastSafeZoneSpawnPointId);
             // 캐릭터 본체가 유효하면 좌표 하나가 손상됐다는 이유로 슬롯 전체를 막지 않습니다.
             // 좌표만 무효화하면 다음 Scene에서 기존 SpawnPoint가 안전 fallback으로 동작합니다.
             if (data.HasSavedWorldPosition && IsFinite(data.SavedPositionX) && IsFinite(data.SavedPositionY))
