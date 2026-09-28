@@ -20,6 +20,8 @@ namespace ProjectLimitless.Monster
         [SerializeField, Min(.5f)] private float activityRadius = 2.5f;
         // 처치된 뒤 같은 배치 위치에서 다시 나타날 때까지의 시간입니다.
         [SerializeField, Min(0f)] private float respawnSeconds = 30f;
+        // 일반 몬스터와 달리 보스는 같은 실행 중 자동 리스폰하지 않습니다.
+        [SerializeField] private bool nonRespawningBoss;
 
         public string SceneName => sceneName;
         public string SpawnId => spawnId;
@@ -27,9 +29,11 @@ namespace ProjectLimitless.Monster
         public Vector2 Position => position;
         public float ActivityRadius => activityRadius;
         public float RespawnSeconds => respawnSeconds;
+        public bool NonRespawningBoss => nonRespawningBoss;
 #if UNITY_EDITOR
         public void Configure(string scene, string id, MonsterDefinition definition, Vector2 at, float radius, float respawn)
         { sceneName=scene; spawnId=id; monster=definition; position=at; activityRadius=radius; respawnSeconds=respawn; }
+        public void SetNonRespawningBoss(bool value) => nonRespawningBoss = value;
 #endif
     }
 }

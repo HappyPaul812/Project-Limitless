@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: PoisonAntidote
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
   itemId: item_poison_antidote
-  displayName: 해독제
-  description: 독과 맹독을 제거합니다.
+  displayName: "\uD574\uB3C5\uC81C"
+  description: "\uB3C5\uACFC \uB9F9\uB3C5\uC744 \uC81C\uAC70\uD569\uB2C8\uB2E4."
   category: 0
   maxStack: 99
   buyPrice: 40
   sellPrice: 20
-  icon: {fileID: 0}
+  icon: {fileID: 1939589574, guid: 40887135a3b85b24caa0f9312e9ab435, type: 3}
   iconTint: {r: 1, g: 1, b: 1, a: 1}
   useType: 2
   effectType: 3
   targetType: 0
   effectAmount: 0
-  effectPreview: 독/맹독 제거
+  effectPreview: "\uB3C5/\uB9F9\uB3C5 \uC81C\uAC70"

@@ -41,7 +41,8 @@ namespace ProjectLimitless.Monster
         public static void MarkDefeated(FieldMonsterSpawnDefinition spawn)
         {
             if (spawn == null) return;
-            defeatedUntilBySpawn[GetSpawnKey(spawn)] = Time.realtimeSinceStartup + Mathf.Max(0f, spawn.RespawnSeconds);
+            defeatedUntilBySpawn[GetSpawnKey(spawn)] = spawn.NonRespawningBoss ? float.PositiveInfinity :
+                Time.realtimeSinceStartup + Mathf.Max(0f, spawn.RespawnSeconds);
         }
 
         /// <summary>해당 스폰이 지금 필드에 생성될 수 있는지 확인합니다.</summary>

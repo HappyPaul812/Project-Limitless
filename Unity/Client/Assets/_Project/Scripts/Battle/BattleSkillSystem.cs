@@ -515,6 +515,9 @@ namespace ProjectLimitless.Battle
         /// <summary>계산 결과만 화면에 알려 주어 피해 규칙이 UI 오브젝트를 직접 참조하지 않게 합니다.</summary>
         public event Action<GuardianInterceptionResult> GuardianInterceptionOccurred;
 
+        /// <summary>B2 전투에서만 연결하는 임시 장막 계산기입니다. 다른 전투에는 null입니다.</summary>
+        public BattleDungeonMonsterRuntime DungeonBarrier { get; set; }
+
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
             if (source == null || !source.IsAlive || opponents == null) return 0;
@@ -642,7 +645,9 @@ namespace ProjectLimitless.Battle
             if (target == null) return 0;
             // 원래 피해는 보호가 없었다면 동료가 받을 값이고, 실제 피해는 수호의 맹세 감소와 동료 자신의
             // 방어를 차례로 거친 값입니다. 둘을 분리해야 UI가 "얼마를 막았는지" 정확히 알려 줄 수 있습니다.
-            int damageAfterCover = Math.Max(1, rawDamage);
+            // 지하묘지 장막은 직접 피해에만 한 번 적용됩니다. 기존 수호의 맹세·개인 방어보다 앞에서
+            // 처리해 DoT가 장막을 지나지 않고, 보스와 수호체 장막이 겹치지 않게 런타임이 판정합니다.
+            int damageAfterCover = Math.Max(1, DungeonBarrier?.ModifyIncomingDamage(target, rawDamage, origin) ?? rawDamage);
             GuardianInterceptionResult? interception = null;
             if (origin == BattleDamageOrigin.DirectCombatAction &&
                 guardianCovers.TryGetValue(target.Side, out GuardianCoverState cover) &&

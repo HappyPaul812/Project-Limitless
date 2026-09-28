@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: ShockInsulationPotion
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
   itemId: item_shock_insulation_potion
-  displayName: 절연 물약
-  description: 감전을 제거합니다.
+  displayName: "\uC808\uC5F0 \uBB3C\uC57D"
+  description: "\uAC10\uC804\uC744 \uC81C\uAC70\uD569\uB2C8\uB2E4."
   category: 0
   maxStack: 99
   buyPrice: 40
   sellPrice: 20
-  icon: {fileID: 0}
+  icon: {fileID: 524055428, guid: 40887135a3b85b24caa0f9312e9ab435, type: 3}
   iconTint: {r: 1, g: 1, b: 1, a: 1}
   useType: 2
   effectType: 5
   targetType: 0
   effectAmount: 0
-  effectPreview: 감전 제거
+  effectPreview: "\uAC10\uC804 \uC81C\uAC70"

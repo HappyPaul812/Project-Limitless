@@ -1,0 +1,645 @@
+fileFormatVersion: 2
+guid: 26fb6833d7a8924469a20f399d89fbde
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8118418780232022838
+    second: Silent_Warden_128x128_Sprite_Sheet_0
+  - first:
+      213: 397022763448516071
+    second: Silent_Warden_128x128_Sprite_Sheet_1
+  - first:
+      213: -6984419236506358307
+    second: Silent_Warden_128x128_Sprite_Sheet_2
+  - first:
+      213: -2093011698882549659
+    second: Silent_Warden_128x128_Sprite_Sheet_3
+  - first:
+      213: -3462190095608492212
+    second: Silent_Warden_128x128_Sprite_Sheet_4
+  - first:
+      213: 7977520002767859869
+    second: Silent_Warden_128x128_Sprite_Sheet_5
+  - first:
+      213: 8336076984756243980
+    second: Silent_Warden_128x128_Sprite_Sheet_6
+  - first:
+      213: 4723856569095211303
+    second: Silent_Warden_128x128_Sprite_Sheet_7
+  - first:
+      213: -8992055648532889032
+    second: Silent_Warden_128x128_Sprite_Sheet_8
+  - first:
+      213: 4224900066385041759
+    second: Silent_Warden_128x128_Sprite_Sheet_9
+  - first:
+      213: -7044391323803826229
+    second: Silent_Warden_128x128_Sprite_Sheet_10
+  - first:
+      213: 356536755526222284
+    second: Silent_Warden_128x128_Sprite_Sheet_11
+  - first:
+      213: 162848558780521008
+    second: Silent_Warden_128x128_Sprite_Sheet_12
+  - first:
+      213: 6991053176132123319
+    second: Silent_Warden_128x128_Sprite_Sheet_13
+  - first:
+      213: 4344151134073400531
+    second: Silent_Warden_128x128_Sprite_Sheet_14
+  - first:
+      213: 1131954166019827789
+    second: Silent_Warden_128x128_Sprite_Sheet_15
+  - first:
+      213: 5194808581053475050
+    second: Silent_Warden_128x128_Sprite_Sheet_16
+  - first:
+      213: 4342323534280590093
+    second: Silent_Warden_128x128_Sprite_Sheet_17
+  - first:
+      213: -6844824969877435192
+    second: Silent_Warden_128x128_Sprite_Sheet_18
+  - first:
+      213: 2801126837116138137
+    second: Silent_Warden_128x128_Sprite_Sheet_19
+  - first:
+      213: 2223387225013258005
+    second: Silent_Warden_128x128_Sprite_Sheet_20
+  - first:
+      213: -268082881819627136
+    second: Silent_Warden_128x128_Sprite_Sheet_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SilentWarden_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069267b76ef4bb54c9e5696cfff42551
+      internalID: -1383377579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5223a47f901ae1c468e4570313d37c44
+      internalID: 252489031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ded818ba5b6e549a2e3ec412d7abb1
+      internalID: 340338501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f1eead367335a4aa58e48d8f44bbb8
+      internalID: -1768713601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Move_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64e0c01e9334cde4f999621162809002
+      internalID: 1444992866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Move_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd389e13a90a9941b24e3aa17707ece
+      internalID: 340517000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Move_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b2215835fad7b469c9639ae670a37e
+      internalID: -1173110150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Move_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd396366ffaba9444b6f96da060f92ad
+      internalID: -1032318393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acb83daf3d6868459627131e3746322
+      internalID: -2084724727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bf0539a56744a4584a7122c0ace809
+      internalID: -747066873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94556f7cd6624a8448002ed5caa14ac8
+      internalID: -876189600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae8614add9ac234b96ddb5ba40d11eb
+      internalID: 645409750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4731d5742e0b894dab17a9d07159630
+      internalID: -819951039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe207dee5ff53614bb05e3afc856da1b
+      internalID: 310721197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e95af851ee393a94e8b3dff8a4be9e0b
+      internalID: 504875204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Death_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433fb329234d7eb47ae6f6ecab070ef5
+      internalID: 984286687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Death_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b06939e4c0407b4991e3ec122fa542f
+      internalID: 1215276219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentWarden_Death_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c885564900680e14aa7a0bf72b2350a4
+      internalID: 1225065148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a2c5f023329552c42873ae0620e395fa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SilentWarden_Attack_00: -2084724727
+      SilentWarden_Attack_01: -747066873
+      SilentWarden_Attack_02: -876189600
+      SilentWarden_Attack_03: 645409750
+      SilentWarden_Death_00: 504875204
+      SilentWarden_Death_01: 984286687
+      SilentWarden_Death_02: 1215276219
+      SilentWarden_Death_03: 1225065148
+      SilentWarden_Hit_00: -819951039
+      SilentWarden_Hit_01: 310721197
+      SilentWarden_Idle_00: -1383377579
+      SilentWarden_Idle_01: 252489031
+      SilentWarden_Idle_02: 340338501
+      SilentWarden_Idle_03: -1768713601
+      SilentWarden_Move_00: 1444992866
+      SilentWarden_Move_01: 340517000
+      SilentWarden_Move_02: -1173110150
+      SilentWarden_Move_03: -1032318393
+      Silent_Warden_128x128_Sprite_Sheet_0: -8118418780232022838
+      Silent_Warden_128x128_Sprite_Sheet_1: 397022763448516071
+      Silent_Warden_128x128_Sprite_Sheet_10: -7044391323803826229
+      Silent_Warden_128x128_Sprite_Sheet_11: 356536755526222284
+      Silent_Warden_128x128_Sprite_Sheet_12: 162848558780521008
+      Silent_Warden_128x128_Sprite_Sheet_13: 6991053176132123319
+      Silent_Warden_128x128_Sprite_Sheet_14: 4344151134073400531
+      Silent_Warden_128x128_Sprite_Sheet_15: 1131954166019827789
+      Silent_Warden_128x128_Sprite_Sheet_16: 5194808581053475050
+      Silent_Warden_128x128_Sprite_Sheet_17: 4342323534280590093
+      Silent_Warden_128x128_Sprite_Sheet_18: -6844824969877435192
+      Silent_Warden_128x128_Sprite_Sheet_19: 2801126837116138137
+      Silent_Warden_128x128_Sprite_Sheet_2: -6984419236506358307
+      Silent_Warden_128x128_Sprite_Sheet_20: 2223387225013258005
+      Silent_Warden_128x128_Sprite_Sheet_21: -268082881819627136
+      Silent_Warden_128x128_Sprite_Sheet_3: -2093011698882549659
+      Silent_Warden_128x128_Sprite_Sheet_4: -3462190095608492212
+      Silent_Warden_128x128_Sprite_Sheet_5: 7977520002767859869
+      Silent_Warden_128x128_Sprite_Sheet_6: 8336076984756243980
+      Silent_Warden_128x128_Sprite_Sheet_7: 4723856569095211303
+      Silent_Warden_128x128_Sprite_Sheet_8: -8992055648532889032
+      Silent_Warden_128x128_Sprite_Sheet_9: 4224900066385041759
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

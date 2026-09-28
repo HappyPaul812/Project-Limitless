@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Dungeon_01.unity
     guid: 453acfb22c63c514ca143ea1112bd0ad
+  - enabled: 1
+    path: Assets/_Project/Scenes/Dungeon_01_B2.unity
+    guid: c06a4b1df50f8e34796d99de36da64cc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

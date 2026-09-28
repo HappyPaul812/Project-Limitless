@@ -65,6 +65,7 @@ namespace ProjectLimitless.Battle
         private readonly BattleFighterResourceRuntime fighterResources = new BattleFighterResourceRuntime();
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
+        private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
@@ -79,6 +80,7 @@ namespace ProjectLimitless.Battle
         private TurnOrderQueue turnOrder;
         private Combatant currentActor;
         private Text timelineText;
+        private Text bossTelegraphText;
         private Text messageText;
         private Button attackButton;
         private Button skillButton;
@@ -106,6 +108,8 @@ namespace ProjectLimitless.Battle
         private string pendingPathFeedback = string.Empty;
         private Font battleFont;
         private RectTransform battleCanvasRect;
+        private Transform battlefieldTransform;
+        private Transform hpHudTransform;
         private Image detailPopup;
         private Text detailPopupText;
         private Image detailPathIcon;
@@ -129,6 +133,7 @@ namespace ProjectLimitless.Battle
                 .Select(pair => new KeyValuePair<Combatant, string>(pair.Key, pair.Value.PathId)), AllCombatants);
             pathTraits.FeedbackOccurred += OnPathFeedbackOccurred;
             skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources, pathTraits);
+            statusEffects.DungeonBarrier = dungeonMonsters;
             CreateEventSystem();
             CreateInterface();
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
@@ -141,6 +146,7 @@ namespace ProjectLimitless.Battle
 
         private void OnDestroy()
         {
+            dungeonMonsters.Clear();
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
         }
@@ -254,6 +260,9 @@ namespace ProjectLimitless.Battle
             MonsterDefinition forestSpider = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "forest_spider");
             MonsterDefinition venomSnake = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "venom_snake");
             MonsterDefinition graveWight = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_grave_wight");
+            MonsterDefinition echo = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_echo");
+            MonsterDefinition guardian = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
+            MonsterDefinition warden = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_warden");
             BattleEncounterSetup setup;
             if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
                 || BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightTwoValidationId)
@@ -282,6 +291,12 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     BattleEncounterContext.Spawn.SpawnId);
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == "Dungeon_01_B2")
+                setup = BattlePrototypeEncounterFactory.CreateDungeon01B2(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
+                    echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
             else
                 setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
@@ -298,7 +313,7 @@ namespace ProjectLimitless.Battle
                 int maxMp = CharacterGrowthCalculator.CalculateMaxMp(participant.JobId, participantGrowth);
                 Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
                     participant.Slot, participant.MaxHp, participant.Attack, participant.Agility,
-                    participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, false,
+                    participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, participant.IsBoss,
                     CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
                     CharacterGrowthCalculator.CalculateHealingPower(participant.JobId, participantGrowth),
                     maxMp,
@@ -313,6 +328,7 @@ namespace ProjectLimitless.Battle
                 }
                 (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
                 participantSetups.Add(combatant, participant);
+                if (participant.IsBoss) dungeonMonsters.SetBoss(combatant);
                 if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
                     combatantJobs.Add(combatant, participantJob);
             }
@@ -331,6 +347,12 @@ namespace ProjectLimitless.Battle
             Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
             CreateTimeline(canvasObject.transform, font);
             Image battlefield = CreateBattlefield(canvasObject.transform);
+            battlefieldTransform = battlefield.transform;
+            bossTelegraphText = MakeText(battlefield.transform, "BossTelegraph", string.Empty, font, 20,
+                new Vector2(.5f, .88f), new Vector2(680, 58));
+            bossTelegraphText.color = focusGold;
+            bossTelegraphText.fontStyle = FontStyle.Bold;
+            bossTelegraphText.gameObject.SetActive(false);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
             CreateTopHpHud(canvasObject.transform, font);
@@ -471,6 +493,7 @@ namespace ProjectLimitless.Battle
         private void CreateTopHpHud(Transform canvas, Font font)
         {
             Image hpHud = MakeImage(canvas, "TopHpHud", new Color(.025f, .045f, .075f, .97f));
+            hpHudTransform = hpHud.transform;
             SetRect(hpHud.rectTransform, new Vector2(.5f, .765f), new Vector2(1080, 116));
             AddOutline(hpHud.gameObject, new Color(.35f, .43f, .56f, 1f), 1);
 
@@ -490,13 +513,17 @@ namespace ProjectLimitless.Battle
             List<Combatant> members = formation.Members.Take(maximumItems).ToList();
             if (members.Count == 0) return;
 
-            Text rosterTitle = MakeText(hpHud, $"{formation.Side}Title", title, font, 13,
-                new Vector2(.055f, firstRowY), new Vector2(72, 24));
-            rosterTitle.fontStyle = FontStyle.Bold;
+            if (hpHud.Find($"{formation.Side}Title") == null)
+            {
+                Text rosterTitle = MakeText(hpHud, $"{formation.Side}Title", title, font, 13,
+                    new Vector2(.055f, firstRowY), new Vector2(72, 24));
+                rosterTitle.fontStyle = FontStyle.Bold;
+            }
 
             for (int index = 0; index < members.Count; index++)
             {
                 Combatant combatant = members[index];
+                if (combatantHpRows.ContainsKey(combatant)) continue;
                 int column = index % columnsPerRow;
                 int rowIndex = index / columnsPerRow;
                 float x = .22f + column * .29f;
@@ -713,7 +740,7 @@ namespace ProjectLimitless.Battle
             // 네 버튼 간 중심 간격을 다시 맞춰 클릭 영역은 충분하면서 패널이 덜 답답하게 보이게 합니다.
             attackButton = MakeCommandButton(commandPanel.transform, "AttackButton", BattleUiIconCatalog.Attack, "공격", font, new Vector2(.10f, .42f), BeginAttack);
             skillButton = MakeCommandButton(commandPanel.transform, "SkillButton", BattleUiIconCatalog.Skill, "스킬", font, new Vector2(.29f, .42f), ShowSkillMenu);
-            itemButton = MakeCommandButton(commandPanel.transform, "ItemButton", null, "아이템", font, new Vector2(.48f, .42f), ShowItemMenu);
+            itemButton = MakeCommandButton(commandPanel.transform, "ItemButton", BattleUiIconCatalog.Item, "아이템", font, new Vector2(.48f, .42f), ShowItemMenu);
             defendButton = MakeCommandButton(commandPanel.transform, "DefendButton", BattleUiIconCatalog.Defend, "방어", font, new Vector2(.67f, .42f), Defend);
             fleeButton = MakeCommandButton(commandPanel.transform, "FleeButton", BattleUiIconCatalog.Flee, "도망", font, new Vector2(.86f, .42f), Flee);
             cancelButton = MakeAuxiliaryButton(commandPanel.transform, "CancelButton", "취소", font,
@@ -2236,6 +2263,9 @@ namespace ProjectLimitless.Battle
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup dungeonSetup) &&
+                dungeonSetup.MonsterDefinition != null && TryPlayDungeonMonsterAction(currentActor, dungeonSetup.MonsterDefinition))
+                yield break;
             if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup setup)
                 && setup.MonsterDefinition != null && setup.MonsterDefinition.HasDirectAreaAttack)
             {
@@ -2249,6 +2279,118 @@ namespace ProjectLimitless.Battle
                 PlayBasicAttack(currentActor, target);
                 yield break;
             }
+            FinishCurrentAction();
+        }
+
+        /// <summary>
+        /// B2 전용 행동만 이곳에서 가로채고, 그 외 적은 기존 기본 공격·광역 공격 경로로 돌려보냅니다.
+        /// 행동 종료는 공용 FinishCurrentAction을 거쳐 침묵·DoT·턴 순서가 기존 전투와 같게 흐릅니다.
+        /// </summary>
+        private bool TryPlayDungeonMonsterAction(Combatant actor, MonsterDefinition monster)
+        {
+            if (monster.MonsterId == "monster_silent_echo" && dungeonMonsters.CanEchoWhisper(actor))
+            {
+                Combatant target = ChooseEnemyTarget(actor,
+                    TargetResolver.ResolveHostileTargets(actor, allies, TargetRangeType.Magic));
+                if (target == null) return false;
+                statusEffects.ApplyOrRefreshSilence(target);
+                dungeonMonsters.StartEchoWhisperCooldown(actor);
+                messageText.text = $"{actor.DisplayName}의 침묵의 속삭임! {target.DisplayName}에게 침묵 1.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            if (monster.MonsterId == "monster_seal_guardian")
+            {
+                Combatant target = enemies.LivingMembers.FirstOrDefault(item => item != actor && !item.IsBoss &&
+                    !dungeonMonsters.IsProtected(item));
+                if (target == null) return false;
+                if (!dungeonMonsters.TryProtect(actor, target)) return false;
+                messageText.text = $"{actor.DisplayName}의 봉인의 장막! {target.DisplayName}이(가) 직접 피해 30%를 덜 받습니다.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            if (monster.MonsterId != "monster_silent_warden") return false;
+            // 예고를 먼저 처리해야 60% 경계에 걸린 순간에도 약속한 '다음 보스 행동'에 충격이 옵니다.
+            if (dungeonMonsters.IsShockPrepared)
+            {
+                StartCoroutine(PlayWardenShock(actor));
+                return true;
+            }
+            if (dungeonMonsters.ShouldEnterPhaseTwo)
+            {
+                SummonWardenGuardians();
+                messageText.text = "침묵의 파수꾼이 수호체 둘을 불러냈습니다. 파수의 장막이 펼쳐집니다.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            int pattern = dungeonMonsters.TakeBossPattern();
+            if (pattern == 1)
+            {
+                Combatant target = ChooseEnemyTarget(actor,
+                    TargetResolver.ResolveHostileTargets(actor, allies, TargetRangeType.Magic));
+                if (target == null) return false;
+                statusEffects.ApplyOrRefreshSilence(target);
+                messageText.text = $"{actor.DisplayName}의 침묵의 표식! {target.DisplayName}에게 침묵 1.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            if (pattern == 2)
+            {
+                dungeonMonsters.PrepareShock();
+                messageText.text = "울림 없는 충격 준비! 다음 파수꾼 행동 전에 방어하거나 회복하세요.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            Combatant strikeTarget = ChooseEnemyTarget(actor,
+                TargetResolver.ResolveHostileTargets(actor, allies, TargetRangeType.MeleePhysical));
+            if (strikeTarget == null) return false;
+            PlayBasicAttack(actor, strikeTarget, 110, "파수의 일격");
+            return true;
+        }
+
+        /// <summary>기존 Formation 빈 전열 두 칸에 참가자를 더하고 전장·HP 목록을 같은 참조로 늘립니다.</summary>
+        private void SummonWardenGuardians()
+        {
+            MonsterDefinition guardian = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions")
+                .FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
+            var summoned = new List<Combatant>();
+            for (int column = 1; column <= 2; column++)
+            {
+                BattleParticipantSetup setup = BattlePrototypeEncounterFactory.CreateSummonedGuardian(guardian, column);
+                Combatant combatant = new Combatant(setup.Id, setup.DisplayName, BattleSide.Enemies, setup.Slot,
+                    setup.MaxHp, setup.Attack, setup.Agility, setup.ActionPriority, setup.BasicRange, false);
+                enemies.Place(combatant);
+                participantSetups.Add(combatant, setup);
+                CombatantView view = CreateCombatantView(battlefieldTransform, battleCanvasRect, battleFont,
+                    combatant, GetBattlefieldAnchor(BattleSide.Enemies, setup.Slot));
+                combatantViews.Add(combatant, view);
+                summoned.Add(combatant);
+            }
+            dungeonMonsters.EnterPhaseTwo(summoned);
+            CreateHpRoster(hpHudTransform, battleFont, enemies, 6, 3, .74f, .31f, "적군");
+        }
+
+        /// <summary>예고 뒤 보스 자신의 다음 행동에서만 생존 아군 전체에 직접 피해를 한 번씩 줍니다.</summary>
+        private IEnumerator PlayWardenShock(Combatant actor)
+        {
+            actionPlaying = true;
+            SetCommandButtons(false);
+            combatantViews[actor].MonsterAnimation?.PlayAttack();
+            messageText.text = "울림 없는 충격! 생존 아군 전체가 공격받습니다.";
+            yield return new WaitForSeconds(.45f);
+            foreach (Combatant target in allies.LivingMembers.ToArray())
+                pathTraits.ApplyDirectDamage(statusEffects, actor, target,
+                    statusEffects.ModifyOutgoingDamage(actor,
+                        (int)Math.Max(1L, ((long)actor.Attack * 130L + 99L) / 100L)), areaAttack: true);
+            dungeonMonsters.CompleteShock();
+            combatantViews[actor].MonsterAnimation?.StopAttackAndReturnToIdle();
+            RefreshCombatantViews(null);
+            actionPlaying = false;
             FinishCurrentAction();
         }
 
@@ -2307,7 +2449,8 @@ namespace ProjectLimitless.Battle
         /// 기본 공격 계산은 기존 Combatant에 맡기고, 공용 Presenter에는 표시 대상과 타격 시점만 전달합니다.
         /// 현재 1단계 범위에서는 플레이어와 초원 슬라임의 근거리 기본 공격에 같은 연출을 사용합니다.
         /// </summary>
-        private void PlayBasicAttack(Combatant actor, Combatant target)
+        private void PlayBasicAttack(Combatant actor, Combatant target, int damagePercent = 100,
+            string abilityName = null)
         {
             actionPlaying = true;
             SetCommandButtons(false);
@@ -2321,7 +2464,8 @@ namespace ProjectLimitless.Battle
             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
             Func<int> applyImpact = () => pathTraits.ApplyDirectDamage(statusEffects, actor, target,
-                statusEffects.ModifyOutgoingDamage(actor, actor.Attack));
+                statusEffects.ModifyOutgoingDamage(actor,
+                    (int)Math.Max(1L, ((long)actor.Attack * damagePercent + 99L) / 100L)));
             Action<int> onImpact = damage =>
             {
                 // 기본 공격 피해는 매 행동 그대로 적용하고, 독 부여만 공격자 자신의 별도 대기시간을 확인합니다.
@@ -2338,7 +2482,7 @@ namespace ProjectLimitless.Battle
                             monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
                     }
                 }
-                messageText.text = $"{actor.DisplayName}의 공격! {target.DisplayName}에게 {damage} 피해.";
+                messageText.text = $"{actor.DisplayName}의 {abilityName ?? "공격"}! {target.DisplayName}에게 {damage} 피해.";
                 RefreshCombatantViews(null);
             };
             Action onComplete = () =>
@@ -2438,6 +2582,8 @@ namespace ProjectLimitless.Battle
             // completedActor가 다른 Combatant이므로 해당 벌의 Dictionary 값에 접근하지 않습니다.
             monsterAbilities.CompleteActorAction(completedActor);
             monsterAbilities.RemoveInvalidCombatants(AllCombatants);
+            dungeonMonsters.CompleteActorAction(completedActor);
+            dungeonMonsters.RemoveInvalidCombatants(AllCombatants);
             SetCommandButtons(false);
             // 화상은 "대상 행동 종료 시" 피해이므로 CompleteAction 직후 확인합니다. 작은 불꽃과 피격이
             // 끝나기 전에는 actionPlaying을 유지해 입력과 정보 팝업이 다음 턴보다 먼저 열리지 않게 합니다.
@@ -2521,6 +2667,7 @@ namespace ProjectLimitless.Battle
         {
             if (battleEnded) return;
             battleEnded = true;
+            dungeonMonsters.Clear();
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
             {
@@ -2662,6 +2809,21 @@ namespace ProjectLimitless.Battle
                 BattleCombatantStatusViewModel statusModel = BattleCombatantStatusViewModelFactory.Create(
                     combatant, statusJob, statusSetup, skillCooldowns, fighterResources, statusEffects, pathTraits);
                 RefreshHpRow(combatant, statusModel);
+            }
+            if (bossTelegraphText != null)
+            {
+                string protectedNames = string.Join(", ", enemies.LivingMembers
+                    .Where(item => !item.IsBoss && dungeonMonsters.IsProtected(item))
+                    .Select(item => item.DisplayName));
+                bossTelegraphText.text = dungeonMonsters.IsShockPrepared
+                    ? "울림 없는 충격 준비 — 다음 파수꾼 행동 전에 방어·회복하세요" : string.Empty;
+                if (dungeonMonsters.HasWardenBarrier)
+                    bossTelegraphText.text += (bossTelegraphText.text.Length > 0 ? "\n" : "") +
+                        "파수의 장막 — 보스가 받는 직접 피해 30% 감소";
+                if (protectedNames.Length > 0)
+                    bossTelegraphText.text += (bossTelegraphText.text.Length > 0 ? "\n" : "") +
+                        $"봉인의 장막 — {protectedNames}: 직접 피해 30% 감소";
+                bossTelegraphText.gameObject.SetActive(!string.IsNullOrEmpty(bossTelegraphText.text));
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);

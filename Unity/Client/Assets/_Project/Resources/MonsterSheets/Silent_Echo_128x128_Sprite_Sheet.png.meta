@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 49ca0d7e1f768354d94831cd2c890639
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2084290138335824558
+    second: Silent_Echo_128x128_Sprite_Sheet_0
+  - first:
+      213: 629753431285009651
+    second: Silent_Echo_128x128_Sprite_Sheet_1
+  - first:
+      213: -7326724878311064653
+    second: Silent_Echo_128x128_Sprite_Sheet_2
+  - first:
+      213: -3441679828892906898
+    second: Silent_Echo_128x128_Sprite_Sheet_3
+  - first:
+      213: 703714072125717992
+    second: Silent_Echo_128x128_Sprite_Sheet_4
+  - first:
+      213: -3041442808766939916
+    second: Silent_Echo_128x128_Sprite_Sheet_5
+  - first:
+      213: 5507057537818793136
+    second: Silent_Echo_128x128_Sprite_Sheet_6
+  - first:
+      213: -3681972229027725876
+    second: Silent_Echo_128x128_Sprite_Sheet_7
+  - first:
+      213: 5604937584305331370
+    second: Silent_Echo_128x128_Sprite_Sheet_8
+  - first:
+      213: -4216349550652774754
+    second: Silent_Echo_128x128_Sprite_Sheet_9
+  - first:
+      213: -8181521747736011271
+    second: Silent_Echo_128x128_Sprite_Sheet_10
+  - first:
+      213: -3767651241943155556
+    second: Silent_Echo_128x128_Sprite_Sheet_11
+  - first:
+      213: 5954157441852567332
+    second: Silent_Echo_128x128_Sprite_Sheet_12
+  - first:
+      213: 8720575915194218399
+    second: Silent_Echo_128x128_Sprite_Sheet_13
+  - first:
+      213: 3417406700358447276
+    second: Silent_Echo_128x128_Sprite_Sheet_14
+  - first:
+      213: 8304445507768501120
+    second: Silent_Echo_128x128_Sprite_Sheet_15
+  - first:
+      213: -1568709011085510305
+    second: Silent_Echo_128x128_Sprite_Sheet_16
+  - first:
+      213: -6417423176221877312
+    second: Silent_Echo_128x128_Sprite_Sheet_17
+  - first:
+      213: 3172494299481944223
+    second: Silent_Echo_128x128_Sprite_Sheet_18
+  - first:
+      213: -8670689807724138300
+    second: Silent_Echo_128x128_Sprite_Sheet_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SilentEcho_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55b3717a98a6e549926817465a6ca76
+      internalID: -847522325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7bdd93d8e3ffc4f98c210c2d345d2b
+      internalID: 60934573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fd2094f19a70a438946a537cddf23a
+      internalID: 953135510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644db40ac20100a4fad3c9fedfa7ea04
+      internalID: 363737068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Move_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7c72a8dc4af71646aef6f837512a912
+      internalID: 253454918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Move_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf29ed6e162ebf7429bb65cd9129c592
+      internalID: 1167498589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Move_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa503a0c89891f43a8958812427bb2e
+      internalID: -1215775985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Move_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34963642afb43c4798f494ba23c3ac9
+      internalID: -1258656147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d85252a99ac11f4ebaec9128273e48d
+      internalID: -89177795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1f8711b013bb549a04ac1b7e495682
+      internalID: -2126447138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37709ffb9b1dc64ba5e1867b5389f11
+      internalID: -203737112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d07ee69e8140154a919fd0df33ba2b5
+      internalID: -201663405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ce8d5230bbffd418a23afd02412f10
+      internalID: -1657501874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a144d00d0b8d440488ade4334618109b
+      internalID: -111518162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bee9aa2ea25174fa795acc5cb68aca
+      internalID: -2075051422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Death_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1decb8b4ac4a74a99bfb58fdd6eb1e
+      internalID: -1378852887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Death_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc8001f31323da41b5c90fc734c4e68
+      internalID: -1888553681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SilentEcho_Death_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8250997e5092149bf91b0d387aa976
+      internalID: 357487857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 18fca2433919d3e4697913d73423b03f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SilentEcho_Attack_00: -89177795
+      SilentEcho_Attack_01: -2126447138
+      SilentEcho_Attack_02: -203737112
+      SilentEcho_Attack_03: -201663405
+      SilentEcho_Death_00: -2075051422
+      SilentEcho_Death_01: -1378852887
+      SilentEcho_Death_02: -1888553681
+      SilentEcho_Death_03: 357487857
+      SilentEcho_Hit_00: -1657501874
+      SilentEcho_Hit_01: -111518162
+      SilentEcho_Idle_00: -847522325
+      SilentEcho_Idle_01: 60934573
+      SilentEcho_Idle_02: 953135510
+      SilentEcho_Idle_03: 363737068
+      SilentEcho_Move_00: 253454918
+      SilentEcho_Move_01: 1167498589
+      SilentEcho_Move_02: -1215775985
+      SilentEcho_Move_03: -1258656147
+      Silent_Echo_128x128_Sprite_Sheet_0: 2084290138335824558
+      Silent_Echo_128x128_Sprite_Sheet_1: 629753431285009651
+      Silent_Echo_128x128_Sprite_Sheet_10: -8181521747736011271
+      Silent_Echo_128x128_Sprite_Sheet_11: -3767651241943155556
+      Silent_Echo_128x128_Sprite_Sheet_12: 5954157441852567332
+      Silent_Echo_128x128_Sprite_Sheet_13: 8720575915194218399
+      Silent_Echo_128x128_Sprite_Sheet_14: 3417406700358447276
+      Silent_Echo_128x128_Sprite_Sheet_15: 8304445507768501120
+      Silent_Echo_128x128_Sprite_Sheet_16: -1568709011085510305
+      Silent_Echo_128x128_Sprite_Sheet_17: -6417423176221877312
+      Silent_Echo_128x128_Sprite_Sheet_18: 3172494299481944223
+      Silent_Echo_128x128_Sprite_Sheet_19: -8670689807724138300
+      Silent_Echo_128x128_Sprite_Sheet_2: -7326724878311064653
+      Silent_Echo_128x128_Sprite_Sheet_3: -3441679828892906898
+      Silent_Echo_128x128_Sprite_Sheet_4: 703714072125717992
+      Silent_Echo_128x128_Sprite_Sheet_5: -3041442808766939916
+      Silent_Echo_128x128_Sprite_Sheet_6: 5507057537818793136
+      Silent_Echo_128x128_Sprite_Sheet_7: -3681972229027725876
+      Silent_Echo_128x128_Sprite_Sheet_8: 5604937584305331370
+      Silent_Echo_128x128_Sprite_Sheet_9: -4216349550652774754
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -22,7 +22,7 @@ namespace ProjectLimitless.Battle
         public BattleParticipantSetup(string id, string displayName, string jobId, BattleSide side, FormationSlot slot,
             int maxHp, int attack, int agility, int actionPriority, TargetRangeType basicRange,
             bool playerControlled, BattleParticipantVisualType visualType, string placeholderLabel = "",
-            MonsterDefinition monsterDefinition = null, string pathId = "")
+            MonsterDefinition monsterDefinition = null, string pathId = "", bool isBoss = false)
         {
             Id = id;
             DisplayName = displayName;
@@ -39,6 +39,7 @@ namespace ProjectLimitless.Battle
             PlaceholderLabel = placeholderLabel ?? string.Empty;
             MonsterDefinition = monsterDefinition;
             PathId = pathId ?? string.Empty;
+            IsBoss = isBoss;
         }
 
         public string Id { get; }
@@ -57,6 +58,7 @@ namespace ProjectLimitless.Battle
         public MonsterDefinition MonsterDefinition { get; }
         /// <summary>NPC 이름이 바뀌어도 고정 길이 유지되도록 참가자 데이터에 안정적인 ID를 보관합니다.</summary>
         public string PathId { get; }
+        public bool IsBoss { get; }
     }
 
     /// <summary>아군과 적 참가자 목록을 함께 전달하는 Encounter 단위 데이터입니다.</summary>
@@ -160,6 +162,37 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies, enemies.ToArray());
         }
 
+        /// <summary>B2의 네 stable Spawn ID와 보스 ID를 기존 파티·Formation 구성으로 변환합니다.</summary>
+        public static BattleEncounterSetup CreateDungeon01B2(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition wight, MonsterDefinition bat,
+            MonsterDefinition echo, MonsterDefinition guardian, MonsterDefinition warden, string spawnId)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility,
+                null, null, wight);
+            var enemies = new List<BattleParticipantSetup>();
+            if (spawnId == "dungeon01_b2_boss")
+                enemies.Add(CreateMonster(warden, "dungeon01_warden", "침묵의 파수꾼", FormationRow.Front, 0, 6, true));
+            else
+            {
+                if (spawnId == "dungeon01_b2_01")
+                    enemies.Add(CreateMonster(wight, "dungeon01_b2_wight", "묘지 망자", FormationRow.Front, 0, 8));
+                if (spawnId == "dungeon01_b2_02")
+                    enemies.Add(CreateMonster(bat, "dungeon01_b2_bat", "그늘박쥐", FormationRow.Rear, 0, 15));
+                if (spawnId == "dungeon01_b2_03" || spawnId == "dungeon01_b2_04")
+                    enemies.Add(CreateMonster(guardian, "dungeon01_b2_guardian", "봉인 수호체", FormationRow.Front, 0, 7));
+                if (spawnId == "dungeon01_b2_04")
+                    enemies.Add(CreateMonster(bat, "dungeon01_b2_bat", "그늘박쥐", FormationRow.Rear, 1, 15));
+                enemies.Add(CreateMonster(echo, "dungeon01_b2_echo", "침묵의 잔영", FormationRow.Rear,
+                    spawnId == "dungeon01_b2_02" ? 1 : 0, 14));
+            }
+            return new BattleEncounterSetup(party.Allies, enemies.ToArray());
+        }
+
+        /// <summary>2단계 수호체 둘은 보스의 빈 전열 칸에 새 실제 참가자로 들어옵니다.</summary>
+        public static BattleParticipantSetup CreateSummonedGuardian(MonsterDefinition guardian, int column) =>
+            CreateMonster(guardian, $"dungeon01_boss_guardian_{column}", $"봉인 수호체 {column}", FormationRow.Front,
+                column, 7);
+
         /// <summary>
         /// Main 03에서만 사용하는 최초 2인 파티 구성입니다. 태온은 아직 정식 해금 동료가 아니므로
         /// 저장 파티를 바꾸지 않고, 이 Story Encounter의 참가자 목록에만 명시적으로 포함합니다.
@@ -241,7 +274,7 @@ namespace ProjectLimitless.Battle
         }
 
         private static BattleParticipantSetup CreateMonster(MonsterDefinition monster, string fallbackId,
-            string fallbackName, FormationRow row, int column, int agility)
+            string fallbackName, FormationRow row, int column, int agility, bool isBoss = false)
         {
             // Field의 스폰은 위치·리스폰을 나타내고 Battle 참가자는 이번 전투의 Formation 칸을 나타냅니다.
             // 둘은 서로 다른 개념이지만 같은 MonsterDefinition을 참조하므로 이름과 외형은 한 데이터에서 공유합니다.
@@ -255,7 +288,7 @@ namespace ProjectLimitless.Battle
                 new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
                 monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
                 TargetRangeType.MeleePhysical, false, BattleParticipantVisualType.EncounterMonster,
-                monsterDefinition: monster);
+                monsterDefinition: monster, isBoss: isBoss);
         }
 
         private static TargetRangeType ResolveBasicRange(string jobId)

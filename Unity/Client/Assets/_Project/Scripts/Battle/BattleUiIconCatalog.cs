@@ -15,6 +15,7 @@ namespace ProjectLimitless.Battle
     {
         public const string Attack = "command.attack";
         public const string Skill = "command.skill";
+        public const string Item = "command.item";
         public const string Defend = "command.defend";
         public const string Flee = "command.flee";
         public const string Cancel = "command.cancel";
@@ -52,6 +53,7 @@ namespace ProjectLimitless.Battle
         {
             { Attack, "KenneyBattleIcons/sword" },
             { Skill, "KenneyBattleIcons/star" },
+            { Item, "BattleItemIcons/Battle_Item_Icons_128x128_Sheet" },
             { Defend, "KenneyBattleIcons/shield" },
             { Flee, "KenneyBattleIcons/exitRight" },
             // 취소는 X보다 "한 단계 뒤로 이동" 의미가 분명한 왼쪽 화살표를 사용합니다.
@@ -167,6 +169,13 @@ namespace ProjectLimitless.Battle
         /// </summary>
         public static Sprite Load(string iconId)
         {
+            if (iconId == Item)
+            {
+                Sprite[] itemIcons = Resources.LoadAll<Sprite>("BattleItemIcons/Battle_Item_Icons_128x128_Sheet");
+                for (int index = 0; index < itemIcons.Length; index++)
+                    if (itemIcons[index].name == "Battle_Item_Icon") return itemIcons[index];
+                return null;
+            }
             if (string.IsNullOrEmpty(iconId) || !ResourcePaths.TryGetValue(iconId, out string resourcePath))
                 return null;
             if (Cache.TryGetValue(iconId, out Sprite cached)) return cached;

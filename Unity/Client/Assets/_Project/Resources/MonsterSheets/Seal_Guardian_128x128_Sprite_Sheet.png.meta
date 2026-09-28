@@ -1,0 +1,629 @@
+fileFormatVersion: 2
+guid: f0748be40f6acf54cb287b5d4a2021cd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 402937010008693757
+    second: Seal_Guardian_128x128_Sprite_Sheet_0
+  - first:
+      213: -4653660766989122157
+    second: Seal_Guardian_128x128_Sprite_Sheet_1
+  - first:
+      213: 368498269423791120
+    second: Seal_Guardian_128x128_Sprite_Sheet_2
+  - first:
+      213: 3206000751414136914
+    second: Seal_Guardian_128x128_Sprite_Sheet_3
+  - first:
+      213: -4851265884009230184
+    second: Seal_Guardian_128x128_Sprite_Sheet_4
+  - first:
+      213: 2424595060605582828
+    second: Seal_Guardian_128x128_Sprite_Sheet_5
+  - first:
+      213: -3860088643096393072
+    second: Seal_Guardian_128x128_Sprite_Sheet_6
+  - first:
+      213: 7891461924422165345
+    second: Seal_Guardian_128x128_Sprite_Sheet_7
+  - first:
+      213: 5363400353944067714
+    second: Seal_Guardian_128x128_Sprite_Sheet_8
+  - first:
+      213: -7141749515534686775
+    second: Seal_Guardian_128x128_Sprite_Sheet_9
+  - first:
+      213: -7580040087438024051
+    second: Seal_Guardian_128x128_Sprite_Sheet_10
+  - first:
+      213: -7478521292276821380
+    second: Seal_Guardian_128x128_Sprite_Sheet_11
+  - first:
+      213: -4493495664561406364
+    second: Seal_Guardian_128x128_Sprite_Sheet_12
+  - first:
+      213: -3761846584225305229
+    second: Seal_Guardian_128x128_Sprite_Sheet_13
+  - first:
+      213: -8265176800080489797
+    second: Seal_Guardian_128x128_Sprite_Sheet_14
+  - first:
+      213: 43314882463831562
+    second: Seal_Guardian_128x128_Sprite_Sheet_15
+  - first:
+      213: 4872272136232158435
+    second: Seal_Guardian_128x128_Sprite_Sheet_16
+  - first:
+      213: -401919238703697537
+    second: Seal_Guardian_128x128_Sprite_Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SealGuardian_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d15ac654963e37c4ba5a66c6ffd1ee7d
+      internalID: -1060534080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995022b4c8f684646a5de72fd16604aa
+      internalID: -1261577110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4541da9d6600d49a013c2b8eec1b11
+      internalID: 971630029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5899a277e745e4d98ff60fcfcc17dc
+      internalID: 2108061442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Move_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b362ebfbd29f7b4fb2cc09b5bdb3474
+      internalID: 935036685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Move_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4b20941a3d0b74190f2706a08b4d6e
+      internalID: -1224773515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Move_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860344f377206ad47b3bfea66262c031
+      internalID: 985846546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Move_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bb16b7e5770af46842693db85a2d52
+      internalID: 1772630665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f383c788aabd64c842177bdb625ed6
+      internalID: -1943491750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3615c78336a6c0428a687fb822184de
+      internalID: -1932462753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981ad3dddbce2224caeef60f07dfd679
+      internalID: -696183612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b6f34245dbc274399a5684c9d949f7
+      internalID: 58460986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccf040122a683a4fa64f3135f95d9d9
+      internalID: 1913401152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0b8a1cd0b79164e9593781ee2ef1a5
+      internalID: -611512219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Death_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b219b240768b9f4faaaf9165798809e
+      internalID: -2035209834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Death_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03789dd11bec1a4aade335463fc456a
+      internalID: 875815164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Death_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9e2862e3a492b4eb829dbd8f61e0a3
+      internalID: 2038795750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SealGuardian_Death_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657f43b92e45ba443a0d600d95791964
+      internalID: -2066320198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3cd86318f838d9e41822abb4d618bb73
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SealGuardian_Attack_00: -1943491750
+      SealGuardian_Attack_01: -1932462753
+      SealGuardian_Attack_02: -696183612
+      SealGuardian_Attack_03: 58460986
+      SealGuardian_Death_00: -2035209834
+      SealGuardian_Death_01: 875815164
+      SealGuardian_Death_02: 2038795750
+      SealGuardian_Death_03: -2066320198
+      SealGuardian_Hit_00: 1913401152
+      SealGuardian_Hit_01: -611512219
+      SealGuardian_Idle_00: -1060534080
+      SealGuardian_Idle_01: -1261577110
+      SealGuardian_Idle_02: 971630029
+      SealGuardian_Idle_03: 2108061442
+      SealGuardian_Move_00: 935036685
+      SealGuardian_Move_01: -1224773515
+      SealGuardian_Move_02: 985846546
+      SealGuardian_Move_03: 1772630665
+      Seal_Guardian_128x128_Sprite_Sheet_0: 402937010008693757
+      Seal_Guardian_128x128_Sprite_Sheet_1: -4653660766989122157
+      Seal_Guardian_128x128_Sprite_Sheet_10: -7580040087438024051
+      Seal_Guardian_128x128_Sprite_Sheet_11: -7478521292276821380
+      Seal_Guardian_128x128_Sprite_Sheet_12: -4493495664561406364
+      Seal_Guardian_128x128_Sprite_Sheet_13: -3761846584225305229
+      Seal_Guardian_128x128_Sprite_Sheet_14: -8265176800080489797
+      Seal_Guardian_128x128_Sprite_Sheet_15: 43314882463831562
+      Seal_Guardian_128x128_Sprite_Sheet_16: 4872272136232158435
+      Seal_Guardian_128x128_Sprite_Sheet_17: -401919238703697537
+      Seal_Guardian_128x128_Sprite_Sheet_2: 368498269423791120
+      Seal_Guardian_128x128_Sprite_Sheet_3: 3206000751414136914
+      Seal_Guardian_128x128_Sprite_Sheet_4: -4851265884009230184
+      Seal_Guardian_128x128_Sprite_Sheet_5: 2424595060605582828
+      Seal_Guardian_128x128_Sprite_Sheet_6: -3860088643096393072
+      Seal_Guardian_128x128_Sprite_Sheet_7: 7891461924422165345
+      Seal_Guardian_128x128_Sprite_Sheet_8: 5363400353944067714
+      Seal_Guardian_128x128_Sprite_Sheet_9: -7141749515534686775
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
