@@ -86,6 +86,25 @@ namespace ProjectLimitless.Core
             };
         }
 
+        /// <summary>
+        /// Bear로 최대치가 늘 때는 기존 HP 올림 규칙을 쓰고, 해제할 때는 내립니다.
+        /// 같은 비율을 왕복하면 원래 HP로 돌아오며, 중간에 피해를 입어도 반복 교체로 회복하지 않습니다.
+        /// </summary>
+        public static int ScaleHpWithoutHealing(int currentHp, int oldMaxHp, int newMaxHp)
+        {
+            if (oldMaxHp <= 0 || newMaxHp <= 0) throw new ArgumentOutOfRangeException(nameof(oldMaxHp));
+            long scaled = (long)Math.Max(1, currentHp) * newMaxHp;
+            long rounded = newMaxHp > oldMaxHp ? (scaled + oldMaxHp - 1L) / oldMaxHp : scaled / oldMaxHp;
+            return (int)Math.Max(1L, Math.Min(newMaxHp, rounded));
+        }
+
+        public static void RescaleMaxHp(string characterId, int oldMaxHp, int newMaxHp)
+        {
+            if (!States.TryGetValue(characterId, out RuntimeState state)) return;
+            state.CurrentHp = ScaleHpWithoutHealing(state.CurrentHp, oldMaxHp, newMaxHp);
+            state.MaxHp = newMaxHp;
+        }
+
         /// <summary>실제로 레벨이 오른 한 캐릭터만 최종 레벨의 새 최대치까지 완전히 회복합니다.</summary>
         public static void HealFully(string characterId, int newMaxHp, int newMaxMp)
         {

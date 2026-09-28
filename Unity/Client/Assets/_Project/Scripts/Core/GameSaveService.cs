@@ -37,6 +37,8 @@ namespace ProjectLimitless.Core
         public QuestProgressSaveData QuestProgress;
         // 기존 Version 1 Save에서 null이면 Main 05 이전의 미해금 상태로 안전하게 복원합니다.
         public CompanionRosterSaveData CompanionRoster;
+        // Version 1의 옛 JSON에는 없으며 null이면 승리/해금 기록 없이 Wolf를 장착합니다.
+        public BeastCompanionSaveData BeastCompanions;
     }
 
     public enum SaveSlotState { Empty, Valid, Invalid }
@@ -152,6 +154,7 @@ namespace ProjectLimitless.Core
                 ,Inventory = InventoryService.ExportSaveData()
                 ,QuestProgress = QuestService.ExportSaveData()
                 ,CompanionRoster = CompanionRosterService.ExportSaveData()
+                ,BeastCompanions = BeastCompanionService.ExportSaveData()
             };
             if (!Validate(data, out string validationError)) { Debug.LogError($"슬롯 {CurrentSlotIndex}을 저장하지 못했습니다: {validationError}"); return false; }
 
@@ -196,6 +199,7 @@ namespace ProjectLimitless.Core
             InventoryService.ImportSaveData(data.Inventory);
             QuestService.ImportSaveData(data.QuestProgress);
             CompanionRosterService.ImportSaveData(data.CompanionRoster);
+            BeastCompanionService.ImportSaveData(data.BeastCompanions);
             if (QuestService.GetState("main_05_return_of_three") == QuestState.Completed)
                 CompanionRosterService.UnlockIntroCompanions();
             if (QuestService.GetState("main_09_reunion_in_silence") == QuestState.Completed)

@@ -172,8 +172,12 @@ namespace ProjectLimitless.Core
             if (GameSessionData.Level > previousLevel)
             {
                 CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, GameSessionData.Level);
+                int maxHp = CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth);
+                if (GameSessionData.SelectedJobId == "sharpshooter")
+                    maxHp = BeastCompanionService.GetEffectiveMaxHp(maxHp,
+                        BeastCompanionService.GetEquippedId(PartyResourceService.PlayerCharacterId));
                 PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId,
-                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    maxHp,
                     CharacterGrowthCalculator.CalculateMaxMp(GameSessionData.SelectedJobId, growth));
             }
             active.Remove(state.Definition.QuestId);

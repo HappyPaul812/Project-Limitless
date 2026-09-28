@@ -96,6 +96,7 @@ namespace ProjectLimitless.Core
         {
             PartyResourceService.Reset();
             CompanionRosterService.Reset();
+            BeastCompanionService.Reset();
             EconomyService.Reset();
             InventoryService.Reset();
             QuestService.Reset();

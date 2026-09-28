@@ -311,8 +311,12 @@ namespace ProjectLimitless.Battle
                 CharacterGrowthStats participantGrowth = isSavedPlayer
                     ? growth : CharacterGrowthCalculator.Calculate(participant.JobId, 1);
                 int maxMp = CharacterGrowthCalculator.CalculateMaxMp(participant.JobId, participantGrowth);
+                bool sharpshooterBeast = participant.Side == BattleSide.Allies && participant.JobId == "sharpshooter";
+                string beastId = sharpshooterBeast ? BeastCompanionService.GetEquippedId(participant.Id) : string.Empty;
+                int participantMaxHp = BeastCompanionService.GetEffectiveMaxHp(participant.MaxHp, beastId);
+                int participantAgility = BeastCompanionService.GetEffectiveAgility(participant.Agility, beastId);
                 Combatant combatant = new Combatant(participant.Id, participant.DisplayName, participant.Side,
-                    participant.Slot, participant.MaxHp, participant.Attack, participant.Agility,
+                    participant.Slot, participantMaxHp, participant.Attack, participantAgility,
                     participant.ActionPriority, participant.BasicRange, participant.IsPlayerControlled, participant.IsBoss,
                     CharacterGrowthCalculator.CalculateDefense(participant.JobId, participantGrowth),
                     CharacterGrowthCalculator.CalculateHealingPower(participant.JobId, participantGrowth),
@@ -323,7 +327,7 @@ namespace ProjectLimitless.Battle
                     // Combatant는 이번 Battle에서만 존재합니다. stable ID로 보존한 현재 HP/MP를 여기서
                     // 다시 적용해야 승리·도망·Scene 전환 뒤의 다음 전투가 무조건 풀피로 시작하지 않습니다.
                     PartyMemberResourceSnapshot resources = PartyResourceService.ResolveForBattle(
-                        participant.Id, participant.MaxHp, maxMp);
+                        participant.Id, participantMaxHp, maxMp);
                     combatant.RestoreCurrentResources(resources.CurrentHp, resources.CurrentMp);
                 }
                 (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
@@ -1703,7 +1707,7 @@ namespace ProjectLimitless.Battle
 
         /// <summary>
         /// 사수는 제자리에 남고, 장착 야수 데이터가 제공한 Run SpriteSheet만 별도 UI 오브젝트로 재생합니다.
-        /// Wolf가 대상에 닿은 순간 Executor가 180% 피해를 한 번 적용하고, Wolf가 왼쪽 화면 밖으로 완전히
+        /// 야수가 대상에 닿은 순간 Executor가 180% 피해를 한 번 적용하고, 야수가 전장에서 퇴장하고
         /// 퇴장하고 피격 반응도 끝난 뒤에만 입력 잠금을 풀고 다음 턴으로 진행합니다.
         /// </summary>
         private void PlayCompanionAssault(Combatant actor, Combatant target, BattleSkillDefinition skill)
@@ -2295,7 +2299,9 @@ namespace ProjectLimitless.Battle
                 if (target == null) return false;
                 statusEffects.ApplyOrRefreshSilence(target);
                 dungeonMonsters.StartEchoWhisperCooldown(actor);
-                messageText.text = $"{actor.DisplayName}의 침묵의 속삭임! {target.DisplayName}에게 침묵 1.";
+                messageText.text = statusEffects.HasSilence(target)
+                    ? $"{actor.DisplayName}의 침묵의 속삭임! {target.DisplayName}에게 침묵 1."
+                    : $"{actor.DisplayName}의 침묵의 속삭임! {target.DisplayName}의 야수가 침묵을 막았습니다.";
                 RefreshCombatantViews(null);
                 FinishCurrentAction();
                 return true;
@@ -2333,7 +2339,9 @@ namespace ProjectLimitless.Battle
                     TargetResolver.ResolveHostileTargets(actor, allies, TargetRangeType.Magic));
                 if (target == null) return false;
                 statusEffects.ApplyOrRefreshSilence(target);
-                messageText.text = $"{actor.DisplayName}의 침묵의 표식! {target.DisplayName}에게 침묵 1.";
+                messageText.text = statusEffects.HasSilence(target)
+                    ? $"{actor.DisplayName}의 침묵의 표식! {target.DisplayName}에게 침묵 1."
+                    : $"{actor.DisplayName}의 침묵의 표식! {target.DisplayName}의 야수가 침묵을 막았습니다.";
                 RefreshCombatantViews(null);
                 FinishCurrentAction();
                 return true;
@@ -2678,6 +2686,10 @@ namespace ProjectLimitless.Battle
                 MainQuest03EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest04EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
+                // 도망·패배 분기는 여기에 들어오지 않습니다. 실제 출현한 종의 ID를 승리 후에만 기록합니다.
+                BeastCompanionService.RecordVictory(participantSetups
+                    .Where(pair => pair.Key.Side == BattleSide.Enemies && pair.Value.MonsterDefinition != null)
+                    .Select(pair => pair.Value.MonsterDefinition.MonsterId));
                 RecordAllyResources();
                 // 실제 전투불능 몬스터를 stable MonsterDefinition으로 한 번 집계한 결과만 적용·표시·저장합니다.
                 // 이름 문자열은 번역이나 개명으로 바뀔 수 있어 보상 판정 키로 사용하지 않습니다.
@@ -2691,8 +2703,12 @@ namespace ProjectLimitless.Battle
                     // 먼저 최종 Level을 확정한 뒤 새 능력치에서 MaxHP/MaxMP를 다시 계산하고, 실제로 성장한
                     // 플레이어 한 명만 그 새 최대치까지 회복합니다. 여러 레벨이 올라도 최종값으로 한 번 처리합니다.
                     CharacterGrowthStats newGrowth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, gain.Level);
+                    int leveledMaxHp = CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, newGrowth);
+                    if (GameSessionData.SelectedJobId == "sharpshooter")
+                        leveledMaxHp = BeastCompanionService.GetEffectiveMaxHp(leveledMaxHp,
+                            BeastCompanionService.GetEquippedId(PartyResourceService.PlayerCharacterId));
                     PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId,
-                        CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, newGrowth),
+                        leveledMaxHp,
                         CharacterGrowthCalculator.CalculateMaxMp(GameSessionData.SelectedJobId, newGrowth));
                 }
                 // 승리 직후 EXP와 현재 HP/MP를 같은 슬롯에 저장합니다. 독·화상·도발·쿨타임 등은

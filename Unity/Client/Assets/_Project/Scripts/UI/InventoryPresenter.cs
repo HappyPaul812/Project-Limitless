@@ -142,7 +142,10 @@ namespace ProjectLimitless.UI
             {
                 CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(member.JobId, member.Id == PartyResourceService.PlayerCharacterId ? GameSessionData.Level : 1);
                 int maxMp = CharacterGrowthCalculator.CalculateMaxMp(member.JobId, growth);
-                PartyResourceService.ResolveForBattle(member.Id, member.MaxHp, maxMp);
+                int maxHp = member.JobId == "sharpshooter"
+                    ? BeastCompanionService.GetEffectiveMaxHp(member.MaxHp, BeastCompanionService.GetEquippedId(member.Id))
+                    : member.MaxHp;
+                PartyResourceService.ResolveForBattle(member.Id, maxHp, maxMp);
                 Button row = CreateButton(targetList, "Target_" + member.Id, FormatTarget(member),
                     new Vector2(0f, -targetButtons.Count * 82f), new Vector2(400f, 74f));
                 row.GetComponentInChildren<Text>().alignment = TextAnchor.MiddleLeft;

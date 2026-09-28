@@ -141,21 +141,23 @@ namespace ProjectLimitless.UI
         private void Refresh()
         {
             summary.text = "현재 편성 · Player 고정 + 동료 " + draft.Count + "/2\n"
-                + GameSessionData.PlayerName + " (Player) · " + RowLabel(rows["player"]) + "\n"
-                + string.Join("\n", draft.Select(id => CompanionCatalog.Find(id).DisplayName + " · " + RowLabel(rows[id])));
+                + GameSessionData.PlayerName + " (Player) · " + RowLabel(rows["player"]) + BeastLabel("player") + "\n"
+                + string.Join("\n", draft.Select(id => CompanionCatalog.Find(id).DisplayName + " · " + RowLabel(rows[id]) + BeastLabel(id)));
             foreach (var pair in memberLabels)
             {
                 var definition = CompanionCatalog.Find(pair.Key);
                 bool player = pair.Key == "player";
-                pair.Value.text = player ? "[고정] " + GameSessionData.PlayerName + " · Player · " + RowLabel(rows[pair.Key])
+                pair.Value.text = player ? "[고정] " + GameSessionData.PlayerName + " · Player · " + RowLabel(rows[pair.Key]) + BeastLabel(pair.Key)
                     : (draft.Contains(pair.Key) ? "[✓ 선택] " : "[미선택] ") + definition.DisplayName + " · "
-                        + definition.JobName + " · " + definition.PathName + " · " + RowLabel(rows[pair.Key]);
+                        + definition.JobName + " · " + definition.PathName + " · " + RowLabel(rows[pair.Key]) + BeastLabel(pair.Key);
             }
             foreach (Button button in focus) button.interactable = true;
             confirm.GetComponentInChildren<Text>().text = "편성 확정"; cancel.GetComponentInChildren<Text>().text = "취소";
             message.text = "동료 이름: 선택/해제    배치 버튼: 전열/후열\n확정 전 변경은 저장되지 않습니다. Tab·방향키 / 게임패드 이동·확인·취소";
         }
         private static string RowLabel(FormationRow row) => row == FormationRow.Front ? "전열" : "후열";
+        private static string BeastLabel(string characterId) => BeastCompanionService.IsSharpshooter(characterId)
+            ? " · 야수 " + BeastCompanionCatalog.Get(BeastCompanionService.GetEquippedId(characterId)).DisplayName : string.Empty;
 
         private void BuildRows()
         {

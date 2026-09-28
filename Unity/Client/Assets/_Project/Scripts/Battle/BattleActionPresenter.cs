@@ -45,8 +45,10 @@ namespace ProjectLimitless.Battle
                 yield break;
             }
 
-            Texture2D runSheet = Resources.Load<Texture2D>(beast.RunResourcePath);
-            Sprite[] runFrames = SliceBeastRunSheet(runSheet, beast);
+            Texture2D runSheet = beast.Monster == null ? Resources.Load<Texture2D>(beast.RunResourcePath) : null;
+            bool generated = beast.Monster == null;
+            Sprite[] runFrames = beast.Monster == null ? SliceBeastRunSheet(runSheet, beast)
+                : BeastCompanionCatalog.GetMonsterFrames(beast.Monster, out generated);
             if (runFrames.Length == 0)
             {
                 int fallbackDamage = applyImpact == null ? 0 : applyImpact();
@@ -64,8 +66,10 @@ namespace ProjectLimitless.Battle
             RectTransform beastRect = beastImage.rectTransform;
             beastRect.anchorMin = beastRect.anchorMax = Vector2.one * .5f;
             beastRect.pivot = new Vector2(.5f, 0f);
-            beastRect.sizeDelta = new Vector2(beast.FrameWidth * beast.DisplayScale,
-                runSheet.height * beast.DisplayScale);
+            float scale = beast.Monster == null ? beast.DisplayScale
+                : Mathf.Min(1f, 90f / Mathf.Max(runFrames[0].rect.width, runFrames[0].rect.height));
+            beastRect.sizeDelta = new Vector2(runFrames[0].rect.width * scale,
+                runFrames[0].rect.height * scale);
 
             // 출발점은 고정 화면 좌표가 아닙니다. 매 사용 시 현재 행동 중인 사수 ActionRoot의 실제 위치와
             // 표시 크기를 읽어 그 옆 지면을 계산하므로, Formation이나 전투 배치가 바뀌어도 사수를 따라갑니다.
@@ -74,7 +78,7 @@ namespace ProjectLimitless.Battle
             float startGroundOffset = actor.rect.height * .5f - 2f;
             Vector3 start = actor.localPosition + new Vector3(moveDirection * startSideGap, -startGroundOffset, 0f);
 
-            // 정지점도 대상 ActionRoot와 Wolf 표시 폭에서 계산합니다. 서로의 반 너비를 고려해 Wolf가 대상
+            // 정지점도 대상 ActionRoot와 야수 표시 폭에서 계산합니다. 서로의 반 너비를 고려해 야수가 대상
             // 몸 안으로 들어가지 않고 진행 방향 쪽 바로 앞에 멈춥니다.
             float contactSideGap = target.rect.width * .5f + beastRect.rect.width * .45f;
             float contactGroundOffset = target.rect.height * .5f - 2f;
@@ -82,7 +86,9 @@ namespace ProjectLimitless.Battle
             beastRect.localPosition = start;
             // 원본 Wolf는 왼쪽을 향합니다. 향후 반대편 사수가 같은 Presenter를 사용하면 원본 PNG를
             // 수정하지 않고 Transform만 뒤집어 실제 이동 방향을 바라보게 합니다.
-            beastRect.localScale = moveDirection < 0f ? Vector3.one : new Vector3(-1f, 1f, 1f);
+            bool sourceFacesRight = beast.Monster != null && beast.Monster.SourceFacesRight;
+            bool flip = (moveDirection > 0f) != sourceFacesRight;
+            beastRect.localScale = flip ? new Vector3(-1f, 1f, 1f) : Vector3.one;
             Text callout = CreateSkillCallout(actor, damageFont, "동료의 습격!");
 
             // Sprite 애니메이션과 Transform 이동은 서로 다른 일입니다. 전자는 12FPS로 다리 그림을 바꾸고,
@@ -103,7 +109,7 @@ namespace ProjectLimitless.Battle
             onImpact?.Invoke(damage);
             if (damage > 0) StartCoroutine(ShowDamageNumber(target, damageFont, damage));
 
-            // Wolf는 접촉 위치를 관통하지 않고 그대로 멈춥니다. 피격 반응 동안 자리를 유지하고 아주 짧은
+            // 야수는 접촉 위치를 관통하지 않고 그대로 멈춥니다. 피격 반응 동안 자리를 유지하고 아주 짧은
             // 여운 뒤 제거한 다음 완료를 알리므로, 제거 전에 다음 턴 입력이 열리지 않습니다.
             yield return PlayHitReaction(target, targetSprite, targetOrigin, targetOriginalColor);
             yield return new WaitForSeconds(.12f);
@@ -112,7 +118,8 @@ namespace ProjectLimitless.Battle
             targetSprite.color = targetOriginalColor;
             if (callout != null) Destroy(callout.gameObject);
             Destroy(beastObject);
-            foreach (Sprite frame in runFrames) Destroy(frame);
+            // MonsterDefinition의 Sprite는 원본 Asset 참조라 파괴하지 않습니다. Run 시트를 임시로 잘랐을 때만 정리합니다.
+            if (generated) foreach (Sprite frame in runFrames) Destroy(frame);
             onComplete?.Invoke();
         }
 

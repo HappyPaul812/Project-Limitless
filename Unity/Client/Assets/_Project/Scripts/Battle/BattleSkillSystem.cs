@@ -506,6 +506,9 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> silencedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        // 전투 Runtime 객체에만 남깁니다. 다음 전투는 새 객체라 최초 1회 저항이 다시 충전됩니다.
+        private readonly HashSet<Combatant> spentPoisonGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        private readonly HashSet<Combatant> spentSilenceGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>(CombatantReferenceComparer.Instance);
@@ -555,7 +558,11 @@ namespace ProjectLimitless.Battle
         /// </summary>
         public void ApplyOrRefreshSilence(Combatant target)
         {
-            if (target != null && target.IsAlive) silencedTargets.Add(target);
+            if (target == null || !target.IsAlive) return;
+            if (target.Side == BattleSide.Allies && BeastCompanionService.IsSharpshooter(target.Id)
+                && BeastCompanionService.GetEquippedId(target.Id) == "monster_shade_bat"
+                && spentSilenceGuards.Add(target)) return;
+            silencedTargets.Add(target);
         }
 
         public bool HasSilence(Combatant target) => target != null && target.IsAlive && silencedTargets.Contains(target);
@@ -640,7 +647,7 @@ namespace ProjectLimitless.Battle
         /// UI 차단 외에도 계산 경계에서 중첩을 막아 외부 호출이 있어도 60% 감소만 적용되게 합니다.
         /// </summary>
         public int ApplyIncomingDamage(Combatant target, int rawDamage,
-            BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction)
+            BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction, bool areaAttack = false)
         {
             if (target == null) return 0;
             // 원래 피해는 보호가 없었다면 동료가 받을 값이고, 실제 피해는 수호의 맹세 감소와 동료 자신의
@@ -648,6 +655,15 @@ namespace ProjectLimitless.Battle
             // 지하묘지 장막은 직접 피해에만 한 번 적용됩니다. 기존 수호의 맹세·개인 방어보다 앞에서
             // 처리해 DoT가 장막을 지나지 않고, 보스와 수호체 장막이 겹치지 않게 런타임이 판정합니다.
             int damageAfterCover = Math.Max(1, DungeonBarrier?.ModifyIncomingDamage(target, rawDamage, origin) ?? rawDamage);
+            if (origin == BattleDamageOrigin.DirectCombatAction && target.Side == BattleSide.Allies
+                && BeastCompanionService.IsSharpshooter(target.Id))
+            {
+                string beastId = BeastCompanionService.GetEquippedId(target.Id);
+                int retainedPercent = beastId == "monster_moss_beetle" ? 95
+                    : beastId == "forest_spider" && areaAttack ? 90 : 100;
+                // 펫 피해 감소는 기존 Guard/철벽보다 먼저 곱하며 각 단계에서 기존 올림을 사용합니다.
+                damageAfterCover = (int)Math.Max(1L, ((long)damageAfterCover * retainedPercent + 99L) / 100L);
+            }
             GuardianInterceptionResult? interception = null;
             if (origin == BattleDamageOrigin.DirectCombatAction &&
                 guardianCovers.TryGetValue(target.Side, out GuardianCoverState cover) &&
@@ -809,6 +825,10 @@ namespace ProjectLimitless.Battle
             if (definition.DamageMode != PoisonDamageMode.MaxHpPercent) return false;
             if (poisons.TryGetValue(target, out PoisonState existing) &&
                 existing.Definition.Strength > definition.Strength) return false;
+            // 약한 독이 강한 독을 덮으려는 실패 시도는 위에서 끝나므로 저항 횟수를 낭비하지 않습니다.
+            if (target.Side == BattleSide.Allies && BeastCompanionService.IsSharpshooter(target.Id)
+                && BeastCompanionService.GetEquippedId(target.Id) == "venom_snake"
+                && spentPoisonGuards.Add(target)) return false;
             if (existing != null && existing.Definition.Strength == definition.Strength)
                 definition = existing.Definition;
             // Combatant 참조별 저장이므로 같은 몬스터 Asset을 공유해도 독 상태가 서로 섞이지 않습니다.
@@ -1150,7 +1170,7 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// Wolf가 대상에게 접촉한 프레임에만 호출되는 동료의 습격 피해 처리입니다. Wolf는 사수의 명령을
+        /// 장착 야수가 대상에게 접촉한 프레임에만 호출되는 동료의 습격 피해 처리입니다. 야수는 사수의 명령을
         /// 화면으로 보여 주는 BeastCompanion이지 Combatant가 아니므로 HP·턴·Formation을 만들지 않습니다.
         /// 피해의 주체와 쿨타임 기준은 사수이며, TakeDamage를 거쳐 기존 방어의 50% 감소도 그대로 유지합니다.
         /// </summary>
@@ -1173,6 +1193,11 @@ namespace ProjectLimitless.Battle
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
             cooldowns.Start(actor, skill.Id, skill.CooldownTurns);
             message = $"{actor.DisplayName}의 {skill.DisplayName}! {target.DisplayName}에게 {damage} 피해.";
+            // 독침벌도 먼저 동일한 180% 타격을 끝냅니다. 생존 대상에게만 공용 일반 독을 적용합니다.
+            if (target.IsAlive && BeastCompanionService.IsSharpshooter(actor.Id)
+                && BeastCompanionService.GetEquippedId(actor.Id) == "venom_bee"
+                && statusEffects.ApplyOrRefreshPoison(target, 3, new PoisonDefinition(), actor))
+                message += " 독을 적용했다.";
             return true;
         }
 

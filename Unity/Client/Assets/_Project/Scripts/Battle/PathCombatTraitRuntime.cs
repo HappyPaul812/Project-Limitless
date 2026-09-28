@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjectLimitless.Core;
 
 namespace ProjectLimitless.Battle
 {
@@ -101,6 +102,10 @@ namespace ProjectLimitless.Battle
                 else if (sourceState.PathId == VisionPathId && ReferenceEquals(target, GetFocusTarget(source))) modified = Increase(modified, sourceState.FocusStacks * 3);
                 else if (sourceState.PathId == MobilityPathId && source.Slot.Row == FormationRow.Rear) modified = Increase(modified, 5);
             }
+            // 길의 공격 보정을 마친 직접 피해에만 Wolf를 적용합니다. DoT는 이 경로를 거치지 않습니다.
+            if (source.Side == BattleSide.Allies && BeastCompanionService.IsSharpshooter(source.Id)
+                && BeastCompanionService.GetEquippedId(source.Id) == "wolf")
+                modified = Increase(modified, 5);
             TraitState targetState = Find(target);
             if (targetState?.PathId == MobilityPathId && target.Slot.Row == FormationRow.Front) modified = Reduce(modified, 5);
 
@@ -114,7 +119,7 @@ namespace ProjectLimitless.Battle
             }
 
             Dictionary<Combatant, int> hpBefore = combatants.ToDictionary(item => item, item => item.CurrentHp, CombatantReferenceComparer.Instance);
-            int applied = statusEffects.ApplyIncomingDamage(target, modified, BattleDamageOrigin.DirectCombatAction);
+            int applied = statusEffects.ApplyIncomingDamage(target, modified, BattleDamageOrigin.DirectCombatAction, areaAttack);
             foreach (TraitState state in states.Values.Where(item => item.PathId == EmotionalScarPathId))
                 foreach (KeyValuePair<Combatant, int> pair in hpBefore.Where(pair => pair.Key.Side == state.Owner.Side))
                     ObserveThresholdCrossing(state, pair.Key, pair.Value);
