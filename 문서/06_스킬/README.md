@@ -108,7 +108,7 @@
 - `BeastCompanionCatalog`가 `BeastCompanionDefinition`을 제공하므로 `BattleSceneController`에는 Wolf 경로가 없고 향후 Bear/Fox 장착 데이터로 교체 가능
 - 아이콘은 Wolf Run 원본 SpriteSheet에서 작은 버튼에서도 몸통·머리·꼬리·다리가 비교적 잘 구분되는 다섯 번째 프레임(index 4)을 런타임에 잘라 고정 표시하며 원본 PNG는 수정하지 않음. 전투 연출은 이 고정 아이콘 Sprite가 아니라 별도로 만든 6개 Run Sprite 전체를 사용한다. 경로와 프레임 번호는 `BeastCompanionDefinition`이 제공하고 정조준은 기존 Kenney `target.png` 유지
 - 야수별 기본 피해를 크게 차등화하지 않고 패시브 성향과 플레이 스타일을 선택의 중심으로 유지
-- 야수 선택 UI, 장착·저장, Wolf 공격력 계열·Bear 방어/최대 HP 계열·Fox 민첩/행동 우선도/치명 계열의 실제 버프와 정확한 수치는 미구현
+- 야수 선택 UI, 장착·저장과 패시브 적용은 미구현. 확정 수치와 Monster Pet 확장 방향은 [사수 BeastCompanion 확장 설계](../10_전투/사수_BeastCompanion_확장_설계.md)를 따른다.
 
 ### 투사 난도 (`fighter_slash_stack`)
 
