@@ -70,6 +70,10 @@ namespace ProjectLimitless.World
             playerInside = true;
             // 다른 Field에서 걸어 들어올 때와 던전 복귀 Spawn에 도착할 때 모두 같은 거점을 활성화합니다.
             GameSessionData.ActivateSafeZone(SafeZoneId, SceneId, RespawnId);
+            // Main11은 보스 처치나 석판 획득만으로 끝나지 않습니다. 실제 입구 안전지대에 도착했을 때
+            // 마지막 목표를 알리면 QuestService의 완료 기록이 보상을 한 번만 지급하고 저장합니다.
+            if (MainQuest11DungeonFlow.CurrentStep == 12)
+                QuestService.NotifyLocationReached(SafeZoneId);
             if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
         }
     }

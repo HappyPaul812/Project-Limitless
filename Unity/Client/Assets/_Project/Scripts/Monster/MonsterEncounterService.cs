@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ProjectLimitless.World;
 using UnityEngine;
 
 namespace ProjectLimitless.Monster
@@ -31,6 +32,7 @@ namespace ProjectLimitless.Monster
         public static bool TryRaise(MonsterDefinition monster, FieldMonsterSpawnDefinition spawn)
         {
             if (monster == null || spawn == null || Time.unscaledTime < suppressedUntil) return false;
+            if (spawn.SpawnId == MainQuest11DungeonFlow.BossId && !MainQuest11DungeonFlow.IsBossAvailable) return false;
 
             Debug.Log($"몬스터 조우: {monster.DisplayName} ({spawn.SpawnId})");
             EncounterStarted?.Invoke(monster, spawn);
@@ -49,6 +51,9 @@ namespace ProjectLimitless.Monster
         public static bool IsSpawnAvailable(FieldMonsterSpawnDefinition spawn)
         {
             if (spawn == null) return false;
+            // Save/Continue 후 런타임 비재생성 Dictionary가 비어도 Quest 목표 기록이 보스 완료를 복원합니다.
+            // 조사가 끝나기 전에는 보스 조우를 막아 먼저 처치하고 목표가 꼬이는 일도 방지합니다.
+            if (spawn.SpawnId == MainQuest11DungeonFlow.BossId && !MainQuest11DungeonFlow.IsBossAvailable) return false;
             string key = GetSpawnKey(spawn);
             if (!defeatedUntilBySpawn.TryGetValue(key, out float defeatedUntil)) return true;
             if (Time.realtimeSinceStartup < defeatedUntil) return false;

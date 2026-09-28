@@ -136,6 +136,17 @@ namespace ProjectLimitless.Monster
         {
             foreach (FieldMonsterSpawnDefinition spawn in spawns)
             {
+                // Main11의 조사 단계가 바뀌거나 Save/Continue로 보스 처치 기록을 복원하면,
+                // 이미 생성된 보스도 숨깁니다. 다음 목표에 도달하면 아래 기존 생성 경로가 다시 사용됩니다.
+                if (spawn != null && spawn.NonRespawningBoss && !MonsterEncounterService.IsSpawnAvailable(spawn))
+                {
+                    if (instances.TryGetValue(spawn, out GameObject existing) && existing != null)
+                    {
+                        Destroy(existing);
+                        instances.Remove(spawn);
+                    }
+                    continue;
+                }
                 if (spawn == null || instances.TryGetValue(spawn, out GameObject instance) && instance != null) continue;
                 if (spawn.Monster == null)
                 {

@@ -50,6 +50,11 @@ namespace ProjectLimitless.Battle
         {
             if (spawn != null && spawn.SceneName == "Field_01" && spawn.SpawnId == ProjectLimitless.World.MainQuest02FieldFlow.QuestSpawnId)
                 return ProjectLimitless.World.MainQuest02FieldFlow.EncounterId;
+            // 일반 몬스터 처치가 아니라 지정 보스의 승리만 Main11 목표에 전달합니다.
+            // 도망·패배는 EndBattle의 승리 분기를 거치지 않아 목표가 진행되지 않습니다.
+            if (spawn != null && spawn.SceneName == "Dungeon_01_B2" &&
+                spawn.SpawnId == ProjectLimitless.World.MainQuest11DungeonFlow.BossId)
+                return spawn.SpawnId;
             return string.Empty;
         }
 

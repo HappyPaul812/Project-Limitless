@@ -3651,7 +3651,7 @@ GameObject:
   - component: {fileID: 1377809132}
   - component: {fileID: 1377809131}
   m_Layer: 0
-  m_Name: Exit_To_B1_Test
+  m_Name: Exit_To_B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3670,7 +3670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.World.SceneTransitionTrigger
   targetScene: Dungeon_01
-  targetSpawnPointId: Spawn_From_Field03
+  targetSpawnPointId: Spawn_From_B2
 --- !u!61 &1377809132
 BoxCollider2D:
   m_ObjectHideFlags: 0
