@@ -82,9 +82,9 @@ Variant는 이동 로직과 분리된 Visual과 Animator를 교체한다. 지적
 - `Companion`: 플레이어와 함께 3인 파티를 구성하는 일반 동료 NPC. 파티 슬롯, `Combatant`, HP, Formation과 자기 턴을 가질 수 있다.
 - `BeastCompanion`: 사수에게 별도로 귀속되는 야수 동료. 3인 파티 슬롯을 차지하지 않고 별도 `Combatant`, HP, Formation 슬롯이나 독립 턴을 갖지 않는다. 사수의 패시브와 특정 스킬 연출에만 관여한다.
 
-보유 기본 야수 Wolf, Bear, Fox 3종은 모든 사수에게 무료로 제공한다. 확정 효과와 Chapter 1 몬스터 종의 향후 분양·장착 규칙은 [사수 BeastCompanion 확장 설계](../10_전투/사수_BeastCompanion_확장_설계.md)를 따른다. 현재 선택 UI·장착·저장과 패시브 적용은 미구현이다.
+보유 기본 야수 Wolf, Bear, Fox 3종은 모든 사수에게 무료로 제공한다. 확정 효과와 Chapter 1 몬스터 종의 분양·장착 규칙은 [사수 BeastCompanion 확장 설계](../10_전투/사수_BeastCompanion_확장_설계.md)를 따른다. 공용 분양·관리 UI, 장착·저장 및 패시브 런타임은 구현됐으며 Chapter 2 시설·NPC 배치는 미구현이다. 실제 Play Mode 전체 회귀와 화면 검증은 남아 있다.
 
-`동료의 습격`은 향후 현재 장착한 `BeastCompanion`이 등장해 공격하는 스킬로 확장한다. 1차 구현은 선택 시스템이 없으므로 Wolf를 사용하지만, 전투 화면 코드에 Wolf를 직접 고정하지 않고 향후 `BeastCompanionDefinition` 또는 동등한 데이터 구조에서 현재 장착 야수를 전달받을 수 있는 경계를 둔다.
+`동료의 습격`은 행동 중인 사수의 장착 `BeastCompanionDefinition`을 조회해 해당 원본 프레임을 재생한다. 기본 180% 피해와 3턴 쿨타임을 유지하며 독침벌만 공용 일반 독을 추가한다.
 
 ## 그래픽과 사용자 Asset
 
