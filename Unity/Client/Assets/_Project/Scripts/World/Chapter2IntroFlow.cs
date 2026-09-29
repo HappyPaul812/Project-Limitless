@@ -165,6 +165,12 @@ namespace ProjectLimitless.World
             npc.transform.SetParent(transform, false);
             npc.transform.position = position;
             npc.GetComponent<NpcController>().Configure(name, line);
+            var label = new GameObject("Label", typeof(TextMesh)).GetComponent<TextMesh>();
+            label.transform.SetParent(npc.transform, false);
+            label.text = name;
+            label.characterSize = .075f;
+            label.anchor = TextAnchor.MiddleCenter;
+            label.transform.localPosition = new Vector3(0, 1.02f, 0);
             var roleData = npc.GetComponent<VillageNpcRole>();
             roleData.Configure(id, role);
             if (!serin) VillageNpcAppearanceCatalog.Apply(npc, id, name, role);

@@ -36,6 +36,14 @@ namespace ProjectLimitless.NPC
                 ["safezone-catacomb-party"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
                 ["safezone-catacomb-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer",
                 ["safezone-catacomb-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
+                ["arbel-leon"] = "VillageNpcSprites/Eldiran/OGA09_VillageRepresentative",
+                ["arbel-shop"] = "VillageNpcSprites/Eldiran/OGA03_GeneralShop",
+                ["arbel-healer"] = "VillageNpcSprites/Eldiran/OGA06_Healer",
+                ["arbel-party-guide"] = "VillageNpcSprites/Eldiran/OGA10_PartyManager",
+                ["arbel-pet-adoption"] = "VillageNpcSprites/Eldiran/OGA17_EquipmentShop",
+                ["arbel-pet-management"] = "VillageNpcSprites/Eldiran/OGA16_Bank",
+                ["arbel-resident-west"] = "VillageNpcSprites/Eldiran/OGA11_Resident02",
+                ["arbel-portal-keeper"] = "VillageNpcSprites/Eldiran/OGA20_GateGuard",
             };
 
         public static bool Apply(
