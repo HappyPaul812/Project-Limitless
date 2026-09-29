@@ -118,6 +118,8 @@ namespace ProjectLimitless.UI
                     if (first == null) first = row;
                 }
                 details.text = "장착을 변경할 사수 캐릭터를 선택하세요.";
+                // 사수 선택 단계에는 아직 야수 상세가 없습니다. 이전 선택의 초상화나 빈 Image의 흰 면을 숨깁니다.
+                portrait.enabled = false;
                 actionButton.gameObject.SetActive(false);
                 if (index == 0) message.text = "현재 관리할 사수가 없습니다.";
             }
@@ -152,9 +154,10 @@ namespace ProjectLimitless.UI
         private void ShowDetails()
         {
             if (selectedBeastId == null)
-            { details.text = "목록에서 펫을 선택하세요."; portrait.sprite = null; actionButton.gameObject.SetActive(false); return; }
+            { details.text = "목록에서 펫을 선택하세요."; portrait.sprite = null; portrait.enabled = false; actionButton.gameObject.SetActive(false); return; }
             BeastCompanionDefinition beast = BeastCompanionCatalog.Get(selectedBeastId);
             portrait.sprite = GetIcon(beast);
+            portrait.enabled = portrait.sprite != null;
             string effect = BeastCompanionService.GetPassiveDescription(selectedBeastId);
             if (adoption)
             {
