@@ -299,6 +299,15 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == "Field_06_ScorchedTrail")
+                setup = BattlePrototypeEncounterFactory.CreateField06(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    BattleEncounterContext.Monster, BattleEncounterContext.Spawn.SpawnId,
+                    monsterDefinitions.FirstOrDefault(item => item.MonsterId == "soot_hound"),
+                    monsterDefinitions.FirstOrDefault(item => item.MonsterId == "heatwind_hawk"),
+                    monsterDefinitions.FirstOrDefault(item => item.MonsterId == "fissure_lizard"),
+                    monsterDefinitions.FirstOrDefault(item => item.MonsterId == "ember_beetle"));
             else
                 setup = BattlePrototypeEncounterFactory.CreateThreeVsThree(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,

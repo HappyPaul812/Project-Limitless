@@ -55,6 +55,8 @@ namespace ProjectLimitless.Battle
             if (spawn != null && spawn.SceneName == "Dungeon_01_B2" &&
                 spawn.SpawnId == ProjectLimitless.World.MainQuest11DungeonFlow.BossId)
                 return spawn.SpawnId;
+            if (spawn != null && spawn.SceneName == "Field_06_ScorchedTrail" &&
+                spawn.SpawnId == "field06_m15_01") return spawn.SpawnId;
             return string.Empty;
         }
 

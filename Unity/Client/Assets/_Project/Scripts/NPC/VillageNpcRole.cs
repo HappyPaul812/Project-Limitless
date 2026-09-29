@@ -50,6 +50,7 @@ namespace ProjectLimitless.NPC
         {
             if (MainQuest05ReturnFlow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;
+            if (Chapter2Main15Flow.TryHandleNpc(npcId, npc)) return;
             if (Chapter2IntroFlow.TryHandleNpc(npcId, npc)) return;
             if (role == VillageNpcRoleType.PetAdoption)
             {

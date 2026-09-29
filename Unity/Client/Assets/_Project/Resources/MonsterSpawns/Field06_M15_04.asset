@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aff533e0f0c4e91a17a57cb14010833, type: 3}
+  m_Name: Field06_M15_04
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.FieldMonsterSpawnDefinition
+  sceneName: Field_06_ScorchedTrail
+  spawnId: field06_m15_04
+  monster: {fileID: 11400000, guid: a494b8bc3a5c6ff4b8acb58955850f87, type: 2}
+  position: {x: -7, y: 3}
+  activityRadius: 1
+  respawnSeconds: 35
+  nonRespawningBoss: 0

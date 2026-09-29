@@ -138,6 +138,7 @@ namespace ProjectLimitless.Core
                 ? GameSessionData.SelectedJobId == "sharpshooter"
                 : characterId == ProjectLimitless.World.Chapter2IntroFlow.SerinId
                     ? ProjectLimitless.World.Chapter2IntroFlow.SerinTemporarilyPresent
+                      || CompanionRosterService.IsUnlocked(characterId)
                     : CompanionRosterService.IsUnlocked(characterId)
                       && CompanionCatalog.Find(characterId)?.JobId == "sharpshooter";
 

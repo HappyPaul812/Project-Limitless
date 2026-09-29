@@ -33,6 +33,7 @@ namespace ProjectLimitless.Core
         public const string TaeonId = "companion_taeon";
         public const string MielId = "companion_miel";
         public const string PaulId = "companion_paul";
+        public const string SerinId = "companion_serin";
         private static readonly HashSet<string> Unlocked = new HashSet<string>(StringComparer.Ordinal);
         private static readonly List<string> ActiveParty = new List<string>();
         private static readonly Dictionary<string, FormationRow> Rows = new Dictionary<string, FormationRow>();
@@ -69,6 +70,9 @@ namespace ProjectLimitless.Core
             }
             return added;
         }
+
+        /// <summary>Main15 마지막 대화 뒤 명단만 열어 두며, 사용자가 고른 두 동료는 바꾸지 않습니다.</summary>
+        public static bool UnlockSerin() => CompanionCatalog.Find(SerinId) != null && Unlocked.Add(SerinId);
 
         public static FormationRow GetRow(string id) => Rows.TryGetValue(id, out FormationRow row)
             ? row : (CompanionCatalog.Find(id)?.DefaultRow ?? FormationRow.Front);

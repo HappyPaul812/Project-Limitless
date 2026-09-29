@@ -99,7 +99,13 @@ namespace ProjectLimitless.Battle
             allies.Add(new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     CompanionRosterService.GetSlot("player"), playerMaxHp, playerAttack, playerAgility, 0,
                     ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId));
-            foreach (string id in CompanionRosterService.ActivePartyCharacterIds)
+            // Main15 임시 동행은 저장된 편성을 바꾸지 않고 이 전투에서 두 번째 선택 동료 자리만 빌립니다.
+            // 정식 해금 뒤에는 일반 명단 규칙으로 돌아가며 Player+동료 2명 제한을 유지합니다.
+            bool main15Temporary = ProjectLimitless.World.Chapter2IntroFlow.SerinTemporarilyPresent &&
+                QuestService.ActiveMainQuest?.Definition.QuestId == ProjectLimitless.World.Chapter2Main15Flow.QuestId;
+            string[] selectedCompanions = CompanionRosterService.ActivePartyCharacterIds
+                .Take(main15Temporary ? 1 : CompanionRosterService.SoloCompanionLimit).ToArray();
+            foreach (string id in selectedCompanions)
             {
                 CompanionDefinition definition = CompanionCatalog.Find(id);
                 if (definition != null) allies.Add(definition.CreateParticipant(CompanionRosterService.GetSlot(id)));
@@ -133,6 +139,30 @@ namespace ProjectLimitless.Battle
                 CreateMonster(leader, $"{leader?.MonsterId}_1", "몬스터", FormationRow.Rear, 0, 12)
             };
             return new BattleEncounterSetup(allies.ToArray(), enemies);
+        }
+
+        /// <summary>Field06 배치 ID별 실제 적 수와 전후열을 만듭니다. 아군은 기존 정식/임시 편성을 재사용합니다.</summary>
+        public static BattleEncounterSetup CreateField06(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition encountered, string spawnId,
+            MonsterDefinition soot, MonsterDefinition hawk, MonsterDefinition lizard, MonsterDefinition beetle)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, jobId, pathId,
+                maxHp, attack, agility, null, null, encountered);
+            BattleParticipantSetup[] foes;
+            switch (spawnId)
+            {
+                case "field06_m15_02":
+                    foes = new[] { CreateMonster(soot, "m15_soot_hound", "그을음들개", FormationRow.Front, 0, 12),
+                        CreateMonster(hawk, "m15_heatwind_hawk", "열풍매", FormationRow.Rear, 0, 16) }; break;
+                case "field06_m15_03":
+                    foes = new[] { CreateMonster(lizard, "m15_fissure_lizard", "균열도마뱀", FormationRow.Front, 0, 9) }; break;
+                case "field06_m15_04":
+                    foes = new[] { CreateMonster(beetle, "m15_ember_beetle", "화열딱정벌레", FormationRow.Front, 0, 7),
+                        CreateMonster(hawk, "m15_heatwind_hawk", "열풍매", FormationRow.Rear, 0, 16) }; break;
+                default:
+                    foes = new[] { CreateMonster(soot, "m15_soot_hound", "그을음들개", FormationRow.Front, 0, 12) }; break;
+            }
+            return new BattleEncounterSetup(party.Allies, foes);
         }
 
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,

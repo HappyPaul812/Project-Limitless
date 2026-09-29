@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main15_BurningTraces
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_15_burning_traces
+  displayName: "타오르는 흔적"
+  description: "아르벨 서쪽에서 변한 생물, 갈라진 땅, 열기와 진동의 변화를 조사한다."
+  questType: 0
+  objectives:
+  - objectiveId: hear_western_reports
+    description: "레온에게 서쪽 소식을 들으세요."
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  - objectiveId: enter_scorched_trail
+    description: "서쪽의 황토 길로 이동하세요."
+    objectiveType: 1
+    targetId: field06_east_entry
+    requiredCount: 1
+  - objectiveId: inspect_soot_traces
+    description: "그을린 흔적을 조사하세요."
+    objectiveType: 3
+    targetId: field06_main15_soot
+    requiredCount: 1
+  - objectiveId: inspect_fleeing_tracks
+    description: "도망친 야수의 발자국을 확인하세요."
+    objectiveType: 3
+    targetId: field06_main15_tracks
+    requiredCount: 1
+  - objectiveId: face_affected_beasts
+    description: "첫 그을음들개를 상대하세요."
+    objectiveType: 2
+    targetId: field06_m15_01
+    requiredCount: 1
+  - objectiveId: follow_shorter_pulse
+    description: "짧아진 지면 울림을 살펴보세요."
+    objectiveType: 3
+    targetId: field06_main15_pulse
+    requiredCount: 1
+  - objectiveId: inspect_cracked_ground
+    description: "갈라진 지면을 조사하세요."
+    objectiveType: 3
+    targetId: field06_main15_crack
+    requiredCount: 1
+  - objectiveId: inspect_heat_traces
+    description: "검게 변한 바위와 열 흔적을 조사하세요."
+    objectiveType: 3
+    targetId: field06_main15_heat
+    requiredCount: 1
+  - objectiveId: compare_with_serin
+    description: "세린과 조사 결과를 정리하세요."
+    objectiveType: 0
+    targetId: field06-serin
+    requiredCount: 1
+  - objectiveId: return_to_arbel
+    description: "아르벨로 돌아가세요."
+    objectiveType: 1
+    targetId: arbel_main15_return
+    requiredCount: 1
+  - objectiveId: report_to_leon
+    description: "레온에게 발견한 사실을 보고하세요."
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  - objectiveId: welcome_serin
+    description: "세린과 앞으로의 동행을 이야기하세요."
+    objectiveType: 0
+    targetId: arbel-serin
+    requiredCount: 1
+  reward:
+    Experience: 60
+    Currency: 50
+    Items: []
+  prerequisiteQuestIds:
+  - main_14_ground_pulse
+  nextMainQuestId:
+  startNpcId: arbel-leon
+  turnInNpcId:

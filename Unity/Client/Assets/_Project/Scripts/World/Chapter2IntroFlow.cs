@@ -26,6 +26,7 @@ namespace ProjectLimitless.World
         {
             get
             {
+                if (CompanionRosterService.IsUnlocked(SerinId)) return false;
                 QuestRuntimeState main = QuestService.ActiveMainQuest;
                 return main?.Definition.QuestId == Main13 && main.CurrentObjectiveIndex >= 3 && main.CurrentObjectiveIndex < 5 ||
                     main?.Definition.QuestId == Main14 && main.CurrentObjectiveIndex >= 4 ||
@@ -81,7 +82,8 @@ namespace ProjectLimitless.World
                 bounds.GetComponent<WorldBounds2D>().Configure(Vector2.zero, new Vector2(21, 15));
                 WorldBounds2D.CreateBoundaryColliders(bounds.transform, bounds.GetComponent<WorldBounds2D>().Bounds,
                     .3f, new WorldBoundaryOpening(WorldBoundarySide.Left, 0, 3),
-                    new WorldBoundaryOpening(WorldBoundarySide.Right, 0, 3));
+                    new WorldBoundaryOpening(WorldBoundarySide.Right, 0, 3),
+                    new WorldBoundaryOpening(WorldBoundarySide.Top, -6, 3));
                 var respawn = new GameObject("Spawn_Arbel_Center", typeof(SceneSpawnPoint));
                 respawn.transform.SetParent(transform, false);
                 respawn.transform.position = new Vector2(0, -1.5f);

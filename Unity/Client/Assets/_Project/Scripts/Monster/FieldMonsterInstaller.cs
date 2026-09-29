@@ -70,6 +70,9 @@ namespace ProjectLimitless.Monster
             monsterObject.transform.position = resolvedPosition;
             monsterObject.GetComponent<CircleCollider2D>().radius = .4f;
             monsterObject.GetComponent<MonsterFieldController>().Configure(spawn, resolvedPosition);
+            // Main15의 첫 지정 조우는 배회하는 실제 몬스터를 길찾기 대상으로 사용합니다.
+            if (spawn.SceneName == "Field_06_ScorchedTrail" && spawn.SpawnId == "field06_m15_01")
+                ProjectLimitless.World.QuestNavigationTarget.Attach(monsterObject, spawn.SpawnId, "그을음들개", new Vector3(0f, 1.5f));
             monsterObject.AddComponent<MonsterNameplate>().Configure(monster);
 
             GameObject visual = new GameObject("Visual");

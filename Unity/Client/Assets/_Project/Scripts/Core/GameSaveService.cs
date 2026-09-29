@@ -204,6 +204,8 @@ namespace ProjectLimitless.Core
                 CompanionRosterService.UnlockIntroCompanions();
             if (QuestService.GetState("main_09_reunion_in_silence") == QuestState.Completed)
                 CompanionRosterService.UnlockPaul(GameSessionData.SelectedJobId);
+            if (QuestService.GetState("main_15_burning_traces") == QuestState.Completed)
+                CompanionRosterService.UnlockSerin();
             GameSessionData.RecordLocation(data.CurrentSceneId, data.SpawnPointId);
             // Version 1의 이전 JSON에는 세 필드가 없습니다. 그 경우 Reset의 시작 마을 fallback을 유지합니다.
             GameSessionData.ActivateSafeZone(data.LastSafeZoneId, data.LastSafeZoneSceneId, data.LastSafeZoneSpawnPointId);
