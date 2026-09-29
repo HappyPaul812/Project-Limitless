@@ -1,5 +1,7 @@
 # Project-Limitless 현재 개발 상태
 
+- 2026-09-29 Chapter 2 일반 몬스터 5종의 사용자 확정 1차 Level/HP/Attack/Agility/EXP/Talent·스킬 배율·AI 방향·펫 효과를 설계 정본에 반영했다. 열풍매 펫은 기존 원거리 피격 -5% 안을 폐기하고 후열 대상 습격 최종 직접 피해 ×1.10으로 교체했다. 제공된 공식 PNG 5개는 모두 존재하고 1254×1254 RGBA이지만 양 축이 4로 나누어지지 않아 요청된 동일 크기 4×4 Slice 조건을 충족하지 않는다. 원본 변경·강제 Crop/Resize·대체 없이 5종 Asset Import와 이에 종속된 MonsterDefinition/AI/Pet Runtime·검증을 중단했다. 원본 SHA-256은 그을음들개 `459D3F08`, 열풍매 `ED35ECBA`, 균열도마뱀 `DF6AC182`, 화열딱정벌레 `F3859DDB`, 불씨망령 `975B13F0` 접두다. 문서 링크·staged `git diff --check` 통과, Unity Play Mode 미실행. 다음 작업은 4×4로 정확히 분할 가능한 공식 수정 시트 확보 후 구현 재개다. 관련 문서 commit `8ab63ed`.
+
 - 2026-09-29 Chapter 2 몬스터 5종의 구현 전 파이프라인을 LOCAL 코드·Asset 기준으로 조사하고 종별 준비 체크리스트를 문서화했다. 기존 10종 Definition/Formation/Spawn/Animation, 공용 Burn, AI·보스 예고, BeastCompanion 승리→분양→장착 경로를 대조했다. 열풍매 원거리 직접 피해는 현 피격 API에서 안정 분류 불가로 구현 보류가 필요하다. 상대 링크·주요 코드 경로·staged `git diff --check` 통과. Unity Play Mode는 실행하지 않았으며 Chapter 2 최종 Sprite/수치/Definition/AI/Spawn/Pet Runtime은 미구현이다. 다음 작업은 최종 Asset·수치 확정 후 준비 문서의 순서대로 별도 구현·검증하는 것이다. 관련 문서 commit `74e5f37`.
 
 - 2026-09-29 몬스터 설계 정본에 신규 종의 전투 특징·펫 가능 여부·계승 효과를 함께 정의하는 영구 규칙과 템플릿을 추가했다. Chapter 2 일반 몬스터 5종(그을음들개·열풍매·균열도마뱀·화열딱정벌레·불씨망령), 작열 감시자 Elite 후보, 기존 Burn 활용과 Overheat 미구현 후보를 문서화했다. 상대 링크와 staged `git diff --check` 통과. Unity는 실행하지 않았으며 Asset·MonsterDefinition·AI·Spawn·Pet Runtime은 미구현이다. 다음 작업은 별도 승인된 Chapter 2 구현에서 미확정 수치·피해 분류를 검토하는 것이다. 관련 설계 commit `3745968`.
