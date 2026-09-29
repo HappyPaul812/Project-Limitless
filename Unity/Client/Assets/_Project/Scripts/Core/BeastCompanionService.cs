@@ -33,7 +33,8 @@ namespace ProjectLimitless.Core
         private static readonly string[] MonsterIds =
         {
             "venom_bee", "forest_spider", "venom_snake",
-            "monster_moss_beetle", "monster_shade_bat"
+            "monster_moss_beetle", "monster_shade_bat",
+            "soot_hound", "heatwind_hawk", "fissure_lizard", "ember_beetle"
         };
         private static readonly HashSet<string> Defeated = new HashSet<string>(StringComparer.Ordinal);
         private static readonly HashSet<string> Unlocked = new HashSet<string>(StringComparer.Ordinal);
@@ -70,6 +71,10 @@ namespace ProjectLimitless.Core
                 case "forest_spider": return "적대 광역 직접 피해 -10%";
                 case "monster_moss_beetle": return "직접 피해 -5%";
                 case "monster_shade_bat": return "전투마다 첫 유효 침묵 1회 무효";
+                case "soot_hound": return "동료의 습격 후 생존 대상에게 화상 2회";
+                case "heatwind_hawk": return "동료의 습격 후열 대상 직접 피해 +10%";
+                case "fissure_lizard": return "전투마다 첫 유효 직접 피해 1회 -20%";
+                case "ember_beetle": return "전투마다 첫 유효 화상 1회 무효";
                 default: return string.Empty;
             }
         }

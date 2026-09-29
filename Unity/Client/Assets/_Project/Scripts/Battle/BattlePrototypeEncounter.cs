@@ -142,6 +142,20 @@ namespace ProjectLimitless.Battle
             });
         }
 
+        /// <summary>Chapter 2 Scene/Spawn을 만들기 전에 실제 참가자 수치와 전후열을 확인하는 격리 편성입니다.</summary>
+        public static BattleEncounterSetup CreateChapter2MonsterValidation(string playerName, string playerJobId,
+            string playerPathId, int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition monster)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, playerJobId, playerPathId,
+                playerMaxHp, playerAttack, playerAgility, null, null, monster);
+            bool rear = monster != null && (monster.MonsterId == "heatwind_hawk" || monster.MonsterId == "ember_wraith");
+            return new BattleEncounterSetup(party.Allies, new[]
+            {
+                CreateMonster(monster, monster?.MonsterId ?? "chapter2_validation", "검증 몬스터",
+                    rear ? FormationRow.Rear : FormationRow.Front, 0, monster?.BattleAgility ?? 10)
+            });
+        }
+
         /// <summary>
         /// 지하묘지의 일반 필드 스폰 ID만 보고 기존 적 정의로 전투 편성을 만듭니다.
         /// 접촉·승리 제거·도망·리스폰은 원래 필드 흐름이 계속 담당합니다.
@@ -287,7 +301,10 @@ namespace ProjectLimitless.Battle
             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
                 new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
                 monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
-                TargetRangeType.MeleePhysical, false, BattleParticipantVisualType.EncounterMonster,
+                monster?.MonsterId == "heatwind_hawk" ? TargetRangeType.RangedPhysical
+                    : monster?.MonsterId == "ember_wraith" ? TargetRangeType.Magic
+                    : TargetRangeType.MeleePhysical,
+                false, BattleParticipantVisualType.EncounterMonster,
                 monsterDefinition: monster, isBoss: isBoss);
         }
 

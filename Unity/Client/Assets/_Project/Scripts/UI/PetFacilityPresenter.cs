@@ -22,6 +22,7 @@ namespace ProjectLimitless.UI
         private GameObject panel;
         private Transform owner;
         private Transform rows;
+        private ScrollRect petListScroll;
         private Text title;
         private Text details;
         private Text balance;
@@ -148,6 +149,8 @@ namespace ProjectLimitless.UI
                     selectedBeastId = ids.Length > 0 ? ids[0] : null;
                 ShowDetails();
             }
+            ((RectTransform)rows).sizeDelta = new Vector2(425, Mathf.Max(340, index * 53));
+            petListScroll.verticalNormalizedPosition = 1f;
             if (first != null) first.Select();
         }
 
@@ -232,11 +235,22 @@ namespace ProjectLimitless.UI
             rect.offsetMin = rect.offsetMax = Vector2.zero;
             title = AddText("Title", panel.transform, new Vector2(30, -30), new Vector2(500, 50), 30);
             balance = AddText("Balance", panel.transform, new Vector2(550, -30), new Vector2(310, 50), 22);
+            GameObject listViewport = new GameObject("PetListViewport", typeof(Image), typeof(Mask), typeof(ScrollRect));
+            listViewport.transform.SetParent(panel.transform, false);
+            SetTopLeft((RectTransform)listViewport.transform, new Vector2(25, -100), new Vector2(425, 340));
+            listViewport.GetComponent<Image>().color = new Color(1f, 1f, 1f, .01f);
+            listViewport.GetComponent<Mask>().showMaskGraphic = false;
+            petListScroll = listViewport.GetComponent<ScrollRect>();
+            petListScroll.horizontal = false;
+            petListScroll.scrollSensitivity = 30f;
+            petListScroll.movementType = ScrollRect.MovementType.Clamped;
+            petListScroll.viewport = (RectTransform)listViewport.transform;
             rows = new GameObject("PetRows", typeof(RectTransform)).transform;
-            rows.SetParent(panel.transform, false);
+            rows.SetParent(listViewport.transform, false);
             RectTransform list = (RectTransform)rows;
             list.anchorMin = list.anchorMax = new Vector2(0, 1); list.pivot = new Vector2(0, 1);
-            list.anchoredPosition = new Vector2(25, -100); list.sizeDelta = new Vector2(425, 340);
+            list.anchoredPosition = Vector2.zero; list.sizeDelta = new Vector2(425, 340);
+            petListScroll.content = list;
             portrait = new GameObject("PetPortrait", typeof(Image)).GetComponent<Image>();
             portrait.transform.SetParent(panel.transform, false);
             portrait.preserveAspect = true; portrait.raycastTarget = false;
@@ -248,8 +262,28 @@ namespace ProjectLimitless.UI
             panel.SetActive(false);
         }
 
-        private Button AddRow(int index, string label, Action onClick) =>
-            AddButton("PetRow_" + index, rows, new Vector2(0, -index * 53), new Vector2(420, 48), label, onClick);
+        private Button AddRow(int index, string label, Action onClick)
+        {
+            Button row = AddButton("PetRow_" + index, rows, new Vector2(0, -index * 53), new Vector2(420, 48), label, onClick);
+            row.gameObject.AddComponent<EventTrigger>().triggers = new List<EventTrigger.Entry>
+            {
+                new EventTrigger.Entry { eventID = EventTriggerType.Select, callback = new EventTrigger.TriggerEvent() }
+            };
+            row.GetComponent<EventTrigger>().triggers[0].callback.AddListener(_ => ScrollToRow(index));
+            return row;
+        }
+
+        private void ScrollToRow(int index)
+        {
+            RectTransform content = (RectTransform)rows;
+            float offset = content.anchoredPosition.y;
+            float top = index * 53;
+            float bottom = top + 48;
+            float viewportHeight = petListScroll.viewport.rect.height;
+            if (top < offset) offset = top;
+            else if (bottom > offset + viewportHeight) offset = bottom - viewportHeight;
+            content.anchoredPosition = new Vector2(0, Mathf.Clamp(offset, 0, Mathf.Max(0, content.rect.height - viewportHeight)));
+        }
 
         private Button AddButton(string name, Transform parent, Vector2 position, Vector2 size, string label, Action onClick)
         {

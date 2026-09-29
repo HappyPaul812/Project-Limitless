@@ -66,6 +66,7 @@ namespace ProjectLimitless.Battle
         private readonly BattleStatusEffectRuntime statusEffects = new BattleStatusEffectRuntime();
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
+        private readonly BattleChapter2MonsterRuntime chapter2Monsters = new BattleChapter2MonsterRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
@@ -134,6 +135,7 @@ namespace ProjectLimitless.Battle
             pathTraits.FeedbackOccurred += OnPathFeedbackOccurred;
             skillExecutor = new BattleSkillExecutor(skillCooldowns, statusEffects, fighterResources, pathTraits);
             statusEffects.DungeonBarrier = dungeonMonsters;
+            statusEffects.Chapter2Monsters = chapter2Monsters;
             CreateEventSystem();
             CreateInterface();
             statusEffects.GuardianInterceptionOccurred += OnGuardianInterceptionOccurred;
@@ -793,6 +795,7 @@ namespace ProjectLimitless.Battle
             // 수호의 맹세는 수호자가 새 행동을 시작하기 직전에 끝납니다. 사용 행동 종료나 다른 참가자의
             // 차례에는 제거하지 않아 적과 동료가 여러 번 행동해도 약속한 보호 시간을 온전히 보장합니다.
             statusEffects.BeginActorAction(currentActor);
+            if (!currentActor.IsPlayerControlled) chapter2Monsters.BeginActorAction(currentActor);
             pathTraits.BeginActorAction(currentActor);
             UpdateTimeline();
             RefreshCombatantViews(null);
@@ -2267,6 +2270,10 @@ namespace ProjectLimitless.Battle
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup chapter2Setup)
+                && chapter2Setup.MonsterDefinition != null
+                && TryPlayChapter2MonsterAction(currentActor, chapter2Setup.MonsterDefinition))
+                yield break;
             if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup dungeonSetup) &&
                 dungeonSetup.MonsterDefinition != null && TryPlayDungeonMonsterAction(currentActor, dungeonSetup.MonsterDefinition))
                 yield break;
@@ -2283,6 +2290,75 @@ namespace ProjectLimitless.Battle
                 PlayBasicAttack(currentActor, target);
                 yield break;
             }
+            FinishCurrentAction();
+        }
+
+        /// <summary>
+        /// Chapter 2 일반 몬스터는 개체별 행동 순서만 별도 Runtime에 두고, 대상 선택·직접 피해·화상은
+        /// 기존 전투 경로를 사용합니다. 예고 행동은 피해 없이 끝나며 다음 자신의 실제 행동에 소비됩니다.
+        /// </summary>
+        private bool TryPlayChapter2MonsterAction(Combatant actor, MonsterDefinition monster)
+        {
+            string action = chapter2Monsters.TakeAction(actor, monster.MonsterId);
+            if (action == null || action == "basic") return false;
+            if (action == "rumble" || action == "concentrate" || action == "shell")
+            {
+                messageText.text = action == "rumble" ? $"{actor.DisplayName}의 지면 울림! 다음 행동에 균열 돌진을 준비합니다."
+                    : action == "concentrate" ? $"{actor.DisplayName}의 불씨 응축! 다음 행동에 열핵 분출을 준비합니다."
+                    : $"{actor.DisplayName}의 갑각 수축! 다음 자기 행동 전까지 직접 피해가 40% 감소합니다.";
+                RefreshCombatantViews(null);
+                FinishCurrentAction();
+                return true;
+            }
+            if (action == "scatter")
+            {
+                StartCoroutine(PlayChapter2Scatter(actor));
+                return true;
+            }
+
+            TargetRangeType range = monster.MonsterId == "heatwind_hawk" ? TargetRangeType.RangedPhysical
+                : monster.MonsterId == "ember_wraith" ? TargetRangeType.Magic : TargetRangeType.MeleePhysical;
+            IReadOnlyList<Combatant> choices = TargetResolver.ResolveHostileTargets(actor, allies, range);
+            if (action == "bite")
+            {
+                Combatant[] unburned = choices.Where(target => !statusEffects.HasActiveBurn(target)).ToArray();
+                if (unburned.Length > 0) choices = unburned;
+            }
+            Combatant targetChoice = ChooseEnemyTarget(actor, choices);
+            if (targetChoice == null) { FinishCurrentAction(); return true; }
+            int percent = action == "bite" ? 120 : action == "charge" ? 145
+                : action == "feather" ? 115 : action == "dive" ? 130
+                : action == "scratch" ? 110 : action == "fissure_charge" ? 170
+                : action == "secretion" ? 100 : 180;
+            string label = action == "bite" ? "불씨 물기" : action == "charge" ? "사나운 돌진"
+                : action == "feather" ? "불꽃 깃털" : action == "dive" ? "잿바람 급습"
+                : action == "scratch" ? "지열 긁기" : action == "fissure_charge" ? "균열 돌진"
+                : action == "secretion" ? "뜨거운 분비액" : "열핵 분출";
+            bool burn = action == "bite" || action == "feather" || action == "fissure_charge" || action == "secretion";
+            PlayBasicAttack(actor, targetChoice, percent, label, burn, action == "charge"
+                || action == "dive" || action == "fissure_charge" || action == "core");
+            return true;
+        }
+
+        /// <summary>잿불 비산은 생존 대상을 각각 한 번만 때리고, 살아남은 대상에만 공용 화상을 저장합니다.</summary>
+        private IEnumerator PlayChapter2Scatter(Combatant actor)
+        {
+            actionPlaying = true;
+            SetCommandButtons(false);
+            combatantViews[actor].MonsterAnimation?.PlaySkill();
+            messageText.text = $"{actor.DisplayName}의 잿불 비산! 생존 아군 전체를 공격합니다.";
+            yield return new WaitForSeconds(.45f);
+            int raw = statusEffects.ModifyOutgoingDamage(actor,
+                (int)Math.Max(1L, ((long)actor.Attack * 70L + 99L) / 100L));
+            int burnRaw = (int)Math.Max(1L, ((long)actor.Attack * 30L + 99L) / 100L);
+            foreach (Combatant target in allies.LivingMembers.ToArray())
+            {
+                int damage = pathTraits.ApplyDirectDamage(statusEffects, actor, target, raw, areaAttack: true);
+                if (damage > 0 && target.IsAlive) statusEffects.ApplyOrRefreshBurn(target, burnRaw, 2);
+            }
+            combatantViews[actor].MonsterAnimation?.StopAttackAndReturnToIdle();
+            RefreshCombatantViews(null);
+            actionPlaying = false;
             FinishCurrentAction();
         }
 
@@ -2458,7 +2534,7 @@ namespace ProjectLimitless.Battle
         /// 현재 1단계 범위에서는 플레이어와 초원 슬라임의 근거리 기본 공격에 같은 연출을 사용합니다.
         /// </summary>
         private void PlayBasicAttack(Combatant actor, Combatant target, int damagePercent = 100,
-            string abilityName = null)
+            string abilityName = null, bool inflictBurn = false, bool strongVisual = false)
         {
             actionPlaying = true;
             SetCommandButtons(false);
@@ -2490,6 +2566,9 @@ namespace ProjectLimitless.Battle
                             monsterAbilities.StartPoisonInflictionCooldown(actor, poisonCooldown);
                     }
                 }
+                if (inflictBurn && damage > 0 && target.IsAlive)
+                    statusEffects.ApplyOrRefreshBurn(target,
+                        (int)Math.Max(1L, ((long)actor.Attack * 30L + 99L) / 100L), 2);
                 messageText.text = $"{actor.DisplayName}의 {abilityName ?? "공격"}! {target.DisplayName}에게 {damage} 피해.";
                 RefreshCombatantViews(null);
             };
@@ -2504,7 +2583,8 @@ namespace ProjectLimitless.Battle
 
             // 독침벌처럼 Attack 시트를 가진 몬스터만 실제 공격 프레임으로 전환합니다.
             // 피해 계산과 이동 연출은 기존 Presenter가 그대로 담당하므로 독 효과를 미리 만들지 않습니다.
-            actorView.MonsterAnimation?.PlayAttack();
+            if (strongVisual) actorView.MonsterAnimation?.PlaySkill();
+            else actorView.MonsterAnimation?.PlayAttack();
 
             if (actor.BasicRange == TargetRangeType.RangedPhysical)
             {
@@ -2590,6 +2670,7 @@ namespace ProjectLimitless.Battle
             // completedActor가 다른 Combatant이므로 해당 벌의 Dictionary 값에 접근하지 않습니다.
             monsterAbilities.CompleteActorAction(completedActor);
             monsterAbilities.RemoveInvalidCombatants(AllCombatants);
+            chapter2Monsters.RemoveInvalidCombatants(AllCombatants);
             dungeonMonsters.CompleteActorAction(completedActor);
             dungeonMonsters.RemoveInvalidCombatants(AllCombatants);
             SetCommandButtons(false);
@@ -2686,7 +2767,8 @@ namespace ProjectLimitless.Battle
                 MainQuest03EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest04EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
-                // 도망·패배 분기는 여기에 들어오지 않습니다. 실제 출현한 종의 ID를 승리 후에만 기록합니다.
+                // 도망·패배 분기는 여기에 들어오지 않습니다. Chapter 2 검증 편성도 실제 출현한 종의
+                // MonsterDefinition ID를 승리 후에만 기록하며, 분양 목록은 등록된 네 종만 보여 줍니다.
                 BeastCompanionService.RecordVictory(participantSetups
                     .Where(pair => pair.Key.Side == BattleSide.Enemies && pair.Value.MonsterDefinition != null)
                     .Select(pair => pair.Value.MonsterDefinition.MonsterId));

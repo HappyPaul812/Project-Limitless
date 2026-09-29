@@ -509,6 +509,8 @@ namespace ProjectLimitless.Battle
         // 전투 Runtime 객체에만 남깁니다. 다음 전투는 새 객체라 최초 1회 저항이 다시 충전됩니다.
         private readonly HashSet<Combatant> spentPoisonGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> spentSilenceGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        private readonly HashSet<Combatant> spentBurnGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        private readonly HashSet<Combatant> spentFirstHitGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, GaiaWallState> gaiaWalls = new Dictionary<Combatant, GaiaWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, IronWallState> ironWalls = new Dictionary<Combatant, IronWallState>(CombatantReferenceComparer.Instance);
         private readonly Dictionary<Combatant, PoisonState> poisons = new Dictionary<Combatant, PoisonState>(CombatantReferenceComparer.Instance);
@@ -520,6 +522,7 @@ namespace ProjectLimitless.Battle
 
         /// <summary>B2 전투에서만 연결하는 임시 장막 계산기입니다. 다른 전투에는 null입니다.</summary>
         public BattleDungeonMonsterRuntime DungeonBarrier { get; set; }
+        public BattleChapter2MonsterRuntime Chapter2Monsters { get; set; }
 
         public int ApplyTauntToAll(Combatant source, Formation opponents, int affectedActions)
         {
@@ -649,7 +652,7 @@ namespace ProjectLimitless.Battle
         public int ApplyIncomingDamage(Combatant target, int rawDamage,
             BattleDamageOrigin origin = BattleDamageOrigin.DirectCombatAction, bool areaAttack = false)
         {
-            if (target == null) return 0;
+            if (target == null || !target.IsAlive || rawDamage <= 0) return 0;
             // 원래 피해는 보호가 없었다면 동료가 받을 값이고, 실제 피해는 수호의 맹세 감소와 동료 자신의
             // 방어를 차례로 거친 값입니다. 둘을 분리해야 UI가 "얼마를 막았는지" 정확히 알려 줄 수 있습니다.
             // 지하묘지 장막은 직접 피해에만 한 번 적용됩니다. 기존 수호의 맹세·개인 방어보다 앞에서
@@ -659,11 +662,17 @@ namespace ProjectLimitless.Battle
                 && BeastCompanionService.IsSharpshooter(target.Id))
             {
                 string beastId = BeastCompanionService.GetEquippedId(target.Id);
+                // 균열도마뱀은 이 전투에서 실제 직접 피해를 받은 첫 한 번만 줄입니다.
+                // DoT와 0 피해는 아래 성공 판정까지 도달하지 않아 사용 횟수를 소비하지 않습니다.
                 int retainedPercent = beastId == "monster_moss_beetle" ? 95
-                    : beastId == "forest_spider" && areaAttack ? 90 : 100;
+                    : beastId == "forest_spider" && areaAttack ? 90
+                    : beastId == "fissure_lizard" && !spentFirstHitGuards.Contains(target) ? 80 : 100;
                 // 펫 피해 감소는 기존 Guard/철벽보다 먼저 곱하며 각 단계에서 기존 올림을 사용합니다.
                 damageAfterCover = (int)Math.Max(1L, ((long)damageAfterCover * retainedPercent + 99L) / 100L);
             }
+            if (origin == BattleDamageOrigin.DirectCombatAction && Chapter2Monsters != null
+                && Chapter2Monsters.IsShellProtected(target))
+                damageAfterCover = (int)Math.Max(1L, ((long)damageAfterCover * 60L + 99L) / 100L);
             GuardianInterceptionResult? interception = null;
             if (origin == BattleDamageOrigin.DirectCombatAction &&
                 guardianCovers.TryGetValue(target.Side, out GuardianCoverState cover) &&
@@ -690,6 +699,10 @@ namespace ProjectLimitless.Battle
             }
 
             int appliedDamage = ApplyPersonalDefense(target, damageAfterCover);
+            if (origin == BattleDamageOrigin.DirectCombatAction && appliedDamage > 0 && target.Side == BattleSide.Allies
+                && BeastCompanionService.IsSharpshooter(target.Id)
+                && BeastCompanionService.GetEquippedId(target.Id) == "fissure_lizard")
+                spentFirstHitGuards.Add(target);
             if (interception.HasValue) GuardianInterceptionOccurred?.Invoke(interception.Value);
             return appliedDamage;
         }
@@ -785,6 +798,10 @@ namespace ProjectLimitless.Battle
         public void ApplyOrRefreshBurn(Combatant target, int rawDamagePerTick, int ticks)
         {
             if (target == null || !target.IsAlive || rawDamagePerTick <= 0 || ticks <= 0) return;
+            // 실제 적용 가능한 화상만 첫 저항을 소비합니다. 실패한 부여와 전투 간 상태는 남기지 않습니다.
+            if (target.Side == BattleSide.Allies && BeastCompanionService.IsSharpshooter(target.Id)
+                && BeastCompanionService.GetEquippedId(target.Id) == "ember_beetle"
+                && spentBurnGuards.Add(target)) return;
             burns[target] = new BurnState
             {
                 RemainingTicks = ticks,
@@ -1188,6 +1205,11 @@ namespace ProjectLimitless.Battle
 
             // 일반 공격력의 180%를 소수점 없이 올림합니다. 실제 감소는 기존 Combatant.TakeDamage가 담당합니다.
             int rawDamage = CalculateOutgoingAttackDamage(actor, skill.AttackDamagePercent);
+            // 열풍매의 10%는 후열 습격의 직접 타격에만 곱합니다. 화상 등 지속 피해에는 닿지 않습니다.
+            if (BeastCompanionService.IsSharpshooter(actor.Id)
+                && BeastCompanionService.GetEquippedId(actor.Id) == "heatwind_hawk"
+                && target.Slot.Row == FormationRow.Rear)
+                rawDamage = (int)Math.Max(1L, ((long)rawDamage * 110L + 99L) / 100L);
             damage = ApplyDamage(actor, target, rawDamage);
 
             // 이 값은 다른 참가자의 행동에는 줄지 않고, 사수 자신의 행동 시작에만 3→2→1→0으로 감소합니다.
@@ -1198,6 +1220,12 @@ namespace ProjectLimitless.Battle
                 && BeastCompanionService.GetEquippedId(actor.Id) == "venom_bee"
                 && statusEffects.ApplyOrRefreshPoison(target, 3, new PoisonDefinition(), actor))
                 message += " 독을 적용했다.";
+            if (target.IsAlive && BeastCompanionService.IsSharpshooter(actor.Id)
+                && BeastCompanionService.GetEquippedId(actor.Id) == "soot_hound")
+            {
+                statusEffects.ApplyOrRefreshBurn(target, CalculateOutgoingAttackDamage(actor, 30), 2);
+                message += " 화상을 적용했다.";
+            }
             return true;
         }
 

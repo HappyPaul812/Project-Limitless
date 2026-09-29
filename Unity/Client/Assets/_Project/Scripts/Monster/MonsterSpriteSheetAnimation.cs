@@ -23,6 +23,7 @@ namespace ProjectLimitless.Monster
         private float elapsed;
         private bool attacking;
         private bool shooting;
+        private bool usingSkill;
         private bool fieldMoving;
         private bool reacting;
         private bool defeated;
@@ -71,19 +72,28 @@ namespace ProjectLimitless.Monster
             if (attackFrames.Length == 0) return;
             attacking = true;
             shooting = false;
+            usingSkill = false;
             elapsed = 0f;
             ShowFrame(attackFrames, 0);
+        }
+
+        /// <summary>4×4 시트의 세 번째 행을 강한 행동과 피격이 공유합니다. 원본에 없는 Walk 프레임은 만들지 않습니다.</summary>
+        public void PlaySkill()
+        {
+            if (hitFrames.Length == 0) { PlayAttack(); return; }
+            usingSkill = true; attacking = false; shooting = false; reacting = false; elapsed = 0f;
+            ShowFrame(hitFrames, 0);
         }
 
         public void PlayHit()
         {
             if (defeated || hitFrames.Length == 0) return;
-            reacting = true; attacking = false; shooting = false; elapsed = 0f; ShowFrame(hitFrames, 0);
+            reacting = true; attacking = false; shooting = false; usingSkill = false; elapsed = 0f; ShowFrame(hitFrames, 0);
         }
 
         public void PlayDefeat()
         {
-            defeated = true; reacting = false; attacking = false; shooting = false; elapsed = 0f;
+            defeated = true; reacting = false; attacking = false; shooting = false; usingSkill = false; elapsed = 0f;
             // Defeat는 첫 프레임부터 한 번만 재생하고 Update에서 마지막 프레임을 계속 유지합니다.
             ShowFrame(defeatFrames.Length > 0 ? defeatFrames : idleFrames, 0);
         }
@@ -102,6 +112,7 @@ namespace ProjectLimitless.Monster
         {
             attacking = false;
             shooting = false;
+            usingSkill = false;
             elapsed = 0f;
             ShowFrame(idleFrames, 0);
         }
@@ -109,13 +120,13 @@ namespace ProjectLimitless.Monster
         private void Update()
         {
             if (definition == null) return;
-            Sprite[] frames = defeated ? defeatFrames : reacting ? hitFrames : attacking ? attackFrames : shooting ? shootFrames
+            Sprite[] frames = defeated ? defeatFrames : reacting || usingSkill ? hitFrames : attacking ? attackFrames : shooting ? shootFrames
                 : fieldMoving && walkFrames.Length > 0 ? walkFrames : idleFrames;
             if (frames.Length == 0) return;
 
             elapsed += Time.unscaledDeltaTime;
             int frameIndex = Mathf.FloorToInt(elapsed * definition.AnimationFramesPerSecond);
-            if ((attacking || shooting || reacting) && frameIndex >= frames.Length)
+            if ((attacking || shooting || reacting || usingSkill) && frameIndex >= frames.Length)
             {
                 reacting = false;
                 StopAttackAndReturnToIdle();
