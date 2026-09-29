@@ -1,6 +1,6 @@
 # Chapter 2 몬스터 1차 설계
 
-> **확정된 1차 Runtime 계약 / 5종 Asset·전투 Runtime 구현.** 신규 몬스터는 [몬스터 설계 규칙과 템플릿](몬스터_설계_규칙과_템플릿.md)을 따른다. 지역 방향은 [Chapter 2 서부 방향](../03_스토리/Chapter2_서부_방향.md)이다. 아래 수치·행동·펫 효과는 2026-09-29 사용자 요청으로 확정됐다. Stable ID는 표의 값을 사용한다. Loot·실제 Field/Spawn은 `TBD`다.
+> **확정된 1차 Runtime 계약 / 5종 Asset·전투 Runtime 구현.** 신규 몬스터는 [몬스터 설계 규칙과 템플릿](몬스터_설계_규칙과_템플릿.md)을 따른다. 지역 방향은 [Chapter 2 서부 방향](../03_스토리/Chapter2_서부_방향.md)이다. 아래 수치·행동·펫 효과는 2026-09-29 사용자 요청으로 확정됐다. Stable ID는 표의 값을 사용한다. Loot Item은 미정이며, Field06 배치는 [Main15 설계](../03_스토리/Chapter2_Main15_타오르는_흔적.md)를 따른다.
 
 ## 공통 테마와 상태
 
@@ -28,11 +28,11 @@
 | 화열딱정벌레 (전열) | 12 / 220 / 22 / 7 / 46 / 13 | **뜨거운 분비액** 단일 100%+공용 Burn. **갑각 수축** 다음 자기 행동 시작 전까지 받는 직접 피해 -40%, DoT 제외·비중첩; 자기 행동 기준 2회 후 재사용 가능. 기본 공격 포함, 방어 연속 난사 금지. | **내열 갑각**: 전투당 첫 실제 적용 가능 Burn 1회 무효, 불가능한 시도에는 미소비, 다음 전투 재충전. |
 | 불씨망령 (후열) | 13 / 150 / 27 / 13 / 52 / 14 | **잿불 비산** 생존 적 전체 직접 70%+생존 대상 공용 Burn, 자기 행동 기준 3회 후 재사용 가능. **불씨 응축** 피해 없이 예고 → 다음 자신의 실제 행동 **열핵 분출** 단일 마법 직접 180%, 실행 후 응축 해제. 평소 기본 마법 공격 가능. | 분양 불가. |
 
-Burn은 기존 `BattleStatusEffectRuntime.ApplyOrRefreshBurn`의 저장 피해·지속·갱신/비중첩·정화/화상 연고·전투 종료 규칙을 재사용한다. 현재 파이어 볼의 **시전자 Attack 30% 원시 피해 × 대상 행동 종료 2회**를 Chapter 2 Burn 적용에도 사용하며 스킬별 별도 Burn 수치를 만들지 않는다. Overheat는 위 후보 상태로 남긴다. Loot Item은 이번 구현 범위에서 추가하지 않는다. 정확한 Field·Encounter·Spawn은 아직 확정하지 않는다.
+Burn은 기존 `BattleStatusEffectRuntime.ApplyOrRefreshBurn`의 저장 피해·지속·갱신/비중첩·정화/화상 연고·전투 종료 규칙을 재사용한다. 현재 파이어 볼의 **시전자 Attack 30% 원시 피해 × 대상 행동 종료 2회**를 Chapter 2 Burn 적용에도 사용하며 스킬별 별도 Burn 수치를 만들지 않는다. Overheat는 위 후보 상태로 남긴다. Loot Item은 이번 구현 범위에서 추가하지 않는다. Main15 Field06 조우 M15-01~04는 별도 설계에 확정했으며 더 깊은 Field의 배치는 미정이다.
 
 ### 공식 수정 Sprite Sheet 적용
 
-기존 1254×1254 시트는 사용하지 않았다. 사용자 제공 수정 공식 원본 5개는 모두 **1256×1256 RGBA**이고, 각각 **314×314의 4×4 16프레임**으로 Unity Importer에서 분할했다. 행 순서는 Idle 4 / Basic Attack 4 / Skill·Strong Attack·Hit 4 / KO 4다. KO는 한 번 재생한 뒤 마지막 프레임을 유지한다. 별도 Walk 원본이 없으므로 Field 이동은 Idle 프레임을 재생한다. `Art/Monsters/11~15`에 원본 PNG와 Importer 메타데이터, `Resources/MonsterDefinitions/11~15`에 정의를 둔다. Point·314 PPU·하단 중앙 Pivot·무압축으로 가져오며 별도 Animator Controller 대신 공용 명시적 Sprite 프레임 경로를 사용한다. Chapter 2 Field/Spawn/Scene은 아직 연결하지 않았다.
+기존 1254×1254 시트는 사용하지 않았다. 사용자 제공 수정 공식 원본 5개는 모두 **1256×1256 RGBA**이고, 각각 **314×314의 4×4 16프레임**으로 Unity Importer에서 분할했다. 행 순서는 Idle 4 / Basic Attack 4 / Skill·Strong Attack·Hit 4 / KO 4다. KO는 한 번 재생한 뒤 마지막 프레임을 유지한다. 별도 Walk 원본이 없으므로 Field 이동은 Idle 프레임을 재생한다. `Art/Monsters/11~15`에 원본 PNG와 Importer 메타데이터, `Resources/MonsterDefinitions/11~15`에 정의를 둔다. Point·314 PPU·하단 중앙 Pivot·무압축으로 가져오며 별도 Animator Controller 대신 공용 명시적 Sprite 프레임 경로를 사용한다. Field04/05와 Main15 Field06의 실제 Spawn 연결 상태는 CURRENT_STATUS를 따른다.
 
 전투 행동은 `BattleChapter2MonsterRuntime`이 개체별 자기 행동 순서를 보관하고 기존 직접 피해·타깃·Burn 경로를 호출한다. 그을음들개는 물기→돌진→기본, 열풍매는 깃털→급습→기본, 균열도마뱀은 긁기→울림→다음 자기 행동 돌진→기본, 화열딱정벌레는 분비액→갑각 수축→기본→기본, 불씨망령은 비산→응축→다음 자기 행동 분출→기본 순서로 반복한다. 화열딱정벌레 갑각 수축은 다음 자기 행동 시작에 해제되고 불씨망령의 비산은 자기 행동 3회 후 재사용한다. 이 고정 순서는 미확정 AI 조건을 추가로 설계하지 않기 위한 최소 실행 정책이다.
 

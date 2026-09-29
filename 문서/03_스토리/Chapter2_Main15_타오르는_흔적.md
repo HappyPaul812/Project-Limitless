@@ -16,7 +16,7 @@
 | 2 | `enter_scorched_trail` | ReachLocation / `field06_east_entry` | 새 서쪽 길 도착 |
 | 3 | `inspect_soot_traces` | Interact / `field06_main15_soot` | 첫 그을린 흔적과 변한 들개 관찰 |
 | 4 | `inspect_fleeing_tracks` | Interact / `field06_main15_tracks` | 동쪽으로 향한 야수 흔적 |
-| 5 | `face_affected_beasts` | DefeatEncounter / `field06_main15_first_battle` | 화염 영향을 받은 생물과 지정 조우 |
+| 5 | `face_affected_beasts` | DefeatEncounter / `field06_m15_01` | 첫 그을음들개 지정 조우 |
 | 6 | `follow_shorter_pulse` | Interact / `field06_main15_pulse` | 간격이 조금 짧고 강해진 진동 |
 | 7 | `inspect_cracked_ground` | Interact / `field06_main15_crack` | 긴 균열과 약한 열기 |
 | 8 | `inspect_heat_traces` | Interact / `field06_main15_heat` | 검게 변한 바위와 마른 식물 |

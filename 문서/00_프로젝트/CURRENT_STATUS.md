@@ -1,5 +1,11 @@
 # Project-Limitless 현재 개발 상태
 
+## Main15 「타오르는 흔적」 구현 (2026-09-29)
+
+- `main_15_burning_traces` 12개 순차 목표와 레온 의뢰·세린 조사/자발적 합류 대화를 구현했다. Main14 완료 뒤 레온 대화로 시작하며, 서쪽 첫 그을음들개 승리만 지정 목표를 진행한다. Quest Navigation은 레온, Arbel 북서쪽 출구, 조사 지점, 첫 조우, 귀환 지점과 세린에 연결했다. 완료 시 기존 명단에 세린을 영구 해금하되 선택된 동료 2명과 진형은 바꾸지 않는다. 진행 중 세린은 Story Temporary이며 기존 사수·청각의 길·Fox를 사용한다. 영구 해금과 Quest·Beast·편성·위치·안전지대는 기존 Save 구조를 사용한다.
+- `Field_06_ScorchedTrail` Scene과 Arbel 북서 출구↔Field06 동쪽 출구의 별도 왕복 Spawn을 등록했다. Spawn과 Exit은 떨어져 있으며 Arbel Safe Zone을 유지하고 Field06에는 새 Respawn 거점을 두지 않는다. 기존 Field Scene을 바탕으로 서쪽의 풀 감소·고사목 색·황토·균열·그을음 표식을 단계적으로 더한다. 일반 Spawn M15-01 그을음들개, M15-02 그을음들개+열풍매, M15-03 균열도마뱀, M15-04 화열딱정벌레+열풍매를 기존 몬스터 정의·Battle·Victory→Arbel 펫 분양 경로에 연결했다. 불씨망령·Boss·Dungeon·과열·Fast Travel·Main16 Quest는 구현하지 않았다. Main16의 방향만 설계 문서에 남겼다.
+- **검증 상태**: Unity 6000.5.7f1 Edit Mode 컴파일 오류 0. 정적 Asset 조회에서 Main15 목표 12개, Serin 사수/청각의 길 Definition, Field06 Scene Build 등록, 4개 Spawn의 Monster 참조, Arbel 왕복 Connection을 확인했다. Console에는 기능 오류 없이 MCP WebSocket 초기화 경고 1건이 남았다. 요청에 따라 Play Mode·Game View·실제 Main15 진행·전투/분양·Save/Continue·전멸 복귀·화면 비율·시각 QA는 **미수행**이다. 다음 작업에서 이 경로들과 Field06 배치/Bounds/카메라를 실제 Runtime으로 확인해야 한다. 관련 설계 commit `d656f15`, 기능 commit `aea23bc`. GitHub push 없음.
+
 ## Chapter 2 도입부 핵심 Runtime QA (2026-09-29)
 
 - Unity 6000.5.7f1 격리 Play Mode에서 Main11 완료·석판 보유 상태로 Main12를 시작해 석판→잡화 상인→기록→서쪽 결정→Field03 서쪽 출구 순서를 진행했다. Field04 도착으로 Main12가 완료되고 Main13이 시작됐다. Main13의 마른 토양·물길·세린 첫 대화 4페이지를 확인했다. 세린의 청각 보조 장치 설명 문구, 임시 동행 상태, 전투 참가자의 `companion_serin`/사수/`path.hearing` 및 초기 Fox를 런타임에서 확인했다.
