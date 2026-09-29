@@ -1,6 +1,6 @@
 # Chapter 2 몬스터 구현 준비
 
-> 2026-09-29 **LOCAL 코드·Asset 정적 조사 기록**. 최초 1254×1254 입력의 4×4 분할 차단은 사용자 제공 1256×1256 수정 공식 원본으로 해소했다. 현재 5종 Asset·전투 Runtime과 4종 펫 효과는 구현됐고 Chapter 2 Field/Spawn/Scene은 미연결이다. 최신 계약과 적용 내역은 [Chapter 2 몬스터 1차 설계](Chapter2_몬스터_1차_설계.md)를 따른다. 필수 항목은 [몬스터 설계 규칙](몬스터_설계_규칙과_템플릿.md), 전투·분양 정책은 [전투시스템](../10_전투/전투시스템.md)과 [BeastCompanion 정본](../10_전투/사수_BeastCompanion_확장_설계.md)을 따른다.
+> 2026-09-29 **LOCAL 코드·Asset 정적 조사 기록**. 최초 1254×1254 입력의 4×4 분할 차단은 사용자 제공 1256×1256 수정 공식 원본으로 해소했다. 5종 Asset·전투 Runtime과 4종 펫 효과는 구현됐다. 아래의 미연결·TBD 표기는 준비 조사 당시 상태이며, Field04/05와 Main15 Field06의 후속 Spawn/Encounter 연결은 [Chapter 2 몬스터 1차 설계](Chapter2_몬스터_1차_설계.md), [Main15 설계](../03_스토리/Chapter2_Main15_타오르는_흔적.md), [CURRENT_STATUS](../00_프로젝트/CURRENT_STATUS.md)를 따른다. 필수 항목은 [몬스터 설계 규칙](몬스터_설계_규칙과_템플릿.md), 전투·분양 정책은 [전투시스템](../10_전투/전투시스템.md)과 [BeastCompanion 정본](../10_전투/사수_BeastCompanion_확장_설계.md)을 따른다.
 
 ## 현재 구현 경계
 
