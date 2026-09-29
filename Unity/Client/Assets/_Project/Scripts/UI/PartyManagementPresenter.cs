@@ -39,7 +39,7 @@ namespace ProjectLimitless.UI
             // 향후 캠프는 같은 진입점의 안전지역 정책을 확장합니다. 필드 단축키는 제공하지 않습니다.
             if (safeAreaSource == null) return false;
             string sceneName = safeAreaSource.gameObject.scene.name;
-            if ((sceneName != "World_StarterVillage" && sceneName != "Field_03")
+            if ((sceneName != "World_StarterVillage" && sceneName != "Field_03" && sceneName != "Arbel")
                 || SceneManager.GetActiveScene().name != sceneName) return false;
             if (Instance == null) new GameObject("PartyManagementSystem").AddComponent<PartyManagementPresenter>();
             return Instance.Open(safeAreaSource);
@@ -82,7 +82,10 @@ namespace ProjectLimitless.UI
         private void Update()
         {
             if (!IsOpen) return;
-            if (source == null || SceneManager.GetActiveScene().name != "World_StarterVillage") { Close(); return; }
+            // Chapter 2 거점에서도 기존 편성 화면을 유지하되, 다른 Scene으로 나가면 닫습니다.
+            if (source == null ||
+                (SceneManager.GetActiveScene().name != "World_StarterVillage" && SceneManager.GetActiveScene().name != "Arbel") ||
+                SceneManager.GetActiveScene().name != source.gameObject.scene.name) { Close(); return; }
             if (Keyboard.current?.tabKey.wasPressedThisFrame == true)
             {
                 var usable = focus.Where(x => x.interactable).ToArray();

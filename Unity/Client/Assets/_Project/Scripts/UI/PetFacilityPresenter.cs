@@ -68,8 +68,10 @@ namespace ProjectLimitless.UI
 
         private void Show(Transform npc, bool isAdoption)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == BattleSceneFlow.BattleSceneName
-                || !WorldModalState.TryAcquire(this)) return;
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == BattleSceneFlow.BattleSceneName) return;
+            // NPC 확인 대화의 모달 소유권을 해제한 뒤 같은 시설 화면으로 넘깁니다.
+            DialoguePresenter.Instance?.Hide();
+            if (!WorldModalState.TryAcquire(this)) return;
             owner = npc;
             adoption = isAdoption;
             selectedCharacterId = null;
