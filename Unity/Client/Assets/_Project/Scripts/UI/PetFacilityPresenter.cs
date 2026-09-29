@@ -101,7 +101,8 @@ namespace ProjectLimitless.UI
 
         private void RebuildRows()
         {
-            foreach (Transform row in rows) Destroy(row.gameObject);
+            // Destroy는 프레임 끝에 실행됩니다. 즉시 비활성화해 모드 전환 직후 옛 버튼을 누르지 못하게 합니다.
+            foreach (Transform row in rows) { row.gameObject.SetActive(false); Destroy(row.gameObject); }
             balance.text = $"보유 탈렌트: {EconomyService.GetCurrency()}";
             message.text = string.Empty;
             Button first = null;
