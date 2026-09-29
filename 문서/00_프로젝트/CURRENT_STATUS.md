@@ -1,5 +1,7 @@
 # Project-Limitless 현재 개발 상태
 
+- 2026-09-29 Chapter 2 몬스터 5종의 구현 전 파이프라인을 LOCAL 코드·Asset 기준으로 조사하고 종별 준비 체크리스트를 문서화했다. 기존 10종 Definition/Formation/Spawn/Animation, 공용 Burn, AI·보스 예고, BeastCompanion 승리→분양→장착 경로를 대조했다. 열풍매 원거리 직접 피해는 현 피격 API에서 안정 분류 불가로 구현 보류가 필요하다. 상대 링크·주요 코드 경로·staged `git diff --check` 통과. Unity Play Mode는 실행하지 않았으며 Chapter 2 최종 Sprite/수치/Definition/AI/Spawn/Pet Runtime은 미구현이다. 다음 작업은 최종 Asset·수치 확정 후 준비 문서의 순서대로 별도 구현·검증하는 것이다. 관련 문서 commit `74e5f37`.
+
 - 2026-09-29 몬스터 설계 정본에 신규 종의 전투 특징·펫 가능 여부·계승 효과를 함께 정의하는 영구 규칙과 템플릿을 추가했다. Chapter 2 일반 몬스터 5종(그을음들개·열풍매·균열도마뱀·화열딱정벌레·불씨망령), 작열 감시자 Elite 후보, 기존 Burn 활용과 Overheat 미구현 후보를 문서화했다. 상대 링크와 staged `git diff --check` 통과. Unity는 실행하지 않았으며 Asset·MonsterDefinition·AI·Spawn·Pet Runtime은 미구현이다. 다음 작업은 별도 승인된 Chapter 2 구현에서 미확정 수치·피해 분류를 검토하는 것이다. 관련 설계 commit `3745968`.
 
 - 2026-09-29 세린 공식 시각 자료 준비: 사용자 확정 Portrait(1374×1145 RGB)와 4×4 Sprite Sheet(512×512 RGBA)를 원본과 동일한 SHA-256으로 등록했다. Sheet는 128×128 16프레임, 128 PPU, Point, 하단 중앙 Pivot이며 방향별 Idle 4개·Walk 4개와 기존 플레이어 방향 상태 구조의 Animator를 준비했다. Unity Editor에서 Portrait/UI Sprite Import, 16프레임 크기·Pivot, 8개 상태의 Sprite 참조 누락 0건을 확인했고 Console Error/Warning 0, staged `git diff --check` 통과했다. Story/Companion/Battle Runtime·Main12/13·Chapter 2 Scene·BeastCompanion 세린 연결은 미구현이며, 실제 Scene 등장/화면 미관은 검증하지 않았다. 다음 작업은 별도 Chapter 2 기획·구현 시 이 자료 연결이다. 관련 기능 commit `9177f28`.
