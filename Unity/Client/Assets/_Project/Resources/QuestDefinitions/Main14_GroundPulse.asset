@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main14_GroundPulse
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_14_ground_pulse
+  displayName: "땅 아래의 울림"
+  description: "아르벨 서쪽의 낮은 우물, 미열, 주기적인 진동을 조사한다."
+  questType: 0
+  objectives:
+  - objectiveId: hear_arbel_situation
+    description: "레온에게 지역 사정을 들으세요."
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  - objectiveId: inspect_old_well
+    description: "서쪽의 오래된 우물을 조사하세요."
+    objectiveType: 3
+    targetId: arbel_main14_old_well
+    requiredCount: 1
+  - objectiveId: inspect_irrigation
+    description: "마른 관개수로를 확인하세요."
+    objectiveType: 3
+    targetId: field05_main14_irrigation
+    requiredCount: 1
+  - objectiveId: rejoin_serin
+    description: "세린과 다시 이야기하세요."
+    objectiveType: 0
+    targetId: field05-serin
+    requiredCount: 1
+  - objectiveId: inspect_watchpost
+    description: "서쪽 감시초소를 조사하세요."
+    objectiveType: 3
+    targetId: field05_main14_watchpost
+    requiredCount: 1
+  - objectiveId: follow_fleeing_beasts
+    description: "도망친 야수를 추적하세요."
+    objectiveType: 2
+    targetId: field05_main14_fleeing_beasts
+    requiredCount: 1
+  - objectiveId: feel_strong_pulse
+    description: "강한 지면 진동을 확인하세요."
+    objectiveType: 1
+    targetId: field05_main14_strong_pulse
+    requiredCount: 1
+  - objectiveId: report_arbel_findings
+    description: "레온에게 조사 결과를 보고하세요."
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  reward:
+    Experience: 60
+    Currency: 50
+    Items: []
+  prerequisiteQuestIds:
+  - main_13_drying_land
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

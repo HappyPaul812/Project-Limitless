@@ -18,6 +18,8 @@ namespace ProjectLimitless.NPC
         GateGuard,
         TrainingGuide,
         VillageRepresentative,
+        PetAdoption,
+        PetManagement,
     }
 
     /// <summary>
@@ -48,6 +50,19 @@ namespace ProjectLimitless.NPC
         {
             if (MainQuest05ReturnFlow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;
+            if (Chapter2IntroFlow.TryHandleNpc(npcId, npc)) return;
+            if (role == VillageNpcRoleType.PetAdoption)
+            {
+                DialoguePresenter.Instance?.ShowConfirmation(npcId, npc.DisplayName,
+                    "직접 상대해 본 종의 길들여진 개체를 맡겨 드립니다. 분양 목록을 보시겠습니까?",
+                    "목록을 본다", "괜찮습니다", () => PetFacilityPresenter.OpenAdoption(npc.transform));
+                return;
+            }
+            if (role == VillageNpcRoleType.PetManagement)
+            {
+                PetFacilityPresenter.OpenManagement(npc.transform);
+                return;
+            }
             if (role == VillageNpcRoleType.PartyManager)
             {
                 if (npcId.StartsWith("safezone-catacomb-")

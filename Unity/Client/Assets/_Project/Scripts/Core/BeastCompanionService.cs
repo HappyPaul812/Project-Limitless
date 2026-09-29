@@ -46,7 +46,8 @@ namespace ProjectLimitless.Core
         public static bool IsMonsterPet(string id) => Array.IndexOf(MonsterIds, id) >= 0;
         public static bool IsUnlocked(string id) => Array.IndexOf(BaseIds, id) >= 0 || Unlocked.Contains(id ?? string.Empty);
         public static string GetEquippedId(string characterId) =>
-            characterId != null && Equipped.TryGetValue(characterId, out string id) && IsUnlocked(id) ? id : "wolf";
+            characterId != null && Equipped.TryGetValue(characterId, out string id) && IsUnlocked(id) ? id :
+                characterId == ProjectLimitless.World.Chapter2IntroFlow.SerinId ? "fox" : "wolf";
 
         /// <summary>실제 전체 승리 분기에서 전달된 MonsterDefinition 종만 기록합니다.</summary>
         public static void RecordVictory(IEnumerable<string> monsterIds)
@@ -135,8 +136,10 @@ namespace ProjectLimitless.Core
         public static bool IsSharpshooter(string characterId) =>
             characterId == PartyResourceService.PlayerCharacterId
                 ? GameSessionData.SelectedJobId == "sharpshooter"
-                : CompanionRosterService.IsUnlocked(characterId)
-                  && CompanionCatalog.Find(characterId)?.JobId == "sharpshooter";
+                : characterId == ProjectLimitless.World.Chapter2IntroFlow.SerinId
+                    ? ProjectLimitless.World.Chapter2IntroFlow.SerinTemporarilyPresent
+                    : CompanionRosterService.IsUnlocked(characterId)
+                      && CompanionCatalog.Find(characterId)?.JobId == "sharpshooter";
 
         public static BeastCompanionSaveData ExportSaveData() => new BeastCompanionSaveData
         {

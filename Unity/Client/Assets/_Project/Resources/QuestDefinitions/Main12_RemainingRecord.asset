@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main12_RemainingRecord
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_12_remaining_record
+  displayName: "남겨진 기록"
+  description: "부서진 석판의 오래된 문양과 서쪽 교역 단서를 비교한다."
+  questType: 0
+  objectives:
+  - objectiveId: inspect_broken_tablet
+    description: "부서진 석판을 확인하세요."
+    objectiveType: 3
+    targetId: field03_main12_tablet
+    requiredCount: 1
+  - objectiveId: ask_western_trader
+    description: "시작 마을 잡화 상인에게 물어보세요."
+    objectiveType: 0
+    targetId: starter-village-general-shop
+    requiredCount: 1
+  - objectiveId: compare_old_marks
+    description: "남은 기록의 반복 문양을 비교하세요."
+    objectiveType: 3
+    targetId: village_main12_records
+    requiredCount: 1
+  - objectiveId: decide_westward
+    description: "동료들과 서쪽 이동을 결정하세요."
+    objectiveType: 3
+    targetId: field03_main12_party_decision
+    requiredCount: 1
+  - objectiveId: enter_western_border
+    description: "서쪽 숲 경계로 이동하세요."
+    objectiveType: 1
+    targetId: field04_west_entry
+    requiredCount: 1
+  reward:
+    Experience: 60
+    Currency: 50
+    Items: []
+  prerequisiteQuestIds:
+  - main_11_silent_catacomb
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

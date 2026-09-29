@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main13_DryingLand
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_13_drying_land
+  displayName: "메마르는 땅"
+  description: "서쪽 숲의 변화와 줄어든 물길을 살피고 세린과 아르벨로 향한다."
+  questType: 0
+  objectives:
+  - objectiveId: inspect_dry_soil
+    description: "서쪽 토양을 조사하세요."
+    objectiveType: 3
+    targetId: field04_main13_dry_soil
+    requiredCount: 1
+  - objectiveId: inspect_shallow_stream
+    description: "줄어든 물길을 조사하세요."
+    objectiveType: 3
+    targetId: field04_main13_shallow_stream
+    requiredCount: 1
+  - objectiveId: meet_serin
+    description: "세린과 이야기하세요."
+    objectiveType: 0
+    targetId: field04-serin
+    requiredCount: 1
+  - objectiveId: defeat_fleeing_beasts
+    description: "세린과 함께 야수를 물리치세요."
+    objectiveType: 2
+    targetId: field04_main13_serin_encounter
+    requiredCount: 1
+  - objectiveId: arrive_arbel
+    description: "아르벨에 도착하세요."
+    objectiveType: 1
+    targetId: arbel_main13_arrival
+    requiredCount: 1
+  - objectiveId: meet_arbel_warden
+    description: "지역 책임자 레온과 이야기하세요."
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  reward:
+    Experience: 60
+    Currency: 50
+    Items: []
+  prerequisiteQuestIds:
+  - main_12_remaining_record
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

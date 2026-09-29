@@ -425,6 +425,12 @@ namespace ProjectLimitless.Battle
                     ? BattleVisualResolver.ResolveMonsterIdleSprite(setup.MonsterDefinition, BattleEncounterContext.MonsterBattleSprite)
                     : null;
             bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
+            if (setup.Id == ProjectLimitless.World.Chapter2IntroFlow.SerinId)
+            {
+                // 임시 편성에도 공식 초상화를 보여 주며, 정식 동료 해금 상태는 바꾸지 않습니다.
+                sprite = Resources.Load<Sprite>("Chapter2/Serin_Portrait");
+                placeholder = sprite == null;
+            }
             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
             BattleCharacterSpriteAnimator characterAnimation = null;
             if (BattleCharacterSpriteAnimator.TryAttach(setup.Id, spriteImage, out characterAnimation, out Sprite characterIdleSprite))

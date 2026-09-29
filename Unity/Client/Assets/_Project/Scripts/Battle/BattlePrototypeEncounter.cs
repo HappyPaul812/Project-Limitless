@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
 
@@ -102,6 +103,20 @@ namespace ProjectLimitless.Battle
             {
                 CompanionDefinition definition = CompanionCatalog.Find(id);
                 if (definition != null) allies.Add(definition.CreateParticipant(CompanionRosterService.GetSlot(id)));
+            }
+            if (ProjectLimitless.World.Chapter2IntroFlow.SerinTemporarilyPresent)
+            {
+                CompanionDefinition serin = CompanionCatalog.Find(ProjectLimitless.World.Chapter2IntroFlow.SerinId);
+                if (serin != null)
+                {
+                    // 저장된 정식 파티는 그대로 두고 이 전투에서 빈 후열 칸에만 임시 참가시킵니다.
+                    FormationRow row = Enumerable.Range(0, 3).Any(value =>
+                        !allies.Any(ally => ally.Slot.Row == FormationRow.Rear && ally.Slot.Column == value))
+                        ? FormationRow.Rear : FormationRow.Front;
+                    int column = Enumerable.Range(0, 3).First(value =>
+                        !allies.Any(ally => ally.Slot.Row == row && ally.Slot.Column == value));
+                    allies.Add(serin.CreateParticipant(new FormationSlot(row, column)));
+                }
             }
 
             MonsterDefinition leader = encounteredMonster ?? venomBee ?? slime;
