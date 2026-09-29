@@ -1,6 +1,6 @@
 # Chapter 2 몬스터 구현 준비
 
-> 2026-09-29 **LOCAL 코드·Asset 정적 조사 결과**. 이번 작업은 문서만 작성했다. Chapter 2 몬스터의 최종 PNG·수치·Definition·AI·Spawn·Scene·Pet Runtime은 없다. 기획은 [Chapter 2 몬스터 1차 설계](Chapter2_몬스터_1차_설계.md), 필수 항목은 [몬스터 설계 규칙](몬스터_설계_규칙과_템플릿.md), 전투·분양 정책은 [전투시스템](../10_전투/전투시스템.md)과 [BeastCompanion 정본](../10_전투/사수_BeastCompanion_확장_설계.md)을 따른다.
+> 2026-09-29 **LOCAL 코드·Asset 정적 조사 결과**. 이 문서는 구현 전 파이프라인 조사 기록이다. 이후 사용자 제공 5종 PNG와 1차 수치·행동 계약이 도착했으나, **PNG 5개 모두 1254×1254로 동일 크기 4×4 분할 조건을 충족하지 않아** Import/Runtime은 진행하지 않았다. 최신 기획·차단 사유는 [Chapter 2 몬스터 1차 설계](Chapter2_몬스터_1차_설계.md)를 따른다. 필수 항목은 [몬스터 설계 규칙](몬스터_설계_규칙과_템플릿.md), 전투·분양 정책은 [전투시스템](../10_전투/전투시스템.md)과 [BeastCompanion 정본](../10_전투/사수_BeastCompanion_확장_설계.md)을 따른다.
 
 ## 현재 구현 경계
 
@@ -46,7 +46,7 @@ Chapter 2 펫 구현 때는 네 종의 MonsterId 등록, 분양 UI 설명·효�
 | 종 | 실제 구현 체크리스트와 현재 제한 |
 |---|---|
 | **그을음들개** | 최종 시트의 Idle/Walk/Attack/Hit/Defeat → Definition의 ID·성장/보상·전열 편성·불씨 물기/사나운 돌진 AI·공용 Burn 연결. 펫은 습격 **180%/CD3 유지**, 적중 후 생존 대상에 기존 Burn 적용. 현재 습격 독침벌 분기와 Burn API를 조합하되 Burn 수치·틱 수 `TBD`. |
-| **열풍매** | 최종 프레임(원거리 Shoot 필요 여부 원본 확인) → Definition·후열 편성·불꽃 깃털/잿바람 날개 타깃·Burn. 펫의 원거리 직접 피해 -5%는 **현재 `ApplyIncomingDamage` 인자가 origin과 areaAttack뿐이어서 안정 판별 불가**. `TargetRangeType`은 타깃 선택 시 존재하지만 피격 피해 API까지 전달되지 않는다. 분류 경계가 확정될 때까지 이 패시브 구현 보류. |
+| **열풍매** | 공식 프레임(원거리 Shoot 필요 여부 원본 확인) → Definition·후열 편성·불꽃 깃털/잿바람 급습 타깃·Burn. **기존 원거리 직접 피해 -5% Passive 안은 사용자 최신 계약으로 폐기**했다. 새 펫 효과는 습격 시 대상의 `FormationRow.Rear`를 판정해 최종 직접 피해 ×1.10이며 원거리 피해 분류 확장은 필요 없다. |
 | **균열도마뱀** | 최종 5종 프레임 → Definition·전열 편성·지열 긁기/균열 돌진/지면 울림 AI. 펫 첫 직접 피해 -20%는 기존 DirectCombatAction 분기와 `spentPoisonGuards` 같은 **Combatant별 전투 중 1회 소비 Set** 패턴을 재사용 가능. DoT는 origin으로 제외. 소비 시점·0 피해·방어와 계산 순서 등은 구현 전 검증. 지면 울림 후 강화는 보스 예고 패턴을 참고하되 일반 AI 연결은 새로 필요. |
 | **화열딱정벌레** | 최종 5종 프레임 → Definition·전열 편성·발화 갑각/뜨거운 분비액/갑각 수축 AI·Burn. 펫 첫 유효 Burn 무효는 `ApplyOrRefreshPoison`의 유효성 검사 후 소비와 Silence 소비 Set 패턴을 참고할 수 있다. **현재 `ApplyOrRefreshBurn`은 void이며 저항 분기가 없다.** 유효 Burn 검사 뒤 1회 소비 경계를 연결하고 적용 결과 UI를 검증해야 한다. |
 | **불씨망령** | 최종 5종 프레임 → Definition·후열 편성·잿불 비산 광역 Burn/불씨 응축/열핵 분출 AI. 광역 직접 피해와 Burn 부여는 현재 서로 다른 경로라 조합·타깃별 적용 검증 필요. 펫 목록·Definition·패시브는 **없음**. |
@@ -60,4 +60,4 @@ Chapter 2 펫 구현 때는 네 종의 MonsterId 등록, 분양 UI 설명·효�
 5. 확정된 Chapter 2 Field/안전지대/World Bounds와 SpawnDefinition·조우 편성을 연결한다. 실제 Scene/Quest 제작 승인 범위와 맞춘다.
 6. Edit Mode 참조·컴파일·Console 확인 후 격리 Play Mode에서 Field 이동, 전열/후열·도발, 전투 승패/도주, Burn/저항·전투 초기화, 보상·저장·펫 경제를 검증한다.
 
-**남은 입력:** 5종 최종 Sprite Sheet와 프레임별 Idle/Walk/Attack/Hit/Defeat(필요 시 Shoot) 구성, 종별 실측 Import 규격, Level·HP·Attack·민첩·EXP·Talent·Loot, 스킬 피해·대상·Burn 위력/틱·쿨다운, Encounter/Spawn과 Chapter 2 Field 위치. Overheat는 별도 설계 후보이며 이번 구현 준비의 확정 요구가 아니다.
+**남은 입력:** 4×4 동일 크기로 분할 가능한 5종 공식 수정 시트와 실제 프레임 경계, 종별 Import 규격, Encounter/Spawn과 Chapter 2 Field 위치. Level·HP·Attack·민첩·EXP·Talent와 1차 스킬 배율·Burn 규칙은 최신 [설계 문서](Chapter2_몬스터_1차_설계.md)에 확정됐으며 Loot Item은 이번 구현에서 추가하지 않는다. Overheat는 별도 설계 후보로 남는다.
