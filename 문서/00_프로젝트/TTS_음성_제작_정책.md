@@ -63,12 +63,14 @@ Flash TTS는 주요 캐릭터·중요 Story Dialogue·Intro·Cutscene, Flash-Lit
 - 입력: `F:/Downloads/Voice/Limitless_TTS_Output/02_intro_flash_Storyteller_4/segments`의 `opening_001.wav`–`opening_018.wav` 18개. 모두 PCM WAV, 24,000Hz, 모노, 16bit, 전체 프레임 디코딩 성공, 합계 83.20초.
 - 대응 근거: 인접 외부 `limitless_gemini_tts_v6.py`의 `INTRO_LINES`가 LOCAL CSV 18문장과 정확히 일치하고 무음 분할 결과를 동일 ID로 저장한다. LOCAL Sequence의 18개 VoiceClipId와 Catalog 유지. 마지막 제목은 음성 없음. 실제 발화 경계·문장 청취 일치는 미검증이다.
 - Narrator 개발 표시명: **Storyteller_4**. `VOICE_USED.txt`의 display_name은 `Storyteller 4`, model은 `gemini-3.8-flash-tts`, voice_id는 `ko-kr-storyteller-4`. 제작 메타데이터의 기록이며 제공자의 현재 지원 여부 검증은 아니다.
-- Narrator 기본 Voice/Scene Style: 차분하고 따뜻한 판타지 이야기꾼, 자연스러운 표준 한국어, 중간보다 느린 속도, 절제된 감정·경이·애수. 신의 목소리가 아닌 창조 신화의 서술자. 테스트: Unity 적용 검증 대기. 최종 채택: 개발 적용 예정, 청취 검수 대기.
+- Narrator 기본 Voice/Scene Style: 차분하고 따뜻한 판타지 이야기꾼, 자연스러운 표준 한국어, 중간보다 느린 속도, 절제된 감정·경이·애수. 신의 목소리가 아닌 창조 신화의 서술자. 테스트: 2026-09-30 Unity Import·전체 자동 재생·전환 검증 완료. 최종 채택: 개발 Intro 적용, 청취 검수 대기.
 - Player / Taeon / Miel / Paul / `companion_serin`의 Model·Voice Design·Voice ID·속도·음색은 모두 TBD.
 - Asset: 기존 `Assets/_Project/Audio/Voice/Opening`의 WAV를 원본 바이트 그대로 교체하고 GUID 유지. Import 정규화·강제 모노 변환을 끄고 PCM/원본 샘플레이트 사용. 원본 속도·pitch·trim·gain 변경 없음.
 - 기존 안정 ID→AudioClip Catalog와 음성 전용 AudioSource 재사용. 현재 Master/BGM/SFX/Voice Mixer 및 볼륨 설정 없음. 독립적인 전체 Voice Volume 기반만 추가하며 설정 화면은 확장하지 않는다.
 - Next는 이전 음성을 즉시 중지하고 다음 문장·음성 시작. 자동 진행은 기존 `max(문장 최소 시간, Clip 길이 + 0.5초)` 유지. Skip·정상 종료·외부 Scene 전환/비활성화에서 Coroutine·Source·Clip 정리. null Clip은 자막·기존 시간으로 진행.
 - 백그라운드 Play Mode 검증 계획: 전체 자동 진행, 18개 순서·참조·디코딩, 중간/연속 Next, Skip, 외부 전환, 재진입, 복제 Catalog null fallback, Console. 청취 검수와 자동 상태 검증을 구분한다.
+
+적용 결과: 기존 GUID/Catalog를 유지한 원본 18개 교체와 즉시 Next·종료 정리를 `7e60218`에 포함했다. 전체 19블록 자동 진행, 18개 자막/ID/Clip 대응, 중간·연속 Next, Skip→CharacterCreation, Replay 정상 종료→Bootstrap, 재진입 001, null fallback 자동 진행, 외부 Scene 전환 후 음성 정리를 실제 Play Mode에서 확인했다. 청취·분할 발화 경계는 별도 확인이 필요하다. 입력 상세와 Console 분류는 [적용 QA](Intro_Storyteller4_적용_QA.md)를 따른다.
 
 ## 정책 재확인 자료
 

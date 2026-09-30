@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Intro Storyteller_4 음성 적용 (2026-09-30)
+
+- 외부 생성 WAV 18개를 기존 Intro Voice 경로에 원본 그대로 적용했다. 24kHz/mono/PCM16, 합계83.20초, SHA-256 동일·GUID/Catalog 유지. Narrator 표시명 Storyteller_4와 제작 메타데이터의 Voice ID를 [TTS 정책](TTS_음성_제작_정책.md)에 기록했다. 다른 캐릭터 Voice는 TBD. API/SDK/Key/HTTP 추가 없음. 계획 Docs `602b1b8`, 마지막 관련 기능 commit `7e60218`.
+- 안정 Dialogue ID→Clip 연결 유지, Next 즉시 중지·다음 블록 시작, Skip/정상 종료/외부 전환·비활성화에서 Coroutine/음성 정리. 기존 자동 최소 시간과 Clip+0.5초 규칙 유지, 독립 Voice Volume 기반 추가. Story·설정 UI 변경 없음.
+- 백그라운드 실제 Play Mode 전체19블록/156.47초·18개 순서/자막/Clip·중간 Next·같은 프레임8회 Next·Skip→CharacterCreation/잔류 Source0·정상 Replay→Bootstrap·재진입001·복제 Catalog null 자동 진행·외부 전환 정리 통과. Import18개/디코딩18개/컴파일 오류0. 세부 결과·QA 도우미 예외와 의도한 null 경고는 [Intro QA](Intro_Storyteller4_적용_QA.md)에 구분 기록한다.
+- 사용자 확인/다음 권장 작업: 실제 청취로18문장 발화 일치·자동 분할 경계·음질/음량을 검수한다. 자막/ID/Clip의 구조적 대응과 실제 발화 청취를 구분하며, 체감 BGM 밸런스 및 실제 물리 입력은 미검증이다. 원본 재가공이나 새 음성 생성은 하지 않았다. GitHub push 없음.
+- 최종 Console Error0/Warning0, Bootstrap clean Edit Mode, 포커스 전환 없음·Save 격리 해제·사용자 저장 해시 동일. 18개 모두 실제 음성 출력 신호 확인. 이번 변경 diff 검사 통과, 전체 작업 트리는 기존 사용자 Animation/Scene/meta trailing whitespace로 exit2(기존 변경 보존).
+
 ## Main15 Runtime QA와 TTS 정책 (2026-09-30)
 
 - TTS 정본 [음성 제작 정책](TTS_음성_제작_정책.md)을 추가했다. 2026-09-29 개발 방침으로 Gemini 3.8 Flash/Flash-Lite TTS, Free Tier 우선, Voice Design/Scene Style 분리·Voice Registry TBD, 사전 생성 Audio Asset·Client Key 비포함, 다음 Intro 제작을 기록했다. 기존 MeloTTS 문서는 제작 이력으로 연결했다. API/음성/Cloud/Key/Audio Asset 작업 없음. 문서 commit `d9bfc68`.

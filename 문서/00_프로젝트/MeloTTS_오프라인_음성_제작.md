@@ -1,5 +1,7 @@
 # MeloTTS 오프라인 음성 제작
 
+> 2026-09-30 후속 작업에서 Intro의 현재 Unity WAV는 사용자가 생성한 Storyteller_4 원본 18개로 명시적으로 교체했다. 아래 MeloTTS 포맷·생성 기록은 과거 이력이다. 현재 적용은 [Storyteller_4 QA](Intro_Storyteller4_적용_QA.md)를 따른다.
+
 > 이 문서는 기존 시험·제작 이력이다. 2026-09-29 이후 신규 캐릭터 음성 제작 방침은 [TTS 음성 제작 정책](TTS_음성_제작_정책.md)을 우선한다. 기존 WAV와 Unity 연결은 유지하며, 다음 제작은 Gemini Free Tier로 Intro부터 검증한다.
 
 ## 용도와 경계
