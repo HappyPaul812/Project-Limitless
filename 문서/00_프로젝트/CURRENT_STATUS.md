@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Path 반응형 Story와 Main16 설계 (2026-09-30)
+
+- [Path 반응형 Story 정본](../03_스토리/Path_반응형_Story_연출_규칙.md)에 Player Agency First·공통 핵심 정보/Story State·Hearing Player 우선 관찰/세린 교차 확인·다른4개 Path 방향을 확정했다. [Story Scene 템플릿](../03_스토리/Story_Scene_설계_템플릿.md)에 Path-Reactive Check를 추가하고 Path/세린/Story/TTS 문서는 정본을 참조한다.
+- Main13 첫 만남/장치 인식, Main14 반복·강한 진동, Main15 짧아진 진동·비교·서쪽 방향을 DESIGN RETROFIT CANDIDATE로 기록했다. 기존 대사/ID/Voice/Runtime은 유지하며 향후 별도 분기 확정·구현·검수를 해야 한다.
+- [Main16 「재 속의 형상」](../03_스토리/Chapter2_Main16_재_속의_형상.md)의 정식 Story 설계 완료. Field07 재바람 황야/Scene 가칭·12 Objective·움직이는 재의 Hearing 분기·불씨망령 단독 Story Encounter·처치 후 남은 진동·지하 열기 가설·협곡 입구/Arbel 보고·세린 미편성 시 진행/편성 보존·Main17 후보를 기록했다. 실제 Stable ID/Scene 배치/보상 TBD, Main16 Runtime/Quest/Scene/Voice/BGM 미구현, Overheat 미사용·Boss 미노출이다.
+- 이번 작업은 Markdown 문서15개만 변경했다. 링크/참조 경로 및 새 중복 제목 검사 통과, 이번 변경 diff 검사 통과. C#/Scene/Asset 수정·Quest/Dialogue 구현·TTS 생성·Unity 실행/Play Mode 없음. 기존 사용자 변경92항목 보존, 설계 commit `5a92b72`, GitHub push 없음.
+- 다음 권장 작업: Main16 구현 전 체크리스트의 LOCAL API/ID·World 왕복/Bounds·순차 목표/Save·Story NPC/Override·분기별 Dialogue를 확인하고 확정한 뒤 구현한다. Voice는 Story→Branch→ID→Manifest 확정 후 제작하며 Field07 BGM은 별도 확정한다. 현재 Unity에서 확인할 신규 구현 사항은 없다.
+
 ## Main13~15 Voice 및 확정 BGM 3곡 (2026-09-30)
 
 - 정식 `dialogue_manifest_main13_15.csv`41행과 LOCAL 화자/본문을 대조해 Main13 8/Main14 11/Main15 22개를 원본대로 Import/연결했다. 세린 Schedar15개·레온 Orus5개와 기존 태온 Gacrux6/미엘 Sulafat4/폴 Achird11개, 제작 모델 gemini-3.8-flash-tts/ko-KR를 Registry에 기록했다. Voice Design 사용 안 함, Tone/속도/Batch TBD. PCM24kHz/mono/16bit·253.40초·원본 바이트/신규 GUID41개 정상, 중복/누락/본문·화자 mismatch0. 기존102개를 유지한 Story Catalog143개, Intro18개 유지, Main16 이후 미적용.
