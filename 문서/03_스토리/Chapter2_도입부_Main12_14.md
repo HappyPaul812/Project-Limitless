@@ -52,6 +52,18 @@
 
 감시초소의 열 흔적은 순간 열 또는 무언가의 이동 가능성만 암시한다. 야수는 동쪽을 습격하러 온 것이 아니라 서쪽에서 도망쳤다. 강한 진동은 현상의 강도 증가만 뜻한다. 보고 뒤에도 원인은 미상이다. 세린은 임시 동행을 유지한다.
 
+## Main13~14 Path Retrofit 후보
+
+**DESIGN RETROFIT CANDIDATE / 미구현.** [Path 반응형 Story 정본](Path_반응형_Story_연출_규칙.md)에 따라 아래 장면을 향후 별도 수정한다. 현재 본문·ID·Runtime·Voice는 그대로 유지한다. 분기 확정 뒤 ID/Manifest와 영향을 받는 음성 검수 범위를 다시 확인한다.
+
+| Main / 기존 장면·대사 ID | Hearing Player 후보 | 일반 Player / 보존 정보 |
+| --- | --- | --- |
+| Main13 `meet_serin` / `main13_serin_001`~`003` | 장치·신호를 알아보는 짧은 반응, Player의 첫 관찰 또는 거의 동시 멈춤을 검토한다. 장치를 처음 보는 사람처럼 설명하지 않는다. | 기존 세린의 장치/경험 소개와 적의 방향 단서를 공유한다. 주변 적의 존재·공동 전투 목표는 동일하다. |
+| Main14 `rejoin_serin` / `main14_serin_001` | Player가 서쪽 진동 증가·반복을 먼저 제시하고 세린이 확인·보완한다. | 세린의 기존 발견/공유를 유지한다. 열기·진동의 인과관계는 미상이다. |
+| Main14 `feel_strong_pulse` / `main14_serin_002`~`003`, `main14_taeon_002` | Player의 첫 진동 관찰 또는 동시 반응 뒤 세린이 방향·강도를 확인한다. | 파티도 강한 진동을 느끼는 현상과 서쪽에서 도망친 야수 정보를 유지한다. 정확한 원인은 확정하지 않는다. |
+
+대사 ID는 현재 제작 Manifest와 연결된 참조 키다. 위 후보가 구현됐다는 뜻이 아니며 대사 변경/신규 분기에 같은 ID를 덮어쓰지 않는다.
+
 ## 공통 구현 경계
 
 모든 주요 목표는 기존 Quest Navigation Target에 연결한다. 임시 동행 여부는 Quest 단계로 재구성하고 새 Save System이나 영구 해금을 만들지 않는다. 전투 승리만 DefeatEncounter 목표를 진행한다. 기존 World Transition·SceneSpawnPoint·Safe Zone·Save 구조를 사용한다. 실제 Runtime/Visual QA는 별도 작업이다.

@@ -35,4 +35,16 @@
 
 ## 다음 단서
 
-Main15는 서쪽으로 갈수록 건조·열기·진동이 심해진다는 관찰로 끝난다. Main16 방향은 더 깊은 서쪽의 사막화, 불씨망령 최초 등장 가능성, 생물 변이 외의 현상 암시, 향후 Dungeon/Boss 연결이다. Main16 Quest와 Dungeon/Boss는 이번에 만들지 않는다.
+Main15는 서쪽으로 갈수록 건조·열기·진동이 심해진다는 관찰로 끝난다. 후속 Main16은 [「재 속의 형상」 정식 설계](Chapter2_Main16_재_속의_형상.md)에 확정했다. 재바람 황야·불씨망령 첫 Story Encounter와 생물 변이만으로 설명하기 어려운 현상을 다루며 Runtime/Scene/Voice/BGM은 미구현이다. Main15 자체의 구현 범위는 바꾸지 않는다.
+
+## Main15 Path Retrofit 후보
+
+**DESIGN RETROFIT CANDIDATE / 미구현.** 공통 기준은 [Path 반응형 Story 정본](Path_반응형_Story_연출_규칙.md)이다. 현재 대사·Voice·Runtime·Quest 목표를 수정하지 않는다.
+
+| 기존 장면·대사 ID | Hearing Player 후보 | 보존 정보 |
+| --- | --- | --- |
+| `follow_shorter_pulse` / `main15_serin_003` | Player가 먼저/거의 동시에 멈추고 짧아진 간격·강도를 첫 관찰로 제시, 세린이 교차 확인한다. | 완전히 일정하지 않은 반복, 원인 미상, 동일 조사 목표. |
+| `compare_with_serin` / `main15_serin_004` | Player가 반복 신호를 먼저 정리하고 세린이 방향/이전 조사 경험을 보완한다. | 더 서쪽에서 오지만 위치는 모름. 일반 분기는 기존 세린 공유 유지. |
+| `inspect_cracked_ground` / `main15_serin_006` | Player가 서쪽 신호를 먼저 제시하고 세린이 방향을 확인한다. | 현재 지점이 발생 시작점이라고 단정하지 않는다. |
+
+“또 시작됐어요.”에 대한 Player의 우선 반응을 후보로 삼되, 요청에 든 폴의 “진동입니까?”는 현재 LOCAL 대사 인용이 아닌 흐름 예시다. 기존 대사는 최신 코드/Manifest를 기준으로 별도 분기를 설계하고 Story→Branch→ID 확정 뒤 필요한 TTS 검수를 진행한다.

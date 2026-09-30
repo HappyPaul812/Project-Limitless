@@ -14,4 +14,4 @@
 
 ## 설명
 
-[세린](세린.md): Chapter 2 신규 사수 동료의 설정과 표현 방향. 아직 미구현.
+[세린](세린.md): Chapter2 사수 동료의 확정 설정과 Path 반응형 Story 역할 참조. 기존 Main13~15 동행/정식 합류와 신규 설계·Retrofit의 구현 상태는 [CURRENT_STATUS](../00_프로젝트/CURRENT_STATUS.md)를 따른다.

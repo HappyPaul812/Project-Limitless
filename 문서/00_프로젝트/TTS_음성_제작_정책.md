@@ -88,6 +88,10 @@ LOCAL 화자와 본문이 정확히 일치한 102개만 연결한다. Main12로 
 
 이번 CSV/CASTING의 실제 모델은 `gemini-3.8-flash-tts`, style_language는 ko-KR다. 태온 companion_taeon/Gacrux6개·미엘 companion_miel/Sulafat4개·폴 companion_paul/Achird11개·세린 companion_serin/Schedar15개·레온 arbel-leon/Orus5개다. CASTING의 voice_design=false와 README의 Voice Design 사용 안 함을 그대로 기록한다. 별도 Voice Design을 만들었다고 해석하지 않는다. 기본 음색·속도·Tone·Batch는 TBD, 개발 적용 채택·청취 미검증이다. 이 후속 Registry가 이전 세린 TBD·미적용 상태를 확장한다. 이전 Main01~12 배치의 모델 정보에 이번 배치 정보를 소급하지 않는다. Narrator/Intro18개와 기존 Story102개는 유지한다.
 
+## Path 분기 제작 순서
+
+향후 제작은 [Path 반응형 Story 정본](../03_스토리/Path_반응형_Story_연출_규칙.md)의 Story/Path Branch/서로 다른 Dialogue ID 확정 후 Manifest·Voice 제작 순서를 따른다. Main13~15 Retrofit은 설계 후보이며 이번에 기존 Voice를 바꾸지 않는다. [Main16](../03_스토리/Chapter2_Main16_재_속의_형상.md)은 설계만 완료했고 Voice 제작·연결은 미구현이다.
+
 ## 정책 재확인 자료
 
 2026-09-30 공식 문서 열람 참고이며, 2026-09-29 개발 결정을 소급해 영구 보증하는 자료가 아니다.

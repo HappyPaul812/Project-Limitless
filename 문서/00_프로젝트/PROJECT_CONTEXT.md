@@ -39,6 +39,8 @@
 
 길 데이터는 `PlayerPathDefinition`과 Resources의 PathDefinition Asset으로 관리한다. UI는 길의 수를 5개로 하드코딩하지 않으며 향후 새로운 길을 추가할 수 있는 목록형 구조를 사용한다.
 
+Story 장면의 Path별 관찰 주체와 Companion 역할은 [Path 반응형 Story 정본](../03_스토리/Path_반응형_Story_연출_규칙.md)을 따른다. 현재 Runtime 반영 여부는 CURRENT_STATUS와 각 Main의 설계/Retrofit 상태를 구분한다.
+
 ## 길 외형
 
 - 청각의 길: 헤드폰 Male/Female `CharacterVariant`
