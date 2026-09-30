@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Main01~12 Story Voice 적용 (2026-09-30)
+
+- 외부 PreSerin 출력107 WAV 중 manifest104쪽을 LOCAL 화자/본문으로 대조해102개550.97초를 원본 그대로 Import/연결했다. 태온 Gacrux28개·미엘 Sulafat22개·폴 Achird52개. PCM24kHz/mono/16bit, 원본 바이트 동일·GUID/참조102개 정상·전체 입력 디코딩107개. 모델/Tone/Batch는 근거가 없어 TBD. Narrator/Intro18개 유지, 세린 미적용.
+- Main06 3개/Main07 26개/Main09 27개/Main10 18개/Main11 28개 적용. Main01~05·Main08·실제 Main12는 음성 미제공으로 텍스트 진행 유지. CSV Main12 두 항목은 실제 Main14이라 제외했다. 정적 대화228쪽 중 Voice 없음126쪽, TEXT_AUDIO_MISMATCH0·중복0·범위 제외 Unmapped2. 기존 대사/Save/수동 Next 정책 보존.
+- 기존 VoiceClipCatalog/VoicePlaybackSource/Voice Mixer를 재사용하고 선택적 Dialogue ID·화자 확인을 추가했다. 실제 백그라운드 Play Mode에서102 ID/Clip/화자·연속 Next·null/wrong-speaker fallback·실제 Main07/09/10/11 factory·Main01/02/05/12 무음 진행·Hide/단일 Show/확인창/비활성화·Scene 제거 정리를 확인했다. 인물별 실제 출력, Voice0/Mute/채널값 복원, Intro18 참조/8연속Next/Skip→CharacterCreation·잔류Source0 통과. 상세는 [Story Voice QA](Story_Voice_Main01_12_QA.md).
+- 검증 상태: 컴파일 오류0·최종 Console Error0/Warning0·이번 변경 diff 검사 통과. Bootstrap clean Edit Mode·격리 Save/Settings·Game View 진입 동작·백그라운드 설정 복원. Foreground/Game View 활성화 없음. 계획 Docs `e4a495c`, 마지막 관련 기능 commit `ea776a9`. 이번 변경만 커밋, GitHub push 없음.
+- 사용자 확인/다음 권장 작업: 실제 청취로 발음·감정·호흡·문장/자막 일치·컷 경계·음량 균형을 검수한다. 전체 Quest playthrough·물리 입력·시각 배치는 미검증이다. 미제공 Main01~05/08/12와 Main14로 분류된2개 제작 메타데이터를 후속 확인한다. Main13 이후·세린 Voice 도입은 별도 작업이다.
+
 ## 정식 Audio Volume Settings (2026-09-30)
 
 - Master→BGM/SFX/Voice AudioMixer, 전체 음소거·채널별0–100 Slider/숫자·실시간 적용, Scene 공용 설정 화면을 구현했다. 버튼/F10/패드 Start 진입, 기존 Navigation과 모달·이동 잠금 사용. 기본값 Voice100/SFX100/BGM80/Mute OFF, 로그 dB 변환·0은-80dB, Mute에서도 채널값 보존. Intro Source는 Voice Group·volume1로 연결해 중복 감쇠 없음.

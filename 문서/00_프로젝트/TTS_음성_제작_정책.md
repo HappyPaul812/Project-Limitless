@@ -76,6 +76,12 @@ Flash TTS는 주요 캐릭터·중요 Story Dialogue·Intro·Cutscene, Flash-Lit
 
 Intro Narration과 향후 캐릭터 대사는 [Audio 설정 정책](Audio_설정_정책.md)의 Voice Mixer Group을 사용한다. Voice/SFX/BGM은 독립적인 사용자 환경 설정이며 전체 음소거에서도 채널값을 보존한다. Intro의 공용 Voice Volume을 Source와 Mixer에서 중복 곱하지 않는다. 기존 18개 TTS 원본·속도·Import는 변경하지 않는다. 이전 Intro 적용 기록의 Mixer 없음/Source Volume 기반은 당시 상태이며 후속 정식 Mixer 작업으로 대체한다.
 
+## Main01~12 주요 인물 Story Voice 적용 (2026-09-30)
+
+후속 Registry는 [Story Voice 적용 QA](Story_Voice_Main01_12_QA.md)를 따른다. 태온 companion_taeon은 Gacrux, 미엘 companion_miel은 Sulafat, 폴 companion_paul은 Achird로 개발 적용했다. 제공 CASTING/CSV의 실제 Voice ID이며 모델·기본 음색·속도·Tone·Batch는 자료가 없어 TBD다. 앞선 Intro 시점의 세 인물 TBD 기록을 이 후속 Registry로 대체한다. Narrator는 Storyteller_4 / ko-kr-storyteller-4 / gemini-3.8-flash-tts와 Intro 18개를 유지한다. Player·세린은 TBD·미적용이다.
+
+LOCAL 화자와 본문이 정확히 일치한 102개만 연결한다. Main12로 표시된 2개는 실제 Main14이므로 제외한다. Main01~05·Main08·실제 Main12는 제공 음성이 없어 텍스트 진행을 유지한다. VoiceClipCatalog의 선택적 Character ID 확인과 기존 VoicePlaybackSource/Voice Mixer를 사용한다. 음성은 선택 사항이며 수동 Next·슬롯 저장 구조는 유지한다. 실제 청취 검수는 남아 있다.
+
 ## 정책 재확인 자료
 
 2026-09-30 공식 문서 열람 참고이며, 2026-09-29 개발 결정을 소급해 영구 보증하는 자료가 아니다.
