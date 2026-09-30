@@ -72,11 +72,11 @@ Flash TTS는 주요 캐릭터·중요 Story Dialogue·Intro·Cutscene, Flash-Lit
 
 적용 결과: 기존 GUID/Catalog를 유지한 원본 18개 교체와 즉시 Next·종료 정리를 `7e60218`에 포함했다. 전체 19블록 자동 진행, 18개 자막/ID/Clip 대응, 중간·연속 Next, Skip→CharacterCreation, Replay 정상 종료→Bootstrap, 재진입 001, null fallback 자동 진행, 외부 Scene 전환 후 음성 정리를 실제 Play Mode에서 확인했다. 청취·분할 발화 경계는 별도 확인이 필요하다. 입력 상세와 Console 분류는 [적용 QA](Intro_Storyteller4_적용_QA.md)를 따른다.
 
-## 정책 재확인 자료
-
 ## 정식 Audio Volume 연결 (2026-09-30)
 
 Intro Narration과 향후 캐릭터 대사는 [Audio 설정 정책](Audio_설정_정책.md)의 Voice Mixer Group을 사용한다. Voice/SFX/BGM은 독립적인 사용자 환경 설정이며 전체 음소거에서도 채널값을 보존한다. Intro의 공용 Voice Volume을 Source와 Mixer에서 중복 곱하지 않는다. 기존 18개 TTS 원본·속도·Import는 변경하지 않는다. 이전 Intro 적용 기록의 Mixer 없음/Source Volume 기반은 당시 상태이며 후속 정식 Mixer 작업으로 대체한다.
+
+## 정책 재확인 자료
 
 2026-09-30 공식 문서 열람 참고이며, 2026-09-29 개발 결정을 소급해 영구 보증하는 자료가 아니다.
 

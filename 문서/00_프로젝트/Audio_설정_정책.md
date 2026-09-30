@@ -21,3 +21,7 @@ Narration/Character Dialogue/Intro TTS는 Voice, 검격·폭발·UI·환경 효�
 ## 검증 계획
 
 백그라운드 Unity 컴파일·Mixer 파라미터/Group·실제 Intro Voice와 임시 BGM/SFX 출력·0/100·Mute ON/OFF 및 음소거 중 변경·63/47/72 저장/Scene 유지/재Load·Version1 이행·UI 이벤트/Navigation·Intro Next/Skip/전환 정리/18개 참조를 확인한다. 테스트 설정·Save는 격리하며 사용자 파일과 TTS 원본을 보존한다. 실제 청취·Game View 시각 QA와 물리 입력은 별도 검증이다.
+
+## 적용 결과
+
+정책 commit `f628e11`, 구현 commit `cd656e0`. Mixer·Voice 라우팅·공용 설정 UI·Version2 사용자 JSON 저장을 구현했다. 실제 백그라운드 Play Mode의27개 독립 출력 검사, UI 값/이벤트·Mute 값 보존, Scene 유지·재Load·Play 재시작 복원, 구버전 이행, Intro 회귀를 통과했다. 실제 게임 BGM/SFX는 아직 없으며 해당 Group은 임시 메모리 신호로 검증했다. 세부 결과와 미검증은 [Runtime QA](Audio_Volume_Runtime_QA_2026_09_30.md)를 따른다.

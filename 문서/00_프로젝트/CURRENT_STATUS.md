@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## 정식 Audio Volume Settings (2026-09-30)
+
+- Master→BGM/SFX/Voice AudioMixer, 전체 음소거·채널별0–100 Slider/숫자·실시간 적용, Scene 공용 설정 화면을 구현했다. 버튼/F10/패드 Start 진입, 기존 Navigation과 모달·이동 잠금 사용. 기본값 Voice100/SFX100/BGM80/Mute OFF, 로그 dB 변환·0은-80dB, Mute에서도 채널값 보존. Intro Source는 Voice Group·volume1로 연결해 중복 감쇠 없음.
+- 기존 사용자 JSON을 Version2로 확장해 슬롯과 독립적으로 저장한다. 구버전 Skip 보존·Audio 기본값 이행, 범위 제한, Scene 유지·재Load·Play 재시작에서63/47/72 및 Mute 복원 확인. 정식 BGM/SFX Source는 현재 없으며 신규 Source는 공용 Route API로 용도별 Group에 연결한다.
+- 실제 백그라운드 Play Mode에서 Intro와 임시 BGM/SFX 신호의27개 출력 검사, UI 숫자·방향 이벤트·모달 정리, Intro18개 대응/Next/연속Next/Skip/전환 후 Source0 회귀 통과. TTS 원본·사용자 저장·기존 변경109파일 해시 동일. 상세는 [Audio QA](Audio_Volume_Runtime_QA_2026_09_30.md). 컴파일/게임 Error0, 재컴파일 MCP Warning1 별도 기록. Bootstrap clean Edit Mode·검증 경로/진입 동작 복원.
+- 남은 확인/다음 권장 작업: Game View 시각 배치·물리 키보드/패드/마우스·청취 밸런스·배포 Player 저장 검수. BGM/SFX 실제 음원 도입 시 정식 Group 연결. 기존 Intro 발화·분할 경계 청취 검수도 계속 남아 있다. 계획 Docs `f628e11`, 마지막 관련 기능 commit `cd656e0`. 이번 변경만 커밋, GitHub push 없음.
+- 최종 Console Error0/Warning0 재조회. 이번 변경 diff 검사 통과, 전체 작업 트리의 기존 사용자 변경에 남은 공백 오류는 보존했다. 검증용 설정 JSON·임시 신호 정리 완료.
+
 ## Intro Storyteller_4 음성 적용 (2026-09-30)
 
 - 외부 생성 WAV 18개를 기존 Intro Voice 경로에 원본 그대로 적용했다. 24kHz/mono/PCM16, 합계83.20초, SHA-256 동일·GUID/Catalog 유지. Narrator 표시명 Storyteller_4와 제작 메타데이터의 Voice ID를 [TTS 정책](TTS_음성_제작_정책.md)에 기록했다. 다른 캐릭터 Voice는 TBD. API/SDK/Key/HTTP 추가 없음. 계획 Docs `602b1b8`, 마지막 관련 기능 commit `7e60218`.
