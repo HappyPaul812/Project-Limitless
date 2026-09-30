@@ -82,6 +82,12 @@ Intro Narration과 향후 캐릭터 대사는 [Audio 설정 정책](Audio_설정
 
 LOCAL 화자와 본문이 정확히 일치한 102개만 연결한다. Main12로 표시된 2개는 실제 Main14이므로 제외한다. Main01~05·Main08·실제 Main12는 제공 음성이 없어 텍스트 진행을 유지한다. VoiceClipCatalog의 선택적 Character ID 확인과 기존 VoicePlaybackSource/Voice Mixer를 사용한다. 음성은 선택 사항이며 수동 Next·슬롯 저장 구조는 유지한다. 실제 청취 검수는 남아 있다.
 
+## Main13~15 Voice Registry 확장 (2026-09-30)
+
+[Main13~15 Voice/BGM 적용 QA](Main13_15_Voice_BGM_QA.md)의 `dialogue_manifest_main13_15.csv`를 최우선 Mapping 기준으로 쓴다. LOCAL ID·화자·본문과 일치하는41개만 기존 StoryVoiceCatalog에 추가한다. Main13 8개/Main14 11개/Main15 22개이며 Main16 이후는 미적용이다.
+
+이번 CSV/CASTING의 실제 모델은 `gemini-3.8-flash-tts`, style_language는 ko-KR다. 태온 companion_taeon/Gacrux6개·미엘 companion_miel/Sulafat4개·폴 companion_paul/Achird11개·세린 companion_serin/Schedar15개·레온 arbel-leon/Orus5개다. CASTING의 voice_design=false와 README의 Voice Design 사용 안 함을 그대로 기록한다. 별도 Voice Design을 만들었다고 해석하지 않는다. 기본 음색·속도·Tone·Batch는 TBD, 개발 적용 채택·청취 미검증이다. 이 후속 Registry가 이전 세린 TBD·미적용 상태를 확장한다. 이전 Main01~12 배치의 모델 정보에 이번 배치 정보를 소급하지 않는다. Narrator/Intro18개와 기존 Story102개는 유지한다.
+
 ## 정책 재확인 자료
 
 2026-09-30 공식 문서 열람 참고이며, 2026-09-29 개발 결정을 소급해 영구 보증하는 자료가 아니다.

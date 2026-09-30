@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Main13~15 Voice 및 확정 BGM 3곡 (2026-09-30)
+
+- 정식 `dialogue_manifest_main13_15.csv`41행과 LOCAL 화자/본문을 대조해 Main13 8/Main14 11/Main15 22개를 원본대로 Import/연결했다. 세린 Schedar15개·레온 Orus5개와 기존 태온 Gacrux6/미엘 Sulafat4/폴 Achird11개, 제작 모델 gemini-3.8-flash-tts/ko-KR를 Registry에 기록했다. Voice Design 사용 안 함, Tone/속도/Batch TBD. PCM24kHz/mono/16bit·253.40초·원본 바이트/신규 GUID41개 정상, 중복/누락/본문·화자 mismatch0. 기존102개를 유지한 Story Catalog143개, Intro18개 유지, Main16 이후 미적용.
+- 정식 BGM3곡을 원본 MP3 그대로 Audio/Music에 Import했다. Before the First Light→Bootstrap Title, Morning at the Gate→StarterVillage/Arbel/Field03 던전 입구 안전 반경, Morning Over the Ridge→Field01/Chapter2 첫 서부 Field04. Field05/06·다른 Field·Dungeon/Battle/Boss·Intro는 TBD/이전 음악 정리. 단일 지속 Source·기존 BGM Mixer·Loop·같은 곡 재시작 방지·Voice 독립, Ducking/Crossfade 없음.
+- 배경 실제 Play Mode에서41 ID/화자/Next·실제 NPC/조사 factory·인물5명 출력·Voice/BGM/SFX 독립 출력·전체 Mute0/설정 복원, 최종12 Scene 전환의 곡 선택/정리/서비스1·Listener1·세 곡 출력, 안전 반경 진입/이탈을 통과했다. Intro/기존Story120개 참조와 실제 Next/Skip 회귀도 확인했다. Intro→Title의 Listener 수명 누락 및 보충 중 Intro 중복을 수정해 재검증했다. 상세는 [Voice/BGM QA](Main13_15_Voice_BGM_QA.md).
+- 최종 컴파일 오류0·Console Error0/Warning0·이번 변경 diff 검사 통과. 기존 사용자 변경/기존음성/입력원본 등370파일 SHA-256 동일. 격리 Save/Settings·Game View 진입 동작·백그라운드 설정 복원·Bootstrap clean Edit Mode 종료. Foreground 검증 없음. 계획 `5f3dca9`, Voice 기능 `6818b42`, 마지막 BGM 기능 `ea97a2d`. 관련 파일만 커밋, GitHub push 없음.
+- 사용자 확인/다음 권장 작업: 실제 청취의 취향·감정·발음·호흡·Voice/BGM 균형·Loop 경계·Scene 감정 적합성을 검수한다. 전체 Main13~15 Quest playthrough·실제 이동/물리 입력/시각 QA는 미검증이다. 후속 Field/Dungeon/Battle/Boss 전용 BGM과 Main16 이후 Voice는 별도 확정 후 도입한다.
+
 ## Main01~12 Story Voice 적용 (2026-09-30)
 
 - 외부 PreSerin 출력107 WAV 중 manifest104쪽을 LOCAL 화자/본문으로 대조해102개550.97초를 원본 그대로 Import/연결했다. 태온 Gacrux28개·미엘 Sulafat22개·폴 Achird52개. PCM24kHz/mono/16bit, 원본 바이트 동일·GUID/참조102개 정상·전체 입력 디코딩107개. 모델/Tone/Batch는 근거가 없어 TBD. Narrator/Intro18개 유지, 세린 미적용.
