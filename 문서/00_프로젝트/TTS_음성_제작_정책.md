@@ -103,3 +103,7 @@ LOCAL 화자와 본문이 정확히 일치한 102개만 연결한다. Main12로 
 - [Gemini API 가격·Tier](https://ai.google.dev/gemini-api/docs/pricing)
 
 정식 대량 제작·출시 전에 모델 제공 여부, 한국어 품질, Quota/Billing, 입력·출력 데이터 사용 조건과 생성물의 상업 사용 관련 조건을 최신 자료에서 재확인한다.
+
+## Missing Story Voice Supplement Pack (2026-09-30)
+
+[보충팩 정책 및 QA](Missing_Story_Voice_Supplement_QA.md)를 따른다. Existing Voice Wins 원칙으로 기존143개/Intro18개를 보존하고 정식 Manifest와 LOCAL 화자/본문이 일치하는 기존 무음 대사에만 신규 ID와 Clip을 추가한다. Main03/04/05/08/12의58개를 계획하며 Main01/02는 입력에 없다. 사용자 허용으로 일치하는 기존 무음 대사에 Manifest 안정 ID를 지정한다. Catalog 재생성/기존 Clip 교체/원본 가공은 금지한다. 실제 결과와 Coverage는 QA 문서에서 계획과 구분한다.
