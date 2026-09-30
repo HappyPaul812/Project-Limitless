@@ -34,10 +34,9 @@ namespace ProjectLimitless.UI
         private VoicePlaybackSource voicePlayback;
         private readonly Image[] pathSymbols = new Image[5];
         private static Sprite radialGlowSprite;
-        private int slideIndex = -1;
+        private int slideIndex;
         private bool paused;
         private bool transitioning;
-        private bool advanceRequested;
         private Coroutine sequence;
 
         private void Start()
@@ -64,17 +63,16 @@ namespace ProjectLimitless.UI
 
         private IEnumerator PlaySequence()
         {
-            for (slideIndex = 0; slideIndex < OpeningIntroSequence.Slides.Length; slideIndex++)
+            for (; slideIndex < OpeningIntroSequence.Slides.Length; slideIndex++)
             {
                 OpeningIntroSlide slide = OpeningIntroSequence.Slides[slideIndex];
-                advanceRequested = false;
                 ApplySlide(slide);
                 yield return Fade(0f, 1f);
                 float elapsed = 0f;
                 // 음성이 긴 문장은 고정 자막 시간 때문에 잘리지 않도록 Clip 길이와 짧은 여유를 우선합니다.
                 // 음성이 없어도 자막만으로 전체 이야기를 이해할 수 있게 기존 최소 시간은 항상 유지합니다.
                 float displaySeconds = Mathf.Max(slide.Duration, voicePlayback.ClipLength + NarrationTailSeconds);
-                while (elapsed < displaySeconds && !advanceRequested)
+                while (elapsed < displaySeconds)
                 {
                     if (!paused)
                     {
@@ -144,7 +142,11 @@ namespace ProjectLimitless.UI
             if (transitioning || paused) return;
             // 수동 진행은 현재 문장을 즉시 끊어 다음 문장과 음성이 겹치지 않게 합니다.
             voicePlayback.Stop();
-            advanceRequested = true;
+            // Fade 중의 입력도 현재 Coroutine을 정리하고 즉시 다음 ID로 이동합니다.
+            // 한 AudioSource를 재사용하므로 빠른 연속 입력에도 이전 음성이 남지 않습니다.
+            if (sequence != null) StopCoroutine(sequence);
+            slideIndex++;
+            sequence = StartCoroutine(PlaySequence());
         }
 
         private void TogglePause()
@@ -163,6 +165,14 @@ namespace ProjectLimitless.UI
             voicePlayback.Stop();
             // Esc/버튼은 이번 재생만 끝냅니다. 체크 설정은 Toggle callback에서만 저장합니다.
             SceneManager.LoadSceneAsync(OpeningIntroLaunchContext.IsReplay ? "Bootstrap" : "CharacterCreation", LoadSceneMode.Single);
+        }
+
+        private void OnDisable()
+        {
+            // 다른 시스템에서 Scene을 바꾸거나 객체를 비활성화해도 음성과 진행을 남기지 않습니다.
+            if (sequence != null) StopCoroutine(sequence);
+            sequence = null;
+            if (voicePlayback != null) voicePlayback.Stop();
         }
 
         private void CreateInterface()

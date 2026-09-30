@@ -10,6 +10,15 @@ namespace ProjectLimitless.Audio
     public sealed class VoicePlaybackSource : MonoBehaviour
     {
         private AudioSource source;
+        [SerializeField, Range(0f, 1f)] private float voiceVolume = 1f;
+
+        // Mixer가 없는 현재 프로젝트에서 모든 음성 Clip에 공통으로 적용하는 독립 음량입니다.
+        // 저장 설정이나 음악·효과음 음량을 변경하지 않고 향후 설정 화면에서 연결할 수 있습니다.
+        public float Volume
+        {
+            get => voiceVolume;
+            set { voiceVolume = Mathf.Clamp01(value); if (source != null) source.volume = voiceVolume; }
+        }
 
         public float ClipLength => source != null && source.clip != null ? source.clip.length : 0f;
         public AudioClip Clip => source != null ? source.clip : null;
@@ -23,7 +32,7 @@ namespace ProjectLimitless.Audio
             source.enabled = true;
             source.playOnAwake = false;
             source.loop = false;
-            source.volume = 1f;
+            source.volume = voiceVolume;
             source.mute = false;
             source.spatialBlend = 0f;
             // 아직 Voice AudioMixer가 없으므로 음소거된 Group에 잘못 연결될 가능성을 없앱니다.
@@ -60,5 +69,7 @@ namespace ProjectLimitless.Audio
             source.Stop();
             source.clip = null;
         }
+
+        private void OnDisable() => Stop();
     }
 }
