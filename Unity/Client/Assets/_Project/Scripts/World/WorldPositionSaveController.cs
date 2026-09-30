@@ -9,6 +9,9 @@ namespace ProjectLimitless.World
     /// 매 프레임 JSON을 쓰면 디스크 작업이 지나치게 잦아 끊김과 파일 손상 위험이 커지므로 5초 간격을 사용합니다.
     /// </summary>
     [DisallowMultipleComponent]
+    // 런타임 Bounds도 sceneLoaded에서 준비된 뒤 Start에서 다시 조회합니다. 일반 SpawnPoint의
+    // Start보다 먼저 유효 저장 좌표를 복원하고 PendingSpawn을 해제해 fallback이 덮어쓰지 않게 합니다.
+    [DefaultExecutionOrder(-100)]
     public sealed class WorldPositionSaveController : MonoBehaviour
     {
         private const float AutoSaveIntervalSeconds = 5f;

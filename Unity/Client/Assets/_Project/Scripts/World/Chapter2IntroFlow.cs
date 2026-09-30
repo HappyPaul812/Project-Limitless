@@ -36,6 +36,20 @@ namespace ProjectLimitless.World
         private string sceneId;
         private bool safeZoneActivated;
 
+        private void Awake()
+        {
+            if (gameObject.scene.name != "Arbel") return;
+            // Arbel은 Scene 로드 뒤 런타임으로 Bounds를 설치합니다. Start에서 만들면 Player의
+            // 위치 복원기가 먼저 시작해 Bounds를 못 찾고 출입구 Spawn으로 돌아가므로 미리 준비합니다.
+            var bounds = new GameObject("WorldBounds", typeof(WorldBounds2D));
+            bounds.transform.SetParent(transform, false);
+            bounds.GetComponent<WorldBounds2D>().Configure(Vector2.zero, new Vector2(21, 15));
+            WorldBounds2D.CreateBoundaryColliders(bounds.transform, bounds.GetComponent<WorldBounds2D>().Bounds,
+                .3f, new WorldBoundaryOpening(WorldBoundarySide.Left, 0, 3),
+                new WorldBoundaryOpening(WorldBoundarySide.Right, 0, 3),
+                new WorldBoundaryOpening(WorldBoundarySide.Top, -6, 3));
+        }
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Register()
         {
@@ -77,13 +91,6 @@ namespace ProjectLimitless.World
             }
             else if (sceneId == "Arbel")
             {
-                var bounds = new GameObject("WorldBounds", typeof(WorldBounds2D));
-                bounds.transform.SetParent(transform, false);
-                bounds.GetComponent<WorldBounds2D>().Configure(Vector2.zero, new Vector2(21, 15));
-                WorldBounds2D.CreateBoundaryColliders(bounds.transform, bounds.GetComponent<WorldBounds2D>().Bounds,
-                    .3f, new WorldBoundaryOpening(WorldBoundarySide.Left, 0, 3),
-                    new WorldBoundaryOpening(WorldBoundarySide.Right, 0, 3),
-                    new WorldBoundaryOpening(WorldBoundarySide.Top, -6, 3));
                 var respawn = new GameObject("Spawn_Arbel_Center", typeof(SceneSpawnPoint));
                 respawn.transform.SetParent(transform, false);
                 respawn.transform.position = new Vector2(0, -1.5f);
