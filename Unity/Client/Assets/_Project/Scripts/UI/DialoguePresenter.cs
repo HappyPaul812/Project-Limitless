@@ -1,4 +1,5 @@
 using System;
+using ProjectLimitless.Audio;
 using ProjectLimitless.Core;
 using ProjectLimitless.Player;
 using UnityEngine;
@@ -12,16 +13,19 @@ namespace ProjectLimitless.UI
     /// <summary>연속 대화 한 쪽의 화자 ID·표시 이름·본문을 함께 보관합니다.</summary>
     public sealed class DialogueLine
     {
-        public DialogueLine(string speakerId, string speakerName, string message)
+        public DialogueLine(string speakerId, string speakerName, string message, string dialogueId = null)
         {
             SpeakerId = speakerId ?? string.Empty;
             SpeakerName = speakerName ?? string.Empty;
             Message = message ?? string.Empty;
+            DialogueId = dialogueId ?? string.Empty;
         }
 
         public string SpeakerId { get; }
         public string SpeakerName { get; }
         public string Message { get; }
+        // 제작 manifest의 안정 ID입니다. 음성이 없는 기존 대사는 빈 값이며 Save에는 기록하지 않습니다.
+        public string DialogueId { get; }
     }
 
     /// <summary>
@@ -50,6 +54,8 @@ namespace ProjectLimitless.UI
         private DialogueLine[] sequenceLines = Array.Empty<DialogueLine>();
         private int sequencePageIndex;
         private Action onSequenceCompleted;
+        private VoicePlaybackSource voicePlayback;
+        private VoiceClipCatalog voiceCatalog;
         public bool IsOpen => panel != null && panel.activeSelf;
 
         /// <summary>중복 대화 UI를 제거하고, 이 객체를 공용 Instance로 등록한 뒤 패널을 만듭니다.</summary>
@@ -62,6 +68,8 @@ namespace ProjectLimitless.UI
             }
 
             Instance = this;
+            voicePlayback = gameObject.AddComponent<VoicePlaybackSource>();
+            voiceCatalog = Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog");
             CreatePanel();
             advanceAction = new InputAction("AdvanceDialogue", InputActionType.Button);
             advanceAction.AddBinding("<Keyboard>/enter");
@@ -72,6 +80,7 @@ namespace ProjectLimitless.UI
         /// <summary>현재 공용 Instance가 제거되는 객체라면 참조를 비웁니다.</summary>
         private void OnDestroy()
         {
+            voicePlayback?.Stop();
             WorldExperienceHud.SetInteractionUiOpen(this, false);
             WorldModalState.Release(this);
             advanceAction?.Dispose();
@@ -157,6 +166,7 @@ namespace ProjectLimitless.UI
             Action onConfirmed)
         {
             if (!WorldModalState.TryAcquire(this)) return;
+            ClearSequence();
             ApplyPortrait(speakerId);
             dialogueText.text = $"{speaker}\n{message}";
             choiceRow.SetActive(true);
@@ -186,12 +196,15 @@ namespace ProjectLimitless.UI
         private void RefreshSequenceText()
         {
             DialogueLine line = sequenceLines[sequencePageIndex];
+            // Play는 이전 음성을 먼저 중지합니다. ID/화자/Clip이 없으면 자막만 유지하며 수동 Next를 기다립니다.
+            voicePlayback.Play(voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
             ApplyPortrait(line.SpeakerId);
             dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
         }
 
         private void ClearSequence()
         {
+            voicePlayback?.Stop();
             sequenceLines = Array.Empty<DialogueLine>();
             sequencePageIndex = 0;
             onSequenceCompleted = null;

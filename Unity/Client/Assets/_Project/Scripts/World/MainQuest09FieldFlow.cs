@@ -156,20 +156,20 @@ namespace ProjectLimitless.World
     /// <summary>확인한 사실과 추측을 구분하고 폴의 독립적인 조사 판단으로 합류를 연결합니다.</summary>
     public static class MainQuest09Dialogue
     {
-        private static DialogueLine P(string text) => new DialogueLine(CompanionRosterService.PaulId, "폴", text);
-        private static DialogueLine T(string text) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text);
-        private static DialogueLine M(string text) => new DialogueLine(CompanionRosterService.MielId, "미엘", text);
+        private static DialogueLine P(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.PaulId, "폴", text, dialogueId);
+        private static DialogueLine T(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text, dialogueId);
+        private static DialogueLine M(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.MielId, "미엘", text, dialogueId);
         private static DialogueLine U(string text) => new DialogueLine("", GameSessionData.PlayerName, text);
         public static DialogueLine[] Lines(int step)
         {
             switch (step)
             {
-                case 0: return new[] { M("빛은 이쪽에서 보였어요. 지금은 사라졌네요."), T("빛의 정체는 아직 모릅니다. 남아 있는 흔적부터 보죠."), U("발밑을 확인하면서 따라가겠습니다.") };
-                case 1: return new[] { T("두 줄의 폭이 일정합니다. 이번에는 깊게 빠진 자국이 아니에요."), M("단단한 지면을 따라 이어져 있네요. 폴 씨도 이쪽으로 가셨을까요?"), P("그 길은 괜찮습니다! 오른쪽 가장자리만 피해주세요.") };
-                case 2: return new[] { P("또 뵙네요. 이번에는 제가 길을 안내해드릴 차례인가 봅니다."), M("혼자 여기까지 오신 거예요? 다치신 곳은요?"), P("괜찮습니다. 오늘 계획표에는 진흙에 빠지는 일정도 빼뒀고요."), T("지나오신 길을 확인하고 계셨습니까?"), P("네. 단단한 땅과 돌아갈 길을 먼저 표시해뒀습니다. 여러분은 괜찮으세요?"), U("저희도 무사합니다. 서로 확인한 것을 이야기해보죠.") };
-                case 3: return new[] { U("몬스터들이 깊은 곳을 둥글게 피하고 있습니다. 안쪽으로 갈수록 수도 줄었고요."), T("이동 흔적이 방향을 바꾸는 지점이 있었습니다."), M("조금 전에는 짧게 푸른 빛도 봤어요."), P("빛은 저도 봤습니다. 제 마법인지부터 묻고 싶으시겠지만, 저도 답을 찾는 중입니다."), P("제가 지나온 길에서는 마력 흐름이 한 방향으로 치우쳐 있었습니다. 평소 숲의 지형과 다른 석재도 발견했고요."), P("제가 확인한 건 여기까지입니다. 서로 관련이 있는지, 원인이 무엇인지는 아직 모릅니다."), T("사실과 추측을 나눠두는 게 좋겠습니다."), P("동의합니다. 석재는 저쪽 낮은 지점에 있습니다. 가장자리 지반은 밟지 마세요.") };
-                case 4: return new[] { T("모서리의 간격이 반복됩니다. 자연 암반과는 다릅니다."), P("표면에 가공한 자국도 있습니다. 오래된 구조물 일부로 보이지만, 용도는 모르겠습니다."), M("흙 아래로 더 이어지는 것 같아요."), U("지금 보이는 부분만 기록하죠. 아래가 안전한지는 아직 모르니까요."), P("좋습니다. 무너진 부분과 돌아갈 길을 표시해두겠습니다.") };
-                default: return new[] { P("각자 본 것만으로는 놓치는 게 있네요. 현상도 여기서 끝난 것 같지 않고요."), P("같은 방향을 조사하고 있으니, 계속 정보를 나누는 편이 합리적이겠습니다. 저도 함께 가도 될까요?"), U("함께 가죠. 확인한 것을 서로 알려주면 좋겠습니다."), T("안전한 경로부터 같이 확인하겠습니다."), M("쉬어야 할 때도 말씀해주세요. 그건 모두에게 하는 말이에요."), P("그럼 쉬는 시간도 계획에 넣겠습니다. 빈칸을 남겨둔 보람이 있네요."), P("우선 여기서 정리하고, 더 깊은 곳은 준비해서 확인하죠.") };
+                case 0: return new[] { M("빛은 이쪽에서 보였어요. 지금은 사라졌네요.", "main09_miel_001"), T("빛의 정체는 아직 모릅니다. 남아 있는 흔적부터 보죠.", "main09_taeon_001"), U("발밑을 확인하면서 따라가겠습니다.") };
+                case 1: return new[] { T("두 줄의 폭이 일정합니다. 이번에는 깊게 빠진 자국이 아니에요.", "main09_taeon_002"), M("단단한 지면을 따라 이어져 있네요. 폴 씨도 이쪽으로 가셨을까요?", "main09_miel_002"), P("그 길은 괜찮습니다! 오른쪽 가장자리만 피해주세요.", "main09_paul_001") };
+                case 2: return new[] { P("또 뵙네요. 이번에는 제가 길을 안내해드릴 차례인가 봅니다.", "main09_paul_002"), M("혼자 여기까지 오신 거예요? 다치신 곳은요?", "main09_miel_003"), P("괜찮습니다. 오늘 계획표에는 진흙에 빠지는 일정도 빼뒀고요.", "main09_paul_003"), T("지나오신 길을 확인하고 계셨습니까?", "main09_taeon_003"), P("네. 단단한 땅과 돌아갈 길을 먼저 표시해뒀습니다. 여러분은 괜찮으세요?", "main09_paul_004"), U("저희도 무사합니다. 서로 확인한 것을 이야기해보죠.") };
+                case 3: return new[] { U("몬스터들이 깊은 곳을 둥글게 피하고 있습니다. 안쪽으로 갈수록 수도 줄었고요."), T("이동 흔적이 방향을 바꾸는 지점이 있었습니다.", "main09_taeon_004"), M("조금 전에는 짧게 푸른 빛도 봤어요.", "main09_miel_004"), P("빛은 저도 봤습니다. 제 마법인지부터 묻고 싶으시겠지만, 저도 답을 찾는 중입니다.", "main09_paul_005"), P("제가 지나온 길에서는 마력 흐름이 한 방향으로 치우쳐 있었습니다. 평소 숲의 지형과 다른 석재도 발견했고요.", "main09_paul_006"), P("제가 확인한 건 여기까지입니다. 서로 관련이 있는지, 원인이 무엇인지는 아직 모릅니다.", "main09_paul_007"), T("사실과 추측을 나눠두는 게 좋겠습니다.", "main09_taeon_005"), P("동의합니다. 석재는 저쪽 낮은 지점에 있습니다. 가장자리 지반은 밟지 마세요.", "main09_paul_008") };
+                case 4: return new[] { T("모서리의 간격이 반복됩니다. 자연 암반과는 다릅니다.", "main09_taeon_006"), P("표면에 가공한 자국도 있습니다. 오래된 구조물 일부로 보이지만, 용도는 모르겠습니다.", "main09_paul_009"), M("흙 아래로 더 이어지는 것 같아요.", "main09_miel_005"), U("지금 보이는 부분만 기록하죠. 아래가 안전한지는 아직 모르니까요."), P("좋습니다. 무너진 부분과 돌아갈 길을 표시해두겠습니다.", "main09_paul_010") };
+                default: return new[] { P("각자 본 것만으로는 놓치는 게 있네요. 현상도 여기서 끝난 것 같지 않고요.", "main09_paul_011"), P("같은 방향을 조사하고 있으니, 계속 정보를 나누는 편이 합리적이겠습니다. 저도 함께 가도 될까요?", "main09_paul_012"), U("함께 가죠. 확인한 것을 서로 알려주면 좋겠습니다."), T("안전한 경로부터 같이 확인하겠습니다.", "main09_taeon_007"), M("쉬어야 할 때도 말씀해주세요. 그건 모두에게 하는 말이에요.", "main09_miel_006"), P("그럼 쉬는 시간도 계획에 넣겠습니다. 빈칸을 남겨둔 보람이 있네요.", "main09_paul_013"), P("우선 여기서 정리하고, 더 깊은 곳은 준비해서 확인하죠.", "main09_paul_014") };
             }
         }
     }

@@ -231,42 +231,42 @@ namespace ProjectLimitless.World
     /// <summary>확인한 흔적과 추측을 나눠 말하고, 세 동료의 기존 말투를 유지합니다.</summary>
     public static class MainQuest11Dialogue
     {
-        private static DialogueLine P(string text) => new DialogueLine(CompanionRosterService.PaulId, "폴", text);
-        private static DialogueLine T(string text) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text);
-        private static DialogueLine M(string text) => new DialogueLine(CompanionRosterService.MielId, "미엘", text);
+        private static DialogueLine P(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.PaulId, "폴", text, dialogueId);
+        private static DialogueLine T(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text, dialogueId);
+        private static DialogueLine M(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.MielId, "미엘", text, dialogueId);
         private static DialogueLine U(string text) => new DialogueLine("", GameSessionData.PlayerName, text);
 
         public static DialogueLine[] AfterBoss => new[]
-        { P("멈췄는데도 주변의 빛은 그대로군요."), T("이 존재가 빛의 근원은 아니었던 것 같습니다."),
-          M("뒤쪽을 보세요. 길이 열린 것 같아요.") };
+        { P("멈췄는데도 주변의 빛은 그대로군요.", "main11_paul_001"), T("이 존재가 빛의 근원은 아니었던 것 같습니다.", "main11_taeon_001"),
+          M("뒤쪽을 보세요. 길이 열린 것 같아요.", "main11_miel_001") };
 
         public static DialogueLine[] Lines(int step)
         {
             switch (step)
             {
-                case 1: return new[] { T("석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다."),
-                    M("오래된 흔적이지만 누군가 머물렀던 자리였겠네요."), U("서쪽 공간을 기록하겠습니다.") };
-                case 2: return new[] { T("무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다."),
-                    P("비슷한 선이 반복되네요. 뜻은 아직 알 수 없습니다."), U("북쪽 장치도 확인해보죠.") };
-                case 3: return new[] { T("양쪽 구조를 확인했습니다. 이제 이 장치를 움직일 수 있겠습니다."),
-                    P("아래로 이어지는 길입니다. 단단한 가장자리를 따라 내려가죠.") };
-                case 5: return new[] { M("쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요."),
-                    T("돌을 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠."),
-                    P("바닥은 지나갈 수 있습니다. 거친 부분은 표시해두겠습니다.") };
-                case 6: return new[] { P("닫힌 묘실인데 안치 흔적은 거의 없습니다. 다른 용도였을 수도 있겠네요."),
-                    M("폴, 이쪽 바닥은 괜찮아요?"), P("네. 조금 거칠지만 지나갈 수 있습니다.") };
-                case 7: return new[] { T("석재의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다."),
-                    P("용도를 정하기에는 단서가 모자랍니다. 본 것만 기록하죠.") };
-                case 8: return new[] { P("푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. 더 안쪽에서 들어오는 듯하군요."),
-                    T("방향은 확인했습니다. 근원은 아직 모릅니다."), M("무리하지 말고 앞쪽을 살펴봐요.") };
-                case 10: return new[] { P("빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. 아래에서 올라와 틈을 지나갑니다."),
-                    T("그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?"),
-                    M("아래쪽은 많이 무너져 있어요."),
-                    T("지금 억지로 들어가는 건 위험합니다."),
-                    P("동의합니다. 무너진 지하에서 길을 개척하는 취미는 없거든요.") };
-                case 11: return new[] { P("석판은 대부분 부서졌습니다. 글자를 읽기는 어렵겠네요."),
-                    M("밖에서 알아볼 수 있는 사람이 있을지도 몰라요."),
-                    T("지하묘지에서 본 것과 같은 문양입니다. 가져가는 편이 좋겠습니다.") };
+                case 1: return new[] { T("석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다.", "main11_taeon_002"),
+                    M("오래된 흔적이지만 누군가 머물렀던 자리였겠네요.", "main11_miel_002"), U("서쪽 공간을 기록하겠습니다.") };
+                case 2: return new[] { T("무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다.", "main11_taeon_003"),
+                    P("비슷한 선이 반복되네요. 뜻은 아직 알 수 없습니다.", "main11_paul_002"), U("북쪽 장치도 확인해보죠.") };
+                case 3: return new[] { T("양쪽 구조를 확인했습니다. 이제 이 장치를 움직일 수 있겠습니다.", "main11_taeon_004"),
+                    P("아래로 이어지는 길입니다. 단단한 가장자리를 따라 내려가죠.", "main11_paul_003") };
+                case 5: return new[] { M("쓰이지 않은 안치 공간이 많아요. 위층과는 다르네요.", "main11_miel_003"),
+                    T("돌을 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠.", "main11_taeon_005"),
+                    P("바닥은 지나갈 수 있습니다. 거친 부분은 표시해두겠습니다.", "main11_paul_004") };
+                case 6: return new[] { P("닫힌 묘실인데 안치 흔적은 거의 없습니다. 다른 용도였을 수도 있겠네요.", "main11_paul_005"),
+                    M("폴, 이쪽 바닥은 괜찮아요?", "main11_miel_004"), P("네. 조금 거칠지만 지나갈 수 있습니다.", "main11_paul_006") };
+                case 7: return new[] { T("석재의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다.", "main11_taeon_006"),
+                    P("용도를 정하기에는 단서가 모자랍니다. 본 것만 기록하죠.", "main11_paul_007") };
+                case 8: return new[] { P("푸른 흐름은 이 방에서 시작되는 것 같지 않습니다. 더 안쪽에서 들어오는 듯하군요.", "main11_paul_008"),
+                    T("방향은 확인했습니다. 근원은 아직 모릅니다.", "main11_taeon_007"), M("무리하지 말고 앞쪽을 살펴봐요.", "main11_miel_005") };
+                case 10: return new[] { P("빛이 이 구조물에서 만들어지는 건 아닌 것 같습니다. 아래에서 올라와 틈을 지나갑니다.", "main11_paul_009"),
+                    T("그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?", "main11_taeon_008"),
+                    M("아래쪽은 많이 무너져 있어요.", "main11_miel_006"),
+                    T("지금 억지로 들어가는 건 위험합니다.", "main11_taeon_009"),
+                    P("동의합니다. 무너진 지하에서 길을 개척하는 취미는 없거든요.", "main11_paul_010") };
+                case 11: return new[] { P("석판은 대부분 부서졌습니다. 글자를 읽기는 어렵겠네요.", "main11_paul_011"),
+                    M("밖에서 알아볼 수 있는 사람이 있을지도 몰라요.", "main11_miel_007"),
+                    T("지하묘지에서 본 것과 같은 문양입니다. 가져가는 편이 좋겠습니다.", "main11_taeon_010") };
                 default: return new[] { U("주변을 더 살펴보겠습니다.") };
             }
         }

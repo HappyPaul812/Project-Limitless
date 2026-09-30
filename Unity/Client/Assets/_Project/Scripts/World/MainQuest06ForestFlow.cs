@@ -125,9 +125,9 @@ namespace ProjectLimitless.World
             if (nearbyPlayer == null || !IsCurrentObjective() || WorldModalState.IsOpen) return;
             DialogueLine[] lines =
             {
-                new DialogueLine(CompanionRosterService.TaeonId, "태온", "초원에서 봤던 움직임과 비슷합니다."),
-                new DialogueLine(CompanionRosterService.TaeonId, "태온", "하지만 여기서는 더 넓게 퍼져 있어요."),
-                new DialogueLine(CompanionRosterService.MielId, "미엘", "그럼 초원의 문제만은 아니었던 거네요."),
+                new DialogueLine(CompanionRosterService.TaeonId, "태온", "초원에서 봤던 움직임과 비슷합니다.", "main06_taeon_001"),
+                new DialogueLine(CompanionRosterService.TaeonId, "태온", "하지만 여기서는 더 넓게 퍼져 있어요.", "main06_taeon_002"),
+                new DialogueLine(CompanionRosterService.MielId, "미엘", "그럼 초원의 문제만은 아니었던 거네요.", "main06_miel_001"),
                 new DialogueLine(string.Empty, PlayerName, "숲 안쪽을 더 확인해봐야겠습니다.")
             };
             DialoguePresenter.Instance?.ShowSequence(lines, CompleteInvestigation);

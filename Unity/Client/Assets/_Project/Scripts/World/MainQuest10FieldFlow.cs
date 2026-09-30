@@ -192,35 +192,35 @@ namespace ProjectLimitless.World
     /// <summary>네 사람이 확인한 사실만 말하며 원인·제작자·푸른 빛의 정체는 답으로 제시하지 않습니다.</summary>
     public static class MainQuest10Dialogue
     {
-        private static DialogueLine P(string text) => new DialogueLine(CompanionRosterService.PaulId, "폴", text);
-        private static DialogueLine T(string text) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text);
-        private static DialogueLine M(string text) => new DialogueLine(CompanionRosterService.MielId, "미엘", text);
+        private static DialogueLine P(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.PaulId, "폴", text, dialogueId);
+        private static DialogueLine T(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.TaeonId, "태온", text, dialogueId);
+        private static DialogueLine M(string text, string dialogueId = null) => new DialogueLine(CompanionRosterService.MielId, "미엘", text, dialogueId);
         private static DialogueLine U(string text) => new DialogueLine("", GameSessionData.PlayerName, text);
 
         public static DialogueLine[] Lines(int step)
         {
             switch (step)
             {
-                case 0: return new[] { T("폴이 가리킨 석재가 여기입니다. 주변 흙과 모서리의 방향이 다릅니다."),
-                    P("네. 전에 본 자리를 다시 확인해보죠. 기억보다 돌이 도망가지는 않았을 겁니다."), U("이어지는 부분을 살펴보겠습니다.") };
-                case 1: return new[] { T("모서리 간격이 반복됩니다. 자연 암반과는 형태가 다릅니다."),
-                    P("표면에 손댄 흔적이 있습니다. 오래된 구조의 일부일 가능성이 높지만, 누가 언제 만들었는지는 모르겠습니다."),
-                    M("흙 아래쪽으로도 이어지는 것 같아요."), U("보이는 범위만 기록하고 안쪽으로 가보죠.") };
-                case 2: return new[] { M("이쪽으로 올수록 벌레와 새 소리가 거의 들리지 않아요."),
-                    T("몬스터의 흔적도 안쪽을 피해 돌아갑니다. 먼저 안전한 길을 확인하죠."),
-                    P("귀를 쉬게 할 계획은 없었는데, 조용해지는 방향이 분명하군요.") };
+                case 0: return new[] { T("폴이 가리킨 석재가 여기입니다. 주변 흙과 모서리의 방향이 다릅니다.", "main10_taeon_001"),
+                    P("네. 전에 본 자리를 다시 확인해보죠. 기억보다 돌이 도망가지는 않았을 겁니다.", "main10_paul_001"), U("이어지는 부분을 살펴보겠습니다.") };
+                case 1: return new[] { T("모서리 간격이 반복됩니다. 자연 암반과는 형태가 다릅니다.", "main10_taeon_002"),
+                    P("표면에 손댄 흔적이 있습니다. 오래된 구조의 일부일 가능성이 높지만, 누가 언제 만들었는지는 모르겠습니다.", "main10_paul_002"),
+                    M("흙 아래쪽으로도 이어지는 것 같아요.", "main10_miel_001"), U("보이는 범위만 기록하고 안쪽으로 가보죠.") };
+                case 2: return new[] { M("이쪽으로 올수록 벌레와 새 소리가 거의 들리지 않아요.", "main10_miel_002"),
+                    T("몬스터의 흔적도 안쪽을 피해 돌아갑니다. 먼저 안전한 길을 확인하죠.", "main10_taeon_003"),
+                    P("귀를 쉬게 할 계획은 없었는데, 조용해지는 방향이 분명하군요.", "main10_paul_003") };
                 case 3: return new[] { U("무너진 돌 아래로 경사가 이어집니다."),
-                    T("발 디딜 곳부터 살펴야 합니다. 흙이 밀린 자리는 피하세요."),
-                    P("단단한 가장자리를 표시해두겠습니다. 안쪽 구조는 아직 보이지 않습니다.") };
-                case 4: return new[] { M("덩굴 아래에 빈 공간이 있어요."),
-                    P("오래된 석재와 안치 공간처럼 보이는 자리가 드러났습니다. 정확한 용도는 더 확인해야 합니다."),
+                    T("발 디딜 곳부터 살펴야 합니다. 흙이 밀린 자리는 피하세요.", "main10_taeon_004"),
+                    P("단단한 가장자리를 표시해두겠습니다. 안쪽 구조는 아직 보이지 않습니다.", "main10_paul_004") };
+                case 4: return new[] { M("덩굴 아래에 빈 공간이 있어요.", "main10_miel_003"),
+                    P("오래된 석재와 안치 공간처럼 보이는 자리가 드러났습니다. 정확한 용도는 더 확인해야 합니다.", "main10_paul_005"),
                     U("침묵의 지하묘지로 이어지는 입구 같습니다. 지금 보이는 부분을 조사하죠.") };
-                case 5: return new[] { T("몬스터들이 피하던 방향과 일치합니다."),
-                    P("마력의 흐름도 아래쪽으로 향합니다. 관련은 있어 보이지만 이것이 원인인지는 아직 모릅니다."),
-                    M("주변 생물 소리도 거의 들리지 않아요."), U("서두르지 말고 내려갈 경로를 확인하죠.") };
-                default: return new[] { P("돌아갈 길과 단단한 가장자리는 표시했습니다. 아래쪽은 준비해서 확인하는 편이 좋겠습니다."),
-                    T("무너진 돌을 밟지 않도록 입구 위치를 기억해두겠습니다."),
-                    M("모두 상태를 확인하고 움직여요."), U("입구를 확인했습니다. 준비를 마친 뒤 안쪽을 조사하겠습니다.") };
+                case 5: return new[] { T("몬스터들이 피하던 방향과 일치합니다.", "main10_taeon_005"),
+                    P("마력의 흐름도 아래쪽으로 향합니다. 관련은 있어 보이지만 이것이 원인인지는 아직 모릅니다.", "main10_paul_006"),
+                    M("주변 생물 소리도 거의 들리지 않아요.", "main10_miel_004"), U("서두르지 말고 내려갈 경로를 확인하죠.") };
+                default: return new[] { P("돌아갈 길과 단단한 가장자리는 표시했습니다. 아래쪽은 준비해서 확인하는 편이 좋겠습니다.", "main10_paul_007"),
+                    T("무너진 돌을 밟지 않도록 입구 위치를 기억해두겠습니다.", "main10_taeon_006"),
+                    M("모두 상태를 확인하고 움직여요.", "main10_miel_005"), U("입구를 확인했습니다. 준비를 마친 뒤 안쪽을 조사하겠습니다.") };
             }
         }
     }
