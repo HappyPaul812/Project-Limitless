@@ -42,7 +42,7 @@ namespace ProjectLimitless.UI
 
         private void Update()
         {
-            if (Keyboard.current == null || controls.Count == 0) return;
+            if (Keyboard.current == null || controls.Count == 0 || AudioSettingsPresenter.BlocksSceneInput) return;
             if (Keyboard.current.tabKey.wasPressedThisFrame) MoveFocus(Keyboard.current.shiftKey.isPressed ? -1 : 1);
             else if (Keyboard.current.spaceKey.wasPressedThisFrame) EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         }

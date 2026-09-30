@@ -68,7 +68,7 @@ namespace ProjectLimitless.UI
 
         private void Update()
         {
-            if (Keyboard.current == null || controls.Count == 0 || !Keyboard.current.tabKey.wasPressedThisFrame) return;
+            if (Keyboard.current == null || controls.Count == 0 || AudioSettingsPresenter.BlocksSceneInput || !Keyboard.current.tabKey.wasPressedThisFrame) return;
             int direction = Keyboard.current.shiftKey.isPressed ? -1 : 1;
             int index = controls.FindIndex(item => item.gameObject == EventSystem.current.currentSelectedGameObject);
             EventSystem.current.SetSelectedGameObject(controls[(index + direction + controls.Count) % controls.Count].gameObject);

@@ -55,7 +55,7 @@ namespace ProjectLimitless.UI
         private void Update()
         {
             Keyboard keyboard = Keyboard.current;
-            if (keyboard == null || transitioning) return;
+            if (keyboard == null || transitioning || AudioSettingsPresenter.BlocksSceneInput) return;
             if (keyboard.escapeKey.wasPressedThisFrame) { Finish(); return; }
             if (keyboard.pKey.wasPressedThisFrame) TogglePause();
             if (!paused && (keyboard.enterKey.wasPressedThisFrame || keyboard.spaceKey.wasPressedThisFrame)) RequestAdvance();

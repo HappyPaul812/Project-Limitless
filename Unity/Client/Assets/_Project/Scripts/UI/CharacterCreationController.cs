@@ -72,7 +72,7 @@ namespace ProjectLimitless.UI
         /// <summary>Tab, Space, 이름 입력 중 Enter를 처리하여 마우스 없이도 화면을 완료할 수 있게 합니다.</summary>
         private void Update()
         {
-            if (Keyboard.current == null)
+            if (Keyboard.current == null || AudioSettingsPresenter.BlocksSceneInput)
             {
                 return;
             }

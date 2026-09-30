@@ -61,7 +61,7 @@ namespace ProjectLimitless.UI
 
         private void Update()
         {
-            if (Keyboard.current == null || tabControls.Count == 0) return;
+            if (Keyboard.current == null || tabControls.Count == 0 || AudioSettingsPresenter.BlocksSceneInput) return;
             if (Keyboard.current.tabKey.wasPressedThisFrame) { MoveTab(Keyboard.current.shiftKey.isPressed ? -1 : 1); return; }
             if (Keyboard.current.spaceKey.wasPressedThisFrame) EventSystem.current.currentSelectedGameObject?.GetComponent<Button>()?.onClick.Invoke();
         }
