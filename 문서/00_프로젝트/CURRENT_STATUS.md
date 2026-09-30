@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Missing Story Voice Supplement Pack (2026-09-30)
+
+- [보충팩 QA](Missing_Story_Voice_Supplement_QA.md)의 정식 CSV58행을 LOCAL 기존 무음 대사와 대조하고 사용자 허용에 따라 안정 ID를 지정했다. Main03 12/Main04 18/Main05 6/Main08 19/Main12 3개를 원본 WAV 그대로 적용했다. 입력61 WAV 중 Manifest 미참조 합본3개는 제외, Main01/02 신규 음성은 미제공이다. 기존 Registry의 태온 Gacrux34/미엘 Sulafat22/폴 Achird2개, gemini-3.8-flash-tts·Voice Design 사용 안 함을 기록했다.
+- Existing Voice Wins 원칙으로 기존143+신규58=Story Catalog201개. 기존 ID 삭제/Clip 교체/GUID 변경/Character 변경0, Intro18개·Main06/07/09/10/11 기존102개·Main13~15 기존41개·BGM 보존. 기존 관련353파일 및 사용자 수정73파일 해시 동일. 모든 기존 대사 화자/본문/순서 보존, 불일치/누락/중복/범위 밖 Row0. Main01~12 정적228쪽 중 Voice160쪽(70.18%), Voice 없음68쪽이다.
+- Background 실제 Play Mode에서 신규58개 참조/디코딩/비무음/58회 연속 Next/종료/fallback, 실제 Main03/04/05/08 대사 함수와 Main12 조사 Line/VoiceId 샘플의 Voice 출력 확인. Main01은 기존 무음5쪽 진행을 확인했다. Intro Storyteller·Main07/09/11/13 회귀, Voice100/40/0·Mute/Unmute 출력, 신규 음성 중 Scene 전환 후 Source0 통과. Main12 전체 Quest 상호작용/전체 playthrough·물리 입력·시각 검증은 미완료다.
+- 컴파일 오류0·최종 Console Error0/Warning0·이번 변경 diff 검사 통과. 격리 Save/Settings와 백그라운드 실행/진입 옵션 복원, Bootstrap clean Edit Mode, Foreground 조작 없음. 정책 계획 commit `5814d34`, 마지막 관련 기능 commit `8756399`. 실제 WAV/Meta·Catalog·직접 연결 C#5개·문서만 커밋, 제작 Output 전체 Stage 및 GitHub push 없음.
+- 사용자 확인/다음 권장 작업: 실제 청취로 발음·감정·호흡·캐릭터 취향·음량 균형을 검수한다. Main01/02 일반 NPC/Player를 포함한 남은 무음 대사는 별도 제작 범위를 확정한 뒤 보충한다. Main16은 기존 문서 설계 상태이며 이번에 구현하거나 Voice를 만들지 않았다. 세부 Mapping/GUID/해시/Runtime 출력은 [감사 JSON](Missing_Story_Voice_Supplement_Audit.json)을 따른다.
+
 ## Path 반응형 Story와 Main16 설계 (2026-09-30)
 
 - [Path 반응형 Story 정본](../03_스토리/Path_반응형_Story_연출_규칙.md)에 Player Agency First·공통 핵심 정보/Story State·Hearing Player 우선 관찰/세린 교차 확인·다른4개 Path 방향을 확정했다. [Story Scene 템플릿](../03_스토리/Story_Scene_설계_템플릿.md)에 Path-Reactive Check를 추가하고 Path/세린/Story/TTS 문서는 정본을 참조한다.

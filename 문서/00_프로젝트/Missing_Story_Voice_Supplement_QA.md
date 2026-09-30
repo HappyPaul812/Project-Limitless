@@ -14,11 +14,11 @@
 
 이번 CASTING은 태온 companion_taeon/Gacrux34개·미엘 companion_miel/Sulafat22개·폴 companion_paul/Achird2개다. 모델 `gemini-3.8-flash-tts`, voice_design=false, purpose=missing_story_voice_supplement다. 기존 Registry와 동일 Voice ID를 사용하고 기존 배치의 모델 정보를 소급 변경하지 않는다. Narrator/세린/레온 변경 없음. Tone/속도/기본 음색은 기존 TBD를 유지한다. 개발 적용과 실제 청취 채택을 구분한다.
 
-## Coverage 계획
+## 적용 후 Coverage
 
 기존 QA와 동일한 LOCAL 정적 대화 페이지 정의228쪽을 기준으로 계산한다. 일반 NPC/Player/Path 변형도 분모에 포함한다. 이번58개는 서로 다른 페이지이므로 신규 Mapping과 신규 음성 페이지 수가 같다. Main12는 공유 Chapter2 코드 전체가 아니라 Main12 조사3쪽/잡화상인1쪽만 센다.
 
-| Quest | 총 Dialogue | 기존 Voice | 신규 계획 | 최종 계획 | Voice 없음 계획 | Coverage 계획 |
+| Quest | 총 Dialogue | 기존 Voice | 신규 보충 | 최종 Voice | Voice 없음 | Coverage |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Main01 | 10 | 0 | 0 | 0 | 10 | 0% |
 | Main02 | 7 | 0 | 0 | 0 | 7 | 0% |
@@ -47,3 +47,17 @@ Unity 실제 Catalog143개 Missing Clip0, GUID `9ccf2395ba242ea409bc5d845ae76679
 포커스 전환 없는 Unity Import/Catalog/컴파일/Console 및 격리 Save/Settings를 사용하는 Background Play Mode를 검증한다. Main03 또는04·Main05·Main08·Main12 신규 샘플, 기존 Intro/Main07/Main09/Main11/Main13~15 한 구간의 회귀, Next/연속 Next·Voice Volume·Mute·종료/Scene 정리를 확인한다. Main01 신규 샘플은 입력 미제공으로 불가능하며 기존 텍스트 fallback을 확인한다.
 
 발음·감정·호흡·캐릭터 취향·실제 음량 균형·전체 청취는 사용자 QA 대상으로 남긴다. 기술적 참조 및 출력 검증으로 청취 완료를 선언하지 않는다.
+
+## 실제 적용 및 최종 검증
+
+- 정책 문서화 commit: 5814d34. 58개 ID를 허용 범위에 따라 새로 지정하고 원본 WAV58개만 Import했다. 기존143개 뒤에58개를 추가한 Story Catalog201개다. Existing Voice 충돌/Clip 교체/ID 삭제/GUID 변경/Character 변경 모두0. Text mismatch/Speaker mismatch/Missing Audio/Missing Dialogue/Duplicate ID/범위 밖 Row도 모두0.
+- 원본 PCM24kHz/mono/16bit를 유지하고 Unity PCM/원본 SampleRate/forceToMono OFF/Normalize OFF로 Import했다. WAV58개 원본 바이트 동일·GUID58개 고유·Clip 참조/디코딩/비무음 확인. 기존 음성/Meta/Resources Audio/Audio 코드353파일 해시 동일. 별도 기존 사용자 수정73파일 해시 동일. 기존 대사의 화자/본문/페이지 순서도 보존했다.
+- 실제 Background Play Mode에서58 ID→화자→Clip을 확인하고58회 연속 Next·끝 콜백·Hide 후 Clip/재생 정리·무음 fallback을 통과했다. Main03/04 FirstConversation, Main05 GuardReport, Main08 Lines, Main12 조사 Line/VoiceId를 통해 대표 샘플을 생성해 Voice Mixer 실제 출력까지 확인했다. Main12는 조사 본문/ID 생성 및 Presenter 재생을 확인했으며 전체 Quest 상호작용/플레이 진행은 미검증이다.
+- Main01 신규 Sample은 음성 미제공으로 미검증 대상이다. 기존 주민 대표5쪽의 무음 진행/완료/정리 fallback은 확인했다. Main02도 신규 입력이 없으며 음성을 임의 생성하지 않았다.
+- 기존 Main07 PaulFirst/Main09 Lines(0)/Main11 Lines(1)/Main13 세린 NPC의 샘플 연결/출력 유지. Intro Storyteller opening_006→007 실제 Next·음성 출력·Replay 종료→Bootstrap·잔류 Voice Source0 회귀 통과. 신규 Main12 태온 음성 재생 중 Scene 전환 후 Source0도 확인했다.
+- 같은 Main03 샘플의 출력 RMS peak: Voice100=0.180369, Voice40=0.072519, Voice0=0, 전체 Mute=0, Unmute=0.180369. 모두 Voice Group·Source gain1·채널값 유지. 짧은 샘플은 측정 종료 전에 자연 재생 완료할 수 있으며 출력 수집과 시작 시 IsPlaying을 함께 확인했다.
+- 게임 컴파일 오류0·최종 Console Error0/Warning0. 재컴파일 중 MCP WebSocket 초기화 Warning1은 후속 조회에서 사라졌다. 임시 QA 코드의 API namespace/delegate 타입 및 Main11의 무음 step0 선택을 고쳐 다시 실행했다. 프로젝트 동작 수정은 필요하지 않았다.
+- Foreground/Game View 활성화/OS 입력 없음. 격리 Save/Settings 종료·원래 백그라운드 설정/PlayFocused 진입 옵션 복원·Bootstrap clean Edit Mode. 실제 청취의 발음/감정/호흡/캐릭터 취향/음량 균형과 전체 Quest playthrough·물리 입력·시각 QA는 미완료다.
+- 상세 신규58개 ID/화자/본문/소스/Asset/GUID/SHA-256 및 Runtime 출력 근거: [감사 JSON](Missing_Story_Voice_Supplement_Audit.json). 제작 Output61 WAV는 Stage하지 않고 실제 사용하는58 WAV/Meta·직접 연결에 필요한 C#5개·Catalog·문서만 커밋한다.
+
+- 기능 commit: 8756399. 최종 관련 변경131파일(신규 WAV58·WAV Meta58·폴더 Meta5·직접 연결 C#5·Catalog1·문서4). 이번 변경 diff 검사 통과, 기존 사용자 변경93항목은 보존하며 GitHub push 없음.
