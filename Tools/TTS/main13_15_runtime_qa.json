@@ -1,0 +1,11 @@
+{
+  "voice": "41 IDs/Character clips, same-frame Next, completion cleanup, Main09 real factory/Next PASS",
+  "actual": "Main13/14 actual NPC branches, Main15 investigation factory 10 pages, scalar Main13/14 5 sites PASS",
+  "audio": "0:rms=0.2023554,Voice=True,MusicPlaying=True\n1:rms=0.3089839,Voice=True,MusicPlaying=True\n2:rms=0.1907898,Voice=True,MusicPlaying=True\n3:rms=0.178165,Voice=True,MusicPlaying=True\n4:rms=0.2513875,Voice=True,MusicPlaying=True\n5:rms=0.3056381,Voice=False,MusicPlaying=True\n6:rms=0.2023554,Voice=True,MusicPlaying=True\n7:rms=0.05023467,Voice=False,MusicPlaying=True\n8:rms=0,Voice=False,MusicPlaying=True\n9:rms=0.130464,Voice=True,MusicPlaying=True",
+  "scenes": "Bootstrap:Before_the_First_Light,services=1,listeners=1,rms=0.183532,PASS=True\nWorld_StarterVillage:Morning_at_the_Gate,services=1,listeners=1,rms=0.09271791,PASS=True\nField_01:Morning_Over_the_Ridge,services=1,listeners=1,rms=0.1005213,PASS=True\nWorld_StarterVillage:Morning_at_the_Gate,services=1,listeners=1,rms=0.09271791,PASS=True\nArbel:Morning_at_the_Gate,services=1,listeners=1,rms=0.0743923,PASS=True\nField_04_WesternBorder:Morning_Over_the_Ridge,services=1,listeners=1,rms=0.1005213,PASS=True\nArbel:Morning_at_the_Gate,services=1,listeners=1,rms=0.09271791,PASS=True\nField_05_WesternOutskirts:,services=1,listeners=1,rms=0,PASS=True\nField_06_ScorchedTrail:,services=1,listeners=1,rms=0,PASS=True\nDungeon_01:,services=1,listeners=1,rms=0,PASS=True\nOpeningIntro:,services=1,listeners=1,rms=0,PASS=True\nIntro Next=opening_002; no BGM=True\nBootstrap:Before_the_First_Light,services=1,listeners=1,rms=0.087891,PASS=True",
+  "safe": "actual Field03 radius enter Town track PASS; actual radius exit stops music PASS",
+  "sameClipNoRestart": true,
+  "existingStoryReferences": 102,
+  "introReferences": 18,
+  "preservedFileHashes": 370
+}

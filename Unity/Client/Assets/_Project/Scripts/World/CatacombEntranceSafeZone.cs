@@ -65,6 +65,8 @@ namespace ProjectLimitless.World
             PlayerController player = FindAnyObjectByType<PlayerController>();
             bool inside = player != null && Vector2.SqrMagnitude((Vector2)player.transform.position - Center)
                 <= ActivationRadius * ActivationRadius;
+            if (inside != playerInside)
+                ProjectLimitless.Audio.BgmPlaybackService.Instance?.SetSafeZoneMusic(inside);
             if (!inside) { playerInside = false; return; }
             if (playerInside) return;
             playerInside = true;
