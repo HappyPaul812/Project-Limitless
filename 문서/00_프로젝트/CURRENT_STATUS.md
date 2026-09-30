@@ -1,6 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
-## Main15 「타오르는 흔적」 구현 (2026-09-29)
+## Main15 Runtime QA와 TTS 정책 (2026-09-30)
+
+- TTS 정본 [음성 제작 정책](TTS_음성_제작_정책.md)을 추가했다. 2026-09-29 개발 방침으로 Gemini 3.8 Flash/Flash-Lite TTS, Free Tier 우선, Voice Design/Scene Style 분리·Voice Registry TBD, 사전 생성 Audio Asset·Client Key 비포함, 다음 Intro 제작을 기록했다. 기존 MeloTTS 문서는 제작 이력으로 연결했다. API/음성/Cloud/Key/Audio Asset 작업 없음. 문서 commit `d9bfc68`.
+- 격리 Play Mode에서 Main15 시작→12개 순차 목표→정식 세린 합류를 완료했다. 실제 왕복 Collider·Arbel Safe Zone 유지·적 AI에 의한 전멸 중앙 복귀·HP/MP 회복·회복약 소비 유지, 4조우 실제 전투 명령 승리·4종 분양 목록·그을음들개100 구매, 세린 사수/청각/Fox·기존 미엘/폴 편성 보존·Party Manager 동료2명 제한을 확인했다. 목표 근처 배치는 QA가 했으며 전체 수동 이동 입력 검증은 아니다. 세부 증거·한계는 [Main15 QA](../03_스토리/Main15_Runtime_QA_2026_09_30.md)를 따른다.
+- **실제 버그 2건 수정/재검증**: Arbel 런타임 Bounds 초기화 순서로 저장 위치가 Spawn에 덮이는 버그를 수정해 완료 전 `(2,-4)`/후 `(1,-4)` 및 Field06 `(5,-2)` Continue를 확인했다(`cfadcc8`). Field06 북쪽의 복제 원본 출구 틈으로 맵 밖 이동되는 버그를 Collider1개로 막아 실제 물리 이동이 y14.5 대신 y6.7에서 차단되는 것을 확인했다(`1e5cb54`). 동쪽 왕복·중앙 Spawn 유지. 마지막 관련 기능 commit `1e5cb54`.
+- **검증/남은 항목**: Unity6000.5.7f1 컴파일 오류0, 기능 검증 중 게임 Error/Warning0. 3비율 viewport Bounds 계산 통과. 이번 사용자 승인으로 1016×569 Game View 배치·Navigation·공식 외형·최종 KO 유지 일부 시각 QA를 수행했다. 초기 직사각형 환경 Patch, 작은 조사 TextMesh 가독성, 세린 Battle Portrait fallback/미엘 후열 겹침은 후속 검토이며 미술·기획을 임의 변경하지 않았다. 전체 이동 경로·NPC 겹침·KO 전환·모든 비율 UI·Monster 정밀 QA는 미검증이다. MCP 재컴파일 WebSocket Warning1과 캡처 도우미 PlayerLoop Error5를 게임 코드와 구분해 기록했고 캡처를 중단했다. 기록 후 Console 정리·Edit Mode 재조회, 사용자 슬롯 SHA-256 동일·QA JSON 삭제·캡처만 보존·Bootstrap clean 종료. 관련 diff 검사 통과, GitHub push 없음.
+- 다음 권장 작업: Field06 미술/표식·세린 전투 외형/배치의 별도 검토와 실제 이동 경로/KO 전환 시각 검증. TTS 제작은 정식 정책대로 Intro Free Tier Pipeline을 별도 작업으로 시작한다. 기존 BeastCompanion/안전지대 문서의 과거 미구현 설명은 별도 문서 감사 대상으로 남긴다.
+
+## Main15 「타오르는 흔적」 구현 당시 기록 (2026-09-29)
 
 - `main_15_burning_traces` 12개 순차 목표와 레온 의뢰·세린 조사/자발적 합류 대화를 구현했다. Main14 완료 뒤 레온 대화로 시작하며, 서쪽 첫 그을음들개 승리만 지정 목표를 진행한다. Quest Navigation은 레온, Arbel 북서쪽 출구, 조사 지점, 첫 조우, 귀환 지점과 세린에 연결했다. 완료 시 기존 명단에 세린을 영구 해금하되 선택된 동료 2명과 진형은 바꾸지 않는다. 진행 중 세린은 Story Temporary이며 기존 사수·청각의 길·Fox를 사용한다. 영구 해금과 Quest·Beast·편성·위치·안전지대는 기존 Save 구조를 사용한다.
 - `Field_06_ScorchedTrail` Scene과 Arbel 북서 출구↔Field06 동쪽 출구의 별도 왕복 Spawn을 등록했다. Spawn과 Exit은 떨어져 있으며 Arbel Safe Zone을 유지하고 Field06에는 새 Respawn 거점을 두지 않는다. 기존 Field Scene을 바탕으로 서쪽의 풀 감소·고사목 색·황토·균열·그을음 표식을 단계적으로 더한다. 일반 Spawn M15-01 그을음들개, M15-02 그을음들개+열풍매, M15-03 균열도마뱀, M15-04 화열딱정벌레+열풍매를 기존 몬스터 정의·Battle·Victory→Arbel 펫 분양 경로에 연결했다. 불씨망령·Boss·Dungeon·과열·Fast Travel·Main16 Quest는 구현하지 않았다. Main16의 방향만 설계 문서에 남겼다.
