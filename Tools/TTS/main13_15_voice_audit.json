@@ -1,0 +1,1211 @@
+{
+  "rows": [
+    {
+      "clip_id": "main13_paul_001",
+      "quest_no": "13",
+      "scene_key": "field04_main13_dry_soil",
+      "speaker": "폴",
+      "text": "서쪽으로 갈수록 흙이 더 말라 있습니다. 계절 탓인지는 아직 판단할 수 없겠어요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main13_paul_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "scalar": true
+    },
+    {
+      "clip_id": "main13_paul_002",
+      "quest_no": "13",
+      "scene_key": "field04_main13_shallow_stream",
+      "speaker": "폴",
+      "text": "물길이 눈에 띄게 줄었습니다. 주변의 살아 있는 나무와 비교해 기록해 두죠.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main13_paul_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "scalar": true
+    },
+    {
+      "clip_id": "main13_miel_001",
+      "quest_no": "13",
+      "scene_key": "field04_serin_meet_01",
+      "speaker": "미엘",
+      "text": "괜찮으세요?",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "miel/main13_miel_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_miel",
+      "status": "MAPPED",
+      "call": {
+        "start": 13803,
+        "end": 13871,
+        "kind": "new DialogueLine",
+        "speaker": "미엘",
+        "text": "괜찮으세요?",
+        "id": "main13_miel_001"
+      }
+    },
+    {
+      "clip_id": "main13_serin_001",
+      "quest_no": "13",
+      "scene_key": "field04_serin_meet_02",
+      "speaker": "세린",
+      "text": "잠시만요. 바람이 강하면 말소리가 흐려져서요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main13_serin_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 13890,
+        "end": 13969,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "잠시만요. 바람이 강하면 말소리가 흐려져서요.",
+        "id": "main13_serin_001"
+      }
+    },
+    {
+      "clip_id": "main13_serin_002",
+      "quest_no": "13",
+      "scene_key": "field04_serin_meet_03",
+      "speaker": "세린",
+      "text": "이 장치가 땅의 진동을 제가 알아볼 수 있는 신호로 바꿔 줘요. 중요한지는 제가 판단하고요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main13_serin_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 13988,
+        "end": 14093,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "이 장치가 땅의 진동을 제가 알아볼 수 있는 신호로 바꿔 줘요. 중요한지는 제가 판단하고요.",
+        "id": "main13_serin_002"
+      }
+    },
+    {
+      "clip_id": "main13_serin_003",
+      "quest_no": "13",
+      "scene_key": "field04_serin_meet_04",
+      "speaker": "세린",
+      "text": "잠깐만요. 앞에 둘, 오른쪽 뒤에 하나 더 있어요. 발밑으로 울립니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main13_serin_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 14112,
+        "end": 14205,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "잠깐만요. 앞에 둘, 오른쪽 뒤에 하나 더 있어요. 발밑으로 울립니다.",
+        "id": "main13_serin_003"
+      }
+    },
+    {
+      "clip_id": "main13_serin_004",
+      "quest_no": "13",
+      "scene_key": "field04_serin_to_arbel",
+      "speaker": "세린",
+      "text": "저도 아르벨로 갑니다. 그곳까지 함께 움직이죠.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main13_serin_004.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 13630,
+        "end": 13710,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "저도 아르벨로 갑니다. 그곳까지 함께 움직이죠.",
+        "id": "main13_serin_004"
+      }
+    },
+    {
+      "clip_id": "main13_leon_001",
+      "quest_no": "13",
+      "scene_key": "arbel_leon_arrival",
+      "speaker": "레온",
+      "text": "아르벨에 오신 걸 환영합니다. 세린은 잠시 자기 조사를 마치고 오겠다고 했습니다.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "leon/main13_leon_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "arbel-leon",
+      "status": "MAPPED",
+      "call": {
+        "start": 14631,
+        "end": 14724,
+        "kind": "new DialogueLine",
+        "speaker": "레온",
+        "text": "아르벨에 오신 걸 환영합니다. 세린은 잠시 자기 조사를 마치고 오겠다고 했습니다.",
+        "id": "main13_leon_001"
+      }
+    },
+    {
+      "clip_id": "main14_leon_001",
+      "quest_no": "14",
+      "scene_key": "arbel_leon_main14_start",
+      "speaker": "레온",
+      "text": "서쪽 땅이 마른 건 오래됐지만 최근 속도가 빠릅니다. 주민들이 쓸 우물부터 확인해 주시겠습니까?",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "leon/main14_leon_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "arbel-leon",
+      "status": "MAPPED",
+      "call": {
+        "start": 14868,
+        "end": 14969,
+        "kind": "new DialogueLine",
+        "speaker": "레온",
+        "text": "서쪽 땅이 마른 건 오래됐지만 최근 속도가 빠릅니다. 주민들이 쓸 우물부터 확인해 주시겠습니까?",
+        "id": "main14_leon_001"
+      }
+    },
+    {
+      "clip_id": "main14_paul_001",
+      "quest_no": "14",
+      "scene_key": "arbel_main14_old_well",
+      "speaker": "폴",
+      "text": "서쪽 우물의 수위가 더 낮습니다. 지하 흐름 차이는 가능성일 뿐입니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main14_paul_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "scalar": true
+    },
+    {
+      "clip_id": "main14_paul_002",
+      "quest_no": "14",
+      "scene_key": "field05_main14_irrigation",
+      "speaker": "폴",
+      "text": "수로는 거의 말랐고 그늘의 바닥도 미세하게 따뜻합니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main14_paul_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "scalar": true
+    },
+    {
+      "clip_id": "main14_serin_001",
+      "quest_no": "14",
+      "scene_key": "field05_serin_rejoin_01",
+      "speaker": "세린",
+      "text": "마을 안에서는 약한데 서쪽으로 갈수록 진동이 커져요. 일정한 간격으로 반복되고요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main14_serin_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 14310,
+        "end": 14409,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "마을 안에서는 약한데 서쪽으로 갈수록 진동이 커져요. 일정한 간격으로 반복되고요.",
+        "id": "main14_serin_001"
+      }
+    },
+    {
+      "clip_id": "main14_taeon_001",
+      "quest_no": "14",
+      "scene_key": "field05_serin_rejoin_02",
+      "speaker": "태온",
+      "text": "열기는 계속 이어집니다. 같은 원인인지는 더 확인해야겠습니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main14_taeon_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 14428,
+        "end": 14526,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "열기는 계속 이어집니다. 같은 원인인지는 더 확인해야겠습니다.",
+        "id": "main14_taeon_001"
+      }
+    },
+    {
+      "clip_id": "main14_paul_003",
+      "quest_no": "14",
+      "scene_key": "field05_main14_watchpost",
+      "speaker": "폴",
+      "text": "타버린 풀과 갈라진 돌입니다. 열이 잠깐 발생했거나 무언가 지나갔을 수 있습니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main14_paul_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "scalar": true
+    },
+    {
+      "clip_id": "main14_serin_002",
+      "quest_no": "14",
+      "scene_key": "field05_main14_strong_pulse_01",
+      "speaker": "세린",
+      "text": "그 야수는 이쪽으로 오던 게 아니에요. 서쪽에서 도망치고 있었어요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main14_serin_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 19061,
+        "end": 19170,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "그 야수는 이쪽으로 오던 게 아니에요. 서쪽에서 도망치고 있었어요.",
+        "id": "main14_serin_002"
+      }
+    },
+    {
+      "clip_id": "main14_miel_001",
+      "quest_no": "14",
+      "scene_key": "field05_main14_strong_pulse_02",
+      "speaker": "미엘",
+      "text": "그럼 저쪽에 무언가 있나요?",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "miel/main14_miel_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_miel",
+      "status": "MAPPED",
+      "call": {
+        "start": 19197,
+        "end": 19274,
+        "kind": "new DialogueLine",
+        "speaker": "미엘",
+        "text": "그럼 저쪽에 무언가 있나요?",
+        "id": "main14_miel_001"
+      }
+    },
+    {
+      "clip_id": "main14_serin_003",
+      "quest_no": "14",
+      "scene_key": "field05_main14_strong_pulse_03",
+      "speaker": "세린",
+      "text": "이번 건 큽니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main14_serin_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 19301,
+        "end": 19382,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "이번 건 큽니다.",
+        "id": "main14_serin_003"
+      }
+    },
+    {
+      "clip_id": "main14_taeon_002",
+      "quest_no": "14",
+      "scene_key": "field05_main14_strong_pulse_04",
+      "speaker": "태온",
+      "text": "이번에는 저도 느꼈습니다. 아직 원인은 알 수 없습니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main14_taeon_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 19409,
+        "end": 19504,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "이번에는 저도 느꼈습니다. 아직 원인은 알 수 없습니다.",
+        "id": "main14_taeon_002"
+      }
+    },
+    {
+      "clip_id": "main14_leon_002",
+      "quest_no": "14",
+      "scene_key": "arbel_leon_main14_report",
+      "speaker": "레온",
+      "text": "건조, 열기, 주기적인 진동, 도망친 야수까지 확인됐군요. 원인을 단정하지 않고 주민을 대비시키겠습니다.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "leon/main14_leon_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+      "character_id": "arbel-leon",
+      "status": "MAPPED",
+      "call": {
+        "start": 15054,
+        "end": 15160,
+        "kind": "new DialogueLine",
+        "speaker": "레온",
+        "text": "건조, 열기, 주기적인 진동, 도망친 야수까지 확인됐군요. 원인을 단정하지 않고 주민을 대비시키겠습니다.",
+        "id": "main14_leon_002"
+      }
+    },
+    {
+      "clip_id": "main15_leon_001",
+      "quest_no": "15",
+      "scene_key": "arbel_leon_main15_start_01",
+      "speaker": "레온",
+      "text": "서쪽 길을 다녀온 사람들이 땅이 뜨겁다고 합니다. 작은 불 흔적은 있지만 큰 불길을 본 사람은 없어요.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "leon/main15_leon_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "arbel-leon",
+      "status": "MAPPED",
+      "call": {
+        "start": 8307,
+        "end": 8412,
+        "kind": "new DialogueLine",
+        "speaker": "레온",
+        "text": "서쪽 길을 다녀온 사람들이 땅이 뜨겁다고 합니다. 작은 불 흔적은 있지만 큰 불길을 본 사람은 없어요.",
+        "id": "main15_leon_001"
+      }
+    },
+    {
+      "clip_id": "main15_serin_001",
+      "quest_no": "15",
+      "scene_key": "arbel_leon_main15_start_02",
+      "speaker": "세린",
+      "text": "저도 계속 서쪽을 확인할 생각이에요. 같이 살펴보죠.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 8431,
+        "end": 8537,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "저도 계속 서쪽을 확인할 생각이에요. 같이 살펴보죠.",
+        "id": "main15_serin_001"
+      }
+    },
+    {
+      "clip_id": "main15_miel_001",
+      "quest_no": "15",
+      "scene_key": "field06_main15_soot_01",
+      "speaker": "미엘",
+      "text": "몸에 불이 붙은 건가요?",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "miel/main15_miel_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_miel",
+      "status": "MAPPED",
+      "call": {
+        "start": 13632,
+        "end": 13707,
+        "kind": "new DialogueLine",
+        "speaker": "미엘",
+        "text": "몸에 불이 붙은 건가요?",
+        "id": "main15_miel_001"
+      }
+    },
+    {
+      "clip_id": "main15_paul_001",
+      "quest_no": "15",
+      "scene_key": "field06_main15_soot_02",
+      "speaker": "폴",
+      "text": "불이 붙었다기보다 몸 자체가 변한 것 같습니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 13730,
+        "end": 13817,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "불이 붙었다기보다 몸 자체가 변한 것 같습니다.",
+        "id": "main15_paul_001"
+      }
+    },
+    {
+      "clip_id": "main15_taeon_001",
+      "quest_no": "15",
+      "scene_key": "field06_main15_soot_03",
+      "speaker": "태온",
+      "text": "가까이 가기 전에 상태를 확인하죠.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main15_taeon_001.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 13840,
+        "end": 13923,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "가까이 가기 전에 상태를 확인하죠.",
+        "id": "main15_taeon_001"
+      }
+    },
+    {
+      "clip_id": "main15_serin_002",
+      "quest_no": "15",
+      "scene_key": "field06_main15_soot_04",
+      "speaker": "세린",
+      "text": "움직임은 보통 야생동물과 비슷해요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 13946,
+        "end": 14042,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "움직임은 보통 야생동물과 비슷해요.",
+        "id": "main15_serin_002"
+      }
+    },
+    {
+      "clip_id": "main15_taeon_002",
+      "quest_no": "15",
+      "scene_key": "field06_main15_tracks",
+      "speaker": "태온",
+      "text": "발자국이 동쪽으로 향합니다. 이곳에서 도망치는 듯합니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main15_taeon_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 14124,
+        "end": 14219,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "발자국이 동쪽으로 향합니다. 이곳에서 도망치는 듯합니다.",
+        "id": "main15_taeon_002"
+      }
+    },
+    {
+      "clip_id": "main15_serin_003",
+      "quest_no": "15",
+      "scene_key": "field06_main15_pulse",
+      "speaker": "세린",
+      "text": "또 시작됐어요. 간격은 조금 짧고 강해졌지만 완전히 일정하지는 않아요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 14284,
+        "end": 14400,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "또 시작됐어요. 간격은 조금 짧고 강해졌지만 완전히 일정하지는 않아요.",
+        "id": "main15_serin_003"
+      }
+    },
+    {
+      "clip_id": "main15_serin_004",
+      "quest_no": "15",
+      "scene_key": "field06_serin_01",
+      "speaker": "세린",
+      "text": "또 시작됐어요. 지난번보다 간격이 조금 짧아요. 서쪽에서 오지만 위치까지는 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_004.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 8630,
+        "end": 8756,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "또 시작됐어요. 지난번보다 간격이 조금 짧아요. 서쪽에서 오지만 위치까지는 모르겠습니다.",
+        "id": "main15_serin_004"
+      }
+    },
+    {
+      "clip_id": "main15_paul_002",
+      "quest_no": "15",
+      "scene_key": "field06_serin_02",
+      "speaker": "폴",
+      "text": "이 지면은 제 휠에도 별로 반갑지 않네요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 8775,
+        "end": 8859,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "이 지면은 제 휠에도 별로 반갑지 않네요.",
+        "id": "main15_paul_002"
+      }
+    },
+    {
+      "clip_id": "main15_serin_005",
+      "quest_no": "15",
+      "scene_key": "field06_serin_03",
+      "speaker": "세린",
+      "text": "땅이 뜨거워서요?",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_005.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 8878,
+        "end": 8964,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "땅이 뜨거워서요?",
+        "id": "main15_serin_005"
+      }
+    },
+    {
+      "clip_id": "main15_paul_003",
+      "quest_no": "15",
+      "scene_key": "field06_serin_04",
+      "speaker": "폴",
+      "text": "타이어도 오늘은 기분이 나쁜 모양입니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 8983,
+        "end": 9066,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "타이어도 오늘은 기분이 나쁜 모양입니다.",
+        "id": "main15_paul_003"
+      }
+    },
+    {
+      "clip_id": "main15_paul_004",
+      "quest_no": "15",
+      "scene_key": "field06_main15_crack_01",
+      "speaker": "폴",
+      "text": "이 아래에 열원이 있는 건 맞는 것 같습니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_004.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 14501,
+        "end": 14587,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "이 아래에 열원이 있는 건 맞는 것 같습니다.",
+        "id": "main15_paul_004"
+      }
+    },
+    {
+      "clip_id": "main15_taeon_003",
+      "quest_no": "15",
+      "scene_key": "field06_main15_crack_02",
+      "speaker": "태온",
+      "text": "그렇다고 여기가 시작점이라고 단정할 수는 없습니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main15_taeon_003.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 14610,
+        "end": 14702,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "그렇다고 여기가 시작점이라고 단정할 수는 없습니다.",
+        "id": "main15_taeon_003"
+      }
+    },
+    {
+      "clip_id": "main15_serin_006",
+      "quest_no": "15",
+      "scene_key": "field06_main15_crack_03",
+      "speaker": "세린",
+      "text": "진동은 더 서쪽에서 옵니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_006.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 14725,
+        "end": 14817,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "진동은 더 서쪽에서 옵니다.",
+        "id": "main15_serin_006"
+      }
+    },
+    {
+      "clip_id": "main15_paul_005",
+      "quest_no": "15",
+      "scene_key": "field06_main15_heat",
+      "speaker": "폴",
+      "text": "바위는 일부 검고 식물은 말랐습니다. 큰 산불 흔적 없이 지면의 열이 오른 것 같군요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_005.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 14878,
+        "end": 14987,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "바위는 일부 검고 식물은 말랐습니다. 큰 산불 흔적 없이 지면의 열이 오른 것 같군요.",
+        "id": "main15_paul_005"
+      }
+    },
+    {
+      "clip_id": "main15_leon_002",
+      "quest_no": "15",
+      "scene_key": "arbel_leon_main15_report",
+      "speaker": "레온",
+      "text": "변한 동물과 균열, 더 강한 열기와 진동이 있었군요. 원인을 단정하지 않고 주민들에게 대비를 알리겠습니다.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "leon/main15_leon_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "arbel-leon",
+      "status": "MAPPED",
+      "call": {
+        "start": 9152,
+        "end": 9259,
+        "kind": "new DialogueLine",
+        "speaker": "레온",
+        "text": "변한 동물과 균열, 더 강한 열기와 진동이 있었군요. 원인을 단정하지 않고 주민들에게 대비를 알리겠습니다.",
+        "id": "main15_leon_002"
+      }
+    },
+    {
+      "clip_id": "main15_serin_007",
+      "quest_no": "15",
+      "scene_key": "arbel_serin_join_01",
+      "speaker": "세린",
+      "text": "저도 계속 서쪽을 확인할 생각이에요. 혼자보다 함께 움직이는 편이 낫겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_007.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 9325,
+        "end": 9445,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "저도 계속 서쪽을 확인할 생각이에요. 혼자보다 함께 움직이는 편이 낫겠습니다.",
+        "id": "main15_serin_007"
+      }
+    },
+    {
+      "clip_id": "main15_taeon_004",
+      "quest_no": "15",
+      "scene_key": "arbel_serin_join_02",
+      "speaker": "태온",
+      "text": "그렇다면 앞으로도 함께하시겠습니까?",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "taeon/main15_taeon_004.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_taeon",
+      "status": "MAPPED",
+      "call": {
+        "start": 9464,
+        "end": 9547,
+        "kind": "new DialogueLine",
+        "speaker": "태온",
+        "text": "그렇다면 앞으로도 함께하시겠습니까?",
+        "id": "main15_taeon_004"
+      }
+    },
+    {
+      "clip_id": "main15_serin_008",
+      "quest_no": "15",
+      "scene_key": "arbel_serin_join_03",
+      "speaker": "세린",
+      "text": "네. 당분간이 아니어도 괜찮다면요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "serin/main15_serin_008.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_serin",
+      "status": "MAPPED",
+      "call": {
+        "start": 9566,
+        "end": 9662,
+        "kind": "new DialogueLine",
+        "speaker": "세린",
+        "text": "네. 당분간이 아니어도 괜찮다면요.",
+        "id": "main15_serin_008"
+      }
+    },
+    {
+      "clip_id": "main15_miel_002",
+      "quest_no": "15",
+      "scene_key": "arbel_serin_join_04",
+      "speaker": "미엘",
+      "text": "물론이에요.",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "miel/main15_miel_002.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_miel",
+      "status": "MAPPED",
+      "call": {
+        "start": 9681,
+        "end": 9749,
+        "kind": "new DialogueLine",
+        "speaker": "미엘",
+        "text": "물론이에요.",
+        "id": "main15_miel_002"
+      }
+    },
+    {
+      "clip_id": "main15_paul_006",
+      "quest_no": "15",
+      "scene_key": "arbel_serin_join_05",
+      "speaker": "폴",
+      "text": "제 일이 줄어든다면 언제나 환영입니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "paul/main15_paul_006.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+      "character_id": "companion_paul",
+      "status": "MAPPED",
+      "call": {
+        "start": 9768,
+        "end": 9850,
+        "kind": "new DialogueLine",
+        "speaker": "폴",
+        "text": "제 일이 줄어든다면 언제나 환영입니다.",
+        "id": "main15_paul_006"
+      }
+    }
+  ],
+  "audio": [
+    {
+      "path": "leon/leon_main13_15_full.wav",
+      "seconds": 67.88,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "966a3390e09bf61037f6f1e59c809b6a305299ffaff05a28c1c25fe4c14ea3df"
+    },
+    {
+      "path": "leon/main13_leon_001.wav",
+      "seconds": 9.59,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "bb0d5f54a413142055dc554f39d6d25760e6ae73c50023f314f8627d233651cd"
+    },
+    {
+      "path": "leon/main14_leon_001.wav",
+      "seconds": 14.2,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "4c9905a9aef30dfb311fda946bdefdcfac2a51f1cec7dbbff7082e41ae53c5d4"
+    },
+    {
+      "path": "leon/main14_leon_002.wav",
+      "seconds": 17.3,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "ef7c44bca227ea40d5c7f39f146af63e106d40aa80d228ed7da102723b04cbf7"
+    },
+    {
+      "path": "leon/main15_leon_001.wav",
+      "seconds": 14.79,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "ed7083be85277bf862afd5b1fd9bf43d5073bc2c0c04fb750d2ffb1223822c4c"
+    },
+    {
+      "path": "leon/main15_leon_002.wav",
+      "seconds": 12.0,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "6929be8f97d72f93057189e9016d4e93531c36fccaf6399f0efa30a2515ec112"
+    },
+    {
+      "path": "miel/main13_miel_001.wav",
+      "seconds": 1.56,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "73a4eb39c94a75064cd2433dff8961f01a8acc5744cc0c92e0ea02c0b4036355"
+    },
+    {
+      "path": "miel/main14_miel_001.wav",
+      "seconds": 8.57,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "040936ce2c2e6eee678ee6bd8b2a7cb68005c1472ef2e581f9cb64c748f944e0"
+    },
+    {
+      "path": "miel/main15_miel_001.wav",
+      "seconds": 1.14,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "f281460d7529f5941a996c2b399103f547081ed10b732f6ec077b4e85a6da6be"
+    },
+    {
+      "path": "miel/main15_miel_002.wav",
+      "seconds": 1.41,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "9f1728c4ead6e2ef63617636bc9e304fb30a43e643dd5402531352ffb2c4b654"
+    },
+    {
+      "path": "miel/miel_main13_15_full.wav",
+      "seconds": 12.68,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "93d328e2ecea66274a1f60bb1dd701d9d31eaae6cfc96d683b2be03df01319c8"
+    },
+    {
+      "path": "paul/main13_paul_001.wav",
+      "seconds": 6.72,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "611f46289e6e7b9f929c96fd6db058acfac865517c7a8236a2d59d706f55e6b7"
+    },
+    {
+      "path": "paul/main13_paul_002.wav",
+      "seconds": 15.1,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "ad56d7c106424a4aba78d2ce7646b066262aa850a43cf9d4aa3d0e377195c14c"
+    },
+    {
+      "path": "paul/main14_paul_001.wav",
+      "seconds": 5.28,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "49ea4527be0a3bf9ca55fb8bc6a8def306010525bdbe5094c854fef489e81164"
+    },
+    {
+      "path": "paul/main14_paul_002.wav",
+      "seconds": 1.05,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "526ff3f01aa4dda666ee1e330ac93020bca70bf60375d7eeda0f7423e041216e"
+    },
+    {
+      "path": "paul/main14_paul_003.wav",
+      "seconds": 7.07,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "b58f26d71fc7aaf9278d8fb850e691aaefda215143e97d594cd2fcd57c92ba07"
+    },
+    {
+      "path": "paul/main15_paul_001.wav",
+      "seconds": 5.18,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "ee7a4d5eb75e9f0942acbe385b599a0f3d957786ce36b7466a427e923de07025"
+    },
+    {
+      "path": "paul/main15_paul_002.wav",
+      "seconds": 7.87,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "64eb273849c7c4830dab5f4be2c486491eda9369db8335c4690cb021f0ed96be"
+    },
+    {
+      "path": "paul/main15_paul_003.wav",
+      "seconds": 5.02,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "867469c31e137e79988f1e1c406ace2ce38795b23d3dcbf40854511fee9bf64f"
+    },
+    {
+      "path": "paul/main15_paul_004.wav",
+      "seconds": 3.99,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "dc57379a322efea0c7495b7dd2e4343828e187a0ec4a8501c5e9402bfc0af93c"
+    },
+    {
+      "path": "paul/main15_paul_005.wav",
+      "seconds": 3.84,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "734c9e249478a854bd3c2a813cbc7cd792b9b13c9d50fceb0fb1f07ab7d29e91"
+    },
+    {
+      "path": "paul/main15_paul_006.wav",
+      "seconds": 3.68,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "c027a828e1fa3b6464005d30c60a2486262d3601fdddea8cfd5240f23b1945b5"
+    },
+    {
+      "path": "paul/paul_main13_15_full.wav",
+      "seconds": 64.8,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "82f8d22fb2b163e6b22f53da02aa4528e5ae4690728ed7ba5d545acce77a6032"
+    },
+    {
+      "path": "serin/main13_serin_001.wav",
+      "seconds": 4.9,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "60fde5017a9c5adbcb1cb8ea93bd5b9eea575b48536fba7e89593638c177073e"
+    },
+    {
+      "path": "serin/main13_serin_002.wav",
+      "seconds": 7.86,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "a948fa452fb5996afc105c4f0d02cb4ac1622eef0f1e2f30b3df04f2da06cb2e"
+    },
+    {
+      "path": "serin/main13_serin_003.wav",
+      "seconds": 6.47,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "acf68d4299b8b24ffdf3c461124bcf9319adcf4be0ff8d9cac135e73b26e8214"
+    },
+    {
+      "path": "serin/main13_serin_004.wav",
+      "seconds": 3.95,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "e9467ace9360dc61f071091e5ced7278f1dda41686e7627f7714988f1e91ea52"
+    },
+    {
+      "path": "serin/main14_serin_001.wav",
+      "seconds": 7.0,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "fe67be396a028b76e23bd58790f7fea67bb0964f0d5ca1f097bd3fe05d199f41"
+    },
+    {
+      "path": "serin/main14_serin_002.wav",
+      "seconds": 5.21,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "339d47f6366a852ddbd4c3adc45647aad0c379b2169fcb82fee54b60c3e09d70"
+    },
+    {
+      "path": "serin/main14_serin_003.wav",
+      "seconds": 1.91,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "d76f0b7d1b162f917682469236c39646dcd2c0e1e738e5cbcc4a0c9f409313ea"
+    },
+    {
+      "path": "serin/main15_serin_001.wav",
+      "seconds": 4.26,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "64420ff99c2f829fb76f8c499095b4c8844a0cbb0ca89f88b2904e2546a978b3"
+    },
+    {
+      "path": "serin/main15_serin_002.wav",
+      "seconds": 3.33,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "b94a2644650b032bcb5ede0c19c31462a5dae28bc14b52e90b119ec5b7aa739f"
+    },
+    {
+      "path": "serin/main15_serin_003.wav",
+      "seconds": 6.19,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "6337c384f840fc9f91023ee0bfed2ab3bdc51a76b9df3c7e1d9590da6908b797"
+    },
+    {
+      "path": "serin/main15_serin_004.wav",
+      "seconds": 7.65,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "8b9d79b1e8f265dbb3b6c7ae2ca024a3db0c63b86e5ead50202d5448aa4c6a45"
+    },
+    {
+      "path": "serin/main15_serin_005.wav",
+      "seconds": 1.83,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "75355e27161a07b071bff636d747a9528d816b6668437f3ff1285ae52f1511d1"
+    },
+    {
+      "path": "serin/main15_serin_006.wav",
+      "seconds": 2.53,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "9b52e8f2ff3f18f9653ca22ab09dc063401cfe1f4e672ccac4392058d9fef7a8"
+    },
+    {
+      "path": "serin/main15_serin_007.wav",
+      "seconds": 5.7,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "319c2471f72b1788d522c7024ae4b030b0ff5cc674dde8e85b5556193495ea77"
+    },
+    {
+      "path": "serin/main15_serin_008.wav",
+      "seconds": 3.65,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "f2ad235edb28138b45716b8f1ed865ee6bca5007592bc2c089a056f1e5564718"
+    },
+    {
+      "path": "serin/serin_main13_15_full.wav",
+      "seconds": 72.44,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "235e66ba2a90e72acbb33d9145b33b7c1c28d5390f3bce9b4116d6a2d20c297b"
+    },
+    {
+      "path": "taeon/main14_taeon_001.wav",
+      "seconds": 6.95,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "ba2fdbe936d03b2ecb9af8c2a702a00d00a2fce102d19edece0572bc1cc42147"
+    },
+    {
+      "path": "taeon/main14_taeon_002.wav",
+      "seconds": 5.86,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "a3b4eefd74e357de5b8f344f8345a954cb5ae66f3f81a50b3a7115503f6d2009"
+    },
+    {
+      "path": "taeon/main15_taeon_001.wav",
+      "seconds": 1.32,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "be96ee77c1bd2b2cdde7bbd3385d7dfb2914a7da49d99afc0cbababd8166e620"
+    },
+    {
+      "path": "taeon/main15_taeon_002.wav",
+      "seconds": 11.06,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "66190ccf7cc8abba3325a7436024b2db5045103d5f2717ee611774ca82492de9"
+    },
+    {
+      "path": "taeon/main15_taeon_003.wav",
+      "seconds": 5.57,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "86c971c5cc4acaae90a08e7921de24ebb8c4fb8f238487d717b86ab2795bd8fe"
+    },
+    {
+      "path": "taeon/main15_taeon_004.wav",
+      "seconds": 4.84,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "b3e55c9587b03828cdcd103888709d9c4467901dad63c2ef00a81faeed8a653c"
+    },
+    {
+      "path": "taeon/taeon_main13_15_full.wav",
+      "seconds": 35.6,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "9e7d3c9bc2eb359802d71b7a208b34a983d4de21175c9d9c89612b57cdf4d554"
+    }
+  ],
+  "duplicates": [],
+  "status": {
+    "MAPPED": 41
+  },
+  "characters": {
+    "폴": 11,
+    "미엘": 4,
+    "세린": 15,
+    "레온": 5,
+    "태온": 6
+  }
+}

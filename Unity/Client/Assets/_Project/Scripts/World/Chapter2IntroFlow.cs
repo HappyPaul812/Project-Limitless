@@ -237,25 +237,25 @@ namespace ProjectLimitless.World
             { new DialogueLine(id, "잡화 상인", "예전에 서쪽에서 온 상인이 비슷한 문양이 새겨진 돌을 가져온 적이 있어요. 뜻까지는 모릅니다.") };
             else if (id == "field04-serin" && QuestService.ActiveMainQuest?.Definition.QuestId == Main13 &&
                      QuestService.ActiveMainQuest.CurrentObjectiveIndex >= 4) lines = new[]
-            { new DialogueLine(SerinId, "세린", "저도 아르벨로 갑니다. 그곳까지 함께 움직이죠.") };
+            { new DialogueLine(SerinId, "세린", "저도 아르벨로 갑니다. 그곳까지 함께 움직이죠.", "main13_serin_004") };
             else if (id == "field04-serin") lines = new[]
             {
-                new DialogueLine("companion_miel", "미엘", "괜찮으세요?"),
-                new DialogueLine(SerinId, "세린", "잠시만요. 바람이 강하면 말소리가 흐려져서요."),
-                new DialogueLine(SerinId, "세린", "이 장치가 땅의 진동을 제가 알아볼 수 있는 신호로 바꿔 줘요. 중요한지는 제가 판단하고요."),
-                new DialogueLine(SerinId, "세린", "잠깐만요. 앞에 둘, 오른쪽 뒤에 하나 더 있어요. 발밑으로 울립니다.")
+                new DialogueLine("companion_miel", "미엘", "괜찮으세요?", "main13_miel_001"),
+                new DialogueLine(SerinId, "세린", "잠시만요. 바람이 강하면 말소리가 흐려져서요.", "main13_serin_001"),
+                new DialogueLine(SerinId, "세린", "이 장치가 땅의 진동을 제가 알아볼 수 있는 신호로 바꿔 줘요. 중요한지는 제가 판단하고요.", "main13_serin_002"),
+                new DialogueLine(SerinId, "세린", "잠깐만요. 앞에 둘, 오른쪽 뒤에 하나 더 있어요. 발밑으로 울립니다.", "main13_serin_003")
             };
             else if (id == "field05-serin") lines = new[]
             {
-                new DialogueLine(SerinId, "세린", "마을 안에서는 약한데 서쪽으로 갈수록 진동이 커져요. 일정한 간격으로 반복되고요."),
-                new DialogueLine("companion_taeon", "태온", "열기는 계속 이어집니다. 같은 원인인지는 더 확인해야겠습니다.")
+                new DialogueLine(SerinId, "세린", "마을 안에서는 약한데 서쪽으로 갈수록 진동이 커져요. 일정한 간격으로 반복되고요.", "main14_serin_001"),
+                new DialogueLine("companion_taeon", "태온", "열기는 계속 이어집니다. 같은 원인인지는 더 확인해야겠습니다.", "main14_taeon_001")
             };
             else if (id == "arbel-leon" && quest == Main13) lines = new[]
-            { new DialogueLine(id, "레온", "아르벨에 오신 걸 환영합니다. 세린은 잠시 자기 조사를 마치고 오겠다고 했습니다.") };
+            { new DialogueLine(id, "레온", "아르벨에 오신 걸 환영합니다. 세린은 잠시 자기 조사를 마치고 오겠다고 했습니다.", "main13_leon_001") };
             else if (id == "arbel-leon" && current && QuestService.ActiveMainQuest.CurrentObjectiveIndex == 0) lines = new[]
-            { new DialogueLine(id, "레온", "서쪽 땅이 마른 건 오래됐지만 최근 속도가 빠릅니다. 주민들이 쓸 우물부터 확인해 주시겠습니까?") };
+            { new DialogueLine(id, "레온", "서쪽 땅이 마른 건 오래됐지만 최근 속도가 빠릅니다. 주민들이 쓸 우물부터 확인해 주시겠습니까?", "main14_leon_001") };
             else if (id == "arbel-leon" && current) lines = new[]
-            { new DialogueLine(id, "레온", "건조, 열기, 주기적인 진동, 도망친 야수까지 확인됐군요. 원인을 단정하지 않고 주민을 대비시키겠습니다.") };
+            { new DialogueLine(id, "레온", "건조, 열기, 주기적인 진동, 도망친 야수까지 확인됐군요. 원인을 단정하지 않고 주민을 대비시키겠습니다.", "main14_leon_002") };
             else lines = new[] { new DialogueLine(id, npc.DisplayName, npc.Dialogue) };
             DialoguePresenter.Instance?.ShowSequence(lines, () =>
             {
@@ -336,10 +336,10 @@ namespace ProjectLimitless.World
                     showingArrival = true;
                     DialoguePresenter.Instance?.ShowSequence(new[]
                     {
-                        new DialogueLine(Chapter2IntroFlow.SerinId, "세린", "그 야수는 이쪽으로 오던 게 아니에요. 서쪽에서 도망치고 있었어요."),
-                        new DialogueLine("companion_miel", "미엘", "그럼 저쪽에 무언가 있나요?"),
-                        new DialogueLine(Chapter2IntroFlow.SerinId, "세린", "이번 건 큽니다."),
-                        new DialogueLine("companion_taeon", "태온", "이번에는 저도 느꼈습니다. 아직 원인은 알 수 없습니다.")
+                        new DialogueLine(Chapter2IntroFlow.SerinId, "세린", "그 야수는 이쪽으로 오던 게 아니에요. 서쪽에서 도망치고 있었어요.", "main14_serin_002"),
+                        new DialogueLine("companion_miel", "미엘", "그럼 저쪽에 무언가 있나요?", "main14_miel_001"),
+                        new DialogueLine(Chapter2IntroFlow.SerinId, "세린", "이번 건 큽니다.", "main14_serin_003"),
+                        new DialogueLine("companion_taeon", "태온", "이번에는 저도 느꼈습니다. 아직 원인은 알 수 없습니다.", "main14_taeon_002")
                     }, () =>
                     {
                         showingArrival = false;
@@ -368,7 +368,10 @@ namespace ProjectLimitless.World
             }
             string speaker = targetId == "field03_main12_party_decision" ? "태온" : "폴";
             string text = Line(targetId);
-            DialoguePresenter.Instance?.ShowSequence(new[] { new DialogueLine("", speaker, text) }, () =>
+            string voiceId = VoiceId(targetId);
+            // CSV에서 확인한 Main13/14 폴 조사에만 ID를 연결합니다. Main12의 기존 무음 대사는 유지합니다.
+            string speakerId = string.IsNullOrEmpty(voiceId) ? "" : CompanionRosterService.PaulId;
+            DialoguePresenter.Instance?.ShowSequence(new[] { new DialogueLine(speakerId, speaker, text, voiceId) }, () =>
             {
                 if (!Current) return;
                 QuestService.NotifyInteraction(targetId);
@@ -376,6 +379,19 @@ namespace ProjectLimitless.World
             });
             DialoguePresenter.Instance?.TrackDistance(player.transform, transform, 3f);
         }
+        private static string VoiceId(string id)
+        {
+            switch (id)
+            {
+                case "field04_main13_dry_soil": return "main13_paul_001";
+                case "field04_main13_shallow_stream": return "main13_paul_002";
+                case "arbel_main14_old_well": return "main14_paul_001";
+                case "field05_main14_irrigation": return "main14_paul_002";
+                case "field05_main14_watchpost": return "main14_paul_003";
+                default: return null;
+            }
+        }
+
         private static string Line(string id)
         {
             switch (id)

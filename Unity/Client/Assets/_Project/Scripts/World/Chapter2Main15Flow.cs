@@ -149,24 +149,24 @@ namespace ProjectLimitless.World
             bool current = quest?.Definition.QuestId == QuestId && quest.CurrentObjective?.TargetId == id;
             if (!first && !current) return false;
             DialogueLine[] lines;
-            if (first) lines = new[] { new DialogueLine(id, "레온", "서쪽 길을 다녀온 사람들이 땅이 뜨겁다고 합니다. 작은 불 흔적은 있지만 큰 불길을 본 사람은 없어요."),
-                new DialogueLine(CompanionRosterService.SerinId, "세린", "저도 계속 서쪽을 확인할 생각이에요. 같이 살펴보죠.") };
+            if (first) lines = new[] { new DialogueLine(id, "레온", "서쪽 길을 다녀온 사람들이 땅이 뜨겁다고 합니다. 작은 불 흔적은 있지만 큰 불길을 본 사람은 없어요.", "main15_leon_001"),
+                new DialogueLine(CompanionRosterService.SerinId, "세린", "저도 계속 서쪽을 확인할 생각이에요. 같이 살펴보죠.", "main15_serin_001") };
             else if (id == "field06-serin") lines = new[]
             {
-                new DialogueLine(CompanionRosterService.SerinId, "세린", "또 시작됐어요. 지난번보다 간격이 조금 짧아요. 서쪽에서 오지만 위치까지는 모르겠습니다."),
-                new DialogueLine("companion_paul", "폴", "이 지면은 제 휠에도 별로 반갑지 않네요."),
-                new DialogueLine(CompanionRosterService.SerinId, "세린", "땅이 뜨거워서요?"),
-                new DialogueLine("companion_paul", "폴", "타이어도 오늘은 기분이 나쁜 모양입니다.")
+                new DialogueLine(CompanionRosterService.SerinId, "세린", "또 시작됐어요. 지난번보다 간격이 조금 짧아요. 서쪽에서 오지만 위치까지는 모르겠습니다.", "main15_serin_004"),
+                new DialogueLine("companion_paul", "폴", "이 지면은 제 휠에도 별로 반갑지 않네요.", "main15_paul_002"),
+                new DialogueLine(CompanionRosterService.SerinId, "세린", "땅이 뜨거워서요?", "main15_serin_005"),
+                new DialogueLine("companion_paul", "폴", "타이어도 오늘은 기분이 나쁜 모양입니다.", "main15_paul_003")
             };
             else if (id == "arbel-leon") lines = new[]
-            { new DialogueLine(id, "레온", "변한 동물과 균열, 더 강한 열기와 진동이 있었군요. 원인을 단정하지 않고 주민들에게 대비를 알리겠습니다.") };
+            { new DialogueLine(id, "레온", "변한 동물과 균열, 더 강한 열기와 진동이 있었군요. 원인을 단정하지 않고 주민들에게 대비를 알리겠습니다.", "main15_leon_002") };
             else lines = new[]
             {
-                new DialogueLine(CompanionRosterService.SerinId, "세린", "저도 계속 서쪽을 확인할 생각이에요. 혼자보다 함께 움직이는 편이 낫겠습니다."),
-                new DialogueLine("companion_taeon", "태온", "그렇다면 앞으로도 함께하시겠습니까?"),
-                new DialogueLine(CompanionRosterService.SerinId, "세린", "네. 당분간이 아니어도 괜찮다면요."),
-                new DialogueLine("companion_miel", "미엘", "물론이에요."),
-                new DialogueLine("companion_paul", "폴", "제 일이 줄어든다면 언제나 환영입니다.")
+                new DialogueLine(CompanionRosterService.SerinId, "세린", "저도 계속 서쪽을 확인할 생각이에요. 혼자보다 함께 움직이는 편이 낫겠습니다.", "main15_serin_007"),
+                new DialogueLine("companion_taeon", "태온", "그렇다면 앞으로도 함께하시겠습니까?", "main15_taeon_004"),
+                new DialogueLine(CompanionRosterService.SerinId, "세린", "네. 당분간이 아니어도 괜찮다면요.", "main15_serin_008"),
+                new DialogueLine("companion_miel", "미엘", "물론이에요.", "main15_miel_002"),
+                new DialogueLine("companion_paul", "폴", "제 일이 줄어든다면 언제나 환영입니다.", "main15_paul_006")
             };
             DialoguePresenter.Instance?.ShowSequence(lines, () =>
             {
@@ -251,20 +251,20 @@ namespace ProjectLimitless.World
             {
                 case "field06_main15_soot": return new[]
                 {
-                    new DialogueLine("companion_miel", "미엘", "몸에 불이 붙은 건가요?"),
-                    new DialogueLine("companion_paul", "폴", "불이 붙었다기보다 몸 자체가 변한 것 같습니다."),
-                    new DialogueLine("companion_taeon", "태온", "가까이 가기 전에 상태를 확인하죠."),
-                    new DialogueLine(CompanionRosterService.SerinId, "세린", "움직임은 보통 야생동물과 비슷해요.")
+                    new DialogueLine("companion_miel", "미엘", "몸에 불이 붙은 건가요?", "main15_miel_001"),
+                    new DialogueLine("companion_paul", "폴", "불이 붙었다기보다 몸 자체가 변한 것 같습니다.", "main15_paul_001"),
+                    new DialogueLine("companion_taeon", "태온", "가까이 가기 전에 상태를 확인하죠.", "main15_taeon_001"),
+                    new DialogueLine(CompanionRosterService.SerinId, "세린", "움직임은 보통 야생동물과 비슷해요.", "main15_serin_002")
                 };
-                case "field06_main15_tracks": return new[] { new DialogueLine("companion_taeon", "태온", "발자국이 동쪽으로 향합니다. 이곳에서 도망치는 듯합니다.") };
-                case "field06_main15_pulse": return new[] { new DialogueLine(CompanionRosterService.SerinId, "세린", "또 시작됐어요. 간격은 조금 짧고 강해졌지만 완전히 일정하지는 않아요.") };
+                case "field06_main15_tracks": return new[] { new DialogueLine("companion_taeon", "태온", "발자국이 동쪽으로 향합니다. 이곳에서 도망치는 듯합니다.", "main15_taeon_002") };
+                case "field06_main15_pulse": return new[] { new DialogueLine(CompanionRosterService.SerinId, "세린", "또 시작됐어요. 간격은 조금 짧고 강해졌지만 완전히 일정하지는 않아요.", "main15_serin_003") };
                 case "field06_main15_crack": return new[]
                 {
-                    new DialogueLine("companion_paul", "폴", "이 아래에 열원이 있는 건 맞는 것 같습니다."),
-                    new DialogueLine("companion_taeon", "태온", "그렇다고 여기가 시작점이라고 단정할 수는 없습니다."),
-                    new DialogueLine(CompanionRosterService.SerinId, "세린", "진동은 더 서쪽에서 옵니다.")
+                    new DialogueLine("companion_paul", "폴", "이 아래에 열원이 있는 건 맞는 것 같습니다.", "main15_paul_004"),
+                    new DialogueLine("companion_taeon", "태온", "그렇다고 여기가 시작점이라고 단정할 수는 없습니다.", "main15_taeon_003"),
+                    new DialogueLine(CompanionRosterService.SerinId, "세린", "진동은 더 서쪽에서 옵니다.", "main15_serin_006")
                 };
-                default: return new[] { new DialogueLine("companion_paul", "폴", "바위는 일부 검고 식물은 말랐습니다. 큰 산불 흔적 없이 지면의 열이 오른 것 같군요.") };
+                default: return new[] { new DialogueLine("companion_paul", "폴", "바위는 일부 검고 식물은 말랐습니다. 큰 산불 흔적 없이 지면의 열이 오른 것 같군요.", "main15_paul_005") };
             }
         }
     }
