@@ -61,13 +61,13 @@ namespace ProjectLimitless.World
         internal static DialogueLine[] Lines(string id)
         {
             string player=string.IsNullOrWhiteSpace(GameSessionData.PlayerName)?"플레이어":GameSessionData.PlayerName;
-            DialogueLine L(string who,string name,string text)=>new DialogueLine(who,name,text);
-            if(id==Trace01) return new[]{L(CompanionRosterService.TaeonId,"태온","잠깐만요."),L(CompanionRosterService.TaeonId,"태온","여기부터 흔적이 거의 없습니다."),L(CompanionRosterService.MielId,"미엘","몬스터가 적다는 건 좋은 일 아닌가요?")};
-            if(id==Trace02) return new[]{L(CompanionRosterService.TaeonId,"태온","평소라면 그렇겠죠."),L(CompanionRosterService.TaeonId,"태온","그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.")};
-            if(id==Trace03) return new[]{L(CompanionRosterService.MielId,"미엘","없어진 게 아니네요."),L(CompanionRosterService.MielId,"미엘","다들 이쪽을 피해서 지나가고 있어요."),L(CompanionRosterService.TaeonId,"태온","초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다."),L(CompanionRosterService.TaeonId,"태온","여기서는 그 방향이 조금 더 분명합니다."),L("",player,"그러면 우리가 찾던 방향은 맞는 것 같습니다.")};
-            if(id==WheelTracks) return new[]{L(CompanionRosterService.MielId,"미엘","이 흔적… 폴 씨 것 아닐까요?"),L(CompanionRosterService.TaeonId,"태온","폭이 같습니다. 아마 맞을 겁니다.")};
-            if(id==Investigation) return new[]{L(CompanionRosterService.TaeonId,"태온","누군가 이곳을 조사한 흔적입니다."),L(CompanionRosterService.MielId,"미엘","폴 씨일까요?"),L("",player,"아마 먼저 안쪽으로 간 것 같습니다.")};
-            return new[]{L(CompanionRosterService.MielId,"미엘","조용하네요."),L(CompanionRosterService.TaeonId,"태온","너무 조용합니다."),L(CompanionRosterService.MielId,"미엘","몬스터들이 여기를 피하는 이유가 있는 거겠죠?"),L(CompanionRosterService.TaeonId,"태온","그 이유가 무엇인지는 아직 모르겠습니다."),L("",player,"안쪽을 확인해보죠."),L(CompanionRosterService.MielId,"미엘","…저쪽에서 빛이 났어요."),L(CompanionRosterService.TaeonId,"태온","마법 같습니다."),L("",player,"가보죠.")};
+            DialogueLine L(string who,string name,string text,string dialogueId=null)=>new DialogueLine(who,name,text,dialogueId);
+            if(id==Trace01) return new[]{L(CompanionRosterService.TaeonId,"태온","잠깐만요.", "main08_taeon_supp_001"),L(CompanionRosterService.TaeonId,"태온","여기부터 흔적이 거의 없습니다.", "main08_taeon_supp_002"),L(CompanionRosterService.MielId,"미엘","몬스터가 적다는 건 좋은 일 아닌가요?", "main08_miel_supp_001")};
+            if(id==Trace02) return new[]{L(CompanionRosterService.TaeonId,"태온","평소라면 그렇겠죠.", "main08_taeon_supp_003"),L(CompanionRosterService.TaeonId,"태온","그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.", "main08_taeon_supp_004")};
+            if(id==Trace03) return new[]{L(CompanionRosterService.MielId,"미엘","없어진 게 아니네요.", "main08_miel_supp_002"),L(CompanionRosterService.MielId,"미엘","다들 이쪽을 피해서 지나가고 있어요.", "main08_miel_supp_003"),L(CompanionRosterService.TaeonId,"태온","초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.", "main08_taeon_supp_005"),L(CompanionRosterService.TaeonId,"태온","여기서는 그 방향이 조금 더 분명합니다.", "main08_taeon_supp_006"),L("",player,"그러면 우리가 찾던 방향은 맞는 것 같습니다.")};
+            if(id==WheelTracks) return new[]{L(CompanionRosterService.MielId,"미엘","이 흔적… 폴 씨 것 아닐까요?", "main08_miel_supp_004"),L(CompanionRosterService.TaeonId,"태온","폭이 같습니다. 아마 맞을 겁니다.", "main08_taeon_supp_007")};
+            if(id==Investigation) return new[]{L(CompanionRosterService.TaeonId,"태온","누군가 이곳을 조사한 흔적입니다.", "main08_taeon_supp_008"),L(CompanionRosterService.MielId,"미엘","폴 씨일까요?", "main08_miel_supp_005"),L("",player,"아마 먼저 안쪽으로 간 것 같습니다.")};
+            return new[]{L(CompanionRosterService.MielId,"미엘","조용하네요.", "main08_miel_supp_006"),L(CompanionRosterService.TaeonId,"태온","너무 조용합니다.", "main08_taeon_supp_009"),L(CompanionRosterService.MielId,"미엘","몬스터들이 여기를 피하는 이유가 있는 거겠죠?", "main08_miel_supp_007"),L(CompanionRosterService.TaeonId,"태온","그 이유가 무엇인지는 아직 모르겠습니다.", "main08_taeon_supp_010"),L("",player,"안쪽을 확인해보죠."),L(CompanionRosterService.MielId,"미엘","…저쪽에서 빛이 났어요.", "main08_miel_supp_008"),L(CompanionRosterService.TaeonId,"태온","마법 같습니다.", "main08_taeon_supp_011"),L("",player,"가보죠.")};
         }
     }
 

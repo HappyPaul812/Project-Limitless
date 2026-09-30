@@ -197,42 +197,43 @@ namespace ProjectLimitless.World
             BattleSceneFlow.EnterStoryBattle(MainQuest04FieldFlow.EncounterId, bee, returnSpawn, transform.position);
         }
 
-        private static DialogueLine Line(string id, string name, string text) => new DialogueLine(id, name, text);
+        // 보충 대상만 안정 ID를 전달하며 기존 무음 페이지와 화자/본문은 유지합니다.
+        private static DialogueLine Line(string id, string name, string text, string dialogueId = null) => new DialogueLine(id, name, text, dialogueId);
         private static string PlayerName => string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
 
         private static DialogueLine[] FirstConversation() => new[]
         {
-            Line(MainQuest04FieldFlow.MielId, "미엘", "조금만 참으세요.\n출혈은 멎었습니다."),
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "괜찮으십니까?"),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "저보다 이분이 먼저예요."),
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "당신도 다친 것 같은데요."),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "알아요.\n그래도 아직 움직일 수 있어요."),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "조금만 참으세요.\n출혈은 멎었습니다.", "main04_miel_supp_001"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "괜찮으십니까?", "main04_taeon_supp_001"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "저보다 이분이 먼저예요.", "main04_miel_supp_002"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "당신도 다친 것 같은데요.", "main04_taeon_supp_002"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "알아요.\n그래도 아직 움직일 수 있어요.", "main04_miel_supp_003"),
             Line(string.Empty, PlayerName, "여기서 무슨 일이 있었습니까?"),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "몬스터들에게 습격받았습니다.\n그런데 조금 이상했어요."),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "처음부터 사람을 노리고\n온 것 같지는 않았습니다."),
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "무언가를 피하고 있었습니까?"),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "네.\n갑자기 길을 가로막게 되자\n공격한 것처럼 보였어요.")
+            Line(MainQuest04FieldFlow.MielId, "미엘", "몬스터들에게 습격받았습니다.\n그런데 조금 이상했어요.", "main04_miel_supp_004"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "처음부터 사람을 노리고\n온 것 같지는 않았습니다.", "main04_miel_supp_005"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "무언가를 피하고 있었습니까?", "main04_taeon_supp_003"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "네.\n갑자기 길을 가로막게 되자\n공격한 것처럼 보였어요.", "main04_miel_supp_006")
         };
 
         private static DialogueLine[] EncounterConversation() => new[]
         {
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "또 옵니다.\n제가 앞을 맡겠습니다."),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "다친 곳은 제가 보겠습니다."),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "또 옵니다.\n제가 앞을 맡겠습니다.", "main04_taeon_supp_004"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "다친 곳은 제가 보겠습니다.", "main04_miel_supp_007"),
             Line(string.Empty, PlayerName, "갑시다.")
         };
 
         private static DialogueLine[] AfterBattleConversation() => new[]
         {
             // 미엘은 다른 사람을 돌보면서도 자기 상태를 외면하지 않습니다. 상처를 자기희생 성격으로 고정하지 않습니다.
-            Line(MainQuest04FieldFlow.MielId, "미엘", "괜찮으세요?\n다친 곳부터 확인할게요."),
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "본인부터 보셔야 하는 것 아닙니까?"),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "저도 볼 겁니다.\n이번에는 순서대로요."),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "괜찮으세요?\n다친 곳부터 확인할게요.", "main04_miel_supp_008"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "본인부터 보셔야 하는 것 아닙니까?", "main04_taeon_supp_005"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "저도 볼 겁니다.\n이번에는 순서대로요.", "main04_miel_supp_009"),
             // 세 사람의 현장 정보가 서로 보완될 뿐, 어느 한 사람도 사건의 정답을 독점하지 않습니다.
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "제가 본 움직임과\n이곳에서 있었던 일까지 합치면…"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "제가 본 움직임과\n이곳에서 있었던 일까지 합치면…", "main04_taeon_supp_006"),
             Line(string.Empty, PlayerName, "몬스터들이 마을을 노리고\n내려오는 건 아닌 것 같습니다."),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "초원보다 더 안쪽에서\n무언가가 벌어지고 있는 것 같아요."),
-            Line(MainQuest04FieldFlow.TaeonId, "태온", "여기서 더 들어가는 건\n지금은 위험할 것 같습니다."),
-            Line(MainQuest04FieldFlow.MielId, "미엘", "마을에도 이 상황을 알려야 해요."),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "초원보다 더 안쪽에서\n무언가가 벌어지고 있는 것 같아요.", "main04_miel_supp_010"),
+            Line(MainQuest04FieldFlow.TaeonId, "태온", "여기서 더 들어가는 건\n지금은 위험할 것 같습니다.", "main04_taeon_supp_007"),
+            Line(MainQuest04FieldFlow.MielId, "미엘", "마을에도 이 상황을 알려야 해요.", "main04_miel_supp_011"),
             Line(string.Empty, PlayerName, "돌아가죠.")
         };
     }

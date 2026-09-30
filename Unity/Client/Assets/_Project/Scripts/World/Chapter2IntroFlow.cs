@@ -369,8 +369,9 @@ namespace ProjectLimitless.World
             string speaker = targetId == "field03_main12_party_decision" ? "태온" : "폴";
             string text = Line(targetId);
             string voiceId = VoiceId(targetId);
-            // CSV에서 확인한 Main13/14 폴 조사에만 ID를 연결합니다. Main12의 기존 무음 대사는 유지합니다.
-            string speakerId = string.IsNullOrEmpty(voiceId) ? "" : CompanionRosterService.PaulId;
+            // 기존 Main13/14 폴 매핑은 유지하고, 보충팩의 Main12 조사 화자를 기존 태온/폴 ID로 연결합니다.
+            string speakerId = string.IsNullOrEmpty(voiceId) ? ""
+                : targetId == "field03_main12_party_decision" ? CompanionRosterService.TaeonId : CompanionRosterService.PaulId;
             DialoguePresenter.Instance?.ShowSequence(new[] { new DialogueLine(speakerId, speaker, text, voiceId) }, () =>
             {
                 if (!Current) return;
@@ -383,6 +384,9 @@ namespace ProjectLimitless.World
         {
             switch (id)
             {
+                case "field03_main12_tablet": return "main12_paul_supp_001";
+                case "village_main12_records": return "main12_paul_supp_002";
+                case "field03_main12_party_decision": return "main12_taeon_supp_001";
                 case "field04_main13_dry_soil": return "main13_paul_001";
                 case "field04_main13_shallow_stream": return "main13_paul_002";
                 case "arbel_main14_old_well": return "main14_paul_001";

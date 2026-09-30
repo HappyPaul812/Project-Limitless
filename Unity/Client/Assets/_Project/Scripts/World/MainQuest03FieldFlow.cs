@@ -131,10 +131,10 @@ namespace ProjectLimitless.World
                 return;
             }
             if (WorldModalState.IsOpen) return;
-            DialoguePresenter.Instance?.ShowSequence(MainQuest03FieldFlow.TaeonId, "태온", new[]
+            DialoguePresenter.Instance?.ShowSequence(new[]
             {
-                "바닥에 간단히 치료한 흔적과 떨어진 붕대가 남아 있습니다.",
-                "누군가 먼저 이곳을 지나간 것 같습니다."
+                new DialogueLine(MainQuest03FieldFlow.TaeonId, "태온", "바닥에 간단히 치료한 흔적과 떨어진 붕대가 남아 있습니다.", "main03_taeon_supp_001"),
+                new DialogueLine(MainQuest03FieldFlow.TaeonId, "태온", "누군가 먼저 이곳을 지나간 것 같습니다.", "main03_taeon_supp_002")
             }, () =>
             {
                 QuestService.NotifyLocationReached(locationId);
@@ -202,8 +202,8 @@ namespace ProjectLimitless.World
             if (target == MainQuest03FieldFlow.TaeonId)
             {
                 bool firstConversation = quest.CurrentObjective.ObjectiveId == "talk_to_taeon_first";
-                string[] pages = firstConversation ? FirstConversation() : AfterBattleConversation();
-                DialoguePresenter.Instance?.ShowSequence(MainQuest03FieldFlow.TaeonId, "대화", pages, () =>
+                DialogueLine[] pages = firstConversation ? FirstConversation() : AfterBattleConversation();
+                DialoguePresenter.Instance?.ShowSequence(pages, () =>
                 {
                     QuestService.NotifyNpcTalked(MainQuest03FieldFlow.TaeonId);
                     if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
@@ -213,10 +213,10 @@ namespace ProjectLimitless.World
             }
             if (target == MainQuest03FieldFlow.EncounterId)
             {
-                DialoguePresenter.Instance?.ShowSequence(MainQuest03FieldFlow.TaeonId, "태온", new[]
-                {
-                    "옵니다.",
-                    "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다."
+                DialoguePresenter.Instance?.ShowSequence(new[]
+            {
+                    new DialogueLine(MainQuest03FieldFlow.TaeonId, "태온", "옵니다.", "main03_taeon_supp_003"),
+                    new DialogueLine(MainQuest03FieldFlow.TaeonId, "태온", "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다.", "main03_taeon_supp_004")
                 }, StartStoryEncounter);
                 DialoguePresenter.Instance?.TrackDistance(player, transform, breakDistance);
                 return true;
@@ -233,26 +233,27 @@ namespace ProjectLimitless.World
             BattleSceneFlow.EnterStoryBattle(MainQuest03FieldFlow.EncounterId, bee, returnSpawn, transform.position);
         }
 
-        private static string[] FirstConversation() => new[]
-        {
-            "태온\n잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
-            "플레이어\n무슨 일이 있습니까?",
-            "태온\n저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
-            "플레이어\n저도 조금 전에 이상한 흔적을 발견했습니다.\n마을 쪽으로 몰려온 흔적이었습니다.",
-            "태온\n그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다."
+        // 기존 표시 문자열과 페이지 순서를 보존하면서 무음 페이지에만 Manifest의 안정 ID를 지정합니다.
+        private static DialogueLine[] FirstConversation() => new[]
+            {
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.", "main03_taeon_supp_005"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "플레이어\n무슨 일이 있습니까?"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.", "main03_taeon_supp_006"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "플레이어\n저도 조금 전에 이상한 흔적을 발견했습니다.\n마을 쪽으로 몰려온 흔적이었습니다."),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.", "main03_taeon_supp_007")
         };
 
         // 플레이어의 흔적과 태온의 반복 행동 관찰을 함께 놓아야 다음 방향을 추론할 수 있습니다.
         // 태온 한 사람이 초능력처럼 정답을 알아내는 장면으로 만들지 않습니다.
-        private static string[] AfterBattleConversation() => new[]
-        {
-            "태온\n역시 이상합니다.",
-            "플레이어\n방금 몬스터들도 같은 방향을 피했습니까?",
-            "태온\n네.\n싸우는 동안에도 몇 번이나\n그쪽으로 움직이지 않으려고 했어요.",
-            "플레이어\n제가 본 흔적도\n그 반대쪽에서 시작됐습니다.",
-            "태온\n그렇다면 우연은 아닌 것 같습니다.",
-            "태온\n저도 저쪽을 확인하려던 참이었습니다.",
-            "태온\n목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다."
+        private static DialogueLine[] AfterBattleConversation() => new[]
+            {
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n역시 이상합니다.", "main03_taeon_supp_008"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "플레이어\n방금 몬스터들도 같은 방향을 피했습니까?"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n네.\n싸우는 동안에도 몇 번이나\n그쪽으로 움직이지 않으려고 했어요.", "main03_taeon_supp_009"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "플레이어\n제가 본 흔적도\n그 반대쪽에서 시작됐습니다."),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n그렇다면 우연은 아닌 것 같습니다.", "main03_taeon_supp_010"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n저도 저쪽을 확인하려던 참이었습니다.", "main03_taeon_supp_011"),
+            new DialogueLine(MainQuest03FieldFlow.TaeonId, "대화", "태온\n목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.", "main03_taeon_supp_012")
         };
     }
 }
