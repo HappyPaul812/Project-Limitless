@@ -94,6 +94,12 @@ namespace ProjectLimitless.World
                 wall.transform.position = new Vector2(10.5f, i == 0 ? -4.5f : 4.5f);
                 wall.GetComponent<BoxCollider2D>().size = new Vector2(.3f, 6);
             }
+            // 복제 원본의 북쪽 중앙에는 기존 출구 틈이 남아 있습니다. Field06은 동쪽만 실제
+            // 출구이므로 이 틈을 막아 플레이어가 전환 없이 맵 밖으로 빠지지 않게 합니다.
+            var northWall = new GameObject("Main15BoundaryTop", typeof(BoxCollider2D));
+            northWall.transform.SetParent(transform, false);
+            northWall.transform.position = new Vector2(0, 7.7f);
+            northWall.GetComponent<BoxCollider2D>().size = new Vector2(4, 1);
         }
 
         private void BuildEnvironment()
