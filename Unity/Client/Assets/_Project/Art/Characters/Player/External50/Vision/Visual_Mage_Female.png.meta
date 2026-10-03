@@ -1,0 +1,623 @@
+fileFormatVersion: 2
+guid: 17cc1c1cc5f86b148abfdcb53e1fc503
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3010693579118020680
+    second: Visual_Mage_Female_0
+  - first:
+      213: -3151852151112992841
+    second: Visual_Mage_Female_1
+  - first:
+      213: 1557354933078868916
+    second: Visual_Mage_Female_2
+  - first:
+      213: -5902890327058785144
+    second: Visual_Mage_Female_3
+  - first:
+      213: -89640059091956958
+    second: Visual_Mage_Female_4
+  - first:
+      213: -1587327574883083191
+    second: Visual_Mage_Female_5
+  - first:
+      213: 5378090802432413252
+    second: Visual_Mage_Female_6
+  - first:
+      213: 7799738888161141019
+    second: Visual_Mage_Female_7
+  - first:
+      213: 7835015148438882842
+    second: Visual_Mage_Female_8
+  - first:
+      213: 379069639891367596
+    second: Visual_Mage_Female_9
+  - first:
+      213: -6399277997719742040
+    second: Visual_Mage_Female_10
+  - first:
+      213: -4459541018451057439
+    second: Visual_Mage_Female_11
+  - first:
+      213: -5396470060004952028
+    second: Visual_Mage_Female_12
+  - first:
+      213: -3118877671536100737
+    second: Visual_Mage_Female_13
+  - first:
+      213: 1295815385125505974
+    second: Visual_Mage_Female_14
+  - first:
+      213: 5317546256007531814
+    second: Visual_Mage_Female_15
+  - first:
+      213: -8282183469366615746
+    second: Visual_Mage_Female_Frame_00
+  - first:
+      213: -2750197170418786423
+    second: Visual_Mage_Female_Frame_01
+  - first:
+      213: -640956874227399948
+    second: Visual_Mage_Female_Frame_02
+  - first:
+      213: 7757319463356523564
+    second: Visual_Mage_Female_Frame_03
+  - first:
+      213: 6562642004685991173
+    second: Visual_Mage_Female_Frame_04
+  - first:
+      213: -1787972211000056345
+    second: Visual_Mage_Female_Frame_05
+  - first:
+      213: -4743656097107717397
+    second: Visual_Mage_Female_Frame_06
+  - first:
+      213: -2334260524311725195
+    second: Visual_Mage_Female_Frame_07
+  - first:
+      213: 3002241547692835781
+    second: Visual_Mage_Female_Frame_08
+  - first:
+      213: 5830350930998193379
+    second: Visual_Mage_Female_Frame_09
+  - first:
+      213: 7898847475561025139
+    second: Visual_Mage_Female_Frame_10
+  - first:
+      213: 6204474924659591228
+    second: Visual_Mage_Female_Frame_11
+  - first:
+      213: -3077222934519383319
+    second: Visual_Mage_Female_Frame_12
+  - first:
+      213: 1541849975975072017
+    second: Visual_Mage_Female_Frame_13
+  - first:
+      213: 8318383991998486082
+    second: Visual_Mage_Female_Frame_14
+  - first:
+      213: 4964064377863904481
+    second: Visual_Mage_Female_Frame_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e316ac7f306cf0d80800000000000000
+      internalID: -8282183469366615746
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f57e2ae3655d9d0800000000000000
+      internalID: -2750197170418786423
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f2c45b6e1dda17f0800000000000000
+      internalID: -640956874227399948
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24e69ea3f887ab60800000000000000
+      internalID: 7757319463356523564
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50dad550220331b50800000000000000
+      internalID: 6562642004685991173
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e562174fb8df27e0800000000000000
+      internalID: -1787972211000056345
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be25743a9e52b2eb0800000000000000
+      internalID: -4743656097107717397
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57bbe2bab6a0b9fd0800000000000000
+      internalID: -2334260524311725195
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c38624f7ca1aa920800000000000000
+      internalID: 3002241547692835781
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ece30ef74199e050800000000000000
+      internalID: 5830350930998193379
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e4ecbdde75e9d60800000000000000
+      internalID: 7898847475561025139
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38472e3219ba1650800000000000000
+      internalID: 6204474924659591228
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea794d7b028b45d0800000000000000
+      internalID: -3077222934519383319
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11150f25260c56510800000000000000
+      internalID: 1541849975975072017
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2469d540b26d07370800000000000000
+      internalID: 8318383991998486082
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Mage_Female_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec9fbc3046e3e440800000000000000
+      internalID: 4964064377863904481
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Visual_Mage_Female_0: -3010693579118020680
+      Visual_Mage_Female_1: -3151852151112992841
+      Visual_Mage_Female_10: -6399277997719742040
+      Visual_Mage_Female_11: -4459541018451057439
+      Visual_Mage_Female_12: -5396470060004952028
+      Visual_Mage_Female_13: -3118877671536100737
+      Visual_Mage_Female_14: 1295815385125505974
+      Visual_Mage_Female_15: 5317546256007531814
+      Visual_Mage_Female_2: 1557354933078868916
+      Visual_Mage_Female_3: -5902890327058785144
+      Visual_Mage_Female_4: -89640059091956958
+      Visual_Mage_Female_5: -1587327574883083191
+      Visual_Mage_Female_6: 5378090802432413252
+      Visual_Mage_Female_7: 7799738888161141019
+      Visual_Mage_Female_8: 7835015148438882842
+      Visual_Mage_Female_9: 379069639891367596
+      Visual_Mage_Female_Frame_00: -8282183469366615746
+      Visual_Mage_Female_Frame_01: -2750197170418786423
+      Visual_Mage_Female_Frame_02: -640956874227399948
+      Visual_Mage_Female_Frame_03: 7757319463356523564
+      Visual_Mage_Female_Frame_04: 6562642004685991173
+      Visual_Mage_Female_Frame_05: -1787972211000056345
+      Visual_Mage_Female_Frame_06: -4743656097107717397
+      Visual_Mage_Female_Frame_07: -2334260524311725195
+      Visual_Mage_Female_Frame_08: 3002241547692835781
+      Visual_Mage_Female_Frame_09: 5830350930998193379
+      Visual_Mage_Female_Frame_10: 7898847475561025139
+      Visual_Mage_Female_Frame_11: 6204474924659591228
+      Visual_Mage_Female_Frame_12: -3077222934519383319
+      Visual_Mage_Female_Frame_13: 1541849975975072017
+      Visual_Mage_Female_Frame_14: 8318383991998486082
+      Visual_Mage_Female_Frame_15: 4964064377863904481
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

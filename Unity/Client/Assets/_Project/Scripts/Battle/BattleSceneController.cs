@@ -153,6 +153,10 @@ namespace ProjectLimitless.Battle
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
         }
 
+        // sceneLoaded 기본곡 처리가 끝난 Start에서 실제 참가자의 Boss 여부로 최종 배정합니다.
+        private void Start() => ProjectLimitless.Audio.BgmPlaybackService.Instance?.PlayBattleMusic(
+            enemies.Members.Any(combatant => combatant.IsBoss));
+
         private void OnPathFeedbackOccurred(string message)
         {
             if (!string.IsNullOrWhiteSpace(message)) pendingPathFeedback = message;
@@ -382,7 +386,7 @@ namespace ProjectLimitless.Battle
             timelineText = MakeText(timelinePanel.transform, "Timeline", string.Empty, font, 17, Vector2.one * .5f, new Vector2(1040, 54)); timelineText.supportRichText = true;
         }
 
-        /// <summary>외부 배경 에셋 없이 하늘·원경·지면 층을 만들어 임시 전투 공간을 표현합니다.</summary>
+        /// <summary>확정 지역 배경을 전장 안에 표시하고, 미정 지역은 기존 임시 전장을 유지합니다.</summary>
         private Image CreateBattlefield(Transform parent)
         {
             // HP 정보는 바로 위의 전용 HUD가 맡습니다. 전장은 HUD 아래와 명령 패널 위에만 배치해
@@ -392,6 +396,22 @@ namespace ProjectLimitless.Battle
             Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
             Image horizon = MakeImage(battlefield.transform, "GoldenHorizon", new Color(.65f, .5f, .22f, .7f)); horizon.rectTransform.anchorMin = new Vector2(0, .415f); horizon.rectTransform.anchorMax = new Vector2(1, .425f); horizon.rectTransform.offsetMin = Vector2.zero; horizon.rectTransform.offsetMax = Vector2.zero;
+            BattleBackgroundCatalog backgrounds = Resources.Load<BattleBackgroundCatalog>("BattleBackgrounds/Chapter1");
+            Sprite backdrop = backgrounds != null ? backgrounds.Find(BattleEncounterContext.FieldSceneName,
+                BattleEncounterContext.StableEncounterId) : null;
+            if (backdrop != null)
+            {
+                // 얕은 전장 패널에 Fit하면 배경이 중앙에만 좁게 보입니다. 기존 전체 화면 Background에
+                // 원본 비율을 유지해 표시하고, HP·명령 패널은 기존 불투명 배경과 위치로 가독성을 유지합니다.
+                sky.gameObject.SetActive(false); distance.gameObject.SetActive(false);
+                ground.gameObject.SetActive(false); horizon.gameObject.SetActive(false);
+                Image artwork = parent.Find("Background").GetComponent<Image>();
+                artwork.color = Color.white;
+                artwork.sprite = backdrop;
+                artwork.preserveAspect = true;
+                artwork.raycastTarget = false;
+                battlefield.color = new Color(.045f, .08f, .12f, .12f);
+            }
             MakeText(battlefield.transform, "EnemySide", "적군", Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"), 15, new Vector2(.06f, .94f), new Vector2(70, 24)).color = new Color(.78f, .82f, .88f, .8f);
             MakeText(battlefield.transform, "AllySide", "아군", Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"), 15, new Vector2(.94f, .94f), new Vector2(70, 24)).color = new Color(.78f, .82f, .88f, .8f);
             return battlefield;

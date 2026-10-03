@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 486993f4163dd0748bc542096a91e365
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -703253563939574070
+    second: Visual_Healer_Female_0
+  - first:
+      213: -4709629053269234881
+    second: Visual_Healer_Female_1
+  - first:
+      213: -4940421807244767578
+    second: Visual_Healer_Female_2
+  - first:
+      213: -5671347368634443132
+    second: Visual_Healer_Female_3
+  - first:
+      213: -8159572600870192914
+    second: Visual_Healer_Female_4
+  - first:
+      213: -802317157442587494
+    second: Visual_Healer_Female_5
+  - first:
+      213: 4995112580710844351
+    second: Visual_Healer_Female_6
+  - first:
+      213: 970139483935863024
+    second: Visual_Healer_Female_7
+  - first:
+      213: -950260354408216398
+    second: Visual_Healer_Female_8
+  - first:
+      213: -2187346882066462463
+    second: Visual_Healer_Female_9
+  - first:
+      213: 3623406597459005037
+    second: Visual_Healer_Female_10
+  - first:
+      213: 2687752285123847352
+    second: Visual_Healer_Female_11
+  - first:
+      213: 4147918841104390195
+    second: Visual_Healer_Female_12
+  - first:
+      213: -6949530288924460714
+    second: Visual_Healer_Female_13
+  - first:
+      213: 6306114052352700710
+    second: Visual_Healer_Female_14
+  - first:
+      213: -1250873549978711006
+    second: Visual_Healer_Female_15
+  - first:
+      213: 2972543729506722996
+    second: Visual_Healer_Female_16
+  - first:
+      213: -5894107121141288267
+    second: Visual_Healer_Female_Frame_00
+  - first:
+      213: -4879486069556999185
+    second: Visual_Healer_Female_Frame_01
+  - first:
+      213: -649287158449287412
+    second: Visual_Healer_Female_Frame_02
+  - first:
+      213: 7514696378671429397
+    second: Visual_Healer_Female_Frame_03
+  - first:
+      213: 6022866059218564060
+    second: Visual_Healer_Female_Frame_04
+  - first:
+      213: -1693691464690678081
+    second: Visual_Healer_Female_Frame_05
+  - first:
+      213: 4325634995016288508
+    second: Visual_Healer_Female_Frame_06
+  - first:
+      213: 4023874978797627693
+    second: Visual_Healer_Female_Frame_07
+  - first:
+      213: -3788577322398022500
+    second: Visual_Healer_Female_Frame_08
+  - first:
+      213: 3522717096446229900
+    second: Visual_Healer_Female_Frame_09
+  - first:
+      213: 718220494979719261
+    second: Visual_Healer_Female_Frame_10
+  - first:
+      213: 8557734164677121965
+    second: Visual_Healer_Female_Frame_11
+  - first:
+      213: 1191003019648966409
+    second: Visual_Healer_Female_Frame_12
+  - first:
+      213: 6029400598270036305
+    second: Visual_Healer_Female_Frame_13
+  - first:
+      213: -2832675920711359181
+    second: Visual_Healer_Female_Frame_14
+  - first:
+      213: 6550122787981702190
+    second: Visual_Healer_Female_Frame_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2f5483dcce33ea0800000000000000
+      internalID: -5894107121141288267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb8699b545984cb0800000000000000
+      internalID: -4879486069556999185
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f486bf4c44df6f0800000000000000
+      internalID: -649287158449287412
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 517ff95ba80994860800000000000000
+      internalID: 7514696378671429397
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3ba7535c4859350800000000000000
+      internalID: 6022866059218564060
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb64000269cce78e0800000000000000
+      internalID: -1693691464690678081
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8c1f91c1eb70c30800000000000000
+      internalID: 4325634995016288508
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29a0db49fca7d730800000000000000
+      internalID: 4023874978797627693
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c948d5e7ff44c6bc0800000000000000
+      internalID: -3788577322398022500
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d7fd9f88433e030800000000000000
+      internalID: 3522717096446229900
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50eba12cb1a7f900800000000000000
+      internalID: 718220494979719261
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7ddc7c1ed23c670800000000000000
+      internalID: 8557734164677121965
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90f1898afea478010800000000000000
+      internalID: 1191003019648966409
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 159c96426ebbca350800000000000000
+      internalID: 6029400598270036305
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335623e124050b8d0800000000000000
+      internalID: -2832675920711359181
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Healer_Female_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2437dcb8f5b6ea50800000000000000
+      internalID: 6550122787981702190
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Visual_Healer_Female_0: -703253563939574070
+      Visual_Healer_Female_1: -4709629053269234881
+      Visual_Healer_Female_10: 3623406597459005037
+      Visual_Healer_Female_11: 2687752285123847352
+      Visual_Healer_Female_12: 4147918841104390195
+      Visual_Healer_Female_13: -6949530288924460714
+      Visual_Healer_Female_14: 6306114052352700710
+      Visual_Healer_Female_15: -1250873549978711006
+      Visual_Healer_Female_16: 2972543729506722996
+      Visual_Healer_Female_2: -4940421807244767578
+      Visual_Healer_Female_3: -5671347368634443132
+      Visual_Healer_Female_4: -8159572600870192914
+      Visual_Healer_Female_5: -802317157442587494
+      Visual_Healer_Female_6: 4995112580710844351
+      Visual_Healer_Female_7: 970139483935863024
+      Visual_Healer_Female_8: -950260354408216398
+      Visual_Healer_Female_9: -2187346882066462463
+      Visual_Healer_Female_Frame_00: -5894107121141288267
+      Visual_Healer_Female_Frame_01: -4879486069556999185
+      Visual_Healer_Female_Frame_02: -649287158449287412
+      Visual_Healer_Female_Frame_03: 7514696378671429397
+      Visual_Healer_Female_Frame_04: 6022866059218564060
+      Visual_Healer_Female_Frame_05: -1693691464690678081
+      Visual_Healer_Female_Frame_06: 4325634995016288508
+      Visual_Healer_Female_Frame_07: 4023874978797627693
+      Visual_Healer_Female_Frame_08: -3788577322398022500
+      Visual_Healer_Female_Frame_09: 3522717096446229900
+      Visual_Healer_Female_Frame_10: 718220494979719261
+      Visual_Healer_Female_Frame_11: 8557734164677121965
+      Visual_Healer_Female_Frame_12: 1191003019648966409
+      Visual_Healer_Female_Frame_13: 6029400598270036305
+      Visual_Healer_Female_Frame_14: -2832675920711359181
+      Visual_Healer_Female_Frame_15: 6550122787981702190
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

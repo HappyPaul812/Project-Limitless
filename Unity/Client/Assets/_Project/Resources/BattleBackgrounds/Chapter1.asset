@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ad0baaa3dda8a43a3d0b9976da4a0e, type: 3}
+  m_Name: Chapter1
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Battle.BattleBackgroundCatalog
+  scenes:
+  - sceneName: Field_01
+    sprite: {fileID: 21300000, guid: 2a75c121a2ab5da4b96baab569d50916, type: 3}
+  - sceneName: Field_02
+    sprite: {fileID: 21300000, guid: 70354bb2b50f152409d60b3d78e4624d, type: 3}
+  - sceneName: Field_03
+    sprite: {fileID: 21300000, guid: 70354bb2b50f152409d60b3d78e4624d, type: 3}
+  - sceneName: Dungeon_01
+    sprite: {fileID: 21300000, guid: 235a7a7d16fb1384c84ab0679cee2d27, type: 3}
+  - sceneName: Dungeon_01_B2
+    sprite: {fileID: 21300000, guid: 235a7a7d16fb1384c84ab0679cee2d27, type: 3}
+  silentWarden: {fileID: 21300000, guid: 5c713f5c52a255544b40bda33daecc90, type: 3}

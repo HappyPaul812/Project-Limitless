@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 5f4bd6c8ed3a6524f91e390195b9d0ef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8227978005069544144
+    second: Visual_Fighter_Female_0
+  - first:
+      213: -808399095803324402
+    second: Visual_Fighter_Female_1
+  - first:
+      213: 6233870661497666881
+    second: Visual_Fighter_Female_2
+  - first:
+      213: -4254665040670630911
+    second: Visual_Fighter_Female_3
+  - first:
+      213: -4309999168336577347
+    second: Visual_Fighter_Female_4
+  - first:
+      213: 2184125326223152536
+    second: Visual_Fighter_Female_5
+  - first:
+      213: -6146993849858168302
+    second: Visual_Fighter_Female_6
+  - first:
+      213: 8473129709759293531
+    second: Visual_Fighter_Female_7
+  - first:
+      213: 3544445822498292680
+    second: Visual_Fighter_Female_8
+  - first:
+      213: 1982351265394643387
+    second: Visual_Fighter_Female_9
+  - first:
+      213: -3532099286222350576
+    second: Visual_Fighter_Female_10
+  - first:
+      213: -2088591654960724642
+    second: Visual_Fighter_Female_11
+  - first:
+      213: -5005345682892291702
+    second: Visual_Fighter_Female_12
+  - first:
+      213: 4605152310520440543
+    second: Visual_Fighter_Female_Frame_00
+  - first:
+      213: -3115014505141247321
+    second: Visual_Fighter_Female_Frame_01
+  - first:
+      213: -472829704056868259
+    second: Visual_Fighter_Female_Frame_02
+  - first:
+      213: 6765206337683528845
+    second: Visual_Fighter_Female_Frame_03
+  - first:
+      213: 98809891226504654
+    second: Visual_Fighter_Female_Frame_04
+  - first:
+      213: -1728304938160574682
+    second: Visual_Fighter_Female_Frame_05
+  - first:
+      213: 2618915915318773597
+    second: Visual_Fighter_Female_Frame_06
+  - first:
+      213: 5392074803711645260
+    second: Visual_Fighter_Female_Frame_07
+  - first:
+      213: -7673329299896139439
+    second: Visual_Fighter_Female_Frame_08
+  - first:
+      213: 5181933114261887608
+    second: Visual_Fighter_Female_Frame_09
+  - first:
+      213: 2785094866164384228
+    second: Visual_Fighter_Female_Frame_10
+  - first:
+      213: 3429739588599431052
+    second: Visual_Fighter_Female_Frame_11
+  - first:
+      213: 6323115061513456232
+    second: Visual_Fighter_Female_Frame_12
+  - first:
+      213: -2638478759957769441
+    second: Visual_Fighter_Female_Frame_13
+  - first:
+      213: 5610544411091019851
+    second: Visual_Fighter_Female_Frame_14
+  - first:
+      213: -5126572778129271898
+    second: Visual_Fighter_Female_Frame_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd6e32590a9c8ef30800000000000000
+      internalID: 4605152310520440543
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2edd6cfce35c4d0800000000000000
+      internalID: -3115014505141247321
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52ff6aa3eb2079f0800000000000000
+      internalID: -472829704056868259
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c19dd0257d2ed50800000000000000
+      internalID: 6765206337683528845
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecdc9d2921b0f5100800000000000000
+      internalID: 98809891226504654
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fa261d0d3d308e0800000000000000
+      internalID: -1728304938160574682
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57413d3622485420800000000000000
+      internalID: 2618915915318773597
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46119d277f74da40800000000000000
+      internalID: 5392074803711645260
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 151081328abd28590800000000000000
+      internalID: -7673329299896139439
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ad96d56bce9e740800000000000000
+      internalID: 5181933114261887608
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e10e735605a6a620800000000000000
+      internalID: 2785094866164384228
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f309afbf1e89f20800000000000000
+      internalID: 3429739588599431052
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a8e6ba5a730c750800000000000000
+      internalID: 6323115061513456232
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13dd4d0c8d326bd0800000000000000
+      internalID: -2638478759957769441
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4822ab7a68acdd40800000000000000
+      internalID: 5610544411091019851
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Visual_Fighter_Female_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a3da645831cad8b0800000000000000
+      internalID: -5126572778129271898
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Visual_Fighter_Female_0: -8227978005069544144
+      Visual_Fighter_Female_1: -808399095803324402
+      Visual_Fighter_Female_10: -3532099286222350576
+      Visual_Fighter_Female_11: -2088591654960724642
+      Visual_Fighter_Female_12: -5005345682892291702
+      Visual_Fighter_Female_2: 6233870661497666881
+      Visual_Fighter_Female_3: -4254665040670630911
+      Visual_Fighter_Female_4: -4309999168336577347
+      Visual_Fighter_Female_5: 2184125326223152536
+      Visual_Fighter_Female_6: -6146993849858168302
+      Visual_Fighter_Female_7: 8473129709759293531
+      Visual_Fighter_Female_8: 3544445822498292680
+      Visual_Fighter_Female_9: 1982351265394643387
+      Visual_Fighter_Female_Frame_00: 4605152310520440543
+      Visual_Fighter_Female_Frame_01: -3115014505141247321
+      Visual_Fighter_Female_Frame_02: -472829704056868259
+      Visual_Fighter_Female_Frame_03: 6765206337683528845
+      Visual_Fighter_Female_Frame_04: 98809891226504654
+      Visual_Fighter_Female_Frame_05: -1728304938160574682
+      Visual_Fighter_Female_Frame_06: 2618915915318773597
+      Visual_Fighter_Female_Frame_07: 5392074803711645260
+      Visual_Fighter_Female_Frame_08: -7673329299896139439
+      Visual_Fighter_Female_Frame_09: 5181933114261887608
+      Visual_Fighter_Female_Frame_10: 2785094866164384228
+      Visual_Fighter_Female_Frame_11: 3429739588599431052
+      Visual_Fighter_Female_Frame_12: 6323115061513456232
+      Visual_Fighter_Female_Frame_13: -2638478759957769441
+      Visual_Fighter_Female_Frame_14: 5610544411091019851
+      Visual_Fighter_Female_Frame_15: -5126572778129271898
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

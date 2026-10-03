@@ -1,0 +1,865 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeb8b6b0a172f84bb0472f01e010376, type: 3}
+  m_Name: External50
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Player.PlayerAppearanceCatalog
+  entries:
+  - appearanceId: appearance.external.v1.hearing.fighter.male
+    theme: Hearing
+    jobTheme: Fighter
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Fighter_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 27001c3a63bb1754591e15c0e01de323, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.healer.female
+    theme: Hearing
+    jobTheme: Healer
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Healer_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 0c017cc75e5b8734ba080d82f67adab9, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.mage.female
+    theme: Hearing
+    jobTheme: Mage
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Mage_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: f9c143fa7139ee1448ca62fe029598bd, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.mage.male
+    theme: Hearing
+    jobTheme: Mage
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Mage_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: c3a51bcba4278c3439f9e824adb2efcb, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.guardian.female
+    theme: Hearing
+    jobTheme: Guardian
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Guardian_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: a52e61e038626864fadb12e7f5ba714f, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.guardian.male
+    theme: Hearing
+    jobTheme: Guardian
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Guardian_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 6de5383484f5a6d41aba4bf84a637152, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.fighter.female
+    theme: Hearing
+    jobTheme: Fighter
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Fighter_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 5331c61bc9b7cde4abef2b4069720f4e, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.marksman.male
+    theme: Hearing
+    jobTheme: Marksman
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Marksman_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: e140a02a0b189bd4ab21fff07cea18f6, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.healer.male
+    theme: Hearing
+    jobTheme: Healer
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Healer_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: da69ef63106f2df4898ad97e50739fa7, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.hearing.marksman.female
+    theme: Hearing
+    jobTheme: Marksman
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Hearing/Hearing_Marksman_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 016a1099285480245a7babf6a15fcc8b, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.marksman.male
+    theme: EmotionalScar
+    jobTheme: Marksman
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Marksman_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 0d7f9e093381e8549be2ab81fceb98e6, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.guardian.female
+    theme: EmotionalScar
+    jobTheme: Guardian
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Guardian_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: d7025e459d0ae7f43a05392cc0fb3e46, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.marksman.female
+    theme: EmotionalScar
+    jobTheme: Marksman
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Marksman_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 6a5c9f0727f42f643927465298a83471, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.mage.female
+    theme: EmotionalScar
+    jobTheme: Mage
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Mage_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 7ddb37ade9bcff646a67124062f8deec, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.healer.female
+    theme: EmotionalScar
+    jobTheme: Healer
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Healer_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 1d8bd5f3a0edf6249a136f2498bf50e4, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.healer.male
+    theme: EmotionalScar
+    jobTheme: Healer
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Healer_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 64769d660ac1470409db28864a8aac57, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.fighter.female
+    theme: EmotionalScar
+    jobTheme: Fighter
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Fighter_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: a2ac64213b5cbd747afc7c7dacad438f, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.guardian.male
+    theme: EmotionalScar
+    jobTheme: Guardian
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Guardian_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 1ee98252d8ccf1c4a8293b43e0d9e5b0, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.fighter.male
+    theme: EmotionalScar
+    jobTheme: Fighter
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Fighter_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 3265dcb24b0b10541ade2332a3bb9ab1, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.emotionalscar.mage.male
+    theme: EmotionalScar
+    jobTheme: Mage
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/EmotionalScar/Heartscar_Mage_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: f1440340e2ccbd74fae0d1de254b8e8a, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.marksman.female
+    theme: Intellectual
+    jobTheme: Marksman
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Marksman_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 26d36299725d0e249b01a355cf5e2552, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.mage.male
+    theme: Intellectual
+    jobTheme: Mage
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Mage_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 065bc1cd230abd84589fedd69ae272cf, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.marksman.male
+    theme: Intellectual
+    jobTheme: Marksman
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Marksman_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 935641d3cc3a3d04c99ef2558d2918ee, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.guardian.female
+    theme: Intellectual
+    jobTheme: Guardian
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Guardian_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 3bd8571623161e1479e3e76fa7eb71ea, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.guardian.male
+    theme: Intellectual
+    jobTheme: Guardian
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Guardian_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: a48b4704f3563dd4bba53e3bb35c8d64, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.healer.male
+    theme: Intellectual
+    jobTheme: Healer
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Healer_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: 9e57c9d1e848f9445b3ee9f732a5373e, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.healer.female
+    theme: Intellectual
+    jobTheme: Healer
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Healer_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet
+    sheet: {fileID: 2800000, guid: b9a21d73b0345ff44ad2d4d0127da7d6, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.fighter.female
+    theme: Intellectual
+    jobTheme: Fighter
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Fighter_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 58ba01885bb606942aa66cad5f9a49fd, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.fighter.male
+    theme: Intellectual
+    jobTheme: Fighter
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Fighter_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 970c943f91eb8a84e900f08e06f98908, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.intellectual.mage.female
+    theme: Intellectual
+    jobTheme: Mage
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Intellectual/Intellectual_Mage_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 764175111ffe3e94d82460037519155c, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.marksman.female
+    theme: Mobility
+    jobTheme: Marksman
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Marksman_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: d96523adf7621d9439c12e8e5b5e7544, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.marksman.male
+    theme: Mobility
+    jobTheme: Marksman
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Marksman_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 16afda81a0e523049a3883fa8fc04ab9, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.fighter.female
+    theme: Mobility
+    jobTheme: Fighter
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Fighter_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 32051cc1e524f334492196bb3a116822, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.guardian.male
+    theme: Mobility
+    jobTheme: Guardian
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Guardian_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 5b81275d7160be44db481de3bfb261c9, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.healer.female
+    theme: Mobility
+    jobTheme: Healer
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Healer_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 67a233a99c7515c4880600a9aaa176bb, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.mage.female
+    theme: Mobility
+    jobTheme: Mage
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Mage_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 07dadecb6b31f9646bc2ea5a07ddd620, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.mage.male
+    theme: Mobility
+    jobTheme: Mage
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Mage_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 7110d2350f99f5e4186627719c8bc328, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.fighter.male
+    theme: Mobility
+    jobTheme: Fighter
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Fighter_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 0722375725e0a7f4da2d818ab905e34f, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.healer.male
+    theme: Mobility
+    jobTheme: Healer
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Healer_Male.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 27c20d62c7950594db56598f7182980b, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.mobility.guardian.female
+    theme: Mobility
+    jobTheme: Guardian
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Mobility/Physical_Guardian_Female.png
+    width: 1254
+    height: 1254
+    hasAlpha: 0
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed; 128px grid conflicts
+      with 1254px sheet; no alpha channel
+    sheet: {fileID: 2800000, guid: 8bfc3c68570a4044bb47ae6a7dbdc347, type: 3}
+    frames: []
+  - appearanceId: appearance.external.v1.vision.fighter.female
+    theme: Vision
+    jobTheme: Fighter
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Fighter_Female.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    frames:
+    - {fileID: 4605152310520440543, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -3115014505141247321, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -472829704056868259, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 6765206337683528845, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 98809891226504654, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -1728304938160574682, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 2618915915318773597, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 5392074803711645260, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -7673329299896139439, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 5181933114261887608, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 2785094866164384228, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 3429739588599431052, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 6323115061513456232, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -2638478759957769441, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: 5610544411091019851, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+    - {fileID: -5126572778129271898, guid: 5f4bd6c8ed3a6524f91e390195b9d0ef, type: 3}
+  - appearanceId: appearance.external.v1.vision.fighter.male
+    theme: Vision
+    jobTheme: Fighter
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Fighter_Male.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    frames:
+    - {fileID: -3752647857382154072, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 1260419173185116966, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 5705828610722871680, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -9080091339051614500, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 5773285728133231880, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 1364335307531478126, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 5165059726758762838, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -455831110295637631, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -3056894402949284886, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -6810331757549176154, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -4677184670374623796, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -5906093948212769270, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -4064318702481902921, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 8697353610244182098, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: 6196531558768670872, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+    - {fileID: -7765079915457549727, guid: 99a8ff5bcf272aa4ba0074d4db2aacf3, type: 3}
+  - appearanceId: appearance.external.v1.vision.guardian.female
+    theme: Vision
+    jobTheme: Guardian
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Guardian_Female.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    frames:
+    - {fileID: -6333345080573275463, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 1091298742733953784, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -4066325259181075232, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -8017038155724161739, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -1663901856639048233, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -6061693255892661857, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -6930746172764718912, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 8678630885185818777, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -1064376801424892869, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 3453637243927487926, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 8471942062278958991, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 7234785234112792800, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: -2475235624383025083, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 5391733929245127419, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 1293198613908845982, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+    - {fileID: 3146680933662413709, guid: 9a0f3750ac682774eb84e563f94db103, type: 3}
+  - appearanceId: appearance.external.v1.vision.guardian.male
+    theme: Vision
+    jobTheme: Guardian
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Guardian_Male.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    frames:
+    - {fileID: -433599611422129140, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 3440281509233275032, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 5825114532168275331, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 3271605069299187766, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 2499975969309798220, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -4188717024189190028, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -2901375480657950167, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -6040529917953895828, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 7986765209137965322, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 5589704835270353720, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -4972154015042475848, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -3946754557625161464, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 4145986352330218993, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 2866491171990370206, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: 7066772586522492496, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+    - {fileID: -8772623568649309266, guid: a9f32b2155529e84faa8be5f41da5712, type: 3}
+  - appearanceId: appearance.external.v1.vision.healer.female
+    theme: Vision
+    jobTheme: Healer
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Healer_Female.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    frames:
+    - {fileID: -5894107121141288267, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: -4879486069556999185, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: -649287158449287412, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 7514696378671429397, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 6022866059218564060, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: -1693691464690678081, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 4325634995016288508, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 4023874978797627693, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: -3788577322398022500, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 3522717096446229900, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 718220494979719261, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 8557734164677121965, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 1191003019648966409, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 6029400598270036305, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: -2832675920711359181, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+    - {fileID: 6550122787981702190, guid: 486993f4163dd0748bc542096a91e365, type: 3}
+  - appearanceId: appearance.external.v1.vision.healer.male
+    theme: Vision
+    jobTheme: Healer
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Healer_Male.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    frames:
+    - {fileID: 4650136075333150417, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -1273368694356615815, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: 3278791705272235182, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -6559831755712424926, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: 5118225773147607796, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: 9100870123185884040, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -3587959446243733164, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: 5728453333169369949, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -8134048606048672755, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -8863759376647310291, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -4802604093413811745, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -6860423485941921624, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: 3769737947529787342, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -3845017420830283537, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -1926307019584522779, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+    - {fileID: -3883042730993420080, guid: 09bbab8229abd2d45b2ab387b5988934, type: 3}
+  - appearanceId: appearance.external.v1.vision.mage.female
+    theme: Vision
+    jobTheme: Mage
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Mage_Female.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    frames:
+    - {fileID: -8282183469366615746, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -2750197170418786423, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -640956874227399948, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 7757319463356523564, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 6562642004685991173, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -1787972211000056345, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -4743656097107717397, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -2334260524311725195, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 3002241547692835781, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 5830350930998193379, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 7898847475561025139, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 6204474924659591228, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: -3077222934519383319, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 1541849975975072017, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 8318383991998486082, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+    - {fileID: 4964064377863904481, guid: 17cc1c1cc5f86b148abfdcb53e1fc503, type: 3}
+  - appearanceId: appearance.external.v1.vision.mage.male
+    theme: Vision
+    jobTheme: Mage
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Mage_Male.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    frames:
+    - {fileID: -11796717619834509, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 2125078892258221558, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 7236692684094408015, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 6397662950693600025, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 6175641326271088497, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: -5339773474755946077, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 8559198983654561276, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 6563051563526095929, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 3091163820874572681, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 6888595123381461160, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: -2579497624126032889, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 7592121113160412817, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 6724645134694422093, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 7029558524123676335, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: 7985072746138439023, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+    - {fileID: -6910206811661762730, guid: f57e9fec356352e418da7d88cc079072, type: 3}
+  - appearanceId: appearance.external.v1.vision.marksman.female
+    theme: Vision
+    jobTheme: Marksman
+    gender: Female
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Marksman_Female.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    frames:
+    - {fileID: 8788498701357482651, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 3210236801365663819, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 5002387172598680175, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -1412287194914685598, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -2607171319517300738, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 4155623358615892882, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -5356031746140485486, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -4679487741185959491, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 4916153684736390357, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 2636473982417119987, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 3881964339605486463, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 4095281424211940772, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -2616119837409927328, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -263274221658011155, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: -8628110121802915248, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+    - {fileID: 7817686123799388466, guid: a9e3bcf9641bbc84bbdedab2a1dd52a4, type: 3}
+  - appearanceId: appearance.external.v1.vision.marksman.male
+    theme: Vision
+    jobTheme: Marksman
+    gender: Male
+    assetPath: Assets/_Project/Art/Characters/Player/External50/Vision/Visual_Marksman_Male.png
+    width: 512
+    height: 512
+    hasAlpha: 1
+    expectedFrameCount: 16
+    readyForSelection: 0
+    reviewReason: Frame directions and foot pivot unconfirmed
+    sheet: {fileID: 2800000, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    frames:
+    - {fileID: 7728101412351070367, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -1702164578983406761, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -3310275348783145009, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 2906552978550906418, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -7056453441096627694, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 7095315396649939930, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 4378666568591514709, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -3836120783923624448, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -5674816855716516826, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 8800638972253456880, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 3235521849832534520, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 5894699438679729652, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: -6501916236816295535, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 6222419491722715899, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 3138820928546124573, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}
+    - {fileID: 6644318097510309440, guid: 3bfbf7782d74ae74e8dd5093b4a55a77, type: 3}

@@ -22,5 +22,17 @@ MonoBehaviour:
   - sceneName: Field_01
     clip: {fileID: 8300000, guid: 624e16ac80ea63d498f97eb93da72287, type: 3}
   - sceneName: Field_04_WesternBorder
-    clip: {fileID: 8300000, guid: 624e16ac80ea63d498f97eb93da72287, type: 3}
+    clip: {fileID: 8300000, guid: 8dc555228b79489a947ec8dfafa45f72, type: 3}
+  - sceneName: Field_05_WesternOutskirts
+    clip: {fileID: 8300000, guid: 8dc555228b79489a947ec8dfafa45f72, type: 3}
+  - sceneName: Field_06_ScorchedTrail
+    clip: {fileID: 8300000, guid: 8dc555228b79489a947ec8dfafa45f72, type: 3}
+  - sceneName: Dungeon_01
+    clip: {fileID: 8300000, guid: a87ac7602f5240518bfa2ed5d8ace1d8, type: 3}
+  - sceneName: Dungeon_01_B2
+    clip: {fileID: 8300000, guid: 83623efa2cae45f08a9908ffa6c22826, type: 3}
   safeZoneClip: {fileID: 8300000, guid: bbb81dfc8750786489989a28098bbff6, type: 3}
+  chapter1BattleClip: {fileID: 8300000, guid: 3d11958c811f4bf68fe4ce3e6fb1675a, type: 3}
+  silentWardenClip: {fileID: 8300000, guid: ecb1cada14bc4f6995a48d160538ca55, type: 3}
+  westernIntroductionClip: {fileID: 8300000, guid: 1cad0945c44346b099bd6053ed2238a2, type: 3}
+  deepWestClip: {fileID: 8300000, guid: 367915f56ea94efa8715ccf447ba920b, type: 3}

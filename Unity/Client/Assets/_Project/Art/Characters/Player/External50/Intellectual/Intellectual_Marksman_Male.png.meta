@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: 935641d3cc3a3d04c99ef2558d2918ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6229931975390440844
+    second: Intellectual_Marksman_Male_0
+  - first:
+      213: 8170609317802902178
+    second: Intellectual_Marksman_Male_1
+  - first:
+      213: -3070226043471419742
+    second: Intellectual_Marksman_Male_2
+  - first:
+      213: 7817389867464337593
+    second: Intellectual_Marksman_Male_3
+  - first:
+      213: -6919622593613690856
+    second: Intellectual_Marksman_Male_4
+  - first:
+      213: -6051699699124468306
+    second: Intellectual_Marksman_Male_5
+  - first:
+      213: 3249833768787215296
+    second: Intellectual_Marksman_Male_6
+  - first:
+      213: -7158908091267172104
+    second: Intellectual_Marksman_Male_7
+  - first:
+      213: 3869854059165388963
+    second: Intellectual_Marksman_Male_8
+  - first:
+      213: 2671324437592368050
+    second: Intellectual_Marksman_Male_9
+  - first:
+      213: 9110989615542507929
+    second: Intellectual_Marksman_Male_10
+  - first:
+      213: -5969019237439043041
+    second: Intellectual_Marksman_Male_11
+  - first:
+      213: -9004450973758518495
+    second: Intellectual_Marksman_Male_12
+  - first:
+      213: -2935331919012144994
+    second: Intellectual_Marksman_Male_13
+  - first:
+      213: -716174983208280777
+    second: Intellectual_Marksman_Male_14
+  - first:
+      213: 9005485921273693495
+    second: Intellectual_Marksman_Male_15
+  - first:
+      213: 853634031029678832
+    second: Intellectual_Marksman_Male_16
+  - first:
+      213: 4245021819528687314
+    second: Intellectual_Marksman_Male_17
+  - first:
+      213: 6383219585642795560
+    second: Intellectual_Marksman_Male_18
+  - first:
+      213: 5810553448158277471
+    second: Intellectual_Marksman_Male_19
+  - first:
+      213: 5244327785741287062
+    second: Intellectual_Marksman_Male_20
+  - first:
+      213: 259439294572239825
+    second: Intellectual_Marksman_Male_21
+  - first:
+      213: -8255035916477988692
+    second: Intellectual_Marksman_Male_22
+  - first:
+      213: 3533699834520682220
+    second: Intellectual_Marksman_Male_23
+  - first:
+      213: -3879590148156610279
+    second: Intellectual_Marksman_Male_24
+  - first:
+      213: -1909012084594907104
+    second: Intellectual_Marksman_Male_25
+  - first:
+      213: 5661928580766685446
+    second: Intellectual_Marksman_Male_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Intellectual_Marksman_Male_0: -6229931975390440844
+      Intellectual_Marksman_Male_1: 8170609317802902178
+      Intellectual_Marksman_Male_10: 9110989615542507929
+      Intellectual_Marksman_Male_11: -5969019237439043041
+      Intellectual_Marksman_Male_12: -9004450973758518495
+      Intellectual_Marksman_Male_13: -2935331919012144994
+      Intellectual_Marksman_Male_14: -716174983208280777
+      Intellectual_Marksman_Male_15: 9005485921273693495
+      Intellectual_Marksman_Male_16: 853634031029678832
+      Intellectual_Marksman_Male_17: 4245021819528687314
+      Intellectual_Marksman_Male_18: 6383219585642795560
+      Intellectual_Marksman_Male_19: 5810553448158277471
+      Intellectual_Marksman_Male_2: -3070226043471419742
+      Intellectual_Marksman_Male_20: 5244327785741287062
+      Intellectual_Marksman_Male_21: 259439294572239825
+      Intellectual_Marksman_Male_22: -8255035916477988692
+      Intellectual_Marksman_Male_23: 3533699834520682220
+      Intellectual_Marksman_Male_24: -3879590148156610279
+      Intellectual_Marksman_Male_25: -1909012084594907104
+      Intellectual_Marksman_Male_26: 5661928580766685446
+      Intellectual_Marksman_Male_3: 7817389867464337593
+      Intellectual_Marksman_Male_4: -6919622593613690856
+      Intellectual_Marksman_Male_5: -6051699699124468306
+      Intellectual_Marksman_Male_6: 3249833768787215296
+      Intellectual_Marksman_Male_7: -7158908091267172104
+      Intellectual_Marksman_Male_8: 3869854059165388963
+      Intellectual_Marksman_Male_9: 2671324437592368050
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

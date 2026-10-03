@@ -10,6 +10,7 @@ namespace ProjectLimitless.Audio
         private AudioSource source;
         private BgmSceneCatalog catalog;
         private AudioListener sceneListener;
+        private bool westernIntroductionPlaying;
         public AudioClip CurrentClip => source != null ? source.clip : null;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
@@ -45,7 +46,10 @@ namespace ProjectLimitless.Audio
 
         private void ApplyScene(Scene scene)
         {
-            Play(catalog != null ? catalog.Find(scene.name) : null);
+            // 소개 음악의 수명은 해당 Scene 안입니다. 전투·이동·패배 복귀에 이전 소개가 남지 않습니다.
+            westernIntroductionPlaying = false;
+            // Battle는 참가자를 만든 Controller의 Start가 배정합니다. 서비스 Start 순서에 따라 덮어쓰지 않습니다.
+            if (scene.name != "Battle") Play(catalog != null ? catalog.Find(scene.name) : null);
             // Intro는 자신의 Camera/Listener를 Start에서 생성합니다. 먼저 Listener를 만들면 두 출력이 겹칩니다.
             if (scene.name == "OpeningIntro") { sceneListener = null; return; }
             EnsureListener(scene);
@@ -79,6 +83,7 @@ namespace ProjectLimitless.Audio
         {
             if (source == null || source.clip == clip && (clip == null || source.isPlaying)) return;
             source.Stop();
+            source.loop = true;
             source.clip = clip;
             if (clip != null) source.Play();
         }
@@ -91,6 +96,33 @@ namespace ProjectLimitless.Audio
         }
 
         private void OnDisable() { if (source != null) { source.Stop(); source.clip = null; } }
+        /// <summary>실제 참가자가 준비된 Battle Start에서 호출합니다. 기존 Source/Mixer와 복귀 Scene 정책을 재사용합니다.</summary>
+        public void PlayBattleMusic(bool isBoss)
+        {
+            if (SceneManager.GetActiveScene().name != "Battle") return;
+            Play(catalog != null ? catalog.FindBattle(
+                ProjectLimitless.Battle.BattleEncounterContext.FieldSceneName ?? string.Empty,
+                ProjectLimitless.Battle.BattleEncounterContext.StableEncounterId, isBoss) : null);
+        }
+
+        /// <summary>미래의 첫 서부 소개 시작 Hook입니다. 임의 타이머나 Save 플래그를 추가하지 않습니다.</summary>
+        public bool BeginWesternIntroduction()
+        {
+            if (SceneManager.GetActiveScene().name != "Field_04_WesternBorder" || catalog == null ||
+                catalog.WesternIntroductionClip == null) return false;
+            westernIntroductionPlaying = true;
+            Play(catalog.WesternIntroductionClip);
+            source.loop = false;
+            return true;
+        }
+
+        /// <summary>소개 종료·취소 양쪽에서 호출해 현재 Scene의 기본 탐색곡으로 복구합니다.</summary>
+        public void EndWesternIntroduction()
+        {
+            if (!westernIntroductionPlaying) return;
+            westernIntroductionPlaying = false;
+            Play(catalog != null ? catalog.Find(SceneManager.GetActiveScene().name) : null);
+        }
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
