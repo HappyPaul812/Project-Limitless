@@ -1,10 +1,10 @@
 {
   "entries": [
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Fighter_Female.png",
-      "sha256": "9bb18922da7e110067c570c1a89784e59f683c4091f49c43616691e7a50f4003",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Fighter_Female.png",
+      "sha256": "c0fed8f037a1ec6769322fd5efd284ee5fc76054f3559e53f0951ac53b3d5ff3",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.hearing.fighter.female",
       "theme": "Hearing",
@@ -15,112 +15,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Right 발 아래 인접 Up 머리 조각, Up 머리 상단 잘림, Left 일부 머리카락 경계 절단.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          7,
-          8,
-          120,
-          124
+          0,
+          0,
+          125,
+          128
         ],
         [
-          8,
-          8,
-          119,
-          124
+          3,
+          0,
+          128,
+          128
         ],
         [
-          7,
-          8,
-          120,
-          124
+          0,
+          0,
+          127,
+          128
         ],
         [
-          9,
-          8,
-          118,
-          124
+          2,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          11,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
           6,
-          8,
-          122,
-          124
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          6,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          13,
+          0,
+          128,
+          122
         ],
         [
           10,
-          8,
-          122,
-          124
+          0,
+          128,
+          119
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          121
         ],
         [
-          18,
-          15,
-          120,
-          123
-        ],
-        [
-          12,
-          19,
-          119,
-          124
-        ],
-        [
-          6,
-          15,
-          122,
-          124
-        ],
-        [
-          6,
-          15,
-          122,
-          124
+          0,
+          0,
+          128,
+          121
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Fighter_Male.png",
-      "sha256": "aa6c84d979b3cd01a3118489797b11df3446903e552b438991a84b718c908173",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Fighter_Male.png",
+      "sha256": "abbb0df2eee93ecdb2c44fade441de9366d9cb9742a3f891e404c100afca60cf",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.hearing.fighter.male",
       "theme": "Hearing",
@@ -131,112 +148,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          7,
-          8,
-          120,
-          124
+          0,
+          4,
+          126,
+          128
         ],
         [
-          8,
-          8,
-          120,
-          124
+          2,
+          4,
+          126,
+          128
         ],
         [
-          8,
-          8,
-          119,
-          124
+          2,
+          4,
+          126,
+          128
         ],
         [
-          9,
-          8,
-          119,
-          124
+          2,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          4,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          11,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
           6,
-          8,
-          122,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          16,
-          8,
-          122,
-          118
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
           8,
-          122,
-          118
+          0,
+          128,
+          121
         ],
         [
-          6,
-          8,
-          122,
-          119
+          0,
+          0,
+          128,
+          121
         ],
         [
-          6,
-          14,
-          121,
-          124
+          0,
+          0,
+          128,
+          121
+        ],
+        [
+          0,
+          0,
+          128,
+          121
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Guardian_Female.png",
-      "sha256": "fbb02e1d06505ceb1c95b43804262e8512ca40225a8cd4979ef6403d7b4de230",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Guardian_Female.png",
+      "sha256": "8a3e1e9b21bb353adfa5e71c20e6cbeac5822a5c4af02cc265f5fca125c55507",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png",
       "appearanceId": "appearance.external.v1.hearing.guardian.female",
       "theme": "Hearing",
@@ -247,112 +281,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림, 일부 무기·머리카락 경계 절단.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          8,
-          8,
-          120,
-          124
+          4,
+          0,
+          128,
+          128
         ],
         [
-          7,
-          8,
-          120,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          8,
-          8,
-          119,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          8,
-          8,
-          120,
-          124
+          4,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          126,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          11,
-          8,
-          116,
-          124
+          13,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          12,
-          17,
-          116,
-          120
+          13,
+          0,
+          128,
+          114
         ],
         [
-          6,
-          11,
-          122,
-          117
+          0,
+          0,
+          128,
+          115
         ],
         [
-          6,
-          19,
-          122,
-          124
+          0,
+          0,
+          128,
+          115
         ],
         [
-          6,
-          20,
-          122,
-          124
+          0,
+          0,
+          128,
+          112
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Guardian_Male.png",
-      "sha256": "20b0b5df8d563d8ba807660f833f11bd97fc7464de6a97d7d55c1f2f547bc125",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Guardian_Male.png",
+      "sha256": "2fb2d1b285c4bdb1378fb5374240766901e01558d0204f45bdf336fea4a809af",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.hearing.guardian.male",
       "theme": "Hearing",
@@ -363,112 +414,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          8,
-          9,
-          119,
-          124
+          5,
+          6,
+          128,
+          126
         ],
         [
+          0,
           6,
-          14,
-          122,
-          124
+          128,
+          128
+        ],
+        [
+          1,
+          6,
+          126,
+          128
+        ],
+        [
+          0,
+          6,
+          128,
+          128
         ],
         [
           7,
-          14,
-          120,
-          124
+          2,
+          128,
+          128
         ],
         [
-          6,
-          14,
-          121,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          9,
-          9,
-          119,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
           11,
-          8,
-          117,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          11,
-          19,
-          116,
-          124
+          13,
+          0,
+          128,
+          116
         ],
         [
-          6,
-          19,
-          122,
-          124
+          0,
+          0,
+          128,
+          116
         ],
         [
-          6,
-          8,
-          121,
-          113
+          0,
+          0,
+          128,
+          115
         ],
         [
-          7,
-          19,
-          121,
-          124
+          3,
+          0,
+          128,
+          116
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Healer_Female.png",
-      "sha256": "74f63757763c2598165e4563f97e06171904426b7a0a400461ba8aedcaac1404",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Healer_Female.png",
+      "sha256": "4daf325a201825850bf0bc4a07199644af57da6b067780c76062fb9683409ca4",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
       "appearanceId": "appearance.external.v1.hearing.healer.female",
       "theme": "Hearing",
@@ -479,112 +547,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 본체 밖에 분리된 빨간 지팡이 장식·인접 셀 잔상이 보임.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: 인접 셀 머리카락 조각, Right 발 아래 잔상과 지팡이 경계 절단, Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          10,
-          8,
-          122,
-          124
+          19,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          11,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          9,
+          0,
+          128,
+          128
         ],
         [
-          6,
+          0,
+          4,
+          128,
+          128
+        ],
+        [
           13,
-          122,
-          124
+          0,
+          128,
+          128
         ],
         [
-          12,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          4,
+          0,
+          128,
+          128
         ],
         [
-          10,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          123,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          118
-        ],
-        [
-          6,
-          11,
-          122,
+          0,
+          0,
+          126,
           122
         ],
         [
-          6,
-          8,
+          7,
+          0,
           122,
-          120
+          121
         ],
         [
-          6,
-          16,
-          122,
-          124
+          0,
+          0,
+          128,
+          121
+        ],
+        [
+          0,
+          0,
+          121,
+          119
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Healer_Male.png",
-      "sha256": "e409fb4b08a757cb8ace7a4d686b625044b1f26b49bd195eb6151b83509568ee",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Healer_Male.png",
+      "sha256": "97d9cfb869afbd8d38af16ed201c73bd110b43bfcaef7f22ab1b4ec63dc65dc1",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
       "appearanceId": "appearance.external.v1.hearing.healer.male",
       "theme": "Hearing",
@@ -595,112 +680,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: 분리된 지팡이·망토 조각, Right 발 아래 머리 조각, Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          10,
-          14,
-          122,
-          124
-        ],
-        [
-          6,
+          5,
           8,
-          122,
-          124
+          128,
+          128
+        ],
+        [
+          0,
+          7,
+          128,
+          128
+        ],
+        [
+          0,
+          6,
+          128,
+          128
+        ],
+        [
+          0,
+          9,
+          128,
+          128
         ],
         [
           6,
-          13,
-          122,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          15,
-          121,
-          124
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          123,
+          128
         ],
         [
           11,
-          8,
-          122,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          9,
-          8,
-          119,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          10,
-          8,
-          117,
-          124
+          12,
+          0,
+          128,
+          121
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          10,
-          14,
-          117,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          116
-        ],
-        [
-          6,
-          8,
-          122,
+          0,
+          0,
+          128,
           118
         ],
         [
-          6,
-          8,
-          122,
-          118
+          0,
+          0,
+          128,
+          121
+        ],
+        [
+          0,
+          0,
+          128,
+          121
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Mage_Female.png",
-      "sha256": "2c80a92b9dd63569a76efac811a64a4b982b401fbe088497d5ab3f848764614f",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Mage_Female.png",
+      "sha256": "9376c97f92fc608f7df6e494a12859f93c2520c8027548408cc4c44024135260",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
       "appearanceId": "appearance.external.v1.hearing.mage.female",
       "theme": "Hearing",
@@ -711,112 +813,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 분리된 빨간색/금색 지팡이 조각이 본체 옆에 보임.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: 분리된 빨간 지팡이 장식·인접 조각, Right 발 아래 잔상과 Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          10,
-          14,
-          122,
-          124
-        ],
-        [
-          6,
-          14,
-          122,
-          124
-        ],
-        [
-          6,
-          14,
-          122,
-          124
-        ],
-        [
-          6,
-          14,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          121,
-          118
-        ],
-        [
           7,
-          14,
-          120,
-          124
+          8,
+          128,
+          128
         ],
         [
-          6,
-          14,
-          121,
-          124
+          0,
+          9,
+          128,
+          128
         ],
         [
-          6,
-          14,
-          121,
-          124
+          0,
+          9,
+          128,
+          128
+        ],
+        [
+          0,
+          7,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          126,
+          122
+        ],
+        [
+          2,
+          0,
+          128,
+          121
+        ],
+        [
+          0,
+          0,
+          126,
+          121
+        ],
+        [
+          2,
+          0,
+          128,
+          122
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Mage_Male.png",
-      "sha256": "006edbee9dcdc89754c008bbbd1b2d1096f68f2135318487ae069a6c0f25e212",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Mage_Male.png",
+      "sha256": "c0b9ad0c44f96fbd4e56b3bc5bcc611641adc9f606855781380897ea43200ad3",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png",
       "appearanceId": "appearance.external.v1.hearing.mage.male",
       "theme": "Hearing",
@@ -827,112 +946,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Right 인접 지팡이 장식·머리 조각, Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          6,
-          14,
-          122,
-          124
+          0,
+          7,
+          128,
+          128
         ],
         [
-          6,
-          14,
-          122,
-          124
+          0,
+          7,
+          128,
+          128
         ],
         [
+          0,
           6,
-          15,
-          121,
-          124
+          128,
+          128
+        ],
+        [
+          0,
+          7,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
         ],
         [
           7,
-          15,
-          121,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          7,
-          8,
-          121,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          5,
+          0,
+          128,
+          116
         ],
         [
-          9,
-          8,
-          122,
-          124
+          3,
+          0,
+          128,
+          117
         ],
         [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          10,
-          19,
-          118,
-          124
-        ],
-        [
-          7,
-          11,
-          120,
+          0,
+          0,
+          128,
           118
         ],
         [
-          6,
-          8,
-          122,
-          115
-        ],
-        [
-          6,
-          18,
-          122,
-          124
+          0,
+          0,
+          128,
+          120
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Marksman_Female.png",
-      "sha256": "5803731f51f20d1df16748138a9f26edb4260fc781cede5f6563e69744ace3a9",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Marksman_Female.png",
+      "sha256": "e2061a00acb8e9a8ef7c05ed0e6a21e08f80b49044433aef078b8d7d7ddeb567",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.hearing.marksman.female",
       "theme": "Hearing",
@@ -943,112 +1079,129 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: 인접 머리카락·무기 조각, Right 발 아래 다음 행 머리 조각, Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          10,
-          8,
-          118,
-          124
-        ],
-        [
           6,
-          8,
-          121,
-          124
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          7,
-          8,
-          120,
-          124
+          11,
+          0,
+          128,
+          128
         ],
         [
-          9,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          6,
-          8,
-          121,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          8,
-          8,
-          121,
-          124
+          0,
+          0,
+          126,
+          128
         ],
         [
-          6,
-          8,
-          122,
-          124
+          2,
+          0,
+          128,
+          128
         ],
         [
-          8,
-          8,
-          120,
-          124
+          0,
+          0,
+          128,
+          128
         ],
         [
-          17,
-          8,
-          122,
-          117
+          0,
+          0,
+          124,
+          128
         ],
         [
-          6,
-          8,
-          122,
+          13,
+          0,
+          128,
           118
         ],
         [
-          6,
-          8,
-          122,
-          117
+          0,
+          0,
+          128,
+          120
         ],
         [
-          6,
-          16,
-          122,
-          124
+          0,
+          0,
+          128,
+          119
+        ],
+        [
+          0,
+          0,
+          128,
+          121
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Marksman_Male.png",
-      "sha256": "55e28a7aeea6a52fe742f45261cebb001a1b7315770247836afc1b97854fc452",
+      "sourceZip": "F:/Downloads/Limitless_Hearing_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "5ab8b684deeca852c1bed310f3da194608da7567d02d3873ec672910db2c1ee3",
+      "sourceEntry": "Limitless_Hearing_Path_Sprites_Fixed/Hearing_Marksman_Male.png",
+      "sha256": "790b086a2b11a7be4e83f41e60d67bac15c6f2d6ec5e77e27826340a2e18ade4",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.hearing.marksman.male",
       "theme": "Hearing",
@@ -1059,104 +1212,121 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
-      "edgeTouchCells": [],
+      "reviewReason": "BLOCKED_ART: Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림.",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
       "cellBboxes": [
         [
-          12,
-          12,
-          116,
-          124
+          13,
+          5,
+          128,
+          128
         ],
         [
-          6,
-          12,
-          122,
-          124
+          0,
+          4,
+          128,
+          128
         ],
         [
-          6,
-          12,
-          122,
-          124
+          0,
+          5,
+          128,
+          128
         ],
         [
-          11,
-          12,
-          116,
-          124
-        ],
-        [
-          15,
-          8,
-          115,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          6,
-          8,
-          122,
-          124
-        ],
-        [
-          10,
-          8,
+          0,
+          4,
           117,
-          124
+          128
+        ],
+        [
+          19,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          7,
+          0,
+          121,
+          128
         ],
         [
           8,
-          8,
-          119,
-          124
+          0,
+          126,
+          128
         ],
         [
           13,
-          8,
-          115,
-          124
-        ],
-        [
-          13,
-          8,
-          114,
-          124
-        ],
-        [
-          12,
-          15,
-          115,
-          124
+          0,
+          125,
+          128
         ],
         [
           9,
-          14,
-          119,
-          124
+          0,
+          121,
+          128
+        ],
+        [
+          13,
+          0,
+          128,
+          121
+        ],
+        [
+          0,
+          0,
+          121,
+          121
         ],
         [
           18,
-          8,
-          119,
-          117
+          0,
+          128,
+          122
         ],
         [
-          9,
-          15,
-          119,
-          124
+          0,
+          0,
+          122,
+          121
         ]
       ]
     },
