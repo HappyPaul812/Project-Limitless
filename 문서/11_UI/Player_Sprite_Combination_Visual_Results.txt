@@ -1,0 +1,8 @@
+PASS
+PASS Scene CharacterCreation
+PASS 백그라운드 UI Render CharacterCreation 1280x720/800x600
+PASS Scene JobSelection
+PASS 백그라운드 UI Render JobSelection 1280x720/800x600
+PASS Scene FinalConfirmation
+PASS 백그라운드 UI Render FinalConfirmation 1280x720/800x600
+PASS Scene Bootstrap

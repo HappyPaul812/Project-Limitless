@@ -1,0 +1,347 @@
+PASS
+PASS 50 definitions / 5 Path / 5 Job
+PASS Ready21 / Blocked29
+PASS Duplicate0
+PASS Sprite800 preserved
+PASS isolated slot1
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.vision
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.vision.guardian.male
+PASS Job Preview appearance.external.v1.vision.guardian.male
+PASS Blocked 표시 appearance.external.v1.vision.guardian.male
+PASS Story 실제 Path appearance.external.v1.vision.guardian.male
+PASS Mapping appearance.external.v1.vision.healer.male
+PASS Job Preview appearance.external.v1.vision.healer.male
+PASS Blocked 표시 appearance.external.v1.vision.healer.male
+PASS Story 실제 Path appearance.external.v1.vision.healer.male
+PASS Mapping appearance.external.v1.vision.marksman.male
+PASS Job Preview appearance.external.v1.vision.marksman.male
+PASS Blocked 표시 appearance.external.v1.vision.marksman.male
+PASS Story 실제 Path appearance.external.v1.vision.marksman.male
+PASS Mapping appearance.external.v1.vision.fighter.male
+PASS Job Preview appearance.external.v1.vision.fighter.male
+PASS Blocked 표시 appearance.external.v1.vision.fighter.male
+PASS Story 실제 Path appearance.external.v1.vision.fighter.male
+PASS Mapping appearance.external.v1.vision.mage.male
+PASS Job Preview appearance.external.v1.vision.mage.male
+PASS Blocked 표시 appearance.external.v1.vision.mage.male
+PASS Story 실제 Path appearance.external.v1.vision.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.hearing
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.hearing.guardian.male
+PASS Job Preview appearance.external.v1.hearing.guardian.male
+PASS Blocked 표시 appearance.external.v1.hearing.guardian.male
+PASS Story 실제 Path appearance.external.v1.hearing.guardian.male
+PASS Mapping appearance.external.v1.hearing.healer.male
+PASS Job Preview appearance.external.v1.hearing.healer.male
+PASS Blocked 표시 appearance.external.v1.hearing.healer.male
+PASS Story 실제 Path appearance.external.v1.hearing.healer.male
+PASS Mapping appearance.external.v1.hearing.marksman.male
+PASS Job Preview appearance.external.v1.hearing.marksman.male
+PASS Blocked 표시 appearance.external.v1.hearing.marksman.male
+PASS Story 실제 Path appearance.external.v1.hearing.marksman.male
+PASS Mapping appearance.external.v1.hearing.fighter.male
+PASS Job Preview appearance.external.v1.hearing.fighter.male
+PASS Blocked 표시 appearance.external.v1.hearing.fighter.male
+PASS Story 실제 Path appearance.external.v1.hearing.fighter.male
+PASS Mapping appearance.external.v1.hearing.mage.male
+PASS Job Preview appearance.external.v1.hearing.mage.male
+PASS Blocked 표시 appearance.external.v1.hearing.mage.male
+PASS Story 실제 Path appearance.external.v1.hearing.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.intellectual
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.intellectual.guardian.male
+PASS Job Preview appearance.external.v1.intellectual.guardian.male
+PASS Blocked 표시 appearance.external.v1.intellectual.guardian.male
+PASS Story 실제 Path appearance.external.v1.intellectual.guardian.male
+PASS Mapping appearance.external.v1.intellectual.healer.male
+PASS Job Preview appearance.external.v1.intellectual.healer.male
+PASS Blocked 표시 appearance.external.v1.intellectual.healer.male
+PASS Story 실제 Path appearance.external.v1.intellectual.healer.male
+PASS Mapping appearance.external.v1.intellectual.marksman.male
+PASS Job Preview appearance.external.v1.intellectual.marksman.male
+PASS Blocked 표시 appearance.external.v1.intellectual.marksman.male
+PASS Story 실제 Path appearance.external.v1.intellectual.marksman.male
+PASS Mapping appearance.external.v1.intellectual.fighter.male
+PASS Job Preview appearance.external.v1.intellectual.fighter.male
+PASS Blocked 표시 appearance.external.v1.intellectual.fighter.male
+PASS Story 실제 Path appearance.external.v1.intellectual.fighter.male
+PASS Mapping appearance.external.v1.intellectual.mage.male
+PASS Job Preview appearance.external.v1.intellectual.mage.male
+PASS Blocked 표시 appearance.external.v1.intellectual.mage.male
+PASS Story 실제 Path appearance.external.v1.intellectual.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.mobility
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.mobility.guardian.male
+PASS Job Preview appearance.external.v1.mobility.guardian.male
+PASS Blocked 표시 appearance.external.v1.mobility.guardian.male
+PASS Story 실제 Path appearance.external.v1.mobility.guardian.male
+PASS Mapping appearance.external.v1.mobility.healer.male
+PASS Job Preview appearance.external.v1.mobility.healer.male
+PASS Blocked 표시 appearance.external.v1.mobility.healer.male
+PASS Story 실제 Path appearance.external.v1.mobility.healer.male
+PASS Mapping appearance.external.v1.mobility.marksman.male
+PASS Job Preview appearance.external.v1.mobility.marksman.male
+PASS Blocked 표시 appearance.external.v1.mobility.marksman.male
+PASS Story 실제 Path appearance.external.v1.mobility.marksman.male
+PASS Mapping appearance.external.v1.mobility.fighter.male
+PASS Job Preview appearance.external.v1.mobility.fighter.male
+PASS Blocked 표시 appearance.external.v1.mobility.fighter.male
+PASS Story 실제 Path appearance.external.v1.mobility.fighter.male
+PASS Mapping appearance.external.v1.mobility.mage.male
+PASS Job Preview appearance.external.v1.mobility.mage.male
+PASS Blocked 표시 appearance.external.v1.mobility.mage.male
+PASS Story 실제 Path appearance.external.v1.mobility.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.emotional-scar
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.emotionalscar.guardian.male
+PASS Job Preview appearance.external.v1.emotionalscar.guardian.male
+PASS Blocked 표시 appearance.external.v1.emotionalscar.guardian.male
+PASS Story 실제 Path appearance.external.v1.emotionalscar.guardian.male
+PASS Mapping appearance.external.v1.emotionalscar.healer.male
+PASS Job Preview appearance.external.v1.emotionalscar.healer.male
+PASS Blocked 표시 appearance.external.v1.emotionalscar.healer.male
+PASS Story 실제 Path appearance.external.v1.emotionalscar.healer.male
+PASS Mapping appearance.external.v1.emotionalscar.marksman.male
+PASS Job Preview appearance.external.v1.emotionalscar.marksman.male
+PASS Blocked 표시 appearance.external.v1.emotionalscar.marksman.male
+PASS Story 실제 Path appearance.external.v1.emotionalscar.marksman.male
+PASS Mapping appearance.external.v1.emotionalscar.fighter.male
+PASS Job Preview appearance.external.v1.emotionalscar.fighter.male
+PASS Blocked 표시 appearance.external.v1.emotionalscar.fighter.male
+PASS Story 실제 Path appearance.external.v1.emotionalscar.fighter.male
+PASS Mapping appearance.external.v1.emotionalscar.mage.male
+PASS Job Preview appearance.external.v1.emotionalscar.mage.male
+PASS Blocked 표시 appearance.external.v1.emotionalscar.mage.male
+PASS Story 실제 Path appearance.external.v1.emotionalscar.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.vision
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.vision.guardian.female
+PASS Job Preview appearance.external.v1.vision.guardian.female
+PASS Blocked 표시 appearance.external.v1.vision.guardian.female
+PASS Story 실제 Path appearance.external.v1.vision.guardian.female
+PASS Mapping appearance.external.v1.vision.healer.female
+PASS Job Preview appearance.external.v1.vision.healer.female
+PASS Blocked 표시 appearance.external.v1.vision.healer.female
+PASS Story 실제 Path appearance.external.v1.vision.healer.female
+PASS Mapping appearance.external.v1.vision.marksman.female
+PASS Job Preview appearance.external.v1.vision.marksman.female
+PASS Blocked 표시 appearance.external.v1.vision.marksman.female
+PASS Story 실제 Path appearance.external.v1.vision.marksman.female
+PASS Mapping appearance.external.v1.vision.fighter.female
+PASS Job Preview appearance.external.v1.vision.fighter.female
+PASS Blocked 표시 appearance.external.v1.vision.fighter.female
+PASS Story 실제 Path appearance.external.v1.vision.fighter.female
+PASS Mapping appearance.external.v1.vision.mage.female
+PASS Job Preview appearance.external.v1.vision.mage.female
+PASS Blocked 표시 appearance.external.v1.vision.mage.female
+PASS Story 실제 Path appearance.external.v1.vision.mage.female
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.hearing
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.hearing.guardian.female
+PASS Job Preview appearance.external.v1.hearing.guardian.female
+PASS Blocked 표시 appearance.external.v1.hearing.guardian.female
+PASS Story 실제 Path appearance.external.v1.hearing.guardian.female
+PASS Mapping appearance.external.v1.hearing.healer.female
+PASS Job Preview appearance.external.v1.hearing.healer.female
+PASS Blocked 표시 appearance.external.v1.hearing.healer.female
+PASS Story 실제 Path appearance.external.v1.hearing.healer.female
+PASS Mapping appearance.external.v1.hearing.marksman.female
+PASS Job Preview appearance.external.v1.hearing.marksman.female
+PASS Blocked 표시 appearance.external.v1.hearing.marksman.female
+PASS Story 실제 Path appearance.external.v1.hearing.marksman.female
+PASS Mapping appearance.external.v1.hearing.fighter.female
+PASS Job Preview appearance.external.v1.hearing.fighter.female
+PASS Blocked 표시 appearance.external.v1.hearing.fighter.female
+PASS Story 실제 Path appearance.external.v1.hearing.fighter.female
+PASS Mapping appearance.external.v1.hearing.mage.female
+PASS Job Preview appearance.external.v1.hearing.mage.female
+PASS Blocked 표시 appearance.external.v1.hearing.mage.female
+PASS Story 실제 Path appearance.external.v1.hearing.mage.female
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.intellectual
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.intellectual.guardian.female
+PASS Job Preview appearance.external.v1.intellectual.guardian.female
+PASS Blocked 표시 appearance.external.v1.intellectual.guardian.female
+PASS Story 실제 Path appearance.external.v1.intellectual.guardian.female
+PASS Mapping appearance.external.v1.intellectual.healer.female
+PASS Job Preview appearance.external.v1.intellectual.healer.female
+PASS Blocked 표시 appearance.external.v1.intellectual.healer.female
+PASS Story 실제 Path appearance.external.v1.intellectual.healer.female
+PASS Mapping appearance.external.v1.intellectual.marksman.female
+PASS Job Preview appearance.external.v1.intellectual.marksman.female
+PASS Blocked 표시 appearance.external.v1.intellectual.marksman.female
+PASS Story 실제 Path appearance.external.v1.intellectual.marksman.female
+PASS Mapping appearance.external.v1.intellectual.fighter.female
+PASS Job Preview appearance.external.v1.intellectual.fighter.female
+PASS Blocked 표시 appearance.external.v1.intellectual.fighter.female
+PASS Story 실제 Path appearance.external.v1.intellectual.fighter.female
+PASS Mapping appearance.external.v1.intellectual.mage.female
+PASS Job Preview appearance.external.v1.intellectual.mage.female
+PASS Blocked 표시 appearance.external.v1.intellectual.mage.female
+PASS Story 실제 Path appearance.external.v1.intellectual.mage.female
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.mobility
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.mobility.guardian.female
+PASS Job Preview appearance.external.v1.mobility.guardian.female
+PASS Blocked 표시 appearance.external.v1.mobility.guardian.female
+PASS Story 실제 Path appearance.external.v1.mobility.guardian.female
+PASS Mapping appearance.external.v1.mobility.healer.female
+PASS Job Preview appearance.external.v1.mobility.healer.female
+PASS Blocked 표시 appearance.external.v1.mobility.healer.female
+PASS Story 실제 Path appearance.external.v1.mobility.healer.female
+PASS Mapping appearance.external.v1.mobility.marksman.female
+PASS Job Preview appearance.external.v1.mobility.marksman.female
+PASS Blocked 표시 appearance.external.v1.mobility.marksman.female
+PASS Story 실제 Path appearance.external.v1.mobility.marksman.female
+PASS Mapping appearance.external.v1.mobility.fighter.female
+PASS Job Preview appearance.external.v1.mobility.fighter.female
+PASS Blocked 표시 appearance.external.v1.mobility.fighter.female
+PASS Story 실제 Path appearance.external.v1.mobility.fighter.female
+PASS Mapping appearance.external.v1.mobility.mage.female
+PASS Job Preview appearance.external.v1.mobility.mage.female
+PASS Blocked 표시 appearance.external.v1.mobility.mage.female
+PASS Story 실제 Path appearance.external.v1.mobility.mage.female
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.emotional-scar
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.emotionalscar.guardian.female
+PASS Job Preview appearance.external.v1.emotionalscar.guardian.female
+PASS Blocked 표시 appearance.external.v1.emotionalscar.guardian.female
+PASS Story 실제 Path appearance.external.v1.emotionalscar.guardian.female
+PASS Mapping appearance.external.v1.emotionalscar.healer.female
+PASS Job Preview appearance.external.v1.emotionalscar.healer.female
+PASS Blocked 표시 appearance.external.v1.emotionalscar.healer.female
+PASS Story 실제 Path appearance.external.v1.emotionalscar.healer.female
+PASS Mapping appearance.external.v1.emotionalscar.marksman.female
+PASS Job Preview appearance.external.v1.emotionalscar.marksman.female
+PASS Blocked 표시 appearance.external.v1.emotionalscar.marksman.female
+PASS Story 실제 Path appearance.external.v1.emotionalscar.marksman.female
+PASS Mapping appearance.external.v1.emotionalscar.fighter.female
+PASS Job Preview appearance.external.v1.emotionalscar.fighter.female
+PASS Blocked 표시 appearance.external.v1.emotionalscar.fighter.female
+PASS Story 실제 Path appearance.external.v1.emotionalscar.fighter.female
+PASS Mapping appearance.external.v1.emotionalscar.mage.female
+PASS Job Preview appearance.external.v1.emotionalscar.mage.female
+PASS Blocked 표시 appearance.external.v1.emotionalscar.mage.female
+PASS Story 실제 Path appearance.external.v1.emotionalscar.mage.female
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.vision.fighter.male
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.vision.fighter.male
+PASS 자동 Save ID appearance.external.v1.vision.fighter.male
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.hearing.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.vision.fighter.male
+PASS Battle Left Idle appearance.external.v1.vision.fighter.male
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.vision.fighter.male
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.hearing.marksman.female
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.hearing.marksman.female
+PASS 자동 Save ID appearance.external.v1.hearing.marksman.female
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.hearing.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.hearing.marksman.female
+PASS Battle Left Idle appearance.external.v1.hearing.marksman.female
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.hearing.marksman.female
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.intellectual.guardian.male
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.intellectual.guardian.male
+PASS 자동 Save ID appearance.external.v1.intellectual.guardian.male
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.hearing.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.intellectual.guardian.male
+PASS Battle Left Idle appearance.external.v1.intellectual.guardian.male
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.intellectual.guardian.male
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.mobility.mage.female
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.mobility.mage.female
+PASS 자동 Save ID appearance.external.v1.mobility.mage.female
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.hearing.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.mobility.mage.female
+PASS Battle Left Idle appearance.external.v1.mobility.mage.female
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.mobility.mage.female
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.emotionalscar.healer.male
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.emotionalscar.healer.male
+PASS 자동 Save ID appearance.external.v1.emotionalscar.healer.male
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.hearing.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.emotionalscar.healer.male
+PASS Battle Left Idle appearance.external.v1.emotionalscar.healer.male
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.emotionalscar.healer.male
+PASS Scene Bootstrap

@@ -1,5 +1,16 @@
 # Project-Limitless 현재 개발 상태
 
+## Player Sprite 자동 조합 매핑 설계 정정 (2026-10-03)
+
+- 정식 규칙을 **Gender + Path + Job → 대응 Sprite 자동 결정**으로 정정했다. 성별/이름→Path→Job→Confirm 흐름을 유지하며 수동 Appearance 필터·이전/다음·목록·확정·번호 UI를 제거했다. Preview는 결과를 자동 갱신한다. Path Theme는 실제 Path 디자인이고 Job 추천은 선택 제한이 아니다. 아래 독립 Appearance 선택 기록은 폐기한 이전 구현 이력이다.
+- Male25/Female25·Path별10·Job별10, Stable ID Mapping50 / Duplicate0 / Missing0. Marksman→sharpshooter 등 메타데이터 이름만 대응한다. [50조합 Matrix](../11_UI/Player_Sprite_Combination_Matrix.md)·[정식 계약](../11_UI/Player_Appearance_선택_Save.md).
+- RuntimeReady21 / ArtBlocked29 유지. Blocked도 정확한 조합 ID를 기록하며 기본 성별 Sprite의 명시적 임시 fallback을 사용한다. 다른 Path/Job 또는 공통 Mobility Sprite로 대체하지 않는다. PNG50·Sprite800·Catalog·기존 Animator 재Import/재Slice/재생성 없음, 보호282파일 SHA256 동일. [기존 Blocked 프레임/사유](../11_UI/Player_Appearance_Foreground_QA.md).
+- Save 정본 Gender/Path/Job/Name을 유지하고 AppearanceId는 계산 결과다. Continue는 누락·invalid·이전 수동 ID 불일치도 정본에서 재계산한다. Path/Job 없는 Version1은 기본 성별 fallback, 사용자 Save 삭제·초기화 없음. World Clip Override와 Battle Left Idle은 같은 결과를 사용한다.
+- PlayUnfocused 격리 감사 **346 PASS/0 FAIL**, 실제 UI50조합·대표5Path 생성/World/Save→Bootstrap Continue/Battle Scene 전달·구버전 복원·Story 실제 Path 판정 통과. 백그라운드 UI Render **7 PASS/0 FAIL**, 1280×720·800×600 기본 정보/Job/Confirm 확인. Compile/Console Error0, 기존 deprecated 경고2. [검증·한계](../11_UI/Player_Sprite_Combination_QA.md).
+- 사용자 직접 확인: 물리 키보드·게임패드/foreground 미검증. 기존800×600 최종 확인 중앙/능력치 패널 겹침과 직업명/상세 간격은 후속 UI 작업 대상. 다음 권장 작업은 Blocked29 원본 미술 수정·재검수와 최종 확인 반응형 레이아웃 정리다.
+- 마지막 관련 commit: 문서 `98dd23a`, 자동 Mapping/UI `dc9feff`, Save/Continue `6102952`. clean Bootstrap Edit Mode·격리 Save/Settings·Play 옵션 복원. BGM/Voice/Main16 및 기존 사용자 변경 유지, GitHub Push 없음.
+
+
 ## Main16 Audio 마무리 — Field07 탐색 BGM (2026-10-03)
 
 - Where the Earth Breathes를 원본 MP3(44.1kHz stereo/192kbps/180.17초) 그대로 `Audio/Music/`에 Import하고 기존 Catalog에 Field07 한 항목만 추가했다. 탐색·조사·불씨망령 전투 후 잔향·협곡 입구에 같은 곡을 쓴다. 정책 `f0a7129`, 마지막 관련 기능 commit `012be7d`.
