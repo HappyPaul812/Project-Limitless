@@ -1,5 +1,7 @@
 # Player Appearance 검증본 50종 등록 계약
 
+Intellectual4/Vision5 수정판9종을 기존 ID로 교체했다. Intellectual 원본512 적용·Vision 승인1254→512 변환, PASS0/Blocked9·전체21/29 유지. 다른41종 미변경. [최신9종 QA](Intellectual_Vision_Fixed9_QA.md).
+
 Mobility10종은 제공512×512 수정판 원본으로 교체했다. Mobility Ready0/Blocked_ART10, 전체 Ready21/Blocked29 유지. 기존 ID·160 Sprite 참조·meta/Import·Mapping/Save와 다른40종 QA/Asset은 유지했다. [Mobility 수정판 QA](Mobility_Player_Sprite_Fixed_QA.md)를 최신 입력·판정으로 사용한다.
 
 Hearing10종은 사용자 승인 수정 ZIP1254→512 변환본으로 교체했다. Hearing0 Ready/10 Blocked, 전체21/29 유지. 기존40종은 미변경이다. [수정판 QA](Hearing_Player_Sprite_Fixed_QA.md)를 최신 Hearing 입력·판정으로 사용한다.

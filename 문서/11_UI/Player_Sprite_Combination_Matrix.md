@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+최신 Intellectual4/Vision5 수정판의9개 대상만 Art/Direction 사유를 갱신했다. Ready21/Blocked29, 다른41종 상태 불변. [9종 QA](Intellectual_Vision_Fixed9_QA.md).
+
 Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리한다. Male25 / Female25 / 각 Path10 / 각 Job10 / Duplicate0 / Missing0. Mobility10만 제공 수정판 PNG로 교체·재판정했다. 다른40종 Identity/QA는 유지한다. Ready21/Blocked29. Sprite Definition은 기존 External50 Catalog Entry이며 Asset 경로는 해당 시트다. [Mobility QA](Mobility_Player_Sprite_Fixed_QA.md).
 
 | Gender | Path Stable ID | Job Stable ID | Appearance ID | Sprite Definition | Runtime Ready | Validation Status |
@@ -45,7 +47,7 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Female|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|false|BLOCKED_ART|
 |Male|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|false|BLOCKED_ART|
 |Female|path.vision|fighter|appearance.external.v1.vision.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|true|PASS|
-|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_ART|
+|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_DIRECTION|
 |Female|path.vision|guardian|appearance.external.v1.vision.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|true|PASS|
 |Male|path.vision|guardian|appearance.external.v1.vision.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png|false|BLOCKED_ART|
 |Female|path.vision|healer|appearance.external.v1.vision.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Female.png|true|PASS|

@@ -23,6 +23,6 @@
 
 ## 순서와 검증
 
-문서→구현→검증. 正式 PNG 경로9개만 교체하고 기존 Multiple/PPU128/Point/Uncompressed/Pivot(64,0)/4×4 Slice·144 Sprite GUID/fileID를 유지한다. 전체50 Build/Import 금지. QA 결과에 따라 대상9개 Entry만 갱신한다. Blocked에는 기존 기본 성별 임시 fallback을 유지한다.
+문서→구현→검증. 정식 PNG 경로9개만 교체하고 기존 Multiple/PPU128/Point/Uncompressed/Pivot(64,0)/4×4 Slice·144 Sprite GUID/fileID를 유지한다. 전체50 Build/Import 금지. QA 결과에 따라 대상9개 Entry만 갱신한다. Blocked에는 기존 기본 성별 임시 fallback을 유지한다.
 
 144Frame 실제 관찰(Empty/Duplicate/방향/잘림/분리 조각/Alpha/Swap/Scale),9조합 실제 Preview/자동 Mapping, Intellectual/Vision 대표 World/Battle/Save→Continue를 격리 PlayUnfocused에서 확인한다. 시작 Hash/참조/QA와 다른41종을 비교하고 전체 Ready/Blocked를 집계한다. Foreground/물리 입력은 별도 승인 없이 하지 않는다. 관련 파일만 commit, GitHub Push 없음.

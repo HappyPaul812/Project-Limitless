@@ -235,8 +235,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림."
+      "frames": "4-15",
+      "reason": "Left/Right 발 아래 머리 조각, 옆 셀 검 끝 조각. Right/Up 머리 상단 수평 절단."
     },
     {
       "gender": "Male",
@@ -246,8 +246,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림."
+      "frames": "4-15",
+      "reason": "Left 머리 위/발 아래 잔여 조각, Right 발 아래 머리 조각, Up 머리 상단 절단."
     },
     {
       "gender": "Female",
@@ -301,8 +301,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림."
+      "frames": "4-15",
+      "reason": "Left/Right 발 아래 머리 조각, Right/Up 머리 상단 수평 절단."
     },
     {
       "gender": "Male",
@@ -312,8 +312,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림."
+      "frames": "4-15",
+      "reason": "Left 발 아래/옆 셀 잔여 조각, Right 발 아래 머리 조각, Up 머리 상단 절단."
     },
     {
       "gender": "Female",
@@ -465,9 +465,9 @@
       "appearanceId": "appearance.external.v1.vision.fighter.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
       "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
+      "validationStatus": "BLOCKED_DIRECTION",
       "frames": "4-11",
-      "reason": "Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임."
+      "reason": "Left 행 frame5/7이 Right를 향함. Left 머리 위 및 Right 발 아래 잔여 조각, frame7/11 검 끝 절단도 보임."
     },
     {
       "gender": "Female",
@@ -488,8 +488,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-11",
-      "reason": "Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임."
+      "frames": "4-15",
+      "reason": "Left 발 아래 잔여 조각, Right 발 아래 다음 행 흰 머리 조각, Up 머리 상단 절단."
     },
     {
       "gender": "Female",
@@ -521,8 +521,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-11",
-      "reason": "Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임."
+      "frames": "8-11",
+      "reason": "Right 발 아래/셀 하단에 지팡이·의상으로 보이는 외딴 잔여 픽셀 조각."
     },
     {
       "gender": "Male",
@@ -543,8 +543,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-11",
-      "reason": "Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임."
+      "frames": "4-7",
+      "reason": "Left 머리 위 이전 행의 발로 보이는 검은 잔여 조각."
     },
     {
       "gender": "Male",
@@ -554,8 +554,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-11",
-      "reason": "Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임."
+      "frames": "8-11",
+      "reason": "Right 발 아래 다음 행/인접 캐릭터의 외딴 검은 잔여 조각."
     }
   ]
 }

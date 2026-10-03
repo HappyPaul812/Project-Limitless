@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Intellectual4 / Vision5 Player Sprite 부분 수정 (2026-10-03)
+
+- 정확히9종 교체: Intellectual Fighter/Mage 남녀4개는512×512 원본 그대로, Vision Fighter Male/Guardian Male/Mage Female/Marksman 남녀5개는 이번 사용자 승인으로1254×1254 원본을 보존한512×512 최근접 변환본 적용. 문서 선행 `5b1de7e`, 마지막 관련 기능 commit `7c65c78`. [입력·9조합 ID 계약](../11_UI/Intellectual_Vision_Fixed9_적용_계약.md)·[QA](../11_UI/Intellectual_Vision_Fixed9_QA.md).
+- 기존9 Appearance ID·144 Sprite GUID/fileID·meta/Multiple/PPU128/Pivot/Point/Uncompressed·자동 Mapping/Save 스키마 유지. Duplicate0/Missing0. 다른41종 PNG/meta·Catalog/Sprite/Clip·Inventory/QA 동일. Hearing10/Mobility10 BLOCKED_ART 유지, Voice/BGM/Main16 변경 없음.
+- 144Frame 관찰: Empty0·시트별 Duplicate0, Intellectual PASS0/Blocked_ART4, Vision PASS0/Blocked_ART4/Blocked_DIRECTION1(Fighter Male Left5/7이 Right 방향). 머리 절단·인접 잔여 조각이 남아 **전체 Ready21/Blocked29 유지**. 다음 작업은9종 QA의 문제 프레임 원본 미술 수정이다.
+- 격리 PlayUnfocused89 PASS/0 FAIL: 대상9조합 실제 UI 자동 Mapping/Preview, Intellectual Male Fighter·Vision Female Mage 생성/World/Save→Bootstrap Continue/Battle Scene 전달 및 이전 ID 재계산 통과. 미술 Blocked의 기본 성별 임시 fallback 검증이며 Ready Art 재생은 아니다. 실제 걷기·물리 입력·Foreground는 미검증이다.
+- Compile/Console Error0·최종 Warning0, 보호880파일 중 의도한11개만 변경. clean Bootstrap Edit Mode·격리 Save/Settings·Play 옵션/백그라운드 설정 복원, 포커스 조작 없음. 관련 diff 검사 통과, 기존 사용자 변경 보존, GitHub Push 없음.
+
 ## Mobility Player Sprite 수정판 교체 (2026-10-03)
 
 - 제공 ZIP의512×512 RGBA 캐릭터 시트10개(Male5/Female5·5Job×2)를 기존 Mobility PNG 경로에 원본 바이트 그대로 반영했다. 참고 Preview.png는 제외, ZIP·원본 미술 변환/복원/재생성 없음. 문서 선행 `8cb64bb`, 마지막 관련 기능 commit `3179685`. [계약](../11_UI/Mobility_Player_Sprite_Fixed_적용_계약.md)·[10종 QA](../11_UI/Mobility_Player_Sprite_Fixed_QA.md).
