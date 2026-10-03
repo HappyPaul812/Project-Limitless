@@ -31,6 +31,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a87ac7602f5240518bfa2ed5d8ace1d8, type: 3}
   - sceneName: Dungeon_01_B2
     clip: {fileID: 8300000, guid: 83623efa2cae45f08a9908ffa6c22826, type: 3}
+  - sceneName: Field_07_AshenReach
+    clip: {fileID: 8300000, guid: 555e6c82db6c4d88beb79611e1cf14bf, type: 3}
   safeZoneClip: {fileID: 8300000, guid: bbb81dfc8750786489989a28098bbff6, type: 3}
   chapter1BattleClip: {fileID: 8300000, guid: 3d11958c811f4bf68fe4ce3e6fb1675a, type: 3}
   silentWardenClip: {fileID: 8300000, guid: ecb1cada14bc4f6995a48d160538ca55, type: 3}
