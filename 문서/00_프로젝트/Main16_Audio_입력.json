@@ -1,0 +1,26 @@
+{
+  "source": "F:\\Downloads\\Where_the_Earth_Breathes.mp3",
+  "destination": "Unity\\Client\\Assets\\_Project\\Audio\\Music\\Where_the_Earth_Breathes.mp3",
+  "sha256": "194692ced72e3625da942910350457dbb08a1c038cbdcf5308d9e3dda4fb7e01",
+  "guid": "555e6c82db6c4d88beb79611e1cf14bf",
+  "duration": 180.166458,
+  "format": "MP3/44100Hz/stereo/192kbps",
+  "unity_duration": 180.166534,
+  "candidate_runtime_imported": false,
+  "candidates": [
+    {
+      "source": "F:\\Downloads\\Trail_of_the_Ember_Wraith.mp3",
+      "duration": 179.983625,
+      "bytes": 4325685,
+      "sha256": "307d17d2bd2a4dd624b37729e8436c38372ad655a5cc66218e124ee7bf9a2a90",
+      "status": "CANDIDATE_NOT_IMPORTED"
+    },
+    {
+      "source": "F:\\Downloads\\Beneath_The_Cracked_Earth.mp3",
+      "duration": 176.483208,
+      "bytes": 4241675,
+      "sha256": "98287f8bbdd94740f232412488058d9b0ea75ba1aa74e9376702af5eb4f8a820",
+      "status": "CANDIDATE_NOT_IMPORTED"
+    }
+  ]
+}

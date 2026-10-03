@@ -1,0 +1,294 @@
+PASS
+# Scene/Save/general Battle checks retained before corrected Story fixture
+PASS Scene Bootstrap
+PASS BGM Bootstrap -> Before_the_First_Light
+PASS 단일 BGM Service Bootstrap
+PASS Loop/gain/pitch/BGM Group Bootstrap
+PASS Listener 1 Bootstrap
+PASS Scene Arbel
+PASS BGM Arbel -> Morning_at_the_Gate
+PASS 단일 BGM Service Arbel
+PASS Loop/gain/pitch/BGM Group Arbel
+PASS Listener 1 Arbel
+PASS Scene Field_06_ScorchedTrail
+PASS BGM Field_06_ScorchedTrail -> Paths_of_Cracked_Earth
+PASS 단일 BGM Service Field_06_ScorchedTrail
+PASS Loop/gain/pitch/BGM Group Field_06_ScorchedTrail
+PASS Listener 1 Field_06_ScorchedTrail
+PASS 실제 Exit Transition_west_to_field07
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS 실제 Exit Transition_east_to_field06
+PASS Scene Field_06_ScorchedTrail
+PASS BGM Field_06_ScorchedTrail -> Paths_of_Cracked_Earth
+PASS 단일 BGM Service Field_06_ScorchedTrail
+PASS Loop/gain/pitch/BGM Group Field_06_ScorchedTrail
+PASS Listener 1 Field_06_ScorchedTrail
+PASS 실제 Exit Transition_west_to_field07
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS Field07 Save
+PASS Scene Bootstrap
+PASS BGM Bootstrap -> Before_the_First_Light
+PASS 단일 BGM Service Bootstrap
+PASS Loop/gain/pitch/BGM Group Bootstrap
+PASS Listener 1 Bootstrap
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS Continue Path 유지
+PASS Scene Battle
+PASS BGM Battle -> null/TBD
+PASS 단일 BGM Service Battle
+PASS Loop/gain/pitch/BGM Group Battle
+PASS Listener 1 Battle
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS Story Battle 진입
+PASS Scene Battle
+PASS BGM Battle -> null/TBD
+PASS 단일 BGM Service Battle
+PASS Loop/gain/pitch/BGM Group Battle
+PASS Listener 1 Battle
+PASS Story 실제 공격 Victory
+# Story return + Voice review resumed with corrected inside-map fixture
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS Story Battle 진입
+PASS Scene Battle
+PASS BGM Battle -> null/TBD
+PASS 단일 BGM Service Battle
+PASS Loop/gain/pitch/BGM Group Battle
+PASS Listener 1 Battle
+PASS Story 실제 공격 Victory
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_hearing_player_01/player
+PASS Voice中 Field07 BGM main16_afterimage_hearing_player_01
+PLAYED Victory afterimage/Hearing main16_afterimage_hearing_player_01 outputPeak=0.1708711 hearing=UNREVIEWED
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_hearing_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_afterimage_hearing_serin_01
+PLAYED Victory afterimage/Hearing main16_afterimage_hearing_serin_01 outputPeak=0.4908846 hearing=UNREVIEWED
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_afterimage_paul_01
+PLAYED Victory afterimage/Hearing main16_afterimage_paul_01 outputPeak=0.4124192 hearing=UNREVIEWED
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_afterimage_taeon_01
+PLAYED Victory afterimage/Hearing main16_afterimage_taeon_01 outputPeak=0.6533946 hearing=UNREVIEWED
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_observation_01/
+PASS Voice中 Field07 BGM main16_afterimage_observation_01
+PLAYED Victory afterimage/Hearing main16_afterimage_observation_01 outputPeak=0.2548793 hearing=UNREVIEWED
+PASS Voice mapping Victory afterimage/Hearing main16_afterimage_taeon_02/companion_taeon
+PASS Voice中 Field07 BGM main16_afterimage_taeon_02
+PLAYED Victory afterimage/Hearing main16_afterimage_taeon_02 outputPeak=0.6865287 hearing=UNREVIEWED
+PASS Next/종료 cleanup Victory afterimage/Hearing
+PASS Defeat 복귀 Fixture 진입
+PASS Scene Battle
+PASS BGM Battle -> null/TBD
+PASS 단일 BGM Service Battle
+PASS Loop/gain/pitch/BGM Group Battle
+PASS Listener 1 Battle
+PASS Scene Arbel
+PASS BGM Arbel -> Morning_at_the_Gate
+PASS 단일 BGM Service Arbel
+PASS Loop/gain/pitch/BGM Group Arbel
+PASS Listener 1 Arbel
+PASS Scene Field_07_AshenReach
+PASS BGM Field_07_AshenReach -> Where_the_Earth_Breathes
+PASS 단일 BGM Service Field_07_AshenReach
+PASS Loop/gain/pitch/BGM Group Field_07_AshenReach
+PASS Listener 1 Field_07_AshenReach
+PASS 실제 Story Path 분기 True
+PASS Voice mapping start/Hearing main16_start_leon_01/arbel-leon
+PASS Voice中 Field07 BGM main16_start_leon_01
+PLAYED start/Hearing main16_start_leon_01 outputPeak=0.6252998 hearing=UNREVIEWED
+PASS Voice mapping start/Hearing main16_start_leon_02/arbel-leon
+PASS Voice中 Field07 BGM main16_start_leon_02
+PLAYED start/Hearing main16_start_leon_02 outputPeak=0.7127672 hearing=UNREVIEWED
+PASS Voice mapping start/Hearing main16_start_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_start_paul_01
+PLAYED start/Hearing main16_start_paul_01 outputPeak=0.8023414 hearing=UNREVIEWED
+PASS Next/종료 cleanup start/Hearing
+PASS 발견자 우선권 True
+PASS Voice mapping ash/Hearing main16_ash_hearing_player_01/player
+PASS Voice中 Field07 BGM main16_ash_hearing_player_01
+PLAYED ash/Hearing main16_ash_hearing_player_01 outputPeak=0.2713842 hearing=UNREVIEWED
+PASS Voice mapping ash/Hearing main16_ash_hearing_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_ash_hearing_serin_01
+PLAYED ash/Hearing main16_ash_hearing_serin_01 outputPeak=0.9066011 hearing=UNREVIEWED
+PASS Voice mapping ash/Hearing main16_ash_hearing_serin_02/companion_serin
+PASS Voice中 Field07 BGM main16_ash_hearing_serin_02
+PLAYED ash/Hearing main16_ash_hearing_serin_02 outputPeak=0.5608899 hearing=UNREVIEWED
+PASS Next/종료 cleanup ash/Hearing
+PASS Voice mapping vibration/Hearing main16_vibration_hearing_player_01/player
+PASS Voice中 Field07 BGM main16_vibration_hearing_player_01
+PLAYED vibration/Hearing main16_vibration_hearing_player_01 outputPeak=0.4089052 hearing=UNREVIEWED
+PASS Voice mapping vibration/Hearing main16_vibration_hearing_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_vibration_hearing_serin_01
+PLAYED vibration/Hearing main16_vibration_hearing_serin_01 outputPeak=0.779896 hearing=UNREVIEWED
+PASS Next/종료 cleanup vibration/Hearing
+PASS Voice mapping tracks/Hearing main16_tracks_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_tracks_paul_01
+PLAYED tracks/Hearing main16_tracks_paul_01 outputPeak=0.8587891 hearing=UNREVIEWED
+PASS Voice mapping tracks/Hearing main16_tracks_miel_01/companion_miel
+PASS Voice中 Field07 BGM main16_tracks_miel_01
+PLAYED tracks/Hearing main16_tracks_miel_01 outputPeak=0.8471218 hearing=UNREVIEWED
+VOICE_SOURCE main16_tracks_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping tracks/Hearing main16_tracks_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_tracks_taeon_01
+PLAYED tracks/Hearing main16_tracks_taeon_01 outputPeak=0.7967698 hearing=UNREVIEWED
+PASS Next/종료 cleanup tracks/Hearing
+PASS Voice mapping witness_ground/Hearing main16_witness_observation_01/
+PASS Voice中 Field07 BGM main16_witness_observation_01
+PLAYED witness_ground/Hearing main16_witness_observation_01 outputPeak=0.7402306 hearing=UNREVIEWED
+PASS Voice mapping witness_ground/Hearing main16_witness_observation_02/
+PASS Voice中 Field07 BGM main16_witness_observation_02
+PLAYED witness_ground/Hearing main16_witness_observation_02 outputPeak=0.4311412 hearing=UNREVIEWED
+PASS Voice mapping witness_ground/Hearing main16_witness_observation_03/
+PASS Voice中 Field07 BGM main16_witness_observation_03
+PLAYED witness_ground/Hearing main16_witness_observation_03 outputPeak=0.4018463 hearing=UNREVIEWED
+PASS Next/종료 cleanup witness_ground/Hearing
+PASS Voice mapping witness_emerge/Hearing main16_witness_observation_04/
+PASS Voice中 Field07 BGM main16_witness_observation_04
+PLAYED witness_emerge/Hearing main16_witness_observation_04 outputPeak=0.4283587 hearing=UNREVIEWED
+VOICE_SOURCE main16_witness_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping witness_emerge/Hearing main16_witness_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_witness_taeon_01
+PLAYED witness_emerge/Hearing main16_witness_taeon_01 outputPeak=0.7445067 hearing=UNREVIEWED
+PASS Next/종료 cleanup witness_emerge/Hearing
+PASS Voice mapping retry/Hearing main16_retry_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_retry_taeon_01
+VOICE_SOURCE main16_retry_taeon_01 playing=True group=Voice gain=1
+PLAYED retry/Hearing main16_retry_taeon_01 outputPeak=0.4737417 hearing=UNREVIEWED
+PASS Next/종료 cleanup retry/Hearing
+PASS Voice mapping afterimage/Hearing main16_afterimage_hearing_player_01/player
+PASS Voice中 Field07 BGM main16_afterimage_hearing_player_01
+PLAYED afterimage/Hearing main16_afterimage_hearing_player_01 outputPeak=0.3221045 hearing=UNREVIEWED
+VOICE_SOURCE main16_afterimage_hearing_serin_01 playing=True group=Voice gain=1
+PASS Voice mapping afterimage/Hearing main16_afterimage_hearing_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_afterimage_hearing_serin_01
+PLAYED afterimage/Hearing main16_afterimage_hearing_serin_01 outputPeak=0.7855023 hearing=UNREVIEWED
+VOICE_SOURCE main16_afterimage_paul_01 playing=True group=Voice gain=1
+PASS Voice mapping afterimage/Hearing main16_afterimage_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_afterimage_paul_01
+PLAYED afterimage/Hearing main16_afterimage_paul_01 outputPeak=0.7953459 hearing=UNREVIEWED
+VOICE_SOURCE main16_afterimage_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping afterimage/Hearing main16_afterimage_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_afterimage_taeon_01
+PLAYED afterimage/Hearing main16_afterimage_taeon_01 outputPeak=0.7502725 hearing=UNREVIEWED
+PASS Voice mapping afterimage/Hearing main16_afterimage_observation_01/
+PASS Voice中 Field07 BGM main16_afterimage_observation_01
+PLAYED afterimage/Hearing main16_afterimage_observation_01 outputPeak=0.513494 hearing=UNREVIEWED
+VOICE_SOURCE main16_afterimage_taeon_02 playing=True group=Voice gain=1
+PASS Voice mapping afterimage/Hearing main16_afterimage_taeon_02/companion_taeon
+PASS Voice中 Field07 BGM main16_afterimage_taeon_02
+PLAYED afterimage/Hearing main16_afterimage_taeon_02 outputPeak=0.6478181 hearing=UNREVIEWED
+PASS Next/종료 cleanup afterimage/Hearing
+PASS Voice mapping canyon/Hearing main16_canyon_observation_01/
+PASS Voice中 Field07 BGM main16_canyon_observation_01
+PLAYED canyon/Hearing main16_canyon_observation_01 outputPeak=0.347259 hearing=UNREVIEWED
+PASS Voice mapping canyon/Hearing main16_canyon_hearing_player_01/player
+PASS Voice中 Field07 BGM main16_canyon_hearing_player_01
+PLAYED canyon/Hearing main16_canyon_hearing_player_01 outputPeak=0.3996848 hearing=UNREVIEWED
+VOICE_SOURCE main16_canyon_hearing_serin_01 playing=True group=Voice gain=1
+PASS Voice mapping canyon/Hearing main16_canyon_hearing_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_canyon_hearing_serin_01
+PLAYED canyon/Hearing main16_canyon_hearing_serin_01 outputPeak=0.7437814 hearing=UNREVIEWED
+VOICE_SOURCE main16_canyon_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping canyon/Hearing main16_canyon_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_canyon_taeon_01
+PLAYED canyon/Hearing main16_canyon_taeon_01 outputPeak=0.9586055 hearing=UNREVIEWED
+VOICE_SOURCE main16_canyon_paul_01 playing=True group=Voice gain=1
+PASS Voice mapping canyon/Hearing main16_canyon_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_canyon_paul_01
+PLAYED canyon/Hearing main16_canyon_paul_01 outputPeak=0.624911 hearing=UNREVIEWED
+VOICE_SOURCE main16_canyon_miel_01 playing=True group=Voice gain=1
+PASS Voice mapping canyon/Hearing main16_canyon_miel_01/companion_miel
+PASS Voice中 Field07 BGM main16_canyon_miel_01
+PLAYED canyon/Hearing main16_canyon_miel_01 outputPeak=0.8586531 hearing=UNREVIEWED
+PASS Next/종료 cleanup canyon/Hearing
+PASS Voice mapping report/Hearing main16_report_player_01/player
+PASS Voice中 Field07 BGM main16_report_player_01
+PLAYED report/Hearing main16_report_player_01 outputPeak=0.5046389 hearing=UNREVIEWED
+VOICE_SOURCE main16_report_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping report/Hearing main16_report_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_report_taeon_01
+PLAYED report/Hearing main16_report_taeon_01 outputPeak=0.9662995 hearing=UNREVIEWED
+VOICE_SOURCE main16_report_leon_01 playing=True group=Voice gain=1
+PASS Voice mapping report/Hearing main16_report_leon_01/arbel-leon
+PASS Voice中 Field07 BGM main16_report_leon_01
+PLAYED report/Hearing main16_report_leon_01 outputPeak=0.915122 hearing=UNREVIEWED
+VOICE_SOURCE main16_report_paul_01 playing=True group=Voice gain=1
+PASS Voice mapping report/Hearing main16_report_paul_01/companion_paul
+PASS Voice中 Field07 BGM main16_report_paul_01
+PLAYED report/Hearing main16_report_paul_01 outputPeak=0.7987086 hearing=UNREVIEWED
+PASS Next/종료 cleanup report/Hearing
+PASS 실제 Story Path 분기 False
+PASS 발견자 우선권 False
+PASS Voice mapping ash/Default main16_ash_default_observation_01/
+PASS Voice中 Field07 BGM main16_ash_default_observation_01
+PLAYED ash/Default main16_ash_default_observation_01 outputPeak=0.6577722 hearing=UNREVIEWED
+VOICE_SOURCE main16_ash_default_serin_01 playing=True group=Voice gain=1
+PASS Voice mapping ash/Default main16_ash_default_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_ash_default_serin_01
+PLAYED ash/Default main16_ash_default_serin_01 outputPeak=1 hearing=UNREVIEWED
+VOICE_SOURCE main16_ash_default_taeon_01 playing=True group=Voice gain=1
+PASS Voice mapping ash/Default main16_ash_default_taeon_01/companion_taeon
+PASS Voice中 Field07 BGM main16_ash_default_taeon_01
+PLAYED ash/Default main16_ash_default_taeon_01 outputPeak=0.8033472 hearing=UNREVIEWED
+VOICE_SOURCE main16_ash_default_serin_02 playing=True group=Voice gain=1
+PASS Voice mapping ash/Default main16_ash_default_serin_02/companion_serin
+PASS Voice中 Field07 BGM main16_ash_default_serin_02
+PLAYED ash/Default main16_ash_default_serin_02 outputPeak=0.7883927 hearing=UNREVIEWED
+PASS Voice mapping ash/Default main16_ash_default_player_01/player
+PASS Voice中 Field07 BGM main16_ash_default_player_01
+PLAYED ash/Default main16_ash_default_player_01 outputPeak=0.4409226 hearing=UNREVIEWED
+PASS Next/종료 cleanup ash/Default
+PASS Voice mapping vibration/Default main16_vibration_default_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_vibration_default_serin_01
+VOICE_SOURCE main16_vibration_default_serin_01 playing=True group=Voice gain=1
+PLAYED vibration/Default main16_vibration_default_serin_01 outputPeak=0.7661057 hearing=UNREVIEWED
+PASS Voice mapping vibration/Default main16_vibration_default_player_01/player
+PASS Voice中 Field07 BGM main16_vibration_default_player_01
+PLAYED vibration/Default main16_vibration_default_player_01 outputPeak=0.09317463 hearing=UNREVIEWED
+PASS Next/종료 cleanup vibration/Default
+PASS Voice mapping afterimage/Default main16_afterimage_default_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_afterimage_default_serin_01
+VOICE_SOURCE main16_afterimage_default_serin_01 playing=True group=Voice gain=1
+PLAYED afterimage/Default main16_afterimage_default_serin_01 outputPeak=0.308759 hearing=UNREVIEWED
+PASS Voice mapping afterimage/Default main16_afterimage_default_player_01/player
+PASS Voice中 Field07 BGM main16_afterimage_default_player_01
+PLAYED afterimage/Default main16_afterimage_default_player_01 outputPeak=0.7578529 hearing=UNREVIEWED
+PASS Next/종료 cleanup afterimage/Default
+PASS Voice mapping canyon/Default main16_canyon_default_serin_01/companion_serin
+PASS Voice中 Field07 BGM main16_canyon_default_serin_01
+VOICE_SOURCE main16_canyon_default_serin_01 playing=True group=Voice gain=1
+PLAYED canyon/Default main16_canyon_default_serin_01 outputPeak=0.6085483 hearing=UNREVIEWED
+PASS Voice mapping canyon/Default main16_canyon_default_player_01/player
+PASS Voice中 Field07 BGM main16_canyon_default_player_01
+PLAYED canyon/Default main16_canyon_default_player_01 outputPeak=0.1749314 hearing=UNREVIEWED
+PASS Next/종료 cleanup canyon/Default
+PASS 고유 대사44 / Voice28 실제 UI 재생
+PASS 같은 곡 재요청 재시작 없음
+PASS Runtime Loop 순환(청취 경계 미판정)
+LISTENING 0/28; Voice/BGM masking, pronunciation, emotion, loop boundary UNREVIEWED
+# Channel output
+all / VoiceOnly(BGM0) / BGMOnly / MuteAll / UnmuteAll / SFXOnly peaks=0.8409187,0.5678347,0.548252,0,0.7985017,0.01767767
+Voice100/SFX100/BGM80 restored; memory SFX removed

@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## Main16 Audio 마무리 — Field07 탐색 BGM (2026-10-03)
+
+- Where the Earth Breathes를 원본 MP3(44.1kHz stereo/192kbps/180.17초) 그대로 `Audio/Music/`에 Import하고 기존 Catalog에 Field07 한 항목만 추가했다. 탐색·조사·불씨망령 전투 후 잔향·협곡 입구에 같은 곡을 쓴다. 정책 `f0a7129`, 마지막 관련 기능 commit `012be7d`.
+- 전투 적용 최초 승인 응답은 사용자가 철회했고, 재확인은 **기존 유지: Field07 전투 null/TBD**다. Field07 일반/Story Battle은 음악을 정리하며 복귀는 새 탐색곡이다. Steel and Sunlight는 기존 Chapter1 일반전에 유지한다. 후보 Trail of the Ember Wraith·Beneath The Cracked Earth는 Downloads 보관·Runtime 미적용, 기존 Chapter2 소개/서부/Deep West 정책 유지.
+- Main16 전용 격리 Audio 감사 최종217 PASS/0 FAIL: Title·Arbel·Field06↔07 실제Exit·단일 Source/Listener·Save→Continue·일반 Battle 진입/복귀·실제 Story 공격 Victory/복귀·패배 복귀 API·잔향 대사·Hearing/Default44 Dialogue/28 Voice 재생·Next/종료·Loop 순환. 전체 Quest428/507 검사나 Appearance QA는 반복하지 않았다. [방법·Fixture 수정 이력·한계](Main16_Audio_마무리_QA.md)·[로그](Main16_Audio_Runtime_Results.txt).
+- Voice100/BGM80 유지, BGM0에서도 Voice 출력0.5678347·Mute 전체0·해제 복원 통과. 임시 메모리 SFX 제거, 원본 Gain/Mixer/전역 기본값/Ducking/Runtime 게임 코드 변경 없음. 보호750파일 해시 동일, Voice28 Mapping·Appearance21/29·사용자 변경 유지.
+- 실제 사람 귀의 청취는 **0/28**다. 발음·감정·호흡·속도·Segment boundary·Speaker 음색·Voice/BGM balance/Masking·BGM Loop 경계·장면 적합성은 미검증이며 TTS 재생성 필요 목록은 미정이다. [개별28개 청취 체크리스트](Main16_Audio_청취_체크리스트.md). 다음 권장 작업은 사람이 기본 Voice100/BGM80으로 청취해 실제 문제만 기록하는 것이다.
+- Unity 컴파일 오류0, 최종 Console Error0/Warning2(기존 ExternalAssetImportEditor의 deprecated spritesheet API 경고). clean Bootstrap Edit Mode, 격리 Save/Settings·Play 옵션·runInBackground 복원. 직접 변경만 로컬 커밋, GitHub Push 없음. 아래 기록은 당시 이력이다.
+
 ## Appearance Foreground·Main16 Voice 중단 작업 이어서 완료 (2026-10-03)
 
 - 직전 완료된 Main16 WAV28개·Mapping28개와 외형50종 실제 화면 판정부터 재개했다. ZIP 재Import·Sprite 재Slice·기존 Voice Import·Quest 재구현·TTS 생성은 반복하지 않았다. 이번 continuation의 남은 범위 Foreground 승인을 별도로 받았다.

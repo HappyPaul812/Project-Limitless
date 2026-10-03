@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "logged_pass": 217,
+  "final_fail": 0,
+  "fixture_failures_corrected": 2,
+  "technical_played_unique_lines": 44,
+  "technical_played_voice": 28,
+  "source_observed": 20,
+  "source_observed_playing_voice_group_gain1": true,
+  "listening_completed": 0,
+  "listening_total": 28,
+  "quality_status": "UNREVIEWED",
+  "regeneration_required": "UNDETERMINED",
+  "protected_files": 750,
+  "protected_changed": [],
+  "runtime_game_code_changed": false,
+  "channel_peaks": {
+    "all": 0.8409187,
+    "voice_only_bgm0": 0.5678347,
+    "bgm_only": 0.548252,
+    "mute_all": 0,
+    "unmute_all": 0.7985017,
+    "sfx_only": 0.01767767
+  }
+}

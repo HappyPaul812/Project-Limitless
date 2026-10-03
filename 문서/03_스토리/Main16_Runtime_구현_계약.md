@@ -1,5 +1,7 @@
 # Main16 Runtime 구현 계약
 
+후속 Audio 확정: Field07 탐색·조사·전투 후 복귀는 Where the Earth Breathes다. Voice28개는 기존 Mapping을 유지한다. 전투 음악은 사용자 재확인으로 null/TBD, 목격/Main17 곡은 후보·미적용이다. 아래 미배정 기록은 최초 구현 이력이며 [Audio 마무리 계약](../00_프로젝트/Main16_Audio_마무리_계약.md)이 최신 정책이다. Quest/World/Story Encounter 구조는 변경하지 않는다.
+
 2026-10-03 사용자 요청에 따라 [정식 Story 설계](Chapter2_Main16_재_속의_형상.md)를 구현한다. 기존 Main13~15 대사·Voice·편성 정책과 직전 BGM/Background/Player Asset 작업은 변경하지 않는다.
 
 Quest ID는 `main_16_shape_in_the_ash`, Scene은 `Field_07_AshenReach`, 표시명은 재바람 황야다. Main15 완료 뒤 레온 대화 종료로 시작한다. 아래 목표는 기존 QuestDefinition의 순차 목표로 구현하며 모든 count는 1이다.
