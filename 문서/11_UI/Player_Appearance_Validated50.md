@@ -1,5 +1,12 @@
 # Player Appearance 검증본 50종 등록 계약
 
+## 현재 정식 정책 (2026-10-03 설계 정정)
+
+Gender + Path + Job → 대응 Sprite 자동 결정. 수동 Appearance 선택은 제거하며 50조합 중 Ready21/Blocked29를 유지한다. Blocked와 미선택은 기본 성별 Sprite의 명시적 임시 fallback을 사용한다. 상세 정본은 [자동 매핑·Save 계약](Player_Appearance_선택_Save.md)을 따른다.
+
+## 이전 구현·검증 이력 (정식 정책 아님)
+
+
 ## 후속 선택·Save 구현 (2026-10-03)
 
 등록 완료 뒤 CharacterCreation의 성별/테마 필터·큰 Preview·이전/다음 선택과 Stable Appearance ID Save/Continue, 공용 Animator Clip Override를 연결했다. 현재 **35종 ready=true / 15종 false**이며 전체50종을 Catalog에 보존한다. 외형 테마는 실제 Player Path/Job/Story 조건과 독립이다. ID 누락/invalid/blocked은 기존 Male/Female+Path Variant로 fallback한다. 진행 중 미용실/외형 변경 NPC는 미구현이다.

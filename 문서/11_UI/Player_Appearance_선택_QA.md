@@ -1,5 +1,12 @@
 # Player Appearance 선택·Save QA (2026-10-03)
 
+## 현재 정식 정책 (2026-10-03 설계 정정)
+
+Gender + Path + Job → 대응 Sprite 자동 결정. 수동 Appearance 선택은 제거하며 50조합 중 Ready21/Blocked29를 유지한다. Blocked와 미선택은 기본 성별 Sprite의 명시적 임시 fallback을 사용한다. 상세 정본은 [자동 매핑·Save 계약](Player_Appearance_선택_Save.md)을 따른다.
+
+## 이전 구현·검증 이력 (정식 정책 아님)
+
+
 ## 후속 Foreground 판정
 
 아래35종/15종과 미완료 표기는 당시 백그라운드 검증 기록이다. 후속 실제 Game View 판정은 [Foreground 최종 표](Player_Appearance_Foreground_QA.md)와 [상세 JSON](Player_Appearance_Foreground_QA.json)을 따른다. 현재 Ready21종(남10·여11), Blocked29종이다. Vision5·Intellectual6·EmotionalScar10은 선택 가능하고 Hearing10·Mobility10은 보류다. 원본50개·800 Sprite·Stable ID를 유지하고 보류 ID 저장은 기존 fallback 정책을 따른다.

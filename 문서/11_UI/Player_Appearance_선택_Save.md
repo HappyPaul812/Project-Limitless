@@ -1,21 +1,27 @@
-# Player Appearance 선택·저장 계약
+# Player Sprite 자동 매핑·저장 계약
 
-2026-10-03 LOCAL 검증본 Catalog의 Stable ID를 사용한다. 기존 PNG·Sprite meta·Animator Controller·Scene·Prefab과 Male/Female+Path Variant를 보존한다.
+2026-10-03 사용자 설계 정정. Player는 Appearance를 직접 선택하지 않는다. 정본 선택은 Gender / Name → Path → Job → Confirm이며, GenderStableId + PathStableId + JobStableId로 대응 Sprite Definition과 기존 Appearance Stable ID를 자동 결정한다. 배열 순번이나 UI 순번은 조회 키가 아니다.
 
-## 선택
+## 50조합과 Stable ID
 
-CharacterCreation의 성별·이름·다음 단계를 유지하면서 성별 카드 아래에 외형 탐색을 추가한다. 성별 필터, 전체/5테마 필터, 이전/다음 외형, 큰 Down Idle Preview, 외형 이름과 선택 표시를 제공한다. 기본 외형도 선택할 수 있다. 준비되지 않은 외형은 목록에서 제외하며 50종 전체는 Catalog에 남긴다. 필터 조작은 UI 초안만 변경하며 다음을 눌러 이름 검증을 통과할 때 Session을 확정한다. 영구 Save는 기존 FinalConfirmation에서 확정한다.
+Male/Female × Vision/Hearing/Intellectual/Mobility/EmotionalScar × Fighter/Guardian/Healer/Mage/Sharpshooter = 50조합이다. Asset 메타데이터의 Marksman은 Job ID `sharpshooter`, Physical은 `path.mobility`, Visual은 `path.vision`, Heartscar는 `path.emotional-scar`에 대응한다. README/CSV/Inventory를 근거로 연결하며 그림으로 추론하지 않는다. 기존 Appearance ID, PNG50개, Sprite800개, Clip과 공용 Animator 구조를 유지하고 재Import·재Slice하지 않는다.
 
-외형 테마는 분류·추천일 뿐이다. Path/Job 선택을 제한하거나 Story/Quest 조건에 사용하지 않는다. 실제 Player Path가 Story와 공식 PathSymbol을 결정한다. 모든 버튼은 기존 EventSystem의 키보드/게임패드 Navigation과 Tab 순서에 포함한다. 선택은 색상과 함께 `✓ 선택됨` 텍스트로 표시한다.
+Path Theme는 실제 Player Path의 시각 디자인이다. 모든 Path×Job 조합을 허용하며 추천 직업은 안내다. Story/Quest/PathSymbol은 Player Path Data의 Stable ID를 직접 사용하고 Sprite에서 Path를 역추론하지 않는다.
 
-## Runtime·Save
+## UI와 Preview
 
-Session의 SelectedAppearanceId와 Save Version1의 선택적 AppearanceId 문자열을 추가한다. 배열 순서·파일명은 저장하지 않는다. 유효하고 준비된 ID만 신규 외형으로 적용한다. 필드가 없는 구버전, 알 수 없는 ID, blocked ID, Sprite/Clip 누락은 기존 성별·Path Variant로 돌아간다. 이름·성별·Path·Job과 기존 Version1 호환은 유지한다.
+전체/테마 필터, 외형 카드·목록, 이전/다음 외형, 수동 Appearance 선택·확정·번호 표시를 제거한다. Preview는선택 결과를 보여주는 `캐릭터 미리보기`다. Gender/Path/Job 변경에 따라 자동 갱신한다. Path/Job 미선택 시 기존 성별 기본 Sprite를 사용하며 임의 조합을 자동 선택하지 않는다.
 
-기존 성별 Animator Controller의 상태·입력·PlayerSpriteAnimator를 재사용하고 방향별 Sprite Clip만 AnimatorOverrideController로 바꾼다. Controller Asset을 50개 복제하지 않는다. Clip은 Editor에서 Catalog의 subasset으로 작성하며 기존 Controller/Clip은 수정하지 않는다. 새 Appearance가 적용되면 Path Variant는 본체를 덮어쓰지 않으며 실제 PathSymbol은 계속 표시한다. Battle은 기존 World Controller/Sprite 전달 구조를 재사용한다.
+## Runtime·검수 상태
 
-## 검수 정책
+매핑 정확성과 Art Ready는 분리한다. 현재 50조합 중 Runtime Ready21 / Art Blocked29이며 정확한 프레임·사유는 [기존 Foreground QA](Player_Appearance_Foreground_QA.md)를 유지한다. Blocked도 고유 Definition/ID를 조회한다. 실행에는 기존 Male/Female 기본 Sprite를 **임시 fallback**으로 쓰고 Preview에 이를 표시한다. 다른 Path/Job의 Sprite 또는 공통 Mobility Sprite로 대체하지 않는다. 기술 QA 필드 `readyForSelection`은 직렬화 호환 때문에 유지하되 RuntimeReady로 읽으며 선택을 제한하지 않는다.
 
-50종의 16프레임과 방향 행을 백그라운드 Contact Sheet로 검사한다. 행 계약은 위부터 Down/Left/Right/Up, 행마다 Walk4프레임이며 Idle은 첫 프레임이다. Alpha 경계 접촉만으로 잘림을 단정하지 않는다. 방향 불일치·분리된 본체·다른 캐릭터·심각한 Alpha 손상·참조 누락은 false와 구체적인 reviewReason을 유지한다. 정적 합격과 실제 움직임의 발 미끄러짐·흔들림·입력·크기 시각 검수는 별도다. foreground 검수에는 사용자의 사전 허락이 필요하다.
+World는 대응 Ready Definition의 Clip을 공용 성별 Controller에 Override한다. Battle은 같은 World Controller의 Left Idle을 사용하는 기존 전달 구조를 재사용한다. 50개 Animator Controller를 만들지 않는다.
 
-게임 진행 중 외형 변경 NPC/미용실은 이번 범위에 포함하지 않는다. 검증 결과와 실제 ready 수는 [QA 보고서](Player_Appearance_선택_QA.md)에 기록한다.
+## Save·Continue
+
+Gender/Path/Job/Name이 정본이고 AppearanceId는 자동 계산 결과를 저장하는 호환 필드다. Continue는 정본 조합으로 재조회한다. 이전 수동 AppearanceId가 누락·invalid·blocked·다른 조합이어도 정본 조합을 우선한다. Path/Job이 없는 오래된 Save는 기본 성별 Sprite로 fallback한다. Save Version1 및 기존 슬롯은 유지하고 삭제·초기화하지 않는다.
+
+## 검증
+
+50개 조합의 Combination / Appearance ID / Sprite Definition / Runtime Ready / Validation Status Matrix, Duplicate0 / Missing0, 남25·여25·Path별10·Job별10을 검사한다. 대표 5Path의 Preview·생성·World·Save→Continue·Battle, 구버전 및 불일치 ID 호환, Story Path 판정, Compile/Console을 백그라운드 우선으로 검사한다. 화면 포커스 전환은 이번 작업에 별도 승인 없이 실행하지 않는다.
