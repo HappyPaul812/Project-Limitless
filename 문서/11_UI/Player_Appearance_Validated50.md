@@ -1,5 +1,7 @@
 # Player Appearance 검증본 50종 등록 계약
 
+Hearing10종은 사용자 승인 수정 ZIP1254→512 변환본으로 교체했다. Hearing0 Ready/10 Blocked, 전체21/29 유지. 기존40종은 미변경이다. [수정판 QA](Hearing_Player_Sprite_Fixed_QA.md)를 최신 Hearing 입력·판정으로 사용한다.
+
 ## 현재 정식 정책 (2026-10-03 설계 정정)
 
 Gender + Path + Job → 대응 Sprite 자동 결정. 수동 Appearance 선택은 제거하며 50조합 중 Ready21/Blocked29를 유지한다. Blocked와 미선택은 기본 성별 Sprite의 명시적 임시 fallback을 사용한다. 상세 정본은 [자동 매핑·Save 계약](Player_Appearance_선택_Save.md)을 따른다.

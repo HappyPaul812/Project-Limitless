@@ -1,5 +1,6 @@
 # Player Appearance Foreground 최종 판정
 
+Hearing10종은 사용자 승인 1254→512 최근접 변환본으로 교체 후 백그라운드 프레임 관찰로 재판정했다. Foreground 재검수는 하지 않았다. 다른40종은 기존 판정을 유지한다. [수정판 QA](Hearing_Player_Sprite_Fixed_QA.md).
 직전 승인된 실제 Game View 판정을 재사용한다. 총50 / PASS21 / Blocked29 / 외형 시트 미판정0. 원본 PNG50개 SHA256 일치, 수정 없음. Frame 번호는 0-based이다. 전체800 Sprite와 Stable ID는 유지한다.
 
 Mobility10: 교체1 / Alpha2 / 방향2 / Art5, 모두 보류. Vision Alpha 경고10: 실제 화면 PASS5 / Art 보류5. 새 보류14: Hearing10·Intellectual Fighter/Mage4.
@@ -8,16 +9,16 @@ Mobility10: 교체1 / Alpha2 / 방향2 / Art5, 모두 보류. Vision Alpha 경�
 
 |Appearance ID|파일|성별|판정|Frame|문제/결과|
 |---|---|---|---|---|---|
-|appearance.external.v1.hearing.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png|Female|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png|Male|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png|Female|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.guardian.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png|Male|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.healer.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png|Female|BLOCKED_ART|1,5,9-11|본체 밖에 분리된 빨간 지팡이 장식·인접 셀 잔상이 보임.|
-|appearance.external.v1.hearing.healer.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png|Male|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.mage.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png|Female|BLOCKED_ART|1,5,6,9-11|분리된 빨간색/금색 지팡이 조각이 본체 옆에 보임.|
-|appearance.external.v1.hearing.mage.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png|Male|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.marksman.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png|Female|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
-|appearance.external.v1.hearing.marksman.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png|Male|BLOCKED_ART|8-15|Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.|
+|appearance.external.v1.hearing.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png|Female|BLOCKED_ART|BLOCKED_ART|5-15|Right 발 아래 인접 Up 머리 조각, Up 머리 상단 잘림, Left 일부 머리카락 경계 절단.
+|appearance.external.v1.hearing.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png|Male|BLOCKED_ART|BLOCKED_ART|5-15|Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림.
+|appearance.external.v1.hearing.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png|Female|BLOCKED_ART|BLOCKED_ART|8-15|Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림, 일부 무기·머리카락 경계 절단.
+|appearance.external.v1.hearing.guardian.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png|Male|BLOCKED_ART|BLOCKED_ART|8-15|Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림.
+|appearance.external.v1.hearing.healer.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png|Female|BLOCKED_ART|BLOCKED_ART|1,3,5-15|인접 셀 머리카락 조각, Right 발 아래 잔상과 지팡이 경계 절단, Up 머리 상단 잘림.
+|appearance.external.v1.hearing.healer.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png|Male|BLOCKED_ART|BLOCKED_ART|1-15|분리된 지팡이·망토 조각, Right 발 아래 머리 조각, Up 머리 상단 잘림.
+|appearance.external.v1.hearing.mage.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png|Female|BLOCKED_ART|BLOCKED_ART|1,5-15|분리된 빨간 지팡이 장식·인접 조각, Right 발 아래 잔상과 Up 머리 상단 잘림.
+|appearance.external.v1.hearing.mage.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png|Male|BLOCKED_ART|BLOCKED_ART|8-15|Right 인접 지팡이 장식·머리 조각, Up 머리 상단 잘림.
+|appearance.external.v1.hearing.marksman.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png|Female|BLOCKED_ART|BLOCKED_ART|1-15|인접 머리카락·무기 조각, Right 발 아래 다음 행 머리 조각, Up 머리 상단 잘림.
+|appearance.external.v1.hearing.marksman.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png|Male|BLOCKED_ART|BLOCKED_ART|5-15|Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림.
 |appearance.external.v1.emotionalscar.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Female.png|Female|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
 |appearance.external.v1.emotionalscar.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Male.png|Male|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
 |appearance.external.v1.emotionalscar.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Guardian_Female.png|Female|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|

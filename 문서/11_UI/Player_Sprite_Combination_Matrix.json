@@ -15,8 +15,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "frames": "5-15",
+      "reason": "Right 발 아래 인접 Up 머리 조각, Up 머리 상단 잘림, Left 일부 머리카락 경계 절단."
     },
     {
       "gender": "Male",
@@ -26,8 +26,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "frames": "5-15",
+      "reason": "Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림."
     },
     {
       "gender": "Female",
@@ -38,7 +38,7 @@
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
       "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "reason": "Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림, 일부 무기·머리카락 경계 절단."
     },
     {
       "gender": "Male",
@@ -49,7 +49,7 @@
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
       "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "reason": "Right 발 아래 다음 행 머리 조각과 Up 머리 상단 잘림."
     },
     {
       "gender": "Female",
@@ -59,8 +59,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "1,5,9-11",
-      "reason": "본체 밖에 분리된 빨간 지팡이 장식·인접 셀 잔상이 보임."
+      "frames": "1,3,5-15",
+      "reason": "인접 셀 머리카락 조각, Right 발 아래 잔상과 지팡이 경계 절단, Up 머리 상단 잘림."
     },
     {
       "gender": "Male",
@@ -70,8 +70,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "frames": "1-15",
+      "reason": "분리된 지팡이·망토 조각, Right 발 아래 머리 조각, Up 머리 상단 잘림."
     },
     {
       "gender": "Female",
@@ -81,8 +81,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "1,5,6,9-11",
-      "reason": "분리된 빨간색/금색 지팡이 조각이 본체 옆에 보임."
+      "frames": "1,5-15",
+      "reason": "분리된 빨간 지팡이 장식·인접 조각, Right 발 아래 잔상과 Up 머리 상단 잘림."
     },
     {
       "gender": "Male",
@@ -93,7 +93,7 @@
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
       "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "reason": "Right 인접 지팡이 장식·머리 조각, Up 머리 상단 잘림."
     },
     {
       "gender": "Female",
@@ -103,8 +103,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "frames": "1-15",
+      "reason": "인접 머리카락·무기 조각, Right 발 아래 다음 행 머리 조각, Up 머리 상단 잘림."
     },
     {
       "gender": "Male",
@@ -114,8 +114,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림."
+      "frames": "5-15",
+      "reason": "Left 망토 절단·인접 조각, Right 발 아래 머리 조각과 Up 머리 상단 잘림."
     },
     {
       "gender": "Female",

@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## Hearing Player Sprite 수정판 변환·교체 (2026-10-03)
+
+- 사용자 승인으로 원본 ZIP1254×1254 PNG10개를 보존하고 별도512×512 최근접 변환본을 기존 Hearing10종 경로에 반영했다. 원본 미술 재생성·복원·재배치·Alpha 보정 없음. 문서 선행 `f412331`, 교체·감사 `961e3a7`. [계약](../11_UI/Hearing_Player_Sprite_Fixed_적용_계약.md)·[QA/10종 문제 프레임](../11_UI/Hearing_Player_Sprite_Fixed_QA.md).
+- Male5/Female5·각5Job×2, Duplicate0/Missing0. 기존10 Appearance ID·Gender+Path+Job Mapping·Save 구조와160 Sprite GUID/fileID·Import 설정 유지. 다른40종 PNG/meta Hash와 Catalog Entry/Sprite/Clip/QA 상태 동일, BGM/Voice/Main16 변경 없음.
+- 변환본160프레임 관찰 결과 Hearing Ready0/Blocked_ART10. 인접 셀 조각·Right 발 아래 다음 행 머리·Up 머리 잘림·일부 무기/망토 절단이 남아 **전체 Ready21/Blocked29 유지**. 수정판이라고 PASS하지 않았으며 Runtime은 명시적 기본 성별 임시 fallback을 유지한다. 다음 작업은128px Cell마다 캐릭터/장치를 온전히 배치하는 원본 미술 수정이다.
+- Hearing 전용 격리 PlayUnfocused 감사96 PASS/0 FAIL:10조합 실제 UI Mapping/Preview/Story, 대표 남녀 생성/World/Save→Bootstrap Continue/Battle Scene 전달 통과. 수정판 Art의 Runtime Ready 재생은 하지 않았다. 사람의 실제 걷기 품질·물리 입력·Foreground는 미검증이다.
+- 최종 Compile/Console Error0·기존 deprecated 경고2, clean Bootstrap Edit Mode·격리 Save/Settings·Play 옵션 복원. 보호880파일 중 의도한12개만 변경했다. 관련 diff 검사 통과, GitHub Push 없음.
+
+
 ## Player Sprite 자동 조합 매핑 설계 정정 (2026-10-03)
 
 - 정식 규칙을 **Gender + Path + Job → 대응 Sprite 자동 결정**으로 정정했다. 성별/이름→Path→Job→Confirm 흐름을 유지하며 수동 Appearance 필터·이전/다음·목록·확정·번호 UI를 제거했다. Preview는 결과를 자동 갱신한다. Path Theme는 실제 Path 디자인이고 Job 추천은 선택 제한이 아니다. 아래 독립 Appearance 선택 기록은 폐기한 이전 구현 이력이다.
