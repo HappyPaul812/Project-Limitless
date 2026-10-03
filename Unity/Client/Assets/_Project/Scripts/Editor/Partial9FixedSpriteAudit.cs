@@ -135,7 +135,10 @@ namespace ProjectLimitless.EditorTools
             var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => (p.Id == "path.intellectual" || p.Id == "path.vision")).OrderBy(p => p.name).ToArray();
             var jobs = Resources.LoadAll<JobDefinition>("JobDefinitions").OrderBy(j => j.name).ToArray();
             Check(catalog.Entries.Count == 50 && paths.Length == 2 && jobs.Length == 5, "50 definitions / Intellectual/Vision targets only / 5 Job");
-            Check(catalog.Entries.Count(e => e.RuntimeReady) == 21, "Ready21 / Blocked29");
+            // 미술 수정판의 Ready 승격도 검사합니다. 기대값은 정식 Inventory를 사용합니다.
+            var inventory = JsonUtility.FromJson<PlayerAppearanceCatalog.Inventory>(File.ReadAllText(
+                Path.Combine(Application.dataPath, "_Project/Resources/PlayerAppearances/Validated50.json")));
+            Check(catalog.Entries.Count(e => e.RuntimeReady) == inventory.entries.Count(e => e.readyForSelection), "Ready 집계와 Inventory 일치");
             Check(catalog.Entries.Select(e => e.GenderStableId + "/" + e.PathStableId + "/" + e.JobStableId).Distinct().Count() == 50, "Duplicate0");
             Check(catalog.Entries.All(e => e.frames.Length == 16 && e.frames.All(f => f != null)), "Sprite800 preserved");
             Check(GameSaveService.SelectSlot(1), "isolated slot1");
@@ -150,7 +153,11 @@ namespace ProjectLimitless.EditorTools
                     Value<Button>(pathUI, "chooseButton").onClick.Invoke();
                     wait = WaitScene("JobSelection"); while (wait.MoveNext()) yield return null;
                     var jobUI = Object.FindAnyObjectByType<JobSelectionController>();
-                    foreach (var job in jobs.Where(j => catalog.FindCombination(gender.ToString(), path.Id, j.JobId) != null && !catalog.FindCombination(gender.ToString(), path.Id, j.JobId).RuntimeReady))
+                    // 검수 통과 여부와 무관하게 이번 수정 대상9종을 검사해 Ready 승격 조합도 빠뜨리지 않습니다.
+                    foreach (var job in jobs.Where(j => path.Id == "path.intellectual" ?
+                        (j.JobId == "fighter" || j.JobId == "mage") :
+                        (gender == PlayerVisualType.Male ? (j.JobId == "fighter" || j.JobId == "guardian" || j.JobId == "sharpshooter") :
+                            (j.JobId == "mage" || j.JobId == "sharpshooter"))))
                     {
                         Call(jobUI, "SelectJob", job);
                         var entry = catalog.FindCombination(gender.ToString(), path.Id, job.JobId);

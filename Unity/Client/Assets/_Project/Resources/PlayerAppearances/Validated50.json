@@ -2491,10 +2491,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Intellectual_4_Fixed.zip",
-      "sourceZipSha256": "7136b0069e6c405614b573ca43a13b593808d0bcdcd4c3d613622bee1b0814db",
-      "sourceEntry": "Limitless_Intellectual_4_Fixed/Intellectual_Fighter_Female.png",
-      "sha256": "0879d01444f0344574f07f455a618b11550e7dc654f2f84dd176832a12ddfaf3",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Intellectual_Fighter_Female.png",
+      "sha256": "14c878fc7db21475da42619f1ccf660bfba32b3be2d52812e2d2cb2ba96a74df",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.intellectual.fighter.female",
       "theme": "Intellectual",
@@ -2505,97 +2505,67 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 머리 조각, 옆 셀 검 끝 조각. Right/Up 머리 상단 수평 절단.",
+      "reviewReason": "BLOCKED_ART: Left 발 아래 외딴 픽셀, Right 발 아래 큰 머리 조각, Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          8,
-          4,
-          120,
-          124
-        ],
-        [
-          8,
-          4,
-          119,
-          124
-        ],
-        [
-          8,
-          4,
-          120,
-          124
-        ],
-        [
-          11,
+          10,
           4,
           117,
           124
         ],
         [
-          5,
-          6,
-          123,
+          9,
+          4,
+          119,
           124
         ],
         [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          121
-        ],
-        [
-          5,
           10,
+          4,
+          117,
+          124
+        ],
+        [
+          16,
+          4,
+          121,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          5,
+          4,
+          122,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          5,
+          4,
+          122,
+          124
+        ],
+        [
+          9,
+          4,
           123,
           124
         ],
         [
           5,
-          10,
-          123,
+          4,
+          122,
           124
         ],
         [
@@ -2603,14 +2573,44 @@
           4,
           121,
           124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          10,
+          4,
+          123,
+          118
+        ],
+        [
+          6,
+          4,
+          121,
+          124
+        ],
+        [
+          7,
+          4,
+          121,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Intellectual_4_Fixed.zip",
-      "sourceZipSha256": "7136b0069e6c405614b573ca43a13b593808d0bcdcd4c3d613622bee1b0814db",
-      "sourceEntry": "Limitless_Intellectual_4_Fixed/Intellectual_Fighter_Male.png",
-      "sha256": "6d7abdce28d575af623e9692cac5fbc1b5efc1cfcb9618aa61bb0b2f1257de99",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Intellectual_Fighter_Male.png",
+      "sha256": "14d782691899071e784c21282eb272db3ba6ccba59abe9709d9e06d49e31dc37",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.intellectual.fighter.male",
       "theme": "Intellectual",
@@ -2620,105 +2620,105 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left 머리 위/발 아래 잔여 조각, Right 발 아래 머리 조각, Up 머리 상단 절단.",
+      "readyForSelection": true,
+      "reviewReason": "PASS: Down/Left/Right/Up16Frame에서 기존 머리 절단·분리 조각·캐릭터 교체·심각한 Alpha/Scale 문제 없음. 실제 물리 입력 걷기 품질은 미검증.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
           5,
-          6,
-          123,
+          4,
+          122,
+          124
+        ],
+        [
+          4,
+          5,
+          124,
           124
         ],
         [
           5,
-          6,
+          4,
+          122,
+          124
+        ],
+        [
+          5,
+          4,
           123,
           124
         ],
         [
+          4,
           10,
-          6,
-          123,
+          124,
           124
         ],
         [
-          8,
+          4,
+          9,
+          124,
+          124
+        ],
+        [
+          5,
+          9,
+          124,
+          124
+        ],
+        [
+          4,
+          10,
+          124,
+          124
+        ],
+        [
+          4,
+          5,
+          124,
+          124
+        ],
+        [
+          7,
           4,
           120,
           124
         ],
         [
           5,
-          6,
-          123,
+          4,
+          122,
           124
         ],
         [
-          5,
-          6,
-          123,
+          7,
+          4,
+          121,
           124
         ],
         [
-          5,
-          6,
+          8,
+          4,
           123,
-          124
+          120
         ],
         [
           5,
-          6,
+          4,
           123,
-          124
+          121
         ],
         [
-          5,
-          6,
-          123,
-          124
+          4,
+          4,
+          124,
+          121
         ],
         [
-          5,
+          4,
           6,
-          123,
+          124,
           124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          122
         ]
       ]
     },
@@ -3187,10 +3187,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Intellectual_4_Fixed.zip",
-      "sourceZipSha256": "7136b0069e6c405614b573ca43a13b593808d0bcdcd4c3d613622bee1b0814db",
-      "sourceEntry": "Limitless_Intellectual_4_Fixed/Intellectual_Mage_Female.png",
-      "sha256": "2c7ead86285a7f78d3f8af6e2187a434977d0b72ada96df4daa32c2ea79697c8",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Intellectual_Mage_Female.png",
+      "sha256": "07c7cd64e098694633fa45b5294ec8ccfed587bd649bb0e1ca3ea8755ad76fd3",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png",
       "appearanceId": "appearance.external.v1.intellectual.mage.female",
       "theme": "Intellectual",
@@ -3201,15 +3201,9 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 머리 조각, Right/Up 머리 상단 수평 절단.",
+      "reviewReason": "BLOCKED_ART: Left 머리 위 잔여 픽셀, Right 발 아래 머리 조각, Up 머리 상단 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
-        [
-          7,
-          4,
-          121,
-          124
-        ],
         [
           7,
           4,
@@ -3217,96 +3211,102 @@
           124
         ],
         [
+          9,
+          4,
+          119,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          9,
+          4,
+          119,
+          124
+        ],
+        [
+          4,
+          8,
+          124,
+          124
+        ],
+        [
+          4,
+          7,
+          124,
+          124
+        ],
+        [
           6,
           4,
           122,
+          115
+        ],
+        [
+          4,
+          5,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          123,
           124
         ],
         [
           5,
           4,
-          122,
-          124
-        ],
-        [
-          5,
-          9,
           123,
           124
         ],
         [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
           5,
-          8,
+          4,
           123,
           124
         ],
         [
-          5,
-          5,
-          122,
-          124
-        ],
-        [
-          5,
-          8,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          9,
-          123,
-          124
-        ],
-        [
-          5,
-          8,
+          4,
+          7,
           121,
           124
         ],
         [
-          5,
           4,
-          123,
-          121
+          4,
+          124,
+          124
         ],
         [
           5,
-          7,
+          4,
           123,
           124
         ]
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Intellectual_4_Fixed.zip",
-      "sourceZipSha256": "7136b0069e6c405614b573ca43a13b593808d0bcdcd4c3d613622bee1b0814db",
-      "sourceEntry": "Limitless_Intellectual_4_Fixed/Intellectual_Mage_Male.png",
-      "sha256": "3769f45e4cb24324aa28c5be14872b48e991821640fcf68f27e8024ae9253340",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Intellectual_Mage_Male.png",
+      "sha256": "da97a60a050f5f85b6fb4200bfba38858e45bd194402bb2a5389718cde7232ee",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png",
       "appearanceId": "appearance.external.v1.intellectual.mage.male",
       "theme": "Intellectual",
@@ -3317,103 +3317,103 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left 발 아래/옆 셀 잔여 조각, Right 발 아래 머리 조각, Up 머리 상단 절단.",
+      "reviewReason": "BLOCKED_ART: Right 발 아래 본체와 분리된 갈색 조각. Alpha>10 기준 각Frame13+5/12+5/13+6/13+7px의 별도 성분.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          7,
+          10,
           4,
-          120,
+          118,
           124
         ],
         [
-          5,
+          8,
           4,
-          123,
-          124
-        ],
-        [
-          6,
-          4,
-          122,
-          124
-        ],
-        [
-          5,
-          4,
-          123,
-          124
-        ],
-        [
-          7,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          6,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          6,
-          123,
-          124
-        ],
-        [
-          5,
-          11,
           119,
           124
         ],
         [
+          9,
+          4,
+          119,
+          124
+        ],
+        [
+          9,
+          4,
+          118,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          120
+        ],
+        [
+          4,
           5,
+          124,
+          124
+        ],
+        [
+          10,
+          12,
+          124,
+          124
+        ],
+        [
+          11,
+          4,
+          124,
+          120
+        ],
+        [
+          8,
           4,
           122,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
+          9,
+          4,
+          119,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
           124
         ],
         [
           7,
           4,
           121,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
+          6,
+          4,
+          122,
           124
         ]
       ]
@@ -4941,10 +4941,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Visual_5_Fixed.zip",
-      "sourceZipSha256": "feaafcda0a5d9722348d864a9293f2a0b748b743bbb80ea1d26738f93c3d1bd8",
-      "sourceEntry": "Limitless_Visual_5_Fixed/Visual_Fighter_Male.png",
-      "sha256": "3195856e55eb3084312bd9dcb9870bf865c0820de872e7f3ac3ae32c3f686245",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Visual_Fighter_Male.png",
+      "sha256": "56d11fc6c379ee1290bd077d77584b539c025ebb869962946cfac633667dac44",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.vision.fighter.male",
       "theme": "Vision",
@@ -4955,121 +4955,104 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_DIRECTION: Left 행 frame5/7이 Right를 향함. Left 머리 위 및 Right 발 아래 잔여 조각, frame7/11 검 끝 절단도 보임.",
-      "edgeTouchCells": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
+      "reviewReason": "BLOCKED_ART: Left5/7 방향은 수정됨. Left 머리 위 검은 발 조각, Right 발 아래 검은 조각, 셀 옆 검 끝 조각이 남음.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          13,
-          6,
-          123,
-          128
+          11,
+          4,
+          117,
+          124
         ],
         [
-          0,
-          7,
-          128,
-          128
+          4,
+          10,
+          124,
+          124
         ],
         [
           10,
-          7,
-          128,
-          128
-        ],
-        [
-          0,
-          11,
-          116,
-          128
-        ],
-        [
-          13,
-          0,
-          126,
-          128
-        ],
-        [
-          3,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          9,
-          0,
-          119,
-          128
-        ],
-        [
-          1,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          24,
-          0,
-          125,
-          117
-        ],
-        [
-          22,
-          0,
-          128,
-          118
-        ],
-        [
-          0,
-          0,
-          111,
-          117
-        ],
-        [
-          2,
-          0,
+          4,
           123,
-          117
+          124
+        ],
+        [
+          5,
+          4,
+          123,
+          124
+        ],
+        [
+          10,
+          4,
+          118,
+          124
+        ],
+        [
+          4,
+          4,
+          123,
+          124
+        ],
+        [
+          6,
+          4,
+          121,
+          124
+        ],
+        [
+          7,
+          4,
+          121,
+          124
+        ],
+        [
+          14,
+          4,
+          113,
+          124
+        ],
+        [
+          5,
+          4,
+          123,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          12,
+          4,
+          115,
+          124
+        ],
+        [
+          18,
+          7,
+          124,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          4,
+          12,
+          124,
+          124
         ]
       ]
     },
@@ -5207,10 +5190,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Visual_5_Fixed.zip",
-      "sourceZipSha256": "feaafcda0a5d9722348d864a9293f2a0b748b743bbb80ea1d26738f93c3d1bd8",
-      "sourceEntry": "Limitless_Visual_5_Fixed/Visual_Guardian_Male.png",
-      "sha256": "2e6e93cf3f6925007f93cc19aee2144a4f4991a80bcfa7aef9d4eccd7ada8375",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Visual_Guardian_Male.png",
+      "sha256": "4c0b20265f0c030480b8bfc789eed8ada17c3a2be812faf050662ca53172a161",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.vision.guardian.male",
       "theme": "Vision",
@@ -5221,117 +5204,104 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left 발 아래 잔여 조각, Right 발 아래 다음 행 흰 머리 조각, Up 머리 상단 절단.",
-      "edgeTouchCells": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
+      "reviewReason": "BLOCKED_ART: Left 발 아래 검은 잔여 조각, Right 발 아래 흰 머리 조각, Up 머리 상단 절단.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          11,
-          7,
-          125,
-          126
-        ],
-        [
           5,
-          7,
-          123,
-          126
-        ],
-        [
-          5,
-          7,
-          119,
-          126
-        ],
-        [
-          2,
-          7,
-          121,
-          126
-        ],
-        [
-          11,
-          2,
-          128,
-          128
-        ],
-        [
-          0,
-          2,
-          128,
-          128
-        ],
-        [
-          5,
-          2,
-          128,
-          128
-        ],
-        [
-          0,
-          2,
+          4,
           122,
-          128
+          124
         ],
         [
-          14,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
+          8,
+          9,
+          124,
+          124
         ],
         [
           5,
-          0,
-          128,
-          128
+          4,
+          122,
+          124
         ],
         [
-          0,
-          0,
-          125,
-          128
+          4,
+          6,
+          124,
+          124
         ],
         [
-          13,
-          0,
-          126,
-          114
+          9,
+          4,
+          119,
+          124
+        ],
+        [
+          4,
+          4,
+          123,
+          124
+        ],
+        [
+          4,
+          5,
+          124,
+          124
+        ],
+        [
+          5,
+          4,
+          122,
+          124
         ],
         [
           10,
-          0,
-          128,
-          115
+          4,
+          118,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          6,
+          4,
+          121,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          10,
+          16,
+          124,
+          124
         ],
         [
           11,
-          0,
-          119,
-          113
+          13,
+          124,
+          124
         ],
         [
-          1,
-          0,
-          121,
-          113
+          4,
+          12,
+          124,
+          124
         ]
       ]
     },
@@ -5602,10 +5572,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Visual_5_Fixed.zip",
-      "sourceZipSha256": "feaafcda0a5d9722348d864a9293f2a0b748b743bbb80ea1d26738f93c3d1bd8",
-      "sourceEntry": "Limitless_Visual_5_Fixed/Visual_Mage_Female.png",
-      "sha256": "61b774bf95da2fab6c5bb9e018a051478f1a78e0fc546e902f639cd0a858d7b0",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Visual_Mage_Female.png",
+      "sha256": "dacf8b1f6402dc221ba4183ed116797bff6f1e96a5ad93cdbfad54f2a5f95a3d",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
       "appearanceId": "appearance.external.v1.vision.mage.female",
       "theme": "Vision",
@@ -5616,117 +5586,104 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 발 아래/셀 하단에 지팡이·의상으로 보이는 외딴 잔여 픽셀 조각.",
-      "edgeTouchCells": [
-        0,
-        1,
-        2,
-        3,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
+      "reviewReason": "BLOCKED_ART: Left 머리 위 잔여 픽셀, Right 발 아래 검은/청색 외딴 픽셀 조각.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          13,
-          12,
-          128,
-          125
-        ],
-        [
-          0,
-          13,
-          122,
-          127
-        ],
-        [
-          13,
-          12,
-          128,
-          126
-        ],
-        [
-          0,
-          13,
-          120,
-          126
-        ],
-        [
-          12,
-          5,
-          126,
-          122
-        ],
-        [
-          3,
-          6,
-          126,
-          122
-        ],
-        [
-          12,
-          9,
-          125,
-          123
-        ],
-        [
-          2,
           4,
-          122,
-          125
+          5,
+          124,
+          124
+        ],
+        [
+          4,
+          12,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          12,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          11,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          7,
+          123,
+          124
+        ],
+        [
+          9,
+          4,
+          119,
+          124
         ],
         [
           7,
-          0,
-          126,
-          128
+          4,
+          120,
+          124
         ],
         [
-          3,
-          0,
-          122,
-          128
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          6,
+          4,
+          121,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
         ],
         [
           4,
-          0,
-          128,
-          128
+          12,
+          119,
+          124
         ],
         [
-          0,
-          0,
-          122,
-          128
+          7,
+          4,
+          120,
+          124
         ],
         [
-          17,
-          0,
-          125,
-          117
-        ],
-        [
-          0,
-          0,
-          122,
-          116
-        ],
-        [
-          13,
-          0,
-          125,
-          117
-        ],
-        [
-          3,
-          0,
-          121,
-          116
+          4,
+          7,
+          124,
+          124
         ]
       ]
     },
@@ -5864,10 +5821,10 @@
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Visual_5_Fixed.zip",
-      "sourceZipSha256": "feaafcda0a5d9722348d864a9293f2a0b748b743bbb80ea1d26738f93c3d1bd8",
-      "sourceEntry": "Limitless_Visual_5_Fixed/Visual_Marksman_Female.png",
-      "sha256": "ce58f010fff3e2025c773259db85728003b4d8070bcbdc46811cc6419911da52",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Visual_Marksman_Female.png",
+      "sha256": "a025d66be566c73f837603d48552e544c09ecc3f30e616d255c9e393f42a38f8",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.vision.marksman.female",
       "theme": "Vision",
@@ -5878,129 +5835,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left 머리 위 이전 행의 발로 보이는 검은 잔여 조각.",
-      "edgeTouchCells": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
+      "reviewReason": "BLOCKED_ART: Left 머리 위 검은 발 조각 및 셀 옆 잔여 픽셀, Right 발 아래 잔여 조각.",
+      "edgeTouchCells": [],
       "cellBboxes": [
+        [
+          5,
+          4,
+          123,
+          124
+        ],
+        [
+          4,
+          8,
+          124,
+          124
+        ],
+        [
+          5,
+          4,
+          122,
+          124
+        ],
         [
           7,
           4,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          8,
-          5,
-          126,
-          128
-        ],
-        [
-          8,
-          5,
           121,
-          128
-        ],
-        [
-          14,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          128,
-          128
-        ],
-        [
-          6,
-          0,
-          125,
-          128
-        ],
-        [
-          3,
-          0,
-          122,
-          128
-        ],
-        [
-          6,
-          0,
-          125,
-          128
-        ],
-        [
-          3,
-          0,
-          122,
-          128
-        ],
-        [
-          12,
-          0,
-          125,
-          122
+          124
         ],
         [
           10,
-          0,
-          128,
-          121
+          4,
+          118,
+          124
         ],
         [
-          11,
-          0,
-          128,
-          123
+          4,
+          4,
+          124,
+          124
         ],
         [
-          0,
-          0,
-          122,
-          122
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          7,
+          4,
+          121,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
+          5,
+          4,
+          123,
+          124
+        ],
+        [
+          14,
+          9,
+          124,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:/Downloads/Limitless_Visual_5_Fixed.zip",
-      "sourceZipSha256": "feaafcda0a5d9722348d864a9293f2a0b748b743bbb80ea1d26738f93c3d1bd8",
-      "sourceEntry": "Limitless_Visual_5_Fixed/Visual_Marksman_Male.png",
-      "sha256": "da7e9ef0e5dd8f4c3759244838920ebc1b28f297e2b5e95ba4300ea16454c687",
+      "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
+      "sourceZipSha256": "eebc04cd0c0cb293c49d011dd03ad347d2fef922b810ba3a359f9dbf537a45e7",
+      "sourceEntry": "Limitless_Intellectual4_Vision5_Revised/Visual_Marksman_Male.png",
+      "sha256": "1f589960f936c838038172cbce67bda7c530d7e304352d1e650693af2acd9699",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.vision.marksman.male",
       "theme": "Vision",
@@ -6011,121 +5951,104 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 발 아래 다음 행/인접 캐릭터의 외딴 검은 잔여 조각.",
-      "edgeTouchCells": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15
-      ],
+      "reviewReason": "BLOCKED_ART: Left 머리 위/셀 옆 잔여 조각, Right 발 아래 외딴 검은 조각.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          13,
-          4,
-          126,
-          128
-        ],
-        [
           10,
           4,
-          128,
-          128
+          118,
+          124
         ],
         [
-          0,
+          7,
           4,
-          121,
-          128
-        ],
-        [
-          3,
-          5,
-          116,
-          128
-        ],
-        [
-          18,
-          0,
-          126,
-          128
-        ],
-        [
-          15,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
           120,
-          128
-        ],
-        [
-          10,
-          0,
-          122,
-          128
-        ],
-        [
-          13,
-          0,
-          125,
-          128
-        ],
-        [
-          10,
-          0,
-          128,
-          128
-        ],
-        [
-          6,
-          0,
-          128,
-          128
-        ],
-        [
-          0,
-          0,
-          116,
-          128
-        ],
-        [
-          13,
-          0,
-          128,
-          116
-        ],
-        [
-          0,
-          0,
-          128,
-          117
-        ],
-        [
-          0,
-          0,
-          125,
-          116
+          124
         ],
         [
           9,
-          0,
+          4,
+          118,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          11,
+          4,
+          116,
+          124
+        ],
+        [
+          4,
+          4,
+          124,
+          124
+        ],
+        [
+          5,
+          4,
+          122,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
+          11,
+          4,
+          116,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          5,
+          4,
+          123,
+          124
+        ],
+        [
+          10,
+          4,
+          118,
+          124
+        ],
+        [
+          7,
+          4,
           121,
-          118
+          124
+        ],
+        [
+          4,
+          13,
+          124,
+          124
+        ],
+        [
+          4,
+          13,
+          124,
+          124
+        ],
+        [
+          7,
+          4,
+          121,
+          124
         ]
       ]
     }
