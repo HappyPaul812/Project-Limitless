@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## 외부 Asset 정식 편입 (2026-10-03)
+
+- 확정 MP3 7곡, Chapter1 배경 PNG 6종, Player 시트 50종을 원본 바이트 그대로 편입했다. Chapter1 일반전=Steel and Sunlight, B1=Stone Without Memory, B2=Beneath The Forgotten Hall, 파수꾼=The Warden’s Final Stand, Field04~06=Paths of Cracked Earth. 기존 Mixer/BGM 서비스·Scene 복귀 정책을 재사용했다. Intro 곡은 시작/종료 Hook만 준비했고 Deep West 곡은 최초 Scene 미확정으로 Catalog에 보관한다. 후보4곡은 Downloads에 보존하며 Chapter2 일반 전투 변주는 TBD다.
+- 배경은 Field01 초원, Field02/03 숲, Dungeon B1/B2 지하묘지, 파수꾼 Boss 전용으로 연결했다. 독성 늪/고대 성소는 대응 Scene 미정으로 미배정이다. 원본1672×941 RGB를 기존 전체 화면 Background Image에 비율 유지 Fit하고 기존 HP/명령 영역을 유지했다.
+- Vision/Hearing/Intellectual/Mobility/Emotional Scar 각10종(각 Male5/Female5)을 실제 집계했다. 고정 Appearance ID·원본 Texture 참조 Catalog를 준비했으며 Vision512×512만 160프레임 Slice했다. 나머지40종1254×1254는 128px Cell 규칙과 불일치해 Slice를 보류했다. Mobility10·Intellectual4종에는 Alpha가 없다. 전체50종 방향/발 Pivot 검수 전으로 선택 가능=false이며 Character Creation 신규 외형 선택과 appearanceId Save는 **미구현**이다. 기존 Male/Female·Path Variant·Save fallback은 유지했고 새 Animator Controller를 복제하지 않았다.
+- 검증: Unity6000.5.7f1 Runtime/Editor 컴파일 완료·Console 오류/경고0, Edit Mode 최종216항목 실패0, 신규63파일 원본/SHA256 일치·GUID 유일, 배경6 Sprite·Audio7 Clip 참조 정상, 직접 변경 staged diff --check 통과. Bootstrap dirty=false 유지, Scene 저장·Play Mode·foreground 조작 없음.
+- 사용자 직접 확인: 실제 음악/Loop 경계·일반전/Boss 후 탐색곡 복원·화면 비율별 배경/HP 가독성. 다음 권장 작업: 1254px 시트 Cell/Alpha 원본 확인과 50종 방향/발 위치 검수 후 공용 Animator Override·독립 외형 선택·Stable Appearance ID Save 연결. Intro 첫 진입 연출 종료 계약·Deep West 최초 Scene 확정도 별도 작업이다.
+- [편입 정본·Inventory·검증](외부_Asset_정식_편입_2026_10_03.md). 마지막 관련 기능 commit: `e8603df`, 정책/검증 문서: `2b7218b`. GitHub Push 없음.
+
 ## Missing Story Voice Supplement Pack (2026-09-30)
 
 - [보충팩 QA](Missing_Story_Voice_Supplement_QA.md)의 정식 CSV58행을 LOCAL 기존 무음 대사와 대조하고 사용자 허용에 따라 안정 ID를 지정했다. Main03 12/Main04 18/Main05 6/Main08 19/Main12 3개를 원본 WAV 그대로 적용했다. 입력61 WAV 중 Manifest 미참조 합본3개는 제외, Main01/02 신규 음성은 미제공이다. 기존 Registry의 태온 Gacrux34/미엘 Sulafat22/폴 Achird2개, gemini-3.8-flash-tts·Voice Design 사용 안 함을 기록했다.
