@@ -1,5 +1,9 @@
 # Project-Limitless 현재 개발 상태
 
+## Intellectual/Vision Cleanup8 진행 (2026-10-03)
+
+문서 선행: 지정 8종 교체 + 판정 재검증만 진행한다. 입력은 Limitless_IntellectualVision_8_Cleanup.zip. 기존 Ready22/Blocked28을 기준으로 머리 crop·조각·방향 해결 여부를 검증하며 다른42종 및 사용자 변경94항목은 유지한다. [적용 계약](../11_UI/Intellectual_Vision_Cleanup8_적용_계약.md). 결과는 검증 완료 후 갱신한다. Foreground 검증 및 Push 없음.
+
 ## Intellectual3 / Vision5 V2 스프라이트 반영 (2026-10-03)
 
 - `Limitless_IntellectualVision_8_Fixed_v2.zip`의 지정8종만512×512 RGBA 원본 그대로 교체했다. Target8/Duplicate0/Missing0·추가PNG0. 원본ZIP/추출PNG·이전8PNG/Git 이력 보존. 문서 선행 `6def064`, 반영 commit `35ea4ab`. [계약/기존8 ID](../11_UI/Intellectual_Vision_V2Eight_적용_계약.md)·[8종 개별 QA](../11_UI/Intellectual_Vision_V2Eight_QA.md).

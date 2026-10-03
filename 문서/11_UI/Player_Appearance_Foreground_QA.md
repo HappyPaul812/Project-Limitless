@@ -1,5 +1,7 @@
 # Player Appearance Foreground 최종 판정
 
+2026-10-03 Cleanup8 검증 예정: Intellectual3/Vision5 지정8종만 교체·재판정한다. 기존 Ready22/Blocked28, 다른42종 유지. [적용 계약](Intellectual_Vision_Cleanup8_적용_계약.md).
+
 2026-10-03 최신 V2: Intellectual3/Vision5 대상8종 BLOCKED_ART, 신규READY0·전체 Ready22/Blocked28 유지. 다른42종과 기존 Intellectual Fighter Male READY 보존. [최신 V2 QA](Intellectual_Vision_V2Eight_QA.md). 아래 Revised/Fixed 집계 설명은 이전 작업 이력이며 표/JSON은 최신 판정이다.
 
 2026-10-03 최신 Revised9: Intellectual Fighter Male READY 승격, 대상 Ready1/Blocked8·전체 Ready22/Blocked28. Vision Fighter Male은 방향 해결 후 BLOCKED_ART. 다른41종 판정 유지. [최신 QA](Intellectual_Vision_Revised9_QA.md). 아래 집계 설명은 이전 작업 이력이며 표/JSON은 최신 판정이다.
