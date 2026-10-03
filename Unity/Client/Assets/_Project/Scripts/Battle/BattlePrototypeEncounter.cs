@@ -165,6 +165,28 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies, foes);
         }
 
+        /// <summary>현재 저장 파티를 그대로 사용합니다. 첫 Story/일반 망령은 후열 한 개체이며 두 일반 조우만 명시된 조합입니다.</summary>
+        public static BattleEncounterSetup CreateField07(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition encountered, string spawnId,
+            MonsterDefinition soot, MonsterDefinition hawk, MonsterDefinition lizard, MonsterDefinition beetle)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, jobId, pathId,
+                maxHp, attack, agility, null, null, encountered);
+            BattleParticipantSetup[] foes;
+            if (spawnId == "field07_beasts_01") foes = new[]
+            {
+                CreateMonster(soot, "field07_soot_hound", "그을음들개", FormationRow.Front, 0, 16),
+                CreateMonster(hawk, "field07_heatwind_hawk", "열풍매", FormationRow.Rear, 0, 18)
+            };
+            else if (spawnId == "field07_beasts_02") foes = new[]
+            {
+                CreateMonster(lizard, "field07_fissure_lizard", "균열도마뱀", FormationRow.Front, 0, 12),
+                CreateMonster(beetle, "field07_ember_beetle", "화열딱정벌레", FormationRow.Front, 1, 9)
+            };
+            else foes = new[] { CreateMonster(encountered, "field07_ember_wraith", "불씨망령", FormationRow.Rear, 0, 13) };
+            return new BattleEncounterSetup(party.Allies, foes);
+        }
+
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
             int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
         {

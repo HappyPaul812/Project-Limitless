@@ -59,5 +59,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/Field_06_ScorchedTrail.unity
     guid: 4b57f326013047b08fc7f923bbeda7fa
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_07_AshenReach.unity
+    guid: f6fd4898372c0a54eaa201d769ce51fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

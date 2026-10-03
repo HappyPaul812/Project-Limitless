@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main16_ShapeInTheAsh
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_16_shape_in_the_ash
+  displayName: "\uC7AC \uC18D\uC758 \uD615\uC0C1"
+  description: "\uC7AC\uBC14\uB78C \uD669\uC57C\uC5D0\uC11C \uC7AC\uC640 \uC9C0\uBA74\uC758
+    \uC774\uC0C1\uC744 \uC870\uC0AC\uD558\uACE0, \uAD00\uCC30\uD55C \uC0AC\uC2E4\uACFC
+    \uCD94\uC815\uC744 \uB098\uB204\uC5B4 \uB808\uC628\uC5D0\uAC8C \uBCF4\uACE0\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: talk_to_leon_about_ash
+    description: "\uB808\uC628\uC5D0\uAC8C \uC7AC \uC774\uC0C1 \uD604\uC0C1 \uB4E3\uAE30"
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  - objectiveId: head_deeper_west
+    description: "\uB728\uAC70\uC6B4 \uAE38\uC758 \uC11C\uCABD \uCD9C\uAD6C\uB85C
+      \uC774\uB3D9"
+    objectiveType: 1
+    targetId: field06_main16_west_exit
+    requiredCount: 1
+  - objectiveId: enter_ashen_reach
+    description: "\uC7AC\uBC14\uB78C \uD669\uC57C\uC5D0 \uC9C4\uC785"
+    objectiveType: 1
+    targetId: field07_main16_entry
+    requiredCount: 1
+  - objectiveId: inspect_moving_ash
+    description: "\uBC14\uB78C\uACFC \uB2E4\uB974\uAC8C \uC6C0\uC9C1\uC774\uB294
+      \uC7AC \uC870\uC0AC"
+    objectiveType: 3
+    targetId: field07_main16_ash
+    requiredCount: 1
+  - objectiveId: trace_ground_vibration
+    description: "\uC7AC\uC640 \uC9C0\uBA74 \uC9C4\uB3D9\uC758 \uAC04\uACA9 \uCD94\uC801"
+    objectiveType: 3
+    targetId: field07_main16_vibration
+    requiredCount: 1
+  - objectiveId: inspect_broken_tracks
+    description: "\uD769\uC5B4\uC9C4 \uB3D9\uBB3C \uD754\uC801 \uC870\uC0AC"
+    objectiveType: 3
+    targetId: field07_main16_tracks
+    requiredCount: 1
+  - objectiveId: witness_ember_wraith
+    description: "\uC7AC \uC18D\uC758 \uD615\uC0C1 \uBAA9\uACA9"
+    objectiveType: 1
+    targetId: field07_main16_witness
+    requiredCount: 1
+  - objectiveId: defeat_ember_wraith
+    description: "\uC9C0\uC815 \uBD88\uC528\uB9DD\uB839 \uACA9\uD30C"
+    objectiveType: 2
+    targetId: field07_main16_ember_wraith
+    requiredCount: 1
+  - objectiveId: inspect_afterimage
+    description: "\uC804\uD22C \uD6C4 \uB0A8\uC740 \uADE0\uC5F4\uACFC \uC5F4\uAE30
+      \uC870\uC0AC"
+    objectiveType: 3
+    targetId: field07_main16_afterimage
+    requiredCount: 1
+  - objectiveId: find_western_route
+    description: "\uBD89\uC740 \uADE0\uC5F4 \uD611\uACE1 \uC785\uAD6C \uD655\uC778"
+    objectiveType: 1
+    targetId: field07_main16_canyon
+    requiredCount: 1
+  - objectiveId: return_to_arbel
+    description: "\uC544\uB974\uBCA8\uB85C \uADC0\uD658"
+    objectiveType: 1
+    targetId: arbel_main16_return
+    requiredCount: 1
+  - objectiveId: report_the_anomaly
+    description: "\uB808\uC628\uC5D0\uAC8C \uC0AC\uC2E4\uACFC \uCD94\uC815 \uBCF4\uACE0"
+    objectiveType: 0
+    targetId: arbel-leon
+    requiredCount: 1
+  reward:
+    Experience: 0
+    Currency: 0
+    Items: []
+  prerequisiteQuestIds:
+  - main_15_burning_traces
+  nextMainQuestId:
+  startNpcId: arbel-leon
+  turnInNpcId:

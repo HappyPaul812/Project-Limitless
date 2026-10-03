@@ -69,7 +69,18 @@ namespace ProjectLimitless.CameraSystem
             }
 
             // Lerp는 현재 위치와 목표 위치 사이를 조금씩 보간하여 부드럽게 이동시킵니다.
-            transform.position = Vector3.Lerp(transform.position, destination, followSpeed * Time.deltaTime);
+            Vector3 nextPosition = Vector3.Lerp(transform.position, destination, followSpeed * Time.deltaTime);
+            if (worldBounds != null && attachedCamera != null && attachedCamera.orthographic)
+            {
+                // 화면 비율이 바뀌면 직전 카메라 중심이 새 viewport의 허용 범위 밖에 있을 수 있습니다.
+                // 목표만 제한한 채 보간하면 바깥 검은 영역을 잠깐 보여 주므로 실제 적용 위치도 같은 범위로 제한합니다.
+                Bounds movementBounds = worldBounds.Bounds;
+                float halfHeight = attachedCamera.orthographicSize;
+                float halfWidth = halfHeight * attachedCamera.aspect;
+                nextPosition.x = ClampToViewport(nextPosition.x, movementBounds.min.x, movementBounds.max.x, halfWidth);
+                nextPosition.y = ClampToViewport(nextPosition.y, movementBounds.min.y, movementBounds.max.y, halfHeight);
+            }
+            transform.position = nextPosition;
         }
 
         /// <summary>
