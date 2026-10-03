@@ -127,7 +127,7 @@ namespace ProjectLimitless.EditorTools
             var wait = WaitScene(name); while (wait.MoveNext()) yield return null;
         }
 
-        /// <summary>Intellectual4/Vision5 대상9조합을 실제 Path/Job UI에서 선택하고, 대표 남녀를 생성·이어하기·Battle까지 검증합니다.</summary>
+        /// <summary>현재 Intellectual3/Vision5 대상8조합을 실제 UI에서 선택하고, 대표 남녀를 생성·이어하기·Battle까지 검증합니다.</summary>
         private static IEnumerator Run()
         {
             for (int i = 0; i < 8; i++) yield return null;
@@ -153,9 +153,9 @@ namespace ProjectLimitless.EditorTools
                     Value<Button>(pathUI, "chooseButton").onClick.Invoke();
                     wait = WaitScene("JobSelection"); while (wait.MoveNext()) yield return null;
                     var jobUI = Object.FindAnyObjectByType<JobSelectionController>();
-                    // 검수 통과 여부와 무관하게 이번 수정 대상9종을 검사해 Ready 승격 조합도 빠뜨리지 않습니다.
+                    // 검수 통과 여부와 무관하게 이번8종만 검사합니다. 직전 READY인 Intellectual Fighter Male은 제외합니다.
                     foreach (var job in jobs.Where(j => path.Id == "path.intellectual" ?
-                        (j.JobId == "fighter" || j.JobId == "mage") :
+                        (j.JobId == "mage" || (gender == PlayerVisualType.Female && j.JobId == "fighter")) :
                         (gender == PlayerVisualType.Male ? (j.JobId == "fighter" || j.JobId == "guardian" || j.JobId == "sharpshooter") :
                             (j.JobId == "mage" || j.JobId == "sharpshooter"))))
                     {
@@ -171,7 +171,7 @@ namespace ProjectLimitless.EditorTools
                     }
                 }
             string[] representativePaths = { "path.intellectual", "path.vision" };
-            string[] representativeJobs = { "fighter", "mage" };
+            string[] representativeJobs = { "mage", "mage" };
             var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female };
             for (int sample = 0; sample < representativePaths.Length; sample++)
             {
