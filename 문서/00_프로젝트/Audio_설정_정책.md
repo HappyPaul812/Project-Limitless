@@ -1,5 +1,11 @@
 # LIMITLESS Audio 설정 정책
 
+## Main16 Field07 후속 확정 (2026-10-03)
+
+Field_07_AshenReach의 기본 탐색·조사·전투 후 복귀는 Where the Earth Breathes다. Chapter2 전체 배정으로 확대하지 않는다. Trail of the Ember Wraith는 최초 목격 연출 후보, Beneath The Cracked Earth는 Main17·붉은 균열 협곡 이후 후보이며 Runtime 미배정이다. 기존 후보4곡도 유지한다. 세부 배정·원본·검증 계약은 [Main16 Audio 마무리](Main16_Audio_마무리_계약.md)를 따른다.
+
+현재 LOCAL의 Chapter2 Battle 음악은 null/TBD다. 사용자 재확인에 따라 **Field07 일반전·불씨망령 Story Battle도 null/TBD를 유지**한다. Steel and Sunlight는 기존 Chapter1 일반전에 유지하며 새 전투곡을 배정하지 않는다. 전투 후 Field07은 새 탐색곡, Defeat 후 Arbel은 Morning at the Gate로 복귀한다. 아래 이전 Field07 TBD 기록은 당시 이력이다.
+
 ## 확정 설정과 출력
 
 2026-09-30 사용자 요청으로 전체 음소거, 음성(Voice), 효과음(SFX), 배경음(BGM)을 정식 환경 설정으로 추가한다. UI는 각 채널을 정수 0–100으로 표시하며 실시간 적용한다. 기본값은 Voice100 / SFX100 / BGM80 / Mute OFF다.
