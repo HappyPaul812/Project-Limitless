@@ -1,0 +1,23 @@
+{
+  "unityVersion": "6000.5.7f1",
+  "compile": "Unity refresh completed; runtime/editor assemblies loaded; console errors and warnings 0",
+  "checks": 216,
+  "failures": [],
+  "visionFrames": 160,
+  "otherFrames": 0,
+  "scene": "Bootstrap",
+  "dirty": false,
+  "originalBytesVerified": 63,
+  "importedGuidsUnique": 63,
+  "audioStreamingChecks": "7 clips readable, length > 0, streaming, forceToMono false",
+  "playModeUsed": false,
+  "foregroundUsed": false,
+  "limitations": [
+    "실제 청취/Loop 경계",
+    "Battle 화면 비율/가독성",
+    "실제 일반전/Boss 종료 후 탐색곡 복원",
+    "Intro Hook 호출 연출 미구현",
+    "Player 40종 Cell/Alpha와 전체 50종 방향/Pivot 미확정",
+    "Character Creation 신규 외형 선택/Save 미구현"
+  ]
+}

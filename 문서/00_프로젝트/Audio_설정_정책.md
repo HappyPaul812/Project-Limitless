@@ -28,6 +28,8 @@ Narration/Character Dialogue/Intro TTS는 Voice, 검격·폭발·UI·환경 효�
 
 ## 정식 BGM 3곡 (2026-09-30 후속 적용)
 
+아래는 09-30 당시 배정 기록이다. 2026-10-03 사용자 확정으로 Field04는 Paths of Cracked Earth로 변경했고 Field05/06·Dungeon B1/B2·Chapter1 일반 전투·침묵의 파수꾼 음악을 추가했다. 확정 7곡·후보 4곡·Intro Hook/Deep West 미배정 경계는 [외부 Asset 정식 편입](외부_Asset_정식_편입_2026_10_03.md)의 BGM 표가 최신 정본이다. 기존 타이틀·마을/Arbel·Field01·Field03 안전 반경 음악은 유지한다.
+
 사용자가 확정한 Before the First Light는 Bootstrap 타이틀, Morning at the Gate는 World_StarterVillage/Arbel 및 Field03 지하묘지 입구의 기존 안전 반경, Morning Over the Ridge는 Field01과 Chapter2 첫 서부 Field04에 배치한다. Field05/06·다른 Field·Dungeon/Battle/Boss·Intro/캐릭터 생성은 BGM TBD로 두고 Scene 진입 시 이전 곡을 정리한다. 세 곡을 임의로 확대 배정하지 않는다. 기존 정식 BGM 없음 기록은 앞선 작업 당시 상태다.
 
 원본 MP3를 Audio/Music 아래 바이트 그대로 보관하며 Unity Streaming Import를 사용한다. 정규화/강제 모노 없음, 기본 Loop, 기존 BGM Mixer Group·Source gain1. 최소 BgmPlaybackService의 지속 객체/Source1개와 BgmSceneCatalog의 Scene 역할 배정을 사용한다. 같은 Clip 요청은 재시작하지 않고 새 Clip/null은 이전 곡을 중지한다. Voice 재생은 BGM과 독립적이며 기본 Voice100/BGM80과 전체 Mute를 유지한다. 자동 Ducking·Crossfade·원본 Loop 편집 없음. 향후 BGM은 해당 Scene 역할에 맞게 추가한다. 청취 균형·Loop 경계는 사용자 QA 대상이다. 상세는 [Voice/BGM QA](Main13_15_Voice_BGM_QA.md).
