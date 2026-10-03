@@ -16,7 +16,7 @@
 |Vision|sharpshooter|Female|appearance.external.v1.vision.marksman.female|BLOCKED_ART|
 |Vision|sharpshooter|Male|appearance.external.v1.vision.marksman.male|BLOCKED_ART|
 
-파일名 Intellectual/Visual 및 Marksman의 대응은 기존 Inventory/README/LOCAL Job ID로 확정한다. Duplicate0/Missing0. 다른41종 PNG/meta/Catalog 참조/QA는 보존한다. Identity/Appearance/Sprite GUID/fileID·Gender+Path+Job 자동 Mapping·Save 구조·fallback 정책은 유지한다. 기존 Multiple/PPU128/Point/Uncompressed/128px Rect/Pivot(64,0)을 유지한다.
+파일명 Intellectual/Visual 및 Marksman의 대응은 기존 Inventory/README/LOCAL Job ID로 확정한다. Duplicate0/Missing0. 다른41종 PNG/meta/Catalog 참조/QA는 보존한다. Identity/Appearance/Sprite GUID/fileID·Gender+Path+Job 자동 Mapping·Save 구조·fallback 정책은 유지한다. 기존 Multiple/PPU128/Point/Uncompressed/128px Rect/Pivot(64,0)을 유지한다.
 
 ## 절차·검증
 

@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Intellectual4 / Vision5 Revised9 스프라이트 반영 (2026-10-03)
+
+- 지정9종만 `Limitless_Intellectual4_Vision5_Revised.zip`의512×512 RGBA 원본 바이트 그대로 교체했다. 원본ZIP/추출PNG와 이전9PNG·Git 이력 보존. 문서 선행 `c66b43c`, 반영 commit `d4e0093`. [적용 계약](../11_UI/Intellectual_Vision_Revised9_적용_계약.md)·[9종 개별 QA](../11_UI/Intellectual_Vision_Revised9_QA.md).
+- Intellectual Fighter Male READY 승격, 다른8종 BLOCKED_ART. Vision Fighter Male Left5/7 방향 오류는 해결됐으나 잔여 조각으로 Art 보류. 전체 **Ready22/Blocked28**. 남은8종의 문제 Frame·절단/조각을 QA 표에 기록했으며 다음 작업은 해당 원본 미술 수정이다.
+- 기존9 Appearance ID·144 Sprite GUID/fileID·meta/Import·Gender+Path+Job 자동 Mapping·Save/fallback 유지. 승격1종의 Idle/Walk8 Clip만 Catalog에 추가. 다른41종 PNG/meta·Catalog Entry/Sprite/Clip·Inventory/QA 동일. 기능/UI/퀘스트/음성/BGM/전투/Save 코드 변경 없음; 기존 QA 감사만 승격 대상과 기대 집계 검사 보정.
+- 이번 승인된 격리 PlayUnfocused89 PASS/0 FAIL: 대상9 UI Mapping/Preview, 수정판 Intellectual Male Fighter와 fallback Vision Female Mage의 생성/World/Battle Left Idle/Save→Bootstrap Continue 통과. Ready8 Clip key/16Frame·6fps/loop 검사. Compile/Console Error0·최종 Warning0(컴파일 직후 기존 deprecated 경고2). clean Bootstrap Edit Mode·격리 Save/Settings·Play 옵션 복원.
+- GameView 선택/창 활성화/포커스 전환/물리 입력 없음. 실제 걷기 품질은 미검증. 관련 diff 검사 통과, 기존 사용자 변경 보존, GitHub main 조회·Push 없음. 아래 기록은 이전 작업 이력이다.
+
 ## Intellectual4 / Vision5 Player Sprite 부분 수정 (2026-10-03)
 
 - 정확히9종 교체: Intellectual Fighter/Mage 남녀4개는512×512 원본 그대로, Vision Fighter Male/Guardian Male/Mage Female/Marksman 남녀5개는 이번 사용자 승인으로1254×1254 원본을 보존한512×512 최근접 변환본 적용. 문서 선행 `5b1de7e`, 마지막 관련 기능 commit `7c65c78`. [입력·9조합 ID 계약](../11_UI/Intellectual_Vision_Fixed9_적용_계약.md)·[QA](../11_UI/Intellectual_Vision_Fixed9_QA.md).

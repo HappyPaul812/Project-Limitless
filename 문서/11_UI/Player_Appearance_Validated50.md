@@ -1,5 +1,7 @@
 # Player Appearance 검증본 50종 등록 계약
 
+2026-10-03 최신 Revised9: Intellectual Fighter Male READY 승격, 대상 Ready1/Blocked8·전체 Ready22/Blocked28. Vision Fighter Male은 방향 해결 후 BLOCKED_ART. 다른41종 판정 유지. [최신 QA](Intellectual_Vision_Revised9_QA.md). 아래 집계 설명은 이전 작업 이력이며 표/JSON은 최신 판정이다.
+
 Intellectual4/Vision5 수정판9종을 기존 ID로 교체했다. Intellectual 원본512 적용·Vision 승인1254→512 변환, PASS0/Blocked9·전체21/29 유지. 다른41종 미변경. [최신9종 QA](Intellectual_Vision_Fixed9_QA.md).
 
 Mobility10종은 제공512×512 수정판 원본으로 교체했다. Mobility Ready0/Blocked_ART10, 전체 Ready21/Blocked29 유지. 기존 ID·160 Sprite 참조·meta/Import·Mapping/Save와 다른40종 QA/Asset은 유지했다. [Mobility 수정판 QA](Mobility_Player_Sprite_Fixed_QA.md)를 최신 입력·판정으로 사용한다.

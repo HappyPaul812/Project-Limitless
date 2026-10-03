@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-03 최신 Revised9: Intellectual Fighter Male READY 승격, 대상 Ready1/Blocked8·전체 Ready22/Blocked28. Vision Fighter Male은 방향 해결 후 BLOCKED_ART. 다른41종 판정 유지. [최신 QA](Intellectual_Vision_Revised9_QA.md). 아래 집계 설명은 이전 작업 이력이며 표/JSON은 최신 판정이다.
+
 최신 Intellectual4/Vision5 수정판의9개 대상만 Art/Direction 사유를 갱신했다. Ready21/Blocked29, 다른41종 상태 불변. [9종 QA](Intellectual_Vision_Fixed9_QA.md).
 
 Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리한다. Male25 / Female25 / 각 Path10 / 각 Job10 / Duplicate0 / Missing0. Mobility10만 제공 수정판 PNG로 교체·재판정했다. 다른40종 Identity/QA는 유지한다. Ready21/Blocked29. Sprite Definition은 기존 External50 Catalog Entry이며 Asset 경로는 해당 시트다. [Mobility QA](Mobility_Player_Sprite_Fixed_QA.md).
@@ -27,7 +29,7 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Female|path.emotional-scar|sharpshooter|appearance.external.v1.emotionalscar.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Female.png|true|PASS|
 |Male|path.emotional-scar|sharpshooter|appearance.external.v1.emotionalscar.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Male.png|true|PASS|
 |Female|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png|false|BLOCKED_ART|
-|Male|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png|false|BLOCKED_ART|
+|Male|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png|true|PASS|
 |Female|path.intellectual|guardian|appearance.external.v1.intellectual.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Female.png|true|PASS|
 |Male|path.intellectual|guardian|appearance.external.v1.intellectual.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Male.png|true|PASS|
 |Female|path.intellectual|healer|appearance.external.v1.intellectual.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Healer_Female.png|true|PASS|
@@ -47,7 +49,7 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Female|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|false|BLOCKED_ART|
 |Male|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|false|BLOCKED_ART|
 |Female|path.vision|fighter|appearance.external.v1.vision.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|true|PASS|
-|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_DIRECTION|
+|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_ART|
 |Female|path.vision|guardian|appearance.external.v1.vision.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|true|PASS|
 |Male|path.vision|guardian|appearance.external.v1.vision.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png|false|BLOCKED_ART|
 |Female|path.vision|healer|appearance.external.v1.vision.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Female.png|true|PASS|
