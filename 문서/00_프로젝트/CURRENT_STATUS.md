@@ -1,5 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+## 검증본 Player Appearance 50종 등록 (2026-10-03)
+
+- 사용자 `Limitless_Player_Sprites_Validated_50.zip`의 PNG50개를 원본 바이트 그대로 `Art/Characters/Player/Validated50/`에 편입했다. 5테마 각10개·남25/여25·512×512 RGBA·4×4/128px16프레임이며 정식 Player의 PPU128·Point·무압축·하단 중앙 Pivot을 적용했다. [등록 계약과 검증 결과](../11_UI/Player_Appearance_Validated50.md)를 따른다. 문서 선행 commit `00aaaef`, 마지막 관련 기능 commit `d6937e4`.
+- 기존 External50 Catalog GUID 및 stable ID50개를 유지하고 새 sheet/800 Sprite를 연결했다. 테마/직업은 메타데이터이며 선택 제한이 아니다. 이전 PNG·Animator·Prefab·Scene·Male/Female+Path fallback·Save 형식은 유지했다. Character Creation50종 UI·appearanceId Save·실제 게임 외형 Override는 미구현이며 `readyForSelection=false`다.
+- 백그라운드 Edit Mode 검사:50/800 참조·Rect/Pivot/설정·유일 ID·meta 정상, 재편입 Sprite 참조800개 동일, 원본 ZIP/PNG 해시 동일. 보호 파일212개 중 의도한 Catalog만 변경, 기존 사용자 변경 보존. 컴파일 오류0·Console 오류0, 기존 외부 편입 도구의 구형 spritesheet API 경고2건. Bootstrap clean·Editor unfocused, foreground 조작 없음.
+- 사용자 확인/다음 권장 작업:10시트157 Cell의 Alpha 경계 접촉·전체50종 방향 행/발 위치를 육안 검수하고 행 계약을 확정한다. 그 후 공용 Animator Clip Override와 선택/Save ID를 별도 연결한다. GitHub push 없음.
+
 ## Main16 재 속의 형상 (2026-10-03)
 
 - **구현 및 범위 내 Runtime QA 완료**: `main_16_shape_in_the_ash`의 12개 순차 목표, Field07 재바람 황야·Field06 서쪽↔Field07 동쪽 연결·지정 불씨망령1체·협곡 입구·아르벨 보고를 기존 Quest/World/Battle/Save에 연결했다. 계약은 [Main16 Runtime](../03_스토리/Main16_Runtime_구현_계약.md)을 따른다. 마지막 관련 기능 commit `2ef6690`.

@@ -38,3 +38,11 @@ Import 준비와 실제 게임 선택 가능 상태를 구분한다. `readyForSe
 ## 검증 계획
 
 ZIP/SHA-256·PNG 디코딩·Alpha·800개 셀, Unity Import 설정·16 Sprite Rect/Pivot·GUID/ID 유일성·Catalog 참조를 Edit Mode에서 검사한다. 기존 사용자 변경·Player Asset·Animator/Prefab/Scene/Save를 해시로 보호한다. 컴파일/Console·관련 diff 검사를 완료하고 결과를 이 문서와 CURRENT_STATUS에 기록한다. foreground/창 활성화/OS 입력은 사용하지 않는다.
+
+## 편입 및 검증 결과
+
+- 기능 commit `d6937e4`. `ValidatedPlayerAppearanceImport.Import()`를 Editor MCP에서 실행했다. 이 도구는 검증본50개만 처리하며 기존 Catalog와 동일한 고정 ID 집합을 확인한 뒤 등록한다. 이전 `ExternalAssetImportEditor.Import()`는 BGM/배경/구형 External50 입력을 함께 재편입하는 과거 도구이므로 이번 검증본 재편입에 사용하지 않는다.
+- Unity6000.5.7f1 Edit Mode에서50 Entry·800 Sprite·50개 유일 ID·16 Rect/Pivot·PPU128/Point/Uncompressed/Alpha·참조를 검사해 실패0을 확인했다. 새 Asset의 meta 누락0, Catalog GUID `5d34e6efc319dba46b15f1df6baf5236` 유지. 두 번째 편입 후800개 Sprite GUID/local file ID가 모두 동일했다.
+- PNG50개와 ZIP의 SHA-256은 입력과 동일하다. 시작 시 보호한212개 파일 중 의도한 `External50.asset`만 변경됐다. 나머지 사용자 변경·기존 Player 원본·Save/Settings는 유지했다.
+- 컴파일 실패false, Console 오류0. 기존 `ExternalAssetImportEditor.cs`의 `TextureImporter.spritesheet` 사용 중단 경고 CS0618 두 건이 재컴파일로 표시됐다. 새 편입 도구는 Data Provider API를 사용한다.
+- Bootstrap clean Edit Mode·Editor unfocused를 유지했다. foreground/Play Mode 육안 QA는 실행하지 않았다. 경계 접촉157 Cell, 방향 행 순서 및 발 위치는 후속 미술 검수 대상으로 남긴다. UI/Save/실제 외형 전환은 위 Runtime 경계대로 미구현이다.
