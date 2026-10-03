@@ -1,0 +1,1571 @@
+{
+  "sourceZip": "F:/Downloads/Limitless_IntellectualVision_8_Cleanup.zip",
+  "sourceZipSha256": "8549ddac9d27465ce5db017a47af3306680de332cd4f87e48290265879acb03e",
+  "targets": 8,
+  "duplicate": 0,
+  "missing": 0,
+  "ready": 0,
+  "blocked": 8,
+  "overallReady": 22,
+  "overallBlocked": 28,
+  "entries": [
+    {
+      "appearanceId": "appearance.external.v1.intellectual.fighter.female",
+      "file": "Intellectual_Fighter_Female.png",
+      "path": "Intellectual",
+      "gender": "Female",
+      "jobId": "fighter",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "4-15",
+      "reason": "Left 4–7 발 아래 조각, Right 8–11 큰 머리 조각, Up 12–15 머리 상단 수평 절단.",
+      "sha256": "090d8386b3a49adebf6b0dfd14f979e547ebd6dc840c33e5e734442619656902",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            8,
+            6,
+            119,
+            127
+          ],
+          "sha256": "413dc690b981da1de56b178826aca06582efb560466bb6079f1b8d2d68935204",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "sha256": "dee7c6a03d6aaa4a84e67c0192b17771833ad39fba5bcf2d5125331e552c0592",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            9,
+            5,
+            119,
+            127
+          ],
+          "sha256": "b5983b34bed47db09799fa832ee77b00cbebbd3131cf089aa8ee65641ac2b6fb",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "sha256": "8878a280eb9b00e00dca81c051af6efd16bc55995fd9640e12105baadadbe67a",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            7,
+            3,
+            121,
+            128
+          ],
+          "sha256": "8a134f5f1370074c14e13c040ca1e92b5f4ea4c4354adc0ca13f24ff07a1a5c6",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            3,
+            3,
+            122,
+            128
+          ],
+          "sha256": "38f312e1acf42169c25df045a0b7ac2480a07a63a720a144bf6149e8d37cb463",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            3,
+            3,
+            120,
+            128
+          ],
+          "sha256": "75f9b1f8e44a163d641137ecb7c3cfedd4765965c9e8cf101254417f49a69e10",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "sha256": "72a27f8d458421770329f2e65cd04a042f195d6ea6dc12e12fe3b50b719b3192",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            8,
+            0,
+            125,
+            128
+          ],
+          "sha256": "717d55e0e5c3236bf279f15ad4bfbd69c672e484c64ce648eff6e2e2b359f933",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            8,
+            0,
+            126,
+            128
+          ],
+          "sha256": "563ab31121e4f46e081b48ca46e42e58afff6db3ce2b56a569cf44e99d6dfd5d",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            8,
+            0,
+            126,
+            128
+          ],
+          "sha256": "e41d9564bbe24cfd1122f16c3d2be7df30850b61e2f2007fa794c26f52cbe73c",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            9,
+            0,
+            124,
+            128
+          ],
+          "sha256": "90841caeb08b9119dc836237e67bb6d5332cf5cd762b9c7380aed069f70f96eb",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            7,
+            0,
+            124,
+            121
+          ],
+          "sha256": "86ef67f30168caec531932df340d294ac0db74b9205c335364c451c6264cbfd4",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            6,
+            0,
+            121,
+            124
+          ],
+          "sha256": "1c4d3034f296adb3eb02eaa8b7dbcde22b8435b4e69443207482c75321cb596f",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            8,
+            0,
+            124,
+            123
+          ],
+          "sha256": "36ee37ff18a9dab22c00ae2051932bc4500c42b4a8a5d580f99b100c2706ae56",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            10,
+            0,
+            122,
+            124
+          ],
+          "sha256": "8922a17463446f9bd1136c09b0ef9d67ef59902acd55ae79eda37447fc5d57e0",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.intellectual.mage.female",
+      "file": "Intellectual_Mage_Female.png",
+      "path": "Intellectual",
+      "gender": "Female",
+      "jobId": "mage",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "8-15",
+      "reason": "Right 8–11 큰 머리 조각, Up 12–15 머리 상단 수평 절단.",
+      "sha256": "ce1e36a29e1b204b84765bb0174c96ec82e0c987b8f5c095976be6336c3a7b85",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            7,
+            4,
+            124,
+            128
+          ],
+          "sha256": "85d612f866a60c2eda68c5f4db11898db15c504fd0f558609af463438ab56821",
+          "edge": true
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            4,
+            4,
+            124,
+            127
+          ],
+          "sha256": "2348d83f8208c2c573898aae7d900be8c11647e75c77cae002e4cb6b76710985",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            7,
+            4,
+            124,
+            127
+          ],
+          "sha256": "815b9dc0024ddf6c4b47b665bbaad37b677ade63a35d2205356339afc1b4a508",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            6,
+            4,
+            124,
+            127
+          ],
+          "sha256": "c1d6f247440839315cb42b2aae2bacc1ac95f2bc205abb06ad38e327c0348d18",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            0,
+            0,
+            126,
+            121
+          ],
+          "sha256": "f2aa099f44c3fcf0344c2102b43b9a062b13bacb63e214ae24ade33fbbfac9b3",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            3,
+            5,
+            128,
+            121
+          ],
+          "sha256": "b5a537cb214af7e923a4ed7a6d08240440f9cff26118db18b28d0e63c5a38745",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            6,
+            126,
+            119
+          ],
+          "sha256": "c4263cb7a82b41f08092ea188ebbdc62d673c336e48a2def8847b77dc3660664",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            5,
+            3,
+            128,
+            121
+          ],
+          "sha256": "421a5cfde629366febd99db0ce1f2ef4dee5bc39a416531ee2e3d65f9ee3a3d8",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            5,
+            0,
+            126,
+            128
+          ],
+          "sha256": "cba85ec8f3287657e932c0bd947d089b4950db3dd4ef53428ffebeae8200a4f6",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            3,
+            2,
+            126,
+            128
+          ],
+          "sha256": "226d450e8fbd1b3de2c8b21dd5feeac51b212188f4408781f1844207fe449a0c",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            5,
+            0,
+            126,
+            128
+          ],
+          "sha256": "2e43f39efb38c991d04ae49a5a4803d0d3282108b04d790eda68d658a8a2ccd0",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            4,
+            1,
+            128,
+            128
+          ],
+          "sha256": "9674a073b0e2e30906afa3f720ca6d6416a1f3fd402ca869fb48c428666d440a",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            0,
+            0,
+            125,
+            124
+          ],
+          "sha256": "6ec283425306cfa0b4c9591564778fea543e8b40c1850c5ba97f21cfacd92486",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            3,
+            0,
+            121,
+            123
+          ],
+          "sha256": "a0aa713dca1c4c1df1795ca9bcfc8968a41e121c256c4c273f8c2553cabf3bd2",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            4,
+            0,
+            125,
+            128
+          ],
+          "sha256": "076a0dfe101310ff1b77f7a56c78ecc9611edcd75d727608d74d5d838c619657",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            0,
+            121,
+            128
+          ],
+          "sha256": "bbbd3763a48d6ee70c94ba7d3bf0db6e483ff159456ecaf20fb49eca01a14b38",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.intellectual.mage.male",
+      "file": "Intellectual_Mage_Male.png",
+      "path": "Intellectual",
+      "gender": "Male",
+      "jobId": "mage",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "8-11",
+      "reason": "Right 8–11 셀 하단 갈색 조각 17/23/18/21px가 몸체와 분리되어 남음.",
+      "sha256": "6c3d956e50f8bad4aa9d983a8aec35fd35ca4adbe0da7ba652001e41771e9796",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            8,
+            0,
+            119,
+            125
+          ],
+          "sha256": "4f29f777a5fb3f3fe161cd465814ef1f6dc190e3e2ca7f61bd3c2dd41de26dd3",
+          "edge": true
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            8,
+            0,
+            123,
+            125
+          ],
+          "sha256": "10e23566655bfe26c404af1766086b697881624d6b8fee8e133de3549c4fd617",
+          "edge": true
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            8,
+            2,
+            119,
+            125
+          ],
+          "sha256": "2bacb191c1886f40b191680473de36c7caf65f59c040bcf5edbbbf204a391af8",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            4,
+            0,
+            121,
+            125
+          ],
+          "sha256": "85361aeb6c97098c2965e545c8332f058c756d95f9ff0873a9aa4b51de7333d4",
+          "edge": true
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "sha256": "1d09f5b6cc50ac38ec2ced075de98378256f9b926287bb8e1ea6f368f740156e",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            7,
+            2,
+            127,
+            122
+          ],
+          "sha256": "68b7ff99b4c0e8f17f8c834c75041f366d73b67df907499cc50f44601ea84438",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            8,
+            3,
+            125,
+            121
+          ],
+          "sha256": "1cf3cdfd866c31bebc72b2e4950e91df631da8569baa0f2b5938518dc13e9472",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            10,
+            2,
+            123,
+            128
+          ],
+          "sha256": "2a0c10cf4fda4c3339b748446223e15e8234f54b337b40c2d2ba2a196d1c1ff7",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            8,
+            0,
+            120,
+            128
+          ],
+          "sha256": "b48fe78486883104434aa9089184dac03526726a23783fdd5b3d3275f0d30895",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            0,
+            0,
+            122,
+            128
+          ],
+          "sha256": "881e763a5869e469be17f2497b19ad22b6a1181cab83d2f4aba0f265983dc8ff",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            7,
+            0,
+            121,
+            128
+          ],
+          "sha256": "513563ed4e43bc853b5a0b2a7cf21534731c63141466cd3b93690a7037a9cf76",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            8,
+            0,
+            121,
+            128
+          ],
+          "sha256": "26bf176fab74a85eb29d3230f995beee66fa293b07734c64f6a468464ec46fe6",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            7,
+            0,
+            120,
+            128
+          ],
+          "sha256": "d26c2839d8cfca02b7a73309b0fc10116fbfb8cec02ae40ba5723b052e2dab2a",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            3,
+            0,
+            123,
+            128
+          ],
+          "sha256": "80fb54fffb2472003ae02e2ab08a0a4083f290c63768200b8bc31ae20dc3539f",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            7,
+            0,
+            120,
+            128
+          ],
+          "sha256": "0a5fb36873afdb35e39e7d8f4650ad1dc3d9c017d8dcd699a58aff560ac1355d",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            0,
+            123,
+            128
+          ],
+          "sha256": "e83d9cfdd99eba74f0b930053794472f06d6e753ae4023063d280cfc7e8b1636",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.vision.fighter.male",
+      "file": "Vision_Fighter_Male.png",
+      "path": "Vision",
+      "gender": "Male",
+      "jobId": "fighter",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "4-10",
+      "reason": "Left 4–7 머리 위 검은 조각, Right 8–10 발 아래 조각. Left 방향은 정상.",
+      "sha256": "bb49d4b93a4abf613c191d93759f4ada042ace7286eac872fde1240a42bb4ffd",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            9,
+            4,
+            123,
+            128
+          ],
+          "sha256": "38acf87f6cc5fa7a467662609ebaba08ea6a583e80f0688730798acbf280dcfb",
+          "edge": true
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            3,
+            9,
+            128,
+            128
+          ],
+          "sha256": "5ed83ea3b4c5a1853cc7b4d82d79cdf40682718b06d12d0ef05f9b0caf4ab0f9",
+          "edge": true
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            0,
+            4,
+            128,
+            128
+          ],
+          "sha256": "93252e985ff896c0f6670c45172251bbf9080c6e6310a17982df432ee8d5dd70",
+          "edge": true
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            0,
+            3,
+            121,
+            128
+          ],
+          "sha256": "ec24d6e2da4125d3c3c80c515d6e8017266a251881dcdaf3a34697a1957728d2",
+          "edge": true
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "sha256": "119525931138772db933215b3b59dd8cbf680194cbf89de937ab489397faa0a4",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            0,
+            0,
+            128,
+            127
+          ],
+          "sha256": "e983f2cc5fd4a88815972dbb6ebff9da19328be8e128dafbc804a1bbf159f6fa",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "sha256": "122cf80924e2759de81358335cfb18c124912af8c8bf9dc41ac00ecef5b6566d",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            0,
+            0,
+            124,
+            127
+          ],
+          "sha256": "e21d4e3824b2156410cd52f658a57eb517aed569f57f10949c04aed4821bf665",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            5,
+            0,
+            120,
+            128
+          ],
+          "sha256": "a7def187a2ef43e2e73b8237d60d54f8f68166e89a12a3d252b1578feb803270",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            3,
+            0,
+            128,
+            128
+          ],
+          "sha256": "057d29fd9538d425eee09bf6b0c468c43f91b90ce92fd8f1ffefd5526f0fcac9",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "sha256": "6d5de8c9b7e81277a83cc3ea8efed925f380fdfcd61f4f8d35f3e2cf261101d2",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            0,
+            3,
+            128,
+            122
+          ],
+          "sha256": "c8c93255f886b66f21c16564a397ac3189ca9acd1045f30cb3b2d99f4d44e0b3",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            8,
+            0,
+            127,
+            125
+          ],
+          "sha256": "4f4d266e6e6e9192c5f40da08793644df8ea759a8c2ebe27824b17802930c8d0",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            15,
+            0,
+            128,
+            128
+          ],
+          "sha256": "6f2a2ac5f18978cad696cb20db41f90a0f14325d87fe5f240ad370db1729e027",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            0,
+            0,
+            122,
+            128
+          ],
+          "sha256": "ea296f03f0e6d0c4bbe76fd14172ac0586456a640f817224dedcf3522bd20ec9",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            4,
+            0,
+            128,
+            128
+          ],
+          "sha256": "d2df93d459aba3c816c04b89de14699970691a371485e0ea3b119569defac80c",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.vision.guardian.male",
+      "file": "Vision_Guardian_Male.png",
+      "path": "Vision",
+      "gender": "Male",
+      "jobId": "guardian",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "8-15",
+      "reason": "Right 8–11 큰 머리 조각, Up 12–15 머리 상단 수평 절단.",
+      "sha256": "05337ad42c9cdf7d7669275564cffea05cd04f3506a625ac72eda66b1e2abad0",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "sha256": "da5cc69d157f2b5ce42fa5c9c84b2658221cbb0e8ee85b1a87aa0a90bfcadb55",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            8,
+            6,
+            128,
+            125
+          ],
+          "sha256": "4d5687ce32bbb125cc76dfd868145743d12e1caf24749a2b74e3ad5e8a18cfe6",
+          "edge": true
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "sha256": "afada4d990b21d8964b79cb8002eb8d4878590bfe4b67ad40c2eeb64e4645d56",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            4,
+            6,
+            128,
+            126
+          ],
+          "sha256": "bcdf76b58a4583e4408dcaf5ca86e17b0c832afa833b97b746c21812f26952ba",
+          "edge": true
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            6,
+            2,
+            125,
+            128
+          ],
+          "sha256": "11d624acb0566cec5a7590a67c1da18ab3948fdcb43c7a4282098379c733c740",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            4,
+            2,
+            128,
+            128
+          ],
+          "sha256": "6f1b69bc004bd646e1c603babfecd03b529f265283a0e6647158c44a956187be",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            2,
+            124,
+            128
+          ],
+          "sha256": "f1c85c83827c98b08b7d5c7d49b4ff14224d8b52242185835e6dbac4e6577fc8",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            4,
+            3,
+            128,
+            128
+          ],
+          "sha256": "32f1c6e5fe5a78e7b93bdcfcaad7ab3677bda71f2fc3dbfd092450cc610ccffd",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            0,
+            0,
+            122,
+            128
+          ],
+          "sha256": "31e4c30e6f650f8ce256c9953a725591fad1b796fdefc26c8e3ffc805b79cc78",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            1,
+            0,
+            128,
+            128
+          ],
+          "sha256": "ffff1dfaf246cce39dc288be3f0b5774d3a9d3232ed61f711b427158f1b837bc",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            3,
+            0,
+            124,
+            128
+          ],
+          "sha256": "e1b33203bf309f0d42b8933e1d130362a57f63772c87a77deb41221ba0998407",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            1,
+            0,
+            126,
+            128
+          ],
+          "sha256": "0650e37c996dca79bce6578973c3e6bb99406bf8f82a2b02556e8ab2c2cdef3d",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            0,
+            0,
+            126,
+            123
+          ],
+          "sha256": "3778854b58a13c43a831ac424a390d56f75468852b813bd9f9c32ae2008e846a",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            6,
+            0,
+            128,
+            123
+          ],
+          "sha256": "fd63e1db512905b36dad6b2119b792536cfc662ebd0750f7f8f074ffb1856110",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            0,
+            0,
+            128,
+            123
+          ],
+          "sha256": "aa98600b22a343561356bb03c416460f849519f385d0f324fa5afa17e51f96d9",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            0,
+            0,
+            126,
+            124
+          ],
+          "sha256": "4a4332c15e5facd2fe6b4c252f2d562ba3a763f88fc62210ecde52ab8719df65",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.vision.mage.female",
+      "file": "Vision_Mage_Female.png",
+      "path": "Vision",
+      "gender": "Female",
+      "jobId": "mage",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "8-11",
+      "reason": "Right 8–11 셀 하단 분리 조각. 8/10 파란 조각과 회색 선, 9/11 작은 잔여 픽셀.",
+      "sha256": "e874e2661f6ea086077e4de2357423095be74c8a292c2402a767694118e3b0f3",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            6,
+            6,
+            118,
+            126
+          ],
+          "sha256": "cbf531fcd110b8583c17534150be5e6618a84d27f27d58b596ad0d647701bc5c",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            7,
+            12,
+            122,
+            126
+          ],
+          "sha256": "f6f834380abece5dfd3517c1562cbb34d7761b7cfa37915303de132516279065",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            6,
+            5,
+            118,
+            126
+          ],
+          "sha256": "c786db140509d000f1e7dcb3d9e00aa766c073083d9f009947218ed41260c393",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            3,
+            12,
+            122,
+            126
+          ],
+          "sha256": "6af5293a71976192e20a26c561f862827b8a64dae9acb18a567039ea2a19d587",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            6,
+            3,
+            125,
+            128
+          ],
+          "sha256": "64478d4c15e1328e89647538a3e2a5aa525050b3dbd0827223675a4d858d0f52",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            10,
+            128,
+            128
+          ],
+          "sha256": "4c88532df869365eab987fa6c81295dee827e10b11e5d42e1d2e2acf71ed4266",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            5,
+            3,
+            125,
+            128
+          ],
+          "sha256": "b946baf3010e96be1bc20bf0261047c47057f0be29ccc8dfcbbb9037ef713026",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            1,
+            10,
+            122,
+            127
+          ],
+          "sha256": "0755d5c5b28246973c70d03e8331117600bdbf712424189d01a68887a718f167",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            6,
+            1,
+            119,
+            128
+          ],
+          "sha256": "d987d45e7936fdd659c950507aa39c521117985b8f231777a6823563eeca2baa",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            5,
+            3,
+            121,
+            128
+          ],
+          "sha256": "e3ae47e90257b10608ed1a3b01b9d1af0de760716ae7286f1ef82e5f9c0e6c3e",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            6,
+            0,
+            119,
+            128
+          ],
+          "sha256": "f0a5a65645ad954cc1f4f82b025f9fce5932ddfaacc5cc79c7e68694c502532d",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            4,
+            1,
+            121,
+            128
+          ],
+          "sha256": "363657a7b7794839bd7807bcbb2b2c6c3617f7d65a2ac8aa6f285fff040cd4c7",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            6,
+            0,
+            126,
+            124
+          ],
+          "sha256": "4e1581bb393f950d357cc30b7bde99f5bc971dd0017af6e7e850ef11d7a07ce9",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            2,
+            0,
+            121,
+            124
+          ],
+          "sha256": "a3faac7b4d9bad3dd8b1b974982d65c7695c5358d75460e2cb12d8759d2cf1d2",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            6,
+            0,
+            120,
+            128
+          ],
+          "sha256": "3803114831758fe1cef469ca3c420a2a64917dc348a694db43ef4977bafcc560",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            0,
+            122,
+            124
+          ],
+          "sha256": "e2ea96c0b4f618d53a5573059a73aeec7f37b5fb69f726dd9b7f5e0809cfbcf7",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.vision.marksman.female",
+      "file": "Vision_Sharpshooter_Female.png",
+      "path": "Vision",
+      "gender": "Female",
+      "jobId": "sharpshooter",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "4-7",
+      "reason": "Left 4–7 머리 위 셀 상단 검은 조각 19/24/23/26px.",
+      "sha256": "3ebcde0afb61b8e3a9441075c9123e39cb541c7c9835606639f8a883626e28dd",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            5,
+            0,
+            125,
+            128
+          ],
+          "sha256": "429dd22ec210e9f9e8806a3ce0b31cf081916eb026841df5256127cc88f86495",
+          "edge": true
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            8,
+            6,
+            127,
+            128
+          ],
+          "sha256": "5a3d7937e0e5c4592b835b77568872bae1da3471f7b8449c732e00266c22337d",
+          "edge": true
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "sha256": "473c91f575ca40481b5c35ac0e3e08fb3d1da5d7a36eeb122dd206daab327d05",
+          "edge": true
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            9,
+            0,
+            125,
+            128
+          ],
+          "sha256": "599ffae29ebefb15467f9edc6539f8e9c0f11f3ec964276f0d065b5094fd9113",
+          "edge": true
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            9,
+            0,
+            125,
+            127
+          ],
+          "sha256": "8f3f57c254041b81a020fb40e3865d723389bf713b2af992c981457c383ce435",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            15,
+            0,
+            128,
+            128
+          ],
+          "sha256": "22ed170ab87f3b05b8a0b909ffc34ad0895e80b504f0e509f779b88cffe3ead8",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "sha256": "572e7aae50780781259a6b7a44543162d9ebf86178585c2c527198a585121215",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "sha256": "d2030065eddeb718ece76a09ab74416676b24f7d4a99f4c1e1470a7eb3c8ae79",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            6,
+            0,
+            124,
+            128
+          ],
+          "sha256": "ee6e1892790f21ed6d2778ea45f89d92d370358b76c63ef5ace5f28da98fb1e4",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            5,
+            0,
+            124,
+            125
+          ],
+          "sha256": "323874be62759d8995a243da6f334fea1e4c96ff380833ca427c7fa23db7af46",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            7,
+            0,
+            126,
+            125
+          ],
+          "sha256": "6d53d2e5dc3ae84714b778bd17611d9fcdeb03809c77b6a30ae689e86fd81f8e",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            9,
+            0,
+            124,
+            126
+          ],
+          "sha256": "7ce665e573ad292761687bbaab349272730066781f6fcaa150315b6d052933fd",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            7,
+            0,
+            124,
+            128
+          ],
+          "sha256": "8925b8dbd2affbd7cdd41d7d0d88ae59693459e2aa53b12e7c40208f8caf3eb2",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            3,
+            0,
+            125,
+            123
+          ],
+          "sha256": "a65561ae866d1b595be20e86d81113fd6673f34481ba5c8c64bd627b86b4cc63",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            13,
+            2,
+            128,
+            128
+          ],
+          "sha256": "21d13c4b8d21e341296262a1c285970b88f40c3cb859fd9721471a238a21cb17",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            14,
+            0,
+            128,
+            128
+          ],
+          "sha256": "69fae67d97257b0626926c8daf06145cb6345028502af6c1b499d27f1bdd1213",
+          "edge": true
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.vision.marksman.male",
+      "file": "Vision_Sharpshooter_Male.png",
+      "path": "Vision",
+      "gender": "Male",
+      "jobId": "sharpshooter",
+      "previousStatus": "BLOCKED_ART",
+      "status": "BLOCKED_ART",
+      "frames": "8,11",
+      "reason": "Right 8/11 셀 최하단 10px 가로 조각이 다음 Up 행 머리 위에 나타남.",
+      "sha256": "612adaae11a50cf44f2ff8267506da9ec1b9b91e6941228be40dbb6687a4368e",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            8,
+            3,
+            119,
+            128
+          ],
+          "sha256": "117ba1eb986d372ce709a78491b0b4259f30f6062c02a3c3a2912ce794004872",
+          "edge": true
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "sha256": "0e872a2fb9fad4fd2f343b2d11b45e7190befdb4332e9484c3b7b145ed7b11cf",
+          "edge": true
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            8,
+            3,
+            119,
+            127
+          ],
+          "sha256": "6fc1da24e1e192734ac98e0fc42e19bd40a8dc60b1f8aea6ed35ba31b4804ba1",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "sha256": "bb996c0916d01ab9d3d43958f7bb78297f38f46657db9d146b89ffbb964a46e8",
+          "edge": true
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            11,
+            6,
+            125,
+            128
+          ],
+          "sha256": "88681c85752fc343e88ccc9d64e62eec2ee0bd279cc70f112dd68606006edcc6",
+          "edge": true
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            11,
+            6,
+            128,
+            128
+          ],
+          "sha256": "8e44a43654a5314d1ed9e9d42153181ffe450f6d5ecc4f176236b32dcc3eb967",
+          "edge": true
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            0,
+            0,
+            125,
+            128
+          ],
+          "sha256": "7e25aa10f581ffe5100276e2267e8499c7c97a028edc67df392ba39b275381c4",
+          "edge": true
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            5,
+            0,
+            121,
+            128
+          ],
+          "sha256": "30aa7d7a3bd9b6fc31abc8af79fc48460f5da14c5c24337ed5141c7ac9a42965",
+          "edge": true
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            7,
+            0,
+            117,
+            128
+          ],
+          "sha256": "dadc0c039abc3e92423d31bfecd5e163240a24466b0ed38f3e9fc888e901a12c",
+          "edge": true
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            4,
+            0,
+            119,
+            125
+          ],
+          "sha256": "edd7979bd0a3250213b7a10529c30bd12e383e30f122bb59a465a66a0792cf47",
+          "edge": true
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            2,
+            0,
+            117,
+            124
+          ],
+          "sha256": "eaa701eba157962bfc9a205e8b8e116136d384fdfaee7c4af0402cde8040c204",
+          "edge": true
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            4,
+            0,
+            120,
+            128
+          ],
+          "sha256": "86afaed72cf884541937d81485b886f01bd82e8747f4c9a3dbf1affa7d65ab4d",
+          "edge": true
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            8,
+            0,
+            125,
+            124
+          ],
+          "sha256": "78f2d5a320017b07dec10a9bbb9a43fe81efe2cd78e94c4bec3b040c13a346e5",
+          "edge": true
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            18,
+            3,
+            128,
+            128
+          ],
+          "sha256": "f5a71be6fbd3c47b296e33e8214e89dc4230e2f94494dcb2562a62e03980b4ea",
+          "edge": true
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            0,
+            1,
+            127,
+            125
+          ],
+          "sha256": "78b0429542ca010c8ad07668559732d287714865c78cda1c9d6c80b107ea9955",
+          "edge": true
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            6,
+            0,
+            123,
+            124
+          ],
+          "sha256": "61d55ae3f0d67db41fc863edaa94f087dc204fa4bbf54a277939c6cd102a305c",
+          "edge": true
+        }
+      ]
+    }
+  ],
+  "runtimePass": 86,
+  "runtimeFail": 0,
+  "preservedOther": 42,
+  "unchangedMeta": true,
+  "consoleError": 0,
+  "consoleWarning": 0
+}

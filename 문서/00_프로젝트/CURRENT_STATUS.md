@@ -1,8 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
-## Intellectual/Vision Cleanup8 진행 (2026-10-03)
+## Intellectual/Vision Cleanup8 반영 완료 (2026-10-03)
 
-문서 선행: 지정 8종 교체 + 판정 재검증만 진행한다. 입력은 Limitless_IntellectualVision_8_Cleanup.zip. 기존 Ready22/Blocked28을 기준으로 머리 crop·조각·방향 해결 여부를 검증하며 다른42종 및 사용자 변경94항목은 유지한다. [적용 계약](../11_UI/Intellectual_Vision_Cleanup8_적용_계약.md). 결과는 검증 완료 후 갱신한다. Foreground 검증 및 Push 없음.
+- 지정8종만 Cleanup ZIP 원본 반영. [계약](../11_UI/Intellectual_Vision_Cleanup8_적용_계약.md)·[QA/문제 프레임](../11_UI/Intellectual_Vision_Cleanup8_QA.md). 문서 `b73d949`, 반영 `745a913`; 검증 기록은 이 항목을 포함한 후속 commit.
+- 대상 READY0/BLOCKED_ART8, 전체 **Ready22/Blocked28 유지**. crop/분리 조각이 남아 승격 없음. 다음 권장 작업은 QA의 문제 프레임 원본 미술 수정.
+- 기존42종 PNG/meta/참조/판정 및 사용자94항목 보존. 기존8 ID/128 Sprite ID/import/Mapping/Save/fallback 유지. Runtime·다른 기능 변경 없음.
+- 격리 PlayUnfocused86PASS/0FAIL, 대상8 Preview/Selection·대표 World/Battle Left Idle/Save→Continue·save-restore 통과. Console Error0/Warning0, Bootstrap Edit Mode·설정 복원. 새 C# 컴파일 미수행, 기존 deprecated 경고는 이전 이력 유지.
+- Foreground/실제 걷기·키보드/게임패드 입력 미검증. 작업 diff --check 통과; 전체 diff에는 기존 사용자 whitespace가 남아 수정하지 않았다. GitHub Push 없음. 아래는 이전 이력이다.
 
 ## Intellectual3 / Vision5 V2 스프라이트 반영 (2026-10-03)
 
