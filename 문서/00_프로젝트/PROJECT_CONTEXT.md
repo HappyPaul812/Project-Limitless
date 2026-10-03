@@ -23,6 +23,8 @@
 
 `GameSessionData`가 이름, Male/Female 외형, 길 ID, 직업 ID와 Scene 전환용 Spawn ID를 실행 중에 유지한다. 이 세션 객체 자체는 영구 저장 데이터가 아니다.
 
+독립 Appearance 선택은 `SelectedAppearanceId`/Save의 선택적 `AppearanceId` Stable ID로 관리한다. 외형 테마는 분류이며 실제 Path/Job/Story와 독립이다. 유효한 선택 외형을 우선 적용하고, 구버전·invalid·검수 보류 ID는 기존 성별/Path Variant를 유지한다. 현재 준비 수와 검증 상태는 CURRENT_STATUS와 [Appearance QA](../11_UI/Player_Appearance_선택_QA.md)를 따른다.
+
 1차 로컬 저장은 `GameSaveData`와 `GameSaveService`가 담당한다. Unity Editor에서는 프로젝트의 `Unity/Client/UserData/Saves/save_slot_01.json`~`05.json`에 안정적인 문자열 ID와 숫자만 기록하며, `GameSessionData`는 계속 현재 실행의 메모리 상태로 사용한다. Bootstrap은 5개 캐릭터 슬롯을 독립 검증하고 선택 슬롯의 Session을 복원한다. 이어하기는 유효한 실제 월드 좌표를 우선하고 기존 SpawnPoint를 안전 fallback으로 유지한다. 자동 저장과 캐릭터 삭제는 현재 선택 또는 명시된 슬롯 하나에만 영향을 준다.
 
 ## 길

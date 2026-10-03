@@ -1,5 +1,11 @@
 # Player Appearance 검증본 50종 등록 계약
 
+## 후속 선택·Save 구현 (2026-10-03)
+
+등록 완료 뒤 CharacterCreation의 성별/테마 필터·큰 Preview·이전/다음 선택과 Stable Appearance ID Save/Continue, 공용 Animator Clip Override를 연결했다. 현재 **35종 ready=true / 15종 false**이며 전체50종을 Catalog에 보존한다. 외형 테마는 실제 Player Path/Job/Story 조건과 독립이다. ID 누락/invalid/blocked은 기존 Male/Female+Path Variant로 fallback한다. 진행 중 미용실/외형 변경 NPC는 미구현이다.
+
+선택·저장 정책은 [정식 계약](Player_Appearance_선택_Save.md), 경계 경고10종157셀의 판정과 보류15종·실제 검증/한계는 [QA 보고서](Player_Appearance_선택_QA.md)를 따른다. 아래 Runtime 미구현/ready=false 설명은 최초 등록 당시의 이력이며 현재 상태는 이 후속 항목을 기준으로 한다.
+
 2026-10-03 사용자 제공 `F:\Downloads\Limitless_Player_Sprites_Validated_50.zip`을 정식 등록 입력으로 사용한다. 문서화→구현→백그라운드 검증 순서이며 원본 ZIP·PNG 픽셀을 수정하거나 재생성하지 않는다.
 
 ## 입력 확인

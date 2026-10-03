@@ -1,5 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+## Player Appearance 선택·Save/Continue (2026-10-03)
+
+- CharacterCreation에 성별·전체/5테마 필터, 이전/다음 외형 목록 탐색, 큰 Preview, 체크/이름/번호 선택 표시와 기존 Navigation을 연결했다. Catalog50종 중 **35 ready / 15 보류**(남17/여18 선택 가능)이며 기존 기본 외형도 유지한다. Vision 경계 경고10종157셀 중5종은 낮은 Alpha/장치 윤곽 접촉으로 합격,5종은 인접 행 조각으로 보류했다. Mobility10종은 분리된 본체·다른 Character·방향 오류 의심으로 보류하고 원본은 수정하지 않았다. [선택 계약](../11_UI/Player_Appearance_선택_Save.md)·[전수 QA](../11_UI/Player_Appearance_선택_QA.md).
+- Stable Appearance ID를 Session/Version1 Save에 선택적 필드로 추가하고 Continue에서 복원한다. 유효한 ID는 공용 성별 Animator의 Sprite Clip만 Override하며 World와 기존 Battle Left Idle에 반영한다. 구버전·invalid·blocked ID는 기존 Male/Female+Path Variant를 유지한다. 외형 테마는 실제 Path/Job/Story와 독립이며 미용실/진행 중 변경 NPC는 미구현이다. 마지막 관련 기능 commit **`cc3aa90`**, 선택/Runtime `0ad3cc5`, 문서 선행 `eeb48b2`.
+- Background PlayUnfocused **1197 PASS / 0 FAIL**: 실제 생성→World,35종4방향 Idle/Walk·Battle용 Sprite,35종 Save/Restore, 신규 남/여 Bootstrap Continue, 구버전/invalid 남/여 Continue, 기존 외형/Path fallback30조합과 Path×Job25조합. Catalog50/800·ID/meta/성별/테마 정상, Stable ID·Sprite 참조 유지·PNG50 원본 해시 동일·보호798파일 변화0. 컴파일 오류0·최종 Console Error0/Warning0(재컴파일 당시 구형 편입 도구 CS0618 경고2개 별도). Bootstrap clean Edit Mode·Editor unfocused·격리 경로/진입 옵션 복원, foreground/OS 입력 없음. 관련 diff 검사 통과, GitHub push 없음.
+- 사용자 확인/다음 권장 작업:35종의 발 미끄러짐·방향 전환·프레임 흔들림·크기와 장치 표현, 실제 키보드/컨트롤러 입력을 육안/기기로 확인한다. 보류15종은 사용자 원본의 프레임/Alpha 문제를 먼저 해결한 뒤 재검수한다. Foreground Visual QA와 Battle 전체 playthrough는 미완료다. 아래50종 등록 항목의 미구현 설명은 등록 당시 이력이며 현재 선택/Save 상태는 이 항목을 따른다.
+
 ## 검증본 Player Appearance 50종 등록 (2026-10-03)
 
 - 사용자 `Limitless_Player_Sprites_Validated_50.zip`의 PNG50개를 원본 바이트 그대로 `Art/Characters/Player/Validated50/`에 편입했다. 5테마 각10개·남25/여25·512×512 RGBA·4×4/128px16프레임이며 정식 Player의 PPU128·Point·무압축·하단 중앙 Pivot을 적용했다. [등록 계약과 검증 결과](../11_UI/Player_Appearance_Validated50.md)를 따른다. 문서 선행 commit `00aaaef`, 마지막 관련 기능 commit `d6937e4`.
