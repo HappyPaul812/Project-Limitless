@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Main16 재 속의 형상 (2026-10-03)
+
+- **구현 및 범위 내 Runtime QA 완료**: `main_16_shape_in_the_ash`의 12개 순차 목표, Field07 재바람 황야·Field06 서쪽↔Field07 동쪽 연결·지정 불씨망령1체·협곡 입구·아르벨 보고를 기존 Quest/World/Battle/Save에 연결했다. 계약은 [Main16 Runtime](../03_스토리/Main16_Runtime_구현_계약.md)을 따른다. 마지막 관련 기능 commit `2ef6690`.
+- 정식 `path.hearing` 분기에서는 Player가 최초 관찰하고 세린이 확인한다. Default는 세린이 먼저 공유한다. 분기별 stable Dialogue ID·현장 세린 NPC를 사용하며 저장 Party/Formation과 실제 전투 편성은 변경하지 않는다. 지정 승리 이후 일반 불씨망령 배치와 협곡 발견은 Quest count에서 복원한다.
+- 격리 Save/Settings의 PlayUnfocused에서 Hearing/Default × 세린 편성/미편성 네 실행 모두 완료, PASS 체크507개. 실제 NPC·순차 조사·명령 공격 Victory·도망/재도전·Defeat 중앙 Arbel 복귀·Bootstrap Continue17회·Navigation·펫 미해금을 확인했다. 자세한 방법/Fixture와 한계는 [Main16 QA](../03_스토리/Main16_Runtime_QA_2026_10_03.md)를 따른다.
+- 21:9 변경 직후 카메라 보간이 맵 밖을 보여 주는 오류를 수정하고 3비율×4모서리의 첫 프레임 viewport 제한을 검증했다. 목격 취소 후 자동 재열림도 방지했다. 최종 컴파일/Console 오류·경고0, Bootstrap clean Edit Mode·격리 경로/진입 옵션 복원·Editor unfocused. 관련 diff 검사 통과, 전체 트리는 기존 사용자 공백429건으로 exit2다.
+- 사용자 확인/다음 권장 작업: 조사 표식·한국어 TextMesh·재/균열/협곡 배치 시각 QA와 실제 이동/입력 검수. Foreground/OS 입력 없음. Voice 미적용·Field07 BGM TBD이며 별도 확정 뒤 제작/배정한다. Main17/협곡 내부/Overheat/Boss는 구현하지 않는다. 직전 Asset/BGM/Background/Player 작업과 기존 사용자 변경을 보존했다. GitHub push 없음.
+
 ## 외부 Asset 정식 편입 (2026-10-03)
 
 - 확정 MP3 7곡, Chapter1 배경 PNG 6종, Player 시트 50종을 원본 바이트 그대로 편입했다. Chapter1 일반전=Steel and Sunlight, B1=Stone Without Memory, B2=Beneath The Forgotten Hall, 파수꾼=The Warden’s Final Stand, Field04~06=Paths of Cracked Earth. 기존 Mixer/BGM 서비스·Scene 복귀 정책을 재사용했다. Intro 곡은 시작/종료 Hook만 준비했고 Deep West 곡은 최초 Scene 미확정으로 Catalog에 보관한다. 후보4곡은 Downloads에 보존하며 Chapter2 일반 전투 변주는 TBD다.
@@ -18,6 +26,8 @@
 - 사용자 확인/다음 권장 작업: 실제 청취로 발음·감정·호흡·캐릭터 취향·음량 균형을 검수한다. Main01/02 일반 NPC/Player를 포함한 남은 무음 대사는 별도 제작 범위를 확정한 뒤 보충한다. Main16은 기존 문서 설계 상태이며 이번에 구현하거나 Voice를 만들지 않았다. 세부 Mapping/GUID/해시/Runtime 출력은 [감사 JSON](Missing_Story_Voice_Supplement_Audit.json)을 따른다.
 
 ## Path 반응형 Story와 Main16 설계 (2026-09-30)
+
+아래는 당시 문서 설계 작업 기록이다. 현재 Main16 Runtime 상태는 상단 2026-10-03 항목을 따른다.
 
 - [Path 반응형 Story 정본](../03_스토리/Path_반응형_Story_연출_규칙.md)에 Player Agency First·공통 핵심 정보/Story State·Hearing Player 우선 관찰/세린 교차 확인·다른4개 Path 방향을 확정했다. [Story Scene 템플릿](../03_스토리/Story_Scene_설계_템플릿.md)에 Path-Reactive Check를 추가하고 Path/세린/Story/TTS 문서는 정본을 참조한다.
 - Main13 첫 만남/장치 인식, Main14 반복·강한 진동, Main15 짧아진 진동·비교·서쪽 방향을 DESIGN RETROFIT CANDIDATE로 기록했다. 기존 대사/ID/Voice/Runtime은 유지하며 향후 별도 분기 확정·구현·검수를 해야 한다.

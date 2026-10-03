@@ -1,18 +1,18 @@
 # Chapter 2 Main16 — 재 속의 형상
 
-> 2026-09-30 정식 Story 설계 완료. **Runtime·Quest·Scene·Voice·BGM 미구현.** 공통 연출은 [Path 반응형 Story 정본](Path_반응형_Story_연출_규칙.md), 장면 기록은 [Scene 템플릿](Story_Scene_설계_템플릿.md)을 따른다. Main15 이후 설계이며 새 Stable ID는 구현 단계에서 확정한다.
+> 2026-09-30 정식 Story 설계 완료. 2026-10-03 **Runtime·Quest·Field07·Path 분기 구현 및 범위 내 백그라운드 기능 QA 완료. Voice 미적용·Field07 BGM TBD.** 실제 ID·API·배치는 [Runtime 구현 계약](Main16_Runtime_구현_계약.md), 검증 범위와 남은 시각 QA는 [Runtime QA](Main16_Runtime_QA_2026_10_03.md)를 따른다. 공통 연출은 [Path 반응형 Story 정본](Path_반응형_Story_연출_규칙.md), 장면 기록은 [Scene 템플릿](Story_Scene_설계_템플릿.md)을 따른다.
 
 ## 역할과 지역
 
 Main15까지의 “왜 서쪽 땅이 말라가는가?”를 “땅 아래에서 무엇이 일어나는가?”로 확장하는 Chapter2 중반 전환점이다. 건조·열기·변한 야생동물을 넘어 불씨망령이 처음 본격 등장한다. 단순 생물 변이만으로 설명하기 어려운 현상을 확인하되 정체와 최종 원인은 밝히지 않는다.
 
-Main15 완료 뒤 Arbel의 레온에게서 시작한다. 신규 지역 표시명은 **재바람 황야**, Scene 가칭은 `Field_07_AshenReach`다. 번호·실제 Scene/Quest/Target/Encounter ID·지도 크기·배치·보상은 TBD이며 구현 시 LOCAL Convention으로 확정한다. Field06의 더 깊은 서쪽으로 이동해 Arbel로 귀환하는 연결을 설계한다.
+Main15 완료 뒤 Arbel의 레온에게서 시작한다. 신규 지역 표시명은 **재바람 황야**, Scene은 `Field_07_AshenReach`, Quest ID는 `main_16_shape_in_the_ash`다. 실제 Target/Encounter ID·21×15 Bounds·배치는 Runtime 계약에 기록한다. 완료 보상 수치는 TBD이므로 빈 RewardBundle을 사용하고 기존 전투 보상만 적용한다. Field06의 더 깊은 서쪽으로 이동해 Arbel로 귀환한다.
 
 Field06보다 풀이 거의 없고 고사목·그을린 돌·작은 재·열 아지랑이·균열이 늘어난다. 일부 균열에 약한 붉은 빛이 있으나 용암 강·불바다·화산 분화는 없다. 변화는 점진적이다. Field07 BGM은 **TBD**, Morning Over the Ridge를 계속 재사용하지 않는다. 별도 Chapter2 긴장/열기 테마가 필요하며 이번에 Audio를 만들지 않는다.
 
 ## 순차 Objective 계약
 
-아래 키는 설계용 의미 키이며 확정된 Runtime Stable ID가 아니다. 기존 순차 Objective 구조로 한 번씩 진행하고 Path 분기는 같은 목표로 수렴한다.
+아래 의미 키를 Runtime Objective ID로 사용한다. 기존 순차 Objective 구조로 한 번씩 진행하고 Path 분기는 같은 목표로 수렴한다. Target ID는 Runtime 계약을 따른다.
 
 | 순서 | 의미 키 | 종류 방향 | 내용 |
 | --- | --- | --- | --- |
@@ -22,14 +22,14 @@ Field06보다 풀이 거의 없고 고사목·그을린 돌·작은 재·열 아
 | 4 | inspect_moving_ash | Interact | 바람 없이 한 방향으로 움직이는 재 조사 |
 | 5 | trace_ground_vibration | Interact | 지면 진동과 재 움직임 비교 |
 | 6 | inspect_broken_tracks | Interact | 방향을 바꾸거나 흩어진 야생동물 흔적 조사 |
-| 7 | witness_ember_wraith | ReachLocation/목격 연출 | 불씨망령 최초 목격, 진행 API는 구현 전 확인 |
+| 7 | witness_ember_wraith | ReachLocation/목격 연출 | 불씨망령 최초 목격 대화 완료 후 진행 |
 | 8 | defeat_ember_wraith | DefeatEncounter | 지정 불씨망령1개체 승리 |
 | 9 | inspect_afterimage | Interact | 형체 소멸 후 남은 현장 조사 |
 | 10 | find_western_route | ReachLocation | 더 서쪽 협곡 입구 확인 |
 | 11 | return_to_arbel | ReachLocation | Arbel 귀환 |
 | 12 | report_the_anomaly | TalkToNpc | 레온에게 사실과 가설을 구분해 보고 |
 
-목격과 전투 승리는 별도 목표다. 일반 몬스터 처치·도망·패배를 지정 조우 승리로 오인하지 않으며, 재시도에서도 완료·보고·보상이 중복되지 않게 구현 전에 계약을 확인한다.
+목격과 전투 승리는 별도 목표다. 지정 Story ID 승리만 8번을 진행한다. 기존 일반 Story 전투의 도망 허용 정책을 재사용하며, 도망·패배·Continue 뒤에는 조사 지점에서 수동으로 재도전한다. 일반 몬스터 처치는 지정 조우 승리로 처리하지 않는다.
 
 ## 시작과 움직이는 재
 
@@ -116,7 +116,7 @@ Hearing 플레이어가 서쪽의 더 강한 신호를 먼저 감지하고 세�
 
 폴: “네. 적어도 이제는 그렇게 보는 편이 맞겠습니다.”
 
-설계상 완료 후에는 Field07 개방/재방문, 불씨망령 일반 출현 후보 검토, 협곡 입구 발견 기록을 남긴다. 일반 Spawn 수·배치는 아직 확정하지 않는다. Arbel Safe Zone과 세린 Permanent Companion을 유지하고 사용자의 활성 파티·Formation을 덮어쓰지 않는다. Mystery 미해결, Overheat 미사용, Chapter2 Boss 미노출, Field07 BGM TBD다. 이는 미래 완료 상태 계약이며 현재 Runtime 완료 기록이 아니다.
+완료 후 Field07 개방/재방문과 협곡 입구 발견 기록을 유지한다. 사용자 요청의 첫 Encounter 완료 후 조건에 따라 8번 지정 승리부터 일반 불씨망령 배치 1개를 열며, 그 전에는 그을음들개+열풍매 / 균열도마뱀+화열딱정벌레 두 배치만 사용한다. 완료/승리/발견 상태는 기존 Quest count와 CompletedQuestIds에서 복원한다. Arbel Safe Zone과 세린 Permanent Companion을 유지하고 사용자의 활성 파티·Formation을 덮어쓰지 않는다. Mystery 미해결, Overheat 미사용, Chapter2 Boss 미노출, Field07 BGM TBD다.
 
 ## 세린 미편성과 후속 방향
 
