@@ -1,0 +1,633 @@
+{
+  "dialogue_total": 44,
+  "manifest_rows": 28,
+  "mapped": 28,
+  "voice_none": 16,
+  "player_silent": 9,
+  "observation_silent": 7,
+  "audio_count": 33,
+  "audio_extensions": {
+    ".wav": 33
+  },
+  "total_seconds": 353.59999999999997,
+  "segment_seconds": 176.80000000000004,
+  "characters": {
+    "레온": 3,
+    "폴": 5,
+    "세린": 10,
+    "태온": 8,
+    "미엘": 2
+  },
+  "hearing_rows": 5,
+  "default_rows": 6,
+  "unmapped": 0,
+  "text_mismatch": 0,
+  "speaker_mismatch": 0,
+  "missing_audio": 0,
+  "duplicate_id": 0,
+  "catalog_entries": 229,
+  "rows": [
+    {
+      "clip_id": "main16_start_leon_01",
+      "quest_no": "16",
+      "scene_key": "start",
+      "speaker_id": "arbel-leon",
+      "speaker": "레온",
+      "text": "바람이 거의 없는데 재가 움직였다는 증언이 있습니다. 큰 불길을 보지 못했는데 땅은 뜨겁다고 하고요. 검은 연기 같은 형체를 봤다는 소문도 들립니다.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_start_leon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_start_leon_02",
+      "quest_no": "16",
+      "scene_key": "start",
+      "speaker_id": "arbel-leon",
+      "speaker": "레온",
+      "text": "평소 같으면 잘못 본 거라고 생각했겠지만, 요즘은 그렇게 넘기기가 어렵군요.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_start_leon_02.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_start_paul_01",
+      "quest_no": "16",
+      "scene_key": "start",
+      "speaker_id": "companion_paul",
+      "speaker": "폴",
+      "text": "확인할 수 있는 건 직접 확인하죠. 소문이 사실인지부터요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_start_paul_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_ash_hearing_serin_01",
+      "quest_no": "16",
+      "scene_key": "ash_hearing",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "저도 그렇게 잡혀요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_ash_hearing_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_ash_hearing_serin_02",
+      "quest_no": "16",
+      "scene_key": "ash_hearing",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "다만 어느 쪽이 먼저인지는 아직 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_ash_hearing_serin_02.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_ash_default_serin_01",
+      "quest_no": "16",
+      "scene_key": "ash_default",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "땅이 울릴 때마다 움직여요.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_ash_default_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_ash_default_taeon_01",
+      "quest_no": "16",
+      "scene_key": "ash_default",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "진동과 관련이 있다는 말씀이십니까?",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_ash_default_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_ash_default_serin_02",
+      "quest_no": "16",
+      "scene_key": "ash_default",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "같이 일어나는 건 맞아요. 어느 쪽이 원인인지는 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_ash_default_serin_02.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_vibration_hearing_serin_01",
+      "quest_no": "16",
+      "scene_key": "vibration_hearing",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "네. 방향은 같습니다. 다만 어디에서 시작되는지는 아직 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_vibration_hearing_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_vibration_default_serin_01",
+      "quest_no": "16",
+      "scene_key": "vibration_default",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "서쪽에서 오는 진동이 더 강해요. 간격에도 변화가 있습니다. 발생원은 아직 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_vibration_default_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_tracks_paul_01",
+      "quest_no": "16",
+      "scene_key": "tracks",
+      "speaker_id": "companion_paul",
+      "speaker": "폴",
+      "text": "여기까지는 계속 서쪽으로 갔습니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_tracks_paul_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_tracks_miel_01",
+      "quest_no": "16",
+      "scene_key": "tracks",
+      "speaker_id": "companion_miel",
+      "speaker": "미엘",
+      "text": "그런데 여기서 전부 방향을 바꿨네요.",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_tracks_miel_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_tracks_taeon_01",
+      "quest_no": "16",
+      "scene_key": "tracks",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "무언가를 피한 것으로 보입니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_tracks_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_witness_taeon_01",
+      "quest_no": "16",
+      "scene_key": "witness_emerge",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "모두 준비하세요. 저 형체가 다가옵니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_witness_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_retry_taeon_01",
+      "quest_no": "16",
+      "scene_key": "retry",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "아직 그 형체가 남아 있습니다. 준비가 되면 다시 상대하죠.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_retry_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_afterimage_hearing_serin_01",
+      "quest_no": "16",
+      "scene_key": "afterimage_hearing",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "네. 저도 잡힙니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_afterimage_hearing_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_afterimage_default_serin_01",
+      "quest_no": "16",
+      "scene_key": "afterimage_default",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "아직 계속됩니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_afterimage_default_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_afterimage_paul_01",
+      "quest_no": "16",
+      "scene_key": "afterimage_common",
+      "speaker_id": "companion_paul",
+      "speaker": "폴",
+      "text": "그러면 저게 진동을 만든 건 아니군요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_afterimage_paul_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_afterimage_taeon_01",
+      "quest_no": "16",
+      "scene_key": "afterimage_common",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "적어도 모든 원인은 아니라는 뜻이겠습니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_afterimage_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_afterimage_taeon_02",
+      "quest_no": "16",
+      "scene_key": "afterimage_common",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "열기의 일부가 지하에서 올라오는 것일 수 있습니다. 아직 가설입니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_afterimage_taeon_02.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_canyon_hearing_serin_01",
+      "quest_no": "16",
+      "scene_key": "canyon_hearing",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "네. 그 방향과 반복이 같이 잡힙니다. 정확한 발생 위치는 아직 모릅니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_canyon_hearing_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_canyon_default_serin_01",
+      "quest_no": "16",
+      "scene_key": "canyon_default",
+      "speaker_id": "companion_serin",
+      "speaker": "세린",
+      "text": "진동은 붉은 균열 협곡 방향에서 더 강해요. 정확한 발생 위치는 아직 모르겠습니다.",
+      "voice_id": "Schedar",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_canyon_default_serin_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_canyon_taeon_01",
+      "quest_no": "16",
+      "scene_key": "canyon_common",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "오늘은 여기까지 확인하는 편이 좋겠습니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_canyon_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_canyon_paul_01",
+      "quest_no": "16",
+      "scene_key": "canyon_common",
+      "speaker_id": "companion_paul",
+      "speaker": "폴",
+      "text": "찬성입니다. 확인과 무모함은 다른 일이니까요.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_canyon_paul_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_canyon_miel_01",
+      "quest_no": "16",
+      "scene_key": "canyon_common",
+      "speaker_id": "companion_miel",
+      "speaker": "미엘",
+      "text": "아르벨에 먼저 알려야겠어요.",
+      "voice_id": "Sulafat",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_canyon_miel_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_report_taeon_01",
+      "quest_no": "16",
+      "scene_key": "report",
+      "speaker_id": "companion_taeon",
+      "speaker": "태온",
+      "text": "열기의 일부가 지하에서 올라올 가능성은 있습니다. 가설일 뿐이며 재와 진동의 원인, 형체의 정체는 아직 모릅니다.",
+      "voice_id": "Gacrux",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_report_taeon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_report_leon_01",
+      "quest_no": "16",
+      "scene_key": "report",
+      "speaker_id": "arbel-leon",
+      "speaker": "레온",
+      "text": "그러면 동물들만 변하고 있는 게 아니군요.",
+      "voice_id": "Orus",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_report_leon_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    },
+    {
+      "clip_id": "main16_report_paul_01",
+      "quest_no": "16",
+      "scene_key": "report",
+      "speaker_id": "companion_paul",
+      "speaker": "폴",
+      "text": "네. 적어도 이제는 그렇게 보는 편이 맞겠습니다.",
+      "voice_id": "Achird",
+      "model": "gemini-3.8-flash-tts",
+      "output_file": "segments/main16_report_paul_01.wav",
+      "source_file": "Unity/Client/Assets/_Project/Scripts/World/Main16DialogueCatalog.cs"
+    }
+  ],
+  "audio": [
+    {
+      "file": "full/main16_leon_full.wav",
+      "seconds": 27.4,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "05887633d3b329bf58177c6e15e040b2409fabf4c01dfeeebaedde035c7df023"
+    },
+    {
+      "file": "full/main16_miel_full.wav",
+      "seconds": 8.56,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "42e2ef91daed630bd278ccf94725af1176b5a8492f2c728acef5441d1098cff7"
+    },
+    {
+      "file": "full/main16_paul_full.wav",
+      "seconds": 29.72,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "1949a01d008d2386b1d2e6bbc59e2c45542555118c0547be39524e5761871c90"
+    },
+    {
+      "file": "full/main16_serin_full.wav",
+      "seconds": 56.24,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "3711e55decd8dbd0f8317c88ca184fc1955c27de6e84704210fdd1b84b6cdcbe"
+    },
+    {
+      "file": "full/main16_taeon_full.wav",
+      "seconds": 54.88,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "417837a6d2755559be1096d224f8e34c2a47f5abbbf8332f058ac3ae30b81425"
+    },
+    {
+      "file": "segments/main16_afterimage_default_serin_01.wav",
+      "seconds": 3.56,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "5ee2c3ca852e9a6535bf304034da3c2aa48437b741728ec266abe4e380cf6285"
+    },
+    {
+      "file": "segments/main16_afterimage_hearing_serin_01.wav",
+      "seconds": 2.77,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "342c068f077fa72e37c5d2cd519828b22175bb1909c88d64e9f6b8635978b35d"
+    },
+    {
+      "file": "segments/main16_afterimage_paul_01.wav",
+      "seconds": 6.43,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "e602ccae0574cce2342c812a4bc995097d772e4dbeaba9078e274172d45b2b7a"
+    },
+    {
+      "file": "segments/main16_afterimage_taeon_01.wav",
+      "seconds": 5.65,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "0ea54f79b7cf6a1ad31e0d0402101bfd6296ecf103489b1c58da87ca0d7a5d78"
+    },
+    {
+      "file": "segments/main16_afterimage_taeon_02.wav",
+      "seconds": 9.28,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "e4e786866139b7c51a4999ff399246c4e14776966e28ea226a9dcc13f75db4aa"
+    },
+    {
+      "file": "segments/main16_ash_default_serin_01.wav",
+      "seconds": 3.08,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "2b3e2e5594f28c22243d5cd490ab0a32fc768e85a3b946201d73aea46d802bf2"
+    },
+    {
+      "file": "segments/main16_ash_default_serin_02.wav",
+      "seconds": 6.32,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "60655c278833249eb20cccc0a36390f97b5372c9d653b9dad0f6c3c806dfac2a"
+    },
+    {
+      "file": "segments/main16_ash_default_taeon_01.wav",
+      "seconds": 14.8,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "eb36228fd6a2ff8a1495fc6b4945dcd0bc0e9bba96a23e5609a4eac0fa3535d1"
+    },
+    {
+      "file": "segments/main16_ash_hearing_serin_01.wav",
+      "seconds": 6.78,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "dbe8f19a869477581c8f2d4e91b42ed169a210423ed3d17954a3086f1edec6f4"
+    },
+    {
+      "file": "segments/main16_ash_hearing_serin_02.wav",
+      "seconds": 1.92,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "c127edf83fee1554047945998474ee5f9c57b68506d73cb2ade1c9ca4f198696"
+    },
+    {
+      "file": "segments/main16_canyon_default_serin_01.wav",
+      "seconds": 7.26,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "7903abe509ac92fa49433ef50946a5f91b7a7eb4aedd7c1e2857bbdbbdcc7260"
+    },
+    {
+      "file": "segments/main16_canyon_hearing_serin_01.wav",
+      "seconds": 7.0,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "8c69ce1c434e7713bbe89f09f9fd6922c832e607d32b37c9d8784ade0069902a"
+    },
+    {
+      "file": "segments/main16_canyon_miel_01.wav",
+      "seconds": 4.28,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "b7c3eea7155ba02f7b73fa24ffd5438d9f99d3cb2265d04071c35da9de138ed2"
+    },
+    {
+      "file": "segments/main16_canyon_paul_01.wav",
+      "seconds": 6.66,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "38f4c128c6c51f140b4acc985c749fff8e56559219ba3b1f6d16425f01608c37"
+    },
+    {
+      "file": "segments/main16_canyon_taeon_01.wav",
+      "seconds": 6.63,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "4c718461b052a9e467e5ec217271d1741f52840c5292432c109b09537f14058f"
+    },
+    {
+      "file": "segments/main16_report_leon_01.wav",
+      "seconds": 5.51,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "7bcb8f08332453268c16f141e9f4d7bcb01580808690c233fcbbeb09fb76479b"
+    },
+    {
+      "file": "segments/main16_report_paul_01.wav",
+      "seconds": 6.1,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "7906771fae1cedcaf4145a63edf15c3337ac3e9aa6943cfadcb554eb006b072c"
+    },
+    {
+      "file": "segments/main16_report_taeon_01.wav",
+      "seconds": 10.69,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "da6a4e3a6a64c244ceccbf91b3daae27289585cbd3537508d066ee8f68e10199"
+    },
+    {
+      "file": "segments/main16_retry_taeon_01.wav",
+      "seconds": 1.18,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "9bfaa996c678c90c162523d395085223b176ed7a014923cfeddd738c51fc6f16"
+    },
+    {
+      "file": "segments/main16_start_leon_01.wav",
+      "seconds": 8.51,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "8213b7262b74984284511c20343d56c80e988efe4045bd41c234d96530a4af91"
+    },
+    {
+      "file": "segments/main16_start_leon_02.wav",
+      "seconds": 13.38,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "201c79b4202238cb91ec007c895acd823ef1a5649bb67bbc3cf236af22edb8aa"
+    },
+    {
+      "file": "segments/main16_start_paul_01.wav",
+      "seconds": 6.08,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "fdce20f3229c412017f73282782a6542589d3ea5d71b82efcb3a2fefe4baa4eb"
+    },
+    {
+      "file": "segments/main16_tracks_miel_01.wav",
+      "seconds": 4.28,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "6035bfe1843393fe680a031b95c86a0ec8ecdc834f456b34751d1c83092709b2"
+    },
+    {
+      "file": "segments/main16_tracks_paul_01.wav",
+      "seconds": 4.45,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "2e3e114ec957d3b4e0b1a1a0afeae1c27a37a816256b65b44674d1b5babf5a6c"
+    },
+    {
+      "file": "segments/main16_tracks_taeon_01.wav",
+      "seconds": 4.15,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "cc9f4fd6dd7fdbb61d353bee2a92574aaf92552542f34b0565f4b7960382cd7b"
+    },
+    {
+      "file": "segments/main16_vibration_default_serin_01.wav",
+      "seconds": 9.81,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "dd05a5e6aca4ce6ca520fc6a40201914e81f05a72c0555461a32691750e25648"
+    },
+    {
+      "file": "segments/main16_vibration_hearing_serin_01.wav",
+      "seconds": 7.74,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "562de29e973ed994cb8c6185a90d4292803a63ce17cd1f619e8a4720ddd89575"
+    },
+    {
+      "file": "segments/main16_witness_taeon_01.wav",
+      "seconds": 2.5,
+      "rate": 24000,
+      "channels": 1,
+      "bits": 16,
+      "sha256": "d2a323da0de76a5528f561c731ecc970f6a7c2d15c3335175d70101bde7ad666"
+    }
+  ]
+}

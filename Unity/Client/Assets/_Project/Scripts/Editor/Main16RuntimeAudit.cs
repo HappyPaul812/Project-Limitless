@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using ProjectLimitless.Battle;
+using ProjectLimitless.Audio;
 using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
 using ProjectLimitless.NPC;
@@ -27,23 +28,37 @@ namespace ProjectLimitless.Editor
         private static IEnumerator routine;
         private static double nextTick;
         private static string label, roster;
+        private static bool voiceReview;
         private const BindingFlags Private = BindingFlags.NonPublic | BindingFlags.Instance;
         private static string Output => System.IO.Path.Combine(Application.dataPath, "../Temp/Main16Audit/runtime.txt");
         static Main16RuntimeAudit()
         {
             EditorApplication.update += Tick;
             EditorApplication.playModeStateChanged += state =>
-            { if (state == PlayModeStateChange.EnteredEditMode) { GameSaveService.FinishAudit(); UserSettingsService.FinishAudit(); } };
+            { if (state == PlayModeStateChange.EnteredEditMode)
+                {
+                    // domain reload를 생략한 감사에서도 종료된 Mixer에 설정 이벤트가 전달되지 않게 구독부터 정리합니다.
+                    typeof(AudioSettingsService).GetMethod("ResetRuntime", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, null);
+                    GameSaveService.FinishAudit(); UserSettingsService.FinishAudit();
+                }
+            };
         }
         public static void Start()
         {
             if (!EditorApplication.isPlaying) throw new InvalidOperationException("Play Mode 필요");
             Results.Clear(); Status = "Running"; Application.runInBackground = true;
+            voiceReview = false;
             string directory = System.IO.Path.Combine(Application.dataPath, "../Temp/Main16Audit", Guid.NewGuid().ToString("N"));
             GameSaveService.AuditSaveDirectory = directory; GameSaveService.SelectSlot(1);
             UserSettingsService.BeginAudit(directory); UserSettingsService.SetMuteAll(true);
             Results.Add("SAVE_DIRECTORY " + directory);
             routine = Run();
+        }
+        /// <summary>승인된 Foreground에서 Hearing/Default 두 경로의 실제 대사를 자연 종료까지 재생합니다. 청취 품질 판정은 하지 않습니다.</summary>
+        public static void StartVoiceReview()
+        {
+            Start(); voiceReview = true;
+            UserSettingsService.SetMuteAll(false); UserSettingsService.SetAudioVolumes(100, 100, 0);
         }
         private static void Tick()
         {
@@ -84,7 +99,28 @@ namespace ProjectLimitless.Editor
         {
             int page = 0;
             while (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen && page++ < 40)
-            { DialoguePresenter.Instance.Advance(); yield return null; }
+            {
+                if (voiceReview)
+                {
+                    var presenter = DialoguePresenter.Instance;
+                    var line = Value<DialogueLine[]>(presenter, "sequenceLines")[Value<int>(presenter, "sequencePageIndex")];
+                    var voice = Value<VoicePlaybackSource>(presenter, "voicePlayback");
+                    var expected = Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog").Find(line.DialogueId, line.SpeakerId);
+                    Check(voice.Clip == expected, "실제 Voice ID/화자 " + line.DialogueId + "/" + line.SpeakerId);
+                    Check(line.SpeakerId != "player" || voice.Clip == null, "Player 무음 " + line.DialogueId);
+                    float peak = 0; var output = new float[256]; double until = EditorApplication.timeSinceStartup + Math.Max(.7, voice.ClipLength + .15);
+                    while (EditorApplication.timeSinceStartup < until && presenter.IsOpen)
+                    {
+                        AudioListener.GetOutputData(output, 0); peak = Math.Max(peak, output.Max(v => Mathf.Abs(v)));
+                        yield return null;
+                    }
+                    Results.Add("OUTPUT " + label + " " + line.DialogueId + " peak=" + peak);
+                    if (expected != null) Check(peak > .0001f, "실제 음성 출력 " + line.DialogueId);
+                }
+                DialoguePresenter.Instance.Advance(); yield return null;
+            }
+            if (voiceReview && DialoguePresenter.Instance != null)
+                Check(Value<VoicePlaybackSource>(DialoguePresenter.Instance, "voicePlayback").Clip == null, "대화 완료 Clip 정리");
         }
         private static void Objective(int index)
         {
@@ -126,9 +162,10 @@ namespace ProjectLimitless.Editor
         }
         private static void Seed(bool hearing, bool serin)
         {
-            GameSessionData.Reset(); GameSessionData.ConfigurePlayer(PlayerVisualType.Male, "Main16 감사");
+            GameSessionData.Reset(); GameSessionData.ConfigurePlayer(voiceReview ? PlayerVisualType.Female : PlayerVisualType.Male, "Main16 감사");
             GameSessionData.SelectPlayerPath(hearing ? "path.hearing" : PathCombatTraitRuntime.MobilityPathId);
             GameSessionData.SelectJob("fighter"); GameSessionData.ConfigureProgress(20, 0);
+            if (voiceReview) GameSessionData.SelectAppearance("appearance.external.v1.vision.fighter.female");
             QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = QuestCatalog.All.Where(quest => quest.QuestType == QuestType.Main && quest.QuestId != Chapter2Main16Flow.QuestId).Select(quest => quest.QuestId).ToArray() });
             CompanionRosterService.Reset(); CompanionRosterService.UnlockIntroCompanions(); CompanionRosterService.UnlockPaul("fighter"); CompanionRosterService.UnlockSerin();
             string[] party = { serin ? CompanionRosterService.SerinId : CompanionRosterService.TaeonId, CompanionRosterService.MielId };
@@ -219,6 +256,7 @@ namespace ProjectLimitless.Editor
         {
             for (int caseIndex = 0; caseIndex < 4; caseIndex++)
             {
+                if (voiceReview && caseIndex % 2 != 0) continue;
                 bool hearing = caseIndex < 2, serin = caseIndex % 2 == 0;
                 label = (hearing ? "Hearing" : "Default") + (serin ? "/SerinIn" : "/SerinOut"); Seed(hearing, serin);
                 SceneTransitionService.Load("Arbel", "Spawn_From_Field06"); var wait = WaitScene("Arbel"); while (wait.MoveNext()) yield return null;
@@ -237,7 +275,7 @@ namespace ProjectLimitless.Editor
                 wait = Inspect("field07_main16_tracks", "tracks", 5, hearing); while (wait.MoveNext()) yield return null;
                 Objective(6); Move(new Vector2(-3, 0)); yield return null; yield return null;
                 Check(DialoguePresenter.Instance.IsOpen && GameObject.Find("EmberWraithStoryApparition") == null, "형상 전에 지면→재→불씨 수동 연출");
-                if (caseIndex == 0)
+                if (caseIndex == 0 && !voiceReview)
                 {
                     DialoguePresenter.Instance.Hide(); yield return null; yield return null;
                     Check(!DialoguePresenter.Instance.IsOpen && QuestService.ActiveMainQuest.CurrentObjectiveIndex == 6, "목격 취소 진행·자동 재열림 없음");
@@ -248,7 +286,7 @@ namespace ProjectLimitless.Editor
                 Check(GameObject.Find("EmberWraithStoryApparition") != null && DialoguePresenter.Instance.IsOpen, "재 모임 뒤 공식 외형 등장");
                 pages = Pages(); while (pages.MoveNext()) yield return null;
                 wait = WaitScene("Battle"); while (wait.MoveNext()) yield return null;
-                if (caseIndex == 0)
+                if (caseIndex == 0 && !voiceReview)
                 {
                     var battle = Object.FindAnyObjectByType<BattleSceneController>();
                     while (Value<bool>(battle, "actionPlaying")) yield return null;

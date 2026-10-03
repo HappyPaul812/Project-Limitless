@@ -1,0 +1,495 @@
+PASS
+SAVE_DIRECTORY F:/study/codex/Project-Limitless/Unity/Client/Assets\../Temp/Main16Audit\0c49d30749b84c3ea8607968ae2596aa
+PASS Hearing/SerinIn 사용자 수동 Party fixture
+PASS Hearing/SerinIn Scene Arbel
+PASS Hearing/SerinIn Main15 완료→Main16 레온 시작 가능
+PASS Hearing/SerinIn 레온 실제 NPC 대화
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_start_leon_01/arbel-leon
+PASS Hearing/SerinIn Player 무음 main16_start_leon_01
+OUTPUT Hearing/SerinIn main16_start_leon_01 peak=0.4172336
+PASS Hearing/SerinIn 실제 음성 출력 main16_start_leon_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_start_leon_02/arbel-leon
+PASS Hearing/SerinIn Player 무음 main16_start_leon_02
+OUTPUT Hearing/SerinIn main16_start_leon_02 peak=0.487668
+PASS Hearing/SerinIn 실제 음성 출력 main16_start_leon_02
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_start_paul_01/companion_paul
+PASS Hearing/SerinIn Player 무음 main16_start_paul_01
+OUTPUT Hearing/SerinIn main16_start_paul_01 peak=0.3108482
+PASS Hearing/SerinIn 실제 음성 출력 main16_start_paul_01
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 순차 목표 2
+PASS Hearing/SerinIn 목표 Navigation 2
+PASS Hearing/SerinIn 저장 Party/Formation 보존 2
+PASS Hearing/SerinIn 실제 출구 Transition_northwest_to_field06
+PASS Hearing/SerinIn Scene Field_06_ScorchedTrail
+PASS Hearing/SerinIn Spawn 근처 도착/역전환 없음
+PASS Hearing/SerinIn 순차 목표 2
+PASS Hearing/SerinIn 목표 Navigation 2
+PASS Hearing/SerinIn 저장 Party/Formation 보존 2
+PASS Hearing/SerinIn 순차 목표 3
+PASS Hearing/SerinIn 목표 Navigation 3
+PASS Hearing/SerinIn 저장 Party/Formation 보존 3
+PASS Hearing/SerinIn 실제 출구 Transition_west_to_field07
+PASS Hearing/SerinIn Scene Field_07_AshenReach
+PASS Hearing/SerinIn Spawn 근처 도착/역전환 없음
+PASS Hearing/SerinIn 순차 목표 4
+PASS Hearing/SerinIn 목표 Navigation 4
+PASS Hearing/SerinIn 저장 Party/Formation 보존 4
+PASS Hearing/SerinIn 미편성 포함 현장 세린
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.333333 (-9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.333333 (-9.00, 6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.333333 (9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.333333 (9.00, 6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.777778 (-9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.777778 (-9.00, 6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.777778 (9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 1.777778 (9.00, 6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 2.333333 (-9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 2.333333 (-9.00, 6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 2.333333 (9.00, -6.00)
+PASS Hearing/SerinIn 비율 변경 첫 프레임 viewport 2.333333 (9.00, 6.00)
+PASS Hearing/SerinIn 동쪽 실제 Exit만 Boundary 개방
+PASS Hearing/SerinIn 지정 승리 전 일반 불씨망령 없음
+PASS Hearing/SerinIn 순차 목표 4
+PASS Hearing/SerinIn 목표 Navigation 4
+PASS Hearing/SerinIn 저장 Party/Formation 보존 4
+PASS Hearing/SerinIn 순차 목표 4
+PASS Hearing/SerinIn 목표 Navigation 4
+PASS Hearing/SerinIn 저장 Party/Formation 보존 4
+PASS Hearing/SerinIn 조사 대화 field07_main16_ash
+PASS Hearing/SerinIn 실제 분기 ID ash
+PASS Hearing/SerinIn 발견자 우선권
+PASS Hearing/SerinIn 대화 취소 진행 없음
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_ash_hearing_player_01/player
+PASS Hearing/SerinIn Player 무음 main16_ash_hearing_player_01
+OUTPUT Hearing/SerinIn main16_ash_hearing_player_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_ash_hearing_serin_01/companion_serin
+PASS Hearing/SerinIn Player 무음 main16_ash_hearing_serin_01
+OUTPUT Hearing/SerinIn main16_ash_hearing_serin_01 peak=0.3534239
+PASS Hearing/SerinIn 실제 음성 출력 main16_ash_hearing_serin_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_ash_hearing_serin_02/companion_serin
+PASS Hearing/SerinIn Player 무음 main16_ash_hearing_serin_02
+OUTPUT Hearing/SerinIn main16_ash_hearing_serin_02 peak=0.008804308
+PASS Hearing/SerinIn 실제 음성 출력 main16_ash_hearing_serin_02
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 완료 콜백 1회 ash
+PASS Hearing/SerinIn 재 조사 중간 Save
+PASS Hearing/SerinIn Scene Bootstrap
+PASS Hearing/SerinIn Bootstrap Continue 버튼
+PASS Hearing/SerinIn Scene Field_07_AshenReach
+PASS Hearing/SerinIn 재 조사 중간 Quest/count/Party 복원
+PASS Hearing/SerinIn 재 조사 중간 Path/좌표 복원
+PASS Hearing/SerinIn 순차 목표 5
+PASS Hearing/SerinIn 목표 Navigation 5
+PASS Hearing/SerinIn 저장 Party/Formation 보존 5
+PASS Hearing/SerinIn 조사 대화 field07_main16_vibration
+PASS Hearing/SerinIn 실제 분기 ID vibration
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_vibration_hearing_player_01/player
+PASS Hearing/SerinIn Player 무음 main16_vibration_hearing_player_01
+OUTPUT Hearing/SerinIn main16_vibration_hearing_player_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_vibration_hearing_serin_01/companion_serin
+PASS Hearing/SerinIn Player 무음 main16_vibration_hearing_serin_01
+OUTPUT Hearing/SerinIn main16_vibration_hearing_serin_01 peak=0.4724115
+PASS Hearing/SerinIn 실제 음성 출력 main16_vibration_hearing_serin_01
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 완료 콜백 1회 vibration
+PASS Hearing/SerinIn 순차 목표 6
+PASS Hearing/SerinIn 목표 Navigation 6
+PASS Hearing/SerinIn 저장 Party/Formation 보존 6
+PASS Hearing/SerinIn 조사 대화 field07_main16_tracks
+PASS Hearing/SerinIn 실제 분기 ID tracks
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_tracks_paul_01/companion_paul
+PASS Hearing/SerinIn Player 무음 main16_tracks_paul_01
+OUTPUT Hearing/SerinIn main16_tracks_paul_01 peak=0.316653
+PASS Hearing/SerinIn 실제 음성 출력 main16_tracks_paul_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_tracks_miel_01/companion_miel
+PASS Hearing/SerinIn Player 무음 main16_tracks_miel_01
+OUTPUT Hearing/SerinIn main16_tracks_miel_01 peak=0.3939712
+PASS Hearing/SerinIn 실제 음성 출력 main16_tracks_miel_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_tracks_taeon_01/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_tracks_taeon_01
+OUTPUT Hearing/SerinIn main16_tracks_taeon_01 peak=0.4026892
+PASS Hearing/SerinIn 실제 음성 출력 main16_tracks_taeon_01
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 완료 콜백 1회 tracks
+PASS Hearing/SerinIn 순차 목표 7
+PASS Hearing/SerinIn 목표 Navigation 7
+PASS Hearing/SerinIn 저장 Party/Formation 보존 7
+PASS Hearing/SerinIn 형상 전에 지면→재→불씨 수동 연출
+PASS Hearing/SerinIn 재 모임 뒤 공식 외형 등장
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_witness_observation_04/
+PASS Hearing/SerinIn Player 무음 main16_witness_observation_04
+OUTPUT Hearing/SerinIn main16_witness_observation_04 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_witness_taeon_01/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_witness_taeon_01
+OUTPUT Hearing/SerinIn main16_witness_taeon_01 peak=0.3352111
+PASS Hearing/SerinIn 실제 음성 출력 main16_witness_taeon_01
+PASS Hearing/SerinIn Scene Battle
+BATTLE_VIEWS 4
+PASS Hearing/SerinIn 불씨망령 1체 후열 Magic
+PASS Hearing/SerinIn 실제 전투 세린 편성 일치
+PASS Hearing/SerinIn Story ID 전달
+PASS Hearing/SerinIn 기존 AI 순서 재사용
+PASS Hearing/SerinIn 실제 공격 Victory 4
+PASS Hearing/SerinIn 지정 승리만 9번/일반 Spawn 해금
+PASS Hearing/SerinIn 일반 승리 기록/펫 분양·해금 없음
+PASS Hearing/SerinIn Scene Field_07_AshenReach
+PASS Hearing/SerinIn 순차 목표 9
+PASS Hearing/SerinIn 목표 Navigation 9
+PASS Hearing/SerinIn 저장 Party/Formation 보존 9
+PASS Hearing/SerinIn 승리 후 일반 불씨망령 생성
+PASS Hearing/SerinIn 지정 승리 후 Save
+PASS Hearing/SerinIn Scene Bootstrap
+PASS Hearing/SerinIn Bootstrap Continue 버튼
+PASS Hearing/SerinIn Scene Field_07_AshenReach
+PASS Hearing/SerinIn 지정 승리 후 Quest/count/Party 복원
+PASS Hearing/SerinIn 지정 승리 후 Path/좌표 복원
+PASS Hearing/SerinIn 순차 목표 9
+PASS Hearing/SerinIn 목표 Navigation 9
+PASS Hearing/SerinIn 저장 Party/Formation 보존 9
+PASS Hearing/SerinIn 조사 대화 field07_main16_afterimage
+PASS Hearing/SerinIn 실제 분기 ID afterimage
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_hearing_player_01/player
+PASS Hearing/SerinIn Player 무음 main16_afterimage_hearing_player_01
+OUTPUT Hearing/SerinIn main16_afterimage_hearing_player_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_hearing_serin_01/companion_serin
+PASS Hearing/SerinIn Player 무음 main16_afterimage_hearing_serin_01
+OUTPUT Hearing/SerinIn main16_afterimage_hearing_serin_01 peak=0.4700918
+PASS Hearing/SerinIn 실제 음성 출력 main16_afterimage_hearing_serin_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_paul_01/companion_paul
+PASS Hearing/SerinIn Player 무음 main16_afterimage_paul_01
+OUTPUT Hearing/SerinIn main16_afterimage_paul_01 peak=0.3958702
+PASS Hearing/SerinIn 실제 음성 출력 main16_afterimage_paul_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_taeon_01/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_afterimage_taeon_01
+OUTPUT Hearing/SerinIn main16_afterimage_taeon_01 peak=0.4807195
+PASS Hearing/SerinIn 실제 음성 출력 main16_afterimage_taeon_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_observation_01/
+PASS Hearing/SerinIn Player 무음 main16_afterimage_observation_01
+OUTPUT Hearing/SerinIn main16_afterimage_observation_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_afterimage_taeon_02/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_afterimage_taeon_02
+OUTPUT Hearing/SerinIn main16_afterimage_taeon_02 peak=0.5186126
+PASS Hearing/SerinIn 실제 음성 출력 main16_afterimage_taeon_02
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 완료 콜백 1회 afterimage
+PASS Hearing/SerinIn 순차 목표 10
+PASS Hearing/SerinIn 목표 Navigation 10
+PASS Hearing/SerinIn 저장 Party/Formation 보존 10
+PASS Hearing/SerinIn 조사 대화 field07_main16_canyon
+PASS Hearing/SerinIn 실제 분기 ID canyon
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_observation_01/
+PASS Hearing/SerinIn Player 무음 main16_canyon_observation_01
+OUTPUT Hearing/SerinIn main16_canyon_observation_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_hearing_player_01/player
+PASS Hearing/SerinIn Player 무음 main16_canyon_hearing_player_01
+OUTPUT Hearing/SerinIn main16_canyon_hearing_player_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_hearing_serin_01/companion_serin
+PASS Hearing/SerinIn Player 무음 main16_canyon_hearing_serin_01
+OUTPUT Hearing/SerinIn main16_canyon_hearing_serin_01 peak=0.3929785
+PASS Hearing/SerinIn 실제 음성 출력 main16_canyon_hearing_serin_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_taeon_01/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_canyon_taeon_01
+OUTPUT Hearing/SerinIn main16_canyon_taeon_01 peak=0.4987597
+PASS Hearing/SerinIn 실제 음성 출력 main16_canyon_taeon_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_paul_01/companion_paul
+PASS Hearing/SerinIn Player 무음 main16_canyon_paul_01
+OUTPUT Hearing/SerinIn main16_canyon_paul_01 peak=0.3703851
+PASS Hearing/SerinIn 실제 음성 출력 main16_canyon_paul_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_canyon_miel_01/companion_miel
+PASS Hearing/SerinIn Player 무음 main16_canyon_miel_01
+OUTPUT Hearing/SerinIn main16_canyon_miel_01 peak=0.446236
+PASS Hearing/SerinIn 실제 음성 출력 main16_canyon_miel_01
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 완료 콜백 1회 canyon
+PASS Hearing/SerinIn 협곡 입구 발견 후 Save
+PASS Hearing/SerinIn Scene Bootstrap
+PASS Hearing/SerinIn Bootstrap Continue 버튼
+PASS Hearing/SerinIn Scene Field_07_AshenReach
+PASS Hearing/SerinIn 협곡 입구 발견 후 Quest/count/Party 복원
+PASS Hearing/SerinIn 협곡 입구 발견 후 Path/좌표 복원
+PASS Hearing/SerinIn 협곡 내부 Transition 없음
+PASS Hearing/SerinIn 실제 출구 Transition_east_to_field06
+PASS Hearing/SerinIn Scene Field_06_ScorchedTrail
+PASS Hearing/SerinIn Spawn 근처 도착/역전환 없음
+PASS Hearing/SerinIn 순차 목표 11
+PASS Hearing/SerinIn 목표 Navigation 11
+PASS Hearing/SerinIn 저장 Party/Formation 보존 11
+PASS Hearing/SerinIn 실제 출구 Transition_east_to_arbel
+PASS Hearing/SerinIn Scene Arbel
+PASS Hearing/SerinIn Spawn 근처 도착/역전환 없음
+PASS Hearing/SerinIn 순차 목표 12
+PASS Hearing/SerinIn 목표 Navigation 12
+PASS Hearing/SerinIn 저장 Party/Formation 보존 12
+PASS Hearing/SerinIn 레온 실제 NPC 대화
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_report_player_01/player
+PASS Hearing/SerinIn Player 무음 main16_report_player_01
+OUTPUT Hearing/SerinIn main16_report_player_01 peak=0
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_report_taeon_01/companion_taeon
+PASS Hearing/SerinIn Player 무음 main16_report_taeon_01
+OUTPUT Hearing/SerinIn main16_report_taeon_01 peak=0.5699063
+PASS Hearing/SerinIn 실제 음성 출력 main16_report_taeon_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_report_leon_01/arbel-leon
+PASS Hearing/SerinIn Player 무음 main16_report_leon_01
+OUTPUT Hearing/SerinIn main16_report_leon_01 peak=0.4476818
+PASS Hearing/SerinIn 실제 음성 출력 main16_report_leon_01
+PASS Hearing/SerinIn 실제 Voice ID/화자 main16_report_paul_01/companion_paul
+PASS Hearing/SerinIn Player 무음 main16_report_paul_01
+OUTPUT Hearing/SerinIn main16_report_paul_01 peak=0.4312816
+PASS Hearing/SerinIn 실제 음성 출력 main16_report_paul_01
+PASS Hearing/SerinIn 대화 완료 Clip 정리
+PASS Hearing/SerinIn 12목표 완료/Main17 자동 시작 없음
+PASS Hearing/SerinIn Main16 완료 후 Save
+PASS Hearing/SerinIn Scene Bootstrap
+PASS Hearing/SerinIn Bootstrap Continue 버튼
+PASS Hearing/SerinIn Scene Arbel
+PASS Hearing/SerinIn Main16 완료 후 Quest/count/Party 복원
+PASS Hearing/SerinIn Main16 완료 후 Path/좌표 복원
+PASS Hearing/SerinIn 완료·지정승리 상태 유지
+PASS Default/SerinIn 사용자 수동 Party fixture
+PASS Default/SerinIn Scene Arbel
+PASS Default/SerinIn Main15 완료→Main16 레온 시작 가능
+PASS Default/SerinIn 레온 실제 NPC 대화
+PASS Default/SerinIn 실제 Voice ID/화자 main16_start_leon_01/arbel-leon
+PASS Default/SerinIn Player 무음 main16_start_leon_01
+OUTPUT Default/SerinIn main16_start_leon_01 peak=0.4684626
+PASS Default/SerinIn 실제 음성 출력 main16_start_leon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_start_leon_02/arbel-leon
+PASS Default/SerinIn Player 무음 main16_start_leon_02
+OUTPUT Default/SerinIn main16_start_leon_02 peak=0.5502692
+PASS Default/SerinIn 실제 음성 출력 main16_start_leon_02
+PASS Default/SerinIn 실제 Voice ID/화자 main16_start_paul_01/companion_paul
+PASS Default/SerinIn Player 무음 main16_start_paul_01
+OUTPUT Default/SerinIn main16_start_paul_01 peak=0.4180967
+PASS Default/SerinIn 실제 음성 출력 main16_start_paul_01
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 순차 목표 2
+PASS Default/SerinIn 목표 Navigation 2
+PASS Default/SerinIn 저장 Party/Formation 보존 2
+PASS Default/SerinIn 실제 출구 Transition_northwest_to_field06
+PASS Default/SerinIn Scene Field_06_ScorchedTrail
+PASS Default/SerinIn Spawn 근처 도착/역전환 없음
+PASS Default/SerinIn 순차 목표 2
+PASS Default/SerinIn 목표 Navigation 2
+PASS Default/SerinIn 저장 Party/Formation 보존 2
+PASS Default/SerinIn 순차 목표 3
+PASS Default/SerinIn 목표 Navigation 3
+PASS Default/SerinIn 저장 Party/Formation 보존 3
+PASS Default/SerinIn 실제 출구 Transition_west_to_field07
+PASS Default/SerinIn Scene Field_07_AshenReach
+PASS Default/SerinIn Spawn 근처 도착/역전환 없음
+PASS Default/SerinIn 순차 목표 4
+PASS Default/SerinIn 목표 Navigation 4
+PASS Default/SerinIn 저장 Party/Formation 보존 4
+PASS Default/SerinIn 미편성 포함 현장 세린
+PASS Default/SerinIn 지정 승리 전 일반 불씨망령 없음
+PASS Default/SerinIn 순차 목표 4
+PASS Default/SerinIn 목표 Navigation 4
+PASS Default/SerinIn 저장 Party/Formation 보존 4
+PASS Default/SerinIn 순차 목표 4
+PASS Default/SerinIn 목표 Navigation 4
+PASS Default/SerinIn 저장 Party/Formation 보존 4
+PASS Default/SerinIn 조사 대화 field07_main16_ash
+PASS Default/SerinIn 실제 분기 ID ash
+PASS Default/SerinIn 발견자 우선권
+PASS Default/SerinIn 대화 취소 진행 없음
+PASS Default/SerinIn 실제 Voice ID/화자 main16_ash_default_observation_01/
+PASS Default/SerinIn Player 무음 main16_ash_default_observation_01
+OUTPUT Default/SerinIn main16_ash_default_observation_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_ash_default_serin_01/companion_serin
+PASS Default/SerinIn Player 무음 main16_ash_default_serin_01
+OUTPUT Default/SerinIn main16_ash_default_serin_01 peak=0.4162409
+PASS Default/SerinIn 실제 음성 출력 main16_ash_default_serin_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_ash_default_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_ash_default_taeon_01
+OUTPUT Default/SerinIn main16_ash_default_taeon_01 peak=0.507413
+PASS Default/SerinIn 실제 음성 출력 main16_ash_default_taeon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_ash_default_serin_02/companion_serin
+PASS Default/SerinIn Player 무음 main16_ash_default_serin_02
+OUTPUT Default/SerinIn main16_ash_default_serin_02 peak=0.4126156
+PASS Default/SerinIn 실제 음성 출력 main16_ash_default_serin_02
+PASS Default/SerinIn 실제 Voice ID/화자 main16_ash_default_player_01/player
+PASS Default/SerinIn Player 무음 main16_ash_default_player_01
+OUTPUT Default/SerinIn main16_ash_default_player_01 peak=0
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 완료 콜백 1회 ash
+PASS Default/SerinIn 재 조사 중간 Save
+PASS Default/SerinIn Scene Bootstrap
+PASS Default/SerinIn Bootstrap Continue 버튼
+PASS Default/SerinIn Scene Field_07_AshenReach
+PASS Default/SerinIn 재 조사 중간 Quest/count/Party 복원
+PASS Default/SerinIn 재 조사 중간 Path/좌표 복원
+PASS Default/SerinIn 순차 목표 5
+PASS Default/SerinIn 목표 Navigation 5
+PASS Default/SerinIn 저장 Party/Formation 보존 5
+PASS Default/SerinIn 조사 대화 field07_main16_vibration
+PASS Default/SerinIn 실제 분기 ID vibration
+PASS Default/SerinIn 실제 Voice ID/화자 main16_vibration_default_serin_01/companion_serin
+PASS Default/SerinIn Player 무음 main16_vibration_default_serin_01
+OUTPUT Default/SerinIn main16_vibration_default_serin_01 peak=0.4252179
+PASS Default/SerinIn 실제 음성 출력 main16_vibration_default_serin_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_vibration_default_player_01/player
+PASS Default/SerinIn Player 무음 main16_vibration_default_player_01
+OUTPUT Default/SerinIn main16_vibration_default_player_01 peak=0
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 완료 콜백 1회 vibration
+PASS Default/SerinIn 순차 목표 6
+PASS Default/SerinIn 목표 Navigation 6
+PASS Default/SerinIn 저장 Party/Formation 보존 6
+PASS Default/SerinIn 조사 대화 field07_main16_tracks
+PASS Default/SerinIn 실제 분기 ID tracks
+PASS Default/SerinIn 실제 Voice ID/화자 main16_tracks_paul_01/companion_paul
+PASS Default/SerinIn Player 무음 main16_tracks_paul_01
+OUTPUT Default/SerinIn main16_tracks_paul_01 peak=0.462442
+PASS Default/SerinIn 실제 음성 출력 main16_tracks_paul_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_tracks_miel_01/companion_miel
+PASS Default/SerinIn Player 무음 main16_tracks_miel_01
+OUTPUT Default/SerinIn main16_tracks_miel_01 peak=0.3939712
+PASS Default/SerinIn 실제 음성 출력 main16_tracks_miel_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_tracks_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_tracks_taeon_01
+OUTPUT Default/SerinIn main16_tracks_taeon_01 peak=0.4026892
+PASS Default/SerinIn 실제 음성 출력 main16_tracks_taeon_01
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 완료 콜백 1회 tracks
+PASS Default/SerinIn 순차 목표 7
+PASS Default/SerinIn 목표 Navigation 7
+PASS Default/SerinIn 저장 Party/Formation 보존 7
+PASS Default/SerinIn 형상 전에 지면→재→불씨 수동 연출
+PASS Default/SerinIn 재 모임 뒤 공식 외형 등장
+PASS Default/SerinIn 실제 Voice ID/화자 main16_witness_observation_04/
+PASS Default/SerinIn Player 무음 main16_witness_observation_04
+OUTPUT Default/SerinIn main16_witness_observation_04 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_witness_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_witness_taeon_01
+OUTPUT Default/SerinIn main16_witness_taeon_01 peak=0.3310031
+PASS Default/SerinIn 실제 음성 출력 main16_witness_taeon_01
+PASS Default/SerinIn Scene Battle
+PASS Battle selected Appearance Left Idle frame4
+PASS Battle entry Voice cleanup
+PASS Battle Appearance Left Idle frame4
+PASS Battle Voice Cleanup
+PASS Default/SerinIn 불씨망령 1체 후열 Magic
+PASS Default/SerinIn 실제 전투 세린 편성 일치
+PASS Default/SerinIn Story ID 전달
+PASS Default/SerinIn 기존 AI 순서 재사용
+PASS Default/SerinIn 실제 공격 Victory 4
+PASS Default/SerinIn 지정 승리만 9번/일반 Spawn 해금
+PASS Default/SerinIn 일반 승리 기록/펫 분양·해금 없음
+PASS Default/SerinIn Scene Field_07_AshenReach
+PASS Default/SerinIn 순차 목표 9
+PASS Default/SerinIn 목표 Navigation 9
+PASS Default/SerinIn 저장 Party/Formation 보존 9
+PASS Default/SerinIn 승리 후 일반 불씨망령 생성
+PASS Default/SerinIn 지정 승리 후 Save
+PASS Default/SerinIn Scene Bootstrap
+PASS Default/SerinIn Bootstrap Continue 버튼
+PASS Default/SerinIn Scene Field_07_AshenReach
+PASS Default/SerinIn 지정 승리 후 Quest/count/Party 복원
+PASS Default/SerinIn 지정 승리 후 Path/좌표 복원
+PASS Default/SerinIn 순차 목표 9
+PASS Default/SerinIn 목표 Navigation 9
+PASS Default/SerinIn 저장 Party/Formation 보존 9
+PASS Default/SerinIn 조사 대화 field07_main16_afterimage
+PASS Default/SerinIn 실제 분기 ID afterimage
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_default_serin_01/companion_serin
+PASS Default/SerinIn Player 무음 main16_afterimage_default_serin_01
+OUTPUT Default/SerinIn main16_afterimage_default_serin_01 peak=0.1960901
+PASS Default/SerinIn 실제 음성 출력 main16_afterimage_default_serin_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_default_player_01/player
+PASS Default/SerinIn Player 무음 main16_afterimage_default_player_01
+OUTPUT Default/SerinIn main16_afterimage_default_player_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_paul_01/companion_paul
+PASS Default/SerinIn Player 무음 main16_afterimage_paul_01
+OUTPUT Default/SerinIn main16_afterimage_paul_01 peak=0.4285626
+PASS Default/SerinIn 실제 음성 출력 main16_afterimage_paul_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_afterimage_taeon_01
+OUTPUT Default/SerinIn main16_afterimage_taeon_01 peak=0.4486097
+PASS Default/SerinIn 실제 음성 출력 main16_afterimage_taeon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_observation_01/
+PASS Default/SerinIn Player 무음 main16_afterimage_observation_01
+OUTPUT Default/SerinIn main16_afterimage_observation_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_afterimage_taeon_02/companion_taeon
+PASS Default/SerinIn Player 무음 main16_afterimage_taeon_02
+OUTPUT Default/SerinIn main16_afterimage_taeon_02 peak=0.5829833
+PASS Default/SerinIn 실제 음성 출력 main16_afterimage_taeon_02
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 완료 콜백 1회 afterimage
+PASS Default/SerinIn 순차 목표 10
+PASS Default/SerinIn 목표 Navigation 10
+PASS Default/SerinIn 저장 Party/Formation 보존 10
+PASS Default/SerinIn 조사 대화 field07_main16_canyon
+PASS Default/SerinIn 실제 분기 ID canyon
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_observation_01/
+PASS Default/SerinIn Player 무음 main16_canyon_observation_01
+OUTPUT Default/SerinIn main16_canyon_observation_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_default_serin_01/companion_serin
+PASS Default/SerinIn Player 무음 main16_canyon_default_serin_01
+OUTPUT Default/SerinIn main16_canyon_default_serin_01 peak=0.4606077
+PASS Default/SerinIn 실제 음성 출력 main16_canyon_default_serin_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_default_player_01/player
+PASS Default/SerinIn Player 무음 main16_canyon_default_player_01
+OUTPUT Default/SerinIn main16_canyon_default_player_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_canyon_taeon_01
+OUTPUT Default/SerinIn main16_canyon_taeon_01 peak=0.5511108
+PASS Default/SerinIn 실제 음성 출력 main16_canyon_taeon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_paul_01/companion_paul
+PASS Default/SerinIn Player 무음 main16_canyon_paul_01
+OUTPUT Default/SerinIn main16_canyon_paul_01 peak=0.4330727
+PASS Default/SerinIn 실제 음성 출력 main16_canyon_paul_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_canyon_miel_01/companion_miel
+PASS Default/SerinIn Player 무음 main16_canyon_miel_01
+OUTPUT Default/SerinIn main16_canyon_miel_01 peak=0.446236
+PASS Default/SerinIn 실제 음성 출력 main16_canyon_miel_01
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 완료 콜백 1회 canyon
+PASS Default/SerinIn 협곡 입구 발견 후 Save
+PASS Default/SerinIn Scene Bootstrap
+PASS Default/SerinIn Bootstrap Continue 버튼
+PASS Default/SerinIn Scene Field_07_AshenReach
+PASS Default/SerinIn 협곡 입구 발견 후 Quest/count/Party 복원
+PASS Default/SerinIn 협곡 입구 발견 후 Path/좌표 복원
+PASS Default/SerinIn 협곡 내부 Transition 없음
+PASS Default/SerinIn 실제 출구 Transition_east_to_field06
+PASS Default/SerinIn Scene Field_06_ScorchedTrail
+PASS Default/SerinIn Spawn 근처 도착/역전환 없음
+PASS Default/SerinIn 순차 목표 11
+PASS Default/SerinIn 목표 Navigation 11
+PASS Default/SerinIn 저장 Party/Formation 보존 11
+PASS Default/SerinIn 실제 출구 Transition_east_to_arbel
+PASS Default/SerinIn Scene Arbel
+PASS Default/SerinIn Spawn 근처 도착/역전환 없음
+PASS Default/SerinIn 순차 목표 12
+PASS Default/SerinIn 목표 Navigation 12
+PASS Default/SerinIn 저장 Party/Formation 보존 12
+PASS Default/SerinIn 레온 실제 NPC 대화
+PASS Default/SerinIn 실제 Voice ID/화자 main16_report_player_01/player
+PASS Default/SerinIn Player 무음 main16_report_player_01
+OUTPUT Default/SerinIn main16_report_player_01 peak=0
+PASS Default/SerinIn 실제 Voice ID/화자 main16_report_taeon_01/companion_taeon
+PASS Default/SerinIn Player 무음 main16_report_taeon_01
+OUTPUT Default/SerinIn main16_report_taeon_01 peak=0.5699063
+PASS Default/SerinIn 실제 음성 출력 main16_report_taeon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_report_leon_01/arbel-leon
+PASS Default/SerinIn Player 무음 main16_report_leon_01
+OUTPUT Default/SerinIn main16_report_leon_01 peak=0.4476818
+PASS Default/SerinIn 실제 음성 출력 main16_report_leon_01
+PASS Default/SerinIn 실제 Voice ID/화자 main16_report_paul_01/companion_paul
+PASS Default/SerinIn Player 무음 main16_report_paul_01
+OUTPUT Default/SerinIn main16_report_paul_01 peak=0.4011787
+PASS Default/SerinIn 실제 음성 출력 main16_report_paul_01
+PASS Default/SerinIn 대화 완료 Clip 정리
+PASS Default/SerinIn 12목표 완료/Main17 자동 시작 없음
+PASS Default/SerinIn Main16 완료 후 Save
+PASS Default/SerinIn Scene Bootstrap
+PASS Default/SerinIn Bootstrap Continue 버튼
+PASS Default/SerinIn Scene Arbel
+PASS Default/SerinIn Main16 완료 후 Quest/count/Party 복원
+PASS Default/SerinIn Main16 완료 후 Path/좌표 복원
+PASS Default/SerinIn 완료·지정승리 상태 유지
+CONTROL_CHECK 44 unique lines / 28 mapped clips / rapid Next / wrong speaker fallback PASS
+100/40/0/Mute/Retry output peaks=0.5678347,0.2283038,0.06722271,0,0.01413437
+cleanup=True
+settled Voice0 peak=0

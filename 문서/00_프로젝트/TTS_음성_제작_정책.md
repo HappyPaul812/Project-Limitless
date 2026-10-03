@@ -107,3 +107,9 @@ LOCAL 화자와 본문이 정확히 일치한 102개만 연결한다. Main12로 
 ## Missing Story Voice Supplement Pack (2026-09-30)
 
 [보충팩 정책 및 QA](Missing_Story_Voice_Supplement_QA.md)를 따른다. Existing Voice Wins 원칙으로 기존143개/Intro18개를 보존하고 정식 Manifest와 LOCAL 화자/본문이 일치하는 기존 무음 대사에만 신규 ID와 Clip을 추가한다. Main03/04/05/08/12의58개를 적용했으며 Main01/02는 입력에 없다. 사용자 허용으로 일치하는 기존 무음 대사에 Manifest 안정 ID를 지정한다. Catalog 재생성/기존 Clip 교체/원본 가공은 금지한다. 적용 후 Story Catalog는 기존143+신규58=201개다. 기존 매핑 삭제/Clip 교체/GUID·Character 변경0을 확인했다. Coverage와 Background Runtime 결과는 QA 문서를 따른다. 실제 청취 QA는 미완료다.
+
+## Main16 Voice Registry 확장 (2026-10-03)
+
+정식 `dialogue_manifest_main16.csv`의 LOCAL ID·본문·화자가 일치한 segment28개를 원본 WAV 그대로 연결했다. 기존 Story201개에 추가해229개이며, 이전 매핑을 바꾸지 않는다. 위 Main16 미적용 기록은 당시 상태이고 현재 상태는 [Main16 QA](Main16_Voice_Foreground_QA.md)를 따른다.
+
+제공 자료의 모델은 gemini-3.8-flash-tts, ko-KR, voice_design=false다. 레온 arbel-leon/Orus3개, 폴 companion_paul/Achird5개, 세린 companion_serin/Schedar10개, 태온 companion_taeon/Gacrux8개, 미엘 companion_miel/Sulafat2개다. 기본 음색·속도·Tone·Batch는 TBD이며 이전 배치에 소급하지 않는다. Hearing 전용5개·Default 전용6개·공통17개는 별도 Stable ID를 유지한다. Player9개·관찰7개는 정상 무음이다. 합본5개는 Unity에 연결하지 않는다. 청취 품질은 미검증이며 TTS를 재생성하지 않았다.

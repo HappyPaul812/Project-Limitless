@@ -616,3 +616,87 @@ MonoBehaviour:
   - id: main12_taeon_supp_001
     clip: {fileID: 8300000, guid: d0423b2b15a7e4643b85d966181ed25a, type: 3}
     speakerId: companion_taeon
+  - id: main16_start_leon_01
+    clip: {fileID: 8300000, guid: 649563f9dfe3454c87247d1c7b3f8930, type: 3}
+    speakerId: arbel-leon
+  - id: main16_start_leon_02
+    clip: {fileID: 8300000, guid: bf936b0a876e4f3887602a141e42504c, type: 3}
+    speakerId: arbel-leon
+  - id: main16_start_paul_01
+    clip: {fileID: 8300000, guid: 3210a2095cc04050a97a19b936395699, type: 3}
+    speakerId: companion_paul
+  - id: main16_ash_hearing_serin_01
+    clip: {fileID: 8300000, guid: de7fbc3344594225a49c547361e58dd8, type: 3}
+    speakerId: companion_serin
+  - id: main16_ash_hearing_serin_02
+    clip: {fileID: 8300000, guid: 59e08c2eb5234581bebe790f70e895af, type: 3}
+    speakerId: companion_serin
+  - id: main16_ash_default_serin_01
+    clip: {fileID: 8300000, guid: f916c1050d5341f088c1c5b49fa7dd01, type: 3}
+    speakerId: companion_serin
+  - id: main16_ash_default_taeon_01
+    clip: {fileID: 8300000, guid: 9c79606bf02d4738871350747a4fb3d8, type: 3}
+    speakerId: companion_taeon
+  - id: main16_ash_default_serin_02
+    clip: {fileID: 8300000, guid: 6667a77a3eb849838835ca56f8fa48fc, type: 3}
+    speakerId: companion_serin
+  - id: main16_vibration_hearing_serin_01
+    clip: {fileID: 8300000, guid: 9f3a85ff13504f32a23a859fce54338a, type: 3}
+    speakerId: companion_serin
+  - id: main16_vibration_default_serin_01
+    clip: {fileID: 8300000, guid: 69efba0df24249d290f2b376f5991afa, type: 3}
+    speakerId: companion_serin
+  - id: main16_tracks_paul_01
+    clip: {fileID: 8300000, guid: 398fdb8f95ed4eb9955c5dd22aa9a55d, type: 3}
+    speakerId: companion_paul
+  - id: main16_tracks_miel_01
+    clip: {fileID: 8300000, guid: 27fa7490023a49f68a967f6f82faf8b2, type: 3}
+    speakerId: companion_miel
+  - id: main16_tracks_taeon_01
+    clip: {fileID: 8300000, guid: 714fd5538e3345d182d9ab819695afb5, type: 3}
+    speakerId: companion_taeon
+  - id: main16_witness_taeon_01
+    clip: {fileID: 8300000, guid: e8234f74d9e74855bba744f78ed02eed, type: 3}
+    speakerId: companion_taeon
+  - id: main16_retry_taeon_01
+    clip: {fileID: 8300000, guid: 82ec5ceac9ce40febe4a5700655b0e53, type: 3}
+    speakerId: companion_taeon
+  - id: main16_afterimage_hearing_serin_01
+    clip: {fileID: 8300000, guid: 9e99b20d87424807adbb9b335a5278a2, type: 3}
+    speakerId: companion_serin
+  - id: main16_afterimage_default_serin_01
+    clip: {fileID: 8300000, guid: 1f5ce02745cb4873b64e0a29a1cc20c6, type: 3}
+    speakerId: companion_serin
+  - id: main16_afterimage_paul_01
+    clip: {fileID: 8300000, guid: c93a8dbf63a04bd7be0255799818d062, type: 3}
+    speakerId: companion_paul
+  - id: main16_afterimage_taeon_01
+    clip: {fileID: 8300000, guid: 55a7f2394c2442d2ab889849f7da771d, type: 3}
+    speakerId: companion_taeon
+  - id: main16_afterimage_taeon_02
+    clip: {fileID: 8300000, guid: 7b63a90637774053a582c99e237a210c, type: 3}
+    speakerId: companion_taeon
+  - id: main16_canyon_hearing_serin_01
+    clip: {fileID: 8300000, guid: b5e0293ed7fa43adbcc7786d5760034e, type: 3}
+    speakerId: companion_serin
+  - id: main16_canyon_default_serin_01
+    clip: {fileID: 8300000, guid: cddb00b17d404589a63d9de81d794ffb, type: 3}
+    speakerId: companion_serin
+  - id: main16_canyon_taeon_01
+    clip: {fileID: 8300000, guid: 6b9acdc68cb9456faf7dd54bcdd4dbae, type: 3}
+    speakerId: companion_taeon
+  - id: main16_canyon_paul_01
+    clip: {fileID: 8300000, guid: 53ec7f3611174d55bcf8464dea828d73, type: 3}
+    speakerId: companion_paul
+  - id: main16_canyon_miel_01
+    clip: {fileID: 8300000, guid: 2b1e02c695e543bcb48aaa8565b622db, type: 3}
+    speakerId: companion_miel
+  - id: main16_report_taeon_01
+    clip: {fileID: 8300000, guid: 1a1976f805164200a9abdf8e0a097d95, type: 3}
+    speakerId: companion_taeon
+  - id: main16_report_leon_01
+    clip: {fileID: 8300000, guid: fbbe2eb6dd8144eca816dd50fedb4a92, type: 3}
+    speakerId: arbel-leon
+  - id: main16_report_paul_01
+    clip: {fileID: 8300000, guid: 1330c9a31d554747b55e742f55dcd206, type: 3}
+    speakerId: companion_paul
