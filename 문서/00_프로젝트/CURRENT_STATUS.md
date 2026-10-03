@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Mobility Player Sprite 수정판 교체 (2026-10-03)
+
+- 제공 ZIP의512×512 RGBA 캐릭터 시트10개(Male5/Female5·5Job×2)를 기존 Mobility PNG 경로에 원본 바이트 그대로 반영했다. 참고 Preview.png는 제외, ZIP·원본 미술 변환/복원/재생성 없음. 문서 선행 `8cb64bb`, 마지막 관련 기능 commit `3179685`. [계약](../11_UI/Mobility_Player_Sprite_Fixed_적용_계약.md)·[10종 QA](../11_UI/Mobility_Player_Sprite_Fixed_QA.md).
+- 기존 Appearance ID10개·Catalog/자동 Gender+Path+Job Mapping·Save 구조와160 Sprite GUID/fileID·meta/Import 설정 유지. Duplicate0/Missing0. 다른40종의 PNG/meta Hash·Catalog Entry/Sprite/Clip/QA·Inventory 동일, Hearing 재판정 및 Voice/BGM/Main16 변경 없음.
+- 160Frame 관찰: Empty0·시트별 Duplicate0·본체4방향/휠체어 디자인 확인. 10종 모두 인접 머리/바퀴/무기 조각 또는 Up 머리 상단 절단이 남아 **Mobility Ready0/Blocked_ART10, 전체 Ready21/Blocked29 유지**. 원본 미술에서 각 Cell128px 안에 완전한 캐릭터를 배치하고 잔여 조각을 제거하는 것이 다음 권장 작업이다.
+- 격리 PlayUnfocused 감사86 PASS/0 FAIL: 남녀10조합 실제 Path/Job Preview/Mapping/fallback 표시, Male Fighter·Female Sharpshooter 생성/World/Save→Bootstrap Continue/Battle Scene 전달 통과. Blocked의 기본 성별 임시 fallback 검증이며 수정판 Ready Art 재생은 아니다. 사람의 걷기 품질·키보드/게임패드·Foreground는 미검증이다.
+- Compile Error0·최종 Console Error0/Warning0(컴파일 직후 기존 deprecated 경고2). 보호880파일 중 의도한12개만 변경. clean Bootstrap Edit Mode·격리 Save/Settings/Play 옵션/백그라운드 설정 복원, 포커스 전환 없음. 관련 diff 검사 통과, 기존 사용자 변경 보존, GitHub Push 없음.
+
 ## Hearing Player Sprite 수정판 변환·교체 (2026-10-03)
 
 - 사용자 승인으로 원본 ZIP1254×1254 PNG10개를 보존하고 별도512×512 최근접 변환본을 기존 Hearing10종 경로에 반영했다. 원본 미술 재생성·복원·재배치·Alpha 보정 없음. 문서 선행 `f412331`, 교체·감사 `961e3a7`. [계약](../11_UI/Hearing_Player_Sprite_Fixed_적용_계약.md)·[QA/10종 문제 프레임](../11_UI/Hearing_Player_Sprite_Fixed_QA.md).

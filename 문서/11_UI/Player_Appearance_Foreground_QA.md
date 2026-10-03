@@ -1,9 +1,9 @@
 # Player Appearance Foreground 최종 판정
 
-Hearing10종은 사용자 승인 1254→512 최근접 변환본으로 교체 후 백그라운드 프레임 관찰로 재판정했다. Foreground 재검수는 하지 않았다. 다른40종은 기존 판정을 유지한다. [수정판 QA](Hearing_Player_Sprite_Fixed_QA.md).
-직전 승인된 실제 Game View 판정을 재사용한다. 총50 / PASS21 / Blocked29 / 외형 시트 미판정0. 원본 PNG50개 SHA256 일치, 수정 없음. Frame 번호는 0-based이다. 전체800 Sprite와 Stable ID는 유지한다.
+Mobility10종은 제공512×512 원본으로 교체 후 백그라운드 프레임 관찰로 재판정했다. Hearing10종의 이전 수정판 판정과 나머지30종의 기존 Foreground 판정은 유지한다. 이번 Foreground 재검수 없음. [Mobility QA](Mobility_Player_Sprite_Fixed_QA.md)·[Hearing QA](Hearing_Player_Sprite_Fixed_QA.md).
+총50 / PASS21 / Blocked29 / 외형 시트 미판정0. 현재 PNG Hash는 각 적용 Inventory를 따른다. Frame 번호는 0-based이다. 전체800 Sprite와 Stable ID는 유지한다.
 
-Mobility10: 교체1 / Alpha2 / 방향2 / Art5, 모두 보류. Vision Alpha 경고10: 실제 화면 PASS5 / Art 보류5. 새 보류14: Hearing10·Intellectual Fighter/Mage4.
+Mobility 수정판10: 모두 BLOCKED_ART(분리 조각·머리 상단 절단). Vision 기존 PASS5/Art 보류5, Hearing10·Intellectual Fighter/Mage4 보류 유지.
 
 증거: `Unity/Client/Temp/ForegroundReviewQA/Detail_*.png`, 기존 group Game View, `preview_00..34.png`, `world.txt`와 World_*.png. 상세 증거는 로컬 Temp에 남아 있으며 이 표는 당시 직접 관찰 기록이다.
 
@@ -39,16 +39,16 @@ Mobility10: 교체1 / Alpha2 / 방향2 / Art5, 모두 보류. Vision Alpha 경�
 |appearance.external.v1.intellectual.mage.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png|Male|BLOCKED_ART|8-15|Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림.|
 |appearance.external.v1.intellectual.marksman.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Female.png|Female|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
 |appearance.external.v1.intellectual.marksman.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Male.png|Male|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
-|appearance.external.v1.mobility.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png|Female|BLOCKED_CHARACTER_SWAP|9|Right frame9가 검은 머리 본체와 다른 흰 머리 캐릭터로 바뀜.|
-|appearance.external.v1.mobility.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png|Male|BLOCKED_ALPHA|4-11|머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.|
-|appearance.external.v1.mobility.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png|Female|BLOCKED_DIRECTION|4-11|Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.|
-|appearance.external.v1.mobility.guardian.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png|Male|BLOCKED_ALPHA|4-11|머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.|
-|appearance.external.v1.mobility.healer.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png|Female|BLOCKED_ART|0,4,8,12 및 인접 프레임|몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.|
-|appearance.external.v1.mobility.healer.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png|Male|BLOCKED_ART|0,4,8,12 및 인접 프레임|몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.|
-|appearance.external.v1.mobility.mage.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png|Female|BLOCKED_ART|0,4,8,12 및 인접 프레임|몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.|
-|appearance.external.v1.mobility.mage.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png|Male|BLOCKED_ART|0,4,8,12 및 인접 프레임|몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.|
-|appearance.external.v1.mobility.marksman.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|Female|BLOCKED_ART|0,4,8,12|녹색 장치/지팡이 조각이 본체에서 분리되고 방향 혼합이 보임.|
-|appearance.external.v1.mobility.marksman.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|Male|BLOCKED_DIRECTION|4-11|Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.|
+|appearance.external.v1.mobility.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png|Female|BLOCKED_ART|4-15|Left/Right 발 아래 다른 행의 머리 조각, Right 및 Up 머리 상단 수평 절단. 일부 검 끝 조각이 셀 옆에 분리됨.|
+|appearance.external.v1.mobility.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png|Male|BLOCKED_ART|4-15|Left/Right 발 아래 머리·무기 조각과 옆 셀의 검/망토 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png|Female|BLOCKED_ART|4-15|Left 머리 위 분리된 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.guardian.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png|Male|BLOCKED_ART|8-15|Right 발 아래 다음 행 머리 조각, Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.healer.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png|Female|BLOCKED_ART|4-15|Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.healer.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png|Male|BLOCKED_ART|4-15|Left 머리 위 바퀴 조각, Right 발 아래 머리·장비 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.mage.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png|Female|BLOCKED_ART|4-15|Left/Right 발 아래 다른 행의 머리 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.mage.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png|Male|BLOCKED_ART|4-15|Left 머리 위 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.marksman.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|Female|BLOCKED_ART|4-15|Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단.|
+|appearance.external.v1.mobility.marksman.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|Male|BLOCKED_ART|0-15|Down 발 아래 잔여 조각, Left/Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.|
 |appearance.external.v1.vision.fighter.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|Female|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
 |appearance.external.v1.vision.fighter.male|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|Male|BLOCKED_ART|4-11|Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.|
 |appearance.external.v1.vision.guardian.female|Unity/Client/Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|Female|PASS|0-15|Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.|
