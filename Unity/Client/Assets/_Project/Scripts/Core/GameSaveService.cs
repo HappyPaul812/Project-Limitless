@@ -194,8 +194,7 @@ namespace ProjectLimitless.Core
             Enum.TryParse(data.PlayerVisualId, true, out PlayerVisualType visual);
             GameSessionData.Reset();
             GameSessionData.ConfigurePlayer(visual, data.PlayerName);
-            // 외형 오류만으로 정상 슬롯을 거부하지 않습니다. Runtime Resolve가 안전 fallback을 결정합니다.
-            GameSessionData.SelectAppearance(data.AppearanceId);
+            // 이전 수동 ID는 호환 데이터입니다. 아래 정본 길·직업으로 올바른 ID를 다시 계산합니다.
             GameSessionData.SelectPlayerPath(data.PathId);
             GameSessionData.SelectJob(data.JobId);
             GameSessionData.ConfigureProgress(data.Level, data.CurrentExperience);
@@ -293,8 +292,9 @@ namespace ProjectLimitless.Core
             if (data.Version != CurrentVersion) { error = $"지원하지 않는 저장 버전입니다. 파일 {data.Version}, 현재 {CurrentVersion}"; return false; }
             if (string.IsNullOrWhiteSpace(data.PlayerName)) { error = "캐릭터 이름이 없습니다."; return false; }
             if (!Enum.TryParse(data.PlayerVisualId, true, out PlayerVisualType visual) || !Enum.IsDefined(typeof(PlayerVisualType), visual)) { error = $"알 수 없는 Player Visual ID입니다: {data.PlayerVisualId}"; return false; }
-            if (!Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Any(item => item.Id == data.PathId)) { error = $"알 수 없는 Path ID입니다: {data.PathId}"; return false; }
-            if (!Resources.LoadAll<JobDefinition>("JobDefinitions").Any(item => item.JobId == data.JobId)) { error = $"알 수 없는 Job ID입니다: {data.JobId}"; return false; }
+            // 매우 오래된 Save의 미선택 값은 성별 기본 Sprite로 복원하되, 잘못된 비어 있지 않은 ID는 거부합니다.
+            if (!string.IsNullOrEmpty(data.PathId) && !Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Any(item => item.Id == data.PathId)) { error = $"알 수 없는 Path ID입니다: {data.PathId}"; return false; }
+            if (!string.IsNullOrEmpty(data.JobId) && !Resources.LoadAll<JobDefinition>("JobDefinitions").Any(item => item.JobId == data.JobId)) { error = $"알 수 없는 Job ID입니다: {data.JobId}"; return false; }
             if (string.IsNullOrWhiteSpace(data.CurrentSceneId) || IsNonWorldSaveScene(data.CurrentSceneId) || !Application.CanStreamedLevelBeLoaded(data.CurrentSceneId)) { error = $"이어갈 수 없는 Scene ID입니다: {data.CurrentSceneId}"; return false; }
             if (data.Level < 1 || data.Level > CharacterGrowthCalculator.MaxLevel || data.CurrentExperience < 0)
             { error = $"레벨은 1~{CharacterGrowthCalculator.MaxLevel} 범위이고 경험치는 0 이상이어야 합니다."; return false; }
