@@ -1,5 +1,15 @@
 # Project-Limitless 현재 개발 상태
 
+## Appearance Foreground·Main16 Voice 중단 작업 이어서 완료 (2026-10-03)
+
+- 직전 완료된 Main16 WAV28개·Mapping28개와 외형50종 실제 화면 판정부터 재개했다. ZIP 재Import·Sprite 재Slice·기존 Voice Import·Quest 재구현·TTS 생성은 반복하지 않았다. 이번 continuation의 남은 범위 Foreground 승인을 별도로 받았다.
+- Appearance 총50 / Ready21(남10·여11) / Blocked29 / 시트 육안 미판정0. Mobility10 전부 보류, Vision Alpha 경고10은 PASS5·보류5. Hearing10·Intellectual Fighter/Mage4를 추가 보류했다. [파일·Frame·사유](../11_UI/Player_Appearance_Foreground_QA.md). 원본 PNG50·Catalog800 Sprite GUID/fileID 동일, 준비 Clip168개. 기존 준비 Clip을 재사용하고 보류 정책만 반영했다.
+- 최종 정책의 성별·5테마·이전/다음·Preview·선택·확정·Navigation·World·Save/Continue 실제 감사803 PASS/0 FAIL. 직전 Hearing 외형+Vision 실제 Path 독립·대표 World32상태를 재사용했다. 대표 Vision 여성의 실제 Battle Left Idle도 확인했다. 800×600 단계 표시 겹침을 최소 수정하고 같은 해상도 화면·경계로 재검증했다.
+- Main16 Manifest28 / Source Audio33(segment28·합본5) / Import28 / Mapping28 / 기존201+28=Story229. Player 무음9·관찰7, Unmapped/Text/Speaker mismatch/Missing/Duplicate 모두0. Hearing·Default 실제 Scene/NPC/Story Battle/귀환·완료와 격리 Save/Continue428 PASS/0 FAIL. 연속 Next·화자 fallback·전투 정리·Voice100/40/0·Mute·retry 출력 통과. 기존201 Catalog prefix와 WAV 원본28개 동일. [적용·검증 상세](Main16_Voice_Foreground_QA.md).
+- 컴파일 오류0, 최종 Console Error0/Warning0. 컴파일 시 기존 ExternalAssetImportEditor deprecated 경고2건은 별도 확인했다. clean Bootstrap Edit Mode, 임시 해상도·Play 옵션·격리 Save/Settings 복원。 기존 보호 대상211파일 해시 동일, 기존 작업 트리를 보존하고 직접 변경만 커밋했다.
+- 사용자 직접 확인: 실제 청취0/28로 발음·감정·호흡·속도·Segment boundary·Text Audio 일치·음량 취향은 미검증이며 재생성 필요 수는 미정이다. OS Tab 전달 후 실제 이동을 확인하지 못해 키보드·게임패드 물리 입력은 미검증으로 남긴다. 다음 권장 작업은 보류29개 원본 그림 수정과 청취 품질 검수다.
+- 마지막 관련 기능 commit: Main16 `b957aa7`, Appearance/UI `3953e49`. GitHub Push 없음. 아래 기록은 당시 상태를 보존한다.
+
 ## Player Appearance 선택·Save/Continue (2026-10-03)
 
 - CharacterCreation에 성별·전체/5테마 필터, 이전/다음 외형 목록 탐색, 큰 Preview, 체크/이름/번호 선택 표시와 기존 Navigation을 연결했다. Catalog50종 중 **35 ready / 15 보류**(남17/여18 선택 가능)이며 기존 기본 외형도 유지한다. Vision 경계 경고10종157셀 중5종은 낮은 Alpha/장치 윤곽 접촉으로 합격,5종은 인접 행 조각으로 보류했다. Mobility10종은 분리된 본체·다른 Character·방향 오류 의심으로 보류하고 원본은 수정하지 않았다. [선택 계약](../11_UI/Player_Appearance_선택_Save.md)·[전수 QA](../11_UI/Player_Appearance_선택_QA.md).
