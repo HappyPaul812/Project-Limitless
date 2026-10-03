@@ -14,6 +14,8 @@ namespace ProjectLimitless.Core
         public int Version = GameSaveService.CurrentVersion;
         public string PlayerName = string.Empty;
         public string PlayerVisualId = string.Empty;
+        // 기존 Version1 JSON에는 없습니다. 빈 값·알 수 없는 ID는 기존 성별/Path 외형으로 복원합니다.
+        public string AppearanceId = string.Empty;
         public string PathId = string.Empty;
         public string JobId = string.Empty;
         public int Level = 1;
@@ -137,6 +139,7 @@ namespace ProjectLimitless.Core
             {
                 PlayerName = GameSessionData.PlayerName,
                 PlayerVisualId = GameSessionData.SelectedPlayerVisual.ToString(),
+                AppearanceId = GameSessionData.SelectedAppearanceId,
                 PathId = GameSessionData.SelectedPlayerPathId,
                 JobId = GameSessionData.SelectedJobId,
                 Level = GameSessionData.Level,
@@ -191,6 +194,8 @@ namespace ProjectLimitless.Core
             Enum.TryParse(data.PlayerVisualId, true, out PlayerVisualType visual);
             GameSessionData.Reset();
             GameSessionData.ConfigurePlayer(visual, data.PlayerName);
+            // 외형 오류만으로 정상 슬롯을 거부하지 않습니다. Runtime Resolve가 안전 fallback을 결정합니다.
+            GameSessionData.SelectAppearance(data.AppearanceId);
             GameSessionData.SelectPlayerPath(data.PathId);
             GameSessionData.SelectJob(data.JobId);
             GameSessionData.ConfigureProgress(data.Level, data.CurrentExperience);
