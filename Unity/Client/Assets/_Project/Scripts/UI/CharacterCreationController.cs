@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 namespace ProjectLimitless.UI
 {
     /// <summary>
-    /// CharacterCreation Scene에서 성별·독립 외형·이름을 정한 뒤 다음 PathSelection 단계로 이동합니다.
+    /// CharacterCreation Scene에서 성별·이름을 정한 뒤 다음 PathSelection 단계로 이동합니다.
     /// 선택값은 GameSessionData에 기록되어 여러 캐릭터 생성 Scene 사이에서 유지됩니다.
     /// 실제 Player Prefab을 복제하지 않고 각 외형의 Down Idle Sprite 한 장만 미리보기로 사용합니다.
     /// </summary>
@@ -48,17 +48,9 @@ namespace ProjectLimitless.UI
         private Outline startButtonOutline;
         private PlayerVisualType selectedVisual = PlayerVisualType.Male;
         private bool isStarting;
-        // 필터는 화면의 초안입니다. 이름 검증 후 다음 단계로 갈 때만 Session에 확정합니다.
-        private PlayerAppearanceCatalog appearanceCatalog;
-        private readonly System.Collections.Generic.List<Button> themeButtons = new System.Collections.Generic.List<Button>();
         private readonly System.Collections.Generic.List<Selectable> navigationControls = new System.Collections.Generic.List<Selectable>();
-        private System.Collections.Generic.List<PlayerAppearanceCatalog.Entry> filteredAppearances;
-        private string selectedAppearanceId = string.Empty;
-        private string selectedTheme = string.Empty;
         private Image appearancePreview;
         private Text appearanceLabel;
-        private Button previousAppearanceButton, nextAppearanceButton;
-        private readonly string[] themes = { "", "Vision", "Hearing", "Intellectual", "Mobility", "EmotionalScar" };
 
         /// <summary>Editor 생성 도구가 미리보기 Sprite와 입장할 월드 Scene을 연결합니다.</summary>
         public void Configure(Sprite maleSprite, Sprite femaleSprite, string targetNextSceneName)
@@ -75,7 +67,6 @@ namespace ProjectLimitless.UI
             CreateInterface();
             // 이전 단계에서 돌아온 경우 세션의 Female/Male과 이름을 그대로 UI에 복원합니다.
             selectedVisual = GameSessionData.SelectedPlayerVisual;
-            selectedAppearanceId = GameSessionData.SelectedAppearanceId;
             nameInputField.text = GameSessionData.PlayerName;
             SelectVisual(selectedVisual);
             EventSystem.current.SetSelectedGameObject(maleButton.gameObject);
@@ -113,7 +104,7 @@ namespace ProjectLimitless.UI
             }
         }
 
-        /// <summary>성별 필터 초안을 바꾸고 글자와 테두리로 현재 상태를 알립니다. 저장값은 아직 바꾸지 않습니다.</summary>
+        /// <summary>성별 초안을 바꾸고 글자와 테두리로 현재 상태를 알립니다. 저장값은 아직 바꾸지 않습니다.</summary>
         private void SelectVisual(PlayerVisualType visualType)
         {
             selectedVisual = visualType;
@@ -124,10 +115,10 @@ namespace ProjectLimitless.UI
             selectionLabel.text = $"현재 선택: {(isMale ? "남성" : "여성")}";
             SetChoiceAppearance(maleBackground, maleOutline, isMale);
             SetChoiceAppearance(femaleBackground, femaleOutline, !isMale);
-            RefreshAppearances();
+            RefreshAppearancePreview();
         }
 
-        /// <summary>선택한 외형과 이름을 확정한 뒤 다음 Path Selection Scene을 한 번만 불러옵니다.</summary>
+        /// <summary>선택한 성별과 이름을 확정한 뒤 다음 Path Selection Scene을 한 번만 불러옵니다.</summary>
         private void StartGame()
         {
             if (isStarting)
@@ -147,7 +138,6 @@ namespace ProjectLimitless.UI
             nameInputField.text = normalizedName;
             nameErrorLabel.text = string.Empty;
             GameSessionData.ConfigurePlayer(selectedVisual, normalizedName);
-            GameSessionData.SelectAppearance(selectedAppearanceId);
             startButton.interactable = false;
             SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
         }
@@ -251,10 +241,10 @@ namespace ProjectLimitless.UI
             femaleButton = CreateChoiceButton(canvasObject.transform, "FemaleButton", "여성", femalePreviewSprite, font, new Vector2(0.65f, 0.615f), out femaleLabel, out femaleBackground, out femaleOutline);
             maleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Male));
             femaleButton.onClick.AddListener(() => SelectVisual(PlayerVisualType.Female));
-            // 기존 성별 카드의 역할을 필터로 유지하면서 큰 외형 Preview를 중앙에 별도로 둡니다.
+            // 실제 선택 대상인 성별 버튼과 자동 결과 미리보기를 분리합니다.
             CompactGenderCard(maleButton, maleLabel, new Vector2(.39f, .735f));
             CompactGenderCard(femaleButton, femaleLabel, new Vector2(.61f, .735f));
-            CreateAppearanceSelector(canvasObject.transform, font);
+            CreateCharacterPreview(canvasObject.transform, font);
 
             selectionLabel = CreateText(canvasObject.transform, "SelectionLabel", "현재 선택: 남성", font, 21, new Vector2(0.5f, 0.405f), new Vector2(500f, 34f));
             selectionLabel.color = new Color(0.76f, 0.84f, 0.94f, 1f);
@@ -310,8 +300,6 @@ namespace ProjectLimitless.UI
         {
             navigationControls.Clear();
             navigationControls.Add(maleButton); navigationControls.Add(femaleButton);
-            navigationControls.AddRange(themeButtons);
-            navigationControls.Add(previousAppearanceButton); navigationControls.Add(nextAppearanceButton);
             navigationControls.Add(nameInputField); navigationControls.Add(startButton);
             for (int i = 0; i < navigationControls.Count; i++)
             {
@@ -331,70 +319,27 @@ namespace ProjectLimitless.UI
             label.fontSize = 18;
         }
 
-        /// <summary>많은 외형을 작게 늘어놓지 않고 필터와 전후 버튼으로 하나씩 크게 보여줍니다.</summary>
-        private void CreateAppearanceSelector(Transform parent, Font font)
+        /// <summary>성별·길·직업 선택 결과만 보여 줍니다. 외형을 직접 고르는 버튼은 없습니다.</summary>
+        private void CreateCharacterPreview(Transform parent, Font font)
         {
-            appearanceCatalog = PlayerAppearanceCatalog.Load();
-            for (int i = 0; i < themes.Length; i++)
-            {
-                string theme = themes[i];
-                var button = CreateTextButton(parent, "Theme" + i, PlayerAppearanceCatalog.ThemeName(theme), font,
-                    new Vector2(.235f + i * .106f, .665f), new Vector2(128, 38), out var outline);
-                var themeLabel = button.GetComponentInChildren<Text>();
-                themeLabel.fontSize = 15;
-                SetRect(themeLabel.rectTransform, Vector2.one * .5f, new Vector2(124, 30));
-                button.onClick.AddListener(() => { selectedTheme = theme; RefreshAppearances(); });
-                AddFocusFeedback(button.gameObject, outline, () => { outline.effectColor = accentColor; outline.effectDistance = new Vector2(2, -2); });
-                themeButtons.Add(button);
-            }
-            Image frame = CreateImage(parent, "AppearancePreviewFrame", normalButtonColor);
+            Image frame = CreateImage(parent, "CharacterPreviewFrame", normalButtonColor);
             SetRect(frame.rectTransform, new Vector2(.5f, .515f), new Vector2(200, 178));
-            appearancePreview = CreateImage(frame.transform, "AppearancePreview", Color.white);
+            appearancePreview = CreateImage(frame.transform, "CharacterPreview", Color.white);
             appearancePreview.preserveAspect = true;
             SetRect(appearancePreview.rectTransform, Vector2.one * .5f, new Vector2(168, 168));
-            previousAppearanceButton = CreateTextButton(parent, "PreviousAppearance", "이전 외형", font,
-                new Vector2(.3f, .515f), new Vector2(150, 52), out var previousOutline);
-            nextAppearanceButton = CreateTextButton(parent, "NextAppearance", "다음 외형", font,
-                new Vector2(.7f, .515f), new Vector2(150, 52), out var nextOutline);
-            previousAppearanceButton.GetComponentInChildren<Text>().fontSize = 21;
-            nextAppearanceButton.GetComponentInChildren<Text>().fontSize = 21;
-            previousAppearanceButton.onClick.AddListener(() => CycleAppearance(-1));
-            nextAppearanceButton.onClick.AddListener(() => CycleAppearance(1));
-            AddFocusFeedback(previousAppearanceButton.gameObject, previousOutline, () => previousOutline.effectDistance = new Vector2(2, -2));
-            AddFocusFeedback(nextAppearanceButton.gameObject, nextOutline, () => nextOutline.effectDistance = new Vector2(2, -2));
-            appearanceLabel = CreateText(parent, "AppearanceLabel", "", font, 18, new Vector2(.5f, .365f), new Vector2(800, 24));
-            var help = CreateText(parent, "AppearanceThemeHelp", "외형 테마와 길·직업 선택은 독립입니다", font, 16, new Vector2(.5f, .625f), new Vector2(780, 24));
-            help.color = new Color(.76f, .84f, .94f, 1);
-        }
-
-        /// <summary>성별/테마가 바뀌어 초안이 목록 밖으로 나가면 첫 준비된 외형 또는 기존 외형으로 복구합니다.</summary>
-        private void RefreshAppearances()
-        {
-            filteredAppearances = appearanceCatalog != null ? appearanceCatalog.Filter(selectedVisual, selectedTheme)
-                : new System.Collections.Generic.List<PlayerAppearanceCatalog.Entry>();
-            if (!string.IsNullOrEmpty(selectedAppearanceId) && !filteredAppearances.Exists(e => e.appearanceId == selectedAppearanceId))
-                selectedAppearanceId = filteredAppearances.Count > 0 ? filteredAppearances[0].appearanceId : string.Empty;
-            RefreshAppearancePreview();
-        }
-
-        private void CycleAppearance(int offset)
-        {
-            int current = filteredAppearances.FindIndex(e => e.appearanceId == selectedAppearanceId) + 1;
-            int next = (current + offset + filteredAppearances.Count + 1) % (filteredAppearances.Count + 1);
-            selectedAppearanceId = next == 0 ? string.Empty : filteredAppearances[next - 1].appearanceId;
-            RefreshAppearancePreview();
+            appearanceLabel = CreateText(parent, "CharacterPreviewLabel", "캐릭터 미리보기", font, 18,
+                new Vector2(.5f, .365f), new Vector2(780, 40));
         }
 
         private void RefreshAppearancePreview()
         {
-            var entry = filteredAppearances.Find(e => e.appearanceId == selectedAppearanceId);
-            appearancePreview.sprite = entry != null ? entry.frames[0] : selectedVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
-            int index = entry == null ? 0 : filteredAppearances.IndexOf(entry) + 1;
-            appearanceLabel.text = $"✓ 선택됨 · {PlayerAppearanceCatalog.DisplayName(entry)} · {index + 1}/{filteredAppearances.Count + 1}";
-            if (selectionLabel != null) selectionLabel.text = $"필터: {PlayerAppearanceCatalog.ThemeName(selectedTheme)} · 신규 외형 {filteredAppearances.Count}종 + 기존 기본 외형";
-            for (int i = 0; i < themes.Length; i++)
-                themeButtons[i].GetComponentInChildren<Text>().text = (themes[i] == selectedTheme ? "✓ " : "") + PlayerAppearanceCatalog.ThemeName(themes[i]);
-            // 준비된 항목이 없는 테마에서도 Navigation이 끊기지 않도록 기본 외형을 순환합니다.
+            var entry = PlayerAppearanceCatalog.ForCombination(selectedVisual,
+                GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedJobId);
+            appearancePreview.sprite = entry != null && entry.RuntimeReady ? entry.frames[0]
+                : selectedVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
+            appearanceLabel.text = entry != null && entry.RuntimeReady
+                ? "캐릭터 미리보기 · " + PlayerAppearanceCatalog.DisplayName(entry)
+                : "캐릭터 미리보기 · 임시 fallback (기본 성별 Sprite)";
         }
 
         /// <summary>키보드 Focus를 선택 상태와 별도로 밝은 금색 테두리로 보여 줍니다.</summary>

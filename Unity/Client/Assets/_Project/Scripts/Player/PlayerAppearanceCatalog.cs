@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ProjectLimitless.Player
 {
-    /// <summary>외부 제작 50종의 원본과 고정 ID를 보관합니다. 제작 테마는 길·직업 선택을 제한하지 않습니다.</summary>
+    /// <summary>외부 제작 50종의 원본과 고정 ID를 보관합니다. 성별·길·직업 조합으로 대응 정의를 조회합니다.</summary>
     [CreateAssetMenu(menuName = "Project Limitless/Player/Appearance Catalog")]
     public sealed class PlayerAppearanceCatalog : ScriptableObject
     {
@@ -15,8 +15,14 @@ namespace ProjectLimitless.Player
             public int width, height;
             public bool hasAlpha;
             public int expectedFrameCount;
-            // 검수 미완료 외형은 선택 목록에 넣지 않습니다. 원본의 Alpha·방향·Pivot 문제를 숨기지 않습니다.
+            // 직렬화 호환 필드입니다. 수동 선택 권한이 아니라 미술 검수 통과 여부를 뜻합니다.
             public bool readyForSelection;
+            public bool RuntimeReady => IsUsable;
+            public string GenderStableId => gender;
+            public string PathStableId => PathIdForTheme(theme);
+            public string JobStableId => jobTheme == "Marksman" ? "sharpshooter" : jobTheme?.ToLowerInvariant();
+            public string ValidationStatus => readyForSelection ? "PASS" :
+                (string.IsNullOrEmpty(reviewReason) ? "BLOCKED_UNREVIEWED" : reviewReason.Split(':')[0]);
             public string reviewReason;
             public Texture2D sheet;
             public Sprite[] frames;
@@ -32,20 +38,42 @@ namespace ProjectLimitless.Player
         public IReadOnlyList<Entry> Entries => entries;
         public static PlayerAppearanceCatalog Load() => Resources.Load<PlayerAppearanceCatalog>("PlayerAppearances/External50");
 
-        /// <summary>불명·미검수·참조 손상은 null로 돌려 기존 성별/길 외형을 보호합니다.</summary>
+        /// <summary>입력 메타데이터의 명명 차이만 대응합니다. 그림이나 배열 순서로 추론하지 않습니다.</summary>
+        public static string PathIdForTheme(string theme)
+        {
+            switch (theme)
+            {
+                case "Vision": return "path.vision";
+                case "Hearing": return "path.hearing";
+                case "Intellectual": return "path.intellectual";
+                case "Mobility": return "path.mobility";
+                case "EmotionalScar": return "path.emotional-scar";
+                default: return string.Empty;
+            }
+        }
+
+        /// <summary>Blocked도 정확한 정의를 반환합니다. 누락·중복 조합은 다른 Sprite로 채우지 않습니다.</summary>
+        public Entry FindCombination(string genderId, string pathId, string jobId)
+        {
+            if (string.IsNullOrEmpty(genderId) || string.IsNullOrEmpty(pathId) || string.IsNullOrEmpty(jobId)) return null;
+            Entry found = null;
+            foreach (Entry entry in entries)
+                if (entry.GenderStableId == genderId && entry.PathStableId == pathId && entry.JobStableId == jobId)
+                {
+                    if (found != null) return null;
+                    found = entry;
+                }
+            return found;
+        }
+
+        public static Entry ForCombination(PlayerVisualType gender, string pathId, string jobId) =>
+            Load()?.FindCombination(gender.ToString(), pathId, jobId);
+
+        /// <summary>불명·미검수·참조 손상은 null로 돌려 기본 성별 Sprite의 임시 fallback을 사용합니다.</summary>
         public static Entry Resolve(string id)
         {
             Entry entry = Load()?.Find(id);
             return entry != null && entry.IsUsable ? entry : null;
-        }
-
-        public List<Entry> Filter(PlayerVisualType gender, string theme)
-        {
-            var result = new List<Entry>();
-            foreach (Entry entry in entries)
-                if (entry.IsUsable && entry.gender == gender.ToString() &&
-                    (string.IsNullOrEmpty(theme) || entry.theme == theme)) result.Add(entry);
-            return result;
         }
 
         public static string ThemeName(string theme)
@@ -73,7 +101,7 @@ namespace ProjectLimitless.Player
                 case "Mage": job = "마도사"; break;
                 case "Marksman": job = "사수"; break;
             }
-            return ThemeName(entry.theme) + " · " + job + " 테마";
+            return ThemeName(entry.theme) + " · " + job;
         }
 
         /// <summary>원본 Controller의 이름 끝 상태를 찾아 Clip만 교체합니다. 불완전하면 적용하지 않습니다.</summary>
@@ -107,7 +135,7 @@ namespace ProjectLimitless.Player
             return null;
         }
 #if UNITY_EDITOR
-        // 편입 도구가 원본 Texture 참조를 채우며, 선택 Build가 검수 정책과 Clip을 연결합니다.
+        // 편입 도구가 원본 Texture 참조를 채우며, 검수 Build가 미술 정책과 Clip을 연결합니다.
         public void SetImportedEntries(Entry[] importedEntries) => entries = importedEntries;
 #endif
     }

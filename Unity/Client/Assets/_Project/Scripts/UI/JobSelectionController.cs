@@ -32,6 +32,8 @@ namespace ProjectLimitless.UI
         private readonly Color focusColor = new Color(1f, .86f, .48f, 1f);
         private readonly Color mutedColor = new Color(.32f, .4f, .52f, 1f);
         private HashSet<string> recommendedJobIds = new HashSet<string>();
+        private UnityEngine.UI.Image characterPreview;
+        private UnityEngine.UI.Text previewStatus;
         private string selectedJobId = string.Empty;
         private Button previousButton;
         private Button nextButton;
@@ -87,6 +89,13 @@ namespace ProjectLimitless.UI
 
         private void RefreshSelection()
         {
+            // 직업 버튼을 고를 때 Preview도 현재 성별·길·직업 결과로 바로 갱신합니다.
+            if (characterPreview != null)
+            {
+                Sprite fallback = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
+                PathVisualPreview.Apply(characterPreview, null, null, fallback, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
+                previewStatus.text = PathVisualPreview.GetDisplayName(GameSessionData.SelectedPlayerPathId);
+            }
             for (int i = 0; i < jobDefinitions.Length; i++)
             {
                 JobDefinition job = jobDefinitions[i]; bool selected = job.JobId == selectedJobId; bool recommended = recommendedJobIds.Contains(job.JobId);
@@ -141,15 +150,17 @@ namespace ProjectLimitless.UI
         private void CreateSummary(Transform parent, Font font)
         {
             Image panel = Image(parent, "CharacterSummary", new Color(.055f, .08f, .13f, .97f)); SetRect(panel.rectTransform, new Vector2(.13f, .48f), new Vector2(190, 390)); AddOutline(panel.gameObject, mutedColor, 2);
-            Text heading = Text(panel.transform, "Heading", "캐릭터", font, 20, new Vector2(.5f, .92f), new Vector2(160, 30)); heading.color = accentColor;
+            Text heading = Text(panel.transform, "Heading", "캐릭터 미리보기", font, 16, new Vector2(.5f, .92f), new Vector2(160, 30)); heading.color = accentColor;
             Image preview = Image(panel.transform, "Preview", Color.white); preview.sprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite; preview.preserveAspect = true; SetRect(preview.rectTransform, new Vector2(.5f, .67f), new Vector2(145, 155));
+            characterPreview = preview;
+            previewStatus = Text(panel.transform, "PreviewStatus", PathVisualPreview.GetDisplayName(GameSessionData.SelectedPlayerPathId), font, 12, new Vector2(.5f, .415f), new Vector2(180, 36));
             Image pathVisual = Image(panel.transform, "PathVisualPreview", Color.clear); SetRect(pathVisual.rectTransform, new Vector2(.5f, .67f), new Vector2(145, 155));
-            Image pathSymbol = Image(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.78f, .45f), new Vector2(38, 38));
+            Image pathSymbol = Image(panel.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.78f, .87f), new Vector2(38, 38));
             PathVisualPreview.Apply(preview, pathVisual, pathSymbol, preview.sprite, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
             string name = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "이름 미설정" : GameSessionData.PlayerName;
             string visual = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? "여성" : "남성";
             string path = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").FirstOrDefault(item => item.Id == GameSessionData.SelectedPlayerPathId)?.DisplayName ?? "길 미선택";
-            Text summary = Text(panel.transform, "Summary", $"{name}\n{visual}\n\n선택한 길\n{path}", font, 18, new Vector2(.5f, .24f), new Vector2(170, 150)); summary.fontStyle = FontStyle.Bold;
+            Text summary = Text(panel.transform, "Summary", $"{name}\n{visual}\n\n선택한 길\n{path}", font, 18, new Vector2(.5f, .20f), new Vector2(170, 130)); summary.fontStyle = FontStyle.Bold;
         }
 
         private void CreateCards(Transform parent, Font font)

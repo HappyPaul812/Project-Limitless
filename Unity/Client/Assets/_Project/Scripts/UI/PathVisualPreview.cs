@@ -9,14 +9,10 @@ namespace ProjectLimitless.UI
     {
         public static void Apply(Image character, Image overlay, Image symbol, Sprite baseSprite, string pathId, PlayerVisualType visualType)
         {
-            PlayerPathVisualDefinition definition = PathVisualCatalog.Find(pathId);
-            CharacterVariantSet variant = definition != null ? definition.GetVariant(visualType) : default;
+            // 미선택·Blocked는 기존 성별 기본 Sprite를 유지하고 정본 조합의 Ready Sprite만 적용합니다.
             if (character != null) character.sprite = baseSprite;
-            if (character != null && definition != null && (definition.VisualMode == PathVisualMode.CharacterVariant || definition.VisualMode == PathVisualMode.WheelchairVariant) && variant.DefaultDownSprite != null)
-                character.sprite = variant.DefaultDownSprite;
-            // Path/Job/최종 확인에서도 고른 외형을 유지하되 공식 PathSymbol은 실제 길을 따릅니다.
-            var appearance = PlayerAppearanceCatalog.Resolve(GameSessionData.SelectedAppearanceId);
-            if (character != null && appearance != null) character.sprite = appearance.frames[0];
+            var appearance = PlayerAppearanceCatalog.ForCombination(visualType, pathId, GameSessionData.SelectedJobId);
+            if (character != null && appearance != null && appearance.RuntimeReady) character.sprite = appearance.frames[0];
             if (overlay != null) { overlay.sprite = null; overlay.color = Color.clear; }
             // 캐릭터 Variant는 외형이고 PathSymbol은 길의 공식 문장입니다. 두 자료를 별도 Definition에서
             // 읽어 외형만으로 길을 판단하게 만들지 않으며, 항상 길 이름과 함께 표시할 수 있게 합니다.
@@ -25,6 +21,11 @@ namespace ProjectLimitless.UI
             if (character != null) character.color = Color.white;
         }
 
-        public static string GetDisplayName(string pathId) => PathVisualCatalog.Find(pathId)?.VisualDisplayName ?? "외형 Asset 준비 중";
+        public static string GetDisplayName(string pathId)
+        {
+            var entry = PlayerAppearanceCatalog.ForCombination(GameSessionData.SelectedPlayerVisual, pathId, GameSessionData.SelectedJobId);
+            return entry != null && entry.RuntimeReady ? "자동 Sprite · " + PlayerAppearanceCatalog.DisplayName(entry)
+                : "임시 fallback · 기본 성별 Sprite";
+        }
     }
 }

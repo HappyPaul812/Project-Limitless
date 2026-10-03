@@ -70,13 +70,15 @@ namespace ProjectLimitless.UI
         private void CreateCharacter(Transform parent, Font font)
         {
             Image panel = Panel(parent, "CharacterPanel", new Vector2(.13f, .48f), new Vector2(245, 420));
-            Heading(panel.transform, font, "캐릭터", .92f);
+            Heading(panel.transform, font, "캐릭터 미리보기", .92f);
             Image previewFrame = MakeImage(panel.transform, "PreviewFrame", new Color(.025f, .045f, .075f, 1)); SetRect(previewFrame.rectTransform, new Vector2(.5f, .66f), new Vector2(175, 190)); AddOutline(previewFrame.gameObject, new Color(.32f, .4f, .52f, 1), 2);
             Sprite selectedSprite = GameSessionData.SelectedPlayerVisual == PlayerVisualType.Female ? femalePreviewSprite : malePreviewSprite;
             Image characterImage = MakeImage(previewFrame.transform, "CharacterImage", Color.white); characterImage.sprite = selectedSprite; characterImage.preserveAspect = true; SetRect(characterImage.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
             Image pathVisual = MakeImage(previewFrame.transform, "PathVisualPreview", Color.clear); SetRect(pathVisual.rectTransform, Vector2.one * .5f, new Vector2(155, 170));
             Image pathSymbol = MakeImage(previewFrame.transform, "PathSymbol", Color.clear); SetRect(pathSymbol.rectTransform, new Vector2(.82f, .72f), new Vector2(34, 34));
             PathVisualPreview.Apply(characterImage, pathVisual, pathSymbol, selectedSprite, GameSessionData.SelectedPlayerPathId, GameSessionData.SelectedPlayerVisual);
+            MakeText(panel.transform, "PreviewStatus", PathVisualPreview.GetDisplayName(GameSessionData.SelectedPlayerPathId), font, 12,
+                new Vector2(.5f, .41f), new Vector2(210, 30));
             if (selectedSprite == null)
             {
                 // Sprite 참조가 끊겨도 불투명한 흰 사각형이 캐릭터처럼 보이지 않게 하고 원인을 Console에 남깁니다.
