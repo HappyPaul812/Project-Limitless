@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 7dcff3efde62a814bbd45a044888cf71
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8022876673648395388
+    second: Physical_Healer_Male_0
+  - first:
+      213: 6187324702726606667
+    second: Physical_Healer_Male_1
+  - first:
+      213: 3051255188136860217
+    second: Physical_Healer_Male_2
+  - first:
+      213: 3602187137905106570
+    second: Physical_Healer_Male_3
+  - first:
+      213: -5007662231534402503
+    second: Physical_Healer_Male_4
+  - first:
+      213: -1660656241192047632
+    second: Physical_Healer_Male_5
+  - first:
+      213: 4956600716957482002
+    second: Physical_Healer_Male_6
+  - first:
+      213: -2953796807609746576
+    second: Physical_Healer_Male_7
+  - first:
+      213: 7411243136284476990
+    second: Physical_Healer_Male_8
+  - first:
+      213: 4579594275015351789
+    second: Physical_Healer_Male_9
+  - first:
+      213: 8792269367438424819
+    second: Physical_Healer_Male_10
+  - first:
+      213: 7250333759957256061
+    second: Physical_Healer_Male_11
+  - first:
+      213: 9106404042872447770
+    second: Physical_Healer_Male_12
+  - first:
+      213: 3302461933158629040
+    second: Physical_Healer_Male_13
+  - first:
+      213: 2823950775960972380
+    second: Physical_Healer_Male_14
+  - first:
+      213: -6608381082943339683
+    second: Physical_Healer_Male_15
+  - first:
+      213: -5317221517711956301
+    second: Physical_Healer_Male_16
+  - first:
+      213: 5303947103071490987
+    second: Physical_Healer_Male_17
+  - first:
+      213: 6168303296402084224
+    second: Physical_Healer_Male_18
+  - first:
+      213: 8323120442110850951
+    second: Physical_Healer_Male_19
+  - first:
+      213: -2326951606780275801
+    second: Physical_Healer_Male_20
+  - first:
+      213: 3930069129033341557
+    second: Physical_Healer_Male_21
+  - first:
+      213: 1895705196179445988
+    second: Physical_Healer_Male_22
+  - first:
+      213: -6626970997859914596
+    second: Physical_Healer_Male_23
+  - first:
+      213: 5027494098372654865
+    second: Physical_Healer_Male_24
+  - first:
+      213: -8327030351438038179
+    second: Physical_Healer_Male_25
+  - first:
+      213: -394867271529879578
+    second: Physical_Healer_Male_26
+  - first:
+      213: 8194565760128679819
+    second: Physical_Healer_Male_27
+  - first:
+      213: -3366729744000771325
+    second: Physical_Healer_Male_28
+  - first:
+      213: -6401989413642710639
+    second: Physical_Healer_Male_29
+  - first:
+      213: 5319853395329672880
+    second: Physical_Healer_Male_30
+  - first:
+      213: 5347928645400764348
+    second: Physical_Healer_Male_31
+  - first:
+      213: 8636473243685099976
+    second: Physical_Healer_Male_32
+  - first:
+      213: -1737779212580563273
+    second: Physical_Healer_Male_33
+  - first:
+      213: -4837387263040496651
+    second: Physical_Healer_Male_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8389dc70cd71a624fa5ee398dcec4bd5
+      internalID: 1270319250
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85815a7f5e7e1e14f83234df6fac11ae
+      internalID: 1189489800
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358e5a7edfd5eb3469670c33924b54d4
+      internalID: 1995720557
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ea71743668b8d45809333818ed6fc0
+      internalID: -208414251
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea553a0f366b9a44082d10aaaaf3a144
+      internalID: 1880582743
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50d5977c048d5b428015b583dac3786
+      internalID: -2038144749
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d18e40d0fe42b4297fc28da47d8f2a
+      internalID: -1584810785
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d14e7c6ba01ed214ca4906838fd7cf74
+      internalID: -1917467065
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b228ccebc560a448895c74fef4a030
+      internalID: -932062374
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c488948e6ddf94418c42a63a4ad2323
+      internalID: 785851133
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9deb18d98a4f3c2449e29ddf102d73e6
+      internalID: -2043863240
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be792276b94c78c4abc8fa806de3eaae
+      internalID: 1890799504
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7667e987f6525844abe24b4e106664fa
+      internalID: 7380839
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71e307b53d1c7442b73c6b87b7360e8
+      internalID: 416623675
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bee416964b660844a4da5b1eaac8069
+      internalID: 1348768438
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Healer_Male_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca4819c452e15147a70e3faf7ec8e0f
+      internalID: 570196302
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: e13240da93772d540bfabe8af912dabc
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Physical_Healer_Male_Frame_00: 1270319250
+      Physical_Healer_Male_Frame_01: 1189489800
+      Physical_Healer_Male_Frame_02: 1995720557
+      Physical_Healer_Male_Frame_03: -208414251
+      Physical_Healer_Male_Frame_04: 1880582743
+      Physical_Healer_Male_Frame_05: -2038144749
+      Physical_Healer_Male_Frame_06: -1584810785
+      Physical_Healer_Male_Frame_07: -1917467065
+      Physical_Healer_Male_Frame_08: -932062374
+      Physical_Healer_Male_Frame_09: 785851133
+      Physical_Healer_Male_Frame_10: -2043863240
+      Physical_Healer_Male_Frame_11: 1890799504
+      Physical_Healer_Male_Frame_12: 7380839
+      Physical_Healer_Male_Frame_13: 416623675
+      Physical_Healer_Male_Frame_14: 1348768438
+      Physical_Healer_Male_Frame_15: 570196302
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

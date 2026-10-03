@@ -1,0 +1,5971 @@
+{
+  "entries": [
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Fighter_Female.png",
+      "sha256": "9bb18922da7e110067c570c1a89784e59f683c4091f49c43616691e7a50f4003",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.fighter.female",
+      "theme": "Hearing",
+      "jobTheme": "Fighter",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          9,
+          8,
+          118,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          18,
+          15,
+          120,
+          123
+        ],
+        [
+          12,
+          19,
+          119,
+          124
+        ],
+        [
+          6,
+          15,
+          122,
+          124
+        ],
+        [
+          6,
+          15,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Fighter_Male.png",
+      "sha256": "aa6c84d979b3cd01a3118489797b11df3446903e552b438991a84b718c908173",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.fighter.male",
+      "theme": "Hearing",
+      "jobTheme": "Fighter",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          8,
+          8,
+          120,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          16,
+          8,
+          122,
+          118
+        ],
+        [
+          6,
+          8,
+          122,
+          118
+        ],
+        [
+          6,
+          8,
+          122,
+          119
+        ],
+        [
+          6,
+          14,
+          121,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Guardian_Female.png",
+      "sha256": "fbb02e1d06505ceb1c95b43804262e8512ca40225a8cd4979ef6403d7b4de230",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.guardian.female",
+      "theme": "Hearing",
+      "jobTheme": "Guardian",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          8,
+          8,
+          120,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          8,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          8,
+          116,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          12,
+          17,
+          116,
+          120
+        ],
+        [
+          6,
+          11,
+          122,
+          117
+        ],
+        [
+          6,
+          19,
+          122,
+          124
+        ],
+        [
+          6,
+          20,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Guardian_Male.png",
+      "sha256": "20b0b5df8d563d8ba807660f833f11bd97fc7464de6a97d7d55c1f2f547bc125",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.guardian.male",
+      "theme": "Hearing",
+      "jobTheme": "Guardian",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          8,
+          9,
+          119,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          7,
+          14,
+          120,
+          124
+        ],
+        [
+          6,
+          14,
+          121,
+          124
+        ],
+        [
+          9,
+          9,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          8,
+          117,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          19,
+          116,
+          124
+        ],
+        [
+          6,
+          19,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          113
+        ],
+        [
+          7,
+          19,
+          121,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Healer_Female.png",
+      "sha256": "74f63757763c2598165e4563f97e06171904426b7a0a400461ba8aedcaac1404",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.healer.female",
+      "theme": "Hearing",
+      "jobTheme": "Healer",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          11,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          13,
+          122,
+          124
+        ],
+        [
+          12,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          118
+        ],
+        [
+          6,
+          11,
+          122,
+          122
+        ],
+        [
+          6,
+          8,
+          122,
+          120
+        ],
+        [
+          6,
+          16,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Healer_Male.png",
+      "sha256": "e409fb4b08a757cb8ace7a4d686b625044b1f26b49bd195eb6151b83509568ee",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.healer.male",
+      "theme": "Hearing",
+      "jobTheme": "Healer",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          13,
+          122,
+          124
+        ],
+        [
+          6,
+          15,
+          121,
+          124
+        ],
+        [
+          11,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          10,
+          8,
+          117,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          14,
+          117,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          116
+        ],
+        [
+          6,
+          8,
+          122,
+          118
+        ],
+        [
+          6,
+          8,
+          122,
+          118
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Mage_Female.png",
+      "sha256": "2c80a92b9dd63569a76efac811a64a4b982b401fbe088497d5ab3f848764614f",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.mage.female",
+      "theme": "Hearing",
+      "jobTheme": "Mage",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          118
+        ],
+        [
+          7,
+          14,
+          120,
+          124
+        ],
+        [
+          6,
+          14,
+          121,
+          124
+        ],
+        [
+          6,
+          14,
+          121,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Mage_Male.png",
+      "sha256": "006edbee9dcdc89754c008bbbd1b2d1096f68f2135318487ae069a6c0f25e212",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.mage.male",
+      "theme": "Hearing",
+      "jobTheme": "Mage",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          6,
+          15,
+          121,
+          124
+        ],
+        [
+          7,
+          15,
+          121,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          9,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          19,
+          118,
+          124
+        ],
+        [
+          7,
+          11,
+          120,
+          118
+        ],
+        [
+          6,
+          8,
+          122,
+          115
+        ],
+        [
+          6,
+          18,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Marksman_Female.png",
+      "sha256": "5803731f51f20d1df16748138a9f26edb4260fc781cede5f6563e69744ace3a9",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.marksman.female",
+      "theme": "Hearing",
+      "jobTheme": "Marksman",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          9,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          8,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          8,
+          8,
+          120,
+          124
+        ],
+        [
+          17,
+          8,
+          122,
+          117
+        ],
+        [
+          6,
+          8,
+          122,
+          118
+        ],
+        [
+          6,
+          8,
+          122,
+          117
+        ],
+        [
+          6,
+          16,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Hearing_Marksman_Male.png",
+      "sha256": "55e28a7aeea6a52fe742f45261cebb001a1b7315770247836afc1b97854fc452",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.marksman.male",
+      "theme": "Hearing",
+      "jobTheme": "Marksman",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          12,
+          12,
+          116,
+          124
+        ],
+        [
+          6,
+          12,
+          122,
+          124
+        ],
+        [
+          6,
+          12,
+          122,
+          124
+        ],
+        [
+          11,
+          12,
+          116,
+          124
+        ],
+        [
+          15,
+          8,
+          115,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          8,
+          117,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          13,
+          8,
+          115,
+          124
+        ],
+        [
+          13,
+          8,
+          114,
+          124
+        ],
+        [
+          12,
+          15,
+          115,
+          124
+        ],
+        [
+          9,
+          14,
+          119,
+          124
+        ],
+        [
+          18,
+          8,
+          119,
+          117
+        ],
+        [
+          9,
+          15,
+          119,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Fighter_Female.png",
+      "sha256": "0005d51ab210e4c0e67226766b329feb7be0a336f338aacc8447c7ce9a54f7c7",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.fighter.female",
+      "theme": "EmotionalScar",
+      "jobTheme": "Fighter",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Fighter_Male.png",
+      "sha256": "7dca8a75c7e4aaf2519261146412af87efe96bf61a15696d4ffc33977dd804e8",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.fighter.male",
+      "theme": "EmotionalScar",
+      "jobTheme": "Fighter",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Guardian_Female.png",
+      "sha256": "79fd51833078e3764bd8aa31529f2d5d4da482a59838a4d712ef264f1dcb30ff",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.guardian.female",
+      "theme": "EmotionalScar",
+      "jobTheme": "Guardian",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Guardian_Male.png",
+      "sha256": "e15be2b72b7582914afd8c1f3ab2090154b33ab2084b3f16f393a9ad20070c70",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.guardian.male",
+      "theme": "EmotionalScar",
+      "jobTheme": "Guardian",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          13,
+          121,
+          124
+        ],
+        [
+          7,
+          13,
+          121,
+          124
+        ],
+        [
+          8,
+          8,
+          120,
+          121
+        ],
+        [
+          6,
+          13,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Healer_Female.png",
+      "sha256": "2fabf24544055a67005e3fb1f5462735cfc83cb1349b106aa8ae5356ac8d9c10",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.healer.female",
+      "theme": "EmotionalScar",
+      "jobTheme": "Healer",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          10,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          118,
+          121
+        ],
+        [
+          6,
+          8,
+          122,
+          120
+        ],
+        [
+          6,
+          8,
+          122,
+          121
+        ],
+        [
+          6,
+          12,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Healer_Male.png",
+      "sha256": "f430003f27b1b5530580aab58230650ef60d6812926e7f22c52cbb4ad750ac24",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.healer.male",
+      "theme": "EmotionalScar",
+      "jobTheme": "Healer",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          10,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          120
+        ],
+        [
+          6,
+          8,
+          122,
+          122
+        ],
+        [
+          6,
+          8,
+          120,
+          121
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Mage_Female.png",
+      "sha256": "0cde67a22472bc4e1c4604f31693d5d2eb120c1b63a4841f1712553f510e4ae0",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.mage.female",
+      "theme": "EmotionalScar",
+      "jobTheme": "Mage",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          9,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Mage_Male.png",
+      "sha256": "5863c9ba2660a6b903babb9a69ce701332a1b02ee139636e860807bc2da47d3f",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.mage.male",
+      "theme": "EmotionalScar",
+      "jobTheme": "Mage",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          9,
+          8,
+          118,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          121
+        ],
+        [
+          6,
+          11,
+          118,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          121
+        ],
+        [
+          8,
+          13,
+          119,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Marksman_Female.png",
+      "sha256": "7ddbd0239c1aa111665d2be5bac825771cda4cea6cf98c6e81fc363a89695f6d",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.marksman.female",
+      "theme": "EmotionalScar",
+      "jobTheme": "Marksman",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          11,
+          8,
+          122,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          123
+        ],
+        [
+          12,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          16,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          120,
+          124
+        ],
+        [
+          7,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          8,
+          120,
+          124
+        ],
+        [
+          11,
+          8,
+          121,
+          121
+        ],
+        [
+          7,
+          14,
+          119,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          8,
+          8,
+          122,
+          121
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Heartscar_Marksman_Male.png",
+      "sha256": "913a7c393a6b40356d7be0362c1483a310329ea39f3a52cde2f7958b7dee5d36",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.emotionalscar.marksman.male",
+      "theme": "EmotionalScar",
+      "jobTheme": "Marksman",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          15,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          9,
+          118,
+          124
+        ],
+        [
+          9,
+          8,
+          118,
+          124
+        ],
+        [
+          9,
+          11,
+          118,
+          124
+        ],
+        [
+          15,
+          8,
+          122,
+          121
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          123
+        ],
+        [
+          6,
+          9,
+          122,
+          122
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          8,
+          8,
+          116,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          15,
+          8,
+          116,
+          121
+        ],
+        [
+          9,
+          13,
+          120,
+          124
+        ],
+        [
+          6,
+          13,
+          116,
+          124
+        ],
+        [
+          12,
+          13,
+          115,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Fighter_Female.png",
+      "sha256": "655b859017bfcd28207a900c2427e9774569efd0a21f4cec23f2189e763eed5d",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.fighter.female",
+      "theme": "Intellectual",
+      "jobTheme": "Fighter",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          12,
+          8,
+          116,
+          124
+        ],
+        [
+          13,
+          8,
+          114,
+          124
+        ],
+        [
+          13,
+          8,
+          114,
+          124
+        ],
+        [
+          14,
+          8,
+          113,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          7,
+          9,
+          120,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          13,
+          120,
+          124
+        ],
+        [
+          6,
+          15,
+          121,
+          124
+        ],
+        [
+          9,
+          14,
+          119,
+          124
+        ],
+        [
+          10,
+          13,
+          118,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Fighter_Male.png",
+      "sha256": "b0943fb75e600f1616c0ed6abe3e7757ce52238ad037637ef560b22b41fc7170",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.fighter.male",
+      "theme": "Intellectual",
+      "jobTheme": "Fighter",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          9,
+          7,
+          118,
+          124
+        ],
+        [
+          10,
+          9,
+          117,
+          124
+        ],
+        [
+          12,
+          8,
+          115,
+          124
+        ],
+        [
+          14,
+          9,
+          113,
+          124
+        ],
+        [
+          7,
+          14,
+          120,
+          124
+        ],
+        [
+          7,
+          13,
+          120,
+          124
+        ],
+        [
+          6,
+          14,
+          122,
+          124
+        ],
+        [
+          7,
+          15,
+          120,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          9,
+          8,
+          118,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          11,
+          9,
+          116,
+          124
+        ],
+        [
+          9,
+          12,
+          118,
+          124
+        ],
+        [
+          9,
+          12,
+          119,
+          124
+        ],
+        [
+          8,
+          12,
+          119,
+          124
+        ],
+        [
+          10,
+          13,
+          117,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Guardian_Female.png",
+      "sha256": "5994e7d2312b6bb1d52ee6bf1d25866f219945856b28aab0635ac6f76ad2909e",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.guardian.female",
+      "theme": "Intellectual",
+      "jobTheme": "Guardian",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          15,
+          8,
+          113,
+          124
+        ],
+        [
+          14,
+          8,
+          118,
+          124
+        ],
+        [
+          14,
+          8,
+          117,
+          124
+        ],
+        [
+          13,
+          9,
+          115,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          13,
+          8,
+          115,
+          124
+        ],
+        [
+          13,
+          8,
+          117,
+          124
+        ],
+        [
+          18,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          120,
+          124
+        ],
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          9,
+          8,
+          115,
+          124
+        ],
+        [
+          12,
+          8,
+          115,
+          124
+        ],
+        [
+          12,
+          8,
+          119,
+          121
+        ],
+        [
+          6,
+          8,
+          118,
+          121
+        ],
+        [
+          17,
+          8,
+          117,
+          121
+        ],
+        [
+          10,
+          13,
+          119,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Guardian_Male.png",
+      "sha256": "831c33fc51bb6364b0d76a0bd2c15f7f125c85cddb61b5e26ffedb2868e74115",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.guardian.male",
+      "theme": "Intellectual",
+      "jobTheme": "Guardian",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          10,
+          117,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          11,
+          11,
+          118,
+          124
+        ],
+        [
+          14,
+          8,
+          116,
+          123
+        ],
+        [
+          22,
+          15,
+          122,
+          124
+        ],
+        [
+          6,
+          16,
+          122,
+          124
+        ],
+        [
+          6,
+          12,
+          122,
+          124
+        ],
+        [
+          6,
+          11,
+          122,
+          124
+        ],
+        [
+          6,
+          9,
+          122,
+          124
+        ],
+        [
+          6,
+          12,
+          122,
+          124
+        ],
+        [
+          6,
+          10,
+          122,
+          124
+        ],
+        [
+          12,
+          9,
+          116,
+          124
+        ],
+        [
+          16,
+          8,
+          110,
+          122
+        ],
+        [
+          12,
+          9,
+          117,
+          120
+        ],
+        [
+          16,
+          10,
+          111,
+          120
+        ],
+        [
+          14,
+          10,
+          113,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Healer_Female.png",
+      "sha256": "ef224dc3f255ade20224f757ecec1bb65043602ca6afe8f118d4c43758db1fe0",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.healer.female",
+      "theme": "Intellectual",
+      "jobTheme": "Healer",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          121,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          8,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          8,
+          118,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Healer_Male.png",
+      "sha256": "56cd1ce7364bd92f3cd322a591a8b103b4ebcc76874b14adb2fb17e12aebfed5",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.healer.male",
+      "theme": "Intellectual",
+      "jobTheme": "Healer",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          15,
+          13,
+          121,
+          124
+        ],
+        [
+          10,
+          13,
+          116,
+          124
+        ],
+        [
+          10,
+          11,
+          118,
+          124
+        ],
+        [
+          13,
+          8,
+          115,
+          124
+        ],
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          7,
+          8,
+          119,
+          124
+        ],
+        [
+          13,
+          8,
+          119,
+          124
+        ],
+        [
+          10,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          120,
+          124
+        ],
+        [
+          11,
+          8,
+          120,
+          124
+        ],
+        [
+          14,
+          8,
+          114,
+          121
+        ],
+        [
+          6,
+          8,
+          116,
+          121
+        ],
+        [
+          6,
+          8,
+          117,
+          121
+        ],
+        [
+          9,
+          8,
+          116,
+          121
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Mage_Female.png",
+      "sha256": "ddceeffdb191c3acf0655fdd11ef4fb630f1792cff3e3c3243c03d8678d79ada",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.mage.female",
+      "theme": "Intellectual",
+      "jobTheme": "Mage",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          10,
+          10,
+          117,
+          124
+        ],
+        [
+          9,
+          10,
+          118,
+          124
+        ],
+        [
+          10,
+          11,
+          117,
+          124
+        ],
+        [
+          9,
+          11,
+          119,
+          124
+        ],
+        [
+          9,
+          9,
+          119,
+          124
+        ],
+        [
+          9,
+          10,
+          119,
+          124
+        ],
+        [
+          8,
+          9,
+          119,
+          124
+        ],
+        [
+          8,
+          10,
+          120,
+          124
+        ],
+        [
+          8,
+          6,
+          120,
+          124
+        ],
+        [
+          8,
+          6,
+          120,
+          124
+        ],
+        [
+          8,
+          6,
+          119,
+          124
+        ],
+        [
+          7,
+          6,
+          121,
+          124
+        ],
+        [
+          9,
+          12,
+          118,
+          124
+        ],
+        [
+          10,
+          12,
+          118,
+          124
+        ],
+        [
+          8,
+          12,
+          119,
+          124
+        ],
+        [
+          9,
+          12,
+          119,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Mage_Male.png",
+      "sha256": "0354e2a5a3537dfcff5cd3d7b94ccba08d4bd491a25447bb43347cd05d54dba9",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.mage.male",
+      "theme": "Intellectual",
+      "jobTheme": "Mage",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          11,
+          11,
+          116,
+          124
+        ],
+        [
+          9,
+          10,
+          118,
+          124
+        ],
+        [
+          10,
+          10,
+          118,
+          124
+        ],
+        [
+          11,
+          10,
+          117,
+          124
+        ],
+        [
+          10,
+          8,
+          117,
+          124
+        ],
+        [
+          8,
+          8,
+          120,
+          124
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          10,
+          8,
+          117,
+          124
+        ],
+        [
+          8,
+          8,
+          119,
+          124
+        ],
+        [
+          9,
+          8,
+          119,
+          124
+        ],
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          11,
+          13,
+          116,
+          124
+        ],
+        [
+          10,
+          16,
+          117,
+          124
+        ],
+        [
+          11,
+          13,
+          116,
+          124
+        ],
+        [
+          11,
+          13,
+          117,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Marksman_Female.png",
+      "sha256": "5b1f994789e21d3c6c643a802c29830d94b36eb5b22f7f2ff87b707ca0978ff3",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.marksman.female",
+      "theme": "Intellectual",
+      "jobTheme": "Marksman",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          20,
+          8,
+          121,
+          124
+        ],
+        [
+          18,
+          8,
+          118,
+          124
+        ],
+        [
+          16,
+          8,
+          118,
+          124
+        ],
+        [
+          15,
+          8,
+          118,
+          124
+        ],
+        [
+          11,
+          8,
+          121,
+          121
+        ],
+        [
+          9,
+          8,
+          121,
+          124
+        ],
+        [
+          7,
+          8,
+          120,
+          121
+        ],
+        [
+          9,
+          8,
+          118,
+          121
+        ],
+        [
+          6,
+          8,
+          122,
+          124
+        ],
+        [
+          7,
+          8,
+          118,
+          124
+        ],
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          9,
+          8,
+          118,
+          124
+        ],
+        [
+          16,
+          13,
+          111,
+          124
+        ],
+        [
+          7,
+          13,
+          107,
+          124
+        ],
+        [
+          13,
+          8,
+          109,
+          121
+        ],
+        [
+          16,
+          13,
+          109,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Intellectual_Marksman_Male.png",
+      "sha256": "374b169778943907607ed24d99178de6b64e3b04e064d96e059ef41f5d8f390e",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.marksman.male",
+      "theme": "Intellectual",
+      "jobTheme": "Marksman",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          6,
+          8,
+          121,
+          124
+        ],
+        [
+          10,
+          8,
+          120,
+          124
+        ],
+        [
+          20,
+          8,
+          121,
+          124
+        ],
+        [
+          10,
+          8,
+          118,
+          124
+        ],
+        [
+          6,
+          8,
+          118,
+          124
+        ],
+        [
+          15,
+          8,
+          117,
+          124
+        ],
+        [
+          17,
+          8,
+          119,
+          124
+        ],
+        [
+          9,
+          8,
+          120,
+          124
+        ],
+        [
+          10,
+          8,
+          119,
+          124
+        ],
+        [
+          7,
+          8,
+          111,
+          124
+        ],
+        [
+          8,
+          8,
+          118,
+          124
+        ],
+        [
+          13,
+          8,
+          116,
+          124
+        ],
+        [
+          23,
+          8,
+          117,
+          118
+        ],
+        [
+          7,
+          11,
+          114,
+          121
+        ],
+        [
+          18,
+          8,
+          110,
+          120
+        ],
+        [
+          22,
+          14,
+          114,
+          124
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Fighter_Female.png",
+      "sha256": "ea5d9b5714bd9387b0cc03e50dea2272861584bc008217ee6fbb15b30f3406d8",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.mobility.fighter.female",
+      "theme": "Mobility",
+      "jobTheme": "Fighter",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          31,
+          18,
+          96,
+          122
+        ],
+        [
+          31,
+          24,
+          97,
+          122
+        ],
+        [
+          31,
+          24,
+          96,
+          122
+        ],
+        [
+          35,
+          24,
+          92,
+          122
+        ],
+        [
+          31,
+          29,
+          97,
+          122
+        ],
+        [
+          31,
+          31,
+          97,
+          122
+        ],
+        [
+          31,
+          31,
+          96,
+          122
+        ],
+        [
+          35,
+          31,
+          92,
+          122
+        ],
+        [
+          31,
+          10,
+          97,
+          122
+        ],
+        [
+          31,
+          10,
+          97,
+          122
+        ],
+        [
+          31,
+          10,
+          96,
+          122
+        ],
+        [
+          35,
+          10,
+          92,
+          122
+        ],
+        [
+          35,
+          27,
+          93,
+          122
+        ],
+        [
+          31,
+          28,
+          97,
+          122
+        ],
+        [
+          32,
+          28,
+          96,
+          122
+        ],
+        [
+          35,
+          27,
+          93,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Fighter_Male.png",
+      "sha256": "393d8e7febd2a62853fa16ca20a7e274b70c1b5d793cf1e05bcb9d22bc3d5918",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.mobility.fighter.male",
+      "theme": "Mobility",
+      "jobTheme": "Fighter",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          29,
+          21,
+          99,
+          122
+        ],
+        [
+          27,
+          24,
+          100,
+          122
+        ],
+        [
+          32,
+          24,
+          96,
+          122
+        ],
+        [
+          34,
+          24,
+          94,
+          122
+        ],
+        [
+          27,
+          24,
+          100,
+          122
+        ],
+        [
+          27,
+          26,
+          100,
+          122
+        ],
+        [
+          30,
+          26,
+          98,
+          122
+        ],
+        [
+          32,
+          26,
+          96,
+          122
+        ],
+        [
+          27,
+          10,
+          100,
+          122
+        ],
+        [
+          27,
+          10,
+          100,
+          122
+        ],
+        [
+          28,
+          10,
+          100,
+          122
+        ],
+        [
+          30,
+          10,
+          97,
+          122
+        ],
+        [
+          32,
+          28,
+          96,
+          122
+        ],
+        [
+          27,
+          28,
+          100,
+          122
+        ],
+        [
+          30,
+          28,
+          97,
+          122
+        ],
+        [
+          34,
+          28,
+          94,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Guardian_Female.png",
+      "sha256": "1d6cc84d56763371adf6b111a3b470e5a09247bbbb872c24beef1cea7144c094",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.mobility.guardian.female",
+      "theme": "Mobility",
+      "jobTheme": "Guardian",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          33,
+          17,
+          94,
+          122
+        ],
+        [
+          31,
+          21,
+          97,
+          122
+        ],
+        [
+          31,
+          21,
+          97,
+          122
+        ],
+        [
+          32,
+          21,
+          96,
+          122
+        ],
+        [
+          33,
+          23,
+          95,
+          122
+        ],
+        [
+          31,
+          28,
+          97,
+          122
+        ],
+        [
+          31,
+          27,
+          97,
+          122
+        ],
+        [
+          33,
+          27,
+          95,
+          122
+        ],
+        [
+          34,
+          10,
+          93,
+          122
+        ],
+        [
+          31,
+          10,
+          97,
+          122
+        ],
+        [
+          31,
+          10,
+          97,
+          122
+        ],
+        [
+          33,
+          10,
+          95,
+          122
+        ],
+        [
+          34,
+          23,
+          93,
+          122
+        ],
+        [
+          31,
+          27,
+          97,
+          122
+        ],
+        [
+          31,
+          28,
+          97,
+          122
+        ],
+        [
+          31,
+          28,
+          96,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Guardian_Male.png",
+      "sha256": "d213b8dae8d4e589c6cf1ef1e2085d524871d6e0f11704dc31f2ba9bd7fcf065",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.mobility.guardian.male",
+      "theme": "Mobility",
+      "jobTheme": "Guardian",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          28,
+          17,
+          100,
+          122
+        ],
+        [
+          25,
+          17,
+          102,
+          122
+        ],
+        [
+          25,
+          17,
+          102,
+          122
+        ],
+        [
+          31,
+          15,
+          96,
+          122
+        ],
+        [
+          30,
+          10,
+          97,
+          122
+        ],
+        [
+          25,
+          14,
+          102,
+          122
+        ],
+        [
+          28,
+          21,
+          100,
+          122
+        ],
+        [
+          28,
+          19,
+          99,
+          122
+        ],
+        [
+          28,
+          18,
+          100,
+          122
+        ],
+        [
+          26,
+          15,
+          101,
+          122
+        ],
+        [
+          27,
+          18,
+          100,
+          122
+        ],
+        [
+          29,
+          19,
+          98,
+          122
+        ],
+        [
+          28,
+          14,
+          100,
+          122
+        ],
+        [
+          25,
+          19,
+          102,
+          122
+        ],
+        [
+          26,
+          19,
+          102,
+          122
+        ],
+        [
+          28,
+          21,
+          100,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Healer_Female.png",
+      "sha256": "1a537d0bb0644bbaaf9b092cd9963445962f3119a144092c24ff3091bc0f0a32",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.mobility.healer.female",
+      "theme": "Mobility",
+      "jobTheme": "Healer",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          36,
+          24,
+          91,
+          122
+        ],
+        [
+          31,
+          26,
+          97,
+          122
+        ],
+        [
+          31,
+          26,
+          96,
+          122
+        ],
+        [
+          34,
+          25,
+          93,
+          122
+        ],
+        [
+          36,
+          28,
+          91,
+          122
+        ],
+        [
+          31,
+          31,
+          97,
+          122
+        ],
+        [
+          31,
+          29,
+          96,
+          122
+        ],
+        [
+          31,
+          31,
+          96,
+          122
+        ],
+        [
+          37,
+          10,
+          91,
+          122
+        ],
+        [
+          31,
+          28,
+          97,
+          122
+        ],
+        [
+          31,
+          28,
+          96,
+          122
+        ],
+        [
+          32,
+          29,
+          96,
+          122
+        ],
+        [
+          36,
+          26,
+          91,
+          122
+        ],
+        [
+          31,
+          27,
+          97,
+          122
+        ],
+        [
+          31,
+          27,
+          96,
+          122
+        ],
+        [
+          31,
+          26,
+          97,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Healer_Male.png",
+      "sha256": "d97d0cccf7043777774214b4308561cf342c79cd6eff06a654f6e638aae0abd4",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.mobility.healer.male",
+      "theme": "Mobility",
+      "jobTheme": "Healer",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          34,
+          21,
+          94,
+          122
+        ],
+        [
+          27,
+          23,
+          100,
+          122
+        ],
+        [
+          28,
+          23,
+          100,
+          122
+        ],
+        [
+          33,
+          23,
+          95,
+          122
+        ],
+        [
+          34,
+          20,
+          93,
+          122
+        ],
+        [
+          27,
+          25,
+          100,
+          122
+        ],
+        [
+          28,
+          26,
+          100,
+          122
+        ],
+        [
+          27,
+          25,
+          100,
+          122
+        ],
+        [
+          32,
+          10,
+          95,
+          122
+        ],
+        [
+          27,
+          24,
+          100,
+          122
+        ],
+        [
+          28,
+          24,
+          100,
+          122
+        ],
+        [
+          29,
+          25,
+          98,
+          122
+        ],
+        [
+          34,
+          24,
+          93,
+          122
+        ],
+        [
+          27,
+          25,
+          100,
+          122
+        ],
+        [
+          28,
+          25,
+          100,
+          122
+        ],
+        [
+          28,
+          24,
+          100,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Mage_Female.png",
+      "sha256": "9b6b4469a71de615e2943f29e9d1486963edc96e5ebf98709abd867801aee727",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.mobility.mage.female",
+      "theme": "Mobility",
+      "jobTheme": "Mage",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          33,
+          21,
+          94,
+          122
+        ],
+        [
+          31,
+          23,
+          96,
+          122
+        ],
+        [
+          31,
+          23,
+          97,
+          122
+        ],
+        [
+          45,
+          23,
+          83,
+          122
+        ],
+        [
+          33,
+          27,
+          94,
+          122
+        ],
+        [
+          31,
+          27,
+          96,
+          122
+        ],
+        [
+          31,
+          27,
+          97,
+          122
+        ],
+        [
+          44,
+          27,
+          83,
+          122
+        ],
+        [
+          36,
+          10,
+          91,
+          122
+        ],
+        [
+          31,
+          10,
+          96,
+          122
+        ],
+        [
+          31,
+          10,
+          97,
+          122
+        ],
+        [
+          45,
+          10,
+          83,
+          122
+        ],
+        [
+          33,
+          26,
+          94,
+          122
+        ],
+        [
+          31,
+          27,
+          96,
+          122
+        ],
+        [
+          31,
+          27,
+          97,
+          122
+        ],
+        [
+          41,
+          27,
+          86,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Mage_Male.png",
+      "sha256": "4c65d6b9430922c058313b05e7ef954ac770ff4679a49ce73c888d77583d4e4c",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.mobility.mage.male",
+      "theme": "Mobility",
+      "jobTheme": "Mage",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          31,
+          19,
+          96,
+          122
+        ],
+        [
+          28,
+          21,
+          100,
+          122
+        ],
+        [
+          27,
+          23,
+          100,
+          122
+        ],
+        [
+          43,
+          21,
+          85,
+          122
+        ],
+        [
+          31,
+          19,
+          96,
+          122
+        ],
+        [
+          28,
+          18,
+          100,
+          122
+        ],
+        [
+          27,
+          24,
+          100,
+          122
+        ],
+        [
+          41,
+          16,
+          86,
+          122
+        ],
+        [
+          32,
+          10,
+          95,
+          122
+        ],
+        [
+          28,
+          10,
+          100,
+          122
+        ],
+        [
+          27,
+          10,
+          100,
+          122
+        ],
+        [
+          40,
+          10,
+          88,
+          122
+        ],
+        [
+          31,
+          25,
+          96,
+          122
+        ],
+        [
+          28,
+          28,
+          100,
+          122
+        ],
+        [
+          27,
+          28,
+          100,
+          122
+        ],
+        [
+          39,
+          29,
+          88,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Marksman_Female.png",
+      "sha256": "0124ab66b7eb232661a783add08a34ea505c457c5dcf2d565997f4556234c700",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.mobility.marksman.female",
+      "theme": "Mobility",
+      "jobTheme": "Marksman",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          32,
+          10,
+          95,
+          122
+        ],
+        [
+          27,
+          11,
+          101,
+          122
+        ],
+        [
+          26,
+          11,
+          102,
+          122
+        ],
+        [
+          32,
+          11,
+          96,
+          122
+        ],
+        [
+          32,
+          19,
+          96,
+          122
+        ],
+        [
+          27,
+          20,
+          101,
+          122
+        ],
+        [
+          26,
+          19,
+          102,
+          122
+        ],
+        [
+          32,
+          20,
+          96,
+          122
+        ],
+        [
+          32,
+          17,
+          96,
+          122
+        ],
+        [
+          27,
+          17,
+          101,
+          122
+        ],
+        [
+          26,
+          17,
+          102,
+          122
+        ],
+        [
+          31,
+          17,
+          96,
+          122
+        ],
+        [
+          33,
+          13,
+          94,
+          122
+        ],
+        [
+          27,
+          14,
+          101,
+          122
+        ],
+        [
+          27,
+          13,
+          101,
+          122
+        ],
+        [
+          32,
+          13,
+          96,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Marksman_Male.png",
+      "sha256": "8638681e9e5255466f78e537eb2b3a02ce336d37c207ac9d569c2db341ab4e86",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.mobility.marksman.male",
+      "theme": "Mobility",
+      "jobTheme": "Marksman",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [],
+      "cellBboxes": [
+        [
+          32,
+          10,
+          96,
+          122
+        ],
+        [
+          22,
+          10,
+          105,
+          122
+        ],
+        [
+          28,
+          11,
+          99,
+          122
+        ],
+        [
+          31,
+          11,
+          96,
+          122
+        ],
+        [
+          29,
+          13,
+          99,
+          122
+        ],
+        [
+          22,
+          14,
+          105,
+          122
+        ],
+        [
+          24,
+          14,
+          103,
+          122
+        ],
+        [
+          30,
+          14,
+          98,
+          122
+        ],
+        [
+          27,
+          11,
+          101,
+          122
+        ],
+        [
+          22,
+          11,
+          105,
+          122
+        ],
+        [
+          22,
+          11,
+          106,
+          122
+        ],
+        [
+          26,
+          11,
+          102,
+          122
+        ],
+        [
+          30,
+          10,
+          97,
+          122
+        ],
+        [
+          22,
+          10,
+          105,
+          122
+        ],
+        [
+          26,
+          11,
+          102,
+          122
+        ],
+        [
+          29,
+          10,
+          99,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Fighter_Female.png",
+      "sha256": "e8a3e6a9cbde93ce82203995c860f18042a5c2001be39e8cca102f095784528b",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.vision.fighter.female",
+      "theme": "Vision",
+      "jobTheme": "Fighter",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cellBboxes": [
+        [
+          0,
+          6,
+          128,
+          128
+        ],
+        [
+          0,
+          6,
+          122,
+          128
+        ],
+        [
+          2,
+          6,
+          120,
+          128
+        ],
+        [
+          2,
+          6,
+          117,
+          128
+        ],
+        [
+          0,
+          1,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          126
+        ],
+        [
+          0,
+          0,
+          128,
+          127
+        ],
+        [
+          0,
+          0,
+          128,
+          127
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          126
+        ],
+        [
+          0,
+          1,
+          128,
+          127
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          13,
+          0,
+          127,
+          121
+        ],
+        [
+          14,
+          2,
+          122,
+          121
+        ],
+        [
+          6,
+          2,
+          127,
+          121
+        ],
+        [
+          13,
+          3,
+          122,
+          121
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Fighter_Male.png",
+      "sha256": "348b271fdbfbfcd6971411cfb311d499f1ed77b6bc660477123bb29d63638ed5",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.vision.fighter.male",
+      "theme": "Vision",
+      "jobTheme": "Fighter",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          12,
+          6,
+          128,
+          128
+        ],
+        [
+          0,
+          1,
+          128,
+          128
+        ],
+        [
+          0,
+          6,
+          128,
+          128
+        ],
+        [
+          0,
+          7,
+          121,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          18,
+          0,
+          126,
+          120
+        ],
+        [
+          0,
+          0,
+          128,
+          125
+        ],
+        [
+          0,
+          0,
+          127,
+          120
+        ],
+        [
+          0,
+          0,
+          128,
+          117
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Guardian_Female.png",
+      "sha256": "6ed5ae3b9d1b9434d823bc3738ed36c61b2e78c1c5879b0925327f6d4b8a47a4",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.vision.guardian.female",
+      "theme": "Vision",
+      "jobTheme": "Guardian",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          5,
+          0,
+          124,
+          128
+        ],
+        [
+          3,
+          0,
+          122,
+          128
+        ],
+        [
+          4,
+          0,
+          123,
+          127
+        ],
+        [
+          2,
+          0,
+          122,
+          128
+        ],
+        [
+          0,
+          3,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          3,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          3,
+          0,
+          125,
+          128
+        ],
+        [
+          2,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          126,
+          128
+        ],
+        [
+          3,
+          0,
+          128,
+          128
+        ],
+        [
+          11,
+          0,
+          127,
+          119
+        ],
+        [
+          2,
+          0,
+          128,
+          117
+        ],
+        [
+          4,
+          0,
+          128,
+          119
+        ],
+        [
+          0,
+          0,
+          128,
+          117
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Guardian_Male.png",
+      "sha256": "8dd13b5ababc0bfb2130cab61ea6ca1a06cca677dc9433b99702dc2ae318a033",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.vision.guardian.male",
+      "theme": "Vision",
+      "jobTheme": "Guardian",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          10,
+          6,
+          128,
+          128
+        ],
+        [
+          6,
+          6,
+          122,
+          128
+        ],
+        [
+          1,
+          7,
+          125,
+          128
+        ],
+        [
+          1,
+          7,
+          122,
+          128
+        ],
+        [
+          11,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          122,
+          128
+        ],
+        [
+          13,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          4,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          13,
+          0,
+          126,
+          117
+        ],
+        [
+          10,
+          0,
+          128,
+          115
+        ],
+        [
+          0,
+          0,
+          128,
+          117
+        ],
+        [
+          0,
+          0,
+          122,
+          113
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Healer_Female.png",
+      "sha256": "9c5969f725fb62d9725310808be41dedb976c6d709c0e7e3f7f98a2889739fa3",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.vision.healer.female",
+      "theme": "Vision",
+      "jobTheme": "Healer",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          13,
+          9,
+          126,
+          128
+        ],
+        [
+          3,
+          12,
+          126,
+          128
+        ],
+        [
+          6,
+          13,
+          119,
+          128
+        ],
+        [
+          3,
+          8,
+          116,
+          128
+        ],
+        [
+          12,
+          0,
+          127,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          5,
+          0,
+          127,
+          128
+        ],
+        [
+          10,
+          0,
+          123,
+          128
+        ],
+        [
+          10,
+          0,
+          127,
+          128
+        ],
+        [
+          0,
+          0,
+          127,
+          127
+        ],
+        [
+          4,
+          0,
+          125,
+          128
+        ],
+        [
+          3,
+          0,
+          116,
+          128
+        ],
+        [
+          15,
+          0,
+          126,
+          117
+        ],
+        [
+          0,
+          0,
+          128,
+          116
+        ],
+        [
+          4,
+          0,
+          128,
+          117
+        ],
+        [
+          0,
+          1,
+          121,
+          116
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Healer_Male.png",
+      "sha256": "8324f56ee6b52eee32e97b9cafabab3a3da3b89d946ce989491bb00d3d5384fb",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.vision.healer.male",
+      "theme": "Vision",
+      "jobTheme": "Healer",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          6,
+          5,
+          128,
+          128
+        ],
+        [
+          0,
+          1,
+          128,
+          128
+        ],
+        [
+          0,
+          6,
+          128,
+          127
+        ],
+        [
+          0,
+          7,
+          122,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          122,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          120
+        ],
+        [
+          0,
+          0,
+          128,
+          117
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          123,
+          120
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Mage_Female.png",
+      "sha256": "21229a30538ae2d0859e8b840075a1499c49bf6d833a07fd2e5d625c664ae737",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.vision.mage.female",
+      "theme": "Vision",
+      "jobTheme": "Mage",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          0,
+          9,
+          128,
+          127
+        ],
+        [
+          0,
+          12,
+          126,
+          127
+        ],
+        [
+          4,
+          12,
+          128,
+          127
+        ],
+        [
+          0,
+          12,
+          116,
+          128
+        ],
+        [
+          0,
+          1,
+          128,
+          126
+        ],
+        [
+          0,
+          3,
+          127,
+          128
+        ],
+        [
+          2,
+          3,
+          128,
+          123
+        ],
+        [
+          0,
+          0,
+          122,
+          126
+        ],
+        [
+          10,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          126,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          124,
+          128
+        ],
+        [
+          10,
+          0,
+          128,
+          116
+        ],
+        [
+          0,
+          0,
+          127,
+          117
+        ],
+        [
+          0,
+          0,
+          128,
+          116
+        ],
+        [
+          0,
+          0,
+          128,
+          117
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Mage_Male.png",
+      "sha256": "7fa0f84d145605052ce6a47fe63ccc7b13bc42da904b1bdda89e3343ef40ab08",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.vision.mage.male",
+      "theme": "Vision",
+      "jobTheme": "Mage",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          12,
+          6,
+          128,
+          127
+        ],
+        [
+          0,
+          8,
+          126,
+          128
+        ],
+        [
+          0,
+          6,
+          128,
+          128
+        ],
+        [
+          1,
+          8,
+          117,
+          128
+        ],
+        [
+          0,
+          2,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          1,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          122,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          126,
+          128
+        ],
+        [
+          4,
+          0,
+          127,
+          128
+        ],
+        [
+          3,
+          0,
+          128,
+          128
+        ],
+        [
+          11,
+          0,
+          128,
+          122
+        ],
+        [
+          0,
+          0,
+          125,
+          121
+        ],
+        [
+          4,
+          0,
+          128,
+          123
+        ],
+        [
+          0,
+          0,
+          122,
+          120
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Marksman_Female.png",
+      "sha256": "ffa98b0ba5a769c1e2b9e75f82703dc62940f9e778f33f082ec8ce1be1b02ffa",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.vision.marksman.female",
+      "theme": "Vision",
+      "jobTheme": "Marksman",
+      "gender": "Female",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          10,
+          5,
+          126,
+          128
+        ],
+        [
+          2,
+          5,
+          128,
+          128
+        ],
+        [
+          0,
+          6,
+          126,
+          128
+        ],
+        [
+          7,
+          6,
+          121,
+          128
+        ],
+        [
+          14,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          6,
+          0,
+          125,
+          128
+        ],
+        [
+          2,
+          0,
+          126,
+          128
+        ],
+        [
+          4,
+          0,
+          126,
+          128
+        ],
+        [
+          3,
+          0,
+          122,
+          128
+        ],
+        [
+          13,
+          0,
+          126,
+          122
+        ],
+        [
+          0,
+          0,
+          128,
+          122
+        ],
+        [
+          0,
+          0,
+          125,
+          125
+        ],
+        [
+          8,
+          0,
+          122,
+          122
+        ]
+      ]
+    },
+    {
+      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
+      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
+      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Visual_Marksman_Male.png",
+      "sha256": "93876be10c1f0604ba46b4a194befd6e2f7d9008cdbc5c1ef61c1b7942b33f01",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.vision.marksman.male",
+      "theme": "Vision",
+      "jobTheme": "Marksman",
+      "gender": "Male",
+      "width": 512,
+      "height": 512,
+      "hasAlpha": true,
+      "expectedFrameCount": 16,
+      "readyForSelection": false,
+      "reviewReason": "16 imported frames; direction rows and foot placement require visual review",
+      "edgeTouchCells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "cellBboxes": [
+        [
+          16,
+          0,
+          127,
+          128
+        ],
+        [
+          2,
+          5,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          127,
+          128
+        ],
+        [
+          3,
+          0,
+          117,
+          128
+        ],
+        [
+          17,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          120,
+          128
+        ],
+        [
+          0,
+          0,
+          121,
+          128
+        ],
+        [
+          9,
+          0,
+          127,
+          128
+        ],
+        [
+          1,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          128,
+          128
+        ],
+        [
+          0,
+          0,
+          121,
+          128
+        ],
+        [
+          16,
+          0,
+          128,
+          117
+        ],
+        [
+          0,
+          0,
+          128,
+          120
+        ],
+        [
+          0,
+          0,
+          127,
+          116
+        ],
+        [
+          9,
+          0,
+          121,
+          117
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: 08163b61749c3c6458776e88bc056766
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7171643222914485329
+    second: Physical_Marksman_Female_0
+  - first:
+      213: -7145907166885072607
+    second: Physical_Marksman_Female_1
+  - first:
+      213: -2911316561379221628
+    second: Physical_Marksman_Female_2
+  - first:
+      213: -2176602764094147997
+    second: Physical_Marksman_Female_3
+  - first:
+      213: -3849373979918350760
+    second: Physical_Marksman_Female_4
+  - first:
+      213: -8224937225394357999
+    second: Physical_Marksman_Female_5
+  - first:
+      213: 7676302563713808199
+    second: Physical_Marksman_Female_6
+  - first:
+      213: 166366165561485016
+    second: Physical_Marksman_Female_7
+  - first:
+      213: 4255321496091369281
+    second: Physical_Marksman_Female_8
+  - first:
+      213: -6170813637129150810
+    second: Physical_Marksman_Female_9
+  - first:
+      213: -8170531747191922613
+    second: Physical_Marksman_Female_10
+  - first:
+      213: 3560318606114553457
+    second: Physical_Marksman_Female_11
+  - first:
+      213: 4238122600995061052
+    second: Physical_Marksman_Female_12
+  - first:
+      213: -4118597145288019705
+    second: Physical_Marksman_Female_13
+  - first:
+      213: 8432122762556380202
+    second: Physical_Marksman_Female_14
+  - first:
+      213: -8990182182329409578
+    second: Physical_Marksman_Female_15
+  - first:
+      213: 171221933080459743
+    second: Physical_Marksman_Female_16
+  - first:
+      213: 1236572537446466399
+    second: Physical_Marksman_Female_17
+  - first:
+      213: -7593657933699468197
+    second: Physical_Marksman_Female_18
+  - first:
+      213: 4484193042737559746
+    second: Physical_Marksman_Female_19
+  - first:
+      213: 2800776521941221426
+    second: Physical_Marksman_Female_20
+  - first:
+      213: -8955514305985690794
+    second: Physical_Marksman_Female_21
+  - first:
+      213: 8251656571140885058
+    second: Physical_Marksman_Female_22
+  - first:
+      213: 5882632779493372673
+    second: Physical_Marksman_Female_23
+  - first:
+      213: 3172646650177150752
+    second: Physical_Marksman_Female_24
+  - first:
+      213: -141336395020950025
+    second: Physical_Marksman_Female_25
+  - first:
+      213: 2882148851143795469
+    second: Physical_Marksman_Female_26
+  - first:
+      213: 2224955095765229798
+    second: Physical_Marksman_Female_27
+  - first:
+      213: -6646529639375671212
+    second: Physical_Marksman_Female_28
+  - first:
+      213: -5699078542444462537
+    second: Physical_Marksman_Female_29
+  - first:
+      213: -3396167709470780691
+    second: Physical_Marksman_Female_30
+  - first:
+      213: -8255663376634061933
+    second: Physical_Marksman_Female_31
+  - first:
+      213: -3940861725260130367
+    second: Physical_Marksman_Female_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd96983ae5ba364381b06306d9119cb
+      internalID: -1441987193
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8deef24fcb8481f4eb1d9279f67e0eb8
+      internalID: 797571629
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a606295d30ffdcb4c8e44e487f8bfcef
+      internalID: 2025554714
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9ef0144b8380f49bf6f53dae990e0c
+      internalID: -37754660
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca1639d2008a0c54eb7ad419370bcfb6
+      internalID: 260725497
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e5741686fc17045b3fd09e6b1f4fca
+      internalID: -1623378089
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9645dc04014e4488ed7c41142aab64
+      internalID: -123594942
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665f4e7ccb164524fa57c38f6a90151f
+      internalID: -164506841
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c421d2235f068ac408ed71752305ffb5
+      internalID: 1342311587
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ab7695ffe7c044b9379a7eab33754b
+      internalID: -1994468234
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15acbba2babe20e49955faa9fc2ba126
+      internalID: 1238803636
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30449319223ab5b43b9612cfd09ff8ca
+      internalID: -537636281
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a6e2b9f5748114d81cf98ddf4759af
+      internalID: -519964463
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce78942bed242a4987135df9a29f574
+      internalID: 1179847056
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57c0c38fde434d4d91beae97cd66683
+      internalID: -1048551990
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Marksman_Female_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c64004b542f85d449c170a1d3626b27
+      internalID: 435181730
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 47faab2b8f8a623429a89f10572798c8
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Physical_Marksman_Female_Frame_00: -1441987193
+      Physical_Marksman_Female_Frame_01: 797571629
+      Physical_Marksman_Female_Frame_02: 2025554714
+      Physical_Marksman_Female_Frame_03: -37754660
+      Physical_Marksman_Female_Frame_04: 260725497
+      Physical_Marksman_Female_Frame_05: -1623378089
+      Physical_Marksman_Female_Frame_06: -123594942
+      Physical_Marksman_Female_Frame_07: -164506841
+      Physical_Marksman_Female_Frame_08: 1342311587
+      Physical_Marksman_Female_Frame_09: -1994468234
+      Physical_Marksman_Female_Frame_10: 1238803636
+      Physical_Marksman_Female_Frame_11: -537636281
+      Physical_Marksman_Female_Frame_12: -519964463
+      Physical_Marksman_Female_Frame_13: 1179847056
+      Physical_Marksman_Female_Frame_14: -1048551990
+      Physical_Marksman_Female_Frame_15: 435181730
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,616 @@
+fileFormatVersion: 2
+guid: 9fa041cfe14b33f4788408a3a0ce8bb4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7123220614867521568
+    second: Physical_Fighter_Male_0
+  - first:
+      213: -1483565968275861051
+    second: Physical_Fighter_Male_1
+  - first:
+      213: -6461721832442550636
+    second: Physical_Fighter_Male_2
+  - first:
+      213: 1390469123049194674
+    second: Physical_Fighter_Male_3
+  - first:
+      213: -4022393413117284734
+    second: Physical_Fighter_Male_4
+  - first:
+      213: -3738344701929485006
+    second: Physical_Fighter_Male_5
+  - first:
+      213: -2568466500096461913
+    second: Physical_Fighter_Male_6
+  - first:
+      213: 4872410013977241074
+    second: Physical_Fighter_Male_7
+  - first:
+      213: -4852759646786741304
+    second: Physical_Fighter_Male_8
+  - first:
+      213: -6701242948015345676
+    second: Physical_Fighter_Male_9
+  - first:
+      213: 7426082074165176930
+    second: Physical_Fighter_Male_10
+  - first:
+      213: 1316592147075924779
+    second: Physical_Fighter_Male_11
+  - first:
+      213: 1257152913399544125
+    second: Physical_Fighter_Male_12
+  - first:
+      213: 3428482341172669933
+    second: Physical_Fighter_Male_13
+  - first:
+      213: -6477665894908940225
+    second: Physical_Fighter_Male_14
+  - first:
+      213: 767114363012038863
+    second: Physical_Fighter_Male_15
+  - first:
+      213: -4519771926041335797
+    second: Physical_Fighter_Male_16
+  - first:
+      213: 5267913828172735888
+    second: Physical_Fighter_Male_17
+  - first:
+      213: 8581879262882998859
+    second: Physical_Fighter_Male_18
+  - first:
+      213: 1530555609271858390
+    second: Physical_Fighter_Male_19
+  - first:
+      213: -6227449108180183227
+    second: Physical_Fighter_Male_20
+  - first:
+      213: 3393224081429753099
+    second: Physical_Fighter_Male_21
+  - first:
+      213: -5774061109251386000
+    second: Physical_Fighter_Male_22
+  - first:
+      213: 1059494291090788102
+    second: Physical_Fighter_Male_23
+  - first:
+      213: -139557217413114135
+    second: Physical_Fighter_Male_24
+  - first:
+      213: 2100546345753717184
+    second: Physical_Fighter_Male_25
+  - first:
+      213: 3076113151825829918
+    second: Physical_Fighter_Male_26
+  - first:
+      213: 1836005322058503686
+    second: Physical_Fighter_Male_27
+  - first:
+      213: 6404284715877518304
+    second: Physical_Fighter_Male_28
+  - first:
+      213: -4048192004567700202
+    second: Physical_Fighter_Male_29
+  - first:
+      213: -7651269446003868801
+    second: Physical_Fighter_Male_30
+  - first:
+      213: 5657018326397109191
+    second: Physical_Fighter_Male_31
+  - first:
+      213: 312701922801920053
+    second: Physical_Fighter_Male_32
+  - first:
+      213: -8326703998924186420
+    second: Physical_Fighter_Male_33
+  - first:
+      213: 3986308103353106612
+    second: Physical_Fighter_Male_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f9e7e568aee7b4aa331dcc713ef791
+      internalID: 796001395
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_01
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb1e1644e865c946bef2509f39a856e
+      internalID: -1788125149
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_02
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6c0f1c30948dda44ac8aa9c73be3069
+      internalID: 57373146
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d244136ccb70f449873743adfc0ecb
+      internalID: -2038955190
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e9a86c50fe6a94cb05762245183a7f
+      internalID: 744736371
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_05
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee17cf43a4876dc4f97cc311cc73d2e3
+      internalID: -828487205
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_06
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d5c339a8a803742960458270b6845e
+      internalID: 822204561
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_07
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e898c541b0accf942968fb0b1905e1b0
+      internalID: -1069039458
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b53bfb52ecced646a422f41a71277ea
+      internalID: -1082683539
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_09
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4266227f7785bd34f860669932aae3db
+      internalID: 1987759243
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77794b057c7aba94fbd70378e717ff8d
+      internalID: 2028432633
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089e11d6407d6e549a0501f0006905a2
+      internalID: -1178807559
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d433e9974e15149a0e4c5a926e8caf
+      internalID: -1600622664
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a389fd5582682ef458b484f9de0e16cc
+      internalID: 1437681862
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb3e5e8de41d0c45b69a35d6c85c7d3
+      internalID: 2041180969
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Physical_Fighter_Male_Frame_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4ac0f061dc56e45b24d8d9074cade3
+      internalID: 714437633
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 0c02240ed56517148816b391e5e11dbe
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Physical_Fighter_Male_Frame_00: 796001395
+      Physical_Fighter_Male_Frame_01: -1788125149
+      Physical_Fighter_Male_Frame_02: 57373146
+      Physical_Fighter_Male_Frame_03: -2038955190
+      Physical_Fighter_Male_Frame_04: 744736371
+      Physical_Fighter_Male_Frame_05: -828487205
+      Physical_Fighter_Male_Frame_06: 822204561
+      Physical_Fighter_Male_Frame_07: -1069039458
+      Physical_Fighter_Male_Frame_08: -1082683539
+      Physical_Fighter_Male_Frame_09: 1987759243
+      Physical_Fighter_Male_Frame_10: 2028432633
+      Physical_Fighter_Male_Frame_11: -1178807559
+      Physical_Fighter_Male_Frame_12: -1600622664
+      Physical_Fighter_Male_Frame_13: 1437681862
+      Physical_Fighter_Male_Frame_14: 2041180969
+      Physical_Fighter_Male_Frame_15: 714437633
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
