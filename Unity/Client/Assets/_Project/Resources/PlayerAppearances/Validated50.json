@@ -3651,10 +3651,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Fighter_Female.png",
-      "sha256": "ea5d9b5714bd9387b0cc03e50dea2272861584bc008217ee6fbb15b30f3406d8",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Fighter_Female.png",
+      "sha256": "91ba68603dc04a9cd223e4ae2668efbfbbd1a41d9ee335efd0f08c4298250482",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.mobility.fighter.female",
       "theme": "Mobility",
@@ -3665,112 +3665,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_CHARACTER_SWAP: Right frame9가 검은 머리 본체와 다른 흰 머리 캐릭터로 바뀜.",
+      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 다른 행의 머리 조각, Right 및 Up 머리 상단 수평 절단. 일부 검 끝 조각이 셀 옆에 분리됨.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          31,
+          5,
+          6,
+          122,
+          124
+        ],
+        [
+          5,
+          8,
+          123,
+          124
+        ],
+        [
+          7,
+          7,
+          120,
+          124
+        ],
+        [
+          7,
+          8,
+          121,
+          124
+        ],
+        [
+          5,
+          9,
+          122,
+          124
+        ],
+        [
+          5,
+          9,
+          123,
+          124
+        ],
+        [
+          5,
+          9,
+          122,
+          124
+        ],
+        [
+          5,
+          9,
+          122,
+          124
+        ],
+        [
+          7,
+          6,
+          120,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
+          8,
+          17,
+          119,
+          124
+        ],
+        [
+          5,
+          17,
+          123,
+          124
+        ],
+        [
+          5,
           18,
-          96,
-          122
+          123,
+          124
         ],
         [
-          31,
-          24,
-          97,
-          122
-        ],
-        [
-          31,
-          24,
-          96,
-          122
-        ],
-        [
-          35,
-          24,
-          92,
-          122
-        ],
-        [
-          31,
-          29,
-          97,
-          122
-        ],
-        [
-          31,
-          31,
-          97,
-          122
-        ],
-        [
-          31,
-          31,
-          96,
-          122
-        ],
-        [
-          35,
-          31,
-          92,
-          122
-        ],
-        [
-          31,
-          10,
-          97,
-          122
-        ],
-        [
-          31,
-          10,
-          97,
-          122
-        ],
-        [
-          31,
-          10,
-          96,
-          122
-        ],
-        [
-          35,
-          10,
-          92,
-          122
-        ],
-        [
-          35,
-          27,
-          93,
-          122
-        ],
-        [
-          31,
-          28,
-          97,
-          122
-        ],
-        [
-          32,
-          28,
-          96,
-          122
-        ],
-        [
-          35,
-          27,
-          93,
-          122
+          5,
+          18,
+          123,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Fighter_Male.png",
-      "sha256": "393d8e7febd2a62853fa16ca20a7e274b70c1b5d793cf1e05bcb9d22bc3d5918",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Fighter_Male.png",
+      "sha256": "3c3619373c3dd5e241b860261b6659b0c8225ffc57088fad4721b49576258bff",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.mobility.fighter.male",
       "theme": "Mobility",
@@ -3781,112 +3781,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ALPHA: 머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.",
+      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 머리·무기 조각과 옆 셀의 검/망토 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          29,
-          21,
-          99,
-          122
+          7,
+          11,
+          120,
+          124
         ],
         [
-          27,
-          24,
-          100,
-          122
-        ],
-        [
-          32,
-          24,
-          96,
-          122
-        ],
-        [
-          34,
-          24,
-          94,
-          122
-        ],
-        [
-          27,
-          24,
-          100,
-          122
-        ],
-        [
-          27,
-          26,
-          100,
-          122
-        ],
-        [
-          30,
-          26,
-          98,
-          122
-        ],
-        [
-          32,
-          26,
-          96,
-          122
-        ],
-        [
-          27,
+          6,
           10,
-          100,
-          122
+          122,
+          124
         ],
         [
-          27,
+          8,
           10,
-          100,
-          122
+          120,
+          124
         ],
         [
-          28,
+          8,
           10,
-          100,
-          122
+          120,
+          124
         ],
         [
-          30,
+          6,
+          7,
+          121,
+          124
+        ],
+        [
+          5,
+          8,
+          123,
+          124
+        ],
+        [
+          5,
+          7,
+          123,
+          124
+        ],
+        [
+          5,
+          7,
+          123,
+          124
+        ],
+        [
+          6,
+          6,
+          121,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
+          6,
+          6,
+          121,
+          124
+        ],
+        [
           10,
-          97,
-          122
+          13,
+          117,
+          124
         ],
         [
-          32,
-          28,
-          96,
-          122
+          7,
+          13,
+          121,
+          124
         ],
         [
-          27,
-          28,
-          100,
-          122
+          5,
+          13,
+          123,
+          124
         ],
         [
-          30,
-          28,
-          97,
-          122
-        ],
-        [
-          34,
-          28,
-          94,
-          122
+          8,
+          13,
+          120,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Guardian_Female.png",
-      "sha256": "1d6cc84d56763371adf6b111a3b470e5a09247bbbb872c24beef1cea7144c094",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Guardian_Female.png",
+      "sha256": "4fbb6497fa810c922f1cd1e577d3aafb5f94b375afc844b306a91853c915832a",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
       "appearanceId": "appearance.external.v1.mobility.guardian.female",
       "theme": "Mobility",
@@ -3897,112 +3897,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_DIRECTION: Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.",
+      "reviewReason": "BLOCKED_ART: Left 머리 위 분리된 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          33,
-          17,
-          94,
-          122
+          15,
+          4,
+          112,
+          124
         ],
         [
-          31,
-          21,
-          97,
-          122
+          13,
+          4,
+          115,
+          124
         ],
         [
-          31,
-          21,
-          97,
-          122
+          14,
+          4,
+          113,
+          124
         ],
         [
-          32,
-          21,
-          96,
-          122
+          13,
+          4,
+          115,
+          124
         ],
         [
-          33,
-          23,
-          95,
-          122
-        ],
-        [
-          31,
-          28,
-          97,
-          122
-        ],
-        [
-          31,
-          27,
-          97,
-          122
-        ],
-        [
-          33,
-          27,
-          95,
-          122
-        ],
-        [
-          34,
+          9,
           10,
-          93,
-          122
+          119,
+          124
         ],
         [
-          31,
+          7,
           10,
-          97,
-          122
+          121,
+          124
         ],
         [
-          31,
+          5,
           10,
-          97,
-          122
+          122,
+          124
         ],
         [
-          33,
+          8,
           10,
-          95,
-          122
+          119,
+          124
         ],
         [
-          34,
-          23,
-          93,
-          122
+          9,
+          4,
+          119,
+          124
         ],
         [
-          31,
-          27,
-          97,
-          122
+          7,
+          4,
+          120,
+          124
         ],
         [
-          31,
-          28,
-          97,
-          122
+          8,
+          4,
+          120,
+          124
         ],
         [
-          31,
-          28,
-          96,
-          122
+          7,
+          4,
+          121,
+          124
+        ],
+        [
+          14,
+          10,
+          114,
+          124
+        ],
+        [
+          14,
+          10,
+          114,
+          124
+        ],
+        [
+          14,
+          10,
+          114,
+          124
+        ],
+        [
+          13,
+          10,
+          115,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Guardian_Male.png",
-      "sha256": "d213b8dae8d4e589c6cf1ef1e2085d524871d6e0f11704dc31f2ba9bd7fcf065",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Guardian_Male.png",
+      "sha256": "bfb07f0f30bc0ddde0b652ab278ce34b7723e621cfb6d436db13cd025a0a1275",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.mobility.guardian.male",
       "theme": "Mobility",
@@ -4013,112 +4013,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ALPHA: 머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.",
+      "reviewReason": "BLOCKED_ART: Right 발 아래 다음 행 머리 조각, Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          28,
-          17,
-          100,
-          122
+          9,
+          8,
+          119,
+          124
         ],
         [
-          25,
-          17,
-          102,
-          122
+          7,
+          8,
+          120,
+          124
         ],
         [
-          25,
-          17,
-          102,
-          122
+          9,
+          9,
+          119,
+          124
         ],
         [
-          31,
-          15,
-          96,
-          122
+          8,
+          8,
+          119,
+          124
         ],
         [
-          30,
+          9,
+          6,
+          119,
+          124
+        ],
+        [
+          8,
+          6,
+          119,
+          124
+        ],
+        [
+          5,
+          6,
+          123,
+          124
+        ],
+        [
           10,
-          97,
-          122
+          6,
+          117,
+          124
         ],
         [
-          25,
-          14,
-          102,
-          122
+          11,
+          6,
+          117,
+          124
         ],
         [
-          28,
-          21,
-          100,
-          122
+          10,
+          6,
+          118,
+          124
         ],
         [
-          28,
-          19,
-          99,
-          122
+          10,
+          6,
+          117,
+          124
         ],
         [
-          28,
-          18,
-          100,
-          122
+          11,
+          6,
+          117,
+          124
         ],
         [
-          26,
-          15,
-          101,
-          122
+          9,
+          10,
+          119,
+          124
         ],
         [
-          27,
-          18,
-          100,
-          122
+          9,
+          10,
+          119,
+          124
         ],
         [
-          29,
-          19,
-          98,
-          122
+          9,
+          10,
+          118,
+          124
         ],
         [
-          28,
-          14,
-          100,
-          122
-        ],
-        [
-          25,
-          19,
-          102,
-          122
-        ],
-        [
-          26,
-          19,
-          102,
-          122
-        ],
-        [
-          28,
-          21,
-          100,
-          122
+          9,
+          10,
+          118,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Healer_Female.png",
-      "sha256": "1a537d0bb0644bbaaf9b092cd9963445962f3119a144092c24ff3091bc0f0a32",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Healer_Female.png",
+      "sha256": "893c6108e1b19134f2cb61194da2956a64d626a8e1a0113c04e06e12c53d5928",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png",
       "appearanceId": "appearance.external.v1.mobility.healer.female",
       "theme": "Mobility",
@@ -4129,112 +4129,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
+      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          36,
-          24,
-          91,
-          122
+          11,
+          7,
+          116,
+          124
         ],
         [
-          31,
-          26,
-          97,
-          122
+          11,
+          8,
+          116,
+          124
         ],
         [
-          31,
-          26,
-          96,
-          122
+          11,
+          7,
+          116,
+          124
         ],
         [
-          34,
-          25,
-          93,
-          122
+          11,
+          7,
+          116,
+          124
         ],
         [
-          36,
-          28,
-          91,
-          122
+          7,
+          5,
+          121,
+          124
         ],
         [
-          31,
-          31,
-          97,
-          122
+          7,
+          5,
+          121,
+          124
         ],
         [
-          31,
-          29,
-          96,
-          122
+          7,
+          5,
+          121,
+          124
         ],
         [
-          31,
-          31,
-          96,
-          122
+          6,
+          5,
+          121,
+          124
         ],
         [
-          37,
-          10,
-          91,
-          122
+          7,
+          4,
+          121,
+          124
         ],
         [
-          31,
-          28,
-          97,
-          122
+          7,
+          4,
+          121,
+          124
         ],
         [
-          31,
-          28,
-          96,
-          122
+          7,
+          4,
+          121,
+          124
         ],
         [
-          32,
-          29,
-          96,
-          122
+          7,
+          4,
+          121,
+          124
         ],
         [
-          36,
-          26,
-          91,
-          122
+          8,
+          12,
+          119,
+          124
         ],
         [
-          31,
-          27,
-          97,
-          122
+          8,
+          12,
+          119,
+          124
         ],
         [
-          31,
-          27,
-          96,
-          122
+          8,
+          12,
+          119,
+          124
         ],
         [
-          31,
-          26,
-          97,
-          122
+          8,
+          12,
+          119,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Healer_Male.png",
-      "sha256": "d97d0cccf7043777774214b4308561cf342c79cd6eff06a654f6e638aae0abd4",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Healer_Male.png",
+      "sha256": "c82c55e96f8f6f55137e973ffbda9208b4dc5284f971d07e0629571e262ee7ce",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
       "appearanceId": "appearance.external.v1.mobility.healer.male",
       "theme": "Mobility",
@@ -4245,112 +4245,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
+      "reviewReason": "BLOCKED_ART: Left 머리 위 바퀴 조각, Right 발 아래 머리·장비 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          34,
-          21,
-          94,
-          122
+          9,
+          11,
+          119,
+          124
         ],
         [
-          27,
-          23,
-          100,
-          122
+          9,
+          11,
+          118,
+          124
         ],
         [
-          28,
-          23,
-          100,
-          122
+          9,
+          11,
+          119,
+          124
         ],
         [
-          33,
-          23,
-          95,
-          122
+          9,
+          11,
+          119,
+          124
         ],
         [
-          34,
-          20,
-          93,
-          122
+          9,
+          6,
+          119,
+          124
         ],
         [
-          27,
-          25,
-          100,
-          122
+          5,
+          6,
+          123,
+          124
         ],
         [
-          28,
-          26,
-          100,
-          122
+          5,
+          6,
+          123,
+          124
         ],
         [
-          27,
-          25,
-          100,
-          122
+          6,
+          6,
+          122,
+          124
         ],
         [
-          32,
-          10,
-          95,
-          122
+          7,
+          6,
+          120,
+          124
         ],
         [
-          27,
-          24,
-          100,
-          122
+          6,
+          6,
+          121,
+          124
         ],
         [
-          28,
-          24,
-          100,
-          122
+          6,
+          6,
+          121,
+          124
         ],
         [
-          29,
-          25,
-          98,
-          122
+          6,
+          6,
+          121,
+          124
         ],
         [
-          34,
-          24,
-          93,
-          122
+          7,
+          15,
+          121,
+          124
         ],
         [
-          27,
-          25,
-          100,
-          122
+          5,
+          14,
+          122,
+          124
         ],
         [
-          28,
-          25,
-          100,
-          122
+          7,
+          14,
+          121,
+          124
         ],
         [
-          28,
-          24,
-          100,
-          122
+          6,
+          14,
+          122,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Mage_Female.png",
-      "sha256": "9b6b4469a71de615e2943f29e9d1486963edc96e5ebf98709abd867801aee727",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Mage_Female.png",
+      "sha256": "2a3b7c1bdcafede9578b508537a7f84dfbc8c0b053e207f6b89ab430e5d76efe",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
       "appearanceId": "appearance.external.v1.mobility.mage.female",
       "theme": "Mobility",
@@ -4361,112 +4361,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
+      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 다른 행의 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          33,
-          21,
-          94,
-          122
+          13,
+          8,
+          114,
+          124
         ],
         [
-          31,
-          23,
-          96,
-          122
+          13,
+          8,
+          114,
+          124
         ],
         [
-          31,
-          23,
-          97,
-          122
+          11,
+          8,
+          116,
+          124
         ],
         [
-          45,
-          23,
-          83,
-          122
+          13,
+          8,
+          114,
+          124
         ],
         [
-          33,
-          27,
-          94,
-          122
+          9,
+          8,
+          118,
+          124
         ],
         [
-          31,
-          27,
-          96,
-          122
+          8,
+          9,
+          120,
+          124
         ],
         [
-          31,
-          27,
-          97,
-          122
+          7,
+          9,
+          120,
+          124
         ],
         [
-          44,
-          27,
-          83,
-          122
+          6,
+          9,
+          121,
+          124
         ],
         [
-          36,
-          10,
-          91,
-          122
+          7,
+          6,
+          120,
+          124
         ],
         [
-          31,
-          10,
-          96,
-          122
+          7,
+          6,
+          121,
+          124
         ],
         [
-          31,
-          10,
-          97,
-          122
+          5,
+          6,
+          123,
+          124
         ],
         [
-          45,
-          10,
-          83,
-          122
+          5,
+          6,
+          122,
+          124
         ],
         [
-          33,
-          26,
-          94,
-          122
+          14,
+          16,
+          114,
+          124
         ],
         [
-          31,
-          27,
-          96,
-          122
+          12,
+          16,
+          115,
+          124
         ],
         [
-          31,
-          27,
-          97,
-          122
+          12,
+          16,
+          115,
+          124
         ],
         [
-          41,
-          27,
-          86,
-          122
+          13,
+          16,
+          114,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Mage_Male.png",
-      "sha256": "4c65d6b9430922c058313b05e7ef954ac770ff4679a49ce73c888d77583d4e4c",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Mage_Male.png",
+      "sha256": "3fbf254d28fa9c388a02ab5adef674b2eec02c67f3080f9b7920785194863077",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
       "appearanceId": "appearance.external.v1.mobility.mage.male",
       "theme": "Mobility",
@@ -4477,112 +4477,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
+      "reviewReason": "BLOCKED_ART: Left 머리 위 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          31,
-          19,
-          96,
-          122
+          8,
+          6,
+          120,
+          124
         ],
         [
-          28,
-          21,
-          100,
-          122
+          7,
+          7,
+          121,
+          124
         ],
         [
-          27,
-          23,
-          100,
-          122
+          7,
+          7,
+          121,
+          124
         ],
         [
-          43,
-          21,
-          85,
-          122
+          7,
+          6,
+          121,
+          124
         ],
         [
-          31,
-          19,
-          96,
-          122
+          6,
+          6,
+          122,
+          124
         ],
         [
-          28,
-          18,
-          100,
-          122
+          5,
+          6,
+          123,
+          124
         ],
         [
-          27,
-          24,
-          100,
-          122
+          5,
+          6,
+          123,
+          124
         ],
         [
-          41,
-          16,
-          86,
-          122
+          6,
+          6,
+          122,
+          124
         ],
         [
-          32,
+          8,
+          6,
+          119,
+          124
+        ],
+        [
+          8,
+          6,
+          119,
+          124
+        ],
+        [
+          6,
+          6,
+          121,
+          124
+        ],
+        [
+          7,
+          6,
+          121,
+          124
+        ],
+        [
+          11,
+          14,
+          116,
+          124
+        ],
+        [
           10,
-          95,
-          122
+          14,
+          117,
+          124
         ],
         [
-          28,
-          10,
-          100,
-          122
+          11,
+          14,
+          117,
+          124
         ],
         [
-          27,
-          10,
-          100,
-          122
-        ],
-        [
-          40,
-          10,
-          88,
-          122
-        ],
-        [
-          31,
-          25,
-          96,
-          122
-        ],
-        [
-          28,
-          28,
-          100,
-          122
-        ],
-        [
-          27,
-          28,
-          100,
-          122
-        ],
-        [
-          39,
-          29,
-          88,
-          122
+          9,
+          14,
+          118,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Marksman_Female.png",
-      "sha256": "0124ab66b7eb232661a783add08a34ea505c457c5dcf2d565997f4556234c700",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Marksman_Female.png",
+      "sha256": "256f05be76f0ebafd4c1fb3aed2f35d8067c8d21877ea2277a4e39581b690424",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.mobility.marksman.female",
       "theme": "Mobility",
@@ -4593,112 +4593,112 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 녹색 장치/지팡이 조각이 본체에서 분리되고 방향 혼합이 보임.",
+      "reviewReason": "BLOCKED_ART: Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          32,
+          11,
+          4,
+          116,
+          124
+        ],
+        [
           10,
-          95,
-          122
+          4,
+          117,
+          124
         ],
         [
-          27,
           11,
-          101,
-          122
+          4,
+          116,
+          124
         ],
         [
-          26,
-          11,
-          102,
-          122
+          10,
+          4,
+          117,
+          124
         ],
         [
-          32,
-          11,
-          96,
-          122
+          7,
+          5,
+          121,
+          124
         ],
         [
-          32,
-          19,
-          96,
-          122
+          6,
+          5,
+          121,
+          124
         ],
         [
-          27,
-          20,
-          101,
-          122
+          6,
+          5,
+          121,
+          124
         ],
         [
-          26,
-          19,
-          102,
-          122
+          7,
+          5,
+          120,
+          124
         ],
         [
-          32,
-          20,
-          96,
-          122
+          7,
+          4,
+          121,
+          124
         ],
         [
-          32,
-          17,
-          96,
-          122
+          6,
+          4,
+          121,
+          124
         ],
         [
-          27,
-          17,
-          101,
-          122
+          6,
+          4,
+          121,
+          124
         ],
         [
-          26,
-          17,
-          102,
-          122
+          6,
+          4,
+          121,
+          124
         ],
         [
-          31,
-          17,
-          96,
-          122
-        ],
-        [
-          33,
-          13,
-          94,
-          122
-        ],
-        [
-          27,
           14,
-          101,
-          122
+          11,
+          113,
+          124
         ],
         [
-          27,
-          13,
-          101,
-          122
+          14,
+          11,
+          114,
+          124
         ],
         [
-          32,
           13,
-          96,
-          122
+          11,
+          114,
+          124
+        ],
+        [
+          15,
+          11,
+          112,
+          124
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
-      "sourceZipSha256": "68dd9d2288398325ab93020ed8b0031c92215f7e995963010179c09a24343573",
-      "sourceEntry": "Limitless_Player_Sprites_Validated_50/Physical_Marksman_Male.png",
-      "sha256": "8638681e9e5255466f78e537eb2b3a02ce336d37c207ac9d569c2db341ab4e86",
+      "sourceZip": "F:/Downloads/Limitless_Mobility_Path_Sprites_Fixed.zip",
+      "sourceZipSha256": "a7dbb1f962a6ecc2c9443c8aad8a198a31bf941161dfdcbde614e99e2a426133",
+      "sourceEntry": "Limitless_Mobility_Path_Sprites_Fixed/Physical_Marksman_Male.png",
+      "sha256": "c9e8ecf0774c4ce4ce0637f3ac98cec2707d1360d23c230379a3e6f77f667cbf",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.mobility.marksman.male",
       "theme": "Mobility",
@@ -4709,104 +4709,104 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_DIRECTION: Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.",
+      "reviewReason": "BLOCKED_ART: Down 발 아래 잔여 조각, Left/Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          32,
-          10,
-          96,
-          122
-        ],
-        [
-          22,
-          10,
-          105,
-          122
-        ],
-        [
-          28,
           11,
-          99,
-          122
+          5,
+          117,
+          124
         ],
         [
-          31,
+          6,
+          5,
+          121,
+          124
+        ],
+        [
+          9,
+          5,
+          118,
+          124
+        ],
+        [
+          8,
+          5,
+          120,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          6,
+          4,
+          121,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          9,
+          4,
+          118,
+          124
+        ],
+        [
+          7,
+          4,
+          120,
+          124
+        ],
+        [
+          8,
+          4,
+          120,
+          124
+        ],
+        [
+          8,
+          4,
+          119,
+          124
+        ],
+        [
           11,
-          96,
-          122
+          21,
+          117,
+          124
         ],
         [
-          29,
-          13,
-          99,
-          122
+          12,
+          21,
+          116,
+          124
         ],
         [
-          22,
-          14,
-          105,
-          122
+          7,
+          21,
+          121,
+          124
         ],
         [
-          24,
-          14,
-          103,
-          122
-        ],
-        [
-          30,
-          14,
-          98,
-          122
-        ],
-        [
-          27,
-          11,
-          101,
-          122
-        ],
-        [
-          22,
-          11,
-          105,
-          122
-        ],
-        [
-          22,
-          11,
-          106,
-          122
-        ],
-        [
-          26,
-          11,
-          102,
-          122
-        ],
-        [
-          30,
-          10,
-          97,
-          122
-        ],
-        [
-          22,
-          10,
-          105,
-          122
-        ],
-        [
-          26,
-          11,
-          102,
-          122
-        ],
-        [
-          29,
-          10,
-          99,
-          122
+          5,
+          20,
+          123,
+          124
         ]
       ]
     },
