@@ -1,0 +1,804 @@
+PASS
+PASS Catalog 50 / duplicate ID 0
+PASS 최신 Foreground 판정과 Catalog 일치
+PASS 800 Sprite / meta / gender / theme 누락0
+PASS Scene CharacterCreation
+PASS 새 캐릭터 이름 초기화
+PASS 실제 UI 필터 Male/
+PASS Previous/Next cycle Male/
+PASS 큰 Preview Male/
+PASS 선택 텍스트 Male/
+PASS 실제 UI 필터 Male/Vision
+PASS Previous/Next cycle Male/Vision
+PASS 큰 Preview Male/Vision
+PASS 선택 텍스트 Male/Vision
+PASS 실제 UI 필터 Male/Hearing
+PASS Previous/Next cycle Male/Hearing
+PASS 큰 Preview Male/Hearing
+PASS 선택 텍스트 Male/Hearing
+PASS 실제 UI 필터 Male/Intellectual
+PASS Previous/Next cycle Male/Intellectual
+PASS 큰 Preview Male/Intellectual
+PASS 선택 텍스트 Male/Intellectual
+PASS 실제 UI 필터 Male/Mobility
+PASS Previous/Next cycle Male/Mobility
+PASS 큰 Preview Male/Mobility
+PASS 선택 텍스트 Male/Mobility
+PASS 실제 UI 필터 Male/EmotionalScar
+PASS Previous/Next cycle Male/EmotionalScar
+PASS 큰 Preview Male/EmotionalScar
+PASS 선택 텍스트 Male/EmotionalScar
+PASS 실제 UI 필터 Female/
+PASS Previous/Next cycle Female/
+PASS 큰 Preview Female/
+PASS 선택 텍스트 Female/
+PASS 실제 UI 필터 Female/Vision
+PASS Previous/Next cycle Female/Vision
+PASS 큰 Preview Female/Vision
+PASS 선택 텍스트 Female/Vision
+PASS 실제 UI 필터 Female/Hearing
+PASS Previous/Next cycle Female/Hearing
+PASS 큰 Preview Female/Hearing
+PASS 선택 텍스트 Female/Hearing
+PASS 실제 UI 필터 Female/Intellectual
+PASS Previous/Next cycle Female/Intellectual
+PASS 큰 Preview Female/Intellectual
+PASS 선택 텍스트 Female/Intellectual
+PASS 실제 UI 필터 Female/Mobility
+PASS Previous/Next cycle Female/Mobility
+PASS 큰 Preview Female/Mobility
+PASS 선택 텍스트 Female/Mobility
+PASS 실제 UI 필터 Female/EmotionalScar
+PASS Previous/Next cycle Female/EmotionalScar
+PASS 큰 Preview Female/EmotionalScar
+PASS 선택 텍스트 Female/EmotionalScar
+PASS 필터 초안은 확정 전 Session/Save를 변경하지 않음
+PASS 버튼12개 키보드/Controller Navigation
+PASS Tab 순서 MaleButton
+PASS EventSystem 방향 이동 MaleButton
+PASS Tab 순서 FemaleButton
+PASS EventSystem 방향 이동 FemaleButton
+PASS Tab 순서 Theme0
+PASS EventSystem 방향 이동 Theme0
+PASS Tab 순서 Theme1
+PASS EventSystem 방향 이동 Theme1
+PASS Tab 순서 Theme2
+PASS EventSystem 방향 이동 Theme2
+PASS Tab 순서 Theme3
+PASS EventSystem 방향 이동 Theme3
+PASS Tab 순서 Theme4
+PASS EventSystem 방향 이동 Theme4
+PASS Tab 순서 Theme5
+PASS EventSystem 방향 이동 Theme5
+PASS Tab 순서 PreviousAppearance
+PASS EventSystem 방향 이동 PreviousAppearance
+PASS Tab 순서 NextAppearance
+PASS EventSystem 방향 이동 NextAppearance
+PASS Tab 순서 NameInputField
+PASS EventSystem 방향 이동 NameInputField
+PASS Tab 순서 StartButton
+PASS EventSystem 방향 이동 StartButton
+PASS 사용 가능 외형 테마 선택
+PASS 잘못된 이름 확정 차단
+PASS Scene PathSelection
+PASS ID/이름 확정
+PASS Path 독립 path.vision
+PASS Scene JobSelection
+PASS Path×Job 독립 path.vision/guardian
+PASS Path×Job 독립 path.vision/healer
+PASS Path×Job 독립 path.vision/sharpshooter
+PASS Path×Job 독립 path.vision/fighter
+PASS Path×Job 독립 path.vision/mage
+PASS Job 외형 Preview path.vision
+PASS Scene PathSelection
+PASS Path 독립 path.hearing
+PASS Scene JobSelection
+PASS Path×Job 독립 path.hearing/guardian
+PASS Path×Job 독립 path.hearing/healer
+PASS Path×Job 독립 path.hearing/sharpshooter
+PASS Path×Job 독립 path.hearing/fighter
+PASS Path×Job 독립 path.hearing/mage
+PASS Job 외형 Preview path.hearing
+PASS Scene PathSelection
+PASS Path 독립 path.intellectual
+PASS Scene JobSelection
+PASS Path×Job 독립 path.intellectual/guardian
+PASS Path×Job 독립 path.intellectual/healer
+PASS Path×Job 독립 path.intellectual/sharpshooter
+PASS Path×Job 독립 path.intellectual/fighter
+PASS Path×Job 독립 path.intellectual/mage
+PASS Job 외형 Preview path.intellectual
+PASS Scene PathSelection
+PASS Path 독립 path.mobility
+PASS Scene JobSelection
+PASS Path×Job 독립 path.mobility/guardian
+PASS Path×Job 독립 path.mobility/healer
+PASS Path×Job 독립 path.mobility/sharpshooter
+PASS Path×Job 독립 path.mobility/fighter
+PASS Path×Job 독립 path.mobility/mage
+PASS Job 외형 Preview path.mobility
+PASS Scene PathSelection
+PASS Path 독립 path.emotional-scar
+PASS Scene JobSelection
+PASS Path×Job 독립 path.emotional-scar/guardian
+PASS Path×Job 독립 path.emotional-scar/healer
+PASS Path×Job 독립 path.emotional-scar/sharpshooter
+PASS Path×Job 독립 path.emotional-scar/fighter
+PASS Path×Job 독립 path.emotional-scar/mage
+PASS Job 외형 Preview path.emotional-scar
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Scene World_StarterVillage
+PASS 다른 외형 테마+Vision 실제 Story는 Vision
+PASS 실제 World 진입 선택 Sprite
+PASS 최종 확정 신규 Save
+PASS World 적용 appearance.external.v1.emotionalscar.fighter.female
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.female/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.female/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.female/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.female/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.female/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.fighter.female
+PASS Save appearance.external.v1.emotionalscar.fighter.female
+PASS JSON Stable ID appearance.external.v1.emotionalscar.fighter.female
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.fighter.female
+PASS World 적용 appearance.external.v1.emotionalscar.fighter.male
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.male/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.male/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.male/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.fighter.male/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.fighter.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.fighter.male/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.fighter.male
+PASS Save appearance.external.v1.emotionalscar.fighter.male
+PASS JSON Stable ID appearance.external.v1.emotionalscar.fighter.male
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.fighter.male
+PASS World 적용 appearance.external.v1.emotionalscar.guardian.female
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.female/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.female/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.female/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.female/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.female/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.guardian.female
+PASS Save appearance.external.v1.emotionalscar.guardian.female
+PASS JSON Stable ID appearance.external.v1.emotionalscar.guardian.female
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.guardian.female
+PASS World 적용 appearance.external.v1.emotionalscar.guardian.male
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.male/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.male/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.male/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.guardian.male/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.guardian.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.guardian.male/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.guardian.male
+PASS Save appearance.external.v1.emotionalscar.guardian.male
+PASS JSON Stable ID appearance.external.v1.emotionalscar.guardian.male
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.guardian.male
+PASS World 적용 appearance.external.v1.emotionalscar.healer.female
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.female/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.female/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.female/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.female/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.female/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.healer.female
+PASS Save appearance.external.v1.emotionalscar.healer.female
+PASS JSON Stable ID appearance.external.v1.emotionalscar.healer.female
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.healer.female
+PASS World 적용 appearance.external.v1.emotionalscar.healer.male
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.male/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.male/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.male/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.healer.male/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.healer.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.healer.male/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.healer.male
+PASS Save appearance.external.v1.emotionalscar.healer.male
+PASS JSON Stable ID appearance.external.v1.emotionalscar.healer.male
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.healer.male
+PASS World 적용 appearance.external.v1.emotionalscar.mage.female
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.female/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.female/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.female/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.female/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.female/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.mage.female
+PASS Save appearance.external.v1.emotionalscar.mage.female
+PASS JSON Stable ID appearance.external.v1.emotionalscar.mage.female
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.mage.female
+PASS World 적용 appearance.external.v1.emotionalscar.mage.male
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.male/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.male/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.male/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.mage.male/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.mage.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.mage.male/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.mage.male
+PASS Save appearance.external.v1.emotionalscar.mage.male
+PASS JSON Stable ID appearance.external.v1.emotionalscar.mage.male
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.mage.male
+PASS World 적용 appearance.external.v1.emotionalscar.marksman.female
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.female/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.female/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.female/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.female/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.female/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.marksman.female
+PASS Save appearance.external.v1.emotionalscar.marksman.female
+PASS JSON Stable ID appearance.external.v1.emotionalscar.marksman.female
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.marksman.female
+PASS World 적용 appearance.external.v1.emotionalscar.marksman.male
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.male/Down
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/0/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/0/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/0/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.male/Left
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/1/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/1/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/1/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.male/Right
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/2/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/2/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/2/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.emotionalscar.marksman.male/Up
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/3/0
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/3/1
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/3/2
+PASS Walk 프레임 appearance.external.v1.emotionalscar.marksman.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.emotionalscar.marksman.male/Up
+PASS Battle Left Idle appearance.external.v1.emotionalscar.marksman.male
+PASS Save appearance.external.v1.emotionalscar.marksman.male
+PASS JSON Stable ID appearance.external.v1.emotionalscar.marksman.male
+PASS Restore ID/Sprite appearance.external.v1.emotionalscar.marksman.male
+PASS World 적용 appearance.external.v1.intellectual.guardian.female
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.female/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.female/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.female/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.female/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.female/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.guardian.female
+PASS Save appearance.external.v1.intellectual.guardian.female
+PASS JSON Stable ID appearance.external.v1.intellectual.guardian.female
+PASS Restore ID/Sprite appearance.external.v1.intellectual.guardian.female
+PASS World 적용 appearance.external.v1.intellectual.guardian.male
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.male/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.male/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.male/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.guardian.male/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.guardian.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.guardian.male/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.guardian.male
+PASS Save appearance.external.v1.intellectual.guardian.male
+PASS JSON Stable ID appearance.external.v1.intellectual.guardian.male
+PASS Restore ID/Sprite appearance.external.v1.intellectual.guardian.male
+PASS World 적용 appearance.external.v1.intellectual.healer.female
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.female/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.female/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.female/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.female/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.female/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.healer.female
+PASS Save appearance.external.v1.intellectual.healer.female
+PASS JSON Stable ID appearance.external.v1.intellectual.healer.female
+PASS Restore ID/Sprite appearance.external.v1.intellectual.healer.female
+PASS World 적용 appearance.external.v1.intellectual.healer.male
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.male/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.male/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.male/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.healer.male/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.healer.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.healer.male/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.healer.male
+PASS Save appearance.external.v1.intellectual.healer.male
+PASS JSON Stable ID appearance.external.v1.intellectual.healer.male
+PASS Restore ID/Sprite appearance.external.v1.intellectual.healer.male
+PASS World 적용 appearance.external.v1.intellectual.marksman.female
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.female/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.female/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.female/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.female/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.female/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.marksman.female
+PASS Save appearance.external.v1.intellectual.marksman.female
+PASS JSON Stable ID appearance.external.v1.intellectual.marksman.female
+PASS Restore ID/Sprite appearance.external.v1.intellectual.marksman.female
+PASS World 적용 appearance.external.v1.intellectual.marksman.male
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.male/Down
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/0/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/0/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/0/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.male/Left
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/1/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/1/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/1/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.male/Right
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/2/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/2/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/2/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.intellectual.marksman.male/Up
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/3/0
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/3/1
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/3/2
+PASS Walk 프레임 appearance.external.v1.intellectual.marksman.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.intellectual.marksman.male/Up
+PASS Battle Left Idle appearance.external.v1.intellectual.marksman.male
+PASS Save appearance.external.v1.intellectual.marksman.male
+PASS JSON Stable ID appearance.external.v1.intellectual.marksman.male
+PASS Restore ID/Sprite appearance.external.v1.intellectual.marksman.male
+PASS World 적용 appearance.external.v1.vision.fighter.female
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.fighter.female/Down
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/0/0
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/0/1
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/0/2
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.vision.fighter.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.fighter.female/Left
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/1/0
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/1/1
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/1/2
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.vision.fighter.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.fighter.female/Right
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/2/0
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/2/1
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/2/2
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.vision.fighter.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.fighter.female/Up
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/3/0
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/3/1
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/3/2
+PASS Walk 프레임 appearance.external.v1.vision.fighter.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.vision.fighter.female/Up
+PASS Battle Left Idle appearance.external.v1.vision.fighter.female
+PASS Save appearance.external.v1.vision.fighter.female
+PASS JSON Stable ID appearance.external.v1.vision.fighter.female
+PASS Restore ID/Sprite appearance.external.v1.vision.fighter.female
+PASS World 적용 appearance.external.v1.vision.guardian.female
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.guardian.female/Down
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/0/0
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/0/1
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/0/2
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.vision.guardian.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.guardian.female/Left
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/1/0
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/1/1
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/1/2
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.vision.guardian.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.guardian.female/Right
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/2/0
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/2/1
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/2/2
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.vision.guardian.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.guardian.female/Up
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/3/0
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/3/1
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/3/2
+PASS Walk 프레임 appearance.external.v1.vision.guardian.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.vision.guardian.female/Up
+PASS Battle Left Idle appearance.external.v1.vision.guardian.female
+PASS Save appearance.external.v1.vision.guardian.female
+PASS JSON Stable ID appearance.external.v1.vision.guardian.female
+PASS Restore ID/Sprite appearance.external.v1.vision.guardian.female
+PASS World 적용 appearance.external.v1.vision.healer.female
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.female/Down
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/0/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/0/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/0/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/0/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.female/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.female/Left
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/1/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/1/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/1/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/1/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.female/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.female/Right
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/2/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/2/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/2/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/2/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.female/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.female/Up
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/3/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/3/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/3/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.female/3/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.female/Up
+PASS Battle Left Idle appearance.external.v1.vision.healer.female
+PASS Save appearance.external.v1.vision.healer.female
+PASS JSON Stable ID appearance.external.v1.vision.healer.female
+PASS Restore ID/Sprite appearance.external.v1.vision.healer.female
+PASS World 적용 appearance.external.v1.vision.healer.male
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.male/Down
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/0/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/0/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/0/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.male/Left
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/1/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/1/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/1/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.male/Right
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/2/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/2/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/2/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.healer.male/Up
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/3/0
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/3/1
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/3/2
+PASS Walk 프레임 appearance.external.v1.vision.healer.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.vision.healer.male/Up
+PASS Battle Left Idle appearance.external.v1.vision.healer.male
+PASS Save appearance.external.v1.vision.healer.male
+PASS JSON Stable ID appearance.external.v1.vision.healer.male
+PASS Restore ID/Sprite appearance.external.v1.vision.healer.male
+PASS World 적용 appearance.external.v1.vision.mage.male
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.mage.male/Down
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/0/0
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/0/1
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/0/2
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/0/3
+PASS 실제 정지 Idle appearance.external.v1.vision.mage.male/Down
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.mage.male/Left
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/1/0
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/1/1
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/1/2
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/1/3
+PASS 실제 정지 Idle appearance.external.v1.vision.mage.male/Left
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.mage.male/Right
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/2/0
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/2/1
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/2/2
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/2/3
+PASS 실제 정지 Idle appearance.external.v1.vision.mage.male/Right
+PASS 실제 이동 방향 상태 appearance.external.v1.vision.mage.male/Up
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/3/0
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/3/1
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/3/2
+PASS Walk 프레임 appearance.external.v1.vision.mage.male/3/3
+PASS 실제 정지 Idle appearance.external.v1.vision.mage.male/Up
+PASS Battle Left Idle appearance.external.v1.vision.mage.male
+PASS Save appearance.external.v1.vision.mage.male
+PASS JSON Stable ID appearance.external.v1.vision.mage.male
+PASS Restore ID/Sprite appearance.external.v1.vision.mage.male
+PASS 기존/invalid/blocked fallback Male/path.vision/
+PASS 기존/invalid/blocked fallback Male/path.vision/appearance.missing
+PASS 기존/invalid/blocked fallback Male/path.vision/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Male/path.hearing/
+PASS 기존/invalid/blocked fallback Male/path.hearing/appearance.missing
+PASS 기존/invalid/blocked fallback Male/path.hearing/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Male/path.intellectual/
+PASS 기존/invalid/blocked fallback Male/path.intellectual/appearance.missing
+PASS 기존/invalid/blocked fallback Male/path.intellectual/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Male/path.mobility/
+PASS 기존/invalid/blocked fallback Male/path.mobility/appearance.missing
+PASS 기존/invalid/blocked fallback Male/path.mobility/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Male/path.emotional-scar/
+PASS 기존/invalid/blocked fallback Male/path.emotional-scar/appearance.missing
+PASS 기존/invalid/blocked fallback Male/path.emotional-scar/appearance.external.v1.mobility.mage.female
+PASS 실제 Continue 전 Save appearance.external.v1.emotionalscar.fighter.male
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS Bootstrap 실제 Continue appearance.external.v1.emotionalscar.fighter.male
+PASS 기존/invalid/blocked fallback Female/path.vision/
+PASS 기존/invalid/blocked fallback Female/path.vision/appearance.missing
+PASS 기존/invalid/blocked fallback Female/path.vision/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Female/path.hearing/
+PASS 기존/invalid/blocked fallback Female/path.hearing/appearance.missing
+PASS 기존/invalid/blocked fallback Female/path.hearing/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Female/path.intellectual/
+PASS 기존/invalid/blocked fallback Female/path.intellectual/appearance.missing
+PASS 기존/invalid/blocked fallback Female/path.intellectual/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Female/path.mobility/
+PASS 기존/invalid/blocked fallback Female/path.mobility/appearance.missing
+PASS 기존/invalid/blocked fallback Female/path.mobility/appearance.external.v1.mobility.mage.female
+PASS 기존/invalid/blocked fallback Female/path.emotional-scar/
+PASS 기존/invalid/blocked fallback Female/path.emotional-scar/appearance.missing
+PASS 기존/invalid/blocked fallback Female/path.emotional-scar/appearance.external.v1.mobility.mage.female
+PASS 실제 Continue 전 Save appearance.external.v1.emotionalscar.fighter.female
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS Bootstrap 실제 Continue appearance.external.v1.emotionalscar.fighter.female
+PASS 호환 Fixture Save Male/False
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 구버전/invalid 실제 Continue fallback Male/False
+PASS Continue Path/Job 회귀 Male/False
+PASS 호환 Fixture Save Male/True
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 구버전/invalid 실제 Continue fallback Male/True
+PASS Continue Path/Job 회귀 Male/True
+PASS 구버전 ID 누락 Male
+PASS 호환 Fixture Save Female/False
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 구버전/invalid 실제 Continue fallback Female/False
+PASS Continue Path/Job 회귀 Female/False
+PASS 호환 Fixture Save Female/True
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 구버전/invalid 실제 Continue fallback Female/True
+PASS Continue Path/Job 회귀 Female/True
+PASS 구버전 ID 누락 Female

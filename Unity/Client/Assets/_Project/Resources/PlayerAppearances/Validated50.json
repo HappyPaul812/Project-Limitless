@@ -14,8 +14,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -130,8 +130,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -246,8 +246,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -362,8 +362,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -478,8 +478,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: 본체 밖에 분리된 빨간 지팡이 장식·인접 셀 잔상이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -594,8 +594,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -710,8 +710,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: 분리된 빨간색/금색 지팡이 조각이 본체 옆에 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -826,8 +826,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -942,8 +942,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1058,8 +1058,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11의 발 아래 인접 셀 머리/머리카락 조각과 Up 12-15의 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1175,7 +1175,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1291,7 +1291,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1407,7 +1407,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1523,7 +1523,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1639,7 +1639,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1755,7 +1755,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1871,7 +1871,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -1987,7 +1987,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2103,7 +2103,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2219,7 +2219,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2334,8 +2334,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2450,8 +2450,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2567,7 +2567,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2683,7 +2683,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2799,7 +2799,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -2915,7 +2915,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3030,8 +3030,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3146,8 +3146,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "readyForSelection": false,
+      "reviewReason": "BLOCKED_ART: Right 8-11 발 아래 주황색 머리카락 조각, Up 12-15 머리 상단 잘림.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3263,7 +3263,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3379,7 +3379,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3495,7 +3495,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Direction rows inconsistent; Female Right frame1 changes to white-haired character; body/device pieces detached; original PNG preserved",
+      "reviewReason": "BLOCKED_CHARACTER_SWAP: Right frame9가 검은 머리 본체와 다른 흰 머리 캐릭터로 바뀜.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3611,7 +3611,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Direction rows inconsistent; Female Right frame1 changes to white-haired character; body/device pieces detached; original PNG preserved",
+      "reviewReason": "BLOCKED_ALPHA: 머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3727,7 +3727,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Body/shield/device fragments detached in fixed cells; Male head alpha loss; direction consistency unresolved; original PNG preserved",
+      "reviewReason": "BLOCKED_DIRECTION: Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3843,7 +3843,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Body/shield/device fragments detached in fixed cells; Male head alpha loss; direction consistency unresolved; original PNG preserved",
+      "reviewReason": "BLOCKED_ALPHA: 머리·몸 내부 투명 구멍과 떨어진 신체 조각이 반복됨.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3959,7 +3959,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: First column body vertically truncated and detached staff/device fragments in neighboring columns; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4075,7 +4075,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: First column body vertically truncated and detached staff/device fragments in neighboring columns; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4191,7 +4191,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Body and wheelchair split into narrow vertical pieces in most frames; Down/Left/Right/Up unusable; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4307,7 +4307,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Body and wheelchair split into narrow vertical pieces in most frames; Down/Left/Right/Up unusable; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: 몸·지팡이·휠체어의 수직 절단 및 분리 조각이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4423,7 +4423,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Female detached device pieces; Male Left/Right rows repeat left-facing poses; direction/frame consistency unresolved; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: 녹색 장치/지팡이 조각이 본체에서 분리되고 방향 혼합이 보임.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4539,7 +4539,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: Female detached device pieces; Male Left/Right rows repeat left-facing poses; direction/frame consistency unresolved; original PNG preserved",
+      "reviewReason": "BLOCKED_DIRECTION: Left/Right 행이 정면 또는 같은 방향으로 보이며 방향 구분이 맞지 않음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4655,7 +4655,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [
         0,
         1,
@@ -4785,7 +4785,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.",
       "edgeTouchCells": [
         0,
         1,
@@ -4918,7 +4918,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [
         0,
         1,
@@ -5051,7 +5051,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.",
       "edgeTouchCells": [
         0,
         1,
@@ -5184,7 +5184,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [
         0,
         1,
@@ -5317,7 +5317,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [
         0,
         1,
@@ -5450,7 +5450,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.",
       "edgeTouchCells": [
         0,
         1,
@@ -5583,7 +5583,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": true,
-      "reviewReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending",
+      "reviewReason": "PASS: Down/Left/Right/Up 전체 프레임과 6fps Walk를 이전 승인된 실제 Game View에서 확인. 심각한 잘림·캐릭터 교체 없음.",
       "edgeTouchCells": [
         0,
         1,
@@ -5716,7 +5716,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.",
       "edgeTouchCells": [
         0,
         1,
@@ -5849,7 +5849,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved",
+      "reviewReason": "BLOCKED_ART: Left 4-7 머리 위 또는 Right 8-11 발 아래에 불투명 인접 셀 캐릭터 조각이 보임.",
       "edgeTouchCells": [
         0,
         1,

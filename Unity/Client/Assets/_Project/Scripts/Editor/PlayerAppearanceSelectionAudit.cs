@@ -132,7 +132,9 @@ namespace ProjectLimitless.EditorTools
             for (int i = 0; i < 8; i++) yield return null;
             var catalog = PlayerAppearanceCatalog.Load();
             Check(catalog.Entries.Count == 50 && catalog.Entries.Select(e => e.appearanceId).Distinct().Count() == 50, "Catalog 50 / duplicate ID 0");
-            Check(catalog.Entries.Count(e => e.IsUsable) == 35 && catalog.Entries.Count(e => !e.readyForSelection) == 15, "Ready35 / blocked15");
+            var inventory = JsonUtility.FromJson<PlayerAppearanceCatalog.Inventory>(File.ReadAllText("Assets/_Project/Resources/PlayerAppearances/Validated50.json"));
+            Check(catalog.Entries.All(e => e.readyForSelection == inventory.entries.Single(i => i.appearanceId == e.appearanceId).readyForSelection)
+                && catalog.Entries.Count(e => e.IsUsable) == inventory.entries.Count(e => e.readyForSelection), "최신 Foreground 판정과 Catalog 일치");
             Check(catalog.Entries.All(e => e.frames.Length == 16 && e.frames.All(s => s != null) && e.sheet != null &&
                 File.Exists(e.assetPath + ".meta") && !string.IsNullOrEmpty(e.gender) && !string.IsNullOrEmpty(e.theme)), "800 Sprite / meta / gender / theme 누락0");
             Click("StartMenuCanvas/Slot01/Action");
@@ -147,9 +149,13 @@ namespace ProjectLimitless.EditorTools
                 {
                     Click("Theme" + t);
                     var filtered = Value<List<PlayerAppearanceCatalog.Entry>>(creation, "filteredAppearances");
-                    int expectedCount = t == 0 ? (gender == PlayerVisualType.Male ? 17 : 18) : t == 1 ? (gender == PlayerVisualType.Male ? 2 : 3) : t == 4 ? 0 : 5;
+                    int expectedCount = inventory.entries.Count(e => e.readyForSelection && e.gender == gender.ToString()
+                        && (t == 0 || e.theme == themes[t]));
                     Check(filtered.Count == expectedCount && filtered.All(e => e.gender == gender.ToString() &&
                         (t == 0 || e.theme == themes[t])), "실제 UI 필터 " + gender + "/" + themes[t]);
+                    string before = Value<string>(creation, "selectedAppearanceId");
+                    Click("NextAppearance"); Click("PreviousAppearance");
+                    Check(Value<string>(creation, "selectedAppearanceId") == before, "Previous/Next cycle " + gender + "/" + themes[t]);
                     Click("NextAppearance");
                     var entry = filtered.Find(e => e.appearanceId == Value<string>(creation, "selectedAppearanceId"));
                     Sprite expected = entry?.frames[0] ?? Value<Sprite>(creation, gender == PlayerVisualType.Male ? "malePreviewSprite" : "femalePreviewSprite");
@@ -170,9 +176,11 @@ namespace ProjectLimitless.EditorTools
                 ExecuteEvents.Execute(control.gameObject, new AxisEventData(EventSystem.current) { moveDir = MoveDirection.Down }, ExecuteEvents.moveHandler);
                 Check(EventSystem.current.currentSelectedGameObject == controls[(controls.IndexOf(control) + 1) % controls.Count].gameObject, "EventSystem 방향 이동 " + control.name);
             }
-            Click("MaleButton"); Click("Theme2"); Click("NextAppearance");
+            // 판정 변경으로 특정 테마가 전부 보류돼도 실제 길과 다른 사용 가능한 외형으로 독립성을 검증합니다.
+            string availableTheme = catalog.Entries.First(e => e.IsUsable && e.gender == "Male" && e.theme != "Vision").theme;
+            Click("MaleButton"); Click("Theme" + Array.IndexOf(themes, availableTheme)); Click("NextAppearance");
             string chosen = Value<string>(creation, "selectedAppearanceId");
-            Check(PlayerAppearanceCatalog.Resolve(chosen)?.theme == "Hearing", "청각 테마 선택");
+            Check(PlayerAppearanceCatalog.Resolve(chosen)?.theme == availableTheme, "사용 가능 외형 테마 선택");
             Value<InputField>(creation, "nameInputField").text = "!"; Click("StartButton");
             Check(SceneManager.GetActiveScene().name == "CharacterCreation" && GameSessionData.SelectedAppearanceId == "", "잘못된 이름 확정 차단");
             CaptureCreation("creation.png");
@@ -205,7 +213,7 @@ namespace ProjectLimitless.EditorTools
             Call(selectedJobUI, "SelectJob", Resources.LoadAll<JobDefinition>("JobDefinitions").First(j => j.JobId == "fighter"));
             Value<Button>(selectedJobUI, "nextButton").onClick.Invoke(); wait = WaitScene("FinalConfirmation"); while (wait.MoveNext()) yield return null;
             Click("StartButton"); wait = WaitScene("World_StarterVillage"); while (wait.MoveNext()) yield return null;
-            Check(!Chapter2Main16Flow.IsHearingPlayer, "청각 외형+Vision 실제 Story는 Vision");
+            Check(!Chapter2Main16Flow.IsHearingPlayer, "다른 외형 테마+Vision 실제 Story는 Vision");
             var visual = Object.FindAnyObjectByType<PlayerVisualController>();
             Check(visual.ActiveDefaultSprite == PlayerAppearanceCatalog.Resolve(chosen).frames[0], "실제 World 진입 선택 Sprite");
             Check(GameSaveService.TryLoadSlot(1, out var firstSave) && firstSave.AppearanceId == chosen && firstSave.PathId == "path.vision", "최종 확정 신규 Save");

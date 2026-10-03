@@ -1,5 +1,9 @@
 # Player Appearance 선택·Save QA (2026-10-03)
 
+## 후속 Foreground 판정
+
+아래35종/15종과 미완료 표기는 당시 백그라운드 검증 기록이다. 후속 실제 Game View 판정은 [Foreground 최종 표](Player_Appearance_Foreground_QA.md)와 [상세 JSON](Player_Appearance_Foreground_QA.json)을 따른다. 현재 Ready21종(남10·여11), Blocked29종이다. Vision5·Intellectual6·EmotionalScar10은 선택 가능하고 Hearing10·Mobility10은 보류다. 원본50개·800 Sprite·Stable ID를 유지하고 보류 ID 저장은 기존 fallback 정책을 따른다.
+
 ## 결과와 범위
 
 Catalog 50종을 모두 유지한다. **Selection Ready 35종, blocked 15종**이다. 준비된 외형은 남17·여18이며 Vision5, Hearing10, Intellectual10, EmotionalScar10이다. Mobility10종은 전부 보류다. 기본 Male/Female+Path Variant도 별도 선택지로 유지한다. 전체50종이 선택 가능하다는 뜻은 아니다.

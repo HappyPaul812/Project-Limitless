@@ -294,7 +294,9 @@ namespace ProjectLimitless.UI
                 Image stepPanel = CreateImage(parent, $"Step{index + 1}", isCurrent
                     ? new Color(0.18f, 0.25f, 0.34f, 0.98f)
                     : new Color(0.04f, 0.065f, 0.11f, 0.88f));
-                SetRect(stepPanel.rectTransform, new Vector2(0.35f + index * 0.1f, 0.975f), new Vector2(122f, 28f));
+                // 4:3 화면에서는 비율 Anchor 사이가 패널 폭보다 좁아집니다. 중앙 기준 간격도 같은 Canvas 단위로 유지합니다.
+                SetRect(stepPanel.rectTransform, new Vector2(0.5f, 0.975f), new Vector2(122f, 28f));
+                stepPanel.rectTransform.anchoredPosition = new Vector2((index - 1.5f) * 128f, 0f);
                 Outline outline = stepPanel.gameObject.AddComponent<Outline>();
                 outline.effectColor = isCurrent ? new Color(0.95f, 0.76f, 0.36f, 1f) : new Color(0.25f, 0.32f, 0.42f, 1f);
                 outline.effectDistance = isCurrent ? new Vector2(2f, -2f) : Vector2.one;
