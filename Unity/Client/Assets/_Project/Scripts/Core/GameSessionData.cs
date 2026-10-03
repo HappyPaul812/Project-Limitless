@@ -7,6 +7,9 @@ namespace ProjectLimitless.Core
     {
         public static PlayerVisualType SelectedPlayerVisual { get; private set; } = PlayerVisualType.Male;
         public static string PlayerName { get; private set; } = string.Empty;
+        /// <summary>외형 정본의 Stable ID입니다. 빈 값은 기존 성별·Path Variant를 뜻하며 길 선택과 독립입니다.</summary>
+        public static string SelectedAppearanceId { get; private set; } = string.Empty;
+        public static void SelectAppearance(string id) => SelectedAppearanceId = id ?? string.Empty;
 
         /// <summary>
         /// 선택한 길의 안정적인 ID입니다. ScriptableObject 참조가 없어도 Scene 이동과 향후 저장 파일에서 사용할 수 있습니다.
@@ -102,6 +105,7 @@ namespace ProjectLimitless.Core
             QuestService.Reset();
             WorldModalState.Reset();
             SelectedPlayerVisual = PlayerVisualType.Male;
+            SelectedAppearanceId = string.Empty;
             PlayerName = string.Empty;
             SelectedPlayerPathId = string.Empty;
             SelectedJobId = string.Empty;

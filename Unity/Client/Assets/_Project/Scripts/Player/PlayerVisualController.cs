@@ -27,6 +27,28 @@ namespace ProjectLimitless.Player
         [SerializeField] private Sprite maleDefaultSprite;
         [SerializeField] private Sprite femaleDefaultSprite;
         private Sprite activeDefaultSprite;
+        private AnimatorOverrideController appearanceOverride;
+
+        /// <summary>공용 성별 Controller를 재사용하고 Sprite Clip만 교체합니다. Path와 이동·충돌은 변경하지 않습니다.</summary>
+        public bool ApplySelectedAppearance()
+        {
+            if (visualRenderer == null || visualAnimator == null) return false;
+            var entry = PlayerAppearanceCatalog.Resolve(GameSessionData.SelectedAppearanceId);
+            if (entry == null) return false;
+            var replacement = PlayerAppearanceCatalog.CreateOverride(entry,
+                visualType == PlayerVisualType.Female ? femaleAnimatorController : maleAnimatorController);
+            if (replacement == null) return false;
+            var previous = appearanceOverride;
+            appearanceOverride = replacement;
+            ApplyPathVariant(replacement, entry.frames[0]);
+            if (previous != null) Destroy(previous);
+            return true;
+        }
+
+        private void OnDestroy()
+        {
+            if (appearanceOverride != null) Destroy(appearanceOverride);
+        }
 
         /// <summary>현재 선택된 외형입니다. 향후 캐릭터 생성 화면이나 저장 시스템에서 읽을 수 있습니다.</summary>
         public PlayerVisualType VisualType => visualType;

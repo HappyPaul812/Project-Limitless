@@ -21,8 +21,11 @@ namespace ProjectLimitless.Player
 
         public void Apply(string pathId)
         {
+            if (baseVisual == null) baseVisual = GetComponent<PlayerVisualController>();
             baseVisual.ResetPathVariant();
             currentPathId = pathId;
+            // 선택 외형이 정본이면 길은 심볼/스토리만 결정합니다. invalid ID는 아래 기존 Variant 경로를 유지합니다.
+            if (baseVisual.ApplySelectedAppearance()) return;
             definition = PathVisualCatalog.Find(pathId);
             if (definition != null && (definition.VisualMode == PathVisualMode.CharacterVariant || definition.VisualMode == PathVisualMode.WheelchairVariant))
             {
