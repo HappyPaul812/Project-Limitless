@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## Intellectual/Vision Restored8 원본 반영 완료 (2026-10-05)
+
+- `Limitless_IntellectualVision_8_Restored.zip` 지정8PNG 원본 바이트 교체. PNG8/중복0/누락0·512×512 RGBA·128px×16 확인, 이미지 수정 없음. [계획](../11_UI/Intellectual_Vision_Restored8_적용_계약.md)·[8종 개별 QA](../11_UI/Intellectual_Vision_Restored8_QA.md).
+- **READY승격5 / 대상 BLOCKED_ART3, 전체 Ready22/Blocked28 → Ready27/Blocked23**. READY: Intellectual Fighter Female·Mage Female/Male, Vision Guardian Male·Sharpshooter Female. 잔존: Vision Fighter Male5/7/9/11 검 끝, Vision Mage Female12–15 머리/지팡이 접합, Vision Sharpshooter Male12/13/15 Up 머리/망토. 다음 권장 작업은 이3종의 정확한 QA 문제Frame Art 보정.
+- 다른42종 PNG/meta/Entry/QA/기존176 Clip 보존. Intellectual Fighter Male READY·Hearing/Mobility/EmotionalScar 불변. 기존8 Appearance ID/128 Sprite GUID/fileID·Import·Gender+Path+Job/Save Mapping 유지. READY5종 기존 Entry에만40 Clip 추가. 사용자 Save/Settings 보존, Runtime 기능/Save Migration 없음.
+- 격리 PlayUnfocused86PASS/0FAIL: 대상8 Mapping/Preview·READY 대표 Intellectual Mage Male/Vision Guardian Male의 실제 Restored World/Battle Left Idle/실제 Battle Scene/Save→Bootstrap Continue 통과. 전체800 Sprite Missing0·geometry 오류0. QA helper 대표 조합3줄만 변경, C# 컴파일 완료·Compile Error0. 기존 CS0618 경고2건, 최종 Console Error0/Warning0.
+- clean Bootstrap Edit Mode·Save/Settings/Play 설정 복원·포커스 전환 없음. 실제 걷기·키보드/게임패드 미검증. 직접 변경 staged diff --check 통과·기존 사용자 변경/whitespace 보존. GitHub Push 없음.
+- 관련 commit: 계획 `24e72d0`, 마지막 원본 반영·READY 승격·검증 `dbbfb54`. 이 상태 기록은 후속 문서 commit에 포함한다. 아래는 이전 이력이다.
+
 ## Intellectual/Vision 8종 셀 픽셀 정밀 수정 완료 (2026-10-05)
 
 - Cleanup v2 원본 기준8종만128px 셀 단위로 정밀 수정. 생성형 재작업/보간/리사이즈/방향 변경 없음. 정상84셀 RGBA Hash·Pixel Diff0, 허용44셀 중41셀 수정·34셀 정수1–2px 이동, 전체87셀 그대로 보존. [계획](../11_UI/Intellectual_Vision_CellCleanup_적용_계약.md)·[개별 QA/남은 프레임](../11_UI/Intellectual_Vision_CellCleanup_QA.md).

@@ -25,9 +25,11 @@ Runtime 검증 기록은 후속 결과에 갱신한다. Foreground/실제 걷기
 
 ## 최종 검증
 
+관련 commit: 계획 `24e72d0`, 원본 교체·READY 승격·Runtime 검증 `dbbfb54`.
+
 - [Runtime 기록](Intellectual_Vision_Restored8_Runtime_Results.txt)86PASS/0FAIL. 대상8 Mapping/Job Preview·READY/Blocked 상태 표시, 대표 Intellectual Mage Male·Vision Guardian Male 생성/Confirm Preview/World/Battle Left Idle/실제 Battle Scene/Save→Bootstrap Continue 및 구버전·불일치 ID 재계산 통과. 대표2종은 fallback이 아니라 READY Restored Sprite를 실제 참조한다. BLOCKED3종은 기존 기본 성별 임시 fallback을 유지한다.
 - 50 Entry·800 Sprite Missing0, Rect128×128/Pivot(64,0)/PPU128 오류0, meta/Sprite ID 유지. 기존176 embedded Clip 블록 동일·READY5종에만40 Clip 추가(Down/Left/Right/Up Idle/Walk·6fps). 다른42 Entry/PNG/meta/Inventory/Matrix/QA 동일. Catalog의 기존8 Entry를 유지했으며 다른42종 Clip 재생성 없음.
 - 시작 Assets/ProjectSettings/UserData 해시 비교: 8PNG+Inventory+Catalog+QA helper 총11파일만 변경. 사용자 Save/Settings·ZIP 원본 동일. 반영8PNG SHA256가 ZIP 추출 원본과 일치, 픽셀 수정 없음.
 - QA helper의 대표 조합만 Intellectual Mage Male·Vision Guardian Male로 변경(주석 포함3줄), Runtime 기능 코드/Save Migration 변경 없음. Unity C# 컴파일/domain reload 완료·Compile Error0. 컴파일 직후 기존 ExternalAssetImportEditor.cs CS0618 경고2건, Runtime 종료 후 Console Error0/Warning0.
 - clean Bootstrap Edit Mode·is_focused=false·Audit Save 경로null·Settings/Play 옵션/runInBackground/GameView 진입 설정 복원. OS 포커스 전환/Game View 활성화/물리 입력 없음. 실제 걷기·키보드/게임패드는 미검증.
-- 직접 변경 파일 staged diff --check를 확인한 뒤 commit한다. 기존 사용자 Working Tree/whitespace 보존. GitHub Push 없음.
+- 직접 변경 파일 staged diff --check 통과. 기존 사용자 Working Tree/whitespace 보존. GitHub Push 없음.
