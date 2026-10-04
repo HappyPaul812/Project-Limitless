@@ -127,7 +127,7 @@ namespace ProjectLimitless.EditorTools
             var wait = WaitScene(name); while (wait.MoveNext()) yield return null;
         }
 
-        /// <summary>현재 Intellectual3/Vision5 대상8조합을 실제 UI에서 선택하고, 대표 남녀를 생성·이어하기·Battle까지 검증합니다.</summary>
+        /// <summary>Intellectual3/Vision5 대상8조합과 READY 대표 지적/시각 외형의 생성·이어하기·Battle 연결을 검증합니다.</summary>
         private static IEnumerator Run()
         {
             for (int i = 0; i < 8; i++) yield return null;
@@ -171,8 +171,8 @@ namespace ProjectLimitless.EditorTools
                     }
                 }
             string[] representativePaths = { "path.intellectual", "path.vision" };
-            string[] representativeJobs = { "mage", "mage" };
-            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female };
+            string[] representativeJobs = { "mage", "guardian" };
+            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Male };
             for (int sample = 0; sample < representativePaths.Length; sample++)
             {
                 GameSessionData.Reset(); GameSaveService.SelectSlot(1);

@@ -2491,10 +2491,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Intellectual_Fighter_Female.png",
-      "sha256": "bf753564a32473c41208974fbb9b820f53c3e47748304aa457f21da1ea053143",
+      "sha256": "140e00269102a850111e56fe596825e14078f7ce390a3796cb8bf715a1a74a8a",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.intellectual.fighter.female",
       "theme": "Intellectual",
@@ -2504,12 +2504,10 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right 8–11 리본 끝의 기존 수평 절단 윤곽이 이동 후 y=2에 남음. Up 12–15 머리/리본 윗부분의 원본 절단 윤곽 잔존. 13/15는 발 Alpha를 보존하기 위해 전체 이동 제외.",
+      "readyForSelection": true,
+      "reviewReason": "Restored16Frame PASS: Right 리본 끝·Up 머리/리본 상단 복원. 전체16프레임 본체·장비·방향 정상.",
       "edgeTouchCells": [
-        13,
-        14,
-        15
+        14
       ],
       "cellBboxes": [
         [
@@ -2562,68 +2560,53 @@
         ],
         [
           8,
-          2,
+          1,
           125,
-          118
-        ],
-        [
-          9,
-          2,
-          126,
-          118
+          119
         ],
         [
           8,
-          2,
+          1,
           126,
-          118
+          119
+        ],
+        [
+          8,
+          1,
+          126,
+          119
         ],
         [
           9,
-          2,
+          1,
           124,
-          118
+          119
         ],
         [
           7,
-          2,
+          1,
           124,
-          126
+          127
         ],
         [
-          9,
+          6,
           1,
           121,
-          128
+          127
         ],
         [
           8,
-          2,
+          1,
           124,
           128
         ],
         [
-          15,
+          10,
           1,
           122,
-          128
+          127
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "1198c3021a444380b23f22b3a2014baf3be106a83c4942758f11fc6abe925ed5",
-        "changedFrames": [
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
       "sourceZip": "F:/Downloads/Limitless_Intellectual4_Vision5_Revised.zip",
@@ -3206,10 +3189,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Intellectual_Mage_Female.png",
-      "sha256": "09646b5b4a45f859a898747fefa975bf02037b028c324cb66d0036341cb7e60e",
+      "sha256": "9ddc0c9594ee20f94aa064156a564b15e1d5a1b4e855330c6a04b5ff8e8e5ba5",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png",
       "appearanceId": "appearance.external.v1.intellectual.mage.female",
       "theme": "Intellectual",
@@ -3219,8 +3202,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Up 12–15 양쪽 리본/머리 상단의 기존 절단 윤곽 잔존. 13 아래1px 이동으로 경계 여백 확보했으나 원래 소실된 윤곽은 복구되지 않음. 12/14/15는 발을 새로 자르므로 이동 제외.",
+      "readyForSelection": true,
+      "reviewReason": "Restored16Frame PASS: Up 머리/양쪽 리본 윤곽 복원. 전체16프레임 정상.",
       "edgeTouchCells": [
         0,
         4,
@@ -3230,9 +3213,7 @@
         8,
         10,
         12,
-        13,
-        14,
-        15
+        13
       ],
       "cellBboxes": [
         [
@@ -3311,11 +3292,11 @@
           0,
           1,
           125,
-          128
+          127
         ],
         [
           3,
-          2,
+          1,
           121,
           128
         ],
@@ -3323,30 +3304,21 @@
           4,
           1,
           125,
-          128
+          127
         ],
         [
           3,
           1,
           121,
-          128
+          127
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "01ff83e983857a8714b0b61f689a05564ff798ad0a6e1c3cef149f0c4602499e",
-        "changedFrames": [
-          13,
-          15
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Intellectual_Mage_Male.png",
-      "sha256": "c5799e7f652ef00a0d497e74b489ed68e07fdb2e57d064f371a17229548296af",
+      "sha256": "e0c6ff79f0805c36dd0e0e96390418d7b83e6175785827344c8e23619792fbbd",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png",
       "appearanceId": "appearance.external.v1.intellectual.mage.male",
       "theme": "Intellectual",
@@ -3356,8 +3328,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Up 12–15 갈색 머리 끝의 원본 수평 절단 형태가 아래2px 이동 후 y=2에 남음. 경계 접촉은 해소됐으나 소실된 머리 끝 픽셀은 이동으로 복원 불가.",
+      "readyForSelection": true,
+      "reviewReason": "Restored16Frame PASS: Up 머리카락 끝 복원. 전체16프레임 정상.",
       "edgeTouchCells": [
         0,
         1,
@@ -3444,40 +3416,29 @@
         ],
         [
           7,
-          2,
-          120,
-          128
-        ],
-        [
-          7,
-          2,
-          123,
-          128
-        ],
-        [
-          7,
-          2,
+          1,
           120,
           128
         ],
         [
           3,
-          2,
+          1,
+          123,
+          128
+        ],
+        [
+          7,
+          1,
+          120,
+          128
+        ],
+        [
+          3,
+          1,
           123,
           128
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "5e8a73db07cb39c39ab915a8b2cf5df6a8c3104fe316c08639093ff1b6e63a93",
-        "changedFrames": [
-          12,
-          13,
-          14,
-          15
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
       "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
@@ -5002,10 +4963,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Vision_Fighter_Male.png",
-      "sha256": "fdc79becaf1f5bb8638ad62ca8690946e9f28f05a687e7a4fc64a637fe583304",
+      "sha256": "7052b5d353a9a00ce7392a1d716ab7066bfa4ffee95b7470e40f5663b2d44870",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.vision.fighter.male",
       "theme": "Vision",
@@ -5016,20 +4977,14 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Down1/3, Left5/7, Right9/11, Up13 검·망토의 원본 잘린 끝 잔존. Left5는 좌우 폭 부족으로 안전 전체 이동 불가. Up12–14 머리 상단의 원본 절단 윤곽 잔존. 방향 정상.",
+      "reviewReason": "BLOCKED_ART: Left5/7 검 끝의 넓은 절단 단면과 Right9/11 검 끝의 평평한 단면이 남음. 경계 안에 있어도 끝 윤곽 복원이 불완전함. Up 머리/망토 및 분리 조각은 개선됐고 Left/Right 방향 정상 유지.",
       "edgeTouchCells": [
         0,
-        1,
-        2,
-        3,
-        5,
         6,
         8,
         9,
         10,
-        11,
-        13,
-        14,
+        12,
         15
       ],
       "cellBboxes": [
@@ -5040,22 +4995,22 @@
           128
         ],
         [
-          1,
+          3,
           9,
-          126,
-          128
+          127,
+          127
         ],
         [
           9,
           4,
-          111,
-          128
+          127,
+          127
         ],
         [
-          2,
+          1,
           3,
-          123,
-          128
+          121,
+          127
         ],
         [
           4,
@@ -5064,9 +5019,9 @@
           126
         ],
         [
-          0,
+          1,
           8,
-          128,
+          127,
           126
         ],
         [
@@ -5076,9 +5031,9 @@
           128
         ],
         [
-          2,
+          1,
           8,
-          126,
+          124,
           126
         ],
         [
@@ -5088,9 +5043,9 @@
           122
         ],
         [
-          2,
+          4,
           0,
-          126,
+          127,
           122
         ],
         [
@@ -5100,28 +5055,28 @@
           122
         ],
         [
-          2,
+          1,
           3,
-          128,
+          127,
           122
         ],
         [
           8,
-          2,
+          1,
           127,
-          126
-        ],
-        [
-          13,
-          2,
-          126,
           128
         ],
         [
-          19,
-          2,
+          15,
+          1,
+          127,
+          127
+        ],
+        [
+          1,
+          1,
           122,
-          128
+          127
         ],
         [
           4,
@@ -5129,23 +5084,7 @@
           128,
           128
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "c6db6d4ddbfb6996f7432120d33a7692d267789a94703bcd2eb2322f383b9613",
-        "changedFrames": [
-          1,
-          2,
-          3,
-          7,
-          9,
-          11,
-          12,
-          13,
-          14
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
       "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
@@ -5281,10 +5220,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Vision_Guardian_Male.png",
-      "sha256": "673ad83a70c91001af2f43954fdc1766b227415d52d6228a7d22f2e709fb35d4",
+      "sha256": "194839422160bc7d4850009ffd87d0e65c298772ac02b86e8ac945bcb30e61c5",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.vision.guardian.male",
       "theme": "Vision",
@@ -5294,14 +5233,13 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5 망토 끝의 원본 잘린 윤곽 잔존. Right8–11 머리 끝과 Up12–15 머리 상단의 원본 절단 형태 잔존. 15는 새 발 경계 접촉을 막기 위해 이동 제외.",
+      "readyForSelection": true,
+      "reviewReason": "Restored16Frame PASS: Left 망토·Right/Up 머리 윤곽 복원, Frame6 분리 조각 없음. 전체16프레임 정상.",
       "edgeTouchCells": [
         1,
         3,
         4,
         7,
-        9,
         12,
         13,
         14
@@ -5338,13 +5276,13 @@
           128
         ],
         [
+          4,
           2,
-          2,
-          126,
+          127,
           120
         ],
         [
-          6,
+          1,
           2,
           124,
           119
@@ -5357,70 +5295,53 @@
         ],
         [
           2,
-          2,
-          122,
-          117
-        ],
-        [
           1,
-          2,
-          128,
+          122,
           118
         ],
         [
+          1,
+          1,
+          127,
+          119
+        ],
+        [
           3,
-          2,
+          1,
           123,
+          118
+        ],
+        [
+          1,
+          1,
+          126,
           117
         ],
         [
           1,
-          2,
-          126,
-          116
-        ],
-        [
-          0,
-          2,
+          1,
           126,
           128
         ],
         [
           6,
-          2,
-          128,
+          1,
+          127,
           128
         ],
         [
-          0,
-          2,
+          1,
+          1,
           126,
           128
         ],
         [
-          3,
+          1,
           1,
           126,
           127
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "91b253490576c589ad2368cd43a6d0efbff621e462b0f170ddd9ae3a66ddcb65",
-        "changedFrames": [
-          5,
-          6,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
       "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
@@ -5689,10 +5610,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Vision_Mage_Female.png",
-      "sha256": "22af915b35b323be54554b47dcc30877f2a8c239401c7aeb18855ae4435a1d86",
+      "sha256": "18e1ffe712e8122e7a69dd65d926c219f78c81faf2b93643f6f68bb07d45b70c",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
       "appearanceId": "appearance.external.v1.vision.mage.female",
       "theme": "Vision",
@@ -5703,7 +5624,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Up12–15 머리/지팡이 꼭대기의 원본 절단 단면이 아래2px 이동 후 y=2에 남음. 경계 접촉 해소와 소실된 디자인 복구는 구분함.",
+      "reviewReason": "BLOCKED_ART: Up12–15 머리/지팡이 상단 복원 조각이 기존 머리/지팡이와 어긋남. 셀 상단 y≈17 부근에 수평 접합선, 머리 좌우 이중 봉우리와 지팡이 원의 이중/절단 형태가 생김. 동일 캐릭터 파츠 접합 문제이며 Character Swap은 아님.",
       "edgeTouchCells": [
         4,
         5,
@@ -5784,40 +5705,29 @@
         ],
         [
           6,
-          2,
-          120,
-          126
+          1,
+          126,
+          127
         ],
         [
-          3,
           2,
+          1,
           121,
-          126
+          127
         ],
         [
           6,
-          2,
+          1,
           120,
           127
         ],
         [
           3,
-          2,
+          1,
           122,
-          126
+          127
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "3d4046f06a96ca76894ffad0737a445222b41c1d9246bf88e2ae3cbfecb8c927",
-        "changedFrames": [
-          12,
-          13,
-          14,
-          15
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
       "sourceZip": "F:\\Downloads\\Limitless_Player_Sprites_Validated_50.zip",
@@ -5953,10 +5863,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Vision_Sharpshooter_Female.png",
-      "sha256": "29d308085472b204902a3156d9413f5236589e031888a21be2fbb5d4bb53f4c1",
+      "sha256": "4bd6fa0b9f53bf4b47d6f3c754bb26236361694a34cf0e5b02f34bfed21fabdd",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.vision.marksman.female",
       "theme": "Vision",
@@ -5966,14 +5876,13 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5/6 파란 망토 끝의 원본 수평/수직 절단 형태가 왼쪽2px 이동 후 x=125에 남음. 경계는 떨어졌으나 망토 끝 소실은 미복구.",
+      "readyForSelection": true,
+      "reviewReason": "Restored16Frame PASS: Left5/6 망토 끝 닫힌 외곽 윤곽 복원. 전체16프레임에서 심각한 crop/조각/방향/Alpha 손상 없음. 경계의 미세 antialias와 정상 발바닥 선은 잘림으로 단정하지 않음.",
       "edgeTouchCells": [
         0,
         1,
         2,
         3,
-        5,
         7,
         8,
         9,
@@ -6016,15 +5925,15 @@
           126
         ],
         [
-          13,
+          15,
           7,
-          126,
-          128
+          127,
+          127
         ],
         [
-          12,
+          14,
           6,
-          126,
+          127,
           127
         ],
         [
@@ -6081,22 +5990,13 @@
           128,
           128
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "c35fcd18ec17b56ca916ca83043dc187803879e9d8b07e4b6835acf6fab635a0",
-        "changedFrames": [
-          5,
-          6
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
-      "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
+      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
       "sourceEntry": "Vision_Sharpshooter_Male.png",
-      "sha256": "9cec3ca67a9088ac4877d03e3802810203a495b86a0a283e11e40f3acfba0501",
+      "sha256": "cdaf79b88e3c9d728f18583f1567f7f7c1646f2a2f6a8d49b636d47013c85653",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.vision.marksman.male",
       "theme": "Vision",
@@ -6107,13 +6007,12 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5 파란 망토 끝의 원본 절단 단면이 왼쪽2px 이동 후 x=125에 남음. Left6 좌측 분리 조각은 해결.",
+      "reviewReason": "BLOCKED_ART: 기존 Left5/6 망토 및 Frame6 분리 조각은 해결. 전체16Frame 재검수에서 Up12/15 머리 위 흰 머리카락 끝이 y=0에서 수평 절단(각11/10px Alpha>128). Up13 파란 망토 끝은 x=127 우측 경계에서 잘림.",
       "edgeTouchCells": [
         0,
         1,
         3,
         4,
-        5,
         6,
         7,
         8,
@@ -6156,16 +6055,16 @@
           128
         ],
         [
-          9,
+          11,
           6,
-          126,
-          128
+          127,
+          127
         ],
         [
-          13,
-          6,
+          1,
+          0,
           125,
-          128
+          127
         ],
         [
           5,
@@ -6221,16 +6120,7 @@
           123,
           124
         ]
-      ],
-      "artModification": {
-        "method": "integer cell translation and reviewed component cleanup",
-        "sourcePngSha256": "e2d62dc0826d982c37e32c35c04a38936b13a515b25aee6c94633d5fce632d74",
-        "changedFrames": [
-          5,
-          6
-        ],
-        "recipe": "Tools/PlayerSpriteCellCleanup.py"
-      }
+      ]
     }
   ]
 }

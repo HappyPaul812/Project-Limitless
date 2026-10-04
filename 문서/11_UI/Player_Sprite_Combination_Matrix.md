@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-05 Restored8 원본 반영: 대상 READY5/BLOCKED_ART3, 전체 **Ready27/Blocked23**. 다른42종 보존. [최신 QA](Intellectual_Vision_Restored8_QA.md). 아래는 이전 이력이다.
+
 2026-10-05 최신 셀 정밀 수정: 지정8종 문제41셀만 수정, 정상84셀 Pixel Diff0. 기존 절단 윤곽 잔존으로 READY승격0, 전체 Ready22/Blocked28 유지. 다른42종 보존. [최신 개별 QA](Intellectual_Vision_CellCleanup_QA.md). 아래는 이전 이력이다.
 
 2026-10-05 Cleanup v2: 지정8종 READY0/BLOCKED_ART8, 전체 **Ready22/Blocked28 유지**. 다른42종 보존. [최신 개별 QA](Intellectual_Vision_CleanupV2_QA.md). 아래는 이전 이력이다.
@@ -36,14 +38,14 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Male|path.emotional-scar|mage|appearance.external.v1.emotionalscar.mage.male|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Mage_Male.png|true|PASS|
 |Female|path.emotional-scar|sharpshooter|appearance.external.v1.emotionalscar.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Female.png|true|PASS|
 |Male|path.emotional-scar|sharpshooter|appearance.external.v1.emotionalscar.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Marksman_Male.png|true|PASS|
-|Female|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png|false|BLOCKED_ART|
+|Female|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png|true|PASS|
 |Male|path.intellectual|fighter|appearance.external.v1.intellectual.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Male.png|true|PASS|
 |Female|path.intellectual|guardian|appearance.external.v1.intellectual.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Female.png|true|PASS|
 |Male|path.intellectual|guardian|appearance.external.v1.intellectual.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Guardian_Male.png|true|PASS|
 |Female|path.intellectual|healer|appearance.external.v1.intellectual.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Healer_Female.png|true|PASS|
 |Male|path.intellectual|healer|appearance.external.v1.intellectual.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Healer_Male.png|true|PASS|
-|Female|path.intellectual|mage|appearance.external.v1.intellectual.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png|false|BLOCKED_ART|
-|Male|path.intellectual|mage|appearance.external.v1.intellectual.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png|false|BLOCKED_ART|
+|Female|path.intellectual|mage|appearance.external.v1.intellectual.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png|true|PASS|
+|Male|path.intellectual|mage|appearance.external.v1.intellectual.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png|true|PASS|
 |Female|path.intellectual|sharpshooter|appearance.external.v1.intellectual.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Female.png|true|PASS|
 |Male|path.intellectual|sharpshooter|appearance.external.v1.intellectual.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Male.png|true|PASS|
 |Female|path.mobility|fighter|appearance.external.v1.mobility.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png|false|BLOCKED_ART|
@@ -59,12 +61,12 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Female|path.vision|fighter|appearance.external.v1.vision.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|true|PASS|
 |Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_ART|
 |Female|path.vision|guardian|appearance.external.v1.vision.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|true|PASS|
-|Male|path.vision|guardian|appearance.external.v1.vision.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png|false|BLOCKED_ART|
+|Male|path.vision|guardian|appearance.external.v1.vision.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png|true|PASS|
 |Female|path.vision|healer|appearance.external.v1.vision.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Female.png|true|PASS|
 |Male|path.vision|healer|appearance.external.v1.vision.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Male.png|true|PASS|
 |Female|path.vision|mage|appearance.external.v1.vision.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png|false|BLOCKED_ART|
 |Male|path.vision|mage|appearance.external.v1.vision.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Male.png|true|PASS|
-|Female|path.vision|sharpshooter|appearance.external.v1.vision.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png|false|BLOCKED_ART|
+|Female|path.vision|sharpshooter|appearance.external.v1.vision.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png|true|PASS|
 |Male|path.vision|sharpshooter|appearance.external.v1.vision.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png|false|BLOCKED_ART|
 
 Blocked29의 수정 대상·프레임·사유는 [Foreground QA](Player_Appearance_Foreground_QA.md)와 동봉 JSON의 reason/frames에 기록한다. 원본 미술 수정은 별도 작업이다.
