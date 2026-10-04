@@ -1,6 +1,6 @@
 # Player Appearance 검증본 50종 등록 계약
 
-2026-10-05 Vision Final3 적용 준비: 입력 `F:/Downloads/Limitless_Vision_3_Restored_512_Final.zip`. Vision Fighter Male·Mage Female·Sharpshooter Male의 잘린 파츠 복원본만 반영한다. 현재 전체 READY27/BLOCKED23, 기대 READY30/BLOCKED20은 검증 전 미확정. 다른47종 자산·조합 및 기존 READY는 수정 범위 밖으로 보존한다. [계획](Vision_Restored512Final3_적용_계약.md)·[QA](Vision_Restored512Final3_QA.md).
+2026-10-05 Vision512Final 새48Frame QA: 지정3종 READY3/BLOCKED0·전체 **READY30/BLOCKED20**. 다른47종 및 이전 READY27 보존. [최신 QA](Vision_Restored512Final3_QA.md). 백그라운드90PASS/0FAIL·최종Console Error0/Warning0.
 
 2026-10-05 Vision Final3 형식검사 보류: `F:/Downloads/Limitless_Vision_3_Restored_Final.zip` 지정3종이 모두1254×1254 RGBA여서512×512·Cell128 규격 불일치. 게임 자산 반영0/READY 승격0, 전체 **READY27/BLOCKED23 유지**. 다른47종 및 기존 READY/사용자 변경 보존. [최신 QA](Vision_RestoredFinal3_QA.md).
 

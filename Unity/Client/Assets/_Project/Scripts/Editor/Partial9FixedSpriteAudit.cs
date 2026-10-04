@@ -127,14 +127,14 @@ namespace ProjectLimitless.EditorTools
             var wait = WaitScene(name); while (wait.MoveNext()) yield return null;
         }
 
-        /// <summary>Intellectual3/Vision5 대상8조합과 READY 대표 지적/시각 외형의 생성·이어하기·Battle 연결을 검증합니다.</summary>
+        /// <summary>Vision512 최종본3조합의 Preview·World·격리Save/Continue·Battle 연결을 검증합니다.</summary>
         private static IEnumerator Run()
         {
             for (int i = 0; i < 8; i++) yield return null;
             var catalog = PlayerAppearanceCatalog.Load();
-            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => (p.Id == "path.intellectual" || p.Id == "path.vision")).OrderBy(p => p.name).ToArray();
+            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.vision").OrderBy(p => p.name).ToArray();
             var jobs = Resources.LoadAll<JobDefinition>("JobDefinitions").OrderBy(j => j.name).ToArray();
-            Check(catalog.Entries.Count == 50 && paths.Length == 2 && jobs.Length == 5, "50 definitions / Intellectual/Vision targets only / 5 Job");
+            Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Vision targets only / 5 Job");
             // 미술 수정판의 Ready 승격도 검사합니다. 기대값은 정식 Inventory를 사용합니다.
             var inventory = JsonUtility.FromJson<PlayerAppearanceCatalog.Inventory>(File.ReadAllText(
                 Path.Combine(Application.dataPath, "_Project/Resources/PlayerAppearances/Validated50.json")));
@@ -153,11 +153,9 @@ namespace ProjectLimitless.EditorTools
                     Value<Button>(pathUI, "chooseButton").onClick.Invoke();
                     wait = WaitScene("JobSelection"); while (wait.MoveNext()) yield return null;
                     var jobUI = Object.FindAnyObjectByType<JobSelectionController>();
-                    // 검수 통과 여부와 무관하게 이번8종만 검사합니다. 직전 READY인 Intellectual Fighter Male은 제외합니다.
-                    foreach (var job in jobs.Where(j => path.Id == "path.intellectual" ?
-                        (j.JobId == "mage" || (gender == PlayerVisualType.Female && j.JobId == "fighter")) :
-                        (gender == PlayerVisualType.Male ? (j.JobId == "fighter" || j.JobId == "guardian" || j.JobId == "sharpshooter") :
-                            (j.JobId == "mage" || j.JobId == "sharpshooter"))))
+                    // 이번 원본 교체3종만 검사하며 다른47종의 외형이나 검수 판정을 변경하지 않습니다.
+                    foreach (var job in jobs.Where(j => gender == PlayerVisualType.Male ?
+                        (j.JobId == "fighter" || j.JobId == "sharpshooter") : j.JobId == "mage"))
                     {
                         Call(jobUI, "SelectJob", job);
                         var entry = catalog.FindCombination(gender.ToString(), path.Id, job.JobId);
@@ -170,9 +168,9 @@ namespace ProjectLimitless.EditorTools
                         Check(entry.RuntimeReady || Value<Text>(jobUI, "previewStatus").text.Contains("임시 fallback"), "Blocked 표시 " + expectedId);
                     }
                 }
-            string[] representativePaths = { "path.intellectual", "path.vision" };
-            string[] representativeJobs = { "mage", "guardian" };
-            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Male };
+            string[] representativePaths = { "path.vision", "path.vision", "path.vision" };
+            string[] representativeJobs = { "fighter", "mage", "sharpshooter" };
+            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female, PlayerVisualType.Male };
             for (int sample = 0; sample < representativePaths.Length; sample++)
             {
                 GameSessionData.Reset(); GameSaveService.SelectSlot(1);
@@ -183,6 +181,10 @@ namespace ProjectLimitless.EditorTools
                 var controls = Value<List<Selectable>>(creation, "navigationControls");
                 Check(controls.Count == 4 && controls.All(c => c.navigation.mode == Navigation.Mode.Explicit), "Gender/Name/Next Navigation4");
                 Check(GameSessionData.SelectedPlayerPathId == "" && GameSessionData.SelectedJobId == "", "기본 정보 조합 미선택");
+                // Path/Job을 고르기 전에는 성별 기본 미리보기를 유지하고, 이후 Job/최종확인에서 새 외형을 검사합니다.
+                Check(Value<Image>(creation, "appearancePreview").sprite == Value<Sprite>(creation,
+                    genders[sample] == PlayerVisualType.Female ? "femalePreviewSprite" : "malePreviewSprite"),
+                    "Character Creation Preview 기본 성별 " + genders[sample]);
                 Value<InputField>(creation, "nameInputField").text = "조합감사"; Click("StartButton");
                 wait = WaitScene("PathSelection"); while (wait.MoveNext()) yield return null;
                 var pathUI = Object.FindAnyObjectByType<PathSelectionController>();

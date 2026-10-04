@@ -4963,10 +4963,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
-      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
+      "sourceZip": "F:\\Downloads\\Limitless_Vision_3_Restored_512_Final.zip",
+      "sourceZipSha256": "278db42e44d3e58c564742d02fe743000f70df7f6b0d262703efe1029d6b0f98",
       "sourceEntry": "Vision_Fighter_Male.png",
-      "sha256": "7052b5d353a9a00ce7392a1d716ab7066bfa4ffee95b7470e40f5663b2d44870",
+      "sha256": "bf92045fd5de085eebeccb054a42821dcad5a5b65d676ea319ecffb38bc8a7e4",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.vision.fighter.male",
       "theme": "Vision",
@@ -4976,113 +4976,105 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5/7 검 끝의 넓은 절단 단면과 Right9/11 검 끝의 평평한 단면이 남음. 경계 안에 있어도 끝 윤곽 복원이 불완전함. Up 머리/망토 및 분리 조각은 개선됐고 Left/Right 방향 정상 유지.",
-      "edgeTouchCells": [
-        0,
-        6,
-        8,
-        9,
-        10,
-        12,
-        15
-      ],
+      "readyForSelection": true,
+      "reviewReason": "Restored512Final16Frame PASS: 전체16Frame 방향 정상. Left5/7·Right9/11 검 끝이 뾰족한 닫힌 윤곽으로 복원되고 검/머리/망토/발이 셀 안에 포함됨. 절단 단면/외딴 조각/인접 셀 침범 없음.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          9,
-          4,
-          123,
-          128
-        ],
-        [
-          3,
-          9,
-          127,
-          127
-        ],
-        [
-          9,
-          4,
-          127,
-          127
-        ],
-        [
-          1,
-          3,
-          121,
-          127
-        ],
-        [
-          4,
-          8,
-          120,
+          13,
+          7,
+          117,
           126
-        ],
-        [
-          1,
-          8,
-          127,
-          126
-        ],
-        [
-          0,
-          8,
-          115,
-          128
-        ],
-        [
-          1,
-          8,
-          124,
-          126
-        ],
-        [
-          5,
-          0,
-          120,
-          122
-        ],
-        [
-          4,
-          0,
-          127,
-          122
         ],
         [
           6,
-          0,
-          116,
+          11,
+          126,
+          126
+        ],
+        [
+          11,
+          7,
+          106,
+          126
+        ],
+        [
+          2,
+          6,
+          119,
+          126
+        ],
+        [
+          8,
+          11,
+          118,
           122
         ],
         [
-          1,
-          3,
-          127,
+          2,
+          11,
+          124,
+          121
+        ],
+        [
+          5,
+          11,
+          113,
+          122
+        ],
+        [
+          2,
+          11,
+          122,
           122
         ],
         [
           8,
-          1,
-          127,
-          128
-        ],
-        [
-          15,
-          1,
-          127,
-          127
-        ],
-        [
-          1,
-          1,
-          122,
-          127
-        ],
-        [
           4,
-          0,
-          128,
-          128
+          118,
+          118
+        ],
+        [
+          6,
+          4,
+          125,
+          118
+        ],
+        [
+          9,
+          4,
+          113,
+          118
+        ],
+        [
+          2,
+          6,
+          121,
+          118
+        ],
+        [
+          12,
+          4,
+          125,
+          124
+        ],
+        [
+          12,
+          4,
+          126,
+          125
+        ],
+        [
+          20,
+          4,
+          118,
+          124
+        ],
+        [
+          7,
+          3,
+          124,
+          121
         ]
       ]
     },
@@ -5610,10 +5602,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
-      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
+      "sourceZip": "F:\\Downloads\\Limitless_Vision_3_Restored_512_Final.zip",
+      "sourceZipSha256": "278db42e44d3e58c564742d02fe743000f70df7f6b0d262703efe1029d6b0f98",
       "sourceEntry": "Vision_Mage_Female.png",
-      "sha256": "18e1ffe712e8122e7a69dd65d926c219f78c81faf2b93643f6f68bb07d45b70c",
+      "sha256": "730b67ee78584a8c4108959004e493303b11812ac4748eeae586645d35031acc",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
       "appearanceId": "appearance.external.v1.vision.mage.female",
       "theme": "Vision",
@@ -5623,109 +5615,105 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Up12–15 머리/지팡이 상단 복원 조각이 기존 머리/지팡이와 어긋남. 셀 상단 y≈17 부근에 수평 접합선, 머리 좌우 이중 봉우리와 지팡이 원의 이중/절단 형태가 생김. 동일 캐릭터 파츠 접합 문제이며 Character Swap은 아님.",
-      "edgeTouchCells": [
-        4,
-        5,
-        6
-      ],
+      "readyForSelection": true,
+      "reviewReason": "Restored512Final16Frame PASS: 전체16Frame 정상. Up12-15 머리 상단·머리카락/장식·지팡이 꼭대기가 온전하며 수평 접합선/이중 봉우리/지팡이 이중 원/접합 어긋남 없음. 인접 셀 침범/잔여 조각 없음.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          6,
-          6,
-          118,
-          126
+          11,
+          11,
+          113,
+          121
+        ],
+        [
+          12,
+          17,
+          116,
+          121
+        ],
+        [
+          11,
+          11,
+          113,
+          121
+        ],
+        [
+          13,
+          17,
+          117,
+          121
+        ],
+        [
+          11,
+          10,
+          119,
+          118
+        ],
+        [
+          8,
+          16,
+          119,
+          120
+        ],
+        [
+          11,
+          10,
+          119,
+          118
         ],
         [
           7,
+          16,
+          117,
+          120
+        ],
+        [
+          11,
+          8,
+          114,
+          113
+        ],
+        [
           12,
-          122,
-          126
+          8,
+          117,
+          113
         ],
         [
-          6,
-          5,
-          118,
-          126
+          11,
+          9,
+          114,
+          113
         ],
         [
-          3,
-          12,
-          122,
-          126
-        ],
-        [
-          6,
-          3,
-          125,
-          128
-        ],
-        [
-          2,
           10,
-          128,
-          128
+          8,
+          116,
+          113
         ],
         [
-          5,
-          3,
-          125,
-          128
-        ],
-        [
-          1,
-          10,
-          122,
-          127
-        ],
-        [
-          6,
-          3,
-          119,
-          118
-        ],
-        [
-          6,
-          3,
-          121,
-          118
-        ],
-        [
-          6,
-          3,
-          119,
-          118
-        ],
-        [
-          4,
+          11,
           2,
-          121,
-          118
+          112,
+          123
         ],
         [
-          6,
-          1,
-          126,
-          127
-        ],
-        [
+          9,
           2,
-          1,
-          121,
-          127
+          113,
+          124
         ],
         [
-          6,
-          1,
-          120,
-          127
+          11,
+          2,
+          112,
+          123
         ],
         [
-          3,
-          1,
-          122,
-          127
+          9,
+          2,
+          114,
+          124
         ]
       ]
     },
@@ -5993,10 +5981,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Restored.zip",
-      "sourceZipSha256": "7adbeee03f0dffe44a54ab348edca3e3f1f9fa07b9449b7c65652b53f67d26d8",
+      "sourceZip": "F:\\Downloads\\Limitless_Vision_3_Restored_512_Final.zip",
+      "sourceZipSha256": "278db42e44d3e58c564742d02fe743000f70df7f6b0d262703efe1029d6b0f98",
       "sourceEntry": "Vision_Sharpshooter_Male.png",
-      "sha256": "cdaf79b88e3c9d728f18583f1567f7f7c1646f2a2f6a8d49b636d47013c85653",
+      "sha256": "82b6693fbcef96367021cb19aa3ffedda7290abd83a2c543daa105a900e37b30",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.vision.marksman.male",
       "theme": "Vision",
@@ -6006,118 +5994,104 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 기존 Left5/6 망토 및 Frame6 분리 조각은 해결. 전체16Frame 재검수에서 Up12/15 머리 위 흰 머리카락 끝이 y=0에서 수평 절단(각11/10px Alpha>128). Up13 파란 망토 끝은 x=127 우측 경계에서 잘림.",
-      "edgeTouchCells": [
-        0,
-        1,
-        3,
-        4,
-        6,
-        7,
-        8,
-        9,
-        10,
-        12,
-        13,
-        14,
-        15
-      ],
+      "readyForSelection": true,
+      "reviewReason": "Restored512Final16Frame PASS: 전체16Frame Left/Right/Up 방향 정상. Up12/15 머리 끝 및 Up13 우측 망토 끝이 셀 안에서 닫힌 윤곽으로 복원됨. 검은 외딴 조각/경계 노출/인접 셀 침범 없음.",
+      "edgeTouchCells": [],
       "cellBboxes": [
         [
-          8,
-          3,
-          119,
-          128
-        ],
-        [
-          3,
-          3,
-          121,
-          128
-        ],
-        [
-          8,
-          3,
-          119,
-          127
-        ],
-        [
-          3,
-          3,
-          121,
-          128
-        ],
-        [
-          11,
-          6,
-          125,
-          128
-        ],
-        [
-          11,
-          6,
-          127,
-          127
-        ],
-        [
-          1,
-          0,
-          125,
-          127
-        ],
-        [
+          10,
           5,
-          0,
-          121,
-          128
-        ],
-        [
-          7,
-          0,
           117,
-          124
+          125
         ],
         [
-          4,
-          0,
+          6,
+          5,
+          117,
+          125
+        ],
+        [
+          10,
+          5,
+          117,
+          125
+        ],
+        [
+          6,
+          5,
+          118,
+          125
+        ],
+        [
+          13,
+          8,
+          121,
+          123
+        ],
+        [
+          13,
+          8,
+          126,
+          126
+        ],
+        [
+          16,
+          8,
+          123,
+          123
+        ],
+        [
+          8,
+          8,
           119,
           125
         ],
         [
+          9,
+          3,
+          115,
+          121
+        ],
+        [
+          7,
           2,
-          0,
           117,
-          124
+          121
         ],
         [
-          4,
-          1,
-          120,
-          124
+          6,
+          3,
+          114,
+          121
         ],
         [
-          8,
-          0,
-          125,
+          6,
+          5,
+          117,
+          121
+        ],
+        [
+          10,
+          2,
+          122,
           124
         ],
         [
           18,
           3,
-          128,
-          128
+          126,
+          123
         ],
         [
-          0,
-          1,
-          127,
-          125
+          16,
+          3,
+          124,
+          123
         ],
         [
-          6,
-          0,
-          123,
+          10,
+          2,
+          122,
           124
         ]
       ]

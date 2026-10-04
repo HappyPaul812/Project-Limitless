@@ -1,6 +1,6 @@
 # Player Sprite 자동 매핑·저장 계약
 
-2026-10-05 Vision Final3 적용 준비: 입력 `F:/Downloads/Limitless_Vision_3_Restored_512_Final.zip`. Vision Fighter Male·Mage Female·Sharpshooter Male의 잘린 파츠 복원본만 반영한다. 현재 전체 READY27/BLOCKED23, 기대 READY30/BLOCKED20은 검증 전 미확정. 다른47종 자산·조합 및 기존 READY는 수정 범위 밖으로 보존한다. [계획](Vision_Restored512Final3_적용_계약.md)·[QA](Vision_Restored512Final3_QA.md).
+2026-10-05 Vision512Final 새48Frame QA: 지정3종 READY3/BLOCKED0·전체 **READY30/BLOCKED20**. 다른47종 및 이전 READY27 보존. [최신 QA](Vision_Restored512Final3_QA.md). 백그라운드90PASS/0FAIL·최종Console Error0/Warning0.
 
 2026-10-05 Vision Final3 형식검사 보류: `F:/Downloads/Limitless_Vision_3_Restored_Final.zip` 지정3종이 모두1254×1254 RGBA여서512×512·Cell128 규격 불일치. 게임 자산 반영0/READY 승격0, 전체 **READY27/BLOCKED23 유지**. 다른47종 및 기존 READY/사용자 변경 보존. [최신 QA](Vision_RestoredFinal3_QA.md).
 
@@ -30,7 +30,7 @@ Path Theme는 실제 Player Path의 시각 디자인이다. 모든 Path×Job 조
 
 Intellectual4/Vision5 최신 수정판 적용 후에도 이번 Revised9 기준 Ready1/Blocked8이며 전체 Ready22/Blocked28이다. 기존 ID/자동 매핑/Save와 다른41종 상태는 보존한다. [Revised9 QA](Intellectual_Vision_Revised9_QA.md).
 
-매핑 정확성과 Art Ready는 분리한다. 현재 50조합 중 Runtime Ready27 / Art Blocked23이며 정확한 프레임·사유는 [QA](Player_Appearance_Foreground_QA.md)를 따른다. Mobility10종은 제공 수정판 교체 후에도 분리 조각·머리 절단으로 BLOCKED_ART이며 [수정판 QA](Mobility_Player_Sprite_Fixed_QA.md)에 기록한다. 다른40종 판정은 유지한다. Blocked도 고유 Definition/ID를 조회한다. 실행에는 기존 Male/Female 기본 Sprite를 **임시 fallback**으로 쓰고 Preview에 이를 표시한다. 다른 Path/Job의 Sprite 또는 공통 Mobility Sprite로 대체하지 않는다. 기술 QA 필드 `readyForSelection`은 직렬화 호환 때문에 유지하되 RuntimeReady로 읽으며 선택을 제한하지 않는다.
+매핑 정확성과 Art Ready는 분리한다. 현재 50조합 중 Runtime Ready30 / Art Blocked20이며 정확한 프레임·사유는 [QA](Player_Appearance_Foreground_QA.md)를 따른다. Mobility10종은 제공 수정판 교체 후에도 분리 조각·머리 절단으로 BLOCKED_ART이며 [수정판 QA](Mobility_Player_Sprite_Fixed_QA.md)에 기록한다. 다른40종 판정은 유지한다. Blocked도 고유 Definition/ID를 조회한다. 실행에는 기존 Male/Female 기본 Sprite를 **임시 fallback**으로 쓰고 Preview에 이를 표시한다. 다른 Path/Job의 Sprite 또는 공통 Mobility Sprite로 대체하지 않는다. 기술 QA 필드 `readyForSelection`은 직렬화 호환 때문에 유지하되 RuntimeReady로 읽으며 선택을 제한하지 않는다.
 
 World는 대응 Ready Definition의 Clip을 공용 성별 Controller에 Override한다. Battle은 같은 World Controller의 Left Idle을 사용하는 기존 전달 구조를 재사용한다. 50개 Animator Controller를 만들지 않는다.
 

@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-05 Vision512Final 새48Frame QA: 지정3종 READY3/BLOCKED0·전체 **READY30/BLOCKED20**. 다른47종 및 이전 READY27 보존. [최신 QA](Vision_Restored512Final3_QA.md). 백그라운드90PASS/0FAIL·최종Console Error0/Warning0.
+
 2026-10-05 Vision Final3 형식검사 보류: `F:/Downloads/Limitless_Vision_3_Restored_Final.zip` 지정3종이 모두1254×1254 RGBA여서512×512·Cell128 규격 불일치. 게임 자산 반영0/READY 승격0, 전체 **READY27/BLOCKED23 유지**. 다른47종 및 기존 READY/사용자 변경 보존. [최신 QA](Vision_RestoredFinal3_QA.md).
 
 2026-10-05 Restored8 원본 반영: 대상 READY5/BLOCKED_ART3, 전체 **Ready27/Blocked23**. 다른42종 보존. [최신 QA](Intellectual_Vision_Restored8_QA.md). 아래는 이전 이력이다.
@@ -61,14 +63,14 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Female|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|false|BLOCKED_ART|
 |Male|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|false|BLOCKED_ART|
 |Female|path.vision|fighter|appearance.external.v1.vision.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|true|PASS|
-|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|false|BLOCKED_ART|
+|Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|true|PASS|
 |Female|path.vision|guardian|appearance.external.v1.vision.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|true|PASS|
 |Male|path.vision|guardian|appearance.external.v1.vision.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png|true|PASS|
 |Female|path.vision|healer|appearance.external.v1.vision.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Female.png|true|PASS|
 |Male|path.vision|healer|appearance.external.v1.vision.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Healer_Male.png|true|PASS|
-|Female|path.vision|mage|appearance.external.v1.vision.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png|false|BLOCKED_ART|
+|Female|path.vision|mage|appearance.external.v1.vision.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png|true|PASS|
 |Male|path.vision|mage|appearance.external.v1.vision.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Male.png|true|PASS|
 |Female|path.vision|sharpshooter|appearance.external.v1.vision.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png|true|PASS|
-|Male|path.vision|sharpshooter|appearance.external.v1.vision.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png|false|BLOCKED_ART|
+|Male|path.vision|sharpshooter|appearance.external.v1.vision.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png|true|PASS|
 
 Blocked29의 수정 대상·프레임·사유는 [Foreground QA](Player_Appearance_Foreground_QA.md)와 동봉 JSON의 reason/frames에 기록한다. 원본 미술 수정은 별도 작업이다.
