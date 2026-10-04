@@ -1,12 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
-## Vision 복원 최종3종 반영 준비 (2026-10-05)
+## Vision 복원 최종3종 입력 규격 불일치로 보류 (2026-10-05)
 
-- 입력 `F:/Downloads/Limitless_Vision_3_Restored_Final.zip`, 지정 Vision Fighter Male·Mage Female·Sharpshooter Male만 반영 예정. 잘린 검/머리/지팡이/망토 복원 및 접합선 제거 재검수. [계획](../11_UI/Vision_RestoredFinal3_적용_계약.md)·[QA](../11_UI/Vision_RestoredFinal3_QA.md).
-- 현재 READY27/BLOCKED23. 기대 READY30/BLOCKED20은 검증 대기. 기존3종 BLOCKED_ART 판정 유지 중, 다른47종·기존 READY·사용자 변경94항목 보호.
-- 문서화 선행 완료 후 원본PNG3만 교체하고 참조/Import·Mapping/Preview/World/Battle Left Idle/격리 Save→Continue/컴파일/Console 백그라운드 검증 예정. 포커스 전환·GitHub Push 없음.
-- 마지막 관련 반영 commit `dbbfb54`. 다음 작업: 구현 반영과48Frame QA. 아래는 이전 이력이다.
-
+- 입력 `F:/Downloads/Limitless_Vision_3_Restored_Final.zip`, Vision Fighter Male·Mage Female·Sharpshooter Male 지정3PNG/중복0/누락0/RGBA 확인. 문서화 선행 후 검사했으나 **모두1254×1254**로 필수512×512·4×4·Cell128 규격 실패. [계획](../11_UI/Vision_RestoredFinal3_적용_계약.md)·[최종 QA](../11_UI/Vision_RestoredFinal3_QA.md).
+- 게임 자산 교체0/승격0, **대상3종 BLOCKED_ART 유지·전체 READY27/BLOCKED23 유지**. 기대 READY30/BLOCKED20 미달성. 기존 문제 Frame: Fighter Male5/7/9/11 검 끝, Mage Female12-15 접합, Sharpshooter Male12/13/15 머리/망토. 새 입력 정식48Frame QA는 규격 불일치로 보류.
+- 모든50PNG/meta/Entry/기존216Clip·다른47종·READY27·사용자 기존94항목(410개 Git 상태) 보존. Assets/ProjectSettings/UserData 해시 변경0. 기존 Appearance/Sprite IDs·Import·Mapping·Preview·Save/fallback 코드 변경0.
+- Unity 읽기검증 전체800Sprite Missing0, 기존3종16Sprite씩/rect128/Multiple/PPU128/Point/Uncompressed. 새 복원본 Preview/World/Battle/Save Play QA·새 전체 컴파일 미수행. C# 변경0·현재 Console Error0/Warning0·clean Bootstrap Edit Mode, 포커스 전환 없음. 직전 CS0618 2건 보존.
+- 다음 필요한 작업: 동일3종512×512 RGBA·4×4·Cell128 원본 ZIP 확보 후 교체/재검증. 직접 문서 diff --check 통과, 전체 diff --check는 기존 사용자 whitespace로 실패하며 보존. GitHub Push 없음.
+- 관련 계획 commit `e58f432`, 마지막 게임 반영 commit `dbbfb54`. 이번 형식 불일치 기록은 후속 문서 commit에 포함한다. 아래는 이전 이력이다.
 
 ## Intellectual/Vision Restored8 원본 반영 완료 (2026-10-05)
 

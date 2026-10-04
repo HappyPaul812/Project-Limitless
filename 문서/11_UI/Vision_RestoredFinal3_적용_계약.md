@@ -11,3 +11,5 @@
 모든48Frame을 관찰하여 검 끝/머리/지팡이/망토 복원, 접합선, 경계/외딴 조각/인접 셀 침범 및 방향을 검증한다. 실제 통과 대상만 READY 승격한다. 각 기존 Catalog Entry 검수 필드와 필요한 Idle/Walk Clip 연결만 갱신하며 전체 Catalog 재생성은 하지 않는다. Inventory/Mapping/Preview/World/Battle Left Idle/Save→Continue 및 기본 성별 fallback 규칙 유지. 다른47종 PNG/meta/Entry/기존216 Clip·사용자 변경94항목을 해시와 Git 상태로 보존 확인한다.
 
 Unity clean Bootstrap 상태·격리 Save/Settings·PlayUnfocused 백그라운드 감사, 컴파일/Console 및 종료 시 설정 복원 검증. Foreground/Game View 활성화·물리 입력·GitHub Push 없음. 실제 걷기/물리 입력은 미검증으로 남긴다. 관련 문서와 직접 변경만 명시적으로 stage/commit한다.
+
+실행 결과: 입력3PNG 모두1254×1254 RGBA로 형식검사 실패. 기존128px Sprite rect 및 meta 보존을 위해 게임 반영/승격/새 Runtime 검증을 보류했다. 실제 READY27/BLOCKED23 유지. [최종 QA](Vision_RestoredFinal3_QA.md). 올바른512×512 원본 ZIP이 필요하다.
