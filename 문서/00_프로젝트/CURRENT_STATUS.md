@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## Vision 복원 최종3종 반영 준비 (2026-10-05)
+
+- 입력 `F:/Downloads/Limitless_Vision_3_Restored_Final.zip`, 지정 Vision Fighter Male·Mage Female·Sharpshooter Male만 반영 예정. 잘린 검/머리/지팡이/망토 복원 및 접합선 제거 재검수. [계획](../11_UI/Vision_RestoredFinal3_적용_계약.md)·[QA](../11_UI/Vision_RestoredFinal3_QA.md).
+- 현재 READY27/BLOCKED23. 기대 READY30/BLOCKED20은 검증 대기. 기존3종 BLOCKED_ART 판정 유지 중, 다른47종·기존 READY·사용자 변경94항목 보호.
+- 문서화 선행 완료 후 원본PNG3만 교체하고 참조/Import·Mapping/Preview/World/Battle Left Idle/격리 Save→Continue/컴파일/Console 백그라운드 검증 예정. 포커스 전환·GitHub Push 없음.
+- 마지막 관련 반영 commit `dbbfb54`. 다음 작업: 구현 반영과48Frame QA. 아래는 이전 이력이다.
+
+
 ## Intellectual/Vision Restored8 원본 반영 완료 (2026-10-05)
 
 - `Limitless_IntellectualVision_8_Restored.zip` 지정8PNG 원본 바이트 교체. PNG8/중복0/누락0·512×512 RGBA·128px×16 확인, 이미지 수정 없음. [계획](../11_UI/Intellectual_Vision_Restored8_적용_계약.md)·[8종 개별 QA](../11_UI/Intellectual_Vision_Restored8_QA.md).
