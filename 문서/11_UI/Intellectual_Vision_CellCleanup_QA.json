@@ -1,0 +1,5427 @@
+{
+  "sourceZip": "F:\\Downloads\\Limitless_IntellectualVision_8_Cleanup_v2.zip",
+  "sourceZipSha256": "95d2299df6b09e69165bc31a51045fad691901be1df58b97aad2edde3e737822",
+  "entries": [
+    {
+      "sourceEntry": "Intellectual_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.fighter.female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Fighter_Female.png",
+      "allowedFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "changedFrames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "originalPngSha256": "1198c3021a444380b23f22b3a2014baf3be106a83c4942758f11fc6abe925ed5",
+      "correctedPngSha256": "bf753564a32473c41208974fbb9b820f53c3e47748304aa457f21da1ea053143",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "413dc690b981da1de56b178826aca06582efb560466bb6079f1b8d2d68935204",
+          "afterHash": "413dc690b981da1de56b178826aca06582efb560466bb6079f1b8d2d68935204",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            6,
+            119,
+            127
+          ],
+          "afterBounds": [
+            8,
+            6,
+            119,
+            127
+          ],
+          "beforeVisibleBounds": [
+            9,
+            6,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            9,
+            6,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "dee7c6a03d6aaa4a84e67c0192b17771833ad39fba5bcf2d5125331e552c0592",
+          "afterHash": "dee7c6a03d6aaa4a84e67c0192b17771833ad39fba5bcf2d5125331e552c0592",
+          "changedPixels": 0,
+          "beforeBounds": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "afterBounds": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "beforeVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "b5983b34bed47db09799fa832ee77b00cbebbd3131cf089aa8ee65641ac2b6fb",
+          "afterHash": "b5983b34bed47db09799fa832ee77b00cbebbd3131cf089aa8ee65641ac2b6fb",
+          "changedPixels": 0,
+          "beforeBounds": [
+            9,
+            5,
+            119,
+            127
+          ],
+          "afterBounds": [
+            9,
+            5,
+            119,
+            127
+          ],
+          "beforeVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "8878a280eb9b00e00dca81c051af6efd16bc55995fd9640e12105baadadbe67a",
+          "afterHash": "8878a280eb9b00e00dca81c051af6efd16bc55995fd9640e12105baadadbe67a",
+          "changedPixels": 0,
+          "beforeBounds": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "afterBounds": [
+            10,
+            5,
+            121,
+            127
+          ],
+          "beforeVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            11,
+            6,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "7e5e231c7d2f2057caba7d3ca0accd29552c7f3b13ca019e0754e4cfd988abf3",
+          "afterHash": "7e5e231c7d2f2057caba7d3ca0accd29552c7f3b13ca019e0754e4cfd988abf3",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            3,
+            121,
+            121
+          ],
+          "afterBounds": [
+            7,
+            3,
+            121,
+            121
+          ],
+          "beforeVisibleBounds": [
+            9,
+            4,
+            120,
+            119
+          ],
+          "afterVisibleBounds": [
+            9,
+            4,
+            120,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": false,
+          "beforeHash": "d67b097fd8432ffe9acb4273805a90dfbe1ff62b1c92634ea55a30dd35393e5d",
+          "afterHash": "d67b097fd8432ffe9acb4273805a90dfbe1ff62b1c92634ea55a30dd35393e5d",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            3,
+            121,
+            121
+          ],
+          "afterBounds": [
+            4,
+            3,
+            121,
+            121
+          ],
+          "beforeVisibleBounds": [
+            5,
+            4,
+            120,
+            119
+          ],
+          "afterVisibleBounds": [
+            5,
+            4,
+            120,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 6,
+          "allowed": false,
+          "beforeHash": "31fac5c9f82bd527327f7dbe3c9e7b8ee462db05211650d0ef57bd095e5407e5",
+          "afterHash": "31fac5c9f82bd527327f7dbe3c9e7b8ee462db05211650d0ef57bd095e5407e5",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            3,
+            120,
+            121
+          ],
+          "afterBounds": [
+            3,
+            3,
+            120,
+            121
+          ],
+          "beforeVisibleBounds": [
+            5,
+            4,
+            119,
+            119
+          ],
+          "afterVisibleBounds": [
+            5,
+            4,
+            119,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "0b12a0606c4457ba35f0f02e24ae005ba12aabf24fa05a9245fbf30ed9e13827",
+          "afterHash": "0b12a0606c4457ba35f0f02e24ae005ba12aabf24fa05a9245fbf30ed9e13827",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            3,
+            121,
+            121
+          ],
+          "afterBounds": [
+            3,
+            3,
+            121,
+            121
+          ],
+          "beforeVisibleBounds": [
+            4,
+            4,
+            119,
+            119
+          ],
+          "afterVisibleBounds": [
+            4,
+            4,
+            119,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": true,
+          "beforeHash": "b515e44465bbb7cde884ed0e2ea7b25a5ce94b260d5b9ae794bc0d053b81dd11",
+          "afterHash": "5ee77b0fb768316f107fbeb606d35a868e3866b16037874b8aff7595b2059270",
+          "changedPixels": 8822,
+          "beforeBounds": [
+            8,
+            0,
+            125,
+            116
+          ],
+          "afterBounds": [
+            8,
+            2,
+            125,
+            118
+          ],
+          "beforeVisibleBounds": [
+            10,
+            0,
+            124,
+            114
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            124,
+            116
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 9,
+          "allowed": true,
+          "beforeHash": "0f4000bb2e29bcde6614b7f02675b70d357614ea41bc1ef428565a74f3cd4143",
+          "afterHash": "6c75a023593d3dfc52e23bbcd9a47b1efee626542f14d5c05dff9dd36d22e0eb",
+          "changedPixels": 8934,
+          "beforeBounds": [
+            8,
+            0,
+            126,
+            116
+          ],
+          "afterBounds": [
+            9,
+            2,
+            126,
+            118
+          ],
+          "beforeVisibleBounds": [
+            10,
+            0,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            125,
+            116
+          ],
+          "removedComponents": [
+            {
+              "pixels": 2,
+              "bbox": [
+                8,
+                45,
+                9,
+                47
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 10,
+          "allowed": true,
+          "beforeHash": "5449acaf883ceee7fb747fe7b3e04c2d7703f6facd43310a806babca039cdfb8",
+          "afterHash": "03f6e20955af44a122aa56fa394935263b67e6e586d09270ebb995fbba00f165",
+          "changedPixels": 8876,
+          "beforeBounds": [
+            8,
+            0,
+            126,
+            116
+          ],
+          "afterBounds": [
+            8,
+            2,
+            126,
+            118
+          ],
+          "beforeVisibleBounds": [
+            10,
+            0,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            125,
+            116
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                104,
+                60,
+                105,
+                61
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 11,
+          "allowed": true,
+          "beforeHash": "bf3f65b0fb0f2a8aafb9aa1bdb1f150647aa7733582f2eb49ec1ab8fb78976ee",
+          "afterHash": "87f71be9cef3bef20f9ab14376e898ecf12d959da4c91b2cfd8d68833313cd3c",
+          "changedPixels": 8991,
+          "beforeBounds": [
+            9,
+            0,
+            124,
+            116
+          ],
+          "afterBounds": [
+            9,
+            2,
+            124,
+            118
+          ],
+          "beforeVisibleBounds": [
+            10,
+            0,
+            123,
+            114
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            123,
+            116
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                12,
+                74,
+                13,
+                75
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "9b265cd25100653fa2ad43e9f0b6836dbc19a3c04d3f390d892ba3562793a677",
+          "afterHash": "998848936b59e69cd1444df7404c4a855a1515cf3a16576bc1a541084984bdd6",
+          "changedPixels": 8499,
+          "beforeBounds": [
+            7,
+            1,
+            124,
+            125
+          ],
+          "afterBounds": [
+            7,
+            2,
+            124,
+            126
+          ],
+          "beforeVisibleBounds": [
+            11,
+            1,
+            122,
+            122
+          ],
+          "afterVisibleBounds": [
+            11,
+            2,
+            122,
+            123
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "7519dde72ec37e9bbfa321a457de380371dc40e4bacdeb6820755d01f2c20f73",
+          "afterHash": "bec688bafaa239cc2658e9989ff0789b56e01075dec077cb8c0bc7358194eb78",
+          "changedPixels": 1,
+          "beforeBounds": [
+            6,
+            1,
+            121,
+            128
+          ],
+          "afterBounds": [
+            9,
+            1,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            1,
+            120,
+            127
+          ],
+          "afterVisibleBounds": [
+            10,
+            1,
+            120,
+            127
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                6,
+                23,
+                7,
+                24
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "a4865dcd0582a613c4fb6f478843b49cfb35f660483d9fdaa3b422c930699e7f",
+          "afterHash": "6581a405b9a4b5695eff21bce05165d8edae1dbcf7f796714338537e5fa1b0c4",
+          "changedPixels": 8642,
+          "beforeBounds": [
+            8,
+            1,
+            124,
+            127
+          ],
+          "afterBounds": [
+            8,
+            2,
+            124,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            1,
+            122,
+            125
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            122,
+            126
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 15,
+          "allowed": true,
+          "beforeHash": "4663d003535b8515040105f7f989f013646ddb26adb97f9eae4cec3591b041b5",
+          "afterHash": "cf71febcf82f5a705d4c3aec5039bf944cf3c864e25654e3b43b72c2503cff70",
+          "changedPixels": 5,
+          "beforeBounds": [
+            10,
+            1,
+            122,
+            128
+          ],
+          "afterBounds": [
+            15,
+            1,
+            122,
+            128
+          ],
+          "beforeVisibleBounds": [
+            16,
+            1,
+            121,
+            127
+          ],
+          "afterVisibleBounds": [
+            16,
+            1,
+            121,
+            127
+          ],
+          "removedComponents": [
+            {
+              "pixels": 5,
+              "bbox": [
+                10,
+                14,
+                12,
+                17
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "8-15",
+      "remainingReason": "Right 8–11 리본 끝의 기존 수평 절단 윤곽이 이동 후 y=2에 남음. Up 12–15 머리/리본 윗부분의 원본 절단 윤곽 잔존. 13/15는 발 Alpha를 보존하기 위해 전체 이동 제외.",
+      "correctionSummary": "Right8–11 아래2px, Up12/14 아래1px. 작은 Alpha 잔여 성분 제거."
+    },
+    {
+      "sourceEntry": "Intellectual_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.intellectual.mage.female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Female.png",
+      "allowedFrames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "changedFrames": [
+        13,
+        15
+      ],
+      "originalPngSha256": "01ff83e983857a8714b0b61f689a05564ff798ad0a6e1c3cef149f0c4602499e",
+      "correctedPngSha256": "09646b5b4a45f859a898747fefa975bf02037b028c324cb66d0036341cb7e60e",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "85d612f866a60c2eda68c5f4db11898db15c504fd0f558609af463438ab56821",
+          "afterHash": "85d612f866a60c2eda68c5f4db11898db15c504fd0f558609af463438ab56821",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            4,
+            124,
+            128
+          ],
+          "afterBounds": [
+            7,
+            4,
+            124,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "2348d83f8208c2c573898aae7d900be8c11647e75c77cae002e4cb6b76710985",
+          "afterHash": "2348d83f8208c2c573898aae7d900be8c11647e75c77cae002e4cb6b76710985",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            4,
+            124,
+            127
+          ],
+          "afterBounds": [
+            4,
+            4,
+            124,
+            127
+          ],
+          "beforeVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "815b9dc0024ddf6c4b47b665bbaad37b677ade63a35d2205356339afc1b4a508",
+          "afterHash": "815b9dc0024ddf6c4b47b665bbaad37b677ade63a35d2205356339afc1b4a508",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            4,
+            124,
+            127
+          ],
+          "afterBounds": [
+            7,
+            4,
+            124,
+            127
+          ],
+          "beforeVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "c1d6f247440839315cb42b2aae2bacc1ac95f2bc205abb06ad38e327c0348d18",
+          "afterHash": "c1d6f247440839315cb42b2aae2bacc1ac95f2bc205abb06ad38e327c0348d18",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            4,
+            124,
+            127
+          ],
+          "afterBounds": [
+            6,
+            4,
+            124,
+            127
+          ],
+          "beforeVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            8,
+            5,
+            123,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "f2aa099f44c3fcf0344c2102b43b9a062b13bacb63e214ae24ade33fbbfac9b3",
+          "afterHash": "f2aa099f44c3fcf0344c2102b43b9a062b13bacb63e214ae24ade33fbbfac9b3",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            0,
+            126,
+            121
+          ],
+          "afterBounds": [
+            0,
+            0,
+            126,
+            121
+          ],
+          "beforeVisibleBounds": [
+            5,
+            6,
+            125,
+            120
+          ],
+          "afterVisibleBounds": [
+            5,
+            6,
+            125,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": false,
+          "beforeHash": "b5a537cb214af7e923a4ed7a6d08240440f9cff26118db18b28d0e63c5a38745",
+          "afterHash": "b5a537cb214af7e923a4ed7a6d08240440f9cff26118db18b28d0e63c5a38745",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            5,
+            128,
+            121
+          ],
+          "afterBounds": [
+            3,
+            5,
+            128,
+            121
+          ],
+          "beforeVisibleBounds": [
+            5,
+            6,
+            125,
+            119
+          ],
+          "afterVisibleBounds": [
+            5,
+            6,
+            125,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 6,
+          "allowed": false,
+          "beforeHash": "c4263cb7a82b41f08092ea188ebbdc62d673c336e48a2def8847b77dc3660664",
+          "afterHash": "c4263cb7a82b41f08092ea188ebbdc62d673c336e48a2def8847b77dc3660664",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            6,
+            126,
+            119
+          ],
+          "afterBounds": [
+            0,
+            6,
+            126,
+            119
+          ],
+          "beforeVisibleBounds": [
+            4,
+            6,
+            125,
+            117
+          ],
+          "afterVisibleBounds": [
+            4,
+            6,
+            125,
+            117
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "421a5cfde629366febd99db0ce1f2ef4dee5bc39a416531ee2e3d65f9ee3a3d8",
+          "afterHash": "421a5cfde629366febd99db0ce1f2ef4dee5bc39a416531ee2e3d65f9ee3a3d8",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            3,
+            128,
+            121
+          ],
+          "afterBounds": [
+            5,
+            3,
+            128,
+            121
+          ],
+          "beforeVisibleBounds": [
+            5,
+            6,
+            126,
+            119
+          ],
+          "afterVisibleBounds": [
+            5,
+            6,
+            126,
+            119
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "9bbd0ab62333bb4f5d390b7f710f29059e5cc7802f8795b17022d0fe2094518e",
+          "afterHash": "9bbd0ab62333bb4f5d390b7f710f29059e5cc7802f8795b17022d0fe2094518e",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            0,
+            126,
+            116
+          ],
+          "afterBounds": [
+            6,
+            0,
+            126,
+            116
+          ],
+          "beforeVisibleBounds": [
+            7,
+            2,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            7,
+            2,
+            125,
+            114
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": false,
+          "beforeHash": "880203c1433ec2927d957ad25cd2ae2dbb5f8fd5ebf9b81952235a39fcae6215",
+          "afterHash": "880203c1433ec2927d957ad25cd2ae2dbb5f8fd5ebf9b81952235a39fcae6215",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            2,
+            126,
+            116
+          ],
+          "afterBounds": [
+            4,
+            2,
+            126,
+            116
+          ],
+          "beforeVisibleBounds": [
+            6,
+            2,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            6,
+            2,
+            125,
+            114
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "04c2ebd31965ed3e6855ad028055dcf792b7b3c428466649e58e5e6f1bb55ed1",
+          "afterHash": "04c2ebd31965ed3e6855ad028055dcf792b7b3c428466649e58e5e6f1bb55ed1",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            0,
+            126,
+            116
+          ],
+          "afterBounds": [
+            5,
+            0,
+            126,
+            116
+          ],
+          "beforeVisibleBounds": [
+            7,
+            2,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            7,
+            2,
+            125,
+            114
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": false,
+          "beforeHash": "514c1fa351d539a6c1a64d259ffaecd6c434ded862d55a8db7134a2144b1be6a",
+          "afterHash": "514c1fa351d539a6c1a64d259ffaecd6c434ded862d55a8db7134a2144b1be6a",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            1,
+            127,
+            115
+          ],
+          "afterBounds": [
+            4,
+            1,
+            127,
+            115
+          ],
+          "beforeVisibleBounds": [
+            6,
+            2,
+            125,
+            114
+          ],
+          "afterVisibleBounds": [
+            6,
+            2,
+            125,
+            114
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "008d2689ef258d1b196670787a6ad979b1020266ad0c4cf0696e054810566ae5",
+          "afterHash": "008d2689ef258d1b196670787a6ad979b1020266ad0c4cf0696e054810566ae5",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            1,
+            125,
+            128
+          ],
+          "afterBounds": [
+            0,
+            1,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            1,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            5,
+            1,
+            123,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "37457245057e1c8a26291f67c1796c1430af157e5b11e013e3b429e34d994851",
+          "afterHash": "fb089b91704ee6701c1429072c4a80a259f776ec3cf7e72c875a41f057705599",
+          "changedPixels": 9806,
+          "beforeBounds": [
+            3,
+            1,
+            121,
+            127
+          ],
+          "afterBounds": [
+            3,
+            2,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            1,
+            119,
+            126
+          ],
+          "afterVisibleBounds": [
+            5,
+            2,
+            119,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "040a04f556d546b1f3f80e5c12648618644f7c466d6d99013bdc8868ba4c502e",
+          "afterHash": "040a04f556d546b1f3f80e5c12648618644f7c466d6d99013bdc8868ba4c502e",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            1,
+            125,
+            128
+          ],
+          "afterBounds": [
+            4,
+            1,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            1,
+            123,
+            127
+          ],
+          "afterVisibleBounds": [
+            5,
+            1,
+            123,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        },
+        {
+          "frame": 15,
+          "allowed": true,
+          "beforeHash": "12f7300f1ac430540e61b10e141b838644673d81792ec2900db60b2f3b0e64c6",
+          "afterHash": "f02be0a49b98b8c133b9a50d855433cecf7d9c9512ad187ea83c56c203cae466",
+          "changedPixels": 3,
+          "beforeBounds": [
+            3,
+            1,
+            121,
+            128
+          ],
+          "afterBounds": [
+            3,
+            1,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            1,
+            119,
+            127
+          ],
+          "afterVisibleBounds": [
+            5,
+            1,
+            119,
+            127
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                3,
+                41,
+                4,
+                42
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                104,
+                110,
+                106,
+                111
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "12-15",
+      "remainingReason": "Up 12–15 양쪽 리본/머리 상단의 기존 절단 윤곽 잔존. 13 아래1px 이동으로 경계 여백 확보했으나 원래 소실된 윤곽은 복구되지 않음. 12/14/15는 발을 새로 자르므로 이동 제외.",
+      "correctionSummary": "Up13 아래1px. Up15 미세 분리 성분 제거. 다른 셀 보존."
+    },
+    {
+      "sourceEntry": "Intellectual_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.intellectual.mage.male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png",
+      "allowedFrames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "changedFrames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "originalPngSha256": "5e8a73db07cb39c39ab915a8b2cf5df6a8c3104fe316c08639093ff1b6e63a93",
+      "correctedPngSha256": "c5799e7f652ef00a0d497e74b489ed68e07fdb2e57d064f371a17229548296af",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "4f29f777a5fb3f3fe161cd465814ef1f6dc190e3e2ca7f61bd3c2dd41de26dd3",
+          "afterHash": "4f29f777a5fb3f3fe161cd465814ef1f6dc190e3e2ca7f61bd3c2dd41de26dd3",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            0,
+            119,
+            125
+          ],
+          "afterBounds": [
+            8,
+            0,
+            119,
+            125
+          ],
+          "beforeVisibleBounds": [
+            10,
+            4,
+            118,
+            123
+          ],
+          "afterVisibleBounds": [
+            10,
+            4,
+            118,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "10e23566655bfe26c404af1766086b697881624d6b8fee8e133de3549c4fd617",
+          "afterHash": "10e23566655bfe26c404af1766086b697881624d6b8fee8e133de3549c4fd617",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            0,
+            123,
+            125
+          ],
+          "afterBounds": [
+            8,
+            0,
+            123,
+            125
+          ],
+          "beforeVisibleBounds": [
+            9,
+            3,
+            119,
+            124
+          ],
+          "afterVisibleBounds": [
+            9,
+            3,
+            119,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "2bacb191c1886f40b191680473de36c7caf65f59c040bcf5edbbbf204a391af8",
+          "afterHash": "2bacb191c1886f40b191680473de36c7caf65f59c040bcf5edbbbf204a391af8",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            2,
+            119,
+            125
+          ],
+          "afterBounds": [
+            8,
+            2,
+            119,
+            125
+          ],
+          "beforeVisibleBounds": [
+            10,
+            4,
+            118,
+            123
+          ],
+          "afterVisibleBounds": [
+            10,
+            4,
+            118,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "85361aeb6c97098c2965e545c8332f058c756d95f9ff0873a9aa4b51de7333d4",
+          "afterHash": "85361aeb6c97098c2965e545c8332f058c756d95f9ff0873a9aa4b51de7333d4",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            0,
+            121,
+            125
+          ],
+          "afterBounds": [
+            4,
+            0,
+            121,
+            125
+          ],
+          "beforeVisibleBounds": [
+            9,
+            4,
+            118,
+            123
+          ],
+          "afterVisibleBounds": [
+            9,
+            4,
+            118,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "1d09f5b6cc50ac38ec2ced075de98378256f9b926287bb8e1ea6f368f740156e",
+          "afterHash": "1d09f5b6cc50ac38ec2ced075de98378256f9b926287bb8e1ea6f368f740156e",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "afterBounds": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            11,
+            3,
+            121,
+            120
+          ],
+          "afterVisibleBounds": [
+            11,
+            3,
+            121,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": false,
+          "beforeHash": "68b7ff99b4c0e8f17f8c834c75041f366d73b67df907499cc50f44601ea84438",
+          "afterHash": "68b7ff99b4c0e8f17f8c834c75041f366d73b67df907499cc50f44601ea84438",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            2,
+            127,
+            122
+          ],
+          "afterBounds": [
+            7,
+            2,
+            127,
+            122
+          ],
+          "beforeVisibleBounds": [
+            8,
+            3,
+            125,
+            120
+          ],
+          "afterVisibleBounds": [
+            8,
+            3,
+            125,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 6,
+          "allowed": false,
+          "beforeHash": "1cf3cdfd866c31bebc72b2e4950e91df631da8569baa0f2b5938518dc13e9472",
+          "afterHash": "1cf3cdfd866c31bebc72b2e4950e91df631da8569baa0f2b5938518dc13e9472",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            3,
+            125,
+            121
+          ],
+          "afterBounds": [
+            8,
+            3,
+            125,
+            121
+          ],
+          "beforeVisibleBounds": [
+            10,
+            3,
+            122,
+            121
+          ],
+          "afterVisibleBounds": [
+            10,
+            3,
+            122,
+            121
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "2a0c10cf4fda4c3339b748446223e15e8234f54b337b40c2d2ba2a196d1c1ff7",
+          "afterHash": "2a0c10cf4fda4c3339b748446223e15e8234f54b337b40c2d2ba2a196d1c1ff7",
+          "changedPixels": 0,
+          "beforeBounds": [
+            10,
+            2,
+            123,
+            128
+          ],
+          "afterBounds": [
+            10,
+            2,
+            123,
+            128
+          ],
+          "beforeVisibleBounds": [
+            12,
+            3,
+            122,
+            120
+          ],
+          "afterVisibleBounds": [
+            12,
+            3,
+            122,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "97fdada278c42508c91b0b0d3fbfbe2234405fa57e8e89fccd4786bbdb69e858",
+          "afterHash": "97fdada278c42508c91b0b0d3fbfbe2234405fa57e8e89fccd4786bbdb69e858",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            1,
+            120,
+            124
+          ],
+          "afterBounds": [
+            8,
+            1,
+            120,
+            124
+          ],
+          "beforeVisibleBounds": [
+            9,
+            3,
+            120,
+            122
+          ],
+          "afterVisibleBounds": [
+            9,
+            3,
+            120,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": false,
+          "beforeHash": "0cc7bd75357c9ca3522eecbe18111bde93da429af4bf60e50e97219adda52322",
+          "afterHash": "0cc7bd75357c9ca3522eecbe18111bde93da429af4bf60e50e97219adda52322",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            1,
+            122,
+            124
+          ],
+          "afterBounds": [
+            8,
+            1,
+            122,
+            124
+          ],
+          "beforeVisibleBounds": [
+            9,
+            3,
+            121,
+            122
+          ],
+          "afterVisibleBounds": [
+            9,
+            3,
+            121,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "33dc25486d090503fff46d5f79131e4798eb89626500cff07b290d51939559cf",
+          "afterHash": "33dc25486d090503fff46d5f79131e4798eb89626500cff07b290d51939559cf",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            1,
+            121,
+            123
+          ],
+          "afterBounds": [
+            7,
+            1,
+            121,
+            123
+          ],
+          "beforeVisibleBounds": [
+            8,
+            3,
+            120,
+            121
+          ],
+          "afterVisibleBounds": [
+            8,
+            3,
+            120,
+            121
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": false,
+          "beforeHash": "9be61f3dc76e55b3393e451ae3a083b6661534f3e796e66e93ddfe6cdf9ca534",
+          "afterHash": "9be61f3dc76e55b3393e451ae3a083b6661534f3e796e66e93ddfe6cdf9ca534",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            1,
+            121,
+            125
+          ],
+          "afterBounds": [
+            8,
+            1,
+            121,
+            125
+          ],
+          "beforeVisibleBounds": [
+            10,
+            3,
+            120,
+            123
+          ],
+          "afterVisibleBounds": [
+            10,
+            3,
+            120,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "d26c2839d8cfca02b7a73309b0fc10116fbfb8cec02ae40ba5723b052e2dab2a",
+          "afterHash": "dcd3041428f3bbdbd5c09cd464dec5f3b5b7277c6bd7309681ee1a5c01db2990",
+          "changedPixels": 9503,
+          "beforeBounds": [
+            7,
+            0,
+            120,
+            128
+          ],
+          "afterBounds": [
+            7,
+            2,
+            120,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            119,
+            124
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                115,
+                15,
+                116,
+                16
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                109,
+                99,
+                110,
+                100
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 18
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "80fb54fffb2472003ae02e2ab08a0a4083f290c63768200b8bc31ae20dc3539f",
+          "afterHash": "8b96bd921dde69f1fffa7bf0887f64a061066d6d4ba809db99b5db604543e696",
+          "changedPixels": 9655,
+          "beforeBounds": [
+            3,
+            0,
+            123,
+            128
+          ],
+          "afterBounds": [
+            7,
+            2,
+            123,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            122,
+            124
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            122,
+            126
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                3,
+                2,
+                4,
+                3
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 25
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "0a5fb36873afdb35e39e7d8f4650ad1dc3d9c017d8dcd699a58aff560ac1355d",
+          "afterHash": "b7ee2a8f6cf0e9dd5d2e61a772f363fe64160c3ec7822850419fd0bab8bc422f",
+          "changedPixels": 9397,
+          "beforeBounds": [
+            7,
+            0,
+            120,
+            128
+          ],
+          "afterBounds": [
+            7,
+            2,
+            120,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            119,
+            124
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "removedComponents": [
+            {
+              "pixels": 3,
+              "bbox": [
+                51,
+                116,
+                52,
+                119
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 23
+        },
+        {
+          "frame": 15,
+          "allowed": true,
+          "beforeHash": "e83d9cfdd99eba74f0b930053794472f06d6e753ae4023063d280cfc7e8b1636",
+          "afterHash": "d5af93f0ceed8040b3999c80412bd0bc894e18e7b3e935eb59fba18ab5e70072",
+          "changedPixels": 9715,
+          "beforeBounds": [
+            3,
+            0,
+            123,
+            128
+          ],
+          "afterBounds": [
+            3,
+            2,
+            123,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            122,
+            124
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            122,
+            126
+          ],
+          "removedComponents": [
+            {
+              "pixels": 4,
+              "bbox": [
+                10,
+                8,
+                11,
+                12
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 24
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "12-15",
+      "remainingReason": "Up 12–15 갈색 머리 끝의 원본 수평 절단 형태가 아래2px 이동 후 y=2에 남음. 경계 접촉은 해소됐으나 소실된 머리 끝 픽셀은 이동으로 복원 불가.",
+      "correctionSummary": "Up12–15 아래2px. 미세 분리 성분과 이동 밖 Alpha1–2 경계 잔여 제거."
+    },
+    {
+      "sourceEntry": "Vision_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.vision.fighter.male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png",
+      "allowedFrames": [
+        1,
+        2,
+        3,
+        5,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14
+      ],
+      "changedFrames": [
+        1,
+        2,
+        3,
+        7,
+        9,
+        11,
+        12,
+        13,
+        14
+      ],
+      "originalPngSha256": "c6db6d4ddbfb6996f7432120d33a7692d267789a94703bcd2eb2322f383b9613",
+      "correctedPngSha256": "fdc79becaf1f5bb8638ad62ca8690946e9f28f05a687e7a4fc64a637fe583304",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "38acf87f6cc5fa7a467662609ebaba08ea6a583e80f0688730798acbf280dcfb",
+          "afterHash": "38acf87f6cc5fa7a467662609ebaba08ea6a583e80f0688730798acbf280dcfb",
+          "changedPixels": 0,
+          "beforeBounds": [
+            9,
+            4,
+            123,
+            128
+          ],
+          "afterBounds": [
+            9,
+            4,
+            123,
+            128
+          ],
+          "beforeVisibleBounds": [
+            11,
+            5,
+            118,
+            128
+          ],
+          "afterVisibleBounds": [
+            11,
+            5,
+            118,
+            128
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": true,
+          "beforeHash": "5ed83ea3b4c5a1853cc7b4d82d79cdf40682718b06d12d0ef05f9b0caf4ab0f9",
+          "afterHash": "1939ebbf4a265d1644684087aebcd2803bde511a86f44c07c1cec3322ced250c",
+          "changedPixels": 8234,
+          "beforeBounds": [
+            3,
+            9,
+            128,
+            128
+          ],
+          "afterBounds": [
+            1,
+            9,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            4,
+            10,
+            128,
+            128
+          ],
+          "afterVisibleBounds": [
+            2,
+            10,
+            126,
+            128
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 2,
+          "allowed": true,
+          "beforeHash": "93252e985ff896c0f6670c45172251bbf9080c6e6310a17982df432ee8d5dd70",
+          "afterHash": "12440b88f3447c818b12f7f08e13f26a37508681a001c20aca222e0f7f559266",
+          "changedPixels": 25,
+          "beforeBounds": [
+            0,
+            4,
+            128,
+            128
+          ],
+          "afterBounds": [
+            9,
+            4,
+            111,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            5,
+            128,
+            128
+          ],
+          "afterVisibleBounds": [
+            10,
+            5,
+            107,
+            128
+          ],
+          "removedComponents": [
+            {
+              "pixels": 2,
+              "bbox": [
+                0,
+                91,
+                1,
+                93
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 23,
+              "bbox": [
+                125,
+                109,
+                128,
+                119
+              ],
+              "maxAlpha": 36
+            }
+          ],
+          "requestedMove": [
+            0,
+            0
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 3,
+          "allowed": true,
+          "beforeHash": "ec24d6e2da4125d3c3c80c515d6e8017266a251881dcdaf3a34697a1957728d2",
+          "afterHash": "237891d2e748a39517aec8b79cb1d3aa36e6335178e81fe4c12cd06823d952a9",
+          "changedPixels": 8447,
+          "beforeBounds": [
+            0,
+            3,
+            121,
+            128
+          ],
+          "afterBounds": [
+            2,
+            3,
+            123,
+            128
+          ],
+          "beforeVisibleBounds": [
+            0,
+            4,
+            121,
+            128
+          ],
+          "afterVisibleBounds": [
+            2,
+            4,
+            123,
+            128
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            2,
+            0
+          ],
+          "appliedMove": [
+            2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "8792da5d38dba486cf9519362f59d0a9efeda5693f72d00dae70da4ae7d41f02",
+          "afterHash": "8792da5d38dba486cf9519362f59d0a9efeda5693f72d00dae70da4ae7d41f02",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            8,
+            120,
+            126
+          ],
+          "afterBounds": [
+            4,
+            8,
+            120,
+            126
+          ],
+          "beforeVisibleBounds": [
+            6,
+            9,
+            120,
+            124
+          ],
+          "afterVisibleBounds": [
+            6,
+            9,
+            120,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": true,
+          "beforeHash": "b75be7ddfbcb0ab3ce5c95f9f91e4279914194c76a4162dd53442010e557bb9c",
+          "afterHash": "b75be7ddfbcb0ab3ce5c95f9f91e4279914194c76a4162dd53442010e557bb9c",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            8,
+            128,
+            126
+          ],
+          "afterBounds": [
+            0,
+            8,
+            128,
+            126
+          ],
+          "beforeVisibleBounds": [
+            0,
+            9,
+            126,
+            124
+          ],
+          "afterVisibleBounds": [
+            0,
+            9,
+            126,
+            124
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            2,
+            0
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽의 실제 윤곽/Alpha를 잃으므로 이동하지 않음"
+        },
+        {
+          "frame": 6,
+          "allowed": false,
+          "beforeHash": "312d23601abb030bb5052d9d6ef92df49962abcd2ac946ad2fc210e9f516d819",
+          "afterHash": "312d23601abb030bb5052d9d6ef92df49962abcd2ac946ad2fc210e9f516d819",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            8,
+            115,
+            128
+          ],
+          "afterBounds": [
+            0,
+            8,
+            115,
+            128
+          ],
+          "beforeVisibleBounds": [
+            2,
+            9,
+            114,
+            126
+          ],
+          "afterVisibleBounds": [
+            2,
+            9,
+            114,
+            126
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 7,
+          "allowed": true,
+          "beforeHash": "4229c3d527b1e58c62c3285ca808215ceddd8d1b9f8ae21a4fe66442574494c6",
+          "afterHash": "f5a6c71be188000aedb75fde63774f4bcd2e5879d52e4e3a3f88f68da304b115",
+          "changedPixels": 8510,
+          "beforeBounds": [
+            0,
+            8,
+            124,
+            126
+          ],
+          "afterBounds": [
+            2,
+            8,
+            126,
+            126
+          ],
+          "beforeVisibleBounds": [
+            0,
+            9,
+            123,
+            124
+          ],
+          "afterVisibleBounds": [
+            2,
+            9,
+            125,
+            124
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            2,
+            0
+          ],
+          "appliedMove": [
+            2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "c5d0595df4adc7a1b18879b4d58d5f4cfb8545e6027fbe1b1e33ccc4917c19d9",
+          "afterHash": "c5d0595df4adc7a1b18879b4d58d5f4cfb8545e6027fbe1b1e33ccc4917c19d9",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            0,
+            120,
+            122
+          ],
+          "afterBounds": [
+            5,
+            0,
+            120,
+            122
+          ],
+          "beforeVisibleBounds": [
+            7,
+            2,
+            120,
+            120
+          ],
+          "afterVisibleBounds": [
+            7,
+            2,
+            120,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": true,
+          "beforeHash": "e96ae4baa1d361588ff53544f82576a689b3fa666210e3d4ea42346a6ebaa71f",
+          "afterHash": "284a005026033eba98755a829e24c95380058026779402c461e3c60026dc979e",
+          "changedPixels": 8524,
+          "beforeBounds": [
+            4,
+            0,
+            128,
+            122
+          ],
+          "afterBounds": [
+            2,
+            0,
+            126,
+            122
+          ],
+          "beforeVisibleBounds": [
+            6,
+            2,
+            128,
+            120
+          ],
+          "afterVisibleBounds": [
+            4,
+            2,
+            126,
+            120
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "6d008841c57116e371d3c4778b4ebfd02e4fb967abf680d6f673de4323567255",
+          "afterHash": "6d008841c57116e371d3c4778b4ebfd02e4fb967abf680d6f673de4323567255",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            0,
+            116,
+            122
+          ],
+          "afterBounds": [
+            6,
+            0,
+            116,
+            122
+          ],
+          "beforeVisibleBounds": [
+            8,
+            2,
+            114,
+            120
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            114,
+            120
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": true,
+          "beforeHash": "c8c93255f886b66f21c16564a397ac3189ca9acd1045f30cb3b2d99f4d44e0b3",
+          "afterHash": "99379b7f04a7dee77bb1639fa8cc83724a0ecb130c6d970f82a2749b9f104777",
+          "changedPixels": 8786,
+          "beforeBounds": [
+            0,
+            3,
+            128,
+            122
+          ],
+          "afterBounds": [
+            2,
+            3,
+            128,
+            122
+          ],
+          "beforeVisibleBounds": [
+            0,
+            4,
+            125,
+            120
+          ],
+          "afterVisibleBounds": [
+            2,
+            4,
+            127,
+            120
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                99,
+                88,
+                100,
+                89
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            2,
+            0
+          ],
+          "appliedMove": [
+            2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 8
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "4f4d266e6e6e9192c5f40da08793644df8ea759a8c2ebe27824b17802930c8d0",
+          "afterHash": "6475325d6aa8d5d89dc5197464dc1b66acb0181376a2fac5a8e42ba675162956",
+          "changedPixels": 9116,
+          "beforeBounds": [
+            8,
+            0,
+            127,
+            125
+          ],
+          "afterBounds": [
+            8,
+            2,
+            127,
+            126
+          ],
+          "beforeVisibleBounds": [
+            10,
+            0,
+            127,
+            123
+          ],
+          "afterVisibleBounds": [
+            10,
+            2,
+            127,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                65,
+                124,
+                66,
+                125
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                72,
+                124,
+                74,
+                125
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                75,
+                124,
+                76,
+                125
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "6f2a2ac5f18978cad696cb20db41f90a0f14325d87fe5f240ad370db1729e027",
+          "afterHash": "917567da7be9d390867e0a9d8fd49cc70a9ff5209125f3fe64c2827c6579c70d",
+          "changedPixels": 8566,
+          "beforeBounds": [
+            15,
+            0,
+            128,
+            128
+          ],
+          "afterBounds": [
+            13,
+            2,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            17,
+            0,
+            128,
+            124
+          ],
+          "afterVisibleBounds": [
+            15,
+            2,
+            126,
+            126
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            -2,
+            2
+          ],
+          "appliedMove": [
+            -2,
+            2
+          ],
+          "discardedEdgeNoisePixels": 10
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "ea296f03f0e6d0c4bbe76fd14172ac0586456a640f817224dedcf3522bd20ec9",
+          "afterHash": "febbf11f623b48a258271df28ffdd021fcbc412c8b7d778cd07f16e14b262d82",
+          "changedPixels": 8726,
+          "beforeBounds": [
+            0,
+            0,
+            122,
+            128
+          ],
+          "afterBounds": [
+            19,
+            2,
+            122,
+            128
+          ],
+          "beforeVisibleBounds": [
+            0,
+            0,
+            120,
+            123
+          ],
+          "afterVisibleBounds": [
+            20,
+            2,
+            120,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 169,
+              "bbox": [
+                0,
+                82,
+                13,
+                103
+              ],
+              "maxAlpha": 255
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 16
+        },
+        {
+          "frame": 15,
+          "allowed": false,
+          "beforeHash": "d2df93d459aba3c816c04b89de14699970691a371485e0ea3b119569defac80c",
+          "afterHash": "d2df93d459aba3c816c04b89de14699970691a371485e0ea3b119569defac80c",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            0,
+            128,
+            128
+          ],
+          "afterBounds": [
+            4,
+            0,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            1,
+            125,
+            124
+          ],
+          "afterVisibleBounds": [
+            5,
+            1,
+            125,
+            124
+          ],
+          "preservedNormalCell": true
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "1,3,5,7,9,11-14",
+      "remainingReason": "Down1/3, Left5/7, Right9/11, Up13 검·망토의 원본 잘린 끝 잔존. Left5는 좌우 폭 부족으로 안전 전체 이동 불가. Up12–14 머리 상단의 원본 절단 윤곽 잔존. 방향 정상.",
+      "correctionSummary": "Down2 우측23px·Up14 좌측169px 분리 조각 제거. 검 경계에서 안쪽2px, Up 아래2px 이동. Left5 원본 유지."
+    },
+    {
+      "sourceEntry": "Vision_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.vision.guardian.male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Male.png",
+      "allowedFrames": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "changedFrames": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "originalPngSha256": "91b253490576c589ad2368cd43a6d0efbff621e462b0f170ddd9ae3a66ddcb65",
+      "correctedPngSha256": "673ad83a70c91001af2f43954fdc1766b227415d52d6228a7d22f2e709fb35d4",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "da5cc69d157f2b5ce42fa5c9c84b2658221cbb0e8ee85b1a87aa0a90bfcadb55",
+          "afterHash": "da5cc69d157f2b5ce42fa5c9c84b2658221cbb0e8ee85b1a87aa0a90bfcadb55",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "afterBounds": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "beforeVisibleBounds": [
+            4,
+            6,
+            124,
+            124
+          ],
+          "afterVisibleBounds": [
+            4,
+            6,
+            124,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "4d5687ce32bbb125cc76dfd868145743d12e1caf24749a2b74e3ad5e8a18cfe6",
+          "afterHash": "4d5687ce32bbb125cc76dfd868145743d12e1caf24749a2b74e3ad5e8a18cfe6",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            6,
+            128,
+            125
+          ],
+          "afterBounds": [
+            8,
+            6,
+            128,
+            125
+          ],
+          "beforeVisibleBounds": [
+            10,
+            7,
+            127,
+            125
+          ],
+          "afterVisibleBounds": [
+            10,
+            7,
+            127,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "afada4d990b21d8964b79cb8002eb8d4878590bfe4b67ad40c2eeb64e4645d56",
+          "afterHash": "afada4d990b21d8964b79cb8002eb8d4878590bfe4b67ad40c2eeb64e4645d56",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "afterBounds": [
+            4,
+            5,
+            125,
+            126
+          ],
+          "beforeVisibleBounds": [
+            4,
+            6,
+            124,
+            125
+          ],
+          "afterVisibleBounds": [
+            4,
+            6,
+            124,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "bcdf76b58a4583e4408dcaf5ca86e17b0c832afa833b97b746c21812f26952ba",
+          "afterHash": "bcdf76b58a4583e4408dcaf5ca86e17b0c832afa833b97b746c21812f26952ba",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            6,
+            128,
+            126
+          ],
+          "afterBounds": [
+            4,
+            6,
+            128,
+            126
+          ],
+          "beforeVisibleBounds": [
+            10,
+            7,
+            127,
+            125
+          ],
+          "afterVisibleBounds": [
+            10,
+            7,
+            127,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "11d624acb0566cec5a7590a67c1da18ab3948fdcb43c7a4282098379c733c740",
+          "afterHash": "11d624acb0566cec5a7590a67c1da18ab3948fdcb43c7a4282098379c733c740",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            2,
+            125,
+            128
+          ],
+          "afterBounds": [
+            6,
+            2,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            3,
+            122,
+            118
+          ],
+          "afterVisibleBounds": [
+            7,
+            3,
+            122,
+            118
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": true,
+          "beforeHash": "6f1b69bc004bd646e1c603babfecd03b529f265283a0e6647158c44a956187be",
+          "afterHash": "7be364acc6a7ddb8360f0f0b47ccac81c2a28644f8f84d3c34fd28e472898f3e",
+          "changedPixels": 8003,
+          "beforeBounds": [
+            4,
+            2,
+            128,
+            128
+          ],
+          "afterBounds": [
+            2,
+            2,
+            126,
+            120
+          ],
+          "beforeVisibleBounds": [
+            5,
+            3,
+            128,
+            118
+          ],
+          "afterVisibleBounds": [
+            3,
+            3,
+            126,
+            118
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                125,
+                8,
+                126,
+                9
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                125,
+                12,
+                126,
+                13
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                113,
+                102,
+                114,
+                103
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                86,
+                119,
+                87,
+                120
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 5,
+              "bbox": [
+                61,
+                127,
+                66,
+                128
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                73,
+                127,
+                74,
+                128
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                75,
+                127,
+                76,
+                128
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 6,
+          "allowed": true,
+          "beforeHash": "f1c85c83827c98b08b7d5c7d49b4ff14224d8b52242185835e6dbac4e6577fc8",
+          "afterHash": "9fd19cebf2bd345439449b30efc7576802c9d347570e0a9b634c167e140adda3",
+          "changedPixels": 12,
+          "beforeBounds": [
+            0,
+            2,
+            124,
+            128
+          ],
+          "afterBounds": [
+            6,
+            2,
+            124,
+            119
+          ],
+          "beforeVisibleBounds": [
+            0,
+            3,
+            122,
+            118
+          ],
+          "afterVisibleBounds": [
+            7,
+            3,
+            122,
+            118
+          ],
+          "removedComponents": [
+            {
+              "pixels": 10,
+              "bbox": [
+                0,
+                77,
+                2,
+                84
+              ],
+              "maxAlpha": 155
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                62,
+                127,
+                63,
+                128
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                72,
+                127,
+                73,
+                128
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            0
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "32f1c6e5fe5a78e7b93bdcfcaad7ab3677bda71f2fc3dbfd092450cc610ccffd",
+          "afterHash": "32f1c6e5fe5a78e7b93bdcfcaad7ab3677bda71f2fc3dbfd092450cc610ccffd",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            3,
+            128,
+            128
+          ],
+          "afterBounds": [
+            4,
+            3,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            4,
+            125,
+            118
+          ],
+          "afterVisibleBounds": [
+            5,
+            4,
+            125,
+            118
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": true,
+          "beforeHash": "c5f9f255ef7d86531dafbee3e6355854ec23d938aa065263eada3ba7166312a3",
+          "afterHash": "6edcbba8d6aabf35bfb01cb01cfb79fca7133e486a5b3c08069e3420b705d1b4",
+          "changedPixels": 7470,
+          "beforeBounds": [
+            2,
+            0,
+            122,
+            115
+          ],
+          "afterBounds": [
+            2,
+            2,
+            122,
+            117
+          ],
+          "beforeVisibleBounds": [
+            4,
+            0,
+            121,
+            113
+          ],
+          "afterVisibleBounds": [
+            4,
+            2,
+            121,
+            115
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 9,
+          "allowed": true,
+          "beforeHash": "b1c813cacd39bb774a50981c405560efe5a3729c0388ef360e16da2905ee0859",
+          "afterHash": "ad54ad698480920a1632e08f3d288f4896cdbf08a7c894b05c8263f113d9b9e4",
+          "changedPixels": 7989,
+          "beforeBounds": [
+            1,
+            0,
+            128,
+            116
+          ],
+          "afterBounds": [
+            1,
+            2,
+            128,
+            118
+          ],
+          "beforeVisibleBounds": [
+            2,
+            0,
+            127,
+            114
+          ],
+          "afterVisibleBounds": [
+            2,
+            2,
+            127,
+            116
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                75,
+                103,
+                76,
+                104
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                83,
+                114,
+                84,
+                115
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 10,
+          "allowed": true,
+          "beforeHash": "8e8a01100b19e24fd132fc62dbdec4c579a5a751f7e990461349b42a397dc9f6",
+          "afterHash": "e1b4ff98b77e68612cdd5b41337624ddc7dbe808326f7e8269e46fb3be804fbe",
+          "changedPixels": 7427,
+          "beforeBounds": [
+            3,
+            0,
+            123,
+            115
+          ],
+          "afterBounds": [
+            3,
+            2,
+            123,
+            117
+          ],
+          "beforeVisibleBounds": [
+            5,
+            0,
+            121,
+            114
+          ],
+          "afterVisibleBounds": [
+            5,
+            2,
+            121,
+            116
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                26,
+                60,
+                27,
+                61
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 11,
+          "allowed": true,
+          "beforeHash": "3bfc629838cf548fae8b1aa0374c5baf2b004e098fa3b944ac1a9791f88e69dc",
+          "afterHash": "b469931a2c7dfef8c364a8fd85d784faa916f5d38787a45d218df2a9f9d321d8",
+          "changedPixels": 7823,
+          "beforeBounds": [
+            1,
+            0,
+            126,
+            114
+          ],
+          "afterBounds": [
+            1,
+            2,
+            126,
+            116
+          ],
+          "beforeVisibleBounds": [
+            2,
+            0,
+            125,
+            113
+          ],
+          "afterVisibleBounds": [
+            2,
+            2,
+            125,
+            115
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                89,
+                39,
+                90,
+                40
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 3,
+              "bbox": [
+                72,
+                105,
+                73,
+                108
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "3a18c62cc1b75b2c1a8a62fd1d1025fbfd22ea55ab379a9d70d66294fdc06a74",
+          "afterHash": "4c3095f97d2f0ad9317fd5ac04acc32db7f34b33036cbbb2312b3b0e05ac8768",
+          "changedPixels": 9671,
+          "beforeBounds": [
+            0,
+            1,
+            126,
+            127
+          ],
+          "afterBounds": [
+            0,
+            2,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            4,
+            1,
+            125,
+            126
+          ],
+          "afterVisibleBounds": [
+            4,
+            2,
+            125,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "4c85be9e26e1367d82483fee2b30f5996299b8edf240989760a61222e75e547e",
+          "afterHash": "2bf5d3d7e3b909d125344db20e06f3722e9919a88f06d7ac2aaf93db2069d744",
+          "changedPixels": 9363,
+          "beforeBounds": [
+            6,
+            1,
+            128,
+            127
+          ],
+          "afterBounds": [
+            6,
+            2,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            1,
+            127,
+            126
+          ],
+          "afterVisibleBounds": [
+            7,
+            2,
+            127,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "11cd6b3f1abc1f3ce54fbfcef6a6a5cc6543944bd4d1bdbe74a94dacf269afef",
+          "afterHash": "1436173bbea0609716446be9e71f7d67ac00f97db4ffe692caa9841c979bc6c9",
+          "changedPixels": 9660,
+          "beforeBounds": [
+            0,
+            1,
+            128,
+            127
+          ],
+          "afterBounds": [
+            0,
+            2,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            4,
+            1,
+            125,
+            126
+          ],
+          "afterVisibleBounds": [
+            4,
+            2,
+            125,
+            127
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                5,
+                4,
+                6,
+                5
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                127,
+                33,
+                128,
+                34
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                125,
+                36,
+                126,
+                37
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                127,
+                40,
+                128,
+                41
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                124,
+                43,
+                125,
+                44
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                127,
+                43,
+                128,
+                44
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                127,
+                46,
+                128,
+                47
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                42,
+                120,
+                43,
+                121
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            1
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 15,
+          "allowed": true,
+          "beforeHash": "560f073b5a5a24eeb7f31b4b8b3648731b7b7d7b9a25e4424530fba4a2be2135",
+          "afterHash": "b8a9df3d66732be864885cf1aae935c7139760a1ecf3d4f9366f9457a572a7e3",
+          "changedPixels": 3,
+          "beforeBounds": [
+            0,
+            1,
+            126,
+            127
+          ],
+          "afterBounds": [
+            3,
+            1,
+            126,
+            127
+          ],
+          "beforeVisibleBounds": [
+            6,
+            1,
+            125,
+            127
+          ],
+          "afterVisibleBounds": [
+            6,
+            1,
+            125,
+            127
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                91,
+                19,
+                92,
+                20
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                0,
+                44,
+                2,
+                45
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            1
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0,
+          "moveRejected": "반대쪽에 새 본체 경계 접촉이 생기므로 이동하지 않음"
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "5,8-15",
+      "remainingReason": "Left5 망토 끝의 원본 잘린 윤곽 잔존. Right8–11 머리 끝과 Up12–15 머리 상단의 원본 절단 형태 잔존. 15는 새 발 경계 접촉을 막기 위해 이동 제외.",
+      "correctionSummary": "Left6 좌측10px 조각 제거. Left5 왼쪽2px, Right8–11 아래2px, Up12–14 아래1px 이동."
+    },
+    {
+      "sourceEntry": "Vision_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.vision.mage.female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Mage_Female.png",
+      "allowedFrames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "changedFrames": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "originalPngSha256": "3d4046f06a96ca76894ffad0737a445222b41c1d9246bf88e2ae3cbfecb8c927",
+      "correctedPngSha256": "22af915b35b323be54554b47dcc30877f2a8c239401c7aeb18855ae4435a1d86",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "cbf531fcd110b8583c17534150be5e6618a84d27f27d58b596ad0d647701bc5c",
+          "afterHash": "cbf531fcd110b8583c17534150be5e6618a84d27f27d58b596ad0d647701bc5c",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            6,
+            118,
+            126
+          ],
+          "afterBounds": [
+            6,
+            6,
+            118,
+            126
+          ],
+          "beforeVisibleBounds": [
+            7,
+            7,
+            117,
+            125
+          ],
+          "afterVisibleBounds": [
+            7,
+            7,
+            117,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "f6f834380abece5dfd3517c1562cbb34d7761b7cfa37915303de132516279065",
+          "afterHash": "f6f834380abece5dfd3517c1562cbb34d7761b7cfa37915303de132516279065",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            12,
+            122,
+            126
+          ],
+          "afterBounds": [
+            7,
+            12,
+            122,
+            126
+          ],
+          "beforeVisibleBounds": [
+            8,
+            13,
+            121,
+            125
+          ],
+          "afterVisibleBounds": [
+            8,
+            13,
+            121,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "c786db140509d000f1e7dcb3d9e00aa766c073083d9f009947218ed41260c393",
+          "afterHash": "c786db140509d000f1e7dcb3d9e00aa766c073083d9f009947218ed41260c393",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            5,
+            118,
+            126
+          ],
+          "afterBounds": [
+            6,
+            5,
+            118,
+            126
+          ],
+          "beforeVisibleBounds": [
+            7,
+            6,
+            117,
+            125
+          ],
+          "afterVisibleBounds": [
+            7,
+            6,
+            117,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "6af5293a71976192e20a26c561f862827b8a64dae9acb18a567039ea2a19d587",
+          "afterHash": "6af5293a71976192e20a26c561f862827b8a64dae9acb18a567039ea2a19d587",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            12,
+            122,
+            126
+          ],
+          "afterBounds": [
+            3,
+            12,
+            122,
+            126
+          ],
+          "beforeVisibleBounds": [
+            8,
+            13,
+            121,
+            125
+          ],
+          "afterVisibleBounds": [
+            8,
+            13,
+            121,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "64478d4c15e1328e89647538a3e2a5aa525050b3dbd0827223675a4d858d0f52",
+          "afterHash": "64478d4c15e1328e89647538a3e2a5aa525050b3dbd0827223675a4d858d0f52",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            3,
+            125,
+            128
+          ],
+          "afterBounds": [
+            6,
+            3,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            6,
+            124,
+            123
+          ],
+          "afterVisibleBounds": [
+            7,
+            6,
+            124,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": false,
+          "beforeHash": "4c88532df869365eab987fa6c81295dee827e10b11e5d42e1d2e2acf71ed4266",
+          "afterHash": "4c88532df869365eab987fa6c81295dee827e10b11e5d42e1d2e2acf71ed4266",
+          "changedPixels": 0,
+          "beforeBounds": [
+            2,
+            10,
+            128,
+            128
+          ],
+          "afterBounds": [
+            2,
+            10,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            3,
+            12,
+            124,
+            125
+          ],
+          "afterVisibleBounds": [
+            3,
+            12,
+            124,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 6,
+          "allowed": false,
+          "beforeHash": "b946baf3010e96be1bc20bf0261047c47057f0be29ccc8dfcbbb9037ef713026",
+          "afterHash": "b946baf3010e96be1bc20bf0261047c47057f0be29ccc8dfcbbb9037ef713026",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            3,
+            125,
+            128
+          ],
+          "afterBounds": [
+            5,
+            3,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            6,
+            124,
+            123
+          ],
+          "afterVisibleBounds": [
+            7,
+            6,
+            124,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "0755d5c5b28246973c70d03e8331117600bdbf712424189d01a68887a718f167",
+          "afterHash": "0755d5c5b28246973c70d03e8331117600bdbf712424189d01a68887a718f167",
+          "changedPixels": 0,
+          "beforeBounds": [
+            1,
+            10,
+            122,
+            127
+          ],
+          "afterBounds": [
+            1,
+            10,
+            122,
+            127
+          ],
+          "beforeVisibleBounds": [
+            3,
+            12,
+            121,
+            125
+          ],
+          "afterVisibleBounds": [
+            3,
+            12,
+            121,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "3460d8f54f207e6e4e80e5514e673efeab8ca4d647e39b777b005da2f3605ab1",
+          "afterHash": "3460d8f54f207e6e4e80e5514e673efeab8ca4d647e39b777b005da2f3605ab1",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            3,
+            119,
+            118
+          ],
+          "afterBounds": [
+            6,
+            3,
+            119,
+            118
+          ],
+          "beforeVisibleBounds": [
+            7,
+            5,
+            118,
+            117
+          ],
+          "afterVisibleBounds": [
+            7,
+            5,
+            118,
+            117
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": false,
+          "beforeHash": "061158ee172786b7c6f3cd632acbf5b19807b3491f16cf391060539c0392c30e",
+          "afterHash": "061158ee172786b7c6f3cd632acbf5b19807b3491f16cf391060539c0392c30e",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            3,
+            121,
+            118
+          ],
+          "afterBounds": [
+            6,
+            3,
+            121,
+            118
+          ],
+          "beforeVisibleBounds": [
+            8,
+            4,
+            121,
+            117
+          ],
+          "afterVisibleBounds": [
+            8,
+            4,
+            121,
+            117
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "75c6c5be0845d4f252374023b40886325469f282956bbc5d8bf5a8550aefe162",
+          "afterHash": "75c6c5be0845d4f252374023b40886325469f282956bbc5d8bf5a8550aefe162",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            3,
+            119,
+            118
+          ],
+          "afterBounds": [
+            6,
+            3,
+            119,
+            118
+          ],
+          "beforeVisibleBounds": [
+            7,
+            5,
+            118,
+            117
+          ],
+          "afterVisibleBounds": [
+            7,
+            5,
+            118,
+            117
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": false,
+          "beforeHash": "071341f2ca06db6305d7ffc75368676ee80521bde7b1e6af6d971e43aaf16f79",
+          "afterHash": "071341f2ca06db6305d7ffc75368676ee80521bde7b1e6af6d971e43aaf16f79",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            2,
+            121,
+            118
+          ],
+          "afterBounds": [
+            4,
+            2,
+            121,
+            118
+          ],
+          "beforeVisibleBounds": [
+            6,
+            4,
+            120,
+            117
+          ],
+          "afterVisibleBounds": [
+            6,
+            4,
+            120,
+            117
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 12,
+          "allowed": true,
+          "beforeHash": "4e1581bb393f950d357cc30b7bde99f5bc971dd0017af6e7e850ef11d7a07ce9",
+          "afterHash": "f936e0276982245e6a98232edb5d4d9c0120d67bdbe22bca4346b617732ce651",
+          "changedPixels": 10593,
+          "beforeBounds": [
+            6,
+            0,
+            126,
+            124
+          ],
+          "afterBounds": [
+            6,
+            2,
+            120,
+            126
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            119,
+            123
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            119,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 8,
+              "bbox": [
+                122,
+                118,
+                126,
+                121
+              ],
+              "maxAlpha": 2
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 13,
+          "allowed": true,
+          "beforeHash": "a3faac7b4d9bad3dd8b1b974982d65c7695c5358d75460e2cb12d8759d2cf1d2",
+          "afterHash": "3c8019c6e2a17d2b6a8a514af206b81640c7b13c4b90b02a766af1f07082d815",
+          "changedPixels": 10284,
+          "beforeBounds": [
+            2,
+            0,
+            121,
+            124
+          ],
+          "afterBounds": [
+            3,
+            2,
+            121,
+            126
+          ],
+          "beforeVisibleBounds": [
+            4,
+            0,
+            120,
+            123
+          ],
+          "afterVisibleBounds": [
+            4,
+            2,
+            120,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 2,
+              "bbox": [
+                2,
+                63,
+                3,
+                65
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                105,
+                68,
+                106,
+                69
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 4,
+              "bbox": [
+                105,
+                70,
+                107,
+                74
+              ],
+              "maxAlpha": 2
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                7,
+                92,
+                8,
+                94
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 14,
+          "allowed": true,
+          "beforeHash": "3803114831758fe1cef469ca3c420a2a64917dc348a694db43ef4977bafcc560",
+          "afterHash": "9075eef779d95d020e9732b9ebe43898d06ddee3fbf2371a38f336a297c7e2ee",
+          "changedPixels": 10576,
+          "beforeBounds": [
+            6,
+            0,
+            120,
+            128
+          ],
+          "afterBounds": [
+            6,
+            2,
+            120,
+            127
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            119,
+            123
+          ],
+          "afterVisibleBounds": [
+            8,
+            2,
+            119,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 5,
+              "bbox": [
+                58,
+                126,
+                62,
+                128
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 15,
+          "allowed": true,
+          "beforeHash": "e2ea96c0b4f618d53a5573059a73aeec7f37b5fb69f726dd9b7f5e0809cfbcf7",
+          "afterHash": "55d78cb9a2fa12a13465c1b75e73b1d2fa141464d9d839fd3fbe360dedc7a176",
+          "changedPixels": 10520,
+          "beforeBounds": [
+            3,
+            0,
+            122,
+            124
+          ],
+          "afterBounds": [
+            3,
+            2,
+            122,
+            126
+          ],
+          "beforeVisibleBounds": [
+            5,
+            0,
+            121,
+            123
+          ],
+          "afterVisibleBounds": [
+            5,
+            2,
+            121,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 6,
+              "bbox": [
+                59,
+                1,
+                65,
+                2
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 3,
+              "bbox": [
+                10,
+                93,
+                11,
+                96
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            2
+          ],
+          "appliedMove": [
+            0,
+            2
+          ],
+          "discardedEdgeNoisePixels": 0
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "12-15",
+      "remainingReason": "Up12–15 머리/지팡이 꼭대기의 원본 절단 단면이 아래2px 이동 후 y=2에 남음. 경계 접촉 해소와 소실된 디자인 복구는 구분함.",
+      "correctionSummary": "Up12–15 아래2px. 지정셀 내 미세 Alpha 잔여 성분 제거. 기존 정상 Left6 저Alpha 흔적은 수정하지 않음."
+    },
+    {
+      "sourceEntry": "Vision_Sharpshooter_Female.png",
+      "appearanceId": "appearance.external.v1.vision.marksman.female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Female.png",
+      "allowedFrames": [
+        5,
+        6
+      ],
+      "changedFrames": [
+        5,
+        6
+      ],
+      "originalPngSha256": "c35fcd18ec17b56ca916ca83043dc187803879e9d8b07e4b6835acf6fab635a0",
+      "correctedPngSha256": "29d308085472b204902a3156d9413f5236589e031888a21be2fbb5d4bb53f4c1",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "429dd22ec210e9f9e8806a3ce0b31cf081916eb026841df5256127cc88f86495",
+          "afterHash": "429dd22ec210e9f9e8806a3ce0b31cf081916eb026841df5256127cc88f86495",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            0,
+            125,
+            128
+          ],
+          "afterBounds": [
+            5,
+            0,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            6,
+            3,
+            124,
+            128
+          ],
+          "afterVisibleBounds": [
+            6,
+            3,
+            124,
+            128
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "5a3d7937e0e5c4592b835b77568872bae1da3471f7b8449c732e00266c22337d",
+          "afterHash": "5a3d7937e0e5c4592b835b77568872bae1da3471f7b8449c732e00266c22337d",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            6,
+            127,
+            128
+          ],
+          "afterBounds": [
+            8,
+            6,
+            127,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            7,
+            125,
+            128
+          ],
+          "afterVisibleBounds": [
+            10,
+            7,
+            125,
+            128
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "473c91f575ca40481b5c35ac0e3e08fb3d1da5d7a36eeb122dd206daab327d05",
+          "afterHash": "473c91f575ca40481b5c35ac0e3e08fb3d1da5d7a36eeb122dd206daab327d05",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "afterBounds": [
+            7,
+            2,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            9,
+            3,
+            124,
+            128
+          ],
+          "afterVisibleBounds": [
+            9,
+            3,
+            124,
+            128
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "599ffae29ebefb15467f9edc6539f8e9c0f11f3ec964276f0d065b5094fd9113",
+          "afterHash": "599ffae29ebefb15467f9edc6539f8e9c0f11f3ec964276f0d065b5094fd9113",
+          "changedPixels": 0,
+          "beforeBounds": [
+            9,
+            0,
+            125,
+            128
+          ],
+          "afterBounds": [
+            9,
+            0,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            4,
+            124,
+            128
+          ],
+          "afterVisibleBounds": [
+            10,
+            4,
+            124,
+            128
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "45b5243c0cf50bee15f20b96b980fc73be6c2a86397fe4821ee9a26f0da405ae",
+          "afterHash": "45b5243c0cf50bee15f20b96b980fc73be6c2a86397fe4821ee9a26f0da405ae",
+          "changedPixels": 0,
+          "beforeBounds": [
+            9,
+            6,
+            125,
+            126
+          ],
+          "afterBounds": [
+            9,
+            6,
+            125,
+            126
+          ],
+          "beforeVisibleBounds": [
+            10,
+            8,
+            123,
+            124
+          ],
+          "afterVisibleBounds": [
+            10,
+            8,
+            123,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": true,
+          "beforeHash": "8285ef10e0920ff825673860645ca3fd2a6659ee49f217ab5074dc3732441060",
+          "afterHash": "3232223d76af2b79cde8fe3e0d28baf54cf97e2fab821519d9dddb37eceac0aa",
+          "changedPixels": 9205,
+          "beforeBounds": [
+            15,
+            7,
+            128,
+            128
+          ],
+          "afterBounds": [
+            13,
+            7,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            16,
+            8,
+            128,
+            127
+          ],
+          "afterVisibleBounds": [
+            14,
+            8,
+            126,
+            127
+          ],
+          "removedComponents": [],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 6,
+          "allowed": true,
+          "beforeHash": "7865147393c4adf363ca0f2aad50bc62fcf286219fb4586ef4a06a78f2ed6c16",
+          "afterHash": "50527f0838e9575921cc504995a27640038ad38d67bc16608fc4197e41cc11b9",
+          "changedPixels": 9562,
+          "beforeBounds": [
+            14,
+            6,
+            128,
+            127
+          ],
+          "afterBounds": [
+            12,
+            6,
+            126,
+            127
+          ],
+          "beforeVisibleBounds": [
+            16,
+            7,
+            128,
+            125
+          ],
+          "afterVisibleBounds": [
+            14,
+            7,
+            126,
+            125
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                31,
+                42,
+                32,
+                43
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                124,
+                77,
+                125,
+                79
+              ],
+              "maxAlpha": 2
+            }
+          ],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "dacd94e29f259dbaed38e6a195b46d1fde5bb6c757cf5f28467dd12875b09feb",
+          "afterHash": "dacd94e29f259dbaed38e6a195b46d1fde5bb6c757cf5f28467dd12875b09feb",
+          "changedPixels": 0,
+          "beforeBounds": [
+            15,
+            7,
+            128,
+            128
+          ],
+          "afterBounds": [
+            15,
+            7,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            17,
+            8,
+            126,
+            127
+          ],
+          "afterVisibleBounds": [
+            17,
+            8,
+            126,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "ee6e1892790f21ed6d2778ea45f89d92d370358b76c63ef5ace5f28da98fb1e4",
+          "afterHash": "ee6e1892790f21ed6d2778ea45f89d92d370358b76c63ef5ace5f28da98fb1e4",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            0,
+            124,
+            128
+          ],
+          "afterBounds": [
+            6,
+            0,
+            124,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            2,
+            123,
+            124
+          ],
+          "afterVisibleBounds": [
+            7,
+            2,
+            123,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": false,
+          "beforeHash": "323874be62759d8995a243da6f334fea1e4c96ff380833ca427c7fa23db7af46",
+          "afterHash": "323874be62759d8995a243da6f334fea1e4c96ff380833ca427c7fa23db7af46",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            0,
+            124,
+            125
+          ],
+          "afterBounds": [
+            5,
+            0,
+            124,
+            125
+          ],
+          "beforeVisibleBounds": [
+            8,
+            3,
+            123,
+            125
+          ],
+          "afterVisibleBounds": [
+            8,
+            3,
+            123,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "6d53d2e5dc3ae84714b778bd17611d9fcdeb03809c77b6a30ae689e86fd81f8e",
+          "afterHash": "6d53d2e5dc3ae84714b778bd17611d9fcdeb03809c77b6a30ae689e86fd81f8e",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            0,
+            126,
+            125
+          ],
+          "afterBounds": [
+            7,
+            0,
+            126,
+            125
+          ],
+          "beforeVisibleBounds": [
+            9,
+            2,
+            125,
+            124
+          ],
+          "afterVisibleBounds": [
+            9,
+            2,
+            125,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": false,
+          "beforeHash": "7ce665e573ad292761687bbaab349272730066781f6fcaa150315b6d052933fd",
+          "afterHash": "7ce665e573ad292761687bbaab349272730066781f6fcaa150315b6d052933fd",
+          "changedPixels": 0,
+          "beforeBounds": [
+            9,
+            0,
+            124,
+            126
+          ],
+          "afterBounds": [
+            9,
+            0,
+            124,
+            126
+          ],
+          "beforeVisibleBounds": [
+            10,
+            3,
+            123,
+            125
+          ],
+          "afterVisibleBounds": [
+            10,
+            3,
+            123,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 12,
+          "allowed": false,
+          "beforeHash": "8925b8dbd2affbd7cdd41d7d0d88ae59693459e2aa53b12e7c40208f8caf3eb2",
+          "afterHash": "8925b8dbd2affbd7cdd41d7d0d88ae59693459e2aa53b12e7c40208f8caf3eb2",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            0,
+            124,
+            128
+          ],
+          "afterBounds": [
+            7,
+            0,
+            124,
+            128
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            122,
+            125
+          ],
+          "afterVisibleBounds": [
+            8,
+            0,
+            122,
+            125
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 13,
+          "allowed": false,
+          "beforeHash": "a65561ae866d1b595be20e86d81113fd6673f34481ba5c8c64bd627b86b4cc63",
+          "afterHash": "a65561ae866d1b595be20e86d81113fd6673f34481ba5c8c64bd627b86b4cc63",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            0,
+            125,
+            123
+          ],
+          "afterBounds": [
+            3,
+            0,
+            125,
+            123
+          ],
+          "beforeVisibleBounds": [
+            6,
+            1,
+            123,
+            122
+          ],
+          "afterVisibleBounds": [
+            6,
+            1,
+            123,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 14,
+          "allowed": false,
+          "beforeHash": "21d13c4b8d21e341296262a1c285970b88f40c3cb859fd9721471a238a21cb17",
+          "afterHash": "21d13c4b8d21e341296262a1c285970b88f40c3cb859fd9721471a238a21cb17",
+          "changedPixels": 0,
+          "beforeBounds": [
+            13,
+            2,
+            128,
+            128
+          ],
+          "afterBounds": [
+            13,
+            2,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            15,
+            3,
+            127,
+            126
+          ],
+          "afterVisibleBounds": [
+            15,
+            3,
+            127,
+            126
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 15,
+          "allowed": false,
+          "beforeHash": "69fae67d97257b0626926c8daf06145cb6345028502af6c1b499d27f1bdd1213",
+          "afterHash": "69fae67d97257b0626926c8daf06145cb6345028502af6c1b499d27f1bdd1213",
+          "changedPixels": 0,
+          "beforeBounds": [
+            14,
+            0,
+            128,
+            128
+          ],
+          "afterBounds": [
+            14,
+            0,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            14,
+            1,
+            126,
+            125
+          ],
+          "afterVisibleBounds": [
+            14,
+            1,
+            126,
+            125
+          ],
+          "preservedNormalCell": true
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "5,6",
+      "remainingReason": "Left5/6 파란 망토 끝의 원본 수평/수직 절단 형태가 왼쪽2px 이동 후 x=125에 남음. 경계는 떨어졌으나 망토 끝 소실은 미복구.",
+      "correctionSummary": "Left5/6 왼쪽2px 이동. Left6 미세 분리 성분 제거."
+    },
+    {
+      "sourceEntry": "Vision_Sharpshooter_Male.png",
+      "appearanceId": "appearance.external.v1.vision.marksman.male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Marksman_Male.png",
+      "allowedFrames": [
+        5,
+        6
+      ],
+      "changedFrames": [
+        5,
+        6
+      ],
+      "originalPngSha256": "e2d62dc0826d982c37e32c35c04a38936b13a515b25aee6c94633d5fce632d74",
+      "correctedPngSha256": "9cec3ca67a9088ac4877d03e3802810203a495b86a0a283e11e40f3acfba0501",
+      "frames": [
+        {
+          "frame": 0,
+          "allowed": false,
+          "beforeHash": "117ba1eb986d372ce709a78491b0b4259f30f6062c02a3c3a2912ce794004872",
+          "afterHash": "117ba1eb986d372ce709a78491b0b4259f30f6062c02a3c3a2912ce794004872",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            3,
+            119,
+            128
+          ],
+          "afterBounds": [
+            8,
+            3,
+            119,
+            128
+          ],
+          "beforeVisibleBounds": [
+            10,
+            4,
+            118,
+            126
+          ],
+          "afterVisibleBounds": [
+            10,
+            4,
+            118,
+            126
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 1,
+          "allowed": false,
+          "beforeHash": "0e872a2fb9fad4fd2f343b2d11b45e7190befdb4332e9484c3b7b145ed7b11cf",
+          "afterHash": "0e872a2fb9fad4fd2f343b2d11b45e7190befdb4332e9484c3b7b145ed7b11cf",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "afterBounds": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            4,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            5,
+            4,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 2,
+          "allowed": false,
+          "beforeHash": "6fc1da24e1e192734ac98e0fc42e19bd40a8dc60b1f8aea6ed35ba31b4804ba1",
+          "afterHash": "6fc1da24e1e192734ac98e0fc42e19bd40a8dc60b1f8aea6ed35ba31b4804ba1",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            3,
+            119,
+            127
+          ],
+          "afterBounds": [
+            8,
+            3,
+            119,
+            127
+          ],
+          "beforeVisibleBounds": [
+            10,
+            4,
+            118,
+            127
+          ],
+          "afterVisibleBounds": [
+            10,
+            4,
+            118,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 3,
+          "allowed": false,
+          "beforeHash": "bb996c0916d01ab9d3d43958f7bb78297f38f46657db9d146b89ffbb964a46e8",
+          "afterHash": "bb996c0916d01ab9d3d43958f7bb78297f38f46657db9d146b89ffbb964a46e8",
+          "changedPixels": 0,
+          "beforeBounds": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "afterBounds": [
+            3,
+            3,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            5,
+            4,
+            119,
+            127
+          ],
+          "afterVisibleBounds": [
+            5,
+            4,
+            119,
+            127
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 4,
+          "allowed": false,
+          "beforeHash": "88681c85752fc343e88ccc9d64e62eec2ee0bd279cc70f112dd68606006edcc6",
+          "afterHash": "88681c85752fc343e88ccc9d64e62eec2ee0bd279cc70f112dd68606006edcc6",
+          "changedPixels": 0,
+          "beforeBounds": [
+            11,
+            6,
+            125,
+            128
+          ],
+          "afterBounds": [
+            11,
+            6,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            13,
+            7,
+            122,
+            124
+          ],
+          "afterVisibleBounds": [
+            13,
+            7,
+            122,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 5,
+          "allowed": true,
+          "beforeHash": "8e44a43654a5314d1ed9e9d42153181ffe450f6d5ecc4f176236b32dcc3eb967",
+          "afterHash": "5264758937c9739e5515cd9920f43888dea13be54175d052d41ab59c901e6edb",
+          "changedPixels": 9018,
+          "beforeBounds": [
+            11,
+            6,
+            128,
+            128
+          ],
+          "afterBounds": [
+            9,
+            6,
+            126,
+            128
+          ],
+          "beforeVisibleBounds": [
+            13,
+            7,
+            128,
+            126
+          ],
+          "afterVisibleBounds": [
+            11,
+            7,
+            126,
+            126
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                125,
+                12,
+                126,
+                13
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                33,
+                15,
+                34,
+                16
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                23,
+                34,
+                24,
+                35
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            -2,
+            0
+          ],
+          "appliedMove": [
+            -2,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 6,
+          "allowed": true,
+          "beforeHash": "7e25aa10f581ffe5100276e2267e8499c7c97a028edc67df392ba39b275381c4",
+          "afterHash": "2ed12876310f7f0a5a82474a68b697f0bd8f9304b8fef7ee8e0f3a6b541a92b0",
+          "changedPixels": 41,
+          "beforeBounds": [
+            0,
+            0,
+            125,
+            128
+          ],
+          "afterBounds": [
+            13,
+            6,
+            125,
+            128
+          ],
+          "beforeVisibleBounds": [
+            0,
+            7,
+            123,
+            124
+          ],
+          "afterVisibleBounds": [
+            15,
+            7,
+            123,
+            124
+          ],
+          "removedComponents": [
+            {
+              "pixels": 1,
+              "bbox": [
+                57,
+                0,
+                58,
+                1
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 4,
+              "bbox": [
+                50,
+                4,
+                53,
+                6
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                13,
+                73,
+                14,
+                74
+              ],
+              "maxAlpha": 1
+            },
+            {
+              "pixels": 34,
+              "bbox": [
+                0,
+                77,
+                6,
+                89
+              ],
+              "maxAlpha": 248
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                68,
+                125,
+                69,
+                126
+              ],
+              "maxAlpha": 1
+            }
+          ],
+          "requestedMove": [
+            0,
+            0
+          ],
+          "appliedMove": [
+            0,
+            0
+          ],
+          "discardedEdgeNoisePixels": 0
+        },
+        {
+          "frame": 7,
+          "allowed": false,
+          "beforeHash": "30aa7d7a3bd9b6fc31abc8af79fc48460f5da14c5c24337ed5141c7ac9a42965",
+          "afterHash": "30aa7d7a3bd9b6fc31abc8af79fc48460f5da14c5c24337ed5141c7ac9a42965",
+          "changedPixels": 0,
+          "beforeBounds": [
+            5,
+            0,
+            121,
+            128
+          ],
+          "afterBounds": [
+            5,
+            0,
+            121,
+            128
+          ],
+          "beforeVisibleBounds": [
+            7,
+            7,
+            120,
+            126
+          ],
+          "afterVisibleBounds": [
+            7,
+            7,
+            120,
+            126
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 8,
+          "allowed": false,
+          "beforeHash": "6333b048587fbdcba4ea932400c508ca597e797b82976edf22c825cd1e05af93",
+          "afterHash": "6333b048587fbdcba4ea932400c508ca597e797b82976edf22c825cd1e05af93",
+          "changedPixels": 0,
+          "beforeBounds": [
+            7,
+            0,
+            117,
+            124
+          ],
+          "afterBounds": [
+            7,
+            0,
+            117,
+            124
+          ],
+          "beforeVisibleBounds": [
+            9,
+            1,
+            116,
+            122
+          ],
+          "afterVisibleBounds": [
+            9,
+            1,
+            116,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 9,
+          "allowed": false,
+          "beforeHash": "edd7979bd0a3250213b7a10529c30bd12e383e30f122bb59a465a66a0792cf47",
+          "afterHash": "edd7979bd0a3250213b7a10529c30bd12e383e30f122bb59a465a66a0792cf47",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            0,
+            119,
+            125
+          ],
+          "afterBounds": [
+            4,
+            0,
+            119,
+            125
+          ],
+          "beforeVisibleBounds": [
+            6,
+            2,
+            118,
+            122
+          ],
+          "afterVisibleBounds": [
+            6,
+            2,
+            118,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 10,
+          "allowed": false,
+          "beforeHash": "eaa701eba157962bfc9a205e8b8e116136d384fdfaee7c4af0402cde8040c204",
+          "afterHash": "eaa701eba157962bfc9a205e8b8e116136d384fdfaee7c4af0402cde8040c204",
+          "changedPixels": 0,
+          "beforeBounds": [
+            2,
+            0,
+            117,
+            124
+          ],
+          "afterBounds": [
+            2,
+            0,
+            117,
+            124
+          ],
+          "beforeVisibleBounds": [
+            5,
+            2,
+            115,
+            122
+          ],
+          "afterVisibleBounds": [
+            5,
+            2,
+            115,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 11,
+          "allowed": false,
+          "beforeHash": "44bb097950a4d1851cf8e32a079a0f2fd540fc084604f30d803130d337ac8cc9",
+          "afterHash": "44bb097950a4d1851cf8e32a079a0f2fd540fc084604f30d803130d337ac8cc9",
+          "changedPixels": 0,
+          "beforeBounds": [
+            4,
+            1,
+            120,
+            124
+          ],
+          "afterBounds": [
+            4,
+            1,
+            120,
+            124
+          ],
+          "beforeVisibleBounds": [
+            5,
+            3,
+            118,
+            122
+          ],
+          "afterVisibleBounds": [
+            5,
+            3,
+            118,
+            122
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 12,
+          "allowed": false,
+          "beforeHash": "78f2d5a320017b07dec10a9bbb9a43fe81efe2cd78e94c4bec3b040c13a346e5",
+          "afterHash": "78f2d5a320017b07dec10a9bbb9a43fe81efe2cd78e94c4bec3b040c13a346e5",
+          "changedPixels": 0,
+          "beforeBounds": [
+            8,
+            0,
+            125,
+            124
+          ],
+          "afterBounds": [
+            8,
+            0,
+            125,
+            124
+          ],
+          "beforeVisibleBounds": [
+            9,
+            0,
+            124,
+            123
+          ],
+          "afterVisibleBounds": [
+            9,
+            0,
+            124,
+            123
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 13,
+          "allowed": false,
+          "beforeHash": "f5a71be6fbd3c47b296e33e8214e89dc4230e2f94494dcb2562a62e03980b4ea",
+          "afterHash": "f5a71be6fbd3c47b296e33e8214e89dc4230e2f94494dcb2562a62e03980b4ea",
+          "changedPixels": 0,
+          "beforeBounds": [
+            18,
+            3,
+            128,
+            128
+          ],
+          "afterBounds": [
+            18,
+            3,
+            128,
+            128
+          ],
+          "beforeVisibleBounds": [
+            19,
+            5,
+            128,
+            124
+          ],
+          "afterVisibleBounds": [
+            19,
+            5,
+            128,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 14,
+          "allowed": false,
+          "beforeHash": "78b0429542ca010c8ad07668559732d287714865c78cda1c9d6c80b107ea9955",
+          "afterHash": "78b0429542ca010c8ad07668559732d287714865c78cda1c9d6c80b107ea9955",
+          "changedPixels": 0,
+          "beforeBounds": [
+            0,
+            1,
+            127,
+            125
+          ],
+          "afterBounds": [
+            0,
+            1,
+            127,
+            125
+          ],
+          "beforeVisibleBounds": [
+            16,
+            2,
+            125,
+            124
+          ],
+          "afterVisibleBounds": [
+            16,
+            2,
+            125,
+            124
+          ],
+          "preservedNormalCell": true
+        },
+        {
+          "frame": 15,
+          "allowed": false,
+          "beforeHash": "61d55ae3f0d67db41fc863edaa94f087dc204fa4bbf54a277939c6cd102a305c",
+          "afterHash": "61d55ae3f0d67db41fc863edaa94f087dc204fa4bbf54a277939c6cd102a305c",
+          "changedPixels": 0,
+          "beforeBounds": [
+            6,
+            0,
+            123,
+            124
+          ],
+          "afterBounds": [
+            6,
+            0,
+            123,
+            124
+          ],
+          "beforeVisibleBounds": [
+            8,
+            0,
+            122,
+            123
+          ],
+          "afterVisibleBounds": [
+            8,
+            0,
+            122,
+            123
+          ],
+          "preservedNormalCell": true
+        }
+      ],
+      "status": "BLOCKED_ART",
+      "remainingFrames": "5",
+      "remainingReason": "Left5 파란 망토 끝의 원본 절단 단면이 왼쪽2px 이동 후 x=125에 남음. Left6 좌측 분리 조각은 해결.",
+      "correctionSummary": "Left5 왼쪽2px 이동. Left6 좌측34px 파란/검은 조각과 미세 잔여 제거."
+    }
+  ],
+  "normalCellChangedPixels": 0,
+  "ready": 0,
+  "blocked": 8,
+  "overallReady": 22,
+  "overallBlocked": 28,
+  "changedCells": 41,
+  "normalCells": 84,
+  "unchangedCells": 87,
+  "preservation": {
+    "changedAssetOrSettingsOrUserDataFiles": [
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Intellectual\\Intellectual_Fighter_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Intellectual\\Intellectual_Mage_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Intellectual\\Intellectual_Mage_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Vision\\Visual_Fighter_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Vision\\Visual_Guardian_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Vision\\Visual_Mage_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Vision\\Visual_Marksman_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Vision\\Visual_Marksman_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\External50.asset",
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\Validated50.json"
+    ],
+    "allMetaEqual": true,
+    "other42EntriesEqual": true,
+    "catalogExceptTargetReasonsEqual": true,
+    "spriteIdsAndClipsEqual": true,
+    "saveSettingsFilesEqual": true,
+    "normalCellsUnchanged": 84,
+    "allUnchangedCells": 87,
+    "changedCells": 41,
+    "zipUnchanged": true
+  },
+  "runtime": {
+    "pass": 86,
+    "fail": 0,
+    "mapping8": true,
+    "preview8": true,
+    "world": true,
+    "battleLeftIdle": true,
+    "actualBattleScene": true,
+    "saveContinue": true,
+    "representatives": [
+      "Intellectual Mage Male",
+      "Vision Mage Female"
+    ],
+    "blockedFallback": true,
+    "missingSprite": 0,
+    "geometryErrors": 0,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "freshFullCSharpCompile": false,
+    "saveSettingsAndPlayOptionsRestored": true,
+    "foregroundPerformed": false
+  }
+}

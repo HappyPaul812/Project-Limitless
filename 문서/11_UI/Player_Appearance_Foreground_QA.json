@@ -1,5 +1,5 @@
 {
-  "basis": "Cleanup v2 지정8종 128프레임 백그라운드 이미지 검수 및 Alpha 성분 검사. 다른42종 기존 판정 유지. Foreground 검증 없음.",
+  "basis": "Cleanup v2 기반 지정8종 셀 정수 이동/조각 제거 후128프레임 백그라운드 검수. 정상84셀/다른42종 보존. Foreground 없음.",
   "total": 50,
   "ready": 22,
   "blocked": 28,
@@ -233,7 +233,7 @@
       "gender": "Female",
       "status": "BLOCKED_ART",
       "frames": "8-15",
-      "reason": "Right 8–11 머리 리본 끝이 셀 상단 y=0에서 잘림. Up 12–15 머리카락·리본 상단에 수평 절단 형태가 남음.",
+      "reason": "Right 8–11 리본 끝의 기존 수평 절단 윤곽이 이동 후 y=2에 남음. Up 12–15 머리/리본 윗부분의 원본 절단 윤곽 잔존. 13/15는 발 Alpha를 보존하기 위해 전체 이동 제외.",
       "previousReady": true,
       "previousReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending"
     },
@@ -299,7 +299,7 @@
       "gender": "Female",
       "status": "BLOCKED_ART",
       "frames": "12-15",
-      "reason": "Up 12–15 양쪽 파란 리본·머리 상단에 수평 절단 형태가 남음. 투명 여백 안쪽으로 옮겨졌으나 원래 잘린 윤곽이 복구되지 않음.",
+      "reason": "Up 12–15 양쪽 리본/머리 상단의 기존 절단 윤곽 잔존. 13 아래1px 이동으로 경계 여백 확보했으나 원래 소실된 윤곽은 복구되지 않음. 12/14/15는 발을 새로 자르므로 이동 제외.",
       "previousReady": true,
       "previousReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending"
     },
@@ -310,7 +310,7 @@
       "gender": "Male",
       "status": "BLOCKED_ART",
       "frames": "12-15",
-      "reason": "Up 12–15 머리 위 솟은 갈색 머리카락 끝이 셀 상단 y=0에서 수평으로 잘림.",
+      "reason": "Up 12–15 갈색 머리 끝의 원본 수평 절단 형태가 아래2px 이동 후 y=2에 남음. 경계 접촉은 해소됐으나 소실된 머리 끝 픽셀은 이동으로 복원 불가.",
       "previousReady": true,
       "previousReason": "Static 16-frame review passed Down/Left/Right/Up; boundary contacts reviewed without obvious body truncation; foreground movement QA pending"
     },
@@ -463,8 +463,8 @@
       "theme": "Vision",
       "gender": "Male",
       "status": "BLOCKED_ART",
-      "frames": "1-3,5,7,9,11-14",
-      "reason": "Down 1–3/Left 5,7/Right 9,11 검·망토가 좌우 셀 경계에서 잘림. Down 2 오른쪽 x=125–127,y=109–118에 23px 잔여 조각(max Alpha36). Up 12–14 머리 상단 crop, 14 왼쪽 x=0–12,y=82–102에 인접 검 분리 조각169px.",
+      "frames": "1,3,5,7,9,11-14",
+      "reason": "Down1/3, Left5/7, Right9/11, Up13 검·망토의 원본 잘린 끝 잔존. Left5는 좌우 폭 부족으로 안전 전체 이동 불가. Up12–14 머리 상단의 원본 절단 윤곽 잔존. 방향 정상.",
       "previousReady": false,
       "previousReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved"
     },
@@ -485,8 +485,8 @@
       "theme": "Vision",
       "gender": "Male",
       "status": "BLOCKED_ART",
-      "frames": "5,6,8-15",
-      "reason": "Left 5 망토 우측 경계 crop, 6 왼쪽 x=0–1,y=77–83에 10px 분리 조각(max Alpha155). Right 8–11 머리 끝 상단 crop, 9 망토 우측 crop. Up 12–15 머리카락 윗부분에 수평 절단 형태가 남음.",
+      "frames": "5,8-15",
+      "reason": "Left5 망토 끝의 원본 잘린 윤곽 잔존. Right8–11 머리 끝과 Up12–15 머리 상단의 원본 절단 형태 잔존. 15는 새 발 경계 접촉을 막기 위해 이동 제외.",
       "previousReady": false,
       "previousReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved"
     },
@@ -519,7 +519,7 @@
       "gender": "Female",
       "status": "BLOCKED_ART",
       "frames": "12-15",
-      "reason": "Up 12–15 머리와 지팡이 꼭대기가 셀 상단 y=0에서 수평으로 잘림. 저Alpha 잔여물은 Left6 발 아래29px(max Alpha2), Up12 오른쪽8px(max Alpha2)도 존재.",
+      "reason": "Up12–15 머리/지팡이 꼭대기의 원본 절단 단면이 아래2px 이동 후 y=2에 남음. 경계 접촉 해소와 소실된 디자인 복구는 구분함.",
       "previousReady": false,
       "previousReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved"
     },
@@ -541,7 +541,7 @@
       "gender": "Female",
       "status": "BLOCKED_ART",
       "frames": "5,6",
-      "reason": "Left 5,6 뒤쪽 파란 망토 끝이 셀 우측 x=127에서 잘림. 머리 위 경계 접촉만으로 crop 판정하지 않았으며, 기존 검은 머리 분리 조각은 제거됨.",
+      "reason": "Left5/6 파란 망토 끝의 원본 수평/수직 절단 형태가 왼쪽2px 이동 후 x=125에 남음. 경계는 떨어졌으나 망토 끝 소실은 미복구.",
       "previousReady": false,
       "previousReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved"
     },
@@ -551,8 +551,8 @@
       "theme": "Vision",
       "gender": "Male",
       "status": "BLOCKED_ART",
-      "frames": "5,6",
-      "reason": "Left 5 망토 우측 셀 경계 crop. Left 6 왼쪽 x=0–5,y=77–88에 34px 파란/검은 분리 조각(max Alpha248).",
+      "frames": "5",
+      "reason": "Left5 파란 망토 끝의 원본 절단 단면이 왼쪽2px 이동 후 x=125에 남음. Left6 좌측 분리 조각은 해결.",
       "previousReady": false,
       "previousReason": "Blocked: opaque fragments of adjacent direction rows at top/bottom cell edges in magnified review; clipping/frame contamination suspected; original PNG preserved"
     }
