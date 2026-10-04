@@ -27,8 +27,10 @@ Pillow/NumPy/SciPy로 128px 셀 추출 → 지정44셀만 연결 성분 검사/�
 
 ## 최종 검증
 
+관련 commit: 계획 `c3a58e1`, 셀 수정·Pipeline·QA·Runtime 기록 `5ac5abb`.
+
 - PlayUnfocused86PASS/0FAIL: [Runtime 기록](Intellectual_Vision_CellCleanup_Runtime_Results.txt). 8종 Mapping/Job Preview, 대표 Intellectual Mage Male·Vision Mage Female CharacterCreation→Confirm Preview→World→Save→Bootstrap Continue→Battle Left Idle/실제 Battle Scene 전달 통과. BLOCKED는 기존 성별 기본 Sprite의 임시 fallback이며 수정본 Art의 실제 걷기 검증은 아니다.
 - 대상8종 Import512×512/Multiple/16Sprite/PPU128/Point/Uncompressed 유지. 전체50 Entry·800 Sprite Missing0, Rect128×128/Pivot(64,0)/PPU128 오류0. Catalog와 Inventory 검수 이유 일치. 전체 meta/Sprite GUID/fileID 보존.
 - 독립 검증에서 정상84셀 RGBA Hash/Pixel Diff0, 허용44셀 중41개만 수정, 전체87셀 유지. 다른42종 Inventory/QA/Matrix Entry와 Catalog의 대상8 reviewReason 외 전체 텍스트/embedded Clip 동일. Assets/ProjectSettings/UserData 시작 해시 비교에서 대상8PNG+Inventory+Catalog 총10파일만 변경. ZIP·사용자 Save/Settings 원본 동일.
 - 최종 Console Error0/Warning0·현재 Compile Error0/isCompiling=false. C# 기능 코드 변경 없음·새 전체 C# 컴파일 미수행. Pipeline Python 구문 검사 통과. clean Bootstrap Edit Mode·is_focused=false, 격리 Save 경로null·Settings/Play 옵션/runInBackground/GameView 진입 설정 복원.
-- Foreground/실제 걷기·키보드/게임패드 미검증. 직접 변경 파일 staged diff --check 확인 후 commit한다. 전체 Working Tree의 기존 사용자 whitespace는 보존하며 ZIP/다른42종/Voice/BGM/Quest는 stage하지 않는다. GitHub Push 없음.
+- Foreground/실제 걷기·키보드/게임패드 미검증. 직접 변경 파일 staged diff --check 통과. 전체 Working Tree의 기존 사용자 whitespace는 보존하며 ZIP/다른42종/Voice/BGM/Quest는 stage하지 않았다. GitHub Push 없음.
