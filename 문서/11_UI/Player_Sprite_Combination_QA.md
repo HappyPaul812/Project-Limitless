@@ -1,5 +1,7 @@
 # Player Sprite 자동 매핑 QA (2026-10-03)
 
+2026-10-05 Cleanup v2: 지정8종 READY0/BLOCKED_ART8, 전체 **Ready22/Blocked28 유지**. 다른42종 보존. [최신 개별 QA](Intellectual_Vision_CleanupV2_QA.md). 아래는 이전 이력이다.
+
 ## 결과
 
 LOCAL Unity6000.5.7f1, 새 `PlayerSpriteCombinationAudit`에서 백그라운드 PlayUnfocused로 **346 PASS / 0 FAIL**. UI 후속 렌더 검사 **7 PASS / 0 FAIL**. [Runtime 로그](Player_Sprite_Combination_Runtime_Results.txt), [Render 로그](Player_Sprite_Combination_Visual_Results.txt), [50조합 Matrix](Player_Sprite_Combination_Matrix.md), [JSON](Player_Sprite_Combination_Matrix.json).

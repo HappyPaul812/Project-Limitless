@@ -1,5 +1,7 @@
 # Player Sprite 자동 매핑·저장 계약
 
+2026-10-05 Cleanup v2: 지정8종 READY0/BLOCKED_ART8, 전체 **Ready22/Blocked28 유지**. 다른42종 보존. [최신 개별 QA](Intellectual_Vision_CleanupV2_QA.md). 아래는 이전 이력이다.
+
 Cleanup8 지정8종 적용: READY0/BLOCKED_ART8, 전체 Ready22/Blocked28 유지. 기존42종·자동 Mapping/Save/fallback 보존. [최신 QA](Intellectual_Vision_Cleanup8_QA.md).
 
 2026-10-03 사용자 설계 정정. Player는 Appearance를 직접 선택하지 않는다. 정본 선택은 Gender / Name → Path → Job → Confirm이며, GenderStableId + PathStableId + JobStableId로 대응 Sprite Definition과 기존 Appearance Stable ID를 자동 결정한다. 배열 순번이나 UI 순번은 조회 키가 아니다.
