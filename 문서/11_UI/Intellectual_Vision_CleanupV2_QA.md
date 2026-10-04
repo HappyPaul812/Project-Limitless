@@ -25,6 +25,8 @@ Runtime·최종 보존 검증은 아래 후속 검증 기록에 갱신한다. Fo
 
 ## 최종 검증
 
+관련 commit: 문서 선행 `4c9563a`, 원본 반영·개별 QA·Runtime 기록 `501c0c8`.
+
 - [Runtime 기록](Intellectual_Vision_CleanupV2_Runtime_Results.txt): PlayUnfocused86PASS/0FAIL. 8종 자동 Mapping/Job Preview, 대표 Intellectual Mage Male·Vision Mage Female 생성/Confirm Preview/World/Battle Left Idle/실제 Battle Scene/Save→Bootstrap Continue 및 구버전·불일치 Appearance 재계산 통과. BLOCKED 기본 성별 fallback 동작 검증이며 수정 Art의 실제 걷기 재생 검증은 아니다.
 - 전체50 Entry·800 Sprite 참조 누락0, Rect128×128/Pivot(64,0)/PPU128 오류0. 8종 각각16 Sprite·512×512·Multiple/Point/Uncompressed 유지. meta 전부 동일하여128 Sprite GUID/fileID 유지. Catalog 전체에서 지정8 reviewReason을 제외한 텍스트 동일: 다른42 Entry 및 embedded Clip 바이트/참조 보존. Inventory/Matrix/QA의 다른42 Entry 동일.
 - 시작 Assets 전체 해시와 비교해8PNG+Catalog+Inventory 총10파일만 변경. ZIP SHA256 및 반영8PNG 원본 바이트 동일. 사용자 기존 Working Tree 변경 유지.
