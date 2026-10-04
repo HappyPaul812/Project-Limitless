@@ -1,12 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
-## Vision 복원 최종3종 반영 준비 (2026-10-05)
+## Vision512 최종 복원3종 반영 완료 (2026-10-05)
 
-- 입력 `F:/Downloads/Limitless_Vision_3_Restored_512_Final.zip`, 지정 Vision Fighter Male·Mage Female·Sharpshooter Male만 반영 예정. 잘린 검/머리/지팡이/망토 복원 및 접합선 제거 재검수. [계획](../11_UI/Vision_Restored512Final3_적용_계약.md)·[QA](../11_UI/Vision_Restored512Final3_QA.md).
-- 현재 READY27/BLOCKED23. 기대 READY30/BLOCKED20은 검증 대기. 기존3종 BLOCKED_ART 판정 유지 중, 다른47종·기존 READY·사용자 변경94항목 보호.
-- 문서화 선행 완료 후 원본PNG3만 교체하고 참조/Import·Mapping/Preview/World/Battle Left Idle/격리 Save→Continue/컴파일/Console 백그라운드 검증 예정. 포커스 전환·GitHub Push 없음.
-- 마지막 관련 반영 commit `dbbfb54`. 다음 작업: 구현 반영과48Frame QA. 아래는 이전 이력이다.
-
+- `F:/Downloads/Limitless_Vision_3_Restored_512_Final.zip` 지정 Vision Fighter Male·Mage Female·Sharpshooter Male 원본3PNG 교체. 문서화→구현→검증, PNG3/중복0/누락0·512×512 RGBA·4×4·16Frame/Cell128 확인. 이미지 추가 수정0. 직전1254입력 보류 기록과 구분하여 새48Frame 실제QA. [계획](../11_UI/Vision_Restored512Final3_적용_계약.md)·[최신 QA](../11_UI/Vision_Restored512Final3_QA.md).
+- **3종 모두 READY 승격**, Fighter 검 끝·Mage Up 머리/지팡이 접합·Sharpshooter Up12/15 머리·Up13 망토 복원 통과. 남은문제Frame 없음. 전체 **READY27/BLOCKED23 → READY30/BLOCKED20**. 이번3종 추가Art 수정 필요 없음, 다음 권장작업은 범위밖 나머지BLOCKED20의 기존QA 수정.
+- 기존3 Appearance ID/48Sprite ID/meta/Import·Gender+Path+Job/Save Mapping·fallback 유지. 기존3Entry에만24Clip 연결. 다른47PNG/Entry/QA·기존READY27/216Clip 보존. 사용자 기존94항목(410Git 파일) 보호, Save/Settings/ProjectSettings 불변. gameRuntime 기능/SaveMigration 변경0, QA helper의 대상 범위만3종으로 조정.
+- 격리PlayUnfocused90PASS/0FAIL: 3종Mapping/Preview/World/Battle Left Idle/실제Battle Scene/Save→Bootstrap Continue·CharacterCreation 성별기본Preview·구버전ID 재계산/기본fallback 통과. 전체800Sprite Missing0·48Sprite rect128/pivot64,0·Multiple/PPU128/Point/Uncompressed 확인.
+- C# 컴파일 완료·Error0. 기존 CS0618 경고2건 보존, 최종Console Error0/Warning0. cleanBootstrap EditMode·Save/Settings/Play 설정 복원·포커스 전환 없음. 실제걷기/키보드/게임패드 미검증.
+- 이번 변경 diff --check 통과, 기존 전체작업트리 whitespace는 수정하지 않음. GitHub Push 없음. 계획commit `30a3419`, 마지막 원본 반영·READY 승격·검증commit `39220c2`. 아래는 이전이력이다.
 
 ## Vision 복원 최종3종 입력 규격 불일치로 보류 (2026-10-05)
 
