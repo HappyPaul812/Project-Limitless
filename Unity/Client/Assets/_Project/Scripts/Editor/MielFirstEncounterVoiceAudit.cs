@@ -25,7 +25,7 @@ namespace ProjectLimitless.EditorTools
         static bool armed, audible;
         static List<string> checks=new List<string>();
         static List<string> metrics=new List<string>();
-        static string Root => Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/MielFirst20261006/runtime"));
+        static string Root => Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main04Final20261006/runtime"));
         public static string Status="Idle";
         static MielFirstEncounterVoiceAudit()
         {
@@ -133,12 +133,15 @@ namespace ProjectLimitless.EditorTools
                 }
                 yield return Wait(3);Layout(d,"page"+(i+1));
                 ScreenCapture.CaptureScreenshot(Path.Combine(Root,"page"+(i+1)+".png"));
+                // 캡처가 현재 프레임을 저장할 때까지 기다려 페이지와 이미지의 순서를 맞춥니다.
+                yield return Wait(3);
                 checks.Add("NEXT order="+(i+1)+" at="+EditorApplication.timeSinceStartup+" origin=QA_manual_after_full_playback");d.Advance();
                 Check(line.IsPlayer||Voice(d).Clip!=clip,"Previous Source cleaned/replaced "+i);
             }
             Check(!d.IsOpen&&Voice(d).Clip==null&&!Voice(d).IsPlaying&&!((GameObject)Field(d,"portraitRoot")).activeSelf,"Final Dialogue Voice Portrait cleanup");
             Check(QuestService.ActiveMainQuest.CurrentObjective.ObjectiveId=="win_three_people_encounter","First conversation complete to encounter objective");
             GameSaveData saved;Check(GameSaveService.TryLoadSlot(1,out saved),"Isolated automatic Save readable");
+            Check(saved.QuestProgress.ActiveQuests.Any(q=>q.QuestId==MainQuest04FieldFlow.QuestId&&q.Objectives.Any(o=>o.ObjectiveId=="talk_to_miel_first"&&o.CurrentCount>=1)),"Saved first conversation progress");
             yield return Load("Bootstrap");Status="PASS";File.WriteAllText(Path.Combine(Root,"runtime-listening.txt"),Status+"\n"+string.Join("\n",checks));
         }
     }
