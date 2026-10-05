@@ -1,0 +1,245 @@
+PASS
+PASS Isolated audit save directory active
+PASS Select audit-only slot1
+PASS Main03 definition
+PASS Scene Field_01
+PASS Actual first TryInteract
+PASS First body preserved main03_taeon_supp_005
+PASS 005-007 unchanged playback main03_taeon_supp_005
+PASS Panel in screen main03_taeon_supp_005_first
+PASS Text regions inside panel main03_taeon_supp_005_first
+PASS Speaker/Body/Footer separated main03_taeon_supp_005_first
+PASS No body truncation main03_taeon_supp_005_first
+PASS Height40% / font24-28 main03_taeon_supp_005_first
+PASS Word Wrap main03_taeon_supp_005_first
+PASS Portrait separate main03_taeon_supp_005_first
+PASS First body preserved
+PASS Player Voice0 Portrait0
+PASS Panel in screen _first
+PASS Text regions inside panel _first
+PASS Speaker/Body/Footer separated _first
+PASS No body truncation _first
+PASS Height40% / font24-28 _first
+PASS Word Wrap _first
+PASS No blank Player Portrait space _first
+PASS First body preserved main03_taeon_supp_006
+PASS 005-007 unchanged playback main03_taeon_supp_006
+PASS Panel in screen main03_taeon_supp_006_first
+PASS Text regions inside panel main03_taeon_supp_006_first
+PASS Speaker/Body/Footer separated main03_taeon_supp_006_first
+PASS No body truncation main03_taeon_supp_006_first
+PASS Height40% / font24-28 main03_taeon_supp_006_first
+PASS Word Wrap main03_taeon_supp_006_first
+PASS Portrait separate main03_taeon_supp_006_first
+PASS First body preserved
+PASS Player Voice0 Portrait0
+PASS Panel in screen _first
+PASS Text regions inside panel _first
+PASS Speaker/Body/Footer separated _first
+PASS No body truncation _first
+PASS Height40% / font24-28 _first
+PASS Word Wrap _first
+PASS No blank Player Portrait space _first
+PASS First body preserved main03_taeon_supp_007
+PASS 005-007 unchanged playback main03_taeon_supp_007
+PASS Panel in screen main03_taeon_supp_007_first
+PASS Text regions inside panel main03_taeon_supp_007_first
+PASS Speaker/Body/Footer separated main03_taeon_supp_007_first
+PASS No body truncation main03_taeon_supp_007_first
+PASS Height40% / font24-28 main03_taeon_supp_007_first
+PASS Word Wrap main03_taeon_supp_007_first
+PASS Portrait separate main03_taeon_supp_007_first
+PASS First completes to encounter
+PASS Actual prebattle TryInteract
+PASS Prebattle Clip loaded/playing main03_taeon_supp_003
+PASS Prebattle speaker Taeon
+PASS Exact prebattle subtitle main03_taeon_supp_003
+PASS Prebattle correct Taeon Portrait main03_taeon_supp_003
+PASS Panel in screen main03_taeon_supp_003
+PASS Text regions inside panel main03_taeon_supp_003
+PASS Speaker/Body/Footer separated main03_taeon_supp_003
+PASS No body truncation main03_taeon_supp_003
+PASS Height40% / font24-28 main03_taeon_supp_003
+PASS Word Wrap main03_taeon_supp_003
+PASS Portrait separate main03_taeon_supp_003
+PASS PCM main03_taeon_supp_003
+PASS 24k mono main03_taeon_supp_003
+PASS Normal source level main03_taeon_supp_003
+AUDIO main03_taeon_supp_003 length=0.96 rmsDb=-19.7344569222685 peakDb=-3.2904772218125
+PASS No automatic early Battle/Voice cut main03_taeon_supp_003
+PASS Prebattle Clip loaded/playing main03_taeon_supp_004
+PASS Prebattle speaker Taeon
+PASS Exact prebattle subtitle main03_taeon_supp_004
+PASS Prebattle correct Taeon Portrait main03_taeon_supp_004
+PASS Panel in screen main03_taeon_supp_004
+PASS Text regions inside panel main03_taeon_supp_004
+PASS Speaker/Body/Footer separated main03_taeon_supp_004
+PASS No body truncation main03_taeon_supp_004
+PASS Height40% / font24-28 main03_taeon_supp_004
+PASS Word Wrap main03_taeon_supp_004
+PASS Portrait separate main03_taeon_supp_004
+PASS PCM main03_taeon_supp_004
+PASS 24k mono main03_taeon_supp_004
+PASS Normal source level main03_taeon_supp_004
+AUDIO main03_taeon_supp_004 length=4.36 rmsDb=-18.9533461482313 peakDb=-0.0970262291959228
+PASS No automatic early Battle/Voice cut main03_taeon_supp_004
+PASS Actual final Next enters Battle
+PASS Battle no old Dialogue/Voice/Footer/Portrait
+PASS Actual victory result return Field01
+PASS Actual postbattle objective
+PASS Actual AfterBattle TryInteract
+PASS Remaining subtitle/speaker main03_taeon_supp_008
+PASS Remaining Loaded/Played main03_taeon_supp_008
+PASS Remaining Catalog reference equals Source main03_taeon_supp_008
+TRACE id=main03_taeon_supp_008 speaker=companion_taeon resolved=main03_taeon_supp_008 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav guid=16a05ac1b6d319545a8f9113e2bd9aba source=main03_taeon_supp_008 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_008
+PASS Remaining audible routing main03_taeon_supp_008
+PASS Remaining GetData main03_taeon_supp_008
+AUDIO main03_taeon_supp_008 length=1.76 RMS=-19.4812098181243 peak=-3.90731984488049 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_008_remaining
+PASS Text regions inside panel main03_taeon_supp_008_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_008_remaining
+PASS No body truncation main03_taeon_supp_008_remaining
+PASS Height40% / font24-28 main03_taeon_supp_008_remaining
+PASS Word Wrap main03_taeon_supp_008_remaining
+PASS Portrait separate main03_taeon_supp_008_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_008
+PASS Remaining subtitle/speaker
+PASS Remaining Player silent/portrait0
+PASS Panel in screen _remaining
+PASS Text regions inside panel _remaining
+PASS Speaker/Body/Footer separated _remaining
+PASS No body truncation _remaining
+PASS Height40% / font24-28 _remaining
+PASS Word Wrap _remaining
+PASS No blank Player Portrait space _remaining
+PASS Remaining subtitle/speaker main03_taeon_supp_009
+PASS Remaining Loaded/Played main03_taeon_supp_009
+PASS Remaining Catalog reference equals Source main03_taeon_supp_009
+TRACE id=main03_taeon_supp_009 speaker=companion_taeon resolved=main03_taeon_supp_009 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav guid=dde64e7754b8a3c4c8a39ff54113e2a4 source=main03_taeon_supp_009 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_009
+PASS Remaining audible routing main03_taeon_supp_009
+PASS Remaining GetData main03_taeon_supp_009
+AUDIO main03_taeon_supp_009 length=5.48 RMS=-14.8621044632173 peak=-1.44968808250094 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_009_remaining
+PASS Text regions inside panel main03_taeon_supp_009_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_009_remaining
+PASS No body truncation main03_taeon_supp_009_remaining
+PASS Height40% / font24-28 main03_taeon_supp_009_remaining
+PASS Word Wrap main03_taeon_supp_009_remaining
+PASS Portrait separate main03_taeon_supp_009_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_009
+PASS Remaining subtitle/speaker
+PASS Remaining Player silent/portrait0
+PASS Panel in screen _remaining
+PASS Text regions inside panel _remaining
+PASS Speaker/Body/Footer separated _remaining
+PASS No body truncation _remaining
+PASS Height40% / font24-28 _remaining
+PASS Word Wrap _remaining
+PASS No blank Player Portrait space _remaining
+PASS Remaining subtitle/speaker main03_taeon_supp_010
+PASS Remaining Loaded/Played main03_taeon_supp_010
+PASS Remaining Catalog reference equals Source main03_taeon_supp_010
+TRACE id=main03_taeon_supp_010 speaker=companion_taeon resolved=main03_taeon_supp_010 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav guid=df90274da1dfe6349a613703673baa14 source=main03_taeon_supp_010 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_010
+PASS Remaining audible routing main03_taeon_supp_010
+PASS Remaining GetData main03_taeon_supp_010
+AUDIO main03_taeon_supp_010 length=3.32 RMS=-16.8748558943257 peak=-3.20648419944061 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_010_remaining
+PASS Text regions inside panel main03_taeon_supp_010_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_010_remaining
+PASS No body truncation main03_taeon_supp_010_remaining
+PASS Height40% / font24-28 main03_taeon_supp_010_remaining
+PASS Word Wrap main03_taeon_supp_010_remaining
+PASS Portrait separate main03_taeon_supp_010_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_010
+PASS Remaining subtitle/speaker main03_taeon_supp_011
+PASS Remaining Loaded/Played main03_taeon_supp_011
+PASS Remaining Catalog reference equals Source main03_taeon_supp_011
+TRACE id=main03_taeon_supp_011 speaker=companion_taeon resolved=main03_taeon_supp_011 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav guid=e6098de83891e8d4a848af3eb519d63f source=main03_taeon_supp_011 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_011
+PASS Remaining audible routing main03_taeon_supp_011
+PASS Remaining GetData main03_taeon_supp_011
+AUDIO main03_taeon_supp_011 length=3.52 RMS=-19.900656887202 peak=-3.54744239877703 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_011_remaining
+PASS Text regions inside panel main03_taeon_supp_011_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_011_remaining
+PASS No body truncation main03_taeon_supp_011_remaining
+PASS Height40% / font24-28 main03_taeon_supp_011_remaining
+PASS Word Wrap main03_taeon_supp_011_remaining
+PASS Portrait separate main03_taeon_supp_011_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_011
+PASS Remaining subtitle/speaker main03_taeon_supp_012
+PASS Remaining Loaded/Played main03_taeon_supp_012
+PASS Remaining Catalog reference equals Source main03_taeon_supp_012
+TRACE id=main03_taeon_supp_012 speaker=companion_taeon resolved=main03_taeon_supp_012 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav guid=997f362bba765564c811ef7d9d7aa0c3 source=main03_taeon_supp_012 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_012
+PASS Remaining audible routing main03_taeon_supp_012
+PASS Remaining GetData main03_taeon_supp_012
+PASS 012 replacement full duration/normal source level
+AUDIO main03_taeon_supp_012 length=7.76 RMS=-16.1628789768348 peak=-0.963053588158604 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_012_remaining
+PASS Text regions inside panel main03_taeon_supp_012_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_012_remaining
+PASS No body truncation main03_taeon_supp_012_remaining
+PASS Height40% / font24-28 main03_taeon_supp_012_remaining
+PASS Word Wrap main03_taeon_supp_012_remaining
+PASS Portrait separate main03_taeon_supp_012_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_012
+PASS All seven postbattle pages complete to clue
+PASS Actual final clue TryReach
+PASS Final clue pages2
+PASS Remaining subtitle/speaker main03_taeon_supp_001
+PASS Remaining Loaded/Played main03_taeon_supp_001
+PASS Remaining Catalog reference equals Source main03_taeon_supp_001
+TRACE id=main03_taeon_supp_001 speaker=companion_taeon resolved=main03_taeon_supp_001 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav guid=b05384306c5fa854dbc912630b330974 source=main03_taeon_supp_001 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_001
+PASS Remaining audible routing main03_taeon_supp_001
+PASS Remaining GetData main03_taeon_supp_001
+AUDIO main03_taeon_supp_001 length=4.9 RMS=-20.2093137723302 peak=-1.49427951552772 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_001_remaining
+PASS Text regions inside panel main03_taeon_supp_001_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_001_remaining
+PASS No body truncation main03_taeon_supp_001_remaining
+PASS Height40% / font24-28 main03_taeon_supp_001_remaining
+PASS Word Wrap main03_taeon_supp_001_remaining
+PASS Portrait separate main03_taeon_supp_001_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_001
+PASS Remaining subtitle/speaker main03_taeon_supp_002
+PASS Remaining Loaded/Played main03_taeon_supp_002
+PASS Remaining Catalog reference equals Source main03_taeon_supp_002
+TRACE id=main03_taeon_supp_002 speaker=companion_taeon resolved=main03_taeon_supp_002 path=Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav guid=09e41a7b9fed74348b429c7c07a813f1 source=main03_taeon_supp_002 playing=True cache=NONE_lookup_ID_and_speaker
+PASS Remaining correct Portrait main03_taeon_supp_002
+PASS Remaining audible routing main03_taeon_supp_002
+PASS Remaining GetData main03_taeon_supp_002
+AUDIO main03_taeon_supp_002 length=3.94 RMS=-23.5827711353705 peak=-5.81833744707264 Master=0 Voice=-2.85335 ListenerVolume=1 paused=False
+PASS Panel in screen main03_taeon_supp_002_remaining
+PASS Text regions inside panel main03_taeon_supp_002_remaining
+PASS Speaker/Body/Footer separated main03_taeon_supp_002_remaining
+PASS No body truncation main03_taeon_supp_002_remaining
+PASS Height40% / font24-28 main03_taeon_supp_002_remaining
+PASS Word Wrap main03_taeon_supp_002_remaining
+PASS Portrait separate main03_taeon_supp_002_remaining
+PASS Remaining full playback/manual Next main03_taeon_supp_002
+PASS Main03 final clue completes quest without another Battle
+PASS Main03 final Voice/Portrait cleanup
+PASS Main03 isolated automatic Save readable
+PASS Main03 isolated saved quest completed
+PASS Fast Next correct body main03_taeon_supp_008
+PASS Fast Next Resolve/cleanup main03_taeon_supp_008
+PASS Fast Next correct body
+PASS Fast Next Resolve/cleanup
+PASS Fast Next correct body main03_taeon_supp_009
+PASS Fast Next Resolve/cleanup main03_taeon_supp_009
+PASS Fast Next correct body
+PASS Fast Next Resolve/cleanup
+PASS Fast Next correct body main03_taeon_supp_010
+PASS Fast Next Resolve/cleanup main03_taeon_supp_010
+PASS Fast Next correct body main03_taeon_supp_011
+PASS Fast Next Resolve/cleanup main03_taeon_supp_011
+PASS Fast Next correct body main03_taeon_supp_012
+PASS Fast Next Resolve/cleanup main03_taeon_supp_012
+PASS Fast sequence final cleanup
+PASS Scene Bootstrap
+PASS count=243
