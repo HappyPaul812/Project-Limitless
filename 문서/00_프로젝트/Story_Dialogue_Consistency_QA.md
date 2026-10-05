@@ -1,5 +1,7 @@
 # Story Dialogue / Subtitle / Voice / Portrait 전수 감사
 
+> 후반부 전체 감사(2026-10-05): [Main03 남은9페이지QA](Main03_RemainingVoice_감사_QA.md).008 실제 전투후 첫대사이며 연결/재생 정상, 보고된무음은미재현·원인미확정.012원본저음량으로 확정재생성0→1. 후반부7Voice 의미청취는 사용자 “이번재생을듣지못함”으로 USER_LISTENING_REQUIRED이며 일괄Handoff에모두포함했다.005~007/003/004 기존PASS5·244관리범위보존, WAV/Mapping/게임코드수정0.
+
 > 최종 후속(2026-10-05):003/004 새 원본을 기존 Unity WAV/GUID/meta 그대로 반영, 사람 실제 Unity 의미/끝까지 재생 PASS. [최종 집중 QA](Main03_Supp003004_Regen_적용_QA.md). 확정 재생성2→0·005~007 기존PASS 유지.244 NEEDS_LISTENING 관리범위는 보존하며 이번 완료2행은 RUNTIME_LISTENING_PASS를 함께 기록한 기존 backlog 부분집합이다. 현재 미확인244개 또는 총249음성으로 해석하지 않는다. Catalog247 유지.
 
 > 최신 정정(2026-10-05): 사용자005~007 실제 Runtime 의미 청취 PASS 확정으로 기존 재생성3→0 해결. 새 전투 직전003 저음량/004 다른·부분 문장 원본 문제는 G. OTHER로 분류하고 재생성2건을 기록했다.244 NEEDS_LISTENING은 그대로이며 새2건은 그 부분집합이다. [후속 Voice·장문 UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md)에서 실제 Actor→Battle/3해상도550 assertions PASS + PCM2건를 확인했다. 아래 표와 최초 음성 불일치3건은 최초 감사 시점 이력이며 현재 Matrix/전달CSV를 정본으로 사용한다.

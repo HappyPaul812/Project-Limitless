@@ -1,6 +1,6 @@
 {
-  "scope": "005/006/007 prior Runtime semantic PASS preserved. 003/004 new source and actual Unity Runtime USER confirmed PASS. TTS_REGEN_REQUIRED 0. Preserve original NEEDS_LISTENING 244 management scope; resolved 003/004 remain marked as members plus RUNTIME_LISTENING_PASS, counts overlap and do not add to 247.",
-  "method": "USER_SOURCE_AND_RUNTIME_LISTENING_CONFIRMED_PASS",
+  "scope": "Previous005/006/007/003/004 source+Runtime semantic PASS preserved. Entire Main03 remaining9 pages audited:7voices/2Player silent. All7 voice Runtime played, semantic user replay not heard;012 low level REGEN_REQUIRED. Original244 backlog scope preserved.",
+  "method": "SEPARATE_USER_LISTENING_AND_RUNTIME_PLAYBACK_AUDIT",
   "results": [
     {
       "dialogue_id": "main03_taeon_supp_005",
@@ -56,6 +56,83 @@
       "replacement_sha256": "b77ac1bf874b4d9966e08c60570f4767dbf43797a1e456ca0b7af1ca79da43e6",
       "source_user_listening_pass": true,
       "runtime_listening_pass": true
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_008",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -21.62883034237892,
+      "source_peak_db": -4.066298189595134,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. 008 prior user silence report not reproduced under isolated unmuted routing; root cause unresolved, source content needs listening."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_009",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -26.247623728337818,
+      "source_peak_db": -3.2676648830904718,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. Duration/RMS alone do not establish wrong words or truncation."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_010",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -31.826666696110337,
+      "source_peak_db": -13.428157858374028,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. Duration/RMS alone do not establish wrong words or truncation."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_011",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -22.33353209540296,
+      "source_peak_db": -3.50725842524586,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. Duration/RMS alone do not establish wrong words or truncation."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_012",
+      "status": "NEEDS_LISTENING;SOURCE_LOW_LEVEL_AUDIO",
+      "heard_text": "",
+      "tts_regen_required": true,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -51.90372080742649,
+      "source_peak_db": -32.62442330654228,
+      "reason": "F. LOW_OR_SILENT_AUDIO: RMS -51.90 dBFS / peak -32.62 dBFS, length1.45s. Full Runtime Resolve/Play/GetData pass; regenerate full exact text at normal source level. Semantic not heard."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_001",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -20.20931377233017,
+      "source_peak_db": -1.4942795155277198,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. Duration/RMS alone do not establish wrong words or truncation."
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_002",
+      "status": "NEEDS_LISTENING",
+      "heard_text": "",
+      "tts_regen_required": false,
+      "runtime_playback_pass": true,
+      "semantic_listening_required": true,
+      "source_rms_db": -23.582771135370507,
+      "source_peak_db": -5.818337447072643,
+      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. Duration/RMS alone do not establish wrong words or truncation."
     }
   ],
   "previous_results": [

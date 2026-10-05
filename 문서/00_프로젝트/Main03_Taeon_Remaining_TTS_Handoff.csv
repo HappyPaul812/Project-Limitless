@@ -1,0 +1,14 @@
+﻿dialogue_id,speaker,runtime_text,manifest_text,current_wav,problem_type,output_filename,voice_design,regen_required,reason
+main03_taeon_supp_008,companion_taeon,역시 이상합니다.,역시 이상합니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_008.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+main03_taeon_supp_009,companion_taeon,"네.
+싸우는 동안에도 몇 번이나
+그쪽으로 움직이지 않으려고 했어요.","네.
+싸우는 동안에도 몇 번이나
+그쪽으로 움직이지 않으려고 했어요.",Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_009.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+main03_taeon_supp_010,companion_taeon,그렇다면 우연은 아닌 것 같습니다.,그렇다면 우연은 아닌 것 같습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_010.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+main03_taeon_supp_011,companion_taeon,저도 저쪽을 확인하려던 참이었습니다.,저도 저쪽을 확인하려던 참이었습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_011.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+main03_taeon_supp_012,companion_taeon,"목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.","목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.",Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav,LOW_OR_SILENT_AUDIO,main03_taeon_supp_012.wav,Taeon / Gacrux / existing Taeon style,YES,RMS -51.90 dBFS / peak -32.62 dBFS; deliver complete exact text with normal source level.
+main03_taeon_supp_001,companion_taeon,바닥에 간단히 치료한 흔적과 떨어진 붕대가 남아 있습니다.,바닥에 간단히 치료한 흔적과 떨어진 붕대가 남아 있습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_001.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+main03_taeon_supp_002,companion_taeon,누군가 먼저 이곳을 지나간 것 같습니다.,누군가 먼저 이곳을 지나간 것 같습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_002.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.

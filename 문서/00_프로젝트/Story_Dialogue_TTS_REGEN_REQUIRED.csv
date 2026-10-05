@@ -1,1 +1,3 @@
 ﻿dialogue_id,speaker_id,voice_id,expected_text,heard_text,wav_file,reason,evidence,action
+main03_taeon_supp_012,companion_taeon,Gacrux,"목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.",,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav,"F. LOW_OR_SILENT_AUDIO: RMS -51.90 dBFS / peak -32.62 dBFS, length1.45s. Full Runtime Resolve/Play/GetData pass; regenerate full exact text at normal source level. Semantic not heard.",USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음

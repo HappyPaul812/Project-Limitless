@@ -1,5 +1,15 @@
 # Project-Limitless 현재 개발 상태
 
+## Main03 후반부 전체 Voice 감사·원본012 저음량 전달 (2026-10-05)
+
+- 문서화→집중 QA 구현→백그라운드 검증. [후반부 감사QA](Main03_RemainingVoice_감사_QA.md)·[순서9행CSV](Main03_Taeon_Remaining_Sequence_Audit.csv)·[일괄Handoff7행](Main03_Taeon_Remaining_TTS_Handoff.csv). “역시 이상합니다.”=008/AfterBattle index0. LOCAL 실제순서는005~007→003/004→첫Battle→후속008~012/Player→단서001/002→Main03완료이며 요청의 “008이후 첫전투” 순서와 차이를 보고/기존Story 유지했다.
+- 후속9페이지(Voice7/Player2) 전수: Mapping/Missing/재현PlaybackBug/자동TransitionCut0.008 Clip/IsPlaying/IsAudible/PCM/정상RMS−21.63 확인, 사용자 보고무음은 격리조건에서 미재현·근본원인 미확정.012 원본RMS−51.90/Peak−32.62dBFS·1.45초 저레벨 결함 확정, **TTS_REGEN_REQUIRED0→1**. 모든WAV/meta/Catalog/게임code수정0·TTSAPI0.
+- 사용자 이번 묶음 재생은 듣지못함.7개 USER_LISTENING_REQUIRED, 다른6개 Wrong/Truncated 추정확정금지. Handoff는012확정재생성1+다른6의원본 의미확인으로 구분.005/006/007/003/004 이전사람 RuntimePASS 유지, NEEDS_LISTENING244 관리범위 유지.
+- 실제Main03 전체16페이지: 최종무음202assertions/실제재생214assertions PASS·각PCM측정9/FAIL0. 실제Battle진입→QA승리종료/정식결과버튼복귀→후속전체/단서/Quest완료·Player Voice0/Portrait0·태온Portrait·UI/Footer비중첩·빠른Next/끝까지Next정리PASS. 전투조작/전략 검증 아님. 후반부7WAV 모든PCM샘플오차0.
+- Compile Error0/최종 Console Error0·Warning0, 기존CS0618 2건이력보존. 보호3040기존파일해시변경0·사용자419Git항목보존·cleanBootstrap EditMode/격리설정복원/포커스전환0. 다음권장: Handoff7개 원본을한번에청취하여006같은오발화 여부확정→012정상레벨 온전한원본제공→기존ID/meta보존교체·회귀. 직접변경만커밋·GitHubPush없음. 아래는이전이력이다.
+
+위 후반부 감사 helper/증거 보고 관련 commit `d743227`. 후반부 최종 문서는 별도 Docs commit으로 기록한다.
+
 ## 태온 후속003/004 Unity 반영·최종 사람 Runtime PASS (2026-10-05)
 
 - 문서화→기존 WAV2개 전체바이트 교체→격리 검증. 입력 `Limitless_TTS_Regen_Main03_Taeon_Supp003_004/`·[적용/집중 QA](Main03_Supp003004_Regen_적용_QA.md).003 0.96초/RMS−19.73dBFS·004 4.36초/RMS−18.95dBFS, Unity PCM 모든 샘플 원본과 오차0. 기존 GUID/meta/Import/Catalog/Registry/Story/게임 C# 유지.
