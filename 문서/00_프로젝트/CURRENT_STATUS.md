@@ -1,5 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+## Hearing 최종복원10종 적용 준비 (2026-10-05)
+
+- 입력 `F:/Downloads/Limitless_Hearing_Path_10_Restored_Final.zip`, Hearing5Job×Male/Female10종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Hearing_RestoredFinal10_적용_계약.md)·[QA](../11_UI/Hearing_RestoredFinal10_QA.md).
+- 현재READY30/BLOCKED20·기대40/10 미확정. Mobility 포함 다른40종/READY30/사용자94항목 보존. 새160Frame 실제QA 및10Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
+- 마지막 반영commit `39220c2`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
+
+
 ## Vision512 최종 복원3종 반영 완료 (2026-10-05)
 
 - `F:/Downloads/Limitless_Vision_3_Restored_512_Final.zip` 지정 Vision Fighter Male·Mage Female·Sharpshooter Male 원본3PNG 교체. 문서화→구현→검증, PNG3/중복0/누락0·512×512 RGBA·4×4·16Frame/Cell128 확인. 이미지 추가 수정0. 직전1254입력 보류 기록과 구분하여 새48Frame 실제QA. [계획](../11_UI/Vision_Restored512Final3_적용_계약.md)·[최신 QA](../11_UI/Vision_Restored512Final3_QA.md).
