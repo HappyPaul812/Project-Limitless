@@ -1,0 +1,6 @@
+﻿order,dialogue_id,speaker_id,speaker_name,exact_text,voice_name,model,locale,output_filename,current_wav_filename,issue,acting_note
+1,main04_taeon_supp_004,companion_taeon,태온,"또 옵니다.
+제가 앞을 맡겠습니다.",Gacrux,gemini-3.8-flash-tts,ko-KR,main04_taeon_supp_004.wav,main04_taeon_supp_004.wav,SEMANTIC_INTEGRITY_SUSPECT,다가오는 적을 알리고 전열을 맡겠다는 절제된 판단.차분하고 진지한 존댓말.
+2,main04_miel_supp_007,companion_miel,미엘,다친 곳은 제가 보겠습니다.,Sulafat,gemini-3.8-flash-tts,ko-KR,main04_miel_supp_007.wav,main04_miel_supp_007.wav,SEMANTIC_INTEGRITY_SUSPECT,전투 중 치료를 맡겠다는 침착하고 세심한 존댓말.과잉 감상 없음.
+4,main04_miel_supp_008,companion_miel,미엘,"괜찮으세요?
+다친 곳부터 확인할게요.",Sulafat,gemini-3.8-flash-tts,ko-KR,main04_miel_supp_008.wav,main04_miel_supp_008.wav,SEMANTIC_INTEGRITY_SUSPECT,전투 후 부상 상태부터 확인하는 부드럽고 침착한 존댓말.과도한 보호자 말투 없음.

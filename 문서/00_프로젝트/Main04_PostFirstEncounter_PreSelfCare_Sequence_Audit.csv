@@ -1,0 +1,15 @@
+﻿order,dialogue_id,quest,sequence,sequence_index,speaker_id,runtime_text,voice_expected,manifest_text,wav_filename,unity_asset_path,guid,sha256,pcm_hash,file_size,duration,rms_dbfs,peak_dbfs,catalog_clip,catalog_reference,semantic_status,required_action
+1,main04_taeon_supp_004,Main04,EncounterConversation,0,companion_taeon,"또 옵니다.
+제가 앞을 맡겠습니다.",YES,"또 옵니다.
+제가 앞을 맡겠습니다.",main04_taeon_supp_004.wav,Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_004.wav,62b5719981958b14683804f53f69086f,af585d0963351ea3d6d2dff7b663f6cbb0e784acbbf7de11088db7573fd0a3f1,92ac69b36a5587608bd2f93849c5812286badd1f6c0b693b61367d9e61d9c37d,253004,5.27,-22.008605599085858,-1.918144205188762,main04_taeon_supp_004,"- id: main04_taeon_supp_004
+    clip: {fileID: 8300000, guid: 62b5719981958b14683804f53f69086f, type: 3}
+    speakerId: companion_taeon",SEMANTIC_INTEGRITY_SUSPECT,TTS_REGEN_REQUIRED
+2,main04_miel_supp_007,Main04,EncounterConversation,1,companion_miel,다친 곳은 제가 보겠습니다.,YES,다친 곳은 제가 보겠습니다.,main04_miel_supp_007.wav,Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_007.wav,4782880ec2e1f9f48a7489850b017ce0,cbb5ee777f39c9c1e96f2b8ffba2b7125223d7f6a4fac9e16039186c21afd704,2d8d3c5d638c8f3d3eed718c47f5e9c34daf65c8622bd8abab64952219a815e3,236684,4.93,-19.134444864192464,-2.8305396515026766,main04_miel_supp_007,"- id: main04_miel_supp_007
+    clip: {fileID: 8300000, guid: 4782880ec2e1f9f48a7489850b017ce0, type: 3}
+    speakerId: companion_miel",SEMANTIC_INTEGRITY_SUSPECT,TTS_REGEN_REQUIRED
+3,NONE,Main04,EncounterConversation,2,player,갑시다.,NONE,,,,,,,,,,,,,PLAYER_SILENT_EXPECTED,NONE
+4,main04_miel_supp_008,Main04,AfterBattleConversation,0,companion_miel,"괜찮으세요?
+다친 곳부터 확인할게요.",YES,"괜찮으세요?
+다친 곳부터 확인할게요.",main04_miel_supp_008.wav,Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_008.wav,06fa822df904fa04089d9ef30ead21c7,105bcf5ba4b71c95309360359dfc9ffa7d2e300a9af715befcba0b9d96ecb1dd,734a054ad69b42b893ab2432d7e408ab4b8e2617aa6aa40c0f9368b221ac27f8,287084,5.98,-19.23525279954855,-2.986892850737143,main04_miel_supp_008,"- id: main04_miel_supp_008
+    clip: {fileID: 8300000, guid: 06fa822df904fa04089d9ef30ead21c7, type: 3}
+    speakerId: companion_miel",SEMANTIC_INTEGRITY_SUSPECT,TTS_REGEN_REQUIRED
