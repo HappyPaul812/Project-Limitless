@@ -1,5 +1,7 @@
 # Missing Story Voice 보충팩 적용과 검증
 
+> 2026-10-05 후속 전수 감사: 기존 기술 Mapping/원본 해시 PASS는 WAV 발화 의미 PASS가 아니다. 사용자 청취로 main03_taeon_supp_005/006/007의 내용 불일치를 확인했다. 006은005 문장, 007은006 첫 문장만 말하고 종료한다. 현재 원본은 보존하며 재생성 필요3개와 다른 미청취 Voice는 [Story 정합성 QA](Story_Dialogue_Consistency_QA.md)를 따른다.
+
 ## 입력과 병합 정책
 
 - Source Folder: `F:/study/codex/Project-Limitless/Limitless_TTS_Output_Missing_Main01_05_08_12_v2`

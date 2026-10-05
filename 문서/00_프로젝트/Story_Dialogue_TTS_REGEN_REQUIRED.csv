@@ -1,0 +1,8 @@
+﻿dialogue_id,speaker_id,voice_id,expected_text,heard_text,wav_file,reason,evidence,action
+main03_taeon_supp_005,companion_taeon,Gacrux,잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.,,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav,사용자: 나머진 다 틀려. 제공한 3개 중 005도 불일치로 보고되었으나 실제 발화 원문 미확정,USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음
+main03_taeon_supp_006,companion_taeon,Gacrux,"저 몬스터들 말입니다.
+그냥 돌아다니는 것 같지만…
+계속 같은 쪽을 피하고 있어요.",잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav,005 기대 문장을 발화. 006 기대 본문과 다름,USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음
+main03_taeon_supp_007,companion_taeon,Gacrux,"그렇군요.
+그러면 제가 보고 있던 움직임하고
+이어질지도 모르겠습니다.",저 몬스터들 말입니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav,006 첫 문장만 발화하고 종료. 007 기대 본문과 다르며 006 후속 두 문장도 없음,USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음

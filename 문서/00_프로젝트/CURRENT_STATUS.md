@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## Story Dialogue 전수 감사·Player 중앙 정책 적용 (2026-10-05)
+
+- 문서화→구현→격리 백그라운드 검증. [전수 QA](Story_Dialogue_Consistency_QA.md)·[Matrix](Story_Dialogue_Audit_Matrix.csv)·[LOCAL 원문 부록](../03_스토리/LOCAL_Story_Dialogue_원문_부록.md). 전체331페이지(Intro18/Main01~16 313), Player42, Voice247(Story229+Intro18). 기존 문서 exact23/본문미기재308을 구분해 구현 원문을 명문화했으며 기존 게임 기획/발화 본문 변경 없음.
+- 구형 Main03의 Player4페이지가 태온 ID/Portrait를 사용하던 원인을 중앙 DialogueLine/Presenter/PortraitCatalog에서 수정. 모든 Player stable ID player·Voice NONE·Portrait NONE, 화자 mismatch4→0·잘못된 Player Portrait4→0. Named Portrait 태온/미엘/폴/세린 정상, 레온 등 미제작은 기존 text-only 유지. 개별 Flow/Save 구조 변경 없음.
+- 실제 사용자 청취로 **태온 첫 만남 005/006/007 음성 불일치3** 확인. 006은005의 문장을 말하고 007은006 첫 문장만 말하고 종료. 005 실제 발화 원문은 미확정. Manifest/파일명/GUID/해시는 맞아도 원본 발화가 틀린 상태다. [TTS_REGEN_REQUIRED3개](Story_Dialogue_TTS_REGEN_REQUIRED.csv)와 사용자 증거를 기록. 나머지244개 NEEDS_LISTENING. **음성 정합성 해결 완료 아님**: 이번 TTS 생성 금지 조건에 따라 WAV/Catalog를 그대로 보존했으므로 현재 잘못된 원본 연결은 남아 있다.
+- 기술 Mapping247/247·Manifest본문 mismatch0·Missing/Unexpected Audio0·Duplicate ID/Clip/Branch Collision0. 격리 PlayUnfocused **2574checks PASS/FAIL0**: Story313개 자막/ID/Clip/Portrait 전수, Player42개 정리, NPC↔Player/연속Next/Scene전환/VoiceVolume/Mute, Intro18개참조·Next8회/Skip정리. 전체 Story 수동 플레이/나머지244개 실제 발화 청취는 미실행. CompileError0·최종ConsoleError0/Warning0, 기존 CS0618 이력2건 유지.
+- 사용자 승인으로 이전 Play 종료 후 격리 QA, 종료 clean Bootstrap EditMode·is_focused false. 보호3032파일 중 기존 변경은 중앙 UI코드2개만, WAV/meta/Catalog/Mixer/Save/Settings/Packages/Scene 및 기존410Git항목(94그룹)보존. 직접 변경만 Stage/commit, 작업 diff--check 검사, GitHub Push 없음. 계획 commit `af48c2e`, Runtime/QA commit **`08b07ad`**.
+- 다음 권장: 정확한 현재 본문으로3개 원본 재제작/제공 → 실제 청취 채택 → 기존 ID/meta를 보존하여 교체 → 격리 회귀 QA. 아직 듣지 않은244개는 별도 청취. 이번 감사에서 잘못된 Voice에 자막을 맞추거나 추측 Shift Mapping하지 않았다. 아래는 이전 이력.
+
 ## LOCAL 전체 회귀검증 완료 (2026-10-05)
 
 - [종합 QA](LIMITLESS_CURRENT_FULL_REGRESSION_QA.md)·[보존 실행 로그](LIMITLESS_FullRegression_Runtime_2026_10_05.txt): **21범주 PASS18/FAIL0/NOT_VERIFIED3**. 신규 격리244체크 PASS, Main09 내부115/Main10 내부63 PASS는 wrapper와 중복합산하지 않음. Title 수정 회귀11PASS. 기존 Main15/16·Audio/Voice·Dungeon/Boss QA는 현재 Runtime/데이터 SHA 보존을 확인하고 범위를 명시해 재사용.

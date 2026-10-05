@@ -1,5 +1,7 @@
 # LIMITLESS TTS 음성 제작 정책
 
+> 2026-10-05 Player Dialogue 정식 정책: 고정 Voice/TTS 없음, Portrait 없음. NPC/Narrator/남녀 기본 외형 fallback 금지. 중앙 Presenter/Portrait Resolver에서 이전 음성 정리와 Sprite clear/영역 숨김을 수행한다. 아래 Player TBD는 과거 제작 이력이며 현재 규칙은 NONE이다. Named Character의 기존 Voice Registry는 유지한다. 태온 첫 만남 005/006/007은 사용자 실제 청취 불일치로 재생성 필요 상태이며 이번에 음성을 생성하거나 가공하지 않았다. [전수 감사](Story_Dialogue_Consistency_QA.md)와 [최소 재생성 목록](Story_Dialogue_TTS_REGEN_REQUIRED.csv) 참조.
+
 > 2026-09-29 별도 조사·논의에서 확정한 **개발 방침**을 2026-09-30 기록한다. 법률 자문이나 서비스 조건의 영구 보장이 아니다. 실제 출시 전 최신 Google 약관·모델 제공 조건을 다시 확인하며, 변경된 정책을 우선한다.
 
 ## 적용 범위와 기존 자료

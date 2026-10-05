@@ -1,5 +1,7 @@
 # LOCAL Story 정식 구현 대사 원문 부록
 
+> 2026-10-05 중앙 화자 정책: Player의 실제 Runtime Speaker ID는 player, 이름은 현재 PlayerName, Voice/Portrait는 NONE이다. 구형 Main03의 raw 표시 이름 대화와 본문 첫 줄 화자는 중앙 DialogueLine에서 분리한다. 아래 Source 위치와 발화 본문은 보존하며 실제 처리 후 값은 Story_Dialogue_Audit_Matrix.csv를 따른다.
+
 2026-10-05 현재 LOCAL Runtime 작성 대사의 추적 원문이다. 기존 Story 문서의 사건/기획/Path 설계를 변경하지 않는다. 기존 문서가 요약만 제공한 308페이지의 정확한 표시 문장을 보완한다. Speaker 메타데이터 오류는 감사 계획의 중앙 규칙으로 수정하며 본문 발화 내용을 바꾸지 않는다. WAV 발화 의미는 별도 NEEDS_LISTENING이다.
 
 무음 페이지의 Source 위치 키는 감사용이며 Save/Runtime용 새 Dialogue ID가 아니다. Main02 Path 표현은 각각 작성 변형이며 공통 결론은 한 번 센다. Main16 shared 대사는 양 분기의 재사용으로 중복 계산하지 않는다. Intro 무음 마지막 제목과 일반 NPC 공용 fallback은 작성 대사 분모 밖의 별도 Coverage 항목이다.
