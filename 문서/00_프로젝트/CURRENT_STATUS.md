@@ -1,5 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+## Mobility 최종복원9종 적용 준비 (2026-10-05)
+
+- 입력 `F:/Downloads/Limitless_Mobility_Path_9_Restored_v2_redownload.zip`, Mobility5Job×Male/Female9종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Mobility_RestoredV2Nine_적용_계약.md)·[QA](../11_UI/Mobility_RestoredV2Nine_QA.md).
+- 현재READY41/BLOCKED9·기대50/0 미확정. Mobility 포함 다른41종/READY41/사용자94항목 보존. 새144Frame 실제QA 및9Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
+- 마지막 반영commit `e83df1b`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
+
+
 ## Mobility 최종 복원10종 반영/QA 완료 (2026-10-05)
 
 - 입력 `F:/Downloads/Limitless_Mobility_Path_10_Restored_Final.zip`. 문서화→원본10PNG교체→검증. PNG10/Male5/Female5/Job5×Gender2·512×512RGBA/4×4/16Frame/Cell128·중복0/누락0. 이미지수정0. [계획](../11_UI/Mobility_RestoredFinal10_적용_계약.md)·[개별QA/최소수정리스트](../11_UI/Mobility_RestoredFinal10_QA.md).
