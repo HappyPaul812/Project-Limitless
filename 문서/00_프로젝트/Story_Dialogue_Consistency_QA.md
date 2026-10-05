@@ -1,6 +1,6 @@
 # Story Dialogue / Subtitle / Voice / Portrait 전수 감사
 
-> 후속 진행(2026-10-05): 태온005~007 새 원본 제작·사용자 원본 청취 PASS, Unity 기존 WAV3개 교체·Import·백그라운드57checks와 실제 첫 조우 재생45checks PASS. [집중 QA](Main03_Taeon_Voice_Regen_적용_QA.md)에 현재 결과를 기록했다. 사용자 Runtime 의미 청취 확인은 대기이며 아래 불일치3개는 교체 전 이력이다. 의미 검증 확인 전 TTS_REGEN_REQUIRED3을 유지하고 244 NEEDS_LISTENING은 계속 별도 상태다.
+> 최신 정정(2026-10-05): 사용자005~007 실제 Runtime 의미 청취 PASS 확정으로 기존 재생성3→0 해결. 새 전투 직전003 저음량/004 다른·부분 문장 원본 문제는 G. OTHER로 분류하고 재생성2건을 기록했다.244 NEEDS_LISTENING은 그대로이며 새2건은 그 부분집합이다. [후속 Voice·장문 UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md)에서 실제 Actor→Battle/3해상도550 assertions PASS + PCM2건를 확인했다. 아래 표와 최초 음성 불일치3건은 최초 감사 시점 이력이며 현재 Matrix/전달CSV를 정본으로 사용한다.
 
 2026-10-05 LOCAL Source of Truth. 문서화 → 중앙 Runtime 수정 → 격리 PlayUnfocused 검증 순서로 진행했다. **Player 화자/Portrait 수정은 PASS, 음성 의미 정합성은 미완료다.** 사용자 청취로 태온 첫 만남 3개 불일치를 확인했고 나머지 244개는 NEEDS_LISTENING이다. 기술 연결 PASS를 실제 발화 PASS로 해석하지 않는다.
 

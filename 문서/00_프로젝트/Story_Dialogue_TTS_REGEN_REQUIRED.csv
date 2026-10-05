@@ -1,12 +1,4 @@
 ﻿dialogue_id,speaker_id,voice_id,expected_text,heard_text,wav_file,reason,evidence,action
-main03_taeon_supp_005,companion_taeon,Gacrux,잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.,잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav,USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening,USER_LISTENING 2026-10-05,새 원본 생성/사용자 원본 청취 완료; Unity Runtime 의미 검증 대기
-main03_taeon_supp_006,companion_taeon,Gacrux,"저 몬스터들 말입니다.
-그냥 돌아다니는 것 같지만…
-계속 같은 쪽을 피하고 있어요.","저 몬스터들 말입니다.
-그냥 돌아다니는 것 같지만…
-계속 같은 쪽을 피하고 있어요.",Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav,USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening,USER_LISTENING 2026-10-05,새 원본 생성/사용자 원본 청취 완료; Unity Runtime 의미 검증 대기
-main03_taeon_supp_007,companion_taeon,Gacrux,"그렇군요.
-그러면 제가 보고 있던 움직임하고
-이어질지도 모르겠습니다.","그렇군요.
-그러면 제가 보고 있던 움직임하고
-이어질지도 모르겠습니다.",Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav,USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening,USER_LISTENING 2026-10-05,새 원본 생성/사용자 원본 청취 완료; Unity Runtime 의미 검증 대기
+main03_taeon_supp_003,companion_taeon,Gacrux,옵니다.,,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav,"G. OTHER: source RMS -61.60 dBFS / peak -39.04 dBFS, 1.10 seconds; user reports inaudible. Runtime correctly loads and plays full clip; no automatic early Battle cut. Semantic source words unconfirmed.",USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음
+main03_taeon_supp_004,companion_taeon,Gacrux,"제가 앞을 막겠습니다.
+뒤를 부탁드리겠습니다.",,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav,"G. OTHER: user confirms original WAV speaks a different sentence or only part, exact heard words not supplied. Runtime loads and plays full 1.65-second clip; no automatic early Battle cut. Expected full two sentences must be supplied in replacement.",USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음

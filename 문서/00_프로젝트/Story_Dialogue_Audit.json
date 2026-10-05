@@ -26,8 +26,9 @@
     },
     "by_result": {
       "NEEDS_LISTENING": 244,
-      "OK": 84,
-      "PENDING_RUNTIME_LISTENING": 3
+      "OK": 87,
+      "SOURCE_LOW_LEVEL_AUDIO": 1,
+      "WRONG_CLIP": 1
     },
     "catalog_total": 247,
     "duplicate_ids": {},
@@ -64,9 +65,8 @@
     "player_portrait_display": 0,
     "branch_collisions": {},
     "tts_regen_required": [
-      "main03_taeon_supp_005",
-      "main03_taeon_supp_006",
-      "main03_taeon_supp_007"
+      "main03_taeon_supp_003",
+      "main03_taeon_supp_004"
     ],
     "portrait_definitions": {
       "companion_miel": {
@@ -105,45 +105,45 @@
         "dialogue": 14,
         "mapped": 0
       },
-      "arbel-leon": {
-        "dialogue": 8,
-        "mapped": 8
+      "starter-village-general-store": {
+        "dialogue": 1,
+        "mapped": 0
       },
       "narrator": {
         "dialogue": 18,
         "mapped": 18
       },
-      "companion_paul": {
-        "dialogue": 75,
-        "mapped": 70
-      },
-      "companion_serin": {
-        "dialogue": 25,
-        "mapped": 25
+      "player": {
+        "dialogue": 42,
+        "mapped": 0
       },
       "starter-village-gate-guard": {
         "dialogue": 7,
-        "mapped": 0
-      },
-      "starter-village-main-guide": {
-        "dialogue": 8,
         "mapped": 0
       },
       "companion_taeon": {
         "dialogue": 79,
         "mapped": 76
       },
-      "starter-village-general-store": {
-        "dialogue": 1,
-        "mapped": 0
+      "companion_paul": {
+        "dialogue": 75,
+        "mapped": 70
       },
-      "player": {
-        "dialogue": 42,
+      "starter-village-main-guide": {
+        "dialogue": 8,
         "mapped": 0
       },
       "companion_miel": {
         "dialogue": 54,
         "mapped": 50
+      },
+      "arbel-leon": {
+        "dialogue": 8,
+        "mapped": 8
+      },
+      "companion_serin": {
+        "dialogue": 25,
+        "mapped": 25
       }
     }
   },
@@ -1710,7 +1710,7 @@
       "runtime_subtitle_text": "옵니다.",
       "spoken_text": "옵니다.",
       "heard_text": "",
-      "listening_evidence": "",
+      "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "옵니다.",
       "manifest_dialogue_id": "main03_taeon_supp_003",
@@ -1732,8 +1732,8 @@
         "channels": 1,
         "sha256": "76f76e68dea34351d86ba16861c36f28b05e5ab519d49894fdd25d0675f3bf30"
       },
-      "audit_result": "NEEDS_LISTENING",
-      "notes": ""
+      "audit_result": "NEEDS_LISTENING;SOURCE_LOW_LEVEL_AUDIO",
+      "notes": "G. OTHER: source RMS -61.60 dBFS / peak -39.04 dBFS, 1.10 seconds; user reports inaudible. Runtime correctly loads and plays full clip; no automatic early Battle cut. Semantic source words unconfirmed."
     },
     {
       "main": 3,
@@ -1754,7 +1754,7 @@
       "runtime_subtitle_text": "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다.",
       "spoken_text": "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다.",
       "heard_text": "",
-      "listening_evidence": "",
+      "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다.",
       "manifest_dialogue_id": "main03_taeon_supp_004",
@@ -1776,8 +1776,8 @@
         "channels": 1,
         "sha256": "179e399821fc8c67bb87e7e42b576ed5029db7d035a4ea58bf3223a516eb142f"
       },
-      "audit_result": "NEEDS_LISTENING",
-      "notes": ""
+      "audit_result": "NEEDS_LISTENING;WRONG_CLIP",
+      "notes": "G. OTHER: user confirms original WAV speaks a different sentence or only part, exact heard words not supplied. Runtime loads and plays full 1.65-second clip; no automatic early Battle cut. Expected full two sentences must be supplied in replacement."
     },
     {
       "main": 3,
@@ -1811,7 +1811,7 @@
       "wav_file": "main03_taeon_supp_005.wav",
       "source_hash_equal": true,
       "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/005.wav",
-      "runtime_listening_pass": false,
+      "runtime_listening_pass": true,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1820,8 +1820,8 @@
         "channels": 1,
         "sha256": "381f156dc555e34ecf474d91017f4d4e83ddb31192a4f7884823c302436d780d"
       },
-      "audit_result": "PENDING_RUNTIME_LISTENING",
-      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
+      "audit_result": "OK",
+      "notes": "2026-10-05 current user request: actual Runtime listening semantic PASS confirmed"
     },
     {
       "main": 3,
@@ -1894,7 +1894,7 @@
       "wav_file": "main03_taeon_supp_006.wav",
       "source_hash_equal": true,
       "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/006.wav",
-      "runtime_listening_pass": false,
+      "runtime_listening_pass": true,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1903,8 +1903,8 @@
         "channels": 1,
         "sha256": "deb234f78c9211cc937a3f8e07f070bfa26619cf021f29fa1793440885ac7429"
       },
-      "audit_result": "PENDING_RUNTIME_LISTENING",
-      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
+      "audit_result": "OK",
+      "notes": "2026-10-05 current user request: actual Runtime listening semantic PASS confirmed"
     },
     {
       "main": 3,
@@ -1977,7 +1977,7 @@
       "wav_file": "main03_taeon_supp_007.wav",
       "source_hash_equal": true,
       "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/007.wav",
-      "runtime_listening_pass": false,
+      "runtime_listening_pass": true,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1986,8 +1986,8 @@
         "channels": 1,
         "sha256": "b457f124e1ffad972713a56bfe3081b0fae714920a23c76185721ad7ce0e3ef1"
       },
-      "audit_result": "PENDING_RUNTIME_LISTENING",
-      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
+      "audit_result": "OK",
+      "notes": "2026-10-05 current user request: actual Runtime listening semantic PASS confirmed"
     },
     {
       "main": 3,
@@ -14296,7 +14296,7 @@
   "runtime_evidence": "PASS 2574 checks",
   "focused_runtime_evidence": "PASS",
   "source_user_listening_pass": 3,
-  "runtime_user_listening_pass": 0,
+  "runtime_user_listening_pass": 3,
   "limitations": [
     "전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.",
     "태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.",

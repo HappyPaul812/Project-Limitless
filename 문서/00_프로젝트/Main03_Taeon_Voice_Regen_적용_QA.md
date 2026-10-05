@@ -1,5 +1,7 @@
 # Main03 태온 첫 조우 Voice 005~007 교체 계획과 QA
 
+> 완료 정정(2026-10-05): 사용자 후속 요청에서005/006/007 실제 Runtime 의미 청취 PASS를 명시했다. 기존 재생성 필요3→0 해결, 청취 확인 대기 종료. 아래의 대기 표현은 이전 실행 시점 이력이다. 새 후속003/004 원본 문제2건은 [후속 Voice·장문 UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md)에서 별도로 관리하며 현재 총 재생성2/NEEDS_LISTENING244다.005~007 WAV는 다시 변경하지 않았다.
+
 2026-10-05 LOCAL 기준. **현재 단계: Unity 교체/Import/백그라운드 QA와 실제 Runtime 재생 PASS, 사용자 Runtime 의미 청취 확인 대기.** 문서화 → 기존 WAV 내용 교체 → Import/백그라운드 QA → 실제 첫 조우 재생·청취 확인 순서로 진행한다. Metadata만으로 의미 일치 PASS를 만들지 않는다.
 
 ## 입력과 기존 문제

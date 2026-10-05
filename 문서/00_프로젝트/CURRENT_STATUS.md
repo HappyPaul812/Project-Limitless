@@ -1,5 +1,15 @@
 # Project-Limitless 현재 개발 상태
 
+## 태온 후속 Voice 원본 결함 확정·장문 Dialogue 수정 완료 (2026-10-05)
+
+- 문서화→공통 Presenter 최소 수정→백그라운드 검증. [적용 계획/Voice·UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md). 사용자005/006/007 실제 Runtime 의미 청취 PASS로 기존 TTS_REGEN_REQUIRED3→0 해결. 세 WAV 재수정 없음. 새 전투 전003/004 두 줄 모두 문제라는 추가 확인을 반영했다.
+- 003(“옵니다.”) 원본1.10초 RMS−61.60/Peak−39.04dBFS,004(“제가 앞을 막겠습니다. 뒤를 부탁드리겠습니다.”) 원본1.65초는 사용자 청취에서 다른/부분 문장. 모두 G. OTHER 원본 결함이며 Manifest/Catalog/Clip/GUID/Speaker 정상. 실제 재생 완료 전 자동 전투 전환 없음. 새 TTS 생성/가공/Mapping·Quest·Save 수정0, [다음 제작 전달2건](Story_Dialogue_TTS_REGEN_REQUIRED.csv)을 기록했다. 현재 재생성2/NEEDS_LISTENING244(새2건 포함), 아직 음성 해결 완료 아님.
+- 기존 Legacy Text/Font/CanvasScaler 유지. Speaker/Body/Footer 분리, Wrap·내용 기반 높이(최소23%/최대40%)·본문28~24·NPC Portrait/Player 전체 폭 정상. 상한을 넘는 본문은 Mask와 스크롤로 끝까지 접근하며 원문 축약0/Player Portrait 생성0이다.
+- 격리 PlayUnfocused550 assertions PASS/FAIL0 + PCM측정2건(로그 count552): 실제005→Player→006→Player→007→003→004→Battle/Voice 정리와 Player Voice0/Portrait0,3해상도(1920×1080/1600×900/1280×720)×22 Layout·선택창 비중첩, 현재 Story 최장10개·24개행 스크롤 마지막줄 접근 확인. 대표 배경 캡처 시각 검수. 실제 물리 입력장치는 미검증. Compile Error0/최종 Console Error0·Warning0, 기존 CS0618 2건·MCP 연결 경고 이력 보존.
+- 보호3041기존파일 중 변경은 Presenter/기존 Editor QA2개뿐. WAV/meta/Catalog/Mixer/Save/Settings/Scene/Packages/사용자415Git항목 보존. clean Bootstrap EditMode·격리 설정/해상도 복원, 화면 포커스 전환 없음. 다음 작업은003/004 온전한 원본 제공→실제 청취→기존 ID/meta 보존 교체·회귀. GitHub Push 없음. 관련 커밋은 완료 기록 참조. 아래는 이전 이력이다.
+
+마지막 재컴파일: Compile/Console Error0·기존 CS0618 Warning2(ExternalAssetImportEditor 53/59행). QA 종료 당시 Warning0과 구분한다. UI/집중 QA commit `284cbf2`.
+
 ## 태온 첫 조우 Voice3개 교체 진행 (2026-10-05)
 
 - 입력 `Limitless_TTS_Regen_Main03_Taeon_005_007/005.wav·006.wav·007.wav` 원본/사용자 실제 청취 PASS, PCM24kHz/mono/16bit·4.04/7.16/6.52초. [적용 계획과 집중 QA](Main03_Taeon_Voice_Regen_적용_QA.md)을 먼저 기록하고 기존 Unity WAV3개만 전체 바이트 교체했다. GUID/meta/Importer/Catalog/게임코드/Mixer/다른Voice 유지, 실제 Unity PCM과 새 원본 모든 샘플 차이0. 백그라운드57checks/실제 재생45checks PASS, Compile/최종Console Error0/Warning0. **사용자 Runtime 의미 청취 확인 대기**, TTS_REGEN_REQUIRED3/NEEDS_LISTENING244 유지. 격리 QA는 Bootstrap으로 종료했고 이후 사용자 Field01 Play/Save 진행은 중단·되돌림 없이 보존한다. GitHub Push하지 않는다.
