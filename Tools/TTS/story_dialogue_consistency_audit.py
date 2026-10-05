@@ -178,6 +178,9 @@ def run(pre=False):
                  catalog_audioclip=wav,catalog_guid=cr.get('guid',''),wav_file=path.name if path else '',source_hash_equal=source_same,
                  replacement_source=listening.get(r['dialogue_id'],{}).get('replacement_source',''),
                  runtime_listening_pass=listening.get(r['dialogue_id'],{}).get('runtime_listening_pass',False),
+                 runtime_playback_pass=listening.get(r['dialogue_id'],{}).get('runtime_playback_pass',listening.get(r['dialogue_id'],{}).get('runtime_listening_pass',False)),
+                 source_rms_db=listening.get(r['dialogue_id'],{}).get('source_rms_db',''),
+                 semantic_listening_required=listening.get(r['dialogue_id'],{}).get('semantic_listening_required',False),
                  portrait_character=portrait,expected_portrait_rule='NONE' if semantic in ('','player') else semantic+' (미제작은 NONE)',
                  audio=audio,audit_result=';'.join(dict.fromkeys(status)) or 'OK',notes=';'.join(notes))
         rows.append(row)
@@ -204,8 +207,10 @@ def run(pre=False):
                  by_speaker={sid:dict(dialogue=sum(r['resolved_speaker']==sid for r in rows),mapped=sum(r['resolved_speaker']==sid and bool(r['catalog_audioclip']) for r in rows)) for sid in {r['resolved_speaker'] for r in rows}})
     focused_log=ROOT/'Temp/Main03Regen20261005/runtime-listening.txt'
     supp_log=ROOT/'Temp/Main03SuppRegen20261005/runtime-listening.txt'
+    remaining_log=ROOT/'Temp/Main03Remaining20261005/runtime-listening.txt'
     report=dict(summary=summary,rows=rows,runtime_evidence=runtime_log.read_text(encoding='utf-8').splitlines()[0] if runtime else 'PRE_IMPLEMENTATION',
                 focused_runtime_evidence=focused_log.read_text(encoding='utf-8').splitlines()[0] if focused_log.is_file() else 'NOT_RUN',
+                remaining_runtime_playback_evidence=remaining_log.read_text(encoding='utf-8').splitlines()[0] if remaining_log.is_file() else 'NOT_RUN',
                 supp_runtime_evidence=supp_log.read_text(encoding='utf-8').splitlines()[0] if supp_log.is_file() else 'NOT_RUN',
                 source_user_listening_pass=sum(v.get('source_user_listening_pass',False) for v in listening.values()),
                 runtime_user_listening_pass=sum(v.get('runtime_listening_pass',False) for v in listening.values()),
