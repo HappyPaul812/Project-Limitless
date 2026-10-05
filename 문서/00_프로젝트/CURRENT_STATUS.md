@@ -1,11 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
-## Hearing 최종복원10종 적용 준비 (2026-10-05)
+## Hearing 최종복원10종 원본 반영·QA 완료 (2026-10-05)
 
-- 입력 `F:/Downloads/Limitless_Hearing_Path_10_Restored_Final.zip`, Hearing5Job×Male/Female10종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Hearing_RestoredFinal10_적용_계약.md)·[QA](../11_UI/Hearing_RestoredFinal10_QA.md).
-- 현재READY30/BLOCKED20·기대40/10 미확정. Mobility 포함 다른40종/READY30/사용자94항목 보존. 새160Frame 실제QA 및10Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
-- 마지막 반영commit `39220c2`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
-
+- 입력 `F:/Downloads/Limitless_Hearing_Path_10_Restored_Final.zip`. 문서화→구현→검증 순으로Hearing10PNG 원본바이트교체. Male5/Female5/Job5×Gender2·중복0/누락0·512×512RGBA/4×4/16Frame/Cell128 확인. 이미지수정0. [계획](../11_UI/Hearing_RestoredFinal10_적용_계약.md)·[개별QA/Frame/좌표](../11_UI/Hearing_RestoredFinal10_QA.md).
+- 새160Frame 실제검수에서 **READY승격0/BLOCKED_ART10, 전체READY30/BLOCKED20 유지**. Fighter발밑/머리위 조각, Guardian셀옆검은파츠, Healer발/이웃지팡이 조각, Mage이웃지팡이/장식조각, Sharpshooter발/머리위/이웃파츠잔존. 정상음파효과와구분했으며수정판명칭으로승격하지않음. 다음작업은개별QA 좌표의원본Art보정.
+- 기존Hearing10AppearanceID/160SpriteID/meta/Import·Gender+Path+Job/SaveMapping·fallback 보존. Mobility 포함다른40PNG/Entry/QA·READY30/240Clip동일. 새Clip0, 사용자94항목(410Git 파일)과Save/Settings 보호. Assets/Settings/UserData 변경은10PNG+Catalog+Inventory+QAhelper13파일뿐.
+- 격리PlayUnfocused 88PASS/0FAIL: 10Mapping/JobPreview·대표MaleFighter/FemaleHealer의CharacterCreation/최종Preview/World/BattleLeftIdle·실제Battle/Save→Continue·구버전ID재계산/fallback 통과. BLOCKED이므로표시는기본성별fallback이며신규HearingArt직접표시검증완료로보고하지않음. 전체800Sprite Missing0·대상160Sprite rect128/pivot64,0/Multiple/PPU128/Point/Uncompressed 정상.
+- 컴파일Error0·기존CS0618경고2건보존, 최종Console Error0/Warning0. cleanBootstrap EditMode·Save/Settings/Play설정복원·포커스전환없음. 실제걷기/키보드/게임패드미검증. 직접변경diff--check통과, 기존사용자whitespace보존. GitHubPush없음.
+- 계획commit `5130489`, 마지막 원본반영·QA·검증commit 6b4699b. 아래는이전이력.
 
 ## Vision512 최종 복원3종 반영 완료 (2026-10-05)
 
