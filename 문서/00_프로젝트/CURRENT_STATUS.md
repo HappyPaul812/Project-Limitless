@@ -1,5 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
+## Mobility 최종복원10종 적용 준비 (2026-10-05)
+
+- 입력 `F:/Downloads/Limitless_Mobility_Path_10_Restored_Final.zip`, Mobility5Job×Male/Female10종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Mobility_RestoredFinal10_적용_계약.md)·[QA](../11_UI/Mobility_RestoredFinal10_QA.md).
+- 현재READY40/BLOCKED10·기대50/0 미확정. Hearing 포함 다른40종/READY40/사용자94항목 보존. 새160Frame 실제QA 및10Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
+- 마지막 반영commit `bb0c8e8`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
+
+
 ## Hearing v3 복원10종 READY 반영 완료 (2026-10-05)
 
 - 입력 `F:/Downloads/Limitless_Hearing_Path_10_Restored_v3.zip`, 문서화→구현→검증. 원본10PNG 바이트교체, Male5/Female5/Job5×Gender2·중복0/누락0·512×512RGBA/4×4/16Frame/Cell128 확인. Sharpshooter파일은기존Marksman ID/경로에연결. 이미지/C#기능수정0. [계획](../11_UI/Hearing_RestoredV3Ten_적용_계약.md)·[개별QA](../11_UI/Hearing_RestoredV3Ten_QA.md).
