@@ -1,0 +1,17 @@
+﻿dialogue_id,sequence_order,sequence_index,speaker_id,runtime_text,manifest_text,manifest_file,current_wav_filename,wav_exists,unity_asset_path,guid,sha256,duration_seconds,rms_dbfs,peak_dbfs,sample_rate,channels,catalog_entry,actual_spoken_text,issue,runtime_semantic_status,source_line
+main03_taeon_supp_008,1,0,companion_taeon,역시 이상합니다.,역시 이상합니다.,Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,main03_taeon_supp_008.wav,True,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,16a05ac1b6d319545a8f9113e2bd9aba,a16d378060acc7ff290a24bd65f28fb62548da49416eada089bae144c6d7042c,2.25,-21.62883034237892,-4.066298189595134,24000,1,"- id: main03_taeon_supp_008
+    clip: {fileID: 8300000, guid: 16a05ac1b6d319545a8f9113e2bd9aba, type: 3}
+    speakerId: companion_taeon",USER_CONFIRMED_MISMATCH,WRONG_AUDIO_CONTENT,RUNTIME_SEMANTIC_MISMATCH,250
+main03_taeon_supp_009,3,2,companion_taeon,"네.
+싸우는 동안에도 몇 번이나
+그쪽으로 움직이지 않으려고 했어요.","네.
+싸우는 동안에도 몇 번이나
+그쪽으로 움직이지 않으려고 했어요.",Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,main03_taeon_supp_009.wav,True,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav,dde64e7754b8a3c4c8a39ff54113e2a4,41230a2b6183075d81ef0c5e7270f55c226f8195b6bf106a764ae949b625e9c9,2.76,-26.247623728337818,-3.2676648830904718,24000,1,"- id: main03_taeon_supp_009
+    clip: {fileID: 8300000, guid: dde64e7754b8a3c4c8a39ff54113e2a4, type: 3}
+    speakerId: companion_taeon",USER_CONFIRMED_MISMATCH,WRONG_AUDIO_CONTENT,RUNTIME_SEMANTIC_MISMATCH,252
+main03_taeon_supp_010,5,4,companion_taeon,그렇다면 우연은 아닌 것 같습니다.,그렇다면 우연은 아닌 것 같습니다.,Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,main03_taeon_supp_010.wav,True,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav,df90274da1dfe6349a613703673baa14,edd61fc146cdbfae19b99947517b4088d0b799a4a669055594997fad4d7c5aab,1.62,-31.826666696110337,-13.428157858374028,24000,1,"- id: main03_taeon_supp_010
+    clip: {fileID: 8300000, guid: df90274da1dfe6349a613703673baa14, type: 3}
+    speakerId: companion_taeon",USER_CONFIRMED_MISMATCH,WRONG_AUDIO_CONTENT,RUNTIME_SEMANTIC_MISMATCH,254
+main03_taeon_supp_011,6,5,companion_taeon,저도 저쪽을 확인하려던 참이었습니다.,저도 저쪽을 확인하려던 참이었습니다.,Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,main03_taeon_supp_011.wav,True,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav,e6098de83891e8d4a848af3eb519d63f,b066045b2d36b539126065ca4c6a0ea27048cb69d1686afdc045b34fcdad39be,15.24,-22.33353209540296,-3.50725842524586,24000,1,"- id: main03_taeon_supp_011
+    clip: {fileID: 8300000, guid: e6098de83891e8d4a848af3eb519d63f, type: 3}
+    speakerId: companion_taeon",USER_CONFIRMED_MISMATCH,WRONG_AUDIO_CONTENT,RUNTIME_SEMANTIC_MISMATCH,255

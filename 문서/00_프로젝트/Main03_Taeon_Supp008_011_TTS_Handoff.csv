@@ -1,0 +1,7 @@
+﻿order,dialogue_id,speaker_id,speaker_name,exact_text,voice_name,current_wav_filename,output_filename,issue,notes,model,voice_design,style_language,sequence_index
+1,main03_taeon_supp_008,companion_taeon,태온,역시 이상합니다.,Gacrux,main03_taeon_supp_008.wav,main03_taeon_supp_008.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,이상 현상을 다시 확인하는 짧은 관찰. 사용자 Runtime 청취로 불일치 확정. 기존 WAV 수정 없이 새 원본 제작 후 직접/Runtime 청취 필요.,gemini-3.8-flash-tts,false,ko-KR,0
+3,main03_taeon_supp_009,companion_taeon,태온,"네.
+싸우는 동안에도 몇 번이나
+그쪽으로 움직이지 않으려고 했어요.",Gacrux,main03_taeon_supp_009.wav,main03_taeon_supp_009.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,상대의 관찰에 응답하고 전투 중 관찰을 차분히 설명. 사용자 Runtime 청취로 불일치 확정. 기존 WAV 수정 없이 새 원본 제작 후 직접/Runtime 청취 필요.,gemini-3.8-flash-tts,false,ko-KR,2
+5,main03_taeon_supp_010,companion_taeon,태온,그렇다면 우연은 아닌 것 같습니다.,Gacrux,main03_taeon_supp_010.wav,main03_taeon_supp_010.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,관찰을 연결해 우연이 아니라는 판단. 사용자 Runtime 청취로 불일치 확정. 기존 WAV 수정 없이 새 원본 제작 후 직접/Runtime 청취 필요.,gemini-3.8-flash-tts,false,ko-KR,4
+6,main03_taeon_supp_011,companion_taeon,태온,저도 저쪽을 확인하려던 참이었습니다.,Gacrux,main03_taeon_supp_011.wav,main03_taeon_supp_011.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,자신도 같은 방향을 확인하려 했다는 설명. 사용자 Runtime 청취로 불일치 확정. 기존 WAV 수정 없이 새 원본 제작 후 직접/Runtime 청취 필요.,gemini-3.8-flash-tts,false,ko-KR,5
