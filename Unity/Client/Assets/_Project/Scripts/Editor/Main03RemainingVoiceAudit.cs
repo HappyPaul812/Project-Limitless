@@ -25,7 +25,7 @@ namespace ProjectLimitless.EditorTools
         static bool armed, audible;
         static List<string> checks=new List<string>();
         static List<string> metrics=new List<string>();
-        static string Root => Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main03Remaining20261005"));
+        static string Root => Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main03AfterBattleFinal20261005/runtime"));
         public static string Status="Idle";
         static Main03RemainingVoiceAudit()
         {
@@ -37,7 +37,7 @@ namespace ProjectLimitless.EditorTools
                 if(state==PlayModeStateChange.EnteredEditMode)armed=false;
             };
         }
-        public static string Launch(bool listening=false){ audible=listening; checks.Clear();metrics.Clear();Status="Running";armed=true;return Partial9FixedSpriteAudit.Launch(); }
+        public static string Launch(bool listening=false){ Directory.CreateDirectory(Root);audible=listening; checks.Clear();metrics.Clear();Status="Running";armed=true;return Partial9FixedSpriteAudit.Launch(); }
         static void Check(bool value,string label)
         {
             checks.Add((value?"PASS ":"FAIL ")+label);File.WriteAllText(Path.Combine(Root,audible?"runtime-listening.txt":"runtime-background.txt"),Status+"\n"+string.Join("\n",checks));
@@ -160,6 +160,11 @@ namespace ProjectLimitless.EditorTools
             Check(final.Length==2,"Final clue pages2");
             foreach(var line in final){yield return RemainingPage(d,line);d.Advance();}
             Check(!d.IsOpen&&QuestService.GetState(MainQuest03FieldFlow.QuestId)==QuestState.Completed,"Main03 final clue completes quest without another Battle");
+            // 게임의 기존 자동 저장 결과를 읽기만 합니다. 별도 저장·Restore 호출은 하지 않습니다.
+            Check(Voice(d).Clip==null&&!Voice(d).IsPlaying&&!((GameObject)Field(d,"portraitRoot")).activeSelf,"Main03 final Voice/Portrait cleanup");
+            GameSaveData saved;
+            Check(GameSaveService.TryLoadSlot(1,out saved),"Main03 isolated automatic Save readable");
+            Check(saved.QuestProgress!=null&&saved.QuestProgress.CompletedQuestIds.Contains(MainQuest03FieldFlow.QuestId),"Main03 isolated saved quest completed");
             // 빠른 Next도 별도 ShowSequence로 검사하며 Story/Save 원문은 변경하지 않습니다.
             d.ShowSequence(after,null);
             foreach(var line in after){Check(((Text)Field(d,"dialogueText")).text==line.Message,"Fast Next correct body "+line.DialogueId);Check(line.IsPlayer?Voice(d).Clip==null:Voice(d).Clip!=null&&Voice(d).Clip.name==line.DialogueId,"Fast Next Resolve/cleanup "+line.DialogueId);d.Advance();}
@@ -176,12 +181,18 @@ namespace ProjectLimitless.EditorTools
             else
             {
                 Check(clip!=null&&clip.name==line.DialogueId&&voice.IsPlaying,"Remaining Loaded/Played "+line.DialogueId);
+                // 의미 청취와 별개로 실제 Resolve/Source의 ID·참조가 밀리지 않는지 기록합니다.
+                var resolved=Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog").Find(line.DialogueId,line.SpeakerId);
+                Check(resolved==clip,"Remaining Catalog reference equals Source "+line.DialogueId);
+                string assetPath=AssetDatabase.GetAssetPath(clip);
+                checks.Add("TRACE id="+line.DialogueId+" speaker="+line.SpeakerId+" resolved="+resolved.name+" path="+assetPath+" guid="+AssetDatabase.AssetPathToGUID(assetPath)+" source="+clip.name+" playing="+voice.IsPlaying+" cache=NONE_lookup_ID_and_speaker");
                 Check(((GameObject)Field(d,"portraitRoot")).activeSelf&&((Image)Field(d,"portraitImage")).sprite==DialoguePortraitCatalog.GetPortrait(line.SpeakerId),"Remaining correct Portrait "+line.DialogueId);
                 if(audible)Check(voice.IsAudible,"Remaining audible routing "+line.DialogueId);
                 float master,channel;AudioSettingsService.Mixer.GetFloat("MasterVolume",out master);AudioSettingsService.Mixer.GetFloat("VoiceVolume",out channel);
                 var pcm=new float[clip.samples*clip.channels];Check(clip.GetData(pcm,0),"Remaining GetData "+line.DialogueId);
                 using(var writer=new BinaryWriter(File.Open(Path.Combine(Root,line.DialogueId+".pcm-f32"),FileMode.Create)))foreach(float sample in pcm)writer.Write(sample);
                 double sum=0,peak=0;foreach(float sample in pcm){sum+=sample*sample;peak=Math.Max(peak,Math.Abs(sample));}
+                if(line.DialogueId=="main03_taeon_supp_012")Check(clip.length>7.7f&&20*Math.Log10(Math.Sqrt(sum/pcm.Length))>-30,"012 replacement full duration/normal source level");
                 checks.Add("AUDIO "+line.DialogueId+" length="+clip.length+" RMS="+20*Math.Log10(Math.Sqrt(sum/pcm.Length))+" peak="+20*Math.Log10(peak)+" Master="+master+" Voice="+channel+" ListenerVolume="+AudioListener.volume+" paused="+AudioListener.pause);
             }
             yield return Wait(3);Layout(d,line.DialogueId+"_remaining");
