@@ -1,7 +1,42 @@
 {
-  "scope": "사용자에게 제공한 태온 첫 만남 원본 WAV 005/006/007 3개. 나머지 발언을 전체 247개로 확대하지 않음",
-  "method": "2026-10-05 사용자 실제 청취 보고. Codex 세션은 오디오 입력/전사 미지원",
+  "scope": "Only Main03 Taeon 005/006/007 replacement. Other 244 remain NEEDS_LISTENING.",
+  "method": "USER_SOURCE_LISTENING_PASS; Runtime replay completed, user Runtime semantic confirmation pending",
   "results": [
+    {
+      "dialogue_id": "main03_taeon_supp_005",
+      "status": "PENDING_RUNTIME_LISTENING",
+      "heard_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
+      "reason": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening",
+      "tts_regen_required": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/005.wav",
+      "replacement_sha256": "381f156dc555e34ecf474d91017f4d4e83ddb31192a4f7884823c302436d780d",
+      "source_user_listening_pass": true,
+      "runtime_listening_pass": false
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_006",
+      "status": "PENDING_RUNTIME_LISTENING",
+      "heard_text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
+      "reason": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening",
+      "tts_regen_required": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/006.wav",
+      "replacement_sha256": "deb234f78c9211cc937a3f8e07f070bfa26619cf021f29fa1793440885ac7429",
+      "source_user_listening_pass": true,
+      "runtime_listening_pass": false
+    },
+    {
+      "dialogue_id": "main03_taeon_supp_007",
+      "status": "PENDING_RUNTIME_LISTENING",
+      "heard_text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
+      "reason": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening",
+      "tts_regen_required": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/007.wav",
+      "replacement_sha256": "b457f124e1ffad972713a56bfe3081b0fae714920a23c76185721ad7ce0e3ef1",
+      "source_user_listening_pass": true,
+      "runtime_listening_pass": false
+    }
+  ],
+  "previous_results": [
     {
       "dialogue_id": "main03_taeon_supp_005",
       "status": "WRONG_CLIP",

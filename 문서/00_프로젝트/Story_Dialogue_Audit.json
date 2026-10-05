@@ -27,8 +27,7 @@
     "by_result": {
       "NEEDS_LISTENING": 244,
       "OK": 84,
-      "WRONG_CLIP": 3,
-      "TRUNCATED_AUDIO": 1
+      "PENDING_RUNTIME_LISTENING": 3
     },
     "catalog_total": 247,
     "duplicate_ids": {},
@@ -106,26 +105,6 @@
         "dialogue": 14,
         "mapped": 0
       },
-      "companion_serin": {
-        "dialogue": 25,
-        "mapped": 25
-      },
-      "starter-village-main-guide": {
-        "dialogue": 8,
-        "mapped": 0
-      },
-      "player": {
-        "dialogue": 42,
-        "mapped": 0
-      },
-      "companion_paul": {
-        "dialogue": 75,
-        "mapped": 70
-      },
-      "starter-village-general-store": {
-        "dialogue": 1,
-        "mapped": 0
-      },
       "arbel-leon": {
         "dialogue": 8,
         "mapped": 8
@@ -134,17 +113,37 @@
         "dialogue": 18,
         "mapped": 18
       },
-      "companion_miel": {
-        "dialogue": 54,
-        "mapped": 50
+      "companion_paul": {
+        "dialogue": 75,
+        "mapped": 70
+      },
+      "companion_serin": {
+        "dialogue": 25,
+        "mapped": 25
       },
       "starter-village-gate-guard": {
         "dialogue": 7,
         "mapped": 0
       },
+      "starter-village-main-guide": {
+        "dialogue": 8,
+        "mapped": 0
+      },
       "companion_taeon": {
         "dialogue": 79,
         "mapped": 76
+      },
+      "starter-village-general-store": {
+        "dialogue": 1,
+        "mapped": 0
+      },
+      "player": {
+        "dialogue": 42,
+        "mapped": 0
+      },
+      "companion_miel": {
+        "dialogue": 54,
+        "mapped": 50
       }
     }
   },
@@ -180,6 +179,8 @@
       "catalog_guid": "898a4dc5497d4cb89e69e12a3b775454",
       "wav_file": "opening_001.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -222,6 +223,8 @@
       "catalog_guid": "6d60a144bd8f4cd4829e46775d17749f",
       "wav_file": "opening_002.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -264,6 +267,8 @@
       "catalog_guid": "b160e6e630bd46b1bc0ec62ec4f25a2f",
       "wav_file": "opening_003.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -306,6 +311,8 @@
       "catalog_guid": "ab7d8b89bc2a4030845802c462a866d9",
       "wav_file": "opening_004.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -348,6 +355,8 @@
       "catalog_guid": "6ab436724ad54c988981dcc955675a84",
       "wav_file": "opening_005.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -390,6 +399,8 @@
       "catalog_guid": "a9a1d71cb4234fe2916222ed673964b9",
       "wav_file": "opening_006.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -432,6 +443,8 @@
       "catalog_guid": "d7b78bb93e5a44e2bb6881a5455baf36",
       "wav_file": "opening_007.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -474,6 +487,8 @@
       "catalog_guid": "af25648b3a3a4439b06adae3a184669f",
       "wav_file": "opening_008.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -516,6 +531,8 @@
       "catalog_guid": "1bd4e4be00544f36b37abfca1a275ddd",
       "wav_file": "opening_009.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -558,6 +575,8 @@
       "catalog_guid": "c14e94ebcb1447279492ae87ff6466af",
       "wav_file": "opening_010.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -600,6 +619,8 @@
       "catalog_guid": "56ea0ef7c1ea4440bff2555168092651",
       "wav_file": "opening_011.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -642,6 +663,8 @@
       "catalog_guid": "b6b90e6dfc3241a49333fc34c25a728c",
       "wav_file": "opening_012.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -684,6 +707,8 @@
       "catalog_guid": "32bdcbfa215e41fcad3fb552a2a5857b",
       "wav_file": "opening_013.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -726,6 +751,8 @@
       "catalog_guid": "bf47465911e34e25a98f2b7e8eb8be81",
       "wav_file": "opening_014.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -768,6 +795,8 @@
       "catalog_guid": "5f085a66aaa24d5dbd22994323623ef3",
       "wav_file": "opening_015.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -810,6 +839,8 @@
       "catalog_guid": "6223342999d7401b89a9fb8edc7f92b1",
       "wav_file": "opening_016.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -852,6 +883,8 @@
       "catalog_guid": "fc6c3fc29e86496cb252ee6c8f30274d",
       "wav_file": "opening_017.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -894,6 +927,8 @@
       "catalog_guid": "1c3c8094ed314d9abe729fd92016d1ae",
       "wav_file": "opening_018.wav",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "narrator (미제작은 NONE)",
       "audio": {
@@ -936,6 +971,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -973,6 +1010,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -1010,6 +1049,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -1047,6 +1088,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -1084,6 +1127,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -1121,6 +1166,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -1158,6 +1205,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -1195,6 +1244,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -1232,6 +1283,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -1269,6 +1322,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -1306,6 +1361,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1343,6 +1400,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1380,6 +1439,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1417,6 +1478,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1454,6 +1517,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1491,6 +1556,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1528,6 +1595,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1565,6 +1634,8 @@
       "catalog_guid": "b05384306c5fa854dbc912630b330974",
       "wav_file": "main03_taeon_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1607,6 +1678,8 @@
       "catalog_guid": "09e41a7b9fed74348b429c7c07a813f1",
       "wav_file": "main03_taeon_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1649,6 +1722,8 @@
       "catalog_guid": "9e9daa2d47a707049a7c0c73b5921ae4",
       "wav_file": "main03_taeon_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1691,6 +1766,8 @@
       "catalog_guid": "574895e9a2b5b3b45a251673fd085670",
       "wav_file": "main03_taeon_supp_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1720,7 +1797,7 @@
       "runtime_speaker_display_name": "태온",
       "runtime_subtitle_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
       "spoken_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
-      "heard_text": "",
+      "heard_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
       "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
@@ -1733,16 +1810,18 @@
       "catalog_guid": "0dc9970aa869f5645add7545bc7696ca",
       "wav_file": "main03_taeon_supp_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/005.wav",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
-        "seconds": 3.91,
+        "seconds": 4.04,
         "sample_rate": 24000,
         "channels": 1,
-        "sha256": "1a2d517bf7981325076b54ffa214ef5e1a53e1db41338747bdcbd4272e489800"
+        "sha256": "381f156dc555e34ecf474d91017f4d4e83ddb31192a4f7884823c302436d780d"
       },
-      "audit_result": "WRONG_CLIP",
-      "notes": "사용자: 나머진 다 틀려. 제공한 3개 중 005도 불일치로 보고되었으나 실제 발화 원문 미확정"
+      "audit_result": "PENDING_RUNTIME_LISTENING",
+      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
     },
     {
       "main": 3,
@@ -1775,6 +1854,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1799,7 +1880,7 @@
       "runtime_speaker_display_name": "태온",
       "runtime_subtitle_text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
       "spoken_text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
-      "heard_text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
+      "heard_text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
       "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
@@ -1812,16 +1893,18 @@
       "catalog_guid": "86cecb5f27e225f4f9a992b37e2e17e9",
       "wav_file": "main03_taeon_supp_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/006.wav",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
-        "seconds": 4.34,
+        "seconds": 7.16,
         "sample_rate": 24000,
         "channels": 1,
-        "sha256": "74943b5bc927014355e7a328a28d6272891ad4a6bafdb7d87fa6dbb0d66b456d"
+        "sha256": "deb234f78c9211cc937a3f8e07f070bfa26619cf021f29fa1793440885ac7429"
       },
-      "audit_result": "WRONG_CLIP",
-      "notes": "005 기대 문장을 발화. 006 기대 본문과 다름"
+      "audit_result": "PENDING_RUNTIME_LISTENING",
+      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
     },
     {
       "main": 3,
@@ -1854,6 +1937,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -1878,7 +1963,7 @@
       "runtime_speaker_display_name": "태온",
       "runtime_subtitle_text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
       "spoken_text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
-      "heard_text": "저 몬스터들 말입니다.",
+      "heard_text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
       "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
@@ -1891,16 +1976,18 @@
       "catalog_guid": "50d6684884c921344a0d2630b2b07e66",
       "wav_file": "main03_taeon_supp_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_005_007/007.wav",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
-        "seconds": 2.71,
+        "seconds": 6.52,
         "sample_rate": 24000,
         "channels": 1,
-        "sha256": "18c345f845c18c97aa4857dd5fa48d76ad310654f937cfa7177df393e727a6ed"
+        "sha256": "b457f124e1ffad972713a56bfe3081b0fae714920a23c76185721ad7ce0e3ef1"
       },
-      "audit_result": "WRONG_CLIP;TRUNCATED_AUDIO",
-      "notes": "006 첫 문장만 발화하고 종료. 007 기대 본문과 다르며 006 후속 두 문장도 없음"
+      "audit_result": "PENDING_RUNTIME_LISTENING",
+      "notes": "USER_SOURCE_PASS / background57 and Runtime replay45 PASS / waiting user Runtime listening"
     },
     {
       "main": 3,
@@ -1933,6 +2020,8 @@
       "catalog_guid": "16a05ac1b6d319545a8f9113e2bd9aba",
       "wav_file": "main03_taeon_supp_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -1975,6 +2064,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -2012,6 +2103,8 @@
       "catalog_guid": "dde64e7754b8a3c4c8a39ff54113e2a4",
       "wav_file": "main03_taeon_supp_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2054,6 +2147,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -2091,6 +2186,8 @@
       "catalog_guid": "df90274da1dfe6349a613703673baa14",
       "wav_file": "main03_taeon_supp_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2133,6 +2230,8 @@
       "catalog_guid": "e6098de83891e8d4a848af3eb519d63f",
       "wav_file": "main03_taeon_supp_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2175,6 +2274,8 @@
       "catalog_guid": "997f362bba765564c811ef7d9d7aa0c3",
       "wav_file": "main03_taeon_supp_012.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2217,6 +2318,8 @@
       "catalog_guid": "e0fff6b9e1ff1ce438e69bc2582506a8",
       "wav_file": "main04_miel_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2259,6 +2362,8 @@
       "catalog_guid": "32b0b29db4708a24cb9df2b73f45e3e3",
       "wav_file": "main04_taeon_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2301,6 +2406,8 @@
       "catalog_guid": "f4e868d47984fa14fbe9b8d9376c1524",
       "wav_file": "main04_miel_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2343,6 +2450,8 @@
       "catalog_guid": "f947e47f07a49304082926e9299a95d0",
       "wav_file": "main04_taeon_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2385,6 +2494,8 @@
       "catalog_guid": "396d1adfa28d2c045919d3a43cd56438",
       "wav_file": "main04_miel_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2427,6 +2538,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -2464,6 +2577,8 @@
       "catalog_guid": "e2426b334db36754a9d9b3d6ead414cc",
       "wav_file": "main04_miel_supp_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2506,6 +2621,8 @@
       "catalog_guid": "3c3dba5e74d6ec241b4958fc79a34310",
       "wav_file": "main04_miel_supp_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2548,6 +2665,8 @@
       "catalog_guid": "d1cef965a60b4994a9efc9355fb3e79b",
       "wav_file": "main04_taeon_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2590,6 +2709,8 @@
       "catalog_guid": "96e329a599d28f746b02246d49b2683f",
       "wav_file": "main04_miel_supp_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2632,6 +2753,8 @@
       "catalog_guid": "62b5719981958b14683804f53f69086f",
       "wav_file": "main04_taeon_supp_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2674,6 +2797,8 @@
       "catalog_guid": "4782880ec2e1f9f48a7489850b017ce0",
       "wav_file": "main04_miel_supp_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2716,6 +2841,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -2753,6 +2880,8 @@
       "catalog_guid": "06fa822df904fa04089d9ef30ead21c7",
       "wav_file": "main04_miel_supp_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2795,6 +2924,8 @@
       "catalog_guid": "2b77adb51516d734aa5348f18fc42086",
       "wav_file": "main04_taeon_supp_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2837,6 +2968,8 @@
       "catalog_guid": "fa9ec6a96bb329840be3727f31a9c598",
       "wav_file": "main04_miel_supp_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -2879,6 +3012,8 @@
       "catalog_guid": "6dc204a95cf23ea418494ccc6c56a51a",
       "wav_file": "main04_taeon_supp_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2921,6 +3056,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -2958,6 +3095,8 @@
       "catalog_guid": "9f9335a565a41404fbc40b36e0755950",
       "wav_file": "main04_miel_supp_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3000,6 +3139,8 @@
       "catalog_guid": "ddba3d554e929884ca239babdcb04012",
       "wav_file": "main04_taeon_supp_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3042,6 +3183,8 @@
       "catalog_guid": "3fee2085190461e4eb3a5feec7817284",
       "wav_file": "main04_miel_supp_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3084,6 +3227,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3121,6 +3266,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -3158,6 +3305,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3195,6 +3344,8 @@
       "catalog_guid": "ce4de626ea7fb7244b8e8ae2f02f5e53",
       "wav_file": "main05_taeon_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3237,6 +3388,8 @@
       "catalog_guid": "25bf6448d0ef95440acce32e564d5647",
       "wav_file": "main05_miel_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3279,6 +3432,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-gate-guard (미제작은 NONE)",
       "audio": {},
@@ -3316,6 +3471,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3353,6 +3510,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -3390,6 +3549,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -3427,6 +3588,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-main-guide (미제작은 NONE)",
       "audio": {},
@@ -3464,6 +3627,8 @@
       "catalog_guid": "b48a7ef6325de664f9cc8de19ad9b729",
       "wav_file": "main05_taeon_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3506,6 +3671,8 @@
       "catalog_guid": "214a4ae0abdd7944095eb85ed5e23b1b",
       "wav_file": "main05_taeon_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3548,6 +3715,8 @@
       "catalog_guid": "26ff1e3155ece364ab5eef1fcf1d522a",
       "wav_file": "main05_miel_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3590,6 +3759,8 @@
       "catalog_guid": "f044a709c1d02394bbaa849ef7eec8fe",
       "wav_file": "main05_miel_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3632,6 +3803,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3669,6 +3842,8 @@
       "catalog_guid": "23e83f7f88f624a449aafa5a901bb52a",
       "wav_file": "main06_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3711,6 +3886,8 @@
       "catalog_guid": "f5821461fa87641489e5e85008d7f4d4",
       "wav_file": "main06_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -3753,6 +3930,8 @@
       "catalog_guid": "721262a7710b5b348a9911c08536c296",
       "wav_file": "main06_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -3795,6 +3974,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3832,6 +4013,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {},
@@ -3869,6 +4052,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {},
@@ -3906,6 +4091,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {},
@@ -3943,6 +4130,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -3980,6 +4169,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {},
@@ -4017,6 +4208,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {},
@@ -4054,6 +4247,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {},
@@ -4091,6 +4286,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {},
@@ -4128,6 +4325,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {},
@@ -4165,6 +4364,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {},
@@ -4202,6 +4403,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -4239,6 +4442,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {},
@@ -4276,6 +4481,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {},
@@ -4313,6 +4520,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {},
@@ -4350,6 +4559,8 @@
       "catalog_guid": "ae760c51527b2874392792d31a8c98c3",
       "wav_file": "main07_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4392,6 +4603,8 @@
       "catalog_guid": "465a78bdf7df06e428660ebcd0bd10b4",
       "wav_file": "main07_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4434,6 +4647,8 @@
       "catalog_guid": "aa364d8a0afde9944bbc9fcfa837a375",
       "wav_file": "main07_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4476,6 +4691,8 @@
       "catalog_guid": "019ec55bf2ae18f47b4338fbcca21d9e",
       "wav_file": "main07_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -4518,6 +4735,8 @@
       "catalog_guid": "c1d2b6009c9435443983af38cca5d397",
       "wav_file": "main07_paul_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4560,6 +4779,8 @@
       "catalog_guid": "746c3d61861988b45946d6b43c16ae03",
       "wav_file": "main07_paul_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4602,6 +4823,8 @@
       "catalog_guid": "aa437c5f964a66e4392bbfb095fae49d",
       "wav_file": "main07_paul_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4644,6 +4867,8 @@
       "catalog_guid": "25430c83d6a98a74dbb0dbd52114f940",
       "wav_file": "main07_paul_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4686,6 +4911,8 @@
       "catalog_guid": "e923b87362d34ac439ea54bb38032d02",
       "wav_file": "main07_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -4728,6 +4955,8 @@
       "catalog_guid": "9e3aa45e111e86e418ae2ed9e37e9b7a",
       "wav_file": "main07_paul_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4770,6 +4999,8 @@
       "catalog_guid": "6b00df57985e04c46b59c07597c973be",
       "wav_file": "main07_paul_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4812,6 +5043,8 @@
       "catalog_guid": "df46e25dc123eaa4892f87539b736d3e",
       "wav_file": "main07_paul_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4854,6 +5087,8 @@
       "catalog_guid": "1d4b2233aa12c0248a42f617468b53e3",
       "wav_file": "main07_paul_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4896,6 +5131,8 @@
       "catalog_guid": "7f392453cf22b96408f6e3ee112171fa",
       "wav_file": "main07_paul_012.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4938,6 +5175,8 @@
       "catalog_guid": "5c7f1d058291ef64da9197c0dc349487",
       "wav_file": "main07_paul_013.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -4980,6 +5219,8 @@
       "catalog_guid": "c701ce01a216387429e15add5b74c672",
       "wav_file": "main07_paul_014.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5022,6 +5263,8 @@
       "catalog_guid": "c4f360abec138d64092e16d3d194ca6c",
       "wav_file": "main07_paul_015.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5064,6 +5307,8 @@
       "catalog_guid": "fff8729432b80d9498783dc9b554fc78",
       "wav_file": "main07_taeon_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5106,6 +5351,8 @@
       "catalog_guid": "c5c78260f2d37a4498e5f50d5b8f5dcf",
       "wav_file": "main07_paul_016.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5148,6 +5395,8 @@
       "catalog_guid": "a56b72f6e14e7c84583ebab9ada99dad",
       "wav_file": "main07_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5190,6 +5439,8 @@
       "catalog_guid": "f1bbf50035c949f419d0ef4bc8abd67e",
       "wav_file": "main07_paul_017.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5232,6 +5483,8 @@
       "catalog_guid": "dbb0d5404e0e03146acee455acbed2c6",
       "wav_file": "main07_paul_018.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5274,6 +5527,8 @@
       "catalog_guid": "abfb7e0cc89b7894ba5a4706061f8961",
       "wav_file": "main07_miel_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5316,6 +5571,8 @@
       "catalog_guid": "790b2b3f8f3c31d4688eb081522b845b",
       "wav_file": "main07_paul_019.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5358,6 +5615,8 @@
       "catalog_guid": "1968fc1aee1bc1142b0672270ebfe16f",
       "wav_file": "main07_miel_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5400,6 +5659,8 @@
       "catalog_guid": "06d2e22f01fe436429a2b6edb3cfc0ca",
       "wav_file": "main07_paul_020.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -5442,6 +5703,8 @@
       "catalog_guid": "746aeb0f63566a3438b794c12a1136c2",
       "wav_file": "main08_taeon_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5484,6 +5747,8 @@
       "catalog_guid": "2a4d3f097eee283448db0015e9d526fc",
       "wav_file": "main08_taeon_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5526,6 +5791,8 @@
       "catalog_guid": "5321e58b60be75041be7c617c3bb66bc",
       "wav_file": "main08_miel_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5568,6 +5835,8 @@
       "catalog_guid": "f732ffd70ce44d445b900a47e3f59950",
       "wav_file": "main08_taeon_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5610,6 +5879,8 @@
       "catalog_guid": "5722e0d49b5723f4fb2d8707e542d3fb",
       "wav_file": "main08_taeon_supp_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5652,6 +5923,8 @@
       "catalog_guid": "3896e964af209da4196fd4c8827877cb",
       "wav_file": "main08_miel_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5694,6 +5967,8 @@
       "catalog_guid": "f7bdf41280580d243adfc2e0497efd74",
       "wav_file": "main08_miel_supp_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5736,6 +6011,8 @@
       "catalog_guid": "c4d82101f9b726f4fa327b135df26842",
       "wav_file": "main08_taeon_supp_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5778,6 +6055,8 @@
       "catalog_guid": "3bb3a7f0d6d50424da168e6df59bba5f",
       "wav_file": "main08_taeon_supp_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5820,6 +6099,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -5857,6 +6138,8 @@
       "catalog_guid": "c0bd210bcd785f141bc58ae03ff10c66",
       "wav_file": "main08_miel_supp_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -5899,6 +6182,8 @@
       "catalog_guid": "65df30964791d704185f5da97e63d77f",
       "wav_file": "main08_taeon_supp_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5941,6 +6226,8 @@
       "catalog_guid": "473fb20d4ec9e114a854b37977157706",
       "wav_file": "main08_taeon_supp_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -5983,6 +6270,8 @@
       "catalog_guid": "c3e6a131ba9049e458f845ed4672348f",
       "wav_file": "main08_miel_supp_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6025,6 +6314,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6062,6 +6353,8 @@
       "catalog_guid": "88b75212b5a11254d8efa3f1e69a2fa8",
       "wav_file": "main08_miel_supp_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6104,6 +6397,8 @@
       "catalog_guid": "7c72740f224291b409fe73333e8ef4f8",
       "wav_file": "main08_taeon_supp_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6146,6 +6441,8 @@
       "catalog_guid": "9c62dffde6c33ed478eb95ac2c6f1a2e",
       "wav_file": "main08_miel_supp_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6188,6 +6485,8 @@
       "catalog_guid": "bba8813d2f946104db5082bef072f9da",
       "wav_file": "main08_taeon_supp_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6230,6 +6529,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6267,6 +6568,8 @@
       "catalog_guid": "16415ce8979fe8142859d4b7eb9860af",
       "wav_file": "main08_miel_supp_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6309,6 +6612,8 @@
       "catalog_guid": "3dcc58543ffa0ca4fae31ba2439d0d36",
       "wav_file": "main08_taeon_supp_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6351,6 +6656,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6388,6 +6695,8 @@
       "catalog_guid": "f181b5d8aa14cb3489a7ded103a53879",
       "wav_file": "main09_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6430,6 +6739,8 @@
       "catalog_guid": "27cd132774da968469ecdd1664228164",
       "wav_file": "main09_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6472,6 +6783,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6509,6 +6822,8 @@
       "catalog_guid": "c81393bf9138e2e40bd1c791d0e67497",
       "wav_file": "main09_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6551,6 +6866,8 @@
       "catalog_guid": "96919c7c02eb3984fb16d086689e0a1b",
       "wav_file": "main09_miel_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6593,6 +6910,8 @@
       "catalog_guid": "04ddea22f5bcc0f4d899f7ee0c35e2b3",
       "wav_file": "main09_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -6635,6 +6954,8 @@
       "catalog_guid": "7112bf5291306674ba3102afe84f8f51",
       "wav_file": "main09_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -6677,6 +6998,8 @@
       "catalog_guid": "b2f28b0112526d7459fe642f70d46e61",
       "wav_file": "main09_miel_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -6719,6 +7042,8 @@
       "catalog_guid": "58373051841c4ad4b9535fdef331bc09",
       "wav_file": "main09_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -6761,6 +7086,8 @@
       "catalog_guid": "fe867e905e7701146b5e750bd7eced1e",
       "wav_file": "main09_taeon_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6803,6 +7130,8 @@
       "catalog_guid": "f1082bc6bc5616b4d97dc4ff14c61afe",
       "wav_file": "main09_paul_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -6845,6 +7174,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6882,6 +7213,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -6919,6 +7252,8 @@
       "catalog_guid": "915588a321d5a124385d01a5887e83e0",
       "wav_file": "main09_taeon_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -6961,6 +7296,8 @@
       "catalog_guid": "dd03a20a1e85aea479e0e14e4991b280",
       "wav_file": "main09_miel_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -7003,6 +7340,8 @@
       "catalog_guid": "47d4588560ce2824b8c9a019e7566e6f",
       "wav_file": "main09_paul_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7045,6 +7384,8 @@
       "catalog_guid": "f69894263646ba4418cf80cf8be14f7d",
       "wav_file": "main09_paul_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7087,6 +7428,8 @@
       "catalog_guid": "a3ef75d9992c19d4394506c07148c5fb",
       "wav_file": "main09_paul_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7129,6 +7472,8 @@
       "catalog_guid": "54299ab5a8c11a04abf8cdb4e14fae3e",
       "wav_file": "main09_taeon_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -7171,6 +7516,8 @@
       "catalog_guid": "3df5297cc657b874083e57af7365d30a",
       "wav_file": "main09_paul_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7213,6 +7560,8 @@
       "catalog_guid": "4ed27735db844d340b2e914eaade7200",
       "wav_file": "main09_taeon_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -7255,6 +7604,8 @@
       "catalog_guid": "4caaed697d7520b469240192c708f32b",
       "wav_file": "main09_paul_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7297,6 +7648,8 @@
       "catalog_guid": "e7423e79e172f984ca9fb2a9fdafdf06",
       "wav_file": "main09_miel_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -7339,6 +7692,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -7376,6 +7731,8 @@
       "catalog_guid": "5da29f468c0e12248ae0cb53b273b077",
       "wav_file": "main09_paul_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7418,6 +7775,8 @@
       "catalog_guid": "3b4b32129a407cb42a92e1e3ed5c3337",
       "wav_file": "main09_paul_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7460,6 +7819,8 @@
       "catalog_guid": "d2450c4dc9dec184caf132c7d84eb2f4",
       "wav_file": "main09_paul_012.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7502,6 +7863,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -7539,6 +7902,8 @@
       "catalog_guid": "5c1aab0e96029024bb6f21c6105952e0",
       "wav_file": "main09_taeon_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -7581,6 +7946,8 @@
       "catalog_guid": "61ecf2dfea900c7459fabab2ef9be9e0",
       "wav_file": "main09_miel_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -7623,6 +7990,8 @@
       "catalog_guid": "e474ffa4b994df34abb6c6bb4379959f",
       "wav_file": "main09_paul_013.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7665,6 +8034,8 @@
       "catalog_guid": "926efb74af315254c819b5c96f5b2d3b",
       "wav_file": "main09_paul_014.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7707,6 +8078,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -7744,6 +8117,8 @@
       "catalog_guid": "3ece5e25c4ecf334eb098c7c1b1b39aa",
       "wav_file": "main10_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -7786,6 +8161,8 @@
       "catalog_guid": "54fba4f91531e784ca0e26c6f29dda78",
       "wav_file": "main10_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7828,6 +8205,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -7865,6 +8244,8 @@
       "catalog_guid": "45f4964db2ec5b6488a7a8adea39be10",
       "wav_file": "main10_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -7907,6 +8288,8 @@
       "catalog_guid": "5ba719bfbefbcd74ea5edfb6b3c514ad",
       "wav_file": "main10_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -7949,6 +8332,8 @@
       "catalog_guid": "d45a5d133509c4e4c8551ceca905557d",
       "wav_file": "main10_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -7991,6 +8376,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8028,6 +8415,8 @@
       "catalog_guid": "bafd577a8e4f0bc47a2b7ee48913549d",
       "wav_file": "main10_miel_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8070,6 +8459,8 @@
       "catalog_guid": "a0359669b044e724bbd68d3b498d08c0",
       "wav_file": "main10_taeon_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8112,6 +8503,8 @@
       "catalog_guid": "d9dc9413d78611f499e5daf1faba6095",
       "wav_file": "main10_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8154,6 +8547,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8191,6 +8586,8 @@
       "catalog_guid": "d9f5f0a96ef7ddd41b10723f68ed99e7",
       "wav_file": "main10_taeon_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8233,6 +8630,8 @@
       "catalog_guid": "832c0594a7d1b404cb91908104ba4ef4",
       "wav_file": "main10_paul_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8275,6 +8674,8 @@
       "catalog_guid": "4782ceed07f8aa7429fc52a5d85575d1",
       "wav_file": "main10_miel_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8317,6 +8718,8 @@
       "catalog_guid": "09bb4ca2d37ba7341a55565937736b0c",
       "wav_file": "main10_paul_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8359,6 +8762,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8396,6 +8801,8 @@
       "catalog_guid": "9d6c242f0446003438b60920e1c4e66f",
       "wav_file": "main10_taeon_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8438,6 +8845,8 @@
       "catalog_guid": "320bb7739875c8648bceaa4d4888675d",
       "wav_file": "main10_paul_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8480,6 +8889,8 @@
       "catalog_guid": "c2cb934dd5ffeb14c983d179c6a563e9",
       "wav_file": "main10_miel_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8522,6 +8933,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8559,6 +8972,8 @@
       "catalog_guid": "ea4bdb949266049448e00fcd68835658",
       "wav_file": "main10_paul_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8601,6 +9016,8 @@
       "catalog_guid": "d52ac69dae59f0e4ba9296ddae8e695d",
       "wav_file": "main10_taeon_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8643,6 +9060,8 @@
       "catalog_guid": "62ebf30750751d64f800a85ea13b740b",
       "wav_file": "main10_miel_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8685,6 +9104,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8722,6 +9143,8 @@
       "catalog_guid": "ab0f9f0a27013654ca507fb17288a7a2",
       "wav_file": "main11_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -8764,6 +9187,8 @@
       "catalog_guid": "7d87148a2d889e34992e0c7e1a7387a5",
       "wav_file": "main11_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8806,6 +9231,8 @@
       "catalog_guid": "4b701370c4e311947b84b68f0c5ad304",
       "wav_file": "main11_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8848,6 +9275,8 @@
       "catalog_guid": "59c2d338c3d9cb94bb80d42664d48a14",
       "wav_file": "main11_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -8890,6 +9319,8 @@
       "catalog_guid": "c9bbd0663e3113d4f9edfbaf4fcdecea",
       "wav_file": "main11_miel_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -8932,6 +9363,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -8969,6 +9402,8 @@
       "catalog_guid": "91455b4bc171bcc4c9b0183d942893cd",
       "wav_file": "main11_taeon_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9011,6 +9446,8 @@
       "catalog_guid": "06fb285df7653a0419435d900c218239",
       "wav_file": "main11_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9053,6 +9490,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -9090,6 +9529,8 @@
       "catalog_guid": "7c477d805c55c6c4f94e54ef0afdfd38",
       "wav_file": "main11_taeon_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9132,6 +9573,8 @@
       "catalog_guid": "fc448551a9e1e99449eb24480408148d",
       "wav_file": "main11_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9174,6 +9617,8 @@
       "catalog_guid": "7168a9339849c8241926ccf2e038bff6",
       "wav_file": "main11_miel_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -9216,6 +9661,8 @@
       "catalog_guid": "98f06a071471ebd4aa4af8f4b2a5ace5",
       "wav_file": "main11_taeon_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9258,6 +9705,8 @@
       "catalog_guid": "ce6795d1d3d454a4e922419728d50e20",
       "wav_file": "main11_paul_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9300,6 +9749,8 @@
       "catalog_guid": "c5befd70fbcaf27499580c0c4193d348",
       "wav_file": "main11_paul_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9342,6 +9793,8 @@
       "catalog_guid": "f659e0a2be2748e45b49e47a40f64bf6",
       "wav_file": "main11_miel_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -9384,6 +9837,8 @@
       "catalog_guid": "20c062bec16b763459823676c51d7b94",
       "wav_file": "main11_paul_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9426,6 +9881,8 @@
       "catalog_guid": "38e54470a5c80bc48adfcb7688a6c4e5",
       "wav_file": "main11_taeon_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9468,6 +9925,8 @@
       "catalog_guid": "00e49925a29511c4e87c3fef00365ce0",
       "wav_file": "main11_paul_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9510,6 +9969,8 @@
       "catalog_guid": "39d58a63e77b90541a6277af10e7a55c",
       "wav_file": "main11_paul_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9552,6 +10013,8 @@
       "catalog_guid": "7a29e55920c6c664d9f2cef26eb2e940",
       "wav_file": "main11_taeon_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9594,6 +10057,8 @@
       "catalog_guid": "3b2e9370358c5734381443c5cc27b202",
       "wav_file": "main11_miel_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -9636,6 +10101,8 @@
       "catalog_guid": "8779977c5436e1e458b4cdafe960ff53",
       "wav_file": "main11_paul_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9678,6 +10145,8 @@
       "catalog_guid": "467c5d2ebc0b31d429dd1bb284462384",
       "wav_file": "main11_taeon_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9720,6 +10189,8 @@
       "catalog_guid": "c4d9cff4a71832442b563acbda4a631e",
       "wav_file": "main11_miel_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -9762,6 +10233,8 @@
       "catalog_guid": "03e3127a965296c43a9d250a35e08578",
       "wav_file": "main11_taeon_009.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9804,6 +10277,8 @@
       "catalog_guid": "65e4785eb7ea4ed4fab73dbcb7ef7a9d",
       "wav_file": "main11_paul_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9846,6 +10321,8 @@
       "catalog_guid": "659db3d1704a78040adacf51dff8816d",
       "wav_file": "main11_paul_011.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -9888,6 +10365,8 @@
       "catalog_guid": "d377c8382a9e491489df67886c4c0cdf",
       "wav_file": "main11_miel_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -9930,6 +10409,8 @@
       "catalog_guid": "5d097a42fb0b84743bd0e2d129aaebd7",
       "wav_file": "main11_taeon_010.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -9972,6 +10453,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -10009,6 +10492,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "starter-village-general-store (미제작은 NONE)",
       "audio": {},
@@ -10046,6 +10531,8 @@
       "catalog_guid": "f9788bca675b04b418201d5d910d5b75",
       "wav_file": "main12_paul_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10088,6 +10575,8 @@
       "catalog_guid": "5739d8d9122681445bd408a4c7c718d9",
       "wav_file": "main12_paul_supp_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10130,6 +10619,8 @@
       "catalog_guid": "d0423b2b15a7e4643b85d966181ed25a",
       "wav_file": "main12_taeon_supp_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -10172,6 +10663,8 @@
       "catalog_guid": "434410bf05fda1a4ba5b5b600e17a74f",
       "wav_file": "main13_serin_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10214,6 +10707,8 @@
       "catalog_guid": "07243826a3cf8cb41a3ee227f6dd6afe",
       "wav_file": "main13_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -10256,6 +10751,8 @@
       "catalog_guid": "40573fc1e17cd504a8edbcb708c21677",
       "wav_file": "main13_serin_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10298,6 +10795,8 @@
       "catalog_guid": "92a29c3a042998f4dbba2cfe00926506",
       "wav_file": "main13_serin_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10340,6 +10839,8 @@
       "catalog_guid": "c30628720589e6f4abd44bf6d19318b2",
       "wav_file": "main13_serin_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10382,6 +10883,8 @@
       "catalog_guid": "7688fc9ef88479442a7ed56541506a94",
       "wav_file": "main13_leon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -10424,6 +10927,8 @@
       "catalog_guid": "611db5f0a0bfce040a5379689d59cef1",
       "wav_file": "main13_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10466,6 +10971,8 @@
       "catalog_guid": "96d0a9fd69a37824d9a90f47cd2d4514",
       "wav_file": "main13_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10508,6 +11015,8 @@
       "catalog_guid": "f648bd02b7f026744b77de3ee838d11e",
       "wav_file": "main14_serin_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10550,6 +11059,8 @@
       "catalog_guid": "39db0bfc29bc54d4687733277abac61f",
       "wav_file": "main14_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -10592,6 +11103,8 @@
       "catalog_guid": "94c96f49759593a42ad5fc77b23a2a99",
       "wav_file": "main14_leon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -10634,6 +11147,8 @@
       "catalog_guid": "2c142ec6f1ea197479c658746feaf86d",
       "wav_file": "main14_leon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -10676,6 +11191,8 @@
       "catalog_guid": "b2af673c2bcd1024f881de6e21bcf592",
       "wav_file": "main14_serin_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10718,6 +11235,8 @@
       "catalog_guid": "c0bfefc9a5b1a1e4691f8d67523c67ea",
       "wav_file": "main14_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -10760,6 +11279,8 @@
       "catalog_guid": "94660d6c1d15d904e8f1a3ba33f333c3",
       "wav_file": "main14_serin_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -10802,6 +11323,8 @@
       "catalog_guid": "7a0e572c48a03164f8aa9af2c1722589",
       "wav_file": "main14_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -10844,6 +11367,8 @@
       "catalog_guid": "876b41e19f2eb85459d1056df48cb5ed",
       "wav_file": "main14_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10886,6 +11411,8 @@
       "catalog_guid": "5da30b2a43457004793dbabb963e0112",
       "wav_file": "main14_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10928,6 +11455,8 @@
       "catalog_guid": "de8715557db747748a5612c3964ebce5",
       "wav_file": "main14_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -10970,6 +11499,8 @@
       "catalog_guid": "95b34bc2883935a478621ff1fc37ef0b",
       "wav_file": "main15_leon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -11012,6 +11543,8 @@
       "catalog_guid": "d58749bc65f51ef43991ae78562dfeaf",
       "wav_file": "main15_serin_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11054,6 +11587,8 @@
       "catalog_guid": "5c88d3f77a017c940b0fd2071fda9618",
       "wav_file": "main15_serin_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11096,6 +11631,8 @@
       "catalog_guid": "a9119f9a2fbcd514aa875b6f6601d573",
       "wav_file": "main15_paul_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11138,6 +11675,8 @@
       "catalog_guid": "4689c68730c43dc468d24919a59586bc",
       "wav_file": "main15_serin_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11180,6 +11719,8 @@
       "catalog_guid": "39be4777cb7af5a469a5e9ea4d040535",
       "wav_file": "main15_paul_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11222,6 +11763,8 @@
       "catalog_guid": "a5260d8c9f7495a45a0d06ea12733376",
       "wav_file": "main15_leon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -11264,6 +11807,8 @@
       "catalog_guid": "5c62785020163b146a9b7fd1b5a5e00c",
       "wav_file": "main15_serin_007.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11306,6 +11851,8 @@
       "catalog_guid": "b0e79f907fc0ed740ac0e3f20702ce60",
       "wav_file": "main15_taeon_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -11348,6 +11895,8 @@
       "catalog_guid": "e09674083ac0c7c44b0bb77805e98f34",
       "wav_file": "main15_serin_008.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11390,6 +11939,8 @@
       "catalog_guid": "c2bfd3fa3e092884ba85d91c3302f7c7",
       "wav_file": "main15_miel_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -11432,6 +11983,8 @@
       "catalog_guid": "22e404e19e889474eb5975e4d25d6388",
       "wav_file": "main15_paul_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11474,6 +12027,8 @@
       "catalog_guid": "b2639392087718345a8f62829dd456a6",
       "wav_file": "main15_miel_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -11516,6 +12071,8 @@
       "catalog_guid": "415037a69576e1c40a0cac13a66da4dc",
       "wav_file": "main15_paul_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11558,6 +12115,8 @@
       "catalog_guid": "9aa2646d26e839b428c04ff4009c647b",
       "wav_file": "main15_taeon_001.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -11600,6 +12159,8 @@
       "catalog_guid": "8b6306d2d4e62cf44800fe49337f3d5f",
       "wav_file": "main15_serin_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11642,6 +12203,8 @@
       "catalog_guid": "961abb73ba4179847a8f4edf51b0ae35",
       "wav_file": "main15_taeon_002.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -11684,6 +12247,8 @@
       "catalog_guid": "9b841e9953df1f649b7370fb7e4019eb",
       "wav_file": "main15_serin_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11726,6 +12291,8 @@
       "catalog_guid": "bbae33f026dbe3e469b3046e3b07b94c",
       "wav_file": "main15_paul_004.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11768,6 +12335,8 @@
       "catalog_guid": "f79d5cb764674794cbcbd1150b783c2f",
       "wav_file": "main15_taeon_003.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -11810,6 +12379,8 @@
       "catalog_guid": "77d7df44b78a96945abf508590727efd",
       "wav_file": "main15_serin_006.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -11852,6 +12423,8 @@
       "catalog_guid": "64f1aff20b1dd3847b08303563c44180",
       "wav_file": "main15_paul_005.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -11894,6 +12467,8 @@
       "catalog_guid": "649563f9dfe3454c87247d1c7b3f8930",
       "wav_file": "main16_start_leon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -11936,6 +12511,8 @@
       "catalog_guid": "bf936b0a876e4f3887602a141e42504c",
       "wav_file": "main16_start_leon_02.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -11978,6 +12555,8 @@
       "catalog_guid": "3210a2095cc04050a97a19b936395699",
       "wav_file": "main16_start_paul_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -12020,6 +12599,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12057,6 +12638,8 @@
       "catalog_guid": "de7fbc3344594225a49c547361e58dd8",
       "wav_file": "main16_ash_hearing_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12099,6 +12682,8 @@
       "catalog_guid": "59e08c2eb5234581bebe790f70e895af",
       "wav_file": "main16_ash_hearing_serin_02.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12141,6 +12726,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12178,6 +12765,8 @@
       "catalog_guid": "f916c1050d5341f088c1c5b49fa7dd01",
       "wav_file": "main16_ash_default_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12220,6 +12809,8 @@
       "catalog_guid": "9c79606bf02d4738871350747a4fb3d8",
       "wav_file": "main16_ash_default_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -12262,6 +12853,8 @@
       "catalog_guid": "6667a77a3eb849838835ca56f8fa48fc",
       "wav_file": "main16_ash_default_serin_02.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12304,6 +12897,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12341,6 +12936,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12378,6 +12975,8 @@
       "catalog_guid": "9f3a85ff13504f32a23a859fce54338a",
       "wav_file": "main16_vibration_hearing_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12420,6 +13019,8 @@
       "catalog_guid": "69efba0df24249d290f2b376f5991afa",
       "wav_file": "main16_vibration_default_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12462,6 +13063,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12499,6 +13102,8 @@
       "catalog_guid": "398fdb8f95ed4eb9955c5dd22aa9a55d",
       "wav_file": "main16_tracks_paul_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -12541,6 +13146,8 @@
       "catalog_guid": "27fa7490023a49f68a967f6f82faf8b2",
       "wav_file": "main16_tracks_miel_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -12583,6 +13190,8 @@
       "catalog_guid": "714fd5538e3345d182d9ab819695afb5",
       "wav_file": "main16_tracks_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -12625,6 +13234,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12662,6 +13273,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12699,6 +13312,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12736,6 +13351,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12773,6 +13390,8 @@
       "catalog_guid": "e8234f74d9e74855bba744f78ed02eed",
       "wav_file": "main16_witness_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -12815,6 +13434,8 @@
       "catalog_guid": "82ec5ceac9ce40febe4a5700655b0e53",
       "wav_file": "main16_retry_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -12857,6 +13478,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -12894,6 +13517,8 @@
       "catalog_guid": "9e99b20d87424807adbb9b335a5278a2",
       "wav_file": "main16_afterimage_hearing_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12936,6 +13561,8 @@
       "catalog_guid": "1f5ce02745cb4873b64e0a29a1cc20c6",
       "wav_file": "main16_afterimage_default_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -12978,6 +13605,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13015,6 +13644,8 @@
       "catalog_guid": "c93a8dbf63a04bd7be0255799818d062",
       "wav_file": "main16_afterimage_paul_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -13057,6 +13688,8 @@
       "catalog_guid": "55a7f2394c2442d2ab889849f7da771d",
       "wav_file": "main16_afterimage_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -13099,6 +13732,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13136,6 +13771,8 @@
       "catalog_guid": "7b63a90637774053a582c99e237a210c",
       "wav_file": "main16_afterimage_taeon_02.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -13178,6 +13815,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13215,6 +13854,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13252,6 +13893,8 @@
       "catalog_guid": "b5e0293ed7fa43adbcc7786d5760034e",
       "wav_file": "main16_canyon_hearing_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -13294,6 +13937,8 @@
       "catalog_guid": "cddb00b17d404589a63d9de81d794ffb",
       "wav_file": "main16_canyon_default_serin_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_serin",
       "expected_portrait_rule": "companion_serin (미제작은 NONE)",
       "audio": {
@@ -13336,6 +13981,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13373,6 +14020,8 @@
       "catalog_guid": "6b9acdc68cb9456faf7dd54bcdd4dbae",
       "wav_file": "main16_canyon_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -13415,6 +14064,8 @@
       "catalog_guid": "53ec7f3611174d55bcf8464dea828d73",
       "wav_file": "main16_canyon_paul_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -13457,6 +14108,8 @@
       "catalog_guid": "2b1e02c695e543bcb48aaa8565b622db",
       "wav_file": "main16_canyon_miel_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_miel",
       "expected_portrait_rule": "companion_miel (미제작은 NONE)",
       "audio": {
@@ -13499,6 +14152,8 @@
       "catalog_guid": "",
       "wav_file": "",
       "source_hash_equal": "",
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "NONE",
       "audio": {},
@@ -13536,6 +14191,8 @@
       "catalog_guid": "1a1976f805164200a9abdf8e0a097d95",
       "wav_file": "main16_report_taeon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -13578,6 +14235,8 @@
       "catalog_guid": "fbbe2eb6dd8144eca816dd50fedb4a92",
       "wav_file": "main16_report_leon_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "NONE",
       "expected_portrait_rule": "arbel-leon (미제작은 NONE)",
       "audio": {
@@ -13620,6 +14279,8 @@
       "catalog_guid": "1330c9a31d554747b55e742f55dcd206",
       "wav_file": "main16_report_paul_01.wav",
       "source_hash_equal": true,
+      "replacement_source": "",
+      "runtime_listening_pass": false,
       "portrait_character": "companion_paul",
       "expected_portrait_rule": "companion_paul (미제작은 NONE)",
       "audio": {
@@ -13633,8 +14294,12 @@
     }
   ],
   "runtime_evidence": "PASS 2574 checks",
+  "focused_runtime_evidence": "PASS",
+  "source_user_listening_pass": 3,
+  "runtime_user_listening_pass": 0,
   "limitations": [
-    "태온 3개는 사용자 실제 청취 보고로 불일치 확인. 나머지 244개는 NEEDS_LISTENING. Metadata 일치는 의미 일치를 보장하지 않는다.",
+    "전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.",
+    "태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.",
     "동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.",
     "Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다."
   ]

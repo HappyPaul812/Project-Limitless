@@ -1,5 +1,10 @@
 # Project-Limitless 현재 개발 상태
 
+## 태온 첫 조우 Voice3개 교체 진행 (2026-10-05)
+
+- 입력 `Limitless_TTS_Regen_Main03_Taeon_005_007/005.wav·006.wav·007.wav` 원본/사용자 실제 청취 PASS, PCM24kHz/mono/16bit·4.04/7.16/6.52초. [적용 계획과 집중 QA](Main03_Taeon_Voice_Regen_적용_QA.md)을 먼저 기록하고 기존 Unity WAV3개만 전체 바이트 교체했다. GUID/meta/Importer/Catalog/게임코드/Mixer/다른Voice 유지, 실제 Unity PCM과 새 원본 모든 샘플 차이0. 백그라운드57checks/실제 재생45checks PASS, Compile/최종Console Error0/Warning0. **사용자 Runtime 의미 청취 확인 대기**, TTS_REGEN_REQUIRED3/NEEDS_LISTENING244 유지. 격리 QA는 Bootstrap으로 종료했고 이후 사용자 Field01 Play/Save 진행은 중단·되돌림 없이 보존한다. GitHub Push하지 않는다.
+- 관련 WAV교체/집중 QA commit `191e817`. 남은 완료 조건은 사용자 Runtime 청취 결과 확인이며 확인 후에만 재생성 필요3→0으로 해결 기록한다. 기존 전체331개Runtime 증거와 이번 집중57/45검사를 구분하며 전체Story를 다시 재생하지 않았다.
+
 ## Story Dialogue 전수 감사·Player 중앙 정책 적용 (2026-10-05)
 
 - 문서화→구현→격리 백그라운드 검증. [전수 QA](Story_Dialogue_Consistency_QA.md)·[Matrix](Story_Dialogue_Audit_Matrix.csv)·[LOCAL 원문 부록](../03_스토리/LOCAL_Story_Dialogue_원문_부록.md). 전체331페이지(Intro18/Main01~16 313), Player42, Voice247(Story229+Intro18). 기존 문서 exact23/본문미기재308을 구분해 구현 원문을 명문화했으며 기존 게임 기획/발화 본문 변경 없음.
