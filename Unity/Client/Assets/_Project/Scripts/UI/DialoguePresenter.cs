@@ -70,6 +70,14 @@ namespace ProjectLimitless.UI
         private GameObject panel;
         private Text dialogueText;
         private RectTransform dialogueTextRect;
+        private RectTransform bodyViewport;
+        private UnityEngine.UI.ScrollRect bodyScroll;
+        private UnityEngine.UI.Text speakerText;
+        private UnityEngine.UI.Text footerText;
+        private RectTransform panelRect;
+        private RectTransform canvasRect;
+        private bool layoutDirty;
+        private Vector2 lastCanvasSize;
         private GameObject portraitRoot;
         private Image portraitImage;
         private GameObject choiceRow;
@@ -130,7 +138,7 @@ namespace ProjectLimitless.UI
             if (!WorldModalState.TryAcquire(this)) return;
             var line = new DialogueLine(speakerId, speaker, message);
             ApplyPortrait(line.SpeakerId);
-            dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[Esc 또는 게임패드 B: 닫기]";
+            SetContent(line, "[Esc 또는 게임패드 B: 닫기]");
             choiceRow.SetActive(false);
             panel.SetActive(true);
             panel.transform.SetAsLastSibling();
@@ -199,7 +207,7 @@ namespace ProjectLimitless.UI
             ClearSequence();
             var line = new DialogueLine(speakerId, speaker, message);
             ApplyPortrait(line.SpeakerId);
-            dialogueText.text = $"{line.SpeakerName}\n{line.Message}";
+            SetContent(line, string.Empty);
             choiceRow.SetActive(true);
             ConfigureButton(confirmButton, confirmText, () =>
             {
@@ -231,7 +239,90 @@ namespace ProjectLimitless.UI
             // 직전 NPC의 음성을 fallback으로 쓰지 않으며 자막은 기존 수동 Next로 진행합니다.
             voicePlayback.Play(!line.IsPlayer && voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
             ApplyPortrait(line.SpeakerId);
-            dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
+            SetContent(line, "[E/F/Enter/Space 또는 A: 계속] [Esc/B: 닫기] [↑↓/패드/휠: 장문 읽기]");
+        }
+
+        /// <summary>본문은 Voice/Story 원문 그대로 표시하며 화자·조작 안내와 별도 영역으로 나눕니다.</summary>
+        private void SetContent(DialogueLine line, string hint)
+        {
+            speakerText.text = line.SpeakerName;
+            dialogueText.text = line.Message;
+            footerText.text = hint;
+            bodyScroll.verticalNormalizedPosition = 1f;
+            layoutDirty = true;
+        }
+
+        private void LateUpdate()
+        {
+            if (!IsOpen) return;
+            if (layoutDirty || canvasRect.rect.size != lastCanvasSize) RefreshLayout();
+            // 최대 패널 높이를 넘는 본문은 잘라 버리지 않고 키보드/패드/마우스로 끝까지 읽습니다.
+            if (bodyScroll.enabled)
+            {
+                float direction = 0f;
+                if (Keyboard.current != null)
+                {
+                    if (Keyboard.current.upArrowKey.isPressed) direction += 1f;
+                    if (Keyboard.current.downArrowKey.isPressed) direction -= 1f;
+                }
+                if (Gamepad.current != null) direction += Gamepad.current.dpad.ReadValue().y;
+                float range = Mathf.Max(1f, dialogueTextRect.rect.height - bodyViewport.rect.height);
+                bodyScroll.verticalNormalizedPosition = Mathf.Clamp01(bodyScroll.verticalNormalizedPosition + direction * 160f * Time.unscaledDeltaTime / range);
+            }
+        }
+
+        private static float PreferredHeight(UnityEngine.UI.Text text, float width)
+        {
+            return text.cachedTextGeneratorForLayout.GetPreferredHeight(text.text,
+                text.GetGenerationSettings(new Vector2(width, 0f))) / text.pixelsPerUnit;
+        }
+
+        /// <summary>실제 줄바꿈 높이를 측정해 Portrait·본문·Footer를 분리하고 화면 높이40% 안에 배치합니다.</summary>
+        private void RefreshLayout()
+        {
+            lastCanvasSize = canvasRect.rect.size;
+            if (lastCanvasSize.x <= 0f || lastCanvasSize.y <= 0f) return;
+            const float padding = 16f, gap = 8f;
+            float panelWidth = lastCanvasSize.x * .84f;
+            float left = portraitRoot.activeSelf ? 190f : 28f;
+            float textWidth = Mathf.Max(1f, panelWidth - left - 28f);
+            float footerHeight = choiceRow.activeSelf ? 52f : PreferredHeight(footerText, panelWidth - 56f);
+            float speakerHeight = PreferredHeight(speakerText, textWidth);
+            float fixedHeight = padding * 2f + gap * 2f + speakerHeight + footerHeight;
+            float maxHeight = lastCanvasSize.y * .4f;
+            dialogueText.fontSize = 28;
+            float bodyHeight = PreferredHeight(dialogueText, textWidth);
+            // 제한 없는 AutoSize 대신 작은 범위만 사용해 장문에서도 읽을 수 있는 기본 크기를 보호합니다.
+            while (bodyHeight + fixedHeight > maxHeight && dialogueText.fontSize > 24)
+            {
+                dialogueText.fontSize--;
+                bodyHeight = PreferredHeight(dialogueText, textWidth);
+            }
+            float minimum = lastCanvasSize.y * .23f;
+            if (portraitRoot.activeSelf)
+                minimum = Mathf.Max(minimum, padding * 2f + 150f + gap + footerHeight);
+            float height = Mathf.Clamp(bodyHeight + fixedHeight, minimum, maxHeight);
+            panelRect.sizeDelta = new Vector2(0f, height);
+            PlaceText(speakerText.rectTransform, left, padding, speakerHeight);
+            float availableBody = height - fixedHeight;
+            PlaceText(bodyViewport, left, padding + speakerHeight + gap, availableBody);
+            dialogueTextRect.anchorMin = new Vector2(0f, 1f);
+            dialogueTextRect.anchorMax = Vector2.one;
+            dialogueTextRect.pivot = new Vector2(.5f, 1f);
+            dialogueTextRect.offsetMin = new Vector2(0f, -Mathf.Max(bodyHeight, availableBody));
+            dialogueTextRect.offsetMax = Vector2.zero;
+            bodyScroll.enabled = bodyHeight > availableBody + .5f;
+            PlaceText(footerText.rectTransform, 28f, height - padding - footerHeight, footerHeight);
+            footerText.gameObject.SetActive(!choiceRow.activeSelf);
+            layoutDirty = false;
+        }
+
+        private static void PlaceText(RectTransform rect, float left, float top, float height)
+        {
+            rect.anchorMin = new Vector2(0f, 1f); rect.anchorMax = Vector2.one;
+            rect.pivot = new Vector2(.5f, 1f);
+            rect.offsetMin = new Vector2(left, -top - height);
+            rect.offsetMax = new Vector2(-28f, -top);
         }
 
         private void ClearSequence()
@@ -310,6 +401,7 @@ namespace ProjectLimitless.UI
 
             GameObject canvasObject = new GameObject("DialogueCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
             canvasObject.transform.SetParent(transform, false);
+            canvasRect = canvasObject.GetComponent<RectTransform>();
             // Screen Space Overlay는 카메라 위치와 관계없이 UI를 화면 위에 고정해 표시합니다.
             Canvas dialogueCanvas = canvasObject.GetComponent<Canvas>();
             dialogueCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
@@ -322,44 +414,77 @@ namespace ProjectLimitless.UI
             panel.transform.SetParent(canvasObject.transform, false);
             Image panelImage = panel.GetComponent<Image>();
             panelImage.color = new Color(0.04f, 0.06f, 0.1f, 0.92f);
-            RectTransform panelRect = panel.GetComponent<RectTransform>();
+            panelRect = panel.GetComponent<RectTransform>();
             panelRect.anchorMin = new Vector2(0.08f, 0.05f);
-            panelRect.anchorMax = new Vector2(0.92f, 0.28f);
+            panelRect.anchorMax = new Vector2(0.92f, 0.05f);
+            panelRect.pivot = new Vector2(.5f, 0f);
             panelRect.offsetMin = Vector2.zero;
             panelRect.offsetMax = Vector2.zero;
 
+            // 단일 본문은 측정한 높이를 직접 적용하여 ContentSizeFitter와 수동 배치의 충돌을 피합니다.
+            var scrollObject = new GameObject("BodyScroll", typeof(RectTransform), typeof(UnityEngine.UI.ScrollRect));
+            scrollObject.transform.SetParent(panel.transform, false);
+            var viewportObject = new GameObject("BodyViewport", typeof(RectTransform), typeof(UnityEngine.UI.Image), typeof(UnityEngine.UI.Mask));
+            viewportObject.transform.SetParent(scrollObject.transform, false);
+            var viewportRect = viewportObject.GetComponent<RectTransform>();
+            viewportRect.anchorMin = Vector2.zero; viewportRect.anchorMax = Vector2.one;
+            viewportRect.offsetMin = Vector2.zero; viewportRect.offsetMax = Vector2.zero;
+            viewportObject.GetComponent<UnityEngine.UI.Mask>().showMaskGraphic = false;
+            bodyViewport = scrollObject.GetComponent<RectTransform>();
+            bodyScroll = scrollObject.GetComponent<UnityEngine.UI.ScrollRect>();
+            bodyScroll.viewport = viewportRect;
+            bodyScroll.horizontal = false;
+            bodyScroll.vertical = true;
+            bodyScroll.movementType = UnityEngine.UI.ScrollRect.MovementType.Clamped;
+            bodyScroll.inertia = false;
+            bodyScroll.scrollSensitivity = 30f;
             GameObject textObject = new GameObject("DialogueText", typeof(Text));
-            textObject.transform.SetParent(panel.transform, false);
+            textObject.transform.SetParent(viewportObject.transform, false);
             dialogueText = textObject.GetComponent<Text>();
             dialogueText.font = dialogueFont != null
                 ? dialogueFont
                 : Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             dialogueText.fontSize = 28;
             dialogueText.color = Color.white;
-            dialogueText.alignment = TextAnchor.MiddleLeft;
+            dialogueText.alignment = TextAnchor.UpperLeft;
             dialogueText.horizontalOverflow = HorizontalWrapMode.Wrap;
-            dialogueText.verticalOverflow = VerticalWrapMode.Overflow;
+            dialogueText.verticalOverflow = VerticalWrapMode.Truncate;
             dialogueTextRect = textObject.GetComponent<RectTransform>();
+            bodyScroll.content = dialogueTextRect;
             dialogueTextRect.anchorMin = Vector2.zero;
             dialogueTextRect.anchorMax = Vector2.one;
             dialogueTextRect.offsetMin = new Vector2(28f, 20f);
             dialogueTextRect.offsetMax = new Vector2(-28f, -62f);
+
+            speakerText = CreateTextRegion("SpeakerName", 28);
+            footerText = CreateTextRegion("ContinueHint", 20);
 
             CreatePortraitSlot();
 
             choiceRow = new GameObject("ChoiceRow", typeof(RectTransform));
             choiceRow.transform.SetParent(panel.transform, false);
             RectTransform choiceRect = choiceRow.GetComponent<RectTransform>();
-            choiceRect.anchorMin = new Vector2(0.48f, 0f);
-            choiceRect.anchorMax = new Vector2(0.98f, 0f);
+            choiceRect.anchorMin = new Vector2(1f, 0f);
+            choiceRect.anchorMax = new Vector2(1f, 0f);
             choiceRect.pivot = new Vector2(1f, 0f);
-            choiceRect.anchoredPosition = new Vector2(0f, 14f);
+            choiceRect.anchoredPosition = new Vector2(-28f, 16f);
             choiceRect.sizeDelta = new Vector2(520f, 52f);
 
             confirmButton = CreateChoiceButton(choiceRow.transform, "ConfirmButton", new Vector2(-270f, 0f));
             cancelButton = CreateChoiceButton(choiceRow.transform, "CancelButton", Vector2.zero);
 
             panel.SetActive(false);
+        }
+
+        private UnityEngine.UI.Text CreateTextRegion(string name, int size)
+        {
+            var text = new GameObject(name, typeof(UnityEngine.UI.Text)).GetComponent<UnityEngine.UI.Text>();
+            text.transform.SetParent(panel.transform, false);
+            text.font = dialogueText.font; text.fontSize = size; text.color = Color.white;
+            text.alignment = TextAnchor.UpperLeft; text.raycastTarget = false;
+            text.horizontalOverflow = HorizontalWrapMode.Wrap;
+            text.verticalOverflow = VerticalWrapMode.Truncate;
+            return text;
         }
 
         /// <summary>초상화 영역은 Sprite가 있을 때만 활성화하며, 없을 때에는 빈 여백도 남기지 않습니다.</summary>
@@ -371,10 +496,10 @@ namespace ProjectLimitless.UI
             frame.color = new Color(0.14f, 0.19f, 0.28f, 1f);
             frame.raycastTarget = false;
             RectTransform frameRect = portraitRoot.GetComponent<RectTransform>();
-            frameRect.anchorMin = new Vector2(0f, 0.5f);
-            frameRect.anchorMax = new Vector2(0f, 0.5f);
-            frameRect.pivot = new Vector2(0f, 0.5f);
-            frameRect.anchoredPosition = new Vector2(20f, 0f);
+            frameRect.anchorMin = new Vector2(0f, 1f);
+            frameRect.anchorMax = new Vector2(0f, 1f);
+            frameRect.pivot = new Vector2(0f, 1f);
+            frameRect.anchoredPosition = new Vector2(20f, -16f);
             frameRect.sizeDelta = new Vector2(150f, 150f);
 
             GameObject imageObject = new GameObject("PortraitImage", typeof(Image));
@@ -396,7 +521,8 @@ namespace ProjectLimitless.UI
             bool hasPortrait = portrait != null;
             portraitImage.sprite = portrait;
             portraitRoot.SetActive(hasPortrait);
-            dialogueTextRect.offsetMin = new Vector2(hasPortrait ? 190f : 28f, 20f);
+            bodyViewport.offsetMin = new Vector2(hasPortrait ? 190f : 28f, 20f);
+            layoutDirty = true;
         }
 
         /// <summary>선택지 버튼의 공통 크기와 읽기 쉬운 글자 스타일을 구성합니다.</summary>

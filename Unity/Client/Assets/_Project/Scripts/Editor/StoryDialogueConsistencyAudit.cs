@@ -86,7 +86,7 @@ namespace ProjectLimitless.EditorTools
             Check(Voice(d).Clip==expected,"Clip "+key);
             var portrait=DialoguePortraitCatalog.GetPortrait(line.SpeakerId);
             Check(Portrait(d)==portrait && PortraitVisible(d)==(portrait!=null),"Portrait "+key);
-            Check(((Text)Field(d,"dialogueText")).text.StartsWith(line.SpeakerName+"\n"+line.Message+"\n"),"Runtime Subtitle "+key);
+            Check(((Text)Field(d,"dialogueText")).text==line.Message && ((Text)Field(d,"speakerText")).text==line.SpeakerName,"Runtime Subtitle "+key);
             if(line.IsPlayer)Check(Voice(d).Clip==null&&!Voice(d).IsPlaying&&!PortraitVisible(d)&&Portrait(d)==null,"Player Voice/Portrait/Cleanup NONE "+key);
         }
         static DialogueLine[] Factory(Type type,string method,params object[] args)

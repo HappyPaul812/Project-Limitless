@@ -72,7 +72,7 @@ namespace ProjectLimitless.EditorTools
             var voice=Voice(dialogue);
             var clip=Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog").Find(line.DialogueId,line.SpeakerId);
             Check(voice.Clip==(line.IsPlayer ? null : clip), "Runtime Clip " + line.DialogueId);
-            Check(((Text)Field(dialogue,"dialogueText")).text.StartsWith(line.SpeakerName+"\n"+line.Message+"\n"), "Subtitle/Speaker " + line.Message.Replace("\n", " / "));
+            Check(((Text)Field(dialogue,"dialogueText")).text==line.Message && ((Text)Field(dialogue,"speakerText")).text==line.SpeakerName, "Subtitle/Speaker " + line.Message.Replace("\n", " / "));
             var root=(GameObject)Field(dialogue,"portraitRoot"); var image=(Image)Field(dialogue,"portraitImage");
             if (line.IsPlayer)
                 Check(!voice.IsPlaying && voice.Clip==null && !root.activeSelf && image.sprite==null,"Player Voice0 Portrait0 / prior NPC cleanup");
