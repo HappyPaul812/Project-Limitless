@@ -1,5 +1,7 @@
 # Story Dialogue / Subtitle / Voice / Portrait 전수 감사
 
+> 최종 후속(2026-10-05):003/004 새 원본을 기존 Unity WAV/GUID/meta 그대로 반영, 사람 실제 Unity 의미/끝까지 재생 PASS. [최종 집중 QA](Main03_Supp003004_Regen_적용_QA.md). 확정 재생성2→0·005~007 기존PASS 유지.244 NEEDS_LISTENING 관리범위는 보존하며 이번 완료2행은 RUNTIME_LISTENING_PASS를 함께 기록한 기존 backlog 부분집합이다. 현재 미확인244개 또는 총249음성으로 해석하지 않는다. Catalog247 유지.
+
 > 최신 정정(2026-10-05): 사용자005~007 실제 Runtime 의미 청취 PASS 확정으로 기존 재생성3→0 해결. 새 전투 직전003 저음량/004 다른·부분 문장 원본 문제는 G. OTHER로 분류하고 재생성2건을 기록했다.244 NEEDS_LISTENING은 그대로이며 새2건은 그 부분집합이다. [후속 Voice·장문 UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md)에서 실제 Actor→Battle/3해상도550 assertions PASS + PCM2건를 확인했다. 아래 표와 최초 음성 불일치3건은 최초 감사 시점 이력이며 현재 Matrix/전달CSV를 정본으로 사용한다.
 
 2026-10-05 LOCAL Source of Truth. 문서화 → 중앙 Runtime 수정 → 격리 PlayUnfocused 검증 순서로 진행했다. **Player 화자/Portrait 수정은 PASS, 음성 의미 정합성은 미완료다.** 사용자 청취로 태온 첫 만남 3개 불일치를 확인했고 나머지 244개는 NEEDS_LISTENING이다. 기술 연결 PASS를 실제 발화 PASS로 해석하지 않는다.

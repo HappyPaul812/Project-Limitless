@@ -1,5 +1,7 @@
 # Main03 후속 Voice·장문 Dialogue Layout 적용 계획과 QA
 
+> 후속 완료(2026-10-05):003/004 새 원본 Unity 반영·사용자 Runtime 의미/끝까지 재생 PASS, 확정 재생성2→0. [최종 적용 QA](Main03_Supp003004_Regen_적용_QA.md) 참조. 아래 원본 결함/재생성2는 교체 전 이력이며 장문 UI 정책과 검증은 유지한다.
+
 2026-10-05 LOCAL 기준. 문서화 → 최소 구현 → 백그라운드 검증. 사용자 이번 요청으로005/006/007 실제 Runtime 의미 청취 PASS를 확정했고 기존 TTS_REGEN_REQUIRED3→0으로 정리했다. 세 WAV/GUID/Catalog는 다시 변경하지 않는다. 나머지244 NEEDS_LISTENING은 유지한다.
 
 ## 후속 Voice 조사

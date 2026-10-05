@@ -1,5 +1,13 @@
 # Project-Limitless 현재 개발 상태
 
+## 태온 후속003/004 Unity 반영·최종 사람 Runtime PASS (2026-10-05)
+
+- 문서화→기존 WAV2개 전체바이트 교체→격리 검증. 입력 `Limitless_TTS_Regen_Main03_Taeon_Supp003_004/`·[적용/집중 QA](Main03_Supp003004_Regen_적용_QA.md).003 0.96초/RMS−19.73dBFS·004 4.36초/RMS−18.95dBFS, Unity PCM 모든 샘플 원본과 오차0. 기존 GUID/meta/Import/Catalog/Registry/Story/게임 C# 유지.
+- METADATA_PASS·원본 USER_LISTENING_PASS·실제 Unity **RUNTIME_LISTENING_PASS** 모두확정. 사용자 “003·004 모두 의미 일치·끝까지 재생 PASS” 답변. **확정 TTS_REGEN_REQUIRED2→0**,005~007 기존 해결3→0 유지. NEEDS_LISTENING244 관리범위 유지(이번 해결2건은 원래 그부분집합이며 완료 flag 추가, 미확인 전체244라는 뜻 아님). 다른 음성 청취/재생성0.
+- 무음83assertions/실제재생88assertions PASS·각 PCM측정2·FAIL0. 실제005→Player→006→Player→007→003→004→Battle, 끝까지 대기후 수동Next·자동발화절단0·Player Voice0/Portrait0·태온복원·현재UI 원문/Portrait/Footer 비중첩·Battle 잔류0. 명시적 조기Next는 기존skip정책대로 정리하며 Timing/Quest/Save 수정0.
+- Compile Error0/최종 Console Error0·Warning0, 기존 CS0618 2건 재컴파일 이력 보존.331 Matrix/Catalog247·Missing0/중복0/Speaker·Manifest본문 mismatch0. 보호3041중 기존변경은 WAV2뿐·다른WAV/meta/005~007/Catalog/Mixer/Save/Settings/Scene/Packages/사용자419Git항목(새Source4포함)보존. clean Bootstrap EditMode·격리 설정복원·포커스전환없음.
+- 다음 권장: 기존244청취 관리범위에서 이미PASS한003/004를 구분하며 나머지 원본을 별도 순서로 청취. 이번2건 추가TTS 필요없음. 직접변경만 커밋·GitHub Push 없음. 반영/집중 QA commit `1f9fa8f`, 최종 문서는 별도 Docs commit. 아래는 이전 이력이다.
+
 ## 태온 후속 Voice 원본 결함 확정·장문 Dialogue 수정 완료 (2026-10-05)
 
 - 문서화→공통 Presenter 최소 수정→백그라운드 검증. [적용 계획/Voice·UI QA](Main03_FollowupVoice_DialogueLayout_계획_QA.md). 사용자005/006/007 실제 Runtime 의미 청취 PASS로 기존 TTS_REGEN_REQUIRED3→0 해결. 세 WAV 재수정 없음. 새 전투 전003/004 두 줄 모두 문제라는 추가 확인을 반영했다.

@@ -1,4 +1,1 @@
 ﻿dialogue_id,speaker_id,voice_id,expected_text,heard_text,wav_file,reason,evidence,action
-main03_taeon_supp_003,companion_taeon,Gacrux,옵니다.,,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav,"G. OTHER: source RMS -61.60 dBFS / peak -39.04 dBFS, 1.10 seconds; user reports inaudible. Runtime correctly loads and plays full clip; no automatic early Battle cut. Semantic source words unconfirmed.",USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음
-main03_taeon_supp_004,companion_taeon,Gacrux,"제가 앞을 막겠습니다.
-뒤를 부탁드리겠습니다.",,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav,"G. OTHER: user confirms original WAV speaks a different sentence or only part, exact heard words not supplied. Runtime loads and plays full 1.65-second clip; no automatic early Battle cut. Expected full two sentences must be supplied in replacement.",USER_LISTENING 2026-10-05,올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음
