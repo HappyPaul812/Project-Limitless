@@ -1,5 +1,5 @@
 {
-  "scope": "Previous005/006/007/003/004 source+Runtime semantic PASS preserved. Entire Main03 remaining9 pages audited:7voices/2Player silent. All7 voice Runtime played, semantic user replay not heard;012 low level REGEN_REQUIRED. Original244 backlog scope preserved.",
+  "scope": "Five previous semantic PASS preserved. 008 WRONG_AUDIO_CONTENT confirmed,012 low level separate: REGEN_REQUIRED2; remaining6 semantic pending. Original244 management markers preserved.",
   "method": "SEPARATE_USER_LISTENING_AND_RUNTIME_PLAYBACK_AUDIT",
   "results": [
     {
@@ -59,14 +59,29 @@
     },
     {
       "dialogue_id": "main03_taeon_supp_008",
-      "status": "NEEDS_LISTENING",
-      "heard_text": "",
-      "tts_regen_required": false,
+      "status": "NEEDS_LISTENING;WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH",
+      "heard_text": "그냥 돌아다니는 것 같지만… 계열",
+      "tts_regen_required": true,
       "runtime_playback_pass": true,
-      "semantic_listening_required": true,
+      "semantic_listening_required": false,
       "source_rms_db": -21.62883034237892,
       "source_peak_db": -4.066298189595134,
-      "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. 008 prior user silence report not reproduced under isolated unmuted routing; root cause unresolved, source content needs listening."
+      "reason": "User confirmed direct current WAV and Runtime006-family speech instead of 역시 이상합니다. Case B confirmed; live source008 not006; prior Runtime all54000 PCM samples equal WAV/max error0. Mapping preserved. 012 low level separate.",
+      "source_heard_text": "그냥 돌아다니는 것 같지만… 계열",
+      "runtime_heard_text": "그냥 돌아다니는 것 같지만… 계열",
+      "source_user_listening_pass": false,
+      "runtime_listening_pass": false,
+      "previous_result_before_008_source_confirmation": {
+        "dialogue_id": "main03_taeon_supp_008",
+        "status": "NEEDS_LISTENING",
+        "heard_text": "",
+        "tts_regen_required": false,
+        "runtime_playback_pass": true,
+        "semantic_listening_required": true,
+        "source_rms_db": -21.62883034237892,
+        "source_peak_db": -4.066298189595134,
+        "reason": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. 008 prior user silence report not reproduced under isolated unmuted routing; root cause unresolved, source content needs listening."
+      }
     },
     {
       "dialogue_id": "main03_taeon_supp_009",

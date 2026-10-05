@@ -1,5 +1,5 @@
-﻿dialogue_id,speaker,runtime_text,manifest_text,current_wav,problem_type,output_filename,voice_design,regen_required,reason
-main03_taeon_supp_008,companion_taeon,역시 이상합니다.,역시 이상합니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,USER_LISTENING_REQUIRED,main03_taeon_supp_008.wav,Taeon / Gacrux / existing Taeon style,NO_PENDING_LISTENING,Verify current full spoken words first; reuse if correct. No forced regeneration based on duration or unheard content.
+dialogue_id,speaker,runtime_text,manifest_text,current_wav,problem_type,output_filename,voice_design,regen_required,reason
+main03_taeon_supp_008,companion_taeon,역시 이상합니다.,역시 이상합니다.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,main03_taeon_supp_008.wav,Taeon / Gacrux / existing Taeon style,YES,Direct WAV and Runtime user heard 그냥 돌아다니는 것 같지만… 계열. Expected 역시 이상합니다. Case B; mapping intact;012 separate.
 main03_taeon_supp_009,companion_taeon,"네.
 싸우는 동안에도 몇 번이나
 그쪽으로 움직이지 않으려고 했어요.","네.

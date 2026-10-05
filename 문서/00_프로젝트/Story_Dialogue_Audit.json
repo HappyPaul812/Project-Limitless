@@ -28,6 +28,8 @@
       "NEEDS_LISTENING": 244,
       "OK": 87,
       "RUNTIME_LISTENING_PASS": 2,
+      "WRONG_AUDIO_CONTENT": 1,
+      "RUNTIME_SEMANTIC_MISMATCH": 1,
       "SOURCE_LOW_LEVEL_AUDIO": 1
     },
     "catalog_total": 247,
@@ -65,6 +67,7 @@
     "player_portrait_display": 0,
     "branch_collisions": {},
     "tts_regen_required": [
+      "main03_taeon_supp_008",
       "main03_taeon_supp_012"
     ],
     "portrait_definitions": {
@@ -2138,7 +2141,7 @@
       "runtime_speaker_display_name": "태온",
       "runtime_subtitle_text": "역시 이상합니다.",
       "spoken_text": "역시 이상합니다.",
-      "heard_text": "",
+      "heard_text": "그냥 돌아다니는 것 같지만… 계열",
       "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "역시 이상합니다.",
@@ -2155,7 +2158,7 @@
       "runtime_listening_pass": false,
       "runtime_playback_pass": true,
       "source_rms_db": -21.62883034237892,
-      "semantic_listening_required": true,
+      "semantic_listening_required": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
@@ -2164,8 +2167,8 @@
         "channels": 1,
         "sha256": "a16d378060acc7ff290a24bd65f28fb62548da49416eada089bae144c6d7042c"
       },
-      "audit_result": "NEEDS_LISTENING",
-      "notes": "METADATA_PASS and RUNTIME_PLAYBACK_PASS. User did not hear this replay; USER_LISTENING_REQUIRED, no semantic PASS invented. 008 prior user silence report not reproduced under isolated unmuted routing; root cause unresolved, source content needs listening."
+      "audit_result": "NEEDS_LISTENING;WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH",
+      "notes": "User confirmed direct current WAV and Runtime006-family speech instead of 역시 이상합니다. Case B confirmed; live source008 not006; prior Runtime all54000 PCM samples equal WAV/max error0. Mapping preserved. 012 low level separate."
     },
     {
       "main": 3,

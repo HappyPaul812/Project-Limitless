@@ -1,5 +1,5 @@
-﻿order,sequence,sequence_index,dialogue_id,speaker,runtime_text,voice_expected,manifest_entry,catalog_entry,wav,clip_loaded,runtime_played,duration,rms_db,peak_db,result,required_action
-1,AfterBattleConversation,0,main03_taeon_supp_008,companion_taeon,역시 이상합니다.,YES,Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,StoryVoiceCatalog / 16a05ac1b6d319545a8f9113e2bd9aba,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,YES,YES,2.25,-21.62883034237892,-4.066298189595134,METADATA_PASS;RUNTIME_PLAYBACK_PASS;USER_LISTENING_REQUIRED;USER_REPORTED_SILENCE_NOT_REPRODUCED,USER_LISTENING_REQUIRED
+order,sequence,sequence_index,dialogue_id,speaker,runtime_text,voice_expected,manifest_entry,catalog_entry,wav,clip_loaded,runtime_played,duration,rms_db,peak_db,result,required_action
+1,AfterBattleConversation,0,main03_taeon_supp_008,companion_taeon,역시 이상합니다.,YES,Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,StoryVoiceCatalog / 16a05ac1b6d319545a8f9113e2bd9aba,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,YES,YES,2.25,-21.62883034237892,-4.066298189595134,METADATA_PASS;RUNTIME_PLAYBACK_PASS;WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,TTS_REGEN_REQUIRED: 역시 이상합니다. / Gacrux; preserve mapping
 2,AfterBattleConversation,1,NONE,player,방금 몬스터들도 같은 방향을 피했습니까?,NO,N/A,N/A,NONE,N/A,NO_EXPECTED,,,,PLAYER_SILENT_EXPECTED,NONE
 3,AfterBattleConversation,2,main03_taeon_supp_009,companion_taeon,"네.
 싸우는 동안에도 몇 번이나
