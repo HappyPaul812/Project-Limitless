@@ -27,7 +27,12 @@ namespace ProjectLimitless.UI
         }
 
         public static Sprite GetPortrait(string speakerId)
-            => TryGetDefinition(speakerId, out DialoguePortraitDefinition definition) ? definition.Portrait : null;
+        {
+            // Player의 고정 Portrait는 없습니다. 정의 Asset이 실수로 생겨도 중앙 조회에서
+            // 차단하여 NPC→Player 때 이전 Sprite와 전용 여백이 모두 사라지게 합니다.
+            if (speakerId == DialogueLine.PlayerSpeakerId) return null;
+            return TryGetDefinition(speakerId, out DialoguePortraitDefinition definition) ? definition.Portrait : null;
+        }
 
         private static void EnsureLoaded()
         {

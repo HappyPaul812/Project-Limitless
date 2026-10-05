@@ -13,17 +13,46 @@ namespace ProjectLimitless.UI
     /// <summary>연속 대화 한 쪽의 화자 ID·표시 이름·본문을 함께 보관합니다.</summary>
     public sealed class DialogueLine
     {
+        public const string PlayerSpeakerId = "player";
+
         public DialogueLine(string speakerId, string speakerName, string message, string dialogueId = null)
         {
-            SpeakerId = speakerId ?? string.Empty;
-            SpeakerName = speakerName ?? string.Empty;
-            Message = message ?? string.Empty;
+            speakerId = speakerId ?? string.Empty;
+            speakerName = speakerName ?? string.Empty;
+            message = message ?? string.Empty;
+            // Main03의 구형 페이지는 화자를 본문 첫 줄에 넣고 모든 ID를 태온으로 전달했습니다.
+            // 이 호환 처리는 한 곳에서 실제 화자를 복원하며 발화 본문이나 페이지 순서는 바꾸지 않습니다.
+            if (speakerName == "대화" && message.StartsWith("플레이어\n", StringComparison.Ordinal))
+            {
+                speakerId = PlayerSpeakerId;
+                speakerName = "플레이어";
+                message = message.Substring("플레이어\n".Length);
+            }
+            else if (speakerName == "대화" && message.StartsWith("태온\n", StringComparison.Ordinal))
+            {
+                speakerId = DialoguePortraitCatalog.TaeonId;
+                speakerName = "태온";
+                message = message.Substring("태온\n".Length);
+            }
+            // 이름이 바뀌는 기존 무음 Player 페이지도 같은 stable 화자 규칙을 사용합니다.
+            // 정식 NPC ID가 있으면 Player가 NPC와 같은 이름을 골랐더라도 NPC 화자는 보존합니다.
+            bool playerName = speakerName == "플레이어" ||
+                (!string.IsNullOrWhiteSpace(GameSessionData.PlayerName) && speakerName == GameSessionData.PlayerName);
+            if (speakerId == PlayerSpeakerId || (string.IsNullOrWhiteSpace(speakerId) && playerName))
+            {
+                speakerId = PlayerSpeakerId;
+                speakerName = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
+            }
+            SpeakerId = speakerId;
+            SpeakerName = speakerName;
+            Message = message;
             DialogueId = dialogueId ?? string.Empty;
         }
 
         public string SpeakerId { get; }
         public string SpeakerName { get; }
         public string Message { get; }
+        public bool IsPlayer => SpeakerId == PlayerSpeakerId;
         // 제작 manifest의 안정 ID입니다. 음성이 없는 기존 대사는 빈 값이며 Save에는 기록하지 않습니다.
         public string DialogueId { get; }
     }
@@ -99,8 +128,9 @@ namespace ProjectLimitless.UI
         {
             ClearSequence();
             if (!WorldModalState.TryAcquire(this)) return;
-            ApplyPortrait(speakerId);
-            dialogueText.text = $"{speaker}\n{message}\n\n[Esc 또는 게임패드 B: 닫기]";
+            var line = new DialogueLine(speakerId, speaker, message);
+            ApplyPortrait(line.SpeakerId);
+            dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[Esc 또는 게임패드 B: 닫기]";
             choiceRow.SetActive(false);
             panel.SetActive(true);
             panel.transform.SetAsLastSibling();
@@ -167,8 +197,9 @@ namespace ProjectLimitless.UI
         {
             if (!WorldModalState.TryAcquire(this)) return;
             ClearSequence();
-            ApplyPortrait(speakerId);
-            dialogueText.text = $"{speaker}\n{message}";
+            var line = new DialogueLine(speakerId, speaker, message);
+            ApplyPortrait(line.SpeakerId);
+            dialogueText.text = $"{line.SpeakerName}\n{line.Message}";
             choiceRow.SetActive(true);
             ConfigureButton(confirmButton, confirmText, () =>
             {
@@ -196,8 +227,9 @@ namespace ProjectLimitless.UI
         private void RefreshSequenceText()
         {
             DialogueLine line = sequenceLines[sequencePageIndex];
-            // Play는 이전 음성을 먼저 중지합니다. ID/화자/Clip이 없으면 자막만 유지하며 수동 Next를 기다립니다.
-            voicePlayback.Play(voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
+            // 무음/Player도 Play(null)로 이전 Clip을 즉시 정리합니다. 잘못 등록된 Player ID나
+            // 직전 NPC의 음성을 fallback으로 쓰지 않으며 자막은 기존 수동 Next로 진행합니다.
+            voicePlayback.Play(!line.IsPlayer && voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
             ApplyPortrait(line.SpeakerId);
             dialogueText.text = $"{line.SpeakerName}\n{line.Message}\n\n[E/F/Enter/Space 또는 게임패드 A: 계속]  [Esc 또는 B: 닫기]";
         }
