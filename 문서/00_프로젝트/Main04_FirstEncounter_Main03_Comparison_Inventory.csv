@@ -1,0 +1,37 @@
+﻿dialogue_id,wav_filename,unity_asset_path,guid,sha256,file_size,duration,rms_dbfs,peak_dbfs,pcm_sha256,sample_rate,channels,sample_width,catalog_reference,catalog_speaker
+main03_taeon_supp_001,main03_taeon_supp_001.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav,b05384306c5fa854dbc912630b330974,ea895d4960cba09021d863b7349370fdb4ade354b53fc98b94a53c7f12722f07,235244,4.9,-20.20931377233017,-1.4942795155277198,2dfc385b18dc716e38999c71ce0c308a668acf196512c5f12d60c880dfc25d6f,24000,1,2,"- id: main03_taeon_supp_001
+    clip: {fileID: 8300000, guid: b05384306c5fa854dbc912630b330974, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_002,main03_taeon_supp_002.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav,09e41a7b9fed74348b429c7c07a813f1,45a20c2e28f54151c4385867cd5753a079f7d71671f1a5b62abf99412643324e,189164,3.94,-23.582771135370507,-5.818337447072643,7c86fa6ce7c638c140419aed391462f994e8860f2d55e349555a5015ee6c496e,24000,1,2,"- id: main03_taeon_supp_002
+    clip: {fileID: 8300000, guid: 09e41a7b9fed74348b429c7c07a813f1, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_003,main03_taeon_supp_003.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav,9e9daa2d47a707049a7c0c73b5921ae4,63a12b7b026195eb49b336d17653d05e6b4e4d6bc5a0cff6313bf2ec4dbb2bbe,52144,0.96,-19.73445692226855,-3.2904772218124974,bdf1803b91b60149480a059ead9faca8cc520e4accd049f1b2c03d0d14886b52,24000,1,2,"- id: main03_taeon_supp_003
+    clip: {fileID: 8300000, guid: 9e9daa2d47a707049a7c0c73b5921ae4, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_004,main03_taeon_supp_004.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav,574895e9a2b5b3b45a251673fd085670,b77ac1bf874b4d9966e08c60570f4767dbf43797a1e456ca0b7af1ca79da43e6,215344,4.36,-18.95334614823125,-0.09702622919592284,d96523f358781df7cee744629354ca8ad4db3b464a8a927b4059063506d9e656,24000,1,2,"- id: main03_taeon_supp_004
+    clip: {fileID: 8300000, guid: 574895e9a2b5b3b45a251673fd085670, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_005,main03_taeon_supp_005.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav,0dc9970aa869f5645add7545bc7696ca,381f156dc555e34ecf474d91017f4d4e83ddb31192a4f7884823c302436d780d,199984,4.04,-22.845783791099628,-2.61583844994878,87f10b3ef6af5fe7ccb838ac0538c01ab304578c262e8011a664f27a90f783a7,24000,1,2,"- id: main03_taeon_supp_005
+    clip: {fileID: 8300000, guid: 0dc9970aa869f5645add7545bc7696ca, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_006,main03_taeon_supp_006.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav,86cecb5f27e225f4f9a992b37e2e17e9,deb234f78c9211cc937a3f8e07f070bfa26619cf021f29fa1793440885ac7429,349744,7.16,-18.99628273920968,-2.5990181561532175,bc0e3fb023ae7919ede65fad84469447d30780d58d922a49dccc026b25fbe5f9,24000,1,2,"- id: main03_taeon_supp_006
+    clip: {fileID: 8300000, guid: 86cecb5f27e225f4f9a992b37e2e17e9, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_007,main03_taeon_supp_007.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav,50d6684884c921344a0d2630b2b07e66,b457f124e1ffad972713a56bfe3081b0fae714920a23c76185721ad7ce0e3ef1,319024,6.52,-19.775244397004336,-1.9287290904782082,707911049a99899405e7b98fa55b282e18562ca114dee02e423766f2949e3ed6,24000,1,2,"- id: main03_taeon_supp_007
+    clip: {fileID: 8300000, guid: 50d6684884c921344a0d2630b2b07e66, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_008,main03_taeon_supp_008.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav,16a05ac1b6d319545a8f9113e2bd9aba,c2c5b6d7f79bd8db5c0d72469d4e333dba0d44c782ef7ebc4d0cd8cf99f40cbc,90594,1.76,-19.481209818124295,-3.907319844880494,d2ebd68303289912ba3b0cc26d4cf126b7871a0b7f628dece05de7dc60ddd85d,24000,1,2,"- id: main03_taeon_supp_008
+    clip: {fileID: 8300000, guid: 16a05ac1b6d319545a8f9113e2bd9aba, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_009,main03_taeon_supp_009.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav,dde64e7754b8a3c4c8a39ff54113e2a4,cda84965cea4b83d1cfd5d68cc69684b82a298420a540c28269fe7046090b109,269154,5.48,-14.862104463217346,-1.4496880825009395,d88ca131fc3f00cc15349203dfef2fabb8d46caa6050a63b87344445159f9f54,24000,1,2,"- id: main03_taeon_supp_009
+    clip: {fileID: 8300000, guid: dde64e7754b8a3c4c8a39ff54113e2a4, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_010,main03_taeon_supp_010.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav,df90274da1dfe6349a613703673baa14,23a88290987323e745915baca47d17caaa1715608109500743ab4ff5eb20f52c,165474,3.32,-16.874855894325748,-3.206484199440607,7233d2c15b0a0ae6f80264af75201df6d82d16a4f5616bef144a7633071df829,24000,1,2,"- id: main03_taeon_supp_010
+    clip: {fileID: 8300000, guid: df90274da1dfe6349a613703673baa14, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_011,main03_taeon_supp_011.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav,e6098de83891e8d4a848af3eb519d63f,f5e62f5c2e84ee7d81ccf8e169e23cc2e5078efbb6b33847b08e940d129fc54c,175074,3.52,-19.900656887201972,-3.5474423987770325,466e8abb62f656ce59a14ba7c30f8c9b763e2178173c211fe61cfb191c634cd6,24000,1,2,"- id: main03_taeon_supp_011
+    clip: {fileID: 8300000, guid: e6098de83891e8d4a848af3eb519d63f, type: 3}
+    speakerId: companion_taeon",companion_taeon
+main03_taeon_supp_012,main03_taeon_supp_012.wav,Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav,997f362bba765564c811ef7d9d7aa0c3,2a08dd57aecea6db4bebb6ee6ebd0b08569beca951fa7575300760eba324bd9e,378544,7.76,-16.162878976834797,-0.9630535881586035,cf44457009850144e3d0328bbae60144766692ebc87edcb453cacbdfb1df4bfe,24000,1,2,"- id: main03_taeon_supp_012
+    clip: {fileID: 8300000, guid: 997f362bba765564c811ef7d9d7aa0c3, type: 3}
+    speakerId: companion_taeon",companion_taeon
