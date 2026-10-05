@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-05 Hearing v3 새160Frame QA: **READY10/BLOCKED0·전체READY40/BLOCKED10**. Mobility 포함다른40종/기존READY30 보존. [최신QA](Hearing_RestoredV3Ten_QA.md). 백그라운드88PASS/0FAIL·최종Console Error0/Warning0.
+
 2026-10-05 Hearing v210종 원본 반영·새160Frame QA: READY0/BLOCKED_ART10, 전체 **READY30/BLOCKED20 유지**. Mobility 포함 다른40종 보존. [최신 QA](Hearing_RestoredV2Ten_QA.md).
 
 2026-10-05 Hearing 최종10종 원본 반영·새160Frame QA: READY0/BLOCKED_ART10, 전체 **READY30/BLOCKED20 유지**. Mobility 포함 다른40종 보존. [최신 QA](Hearing_RestoredFinal10_QA.md).
@@ -26,16 +28,16 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 
 | Gender | Path Stable ID | Job Stable ID | Appearance ID | Sprite Definition | Runtime Ready | Validation Status |
 |---|---|---|---|---|---|---|
-|Female|path.hearing|fighter|appearance.external.v1.hearing.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png|false|BLOCKED_ART|
-|Male|path.hearing|fighter|appearance.external.v1.hearing.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png|false|BLOCKED_ART|
-|Female|path.hearing|guardian|appearance.external.v1.hearing.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png|false|BLOCKED_ART|
-|Male|path.hearing|guardian|appearance.external.v1.hearing.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png|false|BLOCKED_ART|
-|Female|path.hearing|healer|appearance.external.v1.hearing.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png|false|BLOCKED_ART|
-|Male|path.hearing|healer|appearance.external.v1.hearing.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png|false|BLOCKED_ART|
-|Female|path.hearing|mage|appearance.external.v1.hearing.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png|false|BLOCKED_ART|
-|Male|path.hearing|mage|appearance.external.v1.hearing.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png|false|BLOCKED_ART|
-|Female|path.hearing|sharpshooter|appearance.external.v1.hearing.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png|false|BLOCKED_ART|
-|Male|path.hearing|sharpshooter|appearance.external.v1.hearing.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png|false|BLOCKED_ART|
+|Female|path.hearing|fighter|appearance.external.v1.hearing.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png|true|PASS|
+|Male|path.hearing|fighter|appearance.external.v1.hearing.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png|true|PASS|
+|Female|path.hearing|guardian|appearance.external.v1.hearing.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png|true|PASS|
+|Male|path.hearing|guardian|appearance.external.v1.hearing.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png|true|PASS|
+|Female|path.hearing|healer|appearance.external.v1.hearing.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png|true|PASS|
+|Male|path.hearing|healer|appearance.external.v1.hearing.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png|true|PASS|
+|Female|path.hearing|mage|appearance.external.v1.hearing.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png|true|PASS|
+|Male|path.hearing|mage|appearance.external.v1.hearing.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png|true|PASS|
+|Female|path.hearing|sharpshooter|appearance.external.v1.hearing.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png|true|PASS|
+|Male|path.hearing|sharpshooter|appearance.external.v1.hearing.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png|true|PASS|
 |Female|path.emotional-scar|fighter|appearance.external.v1.emotionalscar.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Female.png|true|PASS|
 |Male|path.emotional-scar|fighter|appearance.external.v1.emotionalscar.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Fighter_Male.png|true|PASS|
 |Female|path.emotional-scar|guardian|appearance.external.v1.emotionalscar.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/EmotionalScar/Heartscar_Guardian_Female.png|true|PASS|

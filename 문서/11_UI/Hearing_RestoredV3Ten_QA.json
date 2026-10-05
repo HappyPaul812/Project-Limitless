@@ -1,0 +1,3880 @@
+{
+  "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+  "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
+  "targets": 10,
+  "duplicate": 0,
+  "missing": 0,
+  "entries": [
+    {
+      "file": "Hearing_Fighter_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.fighter.female",
+      "gender": "Female",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Frame6/8/10 잔여선/조각 해소. 16Frame 검/머리/발/망토 윤곽과 귀장치·방향 정상.",
+      "sourceEntry": "Hearing_Fighter_Female.png",
+      "previousReason": "이전4/9 발밑선 해결,8은축소됐지만[60,121,65,122)5px 검은선잔존. 새Frame6 우측망토옆[124,110,125,113)3px 검은조각,10 머리/망토옆[23,74,24,75)1px 분리점. 머리/귀장치/검/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
+      "sha256": "c7deb2384da307ab0c9b93c1e529a2ef11bacf0203ee0646bdf8073320de6ff1",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8688,
+              "bbox": [
+                4,
+                3,
+                121,
+                125
+              ]
+            }
+          ],
+          "sha256": "2046b552581ed16af3ed9eb0b01456c1d24f3c4a358a8a2acc93b4475171141c",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            4,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8698,
+              "bbox": [
+                5,
+                3,
+                123,
+                125
+              ]
+            }
+          ],
+          "sha256": "bd84de1281b8ceb7764a0a8d05fd1643f25dea3c40c8dcd8919d2036f268e551",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            5,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8026,
+              "bbox": [
+                6,
+                7,
+                120,
+                124
+              ]
+            }
+          ],
+          "sha256": "bc5b82d34bd8159a2cc121a35555b11118e29ab8caf64385668a6243dca6ec46",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            5,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8390,
+              "bbox": [
+                6,
+                2,
+                122,
+                123
+              ]
+            }
+          ],
+          "sha256": "1ad2f4d2aaca902ee7322e8b1a650ab126827d4312aaa3577b5009a49025ae23",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            4,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8173,
+              "bbox": [
+                6,
+                9,
+                124,
+                122
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                46,
+                106,
+                47,
+                107
+              ]
+            }
+          ],
+          "sha256": "8a866de534315a11062552aee462e24f17e0acb7f81e0cdd6ed0ef3e68d8df3a",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 8461,
+              "bbox": [
+                3,
+                6,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "55b30073b865cc9a6537ccf8e762eaaac0e2d353fae6542e7d98313a47aeb709",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            4,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8417,
+              "bbox": [
+                4,
+                7,
+                123,
+                122
+              ]
+            }
+          ],
+          "sha256": "37d2e450ccd2f69dea38e759daeeb8a80c5f76adc8a7d97cca917ca94ddfd88f",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8551,
+              "bbox": [
+                4,
+                7,
+                125,
+                124
+              ]
+            }
+          ],
+          "sha256": "a8931a3a1efca2491780c51f95502ea513b415f4aded041af6db194da905fe46",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            6,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8308,
+              "bbox": [
+                8,
+                6,
+                121,
+                119
+              ]
+            }
+          ],
+          "sha256": "43a40f94aa9c2fc595b24399e0775f54f4f1e1e385e9a9ca8952050c0847e3e8",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            3,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 8961,
+              "bbox": [
+                5,
+                5,
+                124,
+                123
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                48,
+                104,
+                49,
+                105
+              ]
+            }
+          ],
+          "sha256": "3f75502f4485737602480a9b7c0dbb47db78bf0e21ba8ca656f0ed63d12e1ff6",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 9158,
+              "bbox": [
+                3,
+                3,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "4b7cbe4969bc17abd7e5c9d281b8503e29bfd2407a470154925c179182a146ff",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            6,
+            2,
+            121,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 8630,
+              "bbox": [
+                8,
+                3,
+                120,
+                122
+              ]
+            }
+          ],
+          "sha256": "38a8c632d12b22d90eaa8c6007d6e1ad174bf627349bbed0d6ea72af1884603f",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            7,
+            2,
+            120,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8029,
+              "bbox": [
+                9,
+                4,
+                119,
+                126
+              ]
+            }
+          ],
+          "sha256": "de1e3a86dcf06c4b37c5f0c203512df48445fccee099957ff792d8181bc81d4e",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            6,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8394,
+              "bbox": [
+                7,
+                4,
+                121,
+                124
+              ]
+            }
+          ],
+          "sha256": "f0f37a396cf92ccfa369bba51eefe0e6b7ecfde02d19c70e5f484522f2c3543f",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            3,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8538,
+              "bbox": [
+                4,
+                3,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "7cc68052fa489eb48de7436640aef311379d79fa5804b6a619c7fda137f72d64",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8147,
+              "bbox": [
+                6,
+                4,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "a45ba98d10b85fccbfaf6d176d682d81edc749a62c06c877b95123bdfb3b7d3d",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Fighter_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.fighter.male",
+      "gender": "Male",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Down1 검파츠와 Left/Right 발 아래 조각 해소. 16Frame 검 끝/머리/망토/발 완전.",
+      "sourceEntry": "Hearing_Fighter_Male.png",
+      "previousReason": "이전Left 큰발조각과Up13/15 머리위선 해소. Left4-6 발밑2-3px선 및5 우측[123,108,125,112)5px 조각잔존. 새Down1 우측[120,107,125,118)34px 빨간/검은검파츠, Right8-11 발아래[60,119,71,122)26px+[56,121,58,122)2px/[57,119,67,122)25px/[57,122,68,125)25px/[60,122,71,125)27px 살색/검은분리파츠.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
+      "sha256": "e5532a2688838729ecc1c387992eb1d6641972df9a53bdc9d6b5c30537dba409",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            2,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7826,
+              "bbox": [
+                7,
+                5,
+                125,
+                121
+              ]
+            }
+          ],
+          "sha256": "48607268c09c7a8d18b75525fc0dcf8beaf318fab044b10d46d6c8b5cc53b3bf",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            6,
+            116,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 7166,
+              "bbox": [
+                4,
+                8,
+                114,
+                118
+              ]
+            }
+          ],
+          "sha256": "6fce76cfc808c88990ecaaa98a4044f97cea8e7b2cc2eddb537baba854493eb5",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            2,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8471,
+              "bbox": [
+                2,
+                3,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "b6f191fd6dbf17f6e8dae5e7b50b43cbfabe2d5288e8788f3c9509548d3e9530",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8401,
+              "bbox": [
+                4,
+                4,
+                123,
+                124
+              ]
+            }
+          ],
+          "sha256": "105c6946042b8ee46fb18b7c24474cca617a1f74e55fd6b5d5396c7566debe6b",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            2,
+            2,
+            126,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7877,
+              "bbox": [
+                3,
+                5,
+                125,
+                125
+              ]
+            }
+          ],
+          "sha256": "3c35268ab0ca63da407cf378c760e720189739d6bbee7ed021ff7769702393ab",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 7267,
+              "bbox": [
+                3,
+                6,
+                123,
+                122
+              ]
+            }
+          ],
+          "sha256": "69bad0312c8241af2e378f01cb6d519a7a1df285310578e8d068df6cd90aa0ec",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            3,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7462,
+              "bbox": [
+                5,
+                4,
+                125,
+                120
+              ]
+            }
+          ],
+          "sha256": "e85d23bd1d032ec4d306de6014ed8d58f640d059c454a024a44d2bcf831b1bc4",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            2,
+            4,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7286,
+              "bbox": [
+                4,
+                5,
+                122,
+                123
+              ]
+            }
+          ],
+          "sha256": "2cf72cb73f3e07c7bfe95605ecf5196d493927471e2aaf02690ff8afd7dd7ab9",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            6,
+            2,
+            121,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 6855,
+              "bbox": [
+                11,
+                6,
+                119,
+                118
+              ]
+            }
+          ],
+          "sha256": "522cedacdee272c661027be7bc045d8b1950573be6aa96d285f5bc89b090a1e4",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7007,
+              "bbox": [
+                7,
+                6,
+                122,
+                118
+              ]
+            }
+          ],
+          "sha256": "bcd770d3dd5a5b84d5cce9831c71c9a1bfe91d97a0f89db6776472fdfa99de83",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            3,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7581,
+              "bbox": [
+                5,
+                6,
+                120,
+                121
+              ]
+            }
+          ],
+          "sha256": "9824e1d7c03ed83d79c47594e42d466dc638d5ff3fca6b455d75ee458ebd8678",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7457,
+              "bbox": [
+                4,
+                5,
+                122,
+                122
+              ]
+            }
+          ],
+          "sha256": "64e65b712fd55b7b416aceaaaf21969ff5e4e4f18e18815736b3db6c0b516758",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            4,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7908,
+              "bbox": [
+                5,
+                5,
+                123,
+                125
+              ]
+            }
+          ],
+          "sha256": "fea7089b7af411d4005040eb35ca988d8261575225893249e47b12ee9a729709",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            3,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7882,
+              "bbox": [
+                4,
+                5,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "dc45b394c399ca9cdb8453ad93368c387f7a416104b1707ec35bfdb21d5bd4cc",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            5,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8486,
+              "bbox": [
+                7,
+                5,
+                123,
+                125
+              ]
+            }
+          ],
+          "sha256": "67d0ca167add482272c212f00899fec736a2e8cf19c2063f5b311fbfd2e2eba3",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8158,
+              "bbox": [
+                5,
+                5,
+                122,
+                126
+              ]
+            }
+          ],
+          "sha256": "87f721635158cac19debe202fa30d1ee863f05bfa7a1ad93c23bdac6a7c0e202",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Guardian_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.guardian.female",
+      "gender": "Female",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Down1/2·Left6·Right9·Up14 셀 옆 검파츠/발 조각 해소. 16Frame 방패/검/포니테일/귀장치 정상.",
+      "sourceEntry": "Hearing_Guardian_Female.png",
+      "previousReason": "이전Left4/5 조각해소. Down1/2 우측[122,109,124,116)10px/[123,108,125,116)13px,Left6[123,102,125,107)6px 검은파츠잔존. Right9 좌측[3,101,7,113)35px 검끝조각과발밑[59,118,74,121)32px. 새Up14 좌측[6,85,10,97)34px 검파츠.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png",
+      "sha256": "1717d684dd8eea03e159cd987ec301690b318b112127b7d9bd50c046c44d6f80",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8250,
+              "bbox": [
+                4,
+                3,
+                121,
+                122
+              ]
+            }
+          ],
+          "sha256": "55bd8d9f33b22a78097dcfd401759c4030cc09e344741f7a65e2e0d1cd501271",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            2,
+            119,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8096,
+              "bbox": [
+                4,
+                3,
+                117,
+                122
+              ]
+            }
+          ],
+          "sha256": "b61b3f9f3554101694dc47f402b6e5bfa33c61229aaea00d5cc8f13842882917",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            7,
+            2,
+            120,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7577,
+              "bbox": [
+                9,
+                8,
+                119,
+                122
+              ]
+            }
+          ],
+          "sha256": "fb9d8a8fdd4950b3bf3904e1f77dd325c3632de4821b107ee3c8f35e8feb9cfd",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            4,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8514,
+              "bbox": [
+                5,
+                3,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "c26d270be182b58cc8f95e3879171fafc0fdc2f31ecac411af9f3f1fb52c1878",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8409,
+              "bbox": [
+                5,
+                5,
+                122,
+                120
+              ]
+            }
+          ],
+          "sha256": "ce6356fc6736334ecbf8eed2fa4b8009df4eaf88b78aadf0e53af7c11e051eb9",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            4,
+            125,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8193,
+              "bbox": [
+                5,
+                6,
+                123,
+                120
+              ]
+            }
+          ],
+          "sha256": "ae892b9a783455fe742f0f484d47cf3fb899f426825271e9b5a5ca5f41ce02a9",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            3,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 8485,
+              "bbox": [
+                6,
+                6,
+                125,
+                121
+              ]
+            }
+          ],
+          "sha256": "226ce08be4c3ac650279c57514500230e7ac4544a4b298d94a0b555327ec58b8",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            2,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8549,
+              "bbox": [
+                3,
+                5,
+                123,
+                122
+              ]
+            }
+          ],
+          "sha256": "433b740958b421c9f8e262e5226b0c930f000af8a4b37ab20a2da4d1b4d5f186",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 8777,
+              "bbox": [
+                5,
+                4,
+                124,
+                120
+              ]
+            }
+          ],
+          "sha256": "966ab2962ac637be1d0607cc060c22c81aa2b6003c267fdedb3f0bb04c8c4b01",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            4,
+            6,
+            126,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 7903,
+              "bbox": [
+                15,
+                7,
+                124,
+                119
+              ]
+            }
+          ],
+          "sha256": "a3c63b7c75028460a7ffc72d6c5469b5513af98ef143b12c1d245e4d5cacc406",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            15,
+            8,
+            126,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 7396,
+              "bbox": [
+                17,
+                10,
+                125,
+                118
+              ]
+            }
+          ],
+          "sha256": "a08b507d9432c41ef69c7faf2df15929bb8f39449eacb7337ddf828bb1fabb07",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            5,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 8738,
+              "bbox": [
+                7,
+                5,
+                123,
+                121
+              ]
+            }
+          ],
+          "sha256": "7b8fbb07403fe866541bd4f352da7b0cf2eb22bdec58b79bf3d16d55fe570bb5",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            7,
+            2,
+            121,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7834,
+              "bbox": [
+                9,
+                8,
+                120,
+                125
+              ]
+            }
+          ],
+          "sha256": "413ec7a5ae2f39aaad4536fc232f64cb62c39366ea7542455b2b13fa1e8101a8",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7920,
+              "bbox": [
+                6,
+                6,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "3d9847c4ffe974aeb97eae41d306a1f07a311b7e7ab6ea02536f51f1eddbcb9e",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            10,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7588,
+              "bbox": [
+                15,
+                8,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "1cfe4d4c274b3ef02623cf7fd62179f8219b0d0fb9f702bfd510a65bca1d960f",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            10,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7736,
+              "bbox": [
+                13,
+                8,
+                123,
+                125
+              ]
+            }
+          ],
+          "sha256": "fe281a5caf28a7a3be89068d087c91235d213bda4a69651031f5e3b9340427c0",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Guardian_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.guardian.male",
+      "gender": "Male",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Right8/10 우측 분리 파츠 해소. 16Frame 무기/방패/머리/망토/귀장치 정상.",
+      "sourceEntry": "Hearing_Guardian_Male.png",
+      "previousReason": "이전Down1 조각해소. Right8 우측[123,81,125,87)10px 검은/금색절단파츠잔존. 새Right10 우측[124,82,125,85)3px 조각. 귀장치/머리/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png",
+      "sha256": "b760de9fc969832c271dc7b09f2d7dcc359e8aeb227e1cd4a5bdfdbe68b76d8a",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            2,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 8229,
+              "bbox": [
+                3,
+                5,
+                123,
+                120
+              ]
+            }
+          ],
+          "sha256": "8e87198eeb87ba48f5ffb40fc5700e1316a194a992f92d0c47dc0cccbc554293",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            2,
+            126,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8363,
+              "bbox": [
+                3,
+                4,
+                125,
+                123
+              ]
+            }
+          ],
+          "sha256": "711491c5ae0bcb4e0bbd0acf97b334afd3e4659c79da9390d6e7e797cb5899ad",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            2,
+            5,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 7733,
+              "bbox": [
+                5,
+                6,
+                123,
+                118
+              ]
+            }
+          ],
+          "sha256": "28cad1aed876f31270b26cabe30f7440ffcd71b0c9dea50f75950d3392d25189",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 8254,
+              "bbox": [
+                3,
+                4,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "b1070efa3630ff1e26bcfa0f91cee8facc51565bbe2db8de27683b3730f6f647",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            2,
+            3,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7695,
+              "bbox": [
+                4,
+                4,
+                124,
+                121
+              ]
+            }
+          ],
+          "sha256": "f0de1f692a416587850c803ecf3e9de8d59803bdd1ad56728601f09e1bd3aa7e",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            3,
+            126,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 7251,
+              "bbox": [
+                3,
+                4,
+                124,
+                118
+              ]
+            }
+          ],
+          "sha256": "d240bd7be91a27a6a3bb787bfe3bc58449aab8fb33bee262d2bbec1c165906dc",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            3,
+            4,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7710,
+              "bbox": [
+                5,
+                5,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "2a13dfc0de70116a7c92e5a62d18c6850f3e19469336f5052f31bee96127320f",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            2,
+            6,
+            126,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 7011,
+              "bbox": [
+                4,
+                8,
+                123,
+                120
+              ]
+            }
+          ],
+          "sha256": "ef498c0a0996060c9c3a592f550557d45c4dc7a448845cf65ebdbc2a5279eadf",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            3,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7444,
+              "bbox": [
+                3,
+                5,
+                122,
+                121
+              ]
+            }
+          ],
+          "sha256": "d133e47213dd1be6e19a553d49ef87efb221989266d142f74d63b6034abba4a4",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            6,
+            126,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 6960,
+              "bbox": [
+                2,
+                8,
+                124,
+                118
+              ]
+            }
+          ],
+          "sha256": "aaa432ec3b7c05785138047ffd2c563f306a14fb88a14b1d8f64e82e1c1162e1",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            5,
+            4,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 7111,
+              "bbox": [
+                7,
+                6,
+                125,
+                120
+              ]
+            }
+          ],
+          "sha256": "a5b2a4016673ac1f58c32458a26def8d9bc7a7a8b0165708c22e65a6fa92f1fc",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            2,
+            6,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 7197,
+              "bbox": [
+                3,
+                7,
+                124,
+                119
+              ]
+            }
+          ],
+          "sha256": "8075504b3b5d99707703a2a20e55a006d627f549768d0cc2e3c4258c8c6ef883",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8306,
+              "bbox": [
+                8,
+                3,
+                122,
+                122
+              ]
+            }
+          ],
+          "sha256": "abaa328bfdac56c75eeb4e31e194a218314e9c0ceed62216d5440939d1b1f3e4",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            10,
+            4,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7601,
+              "bbox": [
+                12,
+                6,
+                124,
+                123
+              ]
+            }
+          ],
+          "sha256": "66067fc58b7c3755340127e8b146c43d3824d45ee71b3b27fda13fe2830b9513",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8723,
+              "bbox": [
+                7,
+                3,
+                122,
+                123
+              ]
+            }
+          ],
+          "sha256": "3e6eb7a41437ba1970c7c28a5cba6d5f8b7ce2e082fa937d9a3f41acea3e85ef",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8463,
+              "bbox": [
+                5,
+                3,
+                123,
+                124
+              ]
+            }
+          ],
+          "sha256": "330b90732de2907b83854316c1a30a19d20680c1776cdb4258b8e787020083e7",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Healer_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.healer.female",
+      "gender": "Female",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 지팡이/장식 잘린 파츠와 머리 위 선 해소. 16Frame 지팡이 꼭대기/귀장치/발 정상.",
+      "sourceEntry": "Hearing_Healer_Female.png",
+      "previousReason": "이전큰발조각과Up13 상단선해소. Frame0 우측[122,36,125,52)37px 지팡이잘린파츠,4[121,38,125,53)38px 및머리위[66,7,71,8)5px 검은선,7 좌측[3,63,7,79)43px 잘린장식. Right9/10/11 좌측지팡이파츠[3,34,7,52)47px/[3,33,10,54)91px/[3,29,13,55)184px. 머리위선9[39,3,47,5)13px/11[46,5,53,7)11px/Up15[87,3,93,5)9px. Up15좌측[5,28,8,39)24px조각. 정상음파효과자체는실패로세지않음.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
+      "sha256": "43b5f180d18d140f044a5b79527ad94359bda3fc632e465c88391f0b3ade926c",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            6,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9309,
+              "bbox": [
+                8,
+                5,
+                121,
+                124
+              ]
+            },
+            {
+              "pixels": 2,
+              "bbox": [
+                47,
+                115,
+                48,
+                117
+              ]
+            }
+          ],
+          "sha256": "9fee1ab5d1e7237aae8eca63d4cb8a967fb4dbbbc0ef7eef8995010db74a94db",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 9322,
+              "bbox": [
+                11,
+                3,
+                124,
+                123
+              ]
+            }
+          ],
+          "sha256": "874f9f738abc05de995cd04faad882f4c6468ba34546cc6e35bcba61cf0f31be",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9831,
+              "bbox": [
+                4,
+                3,
+                122,
+                124
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                71,
+                113,
+                72,
+                114
+              ]
+            }
+          ],
+          "sha256": "fe29d5c7774fbde5dc503af8f33f8df24285d0dcebbdbac25c1da1ff049e970e",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            3,
+            2,
+            124,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 9480,
+              "bbox": [
+                6,
+                3,
+                121,
+                122
+              ]
+            }
+          ],
+          "sha256": "4c45be2f42f1885a0f31e0cdb887f918e84199754c8c69762048c738ab0462e4",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            6,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8810,
+              "bbox": [
+                9,
+                3,
+                121,
+                122
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                43,
+                60,
+                44,
+                61
+              ]
+            }
+          ],
+          "sha256": "0b232b9db8d612323e89b16db904213691a699449a6fcd860b77ff1f02fe1495",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8864,
+              "bbox": [
+                6,
+                5,
+                121,
+                126
+              ]
+            }
+          ],
+          "sha256": "3adcc2ac939a46142f218ae3455dd6a9459030140c547609aa70c0664fe89c83",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8661,
+              "bbox": [
+                7,
+                7,
+                120,
+                125
+              ]
+            }
+          ],
+          "sha256": "d00723e1acc9ba59f1b6c560b0a2fde398eb90c98f70c732df0d90a0fcc8ab3b",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            7,
+            4,
+            120,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7841,
+              "bbox": [
+                9,
+                9,
+                117,
+                123
+              ]
+            }
+          ],
+          "sha256": "a479b8dbe8437f7d4e834f871201cbbd69be267a7da8afab09a311b4a7914a36",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            3,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 8099,
+              "bbox": [
+                7,
+                6,
+                122,
+                117
+              ]
+            }
+          ],
+          "sha256": "9246a99643ee12f5c4088c7562fcc41dba9d7b6509217c10a42b983f70d4e233",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 9268,
+              "bbox": [
+                3,
+                4,
+                125,
+                124
+              ]
+            }
+          ],
+          "sha256": "d62fdfd351d6a0d7df44bf06996bfa07765fb8bb8abf6368dcf37ea5e06d56dc",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8948,
+              "bbox": [
+                3,
+                6,
+                124,
+                122
+              ]
+            }
+          ],
+          "sha256": "ed06d4016f136205e4211aa716b65337d94f31a90bcaee0a26a815d0e11a22f8",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            7,
+            7,
+            120,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8273,
+              "bbox": [
+                9,
+                9,
+                119,
+                124
+              ]
+            }
+          ],
+          "sha256": "473b8a2093cc0ad98be04eeedac842f88b3c2cf69c6b039b2850d662d9ec4ba0",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            3,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8903,
+              "bbox": [
+                7,
+                5,
+                121,
+                124
+              ]
+            }
+          ],
+          "sha256": "9e601b98e31fa650cfec0711bcad84ef475e42360caca4c797bb24fb39faf153",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            10,
+            2,
+            117,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8319,
+              "bbox": [
+                11,
+                5,
+                116,
+                123
+              ]
+            }
+          ],
+          "sha256": "3b6ae92e24974a3c9661abc1712035feaaac279eb87196a23c1506d649de6748",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 7904,
+              "bbox": [
+                4,
+                7,
+                107,
+                120
+              ]
+            }
+          ],
+          "sha256": "2250f8fedb25e0b0d557022fda4c8b310d5eca3410672c20dc6d7a78a8addf5f",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            5,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8807,
+              "bbox": [
+                9,
+                5,
+                120,
+                123
+              ]
+            }
+          ],
+          "sha256": "a350eb88e4899cc06aa4613608beea3827fca8f9ebf02e50407092db00c81c43",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Healer_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.healer.male",
+      "gender": "Male",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Left/Right 지팡이 파츠·발밑 선/점 해소. 16Frame 정상 의도된 지팡이 발광만 유지.",
+      "sourceEntry": "Hearing_Healer_Male.png",
+      "previousReason": "이전0 우측큰파츠해소. Right9 좌측[3,42,5,49)12px,11 좌측[4,33,10,50)58px 잘린빨간/금색지팡이파츠잔존. Left5 좌측[3,93,4,101)8px 검은선. 발아래Frame8[59,120,62,121)3px,10[57,122,61,123)4px+[50,122,53,123)3px+1px. 1 우측3px/3,5에1px 잔여점. 귀장치/방향정상, 정상지팡이발광과구분.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
+      "sha256": "d8613bbd97c49083619965bd3ce8346708d5f93a7650f4c2812f91adbfff633e",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            2,
+            10,
+            126,
+            118
+          ],
+          "components": [
+            {
+              "pixels": 7524,
+              "bbox": [
+                4,
+                12,
+                115,
+                117
+              ]
+            }
+          ],
+          "sha256": "b05a3bdb4a326428a4b97bb6af8c4a435cfdb1d44b9e90e60804b565b52ed81b",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            4,
+            125,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8358,
+              "bbox": [
+                2,
+                6,
+                122,
+                118
+              ]
+            }
+          ],
+          "sha256": "31a5ea249893041b3218b8cca3eff2ca8bf576cb63afd2c752f417a01fe6132a",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8781,
+              "bbox": [
+                4,
+                6,
+                125,
+                119
+              ]
+            }
+          ],
+          "sha256": "f2149aa2ecd603b1016bc90a4eb288012159d2d77de3988815038c07f0c44e45",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 9042,
+              "bbox": [
+                4,
+                3,
+                124,
+                122
+              ]
+            }
+          ],
+          "sha256": "07ffd74caa49d4f8631821c14092e01184463448a4e351b4ad505ca6ffccc492",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            2,
+            4,
+            125,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8011,
+              "bbox": [
+                3,
+                5,
+                122,
+                119
+              ]
+            }
+          ],
+          "sha256": "faaea8cb478d98d7017f4a5349a37b49ed0dac912ab23e98ce5d26d63e63df1b",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            5,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 7755,
+              "bbox": [
+                3,
+                6,
+                125,
+                121
+              ]
+            }
+          ],
+          "sha256": "7732c576fbbc291013804493da410ce2bac6076cd84b321b5afe80f1889088b4",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            7,
+            126,
+            119
+          ],
+          "components": [
+            {
+              "pixels": 7013,
+              "bbox": [
+                4,
+                10,
+                113,
+                117
+              ]
+            }
+          ],
+          "sha256": "44046171195ec255b3f66d36e1961b47171b9bbf4f753aae7cce172e1d05e7cf",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            6,
+            2,
+            122,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8202,
+              "bbox": [
+                6,
+                3,
+                121,
+                123
+              ]
+            }
+          ],
+          "sha256": "fad18990d6601bb9f02d81297d3de1c4b697b1f659e68af623b87d375401cace",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8001,
+              "bbox": [
+                3,
+                4,
+                123,
+                119
+              ]
+            }
+          ],
+          "sha256": "38fd9e26ecaea073e51cd3a43bda8e8db02a9f6cae73a97df09660079f718e8c",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            4,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7537,
+              "bbox": [
+                9,
+                10,
+                124,
+                121
+              ]
+            }
+          ],
+          "sha256": "13509d885c34dad1b154ae7bd7454ea9709834d064b076f94d3816211a73ab74",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            2,
+            8,
+            126,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 7156,
+              "bbox": [
+                7,
+                9,
+                123,
+                116
+              ]
+            }
+          ],
+          "sha256": "3ceeb0d946625da78cc08da8edec3347ad54af8beb91e02dad0541fc0e82ae20",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8550,
+              "bbox": [
+                6,
+                4,
+                122,
+                124
+              ]
+            }
+          ],
+          "sha256": "0e7f5cd2da81cde2ce558677761ed3b1815490d97be3920951b62038cdbcd4fa",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            12,
+            2,
+            116,
+            115
+          ],
+          "components": [
+            {
+              "pixels": 7104,
+              "bbox": [
+                14,
+                4,
+                114,
+                113
+              ]
+            }
+          ],
+          "sha256": "8912cc732b4b510d30d0c75eee3cce15e0962cd077643efa26c397534ddf56ea",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8764,
+              "bbox": [
+                7,
+                3,
+                121,
+                124
+              ]
+            }
+          ],
+          "sha256": "1215d210fc3cc60b957f6d4955e804468171b675a11b9cc73159c642f5935ab7",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            2,
+            7,
+            121,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 7259,
+              "bbox": [
+                5,
+                10,
+                107,
+                120
+              ]
+            }
+          ],
+          "sha256": "8499936bbd9e1f992b80313bd80009b50f06a5998246ed575c514a8e824d62d0",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8616,
+              "bbox": [
+                11,
+                5,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "bc9e993d9a922a0c6a3a42a6437b939393a0a5efa65985ac2f7d4712f06777ee",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Mage_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.mage.female",
+      "gender": "Female",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Down2/Left6 큰 이웃장식과 다른 셀 좌우 지팡이 조각 해소. 16Frame 귀장치/지팡이/장식 일관.",
+      "sourceEntry": "Hearing_Mage_Female.png",
+      "previousReason": "이전Frame1 큰장식조각축소. 새Down2 좌측[3,68,9,106)142px 금색/빨간매달린장식파츠,Left6 좌측[3,64,9,102)140px 동일이웃장식. Left5[3,76,7,94)43px+[3,68,5,75)11px 잔존. Right9[4,28,6,41)21px,10[3,30,5,43)22px 좌측지팡이/장식절단조각,10우측9+3px. 0/1/3/7/14 작은잔여점. 정식귀장치보존/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
+      "sha256": "e30c1deac22d414a812a813b631a2ccb5734bf448eee8ccdee36ab1f03b48cfc",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            12,
+            9,
+            123,
+            118
+          ],
+          "components": [
+            {
+              "pixels": 7811,
+              "bbox": [
+                14,
+                10,
+                121,
+                115
+              ]
+            }
+          ],
+          "sha256": "110a06590a73882fd68379ea7dfd3ee8122c5ed21bab8c07928c7f410e7a4c89",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            3,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 10240,
+              "bbox": [
+                4,
+                3,
+                123,
+                125
+              ]
+            }
+          ],
+          "sha256": "735811e5bbf4bebbd59e72287f3463d7ac4f496017c077bf37bb4bc176c285d3",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            5,
+            3,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 9308,
+              "bbox": [
+                10,
+                5,
+                125,
+                121
+              ]
+            }
+          ],
+          "sha256": "9718a10ffc258b7beb56a2effa85d5d3797fe2e4882c057cccecd90329f871cc",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            4,
+            2,
+            126,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 10061,
+              "bbox": [
+                6,
+                4,
+                125,
+                125
+              ]
+            }
+          ],
+          "sha256": "f8ca7b2ea734014800aaf2d98ee853ce9b62abb32723867596e1e70a8ab5b4c2",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            8,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8056,
+              "bbox": [
+                11,
+                11,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "b0b14b688c4f16d16a5ed805cefc3cae81047a5ab32e6aba5684adbc13fadf23",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8509,
+              "bbox": [
+                5,
+                7,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "14ed23cde8b9e876ae10d54ea42be2d61047da70d0acaf550f38cd7f40742dec",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            4,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 8953,
+              "bbox": [
+                3,
+                6,
+                125,
+                123
+              ]
+            }
+          ],
+          "sha256": "469964995a42be202fcd72d41cc67081a8f1c1b6bdb575a3a22a2d9cc2b8e1b5",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8349,
+              "bbox": [
+                4,
+                8,
+                120,
+                121
+              ]
+            }
+          ],
+          "sha256": "9694ac3b528bead086a64947ae2e5b7e5c44bb6d9ad01f09ddaf005475eefb61",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            4,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8287,
+              "bbox": [
+                5,
+                7,
+                123,
+                119
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                88,
+                52,
+                89,
+                53
+              ]
+            }
+          ],
+          "sha256": "64c9e19623085317152ba07b4cb7565b6d37a20fb8c1191bd4de8e02f8d1481a",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8584,
+              "bbox": [
+                4,
+                7,
+                124,
+                121
+              ]
+            }
+          ],
+          "sha256": "d6b18f9659790be889854ea3eb6e4edb98671a84970ccabd1f331d8572d1caf0",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            2,
+            5,
+            126,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8534,
+              "bbox": [
+                6,
+                9,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "c3100242ce20891655ecebecbe46ab935855a1a1f4b67e547fc4e6fa8c1dc7d5",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            2,
+            4,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8475,
+              "bbox": [
+                5,
+                7,
+                122,
+                121
+              ]
+            }
+          ],
+          "sha256": "87341da6d0ac68d06eef2d908d2092fd370dc4fe2a67d1c3758817f350963266",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            3,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9066,
+              "bbox": [
+                6,
+                5,
+                116,
+                123
+              ]
+            }
+          ],
+          "sha256": "e4002089d2e876f8a55e1aedde39a7954416731faa921cf003366392af52d1aa",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            3,
+            2,
+            114,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 8201,
+              "bbox": [
+                5,
+                5,
+                112,
+                117
+              ]
+            }
+          ],
+          "sha256": "6fa45ddeaf1c130073acad78ca8585b2b2fe3014e67b485fc4009d92b0809a8b",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            5,
+            2,
+            120,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8570,
+              "bbox": [
+                6,
+                7,
+                117,
+                123
+              ]
+            }
+          ],
+          "sha256": "3fb76bd8be07d1532ae33a433cc0cb51e106428b40ed2f737a16596f0e7bdf41",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            3,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9706,
+              "bbox": [
+                5,
+                4,
+                124,
+                125
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                56,
+                111,
+                57,
+                112
+              ]
+            }
+          ],
+          "sha256": "ee2728a193207206df9daf0b28bf0a122d6d3e0bf96fe97cf1451a0289eed3b1",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Mage_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.mage.male",
+      "gender": "Male",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Right9-11 잘린 원/잔여선과Up14 점 해소. 16Frame 지팡이/머리/귀장치/발 정상.",
+      "sourceEntry": "Hearing_Mage_Male.png",
+      "previousReason": "Right9 왼쪽[3,45,6,59)33px 빨간/흰지팡이원잘린파츠잔존. Right10[3,51,4,55)4px와11[3,51,4,54)3px잔여선,10[33,65,34,66)1px 및Up14[83,48,84,49)1px분리점. 다른행귀장치/머리/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png",
+      "sha256": "fff8c491f2960f71c0432c6485eea2889710272dcfeff85a19e66ef377e52c19",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            2,
+            4,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 9275,
+              "bbox": [
+                3,
+                6,
+                125,
+                123
+              ]
+            }
+          ],
+          "sha256": "c80116d1e8df8008c186e7944b2f5207b1cf763acb0bac516ab7583c98762dea",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            6,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 8644,
+              "bbox": [
+                4,
+                7,
+                124,
+                121
+              ]
+            }
+          ],
+          "sha256": "4c2b1a78bcac40fe1300101b134cc278b22438f1f77e3f7bee80f6e1d70a12f2",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            2,
+            2,
+            126,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 8859,
+              "bbox": [
+                4,
+                5,
+                125,
+                119
+              ]
+            }
+          ],
+          "sha256": "8585a40f75910b5321604781069ec61fbbedec03b74bfd4bc316aaaa5f2369bc",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8709,
+              "bbox": [
+                4,
+                8,
+                124,
+                122
+              ]
+            }
+          ],
+          "sha256": "000ebcd83ae72d5e731419df70cdc784f229a82a445314ae853355396698602c",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            2,
+            8,
+            126,
+            119
+          ],
+          "components": [
+            {
+              "pixels": 7592,
+              "bbox": [
+                6,
+                10,
+                124,
+                118
+              ]
+            }
+          ],
+          "sha256": "c5eabae11b62e7a8f0a3fbe3e028724e1558815ecf6860dfa494ac37112c777b",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            2,
+            4,
+            123,
+            116
+          ],
+          "components": [
+            {
+              "pixels": 7753,
+              "bbox": [
+                3,
+                5,
+                121,
+                114
+              ]
+            }
+          ],
+          "sha256": "4691391102cb7add2046456884200239cc55b564742e1c49edb7b33ebaf5d4bc",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            8,
+            126,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 7704,
+              "bbox": [
+                6,
+                10,
+                125,
+                119
+              ]
+            }
+          ],
+          "sha256": "2777b7c4c751dbf8b2652e05d1b6839cacb7a8d1a9637359e649c1a607202f75",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            2,
+            5,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8046,
+              "bbox": [
+                4,
+                8,
+                124,
+                120
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                27,
+                33,
+                28,
+                34
+              ]
+            }
+          ],
+          "sha256": "65dc3dc5033c8e2c045b1f37daf47c7f3b4b71eb9996ef0a10e59e9afe4ed1cc",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            2,
+            12,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 7786,
+              "bbox": [
+                3,
+                14,
+                126,
+                120
+              ]
+            }
+          ],
+          "sha256": "02cfc2e0749aa33272d6a72fdb8e5390a9108ccda5ca3be3653c67f74af30cbf",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            11,
+            126,
+            115
+          ],
+          "components": [
+            {
+              "pixels": 7216,
+              "bbox": [
+                4,
+                12,
+                126,
+                113
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                87,
+                58,
+                88,
+                59
+              ]
+            }
+          ],
+          "sha256": "a72e91dd116b6c900955e7fdae7e17d686c46273dbcd348f4be59521daff08c8",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            4,
+            12,
+            126,
+            116
+          ],
+          "components": [
+            {
+              "pixels": 7063,
+              "bbox": [
+                6,
+                14,
+                124,
+                115
+              ]
+            }
+          ],
+          "sha256": "3d488fc86a21e706cb004c3bbb49b1403f40142d21ab61d4a28c31773ec2050f",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            2,
+            10,
+            126,
+            118
+          ],
+          "components": [
+            {
+              "pixels": 7666,
+              "bbox": [
+                3,
+                12,
+                126,
+                117
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                92,
+                99,
+                93,
+                100
+              ]
+            }
+          ],
+          "sha256": "1f5a81e809ed97644451fc9d430ca9d885a4a764a1e45014261d9f3b1182e124",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8713,
+              "bbox": [
+                8,
+                4,
+                122,
+                123
+              ]
+            }
+          ],
+          "sha256": "87c731d8bbe4adb09ee4e63562324b8a3015b4de4d6c93108293f04906663cc0",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            8,
+            2,
+            126,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 8225,
+              "bbox": [
+                10,
+                3,
+                121,
+                119
+              ]
+            }
+          ],
+          "sha256": "34c7ed9f2f85ae8ff0389c6021e8cd3f801fccdf40f37d3f4eeae86db7fa29aa",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8968,
+              "bbox": [
+                5,
+                3,
+                122,
+                124
+              ]
+            }
+          ],
+          "sha256": "c52bf784f470ddf1c4b72c203420e16682e343a63c5cc9f7811c31e48ccee0f2",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            8,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8691,
+              "bbox": [
+                10,
+                4,
+                123,
+                124
+              ]
+            }
+          ],
+          "sha256": "43b07d21e4c8137d8afac5d6d9150091b267db7be018597fe17519c4a1de3ccf",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Marksman_Female.png",
+      "appearanceId": "appearance.external.v1.hearing.marksman.female",
+      "gender": "Female",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 발 아래 파츠 해소, Up12/14 포니테일 상단이 둥근 닫힌 윤곽으로 복원. 16Frame 활/화살/귀장치/방향 정상.",
+      "sourceEntry": "Hearing_Sharpshooter_Female.png",
+      "previousReason": "이전3/13/15 셀옆큰파츠해소. Left4/6/7 발아래[70,122,79,124)14px/[67,123,73,124)6px/[69,123,74,124)5px잔존. 새Right8/9 발조각[51,117,71,122)58px/[55,119,73,122)34px. Up12/14 포니테일상단이셀y=3부근에서넓은수평단면으로잘림(셀여백은있으나원래머리끝윤곽불완전). 0/9/11 작은분리점. 귀장치보존/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
+      "sha256": "9c622bce6db73dab699bbbcb51c55f92167040ad5fa20ce9c7815c1e0c3365fb",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            7,
+            2,
+            121,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8606,
+              "bbox": [
+                9,
+                3,
+                120,
+                122
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                102,
+                46,
+                103,
+                47
+              ]
+            }
+          ],
+          "sha256": "5c7b1c9c876d55824943fb2266b988326a235cb754fe29ffc2b805bacbf75ab9",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            4,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8813,
+              "bbox": [
+                5,
+                3,
+                119,
+                123
+              ]
+            }
+          ],
+          "sha256": "c41965144a41e2d931aca79e6dea4cbe309b70f29e6fa960383ea47be7e52402",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8387,
+              "bbox": [
+                6,
+                3,
+                119,
+                120
+              ]
+            }
+          ],
+          "sha256": "4d816902f4925cc5eab7f62b4b582b44c57eabb83594da5bde2297e41a083290",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            2,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 8620,
+              "bbox": [
+                5,
+                3,
+                122,
+                121
+              ]
+            }
+          ],
+          "sha256": "b05f0a5979880eab296dc170149c55c9db2f62068fd960399bf44acd63935dad",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            11,
+            4,
+            126,
+            123
+          ],
+          "components": [
+            {
+              "pixels": 8834,
+              "bbox": [
+                14,
+                5,
+                125,
+                122
+              ]
+            }
+          ],
+          "sha256": "5677023d44e2742fd0cb57123aa5a43fa0a006b4a883eb7f5381779c4ea3b5b3",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            3,
+            3,
+            126,
+            124
+          ],
+          "components": [
+            {
+              "pixels": 9307,
+              "bbox": [
+                5,
+                4,
+                123,
+                123
+              ]
+            }
+          ],
+          "sha256": "5e421abca86641587546e3ef1ac32fc5977a96764fceeb44052791a469c405b9",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            2,
+            2,
+            126,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9678,
+              "bbox": [
+                4,
+                3,
+                125,
+                125
+              ]
+            }
+          ],
+          "sha256": "cf359dddf2d9088d0bc399eb838ee70ab0ef9a42a39a09aca40349f391e66a57",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            4,
+            2,
+            126,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 9398,
+              "bbox": [
+                6,
+                2,
+                122,
+                124
+              ]
+            }
+          ],
+          "sha256": "0f73f21b624dc74343491d5140b0a9b5e152ae390a471e50f5b94c97024e212d",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9239,
+              "bbox": [
+                7,
+                4,
+                122,
+                122
+              ]
+            },
+            {
+              "pixels": 4,
+              "bbox": [
+                61,
+                125,
+                65,
+                126
+              ]
+            }
+          ],
+          "sha256": "b6ffe25b9c5b7a330ba787535327daba77ec3190225c75403a7cc31584f8fb98",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            2,
+            5,
+            123,
+            122
+          ],
+          "components": [
+            {
+              "pixels": 8715,
+              "bbox": [
+                5,
+                6,
+                121,
+                120
+              ]
+            }
+          ],
+          "sha256": "17f081ad14db7216b06c2a341007e8fa9f6ace720516d4c81e5f45bb844cab99",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            6,
+            2,
+            124,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9116,
+              "bbox": [
+                8,
+                6,
+                123,
+                122
+              ]
+            }
+          ],
+          "sha256": "436735bd6939754cd9dac8d18710c124b7fb61c493c5843990747d6cb4d8b3cf",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            2,
+            2,
+            125,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 9751,
+              "bbox": [
+                4,
+                3,
+                123,
+                126
+              ]
+            }
+          ],
+          "sha256": "826cfcd364e3cb978fdb6e5cc4af466425939b1a4df49b98dce51abbf1ea7ecd",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            10,
+            2,
+            117,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8260,
+              "bbox": [
+                11,
+                2,
+                116,
+                123
+              ]
+            }
+          ],
+          "sha256": "c59097c7b44fb9e0172cb1eddbb5744bdcd3624e09beeacea47447c32d18525a",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            17,
+            4,
+            122,
+            120
+          ],
+          "components": [
+            {
+              "pixels": 7352,
+              "bbox": [
+                19,
+                6,
+                121,
+                118
+              ]
+            }
+          ],
+          "sha256": "23f427f65dccd01255c5f28fa26501d80352dd25b3f4a592c9f3010654b7ec65",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            15,
+            2,
+            112,
+            111
+          ],
+          "components": [
+            {
+              "pixels": 6506,
+              "bbox": [
+                16,
+                2,
+                111,
+                109
+              ]
+            }
+          ],
+          "sha256": "a717636f6f7cd2c274b5b55fca6594565048b57f2e11ab151176c46107c87223",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            12,
+            2,
+            116,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7942,
+              "bbox": [
+                15,
+                7,
+                115,
+                125
+              ]
+            }
+          ],
+          "sha256": "2a63b309a5e116f497b026a33beec103d6a02216360fc8370a53c45e832f2423",
+          "edge": false
+        }
+      ]
+    },
+    {
+      "file": "Hearing_Marksman_Male.png",
+      "appearanceId": "appearance.external.v1.hearing.marksman.male",
+      "gender": "Male",
+      "status": "READY",
+      "frames": "",
+      "reason": "v2 Left 발밑 점 및 Up13/15 머리 위 검은선 해소. 16Frame 활/머리/귀장치/망토/방향 정상.",
+      "sourceEntry": "Hearing_Sharpshooter_Male.png",
+      "previousReason": "이전Right8-11 머리위선/Left5 큰셀옆파츠해소. 새Up13 머리위[44,3,52,4)8px+[78,3,82,4)4px검은선,Up15[80,3,84,4)4px검은선잔존. Left4발아래1px/5발아래2+2px/7발아래3+2px분리점. 귀장치/방향정상.",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
+      "sha256": "3b1fe496f32863d5755e2c267461c67ab9a32627491d1311d896e00219496baf",
+      "alpha": [
+        0,
+        255
+      ],
+      "frameAudit": [
+        {
+          "frame": 0,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7748,
+              "bbox": [
+                7,
+                3,
+                121,
+                124
+              ]
+            }
+          ],
+          "sha256": "49b4c8e312bc9a03ed9d2dfef12d18fd97198588b1055bdeb9840f2c6c4b4399",
+          "edge": false
+        },
+        {
+          "frame": 1,
+          "bbox": [
+            2,
+            3,
+            121,
+            125
+          ],
+          "components": [
+            {
+              "pixels": 7443,
+              "bbox": [
+                4,
+                5,
+                119,
+                124
+              ]
+            }
+          ],
+          "sha256": "53aec7e3bd9e5ffb2dbe1f9bc4c599bcb148ac53eff72db94632499cc2e87173",
+          "edge": false
+        },
+        {
+          "frame": 2,
+          "bbox": [
+            5,
+            2,
+            123,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7987,
+              "bbox": [
+                6,
+                3,
+                122,
+                125
+              ]
+            }
+          ],
+          "sha256": "10d2da8bf0dbdfc438bab4b13bda1dcd12b8a1f21450a67c3d0a0ff514709775",
+          "edge": false
+        },
+        {
+          "frame": 3,
+          "bbox": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7952,
+              "bbox": [
+                9,
+                3,
+                116,
+                125
+              ]
+            }
+          ],
+          "sha256": "2e247964a1e995ea447469e41dfbcbb1b9569cdf65a3cf84f60b7d28fe606b9c",
+          "edge": false
+        },
+        {
+          "frame": 4,
+          "bbox": [
+            10,
+            2,
+            118,
+            121
+          ],
+          "components": [
+            {
+              "pixels": 7131,
+              "bbox": [
+                11,
+                5,
+                117,
+                119
+              ]
+            }
+          ],
+          "sha256": "7377c1d7dc8810b19c3a1e5af3830d7d930a3048d8601e0a1579d63c0b12598b",
+          "edge": false
+        },
+        {
+          "frame": 5,
+          "bbox": [
+            8,
+            2,
+            120,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7643,
+              "bbox": [
+                9,
+                5,
+                119,
+                123
+              ]
+            }
+          ],
+          "sha256": "8fc467ad6b2bbb8a6771f83b1cc99b70be147703db780d5e95e5fac7c02b9878",
+          "edge": false
+        },
+        {
+          "frame": 6,
+          "bbox": [
+            7,
+            2,
+            121,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8012,
+              "bbox": [
+                8,
+                5,
+                119,
+                124
+              ]
+            },
+            {
+              "pixels": 1,
+              "bbox": [
+                18,
+                92,
+                19,
+                93
+              ]
+            }
+          ],
+          "sha256": "71e63bb40d85a299ec1ae0a9967c7f29e957cbcb432ebee61b78ecae80b72fa7",
+          "edge": false
+        },
+        {
+          "frame": 7,
+          "bbox": [
+            12,
+            2,
+            116,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7374,
+              "bbox": [
+                14,
+                5,
+                115,
+                122
+              ]
+            }
+          ],
+          "sha256": "9f8f44dc672b6cfeeabd017727ffd4de0d64010a6604b17d75091b0024f9a601",
+          "edge": false
+        },
+        {
+          "frame": 8,
+          "bbox": [
+            10,
+            2,
+            117,
+            119
+          ],
+          "components": [
+            {
+              "pixels": 7106,
+              "bbox": [
+                11,
+                6,
+                116,
+                117
+              ]
+            }
+          ],
+          "sha256": "42b34299a77135365989dedb40b935adcb736db76365392893d1f0a6097e5b4e",
+          "edge": false
+        },
+        {
+          "frame": 9,
+          "bbox": [
+            4,
+            2,
+            113,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7713,
+              "bbox": [
+                5,
+                3,
+                110,
+                119
+              ]
+            }
+          ],
+          "sha256": "1702198723ce4877c484d63de7a1edc41b8594cea3ddd454699bc5fa2bbe5013",
+          "edge": false
+        },
+        {
+          "frame": 10,
+          "bbox": [
+            7,
+            2,
+            118,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8233,
+              "bbox": [
+                9,
+                3,
+                116,
+                124
+              ]
+            }
+          ],
+          "sha256": "c4a79ad75a7bc6d69bd134d7e2328200fec207fb71d9c5005f658c8c5c4d3af1",
+          "edge": false
+        },
+        {
+          "frame": 11,
+          "bbox": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 8172,
+              "bbox": [
+                10,
+                4,
+                118,
+                124
+              ]
+            }
+          ],
+          "sha256": "faf286a47c8ca7dfa665bfb6f85a58b1ee02302955ea6953bfe9ac4260d4e87b",
+          "edge": false
+        },
+        {
+          "frame": 12,
+          "bbox": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7733,
+              "bbox": [
+                9,
+                5,
+                118,
+                126
+              ]
+            }
+          ],
+          "sha256": "692b997c0f7b6cb8402decc61a52b579a8bbd788034c267a064bc22a738d5e52",
+          "edge": false
+        },
+        {
+          "frame": 13,
+          "bbox": [
+            13,
+            2,
+            118,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7392,
+              "bbox": [
+                15,
+                4,
+                116,
+                125
+              ]
+            }
+          ],
+          "sha256": "dbd8f69fc836953cff62ace4cddd3a6b37f0e0c1498c79adae7f6d0f47e1681f",
+          "edge": false
+        },
+        {
+          "frame": 14,
+          "bbox": [
+            8,
+            2,
+            119,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7507,
+              "bbox": [
+                10,
+                3,
+                118,
+                123
+              ]
+            }
+          ],
+          "sha256": "5a8bdce50c0640fa8e75d6063bef3e63b767c638f242ec0ce68574c85915b19a",
+          "edge": false
+        },
+        {
+          "frame": 15,
+          "bbox": [
+            11,
+            2,
+            116,
+            126
+          ],
+          "components": [
+            {
+              "pixels": 7427,
+              "bbox": [
+                13,
+                4,
+                116,
+                123
+              ]
+            }
+          ],
+          "sha256": "78996ad975693ce715e700e9334ff676ce2fda679696212aa9c306617ba6281b",
+          "edge": false
+        }
+      ]
+    }
+  ],
+  "ready": 10,
+  "blocked": 0,
+  "overallReady": 40,
+  "overallBlocked": 10,
+  "imageModificationPerformed": false,
+  "emptyFrames": 0,
+  "qaPolicy": "새160Frame 확대관찰+Alpha 성분검사. 낮은Alpha(11-29)의몸체가장자리성분은선명한분리파츠와구분하며자동BLOCKED로취급하지않음. 가시crop/분리파츠/침범/방향/CharacterSwap/Empty/심각한Alpha손상 없음.",
+  "preservation": {
+    "assetSettingsUserDataChangedFiles": [
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Fighter_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Fighter_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Guardian_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Guardian_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Healer_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Healer_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Mage_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Mage_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Marksman_Female.png",
+      "Unity\\Client\\Assets\\_Project\\Art\\Characters\\Player\\Validated50\\Hearing\\Hearing_Marksman_Male.png",
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\External50.asset",
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\Validated50.json"
+    ],
+    "allMetaEqual": true,
+    "other40PngAndEntriesEqual": true,
+    "existing240ClipBlocksEqual": true,
+    "newReadyTargetClips": 80,
+    "appearanceAndSpriteIdsEqual": true,
+    "saveSettingsFilesEqual": true,
+    "zipUnchanged": true,
+    "appliedPngOriginalBytesEqual": true
+  },
+  "runtime": {
+    "status": "PASS",
+    "pass": 88,
+    "fail": 0,
+    "mappingAndJobPreviewTargets": 10,
+    "representatives": [
+      "Hearing Fighter Male",
+      "Hearing Healer Female"
+    ],
+    "characterCreationPreview": "Path/Job 선택 전 기본 성별Preview",
+    "worldBattleContinue": "대표남녀의v3 frames0/4 직접표시/실제Battle전달/Save→BootstrapContinue 통과",
+    "oldSaveIdRecalculation": true,
+    "ancientSaveFallback": true,
+    "foregroundUsed": false,
+    "isolatedSaveSettings": true,
+    "playSettingsRestored": true,
+    "compileErrors": 0,
+    "finalConsoleErrors": 0,
+    "finalConsoleWarnings": 0,
+    "missingSprite": 0,
+    "csharpChanged": false,
+    "mcpTransportWarningBeforePlay": 1
+  }
+}

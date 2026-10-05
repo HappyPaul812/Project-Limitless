@@ -1,0 +1,89 @@
+PASS
+PASS 50 definitions / Hearing targets only / 5 Job
+PASS Ready 집계와 Inventory 일치
+PASS Duplicate0
+PASS Sprite800 preserved
+PASS isolated slot1
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Malepath.hearing
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.hearing.guardian.male
+PASS Job Preview appearance.external.v1.hearing.guardian.male
+PASS Blocked 표시 appearance.external.v1.hearing.guardian.male
+PASS Mapping appearance.external.v1.hearing.healer.male
+PASS Job Preview appearance.external.v1.hearing.healer.male
+PASS Blocked 표시 appearance.external.v1.hearing.healer.male
+PASS Mapping appearance.external.v1.hearing.marksman.male
+PASS Job Preview appearance.external.v1.hearing.marksman.male
+PASS Blocked 표시 appearance.external.v1.hearing.marksman.male
+PASS Mapping appearance.external.v1.hearing.fighter.male
+PASS Job Preview appearance.external.v1.hearing.fighter.male
+PASS Blocked 표시 appearance.external.v1.hearing.fighter.male
+PASS Mapping appearance.external.v1.hearing.mage.male
+PASS Job Preview appearance.external.v1.hearing.mage.male
+PASS Blocked 표시 appearance.external.v1.hearing.mage.male
+PASS Scene PathSelection
+PASS Job 미선택 선점 없음 Femalepath.hearing
+PASS Scene JobSelection
+PASS Mapping appearance.external.v1.hearing.guardian.female
+PASS Job Preview appearance.external.v1.hearing.guardian.female
+PASS Blocked 표시 appearance.external.v1.hearing.guardian.female
+PASS Mapping appearance.external.v1.hearing.healer.female
+PASS Job Preview appearance.external.v1.hearing.healer.female
+PASS Blocked 표시 appearance.external.v1.hearing.healer.female
+PASS Mapping appearance.external.v1.hearing.marksman.female
+PASS Job Preview appearance.external.v1.hearing.marksman.female
+PASS Blocked 표시 appearance.external.v1.hearing.marksman.female
+PASS Mapping appearance.external.v1.hearing.fighter.female
+PASS Job Preview appearance.external.v1.hearing.fighter.female
+PASS Blocked 표시 appearance.external.v1.hearing.fighter.female
+PASS Mapping appearance.external.v1.hearing.mage.female
+PASS Job Preview appearance.external.v1.hearing.mage.female
+PASS Blocked 표시 appearance.external.v1.hearing.mage.female
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Character Creation Preview 기본 성별 Male
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.hearing.fighter.male
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.hearing.fighter.male
+PASS 자동 Save ID appearance.external.v1.hearing.fighter.male
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.mobility.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.hearing.fighter.male
+PASS Battle Left Idle appearance.external.v1.hearing.fighter.male
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.hearing.fighter.male
+PASS Scene CharacterCreation
+PASS 수동 외형 UI 제거
+PASS Gender/Name/Next Navigation4
+PASS 기본 정보 조합 미선택
+PASS Character Creation Preview 기본 성별 Female
+PASS Scene PathSelection
+PASS Scene JobSelection
+PASS Scene FinalConfirmation
+PASS Confirm Preview appearance.external.v1.hearing.healer.female
+PASS Scene World_StarterVillage
+PASS World appearance.external.v1.hearing.healer.female
+PASS 자동 Save ID appearance.external.v1.hearing.healer.female
+PASS 구버전/불일치 재계산
+PASS 구버전/불일치 재계산 appearance.missing
+PASS 구버전/불일치 재계산 appearance.external.v1.mobility.mage.male
+PASS Path/Job 없는 Save 기본 fallback
+PASS Continue 전 Save
+PASS Scene Bootstrap
+PASS Scene World_StarterVillage
+PASS 실제 Bootstrap Continue appearance.external.v1.hearing.healer.female
+PASS Battle Left Idle appearance.external.v1.hearing.healer.female
+PASS Scene Battle
+PASS 실제 Battle Scene 전달 appearance.external.v1.hearing.healer.female
+PASS Scene Bootstrap

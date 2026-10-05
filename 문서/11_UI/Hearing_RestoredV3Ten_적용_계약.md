@@ -19,3 +19,5 @@ PNG10/Male5/Female5/Job5×Gender2·중복0/누락0·512×512 RGBA/4×4/16Frame/C
 - Hearing_Mage_Male.png: Right9 왼쪽[3,45,6,59)33px 빨간/흰지팡이원잘린파츠잔존. Right10[3,51,4,55)4px와11[3,51,4,54)3px잔여선,10[33,65,34,66)1px 및Up14[83,48,84,49)1px분리점. 다른행귀장치/머리/방향정상.
 - Hearing_Marksman_Female.png: 이전3/13/15 셀옆큰파츠해소. Left4/6/7 발아래[70,122,79,124)14px/[67,123,73,124)6px/[69,123,74,124)5px잔존. 새Right8/9 발조각[51,117,71,122)58px/[55,119,73,122)34px. Up12/14 포니테일상단이셀y=3부근에서넓은수평단면으로잘림(셀여백은있으나원래머리끝윤곽불완전). 0/9/11 작은분리점. 귀장치보존/방향정상.
 - Hearing_Marksman_Male.png: 이전Right8-11 머리위선/Left5 큰셀옆파츠해소. 새Up13 머리위[44,3,52,4)8px+[78,3,82,4)4px검은선,Up15[80,3,84,4)4px검은선잔존. Left4발아래1px/5발아래2+2px/7발아래3+2px분리점. 귀장치/방향정상.
+
+실행완료: Hearing10종 READY/전체40·10. 기존Marksman명명과ID에Sharpshooter원본대응, 대상Entry80Clip만연결. 다른40종/모든C#보존·88PASS/0FAIL. 최소추가수정리스트없음, 다음Mobility10종ZIP수령후계획수립준비. [최신QA](Hearing_RestoredV3Ten_QA.md).

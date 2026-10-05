@@ -1,10 +1,10 @@
 {
   "entries": [
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Fighter_Female.png",
-      "sha256": "4bfbf8c8969d8abab7a2950d2aadbc64c4afd096d27a4be795aea3c5a2a39ee9",
+      "sha256": "c7deb2384da307ab0c9b93c1e529a2ef11bacf0203ee0646bdf8073320de6ff1",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.hearing.fighter.female",
       "theme": "Hearing",
@@ -14,113 +14,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전4/9 발밑선 해결,8은축소됐지만[60,121,65,122)5px 검은선잔존. 새Frame6 우측망토옆[124,110,125,113)3px 검은조각,10 머리/망토옆[23,74,24,75)1px 분리점. 머리/귀장치/검/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Frame6/8/10 잔여선/조각 해소. 16Frame 검/머리/발/망토 윤곽과 귀장치·방향 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
           3,
-          4,
-          123,
-          124
-        ],
-        [
-          5,
-          4,
+          2,
           125,
-          124
-        ],
-        [
-          5,
-          5,
-          120,
-          122
-        ],
-        [
-          3,
-          3,
-          125,
-          125
-        ],
-        [
-          3,
-          3,
-          125,
-          124
-        ],
-        [
-          3,
-          3,
-          125,
-          124
-        ],
-        [
-          3,
-          4,
-          125,
-          121
+          126
         ],
         [
           4,
-          3,
+          2,
           124,
-          124
+          126
         ],
         [
-          7,
           5,
-          125,
-          122
+          2,
+          122,
+          126
         ],
         [
-          3,
           5,
-          125,
-          122
+          2,
+          122,
+          126
         ],
         [
-          6,
-          7,
-          124,
-          121
-        ],
-        [
-          10,
+          4,
           5,
-          125,
+          126,
           123
         ],
         [
-          17,
+          2,
           3,
-          121,
-          117
+          126,
+          124
         ],
         [
-          16,
-          3,
-          121,
-          114
+          2,
+          4,
+          126,
+          123
         ],
         [
-          10,
           3,
+          2,
+          125,
+          126
+        ],
+        [
+          6,
+          2,
           122,
-          117
+          126
         ],
         [
-          9,
+          2,
           3,
+          126,
+          125
+        ],
+        [
+          2,
+          2,
+          126,
+          125
+        ],
+        [
+          6,
+          2,
+          121,
+          124
+        ],
+        [
+          7,
+          2,
           120,
-          117
+          126
+        ],
+        [
+          6,
+          2,
+          122,
+          126
+        ],
+        [
+          3,
+          2,
+          124,
+          126
+        ],
+        [
+          4,
+          2,
+          123,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Fighter_Male.png",
-      "sha256": "497ddb93590a7158d25fa1a920463125d7cdc2c48091ff8595b8011049b4be25",
+      "sha256": "e5532a2688838729ecc1c387992eb1d6641972df9a53bdc9d6b5c30537dba409",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.hearing.fighter.male",
       "theme": "Hearing",
@@ -130,113 +130,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전Left 큰발조각과Up13/15 머리위선 해소. Left4-6 발밑2-3px선 및5 우측[123,108,125,112)5px 조각잔존. 새Down1 우측[120,107,125,118)34px 빨간/검은검파츠, Right8-11 발아래[60,119,71,122)26px+[56,121,58,122)2px/[57,119,67,122)25px/[57,122,68,125)25px/[60,122,71,125)27px 살색/검은분리파츠.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Down1 검파츠와 Left/Right 발 아래 조각 해소. 16Frame 검 끝/머리/망토/발 완전.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
+          2,
           3,
-          7,
-          125,
+          126,
           124
         ],
         [
-          3,
-          7,
+          2,
+          6,
+          116,
+          122
+        ],
+        [
+          2,
+          2,
           125,
+          126
+        ],
+        [
+          2,
+          2,
+          125,
+          126
+        ],
+        [
+          2,
+          2,
+          126,
+          126
+        ],
+        [
+          2,
+          5,
+          126,
           123
         ],
         [
-          5,
-          6,
-          123,
-          125
-        ],
-        [
-          5,
-          6,
-          119,
-          125
-        ],
-        [
           3,
-          4,
-          125,
+          3,
+          126,
           124
         ],
         [
-          3,
+          2,
           4,
-          125,
+          126,
           124
         ],
         [
-          5,
-          3,
-          123,
-          125
+          6,
+          2,
+          121,
+          126
         ],
         [
           5,
+          2,
+          123,
+          126
+        ],
+        [
           3,
+          2,
           122,
-          125
+          126
         ],
         [
-          9,
-          6,
+          3,
+          2,
           125,
-          122
+          126
         ],
         [
-          3,
-          6,
-          123,
-          122
-        ],
-        [
-          3,
-          3,
+          4,
+          2,
           124,
-          125
+          126
         ],
         [
           3,
-          3,
-          125,
-          125
+          2,
+          124,
+          126
         ],
         [
-          10,
+          5,
+          2,
+          124,
+          126
+        ],
+        [
           4,
-          125,
-          116
-        ],
-        [
-          10,
-          4,
-          125,
-          117
-        ],
-        [
-          8,
-          3,
-          122,
-          119
-        ],
-        [
-          9,
-          3,
+          2,
           123,
-          119
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Guardian_Female.png",
-      "sha256": "c3b3f043ff9466023f24aa2d917bc1a3dd11c784458d7611c8abf860dfb41ff3",
+      "sha256": "1717d684dd8eea03e159cd987ec301690b318b112127b7d9bd50c046c44d6f80",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png",
       "appearanceId": "appearance.external.v1.hearing.guardian.female",
       "theme": "Hearing",
@@ -246,113 +246,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전Left4/5 조각해소. Down1/2 우측[122,109,124,116)10px/[123,108,125,116)13px,Left6[123,102,125,107)6px 검은파츠잔존. Right9 좌측[3,101,7,113)35px 검끝조각과발밑[59,118,74,121)32px. 새Up14 좌측[6,85,10,97)34px 검파츠.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Down1/2·Left6·Right9·Up14 셀 옆 검파츠/발 조각 해소. 16Frame 방패/검/포니테일/귀장치 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          5,
           3,
-          123,
-          122
-        ],
-        [
-          3,
-          3,
-          124,
-          123
-        ],
-        [
-          3,
-          4,
+          2,
           125,
-          122
+          126
         ],
         [
-          4,
-          3,
-          116,
-          123
-        ],
-        [
-          5,
-          4,
-          123,
-          119
-        ],
-        [
-          3,
-          4,
-          125,
-          121
-        ],
-        [
-          3,
-          4,
-          125,
-          119
-        ],
-        [
-          4,
-          3,
-          121,
-          120
-        ],
-        [
-          13,
-          7,
-          125,
-          120
-        ],
-        [
-          3,
-          7,
-          125,
-          121
-        ],
-        [
-          13,
-          8,
-          125,
-          119
-        ],
-        [
-          3,
-          6,
-          125,
-          122
-        ],
-        [
-          17,
-          3,
-          121,
-          110
-        ],
-        [
-          7,
-          3,
-          120,
-          111
-        ],
-        [
-          6,
-          3,
-          122,
-          111
-        ],
-        [
-          13,
-          3,
+          2,
+          2,
           119,
-          111
+          126
+        ],
+        [
+          7,
+          2,
+          120,
+          125
+        ],
+        [
+          4,
+          2,
+          124,
+          126
+        ],
+        [
+          3,
+          2,
+          125,
+          126
+        ],
+        [
+          2,
+          4,
+          125,
+          123
+        ],
+        [
+          2,
+          3,
+          126,
+          125
+        ],
+        [
+          2,
+          2,
+          125,
+          126
+        ],
+        [
+          2,
+          2,
+          126,
+          125
+        ],
+        [
+          4,
+          6,
+          126,
+          121
+        ],
+        [
+          15,
+          8,
+          126,
+          120
+        ],
+        [
+          5,
+          3,
+          126,
+          124
+        ],
+        [
+          7,
+          2,
+          121,
+          126
+        ],
+        [
+          4,
+          2,
+          123,
+          126
+        ],
+        [
+          10,
+          3,
+          126,
+          124
+        ],
+        [
+          10,
+          2,
+          125,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Guardian_Male.png",
-      "sha256": "8324cbd0c5470da866a5df85c7647712d6cea8ffed114297aef0172401208e58",
+      "sha256": "b760de9fc969832c271dc7b09f2d7dcc359e8aeb227e1cd4a5bdfdbe68b76d8a",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.hearing.guardian.male",
       "theme": "Hearing",
@@ -362,113 +362,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전Down1 조각해소. Right8 우측[123,81,125,87)10px 검은/금색절단파츠잔존. 새Right10 우측[124,82,125,85)3px 조각. 귀장치/머리/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Right8/10 우측 분리 파츠 해소. 16Frame 무기/방패/머리/망토/귀장치 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          7,
-          8,
-          125,
-          121
+          2,
+          3,
+          126,
+          124
         ],
         [
+          2,
+          2,
+          126,
+          126
+        ],
+        [
+          2,
+          5,
+          126,
+          122
+        ],
+        [
+          2,
+          2,
+          126,
+          125
+        ],
+        [
+          2,
+          3,
+          126,
+          125
+        ],
+        [
+          2,
+          3,
+          126,
+          120
+        ],
+        [
+          3,
           4,
-          7,
-          123,
-          123
+          126,
+          124
         ],
         [
+          2,
+          6,
+          126,
+          121
+        ],
+        [
+          2,
           3,
-          8,
-          123,
-          123
+          126,
+          125
         ],
         [
+          2,
+          6,
+          126,
+          121
+        ],
+        [
+          5,
           4,
-          7,
-          123,
+          126,
           123
         ],
         [
-          8,
+          2,
           6,
-          124,
-          121
+          126,
+          122
         ],
         [
-          3,
           5,
-          125,
-          121
-        ],
-        [
-          3,
-          5,
-          125,
-          122
-        ],
-        [
-          3,
-          5,
-          125,
-          122
-        ],
-        [
-          11,
-          8,
-          125,
-          121
-        ],
-        [
-          3,
-          7,
-          125,
-          121
-        ],
-        [
-          6,
-          6,
-          125,
-          122
-        ],
-        [
-          3,
-          6,
-          125,
-          122
-        ],
-        [
-          15,
-          3,
-          120,
-          113
-        ],
-        [
-          13,
-          3,
-          120,
-          114
-        ],
-        [
-          12,
-          3,
-          119,
-          114
+          2,
+          123,
+          126
         ],
         [
           10,
+          4,
+          126,
+          125
+        ],
+        [
+          5,
+          2,
+          123,
+          126
+        ],
+        [
           3,
-          119,
-          115
+          2,
+          125,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Healer_Female.png",
-      "sha256": "7d8878f9fd463f17f50ecb7a44430078b26f35c64c70ea4e359e9c7575698ede",
+      "sha256": "43b5f180d18d140f044a5b79527ad94359bda3fc632e465c88391f0b3ade926c",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
       "appearanceId": "appearance.external.v1.hearing.healer.female",
       "theme": "Hearing",
@@ -478,113 +478,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전큰발조각과Up13 상단선해소. Frame0 우측[122,36,125,52)37px 지팡이잘린파츠,4[121,38,125,53)38px 및머리위[66,7,71,8)5px 검은선,7 좌측[3,63,7,79)43px 잘린장식. Right9/10/11 좌측지팡이파츠[3,34,7,52)47px/[3,33,10,54)91px/[3,29,13,55)184px. 머리위선9[39,3,47,5)13px/11[46,5,53,7)11px/Up15[87,3,93,5)9px. Up15좌측[5,28,8,39)24px조각. 정상음파효과자체는실패로세지않음.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 지팡이/장식 잘린 파츠와 머리 위 선 해소. 16Frame 지팡이 꼭대기/귀장치/발 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          8,
-          7,
+          6,
+          2,
+          122,
+          126
+        ],
+        [
+          2,
+          2,
+          126,
+          125
+        ],
+        [
+          3,
+          2,
           125,
-          121
+          126
         ],
         [
-          4,
           3,
+          2,
           124,
-          125
+          124
         ],
         [
-          4,
-          3,
-          124,
-          125
+          6,
+          2,
+          122,
+          126
         ],
         [
-          3,
-          8,
-          125,
-          123
-        ],
-        [
-          8,
-          7,
-          125,
-          121
-        ],
-        [
-          4,
-          3,
-          124,
-          125
-        ],
-        [
-          4,
-          3,
-          124,
-          125
-        ],
-        [
-          3,
           5,
-          125,
-          123
+          2,
+          123,
+          126
         ],
         [
-          3,
-          7,
-          125,
-          120
-        ],
-        [
-          3,
-          3,
-          124,
-          125
-        ],
-        [
-          3,
-          3,
-          124,
-          125
-        ],
-        [
-          3,
           5,
-          125,
+          2,
+          123,
+          126
+        ],
+        [
+          7,
+          4,
+          120,
+          126
+        ],
+        [
+          2,
+          3,
+          126,
           122
         ],
         [
+          2,
           3,
-          3,
-          124,
-          119
+          126,
+          124
         ],
         [
-          8,
-          3,
-          119,
-          120
+          2,
+          5,
+          126,
+          123
         ],
         [
-          8,
+          7,
+          7,
+          120,
+          126
+        ],
+        [
           3,
-          119,
-          120
+          2,
+          123,
+          126
+        ],
+        [
+          10,
+          2,
+          117,
+          126
+        ],
+        [
+          2,
+          5,
+          126,
+          123
         ],
         [
           5,
-          3,
+          2,
           122,
-          118
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Healer_Male.png",
-      "sha256": "49f1f194d359b85cc2aa96e231c67205d8388ae398a2144ae73ae6203f06d430",
+      "sha256": "d8613bbd97c49083619965bd3ce8346708d5f93a7650f4c2812f91adbfff633e",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
       "appearanceId": "appearance.external.v1.hearing.healer.male",
       "theme": "Hearing",
@@ -594,113 +594,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전0 우측큰파츠해소. Right9 좌측[3,42,5,49)12px,11 좌측[4,33,10,50)58px 잘린빨간/금색지팡이파츠잔존. Left5 좌측[3,93,4,101)8px 검은선. 발아래Frame8[59,120,62,121)3px,10[57,122,61,123)4px+[50,122,53,123)3px+1px. 1 우측3px/3,5에1px 잔여점. 귀장치/방향정상, 정상지팡이발광과구분.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Left/Right 지팡이 파츠·발밑 선/점 해소. 16Frame 정상 의도된 지팡이 발광만 유지.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          9,
-          13,
-          122,
-          121
-        ],
-        [
-          3,
-          12,
-          125,
-          121
-        ],
-        [
-          3,
+          2,
           10,
-          120,
+          126,
+          118
+        ],
+        [
+          2,
+          4,
+          125,
           123
         ],
         [
-          8,
-          12,
-          121,
+          2,
+          5,
+          126,
           123
         ],
         [
-          9,
-          7,
-          125,
-          120
+          2,
+          2,
+          126,
+          125
         ],
         [
-          3,
-          6,
+          2,
+          4,
           125,
+          123
+        ],
+        [
+          2,
+          5,
+          126,
           122
         ],
         [
-          3,
-          6,
-          123,
-          124
+          2,
+          7,
+          126,
+          119
         ],
         [
-          5,
-          5,
-          123,
+          6,
+          2,
+          122,
+          126
+        ],
+        [
+          2,
+          2,
+          125,
+          126
+        ],
+        [
+          2,
+          4,
+          126,
           125
         ],
         [
-          13,
+          2,
           8,
-          125,
-          121
+          126,
+          120
         ],
         [
-          3,
-          6,
-          125,
-          121
-        ],
-        [
-          3,
           5,
-          125,
-          123
+          2,
+          123,
+          126
+        ],
+        [
+          12,
+          2,
+          116,
+          115
         ],
         [
           4,
-          3,
-          124,
-          125
+          2,
+          123,
+          126
         ],
         [
-          11,
-          3,
-          118,
-          115
+          2,
+          7,
+          121,
+          121
         ],
         [
-          10,
           3,
-          118,
-          115
-        ],
-        [
-          8,
-          3,
-          115,
-          115
-        ],
-        [
-          13,
-          3,
-          119,
-          115
+          2,
+          125,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Mage_Female.png",
-      "sha256": "8cf32889eceaf57ed8cbcecb9375e78eea1772cec4dbaf41b4bf4d7c8a855c54",
+      "sha256": "e30c1deac22d414a812a813b631a2ccb5734bf448eee8ccdee36ab1f03b48cfc",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
       "appearanceId": "appearance.external.v1.hearing.mage.female",
       "theme": "Hearing",
@@ -710,113 +710,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전Frame1 큰장식조각축소. 새Down2 좌측[3,68,9,106)142px 금색/빨간매달린장식파츠,Left6 좌측[3,64,9,102)140px 동일이웃장식. Left5[3,76,7,94)43px+[3,68,5,75)11px 잔존. Right9[4,28,6,41)21px,10[3,30,5,43)22px 좌측지팡이/장식절단조각,10우측9+3px. 0/1/3/7/14 작은잔여점. 정식귀장치보존/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Down2/Left6 큰 이웃장식과 다른 셀 좌우 지팡이 조각 해소. 16Frame 귀장치/지팡이/장식 일관.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          10,
           12,
-          125,
-          123
-        ],
-        [
-          4,
-          10,
-          124,
-          125
-        ],
-        [
-          3,
-          14,
-          125,
-          122
-        ],
-        [
-          5,
-          11,
+          9,
           123,
-          125
-        ],
-        [
-          7,
-          6,
-          125,
-          122
+          118
         ],
         [
           3,
-          3,
-          125,
-          125
-        ],
-        [
-          3,
-          6,
-          125,
-          121
-        ],
-        [
-          4,
-          3,
+          2,
           124,
-          125
-        ],
-        [
-          3,
-          6,
-          125,
-          123
-        ],
-        [
-          4,
-          3,
-          123,
-          125
-        ],
-        [
-          3,
-          7,
-          125,
-          122
+          126
         ],
         [
           5,
           3,
-          122,
-          125
-        ],
-        [
-          6,
-          3,
-          118,
-          119
-        ],
-        [
-          6,
-          3,
-          117,
-          120
+          126,
+          123
         ],
         [
           4,
+          2,
+          126,
+          126
+        ],
+        [
+          8,
+          5,
+          126,
+          123
+        ],
+        [
           3,
+          2,
           125,
+          126
+        ],
+        [
+          2,
+          4,
+          126,
+          124
+        ],
+        [
+          3,
+          2,
+          125,
+          126
+        ],
+        [
+          2,
+          4,
+          126,
+          123
+        ],
+        [
+          2,
+          5,
+          126,
+          123
+        ],
+        [
+          2,
+          5,
+          126,
+          126
+        ],
+        [
+          2,
+          4,
+          126,
+          123
+        ],
+        [
+          3,
+          2,
+          124,
+          126
+        ],
+        [
+          3,
+          2,
+          114,
           120
         ],
         [
-          7,
+          5,
+          2,
+          120,
+          126
+        ],
+        [
           3,
-          119,
-          120
+          2,
+          125,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
       "sourceEntry": "Hearing_Mage_Male.png",
-      "sha256": "68dcbd7c77404e5ca74f8389a03a1c10cbac1ebe131820a3d05f003cd40b2610",
+      "sha256": "fff8c491f2960f71c0432c6485eea2889710272dcfeff85a19e66ef377e52c19",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png",
       "appearanceId": "appearance.external.v1.hearing.mage.male",
       "theme": "Hearing",
@@ -826,113 +826,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Right9 왼쪽[3,45,6,59)33px 빨간/흰지팡이원잘린파츠잔존. Right10[3,51,4,55)4px와11[3,51,4,54)3px잔여선,10[33,65,34,66)1px 및Up14[83,48,84,49)1px분리점. 다른행귀장치/머리/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Right9-11 잘린 원/잔여선과Up14 점 해소. 16Frame 지팡이/머리/귀장치/발 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          3,
+          2,
+          4,
+          126,
+          124
+        ],
+        [
+          2,
+          6,
+          126,
+          122
+        ],
+        [
+          2,
+          2,
+          126,
+          121
+        ],
+        [
+          2,
+          5,
+          126,
+          123
+        ],
+        [
+          2,
           8,
-          121,
+          126,
+          119
+        ],
+        [
+          2,
+          4,
+          123,
+          116
+        ],
+        [
+          2,
+          8,
+          126,
           120
+        ],
+        [
+          2,
+          5,
+          126,
+          123
+        ],
+        [
+          2,
+          12,
+          126,
+          124
+        ],
+        [
+          2,
+          11,
+          126,
+          115
         ],
         [
           4,
-          8,
-          120,
-          120
+          12,
+          126,
+          116
         ],
         [
-          3,
-          8,
-          122,
-          120
-        ],
-        [
-          4,
-          8,
-          120,
-          120
-        ],
-        [
-          3,
-          4,
-          124,
+          2,
+          10,
+          126,
           118
-        ],
-        [
-          4,
-          4,
-          124,
-          117
-        ],
-        [
-          4,
-          4,
-          125,
-          118
-        ],
-        [
-          4,
-          4,
-          124,
-          120
         ],
         [
           5,
-          9,
-          125,
-          119
+          2,
+          123,
+          126
         ],
         [
-          3,
-          10,
-          125,
-          119
+          8,
+          2,
+          126,
+          122
         ],
         [
-          3,
-          10,
-          125,
-          119
+          4,
+          2,
+          123,
+          126
         ],
         [
-          3,
-          10,
-          125,
-          119
-        ],
-        [
-          14,
-          3,
-          118,
-          114
-        ],
-        [
-          12,
-          3,
-          119,
-          114
-        ],
-        [
-          12,
-          3,
-          117,
-          114
-        ],
-        [
-          14,
-          3,
-          116,
-          114
+          8,
+          2,
+          124,
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
-      "sourceEntry": "Hearing_Marksman_Female.png",
-      "sha256": "2a24aceeaef7c0f4957266c174620b305d15792f8aa2a9050685775059cb1155",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
+      "sourceEntry": "Hearing_Sharpshooter_Female.png",
+      "sha256": "9c622bce6db73dab699bbbcb51c55f92167040ad5fa20ce9c7815c1e0c3365fb",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.hearing.marksman.female",
       "theme": "Hearing",
@@ -942,113 +942,113 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전3/13/15 셀옆큰파츠해소. Left4/6/7 발아래[70,122,79,124)14px/[67,123,73,124)6px/[69,123,74,124)5px잔존. 새Right8/9 발조각[51,117,71,122)58px/[55,119,73,122)34px. Up12/14 포니테일상단이셀y=3부근에서넓은수평단면으로잘림(셀여백은있으나원래머리끝윤곽불완전). 0/9/11 작은분리점. 귀장치보존/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 발 아래 파츠 해소, Up12/14 포니테일 상단이 둥근 닫힌 윤곽으로 복원. 16Frame 활/화살/귀장치/방향 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          8,
-          3,
-          121,
-          125
-        ],
-        [
-          6,
-          3,
-          120,
-          124
-        ],
-        [
-          5,
-          3,
-          121,
-          125
-        ],
-        [
-          5,
-          3,
-          125,
-          125
-        ],
-        [
-          9,
-          4,
-          124,
-          124
-        ],
-        [
-          5,
-          4,
-          125,
-          124
-        ],
-        [
           7,
-          3,
-          125,
-          124
-        ],
-        [
-          3,
-          3,
-          125,
-          124
-        ],
-        [
-          6,
-          5,
-          122,
-          122
-        ],
-        [
-          6,
-          5,
-          125,
-          122
-        ],
-        [
-          3,
-          5,
-          122,
-          122
+          2,
+          121,
+          126
         ],
         [
           4,
+          2,
+          123,
+          126
+        ],
+        [
           5,
-          121,
+          2,
+          123,
+          126
+        ],
+        [
+          2,
+          2,
+          126,
+          125
+        ],
+        [
+          11,
+          4,
+          126,
           123
         ],
         [
-          19,
           3,
-          121,
-          111
+          3,
+          126,
+          124
         ],
         [
-          19,
-          3,
-          122,
-          111
+          2,
+          2,
+          126,
+          126
+        ],
+        [
+          4,
+          2,
+          126,
+          125
+        ],
+        [
+          5,
+          2,
+          123,
+          126
+        ],
+        [
+          2,
+          5,
+          123,
+          122
+        ],
+        [
+          6,
+          2,
+          124,
+          126
+        ],
+        [
+          2,
+          2,
+          125,
+          126
+        ],
+        [
+          10,
+          2,
+          117,
+          126
         ],
         [
           17,
-          3,
+          4,
           122,
+          120
+        ],
+        [
+          15,
+          2,
+          112,
           111
         ],
         [
-          19,
-          3,
+          12,
+          2,
           116,
-          112
+          126
         ]
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v2.zip",
-      "sourceZipSha256": "8eda5abebdfd207e87e39e3fbca624f3afc0720ae1251f7929849306435ca93e",
-      "sourceEntry": "Hearing_Marksman_Male.png",
-      "sha256": "a027f3c1ac38595b3608a21d96c9e010ff11ee19fe1e3b463c0cacefccf36708",
+      "sourceZip": "F:\\Downloads\\Limitless_Hearing_Path_10_Restored_v3.zip",
+      "sourceZipSha256": "e2a7044a46ac735a55cff22541b9f0ee1d5cd52a8e432b6edfb902f892d67985",
+      "sourceEntry": "Hearing_Sharpshooter_Male.png",
+      "sha256": "3b1fe496f32863d5755e2c267461c67ab9a32627491d1311d896e00219496baf",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.hearing.marksman.male",
       "theme": "Hearing",
@@ -1058,105 +1058,105 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전Right8-11 머리위선/Left5 큰셀옆파츠해소. 새Up13 머리위[44,3,52,4)8px+[78,3,82,4)4px검은선,Up15[80,3,84,4)4px검은선잔존. Left4발아래1px/5발아래2+2px/7발아래3+2px분리점. 귀장치/방향정상.",
+      "readyForSelection": true,
+      "reviewReason": "RestoredV3 PASS: v2 Left 발밑 점 및 Up13/15 머리 위 검은선 해소. 16Frame 활/머리/귀장치/망토/방향 정상.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
-          15,
-          10,
-          122,
-          120
+          5,
+          2,
+          123,
+          126
         ],
         [
-          4,
-          6,
-          122,
-          125
-        ],
-        [
-          7,
-          6,
+          2,
+          3,
           121,
           125
+        ],
+        [
+          5,
+          2,
+          123,
+          126
         ],
         [
           8,
-          6,
-          113,
-          125
+          2,
+          119,
+          126
         ],
         [
-          19,
-          7,
-          125,
+          10,
+          2,
+          118,
           121
         ],
         [
-          13,
-          3,
-          124,
-          125
-        ],
-        [
-          12,
-          3,
-          123,
-          125
-        ],
-        [
-          17,
-          3,
-          121,
-          125
-        ],
-        [
-          6,
-          10,
-          113,
-          117
-        ],
-        [
-          3,
-          5,
-          114,
-          122
+          8,
+          2,
+          120,
+          126
         ],
         [
           7,
-          5,
-          116,
-          123
-        ],
-        [
-          4,
-          3,
-          118,
-          125
-        ],
-        [
-          16,
-          5,
-          119,
-          117
+          2,
+          121,
+          126
         ],
         [
           12,
-          3,
-          109,
-          119
+          2,
+          116,
+          126
         ],
         [
-          14,
-          3,
+          10,
+          2,
           117,
           119
         ],
         [
-          16,
-          3,
+          4,
+          2,
+          113,
+          126
+        ],
+        [
+          7,
+          2,
+          118,
+          126
+        ],
+        [
+          8,
+          2,
+          119,
+          126
+        ],
+        [
+          8,
+          2,
+          119,
+          126
+        ],
+        [
+          13,
+          2,
+          118,
+          126
+        ],
+        [
+          8,
+          2,
+          119,
+          126
+        ],
+        [
+          11,
+          2,
           116,
-          119
+          126
         ]
       ]
     },
