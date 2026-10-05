@@ -1,11 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
-## Mobility 최종복원9종 적용 준비 (2026-10-05)
+## Mobility v2 redownload9종 반영/엄격QA 완료 (2026-10-05)
 
-- 입력 `F:/Downloads/Limitless_Mobility_Path_9_Restored_v2_redownload.zip`, Mobility5Job×Male/Female9종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Mobility_RestoredV2Nine_적용_계약.md)·[QA](../11_UI/Mobility_RestoredV2Nine_QA.md).
-- 현재READY41/BLOCKED9·기대50/0 미확정. Mobility 포함 다른41종/READY41/사용자94항목 보존. 새144Frame 실제QA 및9Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
-- 마지막 반영commit `e83df1b`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
-
+- 입력 `F:/Downloads/Limitless_Mobility_Path_9_Restored_v2_redownload.zip`. 문서화→원본9PNG교체→검증. PNG9/Male5/Female4/정확9조합·중복0/누락0·512×512RGBA/4×4/16Frame/Cell128. 이미지수정0. [계획](../11_UI/Mobility_RestoredV2Nine_적용_계약.md)·[개별QA/최소수정리스트](../11_UI/Mobility_RestoredV2Nine_QA.md).
+- 144Frame 전체시각/Alpha검사: 이전가시적검/장비/바퀴아래조각 모두해소, 머리/휠체어/바퀴/방향/디자인 정상. 하지만사용자StrayPixel0을Alpha>0 고립성분까지적용하면9종에최대Alpha1-16의미세잔여픽셀이남음. **대상READY0/BLOCKED_ART9·전체READY41/BLOCKED9 유지**. 다른41종/HealerFemale은재판정하지않음. 상세Frame/좌표/픽셀수/Alpha를다음이미지세션최소수정리스트로기록.
+- 기존9AppearanceID/144SpriteID/meta/import/Gender+Path+Job/Save/fallback보존. 다른41PNG/CatalogEntry/QA·기존328Clip 동일, 신규Clip0. 사용자410Git항목보존. 게임기능C#변경없음, QAHelper대상/대표만조정.
+- 격리PlayUnfocused85PASS/0FAIL: 대상9Mapping/Preview, 대표남녀Fighter World/BattleLeftIdle/Save→BootstrapContinue의기존성별fallback유지. BLOCKED원본의실행직접표시는승격전보류. 전체800Sprite Missing0·대상import/rect/pivot 정상. 옛ID재계산/기본fallback 유지.
+- 컴파일Error0·최종ConsoleError0/Warning0, 기존CS0618경고2건별도기록. cleanBootstrap/EditMode·Save/Settings/Play설정복원·포커스전환없음. 실제걷기/키보드/게임패드미검증. 작업diff--check확인, GitHubPush없음. 계획commit `e2d3620`, 반영commit `b6b5d35`. 아래는이전이력.
 
 ## Mobility 최종 복원10종 반영/QA 완료 (2026-10-05)
 
