@@ -156,9 +156,12 @@ def run(pre=False):
             wav=path.relative_to(ROOT).as_posix();data=path.read_bytes()
             with wave.open(str(path)) as w:audio=dict(seconds=w.getnframes()/w.getframerate(),sample_rate=w.getframerate(),channels=w.getnchannels(),sha256=hashlib.sha256(data).hexdigest())
             if mr.get('root'):
-                src=mr['root']/mr['output_file'];source_same=src.is_file() and src.read_bytes()==data
+                # 교체 이력이 있는3개는 사용자 채택한 새 원본을 비교합니다. 이전 보충팩은 역사 자료로 보존합니다.
+                replacement=listening.get(r['dialogue_id'],{}).get('replacement_source','')
+                src=ROOT/replacement if replacement else mr['root']/mr['output_file']
+                source_same=src.is_file() and src.read_bytes()==data
                 if not source_same:status.append('WRONG_CLIP')
-                if path.name!=pathlib.Path(mr['output_file']).name:status.append('WRONG_CLIP')
+                if not replacement and path.name!=pathlib.Path(mr['output_file']).name:status.append('WRONG_CLIP')
             if r['dialogue_id'] in listening:
                 status.extend(listening[r['dialogue_id']]['status'].split(';'))
                 notes.append(listening[r['dialogue_id']]['reason'])
@@ -173,6 +176,8 @@ def run(pre=False):
                  manifest_dialogue_id=mr.get('clip_id',''),manifest_speaker=mr.get('speaker',''),manifest_text=mr.get('text',''),manifest_file=mr.get('manifest_file',''),
                  expected_voice_character='NONE' if semantic in ('','player') or not r['dialogue_id'] else semantic,
                  catalog_audioclip=wav,catalog_guid=cr.get('guid',''),wav_file=path.name if path else '',source_hash_equal=source_same,
+                 replacement_source=listening.get(r['dialogue_id'],{}).get('replacement_source',''),
+                 runtime_listening_pass=listening.get(r['dialogue_id'],{}).get('runtime_listening_pass',False),
                  portrait_character=portrait,expected_portrait_rule='NONE' if semantic in ('','player') else semantic+' (미제작은 NONE)',
                  audio=audio,audit_result=';'.join(dict.fromkeys(status)) or 'OK',notes=';'.join(notes))
         rows.append(row)
@@ -181,12 +186,12 @@ def run(pre=False):
         columns=['dialogue_id','speaker_id','voice_id','expected_text','heard_text','wav_file','reason','evidence','action']
         writer=csv.DictWriter(f,fieldnames=columns);writer.writeheader()
         for row in rows:
-            if row['dialogue_id'] not in listening:continue
+            if not listening.get(row['dialogue_id'],{}).get('tts_regen_required',False):continue
             evidence=listening[row['dialogue_id']]
             writer.writerow(dict(dialogue_id=row['dialogue_id'],speaker_id=row['resolved_speaker'],voice_id='Gacrux',
                 expected_text=row['spoken_text'],heard_text=evidence['heard_text'],wav_file=row['catalog_audioclip'],
                 reason=evidence['reason'],evidence='USER_LISTENING 2026-10-05',
-                action='올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음'))
+                action='새 원본 생성/사용자 원본 청취 완료; Unity Runtime 의미 검증 대기' if evidence.get('replacement_source') else '올바른 완전한 원본 제공 또는 다음 TTS 세션 재생성. 이번 생성/가공 없음'))
     used={r['dialogue_id'] for r in rows if r['dialogue_id']}
     duplicates={id:len(rs) for id,rs in catalogs.items() if len(rs)>1}
     shared={guid:ids for guid,ids in ((g,[r['id'] for r in catalog if r['guid']==g]) for g in {r['guid'] for r in catalog}) if len(ids)>1}
@@ -195,9 +200,14 @@ def run(pre=False):
                  by_result=dict(collections.Counter(s for r in rows for s in r['audit_result'].split(';'))),
                  catalog_total=len(catalog),duplicate_ids=duplicates,duplicate_clip_references=shared,
                  unused_catalog_ids=sorted(set(catalogs)-used),excluded_manifest_rows=[{k:v for k,v in r.items() if k!='root'} for r in manifest if r['clip_id'] not in used],
-                 doc_text_not_specified=sum(not r['canonical_story_doc'] for r in rows),original_doc_exact_coverage=23,original_doc_text_not_specified=308,player_voice_mapping=sum(r['resolved_speaker']=='player' and bool(r['catalog_audioclip']) for r in rows),player_portrait_display=sum(r['resolved_speaker']=='player' and r['portrait_character']!='NONE' for r in rows),branch_collisions={id:len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id}) for id in used if len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id})>1},tts_regen_required=sorted(listening),portrait_definitions=portraits,
+                 doc_text_not_specified=sum(not r['canonical_story_doc'] for r in rows),original_doc_exact_coverage=23,original_doc_text_not_specified=308,player_voice_mapping=sum(r['resolved_speaker']=='player' and bool(r['catalog_audioclip']) for r in rows),player_portrait_display=sum(r['resolved_speaker']=='player' and r['portrait_character']!='NONE' for r in rows),branch_collisions={id:len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id}) for id in used if len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id})>1},tts_regen_required=sorted(k for k,v in listening.items() if v.get('tts_regen_required',False)),portrait_definitions=portraits,
                  by_speaker={sid:dict(dialogue=sum(r['resolved_speaker']==sid for r in rows),mapped=sum(r['resolved_speaker']==sid and bool(r['catalog_audioclip']) for r in rows)) for sid in {r['resolved_speaker'] for r in rows}})
-    report=dict(summary=summary,rows=rows,runtime_evidence=runtime_log.read_text(encoding='utf-8').splitlines()[0] if runtime else 'PRE_IMPLEMENTATION',limitations=['태온 3개는 사용자 실제 청취 보고로 불일치 확인. 나머지 244개는 NEEDS_LISTENING. Metadata 일치는 의미 일치를 보장하지 않는다.','동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.','Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다.'])
+    focused_log=ROOT/'Temp/Main03Regen20261005/runtime-listening.txt'
+    report=dict(summary=summary,rows=rows,runtime_evidence=runtime_log.read_text(encoding='utf-8').splitlines()[0] if runtime else 'PRE_IMPLEMENTATION',
+                focused_runtime_evidence=focused_log.read_text(encoding='utf-8').splitlines()[0] if focused_log.is_file() else 'NOT_RUN',
+                source_user_listening_pass=sum(v.get('source_user_listening_pass',False) for v in listening.values()),
+                runtime_user_listening_pass=sum(v.get('runtime_listening_pass',False) for v in listening.values()),
+                limitations=['전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.','태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.','동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.','Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다.'])
     (OUT/'Story_Dialogue_Audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     columns=[k for k in rows[0] if k!='audio']+['wav_seconds','wav_sample_rate','wav_channels','wav_sha256']
     with (OUT/'Story_Dialogue_Audit_Matrix.csv').open('w',encoding='utf-8-sig',newline='') as f:
