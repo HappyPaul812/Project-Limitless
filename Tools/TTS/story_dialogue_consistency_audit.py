@@ -203,11 +203,13 @@ def run(pre=False):
                  doc_text_not_specified=sum(not r['canonical_story_doc'] for r in rows),original_doc_exact_coverage=23,original_doc_text_not_specified=308,player_voice_mapping=sum(r['resolved_speaker']=='player' and bool(r['catalog_audioclip']) for r in rows),player_portrait_display=sum(r['resolved_speaker']=='player' and r['portrait_character']!='NONE' for r in rows),branch_collisions={id:len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id}) for id in used if len({(r['resolved_speaker'],r['spoken_text']) for r in rows if r['dialogue_id']==id})>1},tts_regen_required=sorted(k for k,v in listening.items() if v.get('tts_regen_required',False)),portrait_definitions=portraits,
                  by_speaker={sid:dict(dialogue=sum(r['resolved_speaker']==sid for r in rows),mapped=sum(r['resolved_speaker']==sid and bool(r['catalog_audioclip']) for r in rows)) for sid in {r['resolved_speaker'] for r in rows}})
     focused_log=ROOT/'Temp/Main03Regen20261005/runtime-listening.txt'
+    supp_log=ROOT/'Temp/Main03SuppRegen20261005/runtime-listening.txt'
     report=dict(summary=summary,rows=rows,runtime_evidence=runtime_log.read_text(encoding='utf-8').splitlines()[0] if runtime else 'PRE_IMPLEMENTATION',
                 focused_runtime_evidence=focused_log.read_text(encoding='utf-8').splitlines()[0] if focused_log.is_file() else 'NOT_RUN',
+                supp_runtime_evidence=supp_log.read_text(encoding='utf-8').splitlines()[0] if supp_log.is_file() else 'NOT_RUN',
                 source_user_listening_pass=sum(v.get('source_user_listening_pass',False) for v in listening.values()),
                 runtime_user_listening_pass=sum(v.get('runtime_listening_pass',False) for v in listening.values()),
-                limitations=['전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.','태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.','동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.','Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다.'])
+                limitations=['003/004: new source and actual Unity Runtime user semantic PASS. Original NEEDS_LISTENING244 scope preserved; resolved two are overlapping members flagged RUNTIME_LISTENING_PASS. Do not sum counts to249.','전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.','태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.','동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.','Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다.'])
     (OUT/'Story_Dialogue_Audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     columns=[k for k in rows[0] if k!='audio']+['wav_seconds','wav_sample_rate','wav_channels','wav_sha256']
     with (OUT/'Story_Dialogue_Audit_Matrix.csv').open('w',encoding='utf-8-sig',newline='') as f:
