@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -132,7 +132,7 @@ namespace ProjectLimitless.EditorTools
         {
             for (int i = 0; i < 8; i++) yield return null;
             var catalog = PlayerAppearanceCatalog.Load();
-            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.hearing").OrderBy(p => p.name).ToArray();
+            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.mobility").OrderBy(p => p.name).ToArray();
             var jobs = Resources.LoadAll<JobDefinition>("JobDefinitions").OrderBy(j => j.name).ToArray();
             Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Hearing targets only / 5 Job");
             // 미술 수정판의 Ready 승격도 검사합니다. 기대값은 정식 Inventory를 사용합니다.
@@ -167,7 +167,7 @@ namespace ProjectLimitless.EditorTools
                         Check(entry.RuntimeReady || Value<Text>(jobUI, "previewStatus").text.Contains("임시 fallback"), "Blocked 표시 " + expectedId);
                     }
                 }
-            string[] representativePaths = { "path.hearing", "path.hearing" };
+            string[] representativePaths = { "path.mobility", "path.mobility" };
             string[] representativeJobs = { "fighter", "healer" };
             var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female };
             for (int sample = 0; sample < representativePaths.Length; sample++)

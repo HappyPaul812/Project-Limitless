@@ -4,8 +4,8 @@
   "female": 25,
   "duplicate": 0,
   "missing": 0,
-  "ready": 40,
-  "blocked": 10,
+  "ready": 41,
+  "blocked": 9,
   "entries": [
     {
       "gender": "Female",
@@ -345,8 +345,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left/Right 발 아래 다른 행의 머리 조각, Right 및 Up 머리 상단 수평 절단. 일부 검 끝 조각이 셀 옆에 분리됨."
+      "frames": "1,5,6,9,11,13-15",
+      "reason": "셀 옆 잘린 검 파츠/Up13-15 좌측 분리 검끝. Frame1 우측 미세 잔여점."
     },
     {
       "gender": "Male",
@@ -356,8 +356,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left/Right 발 아래 머리·무기 조각과 옆 셀의 검/망토 조각. Up 머리 상단 수평 절단."
+      "frames": "1,5-7,9-11,14,15",
+      "reason": "Left5-7/Right9-11/Up14-15 셀 좌측 잘린 검/장비 파츠. Frame1 좌측 잔여점."
     },
     {
       "gender": "Female",
@@ -367,8 +367,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left 머리 위 분리된 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단."
+      "frames": "0",
+      "reason": "Down0 바퀴 아래 6px 분리 잔여선, Alpha117."
     },
     {
       "gender": "Male",
@@ -378,8 +378,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "8-15",
-      "reason": "Right 발 아래 다음 행 머리 조각, Up 머리 상단 수평 절단."
+      "frames": "6-11",
+      "reason": "Left6/7 좌측 잘린 장비 파츠, Right8-11 바퀴 아래 갈색/검은 분리선."
     },
     {
       "gender": "Female",
@@ -387,10 +387,10 @@
       "jobId": "healer",
       "appearanceId": "appearance.external.v1.mobility.healer.female",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "머리/지팡이/휠체어 복원. 잘림/가시분리파츠 없음. Frame9-11 저Alpha18-49 머리 가장자리 성분은 부드러운 윤곽으로 기록."
     },
     {
       "gender": "Male",
@@ -400,8 +400,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left 머리 위 바퀴 조각, Right 발 아래 머리·장비 조각. Up 머리 상단 수평 절단."
+      "frames": "4,15",
+      "reason": "Left4 우측3px 지팡이 잔여파츠 Alpha191. Up15 좌측16px 금색 장비 파츠 Alpha250."
     },
     {
       "gender": "Female",
@@ -411,8 +411,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left/Right 발 아래 다른 행의 머리 조각. Up 머리 상단 수평 절단."
+      "frames": "0,8-10",
+      "reason": "Down0 및 Right8-10 바퀴 아래 12/25/19/11px 갈색/검은 분리선 Alpha225-255."
     },
     {
       "gender": "Male",
@@ -422,8 +422,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left 머리 위 바퀴 조각, Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단."
+      "frames": "5-7",
+      "reason": "Left5-7 좌측 잘린 망토/장비 파츠 Alpha243-253. Frame6 추가 잔여선 Alpha112."
     },
     {
       "gender": "Female",
@@ -433,8 +433,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-15",
-      "reason": "Left/Right 발 아래 다른 행의 금발 머리 조각. Up 머리 상단 수평 절단."
+      "frames": "0",
+      "reason": "Down0 바퀴 아래 7px 검은/갈색 분리선 Alpha195."
     },
     {
       "gender": "Male",
@@ -444,8 +444,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "0-15",
-      "reason": "Down 발 아래 잔여 조각, Left/Right 발 아래 다음 행 머리 조각. Up 머리 상단 수평 절단."
+      "frames": "0-3",
+      "reason": "Down0-3 바퀴/발 아래5/8/5/5px 분리 조각 Alpha198-240."
     },
     {
       "gender": "Female",

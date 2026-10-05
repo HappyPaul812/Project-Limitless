@@ -1,5 +1,7 @@
 # Player Sprite 자동 매핑·저장 계약
 
+2026-10-05 Mobility 최종10종: READY1/BLOCKED_ART9, 전체READY41/BLOCKED9. 다른40종 보존. [최신 QA](Mobility_RestoredFinal10_QA.md).
+
 2026-10-05 Hearing v3 새160Frame QA: **READY10/BLOCKED0·전체READY40/BLOCKED10**. Mobility 포함다른40종/기존READY30 보존. [최신QA](Hearing_RestoredV3Ten_QA.md). 백그라운드88PASS/0FAIL·최종Console Error0/Warning0.
 
 2026-10-05 Hearing v210종 원본 반영·새160Frame QA: READY0/BLOCKED_ART10, 전체 **READY30/BLOCKED20 유지**. Mobility 포함 다른40종 보존. [최신 QA](Hearing_RestoredV2Ten_QA.md).
@@ -36,7 +38,7 @@ Path Theme는 실제 Player Path의 시각 디자인이다. 모든 Path×Job 조
 
 Intellectual4/Vision5 최신 수정판 적용 후에도 이번 Revised9 기준 Ready1/Blocked8이며 전체 Ready22/Blocked28이다. 기존 ID/자동 매핑/Save와 다른41종 상태는 보존한다. [Revised9 QA](Intellectual_Vision_Revised9_QA.md).
 
-매핑 정확성과 Art Ready는 분리한다. 현재 50조합 중 Runtime Ready40 / Art Blocked10이며 정확한 프레임·사유는 [QA](Player_Appearance_Foreground_QA.md)를 따른다. Mobility10종은 제공 수정판 교체 후에도 분리 조각·머리 절단으로 BLOCKED_ART이며 [수정판 QA](Mobility_Player_Sprite_Fixed_QA.md)에 기록한다. 다른40종 판정은 유지한다. Blocked도 고유 Definition/ID를 조회한다. 실행에는 기존 Male/Female 기본 Sprite를 **임시 fallback**으로 쓰고 Preview에 이를 표시한다. 다른 Path/Job의 Sprite 또는 공통 Mobility Sprite로 대체하지 않는다. 기술 QA 필드 `readyForSelection`은 직렬화 호환 때문에 유지하되 RuntimeReady로 읽으며 선택을 제한하지 않는다.
+매핑 정확성과 Art Ready는 분리한다. 현재 50조합 중 Runtime Ready41 / Art Blocked9이며 정확한 프레임·사유는 [QA](Player_Appearance_Foreground_QA.md)를 따른다. Mobility 최종 복원본은 HealerFemale READY, 나머지9종 분리파츠로 BLOCKED_ART이며 [최신 QA](Mobility_RestoredFinal10_QA.md)에 기록한다. 다른40종 판정은 유지한다. Blocked도 고유 Definition/ID를 조회한다. 실행에는 기존 Male/Female 기본 Sprite를 **임시 fallback**으로 쓰고 Preview에 이를 표시한다. 다른 Path/Job의 Sprite 또는 공통 Mobility Sprite로 대체하지 않는다. 기술 QA 필드 `readyForSelection`은 직렬화 호환 때문에 유지하되 RuntimeReady로 읽으며 선택을 제한하지 않는다.
 
 World는 대응 Ready Definition의 Clip을 공용 성별 Controller에 Override한다. Battle은 같은 World Controller의 Left Idle을 사용하는 기존 전달 구조를 재사용한다. 50개 Animator Controller를 만들지 않는다.
 
