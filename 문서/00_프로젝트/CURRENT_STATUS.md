@@ -1,5 +1,14 @@
 # Project-Limitless 현재 개발 상태
 
+## LOCAL 전체 회귀검증 완료 (2026-10-05)
+
+- [종합 QA](LIMITLESS_CURRENT_FULL_REGRESSION_QA.md)·[보존 실행 로그](LIMITLESS_FullRegression_Runtime_2026_10_05.txt): **21범주 PASS18/FAIL0/NOT_VERIFIED3**. 신규 격리244체크 PASS, Main09 내부115/Main10 내부63 PASS는 wrapper와 중복합산하지 않음. Title 수정 회귀11PASS. 기존 Main15/16·Audio/Voice·Dungeon/Boss QA는 현재 Runtime/데이터 SHA 보존을 확인하고 범위를 명시해 재사용.
+- PlayerSprite **READY50/BLOCKED0**, 50 Mapping/Job Preview·800 Sprite·대표남녀 Confirm/World/실제 Bootstrap Continue/Battle Left Idle 정상. PNG/meta/ID/Audio/Catalog/사용자Save/Settings 불변. Main01–16 총16 Quest/103 Objective 참조·순수 규칙 감사와 Main09/10 실제 단계/편성/Continue/Battle/Dungeon 왕복 정상. Main13–15 Path 반응형 retrofit는 계속 설계후보이며 Main16 실제 Path 분기는 구현 상태 유지.
+- 실제 최소수정: Renderer2D의 활성 Missing 디버그 리소스6개 정상복원(`1e0a957`), Title 다시보기 버튼 하단 Outline 여백(`80d2f0b`, 1920×1080/1600×900/1280×720 경계·Replay/Next/Skip 정리 PASS). Editor QA의 오래된 미래Quest Seed/석재 재사용/던전 미구현 기대값만 보정(`deb181c`). Quest/Save/Party/Battle 기능·수치 변경0.
+- Serialized 검사12242객체/31Scene: Missing Script0, 현재 Runtime 활성 Missing Sprite/Audio/Material/기타 참조0. Build Scene19 Missing0. 과거 Milestone 백업Scene의 카메라 target 누락5와 제거된 Renderer 필드 YAML1행은 실행 범위 밖 이력으로 보존. 컴파일Error0/최종ConsoleError0·Warning0. 재컴파일에서 기존 ExternalAssetImportEditor의 CS0618 경고2건은 별도기록/원본보존.
+- 남은 확인: J 스킬15종 실제UI/취소/타깃 전체, N Dungeon B1/B2 일반8조우 전승리, T Party/Pet/Settings 포함 주요 모든UI 다중해상도 시각 QA. 사람 음성청취 품질·모든 물리 입력장치·배포 Player 저장은 미검증. 정식 BGM/Voice 기술연결 정상, SFX 재생은 미구현이며 Chapter2Battle BGM TBD 정책 유지.
+- clean Bootstrap Edit Mode·Audit Save/Settings/Play옵션/runInBackground 복원. 임시 Recorder/녹화스크립트 제거 및 manifest/lock 원본복원. 사용자410 Git항목(기존94그룹)보존·직접변경만 커밋·Push 없음. 다음권장작업은 위 J/N/T의 남은 검증이며 새 게임기획/Art 재가공 없음. 아래는 이전 이력.
+
 ## Player Sprite low-alpha QA 정책 정정/전체READY50 (2026-10-05)
 
 - 문서화→QA helper구현→재판정/검증. [정책](../11_UI/Player_Sprite_QA_Policy.md)·[Mobility개별QA](../11_UI/Mobility_LowAlphaPolicy_QA.md). 이전non-zero Alpha 일괄차단은가시적오류와저Alpha노이즈를구분하지못한오탐. 가시적Crop/분리조각/침범/방향/장비손실은계속BLOCKED, 작은비가시Alpha1–16노이즈는비차단경고. 큰면적/긴선/반복/실루엣영향은별도검토.
