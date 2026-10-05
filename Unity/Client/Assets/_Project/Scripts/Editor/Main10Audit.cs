@@ -73,7 +73,8 @@ namespace ProjectLimitless.Editor
             GameSessionData.ConfigureProgress(12, 0);
             CompanionRosterService.Reset(); CompanionRosterService.UnlockIntroCompanions(); CompanionRosterService.UnlockPaul("guardian");
             QuestService.ImportSaveData(new QuestProgressSaveData
-            { CompletedQuestIds = QuestCatalog.All.Where(x => x.QuestId != MainQuest10FieldFlow.QuestId).Select(x => x.QuestId).ToArray() });
+            // 현재 Catalog의 미래 Quest를 완료로 오인하지 않도록 Main09까지의 유효 진행만 준비합니다.
+            { CompletedQuestIds = QuestCatalog.All.Where(x => x.QuestId.StartsWith("main_") && string.CompareOrdinal(x.QuestId.Substring(0, 7), "main_10") < 0).Select(x => x.QuestId).ToArray() });
             GameSessionData.RecordLocation("Field_03", "Spawn_From_Field02");
             GameSessionData.SetPendingSpawnPoint("Spawn_From_Field02");
         }
@@ -155,14 +156,20 @@ namespace ProjectLimitless.Editor
             QuestService.NotifyInteraction(MainQuest10FieldFlow.EntranceId);
             Check(EconomyService.GetCurrency() == currency + 40 && GameSessionData.CurrentExperience == exp + 40,
                 "중복 신호 보상 없음");
-            var entrance = Object.FindObjectsByType<MainQuest10Interactable>().First(x => x.TargetId == MainQuest10FieldFlow.EntranceId);
-            Check(entrance.gameObject.activeInHierarchy && entrance.TryInteract() && DialoguePresenter.Instance.IsOpen,
-                "미구현 Dungeon 진입 안전 Hook");
-            DialoguePresenter.Instance.Hide();
             wait = RoundTrip("D 완료 후"); while (wait.MoveNext()) yield return null;
             Check(QuestService.GetState(MainQuest10FieldFlow.QuestId) == QuestState.Completed
                 && GameObject.Find("MainQuest10FieldFlow/" + MainQuest10FieldFlow.EntranceId) != null,
                 "Continue 뒤 입구 유지");
+            var entrance = Object.FindObjectsByType<MainQuest10Interactable>().First(x => x.TargetId == MainQuest10FieldFlow.EntranceId);
+            Object.FindAnyObjectByType<PlayerController>().transform.position = entrance.transform.position;
+            // 현재는 Dungeon이 구현되어 있으므로 예전 안내 대화 대신 실제 진입/복귀를 확인합니다.
+            for (int i = 0; i < 8; i++) yield return null;
+            Check(entrance.gameObject.activeInHierarchy && entrance.TryInteract(), "완료 후 실제 Dungeon 진입 입력");
+            wait = WaitScene("Dungeon_01"); while (wait.MoveNext()) yield return null;
+            Check(Object.FindAnyObjectByType<PlayerController>() != null && Object.FindObjectsByType<MonsterFieldController>().Length == 4, "Dungeon B1 실제 Player·4 Encounter");
+            SceneTransitionService.Load("Field_03", "Spawn_From_Field02");
+            wait = WaitScene("Field_03"); while (wait.MoveNext()) yield return null;
+            Check(QuestService.GetState(MainQuest10FieldFlow.QuestId) == QuestState.Completed, "Dungeon 왕복 Main10 완료 보존");
             Results.Add("SAVE_DIRECTORY " + GameSaveService.AuditSaveDirectory);
         }
     }

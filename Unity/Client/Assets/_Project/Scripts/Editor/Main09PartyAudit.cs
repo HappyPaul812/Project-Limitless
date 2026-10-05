@@ -73,7 +73,8 @@ namespace ProjectLimitless.Editor
             GameSessionData.Reset(); GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"감사 플레이어");
             GameSessionData.SelectPlayerPath(PathCombatTraitRuntime.MobilityPathId); GameSessionData.SelectJob("guardian");
             GameSessionData.ConfigureProgress(12,0); CompanionRosterService.UnlockIntroCompanions();
-            QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = QuestCatalog.All.Where(x=>x.QuestId != MainQuest09FieldFlow.QuestId).Select(x=>x.QuestId).ToArray() });
+            // 후속 Quest가 추가돼도 과거 검증 시작점을 미래 완료 상태로 만들지 않습니다.
+            QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = QuestCatalog.All.Where(x=>x.QuestId.StartsWith("main_") && string.CompareOrdinal(x.QuestId.Substring(0,7), "main_09") < 0).Select(x=>x.QuestId).ToArray() });
             GameSessionData.RecordLocation("Field_03","Spawn_From_Field02"); GameSessionData.SetPendingSpawnPoint("Spawn_From_Field02");
         }
         private static void ServiceChecks()
@@ -146,7 +147,8 @@ namespace ProjectLimitless.Editor
             Check(CompanionRosterService.IsUnlocked(CompanionRosterService.PaulId),"폴 영구 해금");
             QuestService.NotifyNpcTalked(CompanionRosterService.PaulId);
             Check(EconomyService.GetCurrency()==currency+35,"완료 중복 보상 없음");
-            Check(Object.FindObjectsByType<MainQuest09Interactable>().Length==0,"완료 후 Story Actor 숨김");
+            // Main10은 같은 석재 오브젝트를 의도적으로 재사용합니다. Main09 전용 Actor만 숨김 대상입니다.
+            Check(Object.FindObjectsByType<MainQuest09Interactable>().All(x=>x.TargetId==MainQuest09FieldFlow.StructureId),"완료 후 Main09 Actor 숨김·Main10 재사용 석재 유지");
             wait=RoundTrip("C Main09 완료");while(wait.MoveNext())yield return null;
             SceneManager.LoadSceneAsync("World_StarterVillage");wait=WaitScene("World_StarterVillage");while(wait.MoveNext())yield return null;
             var manager=Object.FindObjectsByType<VillageNpcRole>().First(x=>x.Role==VillageNpcRoleType.PartyManager);
@@ -217,7 +219,7 @@ namespace ProjectLimitless.Editor
             Check(PartyManagementPresenter.Instance==null || !PartyManagementPresenter.Instance.IsOpen,"Main05 이전 Party UI 차단");
             Check(DialoguePresenter.Instance.IsOpen,"Main05 이전 안내 대화"); DialoguePresenter.Instance.Hide();
             SceneManager.LoadSceneAsync("Field_03");wait=WaitScene("Field_03");while(wait.MoveNext())yield return null;
-            var beforeNine=QuestCatalog.All.Where(x=>x.QuestId!=MainQuest09FieldFlow.QuestId && x.QuestId!=MainQuest08FieldFlow.QuestId).Select(x=>x.QuestId).ToArray();
+            var beforeNine=QuestCatalog.All.Where(x=>x.QuestId.StartsWith("main_") && string.CompareOrdinal(x.QuestId.Substring(0,7), "main_08") < 0).Select(x=>x.QuestId).ToArray();
             var main08=QuestCatalog.All.First(x=>x.QuestId==MainQuest08FieldFlow.QuestId);
             var progress=new ActiveQuestSaveData{QuestId=MainQuest08FieldFlow.QuestId,
                 Objectives=main08.Objectives.Select((x,i)=>new QuestObjectiveProgressData{ObjectiveId=x.ObjectiveId,CurrentCount=i<6?1:0}).ToArray()};

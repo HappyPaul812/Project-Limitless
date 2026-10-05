@@ -103,6 +103,8 @@ namespace ProjectLimitless.EditorTools
                 var actor = NewCombatant("command_actor", BattleSide.Allies);
                 Type type = typeof(BattleSceneController);
                 BindingFlags fields = BindingFlags.NonPublic | BindingFlags.Instance;
+                // AddComponent의 Awake는 입장 연출 상태를 설정합니다. 이 감사는 연출 후 명령 경계만 검사합니다.
+                type.GetField("actionPlaying", fields).SetValue(controller, false);
                 type.GetField("currentActor", fields).SetValue(controller, actor);
                 type.GetField("messageText", fields).SetValue(controller, message);
                 var status = (BattleStatusEffectRuntime)type.GetField("statusEffects", fields).GetValue(controller);
