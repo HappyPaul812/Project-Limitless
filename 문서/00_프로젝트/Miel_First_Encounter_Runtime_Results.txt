@@ -1,0 +1,168 @@
+PASS
+PASS Isolated Save active
+PASS Audit-only slot1
+PASS Main04 definition
+PASS Scene Field_01
+PASS Actual Miel first appearance
+PASS Actual Miel TryInteract
+PASS Full first sequence10
+PASS Subtitle/speaker 0
+PASS Sequence order 0
+PASS Exact Resolve Source Playing main04_miel_supp_001
+PASS Character Portrait main04_miel_supp_001
+PASS GetData main04_miel_supp_001
+PASS Full natural playback no cutoff main04_miel_supp_001
+TRACE order=1 id=main04_miel_supp_001 speaker=companion_miel resolved=main04_miel_supp_001 source=main04_miel_supp_001 start=3567.1007961 duration=2 naturalStop=3569.1266261 lastTimeSample=47104 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page1
+PASS Text regions inside panel page1
+PASS Speaker/Body/Footer separated page1
+PASS No body truncation page1
+PASS Height40% / font24-28 page1
+PASS Word Wrap page1
+PASS Portrait separate page1
+NEXT order=1 at=3569.7467849 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 0
+PASS Subtitle/speaker 1
+PASS Sequence order 1
+PASS Exact Resolve Source Playing main04_taeon_supp_001
+PASS Character Portrait main04_taeon_supp_001
+PASS GetData main04_taeon_supp_001
+PASS Full natural playback no cutoff main04_taeon_supp_001
+TRACE order=2 id=main04_taeon_supp_001 speaker=companion_taeon resolved=main04_taeon_supp_001 source=main04_taeon_supp_001 start=3569.7632597 duration=3.13 naturalStop=3572.9462816 lastTimeSample=74752 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page2
+PASS Text regions inside panel page2
+PASS Speaker/Body/Footer separated page2
+PASS No body truncation page2
+PASS Height40% / font24-28 page2
+PASS Word Wrap page2
+PASS Portrait separate page2
+NEXT order=2 at=3573.5235803 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 1
+PASS Subtitle/speaker 2
+PASS Sequence order 2
+PASS Exact Resolve Source Playing main04_miel_supp_002
+PASS Character Portrait main04_miel_supp_002
+PASS GetData main04_miel_supp_002
+PASS Full natural playback no cutoff main04_miel_supp_002
+TRACE order=3 id=main04_miel_supp_002 speaker=companion_miel resolved=main04_miel_supp_002 source=main04_miel_supp_002 start=3573.5368913 duration=2.56 naturalStop=3576.0902016 lastTimeSample=60416 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page3
+PASS Text regions inside panel page3
+PASS Speaker/Body/Footer separated page3
+PASS No body truncation page3
+PASS Height40% / font24-28 page3
+PASS Word Wrap page3
+PASS Portrait separate page3
+NEXT order=3 at=3576.746597 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 2
+PASS Subtitle/speaker 3
+PASS Sequence order 3
+PASS Exact Resolve Source Playing main04_taeon_supp_002
+PASS Character Portrait main04_taeon_supp_002
+PASS GetData main04_taeon_supp_002
+PASS Full natural playback no cutoff main04_taeon_supp_002
+TRACE order=4 id=main04_taeon_supp_002 speaker=companion_taeon resolved=main04_taeon_supp_002 source=main04_taeon_supp_002 start=3576.7711532 duration=6.06 naturalStop=3582.8780549 lastTimeSample=145408 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page4
+PASS Text regions inside panel page4
+PASS Speaker/Body/Footer separated page4
+PASS No body truncation page4
+PASS Height40% / font24-28 page4
+PASS Word Wrap page4
+PASS Portrait separate page4
+NEXT order=4 at=3583.4925339 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 3
+PASS Subtitle/speaker 4
+PASS Sequence order 4
+PASS Exact Resolve Source Playing main04_miel_supp_003
+PASS Character Portrait main04_miel_supp_003
+PASS GetData main04_miel_supp_003
+PASS Full natural playback no cutoff main04_miel_supp_003
+TRACE order=5 id=main04_miel_supp_003 speaker=companion_miel resolved=main04_miel_supp_003 source=main04_miel_supp_003 start=3583.5089728 duration=3.11 naturalStop=3586.6414395 lastTimeSample=74240 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page5
+PASS Text regions inside panel page5
+PASS Speaker/Body/Footer separated page5
+PASS No body truncation page5
+PASS Height40% / font24-28 page5
+PASS Word Wrap page5
+PASS Portrait separate page5
+NEXT order=5 at=3587.2769431 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 4
+PASS Subtitle/speaker 5
+PASS Sequence order 5
+PASS Player Voice0 Portrait0
+PASS Panel in screen page6
+PASS Text regions inside panel page6
+PASS Speaker/Body/Footer separated page6
+PASS No body truncation page6
+PASS Height40% / font24-28 page6
+PASS Word Wrap page6
+PASS No blank Player Portrait space page6
+NEXT order=6 at=3587.4131214 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 5
+PASS Subtitle/speaker 6
+PASS Sequence order 6
+PASS Exact Resolve Source Playing main04_miel_supp_004
+PASS Character Portrait main04_miel_supp_004
+PASS GetData main04_miel_supp_004
+PASS Full natural playback no cutoff main04_miel_supp_004
+TRACE order=7 id=main04_miel_supp_004 speaker=companion_miel resolved=main04_miel_supp_004 source=main04_miel_supp_004 start=3587.429365 duration=4.7 naturalStop=3592.1884097 lastTimeSample=112640 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page7
+PASS Text regions inside panel page7
+PASS Speaker/Body/Footer separated page7
+PASS No body truncation page7
+PASS Height40% / font24-28 page7
+PASS Word Wrap page7
+PASS Portrait separate page7
+NEXT order=7 at=3592.7637555 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 6
+PASS Subtitle/speaker 7
+PASS Sequence order 7
+PASS Exact Resolve Source Playing main04_miel_supp_005
+PASS Character Portrait main04_miel_supp_005
+PASS GetData main04_miel_supp_005
+PASS Full natural playback no cutoff main04_miel_supp_005
+TRACE order=8 id=main04_miel_supp_005 speaker=companion_miel resolved=main04_miel_supp_005 source=main04_miel_supp_005 start=3592.7820691 duration=2.88 naturalStop=3595.7002198 lastTimeSample=68608 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page8
+PASS Text regions inside panel page8
+PASS Speaker/Body/Footer separated page8
+PASS No body truncation page8
+PASS Height40% / font24-28 page8
+PASS Word Wrap page8
+PASS Portrait separate page8
+NEXT order=8 at=3596.3148957 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 7
+PASS Subtitle/speaker 8
+PASS Sequence order 8
+PASS Exact Resolve Source Playing main04_taeon_supp_003
+PASS Character Portrait main04_taeon_supp_003
+PASS GetData main04_taeon_supp_003
+PASS Full natural playback no cutoff main04_taeon_supp_003
+TRACE order=9 id=main04_taeon_supp_003 speaker=companion_taeon resolved=main04_taeon_supp_003 source=main04_taeon_supp_003 start=3596.3257128 duration=3.76 naturalStop=3600.1140619 lastTimeSample=89600 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page9
+PASS Text regions inside panel page9
+PASS Speaker/Body/Footer separated page9
+PASS No body truncation page9
+PASS Height40% / font24-28 page9
+PASS Word Wrap page9
+PASS Portrait separate page9
+NEXT order=9 at=3600.7269477 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 8
+PASS Subtitle/speaker 9
+PASS Sequence order 9
+PASS Exact Resolve Source Playing main04_miel_supp_006
+PASS Character Portrait main04_miel_supp_006
+PASS GetData main04_miel_supp_006
+PASS Full natural playback no cutoff main04_miel_supp_006
+TRACE order=10 id=main04_miel_supp_006 speaker=companion_miel resolved=main04_miel_supp_006 source=main04_miel_supp_006 start=3600.7447328 duration=3.11 naturalStop=3603.91228 lastTimeSample=74240 manualNextAvailable=immediate_skip_policy autoNext=false
+PASS Panel in screen page10
+PASS Text regions inside panel page10
+PASS Speaker/Body/Footer separated page10
+PASS No body truncation page10
+PASS Height40% / font24-28 page10
+PASS Word Wrap page10
+PASS Portrait separate page10
+NEXT order=10 at=3604.4881756 origin=QA_manual_after_full_playback
+PASS Previous Source cleaned/replaced 9
+PASS Final Dialogue Voice Portrait cleanup
+PASS First conversation complete to encounter objective
+PASS Isolated automatic Save readable
+PASS Scene Bootstrap

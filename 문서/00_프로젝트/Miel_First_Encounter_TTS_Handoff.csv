@@ -1,0 +1,3 @@
+﻿dialogue_id,speaker_id,speaker_name,exact_text,current_wav_filename,actual_spoken_text,issue,output_filename,voice_name,model,voice_design,reason
+main04_miel_supp_001,companion_miel,미엘,"조금만 참으세요.
+출혈은 멎었습니다.",main04_miel_supp_001.wav,조금만 참으세요.,PARTIAL_AUDIO_CONTENT,main04_miel_supp_001.wav,Sulafat,gemini-3.8-flash-tts,false,출혈은 멎었습니다. 누락; USER_DIRECT_WAV_CONFIRMED;Runtime PCM/source match and full play;TTS regeneration required

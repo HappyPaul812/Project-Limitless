@@ -1,1 +1,3 @@
 ﻿dialogue_id,speaker_id,voice_id,expected_text,heard_text,wav_file,reason,evidence,action
+main04_miel_supp_001,companion_miel,Sulafat,"조금만 참으세요.
+출혈은 멎었습니다.",조금만 참으세요.,Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_001.wav,PARTIAL_AUDIO_CONTENT; second sentence absent in direct WAV; Runtime full natural playback/no cutoff,USER_RUNTIME_REPORT + USER_DIRECT_WAV_LISTENING 2026-10-06,정확한 전체본문으로 TTS 담당 세션 재생성;이번 생성/원본변경 없음
