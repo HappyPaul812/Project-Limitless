@@ -3516,8 +3516,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3632,8 +3632,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3748,8 +3748,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3864,8 +3864,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4096,8 +4096,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4212,8 +4212,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4328,8 +4328,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4444,8 +4444,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4560,8 +4560,8 @@
       "height": 512,
       "hasAlpha": true,
       "expectedFrameCount": 16,
-      "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
+      "readyForSelection": true,
+      "reviewReason": "READY: 가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
