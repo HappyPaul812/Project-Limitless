@@ -27,10 +27,10 @@
     "by_result": {
       "NEEDS_LISTENING": 244,
       "OK": 87,
-      "RUNTIME_LISTENING_PASS": 2,
+      "RUNTIME_LISTENING_PASS": 3,
       "WRONG_AUDIO_CONTENT": 1,
       "RUNTIME_SEMANTIC_MISMATCH": 1,
-      "SOURCE_LOW_LEVEL_AUDIO": 1
+      "SOURCE_USER_LISTENING_PASS": 1
     },
     "catalog_total": 247,
     "duplicate_ids": {},
@@ -67,8 +67,7 @@
     "player_portrait_display": 0,
     "branch_collisions": {},
     "tts_regen_required": [
-      "main03_taeon_supp_008",
-      "main03_taeon_supp_012"
+      "main03_taeon_supp_008"
     ],
     "portrait_definitions": {
       "companion_miel": {
@@ -2413,7 +2412,7 @@
       "runtime_speaker_display_name": "태온",
       "runtime_subtitle_text": "목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.",
       "spoken_text": "목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.",
-      "heard_text": "",
+      "heard_text": "목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.",
       "listening_evidence": "USER_LISTENING",
       "canonical_story_doc": "문서\\03_스토리\\LOCAL_Story_Dialogue_원문_부록.md",
       "canonical_story_doc_text": "목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.",
@@ -2426,21 +2425,21 @@
       "catalog_guid": "997f362bba765564c811ef7d9d7aa0c3",
       "wav_file": "main03_taeon_supp_012.wav",
       "source_hash_equal": true,
-      "replacement_source": "",
-      "runtime_listening_pass": false,
+      "replacement_source": "Limitless_TTS_Regen_Main03_Taeon_Supp012/main03_taeon_supp_012.wav",
+      "runtime_listening_pass": true,
       "runtime_playback_pass": true,
-      "source_rms_db": -51.90372080742649,
-      "semantic_listening_required": true,
+      "source_rms_db": -16.162878976834797,
+      "semantic_listening_required": false,
       "portrait_character": "companion_taeon",
       "expected_portrait_rule": "companion_taeon (미제작은 NONE)",
       "audio": {
-        "seconds": 1.45,
+        "seconds": 7.76,
         "sample_rate": 24000,
         "channels": 1,
-        "sha256": "5769d643495209128ea13d317db81f141d920b7b87e5f69145086bba3b4d92c5"
+        "sha256": "2a08dd57aecea6db4bebb6ee6ebd0b08569beca951fa7575300760eba324bd9e"
       },
-      "audit_result": "NEEDS_LISTENING;SOURCE_LOW_LEVEL_AUDIO",
-      "notes": "F. LOW_OR_SILENT_AUDIO: RMS -51.90 dBFS / peak -32.62 dBFS, length1.45s. Full Runtime Resolve/Play/GetData pass; regenerate full exact text at normal source level. Semantic not heard."
+      "audit_result": "NEEDS_LISTENING;SOURCE_USER_LISTENING_PASS;RUNTIME_LISTENING_PASS",
+      "notes": "2026-10-05 user confirmed Unity012 meaning/full sentences/volume PASS. Source USER_CONFIRMED_PASS and Runtime USER_LISTENING_PASS. New7.76s RMS-16.16dBFS source exact186240 Runtime PCM samples; GUID/meta/import unchanged. Full sequence/manual Next/clue001002/Main03 completed/isolated auto Save PASS. Prior low-level source resolved. Original244 marker is backlog management scope, not unresolved012;008 separate WRONG_AUDIO_CONTENT remains."
     },
     {
       "main": 4,
@@ -15292,8 +15291,8 @@
   "focused_runtime_evidence": "PASS",
   "remaining_runtime_playback_evidence": "PASS",
   "supp_runtime_evidence": "PASS",
-  "source_user_listening_pass": 5,
-  "runtime_user_listening_pass": 5,
+  "source_user_listening_pass": 6,
+  "runtime_user_listening_pass": 6,
   "limitations": [
     "003/004: new source and actual Unity Runtime user semantic PASS. Original NEEDS_LISTENING244 scope preserved; resolved two are overlapping members flagged RUNTIME_LISTENING_PASS. Do not sum counts to249.",
     "전체331개Runtime의 기존 증거와 이번 태온5페이지 집중 Runtime 증거를 구분한다.",

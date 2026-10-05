@@ -11,3 +11,51 @@
 - 실제 재생은 후반부만 완료시간까지대기; 첫 조우/전투전은 무음 보호검증. 사용자 Save/Settings는 격리하며 창 활성화/OS 입력/포커스전환0. 직접 변경만commit, GitHubPush0.
 
 결과는 아래에 추가한다.
+
+## 최종 적용 결과
+
+-012 새 원본 `F:/study/codex/Project-Limitless/Limitless_TTS_Regen_Main03_Taeon_Supp012/main03_taeon_supp_012.wav` → 기존 `Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav`. 전체 바이트 동일 SHA256 `2a08dd57aecea6db4bebb6ee6ebd0b08569beca951fa7575300760eba324bd9e`. 기존 meta/GUID `997f362bba765564c811ef7d9d7aa0c3`/import/Catalog/ID/Speaker 불변.
+- 새7.76초/PCM24kHz mono16bit / RMS−16.1629 / Peak−0.9631dBFS. 기존1.45초/RMS−51.9037 저음량 해소. 실제 Unity PCM186,240개=새원본 전체/오차0. 사용자 이번 Runtime 답변 **“012 의미·전체 문장·음량 PASS, 다른 줄은 확인하지 못함”**. Metadata/RuntimePlayback/SourceUserListening/RuntimeUserListening 모두PASS. 자동 조기전환/끝부분절단0, 끝까지 대기한Next 정상.
+- 원본 자동QA/실제 청취PASS 입력을 채택했으며 새TTS 생성/수정/가공0. 기존005/006/007/003/004 의미PASS 및 모든다른Voice 보존.
+
+## 008 원인·TTS 전달
+
+ID `main03_taeon_supp_008`, Expected/RuntimeSubtitle “역시 이상합니다.”, Speaker `companion_taeon`/태온. 기존 현재 WAV 직접청취 및 실제 Runtime 사용자 확인 모두 “그냥 돌아다니는 것 같지만…” 계열. 원본 SHA 불변으로 이전 실제청취 증거 유지. **이번 요청의Case A=WRONG_AUDIO_CONTENT / RUNTIME_SEMANTIC_MISMATCH**. 이전 문서Case B와 명칭순서만 다르다. 아직008 해결완료가 아니다.
+
+| 항목 |006|008|
+|---|---|---|
+| Clip / WAV|main03_taeon_supp_006 / .wav|main03_taeon_supp_008 / .wav|
+| Path|Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav|Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav|
+|GUID|86cecb5f27e225f4f9a992b37e2e17e9|16a05ac1b6d319545a8f9113e2bd9aba|
+|SHA256|deb234f78c9211cc937a3f8e07f070bfa26619cf021f29fa1793440885ac7429|a16d378060acc7ff290a24bd65f28fb62548da49416eada089bae144c6d7042c|
+|길이/RMS/Peak|7.16s /−18.9963 /−2.5990|2.25s /−21.6288 /−4.0663|
+
+이번 실제Battle→복귀→008에서 ID/화자/Resolve Path/GUID/AudioSource008/IsPlaying=true, Catalog-reference==Source 확인.006과동일Clip/reference/GUID/hash 아님.008 PCM54,000개가현WAV와오차0. 이전Source는Battle진입시Presenter/Voice 파괴 검증, 후속은새Source/페이지0. Catalog는ID+Speaker exactlookup이며indexlookup/cachekey/fallback 없음. Presenter 각Next의Play는Stop/clip초기화후새Clip대입, Player에서null.008과006 Metadata/Manifest본문도정상이라Resolver/Cache/Mapping 수정근거없음.
+
+Handoff **1건**: ID008 / Taeon(companion_taeon) / Gacrux / 전체본문 “역시 이상합니다.” / Output `main03_taeon_supp_008.wav` / Actual “그냥 돌아다니는 것 같지만…” 계열 / WRONG_AUDIO_CONTENT.012 저음량과분리하여012는해결,008새원본대기. TTSAPI0/MappingFix0/게임C#변경0.
+
+## 연속 Runtime 결과
+
+| 순서 |Line|Runtime 결과|의미 판정|
+|---|---|---|---|
+|1|008|올바른008 Clip Resolve/Play·전체PCM·Next PASS|WRONG_AUDIO_CONTENT,재생성필요|
+|2|Player|Voice NONE/Portrait NONE·태온정리 PASS|정상정책|
+|3|009|올바른009 Clip/태온Portrait·끝까지재생·Next PASS|NEEDS_LISTENING|
+|4|Player|Voice NONE/Portrait NONE·이전태온정리 PASS|정상정책|
+|5|010|올바른010 Clip·끝까지재생·Next PASS|NEEDS_LISTENING;RMS−31.83 낮아청취검토|
+|6|011|올바른011 Clip·끝까지재생·Next PASS|NEEDS_LISTENING|
+|7|012|새012 Clip/정상음량·끝까지재생·Next PASS|사용자Source/Runtime 의미PASS|
+|8|001|실제다음단서TryReach·올바른001 Clip·끝까지재생 PASS|NEEDS_LISTENING|
+|9|002|올바른002 Clip·끝까지재생·Main03종료 PASS|NEEDS_LISTENING|
+
+- 후반9페이지(Voice7/Player2), 보호검증포함Main03 전체16페이지. 실제첫Battle진입→QA전용승리종료→정식결과복귀→후속7페이지→단서2페이지→Quest완료. 전투조작/전략검증은아님.
+- 무음213 assertions PASS/FAIL0, 실제재생227 assertions PASS/FAIL0. 각AUDIO9/TRACE7은assertions에중복합산하지않음. 후반Voice7 모두CatalogClip==Source/Play/정식ID. 측정9WAV(003004포함)전체PCM오차0.
+- Player Voice0/Portrait0, NPC복원/태온Portrait정상. Wrap·font24~28·Panel최대Canvas40%·Speaker/Body/Footer/Portrait비중첩·전체본문높이·Scroll끝접근PASS.012캡처시각검수:두문장/Portrait/Footer정상. 기존UI코드불변.
+- 끝까지대기한Next/빠른Next skip정책/최종닫힘·Clipnull/IsPlayingfalse·Portrait비활성PASS. Main03 Completed 및 **기존게임의격리자동Save JSON 읽기/완료Quest기록PASS**. 명시Save/Restore추가패치는자동승인검토가slot1덮어쓰기위험으로2회거절하여미실행. 승인된최종helper는저장결과읽기만하며별도Save/Restore호출0. 사용자실제Save/Settings해시변경0.
+- Compile Error0. 재컴파일기존CS0618경고2(ExternalAssetImportEditor53/59)와MCP WebSocket연결경고1이력보존/수정범위밖. 최종Console Error0/Warning0. 종료cleanBootstrap EditMode/is_focused=false/AuditSaveDirectory해제·설정/Play옵션복원.
+
+## 집계·보존·Git
+
+- 확정TTS_REGEN_REQUIRED **2→1(008)**.012해결. 기존244 NEEDS_LISTENING관리범위유지(이번확인한012에별도완료flag;244전체미확인이라는뜻아님). 이번신규사람Runtime semanticPASS **1(012)**,기존5포함확정6. 나머지후반5Voice의의미미확정;한줄씩문제생길때자동수정하지않고일괄청취전달목록유지.
+- 시작3042기존파일비교변경은Unity012 WAV/기존Editor QA helper **2개만**. 다른WAV/meta/import/Catalog/Mixer/게임C#/Story/Quest/Save/Settings/Scene/Packages불변. 기존사용자Git422항목보존,새TTS원본폴더stage0.
+- 구현관련commit `06666354eeaf9e2c328b058895751872b405ef88`. 작업diff--check검사,문서최종commit은최종보고참조. GitHubPush없음.

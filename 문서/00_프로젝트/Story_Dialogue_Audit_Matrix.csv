@@ -164,9 +164,10 @@
 목적이 같다면 잠시 함께 가시죠.
 혼자 움직이는 것보다는 안전할 겁니다.",main03_taeon_supp_012,M03:Unity/Client/Assets/_Project/Scripts/World/MainQuest03FieldFlow.cs:13149,Field_01,7,companion_taeon,companion_taeon,태온,"목적이 같다면 잠시 함께 가시죠.
 혼자 움직이는 것보다는 안전할 겁니다.","목적이 같다면 잠시 함께 가시죠.
-혼자 움직이는 것보다는 안전할 겁니다.",,USER_LISTENING,문서\03_스토리\LOCAL_Story_Dialogue_원문_부록.md,"목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.","목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.",USER_LISTENING,문서\03_스토리\LOCAL_Story_Dialogue_원문_부록.md,"목적이 같다면 잠시 함께 가시죠.
 혼자 움직이는 것보다는 안전할 겁니다.",main03_taeon_supp_012,태온,"목적이 같다면 잠시 함께 가시죠.
-혼자 움직이는 것보다는 안전할 겁니다.",Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,companion_taeon,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav,997f362bba765564c811ef7d9d7aa0c3,main03_taeon_supp_012.wav,True,,False,True,-51.90372080742649,True,companion_taeon,companion_taeon (미제작은 NONE),NEEDS_LISTENING;SOURCE_LOW_LEVEL_AUDIO,"F. LOW_OR_SILENT_AUDIO: RMS -51.90 dBFS / peak -32.62 dBFS, length1.45s. Full Runtime Resolve/Play/GetData pass; regenerate full exact text at normal source level. Semantic not heard.",1.45,24000,1,5769d643495209128ea13d317db81f141d920b7b87e5f69145086bba3b4d92c5
+혼자 움직이는 것보다는 안전할 겁니다.",Limitless_TTS_Output_Missing_Main01_05_08_12_v2/dialogue_manifest_missing_main01_05_08_12_v2.csv,companion_taeon,Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav,997f362bba765564c811ef7d9d7aa0c3,main03_taeon_supp_012.wav,True,Limitless_TTS_Regen_Main03_Taeon_Supp012/main03_taeon_supp_012.wav,True,True,-16.162878976834797,False,companion_taeon,companion_taeon (미제작은 NONE),NEEDS_LISTENING;SOURCE_USER_LISTENING_PASS;RUNTIME_LISTENING_PASS,"2026-10-05 user confirmed Unity012 meaning/full sentences/volume PASS. Source USER_CONFIRMED_PASS and Runtime USER_LISTENING_PASS. New7.76s RMS-16.16dBFS source exact186240 Runtime PCM samples; GUID/meta/import unchanged. Full sequence/manual Next/clue001002/Main03 completed/isolated auto Save PASS. Prior low-level source resolved. Original244 marker is backlog management scope, not unresolved012;008 separate WRONG_AUDIO_CONTENT remains.",7.76,24000,1,2a08dd57aecea6db4bebb6ee6ebd0b08569beca951fa7575300760eba324bd9e
 4,Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs,206,10562,FirstConversation,companion_miel,미엘,"조금만 참으세요.
 출혈은 멎었습니다.",main04_miel_supp_001,M04:Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs:10562,Field_01,1,companion_miel,companion_miel,미엘,"조금만 참으세요.
 출혈은 멎었습니다.","조금만 참으세요.
