@@ -88,7 +88,7 @@ namespace ProjectLimitless.EditorTools
             metrics.Add(string.Join(",",Screen.width,Screen.height,id,body.text.Length,body.cachedTextGenerator.lineCount,body.fontSize,preferred,body.rectTransform.rect.height,panel.rect.height));
             File.WriteAllText(Path.Combine(Root,"layout.csv"),"width,height,id,characters,lines,font,preferred_height,body_height,panel_height\n"+string.Join("\n",metrics));
         }
-        /// <summary>隔리 저장에서 실제 Actor→Battle과 해상도별 본문 영역을 검사합니다.</summary>
+        /// <summary>격리 저장에서 실제 Actor→Battle과 해상도별 본문 영역을 검사합니다.</summary>
         static IEnumerator Run()
         {
             yield return Wait(20);
