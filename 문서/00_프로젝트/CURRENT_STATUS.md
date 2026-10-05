@@ -1,11 +1,12 @@
 # Project-Limitless 현재 개발 상태
 
-## Mobility 최종복원10종 적용 준비 (2026-10-05)
+## Mobility 최종 복원10종 반영/QA 완료 (2026-10-05)
 
-- 입력 `F:/Downloads/Limitless_Mobility_Path_10_Restored_Final.zip`, Mobility5Job×Male/Female10종만 적용 예정. 문서화→구현→검증, 이미지수정 없음. [계획](../11_UI/Mobility_RestoredFinal10_적용_계약.md)·[QA](../11_UI/Mobility_RestoredFinal10_QA.md).
-- 현재READY40/BLOCKED10·기대50/0 미확정. Hearing 포함 다른40종/READY40/사용자94항목 보존. 새160Frame 실제QA 및10Mapping/대표성별Preview/World/Battle/SaveContinue 백그라운드 검증 예정.
-- 마지막 반영commit `bb0c8e8`. 다음작업: 원본 교체와검증. 포커스전환/GitHubPush 없음. 아래는이전이력.
-
+- 입력 `F:/Downloads/Limitless_Mobility_Path_10_Restored_Final.zip`. 문서화→원본10PNG교체→검증. PNG10/Male5/Female5/Job5×Gender2·512×512RGBA/4×4/16Frame/Cell128·중복0/누락0. 이미지수정0. [계획](../11_UI/Mobility_RestoredFinal10_적용_계약.md)·[개별QA/최소수정리스트](../11_UI/Mobility_RestoredFinal10_QA.md).
+- 160Frame 실제검수: Mobility READY1(HealerFemale)/BLOCKED_ART9, 전체READY40/BLOCKED10→**READY41/BLOCKED9**. 잔여검/장비/바퀴아래 조각은0-basedFrame/셀좌표로기록. 다음이미지세션은해당9종의최소수정리스트만처리.
+- 기존10AppearanceID/160SpriteID/meta/import/Gender+Path+Job/SaveMapping/fallback 유지. 통과Entry에8Clip추가, 다른40PNG/Entry/QA 및기존320Clip 동일. 게임기능C# 변경없음, QA helper 대상Path만Mobility로 변경. 사용자411Git항목 보존.
+- 격리PlayUnfocused88PASS/0FAIL: 10Mapping/Preview·대표MaleFighter 기본fallback 및FemaleHealer 원본Preview/World/BattleLeftIdle/Save→Continue 통과. 전체800Sprite Missing0. 옛ID재계산/기본fallback 유지. 컴파일Error0/최종ConsoleError0/Warning0. 기존CS0618 2건/MCP재연결경고1건 별도기록.
+- cleanBootstrap EditMode·Save/Settings/Play설정복원·포커스전환없음. 실제걷기/키보드/게임패드 미검증. 직접변경diff--check 확인·GitHubPush없음. 계획commit `32f74ef`, 반영commit `e83df1b`. 아래는이전이력.
 
 ## Hearing v3 복원10종 READY 반영 완료 (2026-10-05)
 
