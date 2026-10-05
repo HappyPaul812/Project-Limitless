@@ -18,3 +18,5 @@ PNG9/Male5/Female4/Job5×Gender2·중복0/누락0·512×512 RGBA/4×4/16Frame/Ce
 - Physical_Mage_Male.png: Left5-7 좌측 잘린 망토/장비 파츠 Alpha243-253. Frame6 추가 잔여선 Alpha112.
 - Physical_Marksman_Female.png: Down0 바퀴 아래 7px 검은/갈색 분리선 Alpha195.
 - Physical_Marksman_Male.png: Down0-3 바퀴/발 아래5/8/5/5px 분리 조각 Alpha198-240.
+
+HealerFemale은대상제외/READY유지, 기존41종재판정없음. 이번사용자요청StrayPixel0은Alpha>0 고립성분까지검사하며 낮은Alpha를자동허용하지않음.

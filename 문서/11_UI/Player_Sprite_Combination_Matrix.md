@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-05 Mobility v2 redownload9종: 가시적 기존문제 해소, Alpha>0 고립픽셀로 READY0/BLOCKED_ART9. 전체READY41/BLOCKED9 유지, HealerFemale 포함 다른41종 미변경. [최신QA](Mobility_RestoredV2Nine_QA.md).
+
 2026-10-05 Mobility 최종10종: READY1/BLOCKED_ART9, 전체READY41/BLOCKED9. 다른40종 보존. [최신 QA](Mobility_RestoredFinal10_QA.md).
 
 2026-10-05 Hearing v3 새160Frame QA: **READY10/BLOCKED0·전체READY40/BLOCKED10**. Mobility 포함다른40종/기존READY30 보존. [최신QA](Hearing_RestoredV3Ten_QA.md). 백그라운드88PASS/0FAIL·최종Console Error0/Warning0.

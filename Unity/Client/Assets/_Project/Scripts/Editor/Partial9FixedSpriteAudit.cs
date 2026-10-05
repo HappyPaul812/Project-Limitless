@@ -127,14 +127,14 @@ namespace ProjectLimitless.EditorTools
             var wait = WaitScene(name); while (wait.MoveNext()) yield return null;
         }
 
-        /// <summary>Hearing 최종10조합과 대표남녀 fallback의 Preview·World·격리Save/Continue·Battle 연결을 검증합니다.</summary>
+        /// <summary>Mobility 재다운로드9조합과 대표남녀 fallback의 Preview·World·격리Save/Continue·Battle 연결을 검증합니다.</summary>
         private static IEnumerator Run()
         {
             for (int i = 0; i < 8; i++) yield return null;
             var catalog = PlayerAppearanceCatalog.Load();
             var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.mobility").OrderBy(p => p.name).ToArray();
             var jobs = Resources.LoadAll<JobDefinition>("JobDefinitions").OrderBy(j => j.name).ToArray();
-            Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Hearing targets only / 5 Job");
+            Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Mobility9 targets only / 5 Job");
             // 미술 수정판의 Ready 승격도 검사합니다. 기대값은 정식 Inventory를 사용합니다.
             var inventory = JsonUtility.FromJson<PlayerAppearanceCatalog.Inventory>(File.ReadAllText(
                 Path.Combine(Application.dataPath, "_Project/Resources/PlayerAppearances/Validated50.json")));
@@ -153,9 +153,10 @@ namespace ProjectLimitless.EditorTools
                     Value<Button>(pathUI, "chooseButton").onClick.Invoke();
                     wait = WaitScene("JobSelection"); while (wait.MoveNext()) yield return null;
                     var jobUI = Object.FindAnyObjectByType<JobSelectionController>();
-                    // 이번 Hearing10조합만 검사하며 Mobility 포함 다른40종의 자산/검수 판정은 변경하지 않습니다.
+                    // 이번 Mobility9조합만 검사하며 HealerFemale 포함 다른41종의 자산/검수 판정은 변경하지 않습니다.
                     foreach (var job in jobs)
                     {
+                        if (gender == PlayerVisualType.Female && job.JobId == "healer") continue;
                         Call(jobUI, "SelectJob", job);
                         var entry = catalog.FindCombination(gender.ToString(), path.Id, job.JobId);
                         string metadataJob = job.JobId == "sharpshooter" ? "marksman" : job.JobId;
@@ -168,7 +169,7 @@ namespace ProjectLimitless.EditorTools
                     }
                 }
             string[] representativePaths = { "path.mobility", "path.mobility" };
-            string[] representativeJobs = { "fighter", "healer" };
+            string[] representativeJobs = { "fighter", "fighter" };
             var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female };
             for (int sample = 0; sample < representativePaths.Length; sample++)
             {

@@ -3503,10 +3503,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Fighter_Female.png",
-      "sha256": "6862300e9e1a381ebfbbe2ed5d523b0a2c5459e99b7cb613684c2b9da14fec1f",
+      "sha256": "32145eb36f8692ea851e186a8a5a7d71032960019499a9962d4e341560200a7b",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
       "appearanceId": "appearance.external.v1.mobility.fighter.female",
       "theme": "Mobility",
@@ -3517,7 +3517,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: 셀 옆 잘린 검 파츠/Up13-15 좌측 분리 검끝. Frame1 우측 미세 잔여점.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3619,10 +3619,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Fighter_Male.png",
-      "sha256": "c42d4d4bef3083440be1b0006825b18a85651ac9737526727bf3c2c90da07994",
+      "sha256": "ec08668ee8926e3176037512ad9de0a4bc8a0aac38cc40f34ecf58bb37b68993",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
       "appearanceId": "appearance.external.v1.mobility.fighter.male",
       "theme": "Mobility",
@@ -3633,7 +3633,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5-7/Right9-11/Up14-15 셀 좌측 잘린 검/장비 파츠. Frame1 좌측 잔여점.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3735,10 +3735,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Guardian_Female.png",
-      "sha256": "8e868b892708860a36df7040fef9b5fd881d913365f7fabb2f075547b9e58000",
+      "sha256": "a97526df1b88ad1fe16556952d9f067c6e66ba607510d2e4d9ed55ddb8fe84e2",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
       "appearanceId": "appearance.external.v1.mobility.guardian.female",
       "theme": "Mobility",
@@ -3749,7 +3749,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Down0 바퀴 아래 6px 분리 잔여선, Alpha117.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -3851,10 +3851,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Guardian_Male.png",
-      "sha256": "87d3fc4c2f85ce34e803b5212b9ee3f7ab50a55b2cb408f19daedef4e6734aeb",
+      "sha256": "68ba491f19b8410b51639d579e053016e9691af810c2c36e3cd99dac884da618",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
       "appearanceId": "appearance.external.v1.mobility.guardian.male",
       "theme": "Mobility",
@@ -3865,7 +3865,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left6/7 좌측 잘린 장비 파츠, Right8-11 바퀴 아래 갈색/검은 분리선.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4083,10 +4083,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Healer_Male.png",
-      "sha256": "219b20e5e4b23078048d52210f3aadcea8596ca97bf897566cae5d6ae7fdcbbb",
+      "sha256": "a0b4972890ace18c6dc8468505ac6172a6ebfd348520d9abefd6aa15f67eb7a8",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
       "appearanceId": "appearance.external.v1.mobility.healer.male",
       "theme": "Mobility",
@@ -4097,7 +4097,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left4 우측3px 지팡이 잔여파츠 Alpha191. Up15 좌측16px 금색 장비 파츠 Alpha250.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4191,7 +4191,7 @@
           126
         ],
         [
-          5,
+          6,
           2,
           123,
           125
@@ -4199,10 +4199,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Mage_Female.png",
-      "sha256": "7a848013895db601d9b8dd6485c978fc4d060e0ff9be93d573c9c87db369441f",
+      "sha256": "d7d9063e896f3fdd94c15fad44ac9557f8a522d5e218e7f600d1ca4b2ea7480b",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
       "appearanceId": "appearance.external.v1.mobility.mage.female",
       "theme": "Mobility",
@@ -4213,7 +4213,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Down0 및 Right8-10 바퀴 아래 12/25/19/11px 갈색/검은 분리선 Alpha225-255.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4280,7 +4280,7 @@
           2,
           5,
           126,
-          123
+          122
         ],
         [
           2,
@@ -4315,10 +4315,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Mage_Male.png",
-      "sha256": "02f0a007b0271885f2d225f99b1dae291e80fdc84cef98fef2a1d6786c2d5d32",
+      "sha256": "890a72e051ae99522f3eb1c9dd482a01c40dad7a2dd252b717c34f18aef820dc",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
       "appearanceId": "appearance.external.v1.mobility.mage.male",
       "theme": "Mobility",
@@ -4329,7 +4329,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Left5-7 좌측 잘린 망토/장비 파츠 Alpha243-253. Frame6 추가 잔여선 Alpha112.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4431,10 +4431,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Marksman_Female.png",
-      "sha256": "28edd3083fbaa8d99b549440ed1490e84bb20b57ea2eb4c393073feb6c1fd4f7",
+      "sha256": "64d102fba455761bf44e45814d3335b8d00d67ab161f669d6953cd2e7e7f4831",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
       "appearanceId": "appearance.external.v1.mobility.marksman.female",
       "theme": "Mobility",
@@ -4445,7 +4445,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Down0 바퀴 아래 7px 검은/갈색 분리선 Alpha195.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
@@ -4547,10 +4547,10 @@
       ]
     },
     {
-      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_10_Restored_Final.zip",
-      "sourceZipSha256": "55787cb4832542b6e782db5da7eeba91b375c6be4eecbd80b6898036dccb2ef8",
+      "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+      "sourceZipSha256": "b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a",
       "sourceEntry": "Physical_Marksman_Male.png",
-      "sha256": "15030e9f2fdb15b61018f5028c9e380df4a82fea4297a87b820e672b99fd9ba2",
+      "sha256": "130beae7319d9c1907d8c8a5e26183d1c3fba253a577925455436f881f2259ad",
       "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
       "appearanceId": "appearance.external.v1.mobility.marksman.male",
       "theme": "Mobility",
@@ -4561,7 +4561,7 @@
       "hasAlpha": true,
       "expectedFrameCount": 16,
       "readyForSelection": false,
-      "reviewReason": "BLOCKED_ART: Down0-3 바퀴/발 아래5/8/5/5px 분리 조각 Alpha198-240.",
+      "reviewReason": "BLOCKED_ART: 이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족.",
       "edgeTouchCells": [],
       "cellBboxes": [
         [
