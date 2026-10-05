@@ -1,5 +1,7 @@
 # Player Sprite 50조합 Matrix
 
+2026-10-05 QA정책 정정: Mobility9종 READY승격, 전체READY50/BLOCKED0. 저Alpha 고립노이즈는비차단경고, 실제Art오류는차단. 기존READY41종 재판정/PNG변경 없음. [정책](Player_Sprite_QA_Policy.md)·[재판정QA](Mobility_LowAlphaPolicy_QA.md).
+
 2026-10-05 Mobility v2 redownload9종: 가시적 기존문제 해소, Alpha>0 고립픽셀로 READY0/BLOCKED_ART9. 전체READY41/BLOCKED9 유지, HealerFemale 포함 다른41종 미변경. [최신QA](Mobility_RestoredV2Nine_QA.md).
 
 2026-10-05 Mobility 최종10종: READY1/BLOCKED_ART9, 전체READY41/BLOCKED9. 다른40종 보존. [최신 QA](Mobility_RestoredFinal10_QA.md).
@@ -62,16 +64,16 @@ Gender/Path/Job은 정본 Stable ID다. Mapping 정확성과 Art Ready는 분리
 |Male|path.intellectual|mage|appearance.external.v1.intellectual.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Mage_Male.png|true|PASS|
 |Female|path.intellectual|sharpshooter|appearance.external.v1.intellectual.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Female.png|true|PASS|
 |Male|path.intellectual|sharpshooter|appearance.external.v1.intellectual.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Intellectual/Intellectual_Marksman_Male.png|true|PASS|
-|Female|path.mobility|fighter|appearance.external.v1.mobility.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png|false|BLOCKED_ART|
-|Male|path.mobility|fighter|appearance.external.v1.mobility.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png|false|BLOCKED_ART|
-|Female|path.mobility|guardian|appearance.external.v1.mobility.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png|false|BLOCKED_ART|
-|Male|path.mobility|guardian|appearance.external.v1.mobility.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png|false|BLOCKED_ART|
+|Female|path.mobility|fighter|appearance.external.v1.mobility.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png|true|PASS|
+|Male|path.mobility|fighter|appearance.external.v1.mobility.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png|true|PASS|
+|Female|path.mobility|guardian|appearance.external.v1.mobility.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png|true|PASS|
+|Male|path.mobility|guardian|appearance.external.v1.mobility.guardian.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png|true|PASS|
 |Female|path.mobility|healer|appearance.external.v1.mobility.healer.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Female.png|true|PASS|
-|Male|path.mobility|healer|appearance.external.v1.mobility.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png|false|BLOCKED_ART|
-|Female|path.mobility|mage|appearance.external.v1.mobility.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png|false|BLOCKED_ART|
-|Male|path.mobility|mage|appearance.external.v1.mobility.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png|false|BLOCKED_ART|
-|Female|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|false|BLOCKED_ART|
-|Male|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|false|BLOCKED_ART|
+|Male|path.mobility|healer|appearance.external.v1.mobility.healer.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png|true|PASS|
+|Female|path.mobility|mage|appearance.external.v1.mobility.mage.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png|true|PASS|
+|Male|path.mobility|mage|appearance.external.v1.mobility.mage.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png|true|PASS|
+|Female|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.female|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png|true|PASS|
+|Male|path.mobility|sharpshooter|appearance.external.v1.mobility.marksman.male|Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png|true|PASS|
 |Female|path.vision|fighter|appearance.external.v1.vision.fighter.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Female.png|true|PASS|
 |Male|path.vision|fighter|appearance.external.v1.vision.fighter.male|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Fighter_Male.png|true|PASS|
 |Female|path.vision|guardian|appearance.external.v1.vision.guardian.female|Assets/_Project/Art/Characters/Player/Validated50/Vision/Visual_Guardian_Female.png|true|PASS|

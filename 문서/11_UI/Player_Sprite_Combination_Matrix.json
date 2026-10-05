@@ -4,8 +4,8 @@
   "female": 25,
   "duplicate": 0,
   "missing": 0,
-  "ready": 41,
-  "blocked": 9,
+  "ready": 50,
+  "blocked": 0,
   "entries": [
     {
       "gender": "Female",
@@ -343,10 +343,10 @@
       "jobId": "fighter",
       "appearanceId": "appearance.external.v1.mobility.fighter.female",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "0,1,2,4,5,6,7,10,11,12,13,14,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Male",
@@ -354,10 +354,10 @@
       "jobId": "fighter",
       "appearanceId": "appearance.external.v1.mobility.fighter.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "0,1,2,5,6,7,8,9,10,11,12,13,14,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Female",
@@ -365,10 +365,10 @@
       "jobId": "guardian",
       "appearanceId": "appearance.external.v1.mobility.guardian.female",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "1,2,5,6,10,12",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Male",
@@ -376,10 +376,10 @@
       "jobId": "guardian",
       "appearanceId": "appearance.external.v1.mobility.guardian.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "0,2,3,4,5,6,7,8,9,11,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Female",
@@ -398,10 +398,10 @@
       "jobId": "healer",
       "appearanceId": "appearance.external.v1.mobility.healer.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "3,4,5,6,7,8,9,10,11,13,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Female",
@@ -409,10 +409,10 @@
       "jobId": "mage",
       "appearanceId": "appearance.external.v1.mobility.mage.female",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "0,4,6,7,11,13,14",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Male",
@@ -420,10 +420,10 @@
       "jobId": "mage",
       "appearanceId": "appearance.external.v1.mobility.mage.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "2,4,5,6,7,8,9,10,11,12,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Female",
@@ -431,10 +431,10 @@
       "jobId": "sharpshooter",
       "appearanceId": "appearance.external.v1.mobility.marksman.female",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "1,2,3,4,5,7,8,13",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Male",
@@ -442,10 +442,10 @@
       "jobId": "sharpshooter",
       "appearanceId": "appearance.external.v1.mobility.marksman.male",
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
-      "runtimeReady": false,
-      "validationStatus": "BLOCKED_ART",
-      "frames": "0,2,3,5,6,7,8,13,14,15",
-      "reason": "이전 가시적 검/장비/바퀴아래 조각 해소. Alpha>0 엄격검사에서 본체와 8방향으로 연결되지 않은 저Alpha 고립 픽셀 잔존: Stray Pixel 0 미충족."
+      "runtimeReady": true,
+      "validationStatus": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음."
     },
     {
       "gender": "Female",

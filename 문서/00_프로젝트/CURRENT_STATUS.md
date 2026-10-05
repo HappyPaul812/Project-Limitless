@@ -1,5 +1,15 @@
 # Project-Limitless 현재 개발 상태
 
+## Player Sprite low-alpha QA 정책 정정/전체READY50 (2026-10-05)
+
+- 문서화→QA helper구현→재판정/검증. [정책](../11_UI/Player_Sprite_QA_Policy.md)·[Mobility개별QA](../11_UI/Mobility_LowAlphaPolicy_QA.md). 이전non-zero Alpha 일괄차단은가시적오류와저Alpha노이즈를구분하지못한오탐. 가시적Crop/분리조각/침범/방향/장비손실은계속BLOCKED, 작은비가시Alpha1–16노이즈는비차단경고. 큰면적/긴선/반복/실루엣영향은별도검토.
+- Mobility9종만재판정READY9·LOW_ALPHA_NOISE186성분(최대Alpha1–16/최대33px/bbox변14px). **전체READY41/BLOCKED9→READY50/BLOCKED0**. HealerFemale 포함기존READY41종 재판정없음/PNG/meta/Entry/QA/기존328Clip동일. PNG50수정0/Stage0·기존144SpriteID/AppearanceID/Save/fallback유지. 기존9Entry에만72Clip추가, 전체400Clip.
+- Tools/SpriteQA helper: MaxAlpha/성분면적/bbox/본체거리/반복·경계후보 기록, 시각검수 없는자동PASS금지. 회귀11PASS/0FAIL(A-E,셀내절단/큰면적/긴선/반복/실루엣/빈Frame/검수누락). 게임/Editor C#변경0.
+- 이전85PASS Runtime 재실행없음. 최소회귀81Mapping/Clip참조PASS·Preview/World Frame0참조9정상·PlayUnfocused BattleLeftIdle9PASS. Save→Continue는이전실행이력+StableID/정본Mapping/코드불변으로보호하며이번실제전체흐름반복없음. MissingSprite0·현재컴파일Error0/최종ConsoleError0/Warning0.
+- 검증중RuntimeBattle해석기를EditMode호출해Destroy오류9건발생/기록. 임시객체9개정리후properPlay검사통과, 게임코드변경없음. cleanBootstrap EditMode·Save/Settings/Play설정복원·포커스전환없음. 사용자410Git항목보존. 직접변경diff--check확인·GitHubPush없음.
+- 계획commit `d7b830f`, 반영commit `aabfe3d`. 다음권장: 별도요청시 실제걷기/입력 통합QA(이번미검증). 더필요한Mobility Art수정목록없음. 아래는정정전이력.
+
+
 ## Mobility v2 redownload9종 반영/엄격QA 완료 (2026-10-05)
 
 - 입력 `F:/Downloads/Limitless_Mobility_Path_9_Restored_v2_redownload.zip`. 문서화→원본9PNG교체→검증. PNG9/Male5/Female4/정확9조합·중복0/누락0·512×512RGBA/4×4/16Frame/Cell128. 이미지수정0. [계획](../11_UI/Mobility_RestoredV2Nine_적용_계약.md)·[개별QA/최소수정리스트](../11_UI/Mobility_RestoredV2Nine_QA.md).

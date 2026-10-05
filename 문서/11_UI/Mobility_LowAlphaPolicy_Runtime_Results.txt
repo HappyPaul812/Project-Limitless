@@ -1,0 +1,14 @@
+EditMode Mapping/Clip curves:81PASS
+Preview/World Frame0 references:9PASS
+Earlier85PASS full flow preserved; not rerun.
+Initial EditMode runtime resolver invocation caused9 transient Destroy errors;9 hidden sample objects removed. Proper isolatedPlay minimal Battle checks follow.
+PASS
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.fighter.female
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.fighter.male
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.guardian.female
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.guardian.male
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.healer.male
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.mage.female
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.mage.male
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.marksman.female
+PASS minimal BattleLeftIdle appearance.external.v1.mobility.marksman.maleFinalConsoleError0/Warning0; compilingFalse. CleanBootstrap EditMode; settings restored.

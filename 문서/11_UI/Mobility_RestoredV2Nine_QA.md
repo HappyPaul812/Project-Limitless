@@ -1,5 +1,7 @@
 # Mobility v2 redownload9종 QA
 
+2026-10-05 QA정책 정정: Mobility9종 READY승격, 전체READY50/BLOCKED0. 저Alpha 고립노이즈는비차단경고, 실제Art오류는차단. 기존READY41종 재판정/PNG변경 없음. [정책](Player_Sprite_QA_Policy.md)·[재판정QA](Mobility_LowAlphaPolicy_QA.md). 아래엄격Alpha>0 BLOCKED 판정은정정전이력이며현재판정은재판정QA를따른다.
+
 입력 `F:\Downloads\Limitless_Mobility_Path_9_Restored_v2_redownload.zip`, SHA256 `b2351935948e2028894d59cd24cbe9f6152128c010b11144b09f4a410ac0bc6a`. 문서화→원본9PNG바이트교체→검증. PNG9/Male5/Female4·대상9조합정확대응·중복0/누락0·512×512RGBA/4×4/16Frame/Cell128. 이미지수정0.
 
 2026-10-05 Mobility v2 redownload9종: 가시적 기존문제 해소, Alpha>0 고립픽셀로 READY0/BLOCKED_ART9. 전체READY41/BLOCKED9 유지, HealerFemale 포함 다른41종 미변경. [최신QA](Mobility_RestoredV2Nine_QA.md).

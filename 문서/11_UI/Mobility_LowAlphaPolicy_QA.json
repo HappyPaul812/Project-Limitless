@@ -1,0 +1,3994 @@
+{
+  "policy": "Player_Sprite_QA_Policy.md",
+  "sourceZip": "F:\\Downloads\\Limitless_Mobility_Path_9_Restored_v2_redownload.zip",
+  "entries": [
+    {
+      "appearanceId": "appearance.external.v1.mobility.fighter.female",
+      "file": "Physical_Fighter_Female.png",
+      "gender": "Female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Female.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "32145eb36f8692ea851e186a8a5a7d71032960019499a9962d4e341560200a7b",
+      "maxNoiseAlpha": 6,
+      "warningCount": 27,
+      "maxComponentPixels": 30,
+      "maxBboxExtent": 13,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                102,
+                15,
+                103,
+                16
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                123,
+                106,
+                124,
+                108
+              ],
+              "distanceToBody": 11.40175425099138,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                123,
+                109,
+                124,
+                111
+              ],
+              "distanceToBody": 13.892443989449804,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 4,
+              "pixelCount": 5,
+              "bbox": [
+                122,
+                113,
+                124,
+                117
+              ],
+              "distanceToBody": 17.46424919657298,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                125,
+                112,
+                126,
+                114
+              ],
+              "distanceToBody": 18.027756377319946,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                123,
+                52,
+                124,
+                54
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 3,
+              "bbox": [
+                73,
+                4,
+                76,
+                5
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                125,
+                63,
+                126,
+                64
+              ],
+              "distanceToBody": 5.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 6,
+              "pixelCount": 30,
+              "bbox": [
+                39,
+                7,
+                52,
+                10
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 5,
+              "pixelCount": 22,
+              "bbox": [
+                39,
+                6,
+                48,
+                9
+              ],
+              "distanceToBody": 5.656854249492381,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                58,
+                3,
+                59
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                46,
+                3,
+                47
+              ],
+              "distanceToBody": 11.661903789690601,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                49,
+                3,
+                50
+              ],
+              "distanceToBody": 9.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                16,
+                56,
+                17,
+                57
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                58,
+                3,
+                59
+              ],
+              "distanceToBody": 4.123105625617661,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                20,
+                4,
+                21,
+                5
+              ],
+              "distanceToBody": 19.72308292331602,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                84,
+                4,
+                85,
+                5
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                2,
+                63,
+                4,
+                64
+              ],
+              "distanceToBody": 5.656854249492381,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                78,
+                119,
+                79,
+                120
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                117,
+                95,
+                118,
+                96
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 4,
+              "bbox": [
+                3,
+                77,
+                6,
+                79
+              ],
+              "distanceToBody": 10.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                12,
+                92,
+                14,
+                94
+              ],
+              "distanceToBody": 6.324555320336759,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                123,
+                99,
+                124,
+                100
+              ],
+              "distanceToBody": 2.8284271247461903,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 3,
+              "pixelCount": 8,
+              "bbox": [
+                4,
+                82,
+                6,
+                87
+              ],
+              "distanceToBody": 8.94427190999916,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 11,
+              "bbox": [
+                4,
+                100,
+                10,
+                102
+              ],
+              "distanceToBody": 12.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                5,
+                80,
+                7,
+                83
+              ],
+              "distanceToBody": 8.54400374531753,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                9,
+                100,
+                12,
+                102
+              ],
+              "distanceToBody": 12.083045973594572,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.fighter.male",
+      "file": "Physical_Fighter_Male.png",
+      "gender": "Male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Fighter_Male.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "ec08668ee8926e3176037512ad9de0a4bc8a0aac38cc40f34ecf58bb37b68993",
+      "maxNoiseAlpha": 4,
+      "warningCount": 40,
+      "maxComponentPixels": 8,
+      "maxBboxExtent": 6,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                125,
+                113,
+                126,
+                115
+              ],
+              "distanceToBody": 16.1245154965971,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 8,
+              "bbox": [
+                60,
+                123,
+                66,
+                125
+              ],
+              "distanceToBody": 5.830951894845301,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 3,
+              "bbox": [
+                47,
+                124,
+                50,
+                125
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                88,
+                124,
+                91,
+                125
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                3,
+                73,
+                5,
+                76
+              ],
+              "distanceToBody": 7.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                5,
+                77,
+                6,
+                79
+              ],
+              "distanceToBody": 6.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 4,
+              "pixelCount": 8,
+              "bbox": [
+                2,
+                81,
+                5,
+                85
+              ],
+              "distanceToBody": 7.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                125,
+                113,
+                126,
+                114
+              ],
+              "distanceToBody": 17.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 4,
+              "bbox": [
+                125,
+                115,
+                126,
+                119
+              ],
+              "distanceToBody": 18.027756377319946,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                76,
+                3,
+                77
+              ],
+              "distanceToBody": 7.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 2,
+              "bbox": [
+                2,
+                79,
+                3,
+                81
+              ],
+              "distanceToBody": 7.0710678118654755,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                82,
+                3,
+                83
+              ],
+              "distanceToBody": 8.06225774829855,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                45,
+                125,
+                47,
+                126
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                87,
+                125,
+                90,
+                126
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 8,
+              "bbox": [
+                2,
+                57,
+                5,
+                60
+              ],
+              "distanceToBody": 8.48528137423857,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                2,
+                81,
+                4,
+                82
+              ],
+              "distanceToBody": 26.40075756488817,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                115,
+                117,
+                116,
+                118
+              ],
+              "distanceToBody": 13.45362404707371,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                8,
+                57,
+                9,
+                58
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                64,
+                3,
+                65
+              ],
+              "distanceToBody": 10.63014581273465,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                8,
+                76,
+                9,
+                77
+              ],
+              "distanceToBody": 16.64331697709324,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                81,
+                3,
+                82
+              ],
+              "distanceToBody": 24.20743687382041,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                60,
+                3,
+                61
+              ],
+              "distanceToBody": 7.810249675906654,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                101,
+                121,
+                102,
+                122
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                55,
+                3,
+                56
+              ],
+              "distanceToBody": 9.848857801796104,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 4,
+              "bbox": [
+                125,
+                69,
+                126,
+                73
+              ],
+              "distanceToBody": 10.63014581273465,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                101,
+                121,
+                103,
+                122
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                2,
+                54,
+                4,
+                56
+              ],
+              "distanceToBody": 5.656854249492381,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                101,
+                122,
+                104,
+                123
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 1,
+              "bbox": [
+                8,
+                46,
+                9,
+                47
+              ],
+              "distanceToBody": 12.165525060596439,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 3,
+              "bbox": [
+                2,
+                57,
+                4,
+                59
+              ],
+              "distanceToBody": 4.47213595499958,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                5,
+                57,
+                6,
+                58
+              ],
+              "distanceToBody": 2.8284271247461903,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                107,
+                60,
+                108,
+                61
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                11,
+                29,
+                12,
+                30
+              ],
+              "distanceToBody": 20.518284528683193,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                108,
+                38,
+                109,
+                39
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                95,
+                21,
+                96,
+                22
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                7,
+                25,
+                10,
+                27
+              ],
+              "distanceToBody": 25.495097567963924,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                4,
+                44,
+                5,
+                45
+              ],
+              "distanceToBody": 19.697715603592208,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                15,
+                19,
+                16,
+                20
+              ],
+              "distanceToBody": 17.26267650163207,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                21,
+                26,
+                22,
+                27
+              ],
+              "distanceToBody": 11.045361017187261,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 4,
+              "pixelCount": 3,
+              "bbox": [
+                2,
+                41,
+                3,
+                44
+              ],
+              "distanceToBody": 23.08679276123039,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.guardian.female",
+      "file": "Physical_Guardian_Female.png",
+      "gender": "Female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Female.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "a97526df1b88ad1fe16556952d9f067c6e66ba607510d2e4d9ed55ddb8fe84e2",
+      "maxNoiseAlpha": 4,
+      "warningCount": 8,
+      "maxComponentPixels": 17,
+      "maxBboxExtent": 6,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 3,
+              "bbox": [
+                67,
+                125,
+                70,
+                126
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                108,
+                68,
+                109,
+                69
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                123,
+                10,
+                125,
+                13
+              ],
+              "distanceToBody": 16.76305461424021,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                78,
+                117,
+                79,
+                118
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                2,
+                47,
+                3,
+                51
+              ],
+              "distanceToBody": 14.317821063276353,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                83,
+                119,
+                85,
+                120
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                111,
+                21,
+                112,
+                22
+              ],
+              "distanceToBody": 17.69180601295413,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 17,
+              "bbox": [
+                102,
+                100,
+                107,
+                106
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.guardian.male",
+      "file": "Physical_Guardian_Male.png",
+      "gender": "Male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "68ba491f19b8410b51639d579e053016e9691af810c2c36e3cd99dac884da618",
+      "maxNoiseAlpha": 7,
+      "warningCount": 19,
+      "maxComponentPixels": 30,
+      "maxBboxExtent": 12,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 6,
+              "bbox": [
+                56,
+                124,
+                60,
+                126
+              ],
+              "distanceToBody": 3.1622776601683795,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                61,
+                123,
+                63,
+                125
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                62,
+                125,
+                64,
+                126
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                79,
+                2,
+                80,
+                3
+              ],
+              "distanceToBody": 8.54400374531753,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 6,
+              "pixelCount": 15,
+              "bbox": [
+                83,
+                2,
+                91,
+                5
+              ],
+              "distanceToBody": 9.899494936611665,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 6,
+              "pixelCount": 30,
+              "bbox": [
+                81,
+                3,
+                93,
+                6
+              ],
+              "distanceToBody": 7.280109889280518,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 20,
+              "bbox": [
+                2,
+                71,
+                6,
+                80
+              ],
+              "distanceToBody": 6.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                78,
+                3,
+                81,
+                5
+              ],
+              "distanceToBody": 8.54400374531753,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 7,
+              "pixelCount": 21,
+              "bbox": [
+                82,
+                3,
+                91,
+                6
+              ],
+              "distanceToBody": 10.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                8,
+                71,
+                9,
+                75
+              ],
+              "distanceToBody": 5.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 7,
+              "bbox": [
+                2,
+                83,
+                4,
+                88
+              ],
+              "distanceToBody": 7.211102550927978,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 5,
+              "pixelCount": 13,
+              "bbox": [
+                80,
+                2,
+                89,
+                4
+              ],
+              "distanceToBody": 7.280109889280518,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                2,
+                67,
+                4,
+                68
+              ],
+              "distanceToBody": 11.40175425099138,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 6,
+              "bbox": [
+                2,
+                85,
+                4,
+                89
+              ],
+              "distanceToBody": 8.246211251235321,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                98,
+                119,
+                99,
+                120
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 11,
+              "bbox": [
+                123,
+                65,
+                125,
+                72
+              ],
+              "distanceToBody": 7.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 5,
+              "bbox": [
+                80,
+                124,
+                83,
+                126
+              ],
+              "distanceToBody": 8.54400374531753,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                37,
+                2,
+                38,
+                3
+              ],
+              "distanceToBody": 19.72308292331602,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                107,
+                99,
+                108,
+                101
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.healer.male",
+      "file": "Physical_Healer_Male.png",
+      "gender": "Male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Healer_Male.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "a0b4972890ace18c6dc8468505ac6172a6ebfd348520d9abefd6aa15f67eb7a8",
+      "maxNoiseAlpha": 16,
+      "warningCount": 29,
+      "maxComponentPixels": 33,
+      "maxBboxExtent": 14,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                10,
+                46,
+                11,
+                47
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                124,
+                83,
+                125,
+                85
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                39,
+                4,
+                40,
+                5
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 5,
+              "pixelCount": 5,
+              "bbox": [
+                84,
+                4,
+                89,
+                5
+              ],
+              "distanceToBody": 9.219544457292887,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 10,
+              "bbox": [
+                122,
+                28,
+                126,
+                32
+              ],
+              "distanceToBody": 20.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 8,
+              "bbox": [
+                82,
+                3,
+                89,
+                5
+              ],
+              "distanceToBody": 9.055385138137417,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 8,
+              "pixelCount": 33,
+              "bbox": [
+                2,
+                70,
+                6,
+                81
+              ],
+              "distanceToBody": 5.830951894845301,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 5,
+              "bbox": [
+                84,
+                4,
+                89,
+                5
+              ],
+              "distanceToBody": 9.848857801796104,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 10,
+              "bbox": [
+                124,
+                30,
+                126,
+                36
+              ],
+              "distanceToBody": 18.439088914585774,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 16,
+              "pixelCount": 28,
+              "bbox": [
+                2,
+                66,
+                5,
+                80
+              ],
+              "distanceToBody": 5.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                2,
+                81,
+                3,
+                83
+              ],
+              "distanceToBody": 12.041594578792296,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 5,
+              "bbox": [
+                84,
+                4,
+                89,
+                5
+              ],
+              "distanceToBody": 9.219544457292887,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 17,
+              "bbox": [
+                123,
+                72,
+                126,
+                81
+              ],
+              "distanceToBody": 5.656854249492381,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 4,
+              "bbox": [
+                14,
+                24,
+                17,
+                27
+              ],
+              "distanceToBody": 20.223748416156685,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                5,
+                103,
+                7,
+                104
+              ],
+              "distanceToBody": 8.48528137423857,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                35,
+                3,
+                36
+              ],
+              "distanceToBody": 17.204650534085253,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                117,
+                73,
+                118,
+                74
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                78,
+                118,
+                79,
+                119
+              ],
+              "distanceToBody": 3.1622776601683795,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                43,
+                2,
+                44,
+                3
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                6,
+                57,
+                7,
+                59
+              ],
+              "distanceToBody": 12.041594578792296,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                6,
+                60,
+                7,
+                62
+              ],
+              "distanceToBody": 10.295630140987,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                15,
+                26,
+                16,
+                27
+              ],
+              "distanceToBody": 21.213203435596427,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                18,
+                27,
+                19,
+                28
+              ],
+              "distanceToBody": 18.110770276274835,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                18,
+                29,
+                19,
+                30
+              ],
+              "distanceToBody": 18.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                21,
+                30,
+                22,
+                31
+              ],
+              "distanceToBody": 15.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                16,
+                31,
+                17,
+                32
+              ],
+              "distanceToBody": 20.024984394500787,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                19,
+                31,
+                20,
+                32
+              ],
+              "distanceToBody": 17.029386365926403,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                9,
+                56,
+                10,
+                58
+              ],
+              "distanceToBody": 12.36931687685298,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                6,
+                65,
+                7,
+                66
+              ],
+              "distanceToBody": 10.295630140987,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.mage.female",
+      "file": "Physical_Mage_Female.png",
+      "gender": "Female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Female.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "d7d9063e896f3fdd94c15fad44ac9557f8a522d5e218e7f600d1ca4b2ea7480b",
+      "maxNoiseAlpha": 3,
+      "warningCount": 9,
+      "maxComponentPixels": 14,
+      "maxBboxExtent": 8,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                117,
+                72,
+                119,
+                73
+              ],
+              "distanceToBody": 6.324555320336759,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 3,
+              "pixelCount": 1,
+              "bbox": [
+                61,
+                125,
+                62,
+                126
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                45,
+                5,
+                46,
+                6
+              ],
+              "distanceToBody": 7.0710678118654755,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                46,
+                9,
+                47,
+                10
+              ],
+              "distanceToBody": 3.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                124,
+                110,
+                125,
+                111
+              ],
+              "distanceToBody": 24.041630560342615,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 14,
+              "bbox": [
+                41,
+                3,
+                49,
+                5
+              ],
+              "distanceToBody": 6.082762530298219,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                37,
+                3,
+                38
+              ],
+              "distanceToBody": 7.280109889280518,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                74,
+                124,
+                75,
+                125
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                102,
+                61,
+                103,
+                62
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.mage.male",
+      "file": "Physical_Mage_Male.png",
+      "gender": "Male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Mage_Male.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "890a72e051ae99522f3eb1c9dd482a01c40dad7a2dd252b717c34f18aef820dc",
+      "maxNoiseAlpha": 7,
+      "warningCount": 28,
+      "maxComponentPixels": 31,
+      "maxBboxExtent": 14,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                3,
+                84,
+                4,
+                87
+              ],
+              "distanceToBody": 6.708203932499369,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                78,
+                5,
+                79,
+                6
+              ],
+              "distanceToBody": 6.082762530298219,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 5,
+              "pixelCount": 5,
+              "bbox": [
+                81,
+                5,
+                86,
+                6
+              ],
+              "distanceToBody": 8.06225774829855,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                87,
+                5,
+                88,
+                6
+              ],
+              "distanceToBody": 10.63014581273465,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                89,
+                5,
+                91,
+                6
+              ],
+              "distanceToBody": 12.041594578792296,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 6,
+              "pixelCount": 21,
+              "bbox": [
+                76,
+                5,
+                90,
+                7
+              ],
+              "distanceToBody": 5.0990195135927845,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                78,
+                13,
+                79,
+                15
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 3,
+              "pixelCount": 31,
+              "bbox": [
+                2,
+                70,
+                6,
+                80
+              ],
+              "distanceToBody": 14.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                84,
+                3,
+                85
+              ],
+              "distanceToBody": 14.422205101855956,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 7,
+              "pixelCount": 11,
+              "bbox": [
+                79,
+                5,
+                86,
+                7
+              ],
+              "distanceToBody": 7.0710678118654755,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 7,
+              "bbox": [
+                87,
+                5,
+                92,
+                7
+              ],
+              "distanceToBody": 11.40175425099138,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 10,
+              "bbox": [
+                2,
+                64,
+                4,
+                70
+              ],
+              "distanceToBody": 15.264337522473747,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 5,
+              "bbox": [
+                7,
+                79,
+                8,
+                84
+              ],
+              "distanceToBody": 8.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 9,
+              "bbox": [
+                2,
+                86,
+                5,
+                90
+              ],
+              "distanceToBody": 10.295630140987,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 6,
+              "pixelCount": 19,
+              "bbox": [
+                76,
+                5,
+                89,
+                7
+              ],
+              "distanceToBody": 5.0990195135927845,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                38,
+                3,
+                39
+              ],
+              "distanceToBody": 2.8284271247461903,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 16,
+              "bbox": [
+                2,
+                68,
+                7,
+                75
+              ],
+              "distanceToBody": 12.36931687685298,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 8,
+              "bbox": [
+                2,
+                84,
+                5,
+                88
+              ],
+              "distanceToBody": 12.041594578792296,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 2,
+              "bbox": [
+                39,
+                17,
+                40,
+                19
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 2,
+              "bbox": [
+                125,
+                36,
+                126,
+                38
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 13,
+              "bbox": [
+                123,
+                78,
+                126,
+                84
+              ],
+              "distanceToBody": 12.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                17,
+                22,
+                18,
+                23
+              ],
+              "distanceToBody": 21.400934559032695,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 3,
+              "bbox": [
+                2,
+                37,
+                3,
+                40
+              ],
+              "distanceToBody": 19.697715603592208,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 10,
+              "bbox": [
+                124,
+                78,
+                126,
+                84
+              ],
+              "distanceToBody": 13.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                111,
+                57,
+                112,
+                58
+              ],
+              "distanceToBody": 4.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                53,
+                116,
+                54,
+                117
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                46,
+                2,
+                47,
+                3
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                38,
+                13,
+                39,
+                14
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.marksman.female",
+      "file": "Physical_Marksman_Female.png",
+      "gender": "Female",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Female.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "64d102fba455761bf44e45814d3335b8d00d67ab161f669d6953cd2e7e7f4831",
+      "maxNoiseAlpha": 1,
+      "warningCount": 10,
+      "maxComponentPixels": 2,
+      "maxBboxExtent": 2,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                67,
+                125,
+                69,
+                126
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                115,
+                87,
+                116,
+                88
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                106,
+                100,
+                107,
+                101
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                125,
+                36,
+                126,
+                38
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                47,
+                5,
+                48,
+                6
+              ],
+              "distanceToBody": 5.385164807134504,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                44,
+                5,
+                46,
+                6
+              ],
+              "distanceToBody": 6.082762530298219,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                47,
+                5,
+                48,
+                6
+              ],
+              "distanceToBody": 6.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                120,
+                43,
+                122,
+                45
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                3,
+                73,
+                4,
+                74
+              ],
+              "distanceToBody": 11.661903789690601,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                63,
+                113,
+                64,
+                114
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 15
+        }
+      ]
+    },
+    {
+      "appearanceId": "appearance.external.v1.mobility.marksman.male",
+      "file": "Physical_Marksman_Male.png",
+      "gender": "Male",
+      "assetPath": "Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Marksman_Male.png",
+      "status": "READY",
+      "frames": "-",
+      "reason": "가시적 Art 오류 없음. 작은 비가시 저Alpha 고립성분은 LOW_ALPHA_NOISE/NON_BLOCKING_WARNING이며 실루엣/장비/휠체어/방향 영향 없음.",
+      "sha256": "130beae7319d9c1907d8c8a5e26183d1c3fba253a577925455436f881f2259ad",
+      "maxNoiseAlpha": 4,
+      "warningCount": 16,
+      "maxComponentPixels": 17,
+      "maxBboxExtent": 9,
+      "review": {
+        "all_frames_reviewed": true,
+        "silhouette_equipment_direction_preserved": true,
+        "blocking_errors": [],
+        "review_candidates_confirmed_nonblocking": false,
+        "evidence": "최신144Frame 전체시각검수: 머리/휠체어/바퀴/무기/장비/방향 정상, 실제분리파츠/인접침범 없음. 큰면적/긴선/연속4Frame 반복후보 없음."
+      },
+      "frameAudit": [
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 2,
+              "bbox": [
+                112,
+                66,
+                113,
+                68
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 2,
+              "pixelCount": 9,
+              "bbox": [
+                61,
+                121,
+                64,
+                125
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 3,
+              "pixelCount": 13,
+              "bbox": [
+                65,
+                121,
+                71,
+                125
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 0
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 1
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 3,
+              "pixelCount": 17,
+              "bbox": [
+                4,
+                53,
+                6,
+                62
+              ],
+              "distanceToBody": 13.416407864998739,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 2
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 2,
+              "pixelCount": 4,
+              "bbox": [
+                58,
+                125,
+                62,
+                126
+              ],
+              "distanceToBody": 5.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                66,
+                125,
+                67,
+                126
+              ],
+              "distanceToBody": 4.123105625617661,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 3
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 4
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                72,
+                3,
+                73
+              ],
+              "distanceToBody": 3.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 5
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 4,
+              "pixelCount": 16,
+              "bbox": [
+                2,
+                75,
+                5,
+                84
+              ],
+              "distanceToBody": 7.615773105863909,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 6
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 5,
+              "bbox": [
+                2,
+                64,
+                4,
+                68
+              ],
+              "distanceToBody": 3.1622776601683795,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                6,
+                66,
+                7,
+                67
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 7
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                2,
+                72,
+                3,
+                73
+              ],
+              "distanceToBody": 4.123105625617661,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 8
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 9
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 10
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 11
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [],
+          "frame": 12
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                24,
+                18,
+                25,
+                19
+              ],
+              "distanceToBody": 2.23606797749979,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                36,
+                40,
+                37,
+                41
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 13
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                18,
+                81,
+                19,
+                82
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            },
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                55,
+                113,
+                56,
+                114
+              ],
+              "distanceToBody": 2.0,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 14
+        },
+        {
+          "empty": false,
+          "edge_crop_candidate": false,
+          "components": [
+            {
+              "maxAlpha": 1,
+              "pixelCount": 1,
+              "bbox": [
+                4,
+                98,
+                5,
+                99
+              ],
+              "distanceToBody": 15.811388300841896,
+              "touchesCellEdge": false,
+              "shapeReviewRequired": false,
+              "classification": "LOW_ALPHA_NOISE",
+              "repeatedPatternReviewRequired": false
+            }
+          ],
+          "frame": 15
+        }
+      ]
+    }
+  ],
+  "ready": 9,
+  "blocked": 0,
+  "warnings": 186,
+  "overallReady": 50,
+  "overallBlocked": 0,
+  "imageModificationPerformed": false,
+  "regressionTests": {
+    "pass": 11,
+    "fail": 0
+  },
+  "preservation": {
+    "all50PngAndMetaImportEqual": true,
+    "existingReady41EntriesQaEqual": true,
+    "existing328ClipsEqual": true,
+    "newClips": 72,
+    "appearanceSpriteIdsEqual": true,
+    "gameAndEditorCSharpEqual": true,
+    "saveSettingsEqual": true,
+    "changedAssetsSettingsUserData": [
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\External50.asset",
+      "Unity\\Client\\Assets\\_Project\\Resources\\PlayerAppearances\\Validated50.json"
+    ]
+  },
+  "runtime": {
+    "previous85PassNotRepeated": true,
+    "editModeMappingAndAllClipCurvesPass": 81,
+    "previewWorldFrame0ReferencePass": 9,
+    "minimalPlayBattleLeftIdlePass": 9,
+    "saveContinueBasis": "기존85PASS 이력과이번Save/Continue C#/StableID/Mapping불변검증. 실제Save→Continue 반복안함.",
+    "initialValidationMistake": "런타임Battle해석기를EditMode에서호출하여Destroy 오류9건. 임시객체9개정리 후 proper PlayUnfocused 최소9검사 PASS, 게임코드변경없음.",
+    "compileErrors": 0,
+    "finalConsoleErrors": 0,
+    "finalConsoleWarnings": 0,
+    "foregroundUsed": false,
+    "playSettingsSaveRestored": true
+  }
+}

@@ -23,7 +23,7 @@
 
 `GameSessionData`가 이름, Male/Female 외형, 길 ID, 직업 ID와 Scene 전환용 Spawn ID를 실행 중에 유지한다. 이 세션 객체 자체는 영구 저장 데이터가 아니다.
 
-Player Sprite는 Gender + Path + Job 정본 조합으로 자동 결정한다. Appearance ID는 계산 결과이며 수동 선택 대상이 아니다. Path Theme는 실제 Path 디자인이고 Job 추천은 제한이 아니다. Ready41/Blocked9; Blocked는 명시적 기본 성별 임시 fallback이다. [정식 계약](../11_UI/Player_Appearance_선택_Save.md)을 따른다.
+Player Sprite는 Gender + Path + Job 정본 조합으로 자동 결정한다. Appearance ID는 계산 결과이며 수동 선택 대상이 아니다. Path Theme는 실제 Path 디자인이고 Job 추천은 제한이 아니다. Ready50/Blocked0; Blocked는 명시적 기본 성별 임시 fallback이다. [정식 계약](../11_UI/Player_Appearance_선택_Save.md)을 따른다.
 
 1차 로컬 저장은 `GameSaveData`와 `GameSaveService`가 담당한다. Unity Editor에서는 프로젝트의 `Unity/Client/UserData/Saves/save_slot_01.json`~`05.json`에 안정적인 문자열 ID와 숫자만 기록하며, `GameSessionData`는 계속 현재 실행의 메모리 상태로 사용한다. Bootstrap은 5개 캐릭터 슬롯을 독립 검증하고 선택 슬롯의 Session을 복원한다. 이어하기는 유효한 실제 월드 좌표를 우선하고 기존 SpawnPoint를 안전 fallback으로 유지한다. 자동 저장과 캐릭터 삭제는 현재 선택 또는 명시된 슬롯 하나에만 영향을 준다.
 

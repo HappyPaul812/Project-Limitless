@@ -1,5 +1,7 @@
 # Player Appearance 검증본 50종 등록 계약
 
+2026-10-05 QA정책 정정: Mobility9종 READY승격, 전체READY50/BLOCKED0. 저Alpha 고립노이즈는비차단경고, 실제Art오류는차단. 기존READY41종 재판정/PNG변경 없음. [정책](Player_Sprite_QA_Policy.md)·[재판정QA](Mobility_LowAlphaPolicy_QA.md).
+
 2026-10-05 Mobility 최종10종: READY1/BLOCKED_ART9, 전체READY41/BLOCKED9. 다른40종 보존. [최신 QA](Mobility_RestoredFinal10_QA.md).
 
 2026-10-05 Hearing v3 새160Frame QA: **READY10/BLOCKED0·전체READY40/BLOCKED10**. Mobility 포함다른40종/기존READY30 보존. [최신QA](Hearing_RestoredV3Ten_QA.md). 백그라운드88PASS/0FAIL·최종Console Error0/Warning0.
