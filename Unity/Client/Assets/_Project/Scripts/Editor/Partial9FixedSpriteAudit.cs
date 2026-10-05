@@ -127,14 +127,14 @@ namespace ProjectLimitless.EditorTools
             var wait = WaitScene(name); while (wait.MoveNext()) yield return null;
         }
 
-        /// <summary>Vision512 최종본3조합의 Preview·World·격리Save/Continue·Battle 연결을 검증합니다.</summary>
+        /// <summary>Hearing 최종10조합과 대표남녀 fallback의 Preview·World·격리Save/Continue·Battle 연결을 검증합니다.</summary>
         private static IEnumerator Run()
         {
             for (int i = 0; i < 8; i++) yield return null;
             var catalog = PlayerAppearanceCatalog.Load();
-            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.vision").OrderBy(p => p.name).ToArray();
+            var paths = Resources.LoadAll<PlayerPathDefinition>("PathDefinitions").Where(p => p.Id == "path.hearing").OrderBy(p => p.name).ToArray();
             var jobs = Resources.LoadAll<JobDefinition>("JobDefinitions").OrderBy(j => j.name).ToArray();
-            Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Vision targets only / 5 Job");
+            Check(catalog.Entries.Count == 50 && paths.Length == 1 && jobs.Length == 5, "50 definitions / Hearing targets only / 5 Job");
             // 미술 수정판의 Ready 승격도 검사합니다. 기대값은 정식 Inventory를 사용합니다.
             var inventory = JsonUtility.FromJson<PlayerAppearanceCatalog.Inventory>(File.ReadAllText(
                 Path.Combine(Application.dataPath, "_Project/Resources/PlayerAppearances/Validated50.json")));
@@ -153,9 +153,8 @@ namespace ProjectLimitless.EditorTools
                     Value<Button>(pathUI, "chooseButton").onClick.Invoke();
                     wait = WaitScene("JobSelection"); while (wait.MoveNext()) yield return null;
                     var jobUI = Object.FindAnyObjectByType<JobSelectionController>();
-                    // 이번 원본 교체3종만 검사하며 다른47종의 외형이나 검수 판정을 변경하지 않습니다.
-                    foreach (var job in jobs.Where(j => gender == PlayerVisualType.Male ?
-                        (j.JobId == "fighter" || j.JobId == "sharpshooter") : j.JobId == "mage"))
+                    // 이번 Hearing10조합만 검사하며 Mobility 포함 다른40종의 자산/검수 판정은 변경하지 않습니다.
+                    foreach (var job in jobs)
                     {
                         Call(jobUI, "SelectJob", job);
                         var entry = catalog.FindCombination(gender.ToString(), path.Id, job.JobId);
@@ -168,9 +167,9 @@ namespace ProjectLimitless.EditorTools
                         Check(entry.RuntimeReady || Value<Text>(jobUI, "previewStatus").text.Contains("임시 fallback"), "Blocked 표시 " + expectedId);
                     }
                 }
-            string[] representativePaths = { "path.vision", "path.vision", "path.vision" };
-            string[] representativeJobs = { "fighter", "mage", "sharpshooter" };
-            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female, PlayerVisualType.Male };
+            string[] representativePaths = { "path.hearing", "path.hearing" };
+            string[] representativeJobs = { "fighter", "healer" };
+            var genders = new[] { PlayerVisualType.Male, PlayerVisualType.Female };
             for (int sample = 0; sample < representativePaths.Length; sample++)
             {
                 GameSessionData.Reset(); GameSaveService.SelectSlot(1);
