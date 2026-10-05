@@ -63,7 +63,8 @@ namespace ProjectLimitless.Core
             Text title = MakeText(canvasObject.transform, "Title", "LIMITLESS", font, 36, new Vector2(.5f, .93f), new Vector2(720, 50)); title.color = new Color(1, .82f, .4f, 1); title.fontStyle = FontStyle.Bold;
             MakeText(canvasObject.transform, "Subtitle", "캐릭터 저장 슬롯", font, 20, new Vector2(.5f, .87f), new Vector2(500, 34));
             for (int slot = 1; slot <= GameSaveService.DefaultSaveSlotCount; slot++) CreateSlotRow(canvasObject.transform, font, GameSaveService.InspectSlot(slot), .75f - (slot - 1) * .135f);
-            Button replay = MakeButton(canvasObject.transform, "ReplayOpening", "시작 이야기 다시 보기", font, new Vector2(.17f, .035f), 260);
+            // 하단 Outline까지 16:9 기준 화면 안에 들어오도록 버튼 반높이보다 충분한 여백을 둡니다.
+            Button replay = MakeButton(canvasObject.transform, "ReplayOpening", "시작 이야기 다시 보기", font, new Vector2(.17f, .055f), 260);
             replay.onClick.AddListener(() => { OpeningIntroLaunchContext.BeginReplay(); SceneManager.LoadSceneAsync(openingIntroSceneName, LoadSceneMode.Single); });
             slotButtons.Add(replay);
             LinkVerticalNavigation();
