@@ -15,8 +15,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4,8,9,10",
-      "reason": "발 아래 검은 외딴 선. Frame4 bbox[62,124,69,125),8[60,121,70,123),9[60,121,66,123)+1px,10[60,122,65,123). 본체와 분리된7/16/11/5px 잔여 조각."
+      "frames": "6,8,10",
+      "reason": "이전4/9 발밑선 해결,8은축소됐지만[60,121,65,122)5px 검은선잔존. 새Frame6 우측망토옆[124,110,125,113)3px 검은조각,10 머리/망토옆[23,74,24,75)1px 분리점. 머리/귀장치/검/방향정상."
     },
     {
       "gender": "Male",
@@ -26,8 +26,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Fighter_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-7,13,15",
-      "reason": "Left4-7 발 아래 분리된 살색/검은 파츠84/68/76/68px, bbox 각각[65,121,89,126),[66,122,89,126),[62,122,86,126),[65,122,88,126). Up13/15 머리 위 검은 수평선9/8px bbox[77,2,86,3),[76,2,84,3)."
+      "frames": "1,4-6,8-11",
+      "reason": "이전Left 큰발조각과Up13/15 머리위선 해소. Left4-6 발밑2-3px선 및5 우측[123,108,125,112)5px 조각잔존. 새Down1 우측[120,107,125,118)34px 빨간/검은검파츠, Right8-11 발아래[60,119,71,122)26px+[56,121,58,122)2px/[57,119,67,122)25px/[57,122,68,125)25px/[60,122,71,125)27px 살색/검은분리파츠."
     },
     {
       "gender": "Female",
@@ -37,8 +37,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "1,2,4,5,6,9",
-      "reason": "Down1/2 및 Left4-6 오른쪽 셀 가장자리의 분리된 검은/금색 잘린 파츠. Frame1[123,111,126,122)24px,2[123,116,125,124)14px,5[123,104,126,112)19px. Right9 왼쪽[2,102,6,114)35px 검 파츠와 발 아래[56,118,69,121)26px 분리 조각."
+      "frames": "1,2,6,9,14",
+      "reason": "이전Left4/5 조각해소. Down1/2 우측[122,109,124,116)10px/[123,108,125,116)13px,Left6[123,102,125,107)6px 검은파츠잔존. Right9 좌측[3,101,7,113)35px 검끝조각과발밑[59,118,74,121)32px. 새Up14 좌측[6,85,10,97)34px 검파츠."
     },
     {
       "gender": "Male",
@@ -48,8 +48,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Guardian_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "1,8",
-      "reason": "Frame1 우측 아래 검은 세로 조각[125,114,126,122)8px, Frame8 우측[124,81,126,88)11px 검은/금색 외딴 파츠. 셀 여백 안으로 옮겨져도 본체와 분리된 절단 조각이 남음."
+      "frames": "8,10",
+      "reason": "이전Down1 조각해소. Right8 우측[123,81,125,87)10px 검은/금색절단파츠잔존. 새Right10 우측[124,82,125,85)3px 조각. 귀장치/머리/방향정상."
     },
     {
       "gender": "Female",
@@ -59,8 +59,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "4-7,10,13,15",
-      "reason": "Left4-7 발 아래 살색/검은 발 파츠60/48/43/47px 분리. Frame4[58,121,78,126),5[61,122,77,126),6[58,122,73,126),7[62,122,77,126). Right10 왼쪽[2,31,7,49)68px 지팡이 효과/테두리 절단 조각. Up13/15 머리 위 검은 조각[83,2,86,3)3px/[82,2,90,4)13px. 정상 지팡이 주위의 의도된 음파 발광 자체는 문제로 세지 않음."
+      "frames": "0,1,3,4,5,7,9,10,11,15",
+      "reason": "이전큰발조각과Up13 상단선해소. Frame0 우측[122,36,125,52)37px 지팡이잘린파츠,4[121,38,125,53)38px 및머리위[66,7,71,8)5px 검은선,7 좌측[3,63,7,79)43px 잘린장식. Right9/10/11 좌측지팡이파츠[3,34,7,52)47px/[3,33,10,54)91px/[3,29,13,55)184px. 머리위선9[39,3,47,5)13px/11[46,5,53,7)11px/Up15[87,3,93,5)9px. Up15좌측[5,28,8,39)24px조각. 정상음파효과자체는실패로세지않음."
     },
     {
       "gender": "Male",
@@ -70,8 +70,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Healer_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "0,1,5,9,11",
-      "reason": "Frame0/1/5 우측 셀 가장자리 지팡이 발광/테두리 잘린 분리 파츠[123,42,126,53)26px/[121,34,126,48)48px/[123,46,126,58)27px. Right9 좌측[2,42,4,49)11px 및 우측[124,89,126,97)12px, Right11 좌측[2,31,9,51)92px 금색/빨간 지팡이 파츠가 본체와 떨어져 절단된 모양으로 남음. 정상 음파 효과와 구분."
+      "frames": "1,3,5,8,9,10,11",
+      "reason": "이전0 우측큰파츠해소. Right9 좌측[3,42,5,49)12px,11 좌측[4,33,10,50)58px 잘린빨간/금색지팡이파츠잔존. Left5 좌측[3,93,4,101)8px 검은선. 발아래Frame8[59,120,62,121)3px,10[57,122,61,123)4px+[50,122,53,123)3px+1px. 1 우측3px/3,5에1px 잔여점. 귀장치/방향정상, 정상지팡이발광과구분."
     },
     {
       "gender": "Female",
@@ -81,8 +81,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "1,2,3,5,6,7,9,10,11",
-      "reason": "셀 좌우에 이웃 지팡이/장식 절단 조각 잔존. 대표Frame1 왼쪽[2,67,7,95)80px+[2,98,6,107)29px, Left5 왼쪽[2,60,10,94)197px 빨간/금색 지팡이·매달린 장식 조각, Left6[2,77,8,97)77px, Right9 왼쪽[2,23,8,42)62px 빨간 장식 절단 조각. 머리/귀장치는 개선됐으나 이웃 파츠 제거 미완료."
+      "frames": "0,1,2,3,5,6,7,9,10,14",
+      "reason": "이전Frame1 큰장식조각축소. 새Down2 좌측[3,68,9,106)142px 금색/빨간매달린장식파츠,Left6 좌측[3,64,9,102)140px 동일이웃장식. Left5[3,76,7,94)43px+[3,68,5,75)11px 잔존. Right9[4,28,6,41)21px,10[3,30,5,43)22px 좌측지팡이/장식절단조각,10우측9+3px. 0/1/3/7/14 작은잔여점. 정식귀장치보존/방향정상."
     },
     {
       "gender": "Male",
@@ -92,8 +92,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Mage_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "9,10",
-      "reason": "Right9/10 왼쪽 가장자리[2,43,7,60)54px/[2,47,5,58)27px 빨간/흰 지팡이 원 테두리 절단 조각이 본체와 분리됨. 정상 음파 발광으로 볼 수 없는 잘린 곡선 파츠."
+      "frames": "9,10,11,14",
+      "reason": "Right9 왼쪽[3,45,6,59)33px 빨간/흰지팡이원잘린파츠잔존. Right10[3,51,4,55)4px와11[3,51,4,54)3px잔여선,10[33,65,34,66)1px 및Up14[83,48,84,49)1px분리점. 다른행귀장치/머리/방향정상."
     },
     {
       "gender": "Female",
@@ -103,8 +103,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Female.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "3,4,6,11,15",
-      "reason": "Frame3 왼쪽[2,67,6,82)43px 머리/파츠 조각. Left4/6 및 Right11 발 아래 살색 발 조각[69,122,86,126)43px/[64,123,77,126)28px/[51,120,73,125)79px. Up15 왼쪽[2,74,7,88)55px 잘린 파츠. Frame5/7/13에도 작은 잔여 조각."
+      "frames": "0,4,6,7,8,9,11,12,14",
+      "reason": "이전3/13/15 셀옆큰파츠해소. Left4/6/7 발아래[70,122,79,124)14px/[67,123,73,124)6px/[69,123,74,124)5px잔존. 새Right8/9 발조각[51,117,71,122)58px/[55,119,73,122)34px. Up12/14 포니테일상단이셀y=3부근에서넓은수평단면으로잘림(셀여백은있으나원래머리끝윤곽불완전). 0/9/11 작은분리점. 귀장치보존/방향정상."
     },
     {
       "gender": "Male",
@@ -114,8 +114,8 @@
       "spriteDefinition": "Assets/_Project/Art/Characters/Player/Validated50/Hearing/Hearing_Marksman_Male.png",
       "runtimeReady": false,
       "validationStatus": "BLOCKED_ART",
-      "frames": "5,7,8,9,10,11,15",
-      "reason": "Left5 왼쪽[2,84,5,91)16px 잘린 파츠. Right8-11 머리 위 분리된 검은 수평선/머리 조각7/18/7/17px: [48,6,55,7),[33,6,43,8),[36,2,43,3),[39,2,49,4). Frame7/15 머리 위에도2/3px 잔여 조각."
+      "frames": "4,5,7,13,15",
+      "reason": "이전Right8-11 머리위선/Left5 큰셀옆파츠해소. 새Up13 머리위[44,3,52,4)8px+[78,3,82,4)4px검은선,Up15[80,3,84,4)4px검은선잔존. Left4발아래1px/5발아래2+2px/7발아래3+2px분리점. 귀장치/방향정상."
     },
     {
       "gender": "Female",

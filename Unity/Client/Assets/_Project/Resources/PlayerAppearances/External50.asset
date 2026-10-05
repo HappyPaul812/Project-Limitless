@@ -8954,9 +8954,10 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: \uBC1C \uC544\uB798 \uAC80\uC740 \uC678\uB534 \uC120.
-      Frame4 bbox[62,124,69,125),8[60,121,70,123),9[60,121,66,123)+1px,10[60,122,65,123).
-      \uBCF8\uCCB4\uC640 \uBD84\uB9AC\uB41C7/16/11/5px \uC794\uC5EC \uC870\uAC01."
+    reviewReason: "BLOCKED_ART: \uC774\uC8044/9 \uBC1C\uBC11\uC120 \uD574\uACB0,8\uC740\uCD95\uC18C\uB410\uC9C0\uB9CC[60,121,65,122)5px
+      \uAC80\uC740\uC120\uC794\uC874. \uC0C8Frame6 \uC6B0\uCE21\uB9DD\uD1A0\uC606[124,110,125,113)3px
+      \uAC80\uC740\uC870\uAC01,10 \uBA38\uB9AC/\uB9DD\uD1A0\uC606[23,74,24,75)1px
+      \uBD84\uB9AC\uC810. \uBA38\uB9AC/\uADC0\uC7A5\uCE58/\uAC80/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: 11894a5cbeffa64499ac8283efd91df1, type: 3}
     frames:
     - {fileID: -898622769, guid: 11894a5cbeffa64499ac8283efd91df1, type: 3}
@@ -8986,9 +8987,11 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Left4-7 \uBC1C \uC544\uB798 \uBD84\uB9AC\uB41C \uC0B4\uC0C9/\uAC80\uC740
-      \uD30C\uCE2084/68/76/68px, bbox \uAC01\uAC01[65,121,89,126),[66,122,89,126),[62,122,86,126),[65,122,88,126).
-      Up13/15 \uBA38\uB9AC \uC704 \uAC80\uC740 \uC218\uD3C9\uC1209/8px bbox[77,2,86,3),[76,2,84,3)."
+    reviewReason: "BLOCKED_ART: \uC774\uC804Left \uD070\uBC1C\uC870\uAC01\uACFCUp13/15
+      \uBA38\uB9AC\uC704\uC120 \uD574\uC18C. Left4-6 \uBC1C\uBC112-3px\uC120 \uBC0F5
+      \uC6B0\uCE21[123,108,125,112)5px \uC870\uAC01\uC794\uC874. \uC0C8Down1 \uC6B0\uCE21[120,107,125,118)34px
+      \uBE68\uAC04/\uAC80\uC740\uAC80\uD30C\uCE20, Right8-11 \uBC1C\uC544\uB798[60,119,71,122)26px+[56,121,58,122)2px/[57,119,67,122)25px/[57,122,68,125)25px/[60,122,71,125)27px
+      \uC0B4\uC0C9/\uAC80\uC740\uBD84\uB9AC\uD30C\uCE20."
     sheet: {fileID: 2800000, guid: 98ade0037e7bd854db6d32a4a03b06fa, type: 3}
     frames:
     - {fileID: 1665206050, guid: 98ade0037e7bd854db6d32a4a03b06fa, type: 3}
@@ -9018,11 +9021,11 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Down1/2 \uBC0F Left4-6 \uC624\uB978\uCABD \uC140
-      \uAC00\uC7A5\uC790\uB9AC\uC758 \uBD84\uB9AC\uB41C \uAC80\uC740/\uAE08\uC0C9
-      \uC798\uB9B0 \uD30C\uCE20. Frame1[123,111,126,122)24px,2[123,116,125,124)14px,5[123,104,126,112)19px.
-      Right9 \uC67C\uCABD[2,102,6,114)35px \uAC80 \uD30C\uCE20\uC640 \uBC1C \uC544\uB798[56,118,69,121)26px
-      \uBD84\uB9AC \uC870\uAC01."
+    reviewReason: "BLOCKED_ART: \uC774\uC804Left4/5 \uC870\uAC01\uD574\uC18C. Down1/2
+      \uC6B0\uCE21[122,109,124,116)10px/[123,108,125,116)13px,Left6[123,102,125,107)6px
+      \uAC80\uC740\uD30C\uCE20\uC794\uC874. Right9 \uC88C\uCE21[3,101,7,113)35px
+      \uAC80\uB05D\uC870\uAC01\uACFC\uBC1C\uBC11[59,118,74,121)32px. \uC0C8Up14 \uC88C\uCE21[6,85,10,97)34px
+      \uAC80\uD30C\uCE20."
     sheet: {fileID: 2800000, guid: fe14ceda5086c064e8e42e9ff2e43cf0, type: 3}
     frames:
     - {fileID: 1169378570, guid: fe14ceda5086c064e8e42e9ff2e43cf0, type: 3}
@@ -9052,10 +9055,9 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Frame1 \uC6B0\uCE21 \uC544\uB798 \uAC80\uC740 \uC138\uB85C
-      \uC870\uAC01[125,114,126,122)8px, Frame8 \uC6B0\uCE21[124,81,126,88)11px \uAC80\uC740/\uAE08\uC0C9
-      \uC678\uB534 \uD30C\uCE20. \uC140 \uC5EC\uBC31 \uC548\uC73C\uB85C \uC62E\uACA8\uC838\uB3C4
-      \uBCF8\uCCB4\uC640 \uBD84\uB9AC\uB41C \uC808\uB2E8 \uC870\uAC01\uC774 \uB0A8\uC74C."
+    reviewReason: "BLOCKED_ART: \uC774\uC804Down1 \uC870\uAC01\uD574\uC18C. Right8
+      \uC6B0\uCE21[123,81,125,87)10px \uAC80\uC740/\uAE08\uC0C9\uC808\uB2E8\uD30C\uCE20\uC794\uC874.
+      \uC0C8Right10 \uC6B0\uCE21[124,82,125,85)3px \uC870\uAC01. \uADC0\uC7A5\uCE58/\uBA38\uB9AC/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: c53897dfb9f49de40abf924f6a23d02d, type: 3}
     frames:
     - {fileID: 502595224, guid: c53897dfb9f49de40abf924f6a23d02d, type: 3}
@@ -9085,12 +9087,12 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Left4-7 \uBC1C \uC544\uB798 \uC0B4\uC0C9/\uAC80\uC740
-      \uBC1C \uD30C\uCE2060/48/43/47px \uBD84\uB9AC. Frame4[58,121,78,126),5[61,122,77,126),6[58,122,73,126),7[62,122,77,126).
-      Right10 \uC67C\uCABD[2,31,7,49)68px \uC9C0\uD321\uC774 \uD6A8\uACFC/\uD14C\uB450\uB9AC
-      \uC808\uB2E8 \uC870\uAC01. Up13/15 \uBA38\uB9AC \uC704 \uAC80\uC740 \uC870\uAC01[83,2,86,3)3px/[82,2,90,4)13px.
-      \uC815\uC0C1 \uC9C0\uD321\uC774 \uC8FC\uC704\uC758 \uC758\uB3C4\uB41C \uC74C\uD30C
-      \uBC1C\uAD11 \uC790\uCCB4\uB294 \uBB38\uC81C\uB85C \uC138\uC9C0 \uC54A\uC74C."
+    reviewReason: "BLOCKED_ART: \uC774\uC804\uD070\uBC1C\uC870\uAC01\uACFCUp13 \uC0C1\uB2E8\uC120\uD574\uC18C.
+      Frame0 \uC6B0\uCE21[122,36,125,52)37px \uC9C0\uD321\uC774\uC798\uB9B0\uD30C\uCE20,4[121,38,125,53)38px
+      \uBC0F\uBA38\uB9AC\uC704[66,7,71,8)5px \uAC80\uC740\uC120,7 \uC88C\uCE21[3,63,7,79)43px
+      \uC798\uB9B0\uC7A5\uC2DD. Right9/10/11 \uC88C\uCE21\uC9C0\uD321\uC774\uD30C\uCE20[3,34,7,52)47px/[3,33,10,54)91px/[3,29,13,55)184px.
+      \uBA38\uB9AC\uC704\uC1209[39,3,47,5)13px/11[46,5,53,7)11px/Up15[87,3,93,5)9px.
+      Up15\uC88C\uCE21[5,28,8,39)24px\uC870\uAC01. \uC815\uC0C1\uC74C\uD30C\uD6A8\uACFC\uC790\uCCB4\uB294\uC2E4\uD328\uB85C\uC138\uC9C0\uC54A\uC74C."
     sheet: {fileID: 2800000, guid: dc9c897c8d8c9a641b97dcf21537adc6, type: 3}
     frames:
     - {fileID: 432512177, guid: dc9c897c8d8c9a641b97dcf21537adc6, type: 3}
@@ -9120,13 +9122,11 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Frame0/1/5 \uC6B0\uCE21 \uC140 \uAC00\uC7A5\uC790\uB9AC
-      \uC9C0\uD321\uC774 \uBC1C\uAD11/\uD14C\uB450\uB9AC \uC798\uB9B0 \uBD84\uB9AC
-      \uD30C\uCE20[123,42,126,53)26px/[121,34,126,48)48px/[123,46,126,58)27px. Right9
-      \uC88C\uCE21[2,42,4,49)11px \uBC0F \uC6B0\uCE21[124,89,126,97)12px, Right11
-      \uC88C\uCE21[2,31,9,51)92px \uAE08\uC0C9/\uBE68\uAC04 \uC9C0\uD321\uC774 \uD30C\uCE20\uAC00
-      \uBCF8\uCCB4\uC640 \uB5A8\uC5B4\uC838 \uC808\uB2E8\uB41C \uBAA8\uC591\uC73C\uB85C
-      \uB0A8\uC74C. \uC815\uC0C1 \uC74C\uD30C \uD6A8\uACFC\uC640 \uAD6C\uBD84."
+    reviewReason: "BLOCKED_ART: \uC774\uC8040 \uC6B0\uCE21\uD070\uD30C\uCE20\uD574\uC18C.
+      Right9 \uC88C\uCE21[3,42,5,49)12px,11 \uC88C\uCE21[4,33,10,50)58px \uC798\uB9B0\uBE68\uAC04/\uAE08\uC0C9\uC9C0\uD321\uC774\uD30C\uCE20\uC794\uC874.
+      Left5 \uC88C\uCE21[3,93,4,101)8px \uAC80\uC740\uC120. \uBC1C\uC544\uB798Frame8[59,120,62,121)3px,10[57,122,61,123)4px+[50,122,53,123)3px+1px.
+      1 \uC6B0\uCE213px/3,5\uC5D01px \uC794\uC5EC\uC810. \uADC0\uC7A5\uCE58/\uBC29\uD5A5\uC815\uC0C1,
+      \uC815\uC0C1\uC9C0\uD321\uC774\uBC1C\uAD11\uACFC\uAD6C\uBD84."
     sheet: {fileID: 2800000, guid: 36d21362eb15b2346889b7165ba5b9cf, type: 3}
     frames:
     - {fileID: -1675925416, guid: 36d21362eb15b2346889b7165ba5b9cf, type: 3}
@@ -9156,12 +9156,11 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: \uC140 \uC88C\uC6B0\uC5D0 \uC774\uC6C3 \uC9C0\uD321\uC774/\uC7A5\uC2DD
-      \uC808\uB2E8 \uC870\uAC01 \uC794\uC874. \uB300\uD45CFrame1 \uC67C\uCABD[2,67,7,95)80px+[2,98,6,107)29px,
-      Left5 \uC67C\uCABD[2,60,10,94)197px \uBE68\uAC04/\uAE08\uC0C9 \uC9C0\uD321\uC774\xB7\uB9E4\uB2EC\uB9B0
-      \uC7A5\uC2DD \uC870\uAC01, Left6[2,77,8,97)77px, Right9 \uC67C\uCABD[2,23,8,42)62px
-      \uBE68\uAC04 \uC7A5\uC2DD \uC808\uB2E8 \uC870\uAC01. \uBA38\uB9AC/\uADC0\uC7A5\uCE58\uB294
-      \uAC1C\uC120\uB410\uC73C\uB098 \uC774\uC6C3 \uD30C\uCE20 \uC81C\uAC70 \uBBF8\uC644\uB8CC."
+    reviewReason: "BLOCKED_ART: \uC774\uC804Frame1 \uD070\uC7A5\uC2DD\uC870\uAC01\uCD95\uC18C.
+      \uC0C8Down2 \uC88C\uCE21[3,68,9,106)142px \uAE08\uC0C9/\uBE68\uAC04\uB9E4\uB2EC\uB9B0\uC7A5\uC2DD\uD30C\uCE20,Left6
+      \uC88C\uCE21[3,64,9,102)140px \uB3D9\uC77C\uC774\uC6C3\uC7A5\uC2DD. Left5[3,76,7,94)43px+[3,68,5,75)11px
+      \uC794\uC874. Right9[4,28,6,41)21px,10[3,30,5,43)22px \uC88C\uCE21\uC9C0\uD321\uC774/\uC7A5\uC2DD\uC808\uB2E8\uC870\uAC01,10\uC6B0\uCE219+3px.
+      0/1/3/7/14 \uC791\uC740\uC794\uC5EC\uC810. \uC815\uC2DD\uADC0\uC7A5\uCE58\uBCF4\uC874/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: 541b9657f44925b46bbbad717bd5c6d9, type: 3}
     frames:
     - {fileID: 1477463224, guid: 541b9657f44925b46bbbad717bd5c6d9, type: 3}
@@ -9191,11 +9190,9 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Right9/10 \uC67C\uCABD \uAC00\uC7A5\uC790\uB9AC[2,43,7,60)54px/[2,47,5,58)27px
-      \uBE68\uAC04/\uD770 \uC9C0\uD321\uC774 \uC6D0 \uD14C\uB450\uB9AC \uC808\uB2E8
-      \uC870\uAC01\uC774 \uBCF8\uCCB4\uC640 \uBD84\uB9AC\uB428. \uC815\uC0C1 \uC74C\uD30C
-      \uBC1C\uAD11\uC73C\uB85C \uBCFC \uC218 \uC5C6\uB294 \uC798\uB9B0 \uACE1\uC120
-      \uD30C\uCE20."
+    reviewReason: "BLOCKED_ART: Right9 \uC67C\uCABD[3,45,6,59)33px \uBE68\uAC04/\uD770\uC9C0\uD321\uC774\uC6D0\uC798\uB9B0\uD30C\uCE20\uC794\uC874.
+      Right10[3,51,4,55)4px\uC64011[3,51,4,54)3px\uC794\uC5EC\uC120,10[33,65,34,66)1px
+      \uBC0FUp14[83,48,84,49)1px\uBD84\uB9AC\uC810. \uB2E4\uB978\uD589\uADC0\uC7A5\uCE58/\uBA38\uB9AC/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: aa40531912cf6254c9596757e0cbcf51, type: 3}
     frames:
     - {fileID: -1857114081, guid: aa40531912cf6254c9596757e0cbcf51, type: 3}
@@ -9225,11 +9222,11 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Frame3 \uC67C\uCABD[2,67,6,82)43px \uBA38\uB9AC/\uD30C\uCE20
-      \uC870\uAC01. Left4/6 \uBC0F Right11 \uBC1C \uC544\uB798 \uC0B4\uC0C9 \uBC1C
-      \uC870\uAC01[69,122,86,126)43px/[64,123,77,126)28px/[51,120,73,125)79px. Up15
-      \uC67C\uCABD[2,74,7,88)55px \uC798\uB9B0 \uD30C\uCE20. Frame5/7/13\uC5D0\uB3C4
-      \uC791\uC740 \uC794\uC5EC \uC870\uAC01."
+    reviewReason: "BLOCKED_ART: \uC774\uC8043/13/15 \uC140\uC606\uD070\uD30C\uCE20\uD574\uC18C.
+      Left4/6/7 \uBC1C\uC544\uB798[70,122,79,124)14px/[67,123,73,124)6px/[69,123,74,124)5px\uC794\uC874.
+      \uC0C8Right8/9 \uBC1C\uC870\uAC01[51,117,71,122)58px/[55,119,73,122)34px. Up12/14
+      \uD3EC\uB2C8\uD14C\uC77C\uC0C1\uB2E8\uC774\uC140y=3\uBD80\uADFC\uC5D0\uC11C\uB113\uC740\uC218\uD3C9\uB2E8\uBA74\uC73C\uB85C\uC798\uB9BC(\uC140\uC5EC\uBC31\uC740\uC788\uC73C\uB098\uC6D0\uB798\uBA38\uB9AC\uB05D\uC724\uACFD\uBD88\uC644\uC804).
+      0/9/11 \uC791\uC740\uBD84\uB9AC\uC810. \uADC0\uC7A5\uCE58\uBCF4\uC874/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: 3a66f960ebc139345b7457927c3a0568, type: 3}
     frames:
     - {fileID: -1274056562, guid: 3a66f960ebc139345b7457927c3a0568, type: 3}
@@ -9259,10 +9256,10 @@ MonoBehaviour:
     hasAlpha: 1
     expectedFrameCount: 16
     readyForSelection: 0
-    reviewReason: "BLOCKED_ART: Left5 \uC67C\uCABD[2,84,5,91)16px \uC798\uB9B0 \uD30C\uCE20.
-      Right8-11 \uBA38\uB9AC \uC704 \uBD84\uB9AC\uB41C \uAC80\uC740 \uC218\uD3C9\uC120/\uBA38\uB9AC
-      \uC870\uAC017/18/7/17px: [48,6,55,7),[33,6,43,8),[36,2,43,3),[39,2,49,4). Frame7/15
-      \uBA38\uB9AC \uC704\uC5D0\uB3C42/3px \uC794\uC5EC \uC870\uAC01."
+    reviewReason: "BLOCKED_ART: \uC774\uC804Right8-11 \uBA38\uB9AC\uC704\uC120/Left5
+      \uD070\uC140\uC606\uD30C\uCE20\uD574\uC18C. \uC0C8Up13 \uBA38\uB9AC\uC704[44,3,52,4)8px+[78,3,82,4)4px\uAC80\uC740\uC120,Up15[80,3,84,4)4px\uAC80\uC740\uC120\uC794\uC874.
+      Left4\uBC1C\uC544\uB7981px/5\uBC1C\uC544\uB7982+2px/7\uBC1C\uC544\uB7983+2px\uBD84\uB9AC\uC810.
+      \uADC0\uC7A5\uCE58/\uBC29\uD5A5\uC815\uC0C1."
     sheet: {fileID: 2800000, guid: 4f5bc69c45df5b741b9fe9be0a51877e, type: 3}
     frames:
     - {fileID: 1367141858, guid: 4f5bc69c45df5b741b9fe9be0a51877e, type: 3}

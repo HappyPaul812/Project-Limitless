@@ -19,3 +19,5 @@ PNG10/Male5/Female5/Job5×Gender2·중복0/누락0·512×512 RGBA/4×4/16Frame/C
 - Hearing_Mage_Male.png: Right9/10 왼쪽 가장자리[2,43,7,60)54px/[2,47,5,58)27px 빨간/흰 지팡이 원 테두리 절단 조각이 본체와 분리됨. 정상 음파 발광으로 볼 수 없는 잘린 곡선 파츠.
 - Hearing_Marksman_Female.png: Frame3 왼쪽[2,67,6,82)43px 머리/파츠 조각. Left4/6 및 Right11 발 아래 살색 발 조각[69,122,86,126)43px/[64,123,77,126)28px/[51,120,73,125)79px. Up15 왼쪽[2,74,7,88)55px 잘린 파츠. Frame5/7/13에도 작은 잔여 조각.
 - Hearing_Marksman_Male.png: Left5 왼쪽[2,84,5,91)16px 잘린 파츠. Right8-11 머리 위 분리된 검은 수평선/머리 조각7/18/7/17px: [48,6,55,7),[33,6,43,8),[36,2,43,3),[39,2,49,4). Frame7/15 머리 위에도2/3px 잔여 조각.
+
+실행결과: v2 귀보조장치의존재/프레임별방향유지확인. 새160Frame QA는이전사유를복사하지않고잔존/신규문제로기록. READY0/BLOCKED_ART10·전체30/20유지, 백그라운드88PASS/0FAIL. [최신QA](Hearing_RestoredV2Ten_QA.md).
