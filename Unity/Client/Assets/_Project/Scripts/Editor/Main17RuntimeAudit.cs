@@ -9,6 +9,8 @@ using ProjectLimitless.Monster;
 using ProjectLimitless.Player;
 using ProjectLimitless.World;
 using ProjectLimitless.UI;
+using ProjectLimitless.Battle;
+using UnityEngine.UI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +25,7 @@ namespace ProjectLimitless.EditorTools
         private const string Armed = "Limitless.Main17.Audit";
         public static readonly List<string> Results = new List<string>();
         private static bool story;
+        private static bool battle;
         private static string Output => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../문서/00_프로젝트/Main17_Runtime_Results.txt"));
         static Main17RuntimeAudit()
         {
@@ -35,8 +38,10 @@ namespace ProjectLimitless.EditorTools
                 if (state == PlayModeStateChange.EnteredEditMode) { SessionState.SetBool(Armed, false); Save(); }
             };
         }
-        public static string LaunchConnections() { Results.Clear(); story = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchStory() { Results.Clear(); story = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchConnections() { Results.Clear(); story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchStory() { Results.Clear(); story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchBattle() { Results.Clear(); story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        private static T Value<T>(object owner, string name) => (T)owner.GetType().GetField(name, BindingFlags.Instance | BindingFlags.NonPublic).GetValue(owner);
         private static void Save() => File.WriteAllLines(Output, Results);
         private static void Check(bool condition, string id)
         {
@@ -69,7 +74,8 @@ namespace ProjectLimitless.EditorTools
         private static IEnumerator RunConnections()
         {
             // 기존 QA의 초기화만 재사용합니다. 이전817건의 결과를 쓰는 메서드는 호출하지 않습니다.
-            typeof(SecondRegressionAudit).GetMethod("Seed", Hidden).Invoke(null, new object[] { "guardian", 15 });
+            // 기존 Main16 정상 전투 감사와 같은 Fighter20을 사용합니다. 게임의 성장 수치는 변경하지 않습니다.
+            typeof(SecondRegressionAudit).GetMethod("Seed", Hidden).Invoke(null, new object[] { "fighter", 20 });
             GameSessionData.RecordLocation(Chapter2Main17Flow.PreviousField, "Spawn_From_Field06");
             SceneManager.LoadSceneAsync(Chapter2Main17Flow.PreviousField);
             yield return WaitScene(Chapter2Main17Flow.PreviousField);
@@ -78,6 +84,9 @@ namespace ProjectLimitless.EditorTools
             var quests = QuestCatalog.All.Where(value => value.QuestId.StartsWith("main_") &&
                 string.CompareOrdinal(value.QuestId, "main_17") < 0).Select(value => value.QuestId).ToArray();
             QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = quests });
+            // 완료 기록만 주입하면 이전 임시 동행 조건이 남습니다. 실제 Main15 완료의 정식 해금도 함께 준비합니다.
+            CompanionRosterService.UnlockPaul("fighter");
+            CompanionRosterService.UnlockSerin();
             yield return Wait(.2);
             Check(!gate.GetComponent<BoxCollider2D>().enabled, "Gate.OpenAfterMain16");
             Check(QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Available, "Main17.Available");
@@ -114,6 +123,37 @@ namespace ProjectLimitless.EditorTools
                 }
                 Check(JsonUtility.ToJson(CompanionRosterService.ExportSaveData()) == roster, "Story.RosterFormationPreserved");
                 Check(Chapter2Main17Flow.IsCurrent(7), "Story.WitnessReady");
+                if (battle)
+                {
+                    yield return Inspect(7);
+                    yield return WaitScene("Battle");
+                    Check(BattleEncounterContext.StableEncounterId == Chapter2Main17Flow.EncounterId, "Battle.StableStoryId");
+                    Check(Chapter2Main17Flow.IsCurrent(8), "Battle.WitnessSeparateFromVictory");
+                    var controller = UnityEngine.Object.FindAnyObjectByType<BattleSceneController>();
+                    Check(Value<Formation>(controller, "enemies").Members.Count() == 1, "Battle.ExistingSingleLizard");
+                    Check(Value<Formation>(controller, "allies").Members.Count() == 1 + CompanionRosterService.ActivePartyCharacterIds.Count && Value<Formation>(controller, "allies").Members.Count() <= 3, "Battle.ExactSavedParty");
+                    int attacks = 0; double until = EditorApplication.timeSinceStartup + 180;
+                    while (!Value<bool>(controller, "battleEnded") && EditorApplication.timeSinceStartup < until)
+                    {
+                        var attack = Value<Button>(controller, "attackButton");
+                        if (!Value<bool>(controller, "actionPlaying") && attack.IsActive() && attack.interactable)
+                        {
+                            attack.onClick.Invoke();
+                            var targets = Value<IReadOnlyList<Combatant>>(controller, "selectableTargets");
+                            if (Value<bool>(controller, "choosingTarget") && targets.Count > 0)
+                            { typeof(SecondRegressionAudit).GetMethod("Hit", Hidden).Invoke(null, new object[] { controller, targets[0] }); attacks++; }
+                        }
+                        yield return null;
+                    }
+                    Results.Add("INFO|Battle.Attacks=" + attacks + "; enemyHP=" + string.Join(",", Value<Formation>(controller, "enemies").Members.Select(value => value.CurrentHp)) + "; allyHP=" + string.Join(",", Value<Formation>(controller, "allies").Members.Select(value => value.CurrentHp))); Save();
+                    Check(Value<Formation>(controller, "enemies").IsDefeated && attacks > 0, "Battle.NormalAttackVictory");
+                    Check(Chapter2Main17Flow.IsCurrent(9), "Battle.OnlyVictoryAdvanced");
+                    UnityEngine.Object.FindObjectsByType<Button>().First(value => value.name == "VictoryReturn").onClick.Invoke();
+                    yield return WaitScene(Chapter2Main17Flow.Field);
+                    Check(JsonUtility.ToJson(CompanionRosterService.ExportSaveData()) == roster, "Battle.PartyFormationPreserved");
+                    for (int index = 9; index <= 11; index++) yield return Inspect(index);
+                    Check(QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Completed, "Story.Main17Completed");
+                }
             }
             SceneTransitionService.Load(Chapter2Main17Flow.PreviousField, "Spawn_From_Field08");
             yield return WaitScene(Chapter2Main17Flow.PreviousField);
@@ -121,6 +161,17 @@ namespace ProjectLimitless.EditorTools
             Check(player != null && Vector2.Distance(player.transform.position, new Vector2(-7, 0)) < .2f, "Field07.ReturnSpawnRestored");
             yield return Wait(1);
             Check(SceneManager.GetActiveScene().name == Chapter2Main17Flow.PreviousField, "Field07.NoImmediateReturn");
+        }
+        private static IEnumerator Inspect(int index)
+        {
+            var player = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+            player.transform.position = Chapter2Main17Flow.Positions[index]; Physics2D.SyncTransforms();
+            var site = GameObject.Find("field08_main17_" + Chapter2Main17Flow.Sites[index]).GetComponent<Main17Site>();
+            site.TryInteract(); Check(DialoguePresenter.Instance.IsOpen, "Story.Open." + index);
+            int guard = 0;
+            while (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen && guard++ < 60)
+            { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+            Check(index == 11 ? QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Completed : Chapter2Main17Flow.IsCurrent(index + 1), "Story.Complete." + index);
         }
     }
 }

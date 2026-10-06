@@ -306,6 +306,12 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
+            // Main17 필수 전투는 기존 곡선의 단독 균열도마뱀입니다. 이전 Field07 조합과 사용자의 저장 파티를 보호합니다.
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main17Flow.Field)
+                setup = BattlePrototypeEncounterFactory.CreateField08(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    BattleEncounterContext.Monster);
             else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main16Flow.Field)
                 setup = BattlePrototypeEncounterFactory.CreateField07(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,

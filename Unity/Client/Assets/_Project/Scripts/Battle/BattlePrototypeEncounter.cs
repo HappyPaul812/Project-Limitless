@@ -187,6 +187,16 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies, foes);
         }
 
+        /// <summary>Main17은 단독 균열도마뱀으로 기존 망령HP150에서 HP190의 기존 곡선만 사용합니다. 일반 갑충도 같은 원본 데이터를 씁니다.</summary>
+        public static BattleEncounterSetup CreateField08(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition encountered)
+        {
+            BattleEncounterSetup party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility, null, null, encountered);
+            var enemy = CreateMonster(encountered, "field08_" + encountered.MonsterId, encountered.DisplayName,
+                FormationRow.Front, 0, encountered.MonsterId == "fissure_lizard" ? 12 : 9);
+            return new BattleEncounterSetup(party.Allies, new[] { enemy });
+        }
+
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
             int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
         {

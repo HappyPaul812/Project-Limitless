@@ -1,6 +1,6 @@
-## 2026-10-06 Main17 대형 개발 — Phase1~4 완료
+## 2026-10-06 Main17 대형 개발 — Phase1~5 완료
 
-main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase2 데이터17PASS, Phase3 연결16PASS, Phase4 재생44PASS(기존연결16+새Story28)/FAIL0. 다음: Phase5 Story Encounter/Battle. 현재6조사까지 완료·7목격 준비. Main17Site 목격 완료→지정9전투/재도전 연결과 기존 Factory Field08 조합 추가, ReturnSpawn 생성. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit 7a4a3c1. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
+main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase2 데이터17PASS, Phase5 전체 연결/Story/정상전투 62PASS/FAIL0. 원본150→필수190HP 기존곡선·저장3인정확·정상공격승리/복귀/12목표완료 확인. 다음: Phase6 Path Reactive. 현재 공통 대사까지 구현. Main17DialogueCatalog.Get에 Hearing/Default 첫 관찰과 다른4Path 관점 분기 및 별도ID 추가·Manifest 추출. Guardian15 초기2체후보의 감사 실패는 보존하고 과도한410HP조합 폐기. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit 3a2e479. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
 ## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
 
 BattleSceneController에서 스킬/아이템 열기 때 기본5명령 GameObject를 비활성화하여 표시·interactable·Raycast·Navigation을 함께 차단, 메뉴/대상/행동동안 유지·취소/뒤로/다음조작명령에서 복원한다. 기존Esc와같은 취소에 패드B도 연결했다. 기존812PASS 재사용(817 CSV/JSON 변경0), 이번고유검증484: **PASS482/FAIL0/NV0/USER2**이며 서로중복합산하지 않는다.

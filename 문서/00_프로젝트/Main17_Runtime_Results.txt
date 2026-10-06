@@ -39,6 +39,25 @@ PASS|Story.Complete.6
 PASS|Story.NoDuplicate.6
 PASS|Story.RosterFormationPreserved
 PASS|Story.WitnessReady
+PASS|Story.Open.7
+PASS|Story.Complete.7
+PASS|Scene.Battle
+PASS|Battle.StableStoryId
+PASS|Battle.WitnessSeparateFromVictory
+PASS|Battle.ExistingSingleLizard
+PASS|Battle.ExactSavedParty
+INFO|Battle.Attacks=4; enemyHP=0; allyHP=186,132,104
+PASS|Battle.NormalAttackVictory
+PASS|Battle.OnlyVictoryAdvanced
+PASS|Scene.Field_08_RedRift
+PASS|Battle.PartyFormationPreserved
+PASS|Story.Open.9
+PASS|Story.Complete.9
+PASS|Story.Open.10
+PASS|Story.Complete.10
+PASS|Story.Open.11
+PASS|Story.Complete.11
+PASS|Story.Main17Completed
 PASS|Scene.Field_07_AshenReach
 PASS|Field07.ReturnSpawnRestored
 PASS|Field07.NoImmediateReturn

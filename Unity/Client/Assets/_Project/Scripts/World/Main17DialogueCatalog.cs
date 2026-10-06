@@ -37,7 +37,7 @@ namespace ProjectLimitless.World
                     lines.Add(Line(index, CompanionRosterService.SerinId, "서쪽 틈 가까이에서 더 강해집니다. 표면의 흔들림 뒤에 약한 신호가 한 번 더 잡혀요."));
                     lines.Add(Line(index, "player", "아래쪽의 반응도 따로 기록하죠. 발생 지점이라고 단정할 수는 없어요.")); break;
                 case 7:
-                    lines.Add(Line(index, "", "<지문> 균열 아래에서 따뜻한 공기가 올라온다. 재가 흩어지며 균열도마뱀과 화열딱정벌레가 길을 막는다."));
+                    lines.Add(Line(index, "", "<지문> 균열 아래에서 따뜻한 공기가 올라온다. 재가 흩어지며 균열도마뱀이 길을 막는다."));
                     lines.Add(Line(index, CompanionRosterService.SerinId, "돌아갈 길을 확보하죠. 싸우는 동안 틈 가장자리는 피하겠습니다.")); break;
                 case 9:
                     lines.Add(Line(index, "", "<지문> 길을 막던 생물이 사라져도 지면의 반복 신호와 틈의 열기는 남아 있다."));

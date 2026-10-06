@@ -2,6 +2,8 @@ using System.Linq;
 using ProjectLimitless.Core;
 using ProjectLimitless.UI;
 using ProjectLimitless.Player;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Monster;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -123,7 +125,7 @@ namespace ProjectLimitless.World
         public void TryInteract()
         {
             if (index == 0 || !Current || busy || WorldModalState.IsOpen || !Near() || DialoguePresenter.Instance == null) return;
-            if (Chapter2Main17Flow.IsCurrent(8)) return; // Phase5에서 지정 Story Battle 재도전을 연결합니다.
+            if (Chapter2Main17Flow.IsCurrent(8)) { EnterBattle(); return; }
             busy = true;
             DialoguePresenter.Instance.ShowSequence(Main17DialogueCatalog.Get(index), () =>
             {
@@ -132,7 +134,17 @@ namespace ProjectLimitless.World
                 string id = "field08_main17_" + Chapter2Main17Flow.Sites[index];
                 if (index == 7) QuestService.NotifyLocationReached(id); else QuestService.NotifyInteraction(id);
                 Chapter2Main17Flow.Save();
+                if (index == 7) EnterBattle();
             });
+        }
+        private void EnterBattle()
+        {
+            if (!Chapter2Main17Flow.IsCurrent(8)) return;
+            var spawn = Resources.Load<FieldMonsterSpawnDefinition>("StoryEncounterReturns/Main17_ThreatReturn");
+            if (spawn == null || spawn.Monster == null) { Debug.LogError("Main17 지정 전투 복귀 데이터가 없습니다."); return; }
+            // 승리 알림은 기존 전투 Controller만 전달합니다. 도망/패배에서는 목표 count를 유지합니다.
+            if (!BattleSceneFlow.EnterStoryBattle(Chapter2Main17Flow.EncounterId, spawn.Monster, spawn, transform.position))
+                Debug.LogWarning("Main17 전투에 진입하지 못했습니다. 이 조사 지점에서 다시 시도할 수 있습니다.");
         }
     }
 }

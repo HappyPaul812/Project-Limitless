@@ -104,5 +104,23 @@ namespace ProjectLimitless.Editor
             asset.Configure(source, id, ownSpawn, new Vector2(side * 7, 0), new Vector2(side * 10.25f, 0), new Vector2(1.1f, 3), target, targetSpawn, replace);
             EditorUtility.SetDirty(asset); AssetDatabase.SaveAssetIfDirty(asset);
         }
+
+        /// <summary>필수 단독 균열도마뱀과 우회 가능한 일반 갑충을 구분합니다. 원본 몬스터 수치는 변경하지 않습니다.</summary>
+        public static string BuildEncounter()
+        {
+            string path = "Assets/_Project/Resources/StoryEncounterReturns/Main17_ThreatReturn.asset";
+            var spawn = AssetDatabase.LoadAssetAtPath<FieldMonsterSpawnDefinition>(path);
+            if (spawn == null) { spawn = ScriptableObject.CreateInstance<FieldMonsterSpawnDefinition>(); AssetDatabase.CreateAsset(spawn, path); }
+            var monster = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").Single(value => value.MonsterId == "fissure_lizard");
+            spawn.Configure(Field, Chapter2Main17Flow.EncounterId, monster, new Vector2(-4, 0), .8f, 35);
+            spawn.SetNonRespawningBoss(false); EditorUtility.SetDirty(spawn); AssetDatabase.SaveAssetIfDirty(spawn);
+            string generalPath = "Assets/_Project/Resources/MonsterSpawns/Field08_Beetle01.asset";
+            var general = AssetDatabase.LoadAssetAtPath<FieldMonsterSpawnDefinition>(generalPath);
+            if (general == null) { general = ScriptableObject.CreateInstance<FieldMonsterSpawnDefinition>(); AssetDatabase.CreateAsset(general, generalPath); }
+            var beetle = Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").Single(value => value.MonsterId == "ember_beetle");
+            general.Configure(Field, "field08_beetle_01", beetle, new Vector2(4, -4.5f), .8f, 35);
+            general.SetNonRespawningBoss(false); EditorUtility.SetDirty(general); AssetDatabase.SaveAssetIfDirty(general);
+            return "Main17 Story single lizard / optional general beetle / unchanged stats";
+        }
     }
 }

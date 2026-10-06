@@ -41,7 +41,7 @@ Stable ID `main17_{scene}_{hearing|default|공통}_{speaker}_{nn}`로 구분한�
 
 Field08은 기존21×15 Bounds/Camera/공식 환경 Sprite를 재배치·Tint한다. PNG 원본은 변경하지 않는다. 붉은 흙·검게 식은 암석·좁은 균열과 약한 붉은 틈·짙은 재를 표현하고 용암 바다/최종 보스 지역은 만들지 않는다. 동쪽 Field07 왕복, 중앙 초기 조사, 북/남 우회 조사, 서쪽 깊은 균열. 서쪽 외곽은 닫힌 후속 경계다. 실제 출구만 Boundary Opening, Spawn±7과 Trigger±10.25 분리·기존 전환 grace를 유지한다. Field07 기존 Scene 파일은 보존하고 Runtime에서 서쪽 Opening을 설치한다.
 
-새 몬스터/수치/Art/Elite는 이번 최소 구현에서 추가하지 않는다. 기존 곡선과 공식 5종을 보호하며 Story는 기존 균열도마뱀+화열딱정벌레 조합을 우선 검토한다. 단순 Ember Wraith 반복과 구분하고 기존 스킬/상태/경제를 사용한다. 최종 조합은 Battle factory 확인 후 단계5에서 기록한다.
+새 몬스터/수치/Art/Elite는 이번 최소 구현에서 추가하지 않는다. 기존 곡선과 공식 5종을 보호하며 Phase5에서 실제 곡선을 확인해 Story는 기존 균열도마뱀1체(HP190·공격12), 일반 조우는 우회 가능한 화열딱정벌레1체(HP220·공격9, 4,-4.5)로 확정했다. 기존 Main16 망령HP150에 비해 Story HP는 약27% 증가하고 기존 울림/돌진 기믹을 재사용한다. 최초2체후보 합계HP410은 과도하여 적용하지 않는다. 기존 몬스터/스킬/상태/경제 수치는 변경하지 않는다. Guardian15 기본공격 전용 초기2체 감사 실패는 Temp에 보존했으며 연결 QA는 기존 Main16 Fighter20 조건으로 수행한다.
 
 Save Version/새 Flag를 추가하지 않는다. Quest ID/count/CompletedIds·Scene/Position·기존 Party/Formation·Encounter 상태에서 재구성한다. 사용자 Save는 검증에 사용하지 않고 격리 슬롯을 사용한다. 일반 조우 승리/Story 완료는 구분한다.
 
