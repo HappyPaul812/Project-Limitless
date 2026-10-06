@@ -1,3 +1,8 @@
+## 2026-10-06 Main17 TTS 제외 최종 마감 완료
+
+기능·Story·Battle·Save·Path 완료, 확인된 진행 Blocker0. Main17 보상은 사용자 승인 EXP60·탈렌트50으로 최종 확정, 실제 마지막 대화/중복지급 방지/완료Save·Continue/레벨업경계 PASS. 5Job×Lv4/9/12/16×2조우40회+치유4회 모두승리·KO0, 몬스터 수치변경0. 이번 고유180PASS/FAIL0/NV0, 기존309PASS 별도 재사용. Compile완료·ConsoleError0/Warning0·MissingScript0·비포커스Bootstrap/격리Save해제.
+
+외부대기: TTS_PENDING14·환경 ART_WAITING_EXTERNAL·Chapter2 Battle BGM AUDIO_WAITING_EXTERNAL. Main17에 신규Elite 불필요, Main18/Field09/Overheat 생성0. 실제 Scene/import 기반 Art 및 Cue/Mixer/Loop/Fade 계약 Audio Handoff 완료. 사용자확인: Keyboard/Gamepad/Dungeon접촉 USER_INPUT_REQUIRED3, 탐색곡 적합성 USER_LISTENING_REQUIRED1. 일반장비DF1/StandaloneDR1 별도 유지. 다음: 외부납품 이후 해당 교체 영향 QA·청취/실물검증, Main18은 요청 전 시작하지 않는다. 마지막 구현·검증 commit `42640f4`, 상태기록 commit은 최신log 참조. 기존103상태·PNG/WAV/Save 보존·Push0. [최종QA](MAIN17_FINAL_QA.md) · [Balance](Main17_Balance_QA.md) · [Art 인계](Main17_Field08_Art_Handoff.md) · [Audio 인계](Main17_Audio_Handoff.md).
 ## 2026-10-06 Main17 대형 개발 — Phase1~9 완료
 
 main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표, Main16 이후 연결·조사·Story Battle·승리·Save/Continue5지점·BGM·Main18 Hook 구현. LOCAL Main15 세린 정식 해금과 저장 Party/Formation/Beast 유지. 통합246PASS/Path120PASS, 고유 CSV PASS309/FAIL0/NV0/USER4. 최종 Console Error0/Warning0·Missing Script0·비포커스 Bootstrap EditMode 복귀. 지형 기본 도형 Placeholder, NPC14 TTS_PENDING. 사용자 확인: 실물 Keyboard/Gamepad/Dungeon/BGM. 일반장비DF1/StandaloneDR1 유지. 다음: TTS 제작·청취 또는 사용자 지정 후속 개발. 기존103작업/PNG/WAV/Save 보호·Push0. 선행 관련commit1783cee, Phase9 hash 최신local log/최종보고 참조. [설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [최종QA](MAIN17_FINAL_QA.md) · [체크포인트](MAIN17_RESUME_CHECKPOINT.md).
