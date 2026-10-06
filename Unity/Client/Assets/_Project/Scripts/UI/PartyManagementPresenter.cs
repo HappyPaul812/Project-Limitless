@@ -39,11 +39,14 @@ namespace ProjectLimitless.UI
             // 향후 캠프는 같은 진입점의 안전지역 정책을 확장합니다. 필드 단축키는 제공하지 않습니다.
             if (safeAreaSource == null) return false;
             string sceneName = safeAreaSource.gameObject.scene.name;
-            if ((sceneName != "World_StarterVillage" && sceneName != "Field_03" && sceneName != "Arbel")
-                || SceneManager.GetActiveScene().name != sceneName) return false;
+            if (!IsAllowedScene(sceneName) || SceneManager.GetActiveScene().name != sceneName) return false;
             if (Instance == null) new GameObject("PartyManagementSystem").AddComponent<PartyManagementPresenter>();
             return Instance.Open(safeAreaSource);
         }
+
+        // 열기·유지·확정에 같은 안전지역 정책을 적용하여 허용 지역에서 화면이 닫히거나 확정이 막히지 않게 합니다.
+        private static bool IsAllowedScene(string sceneName) =>
+            sceneName == "World_StarterVillage" || sceneName == "Field_03" || sceneName == "Arbel";
 
         private void Awake()
         {
@@ -82,9 +85,9 @@ namespace ProjectLimitless.UI
         private void Update()
         {
             if (!IsOpen) return;
-            // Chapter 2 거점에서도 기존 편성 화면을 유지하되, 다른 Scene으로 나가면 닫습니다.
+            // 허용 안전지역에서는 화면을 유지하고, source가 없는 Scene으로 이동하면 잠금도 해제합니다.
             if (source == null ||
-                (SceneManager.GetActiveScene().name != "World_StarterVillage" && SceneManager.GetActiveScene().name != "Arbel") ||
+                !IsAllowedScene(SceneManager.GetActiveScene().name) ||
                 SceneManager.GetActiveScene().name != source.gameObject.scene.name) { Close(); return; }
             if (Keyboard.current?.tabKey.wasPressedThisFrame == true)
             {
@@ -120,7 +123,8 @@ namespace ProjectLimitless.UI
 
         public void Confirm()
         {
-            if (!IsOpen || source == null || SceneManager.GetActiveScene().name != "World_StarterVillage") return;
+            if (!IsOpen || source == null || !IsAllowedScene(SceneManager.GetActiveScene().name)
+                || SceneManager.GetActiveScene().name != source.gameObject.scene.name) return;
             if (!warning && !CompanionRosterService.HasOffensiveRole(GameSessionData.SelectedJobId, draft))
             {
                 warning = true; message.text = "공격 역할의 동료가 없습니다.\n전투 시간이 길어질 수 있습니다.";
