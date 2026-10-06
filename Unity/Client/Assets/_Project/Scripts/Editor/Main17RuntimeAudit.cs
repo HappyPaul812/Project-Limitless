@@ -26,6 +26,7 @@ namespace ProjectLimitless.EditorTools
         public static readonly List<string> Results = new List<string>();
         private static bool story;
         private static bool battle;
+        private static bool paths;
         private static string Output => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../문서/00_프로젝트/Main17_Runtime_Results.txt"));
         static Main17RuntimeAudit()
         {
@@ -34,13 +35,14 @@ namespace ProjectLimitless.EditorTools
             {
                 if (!SessionState.GetBool(Armed, false)) return;
                 if (state == PlayModeStateChange.EnteredPlayMode)
-                    typeof(Partial9FixedSpriteAudit).GetField("routine", Hidden).SetValue(null, Flatten(RunConnections()));
+                    typeof(Partial9FixedSpriteAudit).GetField("routine", Hidden).SetValue(null, Flatten(paths ? RunPaths() : RunConnections()));
                 if (state == PlayModeStateChange.EnteredEditMode) { SessionState.SetBool(Armed, false); Save(); }
             };
         }
-        public static string LaunchConnections() { Results.Clear(); story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchStory() { Results.Clear(); story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchBattle() { Results.Clear(); story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchConnections() { Results.Clear(); paths = false; story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchStory() { Results.Clear(); paths = false; story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchBattle() { Results.Clear(); paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchPaths() { Results.Clear(); paths = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
         private static T Value<T>(object owner, string name) => (T)owner.GetType().GetField(name, BindingFlags.Instance | BindingFlags.NonPublic).GetValue(owner);
         private static void Save() => File.WriteAllLines(Output, Results);
         private static void Check(bool condition, string id)
@@ -172,6 +174,42 @@ namespace ProjectLimitless.EditorTools
             while (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen && guard++ < 60)
             { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
             Check(index == 11 ? QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Completed : Chapter2Main17Flow.IsCurrent(index + 1), "Story.Complete." + index);
+        }
+
+        private static IEnumerator RunPaths()
+        {
+            foreach (string path in new[] { "path.hearing", "path.vision", "path.intellectual", "path.mobility", "path.emotional-scar" })
+            {
+                typeof(SecondRegressionAudit).GetMethod("Seed", Hidden).Invoke(null, new object[] { "fighter", 20 });
+                GameSessionData.SelectPlayerPath(path);
+                QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = QuestCatalog.All.Where(value => value.QuestId.StartsWith("main_") && string.CompareOrdinal(value.QuestId, "main_17") < 0).Select(value => value.QuestId).ToArray() });
+                CompanionRosterService.UnlockPaul("fighter"); CompanionRosterService.UnlockSerin();
+                string roster = JsonUtility.ToJson(CompanionRosterService.ExportSaveData());
+                GameSessionData.RecordLocation(Chapter2Main17Flow.Field, "Spawn_From_Field07");
+                SceneManager.LoadSceneAsync(Chapter2Main17Flow.Field); yield return WaitScene(Chapter2Main17Flow.Field);
+                for (int index = 1; index <= 6; index++)
+                {
+                    var player = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
+                    player.transform.position = Chapter2Main17Flow.Positions[index]; Physics2D.SyncTransforms();
+                    var site = GameObject.Find("field08_main17_" + Chapter2Main17Flow.Sites[index]).GetComponent<Main17Site>();
+                    site.TryInteract(); Check(DialoguePresenter.Instance.IsOpen, path + ".Open." + index);
+                    var lines = Value<DialogueLine[]>(DialoguePresenter.Instance, "sequenceLines");
+                    Check(lines.Select(value => value.DialogueId).SequenceEqual(Main17DialogueCatalog.Get(index).Select(value => value.DialogueId)), path + ".ExactIDs." + index);
+                    if (index == 2 || index == 6)
+                        Check(lines.First(value => value.SpeakerId != "").SpeakerId == (path == "path.hearing" ? "player" : CompanionRosterService.SerinId), path + ".PlayerPriority." + index);
+                    if (index == 2)
+                    {
+                        DialoguePresenter.Instance.Hide(); yield return Wait(.1);
+                        Check(Chapter2Main17Flow.IsCurrent(index), path + ".CancelNoProgress");
+                        site.TryInteract();
+                    }
+                    int guard = 0;
+                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60) { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+                    Check(Chapter2Main17Flow.IsCurrent(index + 1), path + ".SameResult." + index);
+                }
+                Check(GameObject.FindObjectsByType<Chapter2Main17Flow>().Count() == 1 && GameObject.Find("Serin_Story_Main17") != null, path + ".SingleActorFlow");
+                Check(JsonUtility.ToJson(CompanionRosterService.ExportSaveData()) == roster, path + ".PartyPreserved");
+            }
         }
     }
 }
