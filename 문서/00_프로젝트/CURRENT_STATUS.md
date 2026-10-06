@@ -1,7 +1,6 @@
-## 2026-10-06 Main17 대형 개발 — Phase1~3 설계·Quest·Field 연결 완료
+## 2026-10-06 Main17 대형 개발 — Phase1~4 완료
 
-main_17_red_rift / 붉은 균열 / Field_08_RedRift 정식 설계12목표·9단계 계획 확정. LOCAL 세린 Main15 정식 해금과 Chapter2 Battle BGM null/TBD 유지. 공식 Art와 로컬 Beneath_The_Cracked_Earth.mp3 존재 확인. QuestData12목표 생성·데이터단위17PASS/Compile성공/ConsoleError0. Field08/07왕복·잠금·Bounds·Spawn 백그라운드16PASS. Dialogue/Battle 등 Phase4~9 미완료, TTS 생성0·기존103변경 보존·Push0. 다음: Phase4 현장 Actor/조사 대화. [설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [재개 지점](MAIN17_RESUME_CHECKPOINT.md). 선행 관련 commit 8cfecc6.
-
+main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase2 데이터17PASS, Phase3 연결16PASS, Phase4 재생44PASS(기존연결16+새Story28)/FAIL0. 다음: Phase5 Story Encounter/Battle. 현재6조사까지 완료·7목격 준비. Main17Site 목격 완료→지정9전투/재도전 연결과 기존 Factory Field08 조합 추가, ReturnSpawn 생성. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit 7a4a3c1. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
 ## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
 
 BattleSceneController에서 스킬/아이템 열기 때 기본5명령 GameObject를 비활성화하여 표시·interactable·Raycast·Navigation을 함께 차단, 메뉴/대상/행동동안 유지·취소/뒤로/다음조작명령에서 복원한다. 기존Esc와같은 취소에 패드B도 연결했다. 기존812PASS 재사용(817 CSV/JSON 변경0), 이번고유검증484: **PASS482/FAIL0/NV0/USER2**이며 서로중복합산하지 않는다.

@@ -8,6 +8,7 @@ using ProjectLimitless.Core;
 using ProjectLimitless.Monster;
 using ProjectLimitless.Player;
 using ProjectLimitless.World;
+using ProjectLimitless.UI;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,7 @@ namespace ProjectLimitless.EditorTools
         private const BindingFlags Hidden = BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public;
         private const string Armed = "Limitless.Main17.Audit";
         public static readonly List<string> Results = new List<string>();
+        private static bool story;
         private static string Output => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../문서/00_프로젝트/Main17_Runtime_Results.txt"));
         static Main17RuntimeAudit()
         {
@@ -33,7 +35,8 @@ namespace ProjectLimitless.EditorTools
                 if (state == PlayModeStateChange.EnteredEditMode) { SessionState.SetBool(Armed, false); Save(); }
             };
         }
-        public static string LaunchConnections() { Results.Clear(); SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchConnections() { Results.Clear(); story = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchStory() { Results.Clear(); story = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
         private static void Save() => File.WriteAllLines(Output, Results);
         private static void Check(bool condition, string id)
         {
@@ -91,6 +94,27 @@ namespace ProjectLimitless.EditorTools
             Check(UnityEngine.Object.FindObjectsByType<BoxCollider2D>().Any(value => value.name.StartsWith("Boundary_Left")), "Field08.DeepWestClosed");
             Check(Camera.main != null, "Field08.Camera");
             Check(SceneManager.GetActiveScene().name == Chapter2Main17Flow.Field, "Field08.NoImmediateReturn");
+            if (story)
+            {
+                string roster = JsonUtility.ToJson(CompanionRosterService.ExportSaveData());
+                Check(QuestService.ActiveMainQuest?.Definition.QuestId == Chapter2Main17Flow.QuestId && Chapter2Main17Flow.IsCurrent(1), "Story.StartAndEntry");
+                var actor = GameObject.Find("Serin_Story_Main17");
+                Check(actor != null && actor.GetComponent<Animator>()?.runtimeAnimatorController == Resources.Load<RuntimeAnimatorController>("Chapter2/Serin"), "Story.SerinOfficialAnimator");
+                for (int index = 1; index <= 6; index++)
+                {
+                    player.transform.position = Chapter2Main17Flow.Positions[index]; Physics2D.SyncTransforms();
+                    var site = GameObject.Find("field08_main17_" + Chapter2Main17Flow.Sites[index]).GetComponent<Main17Site>();
+                    site.TryInteract();
+                    Check(DialoguePresenter.Instance.IsOpen, "Story.Open." + index);
+                    Check(Chapter2Main17Flow.IsCurrent(index), "Story.NoEarlyProgress." + index);
+                    int guard = 0;
+                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60) { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+                    Check(Chapter2Main17Flow.IsCurrent(index + 1), "Story.Complete." + index);
+                    site.TryInteract(); Check(Chapter2Main17Flow.IsCurrent(index + 1), "Story.NoDuplicate." + index);
+                }
+                Check(JsonUtility.ToJson(CompanionRosterService.ExportSaveData()) == roster, "Story.RosterFormationPreserved");
+                Check(Chapter2Main17Flow.IsCurrent(7), "Story.WitnessReady");
+            }
             SceneTransitionService.Load(Chapter2Main17Flow.PreviousField, "Spawn_From_Field08");
             yield return WaitScene(Chapter2Main17Flow.PreviousField);
             player = UnityEngine.Object.FindAnyObjectByType<PlayerController>();
