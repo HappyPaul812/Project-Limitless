@@ -73,7 +73,7 @@ namespace ProjectLimitless.EditorTools
             double until = EditorApplication.timeSinceStartup + 30;
             while (SceneManager.GetActiveScene().name != name && EditorApplication.timeSinceStartup < until) yield return null;
             Check(SceneManager.GetActiveScene().name == name, "Scene." + name);
-            yield return Wait(.7);
+            yield return Wait(1.9);
             MonsterEncounterService.SuppressForSeconds(3600);
             if (music)
             {
@@ -331,17 +331,20 @@ namespace ProjectLimitless.EditorTools
             var deep = GameObject.Find("RedRiftGeometry_DeepCrack")?.GetComponent<BoxCollider2D>();
             Check(deep != null && Physics2D.CircleCast(new Vector2(-4, 0), .2f, Vector2.left, 2).collider == deep, "Visual.DeepRiftCollision");
             Check(Physics2D.CircleCast(new Vector2(-4, 4.5f), .2f, Vector2.left, 3).collider == null && Physics2D.CircleCast(new Vector2(-4, -3.5f), .2f, Vector2.left, 3).collider == null, "Visual.NorthSouthDetourClear");
-            string path = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Temp/Main17Development/Field08_Camera.png"));
-            var original = camera.targetTexture; var active = RenderTexture.active;
-            var texture = new RenderTexture(1600, Mathf.RoundToInt(1600 / camera.aspect), 24);
-            var image = new Texture2D(texture.width, texture.height, TextureFormat.RGB24, false);
-            try
+            foreach (int width in new[] {1920,1600,1280})
             {
-                camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
-                image.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0); image.Apply(); File.WriteAllBytes(path, image.EncodeToPNG());
-                Check(File.Exists(path), "Visual.BackgroundCameraCapture");
+                string path = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Temp/Main17ArtAudio/Runtime_Field08_" + width + ".png"));
+                var original = camera.targetTexture; var active = RenderTexture.active;
+                var texture = new RenderTexture(width,width*9/16,24);
+                var image = new Texture2D(texture.width,texture.height,TextureFormat.RGB24,false);
+                try
+                {
+                    camera.targetTexture=texture; camera.Render(); RenderTexture.active=texture;
+                    image.ReadPixels(new Rect(0,0,texture.width,texture.height),0,0); image.Apply(); File.WriteAllBytes(path,image.EncodeToPNG());
+                    Check(File.Exists(path),"Visual.BackgroundCameraCapture."+width);
+                }
+                finally {camera.targetTexture=original; RenderTexture.active=active; UnityEngine.Object.DestroyImmediate(texture); UnityEngine.Object.DestroyImmediate(image);}
             }
-            finally { camera.targetTexture = original; RenderTexture.active = active; UnityEngine.Object.DestroyImmediate(texture); UnityEngine.Object.DestroyImmediate(image); }
         }
     }
 }

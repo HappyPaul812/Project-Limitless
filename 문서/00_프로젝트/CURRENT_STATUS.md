@@ -1,3 +1,13 @@
+## 2026-10-06 Main17 실제 Art / Battle BGM 최종 반영
+
+FUNCTION_COMPLETE / ART_COMPLETE / BGM_COMPLETE / SAVE_COMPLETE / PATH_COMPLETE. 정확한 English.zip 원본9PNG 등록·7실제적용(지면변형2보관), Preview미사용. PNG/ZIP/MP3 원본 수정0. Blade and Gambit는 Chapter2 서부 일반/Story에 적용, 기존 단일Source/Mixer Fade0.20/0.75/0.9·LoopON, Field07/08 탐색곡 복귀·Boss예외 유지. Quest12/보상60·50/Serin·Fox/Party/5Path 및 기존44승리·KO0 보호.
+
+이번 고유 PASS270 / FAIL0 / 자동 NOT_VERIFIED0 / 진행 Blocker0. 기존309/180PASS 별도 재사용. 실제 통합 Story 승리/완료Continue 및 Field07/08 일반 BGM·Fade·3해상도 HUD 캡처 PASS. Transform425/Collider15 예상 밖 변경0, 원본3075 누락0·PNG/WAV 보호. Compile완료/Error0, 기존 CS0618 Warning16·이번 클래스 Warning0, MissingScript0. Bootstrap 비포커스 EditMode·격리Save/설정 해제.
+
+남은 사용자/외부: TTS_PENDING14, 실물 Keyboard/Gamepad/Dungeon USER_INPUT_REQUIRED3, Field08/Battle 음악 USER_LISTENING_REQUIRED2. 기존 장비DF1/Standalone DR1 분리. 다음 작업은 청취·실물/Release 검증이며 TTS/Main18은 별도 요청 전 작업하지 않는다. 마지막 구현 commit Art3b4820a / Audio53ef42c, 상세 [최종 QA](Main17_ArtAudio_QA.md). GitHub Push하지 않음.
+
+---
+
 ## 2026-10-06 Main17 TTS 제외 최종 마감 완료
 
 기능·Story·Battle·Save·Path 완료, 확인된 진행 Blocker0. Main17 보상은 사용자 승인 EXP60·탈렌트50으로 최종 확정, 실제 마지막 대화/중복지급 방지/완료Save·Continue/레벨업경계 PASS. 5Job×Lv4/9/12/16×2조우40회+치유4회 모두승리·KO0, 몬스터 수치변경0. 이번 고유180PASS/FAIL0/NV0, 기존309PASS 별도 재사용. Compile완료·ConsoleError0/Warning0·MissingScript0·비포커스Bootstrap/격리Save해제.

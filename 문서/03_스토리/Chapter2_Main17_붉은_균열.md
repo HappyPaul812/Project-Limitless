@@ -1,3 +1,9 @@
+## 2026-10-06 현재 구현 완료 상태
+
+정식 환경 Art와 Chapter2 Blade and Gambit Battle BGM 실제 적용 완료. Field08 탐색곡 Beneath The Cracked Earth, 일반/Story Blade, 필드 복귀 탐색곡의 단일 Source Fade/Loop 검증. Art 원본1254px은 수정하지 않고 Scene/Import/Material로 연결, 기존 Collider/Bounds/Spawn/Exit 유지. EXP60/Talent50·12목표·5Path·영구 세린/Fox·Save 보호. 고유270PASS/FAIL0, TTS_PENDING14·실물입력3·음악청취2 별도. 이전 외부대기/null/TBD/비어있는 Reward 기록은 당시 이력이며 현재 정본은 CURRENT_STATUS 및 Main17_ArtAudio_QA다. Main18 미구현 유지.
+
+---
+
 # Chapter 2 Main17 — 붉은 균열
 
 2026-10-06 사용자 요청으로 확정한 설계다. 구현 완료 여부는 `MAIN17_RESUME_CHECKPOINT.md`를 따른다. LOCAL Main15/16와 현재 코드가 정본이며 이전의 Main17 후보/미구현 표시는 이 문서로 후속 확장한다.

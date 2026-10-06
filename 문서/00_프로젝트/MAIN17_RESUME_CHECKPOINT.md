@@ -1,3 +1,18 @@
+# Main17 실제 Art / Audio COMPLETION CHECKPOINT
+
+- 현재 실행 Phase 없음. FUNCTION_COMPLETE / ART_COMPLETE / BGM_COMPLETE / BALANCE_REPRESENTATIVE_PASS / SAVE_COMPLETE / PATH_COMPLETE.
+- Art3b4820a / Audio53ef42c, 최종 QA는 별도 Docs commit. 실제 LOCAL 원본과 Editor/Runtime 기준.
+- 고유270PASS/FAIL0/진행Blocker0. 기존309/180·44승리KO0 재사용. 보상60/50 유지.
+- DeepRift/우회/425Transform·15Collider/PNG·WAV 보호, 새 단일 Source Fade/Loop/Field07·08 일반전·Story승리·Continue/3해상도 HUD 확인.
+- Compile완료/Error0, 기존Warning16·신규Warning0/Missing0. Bootstrap EditMode·비포커스·격리 설정 해제.
+- 남은 TTS14 / 실물입력3 / 음악청취2. 기존 장비DF1/StandaloneDR1 별도. Art/Battle BGM 외부대기는 DELIVERED/APPLIED로 종료.
+- 다음 시작점: 사용자 음악/실물 확인과 Release 검증. Main18/TTS는 별도 명시 요청 전 시작하지 않는다.
+- 관련 케이스/근거: Main17_ArtAudio_QA.md / Main17_ArtAudio_Cases.csv / 실제 원본 적용 기록과 Chapter2_BGM_정본.md.
+
+---
+
+## 이전 완료 체크포인트(외부 납품 전 이력)
+
 # Main17 COMPLETION CHECKPOINT — TTS 제외 최종 마감
 
 - 완료: Phase1~9 및 TTS 제외 마감. 현재 진행 Phase 없음.

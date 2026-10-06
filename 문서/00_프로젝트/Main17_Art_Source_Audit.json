@@ -1,0 +1,125 @@
+{
+  "ZipSHA256": "a238bc2eca0450b95fb5a61cd8cc655018bff82e54096fa91cfb2f7f424e19fb",
+  "Entries": [
+    {
+      "File": "Manifest.txt",
+      "Bytes": 763,
+      "SHA256": "43d269e9b3dc9ef6b9582c49286e28ef25538fbd624e7cdc7a3c26ceb2aca24a"
+    },
+    {
+      "File": "RedRift_AshPatch_01.png",
+      "Bytes": 1126912,
+      "SHA256": "c80601fb37859e8c2b9c4c4ef2407f2cb8c2cc693b372130cee3729853fa3ed7",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "TransparentPixels": 1571523
+    },
+    {
+      "File": "RedRift_AssetSheet_Preview.png",
+      "Bytes": 1931477,
+      "SHA256": "85dc420fe60504180ed51c92c0d51fb6d4920ed2e2faa29d86e65ad812af5001",
+      "Width": 1448,
+      "Height": 1086,
+      "Mode": "RGB",
+      "AlphaExtrema": null,
+      "TransparentPixels": 0
+    },
+    {
+      "File": "RedRift_Canyon_Edge_01.png",
+      "Bytes": 1812805,
+      "SHA256": "e58b49d02f9de8466fa5c8dd0e293602b20df1e5cadad2b1fc244c3fb0eaa18f",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "TransparentPixels": 1572098
+    },
+    {
+      "File": "RedRift_DeadShrub_01.png",
+      "Bytes": 406752,
+      "SHA256": "ac078b1705fa40c9a17eb46844abce286611f3449ffb4875391328290d858bcf",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "TransparentPixels": 1570764
+    },
+    {
+      "File": "RedRift_Fissure_Edge.png",
+      "Bytes": 2979414,
+      "SHA256": "b44f046e4ef629a6d3e2d46ee53176bd03ec091f94a96b5482e13b01dafb9848",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGB",
+      "AlphaExtrema": null,
+      "TransparentPixels": 0
+    },
+    {
+      "File": "RedRift_Fissure_Glow.png",
+      "Bytes": 974104,
+      "SHA256": "e5168e9ddca3967d8f0455e0e2af54a172cb2a61c07c881204d361a337c1706e",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "TransparentPixels": 1572507
+    },
+    {
+      "File": "RedRift_Ground_Base.png",
+      "Bytes": 3128476,
+      "SHA256": "9121e672f5a9dea9802b9561548c93080577ae794bec51b4d18a9bb7c64baefa",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGB",
+      "AlphaExtrema": null,
+      "TransparentPixels": 0
+    },
+    {
+      "File": "RedRift_Ground_Cracked_01.png",
+      "Bytes": 2819924,
+      "SHA256": "0756dfc6002c4c6adb7d73c0988ffc5ef35e7baf1fe6d532954b0e93aae3534e",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGB",
+      "AlphaExtrema": null,
+      "TransparentPixels": 0
+    },
+    {
+      "File": "RedRift_Ground_Cracked_02.png",
+      "Bytes": 3087644,
+      "SHA256": "332e439cf6a2d446e063c8b971fba1f583b981cd1f14c7729e3dfcc923ecdc63",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGB",
+      "AlphaExtrema": null,
+      "TransparentPixels": 0
+    },
+    {
+      "File": "RedRift_Obsidian_01.png",
+      "Bytes": 1107448,
+      "SHA256": "62d08ebe5f8644bb9e0bee09f1ee98a2cea9e1f41806455daddd2894ed370b0e",
+      "Width": 1254,
+      "Height": 1254,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "TransparentPixels": 1571463
+    }
+  ]
+}

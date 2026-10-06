@@ -41,7 +41,9 @@ PASS|Save.GeneralRespawnProtocolAfterSameProcessContinue
 PASS|Visual.CameraViewportInsideBounds
 PASS|Visual.DeepRiftCollision
 PASS|Visual.NorthSouthDetourClear
-PASS|Visual.BackgroundCameraCapture
+PASS|Visual.BackgroundCameraCapture.1920
+PASS|Visual.BackgroundCameraCapture.1600
+PASS|Visual.BackgroundCameraCapture.1280
 PASS|Story.StartAndEntry
 PASS|Story.SerinOfficialAnimator
 PASS|Story.Open.1
