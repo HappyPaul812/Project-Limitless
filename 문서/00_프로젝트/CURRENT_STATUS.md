@@ -1,3 +1,11 @@
+## 2026-10-06 전체 Story Voice Semantic Risk 사전 감사
+
+현재 Flow 재추출331 Dialogue / Voice247(Intro18+Story229) / Player Silent42. 최신 사용자·Runtime 의미PASS23(Main03 10·Main04 13)을 SHA/GUID/path 보호하고 Matrix의 태온005 경계PASS 누락을 보완했다. 기존 NEEDS_LISTENING244는 PASS20/기존재생성5/새청취219가 겹치는 관리 범위로 유지한다. 기존 Main04 Wrong1·Suspect4 재생성필요5 변화0, 신규 Wrong/Partial/재생성확정0.
+
+Risk HIGH35/MEDIUM129/LOW83, 새Queue219는 HIGH30/MEDIUM129/LOW60. 저음량18·극단짧은길이12·다문장짧은음성15, PCM/교차Main/교차화자/ID중복·Missing·본문/Mapping drift0. Risk는 청취 우선순위이며 의미판정이 아니다. [전체 감사/임계값/Main별표](StoryVoice_SemanticRisk_Audit.md) · [자연 진행 Queue219](StoryVoice_ListeningQueue.csv) · [위험 구간 우선 Queue219](StoryVoice_PriorityListeningQueue.csv) · [보호PASS23](StoryVoice_Protected_PASS.csv). 다음 권장: Main09(27Voice/HIGH7)→Main11(28/HIGH7) 실제 전체발화·음량 청취, 결과ID를 모아 별도 재생성 요청. 기존Main04 5개는 기존Handoff 별도 유지.
+
+새 Editor 감사529검사/합성10case/독립247WAV·과거PASS23해시 검증PASS. Compile0/Console Error0. Bootstrap Edit Mode/is_focused=false 유지, 포커스/Play전환0. 보호 기존2260파일 변경0; TTS생성·WAV/meta/Catalog/Story/Registry/Mixer/Portrait/게임C# 변경0. 사용자 직접 확인: Queue 음성 의미 청취 미수행. 기존 작업103개 유지·직접 감사/CSV/문서만commit·Push0. 마지막 선행 관련commit `85592e54d3109b1ccbb031c9deba7d1d9509b2bc`, 이번commit 최종보고 참조.
+
 ## 2026-10-06 수정 완료 Voice 개발 기록 MP4
 
 새 `F:\Downloads\Limitless_DevJourney_2026-10-06\Limitless_DevJourney_FixedVoice_2026-10-06.mp4` 완료. **5분28.13초 / 1920×1080 / 30fps / H264 / AAC48kStereo / 49.42MiB**. 공식 Recorder GameView+GameAudio 원본으로 Title·Intro·성별/길/직업 및 Sprite Preview·Main03후반·Main04첫조우·실제 전투 승리·결과 버튼 Field복귀를 담았다. 정상 새 격리 게임으로 진행했으며 미검증 구간은 녹화 밖 정상 진행했다. 첫 Main04 패배 후 정상 회복/재도전 승리를 사용하므로 구간 컷이 있으며 무편집 연속 플레이가 아니다.

@@ -1,3 +1,9 @@
+## 2026-10-06 전체 Story Voice 의미 위험 사전 감사
+
+[Semantic Risk 사전 감사](StoryVoice_SemanticRisk_Audit.md)를 최우선 현재 요약으로 참조한다. 현재 Source 재추출331/Voice247/Player Silent42. 최신 사용자·Runtime 의미PASS23(태온005 경계PASS 보완)을 보호하고 기존244 관리 범위와 새 청취219·기존 재생성5를 구분했다. HIGH35/MEDIUM129/LOW83은 청취 우선순위로 신규 의미 불일치/TTS필요 확정0. 기존Main045 판정유지. LOW60도 의미미확인이다. [자연 진행 Queue](StoryVoice_ListeningQueue.csv)와 [위험 구간 우선 Queue](StoryVoice_PriorityListeningQueue.csv) 제공, 추천 Main09→Main11.
+
+Editor529/합성10/독립247WAV/과거PASS23SHA 검증PASS, Compile Error0/Console Error0. 기존2260파일/WAV/Catalog/게임본문/Registry 변경0·TTS0·포커스/Play전환0. 기존 Matrix331행에 위험/보호/현재metadata 컬럼 반영, 기존 Listening JSON 역사 자료와244 marker 유지. Source→Manifest→Catalog 기술 일치가 실제 발화 의미 PASS를 보장하지 않는다. 다음은 사용자 실제Queue청취 결과 수집이다. 선행commit `85592e54d3109b1ccbb031c9deba7d1d9509b2bc`, push0.
+
 ## 2026-10-06 Main04 대기 지문 수정 및 전투 후 Voice 5건 재생성 전달
 
 대기 문장 “상황을 살피고 있습니다.”는 `MainQuest04FieldFlow.CreateStoryActor`의 공통 NpcController 설정으로, Dialogue ID·Sequence index·Manifest·Voice entry가 없다. 태온 기본 상호작용에서 이름/Portrait가 붙던 상태 설명을 **`<지문> 상황을 살피고 있습니다.`**로 수정했다. DialogueLine의 명시적 prefix 규칙으로 Character Speaker·Portrait·Voice를 제거하며, 잘못된 Voice ID가 전달돼도 Resolve하지 않는다. Player와 기존 Character 대사는 유지한다. 331 authored Dialogue에는 이 대기 설정이 원래 포함되지 않아 개수는 유지한다.

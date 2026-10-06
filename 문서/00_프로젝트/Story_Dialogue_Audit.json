@@ -15299,5 +15299,21 @@
     "태온3개는 별도 사용자 청취 증거와 원본 교체 이력으로 판정한다. 나머지244개 NEEDS_LISTENING은 유지한다. Metadata/PCM 일치만으로 사람 청취 PASS를 만들지 않는다.",
     "동적 NPC 공용 fallback은 새 Quest 작성 페이지로 세지 않으며 호출점은 별도 Coverage에 기록한다.",
     "Intro의 무음 마지막 제목은 Narrator18개의 분모에 포함하지 않는다."
-  ]
+  ],
+  "semantic_risk_audit": "StoryVoice_SemanticRisk_Audit.json",
+  "current_semantic_summary": {
+    "dialogue": 331,
+    "voice": 247,
+    "player": 42,
+    "human_pass": 23,
+    "known_regen": 5,
+    "pending": 219,
+    "risk": {
+      "MEDIUM": 129,
+      "HIGH": 35,
+      "LOW": 83
+    },
+    "legacy_needs_listening_scope": 244,
+    "note": "Latest PASS23 overrides historical row/listening snapshots. Current Matrix and StoryVoice report are authoritative for current status; technical Runtime history below preserved."
+  }
 }
