@@ -1,0 +1,818 @@
+﻿category,id,status,evidence
+Skill15,fighter_slash_stack/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,fighter_slash_stack/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,fighter_slash_stack/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,fighter_slash_stack/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,fighter_slash_stack/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,fighter_slash_stack/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,fighter_slash_stack/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,fighter_slash_stack/cooldown,PASS,정본 CD=0 실제=0
+Skill15,fighter_slash_stack/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,fighter_slash_stack/momentum,PASS,직접 성공 난도 기세+1
+Skill15,fighter_slash_stack/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,fighter_finishing_strike/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,fighter_finishing_strike/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,fighter_finishing_strike/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,fighter_finishing_strike/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,fighter_finishing_strike/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,fighter_finishing_strike/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,fighter_finishing_strike/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,fighter_finishing_strike/cooldown,PASS,정본 CD=0 실제=0
+Skill15,fighter_finishing_strike/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,fighter_finishing_strike/momentum,PASS,회심 기세 전부 소비
+Skill15,fighter_finishing_strike/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,fighter_whirlwind/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,fighter_whirlwind/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,fighter_whirlwind/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,fighter_whirlwind/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,fighter_whirlwind/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,fighter_whirlwind/cooldown,PASS,정본 CD=0 실제=0
+Skill15,fighter_whirlwind/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,fighter_whirlwind/momentum,PASS,전열 적중 기세 0~3 상한
+Skill15,fighter_whirlwind/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,guardian_taunt/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,guardian_taunt/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,guardian_taunt/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,guardian_taunt/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,guardian_taunt/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,guardian_taunt/cooldown,PASS,정본 CD=3 실제=3
+Skill15,guardian_taunt/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,guardian_taunt/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,guardian_iron_defense/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,guardian_iron_defense/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,guardian_iron_defense/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,guardian_iron_defense/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,guardian_iron_defense/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,guardian_iron_defense/cooldown,PASS,정본 CD=4 실제=4
+Skill15,guardian_iron_defense/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,guardian_iron_defense/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,guardian_intercept/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,guardian_intercept/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,guardian_intercept/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,guardian_intercept/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,guardian_intercept/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,guardian_intercept/cooldown,PASS,정본 CD=4 실제=4
+Skill15,guardian_intercept/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,guardian_intercept/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,healer_healing_light/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,healer_healing_light/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,healer_healing_light/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,healer_healing_light/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,healer_healing_light/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,healer_healing_light/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,healer_healing_light/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,healer_healing_light/cooldown,PASS,정본 CD=0 실제=0
+Skill15,healer_healing_light/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,healer_healing_light/resource,PASS,"자원 음수 없음, 실제 사용 MP=3"
+Skill15,healer_healing_wave/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,healer_healing_wave/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,healer_healing_wave/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,healer_healing_wave/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,healer_healing_wave/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,healer_healing_wave/cooldown,PASS,정본 CD=3 실제=3
+Skill15,healer_healing_wave/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,healer_healing_wave/resource,PASS,"자원 음수 없음, 실제 사용 MP=7"
+Skill15,healer_cleanse/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,healer_cleanse/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,healer_cleanse/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,healer_cleanse/empty,PASS,제거할 상태 없음→스킬 메뉴/행동CD미소비
+Skill15,healer_cleanse/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,healer_cleanse/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,healer_cleanse/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,healer_cleanse/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,healer_cleanse/cooldown,PASS,정본 CD=2 실제=2
+Skill15,healer_cleanse/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,healer_cleanse/resource,PASS,"자원 음수 없음, 실제 사용 MP=2"
+Skill15,mage_fireball/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,mage_fireball/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,mage_fireball/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,mage_fireball/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,mage_fireball/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,mage_fireball/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,mage_fireball/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,mage_fireball/cooldown,PASS,정본 CD=3 실제=3
+Skill15,mage_fireball/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,mage_fireball/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,mage_thunderbolt/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,mage_thunderbolt/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,mage_thunderbolt/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,mage_thunderbolt/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,mage_thunderbolt/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,mage_thunderbolt/cooldown,PASS,정본 CD=3 실제=3
+Skill15,mage_thunderbolt/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,mage_thunderbolt/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,mage_gaia_wall/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,mage_gaia_wall/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,mage_gaia_wall/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,mage_gaia_wall/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,mage_gaia_wall/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,mage_gaia_wall/cooldown,PASS,정본 CD=4 실제=4
+Skill15,mage_gaia_wall/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,mage_gaia_wall/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,sharpshooter_aim/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,sharpshooter_aim/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,sharpshooter_aim/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,sharpshooter_aim/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,sharpshooter_aim/rear-first,PASS,후열 우선 사거리
+Skill15,sharpshooter_aim/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,sharpshooter_aim/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,sharpshooter_aim/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,sharpshooter_aim/cooldown,PASS,정본 CD=2 실제=2
+Skill15,sharpshooter_aim/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,sharpshooter_aim/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,sharpshooter_arrow_rain/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,sharpshooter_arrow_rain/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,sharpshooter_arrow_rain/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,sharpshooter_arrow_rain/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,sharpshooter_arrow_rain/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,sharpshooter_arrow_rain/cooldown,PASS,정본 CD=2 실제=2
+Skill15,sharpshooter_arrow_rain/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,sharpshooter_arrow_rain/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Skill15,sharpshooter_companion_attack/menu,PASS,Command Button→실제 직업 Skill Menu
+Skill15,sharpshooter_companion_attack/menu-cancel,PASS,"취소→기본 명령, 행동/MP/CD 미소비"
+Skill15,sharpshooter_companion_attack/blocked-cd,PASS,CD 입력 거절/행동·자원 보존
+Skill15,sharpshooter_companion_attack/targeting,PASS,실제 targeting 후보 및 포커스
+Skill15,sharpshooter_companion_attack/target-cancel,PASS,대상 취소→Skill Menu/행동CD미소비
+Skill15,sharpshooter_companion_attack/action-end,PASS,정상 연출 callback→FinishCurrentAction/턴 진행
+Skill15,sharpshooter_companion_attack/ui-return,PASS,"메뉴/대상 선택 종료, Battle UI 복귀"
+Skill15,sharpshooter_companion_attack/cooldown,PASS,정본 CD=3 실제=3
+Skill15,sharpshooter_companion_attack/effect,PASS,실제 Damage/Heal/Status 결과
+Skill15,sharpshooter_companion_attack/resource,PASS,"자원 음수 없음, 실제 사용 MP=0"
+Appearance,50/800,PASS,50 READY/800 Sprite null0
+Appearance,mapping-unique,PASS,성별/길/직업 조합 중복0
+Creation,0/auto-only,PASS,수동 외형 선택 UI 없음
+UI,Creation/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Creation/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Creation/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Creation/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Creation/focus,PASS,MaleButton
+UI,Path/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Path/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Path/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Path/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Path/focus,PASS,PathCard1
+Creation,0/preview,PASS,Job 실제 자동 Preview appearance.external.v1.vision.guardian.male
+UI,Job/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Job/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Job/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Job/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Job/focus,PASS,JobCard1
+Creation,0/confirm,PASS,정식 Confirm Preview
+UI,Confirm/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Confirm/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Confirm/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Confirm/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Confirm/focus,PASS,StartButton
+Creation,0/world,PASS,World Sprite
+Creation,0/save,PASS,격리 실제 생성 자동 저장
+Creation,0/position-save,PASS,실제 월드 위치 Save
+Creation,0/continue,PASS,Bootstrap 실제 Continue/성별·길·직업·외형
+Creation,0/battle-left,PASS,실제 Battle 전달/Left Idle frame4
+Creation,1/auto-only,PASS,수동 외형 선택 UI 없음
+Creation,1/preview,PASS,Job 실제 자동 Preview appearance.external.v1.hearing.marksman.female
+Creation,1/confirm,PASS,정식 Confirm Preview
+Creation,1/world,PASS,World Sprite
+Creation,1/save,PASS,격리 실제 생성 자동 저장
+Creation,1/position-save,PASS,실제 월드 위치 Save
+Creation,1/continue,PASS,Bootstrap 실제 Continue/성별·길·직업·외형
+Creation,1/battle-left,PASS,실제 Battle 전달/Left Idle frame4
+Creation,2/auto-only,PASS,수동 외형 선택 UI 없음
+Creation,2/preview,PASS,Job 실제 자동 Preview appearance.external.v1.mobility.mage.male
+Creation,2/confirm,PASS,정식 Confirm Preview
+Creation,2/world,PASS,World Sprite
+Creation,2/save,PASS,격리 실제 생성 자동 저장
+Creation,2/position-save,PASS,실제 월드 위치 Save
+Creation,2/continue,PASS,Bootstrap 실제 Continue/성별·길·직업·외형
+Creation,2/battle-left,PASS,실제 Battle 전달/Left Idle frame4
+Creation,3/auto-only,PASS,수동 외형 선택 UI 없음
+Creation,3/preview,PASS,Job 실제 자동 Preview appearance.external.v1.intellectual.fighter.female
+Creation,3/confirm,PASS,정식 Confirm Preview
+Creation,3/world,PASS,World Sprite
+Creation,3/save,PASS,격리 실제 생성 자동 저장
+Creation,3/position-save,PASS,실제 월드 위치 Save
+Creation,3/continue,PASS,Bootstrap 실제 Continue/성별·길·직업·외형
+Creation,3/battle-left,PASS,실제 Battle 전달/Left Idle frame4
+Creation,4/auto-only,PASS,수동 외형 선택 UI 없음
+Scene,PathSelection,PASS,실제 Scene 도착
+Scene,JobSelection,PASS,실제 Scene 도착
+Creation,4/preview,PASS,Job 실제 자동 Preview appearance.external.v1.emotionalscar.healer.female
+Scene,FinalConfirmation,PASS,실제 Scene 도착
+Creation,4/confirm,PASS,정식 Confirm Preview
+Creation,4/world,PASS,World Sprite
+Creation,4/save,PASS,격리 실제 생성 자동 저장
+Creation,4/position-save,PASS,실제 월드 위치 Save
+Creation,4/continue,PASS,Bootstrap 실제 Continue/성별·길·직업·외형
+Creation,4/battle-left,PASS,실제 Battle 전달/Left Idle frame4
+Dungeon,8-spawns,PASS,B1/B2 각4 일반 조우 정본
+Dungeon,dungeon01_b1_01/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b1_01/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b1_01/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_01/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_01/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=4
+Dungeon,dungeon01_b1_01/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b1_01/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_01/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_01/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+UI,Dungeon/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Dungeon/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Dungeon/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Dungeon/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Save,Dungeon/write,PASS,격리 Validation Save
+Save,Dungeon/identity-growth,PASS,Gender/Path/Job/Appearance/EXP/Talent 저장 복원
+Save,Dungeon/position-safe,PASS,Dungeon/World 실제 좌표 및 최근 안전지대 복원
+Save,Dungeon/quest-party,PASS,"Quest/Party/Formation 정확 복원; before={""ActiveQuests"":[],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":true} after={""ActiveQuests"":[],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":true}"
+Save,Dungeon/items-hp-beast,PASS,Inventory/HP/MP/Beast 현재 구조 정확 복원
+Dungeon,dungeon01_b1_02/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b1_02/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b1_02/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_02/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_02/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=8
+Dungeon,dungeon01_b1_02/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b1_02/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_02/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_02/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b1_03/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b1_03/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b1_03/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_03/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_03/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=10
+Dungeon,dungeon01_b1_03/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b1_03/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_03/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_03/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b1_04/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b1_04/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b1_04/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_04/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_04/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=12
+Dungeon,dungeon01_b1_04/reward,PASS,정상 승리 EXP/Talent 증가
+Scene,Dungeon_01,PASS,실제 Scene 도착
+Audio,dungeon01_b1_04/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b1_04/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b1_04/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b2_01/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b2_01/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b2_01/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_01/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_01/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=8
+Dungeon,dungeon01_b2_01/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b2_01/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_01/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_01/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b2_02/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b2_02/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b2_02/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_02/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_02/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=8
+Dungeon,dungeon01_b2_02/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b2_02/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_02/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_02/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b2_03/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b2_03/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Audio,dungeon01_b2_03/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_03/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_03/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=9
+Dungeon,dungeon01_b2_03/reward,PASS,정상 승리 EXP/Talent 증가
+Audio,dungeon01_b2_03/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_03/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_03/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Dungeon,dungeon01_b2_04/spawn,PASS,정식 Field Spawn 존재
+Dungeon,dungeon01_b2_04/encounter,PASS,정식 EncounterService→BattleSceneFlow
+Scene,Battle,PASS,실제 Scene 도착
+Audio,dungeon01_b2_04/battle,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_04/battle/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_04/victory,PASS,실제 normal Attack→animation→turn→Victory; attacks=13
+Dungeon,dungeon01_b2_04/reward,PASS,정상 승리 EXP/Talent 증가
+Scene,Dungeon_01_B2,PASS,실제 Scene 도착
+Audio,dungeon01_b2_04/return,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,dungeon01_b2_04/return/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Dungeon,dungeon01_b2_04/removed,PASS,승리한 Field Spawn 제거 및 Dungeon return
+Audio,World,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,World/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+UI,WorldHUD/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,WorldHUD/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,WorldHUD/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,WorldHUD/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Party,manager,PASS,정식 NPC→Party Manager UI
+Party,limit,PASS,Player 고정/동료 최대2 제한
+UI,Party/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Party/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Party/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Party/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Party/focus,PASS,player
+Party,formation,PASS,UI Front/Rear 적용·Save
+Save,PartyWorld/write,PASS,격리 Validation Save
+Scene,World_StarterVillage,PASS,실제 Scene 도착
+Save,PartyWorld/identity-growth,PASS,Gender/Path/Job/Appearance/EXP/Talent 저장 복원
+Save,PartyWorld/position-safe,PASS,Dungeon/World 실제 좌표 및 최근 안전지대 복원
+Save,PartyWorld/quest-party,PASS,"Quest/Party/Formation 정확 복원; before={""ActiveQuests"":[],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_miel"",""companion_paul""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_miel"",""Row"":1},{""CharacterId"":""companion_paul"",""Row"":0}],""HasManualComposition"":true,""PaulDefaultApplied"":true} after={""ActiveQuests"":[],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_miel"",""companion_paul""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_miel"",""Row"":1},{""CharacterId"":""companion_paul"",""Row"":0}],""HasManualComposition"":true,""PaulDefaultApplied"":true}"
+Save,PartyWorld/items-hp-beast,PASS,Inventory/HP/MP/Beast 현재 구조 정확 복원
+UI,Dialogue/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Dialogue/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Dialogue/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Dialogue/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+UI,Title/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Title/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Title/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Title/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Title/focus,PASS,Action
+Audio,Field07,PASS,Scene/Battle/Return 정본 Clip 및 BGM Service 단일
+Audio,Field07/mixer,PASS,"BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+Fighter,slash-use1,PASS,정식 Executor 직접 성공
+Fighter,slash-third1,PASS,기세/세 번째 직접 성공 CD 분리
+Fighter,slash-use2,PASS,정식 Executor 직접 성공
+Fighter,slash-third2,PASS,기세/세 번째 직접 성공 CD 분리
+Fighter,slash-use3,PASS,정식 Executor 직접 성공
+Fighter,slash-third3,PASS,기세/세 번째 직접 성공 CD 분리
+Guardian,iron-guard,PASS,70% 감소/Guard 중첩 없음
+Guardian,iron-cast-end,PASS,시전 행동 미소비
+Guardian,iron-own-end,PASS,"다른 행동 제외, 자기 다음 행동 종료 소비"
+Guardian,iron-expire,PASS,다음 2회 행동 종료 만료
+Mage,gaia-guard,PASS,60% 감소/Guard 중첩 없음
+Guardian,vow-direct-budget,PASS,직접 보호/수호자 부담/예산 소비
+Guardian,vow-dot,PASS,DoT 보호/전이/예산 적용 제외
+Guardian,vow-end,PASS,수호자 다음 행동 시작 종료
+Guardian,taunt-single-aoe,PASS,단일 강제/광역 제외
+Guardian,taunt-action1,PASS,적 실제 행동1
+Guardian,taunt-action2,PASS,적 실제 행동2 만료
+Status,shock-baseline,PASS,감전 전 피해
+Status,shock85,PASS,감전 피해85%
+Status,silence,PASS,다음 성공 행동 침묵
+Status,action-status-end,PASS,Shock/Silence 성공 행동 종료 해제
+Status,poison,PASS,최대 HP5%/기본 독
+Status,burn,PASS,저장 피해7 DoT
+Boss,phase60,PASS,HP60% Phase2 경계
+Boss,telegraph,PASS,감전 예고 상태
+Boss,shield,PASS,수호체 소환/30%장막/DoT 제외/예고 리셋
+Boss,guardian-ko,PASS,수호체 KO→장막 즉시 해제
+Path,path.vision/direct,PASS,정본 직접 피해 기대=103
+Path,path.vision/dot,PASS,길 배율 DoT 제외
+Path,path.vision/heal,PASS,정본 직접 치유 기대=100
+Path,path.hearing/direct,PASS,정본 직접 피해 기대=110
+Path,path.hearing/dot,PASS,길 배율 DoT 제외
+Path,path.hearing/heal,PASS,정본 직접 치유 기대=100
+Path,path.intellectual/pattern,PASS,반복 패턴 직접피해-10%/직접치유+10%
+Path,path.intellectual/direct,PASS,정본 직접 피해 기대=100
+Path,path.intellectual/dot,PASS,길 배율 DoT 제외
+Path,path.intellectual/heal,PASS,정본 직접 치유 기대=100
+Path,path.mobility/direct,PASS,정본 직접 피해 기대=105
+Path,path.mobility/dot,PASS,길 배율 DoT 제외
+Path,path.mobility/heal,PASS,정본 직접 치유 기대=105
+Path,path.emotional-scar/direct,PASS,정본 직접 피해 기대=110
+Path,path.emotional-scar/dot,PASS,길 배율 DoT 제외
+Path,path.emotional-scar/heal,PASS,정본 직접 치유 기대=110
+Quest,16/103,PASS,정식 Main16/Objective103
+Quest,unique,PASS,Quest+Objective 복합 키103 고유. 전역 문자열101/2개 퀘스트별 재사용 허용
+Quest,main_01_call_reaches/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_01_call_reaches/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_01_call_reaches/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_01_call_reaches/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_01_call_reaches/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_01_call_reaches/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_01_call_reaches/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_01_call_reaches/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_01_call_reaches/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_02_grassland_anomaly/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_02_grassland_anomaly/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_02_grassland_anomaly/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_02_grassland_anomaly/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_02_grassland_anomaly/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_02_grassland_anomaly/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_02_grassland_anomaly/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_02_grassland_anomaly/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_02_grassland_anomaly/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_02_grassland_anomaly/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_02_grassland_anomaly/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_02_grassland_anomaly/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_03_unfamiliar_companion/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_03_unfamiliar_companion/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_03_unfamiliar_companion/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_03_unfamiliar_companion/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_03_unfamiliar_companion/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_03_unfamiliar_companion/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_03_unfamiliar_companion/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_03_unfamiliar_companion/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_03_unfamiliar_companion/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_03_unfamiliar_companion/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_03_unfamiliar_companion/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_03_unfamiliar_companion/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_03_unfamiliar_companion/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_03_unfamiliar_companion/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_03_unfamiliar_companion/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_03_unfamiliar_companion/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_03_unfamiliar_companion/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_03_unfamiliar_companion/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_04_three_people/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_04_three_people/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_04_three_people/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_04_three_people/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_04_three_people/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_04_three_people/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_04_three_people/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_04_three_people/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_04_three_people/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_04_three_people/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_04_three_people/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_04_three_people/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_04_three_people/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_04_three_people/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_04_three_people/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_05_return_of_three/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_05_return_of_three/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_05_return_of_three/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_05_return_of_three/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_05_return_of_three/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_05_return_of_three/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_05_return_of_three/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_05_return_of_three/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_05_return_of_three/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_05_return_of_three/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_05_return_of_three/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_05_return_of_three/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_06_into_the_forest/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_06_into_the_forest/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_06_into_the_forest/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_06_into_the_forest/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_06_into_the_forest/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_06_into_the_forest/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_06_into_the_forest/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_06_into_the_forest/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_06_into_the_forest/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_07_deep_tracks/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_07_deep_tracks/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/sequence7,PASS,정본 Objective 순서/Target ID
+Quest,main_07_deep_tracks/wrong7,PASS,잘못된 Target으로 진행 없음
+Quest,main_07_deep_tracks/restore7,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_07_deep_tracks/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_07_deep_tracks/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_08_what_they_avoid/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_08_what_they_avoid/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_08_what_they_avoid/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_08_what_they_avoid/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_08_what_they_avoid/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_08_what_they_avoid/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_09_reunion_in_silence/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_09_reunion_in_silence/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_09_reunion_in_silence/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_09_reunion_in_silence/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_09_reunion_in_silence/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_09_reunion_in_silence/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_10_center_of_silence/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_10_center_of_silence/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_10_center_of_silence/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_10_center_of_silence/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_10_center_of_silence/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_10_center_of_silence/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_11_silent_catacomb/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_11_silent_catacomb/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence7,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong7,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore7,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence8,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong8,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore8,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence9,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong9,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore9,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence10,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong10,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore10,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence11,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong11,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore11,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/sequence12,PASS,정본 Objective 순서/Target ID
+Quest,main_11_silent_catacomb/wrong12,PASS,잘못된 Target으로 진행 없음
+Quest,main_11_silent_catacomb/restore12,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_11_silent_catacomb/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_11_silent_catacomb/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_12_remaining_record/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_12_remaining_record/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_12_remaining_record/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_12_remaining_record/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_12_remaining_record/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_12_remaining_record/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_12_remaining_record/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_12_remaining_record/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_12_remaining_record/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_12_remaining_record/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_12_remaining_record/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_12_remaining_record/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_12_remaining_record/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_12_remaining_record/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_12_remaining_record/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_12_remaining_record/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_12_remaining_record/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_12_remaining_record/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_13_drying_land/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_13_drying_land/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_13_drying_land/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_13_drying_land/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_13_drying_land/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_13_drying_land/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_14_ground_pulse/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_14_ground_pulse/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/sequence7,PASS,정본 Objective 순서/Target ID
+Quest,main_14_ground_pulse/wrong7,PASS,잘못된 Target으로 진행 없음
+Quest,main_14_ground_pulse/restore7,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_14_ground_pulse/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_14_ground_pulse/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_15_burning_traces/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_15_burning_traces/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence7,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong7,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore7,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence8,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong8,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore8,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence9,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong9,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore9,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence10,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong10,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore10,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/sequence11,PASS,정본 Objective 순서/Target ID
+Quest,main_15_burning_traces/wrong11,PASS,잘못된 Target으로 진행 없음
+Quest,main_15_burning_traces/restore11,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_15_burning_traces/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_15_burning_traces/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Quest,main_16_shape_in_the_ash/unlock,PASS,선행 완료→다음 Main 시작
+Quest,main_16_shape_in_the_ash/sequence0,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong0,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore0,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence1,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong1,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore1,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence2,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong2,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore2,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence3,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong3,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore3,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence4,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong4,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore4,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence5,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong5,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore5,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence6,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong6,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore6,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence7,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong7,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore7,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence8,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong8,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore8,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence9,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong9,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore9,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence10,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong10,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore10,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/sequence11,PASS,정본 Objective 순서/Target ID
+Quest,main_16_shape_in_the_ash/wrong11,PASS,잘못된 Target으로 진행 없음
+Quest,main_16_shape_in_the_ash/restore11,PASS,103개 중간 상태 JSON 정확 복원
+Quest,main_16_shape_in_the_ash/complete,PASS,완료 조건/TurnIn/Reward 경계
+Quest,main_16_shape_in_the_ash/next,PASS,선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음
+Item,RemovePoison/cancel,PASS,실제 대상 취소/수량·행동 보존
+Item,RemovePoison/invalid,PASS,해당 상태 없는 대상/수량·행동 미소비
+Item,RemovePoison/success,PASS,"개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+Item,RemoveBurn/cancel,PASS,실제 대상 취소/수량·행동 보존
+Item,RemoveBurn/invalid,PASS,해당 상태 없는 대상/수량·행동 미소비
+Item,RemoveBurn/success,PASS,"개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+Item,RemoveShock/cancel,PASS,실제 대상 취소/수량·행동 보존
+Item,RemoveShock/invalid,PASS,해당 상태 없는 대상/수량·행동 미소비
+Item,RemoveShock/success,PASS,"개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+Item,RemoveSilence/cancel,PASS,실제 대상 취소/수량·행동 보존
+Item,RemoveSilence/invalid,PASS,해당 상태 없는 대상/수량·행동 미소비
+Item,RemoveSilence/success,PASS,"개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+Skill15,arrow-no-rear,PASS,실제 UI 후열 없음→Action/CD 미소비
+Beast,no-extra-turn,PASS,Assault 동물은 별도 Combatant/턴 없음
+Resource,mp-zero,PASS,실제 MP 부족 UI 거절/행동 보존
+Status,silence-ui,PASS,실제 Skill 명령 차단/상태·행동 보존
+Mage,gaia-guard-ui,PASS,실제 Guard 버튼 중첩 거절
+Defeat,consumed-before-wipe,PASS,실제 공용 아이템 효과/수량 소비 후 전멸 Fixture
+Defeat,restore-hp,PASS,Party wipe→최근 Field03 안전지대/HP/MP 완전 회복
+Defeat,preserve,PASS,EXP/Talent/소모품 미환불/영구진행/Party 유지
+Defeat,transient-scene,PASS,Battle 상태 객체 Scene 종료 폐기
+Defeat,equipment,NOT_VERIFIED,정식 장착 상태 저장 시스템 미구현 범위. Inventory 보존과 장착 검증을 구분
+Save,DefeatSafezone/write,PASS,격리 Validation Save
+Save,DefeatSafezone/identity-growth,PASS,Gender/Path/Job/Appearance/EXP/Talent 저장 복원
+Save,DefeatSafezone/position-safe,PASS,Dungeon/World 실제 좌표 및 최근 안전지대 복원
+Save,DefeatSafezone/quest-party,PASS,"Quest/Party/Formation 정확 복원; before={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":true} after={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":true}"
+Save,DefeatSafezone/items-hp-beast,PASS,Inventory/HP/MP/Beast 현재 구조 정확 복원
+Boss,no-flee-ui,PASS,정식 Boss Scene의 실제 도망 버튼 거절
+Main16,Hearing,PASS,실제 왕복/분기/정상 공격 승리/최종 보고/Continue; 내부 PASS=75
+Main16,Default,PASS,실제 왕복/분기/정상 공격 승리/최종 보고/Continue; 내부 PASS=75
+Party,Field_03/open,PASS,허용 안전지역 NPC 실제 편성 UI
+Party,Field_03/confirm,PASS,허용 지역 확정→진형 적용/닫기/Save
+Save,PartyField_03/write,PASS,격리 Validation Save
+Scene,Field_03,PASS,실제 Scene 도착
+Save,PartyField_03/identity-growth,PASS,Gender/Path/Job/Appearance/EXP/Talent 저장 복원
+Save,PartyField_03/position-safe,PASS,Dungeon/World 실제 좌표 및 최근 안전지대 복원
+Save,PartyField_03/quest-party,PASS,"Quest/Party/Formation 정확 복원; before={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_taeon"",""Row"":0},{""CharacterId"":""companion_miel"",""Row"":1}],""HasManualComposition"":true,""PaulDefaultApplied"":true} after={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_taeon"",""Row"":0},{""CharacterId"":""companion_miel"",""Row"":1}],""HasManualComposition"":true,""PaulDefaultApplied"":true}"
+Save,PartyField_03/items-hp-beast,PASS,Inventory/HP/MP/Beast 현재 구조 정확 복원
+Party,Field_03/stay-open,PASS,여러 프레임 뒤에도 안전지역 화면 유지
+Party,Field_03/cancel,PASS,취소 시 저장 진형 보존
+Party,Arbel/open,PASS,허용 안전지역 NPC 실제 편성 UI
+Party,Arbel/confirm,PASS,허용 지역 확정→진형 적용/닫기/Save
+Save,PartyArbel/write,PASS,격리 Validation Save
+Scene,Arbel,PASS,실제 Scene 도착
+Save,PartyArbel/identity-growth,PASS,Gender/Path/Job/Appearance/EXP/Talent 저장 복원
+Save,PartyArbel/position-safe,PASS,Dungeon/World 실제 좌표 및 최근 안전지대 복원
+Save,PartyArbel/quest-party,PASS,"Quest/Party/Formation 정확 복원; before={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_taeon"",""Row"":0},{""CharacterId"":""companion_miel"",""Row"":1}],""HasManualComposition"":true,""PaulDefaultApplied"":true} after={""ActiveQuests"":[{""QuestId"":""main_10_center_of_silence"",""Objectives"":[{""ObjectiveId"":""return_to_structural_trace"",""CurrentCount"":0},{""ObjectiveId"":""examine_stonework"",""CurrentCount"":0},{""ObjectiveId"":""follow_the_silence"",""CurrentCount"":0},{""ObjectiveId"":""find_underground_descent"",""CurrentCount"":0},{""ObjectiveId"":""reveal_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""inspect_catacomb_entrance"",""CurrentCount"":0},{""ObjectiveId"":""prepare_to_enter_catacomb"",""CurrentCount"":0}]}],""CompletedQuestIds"":[""main_01_call_reaches"",""main_02_grassland_anomaly"",""main_03_unfamiliar_companion"",""main_04_three_people"",""main_05_return_of_three"",""main_06_into_the_forest"",""main_07_deep_tracks"",""main_08_what_they_avoid"",""main_09_reunion_in_silence""],""TrackedQuestId"":""main_10_center_of_silence""}/{""UnlockedCharacterIds"":[""companion_miel"",""companion_paul"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[{""CharacterId"":""player"",""Row"":1},{""CharacterId"":""companion_taeon"",""Row"":0},{""CharacterId"":""companion_miel"",""Row"":1}],""HasManualComposition"":true,""PaulDefaultApplied"":true}"
+Save,PartyArbel/items-hp-beast,PASS,Inventory/HP/MP/Beast 현재 구조 정확 복원
+Party,Arbel/stay-open,PASS,여러 프레임 뒤에도 안전지역 화면 유지
+Party,Arbel/cancel,PASS,취소 시 저장 진형 보존
+Party,Field/block,PASS,일반 Field에서 편성 진입 거절
+Party,Battle/block,PASS,Battle에서 편성 진입 거절
+UI,Battle/opening-ended,PASS,정상 입장 연출 종료 후 캡처
+UI,Battle/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Battle/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Battle/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Battle/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Battle/focus,PASS,AttackButton
+UI,Timeline/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Timeline/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Timeline/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Timeline/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Timeline/focus,PASS,AttackButton
+Input,Battle/navigation,PASS,EventSystem 방향 이벤트로 실제 선택 이동; 물리 입력 아님
+UI,Skill/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Skill/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Skill/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Skill/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Skill/focus,PASS,Skill_sharpshooter_aim
+UI,Item/resolution1920,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Item/resolution1600,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+UI,Item/resolution1280,PASS,포커스 전환 없는 실제 Runtime rendering resolution
+Input,Item/actions,PASS,EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결
+Input,Item/focus,PASS,Item_item_mana_potion_small
+Input,physical-keyboard,USER_INPUT_REQUIRED,물리 키보드 입력은 이번 자동 UI 호출과 구분
+Input,physical-gamepad,USER_INPUT_REQUIRED,물리 게임패드 입력/기기 감각은 별도 확인
+Visual,Creation,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Path,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Job,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Confirm,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Dungeon,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,WorldHUD,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Party,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Dialogue,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Title,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Battle,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Skill,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Item,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Visual,Timeline,PASS,3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님
+Dungeon,physical-contact,NOT_VERIFIED,8 Encounter는 실제 Encounter 서비스→Battle→정상 공격 승리. OnCollisionEnter2D 물리 접촉 자체는 이 2차 실행에서 별도 확인하지 않음
+Save,standalone-os-restart,NOT_VERIFIED,Bootstrap/Session reset→실제 Continue 확인. OS 프로세스 종료 후 standalone 재시작은 실행하지 않음
+Technical,compile,PASS,Unity 6000.5.7f1 최신 수정 재컴파일 오류0
+Technical,console,PASS,최종 Console Error/Warning0
+Technical,integrity,PASS,기존3075파일 중 PartyManagementPresenter 코드1만 변경·누락0; PNG/WAV/사용자 Save/Settings 동일
+Technical,restored,PASS,clean Bootstrap EditMode/비포커스/SaveAudit null/slot0/runInBackground 원복

@@ -1,0 +1,4906 @@
+{
+    "results": [
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/momentum",
+            "status": "PASS",
+            "evidence": "직접 성공 난도 기세+1"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/momentum",
+            "status": "PASS",
+            "evidence": "회심 기세 전부 소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/momentum",
+            "status": "PASS",
+            "evidence": "전열 적중 기세 0~3 상한"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=7"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/empty",
+            "status": "PASS",
+            "evidence": "제거할 상태 없음→스킬 메뉴/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/rear-first",
+            "status": "PASS",
+            "evidence": "후열 우선 사거리"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/resource",
+            "status": "PASS",
+            "evidence": "자원 음수 없음, 실제 사용 MP=0"
+        },
+        {
+            "category": "Appearance",
+            "id": "50/800",
+            "status": "PASS",
+            "evidence": "50 READY/800 Sprite null0"
+        },
+        {
+            "category": "Appearance",
+            "id": "mapping-unique",
+            "status": "PASS",
+            "evidence": "성별/길/직업 조합 중복0"
+        },
+        {
+            "category": "Creation",
+            "id": "0/auto-only",
+            "status": "PASS",
+            "evidence": "수동 외형 선택 UI 없음"
+        },
+        {
+            "category": "UI",
+            "id": "Creation/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Creation/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Creation/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Creation/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Creation/focus",
+            "status": "PASS",
+            "evidence": "MaleButton"
+        },
+        {
+            "category": "UI",
+            "id": "Path/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Path/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Path/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Path/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Path/focus",
+            "status": "PASS",
+            "evidence": "PathCard1"
+        },
+        {
+            "category": "Creation",
+            "id": "0/preview",
+            "status": "PASS",
+            "evidence": "Job 실제 자동 Preview appearance.external.v1.vision.guardian.male"
+        },
+        {
+            "category": "UI",
+            "id": "Job/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Job/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Job/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Job/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Job/focus",
+            "status": "PASS",
+            "evidence": "JobCard1"
+        },
+        {
+            "category": "Creation",
+            "id": "0/confirm",
+            "status": "PASS",
+            "evidence": "정식 Confirm Preview"
+        },
+        {
+            "category": "UI",
+            "id": "Confirm/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Confirm/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Confirm/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Confirm/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Confirm/focus",
+            "status": "PASS",
+            "evidence": "StartButton"
+        },
+        {
+            "category": "Creation",
+            "id": "0/world",
+            "status": "PASS",
+            "evidence": "World Sprite"
+        },
+        {
+            "category": "Creation",
+            "id": "0/save",
+            "status": "PASS",
+            "evidence": "격리 실제 생성 자동 저장"
+        },
+        {
+            "category": "Creation",
+            "id": "0/position-save",
+            "status": "PASS",
+            "evidence": "실제 월드 위치 Save"
+        },
+        {
+            "category": "Creation",
+            "id": "0/continue",
+            "status": "PASS",
+            "evidence": "Bootstrap 실제 Continue/성별·길·직업·외형"
+        },
+        {
+            "category": "Creation",
+            "id": "0/battle-left",
+            "status": "PASS",
+            "evidence": "실제 Battle 전달/Left Idle frame4"
+        },
+        {
+            "category": "Creation",
+            "id": "1/auto-only",
+            "status": "PASS",
+            "evidence": "수동 외형 선택 UI 없음"
+        },
+        {
+            "category": "Creation",
+            "id": "1/preview",
+            "status": "PASS",
+            "evidence": "Job 실제 자동 Preview appearance.external.v1.hearing.marksman.female"
+        },
+        {
+            "category": "Creation",
+            "id": "1/confirm",
+            "status": "PASS",
+            "evidence": "정식 Confirm Preview"
+        },
+        {
+            "category": "Creation",
+            "id": "1/world",
+            "status": "PASS",
+            "evidence": "World Sprite"
+        },
+        {
+            "category": "Creation",
+            "id": "1/save",
+            "status": "PASS",
+            "evidence": "격리 실제 생성 자동 저장"
+        },
+        {
+            "category": "Creation",
+            "id": "1/position-save",
+            "status": "PASS",
+            "evidence": "실제 월드 위치 Save"
+        },
+        {
+            "category": "Creation",
+            "id": "1/continue",
+            "status": "PASS",
+            "evidence": "Bootstrap 실제 Continue/성별·길·직업·외형"
+        },
+        {
+            "category": "Creation",
+            "id": "1/battle-left",
+            "status": "PASS",
+            "evidence": "실제 Battle 전달/Left Idle frame4"
+        },
+        {
+            "category": "Creation",
+            "id": "2/auto-only",
+            "status": "PASS",
+            "evidence": "수동 외형 선택 UI 없음"
+        },
+        {
+            "category": "Creation",
+            "id": "2/preview",
+            "status": "PASS",
+            "evidence": "Job 실제 자동 Preview appearance.external.v1.mobility.mage.male"
+        },
+        {
+            "category": "Creation",
+            "id": "2/confirm",
+            "status": "PASS",
+            "evidence": "정식 Confirm Preview"
+        },
+        {
+            "category": "Creation",
+            "id": "2/world",
+            "status": "PASS",
+            "evidence": "World Sprite"
+        },
+        {
+            "category": "Creation",
+            "id": "2/save",
+            "status": "PASS",
+            "evidence": "격리 실제 생성 자동 저장"
+        },
+        {
+            "category": "Creation",
+            "id": "2/position-save",
+            "status": "PASS",
+            "evidence": "실제 월드 위치 Save"
+        },
+        {
+            "category": "Creation",
+            "id": "2/continue",
+            "status": "PASS",
+            "evidence": "Bootstrap 실제 Continue/성별·길·직업·외형"
+        },
+        {
+            "category": "Creation",
+            "id": "2/battle-left",
+            "status": "PASS",
+            "evidence": "실제 Battle 전달/Left Idle frame4"
+        },
+        {
+            "category": "Creation",
+            "id": "3/auto-only",
+            "status": "PASS",
+            "evidence": "수동 외형 선택 UI 없음"
+        },
+        {
+            "category": "Creation",
+            "id": "3/preview",
+            "status": "PASS",
+            "evidence": "Job 실제 자동 Preview appearance.external.v1.intellectual.fighter.female"
+        },
+        {
+            "category": "Creation",
+            "id": "3/confirm",
+            "status": "PASS",
+            "evidence": "정식 Confirm Preview"
+        },
+        {
+            "category": "Creation",
+            "id": "3/world",
+            "status": "PASS",
+            "evidence": "World Sprite"
+        },
+        {
+            "category": "Creation",
+            "id": "3/save",
+            "status": "PASS",
+            "evidence": "격리 실제 생성 자동 저장"
+        },
+        {
+            "category": "Creation",
+            "id": "3/position-save",
+            "status": "PASS",
+            "evidence": "실제 월드 위치 Save"
+        },
+        {
+            "category": "Creation",
+            "id": "3/continue",
+            "status": "PASS",
+            "evidence": "Bootstrap 실제 Continue/성별·길·직업·외형"
+        },
+        {
+            "category": "Creation",
+            "id": "3/battle-left",
+            "status": "PASS",
+            "evidence": "실제 Battle 전달/Left Idle frame4"
+        },
+        {
+            "category": "Creation",
+            "id": "4/auto-only",
+            "status": "PASS",
+            "evidence": "수동 외형 선택 UI 없음"
+        },
+        {
+            "category": "Scene",
+            "id": "PathSelection",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Scene",
+            "id": "JobSelection",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Creation",
+            "id": "4/preview",
+            "status": "PASS",
+            "evidence": "Job 실제 자동 Preview appearance.external.v1.emotionalscar.healer.female"
+        },
+        {
+            "category": "Scene",
+            "id": "FinalConfirmation",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Creation",
+            "id": "4/confirm",
+            "status": "PASS",
+            "evidence": "정식 Confirm Preview"
+        },
+        {
+            "category": "Creation",
+            "id": "4/world",
+            "status": "PASS",
+            "evidence": "World Sprite"
+        },
+        {
+            "category": "Creation",
+            "id": "4/save",
+            "status": "PASS",
+            "evidence": "격리 실제 생성 자동 저장"
+        },
+        {
+            "category": "Creation",
+            "id": "4/position-save",
+            "status": "PASS",
+            "evidence": "실제 월드 위치 Save"
+        },
+        {
+            "category": "Creation",
+            "id": "4/continue",
+            "status": "PASS",
+            "evidence": "Bootstrap 실제 Continue/성별·길·직업·외형"
+        },
+        {
+            "category": "Creation",
+            "id": "4/battle-left",
+            "status": "PASS",
+            "evidence": "실제 Battle 전달/Left Idle frame4"
+        },
+        {
+            "category": "Dungeon",
+            "id": "8-spawns",
+            "status": "PASS",
+            "evidence": "B1/B2 각4 일반 조우 정본"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_01/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_01/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_01/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_01/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_01/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=4"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_01/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_01/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_01/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_01/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "UI",
+            "id": "Dungeon/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Dungeon/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Dungeon/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Dungeon/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Save",
+            "id": "Dungeon/write",
+            "status": "PASS",
+            "evidence": "격리 Validation Save"
+        },
+        {
+            "category": "Save",
+            "id": "Dungeon/identity-growth",
+            "status": "PASS",
+            "evidence": "Gender/Path/Job/Appearance/EXP/Talent 저장 복원"
+        },
+        {
+            "category": "Save",
+            "id": "Dungeon/position-safe",
+            "status": "PASS",
+            "evidence": "Dungeon/World 실제 좌표 및 최근 안전지대 복원"
+        },
+        {
+            "category": "Save",
+            "id": "Dungeon/quest-party",
+            "status": "PASS",
+            "evidence": "Quest/Party/Formation 정확 복원; before={\"ActiveQuests\":[],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[],\"HasManualComposition\":false,\"PaulDefaultApplied\":true} after={\"ActiveQuests\":[],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[],\"HasManualComposition\":false,\"PaulDefaultApplied\":true}"
+        },
+        {
+            "category": "Save",
+            "id": "Dungeon/items-hp-beast",
+            "status": "PASS",
+            "evidence": "Inventory/HP/MP/Beast 현재 구조 정확 복원"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_02/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_02/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_02/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_02/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_02/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=8"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_02/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_02/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_02/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_02/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_03/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_03/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_03/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_03/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_03/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=10"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_03/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_03/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_03/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_03/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_04/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_04/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_04/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_04/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_04/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=12"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_04/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Scene",
+            "id": "Dungeon_01",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_04/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b1_04/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b1_04/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_01/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_01/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_01/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_01/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_01/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=8"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_01/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_01/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_01/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_01/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_02/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_02/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_02/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_02/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_02/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=8"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_02/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_02/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_02/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_02/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_03/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_03/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_03/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_03/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_03/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=9"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_03/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_03/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_03/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_03/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_04/spawn",
+            "status": "PASS",
+            "evidence": "정식 Field Spawn 존재"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_04/encounter",
+            "status": "PASS",
+            "evidence": "정식 EncounterService→BattleSceneFlow"
+        },
+        {
+            "category": "Scene",
+            "id": "Battle",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_04/battle",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_04/battle/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_04/victory",
+            "status": "PASS",
+            "evidence": "실제 normal Attack→animation→turn→Victory; attacks=13"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_04/reward",
+            "status": "PASS",
+            "evidence": "정상 승리 EXP/Talent 증가"
+        },
+        {
+            "category": "Scene",
+            "id": "Dungeon_01_B2",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_04/return",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "dungeon01_b2_04/return/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Dungeon",
+            "id": "dungeon01_b2_04/removed",
+            "status": "PASS",
+            "evidence": "승리한 Field Spawn 제거 및 Dungeon return"
+        },
+        {
+            "category": "Audio",
+            "id": "World",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "World/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "UI",
+            "id": "WorldHUD/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "WorldHUD/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "WorldHUD/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "WorldHUD/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Party",
+            "id": "manager",
+            "status": "PASS",
+            "evidence": "정식 NPC→Party Manager UI"
+        },
+        {
+            "category": "Party",
+            "id": "limit",
+            "status": "PASS",
+            "evidence": "Player 고정/동료 최대2 제한"
+        },
+        {
+            "category": "UI",
+            "id": "Party/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Party/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Party/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Party/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Party/focus",
+            "status": "PASS",
+            "evidence": "player"
+        },
+        {
+            "category": "Party",
+            "id": "formation",
+            "status": "PASS",
+            "evidence": "UI Front/Rear 적용·Save"
+        },
+        {
+            "category": "Save",
+            "id": "PartyWorld/write",
+            "status": "PASS",
+            "evidence": "격리 Validation Save"
+        },
+        {
+            "category": "Scene",
+            "id": "World_StarterVillage",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Save",
+            "id": "PartyWorld/identity-growth",
+            "status": "PASS",
+            "evidence": "Gender/Path/Job/Appearance/EXP/Talent 저장 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyWorld/position-safe",
+            "status": "PASS",
+            "evidence": "Dungeon/World 실제 좌표 및 최근 안전지대 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyWorld/quest-party",
+            "status": "PASS",
+            "evidence": "Quest/Party/Formation 정확 복원; before={\"ActiveQuests\":[],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_miel\",\"companion_paul\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_miel\",\"Row\":1},{\"CharacterId\":\"companion_paul\",\"Row\":0}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true} after={\"ActiveQuests\":[],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_miel\",\"companion_paul\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_miel\",\"Row\":1},{\"CharacterId\":\"companion_paul\",\"Row\":0}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true}"
+        },
+        {
+            "category": "Save",
+            "id": "PartyWorld/items-hp-beast",
+            "status": "PASS",
+            "evidence": "Inventory/HP/MP/Beast 현재 구조 정확 복원"
+        },
+        {
+            "category": "UI",
+            "id": "Dialogue/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Dialogue/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Dialogue/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Dialogue/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "UI",
+            "id": "Title/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Title/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Title/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Title/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Title/focus",
+            "status": "PASS",
+            "evidence": "Action"
+        },
+        {
+            "category": "Audio",
+            "id": "Field07",
+            "status": "PASS",
+            "evidence": "Scene/Battle/Return 정본 Clip 및 BGM Service 단일"
+        },
+        {
+            "category": "Audio",
+            "id": "Field07/mixer",
+            "status": "PASS",
+            "evidence": "BGM Mixer routing/loop/source 기본 음량, 청취 평가 제외"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-use1",
+            "status": "PASS",
+            "evidence": "정식 Executor 직접 성공"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-third1",
+            "status": "PASS",
+            "evidence": "기세/세 번째 직접 성공 CD 분리"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-use2",
+            "status": "PASS",
+            "evidence": "정식 Executor 직접 성공"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-third2",
+            "status": "PASS",
+            "evidence": "기세/세 번째 직접 성공 CD 분리"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-use3",
+            "status": "PASS",
+            "evidence": "정식 Executor 직접 성공"
+        },
+        {
+            "category": "Fighter",
+            "id": "slash-third3",
+            "status": "PASS",
+            "evidence": "기세/세 번째 직접 성공 CD 분리"
+        },
+        {
+            "category": "Guardian",
+            "id": "iron-guard",
+            "status": "PASS",
+            "evidence": "70% 감소/Guard 중첩 없음"
+        },
+        {
+            "category": "Guardian",
+            "id": "iron-cast-end",
+            "status": "PASS",
+            "evidence": "시전 행동 미소비"
+        },
+        {
+            "category": "Guardian",
+            "id": "iron-own-end",
+            "status": "PASS",
+            "evidence": "다른 행동 제외, 자기 다음 행동 종료 소비"
+        },
+        {
+            "category": "Guardian",
+            "id": "iron-expire",
+            "status": "PASS",
+            "evidence": "다음 2회 행동 종료 만료"
+        },
+        {
+            "category": "Mage",
+            "id": "gaia-guard",
+            "status": "PASS",
+            "evidence": "60% 감소/Guard 중첩 없음"
+        },
+        {
+            "category": "Guardian",
+            "id": "vow-direct-budget",
+            "status": "PASS",
+            "evidence": "직접 보호/수호자 부담/예산 소비"
+        },
+        {
+            "category": "Guardian",
+            "id": "vow-dot",
+            "status": "PASS",
+            "evidence": "DoT 보호/전이/예산 적용 제외"
+        },
+        {
+            "category": "Guardian",
+            "id": "vow-end",
+            "status": "PASS",
+            "evidence": "수호자 다음 행동 시작 종료"
+        },
+        {
+            "category": "Guardian",
+            "id": "taunt-single-aoe",
+            "status": "PASS",
+            "evidence": "단일 강제/광역 제외"
+        },
+        {
+            "category": "Guardian",
+            "id": "taunt-action1",
+            "status": "PASS",
+            "evidence": "적 실제 행동1"
+        },
+        {
+            "category": "Guardian",
+            "id": "taunt-action2",
+            "status": "PASS",
+            "evidence": "적 실제 행동2 만료"
+        },
+        {
+            "category": "Status",
+            "id": "shock-baseline",
+            "status": "PASS",
+            "evidence": "감전 전 피해"
+        },
+        {
+            "category": "Status",
+            "id": "shock85",
+            "status": "PASS",
+            "evidence": "감전 피해85%"
+        },
+        {
+            "category": "Status",
+            "id": "silence",
+            "status": "PASS",
+            "evidence": "다음 성공 행동 침묵"
+        },
+        {
+            "category": "Status",
+            "id": "action-status-end",
+            "status": "PASS",
+            "evidence": "Shock/Silence 성공 행동 종료 해제"
+        },
+        {
+            "category": "Status",
+            "id": "poison",
+            "status": "PASS",
+            "evidence": "최대 HP5%/기본 독"
+        },
+        {
+            "category": "Status",
+            "id": "burn",
+            "status": "PASS",
+            "evidence": "저장 피해7 DoT"
+        },
+        {
+            "category": "Boss",
+            "id": "phase60",
+            "status": "PASS",
+            "evidence": "HP60% Phase2 경계"
+        },
+        {
+            "category": "Boss",
+            "id": "telegraph",
+            "status": "PASS",
+            "evidence": "감전 예고 상태"
+        },
+        {
+            "category": "Boss",
+            "id": "shield",
+            "status": "PASS",
+            "evidence": "수호체 소환/30%장막/DoT 제외/예고 리셋"
+        },
+        {
+            "category": "Boss",
+            "id": "guardian-ko",
+            "status": "PASS",
+            "evidence": "수호체 KO→장막 즉시 해제"
+        },
+        {
+            "category": "Path",
+            "id": "path.vision/direct",
+            "status": "PASS",
+            "evidence": "정본 직접 피해 기대=103"
+        },
+        {
+            "category": "Path",
+            "id": "path.vision/dot",
+            "status": "PASS",
+            "evidence": "길 배율 DoT 제외"
+        },
+        {
+            "category": "Path",
+            "id": "path.vision/heal",
+            "status": "PASS",
+            "evidence": "정본 직접 치유 기대=100"
+        },
+        {
+            "category": "Path",
+            "id": "path.hearing/direct",
+            "status": "PASS",
+            "evidence": "정본 직접 피해 기대=110"
+        },
+        {
+            "category": "Path",
+            "id": "path.hearing/dot",
+            "status": "PASS",
+            "evidence": "길 배율 DoT 제외"
+        },
+        {
+            "category": "Path",
+            "id": "path.hearing/heal",
+            "status": "PASS",
+            "evidence": "정본 직접 치유 기대=100"
+        },
+        {
+            "category": "Path",
+            "id": "path.intellectual/pattern",
+            "status": "PASS",
+            "evidence": "반복 패턴 직접피해-10%/직접치유+10%"
+        },
+        {
+            "category": "Path",
+            "id": "path.intellectual/direct",
+            "status": "PASS",
+            "evidence": "정본 직접 피해 기대=100"
+        },
+        {
+            "category": "Path",
+            "id": "path.intellectual/dot",
+            "status": "PASS",
+            "evidence": "길 배율 DoT 제외"
+        },
+        {
+            "category": "Path",
+            "id": "path.intellectual/heal",
+            "status": "PASS",
+            "evidence": "정본 직접 치유 기대=100"
+        },
+        {
+            "category": "Path",
+            "id": "path.mobility/direct",
+            "status": "PASS",
+            "evidence": "정본 직접 피해 기대=105"
+        },
+        {
+            "category": "Path",
+            "id": "path.mobility/dot",
+            "status": "PASS",
+            "evidence": "길 배율 DoT 제외"
+        },
+        {
+            "category": "Path",
+            "id": "path.mobility/heal",
+            "status": "PASS",
+            "evidence": "정본 직접 치유 기대=105"
+        },
+        {
+            "category": "Path",
+            "id": "path.emotional-scar/direct",
+            "status": "PASS",
+            "evidence": "정본 직접 피해 기대=110"
+        },
+        {
+            "category": "Path",
+            "id": "path.emotional-scar/dot",
+            "status": "PASS",
+            "evidence": "길 배율 DoT 제외"
+        },
+        {
+            "category": "Path",
+            "id": "path.emotional-scar/heal",
+            "status": "PASS",
+            "evidence": "정본 직접 치유 기대=110"
+        },
+        {
+            "category": "Quest",
+            "id": "16/103",
+            "status": "PASS",
+            "evidence": "정식 Main16/Objective103"
+        },
+        {
+            "category": "Quest",
+            "id": "unique",
+            "status": "PASS",
+            "evidence": "Quest+Objective 복합 키103 고유. 전역 문자열101/2개 퀘스트별 재사용 허용"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_01_call_reaches/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_02_grassland_anomaly/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_03_unfamiliar_companion/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_04_three_people/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_05_return_of_three/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_06_into_the_forest/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/sequence7",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/wrong7",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/restore7",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_07_deep_tracks/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_08_what_they_avoid/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_09_reunion_in_silence/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_10_center_of_silence/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence7",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong7",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore7",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence8",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong8",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore8",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence9",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong9",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore9",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence10",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong10",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore10",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence11",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong11",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore11",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/sequence12",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/wrong12",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/restore12",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_11_silent_catacomb/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_12_remaining_record/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_13_drying_land/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/sequence7",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/wrong7",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/restore7",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_14_ground_pulse/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence7",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong7",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore7",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence8",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong8",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore8",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence9",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong9",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore9",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence10",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong10",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore10",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/sequence11",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/wrong11",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/restore11",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_15_burning_traces/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/unlock",
+            "status": "PASS",
+            "evidence": "선행 완료→다음 Main 시작"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence0",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong0",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore0",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence1",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong1",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore1",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence2",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong2",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore2",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence3",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong3",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore3",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence4",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong4",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore4",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence5",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong5",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore5",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence6",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong6",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore6",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence7",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong7",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore7",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence8",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong8",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore8",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence9",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong9",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore9",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence10",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong10",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore10",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/sequence11",
+            "status": "PASS",
+            "evidence": "정본 Objective 순서/Target ID"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/wrong11",
+            "status": "PASS",
+            "evidence": "잘못된 Target으로 진행 없음"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/restore11",
+            "status": "PASS",
+            "evidence": "103개 중간 상태 JSON 정확 복원"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/complete",
+            "status": "PASS",
+            "evidence": "완료 조건/TurnIn/Reward 경계"
+        },
+        {
+            "category": "Quest",
+            "id": "main_16_shape_in_the_ash/next",
+            "status": "PASS",
+            "evidence": "선행 prerequisite로 다음 Main 해금; optional NextMain ID 참조 유효/Main17 없음"
+        },
+        {
+            "category": "Item",
+            "id": "RemovePoison/cancel",
+            "status": "PASS",
+            "evidence": "실제 대상 취소/수량·행동 보존"
+        },
+        {
+            "category": "Item",
+            "id": "RemovePoison/invalid",
+            "status": "PASS",
+            "evidence": "해당 상태 없는 대상/수량·행동 미소비"
+        },
+        {
+            "category": "Item",
+            "id": "RemovePoison/success",
+            "status": "PASS",
+            "evidence": "개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveBurn/cancel",
+            "status": "PASS",
+            "evidence": "실제 대상 취소/수량·행동 보존"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveBurn/invalid",
+            "status": "PASS",
+            "evidence": "해당 상태 없는 대상/수량·행동 미소비"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveBurn/success",
+            "status": "PASS",
+            "evidence": "개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveShock/cancel",
+            "status": "PASS",
+            "evidence": "실제 대상 취소/수량·행동 보존"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveShock/invalid",
+            "status": "PASS",
+            "evidence": "해당 상태 없는 대상/수량·행동 미소비"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveShock/success",
+            "status": "PASS",
+            "evidence": "개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveSilence/cancel",
+            "status": "PASS",
+            "evidence": "실제 대상 취소/수량·행동 보존"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveSilence/invalid",
+            "status": "PASS",
+            "evidence": "해당 상태 없는 대상/수량·행동 미소비"
+        },
+        {
+            "category": "Item",
+            "id": "RemoveSilence/success",
+            "status": "PASS",
+            "evidence": "개별 상태1만 제거/수량1/행동 소비, Cleanse 전체제거와 구분"
+        },
+        {
+            "category": "Skill15",
+            "id": "arrow-no-rear",
+            "status": "PASS",
+            "evidence": "실제 UI 후열 없음→Action/CD 미소비"
+        },
+        {
+            "category": "Beast",
+            "id": "no-extra-turn",
+            "status": "PASS",
+            "evidence": "Assault 동물은 별도 Combatant/턴 없음"
+        },
+        {
+            "category": "Resource",
+            "id": "mp-zero",
+            "status": "PASS",
+            "evidence": "실제 MP 부족 UI 거절/행동 보존"
+        },
+        {
+            "category": "Status",
+            "id": "silence-ui",
+            "status": "PASS",
+            "evidence": "실제 Skill 명령 차단/상태·행동 보존"
+        },
+        {
+            "category": "Mage",
+            "id": "gaia-guard-ui",
+            "status": "PASS",
+            "evidence": "실제 Guard 버튼 중첩 거절"
+        },
+        {
+            "category": "Defeat",
+            "id": "consumed-before-wipe",
+            "status": "PASS",
+            "evidence": "실제 공용 아이템 효과/수량 소비 후 전멸 Fixture"
+        },
+        {
+            "category": "Defeat",
+            "id": "restore-hp",
+            "status": "PASS",
+            "evidence": "Party wipe→최근 Field03 안전지대/HP/MP 완전 회복"
+        },
+        {
+            "category": "Defeat",
+            "id": "preserve",
+            "status": "PASS",
+            "evidence": "EXP/Talent/소모품 미환불/영구진행/Party 유지"
+        },
+        {
+            "category": "Defeat",
+            "id": "transient-scene",
+            "status": "PASS",
+            "evidence": "Battle 상태 객체 Scene 종료 폐기"
+        },
+        {
+            "category": "Defeat",
+            "id": "equipment",
+            "status": "NOT_VERIFIED",
+            "evidence": "정식 장착 상태 저장 시스템 미구현 범위. Inventory 보존과 장착 검증을 구분"
+        },
+        {
+            "category": "Save",
+            "id": "DefeatSafezone/write",
+            "status": "PASS",
+            "evidence": "격리 Validation Save"
+        },
+        {
+            "category": "Save",
+            "id": "DefeatSafezone/identity-growth",
+            "status": "PASS",
+            "evidence": "Gender/Path/Job/Appearance/EXP/Talent 저장 복원"
+        },
+        {
+            "category": "Save",
+            "id": "DefeatSafezone/position-safe",
+            "status": "PASS",
+            "evidence": "Dungeon/World 실제 좌표 및 최근 안전지대 복원"
+        },
+        {
+            "category": "Save",
+            "id": "DefeatSafezone/quest-party",
+            "status": "PASS",
+            "evidence": "Quest/Party/Formation 정확 복원; before={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[],\"HasManualComposition\":false,\"PaulDefaultApplied\":true} after={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[],\"HasManualComposition\":false,\"PaulDefaultApplied\":true}"
+        },
+        {
+            "category": "Save",
+            "id": "DefeatSafezone/items-hp-beast",
+            "status": "PASS",
+            "evidence": "Inventory/HP/MP/Beast 현재 구조 정확 복원"
+        },
+        {
+            "category": "Boss",
+            "id": "no-flee-ui",
+            "status": "PASS",
+            "evidence": "정식 Boss Scene의 실제 도망 버튼 거절"
+        },
+        {
+            "category": "Main16",
+            "id": "Hearing",
+            "status": "PASS",
+            "evidence": "실제 왕복/분기/정상 공격 승리/최종 보고/Continue; 내부 PASS=75"
+        },
+        {
+            "category": "Main16",
+            "id": "Default",
+            "status": "PASS",
+            "evidence": "실제 왕복/분기/정상 공격 승리/최종 보고/Continue; 내부 PASS=75"
+        },
+        {
+            "category": "Party",
+            "id": "Field_03/open",
+            "status": "PASS",
+            "evidence": "허용 안전지역 NPC 실제 편성 UI"
+        },
+        {
+            "category": "Party",
+            "id": "Field_03/confirm",
+            "status": "PASS",
+            "evidence": "허용 지역 확정→진형 적용/닫기/Save"
+        },
+        {
+            "category": "Save",
+            "id": "PartyField_03/write",
+            "status": "PASS",
+            "evidence": "격리 Validation Save"
+        },
+        {
+            "category": "Scene",
+            "id": "Field_03",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Save",
+            "id": "PartyField_03/identity-growth",
+            "status": "PASS",
+            "evidence": "Gender/Path/Job/Appearance/EXP/Talent 저장 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyField_03/position-safe",
+            "status": "PASS",
+            "evidence": "Dungeon/World 실제 좌표 및 최근 안전지대 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyField_03/quest-party",
+            "status": "PASS",
+            "evidence": "Quest/Party/Formation 정확 복원; before={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_taeon\",\"Row\":0},{\"CharacterId\":\"companion_miel\",\"Row\":1}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true} after={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_taeon\",\"Row\":0},{\"CharacterId\":\"companion_miel\",\"Row\":1}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true}"
+        },
+        {
+            "category": "Save",
+            "id": "PartyField_03/items-hp-beast",
+            "status": "PASS",
+            "evidence": "Inventory/HP/MP/Beast 현재 구조 정확 복원"
+        },
+        {
+            "category": "Party",
+            "id": "Field_03/stay-open",
+            "status": "PASS",
+            "evidence": "여러 프레임 뒤에도 안전지역 화면 유지"
+        },
+        {
+            "category": "Party",
+            "id": "Field_03/cancel",
+            "status": "PASS",
+            "evidence": "취소 시 저장 진형 보존"
+        },
+        {
+            "category": "Party",
+            "id": "Arbel/open",
+            "status": "PASS",
+            "evidence": "허용 안전지역 NPC 실제 편성 UI"
+        },
+        {
+            "category": "Party",
+            "id": "Arbel/confirm",
+            "status": "PASS",
+            "evidence": "허용 지역 확정→진형 적용/닫기/Save"
+        },
+        {
+            "category": "Save",
+            "id": "PartyArbel/write",
+            "status": "PASS",
+            "evidence": "격리 Validation Save"
+        },
+        {
+            "category": "Scene",
+            "id": "Arbel",
+            "status": "PASS",
+            "evidence": "실제 Scene 도착"
+        },
+        {
+            "category": "Save",
+            "id": "PartyArbel/identity-growth",
+            "status": "PASS",
+            "evidence": "Gender/Path/Job/Appearance/EXP/Talent 저장 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyArbel/position-safe",
+            "status": "PASS",
+            "evidence": "Dungeon/World 실제 좌표 및 최근 안전지대 복원"
+        },
+        {
+            "category": "Save",
+            "id": "PartyArbel/quest-party",
+            "status": "PASS",
+            "evidence": "Quest/Party/Formation 정확 복원; before={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_taeon\",\"Row\":0},{\"CharacterId\":\"companion_miel\",\"Row\":1}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true} after={\"ActiveQuests\":[{\"QuestId\":\"main_10_center_of_silence\",\"Objectives\":[{\"ObjectiveId\":\"return_to_structural_trace\",\"CurrentCount\":0},{\"ObjectiveId\":\"examine_stonework\",\"CurrentCount\":0},{\"ObjectiveId\":\"follow_the_silence\",\"CurrentCount\":0},{\"ObjectiveId\":\"find_underground_descent\",\"CurrentCount\":0},{\"ObjectiveId\":\"reveal_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"inspect_catacomb_entrance\",\"CurrentCount\":0},{\"ObjectiveId\":\"prepare_to_enter_catacomb\",\"CurrentCount\":0}]}],\"CompletedQuestIds\":[\"main_01_call_reaches\",\"main_02_grassland_anomaly\",\"main_03_unfamiliar_companion\",\"main_04_three_people\",\"main_05_return_of_three\",\"main_06_into_the_forest\",\"main_07_deep_tracks\",\"main_08_what_they_avoid\",\"main_09_reunion_in_silence\"],\"TrackedQuestId\":\"main_10_center_of_silence\"}/{\"UnlockedCharacterIds\":[\"companion_miel\",\"companion_paul\",\"companion_taeon\"],\"ActivePartyCharacterIds\":[\"companion_taeon\",\"companion_miel\"],\"Formation\":[{\"CharacterId\":\"player\",\"Row\":1},{\"CharacterId\":\"companion_taeon\",\"Row\":0},{\"CharacterId\":\"companion_miel\",\"Row\":1}],\"HasManualComposition\":true,\"PaulDefaultApplied\":true}"
+        },
+        {
+            "category": "Save",
+            "id": "PartyArbel/items-hp-beast",
+            "status": "PASS",
+            "evidence": "Inventory/HP/MP/Beast 현재 구조 정확 복원"
+        },
+        {
+            "category": "Party",
+            "id": "Arbel/stay-open",
+            "status": "PASS",
+            "evidence": "여러 프레임 뒤에도 안전지역 화면 유지"
+        },
+        {
+            "category": "Party",
+            "id": "Arbel/cancel",
+            "status": "PASS",
+            "evidence": "취소 시 저장 진형 보존"
+        },
+        {
+            "category": "Party",
+            "id": "Field/block",
+            "status": "PASS",
+            "evidence": "일반 Field에서 편성 진입 거절"
+        },
+        {
+            "category": "Party",
+            "id": "Battle/block",
+            "status": "PASS",
+            "evidence": "Battle에서 편성 진입 거절"
+        },
+        {
+            "category": "UI",
+            "id": "Battle/opening-ended",
+            "status": "PASS",
+            "evidence": "정상 입장 연출 종료 후 캡처"
+        },
+        {
+            "category": "UI",
+            "id": "Battle/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Battle/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Battle/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Battle/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Battle/focus",
+            "status": "PASS",
+            "evidence": "AttackButton"
+        },
+        {
+            "category": "UI",
+            "id": "Timeline/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Timeline/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Timeline/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Timeline/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Timeline/focus",
+            "status": "PASS",
+            "evidence": "AttackButton"
+        },
+        {
+            "category": "Input",
+            "id": "Battle/navigation",
+            "status": "PASS",
+            "evidence": "EventSystem 방향 이벤트로 실제 선택 이동; 물리 입력 아님"
+        },
+        {
+            "category": "UI",
+            "id": "Skill/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Skill/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Skill/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Skill/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Skill/focus",
+            "status": "PASS",
+            "evidence": "Skill_sharpshooter_aim"
+        },
+        {
+            "category": "UI",
+            "id": "Item/resolution1920",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Item/resolution1600",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "UI",
+            "id": "Item/resolution1280",
+            "status": "PASS",
+            "evidence": "포커스 전환 없는 실제 Runtime rendering resolution"
+        },
+        {
+            "category": "Input",
+            "id": "Item/actions",
+            "status": "PASS",
+            "evidence": "EventSystem/InputSystemUIInputModule Move/Submit/Cancel 연결"
+        },
+        {
+            "category": "Input",
+            "id": "Item/focus",
+            "status": "PASS",
+            "evidence": "Item_item_mana_potion_small"
+        },
+        {
+            "category": "Input",
+            "id": "physical-keyboard",
+            "status": "USER_INPUT_REQUIRED",
+            "evidence": "물리 키보드 입력은 이번 자동 UI 호출과 구분"
+        },
+        {
+            "category": "Input",
+            "id": "physical-gamepad",
+            "status": "USER_INPUT_REQUIRED",
+            "evidence": "물리 게임패드 입력/기기 감각은 별도 확인"
+        },
+        {
+            "category": "Visual",
+            "id": "Creation",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Path",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Job",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Confirm",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Dungeon",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "WorldHUD",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Party",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Dialogue",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Title",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Battle",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Skill",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Item",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Visual",
+            "id": "Timeline",
+            "status": "PASS",
+            "evidence": "3해상도 background PNG 검토: 주요 글자·버튼/화면 경계 잘림 없음. 모든 직업·모든 UI 상태 미관 전수검사는 아님"
+        },
+        {
+            "category": "Dungeon",
+            "id": "physical-contact",
+            "status": "NOT_VERIFIED",
+            "evidence": "8 Encounter는 실제 Encounter 서비스→Battle→정상 공격 승리. OnCollisionEnter2D 물리 접촉 자체는 이 2차 실행에서 별도 확인하지 않음"
+        },
+        {
+            "category": "Save",
+            "id": "standalone-os-restart",
+            "status": "NOT_VERIFIED",
+            "evidence": "Bootstrap/Session reset→실제 Continue 확인. OS 프로세스 종료 후 standalone 재시작은 실행하지 않음"
+        },
+        {
+            "category": "Technical",
+            "id": "compile",
+            "status": "PASS",
+            "evidence": "Unity 6000.5.7f1 최신 수정 재컴파일 오류0"
+        },
+        {
+            "category": "Technical",
+            "id": "console",
+            "status": "PASS",
+            "evidence": "최종 Console Error/Warning0"
+        },
+        {
+            "category": "Technical",
+            "id": "integrity",
+            "status": "PASS",
+            "evidence": "기존3075파일 중 PartyManagementPresenter 코드1만 변경·누락0; PNG/WAV/사용자 Save/Settings 동일"
+        },
+        {
+            "category": "Technical",
+            "id": "restored",
+            "status": "PASS",
+            "evidence": "clean Bootstrap EditMode/비포커스/SaveAudit null/slot0/runInBackground 원복"
+        }
+    ]
+}

@@ -1,3 +1,11 @@
+## 2026-10-06 2차 종합 회귀 RESUME 완료
+
+중단 전750 PASS를 재사용하고 MP0/침묵/Guard·전멸 보존·안전지역 Party·Main16 Hearing/Default·남은 전투 화면을 완료했다. 최신세부체크817: **PASS812 / FAIL0 / NOT_VERIFIED3 / USER_INPUT_REQUIRED2**. Main16 각75내부체크는 총수 중복 합산하지 않는다. 기존 전체QA/15 Skill/8 Dungeon/50 Mapping/Quest103을 처음부터 반복하지 않았다.
+
+실제결함1: Field03/Arbel Party 확정 제한 및 Field03 다음 프레임 닫힘. 기존 허용지역3 정책을 Open/Update/Confirm에 공유하도록 최소수정, 실제 NPC 적용→Save→Bootstrap Continue/유지·취소 및 Field/Battle 차단 PASS. 13대표UI×3해상도39PNG 주요 글자·버튼 잘림 없음. Compile0/ConsoleError0 Warning0·종료 cleanBootstrap EditMode/비포커스/사용자Save·Settings보존. 보호3075파일 중Party코드1만변경, 기존PNG/WAV/TTS0.
+
+사용자확인: 실물Keyboard/Gamepad 입력2. 미검증: 실제 장착 상태(미구현), Dungeon물리접촉, standalone OS재시작3. 다음권장: 해당 미검증만 보완, 별도Voice청취219·기존Main04재생성5 유지. 마지막관련Fix `adbbfbb`, 이번QA commit 최종보고 참조. 기존103작업보존·Push0. [전체 QA](LIMITLESS_SECOND_REGRESSION_QA.md) · [Resume](LIMITLESS_SECOND_REGRESSION_RESUME.md) · [체크 CSV](LIMITLESS_SecondRegression_Cases.csv).
+
 ## 2026-10-06 전체 Story Voice Semantic Risk 사전 감사
 
 현재 Flow 재추출331 Dialogue / Voice247(Intro18+Story229) / Player Silent42. 최신 사용자·Runtime 의미PASS23(Main03 10·Main04 13)을 SHA/GUID/path 보호하고 Matrix의 태온005 경계PASS 누락을 보완했다. 기존 NEEDS_LISTENING244는 PASS20/기존재생성5/새청취219가 겹치는 관리 범위로 유지한다. 기존 Main04 Wrong1·Suspect4 재생성필요5 변화0, 신규 Wrong/Partial/재생성확정0.
