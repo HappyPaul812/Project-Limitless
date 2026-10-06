@@ -1,0 +1,23 @@
+﻿order,sequence,index,dialogue_id,speaker,exact_runtime_text,voice_expected,current_wav,semantic_status,required_action
+1,FirstConversation,9,main04_miel_supp_006,companion_miel,"네.
+갑자기 길을 가로막게 되자
+공격한 것처럼 보였어요.",YES,main04_miel_supp_006.wav,USER_RUNTIME_PASS_PROTECTED,VERIFY_ADJACENT_SEQUENCE
+2,EncounterConversation,0,main04_taeon_supp_004,companion_taeon,"또 옵니다.
+제가 앞을 맡겠습니다.",YES,main04_taeon_supp_004.wav,USER_RUNTIME_PASS_PROTECTED,VERIFY_ADJACENT_SEQUENCE
+3,EncounterConversation,1,main04_miel_supp_007,companion_miel,다친 곳은 제가 보겠습니다.,YES,main04_miel_supp_007.wav,USER_RUNTIME_PASS_PROTECTED,VERIFY_ADJACENT_SEQUENCE
+4,EncounterConversation,2,,player,갑시다.,NONE,NONE,PLAYER_SILENT_PASS,NONE
+5,AfterBattleConversation,0,main04_miel_supp_008,companion_miel,"괜찮으세요?
+다친 곳부터 확인할게요.",YES,main04_miel_supp_008.wav,USER_RUNTIME_PASS_PROTECTED,VERIFY_ADJACENT_SEQUENCE
+6,AfterBattleConversation,1,main04_taeon_supp_005,companion_taeon,본인부터 보셔야 하는 것 아닙니까?,YES,main04_taeon_supp_005.wav,USER_RUNTIME_PASS_PROTECTED,VERIFY_ADJACENT_SEQUENCE
+7,AfterBattleConversation,2,main04_miel_supp_009,companion_miel,"저도 볼 겁니다.
+이번에는 순서대로요.",YES,main04_miel_supp_009.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,TTS_REGEN_REQUIRED;NO_REMAP
+8,AfterBattleConversation,3,main04_taeon_supp_006,companion_taeon,"제가 본 움직임과
+이곳에서 있었던 일까지 합치면…",YES,main04_taeon_supp_006.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,TTS_REGEN_REQUIRED;NO_REMAP
+9,AfterBattleConversation,4,,player,"몬스터들이 마을을 노리고
+내려오는 건 아닌 것 같습니다.",NONE,NONE,PLAYER_SILENT_PASS,NONE
+10,AfterBattleConversation,5,main04_miel_supp_010,companion_miel,"초원보다 더 안쪽에서
+무언가가 벌어지고 있는 것 같아요.",YES,main04_miel_supp_010.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,TTS_REGEN_REQUIRED;NO_REMAP
+11,AfterBattleConversation,6,main04_taeon_supp_007,companion_taeon,"여기서 더 들어가는 건
+지금은 위험할 것 같습니다.",YES,main04_taeon_supp_007.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,TTS_REGEN_REQUIRED;NO_REMAP
+12,AfterBattleConversation,7,main04_miel_supp_011,companion_miel,마을에도 이 상황을 알려야 해요.,YES,main04_miel_supp_011.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,TTS_REGEN_REQUIRED;NO_REMAP
+13,AfterBattleConversation,8,,player,돌아가죠.,NONE,NONE,PLAYER_SILENT_PASS,NONE

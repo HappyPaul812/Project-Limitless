@@ -1,0 +1,10 @@
+﻿order,dialogue_id,speaker_id,speaker_name,exact_text,voice_name,model,locale,output_filename,issue,acting_note
+3,main04_miel_supp_009,companion_miel,미엘,"저도 볼 겁니다.
+이번에는 순서대로요.",Sulafat,gemini-3.8-flash-tts,ko-KR,main04_miel_supp_009.wav,WRONG_AUDIO_CONTENT;RUNTIME_SEMANTIC_MISMATCH,부드럽고 세심하며 침착한 존댓말. 과잉 감상 없이 관찰과 자기 상태 확인/마을 보고 문맥을 유지.
+4,main04_taeon_supp_006,companion_taeon,태온,"제가 본 움직임과
+이곳에서 있었던 일까지 합치면…",Gacrux,gemini-3.8-flash-tts,ko-KR,main04_taeon_supp_006.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,차분하고 진지하며 절제된 존댓말. 현장 관찰·판단 중심으로 전체 문장을 발화.
+6,main04_miel_supp_010,companion_miel,미엘,"초원보다 더 안쪽에서
+무언가가 벌어지고 있는 것 같아요.",Sulafat,gemini-3.8-flash-tts,ko-KR,main04_miel_supp_010.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,부드럽고 세심하며 침착한 존댓말. 과잉 감상 없이 관찰과 자기 상태 확인/마을 보고 문맥을 유지.
+7,main04_taeon_supp_007,companion_taeon,태온,"여기서 더 들어가는 건
+지금은 위험할 것 같습니다.",Gacrux,gemini-3.8-flash-tts,ko-KR,main04_taeon_supp_007.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,차분하고 진지하며 절제된 존댓말. 현장 관찰·판단 중심으로 전체 문장을 발화.
+8,main04_miel_supp_011,companion_miel,미엘,마을에도 이 상황을 알려야 해요.,Sulafat,gemini-3.8-flash-tts,ko-KR,main04_miel_supp_011.wav,SEMANTIC_INTEGRITY_SUSPECT;USER_RUNTIME_RANGE_ORDER_MISMATCH,부드럽고 세심하며 침착한 존댓말. 과잉 감상 없이 관찰과 자기 상태 확인/마을 보고 문맥을 유지.

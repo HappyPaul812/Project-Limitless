@@ -1,0 +1,8 @@
+﻿main,source,location,dialogue_id,speaker,text,classification,evidence,action
+3,Unity/Client/Assets/_Project/Scripts/World/MainQuest03FieldFlow.cs,256,main03_taeon_supp_012,companion_taeon,"목적이 같다면 잠시 함께 가시죠.
+혼자 움직이는 것보다는 안전할 겁니다.",CHARACTER_OR_PLAYER_DIALOGUE_KEEP,정식 authored 발화;잠시 권유/지명 침묵의 지하묘지/잠시만요 요청/다른사람 말 전달.행동 지문으로 자동변경하지 않음,NONE
+10,Unity/Client/Assets/_Project/Scripts/World/MainQuest10FieldFlow.cs,217,,player,침묵의 지하묘지로 이어지는 입구 같습니다. 지금 보이는 부분을 조사하죠.,CHARACTER_OR_PLAYER_DIALOGUE_KEEP,정식 authored 발화;잠시 권유/지명 침묵의 지하묘지/잠시만요 요청/다른사람 말 전달.행동 지문으로 자동변경하지 않음,NONE
+13,Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs,244,main13_serin_001,companion_serin,잠시만요. 바람이 강하면 말소리가 흐려져서요.,CHARACTER_OR_PLAYER_DIALOGUE_KEEP,정식 authored 발화;잠시 권유/지명 침묵의 지하묘지/잠시만요 요청/다른사람 말 전달.행동 지문으로 자동변경하지 않음,NONE
+13,Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs,254,main13_leon_001,arbel-leon,아르벨에 오신 걸 환영합니다. 세린은 잠시 자기 조사를 마치고 오겠다고 했습니다.,CHARACTER_OR_PLAYER_DIALOGUE_KEEP,정식 authored 발화;잠시 권유/지명 침묵의 지하묘지/잠시만요 요청/다른사람 말 전달.행동 지문으로 자동변경하지 않음,NONE
+4,Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs,CreateStoryActor:NpcController.Configure;index=N/A,,companion_taeon,상황을 살피고 있습니다.,DIRECTION_CONFIRMED,동일 공통 대기 상태 설정;정식 Story Sequence/Manifest 밖;Main04 현장 관찰 문맥,PREFIX_DIRECTION;NO_CHARACTER_SPEAKER_PORTRAIT_VOICE
+4,Unity/Client/Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs,CreateStoryActor:NpcController.Configure;index=N/A,,companion_miel,상황을 살피고 있습니다.,DIRECTION_CONFIRMED,동일 공통 대기 상태 설정;정식 Story Sequence/Manifest 밖;Main04 현장 관찰 문맥,PREFIX_DIRECTION;NO_CHARACTER_SPEAKER_PORTRAIT_VOICE

@@ -14,6 +14,7 @@ namespace ProjectLimitless.UI
     public sealed class DialogueLine
     {
         public const string PlayerSpeakerId = "player";
+        public const string DirectionPrefix = "<지문>";
 
         public DialogueLine(string speakerId, string speakerName, string message, string dialogueId = null)
         {
@@ -34,6 +35,13 @@ namespace ProjectLimitless.UI
                 speakerName = "태온";
                 message = message.Substring("태온\n".Length);
             }
+            // 명시적인 지문은 Character 발화가 아닙니다. 기본 NPC 대화나 연속 페이지에서
+            // 화자 ID가 잘못 전달되어도 같은 규칙으로 이름·초상화·음성 연결을 차단합니다.
+            if (message.StartsWith(DirectionPrefix, StringComparison.Ordinal))
+            {
+                speakerId = string.Empty;
+                speakerName = string.Empty;
+            }
             // 이름이 바뀌는 기존 무음 Player 페이지도 같은 stable 화자 규칙을 사용합니다.
             // 정식 NPC ID가 있으면 Player가 NPC와 같은 이름을 골랐더라도 NPC 화자는 보존합니다.
             bool playerName = speakerName == "플레이어" ||
@@ -53,6 +61,7 @@ namespace ProjectLimitless.UI
         public string SpeakerName { get; }
         public string Message { get; }
         public bool IsPlayer => SpeakerId == PlayerSpeakerId;
+        public bool IsDirection => Message.StartsWith(DirectionPrefix, StringComparison.Ordinal);
         // 제작 manifest의 안정 ID입니다. 음성이 없는 기존 대사는 빈 값이며 Save에는 기록하지 않습니다.
         public string DialogueId { get; }
     }
@@ -237,7 +246,7 @@ namespace ProjectLimitless.UI
             DialogueLine line = sequenceLines[sequencePageIndex];
             // 무음/Player도 Play(null)로 이전 Clip을 즉시 정리합니다. 잘못 등록된 Player ID나
             // 직전 NPC의 음성을 fallback으로 쓰지 않으며 자막은 기존 수동 Next로 진행합니다.
-            voicePlayback.Play(!line.IsPlayer && voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
+            voicePlayback.Play(!line.IsPlayer && !line.IsDirection && voiceCatalog != null ? voiceCatalog.Find(line.DialogueId, line.SpeakerId) : null);
             ApplyPortrait(line.SpeakerId);
             SetContent(line, "[E/F/Enter/Space 또는 A: 계속] [Esc/B: 닫기] [↑↓/패드/휠: 장문 읽기]");
         }
@@ -246,6 +255,8 @@ namespace ProjectLimitless.UI
         private void SetContent(DialogueLine line, string hint)
         {
             speakerText.text = line.SpeakerName;
+            // 지문 prefix는 서식 태그가 아닌 본문입니다. 다음 Character 페이지는 기존 Rich Text 정책으로 복원합니다.
+            dialogueText.supportRichText = !line.IsDirection;
             dialogueText.text = line.Message;
             footerText.text = hint;
             bodyScroll.verticalNormalizedPosition = 1f;

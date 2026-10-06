@@ -29,3 +29,5 @@
 
 - [LOCAL Story Dialogue 원문 부록](LOCAL_Story_Dialogue_원문_부록.md): 현재 구현된 Intro18/Main01~16 313개 작성 페이지의 실제 본문. 원래 기획 문서의 미정 후속 설계를 확정하지 않는다.
 - [Story 정합성 QA](../00_프로젝트/Story_Dialogue_Consistency_QA.md): Player Voice/Portrait NONE 정식 규칙, 원문/Manifest/Catalog 비교, 실제 음성 청취 상태. 기술 Mapping PASS는 WAV 발화 의미 PASS를 뜻하지 않는다. 태온 첫 만남 3개는 사용자 청취 불일치로 재생성 필요 목록에 기록했다.
+
+- [Story 대사 및 지문 작성 규칙](Story_대사_지문_작성_규칙.md): 명시적인 `<지문>` 페이지는 Character Speaker·Portrait·Voice 없이 표시한다.

@@ -61,7 +61,8 @@ namespace ProjectLimitless.World
             GameObject actor = new GameObject(objectName, typeof(NpcController), typeof(VillageNpcRole));
             actor.transform.SetParent(parent, false);
             actor.transform.position = position;
-            actor.GetComponent<NpcController>().Configure(displayName, "상황을 살피고 있습니다.");
+            // 공통 대기 상태는 발화가 아닌 지문이며 Character 이름·Portrait·Voice를 붙이지 않습니다.
+            actor.GetComponent<NpcController>().Configure(displayName, DialogueLine.DirectionPrefix + " 상황을 살피고 있습니다.");
             VillageNpcRole role = actor.GetComponent<VillageNpcRole>();
             role.Configure(stableId, VillageNpcRoleType.Resident, false);
             SpriteRenderer renderer = new GameObject("Official" + displayName + "Visual", typeof(SpriteRenderer)).GetComponent<SpriteRenderer>();
