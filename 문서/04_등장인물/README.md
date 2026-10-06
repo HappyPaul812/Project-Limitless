@@ -15,3 +15,5 @@
 ## 설명
 
 [세린](세린.md): Chapter2 사수 동료의 확정 설정과 Path 반응형 Story 역할 참조. 기존 Main13~15 동행/정식 합류와 신규 설계·Retrofit의 구현 상태는 [CURRENT_STATUS](../00_프로젝트/CURRENT_STATUS.md)를 따른다.
+
+태온·미엘의 기존 Character 정본은 [메인 Story의 등장인물 설정](../03_스토리/메인_스토리와_퀘스트_설계.md)에 유지한다. [폴 × 미엘 관계](폴_미엘_관계.md)는 Main18~21 미래 방향이며, [태온 친형/Chapter3 초기 방향](../03_스토리/Chapter3_초기_방향.md)은 신규 Asset/Runtime 구현이 아니다.

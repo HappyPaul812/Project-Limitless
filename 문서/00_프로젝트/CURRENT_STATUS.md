@@ -1,3 +1,5 @@
+> 미래 설계 참고(2026-10-06): [Chapter2 Main12~21·후반 방향](../03_스토리/Chapter2_서부_방향.md), [Chapter3 Main22 시작 방향](../03_스토리/Chapter3_초기_방향.md), [폴–미엘 관계](../04_등장인물/폴_미엘_관계.md)를 문서화했다. **Main18~22/Chapter3 미구현**이며 아래 실제 구현·QA 상태는 유지한다. 코드/Asset/Audio 변경 없음.
+
 ## 2026-10-06 Main17 실제 Art / Battle BGM 최종 반영
 
 FUNCTION_COMPLETE / ART_COMPLETE / BGM_COMPLETE / SAVE_COMPLETE / PATH_COMPLETE. 정확한 English.zip 원본9PNG 등록·7실제적용(지면변형2보관), Preview미사용. PNG/ZIP/MP3 원본 수정0. Blade and Gambit는 Chapter2 서부 일반/Story에 적용, 기존 단일Source/Mixer Fade0.20/0.75/0.9·LoopON, Field07/08 탐색곡 복귀·Boss예외 유지. Quest12/보상60·50/Serin·Fox/Party/5Path 및 기존44승리·KO0 보호.
