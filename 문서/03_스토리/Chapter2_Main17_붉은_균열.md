@@ -62,3 +62,7 @@ Save Version/새 Flag를 추가하지 않는다. Quest ID/count/CompletedIds·Sc
 ## Phase7 저장 검증 경계
 
 Save Version1/일반 저장 코드는 변경하지 않았다. 실제 격리 Save→Bootstrap Continue 5지점(진입 조사중/목격전/목격완료·승리전/승리후/완료)을 검증한다. Scene/좌표·Quest count/Completed·Party/Formation·Beast·Hearing·세린 정식해금·11조사지점 재구성이 동일하다. 도망 공용 복귀 API 제어는 실물 도망 입력 검증과 구분한다. 일반 Field08 갑충은 기존35초 런타임 respawn 정책이며 일반 몬스터 재생성 타이머는 Save JSON에 영구 저장되지 않는다. 같은 Play 세션 Continue의 런타임 상태와 OS재시작 저장을 구분하며 후자는 기존 Release 검증 범위다.
+
+## Phase9 영향 범위 마무리
+
+Field08의 복사 타일 녹색 경계 반복을 제거하고 기존 Sprite/기본 Quad/4종 Material로 붉은 바닥·짙은 재·물리적 깊은 틈·약한 붉은 틈·어두운 암석을 구성한다. 전용 환경 원화 대신 임시 지형을 사용하며 PNG 생성0. 깊은 틈은 (-5,0.5), 폭0.7×높이7, 북쪽 y4.5/남쪽 y-3.5 우회 통로를 유지한다. Field07 원본은 변경하지 않는다. 아르벨/Field06/Field07의 기존 서쪽 출구에 Main17 Navigation Target만 덧붙인다. 같은 게임패드 A 입력이 마지막 Next와 다음 인접 조사에 동시에 전달되지 않도록 완료 프레임의 추가 조사를 막는다. 이 상태는 저장 Flag가 아닌 일시적인 입력 보호이며 새 Play 시작 때 초기화한다.

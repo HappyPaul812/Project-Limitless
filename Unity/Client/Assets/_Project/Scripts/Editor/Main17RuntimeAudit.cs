@@ -12,6 +12,7 @@ using ProjectLimitless.UI;
 using ProjectLimitless.Battle;
 using UnityEngine.UI;
 using ProjectLimitless.Audio;
+using UnityEngine.EventSystems;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,7 @@ namespace ProjectLimitless.EditorTools
         private static bool paths;
         private static bool saves;
         private static bool music;
+        private static bool integrated;
         private static string Output => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../문서/00_프로젝트/Main17_Runtime_Results.txt"));
         static Main17RuntimeAudit()
         {
@@ -42,12 +44,13 @@ namespace ProjectLimitless.EditorTools
                 if (state == PlayModeStateChange.EnteredEditMode) { SessionState.SetBool(Armed, false); Save(); }
             };
         }
-        public static string LaunchConnections() { Results.Clear(); music = false; saves = false; paths = false; story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchStory() { Results.Clear(); music = false; saves = false; paths = false; story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchBattle() { Results.Clear(); music = false; saves = false; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchPaths() { Results.Clear(); music = false; saves = false; paths = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchSaves() { Results.Clear(); music = false; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchAudio() { Results.Clear(); music = true; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchConnections() { Results.Clear(); integrated = false; music = false; saves = false; paths = false; story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchStory() { Results.Clear(); integrated = false; music = false; saves = false; paths = false; story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchBattle() { Results.Clear(); integrated = false; music = false; saves = false; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchPaths() { Results.Clear(); integrated = false; music = false; saves = false; paths = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchSaves() { Results.Clear(); integrated = false; music = false; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchAudio() { Results.Clear(); integrated = false; music = true; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchIntegrated() { Results.Clear(); integrated = true; music = true; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
         private static T Value<T>(object owner, string name) => (T)owner.GetType().GetField(name, BindingFlags.Instance | BindingFlags.NonPublic).GetValue(owner);
         private static void Save() => File.WriteAllLines(Output, Results);
         private static void Check(bool condition, string id)
@@ -98,6 +101,17 @@ namespace ProjectLimitless.EditorTools
             yield return WaitScene(Chapter2Main17Flow.PreviousField);
             var gate = UnityEngine.Object.FindAnyObjectByType<Main17AccessGate>();
             Check(gate != null && gate.GetComponent<BoxCollider2D>().enabled, "Gate.LockedBeforeMain16");
+            if (integrated)
+            {
+                QuestDefinition legacy; QuestCatalog.TryGet(Chapter2Main16Flow.QuestId, out legacy);
+                var completed = QuestCatalog.All.Where(value => value.QuestId.StartsWith("main_") && string.CompareOrdinal(value.QuestId, "main_16") < 0).Select(value => value.QuestId).ToArray();
+                QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = completed, ActiveQuests = new[] { new ActiveQuestSaveData { QuestId = legacy.QuestId, Objectives = legacy.Objectives.Select((value, index) => new QuestObjectiveProgressData { ObjectiveId = value.ObjectiveId, CurrentCount = index < 9 ? 1 : 0 }).ToArray() } } });
+                var legacyPlayer = UnityEngine.Object.FindAnyObjectByType<PlayerController>(); legacyPlayer.transform.position = new Vector2(-8, 0); Physics2D.SyncTransforms();
+                GameObject.Find("field07_main16_canyon").GetComponent<Main16Site>().TryInteract();
+                Check(DialoguePresenter.Instance.IsOpen && QuestService.ActiveMainQuest.CurrentObjectiveIndex == 9, "Regression.Main16CanyonStillWorks");
+                DialoguePresenter.Instance.Hide(); legacyPlayer.transform.position = new Vector2(7, 0); Physics2D.SyncTransforms();
+                Check(QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Locked, "Regression.NoEarlyMain17");
+            }
             var quests = QuestCatalog.All.Where(value => value.QuestId.StartsWith("main_") &&
                 string.CompareOrdinal(value.QuestId, "main_17") < 0).Select(value => value.QuestId).ToArray();
             QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = quests });
@@ -105,6 +119,7 @@ namespace ProjectLimitless.EditorTools
             CompanionRosterService.UnlockPaul("fighter");
             CompanionRosterService.UnlockSerin();
             if (saves) Check(CompanionRosterService.TrySetComposition(new[] { CompanionRosterService.SerinId, CompanionRosterService.MielId }, new Dictionary<string, FormationRow> { { "player", FormationRow.Front }, { CompanionRosterService.SerinId, FormationRow.Rear }, { CompanionRosterService.MielId, FormationRow.Rear } }), "Save.SerinSelectedFixture");
+            GameSessionData.ActivateSafeZone("arbel", "Arbel", "Spawn_From_Field06");
             yield return Wait(.2);
             Check(!gate.GetComponent<BoxCollider2D>().enabled, "Gate.OpenAfterMain16");
             Check(QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Available, "Main17.Available");
@@ -122,6 +137,7 @@ namespace ProjectLimitless.EditorTools
             Check(Camera.main != null, "Field08.Camera");
             Check(SceneManager.GetActiveScene().name == Chapter2Main17Flow.Field, "Field08.NoImmediateReturn");
             if (saves) yield return Continue("entry");
+            if (integrated) CaptureWorld();
             if (story)
             {
                 string roster = JsonUtility.ToJson(CompanionRosterService.ExportSaveData());
@@ -137,7 +153,16 @@ namespace ProjectLimitless.EditorTools
                     Check(DialoguePresenter.Instance.IsOpen, "Story.Open." + index);
                     Check(Chapter2Main17Flow.IsCurrent(index), "Story.NoEarlyProgress." + index);
                     int guard = 0;
-                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60) { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60)
+                    {
+                        if (integrated) CheckDialogue(); DialoguePresenter.Instance.Advance();
+                        if (integrated && index == 4 && !DialoguePresenter.Instance.IsOpen)
+                        {
+                            GameObject.Find("field08_main17_compare").GetComponent<Main17Site>().TryInteract();
+                            Check(!DialoguePresenter.Instance.IsOpen && Chapter2Main17Flow.IsCurrent(5), "Input.NoSameFrameNextInvestigation");
+                        }
+                        yield return Wait(.03);
+                    }
                     Check(Chapter2Main17Flow.IsCurrent(index + 1), "Story.Complete." + index);
                     site.TryInteract(); Check(Chapter2Main17Flow.IsCurrent(index + 1), "Story.NoDuplicate." + index);
                 }
@@ -164,6 +189,22 @@ namespace ProjectLimitless.EditorTools
                     var controller = UnityEngine.Object.FindAnyObjectByType<BattleSceneController>();
                     Check(Value<Formation>(controller, "enemies").Members.Count() == 1, "Battle.ExistingSingleLizard");
                     Check(Value<Formation>(controller, "allies").Members.Count() == 1 + CompanionRosterService.ActivePartyCharacterIds.Count && Value<Formation>(controller, "allies").Members.Count() <= 3, "Battle.ExactSavedParty");
+                    if (integrated)
+                    {
+                        Check(Value<Formation>(controller, "allies").Members.Any(value => value.Id == CompanionRosterService.SerinId), "Battle.SerinSelectedSharpshooter");
+                        Check(BeastCompanionService.GetEquippedId(CompanionRosterService.SerinId) == "fox", "Battle.SerinFoxDefault");
+                        double ready = EditorApplication.timeSinceStartup + 30;
+                        while (!Value<Button>(controller, "skillButton").interactable && EditorApplication.timeSinceStartup < ready) yield return null;
+                        foreach (string menu in new[] { "skillButton", "itemButton" })
+                        {
+                            Value<Button>(controller, menu).onClick.Invoke();
+                            var commands = Value<List<Selectable>>(controller, "commandButtons");
+                            Check(commands.All(value => !value.gameObject.activeInHierarchy && !value.interactable), "Regression." + menu + ".HiddenInputBlocked");
+                            Check(EventSystem.current.currentSelectedGameObject != null && !commands.Any(value => value.gameObject == EventSystem.current.currentSelectedGameObject), "Regression." + menu + ".FocusInside");
+                            Value<Button>(controller, "cancelButton").onClick.Invoke();
+                            Check(commands.All(value => value.gameObject.activeInHierarchy && value.interactable), "Regression." + menu + ".CancelRestored");
+                        }
+                    }
                     int attacks = 0; double until = EditorApplication.timeSinceStartup + 180;
                     while (!Value<bool>(controller, "battleEnded") && EditorApplication.timeSinceStartup < until)
                     {
@@ -187,6 +228,14 @@ namespace ProjectLimitless.EditorTools
                     for (int index = 9; index <= 11; index++) yield return Inspect(index);
                     Check(QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Completed, "Story.Main17Completed");
                     if (saves) yield return Continue("completed");
+                    if (integrated)
+                    {
+                        SceneTransitionService.Load("Arbel", "Spawn_From_Field06"); yield return WaitScene("Arbel");
+                        QuestNavigationTargetRegistry.Target target;
+                        Check(QuestNavigationTargetRegistry.TryGet(Chapter2Main17Flow.EncounterId, out target), "Navigation.ArbelWestRoute");
+                        SceneTransitionService.Load(Chapter2Main16Flow.PreviousField, "Spawn_From_Arbel"); yield return WaitScene(Chapter2Main16Flow.PreviousField);
+                        Check(QuestNavigationTargetRegistry.TryGet(Chapter2Main17Flow.EncounterId, out target), "Navigation.Field06WestRoute");
+                    }
                 }
             }
             SceneTransitionService.Load(Chapter2Main17Flow.PreviousField, "Spawn_From_Field08");
@@ -204,7 +253,7 @@ namespace ProjectLimitless.EditorTools
             site.TryInteract(); Check(DialoguePresenter.Instance.IsOpen, "Story.Open." + index);
             int guard = 0;
             while (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen && guard++ < 60)
-            { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+            { if (integrated) CheckDialogue(); DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
             Check(index == 11 ? QuestService.GetState(Chapter2Main17Flow.QuestId) == QuestState.Completed : Chapter2Main17Flow.IsCurrent(index + 1), "Story.Complete." + index);
         }
 
@@ -236,7 +285,7 @@ namespace ProjectLimitless.EditorTools
                         site.TryInteract();
                     }
                     int guard = 0;
-                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60) { DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
+                    while (DialoguePresenter.Instance.IsOpen && guard++ < 60) { if (integrated) CheckDialogue(); DialoguePresenter.Instance.Advance(); yield return Wait(.03); }
                     Check(Chapter2Main17Flow.IsCurrent(index + 1), path + ".SameResult." + index);
                 }
                 Check(GameObject.FindObjectsByType<Chapter2Main17Flow>().Count() == 1 && GameObject.Find("Serin_Story_Main17") != null, path + ".SingleActorFlow");
@@ -249,6 +298,8 @@ namespace ProjectLimitless.EditorTools
             var player = UnityEngine.Object.FindAnyObjectByType<PlayerController>(); Vector2 at = player.transform.position;
             string quest = JsonUtility.ToJson(QuestService.ExportSaveData()), party = JsonUtility.ToJson(CompanionRosterService.ExportSaveData()), beast = JsonUtility.ToJson(BeastCompanionService.ExportSaveData());
             string path = GameSessionData.SelectedPlayerPathId;
+            var general = Resources.Load<FieldMonsterSpawnDefinition>("MonsterSpawns/Field08_Beetle01");
+            if (integrated && label == "entry") { MonsterEncounterService.MarkDefeated(general); Check(!MonsterEncounterService.IsSpawnAvailable(general), "Save.GeneralRespawnProtocolBefore"); }
             Check(GameSaveService.SaveCurrentWorldPosition(at, scene), "Save." + label + ".WriteIsolated");
             SceneManager.LoadSceneAsync("Bootstrap"); yield return WaitScene("Bootstrap"); GameSessionData.Reset();
             var action = GameObject.Find("StartMenuCanvas/Slot01/Action")?.GetComponent<Button>();
@@ -260,6 +311,37 @@ namespace ProjectLimitless.EditorTools
             Check(JsonUtility.ToJson(BeastCompanionService.ExportSaveData()) == beast, "Save." + label + ".BeastExact");
             Check(GameSessionData.SelectedPlayerPathId == path && CompanionRosterService.IsUnlocked(CompanionRosterService.SerinId), "Save." + label + ".PathSerinPermanent");
             Check(UnityEngine.Object.FindObjectsByType<Chapter2Main17Flow>().Count() == 1 && UnityEngine.Object.FindObjectsByType<Main17Site>().Count() == 11, "Save." + label + ".DerivedSitesOnce");
+            if (integrated && label == "entry") Check(!MonsterEncounterService.IsSpawnAvailable(general), "Save.GeneralRespawnProtocolAfterSameProcessContinue");
+        }
+        private static void CheckDialogue()
+        {
+            var presenter = DialoguePresenter.Instance;
+            var line = Value<DialogueLine[]>(presenter, "sequenceLines")[Value<int>(presenter, "sequencePageIndex")];
+            Check(Value<VoicePlaybackSource>(presenter, "voicePlayback").Clip == null, "Dialogue." + line.DialogueId + ".NoBorrowedVoice");
+            Check(Value<GameObject>(presenter, "portraitRoot").activeSelf == (line.SpeakerId != "" && line.SpeakerId != "player"), "Dialogue." + line.DialogueId + ".PortraitPolicy");
+            if (line.SpeakerId != "" && line.SpeakerId != "player" && line.SpeakerId != CompanionRosterService.SerinId)
+                Check(CompanionRosterService.IsActivePartyMember(line.SpeakerId), "Dialogue." + line.DialogueId + ".ActiveCompanionOnly");
+        }
+        private static void CaptureWorld()
+        {
+            var camera = Camera.main;
+            var bounds = UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>();
+            float halfHeight = camera.orthographicSize, halfWidth = halfHeight * camera.aspect;
+            Check(camera.transform.position.x - halfWidth >= bounds.Bounds.min.x - .02f && camera.transform.position.x + halfWidth <= bounds.Bounds.max.x + .02f && camera.transform.position.y - halfHeight >= bounds.Bounds.min.y - .02f && camera.transform.position.y + halfHeight <= bounds.Bounds.max.y + .02f, "Visual.CameraViewportInsideBounds");
+            var deep = GameObject.Find("RedRiftGeometry_DeepCrack")?.GetComponent<BoxCollider2D>();
+            Check(deep != null && Physics2D.CircleCast(new Vector2(-4, 0), .2f, Vector2.left, 2).collider == deep, "Visual.DeepRiftCollision");
+            Check(Physics2D.CircleCast(new Vector2(-4, 4.5f), .2f, Vector2.left, 3).collider == null && Physics2D.CircleCast(new Vector2(-4, -3.5f), .2f, Vector2.left, 3).collider == null, "Visual.NorthSouthDetourClear");
+            string path = Path.GetFullPath(Path.Combine(Application.dataPath, "../../../Temp/Main17Development/Field08_Camera.png"));
+            var original = camera.targetTexture; var active = RenderTexture.active;
+            var texture = new RenderTexture(1600, Mathf.RoundToInt(1600 / camera.aspect), 24);
+            var image = new Texture2D(texture.width, texture.height, TextureFormat.RGB24, false);
+            try
+            {
+                camera.targetTexture = texture; camera.Render(); RenderTexture.active = texture;
+                image.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0); image.Apply(); File.WriteAllBytes(path, image.EncodeToPNG());
+                Check(File.Exists(path), "Visual.BackgroundCameraCapture");
+            }
+            finally { camera.targetTexture = original; RenderTexture.active = active; UnityEngine.Object.DestroyImmediate(texture); UnityEngine.Object.DestroyImmediate(image); }
         }
     }
 }

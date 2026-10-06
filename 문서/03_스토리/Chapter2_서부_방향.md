@@ -10,7 +10,7 @@
 
 현재 숲·초원 → 마른 숲 경계(남은 녹지, 마르는 잎과 풀, 달라지는 흙색) → 황토 지대(줄어드는 나무, 바위와 갈라진 땅, 열기 흔적) → 사막화 지역(드문 녹지, 모래와 메마른 바닥, 강한 열기) → 후반 Dungeon/Boss 지역으로 이어진다. 열기·메마름·사막화·화염과 **지면의 이상 진동/울림**이 중심 단서다. Chapter 1의 침묵·푸른빛·지하 미스터리와 분위기를 구분한다. 두 장의 이상 현상이 서로 완전히 무관하다고 확정하지 않는다.
 
-Main15의 첫 서쪽 탐사 Field와 목표는 [타오르는 흔적 설계](Chapter2_Main15_타오르는_흔적.md)에 확정했다. Main16은 [재 속의 형상](Chapter2_Main16_재_속의_형상.md)에 정식 설계했으며 Field07은 재바람 황야라는 설계명/Scene 가칭만 있다. 실제 Scene/Quest ID·지도 크기·이후 지역 수는 미정이다. Main17의 협곡·Elite·Overheat는 후속 후보이며 정식 Quest가 아니다. 모든 이상 현상의 최종 원인, 최종 흑막, 신의 의도, 화염 현상의 궁극적 발생원도 확정하지 않는다.
+Main15의 첫 서쪽 탐사 Field와 목표는 [타오르는 흔적 설계](Chapter2_Main15_타오르는_흔적.md)에 확정했다. Main16 [재 속의 형상](Chapter2_Main16_재_속의_형상.md)은 main_16_shape_in_the_ash / Field_07_AshenReach / 21×15 Bounds로 구현되었다. 후속 Main17 [붉은 균열](Chapter2_Main17_붉은_균열.md)은 main_17_red_rift / Field_08_RedRift로 확정하여 이어 구현한다. 실제 단계별 완료/QA는 CURRENT_STATUS와 MAIN17_RESUME_CHECKPOINT를 따른다. Elite·Overheat·Main18은 후속 후보로 유지한다. 모든 이상 현상의 최종 원인, 최종 흑막, 신의 의도, 화염 현상의 궁극적 발생원도 확정하지 않는다.
 
 ## 동료와 후반 보스
 

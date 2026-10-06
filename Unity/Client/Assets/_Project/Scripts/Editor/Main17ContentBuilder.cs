@@ -122,5 +122,61 @@ namespace ProjectLimitless.Editor
             general.SetNonRespawningBoss(false); EditorUtility.SetDirty(general); AssetDatabase.SaveAssetIfDirty(general);
             return "Main17 Story single lizard / optional general beetle / unchanged stats";
         }
+
+        /// <summary>복사된 타일의 녹색 경계를 없애고 기본 도형으로 협곡 지형을 표현합니다. PNG 원본이나 이전 Scene은 수정하지 않습니다.</summary>
+        public static string PolishField()
+        {
+            var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene(); var selected = Selection.objects;
+            var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Additive);
+            try
+            {
+                var environment = scene.GetRootGameObjects().Single(value => value.name == "FieldEnvironment").transform;
+                foreach (Transform child in environment.Cast<Transform>().Where(value => value.name.StartsWith("RedRiftGeometry_")).ToArray()) Object.DestroyImmediate(child.gameObject);
+                foreach (var renderer in environment.GetComponentsInChildren<SpriteRenderer>())
+                    if (renderer.name.StartsWith("AshSoil_") || renderer.name.StartsWith("Road") || renderer.name.StartsWith("Tree") || renderer.name.StartsWith("BrokenTrack_")) renderer.gameObject.SetActive(false);
+                Material ground = Material("RedRift_Ground", new Color(.42f, .20f, .15f));
+                Material dark = Material("RedRift_Crack", new Color(.12f, .09f, .10f));
+                Material glow = Material("RedRift_Glow", new Color(.52f, .13f, .08f));
+                Material ash = Material("RedRift_Ash", new Color(.43f, .35f, .31f));
+                Plane(environment, "Ground", Vector2.zero, new Vector2(21, 15), ground, -20);
+                // 깊은 틈은 중앙 통로를 막지만 북쪽/남쪽으로 돌아갈 수 있습니다. 서쪽 조사 좌표는 틈과 겹치지 않습니다.
+                var crack = Plane(environment, "DeepCrack", new Vector2(-5, .5f), new Vector2(.7f, 7), dark, -10);
+                crack.AddComponent<BoxCollider2D>();
+                Plane(environment, "InnerGlow", new Vector2(-4.9f, .5f), new Vector2(.10f, 6.5f), glow, -9);
+                for (int i = 0; i < 6; i++)
+                {
+                    var line = Plane(environment, "Branch" + i, new Vector2(-4.3f + i * 1.3f, -1.6f + (i % 3) * 1.5f), new Vector2(1.3f, .08f), dark, -8);
+                    line.transform.localRotation = Quaternion.Euler(0, 0, i % 2 == 0 ? 25 : -30);
+                }
+                for (int i = 0; i < 24; i++)
+                {
+                    var mark = Plane(environment, "Ash" + i, new Vector2(-8 + (i * 7 % 19) * .85f, -5 + (i * 3 % 11)), new Vector2(.15f, .07f), ash, -7);
+                    // 재 표시는 Scene에 기본 Mesh만 저장합니다. 별도 파일이 없는 런타임 전용 Behaviour는 직렬화하지 않습니다.
+                }
+                for (int i = 0; i < 8; i++) Plane(environment, "Track" + i, new Vector2(3 - i * .4f, i < 4 ? 3 : 3 + (i % 2 == 0 ? 1 : -1) * (i - 3) * .2f), new Vector2(.10f, .16f), ash, -6);
+                for (int i = 0; i < 3; i++)
+                {
+                    var rock = Plane(environment, "Obsidian" + i, new Vector2(-7 + i * .6f, 4.8f), new Vector2(.7f, 1.5f), dark, -6);
+                    rock.transform.localRotation = Quaternion.Euler(0, 0, 25 + i * 20);
+                }
+                if (!EditorSceneManager.SaveScene(scene, ScenePath)) throw new System.InvalidOperationException("Field08 지형 저장 실패");
+                return "Field08 red ground / deep crack with north-south detours / ash / dark rock; no PNG generated";
+            }
+            finally { EditorSceneManager.CloseScene(scene, true); UnityEngine.SceneManagement.SceneManager.SetActiveScene(active); Selection.objects = selected; }
+        }
+        private static Material Material(string name, Color color)
+        {
+            string path = "Assets/_Project/Resources/Chapter2/" + name + ".mat";
+            var material = AssetDatabase.LoadAssetAtPath<Material>(path);
+            if (material == null) { material = new Material(Shader.Find("Sprites/Default")); AssetDatabase.CreateAsset(material, path); }
+            material.color = color; EditorUtility.SetDirty(material); AssetDatabase.SaveAssetIfDirty(material); return material;
+        }
+        private static GameObject Plane(Transform parent, string name, Vector2 at, Vector2 size, Material material, int order)
+        {
+            var value = GameObject.CreatePrimitive(PrimitiveType.Quad); value.name = "RedRiftGeometry_" + name;
+            value.transform.SetParent(parent, false); value.transform.localPosition = at; value.transform.localScale = new Vector3(size.x, size.y, 1);
+            Object.DestroyImmediate(value.GetComponent<Collider>());
+            var renderer = value.GetComponent<MeshRenderer>(); renderer.sharedMaterial = material; renderer.sortingOrder = order; return value;
+        }
     }
 }

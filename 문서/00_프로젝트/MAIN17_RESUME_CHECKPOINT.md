@@ -1,14 +1,14 @@
 # Main17 RESUME CHECKPOINT
 
-- 완료 Phase: Phase1~8 완료
-- 현재 진행 Phase: Phase9 통합 Runtime QA
-- 마지막 완료 파일: 실제 음악MP3/.meta, BgmSceneCatalog Field08 항목, Main17RuntimeAudit/Phase8_Audio
-- 아직 미완성: 현재 진행 Phase 및 이후 Phase9까지. 완료로 추정하지 않음.
-- 다음 정확한 시작점: 통합 최종 대표흐름·실제 Skill/Item 숨김·새대사 Portrait/Voice 없음·Bounds카메라/중복/자산보존 확인. Arbel/Field06에서 활성 Main17 내비게이션 반환 경로 점검. Phase1~8 재설계하지 않음.
-- Compile 상태: Unity6000.5.7f1 컴파일 성공/현재 Console Error0. 백그라운드 Bootstrap EditMode 복귀 확인. 기존 CS0618 Warning16 이력 보존.
-- 검증: Phase8 전체169PASS/FAIL0. Field07→08 음악교체/Continue5지점/Battle null/정상승리08곡복귀/Source1·Loop·Mixer 확인. 로컬음악 SHA256 일치·176.48초.
-- Git 상태: 단계1 cca5a1f / 단계2 8cfecc6 / 단계3 7a4a3c1 / 직전 c517036. 현재 단계 관련 파일만 commit, 기존103작업 보존, Push0. 현재 단계 hash는 다음 단계 또는 최종 보고 참조.
-- LOCAL 충돌 결정: 세린 Main15 정식 해금·저장 편성 유지, Chapter2 Battle BGM null/TBD 유지.
-- 음악: F:/Downloads/bgm/Beneath_The_Cracked_Earth.mp3 실제 존재, Phase8 실제 가져오기·Field08 배정 완료.
-- TTS 생성0. 새 대사는 TTS_PENDING. 사용자 PNG/Save/ThirdParty 수정0.
-- 잔여 기존 분류: USER_INPUT_REQUIRED 실물Keyboard/Gamepad/Dungeon접촉; DEFERRED_FEATURE 일반장비; DEFERRED_RELEASE_VALIDATION Standalone. 기존 Voice 청취219/Main04수정5 유지.
+- 완료 Phase: Phase1~9 완료.
+- 현재 진행 Phase: 없음. 구현/통합 QA/Phase9 커밋 완료 상태는 최신 local git log와 최종 보고를 함께 참조.
+- 마지막 완료 작업: Field08 기본 도형 지형, 런타임 재 연출, 같은 프레임 조사 입력 보호, Arbel/Field06 내비게이션, 최종 격리 Runtime QA.
+- Compile: Unity6000.5.7f1 컴파일 완료. 최종 실행 Console Error0/Warning0. 과거 CS0618 Warning16 이력 유지.
+- 검증: 통합246PASS/FAIL0 + 5Path120PASS/FAIL0. 중복 제거 CSV PASS309/FAIL0/NV0/USER4. Missing Script0. Bootstrap EditMode/비포커스/slot0/격리Save 해제.
+- 다음 정확한 시작점: Main17_TTS_Manifest의 NPC14 제작·원본 및 Runtime 청취, 실물 Keyboard/Gamepad/Dungeon/BGM 확인 또는 사용자 지정 후속 작업. Main18은 Hook만 존재하며 별도 설계부터 시작한다.
+- 미완성: TTS_PENDING14, 전용 환경/Elite ART_PENDING, USER_INPUT_REQUIRED4, 일반장비 DEFERRED_FEATURE1, Standalone DEFERRED_RELEASE_VALIDATION1. 포괄 직업/저레벨 밸런스 제외.
+- Phase commit: 1 cca5a1f / 2 8cfecc6 / 3 7a4a3c1 / 4 3a2e479 / 5 2d50f0d / 6 dba6df6 / 7 c517036 / 8 1783cee / 9 최신 local log 및 최종보고 참조.
+- LOCAL 결정: 세린 Main15 정식 해금·저장 Party 유지. Chapter2 Battle BGM null/TBD 유지. Beast 재구현0.
+- Git: 관련 파일만 Stage/Commit. 시작 전 unrelated103개 상태 보존. Push0.
+- 보호: 3075파일 해시 검사 누락0, 계획된/이전QA 변경7개. 사용자 PNG/WAV/Save 변경0. 새 TTS/PNG 생성0.
+- 상세 근거: MAIN17_FINAL_QA.md / Main17_QA_Cases.csv / Main17_Phase9_Integrated.txt.

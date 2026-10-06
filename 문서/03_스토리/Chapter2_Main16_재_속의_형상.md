@@ -1,5 +1,7 @@
 # Chapter 2 Main16 — 재 속의 형상
 
+> 2026-10-06 후속 확장: 별도 사용자 요청으로 [Main17 붉은 균열](Chapter2_Main17_붉은_균열.md)을 이어 구현한다. 아래 ‘Main17을 구현하지 않는다’는 최초 Main16 작업 범위 이력이며 Main16 본문/Quest/Voice/전투 정책은 보존한다.
+
 > 후속 상태(2026-10-03): Voice28개 연결·기술 Runtime QA 완료. Field07 탐색 BGM은 **Where the Earth Breathes**로 확정했으며 조사·불씨망령 전투 후·협곡 입구에도 같은 곡을 사용한다. Trail of the Ember Wraith는 목격 후보, Beneath The Cracked Earth는 Main17 이후 후보다. 사용자 재확인에 따라 Field07 전투 BGM은 기존 null/TBD를 유지한다. 아래 Voice 미적용/BGM TBD는 최초 구현 당시 이력이며 최신 Audio 계약은 [Main16 Audio 마무리](../00_프로젝트/Main16_Audio_마무리_계약.md)를 따른다.
 
 > 2026-09-30 정식 Story 설계 완료. 2026-10-03 **Runtime·Quest·Field07·Path 분기 구현 및 범위 내 백그라운드 기능 QA 완료. Voice 미적용·Field07 BGM TBD.** 실제 ID·API·배치는 [Runtime 구현 계약](Main16_Runtime_구현_계약.md), 검증 범위와 남은 시각 QA는 [Runtime QA](Main16_Runtime_QA_2026_10_03.md)를 따른다. 공통 연출은 [Path 반응형 Story 정본](Path_반응형_Story_연출_규칙.md), 장면 기록은 [Scene 템플릿](Story_Scene_설계_템플릿.md)을 따른다.

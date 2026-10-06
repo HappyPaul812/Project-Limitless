@@ -1,6 +1,6 @@
-## 2026-10-06 Main17 대형 개발 — Phase1~8 완료
+## 2026-10-06 Main17 대형 개발 — Phase1~9 완료
 
-main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase8 전체169PASS/FAIL0. Field07→08 음악교체/Continue5지점/Battle null/정상승리08곡복귀/Source1·Loop·Mixer 확인. 로컬음악 SHA256 일치·176.48초. 다음: Phase9 통합 Runtime QA. 통합 최종 대표흐름·실제 Skill/Item 숨김·새대사 Portrait/Voice 없음·Bounds카메라/중복/자산보존 확인. Arbel/Field06에서 활성 Main17 내비게이션 반환 경로 점검. Phase1~8 재설계하지 않음. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit c517036. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
+main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표, Main16 이후 연결·조사·Story Battle·승리·Save/Continue5지점·BGM·Main18 Hook 구현. LOCAL Main15 세린 정식 해금과 저장 Party/Formation/Beast 유지. 통합246PASS/Path120PASS, 고유 CSV PASS309/FAIL0/NV0/USER4. 최종 Console Error0/Warning0·Missing Script0·비포커스 Bootstrap EditMode 복귀. 지형 기본 도형 Placeholder, NPC14 TTS_PENDING. 사용자 확인: 실물 Keyboard/Gamepad/Dungeon/BGM. 일반장비DF1/StandaloneDR1 유지. 다음: TTS 제작·청취 또는 사용자 지정 후속 개발. 기존103작업/PNG/WAV/Save 보호·Push0. 선행 관련commit1783cee, Phase9 hash 최신local log/최종보고 참조. [설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [최종QA](MAIN17_FINAL_QA.md) · [체크포인트](MAIN17_RESUME_CHECKPOINT.md).
 ## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
 
 BattleSceneController에서 스킬/아이템 열기 때 기본5명령 GameObject를 비활성화하여 표시·interactable·Raycast·Navigation을 함께 차단, 메뉴/대상/행동동안 유지·취소/뒤로/다음조작명령에서 복원한다. 기존Esc와같은 취소에 패드B도 연결했다. 기존812PASS 재사용(817 CSV/JSON 변경0), 이번고유검증484: **PASS482/FAIL0/NV0/USER2**이며 서로중복합산하지 않는다.

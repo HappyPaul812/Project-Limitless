@@ -17,15 +17,18 @@ namespace ProjectLimitless.World
         public const string Field = "Field_08_RedRift";
         public const string PreviousField = "Field_07_AshenReach";
         public const string EncounterId = "field08_main17_threat";
+        private static int interactionBlockedFrame = -1;
+        internal static bool CanBeginInteraction => Time.frameCount > interactionBlockedFrame;
+        internal static void BlockSameFrameInteraction() => interactionBlockedFrame = Time.frameCount;
         public static readonly string[] Sites = { "entry", "crack", "vibration", "tracks", "serin", "compare", "resonance", "witness", "threat", "after", "route", "withdraw" };
         public static readonly Vector2[] Positions = { new Vector2(7,0), new Vector2(4,0), new Vector2(2,-2), new Vector2(1,3), new Vector2(0,1), new Vector2(-1,1), new Vector2(-3,-2), new Vector2(-4,0), new Vector2(-4,0), new Vector2(-4,-1), new Vector2(-7,0), new Vector2(-7,1) };
         public static bool IsCurrent(int index) => QuestService.ActiveMainQuest?.Definition.QuestId == QuestId && QuestService.ActiveMainQuest.CurrentObjective?.TargetId == "field08_main17_" + Sites[index];
         internal static void Save() { if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession(); }
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        private static void Register() { SceneManager.sceneLoaded -= Install; SceneManager.sceneLoaded += Install; }
+        private static void Register() { interactionBlockedFrame = -1; SceneManager.sceneLoaded -= Install; SceneManager.sceneLoaded += Install; }
         private static void Install(Scene scene, LoadSceneMode mode)
         {
-            if (scene.name != Field && scene.name != PreviousField) return;
+            if (scene.name != Field && scene.name != PreviousField && scene.name != "Arbel" && scene.name != Chapter2Main16Flow.PreviousField) return;
             if (scene.GetRootGameObjects().Any(value => value.GetComponent<Chapter2Main17Flow>() != null)) return;
             var root = new GameObject("Chapter2Main17Flow", typeof(Chapter2Main17Flow));
             SceneManager.MoveGameObjectToScene(root, scene);
@@ -45,13 +48,19 @@ namespace ProjectLimitless.World
         }
         private void Start()
         {
-            if (gameObject.scene.name == PreviousField)
+            if (gameObject.scene.name != Field)
             {
-                var exit = gameObject.scene.GetRootGameObjects().FirstOrDefault(value => value.name == "Transition_west_to_field08");
+                // 패배/귀환 후에도 활성 Main17 목표는 같은 기존 서쪽 출구를 안내합니다. 다른 Main의 목표는 변경하지 않습니다.
+                string name = gameObject.scene.name == PreviousField ? "Transition_west_to_field08" : gameObject.scene.name == "Arbel" ? "Transition_northwest_to_field06" : "Transition_west_to_field07";
+                var exit = gameObject.scene.GetRootGameObjects().FirstOrDefault(value => value.name == name);
                 if (exit != null) foreach (string id in Sites) QuestNavigationTarget.Attach(exit, "field08_main17_" + id, "붉은 균열 협곡으로");
                 return;
             }
             BeginIfAvailable();
+            // 재 이동 연출은 기존 런타임 컴포넌트를 재사용합니다. Scene에 파일명이 다른 Behaviour 참조를 저장하지 않습니다.
+            foreach (var root in gameObject.scene.GetRootGameObjects())
+                foreach (var ash in root.GetComponentsInChildren<Transform>().Where(value => value.name.StartsWith("RedRiftGeometry_Ash")))
+                    ash.gameObject.AddComponent<Main16AshPulse>();
             if (DialoguePresenter.Instance == null) new GameObject("DialogueSystem").AddComponent<DialoguePresenter>();
             for (int i = 0; i < Sites.Length; i++)
             {
@@ -124,13 +133,15 @@ namespace ProjectLimitless.World
         }
         public void TryInteract()
         {
-            if (index == 0 || !Current || busy || WorldModalState.IsOpen || !Near() || DialoguePresenter.Instance == null) return;
+            if (index == 0 || !Current || busy || WorldModalState.IsOpen || !Chapter2Main17Flow.CanBeginInteraction || !Near() || DialoguePresenter.Instance == null) return;
             if (Chapter2Main17Flow.IsCurrent(8)) { EnterBattle(); return; }
             busy = true;
             DialoguePresenter.Instance.ShowSequence(Main17DialogueCatalog.Get(index), () =>
             {
                 busy = false;
                 if (!Chapter2Main17Flow.IsCurrent(index)) return;
+                // 게임패드 A의 같은 입력이 마지막 Next와 가까운 다음 조사에 동시에 전달되지 않게 한 프레임 막습니다.
+                Chapter2Main17Flow.BlockSameFrameInteraction();
                 string id = "field08_main17_" + Chapter2Main17Flow.Sites[index];
                 if (index == 7) QuestService.NotifyLocationReached(id); else QuestService.NotifyInteraction(id);
                 Chapter2Main17Flow.Save();
