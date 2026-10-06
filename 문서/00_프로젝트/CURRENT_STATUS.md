@@ -1,6 +1,6 @@
-## 2026-10-06 Main17 대형 개발 — Phase1 설계 확정
+## 2026-10-06 Main17 대형 개발 — Phase1~2 설계·Quest Data 완료
 
-main_17_red_rift / 붉은 균열 / Field_08_RedRift 정식 설계12목표·9단계 계획 확정. LOCAL 세린 Main15 정식 해금과 Chapter2 Battle BGM null/TBD 유지. 공식 Art와 로컬 Beneath_The_Cracked_Earth.mp3 존재 확인. 구현/Runtime QA는 아직 미완료, TTS 생성0·기존103변경 보존·Push0. 다음: Phase2 Quest Data. [설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [재개 지점](MAIN17_RESUME_CHECKPOINT.md). 선행 관련 commit d1b7cb8.
+main_17_red_rift / 붉은 균열 / Field_08_RedRift 정식 설계12목표·9단계 계획 확정. LOCAL 세린 Main15 정식 해금과 Chapter2 Battle BGM null/TBD 유지. 공식 Art와 로컬 Beneath_The_Cracked_Earth.mp3 존재 확인. QuestData12목표 생성·데이터단위17PASS/Compile성공/ConsoleError0. Field/실제 Runtime QA는 아직 미완료, TTS 생성0·기존103변경 보존·Push0. 다음: Phase3 Field08/Transition. [설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [재개 지점](MAIN17_RESUME_CHECKPOINT.md). 선행 관련 commit cca5a1f.
 
 ## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
 
