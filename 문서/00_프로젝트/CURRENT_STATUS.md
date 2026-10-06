@@ -1,6 +1,6 @@
-## 2026-10-06 Main17 대형 개발 — Phase1~7 완료
+## 2026-10-06 Main17 대형 개발 — Phase1~8 완료
 
-main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase7 실제 Save/Bootstrap Continue5지점 포함117PASS/FAIL0. Scene/좌표/목표/Party/Formation/Beast/Hearing/세린 정식해금/파생11Site 복원. 승리전8 수동재도전, 승리후9/Completed 유지. 다음: Phase8 BGM. 실제 로컬 Beneath_The_Cracked_Earth.mp3 가져오기·기존 BgmSceneCatalog에 Field08만 추가.07곡/Chapter2 Battle null 유지, Transition/Continue/승리복귀/Source1 확인. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit dba6df6. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
+main_17_red_rift / 붉은 균열 / Field_08_RedRift 12목표. LOCAL Main15 세린 정식 해금·기존 Party/Beast 보호. Phase8 전체169PASS/FAIL0. Field07→08 음악교체/Continue5지점/Battle null/정상승리08곡복귀/Source1·Loop·Mixer 확인. 로컬음악 SHA256 일치·176.48초. 다음: Phase9 통합 Runtime QA. 통합 최종 대표흐름·실제 Skill/Item 숨김·새대사 Portrait/Voice 없음·Bounds카메라/중복/자산보존 확인. Arbel/Field06에서 활성 Main17 내비게이션 반환 경로 점검. Phase1~8 재설계하지 않음. TTS0·원본PNG/사용자Save변경0·기존103상태보존·Push0. 선행관련commit c517036. [정식 설계](../03_스토리/Chapter2_Main17_붉은_균열.md) · [정확한 재개 지점](MAIN17_RESUME_CHECKPOINT.md).
 ## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
 
 BattleSceneController에서 스킬/아이템 열기 때 기본5명령 GameObject를 비활성화하여 표시·interactable·Raycast·Navigation을 함께 차단, 메뉴/대상/행동동안 유지·취소/뒤로/다음조작명령에서 복원한다. 기존Esc와같은 취소에 패드B도 연결했다. 기존812PASS 재사용(817 CSV/JSON 변경0), 이번고유검증484: **PASS482/FAIL0/NV0/USER2**이며 서로중복합산하지 않는다.

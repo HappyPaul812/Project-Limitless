@@ -11,6 +11,7 @@ using ProjectLimitless.World;
 using ProjectLimitless.UI;
 using ProjectLimitless.Battle;
 using UnityEngine.UI;
+using ProjectLimitless.Audio;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,6 +29,7 @@ namespace ProjectLimitless.EditorTools
         private static bool battle;
         private static bool paths;
         private static bool saves;
+        private static bool music;
         private static string Output => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../문서/00_프로젝트/Main17_Runtime_Results.txt"));
         static Main17RuntimeAudit()
         {
@@ -40,11 +42,12 @@ namespace ProjectLimitless.EditorTools
                 if (state == PlayModeStateChange.EnteredEditMode) { SessionState.SetBool(Armed, false); Save(); }
             };
         }
-        public static string LaunchConnections() { Results.Clear(); saves = false; paths = false; story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchStory() { Results.Clear(); saves = false; paths = false; story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchBattle() { Results.Clear(); saves = false; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchPaths() { Results.Clear(); saves = false; paths = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
-        public static string LaunchSaves() { Results.Clear(); saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchConnections() { Results.Clear(); music = false; saves = false; paths = false; story = false; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchStory() { Results.Clear(); music = false; saves = false; paths = false; story = true; battle = false; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchBattle() { Results.Clear(); music = false; saves = false; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchPaths() { Results.Clear(); music = false; saves = false; paths = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchSaves() { Results.Clear(); music = false; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
+        public static string LaunchAudio() { Results.Clear(); music = true; saves = true; paths = false; story = true; battle = true; SessionState.SetBool(Armed, true); return Partial9FixedSpriteAudit.Launch(); }
         private static T Value<T>(object owner, string name) => (T)owner.GetType().GetField(name, BindingFlags.Instance | BindingFlags.NonPublic).GetValue(owner);
         private static void Save() => File.WriteAllLines(Output, Results);
         private static void Check(bool condition, string id)
@@ -69,6 +72,15 @@ namespace ProjectLimitless.EditorTools
             Check(SceneManager.GetActiveScene().name == name, "Scene." + name);
             yield return Wait(.7);
             MonsterEncounterService.SuppressForSeconds(3600);
+            if (music)
+            {
+                var catalog = Resources.Load<BgmSceneCatalog>("Audio/Music/BgmSceneCatalog");
+                AudioClip expected = name == "Battle" ? catalog.FindBattle(Chapter2Main17Flow.Field, Chapter2Main17Flow.EncounterId, false) : catalog.Find(name);
+                Check(BgmPlaybackService.Instance != null && BgmPlaybackService.Instance.CurrentClip == expected, "BGM." + name + ".ExactClip");
+                Check(UnityEngine.Object.FindObjectsByType<BgmPlaybackService>().Count() == 1, "BGM." + name + ".SingleService");
+                var source = Value<AudioSource>(BgmPlaybackService.Instance, "source");
+                Check(source != null && source.loop && (expected == null || source.isPlaying) && source.outputAudioMixerGroup != null, "BGM." + name + ".LoopMixerPlaying");
+            }
         }
         private static IEnumerator Wait(double seconds)
         {
