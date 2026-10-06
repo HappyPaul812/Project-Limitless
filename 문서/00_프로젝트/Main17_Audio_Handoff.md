@@ -1,3 +1,9 @@
+## 2026-10-06 실제 납품 적용
+
+Blade and Gambit DELIVERED/APPLIED. Field07/08 일반·Story Battle 연결, 기존 단일Source/Mixer Fade0.20/0.75/0.9·LoopON. [현 정본](Chapter2_BGM_정본.md). 아래 null/TBD·Fade없음은 이전 이력이다.
+
+---
+
 # Main17 / Chapter2 Battle Audio Handoff
 
 상태: **Chapter2BattleMusic = AUDIO_WAITING_EXTERNAL**. 현재 BgmSceneCatalog.FindBattle의 Chapter2 기본 return null을 유지한다. 외부 담당이 곡을 선정하기 전 Chapter1 곡이나 가짜 Audio를 배정하지 않는다. TTS_PENDING14·Voice WAV는 별도이며 이 작업에서는 변경하지 않는다.

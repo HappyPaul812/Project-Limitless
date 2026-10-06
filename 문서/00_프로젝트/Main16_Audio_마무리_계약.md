@@ -1,3 +1,9 @@
+## 2026-10-06 최신 배정
+
+Field07 탐색/복귀 Where the Earth Breathes 유지. Chapter2 서부 일반/불씨망령 Story Battle은 Blade and Gambit. 이번 사용자 확정으로 아래 이전 null/TBD 계약을 대체한다. [정본](Chapter2_BGM_정본.md).
+
+---
+
 # Main16 Audio 마무리 계약 — 2026-10-03
 
 LOCAL 프로젝트와 기존 Main16 구현·Voice28/28·Runtime428 PASS 결과를 기준으로 한다. 순서는 문서화 → BGM 구현 → 범위 내 Foreground Audio 재생 검증 → 실제 오류 최소 수정 → 재검증이다. Main16 Quest 전체 감사와 Appearance 판정을 반복하지 않는다. 기존 사용자 변경과 원본 음악·WAV를 보존하며 GitHub Push는 하지 않는다.

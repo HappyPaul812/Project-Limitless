@@ -1,3 +1,9 @@
+## 2026-10-06 Chapter2 최신 정본
+
+Chapter2 서부 일반/Story Battle은 Blade and Gambit, Field07 Where the Earth Breathes, Field08 Beneath The Cracked Earth. [정본](Chapter2_BGM_정본.md). 아래 후보/Runtime미배정/null/TBD는 당시 이력이다.
+
+---
+
 # LIMITLESS Audio 설정 정책
 
 ## Main16 Field07 후속 확정 (2026-10-03)
