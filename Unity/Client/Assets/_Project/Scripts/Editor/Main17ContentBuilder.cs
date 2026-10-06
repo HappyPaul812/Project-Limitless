@@ -21,7 +21,7 @@ namespace ProjectLimitless.Editor
         public static readonly string[] Targets = { "entry", "crack", "vibration", "tracks", "serin", "compare",
             "resonance", "witness", "threat", "after", "route", "withdraw" };
 
-        /// <summary>설계 순서와 안정적인 ID를 Asset에 저장합니다. 미확정 보상 수치는 추가하지 않습니다.</summary>
+        /// <summary>설계 순서와 안정적인 ID와 사용자가 확정한 Chapter2 완료 보상을 Asset에 저장합니다.</summary>
         public static string BuildQuest()
         {
             string[] labels = { "붉은 균열 협곡 진입", "첫 붉은 균열 조사", "반복되는 진동 추적", "갈라진 동물 흔적 조사",
@@ -40,12 +40,13 @@ namespace ProjectLimitless.Editor
                 quest = ScriptableObject.CreateInstance<QuestDefinition>();
                 AssetDatabase.CreateAsset(quest, QuestPath);
             }
-            quest.ConfigureForAudit(QuestId, "붉은 균열", QuestType.Main, steps, new RewardBundle(), new[] { "main_16_shape_in_the_ash" });
+            quest.ConfigureForAudit(QuestId, "붉은 균열", QuestType.Main, steps,
+                new RewardBundle { Experience = 60, Currency = 50 }, new[] { "main_16_shape_in_the_ash" });
             quest.ConfigureDescription("붉은 균열 협곡에서 황야의 진동과 열기 흔적을 비교하고, 깊은 곳으로 향하는 경로의 안전을 판단한다.");
             EditorUtility.SetDirty(quest);
             AssetDatabase.SaveAssetIfDirty(quest);
             QuestCatalog.ReloadForAudit();
-            return QuestId + ": 12 sequential objectives / prerequisite Main16 / no new reward values";
+            return QuestId + ": 12 sequential objectives / prerequisite Main16 / approved reward EXP60 Talent50";
         }
 
         /// <summary>새 Field08 복사본만 Additive로 편집합니다. 출입구는 기존 공용 연결 데이터로 설치합니다.</summary>

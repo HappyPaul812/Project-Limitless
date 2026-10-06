@@ -1,0 +1,17 @@
+main_01_call_reaches|EXP=0|Talent=0|Defeat=
+main_02_grassland_anomaly|EXP=0|Talent=0|Defeat=field01_main02_investigation_encounter
+main_03_unfamiliar_companion|EXP=0|Talent=0|Defeat=field01_main03_taeon_encounter
+main_04_three_people|EXP=0|Talent=0|Defeat=field01_main04_three_people_encounter
+main_05_return_of_three|EXP=40|Talent=40|Defeat=
+main_06_into_the_forest|EXP=20|Talent=20|Defeat=
+main_07_deep_tracks|EXP=30|Talent=25|Defeat=field02_main07_paul_encounter
+main_08_what_they_avoid|EXP=30|Talent=30|Defeat=
+main_09_reunion_in_silence|EXP=35|Talent=35|Defeat=
+main_10_center_of_silence|EXP=40|Talent=40|Defeat=
+main_11_silent_catacomb|EXP=60|Talent=50|Defeat=dungeon01_b2_boss
+main_12_remaining_record|EXP=60|Talent=50|Defeat=
+main_13_drying_land|EXP=60|Talent=50|Defeat=field04_main13_serin_encounter
+main_14_ground_pulse|EXP=60|Talent=50|Defeat=field05_main14_fleeing_beasts
+main_15_burning_traces|EXP=60|Talent=50|Defeat=field06_m15_01
+main_16_shape_in_the_ash|EXP=0|Talent=0|Defeat=field07_main16_ember_wraith
+main_17_red_rift|EXP=60|Talent=50|Defeat=field08_main17_threat

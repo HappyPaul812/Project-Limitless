@@ -1,0 +1,5 @@
+Job,Level,Encounter,Win,AllyActions,EnemyActions,DamageTaken,HealingReceived,Potions,AllyKO,Seconds
+healer,4,Story,True,16,5,140,71,1,0,5.44
+healer,4,General,True,18,5,109,82,0,0,6.09
+healer,12,Story,True,15,4,112,104,0,0,5.01
+healer,12,General,True,19,6,109,94,0,0,6.64

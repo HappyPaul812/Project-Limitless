@@ -1,3 +1,14 @@
+# 2026-10-06 Main17 TTS 제외 최종 마감 — 최신 정본
+
+아래 Phase9 보고는 c182a04 당시 이력이다. 이후 사용자 승인으로 **Main17 완료 Reward EXP60·탈렌트50**을 확정했다. 환경 ART_WAITING_EXTERNAL, Chapter2 Battle BGM AUDIO_WAITING_EXTERNAL, TTS_PENDING14 유지. 신규 Elite는 Main17 미완성이 아니라 Main18 후보이며 이번에 만들지 않는다.
+
+이번 마감 근거: Main17_Reward_Audit.md, Main17_Field08_Art_Handoff.md, Main17_Audio_Handoff.md, Main17_Balance_QA.md, Main17_Closure_Runtime.txt. 기존309PASS는 재사용하며 새 검증에 합산하지 않는다. 새 밸런스는5Job×Lv4/9/12/16×Story/General40회 + 치유 스킬4회, 모두 실제 Controller에서 승리/복귀·KO0이다. 몬스터 수치 변경0. 보상 변경은 마지막 실제 대화·완료·중복방지·완료Save/Continue 및 레벨업 경계만 재검증한다. 기존 Save5지점은 반복하지 않는다.
+
+남은 수동 확인: 실물 Keyboard/Gamepad/Dungeon접촉 USER_INPUT_REQUIRED3, 탐색 BGM 음악적 적합성 USER_LISTENING_REQUIRED1. 일반장비 DF1/Standalone DR1은 기존 별도 범위다. TTS/외부환경/외부전투Audio 제외 Main17 기능·Story·Battle·Save·Path 진행 Blocker를 닫으며 실제 출시 전 수동/Release 검증을 완료로 취급하지 않는다.
+
+이번 마감 고유 검증 **PASS180 / FAIL0 / NOT_VERIFIED0 / 진행·Save·전투·Path Blocker0**. 원시236체크는 중복 제거해 Main17_Closure_Cases.csv에180개를 기록했다. 추가 치유4회는 같은 검증 ID를 재사용하므로 고유 합계에 다시 넣지 않는다. 기존309PASS 재사용은 이번180개와 별도 집계다. 마지막 실제 대화/지역명/QuestHUD/조사Prompt/Portrait/Voice없음 및 정상60·50완료와 Lv12→13/EXP30 경계, 중복지급0·완료Continue/BGM/Party/Beast PASS. Compile 완료·Console Error0/Warning0·Missing Script0·Bootstrap EditMode/격리Save해제/slot0/비포커스 복귀. 보호3075파일 누락0, 시작전103상태 보존. 실제 출시는 외부 납품·청취·Release 검증 후 판단한다.
+
+---
 # Main17 최종 통합 QA — 2026-10-06
 
 ## RESUME와 범위

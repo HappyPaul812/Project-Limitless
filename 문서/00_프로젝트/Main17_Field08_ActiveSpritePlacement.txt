@@ -1,0 +1,13 @@
+RockWest|pos=(-5.80, -2.20, 0.00)|scale=(1.00, 1.00, 1.00)|colliders=BoxCollider2D enabled=True trigger=False
+RockNorth|pos=(4.50, 4.40, 0.00)|scale=(1.00, 1.00, 1.00)|colliders=BoxCollider2D enabled=True trigger=False
+AshCrack_0|pos=(-4.50, -1.10, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_1|pos=(-3.95, -0.82, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_2|pos=(-3.40, -0.54, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_3|pos=(-2.85, -1.10, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_4|pos=(-2.30, -0.82, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_5|pos=(-1.75, -0.54, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_6|pos=(-1.20, -1.10, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+AshCrack_7|pos=(-0.65, -0.82, 0.00)|scale=(0.70, 0.08, 1.00)|colliders=
+CanyonLip_0|pos=(-9.10, 1.90, 0.00)|scale=(1.00, 1.00, 1.00)|colliders=BoxCollider2D enabled=True trigger=False
+CanyonLip_1|pos=(-9.10, -1.90, 0.00)|scale=(1.00, 1.00, 1.00)|colliders=BoxCollider2D enabled=True trigger=False
+Visual|pos=(0.00, 0.00, 0.00)|scale=(1.00, 1.00, 1.00)|colliders=

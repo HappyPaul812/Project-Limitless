@@ -83,8 +83,8 @@ MonoBehaviour:
     targetId: field08_main17_withdraw
     requiredCount: 1
   reward:
-    Experience: 0
-    Currency: 0
+    Experience: 60
+    Currency: 50
     Items: []
   prerequisiteQuestIds:
   - main_16_shape_in_the_ash
