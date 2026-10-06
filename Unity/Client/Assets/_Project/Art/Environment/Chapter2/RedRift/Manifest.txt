@@ -1,0 +1,15 @@
+LIMITLESS Chapter 2 - Main17 "Red Rift"
+Scene: Field_08_RedRift
+Display Name: Red Rift Canyon
+
+Manifest
+1. RedRift_Ground_Base.png - Base red/ochre ground tile.
+2. RedRift_Ground_Cracked_01.png - Cracked ground variant 01.
+3. RedRift_Ground_Cracked_02.png - Cracked ground variant 02.
+4. RedRift_Fissure_Edge.png - Deep fissure edge terrain tile with dark interior.
+5. RedRift_Fissure_Glow.png - Weak red glow overlay for fissure/light accents.
+6. RedRift_Obsidian_01.png - Obsidian rock/shard cluster prop.
+7. RedRift_AshPatch_01.png - Dark ash patch ground detail.
+8. RedRift_DeadShrub_01.png - Dead shrub / scorched plant prop.
+9. RedRift_Canyon_Edge_01.png - Canyon edge / wall piece.
+10. RedRift_AssetSheet_Preview.png - Preview sheet showing the asset set.

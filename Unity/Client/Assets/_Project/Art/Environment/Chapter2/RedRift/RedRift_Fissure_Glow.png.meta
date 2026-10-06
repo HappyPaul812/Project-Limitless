@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: a5e8ecfd26e820941a9e9f5d45c87295
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2205787128569313696
+    second: RedRift_Fissure_Glow_0
+  - first:
+      213: 2728974270644496445
+    second: RedRift_Fissure_Glow_1
+  - first:
+      213: 4229918152040763368
+    second: RedRift_Fissure_Glow_2
+  - first:
+      213: 5777351906111505909
+    second: RedRift_Fissure_Glow_3
+  - first:
+      213: 2495465640117953194
+    second: RedRift_Fissure_Glow_4
+  - first:
+      213: -2133887951622717894
+    second: RedRift_Fissure_Glow_5
+  - first:
+      213: 2769482719181621514
+    second: RedRift_Fissure_Glow_6
+  - first:
+      213: -5912547707696764569
+    second: RedRift_Fissure_Glow_7
+  - first:
+      213: -7507607467531504818
+    second: RedRift_Fissure_Glow_8
+  - first:
+      213: -8548830966289500262
+    second: RedRift_Fissure_Glow_9
+  - first:
+      213: -6868910430025740051
+    second: RedRift_Fissure_Glow_10
+  - first:
+      213: -3823219633297902292
+    second: RedRift_Fissure_Glow_11
+  - first:
+      213: -1914776096166592338
+    second: RedRift_Fissure_Glow_12
+  - first:
+      213: -5153570853581340834
+    second: RedRift_Fissure_Glow_13
+  - first:
+      213: 6959881269528391355
+    second: RedRift_Fissure_Glow_14
+  - first:
+      213: 4236783756106630303
+    second: RedRift_Fissure_Glow_15
+  - first:
+      213: 2469574958997606843
+    second: RedRift_Fissure_Glow_16
+  - first:
+      213: 2647499036723855696
+    second: RedRift_Fissure_Glow_17
+  - first:
+      213: 2597304875347990633
+    second: RedRift_Fissure_Glow_18
+  - first:
+      213: 6088033540709935231
+    second: RedRift_Fissure_Glow_19
+  - first:
+      213: 5662868929111331769
+    second: RedRift_Fissure_Glow_20
+  - first:
+      213: -3057570965055988236
+    second: RedRift_Fissure_Glow_21
+  - first:
+      213: 9033276350836523059
+    second: RedRift_Fissure_Glow_22
+  - first:
+      213: -7871597577051974222
+    second: RedRift_Fissure_Glow_23
+  - first:
+      213: 675203619157858923
+    second: RedRift_Fissure_Glow_24
+  - first:
+      213: 4858298448756025348
+    second: RedRift_Fissure_Glow_25
+  - first:
+      213: -7196899582724847610
+    second: RedRift_Fissure_Glow_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 1225
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9b088e4b78c9e10800000000000000
+      internalID: 2205787128569313696
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1187
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3822f2f3a34fd520800000000000000
+      internalID: 2728974270644496445
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_2
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1197
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8efcd51f520b3ba30800000000000000
+      internalID: 4229918152040763368
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1180
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5c33ae2f64d2050800000000000000
+      internalID: 5777351906111505909
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_4
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1173
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa26c6437cca1a220800000000000000
+      internalID: 2495465640117953194
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_5
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 1159
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3eba0db638e262e0800000000000000
+      internalID: -2133887951622717894
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_6
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 497
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0947681cdd2f6620800000000000000
+      internalID: 2769482719181621514
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 463
+        width: 25
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7692f259f2962fda0800000000000000
+      internalID: -5912547707696764569
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_8
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 402
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43f6b809ce9fc790800000000000000
+      internalID: -7507607467531504818
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_9
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 339
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a977471a7837c5980800000000000000
+      internalID: -8548830966289500262
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_10
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 262
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de017506b5abca0a0800000000000000
+      internalID: -6868910430025740051
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 71
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25baf2fff131fac0800000000000000
+      internalID: -3823219633297902292
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_12
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 70
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea0c49319495d65e0800000000000000
+      internalID: -1914776096166592338
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_13
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 69
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f3a7b0d96da78b0800000000000000
+      internalID: -5153570853581340834
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_14
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 69
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe622db327769060800000000000000
+      internalID: 6959881269528391355
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_15
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 41
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9481e4f0641cca30800000000000000
+      internalID: 4236783756106630303
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 49
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb190414751b54220800000000000000
+      internalID: 2469574958997606843
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_17
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 59
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0514d1bc85ecdb420800000000000000
+      internalID: 2647499036723855696
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_18
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 38
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 968d184e50b7b0420800000000000000
+      internalID: 2597304875347990633
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_19
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 21
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78edaedf3a0d7450800000000000000
+      internalID: 6088033540709935231
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_20
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 50
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b31741b94d869e40800000000000000
+      internalID: 5662868929111331769
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_21
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 41
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd1a4038635195d0800000000000000
+      internalID: -3057570965055988236
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_22
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 47
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3304c811bf4ac5d70800000000000000
+      internalID: 9033276350836523059
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_23
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 31
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b5ddfc85b772c290800000000000000
+      internalID: -7871597577051974222
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_24
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 31
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a56fe3d1ece5900800000000000000
+      internalID: 675203619157858923
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_25
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 19
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4082fe2e2b42c6340800000000000000
+      internalID: 4858298448756025348
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRift_Fissure_Glow_26
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 32
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6084787d5f97f1c90800000000000000
+      internalID: -7196899582724847610
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RedRift_Fissure_Glow_0: 2205787128569313696
+      RedRift_Fissure_Glow_1: 2728974270644496445
+      RedRift_Fissure_Glow_10: -6868910430025740051
+      RedRift_Fissure_Glow_11: -3823219633297902292
+      RedRift_Fissure_Glow_12: -1914776096166592338
+      RedRift_Fissure_Glow_13: -5153570853581340834
+      RedRift_Fissure_Glow_14: 6959881269528391355
+      RedRift_Fissure_Glow_15: 4236783756106630303
+      RedRift_Fissure_Glow_16: 2469574958997606843
+      RedRift_Fissure_Glow_17: 2647499036723855696
+      RedRift_Fissure_Glow_18: 2597304875347990633
+      RedRift_Fissure_Glow_19: 6088033540709935231
+      RedRift_Fissure_Glow_2: 4229918152040763368
+      RedRift_Fissure_Glow_20: 5662868929111331769
+      RedRift_Fissure_Glow_21: -3057570965055988236
+      RedRift_Fissure_Glow_22: 9033276350836523059
+      RedRift_Fissure_Glow_23: -7871597577051974222
+      RedRift_Fissure_Glow_24: 675203619157858923
+      RedRift_Fissure_Glow_25: 4858298448756025348
+      RedRift_Fissure_Glow_26: -7196899582724847610
+      RedRift_Fissure_Glow_3: 5777351906111505909
+      RedRift_Fissure_Glow_4: 2495465640117953194
+      RedRift_Fissure_Glow_5: -2133887951622717894
+      RedRift_Fissure_Glow_6: 2769482719181621514
+      RedRift_Fissure_Glow_7: -5912547707696764569
+      RedRift_Fissure_Glow_8: -7507607467531504818
+      RedRift_Fissure_Glow_9: -8548830966289500262
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

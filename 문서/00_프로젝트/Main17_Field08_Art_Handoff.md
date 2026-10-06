@@ -1,3 +1,9 @@
+## 2026-10-06 실제 납품 적용
+
+DELIVERED/APPLIED. 실제 원본·Import·교체 슬롯은 [적용 기록](Main17_Field08_Art_Applied.md). 아래 ART_WAITING_EXTERNAL은 납품 전 역사 계약이다.
+
+---
+
 # Main17 Field08 Art Handoff
 
 상태: **ART_WAITING_EXTERNAL**. 외부 아트 담당 세션용이며 현재 Placeholder를 완성 아트로 취급하지 않는다. 2026-10-06 실제 Field_08_RedRift Additive 조회, SpriteImporter 및 Renderer/Transform에서 추출했다. 원본 PNG와 ThirdParty는 수정하지 않는다.

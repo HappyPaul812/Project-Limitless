@@ -127,6 +127,9 @@ namespace ProjectLimitless.Editor
         /// <summary>복사된 타일의 녹색 경계를 없애고 기본 도형으로 협곡 지형을 표현합니다. PNG 원본이나 이전 Scene은 수정하지 않습니다.</summary>
         public static string PolishField()
         {
+            // 정식 원본이 도착한 뒤에는 생성기가 완성 Art를 다시 단색 Placeholder로 덮지 않습니다.
+            if (AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_Project/Art/Environment/Chapter2/RedRift/RedRift_Ground_Base.png") != null)
+                return ProjectLimitless.EditorTools.Main17EnvironmentArt.Apply();
             var active = UnityEngine.SceneManagement.SceneManager.GetActiveScene(); var selected = Selection.objects;
             var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Additive);
             try
