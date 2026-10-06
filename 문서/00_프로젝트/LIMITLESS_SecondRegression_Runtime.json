@@ -4461,8 +4461,8 @@
         {
             "category": "Defeat",
             "id": "equipment",
-            "status": "NOT_VERIFIED",
-            "evidence": "정식 장착 상태 저장 시스템 미구현 범위. Inventory 보존과 장착 검증을 구분"
+            "status": "DEFERRED_FEATURE",
+            "evidence": "일반 장비 장착 슬롯/장착ID/Save 계약 미구현. Inventory ItemId/Count 및 Beast 장착 저장과 구분. 별도 기능 요청 때 구현"
         },
         {
             "category": "Save",
@@ -4869,14 +4869,14 @@
         {
             "category": "Dungeon",
             "id": "physical-contact",
-            "status": "NOT_VERIFIED",
-            "evidence": "8 Encounter는 실제 Encounter 서비스→Battle→정상 공격 승리. OnCollisionEnter2D 물리 접촉 자체는 이 2차 실행에서 별도 확인하지 않음"
+            "status": "USER_INPUT_REQUIRED",
+            "evidence": "Collider/Default layer/Untagged/비Trigger/Collision callback→Battle/승리·도망 grace2초·복귀이격1.2 코드 확인. 실제 이동 물리 접촉 미실행; 사용자 일반 몬스터 접촉/도망 복귀 확인"
         },
         {
             "category": "Save",
             "id": "standalone-os-restart",
-            "status": "NOT_VERIFIED",
-            "evidence": "Bootstrap/Session reset→실제 Continue 확인. OS 프로세스 종료 후 standalone 재시작은 실행하지 않음"
+            "status": "DEFERRED_RELEASE_VALIDATION",
+            "evidence": "저장소 범위 게임 Standalone 산출물 미발견. Scene19개 존재·중복0/현재 ConsoleError0. Build 실행하지 않음; Release 후보 Build 후 프로세스 종료→실행→Continue 필요"
         },
         {
             "category": "Technical",

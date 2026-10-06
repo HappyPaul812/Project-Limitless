@@ -1,3 +1,9 @@
+## 2026-10-06 2차 QA 후속 분류 완료
+
+총817 유지·기존812PASS/FAIL0 재사용(재실행0). 남은NV3의 실제상태를 코드/Scene/설정/로컬산출물로 확인해 **DEFERRED_FEATURE1(일반장비장착 미구현), DEFERRED_RELEASE_VALIDATION1(Standalone 재시작), USER_INPUT_REQUIRED3(Dungeon물리접촉·실물Keyboard·Gamepad), NOT_VERIFIED0**로 분리했다. 상태 재분류이며 새 PASS가 아니다. 장비의 Inventory 수량저장/Beast장착저장과 일반장비 장착Save를 구분한다.
+
+Dungeon의 Collider/Default·Untagged/비Trigger/Collision→Battle 연결 및 승리·도망 grace2초·복귀이격1.2 정적 확인, 실제물리접촉 미실행. 저장소 안에 게임Standalone산출물없음·Scene19존재/중복0·현재ConsoleError0. 전체Build/Play/포커스전환0. 사용자 직접확인: 접촉→Battle/도망후재접촉, 실물키보드/게임패드. 확인된개발Blocker0·다음개발가능, Standalone Build/실행/OS재시작 및 실물검증은 Release전필수. Voice219/Main04재생성5 제외·Asset/게임C#/PNG/WAV/Save변경0. 마지막관련QA `feeaa08`, 이번문서commit 최종보고참조·Push0. [잔여·다음개발3단계](LIMITLESS_SECOND_QA_DEFERRED.md).
+
 ## 2026-10-06 2차 종합 회귀 RESUME 완료
 
 중단 전750 PASS를 재사용하고 MP0/침묵/Guard·전멸 보존·안전지역 Party·Main16 Hearing/Default·남은 전투 화면을 완료했다. 최신세부체크817: **PASS812 / FAIL0 / NOT_VERIFIED3 / USER_INPUT_REQUIRED2**. Main16 각75내부체크는 총수 중복 합산하지 않는다. 기존 전체QA/15 Skill/8 Dungeon/50 Mapping/Quest103을 처음부터 반복하지 않았다.

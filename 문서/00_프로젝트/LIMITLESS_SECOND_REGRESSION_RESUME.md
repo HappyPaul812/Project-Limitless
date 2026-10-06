@@ -50,3 +50,7 @@ Party의 Update도 Field03을 누락해 다음 프레임에 닫는 같은 정책
 ## 최종 체크포인트 — 완료
 
 기존750 PASS 재사용. 최신 체크817: PASS812/FAIL0/NV3/USER2. Party 결함1 수정·실패지역2 및 Save/Continue/유지/취소 PASS, Main16 Hearing/Default 각75내부PASS, 남은 화면39PNG 확인. 최종Compile/Console0·Bootstrap clean EditMode·비포커스·격리Save해제. 다음 정확한 시작점은 NV3(장착미구현/물리접촉/standalone 재시작), 실물입력2 및 별도 Voice청취219. 이미 완료된 자동 묶음 재실행 불필요. 파티Fix adbbfbb; QA commit 최종보고 참조.
+
+## 2차 QA 후속 정리 체크포인트 — 완료
+
+817중 기존PASS812/FAIL0 그대로, 재실행0. NV3→DEFERRED_FEATURE1(Equipment장착미구현)/DEFERRED_RELEASE_VALIDATION1(Standalone)/USER_INPUT_REQUIRED1(Dungeon접촉), 실물Keyboard/Gamepad2유지하여 USER총3·NV0. Collider/Layer/Tag/콜백/Battle연결/복귀grace는 정적확인, 접촉은 미실행. Scene19정상·저장소안게임Standalone산출물없음·전체Build0. 현재ConsoleError0/BootstrapEditMode비포커스. 다음정확한시작점은 사용자실물3 또는 Release후보 Build/재시작, Equipment는 별도구현요청. 이전RESUME의NV3기록은 당시이력이다. 기존812자동묶음·Voice219/Main045는 실행하지 않음. [최신Deferred목록](LIMITLESS_SECOND_QA_DEFERRED.md). 선행feeaa08, 이번commit최종보고참조.

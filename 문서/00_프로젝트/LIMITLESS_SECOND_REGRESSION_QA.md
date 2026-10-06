@@ -18,7 +18,13 @@ Save/Party/Formation/Inventory/성장/Beast/안전지대 및 던전 좌표 복�
 
 최종 상태는 PASS/FAIL/NOT_VERIFIED/USER_INPUT_REQUIRED/LISTENING_REQUIRED로 나눈다. 실패는 게임 Bug와 fixture 실패를 구분하며 실제 Bug만 최소 수정한다. 직접 관련 QA/문서만 commit, GitHub push0. 시작 선행commit `b8cd54c4d28abfa0ac99ff722fc7459b8bfdb5ee`.
 
-## 결과 — RESUME 완료
+## 현재 분류 — 2차 QA 후속 정리
+
+총817 유지: **PASS812 / FAIL0 / NOT_VERIFIED0 / DEFERRED_FEATURE1 / DEFERRED_RELEASE_VALIDATION1 / USER_INPUT_REQUIRED3 / FOREGROUND_REQUIRED0**. 기존812 PASS 재실행0, 새PASS0. 아래 RESUME 표는 이전 분류 이력이며 최신 CSV/JSON은 후속 분류를 반영한다.
+
+기존NV3은 장비장착 미구현→DEFERRED_FEATURE, Dungeon물리접촉→USER_INPUT_REQUIRED, Standalone OS재시작→DEFERRED_RELEASE_VALIDATION으로 옮겼다. Keyboard/Gamepad 사용자 입력2는 유지한다. Voice청취219/Main04재생성5는 별도 범위 그대로다. 현재 확인된 개발 Blocker0·다음 개발 가능, Release 전 실물입력/접촉/Standalone 실행과 재시작 필수. [잔여 상태·근거·다음 조치](LIMITLESS_SECOND_QA_DEFERRED.md).
+
+## RESUME 당시 결과 — 이력(후속 분류 전)
 
 최종 세부 체크 **817개: PASS 812 / FAIL 0 / NOT_VERIFIED 3 / USER_INPUT_REQUIRED 2 / LISTENING_REQUIRED 0(이번 실행 범위)**. 같은 category/id는 마지막 결과 하나만 유지한다. 세부 assert 수이며 서로 독립된 게임 시나리오 수가 아니다. Main16 내부75×2는 wrapper2 안의 증거로만 기록하고 총수에 중복 합산하지 않았다. 범위 밖 Voice Queue219는 별도 LISTENING_REQUIRED이며 위 분모에 포함하지 않는다.
 
