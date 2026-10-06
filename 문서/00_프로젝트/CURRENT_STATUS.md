@@ -1,3 +1,13 @@
+## 2026-10-06 수정 완료 Voice 개발 기록 MP4
+
+새 `F:\Downloads\Limitless_DevJourney_2026-10-06\Limitless_DevJourney_FixedVoice_2026-10-06.mp4` 완료. **5분28.13초 / 1920×1080 / 30fps / H264 / AAC48kStereo / 49.42MiB**. 공식 Recorder GameView+GameAudio 원본으로 Title·Intro·성별/길/직업 및 Sprite Preview·Main03후반·Main04첫조우·실제 전투 승리·결과 버튼 Field복귀를 담았다. 정상 새 격리 게임으로 진행했으며 미검증 구간은 녹화 밖 정상 진행했다. 첫 Main04 패배 후 정상 회복/재도전 승리를 사용하므로 구간 컷이 있으며 무편집 연속 플레이가 아니다.
+
+**Intro001~006 6개 + Character16개(Main03태온008~012, Main04미엘001~007·태온001~004)** 최종MP4 AAC 원본 일치22/22. 실제 전투 BGM도 정합. 기존 사용자 Runtime 청취 PASS 원본만 사용했고 신규 사람청취를 주장하지 않는다. Subtitle/Portrait/Player무음/UI/Voice순서·cutoff 검사 PASS, 전체decode오류0/검은화면0/최종A/V길이차4.33ms/끝Field정상. 실제 스킬·적 행동·정상 명령11회 승리/버튼 복귀, 이후 NPC대화0. 미엘008은 전투후대화라 제외, 미해결5Voice 진입0 및 TTS_REGEN_REQUIRED5 유지.
+
+게임 기능/수치/Quest/강제승리 조작0. 기존Unity관련3,048파일 해시 전부 동일, 임시 도구 제거 및 Package원래바이트복원, 사용자Save/Settings·Sprite·WAV보존. 종료 cleanBootstrap EditMode/컴파일오류0/포커스전환0. 정리 중 ImportWorker충돌2건은 동기Refresh 후 재컴파일완료·ConsoleError0으로 회복 확인했다. GitHubPush/기존영상덮어쓰기 없음.
+
+[전체 녹화 QA](LIMITLESS_DevJourney_FixedVoice_2026_10_06.md) · [최종 AAC23행](LIMITLESS_DevJourney_FixedVoice_2026_10_06_AAC_QA.csv). 사용자 직접 확인: 최종MP4 시청. 다음 권장 작업: Main04전투후5Voice 재생성·별도Runtime청취. 마지막 선행 관련commit `162ae1eeb36f03589306bddadb73891291450954`; 이번문서commit은 최종보고 참조.
+
 ## 2026-10-06 Main04 대기 지문 수정 및 전투 후 Voice 5건 재생성 전달
 
 대기 문장 “상황을 살피고 있습니다.”는 `MainQuest04FieldFlow.CreateStoryActor`의 공통 NpcController 설정으로, Dialogue ID·Sequence index·Manifest·Voice entry가 없다. 태온 기본 상호작용에서 이름/Portrait가 붙던 상태 설명을 **`<지문> 상황을 살피고 있습니다.`**로 수정했다. DialogueLine의 명시적 prefix 규칙으로 Character Speaker·Portrait·Voice를 제거하며, 잘못된 Voice ID가 전달돼도 Resolve하지 않는다. Player와 기존 Character 대사는 유지한다. 331 authored Dialogue에는 이 대기 설정이 원래 포함되지 않아 개수는 유지한다.
