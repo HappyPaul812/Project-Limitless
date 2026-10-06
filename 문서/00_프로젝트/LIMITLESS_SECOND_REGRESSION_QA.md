@@ -98,3 +98,7 @@ RESUME Runtime에서 Field03 지하묘지 입구 안내인과 Arbel 안내인 �
 최소 수정 계획: UI를 연 source가 현재 Scene에 속하고 기존 허용 지역3 중 하나일 때만 확정하도록 Open/Confirm 정책을 일치시킨다. 일반 Field/Battle/Scene 변경 후 확정은 계속 거절한다. 새 지역·편성 규칙·Beast 기능은 추가하지 않는다. 수정 후 두 지역의 적용/저장/Continue와 거절·취소 경계를 재검증한다.
 
 수정 완료: Open/Update/Confirm의 기존 허용 지역3 정책 공유 및 현재 source Scene 보호. Field03/Arbel 각각 확정·Save·Continue/다음 프레임 유지/취소 통과. Field/Battle 거절 통과.
+
+## 전투 하위 메뉴 개선 후속 — 완료
+
+기본5명령의 표시/입력/Navigation 숨김·취소/사용후복구 및 Esc/B 공통취소 적용. 기존812PASS와817CSV/JSON은이력보존, 변경영향은 별도고유484개(PASS482/FAIL0/NV0/USER2) QA로갱신했다. 일반/StoryMain03·04 정상승리/복귀·Save/Continue·전멸대표완료. USER프로젝트3/DF1/DR1/Voice219/Main045유지. [최신전투QA](LIMITLESS_BATTLE_SUBMENU_QA.md). 이번commit최종보고참조.

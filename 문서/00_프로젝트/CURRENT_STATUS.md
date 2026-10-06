@@ -1,3 +1,9 @@
+## 2026-10-06 전투 하위 메뉴 개선·통합 영향 회귀 완료
+
+BattleSceneController에서 스킬/아이템 열기 때 기본5명령 GameObject를 비활성화하여 표시·interactable·Raycast·Navigation을 함께 차단, 메뉴/대상/행동동안 유지·취소/뒤로/다음조작명령에서 복원한다. 기존Esc와같은 취소에 패드B도 연결했다. 기존812PASS 재사용(817 CSV/JSON 변경0), 이번고유검증484: **PASS482/FAIL0/NV0/USER2**이며 서로중복합산하지 않는다.
+
+5직업 Skill/Item/무효대상/사용/포커스·뒤로/5회표본/3해상도6캡처, 정상일반공격·Guard·Flee·Victory·Continue, Main03/04저작Dialogue/Portrait/정본Clip→Story2/3인정상승리·복귀·Roster보존, 전멸SafeZone/Continue PASS. 자연Main전체/음성의미청취는재실행하지 않았다. Compile0/ConsoleError0·기존CS0618 Warning16·이번 helper 신규Warning0·cleanBootstrapEditMode/비포커스/격리Save해제. 사용자확인:실물Keyboard/Gamepad/Dungeon접촉 USER3, 일반장비DF1/Standalone재시작DR1·Voice219/Main045유지. 다음권장:잔여실물확인 또는 다음개발, Blocker0. 게임코드1외QA·문서만변경·PNG/WAV/Save/Settings보존·기존103작업유지·Push0. 선행관련5a4d05a, 이번commit최종보고. [계획·전체QA](LIMITLESS_BATTLE_SUBMENU_QA.md) · [고유CSV](LIMITLESS_BattleSubmenu_Cases.csv).
+
 ## 2026-10-06 2차 QA 후속 분류 완료
 
 총817 유지·기존812PASS/FAIL0 재사용(재실행0). 남은NV3의 실제상태를 코드/Scene/설정/로컬산출물로 확인해 **DEFERRED_FEATURE1(일반장비장착 미구현), DEFERRED_RELEASE_VALIDATION1(Standalone 재시작), USER_INPUT_REQUIRED3(Dungeon물리접촉·실물Keyboard·Gamepad), NOT_VERIFIED0**로 분리했다. 상태 재분류이며 새 PASS가 아니다. 장비의 Inventory 수량저장/Beast장착저장과 일반장비 장착Save를 구분한다.
@@ -8,7 +14,7 @@ Dungeon의 Collider/Default·Untagged/비Trigger/Collision→Battle 연결 및 �
 
 중단 전750 PASS를 재사용하고 MP0/침묵/Guard·전멸 보존·안전지역 Party·Main16 Hearing/Default·남은 전투 화면을 완료했다. 최신세부체크817: **PASS812 / FAIL0 / NOT_VERIFIED3 / USER_INPUT_REQUIRED2**. Main16 각75내부체크는 총수 중복 합산하지 않는다. 기존 전체QA/15 Skill/8 Dungeon/50 Mapping/Quest103을 처음부터 반복하지 않았다.
 
-실제결함1: Field03/Arbel Party 확정 제한 및 Field03 다음 프레임 닫힘. 기존 허용지역3 정책을 Open/Update/Confirm에 공유하도록 최소수정, 실제 NPC 적용→Save→Bootstrap Continue/유지·취소 및 Field/Battle 차단 PASS. 13대표UI×3해상도39PNG 주요 글자·버튼 잘림 없음. Compile0/ConsoleError0 Warning0·종료 cleanBootstrap EditMode/비포커스/사용자Save·Settings보존. 보호3075파일 중Party코드1만변경, 기존PNG/WAV/TTS0.
+실제결함1: Field03/Arbel Party 확정 제한 및 Field03 다음 프레임 닫힘. 기존 허용지역3 정책을 Open/Update/Confirm에 공유하도록 최소수정, 실제 NPC 적용→Save→Bootstrap Continue/유지·취소 및 Field/Battle 차단 PASS. 13대표UI×3해상도39PNG 주요 글자·버튼 잘림 없음. Compile0/ConsoleError0·기존CS0618 Warning16·이번 helper 신규Warning0·종료 cleanBootstrap EditMode/비포커스/사용자Save·Settings보존. 보호3075파일 중Party코드1만변경, 기존PNG/WAV/TTS0.
 
 사용자확인: 실물Keyboard/Gamepad 입력2. 미검증: 실제 장착 상태(미구현), Dungeon물리접촉, standalone OS재시작3. 다음권장: 해당 미검증만 보완, 별도Voice청취219·기존Main04재생성5 유지. 마지막관련Fix `adbbfbb`, 이번QA commit 최종보고 참조. 기존103작업보존·Push0. [전체 QA](LIMITLESS_SECOND_REGRESSION_QA.md) · [Resume](LIMITLESS_SECOND_REGRESSION_RESUME.md) · [체크 CSV](LIMITLESS_SecondRegression_Cases.csv).
 

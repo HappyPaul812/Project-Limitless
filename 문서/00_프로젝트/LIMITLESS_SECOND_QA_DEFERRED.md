@@ -41,3 +41,7 @@ C. **Release 직전으로 유예 가능:** Standalone Build→실제 실행→�
 ### 변경·재개
 
 문서/CSV/Runtime JSON 분류만 변경. 게임C#/EditorQA/Scene/Asset/사용자Save/Settings/PNG/WAV 변경0, PASS812 재실행0·전체Build0·포커스전환0·Push0. 다음 세션 정확한 시작점은 이 목록의 USER3 또는 Release 준비/별도 Equipment 요청이다. 기존 QA launcher는 과거 실행용이며 전체 Launch를 상태 정리 목적으로 다시 실행하지 않는다. 선행 관련 commit `feeaa08`; 이번 문서commit은 최종보고 참조.
+
+## 전투 하위 메뉴 개선 후속 — 완료
+
+기본5명령의 표시/입력/Navigation 숨김·취소/사용후복구 및 Esc/B 공통취소 적용. 기존812PASS와817CSV/JSON은이력보존, 변경영향은 별도고유484개(PASS482/FAIL0/NV0/USER2) QA로갱신했다. 일반/StoryMain03·04 정상승리/복귀·Save/Continue·전멸대표완료. USER프로젝트3/DF1/DR1/Voice219/Main045유지. [최신전투QA](LIMITLESS_BATTLE_SUBMENU_QA.md). 이번commit최종보고참조.

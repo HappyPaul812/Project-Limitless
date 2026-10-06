@@ -1,0 +1,485 @@
+﻿id,status,evidence
+guardian/skill0/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+guardian/skill0/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+guardian/skill0/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+guardian/skill0/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+guardian/skill0/nav/Skill_guardian_taunt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill0/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill0/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill0/nav/Skill_guardian_intercept,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill0/nav/Skill_guardian_iron_defense,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill0/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/move,PASS,방향 이벤트 후 숨긴 기본명령으로 유출 없음
+guardian/cancel0/restore,PASS,기본5명령 표시·입력 복구
+guardian/cancel0/panels,PASS,닫힌 메뉴 잔류 없음
+guardian/return-focus0,PASS,원래 스킬 명령으로 포커스 복구
+guardian/skill1/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+guardian/skill1/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+guardian/skill1/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+guardian/skill1/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+guardian/skill1/nav/Skill_guardian_intercept,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill1/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill1/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill1/nav/Skill_guardian_taunt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill1/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/skill1/nav/Skill_guardian_iron_defense,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+guardian/cancel1/restore,PASS,기본5명령 표시·입력 복구
+guardian/cancel1/panels,PASS,닫힌 메뉴 잔류 없음
+guardian/return-focus1,PASS,원래 스킬 명령으로 포커스 복구
+action-ready,PASS,정상 행동 종료→다음 조작 가능한 명령 또는 승리
+guardian/use/restore,PASS,기본5명령 표시·입력 복구
+guardian/use/panels,PASS,닫힌 메뉴 잔류 없음
+healer/skill0/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+healer/skill0/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+healer/skill0/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+healer/skill0/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+healer/skill0/nav/Skill_healer_healing_light,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill0/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill0/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill0/nav/Skill_healer_cleanse,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill0/nav/Skill_healer_healing_wave,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill0/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+resolution/Skill1920,PASS,백그라운드 렌더링 해상도
+resolution/Skill1600,PASS,백그라운드 렌더링 해상도
+resolution/Skill1280,PASS,백그라운드 렌더링 해상도
+healer/move,PASS,방향 이벤트 후 숨긴 기본명령으로 유출 없음
+healer/cancel0/restore,PASS,기본5명령 표시·입력 복구
+healer/cancel0/panels,PASS,닫힌 메뉴 잔류 없음
+healer/return-focus0,PASS,원래 스킬 명령으로 포커스 복구
+healer/skill1/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+healer/skill1/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+healer/skill1/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+healer/skill1/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+healer/skill1/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill1/nav/Skill_healer_healing_light,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill1/nav/Skill_healer_healing_wave,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill1/nav/Skill_healer_cleanse,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill1/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/skill1/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/cancel1/restore,PASS,기본5명령 표시·입력 복구
+healer/cancel1/panels,PASS,닫힌 메뉴 잔류 없음
+healer/return-focus1,PASS,원래 스킬 명령으로 포커스 복구
+healer/target/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+healer/target/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+healer/target/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+healer/target/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+healer/target/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-cancel,PASS,대상 취소 후 스킬 메뉴 복귀
+healer/target-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+healer/target-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+healer/target-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+healer/target-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+healer/target-return/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-return/nav/Skill_healer_healing_wave,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-return/nav/Skill_healer_cleanse,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-return/nav/Skill_healer_healing_light,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/target-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+healer/use/restore,PASS,기본5명령 표시·입력 복구
+healer/use/panels,PASS,닫힌 메뉴 잔류 없음
+sharpshooter/skill0/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+sharpshooter/skill0/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+sharpshooter/skill0/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+sharpshooter/skill0/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+sharpshooter/skill0/nav/Skill_sharpshooter_aim,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill0/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill0/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill0/nav/Skill_sharpshooter_arrow_rain,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill0/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill0/nav/Skill_sharpshooter_companion_attack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/move,PASS,방향 이벤트 후 숨긴 기본명령으로 유출 없음
+sharpshooter/cancel0/restore,PASS,기본5명령 표시·입력 복구
+sharpshooter/cancel0/panels,PASS,닫힌 메뉴 잔류 없음
+sharpshooter/return-focus0,PASS,원래 스킬 명령으로 포커스 복구
+sharpshooter/skill1/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+sharpshooter/skill1/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+sharpshooter/skill1/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+sharpshooter/skill1/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+sharpshooter/skill1/nav/Skill_sharpshooter_companion_attack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill1/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill1/nav/Skill_sharpshooter_aim,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill1/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill1/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/skill1/nav/Skill_sharpshooter_arrow_rain,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/cancel1/restore,PASS,기본5명령 표시·입력 복구
+sharpshooter/cancel1/panels,PASS,닫힌 메뉴 잔류 없음
+sharpshooter/return-focus1,PASS,원래 스킬 명령으로 포커스 복구
+sharpshooter/target/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+sharpshooter/target/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+sharpshooter/target/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+sharpshooter/target/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+sharpshooter/target/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target/nav/Combatant_venom_bee_1,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-cancel,PASS,대상 취소 후 스킬 메뉴 복귀
+sharpshooter/target-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+sharpshooter/target-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+sharpshooter/target-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+sharpshooter/target-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+sharpshooter/target-return/nav/Skill_sharpshooter_aim,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-return/nav/Skill_sharpshooter_companion_attack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-return/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/target-return/nav/Skill_sharpshooter_arrow_rain,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+sharpshooter/use/restore,PASS,기본5명령 표시·입력 복구
+sharpshooter/use/panels,PASS,닫힌 메뉴 잔류 없음
+fighter/skill0/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+fighter/skill0/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+fighter/skill0/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+fighter/skill0/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+fighter/skill0/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill0/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill0/nav/Skill_fighter_finishing_strike,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill0/nav/Skill_fighter_whirlwind,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill0/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill0/nav/Skill_fighter_slash_stack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/move,PASS,방향 이벤트 후 숨긴 기본명령으로 유출 없음
+fighter/cancel0/restore,PASS,기본5명령 표시·입력 복구
+fighter/cancel0/panels,PASS,닫힌 메뉴 잔류 없음
+fighter/return-focus0,PASS,원래 스킬 명령으로 포커스 복구
+fighter/skill1/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+fighter/skill1/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+fighter/skill1/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+fighter/skill1/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+fighter/skill1/nav/Skill_fighter_slash_stack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill1/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill1/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill1/nav/Skill_fighter_whirlwind,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill1/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/skill1/nav/Skill_fighter_finishing_strike,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/cancel1/restore,PASS,기본5명령 표시·입력 복구
+fighter/cancel1/panels,PASS,닫힌 메뉴 잔류 없음
+fighter/return-focus1,PASS,원래 스킬 명령으로 포커스 복구
+fighter/target/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+fighter/target/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+fighter/target/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+fighter/target/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+fighter/target/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target/nav/Combatant_grass_slime_b,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target/nav/Combatant_grass_slime_a,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-cancel,PASS,대상 취소 후 스킬 메뉴 복귀
+fighter/target-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+fighter/target-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+fighter/target-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+fighter/target-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+fighter/target-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-return/nav/Skill_fighter_finishing_strike,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-return/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-return/nav/Skill_fighter_slash_stack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/target-return/nav/Skill_fighter_whirlwind,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+fighter/use/restore,PASS,기본5명령 표시·입력 복구
+fighter/use/panels,PASS,닫힌 메뉴 잔류 없음
+mage/skill0/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+mage/skill0/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+mage/skill0/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+mage/skill0/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+mage/skill0/nav/Skill_mage_thunderbolt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill0/nav/Skill_mage_gaia_wall,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill0/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill0/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill0/nav/Skill_mage_fireball,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill0/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/move,PASS,방향 이벤트 후 숨긴 기본명령으로 유출 없음
+mage/cancel0/restore,PASS,기본5명령 표시·입력 복구
+mage/cancel0/panels,PASS,닫힌 메뉴 잔류 없음
+mage/return-focus0,PASS,원래 스킬 명령으로 포커스 복구
+mage/skill1/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+mage/skill1/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+mage/skill1/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+mage/skill1/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+mage/skill1/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill1/nav/Skill_mage_gaia_wall,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill1/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill1/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill1/nav/Skill_mage_fireball,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/skill1/nav/Skill_mage_thunderbolt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/cancel1/restore,PASS,기본5명령 표시·입력 복구
+mage/cancel1/panels,PASS,닫힌 메뉴 잔류 없음
+mage/return-focus1,PASS,원래 스킬 명령으로 포커스 복구
+mage/target/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+mage/target/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+mage/target/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+mage/target/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+mage/target/nav/Combatant_grass_slime_b,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target/nav/Combatant_grass_slime_a,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target/nav/Combatant_venom_bee_1,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-cancel,PASS,대상 취소 후 스킬 메뉴 복귀
+mage/target-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+mage/target-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+mage/target-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+mage/target-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+mage/target-return/nav/Skill_mage_thunderbolt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-return/nav/Skill_mage_gaia_wall,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-return/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/target-return/nav/Skill_mage_fireball,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+mage/use/restore,PASS,기본5명령 표시·입력 복구
+mage/use/panels,PASS,닫힌 메뉴 잔류 없음
+item/open/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+item/open/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+item/open/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+item/open/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+item/open/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Item_item_healing_potion_small,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Combatant_grass_slime_a,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Combatant_grass_slime_b,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Combatant_venom_bee_1,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/open/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+resolution/Item1920,PASS,백그라운드 렌더링 해상도
+resolution/Item1600,PASS,백그라운드 렌더링 해상도
+resolution/Item1280,PASS,백그라운드 렌더링 해상도
+item/cancel/restore,PASS,기본5명령 표시·입력 복구
+item/cancel/panels,PASS,닫힌 메뉴 잔류 없음
+item/target/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+item/target/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+item/target/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+item/target/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+item/target/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+item/target-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+item/target-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+item/target-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+item/target-return/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/target-return/nav/Item_item_healing_potion_small,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid,PASS,최대 HP 사용 거절 후 메뉴 유지
+item/invalid-return/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+item/invalid-return/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+item/invalid-return/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+item/invalid-return/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+item/invalid-return/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/Item_item_healing_potion_small,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/invalid-return/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+item/use/restore,PASS,기본5명령 표시·입력 복구
+item/use/panels,PASS,닫힌 메뉴 잔류 없음
+item/consume,PASS,실제 사용 수량1 소비
+command/guard,PASS,정상 방어 행동
+encounter,PASS,실제 Encounter 서비스→Battle·물리접촉과 구분
+enter-battle,PASS,일반 Battle 도착
+normal/item/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+normal/item/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+normal/item/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+normal/item/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+normal/item/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/Combatant_dungeon01_wight_a,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+normal/item/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+command/flee,PASS,도망 정상 복귀·승리 보상 없음
+normal-victory,PASS,정상 공격/연출/턴 승리·강제 KO 없음; attacks=8
+victory/return,PASS,실제 결과 버튼→Dungeon
+save/write,PASS,격리 실제 Save
+save/continue,PASS,실제 Bootstrap Continue→Scene/성장/Party/Beast 보존
+Main3/before/text0,PASS,저작된 전체 자막 일치
+Main3/before/voice0,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/before/portrait0,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/before/text1,PASS,저작된 전체 자막 일치
+Main3/before/voice1,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/before/portrait1,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/before/text2,PASS,저작된 전체 자막 일치
+Main3/before/voice2,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/before/portrait2,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/before/text3,PASS,저작된 전체 자막 일치
+Main3/before/voice3,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/before/portrait3,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/before/text4,PASS,저작된 전체 자막 일치
+Main3/before/voice4,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/before/portrait4,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/before/close,PASS,대화 종료 후 modal 정리
+Main3/enter,PASS,실제 Story 전환 서비스; 자연 Quest 전수 재생은 기존 근거 재사용
+Main3/temporary-party,PASS,정식 Story 임시 편성 2/3명
+Main3/skill/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+Main3/skill/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+Main3/skill/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+Main3/skill/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+Main3/skill/nav/Skill_guardian_intercept,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/skill/nav/Skill_guardian_iron_defense,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/skill/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/skill/nav/Skill_guardian_taunt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/skill/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/skill/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/cancel/restore,PASS,기본5명령 표시·입력 복구
+Main3/cancel/panels,PASS,닫힌 메뉴 잔류 없음
+Main3/item/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+Main3/item/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+Main3/item/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+Main3/item/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+Main3/item/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/item/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/item/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main3/return,PASS,"Scene=Field_01 before={""UnlockedCharacterIds"":[""companion_miel"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":false} after={""UnlockedCharacterIds"":[""companion_miel"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":false}"
+Main3/after/text0,PASS,저작된 전체 자막 일치
+Main3/after/voice0,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait0,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text1,PASS,저작된 전체 자막 일치
+Main3/after/voice1,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait1,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text2,PASS,저작된 전체 자막 일치
+Main3/after/voice2,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait2,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text3,PASS,저작된 전체 자막 일치
+Main3/after/voice3,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait3,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text4,PASS,저작된 전체 자막 일치
+Main3/after/voice4,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait4,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text5,PASS,저작된 전체 자막 일치
+Main3/after/voice5,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait5,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/text6,PASS,저작된 전체 자막 일치
+Main3/after/voice6,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main3/after/portrait6,PASS,Player Portrait 없음/Character Portrait 표시
+Main3/after/close,PASS,대화 종료 후 modal 정리
+Main4/before/text0,PASS,저작된 전체 자막 일치
+Main4/before/voice0,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait0,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text1,PASS,저작된 전체 자막 일치
+Main4/before/voice1,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait1,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text2,PASS,저작된 전체 자막 일치
+Main4/before/voice2,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait2,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text3,PASS,저작된 전체 자막 일치
+Main4/before/voice3,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait3,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text4,PASS,저작된 전체 자막 일치
+Main4/before/voice4,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait4,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text5,PASS,저작된 전체 자막 일치
+Main4/before/voice5,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait5,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text6,PASS,저작된 전체 자막 일치
+Main4/before/voice6,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait6,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text7,PASS,저작된 전체 자막 일치
+Main4/before/voice7,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait7,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text8,PASS,저작된 전체 자막 일치
+Main4/before/voice8,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait8,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/text9,PASS,저작된 전체 자막 일치
+Main4/before/voice9,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/before/portrait9,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/before/close,PASS,대화 종료 후 modal 정리
+Main4/enter,PASS,실제 Story 전환 서비스; 자연 Quest 전수 재생은 기존 근거 재사용
+Main4/temporary-party,PASS,정식 Story 임시 편성 2/3명
+Main4/skill/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+Main4/skill/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+Main4/skill/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+Main4/skill/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+Main4/skill/nav/Skill_guardian_taunt,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/skill/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/skill/nav/Skill_guardian_intercept,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/skill/nav/Skill_guardian_iron_defense,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/skill/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/skill/nav/Back,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/cancel/restore,PASS,기본5명령 표시·입력 복구
+Main4/cancel/panels,PASS,닫힌 메뉴 잔류 없음
+Main4/item/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+Main4/item/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+Main4/item/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+Main4/item/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+Main4/item/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/item/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/item/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+Main4/return,PASS,"Scene=Field_01 before={""UnlockedCharacterIds"":[""companion_miel"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":false} after={""UnlockedCharacterIds"":[""companion_miel"",""companion_taeon""],""ActivePartyCharacterIds"":[""companion_taeon"",""companion_miel""],""Formation"":[],""HasManualComposition"":false,""PaulDefaultApplied"":false}"
+Main4/after/text0,PASS,저작된 전체 자막 일치
+Main4/after/voice0,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait0,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text1,PASS,저작된 전체 자막 일치
+Main4/after/voice1,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait1,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text2,PASS,저작된 전체 자막 일치
+Main4/after/voice2,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait2,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text3,PASS,저작된 전체 자막 일치
+Main4/after/voice3,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait3,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text4,PASS,저작된 전체 자막 일치
+Main4/after/voice4,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait4,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text5,PASS,저작된 전체 자막 일치
+Main4/after/voice5,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait5,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text6,PASS,저작된 전체 자막 일치
+Main4/after/voice6,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait6,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text7,PASS,저작된 전체 자막 일치
+Main4/after/voice7,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait7,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/text8,PASS,저작된 전체 자막 일치
+Main4/after/voice8,PASS,정본 Clip 연결/Player무음; 의미 청취 아님
+Main4/after/portrait8,PASS,Player Portrait 없음/Character Portrait 표시
+Main4/after/close,PASS,대화 종료 후 modal 정리
+defeat/menu/hidden,PASS,기본5명령 GameObject 비활성·입력 차단
+defeat/menu/focus,PASS,메뉴/대상 포커스 유지·기본 명령 유출 없음
+defeat/menu/raycast,PASS,비활성 기본명령 Graphic은 Raycast 후보에서 제외
+defeat/menu/hidden-submit,PASS,숨긴 버튼 Submit으로 다른 명령 시작 없음
+defeat/menu/nav/Combatant_companion_taeon,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/Combatant_dungeon01_b2_wight,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/CancelButton,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/ItemBack,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/Combatant_companion_miel,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/Settings,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/Combatant_player,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/menu/nav/Combatant_dungeon01_b2_echo,PASS,활성 Selectable에서 숨긴 기본 명령으로 Navigation 없음
+defeat/return,PASS,전멸 Fixture→최근 안전지대/성장·재화 보존
+defeat/resources,PASS,전멸 HP/MP 복원
+frames/skill0,PASS,하위 메뉴 전환 직후5회 표본 숨김 유지
+frames/skill1,PASS,하위 메뉴 전환 직후5회 표본 숨김 유지
+frames/skill2,PASS,하위 메뉴 전환 직후5회 표본 숨김 유지
+frames/skill3,PASS,하위 메뉴 전환 직후5회 표본 숨김 유지
+frames/skill4,PASS,하위 메뉴 전환 직후5회 표본 숨김 유지
+skill/back/restore,PASS,기본5명령 표시·입력 복구
+skill/back/panels,PASS,닫힌 메뉴 잔류 없음
+frames/item0,PASS,빈 아이템 목록도 기본 버튼 노출 없음
+frames/item1,PASS,빈 아이템 목록도 기본 버튼 노출 없음
+frames/item2,PASS,빈 아이템 목록도 기본 버튼 노출 없음
+frames/item3,PASS,빈 아이템 목록도 기본 버튼 노출 없음
+frames/item4,PASS,빈 아이템 목록도 기본 버튼 노출 없음
+item/back/restore,PASS,기본5명령 표시·입력 복구
+item/back/panels,PASS,닫힌 메뉴 잔류 없음
+frames/restore0,PASS,복귀 뒤 표시·입력·원래 포커스 유지
+frames/restore1,PASS,복귀 뒤 표시·입력·원래 포커스 유지
+frames/restore2,PASS,복귀 뒤 표시·입력·원래 포커스 유지
+frames/restore3,PASS,복귀 뒤 표시·입력·원래 포커스 유지
+frames/restore4,PASS,복귀 뒤 표시·입력·원래 포커스 유지
+input/actions,PASS,실제 Move/Submit/Cancel Action 활성 연결; 실물 입력과 구분
+input/cancel-bindings,PASS,실제 Cancel 연결=*/{Cancel}; 실물 입력 PASS 아님
+physical-keyboard,USER_INPUT_REQUIRED,실물 입력 미실행
+physical-gamepad,USER_INPUT_REQUIRED,실물 입력 미실행
+visual/Skill,PASS,3해상도 실제 Skill3PNG 검토·뒤 기본명령 표시 없음·주요 버튼/본문 잘림 없음
+visual/Item,PASS,3해상도 Item3PNG 검토·뒤 기본명령 표시 없음·취소 유지
+technical/compile,PASS,최신 게임C#/QA 재컴파일 성공
+technical/console,PASS,최종 Console Error0·기존CS0618 Warning16·이번 helper 신규Warning0
+technical/restored,PASS,Bootstrap clean EditMode/비포커스/SaveAudit null/slot0/runInBackground 원복
+technical/assets,PASS,원3075 보호파일 중 기존PartyFix와 이번Battle코드만 차이·누락0·PNG/WAV/사용자Save/Settings 동일
+technical/reuse,PASS,기존817 CSV/JSON gitdiff0·812PASS 이력 변경없음

@@ -54,3 +54,7 @@ Party의 Update도 Field03을 누락해 다음 프레임에 닫는 같은 정책
 ## 2차 QA 후속 정리 체크포인트 — 완료
 
 817중 기존PASS812/FAIL0 그대로, 재실행0. NV3→DEFERRED_FEATURE1(Equipment장착미구현)/DEFERRED_RELEASE_VALIDATION1(Standalone)/USER_INPUT_REQUIRED1(Dungeon접촉), 실물Keyboard/Gamepad2유지하여 USER총3·NV0. Collider/Layer/Tag/콜백/Battle연결/복귀grace는 정적확인, 접촉은 미실행. Scene19정상·저장소안게임Standalone산출물없음·전체Build0. 현재ConsoleError0/BootstrapEditMode비포커스. 다음정확한시작점은 사용자실물3 또는 Release후보 Build/재시작, Equipment는 별도구현요청. 이전RESUME의NV3기록은 당시이력이다. 기존812자동묶음·Voice219/Main045는 실행하지 않음. [최신Deferred목록](LIMITLESS_SECOND_QA_DEFERRED.md). 선행feeaa08, 이번commit최종보고참조.
+
+## 전투 하위 메뉴 개선 후속 — 완료
+
+기본5명령의 표시/입력/Navigation 숨김·취소/사용후복구 및 Esc/B 공통취소 적용. 기존812PASS와817CSV/JSON은이력보존, 변경영향은 별도고유484개(PASS482/FAIL0/NV0/USER2) QA로갱신했다. 일반/StoryMain03·04 정상승리/복귀·Save/Continue·전멸대표완료. USER프로젝트3/DF1/DR1/Voice219/Main045유지. [최신전투QA](LIMITLESS_BATTLE_SUBMENU_QA.md). 이번commit최종보고참조.

@@ -93,6 +93,8 @@ namespace ProjectLimitless.Battle
         private Image itemMenuPanel;
         private readonly List<Button> itemMenuButtons = new List<Button>();
         private bool choosingItem;
+        // 하위 메뉴에서 시작한 대상 선택·행동이 끝나기 전까지 기본 명령의 표시와 입력을 함께 막습니다.
+        private bool commandMenuHidden;
         private bool targetSelectionReturnsToItemMenu;
         private bool choosingTarget;
         private bool choosingSkill;
@@ -245,8 +247,9 @@ namespace ProjectLimitless.Battle
 
         private void Update()
         {
-            if (Keyboard.current == null || battleEnded || actionPlaying) return;
-            if (!Keyboard.current.escapeKey.wasPressedThisFrame) return;
+            if (battleEnded || actionPlaying) return;
+            // 같은 취소 흐름을 Esc와 패드 B가 사용합니다. 키보드가 없는 패드 환경도 취소할 수 있습니다.
+            if (Keyboard.current?.escapeKey.wasPressedThisFrame != true && Gamepad.current?.buttonEast.wasPressedThisFrame != true) return;
             CancelCurrentSelection();
         }
 
@@ -3115,7 +3118,17 @@ namespace ProjectLimitless.Battle
 
         private void SetCommandButtons(bool enabled)
         {
-            foreach (Selectable selectable in commandButtons) selectable.interactable = enabled;
+            if (enabled) commandMenuHidden = false;
+            else if (choosingSkill || choosingItem) commandMenuHidden = true;
+            foreach (Selectable selectable in commandButtons)
+            {
+                // 명령 패널 전체에는 취소·스킬 목록도 있으므로 기본 버튼만 끕니다. 비활성 GameObject는
+                // 렌더링·Raycast·자동 Navigation에서 제외되며 OnDisable이 이전 선택 강조도 정리합니다.
+                if (commandMenuHidden && EventSystem.current?.currentSelectedGameObject == selectable.gameObject)
+                    EventSystem.current.SetSelectedGameObject(null);
+                selectable.interactable = enabled && !commandMenuHidden;
+                selectable.gameObject.SetActive(!commandMenuHidden);
+            }
             if (!enabled) return;
 
             // 방어의 기존 Invalid Action UX처럼 스킬도 누를 수 있는 상태로 두고 흐린 색과 안내를
