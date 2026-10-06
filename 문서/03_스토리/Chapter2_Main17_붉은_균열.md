@@ -58,3 +58,7 @@ Save Version/새 Flag를 추가하지 않는다. Quest ID/count/CompletedIds·Sc
 9. 대표 전체 흐름·기존 Main16/전투 메뉴 보호·Compile/Console·diff 확인.
 
 각 단계의 관련 파일만 commit, Push0. 기존812PASS와 전투 메뉴482PASS는 재사용하고 실제 변경 영향만 재검증한다. USER_INPUT_REQUIRED(물리 입력/실제 청취), DEFERRED_FEATURE(일반 장비), DEFERRED_RELEASE_VALIDATION(Standalone)은 이전 결과와 분리하여 유지한다. 작업 완료 전 Runtime PASS를 추정하지 않는다.
+
+## Phase7 저장 검증 경계
+
+Save Version1/일반 저장 코드는 변경하지 않았다. 실제 격리 Save→Bootstrap Continue 5지점(진입 조사중/목격전/목격완료·승리전/승리후/완료)을 검증한다. Scene/좌표·Quest count/Completed·Party/Formation·Beast·Hearing·세린 정식해금·11조사지점 재구성이 동일하다. 도망 공용 복귀 API 제어는 실물 도망 입력 검증과 구분한다. 일반 Field08 갑충은 기존35초 런타임 respawn 정책이며 일반 몬스터 재생성 타이머는 Save JSON에 영구 저장되지 않는다. 같은 Play 세션 Continue의 런타임 상태와 OS재시작 저장을 구분하며 후자는 기존 Release 검증 범위다.
