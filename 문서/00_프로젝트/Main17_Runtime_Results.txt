@@ -1,0 +1,16 @@
+PASS|Scene.Field_07_AshenReach
+PASS|Gate.LockedBeforeMain16
+PASS|Gate.OpenAfterMain16
+PASS|Main17.Available
+PASS|Field07.SpawnSeparated
+PASS|Field07.TwoTransitions
+PASS|Scene.Field_08_RedRift
+PASS|Field08.SpawnRestored
+PASS|Field08.Bounds21x15
+PASS|Field08.EastOnlyTransition
+PASS|Field08.DeepWestClosed
+PASS|Field08.Camera
+PASS|Field08.NoImmediateReturn
+PASS|Scene.Field_07_AshenReach
+PASS|Field07.ReturnSpawnRestored
+PASS|Field07.NoImmediateReturn
