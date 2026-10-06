@@ -1,3 +1,9 @@
+## 최신 Audio 정본 — 2026-10-06
+
+Field07 탐색/조사/전투 후 복귀는 Where the Earth Breathes 유지. Chapter2 서부 일반 Encounter 및 Main16 불씨망령 Story Battle은 **Blade and Gambit**로 확정·실제 반영했다. Field08 탐색/복귀는 Beneath The Cracked Earth, Main17 일반/Story 전투도 Blade다. 기존 전용 Boss곡 우선, 다른 Boss 공통 강제 배정 없음. 기존 단일 Source의 Fade/Loop/Field07·08 실제 일반조우 및 Main17 Story승리/Continue 검증 PASS. [현재 정본](../00_프로젝트/Chapter2_BGM_정본.md), Audio commit53ef42c, 최종 QA70f8921. 아래 null/TBD·후보/미적용 문장은 당시 이력이며 현재 배정으로 해석하지 않는다.
+
+---
+
 # Chapter 2 Main16 — 재 속의 형상
 
 > 2026-10-06 후속 확장: 별도 사용자 요청으로 [Main17 붉은 균열](Chapter2_Main17_붉은_균열.md)을 이어 구현한다. 아래 ‘Main17을 구현하지 않는다’는 최초 Main16 작업 범위 이력이며 Main16 본문/Quest/Voice/전투 정책은 보존한다.

@@ -1,3 +1,9 @@
+## 최신 Audio 정본 — 2026-10-06
+
+Field07 탐색/조사/전투 후 복귀는 Where the Earth Breathes 유지. Chapter2 서부 일반 Encounter 및 Main16 불씨망령 Story Battle은 **Blade and Gambit**로 확정·실제 반영했다. Field08 탐색/복귀는 Beneath The Cracked Earth, Main17 일반/Story 전투도 Blade다. 기존 전용 Boss곡 우선, 다른 Boss 공통 강제 배정 없음. 기존 단일 Source의 Fade/Loop/Field07·08 실제 일반조우 및 Main17 Story승리/Continue 검증 PASS. [현재 정본](../00_프로젝트/Chapter2_BGM_정본.md), Audio commit53ef42c, 최종 QA70f8921. 아래 null/TBD·후보/미적용 문장은 당시 이력이며 현재 배정으로 해석하지 않는다.
+
+---
+
 # Main16 Runtime 구현 계약
 
 후속 Audio 확정: Field07 탐색·조사·전투 후 복귀는 Where the Earth Breathes다. Voice28개는 기존 Mapping을 유지한다. 전투 음악은 사용자 재확인으로 null/TBD, 목격/Main17 곡은 후보·미적용이다. 아래 미배정 기록은 최초 구현 이력이며 [Audio 마무리 계약](../00_프로젝트/Main16_Audio_마무리_계약.md)이 최신 정책이다. Quest/World/Story Encounter 구조는 변경하지 않는다.
