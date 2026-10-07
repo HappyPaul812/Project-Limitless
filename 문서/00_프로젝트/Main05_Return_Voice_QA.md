@@ -1,3 +1,9 @@
+## 2026-10-07 태온001 사용자 Play 발견 재감사
+
+기존 당시 자동 검증 범위에서는 발견되지 않았고 사용자 실제 Play에서 발견된 기존001 내부의 대표보고002 혼입을 확인했다. 원본 PCM 무음 경계6.60초에서001만 복구했다. 새 Voice6 ASR·native PCM6/6, 실제Main04→Guard6→독립대표8→정식해금·Continue3회 304PASS/FAIL0. page2 전체재생+5초 무입력 유지/supp002자동재생0/Next1회미엘3/대표자동연결0. CompileError0/최종RuntimeConsoleError·Warning0/신규Warning0/MissingScript0(기존컴파일Warning16). 복구001 사람 청취: **USER_CONFIRMED_REPAIRED**. [이번 정본](Main05_Guard_Voice_Reaudit.md). 아래 CLOSED/PASS는 이전 자동 검증 이력이며 이번001 의미증거로 재사용하지 않는다.
+
+---
+
 ## 2026-10-07 최신 Main05 상태: CLOSED
 
 사용자 전체 청취 PASS 신규5개를 기존GUID에 적용했다. Main05전체6 resolve/RuntimePCM PASS, Main04→Guard6→독립대표8→정식해금→Main06첫001 연속 및 Save/Continue3회 PASS. 입력 수정 f2d7e0c 유지. 과거 의미 미확정5개는 최신 승인 원본으로 해소했다. 역사적 NEEDS_LISTENING244 보존. 상세 정본은 [Main05 최종 QA](Main05_FinalVoice_QA.md), [검증 결과](Main05_Final_Verification.json), [최종 Matrix6](Main05_Voice_Matrix.csv). 아래는 이전 감사 이력이다.

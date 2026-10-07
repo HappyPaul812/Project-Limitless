@@ -1,3 +1,11 @@
+## 2026-10-07 Main05 태온001 WAV 혼입 복구 / 재감사 완료
+
+사용자 실제Play의 무입력 추가발화는 기존001 WAV 안에 대표보고002 문장이 섞인 원인. 원본PCM 6.60초 무음경계에서001만 복구(10.55→6.60초), 정상5/원본/GUID/Catalog/게임Dialogue·Quest·Input 보호·TTS0. Voice6 새전사/nativePCM6/6, 실제Main04→Guard6→독립대표8→정식해금→Main06첫경계 304PASS/FAIL0, page2자연종료후5초무입력 유지/002자동재생0/1입력미엘page3/대표자동연결0/실제Continue3회 PASS. CompileError0/최종RuntimeConsoleError·Warning0/신규Warning0/MissingScript0·기존컴파일Warning16. QA첫Scene위치누락오류2건은 별도보존 후fixture수정, 최종오류0.
+
+복구001 사람청취 **USER_CONFIRMED_REPAIRED**(사용자: “해당 두 문장만 나오고 끝도 자연스러움”), Main05 USER_LISTENING_REQUIRED0. 다음권장: 보호된별도후속요청. 보호baseline3497중2개변경/3495byte동일·Main07재도전/동료성장/미엘/Early7/Paul20와사용자Save보호. 이전Main05CLOSED는 당시이력이며001anchor판정을이번의미PASS로재사용0. [정본QA](Main05_Guard_Voice_Reaudit.md) · [Voice6](Main05_Guard_Voice_Reaudit_Matrix.csv) · [검증JSON](Main05_Guard_Reaudit_Verification.json). 마지막 관련WAVcommit `b96e8b3`, QA는 이항목을포함한최신 `Docs: Main05 태온001 혼입 재감사 및 Runtime QA` commit 참조. GitHub Push0.
+
+---
+
 ## 2026-10-07 Main07 재도전·동료 성장·미엘 PCM 복구 완료
 
 Main07 전투목표에서도 폴 위치의 E/F/A 재도전을 허용, 첫대화 반복0·승리후차단. 필수DefeatEncounter10 전수 재도전/단일승리/Continue PASS(Main11 보스도망금지). 동료 EffectiveLevel=PlayerLevel, 고유값+기존직업식/수호자·치유사 동료만 승인된 공통+1 적용, 일반·임시Story공유·동료레벨Save0·Player성장보존. 미엘기존3 rawPCM복구(6.94/3.63/4.72초), 태온3변경0·신규TTS0.

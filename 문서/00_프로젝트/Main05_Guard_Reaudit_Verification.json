@@ -1,0 +1,30 @@
+{
+  "status": "TECHNICAL_PASS;USER_CONFIRMED_REPAIRED",
+  "before_runtime_pass": 71,
+  "runtime_pass": 304,
+  "runtime_fail": 0,
+  "voice_audited": 6,
+  "native_pcm_exact": 6,
+  "guard_page2_no_input": "PASS",
+  "supp002_automatic_clip_plays": 0,
+  "guard_to_representative_automatic_dialogues": 0,
+  "explicit_next_miel_page3": "PASS",
+  "save_bootstrap_continue": 3,
+  "compile_errors": 0,
+  "existing_compile_warnings": 16,
+  "new_compile_warnings": 0,
+  "final_runtime_console_errors": 0,
+  "final_runtime_console_warnings": 0,
+  "missing_scripts": 0,
+  "protected_baseline_files": 3497,
+  "changed_baseline_files": [
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+    "Unity/Client/Assets/_Project/Scripts/Editor/Main05ReturnVoiceAudit.cs"
+  ],
+  "byte_preserved_files": 3495,
+  "tts_api_calls": 0,
+  "user_listening": "USER_CONFIRMED_REPAIRED",
+  "first_fixture_save_errors": 2,
+  "first_fixture_reason": "QA direct scene load omitted GameSessionData.RecordLocation; fixture corrected; final before/after runs no errors",
+  "push": 0
+}

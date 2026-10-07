@@ -26,6 +26,8 @@ namespace ProjectLimitless.EditorTools
         const BindingFlags Private=BindingFlags.Instance|BindingFlags.NonPublic;
         const BindingFlags Static=BindingFlags.Static|BindingFlags.Public|BindingFlags.NonPublic;
         static bool armed, probe;
+        static bool guardReaudit, beforeRepair;
+        static int inputCallbacks;
         static float listenerVolume;
         static Keyboard keyboard;
         static Gamepad gamepad;
@@ -34,7 +36,7 @@ namespace ProjectLimitless.EditorTools
         static InputSettings.EditorInputBehaviorInPlayMode originalEditorInput;
         static List<string> checks=new List<string>();
         static List<string> trace=new List<string>();
-        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main05Final5/runtime"));
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,guardReaudit ? "../../../Temp/Main05GuardVoice/"+(beforeRepair?"before-runtime":"after-runtime") : "../../../Temp/Main05Final5/runtime"));
         public static string Status="Idle";
         static Main05ReturnVoiceAudit()
         {
@@ -56,8 +58,18 @@ namespace ProjectLimitless.EditorTools
         // 기존 Launch가 사용자 저장/설정과 GameView 진입 동작을 보존·복구합니다.
         public static string Launch(bool reproductionOnly=false)
         {
+            guardReaudit=false;
             Directory.CreateDirectory(Root);probe=reproductionOnly;checks.Clear();trace.Clear();
             listenerVolume=AudioListener.volume;Status="Running";armed=true;return Partial9FixedSpriteAudit.Launch();
+        }
+        /// <summary>과거 QA를 덮어쓰지 않고 태온001의 무입력 전체 재생을 별도 로그로 재검사합니다.</summary>
+        public static string LaunchGuardReaudit(bool before)
+        {
+            guardReaudit=true;beforeRepair=before;probe=false;inputCallbacks=0;
+            Directory.CreateDirectory(Root);checks.Clear();trace.Clear();
+            File.WriteAllText(Path.Combine(Root,"playback.jsonl"),string.Empty);
+            listenerVolume=AudioListener.volume;Status="Running";armed=true;
+            return Partial9FixedSpriteAudit.Launch();
         }
         static object Field(object owner,string name)=>owner.GetType().GetField(name,Private).GetValue(owner);
         static VoicePlaybackSource Voice(DialoguePresenter d)=>(VoicePlaybackSource)Field(d,"voicePlayback");
@@ -77,6 +89,12 @@ namespace ProjectLimitless.EditorTools
         static IEnumerator Wait(int count){for(int i=0;i<count;i++)yield return null;}
         static IEnumerator Load(string name)
         {
+            // 직접 로드하는 QA도 실제 World 전환처럼 저장 위치를 먼저 기록해야 자동 저장에 빈 Scene이 들어가지 않습니다.
+            if(guardReaudit&&name!="Bootstrap")
+            {
+                GameSessionData.RecordLocation(name,string.Empty);
+                GameSessionData.ClearWorldPosition();
+            }
             SceneManager.LoadSceneAsync(name);for(int i=0;i<300&&SceneManager.GetActiveScene().name!=name;i++)yield return null;
             Check(SceneManager.GetActiveScene().name==name,"Scene "+name);yield return Wait(12);
         }
@@ -119,6 +137,21 @@ namespace ProjectLimitless.EditorTools
             InputSystem.settings.editorInputBehaviorInPlayMode=originalEditorInput;
             inputSettingsChanged=false;
         }
+        static void ConfigureVirtualInput(DialoguePresenter d)
+        {
+            if(!inputSettingsChanged)
+            {
+                originalBackground=InputSystem.settings.backgroundBehavior;
+                originalEditorInput=InputSystem.settings.editorInputBehaviorInPlayMode;
+                inputSettingsChanged=true;
+            }
+            InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;
+            InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+            if(keyboard==null)keyboard=InputSystem.AddDevice<Keyboard>();
+            if(gamepad==null)gamepad=InputSystem.AddDevice<Gamepad>();
+            ((InputAction)Field(d,"advanceAction")).performed+=_=>inputCallbacks++;
+            ((InputAction)Field(UnityEngine.Object.FindAnyObjectByType<InteractionSystem>(),"interactAction")).performed+=_=>inputCallbacks++;
+        }
         static IEnumerator InputProbe(DialoguePresenter d)
         {
             // Input System은 Play 진입 시 기본 설정 객체를 교체할 수 있으므로 현재 런타임 설정값만
@@ -146,6 +179,7 @@ namespace ProjectLimitless.EditorTools
         }
         static IEnumerator Sequence(DialoguePresenter d,DialogueLine[] lines,string sequence)
         {
+            if(guardReaudit&&sequence!="AfterBattleConversation")ConfigureVirtualInput(d);
             string before=Objective();
             for(int i=0;i<lines.Length;i++)
             {
@@ -167,16 +201,41 @@ namespace ProjectLimitless.EditorTools
                     var pcm=new float[clip.samples*clip.channels];Check(clip.GetData(pcm,0),"Runtime PCM "+line.DialogueId);
                     using(var w=new BinaryWriter(File.Open(Path.Combine(Root,line.DialogueId+".pcm-f32"),FileMode.Create)))foreach(float sample in pcm)w.Write(sample);
                     double start=EditorApplication.timeSinceStartup;double stop=-1;
-                    while(EditorApplication.timeSinceStartup-start<clip.length+.5)
+                    int callbacksBefore=inputCallbacks;
+                    int samplesBefore=-1;bool sawPlaying=false;
+                    while(EditorApplication.timeSinceStartup-start<clip.length+(guardReaudit?5:.5))
                     {
                         CheckContinuous(d,i,clip,line.DialogueId);
+                        if(guardReaudit)
+                        {
+                            var source=(AudioSource)Field(v,"source");
+                            sawPlaying|=source.isPlaying;
+                            if(source.isPlaying&&samplesBefore>source.timeSamples)throw new InvalidOperationException("Unexpected loop "+line.DialogueId);
+                            if(source.isPlaying)samplesBefore=source.timeSamples;
+                            var sample=new PlaybackTrace{frame=Time.frameCount,page=Page(d),speakerId=line.SpeakerId,speakerName=((Text)Field(d,"speakerText")).text,text=((Text)Field(d,"dialogueText")).text,id=line.DialogueId,clip=source.clip==null?"":source.clip.name,timeSamples=source.timeSamples,length=clip.length,isPlaying=source.isPlaying,objective=Objective(),inputCallbacks=inputCallbacks};
+                            File.AppendAllText(Path.Combine(Root,"playback.jsonl"),JsonUtility.ToJson(sample)+"\n");
+                        }
                         if(!v.IsPlaying&&stop<0)stop=EditorApplication.timeSinceStartup;
                         yield return null;
                     }
-                    Check(stop>=0&&stop-start>=clip.length-.2&&!v.IsPlaying,"Full playback natural stop "+line.DialogueId);
+                    Check(!v.IsPlaying&&(guardReaudit?sawPlaying:stop>=0&&stop-start>=clip.length-.2),"Full playback natural stop "+line.DialogueId);
+                    if(guardReaudit)
+                    {
+                        Check(inputCallbacks==callbacksBefore,"No input callback during hold "+line.DialogueId);
+                        Check(((Text)Field(d,"dialogueText")).text==line.Message&&((Text)Field(d,"speakerText")).text==line.SpeakerName&&Objective()==before,"No-input text/speaker/objective maintained "+line.DialogueId);
+                        Check(v.Clip==clip,"No unrequested clip replacement "+line.DialogueId);
+                    }
                 }
                 var pageTrace=new PageTrace{quest=QuestService.ActiveMainQuest?.Definition.QuestId,sequence=sequence,page=i,id=line.DialogueId,speaker=line.SpeakerId,text=line.Message,clip=clip==null?"":AssetDatabase.GetAssetPath(clip),objectiveBefore=before};
-                yield return Wait(3);d.Advance();
+                yield return Wait(3);
+                if(guardReaudit&&sequence!="AfterBattleConversation")
+                {
+                    int callbacksBefore=inputCallbacks;
+                    KeyPulse(Key.Enter);
+                    Check(inputCallbacks==callbacksBefore+1,"One explicit Enter callback "+sequence+":"+i);
+                    if(i+1<lines.Length)Check(Page(d)==i+1,"One input advances one page "+sequence+":"+i);
+                }
+                else d.Advance();
                 pageTrace.objectiveAfter=Objective();trace.Add(JsonUtility.ToJson(pageTrace));
                 File.WriteAllLines(Path.Combine(Root,"pages.jsonl"),trace);
                 Check(clip==null||Voice(d).Clip!=clip,"Previous Clip cleanup "+sequence+":"+i);
@@ -188,6 +247,7 @@ namespace ProjectLimitless.EditorTools
             if(!d.IsOpen||Page(d)!=page||Voice(d).Clip!=clip)throw new InvalidOperationException("Unrequested skip/cache "+id);
         }
         [Serializable] sealed class PageTrace{public string quest,sequence,id,speaker,text,clip,objectiveBefore,objectiveAfter;public int page;}
+        [Serializable] sealed class PlaybackTrace{public int frame,page,timeSamples,inputCallbacks;public string speakerId,speakerName,text,id,clip,objective;public float length;public bool isPlaying;}
         static IEnumerator Run()
         {
             yield return Wait(20);Check(!string.IsNullOrWhiteSpace(GameSaveService.AuditSaveDirectory),"Isolated Save/Settings");
@@ -197,7 +257,16 @@ namespace ProjectLimitless.EditorTools
             QuestDefinition definition;QuestCatalog.TryGet(MainQuest04FieldFlow.QuestId,out definition);
             QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=definition.PrerequisiteQuestIds.ToArray(),ActiveQuests=new[]{new ActiveQuestSaveData{QuestId=definition.QuestId,Objectives=new[]{
                 new QuestObjectiveProgressData{ObjectiveId="reach_miel_meeting",CurrentCount=1},new QuestObjectiveProgressData{ObjectiveId="talk_to_miel_first",CurrentCount=1},new QuestObjectiveProgressData{ObjectiveId="win_three_people_encounter",CurrentCount=1}}}}});
-            if(probe)
+            if(guardReaudit&&beforeRepair)
+            {
+                QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=definition.PrerequisiteQuestIds.Concat(new[]{MainQuest04FieldFlow.QuestId}).ToArray()});
+                yield return Load("World_StarterVillage");var d=DialoguePresenter.Instance;
+                Check(Objective()=="report_to_south_gate_guard","Before repair Main05 Guard objective");
+                Interact(Npc(MainQuest01NpcFlow.GuardId));
+                yield return Sequence(d,Lines(typeof(MainQuest05ReturnFlow),"GuardReport"),"GuardReport");
+                Check(Objective()=="report_to_village_representative"&&!d.IsOpen,"Before repair independent representative boundary");
+            }
+            else if(probe)
             {
                 QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=definition.PrerequisiteQuestIds.Concat(new[]{MainQuest04FieldFlow.QuestId}).ToArray()});
                 yield return Load("World_StarterVillage");yield return InputProbe(DialoguePresenter.Instance);

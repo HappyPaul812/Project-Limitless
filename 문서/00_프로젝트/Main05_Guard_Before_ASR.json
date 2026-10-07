@@ -1,0 +1,599 @@
+{
+  "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_001.wav": {
+    "file": "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_001.wav",
+    "duration": 10.55,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "7d3389e5572169ba64e158be7561aa0e6dbfb518b240217aa6bf4a304a9f5f7b",
+    "pcm_sha256": "87fff54ac86de9943116ba8d060430099e1e5bcf157260296d60c4618eb74253",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.56,
+        "text": " 몬스터들이 마을 쪽으로 움직이는 건 맞습니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.0,
+            "word": " 몬스터들이"
+          },
+          {
+            "start": 1.0,
+            "end": 1.3,
+            "word": " 마을"
+          },
+          {
+            "start": 1.3,
+            "end": 1.56,
+            "word": " 쪽으로"
+          },
+          {
+            "start": 1.56,
+            "end": 1.98,
+            "word": " 움직이는"
+          },
+          {
+            "start": 1.98,
+            "end": 2.08,
+            "word": " 건"
+          },
+          {
+            "start": 2.08,
+            "end": 2.56,
+            "word": " 맞습니다."
+          }
+        ]
+      },
+      {
+        "start": 3.24,
+        "end": 6.06,
+        "text": " 하지만 마을을 노리고 있는 것 같지는 않습니다.",
+        "words": [
+          {
+            "start": 3.24,
+            "end": 3.7,
+            "word": " 하지만"
+          },
+          {
+            "start": 3.7,
+            "end": 4.76,
+            "word": " 마을을"
+          },
+          {
+            "start": 4.76,
+            "end": 5.0,
+            "word": " 노리고"
+          },
+          {
+            "start": 5.0,
+            "end": 5.18,
+            "word": " 있는"
+          },
+          {
+            "start": 5.18,
+            "end": 5.3,
+            "word": " 것"
+          },
+          {
+            "start": 5.3,
+            "end": 5.58,
+            "word": " 같지는"
+          },
+          {
+            "start": 5.58,
+            "end": 6.06,
+            "word": " 않습니다."
+          }
+        ]
+      },
+      {
+        "start": 6.94,
+        "end": 9.94,
+        "text": " 저도 이 움직임이 어디서 시작됐는지 확인하고 싶습니다.",
+        "words": [
+          {
+            "start": 6.94,
+            "end": 7.14,
+            "word": " 저도"
+          },
+          {
+            "start": 7.14,
+            "end": 7.4,
+            "word": " 이"
+          },
+          {
+            "start": 7.4,
+            "end": 7.96,
+            "word": " 움직임이"
+          },
+          {
+            "start": 7.96,
+            "end": 8.66,
+            "word": " 어디서"
+          },
+          {
+            "start": 8.66,
+            "end": 9.2,
+            "word": " 시작됐는지"
+          },
+          {
+            "start": 9.2,
+            "end": 9.6,
+            "word": " 확인하고"
+          },
+          {
+            "start": 9.6,
+            "end": 9.94,
+            "word": " 싶습니다."
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_002.wav": {
+    "file": "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_002.wav",
+    "duration": 1.81,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "7542570369d2a1a92d9611b5b81c978040c8c01ef42b0d9aa5b3c402595e8b55",
+    "pcm_sha256": "457db43dfa5e1911a3f343dcf3199f7eed43149f053dab1bae00fc040368b581",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.12,
+        "text": " 괜찮으시다면",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.12,
+            "word": " 괜찮으시다면"
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_003.wav": {
+    "file": "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_003.wav",
+    "duration": 2.22,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "dd9441de43f1128341209aa60aa83308f04c7df801a53aef6ea1751e83fa206d",
+    "pcm_sha256": "2774466171d6869ebb16b8a7aa66e0ddd0e61ad5883ae8f00099931498d0c88f",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.56,
+        "text": " 조금 더 함께 가겠습니다",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "word": " 조금"
+          },
+          {
+            "start": 0.8,
+            "end": 0.96,
+            "word": " 더"
+          },
+          {
+            "start": 0.96,
+            "end": 1.2,
+            "word": " 함께"
+          },
+          {
+            "start": 1.2,
+            "end": 1.56,
+            "word": " 가겠습니다"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_001.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_001.wav",
+    "duration": 3.32,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "ad0cb19d1c6b7ac9dff4fd98e418cacf790b605c5a0ff03867bd4999ae1b7d30",
+    "pcm_sha256": "ba0c490af80c151a153b960b10b8e6126310dc4cbcdb5bf2a65d4d3f8e262eda",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.68,
+        "text": " 무언가를 피해서 내려오고 있는 것 같아요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.82,
+            "word": " 무언가를"
+          },
+          {
+            "start": 0.82,
+            "end": 1.34,
+            "word": " 피해서"
+          },
+          {
+            "start": 1.34,
+            "end": 2.04,
+            "word": " 내려오고"
+          },
+          {
+            "start": 2.04,
+            "end": 2.2,
+            "word": " 있는"
+          },
+          {
+            "start": 2.2,
+            "end": 2.36,
+            "word": " 것"
+          },
+          {
+            "start": 2.36,
+            "end": 2.68,
+            "word": " 같아요."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_002.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_002.wav",
+    "duration": 3.88,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "0c049b8137cc63759506bb4085c555a1afd281adc4e4b8d20dd5b8718a3ef112",
+    "pcm_sha256": "865a2368c01471b1fdcdec627b82eb587d7fb5e8e88557eb856579d6b3eca3f4",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.22,
+        "text": " 이대로 두면 다치는 사람이 더 생길 겁니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.62,
+            "word": " 이대로"
+          },
+          {
+            "start": 0.62,
+            "end": 1.16,
+            "word": " 두면"
+          },
+          {
+            "start": 1.16,
+            "end": 2.1,
+            "word": " 다치는"
+          },
+          {
+            "start": 2.1,
+            "end": 2.5,
+            "word": " 사람이"
+          },
+          {
+            "start": 2.5,
+            "end": 2.74,
+            "word": " 더"
+          },
+          {
+            "start": 2.74,
+            "end": 3.06,
+            "word": " 생길"
+          },
+          {
+            "start": 3.06,
+            "end": 3.22,
+            "word": " 겁니다."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_003.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_003.wav",
+    "duration": 4.72,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "c07cba8f46aa85ba2cff4536e62508d0d4865f80ddbef0e3b3866b2a63ba7e15",
+    "pcm_sha256": "236cb5780dae6e66b55ef24f5a2754d0dedb9275f25d645b9c16c772aca59e07",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.32,
+        "text": " 저도 같이 가겠습니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.42,
+            "word": " 저도"
+          },
+          {
+            "start": 0.42,
+            "end": 0.74,
+            "word": " 같이"
+          },
+          {
+            "start": 0.74,
+            "end": 1.32,
+            "word": " 가겠습니다."
+          }
+        ]
+      },
+      {
+        "start": 2.22,
+        "end": 4.04,
+        "text": " 제가 할 수 있는 일이 있을 거예요.",
+        "words": [
+          {
+            "start": 2.22,
+            "end": 2.64,
+            "word": " 제가"
+          },
+          {
+            "start": 2.64,
+            "end": 2.88,
+            "word": " 할"
+          },
+          {
+            "start": 2.88,
+            "end": 3.04,
+            "word": " 수"
+          },
+          {
+            "start": 3.04,
+            "end": 3.26,
+            "word": " 있는"
+          },
+          {
+            "start": 3.26,
+            "end": 3.42,
+            "word": " 일이"
+          },
+          {
+            "start": 3.42,
+            "end": 3.74,
+            "word": " 있을"
+          },
+          {
+            "start": 3.74,
+            "end": 4.04,
+            "word": " 거예요."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+    "duration": 10.55,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "7d3389e5572169ba64e158be7561aa0e6dbfb518b240217aa6bf4a304a9f5f7b",
+    "pcm_sha256": "87fff54ac86de9943116ba8d060430099e1e5bcf157260296d60c4618eb74253",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.56,
+        "text": " 몬스터들이 마을 쪽으로 움직이는 건 맞습니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.0,
+            "word": " 몬스터들이"
+          },
+          {
+            "start": 1.0,
+            "end": 1.3,
+            "word": " 마을"
+          },
+          {
+            "start": 1.3,
+            "end": 1.56,
+            "word": " 쪽으로"
+          },
+          {
+            "start": 1.56,
+            "end": 1.98,
+            "word": " 움직이는"
+          },
+          {
+            "start": 1.98,
+            "end": 2.08,
+            "word": " 건"
+          },
+          {
+            "start": 2.08,
+            "end": 2.56,
+            "word": " 맞습니다."
+          }
+        ]
+      },
+      {
+        "start": 3.24,
+        "end": 6.06,
+        "text": " 하지만 마을을 노리고 있는 것 같지는 않습니다.",
+        "words": [
+          {
+            "start": 3.24,
+            "end": 3.7,
+            "word": " 하지만"
+          },
+          {
+            "start": 3.7,
+            "end": 4.76,
+            "word": " 마을을"
+          },
+          {
+            "start": 4.76,
+            "end": 5.0,
+            "word": " 노리고"
+          },
+          {
+            "start": 5.0,
+            "end": 5.18,
+            "word": " 있는"
+          },
+          {
+            "start": 5.18,
+            "end": 5.3,
+            "word": " 것"
+          },
+          {
+            "start": 5.3,
+            "end": 5.58,
+            "word": " 같지는"
+          },
+          {
+            "start": 5.58,
+            "end": 6.06,
+            "word": " 않습니다."
+          }
+        ]
+      },
+      {
+        "start": 6.94,
+        "end": 9.94,
+        "text": " 저도 이 움직임이 어디서 시작됐는지 확인하고 싶습니다.",
+        "words": [
+          {
+            "start": 6.94,
+            "end": 7.14,
+            "word": " 저도"
+          },
+          {
+            "start": 7.14,
+            "end": 7.4,
+            "word": " 이"
+          },
+          {
+            "start": 7.4,
+            "end": 7.96,
+            "word": " 움직임이"
+          },
+          {
+            "start": 7.96,
+            "end": 8.66,
+            "word": " 어디서"
+          },
+          {
+            "start": 8.66,
+            "end": 9.2,
+            "word": " 시작됐는지"
+          },
+          {
+            "start": 9.2,
+            "end": 9.6,
+            "word": " 확인하고"
+          },
+          {
+            "start": 9.6,
+            "end": 9.94,
+            "word": " 싶습니다."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav",
+    "duration": 4.96,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "a07dc4abf6de04ad4d744b894c46e6e7f8476e6619cacbb40e002d3e49f96993",
+    "pcm_sha256": "659d13d7da1a4c5cb75c10cb68d02c9f746b02f8d363858ea39559dea8bb2c81",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.58,
+        "text": " 저도 이 움직임이 어디서 시작됐는지 확인하고 싶습니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.54,
+            "word": " 저도"
+          },
+          {
+            "start": 0.54,
+            "end": 1.16,
+            "word": " 이"
+          },
+          {
+            "start": 1.16,
+            "end": 2.0,
+            "word": " 움직임이"
+          },
+          {
+            "start": 2.0,
+            "end": 2.74,
+            "word": " 어디서"
+          },
+          {
+            "start": 2.74,
+            "end": 3.54,
+            "word": " 시작됐는지"
+          },
+          {
+            "start": 3.54,
+            "end": 4.18,
+            "word": " 확인하고"
+          },
+          {
+            "start": 4.18,
+            "end": 4.58,
+            "word": " 싶습니다."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav",
+    "duration": 3.8,
+    "rate": 24000,
+    "channels": 1,
+    "width": 2,
+    "sha256": "5c785f1111c3fe6b1cd001e80b5ea7e5860d17de8fa8a4b7acb1dbe77869a4e5",
+    "pcm_sha256": "99e06147d6a0cc85bc9041627a2ceabe20cca5d0680389b17482ac0dd7450504",
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.98,
+        "text": " 괜찮으시다면 조금 더 함께 가겠습니다.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.04,
+            "word": " 괜찮으시다면"
+          },
+          {
+            "start": 1.04,
+            "end": 2.2,
+            "word": " 조금"
+          },
+          {
+            "start": 2.2,
+            "end": 2.38,
+            "word": " 더"
+          },
+          {
+            "start": 2.38,
+            "end": 2.6,
+            "word": " 함께"
+          },
+          {
+            "start": 2.6,
+            "end": 2.98,
+            "word": " 가겠습니다."
+          }
+        ]
+      }
+    ]
+  }
+}

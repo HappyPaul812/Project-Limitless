@@ -1,0 +1,72 @@
+PASS
+PASS Isolated Save/Settings
+PASS Scene World_StarterVillage
+PASS Before repair Main05 Guard objective
+PASS Exact page GuardReport:0
+PASS Single Voice Source GuardReport:0
+PASS Text/Speaker GuardReport:0
+PASS Objective unchanged before completion GuardReport:0
+PASS Portrait policy GuardReport:0
+PASS Intentional Silent GuardReport:0
+PASS One explicit Enter callback GuardReport:0
+PASS One input advances one page GuardReport:0
+PASS Previous Clip cleanup GuardReport:0
+PASS Exact page GuardReport:1
+PASS Single Voice Source GuardReport:1
+PASS Text/Speaker GuardReport:1
+PASS Objective unchanged before completion GuardReport:1
+PASS Portrait policy GuardReport:1
+PASS Intentional Silent GuardReport:1
+PASS One explicit Enter callback GuardReport:1
+PASS One input advances one page GuardReport:1
+PASS Previous Clip cleanup GuardReport:1
+PASS Exact page GuardReport:2
+PASS Single Voice Source GuardReport:2
+PASS Text/Speaker GuardReport:2
+PASS Objective unchanged before completion GuardReport:2
+PASS Portrait policy GuardReport:2
+PASS Runtime Resolve/Play main05_taeon_supp_001
+PASS No Main04 clip in Main05 main05_taeon_supp_001
+PASS Runtime PCM main05_taeon_supp_001
+PASS Full playback natural stop main05_taeon_supp_001
+PASS No input callback during hold main05_taeon_supp_001
+PASS No-input text/speaker/objective maintained main05_taeon_supp_001
+PASS No unrequested clip replacement main05_taeon_supp_001
+PASS One explicit Enter callback GuardReport:2
+PASS One input advances one page GuardReport:2
+PASS Previous Clip cleanup GuardReport:2
+PASS Exact page GuardReport:3
+PASS Single Voice Source GuardReport:3
+PASS Text/Speaker GuardReport:3
+PASS Objective unchanged before completion GuardReport:3
+PASS Portrait policy GuardReport:3
+PASS Runtime Resolve/Play main05_miel_supp_001
+PASS No Main04 clip in Main05 main05_miel_supp_001
+PASS Runtime PCM main05_miel_supp_001
+PASS Full playback natural stop main05_miel_supp_001
+PASS No input callback during hold main05_miel_supp_001
+PASS No-input text/speaker/objective maintained main05_miel_supp_001
+PASS No unrequested clip replacement main05_miel_supp_001
+PASS One explicit Enter callback GuardReport:3
+PASS One input advances one page GuardReport:3
+PASS Previous Clip cleanup GuardReport:3
+PASS Exact page GuardReport:4
+PASS Single Voice Source GuardReport:4
+PASS Text/Speaker GuardReport:4
+PASS Objective unchanged before completion GuardReport:4
+PASS Portrait policy GuardReport:4
+PASS Intentional Silent GuardReport:4
+PASS One explicit Enter callback GuardReport:4
+PASS One input advances one page GuardReport:4
+PASS Previous Clip cleanup GuardReport:4
+PASS Exact page GuardReport:5
+PASS Single Voice Source GuardReport:5
+PASS Text/Speaker GuardReport:5
+PASS Objective unchanged before completion GuardReport:5
+PASS Portrait policy GuardReport:5
+PASS Intentional Silent GuardReport:5
+PASS One explicit Enter callback GuardReport:5
+PASS Previous Clip cleanup GuardReport:5
+PASS Sequence closed GuardReport
+PASS Before repair independent representative boundary
+PASS Scene Bootstrap

@@ -1,0 +1,19 @@
+{
+  "source": "Limitless_TTS_Output_Missing_Main01_05_08_12_v2/taeon/main05_taeon_supp_001.wav",
+  "target": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+  "old_duration": 10.55,
+  "new_duration": 6.6,
+  "cut_sample": 158400,
+  "quiet_boundary": [
+    6.17,
+    7.0
+  ],
+  "last_normal_word_end": 6.06,
+  "next_wrong_utterance_start": 6.94,
+  "source_sha256": "7d3389e5572169ba64e158be7561aa0e6dbfb518b240217aa6bf4a304a9f5f7b",
+  "sha256": "59cf901661b3062867cfa5343afd81fd37adbf0127eae6ccade4253b3109dd38",
+  "pcm_sha256": "2b5313da3372eb2d3b3858d29a4f98bbab987c64e1096b8019323e48de098b63",
+  "raw_pcm_prefix_exact": true,
+  "tts_api_calls": 0,
+  "user_listening": "USER_CONFIRMED_REPAIRED"
+}

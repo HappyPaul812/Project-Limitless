@@ -1,0 +1,141 @@
+{
+  "six": [
+    {
+      "id": "main05_miel_supp_001",
+      "duration": 3.32,
+      "speech": "무언가를 피해서 내려오고 있는 것 같아요.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.27
+        ],
+        [
+          3.0100000000000002,
+          3.3200000000000003
+        ]
+      ],
+      "pcm_sha256": "ba0c490af80c151a153b960b10b8e6126310dc4cbcdb5bf2a65d4d3f8e262eda"
+    },
+    {
+      "id": "main05_miel_supp_002",
+      "duration": 3.88,
+      "speech": "이대로 두면 다치는 사람이 더 생길 겁니다.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.29
+        ],
+        [
+          1.49,
+          1.75
+        ],
+        [
+          3.5300000000000002,
+          3.88
+        ]
+      ],
+      "pcm_sha256": "865a2368c01471b1fdcdec627b82eb587d7fb5e8e88557eb856579d6b3eca3f4"
+    },
+    {
+      "id": "main05_miel_supp_003",
+      "duration": 4.72,
+      "speech": "저도 같이 가겠습니다. | 제가 할 수 있는 일이 있을 거예요.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.24
+        ],
+        [
+          1.56,
+          1.71
+        ],
+        [
+          1.76,
+          2.39
+        ],
+        [
+          4.41,
+          4.72
+        ]
+      ],
+      "pcm_sha256": "236cb5780dae6e66b55ef24f5a2754d0dedb9275f25d645b9c16c772aca59e07"
+    },
+    {
+      "id": "main05_taeon_supp_001",
+      "duration": 10.55,
+      "speech": "몬스터들이 마을 쪽으로 움직이는 건 맞습니다. | 하지만 마을을 노리고 있는 것 같지는 않습니다. | 저도 이 움직임이 어디서 시작됐는지 확인하고 싶습니다.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.43
+        ],
+        [
+          2.65,
+          3.4
+        ],
+        [
+          3.81,
+          4.38
+        ],
+        [
+          6.17,
+          7.0
+        ],
+        [
+          7.96,
+          8.35
+        ],
+        [
+          10.09,
+          10.55
+        ]
+      ],
+      "pcm_sha256": "87fff54ac86de9943116ba8d060430099e1e5bcf157260296d60c4618eb74253"
+    },
+    {
+      "id": "main05_taeon_supp_002",
+      "duration": 4.96,
+      "speech": "저도 이 움직임이 어디서 시작됐는지 확인하고 싶습니다.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.32
+        ],
+        [
+          2.11,
+          2.36
+        ],
+        [
+          4.75,
+          4.96
+        ]
+      ],
+      "pcm_sha256": "659d13d7da1a4c5cb75c10cb68d02c9f746b02f8d363858ea39559dea8bb2c81"
+    },
+    {
+      "id": "main05_taeon_supp_003",
+      "duration": 3.8,
+      "speech": "괜찮으시다면 조금 더 함께 가겠습니다.",
+      "quiet_spans": [
+        [
+          0.0,
+          0.24
+        ],
+        [
+          1.22,
+          1.9000000000000001
+        ],
+        [
+          3.27,
+          3.8000000000000003
+        ]
+      ],
+      "pcm_sha256": "99e06147d6a0cc85bc9041627a2ceabe20cca5d0680389b17482ac0dd7450504"
+    }
+  ],
+  "old001_exact_in_batch_full": true,
+  "old001_full_offset_sample": 1815840,
+  "old001_full_offset_seconds": 75.66,
+  "old001_vs_current002_pcm_equal": false,
+  "wrong_tail_semantics": "supp002 text in old001; current approved002 is independent regenerated PCM"
+}
