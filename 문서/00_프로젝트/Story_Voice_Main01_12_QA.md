@@ -1,3 +1,7 @@
+## 2026-10-07 Main07 초반 Voice / Paul 감사
+
+NPC7 Stable ID 부여 완료, TTS_REQUIRED7/Catalog pending. 사용자 첫 자막 유지 확인 및 Runtime page0 유지/001 PCM 정합으로 Paul001 WAV 내용 오류 TTS_REGEN_REQUIRED1 분리(Voice 교체0). Main07 custom E/A 동일프레임 닫힘→재열림 재현·수정, 기존 공용 fix 유지. [상세 Main07 QA](Main07_Early_Dialogue_Voice_QA.md), [TTS7 handoff](Main07_Early_TTS_Handoff.csv). 기존 Voice/244 NEEDS_LISTENING 보호. 아래는 이전 감사 이력이다.
+
 ## 2026-10-07 최신 Main05 상태: CLOSED
 
 사용자 전체 청취 PASS 신규5개를 기존GUID에 적용했다. Main05전체6 resolve/RuntimePCM PASS, Main04→Guard6→독립대표8→정식해금→Main06첫001 연속 및 Save/Continue3회 PASS. 입력 수정 f2d7e0c 유지. 과거 의미 미확정5개는 최신 승인 원본으로 해소했다. 역사적 NEEDS_LISTENING244 보존. 상세 정본은 [Main05 최종 QA](Main05_FinalVoice_QA.md), [검증 결과](Main05_Final_Verification.json), [최종 Matrix6](Main05_Voice_Matrix.csv). 아래는 이전 감사 이력이다.

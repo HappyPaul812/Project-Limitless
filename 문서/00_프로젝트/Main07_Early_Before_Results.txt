@@ -1,0 +1,85 @@
+PASS
+PASS Isolated Save
+PASS Scene Field_02
+PASS Main06 real input open
+PASS Page order Main06Investigation:0
+PASS Objective before completion Main06Investigation:0
+PASS Explicit E one page Main06Investigation:0
+PASS Page order Main06Investigation:1
+PASS Objective before completion Main06Investigation:1
+PASS Explicit E one page Main06Investigation:1
+PASS Page order Main06Investigation:2
+PASS Objective before completion Main06Investigation:2
+PASS Explicit E one page Main06Investigation:2
+PASS Page order Main06Investigation:3
+PASS Objective before completion Main06Investigation:3
+PASS Player Voice0 Portrait0
+PASS Explicit E one page Main06Investigation:3
+PASS Sequence closed Main06Investigation
+PASS Actual Main06 complete
+PASS Scene Field_02
+PASS Main07 actual Scene installation start
+PASS Page order WheelTracks:0
+PASS Objective before completion WheelTracks:0
+PASS Stable ID state WheelTracks:0
+PASS TTS pending no fallback WheelTracks:0
+PASS Explicit E one page WheelTracks:0
+PASS Page order WheelTracks:1
+PASS Objective before completion WheelTracks:1
+PASS Stable ID state WheelTracks:1
+PASS TTS pending no fallback WheelTracks:1
+PASS Explicit E one page WheelTracks:1
+PASS Page order WheelTracks:2
+PASS Objective before completion WheelTracks:2
+PASS Stable ID state WheelTracks:2
+PASS TTS pending no fallback WheelTracks:2
+PASS Explicit E one page WheelTracks:2
+PASS Page order WheelTracks:3
+PASS Objective before completion WheelTracks:3
+PASS Player Voice0 Portrait0
+PASS Explicit E one page WheelTracks:3
+PASS Sequence closed WheelTracks
+PASS WheelTracks completion boundary
+PASS Page order WoundedTraveler:0
+PASS Objective before completion WoundedTraveler:0
+PASS Stable ID state WoundedTraveler:0
+PASS TTS pending no fallback WoundedTraveler:0
+PASS Explicit E one page WoundedTraveler:0
+PASS Page order WoundedTraveler:1
+PASS Objective before completion WoundedTraveler:1
+PASS Stable ID state WoundedTraveler:1
+PASS TTS pending no fallback WoundedTraveler:1
+PASS Explicit E one page WoundedTraveler:1
+PASS Page order WoundedTraveler:2
+PASS Objective before completion WoundedTraveler:2
+PASS Stable ID state WoundedTraveler:2
+PASS TTS pending no fallback WoundedTraveler:2
+PASS Explicit E one page WoundedTraveler:2
+PASS Page order WoundedTraveler:3
+PASS Objective before completion WoundedTraveler:3
+PASS Stable ID state WoundedTraveler:3
+PASS TTS pending no fallback WoundedTraveler:3
+PASS Explicit E one page WoundedTraveler:3
+PASS Sequence closed WoundedTraveler
+PASS Wounded completion boundary
+PASS Actual PaulTrail location trigger
+PASS Paul E interaction preserves page0
+PASS Paul001 runtime resolve
+PASS PCM readable main07_paul_001
+PASS No-input duration+5 page0 and no002
+PASS Explicit E once Paul002 page1
+PASS PCM readable main07_paul_002
+PASS F advances exactly one page
+PASS Enter advances exactly one page
+PASS Space advances exactly one page
+PASS A advances exactly one page
+PASS Same frame E Enter Space A one page
+OBSERVED close sameframe dialogueOpen=True page=0
+OBSERVED close A sameframe dialogueOpen=True page=0
+PASS Held E initial open page0
+PASS Held E no repeated Next
+PASS F opening no Next
+PASS A opening no Next
+PASS Single VoiceSource no overlap
+PASS Runtime Missing Script0
+PASS Scene Bootstrap

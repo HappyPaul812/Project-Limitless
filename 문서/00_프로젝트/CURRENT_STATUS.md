@@ -1,3 +1,10 @@
+## 2026-10-07 Main07 초반 ID·입력 경계 수정 / TTS 대기
+
+- NPC7 Stable ID 추가, **TTS_REQUIRED7** handoff/manifest 준비. 사용자 첫 자막 유지 오발화 확인으로 **Paul001 TTS_REGEN_REQUIRED1** 분리. 기존WAV 변경0; 전체 Voice CLOSED 아님.
+- 실제 Main06완료→Field02재진입/Main07시작→흔적4→부상자4→Paul0/1 연속 84PASS/FAIL0. 무입력 18.42초page0 유지/002재생0, 명시Next1회page1. custom E/A 같은프레임 재열림 수정. Compile/ConsoleError0·MissingScript0.
+- 사용자 확인/다음작업: TTS 담당이 신규7 및 Paul001 재생성 후 전체 청취·승인하고 별도 반영. Paul002 본문청취 미검증1 유지. 기존Voice/244/Main17/사용자Save 보호. [상세QA](Main07_Early_Dialogue_Voice_QA.md).
+- 마지막 관련 commit `c8de0ec`(ID7), `89ff828`(Main07입력경계). QA/문서 최신 Docs commit 참조, GitHub Push0.
+
 ## 2026-10-07 Main05 승인 신규 Voice5 및 연속 QA 완료
 
 - Main05 신규WAV5 적용, 최신 사용자 청취/자동QA5/5, 전체6매핑·PCM PASS. 문제 **CLOSED**.

@@ -1,0 +1,8 @@
+﻿clip_id,quest_no,speaker,text,voice_id,output_file,character_id,source_file,status
+main07_taeon_supp_001,7,태온,수레가 지나간 흔적은 아닌 것 같습니다.,Gacrux,main07_taeon_supp_001.wav,companion_taeon,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_taeon_supp_002,7,태온,폭이 일정하고… 한쪽이 계속 더 깊게 눌려 있어요.,Gacrux,main07_taeon_supp_002.wav,companion_taeon,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_miel_supp_001,7,미엘,누군가 이쪽으로 지나간 것 같네요.,Sulafat,main07_miel_supp_001.wav,companion_miel,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_miel_supp_002,7,미엘,이분을 그냥 두고 갈 수는 없어요. 제가 상태를 볼게요.,Sulafat,main07_miel_supp_002.wav,companion_miel,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_taeon_supp_003,7,태온,혼자 괜찮겠습니까?,Gacrux,main07_taeon_supp_003.wav,companion_taeon,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_miel_supp_003,7,미엘,네. 두 분은 흔적을 확인해주세요.,Sulafat,main07_miel_supp_003.wav,companion_miel,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_miel_supp_004,7,미엘,상황이 안 좋으면 바로 돌아오시고요.,Sulafat,main07_miel_supp_004.wav,companion_miel,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
