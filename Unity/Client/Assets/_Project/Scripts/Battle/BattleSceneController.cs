@@ -150,6 +150,7 @@ namespace ProjectLimitless.Battle
 
         private void OnDestroy()
         {
+            statusEffects.ClearOverheat();
             dungeonMonsters.Clear();
             statusEffects.GuardianInterceptionOccurred -= OnGuardianInterceptionOccurred;
             if (pathTraits != null) pathTraits.FeedbackOccurred -= OnPathFeedbackOccurred;
@@ -306,6 +307,12 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
+            // 새 Field09만 단독 편성을 연결하며 이전 Field 전투와 사용자의 저장 파티는 유지합니다.
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main18Flow.Field)
+                setup = BattlePrototypeEncounterFactory.CreateField09(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    BattleEncounterContext.Monster);
             // Main17 필수 전투는 기존 곡선의 단독 균열도마뱀입니다. 이전 Field07 조합과 사용자의 저장 파티를 보호합니다.
             else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main17Flow.Field)
                 setup = BattlePrototypeEncounterFactory.CreateField08(
@@ -2315,6 +2322,7 @@ namespace ProjectLimitless.Battle
             if (enemies.Members.Any(item => item.IsBoss)) { messageText.text = "보스전에서는 도망칠 수 없습니다."; return; }
             RecordAllyResources();
             battleEnded = true;
+            statusEffects.ClearOverheat();
             SetCommandButtons(false);
             messageText.text = "도망에 성공했습니다. 조우했던 필드로 복귀합니다.";
             StartCoroutine(ReturnAfterDelay(false));
@@ -2354,6 +2362,11 @@ namespace ProjectLimitless.Battle
         {
             string action = chapter2Monsters.TakeAction(actor, monster.MonsterId);
             if (action == null || action == "basic") return false;
+            if (monster.MonsterId == "obsidian_beetle" || monster.MonsterId == "scorching_watcher")
+            {
+                StartCoroutine(PlayMain18HeatAction(actor, action));
+                return true;
+            }
             if (action == "rumble" || action == "concentrate" || action == "shell")
             {
                 messageText.text = action == "rumble" ? $"{actor.DisplayName}의 지면 울림! 다음 행동에 균열 돌진을 준비합니다."
@@ -2391,6 +2404,67 @@ namespace ProjectLimitless.Battle
             PlayBasicAttack(actor, targetChoice, percent, label, burn, action == "charge"
                 || action == "dive" || action == "fissure_charge" || action == "core");
             return true;
+        }
+
+        // 최초 튜토리얼 안내는 이 전투 Controller 안에서만 한 번 표시합니다. 재도전의 새 전투에서는 다시 학습할 수 있습니다.
+        private bool overheatTutorialShown;
+        /// <summary>단일 행동은 기존 도발·안정 선택을 사용합니다. 감시자만 생존 아군 최고 과열을 우선하고
+        /// 광역은 각 대상을 한 번 때립니다. 직접 피해 뒤 과열 특수 피해는 별도 경계로 처리합니다.</summary>
+        private IEnumerator PlayMain18HeatAction(Combatant actor, string action)
+        {
+            actionPlaying = true;
+            SetCommandButtons(false);
+            if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+            var actorView = combatantViews[actor];
+            actorView.MonsterAnimation?.PlaySkill();
+            bool wave = action == "heat_wave";
+            int percent = wave ? 55 : action == "heat_pressure" ? 105 : action == "heat_spray" ? 80 : 85;
+            string label = wave ? "열기 파동" : action == "heat_pressure" ? "작열 압박" : action == "heat_spray" ? "열압 분사" : "열압 주입";
+            Combatant[] targets;
+            if (wave) targets = allies.LivingMembers.ToArray();
+            else
+            {
+                IReadOnlyList<Combatant> choices = TargetResolver.ResolveHostileTargets(actor, allies,
+                    action == "heat_spray" ? actor.BasicRange : TargetRangeType.Magic);
+                // 도발 강제 대상을 포함한 공용 대상 규칙을 먼저 보존하고, 감시자는 허용 대상 중 최고 열을 고릅니다.
+                if (action != "heat_spray" && choices.Count > 0)
+                {
+                    int high = choices.Max(statusEffects.GetOverheatStacks);
+                    choices = choices.Where(x => statusEffects.GetOverheatStacks(x) == high).ToArray();
+                }
+                Combatant chosen = ChooseEnemyTarget(actor, choices);
+                targets = chosen == null ? Array.Empty<Combatant>() : new[] { chosen };
+            }
+            messageText.text = $"{actor.DisplayName}의 {label}!";
+            yield return new WaitForSeconds(.35f);
+            int raw = statusEffects.ModifyOutgoingDamage(actor,
+                (int)Math.Max(1L, ((long)actor.Attack * percent + 99L) / 100L));
+            foreach (Combatant target in targets)
+            {
+                int damage = pathTraits.ApplyDirectDamage(statusEffects, actor, target, raw, areaAttack: wave);
+                messageText.text = $"{actor.DisplayName}의 {label}! {target.DisplayName}에게 {damage} 피해.";
+                if (!wave && target.IsAlive)
+                {
+                    int before = statusEffects.GetOverheatStacks(target);
+                    int burst = statusEffects.ApplyOverheat(target);
+                    RefreshCombatantViews(null);
+                    yield return actionPresenter.PlayOverheatPulse(combatantViews[target].ActionRoot,
+                        before == 2 ? "Burst" : "Apply");
+                    if (statusEffects.GetOverheatStacks(target) == 2)
+                        yield return actionPresenter.PlayOverheatPulse(combatantViews[target].ActionRoot, "High");
+                    if (burst > 0) messageText.text = $"{target.DisplayName}의 과열 폭발! {burst} 피해, 과열 해제.";
+                    if (!overheatTutorialShown && BattleEncounterContext.Spawn?.SpawnId == ProjectLimitless.World.Chapter2Main18Flow.BeetleEncounter)
+                    {
+                        overheatTutorialShown = true;
+                        messageText.text = "과열은 최대 3중첩입니다. 3중첩 시 최대 HP의 8% 피해를 받고 초기화됩니다. 냉각약으로 제거할 수 있습니다.";
+                        yield return new WaitForSeconds(1.6f);
+                    }
+                }
+            }
+            actorView.MonsterAnimation?.StopAttackAndReturnToIdle();
+            RefreshCombatantViews(null);
+            actionPlaying = false;
+            FinishCurrentAction();
         }
 
         /// <summary>잿불 비산은 생존 대상을 각각 한 번만 때리고, 살아남은 대상에만 공용 화상을 저장합니다.</summary>
@@ -2809,6 +2883,7 @@ namespace ProjectLimitless.Battle
         {
             if (battleEnded) return;
             battleEnded = true;
+            statusEffects.ClearOverheat();
             dungeonMonsters.Clear();
             SetCommandButtons(false);
             if (defeatedEncounteredMonster)
@@ -3072,8 +3147,8 @@ namespace ProjectLimitless.Battle
                     : marker.Id == "guardian_cover" ? BattleUiIconCatalog.GuardianCover : null;
                 // path.* 상태에는 Game-icons.net TraitIcon을 사용합니다. 아이콘이 없어도 한글 상태명은 남아
                 // 색상이나 그림만으로 전투 정보를 판단하지 않게 합니다.
-                Sprite traitIcon = marker.Id.StartsWith("path.", StringComparison.Ordinal)
-                    ? PathPresentationResolver.FindTraitIcon(marker.Id) : null;
+                Sprite traitIcon = marker.Id == "overheat" ? Resources.Load<Sprite>("Main18/UI/Status_Overheat")
+                    : marker.Id.StartsWith("path.", StringComparison.Ordinal) ? PathPresentationResolver.FindTraitIcon(marker.Id) : null;
                 summaries.Add((iconId, traitIcon, marker.DisplayText));
             }
             // ViewModel이 계산된 남은 턴과 총 턴을 함께 주므로 HUD는 숫자를 바꾸지 않고 그림만 고릅니다.

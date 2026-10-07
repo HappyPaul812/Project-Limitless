@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a31bb33f258e4e70ae1242a34ec22001, type: 3}
+  m_Name: Field09_EastToField08
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.World.FieldConnectionDefinition
+  sceneName: Field_09_ObsidianScar
+  connectionId: east_to_field08
+  spawnPointId: Spawn_From_Field08
+  spawnPosition: {x: 7.2, y: 0}
+  transitionPosition: {x: 10.25, y: 0}
+  transitionSize: {x: 1.1, y: 3}
+  targetSceneName: Field_08_RedRift
+  targetSpawnPointId: Spawn_From_Field09
+  replaceExistingSceneConnections: 1
+  spawnOnly: 0

@@ -197,6 +197,16 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies, new[] { enemy });
         }
 
+        /// <summary>Field09의 일반/지정 단독 조우입니다. 저장 파티와 원본 몬스터 수치를 그대로 사용합니다.</summary>
+        public static BattleEncounterSetup CreateField09(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition encountered)
+        {
+            var party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility, null, null, encountered);
+            var enemy = CreateMonster(encountered, "field09_" + encountered.MonsterId, encountered.DisplayName,
+                encountered.MonsterId == "ember_wraith" ? FormationRow.Rear : FormationRow.Front, 0, encountered.BattleAgility);
+            return new BattleEncounterSetup(party.Allies, new[] { enemy });
+        }
+
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
             int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
         {

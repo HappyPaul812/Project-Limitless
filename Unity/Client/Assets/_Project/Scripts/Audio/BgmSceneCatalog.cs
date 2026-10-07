@@ -36,7 +36,8 @@ namespace ProjectLimitless.Audio
                 case "Field_05_WesternOutskirts":
                 case "Field_06_ScorchedTrail":
                 case "Field_07_AshenReach":
-                case "Field_08_RedRift": return chapter2BattleClip;
+                case "Field_08_RedRift":
+                case "Field_09_ObsidianScar": return chapter2BattleClip;
                 case "": // 직접 Battle Scene을 실행한 기존 기본 전투도 기본곡을 사용합니다.
                 case "Field_01":
                 case "Field_02":

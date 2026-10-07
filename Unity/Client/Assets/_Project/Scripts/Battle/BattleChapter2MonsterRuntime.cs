@@ -43,6 +43,8 @@ namespace ProjectLimitless.Battle
             int action = state.Action;
             switch (monsterId)
             {
+                case "obsidian_beetle": return action % 3 == 1 ? "heat_spray" : "basic";
+                case "scorching_watcher": return action % 4 == 3 ? "heat_wave" : action % 4 == 2 ? "heat_pressure" : "heat_injection";
                 case "soot_hound": return action % 3 == 1 ? "bite" : action % 3 == 2 ? "charge" : "basic";
                 case "heatwind_hawk": return action % 3 == 1 ? "feather" : action % 3 == 2 ? "dive" : "basic";
                 case "fissure_lizard":

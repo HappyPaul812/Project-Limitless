@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aff533e0f0c4e91a17a57cb14010833, type: 3}
+  m_Name: Field09_Wraith01
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.FieldMonsterSpawnDefinition
+  sceneName: Field_09_ObsidianScar
+  spawnId: field09_wraith_01
+  monster: {fileID: 11400000, guid: 4f7c673344fd15142882530638fa7ac6, type: 2}
+  position: {x: -2.5, y: -4.6}
+  activityRadius: 0.6
+  respawnSeconds: 35
+  nonRespawningBoss: 0

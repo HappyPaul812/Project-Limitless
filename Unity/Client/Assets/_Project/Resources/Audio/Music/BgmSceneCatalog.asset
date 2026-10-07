@@ -35,6 +35,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 555e6c82db6c4d88beb79611e1cf14bf, type: 3}
   - sceneName: Field_08_RedRift
     clip: {fileID: 8300000, guid: 4fe0b30121441cb4c823293810d77b57, type: 3}
+  - sceneName: Field_09_ObsidianScar
+    clip: {fileID: 8300000, guid: 367915f56ea94efa8715ccf447ba920b, type: 3}
   safeZoneClip: {fileID: 8300000, guid: bbb81dfc8750786489989a28098bbff6, type: 3}
   chapter1BattleClip: {fileID: 8300000, guid: 3d11958c811f4bf68fe4ce3e6fb1675a, type: 3}
   chapter2BattleClip: {fileID: 8300000, guid: 629fdad08236c394ea9623741bd7053f, type: 3}
