@@ -21,9 +21,25 @@ namespace ProjectLimitless.Core
         public int Attack;
         public int Agility;
 
-        public BattleParticipantSetup CreateParticipant(FormationSlot slot) => new BattleParticipantSetup(
-            CharacterId, DisplayName, JobId, BattleSide.Allies, slot, MaxHp, Attack, Agility, 0,
-            BasicRange, true, BattleParticipantVisualType.PrototypeCompanion, DisplayName, pathId: PathId);
+        /// <summary>레벨은 저장하지 않고 참가자 생성 시마다 현재 Player 레벨을 읽습니다.</summary>
+        public int EffectiveLevel => GameSessionData.Level;
+
+        public BattleParticipantSetup CreateParticipant(FormationSlot slot)
+        {
+            CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(JobId, EffectiveLevel);
+            CharacterGrowthStats first = CharacterGrowthCalculator.Calculate(JobId, 1);
+            // 수호자·치유사 Player 성장은 미확정이므로 바꾸지 않습니다. 승인된 동료 정책만 여기서
+            // 공통 +1/레벨을 적용하고, 직업 공격식·HP식은 기존 계산기를 그대로 재사용합니다.
+            if (JobId == "guardian" || JobId == "healer") growth.AddToAll(growth.Level - 1);
+            // MaxHp와 Agility는 완성된 Lv1 고유값이므로 증가분만 더해 시작 보너스 이중 적용을 막습니다.
+            // Attack은 고유 기본 공격력이며 주 능력치 보너스를 한 번 더하는 Player와 같은 공격식입니다.
+            int hp = System.Math.Max(1, MaxHp + CharacterGrowthCalculator.CalculateMaxHp(JobId, growth)
+                - CharacterGrowthCalculator.CalculateMaxHp(JobId, first));
+            int attack = CharacterGrowthCalculator.CalculateAttack(JobId, growth, Attack);
+            int agility = System.Math.Max(1, Agility + growth.Agility - first.Agility);
+            return new BattleParticipantSetup(CharacterId, DisplayName, JobId, BattleSide.Allies, slot, hp, attack, agility, 0,
+                BasicRange, true, BattleParticipantVisualType.PrototypeCompanion, DisplayName, pathId: PathId);
+        }
     }
 
     /// <summary>명단 UI와 일반 전투가 같은 Resources 데이터를 읽으며 새 동료 수를 제한하지 않습니다.</summary>

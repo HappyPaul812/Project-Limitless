@@ -291,12 +291,10 @@ namespace ProjectLimitless.Battle
         public static BattleEncounterSetup CreateMain03TwoVsTwo(string playerName, string playerJobId, string playerPathId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
         {
+            // 임시 Story 편성도 정식 동료 정의의 현재 레벨 계산을 공유합니다. 저장 명단·행은 변경하지 않습니다.
             BattleParticipantSetup[] allies =
             {
-                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
-                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
-                    pathId: PathCombatTraitRuntime.IntellectualPathId),
+                CompanionCatalog.Find("companion_taeon").CreateParticipant(new FormationSlot(FormationRow.Front, 0)),
                 new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     new FormationSlot(FormationRow.Rear, 0), playerMaxHp, playerAttack, playerAgility, 0,
                     ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId)
@@ -316,19 +314,14 @@ namespace ProjectLimitless.Battle
         public static BattleEncounterSetup CreateMain04ThreeVsThree(string playerName, string playerJobId, string playerPathId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition slime, MonsterDefinition venomBee)
         {
+            // 임시 Story 편성도 정식 동료 정의의 현재 레벨 계산을 공유합니다. 저장 명단·행은 변경하지 않습니다.
             BattleParticipantSetup[] allies =
             {
-                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0,
-                    TargetRangeType.MeleePhysical, true, BattleParticipantVisualType.PrototypeCompanion, "태",
-                    pathId: PathCombatTraitRuntime.IntellectualPathId),
+                CompanionCatalog.Find("companion_taeon").CreateParticipant(new FormationSlot(FormationRow.Front, 0)),
                 new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
                     ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
-                new BattleParticipantSetup("companion_miel", "미엘", "healer", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Rear, 0), 104, 8, 12, 0,
-                    TargetRangeType.Magic, true, BattleParticipantVisualType.PrototypeCompanion, "미",
-                    pathId: PathCombatTraitRuntime.EmotionalScarPathId)
+                CompanionCatalog.Find("companion_miel").CreateParticipant(new FormationSlot(FormationRow.Rear, 0))
             };
             BattleParticipantSetup[] enemies =
             {
@@ -343,17 +336,14 @@ namespace ProjectLimitless.Battle
         public static BattleEncounterSetup CreateMain07ThreeVsThree(string playerName, string playerJobId, string playerPathId,
             int playerMaxHp, int playerAttack, int playerAgility, MonsterDefinition spider, MonsterDefinition snake)
         {
+            // 임시 Story 편성도 정식 동료 정의의 현재 레벨 계산을 공유합니다. 저장 명단·행은 변경하지 않습니다.
             BattleParticipantSetup[] allies =
             {
-                new BattleParticipantSetup("companion_taeon", "태온", "guardian", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Front, 0), 132, 10, 9, 0, TargetRangeType.MeleePhysical, true,
-                    BattleParticipantVisualType.PrototypeCompanion, "태", pathId: PathCombatTraitRuntime.IntellectualPathId),
+                CompanionCatalog.Find("companion_taeon").CreateParticipant(new FormationSlot(FormationRow.Front, 0)),
                 new BattleParticipantSetup("player", playerName, playerJobId, BattleSide.Allies,
                     new FormationSlot(FormationRow.Front, 1), playerMaxHp, playerAttack, playerAgility, 0,
                     ResolveBasicRange(playerJobId), true, BattleParticipantVisualType.Player, pathId: playerPathId),
-                new BattleParticipantSetup("companion_paul", "폴", "mage", BattleSide.Allies,
-                    new FormationSlot(FormationRow.Rear, 0), 96, 14, 10, 0, TargetRangeType.Magic, true,
-                    BattleParticipantVisualType.PrototypeCompanion, "폴", pathId: PathCombatTraitRuntime.MobilityPathId)
+                CompanionCatalog.Find("companion_paul").CreateParticipant(new FormationSlot(FormationRow.Rear, 0))
             };
             BattleParticipantSetup[] enemies =
             {
