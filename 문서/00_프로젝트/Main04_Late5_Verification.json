@@ -1,0 +1,19 @@
+{
+  "runtime_checks": 148,
+  "runtime_fail": 0,
+  "original_files_protected": 2356,
+  "changed_existing": [
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_009.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_010.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_miel_supp_011.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_006.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_007.wav"
+  ],
+  "duplicate_pcm": 0,
+  "runtime_pcm_max_error": 0.0,
+  "player_voice_added": 0,
+  "direction_voice_added": 0,
+  "main03_changed": 0,
+  "normal_main04_changed": 0,
+  "source_changed": 0
+}

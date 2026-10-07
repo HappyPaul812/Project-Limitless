@@ -1,3 +1,11 @@
+## 2026-10-07 Main04 후반 음성 5개 최종 반영 완료
+
+현재 Main04 Late Sequence의 재생성 대기 **5→0**. 미엘009/010/011·태온006/007 모두 **REGENERATED / USER_LISTENED_PASS / UNITY_APPLIED / RUNTIME_VERIFIED**. 사용자 전체 원본 청취PASS와 이번 Runtime 기술 검증을 구분한다. 실제 Actor 9페이지·7Voice 전체재생/Next/Portrait/화자/본문, 새5개 PCM 오차0, 완료→Main05/완료전후 Bootstrap Continue, 동일프레임 Next2/단일Source, Player·지문 무음 PASS. **148PASS/FAIL0**, Compile Error0·최종Console Error0/Warning0·Field Runtime Missing Script0. 원본·meta·GUID·Catalog·대사 변경0; WAV 정확히5만 교체. 기존 NEEDS_LISTENING244 marker/Queue219 및 Main17 TTS_PENDING14 유지·일괄PASS승격0. [최종 QA](Main04_Late5_Final_QA.md)와 [현재5개 Mapping](Main04_Late5_Source_Mapping.csv)이 우선하며 아래 이전 Wrong/Suspect/대기5 표기는 역사 기록이다. 음성commit `0e7809a`; Push0.
+
+현재 검증: clean Bootstrap EditMode / is_focused=false / 격리Save·Settings 해제, 기존2356파일 byte보호. 새 검증 관련 Editor helper만 추가. 이번5개에 사용자 추가청취 요구 없음; 실물 입력·Standalone 등 기존 별도 미검증은 유지. 다음 권장: 기존 Queue219 사용자 청취 또는 별도 요청 작업(Main17 TTS14 별도). 마지막 관련 구현commit `0e7809a`, QA/문서commit은 최신local log 참조.
+
+---
+
 > 미래 설계 참고(2026-10-06): [Chapter2 Main12~21·후반 방향](../03_스토리/Chapter2_서부_방향.md), [Chapter3 Main22 시작 방향](../03_스토리/Chapter3_초기_방향.md), [폴–미엘 관계](../04_등장인물/폴_미엘_관계.md)를 문서화했다. **Main18~22/Chapter3 미구현**이며 아래 실제 구현·QA 상태는 유지한다. 코드/Asset/Audio 변경 없음.
 
 ## 2026-10-06 Main17 실제 Art / Battle BGM 최종 반영
