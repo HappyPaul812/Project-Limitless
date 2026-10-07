@@ -1,3 +1,10 @@
+## 2026-10-07 Main07 Early7 적용 / Paul20 PCM 복구 완료
+
+- Early7 정식Asset/Catalog 연결·RuntimePCM7PASS. Paul20 전수에서묶음/단편/번호밀림확인후기존PCM분리·재배치·Paul008단편결합. 원본/meta/GUID보존. **TTS_REGEN_REQUIRED0 / TTS API0 / 잔여3 소비0**.
+- 실제Main06완료→Main07초반연속+Paul20Voice fixture **227PASS/0FAIL**,27PCM오차0,Paul0무입력10초유지/002재생0/Next1회page1.Compile/ConsoleError0·MissingScript0.
+- 사용자복구001/002청취PASS. Early7+Paul18 사람청취PENDING25(기술검증과구분), 과거생성API코드미확인. 다음권장: 나머지25청취,동일구batchPaul후속Main09별도감사. 기존Main03~06/Main17/244/UserSave보호. [정본QA](Main07_Early7_Paul_Recovery_QA.md).
+- 마지막관련commit `c231565`(Early7),`5ed20c2`(Paul20). QA/문서 최신Docs commit 참조. GitHub Push0.
+
 ## 2026-10-07 Main07 초반 ID·입력 경계 수정 / TTS 대기
 
 - NPC7 Stable ID 추가, **TTS_REQUIRED7** handoff/manifest 준비. 사용자 첫 자막 유지 오발화 확인으로 **Paul001 TTS_REGEN_REQUIRED1** 분리. 기존WAV 변경0; 전체 Voice CLOSED 아님.

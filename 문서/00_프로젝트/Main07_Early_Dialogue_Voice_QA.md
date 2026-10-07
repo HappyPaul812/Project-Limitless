@@ -1,3 +1,7 @@
+## 2026-10-07 최신 Main07 상태 — Early7 적용 / Paul20 PCM 복구
+
+Early7 Unity resolve/PCM PASS. Paul은 묶음WAV/단편/번호밀림으로20개 전수감사·기존PCM복구, 재생성필요0/TTS API0. 사용자 복구Paul001/002 청취PASS, 나머지25청취PENDING과기술검증구분. [최신 정본](Main07_Early7_Paul_Recovery_QA.md), [복구Matrix20](Main07_Paul_Recovery_Matrix.csv). 아래TTS_REQUIRED7/Paul001재생성1은해소된과거기록이다.
+
 # Main07 초반 Voice 및 Paul 첫 대화 감사
 
 ## 구현 전 계획 — 2026-10-07

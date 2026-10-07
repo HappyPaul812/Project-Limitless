@@ -1,0 +1,230 @@
+PASS
+PASS Isolated Save
+PASS Scene Field_02
+PASS Main06 real input open
+PASS Page order Main06Investigation:0
+PASS Objective before completion Main06Investigation:0
+PASS Explicit E one page Main06Investigation:0
+PASS Page order Main06Investigation:1
+PASS Objective before completion Main06Investigation:1
+PASS Explicit E one page Main06Investigation:1
+PASS Page order Main06Investigation:2
+PASS Objective before completion Main06Investigation:2
+PASS Explicit E one page Main06Investigation:2
+PASS Page order Main06Investigation:3
+PASS Objective before completion Main06Investigation:3
+PASS Player Voice0 Portrait0
+PASS Explicit E one page Main06Investigation:3
+PASS Sequence closed Main06Investigation
+PASS Actual Main06 complete
+PASS Scene Field_02
+PASS Main07 actual Scene installation start
+PASS Page order WheelTracks:0
+PASS Objective before completion WheelTracks:0
+PASS Stable ID state WheelTracks:0
+PASS Runtime resolve/play main07_taeon_supp_001
+PASS Single Source main07_taeon_supp_001
+PASS PCM readable main07_taeon_supp_001
+PASS Natural stop once main07_taeon_supp_001
+PASS Explicit E one page WheelTracks:0
+PASS Page order WheelTracks:1
+PASS Objective before completion WheelTracks:1
+PASS Stable ID state WheelTracks:1
+PASS Runtime resolve/play main07_taeon_supp_002
+PASS Single Source main07_taeon_supp_002
+PASS PCM readable main07_taeon_supp_002
+PASS Natural stop once main07_taeon_supp_002
+PASS Explicit E one page WheelTracks:1
+PASS Page order WheelTracks:2
+PASS Objective before completion WheelTracks:2
+PASS Stable ID state WheelTracks:2
+PASS Runtime resolve/play main07_miel_supp_001
+PASS Single Source main07_miel_supp_001
+PASS PCM readable main07_miel_supp_001
+PASS Natural stop once main07_miel_supp_001
+PASS Explicit E one page WheelTracks:2
+PASS Page order WheelTracks:3
+PASS Objective before completion WheelTracks:3
+PASS Player Voice0 Portrait0
+PASS Explicit E one page WheelTracks:3
+PASS Sequence closed WheelTracks
+PASS WheelTracks completion boundary
+PASS Page order WoundedTraveler:0
+PASS Objective before completion WoundedTraveler:0
+PASS Stable ID state WoundedTraveler:0
+PASS Runtime resolve/play main07_miel_supp_002
+PASS Single Source main07_miel_supp_002
+PASS PCM readable main07_miel_supp_002
+PASS Natural stop once main07_miel_supp_002
+PASS Explicit E one page WoundedTraveler:0
+PASS Page order WoundedTraveler:1
+PASS Objective before completion WoundedTraveler:1
+PASS Stable ID state WoundedTraveler:1
+PASS Runtime resolve/play main07_taeon_supp_003
+PASS Single Source main07_taeon_supp_003
+PASS PCM readable main07_taeon_supp_003
+PASS Natural stop once main07_taeon_supp_003
+PASS Explicit E one page WoundedTraveler:1
+PASS Page order WoundedTraveler:2
+PASS Objective before completion WoundedTraveler:2
+PASS Stable ID state WoundedTraveler:2
+PASS Runtime resolve/play main07_miel_supp_003
+PASS Single Source main07_miel_supp_003
+PASS PCM readable main07_miel_supp_003
+PASS Natural stop once main07_miel_supp_003
+PASS Explicit E one page WoundedTraveler:2
+PASS Page order WoundedTraveler:3
+PASS Objective before completion WoundedTraveler:3
+PASS Stable ID state WoundedTraveler:3
+PASS Runtime resolve/play main07_miel_supp_004
+PASS Single Source main07_miel_supp_004
+PASS PCM readable main07_miel_supp_004
+PASS Natural stop once main07_miel_supp_004
+PASS Explicit E one page WoundedTraveler:3
+PASS Sequence closed WoundedTraveler
+PASS Wounded completion boundary
+PASS Actual PaulTrail location trigger
+PASS Paul E interaction preserves page0
+PASS Paul001 runtime resolve
+PASS PCM readable main07_paul_001
+PASS No-input duration+5 page0 and no002
+PASS Explicit E once Paul002 page1
+PASS PCM readable main07_paul_002
+PASS F advances exactly one page
+PASS Enter advances exactly one page
+PASS Space advances exactly one page
+PASS A advances exactly one page
+PASS Same frame E Enter Space A one page
+OBSERVED close sameframe dialogueOpen=False page=0
+PASS Custom E no same-frame reopen
+OBSERVED close A sameframe dialogueOpen=False page=0
+PASS Custom A no same-frame reopen
+PASS Held E initial open page0
+PASS Held E no repeated Next
+PASS F opening no Next
+PASS A opening no Next
+PASS Single VoiceSource no overlap
+PASS Runtime Missing Script0
+PASS Paul full scope20 stable IDs
+PASS Paul text/page main07_paul_001
+PASS Runtime resolve/play main07_paul_001
+PASS Single Source main07_paul_001
+PASS PCM readable main07_paul_001
+PASS Natural stop once main07_paul_001
+PASS Previous Clip cleanup main07_paul_001
+PASS Paul text/page main07_paul_002
+PASS Runtime resolve/play main07_paul_002
+PASS Single Source main07_paul_002
+PASS PCM readable main07_paul_002
+PASS Natural stop once main07_paul_002
+PASS Previous Clip cleanup main07_paul_002
+PASS Paul text/page main07_paul_003
+PASS Runtime resolve/play main07_paul_003
+PASS Single Source main07_paul_003
+PASS PCM readable main07_paul_003
+PASS Natural stop once main07_paul_003
+PASS Previous Clip cleanup main07_paul_003
+PASS Paul text/page main07_paul_004
+PASS Runtime resolve/play main07_paul_004
+PASS Single Source main07_paul_004
+PASS PCM readable main07_paul_004
+PASS Natural stop once main07_paul_004
+PASS Previous Clip cleanup main07_paul_004
+PASS Paul text/page main07_paul_005
+PASS Runtime resolve/play main07_paul_005
+PASS Single Source main07_paul_005
+PASS PCM readable main07_paul_005
+PASS Natural stop once main07_paul_005
+PASS Previous Clip cleanup main07_paul_005
+PASS Paul text/page main07_paul_006
+PASS Runtime resolve/play main07_paul_006
+PASS Single Source main07_paul_006
+PASS PCM readable main07_paul_006
+PASS Natural stop once main07_paul_006
+PASS Previous Clip cleanup main07_paul_006
+PASS Paul text/page main07_paul_007
+PASS Runtime resolve/play main07_paul_007
+PASS Single Source main07_paul_007
+PASS PCM readable main07_paul_007
+PASS Natural stop once main07_paul_007
+PASS Previous Clip cleanup main07_paul_007
+PASS Paul text/page main07_paul_008
+PASS Runtime resolve/play main07_paul_008
+PASS Single Source main07_paul_008
+PASS PCM readable main07_paul_008
+PASS Natural stop once main07_paul_008
+PASS Previous Clip cleanup main07_paul_008
+PASS Paul text/page main07_paul_009
+PASS Runtime resolve/play main07_paul_009
+PASS Single Source main07_paul_009
+PASS PCM readable main07_paul_009
+PASS Natural stop once main07_paul_009
+PASS Previous Clip cleanup main07_paul_009
+PASS Paul text/page main07_paul_010
+PASS Runtime resolve/play main07_paul_010
+PASS Single Source main07_paul_010
+PASS PCM readable main07_paul_010
+PASS Natural stop once main07_paul_010
+PASS Previous Clip cleanup main07_paul_010
+PASS Paul text/page main07_paul_011
+PASS Runtime resolve/play main07_paul_011
+PASS Single Source main07_paul_011
+PASS PCM readable main07_paul_011
+PASS Natural stop once main07_paul_011
+PASS Previous Clip cleanup main07_paul_011
+PASS Paul text/page main07_paul_012
+PASS Runtime resolve/play main07_paul_012
+PASS Single Source main07_paul_012
+PASS PCM readable main07_paul_012
+PASS Natural stop once main07_paul_012
+PASS Previous Clip cleanup main07_paul_012
+PASS Paul text/page main07_paul_013
+PASS Runtime resolve/play main07_paul_013
+PASS Single Source main07_paul_013
+PASS PCM readable main07_paul_013
+PASS Natural stop once main07_paul_013
+PASS Previous Clip cleanup main07_paul_013
+PASS Paul text/page main07_paul_014
+PASS Runtime resolve/play main07_paul_014
+PASS Single Source main07_paul_014
+PASS PCM readable main07_paul_014
+PASS Natural stop once main07_paul_014
+PASS Previous Clip cleanup main07_paul_014
+PASS Paul text/page main07_paul_015
+PASS Runtime resolve/play main07_paul_015
+PASS Single Source main07_paul_015
+PASS PCM readable main07_paul_015
+PASS Natural stop once main07_paul_015
+PASS Previous Clip cleanup main07_paul_015
+PASS Paul text/page main07_paul_016
+PASS Runtime resolve/play main07_paul_016
+PASS Single Source main07_paul_016
+PASS PCM readable main07_paul_016
+PASS Natural stop once main07_paul_016
+PASS Previous Clip cleanup main07_paul_016
+PASS Paul text/page main07_paul_017
+PASS Runtime resolve/play main07_paul_017
+PASS Single Source main07_paul_017
+PASS PCM readable main07_paul_017
+PASS Natural stop once main07_paul_017
+PASS Previous Clip cleanup main07_paul_017
+PASS Paul text/page main07_paul_018
+PASS Runtime resolve/play main07_paul_018
+PASS Single Source main07_paul_018
+PASS PCM readable main07_paul_018
+PASS Natural stop once main07_paul_018
+PASS Previous Clip cleanup main07_paul_018
+PASS Paul text/page main07_paul_019
+PASS Runtime resolve/play main07_paul_019
+PASS Single Source main07_paul_019
+PASS PCM readable main07_paul_019
+PASS Natural stop once main07_paul_019
+PASS Previous Clip cleanup main07_paul_019
+PASS Paul text/page main07_paul_020
+PASS Runtime resolve/play main07_paul_020
+PASS Single Source main07_paul_020
+PASS PCM readable main07_paul_020
+PASS Natural stop once main07_paul_020
+PASS Previous Clip cleanup main07_paul_020
+PASS Paul20 sequence complete no residual
+PASS Scene Bootstrap

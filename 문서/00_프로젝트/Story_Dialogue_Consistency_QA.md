@@ -1,3 +1,7 @@
+## 2026-10-07 최신 Main07 상태 — Early7 적용 / Paul20 PCM 복구
+
+Early7 Unity resolve/PCM PASS. Paul은 묶음WAV/단편/번호밀림으로20개 전수감사·기존PCM복구, 재생성필요0/TTS API0. 사용자 복구Paul001/002 청취PASS, 나머지25청취PENDING과기술검증구분. [최신 정본](Main07_Early7_Paul_Recovery_QA.md), [복구Matrix20](Main07_Paul_Recovery_Matrix.csv). 아래TTS_REQUIRED7/Paul001재생성1은해소된과거기록이다.
+
 ## 2026-10-07 Main07 초반 Voice / Paul 감사
 
 NPC7 Stable ID 부여 완료, TTS_REQUIRED7/Catalog pending. 사용자 첫 자막 유지 확인 및 Runtime page0 유지/001 PCM 정합으로 Paul001 WAV 내용 오류 TTS_REGEN_REQUIRED1 분리(Voice 교체0). Main07 custom E/A 동일프레임 닫힘→재열림 재현·수정, 기존 공용 fix 유지. [상세 Main07 QA](Main07_Early_Dialogue_Voice_QA.md), [TTS7 handoff](Main07_Early_TTS_Handoff.csv). 기존 Voice/244 NEEDS_LISTENING 보호. 아래는 이전 감사 이력이다.

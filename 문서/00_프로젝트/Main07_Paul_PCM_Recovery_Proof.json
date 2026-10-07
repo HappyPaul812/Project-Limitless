@@ -1,0 +1,330 @@
+[
+  {
+    "stable_id": "main07_paul_001",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_001.wav",
+        "start_sample": 0,
+        "end_sample": 96720,
+        "start_sec": 0,
+        "end_sec": 4.03,
+        "sha256": "8e3cf20d7075a3e4f392fb4ca3d6b5fe35eacea29afa7f263755af4b4e43d9d8"
+      }
+    ],
+    "pcm_sha256": "8e3cf20d7075a3e4f392fb4ca3d6b5fe35eacea29afa7f263755af4b4e43d9d8",
+    "sha256": "387bc25759bf1b50708b12fdd40953d4d4faf9846f42f88cc40496903f4e151b",
+    "duration": 4.03
+  },
+  {
+    "stable_id": "main07_paul_002",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_001.wav",
+        "start_sample": 119040,
+        "end_sample": 204480,
+        "start_sec": 4.96,
+        "end_sec": 8.52,
+        "sha256": "bf440da4e52527e85eaaafb395159254d4282c66e29372f5128de5a86b702fb6"
+      }
+    ],
+    "pcm_sha256": "bf440da4e52527e85eaaafb395159254d4282c66e29372f5128de5a86b702fb6",
+    "sha256": "c945b1ca277ff161ea4e2c3dc395e6494a447149d9bd28ccca87eee19784914d",
+    "duration": 3.56
+  },
+  {
+    "stable_id": "main07_paul_003",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_001.wav",
+        "start_sample": 224400,
+        "end_sample": 320880,
+        "start_sec": 9.35,
+        "end_sec": 13.37,
+        "sha256": "430daee97209e2d4cccc585086a23287ad1aee975eba36c89c85d136f470d57b"
+      }
+    ],
+    "pcm_sha256": "430daee97209e2d4cccc585086a23287ad1aee975eba36c89c85d136f470d57b",
+    "sha256": "61aaed0d8cfbc80fea2b727a42771716c94a33f6ddc85c8dbd456253e1572744",
+    "duration": 4.02
+  },
+  {
+    "stable_id": "main07_paul_004",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_002.wav",
+        "start_sample": 0,
+        "end_sample": 106560,
+        "start_sec": 0,
+        "end_sec": 4.44,
+        "sha256": "2d207433be40582a9c8d3a8c33c09c98160224c25b70efe204f49341f227ab43"
+      }
+    ],
+    "pcm_sha256": "2d207433be40582a9c8d3a8c33c09c98160224c25b70efe204f49341f227ab43",
+    "sha256": "c080a2899ca3bece13966663770a63cc8dd60ca0118862fc31a7a7ad535f56e9",
+    "duration": 4.44
+  },
+  {
+    "stable_id": "main07_paul_005",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_002.wav",
+        "start_sample": 106560,
+        "end_sample": 239760,
+        "start_sec": 4.44,
+        "end_sec": 9.99,
+        "sha256": "15e088cfb7e8c8bbeeece41b9891ec98129bf6396360b9fac24193f2c076b2a5"
+      }
+    ],
+    "pcm_sha256": "15e088cfb7e8c8bbeeece41b9891ec98129bf6396360b9fac24193f2c076b2a5",
+    "sha256": "59fd063f2bad9782b553cc622eb1a0571b5d7c2083e0f5402bfdfbb03b983a30",
+    "duration": 5.55
+  },
+  {
+    "stable_id": "main07_paul_006",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_003.wav",
+        "start_sample": 0,
+        "end_sample": 124560,
+        "start_sec": 0,
+        "end_sec": 5.19,
+        "sha256": "6d03c7c83dd8a8453b070455489eadc94ca0d425a2b33c1a289c3be3090658a9"
+      }
+    ],
+    "pcm_sha256": "6d03c7c83dd8a8453b070455489eadc94ca0d425a2b33c1a289c3be3090658a9",
+    "sha256": "326b22352c38ae8d9f13240d6d37cf252d8251bbb2556b169e787ce640ab56b2",
+    "duration": 5.19
+  },
+  {
+    "stable_id": "main07_paul_007",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_003.wav",
+        "start_sample": 124560,
+        "end_sample": 205680,
+        "start_sec": 5.19,
+        "end_sec": 8.57,
+        "sha256": "a4a81ee18c11a613b3555814b952a9ed3f119975fc54e2f19d43510065f8bb73"
+      }
+    ],
+    "pcm_sha256": "a4a81ee18c11a613b3555814b952a9ed3f119975fc54e2f19d43510065f8bb73",
+    "sha256": "e9d7bc84943d4b069aee955614a97c9c39e57bfbb9ae2dcce891b21e8b17029e",
+    "duration": 3.38
+  },
+  {
+    "stable_id": "main07_paul_008",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_004.wav",
+        "start_sample": 0,
+        "end_sample": 43680,
+        "start_sec": 0,
+        "end_sec": 1.82,
+        "sha256": "b33ed52e531dda7c5a5d6a52d4275612735b9b63e6231afe186455cf8ff65ec1"
+      },
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_005.wav",
+        "start_sample": 0,
+        "end_sample": 72960,
+        "start_sec": 0,
+        "end_sec": 3.04,
+        "sha256": "ce9fd578f9b03bd7f82e2284029129b6e6eb036b572a4808a8305f162e5e3941"
+      }
+    ],
+    "pcm_sha256": "2d01d17e2e4660eb5876eaa92058f9eb11be93f88a50bfeef685a6aac33f2bde",
+    "sha256": "ceaed493a3ce4b4af98cd45656dfcc379432e59d1924bb4dd8623de7baa1b18f",
+    "duration": 4.86
+  },
+  {
+    "stable_id": "main07_paul_009",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_006.wav",
+        "start_sample": 0,
+        "end_sample": 138480,
+        "start_sec": 0,
+        "end_sec": 5.77,
+        "sha256": "a3c6b80bf007e378686c99fb9a50f4e3411913b3b11da085375d0b5027bec12c"
+      }
+    ],
+    "pcm_sha256": "a3c6b80bf007e378686c99fb9a50f4e3411913b3b11da085375d0b5027bec12c",
+    "sha256": "d5c1ce559ff78701a01a35fdb3a03d637e0a2d12aafbfb5a5dbc963dbf0b30e4",
+    "duration": 5.77
+  },
+  {
+    "stable_id": "main07_paul_010",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_007.wav",
+        "start_sample": 0,
+        "end_sample": 84960,
+        "start_sec": 0,
+        "end_sec": 3.54,
+        "sha256": "7ce52db506d5feb0310491d855ebb674e41d03eec3958e976d4f3162cbd7419f"
+      }
+    ],
+    "pcm_sha256": "7ce52db506d5feb0310491d855ebb674e41d03eec3958e976d4f3162cbd7419f",
+    "sha256": "720a93f42c0c1b8b84de7d5e0b7a94cbca527eaacd41e964b959e3d4351f21ee",
+    "duration": 3.54
+  },
+  {
+    "stable_id": "main07_paul_011",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_008.wav",
+        "start_sample": 0,
+        "end_sample": 116880,
+        "start_sec": 0,
+        "end_sec": 4.87,
+        "sha256": "6a10bffb071119da48d1d591dc9f0c7992b6c422a0e49173d9f7674f358729ba"
+      }
+    ],
+    "pcm_sha256": "6a10bffb071119da48d1d591dc9f0c7992b6c422a0e49173d9f7674f358729ba",
+    "sha256": "0ce3b3f05400451054faa92441fc73f3d808175194783df7a0ceff121f1b737e",
+    "duration": 4.87
+  },
+  {
+    "stable_id": "main07_paul_012",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_009.wav",
+        "start_sample": 0,
+        "end_sample": 114720,
+        "start_sec": 0,
+        "end_sec": 4.78,
+        "sha256": "b346ff3d5133f84af2cecb68426d1414723303a72ce67a3cd46508eef36232f7"
+      }
+    ],
+    "pcm_sha256": "b346ff3d5133f84af2cecb68426d1414723303a72ce67a3cd46508eef36232f7",
+    "sha256": "4e1ad9765bc4c6461ad3419d4667d2592bf1bc946ee8a8270ad3385ef50b8ba1",
+    "duration": 4.78
+  },
+  {
+    "stable_id": "main07_paul_013",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_010.wav",
+        "start_sample": 0,
+        "end_sample": 76560,
+        "start_sec": 0,
+        "end_sec": 3.19,
+        "sha256": "df4137adb94abd8ab636c75b24008db8ecb3ff4c576fff5dfdad4809810bda35"
+      }
+    ],
+    "pcm_sha256": "df4137adb94abd8ab636c75b24008db8ecb3ff4c576fff5dfdad4809810bda35",
+    "sha256": "fda41c7478b46a9cba8e73a6a3581feec019bbb68b21baa342ace8fc9c00f7b9",
+    "duration": 3.19
+  },
+  {
+    "stable_id": "main07_paul_014",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_011.wav",
+        "start_sample": 0,
+        "end_sample": 103920,
+        "start_sec": 0,
+        "end_sec": 4.33,
+        "sha256": "e52777e53599c0b4dba6dfb54b88a27a11f970067dd1bab044afb50b31a663d9"
+      }
+    ],
+    "pcm_sha256": "e52777e53599c0b4dba6dfb54b88a27a11f970067dd1bab044afb50b31a663d9",
+    "sha256": "f768263835d5b1d2cfe205ce420c49c4d9a5a725b45dd53a15673801e2cae863",
+    "duration": 4.33
+  },
+  {
+    "stable_id": "main07_paul_015",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_012.wav",
+        "start_sample": 0,
+        "end_sample": 155040,
+        "start_sec": 0,
+        "end_sec": 6.46,
+        "sha256": "df2dfebf7389ddb8da2ce7b53a729ca614724344309415ef433fcae0e5b09f00"
+      }
+    ],
+    "pcm_sha256": "df2dfebf7389ddb8da2ce7b53a729ca614724344309415ef433fcae0e5b09f00",
+    "sha256": "d5e28429f3eeac47d76c5ccea2622921574c2b2b692a8cdc42e8f570e13cd330",
+    "duration": 6.46
+  },
+  {
+    "stable_id": "main07_paul_016",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_013.wav",
+        "start_sample": 0,
+        "end_sample": 125040,
+        "start_sec": 0,
+        "end_sec": 5.21,
+        "sha256": "f070c2314230652812a3dba5c19dce70bca3a2594cfcbd93f05139cc7484af9b"
+      }
+    ],
+    "pcm_sha256": "f070c2314230652812a3dba5c19dce70bca3a2594cfcbd93f05139cc7484af9b",
+    "sha256": "be5c2dbed1dd12f94d35459f05bfdc8d0b7c3f773d1978e45ca1523e3b675d75",
+    "duration": 5.21
+  },
+  {
+    "stable_id": "main07_paul_017",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_014.wav",
+        "start_sample": 0,
+        "end_sample": 36960,
+        "start_sec": 0,
+        "end_sec": 1.54,
+        "sha256": "7cbe530c16eb0051652d0f61fc3a58db11f01eab5fb8495899d4f11405bd1a3d"
+      }
+    ],
+    "pcm_sha256": "7cbe530c16eb0051652d0f61fc3a58db11f01eab5fb8495899d4f11405bd1a3d",
+    "sha256": "68de6a4581465bd4f4000d65f5a90c42df45ee171d1fdcc34e30fb2ff40f18ef",
+    "duration": 1.54
+  },
+  {
+    "stable_id": "main07_paul_018",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_014.wav",
+        "start_sample": 36960,
+        "end_sample": 186960,
+        "start_sec": 1.54,
+        "end_sec": 7.79,
+        "sha256": "d87ddca91b5a82ef647783b79ec157df53c63c59d32799592338d057ecb24ee6"
+      }
+    ],
+    "pcm_sha256": "d87ddca91b5a82ef647783b79ec157df53c63c59d32799592338d057ecb24ee6",
+    "sha256": "fe7c1ab7c476a7406bfa481c0601171bed4c8e9776168e5d44c305dc48b97013",
+    "duration": 6.25
+  },
+  {
+    "stable_id": "main07_paul_019",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_014.wav",
+        "start_sample": 186960,
+        "end_sample": 252720,
+        "start_sec": 7.79,
+        "end_sec": 10.53,
+        "sha256": "18d6aeba71d7c449b11c2a031ee3d804dc5ba279a2dffa99c48ae4576d21b3dc"
+      }
+    ],
+    "pcm_sha256": "18d6aeba71d7c449b11c2a031ee3d804dc5ba279a2dffa99c48ae4576d21b3dc",
+    "sha256": "6dc54787a3dbf59813a34065bb91189ab1eafba3684d25ed8e7cea0c9c900c73",
+    "duration": 2.74
+  },
+  {
+    "stable_id": "main07_paul_020",
+    "parts": [
+      {
+        "source_wav": "Limitless_TTS_Output_PreSerin/paul/main07_paul_015.wav",
+        "start_sample": 0,
+        "end_sample": 87120,
+        "start_sec": 0,
+        "end_sec": 3.63,
+        "sha256": "a208f47f0aa8686eadc764b5c8fa50263d25554894a03c03219ab309f8e4bfc9"
+      }
+    ],
+    "pcm_sha256": "a208f47f0aa8686eadc764b5c8fa50263d25554894a03c03219ab309f8e4bfc9",
+    "sha256": "4bd9ca8c4e502f9dc4472f23108fb9dc9fa39915fedf8b5498f874adfe90912d",
+    "duration": 3.63
+  }
+]

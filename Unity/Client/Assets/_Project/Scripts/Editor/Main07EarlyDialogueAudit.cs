@@ -24,7 +24,7 @@ namespace ProjectLimitless.EditorTools
     {
         const BindingFlags Private=BindingFlags.Instance|BindingFlags.NonPublic;
         const BindingFlags Static=BindingFlags.Static|BindingFlags.NonPublic|BindingFlags.Public;
-        static bool armed,before;
+        static bool armed,before,recovery;
         static Keyboard keyboard;static Gamepad gamepad;
         static float originalVolume;
         static InputSettings.BackgroundBehavior background;
@@ -32,7 +32,7 @@ namespace ProjectLimitless.EditorTools
         static bool settingsChanged;
         static string sequence;
         static List<string> checks=new List<string>(),trace=new List<string>();
-        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main07Early/"+(before?"before":"final")));
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,recovery?"../../../Temp/Main07Recovery/runtime":"../../../Temp/Main07Early/"+(before?"before":"final")));
         public static string Status="Idle";
         static Main07EarlyDialogueAudit()
         {
@@ -51,9 +51,9 @@ namespace ProjectLimitless.EditorTools
             };
         }
         // 공용 격리 Launch는 사용자 Save/Settings와 기존 GameView 설정을 종료 시 복원합니다.
-        public static string Launch(bool beforeFix=false)
+        public static string Launch(bool beforeFix=false,bool voiceRecovery=false)
         {
-            before=beforeFix;checks.Clear();trace.Clear();sequence="Setup";Directory.CreateDirectory(Root);
+            before=beforeFix;recovery=voiceRecovery;checks.Clear();trace.Clear();sequence="Setup";Directory.CreateDirectory(Root);
             originalVolume=AudioListener.volume;armed=true;Status="Running";return Partial9FixedSpriteAudit.Launch();
         }
         static object Field(object o,string n)=>o.GetType().GetField(n,Private).GetValue(o);
@@ -110,11 +110,46 @@ namespace ProjectLimitless.EditorTools
             {
                 Snapshot("PageDisplay");Check(d.IsOpen&&Page==i,"Page order "+sequence+":"+i);Check(Objective==objective,"Objective before completion "+sequence+":"+i);
                 var line=((DialogueLine[])Field(d,"sequenceLines"))[i];
-                if(pending&&!line.IsPlayer){Check(before?string.IsNullOrEmpty(line.DialogueId):!string.IsNullOrEmpty(line.DialogueId),"Stable ID state "+sequence+":"+i);Check(Voice.Clip==null,"TTS pending no fallback "+sequence+":"+i);}
+                if(pending&&!line.IsPlayer)
+                {
+                    Check(before?string.IsNullOrEmpty(line.DialogueId):!string.IsNullOrEmpty(line.DialogueId),"Stable ID state "+sequence+":"+i);
+                    if(recovery)yield return NaturalVoice(line,i);else Check(Voice.Clip==null,"TTS pending no fallback "+sequence+":"+i);
+                }
                 if(line.IsPlayer)Check(Voice.Clip==null&&!((GameObject)Field(d,"portraitRoot")).activeSelf,"Player Voice0 Portrait0");
                 yield return Wait(3);Pulse(Key.E);Check(Page==i+1||!d.IsOpen,"Explicit E one page "+sequence+":"+i);
             }
             Check(!d.IsOpen&&Voice.Clip==null,"Sequence closed "+sequence);yield return Wait(3);
+        }
+        // 제작·복구된 실제 PCM과 Resolver를 대조하며 자연종료까지 페이지/Clip과 재생 위치를 감시합니다.
+        static IEnumerator NaturalVoice(DialogueLine line,int page)
+        {
+            var clip=Voice.Clip;var catalog=Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog");
+            Check(clip!=null&&clip.name==line.DialogueId&&clip==catalog.Find(line.DialogueId,line.SpeakerId)&&Voice.IsPlaying,"Runtime resolve/play "+line.DialogueId);
+            Check(UnityEngine.Object.FindObjectsByType<VoicePlaybackSource>().Length==1,"Single Source "+line.DialogueId);Dump(clip);
+            var source=(AudioSource)Field(Voice,"source");int last=0;bool ended=false;double start=EditorApplication.timeSinceStartup;
+            while(EditorApplication.timeSinceStartup-start<clip.length+.4)
+            {
+                CheckIdle(clip,page);
+                if(source.isPlaying){if(ended||source.timeSamples<last)throw new InvalidOperationException("Unexpected replay "+line.DialogueId);last=source.timeSamples;}else ended=true;
+                yield return null;
+            }
+            Check(ended&&!Voice.IsPlaying,"Natural stop once "+line.DialogueId);
+        }
+        static IEnumerator AllPaulVoices()
+        {
+            var d=DialoguePresenter.Instance;
+            var lines=((DialogueLine[])typeof(MainQuest07Interactable).GetMethod("PaulFirst",Static).Invoke(null,null))
+                .Concat((DialogueLine[])typeof(MainQuest07Interactable).GetMethod("MielMeeting",Static).Invoke(null,null))
+                .Where(l=>l.SpeakerId==MainQuest07FieldFlow.PaulId).ToArray();
+            Check(lines.Length==20&&lines.Select(l=>l.DialogueId).Distinct().Count()==20,"Paul full scope20 stable IDs");
+            sequence="AllPaul20";d.ShowSequence(lines,null);
+            for(int i=0;i<lines.Length;i++)
+            {
+                Check(Page==i&&((Text)Field(d,"dialogueText")).text==lines[i].Message,"Paul text/page "+lines[i].DialogueId);Snapshot("PageDisplay");
+                yield return NaturalVoice(lines[i],i);yield return Wait(3);Pulse(Key.E);
+                Check(!d.IsOpen||Voice.Clip.name!=lines[i].DialogueId,"Previous Clip cleanup "+lines[i].DialogueId);
+            }
+            Check(!d.IsOpen&&Voice.Clip==null,"Paul20 sequence complete no residual");
         }
         static IEnumerator PaulProbe()
         {
@@ -179,6 +214,7 @@ namespace ProjectLimitless.EditorTools
             Check(Objective=="follow_wheel_tracks","Wounded completion boundary");
             p=UnityEngine.Object.FindAnyObjectByType<PlayerController>();p.transform.position=MainQuest07FieldFlow.PaulPosition;yield return Wait(8);
             Check(Objective=="talk_to_paul","Actual PaulTrail location trigger");yield return Near(MainQuest07FieldFlow.PaulId);yield return PaulProbe();
+            if(recovery){yield return Wait(3);yield return AllPaulVoices();}
             InputSystem.onActionChange-=ActionChanged;yield return Load("Bootstrap");Status="PASS";File.WriteAllText(Path.Combine(Root,"final.txt"),Status+"\n"+string.Join("\n",checks));
         }
     }

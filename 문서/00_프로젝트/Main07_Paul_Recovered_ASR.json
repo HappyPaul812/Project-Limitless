@@ -1,0 +1,1145 @@
+{
+  "main07_paul_001": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_001.wav",
+    "duration": 4.03,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.32,
+        "text": " 아, 사람이다.",
+        "avg_logprob": -0.4601713544444034,
+        "no_speech_prob": 0.016552889719605446,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.48,
+            "word": " 아,",
+            "probability": 0.569902777671814
+          },
+          {
+            "start": 0.7,
+            "end": 1.32,
+            "word": " 사람이다.",
+            "probability": 0.9913846552371979
+          }
+        ]
+      },
+      {
+        "start": 2.02,
+        "end": 3.52,
+        "text": " 반갑습니다. 진짜로요.",
+        "avg_logprob": -0.4601713544444034,
+        "no_speech_prob": 0.016552889719605446,
+        "words": [
+          {
+            "start": 2.02,
+            "end": 2.66,
+            "word": " 반갑습니다.",
+            "probability": 0.9951064387957255
+          },
+          {
+            "start": 2.96,
+            "end": 3.52,
+            "word": " 진짜로요.",
+            "probability": 0.9791227281093597
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_002": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_002.wav",
+    "duration": 3.56,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.92,
+        "text": " 원래 계획은 저 진흙을 피해가는 거였는데요.",
+        "avg_logprob": -0.2814899306548269,
+        "no_speech_prob": 0.012426009401679039,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.64,
+            "word": " 원래",
+            "probability": 0.8303639888763428
+          },
+          {
+            "start": 0.64,
+            "end": 1.3,
+            "word": " 계획은",
+            "probability": 0.9872220555941263
+          },
+          {
+            "start": 1.3,
+            "end": 1.54,
+            "word": " 저",
+            "probability": 0.8176305890083313
+          },
+          {
+            "start": 1.54,
+            "end": 2.04,
+            "word": " 진흙을",
+            "probability": 0.943107083439827
+          },
+          {
+            "start": 2.04,
+            "end": 2.48,
+            "word": " 피해가는",
+            "probability": 0.9096468488375345
+          },
+          {
+            "start": 2.48,
+            "end": 2.92,
+            "word": " 거였는데요.",
+            "probability": 0.9424694180488586
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_003": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_003.wav",
+    "duration": 4.02,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.16,
+        "text": " 보시다시피 계획이 아주 성공적입니다",
+        "avg_logprob": -0.36283302307128906,
+        "no_speech_prob": 0.006107491906732321,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.42,
+            "word": " 보시다시피",
+            "probability": 0.9065167158842087
+          },
+          {
+            "start": 1.42,
+            "end": 2.3,
+            "word": " 계획이",
+            "probability": 0.9249568978945414
+          },
+          {
+            "start": 2.3,
+            "end": 2.44,
+            "word": " 아주",
+            "probability": 0.9947056174278259
+          },
+          {
+            "start": 2.44,
+            "end": 3.16,
+            "word": " 성공적입니다",
+            "probability": 0.9913695653279623
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_004": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_004.wav",
+    "duration": 4.44,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.44,
+        "text": " 네, 그러게요. 그것도 아주 쉽게요.",
+        "avg_logprob": -0.587808975151607,
+        "no_speech_prob": 0.013350333087146282,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.9,
+            "word": " 네,",
+            "probability": 0.880530595779419
+          },
+          {
+            "start": 1.08,
+            "end": 1.52,
+            "word": " 그러게요.",
+            "probability": 0.9618141949176788
+          },
+          {
+            "start": 2.06,
+            "end": 2.48,
+            "word": " 그것도",
+            "probability": 0.9819055199623108
+          },
+          {
+            "start": 2.48,
+            "end": 2.72,
+            "word": " 아주",
+            "probability": 0.9959343671798706
+          },
+          {
+            "start": 2.72,
+            "end": 3.44,
+            "word": " 쉽게요.",
+            "probability": 0.7732365727424622
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_005": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_005.wav",
+    "duration": 5.55,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.98,
+        "text": " 하여튼 바로 잡아당기시면 안됩니다",
+        "avg_logprob": -0.4093968802028232,
+        "no_speech_prob": 0.07876919955015182,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.5,
+            "word": " 하여튼",
+            "probability": 0.7452427546183268
+          },
+          {
+            "start": 1.5,
+            "end": 1.82,
+            "word": " 바로",
+            "probability": 0.9367227554321289
+          },
+          {
+            "start": 1.82,
+            "end": 2.44,
+            "word": " 잡아당기시면",
+            "probability": 0.9649055302143097
+          },
+          {
+            "start": 2.44,
+            "end": 2.98,
+            "word": " 안됩니다",
+            "probability": 0.795297771692276
+          }
+        ]
+      },
+      {
+        "start": 2.98,
+        "end": 4.92,
+        "text": " 그러면 압박휴까지 빠질거에요",
+        "avg_logprob": -0.4093968802028232,
+        "no_speech_prob": 0.07876919955015182,
+        "words": [
+          {
+            "start": 2.98,
+            "end": 3.62,
+            "word": " 그러면",
+            "probability": 0.5240446925163269
+          },
+          {
+            "start": 3.62,
+            "end": 4.34,
+            "word": " 압박휴까지",
+            "probability": 0.791238342722257
+          },
+          {
+            "start": 4.34,
+            "end": 4.92,
+            "word": " 빠질거에요",
+            "probability": 0.8234158009290695
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_006": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_006.wav",
+    "duration": 5.19,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.08,
+        "text": " 저쪽에 넓은 돌 보이시죠?",
+        "avg_logprob": -0.3201870838801066,
+        "no_speech_prob": 0.15398648381233215,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.86,
+            "word": " 저쪽에",
+            "probability": 0.9215351641178131
+          },
+          {
+            "start": 0.86,
+            "end": 1.36,
+            "word": " 넓은",
+            "probability": 0.989042599995931
+          },
+          {
+            "start": 1.36,
+            "end": 1.46,
+            "word": " 돌",
+            "probability": 0.9629482626914978
+          },
+          {
+            "start": 1.46,
+            "end": 2.08,
+            "word": " 보이시죠?",
+            "probability": 0.9938381761312485
+          }
+        ]
+      },
+      {
+        "start": 2.68,
+        "end": 4.78,
+        "text": " 그걸 오른쪽 바퀴 뒤에 바쳐주시고요.",
+        "avg_logprob": -0.3201870838801066,
+        "no_speech_prob": 0.15398648381233215,
+        "words": [
+          {
+            "start": 2.68,
+            "end": 3.0,
+            "word": " 그걸",
+            "probability": 0.9227714538574219
+          },
+          {
+            "start": 3.0,
+            "end": 3.54,
+            "word": " 오른쪽",
+            "probability": 0.9957814514636993
+          },
+          {
+            "start": 3.54,
+            "end": 3.86,
+            "word": " 바퀴",
+            "probability": 0.8791749030351639
+          },
+          {
+            "start": 3.86,
+            "end": 4.1,
+            "word": " 뒤에",
+            "probability": 0.9617113471031189
+          },
+          {
+            "start": 4.1,
+            "end": 4.78,
+            "word": " 바쳐주시고요.",
+            "probability": 0.7941867232322692
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_007": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_007.wav",
+    "duration": 3.38,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.52,
+        "text": " 제가 박귀를 돌릴 때 같이 밀면 될 것 같습니다.",
+        "avg_logprob": -0.2276096877298857,
+        "no_speech_prob": 0.030955545604228973,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.42,
+            "word": " 제가",
+            "probability": 0.9283216595649719
+          },
+          {
+            "start": 0.42,
+            "end": 0.88,
+            "word": " 박귀를",
+            "probability": 0.7853928804397583
+          },
+          {
+            "start": 0.88,
+            "end": 1.2,
+            "word": " 돌릴",
+            "probability": 0.9722602963447571
+          },
+          {
+            "start": 1.2,
+            "end": 1.38,
+            "word": " 때",
+            "probability": 0.9968185424804688
+          },
+          {
+            "start": 1.38,
+            "end": 1.76,
+            "word": " 같이",
+            "probability": 0.9843558669090271
+          },
+          {
+            "start": 1.76,
+            "end": 2.04,
+            "word": " 밀면",
+            "probability": 0.9902530312538147
+          },
+          {
+            "start": 2.04,
+            "end": 2.2,
+            "word": " 될",
+            "probability": 0.9986680746078491
+          },
+          {
+            "start": 2.2,
+            "end": 2.3,
+            "word": " 것",
+            "probability": 0.965345025062561
+          },
+          {
+            "start": 2.3,
+            "end": 2.52,
+            "word": " 같습니다.",
+            "probability": 0.9971567392349243
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_008": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_008.wav",
+    "duration": 4.86,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.92,
+        "text": " 아... 저건 계획이 없었는데요",
+        "avg_logprob": -0.5579822246844952,
+        "no_speech_prob": 0.037434179335832596,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 2.04,
+            "word": " 아...",
+            "probability": 0.6037374287843704
+          },
+          {
+            "start": 2.04,
+            "end": 2.74,
+            "word": " 저건",
+            "probability": 0.9429565966129303
+          },
+          {
+            "start": 2.74,
+            "end": 3.32,
+            "word": " 계획이",
+            "probability": 0.8770670692125956
+          },
+          {
+            "start": 3.32,
+            "end": 3.92,
+            "word": " 없었는데요",
+            "probability": 0.9913708567619324
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_009": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_009.wav",
+    "duration": 5.77,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.84,
+        "text": " 뭐, 바퀴가 안 움직이는 거지 마법까지 안 나가는 건 아니니까요",
+        "avg_logprob": -0.3364357016980648,
+        "no_speech_prob": 0.12301090359687805,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.06,
+            "word": " 뭐,",
+            "probability": 0.8823416233062744
+          },
+          {
+            "start": 1.72,
+            "end": 2.16,
+            "word": " 바퀴가",
+            "probability": 0.9167394518852234
+          },
+          {
+            "start": 2.16,
+            "end": 2.32,
+            "word": " 안",
+            "probability": 0.9974609613418579
+          },
+          {
+            "start": 2.32,
+            "end": 2.66,
+            "word": " 움직이는",
+            "probability": 0.9949516654014587
+          },
+          {
+            "start": 2.66,
+            "end": 2.84,
+            "word": " 거지",
+            "probability": 0.9668789505958557
+          },
+          {
+            "start": 2.84,
+            "end": 3.7,
+            "word": " 마법까지",
+            "probability": 0.8618176976839701
+          },
+          {
+            "start": 3.7,
+            "end": 3.86,
+            "word": " 안",
+            "probability": 0.962982177734375
+          },
+          {
+            "start": 3.86,
+            "end": 4.12,
+            "word": " 나가는",
+            "probability": 0.9909465610980988
+          },
+          {
+            "start": 4.12,
+            "end": 4.24,
+            "word": " 건",
+            "probability": 0.9690017104148865
+          },
+          {
+            "start": 4.24,
+            "end": 4.84,
+            "word": " 아니니까요",
+            "probability": 0.9934587279955546
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_010": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_010.wav",
+    "duration": 3.54,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.62,
+        "text": " 후우",
+        "avg_logprob": -0.8256588757038117,
+        "no_speech_prob": 0.057005684822797775,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.62,
+            "word": " 후우",
+            "probability": 0.10230405256152153
+          }
+        ]
+      },
+      {
+        "start": 1.62,
+        "end": 2.7,
+        "text": " 됐네요",
+        "avg_logprob": -0.8256588757038117,
+        "no_speech_prob": 0.057005684822797775,
+        "words": [
+          {
+            "start": 1.62,
+            "end": 2.7,
+            "word": " 됐네요",
+            "probability": 0.7609074612458547
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_011": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_011.wav",
+    "duration": 4.87,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.14,
+        "text": " 다음에는 저기로 안 갑니다. 경험을 했으면 계획을 수정해야죠.",
+        "avg_logprob": -0.299849225829045,
+        "no_speech_prob": 0.04427805170416832,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.94,
+            "word": " 다음에는",
+            "probability": 0.8582533895969391
+          },
+          {
+            "start": 0.94,
+            "end": 1.26,
+            "word": " 저기로",
+            "probability": 0.8416812717914581
+          },
+          {
+            "start": 1.26,
+            "end": 1.42,
+            "word": " 안",
+            "probability": 0.9905828237533569
+          },
+          {
+            "start": 1.42,
+            "end": 2.1,
+            "word": " 갑니다.",
+            "probability": 0.9301347136497498
+          },
+          {
+            "start": 2.12,
+            "end": 2.7,
+            "word": " 경험을",
+            "probability": 0.9869303703308105
+          },
+          {
+            "start": 2.7,
+            "end": 3.02,
+            "word": " 했으면",
+            "probability": 0.990479975938797
+          },
+          {
+            "start": 3.02,
+            "end": 3.58,
+            "word": " 계획을",
+            "probability": 0.9881242314974467
+          },
+          {
+            "start": 3.58,
+            "end": 4.14,
+            "word": " 수정해야죠.",
+            "probability": 0.9833040088415146
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_012": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_012.wav",
+    "duration": 4.78,
+    "segments": [
+      {
+        "start": 1.48,
+        "end": 4.02,
+        "text": " 도와주셔서 감사합니다. 저는 폴이라고 합니다.",
+        "avg_logprob": -0.4863619883855184,
+        "no_speech_prob": 0.20625382661819458,
+        "words": [
+          {
+            "start": 1.48,
+            "end": 2.28,
+            "word": " 도와주셔서",
+            "probability": 0.8399413228034973
+          },
+          {
+            "start": 2.28,
+            "end": 2.62,
+            "word": " 감사합니다.",
+            "probability": 0.9883560538291931
+          },
+          {
+            "start": 3.02,
+            "end": 3.28,
+            "word": " 저는",
+            "probability": 0.9911078214645386
+          },
+          {
+            "start": 3.28,
+            "end": 3.8,
+            "word": " 폴이라고",
+            "probability": 0.9479876756668091
+          },
+          {
+            "start": 3.8,
+            "end": 4.02,
+            "word": " 합니다.",
+            "probability": 0.9945439100265503
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_013": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_013.wav",
+    "duration": 3.19,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.6,
+        "text": " 저도 이 숲을 좀 조사하고 있었습니다",
+        "avg_logprob": -0.3792503774166107,
+        "no_speech_prob": 0.05623233690857887,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.8,
+            "word": " 저도",
+            "probability": 0.97149658203125
+          },
+          {
+            "start": 0.8,
+            "end": 1.22,
+            "word": " 이",
+            "probability": 0.9625547528266907
+          },
+          {
+            "start": 1.22,
+            "end": 1.62,
+            "word": " 숲을",
+            "probability": 0.6893865664800009
+          },
+          {
+            "start": 1.62,
+            "end": 1.72,
+            "word": " 좀",
+            "probability": 0.7585667967796326
+          },
+          {
+            "start": 1.72,
+            "end": 2.22,
+            "word": " 조사하고",
+            "probability": 0.9551539023717245
+          },
+          {
+            "start": 2.22,
+            "end": 2.6,
+            "word": " 있었습니다",
+            "probability": 0.9902504980564117
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_014": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_014.wav",
+    "duration": 4.33,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.72,
+        "text": " 며칠 전부터 수반 쪽의 마력 크름이 평소랑 달라졌거든요",
+        "avg_logprob": -0.25403780263403186,
+        "no_speech_prob": 0.0431513637304306,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.7,
+            "word": " 며칠",
+            "probability": 0.9458646774291992
+          },
+          {
+            "start": 0.7,
+            "end": 1.16,
+            "word": " 전부터",
+            "probability": 0.9575895369052887
+          },
+          {
+            "start": 1.16,
+            "end": 1.62,
+            "word": " 수반",
+            "probability": 0.6937806010246277
+          },
+          {
+            "start": 1.62,
+            "end": 1.94,
+            "word": " 쪽의",
+            "probability": 0.8173631429672241
+          },
+          {
+            "start": 1.94,
+            "end": 2.22,
+            "word": " 마력",
+            "probability": 0.9767909049987793
+          },
+          {
+            "start": 2.22,
+            "end": 2.6,
+            "word": " 크름이",
+            "probability": 0.822783370812734
+          },
+          {
+            "start": 2.6,
+            "end": 3.14,
+            "word": " 평소랑",
+            "probability": 0.9872813026110331
+          },
+          {
+            "start": 3.14,
+            "end": 3.72,
+            "word": " 달라졌거든요",
+            "probability": 0.9779291152954102
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_015": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_015.wav",
+    "duration": 6.46,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.54,
+        "text": " 처음에는 별일 아닌 줄 알았는데 몬스터들 움직인까지 달라지는 걸 보고 생각에 바뀌었습니다.",
+        "avg_logprob": -0.23478228747844695,
+        "no_speech_prob": 0.012439686805009842,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.86,
+            "word": " 처음에는",
+            "probability": 0.9715446531772614
+          },
+          {
+            "start": 0.86,
+            "end": 1.4,
+            "word": " 별일",
+            "probability": 0.8748050928115845
+          },
+          {
+            "start": 1.4,
+            "end": 1.56,
+            "word": " 아닌",
+            "probability": 0.9799320101737976
+          },
+          {
+            "start": 1.56,
+            "end": 1.74,
+            "word": " 줄",
+            "probability": 0.9707860350608826
+          },
+          {
+            "start": 1.74,
+            "end": 2.14,
+            "word": " 알았는데",
+            "probability": 0.9932065010070801
+          },
+          {
+            "start": 2.14,
+            "end": 3.38,
+            "word": " 몬스터들",
+            "probability": 0.9372024039427439
+          },
+          {
+            "start": 3.38,
+            "end": 3.9,
+            "word": " 움직인까지",
+            "probability": 0.833430270353953
+          },
+          {
+            "start": 3.9,
+            "end": 4.34,
+            "word": " 달라지는",
+            "probability": 0.9832697212696075
+          },
+          {
+            "start": 4.34,
+            "end": 4.48,
+            "word": " 걸",
+            "probability": 0.9265022873878479
+          },
+          {
+            "start": 4.48,
+            "end": 4.68,
+            "word": " 보고",
+            "probability": 0.9984654188156128
+          },
+          {
+            "start": 4.68,
+            "end": 5.18,
+            "word": " 생각에",
+            "probability": 0.6012915074825287
+          },
+          {
+            "start": 5.18,
+            "end": 5.54,
+            "word": " 바뀌었습니다.",
+            "probability": 0.9793469508488973
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_016": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_016.wav",
+    "duration": 5.21,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.58,
+        "text": " 그러면 제가 진흥에 빠진 건 몰라도 방향은 제대로 잡은 것 같네요",
+        "avg_logprob": -0.2806804983512215,
+        "no_speech_prob": 0.05834806337952614,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.06,
+            "word": " 그러면",
+            "probability": 0.8236138224601746
+          },
+          {
+            "start": 1.06,
+            "end": 1.8,
+            "word": " 제가",
+            "probability": 0.6320874094963074
+          },
+          {
+            "start": 1.8,
+            "end": 2.3,
+            "word": " 진흥에",
+            "probability": 0.7306416220963001
+          },
+          {
+            "start": 2.3,
+            "end": 2.54,
+            "word": " 빠진",
+            "probability": 0.997103750705719
+          },
+          {
+            "start": 2.54,
+            "end": 2.64,
+            "word": " 건",
+            "probability": 0.7940976619720459
+          },
+          {
+            "start": 2.64,
+            "end": 2.98,
+            "word": " 몰라도",
+            "probability": 0.991637110710144
+          },
+          {
+            "start": 2.98,
+            "end": 3.68,
+            "word": " 방향은",
+            "probability": 0.9409315586090088
+          },
+          {
+            "start": 3.68,
+            "end": 3.96,
+            "word": " 제대로",
+            "probability": 0.9970061182975769
+          },
+          {
+            "start": 3.96,
+            "end": 4.28,
+            "word": " 잡은",
+            "probability": 0.9943997859954834
+          },
+          {
+            "start": 4.28,
+            "end": 4.34,
+            "word": " 것",
+            "probability": 0.933644711971283
+          },
+          {
+            "start": 4.34,
+            "end": 4.58,
+            "word": " 같네요",
+            "probability": 0.9927529394626617
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_017": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_017.wav",
+    "duration": 1.54,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.04,
+        "text": " 폴이라고 합니다.",
+        "avg_logprob": -0.5706297680735588,
+        "no_speech_prob": 0.22834394872188568,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.82,
+            "word": " 폴이라고",
+            "probability": 0.8915566603342692
+          },
+          {
+            "start": 0.82,
+            "end": 1.04,
+            "word": " 합니다.",
+            "probability": 0.995751142501831
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_018": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_018.wav",
+    "duration": 6.25,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.26,
+        "text": " 원래는 조금 더 멀쩡한 모습으로 처음 뵐 예정이었는데요",
+        "avg_logprob": -0.29841051747401554,
+        "no_speech_prob": 0.014669601805508137,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.74,
+            "word": " 원래는",
+            "probability": 0.918912261724472
+          },
+          {
+            "start": 0.74,
+            "end": 1.08,
+            "word": " 조금",
+            "probability": 0.9251964092254639
+          },
+          {
+            "start": 1.08,
+            "end": 1.28,
+            "word": " 더",
+            "probability": 0.9916344881057739
+          },
+          {
+            "start": 1.28,
+            "end": 1.7,
+            "word": " 멀쩡한",
+            "probability": 0.9873493413130442
+          },
+          {
+            "start": 1.7,
+            "end": 2.12,
+            "word": " 모습으로",
+            "probability": 0.9943411350250244
+          },
+          {
+            "start": 2.12,
+            "end": 2.4,
+            "word": " 처음",
+            "probability": 0.9905074834823608
+          },
+          {
+            "start": 2.4,
+            "end": 2.66,
+            "word": " 뵐",
+            "probability": 0.9041332999865214
+          },
+          {
+            "start": 2.66,
+            "end": 3.26,
+            "word": " 예정이었는데요",
+            "probability": 0.9786667674779892
+          }
+        ]
+      },
+      {
+        "start": 3.8000000000000003,
+        "end": 5.54,
+        "text": " 그늘습이 협조를 안 해주더라고요",
+        "avg_logprob": -0.29841051747401554,
+        "no_speech_prob": 0.014669601805508137,
+        "words": [
+          {
+            "start": 3.8000000000000003,
+            "end": 4.62,
+            "word": " 그늘습이",
+            "probability": 0.5371042788028717
+          },
+          {
+            "start": 4.62,
+            "end": 5.02,
+            "word": " 협조를",
+            "probability": 0.9749505917231241
+          },
+          {
+            "start": 5.02,
+            "end": 5.18,
+            "word": " 안",
+            "probability": 0.999270498752594
+          },
+          {
+            "start": 5.18,
+            "end": 5.54,
+            "word": " 해주더라고요",
+            "probability": 0.7196954488754272
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_019": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_019.wav",
+    "duration": 2.74,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.14,
+        "text": " 저는 괜찮습니다. 저분부터 봐주세요.",
+        "avg_logprob": -0.37963661780724156,
+        "no_speech_prob": 0.09805407375097275,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.64,
+            "word": " 저는",
+            "probability": 0.94022136926651
+          },
+          {
+            "start": 0.64,
+            "end": 1.14,
+            "word": " 괜찮습니다.",
+            "probability": 0.9932202696800232
+          },
+          {
+            "start": 1.52,
+            "end": 1.88,
+            "word": " 저분부터",
+            "probability": 0.9279135862986246
+          },
+          {
+            "start": 1.88,
+            "end": 2.14,
+            "word": " 봐주세요.",
+            "probability": 0.9448646306991577
+          }
+        ]
+      }
+    ]
+  },
+  "main07_paul_020": {
+    "file": "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main07\\main07_paul_020.wav",
+    "duration": 3.63,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.9,
+        "text": " 아, 순서가 벌써 제 차례인가요?",
+        "avg_logprob": -0.4648169914881388,
+        "no_speech_prob": 0.07644636929035187,
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.56,
+            "word": " 아,",
+            "probability": 0.5243980288505554
+          },
+          {
+            "start": 1.52,
+            "end": 1.9,
+            "word": " 순서가",
+            "probability": 0.8644657135009766
+          },
+          {
+            "start": 1.9,
+            "end": 2.32,
+            "word": " 벌써",
+            "probability": 0.9512400031089783
+          },
+          {
+            "start": 2.32,
+            "end": 2.54,
+            "word": " 제",
+            "probability": 0.9555518627166748
+          },
+          {
+            "start": 2.54,
+            "end": 2.9,
+            "word": " 차례인가요?",
+            "probability": 0.9561668634414673
+          }
+        ]
+      }
+    ]
+  }
+}
