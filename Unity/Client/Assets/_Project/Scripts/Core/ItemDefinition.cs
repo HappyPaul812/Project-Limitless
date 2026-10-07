@@ -4,7 +4,7 @@ namespace ProjectLimitless.Core
 {
     public enum ItemCategory { Consumable, Equipment, Material, Quest, KeyItem }
     public enum ItemUseType { None, World, Battle, WorldAndBattle }
-    public enum ItemEffectType { None, RecoverHp, RecoverMp, RemovePoison, RemoveBurn, RemoveShock, RemoveSilence }
+    public enum ItemEffectType { None, RecoverHp, RecoverMp, RemovePoison, RemoveBurn, RemoveShock, RemoveSilence, RemoveOverheat }
     public enum ItemTargetType { LivingAllySingle, DeadAllySingle, AllLivingAllies }
 
     /// <summary>표시 이름이 바뀌어도 저장이 깨지지 않도록 안정적인 ItemId와 화면용 문구를 분리합니다.</summary>

@@ -21,7 +21,8 @@ namespace ProjectLimitless.Battle
         public string Id { get; }
         public string Label { get; }
         public int Count { get; }
-        public string DisplayText => Count > 0 ? $"{Label} {Count}" : Label;
+        public string DisplayText => Id == "overheat" ? $"과열 {Count}/3" + (Count == 2 ? " 위험" : "")
+            : Count > 0 ? $"{Label} {Count}" : Label;
     }
 
     /// <summary>
@@ -119,6 +120,9 @@ namespace ProjectLimitless.Battle
                     pathName: path?.DisplayName, pathTraitName: path?.PassiveName);
 
             List<BattleStatusMarker> markers = new List<BattleStatusMarker>();
+            // 위험 숫자를 앞에 배치해 여러 버프·쿨타임이 있어도 냉각 판단을 놓치지 않게 합니다.
+            int heat = statusEffects?.GetOverheatStacks(combatant) ?? 0;
+            if (heat > 0) markers.Add(new BattleStatusMarker("overheat", "과열", heat));
             // 스킬 차단은 현재 행동자의 선택을 즉시 바꾸므로 다른 요약 상태보다 먼저 보여 줍니다.
             // 아이콘 Asset이 없어도 `침묵 1` 텍스트가 HUD와 상세 팝업에 동일하게 남습니다.
             if (statusEffects?.HasSilence(combatant) == true)
@@ -168,6 +172,7 @@ namespace ProjectLimitless.Battle
             // 상단 요약은 공간을 아끼기 위해 1중첩부터 표시하지만, 투사의 상세 팝업은 자원이 0일 때도
             // 현재값과 상한을 함께 보여 줍니다. UI 문구는 읽기만 하며 실제 전투 자원은 변경하지 않습니다.
             List<string> resourceDetails = new List<string>();
+            if (heat > 0) resourceDetails.Add("열이 축적됩니다. 3중첩이 되면 최대 HP의 8% 피해를 받고 과열이 해제됩니다. 정화로 제거할 수 없습니다.");
             if (statusEffects?.HasSilence(combatant) == true)
                 resourceDetails.Add("침묵: 다음 행동에서 스킬을 사용할 수 없습니다.");
             if (poisonRemaining > 0) resourceDetails.Add($"{poison.DisplayName}: 행동 종료 시 최대 HP {poison.Power}% 피해");

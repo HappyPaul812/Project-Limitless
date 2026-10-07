@@ -837,6 +837,16 @@ namespace ProjectLimitless.Battle
             onComplete?.Invoke();
         }
 
+        /// <summary>Manifest의 단일 PNG를 짧게 표시하고 제거합니다. 임의 애니메이션 프레임은 만들지 않습니다.</summary>
+        public IEnumerator PlayOverheatPulse(RectTransform target, string phase)
+        {
+            Sprite sprite = Resources.Load<Sprite>("Main18/VFX/Overheat_" + phase);
+            Image effect = CreateEffectImage(target, "Overheat" + phase, new[] { sprite },
+                new Vector2(145, 145), Vector2.zero);
+            yield return new WaitForSeconds(.28f);
+            DestroyEffectImage(effect);
+        }
+
         private static Image CreateEffectImage(RectTransform parent, string objectName, Sprite[] frames,
             Vector2 size, Vector2 anchoredPosition, Color? tint = null)
         {

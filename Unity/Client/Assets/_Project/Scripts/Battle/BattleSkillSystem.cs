@@ -506,6 +506,26 @@ namespace ProjectLimitless.Battle
         private readonly Dictionary<Combatant, BurnState> burns = new Dictionary<Combatant, BurnState>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> shockedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> silencedTargets = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
+        // 과열은 저장/정화 대상이 아닌 이번 전투만의 열 축적값입니다. 3은 피해와 함께 즉시 0으로 바뀝니다.
+        private readonly Dictionary<Combatant, int> overheatStacks = new Dictionary<Combatant, int>(CombatantReferenceComparer.Instance);
+        public int GetOverheatStacks(Combatant target) => target != null && target.IsAlive
+            && overheatStacks.TryGetValue(target, out int count) ? count : 0;
+        public bool RemoveOverheat(Combatant target) => target != null && overheatStacks.Remove(target);
+        public void ClearOverheat() => overheatStacks.Clear();
+
+        /// <summary>열을 하나 쌓고 3에 도달하면 독의 상태 고유 HP 경계처럼 방어 없이 피해를 줍니다.
+        /// Direct/DoT/Path/펫/수호의 맹세 계산에 진입하지 않아 보호 예산과 첫 방어도 소비하지 않습니다.</summary>
+        public int ApplyOverheat(Combatant target)
+        {
+            if (target == null || !target.IsAlive) return 0;
+            int next = GetOverheatStacks(target) + 1;
+            if (next < 3) { overheatStacks[target] = next; return 0; }
+            overheatStacks.Remove(target);
+            int raw = (int)Math.Max(1L, ((long)target.MaxHp * 8L + 99L) / 100L);
+            int damage = target.TakeDamage(raw, applyDefending: false);
+            if (!target.IsAlive) RemoveInvalidPersistentEffects(new[] { target });
+            return damage;
+        }
         // 전투 Runtime 객체에만 남깁니다. 다음 전투는 새 객체라 최초 1회 저항이 다시 충전됩니다.
         private readonly HashSet<Combatant> spentPoisonGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
         private readonly HashSet<Combatant> spentSilenceGuards = new HashSet<Combatant>(CombatantReferenceComparer.Instance);
@@ -782,6 +802,7 @@ namespace ProjectLimitless.Battle
                 burns.Remove(dead);
                 shockedTargets.Remove(dead);
                 silencedTargets.Remove(dead);
+                overheatStacks.Remove(dead);
                 gaiaWalls.Remove(dead);
                 ironWalls.Remove(dead);
                 poisons.Remove(dead);
