@@ -143,9 +143,20 @@ namespace ProjectLimitless.World
         private void OnDestroy() { QuestService.Changed -= Refresh; action?.Dispose(); }
         private void OnTriggerEnter2D(Collider2D other) { nearby = other.GetComponent<PlayerController>() ?? nearby; Refresh(); }
         private void OnTriggerExit2D(Collider2D other) { if (other.GetComponent<PlayerController>() == nearby) nearby = null; Refresh(); }
+        // 대화가 끝나면 목표 ID가 전투 ID로 바뀝니다. 도망·패배·Continue 뒤에도 같은 폴 위치를
+        // 재도전 지점으로 사용하며, 승리 뒤의 목표에서는 다시 전투를 열지 않습니다.
+        private bool IsEncounterRetry => targetId == MainQuest07FieldFlow.PaulId
+            && QuestService.ActiveMainQuest?.Definition.QuestId == MainQuest07FieldFlow.QuestId
+            && QuestService.ActiveMainQuest.CurrentObjective?.ObjectiveType == QuestObjectiveType.DefeatEncounter
+            && QuestService.ActiveMainQuest.CurrentObjective.TargetId == MainQuest07FieldFlow.EncounterId;
         private bool Current() => QuestService.ActiveMainQuest?.Definition.QuestId == MainQuest07FieldFlow.QuestId
-            && QuestService.ActiveMainQuest.CurrentObjective?.TargetId == targetId;
-        private void Refresh() { if (marker != null) marker.SetActive(Current()); }
+            && (QuestService.ActiveMainQuest.CurrentObjective?.TargetId == targetId || IsEncounterRetry);
+        private void Refresh()
+        {
+            if (marker == null) return;
+            marker.SetActive(Current());
+            marker.GetComponentInChildren<Text>(true).text = (IsEncounterRetry ? "폴 주변 몬스터 재도전" : labelText) + "\n[E/F / A] 확인";
+        }
 
         private void Interact()
         {
@@ -155,6 +166,7 @@ namespace ProjectLimitless.World
             // 열린 대화의 Next는 공용 InteractionSystem만 처리하여 두 경로의 중복 진행을 피합니다.
             if (nearby == null || !Current() || WorldModalState.IsOpen || presenter == null
                 || !presenter.CanBeginInteractionThisFrame) return;
+            if (IsEncounterRetry) { StartEncounter(); return; }
             presenter.ShowSequence(GetLines(), Complete);
             presenter.TrackDistance(nearby.transform, transform, 3f);
         }
