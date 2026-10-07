@@ -1,0 +1,9 @@
+actor,command,damage,attack
+player,Basic,42,42
+companion_paul,Fireball,38,44
+companion_taeon,Basic,17,17
+player,Basic,42,42
+companion_paul,Basic,21,44
+companion_taeon,Basic,17,17
+player,Basic,42,42
+companion_paul,Basic,36,44

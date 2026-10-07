@@ -1,0 +1,617 @@
+PASS Isolated Save active
+PASS Loaded Field_02
+PASS EffectiveLevel bounds companion_taeon Lv1
+PASS No overflow companion_taeon Lv1
+PASS EffectiveLevel bounds companion_taeon Lv3
+PASS Monotonic growth companion_taeon Lv3
+PASS No overflow companion_taeon Lv3
+PASS EffectiveLevel bounds companion_taeon Lv5
+PASS Monotonic growth companion_taeon Lv5
+PASS No overflow companion_taeon Lv5
+PASS EffectiveLevel bounds companion_taeon Lv10
+PASS Monotonic growth companion_taeon Lv10
+PASS No overflow companion_taeon Lv10
+PASS EffectiveLevel bounds companion_taeon Lv20
+PASS Monotonic growth companion_taeon Lv20
+PASS No overflow companion_taeon Lv20
+PASS EffectiveLevel bounds companion_taeon Lv50
+PASS Monotonic growth companion_taeon Lv50
+PASS No overflow companion_taeon Lv50
+PASS EffectiveLevel bounds companion_miel Lv1
+PASS No overflow companion_miel Lv1
+PASS EffectiveLevel bounds companion_miel Lv3
+PASS Monotonic growth companion_miel Lv3
+PASS No overflow companion_miel Lv3
+PASS EffectiveLevel bounds companion_miel Lv5
+PASS Monotonic growth companion_miel Lv5
+PASS No overflow companion_miel Lv5
+PASS EffectiveLevel bounds companion_miel Lv10
+PASS Monotonic growth companion_miel Lv10
+PASS No overflow companion_miel Lv10
+PASS EffectiveLevel bounds companion_miel Lv20
+PASS Monotonic growth companion_miel Lv20
+PASS No overflow companion_miel Lv20
+PASS EffectiveLevel bounds companion_miel Lv50
+PASS Monotonic growth companion_miel Lv50
+PASS No overflow companion_miel Lv50
+PASS EffectiveLevel bounds companion_paul Lv1
+PASS No overflow companion_paul Lv1
+PASS EffectiveLevel bounds companion_paul Lv3
+PASS Monotonic growth companion_paul Lv3
+PASS No overflow companion_paul Lv3
+PASS EffectiveLevel bounds companion_paul Lv5
+PASS Monotonic growth companion_paul Lv5
+PASS No overflow companion_paul Lv5
+PASS EffectiveLevel bounds companion_paul Lv10
+PASS Monotonic growth companion_paul Lv10
+PASS No overflow companion_paul Lv10
+PASS EffectiveLevel bounds companion_paul Lv20
+PASS Monotonic growth companion_paul Lv20
+PASS No overflow companion_paul Lv20
+PASS EffectiveLevel bounds companion_paul Lv50
+PASS Monotonic growth companion_paul Lv50
+PASS No overflow companion_paul Lv50
+PASS EffectiveLevel bounds companion_serin Lv1
+PASS No overflow companion_serin Lv1
+PASS EffectiveLevel bounds companion_serin Lv3
+PASS Monotonic growth companion_serin Lv3
+PASS No overflow companion_serin Lv3
+PASS EffectiveLevel bounds companion_serin Lv5
+PASS Monotonic growth companion_serin Lv5
+PASS No overflow companion_serin Lv5
+PASS EffectiveLevel bounds companion_serin Lv10
+PASS Monotonic growth companion_serin Lv10
+PASS No overflow companion_serin Lv10
+PASS EffectiveLevel bounds companion_serin Lv20
+PASS Monotonic growth companion_serin Lv20
+PASS No overflow companion_serin Lv20
+PASS EffectiveLevel bounds companion_serin Lv50
+PASS Monotonic growth companion_serin Lv50
+PASS No overflow companion_serin Lv50
+PASS Actual EXP level-up next participant grows
+PASS Save Growth
+PASS Read Save Growth
+PASS Continue Level/Objective Growth
+PASS Continue Party Formation Beast HP-MP Growth
+PASS Companion growth after Continue
+PASS Loaded Field_02
+PASS Player silent
+PASS Explicit sequence completion
+PASS Main06 actual completion
+PASS Loaded Field_02
+PASS Voice resolve main07_taeon_supp_001
+PASS PCM readable main07_taeon_supp_001
+PASS Natural voice stop singleSource main07_taeon_supp_001
+PASS Voice resolve main07_taeon_supp_002
+PASS PCM readable main07_taeon_supp_002
+PASS Natural voice stop singleSource main07_taeon_supp_002
+PASS Voice resolve main07_miel_supp_001
+PASS PCM readable main07_miel_supp_001
+PASS Natural voice stop singleSource main07_miel_supp_001
+PASS Player silent
+PASS Explicit sequence completion
+PASS Voice resolve main07_miel_supp_002
+PASS PCM readable main07_miel_supp_002
+PASS Natural voice stop singleSource main07_miel_supp_002
+PASS Voice resolve main07_taeon_supp_003
+PASS PCM readable main07_taeon_supp_003
+PASS Natural voice stop singleSource main07_taeon_supp_003
+PASS Voice resolve main07_miel_supp_003
+PASS PCM readable main07_miel_supp_003
+PASS Natural voice stop singleSource main07_miel_supp_003
+PASS Voice resolve main07_miel_supp_004
+PASS PCM readable main07_miel_supp_004
+PASS Natural voice stop singleSource main07_miel_supp_004
+PASS Explicit sequence completion
+PASS Paul actual location trigger
+PASS Voice resolve main07_paul_001
+PASS PCM readable main07_paul_001
+PASS Natural voice stop singleSource main07_paul_001
+PASS Voice resolve main07_paul_002
+PASS PCM readable main07_paul_002
+PASS Natural voice stop singleSource main07_paul_002
+PASS Voice resolve main07_paul_003
+PASS PCM readable main07_paul_003
+PASS Natural voice stop singleSource main07_paul_003
+PASS Voice resolve main07_taeon_001
+PASS PCM readable main07_taeon_001
+PASS Natural voice stop singleSource main07_taeon_001
+PASS Voice resolve main07_paul_004
+PASS PCM readable main07_paul_004
+PASS Natural voice stop singleSource main07_paul_004
+PASS Voice resolve main07_paul_005
+PASS PCM readable main07_paul_005
+PASS Natural voice stop singleSource main07_paul_005
+PASS Voice resolve main07_paul_006
+PASS PCM readable main07_paul_006
+PASS Natural voice stop singleSource main07_paul_006
+PASS Voice resolve main07_paul_007
+PASS PCM readable main07_paul_007
+PASS Natural voice stop singleSource main07_paul_007
+PASS Voice resolve main07_taeon_002
+PASS PCM readable main07_taeon_002
+PASS Natural voice stop singleSource main07_taeon_002
+PASS Voice resolve main07_paul_008
+PASS PCM readable main07_paul_008
+PASS Natural voice stop singleSource main07_paul_008
+PASS Voice resolve main07_paul_009
+PASS PCM readable main07_paul_009
+PASS Natural voice stop singleSource main07_paul_009
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Main07 temporary party excludes Miel
+PASS Main07 actual Lv3 Paul 104/44/12
+PASS Actual return Field_02
+PASS Main07 Flee objective unchanged
+PASS Save Main07 Flee
+PASS Read Save Main07 Flee
+PASS Continue Level/Objective Main07 Flee
+PASS Continue Party Formation Beast HP-MP Main07 Flee
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Main07 F Retry no first conversation
+PASS Actual return World_StarterVillage
+PASS Main07 Defeat objective unchanged
+PASS Save Main07 Defeat
+PASS Read Save Main07 Defeat
+PASS Continue Level/Objective Main07 Defeat
+PASS Continue Party Formation Beast HP-MP Main07 Defeat
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Main07 A Retry no first conversation
+PASS Main07 natural command victory
+PASS Actual return Field_02
+PASS Main07 natural Victory advances once
+PASS Save Main07 Victory
+PASS Read Save Main07 Victory
+PASS Continue Level/Objective Main07 Victory
+PASS Continue Party Formation Beast HP-MP Main07 Victory
+PASS Voice resolve main07_paul_010
+PASS PCM readable main07_paul_010
+PASS Natural voice stop singleSource main07_paul_010
+PASS Voice resolve main07_paul_011
+PASS PCM readable main07_paul_011
+PASS Natural voice stop singleSource main07_paul_011
+PASS Voice resolve main07_paul_012
+PASS PCM readable main07_paul_012
+PASS Natural voice stop singleSource main07_paul_012
+PASS Voice resolve main07_paul_013
+PASS PCM readable main07_paul_013
+PASS Natural voice stop singleSource main07_paul_013
+PASS Voice resolve main07_paul_014
+PASS PCM readable main07_paul_014
+PASS Natural voice stop singleSource main07_paul_014
+PASS Voice resolve main07_paul_015
+PASS PCM readable main07_paul_015
+PASS Natural voice stop singleSource main07_paul_015
+PASS Voice resolve main07_taeon_003
+PASS PCM readable main07_taeon_003
+PASS Natural voice stop singleSource main07_taeon_003
+PASS Voice resolve main07_paul_016
+PASS PCM readable main07_paul_016
+PASS Natural voice stop singleSource main07_paul_016
+PASS Voice resolve main07_miel_001
+PASS PCM readable main07_miel_001
+PASS Natural voice stop singleSource main07_miel_001
+PASS Voice resolve main07_paul_017
+PASS PCM readable main07_paul_017
+PASS Natural voice stop singleSource main07_paul_017
+PASS Voice resolve main07_paul_018
+PASS PCM readable main07_paul_018
+PASS Natural voice stop singleSource main07_paul_018
+PASS Voice resolve main07_miel_002
+PASS PCM readable main07_miel_002
+PASS Natural voice stop singleSource main07_miel_002
+PASS Voice resolve main07_paul_019
+PASS PCM readable main07_paul_019
+PASS Natural voice stop singleSource main07_paul_019
+PASS Voice resolve main07_miel_003
+PASS PCM readable main07_miel_003
+PASS Natural voice stop singleSource main07_miel_003
+PASS Voice resolve main07_paul_020
+PASS PCM readable main07_paul_020
+PASS Natural voice stop singleSource main07_paul_020
+PASS Explicit sequence completion
+PASS MielMeeting completion
+PASS Player silent
+PASS Explicit sequence completion
+PASS Main07 actual completion
+PASS Save Main07 Complete
+PASS Read Save Main07 Complete
+PASS Continue Level/Objective Main07 Complete
+PASS Continue Party Formation Beast HP-MP Main07 Complete
+PASS Main07 completed Continue
+PASS Loaded Field_01
+PASS Contact spawn available field01_main02_investigation_encounter
+PASS Actual contact event field01_main02_investigation_encounter
+PASS Actual Battle scene
+PASS Stable encounter context field01_main02_investigation_encounter
+PASS Isolated Save active
+PASS Loaded Field_02
+PASS Loaded Field_01
+PASS Contact spawn available field01_main02_investigation_encounter
+PASS Actual contact event field01_main02_investigation_encounter
+PASS Actual Battle scene
+PASS Stable encounter context field01_main02_investigation_encounter
+PASS Flee accepted field01_main02_investigation_encounter
+PASS Isolated Save active
+PASS Loaded Field_02
+PASS Loaded Field_01
+PASS Contact spawn available field01_main02_investigation_encounter
+PASS Actual contact event field01_main02_investigation_encounter
+PASS Actual Battle scene
+PASS Stable encounter context field01_main02_investigation_encounter
+PASS Flee accepted field01_main02_investigation_encounter
+PASS Actual return Field_01
+PASS Flee objective count0 field01_main02_investigation_encounter
+PASS Save Flee field01_main02_investigation_encounter
+PASS Read Save Flee field01_main02_investigation_encounter
+PASS Continue Level/Objective Flee field01_main02_investigation_encounter
+PASS Continue Party Formation Beast HP-MP Flee field01_main02_investigation_encounter
+PASS Loaded Field_01
+PASS Contact spawn available field01_main02_investigation_encounter
+PASS Actual contact event field01_main02_investigation_encounter
+PASS Actual Battle scene
+PASS Stable encounter context field01_main02_investigation_encounter
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field01_main02_investigation_encounter
+PASS Save Defeat field01_main02_investigation_encounter
+PASS Read Save Defeat field01_main02_investigation_encounter
+PASS Continue Level/Objective Defeat field01_main02_investigation_encounter
+PASS Continue Party Formation Beast HP-MP Defeat field01_main02_investigation_encounter
+PASS Loaded Field_01
+PASS Contact spawn available field01_main02_investigation_encounter
+PASS Actual contact event field01_main02_investigation_encounter
+PASS Actual Battle scene
+PASS Stable encounter context field01_main02_investigation_encounter
+PASS Victory exact one objective field01_main02_investigation_encounter
+PASS Duplicate victory/reward0 field01_main02_investigation_encounter
+PASS Actual return Field_01
+PASS Save Victory field01_main02_investigation_encounter
+PASS Read Save Victory field01_main02_investigation_encounter
+PASS Continue Level/Objective Victory field01_main02_investigation_encounter
+PASS Continue Party Formation Beast HP-MP Victory field01_main02_investigation_encounter
+PASS Loaded Field_01
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main03_taeon_encounter
+PASS Flee accepted field01_main03_taeon_encounter
+PASS Actual return Field_01
+PASS Flee objective count0 field01_main03_taeon_encounter
+PASS Save Flee field01_main03_taeon_encounter
+PASS Read Save Flee field01_main03_taeon_encounter
+PASS Continue Level/Objective Flee field01_main03_taeon_encounter
+PASS Continue Party Formation Beast HP-MP Flee field01_main03_taeon_encounter
+PASS Loaded Field_01
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main03_taeon_encounter
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field01_main03_taeon_encounter
+PASS Save Defeat field01_main03_taeon_encounter
+PASS Read Save Defeat field01_main03_taeon_encounter
+PASS Continue Level/Objective Defeat field01_main03_taeon_encounter
+PASS Continue Party Formation Beast HP-MP Defeat field01_main03_taeon_encounter
+PASS Loaded Field_01
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main03_taeon_encounter
+PASS Victory exact one objective field01_main03_taeon_encounter
+PASS Duplicate victory/reward0 field01_main03_taeon_encounter
+PASS Actual return Field_01
+PASS Save Victory field01_main03_taeon_encounter
+PASS Read Save Victory field01_main03_taeon_encounter
+PASS Continue Level/Objective Victory field01_main03_taeon_encounter
+PASS Continue Party Formation Beast HP-MP Victory field01_main03_taeon_encounter
+PASS Loaded Field_01
+PASS Player silent
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main04_three_people_encounter
+PASS Flee accepted field01_main04_three_people_encounter
+PASS Actual return Field_01
+PASS Flee objective count0 field01_main04_three_people_encounter
+PASS Save Flee field01_main04_three_people_encounter
+PASS Read Save Flee field01_main04_three_people_encounter
+PASS Continue Level/Objective Flee field01_main04_three_people_encounter
+PASS Continue Party Formation Beast HP-MP Flee field01_main04_three_people_encounter
+PASS Loaded Field_01
+PASS Player silent
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main04_three_people_encounter
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field01_main04_three_people_encounter
+PASS Save Defeat field01_main04_three_people_encounter
+PASS Read Save Defeat field01_main04_three_people_encounter
+PASS Continue Level/Objective Defeat field01_main04_three_people_encounter
+PASS Continue Party Formation Beast HP-MP Defeat field01_main04_three_people_encounter
+PASS Loaded Field_01
+PASS Player silent
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field01_main04_three_people_encounter
+PASS Victory exact one objective field01_main04_three_people_encounter
+PASS Duplicate victory/reward0 field01_main04_three_people_encounter
+PASS Actual return Field_01
+PASS Save Victory field01_main04_three_people_encounter
+PASS Read Save Victory field01_main04_three_people_encounter
+PASS Continue Level/Objective Victory field01_main04_three_people_encounter
+PASS Continue Party Formation Beast HP-MP Victory field01_main04_three_people_encounter
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Stable encounter context field02_main07_paul_encounter
+PASS Flee accepted field02_main07_paul_encounter
+PASS Actual return Field_02
+PASS Flee objective count0 field02_main07_paul_encounter
+PASS Save Flee field02_main07_paul_encounter
+PASS Read Save Flee field02_main07_paul_encounter
+PASS Continue Level/Objective Flee field02_main07_paul_encounter
+PASS Continue Party Formation Beast HP-MP Flee field02_main07_paul_encounter
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Stable encounter context field02_main07_paul_encounter
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field02_main07_paul_encounter
+PASS Save Defeat field02_main07_paul_encounter
+PASS Read Save Defeat field02_main07_paul_encounter
+PASS Continue Level/Objective Defeat field02_main07_paul_encounter
+PASS Continue Party Formation Beast HP-MP Defeat field02_main07_paul_encounter
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Stable encounter context field02_main07_paul_encounter
+PASS Victory exact one objective field02_main07_paul_encounter
+PASS Duplicate victory/reward0 field02_main07_paul_encounter
+PASS Actual return Field_02
+PASS Save Victory field02_main07_paul_encounter
+PASS Read Save Victory field02_main07_paul_encounter
+PASS Continue Level/Objective Victory field02_main07_paul_encounter
+PASS Continue Party Formation Beast HP-MP Victory field02_main07_paul_encounter
+PASS Loaded Dungeon_01_B2
+PASS Contact spawn available dungeon01_b2_boss
+PASS Actual contact event dungeon01_b2_boss
+PASS Actual Battle scene
+PASS Stable encounter context dungeon01_b2_boss
+PASS Flee accepted dungeon01_b2_boss
+PASS Boss Flee prohibited dungeon01_b2_boss
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 dungeon01_b2_boss
+PASS Save Defeat dungeon01_b2_boss
+PASS Read Save Defeat dungeon01_b2_boss
+PASS Continue Level/Objective Defeat dungeon01_b2_boss
+PASS Isolated Save active
+PASS Loaded Field_02
+PASS Loaded Dungeon_01_B2
+PASS Contact spawn available dungeon01_b2_boss
+PASS Actual contact event dungeon01_b2_boss
+PASS Actual Battle scene
+PASS Stable encounter context dungeon01_b2_boss
+PASS Flee accepted dungeon01_b2_boss
+PASS Boss Flee prohibited dungeon01_b2_boss
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 dungeon01_b2_boss
+PASS Save Defeat dungeon01_b2_boss
+PASS Read Save Defeat dungeon01_b2_boss
+PASS Continue Level/Objective Defeat dungeon01_b2_boss
+PASS Continue Party Formation Beast HP-MP Defeat dungeon01_b2_boss
+PASS Loaded Dungeon_01_B2
+PASS Contact spawn available dungeon01_b2_boss
+PASS Actual contact event dungeon01_b2_boss
+PASS Actual Battle scene
+PASS Stable encounter context dungeon01_b2_boss
+PASS Victory exact one objective dungeon01_b2_boss
+PASS Duplicate victory/reward0 dungeon01_b2_boss
+PASS Actual return Dungeon_01_B2
+PASS Save Victory dungeon01_b2_boss
+PASS Read Save Victory dungeon01_b2_boss
+PASS Continue Level/Objective Victory dungeon01_b2_boss
+PASS Continue Party Formation Beast HP-MP Victory dungeon01_b2_boss
+PASS Loaded Field_04_WesternBorder
+PASS Actual Battle scene
+PASS Stable encounter context field04_main13_serin_encounter
+PASS Flee accepted field04_main13_serin_encounter
+PASS Actual return Field_04_WesternBorder
+PASS Flee objective count0 field04_main13_serin_encounter
+PASS Save Flee field04_main13_serin_encounter
+PASS Read Save Flee field04_main13_serin_encounter
+PASS Continue Level/Objective Flee field04_main13_serin_encounter
+PASS Continue Party Formation Beast HP-MP Flee field04_main13_serin_encounter
+PASS Loaded Field_04_WesternBorder
+PASS Actual Battle scene
+PASS Stable encounter context field04_main13_serin_encounter
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field04_main13_serin_encounter
+PASS Save Defeat field04_main13_serin_encounter
+PASS Read Save Defeat field04_main13_serin_encounter
+PASS Continue Level/Objective Defeat field04_main13_serin_encounter
+PASS Continue Party Formation Beast HP-MP Defeat field04_main13_serin_encounter
+PASS Loaded Field_04_WesternBorder
+PASS Actual Battle scene
+PASS Stable encounter context field04_main13_serin_encounter
+PASS Victory exact one objective field04_main13_serin_encounter
+PASS Duplicate victory/reward0 field04_main13_serin_encounter
+PASS Actual return Field_04_WesternBorder
+PASS Save Victory field04_main13_serin_encounter
+PASS Read Save Victory field04_main13_serin_encounter
+PASS Continue Level/Objective Victory field04_main13_serin_encounter
+PASS Continue Party Formation Beast HP-MP Victory field04_main13_serin_encounter
+PASS Loaded Field_05_WesternOutskirts
+PASS Actual Battle scene
+PASS Stable encounter context field05_main14_fleeing_beasts
+PASS Flee accepted field05_main14_fleeing_beasts
+PASS Actual return Field_05_WesternOutskirts
+PASS Flee objective count0 field05_main14_fleeing_beasts
+PASS Save Flee field05_main14_fleeing_beasts
+PASS Read Save Flee field05_main14_fleeing_beasts
+PASS Continue Level/Objective Flee field05_main14_fleeing_beasts
+PASS Continue Party Formation Beast HP-MP Flee field05_main14_fleeing_beasts
+PASS Loaded Field_05_WesternOutskirts
+PASS Actual Battle scene
+PASS Stable encounter context field05_main14_fleeing_beasts
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field05_main14_fleeing_beasts
+PASS Save Defeat field05_main14_fleeing_beasts
+PASS Read Save Defeat field05_main14_fleeing_beasts
+PASS Continue Level/Objective Defeat field05_main14_fleeing_beasts
+PASS Continue Party Formation Beast HP-MP Defeat field05_main14_fleeing_beasts
+PASS Loaded Field_05_WesternOutskirts
+PASS Actual Battle scene
+PASS Stable encounter context field05_main14_fleeing_beasts
+PASS Victory exact one objective field05_main14_fleeing_beasts
+PASS Duplicate victory/reward0 field05_main14_fleeing_beasts
+PASS Actual return Field_05_WesternOutskirts
+PASS Save Victory field05_main14_fleeing_beasts
+PASS Read Save Victory field05_main14_fleeing_beasts
+PASS Continue Level/Objective Victory field05_main14_fleeing_beasts
+PASS Continue Party Formation Beast HP-MP Victory field05_main14_fleeing_beasts
+PASS Loaded Field_06_ScorchedTrail
+PASS Contact spawn available field06_m15_01
+PASS Actual contact event field06_m15_01
+PASS Actual Battle scene
+PASS Stable encounter context field06_m15_01
+PASS Flee accepted field06_m15_01
+PASS Actual return Field_06_ScorchedTrail
+PASS Flee objective count0 field06_m15_01
+PASS Save Flee field06_m15_01
+PASS Read Save Flee field06_m15_01
+PASS Continue Level/Objective Flee field06_m15_01
+PASS Continue Party Formation Beast HP-MP Flee field06_m15_01
+PASS Loaded Field_06_ScorchedTrail
+PASS Contact spawn available field06_m15_01
+PASS Actual contact event field06_m15_01
+PASS Actual Battle scene
+PASS Stable encounter context field06_m15_01
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field06_m15_01
+PASS Save Defeat field06_m15_01
+PASS Read Save Defeat field06_m15_01
+PASS Continue Level/Objective Defeat field06_m15_01
+PASS Continue Party Formation Beast HP-MP Defeat field06_m15_01
+PASS Loaded Field_06_ScorchedTrail
+PASS Contact spawn available field06_m15_01
+PASS Actual contact event field06_m15_01
+PASS Actual Battle scene
+PASS Stable encounter context field06_m15_01
+PASS Victory exact one objective field06_m15_01
+PASS Duplicate victory/reward0 field06_m15_01
+PASS Actual return Field_06_ScorchedTrail
+PASS Save Victory field06_m15_01
+PASS Read Save Victory field06_m15_01
+PASS Continue Level/Objective Victory field06_m15_01
+PASS Continue Party Formation Beast HP-MP Victory field06_m15_01
+PASS Loaded Field_07_AshenReach
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field07_main16_ember_wraith
+PASS Flee accepted field07_main16_ember_wraith
+PASS Actual return Field_07_AshenReach
+PASS Flee objective count0 field07_main16_ember_wraith
+PASS Save Flee field07_main16_ember_wraith
+PASS Read Save Flee field07_main16_ember_wraith
+PASS Continue Level/Objective Flee field07_main16_ember_wraith
+PASS Continue Party Formation Beast HP-MP Flee field07_main16_ember_wraith
+PASS Loaded Field_07_AshenReach
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field07_main16_ember_wraith
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field07_main16_ember_wraith
+PASS Save Defeat field07_main16_ember_wraith
+PASS Read Save Defeat field07_main16_ember_wraith
+PASS Continue Level/Objective Defeat field07_main16_ember_wraith
+PASS Continue Party Formation Beast HP-MP Defeat field07_main16_ember_wraith
+PASS Loaded Field_07_AshenReach
+PASS Explicit sequence completion
+PASS Actual Battle scene
+PASS Stable encounter context field07_main16_ember_wraith
+PASS Victory exact one objective field07_main16_ember_wraith
+PASS Duplicate victory/reward0 field07_main16_ember_wraith
+PASS Actual return Field_07_AshenReach
+PASS Save Victory field07_main16_ember_wraith
+PASS Read Save Victory field07_main16_ember_wraith
+PASS Continue Level/Objective Victory field07_main16_ember_wraith
+PASS Continue Party Formation Beast HP-MP Victory field07_main16_ember_wraith
+PASS Loaded Field_08_RedRift
+PASS Actual Battle scene
+PASS Stable encounter context field08_main17_threat
+PASS Flee accepted field08_main17_threat
+PASS Actual return Field_08_RedRift
+PASS Flee objective count0 field08_main17_threat
+PASS Save Flee field08_main17_threat
+PASS Read Save Flee field08_main17_threat
+PASS Continue Level/Objective Flee field08_main17_threat
+PASS Continue Party Formation Beast HP-MP Flee field08_main17_threat
+PASS Loaded Field_08_RedRift
+PASS Actual Battle scene
+PASS Stable encounter context field08_main17_threat
+PASS Actual return World_StarterVillage
+PASS Defeat objective count0 field08_main17_threat
+PASS Save Defeat field08_main17_threat
+PASS Read Save Defeat field08_main17_threat
+PASS Continue Level/Objective Defeat field08_main17_threat
+PASS Continue Party Formation Beast HP-MP Defeat field08_main17_threat
+PASS Loaded Field_08_RedRift
+PASS Actual Battle scene
+PASS Stable encounter context field08_main17_threat
+PASS Victory exact one objective field08_main17_threat
+PASS Duplicate victory/reward0 field08_main17_threat
+PASS Actual return Field_08_RedRift
+PASS Save Victory field08_main17_threat
+PASS Read Save Victory field08_main17_threat
+PASS Continue Level/Objective Victory field08_main17_threat
+PASS Continue Party Formation Beast HP-MP Victory field08_main17_threat
+PASS Manual Serin Miel formation
+PASS Nonempty Player Fox Serin Bear
+PASS Loaded Field_02
+PASS Save Manual Beast Resources
+PASS Read Save Manual Beast Resources
+PASS Continue Level/Objective Manual Beast Resources
+PASS Continue Party Formation Beast HP-MP Manual Beast Resources
+PASS Loaded Bootstrap
+PASS Actual return Field_02
+PASS Actual Bootstrap Continue manual Party Beast Level
+PASS All companions effective Lv5 after Bootstrap Continue
+PASS Saved HP retained with growth Bear formation
+PASS Actual Fireball executor attack14
+PASS Actual Fireball executor attack44
+PASS Actual Fireball executor attack42
+PASS Runtime Missing Script0
+PASS Loaded Bootstrap
+PASS Isolated Save active
+PASS Loaded Field_02
+PASS Loaded Field_02
+PASS Main07 retry marker label
+PASS Actual Battle scene
+PASS Actual return Field_02
+PASS RouteA Flee count0
+PASS Save RouteA Flee
+PASS Read Save RouteA Flee
+PASS Continue Level/Objective RouteA Flee
+PASS Continue Party Formation Beast HP-MP RouteA Flee
+PASS Loaded Field_02
+PASS Actual Battle scene
+PASS Main07 natural command victory
+PASS Actual return Field_02
+PASS RouteA Flee Retry natural Victory
+PASS Main07 victory retry site disabled
+PASS Save RouteA Victory
+PASS Read Save RouteA Victory
+PASS Continue Level/Objective RouteA Victory
+PASS Continue Party Formation Beast HP-MP RouteA Victory
+PASS Manual Serin Miel formation
+PASS Nonempty Player Fox Serin Bear
+PASS Loaded Field_02
+PASS Save Manual Beast Resources
+PASS Read Save Manual Beast Resources
+PASS Continue Level/Objective Manual Beast Resources
+PASS Continue Party Formation Beast HP-MP Manual Beast Resources
+PASS Loaded Bootstrap
+PASS Actual return Field_02
+PASS Actual Bootstrap Continue manual Party Beast Level
+PASS All companions effective Lv5 after Bootstrap Continue
+PASS Saved HP retained with growth Bear formation
+PASS Actual Fireball executor attack14
+PASS Actual Fireball executor attack44
+PASS Actual Fireball executor attack42
+PASS Runtime Missing Script0
+PASS Loaded Bootstrap

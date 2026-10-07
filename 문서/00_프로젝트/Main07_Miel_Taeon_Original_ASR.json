@@ -1,0 +1,362 @@
+{
+  "Limitless_TTS_Output_PreSerin/miel/main07_miel_001.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main07_miel_001.wav",
+    "duration": 3.77,
+    "segments": [
+      {
+        "start": 1.7000000000000002,
+        "end": 2.0,
+        "text": " 돌아오셨네요",
+        "words": [
+          {
+            "start": 1.7000000000000002,
+            "end": 2.4000000000000004,
+            "word": " 돌아오셨네요"
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_PreSerin/miel/main07_miel_002.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main07_miel_002.wav",
+    "duration": 3.17,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.6,
+        "text": " 그리고 처음 보는 분도 계시네요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.68,
+            "word": " 그리고"
+          },
+          {
+            "start": 0.68,
+            "end": 1.6,
+            "word": " 처음"
+          },
+          {
+            "start": 1.6,
+            "end": 1.88,
+            "word": " 보는"
+          },
+          {
+            "start": 1.88,
+            "end": 2.2,
+            "word": " 분도"
+          },
+          {
+            "start": 2.2,
+            "end": 2.6,
+            "word": " 계시네요."
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_PreSerin/miel/main07_miel_003.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main07_miel_003.wav",
+    "duration": 3.63,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.04,
+        "text": " 혹시 다치신 곳은 없으세요?",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.5,
+            "word": " 혹시"
+          },
+          {
+            "start": 1.5,
+            "end": 2.36,
+            "word": " 다치신"
+          },
+          {
+            "start": 2.36,
+            "end": 2.62,
+            "word": " 곳은"
+          },
+          {
+            "start": 2.62,
+            "end": 3.04,
+            "word": " 없으세요?"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_001.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_001.wav",
+    "duration": 3.77,
+    "segments": [
+      {
+        "start": 1.7000000000000002,
+        "end": 2.0,
+        "text": " 돌아오셨네요",
+        "words": [
+          {
+            "start": 1.7000000000000002,
+            "end": 2.4000000000000004,
+            "word": " 돌아오셨네요"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_002.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_002.wav",
+    "duration": 3.17,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.6,
+        "text": " 그리고 처음 보는 분도 계시네요.",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.68,
+            "word": " 그리고"
+          },
+          {
+            "start": 0.68,
+            "end": 1.6,
+            "word": " 처음"
+          },
+          {
+            "start": 1.6,
+            "end": 1.88,
+            "word": " 보는"
+          },
+          {
+            "start": 1.88,
+            "end": 2.2,
+            "word": " 분도"
+          },
+          {
+            "start": 2.2,
+            "end": 2.6,
+            "word": " 계시네요."
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_003.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_miel_003.wav",
+    "duration": 3.63,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.04,
+        "text": " 혹시 다치신 곳은 없으세요?",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.5,
+            "word": " 혹시"
+          },
+          {
+            "start": 1.5,
+            "end": 2.36,
+            "word": " 다치신"
+          },
+          {
+            "start": 2.36,
+            "end": 2.62,
+            "word": " 곳은"
+          },
+          {
+            "start": 2.62,
+            "end": 3.04,
+            "word": " 없으세요?"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_001.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_001.wav",
+    "duration": 2.87,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.9,
+        "text": " 바퀴가 빠지셨는데요?",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.26,
+            "word": " 바퀴가"
+          },
+          {
+            "start": 1.26,
+            "end": 1.9,
+            "word": " 빠지셨는데요?"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_002.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_002.wav",
+    "duration": 1.83,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.16,
+        "text": " 옵니다",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.16,
+            "word": " 옵니다"
+          }
+        ]
+      }
+    ]
+  },
+  "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_003.wav": {
+    "file": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_003.wav",
+    "duration": 4.68,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.02,
+        "text": " 저희도 같은 현생을 따라 여기까지 왔습니다",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 1.78,
+            "word": " 저희도"
+          },
+          {
+            "start": 1.78,
+            "end": 2.16,
+            "word": " 같은"
+          },
+          {
+            "start": 2.16,
+            "end": 2.68,
+            "word": " 현생을"
+          },
+          {
+            "start": 2.68,
+            "end": 2.84,
+            "word": " 따라"
+          },
+          {
+            "start": 2.84,
+            "end": 3.4,
+            "word": " 여기까지"
+          },
+          {
+            "start": 3.4,
+            "end": 4.02,
+            "word": " 왔습니다"
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_PreSerin/miel/main09_miel_001.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main09_miel_001.wav",
+    "duration": 0.85,
+    "segments": []
+  },
+  "Limitless_TTS_Output_PreSerin/miel/main09_miel_002.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main09_miel_002.wav",
+    "duration": 7.91,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.56,
+        "text": " 저분은 이제 괜찮으세요 그러니까 폴 씨도 확인해야죠",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.92,
+            "word": " 저분은"
+          },
+          {
+            "start": 0.92,
+            "end": 1.12,
+            "word": " 이제"
+          },
+          {
+            "start": 1.12,
+            "end": 1.88,
+            "word": " 괜찮으세요"
+          },
+          {
+            "start": 1.88,
+            "end": 3.0,
+            "word": " 그러니까"
+          },
+          {
+            "start": 3.0,
+            "end": 3.48,
+            "word": " 폴"
+          },
+          {
+            "start": 3.48,
+            "end": 3.7,
+            "word": " 씨도"
+          },
+          {
+            "start": 3.7,
+            "end": 4.56,
+            "word": " 확인해야죠"
+          }
+        ]
+      },
+      {
+        "start": 5.5,
+        "end": 7.42,
+        "text": " 빛은 이쪽에서 보였어요",
+        "words": [
+          {
+            "start": 5.5,
+            "end": 6.24,
+            "word": " 빛은"
+          },
+          {
+            "start": 6.24,
+            "end": 6.86,
+            "word": " 이쪽에서"
+          },
+          {
+            "start": 6.86,
+            "end": 7.42,
+            "word": " 보였어요"
+          }
+        ]
+      }
+    ]
+  },
+  "Limitless_TTS_Output_PreSerin/miel/main09_miel_003.wav": {
+    "file": "Limitless_TTS_Output_PreSerin/miel/main09_miel_003.wav",
+    "duration": 1.8,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.26,
+        "text": " 지금은 사라졌네요?",
+        "words": [
+          {
+            "start": 0.0,
+            "end": 0.66,
+            "word": " 지금은"
+          },
+          {
+            "start": 0.66,
+            "end": 1.26,
+            "word": " 사라졌네요?"
+          }
+        ]
+      }
+    ]
+  }
+}

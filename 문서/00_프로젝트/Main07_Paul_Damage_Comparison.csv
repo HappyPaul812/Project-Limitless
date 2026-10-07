@@ -1,0 +1,4 @@
+condition,level,max_hp,attack,agility,basic_damage,fireball_damage
+PaulBefore,3,96,14,10,14,24
+PaulAfter,3,104,44,12,44,75
+PlayerMage,3,108,42,12,42,72

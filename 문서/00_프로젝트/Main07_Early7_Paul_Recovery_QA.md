@@ -1,3 +1,5 @@
+> 2026-10-07 최신 Main07 미엘기존3 PCM복구/태온3보존·재도전·동료성장은 [종합QA](Main07_Integrated_Retry_Growth_Voice_QA.md)를 참조. 이 문서의 이전 기록과 기존244 청취 목록은 유지한다. Early7/Paul20 원본과 결과는 보호했다.
+
 # Main07 Early7 적용 및 Paul 전체 WAV 복구
 
 ## 구현 전 계획 — 2026-10-07

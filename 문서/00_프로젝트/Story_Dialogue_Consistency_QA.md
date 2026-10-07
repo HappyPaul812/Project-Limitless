@@ -1,3 +1,5 @@
+> 2026-10-07 최신 Main07 미엘기존3 PCM복구/태온3보존·재도전·동료성장은 [종합QA](Main07_Integrated_Retry_Growth_Voice_QA.md)를 참조. 이 문서의 이전 기록과 기존244 청취 목록은 유지한다. Early7/Paul20 원본과 결과는 보호했다.
+
 ## 2026-10-07 최신 Main07 상태 — Early7 적용 / Paul20 PCM 복구
 
 Early7 Unity resolve/PCM PASS. Paul은 묶음WAV/단편/번호밀림으로20개 전수감사·기존PCM복구, 재생성필요0/TTS API0. 사용자 복구Paul001/002 청취PASS, 나머지25청취PENDING과기술검증구분. [최신 정본](Main07_Early7_Paul_Recovery_QA.md), [복구Matrix20](Main07_Paul_Recovery_Matrix.csv). 아래TTS_REQUIRED7/Paul001재생성1은해소된과거기록이다.

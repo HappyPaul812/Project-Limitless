@@ -1,0 +1,11 @@
+﻿quest,encounter_id,flee,defeat,retry,victory,result
+main_02_grassland_anomaly,field01_main02_investigation_encounter,PASS,PASS,PASS,PASS,PASS
+main_03_unfamiliar_companion,field01_main03_taeon_encounter,PASS,PASS,PASS,PASS,PASS
+main_04_three_people,field01_main04_three_people_encounter,PASS,PASS,PASS,PASS,PASS
+main_07_deep_tracks,field02_main07_paul_encounter,PASS,PASS,PASS,PASS,FAIL_FIXED
+main_11_silent_catacomb,dungeon01_b2_boss,NOT_APPLICABLE_BOSS_FLEE,PASS,PASS,PASS,PASS
+main_13_drying_land,field04_main13_serin_encounter,PASS,PASS,PASS,PASS,PASS
+main_14_ground_pulse,field05_main14_fleeing_beasts,PASS,PASS,PASS,PASS,PASS
+main_15_burning_traces,field06_m15_01,PASS,PASS,PASS,PASS,PASS
+main_16_shape_in_the_ash,field07_main16_ember_wraith,PASS,PASS,PASS,PASS,PASS
+main_17_red_rift,field08_main17_threat,PASS,PASS,PASS,PASS,PASS

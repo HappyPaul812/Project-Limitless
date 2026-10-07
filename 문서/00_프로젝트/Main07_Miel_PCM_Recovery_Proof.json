@@ -1,0 +1,153 @@
+[
+  {
+    "stable_id": "main07_miel_001",
+    "expected_text": "돌아오셨네요. 그리고… 처음 보는 분도 계시네요.",
+    "parts": [
+      {
+        "source": "Limitless_TTS_Output_PreSerin/miel/main07_miel_001.wav",
+        "source_sha256": "2b877e01e79526d4dc1601849bd306513e17c45d68737897c45e56a7f554bbdd",
+        "start_sample": 0,
+        "end_sample": 90480,
+        "pcm_slice_sha256": "e32a55f60a4a82d25fbdb67fed836625fb2c321482487c2c04bdb57096630288"
+      },
+      {
+        "source": "Limitless_TTS_Output_PreSerin/miel/main07_miel_002.wav",
+        "source_sha256": "650d978a25f763247587825ccb50330be8a6d0ce7f753cadd3e3489fc7d4ca19",
+        "start_sample": 0,
+        "end_sample": 76080,
+        "pcm_slice_sha256": "787f254e4a4ce1bafa02d11724cc92fc4474fcb4d53661441f6d070527afc202"
+      }
+    ],
+    "final": {
+      "duration": 6.94,
+      "sample_rate": 24000,
+      "channels": 1,
+      "bit_depth": 16,
+      "pcm_sha256": "0804c2850eb6b4ccd445318685fb03b642c0fbe4817313e48f76c9ee7d078955",
+      "sha256": "c9464a95378eede76e510bc24e80f664dc5d57b1e42b882769be0012739c5e96",
+      "silences": [
+        [
+          0.0,
+          0.65
+        ],
+        [
+          1.08,
+          1.6
+        ],
+        [
+          1.79,
+          2.49
+        ],
+        [
+          3.34,
+          4.17
+        ],
+        [
+          4.61,
+          5.1
+        ],
+        [
+          6.57,
+          6.94
+        ]
+      ],
+      "leading_silence": 0.65,
+      "trailing_silence": 0.3700000000000001
+    },
+    "method": "RAW_PCM_CONCAT",
+    "runtime": "PCM_EXACT;RESOLVE_PASS;NATURAL_STOP_PASS",
+    "user_listening": "PENDING"
+  },
+  {
+    "stable_id": "main07_miel_002",
+    "expected_text": "혹시 다치신 곳은 없으세요?",
+    "parts": [
+      {
+        "source": "Limitless_TTS_Output_PreSerin/miel/main07_miel_003.wav",
+        "source_sha256": "bab8ef8c29e18b80bab43e8d9ac73279ae5e1dacd19dbd629afbc45a94cd332c",
+        "start_sample": 0,
+        "end_sample": 87120,
+        "pcm_slice_sha256": "aca0d8a8b13bab6a29048695230c911218b14ba57b25e6e1ba8b49c4ff21aa56"
+      }
+    ],
+    "final": {
+      "duration": 3.63,
+      "sample_rate": 24000,
+      "channels": 1,
+      "bit_depth": 16,
+      "pcm_sha256": "aca0d8a8b13bab6a29048695230c911218b14ba57b25e6e1ba8b49c4ff21aa56",
+      "sha256": "bab8ef8c29e18b80bab43e8d9ac73279ae5e1dacd19dbd629afbc45a94cd332c",
+      "silences": [
+        [
+          0.0,
+          0.4
+        ],
+        [
+          0.59,
+          1.14
+        ],
+        [
+          1.78,
+          1.93
+        ],
+        [
+          3.13,
+          3.63
+        ]
+      ],
+      "leading_silence": 0.4,
+      "trailing_silence": 0.5
+    },
+    "method": "RAW_PCM_REASSIGN",
+    "runtime": "PCM_EXACT;RESOLVE_PASS;NATURAL_STOP_PASS",
+    "user_listening": "PENDING"
+  },
+  {
+    "stable_id": "main07_miel_003",
+    "expected_text": "저분은 이제 괜찮으세요. 그러니까 폴 씨도 확인해야죠.",
+    "parts": [
+      {
+        "source": "Limitless_TTS_Output_PreSerin/miel/main09_miel_002.wav",
+        "source_sha256": "9631dfe08a488d6fd990a6bdc2870f0f75d9d31b52c9896f5fafc4c025e434f9",
+        "start_sample": 0,
+        "end_sample": 113280,
+        "pcm_slice_sha256": "3f0ab365de4addf9a0bc964e4ae60f63c44366e3b053f260df31d4ccfd528c71"
+      }
+    ],
+    "final": {
+      "duration": 4.72,
+      "sample_rate": 24000,
+      "channels": 1,
+      "bit_depth": 16,
+      "pcm_sha256": "3f0ab365de4addf9a0bc964e4ae60f63c44366e3b053f260df31d4ccfd528c71",
+      "sha256": "9d745ceb10461463bcb6c163c70a7968c81ebb1526433945a202e135ee581ee5",
+      "silences": [
+        [
+          0.0,
+          0.32
+        ],
+        [
+          0.33,
+          0.51
+        ],
+        [
+          2.26,
+          2.75
+        ],
+        [
+          3.14,
+          3.35
+        ],
+        [
+          4.44,
+          4.72
+        ]
+      ],
+      "leading_silence": 0.32,
+      "trailing_silence": 0.27999999999999936
+    },
+    "method": "RAW_PCM_SLICE",
+    "runtime": "PCM_EXACT;RESOLVE_PASS;NATURAL_STOP_PASS",
+    "user_listening": "PENDING"
+  }
+]

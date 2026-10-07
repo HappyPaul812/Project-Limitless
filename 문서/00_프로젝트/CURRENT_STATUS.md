@@ -1,3 +1,13 @@
+## 2026-10-07 Main07 재도전·동료 성장·미엘 PCM 복구 완료
+
+Main07 전투목표에서도 폴 위치의 E/F/A 재도전을 허용, 첫대화 반복0·승리후차단. 필수DefeatEncounter10 전수 재도전/단일승리/Continue PASS(Main11 보스도망금지). 동료 EffectiveLevel=PlayerLevel, 고유값+기존직업식/수호자·치유사 동료만 승인된 공통+1 적용, 일반·임시Story공유·동료레벨Save0·Player성장보존. 미엘기존3 rawPCM복구(6.94/3.63/4.72초), 태온3변경0·신규TTS0.
+
+Main06→07 Early7/PaulFirst→도망·패배재도전→정상승리→MielMeeting→완료Continue, 별도도망재도전정상승리 PASS. 고유label431PASS/FAIL0(반복기록617), 실제33PCM오차0, CompileError0/RuntimeConsoleError·Warning0/기존컴파일Warning16/새Warning0/MissingScript0·관련9Scene0. Lv1/3/5/10/20/50×4, EXP레벨업/실제BootstrapContinue/수동Party·Formation·Beast·HP/MP보존 PASS. 기존3274중6변경/3268byte보호, Early7/Paul20/Main03~06/Main17/244/원본/사용자Save보호. cleanBootstrap EditMode·비포커스·격리Save/Settings/Input원복.
+
+사용자 확인: 복구미엘3 청취PENDING(자동의미청취PASS로승격0), 기존실물입력/물리Collision 별도. 다음권장: 보호된미청취목록·별도후속요청. [통합QA](Main07_Integrated_Retry_Growth_Voice_QA.md) · [전수Retry10](Story_Battle_Retry_Matrix.csv) · [동료24행](Companion_Growth_Runtime_Matrix.csv) · [Voice3](Main07_Miel_Recovery_Matrix.csv). 마지막 관련구현commit `ec6d3e5`(재도전)·`74bea14`(성장)·`907b2e4`(Voice), QA문서는 이 항목을 포함한 최신 Docs commit. GitHub Push0.
+
+---
+
 ## 2026-10-07 Main07 Early7 적용 / Paul20 PCM 복구 완료
 
 - Early7 정식Asset/Catalog 연결·RuntimePCM7PASS. Paul20 전수에서묶음/단편/번호밀림확인후기존PCM분리·재배치·Paul008단편결합. 원본/meta/GUID보존. **TTS_REGEN_REQUIRED0 / TTS API0 / 잔여3 소비0**.

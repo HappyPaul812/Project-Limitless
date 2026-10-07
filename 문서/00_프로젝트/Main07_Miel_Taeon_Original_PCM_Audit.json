@@ -1,0 +1,170 @@
+[
+  {
+    "duration": 3.77,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "e32a55f60a4a82d25fbdb67fed836625fb2c321482487c2c04bdb57096630288",
+    "sha256": "2b877e01e79526d4dc1601849bd306513e17c45d68737897c45e56a7f554bbdd",
+    "silences": [
+      [
+        0.0,
+        0.65
+      ],
+      [
+        1.08,
+        1.6
+      ],
+      [
+        1.79,
+        2.49
+      ],
+      [
+        3.34,
+        3.77
+      ]
+    ],
+    "leading_silence": 0.65,
+    "trailing_silence": 0.43000000000000016,
+    "stable_id": "main07_miel_001",
+    "expected_text": "돌아오셨네요. 그리고… 처음 보는 분도 계시네요.",
+    "actual_asr_text": "돌아오셨네요",
+    "status": "WRONG_SEGMENT_BOUNDARY;SEGMENT_INDEX_SHIFT"
+  },
+  {
+    "duration": 3.17,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "787f254e4a4ce1bafa02d11724cc92fc4474fcb4d53661441f6d070527afc202",
+    "sha256": "650d978a25f763247587825ccb50330be8a6d0ce7f753cadd3e3489fc7d4ca19",
+    "silences": [
+      [
+        0.0,
+        0.4
+      ],
+      [
+        0.84,
+        1.33
+      ],
+      [
+        2.8,
+        3.17
+      ]
+    ],
+    "leading_silence": 0.4,
+    "trailing_silence": 0.3700000000000001,
+    "stable_id": "main07_miel_002",
+    "expected_text": "혹시 다치신 곳은 없으세요?",
+    "actual_asr_text": "그리고 처음 보는 분도 계시네요.",
+    "status": "WRONG_SEGMENT_BOUNDARY;SEGMENT_INDEX_SHIFT"
+  },
+  {
+    "duration": 3.63,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "aca0d8a8b13bab6a29048695230c911218b14ba57b25e6e1ba8b49c4ff21aa56",
+    "sha256": "bab8ef8c29e18b80bab43e8d9ac73279ae5e1dacd19dbd629afbc45a94cd332c",
+    "silences": [
+      [
+        0.0,
+        0.4
+      ],
+      [
+        0.59,
+        1.14
+      ],
+      [
+        1.78,
+        1.93
+      ],
+      [
+        3.13,
+        3.63
+      ]
+    ],
+    "leading_silence": 0.4,
+    "trailing_silence": 0.5,
+    "stable_id": "main07_miel_003",
+    "expected_text": "저분은 이제 괜찮으세요. 그러니까 폴 씨도 확인해야죠.",
+    "actual_asr_text": "혹시 다치신 곳은 없으세요?",
+    "status": "WRONG_SEGMENT_BOUNDARY;SEGMENT_INDEX_SHIFT"
+  },
+  {
+    "duration": 2.87,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "e89228c9bd5c480f3379c664cde3ba3913388c707ef0e6ffd83470776364aba5",
+    "sha256": "bcc66ea1ffabffed7be250b02b000b4d9c4c154dacec91bb11a368a72ee615f3",
+    "silences": [
+      [
+        0.0,
+        0.94
+      ],
+      [
+        2.04,
+        2.87
+      ]
+    ],
+    "leading_silence": 0.94,
+    "trailing_silence": 0.8300000000000001,
+    "stable_id": "main07_taeon_001",
+    "expected_text": "바퀴가 빠지셨는데요.",
+    "actual_asr_text": "바퀴가 빠지셨는데요?",
+    "status": "ASR_PAGE_BOUNDARY_MATCH;UNCHANGED;USER_LISTENING_PENDING"
+  },
+  {
+    "duration": 1.83,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "7c0aee6be0e8d76e7cea3117dba7d8ba23c7ec2f3a7979b4ae6d8fb67e1ae83f",
+    "sha256": "11a67dc0c66cf7d8daf0df321d1703d98ac764b78a53c533e3fd19dc40feec84",
+    "silences": [
+      [
+        0.0,
+        0.85
+      ],
+      [
+        1.26,
+        1.83
+      ]
+    ],
+    "leading_silence": 0.85,
+    "trailing_silence": 0.5700000000000001,
+    "stable_id": "main07_taeon_002",
+    "expected_text": "옵니다.",
+    "actual_asr_text": "옵니다",
+    "status": "ASR_PAGE_BOUNDARY_MATCH;UNCHANGED;USER_LISTENING_PENDING"
+  },
+  {
+    "duration": 4.68,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "pcm_sha256": "438a5d4ece9a368707fac7b044a231cd11cfc06cad20ebda371fda393914fc44",
+    "sha256": "398a6141a93374664d8a173e2eca1366f342be912c61027ae27fb75b9675de98",
+    "silences": [
+      [
+        0.0,
+        0.6
+      ],
+      [
+        0.88,
+        1.39
+      ],
+      [
+        4.21,
+        4.68
+      ]
+    ],
+    "leading_silence": 0.6,
+    "trailing_silence": 0.46999999999999975,
+    "stable_id": "main07_taeon_003",
+    "expected_text": "저희도 같은 현상을 따라 여기까지 왔습니다.",
+    "actual_asr_text": "저희도 같은 현생을 따라 여기까지 왔습니다",
+    "status": "ASR_PAGE_BOUNDARY_MATCH;UNCHANGED;USER_LISTENING_PENDING"
+  }
+]
