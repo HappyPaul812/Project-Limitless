@@ -94,9 +94,11 @@ namespace ProjectLimitless.NPC
         {
             if (DialoguePresenter.Instance != null && DialoguePresenter.Instance.IsOpen)
             {
-                DialoguePresenter.Instance.Advance();
+                DialoguePresenter.Instance.AdvanceFromInput();
                 return;
             }
+            // 대화가 끝난 프레임의 남은 입력은 다음 NPC 대화를 열 수 없습니다.
+            if (DialoguePresenter.Instance != null && !DialoguePresenter.Instance.CanBeginInteractionThisFrame) return;
             if (WorldModalState.IsOpen) return;
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();

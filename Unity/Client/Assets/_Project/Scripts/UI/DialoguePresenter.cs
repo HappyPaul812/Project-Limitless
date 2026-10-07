@@ -102,7 +102,11 @@ namespace ProjectLimitless.UI
         private Action onSequenceCompleted;
         private VoicePlaybackSource voicePlayback;
         private VoiceClipCatalog voiceCatalog;
+        // 같은 입력 갱신에서 Enter/Space/A가 여러 경로로 전달돼도 한 페이지만 넘깁니다.
+        // 시간 지연 대신 현재 프레임만 막으므로 다음 프레임의 의도적인 입력은 바로 받습니다.
+        private int inputBlockedFrame = -1;
         public bool IsOpen => panel != null && panel.activeSelf;
+        public bool CanBeginInteractionThisFrame => Time.frameCount > inputBlockedFrame;
 
         /// <summary>중복 대화 UI를 제거하고, 이 객체를 공용 Instance로 등록한 뒤 패널을 만듭니다.</summary>
         private void Awake()
@@ -120,7 +124,7 @@ namespace ProjectLimitless.UI
             advanceAction = new InputAction("AdvanceDialogue", InputActionType.Button);
             advanceAction.AddBinding("<Keyboard>/enter");
             advanceAction.AddBinding("<Keyboard>/space");
-            advanceAction.performed += _ => Advance();
+            advanceAction.performed += _ => AdvanceFromInput();
         }
 
         /// <summary>현재 공용 Instance가 제거되는 객체라면 참조를 비웁니다.</summary>
@@ -150,6 +154,7 @@ namespace ProjectLimitless.UI
             SetContent(line, "[Esc 또는 게임패드 B: 닫기]");
             choiceRow.SetActive(false);
             panel.SetActive(true);
+            inputBlockedFrame = Time.frameCount;
             panel.transform.SetAsLastSibling();
             WorldExperienceHud.SetInteractionUiOpen(this, true);
         }
@@ -175,9 +180,18 @@ namespace ProjectLimitless.UI
             onSequenceCompleted = onCompleted;
             choiceRow.SetActive(false);
             panel.SetActive(true);
+            inputBlockedFrame = Time.frameCount;
             panel.transform.SetAsLastSibling();
             WorldExperienceHud.SetInteractionUiOpen(this, true);
             RefreshSequenceText();
+        }
+
+        /// <summary>실제 입력에만 프레임 경계를 적용합니다. 대화를 연 입력이 첫 페이지까지 넘기지 않게 합니다.</summary>
+        public void AdvanceFromInput()
+        {
+            if (!IsOpen || sequenceLines.Length == 0 || !CanBeginInteractionThisFrame) return;
+            inputBlockedFrame = Time.frameCount;
+            Advance();
         }
 
         public void Advance()
@@ -233,6 +247,8 @@ namespace ProjectLimitless.UI
         /// <summary>대화 내용을 유지한 채 패널을 화면에서 숨깁니다.</summary>
         public void Hide()
         {
+            // 마지막 Next 뒤 같은 A 입력이 새 NPC 상호작용으로 다시 해석되는 것을 막습니다.
+            inputBlockedFrame = Time.frameCount;
             panel.SetActive(false);
             ApplyPortrait(string.Empty);
             ClearDistanceTracking();
