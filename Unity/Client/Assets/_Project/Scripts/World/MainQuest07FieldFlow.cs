@@ -149,9 +149,14 @@ namespace ProjectLimitless.World
 
         private void Interact()
         {
-            if (nearby == null || !Current() || WorldModalState.IsOpen) return;
-            DialoguePresenter.Instance.ShowSequence(GetLines(), Complete);
-            DialoguePresenter.Instance.TrackDistance(nearby.transform, transform, 3f);
+            DialoguePresenter presenter = DialoguePresenter.Instance;
+            // Main07의 별도 Action도 공용 닫힘 프레임 경계를 지킵니다. 공용 Interact가 마지막
+            // 페이지를 닫은 동일 입력이 이 callback에 도착해도 새 대화를 열지 않습니다.
+            // 열린 대화의 Next는 공용 InteractionSystem만 처리하여 두 경로의 중복 진행을 피합니다.
+            if (nearby == null || !Current() || WorldModalState.IsOpen || presenter == null
+                || !presenter.CanBeginInteractionThisFrame) return;
+            presenter.ShowSequence(GetLines(), Complete);
+            presenter.TrackDistance(nearby.transform, transform, 3f);
         }
 
         private void Complete()
