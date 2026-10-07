@@ -8,7 +8,7 @@
 - 기존 일반 독은 TakeDamage(raw, applyDefending:false)로 상태 고유 피해를 준다. 과열도 별도 Stack API에서 이 HP 경계를 사용하며 Direct/DoT/Path/보호 계산에 진입하지 않는다.
 - HarmfulStatusType은 기존 네 상태만 유지한다. 과열은 독립 Dictionary로 보관해 기존 정화 및 네 해제약 계약을 보호한다.
 - Arbel은 StarterVillageGeneralShop을 재사용한다. 아르벨 전용 카탈로그를 조건부 연결하며 시작마을 원본은 변경하지 않는다.
-- 납품 Manifest의 한글 두 항목은 깨진 문자이나 영문 Scene/자산 계약은 읽을 수 있다. VFX는 단일 PNG이며 peak/release 지정이 없어 짧은 단일 이미지 표시를 사용한다.
+- 납품 Manifest는 UTF-8로 읽으면 한글 Quest/지역명과 영문 자산 계약을 확인할 수 있다. VFX는 단일 PNG이며 peak/release 지정이 없어 짧은 단일 이미지 표시를 사용한다.
 - 무료 냉각약 지급은 보고 대화 완료 때 수용량을 먼저 검증하고 Inventory+Objective를 같은 저장 경계에서 확정한다. 수용 불가 시 목표를 유지해 재시도한다. 판매 해금은 사용자 계약대로 Main17 완료 또는 Main18 시작부터이며 준비 완료와 Field09 출입 해금은 보고 완료 이후다.
 
 2. Main18 정식 기본 계약

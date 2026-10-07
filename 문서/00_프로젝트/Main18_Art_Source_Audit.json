@@ -1,0 +1,1028 @@
+{
+  "ZipSHA256": "4a3dca636251e4f6a12ce9f007b27be5babb36b98c0b5c9b88bf4a73aaa5de2b",
+  "Entries": [
+    {
+      "File": "Manifest.txt",
+      "Bytes": 5089,
+      "SHA256": "563b305961a492d416c6955b8f081390aee1fadc757e083c3a70a3a58af38933"
+    },
+    {
+      "File": "UI/Item_Cooling_Remedy.png",
+      "Bytes": 22322,
+      "SHA256": "179e45ce3e97f9d562b9e02791b138a2a2ad76a25c4f12417b6a64b1e0c383cd",
+      "Width": 128,
+      "Height": 128,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        17,
+        8,
+        110,
+        120
+      ],
+      "TransparentPixels": 10205,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        128,
+        128
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "UI/Status_Overheat.png",
+      "Bytes": 7548,
+      "SHA256": "40c078dc7da032b8145fb3c3f6f17d8e90bb24d23434a2f7576e7175672ec1f4",
+      "Width": 128,
+      "Height": 128,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "TransparentPixels": 1835,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        128,
+        128
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 63,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_AshPatch_01.png",
+      "Bytes": 309519,
+      "SHA256": "c7f79cc1bc4532b932a602a3730c45d3f30afa00a5d4518d7adc3276acfe1b74",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        205
+      ],
+      "OpaqueBounds": [
+        26,
+        60,
+        486,
+        452
+      ],
+      "TransparentPixels": 99994,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Cliff_Blocker_01.png",
+      "Bytes": 290618,
+      "SHA256": "fa5bb46cd499ad154a50a9a6f85a143856ea073e8004190d37626f89961e5c62",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        16,
+        53,
+        496,
+        458
+      ],
+      "TransparentPixels": 117772,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Fissure_Edge.png",
+      "Bytes": 279709,
+      "SHA256": "d033d5439445e585b18a2a372674c297e39310839d4092677de626552ba145c9",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        16,
+        31,
+        496,
+        481
+      ],
+      "TransparentPixels": 97430,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Fissure_Glow.png",
+      "Bytes": 128508,
+      "SHA256": "9cc2bf8ffeede089482a66accd1d5779192a2aa5bc14823b5f62c36a45d68824",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        140
+      ],
+      "OpaqueBounds": [
+        16,
+        36,
+        496,
+        476
+      ],
+      "TransparentPixels": 191536,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Ground_Base.png",
+      "Bytes": 409914,
+      "SHA256": "410b7942f2a753e188f54ea2fb65752a7564336b17098c89bacac6c44842ac0e",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        255,
+        255
+      ],
+      "OpaqueBounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "TransparentPixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 512,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Ground_Cracked_01.png",
+      "Bytes": 453448,
+      "SHA256": "7326f253c8c9717557edd30ece0572379801d2eff529207247a19ceace3ba87e",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        255,
+        255
+      ],
+      "OpaqueBounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "TransparentPixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 512,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Ground_Cracked_02.png",
+      "Bytes": 466841,
+      "SHA256": "3abbec3ceb90289440b9523bdbd518bc82e3cf786d3e9d1d7b616ad564546019",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        255,
+        255
+      ],
+      "OpaqueBounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "TransparentPixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 512,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_HeatVent_01.png",
+      "Bytes": 209716,
+      "SHA256": "f1fbbb001d8ea0b6259c99b892a4cbdc61e6c10845a57f27ab3d220cf8698fbc",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        16,
+        22,
+        496,
+        489
+      ],
+      "TransparentPixels": 164828,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Obsidian_Slab_01.png",
+      "Bytes": 164657,
+      "SHA256": "7a1453b5f27bf5424a7f6da23c73cb28b615b756c689595ddcbcf360b5885e3c",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        16,
+        53,
+        496,
+        459
+      ],
+      "TransparentPixels": 184436,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "Environment/ObsidianScar_Obsidian_Spire_01.png",
+      "Bytes": 232977,
+      "SHA256": "dc3a61641c7f50103af703fa9e2b9d2e64c41e0eb40185b6217c8da58fa7e98a",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        16,
+        21,
+        496,
+        490
+      ],
+      "TransparentPixels": 151124,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "원본에 흰색 가이드 형태 선이 보입니다. 허락 없이 제거하지 않습니다."
+    },
+    {
+      "File": "VFX/Overheat_Apply.png",
+      "Bytes": 47324,
+      "SHA256": "9917cf74e81866e5e99ee128371082f34d919e7e05a06578097e669e5e0256a5",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        210
+      ],
+      "OpaqueBounds": [
+        69,
+        111,
+        444,
+        433
+      ],
+      "TransparentPixels": 171215,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "VFX/Overheat_Burst.png",
+      "Bytes": 79464,
+      "SHA256": "6f589380af22c3cd6fb21b1de3e423a0e492233a0ebc2366c550ddaec862be7a",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        245
+      ],
+      "OpaqueBounds": [
+        4,
+        112,
+        509,
+        499
+      ],
+      "TransparentPixels": 106781,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "VFX/Overheat_High.png",
+      "Bytes": 73606,
+      "SHA256": "5fd0efbb5b30cef66068e928eefd194ed56158e16e1ef3be2a4d8f91d49c689c",
+      "Width": 512,
+      "Height": 512,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        235
+      ],
+      "OpaqueBounds": [
+        20,
+        61,
+        493,
+        463
+      ],
+      "TransparentPixels": 108553,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        512,
+        512
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다."
+    },
+    {
+      "File": "Monsters/Obsidian_Beetle_Sprite_Sheet.png",
+      "Bytes": 1433262,
+      "SHA256": "63cfd45882f209368280f510f7039947e385d1e96b789b784cf1c73daf50660d",
+      "Width": 1256,
+      "Height": 1256,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        24,
+        54,
+        1232,
+        1232
+      ],
+      "TransparentPixels": 998444,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        1256,
+        1256
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다.",
+      "Frames": [
+        {
+          "Frame": 0,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            54,
+            290,
+            260
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 1,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            54,
+            290,
+            260
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 2,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            55,
+            290,
+            258
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 3,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            55,
+            290,
+            258
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 4,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            55,
+            290,
+            258
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 5,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            54,
+            290,
+            260
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 6,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            55,
+            290,
+            258
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 7,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            55,
+            290,
+            258
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 8,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            53,
+            290,
+            260
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 9,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            51,
+            290,
+            263
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 10,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            48,
+            290,
+            266
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 11,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            24,
+            51,
+            290,
+            263
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 12,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            35,
+            80,
+            278,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 13,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            48,
+            92,
+            266,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 14,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            68,
+            105,
+            246,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 15,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            88,
+            125,
+            225,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        }
+      ]
+    },
+    {
+      "File": "Monsters/Scorching_Watcher_Sprite_Sheet.png",
+      "Bytes": 1780730,
+      "SHA256": "52c6f1a96dc5e3caef31098f62da0d6e6f58cb83c4734579b952316d7d44ddc0",
+      "Width": 1256,
+      "Height": 1256,
+      "Mode": "RGBA",
+      "AlphaExtrema": [
+        0,
+        255
+      ],
+      "OpaqueBounds": [
+        20,
+        27,
+        1236,
+        1232
+      ],
+      "TransparentPixels": 863106,
+      "Gate": "PASS_WITH_NOTE",
+      "VisualGate": "USER_ART_REVIEW_REQUIRED",
+      "ImportByteIdentical": true,
+      "ManifestListed": true,
+      "ExpectedSize": [
+        1256,
+        1256
+      ],
+      "DuplicateOf": null,
+      "AlphaBoundaryOpaquePixels": 0,
+      "AutomaticCropApplied": false,
+      "VisualNotes": "투명도·테두리·축소 시 가독성은 사용자 최종 검토가 필요합니다.",
+      "Frames": [
+        {
+          "Frame": 0,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            33,
+            294,
+            281
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 1,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            31,
+            294,
+            282
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 2,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            30,
+            294,
+            283
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 3,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            27,
+            294,
+            286
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 4,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            23,
+            294,
+            291
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 5,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            21,
+            294,
+            292
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 6,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            21,
+            294,
+            292
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 7,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            26,
+            294,
+            288
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 8,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            21,
+            294,
+            292
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 9,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            23,
+            294,
+            291
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 10,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            23,
+            294,
+            291
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 11,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            20,
+            24,
+            294,
+            289
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 12,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            50,
+            80,
+            264,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 13,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            60,
+            92,
+            254,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 14,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            72,
+            105,
+            242,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        },
+        {
+          "Frame": 15,
+          "Size": [
+            314,
+            314
+          ],
+          "AlphaBounds": [
+            79,
+            125,
+            234,
+            290
+          ],
+          "Empty": false,
+          "TouchesCellEdge": false
+        }
+      ]
+    }
+  ],
+  "VisualReview": "USER_ART_REVIEW_REQUIRED",
+  "Counts": {
+    "PNG": 17,
+    "PASS_WITH_NOTE": 17,
+    "FAIL_BLOCKING": 0,
+    "USER_ART_REVIEW_REQUIRED": 17
+  }
+}

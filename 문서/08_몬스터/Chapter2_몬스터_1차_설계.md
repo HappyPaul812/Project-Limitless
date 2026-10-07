@@ -1,7 +1,5 @@
 > 2026-10-08 Main18 후속 확정: 흑요석 갑충 obsidian_beetle: Lv13 HP250 Attack24 Agility8 EXP50 Talent14, 전열 일반·분양불가·Loot없음. 열압분사80%+과열1→기본→기본. 작열 감시자 scorching_watcher: Lv14 HP560 Attack28 Agility11 EXP85 Talent22, 전열 Elite·IsBoss=false·도망가능·분양불가·Loot없음. 85%+과열1→105%+과열1→생존아군전체55%(과열없음)→85%+과열1. 과열 행동은 생존 아군 중 최고 Stack 우선, 동률 기존 안정 선택. 기존 5종 수치 변경 없음. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
 
-> 2026-10-08 Main18 후속 확정: 흑요석 갑충 obsidian_beetle: Lv13 HP250 Attack24 Agility8 EXP50 Talent14, 전열 일반·분양불가·Loot없음. 열압분사80%+과열1→기본→기본. 작열 감시자 scorching_watcher: Lv14 HP560 Attack28 Agility11 EXP85 Talent22, 전열 Elite·IsBoss=false·도망가능·분양불가·Loot없음. 85%+과열1→105%+과열1→생존아군전체55%(과열없음)→85%+과열1. 과열 행동은 생존 아군 중 최고 Stack 우선, 동률 기존 안정 선택. 기존 5종 수치 변경 없음. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
-
 # Chapter 2 몬스터 1차 설계
 
 > **확정된 1차 Runtime 계약 / 5종 Asset·전투 Runtime 구현.** 신규 몬스터는 [몬스터 설계 규칙과 템플릿](몬스터_설계_규칙과_템플릿.md)을 따른다. 지역 방향은 [Chapter 2 서부 방향](../03_스토리/Chapter2_서부_방향.md)이다. 아래 수치·행동·펫 효과는 2026-09-29 사용자 요청으로 확정됐다. Stable ID는 표의 값을 사용한다. Loot Item은 미정이며, Field06 배치는 [Main15 설계](../03_스토리/Chapter2_Main15_타오르는_흔적.md)를 따른다.

@@ -1,7 +1,5 @@
 > 2026-10-08 Main18 후속 확정: 기존 정화는 과열을 제거하지 않는다. 기존 Poison/Burn/Shock/Silence 제거 계약은 유지한다. Chapter3 Cleanse II는 미래 설계이며 이번 구현에서 추가하지 않는다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
 
-> 2026-10-08 Main18 후속 확정: 기존 정화는 과열을 제거하지 않는다. 기존 Poison/Burn/Shock/Silence 제거 계약은 유지한다. Chapter3 Cleanse II는 미래 설계이며 이번 구현에서 추가하지 않는다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
-
 # 스킬
 
 ## 목적

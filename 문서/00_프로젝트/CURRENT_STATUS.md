@@ -1,3 +1,11 @@
+## 2026-10-08 Main18 「검은 열기」 구현·자동 QA 완료
+
+정식13목표/Field09 흑요석 상흔21×15/보고 냉각약3·아르벨 판매/독립 과열·HUD·VFX/갑충·감시자 Elite/BGM/무음 Player·NPC TTS_PENDING22 구현. Main19·Cleanse II·새 음성 생성0. 실제13목표 연속 진행·두 전투 도망/패배 재도전·정상승리·중복0, BootstrapContinue7지점 보존, 5Job×2전투·5Path관찰 PASS. Runtime 고유 500PASS/FAIL0, CompileError0/최종ConsoleError·Warning0/새Warning0/MissingScript0, Source17PASS_WITH_NOTE·핵심FAIL_BLOCKING0. 기존3156파일 중3144byte 동일·의도한12수정·삭제0, 기존 사용자 변경 보호.
+
+사용자 직접 확인: **Art17 USER_ART_REVIEW_REQUIRED**(흰 원본 guide/반복 지면 경계 포함), **BGM2 USER_LISTENING_REQUIRED**, 실물 입력1. 자동 시각/청취 PASS로 승격0. 다음 권장: Art 검토→승인 원본 교체·BGM 청취→별도 승인 TTS; Main19 별도 요청. 마지막 관련 구현 commit `6361b00`(Art `543e82b`, 과열 `f72d907`, 설계 `2e6e86c`); QA는 이 항목을 포함한 최신 Docs commit. [최종QA](Main18_Final_QA.md) · [Art](Main18_Art_Import_QA.md) · [Balance](Main18_Balance_QA.md). 사용자 화면 보호, clean Bootstrap Edit Mode·비포커스 복구. GitHub Push0.
+
+---
+
 ## 2026-10-07 Main05 태온001 WAV 혼입 복구 / 재감사 완료
 
 사용자 실제Play의 무입력 추가발화는 기존001 WAV 안에 대표보고002 문장이 섞인 원인. 원본PCM 6.60초 무음경계에서001만 복구(10.55→6.60초), 정상5/원본/GUID/Catalog/게임Dialogue·Quest·Input 보호·TTS0. Voice6 새전사/nativePCM6/6, 실제Main04→Guard6→독립대표8→정식해금→Main06첫경계 304PASS/FAIL0, page2자연종료후5초무입력 유지/002자동재생0/1입력미엘page3/대표자동연결0/실제Continue3회 PASS. CompileError0/최종RuntimeConsoleError·Warning0/신규Warning0/MissingScript0·기존컴파일Warning16. QA첫Scene위치누락오류2건은 별도보존 후fixture수정, 최종오류0.

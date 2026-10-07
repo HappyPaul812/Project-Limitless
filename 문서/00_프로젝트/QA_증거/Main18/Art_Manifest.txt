@@ -1,0 +1,143 @@
+LIMITLESS Chapter 2 - Main18 Art Pack
+Quest: Main18 "Black Heat" / 검은 열기
+Scene: Field_09_ObsidianScar
+Display Name: 흑요석 상흔
+
+Art direction: black solidified volcanic rock + obsidian + restrained internal red heat.
+This pack intentionally avoids final-volcano, lava-sea, Main20 boss-arena, UI text, BGM, SFX, TTS, Cleanse II, and player/companion art.
+
+Unity placement note:
+- Environment PPU / final world placement scale / pivot are NOT fixed in the handoff; determine after Field09 geometry is built.
+- Environment source originals in this delivery are 512x512 RGBA working assets.
+- Ground assets are filled; prop/overlay assets use transparency.
+- Monster sheets follow the specified fixed 1256x1256 / 4x4 / 314x314 / 16-frame layout.
+
+FILES
+=====
+
+Environment/ObsidianScar_Ground_Base.png
+  Purpose: Field09 base charcoal/obsidian ground texture.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 255-255
+  Transparent Background: No (filled ground)
+  Notes: Repeatable base; minimal red heat accents; no vegetation.
+
+Environment/ObsidianScar_Ground_Cracked_01.png
+  Purpose: Light cracked-ground variation.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 255-255
+  Transparent Background: No (filled ground)
+  Notes: Subtle fissures; keeps player/monster readability.
+
+Environment/ObsidianScar_Ground_Cracked_02.png
+  Purpose: Stronger cracked-ground variation.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 255-255
+  Transparent Background: No (filled ground)
+  Notes: Dull internal red only; intentionally not lava.
+
+Environment/ObsidianScar_Obsidian_Slab_01.png
+  Purpose: Wide low obsidian slab environmental prop.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Dark glassy rock; restrained highlights.
+
+Environment/ObsidianScar_Obsidian_Spire_01.png
+  Purpose: Natural obsidian spire / boundary prop.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Sharp natural rock silhouette; not fantasy crystal.
+
+Environment/ObsidianScar_Fissure_Edge.png
+  Purpose: Deep fissure edge / canyon split prop.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Darker and more solidified than Main17; glow can be layered separately.
+
+Environment/ObsidianScar_Fissure_Glow.png
+  Purpose: Weak red internal heat glow overlay.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-140
+  Transparent Background: Yes
+  Notes: Low-opacity heat light only; no flame or lava surface.
+
+Environment/ObsidianScar_HeatVent_01.png
+  Purpose: Small ground heat vent.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Minor inner incandescence and steam-like heat outlet; not an eruption.
+
+Environment/ObsidianScar_AshPatch_01.png
+  Purpose: Pressed dark ash deposit patch.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-205
+  Transparent Background: Yes
+  Notes: Darker, compacted ash; feathered placement edges.
+
+Environment/ObsidianScar_Cliff_Blocker_01.png
+  Purpose: Field09 blocked outer cliff boundary prop.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Black cliff/obsidian mix; intentionally below final-volcano scale.
+
+Monsters/Obsidian_Beetle_Sprite_Sheet.png
+  Purpose: Main18 general monster: Obsidian Beetle.
+  Pixel Size: 1256x1256
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Frame Size: 314x314
+  Frame Count: 16
+  Rows: Row1 00-03 Idle; Row2 04-07 Attack; Row3 08-11 Hit/Strong Action; Row4 12-15 Defeat
+  Default Facing: Right
+  Notes: Low, heavy obsidian beetle; heat leaks through joints; no flame mantle.
+
+Monsters/Scorching_Watcher_Sprite_Sheet.png
+  Purpose: Main18 elite: Scorching Watcher.
+  Pixel Size: 1256x1256
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Frame Size: 314x314
+  Frame Count: 16
+  Rows: Row1 00-03 Idle; Row2 04-07 Attack; Row3 08-11 Hit/Overheat Skill; Row4 12-15 Defeat
+  Default Facing: Right
+  Notes: Non-humanoid heavy obsidian guardian creature; not a boss or lava golem.
+
+UI/Status_Overheat.png
+  Purpose: Overheat status icon.
+  Pixel Size: 128x128
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Heated-metal temperature gauge motif; intentionally not a standalone flame icon.
+
+UI/Item_Cooling_Remedy.png
+  Purpose: Cooling Remedy battle-item icon.
+  Pixel Size: 128x128
+  RGBA Alpha Range: 0-255
+  Transparent Background: Yes
+  Notes: Blue cooling liquid in small bottle; visually distinct from HP potion.
+
+VFX/Overheat_Apply.png
+  Purpose: Overheat +1 application VFX.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-210
+  Transparent Background: Yes
+  Notes: Short weak red heat-wave pulse around target; no large flame.
+
+VFX/Overheat_High.png
+  Purpose: Overheat 2-stack warning VFX.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-235
+  Transparent Background: Yes
+  Notes: Stronger heat distortion / red pulse.
+
+VFX/Overheat_Burst.png
+  Purpose: Overheat 3-stack burst/reset VFX.
+  Pixel Size: 512x512
+  RGBA Alpha Range: 0-245
+  Transparent Background: Yes
+  Notes: Short heat-pressure burst; intentionally not a large fire explosion.

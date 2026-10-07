@@ -1,0 +1,19 @@
+{
+  "BaselineCount": 3156,
+  "Unchanged": 3144,
+  "Changed": [
+    "Unity/Client/Assets/_Project/Resources/Audio/Music/BgmSceneCatalog.asset",
+    "Unity/Client/Assets/_Project/Scripts/Audio/BgmSceneCatalog.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleChapter2MonsterRuntime.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleCombatantStatusViewModel.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleItemUseService.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSkillSystem.cs",
+    "Unity/Client/Assets/_Project/Scripts/Core/ItemDefinition.cs",
+    "Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcRole.cs",
+    "Unity/Client/ProjectSettings/EditorBuildSettings.asset"
+  ],
+  "Missing": []
+}
