@@ -700,3 +700,24 @@ MonoBehaviour:
   - id: main16_report_paul_01
     clip: {fileID: 8300000, guid: 1330c9a31d554747b55e742f55dcd206, type: 3}
     speakerId: companion_paul
+  - id: main07_taeon_supp_001
+    clip: {fileID: 8300000, guid: 634cc37c9f0c4b2d953d92e4f94a2763, type: 3}
+    speakerId: companion_taeon
+  - id: main07_taeon_supp_002
+    clip: {fileID: 8300000, guid: f5bc7559789b479da5895107f57ee9ea, type: 3}
+    speakerId: companion_taeon
+  - id: main07_miel_supp_001
+    clip: {fileID: 8300000, guid: e661a5d200ac4123b7ef0e237f3e9d5e, type: 3}
+    speakerId: companion_miel
+  - id: main07_miel_supp_002
+    clip: {fileID: 8300000, guid: 43639fa677b54905959682f260ea97c3, type: 3}
+    speakerId: companion_miel
+  - id: main07_taeon_supp_003
+    clip: {fileID: 8300000, guid: e8ddfe492534480ab992a6c595b7283e, type: 3}
+    speakerId: companion_taeon
+  - id: main07_miel_supp_003
+    clip: {fileID: 8300000, guid: 286c3b4b0d0540638eeace26f35645f0, type: 3}
+    speakerId: companion_miel
+  - id: main07_miel_supp_004
+    clip: {fileID: 8300000, guid: 358ec4fc737341ddbc29d435307a1510, type: 3}
+    speakerId: companion_miel
