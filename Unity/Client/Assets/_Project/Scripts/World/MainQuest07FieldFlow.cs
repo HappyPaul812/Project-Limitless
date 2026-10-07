@@ -173,9 +173,11 @@ namespace ProjectLimitless.World
         private DialogueLine[] GetLines()
         {
             string player = string.IsNullOrWhiteSpace(GameSessionData.PlayerName) ? "플레이어" : GameSessionData.PlayerName;
-            DialogueLine L(string id, string name, string text) => new DialogueLine(id, name, text);
-            if (targetId == MainQuest07FieldFlow.WheelTracksId) return new[] { L(CompanionRosterService.TaeonId,"태온","수레가 지나간 흔적은 아닌 것 같습니다."), L(CompanionRosterService.TaeonId,"태온","폭이 일정하고… 한쪽이 계속 더 깊게 눌려 있어요."), L(CompanionRosterService.MielId,"미엘","누군가 이쪽으로 지나간 것 같네요."), L("",player,"따라가 보죠.") };
-            if (targetId == MainQuest07FieldFlow.WoundedTravelerId) return new[] { L(CompanionRosterService.MielId,"미엘","이분을 그냥 두고 갈 수는 없어요. 제가 상태를 볼게요."), L(CompanionRosterService.TaeonId,"태온","혼자 괜찮겠습니까?"), L(CompanionRosterService.MielId,"미엘","네. 두 분은 흔적을 확인해주세요."), L(CompanionRosterService.MielId,"미엘","상황이 안 좋으면 바로 돌아오시고요.") };
+            DialogueLine L(string id, string name, string text, string dialogueId = null) => new DialogueLine(id, name, text, dialogueId);
+            // 기존 정식 Voice 번호는 보존합니다. 초반 누락 NPC만 보충 ID를 사용하며 제작 전에는
+            // Catalog에 없으므로 무음 상태를 유지합니다. Player는 음성 제작 대상이 아닙니다.
+            if (targetId == MainQuest07FieldFlow.WheelTracksId) return new[] { L(CompanionRosterService.TaeonId,"태온","수레가 지나간 흔적은 아닌 것 같습니다.","main07_taeon_supp_001"), L(CompanionRosterService.TaeonId,"태온","폭이 일정하고… 한쪽이 계속 더 깊게 눌려 있어요.","main07_taeon_supp_002"), L(CompanionRosterService.MielId,"미엘","누군가 이쪽으로 지나간 것 같네요.","main07_miel_supp_001"), L("",player,"따라가 보죠.") };
+            if (targetId == MainQuest07FieldFlow.WoundedTravelerId) return new[] { L(CompanionRosterService.MielId,"미엘","이분을 그냥 두고 갈 수는 없어요. 제가 상태를 볼게요.","main07_miel_supp_002"), L(CompanionRosterService.TaeonId,"태온","혼자 괜찮겠습니까?","main07_taeon_supp_003"), L(CompanionRosterService.MielId,"미엘","네. 두 분은 흔적을 확인해주세요.","main07_miel_supp_003"), L(CompanionRosterService.MielId,"미엘","상황이 안 좋으면 바로 돌아오시고요.","main07_miel_supp_004") };
             if (targetId == MainQuest07FieldFlow.PaulId) return PaulFirst();
             if (targetId == MainQuest07FieldFlow.MielMeetingId) return MielMeeting();
             return new[] { L(MainQuest07FieldFlow.PaulId,"폴","아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요."), L(MainQuest07FieldFlow.PaulId,"폴","그런데 저는 확인해볼 곳이 하나 더 있습니다."), L("",player,"혼자 가시려고요?"), L(MainQuest07FieldFlow.PaulId,"폴","이번에는 진흙 없는 길로요."), L(MainQuest07FieldFlow.PaulId,"폴","아까 충분히 배웠습니다. 헤헤."), L(MainQuest07FieldFlow.PaulId,"폴","다시 만나게 되면 그때 정보부터 맞춰보죠.") };
