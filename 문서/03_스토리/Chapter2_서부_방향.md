@@ -1,3 +1,7 @@
+> 2026-10-08 Main18 후속 확정: Main18 「검은 열기」 / main_18_black_heat / Field_09_ObsidianScar / 13목표는 사용자 승인 정식 설계다. 과열·냉각약·흑요석 갑충·작열 감시자 Elite를 확정하며 Main19~21은 기존 미래 범위를 유지한다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
+
+> 2026-10-08 Main18 후속 확정: Main18 「검은 열기」 / main_18_black_heat / Field_09_ObsidianScar / 13목표는 사용자 승인 정식 설계다. 과열·냉각약·흑요석 갑충·작열 감시자 Elite를 확정하며 Main19~21은 기존 미래 범위를 유지한다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
+
 # Chapter 2 서부 방향
 
 이 지역의 일반 몬스터 1차 방향과 Elite 후보는 [Chapter 2 몬스터 1차 설계](../08_몬스터/Chapter2_몬스터_1차_설계.md)를 따른다. 일반 몬스터 5종의 Runtime은 구현됐다. 도입부 Main12~14의 확정 범위는 [Chapter 2 도입부 설계](Chapter2_도입부_Main12_14.md)를 따른다.
