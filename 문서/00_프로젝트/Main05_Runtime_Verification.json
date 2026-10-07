@@ -1,0 +1,30 @@
+{
+  "runtime_pass": 221,
+  "runtime_fail": 0,
+  "logged_pages": 24,
+  "main05_voice": 6,
+  "main05_mapping_pcm_pass": 6,
+  "semantic_not_verified": 6,
+  "semantic_suspect_candidates": 5,
+  "individual_wrong_audio_confirmed": 0,
+  "known_user_reported_wrong_content_in_range": true,
+  "changed_existing": [
+    "Unity/Client/Assets/_Project/Scripts/NPC/InteractionSystem.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/DialoguePresenter.cs"
+  ],
+  "external_user_save_changes": [],
+  "protected_baseline_files": 3133,
+  "voice_asset_changes": 0,
+  "main04_late5_changes": 0,
+  "main06_after_changes": 0,
+  "main17_voice_changes": 0,
+  "scene_missing_scripts": {
+    "World_StarterVillage": 0,
+    "Field_01": 0,
+    "Field_02": 0
+  },
+  "final_compile_errors": 0,
+  "existing_compile_warnings_CS0618": 16,
+  "final_runtime_console_errors_warnings_asserts": 0,
+  "input_settings_restored_native_valid": true
+}

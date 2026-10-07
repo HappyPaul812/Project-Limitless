@@ -1,0 +1,10 @@
+﻿stable_id,speaker,exact_text,status,evidence
+main05_miel_supp_001,미엘,무언가를 피해서 내려오고 있는 것 같아요.,TTS_REGEN_CANDIDATE;SEMANTIC_INTEGRITY_SUSPECT,User Main05 range: abnormal continuation; Miel speaks Main04 text; exact Miel page not remembered. Runtime mapping/PCM PASS does not prove meaning.
+main05_taeon_supp_002,태온,"저도 이 움직임이
+어디서 시작됐는지 확인하고 싶습니다.",TTS_REGEN_CANDIDATE;SEMANTIC_INTEGRITY_SUSPECT,User Main05 range: abnormal continuation; Miel speaks Main04 text; exact Miel page not remembered. Runtime mapping/PCM PASS does not prove meaning.
+main05_taeon_supp_003,태온,"괜찮으시다면…
+조금 더 함께 가겠습니다.",TTS_REGEN_CANDIDATE;SEMANTIC_INTEGRITY_SUSPECT,User Main05 range: abnormal continuation; Miel speaks Main04 text; exact Miel page not remembered. Runtime mapping/PCM PASS does not prove meaning.
+main05_miel_supp_002,미엘,"이대로 두면
+다치는 사람이 더 생길 겁니다.",TTS_REGEN_CANDIDATE;SEMANTIC_INTEGRITY_SUSPECT,User Main05 range: abnormal continuation; Miel speaks Main04 text; exact Miel page not remembered. Runtime mapping/PCM PASS does not prove meaning.
+main05_miel_supp_003,미엘,"저도 같이 가겠습니다.
+제가 할 수 있는 일이 있을 거예요.",TTS_REGEN_CANDIDATE;SEMANTIC_INTEGRITY_SUSPECT,User Main05 range: abnormal continuation; Miel speaks Main04 text; exact Miel page not remembered. Runtime mapping/PCM PASS does not prove meaning.

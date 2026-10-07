@@ -1,0 +1,8 @@
+PASS
+PASS Isolated Save/Settings
+PASS Scene World_StarterVillage
+OBSERVED sameFrame Enter+Space page=2 expectedInputPage=1 frame=806
+PASS Next-frame Enter still available
+OBSERVED sameFrame A close+reopen dialogueOpen=True page=0
+PASS New-frame A opens Guard page0
+PASS Scene Bootstrap

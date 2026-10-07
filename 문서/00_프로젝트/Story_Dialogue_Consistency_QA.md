@@ -1,3 +1,9 @@
+## 2026-10-07 Main05 귀환 보고 감사 / 입력 결함 수정 / Voice 의미 대기
+
+같은프레임 Enter+Space page0→2 및 A 종료→NPC 재열림을 실제 가상장치 입력으로 재현·수정했다. DialoguePresenter 실제입력용 Advance/열림·닫힘 프레임 경계와 InteractionSystem 입력진입점만 최소수정, 대사배열/StableID/Objective/Catalog/WAV 변경0. Main04전투후9→GuardReport6→독립대표Report8→정식합류→Main06첫조사001 한 Play 연속 **221PASS/FAIL0**, 24페이지 기록·Main05 6PCM 원본오차0·단일Source·조기진행/자동다음NPC0. Programmatic Advance 유지.
+
+**전체 Voice 의미 해결은 아직 아니다.** 사용자 Main05의 Main04문장 오발화 증거 유지. 현재 Mapping6PASS와 개별 WAV 의미는 구분: 의미NOT_VERIFIED6, 후속태온2/미엘3 **재생성후보5**, 개별Wrong/확정TTS_REGEN_REQUIRED0(어느 미엘 자막인지 사용자가 기억하지 못함). 후보를 확정 재생성목록으로 자동승격하지 않았다. TTS생성/Clip교환0·NEEDS_LISTENING244 marker 유지·Main04late5/Main06이후/Main17Voice 변경0. [최종 감사·한계](Main05_Return_Voice_QA.md) · [Voice Matrix6](Main05_Voice_Matrix.csv) · [정확본문 후보5](Main05_TTS_Regen_Candidates.csv). 최신 근거는 이 문서이며 이전 일반metadata PASS는 의미판정이 아니다.
+
 ## 2026-10-07 Main04 후반 음성 5개 최종 반영 완료
 
 현재 Main04 Late Sequence의 재생성 대기 **5→0**. 미엘009/010/011·태온006/007 모두 **REGENERATED / USER_LISTENED_PASS / UNITY_APPLIED / RUNTIME_VERIFIED**. 사용자 전체 원본 청취PASS와 이번 Runtime 기술 검증을 구분한다. 실제 Actor 9페이지·7Voice 전체재생/Next/Portrait/화자/본문, 새5개 PCM 오차0, 완료→Main05/완료전후 Bootstrap Continue, 동일프레임 Next2/단일Source, Player·지문 무음 PASS. **148PASS/FAIL0**, Compile Error0·최종Console Error0/Warning0·Field Runtime Missing Script0. 원본·meta·GUID·Catalog·대사 변경0; WAV 정확히5만 교체. 기존 NEEDS_LISTENING244 marker/Queue219 및 Main17 TTS_PENDING14 유지·일괄PASS승격0. [최종 QA](Main04_Late5_Final_QA.md)와 [현재5개 Mapping](Main04_Late5_Source_Mapping.csv)이 우선하며 아래 이전 Wrong/Suspect/대기5 표기는 역사 기록이다. 음성commit `0e7809a`; Push0.
