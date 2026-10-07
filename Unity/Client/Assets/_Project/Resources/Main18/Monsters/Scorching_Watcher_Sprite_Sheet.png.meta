@@ -1,0 +1,569 @@
+fileFormatVersion: 2
+guid: 67064e32e8b0ea8489def6be1eb1a51d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7691625935813042679
+    second: Scorching_Watcher_Sprite_Sheet_0
+  - first:
+      213: 2367905125513883870
+    second: Scorching_Watcher_Sprite_Sheet_1
+  - first:
+      213: -374013041064560961
+    second: Scorching_Watcher_Sprite_Sheet_2
+  - first:
+      213: -9033952088290629471
+    second: Scorching_Watcher_Sprite_Sheet_3
+  - first:
+      213: 4959248854163496110
+    second: Scorching_Watcher_Sprite_Sheet_4
+  - first:
+      213: 4314722996935694707
+    second: Scorching_Watcher_Sprite_Sheet_5
+  - first:
+      213: 1617188607343409898
+    second: Scorching_Watcher_Sprite_Sheet_6
+  - first:
+      213: 2873408035382283712
+    second: Scorching_Watcher_Sprite_Sheet_7
+  - first:
+      213: -3685867891730880560
+    second: Scorching_Watcher_Sprite_Sheet_8
+  - first:
+      213: -8535428147883217901
+    second: Scorching_Watcher_Sprite_Sheet_9
+  - first:
+      213: 5382536626664472207
+    second: Scorching_Watcher_Sprite_Sheet_10
+  - first:
+      213: 7843179167322536474
+    second: Scorching_Watcher_Sprite_Sheet_11
+  - first:
+      213: 749114330140801880
+    second: Scorching_Watcher_Sprite_Sheet_12
+  - first:
+      213: -7378647722723585219
+    second: Scorching_Watcher_Sprite_Sheet_13
+  - first:
+      213: -2549346994472062059
+    second: Scorching_Watcher_Sprite_Sheet_14
+  - first:
+      213: 6266512976026219773
+    second: Scorching_Watcher_Sprite_Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 314
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8e7dd64b8c92ba40800000000000000
+      internalID: 5382536626664472207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1af002d5e198dc60800000000000000
+      internalID: 7843179167322536474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85b7238a383656a00800000000000000
+      internalID: 749114330140801880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33d05c6df6c99990800000000000000
+      internalID: -7378647722723585219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59378416a66ee9cd0800000000000000
+      internalID: -2549346994472062059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df43b6ca95027f650800000000000000
+      internalID: 6266512976026219773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a24644923ba48cc4d909229dd6d852d9
+      internalID: -825530579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_01
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b294025f9fd54a7499ab3bc7e0c4c5ec
+      internalID: -1163435627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_02
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6ec5369717e674183cf60ab99fd4ce
+      internalID: 356127036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_03
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3979d59505e0a5428bcc357c7523c60
+      internalID: 1848507127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3cc58e6899692448e5ce26cbd929bc
+      internalID: -1691796383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_05
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa8816309b32da4997429ba5222f7f3
+      internalID: -2004354937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_06
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb165530a3cf3bb42bfe557c8da70b4f
+      internalID: 200976926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_07
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 640c015a27613004aa69950ece603a10
+      internalID: 1414902466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83954b9167f9444b9f315910fed5166
+      internalID: -2128113252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scorching_Watcher_Sprite_Sheet_09
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf11f0249313b29449092243118318a3
+      internalID: 1486150147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 05cce3a788de39343961b3abd2ff2566
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Scorching_Watcher_Sprite_Sheet_0: -7691625935813042679
+      Scorching_Watcher_Sprite_Sheet_00: -825530579
+      Scorching_Watcher_Sprite_Sheet_01: -1163435627
+      Scorching_Watcher_Sprite_Sheet_02: 356127036
+      Scorching_Watcher_Sprite_Sheet_03: 1848507127
+      Scorching_Watcher_Sprite_Sheet_04: -1691796383
+      Scorching_Watcher_Sprite_Sheet_05: -2004354937
+      Scorching_Watcher_Sprite_Sheet_06: 200976926
+      Scorching_Watcher_Sprite_Sheet_07: 1414902466
+      Scorching_Watcher_Sprite_Sheet_08: -2128113252
+      Scorching_Watcher_Sprite_Sheet_09: 1486150147
+      Scorching_Watcher_Sprite_Sheet_1: 2367905125513883870
+      Scorching_Watcher_Sprite_Sheet_10: 5382536626664472207
+      Scorching_Watcher_Sprite_Sheet_11: 7843179167322536474
+      Scorching_Watcher_Sprite_Sheet_12: 749114330140801880
+      Scorching_Watcher_Sprite_Sheet_13: -7378647722723585219
+      Scorching_Watcher_Sprite_Sheet_14: -2549346994472062059
+      Scorching_Watcher_Sprite_Sheet_15: 6266512976026219773
+      Scorching_Watcher_Sprite_Sheet_2: -374013041064560961
+      Scorching_Watcher_Sprite_Sheet_3: -9033952088290629471
+      Scorching_Watcher_Sprite_Sheet_4: 4959248854163496110
+      Scorching_Watcher_Sprite_Sheet_5: 4314722996935694707
+      Scorching_Watcher_Sprite_Sheet_6: 1617188607343409898
+      Scorching_Watcher_Sprite_Sheet_7: 2873408035382283712
+      Scorching_Watcher_Sprite_Sheet_8: -3685867891730880560
+      Scorching_Watcher_Sprite_Sheet_9: -8535428147883217901
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

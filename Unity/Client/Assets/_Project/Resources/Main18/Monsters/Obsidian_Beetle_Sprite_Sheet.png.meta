@@ -1,0 +1,569 @@
+fileFormatVersion: 2
+guid: fffdcf59c32d247428a7d0ab8fd3c00d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7883130256268723475
+    second: Obsidian_Beetle_Sprite_Sheet_0
+  - first:
+      213: 3006919026317279134
+    second: Obsidian_Beetle_Sprite_Sheet_1
+  - first:
+      213: 9063832840636810980
+    second: Obsidian_Beetle_Sprite_Sheet_2
+  - first:
+      213: -7932112039951209037
+    second: Obsidian_Beetle_Sprite_Sheet_3
+  - first:
+      213: 3180235123153815146
+    second: Obsidian_Beetle_Sprite_Sheet_4
+  - first:
+      213: 6298317068274322959
+    second: Obsidian_Beetle_Sprite_Sheet_5
+  - first:
+      213: -4152659889508969259
+    second: Obsidian_Beetle_Sprite_Sheet_6
+  - first:
+      213: -1400279397363066387
+    second: Obsidian_Beetle_Sprite_Sheet_7
+  - first:
+      213: 1293707425847233936
+    second: Obsidian_Beetle_Sprite_Sheet_8
+  - first:
+      213: 587510584764303818
+    second: Obsidian_Beetle_Sprite_Sheet_9
+  - first:
+      213: 5387517118079189680
+    second: Obsidian_Beetle_Sprite_Sheet_10
+  - first:
+      213: -8212241185658511004
+    second: Obsidian_Beetle_Sprite_Sheet_11
+  - first:
+      213: -8735899440976821026
+    second: Obsidian_Beetle_Sprite_Sheet_12
+  - first:
+      213: -4291584514327788443
+    second: Obsidian_Beetle_Sprite_Sheet_13
+  - first:
+      213: -4810481539207768423
+    second: Obsidian_Beetle_Sprite_Sheet_14
+  - first:
+      213: 1673751310403730980
+    second: Obsidian_Beetle_Sprite_Sheet_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 314
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2427c464e44ca40800000000000000
+      internalID: 5387517118079189680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461edf6e622480e80800000000000000
+      internalID: -8212241185658511004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed40b034eb9d3c680800000000000000
+      internalID: -8735899440976821026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564cceb3f9a3174c0800000000000000
+      internalID: -4291584514327788443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99652f0f68cbd3db0800000000000000
+      internalID: -4810481539207768423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e75fae2fb5a3710800000000000000
+      internalID: 1673751310403730980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f278ed22e5ccc054aa632a1d608a7f8f
+      internalID: -1242705007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_01
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e795774d9df2144a8992c99e261c8fc
+      internalID: -678498851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_02
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccc40ad81fbec64ab5168638b210497
+      internalID: -1976065169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_03
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7617b2d33ae2576459d06292bd77ab71
+      internalID: -1541181038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7c1ddf85c79b7e4a89ddd2f3c4c65cf
+      internalID: 146842779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_05
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe6818cd01f4364e9d31b4c6d50fa2a
+      internalID: -1724750194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_06
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3b6a380be5c3f459abd84ee51fc520
+      internalID: -1413547494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_07
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc9708aeec81dd42ab45e0f0a3e3cc0
+      internalID: 1249181609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee01af4a864f1cc49b05e44fffe64b6b
+      internalID: 610353964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Obsidian_Beetle_Sprite_Sheet_09
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4367743621788c24cab6c5087fbeb2f1
+      internalID: 804707741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 176d7e511d966ab40a020b39ee77aecb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Obsidian_Beetle_Sprite_Sheet_0: -7883130256268723475
+      Obsidian_Beetle_Sprite_Sheet_00: -1242705007
+      Obsidian_Beetle_Sprite_Sheet_01: -678498851
+      Obsidian_Beetle_Sprite_Sheet_02: -1976065169
+      Obsidian_Beetle_Sprite_Sheet_03: -1541181038
+      Obsidian_Beetle_Sprite_Sheet_04: 146842779
+      Obsidian_Beetle_Sprite_Sheet_05: -1724750194
+      Obsidian_Beetle_Sprite_Sheet_06: -1413547494
+      Obsidian_Beetle_Sprite_Sheet_07: 1249181609
+      Obsidian_Beetle_Sprite_Sheet_08: 610353964
+      Obsidian_Beetle_Sprite_Sheet_09: 804707741
+      Obsidian_Beetle_Sprite_Sheet_1: 3006919026317279134
+      Obsidian_Beetle_Sprite_Sheet_10: 5387517118079189680
+      Obsidian_Beetle_Sprite_Sheet_11: -8212241185658511004
+      Obsidian_Beetle_Sprite_Sheet_12: -8735899440976821026
+      Obsidian_Beetle_Sprite_Sheet_13: -4291584514327788443
+      Obsidian_Beetle_Sprite_Sheet_14: -4810481539207768423
+      Obsidian_Beetle_Sprite_Sheet_15: 1673751310403730980
+      Obsidian_Beetle_Sprite_Sheet_2: 9063832840636810980
+      Obsidian_Beetle_Sprite_Sheet_3: -7932112039951209037
+      Obsidian_Beetle_Sprite_Sheet_4: 3180235123153815146
+      Obsidian_Beetle_Sprite_Sheet_5: 6298317068274322959
+      Obsidian_Beetle_Sprite_Sheet_6: -4152659889508969259
+      Obsidian_Beetle_Sprite_Sheet_7: -1400279397363066387
+      Obsidian_Beetle_Sprite_Sheet_8: 1293707425847233936
+      Obsidian_Beetle_Sprite_Sheet_9: 587510584764303818
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
