@@ -1,0 +1,43 @@
+{
+  "status": "CLOSED",
+  "source_user_listening_pass": 5,
+  "source_auto_qa_pass": 5,
+  "duplicate_pcm": 0,
+  "runtime_pass": 239,
+  "runtime_fail": 0,
+  "pages": 24,
+  "main05_mapping_pcm_pass": 6,
+  "page_skip": 0,
+  "page_duplicate": 0,
+  "input_bleed": 0,
+  "main04_contamination": 0,
+  "save_continue_checkpoints": 3,
+  "compile_errors": 0,
+  "preexisting_compile_warnings": 16,
+  "not_verified": 0,
+  "user_input_required": 0,
+  "changed_existing": [
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_001.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_002.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_miel_supp_003.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav",
+    "Unity/Client/Assets/_Project/Scripts/Editor/Main05ReturnVoiceAudit.cs"
+  ],
+  "protected_baseline_files": 3140,
+  "needs_listening_historical": 244,
+  "runtime_console_errors": 0,
+  "runtime_console_warnings": 0,
+  "missing_script_runtime": 0,
+  "missing_script_scenes": {
+    "World_StarterVillage": 0,
+    "Field_01": 0,
+    "Field_02": 0
+  },
+  "final_editor_playing": false,
+  "final_editor_focused": false,
+  "audit_save_released": true,
+  "input_settings_restored": true,
+  "wav_commit": "c67d632",
+  "existing_input_commit": "f2d7e0c"
+}

@@ -1,3 +1,11 @@
+## 2026-10-07 Main05 승인 신규 Voice5 및 연속 QA 완료
+
+- Main05 신규WAV5 적용, 최신 사용자 청취/자동QA5/5, 전체6매핑·PCM PASS. 문제 **CLOSED**.
+- Main04후속9→Guard6→독립대표8→공식해금→Main06Field02첫001, 입력 중복/재열림/경계 및 실제 Save/Continue3회 PASS. Runtime 239PASS/0FAIL, CompileError0, ConsoleError0, MissingScript0. 기존 CS0618경고16 별도.
+- 다른Voice·Main17·Battle·Beast·원본·Save·GUID 보존, NEEDS_LISTENING244 유지. [상세QA](Main05_FinalVoice_QA.md).
+- 사용자 직접 추가 확인 필수 없음(승인 원본 및 자동 검증 범위). 다음 권장: 보호된 기존 미청취 목록을 별도 작업에서 진행.
+- 마지막 관련 구현 commit `c67d632`(WAV5), `f2d7e0c`(기존 입력수정). 최신 QA/문서 commit은 이 항목이 포함된 `Docs: Main05 Voice Dialogue 최종 QA 상태`를 참조. Push0.
+
 ## 2026-10-07 Main05 귀환 보고 감사 / 입력 결함 수정 / Voice 의미 대기
 
 같은프레임 Enter+Space page0→2 및 A 종료→NPC 재열림을 실제 가상장치 입력으로 재현·수정했다. DialoguePresenter 실제입력용 Advance/열림·닫힘 프레임 경계와 InteractionSystem 입력진입점만 최소수정, 대사배열/StableID/Objective/Catalog/WAV 변경0. Main04전투후9→GuardReport6→독립대표Report8→정식합류→Main06첫조사001 한 Play 연속 **221PASS/FAIL0**, 24페이지 기록·Main05 6PCM 원본오차0·단일Source·조기진행/자동다음NPC0. Programmatic Advance 유지.

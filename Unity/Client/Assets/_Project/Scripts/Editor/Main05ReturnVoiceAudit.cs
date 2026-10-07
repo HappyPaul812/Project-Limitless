@@ -34,7 +34,7 @@ namespace ProjectLimitless.EditorTools
         static InputSettings.EditorInputBehaviorInPlayMode originalEditorInput;
         static List<string> checks=new List<string>();
         static List<string> trace=new List<string>();
-        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main05Return/runtime"));
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main05Final5/runtime"));
         public static string Status="Idle";
         static Main05ReturnVoiceAudit()
         {
@@ -81,6 +81,19 @@ namespace ProjectLimitless.EditorTools
             Check(SceneManager.GetActiveScene().name==name,"Scene "+name);yield return Wait(12);
         }
         static DialogueLine[] Lines(Type type,string method)=>(DialogueLine[])type.GetMethod(method,Static).Invoke(null,null);
+        // 실제 Bootstrap Continue 경로로 격리 저장을 복원하고 목표/동료/Voice 잔류를 확인합니다.
+        static IEnumerator SaveContinue(string scene,string objective,bool unlocked)
+        {
+            // QA의 직접 Scene 로드는 실제 출구 전환을 우회하므로 저장 API에 현 Scene을 명시합니다.
+            Check(GameSaveService.SaveCurrentSession(scene),"Save checkpoint "+objective);
+            yield return Load("Bootstrap");
+            typeof(BootstrapLoader).GetMethod("ContinueGame",Private).Invoke(UnityEngine.Object.FindAnyObjectByType<BootstrapLoader>(),new object[]{1});
+            for(int i=0;i<300&&SceneManager.GetActiveScene().name!=scene;i++)yield return null;
+            yield return Wait(12);
+            Check(SceneManager.GetActiveScene().name==scene&&Objective()==objective,"Actual Continue objective "+objective);
+            Check(CompanionRosterService.IsUnlocked(CompanionRosterService.TaeonId)==unlocked&&CompanionRosterService.IsUnlocked(CompanionRosterService.MielId)==unlocked,"Continue companion state "+objective);
+            Check(DialoguePresenter.Instance==null||(!DialoguePresenter.Instance.IsOpen&&Voice(DialoguePresenter.Instance).Clip==null),"Continue no queued Voice "+objective);
+        }
         static NpcController Npc(string id)=>UnityEngine.Object.FindObjectsByType<VillageNpcRole>().First(n=>n.NpcId==id).GetComponent<NpcController>();
         static void Interact(NpcController npc)
         {
@@ -121,7 +134,8 @@ namespace ProjectLimitless.EditorTools
             KeyPulse(Key.Enter);KeyPulse(Key.Space);
             checks.Add("OBSERVED sameFrame Enter+Space page="+Page(d)+" expectedInputPage=1 frame="+Time.frameCount);
             if(!probe)Check(Page(d)==1,"Same-frame Enter+Space advances one page");
-            yield return Wait(3);KeyPulse(Key.Enter);Check(Page(d)==(probe?3:2),"Next-frame Enter still available");d.Hide();yield return Wait(3);
+            yield return Wait(3);KeyPulse(Key.Enter);Check(Page(d)==(probe?3:2),"Next-frame Enter still available");
+            yield return Wait(3);KeyPulse(Key.Space);Check(Page(d)==(probe?4:3),"Space alone advances one page");d.Hide();yield return Wait(3);
             var guard=Npc(MainQuest01NpcFlow.GuardId);var player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();
             player.transform.position=guard.transform.position+new Vector3(-.6f,0,0);yield return Wait(3);
             d.ShowSequence(new[]{new DialogueLine("player","플레이어","마지막 페이지")},null);yield return Wait(3);
@@ -200,12 +214,16 @@ namespace ProjectLimitless.EditorTools
                 Interact(Npc(MainQuest01NpcFlow.GuardId));yield return Sequence(d,Lines(typeof(MainQuest05ReturnFlow),"GuardReport"),"GuardReport");
                 Check(Objective()=="report_to_village_representative"&&!d.IsOpen,"Guard ends before independent representative interaction");yield return Wait(5);Check(!d.IsOpen,"No automatic next NPC dialogue");
                 Check(!CompanionRosterService.IsUnlocked(CompanionRosterService.MielId),"No premature companion unlock");
+                yield return SaveContinue("World_StarterVillage","report_to_village_representative",false);d=DialoguePresenter.Instance;
                 Interact(Npc(MainQuest01NpcFlow.RepresentativeId));yield return Sequence(d,Lines(typeof(MainQuest05ReturnFlow),"RepresentativeReport"),"RepresentativeReport");
                 Check(QuestService.GetState(MainQuest05ReturnFlow.QuestId)==QuestState.Completed,"Main05 complete");
                 Check(CompanionRosterService.IsUnlocked(CompanionRosterService.TaeonId)&&CompanionRosterService.IsUnlocked(CompanionRosterService.MielId),"Official companion unlock");
                 Check(QuestService.GetState(MainQuest06ForestFlow.QuestId)==QuestState.Available,"Main06 available in village");
+                yield return SaveContinue("World_StarterVillage",null,true);
+                Check(QuestService.GetState(MainQuest05ReturnFlow.QuestId)==QuestState.Completed&&QuestService.GetState(MainQuest06ForestFlow.QuestId)==QuestState.Available,"Continue completed Main05 and available Main06");
                 yield return Load("Field_01");Check(QuestService.ActiveMainQuest.Definition.QuestId==MainQuest06ForestFlow.QuestId,"Main06 starts on Field01");
                 yield return Load("Field_02");Check(Objective()=="inspect_anomaly_trace","Main06 Field02 objective");
+                yield return SaveContinue("Field_02","inspect_anomaly_trace",true);
                 var anomaly=UnityEngine.Object.FindAnyObjectByType<MainQuest06AnomalyTrace>();player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();player.transform.position=anomaly.transform.position;
                 typeof(MainQuest06AnomalyTrace).GetField("nearbyPlayer",Private).SetValue(anomaly,player);
                 typeof(MainQuest06AnomalyTrace).GetMethod("OnInteract",Private).Invoke(anomaly,new object[]{default(InputAction.CallbackContext)});yield return Wait(3);d=DialoguePresenter.Instance;
@@ -215,6 +233,8 @@ namespace ProjectLimitless.EditorTools
                 trace.Add(JsonUtility.ToJson(new PageTrace{quest=MainQuest06ForestFlow.QuestId,sequence="Main06FirstBoundary",page=0,id=Voice(d).Clip.name,speaker=((DialogueLine[])Field(d,"sequenceLines"))[0].SpeakerId,text=((Text)Field(d,"dialogueText")).text,clip=AssetDatabase.GetAssetPath(Voice(d).Clip),objectiveBefore=Objective(),objectiveAfter=Objective()}));
                 File.WriteAllLines(Path.Combine(Root,"pages.jsonl"),trace);
                 Check(UnityEngine.Object.FindObjectsByType<Transform>().All(t=>GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject)==0),"Runtime Missing Script0");d.Hide();
+                d.ShowSequence(new[]{new DialogueLine("companion_taeon","태온","<지문> 상황을 살핀다.","main05_taeon_supp_002")},null);
+                Check(Voice(d).Clip==null&&!Voice(d).IsPlaying&&!((GameObject)Field(d,"portraitRoot")).activeSelf&&string.IsNullOrEmpty(((Text)Field(d,"speakerText")).text),"Direction Speaker0 Portrait0 Voice0");d.Hide();
             }
             yield return Load("Bootstrap");Status="PASS";
             File.WriteAllText(Path.Combine(Root,probe?"probe-final.txt":"runtime-final.txt"),Status+"\n"+string.Join("\n",checks));

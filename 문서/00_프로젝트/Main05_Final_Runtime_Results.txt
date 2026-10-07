@@ -1,0 +1,242 @@
+PASS
+PASS Isolated Save/Settings
+PASS Scene Field_01
+PASS Actual Main04 Late TryInteract
+PASS Exact page AfterBattleConversation:0
+PASS Single Voice Source AfterBattleConversation:0
+PASS Text/Speaker AfterBattleConversation:0
+PASS Objective unchanged before completion AfterBattleConversation:0
+PASS Portrait policy AfterBattleConversation:0
+PASS Runtime Resolve/Play main04_miel_supp_008
+PASS Runtime PCM main04_miel_supp_008
+PASS Full playback natural stop main04_miel_supp_008
+PASS Previous Clip cleanup AfterBattleConversation:0
+PASS Exact page AfterBattleConversation:1
+PASS Single Voice Source AfterBattleConversation:1
+PASS Text/Speaker AfterBattleConversation:1
+PASS Objective unchanged before completion AfterBattleConversation:1
+PASS Portrait policy AfterBattleConversation:1
+PASS Runtime Resolve/Play main04_taeon_supp_005
+PASS Runtime PCM main04_taeon_supp_005
+PASS Full playback natural stop main04_taeon_supp_005
+PASS Previous Clip cleanup AfterBattleConversation:1
+PASS Exact page AfterBattleConversation:2
+PASS Single Voice Source AfterBattleConversation:2
+PASS Text/Speaker AfterBattleConversation:2
+PASS Objective unchanged before completion AfterBattleConversation:2
+PASS Portrait policy AfterBattleConversation:2
+PASS Runtime Resolve/Play main04_miel_supp_009
+PASS Runtime PCM main04_miel_supp_009
+PASS Full playback natural stop main04_miel_supp_009
+PASS Previous Clip cleanup AfterBattleConversation:2
+PASS Exact page AfterBattleConversation:3
+PASS Single Voice Source AfterBattleConversation:3
+PASS Text/Speaker AfterBattleConversation:3
+PASS Objective unchanged before completion AfterBattleConversation:3
+PASS Portrait policy AfterBattleConversation:3
+PASS Runtime Resolve/Play main04_taeon_supp_006
+PASS Runtime PCM main04_taeon_supp_006
+PASS Full playback natural stop main04_taeon_supp_006
+PASS Previous Clip cleanup AfterBattleConversation:3
+PASS Exact page AfterBattleConversation:4
+PASS Single Voice Source AfterBattleConversation:4
+PASS Text/Speaker AfterBattleConversation:4
+PASS Objective unchanged before completion AfterBattleConversation:4
+PASS Portrait policy AfterBattleConversation:4
+PASS Intentional Silent AfterBattleConversation:4
+PASS Previous Clip cleanup AfterBattleConversation:4
+PASS Exact page AfterBattleConversation:5
+PASS Single Voice Source AfterBattleConversation:5
+PASS Text/Speaker AfterBattleConversation:5
+PASS Objective unchanged before completion AfterBattleConversation:5
+PASS Portrait policy AfterBattleConversation:5
+PASS Runtime Resolve/Play main04_miel_supp_010
+PASS Runtime PCM main04_miel_supp_010
+PASS Full playback natural stop main04_miel_supp_010
+PASS Previous Clip cleanup AfterBattleConversation:5
+PASS Exact page AfterBattleConversation:6
+PASS Single Voice Source AfterBattleConversation:6
+PASS Text/Speaker AfterBattleConversation:6
+PASS Objective unchanged before completion AfterBattleConversation:6
+PASS Portrait policy AfterBattleConversation:6
+PASS Runtime Resolve/Play main04_taeon_supp_007
+PASS Runtime PCM main04_taeon_supp_007
+PASS Full playback natural stop main04_taeon_supp_007
+PASS Previous Clip cleanup AfterBattleConversation:6
+PASS Exact page AfterBattleConversation:7
+PASS Single Voice Source AfterBattleConversation:7
+PASS Text/Speaker AfterBattleConversation:7
+PASS Objective unchanged before completion AfterBattleConversation:7
+PASS Portrait policy AfterBattleConversation:7
+PASS Runtime Resolve/Play main04_miel_supp_011
+PASS Runtime PCM main04_miel_supp_011
+PASS Full playback natural stop main04_miel_supp_011
+PASS Previous Clip cleanup AfterBattleConversation:7
+PASS Exact page AfterBattleConversation:8
+PASS Single Voice Source AfterBattleConversation:8
+PASS Text/Speaker AfterBattleConversation:8
+PASS Objective unchanged before completion AfterBattleConversation:8
+PASS Portrait policy AfterBattleConversation:8
+PASS Intentional Silent AfterBattleConversation:8
+PASS Previous Clip cleanup AfterBattleConversation:8
+PASS Sequence closed AfterBattleConversation
+PASS Main04 completed
+PASS Scene World_StarterVillage
+PASS Main05 village return objective
+OBSERVED sameFrame Enter+Space page=1 expectedInputPage=1 frame=20251
+PASS Same-frame Enter+Space advances one page
+PASS Next-frame Enter still available
+PASS Space alone advances one page
+OBSERVED sameFrame A close+reopen dialogueOpen=False page=0
+PASS Same-frame A after closing cannot reopen NPC
+PASS New-frame A opens Guard page0
+PASS Exact page GuardReport:0
+PASS Single Voice Source GuardReport:0
+PASS Text/Speaker GuardReport:0
+PASS Objective unchanged before completion GuardReport:0
+PASS Portrait policy GuardReport:0
+PASS Intentional Silent GuardReport:0
+PASS Previous Clip cleanup GuardReport:0
+PASS Exact page GuardReport:1
+PASS Single Voice Source GuardReport:1
+PASS Text/Speaker GuardReport:1
+PASS Objective unchanged before completion GuardReport:1
+PASS Portrait policy GuardReport:1
+PASS Intentional Silent GuardReport:1
+PASS Previous Clip cleanup GuardReport:1
+PASS Exact page GuardReport:2
+PASS Single Voice Source GuardReport:2
+PASS Text/Speaker GuardReport:2
+PASS Objective unchanged before completion GuardReport:2
+PASS Portrait policy GuardReport:2
+PASS Runtime Resolve/Play main05_taeon_supp_001
+PASS No Main04 clip in Main05 main05_taeon_supp_001
+PASS Runtime PCM main05_taeon_supp_001
+PASS Full playback natural stop main05_taeon_supp_001
+PASS Previous Clip cleanup GuardReport:2
+PASS Exact page GuardReport:3
+PASS Single Voice Source GuardReport:3
+PASS Text/Speaker GuardReport:3
+PASS Objective unchanged before completion GuardReport:3
+PASS Portrait policy GuardReport:3
+PASS Runtime Resolve/Play main05_miel_supp_001
+PASS No Main04 clip in Main05 main05_miel_supp_001
+PASS Runtime PCM main05_miel_supp_001
+PASS Full playback natural stop main05_miel_supp_001
+PASS Previous Clip cleanup GuardReport:3
+PASS Exact page GuardReport:4
+PASS Single Voice Source GuardReport:4
+PASS Text/Speaker GuardReport:4
+PASS Objective unchanged before completion GuardReport:4
+PASS Portrait policy GuardReport:4
+PASS Intentional Silent GuardReport:4
+PASS Previous Clip cleanup GuardReport:4
+PASS Exact page GuardReport:5
+PASS Single Voice Source GuardReport:5
+PASS Text/Speaker GuardReport:5
+PASS Objective unchanged before completion GuardReport:5
+PASS Portrait policy GuardReport:5
+PASS Intentional Silent GuardReport:5
+PASS Previous Clip cleanup GuardReport:5
+PASS Sequence closed GuardReport
+PASS Guard ends before independent representative interaction
+PASS No automatic next NPC dialogue
+PASS No premature companion unlock
+PASS Save checkpoint report_to_village_representative
+PASS Scene Bootstrap
+PASS Actual Continue objective report_to_village_representative
+PASS Continue companion state report_to_village_representative
+PASS Continue no queued Voice report_to_village_representative
+PASS Exact page RepresentativeReport:0
+PASS Single Voice Source RepresentativeReport:0
+PASS Text/Speaker RepresentativeReport:0
+PASS Objective unchanged before completion RepresentativeReport:0
+PASS Portrait policy RepresentativeReport:0
+PASS Intentional Silent RepresentativeReport:0
+PASS Previous Clip cleanup RepresentativeReport:0
+PASS Exact page RepresentativeReport:1
+PASS Single Voice Source RepresentativeReport:1
+PASS Text/Speaker RepresentativeReport:1
+PASS Objective unchanged before completion RepresentativeReport:1
+PASS Portrait policy RepresentativeReport:1
+PASS Intentional Silent RepresentativeReport:1
+PASS Previous Clip cleanup RepresentativeReport:1
+PASS Exact page RepresentativeReport:2
+PASS Single Voice Source RepresentativeReport:2
+PASS Text/Speaker RepresentativeReport:2
+PASS Objective unchanged before completion RepresentativeReport:2
+PASS Portrait policy RepresentativeReport:2
+PASS Intentional Silent RepresentativeReport:2
+PASS Previous Clip cleanup RepresentativeReport:2
+PASS Exact page RepresentativeReport:3
+PASS Single Voice Source RepresentativeReport:3
+PASS Text/Speaker RepresentativeReport:3
+PASS Objective unchanged before completion RepresentativeReport:3
+PASS Portrait policy RepresentativeReport:3
+PASS Runtime Resolve/Play main05_taeon_supp_002
+PASS No Main04 clip in Main05 main05_taeon_supp_002
+PASS Runtime PCM main05_taeon_supp_002
+PASS Full playback natural stop main05_taeon_supp_002
+PASS Previous Clip cleanup RepresentativeReport:3
+PASS Exact page RepresentativeReport:4
+PASS Single Voice Source RepresentativeReport:4
+PASS Text/Speaker RepresentativeReport:4
+PASS Objective unchanged before completion RepresentativeReport:4
+PASS Portrait policy RepresentativeReport:4
+PASS Runtime Resolve/Play main05_taeon_supp_003
+PASS No Main04 clip in Main05 main05_taeon_supp_003
+PASS Runtime PCM main05_taeon_supp_003
+PASS Full playback natural stop main05_taeon_supp_003
+PASS Previous Clip cleanup RepresentativeReport:4
+PASS Exact page RepresentativeReport:5
+PASS Single Voice Source RepresentativeReport:5
+PASS Text/Speaker RepresentativeReport:5
+PASS Objective unchanged before completion RepresentativeReport:5
+PASS Portrait policy RepresentativeReport:5
+PASS Runtime Resolve/Play main05_miel_supp_002
+PASS No Main04 clip in Main05 main05_miel_supp_002
+PASS Runtime PCM main05_miel_supp_002
+PASS Full playback natural stop main05_miel_supp_002
+PASS Previous Clip cleanup RepresentativeReport:5
+PASS Exact page RepresentativeReport:6
+PASS Single Voice Source RepresentativeReport:6
+PASS Text/Speaker RepresentativeReport:6
+PASS Objective unchanged before completion RepresentativeReport:6
+PASS Portrait policy RepresentativeReport:6
+PASS Runtime Resolve/Play main05_miel_supp_003
+PASS No Main04 clip in Main05 main05_miel_supp_003
+PASS Runtime PCM main05_miel_supp_003
+PASS Full playback natural stop main05_miel_supp_003
+PASS Previous Clip cleanup RepresentativeReport:6
+PASS Exact page RepresentativeReport:7
+PASS Single Voice Source RepresentativeReport:7
+PASS Text/Speaker RepresentativeReport:7
+PASS Objective unchanged before completion RepresentativeReport:7
+PASS Portrait policy RepresentativeReport:7
+PASS Intentional Silent RepresentativeReport:7
+PASS Previous Clip cleanup RepresentativeReport:7
+PASS Sequence closed RepresentativeReport
+PASS Main05 complete
+PASS Official companion unlock
+PASS Main06 available in village
+PASS Save checkpoint
+PASS Scene Bootstrap
+PASS Actual Continue objective
+PASS Continue companion state
+PASS Continue no queued Voice
+PASS Continue completed Main05 and available Main06
+PASS Scene Field_01
+PASS Main06 starts on Field01
+PASS Scene Field_02
+PASS Main06 Field02 objective
+PASS Save checkpoint inspect_anomaly_trace
+PASS Scene Bootstrap
+PASS Actual Continue objective inspect_anomaly_trace
+PASS Continue companion state inspect_anomaly_trace
+PASS Continue no queued Voice inspect_anomaly_trace
+PASS Main06 first boundary clean
+PASS Main06 no previous Voice cache
+PASS Main06 Single Source
+PASS Runtime Missing Script0
+PASS Direction Speaker0 Portrait0 Voice0
+PASS Scene Bootstrap

@@ -1,3 +1,7 @@
+## 2026-10-07 최신 Main05 상태: CLOSED
+
+사용자 전체 청취 PASS 신규5개를 기존GUID에 적용했다. Main05전체6 resolve/RuntimePCM PASS, Main04→Guard6→독립대표8→정식해금→Main06첫001 연속 및 Save/Continue3회 PASS. 입력 수정 f2d7e0c 유지. 과거 의미 미확정5개는 최신 승인 원본으로 해소했다. 역사적 NEEDS_LISTENING244 보존. 상세 정본은 [Main05 최종 QA](Main05_FinalVoice_QA.md), [검증 결과](Main05_Final_Verification.json), [최종 Matrix6](Main05_Voice_Matrix.csv). 아래는 이전 감사 이력이다.
+
 ## 2026-10-07 Main05 귀환 보고 감사 / 입력 결함 수정 / Voice 의미 대기
 
 같은프레임 Enter+Space page0→2 및 A 종료→NPC 재열림을 실제 가상장치 입력으로 재현·수정했다. DialoguePresenter 실제입력용 Advance/열림·닫힘 프레임 경계와 InteractionSystem 입력진입점만 최소수정, 대사배열/StableID/Objective/Catalog/WAV 변경0. Main04전투후9→GuardReport6→독립대표Report8→정식합류→Main06첫조사001 한 Play 연속 **221PASS/FAIL0**, 24페이지 기록·Main05 6PCM 원본오차0·단일Source·조기진행/자동다음NPC0. Programmatic Advance 유지.
