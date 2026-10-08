@@ -1,3 +1,5 @@
+> 2026-10-08 후속: Art Pack13 PNG 정식 반영·Witness/맥동/Continue 기술 검증314PASS. SOURCE_RECEIVED/AUDITED/IMPORTED/RUNTIME_VERIFIED, 최종 미적 USER_ART_REVIEW_REQUIRED13 유지. 기존 ART_PENDING 납품 대기는 해소. 최신 판정은 [Main19 Final QA](../00_프로젝트/Main19_Final_QA.md). 아래 기초 구현/납품 전 기록은 이력이다.
+
 # Chapter2 Main19 — 타오르는 맥동
 
 2026-10-08 사용자 승인 정식 설계. 이전 Main19 후보를 대체한다. 구현 판정은 Main19_Design_QA.md를 따른다. Main20 보스/최종 원인/새 상태·몬스터·상점·동료는 확정하거나 구현하지 않는다.

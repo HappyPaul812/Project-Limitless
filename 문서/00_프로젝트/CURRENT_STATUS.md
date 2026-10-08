@@ -1,3 +1,13 @@
+## 2026-10-08 최신 상태 — Main19 Art13 정식 반영·연출 기술 PASS
+
+납품ZIP13PNG+Manifest 일치·원본13 byte 보존·새GUID/meta13·Null0. Field10 Ground/흔적/암벽/능선/심부 차단 정식 배치·조사GroundPulse1회·Witness 전 실루엣숨김/목격표시+먼flare1회·Continue 복원. **SOURCE_RECEIVED/AUDITED/IMPORTED/RUNTIME_VERIFIED**, 기술PASS_WITH_NOTE13·FAIL_BLOCKING0·미적 **USER_ART_REVIEW_REQUIRED13**. ART_PENDING 납품 대기는 해소, 최종 미술 승인 대기는 유지. 가이드 선/반복 경계/실루엣 식별·거리감/전체 색감 사용자 검토.
+
+비포커스 격리 Play **314PASS/FAIL0**: Quest12·A/B 정상승리·각도망/전멸재도전·중복보상0·실제Trigger Field09↔10·Continue5시점·Silhouette Gate/VFX중복0·BGM유지·Bounds. CompileError0/RuntimeConsoleError·신규Warning0/MissingScript0. SaveVersion1·Party/Formation/Beast·Main18과열/기존Monster/Voice/BGM/Sprite·사용자Save/meta보호. baseline3301중3299byte동일·승인Scene/Flow2만변경. Main19 TTS_PENDING13·Main18 TTS_PENDING22, Main07/Main17 Voice CLOSED 유지·API0. Bootstrap EditMode/비포커스복구.
+
+다음 권장: [원본/배치 Art 검토](Main19_Art_Import_QA.md)→승인 의견에 따른 후속 수정, NPC13 TTS 제작·직접 전체 청취 승인 후 별도 적용. 마지막 관련 구현commit `294b81e`, 원본등록 `3d477d6`; QA는 이 항목 포함 최신Docs commit. [통합QA/변경목록](Main19_Final_QA.md)·[Witness](QA_증거/Main19/Witness_1280.png). GitHub Push0.
+
+---
+
 ## 2026-10-08 최신 상태 — Main19 정식 설계·기초 구현 PASS
 
 Main19 「타오르는 맥동」 / `main_19_burning_pulse`, Main18 선행·12목표·EXP80/Currency70. Field10 「맥동의 열맥」 21×15 임시환경·Field09 왕복·서쪽 Main20 폐쇄. Story A 갑충+도마뱀, B 갑충+망령(후열), 기존 Monster 수치/과열/냉각/정화 보호. 탐색 Paths of Cracked Earth·전투 Blade and Gambit 기존곡 연결. Witness/Hook·Path5 정의. 신규 NPC13 **TTS_PENDING**, Player9+지문1 무음; API0. Art8종(균열 장식2변형)+VFX2 **ART_PENDING / USER_ART_REVIEW_REQUIRED**, 기존 그림 임시 재사용.

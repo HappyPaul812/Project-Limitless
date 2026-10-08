@@ -1,0 +1,524 @@
+{
+  "ZIPPath": "F:\\Downloads\\Limitless_Main19_BurningPulse_Art_Pack.zip",
+  "ZIPBytes": 2305141,
+  "ZIP_SHA256": "28981bd07a5fb5a639cdad3a44c5b2c7a493539b0afa905c476f562682bdc33d",
+  "InternalFiles": 14,
+  "PNGCount": 13,
+  "ExpectedPNG": 13,
+  "Missing": [],
+  "Extra": [],
+  "ManifestMatch": true,
+  "DuplicateSHA": 0,
+  "PASS_IMPORT": 0,
+  "PASS_WITH_NOTE": 13,
+  "USER_ART_REVIEW_REQUIRED": 13,
+  "FAIL_BLOCKING": 0,
+  "Records": [
+    {
+      "file": "VFX/BurningPulse_DistantFlare_VFX.png",
+      "bytes": 71467,
+      "sha256": "27b5c94426bdb8fe44e0086b82a35668fa70f0de890f6396432516db25fa1368",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        192
+      ],
+      "transparentPixels": 141684,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        82,
+        42,
+        434,
+        469
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "단일 부드러운 붉은 열광. 프레임 Slice0, 폭발/기둥 체감 사용자 검토."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "VFX/BurningPulse_GroundPulse_VFX.png",
+      "bytes": 166720,
+      "sha256": "637b033c98ac83f7697124ba818bf0d94994b12bba12b21a6f9c87e7f298b95e",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        239
+      ],
+      "transparentPixels": 94512,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        22,
+        67,
+        0,
+        96
+      ],
+      "contentBounds": [
+        9,
+        0,
+        512,
+        512
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "Alpha 내용이 이미지 경계에 닿음. 분기 균열 의도와 잘림/밝기 체감은 미적 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Background/BurningPulse_DistantFlameSilhouette.png",
+      "bytes": 114375,
+      "sha256": "9fcdee6d717d066e855bdb8001d47605499b47c65688459b616c1f414ca2e700",
+      "size": [
+        1024,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        222
+      ],
+      "transparentPixels": 359453,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        52,
+        0,
+        0
+      ],
+      "contentBounds": [
+        244,
+        55,
+        786,
+        512
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "흐린 인간형 상체와 적열. 하단 alpha 내용 경계 접촉. 얼굴/무기 상세는 보이지 않으나 Boss 정보 노출·거리감은 사용자 승인 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_DeepCliff_Blocker_01.png",
+      "bytes": 254734,
+      "sha256": "1d7d53998fcfb592384a667a55cdcfc75fec7ba4f49bfb20e24cf6f84b4b4c3f",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 117772,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        16,
+        53,
+        496,
+        458
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "원본의 밝은 가이드/프레임 선 관찰. PNG 수정 없이 사용, 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_DragScar_01.png",
+      "bytes": 79278,
+      "sha256": "5320c49e4ea552c11d56b2363152a999e720fe2b377798dbbad39f2fc71f0a7f",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 218091,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        24,
+        108,
+        498,
+        410
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "긴 단선 열흔. 특정 무기 여부를 확정하지 않음."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_GiantTrack_01.png",
+      "bytes": 80549,
+      "sha256": "f723c71624e8911ccbde78265f04eda40111d58f5f225d7be608a7115a0d4d3a",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 206737,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        77,
+        172,
+        438,
+        376
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "구체 발가락/발톱 없이 압흔 형태. 실제 크기·깊이 체감은 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_GiantTrack_02.png",
+      "bytes": 138214,
+      "sha256": "843d1cf121b553ab4718bd54d991d8322218efbb579b34451e24bb6b0c4fecf4",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 165290,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        25,
+        135,
+        491,
+        415
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "구체 발가락/발톱 없이 압흔 형태. 실제 크기·깊이 체감은 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_Ground_Base.png",
+      "bytes": 499614,
+      "sha256": "60f0885bcca6d21ea17f12e2c880e9342d08e10147bd2ceccbb5c4d942071797",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "contentBounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "짙은 암석 위 제한적 붉은 점. 실제 반복 배치 경계선 체감 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_HeatVent_01.png",
+      "bytes": 221042,
+      "sha256": "0ae5227ce0714816ba39fd68a5a43872d38e341524ff6d7d373af7b04ddf40c5",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 153235,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        16,
+        22,
+        496,
+        489
+      ],
+      "nearWhiteVisiblePixels": 17,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "원본의 밝은 가이드/프레임 선 관찰. PNG 수정 없이 사용, 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_MeltedCliff_01.png",
+      "bytes": 252591,
+      "sha256": "cdbfac9e02110b4a81e638911e63e8336ab94ac74b6d6491f1c133042b9b6d2a",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 117772,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        16,
+        53,
+        496,
+        458
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "원본의 밝은 가이드/프레임 선 관찰. PNG 수정 없이 사용, 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_PulseCrack_01.png",
+      "bytes": 123011,
+      "sha256": "0644cc013072c0d28bc80eb9000ece67378c32db499d737b5cd4068b4bfc2d12",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        228
+      ],
+      "transparentPixels": 106669,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        22,
+        67,
+        0,
+        96
+      ],
+      "contentBounds": [
+        9,
+        0,
+        512,
+        512
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "Alpha 내용이 이미지 경계에 닿음. 분기 균열 의도와 잘림/밝기 체감은 미적 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_PulseCrack_02.png",
+      "bytes": 94068,
+      "sha256": "290632889ce0b73a9ae782e86a51aeace21ee76d025d442f81dc52d79376e437",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        238
+      ],
+      "transparentPixels": 79264,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        130,
+        142,
+        312,
+        236
+      ],
+      "contentBounds": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "Alpha 내용이 이미지 경계에 닿음. 분기 균열 의도와 잘림/밝기 체감은 미적 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    },
+    {
+      "file": "Environment/BurningPulse_Ridge_01.png",
+      "bytes": 220680,
+      "sha256": "11bf9063077176b62441461d685530b9c9d61c5367878e7ae8bb5fe2d9822245",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "transparentPixels": 158525,
+      "nonzeroBoundaryTopBottomLeftRight": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contentBounds": [
+        44,
+        62,
+        467,
+        436
+      ],
+      "nearWhiteVisiblePixels": 0,
+      "Gate": "PASS_WITH_NOTE",
+      "UserArtReview": "USER_ART_REVIEW_REQUIRED",
+      "SingleImage": true,
+      "ManifestSizeMatch": true,
+      "ManifestTransparencyMatch": true,
+      "VisualNotes": [
+        "원본의 밝은 가이드/프레임 선 관찰. PNG 수정 없이 사용, 사용자 검토 필요."
+      ],
+      "PixelEditing": false,
+      "WatermarkOrTextObserved": false
+    }
+  ],
+  "Status": [
+    "SOURCE_RECEIVED",
+    "AUDITED",
+    "IMPORTED",
+    "RUNTIME_VERIFIED"
+  ],
+  "ByteExactCopies": 13,
+  "NewGUIDCollision": 0,
+  "MissingMeta": 0,
+  "NullSprite": 0,
+  "FinalAestheticStatus": "USER_ART_REVIEW_REQUIRED",
+  "ManifestSHA256": "6fc787cbc3031152bce05083964384b1a2203c18e7cf91a9277559f192a5c5ff"
+}

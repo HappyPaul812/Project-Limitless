@@ -1,0 +1,28 @@
+{
+  "BaselineFiles": 3301,
+  "ByteUnchanged": 3299,
+  "ExpectedChanged": [
+    "Unity/Client/Assets/_Project/Scenes/Field_10_BurningPulse.unity",
+    "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main19Flow.cs"
+  ],
+  "UnexpectedChanged": [],
+  "Deleted": [],
+  "ProtectedSceneRoots": [
+    {
+      "Root": "Player",
+      "OriginalBlocksUnchanged": 2
+    },
+    {
+      "Root": "Main Camera",
+      "OriginalBlocksUnchanged": 5
+    },
+    {
+      "Root": "WorldBounds",
+      "OriginalBlocksUnchanged": 18
+    }
+  ],
+  "NewGUIDCollision": 0,
+  "PNGByteExact": 13,
+  "RuntimePASS": 314,
+  "RuntimeFAIL": 0
+}

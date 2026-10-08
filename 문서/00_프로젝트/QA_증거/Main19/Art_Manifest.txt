@@ -1,0 +1,115 @@
+LIMITLESS Chapter 2 - Main19 "Burning Pulse"
+Scene: Field_10_BurningPulse
+Display Name: Pulsing Heat Vein
+
+Environment/
+1. BurningPulse_Ground_Base.png
+   Category: Environment Ground
+   Purpose: Field10 base black volcanic ground, slightly rougher/compressed than Main18.
+   Pixel Size: 512x512
+   Transparent: No (alpha fully opaque)
+   Usage: Main Field floor
+   Notes: Limited red accents; designed as a subdued repeatable base.
+
+2. BurningPulse_PulseCrack_01.png
+   Category: Environment Overlay
+   Purpose: Central branching pulse crack with gathered internal red heat.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Ground overlay
+   Notes: Not lava; red light remains inside fissure network.
+
+3. BurningPulse_PulseCrack_02.png
+   Category: Environment Overlay
+   Purpose: Longer directional pulse-vein crack for linking heat flow across Field10.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Ground overlay
+   Notes: Different silhouette from 01; can be chained directionally.
+
+4. BurningPulse_MeltedCliff_01.png
+   Category: Environment Prop
+   Purpose: Survey object showing rock that partially melted and re-solidified from intense heat.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Main19 investigation point
+   Notes: Glassy/obsidian streaks and weak residual red heat; not a lava fall.
+
+5. BurningPulse_GiantTrack_01.png
+   Category: Environment Clue
+   Purpose: Massive pressure depression from an unknown heavy entity.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Main19 clue placement
+   Notes: Intentionally avoids explicit toes/claws or boss anatomy.
+
+6. BurningPulse_GiantTrack_02.png
+   Category: Environment Clue
+   Purpose: Larger/deeper pressure depression for late Main19 investigation.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Late Main19 clue placement
+   Notes: Stronger scale cue, still avoids revealing boss morphology.
+
+7. BurningPulse_DragScar_01.png
+   Category: Environment Clue
+   Purpose: Long scraped transit scar exposing hotter material beneath black surface.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Directional clue / path dressing
+   Notes: Does not imply a specific weapon.
+
+8. BurningPulse_HeatVent_01.png
+   Category: Environment Prop
+   Purpose: Stronger heat vent than Main18, leaking vertical heat from a rock seam.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Hazard dressing / investigation
+   Notes: Not a volcanic eruption or fire pillar.
+
+9. BurningPulse_Ridge_01.png
+   Category: Environment Prop / Boundary
+   Purpose: Black-rock lookout ridge used for the late Main19 witness scene and natural routing.
+   Pixel Size: 512x512
+   Transparent: Yes
+   Usage: Witness location / natural boundary
+   Notes: Keeps Main20 area obscured.
+
+10. BurningPulse_DeepCliff_Blocker_01.png
+    Category: Environment Blocker
+    Purpose: Natural dark cliff boundary toward Main20, with deep cracks and restrained inner residual heat.
+    Pixel Size: 512x512
+    Transparent: Yes
+    Usage: Field10 boundary
+    Notes: Must not read as a boss-room door or altar.
+
+Background/
+11. BurningPulse_DistantFlameSilhouette.png
+    Category: Distant Background Witness
+    Purpose: Unreadable giant heated silhouette moving in the far distance.
+    Pixel Size: 1024x512
+    Transparent: Yes
+    Usage: Main19 late witness scene
+    Notes: Main19 distant witness only. Not final Main20 boss design. No face, weapon, armor detail, or exact anatomy is revealed.
+
+VFX/
+12. BurningPulse_GroundPulse_VFX.png
+    Category: VFX
+    Purpose: One strong brightness pulse traveling through ground cracks.
+    Pixel Size: 512x512
+    Transparent: Yes
+    Usage: Field pulse event
+    Notes: Heat/glow effect, not an explosion; visually distinct from Overheat Burst.
+
+13. BurningPulse_DistantFlare_VFX.png
+    Category: VFX
+    Purpose: Brief distant heat rise and air distortion when the distant giant presence moves.
+    Pixel Size: 512x512
+    Transparent: Yes
+    Usage: Distant witness effect
+    Notes: No large explosion or fire pillar.
+
+Exclusions confirmed:
+- No new monster sprite sheets
+- No Main20 boss sprite sheet
+- No final boss design reveal

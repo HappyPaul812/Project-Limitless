@@ -1,0 +1,13 @@
+Assets/_Project/Resources/Main19/Background/BurningPulse_DistantFlameSilhouette.png|7c70f0eb774f7b0438b019f2f85aaf1b|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_DeepCliff_Blocker_01.png|8a2d36553c17789448d692851d2630fb|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_DragScar_01.png|0130fd2ef16871d468a254b700d976ea|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_GiantTrack_01.png|01f4defa8231e37419f83b09b1901223|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_GiantTrack_02.png|e3240fcab0c77a84186e03967683060b|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_Ground_Base.png|4bab8496f1018fc4ea648880c851d640|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_HeatVent_01.png|0aa81f21775d64d4ba6be0329e692fdc|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_MeltedCliff_01.png|95ef8922e54cb344d81a14819ee8b90f|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_PulseCrack_01.png|056311be7b7c22e4c85a77b60611119d|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_PulseCrack_02.png|a9a57c19cc093854e8781cb22b613b8c|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/Environment/BurningPulse_Ridge_01.png|a4926131d7b09164e8024780a809cc78|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/VFX/BurningPulse_DistantFlare_VFX.png|ab37c26ce8219434a9ff19bdabaf287f|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
+Assets/_Project/Resources/Main19/VFX/BurningPulse_GroundPulse_VFX.png|7c9925ea49cadab4fb8b8e3cf2986898|Single|Point|Uncompressed|PPU=128|mipmap=False|Alpha=True|NPOT=None|Sprite=True
