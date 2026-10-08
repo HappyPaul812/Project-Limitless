@@ -107,6 +107,8 @@ namespace ProjectLimitless.World
                 if(spawn==null||spawn.Monster==null){Debug.LogError("Main19 지정전투 복귀 데이터가 없습니다.");return;}
                 Chapter2Main19Flow.BlockFrame();BattleSceneFlow.EnterStoryBattle(Chapter2Main19Flow.Targets[index],spawn.Monster,spawn,transform.position);return;
             }
+            // 대화 시작과 함께 승인된 조사/목격 그림만 표시합니다. Quest 완료는 기존 대화 종료 경계를 유지합니다.
+            FindAnyObjectByType<Main19FieldArtPresentation>()?.BeginInvestigation(index);
             busy=true;d.ShowSequence(Main19DialogueCatalog.Get(index),()=>
             {
                 busy=false;Chapter2Main19Flow.BlockFrame();if(index==12||!Chapter2Main19Flow.IsCurrent(index))return;
