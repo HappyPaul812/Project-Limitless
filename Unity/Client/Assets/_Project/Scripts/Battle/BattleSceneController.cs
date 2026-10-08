@@ -307,6 +307,13 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
+            // Main19는 지정 ID만 두 원본 종을 조합합니다. 일반 조우는 단독이며 이전 Field와 저장 파티는 보호합니다.
+            else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main19Flow.Field)
+                setup = BattlePrototypeEncounterFactory.CreateField10(
+                    playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
+                    BattleEncounterContext.Monster, BattleEncounterContext.StoryEncounterId,
+                    monsterDefinitions.First(x => x.MonsterId == "fissure_lizard"), monsterDefinitions.First(x => x.MonsterId == "ember_wraith"));
             // 새 Field09만 단독 편성을 연결하며 이전 Field 전투와 사용자의 저장 파티는 유지합니다.
             else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main18Flow.Field)
                 setup = BattlePrototypeEncounterFactory.CreateField09(

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main19_BurningPulse
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_19_burning_pulse
+  displayName: "\uD0C0\uC624\uB974\uB294 \uB9E5\uB3D9"
+  description: "\uB9E5\uB3D9\uC758 \uC5F4\uB9E5\uC5D0\uC11C \uAC70\uB300\uD55C \uD754\uC801\uACFC
+    \uC5F4\uAE30\uB97C \uC870\uC0AC\uD558\uACE0 \uB2E4\uC74C \uB300\uBA74\uC744 \uC900\uBE44\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: reach_field09_deeper_route
+    description: "\uB354 \uAE4A\uC740 \uAE38\uB85C \uD5A5\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field09_main19_gate
+    requiredCount: 1
+  - objectiveId: enter_burning_pulse
+    description: "\uB9E5\uB3D9\uC758 \uC5F4\uB9E5\uC5D0 \uB4E4\uC5B4\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field10_main19_entry
+    requiredCount: 1
+  - objectiveId: inspect_giant_track
+    description: "\uAC70\uB300\uD55C \uD754\uC801\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_track_1
+    requiredCount: 1
+  - objectiveId: inspect_melted_cliff
+    description: "\uB179\uC544\uB0B4\uB9B0 \uC554\uBCBD\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_cliff
+    requiredCount: 1
+  - objectiveId: defeat_patrol_a
+    description: "\uC55E\uC744 \uB9C9\uB294 \uBB34\uB9AC\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
+    objectiveType: 2
+    targetId: field10_main19_patrol_a
+    requiredCount: 1
+  - objectiveId: inspect_pulse_node
+    description: "\uC9C0\uBA74\uC758 \uB9E5\uB3D9\uC744 \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_pulse_1
+    requiredCount: 1
+  - objectiveId: cross_heated_corridor
+    description: "\uC5F4\uAE30\uAC00 \uBAB0\uB9AC\uB294 \uD1B5\uB85C\uB97C \uC9C0\uB098\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field10_main19_corridor
+    requiredCount: 1
+  - objectiveId: defeat_patrol_b
+    description: "\uC2EC\uBD80\uB97C \uC9C0\uD0A4\uB294 \uBB34\uB9AC\uB97C \uBB3C\uB9AC\uCE58\uC138\uC694."
+    objectiveType: 2
+    targetId: field10_main19_patrol_b
+    requiredCount: 1
+  - objectiveId: inspect_massive_footprint
+    description: "\uB354 \uAC70\uB300\uD55C \uD754\uC801\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_track_2
+    requiredCount: 1
+  - objectiveId: reach_silhouette_ridge
+    description: "\uC55E\uCABD \uB2A5\uC120\uAE4C\uC9C0 \uC774\uB3D9\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field10_main19_ridge
+    requiredCount: 1
+  - objectiveId: witness_flame_colossus
+    description: "\uC2EC\uBD80\uC758 \uC874\uC7AC\uB97C \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_witness
+    requiredCount: 1
+  - objectiveId: withdraw_and_prepare
+    description: "\uBB3C\uB7EC\uB098\uC11C \uB2E4\uC74C \uC900\uBE44\uB97C \uC815\uB9AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field10_main19_withdraw
+    requiredCount: 1
+  reward:
+    Experience: 80
+    Currency: 70
+    Items: []
+  prerequisiteQuestIds:
+  - main_18_black_heat
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:

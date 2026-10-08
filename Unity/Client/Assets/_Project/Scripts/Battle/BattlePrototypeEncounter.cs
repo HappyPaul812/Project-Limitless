@@ -207,6 +207,21 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies, new[] { enemy });
         }
 
+        /// <summary>Main19만 승인된 기존 종을 조합합니다. 원본 HP/공격/민첩과 저장 Party·Formation은 그대로 사용합니다.</summary>
+        public static BattleEncounterSetup CreateField10(string playerName,string jobId,string pathId,
+            int maxHp,int attack,int agility,MonsterDefinition encountered,string encounterId,MonsterDefinition lizard,MonsterDefinition wraith)
+        {
+            var party=CreateThreeVsThree(playerName,jobId,pathId,maxHp,attack,agility,null,null,encountered);
+            var foes=new List<BattleParticipantSetup>();
+            foes.Add(CreateMonster(encountered,"field10_"+encountered.MonsterId,encountered.DisplayName,
+                encountered.MonsterId=="ember_wraith"?FormationRow.Rear:FormationRow.Front,0,encountered.BattleAgility));
+            if(encounterId==ProjectLimitless.World.Chapter2Main19Flow.PatrolA)
+                foes.Add(CreateMonster(lizard,"field10_fissure_lizard",lizard.DisplayName,FormationRow.Front,1,lizard.BattleAgility));
+            if(encounterId==ProjectLimitless.World.Chapter2Main19Flow.PatrolB)
+                foes.Add(CreateMonster(wraith,"field10_ember_wraith",wraith.DisplayName,FormationRow.Rear,0,wraith.BattleAgility));
+            return new BattleEncounterSetup(party.Allies,foes.ToArray());
+        }
+
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
             int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
         {
