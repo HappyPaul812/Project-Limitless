@@ -721,3 +721,45 @@ MonoBehaviour:
   - id: main07_miel_supp_004
     clip: {fileID: 8300000, guid: 358ec4fc737341ddbc29d435307a1510, type: 3}
     speakerId: companion_miel
+  - id: main17_after_default_serin_01
+    clip: {fileID: 8300000, guid: bde9d657b699d7042be35e736b206dd4, type: 3}
+    speakerId: companion_serin
+  - id: main17_after_hearing_serin_01
+    clip: {fileID: 8300000, guid: f240dcbe6211ead4b9538bf7c9427f23, type: 3}
+    speakerId: companion_serin
+  - id: main17_compare_paul_01
+    clip: {fileID: 8300000, guid: 5948cbc606113334ea61b68f645cf198, type: 3}
+    speakerId: companion_paul
+  - id: main17_compare_serin_01
+    clip: {fileID: 8300000, guid: 2735cb18045ebfa49a65d6ae86e6c47b, type: 3}
+    speakerId: companion_serin
+  - id: main17_resonance_default_serin_01
+    clip: {fileID: 8300000, guid: aadb44f698158fe4eb149237746dabf8, type: 3}
+    speakerId: companion_serin
+  - id: main17_resonance_hearing_serin_01
+    clip: {fileID: 8300000, guid: e9bf96c8284389d438b27444063097de, type: 3}
+    speakerId: companion_serin
+  - id: main17_route_serin_01
+    clip: {fileID: 8300000, guid: 8b58322de4907954ab76c41e95890708, type: 3}
+    speakerId: companion_serin
+  - id: main17_serin_serin_01
+    clip: {fileID: 8300000, guid: d14313c8cc195084db35cc884c0d02bc, type: 3}
+    speakerId: companion_serin
+  - id: main17_tracks_miel_01
+    clip: {fileID: 8300000, guid: f7a62e5d85e7e07409e6b40b87f63843, type: 3}
+    speakerId: companion_miel
+  - id: main17_vibration_default_serin_01
+    clip: {fileID: 8300000, guid: d46d06f81bbd50648b81b43329d94eb1, type: 3}
+    speakerId: companion_serin
+  - id: main17_vibration_hearing_serin_01
+    clip: {fileID: 8300000, guid: ec1e34dca0a987e479eaf6b95552d136, type: 3}
+    speakerId: companion_serin
+  - id: main17_withdraw_serin_01
+    clip: {fileID: 8300000, guid: e6a90a4116a129d4496dda10a2b34e4f, type: 3}
+    speakerId: companion_serin
+  - id: main17_withdraw_taeon_01
+    clip: {fileID: 8300000, guid: 01d7f1df5ffd0b3489b7eca142bd810c, type: 3}
+    speakerId: companion_taeon
+  - id: main17_witness_serin_01
+    clip: {fileID: 8300000, guid: ec27746366a53e0438b401b200dbc7ff, type: 3}
+    speakerId: companion_serin
