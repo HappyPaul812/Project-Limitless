@@ -30,8 +30,9 @@ namespace ProjectLimitless.EditorTools
         static InputSettings.BackgroundBehavior background;
         static InputSettings.EditorInputBehaviorInPlayMode editorInput;
         static bool inputChanged;
+        static bool approvedVoice;
         public static string Status="IDLE";
-        static string Output=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../문서/00_프로젝트/Main07_Paul_Farewell_Runtime_Results.txt"));
+        static string Output=>Path.GetFullPath(Path.Combine(Application.dataPath,approvedVoice?"../../../문서/00_프로젝트/Main07_Paul_Farewell_Final_Runtime_Results.txt":"../../../문서/00_프로젝트/Main07_Paul_Farewell_Runtime_Results.txt"));
         static Main07FarewellAudit()
         {
             var initialized=Partial9FixedSpriteAudit.Status;
@@ -50,8 +51,8 @@ namespace ProjectLimitless.EditorTools
                 }
             };
         }
-        public static string Launch()
-        {results.Clear();Status="RUNNING";volume=AudioListener.volume;SessionState.SetBool(Armed,true);Write();return Partial9FixedSpriteAudit.Launch();}
+        public static string Launch(bool verifyApprovedVoice=false)
+        {approvedVoice=verifyApprovedVoice;results.Clear();Status="RUNNING";volume=AudioListener.volume;SessionState.SetBool(Armed,true);Write();return Partial9FixedSpriteAudit.Launch();}
         static void Write()=>File.WriteAllLines(Output,new[]{"STATUS|"+Status}.Concat(results));
         static void Check(bool ok,string label)
         {results.Add((ok?"PASS|":"FAIL|")+label);Write();if(!ok)throw new InvalidOperationException(label);}
@@ -107,12 +108,52 @@ namespace ProjectLimitless.EditorTools
             Check(Vector2.Distance(UnityEngine.Object.FindAnyObjectByType<PlayerController>().transform.position,at)<.05f,"Continue.Position."+label);
             Check(!D.IsOpen&&V.Clip==null&&!V.IsPlaying,"Continue.NoAutoVoice."+label);
         }
+        // 승인 원본의 전체 native PCM을 내보내고 실제 Source의 자연 종료를 기다립니다.
+        // 자동 다음 문장·같은 Clip 재시작은 페이지/Clip/sample 위치로 감시합니다.
+        static IEnumerator NaturalVoice(DialogueLine line,int page,VoiceClipCatalog catalog)
+        {
+            var clip=V.Clip;var source=Field<AudioSource>(V,"source");
+            Check(clip!=null&&clip==catalog.Find(line.DialogueId,line.SpeakerId)&&clip.name==line.DialogueId&&V.IsPlaying,"Runtime.PlayExact."+line.DialogueId);
+            Check(UnityEngine.Object.FindObjectsByType<VoicePlaybackSource>().Length==1,"Runtime.SingleVoiceSource."+line.DialogueId);
+            Check(source.outputAudioMixerGroup!=null&&source.outputAudioMixerGroup.name=="Voice"&&source.volume==1&&source.pitch==1&&!source.loop,"Runtime.ExistingMixerNoProcessing."+line.DialogueId);
+            var pcm=new float[clip.samples*clip.channels];Check(clip.GetData(pcm,0),"Runtime.PCMReadable."+line.DialogueId);
+            string root=Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Temp/Main07FarewellApplied"));Directory.CreateDirectory(root);
+            using(var writer=new BinaryWriter(File.Open(Path.Combine(root,line.DialogueId+".pcm-f32"),FileMode.Create)))foreach(float sample in pcm)writer.Write(sample);
+            if(page==0)Volume(V);
+            int last=source.timeSamples;double end=EditorApplication.timeSinceStartup+clip.length+3;
+            while(V.IsPlaying&&EditorApplication.timeSinceStartup<end)
+            {
+                if(!D.IsOpen||Page!=page||V.Clip!=clip||source.timeSamples<last)throw new InvalidOperationException("자동 진행/혼입/재시작 "+line.DialogueId);
+                last=source.timeSamples;yield return null;
+            }
+            yield return Wait(.5);
+            Check(!V.IsPlaying&&D.IsOpen&&Page==page&&V.Clip==clip,"Runtime.NaturalEndNoAutoAdvance."+line.DialogueId);
+            results.Add("NATURAL_END|"+page+"|"+line.DialogueId+"|"+clip.length+"|pageHeld=true");Write();
+        }
+        // 실제 Mixer 노출 gain과 설정 유지 검증입니다. OS 출력 음색/청취 판정을 대체하지 않습니다.
+        static void Volume(VoicePlaybackSource voice)
+        {
+            int sfx=UserSettingsService.SfxVolume,bgm=UserSettingsService.BgmVolume;
+            foreach(int value in new[]{100,40,0})
+            {
+                UserSettingsService.SetAudioVolumes(value,sfx,bgm);AudioSettingsService.Apply();
+                AudioSettingsService.Mixer.GetFloat("VoiceVolume",out float actual);
+                Check(Mathf.Abs(actual-AudioSettingsService.ToDecibels(value))<.01f&&UserSettingsService.SfxVolume==sfx&&UserSettingsService.BgmVolume==bgm,"Volume.Mixer."+value);
+                if(value==0)Check(!voice.IsAudible,"Volume.ZeroInaudible");
+            }
+            UserSettingsService.SetAudioVolumes(40,sfx,bgm);UserSettingsService.SetMuteAll(true);AudioSettingsService.Apply();
+            AudioSettingsService.Mixer.GetFloat("MasterVolume",out float master);
+            Check(master<=-79&&UserSettingsService.VoiceVolume==40&&!voice.IsAudible,"Volume.MasterMutePreservesChannels");
+            UserSettingsService.SetMuteAll(false);UserSettingsService.SetAudioVolumes(100,sfx,bgm);AudioSettingsService.Apply();
+            AudioSettingsService.Mixer.GetFloat("MasterVolume",out master);Check(Mathf.Abs(master)<.01f&&voice.IsPlaying,"Volume.RestoreDuringPlayback");
+        }
         static IEnumerator Run()
         {
             yield return Wait(.5);Check(!string.IsNullOrEmpty(GameSaveService.AuditSaveDirectory),"IsolatedSave");
             GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"작별 QA");
             GameSessionData.SelectPlayerPath("path.vision");GameSessionData.SelectJob("mage");GameSessionData.ConfigureProgress(3,0);
             CompanionRosterService.UnlockIntroCompanions();GameSessionData.RecordLocation("Field_02",string.Empty);AudioListener.volume=0;
+            UserSettingsService.SetMuteAll(false);UserSettingsService.SetAudioVolumes(100,60,20);
             background=InputSystem.settings.backgroundBehavior;editorInput=InputSystem.settings.editorInputBehaviorInPlayMode;inputChanged=true;
             InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;
             InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
@@ -130,7 +171,12 @@ namespace ProjectLimitless.EditorTools
             Check(all.Where(l=>!l.IsPlayer&&!l.IsDirection).All(l=>!string.IsNullOrEmpty(l.DialogueId)),"Audit.CharacterMissingID0");
             Check(all.Where(l=>!l.IsPlayer).Select(l=>l.DialogueId).Distinct().Count()==38,"Audit.UniqueCharacterID38");
             var catalog=Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog");
-            Check(all.Count(l=>catalog.Find(l.DialogueId,l.SpeakerId)!=null)==33,"Audit.ExistingResolved33");
+            Check(all.Count(l=>catalog.Find(l.DialogueId,l.SpeakerId)!=null)==(approvedVoice?38:33),approvedVoice?"Audit.AllResolved38":"Audit.ExistingResolved33");
+            foreach(var l in all.Where(l=>!l.IsPlayer))
+            {
+                var resolved=catalog.Find(l.DialogueId,l.SpeakerId);
+                if(approvedVoice||!l.DialogueId.StartsWith("main07_paul_supp_"))Check(resolved!=null&&resolved.name==l.DialogueId,"Audit.ExactClip."+l.DialogueId);
+            }
             foreach(var l in all)results.Add("PAGE|"+l.DialogueId+"|"+l.SpeakerId+"|"+l.Message);Write();
             Check(QuestService.ActiveMainQuest.CurrentObjective.TargetId==MainQuest07FieldFlow.PaulFarewellId,"Fixture.FarewellObjective");
             yield return Near(Site(MainQuest07FieldFlow.PaulFarewellId));yield return Continue("BeforeFarewell");
@@ -142,9 +188,13 @@ namespace ProjectLimitless.EditorTools
                 var line=Field<DialogueLine[]>(D,"sequenceLines")[Page];
                 Check(Page==i&&line.Message==texts[i]&&line.DialogueId==ids[i],"Farewell.OrderTextID."+i);
                 Check(i==2?line.IsPlayer:line.SpeakerId==MainQuest07FieldFlow.PaulId,"Farewell.Speaker."+i);
-                Check(catalog.Find(line.DialogueId,line.SpeakerId)==null&&V.Clip==null&&!V.IsPlaying,"Farewell.TextFallback."+i);
+                if(approvedVoice&&i!=2)yield return NaturalVoice(line,i,catalog);
+                else Check(catalog.Find(line.DialogueId,line.SpeakerId)==null&&V.Clip==null&&!V.IsPlaying,"Farewell.TextFallback."+i);
+                if(i==2)Check(!Field<GameObject>(D,"portraitRoot").activeSelf,"Farewell.PlayerPortraitUnchanged");
                 yield return Wait(.5);Check(D.IsOpen&&Page==i,"Farewell.NoAutoAdvance."+i);
+                results.Add("RUNTIME_PAGE|"+i+"|"+line.SpeakerId+"|"+line.Message+"|"+line.DialogueId+"|"+(V.Clip==null?"null":V.Clip.name)+"|playing="+V.IsPlaying);Write();
                 E();A();E();Check(i==5?!D.IsOpen:Page==i+1,"Farewell.SameFrameOneNextNoReopen."+i);
+                if(i<5)Check(V.Clip==catalog.Find(ids[i+1],i+1==2?"player":MainQuest07FieldFlow.PaulId),"Farewell.NextPreviousClipCleared."+i);
                 yield return Wait(.2);
             }
             Check(QuestService.GetState(MainQuest07FieldFlow.QuestId)==QuestState.Completed,"Farewell.ActualMain07Completed");

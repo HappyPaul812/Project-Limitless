@@ -763,3 +763,18 @@ MonoBehaviour:
   - id: main17_witness_serin_01
     clip: {fileID: 8300000, guid: ec27746366a53e0438b401b200dbc7ff, type: 3}
     speakerId: companion_serin
+  - id: main07_paul_supp_001
+    clip: {fileID: 8300000, guid: 71471c330a989f6478a70312a83fbdc3, type: 3}
+    speakerId: companion_paul
+  - id: main07_paul_supp_002
+    clip: {fileID: 8300000, guid: 50f1b40ef8886d545a9ea9d565e7bee7, type: 3}
+    speakerId: companion_paul
+  - id: main07_paul_supp_003
+    clip: {fileID: 8300000, guid: 5af483968dcf9e2408e8231fb49c15f4, type: 3}
+    speakerId: companion_paul
+  - id: main07_paul_supp_004
+    clip: {fileID: 8300000, guid: 4ad449db66472a44a96f8fa2876205fa, type: 3}
+    speakerId: companion_paul
+  - id: main07_paul_supp_005
+    clip: {fileID: 8300000, guid: 7464532d6ad97034cb72cf7a6fac8eb3, type: 3}
+    speakerId: companion_paul
