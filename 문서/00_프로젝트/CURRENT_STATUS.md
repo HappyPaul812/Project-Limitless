@@ -1,3 +1,11 @@
+## 2026-10-08 Main07 폴 작별 ID 누락 수정 / TTS_REQUIRED5
+
+사용자 Play의 작별 Character Voice 무음 원인은 폴5줄 Stable ID 누락. main07_paul_supp_001~005 추가·Player “혼자 가시려고요?” 무음 유지. 전수40페이지/Character38/기존resolve33/추가ID누락0. **WAV 미제작·Unity Catalog 미적용·TTS_REQUIRED5, 실제 Voice 문제 OPEN**. [정본Handoff5](Main07_Paul_Farewell_TTS_Handoff.csv)·[QA](Main07_Paul_Farewell_QA.md).
+
+실제6페이지 text fallback/명시Next1page/같은프레임E/A재열림0·Main07완료·기존Main08재진입/Trace01 “잠깐만요.” 실제재생·자연종료page유지·BootstrapContinue2회 73PASS/FAIL0. CompileError0/RuntimeConsoleError·신규Warning0/MissingScript0. 기존WAV·Catalog·Main08변경0/API0/사용자변경byte보호. 사용자 다음 확인은 TTS담당 제작 후 신규5 전체 청취 승인, 이후 별도 Unity 적용·검증 후 CLOSED. 마지막 구현commit `4a9e4c7`, QA는 이 항목 포함 최신Docs commit. GitHub Push0.
+
+---
+
 ## 2026-10-08 Main17 승인 TTS14 적용·Runtime 검증 완료
 
 사용자 직접 청취 **USER_LISTENED_PASS14/14**. 원본 byte 복사14·Catalog236→250(prefix보호)·SHA/PCM/Unity전sample14/14오차0. Default/Hearing 실제12목표·조건부Paul/Miel/Taeon 유무·자연종료14 후page유지·Next/Scene/Battle잔류0·정상승리/afterVoice·실제Continue5지점·Mixer100/40/0/Mute/복원 PASS. 기술고유646PASS/FAIL0, CompileError0/최종ConsoleError·Warning0/새Warning0/MissingScript0. **Main17 TTS_PENDING14→0, USER_LISTENED_PASS14·UNITY_APPLIED14·RUNTIME_VERIFIED14**. Main18 TTS_PENDING22·생성/적용/변경0, API0·가공0·기존Voice예상밖변경0.

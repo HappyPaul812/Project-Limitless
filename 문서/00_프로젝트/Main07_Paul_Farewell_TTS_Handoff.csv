@@ -1,0 +1,6 @@
+﻿DialogueId,SpeakerId,Speaker,ExactText,VoiceId,VoiceExpected,Status
+main07_paul_supp_001,companion_paul,폴,아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요.,Achird,true,TTS_REQUIRED
+main07_paul_supp_002,companion_paul,폴,그런데 저는 확인해볼 곳이 하나 더 있습니다.,Achird,true,TTS_REQUIRED
+main07_paul_supp_003,companion_paul,폴,이번에는 진흙 없는 길로요.,Achird,true,TTS_REQUIRED
+main07_paul_supp_004,companion_paul,폴,아까 충분히 배웠습니다. 헤헤.,Achird,true,TTS_REQUIRED
+main07_paul_supp_005,companion_paul,폴,다시 만나게 되면 그때 정보부터 맞춰보죠.,Achird,true,TTS_REQUIRED

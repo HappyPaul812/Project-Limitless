@@ -1,0 +1,6 @@
+﻿clip_id,quest_no,speaker,text,voice_id,output_file,character_id,source_file,status
+main07_paul_supp_001,7,폴,아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요.,Achird,main07_paul_supp_001.wav,companion_paul,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_paul_supp_002,7,폴,그런데 저는 확인해볼 곳이 하나 더 있습니다.,Achird,main07_paul_supp_002.wav,companion_paul,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_paul_supp_003,7,폴,이번에는 진흙 없는 길로요.,Achird,main07_paul_supp_003.wav,companion_paul,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_paul_supp_004,7,폴,아까 충분히 배웠습니다. 헤헤.,Achird,main07_paul_supp_004.wav,companion_paul,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED
+main07_paul_supp_005,7,폴,다시 만나게 되면 그때 정보부터 맞춰보죠.,Achird,main07_paul_supp_005.wav,companion_paul,Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs,TTS_REQUIRED

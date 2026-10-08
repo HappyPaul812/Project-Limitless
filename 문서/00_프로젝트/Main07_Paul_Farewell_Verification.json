@@ -1,0 +1,32 @@
+{
+  "Runtime": "PASS",
+  "TechnicalPASS": 73,
+  "FAIL": 0,
+  "Pages": 40,
+  "CharacterPages": 38,
+  "PlayerSilent": 2,
+  "BeforeMissingCharacterIDs": 5,
+  "AddedStableIDs": 5,
+  "AdditionalMissingIDs": 0,
+  "ExistingResolved": 33,
+  "TTS_REQUIRED": 5,
+  "NewWAV": 0,
+  "NewCatalogEntries": 0,
+  "ExistingWAVChanged": 0,
+  "CatalogChanged": 0,
+  "Main08Changed": 0,
+  "TTSAPICalls": 0,
+  "CompileError": 0,
+  "RuntimeConsoleError": 0,
+  "NewWarning": 0,
+  "ExistingCompileWarnings": 16,
+  "MissingScript": 0,
+  "SaveVersion": 1,
+  "ContinueCheckpoints": 2,
+  "Baseline": 3263,
+  "ByteUnchanged": 3262,
+  "Changed": [
+    "Unity/Client/Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs"
+  ],
+  "Missing": []
+}
