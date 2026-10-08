@@ -1,3 +1,5 @@
+> 2026-10-08 Main19 정식: Field10 탐색·복귀 Paths of Cracked Earth, 일반/Story전투 Blade and Gambit. 신규곡/보스곡/Main20곡 선사용0. 기존 Source/Fade/Loop/Mixer 재사용. 아래 Main19 후보는 이전 이력.
+
 > 2026-10-08 Main18 후속 확정: Field09 탐색/복귀: 기존 The Weight of Obsidian MP3. Field09 일반·Tutorial Beetle·작열 감시자 Elite: Blade and Gambit. Elite 전용곡/ Iron and Incantation 배정 없음. Paths of Cracked Earth는 Main19 후보 유지. 기존 Source1/Fade/Loop/Mixer 유지. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
 
 # Chapter2 BGM 정본 — 2026-10-06

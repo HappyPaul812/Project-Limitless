@@ -1,3 +1,5 @@
+> 2026-10-08 Main19 「타오르는 맥동」 / main_19_burning_pulse / Field_10_BurningPulse / 12목표 정식 확정. 기존 과열 숙련·혼합2전투·먼 존재목격·Main20준비. 최종원인/보스설계 미확정. [정식 계약](Chapter2_Main19_타오르는_맥동.md). 아래 Main19 후보는 이전 이력.
+
 > 2026-10-08 Main18 후속 확정: Main18 「검은 열기」 / main_18_black_heat / Field_09_ObsidianScar / 13목표는 사용자 승인 정식 설계다. 과열·냉각약·흑요석 갑충·작열 감시자 Elite를 확정하며 Main19~21은 기존 미래 범위를 유지한다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
 
 # Chapter 2 서부 방향

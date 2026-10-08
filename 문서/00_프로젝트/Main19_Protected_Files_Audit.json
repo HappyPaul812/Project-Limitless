@@ -1,0 +1,16 @@
+{
+  "BaselineFiles": 3275,
+  "ByteUnchanged": 3270,
+  "ExpectedChanged": [
+    "Unity/Client/Assets/_Project/Resources/Audio/Music/BgmSceneCatalog.asset",
+    "Unity/Client/Assets/_Project/Scripts/Audio/BgmSceneCatalog.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "Unity/Client/ProjectSettings/EditorBuildSettings.asset"
+  ],
+  "UnexpectedChanged": [],
+  "Deleted": [],
+  "OriginalVoiceSpriteMonsterSaveSettingsProtected": true,
+  "RuntimePass": 169,
+  "RuntimeFail": 0
+}

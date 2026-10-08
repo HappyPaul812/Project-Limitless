@@ -1,3 +1,13 @@
+## 2026-10-08 최신 상태 — Main19 정식 설계·기초 구현 PASS
+
+Main19 「타오르는 맥동」 / `main_19_burning_pulse`, Main18 선행·12목표·EXP80/Currency70. Field10 「맥동의 열맥」 21×15 임시환경·Field09 왕복·서쪽 Main20 폐쇄. Story A 갑충+도마뱀, B 갑충+망령(후열), 기존 Monster 수치/과열/냉각/정화 보호. 탐색 Paths of Cracked Earth·전투 Blade and Gambit 기존곡 연결. Witness/Hook·Path5 정의. 신규 NPC13 **TTS_PENDING**, Player9+지문1 무음; API0. Art8종(균열 장식2변형)+VFX2 **ART_PENDING / USER_ART_REVIEW_REQUIRED**, 기존 그림 임시 재사용.
+
+비포커스 격리 Play **169 PASS/FAIL0**: 실제12목표·A/B 정상승리/도망/전멸 재도전·보상 중복0·실제 Continue4시점·Party/Formation/Beast/소지품/HP·MP/성장 보존·3화면비 Bounds·MissingScript0. CompileError0/RuntimeConsoleError·신규RuntimeWarning0. SaveVersion1·사용자 저장/설정·기존 Main01~18/Voice/Sprite 보호, 기존3275파일 중3270 byte 동일·승인5만 변경. Main07 작별5/Main17 신규14 CLOSED, Main18 TTS_PENDING22 유지. clean Bootstrap EditMode 복구.
+
+사용자 확인/다음 권장: 최종 Art 전달·실루엣/동선/난이도 체감 검토, NPC13 TTS 제작→직접 전체 청취 승인→별도 Unity 적용. Optional 실제 전투/다른 Path·Party·직업 전체 Play는 후속 QA. 마지막 관련 구현 commit `52259d5`; 정식 설계/최종 QA는 이 항목 포함 최신 Docs commit. [정식설계](../03_스토리/Chapter2_Main19_타오르는_맥동.md) · [최종QA/변경파일목록](Main19_Design_QA.md) · [Art](Main19_Art_Handoff.md) · [TTS23](Main19_TTS_Manifest.csv). GitHub Push0.
+
+---
+
 ## 2026-10-08 최신 상태 — 폴 작별 Voice5 CLOSED
 
 사용자 직접 청취 USER_LISTENED_PASS5/5·승인원본5 byte복사·신규GUID5·Catalog250→255/기존prefix보호·Source SHA/PCM/Unity전sample5/5오차0. 실제작별6페이지/Voice5·Player무음·모든5Clip자연종료후page유지·명시Next1page·같은프레임E/A/E재열림0·Main07완료·기존Main08Trace01 “잠깐만요.” 실제재생·BootstrapContinue2회·VoiceMixer100/40/0/Mute복원 **143PASS/FAIL0**. 전체40페이지/Character38resolve/Player2무음, 기존33Voice변경0/Main08변경0/API0. **TTS_REQUIRED5→0 / USER_LISTENED_PASS5 / UNITY_APPLIED5 / RUNTIME_VERIFIED5 / 이번 작별 누락 CLOSED**. 기존 별도Main07 청취 대기는 승격하지 않았다.
