@@ -1,0 +1,6 @@
+﻿DialogueId,ExactText,SpeakerId,VoiceId,Duration,SampleRate,Channels,BitDepth,SHA256,GUID,UserListening,Unity,Runtime,MaxPCMError
+main07_paul_supp_001,아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요.,companion_paul,Achird,5.12,24000,1,16,7b0e057e2966257aa63a5582ebc1a9fdb5c395a9d700c8a88b8e9fc2aa77e006,71471c330a989f6478a70312a83fbdc3,USER_LISTENED_PASS,UNITY_APPLIED,RUNTIME_VERIFIED,0.0
+main07_paul_supp_002,그런데 저는 확인해볼 곳이 하나 더 있습니다.,companion_paul,Achird,3.64,24000,1,16,c101e55b370c68bf1513fd8a8da0a5d2469e6a226c4e0235529be449159dd268,50f1b40ef8886d545a9ea9d565e7bee7,USER_LISTENED_PASS,UNITY_APPLIED,RUNTIME_VERIFIED,0.0
+main07_paul_supp_003,이번에는 진흙 없는 길로요.,companion_paul,Achird,2.4,24000,1,16,57e428981c16f75cdffc0ec26c6f740625369c78f75cf0e209a4ca71a2515101,5af483968dcf9e2408e8231fb49c15f4,USER_LISTENED_PASS,UNITY_APPLIED,RUNTIME_VERIFIED,0.0
+main07_paul_supp_004,아까 충분히 배웠습니다. 헤헤.,companion_paul,Achird,3.12,24000,1,16,f6316733d6fd9a1b16d7dfa25044b4b6102799f5608862f8cf44eeb7f053fdf8,4ad449db66472a44a96f8fa2876205fa,USER_LISTENED_PASS,UNITY_APPLIED,RUNTIME_VERIFIED,0.0
+main07_paul_supp_005,다시 만나게 되면 그때 정보부터 맞춰보죠.,companion_paul,Achird,3.44,24000,1,16,5e4053f9f331a7dcad45dab762160b211f56906f09c2562834ce38b977a86f96,7464532d6ad97034cb72cf7a6fac8eb3,USER_LISTENED_PASS,UNITY_APPLIED,RUNTIME_VERIFIED,0.0

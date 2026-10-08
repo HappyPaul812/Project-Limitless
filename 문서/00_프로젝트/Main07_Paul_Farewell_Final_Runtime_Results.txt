@@ -1,0 +1,195 @@
+STATUS|PASS
+PASS|IsolatedSave
+PASS|Scene.Field_02
+PASS|MissingScript.Field_02
+PASS|Audit.Pages40
+PASS|Audit.PlayerSilent2
+PASS|Audit.Character38
+PASS|Audit.CharacterMissingID0
+PASS|Audit.UniqueCharacterID38
+PASS|Audit.AllResolved38
+PASS|Audit.ExactClip.main07_taeon_supp_001
+PASS|Audit.ExactClip.main07_taeon_supp_002
+PASS|Audit.ExactClip.main07_miel_supp_001
+PASS|Audit.ExactClip.main07_miel_supp_002
+PASS|Audit.ExactClip.main07_taeon_supp_003
+PASS|Audit.ExactClip.main07_miel_supp_003
+PASS|Audit.ExactClip.main07_miel_supp_004
+PASS|Audit.ExactClip.main07_paul_001
+PASS|Audit.ExactClip.main07_paul_002
+PASS|Audit.ExactClip.main07_paul_003
+PASS|Audit.ExactClip.main07_taeon_001
+PASS|Audit.ExactClip.main07_paul_004
+PASS|Audit.ExactClip.main07_paul_005
+PASS|Audit.ExactClip.main07_paul_006
+PASS|Audit.ExactClip.main07_paul_007
+PASS|Audit.ExactClip.main07_taeon_002
+PASS|Audit.ExactClip.main07_paul_008
+PASS|Audit.ExactClip.main07_paul_009
+PASS|Audit.ExactClip.main07_paul_010
+PASS|Audit.ExactClip.main07_paul_011
+PASS|Audit.ExactClip.main07_paul_012
+PASS|Audit.ExactClip.main07_paul_013
+PASS|Audit.ExactClip.main07_paul_014
+PASS|Audit.ExactClip.main07_paul_015
+PASS|Audit.ExactClip.main07_taeon_003
+PASS|Audit.ExactClip.main07_paul_016
+PASS|Audit.ExactClip.main07_miel_001
+PASS|Audit.ExactClip.main07_paul_017
+PASS|Audit.ExactClip.main07_paul_018
+PASS|Audit.ExactClip.main07_miel_002
+PASS|Audit.ExactClip.main07_paul_019
+PASS|Audit.ExactClip.main07_miel_003
+PASS|Audit.ExactClip.main07_paul_020
+PASS|Audit.ExactClip.main07_paul_supp_001
+PASS|Audit.ExactClip.main07_paul_supp_002
+PASS|Audit.ExactClip.main07_paul_supp_003
+PASS|Audit.ExactClip.main07_paul_supp_004
+PASS|Audit.ExactClip.main07_paul_supp_005
+PAGE|main07_taeon_supp_001|companion_taeon|수레가 지나간 흔적은 아닌 것 같습니다.
+PAGE|main07_taeon_supp_002|companion_taeon|폭이 일정하고… 한쪽이 계속 더 깊게 눌려 있어요.
+PAGE|main07_miel_supp_001|companion_miel|누군가 이쪽으로 지나간 것 같네요.
+PAGE||player|따라가 보죠.
+PAGE|main07_miel_supp_002|companion_miel|이분을 그냥 두고 갈 수는 없어요. 제가 상태를 볼게요.
+PAGE|main07_taeon_supp_003|companion_taeon|혼자 괜찮겠습니까?
+PAGE|main07_miel_supp_003|companion_miel|네. 두 분은 흔적을 확인해주세요.
+PAGE|main07_miel_supp_004|companion_miel|상황이 안 좋으면 바로 돌아오시고요.
+PAGE|main07_paul_001|companion_paul|아, 사람이다. 반갑습니다. 진짜로요.
+PAGE|main07_paul_002|companion_paul|원래 계획은 저 진흙을 피해 가는 거였는데요.
+PAGE|main07_paul_003|companion_paul|보시다시피 계획이 아주 성공적입니다.
+PAGE|main07_taeon_001|companion_taeon|바퀴가 빠지셨는데요.
+PAGE|main07_paul_004|companion_paul|네, 그러게요. 그것도 아주 깊~게요...;;
+PAGE|main07_paul_005|companion_paul|하여튼 바로 잡아당기시면 안 됩니다. 그러면 앞바퀴까지 빠질 거예요.
+PAGE|main07_paul_006|companion_paul|저쪽에 넓은 돌 보이시죠? 그걸 오른쪽 바퀴 뒤에 받쳐주시고요.
+PAGE|main07_paul_007|companion_paul|제가 바퀴를 돌릴 때 같이 밀면 될 것 같습니다.
+PAGE|main07_taeon_002|companion_taeon|옵니다.
+PAGE|main07_paul_008|companion_paul|아… 저건 계획에 없었는데요.
+PAGE|main07_paul_009|companion_paul|뭐, 바퀴가 안 움직이는 거지 마법까지 안 나가는 건 아니니까요.
+PAGE|main07_paul_010|companion_paul|후우… 됐네요.
+PAGE|main07_paul_011|companion_paul|다음에는 저 길로 안 갑니다. 경험을 했으면 계획을 수정해야죠.
+PAGE|main07_paul_012|companion_paul|아, 도와주셔서 감사합니다. 저는 폴이라고 합니다.
+PAGE|main07_paul_013|companion_paul|저도 이 숲을 좀 조사하고 있었습니다.
+PAGE|main07_paul_014|companion_paul|며칠 전부터 숲 안쪽의 마력 흐름이 평소랑 달라졌거든요.
+PAGE|main07_paul_015|companion_paul|처음에는 별일 아닌 줄 알았는데… 몬스터들 움직임까지 달라지는 걸 보고 생각이 바뀌었습니다.
+PAGE|main07_taeon_003|companion_taeon|저희도 같은 현상을 따라 여기까지 왔습니다.
+PAGE|main07_paul_016|companion_paul|그러면 제가 진흙에 빠진 건 몰라도, 방향은 제대로 잡은 것 같네요.
+PAGE|main07_miel_001|companion_miel|돌아오셨네요. 그리고… 처음 보는 분도 계시네요.
+PAGE|main07_paul_017|companion_paul|폴이라고 합니다.
+PAGE|main07_paul_018|companion_paul|원래는 조금 더 멀쩡한 모습으로 처음 뵐 예정이었는데요. 그늘숲이 협조를 안 해주더라고요.
+PAGE|main07_miel_002|companion_miel|혹시 다치신 곳은 없으세요?
+PAGE|main07_paul_019|companion_paul|저는 괜찮습니다. 저분부터 봐주세요.
+PAGE|main07_miel_003|companion_miel|저분은 이제 괜찮으세요. 그러니까 폴 씨도 확인해야죠.
+PAGE|main07_paul_020|companion_paul|…아, 순서가 벌써 제 차례인가요?
+PAGE|main07_paul_supp_001|companion_paul|아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요.
+PAGE|main07_paul_supp_002|companion_paul|그런데 저는 확인해볼 곳이 하나 더 있습니다.
+PAGE||player|혼자 가시려고요?
+PAGE|main07_paul_supp_003|companion_paul|이번에는 진흙 없는 길로요.
+PAGE|main07_paul_supp_004|companion_paul|아까 충분히 배웠습니다. 헤헤.
+PAGE|main07_paul_supp_005|companion_paul|다시 만나게 되면 그때 정보부터 맞춰보죠.
+PASS|Fixture.FarewellObjective
+PASS|Continue.Write.BeforeFarewell
+PASS|Continue.Version1.BeforeFarewell
+PASS|Continue.NoVoiceState.BeforeFarewell
+PASS|Scene.Bootstrap
+PASS|MissingScript.Bootstrap
+PASS|Scene.Field_02
+PASS|MissingScript.Field_02
+PASS|Continue.QuestPartyFormationBeastHPMP.BeforeFarewell
+PASS|Continue.Position.BeforeFarewell
+PASS|Continue.NoAutoVoice.BeforeFarewell
+PASS|Farewell.RealInputOpen
+PASS|Farewell.OrderTextID.0
+PASS|Farewell.Speaker.0
+PASS|Runtime.PlayExact.main07_paul_supp_001
+PASS|Runtime.SingleVoiceSource.main07_paul_supp_001
+PASS|Runtime.ExistingMixerNoProcessing.main07_paul_supp_001
+PASS|Runtime.PCMReadable.main07_paul_supp_001
+PASS|Volume.Mixer.100
+PASS|Volume.Mixer.40
+PASS|Volume.Mixer.0
+PASS|Volume.ZeroInaudible
+PASS|Volume.MasterMutePreservesChannels
+PASS|Volume.RestoreDuringPlayback
+PASS|Runtime.NaturalEndNoAutoAdvance.main07_paul_supp_001
+NATURAL_END|0|main07_paul_supp_001|5.12|pageHeld=true
+PASS|Farewell.NoAutoAdvance.0
+RUNTIME_PAGE|0|companion_paul|아무래도 저희가 보고 있는 게 같은 현상 같기는 하네요.|main07_paul_supp_001|main07_paul_supp_001|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.0
+PASS|Farewell.NextPreviousClipCleared.0
+PASS|Farewell.OrderTextID.1
+PASS|Farewell.Speaker.1
+PASS|Runtime.PlayExact.main07_paul_supp_002
+PASS|Runtime.SingleVoiceSource.main07_paul_supp_002
+PASS|Runtime.ExistingMixerNoProcessing.main07_paul_supp_002
+PASS|Runtime.PCMReadable.main07_paul_supp_002
+PASS|Runtime.NaturalEndNoAutoAdvance.main07_paul_supp_002
+NATURAL_END|1|main07_paul_supp_002|3.64|pageHeld=true
+PASS|Farewell.NoAutoAdvance.1
+RUNTIME_PAGE|1|companion_paul|그런데 저는 확인해볼 곳이 하나 더 있습니다.|main07_paul_supp_002|main07_paul_supp_002|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.1
+PASS|Farewell.NextPreviousClipCleared.1
+PASS|Farewell.OrderTextID.2
+PASS|Farewell.Speaker.2
+PASS|Farewell.TextFallback.2
+PASS|Farewell.PlayerPortraitUnchanged
+PASS|Farewell.NoAutoAdvance.2
+RUNTIME_PAGE|2|player|혼자 가시려고요?||null|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.2
+PASS|Farewell.NextPreviousClipCleared.2
+PASS|Farewell.OrderTextID.3
+PASS|Farewell.Speaker.3
+PASS|Runtime.PlayExact.main07_paul_supp_003
+PASS|Runtime.SingleVoiceSource.main07_paul_supp_003
+PASS|Runtime.ExistingMixerNoProcessing.main07_paul_supp_003
+PASS|Runtime.PCMReadable.main07_paul_supp_003
+PASS|Runtime.NaturalEndNoAutoAdvance.main07_paul_supp_003
+NATURAL_END|3|main07_paul_supp_003|2.4|pageHeld=true
+PASS|Farewell.NoAutoAdvance.3
+RUNTIME_PAGE|3|companion_paul|이번에는 진흙 없는 길로요.|main07_paul_supp_003|main07_paul_supp_003|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.3
+PASS|Farewell.NextPreviousClipCleared.3
+PASS|Farewell.OrderTextID.4
+PASS|Farewell.Speaker.4
+PASS|Runtime.PlayExact.main07_paul_supp_004
+PASS|Runtime.SingleVoiceSource.main07_paul_supp_004
+PASS|Runtime.ExistingMixerNoProcessing.main07_paul_supp_004
+PASS|Runtime.PCMReadable.main07_paul_supp_004
+PASS|Runtime.NaturalEndNoAutoAdvance.main07_paul_supp_004
+NATURAL_END|4|main07_paul_supp_004|3.12|pageHeld=true
+PASS|Farewell.NoAutoAdvance.4
+RUNTIME_PAGE|4|companion_paul|아까 충분히 배웠습니다. 헤헤.|main07_paul_supp_004|main07_paul_supp_004|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.4
+PASS|Farewell.NextPreviousClipCleared.4
+PASS|Farewell.OrderTextID.5
+PASS|Farewell.Speaker.5
+PASS|Runtime.PlayExact.main07_paul_supp_005
+PASS|Runtime.SingleVoiceSource.main07_paul_supp_005
+PASS|Runtime.ExistingMixerNoProcessing.main07_paul_supp_005
+PASS|Runtime.PCMReadable.main07_paul_supp_005
+PASS|Runtime.NaturalEndNoAutoAdvance.main07_paul_supp_005
+NATURAL_END|5|main07_paul_supp_005|3.44|pageHeld=true
+PASS|Farewell.NoAutoAdvance.5
+RUNTIME_PAGE|5|companion_paul|다시 만나게 되면 그때 정보부터 맞춰보죠.|main07_paul_supp_005|main07_paul_supp_005|playing=False
+PASS|Farewell.SameFrameOneNextNoReopen.5
+PASS|Farewell.ActualMain07Completed
+PASS|Farewell.NoAutoNPCOrResidual
+PASS|Boundary.Main08AvailableBeforeReentry
+PASS|Scene.Field_02
+PASS|MissingScript.Field_02
+PASS|Continue.Write.AfterFarewell
+PASS|Continue.Version1.AfterFarewell
+PASS|Continue.NoVoiceState.AfterFarewell
+PASS|Scene.Bootstrap
+PASS|MissingScript.Bootstrap
+PASS|Scene.Field_02
+PASS|MissingScript.Field_02
+PASS|Continue.QuestPartyFormationBeastHPMP.AfterFarewell
+PASS|Continue.Position.AfterFarewell
+PASS|Continue.NoAutoVoice.AfterFarewell
+PASS|Boundary.Main08Active
+PASS|Boundary.Main08ExactPage
+PASS|Boundary.Main08ExistingVoicePlaying
+PASS|Boundary.NaturalEndNoAutoAdvance
+PASS|Boundary.HideCleared
+PASS|Scene.Bootstrap
+PASS|MissingScript.Bootstrap

@@ -1,3 +1,11 @@
+## 2026-10-08 최신 상태 — 폴 작별 Voice5 CLOSED
+
+사용자 직접 청취 USER_LISTENED_PASS5/5·승인원본5 byte복사·신규GUID5·Catalog250→255/기존prefix보호·Source SHA/PCM/Unity전sample5/5오차0. 실제작별6페이지/Voice5·Player무음·모든5Clip자연종료후page유지·명시Next1page·같은프레임E/A/E재열림0·Main07완료·기존Main08Trace01 “잠깐만요.” 실제재생·BootstrapContinue2회·VoiceMixer100/40/0/Mute복원 **143PASS/FAIL0**. 전체40페이지/Character38resolve/Player2무음, 기존33Voice변경0/Main08변경0/API0. **TTS_REQUIRED5→0 / USER_LISTENED_PASS5 / UNITY_APPLIED5 / RUNTIME_VERIFIED5 / 이번 작별 누락 CLOSED**. 기존 별도Main07 청취 대기는 승격하지 않았다.
+
+CompileError0/RuntimeConsoleError·신규Warning0/MissingScript0, 기존CS0618컴파일경고16 별도. 사용자Save·Sprite·Portrait·Battle·Growth·Retry·Main17/18 byte보호. cleanBootstrap EditMode·비포커스·격리Save/Settings/Input/Listener복구. 추가 작별Voice 청취요청0. 다음권장: 별도 요청의 기존 미확인목록, Main18 TTS_PENDING22 유지. 마지막구현commit `4c9a889`; QA는 이항목포함최신Docs commit. [최종QA](Main07_Paul_Farewell_Final_QA.md) · [적용표5](Main07_Paul_Farewell_Final_Matrix.csv). GitHub Push0.
+
+---
+
 # Main07 폴 작별 Voice 누락 / TTS Handoff
 
 ## 구현 전 계약 — 2026-10-08
