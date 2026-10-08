@@ -1,3 +1,9 @@
+## 2026-10-08 Main17 승인 TTS 후속 완료
+
+TTS_PENDING14→0. USER_LISTENED_PASS14 / UNITY_APPLIED14 / RUNTIME_VERIFIED14, 원본·기존Voice·Main18보호. 다음 정확한 시작점은 사용자 후속 요청이며 Main17 TTS 제작/적용을 다시 시작하지 않는다. 아래 Phase9의 미제작/미적용 기록은 당시 이력이다. [최종TTSQA](Main17_TTS_Final_QA.md).
+
+---
+
 # Main17 실제 Art / Audio COMPLETION CHECKPOINT
 
 - 현재 실행 Phase 없음. FUNCTION_COMPLETE / ART_COMPLETE / BGM_COMPLETE / BALANCE_REPRESENTATIVE_PASS / SAVE_COMPLETE / PATH_COMPLETE.

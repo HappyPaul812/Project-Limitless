@@ -1,3 +1,11 @@
+## 2026-10-08 Main17 승인 TTS14 적용·Runtime 검증 완료
+
+사용자 직접 청취 **USER_LISTENED_PASS14/14**. 원본 byte 복사14·Catalog236→250(prefix보호)·SHA/PCM/Unity전sample14/14오차0. Default/Hearing 실제12목표·조건부Paul/Miel/Taeon 유무·자연종료14 후page유지·Next/Scene/Battle잔류0·정상승리/afterVoice·실제Continue5지점·Mixer100/40/0/Mute/복원 PASS. 기술고유646PASS/FAIL0, CompileError0/최종ConsoleError·Warning0/새Warning0/MissingScript0. **Main17 TTS_PENDING14→0, USER_LISTENED_PASS14·UNITY_APPLIED14·RUNTIME_VERIFIED14**. Main18 TTS_PENDING22·생성/적용/변경0, API0·가공0·기존Voice예상밖변경0.
+
+기존3253파일 중3252byte보호·의도한Catalog1수정·삭제0, 사용자 미커밋 변경 보호. 추가 Main17 Voice 청취 요청0; 기존 음악/실물입력 및 Main18의 별도 미확인 항목 유지. 다음권장: 사용자 지정 후속 확인 또는 별도 승인 Main18 음성 작업. 마지막 관련 구현 commit `f0f44b3`, QA는 이 항목 포함 최신Docs commit. [최종TTSQA](Main17_TTS_Final_QA.md) · [적용14표](Main17_TTS_Applied_Matrix.csv). cleanBootstrap EditMode·비포커스·격리저장/설정/Listener복구. GitHub Push0.
+
+---
+
 ## 2026-10-08 Main18 「검은 열기」 구현·자동 QA 완료
 
 정식13목표/Field09 흑요석 상흔21×15/보고 냉각약3·아르벨 판매/독립 과열·HUD·VFX/갑충·감시자 Elite/BGM/무음 Player·NPC TTS_PENDING22 구현. Main19·Cleanse II·새 음성 생성0. 실제13목표 연속 진행·두 전투 도망/패배 재도전·정상승리·중복0, BootstrapContinue7지점 보존, 5Job×2전투·5Path관찰 PASS. Runtime 고유 500PASS/FAIL0, CompileError0/최종ConsoleError·Warning0/새Warning0/MissingScript0, Source17PASS_WITH_NOTE·핵심FAIL_BLOCKING0. 기존3156파일 중3144byte 동일·의도한12수정·삭제0, 기존 사용자 변경 보호.

@@ -1,13 +1,13 @@
 DialogueID,Speaker,ExactText,VoiceExpected,Status
 "main17_after_default_player_02","player","황야에서와 같군요. 전투 결과와 지면 변화는 나눠 기록하죠.",false,NOT_EXPECTED
-"main17_after_default_serin_01","companion_serin","아직 계속됩니다. 처치로 이 현상이 멎지는 않았어요.",true,TTS_PENDING
+"main17_after_default_serin_01","companion_serin","아직 계속됩니다. 처치로 이 현상이 멎지는 않았어요.",true,RUNTIME_VERIFIED
 "main17_after_direction_01","","<지문> 길을 막던 생물이 사라져도 지면의 반복 신호와 틈의 열기는 남아 있다.",false,NOT_EXPECTED
 "main17_after_hearing_player_01","player","아직 계속돼요. 형체가 사라져도 바닥의 신호는 남아 있습니다.",false,NOT_EXPECTED
 "main17_after_hearing_player_02","player","황야에서와 같군요. 전투 결과와 지면 변화는 나눠 기록하죠.",false,NOT_EXPECTED
-"main17_after_hearing_serin_01","companion_serin","네. 저도 잡힙니다. 처치로 이 현상이 멎지는 않았어요.",true,TTS_PENDING
-"main17_compare_paul_01","companion_paul","확인한 것과 추측한 것을 섞지 않으면, 다음에는 비교가 쉬워지겠네요.",true,TTS_PENDING
+"main17_after_hearing_serin_01","companion_serin","네. 저도 잡힙니다. 처치로 이 현상이 멎지는 않았어요.",true,RUNTIME_VERIFIED
+"main17_compare_paul_01","companion_paul","확인한 것과 추측한 것을 섞지 않으면, 다음에는 비교가 쉬워지겠네요.",true,RUNTIME_VERIFIED
 "main17_compare_player_01","player","같은 현상일 가능성은 기록하되 원인은 구분해서 남겨 두죠.",false,NOT_EXPECTED
-"main17_compare_serin_01","companion_serin","진동이 올 때 재도 움직입니다. 황야와 비슷해요. 무엇이 먼저인지, 어디서 시작됐는지는 아직 모르겠습니다.",true,TTS_PENDING
+"main17_compare_serin_01","companion_serin","진동이 올 때 재도 움직입니다. 황야와 비슷해요. 무엇이 먼저인지, 어디서 시작됐는지는 아직 모르겠습니다.",true,RUNTIME_VERIFIED
 "main17_crack_direction_01","","<지문> 붉은 흙 사이로 길게 갈라진 틈이 이어진다. 틈 가까이에는 검게 식은 돌과 짙은 재가 남아 있다.",false,NOT_EXPECTED
 "main17_crack_emotional_scar_player_02","player","확신하기 어려운 곳은 잠시 멈춰서 함께 확인하죠.",false,NOT_EXPECTED
 "main17_crack_intellectual_player_02","player","균열과 재가 나타나는 순서부터 나눠 기록해 볼게요.",false,NOT_EXPECTED
@@ -15,24 +15,24 @@ DialogueID,Speaker,ExactText,VoiceExpected,Status
 "main17_crack_player_01","player","황야보다 틈이 깊어요. 발을 디딜 바닥부터 확인하죠.",false,NOT_EXPECTED
 "main17_crack_vision_player_02","player","발밑의 이어진 바닥과 지나온 위치를 기준으로 안전한 길을 기록하죠.",false,NOT_EXPECTED
 "main17_resonance_default_player_02","player","아래쪽의 반응도 따로 기록하죠. 발생 지점이라고 단정할 수는 없어요.",false,NOT_EXPECTED
-"main17_resonance_default_serin_01","companion_serin","서쪽 틈 가까이에서 더 강해집니다. 표면의 흔들림 뒤에 약한 신호가 한 번 더 잡혀요.",true,TTS_PENDING
+"main17_resonance_default_serin_01","companion_serin","서쪽 틈 가까이에서 더 강해집니다. 표면의 흔들림 뒤에 약한 신호가 한 번 더 잡혀요.",true,RUNTIME_VERIFIED
 "main17_resonance_hearing_player_01","player","서쪽 틈 가까이에서 더 강해져요. 표면의 흔들림 뒤에 신호가 한 번 더 잡힙니다.",false,NOT_EXPECTED
 "main17_resonance_hearing_player_02","player","아래쪽의 반응도 따로 기록하죠. 발생 지점이라고 단정할 수는 없어요.",false,NOT_EXPECTED
-"main17_resonance_hearing_serin_01","companion_serin","저도 확인했습니다. 뒤따르는 신호는 약합니다. 아래쪽에서 올라오는 반응일 수도 있겠어요.",true,TTS_PENDING
+"main17_resonance_hearing_serin_01","companion_serin","저도 확인했습니다. 뒤따르는 신호는 약합니다. 아래쪽에서 올라오는 반응일 수도 있겠어요.",true,RUNTIME_VERIFIED
 "main17_route_direction_01","","<지문> 서쪽 끝의 깊은 균열 너머에 검고 매끄러운 암석이 드러난다. 아래쪽으로 이어진 경사는 끝을 확인할 수 없다.",false,NOT_EXPECTED
-"main17_route_serin_01","companion_serin","더 아래쪽 반응이 있습니다. 하지만 지금 위치만으로 안전한 경로를 판단할 수는 없겠어요.",true,TTS_PENDING
+"main17_route_serin_01","companion_serin","더 아래쪽 반응이 있습니다. 하지만 지금 위치만으로 안전한 경로를 판단할 수는 없겠어요.",true,RUNTIME_VERIFIED
 "main17_serin_player_01","player","저희도 서쪽으로 갈수록 진동이 강해지는 걸 확인했어요.",false,NOT_EXPECTED
-"main17_serin_serin_01","companion_serin","황야에서 잡힌 신호를 이곳에서도 기록하고 있습니다. 혼자 확인한 것보다 함께 비교하면 차이가 분명하겠네요.",true,TTS_PENDING
+"main17_serin_serin_01","companion_serin","황야에서 잡힌 신호를 이곳에서도 기록하고 있습니다. 혼자 확인한 것보다 함께 비교하면 차이가 분명하겠네요.",true,RUNTIME_VERIFIED
 "main17_tracks_direction_01","","<지문> 협곡 안쪽으로 향하던 발자국이 균열 앞에서 북쪽과 남쪽으로 갈라진다.",false,NOT_EXPECTED
-"main17_tracks_miel_01","companion_miel","가장자리에 남은 흔적도 피해서 돌아가요.",true,TTS_PENDING
+"main17_tracks_miel_01","companion_miel","가장자리에 남은 흔적도 피해서 돌아가요.",true,RUNTIME_VERIFIED
 "main17_tracks_player_01","player","이곳을 피해 돌아간 흔적이군요. 우리도 바닥이 이어지는 쪽으로 가죠.",false,NOT_EXPECTED
 "main17_vibration_default_player_02","player","재가 움직이는 때도 함께 기록하죠.",false,NOT_EXPECTED
-"main17_vibration_default_serin_01","companion_serin","바닥에서 반복되는 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",true,TTS_PENDING
+"main17_vibration_default_serin_01","companion_serin","바닥에서 반복되는 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",true,RUNTIME_VERIFIED
 "main17_vibration_hearing_player_01","player","잠깐만요. 바닥에서 비슷한 간격으로 신호가 반복되고 있어요.",false,NOT_EXPECTED
 "main17_vibration_hearing_player_02","player","재가 움직이는 때도 함께 기록하죠.",false,NOT_EXPECTED
-"main17_vibration_hearing_serin_01","companion_serin","저도 같은 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",true,TTS_PENDING
+"main17_vibration_hearing_serin_01","companion_serin","저도 같은 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",true,RUNTIME_VERIFIED
 "main17_withdraw_player_01","player","오늘 확인한 사실부터 정리하죠. 내려갈 준비를 갖춘 뒤 다시 살펴보겠습니다.",false,NOT_EXPECTED
-"main17_withdraw_serin_01","companion_serin","동의합니다. 기록은 충분하고, 돌아갈 길도 남아 있네요.",true,TTS_PENDING
-"main17_withdraw_taeon_01","companion_taeon","우선 안전한 곳으로 돌아가겠습니다. 준비 없이 더 들어가는 것은 위험합니다.",true,TTS_PENDING
+"main17_withdraw_serin_01","companion_serin","동의합니다. 기록은 충분하고, 돌아갈 길도 남아 있네요.",true,RUNTIME_VERIFIED
+"main17_withdraw_taeon_01","companion_taeon","우선 안전한 곳으로 돌아가겠습니다. 준비 없이 더 들어가는 것은 위험합니다.",true,RUNTIME_VERIFIED
 "main17_witness_direction_01","","<지문> 균열 아래에서 따뜻한 공기가 올라온다. 재가 흩어지며 균열도마뱀이 길을 막는다.",false,NOT_EXPECTED
-"main17_witness_serin_01","companion_serin","돌아갈 길을 확보하죠. 싸우는 동안 틈 가장자리는 피하겠습니다.",true,TTS_PENDING
+"main17_witness_serin_01","companion_serin","돌아갈 길을 확보하죠. 싸우는 동안 틈 가장자리는 피하겠습니다.",true,RUNTIME_VERIFIED

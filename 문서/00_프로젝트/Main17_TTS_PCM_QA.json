@@ -1,0 +1,118 @@
+{
+  "PASS": 14,
+  "FAIL": 0,
+  "Rows": [
+    {
+      "DialogueId": "main17_after_default_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 109440,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_after_hearing_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 139200,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_compare_paul_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 130560,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_compare_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 272640,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_resonance_default_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 168000,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_resonance_hearing_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 163200,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_route_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 174720,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_serin_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 216000,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_tracks_miel_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 65280,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_vibration_default_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 179520,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_vibration_hearing_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 184320,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_withdraw_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 123840,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_withdraw_taeon_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 139200,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    },
+    {
+      "DialogueId": "main17_witness_serin_01",
+      "SHAEqual": true,
+      "WAVPCMEqual": true,
+      "RuntimeSamples": 122880,
+      "RuntimeMaxError": 0.0,
+      "RuntimePCM": "PASS"
+    }
+  ]
+}

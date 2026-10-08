@@ -1,0 +1,9 @@
+{
+  "Baseline": 3253,
+  "ByteUnchanged": 3252,
+  "ExpectedChanged": [
+    "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset"
+  ],
+  "UnexpectedChanged": [],
+  "Missing": []
+}

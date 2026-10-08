@@ -1,3 +1,11 @@
+## 2026-10-08 Main17 승인 TTS14 적용·Runtime 검증 완료
+
+사용자 직접 청취 **USER_LISTENED_PASS14/14**. 원본 byte 복사14·Catalog236→250(prefix보호)·SHA/PCM/Unity전sample14/14오차0. Default/Hearing 실제12목표·조건부Paul/Miel/Taeon 유무·자연종료14 후page유지·Next/Scene/Battle잔류0·정상승리/afterVoice·실제Continue5지점·Mixer100/40/0/Mute/복원 PASS. 기술고유646PASS/FAIL0, CompileError0/최종ConsoleError·Warning0/새Warning0/MissingScript0. **Main17 TTS_PENDING14→0, USER_LISTENED_PASS14·UNITY_APPLIED14·RUNTIME_VERIFIED14**. Main18 TTS_PENDING22·생성/적용/변경0, API0·가공0·기존Voice예상밖변경0.
+
+기존3253파일 중3252byte보호·의도한Catalog1수정·삭제0, 사용자 미커밋 변경 보호. 추가 Main17 Voice 청취 요청0; 기존 음악/실물입력 및 Main18의 별도 미확인 항목 유지. 다음권장: 사용자 지정 후속 확인 또는 별도 승인 Main18 음성 작업. 마지막 관련 구현 commit `f0f44b3`, QA는 이 항목 포함 최신Docs commit. [최종TTSQA](Main17_TTS_Final_QA.md) · [적용14표](Main17_TTS_Applied_Matrix.csv). cleanBootstrap EditMode·비포커스·격리저장/설정/Listener복구. GitHub Push0.
+
+---
+
 ## 최신 최종 판정 — 실제 Art / Audio 적용
 
 FUNCTION_COMPLETE / ART_COMPLETE / BGM_COMPLETE / SAVE_COMPLETE / PATH_COMPLETE. 정확한 English.zip 원본9PNG 등록·7실제적용(지면변형2보관), Preview미사용. PNG/ZIP/MP3 원본 수정0. Blade and Gambit는 Chapter2 서부 일반/Story에 적용, 기존 단일Source/Mixer Fade0.20/0.75/0.9·LoopON, Field07/08 탐색곡 복귀·Boss예외 유지. Quest12/보상60·50/Serin·Fox/Party/5Path 및 기존44승리·KO0 보호.
