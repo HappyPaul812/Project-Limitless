@@ -39,9 +39,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 367915f56ea94efa8715ccf447ba920b, type: 3}
   - sceneName: Field_10_BurningPulse
     clip: {fileID: 8300000, guid: 8dc555228b79489a947ec8dfafa45f72, type: 3}
+  - sceneName: Field_11_DeepCore
+    clip: {fileID: 8300000, guid: 8dc555228b79489a947ec8dfafa45f72, type: 3}
   safeZoneClip: {fileID: 8300000, guid: bbb81dfc8750786489989a28098bbff6, type: 3}
   chapter1BattleClip: {fileID: 8300000, guid: 3d11958c811f4bf68fe4ce3e6fb1675a, type: 3}
   chapter2BattleClip: {fileID: 8300000, guid: 629fdad08236c394ea9623741bd7053f, type: 3}
   silentWardenClip: {fileID: 8300000, guid: ecb1cada14bc4f6995a48d160538ca55, type: 3}
+  veinfireColossusClip: {fileID: 8300000, guid: 7a14679382a43604294a5f6fd33423ef, type: 3}
   westernIntroductionClip: {fileID: 8300000, guid: 1cad0945c44346b099bd6053ed2238a2, type: 3}
   deepWestClip: {fileID: 8300000, guid: 367915f56ea94efa8715ccf447ba920b, type: 3}

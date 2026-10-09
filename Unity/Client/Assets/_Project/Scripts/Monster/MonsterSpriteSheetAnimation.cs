@@ -27,6 +27,8 @@ namespace ProjectLimitless.Monster
         private bool fieldMoving;
         private bool reacting;
         private bool defeated;
+        // Overlay는 이 프레임을 따라가며 독립 시간축을 만들지 않습니다.
+        public Sprite CurrentFrame { get; private set; }
 
         public void Configure(SpriteRenderer target, MonsterDefinition monster)
         {
@@ -146,6 +148,7 @@ namespace ProjectLimitless.Monster
         private void ShowFrame(Sprite[] frames, int index)
         {
             if (frames == null || frames.Length == 0) return;
+            CurrentFrame = frames[index];
             if (fieldRenderer != null) fieldRenderer.sprite = frames[index];
             if (battleImage != null) battleImage.sprite = frames[index];
         }

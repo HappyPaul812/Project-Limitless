@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 6b474904f9d6b924680cb0efa9983ce7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5014733892074909023
+    second: Veinfire_CoreResonance_Telegraph_0
+  - first:
+      213: 8229411557173530761
+    second: Veinfire_CoreResonance_Telegraph_1
+  - first:
+      213: -2179138672631360476
+    second: Veinfire_CoreResonance_Telegraph_2
+  - first:
+      213: -3372651948010293765
+    second: Veinfire_CoreResonance_Telegraph_3
+  - first:
+      213: 549028868531433427
+    second: Veinfire_CoreResonance_Telegraph_4
+  - first:
+      213: -4201411735186887903
+    second: Veinfire_CoreResonance_Telegraph_5
+  - first:
+      213: -3230560507421628307
+    second: Veinfire_CoreResonance_Telegraph_6
+  - first:
+      213: 5265993243488632439
+    second: Veinfire_CoreResonance_Telegraph_7
+  - first:
+      213: -3930638497263536142
+    second: Veinfire_CoreResonance_Telegraph_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 512
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 296
+        width: 185
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a253c72816186ab0800000000000000
+      internalID: -5014733892074909023
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 294
+        width: 181
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98092dfb53eb43270800000000000000
+      internalID: 8229411557173530761
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 111
+        width: 345
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424dd7d3ce422c1e0800000000000000
+      internalID: -2179138672631360476
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 262
+        width: 149
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf531df1ceee131d0800000000000000
+      internalID: -3372651948010293765
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_4
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 262
+        width: 151
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df2048d8da8e9700800000000000000
+      internalID: 549028868531433427
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 97
+        width: 151
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b2701794691b5c0800000000000000
+      internalID: -4201411735186887903
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 101
+        width: 148
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d686ab1b55eba23d0800000000000000
+      internalID: -3230560507421628307
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_7
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 96
+        width: 182
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e3fbb54f0941940800000000000000
+      internalID: 5265993243488632439
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_CoreResonance_Telegraph_8
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 92
+        width: 185
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f7b126bc119379c0800000000000000
+      internalID: -3930638497263536142
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Veinfire_CoreResonance_Telegraph_0: -5014733892074909023
+      Veinfire_CoreResonance_Telegraph_1: 8229411557173530761
+      Veinfire_CoreResonance_Telegraph_2: -2179138672631360476
+      Veinfire_CoreResonance_Telegraph_3: -3372651948010293765
+      Veinfire_CoreResonance_Telegraph_4: 549028868531433427
+      Veinfire_CoreResonance_Telegraph_5: -4201411735186887903
+      Veinfire_CoreResonance_Telegraph_6: -3230560507421628307
+      Veinfire_CoreResonance_Telegraph_7: 5265993243488632439
+      Veinfire_CoreResonance_Telegraph_8: -3930638497263536142
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

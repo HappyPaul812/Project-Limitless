@@ -1,6 +1,17 @@
 # Chapter2 Main20 — 심부의 거신
 
-2026-10-09 사용자 요청으로 확정한 정식 설계. **DESIGN_CONFIRMED / IMPLEMENTATION_PENDING**. 이번 단계는 문서·Handoff·정적 검토만 수행한다. 과거 Main20 이름/수치/Phase/Skill/보상 TBD보다 이 문서를 우선한다. 실제 구현과 QA 완료를 의미하지 않는다.
+2026-10-09 사용자 요청으로 확정한 정식 설계. **DESIGN_CONFIRMED / IMPLEMENTED_BACKGROUND_QA_PASS**. 정본 수치·서사·Objective9와 승인된 기술 계약으로 Unity 구현 및 격리 Runtime QA를 수행했다. 과거 TBD보다 이 문서를 우선한다. 사용자 실제 화면·음악·전 직업 난이도 승인은 별도다. [최종 구현 및 QA](../00_프로젝트/Main20_Implementation_Final_QA_20261009.md).
+
+## 2026-10-09 승인된 구현 계약
+
+사용자 지시로 v3 아트 및 기본 Boss + Phase2 Overlay 채택을 승인했다. 최종 음악 청취는 별도 대기한다.
+
+- HP600 이하 즉시 전환1회. Phase1 응축의 미실행 파동 예고가 있다면 다음 자기 행동에서 그 파동을 먼저1회 이행한 뒤 Phase2 열압 주입부터 순환한다. 예고가 없으면 다음 행동부터 Phase2 열압 주입. 추가 턴/Queue/HP/상태 초기화 없음.
+- 용융 강타는 TargetRangeType.MeleePhysical, 도발 우선 및 기존 전열/후열 대상 규칙. 방어 무시/무조건 후열 관통 없음.
+- Boss BaseExperience140에 기존 레벨 차 배율을 적용한다. Quest EXP100/Talent80과 전투 Talent40은 별개이며 각각1회.
+- Field11 신규 구현은 기존 저장 Party/Formation을 유지하며 불필요한 일반 몬스터0. Overlay는 기본 프레임과 동기화하고14~15 소거를 유지한다.
+
+정식 Scene/Quest/Boss/Overlay/VFX/BGM을 구현했다. v1~v3 검사 이력은 보존하며 실제 검증 범위와 미검증 사항은 최종 QA 문서를 따른다.
 
 ## 기본 계약과 서사 경계
 
@@ -28,7 +39,7 @@ Main19 `BurningPulse_DistantFlameSilhouette.png`의 체격·어깨 너비·준�
 | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- | --- | --- |
 | 15 | 1200 | 30 | 10 | 140 | 40 | true | 불가 | 불가 | 없음 |
 
-Boss 전투 보상 EXP140/Talent40과 Quest 완료 EXP100/Talent80은 별개로 각각 한 번만 지급한다. 도망·패배에 전투 보상0, 완료 전 Quest 보상0, 중복 승리/완료 지급0. 특수 장비·세계관 핵심 Item을 추가하지 않는다. 현재 EXP에는 레벨 차이 배율이 있으므로 140은 기존 데이터상 기본 EXP에 대응한다. 최종 지급을 항상140으로 보장할지 여부는 기존 공용 규칙과의 경계로 QA에 기록하며 임의 변경하지 않는다.
+Boss 전투 보상 EXP140/Talent40과 Quest 완료 EXP100/Talent80은 별개로 각각 한 번만 지급한다. 도망·패배에 전투 보상0, 완료 전 Quest 보상0, 중복 승리/완료 지급0. 특수 장비·세계관 핵심 Item을 추가하지 않는다. 현재 EXP에는 레벨 차이 배율이 있으므로 140은 기존 데이터상 기본 EXP에 대응한다. 사용자 승인으로 BaseExperience140에 기존 레벨 차 배율을 적용한다. Lv15 동레벨140, 회색0 등 기존 배율을 유지한다.
 
 ## 전투 철학과 Phase
 
@@ -40,7 +51,7 @@ Phase1은 HP50% 초과（표현상 100~51%）, Phase2는 50% 이하. **HP600 이
 
 > <지문> 열맥 거신의 몸체가 갈라지며 안쪽의 열핵이 드러납니다.
 
-상태 표시 후보는 「열핵 폭주」/Core Frenzy다. Phase 경계에서 이미 예고한 행동을 어떻게 이어가고 Phase2 순환 어느 지점에 진입할지는 현재 요청만으로 확정하지 않는다. 예고를 거짓으로 만들거나 Queue/상태를 초기화하지 않는 구현 전 계약이 필요하다. QA의 미결 항목을 따른다.
+상태 표시는 「열핵 폭주」/Phase2다. HP600 경계에서 기존 응축 파동 예고를 보존하고 다음 자기 행동에 원래 파동을 먼저 실행한 뒤 Phase2 열압 주입부터 순환한다. 예고가 없으면 다음 자기 행동부터 열압 주입이다. 추가 턴·Queue·상태 초기화는 없다.
 
 ## Phase1 행동 순환
 
@@ -63,7 +74,7 @@ Phase1은 HP50% 초과（표현상 100~51%）, Phase2는 50% 이하. **HP600 이
 | 열핵 분출 / Core Eruption | 생존 아군 전체60% | 각 대상 직접 피해 처리 후 살아남은 아군마다 Overheat+1; Burn 없음; Taunt 무관 |
 | 열파 / Heat Wave | 생존 아군 전체55% | Overheat/Burn 없음; Taunt 무관 |
 
-모든 직접 피해는 기존 올림·최소1·주는 피해/받는 피해 규칙과 Guard·철벽·가이아 웰·수호의 맹세·Path/Beast 직접 피해 경로를 사용한다. 광역은 각 생존 대상을 한 번씩 처리한다. 단일 용융 강타의 사거리/물리·마법 분류는 요청에 없으므로 새 분류를 임의 확정하지 않는다. 열압 주입은 감시자 선례의 전열+후열 선택과 Taunt 우선 구조를 재사용한다.
+모든 직접 피해는 기존 올림·최소1·주는 피해/받는 피해 규칙과 Guard·철벽·가이아 웰·수호의 맹세·Path/Beast 직접 피해 경로를 사용한다. 광역은 각 생존 대상을 한 번씩 처리한다. 단일 용융 강타는 승인된 MeleePhysical로, 도발 우선과 기존 전열 보호·빈 전열의 후열 선택 규칙을 적용한다. 방어 무시와 무조건 후열 관통은 없다. 열압 주입은 감시자 선례의 전열+후열 선택과 Taunt 우선 구조를 재사용한다.
 
 ## 기존 상태 계약 유지
 
@@ -92,7 +103,7 @@ Phase1은 HP50% 초과（표현상 100~51%）, Phase2는 50% 이하. **HP600 이
 
 ## 정식 Dialogue와 TTS
 
-아래 본문은 [Manifest](../00_프로젝트/Main20_TTS_Manifest.csv)의 Stable ID와 정확히 대응한다. 세린5개 companion_serin/Schedar, Player2개와 지문1개 무음. **TTS_PENDING5 / NOT_EXPECTED3 / 전체8**, API0·생성0·Unity 연결0. 기존 Main18/19 상태는 변경하지 않는다.
+아래 본문은 [Manifest](../00_프로젝트/Main20_TTS_Manifest.csv)의 Stable ID와 정확히 대응한다. 세린5개 companion_serin/Schedar, Player2개와 지문1개 무음. **TTS_PENDING5 / NOT_EXPECTED3 / 전체8**, API0·신규 WAV 생성0·음성 Import0·텍스트/Stable ID8 연결. 기존 Main18/19 상태는 변경하지 않는다.
 
 | 위치 | Dialogue ID | 화자 | 본문（↵는 실제 줄바꿈） |
 | --- | --- | --- | --- |

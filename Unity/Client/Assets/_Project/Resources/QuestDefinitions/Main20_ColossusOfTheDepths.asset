@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: Main20_ColossusOfTheDepths
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: main_20_colossus_of_the_depths
+  displayName: "\uC2EC\uBD80\uC758 \uAC70\uC2E0"
+  description: "\uC5F4\uB9E5 \uC2EC\uBD80\uC758 \uAC70\uC2E0\uC744 \uC4F0\uB7EC\uB728\uB9AC\uACE0
+    \uB0A8\uC740 \uC9C4\uB3D9\uACFC \uC644\uD654\uB41C \uC5F4\uAE30\uB97C \uD655\uC778\uD55C\uB2E4."
+  questType: 0
+  objectives:
+  - objectiveId: enter_deep_core
+    description: "\uC5F4\uB9E5 \uC2EC\uBD80\uB85C \uB4E4\uC5B4\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field11_main20_entry
+    requiredCount: 1
+  - objectiveId: inspect_core_rift
+    description: "\uC2EC\uBD80\uC758 \uAC70\uB300\uD55C \uADE0\uC5F4\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field11_main20_core_rift
+    requiredCount: 1
+  - objectiveId: follow_colossus_trace
+    description: "\uAC70\uC2E0\uC758 \uD754\uC801\uC744 \uB530\uB77C\uAC00\uC138\uC694."
+    objectiveType: 1
+    targetId: field11_main20_trace
+    requiredCount: 1
+  - objectiveId: reach_colossus_arena
+    description: "\uC2EC\uBD80\uC758 \uC5F4\uB9B0 \uC9C0\uB300\uB85C \uC774\uB3D9\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field11_main20_arena
+    requiredCount: 1
+  - objectiveId: confront_veinfire_colossus
+    description: "\uC5F4\uB9E5 \uAC70\uC2E0\uC744 \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field11_main20_confront
+    requiredCount: 1
+  - objectiveId: defeat_veinfire_colossus
+    description: "\uC5F4\uB9E5 \uAC70\uC2E0\uC744 \uC4F0\uB7EC\uB728\uB9AC\uC138\uC694."
+    objectiveType: 2
+    targetId: field11_main20_veinfire_colossus
+    requiredCount: 1
+  - objectiveId: inspect_collapsed_core
+    description: "\uBB34\uB108\uC9C4 \uAC70\uC2E0\uC758 \uD754\uC801\uC744 \uC870\uC0AC\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field11_main20_collapsed_core
+    requiredCount: 1
+  - objectiveId: confirm_heat_recession
+    description: "\uC8FC\uBCC0 \uC5F4\uAE30\uC758 \uBCC0\uD654\uB97C \uD655\uC778\uD558\uC138\uC694."
+    objectiveType: 3
+    targetId: field11_main20_heat_recession
+    requiredCount: 1
+  - objectiveId: return_from_deep_core
+    description: "\uC11C\uBD80\uB85C \uB3CC\uC544\uAC08 \uAE38\uC744 \uD655\uBCF4\uD558\uC138\uC694."
+    objectiveType: 1
+    targetId: field11_main20_return
+    requiredCount: 1
+  reward:
+    Experience: 100
+    Currency: 80
+    Items: []
+  prerequisiteQuestIds:
+  - main_19_burning_pulse
+  nextMainQuestId:
+  startNpcId:
+  turnInNpcId:
+  acceptanceDialogue:
+  insufficientDialogue:
+  completionDialogue:

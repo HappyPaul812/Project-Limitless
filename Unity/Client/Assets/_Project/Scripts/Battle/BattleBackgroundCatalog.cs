@@ -16,6 +16,9 @@ namespace ProjectLimitless.Battle
         {
             // 같은 B2 안에서도 파수꾼은 일반 묘지 배경보다 Boss 전용 배경이 우선입니다.
             if (encounterId == ProjectLimitless.World.MainQuest11DungeonFlow.BossId) return silentWarden;
+            // 별도 신규 배경 그림 없이 승인된 심부 지면을 Main20 전투의 동일 지역 배경으로 사용합니다.
+            if (originScene == ProjectLimitless.World.Chapter2Main20Flow.Field)
+                return Resources.Load<Sprite>("Main20/Environment/DeepCore_Ground_Base");
             foreach (Entry entry in scenes)
                 if (entry.sceneName == originScene) return entry.sprite;
             return null;

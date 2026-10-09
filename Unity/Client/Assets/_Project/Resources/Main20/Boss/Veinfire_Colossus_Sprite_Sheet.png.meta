@@ -1,0 +1,577 @@
+fileFormatVersion: 2
+guid: 228d9ace456c2f64c9304a45ceb981d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7697081621816437583
+    second: Veinfire_Colossus_Sprite_Sheet_0
+  - first:
+      213: 6352614688756654723
+    second: Veinfire_Colossus_Sprite_Sheet_1
+  - first:
+      213: 5824065247832042981
+    second: Veinfire_Colossus_Sprite_Sheet_2
+  - first:
+      213: -2617119391080095642
+    second: Veinfire_Colossus_Sprite_Sheet_3
+  - first:
+      213: 7160584799424536838
+    second: Veinfire_Colossus_Sprite_Sheet_4
+  - first:
+      213: -162083617506717709
+    second: Veinfire_Colossus_Sprite_Sheet_5
+  - first:
+      213: -3576497652544748073
+    second: Veinfire_Colossus_Sprite_Sheet_6
+  - first:
+      213: -9011044652364819176
+    second: Veinfire_Colossus_Sprite_Sheet_7
+  - first:
+      213: -6980827719779944055
+    second: Veinfire_Colossus_Sprite_Sheet_8
+  - first:
+      213: 7913914712205312998
+    second: Veinfire_Colossus_Sprite_Sheet_9
+  - first:
+      213: 1020928496661503208
+    second: Veinfire_Colossus_Sprite_Sheet_10
+  - first:
+      213: -3836795707881603844
+    second: Veinfire_Colossus_Sprite_Sheet_11
+  - first:
+      213: 7390880208412866073
+    second: Veinfire_Colossus_Sprite_Sheet_12
+  - first:
+      213: 7664246916746766662
+    second: Veinfire_Colossus_Sprite_Sheet_13
+  - first:
+      213: 1555909708447934229
+    second: Veinfire_Colossus_Sprite_Sheet_14
+  - first:
+      213: 5978461437346406260
+    second: Veinfire_Colossus_Sprite_Sheet_15
+  - first:
+      213: -8923271108192509986
+    second: Veinfire_Colossus_Sprite_Sheet_16
+  - first:
+      213: 7702378047331880798
+    second: Veinfire_Colossus_Sprite_Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 314
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04cb46e44733944cbde64056b193c48
+      internalID: 950173281
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_01
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0714e788edcf684493c45f8059e23f5
+      internalID: -866974157
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_02
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8352f632fd49168498428fa138b1b333
+      internalID: 1111223209
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_03
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 942
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55cec63fd23e874e8a9ede682e67ee9
+      internalID: -1086632345
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_04
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6d7546ef8a88347bb615657ae58370
+      internalID: -1230902699
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_05
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbf886b7206e9c4da6b430234598ba6
+      internalID: 838504082
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_06
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b81674505516343bceca5e35cd472c
+      internalID: 277420425
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_07
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 628
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bff9ca6ea83134f94612577b4c5fd5
+      internalID: 1534180589
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_08
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57255de8c19e86e45849378e5511edb1
+      internalID: 26386761
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_09
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d58da0f41f24d439888b142f753adf
+      internalID: 1795653352
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b648787236565d44ca2da47a21667967
+      internalID: 1020928496661503208
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 314
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40e8bd5012830043a030841295ac3fb
+      internalID: -3836795707881603844
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b08e5be7d8db5c9488dfe16b6fcecb3e
+      internalID: 7390880208412866073
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799bffd59fab3fa409b44dfba4810386
+      internalID: 7664246916746766662
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87f6cbcdb046514d91ac8daf46a24b5
+      internalID: 1555909708447934229
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Veinfire_Colossus_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 0
+        width: 314
+        height: 314
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba8037413a7b304b9544101dab3d54d
+      internalID: 5978461437346406260
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: a3dbf10f4ed91404bb7769c8ac66a2e8
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Veinfire_Colossus_Sprite_Sheet_0: 7697081621816437583
+      Veinfire_Colossus_Sprite_Sheet_00: 950173281
+      Veinfire_Colossus_Sprite_Sheet_01: -866974157
+      Veinfire_Colossus_Sprite_Sheet_02: 1111223209
+      Veinfire_Colossus_Sprite_Sheet_03: -1086632345
+      Veinfire_Colossus_Sprite_Sheet_04: -1230902699
+      Veinfire_Colossus_Sprite_Sheet_05: 838504082
+      Veinfire_Colossus_Sprite_Sheet_06: 277420425
+      Veinfire_Colossus_Sprite_Sheet_07: 1534180589
+      Veinfire_Colossus_Sprite_Sheet_08: 26386761
+      Veinfire_Colossus_Sprite_Sheet_09: 1795653352
+      Veinfire_Colossus_Sprite_Sheet_1: 6352614688756654723
+      Veinfire_Colossus_Sprite_Sheet_10: 1020928496661503208
+      Veinfire_Colossus_Sprite_Sheet_11: -3836795707881603844
+      Veinfire_Colossus_Sprite_Sheet_12: 7390880208412866073
+      Veinfire_Colossus_Sprite_Sheet_13: 7664246916746766662
+      Veinfire_Colossus_Sprite_Sheet_14: 1555909708447934229
+      Veinfire_Colossus_Sprite_Sheet_15: 5978461437346406260
+      Veinfire_Colossus_Sprite_Sheet_16: -8923271108192509986
+      Veinfire_Colossus_Sprite_Sheet_17: 7702378047331880798
+      Veinfire_Colossus_Sprite_Sheet_2: 5824065247832042981
+      Veinfire_Colossus_Sprite_Sheet_3: -2617119391080095642
+      Veinfire_Colossus_Sprite_Sheet_4: 7160584799424536838
+      Veinfire_Colossus_Sprite_Sheet_5: -162083617506717709
+      Veinfire_Colossus_Sprite_Sheet_6: -3576497652544748073
+      Veinfire_Colossus_Sprite_Sheet_7: -9011044652364819176
+      Veinfire_Colossus_Sprite_Sheet_8: -6980827719779944055
+      Veinfire_Colossus_Sprite_Sheet_9: 7913914712205312998
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

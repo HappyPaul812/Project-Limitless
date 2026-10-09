@@ -65,6 +65,8 @@ namespace ProjectLimitless.Battle
         public FormationSlot Slot { get; }
         public int MaxHp { get; }
         public int CurrentHp { get; private set; }
+        // 피해 후 HP 경계를 즉시 관측할 콘텐츠가 구독합니다. 피해/방어/턴 계산에는 관여하지 않습니다.
+        public event Action HpChanged;
         public int Attack { get; }
         public int Agility { get; }
         public int ActionPriority { get; }
@@ -108,6 +110,7 @@ namespace ProjectLimitless.Battle
             int damage = Math.Max(1, rawDamage);
             if (applyDefending && IsDefending) damage = Math.Max(1, (int)Math.Ceiling(damage * .5f));
             CurrentHp = Math.Max(0, CurrentHp - damage);
+            HpChanged?.Invoke();
             return damage;
         }
 

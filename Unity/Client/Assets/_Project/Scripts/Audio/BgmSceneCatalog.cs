@@ -19,6 +19,7 @@ namespace ProjectLimitless.Audio
         [SerializeField] private AudioClip chapter1BattleClip;
         [SerializeField] private AudioClip chapter2BattleClip;
         [SerializeField] private AudioClip silentWardenClip;
+        [SerializeField] private AudioClip veinfireColossusClip;
         [SerializeField] private AudioClip westernIntroductionClip;
         [SerializeField] private AudioClip deepWestClip;
         public AudioClip WesternIntroductionClip => westernIntroductionClip;
@@ -29,6 +30,7 @@ namespace ProjectLimitless.Audio
         public AudioClip FindBattle(string originScene, string encounterId, bool isBoss)
         {
             if (encounterId == ProjectLimitless.World.MainQuest11DungeonFlow.BossId) return silentWardenClip;
+            if (encounterId == ProjectLimitless.World.Chapter2Main20Flow.EncounterId) return veinfireColossusClip;
             if (isBoss) return null;
             switch (originScene)
             {

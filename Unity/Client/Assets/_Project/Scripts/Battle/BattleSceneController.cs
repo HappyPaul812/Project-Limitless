@@ -16,7 +16,7 @@ namespace ProjectLimitless.Battle
     /// Battle Scene의 사이드뷰 전장과 남색·금색 HUD를 구성합니다.
     /// 전투 규칙은 BattleCore에 그대로 두고 이 클래스는 Sprite, HUD, 대상 강조와 명령 입력만 담당합니다.
     /// </summary>
-    public sealed class BattleSceneController : MonoBehaviour
+    public sealed partial class BattleSceneController : MonoBehaviour
     {
         private sealed class CombatantView
         {
@@ -67,6 +67,7 @@ namespace ProjectLimitless.Battle
         private readonly BattleMonsterAbilityRuntime monsterAbilities = new BattleMonsterAbilityRuntime();
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
         private readonly BattleChapter2MonsterRuntime chapter2Monsters = new BattleChapter2MonsterRuntime();
+        private readonly BattleMain20BossRuntime main20Boss = new BattleMain20BossRuntime();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
@@ -307,6 +308,10 @@ namespace ProjectLimitless.Battle
                     CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth), playerAttack, agility,
                     graveWight, monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_shade_bat"),
                     echo, guardian, warden, BattleEncounterContext.Spawn.SpawnId);
+            else if (BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter2Main20Flow.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateMain20(playerName, GameSessionData.SelectedJobId,
+                    GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    playerAttack, agility, BattleEncounterContext.Monster);
             // Main19는 지정 ID만 두 원본 종을 조합합니다. 일반 조우는 단독이며 이전 Field와 저장 파티는 보호합니다.
             else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main19Flow.Field)
                 setup = BattlePrototypeEncounterFactory.CreateField10(
@@ -379,7 +384,9 @@ namespace ProjectLimitless.Battle
                 }
                 (participant.Side == BattleSide.Allies ? allies : enemies).Place(combatant);
                 participantSetups.Add(combatant, participant);
-                if (participant.IsBoss) dungeonMonsters.SetBoss(combatant);
+                if (participant.MonsterDefinition?.MonsterId == BattleMain20BossRuntime.MonsterId)
+                    main20Boss.Bind(combatant);
+                else if (participant.IsBoss) dungeonMonsters.SetBoss(combatant);
                 if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
                     combatantJobs.Add(combatant, participantJob);
             }
@@ -556,6 +563,18 @@ namespace ProjectLimitless.Battle
             // 공용 시트 재생기는 Configure 시점에 첫 Idle 프레임을 넣으므로, 최초 지역 변수보다
             // 실제 Image에 표시된 프레임을 복귀 기준으로 보관해야 Attack 뒤 그림이 비지 않습니다.
             CombatantView view = new CombatantView { HitArea = hitArea, ActionRoot = hitObject.GetComponent<RectTransform>(), SpriteImage = spriteImage, IdleSprite = spriteImage.sprite, GroundMarker = marker, TargetArrow = targetArrow, TurnMarker = turnMarker, UsesPlaceholderVisual = placeholder, MonsterAnimation = monsterAnimation, CharacterAnimation = characterAnimation, LastHp = combatant.CurrentHp };
+            if (combatant == main20Boss.Boss && monsterAnimation != null)
+            {
+                var overlay = spriteImage.gameObject.AddComponent<Main20PhaseOverlay>();
+                overlay.Configure(monsterAnimation, spriteImage);
+                main20Boss.PhaseChanged += () => {
+                    overlay.PhaseTwo = true;
+                    // 피해 메시지가 이어져도 전환 지문은 Boss HUD에 남습니다. 턴/입력/Queue를 멈추지 않습니다.
+                    main20PhaseDirection = ProjectLimitless.World.Main20DialogueCatalog.PhaseDirection.Message;
+                    RefreshCombatantViews(null);
+                    messageText.text = ProjectLimitless.World.Main20DialogueCatalog.PhaseDirection.Message;
+                };
+            }
             return view;
         }
 
@@ -1699,6 +1718,9 @@ namespace ProjectLimitless.Battle
             Formation opponents = actor.Side == BattleSide.Allies ? enemies : allies;
             IReadOnlyList<Combatant> targets = TargetResolver.ResolveHostileTargets(
                 actor, opponents, TargetRangeType.Magic);
+            // Main20 계약: 야수 동료 습격은 거신을 대상으로 삼지 않습니다. 다른 전투의 대상 규칙은 유지합니다.
+            targets = targets.Where(target => target != main20Boss.Boss).ToArray();
+            if (targets.Count == 0) { messageText.text = "열맥 거신에게는 야수 동료의 습격을 사용할 수 없습니다."; return; }
             choosingSkill = false;
             skillMenuPanel.gameObject.SetActive(false);
             BeginTargetSelection(targets, target => PlayCompanionAssault(actor, target, skill),
@@ -1782,6 +1804,8 @@ namespace ProjectLimitless.Battle
         /// </summary>
         private void PlayCompanionAssault(Combatant actor, Combatant target, BattleSkillDefinition skill)
         {
+            // UI 선택을 우회하는 호출도 피해/쿨타임/턴 소비 전에 동일한 Boss 제한을 확인합니다.
+            if (main20Boss.Boss != null && target == main20Boss.Boss) { messageText.text = "열맥 거신에게는 야수 동료의 습격을 사용할 수 없습니다."; return; }
             if (battleEnded || actionPlaying || actor == null || !actor.IsAlive || target == null || !target.IsAlive || target.Side == actor.Side)
             {
                 ShowSkillMenu();
@@ -2338,6 +2362,8 @@ namespace ProjectLimitless.Battle
         private IEnumerator EnemyAction()
         {
             yield return new WaitForSeconds(.55f);
+            if (currentActor == main20Boss.Boss)
+            { yield return PlayMain20Action(currentActor, main20Boss.TakeAction()); yield break; }
             if (participantSetups.TryGetValue(currentActor, out BattleParticipantSetup chapter2Setup)
                 && chapter2Setup.MonsterDefinition != null
                 && TryPlayChapter2MonsterAction(currentActor, chapter2Setup.MonsterDefinition))
@@ -3025,7 +3051,7 @@ namespace ProjectLimitless.Battle
                 }
                 if (view.MonsterAnimation != null)
                 {
-                    if (!combatant.IsAlive) view.MonsterAnimation.PlayDefeat();
+                    if (!combatant.IsAlive && view.LastHp > 0) view.MonsterAnimation.PlayDefeat();
                     else if (combatant.CurrentHp < view.LastHp) view.MonsterAnimation.PlayHit();
                 }
                 view.LastHp = combatant.CurrentHp;
@@ -3057,6 +3083,13 @@ namespace ProjectLimitless.Battle
                     bossTelegraphText.text += (bossTelegraphText.text.Length > 0 ? "\n" : "") +
                         $"봉인의 장막 — {protectedNames}: 직접 피해 30% 감소";
                 bossTelegraphText.gameObject.SetActive(!string.IsNullOrEmpty(bossTelegraphText.text));
+                if (main20Boss.Boss != null && main20Boss.Boss.IsAlive)
+                {
+                    bossTelegraphText.rectTransform.sizeDelta = new Vector2(930, 85);
+                    bossTelegraphText.text = (main20Boss.PhaseTwo ? "열핵 폭주 / Phase2\n" : "Phase1\n") + main20Boss.Telegraph
+                        + (string.IsNullOrEmpty(main20PhaseDirection) ? string.Empty : "\n" + main20PhaseDirection);
+                    bossTelegraphText.gameObject.SetActive(true);
+                }
             }
             RefreshHpRowHighlights(focusedCombatant ?? hoveredCombatant);
             if (!actionPlaying && detailCombatant != null) ShowDetailPopup(detailCombatant);

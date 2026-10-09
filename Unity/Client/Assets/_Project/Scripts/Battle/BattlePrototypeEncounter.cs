@@ -222,6 +222,18 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies,foes.ToArray());
         }
 
+        /// <summary>정식 저장 파티를 유지하며 거신 한 마리만 Boss로 생성합니다. 임시 동행/일반 전리품은 추가하지 않습니다.</summary>
+        public static BattleEncounterSetup CreateMain20(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition boss)
+        {
+            var party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility, null, null, boss);
+            return new BattleEncounterSetup(party.Allies, new[] {
+                new BattleParticipantSetup(boss.MonsterId,boss.DisplayName,string.Empty,BattleSide.Enemies,
+                    new FormationSlot(FormationRow.Front,1),boss.MaxHp,SlimeBaseAttack*boss.BattleAttackPercent/100,
+                    boss.BattleAgility,0,TargetRangeType.MeleePhysical,false,BattleParticipantVisualType.EncounterMonster,
+                    monsterDefinition:boss,isBoss:true) });
+        }
+
         public static BattleEncounterSetup CreateField03MixedValidation(string playerName,string playerJobId,string playerPathId,
             int playerMaxHp,int playerAttack,int playerAgility,MonsterDefinition snake,MonsterDefinition beetle,MonsterDefinition bat)
         {
