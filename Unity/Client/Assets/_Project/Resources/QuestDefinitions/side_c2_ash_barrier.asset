@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: side_c2_ash_barrier
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: side_c2_ash_barrier
+  displayName: "\uC7AC\uB97C \uB9C9\uB294 \uB367\uB310"
+  description: "\uBB38\uD2C8\uC73C\uB85C \uB0A0\uC544\uB4DC\uB294 \uC7AC\uB97C \uB9C9\uC744
+    \uB367\uB310\uC774 \uD544\uC694\uD569\uB2C8\uB2E4. \uC1A1\uACF3\uB2C8\uB294 \uACE0\uC815
+    \uD540\uC73C\uB85C, \uAE43\uD138\uC740 \uD2C8\uC744 \uCC44\uC6B0\uB294 \uB370
+    \uC4F0\uB824 \uD569\uB2C8\uB2E4."
+  questType: 1
+  objectives:
+  - objectiveId: collect_material_soot_hound_fang
+    description: "\uADF8\uC744\uC74C \uC1A1\uACF3\uB2C8 \uC218\uC9D1"
+    objectiveType: 5
+    targetId: material_soot_hound_fang
+    requiredCount: 2
+  - objectiveId: collect_material_heatwind_hawk_feather
+    description: "\uC5F4\uD48D \uAE43\uD138 \uC218\uC9D1"
+    objectiveType: 5
+    targetId: material_heatwind_hawk_feather
+    requiredCount: 1
+  reward:
+    Experience: 55
+    Currency: 20
+    Items: []
+  prerequisiteQuestIds:
+  - main_13_drying_land
+  nextMainQuestId:
+  startNpcId: arbel-leon
+  turnInNpcId: arbel-leon
+  acceptanceDialogue: "\uBB38\uD2C8\uC73C\uB85C \uB0A0\uC544\uB4DC\uB294 \uC7AC\uB97C
+    \uB9C9\uC744 \uB367\uB310\uC774 \uD544\uC694\uD569\uB2C8\uB2E4. \uC1A1\uACF3\uB2C8\uB294
+    \uACE0\uC815 \uD540\uC73C\uB85C, \uAE43\uD138\uC740 \uD2C8\uC744 \uCC44\uC6B0\uB294
+    \uB370 \uC4F0\uB824 \uD569\uB2C8\uB2E4."
+  insufficientDialogue: "\uC7AC\uB8CC\uAC00 \uC544\uC9C1 \uBD80\uC871\uD569\uB2C8\uB2E4.
+    \uD544\uC694\uD55C \uC218\uB7C9\uC744 \uD655\uC778\uD558\uACE0 \uCC9C\uCC9C\uD788
+    \uBAA8\uC544 \uC624\uC138\uC694."
+  completionDialogue: "\uC8FC\uBBFC\uB4E4\uC774 \uC7AC\uB97C \uB35C \uB9DE\uAC8C
+    \uB418\uACA0\uAD70\uC694. \uD544\uC694\uD55C \uACF3\uBD80\uD130 \uB367\uB300\uACA0\uC2B5\uB2C8\uB2E4."

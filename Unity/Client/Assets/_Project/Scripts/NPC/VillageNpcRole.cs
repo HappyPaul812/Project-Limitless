@@ -48,6 +48,13 @@ namespace ProjectLimitless.NPC
         /// <summary>상호작용은 표시 이름이 아니라 직렬화된 역할로 분기합니다.</summary>
         public void Interact(NpcController npc)
         {
+            // 같은 NPC의 메인 대사와 여러 서브 의뢰를 선택창으로 나눕니다. 기존 업무 경로는 그대로 호출합니다.
+            if (SideQuestNpcPresenter.TryOpen(npcId, npc, () => InteractUsual(npc))) return;
+            InteractUsual(npc);
+        }
+
+        private void InteractUsual(NpcController npc)
+        {
             if (Chapter2Main18Flow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest05ReturnFlow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;

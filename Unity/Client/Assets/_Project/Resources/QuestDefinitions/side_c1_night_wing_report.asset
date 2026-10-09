@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: side_c1_night_wing_report
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: side_c1_night_wing_report
+  displayName: "\uBC24\uC744 \uB098\uB294 \uADF8\uB9BC\uC790"
+  description: "\uBC24\uC5D0 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uC704\uD611\uC744 \uAE30\uB85D\uD558\uACE0
+    \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uB298\uBC15\uC950\uC758 \uB0A0\uAC1C\uB9C9\uC744
+    \uC0B4\uD3B4\uBCF4\uBA74 \uBC29\uBE44\uC5D0 \uB3C4\uC6C0\uC774 \uB418\uACA0\uC5B4\uC694."
+  questType: 1
+  objectives:
+  - objectiveId: collect_material_shade_bat_wing
+    description: "\uADF8\uB298\uBC15\uC950\uC758 \uB0A0\uAC1C\uB9C9 \uC218\uC9D1"
+    objectiveType: 5
+    targetId: material_shade_bat_wing
+    requiredCount: 1
+  reward:
+    Experience: 35
+    Currency: 14
+    Items: []
+  prerequisiteQuestIds:
+  - main_08_what_they_avoid
+  nextMainQuestId:
+  startNpcId: starter-village-main-guide
+  turnInNpcId: starter-village-main-guide
+  acceptanceDialogue: "\uBC24\uC5D0 \uB0A0\uC544\uB2E4\uB2C8\uB294 \uC704\uD611\uC744
+    \uAE30\uB85D\uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4. \uADF8\uB298\uBC15\uC950\uC758
+    \uB0A0\uAC1C\uB9C9\uC744 \uC0B4\uD3B4\uBCF4\uBA74 \uBC29\uBE44\uC5D0 \uB3C4\uC6C0\uC774
+    \uB418\uACA0\uC5B4\uC694."
+  insufficientDialogue: "\uC7AC\uB8CC\uAC00 \uC544\uC9C1 \uBD80\uC871\uD569\uB2C8\uB2E4.
+    \uD544\uC694\uD55C \uC218\uB7C9\uC744 \uD655\uC778\uD558\uACE0 \uCC9C\uCC9C\uD788
+    \uBAA8\uC544 \uC624\uC138\uC694."
+  completionDialogue: "\uC9C1\uC811 \uD655\uC778\uD560 \uC790\uB8CC\uAC00 \uC0DD\uACBC\uAD70\uC694.
+    \uC8FC\uBBFC\uB4E4\uC5D0\uAC8C \uC8FC\uC758\uD560 \uC810\uC744 \uC54C\uB9AC\uACA0\uC2B5\uB2C8\uB2E4."

@@ -48,7 +48,8 @@ namespace ProjectLimitless.Player
             // 저장된 추적 Quest의 현재 목표 ID를 Scene의 실제 위치 등록부에 연결합니다.
             // Scene 밖 목표처럼 위치가 없으면 임의 좌표를 가리키지 않고 안내를 숨깁니다.
             QuestRuntimeState tracked = QuestService.GetTrackedQuest();
-            string id = tracked?.CurrentObjective?.TargetId;
+            string id = tracked?.Definition.IsItemDelivery == true && QuestService.CanDeliverItems(tracked.Definition)
+                ? tracked.Definition.TurnInNpcId : tracked?.CurrentObjective?.TargetId;
             hasTarget = QuestNavigationTargetRegistry.TryGet(id, out target);
             if (group != null) group.alpha = hasTarget && !WorldModalState.IsOpen ? 1f : 0f;
         }

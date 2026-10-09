@@ -76,7 +76,7 @@ namespace ProjectLimitless.Player
             float toastWidth = Mathf.Min(560f, Mathf.Max(200f, canvasWidth - 384f));
             float centeredLeft = (canvasWidth - toastWidth) * 0.5f;
             float toastLeft = Mathf.Max(centeredLeft, 360f);
-            root.sizeDelta = new Vector2(toastWidth, 88f);
+            root.sizeDelta = new Vector2(toastWidth, questText != null && questText.text.Count(c => c == '\n') > 1 ? 158f : 88f);
             root.anchoredPosition = new Vector2(toastLeft - centeredLeft, -24f);
         }
 
@@ -95,12 +95,14 @@ namespace ProjectLimitless.Player
             else
             {
                 QuestRuntimeState started = current.FirstOrDefault(x => !knownActive.Contains(x.Definition.QuestId));
-                if (started != null) ShowToast($"[{TypeLabel(started.Definition)} 퀘스트 시작]\n{started.Definition.DisplayName}");
+                if (started != null) ShowToast($"[{TypeLabel(started.Definition)} 퀘스트 시작]\n{started.Definition.DisplayName}" + (started.Definition.IsItemDelivery ? "\n" + QuestService.BuildItemProgress(started) : ""));
                 else
                 {
+                    QuestRuntimeState tracked = QuestService.GetTrackedQuest();
+                    if (tracked?.Definition.IsItemDelivery == true) ShowToast(QuestService.BuildItemProgress(tracked));
                     QuestRuntimeState changed = current.FirstOrDefault(x => knownObjectives.TryGetValue(x.Definition.QuestId, out int index)
                         && index != x.CurrentObjectiveIndex);
-                    if (changed?.CurrentObjective != null) ShowToast($"[목표 갱신]\n{changed.CurrentObjective.Description}");
+                    if (changed?.CurrentObjective != null) ShowToast(changed.Definition.IsItemDelivery ? QuestService.BuildItemProgress(changed) : $"[목표 갱신]\n{changed.CurrentObjective.Description}");
                 }
             }
 

@@ -245,6 +245,8 @@ namespace ProjectLimitless.UI
         }
 
         /// <summary>대화 내용을 유지한 채 패널을 화면에서 숨깁니다.</summary>
+        public void BlockInteractionThisFrame() => inputBlockedFrame = Time.frameCount;
+
         public void Hide()
         {
             // 마지막 Next 뒤 같은 A 입력이 새 NPC 상호작용으로 다시 해석되는 것을 막습니다.

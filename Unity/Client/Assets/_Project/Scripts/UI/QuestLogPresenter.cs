@@ -57,7 +57,8 @@ namespace ProjectLimitless.UI
         private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             if (!scene.name.StartsWith("World_", StringComparison.Ordinal)
-                && !scene.name.StartsWith("Field_", StringComparison.Ordinal)) return;
+                && !scene.name.StartsWith("Field_", StringComparison.Ordinal)
+                && scene.name != "Arbel") return;
             if (Instance == null) new GameObject("QuestLogSystem").AddComponent<QuestLogPresenter>();
         }
 
@@ -290,7 +291,8 @@ namespace ProjectLimitless.UI
             text.AppendLine("설명");
             text.AppendLine(string.IsNullOrWhiteSpace(definition.Description) ? "등록된 설명이 없습니다." : definition.Description);
             text.AppendLine().AppendLine("현재 목표");
-            text.AppendLine(state.CurrentObjective?.Description ?? "완료 보고를 기다리고 있습니다.");
+            text.AppendLine(definition.IsItemDelivery ? QuestService.BuildItemProgress(state)
+                : state.CurrentObjective?.Description ?? "완료 보고를 기다리고 있습니다.");
             text.AppendLine(IsTracked(state) ? "◆ 현재 위치 안내 중" : "[T / 게임패드 Y] 이 퀘스트 추적");
             if (definition.Objectives.Count > 1)
                 text.AppendLine($"진행 단계  {Mathf.Min(state.CurrentObjectiveIndex + 1, definition.Objectives.Count)} / {definition.Objectives.Count}");

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c82de195ab08742b4c2ed83c2494f1, type: 3}
+  m_Name: side_c1_reinforce_gate
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
+  questId: side_c1_reinforce_gate
+  displayName: "\uBC84\uD168 \uC904 \uBC29\uCC45"
+  description: "\uBC29\uCC45\uC758 \uB2F3\uC740 \uBD80\uBD84\uC744 \uBCF4\uAC15\uD574\uC57C
+    \uD569\uB2C8\uB2E4. \uB2E8\uB2E8\uD55C \uC774\uB07C\uAC11\uCDA9 \uB4F1\uAECD\uC9C8
+    \uB450 \uAC1C\uB97C \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4."
+  questType: 1
+  objectives:
+  - objectiveId: collect_material_moss_beetle_shell
+    description: "\uC774\uB07C\uAC11\uCDA9\uC758 \uB4F1\uAECD\uC9C8 \uC218\uC9D1"
+    objectiveType: 5
+    targetId: material_moss_beetle_shell
+    requiredCount: 2
+  reward:
+    Experience: 30
+    Currency: 12
+    Items: []
+  prerequisiteQuestIds:
+  - main_07_deep_tracks
+  nextMainQuestId:
+  startNpcId: starter-village-gate-guard
+  turnInNpcId: starter-village-gate-guard
+  acceptanceDialogue: "\uBC29\uCC45\uC758 \uB2F3\uC740 \uBD80\uBD84\uC744 \uBCF4\uAC15\uD574\uC57C
+    \uD569\uB2C8\uB2E4. \uB2E8\uB2E8\uD55C \uC774\uB07C\uAC11\uCDA9 \uB4F1\uAECD\uC9C8
+    \uB450 \uAC1C\uB97C \uBD80\uD0C1\uB4DC\uB9BD\uB2C8\uB2E4."
+  insufficientDialogue: "\uC7AC\uB8CC\uAC00 \uC544\uC9C1 \uBD80\uC871\uD569\uB2C8\uB2E4.
+    \uD544\uC694\uD55C \uC218\uB7C9\uC744 \uD655\uC778\uD558\uACE0 \uCC9C\uCC9C\uD788
+    \uBAA8\uC544 \uC624\uC138\uC694."
+  completionDialogue: "\uC774 \uC815\uB3C4\uBA74 \uBC29\uCC45\uC774 \uD55C\uB3D9\uC548
+    \uBC84\uD168 \uC8FC\uACA0\uAD70\uC694. \uC218\uACE0\uD558\uC168\uC2B5\uB2C8\uB2E4."
