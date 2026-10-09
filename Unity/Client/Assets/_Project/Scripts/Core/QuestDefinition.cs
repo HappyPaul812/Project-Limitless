@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ProjectLimitless.Core
 {
     public enum QuestType { Main, Side }
-    public enum QuestObjectiveType { TalkToNpc, ReachLocation, DefeatEncounter, Interact, GenericSignal }
+    public enum QuestObjectiveType { TalkToNpc, ReachLocation, DefeatEncounter, Interact, GenericSignal, CollectItem }
 
     /// <summary>한 목표가 기다리는 사건과 화면에 보여 줄 문구를 함께 담는 데이터입니다.</summary>
     [Serializable]
@@ -46,6 +46,10 @@ namespace ProjectLimitless.Core
         [SerializeField] private string nextMainQuestId = string.Empty;
         [SerializeField] private string startNpcId = string.Empty;
         [SerializeField] private string turnInNpcId = string.Empty;
+        // 서브 의뢰 문구는 메인 Story/Voice의 안정적인 대사 ID와 별도로 관리합니다.
+        [TextArea, SerializeField] private string acceptanceDialogue = string.Empty;
+        [TextArea, SerializeField] private string insufficientDialogue = string.Empty;
+        [TextArea, SerializeField] private string completionDialogue = string.Empty;
 
         public string QuestId => questId;
         public string DisplayName => displayName;
@@ -57,6 +61,11 @@ namespace ProjectLimitless.Core
         public string NextMainQuestId => nextMainQuestId;
         public string StartNpcId => startNpcId;
         public string TurnInNpcId => turnInNpcId;
+        public string AcceptanceDialogue => acceptanceDialogue;
+        public string InsufficientDialogue => insufficientDialogue;
+        public string CompletionDialogue => completionDialogue;
+        public bool IsItemDelivery => questType == QuestType.Side && objectives.Length > 0
+            && Array.TrueForAll(objectives, x => x != null && x.ObjectiveType == QuestObjectiveType.CollectItem);
 
 #if UNITY_EDITOR
         public void ConfigureForAudit(string id, string title, QuestType type, QuestObjectiveDefinition[] steps,
@@ -73,6 +82,8 @@ namespace ProjectLimitless.Core
         { startNpcId = questStartNpcId ?? string.Empty; turnInNpcId = questTurnInNpcId ?? string.Empty; }
 
         public void ConfigureDescription(string questDescription) => description = questDescription ?? string.Empty;
+        public void ConfigureSideDialogue(string accept, string insufficient, string thanks)
+        { acceptanceDialogue = accept; insufficientDialogue = insufficient; completionDialogue = thanks; }
 #endif
     }
 }

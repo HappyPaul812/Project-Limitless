@@ -44,13 +44,21 @@ namespace ProjectLimitless.Core
             if (counts != null) Array.Copy(counts, objectiveCounts, Math.Min(counts.Length, objectiveCounts.Length));
         }
         public QuestDefinition Definition { get; }
-        public IReadOnlyList<int> ObjectiveCounts => objectiveCounts;
+        // 보유 재료는 누적 횟수가 아닙니다. 판매·납품·로드 후에도 현재 인벤토리가 정본입니다.
+        public IReadOnlyList<int> ObjectiveCounts => Definition.IsItemDelivery
+            ? Definition.Objectives.Select((x, i) => CountAt(i)).ToArray() : objectiveCounts;
+        private int CountAt(int index)
+        {
+            var objective = Definition.Objectives[index];
+            return objective.ObjectiveType == QuestObjectiveType.CollectItem
+                ? Math.Min(objective.RequiredCount, InventoryService.GetItemCount(objective.TargetId)) : objectiveCounts[index];
+        }
         public int CurrentObjectiveIndex
         {
             get
             {
                 for (int i = 0; i < objectiveCounts.Length; i++)
-                    if (objectiveCounts[i] < Definition.Objectives[i].RequiredCount) return i;
+                    if (CountAt(i) < Definition.Objectives[i].RequiredCount) return i;
                 return objectiveCounts.Length;
             }
         }
@@ -79,6 +87,12 @@ namespace ProjectLimitless.Core
         private static readonly HashSet<string> completed = new HashSet<string>(StringComparer.Ordinal);
         private static string trackedQuestId = string.Empty;
         public static event Action Changed;
+        private static bool delivering;
+        static QuestService() => InventoryService.Changed += () =>
+        {
+            // 납품 중간 상태는 숨기고 전체 확정 후 UI에 알립니다.
+            if (!delivering && ActiveSideQuests.Any(x => x.Definition.IsItemDelivery)) Changed?.Invoke();
+        };
 
         public static IReadOnlyCollection<QuestRuntimeState> ActiveQuests => active.Values;
         public static IEnumerable<QuestRuntimeState> ActiveSideQuests => active.Values.Where(x => x.Definition.QuestType == QuestType.Side);
@@ -101,6 +115,7 @@ namespace ProjectLimitless.Core
             if (definition.QuestType == QuestType.Main && ActiveMainQuest != null) return false;
             active.Add(definition.QuestId, new QuestRuntimeState(definition));
             if (string.IsNullOrEmpty(trackedQuestId) || definition.QuestType == QuestType.Main) trackedQuestId = definition.QuestId;
+            if (definition.QuestType == QuestType.Side && GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
             Changed?.Invoke();
             return true;
         }
@@ -128,11 +143,13 @@ namespace ProjectLimitless.Core
         public static NpcQuestMarkerState GetNpcMarkerState(string npcId)
         {
             if (string.IsNullOrWhiteSpace(npcId)) return NpcQuestMarkerState.None;
-            if (active.Values.Any(x => x.CurrentObjective == null
+            if (active.Values.Any(x => (x.Definition.IsItemDelivery ? CanDeliverItems(x.Definition) : x.CurrentObjective == null)
                 && string.Equals(x.Definition.TurnInNpcId, npcId, StringComparison.Ordinal)))
                 return NpcQuestMarkerState.ReadyToTurnIn;
             if (active.Values.Any(x => x.CurrentObjective?.ObjectiveType == QuestObjectiveType.TalkToNpc
                 && string.Equals(x.CurrentObjective.TargetId, npcId, StringComparison.Ordinal)))
+                return NpcQuestMarkerState.ActiveObjective;
+            if (active.Values.Any(x => x.Definition.IsItemDelivery && x.Definition.TurnInNpcId == npcId))
                 return NpcQuestMarkerState.ActiveObjective;
             if (QuestCatalog.All.Any(x => GetState(x.QuestId) == QuestState.Available
                 && string.Equals(x.StartNpcId, npcId, StringComparison.Ordinal)))
@@ -151,6 +168,8 @@ namespace ProjectLimitless.Core
             if (string.IsNullOrWhiteSpace(targetId)) return;
             foreach (QuestRuntimeState state in active.Values.ToArray())
             {
+                // 재료 의뢰는 일반 대화/전투 알림으로 완료하지 않고 명시적인 납품만 허용합니다.
+                if (state.Definition.IsItemDelivery) continue;
                 if (state.CurrentObjective == null
                     && type == QuestObjectiveType.TalkToNpc
                     && string.Equals(state.Definition.TurnInNpcId, targetId, StringComparison.Ordinal))
@@ -162,6 +181,87 @@ namespace ProjectLimitless.Core
                 if (state.CurrentObjective == null && string.IsNullOrEmpty(state.Definition.TurnInNpcId)) Complete(state);
                 else Changed?.Invoke();
             }
+        }
+
+        /// <summary>동일 아이템을 요구하는 목표도 합산해 서로 같은 재료를 두 번 인정하지 않습니다.</summary>
+        private static Dictionary<string, int> DeliveryRequirements(QuestDefinition definition)
+        {
+            var result = new Dictionary<string, int>(StringComparer.Ordinal);
+            foreach (var objective in definition.Objectives)
+            {
+                result.TryGetValue(objective.TargetId, out int count);
+                result[objective.TargetId] = checked(count + objective.RequiredCount);
+            }
+            return result;
+        }
+
+        public static bool CanDeliverItems(QuestDefinition definition) => definition != null && definition.IsItemDelivery
+            && DeliveryRequirements(definition).All(x => ItemCatalog.TryGet(x.Key, out _) && InventoryService.HasItem(x.Key, x.Value));
+
+        /// <summary>
+        /// 납품 한 번의 재료 소비·보상·완료 기록을 동기 확정합니다. 먼저 전체 조건을 검사하고
+        /// 처리 중 재진입을 막아 같은 클릭/대화 알림이 재료와 보상을 중복 처리하지 못하게 합니다.
+        /// 메인 퀘스트의 Complete 경로는 그대로 유지합니다.
+        /// </summary>
+        public static bool TryDeliverSideQuest(string questId, string npcId)
+        {
+            if (delivering || !active.TryGetValue(questId ?? string.Empty, out QuestRuntimeState state)
+                || !state.Definition.IsItemDelivery || state.Definition.TurnInNpcId != npcId
+                || !CanDeliverItems(state.Definition)) return false;
+            var reward = state.Definition.Reward;
+            if (reward == null || reward.Experience < 0 || reward.Currency < 0
+                || EconomyService.GetCurrency() > int.MaxValue - reward.Currency) return false;
+            var requirements = DeliveryRequirements(state.Definition);
+            // TryApply는 동일 보상ID를 각각 검사합니다. 서브 납품은 먼저 합산하여 부분 지급 가능성도 차단합니다.
+            var rewardCounts = new Dictionary<string, long>(StringComparer.Ordinal);
+            foreach (var item in reward.Items ?? Array.Empty<ItemReward>())
+            {
+                if (item == null || item.Count <= 0 || !ItemCatalog.TryGet(item.ItemId, out _)) return false;
+                rewardCounts.TryGetValue(item.ItemId, out long count); rewardCounts[item.ItemId] = count + item.Count;
+            }
+            foreach (var pair in rewardCounts)
+            {
+                ItemCatalog.TryGet(pair.Key, out ItemDefinition item);
+                requirements.TryGetValue(pair.Key, out int removed);
+                if ((long)InventoryService.GetItemCount(pair.Key) - removed + pair.Value > item.MaxStack) return false;
+            }
+            InventoryEntry[] before = InventoryService.ExportSaveData();
+            delivering = true;
+            try
+            {
+                foreach (var pair in requirements)
+                    if (!InventoryService.TryRemoveItem(pair.Key, pair.Value)) { InventoryService.ImportSaveData(before); return false; }
+                int previousLevel = GameSessionData.Level;
+                if (!reward.TryApply()) { InventoryService.ImportSaveData(before); return false; }
+                active.Remove(questId); completed.Add(questId);
+                if (trackedQuestId == questId) trackedQuestId = ActiveMainQuest?.Definition.QuestId ?? string.Empty;
+                if (GameSessionData.Level > previousLevel)
+                {
+                    CharacterGrowthStats growth = CharacterGrowthCalculator.Calculate(GameSessionData.SelectedJobId, GameSessionData.Level);
+                    int hp = CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth);
+                    if (GameSessionData.SelectedJobId == "sharpshooter") hp = BeastCompanionService.GetEffectiveMaxHp(hp,
+                        BeastCompanionService.GetEquippedId(PartyResourceService.PlayerCharacterId));
+                    PartyResourceService.HealFully(PartyResourceService.PlayerCharacterId, hp,
+                        CharacterGrowthCalculator.CalculateMaxMp(GameSessionData.SelectedJobId, growth));
+                }
+                if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
+            }
+            finally { delivering = false; }
+            Changed?.Invoke();
+            return true;
+        }
+
+        /// <summary>NPC/QuestLog/HUD가 동일한 수량과 납품 안내 문구를 사용합니다.</summary>
+        public static string BuildItemProgress(QuestRuntimeState state)
+        {
+            if (state == null || !state.Definition.IsItemDelivery) return string.Empty;
+            var lines = state.Definition.Objectives.Select(x =>
+            {
+                ItemCatalog.TryGet(x.TargetId, out ItemDefinition item);
+                return $"{item?.DisplayName ?? x.TargetId} {Math.Min(x.RequiredCount, InventoryService.GetItemCount(x.TargetId))}/{x.RequiredCount}";
+            });
+            return string.Join("\n", lines) + (CanDeliverItems(state.Definition)
+                ? "\n필요한 재료를 모두 모았습니다. 의뢰한 NPC에게 전달하세요." : "\n재료를 모아 의뢰한 NPC에게 전달하세요.");
         }
 
         private static void Complete(QuestRuntimeState state)

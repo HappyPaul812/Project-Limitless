@@ -15,6 +15,7 @@ namespace ProjectLimitless.Core
     /// <summary>ItemDefinition 전체 대신 stable ItemId와 수량만 저장해 이름·설명 변경과 JSON을 분리합니다.</summary>
     public static class InventoryService
     {
+        public static event Action Changed;
         private static readonly Dictionary<string, int> Counts = new Dictionary<string, int>(StringComparer.Ordinal);
         public static int GetItemCount(string itemId) => itemId != null && Counts.TryGetValue(itemId, out int count) ? count : 0;
         public static bool HasItem(string itemId, int amount) => amount >= 0 && GetItemCount(itemId) >= amount;
@@ -35,6 +36,7 @@ namespace ProjectLimitless.Core
         {
             if (!CanAddItem(itemId, amount)) return false;
             Counts[itemId] = GetItemCount(itemId) + amount;
+            Changed?.Invoke();
             return true;
         }
         public static bool TryRemoveItem(string itemId, int amount)
@@ -42,18 +44,20 @@ namespace ProjectLimitless.Core
             if (amount <= 0 || !HasItem(itemId, amount)) return false;
             int remaining = Counts[itemId] - amount;
             if (remaining == 0) Counts.Remove(itemId); else Counts[itemId] = remaining;
+            Changed?.Invoke();
             return true;
         }
         public static InventoryEntry[] ExportSaveData() => Counts.OrderBy(x => x.Key).Select(x => new InventoryEntry(x.Key, x.Value)).ToArray();
         public static void ImportSaveData(InventoryEntry[] entries)
         {
             Counts.Clear();
-            if (entries == null) return;
+            if (entries == null) { Changed?.Invoke(); return; }
             foreach (InventoryEntry entry in entries)
                 if (entry != null && entry.Count > 0 && ItemCatalog.TryGet(entry.ItemId, out ItemDefinition item)
                     && entry.Count <= item.MaxStack)
                     Counts[entry.ItemId] = entry.Count;
+            Changed?.Invoke();
         }
-        public static void Reset() => Counts.Clear();
+        public static void Reset() { Counts.Clear(); Changed?.Invoke(); }
     }
 }
