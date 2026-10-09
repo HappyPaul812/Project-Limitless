@@ -1,3 +1,5 @@
+> 2026-10-09 Main20 「심부의 거신」 / main_20_colossus_of_the_depths / Field_11_DeepCore / 목표9 정식 설계 확정. 열맥 거신 veinfire_colossus: Lv15 HP1200 Attack30 Agility10, Boss EXP140/Talent40·Quest EXP100/Talent80, 50%2Phase·과열/Burn 기존 규칙. [최신 정본](Chapter2_Main20_심부의_거신.md). 아래 Main20 이름·수치·Phase·Skill·보상 TBD와 Dungeon/Boss 표현은 과거 이력이며 최신 정본을 우선한다. 구현 미착수·최종 원인/Main21 상세 미확정.
+
 > 2026-10-08 Main19 「타오르는 맥동」 / main_19_burning_pulse / Field_10_BurningPulse / 12목표 정식 확정. 기존 과열 숙련·혼합2전투·먼 존재목격·Main20준비. 최종원인/보스설계 미확정. [정식 계약](Chapter2_Main19_타오르는_맥동.md). 아래 Main19 후보는 이전 이력.
 
 > 2026-10-08 Main18 후속 확정: Main18 「검은 열기」 / main_18_black_heat / Field_09_ObsidianScar / 13목표는 사용자 승인 정식 설계다. 과열·냉각약·흑요석 갑충·작열 감시자 Elite를 확정하며 Main19~21은 기존 미래 범위를 유지한다. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.

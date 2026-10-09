@@ -1,3 +1,17 @@
+## 2026-10-09 최신 상태 — Main20 정식 설계·Art/Audio/TTS Handoff 완료 / 미구현
+
+Main20 「심부의 거신」 / main_20_colossus_of_the_depths / Field_11_DeepCore 「열맥 심부」 / Main19 선행·목표9. 열맥 거신 Veinfire Colossus / veinfire_colossus: Lv15 HP1200 Attack30 Agility10·Boss EXP140/Talent40·Quest EXP100/Talent80·IsBosstrue·Flee/Pet불가·Loot없음. HP50% 첫 전환1회·고정4/5행동·공용 Burn/과열 유지. 세계 최종 원인 확정0·Main21 상세 확정0.
+
+DESIGN_CONFIRMED / IMPLEMENTATION_PENDING. 정적 전체 NEEDS_IMPLEMENTATION_EXTENSION: Phase/예고/HUD·새Scene/Quest/Encounter·BGM 매핑 필요. 예고 중 Phase 전환 cursor·용융 강타 사거리·기본EXP/최종지급 경계를 임의 결정하지 않음. [정식 설계](../03_스토리/Chapter2_Main20_심부의_거신.md) · [QA](Main20_Design_QA.md).
+
+[Art Handoff](Main20_Art_Handoff.md): Field11 환경·Boss4×4/16프레임·Phase2 대응안·VFX7·KO, ART_PENDING/USER_ART_REVIEW_REQUIRED. [Audio Handoff](Main20_Audio_Handoff.md): Paths 재사용·Crowns 원본 실재/177.815458초/MP3/44100Hz/stereo·decode PASS·Unity 동일byte0,IMPORT_PENDING/USER_LISTENING_REQUIRED. [TTS Manifest](Main20_TTS_Manifest.csv): 세린5 TTS_PENDING·Player2/지문1 무음·Schedar 유지.
+
+이번 문서9개만 변경. 게임코드0·Unity Asset0·Audio Import/MP3복사0·TTS API/PNG/WAV생성0·SaveVersion변경0. 보호: Main18 성공15·잔여7·전체청취 미완료·UNITY_APPLIED0·성공15 재생성 금지, Main19 TTS_PENDING13·생성0 유지. Unity 실행 검증은 이번에 수행하지 않았으며 실제 Art/음악 청취·Boss 난이도/Runtime QA는 후속 구현 후 확인한다.
+
+다음 권장: Main20 Art Handoff를 아트 담당 세션에 전달하여 정식 Boss/Field11/VFX 제작→미결 기술 계약 확인→별도 구현·백그라운드 QA. TTS 제작 우선순위 Main18→Main19 보호. 시작/직전 관련 commit6a4ccc3, 이번 마지막 관련 commit은 이 항목을 포함한 `Docs: Main20 심부의 거신 정식 설계 및 제작 Handoff` commit 참조. GitHub Push0.
+
+---
+
 ## 2026-10-09 최신 상태 — Main18 TTS Day1 quota 중단 / 잔여7
 
 전체22·성공15(Story01~14/16)·실패2(Story15/17)·미호출5(Story18~22)·API시도17. **UNITY_APPLIED0 / 사용자 전체청취 미완료 / 성공15 재생성 금지 / 다음 재개 정확히7 / Main19 TTS 생성0·미시작**. 원본 제작 단계이며 Unity Voice 복사·Catalog·Dialogue 연결은 전체22 완성과 사용자 직접 청취 승인 전 금지.

@@ -1,0 +1,13 @@
+DialogueId,SpeakerId,Speaker,Text,VoiceExpected,Status
+"main20_confront_serin_01","companion_serin","세린","저 존재가 움직일 때마다 지면의 맥동이 따라옵니다.
+가까이 오니 더 분명해졌어요.",true,TTS_PENDING
+"main20_confront_player_01","player","플레이어","그렇다고 저게 모든 일의 시작이라고 볼 수는 없겠죠.",false,NOT_EXPECTED
+"main20_confront_serin_02","companion_serin","세린","네. 하지만 지금 이 지역의 열기를 크게 키우고 있는 건 확실해 보여요.",true,TTS_PENDING
+"main20_confront_serin_03","companion_serin","세린","열핵이 뛰는 간격을 보세요.
+공격하기 전마다 반응이 달라집니다.",true,TTS_PENDING
+"main20_phase2_direction_01","","","<지문> 열맥 거신의 몸체가 갈라지며 안쪽의 열핵이 드러납니다.",false,NOT_EXPECTED
+"main20_after_colossus_serin_01","companion_serin","세린","열기가 내려가고 있어요.
+적어도 이 존재가 크게 증폭시키고 있던 건 맞았던 것 같습니다.",true,TTS_PENDING
+"main20_after_colossus_player_01","player","플레이어","그런데 진동은 남아 있군요.",false,NOT_EXPECTED
+"main20_after_colossus_serin_02","companion_serin","세린","네. 훨씬 약해졌지만…
+완전히 멈추지는 않았어요.",true,TTS_PENDING

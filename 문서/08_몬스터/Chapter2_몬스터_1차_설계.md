@@ -1,3 +1,5 @@
+> 2026-10-09 Main20 Boss의 이름·수치·Phase·행동·보상은 [열맥 거신 정식 계약](../03_스토리/Chapter2_Main20_심부의_거신.md)을 우선한다. 기존 일반/Elite 계약은 유지하며 Main20 Boss Asset/Runtime은 아직 미구현이다.
+
 > 2026-10-08 Main18 후속 확정: 흑요석 갑충 obsidian_beetle: Lv13 HP250 Attack24 Agility8 EXP50 Talent14, 전열 일반·분양불가·Loot없음. 열압분사80%+과열1→기본→기본. 작열 감시자 scorching_watcher: Lv14 HP560 Attack28 Agility11 EXP85 Talent22, 전열 Elite·IsBoss=false·도망가능·분양불가·Loot없음. 85%+과열1→105%+과열1→생존아군전체55%(과열없음)→85%+과열1. 과열 행동은 생존 아군 중 최고 Stack 우선, 동률 기존 안정 선택. 기존 5종 수치 변경 없음. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
 
 # Chapter 2 몬스터 1차 설계

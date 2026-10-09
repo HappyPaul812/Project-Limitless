@@ -1,3 +1,5 @@
+> 2026-10-09 Main20 정식 배정: Field11 탐색/복귀 Paths of Cracked Earth 기존 Asset, Boss Encounter 전용 The Weight of Crowns. 원본 실재·전체 decode PASS·Unity 동일 byte0, Import/연결 미착수. Iron and Incantation은 Main20 미사용·미래 후보 유지. [Main20 Audio Handoff](Main20_Audio_Handoff.md). 아래 Crowns Boss 후보/미배정 문장은 과거 이력이며 이번 정식 배정을 우선한다.
+
 > 2026-10-08 Main19 정식: Field10 탐색·복귀 Paths of Cracked Earth, 일반/Story전투 Blade and Gambit. 신규곡/보스곡/Main20곡 선사용0. 기존 Source/Fade/Loop/Mixer 재사용. 아래 Main19 후보는 이전 이력.
 
 > 2026-10-08 Main18 후속 확정: Field09 탐색/복귀: 기존 The Weight of Obsidian MP3. Field09 일반·Tutorial Beetle·작열 감시자 Elite: Blade and Gambit. Elite 전용곡/ Iron and Incantation 배정 없음. Paths of Cracked Earth는 Main19 후보 유지. 기존 Source1/Fade/Loop/Mixer 유지. [정식 계약](../03_스토리/Chapter2_Main18_검은_열기.md). 아래 Main18 후보/TBD는 이전 이력이다.
