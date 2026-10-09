@@ -1,3 +1,13 @@
+## 2026-10-09 최신 상태 — Main20 아트 v2 재검수 / NEEDS_ART_CORRECTION
+
+LOCAL 시작 cad75de. v2 PNG21=게임 RGBA17+QA RGB4, text2·CRC/decode 손상0. 정본 이름15/16(Phase2는 Overlay 대안), 역할 대응16후보+추가 Trace 보존. Boss 공용3행10/11 방출 제거 PASS, Overlay16셀 정렬·KO overlay14/15 소거 PASS. 기술적 채택 가능하며 사용자 대안 승인 대기. VFX7 byte 보존·static 단일512 매핑 PASS. Ground 경계/Arena/Trace 완화 확인, 실제 화면은 PARTIAL.
+
+**NEEDS_ART_CORRECTION**: Cliff_Boundary에 회색 사각 가이드선 잔존(Handoff 충돌), 수정 재납품 필요. Ground 반복 띠·Idle/KO 흐름·전체 Boss 열빛 소거·미술 승인은 별도 검토 대기. [v2 검수·정본16/목표9·후속 기술 미결](Main20_ArtPack_Inspection_v2_20261009.md). v1 검수 이력 보존. Phase 예고 경계/용융 강타 분류/EXP140 배율/Field10↔11/Crowns/Quest·Save 연결을 정리했으며 임의 확정·구현0.
+
+원본 ZIP/PNG·Unity/Side9·Save·WAV/TTS/Audio 변경0, Import/Play/포커스 조작/Push0. 다음: Cliff 수정→재검수→사용자 미술 검토·Overlay 승인→미결 계약 결정→별도 Main20 구현 지시. 마지막 관련 commit은 이 항목을 포함한 `Docs: Main20 아트 v2 재검수와 통합 준비 기록` 참조.
+
+---
+
 ## 2026-10-09 최신 상태 — Chapter2 잡템7 등록 / 사용자 미술검토 대기
 
 ## 2026-10-09 최신 상태 — Chapter1·2 서브 퀘스트 9종 구현
