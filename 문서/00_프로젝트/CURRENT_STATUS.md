@@ -1,3 +1,11 @@
+## 2026-10-09 최신 상태 — Main20 아트 납품 검수 / NEEDS_ART_CORRECTION
+
+ZIP PNG17+Manifest1, 정본16개 basename 정확일치7·이름/방식 대응후보9·추가Trace1. PNG decode/CRC PASS, 기본Boss1256/314/4×4/16셀·셀경계 PASS. Skill/Hit 공용3행 frame10/11 방출표현은 정본 충돌로 수정 필요. Phase2 완성시트 미납품·overlay 대안/동작 정합 확인 필요, VFX7은512px static1frame 매핑 대상. Trace는 흔적목표 대응 가능, cooled는Rift01 대응·Ground 반복경계는 사용자 검토 대기.
+
+**NEEDS_ART_CORRECTION / USER_ART_REVIEW_REQUIRED / Unity 통합 미착수**. 검수보고서·CURRENT_STATUS만 갱신, 원본 ZIP/PNG·Unity Asset/Scene/C#/meta/GUID/Save 변경0·Import/Play/API/Push0. 다음은 공용3행 수정·Phase2/파일별칭 매핑 확인→재검수/사용자 시각 승인→별도 Unity 구현. [전체 검사·정본16매핑·목표9·통합 준비](Main20_ArtPack_Inspection_20261009.md). 시작/직전 관련commit9920f5c; 이번 마지막 관련commit은 이 항목을 포함한 `Docs: Main20 아트 납품 검수와 Unity 통합 준비 기록` 참조.
+
+---
+
 ## 2026-10-09 최신 상태 — Main20 정식 설계·Art/Audio/TTS Handoff 완료 / 미구현
 
 Main20 「심부의 거신」 / main_20_colossus_of_the_depths / Field_11_DeepCore 「열맥 심부」 / Main19 선행·목표9. 열맥 거신 Veinfire Colossus / veinfire_colossus: Lv15 HP1200 Attack30 Agility10·Boss EXP140/Talent40·Quest EXP100/Talent80·IsBosstrue·Flee/Pet불가·Loot없음. HP50% 첫 전환1회·고정4/5행동·공용 Burn/과열 유지. 세계 최종 원인 확정0·Main21 상세 확정0.
