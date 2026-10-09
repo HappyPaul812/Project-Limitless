@@ -1,5 +1,15 @@
 ## 2026-10-09 최신 상태 — Chapter2 잡템7 등록 / 사용자 미술검토 대기
 
+## 2026-10-09 최신 상태 — Chapter1·2 서브 퀘스트 9종 구현
+
+Chapter1 5/5 · Chapter2 4/4 등록, 현재 인벤토리 수집·확인 납품·정확 차감·EXP440/Talent173·동시 의뢰·NPC 명시 선택·HUD/QuestLog/추적 연결 완료. Arbel QuestLog 연결 보완. 기존 Main 완료 로직·몬스터·잡템7·Main20·사용자 Save/아트/Scene 보존.
+
+검증: 격리 Unity6000.5.7f1 Batch Runtime9/9 실제 NPC 수락·거절·납품·Bootstrap Continue, 일부 수량/판매 감소/보상 실패·중복 차단/5슬롯 Version1 PASS. 최종 compile error0·Runtime console error0·로드3Scene Missing Script0. Main01~19 목표 서비스와 Main18 규칙 PASS; 전체 실제 전투·이동 완주 및 물리 입력/시각 승인은 미검증. 격리 검색 인덱스 초기화 오류는 격리 검색 시작 옵션 해제 후 재검증 통과.
+
+[정식 기획·EXP 가정](Chapter1_Chapter2_SideQuest_Design_20261009.md) · [최종 QA·증거·미검증](Chapter1_Chapter2_SideQuest_Final_QA.md). 다음: 사용자 UI/키보드·패드/전투 수집→납품 확인, Main 완주 회귀와 실제 EXP 동선 측정. Chapter2 종료Lv16~17 보장 아님. 관련 commit 7a78aa8 / 14327fd, 마지막 QA commit은 이 항목을 포함한 `Chore: 서브 퀘스트 9종 격리 Runtime QA 기록` 참조. GitHub Push0.
+
+---
+
 아이콘7 기술PASS, ItemDefinition7/7·몬스터LootEntry7/7. 확률/성공1개/중복입력보상방어/stack99/판매/구매차단/저장JSON 서비스검증 PASS, Console error0. 기존3315파일 중 몬스터7 lootEntries만 변경, Save/기존PNG/meta·사용자변경 보존. [상세 정의·검수·구현파일·검증](Chapter2_Loot_Items_20261009.md).
 
 USER_ART_REVIEW_PENDING. 실제UI·Continue·Main17~19 Runtime 회귀 미검증. 별도 잡템Handoff 원문 미발견으로 Manifest설명 사용·대조 후속. 시작commit0483167; 마지막 관련commit은 `Feature: Chapter2 잡템 7종 및 몬스터 드롭 등록` 참조. Push0·Main20 구현 미착수 유지.

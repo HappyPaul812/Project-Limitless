@@ -1,0 +1,12 @@
+sides=False, 3-enemy-fights-per-main=0, after=main_11_silent_catacomb, Level=3, remainingEXP=25, accumulatedEXP=255
+sides=False, 3-enemy-fights-per-main=0, after=main_19_burning_pulse, Level=5, remainingEXP=85, accumulatedEXP=705
+sides=False, 3-enemy-fights-per-main=2, after=main_11_silent_catacomb, Level=7, remainingEXP=193, accumulatedEXP=1443
+sides=False, 3-enemy-fights-per-main=2, after=main_19_burning_pulse, Level=12, remainingEXP=850, accumulatedEXP=5250
+sides=False, 3-enemy-fights-per-main=5, after=main_11_silent_catacomb, Level=10, remainingEXP=405, accumulatedEXP=3225
+sides=False, 3-enemy-fights-per-main=5, after=main_19_burning_pulse, Level=17, remainingEXP=1110, accumulatedEXP=11910
+sides=True, 3-enemy-fights-per-main=0, after=main_11_silent_catacomb, Level=4, remainingEXP=10, accumulatedEXP=410
+sides=True, 3-enemy-fights-per-main=0, after=main_19_burning_pulse, Level=6, remainingEXP=245, accumulatedEXP=1145
+sides=True, 3-enemy-fights-per-main=2, after=main_11_silent_catacomb, Level=7, remainingEXP=348, accumulatedEXP=1598
+sides=True, 3-enemy-fights-per-main=2, after=main_19_burning_pulse, Level=13, remainingEXP=247, accumulatedEXP=5627
+sides=True, 3-enemy-fights-per-main=5, after=main_11_silent_catacomb, Level=10, remainingEXP=560, accumulatedEXP=3380
+sides=True, 3-enemy-fights-per-main=5, after=main_19_burning_pulse, Level=17, remainingEXP=1550, accumulatedEXP=12350
