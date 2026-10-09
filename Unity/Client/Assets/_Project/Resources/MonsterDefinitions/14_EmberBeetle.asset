@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 12
   baseExperience: 46
   currencyReward: 13
-  lootEntries: []
+  lootEntries:
+  - itemId: material_ember_beetle_carapace
+    dropChance: 0.45
+    minCount: 1
+    maxCount: 1
   maxHp: 220
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

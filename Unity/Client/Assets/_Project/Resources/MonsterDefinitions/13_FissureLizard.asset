@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 12
   baseExperience: 44
   currencyReward: 12
-  lootEntries: []
+  lootEntries:
+  - itemId: material_fissure_lizard_scale
+    dropChance: 0.45
+    minCount: 1
+    maxCount: 1
   maxHp: 190
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

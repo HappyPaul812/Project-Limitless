@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38e4cc860fdfae438565bb4db3b8eb0, type: 3}
+  m_Name: SootHound_Fang
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
+  itemId: material_soot_hound_fang
+  displayName: "\uADF8\uC744\uC74C \uC1A1\uACF3\uB2C8"
+  description: "\uADF8\uC744\uC74C\uB4E4\uAC1C\uC758 \uB0A0\uCE74\uB85C\uC6B4 \uC1A1\uACF3\uB2C8.
+    \uAC80\uC740 \uC7AC\uAC00 \uAE4A\uC219\uC774 \uC2A4\uBA70\uB4E4\uC5B4 \uC788\uB2E4."
+  category: 2
+  maxStack: 99
+  buyPrice: 0
+  sellPrice: 6
+  icon: {fileID: 21300000, guid: 230ecac0b9148d249b894e0f8375f611, type: 3}
+  iconTint: {r: 1, g: 1, b: 1, a: 1}
+  useType: 0
+  effectType: 0
+  targetType: 0
+  effectAmount: 0
+  effectPreview: "\uD310\uB9E4 \uC7AC\uB8CC"

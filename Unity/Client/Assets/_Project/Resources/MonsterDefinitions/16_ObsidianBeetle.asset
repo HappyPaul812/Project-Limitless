@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 13
   baseExperience: 50
   currencyReward: 14
-  lootEntries: []
+  lootEntries:
+  - itemId: material_obsidian_beetle_shell
+    dropChance: 0.45
+    minCount: 1
+    maxCount: 1
   maxHp: 250
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

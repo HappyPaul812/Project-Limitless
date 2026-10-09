@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 14
   baseExperience: 85
   currencyReward: 22
-  lootEntries: []
+  lootEntries:
+  - itemId: material_scorching_watcher_core_fragment
+    dropChance: 0.6
+    minCount: 1
+    maxCount: 1
   maxHp: 560
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

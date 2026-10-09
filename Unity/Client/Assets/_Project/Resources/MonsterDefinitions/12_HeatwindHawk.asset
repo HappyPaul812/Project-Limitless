@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 11
   baseExperience: 40
   currencyReward: 11
-  lootEntries: []
+  lootEntries:
+  - itemId: material_heatwind_hawk_feather
+    dropChance: 0.5
+    minCount: 1
+    maxCount: 1
   maxHp: 110
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

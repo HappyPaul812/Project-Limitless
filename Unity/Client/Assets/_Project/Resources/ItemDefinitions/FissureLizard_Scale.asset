@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38e4cc860fdfae438565bb4db3b8eb0, type: 3}
+  m_Name: FissureLizard_Scale
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.ItemDefinition
+  itemId: material_fissure_lizard_scale
+  displayName: "\uADE0\uC5F4 \uBE44\uB298"
+  description: "\uADE0\uC5F4\uB3C4\uB9C8\uBC40\uC758 \uB2E8\uB2E8\uD55C \uBE44\uB298.
+    \uD45C\uBA74\uC5D0 \uB728\uAC70\uC6B4 \uC9C0\uB9E5\uC744 \uB2EE\uC740 \uBB34\uB2AC\uAC00
+    \uC0C8\uACA8\uC838 \uC788\uB2E4."
+  category: 2
+  maxStack: 99
+  buyPrice: 0
+  sellPrice: 7
+  icon: {fileID: 21300000, guid: 20ec6c0e155aa3e428b19d874a4b798c, type: 3}
+  iconTint: {r: 1, g: 1, b: 1, a: 1}
+  useType: 0
+  effectType: 0
+  targetType: 0
+  effectAmount: 0
+  effectPreview: "\uD310\uB9E4 \uC7AC\uB8CC"

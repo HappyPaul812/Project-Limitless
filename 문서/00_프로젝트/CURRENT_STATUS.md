@@ -1,3 +1,11 @@
+## 2026-10-09 최신 상태 — Chapter2 잡템7 등록 / 사용자 미술검토 대기
+
+아이콘7 기술PASS, ItemDefinition7/7·몬스터LootEntry7/7. 확률/성공1개/중복입력보상방어/stack99/판매/구매차단/저장JSON 서비스검증 PASS, Console error0. 기존3315파일 중 몬스터7 lootEntries만 변경, Save/기존PNG/meta·사용자변경 보존. [상세 정의·검수·구현파일·검증](Chapter2_Loot_Items_20261009.md).
+
+USER_ART_REVIEW_PENDING. 실제UI·Continue·Main17~19 Runtime 회귀 미검증. 별도 잡템Handoff 원문 미발견으로 Manifest설명 사용·대조 후속. 시작commit0483167; 마지막 관련commit은 `Feature: Chapter2 잡템 7종 및 몬스터 드롭 등록` 참조. Push0·Main20 구현 미착수 유지.
+
+---
+
 ## 2026-10-09 최신 상태 — Main20 아트 납품 검수 / NEEDS_ART_CORRECTION
 
 ZIP PNG17+Manifest1, 정본16개 basename 정확일치7·이름/방식 대응후보9·추가Trace1. PNG decode/CRC PASS, 기본Boss1256/314/4×4/16셀·셀경계 PASS. Skill/Hit 공용3행 frame10/11 방출표현은 정본 충돌로 수정 필요. Phase2 완성시트 미납품·overlay 대안/동작 정합 확인 필요, VFX7은512px static1frame 매핑 대상. Trace는 흔적목표 대응 가능, cooled는Rift01 대응·Ground 반복경계는 사용자 검토 대기.

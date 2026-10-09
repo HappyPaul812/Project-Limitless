@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 11
   baseExperience: 38
   currencyReward: 11
-  lootEntries: []
+  lootEntries:
+  - itemId: material_soot_hound_fang
+    dropChance: 0.5
+    minCount: 1
+    maxCount: 1
   maxHp: 135
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8

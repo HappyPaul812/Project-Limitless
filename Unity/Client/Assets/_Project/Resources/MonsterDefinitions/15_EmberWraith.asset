@@ -17,7 +17,11 @@ MonoBehaviour:
   monsterLevel: 13
   baseExperience: 52
   currencyReward: 14
-  lootEntries: []
+  lootEntries:
+  - itemId: material_ember_wraith_ember_shard
+    dropChance: 0.45
+    minCount: 1
+    maxCount: 1
   maxHp: 150
   encounterSupportMonster: {fileID: 0}
   fieldMoveSpeed: 0.8
