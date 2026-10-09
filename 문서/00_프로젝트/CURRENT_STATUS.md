@@ -1,3 +1,17 @@
+## 2026-10-09 최신 상태 — Main20 「심부의 거신」 Unity 구현 / 격리 Runtime PASS
+
+**Quest9/9·Field11·Boss2Phase·승리 후 잔해/냉각·귀환 구현 완료.** Main19 완료 후 Field10 서쪽→Field11 진입, 현재 목표 조사/세린 텍스트 대화→거신 전투→9목표 완료까지 연결했다. Boss Lv15/HP1200/Attack30/AG10/BaseEXP140(기존 레벨 차 배율)/Talent40·Loot0, Quest EXP100/Talent80 별도1회. HP600 즉시 전환1회·기존 파동 예고 이행 후 Phase2 주입·용융 강타MeleePhysical 계약 반영. 도망/야수 습격 차단, 기존 Party/Formation 유지.
+
+승인 v3 게임PNG17·기본시트+동기화Overlay16·정적VFX7·환경8(Trace 포함), Crowns 보스/Paths Field11·복귀를 연결했다. 원본17PNG/MP3 byte 동일·신규GUID. 원본Field10/StarterVillage·Side9/Loot7·Save/WAV/TTS 보존. 세린5 TTS_PENDING·무음3, API/WAV 생성0.
+
+검증: 격리 Unity6000.5.7f1 Batch Main20 151·일반 Turn Queue 승리12·Main18 467·Main19 169·Side9 574 assertions PASS(합1373/FAIL0). 실제물리 출구 왕복·Quest9·패배/재도전·보상EXP/Talent 중복 차단·Continue3시점(Party/Inventory/HPMP/Beast/Path/좌표)·5슬롯Version1·카메라3비율/절벽동선 PASS. Loot7 실제 보상 확률경계·수량/판매/중첩, 파수꾼60%/장막 모델 PASS. 최종 격리 compile/Runtime Console Error0·로드Scene MissingScript0. 원본MCP Refresh/compile 후 ConsoleError0, Bootstrap/Edit Mode/포커스false 유지.
+
+[최종 구현·QA·미검증 사항](Main20_Implementation_Final_QA_20261009.md) · [1373 assertion 증거](Main20_Runtime_Results_20261009.txt). 일반전투는Lv15 전사+세린+미엘 구성의 실제Attack19회 승리(HP160/100/56)이며 전직업 난이도 승인은 아니다. 구형Main18/19 검사기의 NPC메뉴/출입구 가정만 격리복사본에서 보정했다. 예상 밖 보호파일 변경0.
+
+다음: 사용자 실제 화면 Ground/Arena·Boss/KO/Overlay/VFX/HUD·충돌 체감, 키보드/마우스/패드 입력, Crowns 최종 청취·전직업 난이도 검토. 기존 파수꾼 전체UI완주 재실행·7종 모든자연접촉 드롭통계는NOT_VERIFIED. v3 미술/Overlay 채택 승인은 완료·추가 아트 재제작 요구0, Main21 상세 구현0. 구현 commit `eaefb0c8b11596a50bc0e81ffa46c8582ad92ccc`; QA 문서 commit은 이 항목을 포함한 `Docs: Main20 최종 백그라운드 QA와 현재 상태 기록` 참조. 이번 GitHub Push0.
+
+---
+
 ## 2026-10-09 최신 상태 — Main20 아트 v3 기술 PASS / 사용자 미술 검토 대기
 
 **READY_FOR_USER_ART_REVIEW**. v2의 마지막 FAIL인 Cliff 회색 사각 가이드선 제거 PASS(문제3구간 alpha0·Field11 지면 합성 확인). 게임 PNG17 무결성 PASS, 실제 변경은 Cliff1개·나머지16 byte 동일. Boss1256/314/4×4·공용3행·Overlay16프레임 정렬/KO 소거·VFX7 기술 PASS 유지. 추가 Trace 보존·정본16역할 대응(이름15+Overlay대안1). v3 PNG22=게임17+QA5, text3·CRC/decode 손상0.

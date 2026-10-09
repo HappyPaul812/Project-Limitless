@@ -1,4 +1,17 @@
-# Main20 정식 설계 QA — 문서 / 정적 구현 가능성
+# Main20 정식 설계 QA — 구현 및 검증 이력
+
+## 2026-10-09 최신 — 승인 계약 구현 / 격리 Runtime PASS
+
+사용자가 Main20 v3 아트·Phase2 Overlay와 전체 구현을 승인했다. 현재 구현 및 증거는 [Main20 최종 QA](Main20_Implementation_Final_QA_20261009.md)를 따른다. 아래 문서화 당시 SUPPORTED/NEEDS_IMPLEMENTATION_EXTENSION 및 미결 항목은 이력이며 현재 판정이 아니다.
+
+- Phase: HP600 이하 피해 직후 전환1회. 기존 응축 파동 예고는 다음 자기 행동에 원래 파동1회 후 Phase2 열압 주입부터 시작한다. Queue/HP/상태/쿨타임 리셋·추가 턴0. 파수꾼60% 상태는 별도 보존.
+- 용융 강타: 승인된 MeleePhysical·도발 우선·전열 보호/빈 전열의 후열 대상. 방어 무시0.
+- EXP: Boss Base140에 기존 레벨 차 배율, Talent40 별도1회. Quest EXP100/Talent80 별도1회. 일반 Loot0.
+- 신규 Field11/Quest9/Boss/VFX7/Overlay16/Paths↔Crowns/Save Version1 연결 완료. 기본 프레임 참조 동기화, KO14~15 overlay 소거.
+- 격리 Main20 Runtime151 / 일반 턴 전투12 / Main19 169 / Main18 467 / Side9 574 assertions PASS. 최종 compile error0·Runtime Console Error0·로드 Scene Missing Script0. 구형 Main18/19 검사기의 NPC 메뉴·출입구 가정만 격리 복사본에서 현재 구조로 보정했다.
+- v3 미술/Overlay 채택 승인 완료. 실제 화면 Ground/Arena·VFX·KO/충돌 체감, 음악 최종 청취, 전 직업 난이도, 물리 입력 장치 검토는 별도 대기. TTS 신규5 제작 대기·무음3 유지, API0/WAV0/Push0.
+
+## 최초 정적 조사 이력
 
 2026-10-09. 시작 HEAD `6a4ccc372915fa9af26689ddf25e714f8b7f866f`. LOCAL과 저장된 origin/main은 동일（ahead0/behind0）이며 사용자 제공 Push 기준6a4ccc3과 일치한다. fetch/원격 조회/Push0. 기존 tracked 변경75·미추적25를 보존한다.
 
