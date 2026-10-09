@@ -20,6 +20,21 @@
 
 Paid Tier는 개발자 관점에서 Google Cloud Billing 등 결제 계정과 연결해 실제 사용량에 따라 과금되는 운영 Tier다. `Paid = 더 좋은 목소리`로 정의하지 않는다. 가격·Quota·한국어 제공·모델 ID는 실제 제작 시 공식 자료로 재확인한다.
 
+## Free Tier Quota 운영 규칙
+
+> **TTS quota는 API Key 개수가 아니라 Project + Model의 실제 quota 상태를 기준으로 관리한다. Quota 실패 시 성공 결과를 보존하고 checkpoint에서 남은 StoryOrder만 재개한다.**
+
+- 일일 제한을 Key 하나당 10회로 가정하거나 `Key1 10 + Key2 10 = 무조건 20`으로 계산하지 않는다. `GenerateRequestsPerDayPerProjectPerModel-FreeTier`는 PerDay / PerProject / PerModel을 명시하므로 같은 Google Project의 여러 Key는 해당 Project + Model quota를 공유할 수 있다. Key 교체가 새 호출 예산을 보장하지 않는다.
+- 제작 전 Model, Google Project, 각 API Key의 소속 Project, 해당 Project/Model의 실제 남은 quota, 기존 당일 제작 이력과 checkpoint를 확인한다. Key가 여러 개면 같은 Project인지 먼저 확인한다. API Key 값이나 Project Secret은 문서·로그에 기록하지 않는다.
+- TTS Handoff에는 **가능 최대 호출 수**와 **이번 작업에 안전하게 사용할 호출 수**를 구분한다. quota가 불확실하면 20회 사용 가능으로 선결정하지 않는다. 한국 날짜 변경, Key 변경, 전날 사용량만으로 초기화·추가 예산을 확정하지 않는다.
+- API의 quota 오류와 `retryDelay`를 현재 상태의 최우선 근거로 사용한다. retryDelay를 영구적인 reset clock이나 자동 재시도 허가로 해석하지 않는다. 정확한 reset 시각은 공식 자료와 실제 계정 상태 재확인 전 확정하지 않는다.
+- quota 실패 시 **즉시 중단**한다. 자동 retry, 다른 Dialogue를 앞으로 당겨 호출, Key 무작정 교체, 성공 WAV 재생성, checkpoint 삭제를 금지한다. 성공 목록, 실패 Dialogue, 미호출 Dialogue와 총 API 시도 수(실패 포함)를 기록한다.
+- 재개 전 checkpoint와 실제 WAV의 ID·존재·hash를 대조하고 남은 Dialogue만 기존 StoryOrder로 생성한다. 기존 성공 WAV는 재생성하지 않는다. 실패 번호 때문에 뒤 Dialogue를 당기거나 재번호화하지 않는다. 불일치는 임의 복구·호출하지 말고 보고한다.
+- **1 Stable Dialogue ID = 1 API Call = 1 WAV**를 유지한다. 여러 대사 합본과 자동 retry는 금지한다. 실패 대상의 후속 수동 재개는 별도 호출로 이력에 기록한다.
+- 전체 제작과 사용자 직접 청취 승인이 끝나기 전 Unity 적용을 금지한다. 승인을 받은 뒤 별도 Codex 작업으로 원본을 적용한다.
+
+실제 사례·증거의 한계와 정확한 재개 목록은 [TTS Free Tier Quota 운영 기록](TTS_FreeTier_Quota_운영_기록.md)을 따른다. 기존 합본·분할 제작 기록은 과거 이력이며 향후 제작에는 위 단일 Dialogue 호출 규칙을 적용한다.
+
 ## Voice Design과 장면 연기
 
 같은 캐릭터는 가능한 한 동일 Voice Design / Voice ID를 유지한다. 기본 음색, 성별·연령감, 말하는 질감과 캐릭터 정체성을 장기적으로 유지하려는 원칙이다. 같은 ID만으로 모든 생성 결과가 완전히 같아진다고 가정하지 않고 청취 검수한다.

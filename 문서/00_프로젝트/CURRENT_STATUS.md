@@ -1,3 +1,15 @@
+## 2026-10-09 최신 상태 — Main18 TTS Day1 quota 중단 / 잔여7
+
+전체22·성공15(Story01~14/16)·실패2(Story15/17)·미호출5(Story18~22)·API시도17. **UNITY_APPLIED0 / 사용자 전체청취 미완료 / 성공15 재생성 금지 / 다음 재개 정확히7 / Main19 TTS 생성0·미시작**. 원본 제작 단계이며 Unity Voice 복사·Catalog·Dialogue 연결은 전체22 완성과 사용자 직접 청취 승인 전 금지.
+
+관측 quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, quotaValue10·retryDelay 반환. Key 개수가 아닌 Project + Model의 실제 quota 상태로 계획한다. Story15 quota 실패 뒤 Story16/17 시도 이력은 보존하며 앞으로는 첫 quota 실패 즉시 중단. reset 시각·Key 소속 Project·현재 남은 quota는 미확정.
+
+문서 검증: Manifest22 / checkpoint17=성공15+실패2 / WAV15 hash·ID 대응 / 잔여7·15+7=22 확인. 기존 Manifest·checkpoint·성공WAV 보존, 이번 API0·WAV변경0·Unity변경0·코드변경0. [재개7 Dialogue ID·증거·운영기록](TTS_FreeTier_Quota_운영_기록.md#다음-재개-대상--정확히-7개) · [장기 정책](TTS_음성_제작_정책.md#free-tier-quota-운영-규칙).
+
+다음 권장: 실제 quota/checkpoint 확인→Main18 잔여7→전체22 존재 확인→사용자 전체 청취→필요한 재녹음→승인 후 별도 Unity 적용→quota에 맞춰 Main19 TTS13. 원본·checkpoint는 현재 LOCAL 미추적 자료이므로 후임에게 별도 전달 필요. Unity 사용자 확인은 승인 후 적용 작업에서 수행. 시작/직전 관련 commit `528f205`; 이번 기록의 마지막 관련 commit은 이 항목을 포함한 `Docs: TTS Free Tier quota 운영 규칙과 Main18 재개 상태 기록` commit 참조. GitHub Push0.
+
+---
+
 ## 2026-10-08 최신 상태 — Main19 Art13 정식 반영·연출 기술 PASS
 
 납품ZIP13PNG+Manifest 일치·원본13 byte 보존·새GUID/meta13·Null0. Field10 Ground/흔적/암벽/능선/심부 차단 정식 배치·조사GroundPulse1회·Witness 전 실루엣숨김/목격표시+먼flare1회·Continue 복원. **SOURCE_RECEIVED/AUDITED/IMPORTED/RUNTIME_VERIFIED**, 기술PASS_WITH_NOTE13·FAIL_BLOCKING0·미적 **USER_ART_REVIEW_REQUIRED13**. ART_PENDING 납품 대기는 해소, 최종 미술 승인 대기는 유지. 가이드 선/반복 경계/실루엣 식별·거리감/전체 색감 사용자 검토.
