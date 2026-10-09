@@ -1,3 +1,13 @@
+## 2026-10-09 최신 상태 — Main20 아트 v3 기술 PASS / 사용자 미술 검토 대기
+
+**READY_FOR_USER_ART_REVIEW**. v2의 마지막 FAIL인 Cliff 회색 사각 가이드선 제거 PASS(문제3구간 alpha0·Field11 지면 합성 확인). 게임 PNG17 무결성 PASS, 실제 변경은 Cliff1개·나머지16 byte 동일. Boss1256/314/4×4·공용3행·Overlay16프레임 정렬/KO 소거·VFX7 기술 PASS 유지. 추가 Trace 보존·정본16역할 대응(이름15+Overlay대안1). v3 PNG22=게임17+QA5, text3·CRC/decode 손상0.
+
+사용자 미술 승인/Overlay 최종 채택 대기. Ground/Arena·Idle/KO·VFX 실제 가독성 PARTIAL 유지, 필수 추가 아트 재제작 요구0. [v3 최종 검사·권장 기술 계약·승인 후 구현 순서](Main20_ArtPack_Inspection_v3_20261009.md). 기존 v1/v2 기록 보존. Phase 예고 이행/첫행동·용융강타 분류·EXP배율 권장안을 제시했으나 임의 확정0.
+
+다음: 사용자 미술/Overlay·음악 검토→미결 기술 계약 결정→별도 Main20 구현 지시→신규 Import/Field11 왕복/Quest9·Boss·VFX·Save/BGM 연결→격리 QA. 이번 Unity Import·코드/Scene·Side9/잡템7·Save/PNG/meta/Audio 변경0, 포커스 조작/Push0. LOCAL 시작e75e7b7, 마지막 관련 commit은 이 항목을 포함한 `Docs: Main20 아트 v3 최종 기술 검수와 구현 준비 기록` 참조.
+
+---
+
 ## 2026-10-09 최신 상태 — Main20 아트 v2 재검수 / NEEDS_ART_CORRECTION
 
 LOCAL 시작 cad75de. v2 PNG21=게임 RGBA17+QA RGB4, text2·CRC/decode 손상0. 정본 이름15/16(Phase2는 Overlay 대안), 역할 대응16후보+추가 Trace 보존. Boss 공용3행10/11 방출 제거 PASS, Overlay16셀 정렬·KO overlay14/15 소거 PASS. 기술적 채택 가능하며 사용자 대안 승인 대기. VFX7 byte 보존·static 단일512 매핑 PASS. Ground 경계/Arena/Trace 완화 확인, 실제 화면은 PARTIAL.
