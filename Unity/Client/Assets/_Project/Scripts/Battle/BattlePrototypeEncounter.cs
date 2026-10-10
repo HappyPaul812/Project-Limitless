@@ -222,6 +222,18 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies,foes.ToArray());
         }
 
+        /// <summary>Main21 두 지정 조우만 기존 몬스터와 자유 편성3인을 사용합니다. 새 AI/보상 규칙을 만들지 않습니다.</summary>
+        public static BattleEncounterSetup CreateMain21(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, string encounterId, MonsterDefinition first, MonsterDefinition second)
+        {
+            var party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility, null, null, first);
+            bool a = encounterId == ProjectLimitless.World.Chapter2Main21Flow.EncounterA;
+            return new BattleEncounterSetup(party.Allies, new[] {
+                CreateMonster(first, "main21_"+first.MonsterId, first.DisplayName, FormationRow.Front, 0, first.BattleAgility),
+                CreateMonster(second, "main21_"+second.MonsterId, second.DisplayName, a ? FormationRow.Rear : FormationRow.Front,
+                    a ? 0 : 1, second.BattleAgility) });
+        }
+
         /// <summary>정식 저장 파티를 유지하며 거신 한 마리만 Boss로 생성합니다. 임시 동행/일반 전리품은 추가하지 않습니다.</summary>
         public static BattleEncounterSetup CreateMain20(string playerName, string jobId, string pathId,
             int maxHp, int attack, int agility, MonsterDefinition boss)

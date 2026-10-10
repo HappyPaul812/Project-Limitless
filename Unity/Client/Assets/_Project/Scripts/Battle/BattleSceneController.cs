@@ -312,6 +312,14 @@ namespace ProjectLimitless.Battle
                 setup = BattlePrototypeEncounterFactory.CreateMain20(playerName, GameSessionData.SelectedJobId,
                     GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
                     playerAttack, agility, BattleEncounterContext.Monster);
+            // Main21의 고유 ID에만 승인된 두 기존 종을 사용합니다. 일반 Field10과 Main19는 아래 기존 분기로 유지합니다.
+            else if (BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter2Main21Flow.EncounterA
+                || BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter2Main21Flow.EncounterB)
+                setup = BattlePrototypeEncounterFactory.CreateMain21(playerName, GameSessionData.SelectedJobId,
+                    GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    playerAttack, agility, BattleEncounterContext.StoryEncounterId, BattleEncounterContext.Monster,
+                    monsterDefinitions.First(x => x.MonsterId == (BattleEncounterContext.StoryEncounterId ==
+                        ProjectLimitless.World.Chapter2Main21Flow.EncounterA ? "ember_wraith" : "soot_hound")));
             // Main19는 지정 ID만 두 원본 종을 조합합니다. 일반 조우는 단독이며 이전 Field와 저장 파티는 보호합니다.
             else if (BattleEncounterContext.Spawn != null && BattleEncounterContext.Spawn.SceneName == ProjectLimitless.World.Chapter2Main19Flow.Field)
                 setup = BattlePrototypeEncounterFactory.CreateField10(

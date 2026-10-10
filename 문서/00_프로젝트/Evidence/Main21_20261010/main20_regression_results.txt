@@ -1,0 +1,158 @@
+PASS|Fixture.PartyThree
+PASS|Prerequisite.Main19Locked
+PASS|Fixture.PartyThree
+PASS|Model.Phase1.RepeatedCycle4
+PASS|Model.HP601.Phase1
+PASS|Model.HP600.Immediate.NoHpGuardTauntReset
+PASS|Model.Phase2.RepeatedCycle5
+PASS|Model.PhaseOnce
+PASS|Model.PreservePendingWave.ThenPhase2Injection
+PASS|Target.MoltenFrontProtection
+PASS|Target.TauntOverridesMelee
+PASS|Target.AreaLivingOnly
+PASS|Regression.Warden.HP721
+PASS|Regression.Warden.HP720Threshold60Unchanged
+PASS|Regression.Warden.SummonBarrierAndDotExclusion
+PASS|Regression.Warden.GuardianKoRemovesBarrier
+PASS|Regression.Main18.OverheatCeil8GuardIndependent
+PASS|Regression.CoolingRemedy
+PASS|Regression.CoolingEmptyNoConsumption
+PASS|Loot7.Data.material_soot_hound_fang
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_soot_hound_fang
+PASS|Loot7.Stack99.SellPrice.material_soot_hound_fang
+PASS|Loot7.Data.material_heatwind_hawk_feather
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_heatwind_hawk_feather
+PASS|Loot7.Stack99.SellPrice.material_heatwind_hawk_feather
+PASS|Loot7.Data.material_fissure_lizard_scale
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_fissure_lizard_scale
+PASS|Loot7.Stack99.SellPrice.material_fissure_lizard_scale
+PASS|Loot7.Data.material_ember_beetle_carapace
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_ember_beetle_carapace
+PASS|Loot7.Stack99.SellPrice.material_ember_beetle_carapace
+PASS|Loot7.Data.material_ember_wraith_ember_shard
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_ember_wraith_ember_shard
+PASS|Loot7.Stack99.SellPrice.material_ember_wraith_ember_shard
+PASS|Loot7.Data.material_obsidian_beetle_shell
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_obsidian_beetle_shell
+PASS|Loot7.Stack99.SellPrice.material_obsidian_beetle_shell
+PASS|Loot7.Data.material_scorching_watcher_core_fragment
+PASS|Loot7.ActualRewardOne.DuplicateIdentityAndChanceBoundary.material_scorching_watcher_core_fragment
+PASS|Loot7.Stack99.SellPrice.material_scorching_watcher_core_fragment
+PASS|Boss.Data.Exact.NoLoot
+PASS|Quest.Objectives9
+PASS|Art.GamePng17.Overlay16
+ERROR|ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+PASS|Scene.Field_10_BurningPulse
+PASS|MissingScript0.Field_10_BurningPulse
+PASS|Field10.GateUnlocked
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Quest.EntryAuto1.PhysicalExitTrigger
+PASS|Camera.Viewport.1.333333.(-10.00, 0.00)
+PASS|Camera.Viewport.1.333333.(10.00, 0.00)
+PASS|Camera.Viewport.1.333333.(0.00, 7.00)
+PASS|Camera.Viewport.1.333333.(0.00, -7.00)
+PASS|Camera.Viewport.1.777778.(-10.00, 0.00)
+PASS|Camera.Viewport.1.777778.(10.00, 0.00)
+PASS|Camera.Viewport.1.777778.(0.00, 7.00)
+PASS|Camera.Viewport.1.777778.(0.00, -7.00)
+PASS|Camera.Viewport.2.333333.(-10.00, 0.00)
+PASS|Camera.Viewport.2.333333.(10.00, 0.00)
+PASS|Camera.Viewport.2.333333.(0.00, 7.00)
+PASS|Camera.Viewport.2.333333.(0.00, -7.00)
+PASS|Boundary.Field11WestClosedEastExit
+PASS|Cliff.Collision3x1.CliffBoundary_-4.7
+PASS|Cliff.QuestRouteClear.CliffBoundary_-4.7
+PASS|Cliff.Collision3x1.CliffBoundary_4.7
+PASS|Cliff.QuestRouteClear.CliffBoundary_4.7
+PASS|Spawn.ExitNotOverlapping
+PASS|Continue.Write.AtRift
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|Continue.BootstrapButton.AtRift
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Continue.ExactQuestMoneyPosition.AtRift
+PASS|Continue.PartyFormationBeast.AtRift
+PASS|Continue.InventoryHpMpGrowthPath.AtRift
+PASS|Dialogue.Complete
+PASS|Quest.ActualSite.1
+PASS|Quest.ActualSite.2
+PASS|Quest.ActualSite.3
+PASS|Dialogue.Complete
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|Battle.ActualBoss
+PASS|Bgm.CrownsEncounter
+PASS|Battle.FleeBlocked
+PASS|Battle.BeastAssaultBlockedNoHpTurnConsumption
+PASS|Battle.ControllerAction.injection
+PASS|Battle.ControllerAction.molten
+PASS|Battle.ControllerAction.condensation
+PASS|Battle.ControllerAction.core_wave
+PASS|Battle.ImmediateOverlay
+PASS|Battle.SilentPhaseDirectionPersistentHud
+PASS|Battle.ControllerPhase2.injection
+PASS|Battle.ControllerPhase2.molten
+PASS|Battle.ControllerPhase2.resonance
+PASS|Battle.ControllerPhase2.eruption
+PASS|Battle.ControllerPhase2.wave
+PASS|Scene.World_StarterVillage
+PASS|MissingScript0.World_StarterVillage
+PASS|Defeat.Objective6Retained
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|Retry.FreshBoss
+PASS|Art.KOFinalFrame15
+PASS|Victory.Objective7.Reward40Once
+PASS|Victory.DuplicateBlocked
+PASS|Bgm.ResultCrownsMaintained
+PASS|Victory.BaseExp140EqualLevelOnce
+PASS|Experience.ExistingLevelDifferenceScaling
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Presentation.BossHiddenAfterVictory
+PASS|Continue.Write.AfterBoss
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|Continue.BootstrapButton.AfterBoss
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Continue.ExactQuestMoneyPosition.AfterBoss
+PASS|Continue.PartyFormationBeast.AfterBoss
+PASS|Continue.InventoryHpMpGrowthPath.AfterBoss
+PASS|Dialogue.Complete
+PASS|Quest.AfterBoss.ActualSite.6
+PASS|Dialogue.Complete
+PASS|Quest.AfterBoss.ActualSite.7
+PASS|Quest.Completed9.Reward80
+PASS|Quest.ActualExp100Separate
+PASS|Quest.DuplicateRewardBlocked
+PASS|Continue.Write.Completed
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|Continue.BootstrapButton.Completed
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Continue.ExactQuestMoneyPosition.Completed
+PASS|Continue.PartyFormationBeast.Completed
+PASS|Continue.InventoryHpMpGrowthPath.Completed
+PASS|Bgm.PathsFieldRestored
+PASS|Scene.Field_10_BurningPulse
+PASS|MissingScript0.Field_10_BurningPulse
+PASS|Return.Field10.PhysicalExitTrigger.Spawn
+PASS|Save.Slot1
+PASS|Save.Slot2
+PASS|Save.Slot3
+PASS|Save.Slot4
+PASS|Save.Slot5
+PASS|Regression.Side9.Loot7Registered
+FAIL|Runtime.ConsoleErrors0
+FAIL|System.InvalidOperationException: Runtime.ConsoleErrors0
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit.Check (System.Boolean pass, System.String id) [0x00042] in F:\study\codex\Project-Limitless\Temp\Main21QA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:47
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit+<Runtime>d__28.MoveNext () [0x00f61] in F:\study\codex\Project-Limitless\Temp\Main21QA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:209
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit+<Flatten>d__30.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Main21QA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:235
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Main21QA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:237

@@ -31,6 +31,8 @@ namespace ProjectLimitless.Core
         public ActiveQuestSaveData[] ActiveQuests = Array.Empty<ActiveQuestSaveData>();
         public string[] CompletedQuestIds = Array.Empty<string>();
         public string TrackedQuestId = string.Empty;
+        // 선택 필드이므로 구버전 JSON은0. 목표13개와 SaveVersion1은 변경하지 않습니다.
+        public int Main21Flags;
     }
 
     /// <summary>실행 중인 한 퀘스트의 목표별 횟수를 보관합니다.</summary>
@@ -303,13 +305,15 @@ namespace ProjectLimitless.Core
                     { ObjectiveId = objective.ObjectiveId, CurrentCount = state.ObjectiveCounts[index] }).ToArray()
                 }).ToArray(),
                 CompletedQuestIds = completed.ToArray(),
-                TrackedQuestId = trackedQuestId
+                TrackedQuestId = trackedQuestId,
+                Main21Flags = Main21Progress.Flags
             };
         }
 
         public static void ImportSaveData(QuestProgressSaveData data)
         {
             active.Clear(); completed.Clear(); trackedQuestId = string.Empty;
+            Main21Progress.Restore(data?.Main21Flags ?? 0);
             if (data == null) { Changed?.Invoke(); return; }
             if (data.CompletedQuestIds != null)
                 foreach (string questId in data.CompletedQuestIds)
@@ -335,6 +339,6 @@ namespace ProjectLimitless.Core
         }
 
         public static void Reset()
-        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Changed?.Invoke(); }
+        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Main21Progress.Restore(0); Changed?.Invoke(); }
     }
 }

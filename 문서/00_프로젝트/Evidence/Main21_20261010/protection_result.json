@@ -1,0 +1,11 @@
+{
+  "baselineFiles": 3466,
+  "changed": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "Unity/Client/Assets/_Project/Scripts/Core/QuestService.cs",
+    "Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcRole.cs",
+    "Unity/Client/Assets/_Project/Scripts/World/SceneTransitionService.cs"
+  ],
+  "missing": []
+}

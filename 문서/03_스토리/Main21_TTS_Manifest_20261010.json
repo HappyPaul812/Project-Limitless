@@ -1,0 +1,209 @@
+[
+  {
+    "DialogueId": "main21_heat_serin_01",
+    "SpeakerId": "companion_serin",
+    "SpeakerName": "세린",
+    "Text": "바람이 달라졌어요. 아직 뜨겁긴 하지만, 전처럼 밀어붙이는 느낌은 아닙니다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_pulse_serin_01",
+    "SpeakerId": "companion_serin",
+    "SpeakerName": "세린",
+    "Text": "울림은 남아 있어요. 하지만 간격이 훨씬 길어졌습니다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_pulse_player_01",
+    "SpeakerId": "player",
+    "SpeakerName": "플레이어",
+    "Text": "아직 위험한 곳이 있는지 확인해야겠군요.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_route_paul_01",
+    "SpeakerId": "companion_paul",
+    "SpeakerName": "폴",
+    "Text": "가장 짧은 길이 꼭 안전한 길은 아니겠죠. 바닥부터 확인해 봅시다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_route_serin_01",
+    "SpeakerId": "companion_serin",
+    "SpeakerName": "세린",
+    "Text": "중앙 쪽은 아직 일정한 간격으로 흔들립니다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_route_paul_02",
+    "SpeakerId": "companion_paul",
+    "SpeakerName": "폴",
+    "Text": "암반 쪽은 겉만 식었습니다. 보급 마차가 지나가기엔 위험하겠어요.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_route_player_01",
+    "SpeakerId": "player",
+    "SpeakerName": "플레이어",
+    "Text": "옛 우회로가 조금 멀어도, 사람들이 안전하게 지나갈 수 있겠군요.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_route_taeon_01",
+    "SpeakerId": "companion_taeon",
+    "SpeakerName": "태온",
+    "Text": "여긴 지난번에 흔들리던 곳과 다릅니다. 제가 다시 확인하겠습니다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_arbel_leon_01",
+    "SpeakerId": "arbel-leon",
+    "SpeakerName": "레온",
+    "Text": "주민들이 지날 수 있는 길을 찾아주셨군요. 정말 큰 도움이 됐습니다.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_aid_miel_01",
+    "SpeakerId": "companion_miel",
+    "SpeakerName": "미엘",
+    "Text": "다치신 분들은 제가 살펴볼게요. 폴 씨는 물자 수량을 확인해 주시겠어요?",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_aid_paul_01",
+    "SpeakerId": "companion_paul",
+    "SpeakerName": "폴",
+    "Text": "이미 확인했습니다. 이번에는 다행히 약보다 붕대가 더 많이 필요하겠네요.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_aid_miel_02",
+    "SpeakerId": "companion_miel",
+    "SpeakerName": "미엘",
+    "Text": "그 말이 이렇게 반가울 줄은 몰랐네요.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_carriage_leon_01",
+    "SpeakerId": "arbel-leon",
+    "SpeakerName": "레온",
+    "Text": "초보 마을로 돌아갈 마차를 마련했습니다. 준비되셨으면 출발하시죠.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_north_direction_01",
+    "SpeakerId": "",
+    "SpeakerName": "지문",
+    "Text": "서부의 열기와는 다른 차가운 바람이 마을 북쪽에서 불어옵니다.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_haren_haren_01",
+    "SpeakerId": "story_haren",
+    "SpeakerName": "하렌",
+    "Text": "태온. 너 아직 멀었어.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_haren_taeon_01",
+    "SpeakerId": "companion_taeon",
+    "SpeakerName": "태온",
+    "Text": "형? 오랜만에 만나서 첫마디가 그거야?",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_haren_haren_02",
+    "SpeakerId": "story_haren",
+    "SpeakerName": "하렌",
+    "Text": "다친 데는 없고?",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_haren_taeon_02",
+    "SpeakerId": "companion_taeon",
+    "SpeakerName": "태온",
+    "Text": "응. 괜찮아.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_haren_haren_03",
+    "SpeakerId": "story_haren",
+    "SpeakerName": "하렌",
+    "Text": "그럼 됐어.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_prepare_serin_01",
+    "SpeakerId": "companion_serin",
+    "SpeakerName": "세린",
+    "Text": "이번엔 북쪽이군요. 먼저 길부터 살펴봐야겠어요.",
+    "VoiceExpected": true,
+    "Status": "TTS_PENDING",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_prepare_player_01",
+    "SpeakerId": "player",
+    "SpeakerName": "플레이어",
+    "Text": "준비가 끝나면 출발하죠.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Common"
+  },
+  {
+    "DialogueId": "main21_pulse_hearing_player_01",
+    "SpeakerId": "player",
+    "SpeakerName": "플레이어",
+    "Text": "잠깐 멈췄다가 다시 오는 간격이 전보다 길어졌어요.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Hearing only"
+  },
+  {
+    "DialogueId": "main21_route_mobility_player_01",
+    "SpeakerId": "player",
+    "SpeakerName": "플레이어",
+    "Text": "폭과 경사, 바닥을 함께 확인해야겠어요. 휠체어와 보급 마차가 모두 지날 수 있도록요.",
+    "VoiceExpected": false,
+    "Status": "NO_VOICE",
+    "Condition": "Mobility only"
+  }
+]

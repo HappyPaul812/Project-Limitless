@@ -1,3 +1,13 @@
+## 2026-10-10 Main21 「돌아온 온기」 — DESIGN_CONFIRMED / IMPLEMENTED / QA_PARTIAL
+
+[상세 정본](../03_스토리/Chapter2_Main21_돌아온_온기.md)·[격리 QA](Main21_Implementation_QA_20261010.md): 승인13목표/A·B 기존몬스터3인 전투/자유순서3단서 안전통로/직접주민지원/동일접근가능마차 Yes·No/12초·Skip/안전Spawn·중단Continue/하렌텍스트첫등장/Chapter2완료 보상100EXP·60Currency한번 구현. Main22진입0. 선택Save플래그 추가,SaveVersion1·슬롯5 유지. 원문21+Path대사2 Manifest/신규WAV0.
+
+기능213·마을335·서브/메인서비스588·Main18기능467·Main19기능169·Main20기능150 검사 PASS,격리Search 내부예외로Console FAIL/전체QA PARTIAL. 기존Search예외2건 이슈 유지. 실제 전체일반전투 난이도·30~45분·사용자플레이감각 NOT_VERIFIED/USER_REVIEW_PENDING. 하렌아트·말정밀프레임·내부가림 ART_PENDING. 다음: 사용자플레이검토·아트/TTS납품·Search별도복구.
+
+보호3466파일 중 공통C#5개 외3461불변/삭제0,기존Git335항목 보존. Scene/NPCPrefab/사용자Save·설정/공식아트/음원 보호. 원본Bootstrap/Edit/포커스false 유지,원본Play·Scene전환·화면조작/Push0. StarterVillage v4 승인 Scene+NPC는 `7309f772`에서 이미Commit완료(아래 과거 미커밋 기록을 대체). 설계Commit `6ce4fd3`; 마지막 구현Commit은 본 항목을 포함한 `Feature: Main21 돌아온 온기 전투 퍼즐 안전 귀환 구현`.
+
+---
+
 ## 2026-10-10 StarterVillage v4 — 기술 PASS / LOCAL 적용 / 미술 승인 완료
 
 [최종 검수](StarterVillage_Renewal_Art_v4_Inspection_20261010.md): 문 상·하단 및 지붕 접합/환경15종 PASS. 전용 V4 GUID·실제 Importer 검증, Scene284+남문 활성16+비활성2 Sprite만 교체. Generator 전용 로더 연결·ThirdParty 원본 불변. 격리 실제 RenderTexture·NPC12·남문 왕복/Spawn/저장 검사 PASS; 서브9종 Runtime/Continue 및 Main01~20 서비스 검사 PASS. 격리 Unity Search 내부 예외2건 미해결로 Console 검사 FAIL/전체 QA PARTIAL, 전체 메인 전투 회귀는 미검증. 사용자 기존 Scene 변경과 분리할 수 없어 실제 적용 Scene는 미스테이징 보존하고 LOCAL Sprite-only 패치를 Commit 증거로 남김. 보호1257개 중 허용3개 외1254개 불변. USER_ART_APPROVED. 마지막 관련 Commit은 이 항목을 포함한 `Feature: StarterVillage v4 전용 환경 통합 및 격리 QA`; 마차 보완 문서 Commit `1121cec`. Push0.

@@ -30,16 +30,27 @@ namespace ProjectLimitless.World
         /// SceneTransitionTrigger가 플레이어 진입을 감지했을 때 호출합니다.
         /// 목적지 Spawn ID를 세션에 먼저 저장한 뒤 대상 Scene을 비동기로 불러옵니다.
         /// </summary>
-        public static void Load(string targetScene, string targetSpawnPointId)
+        public static void Load(string targetScene, string targetSpawnPointId) => TryLoad(targetScene, targetSpawnPointId);
+
+        /// <summary>존재하지 않는 Scene와 동기 로드 실패는 요청을 취소합니다. 기존 호출의 동작과 Spawn 전달을 유지합니다.</summary>
+        public static bool TryLoad(string targetScene, string targetSpawnPointId)
         {
-            if (isLoading || string.IsNullOrWhiteSpace(targetScene)) return;
-            isLoading = true;
-            requestedSceneId = targetScene;
-            requestedSpawnPointId = targetSpawnPointId ?? string.Empty;
-            // 이전 Field 좌표가 새 Field에 적용되는 것을 막고, 새 Scene의 SpawnPoint를 우선 사용합니다.
-            GameSessionData.ClearWorldPosition();
-            GameSessionData.SetPendingSpawnPoint(targetSpawnPointId);
-            SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
+            if(isLoading||string.IsNullOrWhiteSpace(targetScene)||!Application.CanStreamedLevelBeLoaded(targetScene))return false;
+            bool hadPosition=GameSessionData.HasSavedWorldPosition;
+            float previousX=GameSessionData.SavedPositionX, previousY=GameSessionData.SavedPositionY;
+            string previousPending=GameSessionData.PendingSpawnPointId;
+            isLoading=true;requestedSceneId=targetScene;requestedSpawnPointId=targetSpawnPointId??string.Empty;
+            GameSessionData.ClearWorldPosition();GameSessionData.SetPendingSpawnPoint(targetSpawnPointId);
+            try
+            {
+                var operation=SceneManager.LoadSceneAsync(targetScene,LoadSceneMode.Single);
+                if(operation!=null)return true;
+            }
+            catch(System.Exception exception){Debug.LogWarning("Scene 로드 요청 실패: "+exception.Message);}
+            isLoading=false;requestedSceneId=string.Empty;requestedSpawnPointId=string.Empty;
+            GameSessionData.SetPendingSpawnPoint(previousPending);
+            if(hadPosition)GameSessionData.RecordWorldPosition(previousX,previousY);
+            return false;
         }
 
         // 새 Scene 로드가 끝나면 다음 출구 Trigger를 받을 수 있도록 중복 방지 상태를 해제합니다.

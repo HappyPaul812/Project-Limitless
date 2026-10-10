@@ -1,6 +1,6 @@
 # Main21 「돌아온 온기」 상세 정본
 
-상태: DESIGN_CONFIRMED / IMPLEMENTATION_IN_PROGRESS / USER_REVIEW_PENDING
+상태: DESIGN_CONFIRMED / IMPLEMENTED / QA_PARTIAL / USER_REVIEW_PENDING
 
 2026-10-10 사용자 승인 계약. 이전 DESIGN_DRAFT의 TBD 중 아래에서 확정된 내용은 이 계약으로 대체한다. 하렌(Haren) 정식 이름·시각의 길/투사·제한적 바이저, 기존3인 전투와 Chapter3 마지막 “잘.했.어.”를 보호한다. StarterVillage v4는 USER_ART_APPROVED, Scene/NPC Commit `7309f77`.
 
@@ -549,3 +549,26 @@ Unity 6.6.5f1 기준 백그라운드 검증.
 ## 구현 저장 계약
 
 13개 목표를 추가하거나 변경하지 않는다. 순서와 완료 보상은 기존 QuestService가 담당한다. 자유 순서 단서3개와 마차 수락을 보존하기 위해 QuestProgressSaveData에 Main21Flags(선택 int, 구버전 기본0)를 추가한다. 비트1/2/4=단서A/B/C, 비트8=마차 수락. SaveVersion1/슬롯5/기존 ID 유지. 마차 연출은 Arbel UI에서만 실행하며 출발 체크포인트를 저장한다. 기존 전용 Spawn/실제 배치/Bounds/Collider/위치 저장 확인 뒤에만 도착 목표를 완료한다. 별도 연출 Scene 저장이나 범용 빠른 이동 없음. 기존 준비 문서의 수락 GenericSignal 목표 후보는 승인된13개 계약에 따라 사용하지 않는다. 정확한 말 애니메이션·승객 가림·하렌 공식 아트는 ART_PENDING.
+
+
+## 실제 구현 계약 — 2026-10-10
+
+- 상태: DESIGN_CONFIRMED / IMPLEMENTED / USER_REVIEW_PENDING. 아래 검증 한계를 포함해 판단한다.
+- `Chapter2Main21Flow`는 기존 Field10/Arbel/StarterVillage에 Runtime 표식·전용 Spawn만 설치한다. Scene/Prefab 재생성·저장 변경0. 기존 지형을 세 갈래 도로라고 해석하지 않는다.
+- 13개 Objective는 승인된 ID·Type·Target을 사용한다. Main20 완료 Field10에서만 시작, 전투 승리만 목표3/6 진행, 마지막 목표13에서 기존 QuestService가 EXP100/Currency60/Item0을 한 번 지급한다.
+- 기존 MonsterDefinition과 Loot/레벨 차 배율을 재사용한다. A는 도마뱀 전열+망령 후열, B는 갑충·들개 전열. 동료를 강제로 편성하지 않으며 Player+Companion2를 유지한다.
+- 조사 표식은 Field10 (6.3,-2.6), (3.8,1), (1,-2.6), (-1,2.7), (0,0), (-4.8,-2.5), (-6,2.2). 단서3곳은 (-0.8,-2.6), (2,2.6), (-3,2.6). 실제 Bounds/Collider 검증을 수행한다. 표식은 글로 구분하며 기존 도로·Collider를 바꾸지 않는다.
+- 단서는 자유 순서 조사, 모두 확인한 뒤 세 선택+취소 UI를 연다. 오답은 이유만 설명하고 비용·HP손실·추가 전투0. 옛 우회로 선택 뒤 안전 표식을 표시한다.
+- 청각 Player 첫 관찰과 지체 Player 경로 관찰은 서로 다른 Stable ID로 선행한다. 동료의 교차 확인 대사는 유지하며 전투 편성과 무관하게 Story 대화에 등장한다.
+- 레온의 기존 상호작용을 목표8일 때만 연결한다. 주민 지원은 현장 확인→보급 상자 배치·전달의 두 상호작용이다. Inventory 소비·임의 무료 HP/MP회복0. 지원 도중 Continue는 현장 확인부터 재시도하며 자원 손실이 없다.
+- SaveVersion1/슬롯5를 유지한다. `QuestProgressSaveData.Main21Flags` 선택 정수 필드의 비트1/2/4는 단서,8은 귀환 수락이다. 구버전 JSON의 누락 필드는0으로 복원한다. 기존 Objective를 늘리지 않고 조사 상태를 저장한다.
+- 귀환은 Arbel(-2.2,-1)에서 명시적 Yes/No, 정지 Sprite2종+느린 배경 이동12초. Skip과 정상 완료가 동일한 SceneTransition/도착 확인을 사용한다. 출발 Save 실패는 출발하지 않으며 수락 플래그를 되돌린다.
+- 수락 후 종료·Continue는 저장된 Arbel 출발 위치에서 재선택한다. 연출 중간 Scene·시간은 Save하지 않는다. 마을의 `Spawn_Main21_CarriageArrival` (0,-4.65)은 Bounds·Collider·Exit Trigger·실제 Player 위치 확인 후 목표10을 진행한다. Spawn 지연/배치 전 종료는 전용 도착 기록이 있을 때만 안전 위치로 복구한다. 일반 마을 진입만으로 완료되지 않는다.
+- 도착 저장 실패·로드 실패는 목표10 유지와 입력/Modal 잠금 해제 후 재시도한다. 신규 범용 Fast Travel0. 기존 BGM Scene 전환 경로를 재사용하며 신규 음원·AudioMixer 변경0.
+- 하렌은 텍스트 임시 표식과 정식 대사만 사용한다. `story_haren`은 대화 표시용 Speaker ID이며 영구 Character ID 확정이 아니다. Roster/Party 합류0, Main22 강제 진입0. Chapter3 결말 전용 문구는 Main21 Runtime에 넣지 않는다.
+- [TTS Manifest](Main21_TTS_Manifest_20261010.json): 승인 원문21개+Path 최초 관찰2개. NPC/동료 TTS_PENDING, Player/지문 VoiceExpected=false. 신규 WAV·기존 음성 Catalog·공식 Portrait 변경0.
+- ART_PENDING: 하렌 공식 Sprite/Portrait, 말 프레임/접지점/Anchor, 내부 탑승자 가림·실측 치수 및5인/휠체어2 수용 최종 시각 검토. 기존 마차 PNG에 캐릭터나 빈 휠체어를 중복 합성하지 않는다.
+
+### 검증 결과와 후속 검토
+
+격리 Batch 실제 Scene/Controller/Save/Bootstrap Continue와 RenderTexture를 사용한다. [QA 보고](../00_프로젝트/Main21_Implementation_QA_20261010.md)에 결과 및 증거를 기록한다. 원본 Editor Scene/Play Mode/화면 포커스 조작0, 사용자 Save를 테스트에 사용하지 않는다. 사용자 플레이 감각·실제30~45분 소요·전체 Main01~20 수동 전투 동선은 별도 검토로 남긴다. 기존 Unity Search 내부 예외2건은 미해결 이슈이며 발생한 Console를 PASS로 표기하지 않는다.

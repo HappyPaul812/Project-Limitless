@@ -55,6 +55,8 @@ namespace ProjectLimitless.NPC
 
         private void InteractUsual(NpcController npc)
         {
+            // Main21 보고만 기존 레온 NPC에 연결합니다. 다른 상점·은행·파티/서브 기능은 원래 경로를 유지합니다.
+            if (Chapter2Main21Flow.TryHandleNpc(npcId, npc)) return;
             if (Chapter2Main18Flow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest05ReturnFlow.TryHandleNpc(npcId, npc)) return;
             if (MainQuest01NpcFlow.TryHandle(npcId, npc)) return;

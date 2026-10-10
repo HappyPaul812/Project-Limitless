@@ -1,0 +1,7 @@
+격리 Audit만 현재 Main20 구현 계약에 맞춘다. 원본 Main19 Audit/Scene/Collider/Runtime 수정0.
+1. Boundary.WestClosedEastOnlyGap → 양쪽 출구 개방+상하 경계 폐쇄.
+2. SceneTransitionTrigger1개 →2개+Main19완료 전 Main20AccessGate.enabled=true.
+3. 완료 후 Main19ClosedDeepRoute 대화 →Main20Gate개방+구형 안내 비활성 확인.
+근거: 기존 Chapter2Main20Flow.Start에서 양쪽 경계 개방, Main20AccessGate.Update에서 Main19완료 시 구형 안내 비활성. Main21은 Collider/Scene를 변경하지 않는다.
+초기 구형 검사 실패는 Temp/Main21QA/main19_legacy_*_failure.txt에 보존한다. 실제 전투/보상/Continue/Spawn 검사 로직은 변경0.
+SearchDatabase 내부 예외는 실행 로그에 존재한다. Main19 Audit의 PASS를 전체 Console 무오류로 확대하지 않는다.
