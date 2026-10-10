@@ -1,6 +1,6 @@
 # StarterVillage Renewal Art v4 최종 검수 및 통합 — 2026-10-10
 
-상태: TECHNICAL_PASS / LOCAL_INTEGRATION_APPLIED / USER_ART_REVIEW_PENDING
+상태: TECHNICAL_PASS / LOCAL_INTEGRATION_APPLIED / USER_ART_APPROVED
 Unity: 6000.6.5f1. 원본 ZIP: `F:/Downloads/Limitless_StarterVillage_Renewal_Art_v4.zip`.
 
 ## 원본 기술 검사
@@ -46,7 +46,7 @@ QA 최종 집계는 아래 완료 결과에 기록한다. 공용 서비스 검�
 
 작업 시작 보호 해시1257개 중 허용한 Scene·생성기2개 외1254개 불변. Scene/SouthGate의 Sprite 외 직렬화 불변. ThirdParty·기존 캐릭터·Quest·Save·Packages·ProjectSettings·기존 실행 스크립트 보호. 원본 음성 및 기존 마차 v1 콘텐츠293개도 불변 확인. 원본 ZIP 수정0. 신규 아트15개 원본 해시 일치.
 
-최종 미술 승인은 USER_ART_REVIEW_PENDING. 기존 이름표/Quest Marker의 크기·위치는 이번에 변경하지 않았다. 남은 검증: Main01/05/12 전체 이야기·전투 흐름과 실제 연속 이동 수동 검토. GitHub Push0.
+사용자가 2026-10-10 최종 미술을 승인했다: USER_ART_APPROVED. 기존 이름표/Quest Marker의 크기·위치는 이번에 변경하지 않았다. 남은 검증: Main01/05/12 전체 이야기·전투 흐름과 실제 연속 이동 수동 검토. GitHub Push0.
 
 ## QA 완료 판정
 
@@ -59,3 +59,11 @@ QA 최종 집계는 아래 완료 결과에 기록한다. 공용 서비스 검�
 ![실제 건물 접합](Evidence/StarterVillageV4_20261010/village_runtime_house.png)
 
 ![실제 남문](Evidence/StarterVillageV4_20261010/village_runtime_south_gate.png)
+
+## 최종 미술 승인 및 Commit 분리 재검증 — 2026-10-10
+
+사용자 최종 미술 승인으로 USER_ART_APPROVED로 갱신했다. Unity 화면·Play Mode·Scene 재생성·강제 종료·Push 없이 파일/Git 비교만 수행했다.
+
+통합 전 LOCAL 사본과 현재 LOCAL Scene를 비교한 결과, Sprite 참조284개만 변경됐고 그 외 바이트는 동일하다. 현재 Scene SHA256은 `80c83344d1765aa912d8d54bf89fcc247f1eef8fb4043a90040bcd081fa1cf6e`. HEAD에는 SpriteRenderer500개, LOCAL에는284개이며 공통 Renderer ID는0개다. 기존 사용자 구조 변경을 포함하지 않고 HEAD에 승인된 아트 참조만 적용할 대상이 없어 Scene를 별도 Commit으로 안전하게 분리할 수 없다. LOCAL Scene와 기존 사용자 변경을 미커밋 상태 그대로 보존하고, 이미 Commit된 Sprite-only 패치와 신규 아트/Generator/SouthGate를 유지한다. 이번 Commit은 승인 문서와 CURRENT_STATUS의 관련 부분만 포함한다.
+
+미술 승인은 QA 전체 PASS를 의미하지 않는다. Unity Search 내부 예외2건(격리 QA 첫 실행 및 재실행)은 미해결로 유지한다. 전체 QA PARTIAL, Console 검사 FAIL 및 메인 전투 종단 미검증 판정은 변경하지 않는다. 기존 통합 Commit: `9af4e6886a855a03c0bbfb4f1c56dbf44a80676d`.
