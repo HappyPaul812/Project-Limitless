@@ -1,5 +1,6 @@
 param(
-    [string]$PythonEnv = "E:\Program Files\anaconda3\envs\py3_12"
+    [string]$PythonEnv = "E:\Program Files\anaconda3\envs\py3_12",
+    [switch]$DryRun
 )
 
 $ErrorActionPreference = "Stop"
@@ -22,6 +23,8 @@ if (-not (Test-Path $pythonExe)) {
 }
 
 $env:Path = "$PythonEnv;$pythonScripts;$env:Path"
+# uv가 서버용 환경을 만들 때도 지정한 py3_12 인터프리터를 사용합니다.
+$env:UV_PYTHON = $pythonExe
 
 $pythonVersionText = (& $pythonExe --version 2>&1 | Out-String).Trim()
 if ($pythonVersionText -notmatch '^Python\s+(\d+)\.(\d+)') {
@@ -40,6 +43,13 @@ if (-not $uvCommand) {
 }
 
 $uvVersionText = (& $uvCommand.Source --version 2>&1 | Out-String).Trim()
+if ($LASTEXITCODE -ne 0) { throw "uv 실행에 실패했습니다: $uvVersionText" }
+$uvxExe = Join-Path $pythonScripts "uvx.exe"
+if (-not (Test-Path -LiteralPath $uvxExe)) {
+    throw "MCP 서버 실행에 필요한 uvx.exe를 찾지 못했습니다: $uvxExe"
+}
+$uvxVersionText = (& $uvxExe --version 2>&1 | Out-String).Trim()
+if ($LASTEXITCODE -ne 0) { throw "uvx 실행에 실패했습니다: $uvxVersionText" }
 
 # ProjectVersion.txt에서 이 프로젝트가 요구하는 정확한 Unity 버전을 읽습니다.
 $versionLine = Get-Content $projectVersionFile | Where-Object { $_ -match '^m_EditorVersion:' } | Select-Object -First 1
@@ -63,7 +73,23 @@ Write-Host "  Project : $projectPath"
 Write-Host "  Unity   : $unityVersion"
 Write-Host "  Python  : $pythonVersionText"
 Write-Host "  uv      : $uvVersionText"
+Write-Host "  uvx     : $uvxVersionText ($uvxExe)"
+Write-Host "  Editor  : $unityExe"
 Write-Host ""
+
+if ($DryRun) {
+    if (-not $unityExe) { throw "Unity $unityVersion Editor를 찾지 못했습니다. DryRun에서는 Hub를 실행하지 않습니다." }
+    Write-Host "DryRun 완료: Python/uv/uvx와 정확한 Editor 경로를 확인했습니다. 프로세스는 시작하지 않았습니다."
+    return
+}
+
+# 이미 실행 중인 Editor가 있으면 새 Editor를 띄우지 않습니다. Hub의 unity.exe CLI는 제외합니다.
+$runningEditors = @(Get-Process -Name Unity -ErrorAction SilentlyContinue | Where-Object {
+    -not $_.Path -or $_.Path -notmatch 'Unity Hub[\\/]resources[\\/]unity\.exe$'
+})
+if ($runningEditors.Count -gt 0) {
+    throw "실행 중인 Unity Editor가 있습니다. 기존 작업을 저장하고 직접 종료한 뒤 실행해 주세요. 강제 종료하지 않습니다."
+}
 
 if ($unityExe) {
     Write-Host "Unity Editor를 직접 실행합니다." -ForegroundColor Green
