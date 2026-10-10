@@ -1,0 +1,599 @@
+{
+  "zip_sha256": "f25cb2bdcd5325c039a2fd9032e467cdb87b5f778548f5c1b72be68d9992d7f0",
+  "crc_bad_entry": null,
+  "entries": 25,
+  "png": [
+    {
+      "file": "Buildings/LL_C1_SV_House_Door_128_v2_zoom.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 148960
+    },
+    {
+      "file": "Buildings/LL_C1_SV_House_Door_128_v3_zoom.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 147824
+    },
+    {
+      "file": "Buildings/LL_C1_SV_House_Door_128_v4.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 9214
+    },
+    {
+      "file": "Buildings/LL_C1_SV_House_Roof_Center_128_v2.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 6352
+    },
+    {
+      "file": "Buildings/LL_C1_SV_House_Wall_Window_128_v2.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 4394
+    },
+    {
+      "file": "Ground/LL_C1_SV_Ground_Grass_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_SV_Path_Left_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_SV_Path_Right_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Preview/LL_C1_SV_Asset_ContactSheet_v3.png",
+      "size": [
+        1100,
+        720
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Preview/LL_C1_SV_Door_Bottom_Validation_v4.png",
+      "size": [
+        1000,
+        330
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Preview/LL_C1_SV_Layout_19x13_CoordinateStudy_v4.png",
+      "size": [
+        2432,
+        1664
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Preview/LL_C1_SV_NPC_Reference_MARKERS_ONLY_v1.png",
+      "size": [
+        1216,
+        832
+      ],
+      "mode": "RGB",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Preview/LL_C1_SV_Path_Seam_6x6_v3.png",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Props/LL_C1_SV_Barrel_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 11654
+    },
+    {
+      "file": "Props/LL_C1_SV_Bush_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 10539
+    },
+    {
+      "file": "Props/LL_C1_SV_Bush_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 8798
+    },
+    {
+      "file": "Props/LL_C1_SV_Campfire_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 14048
+    },
+    {
+      "file": "Props/LL_C1_SV_Chest_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 9148
+    },
+    {
+      "file": "Props/LL_C1_SV_Fence_Wood_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 8608
+    },
+    {
+      "file": "Props/LL_C1_SV_Rock_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 10972
+    },
+    {
+      "file": "Props/LL_C1_SV_Tree_Big_255x256_v1.png",
+      "size": [
+        255,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 43322
+    },
+    {
+      "file": "Props/LL_C1_SV_Tree_Medium_128x156_v1.png",
+      "size": [
+        128,
+        156
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 12566
+    }
+  ],
+  "sprites": [
+    {
+      "old": "tiles_grass_4_0",
+      "file": "Ground/LL_C1_SV_Ground_Grass_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "tiles_grass_5_4",
+      "file": "Ground/LL_C1_SV_Path_Right_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "tiles_grass_4_4",
+      "file": "Ground/LL_C1_SV_Path_Left_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "house_tiles_new_4_4",
+      "file": "Buildings/LL_C1_SV_House_Roof_Center_128_v2.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "house_tiles_new_1_3",
+      "file": "Buildings/LL_C1_SV_House_Wall_Window_128_v2.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "house_tiles_new_1_1",
+      "file": "Buildings/LL_C1_SV_House_Door_128_v4.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "fence_tiles_2_2",
+      "file": "Props/LL_C1_SV_Fence_Wood_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "tree_medium",
+      "file": "Props/LL_C1_SV_Tree_Medium_128x156_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "tree_big",
+      "file": "Props/LL_C1_SV_Tree_Big_255x256_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "bush_01",
+      "file": "Props/LL_C1_SV_Bush_A_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "bush_02",
+      "file": "Props/LL_C1_SV_Bush_B_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "rock_01",
+      "file": "Props/LL_C1_SV_Rock_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "Wooden_Barrel_Type_A",
+      "file": "Props/LL_C1_SV_Barrel_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "Wooden_Chest_Type_A",
+      "file": "Props/LL_C1_SV_Chest_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    },
+    {
+      "old": "Campfire_Type_A",
+      "file": "Props/LL_C1_SV_Campfire_128_v1.png",
+      "size_ok": true,
+      "sha_ok": true,
+      "markdown_ok": true,
+      "ppu_ok": true,
+      "pivot_ok": true
+    }
+  ],
+  "buildings": [
+    {
+      "draw_order": [
+        "wallL",
+        "wallR",
+        "door",
+        "roof"
+      ],
+      "central_columns_with_alpha_holes": [
+        {
+          "x": 179,
+          "ys": [
+            147,
+            148,
+            149
+          ]
+        },
+        {
+          "x": 180,
+          "ys": [
+            147,
+            148
+          ]
+        },
+        {
+          "x": 181,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 182,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 202,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 203,
+          "ys": [
+            147,
+            148
+          ]
+        },
+        {
+          "x": 204,
+          "ys": [
+            147,
+            148,
+            149
+          ]
+        },
+        {
+          "x": 205,
+          "ys": [
+            147,
+            148,
+            149,
+            150
+          ]
+        }
+      ]
+    },
+    {
+      "draw_order": [
+        "door",
+        "wallL",
+        "wallR",
+        "roof"
+      ],
+      "central_columns_with_alpha_holes": [
+        {
+          "x": 179,
+          "ys": [
+            147,
+            148,
+            149
+          ]
+        },
+        {
+          "x": 180,
+          "ys": [
+            147,
+            148
+          ]
+        },
+        {
+          "x": 181,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 182,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 202,
+          "ys": [
+            147
+          ]
+        },
+        {
+          "x": 203,
+          "ys": [
+            147,
+            148
+          ]
+        },
+        {
+          "x": 204,
+          "ys": [
+            147,
+            148,
+            149
+          ]
+        },
+        {
+          "x": 205,
+          "ys": [
+            147,
+            148,
+            149,
+            150
+          ]
+        }
+      ]
+    }
+  ],
+  "roof_edges": {
+    "left": 0,
+    "right": 0,
+    "top": 0,
+    "bottom": 126
+  },
+  "seams": {
+    "tiles_grass_4_0": {
+      "x_rgb_mae": 0.90625,
+      "y_rgb_mae": 8.1875,
+      "x_edge_exact": 116,
+      "y_edge_exact": 90
+    },
+    "tiles_grass_4_4": {
+      "x_rgb_mae": 28.338541666666668,
+      "y_rgb_mae": 5.776041666666667,
+      "x_edge_exact": 0,
+      "y_edge_exact": 102
+    },
+    "tiles_grass_5_4": {
+      "x_rgb_mae": 28.338541666666668,
+      "y_rgb_mae": 4.859375,
+      "x_edge_exact": 0,
+      "y_edge_exact": 108
+    },
+    "fence_tiles_2_2": {
+      "x_rgb_mae": 0.0,
+      "y_rgb_mae": 0.0,
+      "x_edge_exact": 128,
+      "y_edge_exact": 128
+    }
+  },
+  "path_middle_mae": 2.875
+}

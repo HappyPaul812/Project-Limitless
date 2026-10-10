@@ -234,7 +234,9 @@ namespace ProjectLimitless.Editor
             for (int x = -9; x <= 9; x++)
             {
                 if (x >= -1 && x <= 1) continue;
-                CreateFence(root.transform, new Vector2(x, -5.7f));
+                // 마을 남문만 오리지널 울타리를 사용합니다. Field_01의 공용 CreateFence는 기존 Sprite를 유지합니다.
+                CreateSprite(root.transform, $"Fence_{x}_-5.7", ProjectLimitless.EditorTools.StarterVillageRenewalArt.Load("fence_tiles_2_2"),
+                    new Vector2(x, -5.7f), 2, new Vector2(.9f, .2f), new Vector2(0f, -.35f));
             }
 
             GameObject spawn = new GameObject("Spawn_From_Field01");

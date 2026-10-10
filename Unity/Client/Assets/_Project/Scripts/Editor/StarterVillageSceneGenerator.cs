@@ -813,22 +813,22 @@ namespace ProjectLimitless.EditorTools
             CreateGridSprite(parent, $"Fence_{position.x}_{position.y}", FenceTilesPath, "fence_tiles_2_2", position, 2, new Vector2(0.9f, 0.2f), new Vector2(0f, -0.35f));
         }
 
-        /// <summary>Basic Hand-Drawn 폴더의 단일 Sprite를 읽어 마을 오브젝트로 만듭니다.</summary>
+        /// <summary>기존 자연물 역할을 마을 전용 오리지널 Sprite에 대응합니다.</summary>
         private static GameObject CreateBasicSprite(Transform parent, string objectName, string relativePath, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            return CreateSprite(parent, objectName, AssetDatabase.LoadAssetAtPath<Sprite>(BasicHandDrawnRoot + relativePath), position, sortingOrder, colliderSize, colliderOffset);
+            return CreateSprite(parent, objectName, StarterVillageRenewalArt.Load(System.IO.Path.GetFileNameWithoutExtension(relativePath)), position, sortingOrder, colliderSize, colliderOffset);
         }
 
-        /// <summary>Essential RPG 폴더의 단일 Sprite를 읽어 마을 오브젝트로 만듭니다.</summary>
+        /// <summary>기존 소품 역할을 마을 전용 오리지널 Sprite에 대응합니다.</summary>
         private static GameObject CreateEssentialSprite(Transform parent, string objectName, string relativePath, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            return CreateSprite(parent, objectName, AssetDatabase.LoadAssetAtPath<Sprite>(EssentialRpgRoot + relativePath), position, sortingOrder, colliderSize, colliderOffset);
+            return CreateSprite(parent, objectName, StarterVillageRenewalArt.Load(System.IO.Path.GetFileNameWithoutExtension(relativePath)), position, sortingOrder, colliderSize, colliderOffset);
         }
 
-        /// <summary>한 이미지에서 잘라낸 여러 Sprite 중 이름이 맞는 조각을 찾아 오브젝트로 만듭니다.</summary>
+        /// <summary>기존 격자 역할 이름에 대응하는 전용 단일 Sprite로 만듭니다.</summary>
         private static GameObject CreateGridSprite(Transform parent, string objectName, string assetPath, string spriteName, Vector2 position, int sortingOrder, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            Sprite sprite = Array.Find(AssetDatabase.LoadAllAssetsAtPath(assetPath), asset => asset is Sprite && asset.name == spriteName) as Sprite;
+            Sprite sprite = StarterVillageRenewalArt.Load(spriteName);
             return CreateSprite(parent, objectName, sprite, position, sortingOrder, colliderSize, colliderOffset);
         }
 
@@ -861,83 +861,7 @@ namespace ProjectLimitless.EditorTools
         /// <summary>마을에 사용하는 격자 이미지와 단일 이미지의 Unity Import 설정을 일괄 적용합니다.</summary>
         private static void ConfigureStarterVillageImportSettings()
         {
-            ConfigureGridImport(GrassTilesPath, 10, 6);
-            ConfigureGridImport(HouseTilesPath, 6, 5);
-            ConfigureGridImport(FenceTilesPath, 5, 5);
-            string[] individualPaths =
-            {
-                BasicHandDrawnRoot + "assets/tree_big.png", BasicHandDrawnRoot + "assets/tree_medium.png",
-                BasicHandDrawnRoot + "assets/bush_01.png", BasicHandDrawnRoot + "assets/bush_02.png", BasicHandDrawnRoot + "assets/rock_01.png",
-                EssentialRpgRoot + "Village_and_Camp/Wooden_Chest_Type_A.png", EssentialRpgRoot + "Village_and_Camp/Wooden_Barrel_Type_A.png",
-                EssentialRpgRoot + "Props_and_Loot/Campfire_Type_A.png",
-            };
-            foreach (string path in individualPaths)
-            {
-                ConfigureSingleSpriteImport(path);
-            }
-        }
-
-        /// <summary>이미지 한 장 전체를 128 PPU의 픽셀 선명한 단일 Sprite로 가져옵니다.</summary>
-        private static void ConfigureSingleSpriteImport(string path)
-        {
-            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
-            if (importer == null)
-            {
-                throw new InvalidOperationException($"Texture Importer를 찾지 못했습니다: {path}");
-            }
-
-            importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Single;
-            importer.spritePixelsPerUnit = 128;
-            importer.filterMode = FilterMode.Point;
-            importer.textureCompression = TextureImporterCompression.Uncompressed;
-            importer.mipmapEnabled = false;
-            importer.SaveAndReimport();
-        }
-
-        /// <summary>격자 이미지를 128×128 크기의 여러 Sprite로 자동 Slice하여 다시 가져옵니다.</summary>
-        private static void ConfigureGridImport(string path, int columns, int rows)
-        {
-            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
-            Texture2D texture = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
-            if (importer == null || texture == null || texture.width != columns * 128 || texture.height != rows * 128)
-            {
-                throw new InvalidOperationException($"128x128 Grid Texture 규격이 올바르지 않습니다: {path}");
-            }
-
-            // 각 칸의 이름, 픽셀 사각형, 중심점을 Sprite Editor 데이터로 구성합니다.
-            SpriteRect[] sprites = new SpriteRect[columns * rows];
-            string textureName = System.IO.Path.GetFileNameWithoutExtension(path);
-            for (int y = 0; y < rows; y++)
-            {
-                for (int x = 0; x < columns; x++)
-                {
-                    int index = y * columns + x;
-                    sprites[index] = new SpriteRect
-                    {
-                        name = $"{textureName}_{x}_{y}",
-                        rect = new Rect(x * 128, y * 128, 128, 128),
-                        alignment = (int)SpriteAlignment.Center,
-                        pivot = new Vector2(0.5f, 0.5f),
-                        spriteID = GUID.Generate(),
-                    };
-                }
-            }
-
-            importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Multiple;
-            importer.spritePixelsPerUnit = 128;
-            importer.filterMode = FilterMode.Point;
-            importer.textureCompression = TextureImporterCompression.Uncompressed;
-            importer.mipmapEnabled = false;
-            // Sprite Editor 데이터 제공자를 통해 계산한 Slice 정보를 TextureImporter에 저장합니다.
-            SpriteDataProviderFactories factories = new SpriteDataProviderFactories();
-            factories.Init();
-            var dataProvider = factories.GetSpriteEditorDataProviderFromObject(importer);
-            dataProvider.InitSpriteEditorDataProvider();
-            dataProvider.SetSpriteRects(sprites);
-            dataProvider.Apply();
-            importer.SaveAndReimport();
+            StarterVillageRenewalArt.ConfigureImports();
         }
 
         /// <summary>실제 그림이 준비되지 않은 오브젝트에 단색 Sprite, 이름표, 선택적 충돌 범위를 만듭니다.</summary>

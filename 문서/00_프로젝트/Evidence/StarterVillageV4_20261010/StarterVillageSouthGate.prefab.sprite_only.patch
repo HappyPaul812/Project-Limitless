@@ -1,0 +1,164 @@
+--- a/Unity/Client/Assets/_Project/Resources/World/StarterVillageSouthGate.prefab
++++ b/Unity/Client/Assets/_Project/Resources/World/StarterVillageSouthGate.prefab
+@@ -82,7 +82,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -221,7 +221,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -360,7 +360,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -499,7 +499,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -638,7 +638,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -777,7 +777,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -916,7 +916,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1055,7 +1055,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1194,7 +1194,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1333,7 +1333,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1472,7 +1472,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1611,7 +1611,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -1801,7 +1801,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -2033,7 +2033,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -2172,7 +2172,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -2311,7 +2311,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -2450,7 +2450,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0
+@@ -2634,7 +2634,7 @@
+   m_SortingLayer: 0
+   m_SortingOrder: 2
+   m_MaskInteraction: 0
+-  m_Sprite: {fileID: 1892116053, guid: d1228d04780ccff429a9d5042442017d, type: 3}
++  m_Sprite: {fileID: 21300000, guid: 83a104ccec8e470e988eca858dddb6b9, type: 3}
+   m_Color: {r: 1, g: 1, b: 1, a: 1}
+   m_FlipX: 0
+   m_FlipY: 0

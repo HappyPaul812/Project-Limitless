@@ -1,0 +1,13 @@
+{
+  "protected_count": 1257,
+  "unchanged_protected_count": 1254,
+  "allowed_scene_generators": [
+    "Unity/Client/Assets/_Project/Scenes/World_StarterVillage.unity",
+    "Unity/Client/Assets/_Project/Scripts/Editor/Field01SceneGenerator.cs",
+    "Unity/Client/Assets/_Project/Scripts/Editor/StarterVillageSceneGenerator.cs"
+  ],
+  "audio_and_v1_original_content_equal_to_precopy": 293,
+  "new_png15_equal_source": true,
+  "importers15_verified": true,
+  "scene_sprite_only": true
+}

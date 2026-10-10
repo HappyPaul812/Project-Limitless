@@ -1,0 +1,9 @@
+{
+  "protected_files": 1257,
+  "unchanged": 1254,
+  "only_allowed_changes": [
+    "Unity/Client/Assets/_Project/Scripts/Editor/Field01SceneGenerator.cs",
+    "Unity/Client/Assets/_Project/Scenes/World_StarterVillage.unity",
+    "Unity/Client/Assets/_Project/Scripts/Editor/StarterVillageSceneGenerator.cs"
+  ]
+}

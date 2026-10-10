@@ -1,3 +1,9 @@
+## 2026-10-10 StarterVillage v4 — 기술 PASS / LOCAL 적용 / 미술 승인 대기
+
+[최종 검수](StarterVillage_Renewal_Art_v4_Inspection_20261010.md): 문 상·하단 및 지붕 접합/환경15종 PASS. 전용 V4 GUID·실제 Importer 검증, Scene284+남문 활성16+비활성2 Sprite만 교체. Generator 전용 로더 연결·ThirdParty 원본 불변. 격리 실제 RenderTexture·NPC12·남문 왕복/Spawn/저장 검사 PASS; 서브9종 Runtime/Continue 및 Main01~20 서비스 검사 PASS. 격리 Unity Search 내부 예외로 Console 검사 FAIL/전체 QA PARTIAL, 전체 메인 전투 회귀는 미검증. 사용자 기존 Scene 변경과 분리할 수 없어 실제 적용 Scene는 미스테이징 보존하고 LOCAL Sprite-only 패치를 Commit 증거로 남김. 보호1257개 중 허용3개 외1254개 불변. USER_ART_REVIEW_PENDING. 마지막 관련 Commit은 이 항목을 포함한 `Feature: StarterVillage v4 전용 환경 통합 및 격리 QA`; 마차 보완 문서 Commit `1121cec`. Push0.
+
+---
+
 ## 2026-10-10 Main21 마차 Supplement v1 — 참고 검수 / PARTIAL·미구현
 
 [보완 검수](Main21_Accessible_Wagon_Supplement_v1_Inspection_20261010.md): CRC/PNG4·Manifest PASS, RGB 참고 도해만 제공되어 신규 Sprite/Animation Import0. 휠체어2+좌석3·한 명씩 램프 탑승·가림 구역 개념 보완, 실측 치수/실제 회전 동선·기존 PNG Seat3/짐 대응·가림 레이어는 PARTIAL/USER_REVIEW_PENDING. 말 Rect/Pivot/접지점/FPS는 미제공, 기존 Grid 위험 미해결. 구현 준비 정본에 Anchor/Sorting/Scale TBD·추가 납품 요구 연결. 자동 귀환/Quest/Controller/Save 구현0. 마지막 관련 commit은 이 항목을 포함한 `Docs: Main21 마차 보완 도해 검수와 미결 계약 기록`; 이전 아트 `ebf3872`. A 작업과 독립, Push0.

@@ -1,0 +1,107 @@
+[
+  {
+    "role": "tiles_grass_4_0",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Ground/LL_C1_SV_Ground_Grass_128_v1.png",
+    "guid": "aff2fc09d6494fa283129e1700620f86",
+    "fileID": "21300000",
+    "source": "Ground/LL_C1_SV_Ground_Grass_128_v1.png"
+  },
+  {
+    "role": "tiles_grass_5_4",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Ground/LL_C1_SV_Path_Right_128_v1.png",
+    "guid": "1727981134954c36a3796abdd1a540c7",
+    "fileID": "21300000",
+    "source": "Ground/LL_C1_SV_Path_Right_128_v1.png"
+  },
+  {
+    "role": "tiles_grass_4_4",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Ground/LL_C1_SV_Path_Left_128_v1.png",
+    "guid": "5fcb1d57aabe4582870922ace77acb8c",
+    "fileID": "21300000",
+    "source": "Ground/LL_C1_SV_Path_Left_128_v1.png"
+  },
+  {
+    "role": "house_tiles_new_4_4",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Buildings/LL_C1_SV_House_Roof_Center_128_v2.png",
+    "guid": "a4e6e27fc5d24a7884ea1c19765e7d35",
+    "fileID": "21300000",
+    "source": "Buildings/LL_C1_SV_House_Roof_Center_128_v2.png"
+  },
+  {
+    "role": "house_tiles_new_1_3",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Buildings/LL_C1_SV_House_Wall_Window_128_v2.png",
+    "guid": "4309b29bb74b4c9b96c5902e9e206108",
+    "fileID": "21300000",
+    "source": "Buildings/LL_C1_SV_House_Wall_Window_128_v2.png"
+  },
+  {
+    "role": "house_tiles_new_1_1",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Buildings/LL_C1_SV_House_Door_128_v4.png",
+    "guid": "d161123cf05f4f6c864fa8402a63d9a9",
+    "fileID": "21300000",
+    "source": "Buildings/LL_C1_SV_House_Door_128_v4.png"
+  },
+  {
+    "role": "fence_tiles_2_2",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Fence_Wood_128_v1.png",
+    "guid": "83a104ccec8e470e988eca858dddb6b9",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Fence_Wood_128_v1.png"
+  },
+  {
+    "role": "tree_medium",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Tree_Medium_128x156_v1.png",
+    "guid": "be012571a9b74e7eab6b2e66b3ec005d",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Tree_Medium_128x156_v1.png"
+  },
+  {
+    "role": "tree_big",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Tree_Big_255x256_v1.png",
+    "guid": "b448702c376d47c994fb6cfc40fdba2d",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Tree_Big_255x256_v1.png"
+  },
+  {
+    "role": "bush_01",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Bush_A_128_v1.png",
+    "guid": "2b42b9f7aedd4d7c91684c9cc99e99df",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Bush_A_128_v1.png"
+  },
+  {
+    "role": "bush_02",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Bush_B_128_v1.png",
+    "guid": "849af309f5d549048009f01771b498d7",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Bush_B_128_v1.png"
+  },
+  {
+    "role": "rock_01",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Rock_128_v1.png",
+    "guid": "112a12cc619144c6a464a476291b350d",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Rock_128_v1.png"
+  },
+  {
+    "role": "Wooden_Barrel_Type_A",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Barrel_128_v1.png",
+    "guid": "909b8fb67fc4430a852ac53b70d28906",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Barrel_128_v1.png"
+  },
+  {
+    "role": "Wooden_Chest_Type_A",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Chest_128_v1.png",
+    "guid": "4076ac35601d46cc8289fa220dbb8cdc",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Chest_128_v1.png"
+  },
+  {
+    "role": "Campfire_Type_A",
+    "path": "Assets/_Project/Art/Environment/StarterVillage/V4/Props/LL_C1_SV_Campfire_128_v1.png",
+    "guid": "ad9add568a084e41b9e956f37e8fbf5a",
+    "fileID": "21300000",
+    "source": "Props/LL_C1_SV_Campfire_128_v1.png"
+  }
+]
