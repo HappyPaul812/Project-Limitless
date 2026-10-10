@@ -1,3 +1,11 @@
+## 2026-10-10 Main21 자동 귀환 마차 — 기획 전제 확정 / 구현 준비 완료·미구현
+
+아르벨→초보 마을 Main21 전용 일회성 자동 귀환·Yes/No·Skip·항상 접근 가능한 마차1종/최대 휠체어2대·스토리5명/전투3명 유지 전제를 [구현 준비 문서](../03_스토리/Main21_자동귀환_마차_구현준비_20261010.md)에 정리하고 Chapter2/메인 Story 정본에 연결했다. 기존 Scene/Dialogue/Quest/Spawn/Save/Input/BGM을 파일 대조했으며 Arbel 전용 연출 구간→안전한 마을 Spawn 전환을1순위 권장했다.
+
+제공자는 레온1순위 후보, 도착은 기존 남문 복귀 좌표를 참고한 전용 Spawn 후보, 주행10~15초 목표. 정확 NPC/좌표·Objective/Dialogue·최종 아트/방식은 미정이다. 수락 체크포인트·도착 배치 뒤 진행·중복 Skip·저장 실패/Continue 복구·아트/placeholder·격리 QA 계획까지 기록. Unity/Script/Scene/Asset/Save/음원/placeholder 수정·생성0·화면 조작0. 링크/문서 차이 검증 완료, Runtime/Compile/RenderTexture NOT_VERIFIED. 다음은 미정 계약과 마차 아트 확정→실제 구현/QA. 마지막 관련 commit은 이 항목을 포함한 `Docs: Main21 접근 가능한 자동 귀환 마차 구현 준비`이며 이전 관련 정본은 `0278d41`·`c3722da`. 기존 사용자 변경 보호·Push0.
+
+---
+
 ## 2026-10-10 StarterVillage v2 — NEEDS_ART_CORRECTION / 미적용
 
 ZIP CRC·PNG20 디코드·환경15종 치수/SHA/Manifest PASS, v1의 약14px 지붕 틈·길 Left/Right 매핑 해결. 그러나 실제 벽·문64px 겹침에서 문 상단23×1px/하단25×1px 배경 투과가 양 건물·양 그리기 순서에 남아 필수 접합 FAIL. [수정할 PNG·정확한 픽셀·확대 증거·전체 합성](StarterVillage_Renewal_Art_v2_Inspection_20261010.md). 기술 PASS/최종 미술 승인은 대기(`USER_ART_REVIEW_PENDING`).
