@@ -1,3 +1,9 @@
+## 2026-10-10 Main21 마차 Supplement v1 — 참고 검수 / PARTIAL·미구현
+
+[보완 검수](Main21_Accessible_Wagon_Supplement_v1_Inspection_20261010.md): CRC/PNG4·Manifest PASS, RGB 참고 도해만 제공되어 신규 Sprite/Animation Import0. 휠체어2+좌석3·한 명씩 램프 탑승·가림 구역 개념 보완, 실측 치수/실제 회전 동선·기존 PNG Seat3/짐 대응·가림 레이어는 PARTIAL/USER_REVIEW_PENDING. 말 Rect/Pivot/접지점/FPS는 미제공, 기존 Grid 위험 미해결. 구현 준비 정본에 Anchor/Sorting/Scale TBD·추가 납품 요구 연결. 자동 귀환/Quest/Controller/Save 구현0. 마지막 관련 commit은 이 항목을 포함한 `Docs: Main21 마차 보완 도해 검수와 미결 계약 기록`; 이전 아트 `ebf3872`. A 작업과 독립, Push0.
+
+---
+
 ## 2026-10-10 Main21 접근 가능한 마차 v1 — 독립 아트 등록 / 이벤트 미구현
 
 [검수 정본](Main21_Accessible_Wagon_Art_v1_Inspection_20261010.md): CRC/PNG5개·Manifest/정지 Import PASS. 전용 Art/Story/Main21Carriage/V1에 마차 Sprite2/미분할 참고 Texture2 신규 등록·원본해시 일치·실제 Importer/Console Error0 확인. 휠체어2대/벤치 구조는 보이나 승객5명·실제 치수 USER_ART_REVIEW_PENDING. 말3프레임 Rect/접지점·Scale·Anchor·가림 레이어는 후속 확정, Quest/Controller/Scene Transition/Save 구현0. 보호437파일 해시 불변·Bootstrap/Edit Mode/포커스 비활성 유지. 다음: 수용 배치 도해/Anchor·프레임 납품정보 및 최종 미술 검토 후 별도 구현·격리 QA. 하렌 이름 확정 commit `0ae6b3b`. 마지막 관련 commit은 이 항목을 포함한 `Chore: Main21 마차 v1 독립 아트 등록 및 검수`. Push0.

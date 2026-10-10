@@ -1,0 +1,42 @@
+{
+  "crc_bad": null,
+  "zip_sha256": "a03561aba30ad945efbc11282cb87557433e8496894dd2138d0487ea9bc1cd48",
+  "png": [
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Supplement_v1/Main21_Wagon_Ramp_Boarding_Flow_Guide.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "5b9d1e723303257cce392f27ea376f6422822cb58a02ca3df5a23b1eefeb5f42"
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Supplement_v1/Main21_Wagon_Interior_Layout_Guide.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "839fd8204217459781f31cd0f8eba897055edae947bf4fadb62ccb97551f275d"
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Supplement_v1/Main21_Wagon_Horse_Walk_Pose_Guide.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "9840b73952a7956a584921dbbb8dfebd58cbfcd37b58164e7b2778f493b6987c"
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Supplement_v1/Main21_Wagon_Character_Placement_Occlusion_Guide.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "3f2a70c01323840e6e24c9a88f9b5537adac52a81cdb95a28472169844c7291b"
+    }
+  ]
+}
