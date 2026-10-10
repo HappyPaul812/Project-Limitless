@@ -1,0 +1,50 @@
+[
+  {
+    "file": "Ground/LL_C1_SV_Ground_Grass_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Ground/LL_C1_SV_Path_Right_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Ground/LL_C1_SV_Path_Left_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Fence_Wood_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Tree_Medium_128x156_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Tree_Big_255x256_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Bush_A_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Bush_B_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Rock_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Barrel_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Chest_128_v1.png",
+    "same_v1": true
+  },
+  {
+    "file": "Props/LL_C1_SV_Campfire_128_v1.png",
+    "same_v1": true
+  }
+]

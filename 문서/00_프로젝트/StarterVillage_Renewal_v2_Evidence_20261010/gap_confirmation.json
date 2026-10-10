@@ -1,0 +1,50 @@
+{
+  "coordinate_origin": "모든 PNG 좌상단 (0,0), x 오른쪽/y 아래",
+  "independent_source_alpha_checks": [
+    {
+      "door_row_y": 10,
+      "door_x_inclusive": [
+        53,
+        75
+      ],
+      "door_alpha_zero": true,
+      "left_wall_x_inclusive": [
+        117,
+        127
+      ],
+      "left_wall_alpha_zero": true,
+      "right_wall_x_inclusive": [
+        0,
+        11
+      ],
+      "right_wall_alpha_zero": true,
+      "roof_alpha_at_this_height": 0,
+      "width": 23,
+      "height": 1
+    },
+    {
+      "door_row_y": 114,
+      "door_x_inclusive": [
+        52,
+        76
+      ],
+      "door_alpha_zero": true,
+      "left_wall_x_inclusive": [
+        116,
+        127
+      ],
+      "left_wall_alpha_zero": true,
+      "right_wall_x_inclusive": [
+        0,
+        12
+      ],
+      "right_wall_alpha_zero": true,
+      "roof_alpha_at_this_height": 0,
+      "width": 25,
+      "height": 1
+    }
+  ],
+  "classification": "NEEDS_ART_CORRECTION",
+  "note": "y10은 문 상단 헤더 아래, y114는 문 하단 발판 접합에 배경 투과. 2 draw order에서 동일. 지붕-벽 경계 자체 이전 14px 틈은 해소. 전체 지도는 이전 LOCAL 검수 JSON 좌표 기반이며 현재 Scene 변경/Unity 렌더가 아님.",
+  "baseline_scene_sha256": "c86036a1c4dd3472ebf2efc810e9b9886f411e6feee0ff7a3c313910b6540105"
+}

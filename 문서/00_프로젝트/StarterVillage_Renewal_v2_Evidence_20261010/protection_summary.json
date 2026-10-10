@@ -1,0 +1,24 @@
+{
+  "protected_files": 3537,
+  "changed": [],
+  "zip_sha_unchanged": true,
+  "save_sha_unchanged": true,
+  "files": {
+    "Unity/Client/UserData/CatacombItemAudit/d13f3c26b5e04779ac69997f25b832a7/save_slot_01.json": "0a58bd490ecc93cfb047261fe86408a8e8f7806173c12b190641d0d7e8930ef5",
+    "Unity/Client/UserData/Main09Audit/03162951717a402aa351a40f545e95f2/save_slot_01.json": "7c05dfe0f19e7cad02cee8f11a2d17057fa07efd6cfe9433e48e271da240bd0f",
+    "Unity/Client/UserData/Main09Audit/1682705575ed44cd8da37aea21007485/save_slot_01.json": "ebf6e88dcde80136df03d6dbc96ca8e2be8b73f7378b041e0045559f9081ef41",
+    "Unity/Client/UserData/Main09Audit/6d03c384e5c94c84b21c297d2ba24ea5/save_slot_01.json": "3ee778db0524e1f9440f09def14d6281a4b50a983b9667a9af1769871c44a829",
+    "Unity/Client/UserData/Main09Audit/c86613418c2e4dd98086f8e5423884a5/save_slot_01.json": "22eef8d7f2043473517d67c9dbc541689e3351e6fdd594a6c9da908c55e7b8dd",
+    "Unity/Client/UserData/Main09Audit/cc344a1c566d4a378a6b2e74bbbcea18/save_slot_01.json": "1958183b0c48f08b922eead25cf7c9f272e82e0e65ceab0fc86e2ab787e3c327",
+    "Unity/Client/UserData/Main09Audit/cccc548898c44593a683c5b85956f1ed/save_slot_01.json": "af42b5e64b0ed91791720be67286cd10749b930972db3b2736d1e7910d0cb6c9",
+    "Unity/Client/UserData/Main09Audit/d628181d7d764032a97549e76f2f2135/save_slot_01.json": "60ebd0d7572c19d9f06cfaea7570e448a56c0c939abb78c79e02cc01be92c783",
+    "Unity/Client/UserData/Main09Audit/e6e813f5c3984e909faf8aeb4ca01ae3/save_slot_01.json": "633561b0e374ce6439de040d4f12f37484e01bcfba6afebeb785c2956f42d967",
+    "Unity/Client/UserData/Main10Audit/0692d0398f114a64934cc8d21e9faa1b/save_slot_01.json": "5771cbd44f258fe2be5385f6122094aee93a3062573c2441f9ed1f2404237474",
+    "Unity/Client/UserData/Main10Audit/2bd2d1aac6954524ae2da3673d06fb90/save_slot_01.json": "070970816b8047d436538c23ebe2d2bd65d3af1b0cea17e713fe4b89f3032cc8",
+    "Unity/Client/UserData/Main11Audit/92b0653168984b9d9e286fceef60192d/save_slot_01.json": "4b85246fa31a5635fa379358c20425acf1135dc0f88e1c1991313779357b7d0a",
+    "Unity/Client/UserData/Main11Audit/e628a2330c6b4a7780eade695409a5c3/save_slot_01.json": "8b02f41395ff6925d4b12077ff344f976619d17f1d08ef9a2da0c3e2d78e0831",
+    "Unity/Client/UserData/Main11Audit/efc250dc470a4130a747b9530d426960/save_slot_01.json": "d0cb9e2dc6092aa28b041c41bd027241c0d6926489acbb7490412d55d4c59827",
+    "Unity/Client/UserData/Saves/save_slot_01.json": "2e0d30a25428d5794e5e88822306c4ccbd0854b33d12cf3c847f354983eafd46",
+    "Unity/Client/UserData/Settings/user_settings.json": "a7fb944f7dc4086b8f71dc4e47a8f65e4cd7f38c9ba162cf21166e19936c9e3a"
+  }
+}

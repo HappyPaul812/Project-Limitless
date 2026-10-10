@@ -1,3 +1,11 @@
+## 2026-10-10 StarterVillage v2 — NEEDS_ART_CORRECTION / 미적용
+
+ZIP CRC·PNG20 디코드·환경15종 치수/SHA/Manifest PASS, v1의 약14px 지붕 틈·길 Left/Right 매핑 해결. 그러나 실제 벽·문64px 겹침에서 문 상단23×1px/하단25×1px 배경 투과가 양 건물·양 그리기 순서에 남아 필수 접합 FAIL. [수정할 PNG·정확한 픽셀·확대 증거·전체 합성](StarterVillage_Renewal_Art_v2_Inspection_20261010.md). 기술 PASS/최종 미술 승인은 대기(`USER_ART_REVIEW_PENDING`).
+
+Unity Import/Scene/Prefab/Generator 변경0·무료 Sprite 교체0. 기존 Scene284/남문 활성16+비활성2 유지, Unity/Tools/UserData3537파일·Save/설정·원본 ZIP SHA 동일. MCP Bootstrap/EditMode/포커스false·Compile/Import idle·ConsoleError0 읽기 확인, 화면 조작/Play/추가 Editor0. 새 Import/RenderTexture/NPC 가독성/남문·Save·Quest Runtime 회귀는 NOT_VERIFIED. 다음: 문PNG 조립공백 수정본 재검수→PASS 후 전용Art/Generator 통합과 별도 회귀. 구현 commit 없음; 마지막 관련 commit은 이 항목을 포함한 `Docs: StarterVillage v2 접합 재검수와 적용 중단 기록`. 기존 Git 변경 보존·Push0.
+
+---
+
 ## 2026-10-10 팀 공통 인물·형제애·바이저 — 기획 보완 / 미구현
 
 플레이어와 고유 동료 폴 구분·Main21 일행5/전투3·세린의 지속적인 탐험/판단 역할·태온의 경험 기반 자기 판단과 패턴 익히기·형의 제한적 마력 바이저·마지막 **잘.했.어.**를 [팀 공통 정본](../04_등장인물/동료_형제애_바이저_팀공통정본_20261010.md)에 기록하고 기존6정본을 연결했다. 형 합류/현재 시력/바이저 작동·외형, Main21 상세 목표/협동 전투, 세린 개인 서사 시기는 미정이다.
