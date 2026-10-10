@@ -1,0 +1,26 @@
+[
+  {
+    "source": "Wagon/Accessible_Wagon_RampOpen.png",
+    "asset_path": "Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampOpen.png",
+    "guid": "0963079188e64dd397ede5b7a2079cc3",
+    "mode": "SingleSprite"
+  },
+  {
+    "source": "Wagon/Accessible_Wagon_RampClosed.png",
+    "asset_path": "Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampClosed.png",
+    "guid": "ea48e4c05d4a44baac9e30a3977863fe",
+    "mode": "SingleSprite"
+  },
+  {
+    "source": "Wagon/Wagon_Parts_Sheet.png",
+    "asset_path": "Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Wagon_Parts_Sheet.png",
+    "guid": "1c867cc5dff4414eabcca140f611ce4c",
+    "mode": "ReferenceTexture"
+  },
+  {
+    "source": "Horse/Horse_Harness_Walk_3Frame.png",
+    "asset_path": "Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Horse_Harness_Walk_3Frame.png",
+    "guid": "3c04e973c53e4e93b51b467b49b67583",
+    "mode": "ReferenceTexture"
+  }
+]

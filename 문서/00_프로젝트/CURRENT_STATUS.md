@@ -1,3 +1,9 @@
+## 2026-10-10 Main21 접근 가능한 마차 v1 — 독립 아트 등록 / 이벤트 미구현
+
+[검수 정본](Main21_Accessible_Wagon_Art_v1_Inspection_20261010.md): CRC/PNG5개·Manifest/정지 Import PASS. 전용 Art/Story/Main21Carriage/V1에 마차 Sprite2/미분할 참고 Texture2 신규 등록·원본해시 일치·실제 Importer/Console Error0 확인. 휠체어2대/벤치 구조는 보이나 승객5명·실제 치수 USER_ART_REVIEW_PENDING. 말3프레임 Rect/접지점·Scale·Anchor·가림 레이어는 후속 확정, Quest/Controller/Scene Transition/Save 구현0. 보호437파일 해시 불변·Bootstrap/Edit Mode/포커스 비활성 유지. 다음: 수용 배치 도해/Anchor·프레임 납품정보 및 최종 미술 검토 후 별도 구현·격리 QA. 하렌 이름 확정 commit `0ae6b3b`. 마지막 관련 commit은 이 항목을 포함한 `Chore: Main21 마차 v1 독립 아트 등록 및 검수`. Push0.
+
+---
+
 ## 2026-10-10 하렌(Haren) — 정식 이름 확정 / Character 미구현
 
 사용자 승인으로 태온 친형의 정식 이름을 하렌(Haren)으로 Story·팀 공통 Character 정본에 반영했다. 시각의 길/투사·제한적 시각 보조 판타지 바이저·형제애·Chapter3 마지막 “잘.했.어.” 유지. Character ID·연령·정확한 합류 시점/조건·현재 시력·눈 부상 정도는 계속 TBD. 기존3인 전투·폴/플레이어 구분·폴/미엘 Slow Burn·세린 역할 보호, Unity/Save/Character 아트 변경0. 마지막 관련 commit은 이 항목을 포함한 `Docs: 태온 친형 하렌 이름 정식 확정`. 아래 과거 기록의 이름 승인 대기는 이 확정으로 대체한다. Push0.

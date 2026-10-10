@@ -1,0 +1,106 @@
+{
+  "crc_bad": null,
+  "zip_sha256": "70869a9d49d203da50d8d11d22ac2ffa03abcb45056f266452285503a2c38a1c",
+  "png": [
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Art_v1/Preview/Accessible_Wagon_Preview.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "44a894bd75abb4d72318705dd9b9d0f4b5de281a68da1d0cdc8e2465a4013dc4",
+      "alpha_extrema": [
+        225,
+        250
+      ],
+      "alpha_zero": 0,
+      "alpha_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Art_v1/Horse/Horse_Harness_Walk_3Frame.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "562dac94aebd10baea05e5fad6d0d3a9f186c15452c41ada83e41773d4d47d8e",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 1107601,
+      "alpha_bbox": [
+        0,
+        17,
+        1240,
+        1238
+      ]
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Art_v1/Wagon/Accessible_Wagon_RampClosed.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "43cdfd044ba2048e49836153df48b5bab113ae6c80a8cd41d0de5539c1148a9b",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 686731,
+      "alpha_bbox": [
+        0,
+        2,
+        1240,
+        1254
+      ]
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Art_v1/Wagon/Wagon_Parts_Sheet.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "0d9ebe41e8ffd4dd251a3b32367124265cac14e421d88a0955b3a665267081b9",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 889265,
+      "alpha_bbox": [
+        0,
+        0,
+        1240,
+        1254
+      ]
+    },
+    {
+      "file": "Limitless_Main21_Accessible_Wagon_Art_v1/Wagon/Accessible_Wagon_RampOpen.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "sha256": "dab25ee7b6c2ffa6f34e7e983048f5911a37212f09a8165ad0db27ba8808a837",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_zero": 583658,
+      "alpha_bbox": [
+        0,
+        0,
+        1251,
+        1254
+      ]
+    }
+  ]
+}

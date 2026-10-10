@@ -1,0 +1,50 @@
+{
+  "execute_code": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"success\":true,\"message\":\"Code executed successfully.\",\"data\":{\"result\":\"[{\\\"path\\\":\\\"Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampOpen.png\\\",\\\"guid\\\":\\\"0963079188e64dd397ede5b7a2079cc3\\\",\\\"width\\\":1254,\\\"height\\\":1254,\\\"type\\\":\\\"Sprite\\\",\\\"mode\\\":\\\"Single\\\",\\\"ppu\\\":128.0,\\\"pivot\\\":\\\"(0.50, 0.50)\\\",\\\"filter\\\":\\\"Point\\\",\\\"mipmaps\\\":false,\\\"compression\\\":\\\"Uncompressed\\\",\\\"npot\\\":\\\"None\\\",\\\"maxSize\\\":2048,\\\"hasSprite\\\":true},{\\\"path\\\":\\\"Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampClosed.png\\\",\\\"guid\\\":\\\"ea48e4c05d4a44baac9e30a3977863fe\\\",\\\"width\\\":1254,\\\"height\\\":1254,\\\"type\\\":\\\"Sprite\\\",\\\"mode\\\":\\\"Single\\\",\\\"ppu\\\":128.0,\\\"pivot\\\":\\\"(0.50, 0.50)\\\",\\\"filter\\\":\\\"Point\\\",\\\"mipmaps\\\":false,\\\"compression\\\":\\\"Uncompressed\\\",\\\"npot\\\":\\\"None\\\",\\\"maxSize\\\":2048,\\\"hasSprite\\\":true},{\\\"path\\\":\\\"Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Wagon_Parts_Sheet.png\\\",\\\"guid\\\":\\\"1c867cc5dff4414eabcca140f611ce4c\\\",\\\"width\\\":1254,\\\"height\\\":1254,\\\"type\\\":\\\"Default\\\",\\\"mode\\\":\\\"None\\\",\\\"ppu\\\":128.0,\\\"pivot\\\":\\\"(0.50, 0.50)\\\",\\\"filter\\\":\\\"Point\\\",\\\"mipmaps\\\":false,\\\"compression\\\":\\\"Uncompressed\\\",\\\"npot\\\":\\\"None\\\",\\\"maxSize\\\":2048,\\\"hasSprite\\\":false},{\\\"path\\\":\\\"Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Horse_Harness_Walk_3Frame.png\\\",\\\"guid\\\":\\\"3c04e973c53e4e93b51b467b49b67583\\\",\\\"width\\\":1254,\\\"height\\\":1254,\\\"type\\\":\\\"Default\\\",\\\"mode\\\":\\\"None\\\",\\\"ppu\\\":128.0,\\\"pivot\\\":\\\"(0.50, 0.50)\\\",\\\"filter\\\":\\\"Point\\\",\\\"mipmaps\\\":false,\\\"compression\\\":\\\"Uncompressed\\\",\\\"npot\\\":\\\"None\\\",\\\"maxSize\\\":2048,\\\"hasSprite\\\":false}]\",\"compiler\":\"codedom\"}}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Code executed successfully.",
+      "data": {
+        "result": "[{\"path\":\"Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampOpen.png\",\"guid\":\"0963079188e64dd397ede5b7a2079cc3\",\"width\":1254,\"height\":1254,\"type\":\"Sprite\",\"mode\":\"Single\",\"ppu\":128.0,\"pivot\":\"(0.50, 0.50)\",\"filter\":\"Point\",\"mipmaps\":false,\"compression\":\"Uncompressed\",\"npot\":\"None\",\"maxSize\":2048,\"hasSprite\":true},{\"path\":\"Assets/_Project/Art/Story/Main21Carriage/V1/Wagon/Accessible_Wagon_RampClosed.png\",\"guid\":\"ea48e4c05d4a44baac9e30a3977863fe\",\"width\":1254,\"height\":1254,\"type\":\"Sprite\",\"mode\":\"Single\",\"ppu\":128.0,\"pivot\":\"(0.50, 0.50)\",\"filter\":\"Point\",\"mipmaps\":false,\"compression\":\"Uncompressed\",\"npot\":\"None\",\"maxSize\":2048,\"hasSprite\":true},{\"path\":\"Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Wagon_Parts_Sheet.png\",\"guid\":\"1c867cc5dff4414eabcca140f611ce4c\",\"width\":1254,\"height\":1254,\"type\":\"Default\",\"mode\":\"None\",\"ppu\":128.0,\"pivot\":\"(0.50, 0.50)\",\"filter\":\"Point\",\"mipmaps\":false,\"compression\":\"Uncompressed\",\"npot\":\"None\",\"maxSize\":2048,\"hasSprite\":false},{\"path\":\"Assets/_Project/Art/Story/Main21Carriage/V1/Reference/Horse_Harness_Walk_3Frame.png\",\"guid\":\"3c04e973c53e4e93b51b467b49b67583\",\"width\":1254,\"height\":1254,\"type\":\"Default\",\"mode\":\"None\",\"ppu\":128.0,\"pivot\":\"(0.50, 0.50)\",\"filter\":\"Point\",\"mipmaps\":false,\"compression\":\"Uncompressed\",\"npot\":\"None\",\"maxSize\":2048,\"hasSprite\":false}]",
+        "compiler": "codedom"
+      }
+    },
+    "isError": false
+  },
+  "read_console": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"success\":true,\"message\":\"Retrieved 0 log entries.\",\"data\":[]}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "success": true,
+      "message": "Retrieved 0 log entries.",
+      "data": []
+    },
+    "isError": false
+  },
+  "state": {
+    "meta": null,
+    "contents": [
+      {
+        "uri": "mcpforunity://editor/state",
+        "mimeType": "text/plain",
+        "meta": null,
+        "text": "{\"success\":true,\"message\":\"Retrieved editor state.\",\"error\":null,\"data\":{\"schema_version\":\"unity-mcp/editor_state@2\",\"observed_at_unix_ms\":1791615735535,\"sequence\":3,\"unity\":{\"instance_id\":\"Client@353f3e8d0c64a0b6\",\"unity_version\":\"6000.6.5f1\",\"project_id\":null,\"platform\":\"WindowsEditor\",\"is_batch_mode\":false},\"editor\":{\"is_focused\":false,\"play_mode\":{\"is_playing\":false,\"is_paused\":false,\"is_changing\":false},\"active_scene\":{\"path\":\"Assets/_Project/Scenes/Bootstrap.unity\",\"guid\":\"66a117c04f6158a4a968de1f574a1f7e\",\"name\":\"Bootstrap\"}},\"activity\":{\"phase\":\"idle\",\"since_unix_ms\":1791615650734,\"reasons\":[\"tick\"]},\"compilation\":{\"is_compiling\":false,\"is_domain_reload_pending\":false,\"last_compile_started_unix_ms\":null,\"last_compile_finished_unix_ms\":null,\"last_domain_reload_before_unix_ms\":null,\"last_domain_reload_after_unix_ms\":1791615648770},\"assets\":{\"is_updating\":false,\"external_changes_dirty\":false,\"external_changes_last_seen_unix_ms\":1791615637440,\"external_changes_dirty_since_unix_ms\":null,\"external_changes_last_cleared_unix_ms\":1791615637635,\"refresh\":{\"is_refresh_in_progress\":false,\"last_refresh_requested_unix_ms\":null,\"last_refresh_finished_unix_ms\":null}},\"tests\":{\"is_running\":false,\"mode\":null,\"current_job_id\":null,\"started_unix_ms\":null,\"started_by\":\"unknown\",\"last_run\":null},\"transport\":{\"unity_bridge_connected\":null,\"last_message_unix_ms\":null},\"settings\":{\"batch_execute_max_commands\":25},\"advice\":{\"ready_for_tools\":true,\"blocking_reasons\":[],\"recommended_retry_after_ms\":0,\"recommended_next_action\":\"none\"},\"staleness\":{\"age_ms\":243,\"is_stale\":false}},\"hint\":null}"
+      }
+    ]
+  }
+}
