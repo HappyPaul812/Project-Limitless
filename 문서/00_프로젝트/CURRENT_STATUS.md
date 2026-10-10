@@ -1,3 +1,11 @@
+## 2026-10-10 Field_01 리뉴얼 v1 — USER_ART_REVIEW_PENDING / 미통합
+
+[검수 보고서](Field01_Renewal_Art_v1_Inspection_20261010.md)·[비교 이미지](Evidence/Field01ArtV1_20261010/before_after.png): ZIP21항목 CRC/PNG16개 디코딩 PASS, 환경12종·363개 참조/Manifest 해시 대응 PASS. 현재 Scene 좌표 합성은 납품 Layout과 RGB 차이0; 소품6종 StarterVillage v4와 동일. 필수 PNG 재작업 확정0. 잔디3종 반전 상하 경계(픽셀 일치 FAIL)·길2종 계단형 변곡은 미술 검토. Rock B 기존 PPU100 슬라이스→신규 PPU128 지면 접점은 후속 확인.
+
+Scene/Prefab/Generator/Save/Import/재생성0, 보호3536파일 불변·기존Git335항목 유지. Bootstrap/Edit/포커스false 유지·화면조작/Push0. Importer·Runtime·전투·Save 회귀 NOT_VERIFIED; 기존 Search 예외2건 미해결 유지. 다음: 사용자 미술 승인/보완 범위 확정 후 별도 전용 GUID·Generator 대응·격리 QA. 검수 기준 HEAD `4e78d70`; 마지막 관련 Commit은 이 항목을 포함한 `Docs: Field01 리뉴얼 v1 읽기 전용 기술 검수`.
+
+---
+
 ## 2026-10-10 Main21 「돌아온 온기」 — DESIGN_CONFIRMED / IMPLEMENTED / QA_PARTIAL
 
 [상세 정본](../03_스토리/Chapter2_Main21_돌아온_온기.md)·[격리 QA](Main21_Implementation_QA_20261010.md): 승인13목표/A·B 기존몬스터3인 전투/자유순서3단서 안전통로/직접주민지원/동일접근가능마차 Yes·No/12초·Skip/안전Spawn·중단Continue/하렌텍스트첫등장/Chapter2완료 보상100EXP·60Currency한번 구현. Main22진입0. 선택Save플래그 추가,SaveVersion1·슬롯5 유지. 원문21+Path대사2 Manifest/신규WAV0.
