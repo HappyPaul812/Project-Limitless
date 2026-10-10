@@ -1,6 +1,9 @@
-## 2026-10-10 StarterVillage v4 — 기술 PASS / LOCAL 적용 / 미술 승인 대기
+## 2026-10-10 StarterVillage v4 — 기술 PASS / LOCAL 적용 / 미술 승인 완료
 
-[최종 검수](StarterVillage_Renewal_Art_v4_Inspection_20261010.md): 문 상·하단 및 지붕 접합/환경15종 PASS. 전용 V4 GUID·실제 Importer 검증, Scene284+남문 활성16+비활성2 Sprite만 교체. Generator 전용 로더 연결·ThirdParty 원본 불변. 격리 실제 RenderTexture·NPC12·남문 왕복/Spawn/저장 검사 PASS; 서브9종 Runtime/Continue 및 Main01~20 서비스 검사 PASS. 격리 Unity Search 내부 예외로 Console 검사 FAIL/전체 QA PARTIAL, 전체 메인 전투 회귀는 미검증. 사용자 기존 Scene 변경과 분리할 수 없어 실제 적용 Scene는 미스테이징 보존하고 LOCAL Sprite-only 패치를 Commit 증거로 남김. 보호1257개 중 허용3개 외1254개 불변. USER_ART_REVIEW_PENDING. 마지막 관련 Commit은 이 항목을 포함한 `Feature: StarterVillage v4 전용 환경 통합 및 격리 QA`; 마차 보완 문서 Commit `1121cec`. Push0.
+[최종 검수](StarterVillage_Renewal_Art_v4_Inspection_20261010.md): 문 상·하단 및 지붕 접합/환경15종 PASS. 전용 V4 GUID·실제 Importer 검증, Scene284+남문 활성16+비활성2 Sprite만 교체. Generator 전용 로더 연결·ThirdParty 원본 불변. 격리 실제 RenderTexture·NPC12·남문 왕복/Spawn/저장 검사 PASS; 서브9종 Runtime/Continue 및 Main01~20 서비스 검사 PASS. 격리 Unity Search 내부 예외2건 미해결로 Console 검사 FAIL/전체 QA PARTIAL, 전체 메인 전투 회귀는 미검증. 사용자 기존 Scene 변경과 분리할 수 없어 실제 적용 Scene는 미스테이징 보존하고 LOCAL Sprite-only 패치를 Commit 증거로 남김. 보호1257개 중 허용3개 외1254개 불변. USER_ART_APPROVED. 마지막 관련 Commit은 이 항목을 포함한 `Feature: StarterVillage v4 전용 환경 통합 및 격리 QA`; 마차 보완 문서 Commit `1121cec`. Push0.
+
+
+최종 승인 재검증: LOCAL 사본 대비 Sprite284개만 변경·그 외 불변. HEAD Renderer500/LOCAL284·공통 ID0으로 사용자 변경 없이 Scene Commit 분리 불가, LOCAL 미커밋 유지. Unity Search 예외2건 미해결·QA PARTIAL 유지. 통합 Commit `9af4e688`; 승인 문서 Commit `edb603e`.
 
 ---
 
