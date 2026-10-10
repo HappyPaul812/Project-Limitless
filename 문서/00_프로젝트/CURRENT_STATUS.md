@@ -1,3 +1,9 @@
+## 2026-10-10 StarterVillage v3 — NEEDS_ART_CORRECTION / 미통합
+
+[v3 기술 검수](StarterVillage_Renewal_Art_v3_Inspection_20261010.md): ZIP CRC/PNG/환경15종 규격·매핑 PASS, v2 대비 문1종 변경/14종 동일. 상단 y10/x53~75 틈은 해결됐지만 하단 문 y114/x52~76의25×1px 투과 공백이 문 우선/벽 우선 모두 남아 FAIL. Unity 환경 교체0/300·비활성0/2, Scene/Prefab/Generator/Save/기능 수정0, 런타임 QA NOT_VERIFIED. 다음: 하단 접합 아트 수정 후 재검수; 최종 미술 USER_ART_REVIEW_PENDING. 마지막 관련 commit은 이 항목을 포함한 `Docs: StarterVillage v3 하단 접합 결함 검수 기록`; 이전 관련 `c3722da`. 기존 변경 보호·화면 조작/Push0.
+
+---
+
 ## 2026-10-10 Main21 「돌아온 온기」 — DESIGN_DRAFT / IMPLEMENTATION_PENDING
 
 [정식 기획 초안](../03_스토리/Chapter2_Main21_돌아온_온기.md)에 사용자 제공13목표·30~45분 목표(미검증)·게임플레이 중심·기존몬스터 전투A/B·세 지점 근거 판단 퍼즐·스토리5/자유편성 전투3·동료별 활약을 기록했다. 접근 가능한 보급 마차1종(접이식 램프/고정 공간/동료 좌석·휠체어2대)·자동 귀환/Skip·아트 미제작을 명시했다. 형 이름 하렌(Haren)은 가칭/USER_APPROVAL_PENDING, 형제 갈등 해결0·잘.했.어.는 Chapter3 결말 전용이다.
