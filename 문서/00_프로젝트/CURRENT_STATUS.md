@@ -4,7 +4,7 @@
 
 기능213·마을335·서브/메인서비스588·Main18기능467·Main19기능169·Main20기능150 검사 PASS,격리Search 내부예외로Console FAIL/전체QA PARTIAL. 기존Search예외2건 이슈 유지. 실제 전체일반전투 난이도·30~45분·사용자플레이감각 NOT_VERIFIED/USER_REVIEW_PENDING. 하렌아트·말정밀프레임·내부가림 ART_PENDING. 다음: 사용자플레이검토·아트/TTS납품·Search별도복구.
 
-보호3466파일 중 공통C#5개 외3461불변/삭제0,기존Git335항목 보존. Scene/NPCPrefab/사용자Save·설정/공식아트/음원 보호. 원본Bootstrap/Edit/포커스false 유지,원본Play·Scene전환·화면조작/Push0. StarterVillage v4 승인 Scene+NPC는 `7309f772`에서 이미Commit완료(아래 과거 미커밋 기록을 대체). 설계Commit `6ce4fd3`; 마지막 구현Commit은 본 항목을 포함한 `Feature: Main21 돌아온 온기 전투 퍼즐 안전 귀환 구현`.
+보호3466파일 중 공통C#5개 외3461불변/삭제0,기존Git335항목 보존. Scene/NPCPrefab/사용자Save·설정/공식아트/음원 보호. 원본Bootstrap/Edit/포커스false 유지,원본Play·Scene전환·화면조작/Push0. StarterVillage v4 승인 Scene+NPC는 `7309f772`에서 이미Commit완료(아래 과거 미커밋 기록을 대체). 설계Commit `6ce4fd3`; 구현Commit `546ade248a33f14a4a62bcfcdc3c6b0d1411c715`.
 
 ---
 

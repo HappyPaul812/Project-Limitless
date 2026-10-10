@@ -1,5 +1,7 @@
 # Main21 구현 및 격리 QA — 2026-10-10
 
+구현 Commit: `546ade248a33f14a4a62bcfcdc3c6b0d1411c715`.
+
 상태: DESIGN_CONFIRMED / IMPLEMENTED / QA_PARTIAL / USER_REVIEW_PENDING. Unity6000.6.5f1. 상세 설계 Commit `6ce4fd3`; StarterVillage 승인 Scene/NPC 기준 `7309f772`. GitHub main 읽기 확인은 기준7309f772와 일치, Push0.
 
 ## 구현 범위
