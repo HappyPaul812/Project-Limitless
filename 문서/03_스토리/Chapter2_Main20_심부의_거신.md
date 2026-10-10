@@ -15,6 +15,8 @@
 
 ## 기본 계약과 서사 경계
 
+후속 [Main21 「돌아온 온기」](Chapter2_Main21_돌아온_온기.md)는 13목표의 DESIGN_DRAFT / IMPLEMENTATION_PENDING이다. Main20 실제 완료 뒤 서부 안정화 조사·귀환·Chapter3 연결을 설계하며 Main20 Quest/보스/보상/Runtime은 이번 문서화로 변경하지 않는다.
+
 | 항목 | 정식 값 |
 | --- | --- |
 | Quest | Main20 「심부의 거신」 |
