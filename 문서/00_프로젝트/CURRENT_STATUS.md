@@ -1,3 +1,9 @@
+## 2026-10-10 하렌(Haren) — 정식 이름 확정 / Character 미구현
+
+사용자 승인으로 태온 친형의 정식 이름을 하렌(Haren)으로 Story·팀 공통 Character 정본에 반영했다. 시각의 길/투사·제한적 시각 보조 판타지 바이저·형제애·Chapter3 마지막 “잘.했.어.” 유지. Character ID·연령·정확한 합류 시점/조건·현재 시력·눈 부상 정도는 계속 TBD. 기존3인 전투·폴/플레이어 구분·폴/미엘 Slow Burn·세린 역할 보호, Unity/Save/Character 아트 변경0. 마지막 관련 commit은 이 항목을 포함한 `Docs: 태온 친형 하렌 이름 정식 확정`. 아래 과거 기록의 이름 승인 대기는 이 확정으로 대체한다. Push0.
+
+---
+
 ## 2026-10-10 StarterVillage v3 — NEEDS_ART_CORRECTION / 미통합
 
 [v3 기술 검수](StarterVillage_Renewal_Art_v3_Inspection_20261010.md): ZIP CRC/PNG/환경15종 규격·매핑 PASS, v2 대비 문1종 변경/14종 동일. 상단 y10/x53~75 틈은 해결됐지만 하단 문 y114/x52~76의25×1px 투과 공백이 문 우선/벽 우선 모두 남아 FAIL. Unity 환경 교체0/300·비활성0/2, Scene/Prefab/Generator/Save/기능 수정0, 런타임 QA NOT_VERIFIED. 다음: 하단 접합 아트 수정 후 재검수; 최종 미술 USER_ART_REVIEW_PENDING. 마지막 관련 commit은 이 항목을 포함한 `Docs: StarterVillage v3 하단 접합 결함 검수 기록`; 이전 관련 `c3722da`. 기존 변경 보호·화면 조작/Push0.
