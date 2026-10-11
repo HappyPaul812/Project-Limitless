@@ -1,0 +1,23 @@
+{
+  "overall": "PARTIAL",
+  "functional_checks": "PASS",
+  "passes": 384,
+  "unique_pass_labels": 179,
+  "known_search_issue": "existing two issues remain unresolved; final run emitted one SearchDatabase exception",
+  "respawn": "8/8 after original 30-second deadlines",
+  "max_observation_delay_seconds": 0.0022,
+  "min_observation_delay_seconds": 0.0016,
+  "game_runtime_script_modified": false,
+  "manual_not_verified": [
+    "full normal combat input/skills/balance",
+    "Screen Space Overlay nameplates readability",
+    "whole companion/party/battle regression"
+  ],
+  "qa_attempt_outcomes": {
+    "20261012_resume": "respawn and Main02/early Main03 PASS; QA omitted clue dialogue completion",
+    "20261012_remaining": "Main03/Main04/Continue/north exit PASS; QA omitted side quest usual-story selection",
+    "20261012_final": "QA clicked same frame as opening; existing button input guard ignored click",
+    "20261012_final2": "all remaining assertions PASS; QA_PARTIAL_KNOWN_SEARCH"
+  },
+  "test_save_provenance": "new per-attempt audit directories, checkpoint copies only; original UserData unchanged"
+}

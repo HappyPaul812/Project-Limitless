@@ -1,0 +1,10 @@
+Scene=World_StarterVillage; time=61.46181; count=0
+
+grass_slime_01:True
+grass_slime_02:True
+grass_slime_03:True
+grass_slime_04:True
+grass_slime_05:True
+venom_bee_01:True
+venom_bee_02:True
+venom_bee_03:True

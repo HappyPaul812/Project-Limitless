@@ -1,0 +1,386 @@
+[
+  {
+    "old_sprite": "tiles_grass_4_0",
+    "old_fileID": "405149151",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_sprite": "Ground/LL_C1_F01_Grass_A_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 105,
+    "sorting_order": -10,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "tile",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 pixel art, seamless grass",
+    "sha256": "d3c28e3f34ad32c3a196170281a5d6a7142074052430dce542abbe84076da9c6",
+    "new_guid": "7e31f39d6ea2408da89ef9f0eaa3295b",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Ground/LL_C1_F01_Grass_A_128_v1.png"
+  },
+  {
+    "old_sprite": "tiles_grass_5_0",
+    "old_fileID": "1271049111",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_sprite": "Ground/LL_C1_F01_Grass_B_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 106,
+    "sorting_order": -10,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "tile",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 grass with sparse wildflower art",
+    "sha256": "c3c129dffcfd6bef96e18ff0edda9f78c27d94829d2307d85593551fc0bd90a7",
+    "new_guid": "4d5b02d714f34880888e9a5f4231f02a",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Ground/LL_C1_F01_Grass_B_128_v1.png"
+  },
+  {
+    "old_sprite": "tiles_grass_6_0",
+    "old_fileID": "1606921373",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_sprite": "Ground/LL_C1_F01_Grass_C_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 104,
+    "sorting_order": -10,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "tile",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 grass with wilder clumps",
+    "sha256": "32d11490c3edb34f2525f39a53cfa33a8ba2ee0402782409d9743c16e727e6af",
+    "new_guid": "c8c1941290c546579316990df61a9809",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Ground/LL_C1_F01_Grass_C_128_v1.png"
+  },
+  {
+    "old_sprite": "tiles_grass_4_4",
+    "old_fileID": "278596618",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_sprite": "Ground/LL_C1_F01_Path_Left_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 15,
+    "sorting_order": -8,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "tile",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 approved path edge; join adjusted",
+    "sha256": "4a56b0b39053c9206c8c268d98553c400903f1ca439280a2b87431ef5893696d",
+    "new_guid": "a4464efbb14a43fabcc1c54edf01cf22",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Ground/LL_C1_F01_Path_Left_128_v1.png"
+  },
+  {
+    "old_sprite": "tiles_grass_5_4",
+    "old_fileID": "1662121770",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_sprite": "Ground/LL_C1_F01_Path_Right_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 15,
+    "sorting_order": -8,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "tile",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 approved path edge; join adjusted",
+    "sha256": "3979b73180b7c9e05a13f68e7b800e0da93feadd2b15723bddf6cdaef5cd7b9d",
+    "new_guid": "986ca9f866a74dbf9296418ef0d2629e",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Ground/LL_C1_F01_Path_Right_128_v1.png"
+  },
+  {
+    "old_sprite": "tree_big",
+    "old_fileID": "21300000",
+    "old_guid": "d06207b6940ba73478971dde7147ae92",
+    "new_sprite": "Props/LL_C1_F01_Tree_Big_255x256_v1.png",
+    "canvas_px": [
+      255,
+      256
+    ],
+    "instances": 2,
+    "sorting_order": 4,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "10827e96bf56dbedad38b4b5ae263f464348057498e2c530c370166875be0861",
+    "new_guid": "4407416d192245bda9886a7b9b337740",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Tree_Big_255x256_v1.png"
+  },
+  {
+    "old_sprite": "tree_medium",
+    "old_fileID": "21300000",
+    "old_guid": "5b888cd38e2bf8543a27554e427d128b",
+    "new_sprite": "Props/LL_C1_F01_Tree_Medium_128x156_v1.png",
+    "canvas_px": [
+      128,
+      156
+    ],
+    "instances": 3,
+    "sorting_order": 4,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "b777ae242d9cb2e08fd8411eef98799b66544809f067fd5e172d7206937a1e1b",
+    "new_guid": "f38db1366c6d4bd28b0abbbfcbdccf83",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Tree_Medium_128x156_v1.png"
+  },
+  {
+    "old_sprite": "bush_01",
+    "old_fileID": "21300000",
+    "old_guid": "a7170a8f8df7fc347a8e4861ba68821b",
+    "new_sprite": "Props/LL_C1_F01_Bush_A_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 2,
+    "sorting_order": 2,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "814da7bddfb251092049565fb2b41f6aae4c18e3a1d5d35909e45cad103cf79b",
+    "new_guid": "4932d84ef62e4cda8922ff642baa7307",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Bush_A_128_v1.png"
+  },
+  {
+    "old_sprite": "bush_02",
+    "old_fileID": "21300000",
+    "old_guid": "ccf732b59af6d4d4cbf48b806179440b",
+    "new_sprite": "Props/LL_C1_F01_Bush_B_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 1,
+    "sorting_order": 2,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "ec67efc087547197ee7b4c77d69aa8b00c088f38e7b3c5d24c6f914666c31aba",
+    "new_guid": "9d993e02275f41aca12aabe7ea1b0ce5",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Bush_B_128_v1.png"
+  },
+  {
+    "old_sprite": "rock_01",
+    "old_fileID": "21300000",
+    "old_guid": "6b5b784b46803054195f9cc3b2961699",
+    "new_sprite": "Props/LL_C1_F01_Rock_A_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 1,
+    "sorting_order": 3,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "41d9178e4bad7946290777f82af5111c50ca79cfee76b39b23916a4e05637926",
+    "new_guid": "087ba5ac7f90470b8f5509e9077bb141",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Rock_A_128_v1.png"
+  },
+  {
+    "old_sprite": "rock_02",
+    "old_fileID": "-1321756614084088994",
+    "old_guid": "5b951bd26f9af3849a2fe92928a0c645",
+    "new_sprite": "Props/LL_C1_F01_Rock_B_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 1,
+    "sorting_order": 3,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "Meadow original clustered rock; compatible palette",
+    "sha256": "757d5aff656bffc546ef49d2369f6e6601a4b4fcce77efd1ce1fb4a4508fac92",
+    "new_guid": "604128ca21a049fe96a9ac8685bf8128",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Rock_B_128_v1.png"
+  },
+  {
+    "old_sprite": "fence_tiles_2_2",
+    "old_fileID": "1892116053",
+    "old_guid": "d1228d04780ccff429a9d5042442017d",
+    "new_sprite": "Props/LL_C1_F01_Fence_Wood_128_v1.png",
+    "canvas_px": [
+      128,
+      128
+    ],
+    "instances": 8,
+    "sorting_order": 2,
+    "ppu_recommended": 128,
+    "pivot_recommended": [
+      0.5,
+      0.5
+    ],
+    "sprite_mode": "Single",
+    "filter": "Point",
+    "mipmaps": false,
+    "compression": "None",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "prop",
+    "collider": "preserve existing; do not regenerate",
+    "style_source": "StarterVillage v4 direct asset reuse",
+    "sha256": "06b8c1153eeb6d8d1aef24db2656abeb55f62d98dfe2f7ca13050c6614d6cd4e",
+    "new_guid": "b0734a9d6b1e43f398dcefc732724bb8",
+    "asset_path": "Assets/_Project/Art/Environment/Field01/V1/Props/LL_C1_F01_Fence_Wood_128_v1.png"
+  }
+]

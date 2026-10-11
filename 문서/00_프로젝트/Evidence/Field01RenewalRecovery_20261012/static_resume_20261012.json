@@ -1,0 +1,16 @@
+{
+  "environment_references": 363,
+  "unique_sprites": 12,
+  "sprite_only_diff": true,
+  "oct10_scene_baseline_equals_HEAD": true,
+  "new_guid_collisions": 0,
+  "zip_png_exact": 12,
+  "initial_user_status_count": 335,
+  "resume_status_count": 337,
+  "additional_status": [
+    " M Unity/Client/Assets/_Project/Scenes/Field_01.unity",
+    " M Unity/Client/Assets/_Project/Scripts/Editor/Field01SceneGenerator.cs"
+  ],
+  "removed_status": [],
+  "isolated_script_differences": []
+}

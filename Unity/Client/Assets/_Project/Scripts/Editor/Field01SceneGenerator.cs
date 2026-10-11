@@ -25,10 +25,23 @@ namespace ProjectLimitless.Editor
         private const string VillageGatePrefabPath = "Assets/_Project/Resources/World/StarterVillageSouthGate.prefab";
         private const string GrassSlimeDefinitionPath = "Assets/_Project/Resources/MonsterDefinitions/01_GrassSlime.asset";
         private const string MonsterSpawnFolder = "Assets/_Project/Resources/MonsterSpawns";
-        // Field 환경을 그릴 ThirdParty Sprite 원본 위치입니다. 원본 Asset 자체는 수정하지 않습니다.
-        private const string BasicRoot = "Assets/ThirdParty/Schwarnhild/BasicHandDrawn/";
-        private const string GrassTilesPath = BasicRoot + "tiles/tiles_grass.png";
-        private const string FenceTilesPath = BasicRoot + "tiles/fence_tiles.png";
+        // Field_01 환경만 오리지널12종에 연결합니다. 다른 Field와 승인된 마을의 Sprite는 바꾸지 않습니다.
+        private const string RenewalRoot = "Assets/_Project/Art/Environment/Field01/V1/";
+        private static readonly Dictionary<string, string> RenewalPaths = new Dictionary<string, string>
+        {
+            { "tiles_grass_4_0", "Ground/LL_C1_F01_Grass_A_128_v1.png" },
+            { "tiles_grass_5_0", "Ground/LL_C1_F01_Grass_B_128_v1.png" },
+            { "tiles_grass_6_0", "Ground/LL_C1_F01_Grass_C_128_v1.png" },
+            { "tiles_grass_4_4", "Ground/LL_C1_F01_Path_Left_128_v1.png" },
+            { "tiles_grass_5_4", "Ground/LL_C1_F01_Path_Right_128_v1.png" },
+            { "tree_big", "Props/LL_C1_F01_Tree_Big_255x256_v1.png" },
+            { "tree_medium", "Props/LL_C1_F01_Tree_Medium_128x156_v1.png" },
+            { "bush_01", "Props/LL_C1_F01_Bush_A_128_v1.png" },
+            { "bush_02", "Props/LL_C1_F01_Bush_B_128_v1.png" },
+            { "rock_01", "Props/LL_C1_F01_Rock_A_128_v1.png" },
+            { "rock_02", "Props/LL_C1_F01_Rock_B_128_v1.png" },
+            { "fence_tiles_2_2", "Props/LL_C1_F01_Fence_Wood_128_v1.png" },
+        };
 
         [MenuItem("Project-Limitless/Milestone 02/Generate Field 01")]
         /// <summary>
@@ -158,7 +171,7 @@ namespace ProjectLimitless.Editor
             for (int y = -7; y <= 7; y++)
             {
                 int variant = Math.Abs((x * 7) + (y * 11)) % grass.Length;
-                GameObject tile = CreateGrid(parent, $"Grass_{x}_{y}", GrassTilesPath, grass[variant], new Vector2(x, y), -10);
+                GameObject tile = CreateGrid(parent, $"Grass_{x}_{y}", grass[variant], new Vector2(x, y), -10);
                 tile.GetComponent<SpriteRenderer>().flipX = ((x + y) & 1) == 0;
             }
         }
@@ -171,8 +184,8 @@ namespace ProjectLimitless.Editor
             {
                 int y = index - 7;
                 int x = roadCenter[index];
-                CreateGrid(parent, $"RoadLeft_{y}", GrassTilesPath, "tiles_grass_4_4", new Vector2(x - .5f, y), -8);
-                CreateGrid(parent, $"RoadRight_{y}", GrassTilesPath, "tiles_grass_5_4", new Vector2(x + .5f, y), -8);
+                CreateGrid(parent, $"RoadLeft_{y}", "tiles_grass_4_4", new Vector2(x - .5f, y), -8);
+                CreateGrid(parent, $"RoadRight_{y}", "tiles_grass_5_4", new Vector2(x + .5f, y), -8);
             }
         }
 
@@ -234,7 +247,7 @@ namespace ProjectLimitless.Editor
             for (int x = -9; x <= 9; x++)
             {
                 if (x >= -1 && x <= 1) continue;
-                // 마을 남문만 오리지널 울타리를 사용합니다. Field_01의 공용 CreateFence는 기존 Sprite를 유지합니다.
+                // 마을 남문만 오리지널 울타리를 사용합니다. Field_01 전용 CreateFence와 별개로 마을 v4 매핑을 유지합니다.
                 CreateSprite(root.transform, $"Fence_{x}_-5.7", ProjectLimitless.EditorTools.StarterVillageRenewalArt.Load("fence_tiles_2_2"),
                     new Vector2(x, -5.7f), 2, new Vector2(.9f, .2f), new Vector2(0f, -.35f));
             }
@@ -268,15 +281,29 @@ namespace ProjectLimitless.Editor
             }
         }
 
+        /// <summary>
+        /// 기존 환경 역할을 전용 아트로 읽습니다. 누락되면 재생성을 중단하여 무료 원본으로 조용히 되돌아가지 않습니다.
+        /// Import 규격은 등록된 meta(PPU128/중앙 Pivot/Point/무압축)를 사용하고 원본 ThirdParty는 수정하지 않습니다.
+        /// </summary>
+        private static Sprite LoadRenewalSprite(string legacyRole)
+        {
+            if (!RenewalPaths.TryGetValue(legacyRole, out string relativePath))
+                throw new InvalidOperationException("Field_01 환경 역할이 등록되지 않았습니다: " + legacyRole);
+            Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(RenewalRoot + relativePath);
+            if (sprite == null)
+                throw new InvalidOperationException("Field_01 오리지널 Sprite가 없습니다: " + RenewalRoot + relativePath);
+            return sprite;
+        }
+
         private static GameObject CreateBasic(Transform parent, string name, string relativePath, Vector2 position, int order, Vector2? colliderSize = null, Vector2? colliderOffset = null)
-            => CreateSprite(parent, name, AssetDatabase.LoadAssetAtPath<Sprite>(BasicRoot + relativePath), position, order, colliderSize, colliderOffset);
+            => CreateSprite(parent, name, LoadRenewalSprite(System.IO.Path.GetFileNameWithoutExtension(relativePath)), position, order, colliderSize, colliderOffset);
 
         private static GameObject CreateFence(Transform parent, Vector2 position)
-            => CreateGrid(parent, $"Fence_{position.x}_{position.y}", FenceTilesPath, "fence_tiles_2_2", position, 2, new Vector2(.9f, .2f), new Vector2(0f, -.35f));
+            => CreateGrid(parent, $"Fence_{position.x}_{position.y}", "fence_tiles_2_2", position, 2, new Vector2(.9f, .2f), new Vector2(0f, -.35f));
 
-        private static GameObject CreateGrid(Transform parent, string name, string assetPath, string spriteName, Vector2 position, int order, Vector2? colliderSize = null, Vector2? colliderOffset = null)
+        private static GameObject CreateGrid(Transform parent, string name, string spriteName, Vector2 position, int order, Vector2? colliderSize = null, Vector2? colliderOffset = null)
         {
-            Sprite sprite = AssetDatabase.LoadAllAssetsAtPath(assetPath).OfType<Sprite>().FirstOrDefault(item => item.name == spriteName);
+            Sprite sprite = LoadRenewalSprite(spriteName);
             return CreateSprite(parent, name, sprite, position, order, colliderSize, colliderOffset);
         }
 

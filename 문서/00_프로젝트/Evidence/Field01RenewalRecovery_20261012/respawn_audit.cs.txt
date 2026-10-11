@@ -1,0 +1,194 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.Player;
+using ProjectLimitless.World;
+using ProjectLimitless.Monster;
+using ProjectLimitless.Battle;
+using ProjectLimitless.NPC;
+using ProjectLimitless.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using Object=UnityEngine.Object;
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>독립 Batch 복사본에서만 Field01 아트·출입구·실제 Story/몬스터 전투·Continue를 검사합니다.</summary>
+    [InitializeOnLoad]
+    public static class Field01RenewalAudit
+    {
+        const string Key="Limitless.Field01RenewalAudit";
+        const string Art="Assets/_Project/Art/Environment/Field01/V1/";
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../Field01Results_20261012"));
+        static readonly BindingFlags Flags=BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance|BindingFlags.Static;
+        static readonly List<string> Results=new List<string>();
+        static readonly List<string> Errors=new List<string>();
+        static IEnumerator routine; static double deadline;
+        static Field01RenewalAudit()
+        {
+            EditorApplication.playModeStateChanged+=s=>{
+                if(!SessionState.GetBool(Key,false)||s!=PlayModeStateChange.EnteredPlayMode)return;
+                GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves"); UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);
+                Application.logMessageReceived+=Log;Application.runInBackground=true;routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+600;EditorApplication.update+=Tick;
+            };
+        }
+        public static void RunBatch()
+        {
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets"))throw new InvalidOperationException("격리 QA만 허용");
+            Directory.CreateDirectory(Root);Imports(); EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Key,true);EditorApplication.EnterPlaymode();
+        }
+        static void Check(bool v,string label)
+        { Results.Add((v?"PASS|":"FAIL|")+label);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Results); if(!v)throw new InvalidOperationException(label); }
+        static void Log(string text,string stack,LogType type){if(type==LogType.Error||type==LogType.Exception||type==LogType.Assert){Errors.Add(text+"\n"+stack);File.WriteAllLines(Path.Combine(Root,"console_errors.txt"),Errors);}}
+        static void Imports()
+        {
+            var paths=Directory.GetFiles(Art,"*.png",SearchOption.AllDirectories);Check(paths.Length==12,"Imports.Unique12");
+            foreach(var p in paths){var path=p.Replace('\\','/');var s=AssetDatabase.LoadAssetAtPath<Sprite>(path);var i=(TextureImporter)AssetImporter.GetAtPath(path);
+                Check(s!=null&&i!=null,"Imports.Sprite."+Path.GetFileName(path));
+                Check(s.pixelsPerUnit==128&&s.pivot==s.rect.size*.5f&&i.spriteImportMode==SpriteImportMode.Single&&i.filterMode==FilterMode.Point&&!i.mipmapEnabled&&i.textureCompression==TextureImporterCompression.Uncompressed&&i.alphaIsTransparency,"Imports.Contract."+s.name);
+                string guid;long id;AssetDatabase.TryGetGUIDAndLocalFileIdentifier(s,out guid,out id);Check(id==21300000&&!string.IsNullOrEmpty(guid),"Imports.GUID.LocalID."+s.name);
+            }
+            var f=typeof(ProjectLimitless.Editor.Field01SceneGenerator).GetMethod("LoadRenewalSprite",Flags);
+            var roles=new[]{"tiles_grass_4_0","tiles_grass_5_0","tiles_grass_6_0","tiles_grass_4_4","tiles_grass_5_4","tree_big","tree_medium","bush_01","bush_02","rock_01","rock_02","fence_tiles_2_2"};
+            foreach(var role in roles)Check(AssetDatabase.GetAssetPath((Sprite)f.Invoke(null,new object[]{role})).StartsWith(Art),"Generator.Mapping."+role);
+        }
+        static IEnumerator Wait(float seconds){float until=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<until)yield return null;}
+        static IEnumerator Settled(string name)
+        {float until=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!=name&&Time.realtimeSinceStartup<until)yield return null;Check(SceneManager.GetActiveScene().name==name,"Scene."+name);MonsterEncounterService.SuppressForSeconds(3600);yield return Wait(1);if(Player!=null)Player.enabled=false;Missing(name);}
+        static IEnumerator Load(string name){SceneManager.LoadSceneAsync(name);yield return Settled(name);}
+        static void Missing(string scene)
+        {var roots=SceneManager.GetActiveScene().GetRootGameObjects();Check(roots.Sum(g=>g.GetComponentsInChildren<Transform>(true).Sum(t=>GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject)))==0,"MissingScript0."+scene);
+            Check(roots.SelectMany(g=>g.GetComponentsInChildren<SpriteRenderer>(true)).All(r=>r.sprite!=null),"MissingSprite0."+scene);}
+        static PlayerController Player=>Object.FindAnyObjectByType<PlayerController>();
+        static void At(Vector2 p){Player.enabled=false;var body=Player.GetComponent<Rigidbody2D>();body.linearVelocity=Vector2.zero;body.position=p;Player.transform.position=p;Physics2D.SyncTransforms();}
+        static string Objective=>QuestService.ActiveMainQuest?.CurrentObjective?.ObjectiveId;
+        static object Call(object o,string name,params object[] args)=>o.GetType().GetMethod(name,Flags).Invoke(o,args);
+        static void SetStatic(Type t,string name,object value)=>t.GetField(name,Flags).SetValue(null,value);
+        static IEnumerator Close()
+        {for(int n=0;n<40&&DialoguePresenter.Instance!=null&&DialoguePresenter.Instance.IsOpen;n++){DialoguePresenter.Instance.Advance();yield return Wait(.08f);}Check(DialoguePresenter.Instance==null||!DialoguePresenter.Instance.IsOpen,"Dialogue.Completed");}
+        static void Seed()
+        {
+            PlayerController.SetMovementLocked(typeof(Field01RenewalAudit),true);GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"Field01 격리 QA");GameSessionData.SelectJob("fighter");GameSessionData.SelectPlayerPath("path.mobility");GameSessionData.ConfigureProgress(12,0);
+            GameSessionData.RecordLocation("Field_01","Spawn_From_StarterVillage");GameSessionData.SetPendingSpawnPoint("Spawn_From_StarterVillage");
+            QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=new[]{"main_01_call_reaches"}});
+        }
+        static void Environment()
+        {
+            var env=GameObject.Find("FieldEnvironment").GetComponentsInChildren<SpriteRenderer>(true);Check(env.Length==363&&env.All(r=>AssetDatabase.GetAssetPath(r.sprite).StartsWith(Art)),"Environment363.OriginalOnly");
+            Check(env.Select(r=>r.sprite).Distinct().Count()==12,"Environment.Unique12");
+            Check(Object.FindAnyObjectByType<WorldBounds2D>().Bounds.size==new Vector3(21,15,0),"WorldBounds21x15");
+            var rock=GameObject.Find("RockNorth");var collider=rock.GetComponent<BoxCollider2D>();var sprite=rock.GetComponent<SpriteRenderer>().sprite;
+            Check(rock.transform.position==new Vector3(4.5f,4.4f,0)&&collider.size==new Vector2(.4f,.22f)&&collider.offset==new Vector2(0,-.22f),"RockB.PositionColliderUnchanged");
+            Check(sprite.pixelsPerUnit==128&&sprite.rect.size==new Vector2(128,128)&&sprite.pivot==new Vector2(64,64),"RockB.Import128.Center");
+            var samples=new[]{new Vector2(0,4.7f),new Vector2(0,-4.6f),new Vector2(.4f,1),new Vector2(6.5f,-.8f),new Vector2(6.55f,5.6f),new Vector2(0,-6.8f)};
+            foreach(var p in samples)Check(!Physics2D.OverlapPointAll(p).Any(c=>!c.isTrigger&&c.GetComponentInParent<PlayerController>()==null&&c.GetComponentInParent<MonsterFieldController>()==null&&c.GetComponentInParent<NpcController>()==null),"WalkableProbe."+p);
+            Check(Physics2D.OverlapPointAll(new Vector2(4.5f,4.18f)).Any(c=>c==collider),"RockB.ColliderSolid");
+            var monsters=Object.FindObjectsByType<MonsterFieldController>(FindObjectsSortMode.None);Check(monsters.Length==8,"Monsters.Total8");Check(monsters.Count(x=>x.Definition.MonsterId=="grass_slime")==5&&monsters.Count(x=>x.Definition.MonsterId=="venom_bee")==3,"Monsters.5Slime3Bee");
+            foreach(var mon in monsters)Check(mon.GetComponentInChildren<SpriteRenderer>().sprite!=null&&mon.GetComponentInChildren<MonsterNameplate>()!=null&&mon.SpawnDefinition.RespawnSeconds>0,"Monster.Art.Name.Respawn."+mon.SpawnDefinition.SpawnId);
+            Capture("field_runtime_overview.png",new Vector3(0,0,-10),7.5f,1680,1200);Capture("rock_b_runtime.png",new Vector3(4.5f,4.3f,-10),1,768,768);Capture("winding_road_runtime.png",new Vector3(0,1.5f,-10),2.5f,960,960);
+        }
+        static void Capture(string name,Vector3 position,float size,int width,int height)
+        {
+            Check(SystemInfo.graphicsDeviceType!=UnityEngine.Rendering.GraphicsDeviceType.Null,"Graphics.DeviceAvailable");
+            var camera=Camera.main;var target=camera.targetTexture;var pos=camera.transform.position;float os=camera.orthographicSize,aspect=camera.aspect;var active=RenderTexture.active;var rt=RenderTexture.GetTemporary(width,height,24,RenderTextureFormat.ARGB32);
+            try{camera.transform.position=position;camera.orthographicSize=size;camera.aspect=(float)width/height;camera.targetTexture=rt;camera.Render();RenderTexture.active=rt;var tex=new Texture2D(width,height,TextureFormat.RGBA32,false);tex.ReadPixels(new Rect(0,0,width,height),0,0);tex.Apply();File.WriteAllBytes(Path.Combine(Root,name),tex.EncodeToPNG());Object.DestroyImmediate(tex);}
+            finally{camera.targetTexture=target;camera.transform.position=pos;camera.orthographicSize=os;camera.aspect=aspect;RenderTexture.active=active;RenderTexture.ReleaseTemporary(rt);}
+            Check(File.Exists(Path.Combine(Root,name)),"RenderTexture."+name);
+        }
+        static IEnumerator Continue(string label)
+        {
+            At(new Vector2(.15f,-3.1f));yield return Wait(.2f);var pos=(Vector2)Player.transform.position;string expected=JsonUtility.ToJson(QuestService.ExportSaveData());string scene=SceneManager.GetActiveScene().name;
+            Check(GameSaveService.SaveCurrentWorldPosition(pos,scene),"Save.Write."+label);yield return Load("Bootstrap");GameSessionData.Reset();
+            var button=GameObject.Find("StartMenuCanvas/Slot01/Action")?.GetComponent<UnityEngine.UI.Button>();Check(button!=null,"Continue.RealButton."+label);button.onClick.Invoke();yield return Settled(scene);
+            Check(Vector2.Distance(Player.transform.position,pos)<.1f&&JsonUtility.ToJson(QuestService.ExportSaveData())==expected,"Continue.CoordinatesQuestExact."+label);
+        }
+        static IEnumerator Victory(int allies,string label)
+        {
+            yield return Settled("Battle");var c=Object.FindAnyObjectByType<BattleSceneController>();Check(c!=null,"Battle.Controller."+label);c.StopAllCoroutines();
+            var formation=(Formation)c.GetType().GetField("allies",Flags).GetValue(c);Check(formation.Members.Count()==allies,"Battle.PartyCount."+label);
+            Call(c,"EndBattle","격리 QA 승리",true);yield return Wait(.2f);
+            Object.FindObjectsByType<UnityEngine.UI.Button>(FindObjectsSortMode.None).Single(x=>x.name=="VictoryReturn").onClick.Invoke();yield return Settled("Field_01");
+        }
+        static IEnumerator Trigger(SceneTransitionTrigger t,string expected,Vector2 spawn)
+        {t.SendMessage("OnTriggerEnter2D",Player.GetComponent<Collider2D>(),SendMessageOptions.RequireReceiver);yield return Settled(expected);Check(Vector2.Distance(Player.transform.position,spawn)<.1f,"Gate.Spawn."+expected);}
+        static IEnumerator Run()
+        {
+            Seed();yield return Load("Field_01");Environment();Check(Objective=="reach_investigation_area","Main02.Start");
+            yield return Continue("Main02BeforeArea");At(new Vector2(.4f,1));yield return Wait(.5f);Check(Objective=="win_investigation_encounter","Main02.ActualAreaTrigger");
+            var spawnIds=Resources.LoadAll<FieldMonsterSpawnDefinition>("MonsterSpawns").Where(s=>s.SceneName=="Field_01").OrderBy(s=>s.SpawnId).Select(s=>s.SpawnId).ToArray();
+            // 이전 실패는 다른 Scene에서 집계했습니다. 조우 위치와 별도로 플레이어를 중앙에 두어 출입구 이동을 막습니다.
+            var definitions=Resources.LoadAll<FieldMonsterSpawnDefinition>("MonsterSpawns").Where(x=>x.SceneName=="Field_01").ToArray();
+            Check(definitions.All(x=>x.RespawnSeconds==30&&!x.NonRespawningBoss),"Respawn.Data30Seconds");
+            var deadlines=new Dictionary<string,float>();
+            foreach(var id in spawnIds)
+            {
+                At(Vector2.zero);
+                var mon=Object.FindObjectsByType<MonsterFieldController>(FindObjectsSortMode.None).Single(x=>x.SpawnDefinition.SpawnId==id);var spawn=mon.SpawnDefinition;
+                SetStatic(typeof(MonsterEncounterService),"suppressedUntil",0f);Call(mon,"BeginEncounter");yield return Victory(1,id);
+                Check(!MonsterEncounterService.IsSpawnAvailable(spawn),"Respawn.BlockedAfterVictory."+id);
+                var timers=(Dictionary<string,float>)typeof(MonsterEncounterService).GetField("defeatedUntilBySpawn",Flags).GetValue(null);
+                deadlines[id]=timers["Field_01:"+id];
+                At(Vector2.zero);
+            }
+            Check(SceneManager.GetActiveScene().name=="Field_01","Respawn.SceneGuard.Before");
+            var observed=new HashSet<string>();
+            float timeout=deadlines.Values.Max()+5;
+            while(observed.Count<8&&Time.realtimeSinceStartup<timeout)
+            {
+                if(SceneManager.GetActiveScene().name!="Field_01")Check(false,"Respawn.SceneGuard.Tick");
+                var actual=Object.FindObjectsByType<MonsterFieldController>(FindObjectsSortMode.None).Where(x=>x.gameObject.scene.name=="Field_01").ToArray();
+                if(actual.Select(x=>x.SpawnDefinition.SpawnId).Distinct().Count()!=actual.Length)Check(false,"Respawn.NoDuplicates");
+                foreach(var spawn in definitions)
+                {
+                    float now=Time.realtimeSinceStartup;
+                    bool available=MonsterEncounterService.IsSpawnAvailable(spawn);
+                    bool exists=actual.Any(x=>x.SpawnDefinition.SpawnId==spawn.SpawnId);
+                    if(now<deadlines[spawn.SpawnId]&&(available||exists))Check(false,"Respawn.NotEarly."+spawn.SpawnId);
+                    if(exists&&observed.Add(spawn.SpawnId))
+                    {
+                        Check(now>=deadlines[spawn.SpawnId],"Respawn.At30OrNextFrame."+spawn.SpawnId);
+                        File.AppendAllText(Path.Combine(Root,"respawn_timing.tsv"),spawn.SpawnId+"\t"+(deadlines[spawn.SpawnId]-30).ToString("F4")+"\t"+deadlines[spawn.SpawnId].ToString("F4")+"\t"+now.ToString("F4")+"\t"+(now-deadlines[spawn.SpawnId]).ToString("F4")+"\n");
+                    }
+                }
+                yield return null;
+            }
+            Check(observed.Count==8,"Respawn.Actual8AtOriginalDeadline");
+            Check(Objective=="inspect_tracks","Main02.RealBattleAdvanced");
+            At(new Vector2(5.1f,-1.2f));yield return Wait(.3f);var tracks=Object.FindAnyObjectByType<MainQuest02Tracks>();Call(tracks,"OnInteract",default(InputAction.CallbackContext));yield return Close();Check(QuestService.GetState(MainQuest02FieldFlow.QuestId)==QuestState.Completed,"Main02.ActualTracksComplete");
+            yield return Wait(.3f);At(new Vector2(6.6f,-.8f));yield return Wait(.5f);Check(Objective=="talk_to_taeon_first","Main03.ActualAreaTrigger");
+            var taeon=Object.FindAnyObjectByType<MainQuest03TaeonActor>();Check(taeon!=null&&taeon.GetComponentsInChildren<SpriteRenderer>().All(r=>r.sprite!=null),"Main03.Actor.Art");
+            Check(taeon.GetComponent<NpcQuestMarkerPresenter>()!=null,"Main03.QuestMarker");Capture("taeon_first_runtime.png",new Vector3(7,-.4f,-10),2.8f,1280,720);
+            At((Vector2)taeon.transform.position+Vector2.left);Check(taeon.TryInteract(Player.transform,3),"Main03.ActualFirstTalk");yield return Close();Check(Objective=="win_taeon_encounter","Main03.FirstTalkAdvanced");
+            Check(taeon.TryInteract(Player.transform,3),"Main03.ActualStoryBattle");yield return Close();yield return Victory(2,"Main03Story");Check(Objective=="talk_to_taeon_after_battle","Main03.BattleAdvanced");
+            taeon=Object.FindAnyObjectByType<MainQuest03TaeonActor>();At((Vector2)taeon.transform.position+Vector2.left);Check(taeon.TryInteract(Player.transform,3),"Main03.ActualAfterTalk");yield return Close();
+            At(MainQuest03FieldFlow.NextCluePosition);yield return Wait(.5f);Check(QuestService.GetState(MainQuest03FieldFlow.QuestId)==QuestState.Completed,"Main03.ActualNextClueComplete");
+            At(MainQuest04FieldFlow.MeetingPosition);yield return Wait(.5f);Check(Objective=="talk_to_miel_first","Main04.ActualAreaTrigger");
+            var miel=Object.FindAnyObjectByType<MainQuest04MielActor>();Check(miel!=null&&miel.GetComponentsInChildren<SpriteRenderer>().All(r=>r.sprite!=null),"Main04.Actor.Art");Check(miel.GetComponent<NpcQuestMarkerPresenter>()!=null,"Main04.QuestMarker");
+            Capture("miel_first_runtime.png",new Vector3(7.2f,5.2f,-10),2.8f,1280,720);At((Vector2)miel.transform.position+Vector2.left);
+            Check(miel.TryInteract(Player.transform,3),"Main04.ActualFirstTalk");yield return Close();Check(Objective=="win_three_people_encounter","Main04.FirstTalkAdvanced");
+            Check(miel.TryInteract(Player.transform,3),"Main04.ActualStoryBattle");yield return Close();yield return Victory(3,"Main04Story");Check(Objective=="talk_to_miel_after_battle","Main04.BattleAdvanced");
+            miel=Object.FindAnyObjectByType<MainQuest04MielActor>();At((Vector2)miel.transform.position+Vector2.left);Check(miel.TryInteract(Player.transform,3),"Main04.ActualAfterTalk");yield return Close();Check(QuestService.GetState(MainQuest04FieldFlow.QuestId)==QuestState.Completed,"Main04.ActualComplete");
+            yield return Continue("Main05BeforeReturn");
+            var north=Object.FindObjectsByType<SceneTransitionTrigger>(FindObjectsSortMode.None).Single(x=>x.name=="Entrance_To_StarterVillage");yield return Trigger(north,"World_StarterVillage",new Vector2(0,-4.65f));Check(Objective=="report_to_south_gate_guard","Main05.VillageReached");
+            foreach(var id in new[]{MainQuest01NpcFlow.GuardId,MainQuest01NpcFlow.RepresentativeId})
+            {var role=Object.FindObjectsByType<VillageNpcRole>(FindObjectsSortMode.None).Single(x=>x.NpcId==id);At((Vector2)role.transform.position+Vector2.left);role.Interact(role.GetComponent<NpcController>());yield return Close();}
+            Check(QuestService.GetState(MainQuest05ReturnFlow.QuestId)==QuestState.Completed,"Main05.ActualReportsCompleted");
+            var gate=GameObject.Find("Exit_To_Field01").GetComponent<SceneTransitionTrigger>();yield return Trigger(gate,"Field_01",new Vector2(0,4.7f));Check(QuestService.ActiveMainQuest?.Definition.QuestId==MainQuest06ForestFlow.QuestId,"Main06.StartOnField01");
+            var south=Object.FindObjectsByType<SceneTransitionTrigger>(FindObjectsSortMode.None).Single(x=>x.name=="Transition_south_to_field02");yield return Trigger(south,"Field_02",new Vector2(0,4.6f));Check(Objective=="inspect_anomaly_trace","Main06.ForestEntryAdvanced");
+            var trace=Object.FindAnyObjectByType<MainQuest06AnomalyTrace>();Check(trace!=null,"Main06.Trace.Exists");At(trace.transform.position);yield return Wait(.3f);Call(trace,"OnInteract",default(InputAction.CallbackContext));yield return Close();Check(QuestService.GetState(MainQuest06ForestFlow.QuestId)==QuestState.Completed,"Main06.ActualTraceComplete");
+            var back=Object.FindObjectsByType<SceneTransitionTrigger>(FindObjectsSortMode.None).Single(x=>x.name=="Transition_north_to_field01");yield return Trigger(back,"Field_01",new Vector2(0,-4.6f));
+            yield return Continue("Main06Completed");
+            var unclassified=Errors.Where(x=>!x.Contains("UnityEditor.Search")&&!x.Contains("UnityEditor.SearchService")).ToArray();Check(unclassified.Length==0,"Console.NoNewRuntimeErrors");
+            File.WriteAllText(Path.Combine(Root,"status.txt"),Errors.Count==0?"PASS":"QA_PARTIAL_KNOWN_SEARCH");File.WriteAllText(Path.Combine(Root,"summary.json"),JsonUtility.ToJson(new Summary{checks=Results.Count,consoleErrors=Errors.Count,knownSearchErrors=Errors.Count-unclassified.Length,graphics=SystemInfo.graphicsDeviceType.ToString()},true));
+        }
+        [Serializable] class Summary{public int checks,consoleErrors,knownSearchErrors;public string graphics;}
+        static IEnumerator Flatten(IEnumerator r){var stack=new Stack<IEnumerator>();stack.Push(r);while(stack.Count>0){var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}if(top.Current is IEnumerator child){stack.Push(child);continue;}yield return top.Current;}}
+        static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("Field01 QA timeout");if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Key,false);EditorApplication.Exit(0);}catch(Exception ex){Results.Add("FAIL|"+ex);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Results);File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");Debug.LogException(ex);EditorApplication.Exit(1);}}
+    }
+}
