@@ -66,7 +66,7 @@ Main03 초기 실패는 최종 단서의 대화 종료 콜백을 기다리지 �
 - [종합 QA 기록](Evidence/Field01RenewalRecovery_20261012/qa_rollup.json), [정적 복구](Evidence/Field01RenewalRecovery_20261012/static_resume_20261012.json), [원본 보호](Evidence/Field01RenewalRecovery_20261012/preservation_resume_20261012.json)
 - [리스폰/초기 구간](Evidence/Field01RenewalRecovery_20261012/respawn_checks.txt), [Main03/04](Evidence/Field01RenewalRecovery_20261012/main03_main04_checks.txt), [Main05/06 최종](Evidence/Field01RenewalRecovery_20261012/main05_main06_checks.txt)
 - [필드 실제 화면](Evidence/Field01RenewalRecovery_20261012/field_runtime_overview.png), [Rock B](Evidence/Field01RenewalRecovery_20261012/rock_b_runtime.png), [길](Evidence/Field01RenewalRecovery_20261012/winding_road_runtime.png), [태온](Evidence/Field01RenewalRecovery_20261012/taeon_first_runtime.png), [미엘](Evidence/Field01RenewalRecovery_20261012/miel_first_runtime.png)
-- Evidence 텍스트 사본은 Git 검사에 맞춰 줄끝공백/개행만 정리했으며 원시 로그는 그대로 보존했다. 실행 QA 소스는 Evidence의 `*.cs.txt`에 보관하고 원본 Assets에 추가하지 않았다. 원시 로그는 Temp의 qa_resume/remaining/final/final2_20261012.log와 기존 attempt2/3에 유지. 실패한 실행은 전체 FAIL로 기록하고 그 실행의 개별 PASS만 재사용했다.
+- Evidence 텍스트 사본은 Git 검사에 맞춰 줄끝공백/개행만 정리했으며 원시 로그는 그대로 보존했다. Evidence SHA-256은 Git blob의 LF 개행 기준이며 Windows 작업복사본의 CRLF는 정규화하여 비교한다. 실행 QA 소스는 Evidence의 `*.cs.txt`에 보관하고 원본 Assets에 추가하지 않았다. 원시 로그는 Temp의 qa_resume/remaining/final/final2_20261012.log와 기존 attempt2/3에 유지. 실패한 실행은 전체 FAIL로 기록하고 그 실행의 개별 PASS만 재사용했다.
 - 최종 단독 잔여 실행89개 assertion PASS, Search1건으로 QA_PARTIAL_KNOWN_SEARCH. 앞선 실행의 구간 PASS를 합쳐 필수 기능검사를 판정했다.
 
 ## E. 보호·Git 및 다음 작업
@@ -76,3 +76,5 @@ Main03 초기 실패는 최종 단서의 대화 종료 콜백을 기다리지 �
 선별 Commit 대상: Scene Sprite363 교체, Generator 전용매핑, 본 QA보고/Evidence와 CURRENT_STATUS의 이번 요약만. 환경12종은기존 `40f9517`에 있으므로 중복 등록하지 않는다. 기존 사용자335항목 및 CURRENT_STATUS의 별도 MCP기록은 Working Tree에 유지한다. git add -A/reset/clean/checkout/Scene재생성/Save삭제/Push0.
 
 다음 권장 작업: 기존 Search 내부 예외를 별도 범위로 진단하고, 사용자 편한 시점에 정상 전투 입력/전체 이름표/미엘 주변 가독성을 확인한다. 화면조작 허락을 요청하거나 원본 Editor를 전환하지 않았다. GitHub Push는 사용자 직접 수행.
+
+선별 기능 통합 Commit: `37e4e3dc0573dc19d1ce142d9b87c77cb90cf6e9`. CURRENT_STATUS는 이 기능 SHA를 기록하는 별도 Docs Commit으로 갱신하며 기존 사용자 MCP 기록은 스테이징에서 제외한다.

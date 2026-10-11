@@ -1,8 +1,12 @@
-## 2026-10-10 Field_01 리뉴얼 v1 — USER_ART_REVIEW_PENDING / 미통합
+## 2026-10-12 Field_01 리뉴얼 v1 — USER_ART_APPROVED / 통합 완료 / QA_PARTIAL
 
-[검수 보고서](Field01_Renewal_Art_v1_Inspection_20261010.md)·[비교 이미지](Evidence/Field01ArtV1_20261010/before_after.png): ZIP21항목 CRC/PNG16개 디코딩 PASS, 환경12종·363개 참조/Manifest 해시 대응 PASS. 현재 Scene 좌표 합성은 납품 Layout과 RGB 차이0; 소품6종 StarterVillage v4와 동일. 필수 PNG 재작업 확정0. 잔디3종 반전 상하 경계(픽셀 일치 FAIL)·길2종 계단형 변곡은 미술 검토. Rock B 기존 PPU100 슬라이스→신규 PPU128 지면 접점은 후속 확인.
+[복구·최종 QA](Field01_Renewal_Recovery_QA_20261012.md): 기존 환경12종 Commit `40f9517` 보존. PNG/ZIP일치12·GUID충돌0·실제Importer PASS, Field_01 환경363개 Sprite만 교체·그 외 Scene 불변, Generator12역할 전용매핑 완료. Scene재생성/PNG/meta GUID/Spawn정의/리스폰설정/게임Runtime C#수정0.
 
-Scene/Prefab/Generator/Save/Import/재생성0, 보호3536파일 불변·기존Git335항목 유지. Bootstrap/Edit/포커스false 유지·화면조작/Push0. Importer·Runtime·전투·Save 회귀 NOT_VERIFIED; 기존 Search 예외2건 미해결 유지. 다음: 사용자 미술 승인/보완 범위 확정 후 별도 전용 GUID·Generator 대응·격리 QA. 검수 기준 HEAD `4e78d70`; 마지막 관련 Commit은 이 항목을 포함한 `Docs: Field01 리뉴얼 v1 읽기 전용 기술 검수`.
+리스폰 실패는 World_StarterVillage에서 Field01 몬스터를 센 QA오류. 입력·복귀위치/Scene집계만 통제해 실제8전투 승리반환 뒤 기존30초 만료+1.6~2.2ms 생성8/8 PASS(조기/중복/누락0). Main02~06 실제Trigger·대화·Story2/3인 진입/승리반환·태온/미엘 해금·마을/Field01/02 왕복·별도Save/Continue좌표·Quest복원 PASS. 실제Direct3D12 RenderTexture/WorldSpace Quest Marker 확인. QA의 Main03 대화종료·Main05 의뢰선택/프레임대기도 보완하고 체크포인트부터 재개.
+
+Compile오류0·새Runtime오류0, 기존Search 내부예외2건 미해결(최종격리실행 SearchDatabase1건 재발)로 전체PARTIAL. 정상공격/스킬로 적전멸하는 전체전투, ScreenSpace Overlay 이름표 가독성·미엘주변 전체조작화면 및 전체Party/Battle회귀는 NOT_VERIFIED. 다음: Search별도진단·사용자편한시점 실제전투/전체이름표 확인.
+
+원본3564파일 변경/삭제0, 기존사용자335개 Git항목과 별도MCP기록 보존. 기존QA복사본 재사용·원시로그/실패증거 보존·테스트Save별도. 원본Editor PID31832 유지·Scene/Play/포커스/강제종료조작0, GitHub Push0. 마지막 기능관련 Commit `37e4e3dc0573dc19d1ce142d9b87c77cb90cf6e9` (`Feature: Field01 오리지널 환경 통합 복구와 리스폰 QA 완료`).
 
 ---
 
