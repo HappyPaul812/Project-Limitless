@@ -1,8 +1,14 @@
+## 2026-10-12 Field03 Rock B v2 자료 대기
+
+- ART_FIX_PENDING. 지정경로와 F:/Downloads·사용자Downloads 재귀 ZIP 검색에서 Rock B v2 미발견. 발견된 Field03 v1은 수정본으로 사용하지 않았습니다.
+- 신규 적용0, 공식375/376과 기존RockNorth1·좌표/Scale/Collider/GUID 유지. v2 PNG/Manifest/분리픽셀 제거/실제 접지 QA NOT_VERIFIED. 다음: 실제 수정본 납품 후 개별 검증.
+- 별도 QA 문서 Field03_RockB_Fix_v2_Followup_QA_20261012.md. 문서 Commit은 Git 이력 참조. Push 미실행.
+
 ## 2026-10-12 B1 봉인문 후속 시각 보완
 
 - B2 완료 Push47a65e2 확인 후 진행. 기존 벽 내0.75×0.625 닫힘/열림 상태 표식1개와 기존 하강로 B2이동 안내 적용. TECH_HOLD_RESOLVED_STATE_PLAQUE, 전체 PARTIAL(Search/사람 가독성 미검증).
 - Main11 해금·전후Continue·B1/B2/Field03왕복·휠체어·B2단서 회귀 PASS. 모든Scene/Collider/PNG/meta·Save·사용자337/822 보호. 전투/35초 검증 재사용.
-- 다음: 실제 화면의 작은 표식 가독성 확인. 마지막 관련 Commit: 이 항목의 Git 이력 참조. Push 미실행.
+- 다음: 실제 화면의 작은 표식 가독성 확인. 마지막 관련 Commit: `6c78cdb833e873639b0a027d5cfdc7efb5a83b3f`. Push 미실행.
 
 ## 2026-10-12 Dungeon B2 정식 통합·봉인실 스포일러 수정
 

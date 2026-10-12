@@ -25,3 +25,5 @@ Evidence/Dungeon01B1GateFollowup_20261012의 checks.txt, plaque_bounds.txt, B2Re
 ![해금 후 실제 화면](Evidence/Dungeon01B1GateFollowup_20261012/gate_actual_open_1280.png)
 
 B1 체크388건/B2 경계 회귀139건 PASS.
+
+정식 보완 Commit: `6c78cdb833e873639b0a027d5cfdc7efb5a83b3f`.

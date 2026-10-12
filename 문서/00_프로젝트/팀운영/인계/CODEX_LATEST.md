@@ -1,3 +1,9 @@
+## 2026-10-12 B2 Push 확인 후 봉인문·Rock B 인계
+
+- 원격47a65e2(B2완료) 확인 후 후속 시작. B1 봉인문은 기존 벽 안의0.75×0.625 상태 표식/기존 하강로 B2이동 안내로 해결. 구현 `6c78cdb833e873639b0a027d5cfdc7efb5a83b3f`, B1체크388/B2경계139 PASS. 전체 PARTIAL(Search·사람가독성 미검증).
+- Rock B v2 지정경로/FDownloads/사용자Downloads 검색 미발견. ART_FIX_PENDING, v1 임의수정 금지. 공식375/376·기존RockNorth1 보호. 실제v2 납품 뒤에만 검증/교체.
+- 사용자337/822·Save/meta/모든Scene/승인PNG/TTS/BGM 보호. 신규이미지/Scene변경0. 원본Editor포커스무접촉, Push미실행. 별도 봉인문/Rock B QA문서 참조.
+
 B2 정식 구현 Commit: `2babb13c41bd1c2c75ad69bb93381dc3ed71547a`.
 
 ## 2026-10-12 B2 정식 통합·봉인실 표시 인계
