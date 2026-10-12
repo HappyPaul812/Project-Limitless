@@ -1,0 +1,127 @@
+[
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Gate/LL_C1_D01B1_B2_Transition_Stone_128_v1.png",
+    "sha256": "af59cda535966d5b448e9b757c5093c4db362029c43fbed0abfa785e81fedebb",
+    "guid": "c6e546b09d043be449acefede51d7a81"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+    "sha256": "a3a666ee358bc1351c1b85e891d7a55f97c0c4d5b8082807839f445d18a3d389",
+    "guid": "236afcf3cfbbe904b83e9c8e71c8108f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png",
+    "sha256": "a8f7faa5fa6eeddd2814b867da839ae1b64ae1cf3e38961e64b874c541b0a9b7",
+    "guid": "9c1535b8ab220d649b73a341a15d5889"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Gate/LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png",
+    "sha256": "d58a7018fb671604453e920b2e042e06150fe9cdf41c2817ce53749fcec4d743",
+    "guid": "15b81b437dadc9b4487558eb9538383e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Crack_Overlay_128_v1.png",
+    "sha256": "f246a890a7a002f7dab650f73b44d2ac107ada95ef5f69f4c96bf5b7174735ba",
+    "guid": "e7967114bf4604e4ab6cbc41a0f506a4"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Dust_Overlay_128_v1.png",
+    "sha256": "dc7e853b12e03d0b8c45a635785863f10d7218eef2c389820cbde31e5a1a4315",
+    "guid": "6b0229c4656db134b869317bb221bef5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png",
+    "sha256": "ea0374de90e858946b64f61d1ff66b8fdcee91eeb5b8767bd0e6c2d0c9a51223",
+    "guid": "6bf93a9227c8de046bee50a5321d167d"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+    "sha256": "0276cce63931a4744c9fe34b977dc3d94e8906dc35f74a2a21c2fbf14996afb3",
+    "guid": "59950ae2f6dc7a04c96b2465e33c63a3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+    "sha256": "d07c8a36abc6fc3dc6d9903056bd26802c9b35e58749d28b37f93277457947d2",
+    "guid": "4d0f10295d6c916488ad81cbf9dd6570"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Ground/LL_C1_D01B1_Moss_Overlay_128_v1.png",
+    "sha256": "e8eee8fa09ed1ef9f69e64bcd465b4fd181e2f324ac93783ddc34ea194fe9e59",
+    "guid": "31720da070b78fd4a9ec147b54ad8b45"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Burial_Bier_128_v1.png",
+    "sha256": "5608796709cd57613070a779f1a6968a41bd76fb8e9805d4680622d3d4d7b8bd",
+    "guid": "908941fd2da89884d994f66b69d81aaa"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_GraveMarker_Damaged_128_v1.png",
+    "sha256": "105736de4fce96b3df546219b59f403e80717b5465a803b8096b39d6998a90e5",
+    "guid": "7cb4474aed5b4994e94d37713b359e60"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Pillar_Broken_128_v1.png",
+    "sha256": "6be713d1576b822dd65bce4b3398b4b0a18a87cf2cedc558fd6c436dacd08db2",
+    "guid": "9ac767ee810637a43bd3fb3c9bd5754f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Pillar_Intact_128_v1.png",
+    "sha256": "2b81fa5c707c891890bb3baf0c85d5981cc9f9de553b508b40c41b4283ed3baf",
+    "guid": "a7f82b57997dbfe4a9313c9058dc4475"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Rubble_Cluster_128_v1.png",
+    "sha256": "99e222dd51e1930fb2577ed0bf5fe6d4f696f2cefb6107cfd7c1fd69417d09ec",
+    "guid": "40efabf906991724c874dc952e0f65d9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Rubble_Small_128_v1.png",
+    "sha256": "2456093edcdb5bf0dea315a21e7aa97a5fc093253c03037ca5ac98ce5c185215",
+    "guid": "3e2cc66327444f64194b7394ca7236e3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png",
+    "sha256": "537c397e883746b8526f50394cba22e6f2a4cbda08dd402db224fc7c58fe3fd7",
+    "guid": "4dd9277c718980848ae2e30417a44c59"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+    "sha256": "744afaa43c31a5fc5580a5cddcb8bfa01e26d1c7d3aacf64f81c504dedfbfb89",
+    "guid": "3dc4a788e13a0204fb1b98bdd8ecf992"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Torch_Sconce_128_v1.png",
+    "sha256": "19ddd82c50184a8e3467c6b2256e0379535e1091dffd7c9f3aa8674353b2c350",
+    "guid": "69212f55aa115e84684a39839d747fcd"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Props/LL_C1_D01B1_Torch_Unlit_128_v1.png",
+    "sha256": "2ddebeee5822e872eeed12435a93a47eeb95390591e0232cf376b2cd47e5c614",
+    "guid": "61f0214dd47f0a94a8cf612e9b690858"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Walls/LL_C1_D01B1_Passage_Arch_128_v1.png",
+    "sha256": "f2708e37605ed990dcd85bf610f5c1e46f04afb834e2523cc4c526b65494a1aa",
+    "guid": "475e77fdae05bf145ad841a1c0263027"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Walls/LL_C1_D01B1_Passage_Junction_128_v1.png",
+    "sha256": "666dd5a8ac9448c0da325cc2f1d9c6f4c7ff1509ec58ee451595c20ae9ff0253",
+    "guid": "ec7d3bbe50e79a04fb64b963038b6bd9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+    "sha256": "93785c9ea21e03199d87714716ca8503d9475768f54f3a5effbef8850d5b895a",
+    "guid": "e0c8c84592b999243b0f5ea388d2130c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Walls/LL_C1_D01B1_Wall_Corner_128_v1.png",
+    "sha256": "4ba9eccf8e0c6da52a88f14904e9cab52303b81a6116615059e089cb0e77ecfd",
+    "guid": "c7e039d7b46c00648958c370f3acc1c7"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Dungeon01B1/V1/Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+    "sha256": "7a41769b3047e2c3dba7e8a2df34e68e2a175c79bd70481199b1a1e2c122d88d",
+    "guid": "cb478aabeb4e1824c93d78386c5dcc2e"
+  }
+]

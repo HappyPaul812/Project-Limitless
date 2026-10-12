@@ -1,3 +1,10 @@
+## 2026-10-12 Dungeon B1 승인 아트 정식 통합
+
+- USER_ART_APPROVED. PNG25 등록, 기존63 앵커 보존, Tiled20/원크기 소품8/중복표시 숨김33/기존 문2. 생성28개 재사용.
+- Main11 B1·4개 실제 전투/35초 리스폰·B1/B2/Field03 왕복·Continue·휠체어 경로 통과. 전체 PARTIAL: 기존 Search 예외, 신규 문 시각 TECH_HOLD, 사용자 손 플레이/장시간 가독성/권리 NOT_VERIFIED.
+- 기존 사용자337항목·B2·Save·GUID 보호. 다음 권장: 사용자 실제 화면 확인과 문 비율/상호작용 정합 설계. Git Push 미실행.
+- 마지막 관련 Commit: 이 항목의 Git 이력 참조.
+
 <!-- DUNGEON01_B2_INSPECTION_20261012_BEGIN -->
 ## 2026-10-12 Dungeon01 B2 리뉴얼 실제 검수 — 사용자 미술 승인 대기
 

@@ -1,0 +1,6 @@
+(0.00, -8.50);waypoints=0
+(0.00, -5.10);waypoints=14
+(-10.00, 0.00);waypoints=60
+(10.00, 0.00);waypoints=80
+(0.00, 8.20);waypoints=72
+(0.00, 6.80);waypoints=7

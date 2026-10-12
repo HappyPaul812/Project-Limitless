@@ -123,3 +123,8 @@ Overlay는실제RenderTexture위에실측Collider/Spawn/Quest좌표를그린**�
 - `Preview/LL_C1_D01B1_WestOssuary_Closeup_v1.png` (680×720)
 - `QA/LL_C1_D01B1_6x6_TileRepeat_v1.png` (1024×1000)
 - `QA/LL_C1_D01B1_Palette_Readability_v1.png` (1120×380)
+
+
+## 2026-10-12 최종 미술 승인 및 정식 적용
+
+USER_ART_APPROVED. 공식 PNG 25종 등록, 63개 기존 구조를 보존한 Tiled20·원크기 소품8·중복표시 숨김33·기존 문2 방식 적용. 전체 QA PARTIAL, 신규 문 TECH_HOLD. 상세 근거는 Dungeon01_B1_Renewal_Official_Integration_QA_20261012.md 참조.

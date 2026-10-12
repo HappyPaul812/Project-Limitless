@@ -1,0 +1,429 @@
+PASS|Save.IsolatedBeforeFirstWrite
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Bounds33x25
+PASS|Monster.Initial4
+PASS|Main11.StartsB1Step0
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.original_full_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.original_gate_closed_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.legacy_full_runtime.png
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_full_closed_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_gate_closed_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.actual_resolution_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_0_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_-10_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_10_runtime.png
+PASS|Main11.OutOfOrderBlocked
+PASS|Main11.ActualCentralArrival
+PASS|Main11.ActualWestInteract
+PASS|Dialogue.Completed
+PASS|Main11.WestCompleteDuplicateBlocked
+PASS|Save.Write.AfterWest
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Continue.StepPositionExact.AfterWest
+PASS|Main11.ActualEastInteract
+PASS|Dialogue.Completed
+PASS|Main11.EastComplete
+PASS|Main11.ActualGateMechanismInteract
+PASS|Dialogue.Completed
+PASS|Main11.GateUnlockedStep4
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_gate_open_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_full_open_runtime.png
+PASS|Save.Write.AfterGateUnlocked
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Continue.StepPositionExact.AfterGateUnlocked
+PASS|Main11.ActualOpenedGateEnterB2
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Main11.ActualB2Arrival
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.existing_b2_full_runtime.png
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Gate.Spawn.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|B2ReturnSpawnUnchanged
+PASS|Monster.B1FourDefinitions.Timer35
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_01
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_01
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_01.Attacks3
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_01
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_01
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_01
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_01
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_01
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_02
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_02
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_02.Attacks5
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_02
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_02
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_02
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_02
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_02
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_03
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_03
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_03.Attacks6
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_03
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_03
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_03
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_03
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_03
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_04
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_04
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_04.Attacks8
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_04
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_04
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_04
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_04
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_04
+PASS|Respawn.FinalCount4.NoDuplicates
+PASS|Wheelchair.PathMobility
+PASS|Wheelchair.VisualPresent
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -8.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -5.10)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-10.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-10.00, 0.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(10.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 8.20)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 8.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.25)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 6.80)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.75)
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.wheelchair_south_runtime.png
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Gate.Spawn.Field_03
+PASS|Field03.ActualEntranceReturnB1
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Official.Initialized28
+PASS|Official.63Anchors33DetailsHidden2GateRetained
+PASS|Official.NoNewCollider
+PASS|Official.DisableRestores63
+PASS|Official.ReenableNoDuplicates
+PASS|B1.EntrySpawnUnchanged
+PASS|Console.NoNewRuntimeError

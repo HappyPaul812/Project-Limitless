@@ -1,0 +1,18 @@
+{
+  "userItems": 337,
+  "userFiles": 822,
+  "oldGameFiles": 3738,
+  "allowedChanged": [
+    "Unity\\Client\\Assets\\_Project\\Scenes\\Dungeon_01.unity"
+  ],
+  "otherOldGameFilesUnchanged": 3737,
+  "sceneComponentOnly": true,
+  "runtimeChecks": 429,
+  "structureChecks": 257,
+  "respawnLatenciesSeconds": [
+    0.002346039,
+    0.001808167,
+    0.001739502,
+    0.00201416
+  ]
+}

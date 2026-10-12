@@ -1,3 +1,10 @@
+## 2026-10-12 Dungeon B1 정식 적용 인계 추가
+
+- USER_ART_APPROVED. 공식 PNG25 등록, Scene 컴포넌트 1개 추가(14줄), 기존63 앵커/Collider 보존. 프로필 Tiled20/원크기소품8/중복세부숨김33/문2기존유지, 생성28 재사용. B2 적용 없음.
+- Main11 B1/4조우 UI승리/35초 리스폰/왕복/Continue/휠체어 통과. 전체 PARTIAL: Search 기존예외와 신규문 TECH_HOLD. 신규닫힘·열림 문 그림은 연결하지 않았고 기존 해금 동작은 정상.
+- 정본: Dungeon01_B1_Renewal_Official_Integration_QA_20261012.md 및 Evidence/Dungeon01B1Official_20261012. 정상 아트 적용을 반복하지 말 것. 다음 작업은 사용자 화면 확인·문 시각/Collider/상호작용 정합 설계.
+- 사용자337항목(822파일), Save/meta/승인음성/B2 보호. Push 금지, 사용자 직접 Push. 관련 Commit은 아래 상태 문서 및 Git 이력 참조.
+
 # Codex 최신 인계 — 2026-10-12
 
 ## 최신: Dungeon01 B2 검수 완료 / USER_ART_REVIEW_PENDING
