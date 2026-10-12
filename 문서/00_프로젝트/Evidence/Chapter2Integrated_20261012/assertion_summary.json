@@ -1,0 +1,47 @@
+{
+  "main20_ui_results.txt": {
+    "pass_assertions": 11,
+    "fail_lines": [
+      "FAIL|Normal.ConsoleErrors0",
+      "FAIL|System.InvalidOperationException: Normal.ConsoleErrors0"
+    ]
+  },
+  "main20_branch_results.txt": {
+    "pass_assertions": 150,
+    "fail_lines": [
+      "FAIL|Runtime.ConsoleErrors0",
+      "FAIL|System.InvalidOperationException: Runtime.ConsoleErrors0"
+    ]
+  },
+  "main21_first_results.txt": {
+    "pass_assertions": 162,
+    "fail_lines": [
+      "FAIL|System.InvalidOperationException: IsolationGuard"
+    ]
+  },
+  "main21_resume_results.txt": {
+    "pass_assertions": 58,
+    "fail_lines": [
+      "FAIL|Console.Errors.1"
+    ]
+  },
+  "main21_console_errors.txt": {
+    "pass_assertions": 0,
+    "fail_lines": []
+  },
+  "village_checks.txt": {
+    "pass_assertions": 335,
+    "fail_lines": []
+  },
+  "side_main_service_results.txt": {
+    "pass_assertions": 588,
+    "fail_lines": [
+      "FAIL|Runtime.ConsoleErrors0",
+      "FAIL|System.InvalidOperationException: Runtime.ConsoleErrors0"
+    ]
+  },
+  "main18_rules.txt": {
+    "pass_assertions": 242,
+    "fail_lines": []
+  }
+}

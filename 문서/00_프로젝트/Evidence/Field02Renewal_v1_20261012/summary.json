@@ -1,0 +1,22 @@
+{
+  "mapped_renderers": 373,
+  "placement_scale_flip_sorting_tint_collider_unchanged": true,
+  "static_scene_renderers": 363,
+  "runtime_clones": 10,
+  "zip_sha256": "06d191e64fe9d146d458573588c00911666c4677e504c4b888a8d0d8d63ccc8d",
+  "unused_assets": [
+    "Mud_Patch",
+    "Root",
+    "Branch",
+    "DisturbedTracks",
+    "WheelRuts_Mud"
+  ],
+  "technical": "PARTIAL",
+  "art": "ART_REVIEW_PENDING",
+  "main07_actual_ui_victory": true,
+  "main07_dialogue_return_complete": true,
+  "continue_completed_ids_position_exact": true,
+  "main08_expected_autostart": true,
+  "connections_runtime_roundtrip": true,
+  "respawn30": "NOT_VERIFIED"
+}

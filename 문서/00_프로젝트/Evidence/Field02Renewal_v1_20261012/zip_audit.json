@@ -1,0 +1,365 @@
+{
+  "zip_sha256": "06d191e64fe9d146d458573588c00911666c4677e504c4b888a8d0d8d63ccc8d",
+  "entries": 30,
+  "png_count": 25,
+  "crc": null,
+  "assets": [
+    {
+      "file": "Ground/LL_C1_F02_ForestFloor_A_128_v1.png",
+      "sha256": "9f5d05da50979b3f504f17684617a52cedb3267e073f0b2f1264dec1a89c76ae",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_F02_ForestFloor_B_128_v1.png",
+      "sha256": "ab84e2d03c69c7fe5501f3a19e90304cdf13d04dedfbb94519d7b8463e8feafb",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_F02_ForestFloor_C_128_v1.png",
+      "sha256": "6650f825b09ad6683157be350e1d24fa638dab233ce36ff6f3decbdb1477d30c",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_F02_Path_Left_128_v1.png",
+      "sha256": "54dbc982fdb695ea1864df9a8fd50fd078710c4d1b3b72248fedfe8b4251fcae",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_F02_Path_Right_128_v1.png",
+      "sha256": "056f71a0862e3109ff9ca3c925a91a6bad561a30a3366ad947eb6d8d901afbc6",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_zero": 0
+    },
+    {
+      "file": "Ground/LL_C1_F02_Mud_Patch_128_v1.png",
+      "sha256": "a58fd8951592861a3720ce49d7eb91d379ff91f31771f09c56acf0cd4f713736",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        220
+      ],
+      "alpha_bbox": [
+        19,
+        41,
+        110,
+        106
+      ],
+      "alpha_zero": 11782
+    },
+    {
+      "file": "Props/LL_C1_F02_Tree_Big_255x256_v1.png",
+      "sha256": "9e60523de69d279e39bb65e5159a727ca4ec9e74ca3fbc9069f9c92cd05586ea",
+      "hash_match": true,
+      "size": [
+        255,
+        256
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        43,
+        42,
+        216,
+        256
+      ],
+      "alpha_zero": 43244
+    },
+    {
+      "file": "Props/LL_C1_F02_Tree_Medium_128x156_v1.png",
+      "sha256": "749824319918f83f5f0fc7d3505d0b5bb035290b7f67887ecfa989769070ef9e",
+      "hash_match": true,
+      "size": [
+        128,
+        156
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        16,
+        27,
+        113,
+        156
+      ],
+      "alpha_zero": 12491
+    },
+    {
+      "file": "Props/LL_C1_F02_Bush_A_128_v1.png",
+      "sha256": "047ad277176b285e7c3e9168f4c9c40e10779478410f709eebd6d5d8b5f3e2a2",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        15,
+        23,
+        112,
+        108
+      ],
+      "alpha_zero": 10539
+    },
+    {
+      "file": "Props/LL_C1_F02_Bush_B_128_v1.png",
+      "sha256": "b98276b93181a63d79ec82922d256092a3a2408e7b83ed4ad7d1adb03bac01b6",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        11,
+        28,
+        123,
+        124
+      ],
+      "alpha_zero": 8798
+    },
+    {
+      "file": "Props/LL_C1_F02_Rock_Moss_A_128_v1.png",
+      "sha256": "8cf9249a6fc4519e03ad63514aae86079b0819d271590d9d55aff2eb58ec8809",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        16,
+        36,
+        115,
+        111
+      ],
+      "alpha_zero": 10972
+    },
+    {
+      "file": "Props/LL_C1_F02_Rock_Moss_B_128_v1.png",
+      "sha256": "646c9ae7b50109d414cf626c51aab26672a29b6f86703f49987319f5166225c7",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        9,
+        44,
+        119,
+        109
+      ],
+      "alpha_zero": 11716
+    },
+    {
+      "file": "Props/LL_C1_F02_Fence_MossWood_128_v1.png",
+      "sha256": "5f9376911266b271223db52b31fdd105d75f4143d00feac63de77eaccc5dd296",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        18,
+        128,
+        122
+      ],
+      "alpha_zero": 8608
+    },
+    {
+      "file": "Props/LL_C1_F02_Root_A_128_v1.png",
+      "sha256": "c87652ba24011768d43118325f1be85f40e1c19420104b6c3223d3bdcb0e60bb",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        18,
+        51,
+        110,
+        107
+      ],
+      "alpha_zero": 15649
+    },
+    {
+      "file": "Props/LL_C1_F02_Branch_A_128_v1.png",
+      "sha256": "4183de81c7f625786c4ca439e905f71a221f876e25ab92e643cb084ea755372e",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        29,
+        49,
+        98,
+        94
+      ],
+      "alpha_zero": 15773
+    },
+    {
+      "file": "Story/LL_C1_F02_DisturbedTracks_128_v1.png",
+      "sha256": "a4eb0179b9b4149062aa544bed277eff0130636f99e304c200a54f4df59e2b3b",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        180
+      ],
+      "alpha_bbox": [
+        51,
+        10,
+        78,
+        118
+      ],
+      "alpha_zero": 13741
+    },
+    {
+      "file": "Story/LL_C1_F02_WheelRuts_Mud_128_v1.png",
+      "sha256": "f509831399aee063ca2c27f9331e4c728de8b116e39f7cd3a2e1cb1f516596ea",
+      "hash_match": true,
+      "size": [
+        128,
+        128
+      ],
+      "size_match": true,
+      "alpha_range": [
+        0,
+        230
+      ],
+      "alpha_bbox": [
+        19,
+        18,
+        110,
+        114
+      ],
+      "alpha_zero": 10867
+    }
+  ]
+}

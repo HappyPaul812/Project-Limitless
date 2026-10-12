@@ -1,0 +1,41 @@
+PASS|Candidate.Import.LL_C1_F02_ForestFloor_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_ForestFloor_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_ForestFloor_C_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Mud_Patch_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Path_Left_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Path_Right_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Branch_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Bush_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Bush_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Fence_MossWood_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Rock_Moss_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Rock_Moss_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Root_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_Tree_Big_255x256_v1.png
+PASS|Candidate.Import.LL_C1_F02_Tree_Medium_128x156_v1.png
+PASS|Candidate.Import.LL_C1_F02_DisturbedTracks_128_v1.png
+PASS|Candidate.Import.LL_C1_F02_WheelRuts_Mud_128_v1.png
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.before_runtime.png
+PASS|Scene.Environment363
+PASS|Runtime.ExtraTree6
+PASS|Runtime.ExtraBush4
+PASS|Monster.Initial6
+PASS|Bounds21x15
+PASS|Candidate.363ScenePlus10Runtime
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_existing_tint_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_main06_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_main07_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_white_tint_comparison_runtime.png
+PASS|Story.ColliderProbe.(0.20, -1.60)
+PASS|Story.ColliderProbe.(2.70, -1.20)
+PASS|Story.ColliderProbe.(4.40, 0.20)
+PASS|Story.ColliderProbe.(6.50, -2.35)
+PASS|Console.NoNewRuntimeError

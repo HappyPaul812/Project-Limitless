@@ -1,0 +1,247 @@
+[
+  {
+    "id": "main18_after_watcher_serin_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_after_watcher_serin_02",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_after_watcher_serin_03",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_deeper_route_serin_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_deeper_route_serin_02",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_ground_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_heat_vent_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_leon_leon_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_leon_leon_02",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_leon_leon_03",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_leon_leon_04",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_leon_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_overheat_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_overheat_serin_02",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_overheat_serin_03",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_overheat_serin_04",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_vibration_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_watcher_witness_miel_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_watcher_witness_paul_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_watcher_witness_serin_01",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_watcher_witness_serin_02",
+    "chapter": "Main18",
+    "connected": false,
+    "expected_status": "REGEN_REQUIRED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main18_watcher_witness_taeon_01",
+    "chapter": "Main18",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_cliff_miel_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_cliff_paul_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_cliff_paul_02",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_pulse_1_serin_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_pulse_1_serin_02",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_track_1_serin_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_track_1_serin_02",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_track_2_serin_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_withdraw_serin_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_witness_miel_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_witness_paul_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_witness_serin_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  },
+  {
+    "id": "main19_witness_taeon_01",
+    "chapter": "Main19",
+    "connected": true,
+    "expected_status": "RUNTIME_VERIFIED",
+    "static_mapping_hash_pass": true
+  }
+]

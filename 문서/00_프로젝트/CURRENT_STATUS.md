@@ -1,3 +1,14 @@
+<!-- URGENT_20261012_BEGIN -->
+## 2026-10-12 긴급 묶음 작업 — 3단계 처리 및 검증 체크포인트
+
+- Field02 ZIP: CRC/PNG25개·실사용17개·Manifest 해시/크기 일치. 실제 Scene363+Theme복제10=373개 대응표, 격리 Import/RenderTexture 확보. 배치·Scale·Flip·Sorting·Collider 보존. 원본 영구 적용0.
+- **ART_REVIEW_PENDING / 기술 PARTIAL**: 바닥 Theme 색조, Rock B의85×54/PPU100→128×128/PPU128 표현 차이, 보조5개 배치 승인 필요. Main07 폴 실제 대화/3대3 UI정상승리/미엘·폴 귀환/완료·Continue와 Field01/03 양방향 Trigger/Spawn PASS. Main08 자동시작을 QA 기대값에 반영, 게임 수정0. 연속 도보/휠체어 체감·일반6마리30초 리스폰은 미검증. [검수 및 통합 인계](Field02_Renewal_Art_v1_Inspection_20261012.md).
+- Chapter2 종합 QA **PARTIAL**: Main20 Attack19회/Phase2 정상 승리, Main21 A/B Attack각7회 정상 승리·마차12초/Skip/하렌/완료Continue PASS. Main12~21 순차 서비스·서브9종/전리품7종 회귀 PASS. Search Console assertion FAIL 원문 유지. Main12~19 실제 UI 전투/전체 수동 플레이 미검증. [종합 보고](Chapter2_Main12_21_Integrated_Regression_QA_20261012.md).
+- Chapter3 스킬 상점·강화/부활/정화Ⅱ·냉기/화로·몬스터/전리품/펫/경제 설계3문서와 기존 정본 교차 링크 완료. 구현0·미정 수치/ID 추가0. 기존 TTS 정상25개 재통합0·오류10개 의도적 무음 유지.
+- 관련 Commit: Field02 최초검수 `47566ff`, Chapter2 QA `2eaf2e9`, Chapter3 문서 `ef49afd`. Field02 보충 최종 `91ee5a0`. 원본3661파일 SHA256 불변·사용자337개 상태 동일·staging 비움·격리 QA 종료/원본PID31832 유지 확인. Push0, 사용자 직접 Push.
+
+<!-- URGENT_20261012_END -->
+
 ## 2026-10-12 Main18·19 TTS — 정상25개 통합 / 세린10개 재제작 대기 / QA_PARTIAL
 
 [선택적 통합·원인 감사](Main18_19_TTS_Selective_Integration_QA_20261012.md)·[개별35상태](Main18_19_TTS_Selective_Applied_Matrix_20261012.csv)·[Schedar10개 인계](Main18_Serin10_Schedar_Regen_Handoff_20261012.csv). Main18 정상12/12·Main19 정상13/13 원본 WAV byte 그대로 연결하고 실제 Story/DSP/자연 종료를 확인했다. Main18 오류10개는 REGEN_REQUIRED·Unity미연결·실제무음이며 Dialogue ID/화자/자막을 유지했다. Manifest는 검증25개만 RUNTIME_VERIFIED, Player/지문과 Status 외 모든 필드 불변이다.
