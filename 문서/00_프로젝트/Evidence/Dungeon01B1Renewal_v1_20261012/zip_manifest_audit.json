@@ -1,0 +1,910 @@
+{
+  "zip": "F:\\Downloads\\Limitless_Dungeon01_B1_Renewal_Art_v1.zip",
+  "zip_sha256": "074f015c3de49457cd8288e1465bb29fc0f0549ed47d66a33fb2c0e9d224248a",
+  "entries": 44,
+  "png_count": 38,
+  "usable_count": 25,
+  "crc_errors": 0,
+  "decode_pass": true,
+  "manifest_pass": true,
+  "scene_renderer_count": 63,
+  "scene_unique_guid_fileID": [
+    "('e38fd353fd47c7644acb692973a9ee07', 21300000)"
+  ],
+  "pngs": [
+    {
+      "file": "Gate/LL_C1_D01B1_B2_Transition_Stone_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "af59cda535966d5b448e9b757c5093c4db362029c43fbed0abfa785e81fedebb"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "sha256": "a3a666ee358bc1351c1b85e891d7a55f97c0c4d5b8082807839f445d18a3d389"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "sha256": "a8f7faa5fa6eeddd2814b867da839ae1b64ae1cf3e38961e64b874c541b0a9b7"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "sha256": "d58a7018fb671604453e920b2e042e06150fe9cdf41c2817ce53749fcec4d743"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Crack_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "f246a890a7a002f7dab650f73b44d2ac107ada95ef5f69f4c96bf5b7174735ba"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Dust_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "dc7e853b12e03d0b8c45a635785863f10d7218eef2c389820cbde31e5a1a4315"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "ea0374de90e858946b64f61d1ff66b8fdcee91eeb5b8767bd0e6c2d0c9a51223"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "0276cce63931a4744c9fe34b977dc3d94e8906dc35f74a2a21c2fbf14996afb3"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "d07c8a36abc6fc3dc6d9903056bd26802c9b35e58749d28b37f93277457947d2"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Moss_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "e8eee8fa09ed1ef9f69e64bcd465b4fd181e2f324ac93783ddc34ea194fe9e59"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_Asset_ContactSheet_v1.png",
+      "size": [
+        1271,
+        1230
+      ],
+      "mode": "RGBA",
+      "sha256": "7b4e323f0323a2c58d80881bfb0e28128dc82fee9a0e91c1d63453f7a9c4f4ec"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_B1_B2_StyleContinuity_v1.png",
+      "size": [
+        1108,
+        679
+      ],
+      "mode": "RGB",
+      "sha256": "42cfd15d180b37cdefcb6e9bf23c7301bdc2fd684f143f919786fcbdcab3e497"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_CentralGallery_Closeup_v1.png",
+      "size": [
+        848,
+        664
+      ],
+      "mode": "RGB",
+      "sha256": "83a939eef32c758ea937c058c875c748d01438099994a923d62231e31bbe74f3"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_EastCollapsedChamber_Closeup_v1.png",
+      "size": [
+        680,
+        720
+      ],
+      "mode": "RGB",
+      "sha256": "7f62f6660f6b1fff4e2e0730a26f3ec7b0b540ca2aa1a00ededf9439e963fc1b"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_FullMap_Composite_v1.png",
+      "size": [
+        1848,
+        1400
+      ],
+      "mode": "RGBA",
+      "sha256": "63e9ec8f43c289ea87103a085b1e72fc8cf75c7059d818ff4e7ef12b9be7517a"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_FullMap_OpenedGate_Composite_v1.png",
+      "size": [
+        1848,
+        1400
+      ],
+      "mode": "RGBA",
+      "sha256": "bbdd4b01207684441c9b1da4c990cb657bf6b90f4d4d800352039549907da22d"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_NorthGate_ClosedOpen_v1.png",
+      "size": [
+        1210,
+        584
+      ],
+      "mode": "RGB",
+      "sha256": "f1598d4b05c0c7aeaaab9ba337d3278340e904f30e14818f591b8fb0c1964f7b"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_NorthGate_Closeup_v1.png",
+      "size": [
+        792,
+        664
+      ],
+      "mode": "RGB",
+      "sha256": "f582e86e873acdb56473e274a834c70beabaf39b4405940c31a404f9fa77cd1c"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_OldNew_Comparison_v1.png",
+      "size": [
+        2190,
+        980
+      ],
+      "mode": "RGB",
+      "sha256": "94fba62ef6cb28d51bedb96413eb715cfe09df212a559055bf7c45b16c7801c0"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_Spawn_Quest_Collider_Overlay_v1.png",
+      "size": [
+        1968,
+        1560
+      ],
+      "mode": "RGB",
+      "sha256": "ea8b27607d429cf61d2ab325f09582376f88ecff75941b19d348e5f50a663f7e"
+    },
+    {
+      "file": "Preview/LL_C1_D01B1_WestOssuary_Closeup_v1.png",
+      "size": [
+        680,
+        720
+      ],
+      "mode": "RGB",
+      "sha256": "9c987a56b6315710dd394ce5451adaa2145bce8d99e9f6769a78a7f3e162337a"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Burial_Bier_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "5608796709cd57613070a779f1a6968a41bd76fb8e9805d4680622d3d4d7b8bd"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_GraveMarker_Damaged_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "105736de4fce96b3df546219b59f403e80717b5465a803b8096b39d6998a90e5"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Broken_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "6be713d1576b822dd65bce4b3398b4b0a18a87cf2cedc558fd6c436dacd08db2"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Intact_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "2b81fa5c707c891890bb3baf0c85d5981cc9f9de553b508b40c41b4283ed3baf"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Cluster_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "99e222dd51e1930fb2577ed0bf5fe6d4f696f2cefb6107cfd7c1fd69417d09ec"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Small_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "2456093edcdb5bf0dea315a21e7aa97a5fc093253c03037ca5ac98ce5c185215"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "537c397e883746b8526f50394cba22e6f2a4cbda08dd402db224fc7c58fe3fd7"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "744afaa43c31a5fc5580a5cddcb8bfa01e26d1c7d3aacf64f81c504dedfbfb89"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Sconce_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "19ddd82c50184a8e3467c6b2256e0379535e1091dffd7c9f3aa8674353b2c350"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Unlit_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "2ddebeee5822e872eeed12435a93a47eeb95390591e0232cf376b2cd47e5c614"
+    },
+    {
+      "file": "QA/LL_C1_D01B1_6x6_TileRepeat_v1.png",
+      "size": [
+        1024,
+        1000
+      ],
+      "mode": "RGBA",
+      "sha256": "6e410f4199e0c9b5d428d2da010db02436b7de25cc155a1bef0906c4b2266bbb"
+    },
+    {
+      "file": "QA/LL_C1_D01B1_Palette_Readability_v1.png",
+      "size": [
+        1120,
+        380
+      ],
+      "mode": "RGB",
+      "sha256": "8f90c0dfe625f1080f59ad86ae947b0405ea3958ddd0518b5d68800dc47d8109"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Arch_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "f2708e37605ed990dcd85bf610f5c1e46f04afb834e2523cc4c526b65494a1aa"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Junction_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "666dd5a8ac9448c0da325cc2f1d9c6f4c7ff1509ec58ee451595c20ae9ff0253"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "93785c9ea21e03199d87714716ca8503d9475768f54f3a5effbef8850d5b895a"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Corner_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "4ba9eccf8e0c6da52a88f14904e9cab52303b81a6116615059e089cb0e77ecfd"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "7a41769b3047e2c3dba7e8a2df34e68e2a175c79bd70481199b1a1e2c122d88d"
+    }
+  ],
+  "assets": [
+    {
+      "file": "Ground/LL_C1_D01B1_Crack_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "f246a890a7a002f7dab650f73b44d2ac107ada95ef5f69f4c96bf5b7174735ba",
+      "alpha_bbox": [
+        10,
+        34,
+        84,
+        106
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Dust_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "dc7e853b12e03d0b8c45a635785863f10d7218eef2c389820cbde31e5a1a4315",
+      "alpha_bbox": [
+        10,
+        16,
+        124,
+        116
+      ],
+      "alpha_range": [
+        0,
+        120
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "ea0374de90e858946b64f61d1ff66b8fdcee91eeb5b8767bd0e6c2d0c9a51223",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "0276cce63931a4744c9fe34b977dc3d94e8906dc35f74a2a21c2fbf14996afb3",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "d07c8a36abc6fc3dc6d9903056bd26802c9b35e58749d28b37f93277457947d2",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Moss_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "e8eee8fa09ed1ef9f69e64bcd465b4fd181e2f324ac93783ddc34ea194fe9e59",
+      "alpha_bbox": [
+        4,
+        22,
+        120,
+        104
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Arch_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "f2708e37605ed990dcd85bf610f5c1e46f04afb834e2523cc4c526b65494a1aa",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Junction_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "666dd5a8ac9448c0da325cc2f1d9c6f4c7ff1509ec58ee451595c20ae9ff0253",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "93785c9ea21e03199d87714716ca8503d9475768f54f3a5effbef8850d5b895a",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Corner_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "4ba9eccf8e0c6da52a88f14904e9cab52303b81a6116615059e089cb0e77ecfd",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "7a41769b3047e2c3dba7e8a2df34e68e2a175c79bd70481199b1a1e2c122d88d",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Burial_Bier_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "5608796709cd57613070a779f1a6968a41bd76fb8e9805d4680622d3d4d7b8bd",
+      "alpha_bbox": [
+        14,
+        38,
+        118,
+        114
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_GraveMarker_Damaged_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "105736de4fce96b3df546219b59f403e80717b5465a803b8096b39d6998a90e5",
+      "alpha_bbox": [
+        26,
+        20,
+        102,
+        120
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Broken_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "6be713d1576b822dd65bce4b3398b4b0a18a87cf2cedc558fd6c436dacd08db2",
+      "alpha_bbox": [
+        20,
+        20,
+        114,
+        122
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Intact_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "2b81fa5c707c891890bb3baf0c85d5981cc9f9de553b508b40c41b4283ed3baf",
+      "alpha_bbox": [
+        20,
+        12,
+        114,
+        122
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Cluster_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "99e222dd51e1930fb2577ed0bf5fe6d4f696f2cefb6107cfd7c1fd69417d09ec",
+      "alpha_bbox": [
+        16,
+        48,
+        128,
+        128
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Small_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "2456093edcdb5bf0dea315a21e7aa97a5fc093253c03037ca5ac98ce5c185215",
+      "alpha_bbox": [
+        22,
+        62,
+        128,
+        126
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "537c397e883746b8526f50394cba22e6f2a4cbda08dd402db224fc7c58fe3fd7",
+      "alpha_bbox": [
+        12,
+        18,
+        116,
+        122
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "744afaa43c31a5fc5580a5cddcb8bfa01e26d1c7d3aacf64f81c504dedfbfb89",
+      "alpha_bbox": [
+        12,
+        18,
+        116,
+        122
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Sconce_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "19ddd82c50184a8e3467c6b2256e0379535e1091dffd7c9f3aa8674353b2c350",
+      "alpha_bbox": [
+        40,
+        10,
+        94,
+        110
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Unlit_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "2ddebeee5822e872eeed12435a93a47eeb95390591e0232cf376b2cd47e5c614",
+      "alpha_bbox": [
+        42,
+        50,
+        92,
+        110
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_B2_Transition_Stone_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "sha256": "af59cda535966d5b448e9b757c5093c4db362029c43fbed0abfa785e81fedebb",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "sha256": "a3a666ee358bc1351c1b85e891d7a55f97c0c4d5b8082807839f445d18a3d389",
+      "alpha_bbox": [
+        18,
+        8,
+        176,
+        156
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "sha256": "a8f7faa5fa6eeddd2814b867da839ae1b64ae1cf3e38961e64b874c541b0a9b7",
+      "alpha_bbox": [
+        18,
+        8,
+        176,
+        156
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "sha256": "d58a7018fb671604453e920b2e042e06150fe9cdf41c2817ce53749fcec4d743",
+      "alpha_bbox": [
+        20,
+        8,
+        174,
+        144
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "suggested_ppu": 128
+    }
+  ],
+  "seams": [
+    {
+      "a": 0,
+      "b": 0,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 0,
+      "b": 1,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 0,
+      "b": 2,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 1,
+      "b": 0,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 1,
+      "b": 1,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 2,
+      "b": 0,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    },
+    {
+      "a": 2,
+      "b": 2,
+      "LR_exact": true,
+      "TB_exact": true,
+      "LR_mean": 0.0,
+      "TB_mean": 0.0
+    }
+  ],
+  "source_authoring": "Original pixel art constructed programmatically from shapes and procedural texturing, not recolored Kenney files."
+}

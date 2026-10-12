@@ -1,0 +1,433 @@
+PASS|Candidate.Import.LL_C1_D01B1_B2_Transition_Stone_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Crack_Overlay_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Dust_Overlay_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Floor_Cracked_C_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Floor_Stone_A_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Floor_Worn_B_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Moss_Overlay_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Burial_Bier_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_GraveMarker_Damaged_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Pillar_Broken_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Pillar_Intact_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Rubble_Cluster_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Rubble_Small_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Sarcophagus_Intact_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Torch_Sconce_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Torch_Unlit_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Passage_Arch_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Passage_Junction_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Wall_Collapsed_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Wall_Corner_128_v1.png
+PASS|Candidate.Import.LL_C1_D01B1_Wall_Straight_128_v1.png
+PASS|Save.IsolatedResumePath
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Resume.ActualB2ArrivalSave.Step5
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Gate.Spawn.Dungeon_01
+PASS|Environment.Original63.NoRuntimeEnvironmentClones
+PASS|Candidate.OriginalRenderersHiddenOnlyInIsolatedRuntime
+PASS|Candidate.AdaptedVisual30.Joints29Lids4Hidden
+PASS|B2ReturnSpawnUnchanged
+PASS|Monster.B1FourDefinitions.Timer35
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_01
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_01
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_01.Attacks3
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Environment.Original63.NoRuntimeEnvironmentClones
+PASS|Candidate.OriginalRenderersHiddenOnlyInIsolatedRuntime
+PASS|Candidate.AdaptedVisual30.Joints29Lids4Hidden
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_01
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_01
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_01
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_01
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_01
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_02
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_02
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_02.Attacks5
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Environment.Original63.NoRuntimeEnvironmentClones
+PASS|Candidate.OriginalRenderersHiddenOnlyInIsolatedRuntime
+PASS|Candidate.AdaptedVisual30.Joints29Lids4Hidden
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_02
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_02
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_02
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_02
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_02
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_03
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_03
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_03.Attacks6
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Environment.Original63.NoRuntimeEnvironmentClones
+PASS|Candidate.OriginalRenderersHiddenOnlyInIsolatedRuntime
+PASS|Candidate.AdaptedVisual30.Joints29Lids4Hidden
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_03
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_03
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_03
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_03
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_03
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b1_04
+PASS|Respawn.MeasureSceneB1.dungeon01_b1_04
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b1_04.Attacks8
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Environment.Original63.NoRuntimeEnvironmentClones
+PASS|Candidate.OriginalRenderersHiddenOnlyInIsolatedRuntime
+PASS|Candidate.AdaptedVisual30.Joints29Lids4Hidden
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b1_04
+PASS|Respawn.DefeatedAbsent.dungeon01_b1_04
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b1_04
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b1_04
+PASS|Respawn.OneInstanceAfter35.dungeon01_b1_04
+PASS|Respawn.FinalCount4.NoDuplicates
+PASS|Wheelchair.PathMobility
+PASS|Wheelchair.VisualPresent
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -8.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -5.10)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-10.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-10.00, 0.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(10.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 8.20)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 4.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 5.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 6.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 7.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 8.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.25)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 6.80)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.75)
+PASS|Wheelchair.ReachableInteractionPosition.(0.00, -11.90)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -11.90)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -9.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -9.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -9.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -9.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -10.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -10.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -10.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -10.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -11.00)
+FAIL|UnityEngine.MissingReferenceException: The object of type 'UnityEngine.Rigidbody2D' has been destroyed but you are still trying to access it.
+Your script should either check if it is null or you should not destroy the object.
+  at UnityEngine.Object+MarshalledUnityObject.TryThrowEditorNullExceptionObject (UnityEngine.Object unityObj, System.String parameterName) [0x00065] in <93e6391e4688454a985ab5dc6ed6bd98>:0
+  at UnityEngine.Bindings.ThrowHelper.ThrowNullReferenceException (System.Object obj) [0x0000a] in <93e6391e4688454a985ab5dc6ed6bd98>:0
+  at UnityEngine.Rigidbody2D.get_position () [0x00006] in <7909eba3e6ed4c2db05021d315d55167>:0
+  at ProjectLimitless.EditorTools.Dungeon01B1InspectionAudit+<WheelchairRoutes>d__58.MoveNext () [0x00561] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Dungeon01B1InspectionAudit.cs:185
+  at ProjectLimitless.EditorTools.Dungeon01B1InspectionAudit+<Flatten>d__63.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Dungeon01B1InspectionAudit.cs:197
+  at ProjectLimitless.EditorTools.Dungeon01B1InspectionAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Dungeon01B1InspectionAudit.cs:198

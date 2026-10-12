@@ -1,0 +1,42 @@
+{
+  "art_status": "USER_ART_REVIEW_PENDING",
+  "overall": "PARTIAL",
+  "zip_entries": 44,
+  "pngs": 38,
+  "usable": 25,
+  "source_renderers": 63,
+  "source_unique_sprite": 1,
+  "existing_environment_clones": 0,
+  "direct_global_swap_safe": false,
+  "adapted_qa_visuals": 30,
+  "hidden_joints": 29,
+  "hidden_niche_lids": 4,
+  "permanent_applied": 0,
+  "main11_b1_objectives_0_to_4_and_b2_entry": true,
+  "normal_victories": 4,
+  "respawn35": true,
+  "save_continue": 3,
+  "physical_route_targets": 6,
+  "physical_waypoints": 233,
+  "physical_south_exit": true,
+  "b2_return_spawn": [
+    0,
+    6.8
+  ],
+  "field03_return_spawn": [
+    0.55,
+    -2.65
+  ],
+  "compile_errors": 0,
+  "pass_checks": [
+    98,
+    425,
+    66
+  ],
+  "qa_failures_preserved": [
+    "old_builder_exit_name",
+    "old_rigidbody_after_expected_scene_transition"
+  ],
+  "source_rights": "DECLARED_ORIGINAL_NOT_INDEPENDENTLY_VERIFIED",
+  "b2_boss": "NOT_VERIFIED"
+}

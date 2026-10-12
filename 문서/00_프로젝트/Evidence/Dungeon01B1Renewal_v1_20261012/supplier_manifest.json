@@ -1,0 +1,815 @@
+{
+  "schema_version": 1,
+  "package": "Limitless_Dungeon01_B1_Renewal_Art_v1.zip",
+  "game": "LIMITLESS",
+  "scene": "Dungeon_01",
+  "display_name": "침묵의 지하묘지 B1",
+  "art_style": "original pixel art / used catacomb, restrained stone grey and warm torches, faint blue only in north descent",
+  "source_of_truth": {
+    "repository": "HappyPaul812/Project-Limitless",
+    "files": [
+      "AGENTS.md",
+      "문서/00_프로젝트/팀운영/COMMON_RULES.md",
+      "문서/00_프로젝트/팀운영/담당/WORLD_ART_RENEWAL.md",
+      "문서/00_프로젝트/CURRENT_STATUS.md",
+      "문서/20_월드/침묵의_지하묘지_B1.md",
+      "문서/20_월드/침묵의_지하묘지_B2.md",
+      "문서/03_스토리/Main11_침묵의_지하묘지.md",
+      "Unity/Client/Assets/_Project/Scripts/World/MainQuest11DungeonFlow.cs",
+      "Unity/Client/Assets/_Project/Scenes/Dungeon_01.unity"
+    ]
+  },
+  "existing_scene": {
+    "bounds_center": [
+      0,
+      0
+    ],
+    "bounds_size": [
+      33,
+      25
+    ],
+    "camera_orthographic_size": 5,
+    "entrance_spawn": [
+      0,
+      -8.5
+    ],
+    "south_exit": [
+      0,
+      -11.9
+    ],
+    "renderers": 63,
+    "original_unique_sprite_count": 1,
+    "original_sprite_guid": "e38fd353fd47c7644acb692973a9ee07",
+    "original_sprite_file_id": "21300000",
+    "main_11_sites": [
+      {
+        "name": "CentralGallery",
+        "xy": [
+          0,
+          -5.1
+        ]
+      },
+      {
+        "name": "WestOssuary",
+        "xy": [
+          -10,
+          0
+        ]
+      },
+      {
+        "name": "EastCollapsedChamber",
+        "xy": [
+          10,
+          0
+        ]
+      },
+      {
+        "name": "LowerDescent",
+        "xy": [
+          0,
+          8.2
+        ]
+      },
+      {
+        "name": "ReturnSpawnFromB2",
+        "xy": [
+          0,
+          6.8
+        ]
+      }
+    ],
+    "monster_spawns": [
+      "dungeon01_b1_01",
+      "dungeon01_b1_02",
+      "dungeon01_b1_03",
+      "dungeon01_b1_04"
+    ],
+    "scene_based_preview_floor_rects": [
+      {
+        "name": "EntranceHall",
+        "x": 0,
+        "y": -9,
+        "world_size": [
+          9,
+          5
+        ]
+      },
+      {
+        "name": "EntrancePassage",
+        "x": 0,
+        "y": -6,
+        "world_size": [
+          4,
+          2
+        ]
+      },
+      {
+        "name": "CentralGallery",
+        "x": 0,
+        "y": -3,
+        "world_size": [
+          11,
+          5
+        ]
+      },
+      {
+        "name": "WestPassage",
+        "x": -6,
+        "y": -2,
+        "world_size": [
+          5,
+          3
+        ]
+      },
+      {
+        "name": "EastPassage",
+        "x": 6,
+        "y": -2,
+        "world_size": [
+          5,
+          3
+        ]
+      },
+      {
+        "name": "WestOssuary",
+        "x": -10,
+        "y": 0,
+        "world_size": [
+          8,
+          8
+        ]
+      },
+      {
+        "name": "EastCollapsedChamber",
+        "x": 10,
+        "y": 0,
+        "world_size": [
+          8,
+          8
+        ]
+      },
+      {
+        "name": "NorthGallery",
+        "x": 0,
+        "y": 3.2,
+        "world_size": [
+          5,
+          8
+        ]
+      },
+      {
+        "name": "NorthSealedRoom",
+        "x": 0,
+        "y": 9.5,
+        "world_size": [
+          9,
+          4.5
+        ]
+      }
+    ]
+  },
+  "global_sprite_swap_safe": false,
+  "implementation_stage": "ART_ASSETS_PREPARED__USER_APPROVAL_PENDING__UNITY_UNVERIFIED",
+  "visual_role_mapping": [
+    {
+      "role": "StoneBase",
+      "scene_renderer_count": 1,
+      "visual_candidates": [
+        "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png"
+      ],
+      "risk": "현재 33x25 Scale이 적용된 단일 Renderer. 1x1 tile PNG를 그대로 33x25배 확대하면 무늬가 늘어남. 1:1 자동교체 금지."
+    },
+    {
+      "role": "Floor areas",
+      "scene_renderer_count": 9,
+      "game_objects": [
+        "EntranceHall",
+        "EntrancePassage",
+        "CentralGallery",
+        "WestPassage",
+        "EastPassage",
+        "WestOssuary",
+        "EastCollapsedChamber",
+        "NorthGallery",
+        "NorthSealedRoom"
+      ],
+      "visual_candidates": [
+        "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+        "Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+        "Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png"
+      ],
+      "risk": "폭/높이 월드단위로 대형 Stretch 사용. 보기좋은 타일 반복에는 별도 Sprite tiled/draw-mode 또는 자산 변경 적용이 필요."
+    },
+    {
+      "role": "Floor grid joints",
+      "scene_renderer_count": 29,
+      "game_objects": [
+        "EntranceHall_Joint",
+        "EntrancePassage_Joint",
+        "CentralGallery_Joint",
+        "WestPassage_Joint",
+        "EastPassage_Joint",
+        "WestOssuary_Joint",
+        "EastCollapsedChamber_Joint",
+        "NorthGallery_Joint",
+        "NorthSealedRoom_Joint"
+      ],
+      "visual_candidates": [
+        "Walls/LL_C1_D01B1_Passage_Junction_128_v1.png"
+      ],
+      "risk": "원본 Scale x=0.035 등 세로 가는 선; 신규 타일을 무작정 적용하면 심한 비율 변형이 발생."
+    },
+    {
+      "role": "West burial alcove bases and lids",
+      "scene_renderer_count": 8,
+      "game_objects": [
+        "WestNiche",
+        "WestNicheLid"
+      ],
+      "visual_candidates": [
+        "Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+        "Props/LL_C1_D01B1_Burial_Bier_128_v1.png"
+      ],
+      "risk": "서쪽 niche 하부/상부에 서로 다른 Scale을 사용. 석관은 기존 면적을 침범하지 않도록 새 Renderer 배치 별도 검증."
+    },
+    {
+      "role": "Entry torch brackets",
+      "scene_renderer_count": 2,
+      "game_objects": [
+        "TorchBracketWest",
+        "TorchBracketEast"
+      ],
+      "visual_candidates": [
+        "Props/LL_C1_D01B1_Torch_Sconce_128_v1.png"
+      ],
+      "risk": "원본 Scale (0.2,0.6)을 유지하면 종횡비가 찌그러질 수 있으므로 원본 코드 확인/승인 후 Sprite-only 설정."
+    },
+    {
+      "role": "Structural walls, descent, rubble",
+      "scene_renderer_count": 14,
+      "game_objects": [
+        "EntryWest",
+        "EntryEast",
+        "EntryNorthWest",
+        "EntryNorthEast",
+        "WestOuter",
+        "EastOuter",
+        "WestTop",
+        "EastTop",
+        "NorthWest",
+        "NorthEast",
+        "EastRubbleA",
+        "EastRubbleB",
+        "SealedDescent",
+        "SealedDescent_Step"
+      ],
+      "visual_candidates": [
+        "Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+        "Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+        "Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+        "Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png"
+      ],
+      "risk": "단일 Kenney sprite를 Scale로 늘린 구조이며 봉인문은 Main11 진행에 따라 표시가 달라야 함. 게임 코드/콜라이더 현상 유지, Sprite 역할별 별도 배정 필요."
+    }
+  ],
+  "assets": [
+    {
+      "file": "Ground/LL_C1_D01B1_Crack_Overlay_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        10,
+        34,
+        84,
+        106
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "f246a890a7a002f7dab650f73b44d2ac107ada95ef5f69f4c96bf5b7174735ba"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Dust_Overlay_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        10,
+        16,
+        124,
+        116
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "dc7e853b12e03d0b8c45a635785863f10d7218eef2c389820cbde31e5a1a4315"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "ea0374de90e858946b64f61d1ff66b8fdcee91eeb5b8767bd0e6c2d0c9a51223"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "0276cce63931a4744c9fe34b977dc3d94e8906dc35f74a2a21c2fbf14996afb3"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "d07c8a36abc6fc3dc6d9903056bd26802c9b35e58749d28b37f93277457947d2"
+    },
+    {
+      "file": "Ground/LL_C1_D01B1_Moss_Overlay_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        4,
+        22,
+        120,
+        104
+      ],
+      "category": "ground tile or optional transparent overlay",
+      "direct_global_replace_safe": false,
+      "sha256": "e8eee8fa09ed1ef9f69e64bcd465b4fd181e2f324ac93783ddc34ea194fe9e59"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Arch_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "wall visual or passage transition",
+      "direct_global_replace_safe": false,
+      "sha256": "f2708e37605ed990dcd85bf610f5c1e46f04afb834e2523cc4c526b65494a1aa"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Passage_Junction_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "wall visual or passage transition",
+      "direct_global_replace_safe": false,
+      "sha256": "666dd5a8ac9448c0da325cc2f1d9c6f4c7ff1509ec58ee451595c20ae9ff0253"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "wall visual or passage transition",
+      "direct_global_replace_safe": false,
+      "sha256": "93785c9ea21e03199d87714716ca8503d9475768f54f3a5effbef8850d5b895a"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Corner_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "wall visual or passage transition",
+      "direct_global_replace_safe": false,
+      "sha256": "4ba9eccf8e0c6da52a88f14904e9cab52303b81a6116615059e089cb0e77ecfd"
+    },
+    {
+      "file": "Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "wall visual or passage transition",
+      "direct_global_replace_safe": false,
+      "sha256": "7a41769b3047e2c3dba7e8a2df34e68e2a175c79bd70481199b1a1e2c122d88d"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Burial_Bier_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        14,
+        38,
+        118,
+        114
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "5608796709cd57613070a779f1a6968a41bd76fb8e9805d4680622d3d4d7b8bd"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_GraveMarker_Damaged_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        26,
+        20,
+        102,
+        120
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "105736de4fce96b3df546219b59f403e80717b5465a803b8096b39d6998a90e5"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Broken_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        20,
+        20,
+        114,
+        122
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "6be713d1576b822dd65bce4b3398b4b0a18a87cf2cedc558fd6c436dacd08db2"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Pillar_Intact_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        20,
+        12,
+        114,
+        122
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "2b81fa5c707c891890bb3baf0c85d5981cc9f9de553b508b40c41b4283ed3baf"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Cluster_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        16,
+        48,
+        128,
+        128
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "99e222dd51e1930fb2577ed0bf5fe6d4f696f2cefb6107cfd7c1fd69417d09ec"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Rubble_Small_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        22,
+        62,
+        128,
+        126
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "2456093edcdb5bf0dea315a21e7aa97a5fc093253c03037ca5ac98ce5c185215"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        12,
+        18,
+        116,
+        122
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "537c397e883746b8526f50394cba22e6f2a4cbda08dd402db224fc7c58fe3fd7"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        12,
+        18,
+        116,
+        122
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "744afaa43c31a5fc5580a5cddcb8bfa01e26d1c7d3aacf64f81c504dedfbfb89"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Sconce_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        40,
+        10,
+        94,
+        110
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "19ddd82c50184a8e3467c6b2256e0379535e1091dffd7c9f3aa8674353b2c350"
+    },
+    {
+      "file": "Props/LL_C1_D01B1_Torch_Unlit_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        42,
+        50,
+        92,
+        110
+      ],
+      "category": "optional decorative environment prop (not present as distinct existing Sprite)",
+      "direct_global_replace_safe": false,
+      "sha256": "2ddebeee5822e872eeed12435a93a47eeb95390591e0232cf376b2cd47e5c614"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_B2_Transition_Stone_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "opaque",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "category": "quest-gated entrance stage/optional transition art",
+      "direct_global_replace_safe": false,
+      "sha256": "af59cda535966d5b448e9b757c5093c4db362029c43fbed0abfa785e81fedebb"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+      "size_px": [
+        192,
+        160
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        18,
+        8,
+        176,
+        156
+      ],
+      "category": "quest-gated entrance stage/optional transition art",
+      "direct_global_replace_safe": false,
+      "sha256": "a3a666ee358bc1351c1b85e891d7a55f97c0c4d5b8082807839f445d18a3d389"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png",
+      "size_px": [
+        192,
+        160
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        18,
+        8,
+        176,
+        156
+      ],
+      "category": "quest-gated entrance stage/optional transition art",
+      "direct_global_replace_safe": false,
+      "sha256": "a8f7faa5fa6eeddd2814b867da839ae1b64ae1cf3e38961e64b874c541b0a9b7"
+    },
+    {
+      "file": "Gate/LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png",
+      "size_px": [
+        192,
+        160
+      ],
+      "suggested_ppu": 128,
+      "pivot": "Center",
+      "point_filter": true,
+      "mipmaps": false,
+      "alpha": "RGBA_transparent",
+      "alpha_bbox": [
+        20,
+        8,
+        174,
+        144
+      ],
+      "category": "quest-gated entrance stage/optional transition art",
+      "direct_global_replace_safe": false,
+      "sha256": "d58a7018fb671604453e920b2e042e06150fe9cdf41c2817ce53749fcec4d743"
+    }
+  ],
+  "preview_notice": "All previews are illustrative/offline reconstructions (not Unity captures). Scene room rectangles and cited Main11 coordinates come from GitHub; new optional prop placement, material tiling, internal collider paths and monster zones are NOT verified.",
+  "authoring": "Original pixel art constructed programmatically from shapes and procedural texturing, not recolored Kenney files.",
+  "untouched": [
+    "Scene",
+    "Prefabs",
+    "existing .meta and GUID",
+    "Quest/Story",
+    "Player/Companions/Monsters",
+    "Battle",
+    "TTS/BGM",
+    "Save",
+    "GitHub"
+  ]
+}

@@ -1,0 +1,327 @@
+[
+  {
+    "file": "Ground/LL_C1_D01B1_Crack_Overlay_128_v1.png",
+    "guid": "88bf256287d8d0f4eb0e67de70d0c776",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Ground/LL_C1_D01B1_Dust_Overlay_128_v1.png",
+    "guid": "da4e8681f7a147d439b9e839b93617d7",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Ground/LL_C1_D01B1_Floor_Cracked_C_128_v1.png",
+    "guid": "92ec7a8f0b841874f80ae5aa5af1206c",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Ground/LL_C1_D01B1_Floor_Stone_A_128_v1.png",
+    "guid": "44df0deab6945f64390e496affcc72ab",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Ground/LL_C1_D01B1_Floor_Worn_B_128_v1.png",
+    "guid": "92a115aa81167824493aec93a37db591",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Ground/LL_C1_D01B1_Moss_Overlay_128_v1.png",
+    "guid": "296a6258180015547a2be9a8d3aec204",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Walls/LL_C1_D01B1_Passage_Arch_128_v1.png",
+    "guid": "050bf9dd1d1837f459b55ef5c9685742",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Walls/LL_C1_D01B1_Passage_Junction_128_v1.png",
+    "guid": "98eb44c9c81a4f341977858ca8738fc1",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Walls/LL_C1_D01B1_Wall_Collapsed_128_v1.png",
+    "guid": "319c6bac2bffaf444932a13fc2de3300",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Walls/LL_C1_D01B1_Wall_Corner_128_v1.png",
+    "guid": "916721eb5445e424583ace5a06fe973f",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Walls/LL_C1_D01B1_Wall_Straight_128_v1.png",
+    "guid": "047c41392fd6120458078c1257e67094",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Burial_Bier_128_v1.png",
+    "guid": "b889145ade1ff094891b3a0bbe31fa40",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_GraveMarker_Damaged_128_v1.png",
+    "guid": "267283ceeb3464549994e951b50d2909",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Pillar_Broken_128_v1.png",
+    "guid": "b6f32e5bf5be8024d9c2a02557e44bdf",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Pillar_Intact_128_v1.png",
+    "guid": "dff1a24ebc1ab9a46a4f699216d355ec",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Rubble_Cluster_128_v1.png",
+    "guid": "77d17d39d5383574699aa7c672628b7c",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Rubble_Small_128_v1.png",
+    "guid": "af8dc609b6223784e8dd4855e1a29d2a",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Sarcophagus_Damaged_128_v1.png",
+    "guid": "f690d242c73a0574ca81ef452d812481",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Sarcophagus_Intact_128_v1.png",
+    "guid": "180588ac453c83d4db0202ec85dda7cb",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Torch_Sconce_128_v1.png",
+    "guid": "f06bdb21f9e00f64dbedb3687fd7c2df",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Props/LL_C1_D01B1_Torch_Unlit_128_v1.png",
+    "guid": "4c6d04ecb5349b84d953419696773695",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Gate/LL_C1_D01B1_B2_Transition_Stone_128_v1.png",
+    "guid": "09710b89541be584eba2d4d3ed62ec2b",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Gate/LL_C1_D01B1_Descent_Gate_Closed_192x160_v1.png",
+    "guid": "1dbc4b4cd507de6459a756ff10d71138",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Gate/LL_C1_D01B1_Descent_Gate_Open_192x160_v1.png",
+    "guid": "da790cb97eb084c47891b9ef43c515f8",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  },
+  {
+    "file": "Gate/LL_C1_D01B1_Stone_Descent_Stairs_192x160_v1.png",
+    "guid": "ae32ca345b44a0146a690e7f18d14505",
+    "fileID": 21300000,
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "textureCompression": 0,
+    "alphaIsTransparency": 1,
+    "isolated_only": true
+  }
+]

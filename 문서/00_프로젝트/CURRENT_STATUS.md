@@ -1,3 +1,14 @@
+<!-- DUNGEON01_B1_INSPECTION_20261012_BEGIN -->
+## 2026-10-12 Dungeon01 B1 리뉴얼 v1 실제 검수 — 미술 승인 대기
+
+- **USER_ART_REVIEW_PENDING / 기계검사PASS / 전체QA_PARTIAL / 원본영구적용0**. ZIP44/PNG38(실사용25·Preview11·QA이미지2), CRC/decode/Manifest해시·크기·alpha PASS. 격리25Single/PPU128 Import, 실제Scene63Renderer/공용Sprite1/원본환경복제0 확인. Floor3종9쌍좌우/상하Seam정확일치.
+- 전역1:1교체는실제왜곡FAIL. 기존형상/Collider불변의격리자식표시30개·반복타일 후보와단순교체를구분. 줄눈29/뚜껑4 후보표시제외, 봉인문상태바인딩은QA제안/게임미적용. 실제전체/부문/닫힘열림/B2연속성/Overlay/63CSV 납품. 미술검토:밀도·B2색감·작은소품·문Collider/상호작용관계.
+- Main11 B1순차조사/역순·중복차단/해금/B2진입index5, Continue3회, 일반4조우정상UI승리·현행35초·최종4중복0, B2복귀(0,6.8)/Field03실제물리출구(.55,-2.65)·재진입, 휠체어6지점233waypoint+실제출구PASS. QA옛출구명/Scene교체뒤Rigidbody계측오류만수정,기존PASS반복0/실패로그보존.
+- Compile/Missing0, Search기존예외로PARTIAL. 사람가독성·OS직접입력·전직업/연속사냥·B2보스전체/봉인실/Main11완료·독립상업권증빙은NOT_VERIFIED. 과거B1/B2의Main11미구현표기는현행스토리/코드와다른초기기록.
+- 원본3738게임파일SHA불변·사용자337항목/822파일보호·Save/설정/GUID·승인Field03/TTS/BGM변경0. 원본Editor/포커스무접촉·Push0. [검수보고/실제Preview](Dungeon01_B1_Renewal_Art_v1_Inspection_20261012.md). 다음: 사용자미술검토와승인후별도통합설계. 기준7f30f60,검수Commit은후속상태기록.
+
+<!-- DUNGEON01_B1_INSPECTION_20261012_END -->
+
 <!-- FIELD03_OFFICIAL_20261012_BEGIN -->
 ## 2026-10-12 Field03 사용자 승인·정식 통합 완료
 
