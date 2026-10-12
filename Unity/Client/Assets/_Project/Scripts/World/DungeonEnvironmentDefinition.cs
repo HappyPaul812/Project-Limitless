@@ -12,6 +12,8 @@ namespace ProjectLimitless.World
             public Vector3 localPosition;
             public RenderMode mode;
             public Sprite sprite;
+            // 같은 위치의 상태별 표시에 쓰는 선택 이미지입니다. 상태 판정은 담당 시스템이 수행합니다.
+            public Sprite alternateSprite;
             public Vector2 worldSize;
             public Vector2 visualOffset;
             public Color color = Color.white;

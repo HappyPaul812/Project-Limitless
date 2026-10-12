@@ -18,6 +18,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: 0, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 33, y: 25}
     visualOffset: {x: 0, y: 0}
     color: {r: 0.4, g: 0.42, b: 0.42, a: 1}
@@ -25,6 +26,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: -9, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 9, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -32,6 +34,7 @@ MonoBehaviour:
     localPosition: {x: -3.5, y: -9, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -39,6 +42,7 @@ MonoBehaviour:
     localPosition: {x: -1.5, y: -9, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -46,6 +50,7 @@ MonoBehaviour:
     localPosition: {x: 0.5, y: -9, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -53,6 +58,7 @@ MonoBehaviour:
     localPosition: {x: 2.5, y: -9, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -60,6 +66,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: -6, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 4, y: 2}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -67,6 +74,7 @@ MonoBehaviour:
     localPosition: {x: -1, y: -6, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 2}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -74,6 +82,7 @@ MonoBehaviour:
     localPosition: {x: 1, y: -6, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 2}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -81,6 +90,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: -3, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 11, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -88,6 +98,7 @@ MonoBehaviour:
     localPosition: {x: -4.5, y: -3, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +106,7 @@ MonoBehaviour:
     localPosition: {x: -2.5, y: -3, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,6 +114,7 @@ MonoBehaviour:
     localPosition: {x: -0.5, y: -3, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,6 +122,7 @@ MonoBehaviour:
     localPosition: {x: 1.5, y: -3, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,6 +130,7 @@ MonoBehaviour:
     localPosition: {x: 3.5, y: -3, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -123,6 +138,7 @@ MonoBehaviour:
     localPosition: {x: -6, y: -2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 5, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -130,6 +146,7 @@ MonoBehaviour:
     localPosition: {x: -7.5, y: -2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -137,6 +154,7 @@ MonoBehaviour:
     localPosition: {x: -5.5, y: -2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -144,6 +162,7 @@ MonoBehaviour:
     localPosition: {x: -10, y: 0, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 8, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,6 +170,7 @@ MonoBehaviour:
     localPosition: {x: -13, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -158,6 +178,7 @@ MonoBehaviour:
     localPosition: {x: -11, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,6 +186,7 @@ MonoBehaviour:
     localPosition: {x: -9, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,6 +194,7 @@ MonoBehaviour:
     localPosition: {x: -7, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -179,6 +202,7 @@ MonoBehaviour:
     localPosition: {x: 6, y: -2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 5, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -186,6 +210,7 @@ MonoBehaviour:
     localPosition: {x: 4.5, y: -2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -193,6 +218,7 @@ MonoBehaviour:
     localPosition: {x: 6.5, y: -2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 3}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -200,6 +226,7 @@ MonoBehaviour:
     localPosition: {x: 10, y: 0, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 6bf93a9227c8de046bee50a5321d167d, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 8, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -207,6 +234,7 @@ MonoBehaviour:
     localPosition: {x: 7, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -214,6 +242,7 @@ MonoBehaviour:
     localPosition: {x: 9, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -221,6 +250,7 @@ MonoBehaviour:
     localPosition: {x: 11, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -228,6 +258,7 @@ MonoBehaviour:
     localPosition: {x: 13, y: 0, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,6 +266,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: 3.2, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 59950ae2f6dc7a04c96b2465e33c63a3, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 5, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -242,6 +274,7 @@ MonoBehaviour:
     localPosition: {x: -1.5, y: 3.2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -249,6 +282,7 @@ MonoBehaviour:
     localPosition: {x: 0.5, y: 3.2, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -256,6 +290,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: 9.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: 4d0f10295d6c916488ad81cbf9dd6570, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 9, y: 4.5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -263,6 +298,7 @@ MonoBehaviour:
     localPosition: {x: -3.5, y: 9.5, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 4.5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -270,6 +306,7 @@ MonoBehaviour:
     localPosition: {x: -1.5, y: 9.5, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 4.5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -277,6 +314,7 @@ MonoBehaviour:
     localPosition: {x: 0.5, y: 9.5, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 4.5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -284,6 +322,7 @@ MonoBehaviour:
     localPosition: {x: 2.5, y: 9.5, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.035, y: 4.5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -291,6 +330,7 @@ MonoBehaviour:
     localPosition: {x: -4.5, y: -9, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.35, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -298,6 +338,7 @@ MonoBehaviour:
     localPosition: {x: 4.5, y: -9, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.35, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -305,6 +346,7 @@ MonoBehaviour:
     localPosition: {x: -3.3, y: -6.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 2.4, y: 0.35}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -312,6 +354,7 @@ MonoBehaviour:
     localPosition: {x: 3.3, y: -6.5, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 2.4, y: 0.35}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -319,6 +362,7 @@ MonoBehaviour:
     localPosition: {x: -14, y: 0.1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.4, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -326,6 +370,7 @@ MonoBehaviour:
     localPosition: {x: -10, y: 4.1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 8, y: 0.4}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -333,6 +378,7 @@ MonoBehaviour:
     localPosition: {x: 14, y: 0.1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.4, y: 8}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -340,6 +386,7 @@ MonoBehaviour:
     localPosition: {x: 10, y: 4.1, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 8, y: 0.4}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -347,6 +394,7 @@ MonoBehaviour:
     localPosition: {x: -2.7, y: 5.6, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.4, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -354,13 +402,15 @@ MonoBehaviour:
     localPosition: {x: 2.7, y: 5.6, z: 0}
     mode: 2
     sprite: {fileID: 21300000, guid: cb478aabeb4e1824c93d78386c5dcc2e, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.4, y: 5}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
   - anchorName: SealedDescent
     localPosition: {x: 0, y: 11.2, z: 0}
     mode: 0
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 236afcf3cfbbe904b83e9c8e71c8108f, type: 3}
+    alternateSprite: {fileID: 21300000, guid: 9c1535b8ab220d649b73a341a15d5889, type: 3}
     worldSize: {x: 4.5, y: 0.7}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -368,6 +418,7 @@ MonoBehaviour:
     localPosition: {x: 0, y: 10.4, z: 0}
     mode: 0
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 4, y: 0.6}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -375,6 +426,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: -2.5, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 3dc4a788e13a0204fb1b98bdd8ecf992, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.25, y: 0.7}
     visualOffset: {x: 0, y: 0.046875}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -382,6 +434,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: -2.5, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.35, y: 0.12}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -389,6 +442,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: -0.9, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 3dc4a788e13a0204fb1b98bdd8ecf992, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.25, y: 0.7}
     visualOffset: {x: 0, y: 0.046875}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -396,6 +450,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: -0.9, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.35, y: 0.12}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -403,6 +458,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: 0.70000005, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 3dc4a788e13a0204fb1b98bdd8ecf992, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.25, y: 0.7}
     visualOffset: {x: 0, y: 0.046875}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -410,6 +466,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: 0.70000005, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.35, y: 0.12}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -417,6 +474,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: 2.3000002, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 908941fd2da89884d994f66b69d81aaa, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.25, y: 0.7}
     visualOffset: {x: -0.015625, y: 0.09375}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -424,6 +482,7 @@ MonoBehaviour:
     localPosition: {x: -13.1, y: 2.3000002, z: 0}
     mode: 1
     sprite: {fileID: 0}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.35, y: 0.12}
     visualOffset: {x: 0, y: 0}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -431,6 +490,7 @@ MonoBehaviour:
     localPosition: {x: 12.5, y: 2.6, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 40efabf906991724c874dc952e0f65d9, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 1.5, y: 0.7}
     visualOffset: {x: -0.0625, y: 0.1875}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -438,6 +498,7 @@ MonoBehaviour:
     localPosition: {x: 13.1, y: 1.8, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 40efabf906991724c874dc952e0f65d9, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.8, y: 0.6}
     visualOffset: {x: -0.0625, y: 0.1875}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -445,6 +506,7 @@ MonoBehaviour:
     localPosition: {x: -2, y: -8.5, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 69212f55aa115e84684a39839d747fcd, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.2, y: 0.6}
     visualOffset: {x: -0.0234375, y: -0.03125}
     color: {r: 1, g: 1, b: 1, a: 1}
@@ -452,6 +514,7 @@ MonoBehaviour:
     localPosition: {x: 2, y: -8.5, z: 0}
     mode: 3
     sprite: {fileID: 21300000, guid: 69212f55aa115e84684a39839d747fcd, type: 3}
+    alternateSprite: {fileID: 0}
     worldSize: {x: 0.2, y: 0.6}
     visualOffset: {x: -0.0234375, y: -0.03125}
     color: {r: 1, g: 1, b: 1, a: 1}

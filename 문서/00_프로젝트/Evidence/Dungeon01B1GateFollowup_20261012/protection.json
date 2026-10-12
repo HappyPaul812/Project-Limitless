@@ -1,0 +1,14 @@
+{
+  "userItems": 337,
+  "userFiles": 822,
+  "oldGameFiles": 3874,
+  "allowedChanged": [
+    "Unity/Client/Assets/_Project/Resources/DungeonEnvironmentDefinitions/Dungeon01B1Renewal.asset",
+    "Unity/Client/Assets/_Project/Scripts/World/DungeonEnvironmentDefinition.cs",
+    "Unity/Client/Assets/_Project/Scripts/World/MainQuest11DungeonFlow.cs"
+  ],
+  "oldGameUnchanged": 3871,
+  "allScenesUnchanged": true,
+  "allOldMetaPNGUnchanged": true,
+  "verifiedB2Push": "47a65e2618af8bba56e2b0ed2062a7ad2b910fb7"
+}

@@ -1,3 +1,9 @@
+## 2026-10-12 B1 봉인문 후속 시각 보완
+
+- B2 완료 Push47a65e2 확인 후 진행. 기존 벽 내0.75×0.625 닫힘/열림 상태 표식1개와 기존 하강로 B2이동 안내 적용. TECH_HOLD_RESOLVED_STATE_PLAQUE, 전체 PARTIAL(Search/사람 가독성 미검증).
+- Main11 해금·전후Continue·B1/B2/Field03왕복·휠체어·B2단서 회귀 PASS. 모든Scene/Collider/PNG/meta·Save·사용자337/822 보호. 전투/35초 검증 재사용.
+- 다음: 실제 화면의 작은 표식 가독성 확인. 마지막 관련 Commit: 이 항목의 Git 이력 참조. Push 미실행.
+
 ## 2026-10-12 Dungeon B2 정식 통합·봉인실 스포일러 수정
 
 - USER_ART_APPROVED. PNG31 등록, 기존54 앵커 보존, B1 렌더링 코드 그대로 재사용: Tiled18/원크기소품8/중복표시숨김28/생성26.

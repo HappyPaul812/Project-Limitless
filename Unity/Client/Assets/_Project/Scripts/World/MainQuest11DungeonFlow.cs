@@ -23,8 +23,14 @@ namespace ProjectLimitless.World
         private bool bossAfterDialogueShown;
         private readonly List<SpriteRenderer> sealedClues = new List<SpriteRenderer>();
         private SpriteRenderer tabletVisual;
+        private SpriteRenderer lowerGateVisual;
+        private Sprite lowerGateClosed, lowerGateOpen;
         // 그림만 제어합니다. 석판 획득과 퀘스트 완료는 기존 대사·QuestService가 계속 담당합니다.
-        private void Update() => RefreshSealedVisuals();
+        private void Update()
+        {
+            RefreshSealedVisuals();
+            if (lowerGateVisual != null) lowerGateVisual.sprite = CurrentStep >= 4 || QuestService.GetState(QuestId) == QuestState.Completed ? lowerGateOpen : lowerGateClosed;
+        }
         private void RefreshSealedVisuals()
         {
             bool revealed = BossDefeated;
@@ -67,6 +73,7 @@ namespace ProjectLimitless.World
                 spawn.transform.SetParent(transform, false);
                 spawn.transform.position = new Vector3(0, 6.8f, 0);
                 spawn.GetComponent<SceneSpawnPoint>().Configure("Spawn_From_B2");
+                BuildLowerGateVisual();
             }
             else
             {
@@ -95,6 +102,25 @@ namespace ProjectLimitless.World
             site.transform.position = position;
             site.GetComponent<MainQuest11Site>().Configure(id, label, arrival);
             QuestNavigationTarget.Attach(site, id, label, new Vector3(0, 1.4f, 0));
+        }
+
+        private void BuildLowerGateVisual()
+        {
+            var profile = Resources.Load<DungeonEnvironmentDefinition>("DungeonEnvironmentDefinitions/Dungeon01B1Renewal");
+            if (profile == null) return;
+            foreach (var entry in profile.placements)
+            {
+                if (entry.anchorName != "SealedDescent" || entry.sprite == null || entry.alternateSprite == null) continue;
+                lowerGateClosed = entry.sprite; lowerGateOpen = entry.alternateSprite;
+                // 기존 벽을 유지하고 그 안에 작은 상태 표식만 붙입니다. 열린 통로를 새로 그리거나 Collider를 옮기지 않습니다.
+                var plaque = new GameObject("LowerGateStatePlaque", typeof(SpriteRenderer));
+                plaque.transform.SetParent(transform, false);
+                plaque.transform.position = new Vector3(0, 11.2f, 0);
+                plaque.transform.localScale = Vector3.one * .5f;
+                lowerGateVisual = plaque.GetComponent<SpriteRenderer>(); lowerGateVisual.sortingOrder = 6;
+                lowerGateVisual.sprite = CurrentStep >= 4 || QuestService.GetState(QuestId) == QuestState.Completed ? lowerGateOpen : lowerGateClosed;
+                return;
+            }
         }
 
         private void BuildSealedChamber()
@@ -183,7 +209,16 @@ namespace ProjectLimitless.World
         private void Update()
         {
             if (player == null) player = FindAnyObjectByType<PlayerController>()?.transform;
-            if (marker != null) marker.SetActive((IsCurrent || IsReturnChoice || IsOpenGate) && !WorldModalState.IsOpen);
+            if (marker != null)
+            {
+                marker.SetActive((IsCurrent || IsReturnChoice || IsOpenGate) && !WorldModalState.IsOpen);
+                if (IsOpenGate)
+                {
+                    // 이동은 벽 통과가 아니라 기존 하강로 상호작용입니다. 실제 입력 위치의 안내를 명확하게 유지합니다.
+                    var text = marker.GetComponentInChildren<UnityEngine.UI.Text>(true);
+                    if (text != null) text.text = "해금된 하강로\n[E/F · 게임패드 A] B2로 이동";
+                }
+            }
             if (arrival && IsCurrent && player != null && Vector2.Distance(player.position, transform.position) < 2.2f)
             {
                 QuestService.NotifyLocationReached(TargetId);

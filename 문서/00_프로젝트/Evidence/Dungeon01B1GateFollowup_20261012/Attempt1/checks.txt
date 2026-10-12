@@ -1,0 +1,16 @@
+PASS|Save.IsolatedBeforeFirstWrite
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Bounds33x25
+PASS|Monster.Initial4
+PASS|Main11.StartsB1Step0
+PASS|Plaque.State.0
+PASS|Plaque.UniformScaleExactSize
+FAIL|Plaque.InsideExistingWallCollider
+FAIL|System.InvalidOperationException: Plaque.InsideExistingWallCollider
+  at ProjectLimitless.EditorTools.GatePlaqueAudit.Check (System.Boolean v, System.String label) [0x00042] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\GatePlaqueAudit.cs:47 
+  at ProjectLimitless.EditorTools.GatePlaqueAudit.CheckPlaque () [0x000db] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\GatePlaqueAudit.cs:147 
+  at ProjectLimitless.EditorTools.GatePlaqueAudit+<Run>d__62.MoveNext () [0x001d3] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\GatePlaqueAudit.cs:187 
+  at ProjectLimitless.EditorTools.GatePlaqueAudit+<Flatten>d__64.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\GatePlaqueAudit.cs:196 
+  at ProjectLimitless.EditorTools.GatePlaqueAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\GatePlaqueAudit.cs:197 
