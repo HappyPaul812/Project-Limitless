@@ -1,0 +1,76 @@
+{
+  "product": "LIMITLESS",
+  "package": "Limitless_Field03_RockB_Fix_v2",
+  "status": "ART_REPAIR_READY__USER_APPROVAL_AND_CODEX_RUNTIME_QA_PENDING",
+  "source": "approved original from Limitless_Field03_Renewal_Art_v1.zip",
+  "source_v1_path": "Props/LL_C1_F03_Rock_Moss_B_128_v1.png",
+  "source_v1_sha256": "b34a8f54b2ab61020ba7051723cb76d3d8cbfc8f432fee7cf6999de46671b41b",
+  "evidence": "문서/00_프로젝트/Evidence/Field03Official_20261012/RockB_Art_Correction_Request.md",
+  "new_png": "Props/LL_C1_F03_Rock_Moss_B_128_v2.png",
+  "new_sha256": "4783f18a407cfaac4489731571b60a7364433f94fc4e849fd74bfd3358b6b770",
+  "image_size_px": [
+    128,
+    128
+  ],
+  "image_mode": "RGBA",
+  "ppu_recommendation": 128,
+  "pivot_recommendation": [
+    0.5,
+    0.5
+  ],
+  "scene": "Field_03",
+  "scene_object": "RockNorth",
+  "world_position": [
+    4.5,
+    4.4
+  ],
+  "old_sprite_name": "rock_02_0",
+  "old_sprite_rect_px": [
+    85,
+    54
+  ],
+  "protected_collider": {
+    "size": [
+      0.4,
+      0.22
+    ],
+    "offset": [
+      0,
+      -0.22
+    ]
+  },
+  "pixel_changes": {
+    "orphan_pixels_removed": 14,
+    "original_main_body_pixels": 3537,
+    "preserved_body_pixels": 3537,
+    "body_move_pixels": [
+      0,
+      -19
+    ],
+    "original_bbox_xyxy_inclusive": [
+      12,
+      0,
+      115,
+      124
+    ],
+    "corrected_bbox_xyxy_inclusive": [
+      12,
+      50,
+      115,
+      105
+    ]
+  },
+  "bottom_world_y_computed": 4.071875,
+  "collider_bottom_world_y": 4.07,
+  "rights_provenance": {
+    "basis": "pixel-identical approved project-owned v1 PNG shifted within canvas",
+    "external_pixels_added": false,
+    "independent_commercial_clearance": "NOT_VERIFIED; reuses original v1 licensing status"
+  },
+  "permissions": {
+    "original_v1_zip_modified": false,
+    "unity_scene_modified": false,
+    "old_guids_modified": false,
+    "git_push": false
+  }
+}
