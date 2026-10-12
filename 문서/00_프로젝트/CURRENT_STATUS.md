@@ -1,3 +1,11 @@
+## 2026-10-13 Git 안전 통합·Rock B v2/Field04 격리 검수
+
+- 원본337항목/822미커밋·4,750보호파일 SHA 불변. 원본main ff022e6/Editor Bootstrap·비포커스/Save/TTS/BGM 보호. 최종원격405ce12(원격전용7커밋)+로컬A/B를 별도 codex/integrate-main-20261013 worktree에서 보존 통합, 충돌0/Unity diff0/Push0. 정확한 사용자 Push 명령은 ArtInspection_20261013_Summary.md.
+- Rock B v2: 고립14 제거/본체3537 동일RGBA·19px상향, 실제Unity/PPU128/Center·접지차0.001875 PASS. USER_ART_REVIEW_PENDING, 공식375/376·기존RockNorth1 유지/신규 적용0. 검수Commit `975fb636a7a7a7527bc704c21019853301d83bac`.
+- Field04: CRC/PNG/hash·타일27·대응363/363·실제RenderTexture/Importer PASS. 나무Big/Medium5참조역대응·RockNorth발높이보완 ART_MAPPING_FIX_REQUIRED. QA제안362/363·Optional0, 정식 적용0. 검수Commit `dcb1f14524de6cfb295cbf5e5d6cfb83d24229a5`.
+- Main13전체/Continue2/Field03·Arbel·Field05왕복/Story+일반2 UI승리·35초/휠체어179waypoint/Camera12검사PASS. 최초QAJson오류·정확서쪽Spawn경로FAIL보존, 마지막재개177PASS/FAIL0. 원본서쪽Spawn겹침·북쪽Collider틈/기존Search예외로전체PARTIAL. 사람미술·OS입력/권리/원본정식Import미검증.
+- 다음: Rock v2 사용자미술승인, Field04나무표/RockNorth보완·색감검토. 기존경계/Spawn수정은별도기술범위. TTS실행0·투사스킬구현0. 원본dirty CURRENT_STATUS는 수정하지 않고 통합worktree문서만 갱신.
+
 ## 2026-10-12 Field03 Rock B v2 자료 대기
 
 - ART_FIX_PENDING. 지정경로와 F:/Downloads·사용자Downloads 재귀 ZIP 검색에서 Rock B v2 미발견. 발견된 Field03 v1은 수정본으로 사용하지 않았습니다.
