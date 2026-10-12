@@ -1,0 +1,45 @@
+PASS|Save.CustomAuditDirectoryVerifiedBeforeFirstWrite
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+PASS|Main07.Started
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.main07_wheel_runtime.png
+PASS|Main07.ActualDialogue.Main07WheelTracks
+PASS|Dialogue.Completed
+PASS|Main07.ActualDialogue.Main07WoundedTraveler
+PASS|Dialogue.Completed
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.main07_paul_runtime.png
+PASS|Main07.PaulOfficialVisible
+PASS|Main07.ActualDialogue.Main07Paul
+PASS|Dialogue.Completed
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Main07.ThreeVsThree
+PASS|Main07.ActualUIVictory.Attacks6
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.main07_return_miel_paul_runtime.png
+PASS|Main07.ActualDialogue.Main07Miel
+PASS|Dialogue.Completed
+PASS|Main07.ActualDialogue.Main07PaulFarewell
+PASS|Dialogue.Completed
+PASS|Main07.ActualComplete
+PASS|Save.Write.Main07Completed
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Continue.RealButton.Main07Completed
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+FAIL|Continue.CoordinatesQuestExact.Main07Completed
+FAIL|System.InvalidOperationException: Continue.CoordinatesQuestExact.Main07Completed
+  at ProjectLimitless.EditorTools.Field02SupplementAudit.Check (System.Boolean v, System.String label) [0x00042] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field02SupplementAudit.cs:47
+  at ProjectLimitless.EditorTools.Field02SupplementAudit+<Continue>d__29.MoveNext () [0x00140] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field02SupplementAudit.cs:109
+  at ProjectLimitless.EditorTools.Field02SupplementAudit+<Flatten>d__43.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field02SupplementAudit.cs:155
+  at ProjectLimitless.EditorTools.Field02SupplementAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field02SupplementAudit.cs:156

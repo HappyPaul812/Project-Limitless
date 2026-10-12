@@ -8,4 +8,3 @@ UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at <60f2bd518b604
 UnityEditor.Search.SearchInit.IndexationOnStartup () (at <60f2bd518b604435bcf930e6d229f684>:0)
 UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at <27ff15fd79c54f5eb7060fd0f507d441>:0)
 UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
-

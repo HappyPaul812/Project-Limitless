@@ -1,0 +1,25 @@
+{
+  "zip": "F:\\Downloads\\LIMITLESS_20261012_Codex_Handoff_Pack.zip",
+  "sha256": "7b5fd22bea14e5e8ddea977e505804fb03855999a680ee2b6e5556a954c11782",
+  "crc": null,
+  "documents": [
+    {
+      "name": "Codex_All_Tasks_20261012.txt",
+      "bytes": 12772,
+      "sha256": "b09c883652ddce369179fcd621a7d5a2e056c3442c80c518c82e9e63d4c6d344",
+      "read": true
+    },
+    {
+      "name": "LIMITLESS_Conversation_Decisions_Handoff_20261012.md",
+      "bytes": 9930,
+      "sha256": "028d98ad7d2a6c545a5276fc403ef21c5ff15147f6151aeca1ba794d927f44a9",
+      "read": true
+    },
+    {
+      "name": "Chapter3_Combat_Skills_Cold_Status_Design_20261012.md",
+      "bytes": 10845,
+      "sha256": "7157b71f75c227d8ba1d77038beb1ec44be8240362d70e7f1e78c931217616b4",
+      "read": true
+    }
+  ]
+}
