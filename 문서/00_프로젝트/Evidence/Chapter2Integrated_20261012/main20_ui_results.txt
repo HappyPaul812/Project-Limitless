@@ -1,0 +1,20 @@
+PASS|Fixture.PartyThree
+ERROR|ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|Normal.SavedPartyThree
+INFO|Normal.Attacks=19;HP=160,100,56;BossHP=0
+PASS|Normal.ActualQueueVictory
+PASS|Normal.PhaseTransitionOnce
+PASS|Scene.Field_11_DeepCore
+PASS|MissingScript0.Field_11_DeepCore
+PASS|Normal.VictoryReturnObjective7
+FAIL|Normal.ConsoleErrors0
+FAIL|System.InvalidOperationException: Normal.ConsoleErrors0
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit.Check (System.Boolean pass, System.String id) [0x00042] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:47
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit+<NormalBattle>d__29.MoveNext () [0x003bf] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:233
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit+<Flatten>d__30.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:235
+  at ProjectLimitless.EditorTools.Main20RuntimeAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main20RuntimeAudit.cs:237

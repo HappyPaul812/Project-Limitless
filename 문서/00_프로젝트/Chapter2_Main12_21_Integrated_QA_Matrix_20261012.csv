@@ -1,0 +1,11 @@
+﻿Main,Overall,NewRuntime,ActualUIBattle,ReusedEvidence,ManualFullPlay
+Main12,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main13,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main14,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main15,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main16,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main17,PARTIAL,Quest 순차 목표/중복/완료 서비스,NOT_VERIFIED (이번 전체 일반 플레이 없음),기존 음성/BGM·스토리/전투 문서 증거 재사용,NOT_VERIFIED
+Main18,PARTIAL,Quest 순차 목표/중복/완료 서비스 + 과열/냉각약 규칙·Catalog12/오류10 제외,NOT_VERIFIED (이번 전체 일반 플레이 없음),20261012 실제 Story12+Dsp/의도적무음10·Continue 증거 재사용,NOT_VERIFIED
+Main19,PARTIAL,Quest 순차 목표/중복/완료 서비스 + Catalog13 GUID/원본 WAV hash,NOT_VERIFIED (이번 전체 일반 플레이 없음),20261012 실제 Story13·조건부동료·Continue 증거 재사용,NOT_VERIFIED
+Main20,PARTIAL,Quest 순차 목표/중복/완료 서비스 + 실제 조사/보상/패배재시도/Bootstrap Continue,"PASS: Lv15 투사+세린+미엘, Attack→HitArea→정상 TurnQueue,19회",기존1373 assertion 증거와 구별; 신규150여 분기 검사,NOT_VERIFIED
+Main21,PARTIAL,Quest 순차 목표/중복/완료 서비스 + 퍼즐·마차·하렌·5Path·완료/Continue,"PASS: A/B 각각7회 Attack, 자유3인 편성",최초 실행 QA 경로 오류 보존/체크포인트 재개,NOT_VERIFIED

@@ -3,9 +3,9 @@
 
 - Field02 ZIP: CRC/PNG25개·실사용17개·Manifest 해시/크기 일치. 실제 Scene363+Theme복제10=373개 대응표, 격리 Import/RenderTexture 확보. 배치·Scale·Flip·Sorting·Collider 보존. 원본 영구 적용0.
 - **ART_REVIEW_PENDING / 기술 PARTIAL**: 바닥 Theme 색조, Rock B의85×54/PPU100→128×128/PPU128 표현 차이, 보조5개 배치 승인 필요. Main07 활성 폴/전체 접근·Field01/03 실제 왕복·Field02 리스폰은 미검증. [검수 및 통합 인계](Field02_Renewal_Art_v1_Inspection_20261012.md).
-- Chapter2 종합 QA 진행 중: Main20 UI 정상 승리/Phase2, Main21 A/B UI 정상 승리·마차 Skip/Continue PASS. 격리 QA 경로 검사 수정 후 잔여 체크포인트 재개. 기존 Search 예외 유지, 전체 PASS로 판정하지 않음.
+- Chapter2 종합 QA **PARTIAL**: Main20 Attack19회/Phase2 정상 승리, Main21 A/B Attack각7회 정상 승리·마차12초/Skip/하렌/완료Continue PASS. Main12~21 순차 서비스·서브9종/전리품7종 회귀 PASS. Search Console assertion FAIL 원문 유지. Main12~19 실제 UI 전투/전체 수동 플레이 미검증. [종합 보고](Chapter2_Main12_21_Integrated_Regression_QA_20261012.md).
 - Chapter3 스킬 상점·강화/부활/정화Ⅱ·냉기/화로·몬스터/전리품/펫/경제 설계3문서와 기존 정본 교차 링크 완료. 구현0·미정 수치/ID 추가0. 기존 TTS 정상25개 재통합0·오류10개 의도적 무음 유지.
-- Field02 검수 Commit `47566ff`; Chapter3 문서 Commit은 Git 이력 참조. Push0, 사용자 직접 Push.
+- Field02 검수 `47566ff`, Chapter3 문서 `ef49afd`; Chapter2 QA Commit은 Git 이력 참조. Push0, 사용자 직접 Push.
 
 <!-- URGENT_20261012_END -->
 
