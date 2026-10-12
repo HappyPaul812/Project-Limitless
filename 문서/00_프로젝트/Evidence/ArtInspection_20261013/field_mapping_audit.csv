@@ -1,0 +1,13 @@
+﻿source_guid_fileID,local_sprite_name,delivery_name,instances_actual,instances_declared,new_png,old_units,new_units,same_size,name_matches,role
+1606921373@ecafa1446d0264141bb7b01e4005beff,tiles_grass_6_0,tiles_grass_3_0,104,104,Ground/LL_C2_F04_DryGrass_A_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,False,바닥
+405149151@ecafa1446d0264141bb7b01e4005beff,tiles_grass_4_0,tiles_grass_4_0,105,105,Ground/LL_C2_F04_DryGrass_B_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,바닥
+1271049111@ecafa1446d0264141bb7b01e4005beff,tiles_grass_5_0,tiles_grass_5_0,106,106,Ground/LL_C2_F04_DryGrass_C_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,바닥
+278596618@ecafa1446d0264141bb7b01e4005beff,tiles_grass_4_4,tiles_grass_4_4,15,15,Ground/LL_C2_F04_Path_Left_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,길
+1662121770@ecafa1446d0264141bb7b01e4005beff,tiles_grass_5_4,tiles_grass_5_4,15,15,Ground/LL_C2_F04_Path_Right_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,길
+21300000@5b888cd38e2bf8543a27554e427d128b,tree_medium,tree_big,3,3,Props/LL_C2_F04_Tree_Big_255x256_v1.png,"(1.0, 1.21875)","(1.9921875, 2.0)",False,False,나무
+21300000@d06207b6940ba73478971dde7147ae92,tree_big,tree_medium,2,2,Props/LL_C2_F04_Tree_Medium_128x156_v1.png,"(1.9921875, 2.0)","(1.0, 1.21875)",False,False,나무
+21300000@a7170a8f8df7fc347a8e4861ba68821b,bush_01,bush_01,2,2,Props/LL_C2_F04_Bush_A_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,수풀
+21300000@ccf732b59af6d4d4cbf48b806179440b,bush_02,bush_02,1,1,Props/LL_C2_F04_Bush_B_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,수풀
+21300000@6b5b784b46803054195f9cc3b2961699,rock_01,rock_01,1,1,Props/LL_C2_F04_Rock_A_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,바위
+-1321756614084088994@5b951bd26f9af3849a2fe92928a0c645,rock_02_0,rock_02_0,1,1,Props/LL_C2_F04_Rock_B_128_v1.png,"(0.85, 0.54)","(1.0, 1.0)",False,True,바위
+1892116053@d1228d04780ccff429a9d5042442017d,fence_tiles_2_2,fence_tiles_2_2,8,8,Props/LL_C2_F04_Fence_Wood_128_v1.png,"(1.0, 1.0)","(1.0, 1.0)",True,True,울타리

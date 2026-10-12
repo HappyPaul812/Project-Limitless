@@ -1,0 +1,704 @@
+{
+  "images": [
+    {
+      "package": "rock",
+      "path": "Preview\\LL_C1_F03_RockB_Alpha_Grounding_BeforeAfter_v2.png",
+      "sha256": "229e622be3b7d93044c30fe43f99f2ecc8e3a12a995e09680b450d82a930ee07",
+      "size": [
+        1120,
+        650
+      ],
+      "mode": "RGB",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        1120,
+        650
+      ],
+      "alpha_pixels": 728000,
+      "components8": 1,
+      "component_sizes": [
+        728000
+      ]
+    },
+    {
+      "package": "rock",
+      "path": "Props\\LL_C1_F03_Rock_Moss_B_128_v2.png",
+      "sha256": "4783f18a407cfaac4489731571b60a7364433f94fc4e849fd74bfd3358b6b770",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        12,
+        50,
+        116,
+        106
+      ],
+      "alpha_pixels": 3537,
+      "components8": 1,
+      "component_sizes": [
+        3537
+      ]
+    },
+    {
+      "package": "rock",
+      "path": "QA\\LL_C1_F03_RockB_Collider_Grounding_Study_v2.png",
+      "sha256": "510e5fe02386ebd994655b61db12365773e22429a8176c8f07cc09f5c2ee4b3b",
+      "size": [
+        820,
+        510
+      ],
+      "mode": "RGB",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        820,
+        510
+      ],
+      "alpha_pixels": 418200,
+      "components8": 1,
+      "component_sizes": [
+        418200
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Ground\\LL_C2_F04_DryGrass_A_128_v1.png",
+      "sha256": "cf61e2c0281ee00a92c47ba25e051ed49cef206016c1de3d80c1e24dc0dc8f16",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_pixels": 16384,
+      "components8": 1,
+      "component_sizes": [
+        16384
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Ground\\LL_C2_F04_DryGrass_B_128_v1.png",
+      "sha256": "fe23f54aa0ad4849a4e96a8440db00a2c039828b2b970e6648388a857e29ce22",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_pixels": 16384,
+      "components8": 1,
+      "component_sizes": [
+        16384
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Ground\\LL_C2_F04_DryGrass_C_128_v1.png",
+      "sha256": "7198b0f998d5b0d9da6d0a97e935f148dd4a98dc9d100cfc2455428bfb033443",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_pixels": 16384,
+      "components8": 1,
+      "component_sizes": [
+        16384
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Ground\\LL_C2_F04_Path_Left_128_v1.png",
+      "sha256": "c3c9fa9eeeef125178fab64eb72725fe432b350b83786c8c21cc792a9e694c20",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_pixels": 16384,
+      "components8": 1,
+      "component_sizes": [
+        16384
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Ground\\LL_C2_F04_Path_Right_128_v1.png",
+      "sha256": "a4fd417770f68230d95bf5eba06f8e11a1f2a3547707f181450613940c00fbaa",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_pixels": 16384,
+      "components8": 1,
+      "component_sizes": [
+        16384
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Optional_Story\\LL_C2_F04_DryLeaves_Decal_128_v1.png",
+      "sha256": "45abe3cc0a98bd0d3901e03a6077a7b9854d88f37aee037041243ea0c2b1fbed",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 230,
+      "bbox_exclusive": [
+        22,
+        20,
+        103,
+        106
+      ],
+      "alpha_pixels": 484,
+      "components8": 21,
+      "component_sizes": [
+        44,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Optional_Story\\LL_C2_F04_DrySoil_Decal_128_v1.png",
+      "sha256": "64ca5ced876afd455c280487d6c5a78fd96acb00ec167225af45463955ce1495",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 210,
+      "bbox_exclusive": [
+        13,
+        36,
+        116,
+        94
+      ],
+      "alpha_pixels": 393,
+      "components8": 99,
+      "component_sizes": [
+        26,
+        24,
+        20,
+        12,
+        11,
+        11,
+        11,
+        10,
+        7,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        5,
+        5,
+        5,
+        5,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Optional_Story\\LL_C2_F04_ShallowStream_Decal_128_v1.png",
+      "sha256": "34fb36eb3f3d8eceda3b3c9f2114a18916357798dfa68bca61f6ef52af2aa545",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 215,
+      "bbox_exclusive": [
+        14,
+        46,
+        116,
+        73
+      ],
+      "alpha_pixels": 1376,
+      "components8": 2,
+      "component_sizes": [
+        1365,
+        11
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Preview\\LL_C2_F04_ActualScene_21x15_Composite_v1.png",
+      "sha256": "33d92801e3bb9e41b0e1a1379322e33477a32885e7285422a6959b91281d9efd",
+      "size": [
+        2688,
+        1920
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        2688,
+        1920
+      ],
+      "alpha_pixels": 5160960,
+      "components8": 1,
+      "component_sizes": [
+        5160960
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Preview\\LL_C2_F04_ContactSheet_v1.png",
+      "sha256": "651ef23e1889c89ba336fcb4891bd71ef9b48e0e8ac61cec70ce1329e1822723",
+      "size": [
+        1150,
+        1115
+      ],
+      "mode": "RGB",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        1150,
+        1115
+      ],
+      "alpha_pixels": 1282250,
+      "components8": 1,
+      "component_sizes": [
+        1282250
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Preview\\LL_C2_F04_OptionalQuestDecals_ProposalOnly_v1.png",
+      "sha256": "23dbcd2682ecaa276cac4de73db2957cd47f89bca8617081a18880d73c777ea5",
+      "size": [
+        2688,
+        1920
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        2688,
+        1920
+      ],
+      "alpha_pixels": 5160960,
+      "components8": 1,
+      "component_sizes": [
+        5160960
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Preview\\LL_C2_F04_QuestSpawnExit_Overlay_v1.png",
+      "sha256": "cf41dac239d19cadf17d132c8eb0b5522fbfa6be0c9e54c9b2a12589e9d30ec0",
+      "size": [
+        2688,
+        1920
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        2688,
+        1920
+      ],
+      "alpha_pixels": 5160960,
+      "components8": 1,
+      "component_sizes": [
+        5160960
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Bush_A_128_v1.png",
+      "sha256": "5429e1601ea67aff7bf7ac310b4ac923c547440828ff9d5e5cb46b3b0970089b",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        6,
+        36,
+        112,
+        94
+      ],
+      "alpha_pixels": 3996,
+      "components8": 1,
+      "component_sizes": [
+        3996
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Bush_B_128_v1.png",
+      "sha256": "fd59cf2124c359cbe0a0cb90e693c81ee465a324d4116fde1b25e0d1dd36044f",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        12,
+        46,
+        112,
+        98
+      ],
+      "alpha_pixels": 3368,
+      "components8": 1,
+      "component_sizes": [
+        3368
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Fence_Wood_128_v1.png",
+      "sha256": "cfb3a91ebe1e2f84525934f72c37d7fc83b96c33ed1d27c6910797bc456ad7fe",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        8,
+        30,
+        120,
+        118
+      ],
+      "alpha_pixels": 5464,
+      "components8": 1,
+      "component_sizes": [
+        5464
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Rock_A_128_v1.png",
+      "sha256": "60cf464104fcb9107392cf38379ef217c92048074d3f4650c626327744b383f9",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        18,
+        46,
+        110,
+        114
+      ],
+      "alpha_pixels": 4828,
+      "components8": 1,
+      "component_sizes": [
+        4828
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Rock_B_128_v1.png",
+      "sha256": "d72f6748196c97f66558c545d742e2f3abbeec9740ba82a8fa519cf8137bd9c9",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        20,
+        50,
+        110,
+        116
+      ],
+      "alpha_pixels": 4140,
+      "components8": 1,
+      "component_sizes": [
+        4140
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Tree_Big_255x256_v1.png",
+      "sha256": "7a3d0742778aba302e60dbe3e6b76b40b26b37f998dfeff96ddccd67fe7da047",
+      "size": [
+        255,
+        256
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        2,
+        4,
+        253,
+        252
+      ],
+      "alpha_pixels": 41930,
+      "components8": 1,
+      "component_sizes": [
+        41930
+      ]
+    },
+    {
+      "package": "field",
+      "path": "Props\\LL_C2_F04_Tree_Medium_128x156_v1.png",
+      "sha256": "be7942a7fff9b80d83dd7c5093c297fba4e6f1987c97a1989a5e80d56ce96f1b",
+      "size": [
+        128,
+        156
+      ],
+      "mode": "RGBA",
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        2,
+        4,
+        126,
+        152
+      ],
+      "alpha_pixels": 13268,
+      "components8": 1,
+      "component_sizes": [
+        13268
+      ]
+    },
+    {
+      "package": "field",
+      "path": "QA\\LL_C2_F04_ActualPNG_TileRepeat_6x6_v1.png",
+      "sha256": "1725b74e6a7be480e7e9e706406a9cd7b80d1aa41488aab0b540881d8a8322a6",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "alpha_pixels": 589824,
+      "components8": 1,
+      "component_sizes": [
+        589824
+      ]
+    },
+    {
+      "package": "field",
+      "path": "QA\\LL_C2_F04_ThemeGroundTint_Comparison_v1.png",
+      "sha256": "385703ba79a0713d3c4d9ffc31fbc322d890b0f875ac3cd05909c2d86a5121c4",
+      "size": [
+        1575,
+        665
+      ],
+      "mode": "RGB",
+      "alpha_min": 255,
+      "alpha_max": 255,
+      "bbox_exclusive": [
+        0,
+        0,
+        1575,
+        665
+      ],
+      "alpha_pixels": 1047375,
+      "components8": 1,
+      "component_sizes": [
+        1047375
+      ]
+    }
+  ],
+  "seams": {
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_A_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_A_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_B_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_B_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_C_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_A_128_v1>LL_C2_F04_DryGrass_C_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_A_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_A_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_B_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_B_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_C_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_B_128_v1>LL_C2_F04_DryGrass_C_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_A_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_A_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_B_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_B_128_v1 vertical": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_C_128_v1 horizontal": true,
+    "LL_C2_F04_DryGrass_C_128_v1>LL_C2_F04_DryGrass_C_128_v1 vertical": true,
+    "path_left_vertical": true,
+    "path_right_vertical": true,
+    "path_horizontal_join": true,
+    "LL_C2_F04_DryGrass_A_128_v1 path_left_outer": true,
+    "LL_C2_F04_DryGrass_A_128_v1 path_right_outer": true,
+    "LL_C2_F04_DryGrass_B_128_v1 path_left_outer": true,
+    "LL_C2_F04_DryGrass_B_128_v1 path_right_outer": true,
+    "LL_C2_F04_DryGrass_C_128_v1 path_left_outer": true,
+    "LL_C2_F04_DryGrass_C_128_v1 path_right_outer": true
+  }
+}

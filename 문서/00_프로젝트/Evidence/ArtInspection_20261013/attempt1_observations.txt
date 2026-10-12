@@ -1,0 +1,1 @@
+RockV2 SpriteBounds=Center: (4.50, 4.40, 0.00), Extents: (0.50, 0.50, 0.10);Collider=Center: (4.50, 4.18, 0.00), Extents: (0.20, 0.11, 0.00);alphaBottomCalculated=4.071875;colliderBottom=4.070001
