@@ -1,0 +1,11 @@
+(0.00, 4.70);waypoints=0
+(0.00, -1.50);waypoints=25
+(0.00, -5.20);waypoints=15
+(2.40, -4.10);waypoints=15
+(3.50, -3.10);waypoints=8
+(1.80, -1.40);waypoints=15
+(-0.30, -3.30);waypoints=15
+(-1.15, -3.70);waypoints=6
+(-1.85, -4.20);waypoints=1
+(-0.70, -4.55);waypoints=6
+(0.55, -4.85);waypoints=6

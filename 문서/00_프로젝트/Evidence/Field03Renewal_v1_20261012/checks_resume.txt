@@ -1,0 +1,206 @@
+PASS|Candidate.Import.LL_C1_F03_DeepSilence_Patch_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_C_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Path_Left_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Path_Right_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Branch_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Bush_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Bush_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_CarvedStone_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Fence_MossWood_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_OrderedStoneStack_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Rock_Moss_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Rock_Moss_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Root_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_SilentCatacomb_Entrance_Frame_192x192_v1.png
+PASS|Candidate.Import.LL_C1_F03_Tree_Big_255x256_v1.png
+PASS|Candidate.Import.LL_C1_F03_Tree_Medium_128x156_v1.png
+PASS|Candidate.Import.LL_C1_F03_DisturbedTrace_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_WheelRuts_Paul_128_v1.png
+PASS|Save.CustomAuditDirectoryVerifiedBeforeFirstWrite
+PASS|Resume.ReadCompletedStoryCheckpoint
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Resume.Main08To10Completed
+PASS|Monster.DefinitionSpiderSnakeBeetle2Bat2.TimerPerLocal35
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_deep_bat
+PASS|Respawn.MeasureSceneField02.field03_deep_bat
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_deep_bat.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_deep_bat
+PASS|Respawn.DefeatedAbsent.field03_deep_bat
+PASS|Respawn.AbsentAt30.Expected35.field03_deep_bat
+PASS|Respawn.AvailableAtConfigured35.field03_deep_bat
+PASS|Respawn.OneInstanceAfter35.field03_deep_bat
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_beetle
+PASS|Respawn.MeasureSceneField02.field03_entrance_beetle
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_beetle.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_beetle
+PASS|Respawn.DefeatedAbsent.field03_entrance_beetle
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_beetle
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_beetle
+PASS|Respawn.OneInstanceAfter35.field03_entrance_beetle
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_snake
+PASS|Respawn.MeasureSceneField02.field03_entrance_snake
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_snake.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_snake
+PASS|Respawn.DefeatedAbsent.field03_entrance_snake
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_snake
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_snake
+PASS|Respawn.OneInstanceAfter35.field03_entrance_snake
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_spider
+PASS|Respawn.MeasureSceneField02.field03_entrance_spider
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_spider.Attacks7
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_spider
+PASS|Respawn.DefeatedAbsent.field03_entrance_spider
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_spider
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_spider
+PASS|Respawn.OneInstanceAfter35.field03_entrance_spider
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_middle_bat
+PASS|Respawn.MeasureSceneField02.field03_middle_bat
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_middle_bat.Attacks7
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_middle_bat
+PASS|Respawn.DefeatedAbsent.field03_middle_bat
+PASS|Respawn.AbsentAt30.Expected35.field03_middle_bat
+PASS|Respawn.AvailableAtConfigured35.field03_middle_bat
+PASS|Respawn.OneInstanceAfter35.field03_middle_bat
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_middle_beetle
+PASS|Respawn.MeasureSceneField02.field03_middle_beetle
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_middle_beetle.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Candidate.Runtime376Replacement
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_middle_beetle
+PASS|Respawn.DefeatedAbsent.field03_middle_beetle
+PASS|Respawn.AbsentAt30.Expected35.field03_middle_beetle
+PASS|Respawn.AvailableAtConfigured35.field03_middle_beetle
+PASS|Respawn.OneInstanceAfter35.field03_middle_beetle
+PASS|Respawn.FinalCount6.NoDuplicates
+PASS|Wheelchair.PathMobility
+PASS|Wheelchair.VisualPresent
+PASS|Wheelchair.EnvironmentRouteRadius0.4.(0.00, 4.70)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.75)
+PASS|Wheelchair.EnvironmentRouteRadius0.4.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.EnvironmentRouteRadius0.4.(0.00, -5.20)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.EnvironmentRouteRadius0.4.(2.40, -4.10)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -4.00)
+FAIL|Wheelchair.PhysicsWaypoint.(2.25, -4.00)
+FAIL|System.InvalidOperationException: Wheelchair.PhysicsWaypoint.(2.25, -4.00)
+  at ProjectLimitless.EditorTools.Field03InspectionAudit.Check (System.Boolean v, System.String label) [0x00042] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field03InspectionAudit.cs:47
+  at ProjectLimitless.EditorTools.Field03InspectionAudit+<WheelchairRoutes>d__48.MoveNext () [0x004b0] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field03InspectionAudit.cs:154
+  at ProjectLimitless.EditorTools.Field03InspectionAudit+<Flatten>d__56.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field03InspectionAudit.cs:170
+  at ProjectLimitless.EditorTools.Field03InspectionAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Field03InspectionAudit.cs:171

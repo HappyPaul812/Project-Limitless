@@ -1,0 +1,41 @@
+{
+  "rock_b_components": [
+    {
+      "pixels": 14,
+      "bbox": [
+        64,
+        0,
+        70,
+        3
+      ]
+    },
+    {
+      "pixels": 3537,
+      "bbox": [
+        12,
+        69,
+        116,
+        125
+      ]
+    }
+  ],
+  "seams": {
+    "grass_pair_lr_matches": 9,
+    "grass_pair_tb_matches": 9,
+    "pairs": 9,
+    "path_center_edge_match": true
+  },
+  "brightness": {
+    "sample_world": "x[-3.5,-2.5], y[4.5,5.5]",
+    "before_rgb_mean": [
+      82.23484375,
+      119.175625,
+      46.5778125
+    ],
+    "candidate_rgb_mean": [
+      24.9521875,
+      53.8590625,
+      24.10890625
+    ]
+  }
+}

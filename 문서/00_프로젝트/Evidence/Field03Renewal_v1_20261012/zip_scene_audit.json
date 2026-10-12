@@ -1,0 +1,669 @@
+{
+  "zip": "F:\\Downloads\\Limitless_Field03_Renewal_Art_v1.zip",
+  "zip_sha256": "333ffb32a8255cabadf021b33a1aa243c7d2c4e9d7304eb424a6055f01209d81",
+  "zip_entries": 34,
+  "png_count": 29,
+  "crc_errors": 0,
+  "png_decode_pass": true,
+  "assets": [
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_A_128_v1.png",
+      "sha256": "545f82015429670db6df0b996730d870e5d81a2585798432dcb090063e4219f9",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_B_128_v1.png",
+      "sha256": "93bbae061ab5d0f5022bcb6d3e8741ffd52fcdc9d5f69d97292703b56e707588",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_C_128_v1.png",
+      "sha256": "2dfcca6e43fae1e1bf53120bfcbddb0c764065f106b5054c8c7004c0ce600580",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Ground/LL_C1_F03_Path_Left_128_v1.png",
+      "sha256": "1c6e769aaa8f1d754126f63acf947cb0b022ae463a2ca3b1a3b06ae82ed0a980",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Ground/LL_C1_F03_Path_Right_128_v1.png",
+      "sha256": "da4ac205b81d68e19b8dda2ae0781bbe159aba9be0ad59c8fec6e26c168d3e10",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Tree_Big_255x256_v1.png",
+      "sha256": "4d78f9fe0cdd29dbcd12b46c810d3b137b33080c9e16a295f4ca2ff56de0d406",
+      "size": [
+        255,
+        256
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        14,
+        5,
+        246,
+        256
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Tree_Medium_128x156_v1.png",
+      "sha256": "1bb3b108c7702ddce67434f005c7d0ab76569e11c34b1b5858578cb8436fc0aa",
+      "size": [
+        128,
+        156
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        3,
+        20,
+        125,
+        139
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Bush_A_128_v1.png",
+      "sha256": "918ad88f7dcc7ef3df0d07b016c4795aa845001580b79c2ed89cdd7ac88776d0",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        3,
+        36,
+        125,
+        94
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Bush_B_128_v1.png",
+      "sha256": "5e76cbd77eb1718972b69e83544060c6ffa250ac31567aa0c5ee4e30fef9ce98",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        4,
+        37,
+        126,
+        125
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Rock_Moss_A_128_v1.png",
+      "sha256": "43639a257320c12cf051a391407020c2d61880f8b7a82100554eacb7a1a4e4c7",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        3,
+        21,
+        125,
+        108
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Rock_Moss_B_128_v1.png",
+      "sha256": "b34a8f54b2ab61020ba7051723cb76d3d8cbfc8f432fee7cf6999de46671b41b",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        12,
+        0,
+        116,
+        125
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Fence_MossWood_128_v1.png",
+      "sha256": "c6b6f4ece31dc174f7f1626907b72f644f997b21eadb1ccf7fcfdb9c94946f4d",
+      "size": [
+        128,
+        128
+      ],
+      "status": "DIRECT_REPLACEMENT_CANDIDATE",
+      "alpha_bbox": [
+        4,
+        20,
+        124,
+        111
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Ground/LL_C1_F03_DeepSilence_Patch_128_v1.png",
+      "sha256": "c666410d0937532b289120b3bf3eb526fb9fbf6b6212bb798c5c899259e3eb87",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ],
+      "alpha_range": [
+        255,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Root_A_128_v1.png",
+      "sha256": "bf41c3892daaea031d5583ab9bca62f3de6fdd0784b0b9de5c1af2871d56db39",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        27,
+        124,
+        104
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_Branch_A_128_v1.png",
+      "sha256": "5b1aed1e9ef71958b9864d5ed290a9cbfcd108f8d668ea7cc36faf46e2ec3c13",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        30,
+        124,
+        99
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_CarvedStone_A_128_v1.png",
+      "sha256": "c4bd71ee23a5dbb42f9e0e2edf932bf7ed115d5af60d2ef6ed64949cbaf6a9d6",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        20,
+        127,
+        108
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_OrderedStoneStack_A_128_v1.png",
+      "sha256": "a2d218e45007cda436962de9828b26def280f908fbd6cb6c8aab01ebfe2c59a3",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        22,
+        124,
+        106
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Props/LL_C1_F03_SilentCatacomb_Entrance_Frame_192x192_v1.png",
+      "sha256": "fa8bbf9d1f601a578fba4dcc27acc9394595b9875b8b64bd4bd7b78ec05a6f0e",
+      "size": [
+        192,
+        192
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        2,
+        34,
+        192,
+        152
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Story/LL_C1_F03_DisturbedTrace_128_v1.png",
+      "sha256": "ed80b4a056afad88965f6d37f1ea8258c50d53db5489e5cb828dad49d966afce",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        30,
+        124,
+        97
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "Story/LL_C1_F03_WheelRuts_Paul_128_v1.png",
+      "sha256": "192d8739db2896cd73991440c02adcfac98506d1c50ca0f7b5dd19fa84f70780",
+      "size": [
+        128,
+        128
+      ],
+      "status": "OPTIONAL_NOT_PLACED",
+      "alpha_bbox": [
+        4,
+        12,
+        124,
+        111
+      ],
+      "alpha_range": [
+        0,
+        255
+      ]
+    }
+  ],
+  "pngs": [
+    {
+      "file": "Ground/LL_C1_F03_DeepSilence_Patch_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "c666410d0937532b289120b3bf3eb526fb9fbf6b6212bb798c5c899259e3eb87"
+    },
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "545f82015429670db6df0b996730d870e5d81a2585798432dcb090063e4219f9"
+    },
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "93bbae061ab5d0f5022bcb6d3e8741ffd52fcdc9d5f69d97292703b56e707588"
+    },
+    {
+      "file": "Ground/LL_C1_F03_ForestFloor_C_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "2dfcca6e43fae1e1bf53120bfcbddb0c764065f106b5054c8c7004c0ce600580"
+    },
+    {
+      "file": "Ground/LL_C1_F03_Path_Left_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "1c6e769aaa8f1d754126f63acf947cb0b022ae463a2ca3b1a3b06ae82ed0a980"
+    },
+    {
+      "file": "Ground/LL_C1_F03_Path_Right_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "da4ac205b81d68e19b8dda2ae0781bbe159aba9be0ad59c8fec6e26c168d3e10"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Asset_ContactSheet_v1.png",
+      "size": [
+        1100,
+        1120
+      ],
+      "mode": "RGBA",
+      "sha256": "9399483ebc8a673474418114aac3fc73747265f58437d529bfc2cb74d7ec651d"
+    },
+    {
+      "file": "Preview/LL_C1_F03_CoordinateOverlay_v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "6027ee82de938e52dfed9aeccb026d9343cccb96e0906ea892b38f25ec0713aa"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Field02_Field03_Continuity_v1.png",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "d1d0c4ef854885e1a1eeebaceb75a9d1884ce7bcec65e6f1c851a25754d8b6cc"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Layout_21x15_CompositePreview_v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "130a2323fed85d9e7369f7ef5769edc48f83e352f21fff93a1c86d0692489ac1"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Main08_Closeup_v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "efc1f6e8ec16a6645f4956e5f2a055a8f8e35ae8c858e990aeb4767d7c56d28c"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Main09_Closeup_v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "16fd2225f735b2e8c93fdbd13eac753e02b5d6ace63d12fead91f07cc95feb86"
+    },
+    {
+      "file": "Preview/LL_C1_F03_Main10_CatacombEntrance_Closeup_v1.png",
+      "size": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "sha256": "555759a238f8e969a1cdfc0b73e5b48283e38672c6d60f5c0551c19eda173f1d"
+    },
+    {
+      "file": "Props/LL_C1_F03_Branch_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "5b1aed1e9ef71958b9864d5ed290a9cbfcd108f8d668ea7cc36faf46e2ec3c13"
+    },
+    {
+      "file": "Props/LL_C1_F03_Bush_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "918ad88f7dcc7ef3df0d07b016c4795aa845001580b79c2ed89cdd7ac88776d0"
+    },
+    {
+      "file": "Props/LL_C1_F03_Bush_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "5e76cbd77eb1718972b69e83544060c6ffa250ac31567aa0c5ee4e30fef9ce98"
+    },
+    {
+      "file": "Props/LL_C1_F03_CarvedStone_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "c4bd71ee23a5dbb42f9e0e2edf932bf7ed115d5af60d2ef6ed64949cbaf6a9d6"
+    },
+    {
+      "file": "Props/LL_C1_F03_Fence_MossWood_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "c6b6f4ece31dc174f7f1626907b72f644f997b21eadb1ccf7fcfdb9c94946f4d"
+    },
+    {
+      "file": "Props/LL_C1_F03_OrderedStoneStack_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "a2d218e45007cda436962de9828b26def280f908fbd6cb6c8aab01ebfe2c59a3"
+    },
+    {
+      "file": "Props/LL_C1_F03_Rock_Moss_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "43639a257320c12cf051a391407020c2d61880f8b7a82100554eacb7a1a4e4c7"
+    },
+    {
+      "file": "Props/LL_C1_F03_Rock_Moss_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "b34a8f54b2ab61020ba7051723cb76d3d8cbfc8f432fee7cf6999de46671b41b"
+    },
+    {
+      "file": "Props/LL_C1_F03_Root_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "bf41c3892daaea031d5583ab9bca62f3de6fdd0784b0b9de5c1af2871d56db39"
+    },
+    {
+      "file": "Props/LL_C1_F03_SilentCatacomb_Entrance_Frame_192x192_v1.png",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "sha256": "fa8bbf9d1f601a578fba4dcc27acc9394595b9875b8b64bd4bd7b78ec05a6f0e"
+    },
+    {
+      "file": "Props/LL_C1_F03_Tree_Big_255x256_v1.png",
+      "size": [
+        255,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "4d78f9fe0cdd29dbcd12b46c810d3b137b33080c9e16a295f4ca2ff56de0d406"
+    },
+    {
+      "file": "Props/LL_C1_F03_Tree_Medium_128x156_v1.png",
+      "size": [
+        128,
+        156
+      ],
+      "mode": "RGBA",
+      "sha256": "1bb3b108c7702ddce67434f005c7d0ab76569e11c34b1b5858578cb8436fc0aa"
+    },
+    {
+      "file": "QA/LL_C1_F03_GroundTint_Comparison_v1.png",
+      "size": [
+        1920,
+        534
+      ],
+      "mode": "RGB",
+      "sha256": "7be405b8f7d306d348de0c1e045c0ec1e0d4ce45f045dd4abff6c43c1e8ee592"
+    },
+    {
+      "file": "QA/LL_C1_F03_TileRepeat_6x6_v1.png",
+      "size": [
+        768,
+        896
+      ],
+      "mode": "RGBA",
+      "sha256": "038aa01e0630a3214c69ce8963a47bcd11e6ad92de05864924e263a88552d308"
+    },
+    {
+      "file": "Story/LL_C1_F03_DisturbedTrace_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "ed80b4a056afad88965f6d37f1ea8258c50d53db5489e5cb828dad49d966afce"
+    },
+    {
+      "file": "Story/LL_C1_F03_WheelRuts_Paul_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "sha256": "192d8739db2896cd73991440c02adcfac98506d1c50ca0f7b5dd19fa84f70780"
+    }
+  ],
+  "scene_renderer_count": 363,
+  "counts": {
+    "tiles_grass_6_0": 104,
+    "tiles_grass_4_0": 105,
+    "tiles_grass_5_0": 106,
+    "tiles_grass_4_4": 15,
+    "tiles_grass_5_4": 15,
+    "rock_01": 1,
+    "bush_01": 2,
+    "bush_02": 1,
+    "fence_tiles_2_2": 8,
+    "tree_medium": 3,
+    "tree_big": 2,
+    "rock_02_0": 1
+  },
+  "manifest_local_mapping_pass": true
+}

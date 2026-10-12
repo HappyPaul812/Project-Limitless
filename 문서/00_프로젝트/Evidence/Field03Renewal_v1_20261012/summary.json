@@ -1,0 +1,18 @@
+{
+  "art_status": "USER_ART_REVIEW_PENDING",
+  "overall": "PARTIAL",
+  "png_count": 29,
+  "usable_png": 20,
+  "direct": 12,
+  "optional": 8,
+  "scene": 363,
+  "clones": 13,
+  "total": 376,
+  "respawn_seconds_local": 35,
+  "respawn_30_request_mismatch": true,
+  "root_game_changes": 0,
+  "rock_b_stray_pixels": 14,
+  "camera_edges": 4,
+  "story_main08_to10": "PASS Field03 scope",
+  "monster_normal_ui_victories": 6
+}

@@ -1,3 +1,14 @@
+<!-- FIELD03_INSPECTION_20261012_BEGIN -->
+## 2026-10-12 Field03 리뉴얼 v1 검수 — 미술 승인 대기
+
+- **USER_ART_REVIEW_PENDING / QA_PARTIAL / 원본 영구적용0**. ZIP34항목/PNG29(실사용20=직접12+보조8/Preview7/QA2), CRC·decode·Manifest20해시/크기/로컬GUID·수량 일치. 실제Scene363+Theme복제13=376개 대응CSV/RenderTexture/Overlay 확보. 기존Tint(0.46,0.61,0.46) 유지한 격리메모리 교체만 수행.
+- 보완 권장: Rock B 상단 분리14alpha픽셀·중앙아래 본체/접지, 나무 밝은 외곽·바닥 반복밀도·Field02연속성/암부. 보조8종 미배치/입구단계 보호, 출처·권리 독립감사 미완료. [검수보고/실제Preview](Field03_Renewal_Art_v1_Inspection_20261012.md).
+- Main08 Field03 실제진행/Main09 6목표·폴해금/Main10 7목표·입구0~3숨김/4이후표시·Continue3회·Dungeon B1진입/귀환·Field02왕복 PASS. 일반6Spawn 정상UI승리·재생성 PASS. **현행Field03는 전부35초**: 30초 미생성/35초생성 확인, 요청30초와 불일치 기록·게임설정변경0.
+- 실제Player반경0.5+margin/NPC Collider 포함11지점 물리접근·16:9카메라4방향viewport Bounds PASS. QA의30초기대값/0.4반경·NPC제외 경로실패 보존 및 검사만 보정. 기존Search예외 유지. OS직접키/패드·사람가독성/조작감·전직업/레벨/연속사냥밸런스 NOT_VERIFIED.
+- 원본3712파일 SHA256불변·사용자337항목/822파일 보호, Field02 정식적용 재작업0·TTS/BGM/Save/설정/meta/Scene 변경0. 원본Editor/포커스 무접촉, Push0. 다음: 미술보완/사용자승인 이후 별도 Sprite-only 통합. 기준 `e31d8e3`, 검수Commit은 후속 상태 기록.
+
+<!-- FIELD03_INSPECTION_20261012_END -->
+
 <!-- FIELD02_OFFICIAL_20261012_BEGIN -->
 ## 2026-10-12 Field02 최종 미술 승인 및 정식 통합
 
