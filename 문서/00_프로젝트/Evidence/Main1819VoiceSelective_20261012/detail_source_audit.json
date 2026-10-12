@@ -1,0 +1,65 @@
+[
+  {
+    "path": "F:\\Downloads\\Voice\\M18_v3.py",
+    "functions": [
+      {
+        "name": "style",
+        "code": "def style(sid,direction):\n    if sid=='arbel-leon':base='레온은 믿을 만한 지도자/책임자. 침착하고 현실적이며 겁먹거나 호들갑스럽지 않다.'\n    elif sid=='companion_serin':base='세린은 젊고 침착한 관찰자. 현상을 분석하며 동료와 정보를 공유한다. 긴장은 가능하지만 공포 연기는 하지 않는다.'\n    elif sid=='companion_taeon':base='태온은 안정적인 남성 수호자. 동료 상태를 관리하려는 차분한 책임감. 군인식 고함 금지.'\n    elif sid=='companion_miel':base='미엘은 따뜻하고 침착한 여성 치유사. 동료 상태를 걱정하되 겁주는 느낌은 피한다.'\n    else:base='폴은 차분하고 지적인 젊은 남성 마도사. 전투 메커니즘을 빠르게 이해하고 실용적으로 정리한다.'\n    return base+' '+direction+' 자연스러운 표준 한국어 RPG 대화. 과장/뉴스 낭독/지나치게 느린 읽기 금지. 입력된 ExactText 하나만 처음부터 끝까지 정확히 발화하고 다른 Dialogue/추임새를 섞지 않는다.'"
+      },
+      {
+        "name": "extract",
+        "code": "def extract(resp):\n    inline=resp.candidates[0].content.parts[0].inline_data;d=inline.data;mime=str(getattr(inline,'mime_type','') or '')\n    raw=base64.b64decode(d) if isinstance(d,str) else bytes(d)\n    if not raw.startswith(b'RIFF'):\n        try:\n            x=base64.b64decode(raw,validate=True)\n            if x:raw=x\n        except:pass\n    return raw,mime"
+      },
+      {
+        "name": "wavize",
+        "code": "def wavize(raw,mime):\n    if raw.startswith(b'RIFF'):return raw\n    rate=24000;m=re.search(r'rate\\s*=\\s*(\\d+)',mime,re.I)\n    if m:rate=int(m.group(1))\n    if rate!=24000:raise RuntimeError(f'Raw PCM rate={rate}')\n    b=io.BytesIO()\n    with wave.open(b,'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(rate);w.writeframes(raw)\n    return b.getvalue()"
+      },
+      {
+        "name": "synth",
+        "code": "def synth(c,sid,exact,direction,voice,path):\n    r=c.models.generate_content(model=MODEL,contents=[{'role':'user','parts':[{'text':exact,'speech_metadata':{'style':style(sid,direction)}}]}],config={'response_modalities':['AUDIO'],'speech_config':{'voice_config':{'voice':voice}}})\n    raw,mime=extract(r);path.write_bytes(wavize(raw,mime))"
+      },
+      {
+        "name": "signature",
+        "code": "def signature():return hashlib.sha256(json.dumps([(o,k,d,s,t) for o,k,d,s,t,a in DAY1],ensure_ascii=False).encode()).hexdigest()"
+      }
+    ]
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\TTS1012_v4.py",
+    "functions": [
+      {
+        "name": "style",
+        "code": "def style(s):\n    if s==\"companion_serin\":b=\"세린은 침착하고 정확하게 전달하는 젊은 여성. 차갑거나 기계적이지 않다.\"\n    elif s==\"companion_taeon\":b=\"태온은 차분하고 신중한 성인 남성 수호자. 낮고 안정적이다.\"\n    elif s==\"companion_miel\":b=\"미엘은 부드럽고 배려 깊은 여성 치유사. 침착하다.\"\n    elif s==\"companion_paul\":b=\"폴은 밝지만 절제된 젊은 남성 마도사. 지적이고 건조한 농담이 가능하다.\"\n    else:b=\"레온은 안정적이고 신뢰감 있는 지역 책임자. 현실적이고 차분하다.\"\n    return b+\" 자연스러운 표준 한국어 RPG 대화. 입력된 ExactText 하나만 처음부터 끝까지 정확히 말하고 앞뒤 대사/추임새를 섞지 않는다. 줄바꿈 때문에 문장을 빼먹지 않는다.\""
+      },
+      {
+        "name": "extract",
+        "code": "def extract(resp):\n    x=resp.candidates[0].content.parts[0].inline_data;d=x.data;mime=str(getattr(x,\"mime_type\",\"\") or \"\")\n    raw=base64.b64decode(d) if isinstance(d,str) else bytes(d)\n    if not raw.startswith(b\"RIFF\"):\n        try:\n            q=base64.b64decode(raw,validate=True)\n            if q:raw=q\n        except:pass\n    return raw,mime"
+      },
+      {
+        "name": "wavize",
+        "code": "def wavize(raw,mime):\n    if raw.startswith(b\"RIFF\"):return raw\n    rate=24000;m=re.search(r\"rate\\s*=\\s*(\\d+)\",mime,re.I)\n    if m:rate=int(m.group(1))\n    if rate!=24000:raise RuntimeError(f\"raw rate={rate}\")\n    b=io.BytesIO()\n    with wave.open(b,\"wb\") as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(rate);w.writeframes(raw)\n    return b.getvalue()"
+      },
+      {
+        "name": "synth",
+        "code": "def synth(c,e):\n    r=c.models.generate_content(model=MODEL,contents=[{\"role\":\"user\",\"parts\":[{\"text\":e[\"text\"],\"speech_metadata\":{\"style\":style(e[\"sid\"])}}]}],config={\"response_modalities\":[\"AUDIO\"],\"speech_config\":{\"voice_config\":{\"voice\":e[\"voice\"]}}})\n    raw,mime=extract(r);Path(e[\"path\"]).write_bytes(wavize(raw,mime))"
+      }
+    ]
+  },
+  {
+    "path": "F:\\Downloads\\M18_Serin10_Staged.py",
+    "functions": [
+      {
+        "name": "prior_request_record",
+        "code": "def prior_request_record(repo, did):\n    cp = repo / ORIGINAL_OUTPUT / '_DAY1_CALL_CHECKPOINT.json'\n    if not cp.exists():\n        return 'UNKNOWN', 'No matching checkpoint available'\n    try:\n        d = json.loads(read_text(cp))\n        item = d.get('items', {}).get(did, {})\n        if item.get('status') == 'SAVED':\n            return 'UNKNOWN', 'SAVED checkpoint but does not record VoiceId'\n        return 'UNKNOWN', 'Checkpoint entry status ' + str(item.get('status', 'UNKNOWN'))\n    except Exception:\n        return 'UNKNOWN', 'Unreadable checkpoint'"
+      },
+      {
+        "name": "style_text",
+        "code": "def style_text():\n    return ('세린은 침착하고 판단력이 있으며 관찰 결과를 명확하고 자연스럽게 전달하는 젊은 여성 동료다. '\n            '과장된 연기나 뉴스 낭독, 기계적인 말투는 피한다. '\n            '입력된 단 하나의 한국어 대사만 첫 음절부터 마지막 음절까지 정확히 말한다. '\n            '앞뒤 페이지 대사나 임의 추임새를 추가하지 않는다.')"
+      },
+      {
+        "name": "audio_response_to_wav",
+        "code": "def audio_response_to_wav(resp):\n    try:\n        part=next(p for p in resp.candidates[0].content.parts if p.inline_data is not None)\n        dat=part.inline_data.data\n        mime=str(part.inline_data.mime_type or '')\n        raw=base64.b64decode(dat) if isinstance(dat,str) else bytes(dat)\n    except Exception as e:\n        raise RuntimeError('TTS 응답 오디오 추출 실패: '+type(e).__name__)\n    if raw.startswith(b'RIFF'):\n        return raw\n    # Gemini raw PCM commonly 24000 Hz / 16-bit mono\n    m=re.search(r'rate\\s*=\\s*(\\d+)',mime)\n    sr=int(m.group(1)) if m else 24000\n    if sr!=24000:\n        raise RuntimeError('비정상 raw sample rate='+str(sr))\n    with io.BytesIO() as output:\n        with wave.open(output,'wb') as w:\n            w.setnchannels(1);w.setsampwidth(2);w.setframerate(sr);w.writeframes(raw)\n        return output.getvalue()"
+      }
+    ]
+  }
+]

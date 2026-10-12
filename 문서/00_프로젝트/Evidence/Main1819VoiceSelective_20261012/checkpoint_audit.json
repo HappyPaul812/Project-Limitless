@@ -1,0 +1,106 @@
+[
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Limitless_TTS_Output_Main18\\_DAY1_CALL_CHECKPOINT.json",
+    "top_keys": [
+      "_sig",
+      "attempts",
+      "items"
+    ],
+    "attempts": [
+      {
+        "story_order": 1,
+        "dialogue_id": "main18_leon_leon_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 2,
+        "dialogue_id": "main18_leon_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 3,
+        "dialogue_id": "main18_leon_leon_02",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 4,
+        "dialogue_id": "main18_leon_leon_03",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 5,
+        "dialogue_id": "main18_leon_leon_04",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 6,
+        "dialogue_id": "main18_ground_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 7,
+        "dialogue_id": "main18_heat_vent_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 8,
+        "dialogue_id": "main18_overheat_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 9,
+        "dialogue_id": "main18_overheat_serin_02",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 10,
+        "dialogue_id": "main18_overheat_serin_03",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 11,
+        "dialogue_id": "main18_overheat_serin_04",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 12,
+        "dialogue_id": "main18_vibration_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 13,
+        "dialogue_id": "main18_watcher_witness_serin_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 14,
+        "dialogue_id": "main18_watcher_witness_serin_02",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 15,
+        "dialogue_id": "main18_watcher_witness_taeon_01",
+        "result": "FAILED"
+      },
+      {
+        "story_order": 16,
+        "dialogue_id": "main18_watcher_witness_miel_01",
+        "result": "SAVED"
+      },
+      {
+        "story_order": 17,
+        "dialogue_id": "main18_watcher_witness_paul_01",
+        "result": "FAILED"
+      }
+    ]
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\_TTS_RESUME_2026-10-12.json",
+    "top_keys": [
+      "date",
+      "model",
+      "calls"
+    ],
+    "attempts": []
+  }
+]

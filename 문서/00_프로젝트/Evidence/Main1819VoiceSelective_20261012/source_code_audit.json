@@ -1,0 +1,236 @@
+[
+  {
+    "path": "F:\\Downloads\\Voice\\M18_continue_16_20.py",
+    "sha256": "ad0dc8f3bf8331c1b6c60bc8db3312106f5f58ede339d52d5e8d9028d183ff86",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ],
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(\n        model=MODEL,\n        contents=[{\n            \"role\":\"user\",\n            \"parts\":[{\n                \"text\":exact,\n                \"speech_metadata\":{\"style\":style(sid, direction)}\n            }]\n        }],\n        config={\n            \"response_modalities\":[\"AUDIO\"],\n            \"speech_config\":{\"voice_config\":{\"voice\":voice}}\n        }\n    )"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\M18_v3.py",
+    "sha256": "aadc26e69d66f1e5be688e935cb68c43789f6c164c6639f9eeb3a1d3cc1a9c23",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ],
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{'role':'user','parts':[{'text':exact,'speech_metadata':{'style':style(sid,direction)}}]}],config={'response_modalities':['AUDIO'],'speech_config':{'voice_config':{'voice':voice}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\Main18_TTS_DAY1_01_20.py",
+    "sha256": "6bc65039e20af1dfdb19f3852828a0314340683ae066c565e5415ad7d9254dcb",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ],
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{'role':'user','parts':[{'text':exact,'speech_metadata':{'style':style(sid,direction)}}]}],config={'response_modalities':['AUDIO'],'speech_config':{'voice_config':{'voice':voice}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\Main18_TTS_DAY1_01_20_v2.py",
+    "sha256": "00d75df21f3fb84b4c8f3e906eb2167cf5ada5ba8b253d1cd82f6ae8b1f7d02b",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ],
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{'role':'user','parts':[{'text':exact,'speech_metadata':{'style':style(sid,direction)}}]}],config={'response_modalities':['AUDIO'],'speech_config':{'voice_config':{'voice':voice}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\TTS1012_FIXED.py",
+    "sha256": "73d1f750b8b6fff517602d84259cc566615b714f532e7aba1cd8f2c643e4e2ed",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ],
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{\"role\":\"user\",\"parts\":[{\"text\":e[\"text\"],\"speech_metadata\":{\"style\":style(e[\"sid\"])}}]}],config={\"response_modalities\":[\"AUDIO\"],\"speech_config\":{\"voice_config\":{\"voice\":e[\"voice\"]}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\TTS1012_v4.py",
+    "sha256": "a49f2e89bb2736f1324102820277be5aa44ed0933febd6daa70ae99eafb29a7c",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ],
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{\"role\":\"user\",\"parts\":[{\"text\":e[\"text\"],\"speech_metadata\":{\"style\":style(e[\"sid\"])}}]}],config={\"response_modalities\":[\"AUDIO\"],\"speech_config\":{\"voice_config\":{\"voice\":e[\"voice\"]}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\Voice\\TTS_Resume_1012.py",
+    "sha256": "db94a499abb6f1d3ceea665d44e4e3d30df9aea475d17a755373cdb40776323e",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts",
+      "VOICE": {
+        "companion_serin": [
+          "세린",
+          "Schedar"
+        ],
+        "companion_taeon": [
+          "태온",
+          "Gacrux"
+        ],
+        "companion_miel": [
+          "미엘",
+          "Sulafat"
+        ],
+        "companion_paul": [
+          "폴",
+          "Achird"
+        ],
+        "arbel-leon": [
+          "레온",
+          "Orus"
+        ]
+      }
+    },
+    "request_code": [
+      "c.models.generate_content(model=MODEL,contents=[{\"role\":\"user\",\"parts\":[{\"text\":e[\"text\"],\"speech_metadata\":{\"style\":style(e[\"sid\"])}}]}],config={\"response_modalities\":[\"AUDIO\"],\"speech_config\":{\"voice_config\":{\"voice\":e[\"voice\"]}}})"
+    ],
+    "prepare_functions": []
+  },
+  {
+    "path": "F:\\Downloads\\M18_Serin10_Staged.py",
+    "sha256": "e358511d852a014f0c2196754debe523cd55336bda8a11d18717a3278276b10f",
+    "constants": {
+      "MODEL": "gemini-3.8-flash-tts"
+    },
+    "request_code": [
+      "client.models.generate_content(\n        model=MODEL,\n        contents=[{'role':'user','parts':[{'text':text, 'speech_metadata':{'style':style_text()}}]}],\n        config={'response_modalities':['AUDIO'],\n                'speech_config':{'voice_config':{'voice':voice}}},\n    )"
+    ],
+    "prepare_functions": []
+  }
+]

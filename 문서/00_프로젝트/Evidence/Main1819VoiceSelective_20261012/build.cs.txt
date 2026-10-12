@@ -1,0 +1,48 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using ProjectLimitless.Audio;
+using ProjectLimitless.World;
+using ProjectLimitless.UI;
+using UnityEditor;
+using UnityEngine;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>정상 허용 목록만 Import하고 기존 Catalog prefix를 보존하는 격리 콘텐츠 작업입니다.</summary>
+    public static class Main1819VoiceBuild
+    {
+        [Serializable] public class Row { public int chapter; public string dialogue_id,speaker_id,text,source,sha256; }
+        [Serializable] public class Rows { public Row[] rows; }
+        const string CatalogPath="Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset";
+        public static void Run()
+        {
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets"))throw new InvalidOperationException("격리 Batch만 허용");
+            var rows=JsonUtility.FromJson<Rows>(File.ReadAllText("Main1819Rows.json")).rows;
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            var lines=new List<DialogueLine>();foreach(string path in new[]{"path.vision","path.hearing","path.intellectual","path.mobility","path.emotional-scar"})for(int i=0;i<14;i++){lines.AddRange(Main18DialogueCatalog.Get(i,path,true));if(i<13)lines.AddRange(Main19DialogueCatalog.Get(i,path,true));}
+            var catalog=AssetDatabase.LoadAssetAtPath<VoiceClipCatalog>(CatalogPath);var obj=new SerializedObject(catalog);var entries=obj.FindProperty("entries");int original=entries.arraySize;
+            var ids=new HashSet<string>();for(int i=0;i<original;i++)ids.Add(entries.GetArrayElementAtIndex(i).FindPropertyRelative("id").stringValue);
+            var report=new List<string>();
+            foreach(var row in rows)
+            {
+                if(!lines.Any(x=>x.DialogueId==row.dialogue_id&&x.SpeakerId==row.speaker_id&&x.Message.Replace("\r\n","\n").Trim()==row.text))throw new InvalidOperationException("Manifest 원문·화자 불일치: "+row.dialogue_id);
+                if(!ids.Add(row.dialogue_id))throw new InvalidOperationException("중복 Dialogue ID: "+row.dialogue_id);
+                string path=$"Assets/_Project/Audio/Voice/Story/Main{row.chapter}/{row.dialogue_id}.wav";
+                var importer=(AudioImporter)AssetImporter.GetAtPath(path);var settings=importer.defaultSampleSettings;
+                settings.loadType=AudioClipLoadType.DecompressOnLoad;settings.sampleRateSetting=AudioSampleRateSetting.PreserveSampleRate;settings.compressionFormat=AudioCompressionFormat.PCM;settings.quality=1;settings.preloadAudioData=false;
+                importer.defaultSampleSettings=settings;importer.forceToMono=false;importer.loadInBackground=false;
+                var serializedImporter=new SerializedObject(importer);serializedImporter.FindProperty("m_Normalize").boolValue=false;serializedImporter.ApplyModifiedPropertiesWithoutUndo();importer.SaveAndReimport();
+                var clip=AssetDatabase.LoadAssetAtPath<AudioClip>(path);if(clip==null||clip.frequency!=24000||clip.channels!=1)throw new InvalidOperationException("Clip 규격 불일치: "+row.dialogue_id);
+                clip.LoadAudioData();var samples=new float[clip.samples];if(!clip.GetData(samples,0))throw new InvalidOperationException("PCM 읽기 실패");
+                byte[] bytes=File.ReadAllBytes(path);int offset=12;byte[] pcm=null;while(offset+8<=bytes.Length){string chunk=System.Text.Encoding.ASCII.GetString(bytes,offset,4);int size=BitConverter.ToInt32(bytes,offset+4);if(chunk=="data"){pcm=new byte[size];Array.Copy(bytes,offset+8,pcm,0,size);break;}offset+=8+size+(size%2);}
+                if(pcm==null||pcm.Length!=samples.Length*2)throw new InvalidOperationException("PCM 크기 불일치");
+                float max=0;for(int i=0;i<samples.Length;i++)max=Mathf.Max(max,Mathf.Abs(samples[i]-BitConverter.ToInt16(pcm,i*2)/32768f));if(max>0)throw new InvalidOperationException("PCM 변형: "+row.dialogue_id);
+                int n=entries.arraySize;entries.InsertArrayElementAtIndex(n);var e=entries.GetArrayElementAtIndex(n);e.FindPropertyRelative("id").stringValue=row.dialogue_id;e.FindPropertyRelative("speakerId").stringValue=row.speaker_id;e.FindPropertyRelative("clip").objectReferenceValue=clip;
+                report.Add(row.dialogue_id+"\t"+row.speaker_id+"\t"+AssetDatabase.AssetPathToGUID(path)+"\tPCM_MAX_ERROR="+max);
+            }
+            obj.ApplyModifiedPropertiesWithoutUndo();AssetDatabase.SaveAssets();File.WriteAllLines("Main1819ImportReport.tsv",report);File.WriteAllText("Main1819BuildStatus.txt","PASS "+original+"->"+entries.arraySize);
+        }
+    }
+}

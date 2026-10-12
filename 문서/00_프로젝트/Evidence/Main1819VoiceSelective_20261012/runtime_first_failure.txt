@@ -1,0 +1,5 @@
+System.NullReferenceException: Object reference not set to an instance of an object
+  at ProjectLimitless.EditorTools.Main1819VoiceAudit.At (UnityEngine.Vector2 at) [0x00005] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main1819VoiceAudit.cs:48
+  at ProjectLimitless.EditorTools.Main1819VoiceAudit+<Site>d__29.MoveNext () [0x0014a] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main1819VoiceAudit.cs:85
+  at ProjectLimitless.EditorTools.Main1819VoiceAudit+<Flatten>d__34.MoveNext () [0x00041] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main1819VoiceAudit.cs:111
+  at ProjectLimitless.EditorTools.Main1819VoiceAudit.Tick () [0x00017] in F:\study\codex\Project-Limitless\Temp\Field01RenewalQA\Client\Assets\_Project\Scripts\Editor\Main1819VoiceAudit.cs:112

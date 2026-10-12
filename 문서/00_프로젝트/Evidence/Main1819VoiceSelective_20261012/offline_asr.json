@@ -1,0 +1,532 @@
+{
+  "main18_after_watcher_serin_01": {
+    "expected": "쓰러뜨렸는데도 주변 열기가 줄지 않아요.",
+    "recognized": " 쓸어뜨렸는데도 주변 열기가 줄지 않아요.",
+    "ratio": 0.8823529411764706,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " 쓸어뜨렸는데도 주변 열기가 줄지 않아요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_after_watcher_serin_02": {
+    "expected": "네. 원인이라기보다 수문장에 가까워 보여요.",
+    "recognized": " 네, 원인이라기보다 수문장에 가까워 보여요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.32,
+        "text": " 네, 원인이라기보다 수문장에 가까워 보여요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_after_watcher_serin_03": {
+    "expected": "진동도 계속 더 깊은 곳에서 올라옵니다.",
+    "recognized": " 진동도 계속 더 깊은 곳에서 올라옵니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " 진동도 계속 더 깊은 곳에서 올라옵니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_deeper_route_serin_01": {
+    "expected": "진동이 저 아래에서 올라옵니다.",
+    "recognized": " 진동이 저 아래에서 올라옵니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " 진동이 저 아래에서 올라옵니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_deeper_route_serin_02": {
+    "expected": "이제 중심부가 멀지 않은 것 같아요.",
+    "recognized": " 이제 중심부가 멀지 않은 것 같아요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.4,
+        "text": " 이제 중심부가 멀지 않은 것 같아요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_ground_serin_01": {
+    "expected": "지면 아래 반응은 계속됩니다. 원인과 표면의 변화는 구분해서 기록하죠.",
+    "recognized": " 지면 아래 반응은 계속됩니다.  원인과 표면의 변화는 구분해서 기록하죠.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " 지면 아래 반응은 계속됩니다."
+      },
+      {
+        "start": 2.0,
+        "end": 6.0,
+        "text": " 원인과 표면의 변화는 구분해서 기록하죠."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_heat_vent_serin_01": {
+    "expected": "열이 올라오는 간격이 짧아요. 물러날 공간부터 확보하겠습니다.",
+    "recognized": " 열이 올라오는 간격이 짧아요. 물론 할 공간부터 확보하겠습니다.",
+    "ratio": 0.9230769230769231,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.8,
+        "text": " 열이 올라오는 간격이 짧아요. 물론 할 공간부터 확보하겠습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_leon_leon_01": {
+    "expected": "붉은 균열 안쪽까지 들어가셨군요. 상태부터 말씀해 주세요.",
+    "recognized": " 붉은균열 안쪽까지 들어가셨군요.  상태부터 말씀해 주세요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": " 붉은균열 안쪽까지 들어가셨군요."
+      },
+      {
+        "start": 3.0,
+        "end": 5.0,
+        "text": " 상태부터 말씀해 주세요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_leon_leon_02": {
+    "expected": "그렇다면 준비 없이 다시 들어가면 안 되겠군요.",
+    "recognized": " 그렇다면 준비 없이 다시 들어가면 안 되겠군요",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.3200000000000003,
+        "text": " 그렇다면 준비 없이 다시 들어가면 안 되겠군요"
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_leon_leon_03": {
+    "expected": "열이 몸에 남을 때 쓰는 냉각약을 준비했습니다. 세 병은 먼저 가져가세요.",
+    "recognized": " 열이 몸에 남을 때 쓰는 냉각약을 준비했습니다.  새벽은 먼저 가져가세요.",
+    "ratio": 0.9310344827586207,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": " 열이 몸에 남을 때 쓰는 냉각약을 준비했습니다."
+      },
+      {
+        "start": 3.0,
+        "end": 5.0,
+        "text": " 새벽은 먼저 가져가세요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_leon_leon_04": {
+    "expected": "더 필요하면 잡화 상인에게 구할 수 있게 해두겠습니다.",
+    "recognized": " 더 필요하면 잡화 상인에게 구할 수 있게 해두겠습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.9,
+        "text": " 더 필요하면 잡화 상인에게 구할 수 있게 해두겠습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_leon_serin_01": {
+    "expected": "진동도 끊기지 않았어요. 오히려 더 깊은 쪽에서 간격이 짧아졌습니다.",
+    "recognized": " 진동도 끊기지 않았어요. 오히려 더 깊은 쪽에서 간격이 짧아졌습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.84,
+        "text": " 진동도 끊기지 않았어요. 오히려 더 깊은 쪽에서 간격이 짧아졌습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_overheat_serin_01": {
+    "expected": "방금 공격은 상처보다 몸에 열을 남기는 쪽이었어요.",
+    "recognized": " 방금 공격은 상처보다 몸에 열을 남기는 쪽이었어요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.28,
+        "text": " 방금 공격은 상처보다 몸에 열을 남기는 쪽이었어요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_overheat_serin_02": {
+    "expected": "네. 열이 겹쳐 쌓입니다.",
+    "recognized": " 네, 열이 겹쳐 쌓입니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.3000000000000003,
+        "text": " 네, 열이 겹쳐 쌓입니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_overheat_serin_03": {
+    "expected": "세 번째까지 쌓이면 한꺼번에 터져요. 두 겹이 보이면 냉각약을 쓸지 판단하는 게 좋겠습니다.",
+    "recognized": " 세 번째까지 쌓이면 한꺼번에 터져요.  두 겹이 보이면 냉각약을 쓸지 판단하는 게 좋겠습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.4,
+        "text": " 세 번째까지 쌓이면 한꺼번에 터져요."
+      },
+      {
+        "start": 3.4,
+        "end": 7.4,
+        "text": " 두 겹이 보이면 냉각약을 쓸지 판단하는 게 좋겠습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_overheat_serin_04": {
+    "expected": "네. 이 열은 정화로는 빠지지 않습니다.",
+    "recognized": " 네. 이 열은 정화로는 빠지지 않습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " 네. 이 열은 정화로는 빠지지 않습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_vibration_serin_01": {
+    "expected": "저도 같은 방향을 보고 있었어요. 더 깊은 곳으로 갈수록 반응이 빨라집니다.",
+    "recognized": " 저도 같은 방향을 보고 있었어요 더 깊은 곳으로 갈수록 반응이 빨라집니다",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.16,
+        "text": " 저도 같은 방향을 보고 있었어요 더 깊은 곳으로 갈수록 반응이 빨라집니다"
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_watcher_witness_miel_01": {
+    "expected": "두 겹까지 쌓인 사람부터 보세요. 필요하면 바로 식혀야 합니다.",
+    "recognized": " 두 겹까지 쌓인 사람부터 보세요.  필요하면 바로 시켜야 합니다.",
+    "ratio": 0.92,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": " 두 겹까지 쌓인 사람부터 보세요."
+      },
+      {
+        "start": 3.0,
+        "end": 5.0,
+        "text": " 필요하면 바로 시켜야 합니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_watcher_witness_paul_01": {
+    "expected": "광역 열기와 과열은 별개군요. 숫자부터 놓치지 않으면 되겠습니다.",
+    "recognized": " 과학력 열기후와 과열은 별개군요, 숫자부터 놓치지 않으면 되겠습니다.",
+    "ratio": 0.8928571428571429,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.0,
+        "text": " 과학력 열기후와 과열은 별개군요, 숫자부터 놓치지 않으면 되겠습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_watcher_witness_serin_01": {
+    "expected": "저 앞의 개체, 주변 열기가 움직임에 맞춰 올라갑니다.",
+    "recognized": " 저 앞에 개체의 주변 열기가 움직임에 맞춰 올라갑니다.",
+    "ratio": 0.9302325581395349,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.24,
+        "text": " 저 앞에 개체의 주변 열기가 움직임에 맞춰 올라갑니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_watcher_witness_serin_02": {
+    "expected": "앞의 갑충보다 열을 모으는 속도가 훨씬 빨라요.",
+    "recognized": " 앞에 값충보다 열을 모으는 속도가 훨씬 빨라요",
+    "ratio": 0.8947368421052632,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.36,
+        "text": " 앞에 값충보다 열을 모으는 속도가 훨씬 빨라요"
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main18_watcher_witness_taeon_01": {
+    "expected": "한 사람에게 열이 몰리지 않게 상태를 계속 확인하겠습니다.",
+    "recognized": " 한 사람에게 열이 몰리지 않게 상태를 계속 확인하겠습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.48,
+        "text": " 한 사람에게 열이 몰리지 않게 상태를 계속 확인하겠습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_cliff_miel_01": {
+    "expected": "가까이 오래 있으면 사람도 버티기 어렵겠어요.",
+    "recognized": " 가까이 오래 있으면 사람도 버티기 어렵겠어요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " 가까이 오래 있으면 사람도 버티기 어렵겠어요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_cliff_paul_01": {
+    "expected": "불길이 스친 정도가 아니네요.\n안쪽부터 녹았다가 다시 굳은 것처럼 보입니다.",
+    "recognized": " 불길이 스친 정도가 아니네요. 안쪽부터 녹았다가 다시 굳은 것처럼 보입니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 6.24,
+        "text": " 불길이 스친 정도가 아니네요. 안쪽부터 녹았다가 다시 굳은 것처럼 보입니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_cliff_paul_02": {
+    "expected": "네. 다음에는 관찰보다 대비가 먼저일 것 같습니다.",
+    "recognized": " 네, 다음에는 관찰보다 대비가 먼저일 것 같습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.6000000000000005,
+        "text": " 네, 다음에는 관찰보다 대비가 먼저일 것 같습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_pulse_1_serin_01": {
+    "expected": "둘이 우연히 모인 게 아니에요.\n같은 맥동에 밀려 한쪽으로 몰린 것처럼 움직였습니다.",
+    "recognized": " 둘이 우연히 모인 게 아니에요.  같은 맥동에 밀려 한쪽으로 몰린 것처럼 움직였습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.46,
+        "text": " 둘이 우연히 모인 게 아니에요."
+      },
+      {
+        "start": 2.46,
+        "end": 6.66,
+        "text": " 같은 맥동에 밀려 한쪽으로 몰린 것처럼 움직였습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_pulse_1_serin_02": {
+    "expected": "네. 더 깊은 쪽일수록 반응이 빨라집니다.",
+    "recognized": " 네, 더 깊은 쪽일수록 반응이 빨라집니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.6,
+        "text": " 네, 더 깊은 쪽일수록 반응이 빨라집니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_track_1_serin_01": {
+    "expected": "발자국 하나의 간격이 너무 넓어요.\n여러 개체가 아니라, 큰 하나가 지나간 흔적에 가깝습니다.",
+    "recognized": " 발자국 하나의 간격이 너무 넓어요.  여러 개체가 아니라 큰 하나가 지나간 흔적에 가깝습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.5,
+        "text": " 발자국 하나의 간격이 너무 넓어요."
+      },
+      {
+        "start": 3.5,
+        "end": 8.0,
+        "text": " 여러 개체가 아니라 큰 하나가 지나간 흔적에 가깝습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_track_1_serin_02": {
+    "expected": "단정은 이르지만, 적어도 여기까지 남은 압력은 그 수준입니다.",
+    "recognized": " 단정은 이르시만 적어도 여기까지 남은 압력은 그 수준입니다.",
+    "ratio": 0.96,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.0,
+        "text": " 단정은 이르시만 적어도 여기까지 남은 압력은 그 수준입니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_track_2_serin_01": {
+    "expected": "네. 여기서부터는 '무언가가 지나갔다'가 아니라,\n'무언가가 이 길을 쓰고 있다'에 가깝습니다.",
+    "recognized": " 네, 여기서부터는 무언가가 지나갔다가 아니라 무언가가 이 길을 쓰고 있다에 가깝습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 8.52,
+        "text": " 네, 여기서부터는 무언가가 지나갔다가 아니라 무언가가 이 길을 쓰고 있다에 가깝습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_withdraw_serin_01": {
+    "expected": "저게 중심부에 가까운 존재라면, 다음에는 피할 수 없을 거예요.",
+    "recognized": " 저게 중심부에 가까운 존재라면 다음에는 피할 수 없을 거예요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 5.0,
+        "text": " 저게 중심부에 가까운 존재라면 다음에는 피할 수 없을 거예요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_witness_miel_01": {
+    "expected": "다친 채로 밀어붙일 상대는 아니에요.",
+    "recognized": " 다친 채로 밀어붙일 상대는 아니에요.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.5,
+        "text": " 다친 채로 밀어붙일 상대는 아니에요."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_witness_paul_01": {
+    "expected": "다음에는 관찰보다 대응이 먼저겠네요.",
+    "recognized": " 다음에는 관찰보다 대응이 먼저겠네요",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.5,
+        "text": " 다음에는 관찰보다 대응이 먼저겠네요"
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_witness_serin_01": {
+    "expected": "저 존재가 모든 일의 원인이라고 단정할 수는 없어요.\n하지만 움직일 때마다 열기와 진동이 함께 치솟습니다.",
+    "recognized": " 저 존재가 모든 일의 원인이라고 단정할 수는 없어요.  하지만 움직일 때마다 열기와 진동이 함께 치솟습니다.",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 4.0,
+        "text": " 저 존재가 모든 일의 원인이라고 단정할 수는 없어요."
+      },
+      {
+        "start": 4.0,
+        "end": 9.0,
+        "text": " 하지만 움직일 때마다 열기와 진동이 함께 치솟습니다."
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  },
+  "main19_witness_taeon_01": {
+    "expected": "준비를 갖추고 다시 오겠습니다.",
+    "recognized": " 준비를 갖추고 다시 오겠습니다",
+    "ratio": 1.0,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.8000000000000003,
+        "text": " 준비를 갖추고 다시 오겠습니다"
+      }
+    ],
+    "status": "ASR_SUPPORTS_TEXT",
+    "caution": "Offline ASR is supporting evidence, not human voice/meaning approval"
+  }
+}

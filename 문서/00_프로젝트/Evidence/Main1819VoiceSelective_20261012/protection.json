@@ -1,0 +1,19 @@
+{
+  "protected_before": 3632,
+  "changed": [
+    "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset"
+  ],
+  "unmodified": 3631,
+  "unexpected_changed_or_deleted": 0,
+  "source_inputs_preserved": 50,
+  "catalog_original_prefix_byte_exact": true,
+  "original_entry_count": 255,
+  "final_entry_count": 280,
+  "catalog_duplicate_ids": 0,
+  "new_audio_guids": 25,
+  "new_guid_collisions": 0,
+  "wav_original_hash_exact": 25,
+  "excluded_catalog_entries": 0,
+  "runtime_code_changes": 0,
+  "manifest_non_status_fields_exact": true
+}
