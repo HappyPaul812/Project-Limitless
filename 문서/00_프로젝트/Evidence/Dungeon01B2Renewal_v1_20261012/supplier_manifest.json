@@ -1,0 +1,703 @@
+{
+  "product": "LIMITLESS",
+  "package": "Limitless_Dungeon01_B2_Renewal_Art_v1",
+  "target_scene": "Unity/Client/Assets/_Project/Scenes/Dungeon_01_B2.unity",
+  "status": "ART_CREATED__USER_ART_APPROVAL_PENDING__UNITY_NOT_TESTED",
+  "git_scene_observed": {
+    "renderer_count": 54,
+    "unique_original_environment_sprite_count": 1,
+    "original_fileID": "21300000",
+    "original_guid": "e38fd353fd47c7644acb692973a9ee07",
+    "scene_world_bounds": [
+      33,
+      25
+    ],
+    "scene_spawn_from_b1_test": [
+      0,
+      -8.5
+    ],
+    "scene_exit_to_b1": [
+      0,
+      -11.9
+    ],
+    "boss_after_anchor": [
+      0,
+      11.6
+    ],
+    "all_scene_sprites_share_one_ref": true
+  },
+  "renderers_54_mapping": "SpriteMapping.csv",
+  "assets": [
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_Stone_A_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "floor base",
+      "integration": "selected floor regions, not global sprite swap",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "27d5894ef886b63bac8a0b18c22f8dc5210cc0569fc9e491c8a7763f5782ccb2",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_Stone_B_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "floor variant B",
+      "integration": "selected floor regions, not global sprite swap",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "36188417b6e7194104d257cae6ab0364bf04c60713abf0950f7b8c82e014c746",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "floor variant C",
+      "integration": "selected floor regions, not global sprite swap",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "6e98eabd153817c0f221a6d387cf85802dda99ce6625efbdf730ffe0f98d74e5",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_Stone_D_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "floor variant D",
+      "integration": "selected floor regions, not global sprite swap",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "a89095d18201822d623597d0ee03f7621a80c0bad1c5828d4b0434b922bd7f95",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_Threshold_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "entry / passage threshold",
+      "integration": "selective",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "1d9a827aaf0d459d844398fc0cf63f6b0fbf7b8c9ded2fb8a744c5d274389c7a",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Floor_PassageBorder_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "passage border",
+      "integration": "selective",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "30179fa9b5da94c808ba03ccb17e2ffb4ef24c61a51562df0372d1e42093cbcb",
+      "alpha_bbox": [
+        0,
+        0,
+        128,
+        128
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Groove_Unlit_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "blue-free groove overlay",
+      "integration": "approval-required helper placement",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "19722afc97423f548ebeca804ace7f92b44ea9fd5ae250feda3f0e121bbbaee1",
+      "alpha_bbox": [
+        39,
+        2,
+        91,
+        126
+      ]
+    },
+    {
+      "path": "Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "very faint blue inlaid flow",
+      "integration": "existing blue-flow timings must remain; selective placement only",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "58feae5f10ed7cb1aba4c9e78a96c88f6784e5e99073ae7953b0a788c69be6ba",
+      "alpha_bbox": [
+        38,
+        7,
+        91,
+        122
+      ]
+    },
+    {
+      "path": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "wall section / Straight",
+      "integration": "selected wall or joint Renderers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "022ae662cec21b60800d0ad73820cf6326b53fc15467ef92f039a4a8d5bb68b4",
+      "alpha_bbox": [
+        5,
+        8,
+        123,
+        126
+      ]
+    },
+    {
+      "path": "Walls/LL_C1_D01B2_Wall_Corner_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "wall section / Corner",
+      "integration": "selected wall or joint Renderers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "d007582857037fa9acd926caccfab5f09f55758d4d3c180d10fee5b10d636bb8",
+      "alpha_bbox": [
+        5,
+        8,
+        123,
+        126
+      ]
+    },
+    {
+      "path": "Walls/LL_C1_D01B2_Wall_SealPanel_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "wall section / Seal",
+      "integration": "selected wall or joint Renderers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "252fc035a7ad78a4dd71d2b6c7673f5c53615cb6eebe0130fe529f6e00df8156",
+      "alpha_bbox": [
+        5,
+        8,
+        123,
+        126
+      ]
+    },
+    {
+      "path": "Walls/LL_C1_D01B2_Wall_Fractured_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "wall section / Collapsing",
+      "integration": "selected wall or joint Renderers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "86ea73037360162e9b8389218a30f6502cec6a133183d514c07326922e14f24e",
+      "alpha_bbox": [
+        5,
+        8,
+        123,
+        126
+      ]
+    },
+    {
+      "path": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "wall section / Joint",
+      "integration": "selected wall or joint Renderers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "3bb179c3c06b52af07202071d035604e55edc5f1205292be2d528653825f42c8",
+      "alpha_bbox": [
+        5,
+        8,
+        123,
+        126
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Pillar_Refined_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "refined masonry pillar",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "2c93c909b95879aefa8ca74642320bc48e0bf2241e4894482e028c2950202d96",
+      "alpha_bbox": [
+        27,
+        26,
+        107,
+        125
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Pillar_Chipped_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "damaged refined pillar",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "4a4abb83ec2c1369723f7d4175f204f7bd8746deba56690112bcabe208dfeab0",
+      "alpha_bbox": [
+        29,
+        14,
+        107,
+        126
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Sealed_Tomb_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "unused sealed stone niche",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "24f9d31c8845478115d36f407799f80abdb85d754072b713708556d400c6343c",
+      "alpha_bbox": [
+        23,
+        31,
+        110,
+        114
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Dormant_BurialSlab_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "unused burial construction",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "e23bde5195e70b95f700a7eec6c6e3c52a2339baa06b9e44c104390c890576bd",
+      "alpha_bbox": [
+        14,
+        49,
+        118,
+        114
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Unknown_Carving_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "repeated geometry, meaning unknown",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "a6f1564b1398a10c46f3d19e30c4bd636abc4078fd2b1a69eb8f7139db76b733",
+      "alpha_bbox": [
+        21,
+        30,
+        112,
+        118
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "unidentified recurring motifs",
+      "integration": "new placement, requires clearance check",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "bdd1f434bc296f5d722d754982b076fef59350e351807c28232d1a42931a70e6",
+      "alpha_bbox": [
+        31,
+        23,
+        103,
+        120
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Broken_Fragment_Cluster_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "broken stone fragment cluster",
+      "integration": "new placement, avoid playable path",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "86ffa81ab8742bde0c180adcc45a3b580564034957fc08e1b6dbc3cebe9a5fee",
+      "alpha_bbox": [
+        26,
+        65,
+        108,
+        115
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Fractured_Platform_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "damaged stone platform",
+      "integration": "new placement, avoid playable path",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "5fa644eb2442a32de4c46dea0f8aaa37c00f958799bc5d1d5f56cd94172d0e05",
+      "alpha_bbox": [
+        25,
+        55,
+        110,
+        112
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Plinth_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "tablet stand / inactive",
+      "integration": "new placement, only visible after boss",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "8131fb6f998678dc73b37c1e66560f18f615945c72e50f6b3cda7c310f48032f",
+      "alpha_bbox": [
+        30,
+        28,
+        105,
+        117
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Flow_Pedestal_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "low intensity blue flow pedestal",
+      "integration": "new placement, approval; do not reveal source",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "1d8368234ceca85c1c97c559a8d8a77533d750240f9f69f5287ad537c3183267",
+      "alpha_bbox": [
+        38,
+        33,
+        96,
+        119
+      ]
+    },
+    {
+      "path": "Props/LL_C1_D01B2_Subtle_Blue_Light_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "underlit wall beacon without permanent glow flash",
+      "integration": "new placement, only if consistent with existing code",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "02287c861a76b67b0380f90045c37abd0e267db7df9afc6077a81113379f7ac5",
+      "alpha_bbox": [
+        35,
+        47,
+        100,
+        125
+      ]
+    },
+    {
+      "path": "Gate/LL_C1_D01B2_SealDoor_Closed_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "seal door CLOSED state",
+      "integration": "conditional story state; avoid always-open fixed décor",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "88212ad714d45fccb86c9ee5386a6de69496745c1ecb2de019289cc6fe58211b",
+      "alpha_bbox": [
+        8,
+        20,
+        185,
+        156
+      ]
+    },
+    {
+      "path": "Gate/LL_C1_D01B2_SealDoor_Open_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "seal door OPEN state",
+      "integration": "conditional story state, only after gate opens",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "bbfbe1c70b4b2f2fa47d88f7cfb84b5c5412c9d4212881172975fd448b3acc3f",
+      "alpha_bbox": [
+        8,
+        20,
+        185,
+        156
+      ]
+    },
+    {
+      "path": "Gate/LL_C1_D01B2_SealDoor_AncientFrame_192x160_v1.png",
+      "size": [
+        192,
+        160
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "arch stone framework",
+      "integration": "new placement, protect existing transition triggers",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "e7a8d307d7cafaf23484d7a8fbfe1a43c78d867efe0631d06dbf988708b5d62d",
+      "alpha_bbox": [
+        8,
+        20,
+        185,
+        156
+      ]
+    },
+    {
+      "path": "Story/LL_C1_D01B2_AfterBoss_DeepCrack_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "crack, only after boss victory",
+      "integration": "Main11 CurrentStep >= 10, only after boss",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "f1003e3dfa32523f019208cf503a310f52f78110615c776ebb77d8135876fd10",
+      "alpha_bbox": [
+        12,
+        61,
+        109,
+        90
+      ]
+    },
+    {
+      "path": "Story/LL_C1_D01B2_AfterBoss_BlueFromBelow_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "light coming from below, not its source",
+      "integration": "Main11 CurrentStep >= 10, only after boss",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "d3b4b45776af2ebed0d26dbb39ccccf9fe648d6e8769b4803a43134655bd68f1",
+      "alpha_bbox": [
+        32,
+        47,
+        97,
+        106
+      ]
+    },
+    {
+      "path": "Story/LL_C1_D01B2_AfterBoss_BrokenTablet_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "broken tablet pickup appearance",
+      "integration": "Main11 CurrentStep >= 11 only and inventory guard",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "d7a9b75802d37c197a391b705f2981b0bb14ea4720630b7b23c437b263d9cac6",
+      "alpha_bbox": [
+        32,
+        37,
+        104,
+        106
+      ]
+    },
+    {
+      "path": "Story/LL_C1_D01B2_BeforeBoss_VisualBarrier_128_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "pixel_format": "RGBA",
+      "recommended_ppu": 128,
+      "pivot": "Center (0.5, 0.5)",
+      "role": "decorative indicator of physically locked area",
+      "integration": "visual-only; actual MainQuest11BossBarrier unchanged",
+      "source": "Custom-generated original block-pixel art (no ThirdParty source texture copied)",
+      "sha256": "bbaa252d0a9d82bafa0a6c1aa6fa1f708f171c8d99f692979d50e40ef66baab0",
+      "alpha_bbox": [
+        27,
+        33,
+        109,
+        118
+      ]
+    }
+  ],
+  "story_points": {
+    "dungeon01_main11_b2_entry": [
+      0,
+      -8.5
+    ],
+    "dungeon01_main11_b2_entrance": [
+      0,
+      -7.3
+    ],
+    "dungeon01_main11_sealed_tombs": [
+      -10,
+      -1
+    ],
+    "dungeon01_main11_unknown_room": [
+      10,
+      -1
+    ],
+    "dungeon01_main11_blue_flow": [
+      0,
+      0
+    ],
+    "dungeon01_main11_sealed_chamber": [
+      0,
+      11.2
+    ],
+    "dungeon01_main11_broken_tablet": [
+      1.25,
+      11.35
+    ]
+  },
+  "boss_gate": {
+    "barrier_center": [
+      0,
+      10.5
+    ],
+    "barrier_size": [
+      11,
+      0.28
+    ],
+    "after_boss_visible_step": ">=10",
+    "boss_sprite_modified": false,
+    "progression_control_source": "MainQuest11DungeonFlow.cs"
+  },
+  "notes": [
+    "All 54 Scene renderers currently use one original sprite, so global sprite replacement is UNSAFE; mapping CSV contains selective proposals, NOT integrated changes.",
+    "Full-map previews use exact observed Scene floor rectangle positions, but newly illustrated props are PROPOSALS only, not scene instances.",
+    "Monster spawn coords/radii are NOT VERIFIED in provided Scene; Codex must inspect runtime definitions before any placement.",
+    "New original pixel art, existing third-party originals and prior approved art unchanged.",
+    "Closed/open seal-door assets need explicit story-state integration; fixed open visualization before defeat is prohibited.",
+    "No Unity import or GameView simulation performed."
+  ]
+}

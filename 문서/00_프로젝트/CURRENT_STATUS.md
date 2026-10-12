@@ -1,3 +1,14 @@
+<!-- DUNGEON01_B2_INSPECTION_20261012_BEGIN -->
+## 2026-10-12 Dungeon01 B2 리뉴얼 실제 검수 — 사용자 미술 승인 대기
+
+- **USER_ART_REVIEW_PENDING / 기계검사PASS / 전체QA_PARTIAL / 원본영구적용0**. ZIP51/PNG44(실사용31·Preview12·QA1), CRC/decode/Manifest/alpha/31Importer·신규GUID충돌0, Floor4종16쌍좌우/상하Seam정확일치. Scene54공용Sprite1/기존복제0+Main11단서Runtime7. 기존형상불변, 격리환경자식26/단서자식7/석판그림1만QA제안.
+- 실제B2순차조사·일반4UI승리/35초리스폰·B1왕복·보스24정상공격승리/Phase2소환2·장막·충격준비·도망거절·봉인실조사·석판1/정상귀환/Main11완료PASS. PrimaryContinue2회+실제완료Save별도뷰복원, 휠체어8지점244waypoint/Camera16:9네방향BoundsPASS. B1구간은기존PASS재사용/완료checkpointfixture, 재실행0.
+- **기존처치전단서7/7 enabled 시각적선노출위험**: 장벽/순차조건은차단PASS. 후보QA에서만처치전숨김/후표시·석판회수후숨김제안, 원본게임수정0. 보조Gate/장식미배치, 얇은푸른홈·작은문양·벽비율·B1색감·Marker가독성검토필요. 초기QA컴파일3진단은QA2오류수정후Compile0; raw보존.
+- 기존Search예외로PARTIAL. 세부침묵CD/DoT·모든직업/밸런스·OS직접플레이·사람최종가독성·독립상업권증빙NOT_VERIFIED. 원본3738SHA불변/사용자337·822보호, Save/meta/승인아트/TTS/BGM/Editor포커스무접촉·Push0.
+- [정본보고/실제Preview](Dungeon01_B2_Renewal_Art_v1_Inspection_20261012.md). 다음: 사용자미술검토, 승인후별도역할/반복/단서노출최소통합설계. 기준395dd5d, 검수Commit은후속상태기록.
+
+<!-- DUNGEON01_B2_INSPECTION_20261012_END -->
+
 <!-- DUNGEON01_B1_INSPECTION_20261012_BEGIN -->
 ## 2026-10-12 Dungeon01 B1 리뉴얼 v1 실제 검수 — 미술 승인 대기
 

@@ -1,5 +1,16 @@
 # Codex 최신 인계 — 2026-10-12
 
+## 최신: Dungeon01 B2 검수 완료 / USER_ART_REVIEW_PENDING
+
+[B2정본](../../Dungeon01_B2_Renewal_Art_v1_Inspection_20261012.md)이최신입니다. ZIP51/PNG44/실사용31, 기존Scene54공용Sprite1+Main11Runtime단서7, 격리후보26환경자식/7단서자식/석판그림1입니다. 영구적용0. B1/B2모두승인대기, Field03정식375/376·RockB보류보호.
+
+실제B2조사/일반4정상전투·35초/왕복/보스24UI공격승리·Phase2소환2/장막/충격준비/도망금지·단서조사/석판1/정상귀환Main11완료PASS. PrimaryContinue2회와완료실제Save별도View복원, 지체의길8지점244waypoint/카메라4BoundsPASS. B1조사는기존증거/checkpoint서비스fixture만재사용했습니다.
+
+중요: **기존단서7개가보스처치전에도enabled**. 물리/순차조건차단은PASS지만시각선노출위험은원본에남아있습니다. 이번엔QA에서만숨김/후표시를제안했으며게임수정금지범위를지켰습니다. 승인후최소통합에서별도기술검토필요합니다. Search기존예외유지/전체PARTIAL, 사람가독성·세부밸런스·독립권리증빙미검증입니다.
+
+초기QA컴파일2코딩오류/3진단만수정후통과, 원시로그보존. 결과Dungeon01B2Inspection_20261012 및Dungeon01B2Views_20261012, 소스/로그Temp/Dungeon01B2Inspection20261012입니다. QA종료, 기존격리프로젝트재사용/원본Editor PID31832무접촉. 사용자337항목/822파일·원본게임3738SHA보존. 기준로컬/원격395dd5d일치. 검수Commit은후속상태기록, Push0입니다. **승인전B1/B2원본아트/Scene영구적용금지.**
+
+
 ## 최신 작업: Dungeon01 B1 검수 완료 / 승인 대기
 
 USER_ART_REVIEW_PENDING, 원본영구적용0/전체QA_PARTIAL. [B1검수](../../Dungeon01_B1_Renewal_Art_v1_Inspection_20261012.md)와CURRENT_STATUS를최신으로따릅니다. ZIP44/PNG38/실사용25, 실제Scene63Renderer공용1Sprite입니다. 전역1:1교체는왜곡하므로정식통합은역할별반복/비율/문상태설계가필요합니다. 격리후보30자식Renderer만사용했으며원본Transform/Collider/Sprite형상불변입니다.

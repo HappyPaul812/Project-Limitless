@@ -1,0 +1,929 @@
+{
+    "rows": [
+        {
+            "name": "Boundary_Bottom_0",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": -12.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 33.0,
+                "y": 1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 33.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "SealGalleryWest",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -3.200000047683716,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Exit_To_B1",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": -11.899999618530273,
+                "z": 0.0
+            },
+            "size": {
+                "x": 3.0,
+                "y": 0.800000011920929,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 3.0,
+                "y": 0.800000011920929
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": true,
+            "enabled": true
+        },
+        {
+            "name": "WestTop",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -10.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Boundary_Right_0",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 16.5,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 1.0,
+                "y": 25.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 25.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "BossRoomEast",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 5.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "EastOuter",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 14.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "SealGalleryEast",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 3.200000047683716,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Boundary_Left_0",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -16.5,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 1.0,
+                "y": 25.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 25.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "EntryWest",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -4.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "EntryEast",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 4.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "EastTop",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 10.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "WestOuter",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -14.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Boundary_Top_0",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": 12.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 33.0,
+                "y": 1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 33.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "BossRoomWest",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -5.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "BossChamberBarrier",
+            "type": "BoxCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": 10.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 11.0,
+                "y": 0.2800000011920929,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 11.0,
+                "y": 0.2800000011920929
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Monster_dungeon01_b2_03_monster_seal_guardian",
+            "type": "CircleCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 10.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.7999992370605469,
+                "y": 0.7999999523162842,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Monster_dungeon01_b2_04_monster_seal_guardian",
+            "type": "CircleCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": 4.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.800000011920929,
+                "y": 0.8000001907348633,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Player",
+            "type": "CircleCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": -8.5,
+                "z": 0.0
+            },
+            "size": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Monster_dungeon01_b2_02_monster_shade_bat",
+            "type": "CircleCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": -10.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.7999992370605469,
+                "y": 0.7999999523162842,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Monster_dungeon01_b2_01_monster_grave_wight",
+            "type": "CircleCollider2D",
+            "spawn": "",
+            "monster": "",
+            "position": {
+                "x": 0.0,
+                "y": -4.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.800000011920929,
+                "y": 0.8000001907348633,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "radius": 0.0,
+            "respawn": 0.0,
+            "trigger": false,
+            "enabled": true
+        },
+        {
+            "name": "Monster_dungeon01_b2_04_monster_seal_guardian",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_04",
+            "monster": "monster_seal_guardian",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 4.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false,
+            "enabled": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_03_monster_seal_guardian",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_03",
+            "monster": "monster_seal_guardian",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 10.0,
+                "y": -1.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false,
+            "enabled": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_01_monster_grave_wight",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_01",
+            "monster": "monster_grave_wight",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": -4.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false,
+            "enabled": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_02_monster_shade_bat",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_02",
+            "monster": "monster_shade_bat",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "localSize": {
+                "x": 0.0,
+                "y": 0.0
+            },
+            "source": {
+                "x": -10.0,
+                "y": -1.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false,
+            "enabled": false
+        }
+    ]
+}

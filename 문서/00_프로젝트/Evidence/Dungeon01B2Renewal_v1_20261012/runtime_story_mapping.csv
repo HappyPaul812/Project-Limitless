@@ -1,0 +1,6 @@
+original_runtime_role,candidate,visibility_proposal,permanent_applied
+DeepCrack,Story/LL_C1_D01B2_AfterBoss_DeepCrack_128_v1.png,BossDefeated; tablet only before inventory recovery,False
+BlueFromBelow,Story/LL_C1_D01B2_AfterBoss_BlueFromBelow_128_v1.png,BossDefeated; tablet only before inventory recovery,False
+BrokenStoneLeft/Right,Props/LL_C1_D01B2_Broken_Fragment_Cluster_128_v1.png,BossDefeated; tablet only before inventory recovery,False
+RepeatedUnknownMark0~2,Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png,BossDefeated; tablet only before inventory recovery,False
+QATabletIllustration (신규QA표시),Story/LL_C1_D01B2_AfterBoss_BrokenTablet_128_v1.png,BossDefeated; tablet only before inventory recovery,False

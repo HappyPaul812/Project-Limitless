@@ -1,0 +1,18 @@
+{
+  "original_renderers": 54,
+  "fields": [
+    "name",
+    "path",
+    "guid",
+    "fileID",
+    "position",
+    "scale",
+    "size",
+    "tint",
+    "sorting",
+    "flip",
+    "ppu",
+    "collider"
+  ],
+  "differences": []
+}

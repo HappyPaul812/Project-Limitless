@@ -1,0 +1,62 @@
+[
+  {
+    "asset": "Dungeon01_B2_01.asset",
+    "spawn": "dungeon01_b2_01",
+    "position": {
+      "x": 0,
+      "y": -4
+    },
+    "radius": 0.55,
+    "respawn": 35,
+    "nonRespawningBoss": 0,
+    "monster_guid": "7bde508c3c6a76947ac906845887833d"
+  },
+  {
+    "asset": "Dungeon01_B2_02.asset",
+    "spawn": "dungeon01_b2_02",
+    "position": {
+      "x": -10,
+      "y": -1
+    },
+    "radius": 0.55,
+    "respawn": 35,
+    "nonRespawningBoss": 0,
+    "monster_guid": "a56e6cc7e1865b640884e5af838e1454"
+  },
+  {
+    "asset": "Dungeon01_B2_03.asset",
+    "spawn": "dungeon01_b2_03",
+    "position": {
+      "x": 10,
+      "y": -1
+    },
+    "radius": 0.55,
+    "respawn": 35,
+    "nonRespawningBoss": 0,
+    "monster_guid": "a7719411e672b03479cb4a8334620b8a"
+  },
+  {
+    "asset": "Dungeon01_B2_04.asset",
+    "spawn": "dungeon01_b2_04",
+    "position": {
+      "x": 0,
+      "y": 4
+    },
+    "radius": 0.55,
+    "respawn": 35,
+    "nonRespawningBoss": 0,
+    "monster_guid": "a7719411e672b03479cb4a8334620b8a"
+  },
+  {
+    "asset": "Dungeon01_B2_Boss.asset",
+    "spawn": "dungeon01_b2_boss",
+    "position": {
+      "x": 0,
+      "y": 9.5
+    },
+    "radius": 0.55,
+    "respawn": 35,
+    "nonRespawningBoss": 1,
+    "monster_guid": "8bea7b544d079c24aa9bd273450183d9"
+  }
+]
