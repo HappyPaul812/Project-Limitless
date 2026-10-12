@@ -1,6 +1,6 @@
 # Field_02 리뉴얼 아트 v1 검수 — 2026-10-12
 
-**ART_REVIEW_PENDING / 기술 PARTIAL / 원본 Unity 영구 적용 0.** 납품 완료와 사용자 최종 미술 승인은 구별한다. 원본 ZIP과 승인된 마을 v4·Field01, Scene·Theme·Generator·Prefab·Save·WAV·기존 GUID는 변경하지 않았다.
+**USER_ART_APPROVED (2026-10-12).** 신규12종 정식 통합 결과는 [최신 정식 통합 QA](Field02_Renewal_Official_Integration_QA_20261012.md)를 따른다. **아래 내용은 승인 전 검수 이력(기술 PARTIAL / 당시 원본 적용0)**이다. 납품 완료와 사용자 최종 미술 승인은 구별한다. 원본 ZIP과 승인된 마을 v4·Field01, Scene·Theme·Generator·Prefab·Save·WAV·기존 GUID는 변경하지 않았다.
 
 ## 원본 및 실제 검사
 

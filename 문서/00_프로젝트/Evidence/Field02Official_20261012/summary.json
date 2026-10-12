@@ -1,0 +1,12 @@
+{
+  "status": "USER_ART_APPROVED / IMPLEMENTED / QA_PARTIAL",
+  "new_sprites": 12,
+  "scene_references": 363,
+  "runtime_clones": 10,
+  "normal_monster_victories": 6,
+  "respawn_timer": 30,
+  "respawn_latency_min": 0.002365112,
+  "respawn_latency_max": 0.002876282,
+  "qa_fixture_failure": "Original fixture used exit position; safe return crossed to Field03; repaired QA only",
+  "game_code_changes": 0
+}

@@ -1,0 +1,22 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+namespace ProjectLimitless.EditorTools
+{
+    // 승인된 PNG만 격리 복사본에 Import하고 원본 프로젝트에 복사할 신규 GUID 정보를 기록합니다.
+    public static class Field02OfficialBuild
+    {
+        public static void RunBatch()
+        {
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets"))throw new InvalidOperationException("격리 전용");
+            const string root="Assets/_Project/Art/Environment/Field02/V1/";
+            AssetDatabase.Refresh();var paths=Directory.GetFiles(root,"*.png",SearchOption.AllDirectories);if(paths.Length!=12)throw new Exception("12종 필요");
+            var lines=paths.Select(p=>{
+                string path=p.Replace('\\','/');var i=(TextureImporter)AssetImporter.GetAtPath(path);i.textureType=TextureImporterType.Sprite;i.spriteImportMode=SpriteImportMode.Single;i.spritePixelsPerUnit=128;i.spritePivot=new Vector2(.5f,.5f);i.filterMode=FilterMode.Point;i.mipmapEnabled=false;i.textureCompression=TextureImporterCompression.Uncompressed;i.alphaIsTransparency=true;i.npotScale=TextureImporterNPOTScale.None;i.SaveAndReimport();
+                var sprite=AssetDatabase.LoadAssetAtPath<Sprite>(path);if(sprite==null||sprite.pixelsPerUnit!=128)throw new Exception(path);AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sprite,out string guid,out long id);return path+"\t"+guid+"\t"+id;
+            }).ToArray();File.WriteAllLines(Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Field02Integration20261012/imports.tsv")),lines);
+        }
+    }
+}

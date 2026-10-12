@@ -1,0 +1,5 @@
+(0.20, -1.60);waypoints=7
+(2.70, -1.20);waypoints=11
+(4.40, 0.20);waypoints=13
+(6.50, -2.35);waypoints=18
+(0.00, -5.20);waypoints=38

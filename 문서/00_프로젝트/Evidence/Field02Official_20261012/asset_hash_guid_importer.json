@@ -1,0 +1,158 @@
+[
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_A_128_v1.png",
+    "guid": "d43073ef2aa55f44689ba5ca6fbcebb1",
+    "fileID": "21300000",
+    "sha256": "9f5d05da50979b3f504f17684617a52cedb3267e073f0b2f1264dec1a89c76ae",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_B_128_v1.png",
+    "guid": "fb953e379cbb8e144b0162e396112094",
+    "fileID": "21300000",
+    "sha256": "ab84e2d03c69c7fe5501f3a19e90304cdf13d04dedfbb94519d7b8463e8feafb",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_C_128_v1.png",
+    "guid": "5806de2c57e465e42af70a7b443f84a7",
+    "fileID": "21300000",
+    "sha256": "6650f825b09ad6683157be350e1d24fa638dab233ce36ff6f3decbdb1477d30c",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_Path_Left_128_v1.png",
+    "guid": "9295edd05a2bab343a5fc1c6626fc135",
+    "fileID": "21300000",
+    "sha256": "54dbc982fdb695ea1864df9a8fd50fd078710c4d1b3b72248fedfe8b4251fcae",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_Path_Right_128_v1.png",
+    "guid": "91d7cb05cbbec01439d5175d79bdb529",
+    "fileID": "21300000",
+    "sha256": "056f71a0862e3109ff9ca3c925a91a6bad561a30a3366ad947eb6d8d901afbc6",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Bush_A_128_v1.png",
+    "guid": "d989d874aee49b549a14394a5b13eedc",
+    "fileID": "21300000",
+    "sha256": "047ad277176b285e7c3e9168f4c9c40e10779478410f709eebd6d5d8b5f3e2a2",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Bush_B_128_v1.png",
+    "guid": "c6fc24fc732109d46930de43ee706426",
+    "fileID": "21300000",
+    "sha256": "b98276b93181a63d79ec82922d256092a3a2408e7b83ed4ad7d1adb03bac01b6",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Fence_MossWood_128_v1.png",
+    "guid": "ec9c6c31cd1ad174290926c45385609a",
+    "fileID": "21300000",
+    "sha256": "5f9376911266b271223db52b31fdd105d75f4143d00feac63de77eaccc5dd296",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Rock_Moss_A_128_v1.png",
+    "guid": "45c9e0f2f16bc0246a05faf9c849fc2f",
+    "fileID": "21300000",
+    "sha256": "8cf9249a6fc4519e03ad63514aae86079b0819d271590d9d55aff2eb58ec8809",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Rock_Moss_B_128_v1.png",
+    "guid": "0b8f6adbc8ba6d54e95f148cc9324f90",
+    "fileID": "21300000",
+    "sha256": "646c9ae7b50109d414cf626c51aab26672a29b6f86703f49987319f5166225c7",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Tree_Big_255x256_v1.png",
+    "guid": "955419548c41d6a47b6498c307c6ae90",
+    "fileID": "21300000",
+    "sha256": "9e60523de69d279e39bb65e5159a727ca4ec9e74ca3fbc9069f9c92cd05586ea",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Tree_Medium_128x156_v1.png",
+    "guid": "c79e1ed7c6952a3458921ea5fa4d70ca",
+    "fileID": "21300000",
+    "sha256": "749824319918f83f5f0fc7d3505d0b5bb035290b7f67887ecfa989769070ef9e",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "compression": 0
+  }
+]

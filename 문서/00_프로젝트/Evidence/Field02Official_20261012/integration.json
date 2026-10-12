@@ -1,0 +1,103 @@
+{
+  "user_art_status": "USER_ART_APPROVED",
+  "scene_sprite_replacements": 363,
+  "runtime_clones": 10,
+  "counts": {
+    "tiles_grass_5_0": 106,
+    "tiles_grass_4_0": 105,
+    "tiles_grass_6_0": 104,
+    "tiles_grass_5_4": 15,
+    "bush_01": 2,
+    "tree_medium": 3,
+    "bush_02": 1,
+    "fence_tiles_2_2": 8,
+    "tiles_grass_4_4": 15,
+    "tree_big": 2,
+    "rock_01": 1,
+    "rock_02_0": 1
+  },
+  "new_guids": 16,
+  "guid_collisions": 0,
+  "scene_only_sprite_reference_bytes_changed": true,
+  "files": [
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_A_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_A_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_B_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_B_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_C_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_ForestFloor_C_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_Path_Left_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_Path_Left_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_Path_Right_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Ground\\LL_C1_F02_Path_Right_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Bush_A_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Bush_A_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Bush_B_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Bush_B_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Fence_MossWood_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Fence_MossWood_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Rock_Moss_A_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Rock_Moss_A_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Rock_Moss_B_128_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Rock_Moss_B_128_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Tree_Big_255x256_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Tree_Big_255x256_v1.png.meta",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Tree_Medium_128x156_v1.png",
+    "Unity\\Client\\Assets\\_Project\\Art\\Environment\\Field02\\V1\\Props\\LL_C1_F02_Tree_Medium_128x156_v1.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Field02.meta",
+    "Unity/Client/Assets/_Project/Scenes/Field_02.unity"
+  ],
+  "imports": {
+    "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_A_128_v1.png": [
+      "d43073ef2aa55f44689ba5ca6fbcebb1",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_B_128_v1.png": [
+      "fb953e379cbb8e144b0162e396112094",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_ForestFloor_C_128_v1.png": [
+      "5806de2c57e465e42af70a7b443f84a7",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_Path_Left_128_v1.png": [
+      "9295edd05a2bab343a5fc1c6626fc135",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Ground/LL_C1_F02_Path_Right_128_v1.png": [
+      "91d7cb05cbbec01439d5175d79bdb529",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Bush_A_128_v1.png": [
+      "d989d874aee49b549a14394a5b13eedc",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Bush_B_128_v1.png": [
+      "c6fc24fc732109d46930de43ee706426",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Fence_MossWood_128_v1.png": [
+      "ec9c6c31cd1ad174290926c45385609a",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Rock_Moss_A_128_v1.png": [
+      "45c9e0f2f16bc0246a05faf9c849fc2f",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Rock_Moss_B_128_v1.png": [
+      "0b8f6adbc8ba6d54e95f148cc9324f90",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Tree_Big_255x256_v1.png": [
+      "955419548c41d6a47b6498c307c6ae90",
+      "21300000"
+    ],
+    "Assets/_Project/Art/Environment/Field02/V1/Props/LL_C1_F02_Tree_Medium_128x156_v1.png": [
+      "c79e1ed7c6952a3458921ea5fa4d70ca",
+      "21300000"
+    ]
+  }
+}
