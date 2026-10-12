@@ -1,0 +1,19 @@
+﻿Layer,Role,StableIDOrName,PositionXY,SizeOrRadius,ProtectionAndArtContract,Source
+RuntimeFromCodeOrData_NOT_EXECUTED,입구Spawn,Spawn_From_Field03,"(8,0)",point,보호:동쪽 첫 진입;Trigger와2.7거리,Unity/Client/Assets/_Project/Resources/FieldConnections/Field04_EastToField03.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,출구Trigger,east_to_field03,"(10.7,0)","(1,3)",보호:Field_03/Spawn_From_Field04,Unity/Client/Assets/_Project/Resources/FieldConnections/Field04_EastToField03.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,입구Spawn,Spawn_From_Arbel,"(-8,0)",point,보호:서쪽 귀환;TreeWest와인접,Unity/Client/Assets/_Project/Resources/FieldConnections/Field04_WestToArbel.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,출구Trigger,west_to_arbel,"(-10.7,0)","(1,3)",보호:Arbel/Spawn_From_Field04,Unity/Client/Assets/_Project/Resources/FieldConnections/Field04_WestToArbel.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,도착Quest,field04_west_entry,"(7,0)",arrival distance<1.7,Main12마지막;Main13시작;색만으로정보전달금지,"Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:86,329-354"
+RuntimeFromCodeOrData_NOT_EXECUTED,조사Quest,field04_main13_dry_soil,"(5,-2)",interact distance<=1.7,Main13목표1;마른토양표현후보;target/입력보호,"Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:87,145-159,356-381"
+RuntimeFromCodeOrData_NOT_EXECUTED,토양MeshRenderer,GroundClue,"(5,-2)","(1.3,0.75)","순수표현후보;Sprites/Default;sorting4;색(0.46,0.34,0.22)",Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:152-173
+RuntimeFromCodeOrData_NOT_EXECUTED,조사Quest,field04_main13_shallow_stream,"(2,2)",interact distance<=1.7,Main13목표2;현재별도물Sprite없음;낮아진물길그림은표현제안,"Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:88,145-159,356-381"
+RuntimeFromCodeOrData_NOT_EXECUTED,공식NPC,field04-serin,"(-1,0)","Label local(0,1.02)",Main13목표3;공식Resources/Chapter2/Serin Animator/초상화보호,"Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:90,175-195"
+RuntimeFromCodeOrData_NOT_EXECUTED,StoryBattle,field04_main13_serin_encounter,"(-3,0)",interact distance<=1.7,Main13목표4;StoryEncounterReturns/Main13_SerinReturn;승리진행/임시동행보호,"Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:89,361-366"
+RuntimeFromCodeOrData_NOT_EXECUTED,일반Monster,field04_heatwind_hawk,"(2,-3)",activityRadius1;colliderRadius0.4,열풍매공식아트/동작보호;respawn35s,Unity/Client/Assets/_Project/Resources/MonsterSpawns/Field04_HeatwindHawk.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,일반Monster,field04_soot_hound,"(-4,3)",activityRadius1;colliderRadius0.4,그을음들개공식아트/동작보호;respawn35s,Unity/Client/Assets/_Project/Resources/MonsterSpawns/Field04_SootHound.asset
+RuntimeFromCodeOrData_NOT_EXECUTED,외곽Collider,Chapter2Boundary_BoundaryLeft0,"(-10.5,-4.5)","(0.3,6)","기존측면벽대체;중앙y[-1.5,1.5]실제Exit만Opening",Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:214-225
+RuntimeFromCodeOrData_NOT_EXECUTED,외곽Collider,Chapter2Boundary_BoundaryLeft1,"(-10.5,4.5)","(0.3,6)","기존측면벽대체;중앙y[-1.5,1.5]실제Exit만Opening",Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:214-225
+RuntimeFromCodeOrData_NOT_EXECUTED,외곽Collider,Chapter2Boundary_BoundaryRight0,"(10.5,-4.5)","(0.3,6)","기존측면벽대체;중앙y[-1.5,1.5]실제Exit만Opening",Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:214-225
+RuntimeFromCodeOrData_NOT_EXECUTED,외곽Collider,Chapter2Boundary_BoundaryRight1,"(10.5,4.5)","(0.3,6)","기존측면벽대체;중앙y[-1.5,1.5]실제Exit만Opening",Unity/Client/Assets/_Project/Scripts/World/Chapter2IntroFlow.cs:214-225
+RuntimeFromCodeOrData_NOT_EXECUTED,저장Scene기능제거,Spawn_From_StarterVillage / Entrance_To_StarterVillage,"(0,4.7)/(0,6.65)",Destroy at load,FieldConnectionInstaller replaceExistingSceneConnections=true;북문을정식출구로제작금지,Unity/Client/Assets/_Project/Scripts/World/FieldConnectionInstaller.cs:25-31
+RuntimeFromCodeOrData_NOT_EXECUTED,RuntimeTheme,Field04_DryForest,전체Grass/Road,"tint(0.69,0.61,0.42,1)","기존color곱셈;카메라(0.13,0.11,0.07,1);추가Tree/Bush0",Unity/Client/Assets/_Project/Resources/FieldThemes/Field04_DryForest.asset
