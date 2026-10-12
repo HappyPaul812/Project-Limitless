@@ -1,3 +1,5 @@
+B2 정식 구현 Commit: `2babb13c41bd1c2c75ad69bb93381dc3ed71547a`.
+
 ## 2026-10-12 B2 정식 통합·봉인실 표시 인계
 
 - USER_ART_APPROVED. PNG31 정식 등록, B1 공통 렌더링 코드 불변 재사용. B2 앵커54 보존/Tiled18/원크기소품8/줄눈숨김28/표시26. B1 PNG·Scene·프로필·문 TECH_HOLD 보호.

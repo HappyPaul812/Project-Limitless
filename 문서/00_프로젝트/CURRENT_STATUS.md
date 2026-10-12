@@ -3,7 +3,7 @@
 - USER_ART_APPROVED. PNG31 등록, 기존54 앵커 보존, B1 렌더링 코드 그대로 재사용: Tiled18/원크기소품8/중복표시숨김28/생성26.
 - Main11 B2·일반4 UI승리/35초·보스 Phase2/소환/도망금지·석판1/정상귀환완료·Continue/재진입 표시 복원 PASS. 단서7 처치전숨김/후표시, 석판 회수후숨김.
 - 전체 PARTIAL: 기존 Search 예외, 사람 직접 플레이·장시간 가독성/권리 NOT_VERIFIED. B1 전체 바이트와 문 TECH_HOLD·사용자337/Save/GUID 보호. 다음: 실제 화면·가독성 사용자 확인.
-- 마지막 관련 Commit: 이 항목의 Git 이력 참조. Push 미실행.
+- 마지막 관련 Commit: `2babb13c41bd1c2c75ad69bb93381dc3ed71547a` (정식 통합·스포일러 수정·QA). Push 미실행.
 
 ## 2026-10-12 Dungeon B1 승인 아트 정식 통합
 

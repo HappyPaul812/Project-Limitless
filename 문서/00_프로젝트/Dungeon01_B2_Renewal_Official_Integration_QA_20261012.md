@@ -35,3 +35,5 @@ Evidence/Dungeon01B2Official_20261012의 checks.txt, respawn_times.csv, boss_obs
 ![정식 전후 실제 화면](Evidence/Dungeon01B2Official_20261012/official_before_after.png)
 
 ![봉인실 상태 비교](Evidence/Dungeon01B2Official_20261012/sealed_state_comparison.png)
+
+정식 구현 Commit: `2babb13c41bd1c2c75ad69bb93381dc3ed71547a`. 사용자 직접 Push가 필요하며 Codex Push는 미실행입니다.
