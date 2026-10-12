@@ -89,3 +89,5 @@ Main21Site의 index11에 Main21HarenVisual을 추가한다. 기존 Site좌표(2.
 [보호 증거](Evidence/HarenSerinArt_v1_20261012/protection.json)·[Runtime](Evidence/HarenSerinArt_v1_20261012/runtime_checks.txt)·[보완](Evidence/HarenSerinArt_v1_20261012/focus_checks.txt)·[화살](Evidence/HarenSerinArt_v1_20261012/arrow_checks.txt). Evidence텍스트의 SHA256은 Git blob LF기준이다. 원시로그를 삭제/정규화하지 않았다.
 
 Git 검사: C#/문서/Evidence 기본 diff --check PASS. Unity가 생성한 meta/anim/controller의 빈 YAML scalar 후행공백은 직렬화 원본 보존을 위해 수정하지 않았다. 해당 자동생성 YAML은 blank-at-eol만 제외한 전체 staged diff --check PASS이며 GUID·Importer 데이터는 변경하지 않았다.
+
+선별 기능 통합 Commit: `3674add11e8cc153ffb91dc8ebaecb5d1b7fbbbe`. CURRENT_STATUS의 이번 요약과 기능 SHA 연결은 별도 Docs Commit이며 기존 사용자 MCP 기록은 스테이징에서 제외했다.

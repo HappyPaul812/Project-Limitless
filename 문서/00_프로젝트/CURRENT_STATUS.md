@@ -1,3 +1,17 @@
+## 2026-10-12 하렌·세린 공식 아트 v1 — 통합 완료 / QA_PARTIAL
+
+[검수·통합 QA](Haren_Serin_Official_Art_v1_Integration_QA_20261012.md): ZIP10항목 CRC·PNG8디코딩 PASS. 본자산5개를 원본 바이트 그대로 등록했다. 하렌 배경 초상화는 Manifest의 RGBA 표기와 달리 RGB이며 투명형은 RGBA다. Field512×512/128셀16프레임·PPU128/하단중앙·Idle/Walk8Clip, 하렌·세린 Battle1254×1254/209셀30프레임씩·PPU100/하단중앙·6Clip/6상태/5Trigger 생성. 신규meta GUID38개 충돌0.
+
+세린 companion_serin 전투 외형 연결, 사수3스킬에 Skill 외형 호출만 추가했다. 실제 Battle 등장·기본/정조준/화살비/야수/피격/전투불능 PASS. 기본·정조준 화살 이동과 화살촉이 왼쪽 적을 향함을 실제 경로·확대 RenderTexture로 확인했다. GoldenArrow·투사체·피해/쿨타임/파티3슬롯 불변. 기존 폴·미엘·태온 공용 attachment와6Trigger 재생/종료 PASS.
+
+하렌 Main21 첫 만남 index11에만 공식 Field Idle과 story_haren 초상화를 연결했다. 실제 하렌 화자 페이지·대화 종료 후 목표12 진행 PASS,13목표·대사·전투·퍼즐·보상·Save 보호. 하렌 CompanionDefinition/명단/능력치·스킬/Chapter3 추가0. 하렌 Battle은 ART_READY / RUNTIME_PENDING이며 합류 기획 확정 후 연결한다.
+
+격리6000.6.5f1 Compile오류0·Missing Sprite/Script0·신규Runtime오류0. 기존 Search 예외가 재발해 전체 PARTIAL. 원본 Editor 강제 Import/Play/포커스 전환0으로 원본 Import/recompile 완료는 NOT_VERIFIED; 동일 소스·자산의 격리 검증을 사용했다. 생성 아트 포즈별 장식·활·망토 변화의 최종 미술 체감, 전체 기존 스킬/수동 입력·Main21 전체 재주행은 미검증이다. 다음: 자연스러운 원본 Import 완료와 새 포즈 연속성·실제 입력 확인, 하렌 합류는 별도 기획.
+
+기존3564파일 중 허용 C#3개 외3561개 불변·삭제0, 신규68파일. 기존 사용자335개 Git항목과 CURRENT_STATUS 별도 MCP기록 유지. 기존 초상화/세린Field/플레이어Animator/마을v4/Field01/Save·설정 보호. 원본Editor PID31832 유지·화면조작/Push0. 마지막 기능관련 Commit `3674add11e8cc153ffb91dc8ebaecb5d1b7fbbbe` (`Feature: 하렌 세린 공식 아트와 Main21 첫 등장 외형 통합`).
+
+---
+
 ## 2026-10-12 Field_01 리뉴얼 v1 — USER_ART_APPROVED / 통합 완료 / QA_PARTIAL
 
 [복구·최종 QA](Field01_Renewal_Recovery_QA_20261012.md): 기존 환경12종 Commit `40f9517` 보존. PNG/ZIP일치12·GUID충돌0·실제Importer PASS, Field_01 환경363개 Sprite만 교체·그 외 Scene 불변, Generator12역할 전용매핑 완료. Scene재생성/PNG/meta GUID/Spawn정의/리스폰설정/게임Runtime C#수정0.
