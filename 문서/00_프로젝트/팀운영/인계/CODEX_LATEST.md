@@ -31,4 +31,4 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 
 새세션시작문구: “LIMITLESS Codex 담당입니다. AGENTS·CURRENT_STATUS·이인계를확인하고 Field03 정상11종은보존한채 Rock B후속범위만진행해주세요. 원본Editor·337사용자변경·Save보호, Push/TTS API금지.”
 
-정식통합Commit SHA는후속상태기록에남깁니다.
+정식 통합 Commit은 `dcd913e4dcb870528206623120a0d2d1af0059d5`입니다. 후속 문서 Commit은 이 SHA를 CURRENT_STATUS/QA에 기록합니다.

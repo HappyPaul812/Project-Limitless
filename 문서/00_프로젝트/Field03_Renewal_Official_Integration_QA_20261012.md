@@ -74,4 +74,4 @@ Main08 조사문구와 NPC 이름, Main10 입구 안내는 실제화면에 표�
 
 남은 항목: Rock B 수정본 납품/격리재검수/1참조 연결, 기존Search예외, 실제키보드·패드/장시간가독성·겹친안내 확인입니다. Main11 전체던전QA는 이번적용범위 밖으로 NOT_VERIFIED입니다. 외부소스시트 출처·상업적권리 독립감사는 **NOT_VERIFIED**를 유지합니다. 보조8종 신규배치0, Quest/Dialogue/Spawn/35초 설정변경0입니다.
 
-관련파일만 선택적Commit하며 **Git Push는 실행하지 않습니다.** Commit SHA는 후속상태기록에 남깁니다.
+관련파일만 선택적Commit하며 **Git Push는 실행하지 않습니다.** 정식 통합 Commit은 `dcd913e4dcb870528206623120a0d2d1af0059d5`입니다.
