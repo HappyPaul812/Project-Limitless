@@ -116,3 +116,5 @@
 선별 Commit: 신규52파일, Catalog 정상25개 append, Manifest Status35개, 본 보고서/개별 적용표/인계/Evidence와 CURRENT_STATUS 이번 요약. 사용자 기존337개 미커밋 변경과 원본 TTS 출력/스크립트는 제외. git add -A/reset/clean/checkout/기존음성변경/Push0. GitHub Push는 사용자 직접 수행.
 
 Evidence 텍스트 SHA256은 Git blob LF기준이며 원시 로그는 그대로 유지했다. Unity가 생성한 신규meta의 빈 YAML scalar 후행공백은 원본 직렬화를 보존하고 해당 공백만 제외해 Git 검사한다.
+
+선별 기능 통합 Commit: `e83393ceabc74c38dc49661969c1dd5e68bf06c0`. CURRENT_STATUS는 이 기능 SHA를 기록하는 별도 Docs Commit으로 갱신하며 기존 사용자 MCP 기록은 미스테이징 유지한다.

@@ -1,3 +1,17 @@
+## 2026-10-12 Main18·19 TTS — 정상25개 통합 / 세린10개 재제작 대기 / QA_PARTIAL
+
+[선택적 통합·원인 감사](Main18_19_TTS_Selective_Integration_QA_20261012.md)·[개별35상태](Main18_19_TTS_Selective_Applied_Matrix_20261012.csv)·[Schedar10개 인계](Main18_Serin10_Schedar_Regen_Handoff_20261012.csv). Main18 정상12/12·Main19 정상13/13 원본 WAV byte 그대로 연결하고 실제 Story/DSP/자연 종료를 확인했다. Main18 오류10개는 REGEN_REQUIRED·Unity미연결·실제무음이며 Dialogue ID/화자/자막을 유지했다. Manifest는 검증25개만 RUNTIME_VERIFIED, Player/지문과 Status 외 모든 필드 불변이다.
+
+오류 원인은 미확정. 코드/Review는 Schedar·gemini-3.8-flash-tts를 가리키지만 성공한 원본10개의 실제 요청 Voice/SDK/응답 정보는 없어 UNKNOWN이다. 구 제작 style에 여성 명시가 없고 정상본 생성 후보에는 여성 명시가 있는 차이는 발견했으나 인과를 단정하지 않는다. 공식 요청 형식과 코드 형태는 일치한다. Schedar 유지·자동 Voice 교체0, TTS API/재생성0. 요청한 Schedar_v2.py/수정ZIP은 미발견; 발견한 이전 Staged 도구의 Erinome/Kore 후보는 현행 정책과 달라 실행하지 않았다.
+
+정상 WAV25 PCM 원본↔Unity 최대 오차0·새AudioGUID 중복0. 실제 Catalog255→280, 기존255 entry를 포함한 byte prefix 전체 보존. 오류10 entry0·WAV Import0. 조건부 폴/미엘/태온·Mixer/Mute·빠른Next/Scene잔류0·Save/Continue2지점·기존255개 조회/짧은재생·Main18/19 지정전투 진입/승리처리/목표1회 진행 PASS. 기존255개 전체 의미 청취/정상 전투 입력을 재검사한 것은 아니다.
+
+격리6000.6.5f1 CompileError0·MissingAudio/Script0·신규Runtime오류0, 기존Search예외 재발로 전체PARTIAL. 사용자 정상 청취 의견과 의미별 승인/ASR/Runtime 결과를 분리했다. ASR의 단어 차이5개는 추가청취 권장이고 자동 오발화 확정은 아니다. 원본 Editor 강제Import/Play/포커스조작0으로 원본창 Import 완료는 미검증. 다음: 오류10개만 Schedar 재제작·샘플검토/요청로그 확보, 정상본 단어 청취 확인은 상세보고 참조.
+
+기존3632파일 중 Catalog1개 외3631개 불변·삭제0, 원본/체크포인트/제작스크립트50개 보호. 신규52파일, Runtime C#·Quest/전투/Save/기존Main01~17 WAV/meta/GUID 변경0. 사용자337개 Git항목·CURRENT_STATUS 별도MCP기록 보존·원본Editor PID31832 유지·Push0. 마지막 기능관련 Commit `e83393ceabc74c38dc49661969c1dd5e68bf06c0` (`Feature: Main18 세린 오류10 제외와 정상 Main18 Main19 음성25 통합`).
+
+---
+
 ## 2026-10-12 하렌·세린 공식 아트 v1 — 통합 완료 / QA_PARTIAL
 
 [검수·통합 QA](Haren_Serin_Official_Art_v1_Integration_QA_20261012.md): ZIP10항목 CRC·PNG8디코딩 PASS. 본자산5개를 원본 바이트 그대로 등록했다. 하렌 배경 초상화는 Manifest의 RGBA 표기와 달리 RGB이며 투명형은 RGBA다. Field512×512/128셀16프레임·PPU128/하단중앙·Idle/Walk8Clip, 하렌·세린 Battle1254×1254/209셀30프레임씩·PPU100/하단중앙·6Clip/6상태/5Trigger 생성. 신규meta GUID38개 충돌0.
