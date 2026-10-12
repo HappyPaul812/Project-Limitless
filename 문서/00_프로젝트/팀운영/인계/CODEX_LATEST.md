@@ -32,4 +32,4 @@
 
 새 세션 복붙: **“너는 LIMITLESS Codex 담당이다. AGENTS와 팀운영/인계/CODEX_LATEST.md 및 CURRENT_STATUS를 읽고, Field03 미술 승인 상태를 확인한 뒤 허용된 범위만 이어 진행해 주세요. 원본Editor·Save·337개 사용자 변경 보호, Push/TTS API 금지.”**
 
-마지막 검수 Commit은 CURRENT_STATUS 및 본 파일의 후속 SHA 기록을 확인한다. 이번 문서는 로컬 저장이며 원격 반영됐다고 주장하지 않는다.
+마지막 Field03 검수 Commit은 `80d998a`이며 CURRENT_STATUS의 후속 상태 기록을 확인한다. 이번 문서는 로컬 저장이며 원격 반영됐다고 주장하지 않는다.
