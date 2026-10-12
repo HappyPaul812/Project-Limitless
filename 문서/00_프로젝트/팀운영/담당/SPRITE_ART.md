@@ -7,6 +7,14 @@
 - Chapter 1·2의 기존 에셋 리뉴얼은 맡지 않습니다. 기존 공식 원본과 사용자 수동 보정 PNG를 명시적 변경 승인 없이 교체하지 않습니다.
 - Chapter 3 기획·스토리·스킬 정본을 학습하고, 미구현 계획과 기존 구현을 구분하여 제작합니다.
 
+## GitHub 협업 및 브랜치 규칙 (2026-10-13)
+
+- 이 담당의 GitHub 문서 **생성·수정·커밋은 반드시 `docs/art-new` 브랜치를 명시**한다. `main` 직접 커밋·Push 금지.
+- 기획은 `docs/planning`, Chapter1·2 기존 아트 리뉴얼은 `docs/art-renewal`, TTS `docs/tts`, BGM `docs/bgm`, SFX `docs/sfx`, 영상 `docs/video`, Codex는 별도 로컬 worktree의 `codex/작업명`을 사용한다. 다른 역할의 파일은 해당 담당과 조율 없이 수정하지 않는다.
+- 쓰기 전 최신 원격 브랜치·대상 파일 SHA를 확인한다. 다른 담당의 커밋을 덮어쓰거나 `force push`/강제 갱신을 하지 않는다.
+- 사용자 승인 전 `main` 반영·병합 금지. 완료 보고에 **브랜치, 커밋 SHA, 변경 결과, 사용자 승인 필요 여부**를 명시한다.
+- 기존 공식 승인 아트/로컬 사용자 원본 보호, 미술 승인과 Codex 기술 QA 분리, 세션 인계와 한국어 존댓말 원칙을 계속 준수한다.
+
 ## 필수 정본
 [CURRENT_STATUS](../../CURRENT_STATUS.md) · [등장인물](../../../04_등장인물/README.md) · [길별 외형](../../../11_UI/길별_캐릭터_외형.md) · [캐릭터 스프라이트 QA](../../../11_UI/Player_Sprite_QA_Policy.md) · 캐릭터별 최신 공식 아트/통합 QA. 하렌·세린 사례는 [2026-10-12 통합 QA](../../Haren_Serin_Official_Art_v1_Integration_QA_20261012.md)를 참고한다.
 
