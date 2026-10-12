@@ -8,7 +8,7 @@
 
 중요: **기존단서7개가보스처치전에도enabled**. 물리/순차조건차단은PASS지만시각선노출위험은원본에남아있습니다. 이번엔QA에서만숨김/후표시를제안했으며게임수정금지범위를지켰습니다. 승인후최소통합에서별도기술검토필요합니다. Search기존예외유지/전체PARTIAL, 사람가독성·세부밸런스·독립권리증빙미검증입니다.
 
-초기QA컴파일2코딩오류/3진단만수정후통과, 원시로그보존. 결과Dungeon01B2Inspection_20261012 및Dungeon01B2Views_20261012, 소스/로그Temp/Dungeon01B2Inspection20261012입니다. QA종료, 기존격리프로젝트재사용/원본Editor PID31832무접촉. 사용자337항목/822파일·원본게임3738SHA보존. 기준로컬/원격395dd5d일치. 검수Commit은후속상태기록, Push0입니다. **승인전B1/B2원본아트/Scene영구적용금지.**
+초기QA컴파일2코딩오류/3진단만수정후통과, 원시로그보존. 결과Dungeon01B2Inspection_20261012 및Dungeon01B2Views_20261012, 소스/로그Temp/Dungeon01B2Inspection20261012입니다. QA종료, 기존격리프로젝트재사용/원본Editor PID31832무접촉. 사용자337항목/822파일·원본게임3738SHA보존. 기준로컬/원격395dd5d일치. 검수 Commit `4e30cd89f2ed9b2a2cefa4dcfd96c37e2062a012`, Push0입니다. Collider의B1 Scope집계오류는B2실제25행/Box16개를별도수집해수정했으며게임PASS반복0입니다. **승인전B1/B2원본아트/Scene영구적용금지.**
 
 
 ## 최신 작업: Dungeon01 B1 검수 완료 / 승인 대기

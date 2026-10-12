@@ -18,7 +18,7 @@ Scene의직접환경 Renderer는 **54개/같은석재Sprite1종**입니다. 기�
 
 ![B2 기존/후보 실제 Runtime](Evidence/Dungeon01B2Renewal_v1_20261012/before_candidate_runtime_comparison.png)
 
-[서쪽 확대](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_-10_-1_runtime.png) · [동쪽 확대](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_10_-1_runtime.png) · [중앙 석실](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_0_0_runtime.png) · [보스 전실](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_0_9.5_runtime.png) · [석판 회수 구역](Evidence/Dungeon01B2Renewal_v1_20261012/tablet_area_runtime.png).
+[서쪽 확대](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_-10_-1_runtime.png) · [동쪽 확대](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_10_-1_runtime.png) · [중앙 석실](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_0_0_runtime.png) · [보스 전실(index5·보스출현전)](Evidence/Dungeon01B2Renewal_v1_20261012/candidate_area_0_9.5_runtime.png) · [석판 회수 구역](Evidence/Dungeon01B2Renewal_v1_20261012/tablet_area_runtime.png).
 
 [B1후보/B2후보 전체 연속성](Evidence/Dungeon01B2Renewal_v1_20261012/b1_b2_candidate_continuity.png) · [B1하강로/B2입구 실제 연결부](Evidence/Dungeon01B2Renewal_v1_20261012/b1_b2_connection_runtime.png). B1이미지는기존통과검수의실제RT를재사용했습니다. B2는더차갑고푸른석재, B1은먼지/마모가더많습니다. 타일밀도·방구별·작은홈의가독성은사용자미술검토대상입니다.
 
@@ -74,7 +74,7 @@ Overlay는실제RT위에실측좌표를그린설명합성입니다. 일반Spawn4
 
 오래된B2/보스문서의Main11·봉인실미구현문구는과거범위기록이며현재스토리정본/실제코드/이번보스→석판→귀환완료결과와구별합니다. 과거표기를근거로현재기능을되돌리지않았습니다.
 
-시작로컬/원격main395dd5d일치. 사용자337status항목/822파일, 원본게임3738파일전체SHA256불변을확인했습니다. 원본B1/B2Scene·승인Field03/아트/몬스터/전투/Quest/Save/설정/TTS/BGM/meta/GUID변경0입니다. [보호JSON](Evidence/Dungeon01B2Renewal_v1_20261012/protection.json). **USER_ART_REVIEW_PENDING, 원본영구적용0, 문서·QA만선택적Commit, Git Push0.** 검수Commit은후속상태기록에남깁니다.
+시작로컬/원격main395dd5d일치. 사용자337status항목/822파일, 원본게임3738파일전체SHA256불변을확인했습니다. 원본B1/B2Scene·승인Field03/아트/몬스터/전투/Quest/Save/설정/TTS/BGM/meta/GUID변경0입니다. [보호JSON](Evidence/Dungeon01B2Renewal_v1_20261012/protection.json). **USER_ART_REVIEW_PENDING, 원본영구적용0, 문서·QA만선택적Commit, Git Push0.** 검수 Commit은 `4e30cd89f2ed9b2a2cefa4dcfd96c37e2062a012`입니다.
 
 ## 실사용PNG31개
 

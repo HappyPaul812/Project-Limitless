@@ -47,5 +47,6 @@
   "actual_b2_collider_rows": 25,
   "actual_b2_box_colliders": 16,
   "collider_scope_error_fixed": true,
-  "collider_data_checks": 24
+  "collider_data_checks": 24,
+  "inspection_commit": "4e30cd89f2ed9b2a2cefa4dcfd96c37e2062a012"
 }
