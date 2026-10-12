@@ -1,4 +1,12 @@
-# 월드·환경 리뉴얼 아트 담당 행동요령
+# Chapter 1·2 기존 자산 리뉴얼 담당 행동요령
+
+**최종 사용자 결정(2026-10-12): 리뉴얼 담당은 Chapter 1·2 기존 아트 교체(환경·몬스터·보스·펫·NPC·VFX)만 전담합니다. 기존 스프라이트 담당은 Chapter 3 이후 모든 신규 아트(환경·필드·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI 필요 이미지)를 총괄합니다. 기존 공식 승인 자산은 별도 승인 없이 교체하지 않습니다. Codex는 구현·Unity 통합·QA 전담입니다.**
+
+## 즉시 적용할 최신 범위
+- Chapter 2 환경: Field_04_WesternBorder → Arbel → Field_05_WesternOutskirts → Field_06_ScorchedTrail → Field_07_AshenReach → Field_08_RedRift → Field_09_ObsidianScar → Field_10_BurningPulse → Field_11_DeepCore.
+- 환경 정식 적용 이후 Chapter 1·2의 실제 무료/공용 몬스터→펫→마을 NPC→VFX 순으로 조사·교체. 사용자 제공 공식 몬스터 시트나 승인 보스·캐릭터는 무단 교체하지 않습니다.
+- [Chapter2 리뉴얼 로드맵](../../LIMITLESS_Chapter2_Original_Art_Roadmap_20261012.md) 및 [인계문](../../LIMITLESS_Renewal_Lead_Handoff_20261012.txt) 참조.
+- Chapter 3 이후 신규 아트는 제작하지 않고 기존 스프라이트 담당에 맡깁니다. 겹치거나 같은 자산을 중복 주문하지 않습니다.
 
 ## 목적
 기존 무료 에셋 인상이 강한 환경을 **LIMITLESS 고유의 따뜻하고 생활감 있는 안전지대 → 이상 징후가 스며드는 필드·던전** 방향으로 단계적 교체한다. 리뉴얼은 **게임 기능 보호가 최우선**이다.
