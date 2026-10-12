@@ -1,3 +1,9 @@
+## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
+
+- 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.
+- 이제 AI main직접커밋금지, 기획docs/planning·Codex codex/주제 작업브랜치. 기획정책문서는docs/planning74c5a0b에서읽었고다른담당브랜치변경0. 사용자Push는Codex작업브랜치만, main병합은별도결정. 이전HEAD:main안내대체/Git_BranchOnly_Integration_20261013.md참조.
+- 원본337항목/822미커밋·4,750파일전후SHA/status/HEAD 보호. 원본Editor/Unity/TTS/아트적용/Push0. 기존QA·미술승인대기·Field04보완상태유지.
+
 ## 2026-10-13 Git 안전 통합·Rock B v2/Field04 격리 검수
 
 - 원본337항목/822미커밋·4,750보호파일 SHA 불변. 원본main ff022e6/Editor Bootstrap·비포커스/Save/TTS/BGM 보호. 최종원격405ce12(원격전용7커밋)+로컬A/B를 별도 codex/integrate-main-20261013 worktree에서 보존 통합, 충돌0/Unity diff0/Push0. 정확한 사용자 Push 명령은 ArtInspection_20261013_Summary.md.

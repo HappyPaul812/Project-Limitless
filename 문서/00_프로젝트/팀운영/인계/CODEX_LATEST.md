@@ -1,3 +1,11 @@
+## 2026-10-13 새 담당별 브랜치 규칙·통합 v2
+
+- 사용자최신규칙: AI main직접커밋금지. 기획docs/planning, Codex codex/주제별브랜치+별도worktree. 이전HEAD:main명령사용금지, ../../Git_BranchOnly_Integration_20261013.md의작업브랜치Push안내우선. CodexPush0/main병합은사용자별도결정.
+- 새 worktree Temp/GitIntegration20261013V2/main-integration / codex/integrate-main-20261013-v2. 이전통합961c90d에서분기후최신origin/main73c37bf보존merge71f71bb, 충돌0. 두SHA모두조상·Unity변경0. 기획docs/planning74c5a0b정책읽기만/다른브랜치변경0.
+- 원본main ff022e6/337항목822파일·4,750SHA보호, 이전통합worktree961c90d도보존. reset/stash/amend/force/아트적용/TTS/원본Editor조작0. 기존Rockv2/Field04검수및승인대기상태유지.
+
+새세션문구: “LIMITLESS Codex 담당입니다. Git_BranchOnly_Integration_20261013·이인계·CURRENT_STATUS를읽고codex작업브랜치만사용하세요. 원본main/미커밋/961c90d통합이력보호, Push/main직접작성/승인전자산적용금지입니다.”
+
 ## 2026-10-13 Git 통합·Rock B v2/Field04 검수 인계
 
 - 최신검수는 ../../ArtInspection_20261013_Summary.md 및 Rock/Field04각보고서. 최종원격405ce12+로컬A/B 안전통합은 Temp/GitIntegration20261013/main-merge / codex/integrate-main-20261013. Push0, 사용자정확명령은총괄참조. 원본main ff022e6/337항목822파일 보호; 단순원본git push는분기상태임.

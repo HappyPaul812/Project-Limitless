@@ -1,5 +1,7 @@
 # main Push 거절 안전 통합 준비 — 2026-10-13
 
+> 최신 사용자 지시: AI의 main 직접 커밋/Push 안내는 담당별 브랜치 방식으로 대체됩니다. [브랜치 전환 기록](Git_BranchOnly_Integration_20261013.md)을 우선 따릅니다. 이전 통합961c90d는 보존하고 새 v2 worktree에서 최신 main73c37bf를 병합했습니다.
+
 **INTEGRATION_PREPARED / PUSH_NOT_EXECUTED.** 원본 dirty 작업 트리를 변경하지 않고, 원격 main 기반 별도 worktree에 로컬 전용 문서 두 커밋을 순서대로 cherry-pick했습니다. 충돌0, 원격 네 커밋과 원래 로컬 두 커밋 모두 보존했습니다.
 
 ## 원인·실제 이력
@@ -27,10 +29,10 @@
 최종 QA 보고의 통합 HEAD SHA를 확인한 뒤 다음을 실행하시면 됩니다.
 
 ```powershell
-git -C "F:\study\codex\Project-Limitless\Temp\GitIntegration20261013\main-merge" push origin HEAD:main
+git -C "F:\study\codex\Project-Limitless\Temp\GitIntegration20261013V2\main-integration" push origin HEAD:refs/heads/codex/integrate-main-20261013-v2
 ```
 
-`--force`를 쓰지 않습니다. 그 사이 다른 담당이 원격 main을 갱신하면 안전하게 다시 거절될 수 있으므로 원격 보존 통합부터 재확인합니다. 원본 dirty 작업 트리에서 단순 `git push`를 반복해도 원본 main은 아직 이전 분기 상태입니다. 위 명령은 **검증된 통합 worktree의 HEAD**를 main으로 올립니다. 이 작업에서 Push/원격 branch 변경은0입니다.
+`--force`를 쓰지 않습니다. 원본 dirty 작업 트리에서 단순 `git push`를 반복하지 않습니다. 위 명령은 **검증된 v2 worktree의 HEAD를 Codex 작업 브랜치에만** 올립니다. main 최종 병합은 사용자 별도 결정입니다. 이 작업에서 Push/원격 branch 변경은0입니다.
 
 Push 후 원본 로컬 main 동기화는 사용자 미커밋을 보존하는 **별도 작업**입니다. 자동 stash/reset/원본 checkout을 권하지 않습니다. 원본 Unity·미술·TTS·Save를 새 통합 checkout으로 자동 이전하지도 않습니다.
 

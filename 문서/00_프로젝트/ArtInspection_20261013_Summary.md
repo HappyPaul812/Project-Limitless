@@ -1,5 +1,7 @@
 # 2026-10-13 Git 통합·Rock B v2·Field04 검수 총괄
 
+> 최신 Git 규칙: 이전 main 직접 Push 명령은 [Codex 작업 브랜치 v2 안내](Git_BranchOnly_Integration_20261013.md)로 대체됩니다. 검수 결과/기존961c90d 이력은 보호하며 새 원격main73c37bf를 별도 worktree에서 보존 병합했습니다.
+
 **Git 통합 준비 완료 / 두 아트 검수 완료 / 원본 정식 적용0 / TTS 호출0 / Push0.** Rock B v2는 기술 보완을 통과했고 최종 미술 승인 대기입니다. Field04는 납품표 보완·RockNorth 보류와 기존 경계/Spawn 문제가 있어 전체 PARTIAL입니다.
 
 ## Git 결과·Push 경로
@@ -17,10 +19,10 @@
 사용자가 **검증된 통합 worktree에서** 직접 실행할 명령:
 
 ```powershell
-git -C "F:\study\codex\Project-Limitless\Temp\GitIntegration20261013\main-merge" push origin HEAD:main
+git -C "F:\study\codex\Project-Limitless\Temp\GitIntegration20261013V2\main-integration" push origin HEAD:refs/heads/codex/integrate-main-20261013-v2
 ```
 
-원본 dirty checkout의 단순 git push와 다릅니다. 그 사이 원격이 또 바뀌면 force 없이 거절되어 보호되며, 다시 통합 확인이 필요합니다. Push 후 원본 main 동기화는 사용자 수정 보호를 포함하는 별도 작업입니다. Codex는 위 명령을 실행하지 않았습니다.
+원본 dirty checkout의 단순 git push와 다릅니다. **Codex 작업 브랜치만** Push하며 main은 변경하지 않습니다. 동일 작업 브랜치에 원격 신규 이력이 있으면 force 없이 거절됩니다. main 최종 병합 및 원본 main 동기화는 사용자 결정과 수정 보호를 포함하는 별도 작업입니다. Codex는 위 명령을 실행하지 않았습니다.
 
 ## 검수 결과·Preview
 
