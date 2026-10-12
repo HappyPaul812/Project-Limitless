@@ -16,3 +16,12 @@
 - **접근성**: 기존 이동 보조기/휠체어를 포함한 통행 경로의 실루엣·패턴 대비 보호, 상태 전달은 텍스트+형태와 함께, 번쩍임/빠른 반복 화면 흔들림 금지. 보스 전투 중 화로는 Field 소품으로 임의 확정 금지.
 - **다음 우선 작업**: (1) 사용자에게 첫 구간 시안 및 단계별 톤 검토/승인 받기 (2) 기획 담당에게 실제 첫 신규 구간/Scene·몬스터·NPC와 별도 계약 확인 (3) Codex에 기존 Tile/PPU/Pivot/Collider 등 LOCAL 비대화형 조사를 의뢰하고 실사용 PNG 분해 제작, 승인 후에만 Unity 통합·Runtime QA. 중복 아트는 리뉴얼 담당에 조율.
 - **후임 시작 문구**: “너는 LIMITLESS Chapter3 이후 신규 아트 총괄 담당이다. GitHub SPRITE_ART.md, SPRITE_ART_LATEST.md, Chapter3 초기 방향·형제애·냉기/스킬·몬스터/경제 정본 및 CURRENT_STATUS를 읽고 와. 2026-10-13 북쪽 환경 콘셉트 초안은 미술 승인 대기이며, 기존 공식 캐릭터/Chapter1·2 리뉴얼 파일을 건드리지 마.”
+
+## 2026-10-13 GitHub 브랜치 협업 규칙
+
+- **본 담당의 유일한 GitHub 문서 작업 브랜치: `docs/art-new`**. `main` 직접 커밋·Push·병합하지 않음. main 반영은 사용자 승인 후 별도 절차.
+- 타 담당 브랜치: 기획 `docs/planning`, 리뉴얼 `docs/art-renewal`, TTS `docs/tts`, BGM `docs/bgm`, SFX `docs/sfx`, 영상 `docs/video`, Codex `codex/작업명`(별도 로컬 worktree).
+- 최신 원격 main 및 담당 브랜치, 수정 대상 blob SHA 확인 후 자기 문서만 변경. 다른 담당 변경 강제 덮어쓰기·force push 금지.
+- 완료 보고 필수: 브랜치 이름/커밋 SHA/변경 결과/사용자 승인 필요 여부.
+- 이전 Chapter3 북쪽 콘셉트 초안은 `ART_CONCEPT_DRAFT / USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED` 상태를 유지하며, 이번에는 게임 아트·Unity 자산을 변경하지 않음.
+- 이 규칙 갱신은 담당 아트 역할 문서와 인계문에 한정; 공통 규칙이나 타 담당 파일을 이 브랜치에서 수정하지 않음.
