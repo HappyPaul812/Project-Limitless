@@ -6,7 +6,7 @@
 - 기존 Search예외 별도미해결로 전체 PARTIAL. QA 출구좌표 오류/재개, 연속무회복 기본공격 승리FAIL 이력 보존. 개별 스폰 테스트의 기본HP fixture를 연속사냥 밸런스 승인으로 확대하지 않음. 사람 키보드/패드 플레이·가독성/조작감·전직업/레벨 밸런스 NOT_VERIFIED.
 - 원본3684파일 중 Field02 Scene1만 허용변경, 다른3683해시 불변. 사용자337항목/822파일 보호, 기존TTS25·오류10 무음·Save·메타/승인아트 유지. 원본Editor/포커스 무접촉. 기존 통합worktree 유지·main55ac89f 안전FF·Push0.
 - [정식 통합 QA/증거](Field02_Renewal_Official_Integration_QA_20261012.md), [승인 및 기존 검수](Field02_Renewal_Art_v1_Inspection_20261012.md). ZIP현재경로 `F:/Downloads/Limitless_Sprites/Limitless_Field02_Renewal_Art_v1.zip` 재확인. 다음: 사용자 실제플레이와 기존Search 별도복구.
-- 관련 기준Commit `55ac89f`. 정식통합 Commit은 후속 최종 상태 갱신에 기록.
+- 관련 기준Commit `55ac89f`, 정식통합 Commit `7b75d00`. Push는 사용자가 직접 수행.
 
 <!-- FIELD02_OFFICIAL_20261012_END -->
 
