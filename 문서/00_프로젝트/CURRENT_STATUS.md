@@ -1,3 +1,14 @@
+<!-- FIELD03_OFFICIAL_20261012_BEGIN -->
+## 2026-10-12 Field03 사용자 승인·정식 통합 완료
+
+- **USER_ART_APPROVED / 신규11종 / 375 of 376참조 / QA_PARTIAL**. Scene362+Theme복제13 신규적용, Rock B1종/Scene1개는 분리alpha14픽셀·접지불일치로 기존Sprite 유지. 원본PNGbyte/기존GUID·좌표·Scale·Flip·Sorting·Collider·Tint(0.46,0.61,0.46)/CameraColor 보호. 신규26파일·GUID15개/충돌0, 보조8종 배치0·게임C#변경0.
+- 실제 Main08전체/Main09폴해금/Main10입구개방·Continue3회 PASS. Main11은 Field03자동시작이 아니라 Dungeon01진입시시작 확인. QA의잘못된가정만수정하고 Main10완료Save에서재개, 이미통과한Story반복0. 모델용량중단동안남은QA완료되어 재실행0.
+- 일반6Spawn 정상UI전투·30초미생성/현행35초리스폰·최종6/중복0, Field02/Dungeon01왕복, 휠체어11지점/112물리waypoint, Field01/02/마을회귀 PASS. Compile/Missing Sprite/Script0. 기존Search예외로전체PARTIAL, 폴주변이름/안내겹침은기존검수에서도관찰. OS직접조작·Main11전체던전·장시간가독성/밸런스·외부소스권리 NOT_VERIFIED.
+- 사용자337항목/822파일 보호, 게임기존3712파일중Scene1만변경/3711SHA불변. CURRENT_STATUS 사용자8줄은Commit제외. 원본Editor/포커스무접촉·Push0. 다음: Rock B수정본 재검수/1참조연결, 사용자실제플레이, 기존Search별도조사.
+- [정식QA·Preview·증거](Field03_Renewal_Official_Integration_QA_20261012.md), [Rock B수정요청](Evidence/Field03Official_20261012/RockB_Art_Correction_Request.md). 기준Commit `9c7457b`; 정식통합Commit은 후속상태기록. Push는사용자직접수행.
+
+<!-- FIELD03_OFFICIAL_20261012_END -->
+
 <!-- FIELD03_INSPECTION_20261012_BEGIN -->
 ## 2026-10-12 Field03 리뉴얼 v1 검수 — 미술 승인 대기
 

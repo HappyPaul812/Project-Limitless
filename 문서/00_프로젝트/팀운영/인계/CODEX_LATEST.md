@@ -1,35 +1,34 @@
 # Codex 최신 인계 — 2026-10-12
 
-역할: LIMITLESS Unity 구현·검증 담당. 대화 맥락 장기화에 대비한 로컬 인계다. GitHub Push0이며 사용자가 직접 수행한다. 새 세션은 AGENTS/팀운영 START_HERE·COMMON_RULES·담당 CODEX/PROJECT_CONTEXT/CURRENT_STATUS를 먼저 읽는다.
+LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES·담당 CODEX/PROJECT_CONTEXT/CURRENT_STATUS 순서로 확인합니다. 사용자에게한국어존댓말, Push/TTS API/원본Editor조작 금지입니다.
 
-## 현재 완료와 승인
+## 현재 완료
 
-- Field01 복구, 하렌/세린 공식 아트, Main18 정상12·Main19 정상13 TTS 통합, Chapter2 종합QA/Chapter3 설계는 개별 보고서·CURRENT_STATUS를 따른다. 오류 Main18 세린10개는 REGEN_REQUIRED/Unity무연결·무음/Schedar 유지. 재통합·TTS API 호출 금지.
-- Field02 USER_ART_APPROVED·정식Sprite12/Scene363+Theme10 연결 완료. 통합 `7b75d00`, 상태 `e31d8e3`; 사용자가 Push 완료, 이번 시작 ls-remote와 로컬HEAD e31d8e3 일치. Field02 재작업 금지.
-- Field03 최신 검수 [정본](../../Field03_Renewal_Art_v1_Inspection_20261012.md): **USER_ART_REVIEW_PENDING / QA_PARTIAL / 영구적용0**. ZIP SHA333ffb32…1209d81, PNG29(실사용20/직접12+보조8). 실제Scene363+Theme13=376. 원본/후보Runtime·376CSV·Overlay·단계별확대 확보.
+- Field01복구, 하렌/세린 공식아트, Main18정상12·Main19정상13 TTS, Chapter2 QA/Chapter3설계, Field02정식12종/373참조는 완료상태를보호합니다. Main18오류10개무음·REGEN_REQUIRED/Schedar 유지, 재작업금지.
+- **Field03 USER_ART_APPROVED / 정식11종·375/376참조 / QA_PARTIAL**. Scene362+Theme13 신규Sprite, Rock B1종/1참조는 기존Sprite로보류. [정본QA](../../Field03_Renewal_Official_Integration_QA_20261012.md), [최초검수](../../Field03_Renewal_Art_v1_Inspection_20261012.md).
+- PNG원본byte보존, 신규26파일/GUID15개충돌0, 기존좌표·Collider·Sorting·Tint/CameraColor불변. 보조8종추가0/게임C#변경0. Rock B상단14분리픽셀·낮은접지는 [아트수정요청](../../Evidence/Field03Official_20261012/RockB_Art_Correction_Request.md) 참고. 원본PNG임의수정금지.
 
-## Field03 핵심 인계
+## 검증과 남은 범위
 
-- Rock B 상단 분리14alpha픽셀, 본체 bbox(12,69)-(116,125)의 중앙아래 배치/접지 보완 권장. 나무 밝은 외곽·기존Tint 암부·반복감·Field02 연속성 검토 필요. PNG 자동 수정/재생성 금지. 보조8종 미배치, 입구 항상표시 금지. 출처/권리 독립감사 미완료는 Manifest에 기재됨.
-- Main08 Field03 조사/깊은고요, Main09 6목표·폴해금, Main10 7목표·입구0~3숨김/4이후표시, BootstrapContinue3회, DungeonB1진입/Field03귀환, Field02왕복 PASS.
-- 기존Field03 몬스터6(거미1/뱀1/갑충2/박쥐2)의 SpawnDefinition은 **전부35초**다. 사용자요청30초와 다르므로 값을 변경하지 않았다. 6개 정상UI전투승리/30초미생성/35초생성·중복0 확인. 이 불일치를 다음 통합에서 무단으로30초로 바꾸지 않는다.
-- 실제Player Circle반경0.5+margin0.03·NPC Collider 포함11지점 물리 접근, 실제16:9 Camera4방향 Bounds PASS. QA의 잘못된30초 기대값·반경0.4/NPC제외 탐색 실패는 원시로그를 보존하고 검사만 보정했다. 목표중심이 막히면 상호작용범위1.6 이내(검사0.9 이내) 접근점을 사용한다.
-- 기존 Unity Search 내부 예외2이슈 유지. 전체 PARTIAL. OS직접입력·사람미술/가독성·전체레벨/직업·연속사냥밸런스 미검증. 정상전투는 실제 UI버튼/대상HitArea/TurnQueue 경로이며 결과주입과 구별한다.
+- Main08전체(처음Field02조사4포함), Main09폴해금, Main10단계별입구/완료, Save→BootstrapContinue3회 PASS. Main11은 **Dungeon01 B1진입에서시작**하며Field03에서는Available/활성Main없음이정상입니다.
+- 첫QA가Main11 Field03자동시작을가정해NullReference실패했습니다. 게임문제가아닌QA가정오류로스크립트만수정, Main10완료Save에서재개했습니다. 최초168PASS, 재개316PASS/FAIL0. 모델capacity중단뒤남은프로세스이미종료, 통과검사재실행0.
+- 6일반몬스터실제Attack/HitArea/UI승리/복귀, 현행**35초**리스폰(30초미생성), 최종6개중복0. 타이머설정변경금지. Field02/Dungeon01왕복·휠체어11지점112waypoint·Field01/02/마을회귀 PASS.
+- Search.SearchDatabase/IndexationOnStartup 예외재현으로전체PARTIAL. 폴/파티안내인 이름·대화안내겹침은최초검수에도존재. 실제OS키/패드·장시간가독성/밸런스·Main11전체던전·외부소스권리는NOT_VERIFIED.
 
-## 로컬 보호와 검증 경로
+## 보호·재개 경로
 
-저장소 `F:/study/codex/Project-Limitless`. 원본 Unity PID31832를 조작하지 않는다. 미커밋337항목 유지(CURRENT_STATUS 사용자8줄 포함). Field03 시작 보호게임3712파일 전부byte 동일. Save·meta/GUID·승인아트·TTS/BGM·ThirdParty 원본 보호.
+원본 `F:/study/codex/Project-Limitless/Unity/Client`, 원본Unity PID31832 및그ImportWorker 조작금지. 사용자337status항목/822파일(CURRENT_STATUS 사용자8줄포함) 보호, 기존게임3712중Field03Scene1만허용변경/다른3711SHA불변입니다. Save/설정/meta/승인아트/TTS/BGM/ThirdParty 원본보호.
 
-기존 격리 `Temp/Field01RenewalQA/Client` 재사용. Field03 결과 `Field03Inspection_20261012`, 접근/Camera 결과 `Field03Viewport_20261012`. 스피커0/별도 AuditSaveDirectory·Settings/최초쓰기 경로 검증. QA C#는 격리복사본에만 있다. 원시로그·스냅샷·재실행 스크립트 `Temp/Field03Inspection20261012/` 보존. 검수 증거는 정본의Evidence 링크.
+격리프로젝트 `Temp/Field01RenewalQA/Client` 재사용. 결과 `Field03Official_20261012`, 원시로그/소스/보호스냅샷 `Temp/Field03Official20261012`. 별도AuditSaveDirectory/Settings/음소거. 통합QA프로세스는종료했습니다. 증거정본 `문서/00_프로젝트/Evidence/Field03Official_20261012`.
 
-이전 Git 통합worktree `Temp/GitIntegration20261012/main-merge`는55ac89f에 남아 있으며 무단삭제 금지. 원본main은 승인된 안전FF 후 Field02/검수 Commit을 쌓는다. reset/clean/add-A/Push 금지, 선택적 Commit만.
+기존통합worktree `Temp/GitIntegration20261012/main-merge`55ac89f 유지, 무단삭제금지. 시작로컬/원격main9c7457b일치. 원본CURRENT_STATUS8줄은선별index에서제외하며파일을되돌리지않습니다.
 
 ## 다음 순서
 
-1. Field03 미술보완/사용자승인을 확인한다. 지금은 승인 대기이며 실제게임Asset에 추가하면 안 된다.
-2. 승인 범위가 정해지면376CSV로 Sprite-only 별도 통합, 원래좌표/Collider/Tint/스토리·35초 타이머 보호. 보조8종은 별도 승인 없으면 추가하지 않는다.
-3. 기존Search 예외는 독립 작업으로 조사한다. 다른 완료 기능을 재작업하지 않는다.
+1. 정상11종은정식완료입니다. Rock B수정본만새버전으로납품받아확대검수후1참조를연결합니다. 보조8종은별도기획없으면미배치유지합니다.
+2. 사용자직접플레이로가독성/조작감확인, Search예외는별도범위에서조사합니다.
+3. 이번Commit후Push는사용자가직접수행합니다. 자동Push금지입니다.
 
-새 세션 복붙: **“너는 LIMITLESS Codex 담당이다. AGENTS와 팀운영/인계/CODEX_LATEST.md 및 CURRENT_STATUS를 읽고, Field03 미술 승인 상태를 확인한 뒤 허용된 범위만 이어 진행해 주세요. 원본Editor·Save·337개 사용자 변경 보호, Push/TTS API 금지.”**
+새세션시작문구: “LIMITLESS Codex 담당입니다. AGENTS·CURRENT_STATUS·이인계를확인하고 Field03 정상11종은보존한채 Rock B후속범위만진행해주세요. 원본Editor·337사용자변경·Save보호, Push/TTS API금지.”
 
-마지막 Field03 검수 Commit은 `80d998a`이며 CURRENT_STATUS의 후속 상태 기록을 확인한다. 이번 문서는 로컬 저장이며 원격 반영됐다고 주장하지 않는다.
+정식통합Commit SHA는후속상태기록에남깁니다.

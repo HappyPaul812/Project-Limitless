@@ -1,0 +1,15 @@
+{
+  "original_files": 3712,
+  "allowed_changed": [
+    "Unity/Client/Assets/_Project/Scenes/Field_03.unity"
+  ],
+  "others_byte_unchanged": 3711,
+  "user_status_items": 337,
+  "user_files_byte_unchanged": 822,
+  "original_meta_guid_unchanged": true,
+  "approved_art_tts_bgm_unchanged": true,
+  "save_settings_unchanged": true,
+  "original_editor_untouched": true,
+  "push": false,
+  "baseline_head": "9c7457b381bbb67239a1bcd7d8c8425a3a12dea7"
+}

@@ -1,5 +1,7 @@
 # Field03 「침묵의 숲길」리뉴얼 v1 검수 — 2026-10-12
 
+> **후속 승인·정식 적용: USER_ART_APPROVED (2026-10-12).** 정상11종/Scene362+Theme13=375참조를 정식연결했습니다. Rock B1종/1참조는 기술보류로 기존Sprite를 유지합니다. [정식통합 QA](Field03_Renewal_Official_Integration_QA_20261012.md)를 최신상태로 따르세요. 아래 승인대기·영구적용0 표기는 **최초 검수 당시 기록**으로 보존합니다.
+
 **USER_ART_REVIEW_PENDING / 전체 QA_PARTIAL / 원본 게임 영구 적용0.** PNG 기계 검사는 PASS지만 Rock B의 분리 픽셀/접지, 나무 외곽 밝은 픽셀, 기존 Tint의 암부와 반복무늬는 미술 보완 검토가 필요하다. 임시 Sprite는 격리 Unity의 메모리에서만 적용했고 Scene을 저장하지 않았다.
 
 ## 시작 상태·검수 기준

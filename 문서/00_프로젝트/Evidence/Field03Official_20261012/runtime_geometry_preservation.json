@@ -1,0 +1,12 @@
+{
+  "references": 376,
+  "fields": [
+    "position",
+    "scale",
+    "sorting",
+    "flip",
+    "colliders",
+    "tint"
+  ],
+  "differences": []
+}

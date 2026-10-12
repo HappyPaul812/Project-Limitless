@@ -1,0 +1,316 @@
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_ForestFloor_C_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Path_Left_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Path_Right_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Bush_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Bush_B_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Fence_MossWood_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Rock_Moss_A_128_v1.png
+PASS|Candidate.Import.LL_C1_F03_Tree_Big_255x256_v1.png
+PASS|Candidate.Import.LL_C1_F03_Tree_Medium_128x156_v1.png
+PASS|Save.IsolatedResumeDirectory
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Main11.AvailableBeforeDungeonEntry.Main10CompletedCheckpoint
+PASS|Dungeon.ActualEntranceInteract
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Main11.StartsOnlyOnActualDungeonEntry
+PASS|Dungeon.Field03CountingScope0
+PASS|Dungeon.Initial4
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Gate.Spawn.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+PASS|Gate.Spawn.Field_02
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Gate.Spawn.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Monster.DefinitionSpiderSnakeBeetle2Bat2.TimerPerLocal35
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_deep_bat
+PASS|Respawn.MeasureSceneField03.field03_deep_bat
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_deep_bat.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_deep_bat
+PASS|Respawn.DefeatedAbsent.field03_deep_bat
+PASS|Respawn.AbsentAt30.Expected35.field03_deep_bat
+PASS|Respawn.AvailableAtConfigured35.field03_deep_bat
+PASS|Respawn.OneInstanceAfter35.field03_deep_bat
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_beetle
+PASS|Respawn.MeasureSceneField03.field03_entrance_beetle
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_beetle.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_beetle
+PASS|Respawn.DefeatedAbsent.field03_entrance_beetle
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_beetle
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_beetle
+PASS|Respawn.OneInstanceAfter35.field03_entrance_beetle
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_snake
+PASS|Respawn.MeasureSceneField03.field03_entrance_snake
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_snake.Attacks7
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_snake
+PASS|Respawn.DefeatedAbsent.field03_entrance_snake
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_snake
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_snake
+PASS|Respawn.OneInstanceAfter35.field03_entrance_snake
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_entrance_spider
+PASS|Respawn.MeasureSceneField03.field03_entrance_spider
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_entrance_spider.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_entrance_spider
+PASS|Respawn.DefeatedAbsent.field03_entrance_spider
+PASS|Respawn.AbsentAt30.Expected35.field03_entrance_spider
+PASS|Respawn.AvailableAtConfigured35.field03_entrance_spider
+PASS|Respawn.OneInstanceAfter35.field03_entrance_spider
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_middle_bat
+PASS|Respawn.MeasureSceneField03.field03_middle_bat
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_middle_bat.Attacks7
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_middle_bat
+PASS|Respawn.DefeatedAbsent.field03_middle_bat
+PASS|Respawn.AbsentAt30.Expected35.field03_middle_bat
+PASS|Respawn.AvailableAtConfigured35.field03_middle_bat
+PASS|Respawn.OneInstanceAfter35.field03_middle_bat
+PASS|Fixture.IndependentFullHealth.BeforeBattle.field03_middle_beetle
+PASS|Respawn.MeasureSceneField03.field03_middle_beetle
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.field03_middle_beetle.Attacks8
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Respawn.TimerStartedAtVictoryReturn.field03_middle_beetle
+PASS|Respawn.DefeatedAbsent.field03_middle_beetle
+PASS|Respawn.AbsentAt30.Expected35.field03_middle_beetle
+PASS|Respawn.AvailableAtConfigured35.field03_middle_beetle
+PASS|Respawn.OneInstanceAfter35.field03_middle_beetle
+PASS|Respawn.FinalCount6.NoDuplicates
+PASS|Official.Scene363.New362.HeldRockB1
+PASS|RockB.OldSpritePositionColliderPreserved
+PASS|Official.RuntimeClone13.NewReferences375of376
+PASS|Theme.GroundTintUnchanged
+PASS|Theme.CameraColorUnchanged
+PASS|Wheelchair.PathMobility
+PASS|Wheelchair.VisualPresent
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 4.70)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -5.20)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.ReachableInteractionPosition.(2.40, -4.10)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(2.40, -4.10)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -3.75)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(3.50, -3.10)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, -3.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(1.80, -1.40)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -1.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-0.30, -3.30)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -3.25)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-1.15, -3.70)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -3.75)
+PASS|Wheelchair.ReachableInteractionPosition.(-1.85, -4.20)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-1.85, -4.20)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, -3.75)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-0.70, -4.55)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, -4.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.55, -4.85)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, -4.75)
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.wheelchair_south_runtime.png
+PASS|Scene.Field_01
+PASS|MissingScript0.Field_01
+PASS|MissingSprite0.Field_01
+PASS|Regression.Field01Approved363
+PASS|Scene.World_StarterVillage
+PASS|MissingScript0.World_StarterVillage
+PASS|MissingSprite0.World_StarterVillage
+PASS|Regression.Quest7StillComplete
+PASS|Scene.Field_02
+PASS|MissingScript0.Field_02
+PASS|MissingSprite0.Field_02
+PASS|Regression.Field02Official363
+PASS|Console.NoNewRuntimeError

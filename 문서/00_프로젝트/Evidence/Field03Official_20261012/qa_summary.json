@@ -1,0 +1,33 @@
+{
+  "user_art_status": "USER_ART_APPROVED",
+  "overall": "PARTIAL",
+  "new_sprites": 11,
+  "new_scene_refs": 362,
+  "new_runtime_clones": 13,
+  "new_refs": 375,
+  "total_refs": 376,
+  "held_rock_b": 1,
+  "first_pass_checks": 168,
+  "resume_pass_checks": 316,
+  "compile_errors": 0,
+  "search_exceptions_in_resume": 1,
+  "normal_victories": 6,
+  "respawn_config_seconds": 35,
+  "respawn_latency_seconds": [
+    0.002914429,
+    0.002113342,
+    0.002044678,
+    0.00227356,
+    0.002044678,
+    0.002029419
+  ],
+  "main08_full": true,
+  "main09_paul_unlocked": true,
+  "main10_complete": true,
+  "main11_dungeon_entry_start": true,
+  "main11_full_quest": "NOT_VERIFIED",
+  "save_continue_passes": 3,
+  "wheelchair_points": 11,
+  "wheelchair_waypoints": 112,
+  "source_rights": "NOT_VERIFIED"
+}

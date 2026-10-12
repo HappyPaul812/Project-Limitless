@@ -1,0 +1,178 @@
+[
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Ground/LL_C1_F03_ForestFloor_A_128_v1.png",
+    "guid": "a75c5b7b4c1e0ec41a7165f35b80eed3",
+    "fileID": "21300000",
+    "sha256": "545f82015429670db6df0b996730d870e5d81a2585798432dcb090063e4219f9",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Ground/LL_C1_F03_ForestFloor_B_128_v1.png",
+    "guid": "bce1324ac375f9c4790279e0c54cb4b4",
+    "fileID": "21300000",
+    "sha256": "93bbae061ab5d0f5022bcb6d3e8741ffd52fcdc9d5f69d97292703b56e707588",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Ground/LL_C1_F03_ForestFloor_C_128_v1.png",
+    "guid": "647ac5cdfe960b44aa32ae514110fc56",
+    "fileID": "21300000",
+    "sha256": "2dfcca6e43fae1e1bf53120bfcbddb0c764065f106b5054c8c7004c0ce600580",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Ground/LL_C1_F03_Path_Left_128_v1.png",
+    "guid": "d9687f26a8a50404c9c406108ed734fb",
+    "fileID": "21300000",
+    "sha256": "1c6e769aaa8f1d754126f63acf947cb0b022ae463a2ca3b1a3b06ae82ed0a980",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Ground/LL_C1_F03_Path_Right_128_v1.png",
+    "guid": "9a4de18e7f12bac42850c2ee3e2d902a",
+    "fileID": "21300000",
+    "sha256": "da4ac205b81d68e19b8dda2ae0781bbe159aba9be0ad59c8fec6e26c168d3e10",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Bush_A_128_v1.png",
+    "guid": "2e92a33e2f011fe45a85012d68429197",
+    "fileID": "21300000",
+    "sha256": "918ad88f7dcc7ef3df0d07b016c4795aa845001580b79c2ed89cdd7ac88776d0",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Bush_B_128_v1.png",
+    "guid": "b4ef966776ebd4c4597e25eeff156550",
+    "fileID": "21300000",
+    "sha256": "5e76cbd77eb1718972b69e83544060c6ffa250ac31567aa0c5ee4e30fef9ce98",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Fence_MossWood_128_v1.png",
+    "guid": "5557c1fa16bd2634cb03d40c4e11d663",
+    "fileID": "21300000",
+    "sha256": "c6b6f4ece31dc174f7f1626907b72f644f997b21eadb1ccf7fcfdb9c94946f4d",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Rock_Moss_A_128_v1.png",
+    "guid": "6cefb12ddc59e6e43b72bdcaf1ca9860",
+    "fileID": "21300000",
+    "sha256": "43639a257320c12cf051a391407020c2d61880f8b7a82100554eacb7a1a4e4c7",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Tree_Big_255x256_v1.png",
+    "guid": "b66ffbf3f19a3eb43a0b620b539abb66",
+    "fileID": "21300000",
+    "sha256": "4d78f9fe0cdd29dbcd12b46c810d3b137b33080c9e16a295f4ca2ff56de0d406",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  },
+  {
+    "path": "Assets/_Project/Art/Environment/Field03/V1/Props/LL_C1_F03_Tree_Medium_128x156_v1.png",
+    "guid": "e904e729c34cc63428347d779a6537e9",
+    "fileID": "21300000",
+    "sha256": "1bb3b108c7702ddce67434f005c7d0ab76569e11c34b1b5858578cb8436fc0aa",
+    "ppu": 128,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "alpha": 1,
+    "mipmap": false,
+    "filter": "Point",
+    "compression": "Uncompressed",
+    "npot": "None"
+  }
+]
