@@ -1,0 +1,1188 @@
+PASS|Save.IsolatedBeforeWrite
+PASS|Fixture.PreviouslyVerifiedB1Checkpoint4
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|B2.ActualArrivalStep5
+PASS|B2.Scene54
+PASS|B2.RuntimeStorySprites7
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.original_full_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.original_sealed_before_runtime.png
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Candidate.BeforeBossCluesHiddenAndBarrierClosed
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_full_before_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_sealed_before_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_-10_-1_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_10_-1_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_0_0_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_0_9.5_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_area_0_-8.5_runtime.png
+PASS|Scene.Dungeon_01
+PASS|MissingScript0.Dungeon_01
+PASS|MissingSprite0.Dungeon_01
+PASS|Gate.Spawn.Dungeon_01
+PASS|Boundary.B1Official28Preserved
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.b1_connection_runtime.png
+PASS|Boundary.ActualB1GateBackB2
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Boundary.B2SpawnExact
+PASS|Monster.B1FourDefinitions.Timer35
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b2_01
+PASS|Respawn.MeasureSceneB1.dungeon01_b2_01
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b2_01.Attacks4
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b2_01
+PASS|Respawn.DefeatedAbsent.dungeon01_b2_01
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b2_01
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b2_01
+PASS|Respawn.OneInstanceAfter35.dungeon01_b2_01
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b2_02
+PASS|Respawn.MeasureSceneB1.dungeon01_b2_02
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b2_02.Attacks5
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b2_02
+PASS|Respawn.DefeatedAbsent.dungeon01_b2_02
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b2_02
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b2_02
+PASS|Respawn.OneInstanceAfter35.dungeon01_b2_02
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b2_03
+PASS|Respawn.MeasureSceneB1.dungeon01_b2_03
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b2_03.Attacks5
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b2_03
+PASS|Respawn.DefeatedAbsent.dungeon01_b2_03
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b2_03
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b2_03
+PASS|Respawn.OneInstanceAfter35.dungeon01_b2_03
+PASS|Fixture.IndependentFullHealth.BeforeBattle.dungeon01_b2_04
+PASS|Respawn.MeasureSceneB1.dungeon01_b2_04
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Monster.ActualUIVictory.dungeon01_b2_04.Attacks10
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step5
+PASS|Official.TabletVisibility.Step5
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Respawn.TimerStartedAtVictoryReturn.dungeon01_b2_04
+PASS|Respawn.DefeatedAbsent.dungeon01_b2_04
+PASS|Respawn.AbsentAt30.Expected35.dungeon01_b2_04
+PASS|Respawn.AvailableAtConfigured35.dungeon01_b2_04
+PASS|Respawn.OneInstanceAfter35.dungeon01_b2_04
+PASS|Respawn.FinalCount4.NoDuplicates
+PASS|Main11.ActualInteract.dungeon01_main11_b2_entrance
+PASS|Dialogue.Completed
+PASS|Main11.Step6
+PASS|Main11.ActualInteract.dungeon01_main11_sealed_tombs
+PASS|Dialogue.Completed
+PASS|Main11.ActualInteract.dungeon01_main11_unknown_room
+PASS|Dialogue.Completed
+PASS|Main11.ActualInteract.dungeon01_main11_blue_flow
+PASS|Dialogue.Completed
+PASS|Main11.BossObjective9
+PASS|Save.Write.BeforeBoss
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step9
+PASS|Official.TabletVisibility.Step9
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Continue.StepPositionExact.BeforeBoss
+PASS|Scene.Battle
+PASS|MissingScript0.Battle
+PASS|MissingSprite0.Battle
+PASS|Boss.ActualFleeRejected
+PASS|Boss.LivePhase2SummonsBarrier
+PASS|Monster.ActualUIVictory.dungeon01_b2_boss.Attacks23
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step10
+PASS|Official.TabletVisibility.Step10
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Dialogue.Completed
+PASS|Boss.VictoryUnlocksBarrierStep10
+PASS|Official.Story7Visibility.Step10
+PASS|Official.TabletVisibility.Step10
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Save.Write.AfterBoss
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step10
+PASS|Official.TabletVisibility.Step10
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Continue.StepPositionExact.AfterBoss
+PASS|Dialogue.Completed
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Dialogue.Completed
+PASS|Official.Story7Visibility.Step10
+PASS|Official.TabletVisibility.Step10
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_full_after_runtime.png
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.candidate_sealed_after_runtime.png
+PASS|Main11.ActualInteract.dungeon01_main11_sealed_chamber
+PASS|Dialogue.Completed
+PASS|Main11.SealedChamberInspected
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.tablet_area_runtime.png
+PASS|Tablet.ActualInteract
+PASS|Tablet.Item1.Quest12
+PASS|Tablet.KeepInvestigatingChoice
+PASS|Save.Write.TabletRecovered
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step12
+PASS|Official.TabletVisibility.Step12
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Continue.StepPositionExact.TabletRecovered
+PASS|Continue.TabletAndBossDefeatPreserved
+PASS|Wheelchair.PathMobility
+PASS|Wheelchair.VisualPresent
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -8.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, -7.30)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.25)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(-10.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-10.00, -1.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(10.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-9.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-8.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-7.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-6.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-5.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-4.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-3.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-2.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-1.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(-0.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, -1.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, -1.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, -0.75)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, -0.50)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, -0.25)
+PASS|Wheelchair.PhysicsWaypoint.(10.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(9.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(8.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(7.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(6.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(5.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(4.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(3.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(2.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 0.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.00)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 9.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 0.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 1.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 2.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 3.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 4.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 5.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 6.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 7.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 8.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 9.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 9.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 9.50)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(0.00, 11.20)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 9.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 10.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 10.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 10.50)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 10.75)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 11.00)
+PASS|Wheelchair.PhysicsWaypoint.(0.00, 11.25)
+PASS|Wheelchair.RouteActualRadiusWithNpc.(1.25, 11.35)
+PASS|Wheelchair.PhysicsWaypoint.(0.25, 11.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.50, 11.25)
+PASS|Wheelchair.PhysicsWaypoint.(0.75, 11.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.00, 11.25)
+PASS|Wheelchair.PhysicsWaypoint.(1.25, 11.25)
+PASS|Graphics.DeviceAvailable
+PASS|RenderTexture.wheelchair_south_runtime.png
+PASS|Tablet.ReturnChoiceWithoutDuplicate
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Main11.NormalReturnCompleted.Tablet1
+PASS|Completed.SaveField03
+PASS|Scene.Bootstrap
+PASS|MissingScript0.Bootstrap
+PASS|MissingSprite0.Bootstrap
+PASS|Scene.Field_03
+PASS|MissingScript0.Field_03
+PASS|MissingSprite0.Field_03
+PASS|Completed.ContinueQuestItem
+PASS|Scene.Dungeon_01_B2
+PASS|MissingScript0.Dungeon_01_B2
+PASS|MissingSprite0.Dungeon_01_B2
+PASS|Official.Story7Visibility.Step-1
+PASS|Official.TabletVisibility.Step-1
+PASS|Official.Profile54.Generated26
+PASS|Official.Anchors54Preserved
+PASS|Official.ToggleRestores54
+PASS|Official.NoDuplicate
+PASS|Geometry.ScaleSortingFlip.0
+PASS|Geometry.TiledFootprint.0
+PASS|Geometry.ScaleSortingFlip.1
+PASS|Geometry.TiledFootprint.1
+PASS|Geometry.ScaleSortingFlip.6
+PASS|Geometry.TiledFootprint.6
+PASS|Geometry.ScaleSortingFlip.9
+PASS|Geometry.TiledFootprint.9
+PASS|Geometry.ScaleSortingFlip.14
+PASS|Geometry.TiledFootprint.14
+PASS|Geometry.ScaleSortingFlip.19
+PASS|Geometry.TiledFootprint.19
+PASS|Geometry.ScaleSortingFlip.26
+PASS|Geometry.TiledFootprint.26
+PASS|Geometry.ScaleSortingFlip.30
+PASS|Geometry.TiledFootprint.30
+PASS|Geometry.ScaleSortingFlip.36
+PASS|Geometry.TiledFootprint.36
+PASS|Geometry.ScaleSortingFlip.37
+PASS|Geometry.TiledFootprint.37
+PASS|Geometry.ScaleSortingFlip.38
+PASS|Geometry.TiledFootprint.38
+PASS|Geometry.ScaleSortingFlip.39
+PASS|Geometry.TiledFootprint.39
+PASS|Geometry.ScaleSortingFlip.40
+PASS|Geometry.TiledFootprint.40
+PASS|Geometry.ScaleSortingFlip.41
+PASS|Geometry.TiledFootprint.41
+PASS|Geometry.ScaleSortingFlip.42
+PASS|Geometry.TiledFootprint.42
+PASS|Geometry.ScaleSortingFlip.43
+PASS|Geometry.TiledFootprint.43
+PASS|Geometry.ScaleSortingFlip.44
+PASS|Geometry.TiledFootprint.44
+PASS|Geometry.ScaleSortingFlip.45
+PASS|Geometry.TiledFootprint.45
+PASS|Geometry.ScaleSortingFlip.46
+PASS|Geometry.Native.46
+PASS|Geometry.ScaleSortingFlip.47
+PASS|Geometry.Native.47
+PASS|Geometry.ScaleSortingFlip.48
+PASS|Geometry.Native.48
+PASS|Geometry.ScaleSortingFlip.49
+PASS|Geometry.Native.49
+PASS|Geometry.ScaleSortingFlip.50
+PASS|Geometry.Native.50
+PASS|Geometry.ScaleSortingFlip.51
+PASS|Geometry.Native.51
+PASS|Geometry.ScaleSortingFlip.52
+PASS|Geometry.Native.52
+PASS|Geometry.ScaleSortingFlip.53
+PASS|Geometry.Native.53
+PASS|Completed.ReentryCluesRetainedTabletHidden
+PASS|Console.NoNewRuntimeError

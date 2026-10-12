@@ -1,0 +1,1 @@
+이번 original_ 이름은 과거 QA 명칭을 유지한 파일이며 이미 정식 프로필이 로드된 화면입니다. 기존 미술은 legacy_before_integration_runtime.png로 비교하세요. candidate_ 이름도 이번에는 정식 코드 화면이며 임시 QA 교체가 아닙니다.

@@ -1,0 +1,1732 @@
+{
+    "rows": [
+        {
+            "name": "StoneBase",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_A_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 33.0,
+                "y": 25.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 33.0,
+                "y": 25.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.30000001192092896,
+                "g": 0.3400000035762787,
+                "b": 0.3700000047683716,
+                "a": 1.0
+            },
+            "sorting": -20,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2Entrance",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 9.0,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2Entrance_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -3.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2Entrance_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -1.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2Entrance_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2Entrance_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 2.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2SouthPassage",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": -6.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 5.0,
+                "y": 3.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2SouthPassage_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -1.5,
+                "y": -6.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 3.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 3.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "B2SouthPassage_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.5,
+                "y": -6.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 3.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 3.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestClosedOssuary",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_B_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -10.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestClosedOssuary_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -13.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestClosedOssuary_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -11.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestClosedOssuary_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -9.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestClosedOssuary_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -7.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastUnknownRoom",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_B_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 10.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastUnknownRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 7.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastUnknownRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 9.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastUnknownRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 11.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastUnknownRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 13.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_B_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 12.0,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 12.0,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -5.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -3.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -1.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 1.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 3.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "CentralStoneRoom_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 5.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGallery",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": 4.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGallery_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -2.0,
+                "y": 4.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGallery_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": 4.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGallery_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 2.0,
+                "y": 4.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 6.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.0,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 11.0,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 11.0,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.5799999833106995,
+                "g": 0.6100000143051147,
+                "b": 0.6399999856948853,
+                "a": 1.0
+            },
+            "sorting": -10,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -4.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -2.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -0.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 1.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossAntechamber_Joint",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 3.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.03500000014901161,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.3499999940395355,
+                "g": 0.3799999952316284,
+                "b": 0.41999998688697815,
+                "a": 1.0
+            },
+            "sorting": -9,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EntryWest",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (-4.50, -9.00, 0.00), Extents: (0.18, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": -4.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EntryEast",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (4.50, -9.00, 0.00), Extents: (0.18, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": 4.5,
+                "y": -9.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestOuter",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (-14.00, -1.00, 0.00), Extents: (0.20, 4.00, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": -14.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastOuter",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (14.00, -1.00, 0.00), Extents: (0.20, 4.00, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": 14.0,
+                "y": -1.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 8.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "WestTop",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (-10.00, 3.00, 0.00), Extents: (4.00, 0.20, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": -10.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 1.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "EastTop",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (10.00, 3.00, 0.00), Extents: (4.00, 0.20, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": 10.0,
+                "y": 3.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 1.0
+            },
+            "size": {
+                "x": 8.0,
+                "y": 0.4000000059604645,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGalleryWest",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (-3.20, 5.00, 0.00), Extents: (0.20, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": -3.200000047683716,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "SealGalleryEast",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (3.20, 5.00, 0.00), Extents: (0.20, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": 3.200000047683716,
+                "y": 5.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossRoomWest",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (-5.50, 9.50, 0.00), Extents: (0.20, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": -5.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BossRoomEast",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+            "collider": "BoxCollider2D:(0.00, 0.00):Center: (5.50, 9.50, 0.00), Extents: (0.20, 2.50, 0.00):False",
+            "fileID": 21300000,
+            "position": {
+                "x": 5.5,
+                "y": 9.5,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.4000000059604645,
+                "y": 5.0,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.7200000286102295,
+                "g": 0.75,
+                "b": 0.7699999809265137,
+                "a": 1.0
+            },
+            "sorting": 2,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "UnknownStoneMark",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -3.0,
+                "y": 1.600000023841858,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.20000000298023224,
+                "g": 0.3499999940395355,
+                "b": 0.4699999988079071,
+                "a": 1.0
+            },
+            "sorting": 1,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BlueFlow",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -1.5,
+                "y": 5.199999809265137,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.2199999988079071,
+                "g": 0.47999998927116394,
+                "b": 0.6200000047683716,
+                "a": 1.0
+            },
+            "sorting": 0,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "UnknownStoneMark",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -1.0,
+                "y": 1.600000023841858,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.20000000298023224,
+                "g": 0.3499999940395355,
+                "b": 0.4699999988079071,
+                "a": 1.0
+            },
+            "sorting": 1,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BlueFlow",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": -0.5,
+                "y": 5.199999809265137,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.2199999988079071,
+                "g": 0.47999998927116394,
+                "b": 0.6200000047683716,
+                "a": 1.0
+            },
+            "sorting": 0,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "UnknownStoneMark",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 1.0,
+                "y": 1.600000023841858,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.20000000298023224,
+                "g": 0.3499999940395355,
+                "b": 0.4699999988079071,
+                "a": 1.0
+            },
+            "sorting": 1,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BlueFlow",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 0.5,
+                "y": 5.199999809265137,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.2199999988079071,
+                "g": 0.47999998927116394,
+                "b": 0.6200000047683716,
+                "a": 1.0
+            },
+            "sorting": 0,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "UnknownStoneMark",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 3.0,
+                "y": 1.600000023841858,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.3499999940395355,
+                "y": 0.3499999940395355,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.20000000298023224,
+                "g": 0.3499999940395355,
+                "b": 0.4699999988079071,
+                "a": 1.0
+            },
+            "sorting": 1,
+            "flip": false,
+            "ppu": 64.0
+        },
+        {
+            "name": "BlueFlow",
+            "path": "Assets/ThirdParty/Kenney/RPGBase/PNG/rpgTile152.png",
+            "guid": "e38fd353fd47c7644acb692973a9ee07",
+            "candidate": "Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+            "collider": "",
+            "fileID": 21300000,
+            "position": {
+                "x": 1.5,
+                "y": 5.199999809265137,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 1.0
+            },
+            "size": {
+                "x": 0.11999999731779099,
+                "y": 1.399999976158142,
+                "z": 0.20000000298023224
+            },
+            "tint": {
+                "r": 0.2199999988079071,
+                "g": 0.47999998927116394,
+                "b": 0.6200000047683716,
+                "a": 1.0
+            },
+            "sorting": 0,
+            "flip": false,
+            "ppu": 64.0
+        }
+    ]
+}

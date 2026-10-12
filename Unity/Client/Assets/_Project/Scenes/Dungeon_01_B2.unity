@@ -4713,6 +4713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1749693069}
+  - component: {fileID: 918273646}
   m_Layer: 0
   m_Name: Dungeon01B2_Environment
   m_TagString: Untagged
@@ -6354,3 +6355,16 @@ SceneRoots:
   - {fileID: 1590863606}
   - {fileID: 479603325}
   - {fileID: 1377809133}
+--- !u!114 &918273646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749693068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08b45598b7d4d54b9ec62697c97ca04, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  definition: {fileID: 11400000, guid: 7ae5fa36ba10a3e488f0a5c33131fecf, type: 2}

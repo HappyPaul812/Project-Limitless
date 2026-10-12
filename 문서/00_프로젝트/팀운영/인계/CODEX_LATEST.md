@@ -1,3 +1,10 @@
+## 2026-10-12 B2 정식 통합·봉인실 표시 인계
+
+- USER_ART_APPROVED. PNG31 정식 등록, B1 공통 렌더링 코드 불변 재사용. B2 앵커54 보존/Tiled18/원크기소품8/줄눈숨김28/표시26. B1 PNG·Scene·프로필·문 TECH_HOLD 보호.
+- Main11 기존 단서7은 원래Sprite를 유지하며 처치 전 숨김/후 표시. 새 석판 그림은 목표10~11/아이템0만 표시하고 회수·완료 후 숨김. Inventory/Quest/장벽 조건은 기존 그대로.
+- 일반4UI승리·35초/보스23공격 Phase2소환·도망금지/Main11완료/Continue·재입장/휠체어/실제RT/Importer31 PASS. 전체 PARTIAL(Search 기존예외·사람손플레이/장시간가독성/권리 미검증).
+- 정본 Dungeon01_B2_Renewal_Official_Integration_QA_20261012.md. 사용자337/822·Save/GUID/TTS/BGM 보호. 원본 Editor31832 무접촉. 선택 Commit 후 사용자 직접 Push, Codex Push 금지. 다음 권장: 실제 화면 가독성 확인.
+
 ## 2026-10-12 Dungeon B1 정식 적용 인계 추가
 
 - USER_ART_APPROVED. 공식 PNG25 등록, Scene 컴포넌트 1개 추가(14줄), 기존63 앵커/Collider 보존. 프로필 Tiled20/원크기소품8/중복세부숨김33/문2기존유지, 생성28 재사용. B2 적용 없음.

@@ -1,0 +1,28 @@
+using System;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
+using ProjectLimitless.World;
+namespace ProjectLimitless.EditorTools
+{
+    public static class Dungeon01B2OfficialImports
+    {
+        public static void RunBatch()
+        {
+            if (!Application.isBatchMode || !Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets")) throw new Exception("isolated only");
+            const string art="Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/";
+            var paths=Directory.GetFiles(art,"*.png",SearchOption.AllDirectories).Select(p=>p.Replace('\\','/')).ToArray();
+            if(paths.Length!=31)throw new Exception("PNG31");
+            foreach(var path in paths)
+            {
+                var s=AssetDatabase.LoadAssetAtPath<Sprite>(path);var t=(TextureImporter)AssetImporter.GetAtPath(path);var settings=new TextureImporterSettings();t.ReadTextureSettings(settings);
+                if(s==null||s.pixelsPerUnit!=128||s.pivot!=s.rect.size*.5f||t.spriteImportMode!=SpriteImportMode.Single||settings.spriteMeshType!=SpriteMeshType.FullRect||t.filterMode!=FilterMode.Point||t.mipmapEnabled||t.textureCompression!=TextureImporterCompression.Uncompressed||t.npotScale!=TextureImporterNPOTScale.None)throw new Exception(path);
+                AssetDatabase.TryGetGUIDAndLocalFileIdentifier(s,out string guid,out long id);if(id!=21300000)throw new Exception("localID");
+            }
+            var d=Resources.Load<DungeonEnvironmentDefinition>("DungeonEnvironmentDefinitions/Dungeon01B2Renewal");
+            if(d.placements.Length!=54||d.placements.Count(p=>p.mode==DungeonEnvironmentDefinition.RenderMode.Tiled)!=18||d.placements.Count(p=>p.mode==DungeonEnvironmentDefinition.RenderMode.NativeSprite)!=8||d.placements.Count(p=>p.mode==DungeonEnvironmentDefinition.RenderMode.HideDetail)!=28)throw new Exception("roles");
+            File.WriteAllText("Dungeon01B2OfficialImports.done","PASS PNG31 PPU128 FullRect Single Point Uncompressed NPOTNone LocalID21300000; roles54=18/8/28");
+        }
+    }
+}

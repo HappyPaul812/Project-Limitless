@@ -1,0 +1,96 @@
+{
+    "rows": [
+        {
+            "name": "Monster_dungeon01_b2_03_monster_seal_guardian",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_03",
+            "monster": "monster_seal_guardian",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "source": {
+                "x": 10.0,
+                "y": -1.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_02_monster_shade_bat",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_02",
+            "monster": "monster_shade_bat",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "source": {
+                "x": -10.0,
+                "y": -1.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_01_monster_grave_wight",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_01",
+            "monster": "monster_grave_wight",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": -4.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false
+        },
+        {
+            "name": "Monster_dungeon01_b2_04_monster_seal_guardian",
+            "type": "MonsterSpawn",
+            "spawn": "dungeon01_b2_04",
+            "monster": "monster_seal_guardian",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "size": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "source": {
+                "x": 0.0,
+                "y": 4.0
+            },
+            "radius": 0.550000011920929,
+            "respawn": 35.0,
+            "trigger": false
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+phase2=True summonsMax=3 barrier=True shockPrepared=True attacks=23

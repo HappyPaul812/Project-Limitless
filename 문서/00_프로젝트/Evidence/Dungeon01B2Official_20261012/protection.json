@@ -1,0 +1,13 @@
+{
+  "userItems": 337,
+  "userFiles": 822,
+  "oldGameFiles": 3801,
+  "allowedChanged": [
+    "Unity/Client/Assets/_Project/Scenes/Dungeon_01_B2.unity",
+    "Unity/Client/Assets/_Project/Scripts/World/MainQuest11DungeonFlow.cs"
+  ],
+  "otherOldGameUnchanged": 3799,
+  "newGuidCollision": 0,
+  "checks": 1188,
+  "B1FilesUnchanged": true
+}

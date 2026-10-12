@@ -1,0 +1,1 @@
+PASS PNG31 PPU128 FullRect Single Point Uncompressed NPOTNone LocalID21300000; roles54=18/8/28

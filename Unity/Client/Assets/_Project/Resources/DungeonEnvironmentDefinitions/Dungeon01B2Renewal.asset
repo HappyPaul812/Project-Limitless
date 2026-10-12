@@ -1,0 +1,394 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64595ac6ab96be34a990608820caf9e9, type: 3}
+  m_Name: Dungeon01B2Renewal
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.World.DungeonEnvironmentDefinition
+  sceneName: Dungeon_01_B2
+  placements:
+  - anchorName: StoneBase
+    localPosition: {x: 0, y: 0, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: de96bc8478606b74a818b7288a42dec8, type: 3}
+    worldSize: {x: 33, y: 25}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 0.4, g: 0.42, b: 0.42, a: 1}
+  - anchorName: B2Entrance
+    localPosition: {x: 0, y: -9, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
+    worldSize: {x: 9, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2Entrance_Joint
+    localPosition: {x: -3.5, y: -9, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2Entrance_Joint
+    localPosition: {x: -1.5, y: -9, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2Entrance_Joint
+    localPosition: {x: 0.5, y: -9, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2Entrance_Joint
+    localPosition: {x: 2.5, y: -9, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2SouthPassage
+    localPosition: {x: 0, y: -6, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
+    worldSize: {x: 5, y: 3}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2SouthPassage_Joint
+    localPosition: {x: -1.5, y: -6, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 3}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: B2SouthPassage_Joint
+    localPosition: {x: 0.5, y: -6, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 3}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestClosedOssuary
+    localPosition: {x: -10, y: -1, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
+    worldSize: {x: 8, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestClosedOssuary_Joint
+    localPosition: {x: -13, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestClosedOssuary_Joint
+    localPosition: {x: -11, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestClosedOssuary_Joint
+    localPosition: {x: -9, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestClosedOssuary_Joint
+    localPosition: {x: -7, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastUnknownRoom
+    localPosition: {x: 10, y: -1, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
+    worldSize: {x: 8, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastUnknownRoom_Joint
+    localPosition: {x: 7, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastUnknownRoom_Joint
+    localPosition: {x: 9, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastUnknownRoom_Joint
+    localPosition: {x: 11, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastUnknownRoom_Joint
+    localPosition: {x: 13, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom
+    localPosition: {x: 0, y: -1, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: ca08a77a15856c644a248e337b6f80a6, type: 3}
+    worldSize: {x: 12, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: -5, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: -3, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: -1, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: 1, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: 3, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: CentralStoneRoom_Joint
+    localPosition: {x: 5, y: -1, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGallery
+    localPosition: {x: 0, y: 4.5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
+    worldSize: {x: 6, y: 6}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGallery_Joint
+    localPosition: {x: -2, y: 4.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 6}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGallery_Joint
+    localPosition: {x: 0, y: 4.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 6}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGallery_Joint
+    localPosition: {x: 2, y: 4.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 6}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber
+    localPosition: {x: 0, y: 9.5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: f227cf0517800f7419b4526de799d60f, type: 3}
+    worldSize: {x: 11, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber_Joint
+    localPosition: {x: -4.5, y: 9.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber_Joint
+    localPosition: {x: -2.5, y: 9.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber_Joint
+    localPosition: {x: -0.5, y: 9.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber_Joint
+    localPosition: {x: 1.5, y: 9.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossAntechamber_Joint
+    localPosition: {x: 3.5, y: 9.5, z: 0}
+    mode: 1
+    sprite: {fileID: 0}
+    worldSize: {x: 0.035, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EntryWest
+    localPosition: {x: -4.5, y: -9, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.35, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EntryEast
+    localPosition: {x: 4.5, y: -9, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.35, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestOuter
+    localPosition: {x: -14, y: -1, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastOuter
+    localPosition: {x: 14, y: -1, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 8}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: WestTop
+    localPosition: {x: -10, y: 3, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 8, y: 0.4}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: EastTop
+    localPosition: {x: 10, y: 3, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 8, y: 0.4}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGalleryWest
+    localPosition: {x: -3.2, y: 5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: SealGalleryEast
+    localPosition: {x: 3.2, y: 5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossRoomWest
+    localPosition: {x: -5.5, y: 9.5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BossRoomEast
+    localPosition: {x: 5.5, y: 9.5, z: 0}
+    mode: 2
+    sprite: {fileID: 21300000, guid: a86ceaea1eaef5b448b9e8d43e60e75c, type: 3}
+    worldSize: {x: 0.4, y: 5}
+    visualOffset: {x: 0, y: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: UnknownStoneMark
+    localPosition: {x: -3, y: 1.6, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: a206c146ee44b9448ad1fcb31b42b641, type: 3}
+    worldSize: {x: 0.35, y: 0.35}
+    visualOffset: {x: -0.0234375, y: 0.05859375}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BlueFlow
+    localPosition: {x: -1.5, y: 5.2, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: 9b34ff49b4fb9ea4ead2bc678eefa641, type: 3}
+    worldSize: {x: 0.12, y: 1.4}
+    visualOffset: {x: -0.00390625, y: 0.00390625}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: UnknownStoneMark
+    localPosition: {x: -1, y: 1.6, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: a206c146ee44b9448ad1fcb31b42b641, type: 3}
+    worldSize: {x: 0.35, y: 0.35}
+    visualOffset: {x: -0.0234375, y: 0.05859375}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BlueFlow
+    localPosition: {x: -0.5, y: 5.2, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: 9b34ff49b4fb9ea4ead2bc678eefa641, type: 3}
+    worldSize: {x: 0.12, y: 1.4}
+    visualOffset: {x: -0.00390625, y: 0.00390625}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: UnknownStoneMark
+    localPosition: {x: 1, y: 1.6, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: a206c146ee44b9448ad1fcb31b42b641, type: 3}
+    worldSize: {x: 0.35, y: 0.35}
+    visualOffset: {x: -0.0234375, y: 0.05859375}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BlueFlow
+    localPosition: {x: 0.5, y: 5.2, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: 9b34ff49b4fb9ea4ead2bc678eefa641, type: 3}
+    worldSize: {x: 0.12, y: 1.4}
+    visualOffset: {x: -0.00390625, y: 0.00390625}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: UnknownStoneMark
+    localPosition: {x: 3, y: 1.6, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: a206c146ee44b9448ad1fcb31b42b641, type: 3}
+    worldSize: {x: 0.35, y: 0.35}
+    visualOffset: {x: -0.0234375, y: 0.05859375}
+    color: {r: 1, g: 1, b: 1, a: 1}
+  - anchorName: BlueFlow
+    localPosition: {x: 1.5, y: 5.2, z: 0}
+    mode: 3
+    sprite: {fileID: 21300000, guid: 9b34ff49b4fb9ea4ead2bc678eefa641, type: 3}
+    worldSize: {x: 0.12, y: 1.4}
+    visualOffset: {x: -0.00390625, y: 0.00390625}
+    color: {r: 1, g: 1, b: 1, a: 1}

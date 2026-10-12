@@ -1,0 +1,157 @@
+[
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Gate/LL_C1_D01B2_SealDoor_AncientFrame_192x160_v1.png",
+    "sha256": "e7a8d307d7cafaf23484d7a8fbfe1a43c78d867efe0631d06dbf988708b5d62d",
+    "guid": "99c9f9472ad49b94d834e9f9d81b655b"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Gate/LL_C1_D01B2_SealDoor_Closed_192x160_v1.png",
+    "sha256": "88212ad714d45fccb86c9ee5386a6de69496745c1ecb2de019289cc6fe58211b",
+    "guid": "e4a5d927b2c5d3f4fb4e7dc9f428d141"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Gate/LL_C1_D01B2_SealDoor_Open_192x160_v1.png",
+    "sha256": "bbfbe1c70b4b2f2fa47d88f7cfb84b5c5412c9d4212881172975fd448b3acc3f",
+    "guid": "d054f52ec450139428bbe5e8adb836a7"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_PassageBorder_128_v1.png",
+    "sha256": "30179fa9b5da94c808ba03ccb17e2ffb4ef24c61a51562df0372d1e42093cbcb",
+    "guid": "19d030729a580c64fbdd67abb29ed222"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_Stone_A_128_v1.png",
+    "sha256": "27d5894ef886b63bac8a0b18c22f8dc5210cc0569fc9e491c8a7763f5782ccb2",
+    "guid": "de96bc8478606b74a818b7288a42dec8"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_Stone_B_128_v1.png",
+    "sha256": "36188417b6e7194104d257cae6ab0364bf04c60713abf0950f7b8c82e014c746",
+    "guid": "ca08a77a15856c644a248e337b6f80a6"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_Stone_C_128_v1.png",
+    "sha256": "6e98eabd153817c0f221a6d387cf85802dda99ce6625efbdf730ffe0f98d74e5",
+    "guid": "f227cf0517800f7419b4526de799d60f"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_Stone_D_128_v1.png",
+    "sha256": "a89095d18201822d623597d0ee03f7621a80c0bad1c5828d4b0434b922bd7f95",
+    "guid": "5382149e9a8f8db4c873c68393053858"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Floor_Threshold_128_v1.png",
+    "sha256": "1d9a827aaf0d459d844398fc0cf63f6b0fbf7b8c9ded2fb8a744c5d274389c7a",
+    "guid": "1a1e0260521c1f348ae348f5d561815e"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Groove_Blue_Overlay_128_v1.png",
+    "sha256": "58feae5f10ed7cb1aba4c9e78a96c88f6784e5e99073ae7953b0a788c69be6ba",
+    "guid": "9b34ff49b4fb9ea4ead2bc678eefa641"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Ground/LL_C1_D01B2_Groove_Unlit_Overlay_128_v1.png",
+    "sha256": "19722afc97423f548ebeca804ace7f92b44ea9fd5ae250feda3f0e121bbbaee1",
+    "guid": "2d206680b42d35148b002635a2f68e23"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Broken_Fragment_Cluster_128_v1.png",
+    "sha256": "86ffa81ab8742bde0c180adcc45a3b580564034957fc08e1b6dbc3cebe9a5fee",
+    "guid": "c43e56d36b786da42877c7fa07506c20"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Dormant_BurialSlab_128_v1.png",
+    "sha256": "e23bde5195e70b95f700a7eec6c6e3c52a2339baa06b9e44c104390c890576bd",
+    "guid": "79b5ff7d4f325534cb2280ee4678e4a6"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Flow_Pedestal_128_v1.png",
+    "sha256": "1d8368234ceca85c1c97c559a8d8a77533d750240f9f69f5287ad537c3183267",
+    "guid": "2a57f1a01b7b56549a97681c619d5550"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Fractured_Platform_128_v1.png",
+    "sha256": "5fa644eb2442a32de4c46dea0f8aaa37c00f958799bc5d1d5f56cd94172d0e05",
+    "guid": "2535d501e41aa8043a1cab80aaf17bd7"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Pillar_Chipped_128_v1.png",
+    "sha256": "4a4abb83ec2c1369723f7d4175f204f7bd8746deba56690112bcabe208dfeab0",
+    "guid": "3201267b07d61ad49977ba1974b7942e"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Pillar_Refined_128_v1.png",
+    "sha256": "2c93c909b95879aefa8ca74642320bc48e0bf2241e4894482e028c2950202d96",
+    "guid": "6f0bc94e6f908e84ea66db492349f94e"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Plinth_128_v1.png",
+    "sha256": "8131fb6f998678dc73b37c1e66560f18f615945c72e50f6b3cda7c310f48032f",
+    "guid": "4521ea428b23b484a8cbba1083b06b9f"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Repeating_Stone_Marks_128_v1.png",
+    "sha256": "bdd1f434bc296f5d722d754982b076fef59350e351807c28232d1a42931a70e6",
+    "guid": "a206c146ee44b9448ad1fcb31b42b641"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Sealed_Tomb_128_v1.png",
+    "sha256": "24f9d31c8845478115d36f407799f80abdb85d754072b713708556d400c6343c",
+    "guid": "1f4bc1108b07f5145b6f4bb1d08a38e0"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Subtle_Blue_Light_128_v1.png",
+    "sha256": "02287c861a76b67b0380f90045c37abd0e267db7df9afc6077a81113379f7ac5",
+    "guid": "95154620e3151cf4bb143d2a853f56ce"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Props/LL_C1_D01B2_Unknown_Carving_128_v1.png",
+    "sha256": "a6f1564b1398a10c46f3d19e30c4bd636abc4078fd2b1a69eb8f7139db76b733",
+    "guid": "bb40cf8f60a6e5443beea67c7a2c7472"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Story/LL_C1_D01B2_AfterBoss_BlueFromBelow_128_v1.png",
+    "sha256": "d3b4b45776af2ebed0d26dbb39ccccf9fe648d6e8769b4803a43134655bd68f1",
+    "guid": "8366793102db1204d87166d3e4a24c2c"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Story/LL_C1_D01B2_AfterBoss_BrokenTablet_128_v1.png",
+    "sha256": "d7a9b75802d37c197a391b705f2981b0bb14ea4720630b7b23c437b263d9cac6",
+    "guid": "8d39a4ec96d6b1140b1fce627825ca3f"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Story/LL_C1_D01B2_AfterBoss_DeepCrack_128_v1.png",
+    "sha256": "f1003e3dfa32523f019208cf503a310f52f78110615c776ebb77d8135876fd10",
+    "guid": "01ede508b5d7381488d3cddf123c4405"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Story/LL_C1_D01B2_BeforeBoss_VisualBarrier_128_v1.png",
+    "sha256": "bbaa252d0a9d82bafa0a6c1aa6fa1f708f171c8d99f692979d50e40ef66baab0",
+    "guid": "4c6b9e39ba4ec0a4290d279ac8b0154b"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Walls/LL_C1_D01B2_Wall_Corner_128_v1.png",
+    "sha256": "d007582857037fa9acd926caccfab5f09f55758d4d3c180d10fee5b10d636bb8",
+    "guid": "9872ee3fbc6aeef4ea2838cb6985c82b"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Walls/LL_C1_D01B2_Wall_Fractured_128_v1.png",
+    "sha256": "86ea73037360162e9b8389218a30f6502cec6a133183d514c07326922e14f24e",
+    "guid": "36c0ad2758f8ffe4492f419879f68bbe"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Walls/LL_C1_D01B2_Wall_Junction_128_v1.png",
+    "sha256": "3bb179c3c06b52af07202071d035604e55edc5f1205292be2d528653825f42c8",
+    "guid": "2ed8c4ec348193341aa7ae7f6b9432d7"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Walls/LL_C1_D01B2_Wall_SealPanel_128_v1.png",
+    "sha256": "252fc035a7ad78a4dd71d2b6c7673f5c53615cb6eebe0130fe529f6e00df8156",
+    "guid": "c153c5ef10d5ca84696dd715c157c278"
+  },
+  {
+    "path": "Assets/_Project/Resources/Art/Environment/Dungeon01B2/V1/Walls/LL_C1_D01B2_Wall_Straight_128_v1.png",
+    "sha256": "022ae662cec21b60800d0ad73820cf6326b53fc15467ef92f039a4a8d5bb68b4",
+    "guid": "a86ceaea1eaef5b448b9e8d43e60e75c"
+  }
+]

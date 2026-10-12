@@ -111,3 +111,8 @@ Overlay는실제RT위에실측좌표를그린설명합성입니다. 일반Spawn4
 |`Story/LL_C1_D01B2_AfterBoss_BlueFromBelow_128_v1.png`|128×128|[32, 47, 97, 106]|
 |`Story/LL_C1_D01B2_AfterBoss_BrokenTablet_128_v1.png`|128×128|[32, 37, 104, 106]|
 |`Story/LL_C1_D01B2_BeforeBoss_VisualBarrier_128_v1.png`|128×128|[27, 33, 109, 118]|
+
+
+## 2026-10-12 사용자 최종 승인·정식 통합
+
+USER_ART_APPROVED. PNG31 정식 등록, B1 공통 시스템 재사용(Tiled18/원크기소품8/중복세부숨김28). 기존 단서7의 보스 전 선노출을 수정하고 석판 시각 상태를 분리했습니다. 전체 PARTIAL: 기존 Search 예외/사람 직접 가독성 미검증. 정식 QA 보고서를 참조하세요.

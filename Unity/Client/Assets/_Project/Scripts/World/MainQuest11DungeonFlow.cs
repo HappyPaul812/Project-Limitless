@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ProjectLimitless.Core;
 using ProjectLimitless.Player;
 using ProjectLimitless.UI;
@@ -20,6 +21,16 @@ namespace ProjectLimitless.World
         private const string B1 = "Dungeon_01";
         private const string B2 = "Dungeon_01_B2";
         private bool bossAfterDialogueShown;
+        private readonly List<SpriteRenderer> sealedClues = new List<SpriteRenderer>();
+        private SpriteRenderer tabletVisual;
+        // 그림만 제어합니다. 석판 획득과 퀘스트 완료는 기존 대사·QuestService가 계속 담당합니다.
+        private void Update() => RefreshSealedVisuals();
+        private void RefreshSealedVisuals()
+        {
+            bool revealed = BossDefeated;
+            foreach (var clue in sealedClues) if (clue != null && clue.enabled != revealed) clue.enabled = revealed;
+            if (tabletVisual != null) tabletVisual.enabled = revealed && CurrentStep >= 10 && CurrentStep <= 11 && InventoryService.GetItemCount(TabletItemId) == 0;
+        }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         private static void Register()
@@ -101,6 +112,17 @@ namespace ProjectLimitless.World
             barrier.transform.SetParent(transform, false);
             barrier.transform.position = new Vector3(0, 10.5f, 0);
             barrier.GetComponent<BoxCollider2D>().size = new Vector2(11f, .28f);
+            var tabletSprite = Resources.Load<Sprite>("Art/Environment/Dungeon01B2/V1/Story/LL_C1_D01B2_AfterBoss_BrokenTablet_128_v1");
+            if (tabletSprite != null)
+            {
+                var tablet = new GameObject("Main11TabletVisual", typeof(SpriteRenderer));
+                tablet.transform.SetParent(transform, false);
+                tablet.transform.position = new Vector3(1.25f, 11.35f, 0);
+                tabletVisual = tablet.GetComponent<SpriteRenderer>();
+                tabletVisual.sprite = tabletSprite; tabletVisual.sortingOrder = 6;
+            }
+            // 첫 화면을 그리기 전에도 복원하여 로드 직후 미처치 단서가 잠깐 보이는 일을 막습니다.
+            RefreshSealedVisuals();
         }
 
         private void Stone(string name, Vector2 position, Vector2 size, Color color, int order)
@@ -114,6 +136,7 @@ namespace ProjectLimitless.World
             if (sprite == null) { Destroy(stone); return; }
             var renderer = stone.GetComponent<SpriteRenderer>();
             renderer.sprite = sprite; renderer.color = color; renderer.sortingOrder = order;
+            sealedClues.Add(renderer);
             stone.transform.localScale = new Vector3(size.x / sprite.bounds.size.x, size.y / sprite.bounds.size.y, 1);
         }
     }
