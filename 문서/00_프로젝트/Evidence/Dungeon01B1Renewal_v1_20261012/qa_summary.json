@@ -38,5 +38,7 @@
     "old_rigidbody_after_expected_scene_transition"
   ],
   "source_rights": "DECLARED_ORIGINAL_NOT_INDEPENDENTLY_VERIFIED",
-  "b2_boss": "NOT_VERIFIED"
+  "b2_boss": "NOT_VERIFIED",
+  "isolated_guid_collisions_with_original": 0,
+  "inspection_commit": "dce84d58cdf361dba145e8f1c22b66cabf639ff8"
 }

@@ -12,7 +12,7 @@
 
 ## ZIP·Manifest·Importer
 
-원본 `F:\Downloads\Limitless_Dungeon01_B1_Renewal_Art_v1.zip`: SHA256 `074f015c3de49457cd8288e1465bb29fc0f0549ed47d66a33fb2c0e9d224248a`. ZIP44항목, PNG38개 = 실사용25 + Preview11 + QA이미지2입니다. CRC오류0, PNG38개전체decode PASS, Manifest25개 파일명·해시·해상도·alpha bbox 일치, 예상PPU128/PivotCenter를 확인했습니다. 실사용25종의 실제Unity Single/PPU128/Center/Point/무압축/MipmapOff/NPOTNone Import와Sprite 존재를 확인했습니다. 격리GUID25개는서로고유하며 원본에등록0입니다.
+원본 `F:\Downloads\Limitless_Dungeon01_B1_Renewal_Art_v1.zip`: SHA256 `074f015c3de49457cd8288e1465bb29fc0f0549ed47d66a33fb2c0e9d224248a`. ZIP44항목, PNG38개 = 실사용25 + Preview11 + QA이미지2입니다. CRC오류0, PNG38개전체decode PASS, Manifest25개 파일명·해시·해상도·alpha bbox 일치, 예상PPU128/PivotCenter를 확인했습니다. 실사용25종의 실제Unity Single/PPU128/Center/Point/무압축/MipmapOff/NPOTNone Import와Sprite 존재를 확인했습니다. 격리 GUID 25개는 서로 고유하고 기존 원본 GUID와 충돌0이며, 원본에 등록0입니다.
 
 기존Sprite `rpgTile152`은64×64/PPU64/중앙Pivot, GUID `e38fd353fd47c7644acb692973a9ee07`, fileID21300000으로1×1world입니다. Scene의StoneBase33×25와각방은이미Transform으로확대되어있습니다. 새128타일도1×1world이므로Sprite참조만바꾸면큰무늬1장이늘어납니다. Manifest의63개/공용GUID/fileID는실측과일치합니다.
 
@@ -76,7 +76,7 @@ Overlay는실제RenderTexture위에실측Collider/Spawn/Quest좌표를그린**�
 
 제작자는Manifest/README에서“외부PNG재색칠이아닌직접도형·절차적픽셀제작, 제3자복제자산없음”이라고명시했습니다. 이번검수는PNG/해시/자료를확인한범위이며독립저작권·상업적사용권증빙은별도로첨부되지않았습니다. 출처/권리판정은 **DECLARED_ORIGINAL / NOT_INDEPENDENTLY_VERIFIED**로유지합니다.
 
-**USER_ART_REVIEW_PENDING**입니다. 원본영구적용0,관련문서/QA자료만선택적Commit,Push0. Commit SHA는후속상태기록에남깁니다.
+**USER_ART_REVIEW_PENDING**입니다. 원본영구적용0,관련문서/QA자료만선택적Commit,Push0. 검수 Commit은 `dce84d58cdf361dba145e8f1c22b66cabf639ff8`입니다.
 
 ## 실사용PNG25개
 

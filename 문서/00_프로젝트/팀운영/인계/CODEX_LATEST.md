@@ -6,7 +6,7 @@ USER_ART_REVIEW_PENDING, 원본영구적용0/전체QA_PARTIAL. [B1검수](../../
 
 Main11 B1목표0~4/실제B2하강index5, Continue3회, 4일반조우정상UI승리·35초리스폰·중복0, B2귀환Spawn(0,6.8), 실제물리남쪽출구Field03(.55,-2.65)/재진입, 휠체어6지점233waypoint+출구PASS. 옛Builder출구이름/Scene교체후Rigidbody계측오류는QA만고치고원시실패보존,통과검사반복0입니다. B2보스전체/봉인실/석판/Main11완료·사람가독성/OS직접조작·독립권리증빙은NOT_VERIFIED입니다. Search기존예외유지.
 
-원본3738파일모두SHA불변, 사용자337/822보호. 검수전원격/로컬7f30f60일치(사용자Field03Push확인), 원본Editor/Save/meta/승인아트/TTS/BGM무접촉. 격리기존프로젝트재사용, 결과Dungeon01B1Inspection_20261012, 소스/로그Temp/Dungeon01B1Inspection20261012, 자료Evidence/Dungeon01B1Renewal_v1_20261012입니다. QA프로세스종료. 현재검수Commit SHA는후속기록에남깁니다. **아트승인전B1Scene영구적용금지**. Field03RockB보류는계속유지합니다.
+원본3738파일모두SHA불변, 사용자337/822보호. 검수전원격/로컬7f30f60일치(사용자Field03Push확인), 원본Editor/Save/meta/승인아트/TTS/BGM무접촉. 격리기존프로젝트재사용, 결과Dungeon01B1Inspection_20261012, 소스/로그Temp/Dungeon01B1Inspection20261012, 자료Evidence/Dungeon01B1Renewal_v1_20261012입니다. QA프로세스종료. 현재 검수 Commit은 `dce84d58cdf361dba145e8f1c22b66cabf639ff8`입니다. **아트승인전B1Scene영구적용금지**. Field03RockB보류는계속유지합니다.
 
 
 LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES·담당 CODEX/PROJECT_CONTEXT/CURRENT_STATUS 순서로 확인합니다. 사용자에게한국어존댓말, Push/TTS API/원본Editor조작 금지입니다.
