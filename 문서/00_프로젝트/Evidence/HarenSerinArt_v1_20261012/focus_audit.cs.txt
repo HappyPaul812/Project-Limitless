@@ -1,0 +1,158 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.World;
+using ProjectLimitless.Player;
+using ProjectLimitless.Monster;
+using ProjectLimitless.Battle;
+using ProjectLimitless.UI;
+using UnityEditor;
+using UnityEditor.Animations;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>기존 Scene·전투 서비스를 격리 Save로 실행하고 신규 외형/화살/첫 등장만 검사합니다.</summary>
+    [InitializeOnLoad]
+    public static class HarenSerinArtAudit
+    {
+        const string Key="Limitless.HarenSerinArtAudit";
+        static string Root=>Path.GetFullPath("HarenSerinFocusResults");
+        static readonly BindingFlags Flags=BindingFlags.NonPublic|BindingFlags.Public|BindingFlags.Instance|BindingFlags.Static;
+        static readonly List<string> Results=new List<string>(),Errors=new List<string>();
+        static IEnumerator routine;static double deadline;
+        static HarenSerinArtAudit()
+        {
+            EditorApplication.playModeStateChanged+=s=>{
+                if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Key,false))return;
+                GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);
+                Application.runInBackground=true;Application.logMessageReceived+=(t,st,k)=>{if(k==LogType.Error||k==LogType.Exception){Errors.Add(t+"\n"+st);File.WriteAllLines(Path.Combine(Root,"errors.txt"),Errors);}};
+                routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+600;EditorApplication.update+=Tick;
+            };
+        }
+        public static void RunBatch()
+        {
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets"))throw new InvalidOperationException("격리 QA만 허용");
+            Directory.CreateDirectory(Root);Imports();EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Key,true);EditorApplication.EnterPlaymode();
+        }
+        static void Check(bool b,string id){Results.Add((b?"PASS|":"FAIL|")+id);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Results);if(!b)throw new InvalidOperationException(id);}
+        static object Get(object o,string n)=>o.GetType().GetField(n,Flags).GetValue(o);
+        static object Call(object o,string n,params object[] a)=>o.GetType().GetMethod(n,Flags).Invoke(o,a);
+        static void Set(object o,string n,object v)=>o.GetType().GetField(n,Flags).SetValue(o,v);
+        static IEnumerator Wait(float t){float end=Time.realtimeSinceStartup+t;while(Time.realtimeSinceStartup<end)yield return null;}
+        static IEnumerator Load(string name){SceneManager.LoadSceneAsync(name);float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!=name&&Time.realtimeSinceStartup<end)yield return null;Check(SceneManager.GetActiveScene().name==name,"Scene."+name);MonsterEncounterService.SuppressForSeconds(3600);yield return Wait(.6f);var p=Object.FindAnyObjectByType<PlayerController>();if(p!=null)p.enabled=false;Missing(name);}
+        static void Missing(string name){var roots=SceneManager.GetActiveScene().GetRootGameObjects();Check(roots.SelectMany(x=>x.GetComponentsInChildren<Transform>(true)).Sum(x=>GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(x.gameObject))==0,"MissingScript0."+name);Check(roots.SelectMany(x=>x.GetComponentsInChildren<SpriteRenderer>(true)).All(x=>x.sprite!=null),"MissingSprite0."+name);}
+        static void Imports()
+        {
+            foreach(string name in new[]{"Haren","Serin"})
+            {
+                string path=$"Assets/_Project/Resources/BattleCharacters/{name}/{name}_Battle_6Row.png";
+                var importer=(TextureImporter)AssetImporter.GetAtPath(path);var sprites=AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().ToArray();
+                Check(sprites.Length==30&&sprites.All(x=>x.rect.size==new Vector2(209,209)&&x.pixelsPerUnit==100&&x.pivot==new Vector2(104.5f,0)),"BattleImport30."+name);
+                Check(importer.spriteImportMode==SpriteImportMode.Multiple&&importer.filterMode==FilterMode.Point&&!importer.mipmapEnabled&&importer.textureCompression==TextureImporterCompression.Uncompressed,"BattleImporter."+name);
+                var controller=(AnimatorController)AssetDatabase.LoadAssetAtPath<RuntimeAnimatorController>($"Assets/_Project/Resources/BattleCharacters/{name}/Animations/{name}_Battle.controller");
+                Check(controller.layers[0].stateMachine.states.Length==6&&controller.parameters.Length==5&&controller.parameters.All(x=>x.type==AnimatorControllerParameterType.Trigger),"Controller6States5Triggers."+name);
+                var motions=new[]{"Idle","Attack","Guard","Skill","Hit","Defeat"};var counts=new[]{4,6,4,6,4,6};
+                for(int i=0;i<6;i++){var clip=(AnimationClip)controller.layers[0].stateMachine.states.Single(x=>x.state.name==motions[i]).state.motion;var binding=AnimationUtility.GetObjectReferenceCurveBindings(clip).Single();var keys=AnimationUtility.GetObjectReferenceCurve(clip,binding);Check(keys.Length==counts[i]&&keys.All(x=>x.value!=null)&&binding.type==typeof(Image)&&clip.isLooping==(i==0),"ClipContract."+name+"."+motions[i]);}
+            }
+            var field=AssetDatabase.LoadAllAssetsAtPath("Assets/_Project/Resources/StoryCharacters/Haren/Haren_Field_Walk_4Dir.png").OfType<Sprite>().ToArray();
+            Check(field.Length==16&&field.All(x=>x.pixelsPerUnit==128&&x.rect.size==new Vector2(128,128)&&x.pivot==new Vector2(64,0)),"FieldImport16.PPU128.BottomCenter");
+            foreach(var pair in new[]{("Down",384), ("Left",256), ("Right",128), ("Up",0)})Check(field.Where(x=>x.name.Contains(pair.Item1)).Count(x=>x.rect.y==pair.Item2)==4,"Field.Direction."+pair.Item1);
+            Check(AssetDatabase.LoadAssetAtPath<DialoguePortraitDefinition>("Assets/_Project/Resources/DialoguePortraitDefinitions/Haren.asset").SpeakerId=="story_haren","Portrait.StoryIDOnly");
+        }
+        static void AnimationPlayback()
+        {
+            foreach(string name in new[]{"Haren","Serin","Paul","Miel","Taeon"})
+            {
+                var go=new GameObject("Audit_"+name,typeof(RectTransform),typeof(Image));var image=go.GetComponent<Image>();
+                var controller=Resources.Load<RuntimeAnimatorController>($"BattleCharacters/{name}/Animations/{name}_Battle");var animator=go.AddComponent<Animator>();animator.runtimeAnimatorController=controller;
+                foreach(string motion in new[]{"Idle","Attack","Guard","Skill","Hit","Defeat"})
+                {
+                    animator.Rebind();animator.Play("Idle",0,0);animator.Update(0);
+                    if(motion!="Idle")animator.SetTrigger(motion);animator.Update(.05f);
+                    Check(animator.GetCurrentAnimatorStateInfo(0).IsName(motion)&&image.sprite!=null,"Playback.Trigger."+name+"."+motion);
+                    for(int i=0;i<30;i++)animator.Update(.05f);
+                    Check(animator.GetCurrentAnimatorStateInfo(0).IsName(motion=="Defeat"?"Defeat":"Idle")&&image.sprite!=null,"Playback.End."+name+"."+motion);
+                }
+                if(name!="Haren"){Check(BattleCharacterSpriteAnimator.TryAttach("companion_"+name.ToLowerInvariant(),image,out var playback,out var idle)&&playback.IsConfigured,"ExistingAttachment."+name);}
+                Object.DestroyImmediate(go);
+            }
+            var f=new GameObject("Audit_Field",typeof(SpriteRenderer),typeof(Animator));var a=f.GetComponent<Animator>();a.runtimeAnimatorController=Resources.Load<RuntimeAnimatorController>("StoryCharacters/Haren/Animations/Haren_Field");
+            foreach(string d in new[]{"Down","Left","Right","Up"})foreach(string m in new[]{"Idle","Walk"}){a.Play(m+"_"+d,0,0);a.Update(.2f);Check(f.GetComponent<SpriteRenderer>().sprite.name.Contains(d),"Field.Playback."+m+"."+d);}Object.DestroyImmediate(f);
+        }
+        static void Seed()
+        {
+            GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"하렌·세린 격리 QA");GameSessionData.SelectJob("fighter");GameSessionData.SelectPlayerPath("path.vision");GameSessionData.ConfigureProgress(12,0);
+            QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=QuestCatalog.All.Where(x=>x.QuestType==QuestType.Main).Select(x=>x.QuestId).ToArray()});
+            CompanionRosterService.ImportSaveData(new CompanionRosterSaveData{UnlockedCharacterIds=new[]{"companion_serin","companion_paul","companion_miel","companion_taeon"},ActivePartyCharacterIds=new[]{"companion_serin","companion_paul"},HasManualComposition=true});
+            GameSessionData.SetPendingSpawnPoint("Spawn_From_StarterVillage");
+        }
+        static BattleSceneController controller;static Combatant serin,target;static Image serinImage;static Animator serinAnimator;
+        static void PrepareAction()
+        {
+            controller.StopAllCoroutines();controller.GetComponent<BattleActionPresenter>()?.StopAllCoroutines();Set(controller,"actionPlaying",false);Set(controller,"currentActor",serin);
+            foreach(var x in ((Formation)Get(controller,"enemies")).Members)x.RestoreCurrentResources(x.MaxHp,x.MaxMp);
+            serin.RestoreCurrentResources(serin.MaxHp,serin.MaxMp);serinAnimator.Play("Idle",0,0);serinAnimator.Update(0);
+        }
+        static IEnumerator Projectile(string label)
+        {
+            var samples=new List<string>();var poses=new HashSet<string>();float end=Time.realtimeSinceStartup+2.5f;Vector3? first=null,last=null;Vector3? tip=null;
+            while(Time.realtimeSinceStartup<end)
+            {
+                poses.Add(serinImage.sprite?.name??"null");var arrow=GameObject.Find("BattleProjectile")?.GetComponent<RectTransform>();
+                if(arrow!=null){Vector3 p=arrow.localPosition;first=first??p;last=p;tip=arrow.TransformVector(Vector3.right);samples.Add(Time.realtimeSinceStartup+"\t"+p.x+"\t"+p.y+"\t"+tip.Value.x+"\t"+tip.Value.y+"\t"+serinImage.sprite.name);if(samples.Count==3)CaptureUI(label+"_projectile.png");}
+                yield return null;
+            }
+            File.WriteAllLines(Path.Combine(Root,label+"_projectile.tsv"),samples);File.WriteAllLines(Path.Combine(Root,label+"_poses.txt"),poses);
+            Check(samples.Count>=2&&first.Value.x>last.Value.x&&tip.Value.x<0,"Arrow.ActualMovementAndTipLeft."+label);
+            Check(poses.Any(x=>x.StartsWith("Serin_"+(label=="basic"?"Attack":"Skill"))),"Serin.ActualPose."+label);
+        }
+        // QA 카메라에 맞춰 UI를 임시 WorldSpace로 투영하고 모든 RectTransform을 즉시 복원합니다.
+        static void CaptureUI(string name)
+        {
+            var canvases=Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(c=>c.isRootCanvas&&c.renderMode==RenderMode.ScreenSpaceOverlay).ToArray();
+            var roots=canvases.Select(c=>(RectTransform)c.transform).ToArray();
+            var rects=canvases.SelectMany(c=>c.GetComponentsInChildren<RectTransform>(true)).Distinct().ToArray();
+            var positions=rects.Select(r=>r.localPosition).ToArray();var sizes=rects.Select(r=>r.sizeDelta).ToArray();var scales=rects.Select(r=>r.localScale).ToArray();var rotations=rects.Select(r=>r.localRotation).ToArray();
+            var rootSizes=roots.Select(r=>r.rect.size).ToArray();
+            var obj=new GameObject("AuditCaptureCamera",typeof(Camera));var camera=obj.GetComponent<Camera>();camera.orthographic=true;camera.orthographicSize=Mathf.Max(rootSizes.Max(v=>v.y),rootSizes.Max(v=>v.x)/ (1280f/720))*.005f;camera.aspect=1280f/720;camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.05f,.07f,.1f);obj.transform.position=new Vector3(0,0,-10);
+            var rt=RenderTexture.GetTemporary(1280,720,24);var active=RenderTexture.active;
+            try{camera.targetTexture=rt;for(int i=0;i<canvases.Length;i++){canvases[i].renderMode=RenderMode.WorldSpace;roots[i].sizeDelta=rootSizes[i];roots[i].position=Vector3.zero;roots[i].localScale=Vector3.one*.01f;}Canvas.ForceUpdateCanvases();camera.Render();RenderTexture.active=rt;var texture=new Texture2D(1280,720,TextureFormat.RGBA32,false);texture.ReadPixels(new Rect(0,0,1280,720),0,0);texture.Apply();File.WriteAllBytes(Path.Combine(Root,name),texture.EncodeToPNG());Object.DestroyImmediate(texture);}
+            finally{foreach(var c in canvases)c.renderMode=RenderMode.ScreenSpaceOverlay;for(int i=0;i<rects.Length;i++){rects[i].sizeDelta=sizes[i];rects[i].localPosition=positions[i];rects[i].localScale=scales[i];rects[i].localRotation=rotations[i];}RenderTexture.active=active;camera.targetTexture=null;RenderTexture.ReleaseTemporary(rt);Object.DestroyImmediate(obj);}
+        }
+        static IEnumerator Run()
+        {
+            AnimationPlayback();Seed();yield return Load("Field_01");var mon=Object.FindObjectsByType<MonsterFieldController>(FindObjectsSortMode.None).First(x=>x.Definition.MonsterId=="venom_bee");
+            typeof(MonsterEncounterService).GetField("suppressedUntil",Flags).SetValue(null,0f);Call(mon,"BeginEncounter");float end=Time.realtimeSinceStartup+30;while(SceneManager.GetActiveScene().name!="Battle"&&Time.realtimeSinceStartup<end)yield return null;yield return Wait(.8f);Missing("Battle");
+            controller=Object.FindAnyObjectByType<BattleSceneController>();controller.StopAllCoroutines();var allies=(Formation)Get(controller,"allies");Check(allies.Members.Count()==3,"Battle.ExistingThreeSlots");serin=allies.Members.Single(x=>x.Id=="companion_serin");target=((Formation)Get(controller,"enemies")).Members.Last();
+            var views=(System.Collections.IDictionary)Get(controller,"combatantViews");var view=views[serin];serinImage=(Image)Get(view,"SpriteImage");serinAnimator=serinImage.GetComponent<Animator>();Check(((BattleCharacterSpriteAnimator)Get(view,"CharacterAnimation")).IsConfigured,"Serin.ActualBattleAttached");CaptureUI("serin_battle_idle.png");
+            PrepareAction();Call(controller,"PlayBasicAttack",serin,target,100,null,false,false);yield return Projectile("basic");Check(target.CurrentHp<target.MaxHp,"Serin.BasicDamage");
+            PrepareAction();var job=Resources.LoadAll<JobDefinition>("JobDefinitions").Single(x=>x.JobId=="sharpshooter");var skills=BattleSkillCatalog.GetSkills(job);
+            Call(controller,"PlayAimedShot",serin,target,skills.Single(x=>x.Id==BattleSkillCatalog.SharpshooterAimId));yield return Projectile("aim");Check(target.CurrentHp<target.MaxHp,"Serin.AimDamage");
+            PrepareAction();Call(controller,"PlaySharpshooterArrowRain",skills.Single(x=>x.Id==BattleSkillCatalog.SharpshooterArrowRainId));yield return Wait(.15f);Check(serinImage.sprite.name.StartsWith("Serin_Skill"),"Serin.ArrowRainSkillPose");yield return Wait(2);
+            PrepareAction();Call(controller,"PlayCompanionAssault",serin,target,skills.Single(x=>x.Id==BattleSkillCatalog.SharpshooterCompanionAssaultId));yield return Wait(.15f);Check(serinImage.sprite.name.StartsWith("Serin_Skill"),"Serin.BeastSkillPose");yield return Wait(2);
+            PrepareAction();serin.TakeDamage(1);Call(controller,"RefreshCombatantViews",(object)null);yield return Wait(.15f);Check(serinImage.sprite.name.StartsWith("Serin_Hit"),"Serin.ActualHitPose");
+            serin.TakeDamage(int.MaxValue);Call(controller,"RefreshCombatantViews",(object)null);yield return Wait(.7f);Check(serinImage.sprite.name.StartsWith("Serin_Defeat")&&((BattleCharacterSpriteAnimator)Get(view,"CharacterAnimation")).IsDefeated,"Serin.ActualDefeatPose");CaptureUI("serin_defeat.png");
+            // 하렌 첫 만남만 복원합니다. 기존13목표·보상·명단을 바꾸지 않습니다.
+            QuestCatalog.TryGet(Chapter2Main21Flow.QuestId,out var quest);Check(quest.Objectives.Count==13,"Main21.Objectives13");
+            QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=QuestCatalog.All.Where(x=>x.QuestType==QuestType.Main&&x.QuestId!=quest.QuestId).Select(x=>x.QuestId).ToArray(),ActiveQuests=new[]{new ActiveQuestSaveData{QuestId=quest.QuestId,Objectives=quest.Objectives.Select((x,i)=>new QuestObjectiveProgressData{ObjectiveId=x.ObjectiveId,CurrentCount=i<11?1:0}).ToArray()}}});
+            yield return Load("World_StarterVillage");var site=GameObject.Find(Chapter2Main21Flow.Targets[11]);Check(site.GetComponent<Main21HarenVisual>()!=null&&site.GetComponentInChildren<SpriteRenderer>().sprite.name.StartsWith("Haren_Idle_Down"),"Haren.Main21OfficialVisual");Check(DialoguePortraitCatalog.GetPortrait("story_haren")!=null,"Haren.Main21Portrait");
+            var p=Object.FindAnyObjectByType<PlayerController>();p.transform.position=site.transform.position;p.GetComponent<Rigidbody2D>().position=p.transform.position;yield return Wait(.15f);Check(site.GetComponent<Main21Site>().TryInteract(),"Haren.RealFirstMeeting");
+            Sprite portrait=DialoguePortraitCatalog.GetPortrait("story_haren");
+            for(int n=0;n<10&&((Image)Get(DialoguePresenter.Instance,"portraitImage")).sprite!=portrait;n++){DialoguePresenter.Instance.Advance();yield return Wait(.12f);}
+            Check(((Image)Get(DialoguePresenter.Instance,"portraitImage")).sprite==portrait,"Haren.ActualDialoguePortraitPage");yield return Wait(.2f);CaptureUI("haren_dialogue.png");
+            for(int i=0;i<25&&DialoguePresenter.Instance.IsOpen;i++){DialoguePresenter.Instance.Advance();yield return Wait(.1f);}Check(Chapter2Main21Flow.Current(12),"Haren.QuestAdvanced12");Check(!CompanionRosterService.UnlockedCharacterIds.Any(x=>x.Contains("haren"))&&CompanionCatalog.Find("companion_haren")==null,"Haren.NoCompanionOrPartyAddition");
+            Check(Errors.All(x=>x.Contains("UnityEditor.Search")),"Console.NoNewRuntimeError");File.WriteAllText(Path.Combine(Root,"status.txt"),Errors.Count==0?"PASS":"PARTIAL_KNOWN_SEARCH");
+        }
+        static IEnumerator Flatten(IEnumerator r){var stack=new Stack<IEnumerator>();stack.Push(r);while(stack.Count>0){var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}if(top.Current is IEnumerator child){stack.Push(child);continue;}yield return top.Current;}}
+        static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException();if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Key,false);EditorApplication.Exit(0);}catch(Exception ex){File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");Debug.LogException(ex);File.AppendAllText(Path.Combine(Root,"failure.txt"),ex.ToString());EditorApplication.Exit(1);}}
+    }
+}

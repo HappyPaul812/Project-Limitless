@@ -1670,6 +1670,8 @@ namespace ProjectLimitless.Battle
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
             CombatantView actorView = combatantViews[actor];
+            // 사수 동료의 공식 Skill 외형만 재생하며 피해·쿨타임·화살은 기존 경로를 유지합니다.
+            actorView.CharacterAnimation?.PlaySkill();
             CombatantView targetView = combatantViews[target];
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
             bool executed = false;
@@ -1830,6 +1832,8 @@ namespace ProjectLimitless.Battle
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
             CombatantView actorView = combatantViews[actor];
+            // 사수 동료의 공식 Skill 외형만 재생하며 피해·쿨타임·화살은 기존 경로를 유지합니다.
+            actorView.CharacterAnimation?.PlaySkill();
             CombatantView targetView = combatantViews[target];
             BeastCompanionDefinition beast = BeastCompanionCatalog.GetEquippedOrDefault(actor);
             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
@@ -2070,6 +2074,8 @@ namespace ProjectLimitless.Battle
             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
 
             CombatantView actorView = combatantViews[actor];
+            // 사수 동료의 공식 Skill 외형만 재생하며 피해·쿨타임·화살은 기존 경로를 유지합니다.
+            actorView.CharacterAnimation?.PlaySkill();
             CombatantView[] targetViews = targets.Select(target => combatantViews[target]).ToArray();
             RectTransform[] targetRects = targetViews.Select(view => view.ActionRoot).ToArray();
             Image[] targetSprites = targetViews.Select(view => view.SpriteImage).ToArray();

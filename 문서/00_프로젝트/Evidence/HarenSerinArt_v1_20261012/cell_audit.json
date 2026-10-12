@@ -1,0 +1,972 @@
+{
+  "Haren": [
+    {
+      "motion": "Idle",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        18,
+        182,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        15,
+        182,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        15,
+        181,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        19,
+        12,
+        189,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        41,
+        186,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        24,
+        51,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        17,
+        50,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        28,
+        55,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        26,
+        54,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        31,
+        26,
+        178,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        30,
+        43,
+        178,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        20,
+        43,
+        188,
+        197
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        22,
+        37,
+        187,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        53,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        20,
+        49,
+        189,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        24,
+        51,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        17,
+        50,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        28,
+        55,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        26,
+        54,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        43,
+        18,
+        200,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        33,
+        32,
+        175,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        55,
+        185,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        75,
+        185,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        14,
+        93,
+        194,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        19,
+        73,
+        190,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        24,
+        94,
+        184,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        115,
+        182,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        16,
+        131,
+        193,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        7,
+        140,
+        190,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        16,
+        131,
+        200,
+        186
+      ],
+      "edge_alpha": 0
+    }
+  ],
+  "Serin": [
+    {
+      "motion": "Idle",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        32,
+        16,
+        177,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        30,
+        17,
+        179,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        26,
+        16,
+        182,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        30,
+        17,
+        178,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Idle",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        12,
+        17,
+        197,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        22,
+        29,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        9,
+        18,
+        200,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        7,
+        32,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        15,
+        31,
+        193,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Attack",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        19,
+        25,
+        190,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        19,
+        56,
+        190,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        57,
+        185,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        53,
+        185,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        26,
+        49,
+        182,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Guard",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        18,
+        29,
+        190,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        22,
+        29,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        9,
+        18,
+        200,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        7,
+        32,
+        202,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        15,
+        31,
+        193,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Skill",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        7,
+        18,
+        201,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        37,
+        37,
+        172,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        27,
+        43,
+        182,
+        197
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        29,
+        44,
+        179,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        24,
+        81,
+        184,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 4,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Hit",
+      "col": 5,
+      "expected_valid": false,
+      "bbox": null,
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 0,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        82,
+        185,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 1,
+      "expected_valid": true,
+      "bbox": [
+        23,
+        86,
+        186,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 2,
+      "expected_valid": true,
+      "bbox": [
+        14,
+        115,
+        194,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 3,
+      "expected_valid": true,
+      "bbox": [
+        17,
+        135,
+        184,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 4,
+      "expected_valid": true,
+      "bbox": [
+        7,
+        135,
+        188,
+        198
+      ],
+      "edge_alpha": 0
+    },
+    {
+      "motion": "Defeat",
+      "col": 5,
+      "expected_valid": true,
+      "bbox": [
+        10,
+        129,
+        199,
+        198
+      ],
+      "edge_alpha": 0
+    }
+  ],
+  "Haren_Field": [
+    {
+      "direction": "Down",
+      "frame": 0,
+      "bbox": [
+        17,
+        9,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Down",
+      "frame": 1,
+      "bbox": [
+        13,
+        9,
+        114,
+        123
+      ]
+    },
+    {
+      "direction": "Down",
+      "frame": 2,
+      "bbox": [
+        19,
+        9,
+        109,
+        123
+      ]
+    },
+    {
+      "direction": "Down",
+      "frame": 3,
+      "bbox": [
+        14,
+        8,
+        113,
+        123
+      ]
+    },
+    {
+      "direction": "Left",
+      "frame": 0,
+      "bbox": [
+        17,
+        6,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Left",
+      "frame": 1,
+      "bbox": [
+        14,
+        5,
+        114,
+        123
+      ]
+    },
+    {
+      "direction": "Left",
+      "frame": 2,
+      "bbox": [
+        16,
+        5,
+        112,
+        123
+      ]
+    },
+    {
+      "direction": "Left",
+      "frame": 3,
+      "bbox": [
+        17,
+        5,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Right",
+      "frame": 0,
+      "bbox": [
+        18,
+        5,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Right",
+      "frame": 1,
+      "bbox": [
+        14,
+        5,
+        113,
+        123
+      ]
+    },
+    {
+      "direction": "Right",
+      "frame": 2,
+      "bbox": [
+        18,
+        5,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Right",
+      "frame": 3,
+      "bbox": [
+        15,
+        5,
+        113,
+        123
+      ]
+    },
+    {
+      "direction": "Up",
+      "frame": 0,
+      "bbox": [
+        20,
+        6,
+        107,
+        123
+      ]
+    },
+    {
+      "direction": "Up",
+      "frame": 1,
+      "bbox": [
+        12,
+        6,
+        116,
+        123
+      ]
+    },
+    {
+      "direction": "Up",
+      "frame": 2,
+      "bbox": [
+        17,
+        6,
+        110,
+        123
+      ]
+    },
+    {
+      "direction": "Up",
+      "frame": 3,
+      "bbox": [
+        15,
+        6,
+        113,
+        123
+      ]
+    }
+  ]
+}

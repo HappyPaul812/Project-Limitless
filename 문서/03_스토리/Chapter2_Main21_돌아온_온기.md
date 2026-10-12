@@ -572,3 +572,7 @@ Unity 6.6.5f1 기준 백그라운드 검증.
 ### 검증 결과와 후속 검토
 
 격리 Batch 실제 Scene/Controller/Save/Bootstrap Continue와 RenderTexture를 사용한다. [QA 보고](../00_프로젝트/Main21_Implementation_QA_20261010.md)에 결과 및 증거를 기록한다. 원본 Editor Scene/Play Mode/화면 포커스 조작0, 사용자 Save를 테스트에 사용하지 않는다. 사용자 플레이 감각·실제30~45분 소요·전체 Main01~20 수동 전투 동선은 별도 검토로 남긴다. 기존 Unity Search 내부 예외2건은 미해결 이슈이며 발생한 Console를 PASS로 표기하지 않는다.
+
+## 2026-10-12 하렌 공식 아트 v1 — 첫 만남 시각 표현 통합
+
+이전 구현 기록의 하렌 ART_PENDING은 이번 [통합 검수](../00_프로젝트/Haren_Serin_Official_Art_v1_Integration_QA_20261012.md)로 대체한다. index11의 첫 만남에공식4방향Field Idle_Down과 story_haren 초상화를연결했다. 기존Site좌표/거리/대사/13목표/전투/퍼즐/보상/Save는유지하고 이름표높이만공식외형에맞췄다. 실제하렌화자초상화·대화종료후목표12진행 PASS. 하렌CompanionDefinition/파티/능력치·스킬/Chapter3추가0. 전투30프레임·6상태는 ART_READY / RUNTIME_PENDING이며 합류기획확정후연결한다. 기존Search예외로전체QA PARTIAL·원본Editor강제Import/Play/포커스조작0. 말정밀프레임·내부가림은계속ART_PENDING.

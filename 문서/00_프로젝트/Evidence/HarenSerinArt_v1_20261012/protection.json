@@ -1,0 +1,19 @@
+{
+  "protected_before": 3564,
+  "changed": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleCharacterSpriteAnimator.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "Unity/Client/Assets/_Project/Scripts/World/Chapter2Main21Flow.cs"
+  ],
+  "allowed_changes_only": true,
+  "protected_unmodified": 3561,
+  "new_files": 68,
+  "new_guid_count": 38,
+  "new_guid_collision_count": 0,
+  "original_and_test_assets_exact": true,
+  "png_original_bytes_exact": 5,
+  "zip_sha256": "7469173f8f572ab75754443a9afee1f0f4c6ac52d96aeeb88329a2b28751cd99",
+  "zip_entries": 10,
+  "png_decode_count": 8,
+  "original_user_git_count": 335
+}

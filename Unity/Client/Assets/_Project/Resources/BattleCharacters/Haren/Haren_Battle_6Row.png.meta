@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: 4576a70a85d5bf846a86da5979ca90e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7034300784711620189
+    second: Haren_Battle_6Row_0
+  - first:
+      213: 2162672424372261775
+    second: Haren_Battle_6Row_1
+  - first:
+      213: -4551058185089895109
+    second: Haren_Battle_6Row_2
+  - first:
+      213: 4908271691445347192
+    second: Haren_Battle_6Row_3
+  - first:
+      213: 315368922463954901
+    second: Haren_Battle_6Row_4
+  - first:
+      213: 1536377310212197648
+    second: Haren_Battle_6Row_5
+  - first:
+      213: 6911174241057196184
+    second: Haren_Battle_6Row_6
+  - first:
+      213: -1309928547885245378
+    second: Haren_Battle_6Row_7
+  - first:
+      213: 224942262570787147
+    second: Haren_Battle_6Row_8
+  - first:
+      213: -6104377155909872571
+    second: Haren_Battle_6Row_9
+  - first:
+      213: -6518195351439905722
+    second: Haren_Battle_6Row_10
+  - first:
+      213: 2608908999803991359
+    second: Haren_Battle_6Row_11
+  - first:
+      213: 1551072919663172479
+    second: Haren_Battle_6Row_12
+  - first:
+      213: 9162468185654329574
+    second: Haren_Battle_6Row_13
+  - first:
+      213: 9054496739720449921
+    second: Haren_Battle_6Row_14
+  - first:
+      213: -3427234403368170320
+    second: Haren_Battle_6Row_15
+  - first:
+      213: -8985883794136635075
+    second: Haren_Battle_6Row_16
+  - first:
+      213: -5288966678164692
+    second: Haren_Battle_6Row_17
+  - first:
+      213: 4096911896844183804
+    second: Haren_Battle_6Row_18
+  - first:
+      213: 3738109704535577524
+    second: Haren_Battle_6Row_19
+  - first:
+      213: 8916929263652295765
+    second: Haren_Battle_6Row_20
+  - first:
+      213: 9008527598129854098
+    second: Haren_Battle_6Row_21
+  - first:
+      213: -2948532176187077423
+    second: Haren_Battle_6Row_22
+  - first:
+      213: -5024522721869096390
+    second: Haren_Battle_6Row_23
+  - first:
+      213: 496885154590819012
+    second: Haren_Battle_6Row_24
+  - first:
+      213: 327873071185828523
+    second: Haren_Battle_6Row_25
+  - first:
+      213: 4537211251820056131
+    second: Haren_Battle_6Row_26
+  - first:
+      213: -8113523016139736039
+    second: Haren_Battle_6Row_27
+  - first:
+      213: -2282359258241838070
+    second: Haren_Battle_6Row_28
+  - first:
+      213: 5919921577195490070
+    second: Haren_Battle_6Row_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Haren_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b88d258ab35ba4db0a7747f117afa7
+      internalID: -1814583099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cc663759d3a324aa5525ff8cac23ae
+      internalID: -858863369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ccdd36eb82a6e45a544406c8392e66
+      internalID: 1188110821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae20abdaba24eb438323b83e1dc075f
+      internalID: -858728991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3785ee6590fed242a4a46c8f66091be
+      internalID: -1436481233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6aaaa3d40800494c84698f523b2d4b3
+      internalID: -924352967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c17496259c8de9498889d2f32b8d4ab
+      internalID: 554443891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0283e43701272184484eb360d4cee996
+      internalID: 1749454505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fbc79beeffbe84d991195868d0464e
+      internalID: -1005869270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Attack_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a7b873bcc467846a218a641389c257
+      internalID: 1450651539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Guard_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf58186763aab045b9c01184b76fc9c
+      internalID: -1771814500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Guard_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3958ab0bee2da4b8fec5711aad101e
+      internalID: 1122118921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Guard_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5f5171867821f47a8d072ac0b769c6
+      internalID: 768840718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Guard_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9efcac69036af4abe26ebe652a1348
+      internalID: -1179455586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af83b40259679b540b1d1696157da56f
+      internalID: -1312282210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a0efbc181dd444cb523b72e91c6cd4
+      internalID: 1175249953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ce4ad0c7cbb2d4eb5037f92e9aee22
+      internalID: 457665481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3523ffee9c07c42a2a373a4fa8068f
+      internalID: 452785626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a5618457a79004aa0d3e1e9a0f0768
+      internalID: -1707044277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Skill_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc5f95fbbf3a7145895292a9ad790b5
+      internalID: -637677263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf28217c23a32843a2ed06548c9648c
+      internalID: -1684825856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3534df3b9ca62544ab5362fde89a94b
+      internalID: 1493223470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab90eb6f46708f4895ee15d11a1c257
+      internalID: -1380558523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7b7283527c9c04a8d88ace7b9ad5e0
+      internalID: -1156202149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b34519dca39ef546a9f97573061ad47
+      internalID: -230131724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7add95514cdb05b4ea232a71acafbe8f
+      internalID: 354770739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562877526c6c4114c95c4c67d9bc1111
+      internalID: -1270778394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c238aedd1c38d154fa961e7f22cba7df
+      internalID: -120889764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb7ed09a40792c409943cd76bdc85e1
+      internalID: -1181938350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haren_Defeat_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e6250be859a7c4f8d80ea19d06637e
+      internalID: -979832706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9d7170e559282b24f9cb3410a6d1b3bf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Haren_Attack_00: -1436481233
+      Haren_Attack_01: -924352967
+      Haren_Attack_02: 554443891
+      Haren_Attack_03: 1749454505
+      Haren_Attack_04: -1005869270
+      Haren_Attack_05: 1450651539
+      Haren_Battle_6Row_0: 7034300784711620189
+      Haren_Battle_6Row_1: 2162672424372261775
+      Haren_Battle_6Row_10: -6518195351439905722
+      Haren_Battle_6Row_11: 2608908999803991359
+      Haren_Battle_6Row_12: 1551072919663172479
+      Haren_Battle_6Row_13: 9162468185654329574
+      Haren_Battle_6Row_14: 9054496739720449921
+      Haren_Battle_6Row_15: -3427234403368170320
+      Haren_Battle_6Row_16: -8985883794136635075
+      Haren_Battle_6Row_17: -5288966678164692
+      Haren_Battle_6Row_18: 4096911896844183804
+      Haren_Battle_6Row_19: 3738109704535577524
+      Haren_Battle_6Row_2: -4551058185089895109
+      Haren_Battle_6Row_20: 8916929263652295765
+      Haren_Battle_6Row_21: 9008527598129854098
+      Haren_Battle_6Row_22: -2948532176187077423
+      Haren_Battle_6Row_23: -5024522721869096390
+      Haren_Battle_6Row_24: 496885154590819012
+      Haren_Battle_6Row_25: 327873071185828523
+      Haren_Battle_6Row_26: 4537211251820056131
+      Haren_Battle_6Row_27: -8113523016139736039
+      Haren_Battle_6Row_28: -2282359258241838070
+      Haren_Battle_6Row_29: 5919921577195490070
+      Haren_Battle_6Row_3: 4908271691445347192
+      Haren_Battle_6Row_4: 315368922463954901
+      Haren_Battle_6Row_5: 1536377310212197648
+      Haren_Battle_6Row_6: 6911174241057196184
+      Haren_Battle_6Row_7: -1309928547885245378
+      Haren_Battle_6Row_8: 224942262570787147
+      Haren_Battle_6Row_9: -6104377155909872571
+      Haren_Defeat_00: -230131724
+      Haren_Defeat_01: 354770739
+      Haren_Defeat_02: -1270778394
+      Haren_Defeat_03: -120889764
+      Haren_Defeat_04: -1181938350
+      Haren_Defeat_05: -979832706
+      Haren_Guard_00: -1771814500
+      Haren_Guard_01: 1122118921
+      Haren_Guard_02: 768840718
+      Haren_Guard_03: -1179455586
+      Haren_Hit_00: -1684825856
+      Haren_Hit_01: 1493223470
+      Haren_Hit_02: -1380558523
+      Haren_Hit_03: -1156202149
+      Haren_Idle_00: -1814583099
+      Haren_Idle_01: -858863369
+      Haren_Idle_02: 1188110821
+      Haren_Idle_03: -858728991
+      Haren_Skill_00: -1312282210
+      Haren_Skill_01: 1175249953
+      Haren_Skill_02: 457665481
+      Haren_Skill_03: 452785626
+      Haren_Skill_04: -1707044277
+      Haren_Skill_05: -637677263
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

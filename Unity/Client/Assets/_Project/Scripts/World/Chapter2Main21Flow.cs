@@ -83,6 +83,8 @@ namespace ProjectLimitless.World
             var go=new GameObject(index<13?Targets[index]:"main21_route_clue_"+(index-13),typeof(Main21Site));
             go.transform.SetParent(transform,false);go.transform.position=position;go.GetComponent<Main21Site>().Configure(index);
             if(index<13)QuestNavigationTarget.Attach(go,Targets[index],Main21Site.Title(index));
+            // 첫 만남의 시각 표현만 추가합니다. 목표·대사·파티 합류는 기존 Main21 흐름이 담당합니다.
+            if(index==11)go.AddComponent<Main21HarenVisual>();
         }
         private void AttachRoutes()
         {
@@ -161,7 +163,7 @@ namespace ProjectLimitless.World
         {
             string[] titles={"달라진 열기","잔류 진동","꺼지지 않은 불씨","통행로 조사","안전 통로 선택","마지막 통로의 위협",
                 "통행 안전 확인","레온에게 보고","주민 상황 확인 / 보급품 전달","접근 가능한 귀환 마차","북풍·서리 조사",
-                "하렌 · ART_PENDING","북쪽 탐험 준비","A 중앙 균열길","B 암반 지름길","C 옛 우회로"};return titles[i];
+                "하렌","북쪽 탐험 준비","A 중앙 균열길","B 암반 지름길","C 옛 우회로"};return titles[i];
         }
         private void Awake()
         {
@@ -172,7 +174,7 @@ namespace ProjectLimitless.World
         private void Start()
         {
             label=new GameObject("Main21Label",typeof(TextMesh)).GetComponent<TextMesh>();label.transform.SetParent(transform,false);
-            label.transform.localPosition=Vector3.up*.45f;label.text=Title(Index)+" [E/F / A]";label.characterSize=.10f;
+            label.transform.localPosition=Vector3.up*(Index==11?1.35f:.45f);label.text=Title(Index)+" [E/F / A]";label.characterSize=.10f;
             label.anchor=TextAnchor.MiddleCenter;label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.fontSize=32;
             label.GetComponent<MeshRenderer>().sharedMaterial=label.font.material;
         }

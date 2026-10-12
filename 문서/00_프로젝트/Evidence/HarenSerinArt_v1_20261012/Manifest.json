@@ -1,0 +1,172 @@
+{
+  "project": "LIMITLESS",
+  "chapter": 2,
+  "characters": [
+    "Haren",
+    "Serin"
+  ],
+  "deliverable": "Haren and Serin Art v1 — visual review candidate",
+  "status": "ART_REVIEW_REQUIRED; NOT UNITY_QA_CERTIFIED",
+  "source_policy": {
+    "Haren": "Existing created portrait and field assets preserved; battle sheet reconstructed from generated combat artwork.",
+    "Serin": "Existing official GitHub field/portrait unchanged; battle artwork made using its visible design as reference. Original Serin sprite binaries not overwritten."
+  },
+  "files": [
+    {
+      "name": "Haren_Portrait.png",
+      "role": "Haren portrait with background",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "name": "Haren_Portrait_Transparent.png",
+      "role": "Haren portrait without background",
+      "dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "name": "Haren_Field_Walk_4Dir.png",
+      "role": "Haren field",
+      "dimensions": [
+        512,
+        512
+      ],
+      "rows": [
+        "Down",
+        "Left",
+        "Right",
+        "Up"
+      ],
+      "columns": 4,
+      "cell": [
+        128,
+        128
+      ],
+      "pivot": [
+        0.5,
+        0.0
+      ],
+      "ppu": 128
+    },
+    {
+      "name": "Haren_Battle_6Row.png",
+      "role": "Haren battle",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "columns": 6,
+      "rows": 6,
+      "cell": [
+        209,
+        209
+      ],
+      "pivot": [
+        0.5,
+        0.0
+      ],
+      "ppu": 100
+    },
+    {
+      "name": "Serin_Battle_6Row.png",
+      "role": "Serin battle",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "columns": 6,
+      "rows": 6,
+      "cell": [
+        209,
+        209
+      ],
+      "pivot": [
+        0.5,
+        0.0
+      ],
+      "ppu": 100
+    }
+  ],
+  "battle_contract": {
+    "row_order": [
+      "Idle",
+      "Attack",
+      "Guard",
+      "Skill",
+      "Hit",
+      "Defeat"
+    ],
+    "frame_counts": [
+      4,
+      6,
+      4,
+      6,
+      4,
+      6
+    ],
+    "unused_columns": [
+      4,
+      5
+    ],
+    "direction": "faces screen left; user visual validation needed",
+    "valid_frame_count": 30,
+    "frame_order": "left-to-right, top-to-bottom, 0-based"
+  },
+  "qa": {
+    "Haren": {
+      "nonempty": 30,
+      "transparent_unused_cells": 6,
+      "cell_edge_alpha_pixels": 0,
+      "png_dimensions": [
+        1254,
+        1254
+      ],
+      "cell_dimensions": [
+        209,
+        209
+      ],
+      "mode": "RGBA"
+    },
+    "Serin": {
+      "nonempty": 30,
+      "transparent_unused_cells": 6,
+      "cell_edge_alpha_pixels": 0,
+      "png_dimensions": [
+        1254,
+        1254
+      ],
+      "cell_dimensions": [
+        209,
+        209
+      ],
+      "mode": "RGBA"
+    },
+    "Haren_Field": {
+      "nonempty": 16,
+      "png_dimensions": [
+        512,
+        512
+      ],
+      "cell_dimensions": [
+        128,
+        128
+      ],
+      "mode": "RGBA"
+    }
+  },
+  "visual_review_notes": [
+    "Source combat illustrations were normalized into cells from generated concept sheets; check pose continuity at Unity playback speed.",
+    "Both generated battle artworks have slight per-pose visual variation; formal in-game art acceptance is not claimed.",
+    "Existing Serin portrait and field sheet from GitHub were not copied, replaced or edited.",
+    "Character hair and device colors matched to visible Serin field reference."
+  ],
+  "preview_only": [
+    "Preview/Haren_Field_Preview.png",
+    "Preview/Haren_Battle_Preview.png",
+    "Preview/Serin_Battle_Preview.png"
+  ]
+}

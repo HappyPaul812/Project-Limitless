@@ -31,7 +31,10 @@ namespace ProjectLimitless.Battle
             new CharacterVisualDefinition("companion_miel", "BattleCharacters/Miel/Animations/Miel_Battle",
                 "BattleCharacters/Miel/Miel_Battle_Final", "Miel"),
             new CharacterVisualDefinition("companion_paul", "BattleCharacters/Paul/Animations/Paul_Battle",
-                "BattleCharacters/Paul/Paul_Battle_Final", "Paul")
+                "BattleCharacters/Paul/Paul_Battle_Final", "Paul"),
+            // 정식 세린의 외형만 연결하며 사수 스킬·능력치·투사체는 기존 시스템을 유지합니다.
+            new CharacterVisualDefinition("companion_serin", "BattleCharacters/Serin/Animations/Serin_Battle",
+                "BattleCharacters/Serin/Serin_Battle_6Row", "Serin")
         };
 
         private static readonly int AttackTrigger = Animator.StringToHash("Attack");

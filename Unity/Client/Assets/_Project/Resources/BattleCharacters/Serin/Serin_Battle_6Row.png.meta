@@ -1,0 +1,959 @@
+fileFormatVersion: 2
+guid: f6a66c4c678551c4aa1a224bd4ee2483
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7879996506843809360
+    second: Serin_Battle_6Row_0
+  - first:
+      213: 1489273509933432845
+    second: Serin_Battle_6Row_1
+  - first:
+      213: 2180710052229898054
+    second: Serin_Battle_6Row_2
+  - first:
+      213: -151481406713702553
+    second: Serin_Battle_6Row_3
+  - first:
+      213: 2611124710354623983
+    second: Serin_Battle_6Row_4
+  - first:
+      213: 5722492597255070581
+    second: Serin_Battle_6Row_5
+  - first:
+      213: 9126060688491495986
+    second: Serin_Battle_6Row_6
+  - first:
+      213: -4526704281782592071
+    second: Serin_Battle_6Row_7
+  - first:
+      213: -2057080562064106636
+    second: Serin_Battle_6Row_8
+  - first:
+      213: 3740327328412566049
+    second: Serin_Battle_6Row_9
+  - first:
+      213: -167681957685377568
+    second: Serin_Battle_6Row_10
+  - first:
+      213: -6435255374423019518
+    second: Serin_Battle_6Row_11
+  - first:
+      213: -7122986414742983178
+    second: Serin_Battle_6Row_12
+  - first:
+      213: 6811722700249506255
+    second: Serin_Battle_6Row_13
+  - first:
+      213: -3916580999050447699
+    second: Serin_Battle_6Row_14
+  - first:
+      213: 4897383133538892151
+    second: Serin_Battle_6Row_15
+  - first:
+      213: -7207874734625653492
+    second: Serin_Battle_6Row_16
+  - first:
+      213: 819249342614850636
+    second: Serin_Battle_6Row_17
+  - first:
+      213: 8723235515595844605
+    second: Serin_Battle_6Row_18
+  - first:
+      213: 2426879333437101576
+    second: Serin_Battle_6Row_19
+  - first:
+      213: -4271102795194155181
+    second: Serin_Battle_6Row_20
+  - first:
+      213: -60695481802514040
+    second: Serin_Battle_6Row_21
+  - first:
+      213: -4310455316079137335
+    second: Serin_Battle_6Row_22
+  - first:
+      213: 8662475720719990796
+    second: Serin_Battle_6Row_23
+  - first:
+      213: 7614949439157572363
+    second: Serin_Battle_6Row_24
+  - first:
+      213: -3538434357779576982
+    second: Serin_Battle_6Row_25
+  - first:
+      213: -1614690488874545851
+    second: Serin_Battle_6Row_26
+  - first:
+      213: -8474711848251445833
+    second: Serin_Battle_6Row_27
+  - first:
+      213: 8926591826202800445
+    second: Serin_Battle_6Row_28
+  - first:
+      213: 6420886506081404178
+    second: Serin_Battle_6Row_29
+  - first:
+      213: -948752863912971717
+    second: Serin_Battle_6Row_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Serin_Idle_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe555f6f241b5e146ae07268c18fc725
+      internalID: 953156691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Idle_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68bd2ed21c6e3754f95dfae0a4ba90ec
+      internalID: -943727514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0414ffc1a0fa4cc4f89b70521ed47176
+      internalID: 892292744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Idle_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1045
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f366589aedf3ea04eb0112e5e76cd4ce
+      internalID: -1380624715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dc0f68a4ce119498c0a02c1852dca2
+      internalID: 318728969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e7b2075c0dd26944842f455271de29f
+      internalID: -1892245989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da53a691f20d3d4ea057bbe4e183f64
+      internalID: 597350438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e7512a7f3815f48b6eb5bd98c0bcf6
+      internalID: -2084663944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c5e0056b9ba4543b9e208717186c4f
+      internalID: 838667433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Attack_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 836
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb46bd9605de174eb01cb88f6fc2e60
+      internalID: -1103872444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Guard_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4c616919937ae49a2bbba89f364b72
+      internalID: -322829948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Guard_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77827b75bbc6e4248aa7acbd49ee8fa3
+      internalID: -1488620436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Guard_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87d244d11e94ec449994911ff3acc77
+      internalID: 1044421013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Guard_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 627
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489370006114f1c44aefe6a1ccd8d575
+      internalID: -1798943798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9da26dafeff3840af0972ebf4e2eed
+      internalID: 737201940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983dd535b6c7b34488e61ff2793ef7aa
+      internalID: 345203489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aee48c65d5ad204fa967329fcbf44e5
+      internalID: -926940407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96653d514b305e444992076c01502280
+      internalID: 376144693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1165257cffbb242a6e3754b1b5b916
+      internalID: 403081169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Skill_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 418
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd83ac161a668f7448366567df5dc7a1
+      internalID: 251611335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Hit_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04810c3590f30048a29a72eb837f408
+      internalID: -338329761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Hit_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8b1bfee5f4ef64d8777174cb365e7b
+      internalID: -1880566240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Hit_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d683e4d87cef4a6459e912153d0950ad
+      internalID: -402944812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Hit_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 209
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885d0c91e5cb00a499fcf02870adb6fa
+      internalID: -203020548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_00
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c0c2beea3541844b8d53e1d5cd689e
+      internalID: -1752811408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_01
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cf9c3bbea8dce449fcf34664478bd0
+      internalID: -2035966859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1906b0f85699cc6438cf9d151cf31355
+      internalID: -135616930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_03
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba358a20316a7b49ba918550c16f4b8
+      internalID: -968171651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_04
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371a0aac3244c714d9377b7494014e5b
+      internalID: 719632620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Serin_Defeat_05
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 0
+        width: 209
+        height: 209
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af203d0c0d4a0874ea3a296a37e53ac5
+      internalID: 2058849079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 836f02848151701439e3f97445f2744b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Serin_Attack_00: 318728969
+      Serin_Attack_01: -1892245989
+      Serin_Attack_02: 597350438
+      Serin_Attack_03: -2084663944
+      Serin_Attack_04: 838667433
+      Serin_Attack_05: -1103872444
+      Serin_Battle_6Row_0: 7879996506843809360
+      Serin_Battle_6Row_1: 1489273509933432845
+      Serin_Battle_6Row_10: -167681957685377568
+      Serin_Battle_6Row_11: -6435255374423019518
+      Serin_Battle_6Row_12: -7122986414742983178
+      Serin_Battle_6Row_13: 6811722700249506255
+      Serin_Battle_6Row_14: -3916580999050447699
+      Serin_Battle_6Row_15: 4897383133538892151
+      Serin_Battle_6Row_16: -7207874734625653492
+      Serin_Battle_6Row_17: 819249342614850636
+      Serin_Battle_6Row_18: 8723235515595844605
+      Serin_Battle_6Row_19: 2426879333437101576
+      Serin_Battle_6Row_2: 2180710052229898054
+      Serin_Battle_6Row_20: -4271102795194155181
+      Serin_Battle_6Row_21: -60695481802514040
+      Serin_Battle_6Row_22: -4310455316079137335
+      Serin_Battle_6Row_23: 8662475720719990796
+      Serin_Battle_6Row_24: 7614949439157572363
+      Serin_Battle_6Row_25: -3538434357779576982
+      Serin_Battle_6Row_26: -1614690488874545851
+      Serin_Battle_6Row_27: -8474711848251445833
+      Serin_Battle_6Row_28: 8926591826202800445
+      Serin_Battle_6Row_29: 6420886506081404178
+      Serin_Battle_6Row_3: -151481406713702553
+      Serin_Battle_6Row_30: -948752863912971717
+      Serin_Battle_6Row_4: 2611124710354623983
+      Serin_Battle_6Row_5: 5722492597255070581
+      Serin_Battle_6Row_6: 9126060688491495986
+      Serin_Battle_6Row_7: -4526704281782592071
+      Serin_Battle_6Row_8: -2057080562064106636
+      Serin_Battle_6Row_9: 3740327328412566049
+      Serin_Defeat_00: -1752811408
+      Serin_Defeat_01: -2035966859
+      Serin_Defeat_02: -135616930
+      Serin_Defeat_03: -968171651
+      Serin_Defeat_04: 719632620
+      Serin_Defeat_05: 2058849079
+      Serin_Guard_00: -322829948
+      Serin_Guard_01: -1488620436
+      Serin_Guard_02: 1044421013
+      Serin_Guard_03: -1798943798
+      Serin_Hit_00: -338329761
+      Serin_Hit_01: -1880566240
+      Serin_Hit_02: -402944812
+      Serin_Hit_03: -203020548
+      Serin_Idle_00: 953156691
+      Serin_Idle_01: -943727514
+      Serin_Idle_02: 892292744
+      Serin_Idle_03: -1380624715
+      Serin_Skill_00: 737201940
+      Serin_Skill_01: 345203489
+      Serin_Skill_02: -926940407
+      Serin_Skill_03: 376144693
+      Serin_Skill_04: 403081169
+      Serin_Skill_05: 251611335
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

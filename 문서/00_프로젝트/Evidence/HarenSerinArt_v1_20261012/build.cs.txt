@@ -1,0 +1,110 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.Animations;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+using ProjectLimitless.UI;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>격리 Batch에서 신규 자산만 만듭니다. 기존 캐릭터/Scene 생성기는 실행하지 않습니다.</summary>
+    public static class HarenSerinArtBuild
+    {
+        private const string FieldSheet = "Assets/_Project/Resources/StoryCharacters/Haren/Haren_Field_Walk_4Dir.png";
+        private const string FieldFolder = "Assets/_Project/Resources/StoryCharacters/Haren/Animations";
+
+        public static void Run()
+        {
+            if (!Application.isBatchMode || !Application.dataPath.Replace('\\', '/').Contains("/Temp/Field01RenewalQA/Client/Assets"))
+                throw new InvalidOperationException("격리 Batch 생성만 허용합니다.");
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            foreach (string name in new[] { "Haren", "Serin" })
+            {
+                string folder = $"Assets/_Project/Resources/BattleCharacters/{name}/Animations";
+                if (Directory.Exists(folder)) throw new InvalidOperationException("기존 애니메이션 덮어쓰기 금지: " + folder);
+                // 기존 폴·미엘·태온의 생성 규칙을 그대로 사용하되 새 경로 두 곳에만 적용합니다.
+                Type definition = typeof(TaeonBattleAnimationBuilder).GetNestedType("CharacterBuildDefinition", BindingFlags.NonPublic);
+                object data = Activator.CreateInstance(definition, new object[] { name,
+                    $"Assets/_Project/Resources/BattleCharacters/{name}/{name}_Battle_6Row.png", folder, null });
+                typeof(TaeonBattleAnimationBuilder).GetMethod("BuildCharacter", BindingFlags.NonPublic | BindingFlags.Static)
+                    .Invoke(null, new[] { data });
+            }
+            Field();
+            foreach (string file in new[] { "Haren_Portrait.png", "Haren_Portrait_Transparent.png" })
+            {
+                var importer = (TextureImporter)AssetImporter.GetAtPath("Assets/_Project/Art/Portraits/Haren/" + file);
+                importer.textureType = TextureImporterType.Sprite;
+                importer.spriteImportMode = SpriteImportMode.Single;
+                importer.spritePixelsPerUnit = 100;
+                importer.mipmapEnabled = false;
+                importer.alphaIsTransparency = true;
+                importer.textureCompression = TextureImporterCompression.Uncompressed;
+                importer.maxTextureSize = 2048;
+                importer.npotScale = TextureImporterNPOTScale.None;
+                importer.SaveAndReimport();
+            }
+            string portraitPath = "Assets/_Project/Resources/DialoguePortraitDefinitions/Haren.asset";
+            if (AssetDatabase.LoadMainAssetAtPath(portraitPath) != null) throw new InvalidOperationException("기존 초상화 정의 보호");
+            var portrait = ScriptableObject.CreateInstance<DialoguePortraitDefinition>();
+            portrait.ConfigureContent("story_haren", "하렌", AssetDatabase.LoadAssetAtPath<Sprite>(
+                "Assets/_Project/Art/Portraits/Haren/Haren_Portrait_Transparent.png"));
+            AssetDatabase.CreateAsset(portrait, portraitPath);
+            AssetDatabase.SaveAssets();
+            File.WriteAllText("HarenSerinBuildDone.txt", "PASS");
+        }
+
+        private static void Field()
+        {
+            var importer = (TextureImporter)AssetImporter.GetAtPath(FieldSheet);
+            importer.textureType = TextureImporterType.Sprite;
+            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spritePixelsPerUnit = 128;
+            importer.filterMode = FilterMode.Point;
+            importer.mipmapEnabled = false;
+            importer.alphaIsTransparency = true;
+            importer.textureCompression = TextureImporterCompression.Uncompressed;
+            importer.npotScale = TextureImporterNPOTScale.None;
+            importer.maxTextureSize = 1024;
+            importer.SaveAndReimport();
+            var factories = new SpriteDataProviderFactories(); factories.Init();
+            var provider = factories.GetSpriteEditorDataProviderFromObject(importer); provider.InitSpriteEditorDataProvider();
+            var edit = provider.GetDataProvider<ISpriteFrameEditCapability>();
+            if (edit == null) throw new InvalidOperationException("Sprite 편집 capability 없음");
+            foreach (var required in new[] { EEditCapability.CreateAndDeleteSprite, EEditCapability.EditSpriteName,
+                EEditCapability.EditSpriteRect, EEditCapability.EditPivot })
+                if (!edit.GetEditCapability().HasCapability(required)) throw new InvalidOperationException("Sprite 편집 권한 부족: " + required);
+            string[] directions = { "Down", "Left", "Right", "Up" };
+            var rects = Enumerable.Range(0, 16).Select(i => new SpriteRect {
+                name = $"Haren_{(i % 4 == 0 ? "Idle" : "Walk")}_{directions[i / 4]}_{i % 4:00}",
+                rect = new Rect(i % 4 * 128, 512 - (i / 4 + 1) * 128, 128, 128),
+                alignment = SpriteAlignment.Custom, pivot = new Vector2(.5f, 0f), spriteID = GUID.Generate()
+            }).ToArray();
+            provider.SetSpriteRects(rects);
+            var names = provider.GetDataProvider<ISpriteNameFileIdDataProvider>();
+            names?.SetNameFileIdPairs(rects.Select(r => new SpriteNameFileIdPair(r.name, r.spriteID)));
+            provider.Apply(); importer.SaveAndReimport();
+            if (Directory.Exists(FieldFolder)) throw new InvalidOperationException("기존 Field Animator 보호");
+            Directory.CreateDirectory(FieldFolder); AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            var controller = AnimatorController.CreateAnimatorControllerAtPath(FieldFolder + "/Haren_Field.controller");
+            Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(FieldSheet).OfType<Sprite>().ToArray();
+            foreach (string direction in directions)
+            foreach (bool walk in new[] { false, true })
+            {
+                string state = (walk ? "Walk_" : "Idle_") + direction;
+                var clip = new AnimationClip { name = "Haren_" + state, frameRate = 8 };
+                Sprite[] frames = Enumerable.Range(0, walk ? 4 : 1).Select(i => sprites.Single(s =>
+                    s.name == $"Haren_{(i == 0 ? "Idle" : "Walk")}_{direction}_{i:00}")).ToArray();
+                AnimationUtility.SetObjectReferenceCurve(clip, new EditorCurveBinding { path = "", type = typeof(SpriteRenderer), propertyName = "m_Sprite" },
+                    frames.Select((s, i) => new ObjectReferenceKeyframe { time = i / 8f, value = s }).ToArray());
+                var settings = AnimationUtility.GetAnimationClipSettings(clip); settings.loopTime = true;
+                settings.stopTime = frames.Length / 8f; AnimationUtility.SetAnimationClipSettings(clip, settings);
+                AssetDatabase.CreateAsset(clip, FieldFolder + "/" + clip.name + ".anim");
+                var animatorState = controller.layers[0].stateMachine.AddState(state); animatorState.motion = clip;
+                if (state == "Idle_Down") controller.layers[0].stateMachine.defaultState = animatorState;
+            }
+        }
+    }
+}
