@@ -1,3 +1,14 @@
+<!-- URGENT_20261012_BEGIN -->
+## 2026-10-12 긴급 묶음 작업 — Field02 검수 체크포인트
+
+- Field02 ZIP: CRC/PNG25개·실사용17개·Manifest 해시/크기 일치. 실제 Scene363+Theme복제10=373개 대응표, 격리 Import/RenderTexture 확보. 배치·Scale·Flip·Sorting·Collider 보존. 원본 영구 적용0.
+- **ART_REVIEW_PENDING / 기술 PARTIAL**: 바닥 Theme 색조, Rock B의85×54/PPU100→128×128/PPU128 표현 차이, 보조5개 배치 승인 필요. Main07 활성 폴/전체 접근·Field01/03 실제 왕복·Field02 리스폰은 미검증. [검수 및 통합 인계](Field02_Renewal_Art_v1_Inspection_20261012.md).
+- Chapter2 종합 QA 진행 중: Main20 UI 정상 승리/Phase2, Main21 A/B UI 정상 승리·마차 Skip/Continue PASS. 격리 QA 경로 검사 수정 후 잔여 체크포인트 재개. 기존 Search 예외 유지, 전체 PASS로 판정하지 않음.
+- Chapter3는 확정 기획 문서화 및 구현 준비만 진행; 실제 시스템·미정 수치/ID 추가0. 기존 TTS 정상25개 재통합0·오류10개 의도적 무음 유지.
+- 기준 Commit `240dbad`; 신규 검수 Commit은 Git 이력 참조. Push0, 사용자 직접 Push.
+
+<!-- URGENT_20261012_END -->
+
 ## 2026-10-12 Main18·19 TTS — 정상25개 통합 / 세린10개 재제작 대기 / QA_PARTIAL
 
 [선택적 통합·원인 감사](Main18_19_TTS_Selective_Integration_QA_20261012.md)·[개별35상태](Main18_19_TTS_Selective_Applied_Matrix_20261012.csv)·[Schedar10개 인계](Main18_Serin10_Schedar_Regen_Handoff_20261012.csv). Main18 정상12/12·Main19 정상13/13 원본 WAV byte 그대로 연결하고 실제 Story/DSP/자연 종료를 확인했다. Main18 오류10개는 REGEN_REQUIRED·Unity미연결·실제무음이며 Dialogue ID/화자/자막을 유지했다. Manifest는 검증25개만 RUNTIME_VERIFIED, Player/지문과 Status 외 모든 필드 불변이다.
