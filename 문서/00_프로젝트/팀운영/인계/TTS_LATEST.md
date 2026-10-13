@@ -59,3 +59,14 @@
 - 기존 샘플 제외 Story `02,07,08,09,10,11,12,13,14` 순서. 자동 retry0, 호출 25초 간격, 실패/429 즉시 HOLD, 기존 성공 WAV 재생성 차단. 결과 Stage 폴더의 `remaining9_wav`와 StoryOrder CSV.
 - 오프라인 mock 정상9회/둘째429 즉시 중단 테스트 통과. 실제 SDK/사용자 PC 진행 여부는 아직 `NOT_EXECUTED`/후속 스크린샷 필요.
 - 상세: [나머지9 생성기 보고](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). 이번 문서는 `docs/tts` 전용, main 변경/병합0, Unity 변경0.
+
+
+## 2026-10-13 잔여9 실제 제작 부분 성공 / Story13 SAFE HOLD — 최신 상태
+
+사용자 PC PowerShell 스크린샷으로 `M18_Serin_Schedar_REMAINING9.py` 실행 결과 확인:
+- 승인 샘플 Story06 1개 **재사용**(신규 호출0).
+- Story02,07,08,09,10,11,12 `[SAVED]` **7 WAV 신규 생성**(ID별 SHA 출력, 실제 바이트 검사 별도 대기).
+- Story13 `main18_watcher_witness_serin_01` `[API REQUEST]` 후 `[SAFE HOLD] / RuntimeError` **FAILED_OR_UNCERTAIN_HOLD**; 세부 원인 UNKNOWN, 429라고 단정하지 않음. Story14 `main18_watcher_witness_serin_02` **NOT_CALLED**.
+- **전체10: SAVED8(샘플1+7), 불확실1, 미호출1.** 지금까지 생성 시도 총9(기존 샘플1+이번8)로 관측. 전체10 사용자 청취 승인 아직 아님.
+- **중요: 추가 API0, 같은 ID 자동 재시도/새 Key/다음 Story14 호출/잠금 및 checkpoint 초기화 전부 금지.** 다음은 Codex가 사용자 로컬 오류로그·attempt·HOLD·lock·생성 파일의 SHA를 읽기 전용 대조하고 결과 보고. 재개는 별도 승인과 현재 무료 quota 재확인 후.
+- GitHub 결과 문서: [나머지9 생성기 및 SAFE HOLD 기록](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). 사용자 화면 근거, 독립 검사 미실시. Unity/Main 변경·WAV 적용0.
