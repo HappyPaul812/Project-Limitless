@@ -1,0 +1,16 @@
+{
+  "rock": {
+    "path": "F:\\Downloads\\Limitless_Field03_RockB_Fix_v2.zip",
+    "sha256": "44d8f99bafe5eefc753c18c1ee179da491e935fdf415c60605e60b040e4f53dc",
+    "files": 8,
+    "png": 3,
+    "crc": "PASS"
+  },
+  "field": {
+    "path": "F:\\Downloads\\Limitless_Field04_Renewal_Art_v1.zip",
+    "sha256": "60f4c51d5dba1ad3bae862db033d36ccaae2cf8dac5b34b65762667874441be3",
+    "files": 27,
+    "png": 21,
+    "crc": "PASS"
+  }
+}

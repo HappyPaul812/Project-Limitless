@@ -1,0 +1,15 @@
+{
+  "original_status_items": 337,
+  "original_dirty_expanded_files": 822,
+  "protected_group_files": 3929,
+  "unique_protected_files": 4750,
+  "protected_hash_digest": "42f17bfcec56bab72a7fd1a1d9c83c96c7b3ae3c8fafc5c374351ea00bf52f30",
+  "changed_files": [],
+  "original_status_byte_equal": true,
+  "original_HEAD": "ff022e63dfe364f559fcc29819d27b123ad31127",
+  "source_zips_unchanged": true,
+  "TTS_script_sha256": "e358511d852a014f0c2196754debe523cd55336bda8a11d18717a3278276b10f",
+  "original_editor": "MCP start/end: Bootstrap/Edit Mode/is_focused=false; no mutation",
+  "push_executed": false,
+  "official_art_applied": false
+}

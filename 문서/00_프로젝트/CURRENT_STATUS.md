@@ -1,3 +1,17 @@
+## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
+
+- 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.
+- 이제 AI main직접커밋금지, 기획docs/planning·Codex codex/주제 작업브랜치. 기획정책문서는docs/planning74c5a0b에서읽었고다른담당브랜치변경0. 사용자Push는Codex작업브랜치만, main병합은별도결정. 이전HEAD:main안내대체/Git_BranchOnly_Integration_20261013.md참조.
+- 원본337항목/822미커밋·4,750파일전후SHA/status/HEAD 보호. 원본Editor/Unity/TTS/아트적용/Push0. 기존QA·미술승인대기·Field04보완상태유지.
+
+## 2026-10-13 Git 안전 통합·Rock B v2/Field04 격리 검수
+
+- 원본337항목/822미커밋·4,750보호파일 SHA 불변. 원본main ff022e6/Editor Bootstrap·비포커스/Save/TTS/BGM 보호. 최종원격405ce12(원격전용7커밋)+로컬A/B를 별도 codex/integrate-main-20261013 worktree에서 보존 통합, 충돌0/Unity diff0/Push0. 정확한 사용자 Push 명령은 ArtInspection_20261013_Summary.md.
+- Rock B v2: 고립14 제거/본체3537 동일RGBA·19px상향, 실제Unity/PPU128/Center·접지차0.001875 PASS. USER_ART_REVIEW_PENDING, 공식375/376·기존RockNorth1 유지/신규 적용0. 검수Commit `975fb636a7a7a7527bc704c21019853301d83bac`.
+- Field04: CRC/PNG/hash·타일27·대응363/363·실제RenderTexture/Importer PASS. 나무Big/Medium5참조역대응·RockNorth발높이보완 ART_MAPPING_FIX_REQUIRED. QA제안362/363·Optional0, 정식 적용0. 검수Commit `dcb1f14524de6cfb295cbf5e5d6cfb83d24229a5`.
+- Main13전체/Continue2/Field03·Arbel·Field05왕복/Story+일반2 UI승리·35초/휠체어179waypoint/Camera12검사PASS. 최초QAJson오류·정확서쪽Spawn경로FAIL보존, 마지막재개177PASS/FAIL0. 원본서쪽Spawn겹침·북쪽Collider틈/기존Search예외로전체PARTIAL. 사람미술·OS입력/권리/원본정식Import미검증.
+- 다음: Rock v2 사용자미술승인, Field04나무표/RockNorth보완·색감검토. 기존경계/Spawn수정은별도기술범위. TTS실행0·투사스킬구현0. 원본dirty CURRENT_STATUS는 수정하지 않고 통합worktree문서만 갱신.
+
 ## 2026-10-12 Field03 Rock B v2 자료 대기
 
 - ART_FIX_PENDING. 지정경로와 F:/Downloads·사용자Downloads 재귀 ZIP 검색에서 Rock B v2 미발견. 발견된 Field03 v1은 수정본으로 사용하지 않았습니다.

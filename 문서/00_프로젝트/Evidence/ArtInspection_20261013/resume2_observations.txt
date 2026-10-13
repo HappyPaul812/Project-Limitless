@@ -1,0 +1,5 @@
+WestSpawn nativePlayerRadius=0.5;scale=(1.00, 1.00, 1.00);tree=Center: (-8.50, -0.55, 0.00), Extents: (0.23, 0.14, 0.00);nativeOverlap=True;distance=-0.01631531
+Wheelchair target=(-8.00, 0.25);waypoints=21
+Wheelchair target=(-9.50, 0.25);waypoints=6
+Wheelchair target=(8.00, 0.25);waypoints=70
+Wheelchair target=(9.50, 0.25);waypoints=6

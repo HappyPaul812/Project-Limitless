@@ -1,0 +1,81 @@
+{
+  "attempt1": {
+    "pass_entries": 62,
+    "fail_entries": 1,
+    "failure_labels": [
+      "FAIL|System.ArgumentException: JsonUtility.ToJson does not support engine types."
+    ],
+    "status": "FAIL"
+  },
+  "resume1": {
+    "pass_entries": 107,
+    "fail_entries": 2,
+    "failure_labels": [
+      "FAIL|Wheelchair.RouteRadius.(-8.00, 0.00)",
+      "FAIL|System.Exception: Wheelchair.RouteRadius.(-8.00, 0.00)"
+    ],
+    "status": "FAIL"
+  },
+  "resume2": {
+    "pass_entries": 177,
+    "fail_entries": 0,
+    "failure_labels": [],
+    "status": "PARTIAL_KNOWN_SEARCH_USER_ART_REVIEW_PENDING"
+  },
+  "raw_pass_entries": 346,
+  "unique_exact_pass_labels": 279,
+  "observed_physics_waypoint_entries": 179,
+  "battles": [
+    "PASS|Battle.ActualUIVictory.Main13Story.Attacks6",
+    "PASS|Battle.ActualUIVictory.field04_heatwind_hawk.Attacks7",
+    "PASS|Battle.ActualUIVictory.field04_soot_hound.Attacks8"
+  ],
+  "quest_and_transition": [
+    "PASS|Main12.ActualWestArrivalStarts13",
+    "PASS|Main12.ActualWestArrivalStarts13",
+    "PASS|Camera.ViewportInside.1.777778.(9.50, 0.00)",
+    "PASS|Camera.ViewportInside.1.777778.(-9.50, 0.00)",
+    "PASS|Camera.ViewportInside.1.777778.(0.00, 6.50)",
+    "PASS|Camera.ViewportInside.1.777778.(0.00, -6.50)",
+    "PASS|Camera.ViewportInside.1.333333.(9.50, 0.00)",
+    "PASS|Camera.ViewportInside.1.333333.(-9.50, 0.00)",
+    "PASS|Camera.ViewportInside.1.333333.(0.00, 6.50)",
+    "PASS|Camera.ViewportInside.1.333333.(0.00, -6.50)",
+    "PASS|Camera.ViewportInside.2.333333.(9.50, 0.00)",
+    "PASS|Camera.ViewportInside.2.333333.(-9.50, 0.00)",
+    "PASS|Camera.ViewportInside.2.333333.(0.00, 6.50)",
+    "PASS|Camera.ViewportInside.2.333333.(0.00, -6.50)",
+    "PASS|Continue.ActualButton.BeforeSoil",
+    "PASS|Continue.PositionQuestPreserved.BeforeSoil",
+    "PASS|Main13.ActualInteract.field04_main13_dry_soil",
+    "PASS|Main13.ActualInteract.field04_main13_shallow_stream",
+    "PASS|Main13.SerinActualTalk",
+    "PASS|Main13.SerinTemporaryNotPermanent",
+    "PASS|Main13.StoryWinProgressOnce",
+    "PASS|Continue.ActualButton.AfterStoryWin",
+    "PASS|Continue.PositionQuestPreserved.AfterStoryWin",
+    "PASS|Transition.Spawn.west_to_arbel",
+    "PASS|Main13.ActualArbelArrival",
+    "PASS|Main13.LeonActualTalk",
+    "PASS|Main13.Completed",
+    "PASS|Transition.Spawn.east_to_field04",
+    "PASS|Transition.Spawn.east_to_field03",
+    "PASS|Field03.ReturnField04Spawn8",
+    "PASS|Transition.Spawn.west_to_arbel",
+    "PASS|Transition.Spawn.west_to_field05",
+    "PASS|Transition.Spawn.east_to_arbel",
+    "PASS|Transition.Spawn.east_to_field04"
+  ],
+  "unity_attempt1.log": {
+    "compile_error_count": 0,
+    "sha256": "85b891d9e4e452056f5fe3643b47b2d0aa121f37469854121c8bd9e5307879cf"
+  },
+  "unity_resume1.log": {
+    "compile_error_count": 0,
+    "sha256": "cf00916753e0832bedd003fb2d4a85669d232f06a237454a4055884b3fe95a5f"
+  },
+  "unity_resume2.log": {
+    "compile_error_count": 0,
+    "sha256": "f7424c514c8b5d9b993feceb8c573cbafa0d6dd54b0e6a859856ff3c379d2fa7"
+  }
+}

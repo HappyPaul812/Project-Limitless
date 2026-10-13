@@ -1,0 +1,24 @@
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <c5ae8a4eeb824526b5df2932bc2395e0>:0)
+UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () (at <60f2bd518b604435bcf930e6d229f684>:0)
+System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <f1b392d8fe224ca2b1f9fab1000b77eb>:0)
+System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <f1b392d8fe224ca2b1f9fab1000b77eb>:0)
+UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at <60f2bd518b604435bcf930e6d229f684>:0)
+UnityEditor.Search.SearchInit.IndexationOnStartup () (at <60f2bd518b604435bcf930e6d229f684>:0)
+UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at <27ff15fd79c54f5eb7060fd0f507d441>:0)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+ArgumentException: JsonUtility.ToJson does not support engine types.
+UnityEngine.JsonUtility.ToJson (System.Object obj, System.Boolean prettyPrint) (at <7db40257f2ca49ea9e6621a966d875f4>:0)
+UnityEngine.JsonUtility.ToJson (System.Object obj) (at <7db40257f2ca49ea9e6621a966d875f4>:0)
+ProjectLimitless.EditorTools.ArtInspectionAudit+<>c.<Snapshot>b__34_1 (UnityEngine.SpriteRenderer x) (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:108)
+System.Linq.Enumerable+SelectIPartitionIterator`2[TSource,TResult].MoveNext () (at <f1b392d8fe224ca2b1f9fab1000b77eb>:0)
+System.String.Join (System.String separator, System.Collections.Generic.IEnumerable`1[T] values) (at <c5ae8a4eeb824526b5df2932bc2395e0>:0)
+ProjectLimitless.EditorTools.ArtInspectionAudit.Snapshot () (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:108)
+ProjectLimitless.EditorTools.ArtInspectionAudit+<FieldViews>d__35.MoveNext () (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:111)
+ProjectLimitless.EditorTools.ArtInspectionAudit+<Flatten>d__46.MoveNext () (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:160)
+ProjectLimitless.EditorTools.ArtInspectionAudit.Tick () (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:161)
+UnityEngine.Debug:LogException(Exception)
+ProjectLimitless.EditorTools.ArtInspectionAudit:Tick() (at Assets/_Project/Scripts/Editor/ArtInspectionAudit.cs:161)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions()

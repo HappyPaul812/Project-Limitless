@@ -1,0 +1,6 @@
+NorthGapSolidAt(0,7.4)=False
+Wheelchair target=(7.00, 0.00);waypoints=4
+Wheelchair target=(5.00, -2.00);waypoints=16
+Wheelchair target=(2.00, 2.00);waypoints=28
+Wheelchair target=(-1.00, 0.00);waypoints=20
+Wheelchair target=(-3.00, 0.00);waypoints=8

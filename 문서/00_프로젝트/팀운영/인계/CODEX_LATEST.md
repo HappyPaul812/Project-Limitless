@@ -1,3 +1,21 @@
+## 2026-10-13 새 담당별 브랜치 규칙·통합 v2
+
+- 사용자최신규칙: AI main직접커밋금지. 기획docs/planning, Codex codex/주제별브랜치+별도worktree. 이전HEAD:main명령사용금지, ../../Git_BranchOnly_Integration_20261013.md의작업브랜치Push안내우선. CodexPush0/main병합은사용자별도결정.
+- 새 worktree Temp/GitIntegration20261013V2/main-integration / codex/integrate-main-20261013-v2. 이전통합961c90d에서분기후최신origin/main73c37bf보존merge71f71bb, 충돌0. 두SHA모두조상·Unity변경0. 기획docs/planning74c5a0b정책읽기만/다른브랜치변경0.
+- 원본main ff022e6/337항목822파일·4,750SHA보호, 이전통합worktree961c90d도보존. reset/stash/amend/force/아트적용/TTS/원본Editor조작0. 기존Rockv2/Field04검수및승인대기상태유지.
+
+새세션문구: “LIMITLESS Codex 담당입니다. Git_BranchOnly_Integration_20261013·이인계·CURRENT_STATUS를읽고codex작업브랜치만사용하세요. 원본main/미커밋/961c90d통합이력보호, Push/main직접작성/승인전자산적용금지입니다.”
+
+## 2026-10-13 Git 통합·Rock B v2/Field04 검수 인계
+
+- 최신검수는 ../../ArtInspection_20261013_Summary.md 및 Rock/Field04각보고서. 최종원격405ce12+로컬A/B 안전통합은 Temp/GitIntegration20261013/main-merge / codex/integrate-main-20261013. Push0, 사용자정확명령은총괄참조. 원본main ff022e6/337항목822파일 보호; 단순원본git push는분기상태임.
+- Rockv2 픽셀/실제접지PASS·USER_ART_REVIEW_PENDING. Field04 CRC/PNG/tile27/실제Preview/기능QA완료·전체PARTIAL; 나무5참조Big/Medium역대응/RockNorth보완필요. Literal과Proposal362/363을구분. 둘다원본영구적용0/Optional0.
+- 원본서쪽Spawn native겹침/북쪽비출구Collider틈·Search기존예외 유지. Main13/Continue2/왕복/3UI전투·35초/휠체어179/Camera12 PASS, 실패로그보존. 미술승인/손플레이/독립권리미검증. 새TTS호출/SkillDefinition/UI/Save코드추가0.
+- 기존격리 Temp/Field01RenewalQA/Client 재사용·검수Batch종료. Temp/ArtInspection20261013 원시로그/소스, 각Results/Resume1/Resume2 분리, Evidence/ArtInspection_20261013 문서용정리본/실제GPU이미지. 원본Editor Bootstrap/Edit/비포커스무접촉, 보호4,750SHA불변.
+- 검수SHA: Rock `975fb636a7a7a7527bc704c21019853301d83bac`, Field04 `dcb1f14524de6cfb295cbf5e5d6cfb83d24229a5`. 다음: 사용자미술검토/납품표와RockNorth보완; 승인없이정식적용/TTS/Push금지. 새담당은원격리뉴얼신입인계와현재QA를함께읽고중복제작하지말것.
+
+새세션문구: “LIMITLESS Codex 담당입니다. ArtInspection_20261013_Summary·CURRENT_STATUS·이인계를 읽고 원본337/822·Save·TTS와통합worktree를 보호하세요. Rockv2미술승인대기/Field04대응보완, 원본영구적용0·TTS/Push0입니다.”
+
 ## 2026-10-12 B2 Push 확인 후 봉인문·Rock B 인계
 
 - 원격47a65e2(B2완료) 확인 후 후속 시작. B1 봉인문은 기존 벽 안의0.75×0.625 상태 표식/기존 하강로 B2이동 안내로 해결. 구현 `6c78cdb833e873639b0a027d5cfdc7efb5a83b3f`, B1체크388/B2경계139 PASS. 전체 PARTIAL(Search·사람가독성 미검증).

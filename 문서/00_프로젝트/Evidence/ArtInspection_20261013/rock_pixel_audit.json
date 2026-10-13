@@ -1,0 +1,52 @@
+{
+  "v1_zip": "F:\\Downloads\\Limitless_Sprites\\Limitless_Field03_Renewal_Art_v1.zip",
+  "v1_zip_sha256": "333ffb32a8255cabadf021b33a1aa243c7d2c4e9d7304eb424a6055f01209d81",
+  "v1": {
+    "sha256": "b34a8f54b2ab61020ba7051723cb76d3d8cbfc8f432fee7cf6999de46671b41b",
+    "size": [
+      128,
+      128
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "bbox_exclusive": [
+      12,
+      0,
+      116,
+      125
+    ],
+    "alpha_pixels": 3551,
+    "components8": 2,
+    "component_sizes": [
+      3537,
+      14
+    ]
+  },
+  "v2": {
+    "sha256": "4783f18a407cfaac4489731571b60a7364433f94fc4e849fd74bfd3358b6b770",
+    "size": [
+      128,
+      128
+    ],
+    "mode": "RGBA",
+    "alpha_min": 0,
+    "alpha_max": 255,
+    "bbox_exclusive": [
+      12,
+      50,
+      116,
+      106
+    ],
+    "alpha_pixels": 3537,
+    "components8": 1,
+    "component_sizes": [
+      3537
+    ]
+  },
+  "body_pixels": 3537,
+  "removed_nonbody_pixels": 14,
+  "all_RGBA_equals_body_shift_minus19": true,
+  "bottom_world_y_pixel_edge": 4.071875,
+  "collider_bottom_y": 4.07
+}
