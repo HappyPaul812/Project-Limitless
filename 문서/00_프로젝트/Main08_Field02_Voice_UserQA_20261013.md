@@ -82,3 +82,12 @@ Main08 대사 원문/화자·Dialogue ID·퀘스트 순서·기존 정상 음성
 - **TTS 신규 제작 불필요 (현재 승인 후보 집합 기준):** 새 Gemini/API 호출·재녹음 금지. 태온 `supp_004`의 긴 문장과 미엘 `supp_002/003` 분리 부분까지 현장 후보 목록에 정확히 포함되어 있는지 Codex가 재확인하고 하나라도 누락되면 해당 ID만 HOLD로 두어 사용자에게 결과를 보고한다. 청취 승인이 있다고 해서 존재하지 않는 WAV가 생긴 것으로 가정하지 않는다.
 - **후속 Unity 정식 연결 승인:** Codex가 사용자 청취 PASS를 받은 실제 후보만 올바른 Stable Dialogue ID로 연결/복사·분할, 반드시 **원본/목적지 모두 백업 후 최소 변경**, Catalog→GUID/meta→PCM→대사 런타임 확인. 어떤 ID에 원본을 재사용하더라도 **출처 음성은 유지**, 다른 대사의 클립을 파괴하는 단순 이동·rename 금지.
 - 현재 **APPROVED_FOR_CODEX_INTEGRATION / NOT_YET_UNITY_APPLIED / FINAL_RUNTIME_QA_PENDING**. 원본 Unity, 미커밋, Save, Scene, 게임 원문, 기존 정상 TTS를 보호하며 검증은 비포커스 별도 worktree/격리 Save로 수행. 신규 `codex/*` 브랜치에서만 commit; **main 직접 commit/Push/병합 금지**. 완료 후 청취 승인과 런타임 음성 재생 PASS를 나누어 보고한다.
+
+
+## 2026-10-13 승인 음성 Unity 적용·원격 Push 후속
+
+- 바울 대표가 전달한 Codex 최종 보고에 따라 **승인된 Main08 음성 6개**(`main08_taeon_supp_002/003/004`, `main08_miel_supp_001/002/003`)가 원본 프로젝트 디스크에 적용되었다. 별도 승인 WAV 폴더 등록·StoryVoiceCatalog 참조 6개 변경, 기존 출처 WAV/GUID/meta 보존.
+- Codex 격리 QA 결과 **177 PASS / FAIL 0**, 전체 PARTIAL. 기존 태온005·006 발화 문제와 대화 중 반복 몬스터 조우, Search 오류 및 Unity 버전 차이 미해결. 원본 실행 중 Play 세션이 즉시 새 클립을 로드했는지는 검증되지 않았다. 기타 보호 파일 5,538개와 사용자 미커밋·HEAD 보존 보고.
+- 해당 작업 브랜치 `codex/main08-approved-voice-apply-20261013`, Commit `79554069d010115a5427eedfc1c109994737f4fb`가 **GitHub 원격 Push 완료**되었음을 기획 담당이 GitHub에서 직접 확인했다. 원격 `main`은 확인 당시 `0e0476649b667129cb7aa6004f4b677335ed8be2` 그대로, **main 병합 없음**.
+- 현재 상태: **USER_LISTENING_APPROVED / DISK_APPLIED / QA_177_PASS_PARTIAL / REMOTE_BRANCH_PUSHED / MAIN_NOT_MERGED / LIVE_EDITOR_REFRESH_NOT_VERIFIED**.
+- 다음: 사용자가 Unity Play 세션을 안전하게 새로 시작할 기회에 실제 6개 음성을 청취 검증. 태온005·006과 반복 조우는 별도 결함으로 추적, 사용자가 승인할 때만 별도 범위 수정. main 통합은 PR/통합 QA와 별도 승인 후 진행.
