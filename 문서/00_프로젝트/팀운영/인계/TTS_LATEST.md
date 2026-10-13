@@ -70,3 +70,10 @@
 - **전체10: SAVED8(샘플1+7), 불확실1, 미호출1.** 지금까지 생성 시도 총9(기존 샘플1+이번8)로 관측. 전체10 사용자 청취 승인 아직 아님.
 - **중요: 추가 API0, 같은 ID 자동 재시도/새 Key/다음 Story14 호출/잠금 및 checkpoint 초기화 전부 금지.** 다음은 Codex가 사용자 로컬 오류로그·attempt·HOLD·lock·생성 파일의 SHA를 읽기 전용 대조하고 결과 보고. 재개는 별도 승인과 현재 무료 quota 재확인 후.
 - GitHub 결과 문서: [나머지9 생성기 및 SAFE HOLD 기록](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). 사용자 화면 근거, 독립 검사 미실시. Unity/Main 변경·WAV 적용0.
+
+
+## 2026-10-13 API KEY Project 귀속 불일치 — 최신 조사 대기
+- 사용자 Google AI Studio 10/13 Gemini3.8 Flash TTS RPD: 키1이라고 설명한 Default Gemini Project **9/10**, 키2라고 설명한 Project-Limitless **0/10**. 그래프상 관측값이며 정확한 실시간 잔여 호출 수 확인이 아님.
+- 생성 CLI `--key-slot 2`인데 로그상 샘플 포함 API 시도9개. 키2 실제 프로젝트 연결 여부, 스크립트 환경변수 선택, Google 사용량 반영 지연 **모두 미확정**.
+- Codex 정적 감사로 `--key-slot` 구현, 키→Project 대응(값 출력 금지), Story13 RuntimeError/잠금 체크포인트를 확인할 것. API 호출·추가 생성·HOLD 해제·키 변경 0.
+- 현재 WAV 상태 **8 SAVED(샘플1+7), Story13 실패/불확실1, Story14 미호출1**, 정상25/원본10/백업10 보호. [세부 문서](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
