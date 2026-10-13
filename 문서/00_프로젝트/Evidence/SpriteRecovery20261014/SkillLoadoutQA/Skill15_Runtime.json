@@ -1,0 +1,928 @@
+{
+    "results": [
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/momentum",
+            "status": "PASS",
+            "evidence": "직접 성공 난도 기세+1"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_slash_stack/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/momentum",
+            "status": "PASS",
+            "evidence": "회심 기세 전부 소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_finishing_strike/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/momentum",
+            "status": "PASS",
+            "evidence": "전열 적중 기세 0~3 상한"
+        },
+        {
+            "category": "Skill15",
+            "id": "fighter_whirlwind/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_taunt/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_iron_defense/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "guardian_intercept/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=0 실제=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_light/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=6 행동 종료 회복=3 순사용=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_healing_wave/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=10 행동 종료 회복=3 순사용=7"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/empty",
+            "status": "PASS",
+            "evidence": "제거할 상태 없음→스킬 메뉴/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "healer_cleanse/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=5 행동 종료 회복=3 순사용=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_fireball/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_thunderbolt/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=4 실제=4"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "mage_gaia_wall/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/rear-first",
+            "status": "PASS",
+            "evidence": "후열 우선 사거리"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_aim/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=2 실제=2"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_arrow_rain/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/opening-ready",
+            "status": "PASS",
+            "evidence": "입장 우선순위 연출 자연 종료 후 UI 검사"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/menu",
+            "status": "PASS",
+            "evidence": "Command Button→실제 직업 Skill Menu"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/menu-cancel",
+            "status": "PASS",
+            "evidence": "취소→기본 명령, 행동/MP/CD 미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/blocked-cd",
+            "status": "PASS",
+            "evidence": "CD 입력 거절/행동·자원 보존"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/targeting",
+            "status": "PASS",
+            "evidence": "실제 targeting 후보 및 포커스"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/target-cancel",
+            "status": "PASS",
+            "evidence": "대상 취소→Skill Menu/행동CD미소비"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/action-end",
+            "status": "PASS",
+            "evidence": "정상 연출 callback→FinishCurrentAction/턴 진행"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/ui-return",
+            "status": "PASS",
+            "evidence": "메뉴/대상 선택 종료, Battle UI 복귀"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/cooldown",
+            "status": "PASS",
+            "evidence": "정본 CD=3 실제=3"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/effect",
+            "status": "PASS",
+            "evidence": "실제 Damage/Heal/Status 결과"
+        },
+        {
+            "category": "Skill15",
+            "id": "sharpshooter_companion_attack/resource",
+            "status": "PASS",
+            "evidence": "MP 비용=0 행동 종료 회복=0 순사용=0"
+        }
+    ]
+}

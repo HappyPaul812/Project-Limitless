@@ -1,0 +1,30 @@
+using System;using System.IO;using System.Linq;using System.Collections;using System.Collections.Generic;using System.Reflection;
+using UnityEditor;using UnityEditor.SceneManagement;using UnityEngine;using UnityEngine.SceneManagement;
+using ProjectLimitless.Core;using ProjectLimitless.Player;using ProjectLimitless.Monster;using ProjectLimitless.World;
+namespace ProjectLimitless.EditorTools {
+// 복구 Scene의 실제 전환 서비스와 격리 저장/이어하기를 검증합니다. 사용자 Save와 Editor는 사용하지 않습니다.
+[InitializeOnLoad] public static class WesternRecoveryAudit {
+ const string Key="Limitless.SpriteRecovery.Western";static IEnumerator routine;static readonly List<string> rows=new List<string>();static double deadline;
+ static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../WesternResults"));
+ static WesternRecoveryAudit(){EditorApplication.playModeStateChanged+=s=>{if(s==PlayModeStateChange.EnteredPlayMode&&SessionState.GetBool(Key,false)){Isolate();routine=Flatten(Run());EditorApplication.update+=Tick;}};}
+ static void Isolate(){Directory.CreateDirectory(Root);GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);AudioListener.volume=0;}
+ public static void Launch(){if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/SpriteRecovery20261014/Client/Assets"))throw new Exception("Isolation");Isolate();EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Key,true);deadline=EditorApplication.timeSinceStartup+180;EditorApplication.EnterPlaymode();}
+ static void Check(bool ok,string text){rows.Add((ok?"PASS|":"FAIL|")+text);File.WriteAllLines(Path.Combine(Root,"checks.txt"),rows);if(!ok)throw new Exception(text);}
+ static IEnumerator Wait(float sec){float end=Time.realtimeSinceStartup+sec;while(Time.realtimeSinceStartup<end)yield return null;}
+ static IEnumerator Load(string scene){MonsterEncounterService.SuppressForSeconds(3600);SceneManager.LoadScene(scene);yield return Wait(.5f);MonsterEncounterService.SuppressForSeconds(3600);}
+ static IEnumerator Run(){
+  GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"서부 복구 QA");GameSessionData.SelectPlayerPath("path.mobility");GameSessionData.SelectJob("fighter");GameSessionData.ConfigureProgress(30,0);
+  foreach(string name in new[]{"Arbel","Field_05_WesternOutskirts","Field_06_ScorchedTrail","Field_07_AshenReach","Field_08_RedRift"}){
+   yield return Load(name);var player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();Check(player!=null,name+".Player");Check(player.GetComponent<Collider2D>()!=null,name+".MobilityCollider");
+   Check(UnityEngine.Object.FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None).Where(x=>x.gameObject.scene.name==name).All(x=>x.sprite!=null),name+".RuntimeSprite0Missing");
+   var bounds=UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>();Check(bounds!=null,name+".Bounds");
+   var transitions=UnityEngine.Object.FindObjectsByType<SceneTransitionTrigger>(FindObjectsSortMode.None).Where(x=>x.gameObject.scene.name==name).Select(x=>new[]{(string)typeof(SceneTransitionTrigger).GetField("targetScene",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(x),(string)typeof(SceneTransitionTrigger).GetField("targetSpawnPointId",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(x)}).ToArray();Check(transitions.Length>0,name+".Exits");
+   Vector2 position=player.transform.position;Check(GameSaveService.SaveCurrentWorldPosition(position,name),name+".Save");Check(GameSaveService.TryLoadSlot(1,out var data),name+".ReadSave");GameSessionData.Reset();GameSaveService.RestoreSession(1,data);Check(GameSessionData.CurrentSceneId==name&&GameSessionData.SelectedPlayerPathId=="path.mobility",name+".RestoreData");
+   yield return Load(name);player=UnityEngine.Object.FindAnyObjectByType<PlayerController>();Check(Vector2.Distance(player.transform.position,position)<.2f,name+".ContinuePosition");
+   var camera=Camera.main;Check(camera!=null,name+".Camera");yield return Wait(.2f);var b=bounds==null?UnityEngine.Object.FindAnyObjectByType<WorldBounds2D>().Bounds:bounds.Bounds;float h=camera.orthographicSize,w=h*camera.aspect;Check(camera.transform.position.x-w>=b.min.x-.02f&&camera.transform.position.x+w<=b.max.x+.02f&&camera.transform.position.y-h>=b.min.y-.02f&&camera.transform.position.y+h<=b.max.y+.02f,name+".CameraViewport");
+   foreach(var target in transitions){Check(SceneTransitionService.TryLoad(target[0],target[1]),name+".ExitRequest."+target[0]);float until=Time.realtimeSinceStartup+10;while(SceneManager.GetActiveScene().name!=target[0]&&Time.realtimeSinceStartup<until)yield return null;yield return Wait(.3f);Check(SceneManager.GetActiveScene().name==target[0],name+".ExitArrive."+target[0]);Check(UnityEngine.Object.FindAnyObjectByType<PlayerController>()!=null,name+".ExitPlayer."+target[0]);yield return Load(name);}
+  }File.WriteAllText(Path.Combine(Root,"status.txt"),"PASS");
+ }
+ static IEnumerator Flatten(IEnumerator first){var stack=new Stack<IEnumerator>();stack.Push(first);while(stack.Count>0){var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}if(top.Current is IEnumerator nested)stack.Push(nested);else yield return top.Current;}}
+ static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException();if(routine.MoveNext())return;SessionState.SetBool(Key,false);EditorApplication.Exit(0);}catch(Exception e){File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());SessionState.SetBool(Key,false);EditorApplication.Exit(1);}}
+}}
