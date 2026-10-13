@@ -1,0 +1,38 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+namespace ProjectLimitless.EditorTools {
+// 격리 Client에서 실제로 등록된 Sprite ID를 Scene의 직렬화 참조와 전수 대조합니다.
+public static class SpriteRecoveryReferenceAudit {
+ public static void Run(){
+  if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/SpriteRecovery20261014/Client/Assets"))throw new Exception("Isolation");
+  string root=Path.GetFullPath(Path.Combine(Application.dataPath,"../RecoveryReferenceResults"));Directory.CreateDirectory(root);
+  var lines=new List<string>();var cache=new Dictionary<string,HashSet<long>>();int bad=0,total=0,sceneCount=0;
+  foreach(var setting in EditorBuildSettings.scenes.Where(x=>x.enabled)){
+   sceneCount++;var scene=EditorSceneManager.OpenScene(setting.path,OpenSceneMode.Single);int scripts=0,missing=0,refs=0;
+   foreach(var go in scene.GetRootGameObjects().SelectMany(x=>x.GetComponentsInChildren<Transform>(true)).Select(x=>x.gameObject)){
+    scripts+=GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(go);
+    var sr=go.GetComponent<SpriteRenderer>();if(sr!=null&&sr.sprite==null)lines.Add("RAW_NULL|"+setting.path+"|"+go.name);
+   }
+   // GUID 파일뿐 아니라 Unity가 실제로 로드한 Sprite subasset의 fileID까지 일치시킵니다.
+   foreach(Match m in Regex.Matches(File.ReadAllText(setting.path),@"m_Sprite: \{fileID: (-?\d+), guid: ([0-9a-f]{32}), type: 3\}")){
+    long id=long.Parse(m.Groups[1].Value);string guid=m.Groups[2].Value;if(id==0)continue;refs++;total++;
+    if(!cache.TryGetValue(guid,out var ids)){
+     ids=new HashSet<long>();string asset=AssetDatabase.GUIDToAssetPath(guid);
+     foreach(var sp in AssetDatabase.LoadAllAssetsAtPath(asset).OfType<Sprite>()){
+      AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sp,out string g,out long fileId);ids.Add(fileId);
+      lines.Add("REGISTERED|"+asset+"|"+fileId+"|"+sp.name+"|rect="+sp.rect+"|pivot="+sp.pivot+"|ppu="+sp.pixelsPerUnit);
+     }cache[guid]=ids;
+    }
+    if(!ids.Contains(id)){missing++;lines.Add("FAIL_REFERENCE|"+setting.path+"|"+guid+"|"+id);}
+   }
+   bad+=scripts+missing;lines.Add((scripts+missing==0?"PASS|":"FAIL|")+setting.path+"|References="+refs+"|MissingScript="+scripts+"|MissingSpriteReference="+missing);
+  }
+  File.WriteAllLines(Path.Combine(root,"checks.txt"),lines);File.WriteAllText(Path.Combine(root,"status.txt"),bad==0&&sceneCount==23?"PASS23; references="+total:"FAIL; bad="+bad+"; scenes="+sceneCount);EditorApplication.Exit(bad==0&&sceneCount==23?0:1);
+ }
+}}

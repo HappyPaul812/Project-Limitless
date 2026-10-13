@@ -1,3 +1,12 @@
+## 2026-10-14 Sprite 참조 복구 — 필수 게이트 PASS
+
+- 새 codex/sprite-reference-recovery-20261014: 동일PNG11·Sprite123 등록, Arbel/Field05~08의1747 Sprite GUID만 복구. Scene 역치환 동일/ThirdParty·원본미커밋·5221SHA/HEAD/status 보호.
+- 실제23 BuildScene 참조3654/MissingScript0/Runtime null0. Edit null2는 VillageNpc 자동할당 정상. 배경5 RenderTexture 확인, 로컬 rect/pivot/PPU123 PASS.
+- 이전854범위 새855 PASS(waypoint 추가계측1)/FAIL0, 서부85·의뢰589·Quest 기반/침묵 ALL PASS, 기존정적83·확대322 PASS. Field04 42/375/PNG52·Main08 승인6·B/C/15효과/Save/Chapter3 불변.
+- 종합PARTIAL: 기존Search·정본6000.5.7f1·손플레이/가독성 미검증과 기존Spawn/북쪽틈/음성005~006/장착영속 미구현 유지. 원본Editor·포커스/Save/TTS/BGM 조작0.
+- PR10 Ready/정상 main merge 조건 충족. 실제 원격 Push/통합HEAD/mainSHA·병합 여부는 PR10 최신 결과와 완료 보고를 확인하며 이전BLOCKED 기록은 역사로 보존합니다. 다음: 남은 기존 결함을 별도 작업으로 처리.
+- 마지막 구현 commit `5507f94e723f1d02c27f2a0839af2bdbac53bc5c`; meta 빈값 공백 정리·QA 기록은 후속 commit. [상세 QA](../../Sprite_Reference_Recovery_Final_QA_20261014.md).
+
 ## 2026-10-13 Main08 승인6개 정식 음성 연결·원본 디스크 반영
 
 ## 2026-10-13 EOD 최종 합본 — BLOCKED / MAIN 미병합
