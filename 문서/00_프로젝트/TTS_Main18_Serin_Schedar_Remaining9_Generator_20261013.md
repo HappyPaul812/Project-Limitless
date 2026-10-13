@@ -154,3 +154,18 @@
 - Story02 `main18_leon_serin_01`, Story08~11 `main18_overheat_serin_01~04`, Story12 `main18_vibration_serin_01`: **여섯 개 모두 `USER_LISTENED / USER_REPORTED_TIMBRE_VARIANCE`**. 사용자가 음색이 조금씩 다르다고 실제 청취 후 평가함. 유지·재제작 최종 판정은 별도로 명시되지 않아 `FINAL_KEEP_OR_REGEN_UNDECIDED`. 임의 일괄 승인/폐기 금지.
 - Story13 `FAILED_OR_UNCERTAIN_HOLD`, Story14 `NOT_CALLED` 유지. 전체 저장8, 미완료2. 원본·backup·정상 Unity25와 기존 checkpoint/LOCK 불변.
 - 지금 추가 API 호출/재제작 승인0, Unity 수정0, main 반영0.
+
+
+## 2026-10-13 Story07 제외·나머지6 음색 일관성 오프라인 보정 PREVIEW
+
+사용자 명시적 요청: **“heat_vent는 빼고 니가 못고쳐?”**. 사용자가 첨부했던 **Main18 세린 기존 WAV 6개**를, 기존 승인 샘플 `main18_ground_serin_01.wav`를 기준으로 **오프라인 DSP 후처리 미리듣기**로 제작했다. 원본 파일/Unity/체크포인트/잠금은 편집하지 않았다.
+
+- 산출물: 사용자 다운로드 `LIMITLESS_Serin6_ConsistentVoice_Previews.zip` (보정 WAV6, 변경 없는 ground 기준 WAV1, CSV/README).
+- 미리듣기 대상: `main18_leon_serin_01`, `main18_overheat_serin_01~04`, `main18_vibration_serin_01`. **heat_vent 제외**. Story13/14 미생성 건도 포함 안 함.
+- 처리: Praat PSOLA 방식으로 일부 높은 기본 F0만 소폭 조정, 부드러운 중역 EQ 및 최대 ±1 dB 음량 보정. 발화 내용·길이·속도·분절/자막 변경 없음. **이전 음향 후처리 금지 기본정책의 정식 WAV를 대체하는 작업이 아니라, 사용자 새 요청에 따른 오프라인 미리듣기 후보**다.
+- 예시 출력 F0 중위수 (단위 Hz, F0는 동일 화자/성별의 충분조건이 아님):
+  - leon 201.1→192.0; overheat01 192.4→186.0; overheat02 180.1→178.3; overheat03 184.3→184.1; overheat04 182.0→182.3; vibration 196.4→187.3.
+  - 기준 ground 약181, 실제 사용자 승인본 파일 SHA256 `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`, ZIP 기준 참조 바이트 일치 확인.
+- 오프라인 산출물6개 24kHz mono PCM16, 원본 샘플 수·시간 불변, clipping 없음, ZIP CRC OK. 모든 출력 `*_PREVIEW.wav`로 기존 안정적인 ID 파일과 구분, **사용자 음색/대사 승인 미실시**.
+- **한계:** 음색/비음/연기 자체의 모델 합성 차이는 DSP만으로 완전히 같아지지 않을 수 있다. 강한 변형/품질 저하 방지를 위해 경미한 보정만 사용. 사용자가 들어보고 PREVIEW 승인 여부를 결정한다. 승인 전 Unity 반영 금지.
+- 이번 제작 추가 Gemini/외부 API 호출 **0**, 기존 샘플 재생성0, 기존 사용자 WAV/Unity/원본10·백업10/정상25/Story13 HOLD 잠금 모두 변경0. `main` 변경·병합0.
