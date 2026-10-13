@@ -1,0 +1,19 @@
+{
+  "canonical_target": "main08_taeon_supp_004",
+  "text": "그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+  "searched_wav_files": 657,
+  "matching_existing_pcm_sources": [
+    {
+      "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_005.wav",
+      "sha256": "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779",
+      "pcm_sha256": "834926424dcd6b80b7efc7c7d8f31238b9f29132180fd75a96a908ad4f0eebe0"
+    },
+    {
+      "path": "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_005.wav",
+      "sha256": "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779",
+      "pcm_sha256": "834926424dcd6b80b7efc7c7d8f31238b9f29132180fd75a96a908ad4f0eebe0"
+    }
+  ],
+  "semantic_evidence": "ASR of existing taeon005, not filename inference",
+  "all_unrelated_files_transcribed": false
+}

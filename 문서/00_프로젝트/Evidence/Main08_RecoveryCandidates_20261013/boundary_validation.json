@@ -1,0 +1,18 @@
+{
+  "sentence1_asr_end": 1.64,
+  "sentence2_asr_start": 2.28,
+  "measured_quiet_start": 1.83,
+  "measured_quiet_end": 2.28,
+  "measured_quiet_seconds": 0.44999999999999973,
+  "threshold_peak_dbfs": -45,
+  "cut_frame": 49381,
+  "cut_seconds": 2.057541666666667,
+  "cut_sample": 0,
+  "previous_sample": 5,
+  "cut_window_40ms_peak_dbfs": -49.72132314283017,
+  "concatenated_candidate_pcm_equals_original": true,
+  "gain_normalization_fade_resample": false,
+  "removed_or_duplicated_frames": 0,
+  "asr_timestamp_is_estimate": true,
+  "human_naturalness_approval": "PENDING"
+}

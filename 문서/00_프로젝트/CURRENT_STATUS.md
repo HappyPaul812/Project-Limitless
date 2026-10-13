@@ -1,3 +1,9 @@
+## 2026-10-13 Main08 기존 음성 복구 후보6개 납품 — 청취 승인 대기
+
+- codex/main08-voice-recovery-candidates-20261013: 태온002←003/003←004·미엘001←002 재사용, 태온004 긴정본은기존005에서발견해복사. 미엘합본003의450ms저신호간격에서0샘플분리해002/003 후보작성. 후보6decode/정본ASR일치·복사4byte동일·분리2PCM합산원본동일 PASS.
+- 후보폴더/6재생기HTML/ID별CSV·길이RMS/Peak/원본SHA/경계보고제공. 사용자청취6대기·재제작현재확정0, 부적합ID만후속분류. 원본WAV/GUID/meta/Catalog/Unity/Save/설정·TTS/API/화면/Push변경0. 새RuntimeQA실행0.
+- Main08_ExistingVoice_Recovery_Candidates_20261013.md 참조. 마지막관련Commit은 `Docs: Main08 기존 WAV 복구와 청취 후보 납품` 이력확인. 승인전정식적용금지.
+
 ## 2026-10-13 Main08 Field02 음성 오류 — 원본 내용·분할 문제 후보 확인
 
 - codex/main08-field02-voice-20261013: docs/planning 사용자QA와 로컬 제작/WAV/Catalog 대조. ID/GUID·화자·자막/Manifest와 원본PCM 동일, 태온002 1.03초/RMS-48.98dBFS·발화검출없음, 미엘001 Main05문장/002 앞문장/003 정본문장+앞문장 ASR검출. 원인층은제작원본 내용↔ID/분할경계, 원생성내부와인간청취승인은미검증.
