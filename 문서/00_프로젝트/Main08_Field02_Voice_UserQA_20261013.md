@@ -44,3 +44,31 @@
 Main08 대사 원문/화자·Dialogue ID·퀘스트 순서·기존 정상 음성 전부 유지. Main03~07 및 09~21 TTS, 별도 Main18 세린 오류10건, 기존 사용자 Save·Scene/아트/음악/프로젝트 설정, Git 브랜치·미커밋 변경 보호.
 
 기획 담당 판정: **신규 문제 제보를 확정된 재생성 건수로 확대하지 않음. Codex가 현장 파일·의미를 구분 감사한 뒤 TTS 담당 제작 필요 여부 결정.**
+
+
+## 2026-10-13 Codex 후속 로컬 ASR·의미 대조 결과 — 사용자 보고 접수
+
+**상태 갱신: CONTENT_SHIFT_EVIDENCE_REPORTED / ASR_CANDIDATE_ONLY / USER_LISTENING_PENDING / AUDIO_REPAIR_NOT_APPLIED / QA_PARTIAL.**
+사용자가 Codex 로컬 보고를 전달했다. 조사 브랜치 `codex/main08-field02-voice-20261013`, 로컬 커밋 `9024edafc3b6de640e6d7c6e1ca4393ff5d35f7a` **(사용자 보고의 로컬 커밋; GitHub 원격 존재/Push 검증 아님)**.
+
+| Stable ID | Codex 로컬 ASR 보고상 WAV 내용 | 정본과 비교 / 다음 분류 |
+| --- | --- | --- |
+| `main08_taeon_supp_002` | 문자 검출 없음, 약 1.03초, RMS -48.98dBFS | 자막 무음 체감과 합치. `taeon_supp_003`에서 올바른 문장 후보를 청취·PCM 검토 |
+| `main08_miel_supp_001` | “저도 같이 가겠습니다. 제가 할 수 있는 일이 있을 거예요.” | 다른 문장. `miel_supp_002`에서 정본 문장 후보 검토 |
+| `main08_taeon_supp_003` | “여기부터 흔적이 거의 없습니다.” | `taeon_supp_002`의 후보 복구 원본 |
+| `main08_taeon_supp_004` | “평소라면 그렇겠죠.” | `taeon_supp_003`의 후보 복구 원본; 본 ID의 긴 대사는 별도 정확원본 검색 우선 |
+| `main08_miel_supp_002` | “몬스터가 적다는 건 좋은 일 아닌가요?” | `miel_supp_001`의 후보 복구 원본 |
+| `main08_miel_supp_003` | “없어진 게 아니네요. 다들 이쪽을 피해서 지나가고 있어요.” | `miel_supp_002`와 `miel_supp_003` 정본문장 합본. 의미/호흡/품질 손실 없이 분리 가능한지 먼저 검사 |
+
+- 기존 **Code → Catalog → GUID/meta → WAV 재생 경로 정상**이라는 기술 검사와, **WAV의 실제 발화 내용이 ID/원문과 맞는지**는 별개다. 이번 국소 ASR은 기존 콘텐츠 자체의 잘못된 할당·합본 정황을 확인했지만, **인간 청취 확인/파일 교체 완료를 뜻하지 않는다**.
+- 사용자 원본 Unity/코드/Catalog/GUID/meta/WAV 수정0, 신규 TTS 생성0, 공식 반영0. Codex 보고상 처리 검사 Next/Mixer/Quest/Save/Continue **129 PASS / 0 FAIL**, 전체 **PARTIAL**(기존 Search 예외 및 청취 미승인). 보호 파일 5,539개 SHA 및 HEAD/미커밋 보존·Push0.
+- 신규 제작 **개수를 지금 확정하지 않는다**. `taeon_supp_004`의 정확 원본을 찾지 못한 경우에는 **재제작 후보 1건**, `miel_supp_003`의 정본문장 분할이 품질상 불가한 경우에는 해당 ID별 추가 재제작 후보를 별도 표기한다. 재활용·절단본의 ID별 사용자 청취 승인을 받기 전 정식 Unity WAV로 교체하지 않는다.
+
+### 다음 업무 — Codex / TTS 역할 분리
+
+1. **Codex**: 사용자 로컬 소스 WAV 전체에서 정확한 원문을 먼저 재검색한다. 임의 파일 이름·CSV 순서로 연결하지 않는다. 기존 WAV 원본 byte/GUID 보존, 별도의 제안 폴더에 (a) 4개 단순 재사용 후보, (b) 미엘 002·003 구간 분리 후보, (c) 태온 004 부재 판정을 준비한다. 분리된 오디오는 원본 캐릭터별 Voice를 그대로 유지하되 잘림·문장 경계·음량/호흡을 검사한다. 후보 이름은 Stable ID 기준으로 만들되 원본 WAV를 덮어쓰지 않는다.
+2. **TTS 담당**: 후보 정확본문/화자/목소리(Gacrux 태온, Sulafat 미엘)와 Scene Style·파일 상태 검토, **새 생성은 승인 전 0회**. 사용자 청취로 복구 불가가 확인된 ID만 `TTS_REGEN_REQUIRED`로 확정해 해당 프로젝트/모델 무료 quota 확인과 샘플 별도 승인 후 1 Stable ID/1 Call/1 WAV 정책으로 진행한다. Main18 세린10 대기 건의 정책과 quota를 섞거나 소비했다고 단정하지 않는다.
+3. **바울 대표**: 최초 후보를 직접 청취해 대사 일치·캐릭터 음색·자연스러운 시작/종료 여부 승인. 새 TTS 호출 필요 시 별도로 명시적 승인.
+4. **Codex**: 청취 승인된 WAV만 정확한 ID에 연결. Main08 Trace01~03 및 인접 ID, Next/화자·Portrait·UI/AudioMixer, Save·Continue, 원본 정상 TTS·메타·Unity 상태 보호 회귀. **`main` 직접 commit/Push/병합 금지**.
+
+최종 상태: 제작 원본의 발화 오류 **원인 정황 접수 완료**, **음성 복구 미적용 / 인간 청취 승인 대기**. 기획 원문 수정은 필요하지 않음.
