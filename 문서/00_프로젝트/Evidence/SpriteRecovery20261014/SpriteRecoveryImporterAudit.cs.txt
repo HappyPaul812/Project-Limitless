@@ -1,0 +1,17 @@
+using System;using System.IO;using System.Linq;using System.Collections.Generic;using System.Globalization;using UnityEditor;using UnityEngine;
+namespace ProjectLimitless.EditorTools {
+// 사용자 로컬 meta의 실제 rect/pivot/PPU를 등록된 Sprite 123개와 비교합니다.
+public static class SpriteRecoveryImporterAudit {
+ public static void Run(){
+  if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/SpriteRecovery20261014/Client/Assets"))throw new Exception("Isolation");
+  string root=Path.GetFullPath(Path.Combine(Application.dataPath,"../ImporterResults"));Directory.CreateDirectory(root);var rows=new List<string>();int bad=0;
+  foreach(string row in File.ReadAllLines(Path.Combine(Application.dataPath,"../importer_expected.tsv"))){
+   var a=row.Split('\t');long id=long.Parse(a[1]);var sprites=AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GUIDToAssetPath(a[0])).OfType<Sprite>();Sprite selected=null;
+   foreach(var sp in sprites){AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sp,out string guid,out long fid);if(fid==id)selected=sp;}
+   bool ok=selected!=null;
+   if(ok){float[] actual={selected.rect.x,selected.rect.y,selected.rect.width,selected.rect.height,selected.pivot.x,selected.pivot.y,selected.pixelsPerUnit};for(int i=0;i<actual.Length;i++)ok&=Mathf.Abs(actual[i]-float.Parse(a[i+2],CultureInfo.InvariantCulture))<.0001f;}
+   rows.Add((ok?"PASS|":"FAIL|")+a[0]+"|"+id);if(!ok)bad++;
+  }
+  File.WriteAllLines(Path.Combine(root,"checks.txt"),rows);File.WriteAllText(Path.Combine(root,"status.txt"),bad==0?"PASS123":"FAIL" );EditorApplication.Exit(bad==0?0:1);
+ }
+}}

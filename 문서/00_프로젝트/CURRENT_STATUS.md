@@ -1,3 +1,77 @@
+## 2026-10-14 Sprite 참조 복구 — 필수 게이트 PASS
+
+- 새 codex/sprite-reference-recovery-20261014: 동일PNG11·Sprite123 등록, Arbel/Field05~08의1747 Sprite GUID만 복구. Scene 역치환 동일/ThirdParty·원본미커밋·5221SHA/HEAD/status 보호.
+- 실제23 BuildScene 참조3654/MissingScript0/Runtime null0. Edit null2는 VillageNpc 자동할당 정상. 배경5 RenderTexture 확인, 로컬 rect/pivot/PPU123 PASS.
+- 이전854범위 새855 PASS(waypoint 추가계측1)/FAIL0, 서부85·의뢰589·Quest 기반/침묵 ALL PASS, 기존정적83·확대322 PASS. Field04 42/375/PNG52·Main08 승인6·B/C/15효과/Save/Chapter3 불변.
+- 종합PARTIAL: 기존Search·정본6000.5.7f1·손플레이/가독성 미검증과 기존Spawn/북쪽틈/음성005~006/장착영속 미구현 유지. 원본Editor·포커스/Save/TTS/BGM 조작0.
+- PR10 Ready/정상 main merge 조건 충족. 실제 원격 Push/통합HEAD/mainSHA·병합 여부는 PR10 최신 결과와 완료 보고를 확인하며 이전BLOCKED 기록은 역사로 보존합니다. 다음: 남은 기존 결함을 별도 작업으로 처리.
+- 마지막 관련 복구 commit `af1c9cfddbf8e431a32d78d5a643d91a7a099da0` Push 완료. EOD merge `359b0622376c24d78caa025ec33df5fef71ccaa7`·충돌0/동일Unity트리/통합23참조·Runtime·정적83 재PASS. 최종 통합 문서 commit·원격 병합 SHA는 PR10 최신 결과 참조. [상세 QA](Sprite_Reference_Recovery_Final_QA_20261014.md).
+
+## 2026-10-13 Main08 승인6개 정식 음성 연결·원본 디스크 반영
+
+## 2026-10-13 EOD 최종 합본 — BLOCKED / MAIN 미병합
+
+PR8/9충돌해결·Field04공식42/375/PNG52·Main08승인6·B/C·최신기획·담당문서 통합. 새합본 주요기능854PASS/FAIL0, 별도전체Scene참조FAIL: 기존main에서도Arbel/Field05~08환경Sprite누락 재현, 실제Arbel배경누락 확인. Field04362→0, 신규참조회귀증거0이나 전체Sprite0게이트미충족으로PR10Draft유지/main병합중단. 원본5199파일SHA/HEAD/dirty불변. 상세 `EOD_Integration_Final_QA_20261013.md`. 다음: 동일바이트Project등록·SpriteImporter복구안 검토 후 전체참조QA 재실행. 스킬영속Save·Chapter3상점·Main18추가TTS 미구현/HOLD보호. 최종브랜치SHA는PR10head·완료보고 참조.
+
+
+- codex/main08-approved-voice-apply-20261013:바울대표직접청취승인6WAV를Main08/ApprovedRecovery20261013에새GUID등록/Catalog6참조교정. 원음WAV/GUID/meta그대로·목적지/출처16백업·승인입력6보관. 원본프로젝트디스크에도새13파일+Catalog반영완료,원본mainHEAD/기존미커밋/Save/설정/Scene/BGM/TTS보호.
+- 최종등록Runtime177PASS/FAIL0,승인ClipPCM/GUID/경로6/6·Trace01~03/초상화/Next/Mixer/Quest/실제BootstrapContinuePASS. 정본6000.5.7f1미검증/실제6000.6.5f1·기존Search로PARTIAL,조우억제대화fixture·실물입력미검증. 원본Editor강제Refresh/Play/포커스전환0,즉시메모리반영미검증.
+- 승인밖태온005/006기존발화·합본문제2건과대화중일반조우사례OPEN;전체Main08음성내용PASS아님. 새TTS/API·Push·mainCommit/병합0. Main08_ApprovedVoice_Integration_QA_20261013.md 참조. 마지막Commit은 `Fix: 승인 Main08 음성을 원음 보존 등록으로 연결` 이력확인.
+
+## 2026-10-13 Main08 기존 음성 복구 후보6개 납품 — 청취 승인 대기
+
+- codex/main08-voice-recovery-candidates-20261013: 태온002←003/003←004·미엘001←002 재사용, 태온004 긴정본은기존005에서발견해복사. 미엘합본003의450ms저신호간격에서0샘플분리해002/003 후보작성. 후보6decode/정본ASR일치·복사4byte동일·분리2PCM합산원본동일 PASS.
+- 후보폴더/6재생기HTML/ID별CSV·길이RMS/Peak/원본SHA/경계보고제공. 사용자청취6대기·재제작현재확정0, 부적합ID만후속분류. 원본WAV/GUID/meta/Catalog/Unity/Save/설정·TTS/API/화면/Push변경0. 새RuntimeQA실행0.
+- Main08_ExistingVoice_Recovery_Candidates_20261013.md 참조. 마지막관련Commit은 `Docs: Main08 기존 WAV 복구와 청취 후보 납품` 이력확인. 승인전정식적용금지.
+
+## 2026-10-13 Main08 Field02 음성 오류 — 원본 내용·분할 문제 후보 확인
+
+- codex/main08-field02-voice-20261013: docs/planning 사용자QA와 로컬 제작/WAV/Catalog 대조. ID/GUID·화자·자막/Manifest와 원본PCM 동일, 태온002 1.03초/RMS-48.98dBFS·발화검출없음, 미엘001 Main05문장/002 앞문장/003 정본문장+앞문장 ASR검출. 원인층은제작원본 내용↔ID/분할경계, 원생성내부와인간청취승인은미검증.
+- 실제격리6000.6.5f1 Trace01~03/Clip/Next/Mixer/Quest/Save·BootstrapContinue129PASS/FAIL0, 기존Search로PARTIAL/정본6000.5.7f1미검증. 기존다른ID 재사용·두문장분리 후보만문서인계, 새TTS/음성교체/Catalog·게임코드/원본변경0. 원본오류수정완료로보고하지말것.
+- 다음: 바울 대표/TTS담당이정확한ID·원문별재사용/분리후보청취; 불가시에만재생성준비·승인후적용. Main08_Field02_Voice_Technical_QA_20261013.md 참조. 마지막관련Commit은 `Docs: Main08 음성 원본 내용과 재생 경계 감사` 이력확인. Push0.
+
+## 2026-10-13 CURRENT_STATUS 문서 충돌 해소·최신 기획 정합
+
+- 로컬 미커밋 Unity6000.6.5f1 MCP 복구 기록(2026-10-10)을 원문 그대로 보존하고 최신 origin/main의 통합·미술 검수 기록 및 PR7의 A/B/C·Importer 기록을 합쳤습니다. 과거 기록은 당시 상태이며 기존 승인·PASS/PARTIAL/미검증 문구는 변경하지 않았습니다. 날짜가 있는 최근 기록은 최신 날짜부터 표시하고 기존 역사 순서는 유지합니다.
+- 확인 기준: main `0e0476649b667129cb7aa6004f4b677335ed8be2`, docs/planning `612ff531f7c067f87441c9f6c2614089a5751c8c`, PR7 `7f493c69080047a06d34b96b71ea57ae4b409e30`. PR7의 B/C·Importer 구현 기록을 main에 이미 반영된 기능으로 해석하지 않습니다. 원본 Unity/Save/아트/TTS/BGM 변경0, 새 Unity 실행0, Push/main Commit0.
+- Chapter3 다섯 직업의 신규·강화 스킬은 기획 1차 승인 상태입니다. 기존 시작3개 무료, 신규/강화판 저가 탈렌트 구매, 강화판 원슬롯 승계, 액티브 최대6개·전투2행×3열 규칙 유지. 상세 수치·실제 상품/ID·영속 학습/강화/장착 Save 계약은 별도 확정·구현 대상이며 이번에 생성하지 않았습니다. [기획 정본](../06_스킬/Chapter3_스킬상점_강화_냉기_동결괴사_20261012.md).
+- Chapter2 Main21 완료 후 펫 서비스 확대와 Chapter3 진행 중 최초 구매처/클리어 후 전체 안전지역 스킬 상점 확대를 구분합니다. 미정 Chapter3 완료 Quest/플래그는 만들지 않습니다. 각 담당 작업브랜치·Codex 별도 worktree, main 직접 Commit/자동Push 금지 규칙을 유지합니다. 이전 문서 동기화203파일은 그대로이며 기존 CURRENT_STATUS 충돌1개를 이번 보존 병합으로 해소했습니다.
+- 검증은 원문 문단 보존·날짜/Markdown/UTF-8·diff --check·보호파일 SHA 검사입니다. 이번 문서 작업을 새 게임 Runtime QA로 보고하지 않습니다. 병합 보고서는 `Temp/CurrentStatusReconcile20261013/worktree/문서/00_프로젝트/CURRENT_STATUS_Reconcile_20261013.md`, 원본 바이트 백업은 `Temp/CurrentStatusReconcile20261013/local.md`입니다. 마지막 관련 Commit은 `Docs: CURRENT_STATUS 로컬 기록 보존과 최신 정본 병합` 이력에서 확인합니다.
+
+## 2026-10-13 PR7 Importer 동일성 검증·로컬 반영
+
+- 후보 d57ff66 → PR7 로컬 통합 codex/integrate-abc-planning-20261013 / 코드병합 2fbe9577b212ee46f4525a597c3bcd4d7833f055. 정상 로컬 설정 대비 2,016,000 픽셀 차이0·363 누락0·환경 Collider/Importer 동등·PNG7 바이트 동일. 새 Field04 228 PASS/FAIL0, 실제6000.6.5f1/정본6000.5.7f1 미검증·기존Search PARTIAL.
+- 별도 로컬 codex/local-pr7-importer-20261013 / Temp/PR7Apply20261013/local-working 사용. 원본 main/337항목·822파일/4317SHA 보호. 자동Push/main병합0; 원격PR7 Draft 유지. 서쪽Spawn 겹침·북쪽틈 OPEN, v2 적용0·장착 영속 Save 미승인. [새 상세보고](PR7_Importer_Apply_Verification_20261013.md).
+
+## 2026-10-13 PR7 기존 Sprite 등록 복구 후보 — 원본 미적용
+
+- PR7 3aca기준별도codex/pr7-importer-fix-proposal-20261013. ThirdParty원본변경0, _Project/Art/Environment/LegacySpriteRegistration20261013에기존PNG7byte동일복사+새meta/GUID, Field04362참조GUID만교정. 역치환시기존Scene텍스트동일/Collider·좌표·Quest·Spawn·localID보존/v2미사용.
+- 실제격리누락362→0/363, 기존Road30남북유지·Collider동일·수정후228회귀PASS, 기존Search예외로PARTIAL. 다른Scene전역이관/정본6000.5.7f1/손입력미검증. 기존서쪽Spawn/북쪽틈은미해결.
+- PR7_Importer_Fix_Proposal_20261013.md와Evidence/PR7_Importer_Proposal_20261013의새등록manifest·실제Preview/회귀참조. 수정후보는main/PR7/사용자원본에반영0, 원본4,317SHA/822dirty/status/HEAD보호/Push0/TTS0.
+- 마지막수정후보Commit `d9ea3be7f0a0ab6e361b679a71f6e1bb4c59e611`. 다음:별도수정PR검토·통합후새HEAD재QA, 현재원PR3aca는BLOCKED/Draft유지. 미술v2적용·Save스키마·신규상품을이교정과혼동하지않음.
+
+## 2026-10-13 A — Field04 v2 동서 도로 격리 후보
+
+- codex/field04-v2-road-20261013 / Temp/ABC20261013/A. 검수 Commit `f6222caacea500dfd71e9d9537cb2f9eca9396e9`. 최신 main0e04766·planning c0f1d7c 기준; 기존 통합 PR#2는 main에 반영되어 이력을 보존합니다.
+- 실제 Road30을 x=-7..7/y±.5로 재배치한 후보와 Optional Endpoint12 포함42안 제작. 대응363/363, 나무Medium3/Big2 수정, RockNorth alpha foot차-.005625, PPU128/Center/GUID55충돌0. 원본 게임 Scene/PNG/meta 변경0; 정식 적용은 미술 승인 대기입니다.
+- 최종 A674PASS/FAIL0 + 별도Preview244PASS/FAIL0. Main12→13/세린Story·일반2전투/35초/Continue2/147물리waypoint/Camera12/실제 동서 Physics Exit3 통과. 최초 QA helper·Importer 경로 누락은 보완 후 전체 재검증, 이전 결과는 Temp 보존. 기존 Editor Search예외·서쪽 Spawn 겹침·북쪽 틈/손플레이·원격6000.5.7f1 미검증으로 종합PARTIAL입니다.
+- 현재 보호 snapshot4,318파일 SHA 불변, 원본822미커밋/status/HEAD ff022e6 동일. 원본Editor포커스·Save·TTS/BGM 보호, TTS실행0/Push0/main병합0. 검수 보고서 Field04_v2_Road_Candidate_QA_20261013.md 및 Evidence/Field04_v2_20261013 참조.
+- 다음: 바울 대표의 v2 미술·도로30/42안 선택 승인 후 별도정식통합·동일회귀. B/C는 별도브랜치에서 관리하며 이 A 브랜치가 B/C 코드 통합을 포함한다고 간주하지 않습니다.
+
+## 2026-10-13 작업 C — Chapter2 안전지역 펫 서비스 확대 (격리 구현/QA PARTIAL)
+
+- 브랜치 `codex/safezone-services-20261013`, 기준 main `0e04766`. Main21의 기존 Quest 완료 기록으로 StarterVillage·지하묘지 입구에 분양/관리 각1명, Arbel 기존2명 보존. 공용 소유/100탈렌트/장착/SaveVersion1 유지, 미완료 슬롯은 추가NPC 제거.
+- 기존 사수0명도 분양되던 정본 불일치를 사수목록 안내/구매 경계로 보완. 타 직업 주인공+보유 사수 동료는 이용 가능. Scene·기존NPC/meta·승인PNG·TTS/BGM 직접변경0.
+- `SafeZone_PetService_Rollout_Implementation_QA_20261013.md`에 후보4좌표·기존Sprite재사용·C3 최초상점과 전체확대 분리설계 기록. C3 완료조건/상품/가격/Save확장은 미정이며 코드 생성0.
+- 최종 격리 Unity6000.6.5f1 Compile·Runtime 오류0·3거점UI/100구매/공유/완료·미완료Continue/타슬롯/Save실패rollback/지체의길 Collider통행 PASS106, 기존Editor Search예외1로 전체PARTIAL. 원본6000.5.7f1·Main21전체재플레이·손플레이/이름표가독성/신규NPC공식미술·대사는 미검증/검토대상. 다음: 후보NPC 확인과 브랜치 검토/승인. Push/main 반영0. 마지막 구현 Commit `0d151e3f0222dac992145e69717f7607158b8106`.
+
+## 2026-10-13 B — 6칸 임시 스킬 장착·2행×3열 전투 메뉴
+
+- codex/skill-loadout-ui-20261013 / Temp/ABC20261013/B에서 구현·격리 QA 완료. 캐릭터ID/직업별6칸+독립보관함, 전투시 칸위치 스냅샷, 빈칸버튼0·뒤로분리·K/패드Menu·Start 무료관리. 시작3개/직업·기본5명령·기존15효과·Quest/NPC/펫/Scene/Save schema 보호.
+- 실제Unity6000.6.5f1: 새UI/장착72 PASS, 기존15스킬154 PASS(effect15), C+B 3안전지역 공존28 PASS, 기존침묵감사ALL PASS. 5해상도/16:9·4:3·21:9 RT 및36행Mask/focus/6칸geometry PASS. 초기 명단호출누락/21:9팝업겹침 FAIL을 수정하고 원시실패 보존.
+- 전체PARTIAL: 기존UnityEditor.Search 예외1/신규Runtime0. 정본6000.5.7f1·실물입력/손플레이/장시간가독성 미검증. 장착은 세션메모리만 유지, 새게임/Save로드/재시작시 시작3개 복원(화면직접명시). 영속학습/장착Save계약·상품/가격/Chapter3ID 결정대기, 실제신규스킬/상점0.
+- 원본4,318파일SHA·822미커밋파일/status/HEAD불변. 원본Editor·Focus·PNG/meta/Save/TTS/BGM/ThirdParty 무변경, Push/main병합0. [보고·Preview·실패근거](Skill_Loadout_UI_Implementation_QA_20261013.md).
+- 다음: 대표님 관리/전투UI 확인 및 Save 영속계약 결정, 승인된 작업브랜치만 사용자Push/PR 검토. 마지막 구현·QA Commit: `c4ed7c9fd2ed9b3fe5cf3ea1c57387ef51d5e816`.
 ## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
 
 - 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.
@@ -225,6 +299,14 @@ CompanionDefinitions4의 ID/Path/Job·동료 편성 최대2·패턴 익히기 �
 Chapter3 Main22 시작·태온 친형 시각의 길+투사·과거 보호 중 눈 부상(길 자동 결정 아님)·가족식 반말·보호 책임감과 태온 자기결정권의 갈등을 확정했다. 형이 태온의 판단을 믿고 맡기게 되는 감정 변화와 마지막 직접 칭찬 **“잘.했.어.”**를 정본화했다. Main21 형제1:1 대련안 폐기·기존3인 전투 유지·협동 전투는 검토 방향. Main21 초보 마을 귀환/폴·미엘 Slow Burn/형 등장 유지. [담당별 공유·결말 연출·미정 항목 정본](../03_스토리/Chapter3_태온_형제애_서사_20261010.md).
 
 문서 연결·확정/미정 경계 검토 완료. Unity 구현/Quest·Character Asset/음성·음악 제작0, 기존 변경 보존. 형 이름·나이·현재 시력·정확한 합류 조건·Chapter3 보스/퀘스트 수·Dialogue ID/TTS 제작은 미정. 다음은 별도 상세 설계 확정이며 이번 구현 승인은 없다. 마지막 관련 commit은 이 항목을 포함한 `Docs: Chapter 3 태온 형제애 서사 정본 확정`.
+
+---
+
+## 2026-10-10 개발환경 — Unity 6.6.5f1 MCP 복구
+
+사용자 업그레이드 `6000.6.5f1` 확인. 최초 서버 로그의 `uvx` 명령 미발견으로 HTTP/WebSocket 실패; 기존 실행 스크립트에 DryRun·uvx 검사·UV_PYTHON·Editor 중복 실행 방지 추가. Python3.12.14/uv0.12.18/MCP10.2.0 유지, 기존 바로가기 정확 인수 DryRun Exit0. 사용자가 닫은 Editor를 명시적 허락 후1회 실행해 HTTP8080/Plugin35도구/MCP 상태·Scene·Console 왕복 PASS. Bootstrap clean EditMode·포커스false·컴파일/Import 종료·현재 Error0/Warning0. 게임 보호3457파일 SHA 동일·Save/설정 동일·기존 Git변경 보존, 게임/아트/음성 변경0·Play0·화면조작0·commit/push0.
+
+최초 업그레이드 로그 C#Error0/CS0618 20건(FindObjects계열18·spritesheet2)/구형Importer경고3 기록; 이번에 API/meta 대량 수정하지 않음. [정확한 원인·검증·경고·보호 보고서](Unity_665_MCP_Recovery_20261010.md). 다음: 기존 개발 시작 바로가기 사용, 별도 Unity6.6 Main20/SideQuest Runtime 회귀. 네이티브 Codex 도구 표시 갱신과 게임전체 호환은 미검증. 시작 관련HEAD `485138b`, 이번 변경 미커밋.
 
 ---
 
@@ -1723,3 +1805,8 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 ## 갱신 규칙
 
 기능 작업 완료 시 완료 기능, 검증 상태, Unity 직접 확인 사항, 다음 권장 작업과 마지막 관련 commit hash를 갱신한다. 긴 작업 로그는 기록하지 않는다.
+
+
+## 2026-10-13 Field04 v2 42도로 정식 적용
+
+승인된 Road30 재배치+연장12 및 Grass315/Props18 적용. 새 격리 QA 253 PASS, 기존 Search/서쪽Spawn/북쪽경계/정본Unity버전 차이는 PARTIAL·OPEN. 원본 디스크 APPLIED. Main08/사용자Save/TTS/BGM 보호. 브랜치 codex/field04-v2-official-42-20261013; 관련 SHA는 해당 브랜치 최종 커밋 및 완료 보고 참조. 상세 `Field04_v2_Official42_Apply_QA_20261013.md`. 사용자 직접 플레이 확인 권장.

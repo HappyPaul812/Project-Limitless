@@ -1,0 +1,1321 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG Wooden_Barrel_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace Wooden_Barrel_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG tree_medium.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace tree_medium.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG house_tiles_new.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace house_tiles_new.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG rock_01.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace rock_01.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG bush_01.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace bush_01.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG Campfire_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace Campfire_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG bush_02.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace bush_02.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG tree_big.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace tree_big.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG fence_tiles.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace fence_tiles.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG Wooden_Chest_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace Wooden_Chest_Type_A.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Same-byte PNG tiles_grass.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Local full importer identical except GUID and empty-value trailing whitespace tiles_grass.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Scene reverse substitution exact Assets/_Project/Scenes/Arbel.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "QA Scene matches branch Assets/_Project/Scenes/Arbel.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "Scene reverse substitution exact Assets/_Project/Scenes/Field_05_WesternOutskirts.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "QA Scene matches branch Assets/_Project/Scenes/Field_05_WesternOutskirts.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "Scene reverse substitution exact Assets/_Project/Scenes/Field_06_ScorchedTrail.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "QA Scene matches branch Assets/_Project/Scenes/Field_06_ScorchedTrail.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "Scene reverse substitution exact Assets/_Project/Scenes/Field_07_AshenReach.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "QA Scene matches branch Assets/_Project/Scenes/Field_07_AshenReach.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "Scene reverse substitution exact Assets/_Project/Scenes/Field_08_RedRift.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "QA Scene matches branch Assets/_Project/Scenes/Field_08_RedRift.unity"
+    },
+    {
+      "result": "PASS",
+      "check": "ThirdParty unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "Runtime/settings/packages unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact AudioSettingsService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BgmPlaybackService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BgmSceneCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact VoiceClipCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact VoicePlaybackSource.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleActionPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleBackgroundCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleChapter2MonsterRuntime.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleCharacterSpriteAnimator.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleCleanseVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleCombatantStatusViewModel.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleCore.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleDungeonMonsterRuntime.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleExperienceReward.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleFireballVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleGaiaWallVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleGuardianCoverVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleIronWallVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleItemUseService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleMain20BossRuntime.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleMonsterAbilityRuntime.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattlePoisonVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattlePrototypeEncounter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleSceneController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleSceneController.Main20.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleSceneFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleSkillSystem.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleThunderboltVisuals.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleUiIconCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleVictoryReward.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BattleVisualResolver.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BeastCompanionSystem.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest02EncounterBridge.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest03EncounterBridge.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest04EncounterBridge.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest07EncounterBridge.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PathCombatTraitRuntime.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PoisonDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SkillLoadoutService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CameraFollow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BeastCompanionService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact BootstrapLoader.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CharacterCreationStatsCalculator.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CharacterGrowthCalculator.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CompanionDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CompanionRosterService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CurrencyPresentation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact EconomyService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ExperienceProgression.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact GameSaveService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact GameSessionData.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact InventoryService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ItemCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ItemDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ItemUseService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact JobDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21Progress.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact OpeningIntroSequence.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PartyResourceService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PathPresentationResolver.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PathVisualCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlaceholderVisual.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerPathDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerPathVisualDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact RewardBundle.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ShopDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ShopService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact UserSettingsService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact WorldModalState.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldEntranceSafetyZoneDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldMonsterInstaller.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldMonsterSpawnDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main20PhaseOverlay.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MonsterDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MonsterEncounterService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MonsterFieldController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MonsterNameplate.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MonsterSpriteSheetAnimation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact InteractionSystem.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest01NpcFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact NpcController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact NpcInteractionPrompt.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact NpcQuestMarkerPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact VillageNpcAppearanceCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact VillageNpcRole.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerAppearanceCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerNameplate.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerPathVisualController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerSpriteAnimator.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PlayerVisualController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestHudPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestNavigationPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact WorldExperienceHud.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact AudioSettingsPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CharacterCreationController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact DialoguePortraitCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact DialoguePortraitDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact DialoguePresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FinalConfirmationController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact InventoryPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact JobSelectionController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact OpeningIntroController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PartyManagementPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PathSelectionController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PathVisualPreview.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PetFacilityPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestLogPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact ShopPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SideQuestNpcPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SkillManagementPresenter.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CompanionAssaultRunValidation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact PilotBeeComparisonValidation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact CatacombEntranceSafeZone.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2IntroFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main15Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main16Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main17Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main18Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main19Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main20Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Chapter2Main21Flow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact DungeonEnvironmentDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact DungeonEnvironmentRenderer.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldConnectionDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldConnectionInstaller.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldThemeDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact FieldThemeInstaller.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main16DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main17DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main18DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main19DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main19FieldArtPresentation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main20DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main20FieldPresentation.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21CarriageArtDefinition.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21CarriageReturnController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21ChoicePanel.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21DialogueCatalog.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact Main21HarenVisual.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest02FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest03FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest04FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest05ReturnFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest06ForestFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest07FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest08FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest09FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest10FieldFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact MainQuest11DungeonFlow.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact QuestNavigationTarget.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SafeZonePetServiceRollout.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SceneSpawnPoint.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SceneTransitionService.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact SceneTransitionTrigger.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact StarterVillageFieldConnection.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact StarterVillageHubInstaller.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact WorldBounds2D.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "QA runtime exact WorldPositionSaveController.cs"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged Ground.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged Optional_Endpoint.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged Props.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged Road_30.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_A_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_B_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_B_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_C_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_DryGrass_C_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+08_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+08_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+08_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+08_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+09_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+09_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+09_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+09_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+10_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+10_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+10_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_+10_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-08_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-08_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-08_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-08_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-09_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-09_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-09_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-09_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-10_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-10_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-10_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Extension_EW_-10_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Bush_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Bush_A_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Bush_B_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Bush_B_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Fence_Wood_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Fence_Wood_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_RockNorth_Grounded_128_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_RockNorth_Grounded_128_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Rock_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Rock_A_128_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Tree_Big_255x256_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Tree_Big_255x256_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Tree_Medium_128x156_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Tree_Medium_128x156_v1.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+00_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+00_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+00_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+00_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+01_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+01_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+01_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+01_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+02_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+02_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+02_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+02_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+03_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+03_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+03_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+03_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+04_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+04_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+04_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+04_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+05_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+05_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+05_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+05_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+06_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+06_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+06_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+06_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+07_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+07_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+07_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_+07_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-01_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-01_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-01_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-01_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-02_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-02_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-02_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-02_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-03_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-03_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-03_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-03_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-04_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-04_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-04_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-04_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-05_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-05_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-05_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-05_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-06_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-06_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-06_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-06_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-07_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-07_Lower_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-07_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged LL_C2_F04_Road_EW_-07_Upper_v2.png.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_001.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_001.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_002.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_miel_supp_003.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_002.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_003.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_004.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved asset unchanged main08_taeon_supp_004.wav.meta"
+    },
+    {
+      "result": "PASS",
+      "check": "Field04 scene/catalog/save/Chapter3 unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "New GUID collision0"
+    },
+    {
+      "result": "PASS",
+      "check": "Original 5221 SHA unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "Original HEAD unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "Original dirty status unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "diff check"
+    }
+  ],
+  "protected": 5221,
+  "changed": [],
+  "existing_guid_collisions": [
+    [
+      "ea7264dba5af46cda070ad3e3aa3eac3",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_00.png.meta",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\GoldenArrow\\golden_arrow_00.png.meta"
+    ],
+    [
+      "ea7264dba5af46cda070ad3e3aa3eac3",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_01.png.meta",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_00.png.meta"
+    ],
+    [
+      "ea7264dba5af46cda070ad3e3aa3eac3",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_02.png.meta",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_01.png.meta"
+    ],
+    [
+      "ea7264dba5af46cda070ad3e3aa3eac3",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_03.png.meta",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_02.png.meta"
+    ],
+    [
+      "ea7264dba5af46cda070ad3e3aa3eac3",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_04.png.meta",
+      "F:\\study\\codex\\Project-Limitless\\Temp\\SpriteRecovery20261014\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_03.png.meta"
+    ]
+  ]
+}

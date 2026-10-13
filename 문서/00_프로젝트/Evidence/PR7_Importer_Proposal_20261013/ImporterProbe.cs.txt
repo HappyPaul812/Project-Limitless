@@ -1,0 +1,44 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using ProjectLimitless.Core;
+using ProjectLimitless.World;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Object=UnityEngine.Object;
+namespace ProjectLimitless.EditorTools
+{
+    // 기존 그림의 등록 계약을 읽고 교정 템플릿을 복사본에서만 비교합니다. v2 적용 코드는 없습니다.
+    [InitializeOnLoad]
+    public static class ImporterProbe
+    {
+        const string Key="Limitless.ImporterProbe";
+        static string Phase=>Environment.GetEnvironmentVariable("LIMITLESS_IMPORT_PROBE_PHASE")??"before";
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../ImporterProbe_"+Phase));
+        static int frames;static bool loaded;
+        static readonly List<string> Checks=new List<string>();
+        static ImporterProbe(){EditorApplication.update+=Tick;}
+        static void Check(bool b,string s){Checks.Add((b?"PASS|":"FAIL|")+s);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Checks);if(!b)throw new Exception(s);}
+        public static void Run(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/IntegratedQA20261013/Client/Assets"))throw new Exception("Isolation");
+            Directory.CreateDirectory(Root);GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Key,true);EditorApplication.EnterPlaymode();
+        }
+        static void Tick(){if(!SessionState.GetBool(Key,false)||!EditorApplication.isPlaying)return;
+            try{
+                if(!loaded){loaded=true;GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);Application.runInBackground=true;GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(ProjectLimitless.Player.PlayerVisualType.Male,"Importer 검수");GameSessionData.SelectJob("fighter");GameSessionData.SelectPlayerPath("path.mobility");SceneManager.LoadScene("Field_04_WesternBorder");return;}
+                if(++frames<30)return;
+                var env=GameObject.Find("FieldEnvironment").GetComponentsInChildren<SpriteRenderer>(true);var lines=new List<string>{"name\tposition\tscale\tsorting\tasset\tGUID\tfileID\tPPU\trect\tpivot"};int missing=0;
+                foreach(var sr in env){string guid="",id="",asset="",rect="",pivot="",ppu="";if(sr.sprite==null)missing++;else{AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sr.sprite,out guid,out long fileID);id=fileID.ToString();asset=AssetDatabase.GetAssetPath(sr.sprite);rect=sr.sprite.rect.ToString();pivot=sr.sprite.pivot.ToString();ppu=sr.sprite.pixelsPerUnit.ToString();}lines.Add(sr.name+"\t"+sr.transform.position+"\t"+sr.transform.localScale+"\t"+sr.sortingOrder+"\t"+asset+"\t"+guid+"\t"+id+"\t"+ppu+"\t"+rect+"\t"+pivot);}
+                File.WriteAllLines(Path.Combine(Root,"renderer_references.tsv"),lines);File.WriteAllText(Path.Combine(Root,"missing_sprites.txt"),missing.ToString());Check(env.Length==363,"Renderer363");Check(Phase=="after"?missing==0:missing==362,"ExpectedMissing."+Phase+"."+missing);
+                var roads=env.Where(x=>x.name.StartsWith("Road")).ToArray();Check(roads.Length==30&&roads.Min(x=>x.transform.position.y)==-7&&roads.Max(x=>x.transform.position.y)==7,"OriginalRoad30NS.Unchanged");Check(env.All(x=>x.transform.localScale==Vector3.one),"ScalePreserved");
+                var boxes=GameObject.Find("FieldEnvironment").GetComponentsInChildren<BoxCollider2D>(true);File.WriteAllLines(Path.Combine(Root,"colliders.tsv"),boxes.OrderBy(x=>x.name).Select(x=>x.name+"\t"+x.transform.position+"\t"+x.size+"\t"+x.offset+"\t"+x.isTrigger));
+                var c=Camera.main;var rt=RenderTexture.GetTemporary(1680,1200,24);c.targetTexture=rt;c.aspect=1.4f;c.orthographicSize=7.5f;c.transform.position=new Vector3(0,0,-10);c.Render();RenderTexture.active=rt;var tex=new Texture2D(1680,1200,TextureFormat.RGBA32,false);tex.ReadPixels(new Rect(0,0,1680,1200),0,0);tex.Apply();File.WriteAllBytes(Path.Combine(Root,"native_field04.png"),tex.EncodeToPNG());Object.DestroyImmediate(tex);c.targetTexture=null;RenderTexture.active=null;RenderTexture.ReleaseTemporary(rt);
+                File.WriteAllText(Path.Combine(Root,"status.txt"),Phase=="after"?"PROPOSAL_VALIDATED_NOT_APPLIED":"BLOCKER_REPRODUCED_ON_PR");SessionState.SetBool(Key,false);EditorApplication.Exit(0);
+            }catch(Exception e){File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");SessionState.SetBool(Key,false);EditorApplication.Exit(1);}
+        }
+    }
+}

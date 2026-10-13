@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+import pathlib as P,subprocess as S,json,hashlib as H,re,wave
+R=P.Path('F:/study/codex/Project-Limitless');T=R/'Temp/EODIntegration20261013';W=T/'worktree';A='Unity/Client/Assets/_Project/';checks=[]
+git=lambda *a:S.check_output(['git','-C',str(W),*a]);norm=lambda b:b.replace(b'\r\n',b'\n');sha=lambda b:H.sha256(b).hexdigest()
+def check(b,s):checks.append(dict(result='PASS' if b else 'FAIL',check=s));assert b,s
+for ref in ['79554069d010115a5427eedfc1c109994737f4fb','ec469c0aed66b58e8a8ee9e842c47c3d78c7b675','origin/docs/planning']:
+    check(S.call(['git','-C',str(W),'merge-base','--is-ancestor',ref,'HEAD'])==0,'Ancestor preserved '+ref)
+scene=A+'Scenes/Field_04_WesternBorder.unity';check(norm((W/scene).read_bytes())==git('show','ec469c0:'+scene),'Field04 approved Scene identical')
+assets=[]
+for p in (W/(A+'Art/Environment/Field04_V2_Official42_20261013')).rglob('*.png'):
+    rel=p.relative_to(W).as_posix();check(p.read_bytes()==git('show','ec469c0:'+rel),'Approved Field04 PNG '+p.name);assets.append(rel)
+check(len(assets)==52,'Approved PNG52')
+voice=[]
+for p in (W/(A+'Audio/Voice/Story/Main08/ApprovedRecovery20261013')).rglob('*.wav'):
+    rel=p.relative_to(W).as_posix();check(p.read_bytes()==git('show','79554069:'+rel),'Approved Main08 WAV '+p.name)
+    check(norm(P.Path(str(p)+'.meta').read_bytes())==git('show','79554069:'+rel+'.meta'),'Main08 GUID/meta '+p.name);voice.append(dict(path=rel,sha256=sha(p.read_bytes())))
+check(len(voice)==6,'Approved Voice6')
+catalog=A+'Resources/Audio/Voice/Story/StoryVoiceCatalog.asset';check(norm((W/catalog).read_bytes())==git('show','79554069:'+catalog),'Catalog all approved entries protected')
+paths=[p for p in (W/(A+'Scripts')).rglob('*.cs') if '/Editor/' not in p.as_posix()]
+runtime_mismatch=[p.relative_to(W).as_posix() for p in paths if norm(p.read_bytes())!=git('show','79554069:'+p.relative_to(W).as_posix())]
+check(not runtime_mismatch,'All approved A/B/C runtime C# unchanged versus79554069')
+lab_mismatch=[p.relative_to(W).as_posix() for p in paths if p.read_bytes()!=(T/'Client'/p.relative_to(W/'Unity/Client')).read_bytes()]
+check(not lab_mismatch,'QA exact runtime C# bytes')
+guids={};collision=[]
+for p in (W/'Unity/Client/Assets').rglob('*.meta'):
+    m=re.search(r'^guid: (\w+)',p.read_text(encoding='utf-8-sig',errors='replace'),re.M)
+    if m:
+        if m[1] in guids:collision.append([p.relative_to(W).as_posix(),guids[m[1]]])
+        guids[m[1]]=p.relative_to(W).as_posix()
+check(not any('Field04_V2_Official42' in str(c) or 'ApprovedRecovery20261013' in str(c) or 'LegacySpriteRegistration' in str(c) for c in collision),'New approved asset GUID collision0')
+# Package-owned scene references must resolve through UPM, not Assets alone.
+for p in (T/'Client/Library/PackageCache').rglob('*.meta'):
+    if p.name not in ['UniversalAdditionalCameraData.cs.meta','Sprite-Lit-Default.mat.meta','Light2D.cs.meta']:continue
+    m=re.search(r'^guid: (\w+)',p.read_text(encoding='utf-8-sig',errors='replace'),re.M)
+    if m:guids.setdefault(m[1],p.as_posix())
+missing=[]
+for p in (W/'Unity/Client/Assets/_Project/Scenes').glob('*.unity'):
+    for g in set(re.findall(r'guid: ([0-9a-f]{32})',p.read_text(encoding='utf-8'))):
+        if g.startswith('00000000'):continue
+        if g not in guids:missing.append(dict(scene=p.name,guid=g))
+print('Missing Scene GUID entries:',missing); check(not missing,'All project Scene GUIDs resolve in Assets')
+jobs=[]
+for job in ['투사','수호자','치유사','마도사','사수']:
+    hits=list((W/'문서/06_스킬').glob('Chapter3_'+job+'*20261013.md'));check(bool(hits),'Planning job '+job);jobs.extend(p.relative_to(W).as_posix() for p in hits)
+b=json.loads((T/'protection.json').read_text(encoding='utf-8'));changed=[p for p,h in b['files'].items() if not P.Path(p).is_file() or sha(P.Path(p).read_bytes())!=h];check(not changed,'Original protection SHA all unchanged')
+check(S.check_output(['git','-C',str(R),'rev-parse','HEAD']).decode().strip()==b['head'],'Original HEAD unchanged');check(S.check_output(['git','-C',str(R),'status','--porcelain=v1','-z','--untracked-files=all']).decode('utf-8')==b['status'],'Original dirty status unchanged')
+report=dict(checks=checks,existing_guid_collision_pairs=collision,missing_scene_guids=missing,voices=voice,planning_jobs=jobs,protected=len(b['files']),qa_commit=git('rev-parse','HEAD').decode().strip(),source_scene_sha256=sha((W/scene).read_bytes()))
+(T/'static_verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print('STATIC PASS',len(checks),'checks; original protected',len(b['files']))

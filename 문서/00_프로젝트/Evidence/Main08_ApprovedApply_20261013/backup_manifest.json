@@ -1,0 +1,82 @@
+[
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_001.wav",
+    "sha256": "2b2c26ee327a47363f76c0bf86a435c8e8b3ebbb024ab959536a07ebf92ac3e2",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_001.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_001.wav.meta",
+    "sha256": "f15bd40b29d9fa508b591fa4e8b84a869230c463744dd71364d2893cb6fb827c",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_001.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_002.wav",
+    "sha256": "d06d4fc4453ebdb96a43f6847b58fe617e901fb3eb54451226bbaa4d74db34d8",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_002.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_002.wav.meta",
+    "sha256": "79e62d8ca46c65d3954c3486407172afa1657c9f7e0a0bdc23c0cc2e4b4fc7be",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_002.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_003.wav",
+    "sha256": "21d143ebd34e6ec8038d9335897494d6f4bc3fc0c30c5d54cbe3e90c28e37b23",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_003.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_003.wav.meta",
+    "sha256": "bfa2016743fbd63480d65932bc26b97de3710ac79bbb4a7708acac309eea9880",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_miel_supp_003.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_002.wav",
+    "sha256": "98e396f0407f42df3283189638092ed06b64f6d23fbad073f0d6573b8f7ef3fb",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_002.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_002.wav.meta",
+    "sha256": "00874ec96f1e8feb5e76249b50415ca5a353d482495cdf64575b7bd56994a559",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_002.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_003.wav",
+    "sha256": "7075ffb191443725ecc01680d92a4cabb258d1b7f4766808b4ad6cc3bc777e2c",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_003.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_003.wav.meta",
+    "sha256": "1019ef18716798cd3bdcc01cf428ff2a400a467ecf419c42efaae1c1cd412aa3",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_003.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_004.wav",
+    "sha256": "4162175dbbc3570ed5ad1531818a9bb2939263216ec6895241bcb9885f79dbce",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_004.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_004.wav.meta",
+    "sha256": "34d75bc4a2ea469f5ceaee8dd4adda60a41c69b4cfa47674fbe5438d3640d9a2",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_004.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_005.wav",
+    "sha256": "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_005.wav"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_005.wav.meta",
+    "sha256": "e00745ed85b8fe3550e3cbdcb99bc11f63048d8fdc670a34951b5e1953db4286",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\AssetOriginal\\main08_taeon_supp_005.wav.meta"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Resources\\Audio\\Voice\\Story\\StoryVoiceCatalog.asset",
+    "sha256": "d018f21803273f67bc8a867ceb04497dc47007be1ef40c4351b2ff8d6fcb4baf",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\CatalogOriginal\\StoryVoiceCatalog.asset"
+  },
+  {
+    "path": "Unity\\Client\\Assets\\_Project\\Resources\\Audio\\Voice\\Story\\StoryVoiceCatalog.asset.meta",
+    "sha256": "f41a2f45a4e2b554117a9f39b3afb23c91dc68c398a6e7482227d2cfe39bc5dd",
+    "backup": "Temp\\Main08Approved20261013\\OriginalBackup\\CatalogOriginal\\StoryVoiceCatalog.asset.meta"
+  }
+]

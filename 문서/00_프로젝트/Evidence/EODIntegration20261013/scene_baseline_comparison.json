@@ -1,0 +1,169 @@
+{
+  "baseline_main": "0e0476649b667129cb7aa6004f4b677335ed8be2",
+  "editor": "6000.6.5f1",
+  "scenes": [
+    {
+      "scene": "Assets/_Project/Scenes/Bootstrap.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/OpeningIntro.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/CharacterCreation.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/PathSelection.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/JobSelection.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/FinalConfirmation.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/World_StarterVillage.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 1,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 1
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_01.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_02.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Battle.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/Scenes/SampleScene.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_03.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Dungeon_01.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Dungeon_01_B2.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_04_WesternBorder.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 362,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Arbel.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 285,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 285
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_05_WesternOutskirts.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 362,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 362
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_06_ScorchedTrail.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 362,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 362
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_07_AshenReach.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 371,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 371
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_08_RedRift.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 368,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 368
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_09_ObsidianScar.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_10_BurningPulse.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    },
+    {
+      "scene": "Assets/_Project/Scenes/Field_11_DeepCore.unity",
+      "baseline_missing_script": 0,
+      "baseline_missing_sprite": 0,
+      "eod_missing_script": 0,
+      "eod_missing_sprite": 0
+    }
+  ],
+  "new_missing_sprite": 0,
+  "scene_refs_gate": "FAIL"
+}

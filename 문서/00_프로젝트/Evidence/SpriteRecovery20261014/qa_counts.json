@@ -1,0 +1,42 @@
+{
+  "Field04": {
+    "PASS": 254,
+    "FAIL": 0
+  },
+  "Main08": {
+    "PASS": 177,
+    "FAIL": 0
+  },
+  "Skill": {
+    "PASS": 72,
+    "FAIL": 0
+  },
+  "PetService": {
+    "PASS": 106,
+    "FAIL": 0
+  },
+  "Modal": {
+    "PASS": 28,
+    "FAIL": 0
+  },
+  "PetContract": {
+    "PASS": 64,
+    "FAIL": 0
+  },
+  "Importer": {
+    "PASS": 123,
+    "FAIL": 0
+  },
+  "Western": {
+    "PASS": 85,
+    "FAIL": 0
+  },
+  "SideQuests": {
+    "PASS": 589,
+    "FAIL": 0
+  },
+  "Skill15": {
+    "PASS": 154,
+    "FAIL": 0
+  }
+}

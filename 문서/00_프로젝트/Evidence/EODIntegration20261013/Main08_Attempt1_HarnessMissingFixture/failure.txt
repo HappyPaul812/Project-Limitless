@@ -1,0 +1,12 @@
+System.IO.FileNotFoundException: Could not find file "F:\study\codex\Project-Limitless\Temp\EODIntegration20261013\Client\Main08Results\approved_pcm.tsv"
+File name: 'F:\study\codex\Project-Limitless\Temp\EODIntegration20261013\Client\Main08Results\approved_pcm.tsv'
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding) [0x00000] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string,System.Text.Encoding)
+  at System.IO.File.InternalReadAllLines (System.String path, System.Text.Encoding encoding) [0x00006] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at System.IO.File.ReadAllLines (System.String path) [0x0002c] in <c5ae8a4eeb824526b5df2932bc2395e0>:0
+  at ProjectLimitless.EditorTools.Main08VoiceAudit+<Tests>d__17.MoveNext () [0x006c4] in F:\study\codex\Project-Limitless\Temp\EODIntegration20261013\Client\Assets\_Project\Scripts\Editor\Main08VoiceAudit.cs:49
+  at ProjectLimitless.EditorTools.Main08VoiceAudit.Tick () [0x00020] in F:\study\codex\Project-Limitless\Temp\EODIntegration20261013\Client\Assets\_Project\Scripts\Editor\Main08VoiceAudit.cs:31

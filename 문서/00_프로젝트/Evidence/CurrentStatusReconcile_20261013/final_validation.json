@@ -1,0 +1,13 @@
+{
+  "verdict": "RESOLVED",
+  "conflicts": 0,
+  "protected_files_unchanged": 5539,
+  "changed_other_files": [],
+  "original_head_unchanged": true,
+  "original_dirty_list_unchanged": true,
+  "prior_synchronized_203_files_unchanged": true,
+  "target_sha256": "395e5c85e4a0700e89b4b8da19a9c2dca0812618027322a6a25e0b9dcfad92fb",
+  "push": false,
+  "unity_execution": false,
+  "tts_execution": false
+}

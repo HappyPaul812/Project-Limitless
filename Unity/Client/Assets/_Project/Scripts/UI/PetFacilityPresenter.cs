@@ -40,6 +40,14 @@ namespace ProjectLimitless.UI
         private static void Open(Transform npc, bool isAdoption)
         {
             if (npc == null) return;
+            // 플레이어의 직업만 확인하면 타 직업 주인공이 보유한 사수 동료를 관리할 수 없습니다.
+            // 기존 공용 사수 목록으로 자격을 확인하고 부적격 구매 전에 명확한 안내를 제공합니다.
+            if (BeastCompanionService.GetSharpshooterCharacterIds().Length == 0)
+            {
+                DialoguePresenter.Instance?.Show("pet-facility-sharpshooter-only", "펫 서비스",
+                    "야수 동료는 사수 전용입니다. 관리할 사수 캐릭터가 없습니다.");
+                return;
+            }
             if (instance == null) new GameObject("PetFacilitySystem").AddComponent<PetFacilityPresenter>();
             instance.Show(npc, isAdoption);
         }

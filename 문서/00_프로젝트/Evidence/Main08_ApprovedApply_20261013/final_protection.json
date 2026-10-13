@@ -1,0 +1,31 @@
+{
+  "protected_existing_files_unchanged": 5538,
+  "old_wav_and_meta_preserved": true,
+  "original_changed_existing_path_only": "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset",
+  "root_equals_validated_worktree": true,
+  "original_head_unchanged": true,
+  "original_dirty_paths_all_preserved": true,
+  "new_dirty_paths": [
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_001.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_001.wav.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_002.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_002.wav.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_003.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_003.wav.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav.meta",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav.meta",
+    "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset"
+  ],
+  "new_runtime_pass": 177,
+  "new_runtime_fail": 0,
+  "existing_semantic_open_ids": [
+    "main08_taeon_supp_005",
+    "main08_taeon_supp_006"
+  ],
+  "push": false
+}

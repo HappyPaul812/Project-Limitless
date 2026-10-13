@@ -1,0 +1,30 @@
+[
+  {
+    "name": "WorldSprites",
+    "exit_code": 0
+  },
+  {
+    "name": "Field04",
+    "exit_code": 0
+  },
+  {
+    "name": "Main08",
+    "exit_code": 0
+  },
+  {
+    "name": "Skill",
+    "exit_code": 0
+  },
+  {
+    "name": "PetService",
+    "exit_code": 0
+  },
+  {
+    "name": "Modal",
+    "exit_code": 0
+  },
+  {
+    "name": "PetContract",
+    "exit_code": 0
+  }
+]

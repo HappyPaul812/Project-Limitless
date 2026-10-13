@@ -68,6 +68,8 @@ namespace ProjectLimitless.Battle
         private readonly BattleDungeonMonsterRuntime dungeonMonsters = new BattleDungeonMonsterRuntime();
         private readonly BattleChapter2MonsterRuntime chapter2Monsters = new BattleChapter2MonsterRuntime();
         private readonly BattleMain20BossRuntime main20Boss = new BattleMain20BossRuntime();
+        private readonly Dictionary<Combatant, IReadOnlyList<BattleSkillDefinition>> equippedSkills = new Dictionary<Combatant, IReadOnlyList<BattleSkillDefinition>>();
+        private readonly Dictionary<Combatant, Dictionary<string, int>> equippedSkillSlots = new Dictionary<Combatant, Dictionary<string, int>>();
         private readonly List<Button> skillMenuButtons = new List<Button>();
         private readonly Color navy = new Color(.018f, .03f, .06f, 1f);
         private readonly Color panel = new Color(.055f, .08f, .13f, .97f);
@@ -249,6 +251,7 @@ namespace ProjectLimitless.Battle
 
         private void Update()
         {
+            PositionSkillDetailPopup();
             if (battleEnded || actionPlaying) return;
             // 같은 취소 흐름을 Esc와 패드 B가 사용합니다. 키보드가 없는 패드 환경도 취소할 수 있습니다.
             if (Keyboard.current?.escapeKey.wasPressedThisFrame != true && Gamepad.current?.buttonEast.wasPressedThisFrame != true) return;
@@ -396,7 +399,14 @@ namespace ProjectLimitless.Battle
                     main20Boss.Bind(combatant);
                 else if (participant.IsBoss) dungeonMonsters.SetBoss(combatant);
                 if (!string.IsNullOrEmpty(participant.JobId) && jobs.TryGetValue(participant.JobId, out JobDefinition participantJob))
+                {
                     combatantJobs.Add(combatant, participantJob);
+                    equippedSkills[combatant] = SkillLoadoutService.Snapshot(participant.Id, participantJob);
+                    // 비어 있는 칸도 위치를 보존하여 관리 화면의6번칸이 전투에서도6번 위치에 나타납니다.
+                    equippedSkillSlots[combatant] = SkillLoadoutService.GetSlots(participant.Id, participantJob)
+                        .Select((id, slot) => new { id, slot }).Where(value => !string.IsNullOrEmpty(value.id))
+                        .ToDictionary(value => value.id, value => value.slot, StringComparer.Ordinal);
+                }
             }
         }
         private void CreateInterface()
@@ -848,7 +858,7 @@ namespace ProjectLimitless.Battle
             cancelButton.gameObject.SetActive(false);
             MakeText(commandPanel.transform, "Help", "마우스/방향키: 이동   캐릭터 Hover/포커스: 상세   Esc/취소: 이전   시간제한 없음", font, 13, new Vector2(.5f, .1f), new Vector2(1030, 20)).color = new Color(.68f, .75f, .84f, 1f);
             skillMenuPanel = MakeImage(commandPanel.transform, "SkillMenu", new Color(.045f, .075f, .12f, 1f));
-            SetRect(skillMenuPanel.rectTransform, new Vector2(.45f, .42f), new Vector2(850, 54));
+            SetRect(skillMenuPanel.rectTransform, new Vector2(.5f, .46f), new Vector2(1040, 112));
             AddOutline(skillMenuPanel.gameObject, gold, 1);
             skillMenuPanel.gameObject.SetActive(false);
             itemMenuPanel = MakeImage(parent, "ItemMenu", new Color(.045f, .075f, .12f, .99f));
@@ -969,7 +979,8 @@ namespace ProjectLimitless.Battle
             }
             choosingSkill = true;
             SetCommandButtons(false);
-            SetCancelButtonVisible(true);
+            // 별도 돌아가기 버튼과 Esc/B가 취소를 담당합니다. 겹친 공용 취소 버튼의 숨은 포커스를 막습니다.
+            SetCancelButtonVisible(false);
             RefreshCombatantViews(null);
             RebuildSkillMenu();
             skillMenuPanel.gameObject.SetActive(true);
@@ -1055,19 +1066,19 @@ namespace ProjectLimitless.Battle
             foreach (Transform child in skillMenuPanel.transform) Destroy(child.gameObject);
             skillMenuButtons.Clear();
 
-            combatantJobs.TryGetValue(currentActor, out JobDefinition job);
-            IReadOnlyList<BattleSkillDefinition> skills = BattleSkillCatalog.GetSkills(job);
-            int itemCount = Math.Max(1, skills.Count) + 1;
+            IReadOnlyList<BattleSkillDefinition> skills = equippedSkills.TryGetValue(currentActor, out var equipped) ? equipped : Array.Empty<BattleSkillDefinition>();
+            // 장착 스냅샷만 2행×3열에 표시합니다. 돌아가기는 오른쪽 별도 영역입니다.
             for (int index = 0; index < skills.Count; index++)
             {
                 BattleSkillDefinition skill = skills[index];
+                int displaySlot = equippedSkillSlots.TryGetValue(currentActor, out var positions) && positions.TryGetValue(skill.Id, out int slot) ? slot : index;
                 int remaining = skillCooldowns.GetRemaining(currentActor, skill.Id);
                 // 버튼은 빠르게 훑는 선택 목록이므로 이름만 기본 표시합니다. 재사용 중일 때만 현재 조작
                 // 가능 여부를 즉시 알 수 있도록 짧은 남은 턴을 붙이고, 나머지 설명은 공용 팝업으로 옮깁니다.
                 string label = remaining > 0 ? $"{skill.DisplayName}\n재사용 대기시간 {remaining}턴" : skill.DisplayName;
                 BattleSkillDefinition selectedSkill = skill;
                 Button button = MakeSkillMenuButton(skillMenuPanel.transform, $"Skill_{skill.Id}", label, skill.IconId,
-                    new Vector2((index + .5f) / itemCount, .5f), () => UseSkill(selectedSkill), selectedSkill);
+                    new Vector2(.13f + (displaySlot % 3) * .24f, displaySlot < 3 ? .75f : .25f), () => UseSkill(selectedSkill), selectedSkill);
                 bool canExecute = skill.IsImplemented && remaining == 0;
                 // Unity의 interactable=false 버튼은 키보드 포커스도 받을 수 없어 설명을 읽을 수 없습니다.
                 // 버튼 자체는 포커스 가능하게 두되 어둡게 표시하고, 실행 시 기존 CanUse가 미구현·쿨타임을
@@ -1080,16 +1091,10 @@ namespace ProjectLimitless.Battle
                 skillMenuButtons.Add(button);
             }
 
-            if (skills.Count == 0)
-            {
-                Button empty = MakeSkillMenuButton(skillMenuPanel.transform, "NoSkills", "사용 가능한 스킬 없음", null,
-                    new Vector2(.25f, .5f), () => messageText.text = "아직 사용할 수 없습니다.");
-                empty.interactable = false;
-                skillMenuButtons.Add(empty);
-            }
+            // 빈 장착칸은 버튼으로 만들지 않습니다. 취소 버튼은 항상 남습니다.
 
             Button back = MakeSkillMenuButton(skillMenuPanel.transform, "Back", "돌아가기", null,
-                new Vector2((itemCount - .5f) / itemCount, .5f), CloseSkillMenu);
+                new Vector2(.865f, .5f), CloseSkillMenu);
             skillMenuButtons.Add(back);
         }
 
@@ -1226,8 +1231,21 @@ namespace ProjectLimitless.Battle
             skillDetailIcon.gameObject.SetActive(sprite != null);
             skillDetailPopup.gameObject.SetActive(true);
             skillDetailPopup.rectTransform.SetAsLastSibling();
+            PositionSkillDetailPopup();
         }
 
+        /// <summary>21:9처럼 논리 화면 높이가 낮아도 안내/실패 이유가 상세팝업에 가려지지 않게 최소 간격만 보정합니다.</summary>
+        private void PositionSkillDetailPopup()
+        {
+            if (skillDetailPopup == null || !skillDetailPopup.gameObject.activeSelf || messageText == null || battleCanvasRect == null) return;
+            RectTransform popup = skillDetailPopup.rectTransform;
+            RectTransform message = messageText.rectTransform;
+            float messageTop = battleCanvasRect.InverseTransformPoint(message.TransformPoint(new Vector3(0, message.rect.yMax, 0))).y;
+            float originalCenter = battleCanvasRect.rect.yMin + battleCanvasRect.rect.height * .37f;
+            float requiredCenter = messageTop + 8f + popup.rect.height * .5f;
+            // 원래 위치로도 읽히면 그대로 두며, 필요한 만큼만 위로 올립니다. 전장/HP/Timeline 크기는 바꾸지 않습니다.
+            popup.anchoredPosition = new Vector2(0, Mathf.Max(0, requiredCenter - originalCenter));
+        }
         private void HideSkillDetailPopup()
         {
             hoveredSkill = null;
@@ -3253,6 +3271,12 @@ namespace ProjectLimitless.Battle
 
         private void SetCommandButtons(bool enabled)
         {
+            // 두 줄 메뉴가 안내/실패 이유를 가리지 않도록 스킬 선택 중에는 안내를 패널 위로 올립니다.
+            if (messageText != null)
+            {
+                SetRect(messageText.rectTransform, new Vector2(.5f, choosingSkill && !enabled ? 1f : .79f), new Vector2(1030, 26));
+                messageText.transform.SetAsLastSibling();
+            }
             if (enabled) commandMenuHidden = false;
             else if (choosingSkill || choosingItem) commandMenuHidden = true;
             foreach (Selectable selectable in commandButtons)

@@ -1,0 +1,1276 @@
+{
+  "product": "LIMITLESS",
+  "package": "Limitless_Field04_Renewal_Art_v2",
+  "status": "ART_DELIVERED__USER_ART_REVIEW_PENDING__UNITY_NOT_APPLIED",
+  "source_repo": "HappyPaul812/Project-Limitless",
+  "source_scene": "Unity/Client/Assets/_Project/Scenes/Field_04_WesternBorder.unity",
+  "theme": "Field04_DryForest",
+  "theme_groundTint": [
+    0.69,
+    0.61,
+    0.42,
+    1
+  ],
+  "scene_renderer_count": 363,
+  "scene_original_sprite_roles": 12,
+  "renderer_counts": {
+    "grass": 315,
+    "road": 30,
+    "props": 18
+  },
+  "runtime_theme_tree_bush_clones": 0,
+  "world_bounds": [
+    21,
+    15
+  ],
+  "actual_runtime_connections": [
+    {
+      "target": "Field_03",
+      "transition": [
+        10.7,
+        0
+      ],
+      "spawn": [
+        8,
+        0
+      ]
+    },
+    {
+      "target": "Arbel",
+      "transition": [
+        -10.7,
+        0
+      ],
+      "spawn": [
+        -8,
+        0
+      ]
+    }
+  ],
+  "main_story_protection": [
+    {
+      "id": "field04_west_entry",
+      "xy": [
+        7,
+        0
+      ]
+    },
+    {
+      "id": "field04_main13_dry_soil",
+      "xy": [
+        5,
+        -2
+      ]
+    },
+    {
+      "id": "field04_main13_shallow_stream",
+      "xy": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "field04-serin",
+      "xy": [
+        -1,
+        0
+      ]
+    },
+    {
+      "id": "field04_main13_serin_encounter",
+      "xy": [
+        -3,
+        0
+      ]
+    }
+  ],
+  "source_of_art": "New original procedural pixel art drawn for this deliverable, no third-party pixel reuse",
+  "external_license_status": "None incorporated in new Field04 PNG; project legal review remains independent",
+  "assets": [
+    {
+      "mapping_status": "LOCAL_AUDIT_VERIFIED",
+      "old_sprite_candidate": "tiles_grass_6_0",
+      "scene_fileID_guid": "1606921373@ecafa1446d0264141bb7b01e4005beff",
+      "renderer_instances": 104,
+      "new_png": "Ground/LL_C2_F04_DryGrass_A_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": false,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "GROUND",
+      "sha256": "cf61e2c0281ee00a92c47ba25e051ed49cef206016c1de3d80c1e24dc0dc8f16",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "tiles_grass_4_0",
+      "scene_fileID_guid": "405149151@ecafa1446d0264141bb7b01e4005beff",
+      "renderer_instances": 105,
+      "new_png": "Ground/LL_C2_F04_DryGrass_B_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": false,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "GROUND",
+      "sha256": "fe23f54aa0ad4849a4e96a8440db00a2c039828b2b970e6648388a857e29ce22",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "tiles_grass_5_0",
+      "scene_fileID_guid": "1271049111@ecafa1446d0264141bb7b01e4005beff",
+      "renderer_instances": 106,
+      "new_png": "Ground/LL_C2_F04_DryGrass_C_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": false,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "GROUND",
+      "sha256": "7198b0f998d5b0d9da6d0a97e935f148dd4a98dc9d100cfc2455428bfb033443",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SIZE_CORRECTED_REF_3",
+      "old_sprite_candidate": "tree_medium",
+      "scene_fileID_guid": "21300000@5b888cd38e2bf8543a27554e427d128b",
+      "renderer_instances": 3,
+      "new_png": "Props/LL_C2_F04_Tree_Medium_128x156_v1.png",
+      "size_px": [
+        128,
+        156
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "TREE",
+      "sha256": "be7942a7fff9b80d83dd7c5093c297fba4e6f1987c97a1989a5e80d56ce96f1b",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SIZE_CORRECTED_REF_2",
+      "old_sprite_candidate": "tree_big",
+      "scene_fileID_guid": "21300000@d06207b6940ba73478971dde7147ae92",
+      "renderer_instances": 2,
+      "new_png": "Props/LL_C2_F04_Tree_Big_255x256_v1.png",
+      "size_px": [
+        255,
+        256
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "TREE",
+      "sha256": "7a3d0742778aba302e60dbe3e6b76b40b26b37f998dfeff96ddccd67fe7da047",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "bush_01",
+      "scene_fileID_guid": "21300000@a7170a8f8df7fc347a8e4861ba68821b",
+      "renderer_instances": 2,
+      "new_png": "Props/LL_C2_F04_Bush_A_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "BUSH",
+      "sha256": "5429e1601ea67aff7bf7ac310b4ac923c547440828ff9d5e5cb46b3b0970089b",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "bush_02",
+      "scene_fileID_guid": "21300000@ccf732b59af6d4d4cbf48b806179440b",
+      "renderer_instances": 1,
+      "new_png": "Props/LL_C2_F04_Bush_B_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "BUSH",
+      "sha256": "fd59cf2124c359cbe0a0cb90e693c81ee465a324d4116fde1b25e0d1dd36044f",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "rock_01",
+      "scene_fileID_guid": "21300000@6b5b784b46803054195f9cc3b2961699",
+      "renderer_instances": 1,
+      "new_png": "Props/LL_C2_F04_Rock_A_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "ROCK__CHECK_SPRITE_RECT",
+      "sha256": "60cf464104fcb9107392cf38379ef217c92048074d3f4650c626327744b383f9",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "ART_REWORKED__RUNTIME_GROUND_QA_REQUIRED",
+      "old_sprite_candidate": "rock_02_0",
+      "scene_fileID_guid": "-1321756614084088994@5b951bd26f9af3849a2fe92928a0c645",
+      "renderer_instances": 1,
+      "new_png": "Props/LL_C2_F04_RockNorth_Grounded_128_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "ROCK__CHECK_SPRITE_RECT",
+      "sha256": "8f7ec54be6bfb72c1788f54011f68b830e78328cd2746c3df537ef9d0b9ceecd",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    },
+    {
+      "mapping_status": "SCENE_ID_VERIFIED__IMPORTER_PENDING",
+      "old_sprite_candidate": "fence_tiles_2_2",
+      "scene_fileID_guid": "1892116053@d1228d04780ccff429a9d5042442017d",
+      "renderer_instances": 8,
+      "new_png": "Props/LL_C2_F04_Fence_Wood_128_v1.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "image_alpha": true,
+      "ppu_recommended": 128,
+      "pivot_recommended": "Center (0.5,0.5)",
+      "role": "FENCE",
+      "sha256": "cfb3a91ebe1e2f84525934f72c37d7fc83b96c33ed1d27c6910797bc456ad7fe",
+      "notes": "New standalone Sprite, never overwrite old PNG/meta/GUID. Check sprite rect and PPU locally, especially rocks."
+    }
+  ],
+  "optional_decals": [
+    {
+      "new_png": "Optional_Story/LL_C2_F04_DrySoil_Decal_128_v1.png",
+      "status": "OPTIONAL_NONCOLLIDING_DECAL__NOT_EXISTING_RENDERER",
+      "recommended_position_world": [
+        5,
+        -2
+      ],
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "64ca5ced876afd455c280487d6c5a78fd96acb00ec167225af45463955ce1495",
+      "art_usage": "May replace runtime clue ground only after user approval / Codex Quest Marker and Sorting QA"
+    },
+    {
+      "new_png": "Optional_Story/LL_C2_F04_ShallowStream_Decal_128_v1.png",
+      "status": "OPTIONAL_NONCOLLIDING_DECAL__NOT_EXISTING_RENDERER",
+      "recommended_position_world": [
+        2,
+        2
+      ],
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "34fb36eb3f3d8eceda3b3c9f2114a18916357798dfa68bca61f6ef52af2aa545",
+      "art_usage": "May replace runtime clue ground only after user approval / Codex Quest Marker and Sorting QA"
+    },
+    {
+      "new_png": "Optional_Story/LL_C2_F04_DryLeaves_Decal_128_v1.png",
+      "status": "OPTIONAL_NONCOLLIDING_DECAL__NOT_EXISTING_RENDERER",
+      "recommended_position_world": [
+        4,
+        -4
+      ],
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "45abe3cc0a98bd0d3901e03a6077a7b9854d88f37aee037041243ea0c2b1fbed",
+      "art_usage": "May replace runtime clue ground only after user approval / Codex Quest Marker and Sorting QA"
+    }
+  ],
+  "user_art_approval": "PENDING",
+  "local_importer_sprite_rect_pivot_qa": "NOT_VERIFIED_V2",
+  "runtime_colliders_monsters_quest_and_camera": "NOT_VERIFIED_V2",
+  "unity_files_modified": false,
+  "git_commit_push": false,
+  "source_v1_sha256": "60f4c51d5dba1ad3bae862db033d36ccaae2cf8dac5b34b65762667874441be3",
+  "source_v1_preserved": true,
+  "approach": "Road thirty per-GameObject replacements/repositions; not global sprite ID change, no Scene rotation or automatic PNG rotation.",
+  "original_scene_road_count": 30,
+  "proposed_existing_road_count": 30,
+  "road_proposed_positions": [
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-07_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "f96ce4716176277c71fc72408a404df009404e1209d72aca95b9f8ff9633ac76",
+      "x": -7,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-7",
+      "gameobject_fileID": "1101839917",
+      "old_position": [
+        -0.5,
+        -7.0
+      ],
+      "new_position": [
+        -7.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-07_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "c226341fd783cf0bc5f5f58f71e08c839955b8f60a78ce9581cc97223eb67dda",
+      "x": -7,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-7",
+      "gameobject_fileID": "451678123",
+      "old_position": [
+        0.5,
+        -7.0
+      ],
+      "new_position": [
+        -7.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-06_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "2865751f507831d28455b65cce256d47bd5df7c3a8ce9d47e21196e8616f0568",
+      "x": -6,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-6",
+      "gameobject_fileID": "152306493",
+      "old_position": [
+        -0.5,
+        -6.0
+      ],
+      "new_position": [
+        -6.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-06_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e8ff84bac17922edc5477732fdb984067a6a9bb567a32fef1e8f9dc00857c23d",
+      "x": -6,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-6",
+      "gameobject_fileID": "529569398",
+      "old_position": [
+        0.5,
+        -6.0
+      ],
+      "new_position": [
+        -6.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-05_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "68a839e72c388b3088188f8e913a8642d3c385b50f1b944b7ba2f16a63e6c9cf",
+      "x": -5,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-5",
+      "gameobject_fileID": "2119481842",
+      "old_position": [
+        -1.5,
+        -5.0
+      ],
+      "new_position": [
+        -5.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-05_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "b02d19ada5b525d04d22063ce13d3f29361eede580bb764bad1b369b8e994ce6",
+      "x": -5,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-5",
+      "gameobject_fileID": "2019387074",
+      "old_position": [
+        -0.5,
+        -5.0
+      ],
+      "new_position": [
+        -5.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-04_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "77755fdbb7581827fae431b08a31bb252e2a480d02a37fd4275421f54001bfb7",
+      "x": -4,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-4",
+      "gameobject_fileID": "762805421",
+      "old_position": [
+        -1.5,
+        -4.0
+      ],
+      "new_position": [
+        -4.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-04_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "4452e38fda918ba2789a1d50c232039e0e2920b6486c17f9bb761f8d6942e781",
+      "x": -4,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-4",
+      "gameobject_fileID": "466574667",
+      "old_position": [
+        -0.5,
+        -4.0
+      ],
+      "new_position": [
+        -4.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-03_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "8fcc719c261135442de46cbb00ef3f80e0a0ae09e0c9e598c347e4ab33e10296",
+      "x": -3,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-3",
+      "gameobject_fileID": "32571364",
+      "old_position": [
+        -0.5,
+        -3.0
+      ],
+      "new_position": [
+        -3.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-03_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "252da68f10153d1029feab285f2e07fae07c879773fe8c7328a96110930103ac",
+      "x": -3,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-3",
+      "gameobject_fileID": "641628209",
+      "old_position": [
+        0.5,
+        -3.0
+      ],
+      "new_position": [
+        -3.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-02_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "91629791c5d1c37c30d687d1d1dbad38e7166f0a6fd35c4fb1bb8c2ecc64e6a5",
+      "x": -2,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-2",
+      "gameobject_fileID": "1269802019",
+      "old_position": [
+        -0.5,
+        -2.0
+      ],
+      "new_position": [
+        -2.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-02_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e66fd7d328d56734f1b1a03e35582744a476c73817dfc70f131b9181e80e32ac",
+      "x": -2,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-2",
+      "gameobject_fileID": "1998432006",
+      "old_position": [
+        0.5,
+        -2.0
+      ],
+      "new_position": [
+        -2.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-01_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "232d02923c079d44c93ccf8ade4aa3ebabd0af00bdcfbb2a6b7c83b988a40035",
+      "x": -1,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_-1",
+      "gameobject_fileID": "1446914808",
+      "old_position": [
+        0.5,
+        -1.0
+      ],
+      "new_position": [
+        -1.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_-01_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "63b926d9adbae467c28fd3ccd214b2f8dabf56cfe983506f276322f96a838ddf",
+      "x": -1,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_-1",
+      "gameobject_fileID": "1597397326",
+      "old_position": [
+        1.5,
+        -1.0
+      ],
+      "new_position": [
+        -1.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+00_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e796911f2dd7a25cc4de22ae72d7dcdc2daa9cf4285bf6c75b3dd98b473f7c48",
+      "x": 0,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_0",
+      "gameobject_fileID": "969980885",
+      "old_position": [
+        0.5,
+        0.0
+      ],
+      "new_position": [
+        0.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+00_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "0fb8dfa52d0787e555fab507c8794539557a4fc34f31b3f653f95f156fab93bb",
+      "x": 0,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_0",
+      "gameobject_fileID": "2125194556",
+      "old_position": [
+        1.5,
+        0.0
+      ],
+      "new_position": [
+        0.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+01_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "6ec8e071ba8fa24c036320c0c53e44b6c7b06b4683a39e0478a8559b46a0c823",
+      "x": 1,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_1",
+      "gameobject_fileID": "1754014137",
+      "old_position": [
+        0.5,
+        1.0
+      ],
+      "new_position": [
+        1.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+01_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "dd124f4d6d5d2d76a1f2829174435913570c6b4334c4a438821531758608963e",
+      "x": 1,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_1",
+      "gameobject_fileID": "808109380",
+      "old_position": [
+        1.5,
+        1.0
+      ],
+      "new_position": [
+        1.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+02_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e0b03a44045b1eaf60a34fb49b1b5e8a1aa66dd91d94a1fcda970b9fd38c66b9",
+      "x": 2,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_2",
+      "gameobject_fileID": "1343419841",
+      "old_position": [
+        -0.5,
+        2.0
+      ],
+      "new_position": [
+        2.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+02_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "2c7554ebfeac10a5af70555ceac21de4581d38fbaa9cb5252680bb0fde5ad2c3",
+      "x": 2,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_2",
+      "gameobject_fileID": "108136572",
+      "old_position": [
+        0.5,
+        2.0
+      ],
+      "new_position": [
+        2.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+03_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "0a3e6b910a620edb0edab96ad86132606afaa1d19be6e7869a70abe3eee6523a",
+      "x": 3,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_3",
+      "gameobject_fileID": "362392820",
+      "old_position": [
+        -0.5,
+        3.0
+      ],
+      "new_position": [
+        3.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+03_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "1ccd7c8ecb9e08527710f3eb30b2400aabfde6badf94f7e367a60bebc72fdda8",
+      "x": 3,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_3",
+      "gameobject_fileID": "1049348709",
+      "old_position": [
+        0.5,
+        3.0
+      ],
+      "new_position": [
+        3.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+04_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "4f80ba46ea23b061d5fd34bbca2823548bd8d6a4c2adf066fcf09c3c9eee287c",
+      "x": 4,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_4",
+      "gameobject_fileID": "779033384",
+      "old_position": [
+        -1.5,
+        4.0
+      ],
+      "new_position": [
+        4.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+04_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "7c3c27821c7199113d7fd58c8cb30856e4d2a31e15efa0aea7e8b076bc65612c",
+      "x": 4,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_4",
+      "gameobject_fileID": "1288431221",
+      "old_position": [
+        -0.5,
+        4.0
+      ],
+      "new_position": [
+        4.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+05_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "bf412f3409bf366b47fa4f4ab97398444f9812b051851e99e7621b6c5172b68f",
+      "x": 5,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_5",
+      "gameobject_fileID": "1668876296",
+      "old_position": [
+        -1.5,
+        5.0
+      ],
+      "new_position": [
+        5.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+05_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "32116ac35bcbc83ca47e6392d988a19c1798f02b0586ffbf36b3b5f5aba06102",
+      "x": 5,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_5",
+      "gameobject_fileID": "493990064",
+      "old_position": [
+        -0.5,
+        5.0
+      ],
+      "new_position": [
+        5.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+06_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "fe4cddc2c0b5f6571bc47bd23c01de5603c9e8223097abe55ee2e037e2065aaf",
+      "x": 6,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_6",
+      "gameobject_fileID": "1247085174",
+      "old_position": [
+        -0.5,
+        6.0
+      ],
+      "new_position": [
+        6.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+06_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "80b0dd7b677427b2fa530e5822bb4a7683329df6a6109ee102032d332d2b0f77",
+      "x": 6,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_6",
+      "gameobject_fileID": "1059194877",
+      "old_position": [
+        0.5,
+        6.0
+      ],
+      "new_position": [
+        6.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+07_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "ddfd465498c8c3aa143e6c58e3a17cee94ef626aa84eb59b5ca0d10520172177",
+      "x": 7,
+      "y": 0.5,
+      "lane": "Upper",
+      "object_name": "FieldEnvironment/RoadLeft_7",
+      "gameobject_fileID": "978879947",
+      "old_position": [
+        -0.5,
+        7.0
+      ],
+      "new_position": [
+        7.0,
+        0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "278596618@ecafa1446d0264141bb7b01e4005beff"
+    },
+    {
+      "path": "Road_30/LL_C2_F04_Road_EW_+07_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "549a54d48c5d8ce3d583e0c4da5f4b77794c3ab0b6fe83b0c5a1d3d0ec70b8a2",
+      "x": 7,
+      "y": -0.5,
+      "lane": "Lower",
+      "object_name": "FieldEnvironment/RoadRight_7",
+      "gameobject_fileID": "2092263620",
+      "old_position": [
+        0.5,
+        7.0
+      ],
+      "new_position": [
+        7.0,
+        -0.5
+      ],
+      "sprite_change": "SPECIFIC_OBJECT_ONLY",
+      "transform_change_requires_approval": true,
+      "source_sprite_ref": "1662121770@ecafa1446d0264141bb7b01e4005beff"
+    }
+  ],
+  "optional_endpoint_new_objects": [
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-10_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "51448bf75a7bee9c7b93cb51e3a9a89c93810eccd30b24f399d7b534a33e26dd",
+      "x": -10,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-10_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "1ebf8b21190b1b8a871045a35ad2d10fe7c5c500c14a5e95317cdd3f67d79594",
+      "x": -10,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-09_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "677cbbd5b0ce02051f3c3a30e818fb2ea2bfb302574bc54d34cb155b99e5c7f9",
+      "x": -9,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-09_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e26996af6c7fcb4d4db10aab90aed4e2f2a6da4073fa74c7021690b40d7c96a1",
+      "x": -9,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-08_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "bd54b9c9300c3f9bd647350bf4025ed57e88bf7c0b7d2277a83462da266c52c0",
+      "x": -8,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_-08_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "3de4ca9da28dcabf18bece2f9596ebd142c023b6e7730a95309ae38714acd116",
+      "x": -8,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+08_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "df11ffcb0ed460331bc977714acab4da44085358e86911754c2b3ab572b80071",
+      "x": 8,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+08_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "8d2711a7d70518bf82c2f2222b7d8324f7f14b916d0c73608f9e7eb85a02c6f7",
+      "x": 8,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+09_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "2218c8150c67810f7f924a0da9a0830b950a76937204fb8e11d86616ff52f053",
+      "x": 9,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+09_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "5d7a44635db86ae3dda6c09307a3545b6027209802028301b4b1918e2ee50ddc",
+      "x": 9,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+10_Upper_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "b310e62d70a648f8d868d8e59803d1f6b03530072e7d10db4021ef37879c55e4",
+      "x": 10,
+      "y": 0.5,
+      "lane": "Upper",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    },
+    {
+      "path": "Optional_Endpoint/LL_C2_F04_Extension_EW_+10_Lower_v2.png",
+      "size_px": [
+        128,
+        128
+      ],
+      "sha256": "e5b6982cfb70234be417100de1833c1a1178eff571b8487d5b094f404c8645b3",
+      "x": 10,
+      "y": -0.5,
+      "lane": "Lower",
+      "status": "OPTIONAL_NEW_RENDERER_NOT_IN_SCENE",
+      "art_approval_required": true,
+      "requires_collision_clearance_validation": true
+    }
+  ],
+  "road_endpoint_note": "Central 15x2 Road block covers world x=-7.5..7.5, while exits are at +/-10.7. Optional 6x2 extenders bridge the gap; do not claim fully connected visual road until user approves these extra renderers and Codex checks tree/spawn clearance.",
+  "optional_extension_requires_separate_approval": true,
+  "scene_renderer_count_unmodified_before_codex": 363,
+  "mapping_corrections": [
+    {
+      "guid": "ecafa1446d0264141bb7b01e4005beff",
+      "fileID": "1606921373",
+      "old_label": "tiles_grass_3_0",
+      "verified_real_name": "tiles_grass_6_0",
+      "renderer_instances": 104
+    },
+    {
+      "guid": "5b888cd38e2bf8543a27554e427d128b",
+      "fileID": "21300000",
+      "old_label": "tree_big",
+      "verified_real_name": "tree_medium",
+      "renderer_instances": 3,
+      "new_png": "Props/LL_C2_F04_Tree_Medium_128x156_v1.png"
+    },
+    {
+      "guid": "d06207b6940ba73478971dde7147ae92",
+      "fileID": "21300000",
+      "old_label": "tree_medium",
+      "verified_real_name": "tree_big",
+      "renderer_instances": 2,
+      "new_png": "Props/LL_C2_F04_Tree_Big_255x256_v1.png"
+    },
+    {
+      "guid": "5b951bd26f9af3849a2fe92928a0c645",
+      "fileID": "-1321756614084088994",
+      "verified_real_name": "rock_02_0",
+      "renderer_instances": 1,
+      "new_png": "Props/LL_C2_F04_RockNorth_Grounded_128_v2.png",
+      "original_native_units": [
+        0.85,
+        0.54
+      ],
+      "proposed_alpha_bbox_px": [
+        11,
+        31,
+        117,
+        98
+      ],
+      "target_foot_local_world": -0.26
+    }
+  ],
+  "existing_road_renderer_repurpose_from": [
+    "RoadLeft_-7..7",
+    "RoadRight_-7..7"
+  ],
+  "scene_change_policy": "AFTER_USER_ART_APPROVAL_CODEX_ONLY",
+  "known_prior_qa_issues": [
+    "West spawn (-8,0) native TreeWest overlap -0.01631531, not fixed by v2 art",
+    "North legacy non-exit boundary gap remains, not fixed by v2 art",
+    "Existing Unity Search exception; whole regression PARTIAL"
+  ],
+  "explicit_do_not_touch": [
+    "Scene",
+    "C#",
+    "Collider",
+    "Quest IDs",
+    "Official Serin",
+    "Monster art",
+    "TTS/BGM",
+    "Save",
+    "ThirdParty",
+    "meta/GUID",
+    "Player accessibility behavior"
+  ]
+}

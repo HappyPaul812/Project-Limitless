@@ -1,0 +1,6 @@
+OriginalWestSpawnOverlap=True;distance=-0.01631531
+OriginalNorthGapSolid=False
+Wheelchair target=(-8.00, 0.25);waypoints=65
+Wheelchair target=(-9.50, 0.25);waypoints=6
+Wheelchair target=(8.00, 0.25);waypoints=70
+Wheelchair target=(9.50, 0.25);waypoints=7

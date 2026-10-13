@@ -1,0 +1,98 @@
+[
+  {
+    "id": "main08_taeon_supp_002",
+    "recognized_text": "여기부터 흔적이 거의 없습니다.",
+    "canonical_text": "여기부터 흔적이 거의 없습니다.",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " 여기부터 흔적이 거의 없습니다.",
+        "avg_logprob": -0.3025096012995793,
+        "no_speech_prob": 0.05464896559715271
+      }
+    ],
+    "human_listening": "PENDING"
+  },
+  {
+    "id": "main08_taeon_supp_003",
+    "recognized_text": "평소라면 그렇겠죠",
+    "canonical_text": "평소라면 그렇겠죠.",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " 평소라면 그렇겠죠",
+        "avg_logprob": -0.3698282241821289,
+        "no_speech_prob": 0.03420064225792885
+      }
+    ],
+    "human_listening": "PENDING"
+  },
+  {
+    "id": "main08_miel_supp_001",
+    "recognized_text": "몬스터가 적다는 건 좋은 일 아닌가요?",
+    "canonical_text": "몬스터가 적다는 건 좋은 일 아닌가요?",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.5,
+        "text": " 몬스터가 적다는 건 좋은 일 아닌가요?",
+        "avg_logprob": -0.28385582367579143,
+        "no_speech_prob": 0.07735148817300797
+      }
+    ],
+    "human_listening": "PENDING"
+  },
+  {
+    "id": "main08_taeon_supp_004",
+    "recognized_text": "그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+    "canonical_text": "그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 7.0,
+        "text": " 그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+        "avg_logprob": -0.18955768258483321,
+        "no_speech_prob": 0.016572685912251472
+      }
+    ],
+    "human_listening": "PENDING"
+  },
+  {
+    "id": "main08_miel_supp_002",
+    "recognized_text": "없어진 게 아니네요.",
+    "canonical_text": "없어진 게 아니네요.",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "text": " 없어진 게 아니네요.",
+        "avg_logprob": -0.33607070446014403,
+        "no_speech_prob": 0.08329290896654129
+      }
+    ],
+    "human_listening": "PENDING"
+  },
+  {
+    "id": "main08_miel_supp_003",
+    "recognized_text": "다들 이쪽을 피해서 지나가고 있어요.",
+    "canonical_text": "다들 이쪽을 피해서 지나가고 있어요.",
+    "normalized_match": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": " 다들 이쪽을 피해서 지나가고 있어요.",
+        "avg_logprob": -0.3022329623882587,
+        "no_speech_prob": 0.06728851795196533
+      }
+    ],
+    "human_listening": "PENDING"
+  }
+]

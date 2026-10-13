@@ -1,0 +1,822 @@
+{
+  "catalog_duplicate_ids": [],
+  "rows": [
+    {
+      "pcm_sha256": "2bec82d5d4f19b1d7e27a6aaa5b42dc08e6c66756bdf5fd5b7243bb3d4cea93c",
+      "file_sha256": "0ca36ce3da8945db5bf7861afb52f8367d4d0fdc071e21e9eba880fbb1ccdfd6",
+      "duration_seconds": 1.53,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -25.584182542453373,
+      "peak_dbfs": -6.246708426306662,
+      "nonzero_samples": 36484,
+      "frames": 36720,
+      "id": "main08_taeon_supp_001",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_001",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "잠깐만요.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "65",
+        "output_file": "taeon/main08_taeon_supp_001.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_001.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_001.wav"
+      ],
+      "source_file_sha256": [
+        "0ca36ce3da8945db5bf7861afb52f8367d4d0fdc071e21e9eba880fbb1ccdfd6"
+      ],
+      "source_pcm_sha256": [
+        "2bec82d5d4f19b1d7e27a6aaa5b42dc08e6c66756bdf5fd5b7243bb3d4cea93c"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "746aeb0f63566a3438b794c12a1136c2",
+      "meta_guid": "746aeb0f63566a3438b794c12a1136c2",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_001.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "b273cfea88d6034f05905cfbadfcf29d6af5b8d0a7175c9af8afea07d175d80f",
+      "file_sha256": "98e396f0407f42df3283189638092ed06b64f6d23fbad073f0d6573b8f7ef3fb",
+      "duration_seconds": 1.03,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -48.975574598135566,
+      "peak_dbfs": -30.573564013869465,
+      "nonzero_samples": 24411,
+      "frames": 24720,
+      "id": "main08_taeon_supp_002",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_002",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "여기부터 흔적이 거의 없습니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "65",
+        "output_file": "taeon/main08_taeon_supp_002.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_002.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_002.wav"
+      ],
+      "source_file_sha256": [
+        "98e396f0407f42df3283189638092ed06b64f6d23fbad073f0d6573b8f7ef3fb"
+      ],
+      "source_pcm_sha256": [
+        "b273cfea88d6034f05905cfbadfcf29d6af5b8d0a7175c9af8afea07d175d80f"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "2a4d3f097eee283448db0015e9d526fc",
+      "meta_guid": "2a4d3f097eee283448db0015e9d526fc",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_002.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "76d50c87db04e16d9ab4deed6bbee09d1d93f5635c1810a6ef992aa6ede6345f",
+      "file_sha256": "2b2c26ee327a47363f76c0bf86a435c8e8b3ebbb024ab959536a07ebf92ac3e2",
+      "duration_seconds": 4.5,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -19.224681058704242,
+      "peak_dbfs": -1.679150200283138,
+      "nonzero_samples": 107358,
+      "frames": 108000,
+      "id": "main08_miel_supp_001",
+      "manifest": {
+        "clip_id": "main08_miel_supp_001",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "몬스터가 적다는 건 좋은 일 아닌가요?",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "65",
+        "output_file": "miel/main08_miel_supp_001.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_001.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_001.wav"
+      ],
+      "source_file_sha256": [
+        "2b2c26ee327a47363f76c0bf86a435c8e8b3ebbb024ab959536a07ebf92ac3e2"
+      ],
+      "source_pcm_sha256": [
+        "76d50c87db04e16d9ab4deed6bbee09d1d93f5635c1810a6ef992aa6ede6345f"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "5321e58b60be75041be7c617c3bb66bc",
+      "meta_guid": "5321e58b60be75041be7c617c3bb66bc",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_001.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "71be159ab743f935fcca3947290e3b8cd14c298f86b14ae012e8a80075048536",
+      "file_sha256": "7075ffb191443725ecc01680d92a4cabb258d1b7f4766808b4ad6cc3bc777e2c",
+      "duration_seconds": 2.41,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -25.34506861213361,
+      "peak_dbfs": -6.012121738240401,
+      "nonzero_samples": 57455,
+      "frames": 57840,
+      "id": "main08_taeon_supp_003",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_003",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "평소라면 그렇겠죠.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "66",
+        "output_file": "taeon/main08_taeon_supp_003.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_003.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_003.wav"
+      ],
+      "source_file_sha256": [
+        "7075ffb191443725ecc01680d92a4cabb258d1b7f4766808b4ad6cc3bc777e2c"
+      ],
+      "source_pcm_sha256": [
+        "71be159ab743f935fcca3947290e3b8cd14c298f86b14ae012e8a80075048536"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "f732ffd70ce44d445b900a47e3f59950",
+      "meta_guid": "f732ffd70ce44d445b900a47e3f59950",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_003.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "965cebbac498e87389c07f1e886013c4a9f85de0a12455df8b9e1df85eecc946",
+      "file_sha256": "4162175dbbc3570ed5ad1531818a9bb2939263216ec6895241bcb9885f79dbce",
+      "duration_seconds": 3.13,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -26.597380223237217,
+      "peak_dbfs": -4.075192676896782,
+      "nonzero_samples": 74274,
+      "frames": 75120,
+      "id": "main08_taeon_supp_004",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_004",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "66",
+        "output_file": "taeon/main08_taeon_supp_004.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_004.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_004.wav"
+      ],
+      "source_file_sha256": [
+        "4162175dbbc3570ed5ad1531818a9bb2939263216ec6895241bcb9885f79dbce"
+      ],
+      "source_pcm_sha256": [
+        "965cebbac498e87389c07f1e886013c4a9f85de0a12455df8b9e1df85eecc946"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "5722e0d49b5723f4fb2d8707e542d3fb",
+      "meta_guid": "5722e0d49b5723f4fb2d8707e542d3fb",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_004.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "53cac357e4a31b06597006da820939c6bd889f62e9a0ac03a4f7f4c2b940c788",
+      "file_sha256": "d06d4fc4453ebdb96a43f6847b58fe617e901fb3eb54451226bbaa4d74db34d8",
+      "duration_seconds": 3.73,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -18.104362675960985,
+      "peak_dbfs": -1.7644714275041162,
+      "nonzero_samples": 89098,
+      "frames": 89520,
+      "id": "main08_miel_supp_002",
+      "manifest": {
+        "clip_id": "main08_miel_supp_002",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "없어진 게 아니네요.",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "67",
+        "output_file": "miel/main08_miel_supp_002.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_002.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_002.wav"
+      ],
+      "source_file_sha256": [
+        "d06d4fc4453ebdb96a43f6847b58fe617e901fb3eb54451226bbaa4d74db34d8"
+      ],
+      "source_pcm_sha256": [
+        "53cac357e4a31b06597006da820939c6bd889f62e9a0ac03a4f7f4c2b940c788"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "3896e964af209da4196fd4c8827877cb",
+      "meta_guid": "3896e964af209da4196fd4c8827877cb",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_002.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "6e7615f46fc8128e173be7093b553d921f65ba2ca13156c6b47a5ea773cec40d",
+      "file_sha256": "21d143ebd34e6ec8038d9335897494d6f4bc3fc0c30c5d54cbe3e90c28e37b23",
+      "duration_seconds": 5.12,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -19.350013520636583,
+      "peak_dbfs": -3.3207281628997256,
+      "nonzero_samples": 122378,
+      "frames": 122880,
+      "id": "main08_miel_supp_003",
+      "manifest": {
+        "clip_id": "main08_miel_supp_003",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "다들 이쪽을 피해서 지나가고 있어요.",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "67",
+        "output_file": "miel/main08_miel_supp_003.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_003.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_003.wav"
+      ],
+      "source_file_sha256": [
+        "21d143ebd34e6ec8038d9335897494d6f4bc3fc0c30c5d54cbe3e90c28e37b23"
+      ],
+      "source_pcm_sha256": [
+        "6e7615f46fc8128e173be7093b553d921f65ba2ca13156c6b47a5ea773cec40d"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "f7bdf41280580d243adfc2e0497efd74",
+      "meta_guid": "f7bdf41280580d243adfc2e0497efd74",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_003.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "834926424dcd6b80b7efc7c7d8f31238b9f29132180fd75a96a908ad4f0eebe0",
+      "file_sha256": "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779",
+      "duration_seconds": 6.89,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -17.933634920127435,
+      "peak_dbfs": -1.6505744725301201,
+      "nonzero_samples": 164296,
+      "frames": 165360,
+      "id": "main08_taeon_supp_005",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_005",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "67",
+        "output_file": "taeon/main08_taeon_supp_005.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_005.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_005.wav"
+      ],
+      "source_file_sha256": [
+        "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779"
+      ],
+      "source_pcm_sha256": [
+        "834926424dcd6b80b7efc7c7d8f31238b9f29132180fd75a96a908ad4f0eebe0"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "c4d82101f9b726f4fa327b135df26842",
+      "meta_guid": "c4d82101f9b726f4fa327b135df26842",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_005.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "fca62943ebf5aa51e5980c1463c407b641c77b1915759336c4181429ed113c22",
+      "file_sha256": "48130cddc15f94a628f730aa3499f25852a78669bee9cb53a010b89667e927f3",
+      "duration_seconds": 10.53,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -18.97172279848754,
+      "peak_dbfs": -1.7200902817939412,
+      "nonzero_samples": 250542,
+      "frames": 252720,
+      "id": "main08_taeon_supp_006",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_006",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "여기서는 그 방향이 조금 더 분명합니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "67",
+        "output_file": "taeon/main08_taeon_supp_006.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_006.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_006.wav"
+      ],
+      "source_file_sha256": [
+        "48130cddc15f94a628f730aa3499f25852a78669bee9cb53a010b89667e927f3"
+      ],
+      "source_pcm_sha256": [
+        "fca62943ebf5aa51e5980c1463c407b641c77b1915759336c4181429ed113c22"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "3bb3a7f0d6d50424da168e6df59bba5f",
+      "meta_guid": "3bb3a7f0d6d50424da168e6df59bba5f",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_006.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "53c9c06d5cb00287831e11d09146214229e47952bf2695c9a244ac3dfbd5c187",
+      "file_sha256": "9223c80fd0704948f45dad85ad28ad69299946a7abbd44309c615c1b02eeeba2",
+      "duration_seconds": 3.39,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -21.330512830891465,
+      "peak_dbfs": -2.6294616905757033,
+      "nonzero_samples": 80746,
+      "frames": 81360,
+      "id": "main08_miel_supp_004",
+      "manifest": {
+        "clip_id": "main08_miel_supp_004",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "이 흔적… 폴 씨 것 아닐까요?",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "68",
+        "output_file": "miel/main08_miel_supp_004.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_004.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_004.wav"
+      ],
+      "source_file_sha256": [
+        "9223c80fd0704948f45dad85ad28ad69299946a7abbd44309c615c1b02eeeba2"
+      ],
+      "source_pcm_sha256": [
+        "53c9c06d5cb00287831e11d09146214229e47952bf2695c9a244ac3dfbd5c187"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "c0bd210bcd785f141bc58ae03ff10c66",
+      "meta_guid": "c0bd210bcd785f141bc58ae03ff10c66",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_004.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "c07b9581de49fee7b2b957d176ebb8afcd6fe89427a2c3905cafdeeb0f5f4629",
+      "file_sha256": "887c95ce3b020f3755e73667254068ebed82d4f79054b52d8731b9fe69d89c4c",
+      "duration_seconds": 1.22,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -53.333996422377126,
+      "peak_dbfs": -26.006827078132492,
+      "nonzero_samples": 28786,
+      "frames": 29280,
+      "id": "main08_taeon_supp_007",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_007",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "폭이 같습니다. 아마 맞을 겁니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "68",
+        "output_file": "taeon/main08_taeon_supp_007.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_007.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_007.wav"
+      ],
+      "source_file_sha256": [
+        "887c95ce3b020f3755e73667254068ebed82d4f79054b52d8731b9fe69d89c4c"
+      ],
+      "source_pcm_sha256": [
+        "c07b9581de49fee7b2b957d176ebb8afcd6fe89427a2c3905cafdeeb0f5f4629"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "65df30964791d704185f5da97e63d77f",
+      "meta_guid": "65df30964791d704185f5da97e63d77f",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_007.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "b6201d671860da9fdece92cd0412487e65f37ce09108734ce54f27a632ceb767",
+      "file_sha256": "8f542e95d5ab7ff25c85fc609a2178050557e02fd3b42c7a9cec0c02ad025b81",
+      "duration_seconds": 3.53,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -21.70698128035051,
+      "peak_dbfs": -2.301002258117966,
+      "nonzero_samples": 83781,
+      "frames": 84720,
+      "id": "main08_taeon_supp_008",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_008",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "누군가 이곳을 조사한 흔적입니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "69",
+        "output_file": "taeon/main08_taeon_supp_008.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_008.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_008.wav"
+      ],
+      "source_file_sha256": [
+        "8f542e95d5ab7ff25c85fc609a2178050557e02fd3b42c7a9cec0c02ad025b81"
+      ],
+      "source_pcm_sha256": [
+        "b6201d671860da9fdece92cd0412487e65f37ce09108734ce54f27a632ceb767"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "473fb20d4ec9e114a854b37977157706",
+      "meta_guid": "473fb20d4ec9e114a854b37977157706",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_008.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "c515fb67958289a2477a7b84190e650907168223a3208486fb68c29a5c9d569a",
+      "file_sha256": "ea2024ddc35331ee4fc66a9e6e2ccf378f676c3783f2d4b090186bc03bdc5820",
+      "duration_seconds": 1.81,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -21.035891843814582,
+      "peak_dbfs": -5.0320182624449235,
+      "nonzero_samples": 43084,
+      "frames": 43440,
+      "id": "main08_miel_supp_005",
+      "manifest": {
+        "clip_id": "main08_miel_supp_005",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "폴 씨일까요?",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "69",
+        "output_file": "miel/main08_miel_supp_005.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_005.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_005.wav"
+      ],
+      "source_file_sha256": [
+        "ea2024ddc35331ee4fc66a9e6e2ccf378f676c3783f2d4b090186bc03bdc5820"
+      ],
+      "source_pcm_sha256": [
+        "c515fb67958289a2477a7b84190e650907168223a3208486fb68c29a5c9d569a"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "c3e6a131ba9049e458f845ed4672348f",
+      "meta_guid": "c3e6a131ba9049e458f845ed4672348f",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_005.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "5e3d15fb83af6f5bc5be9b6f88f249a39ecc4d7e6f7e27f58a8738b0b13d6484",
+      "file_sha256": "c3a77e89d9559a72aaa351e9d33fb1c40ed1bbf9257c3cc96c01424a5f42be07",
+      "duration_seconds": 1.99,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -17.919905097451267,
+      "peak_dbfs": -4.304482563831203,
+      "nonzero_samples": 47397,
+      "frames": 47760,
+      "id": "main08_miel_supp_006",
+      "manifest": {
+        "clip_id": "main08_miel_supp_006",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "조용하네요.",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "miel/main08_miel_supp_006.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_006.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_006.wav"
+      ],
+      "source_file_sha256": [
+        "c3a77e89d9559a72aaa351e9d33fb1c40ed1bbf9257c3cc96c01424a5f42be07"
+      ],
+      "source_pcm_sha256": [
+        "5e3d15fb83af6f5bc5be9b6f88f249a39ecc4d7e6f7e27f58a8738b0b13d6484"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "88b75212b5a11254d8efa3f1e69a2fa8",
+      "meta_guid": "88b75212b5a11254d8efa3f1e69a2fa8",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_006.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "2c9d2efff4e023a5fd2f59e539daf80a1516c0762d7e5068a473991d3e022daf",
+      "file_sha256": "cd55c634d50810bcfce041156913148c71b6461e21d2038958b9d963a0e16d16",
+      "duration_seconds": 4.81,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -20.612581305491027,
+      "peak_dbfs": -3.306365221743592,
+      "nonzero_samples": 114534,
+      "frames": 115440,
+      "id": "main08_taeon_supp_009",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_009",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "너무 조용합니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "taeon/main08_taeon_supp_009.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_009.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_009.wav"
+      ],
+      "source_file_sha256": [
+        "cd55c634d50810bcfce041156913148c71b6461e21d2038958b9d963a0e16d16"
+      ],
+      "source_pcm_sha256": [
+        "2c9d2efff4e023a5fd2f59e539daf80a1516c0762d7e5068a473991d3e022daf"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "7c72740f224291b409fe73333e8ef4f8",
+      "meta_guid": "7c72740f224291b409fe73333e8ef4f8",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_009.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "80672dc06a68594bf90af86655bc7f4c3da8e0674162387160af0b4eb659d799",
+      "file_sha256": "4e6125b932e12ad1d94d1111818e1d31f6f32e958a9edd0c7e9d392a8ebbbd87",
+      "duration_seconds": 3.51,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -17.462057016014278,
+      "peak_dbfs": -2.7326858937448346,
+      "nonzero_samples": 83845,
+      "frames": 84240,
+      "id": "main08_miel_supp_007",
+      "manifest": {
+        "clip_id": "main08_miel_supp_007",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "몬스터들이 여기를 피하는 이유가 있는 거겠죠?",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "miel/main08_miel_supp_007.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_007.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_007.wav"
+      ],
+      "source_file_sha256": [
+        "4e6125b932e12ad1d94d1111818e1d31f6f32e958a9edd0c7e9d392a8ebbbd87"
+      ],
+      "source_pcm_sha256": [
+        "80672dc06a68594bf90af86655bc7f4c3da8e0674162387160af0b4eb659d799"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "9c62dffde6c33ed478eb95ac2c6f1a2e",
+      "meta_guid": "9c62dffde6c33ed478eb95ac2c6f1a2e",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_007.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "252530ff462ae022e808216b08aebfc6e919aad8cc67320b3bd04311b703be3a",
+      "file_sha256": "3d38ce76fb342bd45b76720497fee8fb68fe3862c26e565c115e4e7c4bb034ae",
+      "duration_seconds": 8.25,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -22.062892788034972,
+      "peak_dbfs": -2.227726401516519,
+      "nonzero_samples": 195703,
+      "frames": 198000,
+      "id": "main08_taeon_supp_010",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_010",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "그 이유가 무엇인지는 아직 모르겠습니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "taeon/main08_taeon_supp_010.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_010.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_010.wav"
+      ],
+      "source_file_sha256": [
+        "3d38ce76fb342bd45b76720497fee8fb68fe3862c26e565c115e4e7c4bb034ae"
+      ],
+      "source_pcm_sha256": [
+        "252530ff462ae022e808216b08aebfc6e919aad8cc67320b3bd04311b703be3a"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "bba8813d2f946104db5082bef072f9da",
+      "meta_guid": "bba8813d2f946104db5082bef072f9da",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_010.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "56e298a9dcf0ece060d3392ba3b82d9a5e03c4b942d7d3f89d161419a45d00fa",
+      "file_sha256": "13065c47ccf140353bbf0d56c9076083371599d7ba85254b2c0036e8cb835bd1",
+      "duration_seconds": 2.9,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -18.44712916788154,
+      "peak_dbfs": -1.809406964278191,
+      "nonzero_samples": 68923,
+      "frames": 69600,
+      "id": "main08_miel_supp_008",
+      "manifest": {
+        "clip_id": "main08_miel_supp_008",
+        "quest_no": "8",
+        "speaker": "미엘",
+        "text": "…저쪽에서 빛이 났어요.",
+        "voice_id": "Sulafat",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "miel/main08_miel_supp_008.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_008.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\miel\\main08_miel_supp_008.wav"
+      ],
+      "source_file_sha256": [
+        "13065c47ccf140353bbf0d56c9076083371599d7ba85254b2c0036e8cb835bd1"
+      ],
+      "source_pcm_sha256": [
+        "56e298a9dcf0ece060d3392ba3b82d9a5e03c4b942d7d3f89d161419a45d00fa"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "16415ce8979fe8142859d4b7eb9860af",
+      "meta_guid": "16415ce8979fe8142859d4b7eb9860af",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_miel",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_miel_supp_008.wav"
+      ]
+    },
+    {
+      "pcm_sha256": "7458bbf14cbce8c7b4e74b7c28044194ec63c8bcbe5e724f601b84748591bbc1",
+      "file_sha256": "86fd758803176207ccc80942e99d8c9cf358c3d05dd9d9a7975b923dfc42ef75",
+      "duration_seconds": 3.88,
+      "channels": 1,
+      "sample_rate": 24000,
+      "sample_width": 2,
+      "rms_dbfs": -25.848518368706262,
+      "peak_dbfs": -3.8699914488060188,
+      "nonzero_samples": 91819,
+      "frames": 93120,
+      "id": "main08_taeon_supp_011",
+      "manifest": {
+        "clip_id": "main08_taeon_supp_011",
+        "quest_no": "8",
+        "speaker": "태온",
+        "text": "마법 같습니다.",
+        "voice_id": "Gacrux",
+        "model": "gemini-3.8-flash-tts",
+        "source_file": "Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+        "source_line": "70",
+        "output_file": "taeon/main08_taeon_supp_011.wav"
+      },
+      "game_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_011.wav",
+      "source_paths": [
+        "Google TTS\\Limitless_TTS_Output_Missing_Main01_05_08_12_v2\\taeon\\main08_taeon_supp_011.wav"
+      ],
+      "source_file_sha256": [
+        "86fd758803176207ccc80942e99d8c9cf358c3d05dd9d9a7975b923dfc42ef75"
+      ],
+      "source_pcm_sha256": [
+        "7458bbf14cbce8c7b4e74b7c28044194ec63c8bcbe5e724f601b84748591bbc1"
+      ],
+      "source_bytes_equal": true,
+      "catalog_guid": "3dcc58543ffa0ca4fae31ba2439d0d36",
+      "meta_guid": "3dcc58543ffa0ca4fae31ba2439d0d36",
+      "catalog_file_id": "8300000",
+      "catalog_speaker": "companion_taeon",
+      "guid_match": true,
+      "other_same_pcm": [
+        "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\main08_taeon_supp_011.wav"
+      ]
+    }
+  ]
+}

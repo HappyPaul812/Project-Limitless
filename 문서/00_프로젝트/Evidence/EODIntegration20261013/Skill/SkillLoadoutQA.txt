@@ -1,0 +1,74 @@
+PASS|initial|시작3·최대6, 미습득 생성 없음
+PASS|unequip|무료 해제
+PASS|slot6|실제 시작 스킬을 6번째 칸에 장착
+PASS|range|7칸·음수 거절
+PASS|unknown|미습득ID 거절, 정의 생성0
+PASS|duplicate|원슬롯 이동·중복 방지
+PASS|immutable|외부 스냅샷 변경 없음
+PASS|cutscene-lock|이동 잠금 중 장착 차단
+PASS|world-manager|월드 자동 생성
+PASS|gamepad-open-binding|월드상호작용South와별도Menu/Start열기
+PASS|open-modal|장착 UI·월드 이동 상호 배제
+PASS|management-split|6슬롯·독립3보관함
+PASS|management-equip|실제 클릭 경로6번 장착
+PASS|capture/management/1280|실제 RenderTexture 1280×720
+PASS|capture/management/1600|실제 RenderTexture 1600×900
+PASS|capture/management/1920|실제 RenderTexture 1920×1080
+PASS|capture/management/1024|실제 RenderTexture 1024×768
+PASS|capture/management/1680|실제 RenderTexture 1680×720
+PASS|library36-scroll|36행 실제 Layout/Fitter·패드 포커스 자동 스크롤
+PASS|library36-focus-visible|마지막 보관함 행은 Mask 안에서 보임
+PASS|library36-navigation|보관함 마지막행에서 패드 하단 탐색 가능
+PASS|capture/management-36-row-layout-fixture/1280|실제 RenderTexture 1280×720
+PASS|fixture-reset|재열기: 실제3스킬만 복원, 검사행 유입0
+PASS|late-unlock|같은 지도 새 동료 합류 후 재열기 명단 갱신
+PASS|close-modal|닫기 입력·이동 잠금 해제
+PASS|world-focus-return|패드South와NPC상호작용복귀: 선택된UI버튼잔류0
+PASS|arbel-manager|실제 아르벨 안전지역 자동 생성
+PASS|arbel-open|아르벨 무료 장착 접근
+PASS|dungeon-manager|던전에서도 장착 접근 준비
+PASS|scene-retain|다른 Field 이동 시 장착 유지
+PASS|battle-lock|전투 중 장착 변경 거절
+PASS|equipped-menu|장착3개만·가짜 빈칸0·뒤로 별도
+PASS|popup-message-gap/1280|상세팝업과스킬안내실패문 겹침 없음
+PASS|capture/battle/1280|실제 RenderTexture 1280×720
+PASS|popup-message-gap/1600|상세팝업과스킬안내실패문 겹침 없음
+PASS|capture/battle/1600|실제 RenderTexture 1600×900
+PASS|popup-message-gap/1920|상세팝업과스킬안내실패문 겹침 없음
+PASS|capture/battle/1920|실제 RenderTexture 1920×1080
+PASS|popup-message-gap/1024|상세팝업과스킬안내실패문 겹침 없음
+PASS|capture/battle/1024|실제 RenderTexture 1024×768
+PASS|popup-message-gap/1680|상세팝업과스킬안내실패문 겹침 없음
+PASS|capture/battle/1680|실제 RenderTexture 1680×720
+PASS|slot-position|관리6번칸은 전투아랫줄6번 위치, 나머지 빈칸버튼0
+PASS|popup-gap|스킬그리드·상세팝업 분리
+PASS|cancel-commands|취소→기본5명령 복귀
+PASS|geometry/0/1|6버튼+뒤로 겹침 없음
+PASS|geometry/0/2|6버튼+뒤로 겹침 없음
+PASS|geometry/0/3|6버튼+뒤로 겹침 없음
+PASS|geometry/0/4|6버튼+뒤로 겹침 없음
+PASS|geometry/0/5|6버튼+뒤로 겹침 없음
+PASS|geometry/0/6|6버튼+뒤로 겹침 없음
+PASS|geometry/1/2|6버튼+뒤로 겹침 없음
+PASS|geometry/1/3|6버튼+뒤로 겹침 없음
+PASS|geometry/1/4|6버튼+뒤로 겹침 없음
+PASS|geometry/1/5|6버튼+뒤로 겹침 없음
+PASS|geometry/1/6|6버튼+뒤로 겹침 없음
+PASS|geometry/2/3|6버튼+뒤로 겹침 없음
+PASS|geometry/2/4|6버튼+뒤로 겹침 없음
+PASS|geometry/2/5|6버튼+뒤로 겹침 없음
+PASS|geometry/2/6|6버튼+뒤로 겹침 없음
+PASS|geometry/3/4|6버튼+뒤로 겹침 없음
+PASS|geometry/3/5|6버튼+뒤로 겹침 없음
+PASS|geometry/3/6|6버튼+뒤로 겹침 없음
+PASS|geometry/4/5|6버튼+뒤로 겹침 없음
+PASS|geometry/4/6|6버튼+뒤로 겹침 없음
+PASS|geometry/5/6|6버튼+뒤로 겹침 없음
+PASS|capture/six-cell-layout-fixture/1280|실제 RenderTexture 1280×720
+PASS|reset|새게임 Reset 시작3 복원
+PASS|pre-load-change|로드 전 임시 장착 변경
+PASS|restore-session|다른 Save 슬롯의 실제 RestoreSession에서 임시 장착 유출 차단
+PASS|skill15-report|격리 QA 복사본에만 재지정한 회귀 결과
+PASS|skill15|기존15스킬 실제 UI/CD/MP/취소/효과 결과15 PASS 확인
+NOT_VERIFIED|physical-input|실물 키보드/패드 감각 및 장시간 손플레이
+NOT_VERIFIED|persistence|미확정 Save 계약·구매/강화 상품 아직 미구현

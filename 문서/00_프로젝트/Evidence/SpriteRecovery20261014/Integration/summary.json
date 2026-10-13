@@ -1,0 +1,15 @@
+{
+  "qa_head": "359b0622376c24d78caa025ec33df5fef71ccaa7",
+  "unity_tree": "40d99fd9d792ef70cfe2543e8c7202e0733200ee",
+  "recovery_head": "af1c9cfddbf8e431a32d78d5a643d91a7a099da0",
+  "full_tree_identical_to_recovery": true,
+  "reference_scenes": 23,
+  "sprite_references": 3654,
+  "runtime_scenes": 23,
+  "runtime_missing": 0,
+  "static_pass": 83,
+  "function_checks_reused": 855,
+  "function_reuse_reason": "Unity subtree identical to fully tested recovery; merge adds no game changes",
+  "original_protected": 5221,
+  "focus_change": 0
+}

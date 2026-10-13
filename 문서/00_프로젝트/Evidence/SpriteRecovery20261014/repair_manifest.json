@@ -1,0 +1,184 @@
+[
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Xariami/EssentialRPG/Village_and_Camp/Wooden_Barrel_Type_A.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/Wooden_Barrel_Type_A.png",
+    "old_guid": "4eaf7cffba8f4fe46bec18ba3d9b7d75",
+    "new_guid": "10034d3d06de4e8997e5de00ed64551e",
+    "sha256": "81a50f5ebf6a92f3d9ac1d7e2eb57da66701259be3741619248dea7dfc5b3c01",
+    "local_meta_sha256": "ad522d50761a439b2e8b941fbe83036fc890f6077549e3cd5e947c8c364cfc56",
+    "remote_meta_sha256": "e2bbb280a22e17746e5ad19550c0ac6ee50a80c02f71b06216c107fabd9bb95a",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 1
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/assets/tree_medium.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/tree_medium.png",
+    "old_guid": "5b888cd38e2bf8543a27554e427d128b",
+    "new_guid": "e96522b189334a2ba0d1312df7279074",
+    "sha256": "eaed31fea3331d96e8753a610571f28aab9c66bfa053bd950dfc8c6e0fa7c5e4",
+    "local_meta_sha256": "c61f0d46a393e277b89f80970f533b4404ea9f88f3de83cea2a4645b1c7fc763",
+    "remote_meta_sha256": "0383569cf76bde2e0d9c7d468f7b84df5b965ce9849588d173b8d26fe7b5099d",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 14
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/tiles/house_tiles_new.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/house_tiles_new.png",
+    "old_guid": "6140db858a03878449970f8b1b9db21b",
+    "new_guid": "bb5ccf3c117e40a68d78ccbdd83822e7",
+    "sha256": "0106a5292495f53bc4c8114850df32d4de269589297eb5f3c3a7c5feb0890ce5",
+    "local_meta_sha256": "2655bd83a18f67a30049c17daecd38f04d8c242a9dba3d4059783064a2b015ba",
+    "remote_meta_sha256": "46bddea8c3dc0d99ab0fba6218a3a42449239841edaea0ee44399c292c31b274",
+    "spriteMode": "2",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "-1397688693",
+      "-1496366102",
+      "-1587624244"
+    ],
+    "references": 8
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/assets/rock_01.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/rock_01.png",
+    "old_guid": "6b5b784b46803054195f9cc3b2961699",
+    "new_guid": "1278affab34a45bdae9bb601c137ea38",
+    "sha256": "f326275a239bf02b4898f4c232fe4a3d34658f8917d2df0ccd560e67cfcbe68d",
+    "local_meta_sha256": "11bea1760b43e02ace38c4c69092a60091f56ebe0a4a7aafa697b700ca171438",
+    "remote_meta_sha256": "27d000cf78eb5885ae851cd6cfc2e6f9238fa27dc4ee9b2e2430f36fe1f4f403",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 6
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/assets/bush_01.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/bush_01.png",
+    "old_guid": "a7170a8f8df7fc347a8e4861ba68821b",
+    "new_guid": "5c021906ef4944f4a1fefa190a363310",
+    "sha256": "567f6296d1f048ea42204d309feb867e1520173aedf347a1e34dadbf78990bd4",
+    "local_meta_sha256": "88cf8b148b46909e3943601f86d493b78c20149a29fe245d65fd336094ed3aef",
+    "remote_meta_sha256": "20776ffb7c87cd7ceba72b9d27ab7e42cef1d05dca570bbfc57ac54b92a616af",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 5
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Xariami/EssentialRPG/Props_and_Loot/Campfire_Type_A.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/Campfire_Type_A.png",
+    "old_guid": "aeac077e0fd29c2428b4d378965dcaae",
+    "new_guid": "ad9cd97a325d47d38b914d6c5a1a2be5",
+    "sha256": "829e6a9c71aee31ac4497c7fb704b89abab16d92b1f7b8d81e71a706b7b57c00",
+    "local_meta_sha256": "1dc81d24c891b9a368edc9014bcbd99868bec047991b9c3a13194d785062fb9b",
+    "remote_meta_sha256": "0b76a29c77e07faf6adc4ae29e9cfa94232f9681fcea163b6f6c3e4b3b191a27",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 1
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/assets/bush_02.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/bush_02.png",
+    "old_guid": "ccf732b59af6d4d4cbf48b806179440b",
+    "new_guid": "09216a1a4153497d8cb7e4131cbefa93",
+    "sha256": "771dfca3d8c9d8aba2405b77c865925d7a0d33c5986b60f94f636a737f52c9cf",
+    "local_meta_sha256": "2500c2e906a2b7d1f1e9bd6cded143886f0f75a86ef50bcbbac553043d9cdbf4",
+    "remote_meta_sha256": "73f774ac1d96fd84645cebf85ac121a7fc71e1a4107acb0f64d3e98ebbcefd2d",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 3
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/assets/tree_big.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/tree_big.png",
+    "old_guid": "d06207b6940ba73478971dde7147ae92",
+    "new_guid": "0f3b9f29774f4b5a8bcf18b8a62061a8",
+    "sha256": "7e46986c45ea4115af246f457af925786772725e535c09504a907d7dbd1ef0b0",
+    "local_meta_sha256": "a14f13f499398f28860abac1d67b9e6b4877d5f2df9911b135861d31bda5e323",
+    "remote_meta_sha256": "99c028b12b6d6d8653a536cd66e945e51ce10b4da84e936b73fe2f7ec458093d",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 9
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/tiles/fence_tiles.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/fence_tiles.png",
+    "old_guid": "d1228d04780ccff429a9d5042442017d",
+    "new_guid": "bfc29083d3224729a15d7658d6f6fbf1",
+    "sha256": "04ec6b57a26c4f17d704eb6e8b329775f3274c8b51f66aba59c161cf00d3fd40",
+    "local_meta_sha256": "b0ff6d613613b60480a8ec26b3d87b7673e3f9edc6b9827f9cad6e9f9603ed52",
+    "remote_meta_sha256": "b556a72f0255b7930649799bcd61a90d92d4a9d41ad28318cda2a98d779f2962",
+    "spriteMode": "2",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "1892116053"
+    ],
+    "references": 20
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Xariami/EssentialRPG/Village_and_Camp/Wooden_Chest_Type_A.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/Wooden_Chest_Type_A.png",
+    "old_guid": "e258f2c43f2549d4fb707cf33ecd9bac",
+    "new_guid": "581b5bd875a347a4b4e971a89d88682d",
+    "sha256": "a1c9985592acef30f013252ed6d6d48beebb17da819b9cf1ccc2381acd6b9cde",
+    "local_meta_sha256": "0af34194935ae70526534684aa369f2cee7b35eb54ef5980e717841e11d4de54",
+    "remote_meta_sha256": "57408030468e2c84d6a0996dd3062d11512eaf0acd12517e2a132daffc0b902f",
+    "spriteMode": "1",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "21300000"
+    ],
+    "references": 1
+  },
+  {
+    "source": "Unity/Client/Assets/ThirdParty/Schwarnhild/BasicHandDrawn/tiles/tiles_grass.png",
+    "target": "Unity/Client/Assets/_Project/Art/Environment/SpriteReferenceRecovery20261014/tiles_grass.png",
+    "old_guid": "ecafa1446d0264141bb7b01e4005beff",
+    "new_guid": "3ffe8024a48343dcbe3ee849067c02d3",
+    "sha256": "d9795d0de3433614a4b6ffa03311477912b46957db8e7a9d9be74adb09b77f13",
+    "local_meta_sha256": "6b9a85ad49ac6366e4bfad910c1393c8bc01e9472c2a02a577d9aa7ba0c863d2",
+    "remote_meta_sha256": "6b268505836e391fd8a1909867459f0d92b26115bb52af0d7100351898fe4c4b",
+    "spriteMode": "2",
+    "ppu": "128",
+    "pivot": "{x: 0.5, y: 0.5}",
+    "expected_fileIDs": [
+      "1271049111",
+      "1606921373",
+      "1662121770",
+      "278596618",
+      "405149151"
+    ],
+    "references": 1679
+  }
+]

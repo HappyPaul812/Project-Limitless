@@ -1,0 +1,395 @@
+{
+  "checks": [
+    {
+      "result": "PASS",
+      "check": "Ancestor preserved 79554069d010115a5427eedfc1c109994737f4fb"
+    },
+    {
+      "result": "PASS",
+      "check": "Ancestor preserved ec469c0aed66b58e8a8ee9e842c47c3d78c7b675"
+    },
+    {
+      "result": "PASS",
+      "check": "Ancestor preserved origin/docs/planning"
+    },
+    {
+      "result": "PASS",
+      "check": "Field04 approved Scene identical"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_DryGrass_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_DryGrass_B_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_DryGrass_C_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+08_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+08_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+09_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+09_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+10_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_+10_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-08_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-08_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-09_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-09_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-10_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Extension_EW_-10_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Bush_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Bush_B_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Fence_Wood_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_RockNorth_Grounded_128_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Rock_A_128_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Tree_Big_255x256_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Tree_Medium_128x156_v1.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+00_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+00_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+01_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+01_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+02_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+02_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+03_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+03_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+04_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+04_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+05_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+05_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+06_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+06_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+07_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_+07_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-01_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-01_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-02_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-02_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-03_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-03_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-04_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-04_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-05_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-05_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-06_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-06_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-07_Lower_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Field04 PNG LL_C2_F04_Road_EW_-07_Upper_v2.png"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved PNG52"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_miel_supp_001.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_miel_supp_001.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_miel_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_miel_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_miel_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_miel_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_taeon_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_taeon_supp_002.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_taeon_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_taeon_supp_003.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Main08 WAV main08_taeon_supp_004.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Main08 GUID/meta main08_taeon_supp_004.wav"
+    },
+    {
+      "result": "PASS",
+      "check": "Approved Voice6"
+    },
+    {
+      "result": "PASS",
+      "check": "Catalog all approved entries protected"
+    },
+    {
+      "result": "PASS",
+      "check": "All approved A/B/C runtime C# unchanged versus79554069"
+    },
+    {
+      "result": "PASS",
+      "check": "QA exact runtime C# bytes"
+    },
+    {
+      "result": "PASS",
+      "check": "New approved asset GUID collision0"
+    },
+    {
+      "result": "PASS",
+      "check": "All project Scene GUIDs resolve in Assets"
+    },
+    {
+      "result": "PASS",
+      "check": "Planning job 투사"
+    },
+    {
+      "result": "PASS",
+      "check": "Planning job 수호자"
+    },
+    {
+      "result": "PASS",
+      "check": "Planning job 치유사"
+    },
+    {
+      "result": "PASS",
+      "check": "Planning job 마도사"
+    },
+    {
+      "result": "PASS",
+      "check": "Planning job 사수"
+    },
+    {
+      "result": "PASS",
+      "check": "Original protection SHA all unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "Original HEAD unchanged"
+    },
+    {
+      "result": "PASS",
+      "check": "Original dirty status unchanged"
+    }
+  ],
+  "existing_guid_collision_pairs": [
+    [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/GoldenArrow/golden_arrow_00.png.meta"
+    ],
+    [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_01.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00.png.meta"
+    ],
+    [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_02.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_01.png.meta"
+    ],
+    [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_03.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_02.png.meta"
+    ],
+    [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_04.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_03.png.meta"
+    ]
+  ],
+  "missing_scene_guids": [],
+  "voices": [
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_001.wav",
+      "sha256": "d06d4fc4453ebdb96a43f6847b58fe617e901fb3eb54451226bbaa4d74db34d8"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_002.wav",
+      "sha256": "75f06077d49a37b8f3878f9b324bd8b265092642aef142474725baf6eaa8df1e"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_miel_supp_003.wav",
+      "sha256": "329f03aafb71d7b7641f55c5e5cd794cc12189978c1496c84fe302980fb1bb87"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav",
+      "sha256": "7075ffb191443725ecc01680d92a4cabb258d1b7f4766808b4ad6cc3bc777e2c"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav",
+      "sha256": "4162175dbbc3570ed5ad1531818a9bb2939263216ec6895241bcb9885f79dbce"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav",
+      "sha256": "195b136a6d44acd305a6a9d426841770d5f5206d38d71e2a8d15b9141c5a5779"
+    }
+  ],
+  "planning_jobs": [
+    "문서/06_스킬/Chapter3_투사_신규강화_상세설계_초안_20261013.md",
+    "문서/06_스킬/Chapter3_수호자_신규강화_상세설계_초안_20261013.md",
+    "문서/06_스킬/Chapter3_치유사_신규강화_상세설계_초안_20261013.md",
+    "문서/06_스킬/Chapter3_마도사_신규강화_상세설계_초안_20261013.md",
+    "문서/06_스킬/Chapter3_사수_신규강화_상세설계_초안_20261013.md"
+  ],
+  "protected": 5199,
+  "qa_commit": "632343f005c9225d73df22eb3b4a70deb6ba6778",
+  "source_scene_sha256": "adeeeefdc32207d54bd17eff55ab433762b5bcfdfd14cfc4736f749def3ed153"
+}

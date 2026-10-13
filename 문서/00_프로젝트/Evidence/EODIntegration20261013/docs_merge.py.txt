@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+import pathlib as P,re,subprocess as S,json
+R=P.Path('F:/study/codex/Project-Limitless');T=R/'Temp/EODIntegration20261013';W=T/'worktree';D='문서/00_프로젝트/'
+def read(ref,path):return S.check_output(['git','-C',str(W),'show',ref+':'+path]).decode('utf-8')
+p=W/(D+'Main08_Field02_Voice_UserQA_20261013.md');s=p.read_text(encoding='utf-8')
+def union(m):
+    a,b=m[1],m[2];parts=a.strip().split('\n\n');extra=[x for x in b.strip().split('\n\n') if x.strip() and x not in parts];return a.rstrip()+'\n\n'+'\n\n'.join(extra)+'\n'
+s=re.sub(r'^<<<<<<< HEAD\n(.*?)^=======\n(.*?)^>>>>>>> [^\n]+\n',union,s,flags=re.M|re.S)
+assert '<<<<<<<' not in s
+for ref in ['HEAD','origin/docs/planning']:
+    old=read(ref,D+'Main08_Field02_Voice_UserQA_20261013.md')
+    assert all(part in s for part in re.split(r'\n\s*\n',old) if part.strip()),ref
+s=s.replace('\n\n', '\n\n## 현재 정본 상태 — EOD 통합\n\n청취 승인된6개 정식연결·디스크 적용·원격Push 완료. 아래 제보/보류는 당시이력이며 새 EOD 합본QA는 별도보고서에서 확인.\n\n',1)
+p.write_text(s,encoding='utf-8')
+print('Planning conflict: all paragraphs from both versions preserved')

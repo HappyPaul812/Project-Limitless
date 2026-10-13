@@ -1,0 +1,235 @@
+# GitHub 최신 문서 → 원본 로컬 동기화 — 2026-10-13
+
+**PARTIAL: 충돌 없는 203파일 동기화 완료 / 미커밋 충돌1개 보존.** 대상 원본 `F:/study/codex/Project-Limitless`의 문서만 변경했습니다. main의 Commit/branch/HEAD는 바꾸지 않았습니다. 이 보고서 Commit은 별도 `codex/docs-local-sync-20261013` worktree에서만 만듭니다.
+
+## 정본과 비교
+
+- 최신 GitHub `docs/planning`: `612ff531f7c067f87441c9f6c2614089a5751c8c`.
+- 최신 PR7 통합 브랜치: `7f493c69080047a06d34b96b71ea57ae4b409e30`. 기획 브랜치가 통합 HEAD의 조상임을 확인했고 최신 기획이 모두 통합에 포함되어 있습니다. 통합본의 B/C/A 기록·Importer 증거도 보존된 정본을 사용했습니다.
+- 새 파일196 / 갱신7 / 이미 같은 파일1,019 / 미커밋 충돌1. 이 중 Markdown38개(추가31/갱신7), 연결된 문서 증거165개입니다. PNG54개는 `문서/` 안의 QA 이미지이며 게임 Asset PNG는 아닙니다. TXT의 C# 참고본도 문서로만 복사했고 실행하지 않았습니다.
+- 텍스트는 LF/CRLF 차이만 정규화해 비교했습니다. 실제 추가·갱신 파일은 GitHub blob 바이트 그대로입니다. 동일 문서는 쓰지 않았으며 원격에 없는 로컬 문서는 삭제하지 않았습니다.
+
+## 충돌: 미반영1개
+
+- `문서/00_프로젝트/CURRENT_STATUS.md`에 기존 미커밋 수정이 있어 덮어쓰지 않았습니다. 현재 로컬 파일의 바이트는 작업 시작 당시 그대로입니다.
+- 최신 원격 정본을 바로 읽으실 수 있는 [별도 참고본](F:/study/codex/Project-Limitless/Temp/DocumentSync20261013/remote/문서/00_프로젝트/CURRENT_STATUS.md)을 보관했습니다. 이 참고본은 원격 통합 HEAD의 CURRENT_STATUS 전체이며, 로컬 미커밋본과 통합 병합은 하지 않았습니다.
+- 따라서 원본 경로의 CURRENT_STATUS까지 정본과 동일하다고 보고하지 않습니다. 바울 대표가 로컬 변경의 반영 여부를 결정하신 뒤 해당 파일만 별도 병합할 수 있습니다.
+- 기존 미커밋 `Unity_665_MCP_Recovery_20261010.md`, `04_UI/퀘스트_목표_위치_안내.md` 등 로컬 전용 자료도 그대로 보존했습니다.
+
+## 보호·검증
+
+- 동기화 대상 밖의 기존 5334파일 SHA 동일, 무단 변경0, 원본 main HEAD 불변. 모든 기존 미커밋 문서를 덮어쓰지 않았습니다.
+- Unity 코드/Scene/Importer/meta/게임 아트/Save/설정/TTS/BGM 변경0. Unity 실행·TTS 호출·GitHub Push·main Commit/병합0.
+- 갱신 전 clean 문서7개는 `Temp/DocumentSync20261013/before`에 원래 바이트로 보관했습니다. 원격 정본 전체 참고본은 `Temp/DocumentSync20261013/remote`에 있습니다.
+- PR7 importer 작업은 별도 상태를 유지합니다. 원격 PR7 HEAD가7f493c6로 갱신된 사실을 확인했고 후보 검증 결과는 동일성YES·회귀228PASS입니다. 이번 문서 동기화가 원본 Unity에도 importer 수정을 적용한 것은 아닙니다.
+
+## 갱신한 파일7개
+
+- `문서/00_프로젝트/팀운영/COMMON_RULES.md`
+- `문서/00_프로젝트/팀운영/START_HERE.md`
+- `문서/00_프로젝트/팀운영/담당/SPRITE_ART.md`
+- `문서/00_프로젝트/팀운영/담당/WORLD_ART_RENEWAL.md`
+- `문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md`
+- `문서/06_스킬/Chapter3_스킬상점_강화_냉기_동결괴사_20261012.md`
+- `문서/08_몬스터/Chapter3_몬스터_전리품_펫_경제_준비_20261012.md`
+
+## 추가한 파일196개
+
+- `문서/00_프로젝트/ArtInspection_20261013_Summary.md`
+- `문서/00_프로젝트/Chapter3_North_Visual_Art_Guide_20261013.md`
+- `문서/00_프로젝트/Chapter_Clear_SafeZone_Service_Rollout_20261013.md`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/attempt1_checks.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/attempt1_console_errors.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/attempt1_imports.tsv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/attempt1_observations.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_field_Manifest.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_field_README.md`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_field_Rights_And_Provenance.md`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_field_SpriteMapping.csv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_rock_Manifest.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/delivery_rock_README.md`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_before_story_battle_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_east_entry_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_existing_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_individual_contact_sheet.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_literal_manifest_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_literal_rocknorth_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_literal_trees_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_mapping_audit.csv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_prop_foot_audit.csv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_proposal_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_serin_sites_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_unity_comparison_contact_sheet.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/field_west_entry_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/png_audit.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/protection.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/qa_ArtInspectionAudit.cs.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/qa_attempt1.cs.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/qa_resume1.cs.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume1_candidate_sprite_bounds.tsv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume1_checks.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume1_console_errors.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume1_observations.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume1_original_sprite_bounds.tsv`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume2_checks.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume2_console_errors.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/resume2_observations.txt`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/rock_existing_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/rock_pixel_audit.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/rock_unity_comparison_contact_sheet.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/rock_v1_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/rock_v2_unity.png`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/runtime_summary.json`
+- `문서/00_프로젝트/Evidence/ArtInspection_20261013/zip_audit.json`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Field04V2Audit.cs.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Field04_v2_Candidate30.unity.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Field04_v2_Candidate42.unity.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Manifest.json`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Optional_EndpointPlacement_12.csv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/README.md`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/Rights_And_Provenance.md`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/RoadPlacement_30.csv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/SpriteMapping_Corrected_v2.csv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/asset_audit.json`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/checks.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/console_errors.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/east_entry_v2.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/field04_v2_approval_contact_sheet.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/field_after_full.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/field_before_full.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/field_before_story_battle_unity.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/importers.tsv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/observations.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_candidate30_overview.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_candidate42_east.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_candidate42_overview.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_candidate42_west.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_checks.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_console_errors.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_importers.tsv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/optional_status.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/protection_final.json`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/road30_stitched_pixel_reference.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/road_actual.tsv`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/road_after_zoom.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/road_before_after_contact_sheet.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/road_before_zoom.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/rocknorth_v2.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/status.txt`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/tree_mapping_v2.png`
+- `문서/00_프로젝트/Evidence/Field04_v2_20261013/west_exit_v2.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/console_errors.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/field_before_story_battle_unity.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/native_field04_full.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/observations.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/Regression/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/colliders.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/missing_sprites.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/native_field04.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/renderer_references.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/candidate/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/colliders.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/missing_sprites.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/native_field04.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/renderer_references.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/normal/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/protection.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/same_visual_comparison.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/summary.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Apply_20261013/visual_equivalence.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ImporterProbe.cs.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/colliders.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/missing_sprites.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/native_field04.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/renderer_references.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/console_errors.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/field_before_story_battle_unity.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/native_field04_full.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/observations.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/ProjectOwned_Regression/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/colliders.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/missing_sprites.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/native_field04.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/renderer_references.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/after/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/checks.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/colliders.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/missing_sprites.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/native_field04.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/renderer_references.tsv`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/before/status.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/bush_01.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/bush_02.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/fence_tiles.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/importer_comparison.png`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/original_protection.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/project_owned_fix_manifest.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/project_owned_validation.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/proposal_manifest.json`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/rock_01.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/tiles_grass.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/tree_big.png.meta.txt`
+- `문서/00_프로젝트/Evidence/PR7_Importer_Proposal_20261013/tree_medium.png.meta.txt`
+- `문서/00_프로젝트/Evidence/SafeZonePetServices_20261013/known_editor_search_errors.txt`
+- `문서/00_프로젝트/Evidence/SafeZonePetServices_20261013/runtime_console_errors.txt`
+- `문서/00_프로젝트/Evidence/SafeZonePetServices_20261013/runtime_results.txt`
+- `문서/00_프로젝트/Evidence/SafeZonePetServices_20261013/status.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Attempt1/SkillLoadoutQA.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Attempt2/SkillLoadoutQA.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/BCServiceCoexistAudit.cs.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Coexistence/console_errors.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Coexistence/known_editor_search_errors.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Coexistence/results.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Coexistence/silence_existing_audit.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Coexistence/status.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Original_Protection.json`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/Skill15_Runtime.json`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/SkillLoadoutQA.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/battle_1024x768.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/battle_1280x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/battle_1600x900.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/battle_1680x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/battle_1920x1080.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management-36-row-layout-fixture_1280x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management_1024x768.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management_1280x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management_1600x900.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management_1680x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/management_1920x1080.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Final/six-cell-layout-fixture_1280x720.png`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/Runtime_Validation.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/SilenceGuardBatch.cs.txt`
+- `문서/00_프로젝트/Evidence/SkillLoadout_20261013/SkillLoadoutBatchQA.cs.txt`
+- `문서/00_프로젝트/Field03_RockB_v2_Inspection_20261013.md`
+- `문서/00_프로젝트/Field04_Art_v1_Inspection_20261013.md`
+- `문서/00_프로젝트/Field04_v2_Road_Candidate_QA_20261013.md`
+- `문서/00_프로젝트/Git_BranchOnly_Integration_20261013.md`
+- `문서/00_프로젝트/Git_Main_Integration_PrePush_20261013.md`
+- `문서/00_프로젝트/LIMITLESS_20261012_전체대화_결정_인계.md`
+- `문서/00_프로젝트/LIMITLESS_20261013_담당별_복붙_업무지시_모음.md`
+- `문서/00_프로젝트/LIMITLESS_Chapter2_Original_Art_Roadmap_20261012.md`
+- `문서/00_프로젝트/LIMITLESS_Renewal_Lead_Handoff_20261012.txt`
+- `문서/00_프로젝트/PR7_Importer_Apply_Verification_20261013.md`
+- `문서/00_프로젝트/PR7_Importer_Fix_Proposal_20261013.md`
+- `문서/00_프로젝트/SafeZone_PetService_Rollout_Implementation_QA_20261013.md`
+- `문서/00_프로젝트/Skill_Loadout_UI_Implementation_QA_20261013.md`
+- `문서/00_프로젝트/팀운영/GIT_BRANCH_WORKFLOW_20261013.md`
+- `문서/00_프로젝트/팀운영/NEW_HIRE_ONBOARDING_20261013.md`
+- `문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md`
+- `문서/06_스킬/Chapter3_마도사_신규강화_상세설계_초안_20261013.md`
+- `문서/06_스킬/Chapter3_사수_신규강화_상세설계_초안_20261013.md`
+- `문서/06_스킬/Chapter3_수호자_신규강화_상세설계_초안_20261013.md`
+- `문서/06_스킬/Chapter3_치유사_신규강화_상세설계_초안_20261013.md`
+- `문서/06_스킬/Chapter3_투사_신규강화_상세설계_초안_20261013.md`
+- `문서/07_아이템/Chapter3_회복_부활아이템_확장_제안_20261013.md`
+
+전체 source blob·SHA는 [목록](Evidence/DocumentSync_20261013/synchronized_documents.tsv), 검증 수치는 [결과](Evidence/DocumentSync_20261013/result.json)를 참고하십시오. 이 보고서와 두 증거 파일은 GitHub 동기화203개에 포함되지 않는 로컬 작업 기록입니다.

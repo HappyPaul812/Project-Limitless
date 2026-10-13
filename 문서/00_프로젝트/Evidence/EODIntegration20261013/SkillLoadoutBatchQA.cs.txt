@@ -1,0 +1,241 @@
+// 격리 QA Client의 Assets/Editor에 복사한 뒤에만 컴파일합니다. 원본 Editor에서 실행하지 않습니다.
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Core;
+using ProjectLimitless.Player;
+using ProjectLimitless.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+
+namespace ProjectLimitless.EditorTools
+{
+    [InitializeOnLoad]
+    public static class SkillLoadoutBatchQA
+    {
+        const BindingFlags Hidden = BindingFlags.NonPublic | BindingFlags.Instance;
+        const BindingFlags Static = BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static;
+        const string Armed = "Limitless.SkillLoadoutQA.Armed";
+        static readonly List<string> results = new List<string>();
+        static readonly Stack<IEnumerator> stack = new Stack<IEnumerator>();
+        static string Output => Environment.GetEnvironmentVariable("LIMITLESS_B_QA_OUTPUT") ?? Path.GetFullPath(Path.Combine(Application.dataPath, "../SkillLoadoutQA"));
+        static bool running;
+        static bool oldOptionsEnabled;
+        static EnterPlayModeOptions oldOptions;
+        static SkillLoadoutBatchQA()
+        {
+            EditorApplication.playModeStateChanged += state =>
+            {
+                if (!SessionState.GetBool(Armed, false)) return;
+                if (state == PlayModeStateChange.EnteredPlayMode) { running = true; stack.Push(Run()); }
+                if (state == PlayModeStateChange.EnteredEditMode)
+                {
+                    SessionState.SetBool(Armed, false);
+                    EditorSettings.enterPlayModeOptionsEnabled = oldOptionsEnabled;
+                    EditorSettings.enterPlayModeOptions = oldOptions;
+                    GameSaveService.FinishAudit();
+                    UserSettingsService.FinishAudit();
+                    Save(); EditorApplication.Exit(results.Any(line => line.StartsWith("FAIL|")) ? 1 : 0);
+                }
+            };
+            EditorApplication.update += Tick;
+        }
+        public static void Launch()
+        {
+            string expected = "/Temp/EODIntegration20261013/Client/Assets";
+            if (!Application.isBatchMode || !Application.dataPath.Replace('\\', '/').EndsWith(expected, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("지정된 격리 Client의 Batch Mode에서만 실행할 수 있습니다.");
+            string outputPath = Path.GetFullPath(Output);
+            if (!outputPath.Replace('\\', '/').Contains("/Temp/", StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("QA 출력은 Temp 아래로 한정합니다.");
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            Directory.CreateDirectory(Output); results.Clear();
+            oldOptionsEnabled = EditorSettings.enterPlayModeOptionsEnabled; oldOptions = EditorSettings.enterPlayModeOptions;
+            EditorSettings.enterPlayModeOptionsEnabled = true; EditorSettings.enterPlayModeOptions = EnterPlayModeOptions.DisableDomainReload;
+            GameSaveService.AuditSaveDirectory = Path.Combine(Output, "IsolatedSave");
+            string savePath = Path.GetFullPath(GameSaveService.AuditSaveDirectory);
+            if (!savePath.StartsWith(outputPath.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("Save 격리 경로가 QA 출력 영역을 벗어났습니다.");
+            Directory.CreateDirectory(GameSaveService.AuditSaveDirectory);
+            UserSettingsService.BeginAudit(GameSaveService.AuditSaveDirectory);
+            File.WriteAllText(UserSettingsService.SettingsFilePath, JsonUtility.ToJson(new UserSettingsData { MuteAll = true, SkipOpeningIntro = true }));
+            Application.runInBackground = true;
+            SessionState.SetBool(Armed, true); EditorApplication.EnterPlaymode();
+        }
+        static void Tick()
+        {
+            if (!running || !EditorApplication.isPlaying) return;
+            try
+            {
+                while (stack.Count > 0)
+                {
+                    IEnumerator current = stack.Peek();
+                    if (!current.MoveNext()) { stack.Pop(); continue; }
+                    if (current.Current is IEnumerator nested) { stack.Push(nested); continue; }
+                    return;
+                }
+                running = false; Save(); EditorApplication.ExitPlaymode();
+            }
+            catch (Exception e) { results.Add("FAIL|Harness|" + e); Save(); running = false; stack.Clear(); EditorApplication.ExitPlaymode(); }
+        }
+        static void Check(bool pass, string id, string proof)
+        { results.Add((pass ? "PASS|" : "FAIL|") + id + "|" + proof); Save(); if (!pass) throw new InvalidOperationException(id); }
+        static void Save() => File.WriteAllLines(Path.Combine(Output, "SkillLoadoutQA.txt"), results);
+        static T Get<T>(object owner, string field) => (T)owner.GetType().GetField(field, Hidden).GetValue(owner);
+        static object Call(object owner, string method, params object[] args) => owner.GetType().GetMethod(method, Hidden).Invoke(owner, args);
+        static object Legacy(string method, params object[] args) => typeof(SecondRegressionAudit).GetMethod(method, Static).Invoke(null, args);
+        static IEnumerator Wait(double seconds) { double end = EditorApplication.timeSinceStartup + seconds; while (EditorApplication.timeSinceStartup < end) yield return null; }
+        static IEnumerator Load(string scene) => (IEnumerator)Legacy("Load", scene);
+        static void Seed(string job) => Legacy("Seed", job, 1);
+
+        static IEnumerator Run()
+        {
+            yield return Wait(.5);
+            Seed("fighter"); yield return Load("World_StarterVillage");
+            JobDefinition job = Resources.LoadAll<JobDefinition>("JobDefinitions").Single(value => value.JobId == "fighter");
+            string player = PartyResourceService.PlayerCharacterId;
+            var initial = SkillLoadoutService.Snapshot(player, job);
+            Check(initial.Count == 3 && SkillLoadoutService.GetSlots(player, job).Count == 6, "initial", "시작3·최대6, 미습득 생성 없음");
+            Check(SkillLoadoutService.TrySetSlot(player, job, 0, null) && SkillLoadoutService.Snapshot(player, job).Count == 2, "unequip", "무료 해제");
+            Check(SkillLoadoutService.TrySetSlot(player, job, 5, initial[0].Id), "slot6", "실제 시작 스킬을 6번째 칸에 장착");
+            Check(!SkillLoadoutService.TrySetSlot(player, job, 6, initial[0].Id) && !SkillLoadoutService.TrySetSlot(player, job, -1, initial[0].Id), "range", "7칸·음수 거절");
+            Check(!SkillLoadoutService.TrySetSlot(player, job, 0, "unlearned"), "unknown", "미습득ID 거절, 정의 생성0");
+            Check(SkillLoadoutService.TrySetSlot(player, job, 0, initial[0].Id) && SkillLoadoutService.GetSlots(player, job)[5] == null, "duplicate", "원슬롯 이동·중복 방지");
+            Check(initial.Count == 3, "immutable", "외부 스냅샷 변경 없음");
+            PlayerController.SetMovementLocked(typeof(SkillLoadoutBatchQA), true);
+            Check(!SkillLoadoutService.TrySetSlot(player, job, 0, null), "cutscene-lock", "이동 잠금 중 장착 차단");
+            PlayerController.SetMovementLocked(typeof(SkillLoadoutBatchQA), false);
+            SkillManagementPresenter manager = SkillManagementPresenter.Instance;
+            Check(manager != null, "world-manager", "월드 자동 생성"); manager.Open(); yield return null;
+            Check(Get<InputAction>(manager, "toggle").bindings.Any(binding => binding.path == "<Gamepad>/start"), "gamepad-open-binding", "월드상호작용South와별도Menu/Start열기");
+            Check(manager.IsOpen && PlayerController.IsMovementLocked && WorldModalState.IsOwnedBy(manager), "open-modal", "장착 UI·월드 이동 상호 배제");
+            var slots = Get<List<Button>>(manager, "slotButtons");
+            var rows = Get<List<Button>>(manager, "libraryButtons");
+            Check(slots.Count == 6 && rows.Count == 3, "management-split", "6슬롯·독립3보관함");
+            slots[5].onClick.Invoke(); rows[0].onClick.Invoke();
+            manager.GetComponentsInChildren<Button>().Single(value => value.name == "Equip").onClick.Invoke();
+            yield return null;
+            Check(SkillLoadoutService.GetSlots(player, job)[5] == initial[0].Id, "management-equip", "실제 클릭 경로6번 장착");
+            foreach (var size in Sizes()) { Capture("management", size.x, size.y); yield return null; }
+            // 보관함 확장 UI만 검증하는 36행 fixture입니다. 기존 정의의 행 복제이며 신규 SkillDefinition/학습 기록은 만들지 않습니다.
+            RectTransform content = Get<RectTransform>(manager, "libraryContent");
+            List<Button> libraryButtons = Get<List<Button>>(manager, "libraryButtons");
+            List<Button> managerFocus = Get<List<Button>>(manager, "focus");
+            Button template = libraryButtons[0];
+            for (int i = libraryButtons.Count; i < 36; i++)
+            {
+                Button clone = Object.Instantiate(template, content); clone.name = "CapacityFixture_" + i;
+                clone.GetComponentInChildren<Text>().text = "확장 보관함 배치 검증 " + (i + 1);
+                libraryButtons.Add(clone); managerFocus.Add(clone);
+            }
+            Canvas.ForceUpdateCanvases(); yield return null;
+            libraryButtons.Last().Select(); yield return null; yield return null;
+            ScrollRect scroll = Get<ScrollRect>(manager, "libraryScroll");
+            Check(content.rect.height > scroll.viewport.rect.height && content.anchoredPosition.y > 0, "library36-scroll", "36행 실제 Layout/Fitter·패드 포커스 자동 스크롤");
+            Check(libraryButtons.Last().GetComponent<RectTransform>().Overlaps(scroll.viewport), "library36-focus-visible", "마지막 보관함 행은 Mask 안에서 보임");
+            Check(libraryButtons.Last().FindSelectableOnDown() != null, "library36-navigation", "보관함 마지막행에서 패드 하단 탐색 가능");
+            Capture("management-36-row-layout-fixture", 1280, 720);
+            manager.Close(); manager.Open(); yield return null;
+            Check(Get<List<Button>>(manager, "libraryButtons").Count == 3, "fixture-reset", "재열기: 실제3스킬만 복원, 검사행 유입0");
+            CompanionRosterService.UnlockSerin(); manager.Close(); manager.Open(); yield return null;
+            Check(Get<List<Button>>(manager, "characterButtons").Any(button => button.name == CompanionRosterService.SerinId), "late-unlock", "같은 지도 새 동료 합류 후 재열기 명단 갱신");
+            manager.Close(); Check(!WorldModalState.IsOpen && !PlayerController.IsMovementLocked, "close-modal", "닫기 입력·이동 잠금 해제");
+            Check(EventSystem.current.currentSelectedGameObject == null, "world-focus-return", "패드South와NPC상호작용복귀: 선택된UI버튼잔류0");
+            yield return Load("Arbel");
+            Check(SkillManagementPresenter.Instance != null, "arbel-manager", "실제 아르벨 안전지역 자동 생성");
+            SkillManagementPresenter.Instance.Open(); yield return null;
+            Check(SkillManagementPresenter.Instance.IsOpen, "arbel-open", "아르벨 무료 장착 접근");
+            SkillManagementPresenter.Instance.Close();
+            yield return Load("Dungeon_01");
+            Check(SkillManagementPresenter.Instance != null, "dungeon-manager", "던전에서도 장착 접근 준비");
+            yield return Load("Field_04_WesternBorder");
+            Check(SkillLoadoutService.GetSlots(player, job)[5] == initial[0].Id, "scene-retain", "다른 Field 이동 시 장착 유지");
+            yield return Load("Battle");
+            var controller = Object.FindAnyObjectByType<BattleSceneController>();
+            Combatant actor = Get<Formation>(controller, "allies").Members.First(); Legacy("ActorCommand", controller, actor);
+            Check(!SkillLoadoutService.TrySetSlot(player, job, 5, null), "battle-lock", "전투 중 장착 변경 거절");
+            Get<Button>(controller, "skillButton").onClick.Invoke(); yield return null;
+            var menu = Get<List<Button>>(controller, "skillMenuButtons");
+            Check(menu.Count == 4 && menu.Last().name == "Back" && menu.All(value => value.name != "NoSkills"), "equipped-menu", "장착3개만·가짜 빈칸0·뒤로 별도");
+            foreach (var size in Sizes()) { Capture("battle", size.x, size.y); yield return null; }
+            var actual = menu.Take(3).ToArray();
+            Check(actual.Single(value => value.name == "Skill_" + initial[0].Id).GetComponent<RectTransform>().anchorMin.y == .25f, "slot-position", "관리6번칸은 전투아랫줄6번 위치, 나머지 빈칸버튼0");
+            Check(!Get<Image>(controller, "skillMenuPanel").rectTransform.Overlaps(Get<Image>(controller, "skillDetailPopup").rectTransform), "popup-gap", "스킬그리드·상세팝업 분리");
+            Get<Button>(controller, "cancelButton").onClick.Invoke();
+            Check(Get<List<Selectable>>(controller, "commandButtons").Count == 5 && Get<List<Selectable>>(controller, "commandButtons").All(value => value.gameObject.activeInHierarchy), "cancel-commands", "취소→기본5명령 복귀");
+            // 현재 직업3개만 실제 존재합니다. 6버튼은 중복 표시용 레이아웃 fixture이며 습득 데이터에 넣지 않습니다.
+            Get<Button>(controller, "skillButton").onClick.Invoke(); yield return null;
+            Image panel = Get<Image>(controller, "skillMenuPanel");
+            var existing = Get<List<Button>>(controller, "skillMenuButtons").Take(3).ToArray();
+            for (int i = 0; i < existing.Length; i++)
+            {
+                RectTransform rect = existing[i].GetComponent<RectTransform>(); rect.anchorMin = rect.anchorMax = new Vector2(.13f + i * .24f, .75f); rect.anchoredPosition = Vector2.zero;
+            }
+            for (int i = 3; i < 6; i++) Call(controller, "MakeSkillMenuButton", panel.transform, "Geometry_" + i, "6칸 배치 검증", initial[i % 3].IconId,
+                new Vector2(.13f + (i % 3) * .24f, .25f), (Action)(() => { }), null);
+            yield return null;
+            Button[] geometry = panel.GetComponentsInChildren<Button>();
+            for (int i = 0; i < geometry.Length; i++) for (int j = i + 1; j < geometry.Length; j++)
+                Check(!geometry[i].GetComponent<RectTransform>().Overlaps(geometry[j].GetComponent<RectTransform>()), "geometry/" + i + "/" + j, "6버튼+뒤로 겹침 없음");
+            Capture("six-cell-layout-fixture", 1280, 720);
+            yield return Load("Bootstrap");
+            GameSessionData.Reset(); Check(SkillLoadoutService.GetSlots(player, job)[5] == null && SkillLoadoutService.Snapshot(player, job).Count == 3, "reset", "새게임 Reset 시작3 복원");
+            Check(SkillLoadoutService.TrySetSlot(player, job, 5, initial[0].Id), "pre-load-change", "로드 전 임시 장착 변경");
+            var restoreFixture = new GameSaveData { PlayerName = "격리 로드 QA", PlayerVisualId = "Male", PathId = "path.vision", JobId = "fighter", Level = 1,
+                CurrentSceneId = "World_StarterVillage", SpawnPointId = "Spawn_From_Field01" };
+            GameSaveService.RestoreSession(2, restoreFixture);
+            Check(GameSaveService.CurrentSlotIndex == 2 && SkillLoadoutService.GetSlots(player, job)[5] == null && SkillLoadoutService.Snapshot(player, job).Count == 3,
+                "restore-session", "다른 Save 슬롯의 실제 RestoreSession에서 임시 장착 유출 차단");
+            // 기존15개 실제 UI/CD/MP/대상취소/효과 fixture를 재사용합니다. 루트가 QA 복사본 Output만 재지정합니다.
+            yield return (IEnumerator)Legacy("Skills");
+            string legacyReport = Path.Combine(Output, "Skill15_Runtime.json");
+            Check(File.Exists(legacyReport), "skill15-report", "격리 QA 복사본에만 재지정한 회귀 결과");
+            SecondRegressionAudit.Report report = JsonUtility.FromJson<SecondRegressionAudit.Report>(File.ReadAllText(legacyReport));
+            Check(report.results.Count(result => result.category == "Skill15" && result.id.EndsWith("/effect") && result.status == "PASS") == 15
+                && report.results.All(result => result.status != "FAIL"), "skill15", "기존15스킬 실제 UI/CD/MP/취소/효과 결과15 PASS 확인");
+            results.Add("NOT_VERIFIED|physical-input|실물 키보드/패드 감각 및 장시간 손플레이");
+            results.Add("NOT_VERIFIED|persistence|미확정 Save 계약·구매/강화 상품 아직 미구현");
+        }
+        static IEnumerable<Vector2Int> Sizes() { yield return new Vector2Int(1280, 720); yield return new Vector2Int(1600, 900); yield return new Vector2Int(1920, 1080); yield return new Vector2Int(1024, 768); yield return new Vector2Int(1680, 720); }
+        // GameView 활성화 없이 실제 Canvas를 별도 Camera/RenderTexture에 그립니다.
+        static void Capture(string name, int width, int height)
+        {
+            GameObject cameraObject = new GameObject("SkillQA_RT_Camera"); Camera camera = cameraObject.AddComponent<Camera>();
+            camera.clearFlags = CameraClearFlags.SolidColor; camera.backgroundColor = new Color(.025f, .04f, .07f); camera.cullingMask = ~0;
+            RenderTexture rt = new RenderTexture(width, height, 24); camera.targetTexture = rt;
+            Canvas[] canvases = Object.FindObjectsByType<Canvas>(FindObjectsSortMode.None).Where(value => value.isRootCanvas && value.gameObject.activeInHierarchy).ToArray();
+            foreach (Canvas canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceCamera; canvas.worldCamera = camera; canvas.planeDistance = 1; }
+            Canvas.ForceUpdateCanvases();
+            var activeBattle = Object.FindAnyObjectByType<BattleSceneController>();
+            if (activeBattle != null) Call(activeBattle, "PositionSkillDetailPopup");
+            camera.Render();
+            RenderTexture previous = RenderTexture.active; RenderTexture.active = rt;
+            Texture2D texture = new Texture2D(width, height, TextureFormat.RGBA32, false); texture.ReadPixels(new Rect(0, 0, width, height), 0, 0); texture.Apply();
+            File.WriteAllBytes(Path.Combine(Output, name + "_" + width + "x" + height + ".png"), texture.EncodeToPNG());
+            if (name == "battle")
+            {
+                var controller = Object.FindAnyObjectByType<BattleSceneController>();
+                Image popup = Get<Image>(controller, "skillDetailPopup"); Text message = Get<Text>(controller, "messageText");
+                Check(!popup.rectTransform.Overlaps(message.rectTransform), "popup-message-gap/" + width, "상세팝업과스킬안내실패문 겹침 없음");
+            }
+            foreach (Canvas canvas in canvases) { canvas.renderMode = RenderMode.ScreenSpaceOverlay; canvas.worldCamera = null; }
+            RenderTexture.active = previous; camera.targetTexture = null; Object.Destroy(texture); Object.Destroy(rt); Object.Destroy(cameraObject);
+            Check(true, "capture/" + name + "/" + width, "실제 RenderTexture " + width + "×" + height);
+        }
+        private static bool Overlaps(this RectTransform first, RectTransform second)
+        {
+            Vector3[] a = new Vector3[4], b = new Vector3[4]; first.GetWorldCorners(a); second.GetWorldCorners(b);
+            return new Rect(a[0].x, a[0].y, a[2].x - a[0].x, a[2].y - a[0].y).Overlaps(new Rect(b[0].x, b[0].y, b[2].x - b[0].x, b[2].y - b[0].y));
+        }
+    }
+}
