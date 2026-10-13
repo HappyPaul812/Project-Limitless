@@ -37,3 +37,16 @@
 - Gemini TTS 생성0 / WAV 신규 생성0 / 전체 무료 잔량·Billing 상태 `NOT_VERIFIED`. 생성기 없음·`sample` 실행 차단 유지.
 - 다음은 사용자 AI Studio의 현재 해당 Project/모델 한도·과금 상태 확인 및 **샘플 한 번 명시적 승인**. 승인 후 안전한 별도 생성기 → 사용자의 실제 청취 승인 → 이후9개 별도 승인. 샘플 ID: `main18_ground_serin_01`, Voice `Schedar`.
 - 현황 상세: [v2 사전 준비 및 LOCAL 실행 후속](../../TTS_Serin10_Schedar_v2_Preflight_20261013.md).
+
+
+## 2026-10-13 첫 Schedar 샘플 사용자 음색 승인 — 현재 최신
+
+**상태: `SAMPLE_SAVED / USER_VOICE_APPROVED / REMAINING_9_NOT_AUTHORIZED`.**
+
+- 사용자 PC에서 `M18_Serin_Schedar_SAMPLE_ONE.py --key-slot 2 --approve-one-call` 및 `YES`로 `main18_ground_serin_01` 샘플 **1회** 요청·저장.
+- 모델 `gemini-3.8-flash-tts`; Voice `Schedar`; 새 WAV `F:\\Downloads\\Voice\\Limitless_TTS_Serin10_Schedar_v2\\sample_candidate\\main18_ground_serin_01.wav`.
+- 사용자 로그 SHA256 `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`; 로컬 파일 별도 해시 재검증은 아직 수행하지 않음.
+- **사용자 직접 청취 발언: "목소리 제대로 나와." → 음색 `USER_VOICE_APPROVED`.** 원문 누락/단어 정확성까지 사용자가 명시적으로 PASS한 것은 아니므로 `EXACTTEXT_LISTENING_PENDING` 유지.
+- 샘플은 정식 재제작 10개 중 1개로 **재사용, 중복 생성 금지**. 남은9개는 **별도 생성 승인 필요**; 아직 호출0. 정상 Main18·19 Unity 음성25, Main17 승인 세린11, 기존 오류 WAV 원본/백업 보호.
+- 이후: 로컬 checkpoint와 샘플 hash 대조 → 현재 프로젝트·모델 무료 quota/과금 확인 → **나머지9개 명시적 승인** → 9개만 StoryOrder대로 생성/QA → 사용자의 전체 청취 → Codex 별도 Unity 통합.
+- 이 항목이 상단 과거 `SAMPLE_NOT_EXECUTED`를 대체. 현재 상태는 샘플 성공1·잔여9 잠금.
