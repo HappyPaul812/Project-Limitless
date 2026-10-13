@@ -142,3 +142,15 @@
 - 제작 상태 **성공 저장8개**(승인 샘플1 + 재제작권고1 + 추가 청취6), 미완료2. **승인 통과가 8개라는 뜻이 아니다**.
 - 가능한 다음 단계: 샘플→02,07,08~12 상대 비교, 사용자가 KEEP/REGEN 결정 후 **확정된 불일치만** 재제작 계획에 포함한다. 할당량·프로젝트 연계·안전 재개 문제 해결 및 추가 명시적 승인 전 **API 호출0**.
 - 기존 오류 원본10, 백업10, Unity 정상25, Main17 승인 음성, WAV와 lock/checkpoint 파일 수정0. `main` 변경0.
+
+
+## 2026-10-13 사용자 청취 상태 정정 — 저장된 8개 전부 청취 완료
+
+사용자가 **“난 다 들어봤다고....”**라고 명확하게 정정했다. 앞 문서의 Story02/08~12 `USER_LISTENING_REQUIRED` 및 “청취 대기” 표기는 **잘못된 당시 기록**이며 최신 상태로 대체한다.
+
+- 저장된 8 WAV 모두 사용자가 **직접 청취함(`USER_LISTENED=8`)**. 추가 청취를 다시 요구하지 않는다.
+- Story06 `main18_ground_serin_01`: `USER_LISTENED / USER_VOICE_APPROVED`.
+- Story07 `main18_heat_vent_serin_01`: `USER_LISTENED / USER_REPORTED_TIMBRE_MISMATCH / TTS_QA_RECOMMENDS_REGEN`; 확정 재생성 API 승인은 별개.
+- Story02 `main18_leon_serin_01`, Story08~11 `main18_overheat_serin_01~04`, Story12 `main18_vibration_serin_01`: **여섯 개 모두 `USER_LISTENED / USER_REPORTED_TIMBRE_VARIANCE`**. 사용자가 음색이 조금씩 다르다고 실제 청취 후 평가함. 유지·재제작 최종 판정은 별도로 명시되지 않아 `FINAL_KEEP_OR_REGEN_UNDECIDED`. 임의 일괄 승인/폐기 금지.
+- Story13 `FAILED_OR_UNCERTAIN_HOLD`, Story14 `NOT_CALLED` 유지. 전체 저장8, 미완료2. 원본·backup·정상 Unity25와 기존 checkpoint/LOCK 불변.
+- 지금 추가 API 호출/재제작 승인0, Unity 수정0, main 반영0.
