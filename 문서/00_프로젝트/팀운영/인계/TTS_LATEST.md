@@ -24,3 +24,16 @@
 - TTS 작업 브랜치: `docs/tts` 전용; `main` 직접 commit/push/merge 금지.
 - 문서 갱신을 마쳤다면 해당 담당 커밋 SHA를 완료 보고에서 별도 확인.
 - 세션 전환 시 최신 `main` 정본과 `docs/tts` 미병합 내용 양쪽 확인.
+
+
+## 후속 LOCAL 실행 확인 — 2026-10-13
+
+사용자가 실제 `py3_12` PowerShell 실행 화면을 제공:
+- `M18_Serin10_Schedar_v2_SAFE.py audit` → `[AUDIT PASS] target=10, protected=25, Voice=Schedar, API=0`, 읽기 전용.
+- `M18_Serin10_Schedar_v2_SAFE.py prepare` → `[PREPARE COMPLETE / API 0]`, 오류 WAV10 백업 SHA 검증·정상25 비교, Unity 수정0.
+- 신규 외부 출력: `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2`.
+- **현재 상태 = `AUDIT_PASS / PREPARE_COMPLETE / SAMPLE_NOT_EXECUTED`**. 위쪽 과거 `LOCAL NOT_EXECUTED` 항목은 해당 시점 이전 기록.
+- 사용자의 터미널 로그 확인이며 담당자 독립 로컬 파일 접근 검증은 아님.
+- Gemini TTS 생성0 / WAV 신규 생성0 / 전체 무료 잔량·Billing 상태 `NOT_VERIFIED`. 생성기 없음·`sample` 실행 차단 유지.
+- 다음은 사용자 AI Studio의 현재 해당 Project/모델 한도·과금 상태 확인 및 **샘플 한 번 명시적 승인**. 승인 후 안전한 별도 생성기 → 사용자의 실제 청취 승인 → 이후9개 별도 승인. 샘플 ID: `main18_ground_serin_01`, Voice `Schedar`.
+- 현황 상세: [v2 사전 준비 및 LOCAL 실행 후속](../../TTS_Serin10_Schedar_v2_Preflight_20261013.md).
