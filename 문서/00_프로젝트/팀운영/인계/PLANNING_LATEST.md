@@ -1,3 +1,9 @@
+# PLANNING 인계 — 2026-10-14 오전 재개
+
+사용자 “굿모닝~! 이어서 하자”에 따라 GitHub 최신 상태 확인: 원격 EOD `codex/eod-integration-20261013` `47b865e9c19c23d30c2c9eb5e14c79cddb79a52d`; PR #10 OPEN/Draft/미병합; main `0e0476649b667129cb7aa6004f4b677335ed8be2` 변화 없음. 어제 기능854 PASS/0FAIL·정적83 PASS이나 전체 BuildScene Sprite 참조 FAIL 기존문제(Arbel·Field05~08). **신규 복구 수행/검증 완료된 원격 증거 없음.** `Sprite_Reference_Restore_Integration_Gate_20261014.md`에 정확한 Codex 복구 범위·검증·통합 PR 게이트를 신규 정본화. 다음: Codex 기술 Sprite 참조 복구(아르벨/서부 필드), GitHub 작업 브랜치 Push, 합본 QA 통과 시에만 PR10 Ready→main 병합. 기존 타 부서 아트 리뉴얼·TTS 승인 필요 사항과 명확히 분리. 원본 Editor/Save/dirty tree 보호. 본 문서 추가는 GitHub `docs/planning` 기록만 바꾸고 Unity 게임 파일을 수정하지 않음.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-13 (퇴근 전)
 
 ## 최신 통합 판정 — BLOCKED / PR #10 Draft / main 미병합
