@@ -26,3 +26,17 @@
 - Unity 후보는 **기본 Road30안**과 양쪽 출입구까지 연결한 **Road42안(30+Optional12)** 두 가지이며, **사용자는 이번 발언에서 어느 배치안을 확인했는지 명시하지 않았다**. 따라서 최종 구현 버전 `ROAD_LAYOUT_OPTION_PENDING`. 기획상 추천은 서쪽 Arbel·동쪽 Field03 연결이 시각적으로 자연스러운 42안이지만 승인으로 간주하지 않는다.
 - 별도 미해결: 기존 서쪽 Spawn과 TreeWest 간 겹침, 북쪽 Collider 틈, Search 예외 등. 아트 승인으로 QA PASS 또는 기능 수정 승인 처리하지 않음.
 - 현재 공식 Scene·Unity 원본에 v2 정식 적용됐다는 근거 없음. Codex는 사용자 최종 Road30/42 선택 뒤 적용 및 회귀 QA, main 병합/Push는 별도 승인. 리뉴얼 담당은 기존 제작 v2 중복 재제작 금지, 다음 Arbel 리뉴얼 조사·기획 선행 가능.
+
+
+## 2026-10-13 최종 실행 지시 — Field04 정식 디스크 반영 및 작업 브랜치 Push 승인
+
+**바울 대표 명시 지시:** “필드04 리뉴얼 적용하자 아싸리 푸시도..”
+
+- **AUTHORIZED_FOR_CODEX_DISK_INTEGRATION_AND_FEATURE_BRANCH_PUSH**: Road42 v2 아트의 실제 정식 `Field_04_WesternBorder` Scene/필요 PNG·신규 meta를 원본 로컬 프로젝트 디스크에 안전하게 반영하고, 검증을 통과한 정확한 관련 변경만 `codex/field04-v2-official-42-20261013` 등 독립 전용 브랜치에서 원격 Push한다.
+- **main 직접 Push·Commit·병합은 여전히 금지**: 별도의 사용자 승인·통합 QA 필요. 기존 [PR #7](https://github.com/HappyPaul812/Project-Limitless/pull/7)의 42안 미적용 상태를 공식 반영 완료로 잘못 표시하지 않는다.
+- 이전 `codex/field04-v2-road-20261013`의 검사 결과는 정식 통합을 대신하지 않는다. 승인 ZIP이 원본 경로 `F:/Downloads/Limitless_Field04_Renewal_Art_v2.zip`에 존재하는지와 SHA256 `178ad6b235c65848cce48f4e2cfe86ff77c36857a12663237f7d7afa561f969d`를 새 작업 전에 재확인한다. 사용자 수동 변경·현재 가동 중인 원본 Editor·오디오·Save 보호, 별도 worktree/백그라운드 Unity 검증을 우선한다.
+- Road30은 기존 GameObjectFileID를 보존하며 시각 위치만 동서 x=-7..7, y±0.5로 대응. Endpoint12는 x=-10,-9,-8,+8,+9,+10 각 y±0.5에 Collider 없는 새 Renderer만 추가한다. 기존 333개 환경 Anchor/Collider 등과 남은 역할 대응도 정본 CSV에 맞추며 Scene 전면 재생성 금지. Optional Story3는 미승인 미배치.
+- 기존 서쪽 Spawn(-8,0)/TreeWest overlap, 북쪽 (0,7.4) boundary gap은 **별도 OPEN 이슈**로 유지. 이번 지시 자체가 기능/Collider 수정을 자동 승인하지 않는다. QA 통과 주장 전에는 관련 영향 평가를 분리해서 기록한다.
+- 검증: Main12~13·세린 합류/전투·Field03↔Field04↔Arbel↔Field05 이동/Trigger, 휠체어 통행, HUD·전투·몬스터 35초 리스폰, 실제 Continue/Save, Camera Bounds/16:9·4:3·21:9, 누락 Sprite/Script·GUID 충돌·Importer·원본 Scene/Save/TTS/BGM/사용자 변경 보호. QA 기존 Search 예외 및 사람 직접 조작/실물 가독성 미검증은 PARTIAL로 명시.
+- **원본에 실제 반영 완료 여부**와 **원격 Push 완료 여부**는 각각 실측/원격 조회로 증명한다. 원본 Unity Editor가 Play Mode 실행 중이어서 Scene 디스크 적용이 위험하다면 먼저 격리 통합·기능 QA 및 브랜치 Push를 완료하고 **원본 Scene 적용은 보류**라고 보고한다. 가동 중인 Editor를 자동 정지/포커스 전환하지 않는다.
+- 결과: 브랜치/Commit SHA/원격 HEAD, 원본 Scene 실제 반영 여부 및 작업 대상 수, QA PASS/FAIL/PARTIAL, 보호 SHA 차이 목록과 기존 OPEN 범위를 보고. 추가 스토리·스킬 UI·Main08 음성/최근 사용자 수정은 보존하되 본 브랜치에 무단 섞지 않는다.
