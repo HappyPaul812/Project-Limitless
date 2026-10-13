@@ -44,3 +44,15 @@
 - API 재시도0, KEY 변경0, 잠금/체크포인트 삭제0, Story14 선호출0. 현재 quota와 Billing 불확실, **추가 실행 허가0**. 이전 나머지9 생성 승인은 이미 시도되어 중단한 상태로, 실패후 재개는 원인 확인과 별도 사용자 승인 필요.
 - 다음: Codex가 해당 사용자 LOCAL stage를 **읽기 전용**으로 조사하여 Story13 attempt/hold/lock/result/WAV 유무, 7개 SAVED hash·PCM·기존 샘플 및 정상25 보호, SDK 버전과 `RuntimeError` 발생 가능 코드/오류 경로 확인. API/Python 생성기 실행 금지. 결과를 받은 후 정확한 재개 지점(Story13 재시도 필요 여부/Story14 미호출)을 결정.
 - 사용자 전체 음색/원문 청취 승인은 아직 완료되지 않았음. 최종 승인 전 Unity 적용 금지. 본 갱신은 `docs/tts` 문서만이며 `main` 변경·Git Push/Unity 작업0.
+
+
+## 2026-10-13 Google AI Studio RPD 화면 — 프로젝트 식별 분리
+
+사용자가 AI Studio의 최근28일 `일일 최대 요청 수 (RPD)` 그래프 화면을 제공했다.
+
+- 화면 URL의 선택 프로젝트 식별자는 `gen-lang-client-0895671759`로, 과거 사용자 화면에서 **키1 / Default Gemini Project**로 표시된 프로젝트와 일치한다.
+- 2026-10-13 툴팁 `Gemini 3.8 Flash TTS 9 / 10`: **해당 선택 프로젝트의 관측 일일 요청수9 / 표시 한도10**. 사용 가능 잔여량이 9라는 뜻이 아니다.
+- 실제 생성 CLI는 `--key-slot 2`이며, 앞서 키2 프로젝트 선택 화면의 식별자는 `gen-lang-client-0954145637` (`Project-Limitless`)였다. **로컬 KEY2 환경 설정이 어느 Google Project에 연결돼 있는지 실측 근거는 아직 없다.** 이번 그래프만으로 KEY2의 정확한 RPD 사용량을 입증할 수 없다.
+- 사용자의 로그에서 총 API 시도 9(샘플1 + 잔여 배치 시도8)와 선택 프로젝트 그래프9가 숫자로 일치해도 **실제 귀속 프로젝트를 단정하지 않는다**.
+- Story13의 `RuntimeError`가 RPD 소진/429이라는 직접 증거는 여전히 없다. 최신 `FAILED_OR_UNCERTAIN_HOLD` 유지.
+- 작업 후 사용자에게 **실제 KEY2 소속 프로젝트 및 해당 프로젝트의 RPD 오늘 수치**, 마지막 시도 원인 (가능한 경우 키·Secret 제외) 확인을 요청. 새 호출/재시도/Key변경/Lock수정0, Unity·main 변경0.
