@@ -1,3 +1,9 @@
+## 2026-10-13 작업 C — Chapter2 안전지역 펫 서비스 확대 (격리 구현/QA PARTIAL)
+
+- 브랜치 `codex/safezone-services-20261013`, 기준 main `0e04766`. Main21의 기존 Quest 완료 기록으로 StarterVillage·지하묘지 입구에 분양/관리 각1명, Arbel 기존2명 보존. 공용 소유/100탈렌트/장착/SaveVersion1 유지, 미완료 슬롯은 추가NPC 제거.
+- 기존 사수0명도 분양되던 정본 불일치를 사수목록 안내/구매 경계로 보완. 타 직업 주인공+보유 사수 동료는 이용 가능. Scene·기존NPC/meta·승인PNG·TTS/BGM 직접변경0.
+- `SafeZone_PetService_Rollout_Implementation_QA_20261013.md`에 후보4좌표·기존Sprite재사용·C3 최초상점과 전체확대 분리설계 기록. C3 완료조건/상품/가격/Save확장은 미정이며 코드 생성0.
+- 최종 격리 Unity6000.6.5f1 Compile·Runtime 오류0·3거점UI/100구매/공유/완료·미완료Continue/타슬롯/Save실패rollback/지체의길 Collider통행 PASS106, 기존Editor Search예외1로 전체PARTIAL. 원본6000.5.7f1·Main21전체재플레이·손플레이/이름표가독성/신규NPC공식미술·대사는 미검증/검토대상. 다음: 후보NPC 확인과 브랜치 검토/승인. Push/main 반영0. 마지막 구현 Commit `0d151e3f0222dac992145e69717f7607158b8106`.
 ## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
 
 - 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.

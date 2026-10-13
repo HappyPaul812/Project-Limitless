@@ -1,3 +1,10 @@
+## 2026-10-13 작업 C — Chapter2 안전지역 펫 확대 / 격리 구현·QA PARTIAL
+
+- 브랜치 `codex/safezone-services-20261013`, worktree `Temp/ABC20261013/C`, main기준0e04766/planning정본c0f1d7c. 원본main/사용자미커밋·Save·아트·TTS/BGM 무접촉, Push0.
+- 정식거점3(StarterVillage/Arbel/Field03부분CatacombEntrance). Main21 기존완료로 신규4NPC 조건부설치, Arbel기존2명 중복0/불변. SameScene 타슬롯/Continue 재평가, generated만 제거. 신규그림0·기존Arbel역할Sprite재사용, 좌표는후보.
+- 공용BeastService·100가격/발견/소유/장착/실패rollback·SaveVersion1보존. 사수0명도분양하던기존정본차이보완(사수보유목록검사/안내); 타직업+보유사수는허용.
+- 보고서 `../../SafeZone_PetService_Rollout_Implementation_QA_20261013.md`; QA entry `SafeZonePetServiceAudit.RunBatch`는공유격리Client에서루트담당만순차실행. 최종Unity6000.6.5f1 Compile/신규Runtime오류0/실제UI/100구매·공유/완료·미완료BootstrapContinue/타슬롯/Save실패rollback/몸겹침/actualCollider BFS PASS106. 기존Editor Search예외1별도원문기록·전체PARTIAL. 전체Main21재플레이·원본6000.5.7f1・손플레이/이름표·NPC미술승인은미검증. 마지막구현Commit `0d151e3f0222dac992145e69717f7607158b8106`, 결과Evidence/SafeZonePetServices_20261013.
+- C3공용확대는문서설계만: 최초구매접근과클리어전체판매망분리, 서비스중복방지·캐릭터별공유소유권/Save승인필요. 미정Quest/flag/스킬ID/상품/가격/NPC코드생성0. 기존B스킬슬롯구현과독립.
 ## 2026-10-13 새 담당별 브랜치 규칙·통합 v2
 
 - 사용자최신규칙: AI main직접커밋금지. 기획docs/planning, Codex codex/주제별브랜치+별도worktree. 이전HEAD:main명령사용금지, ../../Git_BranchOnly_Integration_20261013.md의작업브랜치Push안내우선. CodexPush0/main병합은사용자별도결정.
