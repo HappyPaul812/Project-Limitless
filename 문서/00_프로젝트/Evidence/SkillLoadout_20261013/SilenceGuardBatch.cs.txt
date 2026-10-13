@@ -1,0 +1,22 @@
+using System;
+using System.IO;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using ProjectLimitless.Core;
+namespace ProjectLimitless.EditorTools
+{
+    // 원본 Editor·Save에 닿지 않고 기존 침묵 감사만 실행하는 격리 진입점입니다.
+    public static class SilenceGuardBatch
+    {
+        public static void Run()
+        {
+            if(!Application.isBatchMode || !Application.dataPath.Replace('\\','/').Contains("/Temp/Field01RenewalQA/Client/Assets")) throw new Exception("Isolation");
+            string folder=Path.GetFullPath(Path.Combine(Application.dataPath,"../BCServiceCoexistResults"));Directory.CreateDirectory(folder);
+            GameSaveService.AuditSaveDirectory=Path.Combine(folder,"SilenceSaves");UserSettingsService.BeginAudit(Path.Combine(folder,"SilenceSettings"));UserSettingsService.SetMuteAll(true);
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+            try{File.WriteAllText(Path.Combine(folder,"silence_existing_audit.txt"),BattleSilenceAudit.Run());EditorApplication.Exit(0);}
+            catch(Exception e){File.WriteAllText(Path.Combine(folder,"silence_existing_audit.txt"),"FAIL|"+e);EditorApplication.Exit(1);}
+        }
+    }
+}

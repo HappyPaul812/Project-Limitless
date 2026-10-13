@@ -1,0 +1,12 @@
+B 격리 검증 근거 — 2026-10-13
+Unity Runtime: 6000.6.5f1 / 원격 정본 ProjectVersion:6000.5.7f1(직접 실행 미검증)
+실행: root 담당이 Temp/Field01RenewalQA/Client에 B 소스 overlay 후 batchmode, GameView/원본Editor/OS focus 조작0.
+최종 Runtime 새장착/UI 검사72 PASS/0 FAIL, 기존15실제스킬154 PASS/0 FAIL(effect15 PASS).
+최종 b_unity_attempt3.log 정적검색: error CS0, NullReference0, MissingReference0. UnityEditor.Search.SearchDatabase IndexationOnStartup ArgumentOutOfRangeException1은 기존 알려진 엔진 검색 예외. 신규 B 런타임 예외0.
+원시 Unity 로그는 Temp/ABC20261013/b_unity_attempt1.log, b_unity_attempt2.log, b_unity_attempt3.log로 보존. 로그 전체는 불필요한 머신/라이선스 정보를 피하고 문서에 Commit하지 않음.
+Attempt1 실제 구현 FAIL: BuildCharacters 정의 후 Open 호출누락→최소호출1개 추가. 최종 sameScene late-unlock PASS.
+Attempt2 실제 21:9 RT FAIL: 기존팝업/신규안내 겹침→기존 위치/크기 유지+최소8px 간격 높이보정. 최종 5해상도 모두PASS.
+Runtime_Final/*.png는 실제 Unity Camera/RenderTexture; 파일명 fixture 포함 이미지는 보관함36행·그리드6칸 레이아웃 검사이며 존재하지 않는 신규 스킬/정의/습득 데이터가 아님.
+NOT_VERIFIED: 실물 키보드/패드, 장시간 손플레이/가독성 최종승인, 정본6000.5.7f1 직접실행, 미확정 영속학습/장착 Save 계약, 실제상품구매/강화.
+
+C+B 공존: 정식안전지역3(시작마을/Arbel/Field03) Modal 상호차단/닫기입력복귀28 PASS/FAIL0; RuntimeConsole0/기존Search1. 기존BattleSilenceAudit.Run 직접실행 ALL PASS. Original4,318보호파일/822미커밋/status/HEAD 전후불변. 원격main0e0476649b667129cb7aa6004f4b677335ed8be2/docs/planning c0f1d7c5f91af502380200445eaa3bbb6aa143a4 최종fetch동일.
