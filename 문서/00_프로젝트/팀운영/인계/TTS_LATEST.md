@@ -97,3 +97,10 @@
 - **저장·SHA/PCM PASS와 별개로 음색 `USER_REPORTED_TIMBRE_MISMATCH / USER_REVIEW_REQUIRED / HOLD`**. 기존 승인 샘플 Story06과 음색 일치 확인 전 `KEEP` 또는 Unity 적용 불가. 현재 사용자가 최종 폐기/재제작 판정을 내린 것은 아니므로 `REGEN_REQUIRED`은 사용자 판단 대기.
 - 사용자 PC 해당 WAV 자체 직접 재생하지 않았음. 기존8개 저장·Story13 실패불확실·Story14 미호출 상태 불변. 추가 API0, 기존 WAV/잠금/체크포인트 보존, main/Unity 변경0.
 - [상세 청취 기록](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
+
+
+## 2026-10-13 Story07 업로드 오디오 직접 비교 후 재제작 권고 — 최신
+- 사용자 첨부 `main18_heat_vent_serin_01.wav` 4.52초, SHA256 `2426af7024c27cee7bd2bbd94883a65215a1ef406aedb2bd7dea2bf36a60c3b1`. 승인 샘플 `main18_ground_serin_01.wav` 6.52초, SHA256 `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`는 과거 사용자 샘플 로그 SHA와 동일.
+- 실제 업로드 WAV 비교 결과 heat_vent는 사용자가 지적한 비음/탁한 질감이 승인 샘플과 달라 **`TTS_QA_RECOMMENDS_REGEN`**. 사용자 `REGEN 확정`이나 신규 생성 호출 승인은 아직 없음. 원본/체크포인트 보호.
+- WAV 중앙 F0 각각 약175/180Hz; 음색 차이는 성별/음높이 단정이 아니라 캐릭터 일관성 문제. 업로드본이 로컬 성공 WAV와 동일한지 SHA 재대조 필요.
+- 현재 저장성공8 유지, 그중 승인샘플 음색PASS1·Story07 재제작 권고1·나머지6 청취 대기; Story13 불확실, Story14 미호출. 추가 API0·Unity0·main0. 상세 [생성 및 WAV 비교 QA](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
