@@ -1,0 +1,21 @@
+{
+  "id": "main08_taeon_supp_006",
+  "recognized_text": "초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다. 여기서는 그 방향이 조금 더 분명합니다.",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.12,
+      "text": " 초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.",
+      "avg_logprob": -0.20213142782449722,
+      "no_speech_prob": 0.07321922481060028
+    },
+    {
+      "start": 7.12,
+      "end": 10.120000000000001,
+      "text": " 여기서는 그 방향이 조금 더 분명합니다.",
+      "avg_logprob": -0.20213142782449722,
+      "no_speech_prob": 0.07321922481060028
+    }
+  ],
+  "status": "RECOVERY_SOURCE_CANDIDATE_ONLY_HUMAN_APPROVAL_REQUIRED"
+}

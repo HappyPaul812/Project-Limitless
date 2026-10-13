@@ -1,3 +1,9 @@
+## 2026-10-13 Main08 Field02 음성 오류 — 원본 내용·분할 문제 후보 확인
+
+- codex/main08-field02-voice-20261013: docs/planning 사용자QA와 로컬 제작/WAV/Catalog 대조. ID/GUID·화자·자막/Manifest와 원본PCM 동일, 태온002 1.03초/RMS-48.98dBFS·발화검출없음, 미엘001 Main05문장/002 앞문장/003 정본문장+앞문장 ASR검출. 원인층은제작원본 내용↔ID/분할경계, 원생성내부와인간청취승인은미검증.
+- 실제격리6000.6.5f1 Trace01~03/Clip/Next/Mixer/Quest/Save·BootstrapContinue129PASS/FAIL0, 기존Search로PARTIAL/정본6000.5.7f1미검증. 기존다른ID 재사용·두문장분리 후보만문서인계, 새TTS/음성교체/Catalog·게임코드/원본변경0. 원본오류수정완료로보고하지말것.
+- 다음: 바울 대표/TTS담당이정확한ID·원문별재사용/분리후보청취; 불가시에만재생성준비·승인후적용. Main08_Field02_Voice_Technical_QA_20261013.md 참조. 마지막관련Commit은 `Docs: Main08 음성 원본 내용과 재생 경계 감사` 이력확인. Push0.
+
 ## 2026-10-13 PR7 Importer 동일성 검증·로컬 반영
 
 - 후보 d57ff66 → PR7 로컬 통합 codex/integrate-abc-planning-20261013 / 코드병합 2fbe9577b212ee46f4525a597c3bcd4d7833f055. 정상 로컬 설정 대비 2,016,000 픽셀 차이0·363 누락0·환경 Collider/Importer 동등·PNG7 바이트 동일. 새 Field04 228 PASS/FAIL0, 실제6000.6.5f1/정본6000.5.7f1 미검증·기존Search PARTIAL.

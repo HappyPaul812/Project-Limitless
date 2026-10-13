@@ -1,3 +1,9 @@
+## 2026-10-13 Main08 Field02 음성 오류 — 원본 내용·분할 문제 후보 확인
+
+- codex/main08-field02-voice-20261013: docs/planning 사용자QA와 로컬 제작/WAV/Catalog 대조. ID/GUID·화자·자막/Manifest와 원본PCM 동일, 태온002 1.03초/RMS-48.98dBFS·발화검출없음, 미엘001 Main05문장/002 앞문장/003 정본문장+앞문장 ASR검출. 원인층은제작원본 내용↔ID/분할경계, 원생성내부와인간청취승인은미검증.
+- 실제격리6000.6.5f1 Trace01~03/Clip/Next/Mixer/Quest/Save·BootstrapContinue129PASS/FAIL0, 기존Search로PARTIAL/정본6000.5.7f1미검증. 기존다른ID 재사용·두문장분리 후보만문서인계, 새TTS/음성교체/Catalog·게임코드/원본변경0. 원본오류수정완료로보고하지말것.
+- 다음: 바울 대표/TTS담당이정확한ID·원문별재사용/분리후보청취; 불가시에만재생성준비·승인후적용. Main08_Field02_Voice_Technical_QA_20261013.md 참조. 마지막관련Commit은 `Docs: Main08 음성 원본 내용과 재생 경계 감사` 이력확인. Push0.
+
 ## 2026-10-13 CURRENT_STATUS 문서 충돌 해소·최신 기획 정합
 
 - 로컬 미커밋 Unity6000.6.5f1 MCP 복구 기록(2026-10-10)을 원문 그대로 보존하고 최신 origin/main의 통합·미술 검수 기록 및 PR7의 A/B/C·Importer 기록을 합쳤습니다. 과거 기록은 당시 상태이며 기존 승인·PASS/PARTIAL/미검증 문구는 변경하지 않았습니다. 날짜가 있는 최근 기록은 최신 날짜부터 표시하고 기존 역사 순서는 유지합니다.
