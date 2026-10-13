@@ -1,3 +1,11 @@
+## 2026-10-13 A — Field04 v2 동서 도로 격리 후보
+
+- codex/field04-v2-road-20261013 / Temp/ABC20261013/A. 검수 Commit `f6222caacea500dfd71e9d9537cb2f9eca9396e9`. 최신 main0e04766·planning c0f1d7c 기준; 기존 통합 PR#2는 main에 반영되어 이력을 보존합니다.
+- 실제 Road30을 x=-7..7/y±.5로 재배치한 후보와 Optional Endpoint12 포함42안 제작. 대응363/363, 나무Medium3/Big2 수정, RockNorth alpha foot차-.005625, PPU128/Center/GUID55충돌0. 원본 게임 Scene/PNG/meta 변경0; 정식 적용은 미술 승인 대기입니다.
+- 최종 A674PASS/FAIL0 + 별도Preview244PASS/FAIL0. Main12→13/세린Story·일반2전투/35초/Continue2/147물리waypoint/Camera12/실제 동서 Physics Exit3 통과. 최초 QA helper·Importer 경로 누락은 보완 후 전체 재검증, 이전 결과는 Temp 보존. 기존 Editor Search예외·서쪽 Spawn 겹침·북쪽 틈/손플레이·원격6000.5.7f1 미검증으로 종합PARTIAL입니다.
+- 현재 보호 snapshot4,318파일 SHA 불변, 원본822미커밋/status/HEAD ff022e6 동일. 원본Editor포커스·Save·TTS/BGM 보호, TTS실행0/Push0/main병합0. 검수 보고서 Field04_v2_Road_Candidate_QA_20261013.md 및 Evidence/Field04_v2_20261013 참조.
+- 다음: 바울 대표의 v2 미술·도로30/42안 선택 승인 후 별도정식통합·동일회귀. B/C는 별도브랜치에서 관리하며 이 A 브랜치가 B/C 코드 통합을 포함한다고 간주하지 않습니다.
+
 ## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
 
 - 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.

@@ -61,3 +61,5 @@
 ## 승인·다음 단계
 
 바울 대표가 v2 색감/나무/바위와 **기본30안 또는 연장12 포함42안**을 선택·승인해야 정식 아트 통합이 가능합니다. 기존 서쪽 Spawn 겹침·북쪽 경계는 별도 기능 수정 승인/QA 대상으로 분리합니다. 승인 후 최신 main 기반 새 codex worktree에서 새PNG/meta만 등록하고 정확한 Road30/Renderer363 대응을 적용한 뒤 동일 회귀를 재실행합니다. 이번에는 원본 변경·main Commit·main 병합·Push를 하지 않습니다.
+
+검수 Commit `f6222caacea500dfd71e9d9537cb2f9eca9396e9`. [보호 최종검사](Evidence/Field04_v2_20261013/protection_final.json):4,318파일 SHA 변경0, 원본822미커밋/status/HEAD `ff022e63dfe364f559fcc29819d27b123ad31127` 동일. 최신 원격main/planning도 종료전 재fetch 결과 동일합니다. 이 수치는 이번 snapshot의 범위이며 이전 감사의4,750개 범위와 동일한 모집단이라고 주장하지 않습니다.
