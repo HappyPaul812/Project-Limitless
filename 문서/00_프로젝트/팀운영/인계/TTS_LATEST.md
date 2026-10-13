@@ -50,3 +50,12 @@
 - 샘플은 정식 재제작 10개 중 1개로 **재사용, 중복 생성 금지**. 남은9개는 **별도 생성 승인 필요**; 아직 호출0. 정상 Main18·19 Unity 음성25, Main17 승인 세린11, 기존 오류 WAV 원본/백업 보호.
 - 이후: 로컬 checkpoint와 샘플 hash 대조 → 현재 프로젝트·모델 무료 quota/과금 확인 → **나머지9개 명시적 승인** → 9개만 StoryOrder대로 생성/QA → 사용자의 전체 청취 → Codex 별도 Unity 통합.
 - 이 항목이 상단 과거 `SAMPLE_NOT_EXECUTED`를 대체. 현재 상태는 샘플 성공1·잔여9 잠금.
+
+
+## 2026-10-13 나머지9 생성기 오프라인 준비 — 최신
+- **사용자가 남은9개 제작 명시 승인**, 샘플 `main18_ground_serin_01` 재사용. 그러나 이 ChatGPT 작업에서 실제 Gemini 호출0·신규 WAV0 (사용자 PC 실행 대기).
+- 사용자 다운로드용 `M18_Serin_Schedar_REMAINING9.py`, SHA256 `94b75a9f0c7901bb4a94b2f0da017985036075809a593ee6c5838196a6a46c76`. SAFE v2와 샘플 생성 Python 2개 SHA 고정, 기존 25 정상/원본10/백업10/샘플 SHA 검증.
+- `check`는 API0, `run --key-slot 2 --max-new-calls 9 --approve-remaining-nine`는 사용자가 **실제 무료 잔여량과 Billing을 직접 확인하고 YES** 입력해야 시도. Project+Model quota, 키 변경에 따른 신규 예산 가정 금지. 쿼터 불확실 시 `--max-new-calls` 줄이기.
+- 기존 샘플 제외 Story `02,07,08,09,10,11,12,13,14` 순서. 자동 retry0, 호출 25초 간격, 실패/429 즉시 HOLD, 기존 성공 WAV 재생성 차단. 결과 Stage 폴더의 `remaining9_wav`와 StoryOrder CSV.
+- 오프라인 mock 정상9회/둘째429 즉시 중단 테스트 통과. 실제 SDK/사용자 PC 진행 여부는 아직 `NOT_EXECUTED`/후속 스크린샷 필요.
+- 상세: [나머지9 생성기 보고](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). 이번 문서는 `docs/tts` 전용, main 변경/병합0, Unity 변경0.
