@@ -1,5 +1,9 @@
 # Main08 Field02 흔적 조사 음성 문제 — 사용자 런타임 제보 (2026-10-13)
 
+## 현재 정본 상태 — EOD 통합
+
+청취 승인된6개 정식연결·디스크 적용·원격Push 완료. 아래 제보/보류는 당시이력이며 새 EOD 합본QA는 별도보고서에서 확인.
+
 **상태: USER_RUNTIME_REPORTED / TECH_ROOT_CAUSE_NOT_VERIFIED / CORRECTION_PENDING.** 바울 대표가 Unity 6.6(6000.6.5f1) 원본 프로젝트에서 Field_02 플레이 도중 캡처 3장으로 제보. 이 문서는 사실관계 및 부서 인계를 기록할 뿐, WAV/게임 자산 수정·재생성·Unity 적용이 아니다.
 
 ## 범위 / 사용자 실제 청취
@@ -96,3 +100,11 @@ SOURCE_CONTENT_MISMATCH_EVIDENCE / HUMAN_LISTENING_PENDING / CORRECTION_NOT_APPL
 ## 2026-10-13 Codex 승인6개 정식 연결·원본 반영 결과
 
 APPROVED_SIX_APPLIED_TO_BRANCH_AND_ORIGINAL. 승인WAV6개를Main08/ApprovedRecovery20261013에별도등록하고Catalog6GUID만교정해기존원음·GUID/meta를전부보존했습니다. 실제Clip의승인PCM/GUID/경로6PASS,Trace01~03/화자·초상화·Next/Mixer/Quest/SaveContinue새177PASS/FAIL0,기존Search로PARTIAL. 원본프로젝트디스크에반영완료/원본Play·포커스·HEAD/Save·설정·Scene·BGM보호/신규TTS·Push0. 승인집합밖태온005/006의기존내용불일치와대화중일반조우사례OPEN,전체Main08발화PASS라고보고하지않습니다. [정식변경목록·원본백업·최종QA](Main08_ApprovedVoice_Integration_QA_20261013.md).
+
+## 2026-10-13 승인 음성 Unity 적용·원격 Push 후속
+
+- 바울 대표가 전달한 Codex 최종 보고에 따라 **승인된 Main08 음성 6개**(`main08_taeon_supp_002/003/004`, `main08_miel_supp_001/002/003`)가 원본 프로젝트 디스크에 적용되었다. 별도 승인 WAV 폴더 등록·StoryVoiceCatalog 참조 6개 변경, 기존 출처 WAV/GUID/meta 보존.
+- Codex 격리 QA 결과 **177 PASS / FAIL 0**, 전체 PARTIAL. 기존 태온005·006 발화 문제와 대화 중 반복 몬스터 조우, Search 오류 및 Unity 버전 차이 미해결. 원본 실행 중 Play 세션이 즉시 새 클립을 로드했는지는 검증되지 않았다. 기타 보호 파일 5,538개와 사용자 미커밋·HEAD 보존 보고.
+- 해당 작업 브랜치 `codex/main08-approved-voice-apply-20261013`, Commit `79554069d010115a5427eedfc1c109994737f4fb`가 **GitHub 원격 Push 완료**되었음을 기획 담당이 GitHub에서 직접 확인했다. 원격 `main`은 확인 당시 `0e0476649b667129cb7aa6004f4b677335ed8be2` 그대로, **main 병합 없음**.
+- 현재 상태: **USER_LISTENING_APPROVED / DISK_APPLIED / QA_177_PASS_PARTIAL / REMOTE_BRANCH_PUSHED / MAIN_NOT_MERGED / LIVE_EDITOR_REFRESH_NOT_VERIFIED**.
+- 다음: 사용자가 Unity Play 세션을 안전하게 새로 시작할 기회에 실제 6개 음성을 청취 검증. 태온005·006과 반복 조우는 별도 결함으로 추적, 사용자가 승인할 때만 별도 범위 수정. main 통합은 PR/통합 QA와 별도 승인 후 진행.
