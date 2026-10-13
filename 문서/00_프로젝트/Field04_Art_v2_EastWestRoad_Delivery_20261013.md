@@ -21,7 +21,7 @@
 
 - 파일명: `Limitless_Field04_Renewal_Art_v2.zip`. 채팅 다운로드 제공, 사용자가 `F:\Downloads\`에 보관하는 방식. 이 세션이 사용자 PC F드라이브에 직접 저장했다고 주장하지 않음.
 - 크기: **2,741,669 bytes**, SHA256: `178ad6b235c65848cce48f4e2cfe86ff77c36857a12663237f7d7afa561f969d`.
-- **68파일 / PNG60개**: Road30, 추가 Endpoint12, Ground3(기존동일), Props7(기존6+수정 RockNorth1), Optional Story3(기존동일), 합성 Preview4, 기타 QA·CSV·문서.
+- **68파일 / PNG60개**: Road30, 추가 Endpoint12, Ground3(기존동일), Props7(기존6+수정 RockNorth1), Optional Story3(기존동일), 합성 Preview5, 기타 QA·CSV·문서.
 - 기존 v1 ZIP SHA256 `60f4c51d5dba1ad3bae862db033d36ccaae2cf8dac5b34b65762667874441be3`, 변경 없이 별도 보존.
 - `Manifest.json`, `RoadPlacement_30.csv`, `Optional_EndpointPlacement_12.csv`, `SpriteMapping_Corrected_v2.csv`, `Codex_Integration_Instructions.md`, `QA/Validation_v2.json`, 비교 Preview 및 실제 개별 PNG 포함.
 - ZIP CRC `testzip()==None` / 30 Road + 12 Optional 수량 / 매핑 333기존 비-Road 참조 + 30 Road = 363 정적 일치. PNG 크기/해시/알파는 오프라인 자체 검사.
