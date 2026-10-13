@@ -104,3 +104,15 @@
 - 실제 업로드 WAV 비교 결과 heat_vent는 사용자가 지적한 비음/탁한 질감이 승인 샘플과 달라 **`TTS_QA_RECOMMENDS_REGEN`**. 사용자 `REGEN 확정`이나 신규 생성 호출 승인은 아직 없음. 원본/체크포인트 보호.
 - WAV 중앙 F0 각각 약175/180Hz; 음색 차이는 성별/음높이 단정이 아니라 캐릭터 일관성 문제. 업로드본이 로컬 성공 WAV와 동일한지 SHA 재대조 필요.
 - 현재 저장성공8 유지, 그중 승인샘플 음색PASS1·Story07 재제작 권고1·나머지6 청취 대기; Story13 불확실, Story14 미호출. 추가 API0·Unity0·main0. 상세 [생성 및 WAV 비교 QA](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
+
+
+## 2026-10-13 신규 TTS 6개 업로드 — 세린 음색 일관성 검수 확대
+
+사용자가 Story02/08/09/10/11/12 WAV 여섯 개를 업로드하고 “다른 것도 조금씩 다르다”고 보고했다. 업로드 WAV 포맷과 F0 기초 검수: Story02 209.5, 08 198.2, 09 181.1, 10 189.7, 11 207.2, 12 211.0Hz 중앙값(참고용). 기준 승인 샘플 Story06 약180.2Hz. **음높이만으로 화자/재제작 필요 여부 판정 불가.**
+
+- Story06 샘플은 사용자 음색 승인 유지.
+- Story07은 사용자 불일치 보고 및 담당 재제작 권고, 기존 파일 보존.
+- Story02/08~12 여섯 개는 **`USER_LISTENING_REQUIRED`**. 사용자 최종 KEEP/REGEN 판정 미정; 저장성공을 청취 PASS로 승격하지 않음.
+- 전체 저장8개, Story13 실패/불확실 HOLD1, Story14 미호출1. 기존8개 중 사용자 음색 승인1, 재제작 권고1, 청취 판정 대기6.
+- 추가 생성·재호출/잠금 해제 금지. 잔여 신규 제작·Story07 재제작은 프로젝트 quota 및 Billing 확인/사용자 명시적 별도 승인 후.
+- 신규 음색 QA 상세: [TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
