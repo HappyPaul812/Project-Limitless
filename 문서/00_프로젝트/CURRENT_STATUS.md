@@ -1791,3 +1791,8 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 ## 갱신 규칙
 
 기능 작업 완료 시 완료 기능, 검증 상태, Unity 직접 확인 사항, 다음 권장 작업과 마지막 관련 commit hash를 갱신한다. 긴 작업 로그는 기록하지 않는다.
+
+
+## 2026-10-13 Field04 v2 42도로 정식 적용
+
+승인된 Road30 재배치+연장12 및 Grass315/Props18 적용. 새 격리 QA 253 PASS, 기존 Search/서쪽Spawn/북쪽경계/정본Unity버전 차이는 PARTIAL·OPEN. 원본 디스크 APPLIED. Main08/사용자Save/TTS/BGM 보호. 브랜치 codex/field04-v2-official-42-20261013; 관련 SHA는 해당 브랜치 최종 커밋 및 완료 보고 참조. 상세 `Field04_v2_Official42_Apply_QA_20261013.md`. 사용자 직접 플레이 확인 권장.

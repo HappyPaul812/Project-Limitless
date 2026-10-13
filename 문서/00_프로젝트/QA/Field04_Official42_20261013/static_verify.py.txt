@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+import pathlib as P,json,re,hashlib as H,zipfile,io
+from PIL import Image
+R=P.Path('F:/study/codex/Project-Limitless');T=R/'Temp/Field04Official42_20261013';W=T/'worktree';data=json.loads((T/'build.json').read_text(encoding='utf-8'));z=zipfile.ZipFile('F:/Downloads/Limitless_Field04_Renewal_Art_v2.zip');man=json.loads(z.read('Manifest.json'))
+hashes={}
+def traverse(x):
+    if isinstance(x,dict):
+        if 'sha256' in x:
+            for k in ['new_png','png','PNG','NewPNG','path']:
+                if k in x:hashes[x[k]]=x['sha256']
+        for v in x.values():traverse(v)
+    elif isinstance(x,list):
+        for v in x:traverse(v)
+traverse(man)
+allguids={};duplicates=[]
+for p in (W/'Unity/Client/Assets').rglob('*.meta'):
+    m=re.search(r'^guid: (\w+)',p.read_text(encoding='utf-8-sig',errors='replace'),re.M)
+    if m:
+        if m[1] in allguids:duplicates.append([str(p),allguids[m[1]]])
+        allguids[m[1]]=str(p)
+assert not any('Field04_V2_Official42' in a or 'Field04_V2_Official42' in b for a,b in duplicates),duplicates
+assets=[]
+for p in sorted({r['png'] for r in data['records']}):
+    b=z.read(p);d=H.sha256(b).hexdigest();assert H.sha256((W/'Unity/Client/Assets/_Project/Art/Environment/Field04_V2_Official42_20261013'/p).read_bytes()).hexdigest()==d
+    if p in hashes:assert d==hashes[p]
+    im=Image.open(io.BytesIO(b));im.load();assets.append(dict(path=p,sha256=d,size=im.size,mode=im.mode,manifest_sha=p in hashes))
+report=dict(status='PASS',zip_crc=True,png_decode=52,png_identical_to_approved_zip=52,guid_collisions_new=0,existing_guid_collision_pairs=len(duplicates),existing_guid_collisions=duplicates,manifest_hash_covered=sum(x['manifest_sha'] for x in assets),original_blocks_reversible=data['original_blocks'],assets=assets)
+(T/'static_verification.json').write_text(json.dumps(report,indent=2),encoding='utf-8');print({k:v for k,v in report.items() if k!='assets'})

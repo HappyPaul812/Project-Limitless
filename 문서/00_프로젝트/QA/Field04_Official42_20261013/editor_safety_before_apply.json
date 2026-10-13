@@ -1,0 +1,16 @@
+{
+  "projectRoot": "F:\\study\\codex\\Project-Limitless\\Unity\\Client",
+  "isPlaying": false,
+  "isPaused": false,
+  "isChanging": false,
+  "isCompiling": false,
+  "isUpdating": false,
+  "scenes": [
+    {
+      "path": "Assets/_Project/Scenes/Bootstrap.unity",
+      "name": "Bootstrap",
+      "isLoaded": true,
+      "isDirty": false
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+# -*- coding: utf-8 -*-
+import pathlib as P, hashlib as H, json, subprocess as S, re, zipfile, csv, io, uuid, shutil
+from PIL import Image
+R=P.Path('F:/study/codex/Project-Limitless'); T=R/'Temp/Field04Official42_20261013'; W=T/'worktree'; A='Unity/Client/Assets/_Project/Art/Environment/Field04_V2_Official42_20261013'; SC='Unity/Client/Assets/_Project/Scenes/Field_04_WesternBorder.unity'
+sha=lambda b:H.sha256(b).hexdigest()
+git=lambda *a:S.check_output(['git','-C',str(R),*a]).decode('utf-8')
+if not (T/'baseline.json').exists():
+    prior=json.loads((R/'Temp/Main08Approved20261013/push_protection.json').read_text(encoding='utf-8'))
+    paths=set(prior['files'])
+    for base in ['Unity/Client/Assets','Unity/Client/Packages','Unity/Client/ProjectSettings','문서']:
+        paths.update(str(p) for p in (R/base).rglob('*') if p.is_file())
+    files={p:sha(P.Path(p).read_bytes()) for p in paths if P.Path(p).is_file()}
+    (T/'baseline.json').write_text(json.dumps(dict(files=files,head=git('rev-parse','HEAD').strip(),status=git('status','--porcelain=v1','-z','--untracked-files=all')),ensure_ascii=False),encoding='utf-8')
+    B=T/'OriginalBackup';B.mkdir()
+    for p in [SC,SC+'.meta']:shutil.copy2(R/p,B/P.Path(p).name)
+z=zipfile.ZipFile('F:/Downloads/Limitless_Field04_Renewal_Art_v2.zip')
+assert sha(P.Path(z.filename).read_bytes())=='178ad6b235c65848cce48f4e2cfe86ff77c36857a12663237f7d7afa561f969d'
+assert z.testzip() is None
+def rows(n):return list(csv.DictReader(io.StringIO(z.read(n).decode('utf-8-sig').replace('\r\r\n','\n').replace('\r\n','\n').replace('\r','\n'))))
+roads=rows('RoadPlacement_30.csv');ends=rows('Optional_EndpointPlacement_12.csv');mapping=rows('SpriteMapping_Corrected_v2.csv')
+paths=sorted({x['v2_png'] for x in mapping}|{x['NewPNG'] for x in roads}|{x['PNG'] for x in ends});assert len(paths)==52
+out=W/A;out.mkdir(parents=True,exist_ok=True); guids={}
+template=(R/'Temp/Field01RenewalQA/Client/Assets/_Project/QA_Field04V2_20261013/Ground/LL_C2_F04_DryGrass_A_128_v1.png.meta').read_text()
+# Single Sprite uses Unity's stable 21300000 main object; remove obsolete sliced sprite records.
+template=re.sub(r'  internalIDToNameTable:.*?  externalObjects:', '  internalIDToNameTable: []\n  externalObjects:',template,flags=re.S)
+template=re.sub(r'    sprites:.*?    outline:', '    sprites: []\n    outline:',template,flags=re.S)
+template=re.sub(r'  spriteSheet:.*?  mipmapLimitGroupName:', '  spriteSheet:\n    serializedVersion: 2\n    sprites: []\n    outline: []\n    physicsShape: []\n    bones: []\n    spriteID: '+uuid.uuid4().hex+'\n    internalID: 0\n    vertices: []\n    indices:\n    edges: []\n    weights: []\n    secondaryTextures: []\n    nameFileIdTable: {}\n  mipmapLimitGroupName:',template,flags=re.S)
+for p in paths:
+    dest=out/p;dest.parent.mkdir(parents=True,exist_ok=True);data=z.read(p);Image.open(io.BytesIO(data)).load();dest.write_bytes(data)
+    guid=uuid.uuid4().hex;guids[p]=guid
+    meta=re.sub(r'^guid: .*$', 'guid: '+guid,template,flags=re.M)
+    (P.Path(str(dest)+'.meta')).write_text('\n'.join(x.rstrip() for x in meta.splitlines())+'\n',encoding='utf-8')
+for folder in [out,*[x for x in out.rglob('*') if x.is_dir()]]:
+    P.Path(str(folder)+'.meta').write_text('fileFormatVersion: 2\nguid: '+uuid.uuid4().hex+'\nfolderAsset: yes\nDefaultImporter:\n  externalObjects: {}\n  userData:\n  assetBundleName:\n  assetBundleVariant:\n',encoding='utf-8')
+source=(W/SC).read_text(encoding='utf-8'); original=(R/SC).read_text(encoding='utf-8');assert source==original
+parts=re.split(r'(?=^--- !u!)',source,flags=re.M); blocks={};types={};order=[]
+for b in parts[1:]:
+    m=re.match(r'--- !u!(\d+) &(-?\d+)',b);i=int(m[2]);blocks[i]=b;types[i]=int(m[1]);order.append(i)
+old=dict(blocks);names={i:re.search(r'  m_Name: (.*)',b)[1] for i,b in blocks.items() if types[i]==1}
+comps={}
+for i,b in blocks.items():
+    m=re.search(r'  m_GameObject: \{fileID: (\d+)\}',b)
+    if m:comps.setdefault(int(m[1]),{})[types[i]]=i
+parent=comps[next(i for i,n in names.items() if n=='FieldEnvironment')][4]
+mapping={x['original_fileID_guid']:x['v2_png'] for x in mapping};roadby={int(x['GameObjectFileID']):x for x in roads};records=[];changed=set()
+def sprite(i,p):
+    blocks[i]=re.sub(r'  m_Sprite: .*', '  m_Sprite: {fileID: 21300000, guid: '+guids[p]+', type: 3}',blocks[i]);changed.add(i)
+def pos(i,x,y):
+    blocks[i]=re.sub(r'  m_LocalPosition: \{x: [^,]+, y: [^,]+, z: ([^}]+)\}',lambda m:'  m_LocalPosition: {x: '+str(x)+', y: '+str(y)+', z: '+m[1]+'}',blocks[i]);changed.add(i)
+for g,c in comps.items():
+    if 212 not in c:continue
+    s=c[212];m=re.search(r'm_Sprite: \{fileID: (-?\d+), guid: (\w+)',blocks[s]);key=m[1]+'@'+m[2]
+    if g in roadby:
+        row=roadby[g];p=row['NewPNG'];pos(c[4],row['NewX'],row['NewY'])
+    else:p=mapping[key]
+    sprite(s,p);records.append(dict(go=g,name=names[g],sprite=s,png=p,guid=guids[p]))
+assert len(records)==363
+base=int(roads[0]['GameObjectFileID']); bc=comps[base];new=[]
+for n,row in enumerate(ends):
+    ids={base:900000000+n*3,bc[4]:900000001+n*3,bc[212]:900000002+n*3};assert not set(ids.values())&set(blocks)
+    for before,after in ids.items():
+        b=old[before]
+        for a,v in ids.items():b=re.sub(r'(?<=fileID: )'+str(a)+r'(?=[},])',str(v),b)
+        b=re.sub(r'^(--- !u!\d+ &)-?\d+',lambda m:m[1]+str(after),b)
+        if before==base:b=re.sub(r'  m_Name: .*','  m_Name: RoadEndpoint_'+str(row['X'])+'_'+str(row['Y']),b)
+        blocks[after]=b;types[after]=types[before];order.append(after)
+    pos(ids[bc[4]],row['X'],row['Y']);sprite(ids[bc[212]],row['PNG']);new.append(ids[bc[4]])
+    records.append(dict(go=ids[base],name='RoadEndpoint_'+row['X']+'_'+row['Y'],sprite=ids[bc[212]],png=row['PNG'],guid=guids[row['PNG']]))
+blocks[parent]=blocks[parent].replace('  m_Father:', ''.join('  - {fileID: '+str(i)+'}\n' for i in new)+'  m_Father:');changed.add(parent)
+# Prove all original blocks differ only in approved sprite references, road positions and parent child list.
+for i,b in old.items():
+    restored=blocks[i]
+    if types[i]==212:restored=re.sub(r'  m_Sprite: .*',re.search(r'  m_Sprite: .*',b)[0],restored)
+    if types[i]==4 and i!=parent and '  m_LocalPosition:' in b:restored=re.sub(r'  m_LocalPosition: .*',re.search(r'  m_LocalPosition: .*',b)[0],restored)
+    if i==parent:
+        for j in new:restored=restored.replace('  - {fileID: '+str(j)+'}\n','')
+    assert restored==b,i
+(W/SC).write_text(parts[0]+''.join(blocks[i] for i in order),encoding='utf-8')
+(T/'build.json').write_text(json.dumps(dict(zip_sha=sha(P.Path(z.filename).read_bytes()),protected=len(json.loads((T/'baseline.json').read_text(encoding='utf-8'))['files']),assets=52,renderers=375,road=42,original_blocks=len(old),changed_blocks=len(changed),records=records),ensure_ascii=False,indent=2),encoding='utf-8')
+print('BUILD PASS: 52 assets, 375 renderers, 42 roads; all original blocks reversible')
