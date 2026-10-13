@@ -80,3 +80,21 @@ Sample generation disabled. Separate user approval and generator required
 - 호출 직전 `SAMPLE_ONE_ATTEMPT.json` 배타 잠금. 결과는 독립 폴더에 `xb`로만 저장, 성공 시 WAV/SHA/SDK/Voice/Style/응답 MIME 보고. 1 ID/1 call/1 WAV, SDK attempts1, 실패·429 즉시 중단, Key 자동 교체/나머지9 실행 없음.
 - Python 문법/AST 유일 호출지점/RIFF fixture/파일 포맷 검사/ZIP CRC 오프라인 PASS. **사용자 LOCAL 실제 실행·샘플·API 호출은 모두 `NOT_EXECUTED`**.
 - 과거 원본10와 정상 Unity25 변경0, `main` 병합/Push0. 샘플 WAV의 사용자 실제 청취 승인 전까지 나머지9 제작 및 Unity 적용 금지.
+
+
+## 2026-10-13 Main18 세린 첫 샘플 실제 생성·음색 승인 — 최신 결과
+
+사용자가 PowerShell 스크린샷과 직접 청취 결과 "목소리 제대로 나와."를 제공했다. **사용자 PC 로그와 사용자 보고에 근거한 상태**로, 담당자가 WAV 바이트/원문 전체를 직접 열어 검증한 것은 아니다.
+
+- 실행: `python .\\M18_Serin_Schedar_SAMPLE_ONE.py --key-slot 2 --approve-one-call` + 사용자 `YES`; 확인 문구 이후 API 요청 **1회**.
+- 로그: `[PREFLIGHT PASS] target=10, protected=25, old backup=10, sample missing, no existing attempts`; `[API REQUEST] 정확히 1개 전송. 자동 retry=0`; `[SAVED]`.
+- 대상 `main18_ground_serin_01` / `companion_serin` / ExactText `지면 아래 반응은 계속됩니다. 원인과 표면의 변화는 구분해서 기록하죠.`
+- 모델 `gemini-3.8-flash-tts`, Voice `Schedar`, Key slot2(비밀 값 기록 없음).
+- 새 WAV: `F:\\Downloads\\Voice\\Limitless_TTS_Serin10_Schedar_v2\\sample_candidate\\main18_ground_serin_01.wav`.
+- 화면에 출력된 새 WAV SHA256: `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e` (**사용자 터미널 로그에서 읽은 값; 별도 해시 재계산 미실시**).
+- 사용자 **음색 실제 청취 PASS**: `USER_VOICE_APPROVED`. 다만 원문 단어 누락/혼입/길이의 전체 의미별 청취 판정은 별도로 `USER_EXACTTEXT_QA_PENDING` 유지. ASR/WAV 전체 직접 검증도 별도.
+- 기존 오류10개 원본·백업, 승인된 정상25개와 Main17 승인본 유지; Unity 적용/기존 WAV 교체/다른9개 생성 **0**.
+- 샘플은 성공한 10개 대상 중 1개로 인정하며 **절대 중복 호출 금지**. 향후 재개 전 `SAMPLE_ONE_ATTEMPT.json`, sample SHA 및 `BASELINE.json` 정합을 로컬에서 다시 확인할 것.
+- **잔여9개 별도 생성 승인 아직 없음**. 각 호출 전에 무료 quota/프로젝트/과금 위험을 재확인하고, 사용자 별도 명시적 승인 후 진행. 첫 429/실패 시 즉시 중단하고 자동 retry/Key fallback 금지.
+- 로그의 `Direct use of automatic function calling (AFC) ... not recommended`는 SDK 경고로 관측됐지만 이번 호출이 저장 성공한 사실과 구분. 원인 분석 없이 오류로 단정하지 않음.
+- 이번 TTS 담당의 추가 API 호출0, GitHub `docs/tts` 문서만 갱신. main/Unity 수정0.
