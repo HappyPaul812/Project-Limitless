@@ -92,3 +92,8 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 새세션시작문구: “LIMITLESS Codex 담당입니다. AGENTS·CURRENT_STATUS·이인계를확인하고 Field03 정상11종은보존한채 Rock B후속범위만진행해주세요. 원본Editor·337사용자변경·Save보호, Push/TTS API금지.”
 
 정식 통합 Commit은 `dcd913e4dcb870528206623120a0d2d1af0059d5`입니다. 후속 문서 Commit은 이 SHA를 CURRENT_STATUS/QA에 기록합니다.
+
+
+## 2026-10-13 Field04 v2 42도로 정식 적용
+
+승인된 Road30 재배치+연장12 및 Grass315/Props18 적용. 새 격리 QA 253 PASS, 기존 Search/서쪽Spawn/북쪽경계/정본Unity버전 차이는 PARTIAL·OPEN. 원본 디스크 APPLIED. Main08/사용자Save/TTS/BGM 보호. 브랜치 codex/field04-v2-official-42-20261013; 관련 SHA는 해당 브랜치 최종 커밋 및 완료 보고 참조. 상세 `Field04_v2_Official42_Apply_QA_20261013.md`. 사용자 직접 플레이 확인 권장.
