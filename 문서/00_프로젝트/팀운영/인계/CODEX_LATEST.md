@@ -1,3 +1,11 @@
+## 2026-10-13 A — Field04 v2 실제 동서 도로 후보
+
+- A 브랜치 codex/field04-v2-road-20261013 / Temp/ABC20261013/A / 검수SHA f6222caacea500dfd71e9d9537cb2f9eca9396e9. main0e04766/planning c0f1d7c 확인. 원본 main/822미커밋/4,318 SHA/status/HEAD 보존.
+- Field04 원본 공식 Scene은 이 브랜치에서도 변경0. 격리 ReviewScenes/Field04_v2_Candidate30.unity와Candidate42.unity 및 실제RT Preview를 생성했습니다. Artifact `.unity.txt`는 검토자료이며 단독 실행자산이 아닙니다. 정확한30객체 fileID/old좌표 일치, 도로30 실제 이동, 연장12는 추가승인 후보입니다.
+- 최종674+244 PASS/FAIL0. PPU128·나무5·RockNorth접지 보완/Quest·Battle·Save·147물리경로/Camera·실제Physics Exit 통과. 초기Importer누락 화면은 폐기하지 않고Temp에보존, 최종자료에서는 사용하지 않았습니다. 기존Search·서쪽Spawn·북쪽틈은OPEN, 사용자미술/손플레이/6000.5.7f1 미검증.
+- 바울 대표가 v2 색감과30/42안 중 선택 승인할 때까지 원본아트영구적용0. 승인후최신main 새Codex브랜치에서PNG/meta등록과최소Scene참조/좌표변경·전체회귀 수행. B 스킬과 C 펫은별도worktree/브랜치로 유지; Push/main병합/TTS호출0.
+- 정본 보고: ../../Field04_v2_Road_Candidate_QA_20261013.md. 후임은특히초기Preview가아닌최종PPU128 Preview/knownSearch원문/원본Spawn진단을확인해야합니다.
+
 ## 2026-10-13 작업 C — Chapter2 안전지역 펫 확대 / 격리 구현·QA PARTIAL
 
 - 브랜치 `codex/safezone-services-20261013`, worktree `Temp/ABC20261013/C`, main기준0e04766/planning정본c0f1d7c. 원본main/사용자미커밋·Save·아트·TTS/BGM 무접촉, Push0.
