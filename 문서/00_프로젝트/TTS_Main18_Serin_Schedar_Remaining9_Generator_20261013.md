@@ -28,3 +28,19 @@
 - 1회 샘플이 이미 같은 Key2 슬롯에서 성공했으므로, 9회는 **다른 호출이 없고 Project+Model 무료 잔량 ≥9일 때만** 요청 가능. 사용자가 `--max-new-calls`로 안전한 수만 지정할 수 있다.
 - 실패/429이면 즉시 중단하고 로그 판독 전 재실행 금지. 9개 WAV 성공 ≠ 사용자 청취 승인. 전체10 음색·원문·혼입/누락/길이 검수 후 Codex에게 별도 Unity 음성 연결 승인 필요.
 - 이번 업무의 Unity 수정0, main 수정/merge0, 실제 GitHub 문서 기록은 `docs/tts`에서만.
+
+
+## 2026-10-13 사용자 LOCAL 제작 결과 — Story13 런타임 실패 안전 중단
+
+사용자가 Anaconda PowerShell 스크린샷을 제공했다. **사용자 터미널 출력 기반 관측**이며, 별도 WAV 바이트 검사나 실제 청취는 이번 담당이 직접 수행하지 않았다.
+
+- 승인 샘플 Story06 `main18_ground_serin_01`은 이전 성공1/사용자 음색 PASS, 기존 SHA 그대로 **중복 생성하지 않음**.
+- 남은9 대상 중 Story **02,07,08,09,10,11,12** 성공 저장 **7개**. 출력 각각 `[SAVED]` 및 SHA256 기록 있음. WAV 파일별 실물/SHA 재검증은 로컬 검사 대기.
+- 이번 9대상 중 Story13 `main18_watcher_witness_serin_01`은 `[API REQUEST]` 직후 `[SAFE HOLD] ... / RuntimeError` 발생. **결과 불확실 1회**: 서버측 quota 소진인지, API 응답 오류인지, 저장/PCM 변환 문제인지 **UNKNOWN**. 단순히 quota 초과로 단정 금지.
+- Story14 `main18_watcher_witness_serin_02`는 **NOT_CALLED**.
+- **최종 상태(사용자 로그): 정식 목표10개 중 저장8(샘플1+이번7), 실패/불확실1, 미호출1.** 이번 배치 추가 API 전송 시도8개(성공7+불확실1), 최초 샘플까지 합계 시도9(사용자 제공 로그 기준).
+- 실패 위치 원본 코드 `except BaseException`은 감지된 `RuntimeError`의 상세 메시지를 숨기고 `FAILED_OR_UNCERTAIN_HOLD`를 남긴다. `RuntimeError` 원인은 **메시지가 없으므로 미확정**.
+- **SAFETY HOLD 상태 유지**: 기존 성공8/정상 Unity25/오류 원본10/백업10 및 모든 checkpoint 보호. 원본의 `remaining9_attempts`, `remaining9_results`, `remaining9_wav`, `SAMPLE_ONE_ATTEMPT.json`, `remaining9` HOLD/LOCK 관련 자료 삭제·수정 금지.
+- API 재시도0, KEY 변경0, 잠금/체크포인트 삭제0, Story14 선호출0. 현재 quota와 Billing 불확실, **추가 실행 허가0**. 이전 나머지9 생성 승인은 이미 시도되어 중단한 상태로, 실패후 재개는 원인 확인과 별도 사용자 승인 필요.
+- 다음: Codex가 해당 사용자 LOCAL stage를 **읽기 전용**으로 조사하여 Story13 attempt/hold/lock/result/WAV 유무, 7개 SAVED hash·PCM·기존 샘플 및 정상25 보호, SDK 버전과 `RuntimeError` 발생 가능 코드/오류 경로 확인. API/Python 생성기 실행 금지. 결과를 받은 후 정확한 재개 지점(Story13 재시도 필요 여부/Story14 미호출)을 결정.
+- 사용자 전체 음색/원문 청취 승인은 아직 완료되지 않았음. 최종 승인 전 Unity 적용 금지. 본 갱신은 `docs/tts` 문서만이며 `main` 변경·Git Push/Unity 작업0.
