@@ -117,3 +117,28 @@
 - Story07 업로드 WAV가 실제 사용자 F:의 성공본과 현재 바이트 동일한지는 **로컬 checkpoint SHA와 재대조 필요**. Story06 승인 샘플 SHA는 기존 로그와 동일.
 - 전체 목표10 중 로컬 WAV8개 저장 상태는 불변; 그중 사용자 음색 승인1, 검수 보류/재제작 권고1, 다른6 새 WAV 별도 청취 필요, Story13/14 아직 미완료.
 - Story13 SAFE HOLD/LOCK 유지. 해당 파일 재생성·Story13/14 재개는 quota·프로젝트 귀속 및 사용자 별도 승인 전 불가. 추가 API 호출0, Unity 및 main 변경0.
+
+
+## 2026-10-13 신규 업로드 WAV 6개 추가 음색 검토 — 사용자 "다른 것도 조금씩 달라"
+
+사용자가 Story02 `main18_leon_serin_01.wav`, Story12 `main18_vibration_serin_01.wav`, Story08~11 `main18_overheat_serin_01~04.wav` 총6개를 추가 업로드하고, **"다른거도 쪼금씩 달라..."**고 보고했다. 이번 첨부 WAV의 파일 디코딩 및 음높이 기초 분석을 실시했다. **6개 모두 아직 사용자 음색 PASS가 아니다.**
+
+| Story | Dialogue ID | 길이(s) | F0 중앙값(Hz, 근사) | 검수 분류 |
+|---:|---|---:|---:|---|
+| 02 | `main18_leon_serin_01` | 5.20 | 209.5 | USER_LISTENING_REQUIRED |
+| 08 | `main18_overheat_serin_01` | 4.96 | 198.2 | USER_LISTENING_REQUIRED |
+| 09 | `main18_overheat_serin_02` | 2.96 | 181.1 | USER_LISTENING_REQUIRED |
+| 10 | `main18_overheat_serin_03` | 6.92 | 189.7 | USER_LISTENING_REQUIRED |
+| 11 | `main18_overheat_serin_04` | 3.52 | 207.2 | USER_LISTENING_REQUIRED |
+| 12 | `main18_vibration_serin_01` | 5.52 | 211.0 | USER_LISTENING_REQUIRED |
+
+음색 기준 승인 샘플 Story06 `main18_ground_serin_01`은 6.52초, F0 중앙값 약180.2Hz. 이전 불일치 Story07 `main18_heat_vent_serin_01`은4.52초, 약177.2Hz. 모두 24kHz mono WAV. 대사·표정·말의 길이, 억양에 따라 F0가 바뀌므로 이 수치만으로 화자 동일/차이·재제작 필요를 확정할 수 없다. 사용자 설명 및 비교 검수는 **세린 캐릭터의 일관성 문제**로 다루고, 파일 성별이나 요청 Wire Voice를 수치로 단정하지 않는다.
+
+현재 의사결정:
+- Story06: 사용자 **음색 승인** 유지. ExactText 전체 의미 청취 PASS와 분리.
+- Story07: 사용자 기존 음색 불일치 + TTS 담당 재제작 권고; 원본 보존, 신규 API 승인 없음.
+- Story02/08~12: 여섯 업로드 WAV의 기본 포맷·음높이 검토, **최종 사용자 청취 판정은 미정**. 임의로 `REGEN_REQUIRED` 일괄 변경하지 않는다.
+- Story13: `FAILED_OR_UNCERTAIN_HOLD`, Story14: `NOT_CALLED`. **SAFE HOLD 잠금 유지**.
+- 제작 상태 **성공 저장8개**(승인 샘플1 + 재제작권고1 + 추가 청취6), 미완료2. **승인 통과가 8개라는 뜻이 아니다**.
+- 가능한 다음 단계: 샘플→02,07,08~12 상대 비교, 사용자가 KEEP/REGEN 결정 후 **확정된 불일치만** 재제작 계획에 포함한다. 할당량·프로젝트 연계·안전 재개 문제 해결 및 추가 명시적 승인 전 **API 호출0**.
+- 기존 오류 원본10, 백업10, Unity 정상25, Main17 승인 음성, WAV와 lock/checkpoint 파일 수정0. `main` 변경0.
