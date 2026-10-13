@@ -1,0 +1,20 @@
+{
+  "planning_sha": "612ff531f7c067f87441c9f6c2614089a5751c8c",
+  "integration_sha": "7f493c69080047a06d34b96b71ea57ae4b409e30",
+  "planning_fully_contained_in_integration": true,
+  "added": 196,
+  "updated": 7,
+  "already_equal": 1019,
+  "conflicts": [
+    {
+      "path": "문서/00_프로젝트/CURRENT_STATUS.md",
+      "action": "CONFLICT_UNCOMMITTED",
+      "blob": "2b2014d8b0899234f9f78c461be8d8d63fda59da",
+      "remote_sha256": "02caec65fbe7738546f40c2ba7f92942c28989f9bbe691d010a6dca9fc2629e3",
+      "local_sha256": "a3ccd498f40589fa05f14d20fd9f69c247117eff24aee490d7c6e7af4752f273"
+    }
+  ],
+  "protected_existing_files_unchanged": 5334,
+  "unauthorized_file_changes": [],
+  "original_main_head_unchanged": true
+}
