@@ -73,3 +73,18 @@
 - 즉시 할 일: 기존 프로젝트 로컬 `--key-slot` 처리, 사용 API 키 환경변수의 *이름만*, 실제 키와 Google Cloud Project의 대응을 **비밀 값 출력 없이** 확인하도록 Codex 정적 감사 요청. 키값·결제정보·환경변수 전체 출력 금지. 원인 확인 전 네트워크/생성 요청 금지.
 - Story13 `RuntimeError`의 메시지·원인 여전히 UNKNOWN. `FAILED_OR_UNCERTAIN_HOLD` 해제 금지, Story14 선호출 금지.
 - 승인된 샘플1·신규성공7 원본과 SHA, 오류원본10/백업10, Unity 정상25 모두 보존. 추가 TTS API0, Unity 변경0, main 병합·Push0.
+
+
+## 2026-10-13 Codex 읽기 전용 원인 감사 수령 — SAFE HOLD 유지
+
+사용자가 Codex의 감사 완료 메시지 화면을 제공했다. **Codex가 보고한 로컬 감사 결과**이며 본 TTS 담당은 사용자 PC 파일에 직접 접근하지 않았다.
+
+- `main18_ground_serin_01` 승인 샘플1 + 추가 Story02·07~12 WAV7 = **8개 모두 로컬에 존재**, 각 SHA256·기존 checkpoint·PCM 형식 **PASS**라는 보고.
+- Story13 `main18_watcher_witness_serin_01`: **시도 기록 및 HOLD 기록 존재**. 새/부분 WAV·신규 결과 JSON **없음**. 기존 오류 백업 WAV는 새 성공 결과 아님.
+- Story14 `main18_watcher_witness_serin_02`: **로컬 시도 기록·결과·신규 WAV 없음** → `NOT_CALLED_LOCAL_RECORD`; 서버 호출 자체가 전혀 없었다는 사실까지 실측한 것은 아님.
+- Story13 원인: **UNKNOWN**. 로컬 기록에는 예외 이름 `RuntimeError`만 남아 Google API 응답·429/할당량·WAV 변환/검증·저장·SDK 단계 중 어느 오류인지 구분 불가. 429로 확정 금지.
+- 보존: Codex가 대상 폴더 **42개 파일 + 프로젝트 보호 파일 5,199개**의 SHA256을 비교해 불변이라고 보고. `HOLD`, `SESSION.lock`, 시도 기록 보호.
+- Codex 조사 과정의 API 시도 **0**, WAV 수정/삭제 **0**, Unity 변경 **0**, Git Push **0**.
+- **SAFE HOLD 유지**. 원본 checkpoint/lock 삭제 또는 수정하지 않음, Story13 재시도·Story14 선호출·Key 변경 금지. 재개를 위한 별도의 새 이력/수동 승인 흐름은 향후 quota·프로젝트 귀속·비용 확인과 사용자 별도 승인 후 설계·실행.
+- 전체10 음색/ExactText 사용자 청취 검수는 샘플을 제외하고 아직 완료되지 않음. 신규8개 Unity 적용 승인도 없음.
+- Codex 메시지 내 외부 보고서 링크/ID별 SHA 표 자체는 이 대화에 제공되지 않음. 세부 보고 경로/근거는 추가 자료가 있을 때 재확인한다.
