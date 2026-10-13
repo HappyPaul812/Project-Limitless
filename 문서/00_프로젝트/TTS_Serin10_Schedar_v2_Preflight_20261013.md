@@ -36,3 +36,29 @@
 - 신 도구 오프라인 설계·fixture 검증 완료. 실제 사용자 로컬 감사/prepare **NOT_EXECUTED**.
 - Gemini API 0, 신규 WAV 0, 신규 샘플 SHA 없음, 사용자 청취 미실시. Unity 수정0, GitHub main 수정0, Push/merge0.
 - 분기: 이번 기록 **`docs/tts` 전용**. `main` 병합은 사용자 승인 필요.
+
+
+## 2026-10-13 사용자 LOCAL 실행 결과 후속 갱신
+
+사용자가 PowerShell 실행 화면을 제공했다. 이는 **사용자 PC 터미널 로그 기반 관측**이며 담당자가 사용자 PC 파일을 직접 열거나 WAV 원본을 재계산한 별도 검증은 아니다.
+
+```text
+python .\M18_Serin10_Schedar_v2_SAFE.py audit
+[AUDIT PASS] target=10, protected=25, Voice=Schedar, API=0
+[READ-ONLY] No files written. Quota/Billing: NOT_VERIFIED. Sample: NOT_EXECUTED.
+
+python .\M18_Serin10_Schedar_v2_SAFE.py prepare
+[AUDIT PASS] target=10, protected=25, Voice=Schedar, API=0
+[PREPARE COMPLETE / API 0] F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2
+Original error WAV 10 backed up with SHA verification; original paths unchanged
+Protected normal WAV 25 compared; no Unity modifications
+Sample generation disabled. Separate user approval and generator required
+```
+
+- **갱신된 LOCAL 상태:** `AUDIT_PASS / PREPARE_COMPLETE` (사용자 실행 로그). 사용자 LOCAL의 실제 오류10 원본·정본·정상25 대조와 독립 백업을 스크립트가 PASS로 보고했다.
+- 기존 기록의 `LOCAL_NOT_EXECUTED` 및 `실제 사용자 로컬 감사/prepare NOT_EXECUTED`는 **위 후속 결과로 대체**한다. 원본 v1·Unity·기존 정상 WAV를 변경했다는 증거는 없으며 로그상 변경0.
+- `API_CALL_LOCKED` 설계 유지, 모델 `gemini-3.8-flash-tts`, Voice `Schedar`, 대상 샘플 `main18_ground_serin_01` 고정.
+- **Gemini 호출0 / 신규 샘플0 / 샘플 SHA 미생성 / 청취 승인0**. 실제 Google Project별 현재 무료 quota·Billing 상태 `NOT_VERIFIED`로 유지.
+- 다음 필수 승인 게이트: 사용자 Google AI Studio에서 프로젝트·모델별 실제 무료 가능량/과금 위험 확인 → **샘플 1회 명시적 승인** → 별도 1-call TTS 도구 사전 검토 → 1개 생성/음색 청취 PASS → 9개 별도 승인. 429·실패 즉시 중단.
+- 성공 백업 폴더를 다시 `prepare`할 필요가 없다. 작업용 기존 폴더를 삭제하거나 재생성하는 우회 금지.
+- `main` 병합 및 신규 TTS/Unity 적용 승인 없음.
