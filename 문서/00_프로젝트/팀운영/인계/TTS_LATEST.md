@@ -116,3 +116,15 @@
 - 전체 저장8개, Story13 실패/불확실 HOLD1, Story14 미호출1. 기존8개 중 사용자 음색 승인1, 재제작 권고1, 청취 판정 대기6.
 - 추가 생성·재호출/잠금 해제 금지. 잔여 신규 제작·Story07 재제작은 프로젝트 quota 및 Billing 확인/사용자 명시적 별도 승인 후.
 - 신규 음색 QA 상세: [TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
+
+
+## 2026-10-13 정정 — 사용자 신규8 WAV 전부 청취 완료
+
+사용자가 **“난 다 들어봤다고....”**라고 명확히 밝혔으므로 이전 '나머지6 청취 대기'는 오기다.
+
+- 저장 성공8개 모두 사용자 직접 청취: `USER_LISTENED=8`. 다시 들어보라고 요구하지 말 것.
+- Story06 ground 1개: `USER_VOICE_APPROVED`.
+- Story07 heat_vent 1개: `USER_REPORTED_TIMBRE_MISMATCH / TTS_QA_RECOMMENDS_REGEN`.
+- Story02 leon, Story08~11 overheat4, Story12 vibration1의 6개: `USER_REPORTED_TIMBRE_VARIANCE`; 각각 음색이 조금씩 달라 사용자가 직접 지적함. 사용자 파일별 최종 KEEP/REGEN 결정은 미표명, 추측 금지.
+- Story13 실패/불확실 HOLD, Story14 미호출. 기존 WAV8/정상25/backup/LOCK 보호. 추가 API0, Unity0, main0.
+- 정본: [생성기 및 사용자 청취 정정](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md)
