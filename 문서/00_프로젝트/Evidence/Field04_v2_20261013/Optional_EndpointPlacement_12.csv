@@ -1,0 +1,13 @@
+X,Y,PNG,Action,Risk
+-10,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-10_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+-10,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-10_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+-9,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-09_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+-9,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-09_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+-8,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-08_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+-8,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_-08_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+8,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+08_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+8,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+08_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+9,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+09_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+9,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+09_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+10,-0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+10_Lower_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
+10,0.5,Optional_Endpoint/LL_C2_F04_Extension_EW_+10_Upper_v2.png,Optional NEW noncolliding SpriteRenderer only after approval,TreeEast/TreeWest and west Spawn physical clearance QA required
