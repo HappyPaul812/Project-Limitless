@@ -88,3 +88,16 @@
 - **SAFE HOLD 유지**. 원본 checkpoint/lock 삭제 또는 수정하지 않음, Story13 재시도·Story14 선호출·Key 변경 금지. 재개를 위한 별도의 새 이력/수동 승인 흐름은 향후 quota·프로젝트 귀속·비용 확인과 사용자 별도 승인 후 설계·실행.
 - 전체10 음색/ExactText 사용자 청취 검수는 샘플을 제외하고 아직 완료되지 않음. 신규8개 Unity 적용 승인도 없음.
 - Codex 메시지 내 외부 보고서 링크/ID별 SHA 표 자체는 이 대화에 제공되지 않음. 세부 보고 경로/근거는 추가 자료가 있을 때 재확인한다.
+
+  
+## 2026-10-13 사용자 음색 검토 — Story07 보류
+
+사용자는 생성 WAV `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\remaining9_wav\main18_heat_vent_serin_01.wav`에 대해 **"감기걸린 여자? 변성기 전 미소년?"**이라고 청취 인상을 보고했다.
+
+- Dialogue ID: `main18_heat_vent_serin_01` / Story07 / `companion_serin`.
+- 파일 제작 및 checkpoint 상태: `SAVED` (앞서 SHA/PCM 검증 PASS). **제작 성공과 화자 음색 승인 별개**.
+- 음색 상태: `USER_REPORTED_TIMBRE_MISMATCH / USER_REVIEW_REQUIRED / HOLD`. 기존 승인된 Story06 샘플과 음색 일관성 확인 필요. 최종 `REGEN_REQUIRED` 승격은 사용자 판정 또는 실제 비교 검토 후.
+- 담당자는 해당 사용자 로컬 WAV를 **직접 청취하지 못했음**. 여성/남성 음색·발화 정확성을 단정하지 않는다.
+- 샘플1 포함 WAV8개 저장 상태는 그대로 유지, 단 Story07은 사용자 최종 음색 승인 **불가·보류**. 다른 새 WAV 자동 승인 금지.
+- 원본 WAV/기존 정상25/backup/checkpoint/lock 보존. API 재호출0, Unity 변경0, GitHub main 변경0.
+- Story13 `SAFE HOLD` 해제 없음. 기존 Story13/14 2개 미완료 상태 유지.
