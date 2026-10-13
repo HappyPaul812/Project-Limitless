@@ -1,3 +1,13 @@
+## 2026-10-13 B — 장착·전투 UI 구현 인계
+
+- 구현 worktree Temp/ABC20261013/B / branch codex/skill-loadout-ui-20261013 / 구현·QA c4ed7c9fd2ed9b3fe5cf3ea1c57387ef51d5e816. 원격main0e04766·planningc0f1d7c기준. [상세보고·실제Preview](../../Skill_Loadout_UI_Implementation_QA_20261013.md).
+- SkillLoadoutService는 현재시작3개만 실제공급, 캐릭터+직업별6칸/독립보관함·무료해제/교체·중복/타ID차단·전투중변경금지. Battle 시작에ID/칸위치스냅샷,2행×3열/빈칸버튼0/뒤로별도. World/Field/Dungeon/Arbel K·패드Menu/Start관리, 닫기월드포커스null. 후기동료해금명단·36행스크롤/Mask/focus검사포함.
+- Root 격리6000.6.5f1 Batch에서72UI+154기존15스킬+28 C/B펫공존PASS, 기존BattleSilenceAudit 직접ALL PASS. 상세팝업은21:9재현 후 안내상단+8px만최소보정. 신규Runtime/Compile오류0, 기존Search예외1로PARTIAL. 정본6000.5.7f1/실물입력/장기가독성NOT_VERIFIED.
+- Save버전1·5슬롯/schema 변경0. 장착은이번실행만유지, 새게임/Save로드/재시작때시작3개로초기화; 화면에제한명시. 신규가격/효과/Chapter3ID/실제구매/강화정의생성0. RegisterApprovedDefinition은내부미래연결계약이며 영속거래/직업/Modal검증이연결돼야구매가완성됨.
+- Original4,318보호파일SHA·822dirtyfiles/status/HEAD불변, 원본Focus/Editor·Scene·PNG·기존meta·Save·TTS/BGM·ThirdParty보호, Push/mainmerge0. B근거는 Evidence/SkillLoadout_20261013, Helper는 `.cs.txt`이며원본실행금지. C+B공존helper는C overlay도필요.
+- 다음: 대표님UI검토·Save소유권/직업/안정ID/버전1호환·저장실패롤백계약확정. 승인된브랜치Push/PR/main반영은사용자결정. 가짜Chapter3스킬/강화상품을만들거나예시를정식데이터로옮기지말것.
+
+후임 시작 문구: “LIMITLESS Codex B 담당입니다. Skill_Loadout_UI_Implementation_QA_20261013·CURRENT_STATUS·이 인계를 읽고 codex 작업브랜치만 사용하세요. 기존15/Save/822 사용자 파일 보호, 6칸 장착은 세션임시이며 영속 저장과 신규 상품은 미확정입니다. 원본 main·Editor·Focus·아트·TTS·Push를 건드리지 마세요.”
 ## 2026-10-13 새 담당별 브랜치 규칙·통합 v2
 
 - 사용자최신규칙: AI main직접커밋금지. 기획docs/planning, Codex codex/주제별브랜치+별도worktree. 이전HEAD:main명령사용금지, ../../Git_BranchOnly_Integration_20261013.md의작업브랜치Push안내우선. CodexPush0/main병합은사용자별도결정.

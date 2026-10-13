@@ -1,3 +1,10 @@
+## 2026-10-13 B — 6칸 임시 스킬 장착·2행×3열 전투 메뉴
+
+- codex/skill-loadout-ui-20261013 / Temp/ABC20261013/B에서 구현·격리 QA 완료. 캐릭터ID/직업별6칸+독립보관함, 전투시 칸위치 스냅샷, 빈칸버튼0·뒤로분리·K/패드Menu·Start 무료관리. 시작3개/직업·기본5명령·기존15효과·Quest/NPC/펫/Scene/Save schema 보호.
+- 실제Unity6000.6.5f1: 새UI/장착72 PASS, 기존15스킬154 PASS(effect15), C+B 3안전지역 공존28 PASS, 기존침묵감사ALL PASS. 5해상도/16:9·4:3·21:9 RT 및36행Mask/focus/6칸geometry PASS. 초기 명단호출누락/21:9팝업겹침 FAIL을 수정하고 원시실패 보존.
+- 전체PARTIAL: 기존UnityEditor.Search 예외1/신규Runtime0. 정본6000.5.7f1·실물입력/손플레이/장시간가독성 미검증. 장착은 세션메모리만 유지, 새게임/Save로드/재시작시 시작3개 복원(화면직접명시). 영속학습/장착Save계약·상품/가격/Chapter3ID 결정대기, 실제신규스킬/상점0.
+- 원본4,318파일SHA·822미커밋파일/status/HEAD불변. 원본Editor·Focus·PNG/meta/Save/TTS/BGM/ThirdParty 무변경, Push/main병합0. [보고·Preview·실패근거](Skill_Loadout_UI_Implementation_QA_20261013.md).
+- 다음: 대표님 관리/전투UI 확인 및 Save 영속계약 결정, 승인된 작업브랜치만 사용자Push/PR 검토. 마지막 구현·QA Commit: `c4ed7c9fd2ed9b3fe5cf3ea1c57387ef51d5e816`.
 ## 2026-10-13 담당별 브랜치 규칙·통합 v2 준비
 
 - 기존 통합961c90d/이전worktree·원본main ff022e6 보존. 새 codex/integrate-main-20261013-v2 / Temp/GitIntegration20261013V2/main-integration에서 최신origin/main73c37bf를 merge, 충돌0/이전통합·원격둘다조상/Unity변경0. Merge SHA `71f71bb934bfc2ea5542b0a96d957410c35e1f7d`.

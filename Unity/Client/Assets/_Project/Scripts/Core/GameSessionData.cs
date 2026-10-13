@@ -99,6 +99,7 @@ namespace ProjectLimitless.Core
 
         public static void Reset()
         {
+            ProjectLimitless.Battle.SkillLoadoutService.Reset();
             PartyResourceService.Reset();
             CompanionRosterService.Reset();
             BeastCompanionService.Reset();
