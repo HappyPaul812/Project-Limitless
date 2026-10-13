@@ -1,0 +1,9 @@
+{
+  "pixel_count": 2016000,
+  "different_pixels": 0,
+  "environment_rgba_identical": true,
+  "renderer_contract_identical_except_asset_guid": true,
+  "collider_snapshot_identical": true,
+  "missing_normal": 0,
+  "missing_candidate": 0
+}

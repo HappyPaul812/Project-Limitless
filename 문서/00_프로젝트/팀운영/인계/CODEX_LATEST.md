@@ -1,3 +1,8 @@
+## 2026-10-13 PR7 Importer 동일성 검증·로컬 반영
+
+- 후보 d57ff66 → PR7 로컬 통합 codex/integrate-abc-planning-20261013 / 코드병합 2fbe9577b212ee46f4525a597c3bcd4d7833f055. 정상 로컬 설정 대비 2,016,000 픽셀 차이0·363 누락0·환경 Collider/Importer 동등·PNG7 바이트 동일. 새 Field04 228 PASS/FAIL0, 실제6000.6.5f1/정본6000.5.7f1 미검증·기존Search PARTIAL.
+- 별도 로컬 codex/local-pr7-importer-20261013 / Temp/PR7Apply20261013/local-working 사용. 원본 main/337항목·822파일/4317SHA 보호. 자동Push/main병합0; 원격PR7 Draft 유지. 서쪽Spawn 겹침·북쪽틈 OPEN, v2 적용0·장착 영속 Save 미승인. [새 상세보고](../../PR7_Importer_Apply_Verification_20261013.md).
+
 ## 2026-10-13 PR7 기존 Sprite 등록 복구 후보 — 원본 미적용
 
 - PR7 3aca기준별도codex/pr7-importer-fix-proposal-20261013. ThirdParty원본변경0, _Project/Art/Environment/LegacySpriteRegistration20261013에기존PNG7byte동일복사+새meta/GUID, Field04362참조GUID만교정. 역치환시기존Scene텍스트동일/Collider·좌표·Quest·Spawn·localID보존/v2미사용.

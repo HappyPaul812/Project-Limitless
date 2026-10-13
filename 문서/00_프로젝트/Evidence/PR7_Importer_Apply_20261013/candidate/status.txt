@@ -1,0 +1,1 @@
+PASS: 363 references, expected missing=0; local-normal comparison / candidate restoration
