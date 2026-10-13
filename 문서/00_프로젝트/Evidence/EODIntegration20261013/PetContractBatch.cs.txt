@@ -1,0 +1,57 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using ProjectLimitless.Core;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Monster;
+using ProjectLimitless.Player;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+namespace ProjectLimitless.EditorTools
+{
+    // 통합 브랜치의 기존 상품·효과만 검증합니다. 새 스킬이나 저장 필드는 만들지 않습니다.
+    [InitializeOnLoad]
+    public static class PetContractBatch
+    {
+        static readonly List<string> Results=new List<string>();
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../PetContractResults"));
+        const string Key="Limitless.IntegratedPetContract";
+        static bool started;
+        // 기존 Search 시작 예외가 delayCall을 중단할 수 있어 독립 update에서 검증을 시작합니다.
+        static PetContractBatch(){EditorApplication.update+=()=>{if(started||!EditorApplication.isPlaying||!SessionState.GetBool(Key,false))return;started=true;GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);Application.runInBackground=true;Execute();};}
+        static void Check(bool b,string s){Results.Add((b?"PASS|":"FAIL|")+s);File.WriteAllLines(Path.Combine(Root,"results.txt"),Results);if(!b)throw new Exception(s);}
+        static Combatant Actor()=>new Combatant(PartyResourceService.PlayerCharacterId,"검증 사수",BattleSide.Allies,new FormationSlot(FormationRow.Front,0),1000,100,10,0,TargetRangeType.RangedPhysical,true,maxMp:30);
+        static Combatant Foe(FormationRow row=FormationRow.Front,int hp=10000)=>new Combatant("enemy","검증 대상",BattleSide.Enemies,new FormationSlot(row,0),hp,10,1,0,TargetRangeType.MeleePhysical,false);
+        static BattleSkillExecutor Executor(BattleStatusEffectRuntime status)=>new BattleSkillExecutor(new BattleSkillCooldowns(),status,new BattleFighterResourceRuntime(),new PathCombatTraitRuntime(null,null));
+        static void Equip(string id){Check(BeastCompanionService.TryEquip(PartyResourceService.PlayerCharacterId,id),"Equip."+id);}
+        public static void Run(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/EODIntegration20261013/Client/Assets"))throw new Exception("Isolation");
+            Directory.CreateDirectory(Root);GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));UserSettingsService.SetMuteAll(true);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+            SessionState.SetBool(Key,true);EditorApplication.EnterPlaymode();
+        }
+        static void Execute(){try{Checks();File.WriteAllText(Path.Combine(Root,"status.txt"),"PASS");SessionState.SetBool(Key,false);EditorApplication.Exit(0);}catch(Exception e){File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");SessionState.SetBool(Key,false);EditorApplication.Exit(1);}}
+        static void Checks(){
+            GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"통합 펫 검증");GameSessionData.SelectPlayerPath("path.mobility");GameSessionData.SelectJob("sharpshooter");GameSessionData.ConfigureProgress(30,0);GameSessionData.RecordLocation("World_StarterVillage","");EconomyService.Import(2000);
+            string[] ids={"venom_bee","forest_spider","venom_snake","monster_moss_beetle","monster_shade_bat","soot_hound","heatwind_hawk","fissure_lizard","ember_beetle"};
+            Check(BeastCompanionService.GetAvailableBeasts().SequenceEqual(new[]{"wolf","bear","fox"}),"Base3.FreeLegacy");Check(BeastCompanionService.GetEffectiveMaxHp(100,"bear")==110&&BeastCompanionService.GetEffectiveAgility(10,"fox")==12,"Base.BearHPFoxAgility");Check(BeastCompanionService.MonsterPetPrice==100,"Price100");
+            foreach(string id in ids){Check(BeastCompanionService.IsMonsterPet(id)&&BeastCompanionCatalog.Get(id).Id==id,"Catalog.Monster9."+id);Check(!BeastCompanionService.TryAdopt(id)&&EconomyService.GetCurrency()==2000,"BeforeVictory.NoPurchase."+id);}
+            BeastCompanionService.RecordVictory(ids);
+            foreach(string id in ids){int wallet=EconomyService.GetCurrency();Check(BeastCompanionService.TryAdopt(id)&&EconomyService.GetCurrency()==wallet-100,"Purchase.ChargeOnce."+id);Check(!BeastCompanionService.TryAdopt(id)&&EconomyService.GetCurrency()==wallet-100,"Duplicate.NoCharge."+id);}
+            Check(BeastCompanionService.GetAvailableBeasts().Count()==12&&BeastCompanionService.UnlockedMonsterPetIds.Count==9,"Base3Monster9Owned");
+            Equip("heatwind_hawk");Check(GameSaveService.TryLoadSlot(1,out var data)&&data.BeastCompanions.UnlockedMonsterPetIds.Length==9,"Save.Owned9");GameSaveService.RestoreSession(1,data);Check(BeastCompanionService.GetEquippedId(PartyResourceService.PlayerCharacterId)=="heatwind_hawk"&&BeastCompanionService.UnlockedMonsterPetIds.Count==9,"Restore.PurchaseEquippedRecords");
+            var job=Resources.LoadAll<JobDefinition>("JobDefinitions").Single(x=>x.JobId=="sharpshooter");var assault=BattleSkillCatalog.GetSkills(job).Single(x=>x.Id==BattleSkillCatalog.SharpshooterCompanionAssaultId);
+            Equip("wolf");var status=new BattleStatusEffectRuntime();Check(Executor(status).ExecuteSingleBeastPhysicalAttack(Actor(),Foe(),assault,out int damage,out _)&&damage==189,"Wolf.Direct5Percent");
+            Equip("soot_hound");status=new BattleStatusEffectRuntime();var foe=Foe();Check(Executor(status).ExecuteSingleBeastPhysicalAttack(Actor(),foe,assault,out damage,out _)&&damage==180&&status.GetBurnRemaining(foe)==2,"Hound.Direct180AndBurn2");Check(status.ApplyBurnTickAtActionEnd(foe,out int ticks)==30&&ticks==1&&status.ApplyBurnTickAtActionEnd(foe,out ticks)==30&&ticks==0&&status.ApplyBurnTickAtActionEnd(foe,out ticks)==0,"Hound.BurnExactly2Ticks");
+            status=new BattleStatusEffectRuntime();foe=Foe(hp:100);Check(Executor(status).ExecuteSingleBeastPhysicalAttack(Actor(),foe,assault,out damage,out _)&&!foe.IsAlive&&status.GetBurnRemaining(foe)==0,"Hound.NoBurnOnDefeated");
+            Equip("heatwind_hawk");Check(Executor(new BattleStatusEffectRuntime()).ExecuteSingleBeastPhysicalAttack(Actor(),Foe(FormationRow.Rear),assault,out damage,out _)&&damage==198,"Hawk.RearDirect10Percent");Check(Executor(new BattleStatusEffectRuntime()).ExecuteSingleBeastPhysicalAttack(Actor(),Foe(),assault,out damage,out _)&&damage==180,"Hawk.FrontNoBonus");
+            Equip("fissure_lizard");var actor=Actor();status=new BattleStatusEffectRuntime();Check(status.ApplyIncomingDamage(actor,0)==0&&status.ApplyIncomingDamage(actor,10,BattleDamageOrigin.DamageOverTime)==10&&status.ApplyIncomingDamage(actor,100)==80&&status.ApplyIncomingDamage(actor,100)==100,"Lizard.ZeroDotDoNotSpend.FirstDirectOnly");Check(new BattleStatusEffectRuntime().ApplyIncomingDamage(actor,100)==80,"Lizard.NewBattleResets");
+            actor=Actor();actor.Defend();status=new BattleStatusEffectRuntime();Check(status.ApplyIncomingDamage(actor,100)==40&&status.ApplyIncomingDamage(actor,100)==50,"Lizard.BeforeExistingGuard");
+            Equip("ember_beetle");actor=Actor();status=new BattleStatusEffectRuntime();status.ApplyOrRefreshBurn(actor,0,2);status.ApplyOrRefreshBurn(actor,10,2);Check(status.GetBurnRemaining(actor)==0,"Beetle.InvalidDoesNotSpend.FirstValidBurnBlocked");status.ApplyOrRefreshBurn(actor,10,2);Check(status.GetBurnRemaining(actor)==2,"Beetle.SecondBurnApplies");status=new BattleStatusEffectRuntime();status.ApplyOrRefreshBurn(actor,10,2);Check(status.GetBurnRemaining(actor)==0,"Beetle.NewBattleResets");Check(status.ApplyOrRefreshPoison(actor,3),"Beetle.DoesNotBlockPoison");
+            Equip("venom_bee");status=new BattleStatusEffectRuntime();foe=Foe();Check(Executor(status).ExecuteSingleBeastPhysicalAttack(Actor(),foe,assault,out damage,out _)&&damage==180&&status.HasActivePoison(foe),"VenomBee.ExistingNormalPoisonPreserved");
+            Check(SilenceResult(),"ExistingSilenceAudit");
+        }
+        static bool SilenceResult(){string s=BattleSilenceAudit.Run();File.WriteAllText(Path.Combine(Root,"silence.txt"),s);return s.Contains("ALL PASS");}
+    }
+}

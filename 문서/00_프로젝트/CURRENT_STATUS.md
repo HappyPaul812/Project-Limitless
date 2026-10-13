@@ -1,5 +1,10 @@
 ## 2026-10-13 Main08 승인6개 정식 음성 연결·원본 디스크 반영
 
+## 2026-10-13 EOD 최종 합본 — BLOCKED / MAIN 미병합
+
+PR8/9충돌해결·Field04공식42/375/PNG52·Main08승인6·B/C·최신기획·담당문서 통합. 새합본 주요기능854PASS/FAIL0, 별도전체Scene참조FAIL: 기존main에서도Arbel/Field05~08환경Sprite누락 재현, 실제Arbel배경누락 확인. Field04362→0, 신규참조회귀증거0이나 전체Sprite0게이트미충족으로PR10Draft유지/main병합중단. 원본5199파일SHA/HEAD/dirty불변. 상세 `EOD_Integration_Final_QA_20261013.md`. 다음: 동일바이트Project등록·SpriteImporter복구안 검토 후 전체참조QA 재실행. 스킬영속Save·Chapter3상점·Main18추가TTS 미구현/HOLD보호. 최종브랜치SHA는PR10head·완료보고 참조.
+
+
 - codex/main08-approved-voice-apply-20261013:바울대표직접청취승인6WAV를Main08/ApprovedRecovery20261013에새GUID등록/Catalog6참조교정. 원음WAV/GUID/meta그대로·목적지/출처16백업·승인입력6보관. 원본프로젝트디스크에도새13파일+Catalog반영완료,원본mainHEAD/기존미커밋/Save/설정/Scene/BGM/TTS보호.
 - 최종등록Runtime177PASS/FAIL0,승인ClipPCM/GUID/경로6/6·Trace01~03/초상화/Next/Mixer/Quest/실제BootstrapContinuePASS. 정본6000.5.7f1미검증/실제6000.6.5f1·기존Search로PARTIAL,조우억제대화fixture·실물입력미검증. 원본Editor강제Refresh/Play/포커스전환0,즉시메모리반영미검증.
 - 승인밖태온005/006기존발화·합본문제2건과대화중일반조우사례OPEN;전체Main08음성내용PASS아님. 새TTS/API·Push·mainCommit/병합0. Main08_ApprovedVoice_Integration_QA_20261013.md 참조. 마지막Commit은 `Fix: 승인 Main08 음성을 원음 보존 등록으로 연결` 이력확인.

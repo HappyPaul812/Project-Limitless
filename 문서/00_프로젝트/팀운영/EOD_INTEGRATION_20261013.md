@@ -1,5 +1,10 @@
 # LIMITLESS 2026-10-13 퇴근 전 안전 통합 — 기획 인계
 
+## 2026-10-13 EOD 최종 합본 — BLOCKED / MAIN 미병합
+
+PR8/9충돌해결·Field04공식42/375/PNG52·Main08승인6·B/C·최신기획·담당문서 통합. 새합본 주요기능854PASS/FAIL0, 별도전체Scene참조FAIL: 기존main에서도Arbel/Field05~08환경Sprite누락 재현, 실제Arbel배경누락 확인. Field04362→0, 신규참조회귀증거0이나 전체Sprite0게이트미충족으로PR10Draft유지/main병합중단. 원본5199파일SHA/HEAD/dirty불변. 상세 `EOD_Integration_Final_QA_20261013.md`. 다음: 동일바이트Project등록·SpriteImporter복구안 검토 후 전체참조QA 재실행. 스킬영속Save·Chapter3상점·Main18추가TTS 미구현/HOLD보호. 최종브랜치SHA는PR10head·완료보고 참조.
+
+
 **상태: INTEGRATION_STAGING_CREATED / MAIN_NOT_MERGED / CONFLICTS_REQUIRE_CODEX / QA_GATE_PENDING.**
 
 사용자 지시: **“나 퇴근하게 지금까지 한거들 다 합쳐줘.”** 이 지시는 오늘 완료·사용자가 승인한 기능/아트/음성과 관련 기획 문서의 안전 통합을 허가한다. 단, 어떤 변경이든 기존 정상 내용을 잃거나 회귀 검증을 생략하라는 뜻은 아니다.

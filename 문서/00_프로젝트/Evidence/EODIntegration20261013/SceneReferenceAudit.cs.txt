@@ -1,0 +1,21 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+namespace ProjectLimitless.EditorTools {
+public static class EODSceneReferenceAudit {
+public static void Run(){
+ if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').EndsWith("/Temp/EODIntegration20261013/Client/Assets"))throw new Exception("Isolation");
+ var root=Path.GetFullPath(Path.Combine(Application.dataPath,"../SceneReferenceResults"));Directory.CreateDirectory(root);var lines=new List<string>();int missingScripts=0,missingSprites=0;
+ foreach(var setting in EditorBuildSettings.scenes.Where(x=>x.enabled)){
+  if(!File.Exists(setting.path)){lines.Add("FAIL|MissingScene|"+setting.path);continue;}
+  var scene=EditorSceneManager.OpenScene(setting.path,OpenSceneMode.Single);int scripts=0,sprites=0;
+  foreach(var go in scene.GetRootGameObjects().SelectMany(x=>x.GetComponentsInChildren<Transform>(true)).Select(x=>x.gameObject)){scripts+=GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(go);var sr=go.GetComponent<SpriteRenderer>();if(sr!=null&&sr.sprite==null){sprites++;lines.Add("MISSING_SPRITE|"+setting.path+"|"+go.name);}}
+  missingScripts+=scripts;missingSprites+=sprites;lines.Add((scripts==0&&sprites==0?"PASS|":"FAIL|")+setting.path+"|MissingScript="+scripts+"|MissingSprite="+sprites);
+ }
+ File.WriteAllLines(Path.Combine(root,"checks.txt"),lines);File.WriteAllText(Path.Combine(root,"status.txt"),missingScripts==0&&missingSprites==0&&!lines.Any(x=>x.StartsWith("FAIL|"))?"PASS":"FAIL");EditorApplication.Exit(missingScripts==0&&missingSprites==0&&!lines.Any(x=>x.StartsWith("FAIL|"))?0:1);
+}
+}}

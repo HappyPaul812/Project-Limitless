@@ -89,7 +89,7 @@
 - 전체10 음색/ExactText 사용자 청취 검수는 샘플을 제외하고 아직 완료되지 않음. 신규8개 Unity 적용 승인도 없음.
 - Codex 메시지 내 외부 보고서 링크/ID별 SHA 표 자체는 이 대화에 제공되지 않음. 세부 보고 경로/근거는 추가 자료가 있을 때 재확인한다.
 
-  
+
 ## 2026-10-13 사용자 음색 검토 — Story07 보류
 
 사용자는 생성 WAV `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\remaining9_wav\main18_heat_vent_serin_01.wav`에 대해 **"감기걸린 여자? 변성기 전 미소년?"**이라고 청취 인상을 보고했다.

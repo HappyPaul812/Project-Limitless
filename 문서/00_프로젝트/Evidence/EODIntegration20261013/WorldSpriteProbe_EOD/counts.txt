@@ -1,0 +1,6 @@
+World_StarterVillage|RuntimeSpriteRenderers=313|Missing=0
+Arbel|RuntimeSpriteRenderers=295|Missing=284
+Field_05_WesternOutskirts|RuntimeSpriteRenderers=367|Missing=362
+Field_06_ScorchedTrail|RuntimeSpriteRenderers=320|Missing=313
+Field_07_AshenReach|RuntimeSpriteRenderers=376|Missing=371
+Field_08_RedRift|RuntimeSpriteRenderers=18|Missing=8

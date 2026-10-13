@@ -1,0 +1,7 @@
+{
+  "ours_vs_base": "Sprite references only; structural equality PASS",
+  "official_sha": "ec469c0aed66b58e8a8ee9e842c47c3d78c7b675",
+  "result_sha256": "adeeeefdc32207d54bd17eff55ab433762b5bcfdfd14cfc4736f749def3ed153",
+  "retained_legacy_assets": true,
+  "existing_components_preserved": true
+}

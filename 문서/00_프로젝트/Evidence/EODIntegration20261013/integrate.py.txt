@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+import pathlib as P,subprocess as S,re,json,hashlib as H
+R=P.Path('F:/study/codex/Project-Limitless');T=R/'Temp/EODIntegration20261013';W=T/'worktree';sha=lambda p:H.sha256(p.read_bytes()).hexdigest()
+def git(*a):return S.check_output(['git','-C',str(W),*a])
+if not (T/'protection.json').exists():
+    paths=[]
+    for folder in ['Unity/Client/Assets','Unity/Client/Packages','Unity/Client/ProjectSettings','문서','UserData']:
+        paths.extend(p for p in (R/folder).rglob('*') if p.is_file())
+    p=dict(head=S.check_output(['git','-C',str(R),'rev-parse','HEAD']).decode().strip(),status=S.check_output(['git','-C',str(R),'status','--porcelain=v1','-z','--untracked-files=all']).decode('utf-8'),files={str(p):sha(p) for p in paths});(T/'protection.json').write_text(json.dumps(p,ensure_ascii=False),encoding='utf-8')
+SC='Unity/Client/Assets/_Project/Scenes/Field_04_WesternBorder.unity'
+ours=git('show','HEAD:'+SC).decode('utf-8');base=git('show','0e0476649b667129cb7aa6004f4b677335ed8be2:'+SC).decode('utf-8');approved=git('show','ec469c0aed66b58e8a8ee9e842c47c3d78c7b675:'+SC)
+strip=lambda s:re.sub(r'  m_Sprite: .*','  m_Sprite: APPROVED_MAPPING',s)
+assert strip(ours)==strip(base),'Unexpected scene structural changes; halt'
+(W/SC).write_bytes(approved)
+(T/'scene_conflict_resolution.json').write_text(json.dumps(dict(ours_vs_base='Sprite references only; structural equality PASS',official_sha='ec469c0aed66b58e8a8ee9e842c47c3d78c7b675',result_sha256=sha(W/SC),retained_legacy_assets=True,existing_components_preserved=True),indent=2),encoding='utf-8')
+print('Scene resolved semantically: GUID registration superseded by approved375 sprite references; original scene structure protected')
