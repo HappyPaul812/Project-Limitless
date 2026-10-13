@@ -1,3 +1,5 @@
+> 2026-10-14 후속: 동일 원본 Sprite 복구 후 필수23 Scene 참조/Runtime 누락0 및 통합 회귀 통과로 Sprite 병합 게이트를 해소했습니다. 아래는 10월13일 당시 BLOCKED 기록입니다. 최신 결과는 [Sprite 복구 최종 QA](Sprite_Reference_Recovery_Final_QA_20261014.md)와 PR #10을 확인합니다.
+
 # EOD 승인 작업 통합 및 최종 합본 QA — 2026-10-13
 
 **최종 판정: BLOCKED / PR10_DRAFT_RETAINED / MAIN_NOT_MERGED.** 승인 기능 통합과 충돌 해결은 완료했으나 전체 Scene 참조 게이트가 FAIL입니다. 기존 main에서도 재현되는 아르벨 등 환경 Sprite 누락이며, 실제 합본 런타임에서 아르벨 배경이 비어 보임을 RenderTexture로 확인했습니다. 단순 신규 회귀로 오인하지 않되 전체게임 QA PASS로 승격하지 않습니다. 사용자 지시7에 따라 main 병합을 중단하고 안전한 통합 브랜치에 결과를 보존합니다.

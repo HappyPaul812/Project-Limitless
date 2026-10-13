@@ -70,3 +70,7 @@ Field04 Scene·도로42·Renderer375·PNG52는 승인 ec469c0와 동일. Main08 
 최종 원격 처리는 복구 브랜치 Push→EOD 안전 반영→동일 게임 트리 확인/필수 참조 QA→EOD Push→PR10 Ready→승인 범위 정상 merge 순서입니다. 필수 게이트 실패 시 main 병합을 보류합니다. main 직접 commit/Push·force·원본 pull/reset/stash/clean은 수행하지 않습니다.
 
 [전수표·Importer·회귀·실제 화면 근거](Evidence/SpriteRecovery20261014/)
+
+## EOD 통합 HEAD 후속 검사
+
+복구 브랜치 `af1c9cfddbf8e431a32d78d5a643d91a7a099da0` 일반 Push 완료 후 EOD에 충돌0 보존 merge `359b0622376c24d78caa025ec33df5fef71ccaa7`. 전체 파일 트리가 복구 HEAD와 동일했고 Unity subtree `40d99fd9d792ef70cfe2543e8c7202e0733200ee`도 일치합니다. 동일 테스트 Client의 Scene/C# 바이트 일치를 통합 정적83개로 재확인하고 필수23 Scene 참조3654와 Runtime23 null0을 새 실행하여 통과했습니다. 이미 실행한 기능855 PASS는 동일 게임 트리를 근거로 적용하며 단순 문서/merge 커밋을 게임 기능 변경으로 계산하지 않습니다. 새 통합 검증 근거는 Evidence/SpriteRecovery20261014/Integration입니다. 원본5221SHA/status/HEAD와 Bootstrap/Edit/비포커스 상태를 다시 확인했습니다. 이후 원격 Ready/merge 결과는 PR10을 확인합니다.

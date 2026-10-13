@@ -5,7 +5,7 @@
 - 이전854범위 새855 PASS(waypoint 추가계측1)/FAIL0, 서부85·의뢰589·Quest 기반/침묵 ALL PASS, 기존정적83·확대322 PASS. Field04 42/375/PNG52·Main08 승인6·B/C/15효과/Save/Chapter3 불변.
 - 종합PARTIAL: 기존Search·정본6000.5.7f1·손플레이/가독성 미검증과 기존Spawn/북쪽틈/음성005~006/장착영속 미구현 유지. 원본Editor·포커스/Save/TTS/BGM 조작0.
 - PR10 Ready/정상 main merge 조건 충족. 실제 원격 Push/통합HEAD/mainSHA·병합 여부는 PR10 최신 결과와 완료 보고를 확인하며 이전BLOCKED 기록은 역사로 보존합니다. 다음: 남은 기존 결함을 별도 작업으로 처리.
-- 마지막 구현 commit `5507f94e723f1d02c27f2a0839af2bdbac53bc5c`; meta 빈값 공백 정리·QA 기록은 후속 commit. [상세 QA](Sprite_Reference_Recovery_Final_QA_20261014.md).
+- 마지막 관련 복구 commit `af1c9cfddbf8e431a32d78d5a643d91a7a099da0` Push 완료. EOD merge `359b0622376c24d78caa025ec33df5fef71ccaa7`·충돌0/동일Unity트리/통합23참조·Runtime·정적83 재PASS. 최종 통합 문서 commit·원격 병합 SHA는 PR10 최신 결과 참조. [상세 QA](Sprite_Reference_Recovery_Final_QA_20261014.md).
 
 ## 2026-10-13 Main08 승인6개 정식 음성 연결·원본 디스크 반영
 
