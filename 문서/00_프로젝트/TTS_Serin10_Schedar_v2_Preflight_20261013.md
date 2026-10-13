@@ -62,3 +62,21 @@ Sample generation disabled. Separate user approval and generator required
 - 다음 필수 승인 게이트: 사용자 Google AI Studio에서 프로젝트·모델별 실제 무료 가능량/과금 위험 확인 → **샘플 1회 명시적 승인** → 별도 1-call TTS 도구 사전 검토 → 1개 생성/음색 청취 PASS → 9개 별도 승인. 429·실패 즉시 중단.
 - 성공 백업 폴더를 다시 `prepare`할 필요가 없다. 작업용 기존 폴더를 삭제하거나 재생성하는 우회 금지.
 - `main` 병합 및 신규 TTS/Unity 적용 승인 없음.
+
+
+## 2026-10-13 무료 등급 화면 및 1회 샘플 실행 도구 준비 — 아직 호출0
+
+사용자가 Google AI Studio 화면 4장을 제공:
+- 첫 프로젝트의 TTS 화면: 무료 등급, 모델 `gemini-3.8-flash-tts`, RPD **10**, RPM **3**; 최근28일 최고 사용량은 *오늘 남은 요청 수*가 아니다.
+- 두 번째 `Project-Limitless` 프로젝트 TTS 화면: **무료 등급**, RPM **3**, RPD 숫자는 화면에서 확인되지 않음. 동일 모델·프로젝트 quota는 **키별 독립 카운트가 아님**.
+- 결제 화면: 결제 계정 상태 **알 수 없는 등급**, 표시된 연결 프로젝트 **0개**, 계정 유형 비활성/미지원 알림, 크레딧 잔액0. **해당 API 키 프로젝트의 실제 유료 결제 연결과 비용 여부를 완전히 검증한 화면으로 취급하지 않음.**
+- 두 프로젝트의 지금 남은 실제 무료 호출 수는 `NOT_VERIFIED`; 429 발생 가능성 있음.
+
+**코드 준비만 완료**: `M18_Serin_Schedar_SAMPLE_ONE.py` (별도 사용자 다운로드 파일), SHA256 `d16cd87951ac6d502d2870cb007d8b4ca39ffedc9c643d92462908021484b67a`. SDK 호출을 한 곳에만 두고 샘플 `main18_ground_serin_01` 1개만 생성할 수 있다.
+
+- SHA 고정된 SAFE v2 오프라인 검사(오류10, 정상25, backup10, BASELINE/LOCKED), staging 중복 호출 잠금과 후보 파일 존재 차단.
+- 모델 `gemini-3.8-flash-tts`, Voice `Schedar`, ExactText/ID/화자 그대로, 앞서 승인 정상본과 비교한 여성 세린 연기 지시 사용.
+- 실제 Gemini 요청 전 사용자가 *선택한 API Key 소속 Project*에 대해 무료 등급/사용 가능량/유료 위험을 직접 확인하고 `--approve-one-call` 및 대화형 `YES`를 해야 전송한다. **CLI 확인은 계정 잔량의 기술적 보장이 아니다.**
+- 호출 직전 `SAMPLE_ONE_ATTEMPT.json` 배타 잠금. 결과는 독립 폴더에 `xb`로만 저장, 성공 시 WAV/SHA/SDK/Voice/Style/응답 MIME 보고. 1 ID/1 call/1 WAV, SDK attempts1, 실패·429 즉시 중단, Key 자동 교체/나머지9 실행 없음.
+- Python 문법/AST 유일 호출지점/RIFF fixture/파일 포맷 검사/ZIP CRC 오프라인 PASS. **사용자 LOCAL 실제 실행·샘플·API 호출은 모두 `NOT_EXECUTED`**.
+- 과거 원본10와 정상 Unity25 변경0, `main` 병합/Push0. 샘플 WAV의 사용자 실제 청취 승인 전까지 나머지9 제작 및 Unity 적용 금지.
