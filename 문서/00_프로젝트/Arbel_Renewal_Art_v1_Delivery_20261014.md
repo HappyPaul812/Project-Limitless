@@ -14,8 +14,8 @@
 ## 납품 파일 / 실사용 자산
 
 - ZIP: `Limitless_Arbel_Renewal_Art_v1.zip`. ChatGPT 다운로드에서 사용자가 `F:\Downloads`로 저장.
-- ZIP SHA256: `1c7ad041dbcc0302b8c7e4fd6945937787b3c07a9a58c13c29b3c85a89a46117`.
-- 파일 크기: **3,143,989 bytes**; 총 **47파일 / PNG40**.
+- ZIP SHA256: `ec707452169aa99ec297a7ac23a14928d4a0123b4b7b051d17ddcb282953d626`.
+- 파일 크기: **3,145,099 bytes**; 총 **47파일 / PNG40**.
 - 신규 Unity용 환경 Sprite **34 PNG**: **기존 Renderer 교체 후보 23종** (`Ground/`6, `Road/`2, `Buildings/`6, `Props/`9), **배치 선택용 장식 11종** (`Optional_Service/`). 나머지 PNG6은 Preview5 / Seam QA1.
 - 추가 내용: `Manifest.json` (PNG별 SHA256·크기·PPU128·center·alpha bbox·용도), `README.md`, **`Renderer_Mapping_284.csv`**, `Optional_Service_Placement.csv`, `Codex_Integration_Handoff.md`, `Rights_and_Provenance.md`, `QA/Offline_Validation_v1.json`.
 - Preview는 **기존 씬 오브젝트의 좌표를 기준으로 배치한 독립 합성 이미지**이며 **실제 Unity RenderTexture가 아님**. 구(舊) 모습 비교 패널은 원본 게임 화면이 아닌 **기존 구조 모식도**. 새 복구 PNG의 실제 Runtime 미술 비교는 승인 후 Codex 현장 촬영이 필요함.
