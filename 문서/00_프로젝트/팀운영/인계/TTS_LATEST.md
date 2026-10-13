@@ -128,3 +128,13 @@
 - Story02 leon, Story08~11 overheat4, Story12 vibration1의 6개: `USER_REPORTED_TIMBRE_VARIANCE`; 각각 음색이 조금씩 달라 사용자가 직접 지적함. 사용자 파일별 최종 KEEP/REGEN 결정은 미표명, 추측 금지.
 - Story13 실패/불확실 HOLD, Story14 미호출. 기존 WAV8/정상25/backup/LOCK 보호. 추가 API0, Unity0, main0.
 - 정본: [생성기 및 사용자 청취 정정](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md)
+
+
+## 2026-10-13 사용자 요청 오프라인 음색 보정 6 WAV — 미리듣기
+
+사용자: **“heat_vent는 빼고 니가 못고쳐?”**. 이전에 업로드한 세린 `leon`, `overheat_01~04`, `vibration` WAV6개만 승인 `ground` 샘플 기준의 경미한 pitch/EQ/음량 보정으로 **`*_PREVIEW.wav`**를 제공했다. `heat_vent`는 제외. 기준 `ground` WAV는 변경 없이 ZIP 안에 동봉. 출력 ZIP `LIMITLESS_Serin6_ConsistentVoice_Previews.zip` (별도 다운로드 산출물), QA CSV 포함.
+
+- WAV6개 샘플 길이 동일, 24kHz mono PCM16, clipping0, ZIP CRC PASS. 기존 원본/체크포인트/Unity WAV25/Story13 HOLD/기타 WAV 모두 무변경. Gemini API0.
+- PREVIEW는 확정 교체본 아님. 동일 화자로 들리는지 사람 청취 최종 평가 전 `USER_APPROVAL_PENDING`. TTS 모델이 달리 만든 발성 질감을 DSP로 완전 복구한다는 의미 아님.
+- 이전 관례의 기본 후처리 금지 정책에 따라 **정식 WAV를 덮어쓰지 않음**. 사용자 요청에 의한 비교 전용 새 파일만 제작.
+- 상세: [생성 및 PREVIEW 기록](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). `docs/tts`에만 기록, main 변경 없음.
