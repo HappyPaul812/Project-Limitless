@@ -77,3 +77,16 @@
 - 생성 CLI `--key-slot 2`인데 로그상 샘플 포함 API 시도9개. 키2 실제 프로젝트 연결 여부, 스크립트 환경변수 선택, Google 사용량 반영 지연 **모두 미확정**.
 - Codex 정적 감사로 `--key-slot` 구현, 키→Project 대응(값 출력 금지), Story13 RuntimeError/잠금 체크포인트를 확인할 것. API 호출·추가 생성·HOLD 해제·키 변경 0.
 - 현재 WAV 상태 **8 SAVED(샘플1+7), Story13 실패/불확실1, Story14 미호출1**, 정상25/원본10/백업10 보호. [세부 문서](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
+
+
+## 2026-10-13 Codex 읽기 전용 감사 후 최신 인계 — SAFE HOLD 유지
+
+바울 대표가 Codex 감사 완료 보고 화면 제공:
+- 샘플1+신규 Story02/07~12 WAV7 = **8개 SHA256/checkpoint/PCM 대조 PASS**.
+- Story13 `main18_watcher_witness_serin_01`: 시도+HOLD 기록 있음, 신규/부분 WAV 및 결과 JSON 없음. `RuntimeError` **예외 클래스만** 기록돼 정확한 실패 지점/429/할당량 여부 **UNKNOWN**.
+- Story14 `main18_watcher_witness_serin_02`: 로컬 시도·결과·신규 WAV 없음 → 미호출로 기록.
+- Codex 보고: 대상 폴더42 + 프로젝트 보호 파일5,199개 SHA 불변, HOLD·SESSION.lock·시도 기록 보존. 조사 중 API 0/WAV 수정삭제0/Unity0/Push0.
+- **현재 상태 SAVED8 / FAILED_OR_UNCERTAIN_HOLD1 / NOT_CALLED1.** 기존 샘플 재생성 금지. Stage, checkpoint, lock 삭제·초기화 금지, Key 변경/Story14 선호출/Story13 재시도 금지.
+- Google 두 프로젝트의 RPD 9/10 vs 0/10의 귀속 문제와 실제 KEY2 연동, quota/과금 위험은 확인되지 않았음. 새 요청에 대한 **재개 승인 없음**.
+- 남은2개는 조건 확인 후 사용자 **별도 승인**을 받아 새로운 수동 재개 이력으로 처리. 전체 음성 청취/Unity 통합은 이후 별도 승인.
+- 기록 정본: [잔여9 생성기 및 Codex 감사 후속](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md).
