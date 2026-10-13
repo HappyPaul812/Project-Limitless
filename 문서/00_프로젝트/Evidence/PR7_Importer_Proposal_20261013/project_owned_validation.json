@@ -1,0 +1,13 @@
+{
+  "new_project_png_count": 7,
+  "all_png_bytes_identical": true,
+  "field04_guid_references_changed": 362,
+  "scene_other_content_identical": true,
+  "canonical_thirdparty_changed": "",
+  "other_scenes_changed": [
+    "Unity/Client/Assets/_Project/Scenes/Field_04_WesternBorder.unity"
+  ],
+  "missing_sprites_after": 0,
+  "environment_collider_snapshot_equal": true,
+  "original_pr_applied": false
+}

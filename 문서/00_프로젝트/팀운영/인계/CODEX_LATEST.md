@@ -1,3 +1,10 @@
+## 2026-10-13 PR7 기존 Sprite 등록 복구 후보 — 원본 미적용
+
+- PR7 3aca기준별도codex/pr7-importer-fix-proposal-20261013. ThirdParty원본변경0, _Project/Art/Environment/LegacySpriteRegistration20261013에기존PNG7byte동일복사+새meta/GUID, Field04362참조GUID만교정. 역치환시기존Scene텍스트동일/Collider·좌표·Quest·Spawn·localID보존/v2미사용.
+- 실제격리누락362→0/363, 기존Road30남북유지·Collider동일·수정후228회귀PASS, 기존Search예외로PARTIAL. 다른Scene전역이관/정본6000.5.7f1/손입력미검증. 기존서쪽Spawn/북쪽틈은미해결.
+- PR7_Importer_Fix_Proposal_20261013.md와Evidence/PR7_Importer_Proposal_20261013의새등록manifest·실제Preview/회귀참조. 수정후보는main/PR7/사용자원본에반영0, 원본4,317SHA/822dirty/status/HEAD보호/Push0/TTS0.
+- 마지막수정후보Commit `d9ea3be7f0a0ab6e361b679a71f6e1bb4c59e611`. 다음:별도수정PR검토·통합후새HEAD재QA, 현재원PR3aca는BLOCKED/Draft유지. 미술v2적용·Save스키마·신규상품을이교정과혼동하지않음.
+
 ## 2026-10-13 A — Field04 v2 실제 동서 도로 후보
 
 - A 브랜치 codex/field04-v2-road-20261013 / Temp/ABC20261013/A / 검수SHA f6222caacea500dfd71e9d9537cb2f9eca9396e9. main0e04766/planning c0f1d7c 확인. 원본 main/822미커밋/4,318 SHA/status/HEAD 보존.
