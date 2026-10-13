@@ -62,6 +62,8 @@
 
 ## 보호 및 다음 단계
 
-B는 Scene/Quest/BattleSkillSystem 실행기/SaveService/펫/TTS/BGM/승인PNG/기존meta를 수정하지 않았습니다. 원본4,318 보호파일SHA·미커밋822항목의 status/HEAD는 루트의 전후 보호 검사에서 변경0입니다. Push/main 병합0.
+B는 Scene/Quest/BattleSkillSystem 실행기/SaveService/펫/TTS/BGM/승인PNG/기존meta를 수정하지 않았습니다. 원본4,318 보호파일SHA·미커밋822파일의 status/HEAD는 루트의 전후 보호 검사에서 변경0입니다. Push/main 병합0.
 
 대표님 결정 필요: 영속 장착·학습 저장 계약과 보관함 시각/조작 확인. 현재 실행 세션 한정 구현 및 격리 결과를 먼저 리뷰하신 뒤 작업브랜치의 사용자 Push/PR/main 반영을 따로 결정하시면 됩니다. 신규 스킬 정의·가격·구매는 별도 확정 후 연결합니다.
+
+구현·QA 로컬 Commit: `c4ed7c9fd2ed9b3fe5cf3ea1c57387ef51d5e816`. 최종 상태/인계 문서 Commit은 이 브랜치의 이후 git log에서 확인합니다.
