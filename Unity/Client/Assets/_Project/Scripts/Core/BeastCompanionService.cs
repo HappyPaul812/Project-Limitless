@@ -83,7 +83,10 @@ namespace ProjectLimitless.Core
         /// <summary>자격과 잔액을 모두 확인한 뒤 한 번만 차감하므로 실패한 구매는 화폐를 잃지 않습니다.</summary>
         public static bool TryAdopt(string id)
         {
-            if (!IsMonsterPet(id) || !Defeated.Contains(id) || Unlocked.Contains(id)
+            // NPC나 UI 외의 호출도 같은 사수 전용 규칙을 지킵니다. 거점별 재고는 만들지 않습니다.
+            if (GetSharpshooterCharacterIds().Length == 0
+                || SceneManager.GetActiveScene().name == BattleSceneFlow.BattleSceneName
+                || !IsMonsterPet(id) || !Defeated.Contains(id) || Unlocked.Contains(id)
                 || !EconomyService.CanAfford(MonsterPetPrice)) return false;
             if (!EconomyService.TrySpendCurrency(MonsterPetPrice)) return false;
             Unlocked.Add(id);

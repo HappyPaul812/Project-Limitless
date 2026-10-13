@@ -54,7 +54,16 @@ namespace ProjectLimitless.NPC
         {
             ConfigureNameplate(npc, displayName, role);
 
-            if (!ResourcePaths.TryGetValue(stableNpcId, out string resourcePath)) return false;
+            if (!ResourcePaths.TryGetValue(stableNpcId, out string resourcePath))
+            {
+                // 클리어 후 확대된 시설은 기존 Arbel 기능 NPC의 원본 Sprite를 재사용합니다.
+                // 새로운 그림·기존 NPC 외형 변경 없이 역할만 명확하게 표시합니다.
+                if (role == VillageNpcRoleType.PetAdoption)
+                    resourcePath = ResourcePaths["arbel-pet-adoption"];
+                else if (role == VillageNpcRoleType.PetManagement)
+                    resourcePath = ResourcePaths["arbel-pet-management"];
+                else return false;
+            }
 
             Sprite sprite = Resources.Load<Sprite>(resourcePath);
             if (sprite == null)
