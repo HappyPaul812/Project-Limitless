@@ -1,3 +1,11 @@
+## 2026-10-13 CURRENT_STATUS 문서 충돌 해소·최신 기획 정합
+
+- 로컬 미커밋 Unity6000.6.5f1 MCP 복구 기록(2026-10-10)을 원문 그대로 보존하고 최신 origin/main의 통합·미술 검수 기록 및 PR7의 A/B/C·Importer 기록을 합쳤습니다. 과거 기록은 당시 상태이며 기존 승인·PASS/PARTIAL/미검증 문구는 변경하지 않았습니다. 날짜가 있는 최근 기록은 최신 날짜부터 표시하고 기존 역사 순서는 유지합니다.
+- 확인 기준: main `0e0476649b667129cb7aa6004f4b677335ed8be2`, docs/planning `612ff531f7c067f87441c9f6c2614089a5751c8c`, PR7 `7f493c69080047a06d34b96b71ea57ae4b409e30`. PR7의 B/C·Importer 구현 기록을 main에 이미 반영된 기능으로 해석하지 않습니다. 원본 Unity/Save/아트/TTS/BGM 변경0, 새 Unity 실행0, Push/main Commit0.
+- Chapter3 다섯 직업의 신규·강화 스킬은 기획 1차 승인 상태입니다. 기존 시작3개 무료, 신규/강화판 저가 탈렌트 구매, 강화판 원슬롯 승계, 액티브 최대6개·전투2행×3열 규칙 유지. 상세 수치·실제 상품/ID·영속 학습/강화/장착 Save 계약은 별도 확정·구현 대상이며 이번에 생성하지 않았습니다. [기획 정본](../06_스킬/Chapter3_스킬상점_강화_냉기_동결괴사_20261012.md).
+- Chapter2 Main21 완료 후 펫 서비스 확대와 Chapter3 진행 중 최초 구매처/클리어 후 전체 안전지역 스킬 상점 확대를 구분합니다. 미정 Chapter3 완료 Quest/플래그는 만들지 않습니다. 각 담당 작업브랜치·Codex 별도 worktree, main 직접 Commit/자동Push 금지 규칙을 유지합니다. 이전 문서 동기화203파일은 그대로이며 기존 CURRENT_STATUS 충돌1개를 이번 보존 병합으로 해소했습니다.
+- 검증은 원문 문단 보존·날짜/Markdown/UTF-8·diff --check·보호파일 SHA 검사입니다. 이번 문서 작업을 새 게임 Runtime QA로 보고하지 않습니다. 병합 보고서는 `Temp/CurrentStatusReconcile20261013/worktree/문서/00_프로젝트/CURRENT_STATUS_Reconcile_20261013.md`, 원본 바이트 백업은 `Temp/CurrentStatusReconcile20261013/local.md`입니다. 마지막 관련 Commit은 `Docs: CURRENT_STATUS 로컬 기록 보존과 최신 정본 병합` 이력에서 확인합니다.
+
 ## 2026-10-13 PR7 Importer 동일성 검증·로컬 반영
 
 - 후보 d57ff66 → PR7 로컬 통합 codex/integrate-abc-planning-20261013 / 코드병합 2fbe9577b212ee46f4525a597c3bcd4d7833f055. 정상 로컬 설정 대비 2,016,000 픽셀 차이0·363 누락0·환경 Collider/Importer 동등·PNG7 바이트 동일. 새 Field04 228 PASS/FAIL0, 실제6000.6.5f1/정본6000.5.7f1 미검증·기존Search PARTIAL.
@@ -259,6 +267,14 @@ CompanionDefinitions4의 ID/Path/Job·동료 편성 최대2·패턴 익히기 �
 Chapter3 Main22 시작·태온 친형 시각의 길+투사·과거 보호 중 눈 부상(길 자동 결정 아님)·가족식 반말·보호 책임감과 태온 자기결정권의 갈등을 확정했다. 형이 태온의 판단을 믿고 맡기게 되는 감정 변화와 마지막 직접 칭찬 **“잘.했.어.”**를 정본화했다. Main21 형제1:1 대련안 폐기·기존3인 전투 유지·협동 전투는 검토 방향. Main21 초보 마을 귀환/폴·미엘 Slow Burn/형 등장 유지. [담당별 공유·결말 연출·미정 항목 정본](../03_스토리/Chapter3_태온_형제애_서사_20261010.md).
 
 문서 연결·확정/미정 경계 검토 완료. Unity 구현/Quest·Character Asset/음성·음악 제작0, 기존 변경 보존. 형 이름·나이·현재 시력·정확한 합류 조건·Chapter3 보스/퀘스트 수·Dialogue ID/TTS 제작은 미정. 다음은 별도 상세 설계 확정이며 이번 구현 승인은 없다. 마지막 관련 commit은 이 항목을 포함한 `Docs: Chapter 3 태온 형제애 서사 정본 확정`.
+
+---
+
+## 2026-10-10 개발환경 — Unity 6.6.5f1 MCP 복구
+
+사용자 업그레이드 `6000.6.5f1` 확인. 최초 서버 로그의 `uvx` 명령 미발견으로 HTTP/WebSocket 실패; 기존 실행 스크립트에 DryRun·uvx 검사·UV_PYTHON·Editor 중복 실행 방지 추가. Python3.12.14/uv0.12.18/MCP10.2.0 유지, 기존 바로가기 정확 인수 DryRun Exit0. 사용자가 닫은 Editor를 명시적 허락 후1회 실행해 HTTP8080/Plugin35도구/MCP 상태·Scene·Console 왕복 PASS. Bootstrap clean EditMode·포커스false·컴파일/Import 종료·현재 Error0/Warning0. 게임 보호3457파일 SHA 동일·Save/설정 동일·기존 Git변경 보존, 게임/아트/음성 변경0·Play0·화면조작0·commit/push0.
+
+최초 업그레이드 로그 C#Error0/CS0618 20건(FindObjects계열18·spritesheet2)/구형Importer경고3 기록; 이번에 API/meta 대량 수정하지 않음. [정확한 원인·검증·경고·보호 보고서](Unity_665_MCP_Recovery_20261010.md). 다음: 기존 개발 시작 바로가기 사용, 별도 Unity6.6 Main20/SideQuest Runtime 회귀. 네이티브 Codex 도구 표시 갱신과 게임전체 호환은 미검증. 시작 관련HEAD `485138b`, 이번 변경 미커밋.
 
 ---
 

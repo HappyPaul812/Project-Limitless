@@ -1,0 +1,60 @@
+{
+  "refs": {
+    "HEAD": "ff022e63dfe364f559fcc29819d27b123ad31127",
+    "origin/main": "0e0476649b667129cb7aa6004f4b677335ed8be2",
+    "origin/docs/planning": "612ff531f7c067f87441c9f6c2614089a5751c8c",
+    "origin/codex/integrate-abc-planning-20261013": "7f493c69080047a06d34b96b71ea57ae4b409e30",
+    "codex/docs-local-sync-20261013": "ca3db649e2811aec135dbd9b479315c93713764f"
+  },
+  "source_sha256": {
+    "local": "a3ccd498f40589fa05f14d20fd9f69c247117eff24aee490d7c6e7af4752f273",
+    "head": "31b83856fe0584a9efa87dd0e2cd4b505ead4bd77244b52488e229c8d1c3a4ce",
+    "main": "20189d6051c8f41981e36dcba2a28464855d109e5d77d82df75d2c7883d17ff4",
+    "planning": "31b83856fe0584a9efa87dd0e2cd4b505ead4bd77244b52488e229c8d1c3a4ce",
+    "integration": "02caec65fbe7738546f40c2ba7f92942c28989f9bbe691d010a6dca9fc2629e3",
+    "sync_branch": "02caec65fbe7738546f40c2ba7f92942c28989f9bbe691d010a6dca9fc2629e3"
+  },
+  "coverage": [
+    {
+      "source": "local",
+      "input_paragraph_instances": 440,
+      "missing_paragraph_instances": 0
+    },
+    {
+      "source": "head",
+      "input_paragraph_instances": 436,
+      "missing_paragraph_instances": 0
+    },
+    {
+      "source": "main",
+      "input_paragraph_instances": 440,
+      "missing_paragraph_instances": 0
+    },
+    {
+      "source": "planning",
+      "input_paragraph_instances": 436,
+      "missing_paragraph_instances": 0
+    },
+    {
+      "source": "integration",
+      "input_paragraph_instances": 449,
+      "missing_paragraph_instances": 0
+    },
+    {
+      "source": "sync_branch",
+      "input_paragraph_instances": 449,
+      "missing_paragraph_instances": 0
+    }
+  ],
+  "entire_local_original_text_contiguous": true,
+  "local_insertions": 1,
+  "local_inserted_lines": 8,
+  "github_prefix_added_lines": 48,
+  "newly_introduced_date_reversals": 0,
+  "inherited_date_reversals": [],
+  "encoding": "UTF-8 no BOM",
+  "semantic_conflicts": 0,
+  "candidate_sha256": "395e5c85e4a0700e89b4b8da19a9c2dca0812618027322a6a25e0b9dcfad92fb",
+  "same_source_reused_without_second_copy": true,
+  "history_status_words_unchanged": true
+}
