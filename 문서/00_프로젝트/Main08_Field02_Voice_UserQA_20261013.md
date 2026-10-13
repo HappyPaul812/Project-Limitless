@@ -81,3 +81,18 @@ SOURCE_CONTENT_MISMATCH_EVIDENCE / HUMAN_LISTENING_PENDING / CORRECTION_NOT_APPL
 ## 2026-10-13 Codex 기존 음성 복구 후보 납품 — 정식 미적용
 
 후보6개 준비 완료/재제작 확정0/모두 사용자청취대기. 태온002←003,003←004,미엘001←002 동일바이트복사, 태온004 긴정본문장은기존005에서찾아복사했습니다. 미엘합본003은450ms 낮은신호 간격의0샘플에서002/003으로무손실분리했고합산PCM은원본과동일합니다. 여섯후보 ASR정본문장일치, 인간청취승인은미완료이며원본WAV/GUID/meta/Catalog·Unity·Save·설정·TTS/API·Push변경0입니다. [청취파일·정확ID목록·길이·RMS/Peak·원본SHA·검증](Main08_ExistingVoice_Recovery_Candidates_20261013.md).
+
+
+## 2026-10-13 바울 대표 청취 승인 — 기존 녹음 복구 후보 채택
+
+**최신 사용자 직접 피드백:** “코덱스가 원래 짝 찾았고 목소리 다 들었는데 이제 어떻게 해야 해? 다 맞아.”
+
+- **USER_LISTENING_APPROVED (후보 집합):** Codex가 찾아서 제시한 **올바른 기존 녹음 매칭/분리 복구 후보 전부**를 바울 대표가 실제로 청취했고 내용이 모두 맞는다고 승인했다. 1차 ASR 추정 상태보다 우선하는 최신 청취 확인이다. 후보 파일별 경로/SHA·정확한 여섯 ID 매핑의 로컬 결과는 Codex가 자신의 최신 결과를 읽고 추가 확정해야 하므로 **경로나 해시를 기획이 임의 기재하지 않는다**.
+- **TTS 신규 제작 불필요 (현재 승인 후보 집합 기준):** 새 Gemini/API 호출·재녹음 금지. 태온 `supp_004`의 긴 문장과 미엘 `supp_002/003` 분리 부분까지 현장 후보 목록에 정확히 포함되어 있는지 Codex가 재확인하고 하나라도 누락되면 해당 ID만 HOLD로 두어 사용자에게 결과를 보고한다. 청취 승인이 있다고 해서 존재하지 않는 WAV가 생긴 것으로 가정하지 않는다.
+- **후속 Unity 정식 연결 승인:** Codex가 사용자 청취 PASS를 받은 실제 후보만 올바른 Stable Dialogue ID로 연결/복사·분할, 반드시 **원본/목적지 모두 백업 후 최소 변경**, Catalog→GUID/meta→PCM→대사 런타임 확인. 어떤 ID에 원본을 재사용하더라도 **출처 음성은 유지**, 다른 대사의 클립을 파괴하는 단순 이동·rename 금지.
+- 현재 **APPROVED_FOR_CODEX_INTEGRATION / NOT_YET_UNITY_APPLIED / FINAL_RUNTIME_QA_PENDING**. 원본 Unity, 미커밋, Save, Scene, 게임 원문, 기존 정상 TTS를 보호하며 검증은 비포커스 별도 worktree/격리 Save로 수행. 신규 `codex/*` 브랜치에서만 commit; **main 직접 commit/Push/병합 금지**. 완료 후 청취 승인과 런타임 음성 재생 PASS를 나누어 보고한다.
+
+
+## 2026-10-13 Codex 승인6개 정식 연결·원본 반영 결과
+
+APPROVED_SIX_APPLIED_TO_BRANCH_AND_ORIGINAL. 승인WAV6개를Main08/ApprovedRecovery20261013에별도등록하고Catalog6GUID만교정해기존원음·GUID/meta를전부보존했습니다. 실제Clip의승인PCM/GUID/경로6PASS,Trace01~03/화자·초상화·Next/Mixer/Quest/SaveContinue새177PASS/FAIL0,기존Search로PARTIAL. 원본프로젝트디스크에반영완료/원본Play·포커스·HEAD/Save·설정·Scene·BGM보호/신규TTS·Push0. 승인집합밖태온005/006의기존내용불일치와대화중일반조우사례OPEN,전체Main08발화PASS라고보고하지않습니다. [정식변경목록·원본백업·최종QA](Main08_ApprovedVoice_Integration_QA_20261013.md).
