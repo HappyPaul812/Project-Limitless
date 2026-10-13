@@ -101,3 +101,19 @@
 - 샘플1 포함 WAV8개 저장 상태는 그대로 유지, 단 Story07은 사용자 최종 음색 승인 **불가·보류**. 다른 새 WAV 자동 승인 금지.
 - 원본 WAV/기존 정상25/backup/checkpoint/lock 보존. API 재호출0, Unity 변경0, GitHub main 변경0.
 - Story13 `SAFE HOLD` 해제 없음. 기존 Story13/14 2개 미완료 상태 유지.
+
+
+## 2026-10-13 실제 업로드 WAV 2개 비교 — Story07 재제작 권고
+
+사용자가 Main18 신규 TTS WAV 두 개를 이 대화에 직접 첨부하고 “넌 어떼?”라고 음색 비교를 요청했다. 담당이 첨부 파일을 오디오로 확인하고 기초 특성치를 비교했다. **이번에는 오디오 원본을 직접 검토한 결과**이며, 과거 LOCAL 경로 문자열만 보았던 검수와 구분한다.
+
+| 업로드 WAV | 길이 / 규격 | 첨부 SHA256 | 판단 |
+|---|---|---|---|
+| `main18_heat_vent_serin_01.wav` (Story07) | 4.52s / PCM24kHz mono | `2426af7024c27cee7bd2bbd94883a65215a1ef406aedb2bd7dea2bf36a60c3b1` | 사용자 “감기 걸린 여자/변성기 전 소년 같다”; 상대적으로 비음/탁한 울림, 승인된 샘플과 음색 일관성 약함. **TTS 담당 재제작 권고** |
+| `main18_ground_serin_01.wav` (Story06, 승인 샘플) | 6.52s / PCM24kHz mono | `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e` | 앞서 기록된 샘플 SHA와 **완전 일치**, 사용자 음색 승인 유지 |
+
+- 기초 pitch YIN 음성 구간 중앙값: heat_vent 약 **175Hz**, ground 약 **180Hz**. 수치 자체가 캐릭터 성별을 결정하지 않으며, 우려는 주로 **울림·비음·발성 질감의 일관성**에 있다.
+- 상태 분리: `SAVED` (제작 성공) + `USER_REPORTED_TIMBRE_MISMATCH` (사용자 보고) + `TTS_QA_RECOMMENDS_REGEN` (TTS 담당 판정). **사용자의 “재제작 확정” 또는 신규 API 비용 승인으로 간주하지 않음**. 기존 WAV는 남기고 교체하지 말 것.
+- Story07 업로드 WAV가 실제 사용자 F:의 성공본과 현재 바이트 동일한지는 **로컬 checkpoint SHA와 재대조 필요**. Story06 승인 샘플 SHA는 기존 로그와 동일.
+- 전체 목표10 중 로컬 WAV8개 저장 상태는 불변; 그중 사용자 음색 승인1, 검수 보류/재제작 권고1, 다른6 새 WAV 별도 청취 필요, Story13/14 아직 미완료.
+- Story13 SAFE HOLD/LOCK 유지. 해당 파일 재생성·Story13/14 재개는 quota·프로젝트 귀속 및 사용자 별도 승인 전 불가. 추가 API 호출0, Unity 및 main 변경0.
