@@ -72,3 +72,13 @@ Main08 대사 원문/화자·Dialogue ID·퀘스트 순서·기존 정상 음성
 4. **Codex**: 청취 승인된 WAV만 정확한 ID에 연결. Main08 Trace01~03 및 인접 ID, Next/화자·Portrait·UI/AudioMixer, Save·Continue, 원본 정상 TTS·메타·Unity 상태 보호 회귀. **`main` 직접 commit/Push/병합 금지**.
 
 최종 상태: 제작 원본의 발화 오류 **원인 정황 접수 완료**, **음성 복구 미적용 / 인간 청취 승인 대기**. 기획 원문 수정은 필요하지 않음.
+
+
+## 2026-10-13 바울 대표 청취 승인 — 기존 녹음 복구 후보 채택
+
+**최신 사용자 직접 피드백:** “코덱스가 원래 짝 찾았고 목소리 다 들었는데 이제 어떻게 해야 해? 다 맞아.”
+
+- **USER_LISTENING_APPROVED (후보 집합):** Codex가 찾아서 제시한 **올바른 기존 녹음 매칭/분리 복구 후보 전부**를 바울 대표가 실제로 청취했고 내용이 모두 맞는다고 승인했다. 1차 ASR 추정 상태보다 우선하는 최신 청취 확인이다. 후보 파일별 경로/SHA·정확한 여섯 ID 매핑의 로컬 결과는 Codex가 자신의 최신 결과를 읽고 추가 확정해야 하므로 **경로나 해시를 기획이 임의 기재하지 않는다**.
+- **TTS 신규 제작 불필요 (현재 승인 후보 집합 기준):** 새 Gemini/API 호출·재녹음 금지. 태온 `supp_004`의 긴 문장과 미엘 `supp_002/003` 분리 부분까지 현장 후보 목록에 정확히 포함되어 있는지 Codex가 재확인하고 하나라도 누락되면 해당 ID만 HOLD로 두어 사용자에게 결과를 보고한다. 청취 승인이 있다고 해서 존재하지 않는 WAV가 생긴 것으로 가정하지 않는다.
+- **후속 Unity 정식 연결 승인:** Codex가 사용자 청취 PASS를 받은 실제 후보만 올바른 Stable Dialogue ID로 연결/복사·분할, 반드시 **원본/목적지 모두 백업 후 최소 변경**, Catalog→GUID/meta→PCM→대사 런타임 확인. 어떤 ID에 원본을 재사용하더라도 **출처 음성은 유지**, 다른 대사의 클립을 파괴하는 단순 이동·rename 금지.
+- 현재 **APPROVED_FOR_CODEX_INTEGRATION / NOT_YET_UNITY_APPLIED / FINAL_RUNTIME_QA_PENDING**. 원본 Unity, 미커밋, Save, Scene, 게임 원문, 기존 정상 TTS를 보호하며 검증은 비포커스 별도 worktree/격리 Save로 수행. 신규 `codex/*` 브랜치에서만 commit; **main 직접 commit/Push/병합 금지**. 완료 후 청취 승인과 런타임 음성 재생 PASS를 나누어 보고한다.
