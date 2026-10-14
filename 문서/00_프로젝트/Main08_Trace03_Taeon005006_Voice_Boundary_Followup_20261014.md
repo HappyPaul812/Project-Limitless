@@ -76,3 +76,18 @@
 - 최종 후보 005를 짧게 다시 들어볼 수 있도록 제공하고, 기술적으로 무음만 줄인 것이 입증되며 문장 내용·음색이 변하지 않을 경우 **이번 사용자 청취 승인에 따라** 정확한 005/006 두 Stable Voice ID만 Codex 격리 worktree에서 승인 음성 폴더 신규 GUID/meta로 등록하여 Catalog 연결·Runtime QA를 진행해도 된다. 품질 불확실·구간 일부 삭제 시 공식 적용 보류하고 재청취 요청.
 - 기존 WAV/GUID/meta·앞선 승인6개·Player 무음·WheelTracks 미엘004, Scene·Quest·Save/TTS/BGM 및 원본 Editor 포커스 보호. 전체 회귀/청취 검증, Safe branch Commit·Push까지만 허용; **main 직접 Push·병합 금지**.
 - 현 상태: `TWO_LINES_HUMAN_APPROVED / 005_LEADING_SILENCE_MINOR_FIX / 006_FINAL_APPROVED / CATALOG_NOT_YET_UPDATED`.
+
+
+## 2026-10-14 최종 005/006 연결·feature branch Push 완료 — main 병합은 대기
+
+Codex 최종 보고와 GitHub 원격 브랜치를 기획 담당이 교차 확인했다.
+
+- 원격 feature branch: `codex/main08-taeon005006-final-20261014`, HEAD **`721602256ac4e8c4c7081e6b6b3f04122b266edd`** (원격 확인). 기능 Commit `fe588f9af1369ec825a9b9820ebfb0a92dc9499a`, 이후 QA/문서 Commit `7216022...`. **원격 main `bddca540d2fdd9e93f642f8d0f387b34730bd2d8` 불변.**
+- 검증 QA 원문: feature branch의 `문서/00_프로젝트/Main08_Taeon005006_Final_Integration_QA_20261014.md` 및 `Evidence/Main08_TaeonFinal_20261014/QA_Summary.json`, `pcm_analysis.json`.
+- `005`: 후보 선행 **4,460 프레임(24,000Hz 기준 185.833ms)**만 잘라 최종 **6.543625s**, 첫 새 샘플0, 남은 PCM은 원 승인 후보 suffix 그대로. 클리핑·내부 편집·resample·신규TTS0. `006`: 승인 WAV 원본 바이트 불변 **3.800542s**.
+- 실제 Field02 격리 Unity: 대상 기능 **224 PASS/0 FAIL**, 두 GUID·자막·화자·이미 승인6과 Player 무음·미엘004 페이지 경계 및 Save/Continue 검사 PASS. 원본 프로젝트 **새WAV2 + 새 meta3, Catalog ID005/006 두 Clip 참조**에 한정한 디스크 적용 완료; 기존 WAV/meta 삭제·덮어쓰기0. 원본 편집기 Refresh/Play/포커스 조작0, 보호된 5,221파일 SHA 동일.
+- **기존 이슈:** UnityEditor.Search 예외, 실제 물리 스피커·정본 Unity 버전·사용자 직접 최종 005 청취 미확인, 대화 중 일반 MonsterEncounter 정상 통과 아님(테스트에서 suppress). 전체 QA 상태는 `PARTIAL`, 대상 224 PASS를 전체 엔진 완전 PASS로 확대 해석 금지.
+- **추가 확인할 구간:** PCM QA에서 005의 약한 신호 시작은 Trim 후 **~0.14s**지만 강한 신호 시작은 **~2.33s**. 2.33s를 첫 음절 시점으로 단정할 수 없고, 보존한 자연 호흡/중간 여백이 포함될 수 있다. **사용자가 처음 문제 삼은 체감 공백이 여전히 길게 느껴지는지 최종 005 음원을 직접 재청취해 확인 권장.** 승인 전에 추가 trim을 자동 지시하지 않는다.
+- **다음 결정:** 바울 대표가 최종 `main08_taeon_supp_005`를 재청취해 시작 자연스러움 확인→ 승인 시에만 feature branch의 PR·main 정상 병합을 별도 요청/진행. 만일 길면 **내부 호흡/여백의 어떤 구간이 문제인지** 청취 근거 우선 조사. 이미 승인한 006과 나머지6은 손대지 않는다.
+
+**현재 상태:** `FEATURE_PUSH_DONE / ORIGINAL_DISK_LINKED / TARGETED_QA_224_PASS / OVERALL_PARTIAL / FINAL_005_LISTENING_RECOMMENDED / MAIN_UNMERGED`.
