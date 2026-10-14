@@ -1,0 +1,56 @@
+KNOWN_SEARCH|ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.Collections.Generic.List`1[T].get_Item (System.Int32 index) (at <c5ae8a4eeb824526b5df2932bc2395e0>:0)
+UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () (at <60f2bd518b604435bcf930e6d229f684>:0)
+System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) (at <f1b392d8fe224ca2b1f9fab1000b77eb>:0)
+System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) (at <f1b392d8fe224ca2b1f9fab1000b77eb>:0)
+UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () (at <60f2bd518b604435bcf930e6d229f684>:0)
+UnityEditor.Search.SearchInit.IndexationOnStartup () (at <60f2bd518b604435bcf930e6d229f684>:0)
+UnityEditor.EditorApplication.Internal_CallDelayFunctions () (at <27ff15fd79c54f5eb7060fd0f507d441>:0)
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+KNOWN_BASELINE_URP_HOST|Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph.
+UnityEngine.Camera:Render ()
+ProjectLimitless.EditorTools.ArbelOfficialAudit:Capture (string,UnityEngine.Vector2,single,int,int,bool) (at Assets/_Project/Scripts/Editor/ArbelOfficialAudit.cs:41)
+ProjectLimitless.EditorTools.ArbelOfficialAudit:Views (string) (at Assets/_Project/Scripts/Editor/ArbelOfficialAudit.cs:44)
+ProjectLimitless.EditorTools.ArbelOfficialAudit/<Run>d__39:MoveNext () (at Assets/_Project/Scripts/Editor/ArbelOfficialAudit.cs:62)
+ProjectLimitless.EditorTools.ArbelOfficialAudit/<Flatten>d__60:MoveNext () (at Assets/_Project/Scripts/Editor/ArbelOfficialAudit.cs:134)
+ProjectLimitless.EditorTools.ArbelOfficialAudit:Tick () (at Assets/_Project/Scripts/Editor/ArbelOfficialAudit.cs:135)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+Walking physical radius+margin=0.53
+Walking goal=(0.00, 0.00) waypoints=6
+Walking goal=(3.00, 0.00) waypoints=12
+Walking_EXISTING_COLLIDER_ROUTE_HOLD|(3.00, -2.00)
+Walking_BLOCKER|point=(3.00, -2.00)|object=Barrel|type=BoxCollider2D|bounds=Center: (2.50, -1.60, 0.00), Extents: (0.18, 0.15, 0.00)|closest=(2.68, -1.76)|distance=0.4000306
+Walking goal=(6.00, -2.00) waypoints=20
+Walking goal=(6.00, -3.80) waypoints=7
+Walking goal=(0.00, -1.50) waypoints=33
+Walking_EXISTING_COLLIDER_ROUTE_HOLD|(-3.00, -1.50)
+Walking_BLOCKER|point=(-3.00, -1.50)|object=arbel-party-guide|type=BoxCollider2D|bounds=Center: (-3.00, -1.83, 0.00), Extents: (0.25, 0.17, 0.00)|closest=(-3.00, -1.65)|distance=0.15
+Walking_BLOCKER|point=(-3.00, -1.50)|object=Chest|type=BoxCollider2D|bounds=Center: (-2.30, -1.70, 0.00), Extents: (0.22, 0.15, 0.00)|closest=(-2.53, -1.55)|distance=0.4676244
+Walking goal=(-5.00, -2.50) waypoints=26
+Walking_SAFE_APPROACH|goal=(3.30, -2.30)|actual=(3.25, -2.27)|waypoints=36
+Walking_SAFE_APPROACH|goal=(-3.00, -2.90)|actual=(-3.00, -2.99)|waypoints=28
+Walking_SAFE_APPROACH|goal=(-4.00, 2.25)|actual=(-4.00, 2.24)|waypoints=25
+Walking_SAFE_APPROACH|goal=(-3.20, 4.00)|actual=(-3.25, 3.99)|waypoints=12
+Walking_SAFE_APPROACH|goal=(5.00, 2.25)|actual=(5.02, 2.25)|waypoints=48
+Walking_SAFE_APPROACH|goal=(-6.00, -3.00)|actual=(-6.00, -2.96)|waypoints=65
+Wheelchair physical radius+margin=0.53
+Wheelchair goal=(0.00, 0.00) waypoints=6
+Wheelchair goal=(3.00, 0.00) waypoints=12
+Wheelchair_EXISTING_COLLIDER_ROUTE_HOLD|(3.00, -2.00)
+Wheelchair_BLOCKER|point=(3.00, -2.00)|object=Barrel|type=BoxCollider2D|bounds=Center: (2.50, -1.60, 0.00), Extents: (0.18, 0.15, 0.00)|closest=(2.68, -1.76)|distance=0.4000306
+Wheelchair goal=(6.00, -2.00) waypoints=20
+Wheelchair goal=(6.00, -3.80) waypoints=7
+Wheelchair goal=(0.00, -1.50) waypoints=33
+Wheelchair_EXISTING_COLLIDER_ROUTE_HOLD|(-3.00, -1.50)
+Wheelchair_BLOCKER|point=(-3.00, -1.50)|object=arbel-party-guide|type=BoxCollider2D|bounds=Center: (-3.00, -1.83, 0.00), Extents: (0.25, 0.17, 0.00)|closest=(-3.00, -1.65)|distance=0.15
+Wheelchair_BLOCKER|point=(-3.00, -1.50)|object=Chest|type=BoxCollider2D|bounds=Center: (-2.30, -1.70, 0.00), Extents: (0.22, 0.15, 0.00)|closest=(-2.53, -1.55)|distance=0.4676244
+Wheelchair goal=(-5.00, -2.50) waypoints=26
+Wheelchair_SAFE_APPROACH|goal=(3.30, -2.30)|actual=(3.25, -2.27)|waypoints=36
+Wheelchair_SAFE_APPROACH|goal=(-3.00, -2.90)|actual=(-3.00, -2.99)|waypoints=28
+Wheelchair_SAFE_APPROACH|goal=(-4.00, 2.25)|actual=(-4.00, 2.24)|waypoints=25
+Wheelchair_SAFE_APPROACH|goal=(-3.20, 4.00)|actual=(-3.25, 3.99)|waypoints=12
+Wheelchair_SAFE_APPROACH|goal=(5.00, 2.25)|actual=(5.02, 2.25)|waypoints=48
+Wheelchair_SAFE_APPROACH|goal=(-6.00, -3.00)|actual=(-6.00, -2.96)|waypoints=65

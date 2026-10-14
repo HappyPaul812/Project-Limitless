@@ -1,0 +1,209 @@
+[
+  {
+    "id": "main08_taeon_supp_007",
+    "expected": "폭이 같습니다. 아마 맞을 겁니다.",
+    "approved_candidate_sha256": "8f542e95d5ab7ff25c85fc609a2178050557e02fd3b42c7a9cec0c02ad025b81",
+    "original_utterance_source": "main08_taeon_supp_008.wav",
+    "approved_source_duration": 3.53,
+    "removed_frames": 6307,
+    "removed_seconds": 0.26279166666666665,
+    "duration": 3.2672083333333335,
+    "source_frame_ranges": [
+      [
+        0,
+        197
+      ],
+      [
+        6504,
+        84720
+      ]
+    ],
+    "deleted_ranges": [
+      [
+        197,
+        6504
+      ]
+    ],
+    "speech_suffix_exact": true,
+    "breath_rms50_plus80ms_protected": true,
+    "new_boundary_max_delta": 1,
+    "clipping_samples": 0,
+    "sha256": "62e726e38e91483b3cadda74d3d77cfb3e0461bef008f1445e779e9957ba1ad1",
+    "pcm_sha256": "e65190cc6d6dbd1f993c2428ff039a70dd2c88df713fcd41e6afc68c2f502ca0",
+    "guid": "cc4b746ef0ee41548ee4451cbcc27809",
+    "asset_path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_007.wav",
+    "rate": 24000
+  },
+  {
+    "id": "main08_taeon_supp_008",
+    "expected": "누군가 이곳을 조사한 흔적입니다.",
+    "approved_candidate_sha256": "cd55c634d50810bcfce041156913148c71b6461e21d2038958b9d963a0e16d16",
+    "original_utterance_source": "main08_taeon_supp_009.wav",
+    "approved_source_duration": 4.81,
+    "removed_frames": 7544,
+    "removed_seconds": 0.31433333333333335,
+    "duration": 4.495666666666667,
+    "source_frame_ranges": [
+      [
+        0,
+        116
+      ],
+      [
+        3808,
+        31394
+      ],
+      [
+        35246,
+        115440
+      ]
+    ],
+    "deleted_ranges": [
+      [
+        116,
+        3808
+      ],
+      [
+        31394,
+        35246
+      ]
+    ],
+    "speech_suffix_exact": true,
+    "breath_rms50_plus80ms_protected": true,
+    "new_boundary_max_delta": 1,
+    "clipping_samples": 0,
+    "sha256": "e4032e2ae3745aa533fa39c742fcacd8713064f8c46ef4805dd7f2dd011b9d43",
+    "pcm_sha256": "f1a697758e02db98f3fc26c0d7d76581b6a8202505e01c9a2c73a9645c6fa452",
+    "guid": "3cd8315d1a5b4a51920cd34db83b7922",
+    "asset_path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_008.wav",
+    "rate": 24000
+  },
+  {
+    "id": "main08_taeon_supp_009",
+    "expected": "너무 조용합니다.",
+    "approved_candidate_sha256": "1ee9ba173e2de780e4e05eaa6575bac2f41bd9121b31762b197db61e1c4989b8",
+    "original_utterance_source": "main08_taeon_supp_010.wav",
+    "approved_source_duration": 3.8494166666666665,
+    "removed_frames": 19968,
+    "removed_seconds": 0.832,
+    "duration": 3.0174166666666666,
+    "source_frame_ranges": [
+      [
+        0,
+        343
+      ],
+      [
+        4613,
+        17321
+      ],
+      [
+        25247,
+        43516
+      ],
+      [
+        51288,
+        92386
+      ]
+    ],
+    "deleted_ranges": [
+      [
+        343,
+        4613
+      ],
+      [
+        17321,
+        25247
+      ],
+      [
+        43516,
+        51288
+      ]
+    ],
+    "speech_suffix_exact": true,
+    "breath_rms50_plus80ms_protected": true,
+    "new_boundary_max_delta": 2,
+    "clipping_samples": 0,
+    "sha256": "a73fb13e527ff326b17fd00dcf7f7901b55fa8096e4dd57edbc50bcf32b2bdf3",
+    "pcm_sha256": "eecde7d4e0b9d8f24d5b553bf759f9b4cd9bf0b893267a2afd8d2b6d19f558ff",
+    "guid": "873470efd83f4c27ae4efb8042e8aff5",
+    "asset_path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_009.wav",
+    "rate": 24000
+  },
+  {
+    "id": "main08_taeon_supp_010",
+    "expected": "그 이유가 무엇인지는 아직 모르겠습니다.",
+    "approved_candidate_sha256": "2631287f09c36e9a9f1e5f3c55eee90865c754a56a48f5fd9fd16c019b7e5a34",
+    "original_utterance_source": "main08_taeon_supp_010.wav",
+    "approved_source_duration": 4.4005833333333335,
+    "removed_frames": 6499,
+    "removed_seconds": 0.27079166666666665,
+    "duration": 4.129791666666667,
+    "source_frame_ranges": [
+      [
+        0,
+        113
+      ],
+      [
+        1896,
+        17117
+      ],
+      [
+        21833,
+        105614
+      ]
+    ],
+    "deleted_ranges": [
+      [
+        113,
+        1896
+      ],
+      [
+        17117,
+        21833
+      ]
+    ],
+    "speech_suffix_exact": true,
+    "breath_rms50_plus80ms_protected": true,
+    "new_boundary_max_delta": 1,
+    "clipping_samples": 0,
+    "sha256": "70e2e5f4b7a079b0675c0307c1db6f7c76b49661230ceb03450ac01b6fe82fe6",
+    "pcm_sha256": "27e679d3f295baa8541645de5a9092d1b6467f6a07bab076f924717fb2281b1f",
+    "guid": "f97ab25720004c098f3de0bf503ac26d",
+    "asset_path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_010.wav",
+    "rate": 24000
+  },
+  {
+    "id": "main08_taeon_supp_011",
+    "expected": "마법 같습니다.",
+    "approved_candidate_sha256": "7325b7d5a7966f5e068cc7d4019815db1d31f918ec672a99d7181788a020ecfc",
+    "original_utterance_source": "main08_taeon_supp_011.wav",
+    "approved_source_duration": 2.8000416666666665,
+    "removed_frames": 5970,
+    "removed_seconds": 0.24875,
+    "duration": 2.5512916666666667,
+    "source_frame_ranges": [
+      [
+        0,
+        13922
+      ],
+      [
+        19892,
+        67201
+      ]
+    ],
+    "deleted_ranges": [
+      [
+        13922,
+        19892
+      ]
+    ],
+    "speech_suffix_exact": true,
+    "breath_rms50_plus80ms_protected": true,
+    "new_boundary_max_delta": 1,
+    "clipping_samples": 0,
+    "sha256": "fd731f879513f3ee6374f2335e5f3e87906d4465b771a0f604f9c7679190ace3",
+    "pcm_sha256": "6125df1aabd40d6989ca836a7221896759cbf6118bc0b6e93793683cbb3fa4d2",
+    "guid": "830db786a4a64a41913755c02f21c1f7",
+    "asset_path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_011.wav",
+    "rate": 24000
+  }
+]
