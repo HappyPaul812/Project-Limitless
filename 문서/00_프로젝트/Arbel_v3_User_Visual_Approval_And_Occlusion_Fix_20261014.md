@@ -29,3 +29,20 @@
 - **리뉴얼 담당**: 사용자 v3 미술 방향 승인 보고를 읽고 docs/art-renewal 최신 인계에 기재. 필요시 **가림을 피하는 해당 지붕/벽 그림만** 최소 수정 제안. Chapter3 신규 아트 영역 침범 금지.
 - **Codex**: 격리 원인 진단·오클루전 수정 실험·시각/기능 QA 및 실제 캡처. 승인까지 원본 프로젝트 영구변경0.
 - **기획**: 승인 경계·기술 HOLD·디자인 변경/부서 승인 관리. 수정본 직접 확인 후 다음 정식 반영 단계 승인 요청.
+
+
+## 2026-10-14 후속 Codex 격리 보완 보고 — 기술 3245 PASS / 시각 PARTIAL
+
+바울 대표가 새 Codex 격리 Unity 보완·캡처 보고를 전달. 사용자 로컬 화면 보고를 기록한 것이며 이 기획 세션이 화면55장을 직접 다운로드·정밀 비교하거나 로컬 Unity를 실행해 별도 판단한 것은 아니다.
+
+- **변경 형태**: 원본 PNG 픽셀 수정0; 격리 Scene에서 SpriteRenderer Sorting 계층을 최소 보완. 기존 23개 직접 교체후보, Scene Renderer284/284, Optional 장식0.
+- **보고 QA**: 3,245 PASS / 0 FAIL, Missing Sprite/Script0. 실제 Unity 캡처 **55장**.
+- **개선 PASS**: 북서 지붕의 세린 완전 가림에서 세린 시각 표시 가능으로 변경; 양쪽 건물 벽이 가리던 문이 이제 보임. 소품은 그림자 Alpha 영역과 불투명 본체 근사 접지선을 나누어 검사했고, Collider가 있는 **9개 배치는 높이 범위 검사 PASS**.
+- **접근성**: 기존 Barrel·파티 안내판·Chest Collider가 일부 직선 경로를 차단. 보고된 주변 정규 동선에서는 도보·휠체어 모두 **5/5 지점 우회 도달 가능**. 특정 6/8·2/8 이전 보류를 무조건 모든 입구/실기 조작 완전 PASS로 치환하지 않는다. 우회 거리·인지부하·원본 수동 입력은 별도 점검 권고. 해당 Collider를 임의 제거/이동하지 않음.
+- **OPEN/HOLD**: 세린의 지붕 앞뒤 **깊이감** 표현은 추가 시각 확인 필요(지붕 뒤에 있어야 하는 위치에서 앞에 나타나는지, 문 출입 시 겹침 문제가 재발하는지). 기존 Portal-나무 겹침은 별도 OPEN 유지. 전체 퀘스트·전투 회귀와 정본 Unity 버전 검증은 이번 격리 보완으로 완료됐다고 간주하지 않는다.
+- **적용 자산 출처**: 기대 SHA256 `84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b`의 **이전 보존 검증 ZIP**으로 보완 작업을 수행했으며 현재 `Downloads` ZIP은 `58fb22...`로 불일치(보고상 문서11개 차이, PNG43 동일). 정식 적용 전에 정확한 후보ZIP 출처·SHA/Manifest를 다시 확정해 두 버전을 임의 혼용하지 않는다.
+- **원본 보호**: 원본 5,223파일 변경0, 사용자 Editor/Play/포커스 조작0, 공식 Unity 디스크 반영0, Git Commit·Push·main Merge0.
+
+**기획 판정:** `ISOLATED_TECH_QA_PASS / DOORS_AND_PROP_QA_PASS / SERIN_DEPTH_VISUAL_HOLD / PORTAL_TREE_EXISTING_OPEN / USER_APPROVED_ART_DIRECTION_ONLY / OFFICIAL_APPLY_NOT_AUTHORIZED`.
+
+**다음 최소 조치**: Codex가 격리 환경에서 세린/지붕의 앞·뒤 경계와 캐릭터 이동 시 표시·출입문 가시성(여러 위치/화면비·실제 카메라) 확인 후 보완 Sorting 명세 + Before/After 비교를 제출. 필요하면 art renewal 담당의 지붕 부분 픽셀 조정 제안으로 분리. 기존 Portal 겹침은 새 아트의 문제로 섞지 말고 기존 기술 이슈로 별도 기록. 바울 대표가 실제 비교를 다시 본 뒤에만 정식 적용 및 feature-branch Push 범위를 승인한다.
