@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 태온005·006 최종 사용자 청취 승인 및 PR #11
+
+바울 대표가 005 최종 공백 축소 WAV를 다시 듣고 **“들었어 좋아.”** 최종 청취 승인. 승인한 태온005 최종6.543625초/006 3.800542초, 기존 승인6·Stable ID 보호. 원본 게임 디스크 Catalog2참조 적용 보고, Field02 QA224PASS/FAIL0·전체 Search/실제 스피커 등 PARTIAL.
+
+음성 전용 GitHub **[PR #11](https://github.com/HappyPaul812/Project-Limitless/pull/11)** OPEN, 최신 조회 **mergeable:true**, 비교 **main보다 ahead2/behind0**, 20파일(새음성2/meta3/Catalog/QA/문서). 원격 작업 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd`, `main` 아직 `bddca540d2fdd9e93f642f8d0f387b34730bd2d8` 불변. 사용자 `좋아`는 **음성 청취 승인**으로 기록, 팀 운영 정책에 따라 **main 병합의 명시 승인 전 실행 보류**. 아르벨 세린 지붕 FAIL/정식 적용 차단은 별도 계속 유지. 최신 음성 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md` (docs/planning).
+
+---
+
 # PLANNING 인계 — 2026-10-14 태온005/006 원격 Push 완료·최종005 청취 확인 권장
 
 바울 대표 보고 + GitHub 직접 확인: 작업브랜치 `codex/main08-taeon005006-final-20261014` 원격 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd` Push 완료. 원본 디스크 새로운 승인WAV2/meta3와 Catalog 참조ID005/006 등록, 기존 승인6·원본WAV/meta·Editor/Play/포커스·5,221파일 보호. 005 선행 무음185.833ms만 제거→6.543625s; 006 3.800542s 완전 동일. Field02 대상 224PASS/FAIL0, 기존 Editor Search 예외/물리스피커/정본 버전/대화중일반몬스터 정상조우는 PARTIAL·OPEN. main `bddca540...` 변화0.
