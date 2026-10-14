@@ -1,3 +1,12 @@
+# PLANNING 인계 — 2026-10-14 Codex Arbel v3 보고 후 아트 담당 명시 확인 대기
+
+Codex v3 메타데이터 정정은 사용자 전달 보고 기준 **QA PASS**: `Limitless_Arbel_Renewal_Art_v3.zip` SHA256 `84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b`, 소품 Sprite.rect 8개 정정, 기존 PNG34/34 동바이트·284Renderer·도로 seam0·북서 십자, 검사2455+191PASS; 원본 Unity·Push0.
+
+**중요한 부서 간 인계 조치:** GitHub `docs/art-renewal`의 `WORLD_ART_RENEWAL_LATEST.md`를 확인하니 아직 v2 상태임. 따라서 리뉴얼 담당이 v3 결과를 **직접 읽고 검토한 것은 미확인**. 기획 담당은 `Arbel_v2_Props8_Metadata_Correction_Gate_20261014.md`에 리뉴얼 담당의 **명시 검토·응답·문서 갱신 지시**를 기록함. 바울 대표가 담당 세션에 이를 전달한 뒤 담당의 리뷰와 `docs/art-renewal` 문서화 커밋을 확인할 필요가 있음. 자동 세션간 전달 완료로 주장하지 말 것.
+
+현 상태: **Codex 기술 문서 QA 완료 보고 접수 / 아트 담당 v3 확인 미완 / 바울 대표 미술 승인 미완 / Unity 적용·런타임·Push 미진행**. 지붕/NPC 가림·소품 실제 접지·Portal 장식 충돌/선택장식11 HOLD.
+
+---
 # PLANNING 인계 — 2026-10-14 Arbel v2 재검수 / Props8 기록 오류 (최신)
 
 바울 대표가 Codex v2 재검수 결과를 전달. v2 ZIP SHA256 17625d35c93599bdd74a4b8280c0416240c402be279815c8966199410bca97b7 일치, PNG/CRC/Manifest, 도로 Seam0, 북서 의료 십자 수정, Arbel Renderer284/284 전부 PASS. 다만 **소품9종 중 원본 크기 필드8종의 기존 시트/복합크기 fallback 오기**가 있음. Codex 정정 근거 CSV에 따르면 Medium Tree 125×146→128×156, Barrel64×82→128×128; 나머지는 임의 추정하지 않고 CSV 근거로 복구. PNG 자체 오류 아님.
