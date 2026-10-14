@@ -1,3 +1,10 @@
+## 2026-10-14 마감 음성007~011 정식 연결·통합 QA
+
+- 바울대표전후보청취승인에따라5WAV복구/앞저음량여백최소축소·Catalog5GUID교정. 신규TTS0·승인005006+기존6/미엘/Player/QuestSave보호. 최종007 3.267208·008 4.495667·009 3.017417·010 4.130042·011 2.550625초.
+- 최신main b5174f2f(PR12Arbel/PR13기획)기준 음성250+Arbel1729+Main21펫106+전투회귀232+Scene26=2343PASS/FAIL0. 기존환경/원본liveImport미검증은PARTIAL. Arbel중복적용0·C3DRAFT구현0.
+- 음성전용codex/main08-taeon007011-final-20261014, 구현2ff11baa878156f9b7c537d9580e70cd1f5568e4. [마감QA](../../EndOfDay_Integration_Voice_LocalSync_QA_20261014.md). QA통과후이브랜치PR병합예정이며실제병합SHA는최종인계에추가기록합니다.
+- localmainff022e63 대 originmain 이력분기(로컬문서2커밋). 격리ff-only실패로원본main동기화STOP/PARTIAL,강제이동0·1274dirty백업·Save보호. 승인Catalog1만디스크수정+새11파일·원본HEAD/Editor제어0. 다음:로컬2커밋/dirty비파괴정리후동기화재개.
+
 ## 2026-10-14 Sprite 참조 복구 — 필수 게이트 PASS
 
 - 새 codex/sprite-reference-recovery-20261014: 동일PNG11·Sprite123 등록, Arbel/Field05~08의1747 Sprite GUID만 복구. Scene 역치환 동일/ThirdParty·원본미커밋·5221SHA/HEAD/status 보호.

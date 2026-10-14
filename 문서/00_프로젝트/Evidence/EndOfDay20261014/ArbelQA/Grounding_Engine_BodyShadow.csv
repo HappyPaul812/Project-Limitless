@@ -1,0 +1,14 @@
+name,world_opaque240_bottom_y,world_alpha1_bottom_y,collider_min_y,collider_max_y,opaque_proxy_within_collider_y_band,definition
+Fence_-7.5_5.3,4.925,4.925,4.85,5.05,True,Opacity proxy only; not artist body mask
+Fence_-6.5_5.3,4.925,4.925,4.85,5.05,True,Opacity proxy only; not artist body mask
+Fence_6.5_5.3,4.925,4.925,4.85,5.05,True,Opacity proxy only; not artist body mask
+Fence_7.5_5.3,4.925,4.925,4.85,5.05,True,Opacity proxy only; not artist body mask
+TreeEast,1.046875,0.96875,0.875,1.125,True,Opacity proxy only; not artist body mask
+TreeSouthWest,-4.653125,-4.73125,-4.825,-4.575,True,Opacity proxy only; not artist body mask
+TreeWest,0.971875,0.89375,0.9,1.2,True,Opacity proxy only; not artist body mask
+RockNorth,1.717187,1.63125,NO_COLLIDER,NO_COLLIDER,False,Opacity proxy only; not artist body mask
+Campfire,0.646875,0.646875,NO_COLLIDER,NO_COLLIDER,False,Opacity proxy only; not artist body mask
+Barrel,-1.651562,-1.76875,-1.75,-1.45,True,Opacity proxy only; not artist body mask
+Chest,-1.751562,-1.876562,-1.85,-1.55,True,Opacity proxy only; not artist body mask
+BushWest,-1.614063,-1.6375,NO_COLLIDER,NO_COLLIDER,False,Opacity proxy only; not artist body mask
+BushEast,-1.414063,-1.4375,NO_COLLIDER,NO_COLLIDER,False,Opacity proxy only; not artist body mask

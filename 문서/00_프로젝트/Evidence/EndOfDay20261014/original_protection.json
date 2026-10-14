@@ -1,0 +1,12 @@
+{
+  "before_head": "ff022e63dfe364f559fcc29819d27b123ad31127",
+  "protected_files": 5851,
+  "unchanged": 5850,
+  "authorized_existing_changes": [
+    "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset"
+  ],
+  "unapproved_changes": [],
+  "user_dirty_backup_paths": 1274,
+  "original_editor_commands": 0,
+  "local_sync": "STOP_NOT_FAST_FORWARD_LOCAL_2_REMOTE_160_AT_BASELINE"
+}

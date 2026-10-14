@@ -1,0 +1,72 @@
+{
+  "candidates": [
+    {
+      "id": "main08_taeon_supp_007",
+      "lossless_ranges_exact": true,
+      "pcm_sha_matches": true,
+      "duration": 3.2672083333333335,
+      "first_breath_rms50": 0.26,
+      "first_strong_rms30": 0.41,
+      "removed_rms_dbfs": -65.38271905436515,
+      "no_clipping": true,
+      "boundary_delta_lsb": 1,
+      "human_match_approved": true
+    },
+    {
+      "id": "main08_taeon_supp_008",
+      "lossless_ranges_exact": true,
+      "pcm_sha_matches": true,
+      "duration": 4.495666666666667,
+      "first_breath_rms50": 0.28,
+      "first_strong_rms30": 1.54,
+      "removed_rms_dbfs": -59.59159074012042,
+      "no_clipping": true,
+      "boundary_delta_lsb": 1,
+      "human_match_approved": true
+    },
+    {
+      "id": "main08_taeon_supp_009",
+      "lossless_ranges_exact": true,
+      "pcm_sha_matches": true,
+      "duration": 3.0174166666666666,
+      "first_breath_rms50": 0.29,
+      "first_strong_rms30": 1.68,
+      "removed_rms_dbfs": -60.333959577245594,
+      "no_clipping": true,
+      "boundary_delta_lsb": 2,
+      "human_match_approved": true
+    },
+    {
+      "id": "main08_taeon_supp_010",
+      "lossless_ranges_exact": true,
+      "pcm_sha_matches": true,
+      "duration": 4.129791666666667,
+      "first_breath_rms50": 0.27,
+      "first_strong_rms30": 1.02,
+      "removed_rms_dbfs": -65.92236425645386,
+      "no_clipping": true,
+      "boundary_delta_lsb": 1,
+      "human_match_approved": true
+    },
+    {
+      "id": "main08_taeon_supp_011",
+      "lossless_ranges_exact": true,
+      "pcm_sha_matches": true,
+      "duration": 2.5512916666666667,
+      "first_breath_rms50": 0.19,
+      "first_strong_rms30": 0.97,
+      "removed_rms_dbfs": -60.675091650027575,
+      "no_clipping": true,
+      "boundary_delta_lsb": 1,
+      "human_match_approved": true
+    }
+  ],
+  "catalog_only_five_guids_changed": [
+    "main08_taeon_supp_007",
+    "main08_taeon_supp_008",
+    "main08_taeon_supp_009",
+    "main08_taeon_supp_010",
+    "main08_taeon_supp_011"
+  ],
+  "new_tts_api_calls": 0
+}

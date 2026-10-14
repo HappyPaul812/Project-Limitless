@@ -1,0 +1,87 @@
+[
+  {
+    "id": "main08_taeon_supp_007",
+    "expected": "폭이 같습니다. 아마 맞을 겁니다.",
+    "recognized": "포기 같습니다. 아마 맞을 겁니다.",
+    "exact": false,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 0.94,
+        "text": " 포기 같습니다."
+      },
+      {
+        "start": 1.58,
+        "end": 2.44,
+        "text": " 아마 맞을 겁니다."
+      }
+    ],
+    "human_approval": "2026-10-14 USER_APPROVED_ALL_MATCHES",
+    "source_pcm_protected": true,
+    "offline": true
+  },
+  {
+    "id": "main08_taeon_supp_008",
+    "expected": "누군가 이곳을 조사한 흔적입니다.",
+    "recognized": "누군가 이곳을 조사하는 흔적입니다",
+    "exact": false,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.86,
+        "text": " 누군가 이곳을 조사하는 흔적입니다"
+      }
+    ],
+    "human_approval": "2026-10-14 USER_APPROVED_ALL_MATCHES",
+    "source_pcm_protected": true,
+    "offline": true
+  },
+  {
+    "id": "main08_taeon_supp_009",
+    "expected": "너무 조용합니다.",
+    "recognized": "너무 조용합니다",
+    "exact": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.46,
+        "text": " 너무 조용합니다"
+      }
+    ],
+    "human_approval": "2026-10-14 USER_APPROVED_ALL_MATCHES",
+    "source_pcm_protected": true,
+    "offline": true
+  },
+  {
+    "id": "main08_taeon_supp_010",
+    "expected": "그 이유가 무엇인지는 아직 모르겠습니다.",
+    "recognized": "그 이유가 무엇인지는 아직 모르겠습니다.",
+    "exact": true,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 3.38,
+        "text": " 그 이유가 무엇인지는 아직 모르겠습니다."
+      }
+    ],
+    "human_approval": "2026-10-14 USER_APPROVED_ALL_MATCHES",
+    "source_pcm_protected": true,
+    "offline": true
+  },
+  {
+    "id": "main08_taeon_supp_011",
+    "expected": "마법 같습니다.",
+    "recognized": "하... 마법 같습니다",
+    "exact": false,
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 1.52,
+        "text": " 하... 마법 같습니다"
+      }
+    ],
+    "human_approval": "2026-10-14 USER_APPROVED_ALL_MATCHES",
+    "source_pcm_protected": true,
+    "offline": true
+  }
+]
