@@ -1,0 +1,22 @@
+{
+  "source005_sha": "5e00409775bd9b731061c5a2d8c4d136694c3d6dba2af1718b49cb10eb6957a9",
+  "final005_sha": "29fa3905e58ad23a0a3108922526e356147dbffbd478d68f765c777cee6d25b7",
+  "approved006_sha": "796f05398dbfe8de2cfb892edaa52bdf3679d500e10156e5640230a8658bbd00",
+  "trim_frames": 4460,
+  "trim_seconds": 0.18583333333333332,
+  "original005_seconds": 6.7294583333333335,
+  "final005_seconds": 6.543625,
+  "original006_seconds": 3.8005416666666667,
+  "retained_pcm_identical_to_original_suffix": true,
+  "first_new_sample": 0,
+  "previous_cut_sample": 0,
+  "removed_rms_dbfs": -64.03457313971566,
+  "removed_peak_dbfs": -54.05073156633725,
+  "original_first_activity_rms50_seconds": 0.32,
+  "final_first_activity_rms50_seconds": 0.14,
+  "original_substantial_onset_rms35_seconds": 2.52,
+  "final_substantial_onset_rms35_seconds": 2.33,
+  "breath_policy": "Preserve all potential breath/activity after 0.25s. No inner gap edits.",
+  "tts_calls": 0,
+  "fade_or_resampling": false
+}

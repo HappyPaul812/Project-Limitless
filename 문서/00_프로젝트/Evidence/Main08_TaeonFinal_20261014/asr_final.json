@@ -1,0 +1,15 @@
+{
+  "id": "main08_taeon_supp_005",
+  "expected": "초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.",
+  "recognized": "초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.",
+  "text_exact": true,
+  "segments": [
+    {
+      "start": 2.3999999999999986,
+      "end": 5.74,
+      "text": " 초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다."
+    }
+  ],
+  "offline": true,
+  "new_human_approval_claimed": false
+}

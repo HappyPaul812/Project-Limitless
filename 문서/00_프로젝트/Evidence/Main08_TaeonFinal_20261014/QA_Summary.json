@@ -1,0 +1,93 @@
+{
+  "targeted_runtime": "PASS",
+  "overall": "PARTIAL_EXISTING_EDITOR_SEARCH_AND_PHYSICAL_SPEAKER_NOT_TESTED",
+  "runtime_pass": 224,
+  "runtime_fail": 0,
+  "exact_runtime_pcm_guid_ids": 8,
+  "source005_pcm_suffix_identical": true,
+  "approved006_wav_unchanged": true,
+  "pcm_analysis": {
+    "source005_sha": "5e00409775bd9b731061c5a2d8c4d136694c3d6dba2af1718b49cb10eb6957a9",
+    "final005_sha": "29fa3905e58ad23a0a3108922526e356147dbffbd478d68f765c777cee6d25b7",
+    "approved006_sha": "796f05398dbfe8de2cfb892edaa52bdf3679d500e10156e5640230a8658bbd00",
+    "trim_frames": 4460,
+    "trim_seconds": 0.18583333333333332,
+    "original005_seconds": 6.7294583333333335,
+    "final005_seconds": 6.543625,
+    "original006_seconds": 3.8005416666666667,
+    "retained_pcm_identical_to_original_suffix": true,
+    "first_new_sample": 0,
+    "previous_cut_sample": 0,
+    "removed_rms_dbfs": -64.03457313971566,
+    "removed_peak_dbfs": -54.05073156633725,
+    "original_first_activity_rms50_seconds": 0.32,
+    "final_first_activity_rms50_seconds": 0.14,
+    "original_substantial_onset_rms35_seconds": 2.52,
+    "final_substantial_onset_rms35_seconds": 2.33,
+    "breath_policy": "Preserve all potential breath/activity after 0.25s. No inner gap edits.",
+    "tts_calls": 0,
+    "fade_or_resampling": false
+  },
+  "signal_quality": [
+    {
+      "id": "main08_taeon_supp_005",
+      "clipped_samples": 0,
+      "peak_dbfs": -1.7200902817939412,
+      "first_sample": 0,
+      "last_sample": 0,
+      "max_first_10ms_step": 9
+    },
+    {
+      "id": "main08_taeon_supp_006",
+      "clipped_samples": 0,
+      "peak_dbfs": -2.437494633802608,
+      "first_sample": 0,
+      "last_sample": -51,
+      "max_first_10ms_step": 16
+    }
+  ],
+  "playback_timeline": [
+    {
+      "id": "main08_taeon_supp_005",
+      "source_clock_start_delay_seconds": 0.0128964000000025,
+      "first_sample_clock": 512,
+      "clip_hz": 24000,
+      "output_hz": 48000,
+      "dsp_buffer_length": 1024,
+      "dsp_buffer_count": 4
+    },
+    {
+      "id": "main08_taeon_supp_006",
+      "source_clock_start_delay_seconds": 0.0397290999999953,
+      "first_sample_clock": 512,
+      "clip_hz": 24000,
+      "output_hz": 48000,
+      "dsp_buffer_length": 1024,
+      "dsp_buffer_count": 4
+    }
+  ],
+  "implementation_commit": "fe588f9af1369ec825a9b9820ebfb0a92dc9499a",
+  "branch": "codex/main08-taeon005006-final-20261014",
+  "original_disk_apply": {
+    "original_root_applied": true,
+    "new_wav_count": 2,
+    "new_meta_count": 3,
+    "catalog_guid_reference_changes": 2,
+    "existing_wav_meta_changes": 0,
+    "protected_files_unchanged": 5222,
+    "unexpected_changes": [],
+    "added_paths": [
+      "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014.meta",
+      "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_005.wav",
+      "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_005.wav.meta",
+      "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_006.wav",
+      "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_006.wav.meta"
+    ],
+    "original_head_unchanged": true,
+    "original_editor_refresh_play_focus_operations": 0,
+    "runtime_pass": 224,
+    "runtime_fail": 0
+  },
+  "dialogue_encounter_issue": "PREEXISTING_OPEN_SUPPRESSED_IN_THIS_QA",
+  "no_new_tts": true
+}
