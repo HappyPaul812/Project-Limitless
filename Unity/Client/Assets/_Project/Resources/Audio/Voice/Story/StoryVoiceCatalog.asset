@@ -572,10 +572,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9b8d91c20b2f46e480eeb84343548495, type: 3}
     speakerId: companion_miel
   - id: main08_taeon_supp_005
-    clip: {fileID: 8300000, guid: c4d82101f9b726f4fa327b135df26842, type: 3}
+    clip: {fileID: 8300000, guid: 601079344d264b3ebfc4f9c062fac747, type: 3}
     speakerId: companion_taeon
   - id: main08_taeon_supp_006
-    clip: {fileID: 8300000, guid: 3bb3a7f0d6d50424da168e6df59bba5f, type: 3}
+    clip: {fileID: 8300000, guid: 7d72425d36bd4d2494a62c54f93d38c2, type: 3}
     speakerId: companion_taeon
   - id: main08_miel_supp_004
     clip: {fileID: 8300000, guid: c0bd210bcd785f141bc58ae03ff10c66, type: 3}
