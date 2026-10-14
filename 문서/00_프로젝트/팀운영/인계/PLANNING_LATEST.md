@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 PR #11 태온 005·006 main 병합 확인
+
+바울 대표가 Main08 음성 PR #11의 **main 병합을 명시 승인**하고 기획 담당이 정상 병합 수행. PR #11 = merged/closed, merge commit **`314f7fbbd66799ff93ec71404bcf388023c655be`**; GitHub 원격 `main` HEAD가 정확히 동일 SHA임을 다시 확인. 태온005·006(사용자 최종 청취 승인; 005 선행무음185.833ms 축소, 006 기존 PCM 보존), 음성 Catalog 2개 ID 연결과 QA 문서·증거 병합. 사전 224PASS/FAIL0, 별도 기존 Search·스피커·대화 중 조우 OPEN은 그대로.
+
+**아르벨 v3 공식 적용은 세린 지붕 깊이감 FAIL로 여전히 BLOCKED**, 선택 장식11 미배치. TTS 병합을 아르벨 승인으로 오해 금지. 최신 확인은 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
 # PLANNING 인계 — 2026-10-14 태온005·006 최종 사용자 청취 승인 및 PR #11
 
 바울 대표가 005 최종 공백 축소 WAV를 다시 듣고 **“들었어 좋아.”** 최종 청취 승인. 승인한 태온005 최종6.543625초/006 3.800542초, 기존 승인6·Stable ID 보호. 원본 게임 디스크 Catalog2참조 적용 보고, Field02 QA224PASS/FAIL0·전체 Search/실제 스피커 등 PARTIAL.
