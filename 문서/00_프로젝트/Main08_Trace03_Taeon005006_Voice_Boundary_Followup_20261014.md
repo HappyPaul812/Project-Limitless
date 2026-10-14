@@ -104,3 +104,15 @@ GitHub 직접 확인:
 - 사용자 `좋아`는 최종 005 WAV 청취 승인으로 기록하고, main 반영은 팀 운영 규칙에 따라 **추가 명시 병합 지시 전 별도 대기**한다. 아르벨 v3 세린 깊이감 FAIL/적용보류와 이 음성 PR 병합은 **서로 독립**.
 
 **최신 상태: TWO_VOICES_USER_APPROVED / FEATURE_PUSH_DONE / PR11_OPEN_MERGEABLE / MAIN_NOT_MERGED / NEXT_USER_MAIN_APPROVAL_PENDING.**
+
+## 2026-10-14 바울 대표 명시 승인 → PR #11 main 정상 병합 완료 (최신)
+
+바울 대표가 “PR #11을 main에 병합할까요?”라는 질의에 **“그래”**라고 명시 승인함.
+- 직접 실행: GitHub PR [#11](https://github.com/HappyPaul812/Project-Limitless/pull/11) 일반 merge, 예상 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd` 지정, 응답 **merged:true**.
+- 실제 병합 SHA: **`314f7fbbd66799ff93ec71404bcf388023c655be`**.
+- GitHub 원격 후속 교차확인: PR #11 **closed/merged:true**, 원격 **main HEAD 동일 `314f7fbbd66799ff93ec71404bcf388023c655be`**.
+- 반영 범위: 승인된 태온005·006 신규 WAV/고유 meta·Catalog Stable ID 2개 연결 및 해당 QA·증거·CURRENT_STATUS. 기존 승인6·미엘004·플레이어 무음/Scene·Quest/Save/음악·Field04/Arbel 아트의 불변 검증을 별도 Codex QA 기준으로 보호. 새 TTS 없음.
+- 기능 QA 224PASS/FAIL0은 **병합 전 feature 브랜치에서 실시한 격리 QA**이며, 이 병합 직후 Unity 플레이를 다시 실제로 수행했다는 뜻은 아님. Editor Search 기존 예외·물리스피커·버전·대화 중 MonsterEncounter OPEN은 별도.
+- **아르벨 v3 세린 지붕 깊이감 FAIL에 따른 정식 적용 차단은 계속 유지**, 이번 음성 병합으로 변경되지 않음.
+
+**최종 상태:** `FINAL_VOICE_USER_APPROVED / PR11_MERGED / REMOTE_MAIN_SHA_VERIFIED / ARBEL_STILL_BLOCKED`.
