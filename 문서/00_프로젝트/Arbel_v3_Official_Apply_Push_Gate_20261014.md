@@ -47,3 +47,16 @@
 
 **최신 상태: `OFFICIAL_APPLY_BLOCKED / SERIN_DEPTH_VISUAL_FAIL / TECH_QA_905_PASS / ORIGINAL_UNCHANGED / ART_FIX_FEASIBILITY_TO_CHECK`.**
 
+
+
+## 2026-10-14 격리 구조 후보 1575 PASS — 투명 지붕 최종 미술 검토 대기
+
+바울 대표가 Codex의 최신 격리 Unity 후보/QA 캡처 보고를 전달. **실제 사용자 미술 승인 또는 원본 Unity 적용 보고가 아니다.**
+
+- **기술 후보:** 기존 앞뒤 Y-Sorting + SortingGroup으로 세린을 건물 뒤 순서에 유지하면서, **세린을 실제로 가리는 지붕 영역만 런타임 투명 표시**. 기존 지붕의 보이는 PNG Alpha 영역이 세린 Sprite의 약 **99.79%**와 겹쳐 단순 Order 조정으로는 깊이감 문제가 해결되지 않는다는 조사 결과를 제공받음.
+- **격리 QA:** 전체 **1,575 PASS/0 FAIL**, 실제 Unity 캡처 **68장**, 세린 뒤·측면·문 앞·앞쪽 위치와 다른 NPC 상호작용 **3/3 PASS**. 벽·문은 불투명하게 두어 기존 출입문 가림이 재발하지 않음. 신규 PNG 제작·NPC 좌표·Collider/원본 Editor/Play/포커스 변경0, 원본5,223 파일 SHA/HEAD/Git dirty 보호. 공식 적용/Commit·Push/main 병합0.
+- **계속 OPEN:** 기존 Portal↔나무 겹침, 별도 실제 원본 Editor/전체 회귀 및 정본 Unity 버전과 마지막 미술 판정. 선택 장식 11종은 미배치.
+- **기획의 화면 관찰:** 사용자 제공 작은 2열 비교 스크린샷 오른쪽에서는 지붕이 옅어져 세린이 드러남. 그러나 **세린이 지붕 위에 놓인 듯한 인상까지 해결됐는지는 이 화면만으로 확정하기 어려움**. 수치 검증 PASS가 시각적 자연스러움/사용자 최종 승인 PASS는 아님. 지붕이 가려질 때만 국소 투명해지는지, 과도한 알파 변화/깜빡임이 없는지, 문·다른 NPC/휠체어 동선에서 시각적 일관성을 확인할 필요.
+- **다음 결정 요청:** 바울 대표에게 해당 투명 지붕의 **시각 표현 자체가 괜찮은지** 먼저 확인. 동의할 경우에도 원본 정식 적용은 정확한 v3 ZIP SHA/검증본, 필수 QA(실제 Runtime, 기존 Quest/Save/Portal 접근성, 23 BuildScene), 별도 명시 적용/feature-branch Push 승인 범위를 확인해 진행. 마음에 들지 않으면 Sorting 숫자를 재반복하지 말고 국소 occluder 마스크/접근 시 투명화/미술 담당의 최소 지붕 레이어 분리 중 적절한 대안을 비교한다.
+
+**최신 상태: `ISOLATED_VISUAL_SOLUTION_CANDIDATE / TECH_QA_1575_PASS / USER_VISUAL_APPROVAL_PENDING / OFFICIAL_APPLY_BLOCKED / MAIN_UNCHANGED`.**
