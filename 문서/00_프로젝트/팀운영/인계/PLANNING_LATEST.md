@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 태온005/006 원격 Push 완료·최종005 청취 확인 권장
+
+바울 대표 보고 + GitHub 직접 확인: 작업브랜치 `codex/main08-taeon005006-final-20261014` 원격 HEAD `721602256ac4e8c4c7081e6b6b3f04122b266edd` Push 완료. 원본 디스크 새로운 승인WAV2/meta3와 Catalog 참조ID005/006 등록, 기존 승인6·원본WAV/meta·Editor/Play/포커스·5,221파일 보호. 005 선행 무음185.833ms만 제거→6.543625s; 006 3.800542s 완전 동일. Field02 대상 224PASS/FAIL0, 기존 Editor Search 예외/물리스피커/정본 버전/대화중일반몬스터 정상조우는 PARTIAL·OPEN. main `bddca540...` 변화0.
+
+**주의**: 실제 WAV 선행 약한 신호 0.14초, 강한 발화 신호 약2.33초(첫 음절 시점으로 단정 불가). 바울 대표가 처음 요청한 공백의 체감 개선을 재청취하면 최종 승인 판단에 유익. **PR/main 병합은 사용자 승인 전 대기**. 만일 여전히 공백 길면 Codex에게 보존된 숨/내부 여백 청취 기반 진단만 요청. 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Arbel 공식 적용 FAIL, 세린 깊이감 원인 진단
 
 바울 대표 Codex 보고: **아르벨 정식 적용 필수 게이트 FAIL**, 원본 적용·Commit·Push 중단 완료. 격리 시험 기술 **905PASS**, Renderer284/284·Missing Sprite/Script0·캡처17장·후보23·PNG재제작0. 그러나 기존 지붕 Sorting 뒤=세린 거의 가려짐, 앞으로=세린 지붕 위에 선 것처럼 보임. Order30 등 단순 Sorting으로는 해결되지 않음. 원본5223 SHA/HEAD/dirty·Unity Editor/Play/포커스·Save·Scene 무변경. 기존 Portal/나무 겹침은 별도 OPEN.
