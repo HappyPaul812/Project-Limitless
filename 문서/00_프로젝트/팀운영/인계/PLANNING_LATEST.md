@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Arbel v3 미술 방향 승인 / 화면 가림 보완 대기
+
+사용자가 Codex 아르벨 격리 Unity 캡처 39장을 직접 보고 **“봤어. 좋아”**라고 답함. 따라서 **USER_VISUAL_DIRECTION_APPROVED**. 보고 수치: 교체 후보23 / Renderer284/284 / 선택장식0 / 전체 Scene 참조3654 정상 / Missing Sprite·Script0, 원본5223파일 변화0. **기술 PASS / 시각 PARTIAL**: 북서 지붕이 세린 가림, 양쪽 건물 벽이 출입문 가림. 소품9종 실제 물리접지/기존 Portal-나무 중첩/휠체어 6/8 및 미도달2 지점 HOLD. Downloads ZIP 기대 SHA 불일치라 시험은 기대 SHA와 일치한 기존 검증본으로 진행한 점 주의. 정식 적용 전에 후보 ZIP SHA를 확정해야 함.
+
+정본: `문서/00_프로젝트/Arbel_v3_User_Visual_Approval_And_Occlusion_Fix_20261014.md` (docs/planning). **다음은 Codex 격리 환경에서 지붕/벽 가림만 최소 보정하고 실제 Unity 전후 비교 + 기능/접근성 재검증**, PNG 수정 필요 시 리뉴얼 아트 담당 개별 수정 요구. 사용자 재확인 전 원본 공식 적용/Push/main 병합 승인 없음. 선택 장식11종 계속 미배치.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Arbel v3 격리 Unity 화면시험 승인 (최신)
 
 바울 대표가 "그래."라고 명시하여 Arbel v3의 **원본 변경 없는 격리 Unity 시험적 Sprite 교체 및 실제 GameView/RenderTexture Before/After 캡처**를 승인함. 이는 전체 미술 승인/원본 Unity 공식 적용/feature Push/main 병합 승인 **아님**.
