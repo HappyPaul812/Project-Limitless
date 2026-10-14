@@ -1,3 +1,9 @@
+# PLANNING 인계 — 2026-10-14 태온005·006 무손실 후보 청취 대기
+
+바울 대표 전달 Codex 결과: 기존 태온006 합본 WAV에서 **`main08_taeon_supp_005` 6.729초, `main08_taeon_supp_006` 3.801초**를 무손실 분리하여 후보 제작 완료. 자동전사 정본문장 **2/2 일치**, 클리핑0, 샘플 삭제·중복0, 합친 PCM=원본 PCM 동일. 기존 승인6/원본 WAV·GUID/meta·Catalog/Unity·Scene·Save/기타대사 불변, 신규 TTS/API·정식 게임연결·Push0. **실제 바울 대표 개별 청취 승인 전**이며 후보 기술 PASS를 청취 승인으로 오해하지 않음. 다음: 후보 둘 다 재생·음색/문장·분리 경계 승인 받은 뒤 Codex에만 해당2 StableID 정식 연결/검증 지시. 최신 기록 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md`.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Arbel v3 조건부 공식 적용·feature Push 승인
 
 바울 대표가 아르벨 격리 Unity 3245 PASS 보고와 미해결 세린 지붕 깊이감/Portal 기존 겹침을 받은 뒤 **“넘어가자.”**고 지시. 기획은 이를 **세린 Sorting/가림 필수 시각검증 및 출처 ZIP SHA 확인 성공 시** 원본 Arbel v3 기본 23종 공식 디스크 적용과 전용 `codex/*` 브랜치 Commit·Push를 진행하라는 **조건부 승인**으로 관리. **main 직접 작업/PR 병합/Optional11 배치 승인 없음**.
