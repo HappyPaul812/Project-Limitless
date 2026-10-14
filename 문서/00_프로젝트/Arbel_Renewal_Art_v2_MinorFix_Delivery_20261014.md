@@ -1,3 +1,5 @@
+> **후속 정본 (2026-10-14):** 이 문서는 v2 납품 당시의 역사 기록입니다. Codex가 v3에서 **Single Sprite 8종의 원본 source_sprite_rect 수치만 문서 정정**했습니다. 아래 '소품 9종' 항목의 옛 Multiple slice 크기를 **현재 실제 Sprite.rect로 사용하지 마세요**. PNG 43개는 v2와 동일바이트이며, [v3 정본 납품·인계](Arbel_Renewal_Art_v3_Metadata_Correction_Handoff_20261014.md)의 CSV·Manifest를 우선합니다. 사용자 최종 미술 승인/Unity 적용/Runtime 승인은 여전히 대기 중입니다. v2 ZIP·원래 기록은 그대로 보존합니다.
+
 # LIMITLESS Arbel 환경 리뉴얼 v2 — v1 최소 보완 납품 (2026-10-14)
 
 **담당 브랜치:** `docs/art-renewal` / **기준 main:** `bddca540d2fdd9e93f642f8d0f387b34730bd2d8`.
