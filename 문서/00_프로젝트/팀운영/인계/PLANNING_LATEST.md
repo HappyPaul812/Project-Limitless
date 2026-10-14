@@ -1,3 +1,15 @@
+# PLANNING 인계 — 2026-10-14 야간 음성007~011 최종 승인·오늘 통합·로컬 동기화 위임
+
+**바울 대표 실제 발언:** 태온007~011 복구 후보 **모두 들어 보고 원래 짝 전부 확인**, 선행 무음 일부는 Codex 판단으로 최소 보정, 다섯 음성 버그의 공식 수정/검증/오늘꺼 통합/깃허브-로컬 동기화를 마치길 요청. 추가 청취 승인 반복요청 불필요하나 **원문·PCM 발화 경계·Catalog GUID/Meta·실제 Runtime 5페이지** 대조 및 편집 안전 QA를 반드시 실시. 잘못된 본문/샘플 손상이면 STOP, 새 TTS 호출·기존005/006/미엘/Player 변경 금지.
+
+**지금 GitHub에서 확인된 부분완료:** Arbel v3 Codex 정식 적용 브랜치 `codex/arbel-v3-official-apply-20261014` HEAD `652867c988d015f0eb65ccb82591d2ef3a36551b`; 승인 23아트/국소 지붕·처마, **3953PASS/0FAIL(단위 assertion), 부분환경 미검증**, 사용자 PC 원본 디스크 적용/Feature Push라는 Codex 보고. 기획에서 **PR#12 생성→main 병합 완료**, merge SHA **`3aa66981f2545d463126e01a96c359c21ca804ea`**. 이 branch를 또 병합하지 않는다. 기존 Portal-나무/URP/Search/Editor 실환경 문제 OPEN; 승인 Optional11 배치0. 원본 PC·Git 로컬 `main`과 원격 동기화는 **Codex 이후 검증 필요**.
+
+**새 실행 정본:** `문서/00_프로젝트/EndOfDay_Integration_LocalSync_Runbook_20261014.md` (`docs/planning`). 음성 수정 후 신규 후보WAV/007~011 Catalog만 Codex 전용 브랜치 Push/PR/QA PASS 시 main 병합, `docs/planning` 오늘 승인·기획 문서도 검증 후 PR 병합. 원격 main SHA와 **로컬 main/origin main 일치**는 사용자 dirty·Unity Editor/Play/Save 충돌을 보호하며 **비파괴적 fast-forward만 가능한 경우** 실행. `reset --hard/clean -fd/force push` 금지. 해당 작업 직접 완료한 척 보고하지 않음.
+
+**Chapter3 기획 선행:** Main21 완료 `World_StarterVillage` 펫서비스를 자유롭게 이용해도 되고, 북쪽 F1부터 Main22 서리들쥐1 첫 전투. Main23 F1심부/첫눈, Main24 F2 한기2턴 사전 대응 안내. Main22~24 세부기획 `docs/planning` 작성 완료(DRAFT/미구현). 사용자 편안히 주무시는 동안 별도 비동기 작업을 자동 실행하는 기능이 여기 연결된 것은 아님.
+
+---
+
 # PLANNING 인계 — 2026-10-14 저녁 Main22 상세·Main23~24 연결 설계 진행
 
 바울 대표가 저녁 식사 중 기획을 계속 진행해 달라고 요청, 기획 담당이 **Main22 상세 v1 + Main23~24 연결 v1**를 `docs/planning`에 작성. 새 정본:
