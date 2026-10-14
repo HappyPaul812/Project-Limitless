@@ -1,3 +1,33 @@
+# PLANNING 인계 — 2026-10-14 최종 마감: 음성·원격 병합 DONE, 로컬 main SYNC PARTIAL
+
+**바울 대표 2026-10-14 저녁 마감 지시와 Codex 최종 보고(사용자 전달 화면) 반영.** 바울 대표는 토요일(10/17) 또는 월요일(10/19) 복귀 예정이므로 추가 작업을 요청하지 않는다.
+
+### 원격 GitHub — 기획 세션 직접 재확인
+
+- `origin/main` SHA **`9110bc7624e08ddbdd93b96510e8fafc5fbe341c`** (2026-10-14 20시경).
+- [PR #12](https://github.com/HappyPaul812/Project-Limitless/pull/12) Arbel v3 적용과 [PR #13](https://github.com/HappyPaul812/Project-Limitless/pull/13) 오늘 기획 문서는 앞서 main 병합 완료.
+- [PR #14](https://github.com/HappyPaul812/Project-Limitless/pull/14) Main08 태온 007~011 승인 음성 정식 복구 **merged:true**, merge SHA **`d05a325b05f2eab79ee18c5ca65e9ee523a5e5ab`**.
+- [PR #15](https://github.com/HappyPaul812/Project-Limitless/pull/15) 오늘 마감·QA 문서 **merged:true**, merge SHA **`9110bc7624e08ddbdd93b96510e8fafc5fbe341c`**. 현재 원격 main 최종 SHA와 일치.
+- PR #14 음성 구현 후보 Commit `2ff11baa878156f9b7c537d9580e70cd1f5568e4`은 **사용자 화면에 보고된 값**; 실제 최종 HEAD/코드 SHA는 PR 정보의 head_sha/merge_sha를 우선 따른다.
+
+### 로컬 원본 — Codex 보고, 기획 세션 현장 접속 없음
+
+- 바울 대표가 전달한 Codex QA: **격리 백그라운드 2,343 PASS / 0 FAIL**, Main08 음성007~011 Catalog 연결 완료, 발화의 자연스러운 호흡·여운 보존과 필요 선행 무음 Trim, 신규 TTS0, 기존 승인 태온005/006·미엘·Player 무음 불변. 아르벨/음성 페이지/Save/Continue/Main21 펫 서비스/전투 회귀 보고 PASS. **실제 대표 PC Unity 플레이/청취 최종 재검수는 미검증**.
+- **로컬 `main`**: `ff022e63dfe364f559fcc29819d27b123ad31127`; **원격 `origin/main`**: `9110bc7624e08ddbdd93b96510e8fafc5fbe341c`. 로컬에만 있는 **문서 커밋2개**로 이력 분기되어 단순 FF 불가. Codex가 **강제 merge/reset/clean을 하지 않고 중단했음 = `LOCAL_SYNC_PARTIAL / USER_FILES_PROTECTED`**.
+- 보호 보고: dirty·미추적 경로 **1,274개**를 백업, 기존 **5,851개 파일** 중 승인 Catalog/상태·인계 문서 **3개만 변경**, **UserData 23개 SHA 동일**, Editor/Play/OS 포커스 제어 **0회**. 이 숫자는 기획 세션 자체 로컬 검사가 아니라 **Codex 보고**.
+- 기존 **Portal-나무 겹침** 및 Unity **URP/Search** 환경 이슈 OPEN. 기타 신규 게임 버그는 보고된 범위에서 확인되지 않았으나 원본 Editor 직접 플레이 등 남은 검증과 구분.
+
+### 재개 순서 (토요일/월요일)
+
+1. Codex가 사용자 원본 PC 로컬 `main`의 추가 문서 커밋2개의 SHA·경로·내용과 origin/main의 충돌 여부를 **읽기 전용** 분석. 사용자 dirty/미추적1,274경로 및 백업 위치·UserData SHA, 루트 Unity의 Arbel Scene/음성 Catalog 실바이트 해시 확인.
+2. **문서만 분기된 이력을 비파괴적으로 정리하는 최소 경로**를 제안: 해당 2커밋이 원격에 반영되었는지 확인 → 중복 없는 문서 보존/필요 시 별도 작업 브랜치나 사전 백업→격리 worktree에서 통합 시뮬레이션. **로컬 기존 commit이 사라지는 `reset --hard`/무분별한 rebase/clean/force push 금지**. 원본 active Editor 파일과 원격 병합 변경의 동시 덮어쓰기 금지.
+3. 양쪽 모든 승인 변경과 문서2커밋의 보존·통합이 입증되면 로컬 안전 업데이트를 수행하고 **`local main == origin/main == GitHub main` SHA** 및 `git status` 보호 전후 확인. 충돌 위험이면 계속 `PARTIAL`로 보고·원본 보호.
+4. 원본 Editor 자연 Import 후 **사용자가 원하면** Main08 007~011 페이지별 실제 청취와 Arbel 국소 지붕·처마 등 인게임 시각 확인. GitHub PR14/15를 다시 병합하거나 Main21/Chapter3 미확정 기획을 실제 게임 콘텐츠로 만들지 않는다.
+
+**최종 상태:** `REMOTE_MAIN_MERGES_DONE / AUDIO_REPAIR_QA_PASS_REPORTED / LOCAL_MAIN_DIVERGED_PROTECTED / LOCAL_SYNC_PARTIAL / ORIGINAL_EDITOR_MANUAL_REVIEW_PENDING`. 바울 대표에게 피로한 당일 추가 작업 요구 금지. `docs/planning` 담당 문서 갱신만 했으며 main 직접 Push 없음.
+
+---
+
 # PLANNING 인계 — 2026-10-14 야간 음성007~011 최종 승인·오늘 통합·로컬 동기화 위임
 
 **바울 대표 실제 발언:** 태온007~011 복구 후보 **모두 들어 보고 원래 짝 전부 확인**, 선행 무음 일부는 Codex 판단으로 최소 보정, 다섯 음성 버그의 공식 수정/검증/오늘꺼 통합/깃허브-로컬 동기화를 마치길 요청. 추가 청취 승인 반복요청 불필요하나 **원문·PCM 발화 경계·Catalog GUID/Meta·실제 Runtime 5페이지** 대조 및 편집 안전 QA를 반드시 실시. 잘못된 본문/샘플 손상이면 STOP, 새 TTS 호출·기존005/006/미엘/Player 변경 금지.
