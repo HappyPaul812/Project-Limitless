@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Arbel 공식 적용 FAIL, 세린 깊이감 원인 진단
+
+바울 대표 Codex 보고: **아르벨 정식 적용 필수 게이트 FAIL**, 원본 적용·Commit·Push 중단 완료. 격리 시험 기술 **905PASS**, Renderer284/284·Missing Sprite/Script0·캡처17장·후보23·PNG재제작0. 그러나 기존 지붕 Sorting 뒤=세린 거의 가려짐, 앞으로=세린 지붕 위에 선 것처럼 보임. Order30 등 단순 Sorting으로는 해결되지 않음. 원본5223 SHA/HEAD/dirty·Unity Editor/Play/포커스·Save·Scene 무변경. 기존 Portal/나무 겹침은 별도 OPEN.
+
+정본 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` 후속 상태 갱신: **OFFICIAL_APPLY_BLOCKED / SERIN_DEPTH_VISUAL_FAIL**. 다음 지시는 **Codex 격리 깊이감 원인·실제 발앵커/Y-Sort/지붕 앞뒤 레이어/문·NPC 시야·적응형 roof transparency/mask 가능성 조사**, 객관적 Before/After 제시. PNG 지붕 분리 필요 시 Chapter1·2 리뉴얼 담당 `docs/art-renewal`에 정확 자산/렌더러/처마 마스크 범위를 요청. 정상 미술 승인 유지하되 전경 레이어 세부 보완. 23개 새 아트 전체 재제작 금지; Optional11 미배치; 원본 공식 적용 및 작업 브랜치 Commit·Push/PR/main 병합은 **시각 게이트 재PASS·사용자 비교 확인 전** 금지. 태온005/006 TTS 후속은 별도 작업.
+
+---
+
 # PLANNING 인계 — 2026-10-14 태온005·006 직접 청취 승인 + 005 공백 보정
 
 바울 대표가 분리 두 WAV를 각각 청취하고 **“둘 다 정상인데. '초원에서는...' 앞이 좀 공백이 있네?”**라고 보고. **006은 내용·음색·경계 전체 승인**, **005는 내용·음색 승인, 첫 발화 이전 선행 무음만 짧게 보정 필요**. 005 6.729s와 006 3.801s는 기존 분리 후보 길이이며 최종 005는 조금 짧아질 수 있음. Codex는 원인이 WAV 선행 무음인지 런타임 시작 지연인지 확인 후, 발음/호흡을 살려 무음만 최소 Trim하고 006 PCM은 그대로 보존. 원본 PCM 전체 재결합 동일성은 최종 Trim 뒤 주장 금지; 살아 있는 발화 PCM·기존 승인6·다른 대사/Save/Editor 보호.
