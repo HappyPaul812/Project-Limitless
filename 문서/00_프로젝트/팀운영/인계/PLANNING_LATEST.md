@@ -1,3 +1,9 @@
+# PLANNING 인계 — 2026-10-14 아르벨 세린 투명 지붕 후보 기술 PASS, 미술 판정 대기
+
+Codex 격리 새 후보: 기존 Y-Sorting + SortingGroup + **세린을 실제로 가리는 지붕만 투명 렌더링**. 지붕 불투명 영역이 세린을 약99.79% 가림, Order 값만으로 해결 불가능. **1,575PASS/0FAIL, 실제 Unity 캡처68장, 세린 위치변화/문·기타NPC 상호작용3/3PASS**, 새PNG0, 원본5223파일/Editor/Play/포커스·Save·Scene 변경0, 공식 적용·Push0. 기존 Portal-나무 겹침 OPEN·Optional 장식11 미배치. 보고서 우측 화면은 세린이 드러나지만 지붕 위에 서 있는 인상을 완전히 해소하는지는 사용자 시각 판정 필요. **USER_VISUAL_APPROVAL_PENDING / OFFICIAL_APPLY_BLOCKED**: 기술 QA를 최종 미술 승인으로 간주 금지. 다음 바울 대표에게 우측 투명 지붕 최종안 승인 여부 확인 후, 필요시 동적/국소 투명화 수정 제안·격리 검증. 기록 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` `docs/planning`.
+
+---
+
 # PLANNING 인계 — 2026-10-14 PR #11 태온 005·006 main 병합 확인
 
 바울 대표가 Main08 음성 PR #11의 **main 병합을 명시 승인**하고 기획 담당이 정상 병합 수행. PR #11 = merged/closed, merge commit **`314f7fbbd66799ff93ec71404bcf388023c655be`**; GitHub 원격 `main` HEAD가 정확히 동일 SHA임을 다시 확인. 태온005·006(사용자 최종 청취 승인; 005 선행무음185.833ms 축소, 006 기존 PCM 보존), 음성 Catalog 2개 ID 연결과 QA 문서·증거 병합. 사전 224PASS/FAIL0, 별도 기존 Search·스피커·대화 중 조우 OPEN은 그대로.
