@@ -30,6 +30,6 @@
 
 ## 최종 산출물과 판정
 
-- `ARBE L_V3_VISUAL_TRIAL` 유형의 실제 Unity GameView/RenderTexture Before-After 비교 이미지와 최소 6영역 시각 자료.
+- `ARBEL_V3_VISUAL_TRIAL` 유형의 실제 Unity GameView/RenderTexture Before-After 비교 이미지와 최소 6영역 시각 자료.
 - `TECH_TRIAL_PASS / VISUAL_HOLD / FUNCTIONAL_FAIL / RUNTIME_NOT_VERIFIED` 항목별 결과 (기존 요건 유지). **Trial QA 합격은 사용자 미술 승인이나 원본 적용 승인이 아님**.
 - 사용자에게 (1) 기본 23 후보 전체/일부 승인, (2) 지붕2·소품9 추가 수정 요구, (3) 선택 장식11의 배치 승인 여부를 **서로 구분해서** 물을 수 있는 비교 증거.
