@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Field02 Main08 태온005·006 음성 불일치
+
+바울 대표가 원본 Unity Field_02 캡처2장과 함께 “초원에서는…”부터 “이 흔적…” 직전까지 다른 대사라고 재제보. MainQuest08FieldFlow.GetLines 실제 대조: 정확히 Trace03의 **태온005** (`main08_taeon_supp_005`, “초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.”), **태온006** (`main08_taeon_supp_006`, “여기서는 그 방향이 조금 더 분명합니다.”), 다음 플레이어 무음 “그러면 우리가 찾던 방향은 맞는 것 같습니다.”까지. WheelTracks 첫 **미엘004** (“이 흔적… 폴 씨 것 아닐까요?”)은 **제외 경계**. 10/13 Main08 음성6개 승인 적용 당시 **태온005/006은 OPEN**이었고, 기존 ASR에서 기존005에는 태온004의 긴문장, 기존006에는 정본005+006 합본 발화 기록이 있다.
+
+신규 기획 정본 `문서/00_프로젝트/Main08_Trace03_Taeon005006_Voice_Boundary_Followup_20261014.md` (docs/planning). 다음 Codex는 기존006 PCM에서 두 정확 문장의 무손실 분리 가능성 진단 후 **005/006 두 후보를 별도 폴더로 출력하고 인간 청취 승인 요청**. 분리 실패일 때만 TTS 담당에게 그 ID만 제작 검토. 원본 WAV·meta·Catalog·승인 6개·Unity Editor/Save 변경0, 신규 TTS/API0. 현 상태 **CANDIDATES_PENDING / USER_LISTENING_PENDING / NOT_APPLIED**. 대화 중 일반조우 OPEN은 별도 보호.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Arbel v3 미술 방향 승인 / 화면 가림 보완 대기
 
 사용자가 Codex 아르벨 격리 Unity 캡처 39장을 직접 보고 **“봤어. 좋아”**라고 답함. 따라서 **USER_VISUAL_DIRECTION_APPROVED**. 보고 수치: 교체 후보23 / Renderer284/284 / 선택장식0 / 전체 Scene 참조3654 정상 / Missing Sprite·Script0, 원본5223파일 변화0. **기술 PASS / 시각 PARTIAL**: 북서 지붕이 세린 가림, 양쪽 건물 벽이 출입문 가림. 소품9종 실제 물리접지/기존 Portal-나무 중첩/휠체어 6/8 및 미도달2 지점 HOLD. Downloads ZIP 기대 SHA 불일치라 시험은 기대 SHA와 일치한 기존 검증본으로 진행한 점 주의. 정식 적용 전에 후보 ZIP SHA를 확정해야 함.
