@@ -1,0 +1,19 @@
+{
+  "validated_sha": "84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b",
+  "downloads_sha": "58fb2236599dfdf8b1b4eb18ccf4fba85aff8a924eb94573236aae1b9350c747",
+  "png43_equal": true,
+  "different_documents": [
+    "Codex_Integration_Handoff.md",
+    "Manifest.json",
+    "Metadata_Correction_v3.md",
+    "QA/Offline_Validation_v2.json",
+    "QA/Offline_Validation_v3.json",
+    "QA/PNG_SHA256_v2_v3.csv",
+    "QA/Props_8_Rect_BeforeAfter_v3.csv",
+    "QA/Props_9_Grounding_Audit_v2.csv",
+    "QA/Props_9_Grounding_Audit_v3.csv",
+    "README.md",
+    "Renderer_Mapping_284.csv"
+  ],
+  "source": "Validated84 complete package only; Downloads is documentary reformat, not merged"
+}

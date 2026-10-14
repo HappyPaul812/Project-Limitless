@@ -1,0 +1,22 @@
+{
+  "Battle/BattleSceneController.cs": {
+    "root_sha": "0730f27cf124fed1cb03d5225fbafe245448828761025b4d1dd85372b5f06e66",
+    "lab_sha": "0730f27cf124fed1cb03d5225fbafe245448828761025b4d1dd85372b5f06e66"
+  },
+  "Core/BeastCompanionService.cs": {
+    "root_sha": "24d2c0a478cdf5b107bd401033b348c9865a61652c521896344c13fd4d7deec2",
+    "lab_sha": "24d2c0a478cdf5b107bd401033b348c9865a61652c521896344c13fd4d7deec2"
+  },
+  "Core/GameSessionData.cs": {
+    "root_sha": "9ded9628a213f48b1139e1deab86c6f9b57c4055c9d83379ddaf90fce44cebc4",
+    "lab_sha": "9ded9628a213f48b1139e1deab86c6f9b57c4055c9d83379ddaf90fce44cebc4"
+  },
+  "NPC/VillageNpcAppearanceCatalog.cs": {
+    "root_sha": "242480904993ec3061e6f57f9054d5ed212c62768c7a29dfca76d5231822cda0",
+    "lab_sha": "242480904993ec3061e6f57f9054d5ed212c62768c7a29dfca76d5231822cda0"
+  },
+  "UI/PetFacilityPresenter.cs": {
+    "root_sha": "03cc7a3c8e40baa4b72c1763e6c53ecf8134a390a3c4c5b0bf5a8c5f77a7b56f",
+    "lab_sha": "03cc7a3c8e40baa4b72c1763e6c53ecf8134a390a3c4c5b0bf5a8c5f77a7b56f"
+  }
+}

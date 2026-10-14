@@ -1,0 +1,14 @@
+{
+  "protected_initial_count": 4001,
+  "unchanged_initial_count": 4000,
+  "authorized_changes": [
+    "Unity/Client/Assets/_Project/Scenes/Arbel.unity"
+  ],
+  "unexpected_changes": [],
+  "supplemental_tts_story_count": 392,
+  "supplemental_changes": [],
+  "head": "ff022e63dfe364f559fcc29819d27b123ad31127",
+  "head_unchanged": true,
+  "main_commit_push_merge": false,
+  "original_editor_control_commands": 0
+}
