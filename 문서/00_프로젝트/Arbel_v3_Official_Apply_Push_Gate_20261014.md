@@ -60,3 +60,16 @@
 - **다음 결정 요청:** 바울 대표에게 해당 투명 지붕의 **시각 표현 자체가 괜찮은지** 먼저 확인. 동의할 경우에도 원본 정식 적용은 정확한 v3 ZIP SHA/검증본, 필수 QA(실제 Runtime, 기존 Quest/Save/Portal 접근성, 23 BuildScene), 별도 명시 적용/feature-branch Push 승인 범위를 확인해 진행. 마음에 들지 않으면 Sorting 숫자를 재반복하지 말고 국소 occluder 마스크/접근 시 투명화/미술 담당의 최소 지붕 레이어 분리 중 적절한 대안을 비교한다.
 
 **최신 상태: `ISOLATED_VISUAL_SOLUTION_CANDIDATE / TECH_QA_1575_PASS / USER_VISUAL_APPROVAL_PENDING / OFFICIAL_APPLY_BLOCKED / MAIN_UNCHANGED`.**
+
+
+## 2026-10-14 최종 국소 투명·접합 보완 화면 — 바울 대표 미술 승인 (최신)
+
+바울 대표가 Codex의 최신 3열 Unity 실제 비교 화면을 확인한 뒤 **“미술 승인은 내가 보는거면 봤으니까 된거지 뭐”**라고 직접 승인함. 이는 직전 기획 담당이 미술 승인 여부를 되물은 것에 대한 **명시적인 승인**이며 **추가 미술 승인 질문을 반복하지 않는다**.
+
+- 사용자 확인 대상: **이전 지붕 불투명 원본 → 전체 Alpha 약화 실패 후보 → 국소 지붕 투명 및 접합부 마감색 보완 최종 후보**. 사용자 화면과 Codex 보고 기준 **별도 PNG 신작0**, 지붕 기본 위치·Pivot·Bounds 유지, 세린 가림에만 부분 투명, 처마·외곽·벽/문 불투명 보존, 접합부의 빈 픽셀을 기존 처마색으로 렌더하여 집과 지붕이 떠 보이던 문제를 보완.
+- Codex 보고 기준 **1,039 PASS / 0 FAIL, 실제 Unity 캡처38장**, 정면/문앞/뒤/접근 및 기존 접합부 재발 없음. 기획 담당이 사용자 로컬 ZIP/Unity를 직접 실행한 것은 아니며 수치를 임의 확대하지 않는다.
+- **확정:** `USER_ART_APPROVED`는 **아르벨 v3 23종 기본 교체후보 + 해당 국소 투명·접합 표현**에만 적용. 선택 장식11종은 여전히 미배치·개별 미술 승인 대기. 이 승인을 새로운 대규모 아트 제작이나 다른 지역의 미술 승인으로 넓히지 않는다.
+- **기술과 병합 경계:** 이미 바울 대표가 승인한 **조건부 정식 적용·Codex 작업 브랜치 Push**는 남은 필수 안전검증 통과 시 진행 가능하다. **실제 원본 Unity에 반영하거나 Commit·Push한 사실은 아직 없다.** 작업 전 ZIP 출처 SHA/Manifest 분기(`84e9707d...` 검증본과 Downloads의 `58fb22...`)를 정리하고, Serin 건물 가림·출입문·접지·접근성·Quest·Save/Continue·씬 회귀를 실제 격리/원본 디스크 단계에 맞게 재검증할 것. 문제 발생 시 게이트 실패 및 중단; 기술 QA 통과 전에는 적용 완료 주장 금지.
+- 기존 Portal-나무 겹침은 별도 **OPEN**으로 보존하되 필수 이동/Portal 상호작용을 실질 차단하면 정식 적용 불가. 원본 사용자의 활성 Editor/Play/포커스·dirty 파일/Save 보호, 신규 TTS/Main08 수정 금지, `main` 병합 승인 없음.
+- 현재 상태: **`VISUAL_ART_APPROVED / SOURCE_SHA_AND_FUNCTIONAL_QA_PENDING / ORIGINAL_UNITY_NOT_APPLIED / FEATURE_PUSH_NOT_EXECUTED / MAIN_MERGE_NOT_AUTHORIZED`**.
+
