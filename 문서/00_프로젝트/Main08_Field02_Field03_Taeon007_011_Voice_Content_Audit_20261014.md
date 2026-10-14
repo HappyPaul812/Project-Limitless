@@ -43,3 +43,18 @@ GitHub `main`의 `Unity/Client/Assets/_Project/Scripts/World/MainQuest08FieldFlo
 - `MAIN08_TAEON_007_011_CONTENT_BOUNDARY_AUDIT_OPEN`
 - 사용자 제보 수집 및 **스크립트의 정확한 Stable ID 확인 완료**, WAV PCM 직접검사·음성 원본 원인검증·후보·실제 Runtime 검증·사용자 청취 승인 **아직 안 됨**.
 - **다음 담당: Codex**, 1단계 읽기전용 감사 및 2단계 기존 음원 기반 후보 생성. 결과를 받은 다음 기획 담당이 청취 승인 여부와 후속 구현 범위를 결정. 리뉴얼 아트 담당은 이 음성 문제와 무관.
+
+
+## 2026-10-14 19시 이후 — 바울 대표 007~011 청취 확인 및 공식 수정·통합 진행 승인
+
+바울 대표가 Codex가 준비한 **다섯 ID의 복구 후보/실제 음원 짝을 모두 청취**한 뒤 **“다 들어봤는데 원래 짝은 다 찾았는데 앞 공백이 좀 긴게 있는데 그건 알아서 처리해주고, 다 고치고, 버그 다 잡고, 오늘 꺼 다 합치고, 깃허브랑 로컬 동기화까지 해줘”**라고 지시.
+
+**유저 승인 해석(중요):**
+- 후보의 **문장↔ID 올바른 짝은 바울 대표 청취 기준 확인 완료**. 앞부분 공백이 긴 일부 후보는 **Codex가 불필요한 선행 무음만 최소한으로 trim**할 수 있다. 다만 대표가 다른 화면/파일로 제공한 매핑을 기획 세션이 직접 재생·대조한 것은 아니므로 **Codex는 실제 로컬 후보/manifest에서 007~011별 발화 경계·source WAV를 조회하고 원문과 정확하게 대조**할 것. 이전 화면의 페이지 밀림을 바탕으로 기계적인 +1 번호 오프셋 설정 금지.
+- **추가 청취 승인 재요청 없이** 승인된 올바른 음성 매칭과 안전한 선행 무음 보정 → 별도 새 WAV(원본 보호) → StoryVoiceCatalog에 해당 007~011만 연결 → 실제 Unity 검증/전후 문장 경계·저장·복귀 검증 → Codex 음성 전용 작업 브랜치 Commit/Push → PR/기존 승인된 오늘 전체 통합으로 main 병합까지 조건부 진행할 수 있음.
+- **무음 Trim 안전:** PCM 구간에서 첫 음절이 시작하기 전 실제 무음만 제거하고 첫 숨/마찰음·어택·발화 끝 여운 보존. 숫자 일괄 trim 금지. 문장 누락/왜곡·클릭/클리핑·ASR 불일치면 원본 보존/부분 FAIL/STOP, 임의 신규 TTS/유료 API 금지.
+- 전·후 **미엘004~008, 태온005/006 이전 공식 승인 상태, 플레이어 무음, Main08 `WheelTracks → Investigation → DeepZone(5+3)`, 005/006 PR#11 기존 WAV/GUID/meta/PCM 불변** 보호. 다른 TTS/아트·Quest·Save 원본 보호.
+- 기존 문서의 **‘청취 승인 전 Catalog 적용 금지’**는 이번 대표 승인으로 **007~011 올바른 후보에 한해 해제**. **실제 수정/Commit/Push/병합·로컬 동기화 완료로 해석하지 않음**. 불명확한 음성 내용·QA 실패는 예외 보고.
+- 통합 순서: QA·보호 PASS → 음성 전용 브랜치 Push/PR → main 병합(대표 이번 명시 지시) → 로컬 git fetch 및 **dirty 사용자 파일을 안전하게 보호하고 검증된 fast-forward/비파괴 동기화**, 새 main/음성 PCM/Quest/Arbel 동시 확인. `git reset --hard`/`git clean -fd`/`git push --force` 금지. Editor/Play/포커스 바꾸지 않는 백그라운드 검증.
+
+**최신 상태: `USER_LISTENING_MATCH_APPROVED / LEADING_SILENCE_TRIM_AUTHORIZED / OFFICIAL_VOICE_FIX_AUTHORIZED / IMPLEMENTATION_PENDING / GITHUB_AND_LOCAL_SYNC_PENDING`.**
