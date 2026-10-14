@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Field02~Field03 태온007~011 음성 페이지 대응 오류 (최신)
+
+바울 대표 실제 Unity Play 캡처5장·청취 재제보: Field02 `폭이 같습니다` 음성 미재생, Field03 `누군가` 화면에서 앞 `폭이` 재생, `너무 조용합니다` 화면에서 `누군가` 재생, `그 이유가 무엇인지는` 전에 앞 태온 음성 연결/혼재, `마법 같습니다` 내용은 정상이지만 시작 공백 길다. 코드 원문/Stable ID 실제 확인: `main08_taeon_supp_007`~`011`. 중간 미엘 대사/무음 Player, 5+3페이지 `DeepZone` 분할, 이미 main 병합 승인한 태온005/006 **절대 수정 금지**.
+
+**기획 새 정본**: `문서/00_프로젝트/Main08_Field02_Field03_Taeon007_011_Voice_Content_Audit_20261014.md` (`docs/planning`). 코드 DialoguePresenter는 페이지마다 이전 음원을 Stop하고 선택 Clip Play, 따라서 **WAV 실제 내용·GUID 연결·합본/선행무음·현재 AudioSource timeSamples**를 Codex **원본 읽기전용** 우선 대조. 후보007~011은 기존 PCM 재사용/손실없는 분리/필요시 선행 여백 최소 보정 후 별도 임시 폴더와 개별 청취 자료만 납품. **새 TTS 0, 실제 Unity 음성 연결0, Commit/Push0, main병합0**. 청취 승인 후에만 정확 ID 대상 정식 연결/QA/브랜치 Push 지시. Main08 PR#11 merged/main SHA `314f7fbbd66799ff93ec71404bcf388023c655be` 보호. Arbel v3 지붕 깊이감/집-지붕 떨어져 보이는 미술 HOLD와 분리.
+
+---
+
 # PLANNING 인계 — 2026-10-14 아르벨 세린 투명 지붕 후보 기술 PASS, 미술 판정 대기
 
 Codex 격리 새 후보: 기존 Y-Sorting + SortingGroup + **세린을 실제로 가리는 지붕만 투명 렌더링**. 지붕 불투명 영역이 세린을 약99.79% 가림, Order 값만으로 해결 불가능. **1,575PASS/0FAIL, 실제 Unity 캡처68장, 세린 위치변화/문·기타NPC 상호작용3/3PASS**, 새PNG0, 원본5223파일/Editor/Play/포커스·Save·Scene 변경0, 공식 적용·Push0. 기존 Portal-나무 겹침 OPEN·Optional 장식11 미배치. 보고서 우측 화면은 세린이 드러나지만 지붕 위에 서 있는 인상을 완전히 해소하는지는 사용자 시각 판정 필요. **USER_VISUAL_APPROVAL_PENDING / OFFICIAL_APPLY_BLOCKED**: 기술 QA를 최종 미술 승인으로 간주 금지. 다음 바울 대표에게 우측 투명 지붕 최종안 승인 여부 확인 후, 필요시 동적/국소 투명화 수정 제안·격리 검증. 기록 `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` `docs/planning`.
