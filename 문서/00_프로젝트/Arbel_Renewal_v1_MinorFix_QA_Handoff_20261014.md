@@ -34,3 +34,20 @@
 ## 부서 공통
 
 Chapter1·2 리뉴얼 담당만 Arbel 제작 책임. Chapter3 신규 아트 담당의 `설빙의 폭군` / 북부 몬스터 및 화로 기획과 혼합하지 않는다. 최신 main `bddca540d2fdd9e93f642f8d0f387b34730bd2d8`에서 Sprite 참조 복구/PR10 병합된 상태 보존. 문서 담당 브랜치 `docs/planning`, Codex·리뉴얼 담당은 각자 브랜치 사용. **본 문서는 사용자 미술 최종 승인도 새 구현 승인도 아님**.
+
+
+## 2026-10-14 후속 접수 — Arbel v2 납품 확인 / Codex 현장 재검수 대기
+
+바울 대표가 경로를 `F:/Downloads/Limitless_Arbel_Renewal_Art_v2.zip`으로 정정하였다. 이것은 앞선 v1 ZIP 재작업 지시가 아니라 **기존 v1 문제를 보완한 실제 v2 검수 대상 파일**이다.
+
+리뉴얼 담당 `docs/art-renewal`의 `Arbel_Renewal_Art_v2_MinorFix_Delivery_20261014.md`에 다음 내용이 명시됨:
+- v2 SHA256 **`17625d35c93599bdd74a4b8280c0416240c402be279815c8966199410bca97b7`**, 크기 1,509,138 bytes, 55개 파일 / PNG43개 (실사용34, Preview8, QA1).
+- v1 비교 실사용 PNG34개 중 31개 바이트 동일; **도로 Left·Right 2개와 Roof Respite 1개**만 편집됨.
+- 도로 2종 각 128×128 수평연결·상하 RGBA seam mismatch 0, 관련 14 pixel 최소 수정.
+- 북서 지붕의 오해 유발 십자 205px 수정, 실제 healer NPC 위치(2,-2) 고려. 대형 지붕 384×192 가림은 HOLD.
+- Props9 PNG는 0 변경. 원본 Sprite.rect와 새 PNG Alpha foot/캔버스 정보 표만 추가. **원본 PNG 실 Alpha foot 및 Unity 실물 접지 NOT_VERIFIED**.
+- 기존 Arbel 284/284 소스 GUID/local fileID와 Transform·PPU·Pivot·Sorting 보존. v2 매핑표 17개 target path만 최신 수정 PNG에 연결.
+- 선택 장식11종은 개별 미술 승인 전 미배치, PortalAnchor(-7,-4)와 TreeSouthWest(-7,-4.2) 충돌 장식 HOLD.
+- `docs/art-renewal` 문서 기록 완료이나 **이 기획 담당이 사용자 F: 경로의 ZIP 바이트를 직접 열어 검사한 것은 아님**. 사용자 미술 승인, Codex 현장 샘플/원본 alpha 검사, 실제 Unity Runtime QA, 원본 디스크 적용 및 Codex 작업 브랜치 Push는 아직 완료 사실 없음.
+
+**다음 액션:** Codex에게 v2 ZIP SHA와 v1 차이를 재검증하도록 요청. v1 오류 수정 및 284행 대응이 일치하면 `APPROVE_CANDIDATE`로 보고하되 소품 원본 alpha foot/지붕·Portal 가림을 `HOLD`로 별도 기록하고, Unity 정식 적용은 바울 대표 미술 승인 후에만 수행. 이번 사용자 경로 정정은 전체 아트 적용/Push 승인으로 확대하지 않는다.
