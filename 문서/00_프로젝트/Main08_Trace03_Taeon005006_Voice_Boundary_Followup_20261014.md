@@ -63,3 +63,16 @@
 - **보호**: 기존 승인6개, 원본 WAV/GUID/meta/Catalog, 메인08 대사/퀘스트/Scene/Save 및 원본 Unity 변경0, 신규 TTS/API0, Game 연결0, 원격 Push0.
 - **다음**: 바울 대표가 Codex의 `태온 005`과 `태온 006` 후보를 **각각 실제 청취**하여 두 원문의 발음·말끝/시작·편집 경계 자연스러움을 평가. 둘 다 승인 시에만 Codex가 원본 WAV/GUID/meta를 유지한 별도 승인 WAV 폴더 등록 + Catalog 해당2행 변경, 기존 승인6개 및 앞뒤 미엘004·Player무음/Save/Next 경계 보호 회귀를 수행. 청취에서 문제가 있으면 해당 Stable ID만 재분리·TTS 담당 후속 분류.
 - **현재 상태**: `SPLIT_CANDIDATES_2_READY / TECH_QA_PASS / USER_LISTENING_PENDING / AUDIO_NOT_APPLIED`.
+
+
+## 2026-10-14 사용자 직접 청취 — 2개 문장·음색 승인, 005 선행 무음 소폭 보정
+
+바울 대표가 개별 분리 후보를 실제 청취한 뒤 **“둘 다 정상인데. '초원에서는...' 앞이 좀 공백이 있네?”**라고 확인했다.
+
+- **`main08_taeon_supp_006`**: 발화·음색·문장 경계 **최종 사용자 청취 승인**, WAV PCM **그대로 사용**.
+- **`main08_taeon_supp_005`**: 발화·음색 **사용자 승인**, 단 “초원에서는” **직전의 다소 긴 공백을 자연스럽게 축소**한 기술 마감 필요. 더빙 재제작/새 TTS·대사 변경 요청은 아님.
+- Codex는 먼저 해당 공백의 원인이 분리 WAV 선행 무음인지 `DialoguePresenter`의 음성 시작 지연/이전 페이지 전환인지 실제 PCM·재생 타임라인에서 구분. 음원 내 무음이면 발화 시작·호흡을 충분히 보호한 짧은 pre-roll(예: 80~150ms 정도, 실제 파형으로 결정)만 남겨 **선행 무음만 제거**. exact trim ms 임의 지정 금지. 혹시 PCM 음성 앞에서 자르거나 자연스러운 들숨이 잘리면 실패/재청취 대상으로 보고.
+- **기존 “분리 전 두 파일 PCM 연결=원본” 증명은 보관하되** 005 시작 무음만 제거한 **최종 적용 후보가 원본 PCM과 재결합해서 byte-identical 하다고 주장하지 않는다**. 005의 발화 구간은 원본 PCM을 그대로 유지, 006 PCM 전체는 기존 승인 후보 그대로 보존. 클릭·첫 음절 잘림·호흡 중단·급격한 볼륨 변환 금지.
+- 최종 후보 005를 짧게 다시 들어볼 수 있도록 제공하고, 기술적으로 무음만 줄인 것이 입증되며 문장 내용·음색이 변하지 않을 경우 **이번 사용자 청취 승인에 따라** 정확한 005/006 두 Stable Voice ID만 Codex 격리 worktree에서 승인 음성 폴더 신규 GUID/meta로 등록하여 Catalog 연결·Runtime QA를 진행해도 된다. 품질 불확실·구간 일부 삭제 시 공식 적용 보류하고 재청취 요청.
+- 기존 WAV/GUID/meta·앞선 승인6개·Player 무음·WheelTracks 미엘004, Scene·Quest·Save/TTS/BGM 및 원본 Editor 포커스 보호. 전체 회귀/청취 검증, Safe branch Commit·Push까지만 허용; **main 직접 Push·병합 금지**.
+- 현 상태: `TWO_LINES_HUMAN_APPROVED / 005_LEADING_SILENCE_MINOR_FIX / 006_FINAL_APPROVED / CATALOG_NOT_YET_UPDATED`.
