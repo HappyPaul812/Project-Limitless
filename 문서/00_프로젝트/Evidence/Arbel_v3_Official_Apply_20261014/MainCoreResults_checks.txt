@@ -1,0 +1,1765 @@
+PASS|PNG.Direct23
+PASS|Import.Sprite.LL_C2_Arbel_Loam_Grass_B_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Loam_Grass_A_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_DryLoam_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_PackedCourt_B_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_PackedCourt_A_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_SmallCobble_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Road_Left_128_v2.png
+PASS|Import.Sprite.LL_C2_Arbel_Road_Right_128_v2.png
+PASS|Import.Sprite.LL_C2_Arbel_Roof_Respite_384x192_v2.png
+PASS|Import.Sprite.LL_C2_Arbel_Door_Respite_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Roof_Provision_384x192_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Door_Provision_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_TimberWall_West_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_TimberWall_East_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_WeatheredFence_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_OldTree_Medium_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_OldTree_Big_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_DryMossRock_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Campfire_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Barrel_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Chest_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Bush_Olive_128_v1.png
+PASS|Import.Sprite.LL_C2_Arbel_Bush_Dry_128_v1.png
+PASS|Edit.EnvironmentRenderer284
+PASS|Edit.BuildingWorldPosition.Roof
+PASS|Edit.BuildingWorldPosition.Door
+PASS|Edit.ColliderBounds.Door
+PASS|Edit.BuildingWorldPosition.WallLeft
+PASS|Edit.BuildingWorldPosition.WallRight
+PASS|Edit.BuildingWorldPosition.Roof
+PASS|Edit.BuildingWorldPosition.Door
+PASS|Edit.ColliderBounds.Door
+PASS|Edit.BuildingWorldPosition.WallLeft
+PASS|Edit.BuildingWorldPosition.WallRight
+PASS|BuildScene23
+PASS|BuildSceneRef.Assets/_Project/Scenes/Bootstrap.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/OpeningIntro.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/CharacterCreation.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/PathSelection.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/JobSelection.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/FinalConfirmation.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/World_StarterVillage.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_01.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_02.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Battle.unity
+PASS|BuildSceneRef.Assets/Scenes/SampleScene.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_03.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Dungeon_01.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Dungeon_01_B2.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_04_WesternBorder.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Arbel.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_05_WesternOutskirts.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_06_ScorchedTrail.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_07_AshenReach.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_08_RedRift.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_09_ObsidianScar.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_10_BurningPulse.unity
+PASS|BuildSceneRef.Assets/_Project/Scenes/Field_11_DeepCore.unity
+PASS|MissingScript0
+PASS|RuntimeMissingSprite0
+PASS|AppliedSprite.Grass_-9_-6@-9,-6
+PASS|AppliedSprite.Grass_-8_-6@-8,-6
+PASS|AppliedSprite.Grass_-7_-6@-7,-6
+PASS|AppliedSprite.Grass_-6_-6@-6,-6
+PASS|AppliedSprite.Grass_-5_-6@-5,-6
+PASS|AppliedSprite.Grass_-4_-6@-4,-6
+PASS|AppliedSprite.Grass_-3_-6@-3,-6
+PASS|AppliedSprite.Grass_-2_-6@-2,-6
+PASS|AppliedSprite.Grass_-1_-6@-1,-6
+PASS|AppliedSprite.Grass_0_-6@0,-6
+PASS|AppliedSprite.Grass_1_-6@1,-6
+PASS|AppliedSprite.Grass_2_-6@2,-6
+PASS|AppliedSprite.Grass_3_-6@3,-6
+PASS|AppliedSprite.Grass_4_-6@4,-6
+PASS|AppliedSprite.Grass_5_-6@5,-6
+PASS|AppliedSprite.Grass_6_-6@6,-6
+PASS|AppliedSprite.Grass_7_-6@7,-6
+PASS|AppliedSprite.Grass_8_-6@8,-6
+PASS|AppliedSprite.Grass_9_-6@9,-6
+PASS|AppliedSprite.Grass_-9_-5@-9,-5
+PASS|AppliedSprite.Grass_-8_-5@-8,-5
+PASS|AppliedSprite.Grass_-7_-5@-7,-5
+PASS|AppliedSprite.Grass_-6_-5@-6,-5
+PASS|AppliedSprite.Grass_-5_-5@-5,-5
+PASS|AppliedSprite.Grass_-4_-5@-4,-5
+PASS|AppliedSprite.Grass_-3_-5@-3,-5
+PASS|AppliedSprite.Grass_-2_-5@-2,-5
+PASS|AppliedSprite.Grass_-1_-5@-1,-5
+PASS|AppliedSprite.Grass_0_-5@0,-5
+PASS|AppliedSprite.Grass_1_-5@1,-5
+PASS|AppliedSprite.Grass_2_-5@2,-5
+PASS|AppliedSprite.Grass_3_-5@3,-5
+PASS|AppliedSprite.Grass_4_-5@4,-5
+PASS|AppliedSprite.Grass_5_-5@5,-5
+PASS|AppliedSprite.Grass_6_-5@6,-5
+PASS|AppliedSprite.Grass_7_-5@7,-5
+PASS|AppliedSprite.Grass_8_-5@8,-5
+PASS|AppliedSprite.Grass_9_-5@9,-5
+PASS|AppliedSprite.Grass_-9_-4@-9,-4
+PASS|AppliedSprite.Grass_-8_-4@-8,-4
+PASS|AppliedSprite.Grass_-7_-4@-7,-4
+PASS|AppliedSprite.Grass_-6_-4@-6,-4
+PASS|AppliedSprite.Grass_-5_-4@-5,-4
+PASS|AppliedSprite.Grass_-4_-4@-4,-4
+PASS|AppliedSprite.Grass_-3_-4@-3,-4
+PASS|AppliedSprite.Grass_-2_-4@-2,-4
+PASS|AppliedSprite.Grass_-1_-4@-1,-4
+PASS|AppliedSprite.Grass_0_-4@0,-4
+PASS|AppliedSprite.Grass_1_-4@1,-4
+PASS|AppliedSprite.Grass_2_-4@2,-4
+PASS|AppliedSprite.Grass_3_-4@3,-4
+PASS|AppliedSprite.Grass_4_-4@4,-4
+PASS|AppliedSprite.Grass_5_-4@5,-4
+PASS|AppliedSprite.Grass_6_-4@6,-4
+PASS|AppliedSprite.Grass_7_-4@7,-4
+PASS|AppliedSprite.Grass_8_-4@8,-4
+PASS|AppliedSprite.Grass_9_-4@9,-4
+PASS|AppliedSprite.Grass_-9_-3@-9,-3
+PASS|AppliedSprite.Grass_-8_-3@-8,-3
+PASS|AppliedSprite.Grass_-7_-3@-7,-3
+PASS|AppliedSprite.Grass_-6_-3@-6,-3
+PASS|AppliedSprite.Grass_-5_-3@-5,-3
+PASS|AppliedSprite.Grass_-4_-3@-4,-3
+PASS|AppliedSprite.Grass_-3_-3@-3,-3
+PASS|AppliedSprite.Grass_-2_-3@-2,-3
+PASS|AppliedSprite.Grass_-1_-3@-1,-3
+PASS|AppliedSprite.Grass_0_-3@0,-3
+PASS|AppliedSprite.Grass_1_-3@1,-3
+PASS|AppliedSprite.Grass_2_-3@2,-3
+PASS|AppliedSprite.Grass_3_-3@3,-3
+PASS|AppliedSprite.Grass_4_-3@4,-3
+PASS|AppliedSprite.Grass_5_-3@5,-3
+PASS|AppliedSprite.Grass_6_-3@6,-3
+PASS|AppliedSprite.Grass_7_-3@7,-3
+PASS|AppliedSprite.Grass_8_-3@8,-3
+PASS|AppliedSprite.Grass_9_-3@9,-3
+PASS|AppliedSprite.Grass_-9_-2@-9,-2
+PASS|AppliedSprite.Grass_-8_-2@-8,-2
+PASS|AppliedSprite.Grass_-7_-2@-7,-2
+PASS|AppliedSprite.Grass_-6_-2@-6,-2
+PASS|AppliedSprite.Grass_-5_-2@-5,-2
+PASS|AppliedSprite.Grass_-4_-2@-4,-2
+PASS|AppliedSprite.Grass_-3_-2@-3,-2
+PASS|AppliedSprite.Grass_-2_-2@-2,-2
+PASS|AppliedSprite.Grass_-1_-2@-1,-2
+PASS|AppliedSprite.Grass_0_-2@0,-2
+PASS|AppliedSprite.Grass_1_-2@1,-2
+PASS|AppliedSprite.Grass_2_-2@2,-2
+PASS|AppliedSprite.Grass_3_-2@3,-2
+PASS|AppliedSprite.Grass_4_-2@4,-2
+PASS|AppliedSprite.Grass_5_-2@5,-2
+PASS|AppliedSprite.Grass_6_-2@6,-2
+PASS|AppliedSprite.Grass_7_-2@7,-2
+PASS|AppliedSprite.Grass_8_-2@8,-2
+PASS|AppliedSprite.Grass_9_-2@9,-2
+PASS|AppliedSprite.Grass_-9_-1@-9,-1
+PASS|AppliedSprite.Grass_-8_-1@-8,-1
+PASS|AppliedSprite.Grass_-7_-1@-7,-1
+PASS|AppliedSprite.Grass_-6_-1@-6,-1
+PASS|AppliedSprite.Grass_-5_-1@-5,-1
+PASS|AppliedSprite.Grass_-4_-1@-4,-1
+PASS|AppliedSprite.Grass_-3_-1@-3,-1
+PASS|AppliedSprite.Grass_-2_-1@-2,-1
+PASS|AppliedSprite.Grass_-1_-1@-1,-1
+PASS|AppliedSprite.Grass_0_-1@0,-1
+PASS|AppliedSprite.Grass_1_-1@1,-1
+PASS|AppliedSprite.Grass_2_-1@2,-1
+PASS|AppliedSprite.Grass_3_-1@3,-1
+PASS|AppliedSprite.Grass_4_-1@4,-1
+PASS|AppliedSprite.Grass_5_-1@5,-1
+PASS|AppliedSprite.Grass_6_-1@6,-1
+PASS|AppliedSprite.Grass_7_-1@7,-1
+PASS|AppliedSprite.Grass_8_-1@8,-1
+PASS|AppliedSprite.Grass_9_-1@9,-1
+PASS|AppliedSprite.Grass_-9_0@-9,0
+PASS|AppliedSprite.Grass_-8_0@-8,0
+PASS|AppliedSprite.Grass_-7_0@-7,0
+PASS|AppliedSprite.Grass_-6_0@-6,0
+PASS|AppliedSprite.Grass_-5_0@-5,0
+PASS|AppliedSprite.Grass_-4_0@-4,0
+PASS|AppliedSprite.Grass_-3_0@-3,0
+PASS|AppliedSprite.Grass_-2_0@-2,0
+PASS|AppliedSprite.Grass_-1_0@-1,0
+PASS|AppliedSprite.Grass_0_0@0,0
+PASS|AppliedSprite.Grass_1_0@1,0
+PASS|AppliedSprite.Grass_2_0@2,0
+PASS|AppliedSprite.Grass_3_0@3,0
+PASS|AppliedSprite.Grass_4_0@4,0
+PASS|AppliedSprite.Grass_5_0@5,0
+PASS|AppliedSprite.Grass_6_0@6,0
+PASS|AppliedSprite.Grass_7_0@7,0
+PASS|AppliedSprite.Grass_8_0@8,0
+PASS|AppliedSprite.Grass_9_0@9,0
+PASS|AppliedSprite.Grass_-9_1@-9,1
+PASS|AppliedSprite.Grass_-8_1@-8,1
+PASS|AppliedSprite.Grass_-7_1@-7,1
+PASS|AppliedSprite.Grass_-6_1@-6,1
+PASS|AppliedSprite.Grass_-5_1@-5,1
+PASS|AppliedSprite.Grass_-4_1@-4,1
+PASS|AppliedSprite.Grass_-3_1@-3,1
+PASS|AppliedSprite.Grass_-2_1@-2,1
+PASS|AppliedSprite.Grass_-1_1@-1,1
+PASS|AppliedSprite.Grass_0_1@0,1
+PASS|AppliedSprite.Grass_1_1@1,1
+PASS|AppliedSprite.Grass_2_1@2,1
+PASS|AppliedSprite.Grass_3_1@3,1
+PASS|AppliedSprite.Grass_4_1@4,1
+PASS|AppliedSprite.Grass_5_1@5,1
+PASS|AppliedSprite.Grass_6_1@6,1
+PASS|AppliedSprite.Grass_7_1@7,1
+PASS|AppliedSprite.Grass_8_1@8,1
+PASS|AppliedSprite.Grass_9_1@9,1
+PASS|AppliedSprite.Grass_-9_2@-9,2
+PASS|AppliedSprite.Grass_-8_2@-8,2
+PASS|AppliedSprite.Grass_-7_2@-7,2
+PASS|AppliedSprite.Grass_-6_2@-6,2
+PASS|AppliedSprite.Grass_-5_2@-5,2
+PASS|AppliedSprite.Grass_-4_2@-4,2
+PASS|AppliedSprite.Grass_-3_2@-3,2
+PASS|AppliedSprite.Grass_-2_2@-2,2
+PASS|AppliedSprite.Grass_-1_2@-1,2
+PASS|AppliedSprite.Grass_0_2@0,2
+PASS|AppliedSprite.Grass_1_2@1,2
+PASS|AppliedSprite.Grass_2_2@2,2
+PASS|AppliedSprite.Grass_3_2@3,2
+PASS|AppliedSprite.Grass_4_2@4,2
+PASS|AppliedSprite.Grass_5_2@5,2
+PASS|AppliedSprite.Grass_6_2@6,2
+PASS|AppliedSprite.Grass_7_2@7,2
+PASS|AppliedSprite.Grass_8_2@8,2
+PASS|AppliedSprite.Grass_9_2@9,2
+PASS|AppliedSprite.Grass_-9_3@-9,3
+PASS|AppliedSprite.Grass_-8_3@-8,3
+PASS|AppliedSprite.Grass_-7_3@-7,3
+PASS|AppliedSprite.Grass_-6_3@-6,3
+PASS|AppliedSprite.Grass_-5_3@-5,3
+PASS|AppliedSprite.Grass_-4_3@-4,3
+PASS|AppliedSprite.Grass_-3_3@-3,3
+PASS|AppliedSprite.Grass_-2_3@-2,3
+PASS|AppliedSprite.Grass_-1_3@-1,3
+PASS|AppliedSprite.Grass_0_3@0,3
+PASS|AppliedSprite.Grass_1_3@1,3
+PASS|AppliedSprite.Grass_2_3@2,3
+PASS|AppliedSprite.Grass_3_3@3,3
+PASS|AppliedSprite.Grass_4_3@4,3
+PASS|AppliedSprite.Grass_5_3@5,3
+PASS|AppliedSprite.Grass_6_3@6,3
+PASS|AppliedSprite.Grass_7_3@7,3
+PASS|AppliedSprite.Grass_8_3@8,3
+PASS|AppliedSprite.Grass_9_3@9,3
+PASS|AppliedSprite.Grass_-9_4@-9,4
+PASS|AppliedSprite.Grass_-8_4@-8,4
+PASS|AppliedSprite.Grass_-7_4@-7,4
+PASS|AppliedSprite.Grass_-6_4@-6,4
+PASS|AppliedSprite.Grass_-5_4@-5,4
+PASS|AppliedSprite.Grass_-4_4@-4,4
+PASS|AppliedSprite.Grass_-3_4@-3,4
+PASS|AppliedSprite.Grass_-2_4@-2,4
+PASS|AppliedSprite.Grass_-1_4@-1,4
+PASS|AppliedSprite.Grass_0_4@0,4
+PASS|AppliedSprite.Grass_1_4@1,4
+PASS|AppliedSprite.Grass_2_4@2,4
+PASS|AppliedSprite.Grass_3_4@3,4
+PASS|AppliedSprite.Grass_4_4@4,4
+PASS|AppliedSprite.Grass_5_4@5,4
+PASS|AppliedSprite.Grass_6_4@6,4
+PASS|AppliedSprite.Grass_7_4@7,4
+PASS|AppliedSprite.Grass_8_4@8,4
+PASS|AppliedSprite.Grass_9_4@9,4
+PASS|AppliedSprite.Grass_-9_5@-9,5
+PASS|AppliedSprite.Grass_-8_5@-8,5
+PASS|AppliedSprite.Grass_-7_5@-7,5
+PASS|AppliedSprite.Grass_-6_5@-6,5
+PASS|AppliedSprite.Grass_-5_5@-5,5
+PASS|AppliedSprite.Grass_-4_5@-4,5
+PASS|AppliedSprite.Grass_-3_5@-3,5
+PASS|AppliedSprite.Grass_-2_5@-2,5
+PASS|AppliedSprite.Grass_-1_5@-1,5
+PASS|AppliedSprite.Grass_0_5@0,5
+PASS|AppliedSprite.Grass_1_5@1,5
+PASS|AppliedSprite.Grass_2_5@2,5
+PASS|AppliedSprite.Grass_3_5@3,5
+PASS|AppliedSprite.Grass_4_5@4,5
+PASS|AppliedSprite.Grass_5_5@5,5
+PASS|AppliedSprite.Grass_6_5@6,5
+PASS|AppliedSprite.Grass_7_5@7,5
+PASS|AppliedSprite.Grass_8_5@8,5
+PASS|AppliedSprite.Grass_9_5@9,5
+PASS|AppliedSprite.Grass_-9_6@-9,6
+PASS|AppliedSprite.Grass_-8_6@-8,6
+PASS|AppliedSprite.Grass_-7_6@-7,6
+PASS|AppliedSprite.Grass_-6_6@-6,6
+PASS|AppliedSprite.Grass_-5_6@-5,6
+PASS|AppliedSprite.Grass_-4_6@-4,6
+PASS|AppliedSprite.Grass_-3_6@-3,6
+PASS|AppliedSprite.Grass_-2_6@-2,6
+PASS|AppliedSprite.Grass_-1_6@-1,6
+PASS|AppliedSprite.Grass_0_6@0,6
+PASS|AppliedSprite.Grass_1_6@1,6
+PASS|AppliedSprite.Grass_2_6@2,6
+PASS|AppliedSprite.Grass_3_6@3,6
+PASS|AppliedSprite.Grass_4_6@4,6
+PASS|AppliedSprite.Grass_5_6@5,6
+PASS|AppliedSprite.Grass_6_6@6,6
+PASS|AppliedSprite.Grass_7_6@7,6
+PASS|AppliedSprite.Grass_8_6@8,6
+PASS|AppliedSprite.Grass_9_6@9,6
+PASS|AppliedSprite.PathLeft_-6@-0.5,-6
+PASS|AppliedSprite.PathRight_-6@0.5,-6
+PASS|AppliedSprite.PathLeft_-5@-0.5,-5
+PASS|AppliedSprite.PathRight_-5@0.5,-5
+PASS|AppliedSprite.PathLeft_-4@-0.5,-4
+PASS|AppliedSprite.PathRight_-4@0.5,-4
+PASS|AppliedSprite.PathLeft_-3@-0.5,-3
+PASS|AppliedSprite.PathRight_-3@0.5,-3
+PASS|AppliedSprite.PathLeft_-2@-0.5,-2
+PASS|AppliedSprite.PathRight_-2@0.5,-2
+PASS|AppliedSprite.PathLeft_-1@-0.5,-1
+PASS|AppliedSprite.PathRight_-1@0.5,-1
+PASS|AppliedSprite.PathLeft_0@-0.5,0
+PASS|AppliedSprite.PathRight_0@0.5,0
+PASS|AppliedSprite.PathLeft_1@-0.5,1
+PASS|AppliedSprite.PathRight_1@0.5,1
+PASS|AppliedSprite.Roof@-4.5,4.5
+PASS|AppliedSprite.Door@-4.5,3.5
+PASS|AppliedSprite.Roof@4.5,4.5
+PASS|AppliedSprite.Door@4.5,3.5
+PASS|AppliedSprite.WallLeft@-5,3.5
+PASS|AppliedSprite.WallRight@-4,3.5
+PASS|AppliedSprite.WallLeft@4,3.5
+PASS|AppliedSprite.WallRight@5,3.5
+PASS|AppliedSprite.Fence_-7.5_5.3@-7.5,5.3
+PASS|AppliedSprite.Fence_-6.5_5.3@-6.5,5.3
+PASS|AppliedSprite.Fence_6.5_5.3@6.5,5.3
+PASS|AppliedSprite.Fence_7.5_5.3@7.5,5.3
+PASS|AppliedSprite.TreeEast@7.5,1.5
+PASS|AppliedSprite.TreeSouthWest@-7,-4.2
+PASS|AppliedSprite.TreeWest@-7.5,1.8
+PASS|AppliedSprite.RockNorth@-1.7,2.1
+PASS|AppliedSprite.Campfire@0,1.1
+PASS|AppliedSprite.Barrel@2.5,-1.3
+PASS|AppliedSprite.Chest@-2.3,-1.4
+PASS|AppliedSprite.BushWest@-5.5,-1.2
+PASS|AppliedSprite.BushEast@5.6,-1
+PASS|Renderer284
+PASS|GPU.Capture.OFFICIAL_01_full_diagnostic
+PASS|GPU.Capture.OFFICIAL_02_plaza_road
+PASS|GPU.Capture.OFFICIAL_03_northwest_roof
+PASS|GPU.Capture.OFFICIAL_04_east_roof_shop
+PASS|GPU.Capture.OFFICIAL_05_props_north
+PASS|GPU.Capture.OFFICIAL_06_props_south
+PASS|GPU.Capture.OFFICIAL_07_healer_party_pets
+PASS|GPU.Capture.OFFICIAL_08_portal_existing_overlap
+PASS|GPU.Capture.OFFICIAL_09_normal_player_camera
+PASS|Props.OpaqueProxyColliderBand.Fence_-7.5_5.3
+PASS|Props.OpaqueProxyColliderBand.Fence_-6.5_5.3
+PASS|Props.OpaqueProxyColliderBand.Fence_6.5_5.3
+PASS|Props.OpaqueProxyColliderBand.Fence_7.5_5.3
+PASS|Props.OpaqueProxyColliderBand.TreeEast
+PASS|Props.OpaqueProxyColliderBand.TreeSouthWest
+PASS|Props.OpaqueProxyColliderBand.TreeWest
+PASS|Props.OpaqueProxyColliderBand.Barrel
+PASS|Props.OpaqueProxyColliderBand.Chest
+PASS|Depth.RuntimePresent
+PASS|Depth.Behind
+PASS|Opaque.WallsDoor.Behind
+PASS|RoofPosition.Behind
+PASS|Mask.CurrentAnimatedSprite.Behind
+PASS|GPU.Capture.DEPTH_path.vision_Behind
+PASS|Depth.Side
+PASS|Opaque.WallsDoor.Side
+PASS|RoofPosition.Side
+PASS|Mask.CurrentAnimatedSprite.Side
+PASS|GPU.Capture.DEPTH_path.vision_Side
+PASS|Depth.DoorFront
+PASS|Opaque.WallsDoor.DoorFront
+PASS|RoofPosition.DoorFront
+PASS|Mask.CurrentAnimatedSprite.DoorFront
+PASS|GPU.Capture.DEPTH_path.vision_DoorFront
+PASS|Depth.Approach
+PASS|Opaque.WallsDoor.Approach
+PASS|RoofPosition.Approach
+PASS|Mask.CurrentAnimatedSprite.Approach
+PASS|GPU.Capture.DEPTH_path.vision_Approach
+PASS|Serin.Restored
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelNorthwestBuildingDepth
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelEastBuildingDepth
+PASS|Runtime.ArbelRenderer284.NoClone
+PASS|NoSpriteMask
+PASS|Shader.SupportedCompileError0
+PASS|Shop.Confirmation
+PASS|GPU.Capture.UI_01_shop_confirmation
+PASS|Shop.UIOpen
+PASS|GPU.Capture.UI_02_shop
+PASS|Healer.Confirmation
+PASS|GPU.Capture.UI_03_healer
+PASS|Healer.SaveIsolated
+PASS|Pet.ManagementOpen
+PASS|GPU.Capture.UI_04_pet_management
+PASS|Pet.AdoptionConfirmation
+PASS|Pet.AdoptionOpen
+PASS|GPU.Capture.UI_05_pet_adoption
+PASS|Portal.PreparationDialogue
+PASS|GPU.Capture.UI_06_portal_preparation
+PASS|Services.ClosedModal
+PASS|Walking.CircleCollider
+PASS|Walking.BaselineRouteSame.(0.00, 0.00)
+PASS|Walking.Physics.(0.00, -1.25)
+PASS|Walking.Physics.(0.00, -1.00)
+PASS|Walking.Physics.(0.00, -0.75)
+PASS|Walking.Physics.(0.00, -0.50)
+PASS|Walking.Physics.(0.00, -0.25)
+PASS|Walking.Physics.(0.00, 0.00)
+PASS|Walking.BaselineRouteSame.(3.00, 0.00)
+PASS|Walking.Physics.(0.25, 0.00)
+PASS|Walking.Physics.(0.50, 0.00)
+PASS|Walking.Physics.(0.75, 0.00)
+PASS|Walking.Physics.(1.00, 0.00)
+PASS|Walking.Physics.(1.25, 0.00)
+PASS|Walking.Physics.(1.50, 0.00)
+PASS|Walking.Physics.(1.75, 0.00)
+PASS|Walking.Physics.(2.00, 0.00)
+PASS|Walking.Physics.(2.25, 0.00)
+PASS|Walking.Physics.(2.50, 0.00)
+PASS|Walking.Physics.(2.75, 0.00)
+PASS|Walking.Physics.(3.00, 0.00)
+PASS|Walking.BaselineRouteSame.(3.00, -2.00)
+PASS|Walking.GoalBlockedByExistingCollider
+PASS|Walking.BaselineRouteSame.(6.00, -2.00)
+PASS|Walking.Physics.(3.25, 0.00)
+PASS|Walking.Physics.(3.50, 0.00)
+PASS|Walking.Physics.(3.75, 0.00)
+PASS|Walking.Physics.(4.00, 0.00)
+PASS|Walking.Physics.(4.25, 0.00)
+PASS|Walking.Physics.(4.50, 0.00)
+PASS|Walking.Physics.(4.75, 0.00)
+PASS|Walking.Physics.(5.00, 0.00)
+PASS|Walking.Physics.(5.25, 0.00)
+PASS|Walking.Physics.(5.50, 0.00)
+PASS|Walking.Physics.(5.75, 0.00)
+PASS|Walking.Physics.(6.00, 0.00)
+PASS|Walking.Physics.(6.00, -0.25)
+PASS|Walking.Physics.(6.00, -0.50)
+PASS|Walking.Physics.(6.00, -0.75)
+PASS|Walking.Physics.(6.00, -1.00)
+PASS|Walking.Physics.(6.00, -1.25)
+PASS|Walking.Physics.(6.00, -1.50)
+PASS|Walking.Physics.(6.00, -1.75)
+PASS|Walking.Physics.(6.00, -2.00)
+PASS|Walking.BaselineRouteSame.(6.00, -3.80)
+PASS|Walking.Physics.(6.00, -2.25)
+PASS|Walking.Physics.(6.00, -2.50)
+PASS|Walking.Physics.(6.00, -2.75)
+PASS|Walking.Physics.(6.00, -3.00)
+PASS|Walking.Physics.(6.00, -3.25)
+PASS|Walking.Physics.(6.00, -3.50)
+PASS|Walking.Physics.(6.00, -3.75)
+PASS|Walking.BaselineRouteSame.(0.00, -1.50)
+PASS|Walking.Physics.(5.75, -3.75)
+PASS|Walking.Physics.(5.50, -3.75)
+PASS|Walking.Physics.(5.25, -3.75)
+PASS|Walking.Physics.(5.00, -3.75)
+PASS|Walking.Physics.(4.75, -3.75)
+PASS|Walking.Physics.(4.50, -3.75)
+PASS|Walking.Physics.(4.25, -3.75)
+PASS|Walking.Physics.(4.00, -3.75)
+PASS|Walking.Physics.(3.75, -3.75)
+PASS|Walking.Physics.(3.50, -3.75)
+PASS|Walking.Physics.(3.25, -3.75)
+PASS|Walking.Physics.(3.00, -3.75)
+PASS|Walking.Physics.(2.75, -3.75)
+PASS|Walking.Physics.(2.50, -3.75)
+PASS|Walking.Physics.(2.25, -3.75)
+PASS|Walking.Physics.(2.00, -3.75)
+PASS|Walking.Physics.(1.75, -3.75)
+PASS|Walking.Physics.(1.50, -3.75)
+PASS|Walking.Physics.(1.25, -3.75)
+PASS|Walking.Physics.(1.00, -3.75)
+PASS|Walking.Physics.(0.75, -3.75)
+PASS|Walking.Physics.(0.50, -3.75)
+PASS|Walking.Physics.(0.25, -3.75)
+PASS|Walking.Physics.(0.00, -3.75)
+PASS|Walking.Physics.(0.00, -3.50)
+PASS|Walking.Physics.(0.00, -3.25)
+PASS|Walking.Physics.(0.00, -3.00)
+PASS|Walking.Physics.(0.00, -2.75)
+PASS|Walking.Physics.(0.00, -2.50)
+PASS|Walking.Physics.(0.00, -2.25)
+PASS|Walking.Physics.(0.00, -2.00)
+PASS|Walking.Physics.(0.00, -1.75)
+PASS|Walking.Physics.(0.00, -1.50)
+PASS|Walking.BaselineRouteSame.(-3.00, -1.50)
+PASS|Walking.GoalBlockedByExistingCollider
+PASS|Walking.BaselineRouteSame.(-5.00, -2.50)
+PASS|Walking.Physics.(-0.25, -1.50)
+PASS|Walking.Physics.(-0.50, -1.50)
+PASS|Walking.Physics.(-0.75, -1.50)
+PASS|Walking.Physics.(-1.00, -1.50)
+PASS|Walking.Physics.(-1.25, -1.50)
+PASS|Walking.Physics.(-1.50, -1.50)
+PASS|Walking.Physics.(-1.50, -1.75)
+PASS|Walking.Physics.(-1.50, -2.00)
+PASS|Walking.Physics.(-1.50, -2.25)
+PASS|Walking.Physics.(-1.50, -2.50)
+PASS|Walking.Physics.(-1.75, -2.50)
+PASS|Walking.Physics.(-2.00, -2.50)
+PASS|Walking.Physics.(-2.25, -2.50)
+PASS|Walking.Physics.(-2.50, -2.50)
+PASS|Walking.Physics.(-2.50, -2.75)
+PASS|Walking.Physics.(-2.75, -2.75)
+PASS|Walking.Physics.(-3.00, -2.75)
+PASS|Walking.Physics.(-3.25, -2.75)
+PASS|Walking.Physics.(-3.50, -2.75)
+PASS|Walking.Physics.(-3.75, -2.75)
+PASS|Walking.Physics.(-4.00, -2.75)
+PASS|Walking.Physics.(-4.25, -2.75)
+PASS|Walking.Physics.(-4.50, -2.75)
+PASS|Walking.Physics.(-4.75, -2.75)
+PASS|Walking.Physics.(-5.00, -2.75)
+PASS|Walking.Physics.(-5.00, -2.50)
+PASS|GPU.Capture.WALKING_01_actual_player
+PASS|GPU.Capture.ISOLATED_AFTER_12_normal_camera_4x3
+PASS|GPU.Capture.ISOLATED_AFTER_13_normal_camera_21x9
+PASS|Walking.ApproachRoute.0
+PASS|Walking.ApproachPhysics.(-4.75, -2.50)
+PASS|Walking.ApproachPhysics.(-4.50, -2.50)
+PASS|Walking.ApproachPhysics.(-4.25, -2.50)
+PASS|Walking.ApproachPhysics.(-4.00, -2.50)
+PASS|Walking.ApproachPhysics.(-3.75, -2.50)
+PASS|Walking.ApproachPhysics.(-3.50, -2.50)
+PASS|Walking.ApproachPhysics.(-3.50, -2.75)
+PASS|Walking.ApproachPhysics.(-3.25, -2.75)
+PASS|Walking.ApproachPhysics.(-3.00, -2.75)
+PASS|Walking.ApproachPhysics.(-2.75, -2.75)
+PASS|Walking.ApproachPhysics.(-2.50, -2.75)
+PASS|Walking.ApproachPhysics.(-2.25, -2.75)
+PASS|Walking.ApproachPhysics.(-2.00, -2.75)
+PASS|Walking.ApproachPhysics.(-1.75, -2.75)
+PASS|Walking.ApproachPhysics.(-1.50, -2.75)
+PASS|Walking.ApproachPhysics.(-1.25, -2.75)
+PASS|Walking.ApproachPhysics.(-1.00, -2.75)
+PASS|Walking.ApproachPhysics.(-0.75, -2.75)
+PASS|Walking.ApproachPhysics.(-0.50, -2.75)
+PASS|Walking.ApproachPhysics.(-0.25, -2.75)
+PASS|Walking.ApproachPhysics.(0.00, -2.75)
+PASS|Walking.ApproachPhysics.(0.25, -2.75)
+PASS|Walking.ApproachPhysics.(0.50, -2.75)
+PASS|Walking.ApproachPhysics.(0.75, -2.75)
+PASS|Walking.ApproachPhysics.(1.00, -2.75)
+PASS|Walking.ApproachPhysics.(1.25, -2.75)
+PASS|Walking.ApproachPhysics.(1.50, -2.75)
+PASS|Walking.ApproachPhysics.(1.75, -2.75)
+PASS|Walking.ApproachPhysics.(2.00, -2.75)
+PASS|Walking.ApproachPhysics.(2.25, -2.75)
+PASS|Walking.ApproachPhysics.(2.50, -2.75)
+PASS|Walking.ApproachPhysics.(2.75, -2.75)
+PASS|Walking.ApproachPhysics.(3.00, -2.75)
+PASS|Walking.ApproachPhysics.(3.25, -2.75)
+PASS|Walking.ApproachPhysics.(3.25, -2.50)
+PASS|Walking.ApproachPhysics.(3.25, -2.25)
+PASS|GPU.Capture.Walking_APPROACH_0
+PASS|Walking.ActualTarget.arbel-healer
+PASS|Walking.ActualInteraction.arbel-healer
+PASS|GPU.Capture.Walking_INTERACTION_arbel-healer
+PASS|Walking.ApproachModalClosed
+PASS|Walking.ApproachRoute.1
+PASS|Walking.ApproachPhysics.(3.00, -2.25)
+PASS|Walking.ApproachPhysics.(3.00, -2.50)
+PASS|Walking.ApproachPhysics.(2.75, -2.50)
+PASS|Walking.ApproachPhysics.(2.50, -2.50)
+PASS|Walking.ApproachPhysics.(2.50, -2.75)
+PASS|Walking.ApproachPhysics.(2.25, -2.75)
+PASS|Walking.ApproachPhysics.(2.00, -2.75)
+PASS|Walking.ApproachPhysics.(1.75, -2.75)
+PASS|Walking.ApproachPhysics.(1.50, -2.75)
+PASS|Walking.ApproachPhysics.(1.25, -2.75)
+PASS|Walking.ApproachPhysics.(1.00, -2.75)
+PASS|Walking.ApproachPhysics.(0.75, -2.75)
+PASS|Walking.ApproachPhysics.(0.50, -2.75)
+PASS|Walking.ApproachPhysics.(0.25, -2.75)
+PASS|Walking.ApproachPhysics.(0.00, -2.75)
+PASS|Walking.ApproachPhysics.(-0.25, -2.75)
+PASS|Walking.ApproachPhysics.(-0.50, -2.75)
+PASS|Walking.ApproachPhysics.(-0.75, -2.75)
+PASS|Walking.ApproachPhysics.(-1.00, -2.75)
+PASS|Walking.ApproachPhysics.(-1.25, -2.75)
+PASS|Walking.ApproachPhysics.(-1.50, -2.75)
+PASS|Walking.ApproachPhysics.(-1.75, -2.75)
+PASS|Walking.ApproachPhysics.(-2.00, -2.75)
+PASS|Walking.ApproachPhysics.(-2.25, -2.75)
+PASS|Walking.ApproachPhysics.(-2.50, -2.75)
+PASS|Walking.ApproachPhysics.(-2.75, -2.75)
+PASS|Walking.ApproachPhysics.(-3.00, -2.75)
+PASS|Walking.ApproachPhysics.(-3.00, -3.00)
+PASS|GPU.Capture.Walking_APPROACH_1
+PASS|Walking.ActualTarget.arbel-party-guide
+PASS|Walking.ActualInteraction.arbel-party-guide
+PASS|GPU.Capture.Walking_INTERACTION_arbel-party-guide
+PASS|Walking.ApproachModalClosed
+PASS|Walking.ApproachRoute.2
+PASS|Walking.ApproachPhysics.(-3.25, -3.00)
+PASS|Walking.ApproachPhysics.(-3.50, -3.00)
+PASS|Walking.ApproachPhysics.(-3.75, -3.00)
+PASS|Walking.ApproachPhysics.(-4.00, -3.00)
+PASS|Walking.ApproachPhysics.(-4.00, -2.75)
+PASS|Walking.ApproachPhysics.(-4.00, -2.50)
+PASS|Walking.ApproachPhysics.(-4.00, -2.25)
+PASS|Walking.ApproachPhysics.(-4.00, -2.00)
+PASS|Walking.ApproachPhysics.(-4.00, -1.75)
+PASS|Walking.ApproachPhysics.(-4.00, -1.50)
+PASS|Walking.ApproachPhysics.(-4.00, -1.25)
+PASS|Walking.ApproachPhysics.(-4.00, -1.00)
+PASS|Walking.ApproachPhysics.(-4.00, -0.75)
+PASS|Walking.ApproachPhysics.(-4.00, -0.50)
+PASS|Walking.ApproachPhysics.(-4.00, -0.25)
+PASS|Walking.ApproachPhysics.(-4.00, 0.00)
+PASS|Walking.ApproachPhysics.(-4.00, 0.25)
+PASS|Walking.ApproachPhysics.(-4.00, 0.50)
+PASS|Walking.ApproachPhysics.(-4.00, 0.75)
+PASS|Walking.ApproachPhysics.(-4.00, 1.00)
+PASS|Walking.ApproachPhysics.(-4.00, 1.25)
+PASS|Walking.ApproachPhysics.(-4.00, 1.50)
+PASS|Walking.ApproachPhysics.(-4.00, 1.75)
+PASS|Walking.ApproachPhysics.(-4.00, 2.00)
+PASS|Walking.ApproachPhysics.(-4.00, 2.25)
+PASS|GPU.Capture.Walking_APPROACH_2
+PASS|Walking.ApproachRoute.3
+PASS|Walking.ApproachPhysics.(-3.75, 2.25)
+PASS|Walking.ApproachPhysics.(-3.50, 2.25)
+PASS|Walking.ApproachPhysics.(-3.25, 2.25)
+PASS|Walking.ApproachPhysics.(-3.00, 2.25)
+PASS|Walking.ApproachPhysics.(-3.00, 2.50)
+PASS|Walking.ApproachPhysics.(-3.00, 2.75)
+PASS|Walking.ApproachPhysics.(-3.00, 3.00)
+PASS|Walking.ApproachPhysics.(-3.00, 3.25)
+PASS|Walking.ApproachPhysics.(-3.00, 3.50)
+PASS|Walking.ApproachPhysics.(-3.00, 3.75)
+PASS|Walking.ApproachPhysics.(-3.25, 3.75)
+PASS|Walking.ApproachPhysics.(-3.25, 4.00)
+PASS|GPU.Capture.Walking_APPROACH_3
+PASS|Walking.ActualTarget.arbel-serin
+PASS|Walking.ActualInteraction.arbel-serin
+PASS|GPU.Capture.Walking_INTERACTION_arbel-serin
+PASS|Walking.ApproachModalClosed
+PASS|Walking.ApproachRoute.4
+PASS|Walking.ApproachPhysics.(-3.00, 4.00)
+PASS|Walking.ApproachPhysics.(-2.75, 4.00)
+PASS|Walking.ApproachPhysics.(-2.50, 4.00)
+PASS|Walking.ApproachPhysics.(-2.25, 4.00)
+PASS|Walking.ApproachPhysics.(-2.00, 4.00)
+PASS|Walking.ApproachPhysics.(-1.75, 4.00)
+PASS|Walking.ApproachPhysics.(-1.50, 4.00)
+PASS|Walking.ApproachPhysics.(-1.25, 4.00)
+PASS|Walking.ApproachPhysics.(-1.00, 4.00)
+PASS|Walking.ApproachPhysics.(-0.75, 4.00)
+PASS|Walking.ApproachPhysics.(-0.50, 4.00)
+PASS|Walking.ApproachPhysics.(-0.25, 4.00)
+PASS|Walking.ApproachPhysics.(0.00, 4.00)
+PASS|Walking.ApproachPhysics.(0.25, 4.00)
+PASS|Walking.ApproachPhysics.(0.50, 4.00)
+PASS|Walking.ApproachPhysics.(0.75, 4.00)
+PASS|Walking.ApproachPhysics.(1.00, 4.00)
+PASS|Walking.ApproachPhysics.(1.25, 4.00)
+PASS|Walking.ApproachPhysics.(1.50, 4.00)
+PASS|Walking.ApproachPhysics.(1.75, 4.00)
+PASS|Walking.ApproachPhysics.(2.00, 4.00)
+PASS|Walking.ApproachPhysics.(2.25, 4.00)
+PASS|Walking.ApproachPhysics.(2.50, 4.00)
+PASS|Walking.ApproachPhysics.(2.75, 4.00)
+PASS|Walking.ApproachPhysics.(3.00, 4.00)
+PASS|Walking.ApproachPhysics.(3.25, 4.00)
+PASS|Walking.ApproachPhysics.(3.50, 4.00)
+PASS|Walking.ApproachPhysics.(3.75, 4.00)
+PASS|Walking.ApproachPhysics.(4.00, 4.00)
+PASS|Walking.ApproachPhysics.(4.25, 4.00)
+PASS|Walking.ApproachPhysics.(4.50, 4.00)
+PASS|Walking.ApproachPhysics.(4.75, 4.00)
+PASS|Walking.ApproachPhysics.(5.00, 4.00)
+PASS|Walking.ApproachPhysics.(5.25, 4.00)
+PASS|Walking.ApproachPhysics.(5.50, 4.00)
+PASS|Walking.ApproachPhysics.(5.75, 4.00)
+PASS|Walking.ApproachPhysics.(6.00, 4.00)
+PASS|Walking.ApproachPhysics.(6.00, 3.75)
+PASS|Walking.ApproachPhysics.(6.00, 3.50)
+PASS|Walking.ApproachPhysics.(6.00, 3.25)
+PASS|Walking.ApproachPhysics.(6.00, 3.00)
+PASS|Walking.ApproachPhysics.(6.00, 2.75)
+PASS|Walking.ApproachPhysics.(5.75, 2.75)
+PASS|Walking.ApproachPhysics.(5.75, 2.50)
+PASS|Walking.ApproachPhysics.(5.50, 2.50)
+PASS|Walking.ApproachPhysics.(5.50, 2.25)
+PASS|Walking.ApproachPhysics.(5.25, 2.25)
+PASS|Walking.ApproachPhysics.(5.00, 2.25)
+PASS|GPU.Capture.Walking_APPROACH_4
+PASS|Walking.ApproachRoute.5
+PASS|Walking.ApproachPhysics.(5.00, 2.00)
+PASS|Walking.ApproachPhysics.(5.00, 1.75)
+PASS|Walking.ApproachPhysics.(4.75, 1.75)
+PASS|Walking.ApproachPhysics.(4.75, 1.50)
+PASS|Walking.ApproachPhysics.(4.50, 1.50)
+PASS|Walking.ApproachPhysics.(4.50, 1.25)
+PASS|Walking.ApproachPhysics.(4.25, 1.25)
+PASS|Walking.ApproachPhysics.(4.00, 1.25)
+PASS|Walking.ApproachPhysics.(3.75, 1.25)
+PASS|Walking.ApproachPhysics.(3.50, 1.25)
+PASS|Walking.ApproachPhysics.(3.25, 1.25)
+PASS|Walking.ApproachPhysics.(3.00, 1.25)
+PASS|Walking.ApproachPhysics.(2.75, 1.25)
+PASS|Walking.ApproachPhysics.(2.50, 1.25)
+PASS|Walking.ApproachPhysics.(2.25, 1.25)
+PASS|Walking.ApproachPhysics.(2.00, 1.25)
+PASS|Walking.ApproachPhysics.(1.75, 1.25)
+PASS|Walking.ApproachPhysics.(1.50, 1.25)
+PASS|Walking.ApproachPhysics.(1.25, 1.25)
+PASS|Walking.ApproachPhysics.(1.00, 1.25)
+PASS|Walking.ApproachPhysics.(0.75, 1.25)
+PASS|Walking.ApproachPhysics.(0.50, 1.25)
+PASS|Walking.ApproachPhysics.(0.25, 1.25)
+PASS|Walking.ApproachPhysics.(0.00, 1.25)
+PASS|Walking.ApproachPhysics.(-0.25, 1.25)
+PASS|Walking.ApproachPhysics.(-0.50, 1.25)
+PASS|Walking.ApproachPhysics.(-0.75, 1.25)
+PASS|Walking.ApproachPhysics.(-1.00, 1.25)
+PASS|Walking.ApproachPhysics.(-1.25, 1.25)
+PASS|Walking.ApproachPhysics.(-1.50, 1.25)
+PASS|Walking.ApproachPhysics.(-1.75, 1.25)
+PASS|Walking.ApproachPhysics.(-2.00, 1.25)
+PASS|Walking.ApproachPhysics.(-2.25, 1.25)
+PASS|Walking.ApproachPhysics.(-2.50, 1.25)
+PASS|Walking.ApproachPhysics.(-2.75, 1.25)
+PASS|Walking.ApproachPhysics.(-3.00, 1.25)
+PASS|Walking.ApproachPhysics.(-3.25, 1.25)
+PASS|Walking.ApproachPhysics.(-3.50, 1.25)
+PASS|Walking.ApproachPhysics.(-3.75, 1.25)
+PASS|Walking.ApproachPhysics.(-4.00, 1.25)
+PASS|Walking.ApproachPhysics.(-4.25, 1.25)
+PASS|Walking.ApproachPhysics.(-4.50, 1.25)
+PASS|Walking.ApproachPhysics.(-4.75, 1.25)
+PASS|Walking.ApproachPhysics.(-5.00, 1.25)
+PASS|Walking.ApproachPhysics.(-5.25, 1.25)
+PASS|Walking.ApproachPhysics.(-5.50, 1.25)
+PASS|Walking.ApproachPhysics.(-5.75, 1.25)
+PASS|Walking.ApproachPhysics.(-6.00, 1.25)
+PASS|Walking.ApproachPhysics.(-6.00, 1.00)
+PASS|Walking.ApproachPhysics.(-6.00, 0.75)
+PASS|Walking.ApproachPhysics.(-6.00, 0.50)
+PASS|Walking.ApproachPhysics.(-6.00, 0.25)
+PASS|Walking.ApproachPhysics.(-6.00, 0.00)
+PASS|Walking.ApproachPhysics.(-6.00, -0.25)
+PASS|Walking.ApproachPhysics.(-6.00, -0.50)
+PASS|Walking.ApproachPhysics.(-6.00, -0.75)
+PASS|Walking.ApproachPhysics.(-6.00, -1.00)
+PASS|Walking.ApproachPhysics.(-6.00, -1.25)
+PASS|Walking.ApproachPhysics.(-6.00, -1.50)
+PASS|Walking.ApproachPhysics.(-6.00, -1.75)
+PASS|Walking.ApproachPhysics.(-6.00, -2.00)
+PASS|Walking.ApproachPhysics.(-6.00, -2.25)
+PASS|Walking.ApproachPhysics.(-6.00, -2.50)
+PASS|Walking.ApproachPhysics.(-6.00, -2.75)
+PASS|Walking.ApproachPhysics.(-6.00, -3.00)
+PASS|GPU.Capture.Walking_APPROACH_5
+PASS|Walking.ActualTarget.arbel-portal-keeper
+PASS|Walking.ActualInteraction.arbel-portal-keeper
+PASS|GPU.Capture.Walking_INTERACTION_arbel-portal-keeper
+PASS|Walking.ApproachModalClosed
+PASS|Save.ArbelPosition
+PASS|Continue.BootstrapButton
+PASS|Continue.Arbel
+PASS|Continue.QuestSame
+PASS|Continue.PositionSame
+PASS|AppliedSprite.Grass_-9_-6@-9,-6
+PASS|AppliedSprite.Grass_-8_-6@-8,-6
+PASS|AppliedSprite.Grass_-7_-6@-7,-6
+PASS|AppliedSprite.Grass_-6_-6@-6,-6
+PASS|AppliedSprite.Grass_-5_-6@-5,-6
+PASS|AppliedSprite.Grass_-4_-6@-4,-6
+PASS|AppliedSprite.Grass_-3_-6@-3,-6
+PASS|AppliedSprite.Grass_-2_-6@-2,-6
+PASS|AppliedSprite.Grass_-1_-6@-1,-6
+PASS|AppliedSprite.Grass_0_-6@0,-6
+PASS|AppliedSprite.Grass_1_-6@1,-6
+PASS|AppliedSprite.Grass_2_-6@2,-6
+PASS|AppliedSprite.Grass_3_-6@3,-6
+PASS|AppliedSprite.Grass_4_-6@4,-6
+PASS|AppliedSprite.Grass_5_-6@5,-6
+PASS|AppliedSprite.Grass_6_-6@6,-6
+PASS|AppliedSprite.Grass_7_-6@7,-6
+PASS|AppliedSprite.Grass_8_-6@8,-6
+PASS|AppliedSprite.Grass_9_-6@9,-6
+PASS|AppliedSprite.Grass_-9_-5@-9,-5
+PASS|AppliedSprite.Grass_-8_-5@-8,-5
+PASS|AppliedSprite.Grass_-7_-5@-7,-5
+PASS|AppliedSprite.Grass_-6_-5@-6,-5
+PASS|AppliedSprite.Grass_-5_-5@-5,-5
+PASS|AppliedSprite.Grass_-4_-5@-4,-5
+PASS|AppliedSprite.Grass_-3_-5@-3,-5
+PASS|AppliedSprite.Grass_-2_-5@-2,-5
+PASS|AppliedSprite.Grass_-1_-5@-1,-5
+PASS|AppliedSprite.Grass_0_-5@0,-5
+PASS|AppliedSprite.Grass_1_-5@1,-5
+PASS|AppliedSprite.Grass_2_-5@2,-5
+PASS|AppliedSprite.Grass_3_-5@3,-5
+PASS|AppliedSprite.Grass_4_-5@4,-5
+PASS|AppliedSprite.Grass_5_-5@5,-5
+PASS|AppliedSprite.Grass_6_-5@6,-5
+PASS|AppliedSprite.Grass_7_-5@7,-5
+PASS|AppliedSprite.Grass_8_-5@8,-5
+PASS|AppliedSprite.Grass_9_-5@9,-5
+PASS|AppliedSprite.Grass_-9_-4@-9,-4
+PASS|AppliedSprite.Grass_-8_-4@-8,-4
+PASS|AppliedSprite.Grass_-7_-4@-7,-4
+PASS|AppliedSprite.Grass_-6_-4@-6,-4
+PASS|AppliedSprite.Grass_-5_-4@-5,-4
+PASS|AppliedSprite.Grass_-4_-4@-4,-4
+PASS|AppliedSprite.Grass_-3_-4@-3,-4
+PASS|AppliedSprite.Grass_-2_-4@-2,-4
+PASS|AppliedSprite.Grass_-1_-4@-1,-4
+PASS|AppliedSprite.Grass_0_-4@0,-4
+PASS|AppliedSprite.Grass_1_-4@1,-4
+PASS|AppliedSprite.Grass_2_-4@2,-4
+PASS|AppliedSprite.Grass_3_-4@3,-4
+PASS|AppliedSprite.Grass_4_-4@4,-4
+PASS|AppliedSprite.Grass_5_-4@5,-4
+PASS|AppliedSprite.Grass_6_-4@6,-4
+PASS|AppliedSprite.Grass_7_-4@7,-4
+PASS|AppliedSprite.Grass_8_-4@8,-4
+PASS|AppliedSprite.Grass_9_-4@9,-4
+PASS|AppliedSprite.Grass_-9_-3@-9,-3
+PASS|AppliedSprite.Grass_-8_-3@-8,-3
+PASS|AppliedSprite.Grass_-7_-3@-7,-3
+PASS|AppliedSprite.Grass_-6_-3@-6,-3
+PASS|AppliedSprite.Grass_-5_-3@-5,-3
+PASS|AppliedSprite.Grass_-4_-3@-4,-3
+PASS|AppliedSprite.Grass_-3_-3@-3,-3
+PASS|AppliedSprite.Grass_-2_-3@-2,-3
+PASS|AppliedSprite.Grass_-1_-3@-1,-3
+PASS|AppliedSprite.Grass_0_-3@0,-3
+PASS|AppliedSprite.Grass_1_-3@1,-3
+PASS|AppliedSprite.Grass_2_-3@2,-3
+PASS|AppliedSprite.Grass_3_-3@3,-3
+PASS|AppliedSprite.Grass_4_-3@4,-3
+PASS|AppliedSprite.Grass_5_-3@5,-3
+PASS|AppliedSprite.Grass_6_-3@6,-3
+PASS|AppliedSprite.Grass_7_-3@7,-3
+PASS|AppliedSprite.Grass_8_-3@8,-3
+PASS|AppliedSprite.Grass_9_-3@9,-3
+PASS|AppliedSprite.Grass_-9_-2@-9,-2
+PASS|AppliedSprite.Grass_-8_-2@-8,-2
+PASS|AppliedSprite.Grass_-7_-2@-7,-2
+PASS|AppliedSprite.Grass_-6_-2@-6,-2
+PASS|AppliedSprite.Grass_-5_-2@-5,-2
+PASS|AppliedSprite.Grass_-4_-2@-4,-2
+PASS|AppliedSprite.Grass_-3_-2@-3,-2
+PASS|AppliedSprite.Grass_-2_-2@-2,-2
+PASS|AppliedSprite.Grass_-1_-2@-1,-2
+PASS|AppliedSprite.Grass_0_-2@0,-2
+PASS|AppliedSprite.Grass_1_-2@1,-2
+PASS|AppliedSprite.Grass_2_-2@2,-2
+PASS|AppliedSprite.Grass_3_-2@3,-2
+PASS|AppliedSprite.Grass_4_-2@4,-2
+PASS|AppliedSprite.Grass_5_-2@5,-2
+PASS|AppliedSprite.Grass_6_-2@6,-2
+PASS|AppliedSprite.Grass_7_-2@7,-2
+PASS|AppliedSprite.Grass_8_-2@8,-2
+PASS|AppliedSprite.Grass_9_-2@9,-2
+PASS|AppliedSprite.Grass_-9_-1@-9,-1
+PASS|AppliedSprite.Grass_-8_-1@-8,-1
+PASS|AppliedSprite.Grass_-7_-1@-7,-1
+PASS|AppliedSprite.Grass_-6_-1@-6,-1
+PASS|AppliedSprite.Grass_-5_-1@-5,-1
+PASS|AppliedSprite.Grass_-4_-1@-4,-1
+PASS|AppliedSprite.Grass_-3_-1@-3,-1
+PASS|AppliedSprite.Grass_-2_-1@-2,-1
+PASS|AppliedSprite.Grass_-1_-1@-1,-1
+PASS|AppliedSprite.Grass_0_-1@0,-1
+PASS|AppliedSprite.Grass_1_-1@1,-1
+PASS|AppliedSprite.Grass_2_-1@2,-1
+PASS|AppliedSprite.Grass_3_-1@3,-1
+PASS|AppliedSprite.Grass_4_-1@4,-1
+PASS|AppliedSprite.Grass_5_-1@5,-1
+PASS|AppliedSprite.Grass_6_-1@6,-1
+PASS|AppliedSprite.Grass_7_-1@7,-1
+PASS|AppliedSprite.Grass_8_-1@8,-1
+PASS|AppliedSprite.Grass_9_-1@9,-1
+PASS|AppliedSprite.Grass_-9_0@-9,0
+PASS|AppliedSprite.Grass_-8_0@-8,0
+PASS|AppliedSprite.Grass_-7_0@-7,0
+PASS|AppliedSprite.Grass_-6_0@-6,0
+PASS|AppliedSprite.Grass_-5_0@-5,0
+PASS|AppliedSprite.Grass_-4_0@-4,0
+PASS|AppliedSprite.Grass_-3_0@-3,0
+PASS|AppliedSprite.Grass_-2_0@-2,0
+PASS|AppliedSprite.Grass_-1_0@-1,0
+PASS|AppliedSprite.Grass_0_0@0,0
+PASS|AppliedSprite.Grass_1_0@1,0
+PASS|AppliedSprite.Grass_2_0@2,0
+PASS|AppliedSprite.Grass_3_0@3,0
+PASS|AppliedSprite.Grass_4_0@4,0
+PASS|AppliedSprite.Grass_5_0@5,0
+PASS|AppliedSprite.Grass_6_0@6,0
+PASS|AppliedSprite.Grass_7_0@7,0
+PASS|AppliedSprite.Grass_8_0@8,0
+PASS|AppliedSprite.Grass_9_0@9,0
+PASS|AppliedSprite.Grass_-9_1@-9,1
+PASS|AppliedSprite.Grass_-8_1@-8,1
+PASS|AppliedSprite.Grass_-7_1@-7,1
+PASS|AppliedSprite.Grass_-6_1@-6,1
+PASS|AppliedSprite.Grass_-5_1@-5,1
+PASS|AppliedSprite.Grass_-4_1@-4,1
+PASS|AppliedSprite.Grass_-3_1@-3,1
+PASS|AppliedSprite.Grass_-2_1@-2,1
+PASS|AppliedSprite.Grass_-1_1@-1,1
+PASS|AppliedSprite.Grass_0_1@0,1
+PASS|AppliedSprite.Grass_1_1@1,1
+PASS|AppliedSprite.Grass_2_1@2,1
+PASS|AppliedSprite.Grass_3_1@3,1
+PASS|AppliedSprite.Grass_4_1@4,1
+PASS|AppliedSprite.Grass_5_1@5,1
+PASS|AppliedSprite.Grass_6_1@6,1
+PASS|AppliedSprite.Grass_7_1@7,1
+PASS|AppliedSprite.Grass_8_1@8,1
+PASS|AppliedSprite.Grass_9_1@9,1
+PASS|AppliedSprite.Grass_-9_2@-9,2
+PASS|AppliedSprite.Grass_-8_2@-8,2
+PASS|AppliedSprite.Grass_-7_2@-7,2
+PASS|AppliedSprite.Grass_-6_2@-6,2
+PASS|AppliedSprite.Grass_-5_2@-5,2
+PASS|AppliedSprite.Grass_-4_2@-4,2
+PASS|AppliedSprite.Grass_-3_2@-3,2
+PASS|AppliedSprite.Grass_-2_2@-2,2
+PASS|AppliedSprite.Grass_-1_2@-1,2
+PASS|AppliedSprite.Grass_0_2@0,2
+PASS|AppliedSprite.Grass_1_2@1,2
+PASS|AppliedSprite.Grass_2_2@2,2
+PASS|AppliedSprite.Grass_3_2@3,2
+PASS|AppliedSprite.Grass_4_2@4,2
+PASS|AppliedSprite.Grass_5_2@5,2
+PASS|AppliedSprite.Grass_6_2@6,2
+PASS|AppliedSprite.Grass_7_2@7,2
+PASS|AppliedSprite.Grass_8_2@8,2
+PASS|AppliedSprite.Grass_9_2@9,2
+PASS|AppliedSprite.Grass_-9_3@-9,3
+PASS|AppliedSprite.Grass_-8_3@-8,3
+PASS|AppliedSprite.Grass_-7_3@-7,3
+PASS|AppliedSprite.Grass_-6_3@-6,3
+PASS|AppliedSprite.Grass_-5_3@-5,3
+PASS|AppliedSprite.Grass_-4_3@-4,3
+PASS|AppliedSprite.Grass_-3_3@-3,3
+PASS|AppliedSprite.Grass_-2_3@-2,3
+PASS|AppliedSprite.Grass_-1_3@-1,3
+PASS|AppliedSprite.Grass_0_3@0,3
+PASS|AppliedSprite.Grass_1_3@1,3
+PASS|AppliedSprite.Grass_2_3@2,3
+PASS|AppliedSprite.Grass_3_3@3,3
+PASS|AppliedSprite.Grass_4_3@4,3
+PASS|AppliedSprite.Grass_5_3@5,3
+PASS|AppliedSprite.Grass_6_3@6,3
+PASS|AppliedSprite.Grass_7_3@7,3
+PASS|AppliedSprite.Grass_8_3@8,3
+PASS|AppliedSprite.Grass_9_3@9,3
+PASS|AppliedSprite.Grass_-9_4@-9,4
+PASS|AppliedSprite.Grass_-8_4@-8,4
+PASS|AppliedSprite.Grass_-7_4@-7,4
+PASS|AppliedSprite.Grass_-6_4@-6,4
+PASS|AppliedSprite.Grass_-5_4@-5,4
+PASS|AppliedSprite.Grass_-4_4@-4,4
+PASS|AppliedSprite.Grass_-3_4@-3,4
+PASS|AppliedSprite.Grass_-2_4@-2,4
+PASS|AppliedSprite.Grass_-1_4@-1,4
+PASS|AppliedSprite.Grass_0_4@0,4
+PASS|AppliedSprite.Grass_1_4@1,4
+PASS|AppliedSprite.Grass_2_4@2,4
+PASS|AppliedSprite.Grass_3_4@3,4
+PASS|AppliedSprite.Grass_4_4@4,4
+PASS|AppliedSprite.Grass_5_4@5,4
+PASS|AppliedSprite.Grass_6_4@6,4
+PASS|AppliedSprite.Grass_7_4@7,4
+PASS|AppliedSprite.Grass_8_4@8,4
+PASS|AppliedSprite.Grass_9_4@9,4
+PASS|AppliedSprite.Grass_-9_5@-9,5
+PASS|AppliedSprite.Grass_-8_5@-8,5
+PASS|AppliedSprite.Grass_-7_5@-7,5
+PASS|AppliedSprite.Grass_-6_5@-6,5
+PASS|AppliedSprite.Grass_-5_5@-5,5
+PASS|AppliedSprite.Grass_-4_5@-4,5
+PASS|AppliedSprite.Grass_-3_5@-3,5
+PASS|AppliedSprite.Grass_-2_5@-2,5
+PASS|AppliedSprite.Grass_-1_5@-1,5
+PASS|AppliedSprite.Grass_0_5@0,5
+PASS|AppliedSprite.Grass_1_5@1,5
+PASS|AppliedSprite.Grass_2_5@2,5
+PASS|AppliedSprite.Grass_3_5@3,5
+PASS|AppliedSprite.Grass_4_5@4,5
+PASS|AppliedSprite.Grass_5_5@5,5
+PASS|AppliedSprite.Grass_6_5@6,5
+PASS|AppliedSprite.Grass_7_5@7,5
+PASS|AppliedSprite.Grass_8_5@8,5
+PASS|AppliedSprite.Grass_9_5@9,5
+PASS|AppliedSprite.Grass_-9_6@-9,6
+PASS|AppliedSprite.Grass_-8_6@-8,6
+PASS|AppliedSprite.Grass_-7_6@-7,6
+PASS|AppliedSprite.Grass_-6_6@-6,6
+PASS|AppliedSprite.Grass_-5_6@-5,6
+PASS|AppliedSprite.Grass_-4_6@-4,6
+PASS|AppliedSprite.Grass_-3_6@-3,6
+PASS|AppliedSprite.Grass_-2_6@-2,6
+PASS|AppliedSprite.Grass_-1_6@-1,6
+PASS|AppliedSprite.Grass_0_6@0,6
+PASS|AppliedSprite.Grass_1_6@1,6
+PASS|AppliedSprite.Grass_2_6@2,6
+PASS|AppliedSprite.Grass_3_6@3,6
+PASS|AppliedSprite.Grass_4_6@4,6
+PASS|AppliedSprite.Grass_5_6@5,6
+PASS|AppliedSprite.Grass_6_6@6,6
+PASS|AppliedSprite.Grass_7_6@7,6
+PASS|AppliedSprite.Grass_8_6@8,6
+PASS|AppliedSprite.Grass_9_6@9,6
+PASS|AppliedSprite.PathLeft_-6@-0.5,-6
+PASS|AppliedSprite.PathRight_-6@0.5,-6
+PASS|AppliedSprite.PathLeft_-5@-0.5,-5
+PASS|AppliedSprite.PathRight_-5@0.5,-5
+PASS|AppliedSprite.PathLeft_-4@-0.5,-4
+PASS|AppliedSprite.PathRight_-4@0.5,-4
+PASS|AppliedSprite.PathLeft_-3@-0.5,-3
+PASS|AppliedSprite.PathRight_-3@0.5,-3
+PASS|AppliedSprite.PathLeft_-2@-0.5,-2
+PASS|AppliedSprite.PathRight_-2@0.5,-2
+PASS|AppliedSprite.PathLeft_-1@-0.5,-1
+PASS|AppliedSprite.PathRight_-1@0.5,-1
+PASS|AppliedSprite.PathLeft_0@-0.5,0
+PASS|AppliedSprite.PathRight_0@0.5,0
+PASS|AppliedSprite.PathLeft_1@-0.5,1
+PASS|AppliedSprite.PathRight_1@0.5,1
+PASS|AppliedSprite.Roof@-4.5,4.5
+PASS|AppliedSprite.Door@-4.5,3.5
+PASS|AppliedSprite.Roof@4.5,4.5
+PASS|AppliedSprite.Door@4.5,3.5
+PASS|AppliedSprite.WallLeft@-5,3.5
+PASS|AppliedSprite.WallRight@-4,3.5
+PASS|AppliedSprite.WallLeft@4,3.5
+PASS|AppliedSprite.WallRight@5,3.5
+PASS|AppliedSprite.Fence_-7.5_5.3@-7.5,5.3
+PASS|AppliedSprite.Fence_-6.5_5.3@-6.5,5.3
+PASS|AppliedSprite.Fence_6.5_5.3@6.5,5.3
+PASS|AppliedSprite.Fence_7.5_5.3@7.5,5.3
+PASS|AppliedSprite.TreeEast@7.5,1.5
+PASS|AppliedSprite.TreeSouthWest@-7,-4.2
+PASS|AppliedSprite.TreeWest@-7.5,1.8
+PASS|AppliedSprite.RockNorth@-1.7,2.1
+PASS|AppliedSprite.Campfire@0,1.1
+PASS|AppliedSprite.Barrel@2.5,-1.3
+PASS|AppliedSprite.Chest@-2.3,-1.4
+PASS|AppliedSprite.BushWest@-5.5,-1.2
+PASS|AppliedSprite.BushEast@5.6,-1
+PASS|Renderer284
+PASS|MissingScript0
+PASS|RuntimeMissingSprite0
+PASS|GPU.Capture.UI_07_continue_restored
+PASS|Depth.RuntimePresent
+PASS|Depth.Behind
+PASS|Opaque.WallsDoor.Behind
+PASS|RoofPosition.Behind
+PASS|Mask.CurrentAnimatedSprite.Behind
+PASS|GPU.Capture.DEPTH_path.vision_Behind
+PASS|Depth.Side
+PASS|Opaque.WallsDoor.Side
+PASS|RoofPosition.Side
+PASS|Mask.CurrentAnimatedSprite.Side
+PASS|GPU.Capture.DEPTH_path.vision_Side
+PASS|Depth.DoorFront
+PASS|Opaque.WallsDoor.DoorFront
+PASS|RoofPosition.DoorFront
+PASS|Mask.CurrentAnimatedSprite.DoorFront
+PASS|GPU.Capture.DEPTH_path.vision_DoorFront
+PASS|Depth.Approach
+PASS|Opaque.WallsDoor.Approach
+PASS|RoofPosition.Approach
+PASS|Mask.CurrentAnimatedSprite.Approach
+PASS|GPU.Capture.DEPTH_path.vision_Approach
+PASS|Serin.Restored
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelNorthwestBuildingDepth
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelEastBuildingDepth
+PASS|Runtime.ArbelRenderer284.NoClone
+PASS|NoSpriteMask
+PASS|Shader.SupportedCompileError0
+PASS|AppliedSprite.Grass_-9_-6@-9,-6
+PASS|AppliedSprite.Grass_-8_-6@-8,-6
+PASS|AppliedSprite.Grass_-7_-6@-7,-6
+PASS|AppliedSprite.Grass_-6_-6@-6,-6
+PASS|AppliedSprite.Grass_-5_-6@-5,-6
+PASS|AppliedSprite.Grass_-4_-6@-4,-6
+PASS|AppliedSprite.Grass_-3_-6@-3,-6
+PASS|AppliedSprite.Grass_-2_-6@-2,-6
+PASS|AppliedSprite.Grass_-1_-6@-1,-6
+PASS|AppliedSprite.Grass_0_-6@0,-6
+PASS|AppliedSprite.Grass_1_-6@1,-6
+PASS|AppliedSprite.Grass_2_-6@2,-6
+PASS|AppliedSprite.Grass_3_-6@3,-6
+PASS|AppliedSprite.Grass_4_-6@4,-6
+PASS|AppliedSprite.Grass_5_-6@5,-6
+PASS|AppliedSprite.Grass_6_-6@6,-6
+PASS|AppliedSprite.Grass_7_-6@7,-6
+PASS|AppliedSprite.Grass_8_-6@8,-6
+PASS|AppliedSprite.Grass_9_-6@9,-6
+PASS|AppliedSprite.Grass_-9_-5@-9,-5
+PASS|AppliedSprite.Grass_-8_-5@-8,-5
+PASS|AppliedSprite.Grass_-7_-5@-7,-5
+PASS|AppliedSprite.Grass_-6_-5@-6,-5
+PASS|AppliedSprite.Grass_-5_-5@-5,-5
+PASS|AppliedSprite.Grass_-4_-5@-4,-5
+PASS|AppliedSprite.Grass_-3_-5@-3,-5
+PASS|AppliedSprite.Grass_-2_-5@-2,-5
+PASS|AppliedSprite.Grass_-1_-5@-1,-5
+PASS|AppliedSprite.Grass_0_-5@0,-5
+PASS|AppliedSprite.Grass_1_-5@1,-5
+PASS|AppliedSprite.Grass_2_-5@2,-5
+PASS|AppliedSprite.Grass_3_-5@3,-5
+PASS|AppliedSprite.Grass_4_-5@4,-5
+PASS|AppliedSprite.Grass_5_-5@5,-5
+PASS|AppliedSprite.Grass_6_-5@6,-5
+PASS|AppliedSprite.Grass_7_-5@7,-5
+PASS|AppliedSprite.Grass_8_-5@8,-5
+PASS|AppliedSprite.Grass_9_-5@9,-5
+PASS|AppliedSprite.Grass_-9_-4@-9,-4
+PASS|AppliedSprite.Grass_-8_-4@-8,-4
+PASS|AppliedSprite.Grass_-7_-4@-7,-4
+PASS|AppliedSprite.Grass_-6_-4@-6,-4
+PASS|AppliedSprite.Grass_-5_-4@-5,-4
+PASS|AppliedSprite.Grass_-4_-4@-4,-4
+PASS|AppliedSprite.Grass_-3_-4@-3,-4
+PASS|AppliedSprite.Grass_-2_-4@-2,-4
+PASS|AppliedSprite.Grass_-1_-4@-1,-4
+PASS|AppliedSprite.Grass_0_-4@0,-4
+PASS|AppliedSprite.Grass_1_-4@1,-4
+PASS|AppliedSprite.Grass_2_-4@2,-4
+PASS|AppliedSprite.Grass_3_-4@3,-4
+PASS|AppliedSprite.Grass_4_-4@4,-4
+PASS|AppliedSprite.Grass_5_-4@5,-4
+PASS|AppliedSprite.Grass_6_-4@6,-4
+PASS|AppliedSprite.Grass_7_-4@7,-4
+PASS|AppliedSprite.Grass_8_-4@8,-4
+PASS|AppliedSprite.Grass_9_-4@9,-4
+PASS|AppliedSprite.Grass_-9_-3@-9,-3
+PASS|AppliedSprite.Grass_-8_-3@-8,-3
+PASS|AppliedSprite.Grass_-7_-3@-7,-3
+PASS|AppliedSprite.Grass_-6_-3@-6,-3
+PASS|AppliedSprite.Grass_-5_-3@-5,-3
+PASS|AppliedSprite.Grass_-4_-3@-4,-3
+PASS|AppliedSprite.Grass_-3_-3@-3,-3
+PASS|AppliedSprite.Grass_-2_-3@-2,-3
+PASS|AppliedSprite.Grass_-1_-3@-1,-3
+PASS|AppliedSprite.Grass_0_-3@0,-3
+PASS|AppliedSprite.Grass_1_-3@1,-3
+PASS|AppliedSprite.Grass_2_-3@2,-3
+PASS|AppliedSprite.Grass_3_-3@3,-3
+PASS|AppliedSprite.Grass_4_-3@4,-3
+PASS|AppliedSprite.Grass_5_-3@5,-3
+PASS|AppliedSprite.Grass_6_-3@6,-3
+PASS|AppliedSprite.Grass_7_-3@7,-3
+PASS|AppliedSprite.Grass_8_-3@8,-3
+PASS|AppliedSprite.Grass_9_-3@9,-3
+PASS|AppliedSprite.Grass_-9_-2@-9,-2
+PASS|AppliedSprite.Grass_-8_-2@-8,-2
+PASS|AppliedSprite.Grass_-7_-2@-7,-2
+PASS|AppliedSprite.Grass_-6_-2@-6,-2
+PASS|AppliedSprite.Grass_-5_-2@-5,-2
+PASS|AppliedSprite.Grass_-4_-2@-4,-2
+PASS|AppliedSprite.Grass_-3_-2@-3,-2
+PASS|AppliedSprite.Grass_-2_-2@-2,-2
+PASS|AppliedSprite.Grass_-1_-2@-1,-2
+PASS|AppliedSprite.Grass_0_-2@0,-2
+PASS|AppliedSprite.Grass_1_-2@1,-2
+PASS|AppliedSprite.Grass_2_-2@2,-2
+PASS|AppliedSprite.Grass_3_-2@3,-2
+PASS|AppliedSprite.Grass_4_-2@4,-2
+PASS|AppliedSprite.Grass_5_-2@5,-2
+PASS|AppliedSprite.Grass_6_-2@6,-2
+PASS|AppliedSprite.Grass_7_-2@7,-2
+PASS|AppliedSprite.Grass_8_-2@8,-2
+PASS|AppliedSprite.Grass_9_-2@9,-2
+PASS|AppliedSprite.Grass_-9_-1@-9,-1
+PASS|AppliedSprite.Grass_-8_-1@-8,-1
+PASS|AppliedSprite.Grass_-7_-1@-7,-1
+PASS|AppliedSprite.Grass_-6_-1@-6,-1
+PASS|AppliedSprite.Grass_-5_-1@-5,-1
+PASS|AppliedSprite.Grass_-4_-1@-4,-1
+PASS|AppliedSprite.Grass_-3_-1@-3,-1
+PASS|AppliedSprite.Grass_-2_-1@-2,-1
+PASS|AppliedSprite.Grass_-1_-1@-1,-1
+PASS|AppliedSprite.Grass_0_-1@0,-1
+PASS|AppliedSprite.Grass_1_-1@1,-1
+PASS|AppliedSprite.Grass_2_-1@2,-1
+PASS|AppliedSprite.Grass_3_-1@3,-1
+PASS|AppliedSprite.Grass_4_-1@4,-1
+PASS|AppliedSprite.Grass_5_-1@5,-1
+PASS|AppliedSprite.Grass_6_-1@6,-1
+PASS|AppliedSprite.Grass_7_-1@7,-1
+PASS|AppliedSprite.Grass_8_-1@8,-1
+PASS|AppliedSprite.Grass_9_-1@9,-1
+PASS|AppliedSprite.Grass_-9_0@-9,0
+PASS|AppliedSprite.Grass_-8_0@-8,0
+PASS|AppliedSprite.Grass_-7_0@-7,0
+PASS|AppliedSprite.Grass_-6_0@-6,0
+PASS|AppliedSprite.Grass_-5_0@-5,0
+PASS|AppliedSprite.Grass_-4_0@-4,0
+PASS|AppliedSprite.Grass_-3_0@-3,0
+PASS|AppliedSprite.Grass_-2_0@-2,0
+PASS|AppliedSprite.Grass_-1_0@-1,0
+PASS|AppliedSprite.Grass_0_0@0,0
+PASS|AppliedSprite.Grass_1_0@1,0
+PASS|AppliedSprite.Grass_2_0@2,0
+PASS|AppliedSprite.Grass_3_0@3,0
+PASS|AppliedSprite.Grass_4_0@4,0
+PASS|AppliedSprite.Grass_5_0@5,0
+PASS|AppliedSprite.Grass_6_0@6,0
+PASS|AppliedSprite.Grass_7_0@7,0
+PASS|AppliedSprite.Grass_8_0@8,0
+PASS|AppliedSprite.Grass_9_0@9,0
+PASS|AppliedSprite.Grass_-9_1@-9,1
+PASS|AppliedSprite.Grass_-8_1@-8,1
+PASS|AppliedSprite.Grass_-7_1@-7,1
+PASS|AppliedSprite.Grass_-6_1@-6,1
+PASS|AppliedSprite.Grass_-5_1@-5,1
+PASS|AppliedSprite.Grass_-4_1@-4,1
+PASS|AppliedSprite.Grass_-3_1@-3,1
+PASS|AppliedSprite.Grass_-2_1@-2,1
+PASS|AppliedSprite.Grass_-1_1@-1,1
+PASS|AppliedSprite.Grass_0_1@0,1
+PASS|AppliedSprite.Grass_1_1@1,1
+PASS|AppliedSprite.Grass_2_1@2,1
+PASS|AppliedSprite.Grass_3_1@3,1
+PASS|AppliedSprite.Grass_4_1@4,1
+PASS|AppliedSprite.Grass_5_1@5,1
+PASS|AppliedSprite.Grass_6_1@6,1
+PASS|AppliedSprite.Grass_7_1@7,1
+PASS|AppliedSprite.Grass_8_1@8,1
+PASS|AppliedSprite.Grass_9_1@9,1
+PASS|AppliedSprite.Grass_-9_2@-9,2
+PASS|AppliedSprite.Grass_-8_2@-8,2
+PASS|AppliedSprite.Grass_-7_2@-7,2
+PASS|AppliedSprite.Grass_-6_2@-6,2
+PASS|AppliedSprite.Grass_-5_2@-5,2
+PASS|AppliedSprite.Grass_-4_2@-4,2
+PASS|AppliedSprite.Grass_-3_2@-3,2
+PASS|AppliedSprite.Grass_-2_2@-2,2
+PASS|AppliedSprite.Grass_-1_2@-1,2
+PASS|AppliedSprite.Grass_0_2@0,2
+PASS|AppliedSprite.Grass_1_2@1,2
+PASS|AppliedSprite.Grass_2_2@2,2
+PASS|AppliedSprite.Grass_3_2@3,2
+PASS|AppliedSprite.Grass_4_2@4,2
+PASS|AppliedSprite.Grass_5_2@5,2
+PASS|AppliedSprite.Grass_6_2@6,2
+PASS|AppliedSprite.Grass_7_2@7,2
+PASS|AppliedSprite.Grass_8_2@8,2
+PASS|AppliedSprite.Grass_9_2@9,2
+PASS|AppliedSprite.Grass_-9_3@-9,3
+PASS|AppliedSprite.Grass_-8_3@-8,3
+PASS|AppliedSprite.Grass_-7_3@-7,3
+PASS|AppliedSprite.Grass_-6_3@-6,3
+PASS|AppliedSprite.Grass_-5_3@-5,3
+PASS|AppliedSprite.Grass_-4_3@-4,3
+PASS|AppliedSprite.Grass_-3_3@-3,3
+PASS|AppliedSprite.Grass_-2_3@-2,3
+PASS|AppliedSprite.Grass_-1_3@-1,3
+PASS|AppliedSprite.Grass_0_3@0,3
+PASS|AppliedSprite.Grass_1_3@1,3
+PASS|AppliedSprite.Grass_2_3@2,3
+PASS|AppliedSprite.Grass_3_3@3,3
+PASS|AppliedSprite.Grass_4_3@4,3
+PASS|AppliedSprite.Grass_5_3@5,3
+PASS|AppliedSprite.Grass_6_3@6,3
+PASS|AppliedSprite.Grass_7_3@7,3
+PASS|AppliedSprite.Grass_8_3@8,3
+PASS|AppliedSprite.Grass_9_3@9,3
+PASS|AppliedSprite.Grass_-9_4@-9,4
+PASS|AppliedSprite.Grass_-8_4@-8,4
+PASS|AppliedSprite.Grass_-7_4@-7,4
+PASS|AppliedSprite.Grass_-6_4@-6,4
+PASS|AppliedSprite.Grass_-5_4@-5,4
+PASS|AppliedSprite.Grass_-4_4@-4,4
+PASS|AppliedSprite.Grass_-3_4@-3,4
+PASS|AppliedSprite.Grass_-2_4@-2,4
+PASS|AppliedSprite.Grass_-1_4@-1,4
+PASS|AppliedSprite.Grass_0_4@0,4
+PASS|AppliedSprite.Grass_1_4@1,4
+PASS|AppliedSprite.Grass_2_4@2,4
+PASS|AppliedSprite.Grass_3_4@3,4
+PASS|AppliedSprite.Grass_4_4@4,4
+PASS|AppliedSprite.Grass_5_4@5,4
+PASS|AppliedSprite.Grass_6_4@6,4
+PASS|AppliedSprite.Grass_7_4@7,4
+PASS|AppliedSprite.Grass_8_4@8,4
+PASS|AppliedSprite.Grass_9_4@9,4
+PASS|AppliedSprite.Grass_-9_5@-9,5
+PASS|AppliedSprite.Grass_-8_5@-8,5
+PASS|AppliedSprite.Grass_-7_5@-7,5
+PASS|AppliedSprite.Grass_-6_5@-6,5
+PASS|AppliedSprite.Grass_-5_5@-5,5
+PASS|AppliedSprite.Grass_-4_5@-4,5
+PASS|AppliedSprite.Grass_-3_5@-3,5
+PASS|AppliedSprite.Grass_-2_5@-2,5
+PASS|AppliedSprite.Grass_-1_5@-1,5
+PASS|AppliedSprite.Grass_0_5@0,5
+PASS|AppliedSprite.Grass_1_5@1,5
+PASS|AppliedSprite.Grass_2_5@2,5
+PASS|AppliedSprite.Grass_3_5@3,5
+PASS|AppliedSprite.Grass_4_5@4,5
+PASS|AppliedSprite.Grass_5_5@5,5
+PASS|AppliedSprite.Grass_6_5@6,5
+PASS|AppliedSprite.Grass_7_5@7,5
+PASS|AppliedSprite.Grass_8_5@8,5
+PASS|AppliedSprite.Grass_9_5@9,5
+PASS|AppliedSprite.Grass_-9_6@-9,6
+PASS|AppliedSprite.Grass_-8_6@-8,6
+PASS|AppliedSprite.Grass_-7_6@-7,6
+PASS|AppliedSprite.Grass_-6_6@-6,6
+PASS|AppliedSprite.Grass_-5_6@-5,6
+PASS|AppliedSprite.Grass_-4_6@-4,6
+PASS|AppliedSprite.Grass_-3_6@-3,6
+PASS|AppliedSprite.Grass_-2_6@-2,6
+PASS|AppliedSprite.Grass_-1_6@-1,6
+PASS|AppliedSprite.Grass_0_6@0,6
+PASS|AppliedSprite.Grass_1_6@1,6
+PASS|AppliedSprite.Grass_2_6@2,6
+PASS|AppliedSprite.Grass_3_6@3,6
+PASS|AppliedSprite.Grass_4_6@4,6
+PASS|AppliedSprite.Grass_5_6@5,6
+PASS|AppliedSprite.Grass_6_6@6,6
+PASS|AppliedSprite.Grass_7_6@7,6
+PASS|AppliedSprite.Grass_8_6@8,6
+PASS|AppliedSprite.Grass_9_6@9,6
+PASS|AppliedSprite.PathLeft_-6@-0.5,-6
+PASS|AppliedSprite.PathRight_-6@0.5,-6
+PASS|AppliedSprite.PathLeft_-5@-0.5,-5
+PASS|AppliedSprite.PathRight_-5@0.5,-5
+PASS|AppliedSprite.PathLeft_-4@-0.5,-4
+PASS|AppliedSprite.PathRight_-4@0.5,-4
+PASS|AppliedSprite.PathLeft_-3@-0.5,-3
+PASS|AppliedSprite.PathRight_-3@0.5,-3
+PASS|AppliedSprite.PathLeft_-2@-0.5,-2
+PASS|AppliedSprite.PathRight_-2@0.5,-2
+PASS|AppliedSprite.PathLeft_-1@-0.5,-1
+PASS|AppliedSprite.PathRight_-1@0.5,-1
+PASS|AppliedSprite.PathLeft_0@-0.5,0
+PASS|AppliedSprite.PathRight_0@0.5,0
+PASS|AppliedSprite.PathLeft_1@-0.5,1
+PASS|AppliedSprite.PathRight_1@0.5,1
+PASS|AppliedSprite.Roof@-4.5,4.5
+PASS|AppliedSprite.Door@-4.5,3.5
+PASS|AppliedSprite.Roof@4.5,4.5
+PASS|AppliedSprite.Door@4.5,3.5
+PASS|AppliedSprite.WallLeft@-5,3.5
+PASS|AppliedSprite.WallRight@-4,3.5
+PASS|AppliedSprite.WallLeft@4,3.5
+PASS|AppliedSprite.WallRight@5,3.5
+PASS|AppliedSprite.Fence_-7.5_5.3@-7.5,5.3
+PASS|AppliedSprite.Fence_-6.5_5.3@-6.5,5.3
+PASS|AppliedSprite.Fence_6.5_5.3@6.5,5.3
+PASS|AppliedSprite.Fence_7.5_5.3@7.5,5.3
+PASS|AppliedSprite.TreeEast@7.5,1.5
+PASS|AppliedSprite.TreeSouthWest@-7,-4.2
+PASS|AppliedSprite.TreeWest@-7.5,1.8
+PASS|AppliedSprite.RockNorth@-1.7,2.1
+PASS|AppliedSprite.Campfire@0,1.1
+PASS|AppliedSprite.Barrel@2.5,-1.3
+PASS|AppliedSprite.Chest@-2.3,-1.4
+PASS|AppliedSprite.BushWest@-5.5,-1.2
+PASS|AppliedSprite.BushEast@5.6,-1
+PASS|Renderer284
+PASS|Wheelchair.CircleCollider
+PASS|Wheelchair.BaselineRouteSame.(0.00, 0.00)
+PASS|Wheelchair.Physics.(0.00, -1.25)
+PASS|Wheelchair.Physics.(0.00, -1.00)
+PASS|Wheelchair.Physics.(0.00, -0.75)
+PASS|Wheelchair.Physics.(0.00, -0.50)
+PASS|Wheelchair.Physics.(0.00, -0.25)
+PASS|Wheelchair.Physics.(0.00, 0.00)
+PASS|Wheelchair.BaselineRouteSame.(3.00, 0.00)
+PASS|Wheelchair.Physics.(0.25, 0.00)
+PASS|Wheelchair.Physics.(0.50, 0.00)
+PASS|Wheelchair.Physics.(0.75, 0.00)
+PASS|Wheelchair.Physics.(1.00, 0.00)
+PASS|Wheelchair.Physics.(1.25, 0.00)
+PASS|Wheelchair.Physics.(1.50, 0.00)
+PASS|Wheelchair.Physics.(1.75, 0.00)
+PASS|Wheelchair.Physics.(2.00, 0.00)
+PASS|Wheelchair.Physics.(2.25, 0.00)
+PASS|Wheelchair.Physics.(2.50, 0.00)
+PASS|Wheelchair.Physics.(2.75, 0.00)
+PASS|Wheelchair.Physics.(3.00, 0.00)
+PASS|Wheelchair.BaselineRouteSame.(3.00, -2.00)
+PASS|Wheelchair.GoalBlockedByExistingCollider
+PASS|Wheelchair.BaselineRouteSame.(6.00, -2.00)
+PASS|Wheelchair.Physics.(3.25, 0.00)
+PASS|Wheelchair.Physics.(3.50, 0.00)
+PASS|Wheelchair.Physics.(3.75, 0.00)
+PASS|Wheelchair.Physics.(4.00, 0.00)
+PASS|Wheelchair.Physics.(4.25, 0.00)
+PASS|Wheelchair.Physics.(4.50, 0.00)
+PASS|Wheelchair.Physics.(4.75, 0.00)
+PASS|Wheelchair.Physics.(5.00, 0.00)
+PASS|Wheelchair.Physics.(5.25, 0.00)
+PASS|Wheelchair.Physics.(5.50, 0.00)
+PASS|Wheelchair.Physics.(5.75, 0.00)
+PASS|Wheelchair.Physics.(6.00, 0.00)
+PASS|Wheelchair.Physics.(6.00, -0.25)
+PASS|Wheelchair.Physics.(6.00, -0.50)
+PASS|Wheelchair.Physics.(6.00, -0.75)
+PASS|Wheelchair.Physics.(6.00, -1.00)
+PASS|Wheelchair.Physics.(6.00, -1.25)
+PASS|Wheelchair.Physics.(6.00, -1.50)
+PASS|Wheelchair.Physics.(6.00, -1.75)
+PASS|Wheelchair.Physics.(6.00, -2.00)
+PASS|Wheelchair.BaselineRouteSame.(6.00, -3.80)
+PASS|Wheelchair.Physics.(6.00, -2.25)
+PASS|Wheelchair.Physics.(6.00, -2.50)
+PASS|Wheelchair.Physics.(6.00, -2.75)
+PASS|Wheelchair.Physics.(6.00, -3.00)
+PASS|Wheelchair.Physics.(6.00, -3.25)
+PASS|Wheelchair.Physics.(6.00, -3.50)
+PASS|Wheelchair.Physics.(6.00, -3.75)
+PASS|Wheelchair.BaselineRouteSame.(0.00, -1.50)
+PASS|Wheelchair.Physics.(5.75, -3.75)
+PASS|Wheelchair.Physics.(5.50, -3.75)
+PASS|Wheelchair.Physics.(5.25, -3.75)
+PASS|Wheelchair.Physics.(5.00, -3.75)
+PASS|Wheelchair.Physics.(4.75, -3.75)
+PASS|Wheelchair.Physics.(4.50, -3.75)
+PASS|Wheelchair.Physics.(4.25, -3.75)
+PASS|Wheelchair.Physics.(4.00, -3.75)
+PASS|Wheelchair.Physics.(3.75, -3.75)
+PASS|Wheelchair.Physics.(3.50, -3.75)
+PASS|Wheelchair.Physics.(3.25, -3.75)
+PASS|Wheelchair.Physics.(3.00, -3.75)
+PASS|Wheelchair.Physics.(2.75, -3.75)
+PASS|Wheelchair.Physics.(2.50, -3.75)
+PASS|Wheelchair.Physics.(2.25, -3.75)
+PASS|Wheelchair.Physics.(2.00, -3.75)
+PASS|Wheelchair.Physics.(1.75, -3.75)
+PASS|Wheelchair.Physics.(1.50, -3.75)
+PASS|Wheelchair.Physics.(1.25, -3.75)
+PASS|Wheelchair.Physics.(1.00, -3.75)
+PASS|Wheelchair.Physics.(0.75, -3.75)
+PASS|Wheelchair.Physics.(0.50, -3.75)
+PASS|Wheelchair.Physics.(0.25, -3.75)
+PASS|Wheelchair.Physics.(0.00, -3.75)
+PASS|Wheelchair.Physics.(0.00, -3.50)
+PASS|Wheelchair.Physics.(0.00, -3.25)
+PASS|Wheelchair.Physics.(0.00, -3.00)
+PASS|Wheelchair.Physics.(0.00, -2.75)
+PASS|Wheelchair.Physics.(0.00, -2.50)
+PASS|Wheelchair.Physics.(0.00, -2.25)
+PASS|Wheelchair.Physics.(0.00, -2.00)
+PASS|Wheelchair.Physics.(0.00, -1.75)
+PASS|Wheelchair.Physics.(0.00, -1.50)
+PASS|Wheelchair.BaselineRouteSame.(-3.00, -1.50)
+PASS|Wheelchair.GoalBlockedByExistingCollider
+PASS|Wheelchair.BaselineRouteSame.(-5.00, -2.50)
+PASS|Wheelchair.Physics.(-0.25, -1.50)
+PASS|Wheelchair.Physics.(-0.50, -1.50)
+PASS|Wheelchair.Physics.(-0.75, -1.50)
+PASS|Wheelchair.Physics.(-1.00, -1.50)
+PASS|Wheelchair.Physics.(-1.25, -1.50)
+PASS|Wheelchair.Physics.(-1.50, -1.50)
+PASS|Wheelchair.Physics.(-1.50, -1.75)
+PASS|Wheelchair.Physics.(-1.50, -2.00)
+PASS|Wheelchair.Physics.(-1.50, -2.25)
+PASS|Wheelchair.Physics.(-1.50, -2.50)
+PASS|Wheelchair.Physics.(-1.75, -2.50)
+PASS|Wheelchair.Physics.(-2.00, -2.50)
+PASS|Wheelchair.Physics.(-2.25, -2.50)
+PASS|Wheelchair.Physics.(-2.50, -2.50)
+PASS|Wheelchair.Physics.(-2.50, -2.75)
+PASS|Wheelchair.Physics.(-2.75, -2.75)
+PASS|Wheelchair.Physics.(-3.00, -2.75)
+PASS|Wheelchair.Physics.(-3.25, -2.75)
+PASS|Wheelchair.Physics.(-3.50, -2.75)
+PASS|Wheelchair.Physics.(-3.75, -2.75)
+PASS|Wheelchair.Physics.(-4.00, -2.75)
+PASS|Wheelchair.Physics.(-4.25, -2.75)
+PASS|Wheelchair.Physics.(-4.50, -2.75)
+PASS|Wheelchair.Physics.(-4.75, -2.75)
+PASS|Wheelchair.Physics.(-5.00, -2.75)
+PASS|Wheelchair.Physics.(-5.00, -2.50)
+PASS|GPU.Capture.MOBILITY_01_actual_wheelchair
+PASS|GPU.Capture.ISOLATED_AFTER_12_normal_camera_4x3
+PASS|GPU.Capture.ISOLATED_AFTER_13_normal_camera_21x9
+PASS|Wheelchair.ApproachRoute.0
+PASS|Wheelchair.ApproachPhysics.(-4.75, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-4.50, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-4.25, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-3.75, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-3.50, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-3.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-3.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-3.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(3.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(3.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(3.25, -2.50)
+PASS|Wheelchair.ApproachPhysics.(3.25, -2.25)
+PASS|GPU.Capture.Wheelchair_APPROACH_0
+PASS|Wheelchair.ActualTarget.arbel-healer
+PASS|Wheelchair.ActualInteraction.arbel-healer
+PASS|GPU.Capture.Wheelchair_INTERACTION_arbel-healer
+PASS|Wheelchair.ApproachModalClosed
+PASS|Wheelchair.ApproachRoute.1
+PASS|Wheelchair.ApproachPhysics.(3.00, -2.25)
+PASS|Wheelchair.ApproachPhysics.(3.00, -2.50)
+PASS|Wheelchair.ApproachPhysics.(2.75, -2.50)
+PASS|Wheelchair.ApproachPhysics.(2.50, -2.50)
+PASS|Wheelchair.ApproachPhysics.(2.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(2.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(1.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(0.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-0.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-1.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.25, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.50, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-2.75, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-3.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-3.00, -3.00)
+PASS|GPU.Capture.Wheelchair_APPROACH_1
+PASS|Wheelchair.ActualTarget.arbel-party-guide
+PASS|Wheelchair.ActualInteraction.arbel-party-guide
+PASS|GPU.Capture.Wheelchair_INTERACTION_arbel-party-guide
+PASS|Wheelchair.ApproachModalClosed
+PASS|Wheelchair.ApproachRoute.2
+PASS|Wheelchair.ApproachPhysics.(-3.25, -3.00)
+PASS|Wheelchair.ApproachPhysics.(-3.50, -3.00)
+PASS|Wheelchair.ApproachPhysics.(-3.75, -3.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -3.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -2.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -2.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -1.75)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -1.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -1.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -0.75)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -0.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, -0.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 0.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 0.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 0.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 0.75)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 1.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 1.50)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 1.75)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 2.00)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 2.25)
+PASS|GPU.Capture.Wheelchair_APPROACH_2
+PASS|Wheelchair.ApproachRoute.3
+PASS|Wheelchair.ApproachPhysics.(-3.75, 2.25)
+PASS|Wheelchair.ApproachPhysics.(-3.50, 2.25)
+PASS|Wheelchair.ApproachPhysics.(-3.25, 2.25)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 2.25)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 2.50)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 2.75)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 3.00)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 3.25)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 3.50)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 3.75)
+PASS|Wheelchair.ApproachPhysics.(-3.25, 3.75)
+PASS|Wheelchair.ApproachPhysics.(-3.25, 4.00)
+PASS|GPU.Capture.Wheelchair_APPROACH_3
+PASS|Wheelchair.ActualTarget.arbel-serin
+PASS|Wheelchair.ActualInteraction.arbel-serin
+PASS|GPU.Capture.Wheelchair_INTERACTION_arbel-serin
+PASS|Wheelchair.ApproachModalClosed
+PASS|Wheelchair.ApproachRoute.4
+PASS|Wheelchair.ApproachPhysics.(-3.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-2.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-2.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-2.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-2.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-1.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-1.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-1.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-1.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-0.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-0.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(-0.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(0.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(0.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(0.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(0.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(1.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(1.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(1.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(1.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(2.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(2.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(2.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(2.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(3.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(3.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(3.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(3.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(4.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(4.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(4.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(4.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(5.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(5.25, 4.00)
+PASS|Wheelchair.ApproachPhysics.(5.50, 4.00)
+PASS|Wheelchair.ApproachPhysics.(5.75, 4.00)
+PASS|Wheelchair.ApproachPhysics.(6.00, 4.00)
+PASS|Wheelchair.ApproachPhysics.(6.00, 3.75)
+PASS|Wheelchair.ApproachPhysics.(6.00, 3.50)
+PASS|Wheelchair.ApproachPhysics.(6.00, 3.25)
+PASS|Wheelchair.ApproachPhysics.(6.00, 3.00)
+PASS|Wheelchair.ApproachPhysics.(6.00, 2.75)
+PASS|Wheelchair.ApproachPhysics.(5.75, 2.75)
+PASS|Wheelchair.ApproachPhysics.(5.75, 2.50)
+PASS|Wheelchair.ApproachPhysics.(5.50, 2.50)
+PASS|Wheelchair.ApproachPhysics.(5.50, 2.25)
+PASS|Wheelchair.ApproachPhysics.(5.25, 2.25)
+PASS|Wheelchair.ApproachPhysics.(5.00, 2.25)
+PASS|GPU.Capture.Wheelchair_APPROACH_4
+PASS|Wheelchair.ApproachRoute.5
+PASS|Wheelchair.ApproachPhysics.(5.00, 2.00)
+PASS|Wheelchair.ApproachPhysics.(5.00, 1.75)
+PASS|Wheelchair.ApproachPhysics.(4.75, 1.75)
+PASS|Wheelchair.ApproachPhysics.(4.75, 1.50)
+PASS|Wheelchair.ApproachPhysics.(4.50, 1.50)
+PASS|Wheelchair.ApproachPhysics.(4.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(4.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(4.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(3.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(3.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(3.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(3.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(2.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(2.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(2.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(2.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(1.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(1.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(1.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(1.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(0.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(0.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(0.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(0.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-0.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-0.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-0.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-1.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-1.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-1.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-1.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-2.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-2.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-2.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-2.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-3.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-3.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-3.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-3.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-4.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-5.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-5.25, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-5.50, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-5.75, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 1.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 1.00)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 0.75)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 0.50)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 0.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, 0.00)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -0.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -0.50)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -0.75)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -1.00)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -1.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -1.50)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -1.75)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -2.00)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -2.25)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -2.50)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -2.75)
+PASS|Wheelchair.ApproachPhysics.(-6.00, -3.00)
+PASS|GPU.Capture.Wheelchair_APPROACH_5
+PASS|Wheelchair.ActualTarget.arbel-portal-keeper
+PASS|Wheelchair.ActualInteraction.arbel-portal-keeper
+PASS|GPU.Capture.Wheelchair_INTERACTION_arbel-portal-keeper
+PASS|Wheelchair.ApproachModalClosed
+PASS|Depth.RuntimePresent
+PASS|Depth.Behind
+PASS|Opaque.WallsDoor.Behind
+PASS|RoofPosition.Behind
+PASS|Mask.CurrentAnimatedSprite.Behind
+PASS|GPU.Capture.DEPTH_path.mobility_Behind
+PASS|Depth.Side
+PASS|Opaque.WallsDoor.Side
+PASS|RoofPosition.Side
+PASS|Mask.CurrentAnimatedSprite.Side
+PASS|GPU.Capture.DEPTH_path.mobility_Side
+PASS|Depth.DoorFront
+PASS|Opaque.WallsDoor.DoorFront
+PASS|RoofPosition.DoorFront
+PASS|Mask.CurrentAnimatedSprite.DoorFront
+PASS|GPU.Capture.DEPTH_path.mobility_DoorFront
+PASS|Depth.Approach
+PASS|Opaque.WallsDoor.Approach
+PASS|RoofPosition.Approach
+PASS|Mask.CurrentAnimatedSprite.Approach
+PASS|GPU.Capture.DEPTH_path.mobility_Approach
+PASS|Serin.Restored
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelNorthwestBuildingDepth
+PASS|Door.SortingAboveRoof
+PASS|GPU.Capture.DOOR_ArbelEastBuildingDepth
+PASS|Runtime.ArbelRenderer284.NoClone
+PASS|NoSpriteMask
+PASS|Shader.SupportedCompileError0
+PASS|RuntimeError0

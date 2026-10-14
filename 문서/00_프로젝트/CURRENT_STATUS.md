@@ -1,3 +1,10 @@
+## 2026-10-14 아르벨 v3 승인 아트 정식 디스크 적용
+
+- 아트23종·기존환경Renderer284·SortingGroup·발기준건물주변깊이·국소지붕투명/처마접합 적용, 선택장식0/PNG신작0. 세린·양쪽문·접합/실제서비스·도보휠체어·SaveContinue·Main12/13전투·Field04회귀 필수PASS.
+- main1765+228, 원본5파일1706+228, BuildScene26 =3953PASS/0FAIL. 전체PARTIAL: 원본대조재현URP/Search·정본Editor버전/OS입력·원본Editor실시간Import미검증. Portal↔나무는 별도OPEN(관리인실제접근PASS, 텔레포트미구현).
+- 원본4000파일동일/허용Scene1만변경+신규55, Sprite/WAV/meta/Save/Settings/Field04/Chapter3보호. 원본Bootstrap/PlayOFF/비포커스, 강제Refresh0/main병합0.
+- 다음: 정상Import 후 원본화면확인, Portal OPEN 별도기획. 자세한QA/인계는 Arbel_v3_Official_Apply_QA_20261014.md. 마지막 관련Feature commit 648b1603c7d79803fdfa54fd0c2222e3ef8cc201; 전용브랜치 codex/arbel-v3-official-apply-20261014.
+
 ## 2026-10-14 Main08 태온005·006 최종 승인 음성 연결
 
 - 바울 대표의 두 후보 청취 승인에 따라 새 ApprovedTaeon00500620261014 WAV2/meta3 등록, Catalog005/006 GUID2행만 교정. 기존 승인6·미엘004·Player무음·기존 원본 WAV/meta 모두 보존.

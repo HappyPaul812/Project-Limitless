@@ -1,0 +1,28 @@
+{
+  "MainCoreResults": {
+    "pass_count": 1765,
+    "fail_count": 0,
+    "png_count": 50
+  },
+  "RootCoreResults": {
+    "pass_count": 1706,
+    "fail_count": 0,
+    "png_count": 50
+  },
+  "MainRegressionResults": {
+    "pass_count": 228,
+    "fail_count": 0,
+    "png_count": 2
+  },
+  "RootRegressionResults": {
+    "pass_count": 228,
+    "fail_count": 0,
+    "png_count": 2
+  },
+  "BuildScene": {
+    "pass_count": 26,
+    "fail_count": 0
+  },
+  "total_pass": 3953,
+  "total_fail": 0
+}
