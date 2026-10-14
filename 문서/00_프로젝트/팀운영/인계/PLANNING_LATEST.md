@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Arbel v3 격리 Sorting 보완 3245 PASS
+
+사용자 전달 Codex 격리 보완 결과: **3,245 PASS / 0 FAIL**, 실제 Unity 캡처55, 교체후보23, Renderer284/284, Sprite/Script 누락0, Optional 장식0. **PNG 43개 픽셀 변경0**, SpriteRenderer Sorting만 격리 환경에서 조정해 세린을 화면에 드러내고 양쪽 건물 문 가림을 해결. Collider가 있는 소품9 배치 높이 검증 통과, 기존 Barrel·파티 안내판·Chest Collider 우회 경로 도보/휠체어5/5 지점 도달. **OPEN**: 세린의 지붕 앞뒤 깊이감 시각 판정, 기존 Portal-나무 겹침, 수동 실제 조작/전체 런타임 QA. 현재 Downloads ZIP SHA는 기대값과 달라 **기대 SHA `84e9707d...`의 이전 보존 검증본**으로 실험했고 PNG43 동일·문서11개 차이만 보고, 정식 적용 때 출처 확정 필요.
+
+기획 상태는 `ISOLATED_TECH_PASS / VISUAL_PARTIAL / ORIGINAL_APPLY_NOT_AUTHORIZED`. 원본5223 SHA 불변·Editor/Play/포커스·Save 미변경·Push0. 다음 Codex는 **세린 지붕 앞뒤 위치별 화면 비교→가림 자연스러움 점검과 Sorting 범위 확정** 후 사용자 확인. Portal 겹침은 기존 이슈로 별도 관리. 승인 디자인 재제작 금지, 공식 Unity 적용·브랜치 Push/main 병합 미승인. 갱신 정본 `문서/00_프로젝트/Arbel_v3_User_Visual_Approval_And_Occlusion_Fix_20261014.md`.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Field02 Main08 태온005·006 음성 불일치
 
 바울 대표가 원본 Unity Field_02 캡처2장과 함께 “초원에서는…”부터 “이 흔적…” 직전까지 다른 대사라고 재제보. MainQuest08FieldFlow.GetLines 실제 대조: 정확히 Trace03의 **태온005** (`main08_taeon_supp_005`, “초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.”), **태온006** (`main08_taeon_supp_006`, “여기서는 그 방향이 조금 더 분명합니다.”), 다음 플레이어 무음 “그러면 우리가 찾던 방향은 맞는 것 같습니다.”까지. WheelTracks 첫 **미엘004** (“이 흔적… 폴 씨 것 아닐까요?”)은 **제외 경계**. 10/13 Main08 음성6개 승인 적용 당시 **태온005/006은 OPEN**이었고, 기존 ASR에서 기존005에는 태온004의 긴문장, 기존006에는 정본005+006 합본 발화 기록이 있다.
