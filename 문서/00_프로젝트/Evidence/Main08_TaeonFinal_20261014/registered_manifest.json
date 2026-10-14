@@ -1,0 +1,22 @@
+[
+  {
+    "id": "main08_taeon_supp_005",
+    "asset_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_005.wav",
+    "old_guid": "c4d82101f9b726f4fa327b135df26842",
+    "guid": "601079344d264b3ebfc4f9c062fac747",
+    "wav_sha": "29fa3905e58ad23a0a3108922526e356147dbffbd478d68f765c777cee6d25b7",
+    "pcm_sha": "6ec392032b7031d18b5b3c017cd01ac345adf9dc222bfc01f4d0f98502a31c31",
+    "seconds": 6.543625,
+    "user_approval": "FINAL_USER_APPROVED;005_NOISE_PREFIX_TRIM_ONLY"
+  },
+  {
+    "id": "main08_taeon_supp_006",
+    "asset_path": "Unity\\Client\\Assets\\_Project\\Audio\\Voice\\Story\\Main08\\ApprovedTaeon00500620261014\\main08_taeon_supp_006.wav",
+    "old_guid": "3bb3a7f0d6d50424da168e6df59bba5f",
+    "guid": "7d72425d36bd4d2494a62c54f93d38c2",
+    "wav_sha": "796f05398dbfe8de2cfb892edaa52bdf3679d500e10156e5640230a8658bbd00",
+    "pcm_sha": "31ef8e5710a9e647b57515417f73763492d88b404d0a8ec0a06552840d534211",
+    "seconds": 3.8005416666666667,
+    "user_approval": "FINAL_USER_APPROVED_UNMODIFIED"
+  }
+]

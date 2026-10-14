@@ -1,0 +1,12 @@
+{
+  "baseline_files": 5223,
+  "protected_existing_files_unchanged": 5221,
+  "authorized_existing_changes": [
+    "Unity\\Client\\Assets\\_Project\\Resources\\Audio\\Voice\\Story\\StoryVoiceCatalog.asset",
+    "문서\\00_프로젝트\\CURRENT_STATUS.md"
+  ],
+  "unexpected_changes": [],
+  "existing_wav_meta_changes": [],
+  "original_head_same": true,
+  "original_editor_play_scene_focus_refresh_operations": 0
+}

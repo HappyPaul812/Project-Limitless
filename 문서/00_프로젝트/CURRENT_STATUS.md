@@ -1,3 +1,11 @@
+## 2026-10-14 Main08 태온005·006 최종 승인 음성 연결
+
+- 바울 대표의 두 후보 청취 승인에 따라 새 ApprovedTaeon00500620261014 WAV2/meta3 등록, Catalog005/006 GUID2행만 교정. 기존 승인6·미엘004·Player무음·기존 원본 WAV/meta 모두 보존.
+- 005 시작 배경 여백185.833ms(4460프레임)만 제거, 남은 PCM 원본 suffix100% 동일·zero/zero 절단·clipping0. 최종6.543625초. 약한 활동 시작 약0.14초, 강한 발화 신호 약2.33초(호흡/문장 내부 여백 포함); 숨소리 후보를 삭제해 더 짧게 만들지 않음. 006 승인본3.800542초/WAV전체동일.
+- 격리Unity6000.6.5f1 224PASS/FAIL0: 승인8 PCM/GUID·Trace01/02/03→Player무음→WheelTracks·Next/취소/자연끝·Quest·실제BootstrapContinue. Source시계 시작005약13ms/006약40ms. 원본 Editor Bootstrap·PlayOFF·비포커스 유지, 강제Refresh0.
+- 전체PARTIAL: 기존Search인덱스예외·물리스피커/OS손입력·main정본6000.5.7f1 미검증, 대화중일반조우는기존OPEN(이번억제). 다음:바울 대표 원본 작업 재개 후 디스크 변경을 정상 Import하여 청취·페이지 경계 확인. 이번 아트/Quest/게임플레이 변경0.
+- 브랜치codex/main08-taeon005006-final-20261014. 마지막 기능Commit `fe588f9af1369ec825a9b9820ebfb0a92dc9499a`. 상세QA: [Main08_Taeon005006_Final_Integration_QA_20261014.md](Main08_Taeon005006_Final_Integration_QA_20261014.md). 승인된 작업브랜치만Push, main직접Commit/Push·병합0.
+
 ## 2026-10-14 Sprite 참조 복구 — 필수 게이트 PASS
 
 - 새 codex/sprite-reference-recovery-20261014: 동일PNG11·Sprite123 등록, Arbel/Field05~08의1747 Sprite GUID만 복구. Scene 역치환 동일/ThirdParty·원본미커밋·5221SHA/HEAD/status 보호.
