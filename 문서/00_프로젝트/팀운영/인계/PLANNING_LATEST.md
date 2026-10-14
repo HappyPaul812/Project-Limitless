@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Arbel v3 조건부 공식 적용·feature Push 승인
+
+바울 대표가 아르벨 격리 Unity 3245 PASS 보고와 미해결 세린 지붕 깊이감/Portal 기존 겹침을 받은 뒤 **“넘어가자.”**고 지시. 기획은 이를 **세린 Sorting/가림 필수 시각검증 및 출처 ZIP SHA 확인 성공 시** 원본 Arbel v3 기본 23종 공식 디스크 적용과 전용 `codex/*` 브랜치 Commit·Push를 진행하라는 **조건부 승인**으로 관리. **main 직접 작업/PR 병합/Optional11 배치 승인 없음**.
+
+작업 정본: `문서/00_프로젝트/Arbel_v3_Official_Apply_Push_Gate_20261014.md` (`docs/planning`). ZIP 검증본 SHA `84e9707df7f0409e0238781f0860499dd4344b79ec88b49964a7ce7d8e10633b` 사용 필수, Downloads 다른 SHA는 PNG43 동일하더라도 보존본과 문서 차이 확인 전 임의 혼용 금지. 기존 원본5223/사용자 dirty/Save·Editor/Play/포커스, Field04/Main08 TTS 및 다른 씬 불변. **세린 앞뒤 깊이감/양쪽 문 시야·휠체어 이동/Portal 사용 실질 장애를 검증 전 PASS 처리 금지**. 필수 게이트 불합격이면 적용/Push 중단. 현재 **지시 문서화 완료, Codex 실제 적용 미실행**.
+
+---
+
 # PLANNING 인계 — 2026-10-14 Arbel v3 격리 Sorting 보완 3245 PASS
 
 사용자 전달 Codex 격리 보완 결과: **3,245 PASS / 0 FAIL**, 실제 Unity 캡처55, 교체후보23, Renderer284/284, Sprite/Script 누락0, Optional 장식0. **PNG 43개 픽셀 변경0**, SpriteRenderer Sorting만 격리 환경에서 조정해 세린을 화면에 드러내고 양쪽 건물 문 가림을 해결. Collider가 있는 소품9 배치 높이 검증 통과, 기존 Barrel·파티 안내판·Chest Collider 우회 경로 도보/휠체어5/5 지점 도달. **OPEN**: 세린의 지붕 앞뒤 깊이감 시각 판정, 기존 Portal-나무 겹침, 수동 실제 조작/전체 런타임 QA. 현재 Downloads ZIP SHA는 기대값과 달라 **기대 SHA `84e9707d...`의 이전 보존 검증본**으로 실험했고 PNG43 동일·문서11개 차이만 보고, 정식 적용 때 출처 확정 필요.
