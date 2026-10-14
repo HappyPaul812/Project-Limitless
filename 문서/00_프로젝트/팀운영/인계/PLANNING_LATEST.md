@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-14 Arbel v3 격리 Unity 화면시험 승인 (최신)
+
+바울 대표가 "그래."라고 명시하여 Arbel v3의 **원본 변경 없는 격리 Unity 시험적 Sprite 교체 및 실제 GameView/RenderTexture Before/After 캡처**를 승인함. 이는 전체 미술 승인/원본 Unity 공식 적용/feature Push/main 병합 승인 **아님**.
+
+신규 기획 정본: `문서/00_프로젝트/Arbel_v3_IsolatedUnity_VisualTrial_Gate_20261014.md` (`docs/planning`). Codex에게 23개 직접교체 후보만 격리 Scene에 시험 적용, 바닥·도로·벽12, 지붕2 가림 HOLD, 소품9 접지 HOLD를 구별해 실제 Unity 렌더링 비교 제작 지시. Optional11 배치0/Portal(-7,-4) 겹침 무변경. 원본 Unity Editor/Play·Save/Scene/dirty·Assets/GUID/meta 전부 보호. 이후 바울 대표가 실제 게임 화면 직접 확인하고 23개 기본안 및 11개 선택 장식을 별도로 승인.
+
+**현재: ISOLATED_TRIAL_REQUEST_READY / NOT_YET_TESTED / USER_ART_APPROVAL_PENDING.** GitHub 문서 작성만 완료, Codex가 실제 격리 Unity 시험/이미지 제작을 했다고 주장하지 않는다.
+
+---
+
 # PLANNING 인계 — 2026-10-14 북부 Main22~29 스토리 1차 구성
 
 바울 대표 지시 “우리는 기획이나 하자”에 따라 Arbel v3 리뉴얼 확인/담당 문서 인계는 아트 담당에게 맡기고 기획에서는 Chapter3 북부 **온기의 화로·설빙의 폭군** 메인 시나리오를 진전. 신규 문서: 문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md (docs/planning).
