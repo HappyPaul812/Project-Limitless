@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-14 Arbel v1 QA 미술 보완3항목 (최신)
+
+바울 대표 제공 Codex 로컬 검수: `F:/Downloads/Limitless_Arbel_Renewal_Art_v1.zip` SHA256 `ec707452169aa99ec297a7ac23a14928d4a0123b4b7b051d17ddcb282953d626`; 47파일/PNG40/Arbel Renderer284/284, PNG CRC/Manifest·바닥6 seam 대부분 정상. **NEEDS_MINOR_FIX**: (1) 도로2장의 좌우 RGB·상하 Alpha 경계 불일치, (2) 소품 **9개**의 원본 크기/가시 alpha 접지 데이터 보완, (3) 북서 건물의 십자표지가 실제 치유사 위치와 달라 안내 오해. Preview5는 합성화면/실 Unity 미검증; 지붕 확대·선택장식11·Portal 기존 충돌 HOLD. **원본 Unity 적용0, Push0, 바울 대표 미술 최종 승인 대기.** 기술 대응 284/284 정상이어도 전체 교체 승인 아님. 리뉴얼 담당 `docs/art-renewal`에 `Limitless_Arbel_Renewal_Art_v2.zip` 최소 보완, 기존 정상 PNG/Asset/SHA·GUID/meta 보존, 변경부 비교 및 인계 문서 요청. Codex는 v2 읽기 전용 재검증 후 사용자 미술 승인 때만 통합.
+
+정본: `문서/00_프로젝트/Arbel_Renewal_v1_MinorFix_QA_Handoff_20261014.md` (docs/planning). Chapter3 설빙의 폭군/신규 아트와 별도 업무.
+
+---
+
 # PLANNING 인계 — 2026-10-14 설빙의 폭군·온기의 화로 (최신)
 
 바울 대표 직접 확정: Chapter3 최종보스 이름 **‘설빙의 폭군’**, 현대 판타지에서 알려진 웬디고 이미지에서 영감을 받는 **LIMITLESS 고유 보스**. **마법의 온기의 화로가 북부를 보호하고 있으나 남은 힘이 거의 없어 곧 영구 결빙 위기**. 보스 입김에서 눈발/눈보라가 뿜어 나오며 `동결괴사`를 부여한다. 보스 이름 가칭 `백빙의 심장`은 **폐기**. 화로는 기존 보스전 기능대로 `살아 있는 아군1명/행동1회/동결괴사 중첩 전부 제거/회복·부활0`이며 실제 화로 잔량/실시간 카운트다운으로 기존 공정성을 깨지 않는다.
