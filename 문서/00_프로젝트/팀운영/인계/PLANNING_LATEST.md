@@ -1,3 +1,10 @@
+# PLANNING 인계 — 2026-10-14 Arbel v2 재검수 / Props8 기록 오류 (최신)
+
+바울 대표가 Codex v2 재검수 결과를 전달. v2 ZIP SHA256 17625d35c93599bdd74a4b8280c0416240c402be279815c8966199410bca97b7 일치, PNG/CRC/Manifest, 도로 Seam0, 북서 의료 십자 수정, Arbel Renderer284/284 전부 PASS. 다만 **소품9종 중 원본 크기 필드8종의 기존 시트/복합크기 fallback 오기**가 있음. Codex 정정 근거 CSV에 따르면 Medium Tree 125×146→128×156, Barrel64×82→128×128; 나머지는 임의 추정하지 않고 CSV 근거로 복구. PNG 자체 오류 아님.
+
+최신 문서: 문서/00_프로젝트/Arbel_v2_Props8_Metadata_Correction_Gate_20261014.md (docs/planning). **권고: Codex가 기존 감사 근거 CSV로 문서8종만 고쳐 v2를 보존한 별도 v3 ZIP(문서정정판) 제작**, 실사용 PNG34 전부 동일 SHA, Renderer284/284+기존 QA 재검증. 선택 장식11종·지붕2종 가림·실제 Alpha foot/접지·Portal 충돌은 HOLD. 사용자 미술 승인·Unity 적용·main Push 전 단계이며 원본 Editor/Save 보호.
+
+---
 # PLANNING 인계 — 2026-10-14 Arbel v1 QA 미술 보완3항목 (최신)
 
 바울 대표 제공 Codex 로컬 검수: `F:/Downloads/Limitless_Arbel_Renewal_Art_v1.zip` SHA256 `ec707452169aa99ec297a7ac23a14928d4a0123b4b7b051d17ddcb282953d626`; 47파일/PNG40/Arbel Renderer284/284, PNG CRC/Manifest·바닥6 seam 대부분 정상. **NEEDS_MINOR_FIX**: (1) 도로2장의 좌우 RGB·상하 Alpha 경계 불일치, (2) 소품 **9개**의 원본 크기/가시 alpha 접지 데이터 보완, (3) 북서 건물의 십자표지가 실제 치유사 위치와 달라 안내 오해. Preview5는 합성화면/실 Unity 미검증; 지붕 확대·선택장식11·Portal 기존 충돌 HOLD. **원본 Unity 적용0, Push0, 바울 대표 미술 최종 승인 대기.** 기술 대응 284/284 정상이어도 전체 교체 승인 아님. 리뉴얼 담당 `docs/art-renewal`에 `Limitless_Arbel_Renewal_Art_v2.zip` 최소 보완, 기존 정상 PNG/Asset/SHA·GUID/meta 보존, 변경부 비교 및 인계 문서 요청. Codex는 v2 읽기 전용 재검증 후 사용자 미술 승인 때만 통합.
