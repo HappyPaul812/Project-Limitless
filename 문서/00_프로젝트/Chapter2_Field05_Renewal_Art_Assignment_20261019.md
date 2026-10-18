@@ -37,3 +37,12 @@
 - 최종 사용자의 **미술 승인** 뒤에만 Codex가 별도 feature worktree와 안전 격리 Unity로 Import/새 GUID/meta·Scene Sprite 참조 변경·접지/도보·휠체어/Monster Spawn/Quest14/SaveContinue 회귀. 현 로컬 `main`은 PR#16으로 로컬 문서2커밋이 원격 조상에 보존되었지만 **Dirty 464겹침, 서로 다른 내용5경로 때문에 로컬 동기화 PARTIAL**이므로 절대 무단 git clean/reset/checkout/merge로 사용자 작업을 덮어쓰지 말 것.
 - 리뉴얼 담당 문서/인계 쓰기는 **`docs/art-renewal`만**, main 직접 변경 금지. 브랜치 커밋 SHA·QA/시각 승인 여부·다운로드 파일 링크·실제 Unity 반영 여부를 반드시 별도 보고. 새 공식 적용/Push/main 병합은 Codex 작업·사용자 승인 뒤.
 - 기획 담당은 우선순위/범위 승인만, Codex는 로컬 감사/기술 검증만 수행. 세션 종료 전 최신 `WORLD_ART_RENEWAL_LATEST.md`에 배포물과 미완료 항목 정리.
+
+
+## 2026-10-19 리뉴얼 v1 ZIP 수령 위치 전달·검수 대기
+
+- 바울 대표가 **`F:\\Downloads\\Limitless_Field05_Renewal_Art_v1.zip`** 로컬 파일 경로를 기획 담당에게 전달. **파일을 이 기획 세션에서 실제 열거나 SHA·바이트를 검증한 것은 아님**. 실제 PC 파일 존재·bytes는 Codex 전용 격리 read-only 감사로 확인한다.
+- `docs/art-renewal`의 최신 납품 `문서/00_프로젝트/Field05_Renewal_Art_v1_Delivery_20261019.md` 확인: 3,275,850 bytes, ZIP SHA256 **`a6646a676a619bc149798fe0f3909401b9c3b5a75f253cf6a1e61e21661b1258`** 보고; 전체35파일/PNG26, 실사용19=기존 Sprite 교체용12 (Ground3/Road2/Props7)+별도 신생 Renderer 필요 선택7, Preview·QA PNG7. `Renderer_Mapping_363.csv` 363/363(Grass315/Road30/Props18). 이 수치는 아트 담당 보고이며 **실제 원본 Unity에서 직접 확정하지 않음**.
+- **다음 게이트:** Codex가 ZIP SHA/CRC/Manifest/ZIP Slip·Sprite Source/Scene 363행 실제 GUID/fileID/Transform/PPU/Pivot·RockNorth PPU100(85×54)/alpha-foot/물리 Collider·기존 Quest14 조사점/세린/Monster Spawn/Arbel 출구 실제 값 read-only 검증. 승인 **기존 교체후보12종만 별도 임시 worktree에 Unity Import**, 기존 GUID/meta 보호와 실제 16:9/4:3 Runtime 카메라 Before/After 비교, Main14·보행/휠체어·몬스터35초 리스폰·Save/Continue 회귀 후 바울 대표에게 시각 미술 승인 요청. **선택7종 신규 배치0** (아트의 별도 채택·좌표 승인 이후).
+- **미술 승인 전 원본 Unity/Scene/Save/Git `main` 변경·Codex 브랜치 Push/PR 병합 금지**. 로컬 PR16 후 미해결 `dirty 464 overlap/5 conflict` 때문에 활성 Unity 원본 dirty/Save 보존 우선. 아트/영상/스토리 담당은 유저 미승인 v1을 공식 완료로 표기하지 않음.
+- 검수 실패는 어떤 정확한 Source PNG/GUID/맵핑/시각 문제인지 12 교체종 별로 증거 캡처와 함께 리뉴얼 담당에게 수정 요청. Field03 Rock B, Arbel Optional11, Field04 기승인, Chapter3 신작은 별개.
