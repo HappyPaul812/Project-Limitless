@@ -51,3 +51,17 @@ python .\LIMITLESS_TTS_Next_Preflight_20261019.py check
 - TTS 기록은 `docs/tts` 브랜치에만 작성. 본 패키지 다운로드는 사용자 대화에서 제공.
 - 이후 실제 신규 호출은 Codex 정적 결과·해당 프로젝트 무료 quota/과금 위험·사용자 명시적 호출 승인 후 새 별도 재개 프로그램으로 수행.
 - 샘플·성공 WAV 중복 요청0, HTTP429/실패 즉시 중단, 승인 전 Unity 교체0.
+
+
+## 2026-10-19 사용자 PC 사전검사 실행 결과 수령
+
+사용자 제공 Anaconda PowerShell 화면에서 `LIMITLESS_TTS_Next_Preflight_20261019.py check`의 `[PRE-FLIGHT PASS]`를 확인했다. **사용자 터미널 로그 기반 판독**이며 담당자가 사용자 PC WAV를 별도 개봉한 것은 아님.
+
+- `[PASS] All 25 Unity-protected audio hashes remain unchanged`.
+- 승인 Story06 ground 샘플 SHA 유지. Story02,07~12 성공 WAV7의 ID별 기존 attempt SHA 모두 대조 PASS.
+- Story13 `main18_watcher_witness_serin_01`: global `SESSION.lock` 보존; 실패/불확실 attempt 및 HOLD 보존; 신규 성공 WAV/결과 없음.
+- Story14 `main18_watcher_witness_serin_02`: 새 attempt/result/WAV 없음.
+- 중복/추가 ID 기록 없음. Main20 세린 5개·Main21 NPC 17개(하렌3 Voice 미승인 BLOCK) 제작 계획 정본 일치.
+- 출력에 `TTS API requests: 0; writes: 0; Unity edits: 0; Git writes: 0` 및 `Quota/project/billing Now: NOT_VERIFIED` 명시.
+- **상태 갱신:** `USER_LOCAL_READONLY_PREFLIGHT_PASS`; 과거 `NOT_EXECUTED`는 당시 이력이고, 새 화면이 지금 최신. 이 PASS는 재개 승인이 아니므로 Story13 HOLD·lock·attempt를 삭제/변경하지 않는다.
+- 다음은 현재 Google Project+model 잔여 free quota·비용 상태와 Story13 failure cause를 재확인하고, **별도 승인 후** 기존 이력 불변의 수동 복구 경로 준비. 사용자 승인 전 생성0.
