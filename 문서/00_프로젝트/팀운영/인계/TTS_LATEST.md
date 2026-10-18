@@ -138,3 +138,16 @@
 - PREVIEW는 확정 교체본 아님. 동일 화자로 들리는지 사람 청취 최종 평가 전 `USER_APPROVAL_PENDING`. TTS 모델이 달리 만든 발성 질감을 DSP로 완전 복구한다는 의미 아님.
 - 이전 관례의 기본 후처리 금지 정책에 따라 **정식 WAV를 덮어쓰지 않음**. 사용자 요청에 의한 비교 전용 새 파일만 제작.
 - 상세: [생성 및 PREVIEW 기록](../../TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md). `docs/tts`에만 기록, main 변경 없음.
+
+
+## 2026-10-19 보정본 6개 재전달 / 다음 Main18·20·21 제작 사전준비
+
+사용자: “니가 수정한거 아직 안받았지 나? 일단 수정한 주고 더 뽑을 꺼 준비해줘.”
+
+- 기존 `LIMITLESS_Serin6_ConsistentVoice_Previews.zip` 실제 파일 재확인, SHA256 `a5878e6d4f1b1e858f4b505f23669ab147da2dd466fe30443b0d6116a7246cb1`; ZIP CRC와 보정 WAV6 형식 PASS. 사용자 대화에 재다운로드 링크 제공. `heat_vent` 제외, `ground` 기준 음성 포함. PREVIEW는 아직 정식 Unity 승인 아님.
+- 새 `LIMITLESS_TTS_Next_Preflight_20261019.py`(읽기 전용) 및 25행 다음 제작 큐/README/Codex 조사 지시가 포함된 `LIMITLESS_TTS_Next_Preflight_Pack_20261019.zip` 제공. SHA `de2036d1557399fa34aa02257ecd61c6cf887585786c8fbacf6465d9ca5c55e9`. 사용자 PC F: 실행 `NOT_EXECUTED`.
+- 격리 fixture 정상 preflight 및 SHA 손상 중단 테스트 PASS. Google TTS SDK/API/키 사용0, 오프라인 읽기만 실행 가능.
+- **Main18 다음 3개:** Story07 heat_vent 음색 문제 재제작 후보 (기존 SAVED 유지), Story13 watcher_01 FAILED_OR_UNCERTAIN_HOLD(잠금/시도 기록 보존), Story14 watcher_02 NOT_CALLED (Story13 선호출/건너뛰기 금지).
+- **이후 Main20 세린 5개**, **Main21 NPC17개 중 하렌3 Voice 미승인 BLOCK / 기타14 후보**. 3+5+14=22는 향후 잠재 호출 수일 뿐 현재 quota 확인 수치 아님. 정확한 LOCAL Runtime 순서/기존 WAV 존재 먼저 확인.
+- 2026-10-19 프로젝트별 실시간 RPD 잔여·Billing/키 소속 `NOT_VERIFIED`, 추가 API 요청 승인0. 이전 성공8 및 Preview6 원본 유지, 승인 없이 LOCK 해제·재시도·다른 Key 사용 금지.
+- 상세: [보정본 재전달 및 다음 배치 계획](../../TTS_Serin_Preview6_and_NextBatch_Preflight_20261019.md). 기록은 `docs/tts` 브랜치만, `main` 변경 없음. Unity 수정0.
