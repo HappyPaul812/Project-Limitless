@@ -1,3 +1,15 @@
+# PLANNING 인계 — 2026-10-19 Chapter2 Field05 환경 리뉴얼 v1 제작 발주
+
+바울 대표 “굿모닝~ 이어서 하자, 먼저 리뉴얼부터 일 시켜” 지시에 따라 **Chapter1·2 리뉴얼 담당의 다음 신규 제작 대상은 `Field_05_WesternOutskirts`**로 지정. 기획 발주 정본: `문서/00_프로젝트/Chapter2_Field05_Renewal_Art_Assignment_20261019.md` (`docs/planning`). **기본 Source 감사→오리지널 환경 PNG v1·실제 Scene 대응표·미리보기·ZIP→사용자 미술 승인 후 Codex 통합** 순서.
+
+원격 `main c263d9e36fc0570b16130d9c011abf3965def5f7` 기준 **Field04 v2 42도로 및 Arbel v3 기본23종/국소 지붕/처마 이미 PR main 병합**. `docs/art-renewal` 최신 인계가 2026-10-14 당시 미술 미승인으로 쓰여 있다면 구버전이므로 반드시 최신 main의 `Arbel_v3_Official_Apply_QA_20261014.md`·`Field04_v2_Official42_Apply_QA_20261013.md` 대조 후 갱신. 두 필드 재제작 금지. Field03 Rock B v2는 기술/Render 접지 PASS지만 미술 승인/원본 적용 보류 — Field05와 별개. Portal-나무 OPEN, Optional11 미배치/미승인. Chapter3 신규 아트는 별도 `docs/art-new` 담당.
+
+Field05 관련 정본: `FieldThemes/Field05_DryOutskirts.asset` 건조 황토·olive, `FieldConnections/Field05_EastToArbel.asset` 출구/Spawn 기존 보호, `MonsterSpawns/Field05_SootHound.asset` (3,-3)·`Field05_FissureLizard.asset` (-4,3) 각 활동반경1/리스폰35초. Main14 세린 재합류·메마른 수로/초소/땅진동 진행 정본. 실제 Renderer 수와 Sprite ID는 기존 Field05 Scene/로컬 Codex read-only 감사 후 정함.
+
+현장주의: PR16은 로컬 문서2커밋의 **원격 조상 포함 이력 보존 완료**지만 로컬 Dirty464경로 겹침(이중5개 내용 상이)로 **로컬 main 동기화 PARTIAL**, 원본 Unity/dirty/Save를 절대 건드리지 않음. 이 작업은 기획 발주 문서만 추가했고 **아직 리뉴얼 담당 별도 세션 실행·실제 PNG/ZIP 제작·Unity 적용은 확인되지 않음**.
+
+---
+
 # PLANNING 인계 — 2026-10-14 최종 마감: 음성·원격 병합 DONE, 로컬 main SYNC PARTIAL
 
 **바울 대표 2026-10-14 저녁 마감 지시와 Codex 최종 보고(사용자 전달 화면) 반영.** 바울 대표는 토요일(10/17) 또는 월요일(10/19) 복귀 예정이므로 추가 작업을 요청하지 않는다.
