@@ -1,5 +1,22 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 최신 main 우선 갱신 및 Field05 v1 아트 납품
+
+**상태 기준시점 2026-10-19 / 기준 `main` `c263d9e36fc0570b16130d9c011abf3965def5f7`.** 현재 `main`에서는 **Field04 v2 공식 42도로**와 **Arbel v3 기본23종·건물 Depth/가림 보완**이 승인·적용 및 검증된 상태입니다. 이 문서 10월13~14일의 `USER_ART_REVIEW_PENDING` / `UNITY_NOT_APPLIED`는 **그 당시의 역사 기록**으로만 읽으세요. Arbel 선택 장식11개는 여전히 미배치, 기존 Portal/나무 겹침 OPEN. Field03 Rock B 미술 승인은 Field05 범위와 무관하게 별도 유지.
+
+### Field05 실제 납품 (리뉴얼 담당)
+
+- 최신 기획 `docs/planning` 발주서 `Chapter2_Field05_Renewal_Art_Assignment_20261019.md` 조회 후 Source Audit. GitHub `Field_05_WesternOutskirts.unity` **직렬화 SpriteRenderer363 = Grass315 + Road30 + Props18**, 실제 좌표·GUID/local fileID 대조. Grass 원본 Sprite 분포 104/105/106참조, 기존 Road는 남북 계단형; 포지션 이동0.
+- 메인14 보호좌표: 메마른 수로 **(5,2)**, 감시초소 **(-2,2)**, 강한 진동 **(-6,-2)**, 세린 **(1,0)**. 몬스터 두 종 각각 **(3,-3)** / **(-4,3)**, 리스폰35초, 동쪽 Arbel Spawn **(8,0)** / Trigger **(10.7,0)**.
+- 실제 제작 `Limitless_Field05_Renewal_Art_v1.zip` **3,275,850 bytes / 35파일 / PNG26**. PNG **19종 신규 환경 후보** = 기존 Renderer에 바로 대응하는 12종(Ground3/Road2/Props7) + 현재 Scene에 없는 **별도 승인 필요 선택7종**(수로·낡은 감시초소·진동 등). Preview/QA PNG 7. ZIP SHA256 **`a6646a676a619bc149798fe0f3909401b9c3b5a75f253cf6a1e61e21661b1258`**.
+- `Renderer_Mapping_363.csv` 363/363 (GameObject 이름·XY·원본 GUID/fileID·Sorting·신품경로), `Manifest.json` PNG19 SHA, `QA/Alpha_Grounding_Audit.csv`, `QA/Offline_Validation_v1.json`, `Codex_ReadOnly_Source_Audit_Prompt.md`, `README.md`, `Rights_and_Provenance.md`, ContactSheet 및 비교(기존 Scene 역할 **모식도**, 실제 Unity 캡처 아님) 포함.
+- 오프라인 ZIP CRC PASS, 전체 PNG26 decode, PNG19 Manifest SHA 일치, Ground3·Road2 좌우/상하 최외곽 RGBA seam 불일치0. **Original Sprite alpha foot, new Unity Import, 실제 가독성·휠체어·Monster/Quest14/Save·Runtime는 NOT_VERIFIED**. 특히 RockNorth의 기존 Sprite 85×54/PPU100 Pivot/접지는 Codex 실물 검수 필수.
+- 이 ChatGPT 세션의 다운로드 링크로 제공하며 바울 대표 F드라이브 직접 기록/Unity 적용은 하지 않았습니다. Field04·Arbel 승인 PNG 재작업0, 정식 Scene·Save·기존 GUID/meta·NPC/몬스터·TTS/BGM·ThirdParty 원본수정0.
+- **현재 상태:** `ART_DELIVERED / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`. 다음: 바울 대표 전체 Scene 합성 및 개별 PNG 미술 승인(직접교체12/선택7 범위 별도 결정) → Codex 읽기 전용 실물 대조 → 승인 후 feature worktree에서 Import/Scene·기능 회귀. 다음 환경 Field06은 Field05 미술 방향 검토 후 착수.
+- [Field05 v1 납품 정본](../../Field05_Renewal_Art_v1_Delivery_20261019.md). 납품 문서 최초 커밋 `236bb3c2a4478f9098f7cbf5634ab8e290010541`; 담당 `docs/art-renewal`. main 직접 커밋/Push/병합 금지.
+
+---
+
 **최종 사용자 결정(2026-10-12): 리뉴얼 담당은 Chapter 1·2 기존 아트 교체(환경·몬스터·보스·펫·NPC·VFX)만 전담합니다. 기존 스프라이트 담당은 Chapter 3 이후 모든 신규 아트(환경·필드·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI 필요 이미지)를 총괄합니다. 기존 공식 승인 자산은 별도 승인 없이 교체하지 않습니다. Codex는 구현·Unity 통합·QA 전담입니다.**
 
 Chapter2 Field04 실제 아트 ZIP 제작부터 시작. 환경 순서 Field04 → Arbel → Field05~Field11. 환경 완료 후 Chapter1·2 기존 몬스터→펫→NPC→VFX. 실제 공식 승인 몬스터 시트·캐릭터·보스는 임의 교체하지 않습니다. B1 문 상태 표시는 Codex 보완 보고, Field03 Rock B는 **ART_FIX_PENDING**. 최신 로드맵 `../../LIMITLESS_Chapter2_Original_Art_Roadmap_20261012.md`·전체결정 `../../LIMITLESS_20261012_전체대화_결정_인계.md` 참고. 사용자 승인 뒤 Codex Unity 통합. 세션 여유가 줄면 사용자에게 사전 보고·후임 인계.
