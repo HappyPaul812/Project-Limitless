@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-19 Field05 v1 서부 동서도로 방향 보완
+
+바울 대표가 리뉴얼 Field05 v1 격리 실제 Unity 비교 화면에 대해 “맘엔 드는데, 챕터2는 방향이 서쪽인데 왜 길이 자꾸 남쪽이야?”라고 지적. **v1 색감·분위기는 긍정/단, 전체 미술 최종 승인 아님; 기존 세로 도로 유지 문제는 HOLD.** GitHub 실제 YAML RoadLeft/Right30이 y -7..7 **15행×2열**이고, v1은 Sprite-only 교체여서 Transform 불변. Field05 동쪽 Arbel Spawn (8,0), Exit (10.7,0). Main14 수로(5,2), 초소(-2,2), 진동(-6,-2), 세린(1,0)·몬스터 고정 보호. **주도로를 동↔서로 정렬**하고 조사점에는 짧은 지선 후보, 신규 서쪽 Portal 금지.
+
+**새 발주 정본:** `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md` (`docs/planning`). Codex 격리 Unity에서 현재 v1 / Road30 동서15열×2행 / Road42 동서21열×2행 연장 후보를 실제 카메라 QA하고 리뉴얼 담당은 필요한 Road2 v2 최소 PNG/ZIP을 만든다. 유저 승인 전 원본 Scene·GitHub main·선택7종 배치0. Main14/휠체어/Save/Portal 동선, 기존 Field04/Arbel 이미지 및 active editor/dirty 보존. local main sync PARTIAL 유지.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Chapter3 신규 북부 마을 누락 지적 / Main23 첫 거점 제안
 
 바울 대표가 “챕터3 마을은 없니? 메인23인가 챕터3 시작 기획할 때 마을 얘기가 없어서 묻는다”라고 질문. 실정본 Main22~29 / Main23~24 확인 결과 **북부 5필드·보스/임시 쉼터만 있었고 정식 신규 마을 배치 확정이 없었음**을 인정.
