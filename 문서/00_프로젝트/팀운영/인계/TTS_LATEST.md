@@ -162,3 +162,17 @@
 - `[PASS]`는 생성 허가 아님. 지금 quota/project/billing `NOT_VERIFIED`; TTS API0 / writes0 / Unity0 / Git writes0으로 사용자 화면에 표시.
 - 사용자에 다시 preflight를 요구할 필요 없음. 이후 수동 재개는 HOLD 원인 판독과 Project+Model 사용 가능 무료 횟수 확인·비용 통제·별도 사용자 승인 후에만 진행.
 - 세부 [보정본 및 다음 배치 사전검사](../../TTS_Serin_Preview6_and_NextBatch_Preflight_20261019.md).
+
+
+## 2026-10-19 Main18 마지막3 수동복구 생성기 준비 (최신)
+
+사용자: **“그래, 그럼 tts 작업 마저 하자”**. 기존 8 WAV·승인 ground/보정 Preview6을 재생성하지 않고 **Story07 heat_vent 재제작, Story13 watcher_01 불확실 실패 신규 수동 시도, Story14 watcher_02 신규 제작**만 진행하도록 생성기 준비.
+
+- 배포: `LIMITLESS_Main18_Serin3_Recovery_20261019.zip`, SHA256 `0b580820b4d0c2bbedd8e86266f38054312f0b641a1bce452b0c64b72a76650d`.
+- Python `LIMITLESS_Main18_Serin3_Recovery_20261019.py` SHA256 `799e1492312199de21daad014786ae636350f3944611c621907e37854a7df191`.
+- `check`: 기존 10오류 원본+10백업, Unity 정상25, 승인 샘플 SHA, 성공 신규7, Story13 기존 HOLD+SESSION.lock, Story14 미호출, 새로운 복구 기록 검사. API0/쓰기0. 2026-10-19 사용자 PC 실행 상태 `NOT_EXECUTED`.
+- `run`: 현재 Key2 연결된 실제 Google Project + model 무료 사용 가능량/비용을 **사용자가 직접 확인**하고 `--confirm-free-quota` + 대화형 `FREE`/`YES` 조건을 만족할 때만 요청. Story13가 포함되면 **`--authorize-manual-story13-retry` + `RETRY13`** 추가 확인. 같은 KEY SLOT2 사용, 자동 재시도0, 최대3회, 최소26초 간격.
+- Output `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\ManualRecovery_20261019\candidates\`. 기존 `remaining9_*`·오류 시도·HOLD/SESSION.lock **절대 삭제/초기화하지 않음**. 신규 별도 checkpoint만 기록. 실패/429 즉시 새로운 HOLD 잠금 후 뒤 ID 중단.
+- 오프라인 mock 3회 연속 성공·두번째429시 즉시중단·기존 HOLD 불변·성공 후보 SHA 변조 감지 PASS. 실제 Gemini TTS 호출0, 실제 무료 quota/Billing `NOT_VERIFIED`, 신규 WAV0.
+- 새 후보는 사용자 실제 음색/원문 청취 승인 필요. 승인후 Codex Unity 별도 적용. Main20 세린5, Main21 17 중 하렌3 BLOCK은 향후 별도 제작, 이번 생성기 대상 아님.
+- 상세: [Main18 세린3 수동복구 도구와 승인 게이트](../../TTS_Main18_Serin3_ManualRecovery_20261019.md). 이번 작업은 `docs/tts` 전용, `main` 및 Unity 수정0.
