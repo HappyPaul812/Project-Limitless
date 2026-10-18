@@ -151,3 +151,14 @@
 - **이후 Main20 세린 5개**, **Main21 NPC17개 중 하렌3 Voice 미승인 BLOCK / 기타14 후보**. 3+5+14=22는 향후 잠재 호출 수일 뿐 현재 quota 확인 수치 아님. 정확한 LOCAL Runtime 순서/기존 WAV 존재 먼저 확인.
 - 2026-10-19 프로젝트별 실시간 RPD 잔여·Billing/키 소속 `NOT_VERIFIED`, 추가 API 요청 승인0. 이전 성공8 및 Preview6 원본 유지, 승인 없이 LOCK 해제·재시도·다른 Key 사용 금지.
 - 상세: [보정본 재전달 및 다음 배치 계획](../../TTS_Serin_Preview6_and_NextBatch_Preflight_20261019.md). 기록은 `docs/tts` 브랜치만, `main` 변경 없음. Unity 수정0.
+
+
+## 2026-10-19 사용자 로컬 PRE-FLIGHT PASS — 최신 확인
+
+- 사용자 PowerShell 화면에서 실제 `LIMITLESS_TTS_Next_Preflight_20261019.py check`가 `[PRE-FLIGHT PASS]`를 반환.
+- Unity 정상25 SHA PASS, 샘플 ground 원본 SHA PASS, Story02/07~12 성공7 WAV·시도 SHA PASS.
+- Story13 `SESSION.lock`, failed/uncertain attempt, HOLD 유지; 신규 WAV/result 없음. Story14 새 attempt/result/WAV 없음.
+- 추가·중복 attempt 없음. Main20 5 세린 예정, Main21 17 NPC 중 하렌3 BLOCK.
+- `[PASS]`는 생성 허가 아님. 지금 quota/project/billing `NOT_VERIFIED`; TTS API0 / writes0 / Unity0 / Git writes0으로 사용자 화면에 표시.
+- 사용자에 다시 preflight를 요구할 필요 없음. 이후 수동 재개는 HOLD 원인 판독과 Project+Model 사용 가능 무료 횟수 확인·비용 통제·별도 사용자 승인 후에만 진행.
+- 세부 [보정본 및 다음 배치 사전검사](../../TTS_Serin_Preview6_and_NextBatch_Preflight_20261019.md).
