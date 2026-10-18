@@ -176,3 +176,14 @@
 - 오프라인 mock 3회 연속 성공·두번째429시 즉시중단·기존 HOLD 불변·성공 후보 SHA 변조 감지 PASS. 실제 Gemini TTS 호출0, 실제 무료 quota/Billing `NOT_VERIFIED`, 신규 WAV0.
 - 새 후보는 사용자 실제 음색/원문 청취 승인 필요. 승인후 Codex Unity 별도 적용. Main20 세린5, Main21 17 중 하렌3 BLOCK은 향후 별도 제작, 이번 생성기 대상 아님.
 - 상세: [Main18 세린3 수동복구 도구와 승인 게이트](../../TTS_Main18_Serin3_ManualRecovery_20261019.md). 이번 작업은 `docs/tts` 전용, `main` 및 Unity 수정0.
+
+
+## 2026-10-19 최신: Main18 세린3 수동복구 사용자 실행 성공
+
+- 사용자 제공 PowerShell 결과: `Story07 main18_heat_vent_serin_01` SAVED(4.88s), `Story13 main18_watcher_witness_serin_01` SAVED(4.96s), `Story14 main18_watcher_witness_serin_02` SAVED(4.20s). `[SUCCESS] New candidate WAV 3 / no Unity changes / legacy HOLD preserved`.
+- 이번 실제 생성 요청 **3회 성공**. 사용자 PC 로그 근거이며 신규 세 WAV의 독립 SHA/PCM/의미 청취 검증은 아직 대기.
+- 새로운 세 후보는 `ManualRecovery_20261019\candidates\` 아래 보관하고, 기존 실패 HOLD/SESSION.lock 및 과거 checkpoint 변경하지 않음.
+- Main18 세린10 **후보 WAV 10개 확보**: 기존 ground 승인 샘플1 + 보정 PREVIEW6 + 신규 후보3. 사용자 전체10 최종 음색·원문 승인 아직 아님. 정상 Unity25와 Main17 승인본 보호.
+- Main18 추가 생성은 현재 불필요. 다음은 새 후보3만 사용자 청취 QA, 필요시 Preview6 정식 승인 분리, 이후 Main20 세린5 / Main21 NPC14(하렌3 음성 미확정 BLOCK) 별도 생성·무료 quota 확인.
+- 이번 담당은 Github `docs/tts` 기록 외 신규 API 호출0, Unity/main 변경0.
+- 상세: [Main18 3개 복구 완료 후 후보 상태](../../TTS_Main18_Serin3_ManualRecovery_20261019.md).
