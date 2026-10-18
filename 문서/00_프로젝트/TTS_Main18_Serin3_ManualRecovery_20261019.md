@@ -47,3 +47,21 @@ python .\LIMITLESS_Main18_Serin3_Recovery_20261019.py run --max-new-calls 3 --ke
 새 후보는 모두 `SAVED_USER_QA_PENDING`; 승인된 ground 음색·대사 원문·혼입·잘림 등을 사용자 직접 확인한 뒤 Codex 별도 Unity 연결을 요청한다. Main20 세린5와 Main21 NPC17(하렌3 Voice 미확정)은 이후 별도 제작 계획이며 이번 도구에서는 절대 호출하지 않는다.
 
 TTS 기록은 `docs/tts` 브랜치만. `main` 변경/병합 금지, Unity 수정0, Push 없음.
+
+
+## 2026-10-19 사용자 로컬 실행 — Main18 세린 신규 후보 3/3 저장 성공
+
+사용자가 PowerShell 실행 화면을 제공했다. **이번 상태는 사용자 터미널 로그 관측**이며 담당자가 새 WAV 바이트를 직접 열어 음질/원문을 독립 검증한 것은 아니다.
+
+| Story | Stable Dialogue ID | 콘솔 SAVED 길이 | 상태 |
+|---|---|---:|---|
+| 07 | `main18_heat_vent_serin_01` | 4.88초 | `SAVED_USER_QA_PENDING` |
+| 13 | `main18_watcher_witness_serin_01` | 4.96초 | `SAVED_USER_QA_PENDING` |
+| 14 | `main18_watcher_witness_serin_02` | 4.20초 | `SAVED_USER_QA_PENDING` |
+
+- 실제 새 API 요청 3회, `[SAVED]` 3개, `[SUCCESS] New candidate WAV 3 / no Unity changes / legacy HOLD preserved` 표시.
+- 출력 경로 `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\ManualRecovery_20261019\candidates\` 로 예상, ID별 WAV 존재와 SHA256은 사용자 콘솔 출력에 기록되어 있으나 정확한 로컬 bytes 대조는 추후 별도.
+- **과거 Story13 실패 HOLD / SESSION.lock은 그대로 보호**. Story13는 독립 수동 복구 결과만 새 WAV 저장, 과거 실패 기록을 소급 변경하지 않는다.
+- **Main18 세린 재제작 대상 10개 모두 후보 WAV 확보**: 승인된 ground 기준 샘플1(재사용) + 기존 6개 오프라인 보정 PREVIEW(파일별 정식 승인 대기) + 이번 신규 후보3.
+- **SAVED ≠ 사용자 음색/ExactText 승인 ≠ Unity 적용 완료.** 특히 새 heat_vent는 과거 음색 불일치였으므로 승인 ground와 비교 필요. 다른 정상 Unity25 및 원본 WAV는 변경0.
+- 이번 TTS 담당의 추가 요청은 0. 샘플/기존 새 WAV/Preview 재생성0, GitHub main과 Unity 수정0. 이후 Main20 세린5, Main21 NPC17(하렌3 BLOCK)은 사용자 승인 및 현재 Project+Model 무료 예산 확인 후 별도 제작.
