@@ -218,3 +218,13 @@
 - Python compile/읽기 전용 CSV SHA·키배분 점검 PASS, 오프라인 모의 성공17/보존, 실패2번째 즉시 HOLD/LOCK·뒤호출0 및 저장 WAV SHA 변조 검출 PASS. **실제 Google 서비스 요청/성공/청취는 미검증**.
 - 최초 잘못 만들었던 이슈 #20을 **TTS 담당 제작 추적 이슈**로 수정하여 Codex 생성 요청을 명시적으로 취소. 정정 정본: [17회 계획/스크립트](../../TTS_Main20_Main21_17Call_Plan_20261019.md), [17개 큐](../../TTS_Main20_Main21_17Call_Queue_20261019.csv).
 - Main18 세린 승인10 별도 Unity 통합 이슈 #17, Main18/19 기존 정상25·원본/HOLD/WAV/Save 변경0. docs/tts만 문서 갱신, main commit/merge/Push0.
+
+
+## 2026-10-19 Main20·21 사용자 청취 오류9개 / 샘플 우선 재제작 (현재 최신)
+
+- 바울 대표가 실제 청취 후 **세린8개 남성 음색**(`main20_after_colossus_serin_02/01`, `main20_confront_serin_03/02/01`, `main21_route_serin_01`, `main21_pulse_serin_01`, `main21_heat_serin_01`), **태온1개 여성 음색**(`main21_route_taeon_01`) 보고. 이9개는 청취 불합격·Unity 적용 보류. 나머지 8개는 별도 최종 합격 확정 아님.
+- 원래 17회 제작 Python의 Style에 성별 명시 부족 확인. 실제 모델 오류 원인/원격 voice wire/실제 사용자 파일의 바이트 검증은 **미확정**, 성별 Style 지시가 효과를 보증하지 않음.
+- TTS 담당 직접 `LIMITLESS_Main20_Main21_VoiceFix9_SampleFirst_20261019.zip` 제작/배포, SHA256 `28c130098d1e33d7889ffd79dce715ace992283885b7e01c8cdca59255160dcb`, 자체 Python `LIMITLESS_TTS_VoiceFix9.py` SHA256 `8440a69fc7bc2031da7c592e257e4bd469efeab16be25f7efdd2dfbc667c50ca`. 기존 Stable ID/원문/Voice Schedar/Gacrux 유지, 명시적 세린 여성/태온 남성 Style 추가. **세린1+태온1 샘플 먼저** 제작·사용자 청취 승인 → 나머지 세린7 별도 실행. 오류 시 즉시 HOLD, 원본17 SHA/체크포인트 변경0.
+- 압축 파일과 실행 안내는 사용자 대화에서 직접 제공, README 동봉. 일단 `python .\\LIMITLESS_TTS_VoiceFix9.py check` (API0), 새로운 무료 한도를 현재 해당 프로젝트에서 확인한 뒤에만 `sample-serin`/`sample-taeon`. **초기 키1 7·키2 10은 이미 소비됐을 수 있으므로 추가9회라고 가정 금지**.
+- 오프라인 compile, 기존17 SHA mock, 샘플2+나머지7 모의 성공 및 2번째 API 오류에 즉시 HOLD/lock/다음호출0 PASS. 실제 사용자 PC/실제 Gemini API **신규 호출0, WAV 신규0**; 샘플 QA 미확인, Unity0, main0.
+- 상세 새 QA 정본: [Main20·21 VoiceFix9 오류/검수](../../TTS_Main20_Main21_VoiceFix9_20261019.md). 기존 이슈 #20은 생산→청취 QA 오류/재제작 추적용으로 갱신. TTS 담당이 Python을 직접 만들고 Codex는 사용자 최종 승인 후 Unity 통합만 한다.
