@@ -1,3 +1,12 @@
+# PLANNING 인계 — 2026-10-19 18:48 Main10 완료, Field06/07 B42 조건부·실패 해결, Field09 화면 감사
+
+바울 대표 Codex 통합 최종 보고: Main10 복구 승인 음성18 정식 StoryVoiceCatalog 연결·원본 디스크 비파괴 적용 완료; 추가164PASS/0FAIL, PCM/GUID/Next/무음/Continue 정상, 원본 보호 4,232 SHA/UserData23. 기능/격리 입력132PASS 역사결과 별도. 원본 활성 Editor 실제 손플레이·remote main병합은 별개.
+Field06 v1.1 ZIP 일치, 격리349PASS/0FAIL, Ground49 빈틈 해결 보고. 그러나 Arbel 도착 정식 Spawn 오차 **0.455유닛 FAIL**로 보존. Field07 v1 ZIP 통과, 격리 주행 **324PASS/1FAIL**+화면20PASS; 원인은 Runtime Ash7 `AshSoil_` 바닥 Sprite 복제 후 작은 불투명 사각형. 둘 다 원본 Scene 공식 적용·원격 main 병합 보류.
+**기획 B42 조건부 선택:** Field05의 공식 동서 B42 연속성과 접근성/서쪽 조사 연결 때문에 Field06+Field07의 **격리 Unity B42 배치를 승인**. B42 각각 신규Renderer12/좌표 변경이므로 실제 QA 통과·Spawn/ASH1FAIL 해결 이전 원본 Scene 확정 적용 허가 아님. 위험이 있으면 A30 비교로 되돌려 보고. Field06 Spawn은 Transition/Collider/Grace 실원인 찾고 임의 0.455 좌표 보정 금지. Field07 Ash는 기존 투명 Sprite/Material 우선, 납품된 optional WindlessAsh1은 격리 비교 후보만 조건부 허가(실공식 적용 승인 아님). 기존 합격 QA 재실행 금지, 좁은 delta만.
+리뉴얼 Field09_ObsidianScar 감사 공식 PNG10중 활성9, 기술 Main18 QA PASS_WITH_NOTE17/USER_ART_REVIEW_REQUIRED17. **현재 신규 PNG0/ZIP0, 전체 재제작 금지; 현행 Tiled Ground Base21×15+CrackedWest9×15 경계 및 6종 흰 가이드 흔적의 실제 사용자 화면 노출 여부를 짧은 격리 시각 QA로 확인**한 후 결함이 확인된 개별 PNG만 사용자 별도 아트 보완 승인. Field08 기존 공식 아트 유지. 최초 Unity 원본 사용자 Editor 조작 금지.
+기획 최신 정본 `문서/00_프로젝트/Main10_Field06_07_Final_Gates_Field09_VisualReview_20261019.md` (`docs/planning`, 커밋 `6a9b3c8f66a19e294e4544cfb4f285a5f0ede13f`). 위 내용은 GitHub 문서 직접 기록만, Codex 별도 실행·original scene 변경·main Push/PR merge 아님.
+
+---
 # PLANNING 인계 — 2026-10-19 Main10 음성18 전부 청취 승인 / Field08 신규 제작 생략
 
 바울 대표 Codex 보고 후 **“다 들었고 다 맞고”**: Main10 기존 PCM 복구 후보18/18 `USER_LISTENING_APPROVED`. 이전 11 ASR 동일+7 우선 청취(마지막 애매한 후보 포함) 전부 승인. Codex branch codex/main10-voice-quest-interaction-fix-20261019, 기능5c36a6531f23550c535737a96e1cd18648229f6b, QA b9516bc8408ec91b13dd50f9be7d222f6aaa05fc. 치유사 NPC보다 Main10 현재 조사 목표 우선 입력 로직 격리132PASS/0FAIL, 퀘스트7/40EXP·40탈렌트/Continue/던전복귀/3비율. 기존 Main09 승인27/UserData23/기준4,235 SHA보호, TTS/API0, 원본 WAV overwrite0. **복구 후보18은 아직 Unity StoryVoiceCatalog와 원본디스크에 공식 적용 전**. 다음 Codex는 승인 후보18 SHA·본문 매핑만 정확히 정식 연결 → 국소 delta QA → 안전조건 충족시 원본 비파괴 적용 및 결과 보고. PR/main 병합/사용자 원본 Editor 실플레이 검증 별개.
