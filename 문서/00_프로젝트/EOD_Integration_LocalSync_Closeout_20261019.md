@@ -37,3 +37,5 @@
 ## 원본 동기화 판정
 
 168게임파일은 기존 승인 원본과 정확히 일치하여 다시 쓰지 않습니다. 문서 변경은 clean-old 또는 부재인 경우만 적용하고, 별도 격리 리허설 후 비파괴 fast-forward를 검토합니다. 실제 root HEAD=origin/main=GitHub main, index=HEAD, 허용 dirty/Save SHA 전후 검증을 모두 마친 증거만 SYNC_COMPLETE입니다. 실패 시 SYNC_SAFE_BLOCKED/원본 보존이 원칙입니다.
+
+격리 동기화 리허설 PASS: 기존 승인168파일 index만 선반영 후 일반 `git merge --ff-only` 성공, staged0/백업1,059 SHA 불일치0. 원본에 같은 절차를 실행하기 전 실제 파일·index SHA를 다시 확인합니다.
