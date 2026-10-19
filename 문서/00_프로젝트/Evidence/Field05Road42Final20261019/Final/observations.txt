@@ -1,0 +1,12 @@
+Wheelchair target=(7.00, 0.25);waypoints=5
+Wheelchair target=(5.00, 1.00);waypoints=11
+Wheelchair target=(1.00, -1.00);waypoints=24
+Wheelchair target=(-2.00, 1.00);waypoints=20
+Wheelchair target=(-6.00, -1.00);waypoints=24
+Wheelchair target=(9.50, 0.25);waypoints=67
+Wheelchair target=(7.00, 0.25);waypoints=5
+Wheelchair target=(5.00, 1.00);waypoints=11
+Wheelchair target=(1.00, -1.00);waypoints=24
+Wheelchair target=(-2.00, 1.00);waypoints=20
+Wheelchair target=(-6.00, -1.00);waypoints=24
+Wheelchair target=(9.50, 0.25);waypoints=67

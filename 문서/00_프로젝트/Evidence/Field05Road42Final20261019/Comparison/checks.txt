@@ -1,0 +1,84 @@
+PASS|Save.Isolation
+PASS|Scene.Bootstrap
+PASS|Scene.Field_05_WesternOutskirts
+PASS|Serialized.Env375
+PASS|Serialized.Ground315
+PASS|Serialized.Road42
+PASS|Serialized.ActivePNG14
+PASS|Serialized.MissingSprite0
+PASS|Serialized.RoadContract.RoadLeft_-7
+PASS|Serialized.RoadContract.RoadRight_-7
+PASS|Serialized.RoadContract.RoadLeft_-6
+PASS|Serialized.RoadContract.RoadRight_-6
+PASS|Serialized.RoadContract.RoadLeft_-5
+PASS|Serialized.RoadContract.RoadRight_-5
+PASS|Serialized.RoadContract.RoadLeft_-4
+PASS|Serialized.RoadContract.RoadRight_-4
+PASS|Serialized.RoadContract.RoadLeft_-3
+PASS|Serialized.RoadContract.RoadRight_-3
+PASS|Serialized.RoadContract.RoadLeft_-2
+PASS|Serialized.RoadContract.RoadRight_-2
+PASS|Serialized.RoadContract.RoadLeft_-1
+PASS|Serialized.RoadContract.RoadRight_-1
+PASS|Serialized.RoadContract.RoadLeft_0
+PASS|Serialized.RoadContract.RoadRight_0
+PASS|Serialized.RoadContract.RoadLeft_1
+PASS|Serialized.RoadContract.RoadRight_1
+PASS|Serialized.RoadContract.RoadLeft_2
+PASS|Serialized.RoadContract.RoadRight_2
+PASS|Serialized.RoadContract.RoadLeft_3
+PASS|Serialized.RoadContract.RoadRight_3
+PASS|Serialized.RoadContract.RoadLeft_4
+PASS|Serialized.RoadContract.RoadRight_4
+PASS|Serialized.RoadContract.RoadLeft_5
+PASS|Serialized.RoadContract.RoadRight_5
+PASS|Serialized.RoadContract.RoadLeft_6
+PASS|Serialized.RoadContract.RoadRight_6
+PASS|Serialized.RoadContract.RoadLeft_7
+PASS|Serialized.RoadContract.RoadRight_7
+PASS|Serialized.RoadContract.RoadV2Extra_-5_Lower
+PASS|Serialized.RoadContract.RoadV2Extra_-6_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-8_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-7_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-6_Lower
+PASS|Serialized.RoadContract.RoadV2Extra_-5_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-8_Lower
+PASS|Serialized.RoadContract.RoadV2Extra_-10_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-9_Upper
+PASS|Serialized.RoadContract.RoadV2Extra_-9_Lower
+PASS|Serialized.RoadContract.RoadV2Extra_-10_Lower
+PASS|Serialized.RoadContract.RoadV2Extra_-7_Lower
+PASS|Camera.Bounds.1.777778.(9.50, 0.00)
+PASS|Camera.Bounds.1.777778.(-9.50, 0.00)
+PASS|Camera.Bounds.1.777778.(0.00, 6.50)
+PASS|Camera.Bounds.1.777778.(0.00, -6.50)
+PASS|Camera.Bounds.1.333333.(9.50, 0.00)
+PASS|Camera.Bounds.1.333333.(-9.50, 0.00)
+PASS|Camera.Bounds.1.333333.(0.00, 6.50)
+PASS|Camera.Bounds.1.333333.(0.00, -6.50)
+PASS|Camera.Bounds.2.333333.(9.50, 0.00)
+PASS|Camera.Bounds.2.333333.(-9.50, 0.00)
+PASS|Camera.Bounds.2.333333.(0.00, 6.50)
+PASS|Camera.Bounds.2.333333.(0.00, -6.50)
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|GPU.Available
+PASS|Serialized.NoNewError

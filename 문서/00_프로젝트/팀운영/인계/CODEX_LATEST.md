@@ -4,6 +4,33 @@
 - 실제 키보드도보/게임패드휠체어 전체6단계348 + 최종UI/추적/전투Scene회귀79 PASS/0FAIL. 16:9/4:3/21:9 화면, 폴합류/보상/SaveContinue PASS. 대사·Scene·WAV·Collider 불변, 원본4844SHA/UserData23보호.
 - 기존Search/URP·Editor버전·물리OS입력은환경PARTIAL. [실제 QA/화면](Main09_Quest_Clarity_Unity_QA_20261019.md). main병합·원본적용0, 전용PR검토대기. 다음: 승인된Field05 B42는 기존결과 재사용통합(추가미술승인 불필요), local main문서충돌5개보존.
 
+## 2026-10-19 재개 작업 완료 — Main09 PR21 / 승인 Field05 PR22 병합·원본 적용
+
+- 우선순위1 Main09: 실제 도보/키보드·휠체어/게임패드 6단계348 + 최종UI/추적/Scene회귀79 = **427PASS/0FAIL**. 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`, QA commit `27983bb3d5652dfd6fec0b837ad4a63e98fc5ed5`. [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) Push/검토대기. **Main09 main병합·원본디스크적용0**, UX개선화면 검토후 다음 반영 대상. 기존여관과조사입력충돌도 현재Main09/1.6반경한정 해결. 대사/좌표/Collider/승인음성 보존.
+- Field05: 대표 최종승인 범위 PNG14/Road42/환경375 정식 반영. [PR22](https://github.com/HappyPaul812/Project-Limitless/pull/22) **main병합 `b95909387a7b6f597417041bfcd72f2b866d4e47`**, PR head `81b1c82df4fb0203d2958fc90804fc4956fb3cc5`. 원본디스크Scene1+신규32경로 일치/SceneGUID보호. 기존416+84검증재사용+실제Continue/Quest/Meta66PASS/0FAIL. 새Field05플레이환경/빌드/화면/텔레포트테스트0. [정식QA](Field05_B42_Official_Apply_QA_20261019.md).
+- 원본4844SHA 중 승인Field05Scene1만변경, UserData23/Main08·Main18음성/Arbel/Field04/기존meta보호. Main18 PR18/19 재작업0. 원본Editor/Play/포커스조작0; 원본 자연Import/Runtime·물리OS입력은미검증, 기존Search/URP·Editor버전은환경PARTIAL.
+- local main `ff022e63dfe364f559fcc29819d27b123ad31127` 보존. tracked dirty320/미추적1053, 원격겹침517중512동등/문서5내용충돌로 **LOCAL_SYNC_PARTIAL**. 기존로컬문서2커밋 ff022e63/3a37aa2e의 main조상이력 보존확인. reset/clean/stash/forcePush0. [최종보호](Evidence/Field05Official20261019/FinalLocalProtection.json).
+- 다음 재개: Main09 PR21을 최신 main과 충돌없는 상태로 유지하고 대표 UX확인 후 main·원본 반영. 사용자 원본문서5개는 양쪽내용 의미병합 검토 후 로컬main동기화. 기존검증/아트/음성을 재제작하거나 수천건 QA를 반복하지 않습니다.
+
+## 2026-10-19 Field05 B42 원본 디스크 정식 적용 — 66 추가 PASS / Push·PR 준비
+
+- 바울 대표 최종 미술 승인에 따라 기존PNG14/환경375/Road42 후보를 원본 Scene+신규32경로로 반영했습니다. 기존Collider21·비도로Transform·SceneGUID·UserData23·승인음성 보호. 원본Editor조작0/자연ImportRuntime미검증.
+- 기존416+84 PASS 재사용 + 실제SaveContinue/Scene/Quest/Meta 연결66 PASS/0FAIL. 새화면/별도플레이환경/빌드/텔레포트테스트0. [정식적용QA](Field05_B42_Official_Apply_QA_20261019.md).
+- Main09 PR21은 실제427PASS/0FAIL로 Push·검토대기, main병합/원본적용0. 다음: 승인된Field05전용PR병합 후 정확SHA인계, 원본문서5충돌은보존해 local sync PARTIAL 유지.
+
+## 2026-10-19 Field05 B42 최종 미술 승인 — 정식 통합 준비
+
+- 바울 대표의 최신 재개 지시로 최종 미술 승인 완료. 기존 기능 ebb363567b3932cce8af12e315dda03362c8fd19/최종후보 f8afb80ce744fd1eef78ce1c5c7eb1d07187ebee와 416+84 PASS를 재사용합니다. 추가 비교 화면/플레이 검수 빌드/강제 Field05 입장 도구는 만들지 않습니다.
+- 원본 Scene은 HEAD 대비 미커밋 변경 없음, 기존 Collider21개와 비도로 Transform 동일, 새 Asset32경로 충돌0을 확인했습니다. 승인PNG14/도로42/환경375만 정식 적용 대상으로 준비합니다.
+- Main09는 먼저 완료: 기능932c3573a0ad4a4d94c0b92c4d0bb932662ae419, 최종27983bb3d5652dfd6fec0b837ad4a63e98fc5ed5, PR21 Push/검토 대기, 실제427 PASS/0FAIL. Main09 main병합/원본적용0. Main18 재작업0.
+- 다음: Field05 Meta/GUID/Quest/Save 변경분 회귀→원본 디스크 안전적용→전용 Push/PR/승인범위 main 병합. 사용자dirty문서5개와Save/Editor/포커스보호 유지.
+
+## 2026-10-19 Field05 v2 Road4 / B42 최종 후보 — 기술 PASS / 미술 승인 대기
+
+- 전용 `codex/field05-eastwest-road42-v2-20261019`, 기능 `ebb363567b3932cce8af12e315dda03362c8fd19`. 새 v2 SHA/CRC/PNG4 Manifest·Ground3 Props7 원본SHA PASS. 환경375=315/42/18, PNG14, Road12추가, 선택7/새Portal0.
+- 실제 최종 Unity 기능416 PASS/0 FAIL, 저장Scene재로드84 PASS/0 FAIL, 16:9·4:3·21:9 3안 비교63장. 기존 Search/URP/Editor버전차이만 환경 PARTIAL. [검수자료](Field05_Road42_v2_Final_Unity_QA_20261019.md).
+- **원본 Field05 정식 적용·Push·PR·main 병합0. 새 v2 화면 미술 승인 필요.** 기존 Collider/좌표/Spawn/Save/Arbel·Field04 보호. 다음: 대표 갤러리 승인 후 통합.
+
 ## 2026-10-19 통합 마감 — Main18 원격 병합·원본 디스크 적용 / Field05 최종 미술 승인 대기
 
 - Main18 승인10 Push→PR18→main 병합 `6f988dad77316347be69ac3b0979237771c09ed9`, 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`. 기존1370 PASS/0FAIL·22/22 재사용 + 실제재생/SaveContinue delta394 PASS/0FAIL. 정상25/Main17세린11/PCM35/기존Catalog280 보호. 원본Unity WAV10/meta10/Catalog만 정식반영, 원본Editor미조작/Import Runtime미검증.
