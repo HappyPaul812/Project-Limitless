@@ -1,5 +1,12 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 v3 독사·Wolf PNG2 실제 파일 납품, Field09 소스 접근 보류 (최신)
+
+- 독사 `VenomSnake_KeyArt_v3.png` 1254×1254 RGBA / SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`; 늑대 `Wolf_KeyArt_v3.png` 952×1306 RGBA / SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`. 두 개 모두 현재 세션에서 **실제 별도 PNG 파일로 생성**하고 디코드/투명도/해시 확인; GitHub 바이너리 및 대표 F: 디스크 자동 저장0. 미술 승인, 공식 몬스터5 원본 PNG 동배율 비교, Unity 적용 미완료.
+- Field09 v1 재포장/격리 기술 검사 PASS 기록과 실제 화면 아트 FAIL(지면 반복띠6/가이드6종) 구분. 기존 8개 공식 PNG와 원본 스크린샷이 현재 이 세션 컨테이너에 없어서 픽셀 원본 보존을 검증하는 Field09 v2 실제 수정8PNG/ZIP **제작·납품0**. 공식 원본/실물 화면 확보 이후 국소 수정 필요. 재포장만 반복/가짜 합성 비교 금지.
+- `KEYART_V3_2PNG_DELIVERED / USER_STYLE_PENDING / REAL_OFFICIAL_COMPARISON_BLOCKED / FIELD09_V2_NOT_DELIVERED / ANIMATIONS_HOLD / UNITY_UNCHANGED`. [상세 작업·한계·SHA](../../MonsterWolf_v3_KeyArt_Actual_PNG_And_Field09_Blocker_20261019.md), 최초 문서 commit `2f38e4096f2ec3228284aba9ad97d1bf7cee93e1`.
+
+
 ## 2026-10-19 Chapter2 품질 게이트 및 잘못된 이미지 비교 정정 (최신)
 
 - 새 기획 정본 `docs/planning/문서/00_프로젝트/Field09_Zip_Header_Repair_And_MonsterWolf_Chapter2_Quality_Gate_20261019.md` 직접 열람. 바울 대표는 **VenomSnake v2·Wolf v2를 미술 품질 보류**하고 Chapter2 공식 몬스터 5종(11~15)의 명암·형태·질감·액션 완성도를 기준으로 재설정. **32×32 확대만 하는 방식 금지**.
