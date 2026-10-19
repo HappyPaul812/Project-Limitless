@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field05 동서 Road v2 최소 아트 보완 납품 — A/B 미선정
+
+- 발주: [`docs/planning`의 동서 진행로 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md), 기획 SHA `b614a5c6d6a1e51316c0ed22e03cc34b517982c5` 및 사용자 전달 Codex 실제 Unity6000.6.5f1 격리 비교/PNG 인계. 리뉴얼 담당은 Codex 로컬 `F:/.../Road_PNG_Handoff.md`를 직접 읽었다고 주장하지 않고 전달받은 전문으로 작업.
+- **신규 최소 Road4종 실제 제작**: `LL_C2_F05_Road_EW_Upper_128_v2.png`, `...Lower_128_v2.png`, `...WestEnd_Upper_128_v2.png`, `...WestEnd_Lower_128_v2.png`. PPU128/Center/128×128 RGBA, Z0/Flipfalse. 북·남 외곽 투명 흙 경계/서쪽 끝 흙으로 자연 소멸. 새 서쪽 Exit/Portal/화살표 아트0.
+- 채팅 다운로드 실제 ZIP **`Limitless_Field05_EastWest_Road_v2.zip`**, 589,850 bytes, 14파일/PNG8(실사용4+합성Preview4). **SHA256 `3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`**. v1 ZIP은 **`a6646a676a619bc149798fe0f3909401b9c3b5a75f253cf6a1e61e21661b1258`** 그대로 보존, Ground3/Props7/선택7·Field04/Arbel 승인 파일 재제작0.
+- 오프라인 RGBA 연결 seam 검증: 직선 Upper/Lower 좌우 반복, Upper-Lower, End→직선, End Upper-Lower 각 mismatch **0**, 북·남/서쪽 외곽 Alpha0. PNG4 hash/Decode/ZIP CRC PASS. **실제 Unity RenderTexture/접근성/물리/Save·Quest14/몬스터/Arbel 귀환 Runtime 미검증.**
+- 두 배치 모두 별도 승인 대기: **A 30기존 Renderer(x=-4..10,y±0.5)** / **B42(신규12추가, x=-10..10,y±0.5)**. 두 경우 서쪽 최소 두 타일은 Endcap. B 끝은 지도 경계이지 새 서쪽 출구 아님. `Road_Placement_A_B.csv` 72행 및 Codex 적용 인계 ZIP 포함.
+- **현재 `ART_DELIVERED / OFFLINE_SEAM_QA_PASS / A_B_UNDECIDED / USER_FINAL_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`.** Codex A/B 기능 검수는 사용자 인계 시 아직 진행 중. 여기서 A/B 최종 선택·원본 Scene 반영·새 GUID/Renderer 추가 승인으로 해석하지 않음.
+- 다음: 바울 대표 4개 PNG 및 반복/WestEnd 미술 검토 + A/B 최종 선택 → 승인안만 Codex 격리 worktree 실제 Unity Road·가독성·휠체어·Main14/Save 검증 → 별도 사용자 정식 적용 승인. 기존 Field03 Rock B·선택 소품7·Field06 범위는 독립 보류.
+- [Field05 Road v2 납품 문서](../../Field05_EastWest_Road_v2_Art_Delivery_20261019.md), 최초 기록 SHA `8463ef25be012a792ab67c29fb277647e34ad771`, 담당 `docs/art-renewal`. `main` 직접 Commit/Push/병합 금지.
+
 ## 2026-10-19 최신 main 우선 갱신 및 Field05 v1 아트 납품
 
 **상태 기준시점 2026-10-19 / 기준 `main` `c263d9e36fc0570b16130d9c011abf3965def5f7`.** 현재 `main`에서는 **Field04 v2 공식 42도로**와 **Arbel v3 기본23종·건물 Depth/가림 보완**이 승인·적용 및 검증된 상태입니다. 이 문서 10월13~14일의 `USER_ART_REVIEW_PENDING` / `UNITY_NOT_APPLIED`는 **그 당시의 역사 기록**으로만 읽으세요. Arbel 선택 장식11개는 여전히 미배치, 기존 Portal/나무 겹침 OPEN. Field03 Rock B 미술 승인은 Field05 범위와 무관하게 별도 유지.
