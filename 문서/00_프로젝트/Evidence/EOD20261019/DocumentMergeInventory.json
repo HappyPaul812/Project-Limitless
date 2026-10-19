@@ -1,0 +1,327 @@
+[
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Chapter2_Field05_Renewal_Art_Assignment_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Codex_20261019_LocalMain_FiveDocument_SemanticMerge_Recovery.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Codex_20261019_Main18_Voice_Field05_Road42_Integrated_Closeout.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field06_07_OfficialApply_Field09_LimitedArtFix_ApprovalGate_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field06_v1_1_Field07_v1_User_Art_Approval_And_Integration_Gate_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field09_MinimalFix_v1_IsolatedQA_And_OfficialApply_Authorized_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field09_Zip_Header_Repair_And_MonsterWolf_Chapter2_Quality_Gate_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Field09_v1_VisualFail_And_MonsterWolf_KeyArt_Immediate_Art_Production_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/LIMITLESS_20261019_EOD_Merge_LocalSync_SafetyContract.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main09_Field03_DialogueVoice_Sequence_Bug_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main09_Voice27_Approval_Field06_Art_v1_Handoff_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main10_Field03_Voice_Mapping_And_Quest_NPC_Blocker_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main10_Field06_07_Final_Gates_Field09_VisualReview_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/Main10_Voice18_User_Approval_Field08_NoNewArt_Decision_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_Main23_24_북부탐험_첫눈_한기_연결기획_v1_20261014.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_Main23_24_서릿길마을_스토리시퀀스_v1_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_서릿길마을_NPC_서비스_서브퀘스트_v1_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/planning",
+    "path": "문서/03_스토리/Chapter3_서릿길마을_첫안전거점_Main23_신설제안_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Arbel_Renewal_Art_v1_Delivery_20261014.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Arbel_Renewal_Art_v2_MinorFix_Delivery_20261014.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Arbel_Renewal_Art_v3_Metadata_Correction_Handoff_20261014.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Beast_Wolf_Original_Run_Pilot_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field04_Art_v2_EastWestRoad_Delivery_20261013.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field05_EastWest_Road_v2_Art_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field05_Renewal_Art_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field06_ScorchedTrail_Renewal_Art_v1_1_TechFix_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field06_ScorchedTrail_Renewal_Art_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field07_AshenReach_Renewal_Art_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field08_RedRift_ExistingOfficialArt_Audit_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field09_ObsidianScar_ExistingArt_MinimalReplacement_Audit_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Field09_ObsidianScar_OfficialArt_MinimalFix_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/MonsterWolf_v3_KeyArt_Actual_PNG_And_Field09_Blocker_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Monster_Beast_Pilot_v1_Rejection_v2_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Monster_VenomSnake_Original_Art_Pilot_v1_Delivery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/Monster_Wolf_Chapter2_Quality_Gate_Correction_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/art-renewal",
+    "path": "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main18_Serin10_Approved_Unity_Handoff_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main18_Serin3_ManualRecovery_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main18_Serin_Schedar_Remaining9_Generator_20261013.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main20_Main21_17Call_Plan_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main20_Main21_17Call_Queue_20261019.csv",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Main20_Main21_VoiceFix9_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Serin10_Schedar_v2_Preflight_20261013.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/TTS_Serin_Preview6_and_NextBatch_Preflight_20261019.md",
+    "action": "new document"
+  },
+  {
+    "branch": "origin/docs/tts",
+    "path": "문서/00_프로젝트/팀운영/인계/TTS_LATEST.md",
+    "action": "semantic preserve unique paragraphs; review required"
+  },
+  {
+    "branch": "codex/main09-dialogue-voice-fix-20261019",
+    "path": "문서/00_프로젝트/Main09_Approved27_Official_Integration_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/main09-dialogue-voice-fix-20261019",
+    "path": "문서/00_프로젝트/Main09_DialogueVoice_Sequence_Recovery_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/main10-voice-quest-interaction-fix-20261019",
+    "path": "문서/00_프로젝트/Main10_Approved18_Official_Integration_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/main10-voice-quest-interaction-fix-20261019",
+    "path": "문서/00_프로젝트/Main10_Chapter2_Approved_Integrated_Handoff_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/main10-voice-quest-interaction-fix-20261019",
+    "path": "문서/00_프로젝트/Main10_VoiceQuest_Blocker_Recovery_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field06-v11-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field06_ApprovedRenewal_Integration_Delta_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field06-v11-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field06_B42_FinalGates_OriginalApply_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field07-v1-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field07_ApprovedRenewal_Integration_Delta_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field07-v1-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field07_B42_FinalGates_OriginalApply_QA_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field09-minimal-fix-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field09_MinimalFix_v1_ZipFormat_Blocker_20261019.md",
+    "action": "existing QA report reused"
+  },
+  {
+    "branch": "codex/field09-minimal-fix-unity-integration-20261019",
+    "path": "문서/00_프로젝트/Field09_RepackedZIP_UnityDelta_VisualFail_20261019.md",
+    "action": "existing QA report reused"
+  }
+]

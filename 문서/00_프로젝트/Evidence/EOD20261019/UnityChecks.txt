@@ -1,0 +1,10 @@
+PASS|Catalog imported
+PASS|Catalog 290 entries
+PASS|Approved 45 GUID resolved and imported PCM readable
+PASS|Field_06_ScorchedTrail environment Renderer count
+PASS|Field_06_ScorchedTrail no Missing Sprite
+PASS|Field_06_ScorchedTrail no Missing Script
+PASS|Field_07_AshenReach environment Renderer count
+PASS|Field_07_AshenReach no Missing Sprite
+PASS|Field_07_AshenReach no Missing Script
+PASS|Ash7 transparent dust resource

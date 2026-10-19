@@ -1,3 +1,11 @@
+## 2026-10-19 EOD 통합 준비 — 승인 범위 확정/18 Delta PASS
+
+Main09 승인27·재회순서/Main10 승인18·조사NPC 우선권/Field06 v1.1 B42·Ground49·안전Spawn/Field07 v1 B42·투명Ash7의 기능8커밋만 `codex/eod-integration-20261019`에 선택 통합. 기존 main18·Field05·Main09 UX 중복0. 통합게임168파일 원본기반 동일/정적8+실제Unity10=18PASS0FAIL, 이전550/261/132/164/124 재주행0. 원본Editor 자연Import·손플레이 미검증/Search·URP OPEN.
+
+1,059파일 SHA백업/39worktree기록/보호4,339SHA 불일치0. Field09 미술FAIL 후보PNG·Scene·ZIP 제외, 독사/늑대 미승인 제외, Main20/21 TTS22/Chapter3 구현보류. PR/main/원본HEAD·index 실제 동기화 확정은 EOD 보고 후속 기록을 따릅니다. 원본 Editor·UserData·Save 유지. [마감/재개 정본](EOD_Integration_LocalSync_Closeout_20261019.md)
+
+## HISTORY — 이전 완료·승인 단계 기록
+
 ## 2026-10-19 로컬 main 문서5 충돌 복구 완료 및 다음 단계
 
 문서5 의미 병합 PR #25 기능 `bc0ffac095746a499a31792aea2bef0a7e39691b` → main `30954827ebbe9d2f2fd4e6bca22abd2f50e6acc7` 완료. 격리 리허설 후 **원본 HEAD/index/작업파일 SYNC_COMPLETE** 확인. dirty·미추적·UserData·Settings 1,430파일 백업, 문서5개 의미 병합 외1,425파일 SHA 불일치0. 기존 문서 커밋2개 이력 유지. 남은 tracked dirty308/untracked548은 사용자 변경으로 보존하며 staged0입니다. 최신 main은 후속 보고 PR 이후 최종 검증 SHA를 따릅니다.
