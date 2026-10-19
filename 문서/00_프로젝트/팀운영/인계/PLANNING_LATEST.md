@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-19 Main10 사용자 직접 재생 오류·퀘스트 치유사 NPC 입력 차단, 17시 재개
+
+바울 대표 Unity Field03 슬롯02/Main10 직접 실플레이 캡처3장: 태온 `main10_taeon_001` ‘폴이 가리킨 석재가…’에서 다음 대사처럼 들리는 ‘모서리…’ 오발화; 폴 `main10_paul_001` ‘네. 전에 본 자리를…’에 ‘단단한… 표시…’ 오발화; Main10 가공된 돌 조사에서 치유사 NPC E 입력이 먼저 먹어 진행 불가. main 소스 확인 Main10 실제 태온001/폴001 원문 정확히 일치하며 `InteractionSystem`에는 Main09 현재목표만 NPC보다 우선 처리하는 코드가 존재, Main10 전용 예외 누락. StoryVoiceCatalog Main10 NPC 총18 ID/WAV가 있지만 오디오 PCM 내용은 미검증. 이전 Main09 교정 27개, Main09 Quest6단계·Save는 보호.
+
+**대표 명령: Codex 현재 5시간 사용 잔여8%로 작업을 오후 5시에 진행**, 실제 초기화 안내는 이전 화면에서 17:17이므로 충전 여부 확인 뒤 실행. 오후 5시 예약 리마인더 등록됨(자동 Codex 실행 아님). GitHub 기획 정본 `문서/00_프로젝트/Main10_Field03_Voice_Mapping_And_Quest_NPC_Blocker_20261019.md` (docs/planning 커밋 `5e9f6e623047f35ecc8b4cfbee782498857869b5`). 17시 이후 Codex 우선순위 P1: Main10 현재 조사점 NPC 우선권/프롬프트 충돌 국소 수정(치유사 보존) → Main10 음성18 원문/PCM/GUID 검사 및 복구 후보(새 TTS API0) → 대표 청취 승인 이전 음성 정식교체0. 기존 Main09 550+261 / Field06 717 반복QA 금지, 원본 Editor/Save 보호. 사용자가 Main10 이후까지 음성이 틀렸을 것이라 우려했지만 Main11+ 오류는 관찰되지 않았으므로 먼저 Main10 전체 감사 후 관련 이력만 제안.
+
+---
+
 # PLANNING 인계 — 2026-10-19 리뉴얼 병렬 작업 분배 (Field06 v1.1·Field07 v1)
 
 바울 대표 Field06 v1 **미술 방향 승인**, 기술 수정4건 별도. **리뉴얼 아트 담당**은 `docs/planning/문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md`의 기술4건 중 실제 PNG·Alpha·Props foot·Road Upper/Lower 자산 네이밍·매핑의 미술 수정(v1.1 ZIP, 기존 v1 원본 byte 보존)을 담당; **Codex**는 Scene/Importer/Runtime Grass49 비활성화 원인·Main15/접근성 delta Unity 검증 담당. Codex에게 새 아트 제작을 맡기지 않음. 기존 717 PASS 재검사 금지. Field06 선택 Runtime6/Decal2 미배치 지속. 로컬 original apply/main merge은 별도 조건/승인.
