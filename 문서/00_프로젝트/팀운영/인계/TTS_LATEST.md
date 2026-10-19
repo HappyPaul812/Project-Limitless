@@ -207,3 +207,14 @@
 - 제작 큐: Main20 세린5 + Main21 비하렌 NPC12 = 17. Key1: Main20 5+Main21 2, Key2: Main21 10. Main21 미생성2: `main21_haren_taeon_02`, `main21_prepare_serin_01`. 하렌3 Voice미확정 BLOCK.
 - [계획과 Codex 로컬 실행 지시](../../TTS_Main20_Main21_17Call_Plan_20261019.md) 및 [17행 CSV 큐](../../TTS_Main20_Main21_17Call_Queue_20261019.csv) 기록. 기존 Manifest·Main18 세린 승인10·정상25 불변.
 - 이번 TTS 세션에서는 Google API 실제 호출0 / 사용자 로컬 WAV0 / Unity0 / main 변경0. Codex 실행 대기, 신규 음성 모두 사용자 청취 승인 전 Unity 적용 금지.
+
+
+## 2026-10-19 역할 재정정 / 직접 Python 스크립트 제작 (현재 최신)
+
+- 바울 대표가 **“TTS는 니가 파이션 스크립트로 하는건데 누구한테 시키니?”**라고 업무 책임을 명확히 교정. TTS 스크립트 작성/음성 제작 계획/품질 검수는 TTS 담당 책임, 실제 Gemini API는 바울 대표 로컬 PC의 Python에서 실행. **Codex는 사용자 청취 승인 후 WAV Unity 통합·QA만** 담당한다. 이전 Codex 생성 위임 지시는 철회.
+- Main20 세린5 + Main21 비하렌 일반12, KEY1=7/KEY2=10 고정 큐. 하렌 Voice 미승인3 BLOCK, 이번 quota 이월 Main21 일반2.
+- TTS 담당이 직접 `LIMITLESS_TTS_Main20_Main21_17_Python_Pack_20261019.zip` 작성·다운로드 제공. ZIP 9874 bytes SHA256 `1a5a80afc98023be8324809e5fd6e7dad8cd12eccb852843525bf132c75bf612`. 포함 Python/17행 CSV/README. Google 비밀키 없음.
+- 실행: `python .\\LIMITLESS_TTS_Main20_Main21_17.py check` (API0) → 실제 별도 Project+Model 무료 quota/Billing 확인 후 `python .\\LIMITLESS_TTS_Main20_Main21_17.py run --confirm-free`. 실제 사용자 PC API0/WAV0이며 앞으로 사용자가 로컬에서 실행하여 로그 공유.
+- Python compile/읽기 전용 CSV SHA·키배분 점검 PASS, 오프라인 모의 성공17/보존, 실패2번째 즉시 HOLD/LOCK·뒤호출0 및 저장 WAV SHA 변조 검출 PASS. **실제 Google 서비스 요청/성공/청취는 미검증**.
+- 최초 잘못 만들었던 이슈 #20을 **TTS 담당 제작 추적 이슈**로 수정하여 Codex 생성 요청을 명시적으로 취소. 정정 정본: [17회 계획/스크립트](../../TTS_Main20_Main21_17Call_Plan_20261019.md), [17개 큐](../../TTS_Main20_Main21_17Call_Queue_20261019.csv).
+- Main18 세린 승인10 별도 Unity 통합 이슈 #17, Main18/19 기존 정상25·원본/HOLD/WAV/Save 변경0. docs/tts만 문서 갱신, main commit/merge/Push0.
