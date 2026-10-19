@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-19 20:06 Field09 최소보완 ZIP 격리 QA 및 합격 시 원본 Unity 적용 승인
+
+바울 대표가 **“Field09: 별도 검수 및 Unity 적용하자”**고 명시 지시함. 기존 리뉴얼 `docs/art-renewal/문서/00_프로젝트/Field09_ObsidianScar_OfficialArt_MinimalFix_v1_Delivery_20261019.md`의 ZIP `Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip`가 GitHub 담당 브랜치에 실제 납품돼 있으며, SHA256 `7dfa2417a8135e29e3e72c7d7921d3ade76fbedfdb376f764c09b02892296139`, 2,995,422B, PNG8개(512RG​BA)/13entries. 바울 대표의 기존 F 드라이브 파일도 후보이나 파일/해시 확인 전 존재 단정 금지. 원본10종 중 Ground2 반복/교차 seam와 Cliff·FissureEdge·FissureGlow·HeatVent·Slab·Spire 흰 가이드 6종만 격리 Unity Game View 3해상도 실제 비교, Main18 과열13목표·몹/세린/Collider/Save/Field08↔09 변경 범위 delta QA. **QA 합격과 원본 사용자파일·기존 공식8 PNG/meta/GUID/Save SHA 보존이 확인된 경우에만 Unity 원본 안전 적용 허가**, 불합격이면 멈춤. 개별 새 Asset+Scene 참조 원칙으로 기존 공식 PNG 원본 byte 보존, 원본 Editor/Play/포커스 무조작. 기존 Main18 500PASS 전수 반복 금지. GitHub main 직접 Commit/Push/병합 금지.
+
+정본 `문서/00_프로젝트/Field09_MinimalFix_v1_IsolatedQA_And_OfficialApply_Authorized_20261019.md` (`docs/planning` commit `ac6fc427485fba84cc94ba3f25cb3746ffc9cdb2`). Field09 납품 문서 상 USER_DELTA_VISUAL_REVIEW_PENDING은 과거이며 **QA 진행·조건부 적용 승인**으로 업데이트, 실제 사용자가 8장 각각을 청취/그림확인했다고 임의 주장 금지. Main10/Field06/Field07 이미 원본 적용 완료 보고 보호, 뱀/늑대 v1 반려·v2 작업은 리뉴얼 담당 별도 유지. 원본 Unity 검증/코드변경·main 병합은 이 기획 세션에서 실행하지 않았음.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-19 Field06·07 원본적용 완료·Field09 8종 국소 보완 승인 대기
 
 바울 대표 Codex 최종 통합 보고: **Field06 v1.1·Field07 v1 B42 원본 디스크 반영 완료**, 변경분 공통 **124 PASS/0 FAIL**. Field06 Ground49 빈틈 해결 유지, Arbel→Field06 Spawn 0.455~0.47 편차는 **Player Collider 겹침으로 인한 안전 위치 보정** 원인으로 수정 완료, Field07 Runtime Ash7 불투명 사각형은 기존 투명 먼지 자산으로 제거, 선택 PNG 미사용. 이전 보고의 Field06 Spawn FAIL/Field07 1 FAIL/원본 보류는 **과거 상태**. Field08 공식9 PNG 변경 없음. Main10 승인 음성18 정식 연결/원본 적용164PASS 보호. 원본4,267파일 SHA/UserData23 보존, 활성 사용자 Original Editor Main15·16 전체 손플레이 검증 및 GitHub Push/PR/main 병합은 별도.
