@@ -124,14 +124,15 @@ namespace ProjectLimitless.World
         }
         private void CreateAshMarks()
         {
-            Sprite ground = gameObject.scene.GetRootGameObjects().SelectMany(root => root.GetComponentsInChildren<SpriteRenderer>())
-                .FirstOrDefault(renderer => renderer.name.StartsWith("AshSoil_"))?.sprite;
-            if (ground == null) return;
+            // 기존 승인 투명 먼지 이미지를 그대로 재사용합니다. 불투명 지면을 복제하면 작은 사각형이 노출됩니다.
+            // Resources 복사본은 원본 던전 PNG와 바이트 동일하며 선택형 신규 Ash PNG는 사용하지 않습니다.
+            Sprite ground = Resources.Load<Sprite>("Chapter2/Field07AshDust");
+            if (ground == null) { Debug.LogWarning("Main16 투명 재 Sprite를 찾지 못했습니다."); return; }
             for (int i = 0; i < 7; i++)
             {
                 var ash = new GameObject("WindlessAsh_" + i, typeof(SpriteRenderer), typeof(Main16AshPulse));
                 ash.transform.SetParent(transform, false); ash.transform.position = new Vector2(3.5f + i * .17f, (i % 3 - 1) * .2f);
-                ash.transform.localScale = new Vector3(.15f, .09f, 1);
+                ash.transform.localScale = new Vector3(.5f, .3f, 1);
                 var renderer = ash.GetComponent<SpriteRenderer>(); renderer.sprite = ground; renderer.color = new Color(.80f, .77f, .72f); renderer.sortingOrder = 1;
             }
         }
