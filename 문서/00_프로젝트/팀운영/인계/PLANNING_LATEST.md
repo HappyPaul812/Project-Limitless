@@ -1,3 +1,15 @@
+# PLANNING 인계 — 2026-10-19 몬스터·야수동료(펫) 오리지널 아트 리뉴얼로 제작 중심 전환
+
+바울 대표: “그럼 리뉴얼에서는 맵은 완료지? 다음 리뉴얼은 몬스터들이랑 펫으로 하자.” **환경 신규 PNG 제작 위주 단계는 마감/일시 중지**, 다만 전체 맵 Unity 완료 판정은 **아님**: Field06 Spawn0.455, Field07 Ash7 사각형1FAIL 및 두 지역 B42 원본 적용 보류, Field09 Ground/Guide 실화면 확인, Field10/11 최종 아트/QA 승인 여부 정본 확인 대기는 Codex 후속·보존. Field08 공식 아트 유지/추가제작0.
+
+GitHub main 소스 확인: `MonsterDefinitions` 18종, Chapter2 주요 11~15 등록 전용 공식 시트5종과 16~18 프레임 배열/보스 승인 자산, Chapter1도 별도 battle/monster 시트 다수. 기보유 자산은 승인/라이선스·실게임 표출을 분류해 중복 새 제작 금지. `BeastCompanionSystem.cs`의 `wolf/bear/fox`는 여전히 `Resources/CompanionAssaultValidation/{Wolf,Bear,Fox}_Run`을 현재 코드에서 사용하며 해당 README는 ThirdParty/ScratchIO AnimatedWildAnimals 소스를 기록(문서의 '전투 미연결'은 최신 코드를 우선). **펫 3종 오리지널화 우선 실 제작 후보**.
+
+기획 발주 정본 `문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md` (`docs/planning`, 커밋 `286c23780762d91bf399f1ae8a11cd2dd994d2f1`). 리뉴얼 담당이 MONSTER18+PET3 실제 Resource/GUID/권리/승인/프레임 감사·대응표 → 이미 승인되지 않은 유효 교체 대상 몬스터1 파일럿 + **Wolf Run 오리지널 실사용 PNG 파일럿**을 병렬 제작·ZIP/Manifest/Animation 계약/QA로 납품 → 대표 미술 승인 후 Bear/Fox와 차기 몬스터 순차 확장. 펫은 사수/세린 포함 소유·100탈렌트 분양·동료의 습격·독립턴0/슬롯0/HP0·기존 MonsterPet 재사용 규칙 보호. Unity 정식 반영/Codex 검증/메인 병합은 별도 승인. Chapter3 신규 제작은 docs/art-new 담당.
+
+작업 담당 브랜치 docs/art-renewal, main 직접 Commit·Push·승인 공식 PNG 덮어쓰기 금지. 본 세션은 docs/planning 정본 작성까지만 했고 리뉴얼 세션에 자동 발송한 것은 아님.
+
+---
+
 # PLANNING 인계 — 2026-10-19 18:48 Main10 완료, Field06/07 B42 조건부·실패 해결, Field09 화면 감사
 
 바울 대표 Codex 통합 최종 보고: Main10 복구 승인 음성18 정식 StoryVoiceCatalog 연결·원본 디스크 비파괴 적용 완료; 추가164PASS/0FAIL, PCM/GUID/Next/무음/Continue 정상, 원본 보호 4,232 SHA/UserData23. 기능/격리 입력132PASS 역사결과 별도. 원본 활성 Editor 실제 손플레이·remote main병합은 별개.
