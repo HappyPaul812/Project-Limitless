@@ -1,3 +1,9 @@
+## 2026-10-19 문서5 의미 병합 및 보호 경계
+
+로컬 작업복사·local main 커밋·공통 조상·최신 원격 main을 대조했습니다. 최신 Main09(PR21/24)·Field05(PR22/23)·Main18(PR18/19)의 병합·원본 디스크 반영은 완료 상태로 유지합니다. 과거 기록의 승인 대기/미구현은 과거 당시로 구분합니다. 기획·리뉴얼 담당의 원격 전용 기록도 삭제하지 않았습니다.
+
+충돌 원본 네 버전과 SHA256·줄바꿈·시각은 로컬 `Temp/Doc5Recovery20261019/Versions`, 전체 dirty·미추적·UserData·Settings 백업은 `Backup`/`BackupManifest.json`에 보존했습니다. 문서 정합과 원본 Git 동기화는 별개이며, HEAD/index/작업파일 동기화는 격리 리허설 후 실제 확인 결과로만 선언합니다. 원본 Editor 자연 Import·손플레이는 미검증이며 기존 Search/URP 환경 OPEN을 유지합니다.
+
 ## 2026-10-19 Main09 최종 승인·main 병합·원본 디스크 적용 완료
 
 - 바울 대표의 명시적 승인 후 [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) **main병합 `f3196b6b4fc4dfaf8a901a6a29ea07254ae70325`**, 승인PR head `ed8efda34902f374a92f78e98cb5dd6d5af1b8fd`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 기존427PASS/0FAIL을 재사용했습니다.
@@ -1895,3 +1901,29 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 ## 2026-10-13 Field04 v2 42도로 정식 적용
 
 승인된 Road30 재배치+연장12 및 Grass315/Props18 적용. 새 격리 QA 253 PASS, 기존 Search/서쪽Spawn/북쪽경계/정본Unity버전 차이는 PARTIAL·OPEN. 원본 디스크 APPLIED. Main08/사용자Save/TTS/BGM 보호. 브랜치 codex/field04-v2-official-42-20261013; 관련 SHA는 해당 브랜치 최종 커밋 및 완료 보고 참조. 상세 `Field04_v2_Official42_Apply_QA_20261013.md`. 사용자 직접 플레이 확인 권장.
+
+## 로컬 고유 이력 보존 — 과거 당시 기록
+
+다음은 2026-10-19 의미 병합에서 보존한 로컬 작업복사·로컬 커밋의 고유 기록입니다. 과거의 미완료·승인 대기·재개 지시는 당시 상태이며, 현재 상태는 문서 상단과 최신 main 완료 기록을 따릅니다. 기존 수치·승인·OPEN·근거 경로는 변경하지 않았습니다.
+
+### [과거 당시] 2026-10-14 최종 마감 확인 — 음성 완료 / 로컬 Git 동기화 PARTIAL (local_working)
+
+- 태온007~011 승인후보를 정식 연결하고 앞 저음량 공백만 보정했습니다. 음성 PR14 merge d05a325b05f2eab79ee18c5ca65e9ee523a5e5ab, 마감문서 PR15 merge 9110bc7624e08ddbdd93b96510e8fafc5fbe341c. 신규TTS0·기존WAV/meta덮어쓰기0·승인005006/기존6·미엘/Player/Quest/Save 보호.
+- 격리 최신통합본 음성250+Arbel1729+Main21펫106+전투/Field04회귀232+23Scene26=2343 PASS/0 FAIL. 기존 URP/Search·원본liveImport/물리스피커/OS입력 미검증은 별도 PARTIAL. Arbel/기획중복적용0·Chapter3DRAFT구현0.
+- 최종 원격main/originmain 9110bc7624e08ddbdd93b96510e8fafc5fbe341c; 사용자 local main/HEAD ff022e63dfe364f559fcc29819d27b123ad31127. 로컬 문서전용2커밋 이력분기로 격리ff-only실패, 원본main이동/reset/clean/stash/forcePush0. **완전동기화 미완료**. 1274 dirty·미추적 백업/5851 SHA/UserData backup: Temp/EndOfDay20261014.
+- 원본 EditorBootstrap·PlayOFF·PausedOFF·Focusedfalse·Compilingfalse 유지·강제Refresh0. [최종QA](EndOfDay_Integration_Voice_LocalSync_QA_20261014.md). 다음: 로컬전용3a37aa2e/ff022e63 문서커밋과dirty보존 통합방식 검토후동기화재개. 원본Play/포커스강제조작 금지, 음성재승인 요청불필요.
+
+### [과거 당시] 2026-10-14 아르벨 v3 정식 적용·전용 브랜치 Push 완료 (local_working)
+
+- 승인PNG23·SortingGroup2·건물 발 기준 뒤1/앞5·현재Sprite 국소지붕alpha0.18·불투명 처마/접합 보완을 원본디스크56경로에 최소반영. 신규PNG제작0/선택장식11배치0/기존환경Renderer284/284/런타임MissingSpriteScript0/BuildScene23유지.
+- main core1765+회귀228+원본5파일 core1706+회귀228+BuildScene26=3953PASS/0FAIL. 세린 뒤/측면/문앞/접근·양쪽문·접합·도보/휠체어·실제NPC/shop/healer/pet/Portal관리인·SaveContinue·Main12/13실전·Field04 375/42회귀 PASS.
+- 전체PARTIAL: 원본대조에서도 재현한URP/Search환경오류,원본liveImport/OS입력/정본다른Editor버전미검증. VillageNpc초기fileID0은 PlaceholderVisual의도값(런타임정상). Portal-나무OPEN유지·실Teleport기존미구현, 실제우회/관리인대화PASS.
+- 초기4001중4000 SHA동일·승인Arbel.unity1만변경, 신규55경로·GUID충돌0. 추가TTS/Story392동일, rootHEADff022불변. 기존NPC좌표/Collider/Quest/Save/Settings/Field04/승인음성8/WAV/GUID/meta/Chapter3/복구Sprite보호. EditorBootstrap·PlayOFF·PausedOFF·Focusedfalse·Compilingfalse전후동일·강제Refresh/Scene전환0.
+- 브랜치codex/arbel-v3-official-apply-20261014, Feature648b1603c7d79803fdfa54fd0c2222e3ef8cc201, 최종Push652867c988d015f0eb65ccb82591d2ef3a36551b(원격동일). main직접Commit/Push/PR병합0. [QA](Arbel_v3_Official_Apply_QA_20261014.md)·[A인계](Arbel_v3_Official_Apply_Handoff_20261014.md). 다음: 원본Editor정상작업재개시자연Import후실제화면확인, main병합은별도사용자지시만.
+
+### [과거 당시] 2026-10-14 Main08 태온007~011 원본 조사·청취 후보 납품 (local_working)
+
+- 원본007 비발화·008=007·009=008·010=009+010합본·011선행저음량 구간을 WAV/PCM/GUID/실제Unity로 확인. 기존 WAV 재사용 후보5 제작, 신규TTS/API0·정식Catalog연결NO·B Commit/Push0.
+- 009/010 3.849417초 zero/zero 경계 분리·PCM재결합원본100% 동일. 011 선행1.079958초만 줄여 최종2.800042초, 마지막흡기0.19초/강한발화1.21초 남김·원본suffix동일·clipping0. 후보007 3.530초·008 4.810초·009 3.849417초·010 4.400583초.
+- 격리Unity6000.6.5f1 Field02 WheelTracks→Field03 Investigation→DeepZone5+3→실제BootstrapContinue 97PASS/FAIL0. 원본Clip/자막/PCM·미엘·Player무음·Next·SaveQuest보호. 전체PARTIAL: 기존Search startup 예외,007/008 ASR어휘차이,청취승인대기. 원본4,001파일SHA 변경0(B납품시).
+- 청취자료 [후보페이지](Evidence/Main08Taeon00701120261014/index.html), [QA·재개지점](Main08_Taeon007011_Content_Recovery_Candidates_QA_20261014.md). 다음: 바울 대표 개별청취승인 후 해당ID만 별도음성브랜치 연결·회귀QA. 최신확인 main314f7fbb(PR11완료), main직접변경0.
