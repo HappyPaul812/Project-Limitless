@@ -187,3 +187,15 @@
 - Main18 추가 생성은 현재 불필요. 다음은 새 후보3만 사용자 청취 QA, 필요시 Preview6 정식 승인 분리, 이후 Main20 세린5 / Main21 NPC14(하렌3 음성 미확정 BLOCK) 별도 생성·무료 quota 확인.
 - 이번 담당은 Github `docs/tts` 기록 외 신규 API 호출0, Unity/main 변경0.
 - 상세: [Main18 3개 복구 완료 후 후보 상태](../../TTS_Main18_Serin3_ManualRecovery_20261019.md).
+
+
+## 2026-10-19 Main18 세린 10개 최종 사용자 승인 → Codex Unity 통합 위임 — 최신 상태
+
+사용자 최신 명시적 지시: **“다 이상 없으니까 메인18은 끝인거 같으니 게임에 넣자, 지금 파일이 여기저기에 있으니까 알어서 할 수 있게 코덱스한테 시켜줘.”**
+- **Main18 세린 교체 TTS10 사용자 최종 청취·Unity 적용 승인**. 과거 `USER_LISTENING_PENDING`/오류 음색 이력은 이 지시로 후보 세트에 대해 변경. 승인된 유일한 최종 소스는 `ground` 1, 오프라인 보정 PREVIEW6, 10/19 최신 수동 복구 후보3. **기존 잘못된 raw `remaining9_wav` 또는 원본 `Limitless_TTS_Output_Main18`의 불합격 TTS를 Unity에 넣지 말 것**.
+- **Codex 구현 이슈:** https://github.com/HappyPaul812/Project-Limitless/issues/17
+- **TTS→Codex 실제 파일/SHA/검증 인계:** [TTS_Main18_Serin10_Approved_Unity_Handoff_20261019.md](../../TTS_Main18_Serin10_Approved_Unity_Handoff_20261019.md), `docs/tts` 작업 브랜치.
+- 샘플 `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\sample_candidate\main18_ground_serin_01.wav` SHA `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`. PREVIEW6 ZIP `LIMITLESS_Serin6_ConsistentVoice_Previews.zip` SHA `a5878e6d4f1b1e858f4b505f23669ab147da2dd466fe30443b0d6116a7246cb1`. 복구3 `ManualRecovery_20261019\candidates`의 Story07/13/14, SHA는 로컬 results에서 확인.
+- 기존 Main18 정상12+Main19 정상13 **Unity 연결25 보호**, 기존 Catalog/GUID/Save/기존 WAV/Story13 HOLD/lock 보호. **Codex는 `codex/tts-main18-serin10-integration-20261019` 독립 로컬 worktree**로 실제 Unity 추가10·Main18 22/22 QA 수행. `main` 직접 commit/Push/merge0, 선별 로컬 commit만.
+- **현재 상태:** `USER_APPROVED_10 / CODEX_ASSIGNED_VIA_GITHUB_ISSUE / UNITY_INTEGRATION_PENDING`. 이슈를 만든 것만으로 Codex 로컬 실행·Unity 통합 성공을 뜻하지 않음. 대표가 Codex 세션에서 이슈 링크를 전달하거나 작업을 시작해야 함.
+- TTS API 호출0, 본 TTS 세션 Unity 파일 수정0. Codex 완료 보고에 SHA 매핑·최종 Main18 22/22·QA/브랜치/로컬 commit와 Push 여부 기재 요구.
