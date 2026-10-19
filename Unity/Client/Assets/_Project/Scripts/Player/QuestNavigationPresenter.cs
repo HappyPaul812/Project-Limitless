@@ -1,5 +1,8 @@
 using ProjectLimitless.Core;
 using ProjectLimitless.World;
+using ProjectLimitless.NPC;
+using ProjectLimitless.Monster;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +20,11 @@ namespace ProjectLimitless.Player
         private readonly Vector3[] experienceHudCorners = new Vector3[4];
         private QuestNavigationTargetRegistry.Target target;
         private bool hasTarget;
+        private Transform player;
+        private static bool tutorialShown;
+        private QuestRuntimeState tracked;
+        public float PlayerDistance { get; private set; }
+        public bool IsTargetOnScreen { get; private set; }
 
         public bool HasTarget => hasTarget;
         public string TargetLabel => hasTarget ? target.Label : string.Empty;
@@ -47,7 +55,7 @@ namespace ProjectLimitless.Player
         {
             // 저장된 추적 Quest의 현재 목표 ID를 Scene의 실제 위치 등록부에 연결합니다.
             // Scene 밖 목표처럼 위치가 없으면 임의 좌표를 가리키지 않고 안내를 숨깁니다.
-            QuestRuntimeState tracked = QuestService.GetTrackedQuest();
+            tracked = QuestService.GetTrackedQuest();
             string id = tracked?.Definition.IsItemDelivery == true && QuestService.CanDeliverItems(tracked.Definition)
                 ? tracked.Definition.TurnInNpcId : tracked?.CurrentObjective?.TargetId;
             hasTarget = QuestNavigationTargetRegistry.TryGet(id, out target);
@@ -63,6 +71,12 @@ namespace ProjectLimitless.Player
             if (camera == null) { group.alpha = 0f; return; }
             if (WorldModalState.IsOpen) { group.alpha = 0f; return; }
 
+            bool main09 = Main09QuestGuidance.Applies(tracked);
+            marker.sizeDelta = main09 ? new Vector2(380f, 68f) : new Vector2(270f, 76f);
+            markerText.fontSize = main09 ? 18 : 24;
+            if (player == null) player = FindAnyObjectByType<PlayerController>()?.transform;
+            if (player == null) { group.alpha = 0f; return; }
+            PlayerDistance = Vector2.Distance(player.position, target.Transform.position);
             Vector3 screen = camera.WorldToScreenPoint(target.Transform.position);
             bool behind = screen.z < 0f;
             Vector2 center = new Vector2(Screen.width * .5f, Screen.height * .5f);
@@ -71,14 +85,62 @@ namespace ProjectLimitless.Player
             Vector2 halfSize = marker.rect.size * .5f + Vector2.one * EdgePadding;
             bool onScreen = !behind && screen.x >= halfSize.x && screen.x <= Screen.width - halfSize.x
                 && screen.y >= halfSize.y && screen.y <= Screen.height - halfSize.y;
-            Vector2 position = onScreen ? (Vector2)screen : ClampToEdge(center, direction, halfSize);
+            IsTargetOnScreen = onScreen;
+            // 발밑 링은 목적지 중심을 보존하고 두 줄 안내는 아래로 띄워 대상을 가리지 않습니다.
+            Vector2 position = onScreen ? (Vector2)screen + (main09 ? Vector2.down * 88f : Vector2.zero) : ClampToEdge(center, direction, halfSize);
+            if (main09 && onScreen) position = PlaceMain09Label(camera, screen, halfSize);
             position = AvoidExperienceHud(position, halfSize);
             marker.position = position;
-            float distance = Vector2.Distance(camera.transform.position, target.Transform.position);
-            markerText.text = onScreen ? $"◆ 현재 목표\n{target.Label}" : $"◆ 현재 목표  {distance:0}m";
+            float distance = PlayerDistance;
+            if (main09)
+            {
+                bool near = distance <= Main09QuestGuidance.InteractionRadius;
+                markerText.text = $"{tracked.CurrentObjectiveIndex + 1}/6 · {Main09QuestGuidance.Title(tracked.CurrentObjectiveIndex)}\n"
+                    + (near ? $"{Main09QuestGuidance.Controls}  {Main09QuestGuidance.Action(tracked.CurrentObjectiveIndex)}" : $"표시까지 이동 · {Main09QuestGuidance.Controls}") + $" · {distance:0.0}m";
+                if (!tutorialShown)
+                {
+                    tutorialShown = true;
+                    QuestHudPresenter.Notify("흰 바닥 링으로 이동하세요.\n가까이서 E/F · 게임패드 A로 조사·대화합니다.");
+                }
+            }
+            else markerText.text = onScreen ? $"◆ 현재 목표\n{target.Label}" : $"◆ 현재 목표  {distance:0}m";
             arrowText.gameObject.SetActive(!onScreen);
             if (!onScreen) arrowText.rectTransform.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f);
             group.alpha = 1f;
+        }
+
+        /// <summary>표시 패널이 조사점 주변의 플레이어·폴·기존 NPC·몬스터를 덮지 않는 빈 공간을 고릅니다.</summary>
+        private Vector2 PlaceMain09Label(Camera camera, Vector2 point, Vector2 halfSize)
+        {
+            var occupied = new List<Rect>();
+            foreach (SpriteRenderer sprite in FindObjectsByType<SpriteRenderer>(FindObjectsSortMode.None))
+            {
+                if (!sprite.enabled || sprite.sprite == null) continue;
+                if (sprite.GetComponentInParent<PlayerController>() == null
+                    && sprite.GetComponentInParent<NpcController>() == null
+                    && sprite.GetComponentInParent<MonsterFieldController>() == null
+                    && sprite.GetComponent<MainQuest09Interactable>() == null) continue;
+                Vector2 min = camera.WorldToScreenPoint(sprite.bounds.min), max = camera.WorldToScreenPoint(sprite.bounds.max);
+                occupied.Add(Rect.MinMaxRect(min.x - 8, min.y - 8, max.x + 8, max.y + 24));
+            }
+            Vector2 best = point; float bestArea = float.MaxValue;
+            foreach (Vector2 offset in new[] { new Vector2(0, -94), new Vector2(-halfSize.x - 72, -94),
+                new Vector2(halfSize.x + 72, -94), new Vector2(0, 132), new Vector2(-halfSize.x - 72, 100),
+                new Vector2(halfSize.x + 72, 100), new Vector2(-halfSize.x - 72, 0), new Vector2(halfSize.x + 72, 0) })
+            {
+                Vector2 candidate = point + offset;
+                candidate.x = Mathf.Clamp(candidate.x, halfSize.x, Screen.width - halfSize.x);
+                candidate.y = Mathf.Clamp(candidate.y, halfSize.y, Screen.height - halfSize.y);
+                candidate = AvoidExperienceHud(candidate, halfSize);
+                Rect area = new Rect(candidate - halfSize, halfSize * 2); float overlap = 0;
+                foreach (Rect actor in occupied)
+                    overlap += Mathf.Max(0, Mathf.Min(area.xMax, actor.xMax) - Mathf.Max(area.xMin, actor.xMin))
+                        * Mathf.Max(0, Mathf.Min(area.yMax, actor.yMax) - Mathf.Max(area.yMin, actor.yMin));
+                if (overlap >= bestArea) continue;
+                bestArea = overlap; best = candidate;
+                if (overlap == 0) break;
+            }
+            return best;
         }
 
         private Vector2 AvoidExperienceHud(Vector2 position, Vector2 halfSize)

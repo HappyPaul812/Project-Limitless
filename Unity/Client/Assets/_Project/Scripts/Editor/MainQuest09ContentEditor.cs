@@ -22,12 +22,12 @@ namespace ProjectLimitless.Editor
             if (quest == null) { quest = ScriptableObject.CreateInstance<QuestDefinition>(); AssetDatabase.CreateAsset(quest, path); }
             quest.ConfigureForAudit(MainQuest09FieldFlow.QuestId, "침묵 속의 재회", QuestType.Main, new[]
             {
-                Step("follow_blue_trace", "푸른 빛이 사라진 방향을 따라가세요.", MainQuest09FieldFlow.BlueTraceId),
-                Step("inspect_paul_tracks", "숲길에 남은 바퀴 자국을 조사하세요.", MainQuest09FieldFlow.TracksId),
-                Step("reunite_with_paul", "앞쪽에서 들려오는 목소리를 확인하세요.", CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc),
-                Step("exchange_information", "폴과 서로 확인한 정보를 정리하세요.", CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc),
-                Step("inspect_structural_trace", "폴이 발견한 비정상적인 구조물을 조사하세요.", MainQuest09FieldFlow.StructureId),
-                Step("decide_to_continue_together", "폴과 다음 조사에 대해 이야기하세요.", CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc)
+                Step("follow_blue_trace", Main09QuestGuidance.Instruction(0), MainQuest09FieldFlow.BlueTraceId),
+                Step("inspect_paul_tracks", Main09QuestGuidance.Instruction(1), MainQuest09FieldFlow.TracksId),
+                Step("reunite_with_paul", Main09QuestGuidance.Instruction(2), CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc),
+                Step("exchange_information", Main09QuestGuidance.Instruction(3), CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc),
+                Step("inspect_structural_trace", Main09QuestGuidance.Instruction(4), MainQuest09FieldFlow.StructureId),
+                Step("decide_to_continue_together", Main09QuestGuidance.Instruction(5), CompanionRosterService.PaulId, QuestObjectiveType.TalkToNpc)
             }, new RewardBundle { Experience = 35, Currency = 35, Items = System.Array.Empty<ItemReward>() },
                 new[] { MainQuest08FieldFlow.QuestId });
             quest.ConfigureDescription("푸른 빛의 흔적을 따라 폴과 재회하고, 각자 확인한 사실을 모아 숲 안쪽의 가공된 석재 흔적을 조사한다.");
