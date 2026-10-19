@@ -1,5 +1,14 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Field09 v2 실제 8 PNG 수정 ZIP 납품 (최신)
+
+- **Issue #29** 확인 후 최신 공식 `main 12c69c72`의 `Resources/Main18/Environment`에서 **원본 공식 PNG8 바이너리 직접 취득·RGBA 디코드**하여 수정 PNG8 실제 제작. v1 단순 재포장 아님. 공식10 PNG·meta·GUID/원본 Unity 변경0.
+- `Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v2.zip` **2,659,837 bytes**, `SHA256 30f102c223aa127a7b6a290ef9fa503354cb9e0104faac03e6c395c2b247b8b8`, **Git blob** `380cc2c0f588f0a6d562e8250cfe223bf229cd9c`. ZIP 납품 commit `4babb98b1c90bbd001dda1cff4be46097d02cfc7`. 업로드 이후 GitHub size/sha 재조회 일치.
+- 실제 수정: Ground2 **135085 / 139085px**, 외곽88px 질감 블렌딩·상하좌우 RGBA 반복 mismatch0. Guide6 **3120 / 2457 / 3035 / 2258 / 2297 / 2905px** 원본 공식 안내선 근처 밝은 무채색 경계픽셀 국소 제거. 모든 수정 PNG8 RGBA512x512 재Decode/PixelRoundtrip PASS, 원본PNG CRC PASS. ZIP `Fixed_Candidates/PNG8 + Preview/Before_After_8.png + Manifest + Changed_Pixels.csv + VisualFail_Cases.csv + README + QA` 총14 entries 표준 STORED 작성. **GitHub Connector ZIP readback이 크기 제한으로 빈 값을 반환하여 Python `zipfile.testzip()` 독립 검증은 아직 없음**; Codex 최초 게이트로 지정.
+- **중요 구분:** `ART_V2_8PNG_DELIVERED / GITHUB_BLOB_VERIFIED / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / ZIP_INDEPENDENT_TEST_PENDING / UNITY_VISUAL_QA_PENDING / OFFICIAL_UNITY_NOT_APPLIED`. 이전 실제 화면 반복회색띠6·가이드잔여6종 **Runtime에서 해결됐다는 주장 금지**. 같은 카메라 v1 FAIL→v2 Delta QA로 0FAIL 입증 후 대표 미술 승인·별도 공식 Unity 적용.
+- [v2 실제 아트 PNG8 납품·해시·픽셀수·Codex 검수 게이트](../../Field09_ObsidianScar_Minimal_Fix_v2_Real_PNG_Delivery_20261020.md), 문서 commit `5b84285d3ef462cab1e7a4fc4a99360d02239d6e`. v1 손상·재포장 및 v1 Unity Visual FAIL 기록 보존; main 직접 병합/Push 없음.
+
+
 ## 2026-10-19 v3 독사·Wolf PNG2 실제 파일 납품, Field09 소스 접근 보류 (최신)
 
 - 독사 `VenomSnake_KeyArt_v3.png` 1254×1254 RGBA / SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0`; 늑대 `Wolf_KeyArt_v3.png` 952×1306 RGBA / SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`. 두 개 모두 현재 세션에서 **실제 별도 PNG 파일로 생성**하고 디코드/투명도/해시 확인; GitHub 바이너리 및 대표 F: 디스크 자동 저장0. 미술 승인, 공식 몬스터5 원본 PNG 동배율 비교, Unity 적용 미완료.
