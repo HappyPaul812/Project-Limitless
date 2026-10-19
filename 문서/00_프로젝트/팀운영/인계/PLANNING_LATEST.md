@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 리뉴얼 병렬 작업 분배 (Field06 v1.1·Field07 v1)
+
+바울 대표 Field06 v1 **미술 방향 승인**, 기술 수정4건 별도. **리뉴얼 아트 담당**은 `docs/planning/문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md`의 기술4건 중 실제 PNG·Alpha·Props foot·Road Upper/Lower 자산 네이밍·매핑의 미술 수정(v1.1 ZIP, 기존 v1 원본 byte 보존)을 담당; **Codex**는 Scene/Importer/Runtime Grass49 비활성화 원인·Main15/접근성 delta Unity 검증 담당. Codex에게 새 아트 제작을 맡기지 않음. 기존 717 PASS 재검사 금지. Field06 선택 Runtime6/Decal2 미배치 지속. 로컬 original apply/main merge은 별도 조건/승인.
+
+**신규 동시 발주:** `Field_07_AshenReach` — Chapter2 Main16 「재 속의 형상」 리뉴얼 환경 v1. 기획 계약 `문서/00_프로젝트/Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md` (`docs/planning`, 커밋 `22682e449ca1ea8cb6032ebddc1a140044598aa9`). Field06 동서 탄 흔적→Field07 바람 없는 재·열기·고사목→Field08 붉은 균열의 전환. Main16 12단계, 움직이는 재 Runtime7, 세린(4,-2), 불씨망령 Story 전투, 여러 조사점/협곡·Save·휠체어 보호. Field06 v1.1 아트 최소 수정과 동시에 Field07 소스 감사·제작 가능, v1 ZIP 납품 후 별도 사용자 미술 승인/코덱스 Unity 검증. Chapter3 신규 아트는 별도 `docs/art-new` 전담.
+
+최신 Main09는 후보27 청취 승인·원본디스크 정식 연결에 delta261PASS, GitHub remote feature/PR/main 아직 무병합. 5시간 Codex 8% 잔여로 새 대규모 QA/원본 Editor 조작 금지. 문서만 직접 GitHub 반영했고 타 담당 세션에 자동 전달한 것은 아님.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Main09 원본 디스크 적용 완료 / Field06 v1 미술 방향 승인·기술 보완 4건
 
 바울 대표 Codex 신규 캡처: Main09 승인 27개 기존 WAV 보존/신규 음성 폴더 Catalog 정식 연결, `main09_paul_002` 첫 재회 인사 순서 보존, 기존 격리550 PASS 재사용 및 **delta261 PASS/0FAIL**, 원본 사용자 파일4,178/UserData23 예상외 변경0. Codex `codex/main09-dialogue-voice-fix-20261019` 기능 커밋 `424b1912221d1555fef14d46c459fa174ac07a2` 보고. **MAIN09_ORIGINAL_DISK_APPLIED / USER_27_LISTENING_APPROVED / MAIN_GITHUB_MERGE_PENDING / LIVE_EDITOR_PLAY_NOT_VERIFIED.** 기존 과거 “원본 적용 대기” 기록은 역사기록.
