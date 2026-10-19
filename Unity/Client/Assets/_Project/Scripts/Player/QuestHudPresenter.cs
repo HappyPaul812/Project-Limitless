@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProjectLimitless.Core;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -102,7 +103,9 @@ namespace ProjectLimitless.Player
                     if (tracked?.Definition.IsItemDelivery == true) ShowToast(QuestService.BuildItemProgress(tracked));
                     QuestRuntimeState changed = current.FirstOrDefault(x => knownObjectives.TryGetValue(x.Definition.QuestId, out int index)
                         && index != x.CurrentObjectiveIndex);
-                    if (changed?.CurrentObjective != null) ShowToast(changed.Definition.IsItemDelivery ? QuestService.BuildItemProgress(changed) : $"[목표 갱신]\n{changed.CurrentObjective.Description}");
+                    if (Main09QuestGuidance.Applies(changed))
+                        ShowToast($"[목표 {changed.CurrentObjectiveIndex + 1}/6] {Main09QuestGuidance.Title(changed.CurrentObjectiveIndex)}\n흰 바닥 링으로 이동 · E/F · 게임패드 A");
+                    else if (changed?.CurrentObjective != null) ShowToast(changed.Definition.IsItemDelivery ? QuestService.BuildItemProgress(changed) : $"[목표 갱신]\n{changed.CurrentObjective.Description}");
                 }
             }
 

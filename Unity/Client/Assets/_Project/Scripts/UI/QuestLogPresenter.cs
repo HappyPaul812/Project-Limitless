@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ProjectLimitless.Core;
 using ProjectLimitless.Player;
+using ProjectLimitless.World;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -285,6 +286,13 @@ namespace ProjectLimitless.UI
         private static string BuildDetails(QuestRuntimeState state)
         {
             QuestDefinition definition = state.Definition;
+            // Main09는 첫 탐색 안내이므로 행동과 조작을 먼저, 두 가지 보상까지 좁은 화면 안에 표시합니다.
+            if (Main09QuestGuidance.Applies(state))
+                return $"{definition.DisplayName}\n[메인 퀘스트 · 진행 단계 {state.CurrentObjectiveIndex + 1}/6]\n\n현재 목표\n"
+                    + Main09QuestGuidance.Instruction(state.CurrentObjectiveIndex)
+                    + "\n\n흰 바닥 링이 실제 조사·대화 위치입니다.\n"
+                    + (IsTracked(state) ? "◆ 현재 위치 안내 중" : "[T / 게임패드 Y] 이 퀘스트 추적")
+                    + "\n\n보상\n" + BuildReward(definition.Reward);
             var text = new StringBuilder();
             text.AppendLine(definition.DisplayName).AppendLine();
             text.AppendLine(definition.QuestType == QuestType.Main ? "[메인 퀘스트]" : "[서브 퀘스트]").AppendLine();

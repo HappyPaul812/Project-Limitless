@@ -65,7 +65,7 @@ namespace ProjectLimitless.World
         {
             var site = new GameObject(id); site.transform.SetParent(transform); site.transform.position = position;
             var interactable = site.AddComponent<MainQuest09Interactable>(); interactable.TargetId = id; interactable.Label = label;
-            QuestNavigationTarget.Attach(site, id, label, new Vector3(0,1.45f,0));
+            QuestNavigationTarget.Attach(site, id, label, Vector3.zero);
             return site;
         }
 
@@ -95,7 +95,7 @@ namespace ProjectLimitless.World
         public string Label;
         private InputAction interact;
         private Transform player;
-        private GameObject marker;
+        private GameObject floorMarker;
         private static int completedFrame = -1;
         private bool IsCurrent => QuestService.ActiveMainQuest?.Definition.QuestId == MainQuest09FieldFlow.QuestId
             && QuestService.ActiveMainQuest.CurrentObjective?.TargetId == TargetId;
@@ -105,20 +105,58 @@ namespace ProjectLimitless.World
             interact.AddBinding("<Keyboard>/e"); interact.AddBinding("<Keyboard>/f"); interact.AddBinding("<Gamepad>/buttonSouth");
             interact.performed += _ => TryInteract();
         }
-        private void Start() => marker = CreateMarker();
+        private void Start()
+        {
+            // 중복된 큰 머리 위 패널 대신 정확한 조사 중심에 점멸 없는 흑백 바닥 링을 표시합니다.
+            floorMarker = new GameObject("Main09GroundMarker"); floorMarker.transform.SetParent(transform, false);
+            DrawRing(Color.black, .11f, 5); DrawRing(Color.white, .045f, 6);
+            var badge = new GameObject("GroundAction", typeof(Canvas)); badge.transform.SetParent(floorMarker.transform, false);
+            badge.transform.localPosition = Vector3.down * .83f; badge.transform.localScale = Vector3.one * .01f;
+            badge.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace; badge.GetComponent<Canvas>().sortingOrder = 7;
+            badge.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 34);
+            var label = new GameObject("Text", typeof(Text), typeof(Outline)).GetComponent<Text>(); label.transform.SetParent(badge.transform, false);
+            label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); label.fontSize = 28; label.alignment = TextAnchor.MiddleCenter;
+            label.color = Color.white; label.text = TargetId == CompanionRosterService.PaulId ? "대화" : "조사"; label.raycastTarget = false;
+            label.GetComponent<Outline>().effectColor = Color.black; label.GetComponent<Outline>().effectDistance = new Vector2(2,-2);
+            label.rectTransform.anchorMin = Vector2.zero; label.rectTransform.anchorMax = Vector2.one; label.rectTransform.offsetMin = label.rectTransform.offsetMax = Vector2.zero;
+        }
+
+        private void DrawRing(Color color, float width, int order)
+        {
+            var line = new GameObject("GroundRing").AddComponent<LineRenderer>();
+            line.transform.SetParent(floorMarker.transform, false); line.useWorldSpace = true;
+            line.loop = true; line.positionCount = 32; line.widthMultiplier = width;
+            line.startColor = line.endColor = color; line.sortingOrder = order;
+            var material = new Material(Shader.Find("Sprites/Default")); line.sharedMaterial = material;
+            line.gameObject.AddComponent<MainQuest09MarkerMaterial>().OwnedMaterial = material;
+            for (int i = 0; i < 32; i++)
+            {
+                float angle = i * Mathf.PI * 2 / 32;
+                line.SetPosition(i, transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * .65f);
+            }
+        }
         private void Update()
         {
-            if (marker != null) marker.SetActive(IsCurrent && !WorldModalState.IsOpen);
+            if (floorMarker != null) floorMarker.SetActive(IsCurrent && !WorldModalState.IsOpen);
         }
         private void OnEnable() => interact.Enable();
         private void OnDisable() => interact.Disable();
         private void OnDestroy() => interact.Dispose();
 
+        /// <summary>현재 Main09 목표 반경 안에서는 일반 NPC 대신 표시된 조사 대상이 같은 버튼을 받습니다.</summary>
+        public static MainQuest09Interactable FindCurrentInRange(Transform player)
+        {
+            if (player == null || QuestService.ActiveMainQuest?.Definition.QuestId != MainQuest09FieldFlow.QuestId) return null;
+            return FindObjectsByType<MainQuest09Interactable>(FindObjectsSortMode.None)
+                .FirstOrDefault(x => x.IsCurrent && Vector2.Distance(player.position, x.transform.position) <= Main09QuestGuidance.InteractionRadius);
+        }
+
         public bool TryInteract()
         {
-            if (!IsCurrent || WorldModalState.IsOpen || completedFrame == Time.frameCount) return false;
+            if (!IsCurrent || WorldModalState.IsOpen || completedFrame == Time.frameCount
+                || DialoguePresenter.Instance != null && !DialoguePresenter.Instance.CanBeginInteractionThisFrame) return false;
             if (player == null) player = FindAnyObjectByType<PlayerController>()?.transform;
-            if (player == null || Vector2.Distance(player.position, transform.position) > 1.6f) return false;
+            if (player == null || Vector2.Distance(player.position, transform.position) > Main09QuestGuidance.InteractionRadius) return false;
             int step = QuestService.ActiveMainQuest.CurrentObjectiveIndex;
             DialoguePresenter.Instance.ShowSequence(MainQuest09Dialogue.Lines(step), () => Complete(step));
             DialoguePresenter.Instance.TrackDistance(player, transform, 3f);
@@ -136,21 +174,6 @@ namespace ProjectLimitless.World
             if (GameSaveService.CurrentSlotIndex > 0) GameSaveService.SaveCurrentSession();
         }
 
-        private GameObject CreateMarker()
-        {
-            var root = new GameObject("QuestMarker", typeof(Canvas), typeof(CanvasScaler));
-            root.transform.SetParent(transform, false); root.transform.localPosition = new Vector3(0,1.5f,0);
-            root.transform.localScale = Vector3.one * .01f;
-            var canvas = root.GetComponent<Canvas>(); canvas.renderMode = RenderMode.WorldSpace; canvas.sortingOrder = 22;
-            root.GetComponent<RectTransform>().sizeDelta = new Vector2(360,70);
-            var textObject = new GameObject("Text", typeof(Text)); textObject.transform.SetParent(root.transform,false);
-            var label = textObject.GetComponent<Text>(); label.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            label.fontSize = 23; label.alignment = TextAnchor.MiddleCenter; label.color = new Color(.4f,.82f,1f);
-            label.text = Label + "\n[E/F · 게임패드 A] 확인";
-            label.rectTransform.anchorMin = Vector2.zero; label.rectTransform.anchorMax = Vector2.one;
-            label.rectTransform.offsetMin = label.rectTransform.offsetMax = Vector2.zero;
-            return root;
-        }
     }
 
     /// <summary>확인한 사실과 추측을 구분하고 폴의 독립적인 조사 판단으로 합류를 연결합니다.</summary>

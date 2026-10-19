@@ -100,6 +100,10 @@ namespace ProjectLimitless.NPC
             // 대화가 끝난 프레임의 남은 입력은 다음 NPC 대화를 열 수 없습니다.
             if (DialoguePresenter.Instance != null && !DialoguePresenter.Instance.CanBeginInteractionThisFrame) return;
             if (WorldModalState.IsOpen) return;
+            // Main09 조사점과 여관 NPC의 기존 위치가 가까우므로 안내한 현재 목표가 버튼을 먼저 받습니다.
+            // 반경 밖이나 다른 퀘스트에서는 기존 NPC 우선순위가 그대로 유지됩니다.
+            var main09 = MainQuest09Interactable.FindCurrentInRange(transform);
+            if (main09 != null) { main09.TryInteract(); return; }
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();
             if (currentTarget != null)
@@ -124,7 +128,7 @@ namespace ProjectLimitless.NPC
         /// <summary>현재 위치에서 가장 가까운 NPC를 찾아 현재 대상으로 갱신합니다.</summary>
         private void RefreshCurrentTarget()
         {
-            SetCurrentTarget(FindNearestNpc());
+            SetCurrentTarget(MainQuest09Interactable.FindCurrentInRange(transform) != null ? null : FindNearestNpc());
         }
 
         /// <summary>대상이 바뀔 때 이전 안내는 숨기고 새 대상의 안내만 표시합니다.</summary>

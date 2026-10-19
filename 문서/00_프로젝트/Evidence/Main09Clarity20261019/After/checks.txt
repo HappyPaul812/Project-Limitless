@@ -1,0 +1,348 @@
+PASS|Scene.Bootstrap
+PASS|Scene.Field_03
+PASS|Main09.Current
+PASS|Capture.Resolution.Step1_world_1280.Actual1280x720
+PASS|Q.LogOpen.Step11280
+PASS|Capture.Resolution.Step1_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Step11280
+PASS|Capture.Resolution.Step1_world_960.Actual960x720
+PASS|Q.LogOpen.Step1960
+PASS|Capture.Resolution.Step1_log_960.Actual960x720
+PASS|Esc.LogClosed.Step1960
+PASS|Capture.Resolution.Step1_world_1680.Actual1680x720
+PASS|Q.LogOpen.Step11680
+PASS|Capture.Resolution.Step1_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Step11680
+PASS|Distance.PlayerXYNotCamera
+PASS|Arrow.OffscreenVisible
+PASS|Scene.Field_03
+PASS|Step.Sequential.0.PadFalse
+PASS|Anchor.ExactInteractionCenter.0
+PASS|Floor.Visible.0
+PASS|HUD.StepControls.0
+PASS|Log.ObjectiveSynced.0
+PASS|Modal.BlocksInteraction.0
+PASS|Modal.NoProgress.0
+PASS|Route.Exists.(2.40, -3.40).PadFalse
+PASS|Route.PhysicsInput.(2.25, 1.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, 1.00).PadFalse
+PASS|Route.PhysicsInput.(2.25, 0.75).PadFalse
+PASS|Route.PhysicsInput.(2.25, 0.50).PadFalse
+PASS|Route.PhysicsInput.(2.25, 0.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, 0.00).PadFalse
+PASS|Route.PhysicsInput.(2.25, -0.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, -0.50).PadFalse
+PASS|Route.PhysicsInput.(2.25, -0.75).PadFalse
+PASS|Route.PhysicsInput.(2.25, -1.00).PadFalse
+PASS|Route.PhysicsInput.(2.25, -1.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, -1.50).PadFalse
+PASS|Route.PhysicsInput.(2.25, -1.75).PadFalse
+PASS|Route.PhysicsInput.(2.00, -1.75).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.00).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.25).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.50).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.75).PadFalse
+PASS|Route.PhysicsInput.(2.00, -3.00).PadFalse
+PASS|Route.PhysicsInput.(2.00, -3.25).PadFalse
+PASS|Approach.WithinOriginalRadius.0
+PASS|Approach.ActionHint.0
+PASS|Capture.Resolution.Stage1_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage11280
+PASS|Capture.Resolution.Stage1_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage11280
+PASS|Capture.Resolution.Stage1_world_960.Actual960x720
+PASS|Q.LogOpen.Stage1960
+PASS|Capture.Resolution.Stage1_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage1960
+PASS|Capture.Resolution.Stage1_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage11680
+PASS|Capture.Resolution.Stage1_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage11680
+PASS|Input.ActualInteract.0.PadFalse
+PASS|Cancel.NoProgress
+PASS|Cancel.Restart
+PASS|DistanceCancel.NoProgress
+PASS|Dialogue.Completed.0.PadFalse
+PASS|Step.Sequential.1.PadFalse
+PASS|Anchor.ExactInteractionCenter.1
+PASS|Floor.Visible.1
+PASS|HUD.StepControls.1
+PASS|Log.ObjectiveSynced.1
+PASS|Modal.BlocksInteraction.1
+PASS|Modal.NoProgress.1
+PASS|Route.Exists.(3.50, -2.40).PadFalse
+PASS|Approach.WithinOriginalRadius.1
+PASS|Approach.ActionHint.1
+PASS|Capture.Resolution.Stage2_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage21280
+PASS|Capture.Resolution.Stage2_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage21280
+PASS|Capture.Resolution.Stage2_world_960.Actual960x720
+PASS|Q.LogOpen.Stage2960
+PASS|Capture.Resolution.Stage2_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage2960
+PASS|Capture.Resolution.Stage2_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage21680
+PASS|Capture.Resolution.Stage2_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage21680
+PASS|Input.ActualInteract.1.PadFalse
+PASS|Dialogue.Completed.1.PadFalse
+PASS|Step.Sequential.2.PadFalse
+PASS|Anchor.ExactInteractionCenter.2
+PASS|Floor.Visible.2
+PASS|HUD.StepControls.2
+PASS|Log.ObjectiveSynced.2
+PASS|Modal.BlocksInteraction.2
+PASS|Modal.NoProgress.2
+PASS|Route.Exists.(1.80, -0.70).PadFalse
+PASS|Route.PhysicsInput.(2.50, -3.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, -3.25).PadFalse
+PASS|Route.PhysicsInput.(2.25, -3.00).PadFalse
+PASS|Route.PhysicsInput.(2.00, -3.00).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.75).PadFalse
+PASS|Route.PhysicsInput.(2.00, -2.50).PadFalse
+PASS|Approach.WithinOriginalRadius.2
+PASS|Approach.ActionHint.2
+PASS|Capture.Resolution.Stage3_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage31280
+PASS|Capture.Resolution.Stage3_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage31280
+PASS|Capture.Resolution.Stage3_world_960.Actual960x720
+PASS|Q.LogOpen.Stage3960
+PASS|Capture.Resolution.Stage3_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage3960
+PASS|Capture.Resolution.Stage3_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage31680
+PASS|Capture.Resolution.Stage3_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage31680
+PASS|Input.ActualInteract.2.PadFalse
+PASS|Dialogue.Completed.2.PadFalse
+PASS|Save.Step2.PadFalse
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Step2.PadFalse
+PASS|Step.Sequential.3.PadFalse
+PASS|Anchor.ExactInteractionCenter.3
+PASS|Floor.Visible.3
+PASS|HUD.StepControls.3
+PASS|Paul.AgainExplicit
+PASS|Log.ObjectiveSynced.3
+PASS|Modal.BlocksInteraction.3
+PASS|Modal.NoProgress.3
+PASS|Route.Exists.(1.80, -0.70).PadFalse
+PASS|Approach.WithinOriginalRadius.3
+PASS|Approach.ActionHint.3
+PASS|Capture.Resolution.Stage4_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage41280
+PASS|Capture.Resolution.Stage4_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage41280
+PASS|Capture.Resolution.Stage4_world_960.Actual960x720
+PASS|Q.LogOpen.Stage4960
+PASS|Capture.Resolution.Stage4_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage4960
+PASS|Capture.Resolution.Stage4_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage41680
+PASS|Capture.Resolution.Stage4_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage41680
+PASS|Input.ActualInteract.3.PadFalse
+PASS|Dialogue.Completed.3.PadFalse
+PASS|Step.Sequential.4.PadFalse
+PASS|Anchor.ExactInteractionCenter.4
+PASS|Floor.Visible.4
+PASS|HUD.StepControls.4
+PASS|Log.ObjectiveSynced.4
+PASS|Modal.BlocksInteraction.4
+PASS|Modal.NoProgress.4
+PASS|Route.Exists.(-0.30, -2.60).PadFalse
+PASS|Route.PhysicsInput.(1.75, -2.50).PadFalse
+PASS|Route.PhysicsInput.(1.50, -2.50).PadFalse
+PASS|Route.PhysicsInput.(1.25, -2.50).PadFalse
+PASS|Route.PhysicsInput.(1.00, -2.50).PadFalse
+PASS|Route.PhysicsInput.(0.75, -2.50).PadFalse
+PASS|Route.PhysicsInput.(0.50, -2.50).PadFalse
+PASS|Approach.WithinOriginalRadius.4
+PASS|Approach.ActionHint.4
+PASS|Capture.Resolution.Stage5_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage51280
+PASS|Capture.Resolution.Stage5_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage51280
+PASS|Capture.Resolution.Stage5_world_960.Actual960x720
+PASS|Q.LogOpen.Stage5960
+PASS|Capture.Resolution.Stage5_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage5960
+PASS|Capture.Resolution.Stage5_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage51680
+PASS|Capture.Resolution.Stage5_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage51680
+PASS|Input.ActualInteract.4.PadFalse
+PASS|Dialogue.Completed.4.PadFalse
+PASS|Save.Step4.PadFalse
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Step4.PadFalse
+PASS|Step.Sequential.5.PadFalse
+PASS|Anchor.ExactInteractionCenter.5
+PASS|Floor.Visible.5
+PASS|HUD.StepControls.5
+PASS|Log.ObjectiveSynced.5
+PASS|Modal.BlocksInteraction.5
+PASS|Modal.NoProgress.5
+PASS|Route.Exists.(1.80, -0.70).PadFalse
+PASS|Route.PhysicsInput.(0.50, -2.25).PadFalse
+PASS|Route.PhysicsInput.(0.50, -2.00).PadFalse
+PASS|Route.PhysicsInput.(0.50, -1.75).PadFalse
+PASS|Route.PhysicsInput.(0.75, -1.75).PadFalse
+PASS|Approach.WithinOriginalRadius.5
+PASS|Approach.ActionHint.5
+PASS|Capture.Resolution.Stage6_world_1280.Actual1280x720
+PASS|Q.LogOpen.Stage61280
+PASS|Capture.Resolution.Stage6_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Stage61280
+PASS|Capture.Resolution.Stage6_world_960.Actual960x720
+PASS|Q.LogOpen.Stage6960
+PASS|Capture.Resolution.Stage6_log_960.Actual960x720
+PASS|Esc.LogClosed.Stage6960
+PASS|Capture.Resolution.Stage6_world_1680.Actual1680x720
+PASS|Q.LogOpen.Stage61680
+PASS|Capture.Resolution.Stage6_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Stage61680
+PASS|Input.ActualInteract.5.PadFalse
+PASS|Dialogue.Completed.5.PadFalse
+PASS|Quest.Complete.PadFalse
+PASS|Reward.Exact35Once.PadFalse
+PASS|Paul.Joined.PadFalse
+PASS|Reward.NoDuplicate.PadFalse
+PASS|Save.Completed.PadFalse
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Completed.PadFalse
+PASS|Scene.Field_03
+PASS|Step.Sequential.0.PadTrue
+PASS|Anchor.ExactInteractionCenter.0
+PASS|Floor.Visible.0
+PASS|HUD.StepControls.0
+PASS|Log.ObjectiveSynced.0
+PASS|Modal.BlocksInteraction.0
+PASS|Modal.NoProgress.0
+PASS|Route.Exists.(2.40, -3.40).PadTrue
+PASS|Route.PhysicsInput.(2.25, 1.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, 1.00).PadTrue
+PASS|Route.PhysicsInput.(2.25, 0.75).PadTrue
+PASS|Route.PhysicsInput.(2.25, 0.50).PadTrue
+PASS|Route.PhysicsInput.(2.25, 0.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, 0.00).PadTrue
+PASS|Route.PhysicsInput.(2.25, -0.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, -0.50).PadTrue
+PASS|Route.PhysicsInput.(2.25, -0.75).PadTrue
+PASS|Route.PhysicsInput.(2.25, -1.00).PadTrue
+PASS|Route.PhysicsInput.(2.25, -1.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, -1.50).PadTrue
+PASS|Route.PhysicsInput.(2.25, -1.75).PadTrue
+PASS|Route.PhysicsInput.(2.00, -1.75).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.00).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.25).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.50).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.75).PadTrue
+PASS|Route.PhysicsInput.(2.00, -3.00).PadTrue
+PASS|Route.PhysicsInput.(2.00, -3.25).PadTrue
+PASS|Approach.WithinOriginalRadius.0
+PASS|Approach.ActionHint.0
+PASS|Capture.Resolution.Wheelchair_Stage1.Actual1280x720
+PASS|Input.ActualInteract.0.PadTrue
+PASS|Cancel.NoProgress
+PASS|Cancel.Restart
+PASS|DistanceCancel.NoProgress
+PASS|Dialogue.Completed.0.PadTrue
+PASS|Step.Sequential.1.PadTrue
+PASS|Anchor.ExactInteractionCenter.1
+PASS|Floor.Visible.1
+PASS|HUD.StepControls.1
+PASS|Log.ObjectiveSynced.1
+PASS|Modal.BlocksInteraction.1
+PASS|Modal.NoProgress.1
+PASS|Route.Exists.(3.50, -2.40).PadTrue
+PASS|Approach.WithinOriginalRadius.1
+PASS|Approach.ActionHint.1
+PASS|Capture.Resolution.Wheelchair_Stage2.Actual1280x720
+PASS|Input.ActualInteract.1.PadTrue
+PASS|Dialogue.Completed.1.PadTrue
+PASS|Step.Sequential.2.PadTrue
+PASS|Anchor.ExactInteractionCenter.2
+PASS|Floor.Visible.2
+PASS|HUD.StepControls.2
+PASS|Log.ObjectiveSynced.2
+PASS|Modal.BlocksInteraction.2
+PASS|Modal.NoProgress.2
+PASS|Route.Exists.(1.80, -0.70).PadTrue
+PASS|Route.PhysicsInput.(2.50, -3.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, -3.25).PadTrue
+PASS|Route.PhysicsInput.(2.25, -3.00).PadTrue
+PASS|Route.PhysicsInput.(2.00, -3.00).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.75).PadTrue
+PASS|Route.PhysicsInput.(2.00, -2.50).PadTrue
+PASS|Approach.WithinOriginalRadius.2
+PASS|Approach.ActionHint.2
+PASS|Capture.Resolution.Wheelchair_Stage3.Actual1280x720
+PASS|Input.ActualInteract.2.PadTrue
+PASS|Dialogue.Completed.2.PadTrue
+PASS|Save.Step2.PadTrue
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Step2.PadTrue
+PASS|Step.Sequential.3.PadTrue
+PASS|Anchor.ExactInteractionCenter.3
+PASS|Floor.Visible.3
+PASS|HUD.StepControls.3
+PASS|Paul.AgainExplicit
+PASS|Log.ObjectiveSynced.3
+PASS|Modal.BlocksInteraction.3
+PASS|Modal.NoProgress.3
+PASS|Route.Exists.(1.80, -0.70).PadTrue
+PASS|Approach.WithinOriginalRadius.3
+PASS|Approach.ActionHint.3
+PASS|Capture.Resolution.Wheelchair_Stage4.Actual1280x720
+PASS|Input.ActualInteract.3.PadTrue
+PASS|Dialogue.Completed.3.PadTrue
+PASS|Step.Sequential.4.PadTrue
+PASS|Anchor.ExactInteractionCenter.4
+PASS|Floor.Visible.4
+PASS|HUD.StepControls.4
+PASS|Log.ObjectiveSynced.4
+PASS|Modal.BlocksInteraction.4
+PASS|Modal.NoProgress.4
+PASS|Route.Exists.(-0.30, -2.60).PadTrue
+PASS|Route.PhysicsInput.(1.75, -2.50).PadTrue
+PASS|Route.PhysicsInput.(1.50, -2.50).PadTrue
+PASS|Route.PhysicsInput.(1.25, -2.50).PadTrue
+PASS|Route.PhysicsInput.(1.00, -2.50).PadTrue
+PASS|Route.PhysicsInput.(0.75, -2.50).PadTrue
+PASS|Route.PhysicsInput.(0.50, -2.50).PadTrue
+PASS|Approach.WithinOriginalRadius.4
+PASS|Approach.ActionHint.4
+PASS|Capture.Resolution.Wheelchair_Stage5.Actual1280x720
+PASS|Input.ActualInteract.4.PadTrue
+PASS|Dialogue.Completed.4.PadTrue
+PASS|Save.Step4.PadTrue
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Step4.PadTrue
+PASS|Step.Sequential.5.PadTrue
+PASS|Anchor.ExactInteractionCenter.5
+PASS|Floor.Visible.5
+PASS|HUD.StepControls.5
+PASS|Log.ObjectiveSynced.5
+PASS|Modal.BlocksInteraction.5
+PASS|Modal.NoProgress.5
+PASS|Route.Exists.(1.80, -0.70).PadTrue
+PASS|Route.PhysicsInput.(0.50, -2.25).PadTrue
+PASS|Route.PhysicsInput.(0.50, -2.00).PadTrue
+PASS|Route.PhysicsInput.(0.50, -1.75).PadTrue
+PASS|Route.PhysicsInput.(0.75, -1.75).PadTrue
+PASS|Approach.WithinOriginalRadius.5
+PASS|Approach.ActionHint.5
+PASS|Capture.Resolution.Wheelchair_Stage6.Actual1280x720
+PASS|Input.ActualInteract.5.PadTrue
+PASS|Dialogue.Completed.5.PadTrue
+PASS|Quest.Complete.PadTrue
+PASS|Reward.Exact35Once.PadTrue
+PASS|Paul.Joined.PadTrue
+PASS|Reward.NoDuplicate.PadTrue
+PASS|Save.Completed.PadTrue
+PASS|Scene.Bootstrap
+PASS|Continue.Exact.Completed.PadTrue
+PASS|Console.NewErrors0

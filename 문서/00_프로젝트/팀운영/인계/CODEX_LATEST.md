@@ -1,3 +1,9 @@
+## 2026-10-19 Main09 퀘스트 안내 수정 — 427 PASS / 원본 미적용
+
+- `codex/main09-quest-clarity-20261019`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 6단계 행동/조작·바닥 링·화살표·플레이어XY거리·폴 재대화·로그/토스트 동기화. 여관NPC와 조사 입력 충돌을 현재 Main09/1.6반경 한정 우선처리로 해결했습니다.
+- 실제 키보드도보/게임패드휠체어 전체6단계348 + 최종UI/추적/전투Scene회귀79 PASS/0FAIL. 16:9/4:3/21:9 화면, 폴합류/보상/SaveContinue PASS. 대사·Scene·WAV·Collider 불변, 원본4844SHA/UserData23보호.
+- 기존Search/URP·Editor버전·물리OS입력은환경PARTIAL. [실제 QA/화면](Main09_Quest_Clarity_Unity_QA_20261019.md). main병합·원본적용0, 전용PR검토대기. 다음: 승인된Field05 B42는 기존결과 재사용통합(추가미술승인 불필요), local main문서충돌5개보존.
+
 ## 2026-10-19 재개 작업 완료 — Main09 PR21 / 승인 Field05 PR22 병합·원본 적용
 
 - 우선순위1 Main09: 실제 도보/키보드·휠체어/게임패드 6단계348 + 최종UI/추적/Scene회귀79 = **427PASS/0FAIL**. 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`, QA commit `27983bb3d5652dfd6fec0b837ad4a63e98fc5ed5`. [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) Push/검토대기. **Main09 main병합·원본디스크적용0**, UX개선화면 검토후 다음 반영 대상. 기존여관과조사입력충돌도 현재Main09/1.6반경한정 해결. 대사/좌표/Collider/승인음성 보존.
