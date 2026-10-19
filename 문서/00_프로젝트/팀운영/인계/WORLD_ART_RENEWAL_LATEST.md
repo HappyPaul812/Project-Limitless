@@ -1,5 +1,17 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field08 RedRift 기존 공식 아트 감사 — 새 PNG 제작 확정 0종
+
+- **사용자 최신 결정:** Field06 v1.1 및 Field07 v1의 **미술 승인 완료**. 이전 섹션의 이들 `USER_ART_REVIEW_PENDING`은 제작 당시 상태 이력. 다만 현재 `main`의 원본 Unity/Runtime 공식 적용 완료까지 포함하는 승인은 아니므로 별도 적용·검증 여부는 각각 최신 Codex 작업으로 확인.
+- 기준 `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`, GitHub `Field_08_RedRift.unity` blob `6100dde3685e26c85b06fd2d4f06995fb6d582ee` 원문 YAML 전체 직접 감사. 저장 GameObject **428 / SpriteRenderer375(표시7·비표시368) / MeshRenderer45(표시30·비표시15)**. 표시 중 **37 Renderer는 공식 Main17 환경 PNG와 연결**되어 있음.
+- 표시되는 7 SpriteRenderer: Obsidian `RockWest`/`RockNorth` 2, CanyonLip2, DeadShrub3. 표시되는 Mesh30: Ground1, DeepCrack1, Glow1, Ash24, Obsidian3. 기존 Grass/AshSoil315, 남북 Road30, BrokenTrack10, Tree5는 GameObject 비활성; AshCrack8 및 옛 Branch6/Track8은 Renderer.enabled=0. **비표시 임시 Sprite를 전부 신규 아트 작업으로 오인하지 않는다.**
+- 정본 원본 아트 `_Project/Art/Environment/Chapter2/RedRift/` **PNG9개 등록/7종 실제 적용/CrackedGround2종 의도적 미사용**. 원본 1254px, 기등록 meta/GUID·Materials `Ground/Fissure/Glow/Ash/Obsidian` 보호. 원본 ZIP SHA `a238bc2eca0450b95fb5a61cd8cc655018bff82e54096fa91cfb2f7f424e19fb`은 기존 공식 감사 보고 값. 로컬 ZIP 직접 열람하지 않음.
+- `Main17_Field08_Art_Applied.md`, `Main17_ArtAudio_QA.md` 등 기존 **270 고유 PASS/0FAIL**, DeepCrack 충돌과 북남 우회, 3해상도 HUD 포함 가독성·seam PASS를 재사용 **(새 QA로 재실행하지 않음)**. 원본 Material/Sprite 연결 현재 YAML은 직접 확인.
+- Field07 승인 v1은 **최신 main Field07 Scene blob이 과거 `2f267575bfbd1d7802b58c8653c2b33d7a84d6ac`와 동일**하여, 승인만으로 실제 렌더 적용 완료 단정 금지. 조건부 후보 1개: **Field07 서쪽(-8,0) ↔ Field08 동쪽(+7,0) 왕복 진입 색감/타일 경계**를 승인된 Field07이 실제 설치된 뒤 Codex가 동일 카메라로 재검토. 눈에 띄는 결함이 *입증되는 경우에만* 새 경계 Decal 또는 Material Tint를 사용자 별도 미술 범위 승인 뒤 검토. 현재 신규 PNG 정당화 증거0.
+- Field08 `Field08_WestToField09.asset` 전환 정의도 존재하므로 Main17 당시 서쪽 차단 설명으로 현행 연결을 임의 삭제/신설하면 안 됨. Quest/Player/세린/Collider/Spawn/Save/Official Art 보호.
+- **최종 상태:** `EXISTING_OFFICIAL_ART_AUDIT_COMPLETE / CONFIRMED_NEW_PNG_REQUIRED_0 / CONDITIONAL_VISUAL_BRIDGE_CHECK_PENDING / NO_NEW_ASSET_AUTHORIZED / UNITY_UNCHANGED`. 제작 PNG 0, ZIP 0, GitHub 문서+인계만 담당 `docs/art-renewal` 커밋. 최신 상세 [Field08 공식 아트 감사 정본](../../Field08_RedRift_ExistingOfficialArt_Audit_20261019.md), 최초 감사 커밋 `f3315356f9d8ba54e192fa8acdd4cdedc8d9d3d6`.
+- 다음: 바울 대표 감사 결론 승인 → 필요 시 Field07/08 동일 카메라 격리 연결 화면만 확인 → 실제 문제와 별도 범위 승인 전까지 **공식 PNG 재제작·덮어쓰기 및 Field08 신규 제작 금지**. 다음 Field09 오리지널화도 별도 사용자 기획 발주 후 진행.
+
 ## 2026-10-19 Field06 v1.1 기술 보완 및 Field07 v1 신규 아트 — 두 ZIP 납품
 
 **최신 정본 우선 (2026-10-19 오후 기준):** 기획 `docs/planning`의 `Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md`, `Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md`에 의해 **Field06 v1 미술 방향은 바울 대표 승인**, 단 **기술 수정/Unity 정식 적용/PR·main 병합은 미승인·미완료**. 기존 역사적 Field06 `USER_ART_REVIEW_PENDING`을 오늘 현재 상태로 오인하지 않을 것. Field04/Arbel/Field05는 승인 적용 정본 유지.
