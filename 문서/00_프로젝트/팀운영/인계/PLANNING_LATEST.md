@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 Main09 실사용 음성 6건 FAIL·폴 첫 인사 순서 수정 계약
+
+바울 대표 Unity 6.6 / Field03 직접 플레이에서 Main09 ‘침묵 속의 재회’의 6개 화면 음성을 제보함: `main09_miel_001` 무음, `main09_taeon_001` 문장 후반 누락, `main09_taeon_002` 앞 대사 재생, `main09_miel_002` 다른 두 발화 혼합, `main09_paul_001` 오발화, `main09_paul_002` 무음. **사용자 실플레이 기준 USER_RUNTIME_QA_FAIL**, Unity 음원 내용·PCM/재생 원인은 아직 미검증. GitHub main StoryVoiceCatalog에는 Main09 27개 ID가 등록되고 확인한 7개 GUID↔동명 wav.meta는 일치; 이것만으로 WAV 내부 발화·실제 런타임 정상 여부는 입증되지 않음.
+
+**서사 순서 원인 코드 확인:** Main09 `Lines(step1)`에서 폴이 보이기 전에 `paul_001` ‘그 길은 괜찮습니다!’를 먼저 말함; 실제 `paul.SetActive(index>=2)`이므로 `step2` 대면 첫 문장 `paul_002` ‘또 뵙네요’보다 앞서 들림. **대표 지적에 따른 순서 수정 계약**: step1에서 폴 음성을 없애고 step2 첫 대면은 ‘또 뵙네요’로 시작, `paul_001`은 step2 인사 이후 자연스러운 자리에서 정확히 한 번 재생. 6개 Quest 목표/EXP35/탈렌트35/폴 합류·원문·각 Voice ID·Save/기존 승인 TTS/Field05/Editor 보호.
+
+**새 정본:** `문서/00_프로젝트/Main09_Field03_DialogueVoice_Sequence_Bug_20261019.md` (`docs/planning`, commit `6b5c68cd1f039364d9425d70c4e9837a51558ae4`). Codex가 27개 ID→Catalog→WAV/meta→PCM 실제 발화 및 런타임 Stop/Next를 읽기 전용 감사하고 기존 음원 내 수정후보부터 확보; 엉뚱한 대사를 +1씩 기계 재연결하거나 전체 재TTS·API 호출 금지. 기존 Main08 007~011 복구 절차 참고. 이후 최소 대사 순서 수정 및 자막·음성 실Runtime/대표 청취 QA 후 별도 승인으로 병합. **기획 문서만 GitHub에 기록했으며 Unity 버그 자체는 미수정, user listening PASS 아님.** Main22 신규 개발과 TTS22건 작업에 묻히지 않게 우선 처리.
+
+---
+
 # PLANNING 인계 — 2026-10-19 사용자 로컬 문서5 충돌 해소 승인
 
 바울 대표 “충돌 해결하고 다음으로 가자.” / Github main `af21edbf5f0cdc0f241b09228ede960ab83e9b6c` (2026-10-19 확인). PR #18/#19 Main18, #22 Field05, #21 Main09, #23/#24 보고 **전부 main 병합**; Main09 9파일 + Field05 Scene1/신규32 + Main18 WAV10/meta10/Catalog **원본 디스크 적용**은 Codex 보고에 따라 완료. 본문 실제 Editor 자연 Import/OS 손플레이는 미검증으로 보존.
