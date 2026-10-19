@@ -1,0 +1,11 @@
+{
+  "existing_renderer_sprite_refs": 363,
+  "existing_road_transforms_position_only": 30,
+  "new_gameobjects": 12,
+  "new_serialized_objects": 36,
+  "old_serialized_objects_removed": 0,
+  "existing_fields_changed_only": "Environment SpriteRenderer.m_Sprite; Road30 Transform.m_LocalPosition; FieldEnvironment children",
+  "environment_renderers": 375,
+  "active_png": 14,
+  "optional_added": 0
+}

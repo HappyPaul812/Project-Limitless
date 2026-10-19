@@ -1,0 +1,29 @@
+{
+  "v2_zip_sha256": "3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3",
+  "crc": "PASS",
+  "png4_manifest": "PASS",
+  "active_png14": {
+    "Ground\\LL_C2_F05_DryLoam_A_128_v1.png": "988b7f0a78369c828d5ed11df89981df7f39ac498df069dbdb22d9b2608246fb",
+    "Ground\\LL_C2_F05_DryLoam_B_128_v1.png": "359df50c0530bcbd47e4edb0871f72751062e5aaa1ea7ff1898802d63164a22f",
+    "Ground\\LL_C2_F05_DryLoam_C_128_v1.png": "f1f1011e554bf2e182032d2ab6b209a06a0bc8d4ae1953423804d66082a22488",
+    "Props\\LL_C2_F05_Bush_Dry_128_v1.png": "f4436251ac584ce9e0d3cde1a3eed54262a15e2dcb93fce22af51036501e4d9d",
+    "Props\\LL_C2_F05_Bush_Olive_128_v1.png": "665d1fd550857e1abd7a03aedea8e7de9de31fa31e110cedbd06d8eacb252982",
+    "Props\\LL_C2_F05_Fence_128_v1.png": "f4edf20928ddd89cb8ef88a848e7423f8f4042e2ae6c39526258a0d5cc92025a",
+    "Props\\LL_C2_F05_RockNorth_85x54_v1.png": "eaa603f23dd9f51d44bd8a4a1f930f6dc2f91ba3e8b073b830704c9ae3743929",
+    "Props\\LL_C2_F05_RockWest_128_v1.png": "f2e7c50c672f6f477054dcbdf8fcc6a784418a7d108fc77805a647e77f97e0dd",
+    "Props\\LL_C2_F05_Tree_Big_255x256_v1.png": "95191189d458d97cd072dc14b2003033092a0e6049b20efa25b1de1236230755",
+    "Props\\LL_C2_F05_Tree_Medium_128x156_v1.png": "63c78fcd3bf73f39f01ddd6b729cc03f21180422651ea4985079b5cbca01a26a",
+    "Road\\LL_C2_F05_Road_EW_Lower_128_v2.png": "a07f9413f5aab227e0b4cf18c2bfb697d0f9db69a1eb77a35d4b2f74b6b655ed",
+    "Road\\LL_C2_F05_Road_EW_Upper_128_v2.png": "fff51feb564c54019bd25137d0ea2d254cf7742f29c608d9e5678b0cb54a6591",
+    "Road\\LL_C2_F05_Road_EW_WestEnd_Lower_128_v2.png": "f7d9379eb23461f2a6c105e5b5cadc3749c1cb862737286ed6c528ddd3f582f8",
+    "Road\\LL_C2_F05_Road_EW_WestEnd_Upper_128_v2.png": "c2251c1c54152526914ae35ac57c26444d5595e4e9b332257effb01c0d5bc435"
+  },
+  "seams_rgba_mismatch": {
+    "Upper_repeat": 0,
+    "Upper_west_end": 0,
+    "Lower_repeat": 0,
+    "Lower_west_end": 0,
+    "center": 0,
+    "WestEnd_center": 0
+  }
+}

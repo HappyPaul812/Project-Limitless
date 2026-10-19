@@ -1,4 +1,10 @@
-﻿## 2026-10-19 Main18 승인 세린10 worktree 통합 — Runtime PASS / 환경 PARTIAL
+## 2026-10-19 Field05 v2 Road4 / B42 최종 후보 — 기술 PASS / 미술 승인 대기
+
+- 전용 `codex/field05-eastwest-road42-v2-20261019`, 기능 `ebb363567b3932cce8af12e315dda03362c8fd19`. 새 v2 SHA/CRC/PNG4 Manifest·Ground3 Props7 원본SHA PASS. 환경375=315/42/18, PNG14, Road12추가, 선택7/새Portal0.
+- 실제 최종 Unity 기능416 PASS/0 FAIL, 저장Scene재로드84 PASS/0 FAIL, 16:9·4:3·21:9 3안 비교63장. 기존 Search/URP/Editor버전차이만 환경 PARTIAL. [검수자료](Field05_Road42_v2_Final_Unity_QA_20261019.md).
+- **원본 Field05 정식 적용·Push·PR·main 병합0. 새 v2 화면 미술 승인 필요.** 기존 Collider/좌표/Spawn/Save/Arbel·Field04 보호. 다음: 대표 갤러리 승인 후 통합.
+
+## 2026-10-19 Main18 승인 세린10 worktree 통합 — Runtime PASS / 환경 PARTIAL
 
 - 이슈17·docs/tts 승인에 따라 ground샘플1+DSP PREVIEW6+수동복구3을 소스bytes 그대로 새 WAV/meta로 추가했습니다. 불합격remaining9/옛음색사용0·추가가공/TTS API0. Main18 Manifest는10개 Status만 RUNTIME_VERIFIED로 갱신했습니다.
 - Catalog280→290/기존280항목 불변. Main18 NPC22/22 실제 페이지·자연종료·Next/빠른Next·Player/지문무음·Mixer/Mute·Scene/SaveContinue PASS, 정상25회귀·Main17세린11(청각분기포함)·PCM35최대오차0 PASS. 최종1370assertion PASS/FAIL0.

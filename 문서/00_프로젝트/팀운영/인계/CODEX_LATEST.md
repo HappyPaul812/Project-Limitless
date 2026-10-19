@@ -1,3 +1,9 @@
+## 2026-10-19 Field05 v2 Road4 / B42 최종 후보 — 기술 PASS / 미술 승인 대기
+
+- 전용 `codex/field05-eastwest-road42-v2-20261019`, 기능 `ebb363567b3932cce8af12e315dda03362c8fd19`. 새 v2 SHA/CRC/PNG4 Manifest·Ground3 Props7 원본SHA PASS. 환경375=315/42/18, PNG14, Road12추가, 선택7/새Portal0.
+- 실제 최종 Unity 기능416 PASS/0 FAIL, 저장Scene재로드84 PASS/0 FAIL, 16:9·4:3·21:9 3안 비교63장. 기존 Search/URP/Editor버전차이만 환경 PARTIAL. [검수자료](Field05_Road42_v2_Final_Unity_QA_20261019.md).
+- **원본 Field05 정식 적용·Push·PR·main 병합0. 새 v2 화면 미술 승인 필요.** 기존 Collider/좌표/Spawn/Save/Arbel·Field04 보호. 다음: 대표 갤러리 승인 후 통합.
+
 ## 2026-10-14 최종 마감 — 음성 PR14 병합 완료 / 로컬 main 보존 중단
 
 - 바울대표전후보청취승인·오늘병합지시로 007~011 정식연결 완료. 음성구현 `2ff11baa878156f9b7c537d9580e70cd1f5568e4`, [PR14](https://github.com/HappyPaul812/Project-Limitless/pull/14) merge `d05a325b05f2eab79ee18c5ca65e9ee523a5e5ab`. PR12Arbel/PR13기획 중복적용0·TTSAPI0·C3DRAFT구현0.
