@@ -1,6 +1,6 @@
 # LIMITLESS / Field05 동서 Road v2 — 4종 아트 제작·기술 인계 (2026-10-19)
 
-**담당:** Chapter1·2 리뉴얼 아트 / **브랜치:** `docs/art-renewal` / **기준 `main`:** `c263d9e36fc0570b16130d9c011abf3965def5f7`  
+**담당:** Chapter1·2 리뉴얼 아트 / **브랜치:** `docs/art-renewal` / **기준 `main`:** `c263d9e36fc0570b16130d9c011abf3965def5f7`
 **기획 기준:** `docs/planning` 커밋 `b614a5c6d6a1e51316c0ed22e03cc34b517982c5`, `Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md`. 사용자 전달 Codex 임시 Z=-90 실제 RenderTexture 비교/A30·B42 기술 명세(2026-10-19)를 추가 근거로 사용했으나, 이 담당이 Codex 로컬 `F:` 경로의 검증 파일이나 임시 RenderTexture 자체를 직접 열었다고 주장하지 않습니다.
 
 **현재 상태:** `ART_DELIVERED / OFFLINE_SEAM_QA_PASS / A_B_UNDECIDED / USER_FINAL_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`.

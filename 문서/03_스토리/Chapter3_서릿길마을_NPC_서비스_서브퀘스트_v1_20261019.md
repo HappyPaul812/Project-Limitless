@@ -1,8 +1,8 @@
 # LIMITLESS — 서릿길 마을 NPC·서비스·서브퀘스트 운영안 v1
 
-**작성:** 2026-10-19 · 기획 / docs/planning  
-**상태:** NPC_DESIGN_V1 / NAMES_PROVISIONAL / USER_REVIEW_POSSIBLE / UNITY_AND_ART_NOT_IMPLEMENTED  
-**상위:** Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md  
+**작성:** 2026-10-19 · 기획 / docs/planning
+**상태:** NPC_DESIGN_V1 / NAMES_PROVISIONAL / USER_REVIEW_POSSIBLE / UNITY_AND_ART_NOT_IMPLEMENTED
+**상위:** Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md
 **보호:** Main21 초보 마을 종료·펫 서비스 개방, Main22 F1 첫 서리들쥐 전투, Main23 새 마을, Main24 F2 첫눈 및 한기, 마을 동쪽 미래 포탈 부지 예약
 
 ## 1. 핵심 NPC 7명 구성안

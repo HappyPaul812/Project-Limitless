@@ -1,7 +1,7 @@
 # LIMITLESS / Chapter2 Field05 서부 외곽 환경 리뉴얼 아트 v1 — 제작·납품 (2026-10-19)
 
-**상태:** `ART_DELIVERED / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`  
-**기준:** 원격 `main` `c263d9e36fc0570b16130d9c011abf3965def5f7` 및 [기획 발주서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Chapter2_Field05_Renewal_Art_Assignment_20261019.md).  
+**상태:** `ART_DELIVERED / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`
+**기준:** 원격 `main` `c263d9e36fc0570b16130d9c011abf3965def5f7` 및 [기획 발주서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Chapter2_Field05_Renewal_Art_Assignment_20261019.md).
 **작업 브랜치:** `docs/art-renewal` (문서만 커밋, main 직접 변경·Push·병합 없음).
 
 ## 1. 기존 Scene 정본 감사

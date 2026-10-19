@@ -1,6 +1,6 @@
 # LIMITLESS / Field06 Scorched Trail 리뉴얼 아트 v1 — 실제 PNG·ZIP 제작 납품
 
-**제작일:** 2026-10-19 / **기준 main:** `675988c9f2c5c507d9a696b0378be27c0bd3309b` / **담당 브랜치:** `docs/art-renewal`  
+**제작일:** 2026-10-19 / **기준 main:** `675988c9f2c5c507d9a696b0378be27c0bd3309b` / **담당 브랜치:** `docs/art-renewal`
 **상태:** `ART_DELIVERED / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED / UNITY_RUNTIME_NOT_VERIFIED`.
 
 기획 발주서 `docs/planning:문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md`를 확인하고, 현행 [Field06 Scene](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scenes/Field_06_ScorchedTrail.unity), [Main15 Runtime](https://github.com/HappyPaul812/Project-Limitless/blob/main/Unity/Client/Assets/_Project/Scripts/World/Chapter2Main15Flow.cs), Main15 Encounter Asset 네 개와 리뉴얼 담당 인계 정본을 읽었습니다.

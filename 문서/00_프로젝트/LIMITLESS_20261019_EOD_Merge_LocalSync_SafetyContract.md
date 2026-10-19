@@ -56,4 +56,3 @@
 ## 4. 마감 보고 형식
 
 표로 Main09/Main10/Field06/Field07/Field08/Field09/몬스터·펫/TTS/Chapter3 및 docs 담당, GitHub PR/main merge, original local HEAD/upstream, dirty/untracked/UserData SHA, QA 재사용 vs delta, 사용자 미술승인과 다음날 BLOCKER를 구분한다. **PR merge+local sync 실증이 둘 다 완료되기 전에는 '오늘 작업 다 합침/원본 동기화 완료'라고 주장하지 않는다.**
-

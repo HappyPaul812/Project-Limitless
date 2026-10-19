@@ -1,8 +1,8 @@
 # LIMITLESS / Chapter2 Field09 ObsidianScar 기존 환경 아트 및 최소 교체 필요성 감사
 
-**감사 날짜:** 2026-10-19  
-**GitHub 정본:** `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`  
-**담당:** Chapter 1·2 리뉴얼 아트 / **기록 브랜치:** `docs/art-renewal`  
+**감사 날짜:** 2026-10-19
+**GitHub 정본:** `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`
+**담당:** Chapter 1·2 리뉴얼 아트 / **기록 브랜치:** `docs/art-renewal`
 **상태:** `FIELD08_EXISTING_ART_PROTECTED_CLOSED / FIELD09_SOURCE_AUDIT_DONE / CONFIRMED_MUST_REPLACE_ENV_PNG_0 / VISUAL_DEFECT_REVIEW_REQUIRED / NO_NEW_ART_AUTHORIZED / UNITY_UNCHANGED`.
 
 ## 0. 최신 사용자 결정

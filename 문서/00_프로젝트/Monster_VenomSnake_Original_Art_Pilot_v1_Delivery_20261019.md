@@ -1,7 +1,7 @@
 # LIMITLESS / Chapter1·2 몬스터 18종 감사 및 맹독뱀 오리지널 파일럿 v1 납품
 
-**날짜:** 2026-10-19 / **기준 `main`:** `675988c9f2c5c507d9a696b0378be27c0bd3309b` / **담당:** `docs/art-renewal`.  
-기획 정본: `docs/planning/문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`.  
+**날짜:** 2026-10-19 / **기준 `main`:** `675988c9f2c5c507d9a696b0378be27c0bd3309b` / **담당:** `docs/art-renewal`.
+기획 정본: `docs/planning/문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`.
 **상태:** `MONSTER18_SOURCE_AUDITED / VENOM_SNAKE_ORIGINAL_PILOT_DELIVERED / OFFLINE_PNG_QA_PASS / USER_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`.
 
 ## 기존 정의 18종 + 지적재산권 경계
@@ -26,7 +26,7 @@
 
 ## 제작 파일럿: `venom_snake` 새 PNG 원화·프레임
 
-새 ZIP 다운로드명 **`Limitless_Monster_Renewal_Pilot_VenomSnake_v1.zip`**  
+새 ZIP 다운로드명 **`Limitless_Monster_Renewal_Pilot_VenomSnake_v1.zip`**
 **크기 81,582 bytes / 35개 파일 / PNG26개 / ZIP SHA256 `8eb8d512b1ec1249f18f4770616e988acbee449dfc74a63678eb5916fb37d303`**.
 
 - 완전히 새로운 뱀의 청록색 코일·독 보라색 관/황금 눈/노란 배, **원본 제3자 이미지 픽셀 복사·추적·단순 리컬러0**. 소스 코드는 PIL 기반 신규 픽셀 도형 렌더링.

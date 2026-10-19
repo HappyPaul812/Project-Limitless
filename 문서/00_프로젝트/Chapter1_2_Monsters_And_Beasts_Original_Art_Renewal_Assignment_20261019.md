@@ -47,4 +47,3 @@ GitHub `main` 기준 `Unity/Client/Assets/_Project/Resources/MonsterDefinitions`
 - 제작 담당은 `docs/art-renewal`만 수정, 본 기획 담당은 `docs/planning`. 사용자 미술 승인 전 Unity 본파일 반영 금지, Codex는 승인 이후만 각 `codex/*` worktree에서 Import·규격/Animator·동료의 습격·펫 분양·필드/전투 및 Save 회귀 검사. Main10 공식 승인WAV18/Main09 승인27/Field04~09 공식 아트와 환경 버그 별도 보존. main 직접 커밋/Push/병합 금지.
 - 리뉴얼 담당 작업 순서: **정본/권리/실자산 감사 → MONSTER18/PET3 판정표 → 파일럿(비공식 몬스터 1 + Wolf 1) 실제 PNG 제작 → Preview/오프라인 QA → 대표 아트 승인 → Bear/Fox 확장/나머지 교체 필요한 종 순차 제안.** Codex의 환경 map 기술수정과 병렬; Codex 한도를 아트 제작에 사용하지 않음.
 - 완료 보고: branch, commit SHA, 교체 후보 ID·근거, ZIP 이름·용량·SHA, 사용자 미술 승인 필요 여부, Unity 미적용·미검증 영역 및 다음 할 일. 세션이 길어지면 차기 세션 전 인계 선행.
-

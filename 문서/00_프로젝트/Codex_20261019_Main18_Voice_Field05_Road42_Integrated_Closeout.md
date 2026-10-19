@@ -1,7 +1,7 @@
 # LIMITLESS — 2026-10-19 Codex 통합 마감 실행 지시: Main18 세린10 + Field05 B42 리뉴얼
 
-**작업 지시자:** 바울 대표, 기획 담당 정리. **브랜치:** `docs/planning`(이 문서만). **실행:** Codex on user's Windows PC (local) — 기획 대화의 GitHub 문서화 자체는 PC 작업 실행을 뜻하지 않음.  
-**상태:** `INSTRUCTION_READY / CODEX_EXECUTION_PENDING / AUDIO_REMOTE_PUSH_PENDING / FIELD05_V2_VISUAL_APPROVAL_PENDING / LOCAL_SYNC_PARTIAL`  
+**작업 지시자:** 바울 대표, 기획 담당 정리. **브랜치:** `docs/planning`(이 문서만). **실행:** Codex on user's Windows PC (local) — 기획 대화의 GitHub 문서화 자체는 PC 작업 실행을 뜻하지 않음.
+**상태:** `INSTRUCTION_READY / CODEX_EXECUTION_PENDING / AUDIO_REMOTE_PUSH_PENDING / FIELD05_V2_VISUAL_APPROVAL_PENDING / LOCAL_SYNC_PARTIAL`
 **사용자 요청:** “리뉴얼 작업까지 다 묶어서 코덱스한테 시켜줘. 이번주에 재설정권 1장 써야 해. 기간이 얼마 없거든.”
 
 ## 0. 긴급 우선순위 / 별도 브랜치 / 안전게이트
