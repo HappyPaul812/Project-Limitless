@@ -109,6 +109,9 @@ namespace ProjectLimitless.World
             foreach (SpriteRenderer plant in gameObject.scene.GetRootGameObjects()
                          .SelectMany(root => root.GetComponentsInChildren<SpriteRenderer>(true)))
             {
+                // 승인된 리뉴얼 PNG에는 그을음 색이 포함되어 있어 기존 임시 숨김·Tint를 중복 적용하지 않습니다.
+                // 레거시 Scene과 비충돌 Runtime 표식은 기존 동작을 유지합니다.
+                if (plant.sprite != null && plant.sprite.texture.name.StartsWith("LL_C2_F06_", StringComparison.Ordinal)) continue;
                 float x = plant.transform.position.x;
                 if (plant.name.StartsWith("Grass_", StringComparison.Ordinal) && x < 2f)
                 {
