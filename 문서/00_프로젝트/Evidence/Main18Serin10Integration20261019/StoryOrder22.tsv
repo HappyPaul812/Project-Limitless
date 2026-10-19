@@ -1,0 +1,22 @@
+1	main18_leon_leon_01	arbel-leon	붉은 균열 안쪽까지 들어가셨군요. 상태부터 말씀해 주세요.
+2	main18_leon_serin_01	companion_serin	진동도 끊기지 않았어요. 오히려 더 깊은 쪽에서 간격이 짧아졌습니다.
+3	main18_leon_leon_02	arbel-leon	그렇다면 준비 없이 다시 들어가면 안 되겠군요.
+4	main18_leon_leon_03	arbel-leon	열이 몸에 남을 때 쓰는 냉각약을 준비했습니다. 세 병은 먼저 가져가세요.
+5	main18_leon_leon_04	arbel-leon	더 필요하면 잡화 상인에게 구할 수 있게 해두겠습니다.
+6	main18_ground_serin_01	companion_serin	지면 아래 반응은 계속됩니다. 원인과 표면의 변화는 구분해서 기록하죠.
+7	main18_heat_vent_serin_01	companion_serin	열이 올라오는 간격이 짧아요. 물러날 공간부터 확보하겠습니다.
+8	main18_overheat_serin_01	companion_serin	방금 공격은 상처보다 몸에 열을 남기는 쪽이었어요.
+9	main18_overheat_serin_02	companion_serin	네. 열이 겹쳐 쌓입니다.
+10	main18_overheat_serin_03	companion_serin	세 번째까지 쌓이면 한꺼번에 터져요. 두 겹이 보이면 냉각약을 쓸지 판단하는 게 좋겠습니다.
+11	main18_overheat_serin_04	companion_serin	네. 이 열은 정화로는 빠지지 않습니다.
+12	main18_vibration_serin_01	companion_serin	저도 같은 방향을 보고 있었어요. 더 깊은 곳으로 갈수록 반응이 빨라집니다.
+13	main18_watcher_witness_serin_01	companion_serin	저 앞의 개체, 주변 열기가 움직임에 맞춰 올라갑니다.
+14	main18_watcher_witness_serin_02	companion_serin	앞의 갑충보다 열을 모으는 속도가 훨씬 빨라요.
+15	main18_watcher_witness_taeon_01	companion_taeon	한 사람에게 열이 몰리지 않게 상태를 계속 확인하겠습니다.
+16	main18_watcher_witness_miel_01	companion_miel	두 겹까지 쌓인 사람부터 보세요. 필요하면 바로 식혀야 합니다.
+17	main18_watcher_witness_paul_01	companion_paul	광역 열기와 과열은 별개군요. 숫자부터 놓치지 않으면 되겠습니다.
+18	main18_after_watcher_serin_01	companion_serin	쓰러뜨렸는데도 주변 열기가 줄지 않아요.
+19	main18_after_watcher_serin_02	companion_serin	네. 원인이라기보다 수문장에 가까워 보여요.
+20	main18_after_watcher_serin_03	companion_serin	진동도 계속 더 깊은 곳에서 올라옵니다.
+21	main18_deeper_route_serin_01	companion_serin	진동이 저 아래에서 올라옵니다.
+22	main18_deeper_route_serin_02	companion_serin	이제 중심부가 멀지 않은 것 같아요.

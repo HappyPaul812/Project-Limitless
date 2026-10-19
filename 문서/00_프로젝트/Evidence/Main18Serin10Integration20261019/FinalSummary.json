@@ -1,0 +1,18 @@
+{
+  "runtime_status": "PARTIAL_KNOWN_SEARCH",
+  "qa_status": "QA_PARTIAL_KNOWN_SEARCH_AND_EDITOR_VERSION",
+  "main18_npc_played": 22,
+  "main19_protected_played": 13,
+  "main17_serin_verified": 11,
+  "catalog_total": 290,
+  "catalog_legacy_unchanged": 280,
+  "new_clips_applied": 10,
+  "pcm_exact": 35,
+  "pass_assertions": 1370,
+  "fail_assertions": 0,
+  "manifest_status_rows_changed": 10,
+  "tts_api_calls": 0,
+  "source_processing": 0,
+  "push": false,
+  "main_merge": false
+}

@@ -1,0 +1,11 @@
+{
+  "source_and_original_files": 4169,
+  "source_and_original_changed": [],
+  "existing_worktree_asset_changed": [
+    "Unity\\Client\\Assets\\_Project\\Resources\\Audio\\Voice\\Story\\StoryVoiceCatalog.asset"
+  ],
+  "existing_worktree_asset_unchanged": 3997,
+  "new_wav_meta_files": 20,
+  "catalog_prefix_entries_unchanged": 280,
+  "new_guid_collisions": 0
+}
