@@ -1,0 +1,26 @@
+{
+  "scope": "Only Unity Main18 WAV10/meta10/Catalog; original Editor untouched",
+  "files": {
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_ground_serin_01.wav": "3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_ground_serin_01.wav.meta": "051e90099aa412b4ae19dccd8654562ab3f997d4a72ffbf9051e359f3a6ffb69",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_heat_vent_serin_01.wav": "5a775261783730d045261eea6de6655f45952643de5cabf267b1e556059204ee",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_heat_vent_serin_01.wav.meta": "79b0704820b2e7bb31736e002b315fe79fcfa82fa997538813b9554e36a28673",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_leon_serin_01.wav": "9d341d7fba030fabffda9a2266fdfb4b367b3bf80a210c0113e318f2a322b60e",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_leon_serin_01.wav.meta": "29b05ea8949dd2398abdfe14e6ca99fd5aeb8bc1ba61954a343a8959df43b761",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_01.wav": "deafc7b775659b8f8826dad675af2f5bc9674b7c103feeafbc8a014bc07e5fdf",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_01.wav.meta": "46e49aeec9ad675bbf154c02243c75a800fcc2e175a659b1a9e8a59659b8c14a",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_02.wav": "bbfb6ac61f76c92d32f6c61fafe61625e7d9399874fdddb0564dfc5874eacbb5",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_02.wav.meta": "f6c010fdcf08e84dc02125552de3185e5cabf4a9fd720c66d9d7f5ab0faec8e2",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_03.wav": "b67811bbd3abae2d53ad4cdecc6209c936a5b01a37c2f8ba82e9806e749ea442",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_03.wav.meta": "028e382cf03b7842ab29385adaa2dcf34b10fa83a96823f786e77348591bb4dc",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_04.wav": "bc73622d70a4b0c16e3a554cee7467302466d9808fcca327cca2fc18b81d5f57",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_04.wav.meta": "66bf3c134ffa76fbb50cfb8b6dfa16aacf3b83d6c439217d8964931fc7bd0346",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_vibration_serin_01.wav": "638d83be61f7ec22e54fe019969beca72f7fc3ed7fd2106617ae396e29095732",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_vibration_serin_01.wav.meta": "5d5aac9c5b443af86e02101499339f9f735b457c83572237e31baa44687aebc8",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_01.wav": "706d8f614ed0d05136cfd27f62990597999c625c73c7c069410b94d9cf497ce2",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_01.wav.meta": "18e1ae71461d8b057cb584ddf058f5009476156438236fad36ad602b835ab837",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_02.wav": "91e8a23a7545da0c285d5bcf3f5e7b91067bd143e67aec930cbddfa76075fd6c",
+    "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_02.wav.meta": "e1d1b8b3e909a491ad10b31be62e3e3e64d00e3239a70c7ef89314462a4f7519",
+    "Unity\\Client\\Assets\\_Project\\Resources\\Audio\\Voice\\Story\\StoryVoiceCatalog.asset": "dbc7ab72ad0a609c301a06156d7fc4b66b1715b77890d5f27efd18f67301b259"
+  }
+}
