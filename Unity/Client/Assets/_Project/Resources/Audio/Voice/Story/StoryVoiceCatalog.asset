@@ -182,58 +182,58 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a7b3e7193d12bec741297b32875797e5, type: 3}
     speakerId: companion_paul
   - id: main10_taeon_001
-    clip: {fileID: 8300000, guid: 3ece5e25c4ecf334eb098c7c1b1b39aa, type: 3}
+    clip: {fileID: 8300000, guid: 305354596d453125da2924348a67b331, type: 3}
     speakerId: companion_taeon
   - id: main10_paul_001
-    clip: {fileID: 8300000, guid: 54fba4f91531e784ca0e26c6f29dda78, type: 3}
+    clip: {fileID: 8300000, guid: b14f6f8edc4e4ae37b01bebb30a35628, type: 3}
     speakerId: companion_paul
   - id: main10_taeon_002
-    clip: {fileID: 8300000, guid: 45f4964db2ec5b6488a7a8adea39be10, type: 3}
+    clip: {fileID: 8300000, guid: 22c221264643695f5e6af5367ba2808a, type: 3}
     speakerId: companion_taeon
   - id: main10_paul_002
-    clip: {fileID: 8300000, guid: 5ba719bfbefbcd74ea5edfb6b3c514ad, type: 3}
+    clip: {fileID: 8300000, guid: f1bf8e8f898afb9fe8af88ab12eb8290, type: 3}
     speakerId: companion_paul
   - id: main10_miel_001
-    clip: {fileID: 8300000, guid: d45a5d133509c4e4c8551ceca905557d, type: 3}
+    clip: {fileID: 8300000, guid: 5493cdf56fb9d7f4221834d2fdb00d61, type: 3}
     speakerId: companion_miel
   - id: main10_miel_002
-    clip: {fileID: 8300000, guid: bafd577a8e4f0bc47a2b7ee48913549d, type: 3}
+    clip: {fileID: 8300000, guid: 8659bac9020f3824a4555a67931804d0, type: 3}
     speakerId: companion_miel
   - id: main10_taeon_003
-    clip: {fileID: 8300000, guid: a0359669b044e724bbd68d3b498d08c0, type: 3}
+    clip: {fileID: 8300000, guid: f62748268d75cf3d55ea856f968fb31e, type: 3}
     speakerId: companion_taeon
   - id: main10_paul_003
-    clip: {fileID: 8300000, guid: d9dc9413d78611f499e5daf1faba6095, type: 3}
+    clip: {fileID: 8300000, guid: 86c47664f245ee7201fb8ed6ce0206c6, type: 3}
     speakerId: companion_paul
   - id: main10_taeon_004
-    clip: {fileID: 8300000, guid: d9f5f0a96ef7ddd41b10723f68ed99e7, type: 3}
+    clip: {fileID: 8300000, guid: 530dc9ed9bfc73d79031644d2e3c8c79, type: 3}
     speakerId: companion_taeon
   - id: main10_paul_004
-    clip: {fileID: 8300000, guid: 832c0594a7d1b404cb91908104ba4ef4, type: 3}
+    clip: {fileID: 8300000, guid: 65dcd769acea340ad4f23a60ffb820da, type: 3}
     speakerId: companion_paul
   - id: main10_miel_003
-    clip: {fileID: 8300000, guid: 4782ceed07f8aa7429fc52a5d85575d1, type: 3}
+    clip: {fileID: 8300000, guid: a71911e332ab4723507052708483646f, type: 3}
     speakerId: companion_miel
   - id: main10_paul_005
-    clip: {fileID: 8300000, guid: 09bb4ca2d37ba7341a55565937736b0c, type: 3}
+    clip: {fileID: 8300000, guid: f9baceea8f9e8d7529b7bc3be0ec01c9, type: 3}
     speakerId: companion_paul
   - id: main10_taeon_005
-    clip: {fileID: 8300000, guid: 9d6c242f0446003438b60920e1c4e66f, type: 3}
+    clip: {fileID: 8300000, guid: 0a54e0bf5df2f9c16a67253bf6c68ae6, type: 3}
     speakerId: companion_taeon
   - id: main10_paul_006
-    clip: {fileID: 8300000, guid: 320bb7739875c8648bceaa4d4888675d, type: 3}
+    clip: {fileID: 8300000, guid: a2d48d46336b8267f1ac7ad4111576c9, type: 3}
     speakerId: companion_paul
   - id: main10_miel_004
-    clip: {fileID: 8300000, guid: c2cb934dd5ffeb14c983d179c6a563e9, type: 3}
+    clip: {fileID: 8300000, guid: 1a96ab16847978b918e30ba360880326, type: 3}
     speakerId: companion_miel
   - id: main10_paul_007
-    clip: {fileID: 8300000, guid: ea4bdb949266049448e00fcd68835658, type: 3}
+    clip: {fileID: 8300000, guid: 5438104faf1a22e39b9ec5f99cae5464, type: 3}
     speakerId: companion_paul
   - id: main10_taeon_006
-    clip: {fileID: 8300000, guid: d52ac69dae59f0e4ba9296ddae8e695d, type: 3}
+    clip: {fileID: 8300000, guid: f6798d688956dc1b92f8fe32d56c72fa, type: 3}
     speakerId: companion_taeon
   - id: main10_miel_005
-    clip: {fileID: 8300000, guid: 62ebf30750751d64f800a85ea13b740b, type: 3}
+    clip: {fileID: 8300000, guid: f30a42da907160e1144f511cea596773, type: 3}
     speakerId: companion_miel
   - id: main11_paul_001
     clip: {fileID: 8300000, guid: ab0f9f0a27013654ca507fb17288a7a2, type: 3}
