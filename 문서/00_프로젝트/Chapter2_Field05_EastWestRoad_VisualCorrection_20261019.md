@@ -21,3 +21,18 @@
 - **로컬 원본 보호**: 이전 PR16에서 로컬 문서 커밋2개 원격 이력 보존, dirty 겹침464/내용차이5 경로로 local sync PARTIAL. 원본 Editor·Play·포커스/Save/dirty 파일 무접촉. reset-hard/clean/force-push/무단 stash 금지.
 
 **수락 기준:** 서쪽 진행 축 명확, 동쪽 아르벨 출입구 자연 연결, 세린/조사 3점·몬스터·휠체어/귀환 경로 정상, 새 도로 seam/접지/화면비/Save Regression 통과, 실Unity 전후 이미지 제시. 신규 Portal 추가0. 원본 정식 적용·Git push/merge는 사용자 미술 승인 전0.
+
+
+## 2026-10-19 A/B 실제 Unity 비교 보고 및 신규 Road v2 납품 확인 — Codex Main18 작업 우선
+
+바울 대표가 Codex **실제 Unity A/B 화면**과 결과를 전달함. 이 시각 자료는 로컬 격리 Unity의 출력이며 기획 담당이 직접 파일로 Unity를 실행한 것은 아님.
+
+- **A30:** 기존 Road30(15열×2행) 동서 배치, 서쪽으로 갈수록 길이 중간에 끊겨 보이고 짧음.
+- **B42:** 21열×2행 동서 간선, 서쪽 진행 방향이 더 분명해 보임. **기획 검토의 우선 시안은 B42**로 한다. 이것은 **사용자의 최종 B 구조 승인이나 실제 아트 v2 미술 승인 선언이 아님**. User art review pending. B 적용은 기존30+신규Renderer12 구조/Scene 변경을 요구함.
+- 기존 v1 색감/소품은 그대로. Codex 보고 격리 자동 검사 **1,582 PASS/0 FAIL**, Main14/세린/두 몬스터/Arbel 왕복/Save/Continue PASS. **Console gate FAIL = Search·URP가 기존 교체 전 기준선에서도 재현됨**, 신규 Console fail로 단정/은폐하지 않고 baseline 분류, 전체 QA 판정은 **PARTIAL**. 원본 **4,067파일 변경0**, 공식 Unity 버전 직접 Import·수동 조작·최종 시각 승인 미검증(검사 환경 Unity **6000.6.5f1**; 보고된 정본 **6000.5.7f1**은 버전 진위 및 실제 사용 버전 재확인 필요).
+- **리뉴얼 아트 담당이 이미 정확한 신규 동서 Road PNG 4종을 제작·별도 ZIP 납품**했다고 GitHub `docs/art-renewal`에서 확인함. 자료: `문서/00_프로젝트/Field05_EastWest_Road_v2_Art_Delivery_20261019.md`. 납품파일 `Limitless_Field05_EastWest_Road_v2.zip`, 아트 담당 보고 SHA256 **`3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`**, **실사용 Road4** `Upper/Lower/WestEnd_Upper/WestEnd_Lower`. Alpha edge/seam 오프라인 mismatch0, 실제 Unity v2 Import/Render·QA NOT_VERIFIED. 사용자 로컬 `F:` 다운로드 설치 **미확인**. 리뉴얼 담당에게 **같은 4종을 중복 제작시키지 않는다**.
+- **현재 Codex는 Main18 목소리 통합 작업 진행 중**(바울 대표 2026-10-19 직접 보고). 도중에 중단시켜 Field05를 끼워 넣지 않는다. **기존 TTS 담당 세션은 종료, 새 TTS 담당 교육 중**으로 사용자 보고됨. 새 담당의 학습 완료/음성 생성/청취 승인 등은 아직 확인되지 않았으며 Codex Main18 현재 작업과 중복 발주하지 않는다.
+- **대기 중 Field05 다음 순서:** Codex의 현재 Main18 안정 마감 → Road v2 ZIP 실제 PC 설치 위치·SHA/파일 manifest 확인 → **B42 단일 후보(필요시 A30 보조 비교)**를 격리 Unity에 신규 Road4 적용한 실제 16:9/4:3/21:9 RenderTexture와 Scene/Renderer/접지·휠체어/Quest14/Serin/Monster/Arbel/Save·Known-Error baseline 회귀 검증 → 바울 대표 최종 실제 화면 미술 승인 → 정식 원본 적용/feature branch Push·PR/merge 별도 게이트.
+- **변경/보호:** original Unity Scene/Editor/Play·Save·dirty 파일, Field04·Arbel 승인 아트, Field03 RockB HOLD, Field05 선택 7종 미배치 보존. **현재 v2 실제 Unity QA 미실행 / 공식 적용·Push·병합0**.
+
+**현재 상태: `B42_PLANNING_PREFERRED / ROAD4_V2_ART_DELIVERED / CODEX_MAIN18_BUSY / FIELD05_V2_UNITY_QA_PENDING / USER_FINAL_ART_APPROVAL_PENDING / ORIGINAL_UNCHANGED`.**
