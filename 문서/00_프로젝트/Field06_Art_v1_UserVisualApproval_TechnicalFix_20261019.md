@@ -31,3 +31,9 @@
 Main09 오디오 27개 청취 승인 및 원본 디스크 연결은 Codex 보고상 완료, **원격 feature Push/PR/main 병합은 별도**. Field06 4항목 작은 수정→최소 delta QA→표준 Git 인계. 그 후 Field07 환경 신규 아트 착수(리뉴얼 담당, Codex와 분리); 필드06을 반복 재제작하지 않는다.
 
 **기획만 GitHub docs/planning에 남김.** Codex를 원격 명령으로 직접 실행한 것이 아님. 이 파일을 그대로 다음 Codex 세션에 전달할 수 있다.
+
+## 역할 분리 후속 (같은 날)
+
+**리뉴얼 아트 담당**이 Field06 v1.1의 PNG·Alpha 틈·소품의 시각적 접지·Road 위아래 텍스처/네이밍 등 실제 그림/Manifest/Mapping 수정을 책임진다. 이전 v1 ZIP은 그대로 보존하고 고쳐야 할 PNG만 새 영문 ZIP에 납품; 49개 Ground 비활성화 문제는 시각적 빈틈의 실측 자료만 인계한다. **Codex**는 원본 Unity Scene·Importer/Transform/Runtime Grass 49비활성화 코드의 근본 원인과 QA를 처리하며, 아트 이미지를 새로 그리거나 기존 PNG를 임의 리터칭하지 않는다. 필요하면 실제 Unity Renderer별 오류 좌표/GUID/foot 판정을 리뉴얼 담당에 넘겨 최소 PNG 수정을 받는다. 각 팀 업무와 승인 게이트는 독립한다.
+
+Field07 신규 아트 v1은 `문서/00_프로젝트/Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md` 발주서에 따라 **리뉴얼 담당이 Field06 v1.1과 병렬 시작 가능**. Field06 Code/Unity QA 및 Main09 feature 통합을 기다리느라 신규 art 작업 전체를 멈추지 않는다.
