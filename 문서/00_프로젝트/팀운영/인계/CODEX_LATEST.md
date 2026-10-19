@@ -1,8 +1,12 @@
-## 2026-10-19 EOD 통합 준비 — 승인 범위 확정/18 Delta PASS
+## 2026-10-19 EOD 승인 통합 완료 / 원본 SYNC_COMPLETE
 
-Main09 승인27·재회순서/Main10 승인18·조사NPC 우선권/Field06 v1.1 B42·Ground49·안전Spawn/Field07 v1 B42·투명Ash7의 기능8커밋만 `codex/eod-integration-20261019`에 선택 통합. 기존 main18·Field05·Main09 UX 중복0. 통합게임168파일 원본기반 동일/정적8+실제Unity10=18PASS0FAIL, 이전550/261/132/164/124 재주행0. 원본Editor 자연Import·손플레이 미검증/Search·URP OPEN.
+승인 기능 [PR #27](https://github.com/HappyPaul812/Project-Limitless/pull/27) main 병합 **`f7a82907221e322a29b0b4cab24f7a4b4a0d197a`**, 통합 head `57f438ab3c72fabf91c127ff52398b3b9e17997d`. 이 완료 증거 작성 시 GitHub main=origin/main=원본 local main, index=HEAD 실제 확인 **SYNC_COMPLETE**. 후속 문서 전용 PR 병합의 최종 SHA는 원본 `Temp/EOD20261019/OriginalLocalSync_Proof.json`을 최종 재검증하며, 아래 SHA는 기능 통합 확정점입니다.
 
-1,059파일 SHA백업/39worktree기록/보호4,339SHA 불일치0. Field09 미술FAIL 후보PNG·Scene·ZIP 제외, 독사/늑대 미승인 제외, Main20/21 TTS22/Chapter3 구현보류. PR/main/원본HEAD·index 실제 동기화 확정은 EOD 보고 후속 기록을 따릅니다. 원본 Editor·UserData·Save 유지. [마감/재개 정본](../../EOD_Integration_LocalSync_Closeout_20261019.md)
+Main09 승인27·재회순서/Main10 승인18·조사NPC 우선권/Field06 v1.1 B42·Ground49·안전Spawn/Field07 v1 B42·투명Ash7 공식 통합. 게임168파일 원본 승인본과 동일하여 재기록0, 기존 Main18·Field05·Main09 UX 중복0. 정적8+실제Unity10=18PASS0FAIL, 기존 대규모 QA 반복0. 기획/리뉴얼/TTS 문서75파일 선택·의미 병합 및 충돌문서8개의 main/담당 고유 문단 보존 검사 PASS.
+
+1,059파일 SHA백업(203,125,963bytes)·39worktree 기록·보호4,339SHA/백업1,059SHA 불일치0. 추가 ZIP4·고유커밋2 patch 아카이브 보존. 최종 사용자 tracked dirty308/untracked548/staged0 유지. UserData·Save·Settings 보호, 원본Editor/Play/Refresh/포커스 조작0. 기존 로컬 문서2커밋 main 조상 유지.
+
+Field09 시각FAIL PNG/Scene/ZIP, 미승인 독사·늑대/TTS, Chapter3 구현은 제외. 원본 Editor 자연Import·손플레이/Main15·16 전주행 NOT_VERIFIED, Search/URP OPEN. 다음: 대표 평소 자연Import·승인 화면 확인 → Field09 수정 납품/미승인 TTS 청취 승인 대기 → Main22 기획·ID·아트 게이트. 완료 기능 재구현/전체 QA 반복 금지. [마감 보고](../../EOD_Integration_LocalSync_Closeout_20261019.md)
 
 ## HISTORY — 이전 완료·승인 단계 기록
 
