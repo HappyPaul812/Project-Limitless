@@ -53,3 +53,8 @@
 ## 5. 다음 전달
 
 Codex는 **먼저 원인 읽기 전용 감사와 재사용 후보**를 보고한 뒤 최소 코드/오디오 교정 단계로 넘어간다. 커밋은 `codex/*`에만, main 병합은 바울 대표 승인 뒤; 기획 문서는 `docs/planning`에만. 전체 Main09를 TTS로 재제작하지 않으며 기존 27개 후보를 처음부터 파괴하지 않는다. 문제와 무관한 Chapter3/Main20~21 TTS 발주를 겹치지 않는다.
+
+
+## 2026-10-19 후속 — 복구 27개 전부 사용자 청취 승인
+
+Codex 로컬 `codex/main09-dialogue-voice-fix-20261019` 보고: GUID/Catalog/meta 27개 일치, 기존 WAV 내부 잘못된 분할·합본이 문제, 원본 발화 기반 후보 **27개 복원**, 격리 Unity **550 PASS/0 FAIL**, 원본4,180파일·UserData23 SHA 보호, TTS/API0, 원본 교체/Push/main병합0. ASR 20개 원문 일치 / 7개 청취 필요 보고를 받은 바울 대표가 **“다 들어봤는데 다 맞아”**라고 확인. **27개 전부 `USER_LISTENING_APPROVED`**, 복구 후보 ID·문장 짝 청취 승인 게이트 해제. 이는 원본 Unity에 승인 WAV가 이미 정식 적용됐다는 주장은 아님. 폴 `paul_001`이 step2 `paul_002`의 “또 뵙네요” 뒤로 이동된 구현안과 기존 6단계/35EXP·35탈렌트 보호는 동일하게 유지. 승인 WAV의 개별 SHA는 Codex 최종 후보 매핑 정본 사용, 임의 재제작/새 TTS 금지. **다음: feature 상 승인27만 정식 연결+delta QA+비파괴 원본 적용(안전검증 충족 시), PR/main 통합 별도 지시**. 후속 명세 `Main09_Voice27_Approval_Field06_Art_v1_Handoff_20261019.md`.
