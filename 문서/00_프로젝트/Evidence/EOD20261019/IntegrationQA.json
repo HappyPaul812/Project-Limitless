@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "check": "Integrated gameplay files byte-identical to already approved original disk"
+    },
+    {
+      "pass": true,
+      "check": "Catalog 290 IDs preserved"
+    },
+    {
+      "pass": true,
+      "check": "Other 245 Catalog entries unchanged"
+    },
+    {
+      "pass": true,
+      "check": "Main09 approved WAV/meta/PCM/GUID all 27 exact"
+    },
+    {
+      "pass": true,
+      "check": "Main10 approved WAV/meta/PCM/GUID all 18 exact"
+    },
+    {
+      "pass": true,
+      "check": "Field06 serialized SpriteRenderer 375"
+    },
+    {
+      "pass": true,
+      "check": "Field07 serialized SpriteRenderer 384"
+    },
+    {
+      "pass": true,
+      "check": "Excluded art/TTS/Chapter3 absent from feature diff"
+    }
+  ],
+  "pass": 8,
+  "fail": 0,
+  "reused": "550+261 Main09,132+164 Main10,124 Field06/07; no rerun",
+  "unity": {
+    "pass": 10,
+    "fail": 0
+  },
+  "total_pass": 18,
+  "harness_corrections": [
+    "Attempt1 result output path",
+    "Attempt2 count included generated NPC; corrected to environment asset path"
+  ]
+}
