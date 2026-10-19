@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-20 Field09 v2 시각 재실패로 '보수 중단·미술 교체' 방향 권고
+
+바울 대표 Codex 보고: Field09 v2 GitHub ZIP SHA/CRC/Manifest/PNG8 PASS, 격리40PASS/0FAIL, Main18 델타 기존92PASS 재사용. **하지만 실제 화면 회색 반복띠6/소품 흰 가이드선6종 그대로 남아 visual FAIL, 원본 Scene 적용·Push·merge0**. 따라서 v1/v2의 같은 자동 픽셀 보완 v3 반복 중단을 권고. 바울 대표 “이럴 바엔 다 엎고 다시 하는게 더 안낫니?” → **기획은 Field09 환경 아트 새 제작이 타당**하다고 의견 제시하되, 사용자 최종 제작 지시는 아직 요청 중. 맵·퀘스트13·과열/몬스터·Spawner/Save·기존 공식 PNG/meta/GUID는 보호하고 **표시 환경 원화만 별도 새 에셋**으로 교체 계획.
+
+선행 QA는 Codex가 화면회색띠/흰선이 실제 PNG 자체에 있는지 또는 Renderer Tiled UV/Material/Overlay/추가 중복 오브젝트 원인인지 **1회 읽기 전용 분류**. 새 원화는 **Ground Base, Ground Cracked Overlay, 대표 소품 각1개 = 총3개 먼저** 제작→격리 Unity 동일 카메라/3비율 미술 QA→이상이 사라진 후 나머지 공식 환경만 제작. 전체 PNG 양산 후 또 6+6 실패하는 낭비 금지. 신규 `main` commit/Push·원본 Scene 삭제 금지. 기획 제안 정본 `문서/00_프로젝트/Field09_Art_Redesign_After_v2_VisualQA_Failure_20261020.md` (`docs/planning`, commit `cc3579aaa0e668aedf874e8e788b646c22db07ee`). 문서 기록만 완료, Unity 원본/이미지 파일 생성·리뉴얼 세션 작업 자동 전달은 아직 아님.
+
+---
+
 # 기획 최신 인계 — 2026-10-20 Field09 GitHub 공식 PNG10 확인, v2 실제 작업 지시
 
 바울 대표 요청: “Field09 미술 원본은 깃허브에 없으면 없는거니까 알아서 지시해줘.” 실제 최신 GitHub `main` `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` 폴더 `Unity/Client/Assets/_Project/Resources/Main18/Environment/`에 **공식 PNG10종과 각 .meta가 전부 존재**하고, v2 필요 수정 대상8종의 파일 크기/블롭을 GitHub Contents에서 확인. 이전 리뉴얼 세션이 자기 컨테이너에 원본 PNG가 없다고 보고한 것은 GitHub 파일 부재가 아닌 **컨테이너/바이너리 다운로드 도구 접근 제약**. 더 이상 원본없음 핑계로 보류하지 않음.
