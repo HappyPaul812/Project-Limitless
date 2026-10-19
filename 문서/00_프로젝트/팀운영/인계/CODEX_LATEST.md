@@ -1,3 +1,11 @@
+## 2026-10-19 로컬 main 문서5 충돌 복구 완료 및 다음 단계
+
+문서5 의미 병합 PR #25 기능 `bc0ffac095746a499a31792aea2bef0a7e39691b` → main `30954827ebbe9d2f2fd4e6bca22abd2f50e6acc7` 완료. 격리 리허설 후 **원본 HEAD/index/작업파일 SYNC_COMPLETE** 확인. dirty·미추적·UserData·Settings 1,430파일 백업, 문서5개 의미 병합 외1,425파일 SHA 불일치0. 기존 문서 커밋2개 이력 유지. 남은 tracked dirty308/untracked548은 사용자 변경으로 보존하며 staged0입니다. 최신 main은 후속 보고 PR 이후 최종 검증 SHA를 따릅니다.
+
+Main09/Field05/Main18 재구현·대규모 재QA0, 원본 Editor/Play/Refresh/포커스0. 자연 Import와 실제 Main09/Field05 화면은 바울 대표의 평소 사용 시 확인 사항입니다. Search/URP 및 로컬 Unity 버전 차이 기존 OPEN 유지.
+
+Main20 세린5/Main21 17 총22음성 Unity미등록. 기존 로컬 후보17개 PCM/SHA/원문 PASS이나 음색 오류 보고9개·나머지8개 청취 승인 미확인. 후보 없는5개(태온1/세린1/Voice미정 하렌3) 별도. API/생성/Unity음성변경0. [정확한22개 원문 CSV](../../Main20_Main21_TTS_Missing_ReadOnly_20261019.csv)와 [복구·보호·다음 실행 보고](../../LocalMain_Doc5_Recovery_Closeout_20261019.md) 참고. Main22는 기획 승인·정식ID·북부 아트가 아직 필요하며 기존 북문 동선/Save 연결 읽기 감사부터 진행합니다.
+
 ## 2026-10-19 문서5 의미 병합 및 보호 경계
 
 로컬 작업복사·local main 커밋·공통 조상·최신 원격 main을 대조했습니다. 최신 Main09(PR21/24)·Field05(PR22/23)·Main18(PR18/19)의 병합·원본 디스크 반영은 완료 상태로 유지합니다. 과거 기록의 승인 대기/미구현은 과거 당시로 구분합니다. 기획·리뉴얼 담당의 원격 전용 기록도 삭제하지 않았습니다.
