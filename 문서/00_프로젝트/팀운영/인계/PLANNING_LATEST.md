@@ -1,3 +1,22 @@
+# PLANNING 인계 — 2026-10-19 사용자 로컬 문서5 충돌 해소 승인
+
+바울 대표 “충돌 해결하고 다음으로 가자.” / Github main `af21edbf5f0cdc0f241b09228ede960ab83e9b6c` (2026-10-19 확인). PR #18/#19 Main18, #22 Field05, #21 Main09, #23/#24 보고 **전부 main 병합**; Main09 9파일 + Field05 Scene1/신규32 + Main18 WAV10/meta10/Catalog **원본 디스크 적용**은 Codex 보고에 따라 완료. 본문 실제 Editor 자연 Import/OS 손플레이는 미검증으로 보존.
+
+Codex 이전 원본 local main `ff022e63dfe364f559fcc29819d27b123ad31127`, 320 tracked dirty +1053 untracked, remote overlap517 중512 byte 동일, 나머지 다섯 문서 실제 상이:
+- `문서/00_프로젝트/CURRENT_STATUS.md`
+- `문서/00_프로젝트/EndOfDay_Integration_Voice_LocalSync_QA_20261014.md`
+- `문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md`
+- `문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md`
+
+**신규 Codex runbook:** `문서/00_프로젝트/Codex_20261019_LocalMain_FiveDocument_SemanticMerge_Recovery.md` (docs/planning). 변경내용5개 로컬/원격/공통기준/Dirty/UserData23 SHA 사전보호 → 독립 worktree에서 **의미병합**, PR 정상 main 반영 → 원본 실제 Git branch/index/worktree와 active Editor 보호를 위한 별도 시뮬레이션 후 비파괴 동기화 → 상태 정확 구분. 단순 `ours/theirs`·`reset --hard`·`clean`·무단stash/force/파일삭제 금지. 이미 병합한 기능 중복구현·Main09/Field05 별도 테스트용 빌드 금지. 비파괴 원본 sync가 불가능하면 clean 별도 worktree 대안과 현장 PARTIAL을 정확히 보고.
+
+동기화 성공 후 Main09/Field05 실사용자 Play는 원본 Editor 자연 Import 후 확인만; 시간 효율 위해 기존 427/416+84/66 PASS 재검사0. **다음 미적용 음성은 Main20 5건 TTS_PENDING, Main21 등록0**, Codex는 제작 대신 읽기 전용 확인과 TTS 담당 인계까지만 수행(API0). Chapter3 신규 Unity 개발 자동 착수 금지.
+
+문서 저장은 사용자의 Windows 원본에서 직접 Git 충돌을 해결한 것이 아니며, Codex 전달/실행이 필요. 현재 `RUNBOOK_READY / CODEX_PENDING / LOCAL_SYNC_PARTIAL`.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Field05 B42 사용자 미술 최종 승인·Main09 UX 수정 최우선
 
 **바울 대표 최신 지시:** “이러면 한도를 엉뚱한데 쓰는거니까 하지 말고 보고서랑 같겠지 뭐. **그냥 승인해. 중요한건 지금 하던거 이어서 하는거야.**” Field05 시각은 이미 Codex 16:9·4:3·21:9 비교 및 QA로 확인했고 **B Road42를 사용자 최종 미술 승인**함. **Main09 진행이 막힌 건 별도 UI/퀘스트 안내 문제**로, Field05 검수 전용 Play 실행환경/필드 강제 시작/기존 Main09 우회용 테스트 빌드를 만들지 말라고 명시 취소.
