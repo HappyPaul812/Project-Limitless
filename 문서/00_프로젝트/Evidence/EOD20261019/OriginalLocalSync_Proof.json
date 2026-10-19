@@ -1,0 +1,14 @@
+{
+  "status": "SYNC_COMPLETE",
+  "github_main": "f7a82907221e322a29b0b4cab24f7a4b4a0d197a",
+  "origin_main": "f7a82907221e322a29b0b4cab24f7a4b4a0d197a",
+  "local_main": "f7a82907221e322a29b0b4cab24f7a4b4a0d197a",
+  "index_equals_head": true,
+  "backed_up": 1059,
+  "protected_sha_mismatch": [],
+  "gameplay_files_rewritten": 0,
+  "tracked_dirty": 308,
+  "untracked": 548,
+  "editor_operated": false,
+  "user_editor_handplay": "NOT_VERIFIED"
+}
