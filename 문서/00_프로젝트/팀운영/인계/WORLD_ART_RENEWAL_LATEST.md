@@ -1,5 +1,14 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 맹독뱀·Wolf v1 반려 → v2 실제 PNG 파일럿 신규 납품 (최신)
+
+- **바울 대표 확정:** `Limitless_Monster_Renewal_Pilot_VenomSnake_v1.zip`은 '뱀이 무섭지 않음', `Limitless_Beast_Companions_Wolf_v1.zip`은 '보노보노에 나오는 강아지처럼 만화적임'으로 **둘 다 v1 반려**. 최종 미술 승인 이력으로 쓰지 않음.
+- v2 아트 별도 제작 완료(채팅 ZIP 실제 납품, GitHub 바이너리·대표 PC F: 자동 업로드 아님). **뱀** `Limitless_Monster_Renewal_Pilot_VenomSnake_v2.zip` 82,330 bytes / SHA256 `b4d2c023c312893bb5035620bcfa049131b25b9a471920e4da16c60481ef4e38`, PNG26 / 5동작×4프레임, 시트5장128×32 RGBA. 날카로운 머리·독니·열린 입·S자 긴장/공격성 강화. **Wolf** `Limitless_Beast_Companions_Wolf_v2.zip` 47,659 bytes / SHA256 `cbcb62a766ae044bf4b1ca549eeb16027f91938aab5044eb7d701a574ef106cd`, PNG12 / Run384×40 6프레임12fps / IconFrame04 crop / 40px 확인 이미지. 길고 좁은 주둥이·선 귀·탄탄한 다리·현실적인 판타지 야수 체형 강조.
+- 두 ZIP CRC/전체PNG decode/SHA/프레임 시트 대조/프레임 경계Alpha0·프레임 중복0 **오프라인 PASS**. **최종 상태 `V1_REJECTED / V2_ART_DELIVERED / V2_OFFLINE_QA_PASS / USER_V2_ART_APPROVAL_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`**.
+- Bear/Fox 신작은 Wolf v2 미술 승인 전 제작 **HOLD**. 몬스터18·펫3 기존 애니메이션/권리/공식 아트/GUID/meta/Scene/Quest/Save/펫패시브 보호. 승인 이후에만 Codex 격리 worktree 신규 Import 및 실제 Runtime/접근성 회귀.
+- [v1 반려 사유·v2 실제 자산 규격·납품 SHA·Codex 후속 정본](../../Monster_Beast_Pilot_v1_Rejection_v2_Delivery_20261019.md), 담당 `docs/art-renewal`; 신규 문서 최초 커밋 `213457cd1547254969bd71cbe29bf02a3cb31ca6`. **이전의 v1 납품·미술 승인 대기 표기는 모두 역사 기록**입니다.
+
+
 ## 2026-10-19 Field09 공식 아트 8종 국소 최소 보완 — 실제 ZIP GitHub 납품
 
 - **바울 대표 작업 범위 승인:** 기존 Main18 공식 환경 PNG 8종의 실제 지면 경계/흰 가이드선만 국소 수정. 디자인/역할/원본 경로/색감 보호, 전체 재디자인 금지. `AshPatch_01`·`Ground_Cracked_02` 완전 보호. 이전 Field09 기존 아트 감사의 '0종 확정'은 **이후 사용자 실제 결함 보완 발주 전에 작성한 역사 기록**이며, 현재 이 8종 국소 작업이 승인됨.
