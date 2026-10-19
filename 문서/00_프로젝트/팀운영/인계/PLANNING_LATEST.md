@@ -1,3 +1,12 @@
+# PLANNING 인계 — 2026-10-19 Main10 음성18 전부 청취 승인 / Field08 신규 제작 생략
+
+바울 대표 Codex 보고 후 **“다 들었고 다 맞고”**: Main10 기존 PCM 복구 후보18/18 `USER_LISTENING_APPROVED`. 이전 11 ASR 동일+7 우선 청취(마지막 애매한 후보 포함) 전부 승인. Codex branch codex/main10-voice-quest-interaction-fix-20261019, 기능5c36a6531f23550c535737a96e1cd18648229f6b, QA b9516bc8408ec91b13dd50f9be7d222f6aaa05fc. 치유사 NPC보다 Main10 현재 조사 목표 우선 입력 로직 격리132PASS/0FAIL, 퀘스트7/40EXP·40탈렌트/Continue/던전복귀/3비율. 기존 Main09 승인27/UserData23/기준4,235 SHA보호, TTS/API0, 원본 WAV overwrite0. **복구 후보18은 아직 Unity StoryVoiceCatalog와 원본디스크에 공식 적용 전**. 다음 Codex는 승인 후보18 SHA·본문 매핑만 정확히 정식 연결 → 국소 delta QA → 안전조건 충족시 원본 비파괴 적용 및 결과 보고. PR/main 병합/사용자 원본 Editor 실플레이 검증 별개.
+
+리뉴얼 docs/art-renewal의 Field08_RedRift_ExistingOfficialArt_Audit_20261019.md 확인: Main17 공식 PNG9중7활성, 활성37 Renderer 사용, 비표시 구 Sprite·Road는 교체 대상이 아님. 신규 필수아트0. **기획 결정: Field08_NEW_PNG_0 / NEW_ZIP_0 / REUSE_EXISTING_OFFICIAL_ART**. 바울 대표는 담당 제안을 제시하며 의견을 요청했고 기획은 '추가 제작 불필요'에 동의; 이것을 사용자 별도 명시 승인으로 부풀리지 않는다. Field07 새 승인 자산을 실제 Unity에 적용한 후 경계(-8,0↔+7,0) 동일 카메라 비교에서 확인된 색/Seam 문제만 최소 재검토. 새로운 PNG는 문제·범위가 별도 승인될 때만. 리뉴얼은 Field09_ObsidianScar **읽기전용 감사**로 이동, 실제 PNG 제작은 별도 발주.
+
+최신 기록: `문서/00_프로젝트/Main10_Voice18_User_Approval_Field08_NoNewArt_Decision_20261019.md` (docs/planning commit 8f119413a9cd104dde2393d6bdb8d1bf251d20a5), Main10 기존 버그문서 승인 addendum commit a97bd7baeaed9263724c61166ed765d254c154e3. 단 이 세션의 GitHub 기획 문서만 직접 변경했고 Codex 작업/PR/main merge/원본 Unity는 변경하지 않았다.
+
+---
 # PLANNING 인계 — 2026-10-19 17:24 Field06 v1.1·Field07 v1 사용자 미술 승인
 
 바울 대표: “코덱스 시켰고, 리뉴얼도 나왔고, 보니까 괜찮다.” 로컬 파일 `F:\Downloads\Limitless_Field07_AshenReach_Renewal_Art_v1.zip`, `F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1_1.zip` 제공. **Field06 v1.1 및 Field07 v1 모두 USER_VISUAL_APPROVED**로 승격 (이전 두 리뉴얼 문서의 사용자 미술 승인 대기는 과거 기록). 단 `ROAD_A30_B42_UNDECIDED`, Field06 Runtime Grass49/Props, Field07 Runtime Ash7, 양쪽 optional(06 Runtime6+Decal2, 07 WindlessAsh1) HOLD, Unity Import·원본 디스크 적용·main 병합/원본 실플레이는 모두 PENDING. ZIP SHA는 리뉴얼 docs/art-renewal 보고값을 정본으로 쓰되 기획이 실제 F드라이브를 검증한 것은 아님. Field06 v1.1 ZIP SHA `d8551df7315495dcc6e4556ec33f30b711af8aeb85dc7b0a1c3612a5a6197f42`, Field07 v1 `5d398295b6f98491a294628a18763b6d72e0dedfdf5f691ccd2e8d0539150403`.
