@@ -853,3 +853,33 @@ MonoBehaviour:
   - id: main19_witness_taeon_01
     clip: {fileID: 8300000, guid: dcc3cefd84e10b4419f44e4dc800ae10, type: 3}
     speakerId: companion_taeon
+  - id: main18_leon_serin_01
+    clip: {fileID: 8300000, guid: 32e98ae840614b97b25f808d6a1364ca, type: 3}
+    speakerId: companion_serin
+  - id: main18_ground_serin_01
+    clip: {fileID: 8300000, guid: 72ae914093aa4624b67986bf77ccd3fb, type: 3}
+    speakerId: companion_serin
+  - id: main18_heat_vent_serin_01
+    clip: {fileID: 8300000, guid: af2752afce044d39b32f35f06078bd37, type: 3}
+    speakerId: companion_serin
+  - id: main18_overheat_serin_01
+    clip: {fileID: 8300000, guid: ec1fd2e480504d7db6d82e997993cbf7, type: 3}
+    speakerId: companion_serin
+  - id: main18_overheat_serin_02
+    clip: {fileID: 8300000, guid: b844b48b384a47ddb88b11d258282864, type: 3}
+    speakerId: companion_serin
+  - id: main18_overheat_serin_03
+    clip: {fileID: 8300000, guid: fec7030d836f44f098b5ae7d6d09e626, type: 3}
+    speakerId: companion_serin
+  - id: main18_overheat_serin_04
+    clip: {fileID: 8300000, guid: 6ce364df02c043d88f4fd862748f906f, type: 3}
+    speakerId: companion_serin
+  - id: main18_vibration_serin_01
+    clip: {fileID: 8300000, guid: 0d44d69429634bd18502aa93dd901983, type: 3}
+    speakerId: companion_serin
+  - id: main18_watcher_witness_serin_01
+    clip: {fileID: 8300000, guid: dd5a0e75b27848e8b15642082efe19ce, type: 3}
+    speakerId: companion_serin
+  - id: main18_watcher_witness_serin_02
+    clip: {fileID: 8300000, guid: 3b569239107140fca3f7bb116411d994, type: 3}
+    speakerId: companion_serin
