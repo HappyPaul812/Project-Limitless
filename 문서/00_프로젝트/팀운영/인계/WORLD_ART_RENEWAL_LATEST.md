@@ -1,5 +1,29 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field06 v1.1 기술 보완 및 Field07 v1 신규 아트 — 두 ZIP 납품
+
+**최신 정본 우선 (2026-10-19 오후 기준):** 기획 `docs/planning`의 `Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md`, `Chapter2_Field07_AshenReach_Renewal_Art_Assignment_20261019.md`에 의해 **Field06 v1 미술 방향은 바울 대표 승인**, 단 **기술 수정/Unity 정식 적용/PR·main 병합은 미승인·미완료**. 기존 역사적 Field06 `USER_ART_REVIEW_PENDING`을 오늘 현재 상태로 오인하지 않을 것. Field04/Arbel/Field05는 승인 적용 정본 유지.
+
+### 작업 A — Field06 v1.1 기술 최소 보완
+
+- 제작 ZIP: `Limitless_Field06_ScorchedTrail_Renewal_Art_v1_1.zip`, **1,399,079 bytes / 41파일 / PNG29(실사용22 + Preview/QA7)**, SHA256 **`d8551df7315495dcc6e4556ec33f30b711af8aeb85dc7b0a1c3612a5a6197f42`**. v1 ZIP `d01f797dd5566c33c6bf917a397c2032f5fc44fcf31a53dc328807e912a23b70` 보호·무변경.
+- v1 실사용 PNG22 중 **Road Upper/Lower/WestEnd Upper/WestEnd Lower 4개만 v1.1 기술 수정**. 기존 그림의 상하 위상과 실제 y=+0.5/-0.5 행이 반대로 읽히는 배치 오류를 교정하고, 중앙 경계 Alpha0 자리에 불투명한 동일 RGBA 연결 한 줄 부여. 기존 Ground3/Props7/선택 Runtime6/Decal2 **실사용 PNG18개 모두 v1 SHA/바이트 동일**. 새 Road4는 128×128 RGBA PPU128 Center/Point NoMip.
+- `Road_EW_Placement_Proposals.csv` A30/B42 72행은 새로운 v1.1 파일명으로 갱신했으나 **A/B 사용자 최종 결정 없음**. 기존 `Renderer_Mapping_363.csv` 원본 source/coord 보존, **Road30은 `LAYOUT_GATE_REQUIRES_A30_OR_B42` 명시**. 원본 Scene을 Sprite-only 교체로 처리하지 말 것.
+- QA: 중앙 불투명 연결 128px(직선 Upper/Lower), WestEnd 동일 중앙 결합, 직선 반복·End→직선·UpperLower **6조건 seam RGBA mismatch0**; ZIP CRC/PNG29 해독/Manifest22 SHA PASS. Props 7 새 후보 Alpha 접지 수치표만 제공하고 기존 소품 PNG는 전혀 수정하지 않음. Codex가 원본 Sprite.rect/본체 Alpha/Collider 차이를 실제 측정한 후 개별 문제 확정 필요.
+- **Runtime Grass 49개 비활성화 및 Unity Sorting/실제 빈틈 문제는 Codex 영역.** 717 PASS/0 FAIL은 Codex v1 이전 격리 QA이므로 v1.1 재검증으로 승격 금지. 현재 `USER_V1_VISUAL_DIRECTION_APPROVED / ART_V1_1_OFFLINE_QA_PASS / ROAD_A_B_UNDECIDED / OFFICIAL_UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`.
+- [납품·기술 QA 정본](../../Field06_ScorchedTrail_Renewal_Art_v1_1_TechFix_Delivery_20261019.md), 문서 첫 커밋 `c189e8a784d33c979b58b4800e5993740ca53e86`.
+
+### 작업 B — Field07 AshenReach v1 오리지널 신규 미술
+
+- 실제 GitHub `Field_07_AshenReach.unity` blob `2f267575bfbd1d7802b58c8653c2b33d7a84d6ac`: **정적 SpriteRenderer372 = AshSoil315/Road30/AshCrack8/BrokenTrack10/CanyonLip2/Tree5/Rock2**, 기존 Road30은 남북형. Runtime `Chapter2Main16Flow.CreateAshMarks()`는 첫 `AshSoil_` Sprite를 선택해 **WindlessAsh7개** 생성하므로 새 Ground 적용 시 재 입자의 불투명 사각형 표현·가독성 변화를 꼭 Codex가 별도 테스트해야 함.
+- v1 ZIP **`Limitless_Field07_AshenReach_Renewal_Art_v1.zip`**, **477,759 bytes, 27파일, PNG18(실사용15+Preview/QA3)**, SHA256 **`5d398295b6f98491a294628a18763b6d72e0dedfdf5f691ccd2e8d0539150403`**. 새 후보 PNG15=Ground3/Road4/Props5/Decal2/별도 Runtime 선택1. 본체/세린/불씨망령/공식 자산·이전 Field 아트 재사용/덮어쓰기0.
+- `Renderer_Mapping_372.csv` 이름 고유372·GUID/fileID/XY/Sorting/Flip/target, `Road_EW_A_B_Proposals.csv` A30/B42 후보72행, `Runtime_WindlessAsh_7_Audit.csv`, Manifest15 SHA 및 Alpha footprint·PPU/Pivot·QA, Contact Sheet·실제 PNG 합성 Preview(실 Unity 캡처 아님) 포함. **오프라인 Ground18 + Road6 =24 seam RGBA mismatch0**, ZIP CRC/PNG18 Decode/SHA PASS.
+- Main16 12목표/세린(4,-2), 조사·목격(7,0)(4,0)(1,-2)(-1,1)(-3,0)(-3,-1)(-8,0), Path Hearing/공식 Ember Wraith·아르벨왕복/Save/도보·휠체어 모두 보호, **실제 Unity 검증 전**.
+- **상태:** `ART_DELIVERED / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / ROAD_LAYOUT_UNDECIDED / RUNTIME_ASH7_HOLD / UNITY_NOT_APPLIED`; A30/B42 사용자 승인 전 Scene 이동/추가 Renderer12 생성 금지. Runtime WindlessAsh 선택1도 별도 코드 승인 전 자동 적용0.
+- [Field07 납품·검수 정본](../../Field07_AshenReach_Renewal_Art_v1_Delivery_20261019.md), 문서 첫 커밋 `670173ee19d422992086f4dd11644ad4b1b32136`.
+
+**둘 다** 이 ChatGPT 세션에서 생성해 다운로드로 전달. 바울 대표 PC F: 드라이브에 자동 저장했다고 말하지 않음. GitHub 문서 커밋은 `docs/art-renewal` 전용이며 main/Unity 원본/GUID/meta/Save/사용자 미커밋/Monsters/Chapter3 변경 없음. 다음: Field06은 Codex 소규모 Delta QA, Field07은 바울 대표 시안 미술 승인 후 Codex 격리 통합. Field07 미술 검토 전에 Field08 공식 자산 중복 제작 착수 금지.
+
 ## 2026-10-19 Field06 ScorchedTrail 환경 리뉴얼 v1 제작·ZIP 납품
 
 - **최신 확인 기준:** `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`; 기획 발주 `docs/planning/문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md`. 현행 Field04 승인42길/Arbel 공식23종/Field05 공식 B42는 모두 **기존 공식 적용 자산**, 재작업 금지. 이전 본 인계에서 Field05 A/B 미선정이라고 쓴 부분은 2026-10-19 그때의 **역사 기록**이며 최신 main Field05 B42 공식 적용 상태가 우선.
