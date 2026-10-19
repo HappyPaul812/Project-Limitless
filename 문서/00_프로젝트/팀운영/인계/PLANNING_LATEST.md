@@ -1,3 +1,15 @@
+# PLANNING 인계 — 2026-10-19 Codex Main18 음성10 + Field05 B42 v2 통합 마감 발주
+
+바울 대표 “리뉴얼 작업까지 다 묶어서 코덱스한테 시켜줘. 이번주에 재설정권 1장 써야 해. 기간이 얼마 없거든.” 요청. **한 번에 복사 가능한 Codex 지시**와 장기 정본 `문서/00_프로젝트/Codex_20261019_Main18_Voice_Field05_Road42_Integrated_Closeout.md` (`docs/planning`) 작성.
+
+- **A 우선**: Main18 세린10 이미 승인·격리 검증된 Codex 로컬 `codex/tts-main18-serin10-integration-20261019` 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`, 최종 `85633624f71bd18d5d79d495812980372c056975`, Main18 22/22 실Runtime/1370PASS0FAIL/정상25+Main17 11 보호. **GitHub 원격 branch 미존재·main 미반영**(확인 당시 origin/main `c263d9e36fc0570b16130d9c011abf3965def5f7`). 원본 PCM/GUID 보호·delta QA 후 feature Push/PR/main 병합, 원본 local 안전 적용은 충돌 없는 경우만. TTS 새 생성0.
+- **B 리뉴얼**: Field05 동서 **B Road42(315 Ground+42 Road+18 Props=375 Renderer)** 기획 우선 후보, Road v2 PNG4 이미 art-renewal 납품 `Limitless_Field05_EastWest_Road_v2.zip` SHA `3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`. 사용자 PC ZIP 설치는 미확인. 새로운 v2 Road4 실제 Unity 시각 화면/QA 전 **대표님 미술 승인X**, 따라서 우선 격리 QA와 3열 비교/별도 feature 준비까지만. **미술 승인 없이 원본 Unity 정식 적용이나 main 병합 금지**. B 신규 Renderer12, 선택7 소품 배치0/새 서쪽 Portal0/원래 Main14·몬스터·세린·Save·Arbel 이동/접근성 보호.
+- **C 로컬 동기화**: PR16 로컬 문서 커밋2 GitHub 조상 보존됨, 기존 dirty464 겹침/5내용차이로 `LOCAL_SYNC_PARTIAL`이었으므로 실제 최신 SHA/파일 및 Save23 사전 보호. hard reset/clean/강제push/무단stash 금지. GitHub Merge QA PASS, 로컬 Sync 별도 증빙.
+- **Codex 비용/시간:** 이미 합격된 Main18 1370/Field05 1582 게이트를 똑같이 처음부터 중복 반복하지 말고 새 원격기반 delta 및 B v2 신규 PNG4 변경사항 중심으로 검사. A/B 분리 worktree·commit, 원본 Editor/Play/포커스 무조작. 제안자 기획이 재설정권을 사용하거나 사용자 PC Codex를 직접 실행한 것은 아님.
+- **상태:** `INSTRUCTION_READY / USER_TO_SEND_CODEX / A_REMOTE_PENDING / B_ISOLATED_V2_QA_PENDING / LOCAL_SYNC_PARTIAL`. 역할 인계 및 불완료 단계 선명히 보고. 현재 docs/planning 문서 작성만 완료, 메인 브랜치 미병합.
+
+---
+
 # PLANNING 인계 — 2026-10-19 서릿길 마을 NPC7·서브퀘스트3·Main23~24 시퀀스 설계
 
 바울 대표 “그래” = 지난 기획 세션 말미의 **Chapter3 서릿길 마을 주민·상점·Main23~24 스토리 대사 구체화 계속** 진행 동의. `docs/planning`에 새 문서 2개 생성:
