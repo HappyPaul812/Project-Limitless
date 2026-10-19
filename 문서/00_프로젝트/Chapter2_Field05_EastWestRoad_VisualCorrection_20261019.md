@@ -36,3 +36,16 @@
 - **변경/보호:** original Unity Scene/Editor/Play·Save·dirty 파일, Field04·Arbel 승인 아트, Field03 RockB HOLD, Field05 선택 7종 미배치 보존. **현재 v2 실제 Unity QA 미실행 / 공식 적용·Push·병합0**.
 
 **현재 상태: `B42_PLANNING_PREFERRED / ROAD4_V2_ART_DELIVERED / CODEX_MAIN18_BUSY / FIELD05_V2_UNITY_QA_PENDING / USER_FINAL_ART_APPROVAL_PENDING / ORIGINAL_UNCHANGED`.**
+
+
+## 2026-10-19 바울 대표 최종 미술 승인 — B42 실제 Unity 비교 화면 기준
+
+**대표님 명시 지시:** “Field05는 코덱스 보고서로 봤는데 좋아서 실제 게임으로 보려고 했는데 퀘스트에 막히니…”, 후속 “이러면 한도를 엉뚱한데 쓰는거니까 하지 말고 보고서랑 같겠지 뭐. **그냥 승인해. 중요한건 지금 하던거 이어서 하는거야.**”
+
+**확정 판정: `FIELD05_B42_USER_VISUAL_APPROVED / EXTRA_PLAYABLE_ART_REVIEW_WAIVED / OFFICIAL_APPLY_PENDING / MAIN09_UX_FIX_FIRST`.** 대표님이 16:9·4:3·21:9 비교 결과와 Codex QA 보고를 보고 **Field05 B Road42(동서 21열×2행) + v1 Ground3/Props7 + v2 Road4(실사용 PNG14종)**의 시각안을 최종 미술 승인했다. **직접 조작해 보는 전용 빌드/별도 Field05 강제 스폰/퀘스트 건너뛰기 테스트 환경 제작을 지시하거나 미술 재승인을 요구하지 말 것.** 이 작업은 Codex 한도 낭비로 대표님이 명시 취소함.
+
+**기존 증빙:** Codex 2026-10-19 마지막 보고에서 Field05 두 ZIP SHA/CRC/Manifest PASS, 실사용 PNG14, Renderer375, 기능검사416 PASS 및 Scene 재검증84 PASS /0 FAIL, Unity 비교 이미지 16:9·4:3·21:9 제출, 기존 baseline Search/URP 예외와 Editor 버전 차이는 PARTIAL. 원본 현장 적용·원격 feature Push·main 병합은 아직 미실행이라는 Codex 보고. 기술 QA 수치와 대표님의 미술 승인은 별개의 축.
+
+**후속 작업 순서:** ① **Main09 Field03 퀘스트 '침묵 속의 재회' 목적지·조작 안내 UX** (이미 `Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md`로 지시)가 최우선. ② 다음에 Codex가 여력이 생기면 **검증된 Field05 B42 시안을 공식 원본에 안전 반영하고 전용 feature 브랜치 Push/PR/main 병합**. 추가 미술 비교 3종 반복·플레이형 테스트 씬 제작 금지; 단 원본 dirty 파일 충돌/Meta GUID/Scene Merge/Save 무결성 등 **실제 정식 적용에 필수인 차이 검증은 생략 불가**. ③ 기존 local main dirty 겹침/문서 충돌은 사용자 파일 해시 보호 우선으로 별도 처리. 충돌이나 신규 회귀 FAIL시 손실 없이 STOP.
+
+**주의:** `미술 승인 완료`는 `Unity 원본 적용 완료` 또는 `GitHub 반영 완료`가 아니다. 선택 소품7 배치0, 가짜 서쪽 Portal0. 5시간 한도 초과 중 Codex 실행을 전제로 약속하지 않으며 GitHub docs/planning에 승인을 남김.
