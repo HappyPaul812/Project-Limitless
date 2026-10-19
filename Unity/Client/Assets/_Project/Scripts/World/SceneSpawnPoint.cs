@@ -45,6 +45,7 @@ namespace ProjectLimitless.World
                 // Spawn 직후 의도하지 않은 방향으로 미끄러지지 않습니다.
                 body.position = transform.position;
                 body.linearVelocity = Vector2.zero;
+                ResolveStaticOverlap(player, body);
             }
             else
             {
@@ -55,6 +56,36 @@ namespace ProjectLimitless.World
             // Field/마을 전환은 Scene 로드뿐 아니라 Player가 목적 Spawn에 놓여야 정상 완료입니다.
             // 이 뒤에만 저장하여 다음 이어하기가 검증된 SpawnPoint에서 시작하도록 합니다.
             GameSaveService.SaveCurrentWorldPosition(player.transform.position, gameObject.scene.name, spawnPointId);
+        }
+
+        /// <summary>Spawn이 기존 울타리 등에 겹치면 물리 계산에 밀린 뒤 저장되지 않도록 실제 충돌 깊이로 먼저 분리합니다.</summary>
+        private void ResolveStaticOverlap(PlayerController player, Rigidbody2D body)
+        {
+            var shape = player.GetComponent<Collider2D>();
+            if (shape == null || !shape.enabled) return;
+            // 고정 좌표 보정 대신 실제 Collider 모양과 offset을 사용합니다. Trigger와 이동 중인 몬스터는 제외합니다.
+            const float clearance = .01f;
+            for (int pass = 0; pass < 8; pass++)
+            {
+                Physics2D.SyncTransforms();
+                bool corrected = false;
+                foreach (var obstacle in Physics2D.OverlapBoxAll(shape.bounds.center, shape.bounds.size, 0f))
+                {
+                    if (obstacle.isTrigger || obstacle.transform.IsChildOf(player.transform)
+                        || obstacle.attachedRigidbody != null && obstacle.attachedRigidbody.bodyType != RigidbodyType2D.Static
+                        || Physics2D.GetIgnoreLayerCollision(shape.gameObject.layer, obstacle.gameObject.layer)
+                        || Physics2D.GetIgnoreCollision(shape, obstacle)) continue;
+                    var separation = shape.Distance(obstacle);
+                    if (!separation.isValid || !separation.isOverlapped) continue;
+                    body.position += separation.normal * (separation.distance - clearance);
+                    Physics2D.SyncTransforms();
+                    corrected = true;
+                }
+                if (!corrected) break;
+            }
+            // 안전 보정 좌표와 이번 도착 자동 저장 좌표를 일치시킵니다. 정상 Spawn은 원래 좌표를 유지합니다.
+            player.transform.position = new Vector3(body.position.x, body.position.y, player.transform.position.z);
+            Physics2D.SyncTransforms();
         }
     }
 }
