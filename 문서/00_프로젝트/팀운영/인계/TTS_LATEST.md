@@ -199,3 +199,11 @@
 - 기존 Main18 정상12+Main19 정상13 **Unity 연결25 보호**, 기존 Catalog/GUID/Save/기존 WAV/Story13 HOLD/lock 보호. **Codex는 `codex/tts-main18-serin10-integration-20261019` 독립 로컬 worktree**로 실제 Unity 추가10·Main18 22/22 QA 수행. `main` 직접 commit/Push/merge0, 선별 로컬 commit만.
 - **현재 상태:** `USER_APPROVED_10 / CODEX_ASSIGNED_VIA_GITHUB_ISSUE / UNITY_INTEGRATION_PENDING`. 이슈를 만든 것만으로 Codex 로컬 실행·Unity 통합 성공을 뜻하지 않음. 대표가 Codex 세션에서 이슈 링크를 전달하거나 작업을 시작해야 함.
 - TTS API 호출0, 본 TTS 세션 Unity 파일 수정0. Codex 완료 보고에 SHA 매핑·최종 Main18 22/22·QA/브랜치/로컬 commit와 Push 여부 기재 요구.
+
+
+## 2026-10-19 키1 7회·키2 10회 보고 / Main20·Main21 17회 배분 (최신)
+
+- 사용자 현재 잔여 호출 보고: Key1=7 / Key2=10. 서로 다른 Google Project+gemini-3.8-flash-tts의 실제 FreeTier 사용량·Billing 검증 **NOT_VERIFIED**; 각 키당 독립 사용 가능 시에만 최대17. 동일 Project면 합산 금지.
+- 제작 큐: Main20 세린5 + Main21 비하렌 NPC12 = 17. Key1: Main20 5+Main21 2, Key2: Main21 10. Main21 미생성2: `main21_haren_taeon_02`, `main21_prepare_serin_01`. 하렌3 Voice미확정 BLOCK.
+- [계획과 Codex 로컬 실행 지시](../../TTS_Main20_Main21_17Call_Plan_20261019.md) 및 [17행 CSV 큐](../../TTS_Main20_Main21_17Call_Queue_20261019.csv) 기록. 기존 Manifest·Main18 세린 승인10·정상25 불변.
+- 이번 TTS 세션에서는 Google API 실제 호출0 / 사용자 로컬 WAV0 / Unity0 / main 변경0. Codex 실행 대기, 신규 음성 모두 사용자 청취 승인 전 Unity 적용 금지.
