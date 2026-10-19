@@ -49,15 +49,19 @@
 
 - `main21_haren_haren_01`, `main21_haren_haren_02`, `main21_haren_haren_03` (Voice 미정). 별도 승인을 받기 전에는 대상에 포함하지 않는다.
 
-## Codex 로컬 실행 지시 (TTS 제작 전용)
+## 역할 정정 — TTS 담당 직접 Python 제작 (2026-10-19)
 
-1. `F:\study\codex\Project-Limitless`의 `AGENTS.md`, `CURRENT_STATUS.md`, `TTS_음성_제작_정책.md`, 본 계획/CSV, 기존 `Tools/TTS`와 `F:\Downloads\Voice`를 로컬 **읽기 전용** 감사. 최신 main, docs/tts, 실제 LOCAL Manifest/Dialogue/Voice Registry, checkpoint, 기존 WAV·해시 대조. 기존 성공 ID는 절대 재생성하지 말 것. 타 세션 Main18 통합 작업과 원본 Editor/파일 충돌 금지.
-2. 키를 출력/기록하지 않고 각각의 실제 Google Project ID 및 FreeTier model `gemini-3.8-flash-tts` 현재 RPD 잔량, Billing/유료호출 위험 확인. **Project 다름/무료 잔량 최소7·10 확인** 전에는 실제 TTS 요청 금지. 키1/키2가 같은 Project이면 독립 호출17 계획을 실행하지 말고 실제 프로젝트 단위 quota에 맞춰 보류/보고. 사용자 숫자를 넘는 요청·Paid fallback·키 무작위 교체 금지.
-3. 승인된 기존 생성 스크립트의 SDK/API wire 포맷·속성·키 슬롯 선택 로직을 감사하고, **새 Main20/21 전용 배치**를 별도 경로에 준비. 자동화가 기존 Main18 checkpoint/HOLD/lock 또는 승인 WAV에 손대면 BLOCKED. `check`(API0/읽기 전용)과 `run`(명시적 17회 상한 및 프로젝트/무료 확인) 분리. 키1 최대7 → 키2 최대10의 17 Dialogue를 CSV 순서대로. 1 Stable Dialogue ID=1 API 요청=1 WAV. 동일 캐릭터 VoiceId 고정, 장면별 Style은 승인 Registry와 기존 음색 일관성 우선. 프롬프트 속 캐릭터 대사 본문을 임의로 번역/수정하지 않는다.
-4. 첫 API 에러, quota429, 실패/응답 불확실, SHA/원문 불일치 시 **즉시 전체 배치 중단**. 다른 Key로 이어서 무작정 진행하거나 다음 ID 앞으로 당김/자동 재시도 금지. 요청 전·후 attempt/checkpoint+ID+KeySlot+소속 Project(비밀제외)+모델+VoiceId+내용 해시+결과 WAV SHA+성공/불확실 여부를 남기고 원본 보존.
-5. 새 WAV는 `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\` 등 **독립 출력**에 저장(기존 이름 충돌 금지). WAV PCM/24kHz/mono/16bit 등을 실제 응답 기반으로 검증, clipping·전체 decode·길이·본문/화자 대응 자동 QA. 키/Secret/민감 payload GitHub 저장 금지.
-6. 새 WAV 모두 **USER_LISTENING_PENDING**. 바울 대표의 원문/음색 청취 승인 전 Unity Import/StoryVoiceCatalog/Manifest 완료 상태 변경 금지. 승인되면 Codex 별도 Unity 통합 작업을 수행. 원본 Editor 포커스/Play/사용자 Save 보호.
-7. 로컬 실행은 Codex의 독립 `codex/tts-main20-main21-batch-20261019` worktree/브랜치에서 준비·QA. `main` 직접 commit/Push/merge, 무단 원격 Push 금지. 문서·실제 생성 CSV·SHA/시도/청취 대기/남은 quota·정본과 차이·사용자 승인 상태를 보고. 문서 GitHub 직접 기록은 TTS 담당 `docs/tts`만.
+바울 대표 지적대로 **Python TTS 생성 스크립트 작성·음성 제작 운영·음색/원문 품질 검수는 TTS 담당**이 수행한다. 바울 대표는 본인 로컬 PC에서 Python 스크립트를 실행하고 키/쿼터 및 청취 승인을 확인한다. **Codex는 사전에 승인된 WAV의 Unity 통합 및 런타임 검증만 담당**한다. 최초 Codex 생성 작업 할당은 오류이며 철회한다.
+
+### 실제 전달한 실행팩
+
+- `LIMITLESS_TTS_Main20_Main21_17_Python_Pack_20261019.zip` (9,874 bytes), SHA256 `1a5a80afc98023be8324809e5fd6e7dad8cd12eccb852843525bf132c75bf612`.
+- Python `LIMITLESS_TTS_Main20_Main21_17.py` + 고정 17개 원문 CSV + README. 비밀키 없음.
+- 스크립트 직접 제작 후 offline `check`: 17행, KEY1 7/KEY2 10, SHA 정합 PASS. 17회 모의 SAVED·SHA 변조 차단 및 두 번째 요청 실패 모의 즉시 HOLD/LOCK/뒤 호출0 PASS. **실제 TTS API 요청0, 실제 WAV 생성0, 실제 사용자 PC 실행0**.
+- 출력 위치: `F:\\Downloads\\Voice\\Limitless_TTS_Main20_Main21_20261019\\`. 기존 Main18 WAV/체크포인트/HOLD/잠금 접근·변경하지 않음.
+- 사용자가 압축해제 후 `python .\\LIMITLESS_TTS_Main20_Main21_17.py check` → `python .\\LIMITLESS_TTS_Main20_Main21_17.py run --confirm-free` 실행. 동일 Google Project에 속한 키는 각각 독립 quota로 합산하지 않음. Google AI Studio에서 소속 Project ID·모델별 무료 잔여량·Billing 직접 확인. 스크립트는 이를 API로 자동 보증하지 않으며 확인 불가 시 중단.
+- API Key는 환경변수 또는 숨김 입력으로만 받음. 첫 오류·429·원본 훼손 의심 시 즉시 전체 중단하고 신규 HOLD/잠금을 보존. 자동 재시도·합본·성공 음성 덮어쓰기0.
+- 바울 대표의 WAV 최종 청취 승인 후 **Codex 별도 Unity 통합**: Main20 세린5/Main21 일반12를 Manifest/DialogueID/화자/Voice PCM/SHA 매핑 검증, 기존 정상본 보호, 원본 Editor·Save 비간섭, 작업 `codex/...` 브랜치에서 진행.
 
 ## 실행 상태와 중요 구분
 
