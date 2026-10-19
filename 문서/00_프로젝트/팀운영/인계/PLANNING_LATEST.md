@@ -1,3 +1,13 @@
+# 기획 최신 인계 — 2026-10-20 Field09 GitHub 공식 PNG10 확인, v2 실제 작업 지시
+
+바울 대표 요청: “Field09 미술 원본은 깃허브에 없으면 없는거니까 알아서 지시해줘.” 실제 최신 GitHub `main` `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` 폴더 `Unity/Client/Assets/_Project/Resources/Main18/Environment/`에 **공식 PNG10종과 각 .meta가 전부 존재**하고, v2 필요 수정 대상8종의 파일 크기/블롭을 GitHub Contents에서 확인. 이전 리뉴얼 세션이 자기 컨테이너에 원본 PNG가 없다고 보고한 것은 GitHub 파일 부재가 아닌 **컨테이너/바이너리 다운로드 도구 접근 제약**. 더 이상 원본없음 핑계로 보류하지 않음.
+
+새 실행 정본 `문서/00_프로젝트/Field09_OfficialPNG_SourceConfirmed_ArtV2_ExecutionOrder_20261020.md` (`docs/planning`, 커밋 `c9a1c0a6a20e323d1d0b45689b6e896fd578f4d8`). **리뉴얼 담당은** GitHub PNG8을 바이너리로 받아 실제 수정→지면 Base·Cracked01 회색 반복띠6/Overlay seam, 나머지6개의 흰 가이드선 국소 제거→**PNG8 및 표준 검증 ZIP v2 직접 납품**. 원본 및 .meta/GUID/SHA, AshPatch·Cracked02 보호. tool byte 접근만 막히면 **Codex 단1회 읽기 전용 PNG8+Unity visualFAIL 스크린샷 추출**을 요청, 사용자 업로드 요청 금지. 실제 GitHub 원본이 없는 경우만 신규 복원 원화 후보인데 **지금은 원본 존재 확인됨**. 과거 Field09 v1 정상 ZIP 재포장/Tech40PASS/Main18 92PASS에도 실제 게임 Visual FAIL 지속·원본 적용 제외. v2 납품 후에만 Codex 최소 UI/GameView Delta QA와 조건부 원본 반영. 2026-10-19 EOD remote main/original local main SYNC_COMPLETE는 승인 자산들에 한하며 Field09 v2는 미포함. 몬스터·늑대 v3 KeyArt 사용자 미술승인 및 전체 시트 제작 대기 유지.
+
+기획 문서 작성/인계만 GitHub에 반영됨. 리뉴얼 챗 세션 간 자동 지시 전달 불가; GitHub 정본/Issue 및 복붙지시를 담당에게 전달해야 수행된다.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-19 하루 마감 통합 / 원본 로컬 안전 동기화 요청
 
 바울 대표 명시 요청: “오늘은 여기까지 하자. 오늘 작업한거 다 합치고 로컬 동기화 해줘.” GitHub remote main `675988c9f2c5c507d9a696b0378be27c0bd3309b`; 현재 열린 PR0. **오늘 Codex 로컬 feature (Main09 음성27, Main10 음성18·NPC, Field06/07 B42 원본 적용)는 GitHub 원격에 브랜치가 없음** → 로컬 Codex 실행 없이는 직접 remote 병합·F:\ Windows 로컬 동기화 불가능. 본 기획 세션이 완료했다고 보고해서는 안 됨. remote docs/planning `87ee095`(EOD 추가 전), art-renewal `bda2869`, tts `118c60f`는 main과 오래 diverge하므로 통째 병합 금지.
