@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-19 하루 마감 통합 / 원본 로컬 안전 동기화 요청
+
+바울 대표 명시 요청: “오늘은 여기까지 하자. 오늘 작업한거 다 합치고 로컬 동기화 해줘.” GitHub remote main `675988c9f2c5c507d9a696b0378be27c0bd3309b`; 현재 열린 PR0. **오늘 Codex 로컬 feature (Main09 음성27, Main10 음성18·NPC, Field06/07 B42 원본 적용)는 GitHub 원격에 브랜치가 없음** → 로컬 Codex 실행 없이는 직접 remote 병합·F:\ Windows 로컬 동기화 불가능. 본 기획 세션이 완료했다고 보고해서는 안 됨. remote docs/planning `87ee095`(EOD 추가 전), art-renewal `bda2869`, tts `118c60f`는 main과 오래 diverge하므로 통째 병합 금지.
+
+승인된 Main09/10 음성 복구·Field06/07 B42만 선택 기능 통합, Main18/Field05/Main09 Quest 등 기존 PR #18~26 완료분 중복 금지. Field09 v1 정상 ZIP 재포장 및 기술40+delta92PASS라도 실제 **회색반복띠6/흰 가이드6 FAIL로 original 미적용**—손상/미술FAIL ZIP과 art asset은 main **제외**하고 보고서만 보존. 독사/Wolf v1 반려,v2 미술 보류,v3 KeyArt 사용자 승인 전이라 게임 적용 제외; TTS20/21 미등록22 및 Chapter3 신규아트도 미승인 적용 제외. 사용자 dirty/Untracked/Save/UserData·문서5 의미병합 고유 local SHA 보존. 원본 Editor와 active Play/포커스0. 승인 기능만 Codex 신규 격리 branch 통합 → PR·merge → original local safe sync (SAFE BLOCK 시 정직 보고), full QA 재검사 금지.
+
+마감 안전계약 정본: `문서/00_프로젝트/LIMITLESS_20261019_EOD_Merge_LocalSync_SafetyContract.md` (`docs/planning`, commit `be62f5c5969d0bd78fe733b8e66619333873fefe`). **현재 기획 문서화/인계만 실행됨. 원격 PR 병합, Windows 원본 local HEAD/index 동기화, 새 QA 실제 실행은 미실행**. Codex에게 계약 복붙 전달 후 합격 전 SYNC_COMPLETE 선언 금지.
+
+---
+
 # PLANNING 인계 — 2026-10-19 20:22 Field09 시각FAIL·리뉴얼 실제 작업 촉구
 
 바울 대표 Codex 마지막 보고: Field09 원래 잘못 만든 ZIP은 PNG8/내부3문서 바이트 보존한 **정상 표준 ZIP 재포장** 성공, 새 SHA256 6d3d866e75c696d451919d80789a89f12b429ac72f22d8e3f245a91bfc43a012, Python/Windows/.NET 해제 검증 PASS. 격리 Unity 기술40PASS/0FAIL, Main18 Delta92PASS/0FAIL이나 **실제 미술 시각FAIL(지면 회색 반복띠6, 소품6종 흰 가이드선 잔존)**으로 원본 Field09 적용을 보류한 올바른 판단. 리뉴얼 담당이 다음에는 ZIP 재포장 아닌 **8개 픽셀 자체를 실제 결함에 맞게 수정하는 v2 신규 ZIP**을 만들어야 함(기존 Main18 공식 PNG/meta/GUID 변경 금지).
