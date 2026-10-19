@@ -1,3 +1,11 @@
+## 2026-10-19 재개 작업 완료 — Main09 PR21 / 승인 Field05 PR22 병합·원본 적용
+
+- 우선순위1 Main09: 실제 도보/키보드·휠체어/게임패드 6단계348 + 최종UI/추적/Scene회귀79 = **427PASS/0FAIL**. 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`, QA commit `27983bb3d5652dfd6fec0b837ad4a63e98fc5ed5`. [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) Push/검토대기. **Main09 main병합·원본디스크적용0**, UX개선화면 검토후 다음 반영 대상. 기존여관과조사입력충돌도 현재Main09/1.6반경한정 해결. 대사/좌표/Collider/승인음성 보존.
+- Field05: 대표 최종승인 범위 PNG14/Road42/환경375 정식 반영. [PR22](https://github.com/HappyPaul812/Project-Limitless/pull/22) **main병합 `b95909387a7b6f597417041bfcd72f2b866d4e47`**, PR head `81b1c82df4fb0203d2958fc90804fc4956fb3cc5`. 원본디스크Scene1+신규32경로 일치/SceneGUID보호. 기존416+84검증재사용+실제Continue/Quest/Meta66PASS/0FAIL. 새Field05플레이환경/빌드/화면/텔레포트테스트0. [정식QA](Field05_B42_Official_Apply_QA_20261019.md).
+- 원본4844SHA 중 승인Field05Scene1만변경, UserData23/Main08·Main18음성/Arbel/Field04/기존meta보호. Main18 PR18/19 재작업0. 원본Editor/Play/포커스조작0; 원본 자연Import/Runtime·물리OS입력은미검증, 기존Search/URP·Editor버전은환경PARTIAL.
+- local main `ff022e63dfe364f559fcc29819d27b123ad31127` 보존. tracked dirty320/미추적1053, 원격겹침517중512동등/문서5내용충돌로 **LOCAL_SYNC_PARTIAL**. 기존로컬문서2커밋 ff022e63/3a37aa2e의 main조상이력 보존확인. reset/clean/stash/forcePush0. [최종보호](Evidence/Field05Official20261019/FinalLocalProtection.json).
+- 다음 재개: Main09 PR21을 최신 main과 충돌없는 상태로 유지하고 대표 UX확인 후 main·원본 반영. 사용자 원본문서5개는 양쪽내용 의미병합 검토 후 로컬main동기화. 기존검증/아트/음성을 재제작하거나 수천건 QA를 반복하지 않습니다.
+
 ## 2026-10-19 Field05 B42 원본 디스크 정식 적용 — 66 추가 PASS / Push·PR 준비
 
 - 바울 대표 최종 미술 승인에 따라 기존PNG14/환경375/Road42 후보를 원본 Scene+신규32경로로 반영했습니다. 기존Collider21·비도로Transform·SceneGUID·UserData23·승인음성 보호. 원본Editor조작0/자연ImportRuntime미검증.

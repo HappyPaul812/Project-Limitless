@@ -1,0 +1,27 @@
+{
+  "local_main": "ff022e63dfe364f559fcc29819d27b123ad31127",
+  "origin_main": "b95909387a7b6f597417041bfcd72f2b866d4e47",
+  "tracked_dirty": 320,
+  "untracked_files": 1053,
+  "overlap": 517,
+  "overlap_equal_origin": 512,
+  "different_user_documents": [
+    "문서/00_프로젝트/CURRENT_STATUS.md",
+    "문서/00_프로젝트/EndOfDay_Integration_Voice_LocalSync_QA_20261014.md",
+    "문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md",
+    "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md"
+  ],
+  "local_document_commit_history_preserved": {
+    "ff022e63dfe364f559fcc29819d27b123ad31127": true,
+    "3a37aa2e9a972b1ff9de7c051c6c744b057c918f": true
+  },
+  "original_snapshot_count": 4844,
+  "authorized_existing_change_only": [
+    "F:\\study\\codex\\Project-Limitless\\Unity\\Client\\Assets\\_Project\\Scenes\\Field_05_WesternOutskirts.unity"
+  ],
+  "userdata23_changed": 0,
+  "main08_main18_audio_changed": 0,
+  "local_sync": "PARTIAL_STOP_DIRTY_DOCUMENT_CONFLICTS",
+  "reset_clean_stash_force_push": 0
+}
