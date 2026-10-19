@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field09 공식 아트 8종 국소 최소 보완 — 실제 ZIP GitHub 납품
+
+- **바울 대표 작업 범위 승인:** 기존 Main18 공식 환경 PNG 8종의 실제 지면 경계/흰 가이드선만 국소 수정. 디자인/역할/원본 경로/색감 보호, 전체 재디자인 금지. `AshPatch_01`·`Ground_Cracked_02` 완전 보호. 이전 Field09 기존 아트 감사의 '0종 확정'은 **이후 사용자 실제 결함 보완 발주 전에 작성한 역사 기록**이며, 현재 이 8종 국소 작업이 승인됨.
+- 원본은 `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`, `Resources/Main18/Environment/ObsidianScar_*.png` 8개 그대로 보존. **별도 ZIP으로만** 픽셀 변경한 8종 후보를 제작하고 `docs/art-renewal` 브랜치에 GitHub 바이너리 납품 **실제 업로드/목록 크기 검증**. ZIP은 바울 대표 로컬 `F:`에 자동 생성·저장한 것이 아님.
+- 파일: [`Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip`](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip); **2,995,422 bytes, 13 entries**(실사용 수정 PNG8 + Manifest + QA표2 + README + Codex HOLD), **SHA256 `7dfa2417a8135e29e3e72c7d7921d3ade76fbedfdb376f764c09b02892296139`**, GitBlob `34bce32d0d91b9ef8167308383355590d3834f9f`, 최초 바이너리 납품 commit `434f506ff20b9b6cf99ab9937616a76803467ae0`.
+- **실제 변경 범위:** Ground Base **21,919px** / Ground Cracked01 **22,859px**, 모든 변경이 12px 외곽 대역 안이며 RGBA 좌우·상하 seam mismatch**0**. Cliff Blocker **2,363px**, Fissure Edge **895px**, Fissure Glow **2,785px**, HeatVent **873px**, Obsidian Slab **2,030px**, Obsidian Spire **1,169px** — 기준 원본의 밝은 무채색 낮은 alpha 가이드계열 바깥 프레임 픽셀만 선별 제거. 원본/후보 각 SHA·바이트·BBox `QA/Original_Source_SHA256_and_Delta.csv` 및 `Manifest.json`에 모두 기록.
+- 오프라인 QA: 원본 각 PNG와 수정 PNG8 RGBA512×512 decode 및 픽셀 roundtrip **8 PASS**, 지면2종 edge0·중심부 변경0, 가이드6종 alpha 제거 픽셀 각각 존재 확인. ZIP 각 Entry local/central CRC를 작성하여 업로드한 GitHub Blob SHA/크기 확인. **GitHub 바이너리 커넥터는 >1MB ZIP 본문 다운로드를 비워 돌려주므로 이번 세션에서 ZIP를 Python zipfile로 별도 재다운로드 CRC 실측한 것은 아니며**, Codex가 추후 바이너리를 직접 받아 `testzip`/Manifest 재확인 필요.
+- **품질 보류:** 지면의 `GroundCrackedWest` Tiled Overlay와 다른 Ground Material 간 **이종 접합부가 완벽한지 아직 실제 Unity 1280/1600/1920 GameView 미검증**. 가이드 자동 삭제가 Cliff 실루엣 일부 픽셀과 겹치는지 실제 장면 확인 필요. 본 패키지는 아트 최소 수리 **후보**이고 바울 대표 최종 수정본 미술 승인과 공식 Unity 적용/Runtime PASS와 다름.
+- 상태 `DELTA_ART8_DELIVERED / OFFLINE_QA_PASS / USER_DELTA_VISUAL_REVIEW_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_VERIFIED`. Codex 작업은 바울 대표 승인 후에만 **별도 `codex/*` worktree**에서 기본 원본SHA 대조→Importer GUID/meta·Scene Sprite 참조 보호→지면 접합/기존 가이드선 흔적·Collider/Quest/과열/세린/Save 회귀. `main` 직접 Commit/Push/병합 금지.
+- [Field09 정식 납품/기술 QA 문서](../../Field09_ObsidianScar_OfficialArt_MinimalFix_v1_Delivery_20261019.md), 최초 문서 commit `935c53686e5a464e483221f36480f0bd958f5e8f`.
+
 ## 2026-10-19 환경 신규제작 일시 마감 / 몬스터18·기본 펫3 감사 및 두 파일럿 납품
 
 - 바울 대표 최신 지시: 환경 지도 **신규 아트 제작 일시 마감**, 미해결 환경 기술/승인 게이트는 역사대로 독립 유지. Chapter1·2 **등록 몬스터18 + 기본 펫 Wolf/Bear/Fox3** 소스 감사 및 **非공식 몬스터1 + Wolf1** 오리지널 파일럿 신규 PNG 제작 승인. Phase2 Bear/Fox 그림은 Wolf 미술 승인 전 HOLD. 기준 `main` **`675988c9f2c5c507d9a696b0378be27c0bd3309b`**, 기획 `docs/planning/문서/00_프로젝트/Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`.
