@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-19 Field09 ZIP 무효/표준 재포장 + Snake/Wolf 고품질 기준 변경
+
+바울 대표 Codex 최신 보고: Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip은 로컬/GitHub SHA 같지만 ZIP 자체 32bit header byte order 오류로 Python/Windows/.NET 모두 열기 실패, 수기 복구로 실제 PNG8 해시·Manifest는 맞는 것으로 보고; Unity 새로운 QA·원본 Field09 적용 0. codex/field09-minimal-fix-unity-integration-20261019 오류 보고 커밋 008d32f18e96c4f04b53edb6a0993b2b29958332, 기존원본 4,339 SHA/UserData23 보호. 다음: 동일 PNG8 byte/SHA·기존 Manifest 유지한 표준 ZIP 새 archive SHA 재포장(Python zipfile/Explorer/.NET 세방식 CRC 검증)→유효하면 기존 Field09 격리 이미지/런타임 deltaQA→0FAIL 조건부 원본 적용. 손상 아카이브 원본 덮어쓰지 않고 별도 버전, PNG 변경 금지.
+
+바울 대표가 VenomSnake v2·Wolf v2의 지나친 픽셀 블록/Chapter2 공식 몬스터 대비 낮은 퀄리티를 지적. 리뉴얼 납품 문서상 v2는 코드 생성 픽셀 도형; 맹독뱀 32×32셀×4프레임, Wolf 64×40셀×6프레임, Chapter2 공식 그을음들개/열풍매 각 314×314 Sprite Cell. 해상도만 단순 비교/314 일괄 강제는 아니며 Chapter2 공식 아트급 실루엣·명암·해부학·광원·질감과 같은 World Size 렌더가 새 승인 기준. v2 미술 승인 HOLD, v2 단순 대형 확대 금지. 리뉴얼 담당은 뱀과 늑대 고품질 정지 Key Art 1장씩 Chapter2 공식 11~15와 동일 게임 스케일 비교로 먼저 보고→바울 대표 스타일 승인 후에만 뱀20/Wolf6 전체 시트 재제작, Bear/Fox 보류. 기존 자산 보호.
+
+정본 문서/00_프로젝트/Field09_Zip_Header_Repair_And_MonsterWolf_Chapter2_Quality_Gate_20261019.md (docs/planning, 커밋 6414d914d97ba8f5e64f41fc79a3e948c14a8ceb). 기획 문서만 직접 GitHub 기록, Codex·리뉴얼 타 세션 자동 전달/로컬 원본 Unity 실행은 없음.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-19 20:06 Field09 최소보완 ZIP 격리 QA 및 합격 시 원본 Unity 적용 승인
 
 바울 대표가 **“Field09: 별도 검수 및 Unity 적용하자”**고 명시 지시함. 기존 리뉴얼 `docs/art-renewal/문서/00_프로젝트/Field09_ObsidianScar_OfficialArt_MinimalFix_v1_Delivery_20261019.md`의 ZIP `Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip`가 GitHub 담당 브랜치에 실제 납품돼 있으며, SHA256 `7dfa2417a8135e29e3e72c7d7921d3ade76fbedfdb376f764c09b02892296139`, 2,995,422B, PNG8개(512RG​BA)/13entries. 바울 대표의 기존 F 드라이브 파일도 후보이나 파일/해시 확인 전 존재 단정 금지. 원본10종 중 Ground2 반복/교차 seam와 Cliff·FissureEdge·FissureGlow·HeatVent·Slab·Spire 흰 가이드 6종만 격리 Unity Game View 3해상도 실제 비교, Main18 과열13목표·몹/세린/Collider/Save/Field08↔09 변경 범위 delta QA. **QA 합격과 원본 사용자파일·기존 공식8 PNG/meta/GUID/Save SHA 보존이 확인된 경우에만 Unity 원본 안전 적용 허가**, 불합격이면 멈춤. 개별 새 Asset+Scene 참조 원칙으로 기존 공식 PNG 원본 byte 보존, 원본 Editor/Play/포커스 무조작. 기존 Main18 500PASS 전수 반복 금지. GitHub main 직접 Commit/Push/병합 금지.
