@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 Main09 복구음성27 청취 전체 승인 / Field06 v1 로컬 ZIP 접수
+
+바울 대표는 Main09 기존 WAV 내부 잘못된 분할·합본 교정 후보 27개를 모두 청취한 후 **“다 들어봤는데 다 맞아”** 확인. Codex `codex/main09-dialogue-voice-fix-20261019` 보고의 **격리550PASS/0FAIL**과 **음성 사용자 청취27/27 APPROVED**를 분리 기록. 과거 후보7개 `USER_LISTENING_PENDING`은 모두 승인으로 갱신. `main09_paul_001`은 step1에서 step2 `paul_002` “또 뵙네요” 첫 대면 인사 뒤로 이동, 기존 원문/ID 보존. 실제 Unity 원본 음성 정식 연결·원본 Editor Import·remote main 병합은 **아직 미실행/미확인**. 다음 Codex 승인 후보 **개별SHA 고정**+Catalog·WAV/meta 최소 연결+deltaQA+원본 보호 조건부 적용, TTS API0, 전체550 재검사0.
+
+리뉴얼 담당 Field06 정본 `docs/art-renewal/문서/00_프로젝트/Field06_ScorchedTrail_Renewal_Art_v1_Delivery_20261019.md`의 ZIP은 SHA예상 `d01f797dd5566c33c6bf917a397c2032f5fc44fcf31a53dc328807e912a23b70`, 1,362,496B/38파일/PNG28(실사용후보22). 바울 대표가 Windows 로컬 **`F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1.zip`** 경로 제시. 로컬 존재·SHA Codex 실제 확인 대기, 사용자 최종 아트 승인 아님. Static 후보14·Optional Runtime6/Decal2 8 별개, 동서 Road **A30/B42 미선정**. Main09 공식 적용 이후 Field06 ZIP read-only 검사와 격리 A/B 실제 Unity 시각/안전 검수→바울 대표 미술 결정, 승인 전 원본 Scene 적용0.
+
+신규 기획 후속 정본: `문서/00_프로젝트/Main09_Voice27_Approval_Field06_Art_v1_Handoff_20261019.md` (docs/planning, commit `13106a8c9152471bc83d35efaddb9b3ea4c12355`). 기획 문서 반영만 수행, Codex 로컬 실행/음원·씬 반영/remote main merge는 미실행.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Field06 환경 리뉴얼 신규 발주
 
 바울 대표 “Main09는 Codex에 시켰으니 리뉴얼 일 줘” 지시. 이미 승인/정식 적용된 Field04 동서42·Arbel v3 23종·Field05 B42 PNG14/환경375는 중복 제작 금지. **Chapter2 다음 순서: `Field_06_ScorchedTrail` 환경 리뉴얼 v1.** 기획 정본 `문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md` (`docs/planning`, 커밋 `d9e6411763b7cbf6b507944ade5919bf24d9ba15`). Main15 코드에서 실제 조사점·Serin 좌표와 Runtime BuildEnvironment6패치를 근거로 우선 실물매핑→동서황토-그을음-균열 시안/PNG/Manifest/Mapping/QA/영문 ZIP 제작. **아트 제작 권한만, Unity Scene 적용/사용자 미술 승인/main 병합은 별개**. Codex는 Main09 음성 버그 교정 중이므로 Field06 아트 제작은 병렬, 실물 Runtime Unity 통합은 이후 승인 시. 리뉴얼 담당에게 복붙 지시 전달 필요, 다른 담당 세션 자동 통보 불가.
