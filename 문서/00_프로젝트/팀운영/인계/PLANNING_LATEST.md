@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 20:22 Field09 시각FAIL·리뉴얼 실제 작업 촉구
+
+바울 대표 Codex 마지막 보고: Field09 원래 잘못 만든 ZIP은 PNG8/내부3문서 바이트 보존한 **정상 표준 ZIP 재포장** 성공, 새 SHA256 6d3d866e75c696d451919d80789a89f12b429ac72f22d8e3f245a91bfc43a012, Python/Windows/.NET 해제 검증 PASS. 격리 Unity 기술40PASS/0FAIL, Main18 Delta92PASS/0FAIL이나 **실제 미술 시각FAIL(지면 회색 반복띠6, 소품6종 흰 가이드선 잔존)**으로 원본 Field09 적용을 보류한 올바른 판단. 리뉴얼 담당이 다음에는 ZIP 재포장 아닌 **8개 픽셀 자체를 실제 결함에 맞게 수정하는 v2 신규 ZIP**을 만들어야 함(기존 Main18 공식 PNG/meta/GUID 변경 금지).
+
+GitHub 리뉴얼 latest(커밋 b3dd5cb)와 correction 정본(3f3002c) 감사 결과 **독사와 늑대 Chapter2품질 KeyArt 2장 실물 납품 없음**, 이전 decorative 'LIMITLESS Monster Concept Art' 비교판의 하단 이미지가 실제 5종 공식 sprite/WorldSize 비교가 아니었다고 스스로 정정. 상태 V2_USER_QUALITY_HOLD, FULL_ANIMATION_NO, BearFox_HOLD. 요청을 문서로 재설정한 것뿐, 두 개의 완성 원화 제작 단계는 아직 미달.
+
+기획 신규 실행 정본 `문서/00_프로젝트/Field09_v1_VisualFail_And_MonsterWolf_KeyArt_Immediate_Art_Production_20261019.md` (`docs/planning`, 커밋 `33986b691edebb4b55a106b29ec1891eebfbd62c`). 리뉴얼 담당에게 실제 Field09 v2 정상 ZIP, VenomSnake_KeyArt_v3.png와 Wolf_KeyArt_v3.png 두 독립 원화를 **제작·납품 먼저** 요구. Codex는 이미 끝낸 ZIP/기능 검사 반복 금지; 리뉴얼 미술 v2 통합은 별도. 아트 담당은 `docs/art-renewal`만, main 직접 push/merge 불허. 이 기획세션은 문서만 작성, 타 세션으로 자동 전송한 것 아님.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-19 Field09 ZIP 무효/표준 재포장 + Snake/Wolf 고품질 기준 변경
 
 바울 대표 Codex 최신 보고: Limitless_Field09_ObsidianScar_Minimal_Fix_v1.zip은 로컬/GitHub SHA 같지만 ZIP 자체 32bit header byte order 오류로 Python/Windows/.NET 모두 열기 실패, 수기 복구로 실제 PNG8 해시·Manifest는 맞는 것으로 보고; Unity 새로운 QA·원본 Field09 적용 0. codex/field09-minimal-fix-unity-integration-20261019 오류 보고 커밋 008d32f18e96c4f04b53edb6a0993b2b29958332, 기존원본 4,339 SHA/UserData23 보호. 다음: 동일 PNG8 byte/SHA·기존 Manifest 유지한 표준 ZIP 새 archive SHA 재포장(Python zipfile/Explorer/.NET 세방식 CRC 검증)→유효하면 기존 Field09 격리 이미지/런타임 deltaQA→0FAIL 조건부 원본 적용. 손상 아카이브 원본 덮어쓰지 않고 별도 버전, PNG 변경 금지.
