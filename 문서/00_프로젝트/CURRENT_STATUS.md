@@ -1,4 +1,11 @@
-﻿## 2026-10-19 Main18 승인 세린10 worktree 통합 — Runtime PASS / 환경 PARTIAL
+## 2026-10-19 통합 마감 — Main18 원격 병합·원본 디스크 적용 / Field05 최종 미술 승인 대기
+
+- Main18 승인10 Push→PR18→main 병합 `6f988dad77316347be69ac3b0979237771c09ed9`, 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`. 기존1370 PASS/0FAIL·22/22 재사용 + 실제재생/SaveContinue delta394 PASS/0FAIL. 정상25/Main17세린11/PCM35/기존Catalog280 보호. 원본Unity WAV10/meta10/Catalog만 정식반영, 원본Editor미조작/Import Runtime미검증.
+- Field05 새 v2 Road4 B42, PNG14·환경375·기능416+저장Scene84 PASS/0FAIL. 세화면비63장 비교, 최종미술승인PENDING. `codex/field05-eastwest-road42-v2-20261019` 최종 `92746215df23e2fe57e3393a563c839dca66a29a`. Field05 원본적용/Push/PR/main병합0.
+- 원본dirty319+미추적1001,1368고유파일백업·UserData23 보호. 겹침464/문서충돌5로 local main ff022e63 보존·동기화PARTIAL. Search/URP/Editor버전차이·기존meta중복은환경OPEN. [실행결과·재개점](Main18_Field05_Integrated_Closeout_QA_20261019.md).
+- 다음: 대표 Field05 최종화면 승인, 원본문서5개 의미병합 후 로컬main동기화. 주간재설정권 사용은 실행하지 않았습니다.
+
+## 2026-10-19 Main18 승인 세린10 worktree 통합 — Runtime PASS / 환경 PARTIAL
 
 - 이슈17·docs/tts 승인에 따라 ground샘플1+DSP PREVIEW6+수동복구3을 소스bytes 그대로 새 WAV/meta로 추가했습니다. 불합격remaining9/옛음색사용0·추가가공/TTS API0. Main18 Manifest는10개 Status만 RUNTIME_VERIFIED로 갱신했습니다.
 - Catalog280→290/기존280항목 불변. Main18 NPC22/22 실제 페이지·자연종료·Next/빠른Next·Player/지문무음·Mixer/Mute·Scene/SaveContinue PASS, 정상25회귀·Main17세린11(청각분기포함)·PCM35최대오차0 PASS. 최종1370assertion PASS/FAIL0.
