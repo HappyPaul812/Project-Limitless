@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 Main09 Field03 퀘스트 안내 막힘·조사 UX 수정 요구
+
+바울 대표가 실제 Unity Field03 Slot01 Main09 `침묵 속의 재회` 1/6의 QuestLog(“푸른 빛이 사라진 방향을 따라가세요”)와 세계 화면 “◆ 현재 목표 푸른 빛의 흔적”을 보여주고 “여기서 뭘 어떻게 하라고? 퀘스틀 어찌 하는지 설명 해야 유저가 할거 아니야?”라고 UX 실패 지적. **우선 해당 퀘스트에서 플레이어가 알아서 방향을 맞히거나 픽셀 찾기를 하는 요구를 바로잡는다**.
+
+**새 기획 정본:** `문서/00_프로젝트/Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md` (`docs/planning`), actual main code read. **Main09 (Main18과 무관)**, 퀘스트 6단계: ①파란 흔적(2.4,-4.1) 상호작용 ②바퀴 자국(3.5,-3.1) ③폴(1.8,-1.4) 대화 ④같은 폴 다시 대화 ⑤가공 석재(-0.3,-3.3) 조사 ⑥폴 다시 대화; **1.6 world units 이내 E/F/게임패드 A** 동작. 기존 메인09 quest objective/targetID/소요 대화/폴 합류·35 EXP/35 탈렌트·Save 고정. 현재 푸른 흔적은 `Mark()` 쿼드 .35×.1로 작고, `QuestNavigationTarget.Attach(...,(0,1.45,0))`로 대상 위에 UI 패널이 떠 **실제 조사 바닥 좌표를 가리기 쉬움**. 목표 없다고 오해될 수 있음. Nav offscreen 거리는 카메라 위치 기준(카메라 Z 포함)이라 잘못된 m 가능.
+
+수정 계약: 6단계 전부 **행동/대상/입력키** 명시·현재 위치(바닥) 시각 표식/고대비 반응/접근 시 E/F/A 확실한 안내, 3·4·6 동일 폴 “다시 말 걸기” 명확화, QuestLog+HUD+실제 대상 marker 일치, 오프스크린 플레이어 기준 XY 거리, 원본 Scene/Collider/Spawn·TTS/Save·화면비·접근성 회귀. 자동 퀘스트 완료나 기존 규칙 단축 금지. Codex `codex/main09-quest-clarity-20261019` 전용 격리 worktree QA→16:9/4:3/21:9 실제 Unity BeforeAfter 제출. **현재 구현0, 원본 유저 Play/dirty 보호**, 5시간 잔여3%였으므로 한도 부족 시 대기/인계. 이미 병합된 Main18 세린10 또는 아직 미술 승인 대기 Field05 B42 작업에 섞지 않는다.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Codex Main18 음성10 + Field05 B42 v2 통합 마감 발주
 
 바울 대표 “리뉴얼 작업까지 다 묶어서 코덱스한테 시켜줘. 이번주에 재설정권 1장 써야 해. 기간이 얼마 없거든.” 요청. **한 번에 복사 가능한 Codex 지시**와 장기 정본 `문서/00_프로젝트/Codex_20261019_Main18_Voice_Field05_Road42_Integrated_Closeout.md` (`docs/planning`) 작성.
