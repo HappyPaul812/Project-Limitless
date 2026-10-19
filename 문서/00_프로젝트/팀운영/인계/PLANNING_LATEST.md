@@ -1,3 +1,15 @@
+# PLANNING 인계 — 2026-10-19 Field05 B42 우선·Road4 v2 준비됨, Codex Main18/신입 TTS 담당 분리
+
+**바울 대표 상황 공유:** Field05 v1/동서 A30/동서 B42의 실제 Unity 3열 비교 결과 전달. **B Road42가 서쪽 진행 방향을 가장 분명히 보여 줌 → 기획 우선 후보 B42**, 사용자가 명시한 **공식 최종 B 미술·정식 적용 승인으로 소급하지 않음**. A30은 길이 짧아 보임. Codex QA **1,582 PASS/0 FAIL, Console gate FAIL(기존 baseline Search/URP 동일), 전체 PARTIAL**, Main14·세린·몬스터·Arbel 왕복·Save/Continue 합격, 원본4067파일 변경0. 공식 Unity 버전 확인/수동 실플레이/최종 미술 미검증. **B는 기존 Road30 →42(신규Renderer12)**.
+
+**이미 신작 동서 Road4 제작 완료:** `docs/art-renewal`의 `문서/00_프로젝트/Field05_EastWest_Road_v2_Art_Delivery_20261019.md`; `Limitless_Field05_EastWest_Road_v2.zip` 보고 SHA **`3a0d3b91cd87a5362ebbe435c1e5acd06ffc74354eafaa41f02b4f181d27c3d3`**, PNG4 `Upper/Lower/WestEnd_Upper/WestEnd_Lower`, 오프라인 seam PASS. 실제 Unity 신규 v2 적용/실사용 QA·사용자 F: ZIP 확인은 **대기**. 재제작/중복 발주하지 말 것.
+
+**담당 자원 배치:** 지금 Codex는 **Main18 목소리 Unity 통합 작업 중**이고 **구 TTS 담당 세션 종료, 신입 TTS 담당 교육 중**이라는 바울 대표 보고. Codex 작업 중간에 Field05를 끼워 넣지 않으며 새 TTS 담당에게 Main18 Codex와 중복 API/음성발주하지 않는다. Main18 안정 마감 후 Field05 Road4 v2 ZIP SHA 확인→**B42 격리 Unity 실화면/물리/동선/퀘스트/저장·Console 기준선** 검증→바울 대표 최종 미술 확인→정식 적용 여부 결정. 기존 유저 Unity/Save/Dirty·Field04·Arbel 보호. Field05 Optional7 여전히 배치0.
+
+**갱신 정본:** `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md` (`docs/planning`). 현재 `B42_PLANNING_PREFERRED / ROAD4_ART_DELIVERED / CODEX_MAIN18_BUSY / FIELD05_V2_QA_PENDING / USER_FINAL_ART_APPROVAL_PENDING / UNITY_ORIGINAL_UNCHANGED`.
+
+---
+
 # PLANNING 인계 — 2026-10-19 북부 「서릿길 마을」 상세 설계·장래 순간이동 포탈 전용부지 예약
 
 바울 대표 지시 “챕터3 마을 설계 계속하자 다 알아서 하되, 나중에 쓸 순간이동 포탈 자리도 잊지 말고”에 따라 **기획 설계 상세화 권한 확인, 별도 사용자 재승인 질문 없이 v1 마스터플랜 작성**.
