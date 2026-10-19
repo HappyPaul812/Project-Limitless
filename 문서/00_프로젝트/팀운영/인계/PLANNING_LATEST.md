@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-19 Field06·07 원본적용 완료·Field09 8종 국소 보완 승인 대기
+
+바울 대표 Codex 최종 통합 보고: **Field06 v1.1·Field07 v1 B42 원본 디스크 반영 완료**, 변경분 공통 **124 PASS/0 FAIL**. Field06 Ground49 빈틈 해결 유지, Arbel→Field06 Spawn 0.455~0.47 편차는 **Player Collider 겹침으로 인한 안전 위치 보정** 원인으로 수정 완료, Field07 Runtime Ash7 불투명 사각형은 기존 투명 먼지 자산으로 제거, 선택 PNG 미사용. 이전 보고의 Field06 Spawn FAIL/Field07 1 FAIL/원본 보류는 **과거 상태**. Field08 공식9 PNG 변경 없음. Main10 승인 음성18 정식 연결/원본 적용164PASS 보호. 원본4,267파일 SHA/UserData23 보존, 활성 사용자 Original Editor Main15·16 전체 손플레이 검증 및 GitHub Push/PR/main 병합은 별도.
+
+Field09 `Field_09_ObsidianScar` 실제 화면 **지면 반복선+기존 공식 소품6종 흰 가이드선** 결함 Codex 검증. 리뉴얼의 이전 정적 감사에서는 결함 의심만 있었으나 이제 실제 시각적 노출 확인으로 업데이트. 기존 PNG10 중 **최대8종**(Ground_Base, Ground_Cracked_01, Cliff_Blocker, Fissure_Edge, Fissure_Glow, HeatVent, Obsidian_Slab, Obsidian_Spire)만 최소 픽셀/Seam 보완을 **기획 권고**. AshPatch·미사용 Cracked02 절대 보호, 다른 공식 아트 재제작 불허. **바울 대표 추가 제작 승인 이전에는 후보 PNG/ZIP 생성하지 않음**. 추천 ZIP `Limitless_Field09_ExistingArt_MinimalFix_v1.zip`, 수정범위/BeforeAfter/Manifest/변경 픽셀 QA 제공. 몬스터18·기본 펫3 감사 및 첫 비공식 몬스터1+Wolf1 파일럿 제작은 계획대로 리뉴얼 담당이 병렬 진행.
+
+정본: `문서/00_프로젝트/Field06_07_OfficialApply_Field09_LimitedArtFix_ApprovalGate_20261019.md` (`docs/planning`, 커밋 `8da9993d7f6e3a08dd95b462dd336d1b57d924ba`). 기획 문서만 작성, Codex/리뉴얼 담당 세션 자동 통지나 로컬 파일 변경 없음.
+
+---
+
 # PLANNING 인계 — 2026-10-19 몬스터·야수동료(펫) 오리지널 아트 리뉴얼로 제작 중심 전환
 
 바울 대표: “그럼 리뉴얼에서는 맵은 완료지? 다음 리뉴얼은 몬스터들이랑 펫으로 하자.” **환경 신규 PNG 제작 위주 단계는 마감/일시 중지**, 다만 전체 맵 Unity 완료 판정은 **아님**: Field06 Spawn0.455, Field07 Ash7 사각형1FAIL 및 두 지역 B42 원본 적용 보류, Field09 Ground/Guide 실화면 확인, Field10/11 최종 아트/QA 승인 여부 정본 확인 대기는 Codex 후속·보존. Field08 공식 아트 유지/추가제작0.
