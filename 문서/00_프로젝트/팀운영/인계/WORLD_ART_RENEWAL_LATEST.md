@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field08 공식 아트 유지 종료 및 Field09 ObsidianScar 기존 아트 감사
+
+- **바울 대표 확정:** `Field_08_RedRift` 공식 Main17 환경 아트를 **그대로 유지하고 추가 PNG/ZIP 제작 생략 승인**. **상태 `CLOSED_EXISTING_OFFICIAL_ART_PROTECTED`**. Field07 실제 적용 후 Field07↔08 색감·경계 문제 *입증 시* 별도 최소 보완 제안만 허용; 승인 자산 무단 교체 금지. 기존 Field08 감사 [정본](../../Field08_RedRift_ExistingOfficialArt_Audit_20261019.md) 유지.
+- 다음 `Field_09_ObsidianScar`은 최신 `main` **`675988c9f2c5c507d9a696b0378be27c0bd3309b`** 기준 읽기 전용 조사. 실제 Field09 Scene `f02ef9f2eccba4a32cc9afb7e819a3f9536816fc` **GameObject18, SpriteRenderer9(모두 표시), MeshRenderer1(텍스트), BoxCollider2D6**. Sprite9는 전부 Main18 전용 `Resources/Main18/Environment` 등록 PNG와 **GUID/fileID21300000 일치**, 따라서 활성 무료/임시 환경 Sprite 없음. 공식 환경 PNG 총10, 사용9, `ObsidianScar_Ground_Cracked_02.png` 1개 등록·미사용.
+- 현행 지면 구조 `ObsidianScar_Ground_Base.png` **Tiled 21×15**, 위에 `ObsidianScar_Ground_Cracked_01.png` **Tiled 9×15, 위치(-6,0), Alpha255 불투명**. 기존 Main18 기술 QA는 `PASS_WITH_NOTE17/FAIL_BLOCKING0`, **`USER_ART_REVIEW_REQUIRED17`**. *미술 승인 완료라고 절대 해석 금지*.
+- Main18 `main_18_black_heat` 목표13, 동쪽 Field08 왕복·서쪽 폐쇄 안내와 Field10 미래 연결 정의, 과열0~2(3차 중첩 HP8% 피해 후0), 냉각약/몬스터2/세린·접근성·Save 보호. 이전 `Main18_Final_QA` **Runtime 고유500PASS/0FAIL**은 과거 Codex 검수로 재사용하며 이 세션은 실행0.
+- **확정 교체 필수 PNG 0종.** 단 조건부 가시성 검수 항목: (1) **Ground_Base + Ground_Cracked_01**의 반복·서쪽 오버레이 경계, (2) Main18 아트 QA에서 원본 흰 가이드 형태 선/테두리 문제가 기록된 **Cliff_Blocker/Fissure_Edge/Fissure_Glow/HeatVent/Obsidian_Slab/Obsidian_Spire 6종**. 실제 HUD 포함 화면에서 가이드·seam이 식별되고 Import/Tint/기존 배치로 해결 불가능한 개별 범위만 **바울 대표 별도 미술 발주 후** 픽셀 최소 보완 검토. `AshPatch` 및 미사용 `Cracked02` 임의 재제작·등록·활성화 금지.
+- 원본 QA의 1280/1600/1920 캡처 파일 **기록 경로만 확인**, GitHub 바이너리 픽셀 직접 열람·새 Unity RenderTexture 캡처 검증은 하지 않았음. 결함을 실제 현재 게임에서 확인했다는 표현 금지. `main` Scene·.meta/GUID·Art·Main18/Heat/Quest/Collider/Save/LocalDirty 및 PNG/ZIP 변경0.
+- **상태 `FIELD09_SOURCE_AUDIT_DONE / CONFIRMED_MUST_REPLACE_ENV_PNG_0 / VISUAL_DEFECT_REVIEW_REQUIRED / NO_NEW_PNG_AUTHORIZED / UNITY_UNCHANGED`**. [Field09 상세 감사 및 최소 보완 게이트](../../Field09_ObsidianScar_ExistingArt_MinimalReplacement_Audit_20261019.md), 문서 첫 기록 커밋 **`48f3a44ddba08603fe5741f427dc6b93078ae450`**. 브랜치 `docs/art-renewal`, `main` 직접 Commit·Push·병합 없음.
+- **다음:** 바울 대표 필요시 Field09 실제 게임 화면 국소 검수 범위 확정 → 결함 확정된 PNG만 개별 아트 보완 범위 승인 → 그 뒤 실제 제작. 보완 승인 전 신규 PNG 생성 금지. Field10 이후는 별도 지시 필요.
+
 ## 2026-10-19 Field08 RedRift 기존 공식 아트 감사 — 새 PNG 제작 확정 0종
 
 - **사용자 최신 결정:** Field06 v1.1 및 Field07 v1의 **미술 승인 완료**. 이전 섹션의 이들 `USER_ART_REVIEW_PENDING`은 제작 당시 상태 이력. 다만 현재 `main`의 원본 Unity/Runtime 공식 적용 완료까지 포함하는 승인은 아니므로 별도 적용·검증 여부는 각각 최신 Codex 작업으로 확인.
