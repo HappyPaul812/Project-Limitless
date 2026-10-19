@@ -1,5 +1,14 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Chapter2 품질 게이트 및 잘못된 이미지 비교 정정 (최신)
+
+- 새 기획 정본 `docs/planning/문서/00_프로젝트/Field09_Zip_Header_Repair_And_MonsterWolf_Chapter2_Quality_Gate_20261019.md` 직접 열람. 바울 대표는 **VenomSnake v2·Wolf v2를 미술 품질 보류**하고 Chapter2 공식 몬스터 5종(11~15)의 명암·형태·질감·액션 완성도를 기준으로 재설정. **32×32 확대만 하는 방식 금지**.
+- 직전 세션이 생성한 뱀/늑대 2장의 레이아웃형 'Concept Art' 하단 비교는 **공식 5종 원본의 실제 PNG·실게임 렌더 배율 비교가 아님**. 부정확한 비교 이미지이므로 **미술 승인/실게임 사이즈 증거로 사용 금지**. 비교 UI 등 홍보용 장식과 게임 납품용 원화 구분 필수.
+- 상태: `V1_REJECTED / V2_USER_QUALITY_HOLD / CHAPTER2_QUALITY_TARGET_CONFIRMED / REAL_COMPARISON_UNVERIFIED / V3_KEYART_REVIEW_PENDING / NO_FULL_ANIMATION / NO_BEAR_FOX / UNITY_UNCHANGED`.
+- 다음: 기존 공식 Sprite 5종의 실물 고유 프레임·메타와 PPU·게임 World Size를 확인하고, **뱀/늑대 독립 고해상도 단일 포즈 원화 1장씩**, 정확한 실물 5종과 동일 스케일 비교판 제출. **바울 대표 스타일 승인 전** 새 20/6프레임, 추가 Bear/Fox 그림 제작 금지.
+- [상세 정정 기록](../../Monster_Wolf_Chapter2_Quality_Gate_Correction_20261019.md), 문서 commit `3f3002cca53c080bfe7b0f023a3219b5dddb4332`. 기존 손상 Field09 ZIP 재포장은 Codex 별도 기술 작업.
+
+
 ## 2026-10-19 맹독뱀·Wolf v1 반려 → v2 실제 PNG 파일럿 신규 납품 (최신)
 
 - **바울 대표 확정:** `Limitless_Monster_Renewal_Pilot_VenomSnake_v1.zip`은 '뱀이 무섭지 않음', `Limitless_Beast_Companions_Wolf_v1.zip`은 '보노보노에 나오는 강아지처럼 만화적임'으로 **둘 다 v1 반려**. 최종 미술 승인 이력으로 쓰지 않음.
