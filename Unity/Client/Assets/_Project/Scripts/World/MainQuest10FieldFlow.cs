@@ -107,6 +107,7 @@ namespace ProjectLimitless.World
     /// <summary>현재 목표와 가까울 때만 기존 대화를 열며, 완료 뒤에는 안전한 던전 진입 Hook을 제공합니다.</summary>
     public sealed class MainQuest10Interactable : MonoBehaviour
     {
+        public const float InteractionRadius = 1.6f;
         public string TargetId { get; private set; }
         private string label;
         private InputAction interact;
@@ -116,6 +117,14 @@ namespace ProjectLimitless.World
             && QuestService.ActiveMainQuest.CurrentObjective?.TargetId == TargetId;
 
         public void Configure(string id, string displayName) { TargetId = id; label = displayName; }
+
+        /// <summary>현재 조사 대상만 반환하여 다른 단계나 완료 후 입구가 NPC 입력을 가로채지 않게 합니다.</summary>
+        public static MainQuest10Interactable FindCurrentInRange(Transform player)
+        {
+            if (player == null || QuestService.ActiveMainQuest?.Definition.QuestId != MainQuest10FieldFlow.QuestId) return null;
+            return FindObjectsByType<MainQuest10Interactable>().FirstOrDefault(target => target.IsCurrent
+                && Vector2.Distance(player.position, target.transform.position) <= InteractionRadius);
+        }
 
         private void Awake()
         {
@@ -139,8 +148,10 @@ namespace ProjectLimitless.World
         public bool TryInteract()
         {
             if ((!IsCurrent && !IsCompletedEntrance) || WorldModalState.IsOpen || completedFrame == Time.frameCount) return false;
+            // NPC와 조사점의 입력 콜백 순서가 달라도 같은 프레임에 대화를 다시 열지 않습니다.
+            if (DialoguePresenter.Instance != null && !DialoguePresenter.Instance.CanBeginInteractionThisFrame) return false;
             var player = FindAnyObjectByType<PlayerController>()?.transform;
-            if (player == null || Vector2.Distance(player.position, transform.position) > 1.6f) return false;
+            if (player == null || Vector2.Distance(player.position, transform.position) > InteractionRadius) return false;
             if (IsCompletedEntrance)
             {
                 if (Application.CanStreamedLevelBeLoaded("Dungeon_01"))

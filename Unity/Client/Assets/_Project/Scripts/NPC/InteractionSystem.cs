@@ -104,6 +104,9 @@ namespace ProjectLimitless.NPC
             // 반경 밖이나 다른 퀘스트에서는 기존 NPC 우선순위가 그대로 유지됩니다.
             var main09 = MainQuest09Interactable.FindCurrentInRange(transform);
             if (main09 != null) { main09.TryInteract(); return; }
+            // Main10의 현재 조사 반경 안에서만 퀘스트 입력을 우선합니다. 밖에서는 치유사를 정상 이용합니다.
+            var main10 = MainQuest10Interactable.FindCurrentInRange(transform);
+            if (main10 != null) { main10.TryInteract(); return; }
             // Scene 재생성 또는 활성화 순서와 무관하게 입력 순간의 실제 대상을 사용한다.
             RefreshCurrentTarget();
             if (currentTarget != null)
@@ -128,7 +131,9 @@ namespace ProjectLimitless.NPC
         /// <summary>현재 위치에서 가장 가까운 NPC를 찾아 현재 대상으로 갱신합니다.</summary>
         private void RefreshCurrentTarget()
         {
-            SetCurrentTarget(MainQuest09Interactable.FindCurrentInRange(transform) != null ? null : FindNearestNpc());
+            bool questTargetInRange = MainQuest09Interactable.FindCurrentInRange(transform) != null
+                || MainQuest10Interactable.FindCurrentInRange(transform) != null;
+            SetCurrentTarget(questTargetInRange ? null : FindNearestNpc());
         }
 
         /// <summary>대상이 바뀔 때 이전 안내는 숨기고 새 대상의 안내만 표시합니다.</summary>
