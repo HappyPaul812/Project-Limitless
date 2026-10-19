@@ -35,3 +35,8 @@
 ## 4. Git/계획
 
 작업 전부 17시 이후 Codex 한도 재설정 확인 후 시작. 본 문서 저장·인계 갱신은 **`docs/planning` 브랜치만**. Field06 v1.1/Field07 별도 아트 업무는 이 버그와 분리하고 Codex 한도가 좁으면 **Main10 진행 불가 P1 > Main10 음성 수리 후보 생성 > Field06 후속** 순서. PR/main merge/원본디스크 voice 적용은 사용자 별도 승인에 따라 결정.
+
+
+## 최신 사용자 확정(2026-10-19) — 원본 복구 음성 18/18 청취 승인
+
+상단의 코드 검사 이전 상태 `18_VOICES_PCM_AUDIT_PENDING`과 `CODEX_DEFERRED`는 **과거 이력**입니다. Codex는 Main10 NPC 입력 차단을 수정하고 **격리132PASS/0FAIL**을 보고했으며, 기존 PCM에서 **후보18/18 복구**했습니다. 바울 대표가 **“다 들었고 다 맞고”**라고 직접 청취 승인했으므로 `MAIN10_USER_LISTENING_APPROVED_18_OF_18`입니다. 기존원본 WAV 삭제/덮어쓰기0, 새 TTS/API0, UserData23·Main09 승인27 보호 보고. 후보 WAV가 **원본 Unity에 정식 연결됐다는 뜻은 아니며** 다음 Codex는 승인 18개의 정확한 SHA·본문·GUID 대응을 지킨 상태로 Catalog 정식 연결과 최소 delta QA/조건부 원본 안전 적용을 별도 수행해야 합니다. 자세한 최신 정본: `Main10_Voice18_User_Approval_Field08_NoNewArt_Decision_20261019.md`.
