@@ -1,3 +1,16 @@
+# PLANNING 인계 — 2026-10-19 Field05 B42 사용자 미술 최종 승인·Main09 UX 수정 최우선
+
+**바울 대표 최신 지시:** “이러면 한도를 엉뚱한데 쓰는거니까 하지 말고 보고서랑 같겠지 뭐. **그냥 승인해. 중요한건 지금 하던거 이어서 하는거야.**” Field05 시각은 이미 Codex 16:9·4:3·21:9 비교 및 QA로 확인했고 **B Road42를 사용자 최종 미술 승인**함. **Main09 진행이 막힌 건 별도 UI/퀘스트 안내 문제**로, Field05 검수 전용 Play 실행환경/필드 강제 시작/기존 Main09 우회용 테스트 빌드를 만들지 말라고 명시 취소.
+
+**우선순위:** (1) **Codex 5시간 한도 초기화 후 `Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md`의 6단계 조사 안내 UX 수정** 재개. (2) 그 다음 **이미 QA한 Field05 v1 Ground3+Props7 & v2 동서 Road4, Road42 전체375 Renderer** 공식 적용·feature Push/PR/main 병합을 안전한 방식으로 진행. Field05 전용 재체험 빌드/실화면 추가 승인 요구 불필요. 단 사용자 원본 dirty/Save/UserData·Scene GUID/새 Content 충돌·baseline Search/URP 신/구 분리는 유지.
+- Codex 최종 보고 기준 Field05 **416 PASS+84 PASS/0 FAIL**, 새 Road42 화면 16:9·4:3·21:9 제출. 원본 Unity/Push/main 반영 **미완료**, 미술 **APPROVED**와 분리. Field05 Optional7 미배치.
+- 현재 Main18 세린10 PR#18/19 원격 병합과 원본 Catalog 통합은 종전 Codex 보고에 따라 완료. Codex 한도 소진 중이므로 지금 실행한 것으로 가장하지 말 것.
+- 기술·우선순위 갱신 문서: `문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md`, `문서/00_프로젝트/Main09_Field03_Quest_Navigation_Onboarding_UX_Fix_20261019.md`.
+- 상태: `FIELD05_B42_USER_VISUAL_APPROVED / MAIN09_QUEST_CLARITY_FIX_PRIORITY_1 / CODEX_PAUSED_BY_QUOTA / FIELD05_OFFICIAL_APPLY_AND_PUSH_PENDING / LOCAL_SYNC_PARTIAL`.
+
+
+---
+
 # PLANNING 인계 — 2026-10-19 Main09 Field03 퀘스트 안내 막힘·조사 UX 수정 요구
 
 바울 대표가 실제 Unity Field03 Slot01 Main09 `침묵 속의 재회` 1/6의 QuestLog(“푸른 빛이 사라진 방향을 따라가세요”)와 세계 화면 “◆ 현재 목표 푸른 빛의 흔적”을 보여주고 “여기서 뭘 어떻게 하라고? 퀘스틀 어찌 하는지 설명 해야 유저가 할거 아니야?”라고 UX 실패 지적. **우선 해당 퀘스트에서 플레이어가 알아서 방향을 맞히거나 픽셀 찾기를 하는 요구를 바로잡는다**.
