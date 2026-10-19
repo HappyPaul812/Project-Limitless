@@ -1,3 +1,13 @@
+# PLANNING 인계 — 2026-10-19 17:24 Field06 v1.1·Field07 v1 사용자 미술 승인
+
+바울 대표: “코덱스 시켰고, 리뉴얼도 나왔고, 보니까 괜찮다.” 로컬 파일 `F:\Downloads\Limitless_Field07_AshenReach_Renewal_Art_v1.zip`, `F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1_1.zip` 제공. **Field06 v1.1 및 Field07 v1 모두 USER_VISUAL_APPROVED**로 승격 (이전 두 리뉴얼 문서의 사용자 미술 승인 대기는 과거 기록). 단 `ROAD_A30_B42_UNDECIDED`, Field06 Runtime Grass49/Props, Field07 Runtime Ash7, 양쪽 optional(06 Runtime6+Decal2, 07 WindlessAsh1) HOLD, Unity Import·원본 디스크 적용·main 병합/원본 실플레이는 모두 PENDING. ZIP SHA는 리뉴얼 docs/art-renewal 보고값을 정본으로 쓰되 기획이 실제 F드라이브를 검증한 것은 아님. Field06 v1.1 ZIP SHA `d8551df7315495dcc6e4556ec33f30b711af8aeb85dc7b0a1c3612a5a6197f42`, Field07 v1 `5d398295b6f98491a294628a18763b6d72e0dedfdf5f691ccd2e8d0539150403`.
+
+Codex는 사용자 지시대로 **Main10 NPC 입력 P1 및 Main10 음성18 원음 복구 조사 선행**, Field06/07 Unity 격리 검증은 그 다음. 기존 v1 QA717과 Main09 QA 일괄 재수행 금지. 리뉴얼 담당 다음 작업은 이미 Main17 공식 아트가 적용된 `Field08_RedRift`의 **읽기 전용 자산 정본 감사만**, 기존 아트를 일괄 재제작하거나 공식 파일을 덮어쓰지 않음. 실제 보완 작업 필요한 범위만 사용자 승인 후 제작.
+
+**최신 승인 정본:** `문서/00_프로젝트/Field06_v1_1_Field07_v1_User_Art_Approval_And_Integration_Gate_20261019.md`, `docs/planning` 커밋 `7b70ed5689687b60a7f16bd074aa62af5706286d`. 기획 문서만 GitHub 커밋; 타 세션 자동 전달/Unity 원본 변경 아님.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Main10 사용자 직접 재생 오류·퀘스트 치유사 NPC 입력 차단, 17시 재개
 
 바울 대표 Unity Field03 슬롯02/Main10 직접 실플레이 캡처3장: 태온 `main10_taeon_001` ‘폴이 가리킨 석재가…’에서 다음 대사처럼 들리는 ‘모서리…’ 오발화; 폴 `main10_paul_001` ‘네. 전에 본 자리를…’에 ‘단단한… 표시…’ 오발화; Main10 가공된 돌 조사에서 치유사 NPC E 입력이 먼저 먹어 진행 불가. main 소스 확인 Main10 실제 태온001/폴001 원문 정확히 일치하며 `InteractionSystem`에는 Main09 현재목표만 NPC보다 우선 처리하는 코드가 존재, Main10 전용 예외 누락. StoryVoiceCatalog Main10 NPC 총18 ID/WAV가 있지만 오디오 PCM 내용은 미검증. 이전 Main09 교정 27개, Main09 Quest6단계·Save는 보호.
