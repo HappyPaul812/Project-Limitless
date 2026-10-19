@@ -1,0 +1,15 @@
+{
+  "original_scene_clean_relative_HEAD": true,
+  "protected_collider_components": 21,
+  "collider_changes": 0,
+  "original_nonroad_transforms_changed": 0,
+  "road30_positions_only": 30,
+  "additional_gameobjects": 12,
+  "additional_serialized_objects": 36,
+  "new_asset_files": 32,
+  "png_source_count": 14,
+  "environment_renderer_count": 375,
+  "new_west_portal": 0,
+  "optional7_added": 0,
+  "official_disk_applied": false
+}

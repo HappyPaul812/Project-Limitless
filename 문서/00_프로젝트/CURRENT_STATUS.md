@@ -1,3 +1,9 @@
+## 2026-10-19 Field05 B42 원본 디스크 정식 적용 — 66 추가 PASS / Push·PR 준비
+
+- 바울 대표 최종 미술 승인에 따라 기존PNG14/환경375/Road42 후보를 원본 Scene+신규32경로로 반영했습니다. 기존Collider21·비도로Transform·SceneGUID·UserData23·승인음성 보호. 원본Editor조작0/자연ImportRuntime미검증.
+- 기존416+84 PASS 재사용 + 실제SaveContinue/Scene/Quest/Meta 연결66 PASS/0FAIL. 새화면/별도플레이환경/빌드/텔레포트테스트0. [정식적용QA](Field05_B42_Official_Apply_QA_20261019.md).
+- Main09 PR21은 실제427PASS/0FAIL로 Push·검토대기, main병합/원본적용0. 다음: 승인된Field05전용PR병합 후 정확SHA인계, 원본문서5충돌은보존해 local sync PARTIAL 유지.
+
 ## 2026-10-19 Field05 B42 최종 미술 승인 — 정식 통합 준비
 
 - 바울 대표의 최신 재개 지시로 최종 미술 승인 완료. 기존 기능 ebb363567b3932cce8af12e315dda03362c8fd19/최종후보 f8afb80ce744fd1eef78ce1c5c7eb1d07187ebee와 416+84 PASS를 재사용합니다. 추가 비교 화면/플레이 검수 빌드/강제 Field05 입장 도구는 만들지 않습니다.
