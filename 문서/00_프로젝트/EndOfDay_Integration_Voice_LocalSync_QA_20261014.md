@@ -1,3 +1,9 @@
+## 2026-10-19 문서5 의미 병합 및 보호 경계
+
+로컬 작업복사·local main 커밋·공통 조상·최신 원격 main을 대조했습니다. 최신 Main09(PR21/24)·Field05(PR22/23)·Main18(PR18/19)의 병합·원본 디스크 반영은 완료 상태로 유지합니다. 과거 기록의 승인 대기/미구현은 과거 당시로 구분합니다. 기획·리뉴얼 담당의 원격 전용 기록도 삭제하지 않았습니다.
+
+충돌 원본 네 버전과 SHA256·줄바꿈·시각은 로컬 `Temp/Doc5Recovery20261019/Versions`, 전체 dirty·미추적·UserData·Settings 백업은 `Backup`/`BackupManifest.json`에 보존했습니다. 문서 정합과 원본 Git 동기화는 별개이며, HEAD/index/작업파일 동기화는 격리 리허설 후 실제 확인 결과로만 선언합니다. 원본 Editor 자연 Import·손플레이는 미검증이며 기존 Search/URP 환경 OPEN을 유지합니다.
+
 # 2026-10-14 최종 음성·통합 QA 및 로컬 동기화
 
 ## 병합 후 마감 결과
@@ -58,3 +64,11 @@ URP SpeedTree8 ShaderGraph Host 오류와 SearchDatabase startup 예외는 기�
 다음 담당: 원본dirty백업과2개로컬커밋을먼저검토하고 별도보존/비파괴통합방식을결정한후동기화재개. 현재원본파일을reset/clean하여Git상태를맞추지말것. 오늘음성정식연결은디스크에이미최소반영했고원본Play는실행하지않았습니다.
 
 증거 `Evidence/EndOfDay20261014/`, 로컬원본백업 `Temp/EndOfDay20261014/DirtyBackup`, `UserDataBackup`, baseline/status/branches/worktrees/simulation. 사용자실제Save백업은GitHub에업로드하지않습니다.
+
+## 로컬 고유 이력 보존 — 과거 당시 기록
+
+다음은 2026-10-19 의미 병합에서 보존한 로컬 작업복사·로컬 커밋의 고유 기록입니다. 과거의 미완료·승인 대기·재개 지시는 당시 상태이며, 현재 상태는 문서 상단과 최신 main 완료 기록을 따릅니다. 기존 수치·승인·OPEN·근거 경로는 변경하지 않았습니다.
+
+### [과거 당시] 최종 원격 재확인 (문서PR15 병합 후) (local_working)
+
+원격 main 및 origin/main `9110bc7624e08ddbdd93b96510e8fafc5fbe341c`; 로컬 main `ff022e63dfe364f559fcc29819d27b123ad31127`. PR14/15 병합 완료, SYNC_COMPLETE=false. 원본 로컬 문서 커밋2와 dirty를 유지했습니다. GitHub의 closeout_at_voice_merge.json은 음성 PR14 직후의 d05a325b 시점 스냅샷입니다.

@@ -1,3 +1,9 @@
+## 2026-10-19 문서5 의미 병합 및 보호 경계
+
+로컬 작업복사·local main 커밋·공통 조상·최신 원격 main을 대조했습니다. 최신 Main09(PR21/24)·Field05(PR22/23)·Main18(PR18/19)의 병합·원본 디스크 반영은 완료 상태로 유지합니다. 과거 기록의 승인 대기/미구현은 과거 당시로 구분합니다. 기획·리뉴얼 담당의 원격 전용 기록도 삭제하지 않았습니다.
+
+충돌 원본 네 버전과 SHA256·줄바꿈·시각은 로컬 `Temp/Doc5Recovery20261019/Versions`, 전체 dirty·미추적·UserData·Settings 백업은 `Backup`/`BackupManifest.json`에 보존했습니다. 문서 정합과 원본 Git 동기화는 별개이며, HEAD/index/작업파일 동기화는 격리 리허설 후 실제 확인 결과로만 선언합니다. 원본 Editor 자연 Import·손플레이는 미검증이며 기존 Search/URP 환경 OPEN을 유지합니다.
+
 ## 2026-10-19 Main09 최종 승인·main 병합·원본 디스크 적용 완료
 
 - 바울 대표의 명시적 승인 후 [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) **main병합 `f3196b6b4fc4dfaf8a901a6a29ea07254ae70325`**, 승인PR head `ed8efda34902f374a92f78e98cb5dd6d5af1b8fd`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 기존427PASS/0FAIL을 재사용했습니다.
@@ -229,3 +235,24 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 ## 2026-10-13 Field04 v2 42도로 정식 적용
 
 승인된 Road30 재배치+연장12 및 Grass315/Props18 적용. 새 격리 QA 253 PASS, 기존 Search/서쪽Spawn/북쪽경계/정본Unity버전 차이는 PARTIAL·OPEN. 원본 디스크 APPLIED. Main08/사용자Save/TTS/BGM 보호. 브랜치 codex/field04-v2-official-42-20261013; 관련 SHA는 해당 브랜치 최종 커밋 및 완료 보고 참조. 상세 `Field04_v2_Official42_Apply_QA_20261013.md`. 사용자 직접 플레이 확인 권장.
+
+## 로컬 고유 이력 보존 — 과거 당시 기록
+
+다음은 2026-10-19 의미 병합에서 보존한 로컬 작업복사·로컬 커밋의 고유 기록입니다. 과거의 미완료·승인 대기·재개 지시는 당시 상태이며, 현재 상태는 문서 상단과 최신 main 완료 기록을 따릅니다. 기존 수치·승인·OPEN·근거 경로는 변경하지 않았습니다.
+
+### [과거 당시] 2026-10-14 최종 마감 확인 — 음성 완료 / 로컬 Git 동기화 PARTIAL (local_working)
+
+- 태온007~011 승인후보를 정식 연결하고 앞 저음량 공백만 보정했습니다. 음성 PR14 merge d05a325b05f2eab79ee18c5ca65e9ee523a5e5ab, 마감문서 PR15 merge 9110bc7624e08ddbdd93b96510e8fafc5fbe341c. 신규TTS0·기존WAV/meta덮어쓰기0·승인005006/기존6·미엘/Player/Quest/Save 보호.
+- 격리 최신통합본 음성250+Arbel1729+Main21펫106+전투/Field04회귀232+23Scene26=2343 PASS/0 FAIL. 기존 URP/Search·원본liveImport/물리스피커/OS입력 미검증은 별도 PARTIAL. Arbel/기획중복적용0·Chapter3DRAFT구현0.
+- 최종 원격main/originmain 9110bc7624e08ddbdd93b96510e8fafc5fbe341c; 사용자 local main/HEAD ff022e63dfe364f559fcc29819d27b123ad31127. 로컬 문서전용2커밋 이력분기로 격리ff-only실패, 원본main이동/reset/clean/stash/forcePush0. **완전동기화 미완료**. 1274 dirty·미추적 백업/5851 SHA/UserData backup: Temp/EndOfDay20261014.
+- 원본 EditorBootstrap·PlayOFF·PausedOFF·Focusedfalse·Compilingfalse 유지·강제Refresh0. [최종QA](../../EndOfDay_Integration_Voice_LocalSync_QA_20261014.md). 다음: 로컬전용3a37aa2e/ff022e63 문서커밋과dirty보존 통합방식 검토후동기화재개. 원본Play/포커스강제조작 금지, 음성재승인 요청불필요.
+
+### [과거 당시] 2026-10-14 통합 작업 A/B 완료·재개 경계 (local_working)
+
+- 기준main314f7fbb(PR11승인005006병합). A승인아트23 정식원본디스크반영·3953PASS/FAIL0·전체PARTIAL(기존환경/원본liveImport미검증), 전용codex/arbel-v3-official-apply-20261014 Push652867c988d015f0eb65ccb82591d2ef3a36551b 확인. [A QA](../../Arbel_v3_Official_Apply_QA_20261014.md)·[A 인계](../../Arbel_v3_Official_Apply_Handoff_20261014.md).
+- B007~011 기존원본재사용후보5·PCM소스일치5/5·009010재결합원본동일·011최종2.800042초(선행1.079958초제거). 원본Field02/03실행97PASS/FAIL0,ASR일치3/5·007/008어휘청취확인필요. 전체PARTIAL/청취승인대기. [B QA](../../Main08_Taeon007011_Content_Recovery_Candidates_QA_20261014.md)·[B 인계](../../Main08_Taeon007011_Handoff_20261014.md)·[청취](../../Evidence/Main08Taeon00701120261014/index.html).
+- B별도codex/main08-taeon007011-audit-20261014 Worktree는문서·후보uncommitted 상태. B정식Catalog연결NO/CommitPush0/TTSAPI0. 승인005006+기존6·정상미엘·Player무음·모든기존WAV/GUID/meta 보호. 007~011새후보연결을이미완료했다고주장금지.
+- 원본4001중4000동일·승인ArbelScene1만변경+신규55, 추가TTS/Story392동일. rootmainHEADff022불변·원본Editor제어0·main직접CommitPush병합0. A/B파일같은Commit혼합0.
+- 다음 우선작업: (1)원본Editor정상재개후A자연Import확인 (2)바울대표B개별청취승인기록,특히007폭이/포기·008조사한/조사하는 (3)승인된B ID만신규GUID/WAV폴더Catalog연결후Field02/03·승인8·미엘·Player·SaveContinue재QA와별도허가된브랜치CommitPush. 확정TTS_REGEN_REQUIRED0, 청취에서본문불일치확정시해당ID만재조사.
+- 다른담당: 기획은B청취승인경계와Portal-나무/Teleport미구현OPEN유지, 아트담당신규PNG납품필요0. Main08대화중조우OPEN은QAfixture에서만억제했고수정하지않음.
+- 후임은각QA/인계·CURRENT_STATUS·최신원격Gate를대조하고원본dirty를reset/clean하거나원본Play/focus를조작하지말것. 재개자료 Temp/ArbelMain08Integration20261014 및A/B인계문서.
