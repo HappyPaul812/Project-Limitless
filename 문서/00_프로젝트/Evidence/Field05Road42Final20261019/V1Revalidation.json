@@ -1,0 +1,16 @@
+{
+  "zip_sha256": "a6646a676a619bc149798fe0f3909401b9c3b5a75f253cf6a1e61e21661b1258",
+  "crc": "PASS",
+  "ground_props_manifest_match": [
+    "Ground/LL_C2_F05_DryLoam_A_128_v1.png",
+    "Ground/LL_C2_F05_DryLoam_B_128_v1.png",
+    "Ground/LL_C2_F05_DryLoam_C_128_v1.png",
+    "Props/LL_C2_F05_RockWest_128_v1.png",
+    "Props/LL_C2_F05_Bush_Olive_128_v1.png",
+    "Props/LL_C2_F05_Bush_Dry_128_v1.png",
+    "Props/LL_C2_F05_Fence_128_v1.png",
+    "Props/LL_C2_F05_Tree_Medium_128x156_v1.png",
+    "Props/LL_C2_F05_Tree_Big_255x256_v1.png",
+    "Props/LL_C2_F05_RockNorth_85x54_v1.png"
+  ]
+}

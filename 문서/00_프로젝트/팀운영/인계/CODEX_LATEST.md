@@ -1,3 +1,22 @@
+## 2026-10-19 Field05 B42 원본 디스크 정식 적용 — 66 추가 PASS / Push·PR 준비
+
+- 바울 대표 최종 미술 승인에 따라 기존PNG14/환경375/Road42 후보를 원본 Scene+신규32경로로 반영했습니다. 기존Collider21·비도로Transform·SceneGUID·UserData23·승인음성 보호. 원본Editor조작0/자연ImportRuntime미검증.
+- 기존416+84 PASS 재사용 + 실제SaveContinue/Scene/Quest/Meta 연결66 PASS/0FAIL. 새화면/별도플레이환경/빌드/텔레포트테스트0. [정식적용QA](Field05_B42_Official_Apply_QA_20261019.md).
+- Main09 PR21은 실제427PASS/0FAIL로 Push·검토대기, main병합/원본적용0. 다음: 승인된Field05전용PR병합 후 정확SHA인계, 원본문서5충돌은보존해 local sync PARTIAL 유지.
+
+## 2026-10-19 Field05 B42 최종 미술 승인 — 정식 통합 준비
+
+- 바울 대표의 최신 재개 지시로 최종 미술 승인 완료. 기존 기능 ebb363567b3932cce8af12e315dda03362c8fd19/최종후보 f8afb80ce744fd1eef78ce1c5c7eb1d07187ebee와 416+84 PASS를 재사용합니다. 추가 비교 화면/플레이 검수 빌드/강제 Field05 입장 도구는 만들지 않습니다.
+- 원본 Scene은 HEAD 대비 미커밋 변경 없음, 기존 Collider21개와 비도로 Transform 동일, 새 Asset32경로 충돌0을 확인했습니다. 승인PNG14/도로42/환경375만 정식 적용 대상으로 준비합니다.
+- Main09는 먼저 완료: 기능932c3573a0ad4a4d94c0b92c4d0bb932662ae419, 최종27983bb3d5652dfd6fec0b837ad4a63e98fc5ed5, PR21 Push/검토 대기, 실제427 PASS/0FAIL. Main09 main병합/원본적용0. Main18 재작업0.
+- 다음: Field05 Meta/GUID/Quest/Save 변경분 회귀→원본 디스크 안전적용→전용 Push/PR/승인범위 main 병합. 사용자dirty문서5개와Save/Editor/포커스보호 유지.
+
+## 2026-10-19 Field05 v2 Road4 / B42 최종 후보 — 기술 PASS / 미술 승인 대기
+
+- 전용 `codex/field05-eastwest-road42-v2-20261019`, 기능 `ebb363567b3932cce8af12e315dda03362c8fd19`. 새 v2 SHA/CRC/PNG4 Manifest·Ground3 Props7 원본SHA PASS. 환경375=315/42/18, PNG14, Road12추가, 선택7/새Portal0.
+- 실제 최종 Unity 기능416 PASS/0 FAIL, 저장Scene재로드84 PASS/0 FAIL, 16:9·4:3·21:9 3안 비교63장. 기존 Search/URP/Editor버전차이만 환경 PARTIAL. [검수자료](Field05_Road42_v2_Final_Unity_QA_20261019.md).
+- **원본 Field05 정식 적용·Push·PR·main 병합0. 새 v2 화면 미술 승인 필요.** 기존 Collider/좌표/Spawn/Save/Arbel·Field04 보호. 다음: 대표 갤러리 승인 후 통합.
+
 ## 2026-10-19 통합 마감 — Main18 원격 병합·원본 디스크 적용 / Field05 최종 미술 승인 대기
 
 - Main18 승인10 Push→PR18→main 병합 `6f988dad77316347be69ac3b0979237771c09ed9`, 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`. 기존1370 PASS/0FAIL·22/22 재사용 + 실제재생/SaveContinue delta394 PASS/0FAIL. 정상25/Main17세린11/PCM35/기존Catalog280 보호. 원본Unity WAV10/meta10/Catalog만 정식반영, 원본Editor미조작/Import Runtime미검증.

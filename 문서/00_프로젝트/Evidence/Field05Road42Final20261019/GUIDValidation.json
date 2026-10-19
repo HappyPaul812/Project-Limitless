@@ -1,0 +1,26 @@
+{
+  "asset_meta_guids": 2161,
+  "new_field05_collisions": [],
+  "unchanged_baseline_duplicate_pairs": [
+    [
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\GoldenArrow\\golden_arrow_00.png.meta",
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_00.png.meta"
+    ],
+    [
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_00.png.meta",
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_01.png.meta"
+    ],
+    [
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_01.png.meta",
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_02.png.meta"
+    ],
+    [
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_02.png.meta",
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_03.png.meta"
+    ],
+    [
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_03.png.meta",
+      "Temp\\Field05Road42Final20261019\\worktree\\Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_04.png.meta"
+    ]
+  ]
+}
