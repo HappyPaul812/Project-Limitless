@@ -1,3 +1,11 @@
+## 2026-10-19 Main09 최종 승인·main 병합·원본 디스크 적용 완료
+
+- 바울 대표의 명시적 승인 후 [PR21](https://github.com/HappyPaul812/Project-Limitless/pull/21) **main병합 `f3196b6b4fc4dfaf8a901a6a29ea07254ae70325`**, 승인PR head `ed8efda34902f374a92f78e98cb5dd6d5af1b8fd`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 기존427PASS/0FAIL을 재사용했습니다.
+- 원본 Main09 기능9파일(기존7+신규helper/meta2) 적용 완료. 적용 직전 기존파일과 기준main 일치/충돌0 확인·백업, 적용후 검증브랜치 SHA9/9일치. 기존Quest ID/대사/폴합류/보상/위치/Collider/Save/승인음성 보호. [원본적용증거](Evidence/Main09Clarity20261019/OfficialApplyResult.json).
+- 원본Editor/Play/포커스 조작0. 원본 Editor 자연Import·Runtime은 미검증, 기존 Search/URP·Editor버전차이·물리OS입력은 환경PARTIAL. 전체6단계·입력·SaveContinue의 실제 격리Unity427PASS와 구분합니다.
+- 승인Field05 B42도 원본디스크 적용·PR22 main병합 b9590938 완료 상태 유지. Main18 PR18/19 재작업0. UserData23/Main08·Main18 WAV/meta/Catalog 변경0, 승인범위 외 원본 변경0.
+- 원본 local main은 ff022e63 유지. 문서5개 내용충돌로 LOCAL_SYNC_PARTIAL이며 reset/clean/stash/forcePush 없이 사용자편집과 기존문서2커밋을 보존했습니다. 다음: 원본 Editor가 자연 Import한 후 정상 플레이 확인, 사용자문서5개 의미병합 후 로컬main동기화. Main09 승인 대기는 해제됐습니다.
+
 ## 2026-10-19 Main09 퀘스트 안내 수정 — 427 PASS / 원본 미적용
 
 - `codex/main09-quest-clarity-20261019`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 6단계 행동/조작·바닥 링·화살표·플레이어XY거리·폴 재대화·로그/토스트 동기화. 여관NPC와 조사 입력 충돌을 현재 Main09/1.6반경 한정 우선처리로 해결했습니다.
