@@ -1,3 +1,9 @@
+## 2026-10-19 Main09 퀘스트 안내 수정 — 427 PASS / 원본 미적용
+
+- `codex/main09-quest-clarity-20261019`, 기능 `932c3573a0ad4a4d94c0b92c4d0bb932662ae419`. 6단계 행동/조작·바닥 링·화살표·플레이어XY거리·폴 재대화·로그/토스트 동기화. 여관NPC와 조사 입력 충돌을 현재 Main09/1.6반경 한정 우선처리로 해결했습니다.
+- 실제 키보드도보/게임패드휠체어 전체6단계348 + 최종UI/추적/전투Scene회귀79 PASS/0FAIL. 16:9/4:3/21:9 화면, 폴합류/보상/SaveContinue PASS. 대사·Scene·WAV·Collider 불변, 원본4844SHA/UserData23보호.
+- 기존Search/URP·Editor버전·물리OS입력은환경PARTIAL. [실제 QA/화면](Main09_Quest_Clarity_Unity_QA_20261019.md). main병합·원본적용0, 전용PR검토대기. 다음: 승인된Field05 B42는 기존결과 재사용통합(추가미술승인 불필요), local main문서충돌5개보존.
+
 ## 2026-10-19 통합 마감 — Main18 원격 병합·원본 디스크 적용 / Field05 최종 미술 승인 대기
 
 - Main18 승인10 Push→PR18→main 병합 `6f988dad77316347be69ac3b0979237771c09ed9`, 기능 `94a68cee54be397b16d8bacd4c3f930bad2eece3`. 기존1370 PASS/0FAIL·22/22 재사용 + 실제재생/SaveContinue delta394 PASS/0FAIL. 정상25/Main17세린11/PCM35/기존Catalog280 보호. 원본Unity WAV10/meta10/Catalog만 정식반영, 원본Editor미조작/Import Runtime미검증.

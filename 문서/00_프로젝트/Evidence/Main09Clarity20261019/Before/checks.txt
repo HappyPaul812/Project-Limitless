@@ -1,0 +1,15 @@
+PASS|Scene.Bootstrap
+PASS|Scene.Field_03
+PASS|Main09.Current
+PASS|Capture.Resolution.Step1_world_1280.Actual1280x720
+PASS|Q.LogOpen.Step11280
+PASS|Capture.Resolution.Step1_log_1280.Actual1280x720
+PASS|Esc.LogClosed.Step11280
+PASS|Capture.Resolution.Step1_world_960.Actual960x720
+PASS|Q.LogOpen.Step1960
+PASS|Capture.Resolution.Step1_log_960.Actual960x720
+PASS|Esc.LogClosed.Step1960
+PASS|Capture.Resolution.Step1_world_1680.Actual1680x720
+PASS|Q.LogOpen.Step11680
+PASS|Capture.Resolution.Step1_log_1680.Actual1680x720
+PASS|Esc.LogClosed.Step11680
