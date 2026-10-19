@@ -1,3 +1,11 @@
+# PLANNING 인계 — 2026-10-19 Main09 원본 디스크 적용 완료 / Field06 v1 미술 방향 승인·기술 보완 4건
+
+바울 대표 Codex 신규 캡처: Main09 승인 27개 기존 WAV 보존/신규 음성 폴더 Catalog 정식 연결, `main09_paul_002` 첫 재회 인사 순서 보존, 기존 격리550 PASS 재사용 및 **delta261 PASS/0FAIL**, 원본 사용자 파일4,178/UserData23 예상외 변경0. Codex `codex/main09-dialogue-voice-fix-20261019` 기능 커밋 `424b1912221d1555fef14d46c459fa174ac07a2` 보고. **MAIN09_ORIGINAL_DISK_APPLIED / USER_27_LISTENING_APPROVED / MAIN_GITHUB_MERGE_PENDING / LIVE_EDITOR_PLAY_NOT_VERIFIED.** 기존 과거 “원본 적용 대기” 기록은 역사기록.
+
+Field06 `F:\Downloads\Limitless_Field06_ScorchedTrail_Renewal_Art_v1.zip`: Codex `codex/field06-renewal-art-v1-review-20261019` **ZIP SHA/CRC/Manifest/PNG PASS, 실제 격리 Unity717PASS/0FAIL, 실제 Unity 비교20장**, 원본 Field06 Scene 변경0. 보고된 기술 보완 4개: Road 상하 역할 대응 오류 / 중앙 Alpha 틈 / Runtime Grass49 비활성으로 빈틈 위험 / 일부 Props 접지 차이. 선택 Runtime6+Decal2 미배치. 바울 대표 **“리뉴얼도 보고서로 봤는데 좋아.”** → **Field06 v1 전체 미술 방향 USER_VISUAL_DIRECTION_APPROVED**. 미술 스타일 재제작 금지·기술 작은 수정만 요구; 정식 원본 적용과 main 병합까지 승인된 뜻은 아님. A30/B42 Road 최종 좌표 선택은 수정 전후 실제 화면의 일치 기준으로 따로 확인, Field05 B42와 자연 연결 후보 우선. 기획 후속 정본 `문서/00_프로젝트/Field06_Art_v1_UserVisualApproval_TechnicalFix_20261019.md` (`docs/planning`, 커밋 `9304957d5a06a0b5caa6080839b957c234973c9e`). Codex 5시간 잔여8% 캡처, 기존 Field06 717/Main09 550+261 일괄 재검증 금지. 작업 재개시 기술4건만 delta 검증→안전 적용 판단.
+
+---
+
 # PLANNING 인계 — 2026-10-19 Main09 복구음성27 청취 전체 승인 / Field06 v1 로컬 ZIP 접수
 
 바울 대표는 Main09 기존 WAV 내부 잘못된 분할·합본 교정 후보 27개를 모두 청취한 후 **“다 들어봤는데 다 맞아”** 확인. Codex `codex/main09-dialogue-voice-fix-20261019` 보고의 **격리550PASS/0FAIL**과 **음성 사용자 청취27/27 APPROVED**를 분리 기록. 과거 후보7개 `USER_LISTENING_PENDING`은 모두 승인으로 갱신. `main09_paul_001`은 step1에서 step2 `paul_002` “또 뵙네요” 첫 대면 인사 뒤로 이동, 기존 원문/ID 보존. 실제 Unity 원본 음성 정식 연결·원본 Editor Import·remote main 병합은 **아직 미실행/미확인**. 다음 Codex 승인 후보 **개별SHA 고정**+Catalog·WAV/meta 최소 연결+deltaQA+원본 보호 조건부 적용, TTS API0, 전체550 재검사0.
