@@ -46,3 +46,6 @@
 - 시간/한도 종료 시까지 작업이 불완료면 완료된 A/B/C 경계·해시·담당 재개점을 철저히 작성하고 **실제 검증되지 않은 상태를 완료라고 표시하지 않는다**.
 
 **중요:** 기획 문서/프롬프트는 Codex 실행 자체가 아니다. 사용자 PC 접근/주간 재설정권 사용은 사용자/Codex 환경에서 수행해야 한다.
+
+
+**Field05 PNG 결합 범위:** 기존 리뉴얼 v1 ZIP의 Ground3+Props7을 유지하고, **v1 남북 Road2는 최종안에서 사용하지 않으며** 동서 v2 Road4(Upper/Lower/WestEnd Upper/Lower)로 교체하여 **실사용 원본 PNG 소스14종(3+7+4)**을 격리 적용한다. 기존 Scene Renderer는 B42에서 환경 315 Ground + 42 Road +18 Props =375개 목표. v1 Optional7은 미배치. ZIP에 들어있는 Preview 이미지는 실사용 Asset 수로 세지 않는다. 새 Road4의 v2 실Unity 시각 승인은 사용자 검토 전 Pending.
