@@ -1,0 +1,22 @@
+Order,KeySlot,Chapter,DialogueId,SpeakerId,VoiceId,SourceManifest,Status,ExactText
+"01","1","Main20","main20_confront_serin_01","companion_serin","Schedar","문서/00_프로젝트/Main20_TTS_Manifest.csv","PLANNED_NOT_GENERATED","저 존재가 움직일 때마다 지면의 맥동이 따라옵니다.
+가까이 오니 더 분명해졌어요."
+"02","1","Main20","main20_confront_serin_02","companion_serin","Schedar","문서/00_프로젝트/Main20_TTS_Manifest.csv","PLANNED_NOT_GENERATED","네. 하지만 지금 이 지역의 열기를 크게 키우고 있는 건 확실해 보여요."
+"03","1","Main20","main20_confront_serin_03","companion_serin","Schedar","문서/00_프로젝트/Main20_TTS_Manifest.csv","PLANNED_NOT_GENERATED","열핵이 뛰는 간격을 보세요.
+공격하기 전마다 반응이 달라집니다."
+"04","1","Main20","main20_after_colossus_serin_01","companion_serin","Schedar","문서/00_프로젝트/Main20_TTS_Manifest.csv","PLANNED_NOT_GENERATED","열기가 내려가고 있어요.
+적어도 이 존재가 크게 증폭시키고 있던 건 맞았던 것 같습니다."
+"05","1","Main20","main20_after_colossus_serin_02","companion_serin","Schedar","문서/00_프로젝트/Main20_TTS_Manifest.csv","PLANNED_NOT_GENERATED","네. 훨씬 약해졌지만…
+완전히 멈추지는 않았어요."
+"06","1","Main21","main21_heat_serin_01","companion_serin","Schedar","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","바람이 달라졌어요. 아직 뜨겁긴 하지만, 전처럼 밀어붙이는 느낌은 아닙니다."
+"07","1","Main21","main21_pulse_serin_01","companion_serin","Schedar","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","울림은 남아 있어요. 하지만 간격이 훨씬 길어졌습니다."
+"08","2","Main21","main21_route_paul_01","companion_paul","Achird","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","가장 짧은 길이 꼭 안전한 길은 아니겠죠. 바닥부터 확인해 봅시다."
+"09","2","Main21","main21_route_serin_01","companion_serin","Schedar","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","중앙 쪽은 아직 일정한 간격으로 흔들립니다."
+"10","2","Main21","main21_route_paul_02","companion_paul","Achird","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","암반 쪽은 겉만 식었습니다. 보급 마차가 지나가기엔 위험하겠어요."
+"11","2","Main21","main21_route_taeon_01","companion_taeon","Gacrux","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","여긴 지난번에 흔들리던 곳과 다릅니다. 제가 다시 확인하겠습니다."
+"12","2","Main21","main21_arbel_leon_01","arbel-leon","Orus","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","주민들이 지날 수 있는 길을 찾아주셨군요. 정말 큰 도움이 됐습니다."
+"13","2","Main21","main21_aid_miel_01","companion_miel","Sulafat","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","다치신 분들은 제가 살펴볼게요. 폴 씨는 물자 수량을 확인해 주시겠어요?"
+"14","2","Main21","main21_aid_paul_01","companion_paul","Achird","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","이미 확인했습니다. 이번에는 다행히 약보다 붕대가 더 많이 필요하겠네요."
+"15","2","Main21","main21_aid_miel_02","companion_miel","Sulafat","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","그 말이 이렇게 반가울 줄은 몰랐네요."
+"16","2","Main21","main21_carriage_leon_01","arbel-leon","Orus","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","초보 마을로 돌아갈 마차를 마련했습니다. 준비되셨으면 출발하시죠."
+"17","2","Main21","main21_haren_taeon_01","companion_taeon","Gacrux","문서/03_스토리/Main21_TTS_Manifest_20261010.json","PLANNED_NOT_GENERATED","형? 오랜만에 만나서 첫마디가 그거야?"
