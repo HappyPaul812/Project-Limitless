@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-19 Field06 ScorchedTrail 환경 리뉴얼 v1 제작·ZIP 납품
+
+- **최신 확인 기준:** `main` `675988c9f2c5c507d9a696b0378be27c0bd3309b`; 기획 발주 `docs/planning/문서/00_프로젝트/Chapter2_Field06_ScorchedTrail_Renewal_Art_Assignment_20261019.md`. 현행 Field04 승인42길/Arbel 공식23종/Field05 공식 B42는 모두 **기존 공식 적용 자산**, 재작업 금지. 이전 본 인계에서 Field05 A/B 미선정이라고 쓴 부분은 2026-10-19 그때의 **역사 기록**이며 최신 main Field05 B42 공식 적용 상태가 우선.
+- 실제 GitHub Field06 Scene(원본 blob `01c31f42fb1ff477f496193f14ca9c1e349ad7fc`) **static SpriteRenderer363 = Grass315 + Road30 + Props18** 분석. 21×15 지면/원본 Ground Source ID 104·105·106개, Road 기존 15행×2열 **남북형**. `Chapter2Main15Flow.BuildEnvironment`는 **Runtime MeshRenderer Quad6** 추가하며 x<2 Grass tint/x<-3 짝수 Y 비활성화 처리 → 정적 렌더러와 분리. Main15 입장 (7,0), 조사 5곳·세린(-6,1), Encounter4 원본 위치 및 Quest12·기능 보호.
+- 실제 제작 다운로드 **`Limitless_Field06_ScorchedTrail_Renewal_Art_v1.zip`**, SHA256 **`d01f797dd5566c33c6bf917a397c2032f5fc44fcf31a53dc328807e912a23b70`**, 크기 **1,362,496 bytes**, **38파일/PNG28**(새 실사용 후보22 + Preview/QA6). **새 PNG22종**: 정적 후보 **14**(Ground3/Road4/Props7), 별도 사용자 개별 승인 선택 **8**(Main15 Runtime Quad6용 후보·새 Decal2). 기존 Field04/Arbel/Field05/세린/몬스터 Sprite 복사·재제작·덮어쓰기0.
+- **A30 / B42 동서 Road 배치는 둘 다 제안만**, 기존 남북 Road30의 위치 이동이 필요하므로 **Sprite-only 적용 금지**. A30 기존 30위치 재배치 x=-4..10/y±0.5, B42는 12 Renderer 추가 x=-10..10/y±0.5; 서쪽 흙길 끝은 **출입구·Portal 아님**. `Road_EW_Placement_Proposals.csv` 72행 제공, 어떤 안도 확정 선택하지 않음.
+- 오프라인 QA: 대응표 static 363행·고유 이름363, Ground3× 양방향 + Road 중앙/반복/WestEnd/Alpha **27조건 RGBA 불일치0**, ZIP CRC PASS, PNG28 해독 PASS, Manifest 신규 PNG22 SHA PASS. 실물 Unity Import·Runtime/도보·휠체어/Monster/Quest15/Save·Main15 Runtime Grass 빈틈·원본 Sprite foot/Cam QA는 **NOT_VERIFIED**.
+- 출처/권리 및 Codex 읽기전용 감사 프롬프트, `Runtime_Patch_Audit_6.csv`, `Renderer_Mapping_363.csv`, ContactSheet/Scene좌표 합성 비교 Preview 제공. 사용자 F드라이브·Unity 원본·Git main 수정0, Codex는 Main09 음성작업 우선이므로 **실제 Codex 조사 수행을 주장하지 않음**.
+- [Field06 v1 납품 정본](../../Field06_ScorchedTrail_Renewal_Art_v1_Delivery_20261019.md), 최초 docs commit `532c8c0af196192a0e9caa051afff4fcc817c5ff`, 작업 브랜치 `docs/art-renewal`.
+- **현재 상태 `ART_DELIVERED / OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_NOT_APPLIED / UNITY_RUNTIME_NOT_VERIFIED`**. 다음: 바울 대표 실 PNG/미리보기 미술 승인 → Road A/B·선택8 개별 여부 확정 → Codex 격리 Scene·접근성·Main15·Arbel왕복 QA → 별도 승인 후 Unity 적용. 다음 차례 Field07 환경은 Field06 미술 방향 확인 후 착수, Chapter3 아트는 `docs/art-new`.
+
 ## 2026-10-19 Field05 동서 Road v2 최소 아트 보완 납품 — A/B 미선정
 
 - 발주: [`docs/planning`의 동서 진행로 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/Chapter2_Field05_EastWestRoad_VisualCorrection_20261019.md), 기획 SHA `b614a5c6d6a1e51316c0ed22e03cc34b517982c5` 및 사용자 전달 Codex 실제 Unity6000.6.5f1 격리 비교/PNG 인계. 리뉴얼 담당은 Codex 로컬 `F:/.../Road_PNG_Handoff.md`를 직접 읽었다고 주장하지 않고 전달받은 전문으로 작업.
