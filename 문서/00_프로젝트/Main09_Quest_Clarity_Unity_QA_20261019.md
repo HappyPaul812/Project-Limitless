@@ -1,3 +1,5 @@
+> **최종 승인·정식 적용 완료:** 바울 대표 승인 후 PR21 main병합 `f3196b6b4fc4dfaf8a901a6a29ea07254ae70325`, 원본 기능9파일 적용·SHA9/9일치. 아래 PR 검토대기/원본미적용 문구는 승인 전 검수 시점 기록입니다. 원본Editor Runtime은 포커스 보호로 미검증입니다.
+
 # Main09 Field03 퀘스트 안내 UX 수정 및 실제 Unity QA
 
 상태: **기능 PASS / 환경 PARTIAL / 전용 PR 검토 대기**. main 병합·원본 Unity 디스크 적용은 하지 않았습니다.

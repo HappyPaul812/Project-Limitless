@@ -1,0 +1,24 @@
+{
+  "approval": "Main09 main merge and original disk apply approved by Paul",
+  "pr": 21,
+  "merge_sha": "f3196b6b4fc4dfaf8a901a6a29ea07254ae70325",
+  "applied_files_sha256": {
+    "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main09_ReunionInSilence.asset": "0dfae097613ccb0b8c82c140a434d5ffa6478a7054812e08abbfbc5a307fc0ff",
+    "Unity/Client/Assets/_Project/Scripts/Editor/MainQuest09ContentEditor.cs": "473a9bd4e1fe1e78a6dfe778989485075dd2897dccc3512fc628c16bbb38f239",
+    "Unity/Client/Assets/_Project/Scripts/NPC/InteractionSystem.cs": "19a7f4ec7064556cf2f58b0fb70165e3b44c4503de8585e271cdfb9b5c6071f1",
+    "Unity/Client/Assets/_Project/Scripts/Player/QuestHudPresenter.cs": "dc9e11b3350fc8e6b9ed9756dab8d848747dc6e23bfc3008358196255551a7be",
+    "Unity/Client/Assets/_Project/Scripts/Player/QuestNavigationPresenter.cs": "38c4c7841e22d16aad3144a2f05bfa950635e02c7c0afd4fd286abe1f65f468a",
+    "Unity/Client/Assets/_Project/Scripts/UI/QuestLogPresenter.cs": "ac785c25c3a45d0fddf91dc6de643886191ddb32f94d671a4a58d4bb648771c7",
+    "Unity/Client/Assets/_Project/Scripts/World/Main09QuestGuidance.cs": "7dde840bc7960c56ba438a6c2be938d7e826c1b406444481a16f1e10b0103d9b",
+    "Unity/Client/Assets/_Project/Scripts/World/Main09QuestGuidance.cs.meta": "cdeb1ddce1e9e396e4d82f97aea9cb73144f9dff13c0f344f528825364e95e5d",
+    "Unity/Client/Assets/_Project/Scripts/World/MainQuest09FieldFlow.cs": "88d168bd34c5067895364dcc28347a68294282dd0d13d35f418cf809d04abb6b"
+  },
+  "worktree_sha_matches": 9,
+  "unexpected_original_changes": 0,
+  "userdata23_changed": 0,
+  "main08_main18_audio_changed": 0,
+  "original_editor_manipulation": 0,
+  "original_editor_runtime": "NOT_RUN_FOCUS_PROTECTED",
+  "runtime_qa_reused_pass": 427,
+  "runtime_qa_fail": 0
+}
