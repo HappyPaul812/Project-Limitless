@@ -255,3 +255,13 @@
 - 오프라인 가상음성의 테스트 PASS는 처리 오류 없음/원본 SHA 보존만 검증했으며 **청취 품질을 보증하지 못했음**. 기존 `LIMITLESS_TTS_DSP9_Offline.py preview/apply` 결과 공식 음성 사용 및 Unity Import 금지. 반복·보정 강도 증폭 금지.
 - 원본 Main20/21 17 WAV, 이미 승인된 Main18 세린10 및 기존 정상25, 사용자 Save와 checkpoint/HOLD 불변. Gemini API를 이 세션에서 새로 호출하지 않음.
 - 후속 방침: 기존 정상본과 불량9의 실제 요청 설정/모델/VoiceID/스타일/SDK/대사·WAV SHA를 우선 API0 비교. 일치하면 기존 Voice ID/원문 유지하고 **불량1개만 통제 재생성 후 청취**, 실패 시 추가 비용/쿼터 낭비 중단. 대안 프리셋 무단 변경 금지. 상태·근거는 [DSP9 청취 불합격 정본](../../TTS_Main20_Main21_Offline_DSP9_Pilot_20261020.md).
+
+
+## 2026-10-20 바울 대표 “오늘 20회 써보자” — 직접 Python 배치 준비 (최신)
+
+- 20회는 **키1 최대10, 키2 최대10** 사용자 희망 예산. 두 키가 독립 Google Project, 모델 gemini-3.8-flash-tts FreeTier 실제 사용 가능/무과금이 확인될 때만 해당 상한 사용. 동일 Project 키 중복합산 금지. 실제 API 호출0 (바울 대표 PC 실행 대기).
+- 이전 **DSP 미리듣기 전량 FAIL** 유지. 새로운 Python은 원래 생성 당시 **동일 Schedar/Gacrux + 동일 Style + 동일 REST 요청 JSON + 동일 ExactText**로 제작; 프리셋 교체/피치 보정0. 9개 오류=세린8, 태온1. Main21 추가 미제작2=main21_haren_taeon_02, main21_prepare_serin_01. 하렌 자체 Voice미승인3 BLOCK.
+- TTS 담당 직접 `LIMITLESS_TTS_Today20_20261020.zip` 제작, SHA256 `7e2c80cc26f6127dbc22075e975959afab4246aa66f57ef6696e2b7c747ae635`; Python+고정 대사CSV+README. 사용자 대화에서 다운로드 제공. 별도 원본 `Limitless_TTS_Main20_Main21_20261019` 전체 17 결과 SHA 보호; 새로운 결과 폴더 `Limitless_TTS_20Calls_20261020`.
+- 안전 단계: `check` API0 → `sample --confirm-free` 세린1/태온1 (KEY1 2) → 둘 다 사용자 청취 PASS면 `approve-samples` → `main --confirm-free` 나머지9 (KEY1 8, KEY2 1) → 실제 청취 FAIL인 ID에 한해 `retry --ids ... --confirm-free` 최대9 (KEY2 9). **실제 불량이 없는 상태에서 예비9를 무조건 소진하지 않음.**
+- 오프라인 모의: 17원본 SHA 감사, sample2→승인 게이트→main9→retry9 = 20/Key1 10/Key2 10 PASS. 두 번째 가짜 API 오류 시 HOLD+lock 유지·뒤호출0 PASS, WAV 변조 감지 PASS. **실제 Gemini 신규 호출/WAV0/Unity0**.
+- [상세 계획/스크립트 메타](../../TTS_Main20_21_Today20_Staged_Retry_20261020.md). Codex는 여전히 사용자 최종 청취 승인 뒤 Unity 통합만 담당. TTS 업무 책임/실행은 TTS 전담 세션+바울 대표 로컬 Python. docs/tts 브랜치만 갱신, main 변경·Push/merge 없음.
