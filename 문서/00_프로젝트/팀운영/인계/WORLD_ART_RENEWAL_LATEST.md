@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Field09 부분수정 중단 → 환경 신규제작 3종 샘플 실제 납품 (최신/최우선)
+
+- **바울 대표 최신 결정:** Field09 v1/v2 최소 보완은 중단·역사보존. **맵 구조·Main18 조사/과열/퀘스트·충돌/몬스터/세린/전투/Save/Continue** 전부 보호. 신규 환경 미술만 다시 제작하며 전체 환경 아트 자동 발주가 아니라 **1차 샘플 3종 승인 후 다음 진행**.
+- 실제 새 PNG3: `LL_Field09_Ground_Basalt_Base_Sample_v1.png` (**512² RGBA, SHA256 e41b9ee7b4f197dcd77319130b7cfc79f7da38b8f98afdc0c71cc78fa0b78a83**), `LL_Field09_Ground_Fissure_Overlay_Sample_v1.png` (**512² RGBA alpha0~180, SHA256 c29209c89701bf0a93094e22ec7bb07e78a0db507c87c04f37867a3284aebbf2**), `LL_Field09_Obsidian_Spire_Sample_v1.png` (**512² RGBA 투명배경, SHA256 529db3c18f8d15adf7bc1217e88d27838de9e5019ac7734a3530c582ba13e2af**).
+- 실제 ZIP `Limitless_Field09_Environment_NewArt_Samples_v1.zip` **4,411,937 bytes / SHA256 af1475a04649b8033a5f8266ef670cdae0e998d0b0429266461f0ae18bdc75e8 / 11 entries** ChatGPT 파일 링크로 납품. PNG Decode3/3, 독립 ZIP testzip CRC PASS, PNG3 SHA 대조 PASS, 지면2종 외곽 좌우·상하 RGBA seam mismatch0. 미리보기/원화→PNG 비교/기존 공식 GitHub PNG와 나란히 보는 온라인 HTML 비교 수록. **실제 Unity 전후캡처·실행 PASS 아님**. 현재 GitHub 브랜치에는 **명세문서와 해시만**, ZIP 바이너리는 대화 첨부 파일이고 바울 대표 F: 자동 저장 아님.
+- **주의:** 신규 Cracked Overlay는 투명 RGBA이므로 현재 불투명 Tiled Overlay와 동일 Render 설정임을 보장하지 못함. 기존 공식8·Field08 PNG·meta/GUID·Scene 불변. 실제 3×3 반복에서 큰 암석 무늬의 주기성, 소품 마스크 테두리, Field08 실제 접합/게임크기 화면은 **미술 검토 및 Codex 통합검증 필요**.
+- 상태 `NEWART_SAMPLE3_DELIVERED / OFFLINE_FILE_QA_PASS / USER_SAMPLE_STYLE_REVIEW_PENDING / UNITY_NOT_APPLIED / NO_FULL_ART_AUTHORIZATION`.
+- [새 3종 샘플 실제 납품·SHA·QA·온라인 비교 보고](../../Field09_Environment_NewArt_3Samples_v1_Delivery_20261020.md), 보고서 Commit `2278f9a95cad1b6b167de1d1fbcd409e4f180c29`. 이전 v1/v2 부분 보완 납품·미검증 기록은 이제 **이전 방식의 역사 기록**, 신규 환경 샘플이 최신 지시를 대체. 사용자 승인 후만 후속 제작 및 Codex Unity 통합.
+
+
 ## 2026-10-20 Field09 v2 실제 8 PNG 수정 ZIP 납품 (최신)
 
 - **Issue #29** 확인 후 최신 공식 `main 12c69c72`의 `Resources/Main18/Environment`에서 **원본 공식 PNG8 바이너리 직접 취득·RGBA 디코드**하여 수정 PNG8 실제 제작. v1 단순 재포장 아님. 공식10 PNG·meta·GUID/원본 Unity 변경0.
