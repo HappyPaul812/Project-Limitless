@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A 전투 스프라이트 제작 우선
+
+바울 대표: 두 Idle v1의 Codex Unity14PASS/0FAIL 보고 뒤 “좋은데. 전투 스프라이트는? 쥐는 빨리 만들어야지 되는거 아냐?” → **서리들쥐 A를 Chapter3 첫 전투 몬스터로 우선**. 메인 아트 담당에게 곧장 임의 4x4를 그리게 하지 않고 **Codex 기존 MonsterDefinition/MonsterSpriteSheetAnimation/Ch2공식 시트/전투 UI를 읽어 최종 Attack/Hit/Defeat 계약**(시트 또는 독립 strip, spriteRects, 4프레임/FPS·재생/복귀·명시적 frames, PPU512/Pivot 하단중앙·발 접지·scale) 확정 지시 후 실제 쥐의 나머지 전투 3모션만 빠르게 발주. 기존 승인 Mouse 1포즈 SHA `0516914d...` 및 Idle Sheet SHA `5afebfa1...` 보호, 보스 B 전투3모션은 후순위, 이미 작업 중인 아트 담당에게 Idle 재지시하지 않음.
+
+기획 `docs/planning/문서/00_프로젝트/Chapter3_FrostFieldMouse_FirstCombatSprite_Contract_Preflight_20261020.md` commit `d2f4e2964b24b40bf6928cc9d16dd7d26b0b5890`, Issue #30 댓글. 이번 Codex는 **문서/기술확정만** 허용; 원본 Unity/Editor/Save/UserData/Main 직접 Push·병합 금지. 나머지 Field09 B Glow 격리 통합39PASS 후 원본 적용승인 대기는 별개 작업.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 신규 몬스터 Idle 2종 실제 격리 Unity 14PASS/0FAIL, 대표 모션 승인 대기
 
 바울 대표 전달 Codex 최종 Idle v1 QA 보고: 서리들쥐A·설빙의 폭군B 모두 구조/기술PASS·**시각/모션PASS 권고**, 4×512×512 8FPS 0.500초 루프, Frame00 정적 승인 1포즈 픽셀 동일, 발 접지/크롭·03→00 자연스러움, **격리 Unity14PASS/0FAIL**. 서리들쥐 꼬리/앞니/발톱과 128px 야생성, 폭군 흉곽/어깨·긴 팔의 미세움직임·보스 체급 유지. Codex `codex/chapter3-idle-v1-review-20261020`, QA `1b9ad951`, 인계 `3ef27f34`. 사용자 PC 원본 Unity/Save/UserData/Editor·정적1포즈 보호, Unity 원본등록/Push/main 병합0.
