@@ -28,3 +28,12 @@ Issue #31: F1 북풍·서릿길 마을 2곡 샘플.
 2. MP3/WAV 수령 즉시 SHA256·decode·길이·루프·TTS 공간 검수.
 3. 사용자 청취 승인.
 4. 승인 후에만 Unity 적용용 별도 Handoff 작성.
+
+
+## 2026-10-20 파일럿 2곡 실제 수령·1차 청취 QA
+
+- `Where_the_Grass_Bends.mp3`: 74.239958초 / 44.1kHz Stereo / SHA256 `2bbbe6fe02b46c391653a5409802dde819ba64b5b5be99b20bbeafb4ad9b0fca`. Main22 F1 역할 **PASS 추천**, USER_REVIEW_PENDING.
+- `Hearth_in_the_Low_Valley.mp3`: 72.620333초 / 44.1kHz Stereo / SHA256 `a8cae73d15d276ad5cf25415ee13bce6e9761b331822f8dcb5928da9b87c772b`. Main23 서릿길 마을 역할 **PASS 추천**, USER_REVIEW_PENDING.
+- Raw MP3 direct Loop: 두 곡 모두 끝 무음(각 약2.36초/2.55초) 때문에 **LOOP_EDIT_REQUIRED**.
+- 두 곡 역할 분리/길이/decode PASS. Unity 적용0, 기존 공식 BGM/TTS/Mixer 변경0.
+- 세부: `문서/00_프로젝트/Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md`
