@@ -247,3 +247,11 @@
 - `check` 원본9 읽기 전용 검사 → `preview` 세린1·태온1 각각 gentle/medium/strong (6개) → 바울 대표 청취 승인 후 `apply --serin ... --taeon ...`로 오류9개만 새 위치에 후보 제작. 피치+포먼트 근사 DSP, 원본 음색 완벽 복구 보장 없음.
 - 샘플용 합성 WAV 기반 compile/check9/preview6/apply9/원본 SHA 불변/24k PCM16/중복 출력 보호 PASS. **실제 사용자 PC WAV 보정·음질 검증 미실행**.
 - [정본/기술 상세](../../TTS_Main20_Main21_Offline_DSP9_Pilot_20261020.md). 기존 VoiceFix9/GenderFix9 API 생성 패키지는 계속 사용 보류. 기존 Main18 승인, 나머지 정상음성, 원본 WAV, save/HOLD/lock, Unity 보호.
+
+
+## 2026-10-20 최종 청취 피드백 — DSP 보정 전량 불합격 (최신 정본)
+
+- 바울 대표의 직접 판정: **“다 못쓰겠다. 안바뀌고 외계인 목소리로 돼..”**. 세린·태온 gentle/medium/strong DSP 미리듣기 음성은 기존 캐릭터 음색을 복구하지 못하고 인공적 왜곡 발생. **DSP_PREVIEW_ALL_USER_FAIL / DSP_STOPPED**.
+- 오프라인 가상음성의 테스트 PASS는 처리 오류 없음/원본 SHA 보존만 검증했으며 **청취 품질을 보증하지 못했음**. 기존 `LIMITLESS_TTS_DSP9_Offline.py preview/apply` 결과 공식 음성 사용 및 Unity Import 금지. 반복·보정 강도 증폭 금지.
+- 원본 Main20/21 17 WAV, 이미 승인된 Main18 세린10 및 기존 정상25, 사용자 Save와 checkpoint/HOLD 불변. Gemini API를 이 세션에서 새로 호출하지 않음.
+- 후속 방침: 기존 정상본과 불량9의 실제 요청 설정/모델/VoiceID/스타일/SDK/대사·WAV SHA를 우선 API0 비교. 일치하면 기존 Voice ID/원문 유지하고 **불량1개만 통제 재생성 후 청취**, 실패 시 추가 비용/쿼터 낭비 중단. 대안 프리셋 무단 변경 금지. 상태·근거는 [DSP9 청취 불합격 정본](../../TTS_Main20_Main21_Offline_DSP9_Pilot_20261020.md).
