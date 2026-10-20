@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 병렬 착수·각 팀 Issue #30~36
+
+바울 대표: “챕터3는 설계 끝이면 각 담당한테 작업 맡겨야지?” GitHub latest 설계 검토 결과 Chapter3 방향/Chapter3 Main22~29 1차 서사/북부 필드5+보스1/서릿길 마을(Main23)/Main24 스킬상점·한기 대응/냉기3상태·온기의 화로·설빙의 폭군/형제애 중심 서사는 부서별 작업 **시작 가능**. 다만 `STORY_V1_PROPOSAL`, 정식 Quest/Dialogue/Monster/Scene IDs/좌표/금액·턴계수는 production lock **전**이다. 지금 신규 아트·BGM·SFX 소수 시안 제작, TTS 캐스팅만(API0), Codex Main22 연결·PPU/ID 읽기전용 감사, 영상 스토리보드, 기획 Main22~24 정식 ID/대사 초안 각자 병렬 진행. 전체 Unity 구현·TTS API·Main 병합 임의 착수 금지.
+
+기획 공통 발주 문서 `문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md` (`docs/planning`, commit `8fd341cbca2ff5fd4bfefbd46d3ebde8afb5e19c`). GitHub 작업 이슈: 신규 아트 [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), BGM [#31](https://github.com/HappyPaul812/Project-Limitless/issues/31), TTS API0 캐스팅/스크립트 준비 [#32](https://github.com/HappyPaul812/Project-Limitless/issues/32), SFX [#33](https://github.com/HappyPaul812/Project-Limitless/issues/33), 영상 [#34](https://github.com/HappyPaul812/Project-Limitless/issues/34), Codex read-only preflight [#35](https://github.com/HappyPaul812/Project-Limitless/issues/35), 기획 ID/Dialog release [#36](https://github.com/HappyPaul812/Project-Limitless/issues/36). 모두 담당 브랜치의 작업 목록이며 각 ChatGPT 세션이 **자동 통지를 받거나 작업을 시작한 것으로는 볼 수 없음**. 바울 대표가 담당 세션에 해당 Issue 번호/정본 확인 한 줄만 전달하면 됨.
+
+Chapter1·2 리뉴얼 담당 `docs/art-renewal`은 기존 Field09 3샘플/Slab QA 및 몬스터·Wolf 품질 관련 작업만 유지하며 Chapter3 신규 아트는 `docs/art-new` 관할. 최신 field09 환경 샘플 report GitHub PNG3 ZIP 미등록/Unity 검증 전으로 별개, Chapter3로 권한 확장 금지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 새 미술 3종 Codex 기술인계 완료, 실제 PNG 샘플 제작 진행
 
 바울 대표 Codex 보고: 기존 Field09 visual fail 원인은 `PNG 경계 무늬 Tiled 반복`, `불투명 지면 간 접합`, `6종 소품 흰 가이드 픽셀`이며 실제 Scene 오브젝트 대응도 정리함. 공통 `512×512 RGBA / PPU128 / 중앙 Pivot`, 새 Base Ground `(0,0), Tiled21×15`; 새 Cracked Overlay `(-6,0), Tiled9×15`; 대표 Slab Prop `(5.2,1), 화면 약2×2`. Codex 로컬 문서 커밋 `0dcc13ab`라고 보고, GitHub Push0. 본 기획 세션이 로컬 인계서 자체를 직접 검사한 것은 아님.
