@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 Glow A/B 둘 다 실제 GameView 시각 PASS, B 파생 Glow 기술추천
+
+바울 대표 Codex QA 전달: A SpriteMask와 B 별도 파생 Glow 모두 붉은 띠/가이드 제거 PASS, 과열·조사 내부 가독성 PASS, 다른 Renderer 부작용0. B안은 기존 Glow 내부 RGB/필요 Alpha 약99.9% 유지하면서 **추가 Mask가 없어 단순 Sprite 참조 교체만 필요**. 동일 실제 3 GameView, A/B 변경분34PASS/0FAIL 및 공통 과열 위험 UI10PASS. **성능 측정은 하지 않았음**. Codex `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`. 승인 Base/Overlay/Slab + Phase2 Cliff/Fissure 원본, 기존 Glow PNG/meta/GUID, Save/UserData/Editor 보호, 원본 Scene 변경/Push/main병합0.
+
+**기획은 B 기술 방향 추천, 그러나 바울 대표 B 파생 Glow 원화·실제 최종 적용은 아직 명시적 승인받지 않았음.** B 후보 PNG/GUID/Alpha SHA와 동일 화면 확대 비교·참조변경 범위를 Codex 기존 격리 결과로 대표에게 제시 → 미술 승인 → 이후 별도 코덱스 최소 Scene 참조 교체 및 안전 QA → PR/main 승인 순. A도 PASS한 대안으로 기록, 리뉴얼 담당은 기존 PNG 재작업 없이 대기. 신규 Chapter3 메인 아트 Idle2 제작은 별도 진행.
+
+정본 `문서/00_프로젝트/Field09_Glow_AB_VisualPass_BDerived_Recommendation_ApprovalGate_20261020.md` (`docs/planning` `1195e39c2f1d7d7dc43f90b1d5ac41efa2f30b84`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 Phase2 Cliff PASS·Fissure+Glow 합성 FAIL, 기술 후보 비교
 
 바울 대표 Codex 검수 스크린샷: Field09 Phase2 `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 구조 ZIP/PNG/CRC PASS, 격리 Unity 기술19 PASS/0 FAIL, **Cliff v2 하단 접지 시각 PASS**, **Fissure Edge v2 단독 외곽 매트 시각 PASS**, 오직 **원본 Fissure Glow 결합에서 윗/오른쪽 붉은 띠/가이드 잔흔 시각 FAIL**. 원인은 Glow-Edge alpha 형태 부조화와 원래 Mask 없는 Renderer 조합; Glow sorting -7이 Fissure -8 앞쪽, 정렬 반전만으로는 해결 못함. Codex `codex/field09-phase2-fix-v2-qa-20261020`, QA `16c1fb92`, 인계 `fe0b412d`. original source3546+ Save/UserData/approved3+Glow/meta/GUID 보호, 공식 Unity 적용/Push/main 병합 없음.
