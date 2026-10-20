@@ -274,3 +274,11 @@
 - TTS 담당 직접 안전 진단 ZIP `LIMITLESS_TTS_HTTP400_Diagnose_20261020.zip` 작성·배포 (SHA256 `d1270b807435d8f222e5a976ba00b65c133ea5fa19fb800840b87c645296815a`). 기존 스크립트 옆에 추가하고 `inspect`(API0/쓰기0), `model-info`(Google 모델 GET1/TTS POST0) 순서로 실행, 결과 보고. `diagnose-one`의 단 1회 POST는 상세진단 필요 시 사용자 추가 확인 후에만. 기존 HOLD/lock은 절대 해제/초기화/덮어쓰기 금지.
 - 가상 원본17 SHA 및 HOLD/lock 보호, 모델 GET, 오류 400 POST 상세 메시지 추출/키 마스킹, 추가 호출 차단 오프라인 테스트 PASS. **실제 신규 Google API/모델 GET은 이 ChatGPT에서 실행하지 않았으며 사용자 PC 진단 대기**. 첫 시도는 보수적으로 KEY1 소모1회로 기록. Unity0/main0.
 - 상세 정본: [2026-10-20 첫 HTTP400 진단](../../TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md). Issue #20도 BLOCKED로 갱신.
+
+
+## 2026-10-20 실제 진단 결론 — KEY1 API 인증 거절 (최신)
+
+- 사용자 진단 `inspect`: HOLD/lock·원본 SHA 정상, 첫 샘플 HTTP400, 신규 WAV0/후속 생성 호출0.
+- 사용자 `model-info` 2회: 모두 HTTP400 `INVALID_ARGUMENT` / `API key not valid. Please pass a valid API key.`. 이는 TTS generateContent가 아니라 모델 메타 조회 GET이므로 **이 시점에 입력한 KEY1의 API 인증이 거절된 것이 직접 문제**. 첫 실패에 사용된 키와 두 진단 입력의 동일성은 화면만으로 별도 확인 필요.
+- 다음 조치: Google AI Studio에서 해당 Google Project의 유효 API Key(프로젝트 ID와 다름)를 안전하게 재확인, 채팅·화면에 키 노출하지 않은 상태로 `model-info`만 다시 검사. PASS 전 샘플·진단 POST 추가 실행 금지. 기존 HOLD/lock 삭제·재설정 금지, 이전 Main20/21 WAV와 Main18 승인본 보존.
+- [정본 상세](../../TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md). 이 진단을 통해 새 TTS 호출0, 새 WAV0/Unity0. 기존 음색 오류9는 별도 미해결.
