@@ -1,3 +1,64 @@
+## 2026-10-20 EOD 최신 경계
+
+Field09 승인5종+B만 EOD 제품 통합 준비. 나머지 Field09 환경은 미완료, 전체완료 아님. 담당의 아래 기록은 작성 시점의 이력이며 EOD 실행 결과는 Codex 최종 인계·증거를 따릅니다.
+
+## 2026-10-20 담당 기록 선별 보존 — 아래는 시점별 이력
+
+## 2026-10-20 Field09 Phase2 Cliff/Fissure 실제 PNG 2종 v2 보완 납품 (현재 최신)
+
+- 바울 대표와 Codex 검수 Phase2 Pilot v1: **기술 30PASS / 미술 Visual FAIL** (Cliff 발치 밝은 매트, Fissure 외곽 매트와 기존 Glow 붉은 띠 노출). 기획 정본 `docs/planning/문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md`, Issue #38 최신 댓글 확인.
+- 기존 v1 실제 PNG에서 **두 후보만 국소 수정**: `LL_Field09_Phase2_Cliff_Blocker_v2.png` SHA256 `ad995f3cc4914759d6c88fa47c80227cb1a7c5f1a9a549679e06472402fee9f1` (13,918px 변경), `LL_Field09_Phase2_Fissure_Edge_v2.png` SHA256 `c3dc0c131c11fef72e4d210a1a43528f9882d8c50486e8da0bc15b6984ea145a` (14,574px 변경). Canvas512² RGBA, PPU128/Pivot center 제안, Collider/Sorting/Scene 원본 불변.
+- 실제 ZIP `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` **3,602,303bytes / SHA256 `0e4b7bfb3784b5b97a4a719c669f9564f502d67e88c2096d32475fa69a6876c8`**, 13 entries. Assets 신규 PNG2만, Manifest 원본/수정 SHA, 픽셀별 변경 CSV 28,492개, 승인 Base+새 소품 전후/접지 확대 PNG, 온라인 원본 Glow 정확 겹침 HTML, QA JSON, 재현 스크립트. 표준 ZIP 재해제/CRC testzip/Pillow PNG Decode/SHA **오프라인 PASS**. ZIP과 PNG는 이번 채팅 sandbox에 실제 첨부. **GitHub repo에 바이너리 넣거나 바울 대표 F: 자동 복사하였다고 주장하지 않음**.
+- 승인 Base Ground v1 SHA `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203` / Cracked Overlay v2 SHA `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7` / Obsidian Slab v1 SHA `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692` **실제 파일 재대조 3PASS / 수정0**. 공식 Fissure Glow PNG/meta/GUID 원본 그대로. Glow sorting -7가 Edge sorting -8보다 앞이므로 아트 외곽 정리만으로 Glow 붉은 띠가 전체적으로 사라진다는 주장은 **금지**. 독립 Unity 실제 Glow 결합 검증 필수, 지속 시 Renderer/Material/Mask 기술문제 분리해 추가 승인 받음. `OnlineCompare.html`은 GitHub 공식 Glow를 URL에서 읽어와 동일 위치 위아래로 겹침; 오프라인 PNG는 Glow 실제 포함하지 않고 GameView도 아님.
+- 보고서 [Field09 Phase2 Cliff/Fissure 수정 v2](../../Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_ArtFix_v2_Delivery_20261020.md) 최초 commit `6fb4701d9749b28d7735991a3b68721c713f3a14`. Codex 재현용 `Art_Tools/Field09_Phase2_CliffFissure_Fix_v2.py` commit `7e92e05f1a8cd27b17c60a6f5e4b412f5f4937fb`. 상태 `FIX_PNG2_DELIVERED / OFFLINE_QA_PASS / GLOW_RENDERMASK_RISK / CODEX_UNITY_DELTA_PENDING / USER_VISUAL_APPROVAL_PENDING / MAIN_UNCHANGED`.
+- Codex 다음은 기존 PASS30/17/92 **재실행 금지**. Cliff 접지/Edge+Glow 결합/3 GameView, 기존 Main18 시각 정보만 델타 검증. 바울 대표 최종 미술 승인 전 다른 환경 소품 양산/공식 원본 적용/메인 병합 금지.
+
+## 2026-10-20 Field09 Phase2 신규 소품 2종 실제 납품 — 최신 결정/승인 상태
+
+- [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 및 기획 `docs/planning/문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md`: **승인된 Base Ground v1/Cracked Overlay v2/Slab v1 절대 수정 금지**. 실제 SHA256 재확인 3/3 PASS (`1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`).
+- 실제 Scene `Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity` 및 공식 원본 PNG6종 육안 확인 후 분류: **AshPatch KEEP 후보**, **Cliff Blocker와 Fissure Edge REDESIGN 이번 Pilot**, FissureGlow·HeatVent·Spire **REDESIGN 필요/HOLD 다음 묶음**. 분류/Renderer 실제 position/scale/sorting CSV는 ZIP에 포함. Cracked02 미사용 HOLD.
+- 신규 `512x512 RGBA` PNG 실제 제작2: `LL_Field09_Phase2_Cliff_Blocker_v1.png` SHA256 `2e7a863547688773dbb3d6672623e0958fbab01c8241d2665d8739a0777a231c`, `LL_Field09_Phase2_Fissure_Edge_v1.png` SHA256 `7c892de74b1f3327b37f4fb3ff7673954d64542498b32f6ab76826e6ca53b1d0`. 새 원화에서 개별 원본 투명 PNG2로 추출. 합격3종 수정0.
+- ZIP **`Limitless_Field09_Redesign_Phase2_Pilot_v1.zip`** (실제 ChatGPT sandbox 파일, 1,672,537 bytes, 9 entries, SHA256 **`f12b056924665eeb593d084d5a5b73ba67a1a3a335d2bd9f882a547e5b8a7ff6`**). ZIP CRC/testzip PASS, PNG2 decode/RGBA/알파/가이드선/고립픽셀 오프라인 PASS, Manifest/승인3종 해시 PASS. 승인3과 시각비교/오프라인 합성 Preview + Role/Renderer CSV 포함. **실제 Unity 시각 PASS 아님; 외곽 매트/겹침 검증 필요**.
+- **GitHub에는 보고서만 커밋**(현재 대화 ZIP 바이너리 GitHub 업로드0/사용자 F: 자동저장0). 보고서 [Field09 Phase2 Pilot v1](../../Field09_Redesign_Phase2_Pilot_v1_ActualArt_Delivery_20261020.md), 최초 문서 Commit `f5cdd9821136b7582558af6af1a08d973d90b3c5`.
+- Codex만 격리 Import/실제 GameView·기존 Glow/퀘스트/과열 델타QA; 기존 승인3 QA17/92PASS 재검증0. 대표 미술 승인 전 다음 묶음 제작/공식 Scene 적용/Push/main 병합 금지. 현재 `PHASE2_PNG2_DELIVERED / OFFLINE_QA_PASS / CODEX_UNITY_QA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED`.
+
+## 2026-10-20 Issue #37 Field09 Cracked Overlay 1종만 보완한 v2 실제 PNG/ZIP 납품 (현재 최신)
+
+- **Codex 격리 QA**: Base Ground Visual PASS, Slab Visual PASS — **둘 다 수정0 / SHA v1 그대로**. 유일 FAIL: Cracked Overlay의 오른쪽 x≈-1.5 밝은 균열 직선 절단.
+- 기존 v1 Overlay PNG만 변경. `512×512 RGBA / PPU128 / Pivot 중앙`, Tile x≈128 인접 3개 균열 끝의 Alpha만 3,705픽셀(x100..155) 국소 조정, RGB 전체 원본과 완전 동일. Old SHA256 `56d8e0ea9bf3ca2167227362b87bb219a21d4470f317456f36eb8aba99caedeb`, New SHA256 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`.
+- 신규 ZIP `Limitless_Field09_Redesign_Sample3_OverlayFix_v2.zip` **3,338,697 bytes / 11 entries / SHA256 `ec831166a753eef179da8fc283faf1fe81d1880941bce10c8d93225269cd418c`**. 실제 Sandbox ZIP/PNG 다운로드로 납품; Manifest/수정픽셀3705행/오프라인 Base 21×15 + Overlay 9×15 전후 및 접합 확대컷/QA/재현 스크립트 포함. ZIP `testzip`=None, 새 PNG 딥 검사 PASS. **Unity 실제시각 재검수 대기**.
+- GitHub `docs/art-renewal`에 실제 재현용 Python 소스 `Art_Tools/Field09_Issue37_OverlayFix_v2.py` (Commit `b9dbd5e66524eb249a86e4d7cc421c12656b60dc`) 업로드. Codex는 바울 대표 F: 기존 Sample3 v1 ZIP에서 오버레이 원본1개만 읽기전용으로 꺼내 같은 아트를 자동 재생성·SHA 대조 가능. 사용자 원본·합격2종·main 변경 금지.
+- [Issue37 새 v2 아트 납품 보고서](../../Field09_Redesign_Sample3_OverlayFix_v2_Issue37_Delivery_20261020.md), 보고서 commit `a50dcd86abca567906c2c3aada919af53b41bb76`. **다음 담당 Codex**: 동일 x≈-1.5 및 3개 GameView 시각 Delta QA만; 기존 31PASS/0FAIL·Main18 PASS 전체 재검사 하지 않음. 진짜 Unity에서 수직 경계 0FAIL, 바울 대표 미술승인, 별도 공식 적용승인 전 후속 Field09 아트/병합 금지.
+- **정확 상태**: `ISSUE37_OVERLAY_V2_PNG_AND_ZIP_DELIVERED / BASE_SLAB_PASS_UNCHANGED / OFFLINE_QA_PASS / CODEX_UNITY_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED`.
+
+## 2026-10-20 Field09 새 환경 3종 기술계약 대응 — 실제 신규 PNG3 납품 (최신)
+
+- 기획 정본: docs/planning/문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md 직접 확인. 기존 부분 수정 중단, 맵 구조/Collider/Main18/과열/몬스터/세린/전투/Save/Continue 보호.
+- PNG3 전부 512×512 RGBA / PPU128 / 중앙 Pivot 제안. Ground Base (0,0) Tiled 21×15 — SHA256 1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203. Cracked Overlay (-6,0) Tiled 9×15 — SHA256 56d8e0ea9bf3ca2167227362b87bb219a21d4470f317456f36eb8aba99caedeb. Obsidian Slab (5.2,1) 월드 약 2×2 — SHA256 dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692.
+- 신규 ZIP `Limitless_Field09_Redesign_Sample3_v1.zip`: 4,207,395 bytes / 14 entries / SHA256 4ca6ea65f6315b0e35011a902d520549ba7d944145e6ec0b05962ff945f893b4. 실제 ChatGPT 대화 파일 다운로드용. GitHub 바이너리 업로드나 F: 자동 저장 아님. 원본 공식 PNG/meta/GUID/Scene 및 main 불변.
+- PNG 3/3 Decode, 지면 2종 양축 RGBA edge exact equality, ZIP `zipfile.testzip()==None`, ZIP 내 PNG SHA 대조 PASS. 3×3 반복·정확한 WorldSize 위치 모식도 포함. 다만 실제 GameView 아님; 반복 주기성/Overlay 끝단 이종재질 연결/Slab 접지 등 Unity 시각QA 대기.
+- 상태: NEW_ART_PNG3_DELIVERED / ZIP_OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / CODEX_UNITY_VISUAL_QA_PENDING / REMAINING_ENV_HOLD.
+- [상세 납품 문서](../../Field09_Redesign_Sample3_v1_Art_Delivery_20261020.md), 최초 문서 커밋 26edd65c25359f208170eaadf45ee9feca3178aa. 바울 대표 미술승인과 Codex 시각 QA 통과 전 나머지 자산 제작·정식 반영 금지.
+
+## 2026-10-20 Field09 부분수정 중단 → 환경 신규제작 3종 샘플 실제 납품 (최신/최우선)
+
+- **바울 대표 최신 결정:** Field09 v1/v2 최소 보완은 중단·역사보존. **맵 구조·Main18 조사/과열/퀘스트·충돌/몬스터/세린/전투/Save/Continue** 전부 보호. 신규 환경 미술만 다시 제작하며 전체 환경 아트 자동 발주가 아니라 **1차 샘플 3종 승인 후 다음 진행**.
+- 실제 새 PNG3: `LL_Field09_Ground_Basalt_Base_Sample_v1.png` (**512² RGBA, SHA256 e41b9ee7b4f197dcd77319130b7cfc79f7da38b8f98afdc0c71cc78fa0b78a83**), `LL_Field09_Ground_Fissure_Overlay_Sample_v1.png` (**512² RGBA alpha0~180, SHA256 c29209c89701bf0a93094e22ec7bb07e78a0db507c87c04f37867a3284aebbf2**), `LL_Field09_Obsidian_Spire_Sample_v1.png` (**512² RGBA 투명배경, SHA256 529db3c18f8d15adf7bc1217e88d27838de9e5019ac7734a3530c582ba13e2af**).
+- 실제 ZIP `Limitless_Field09_Environment_NewArt_Samples_v1.zip` **4,411,937 bytes / SHA256 af1475a04649b8033a5f8266ef670cdae0e998d0b0429266461f0ae18bdc75e8 / 11 entries** ChatGPT 파일 링크로 납품. PNG Decode3/3, 독립 ZIP testzip CRC PASS, PNG3 SHA 대조 PASS, 지면2종 외곽 좌우·상하 RGBA seam mismatch0. 미리보기/원화→PNG 비교/기존 공식 GitHub PNG와 나란히 보는 온라인 HTML 비교 수록. **실제 Unity 전후캡처·실행 PASS 아님**. 현재 GitHub 브랜치에는 **명세문서와 해시만**, ZIP 바이너리는 대화 첨부 파일이고 바울 대표 F: 자동 저장 아님.
+- **주의:** 신규 Cracked Overlay는 투명 RGBA이므로 현재 불투명 Tiled Overlay와 동일 Render 설정임을 보장하지 못함. 기존 공식8·Field08 PNG·meta/GUID·Scene 불변. 실제 3×3 반복에서 큰 암석 무늬의 주기성, 소품 마스크 테두리, Field08 실제 접합/게임크기 화면은 **미술 검토 및 Codex 통합검증 필요**.
+- 상태 `NEWART_SAMPLE3_DELIVERED / OFFLINE_FILE_QA_PASS / USER_SAMPLE_STYLE_REVIEW_PENDING / UNITY_NOT_APPLIED / NO_FULL_ART_AUTHORIZATION`.
+- [새 3종 샘플 실제 납품·SHA·QA·온라인 비교 보고](../../Field09_Environment_NewArt_3Samples_v1_Delivery_20261020.md), 보고서 Commit `2278f9a95cad1b6b167de1d1fbcd409e4f180c29`. 이전 v1/v2 부분 보완 납품·미검증 기록은 이제 **이전 방식의 역사 기록**, 신규 환경 샘플이 최신 지시를 대체. 사용자 승인 후만 후속 제작 및 Codex Unity 통합.
+
+## 2026-10-20 Field09 v2 실제 8 PNG 수정 ZIP 납품 (최신)
+
+- **Issue #29** 확인 후 최신 공식 `main 12c69c72`의 `Resources/Main18/Environment`에서 **원본 공식 PNG8 바이너리 직접 취득·RGBA 디코드**하여 수정 PNG8 실제 제작. v1 단순 재포장 아님. 공식10 PNG·meta·GUID/원본 Unity 변경0.
+- `Art_Deliveries/Limitless_Field09_ObsidianScar_Minimal_Fix_v2.zip` **2,659,837 bytes**, `SHA256 30f102c223aa127a7b6a290ef9fa503354cb9e0104faac03e6c395c2b247b8b8`, **Git blob** `380cc2c0f588f0a6d562e8250cfe223bf229cd9c`. ZIP 납품 commit `4babb98b1c90bbd001dda1cff4be46097d02cfc7`. 업로드 이후 GitHub size/sha 재조회 일치.
+- 실제 수정: Ground2 **135085 / 139085px**, 외곽88px 질감 블렌딩·상하좌우 RGBA 반복 mismatch0. Guide6 **3120 / 2457 / 3035 / 2258 / 2297 / 2905px** 원본 공식 안내선 근처 밝은 무채색 경계픽셀 국소 제거. 모든 수정 PNG8 RGBA512x512 재Decode/PixelRoundtrip PASS, 원본PNG CRC PASS. ZIP `Fixed_Candidates/PNG8 + Preview/Before_After_8.png + Manifest + Changed_Pixels.csv + VisualFail_Cases.csv + README + QA` 총14 entries 표준 STORED 작성. **GitHub Connector ZIP readback이 크기 제한으로 빈 값을 반환하여 Python `zipfile.testzip()` 독립 검증은 아직 없음**; Codex 최초 게이트로 지정.
+- **중요 구분:** `ART_V2_8PNG_DELIVERED / GITHUB_BLOB_VERIFIED / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / ZIP_INDEPENDENT_TEST_PENDING / UNITY_VISUAL_QA_PENDING / OFFICIAL_UNITY_NOT_APPLIED`. 이전 실제 화면 반복회색띠6·가이드잔여6종 **Runtime에서 해결됐다는 주장 금지**. 같은 카메라 v1 FAIL→v2 Delta QA로 0FAIL 입증 후 대표 미술 승인·별도 공식 Unity 적용.
+- [v2 실제 아트 PNG8 납품·해시·픽셀수·Codex 검수 게이트](../../Field09_ObsidianScar_Minimal_Fix_v2_Real_PNG_Delivery_20261020.md), 문서 commit `5b84285d3ef462cab1e7a4fc4a99360d02239d6e`. v1 손상·재포장 및 v1 Unity Visual FAIL 기록 보존; main 직접 병합/Push 없음.
+
+## 기존 main 인계 이력 보존
+
 ## 2026-10-19 EOD 통합 현재 상태 (과거 기록보다 우선)
 
 바울 대표 마감 통합 지시에 따라 Main09 승인27·재회순서, Main10 승인18·조사 NPC 우선권, Field06 v1.1 B42/Ground49/Spawn, Field07 v1 B42/투명 Ash7만 통합 브랜치에 준비했습니다. Main18·Field05·Main09 퀘스트 UX는 기존 main 유지/중복 적용0입니다. 아래의 이전 승인대기·미적용·API 계획은 당시 HISTORY이며 현재 실행 허가가 아닙니다.

@@ -1,0 +1,18 @@
+[
+  {
+    "character": "0",
+    "observed_changes": 25,
+    "cyclic_order_verified": true,
+    "median_change_seconds_after_warmup": 0.12718000000000007,
+    "median_loop_seconds": 0.49992000000000014,
+    "engine_definition_fps": 8
+  },
+  {
+    "character": "1",
+    "observed_changes": 25,
+    "cyclic_order_verified": true,
+    "median_change_seconds_after_warmup": 0.12719000000000058,
+    "median_loop_seconds": 0.49992000000000014,
+    "engine_definition_fps": 8
+  }
+]

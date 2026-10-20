@@ -1,0 +1,45 @@
+[
+  {
+    "object": "ObsidianScar_Ground",
+    "name": "LL_Field09_Redesign_Ground_Base_v1.png",
+    "sha256": "1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203",
+    "guid": "ae04c08aafa34a448be7d49b1ae29cc2",
+    "role": "approved_baseline"
+  },
+  {
+    "object": "ObsidianScar_GroundCrackedWest",
+    "name": "LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png",
+    "sha256": "0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7",
+    "guid": "7a874132a4524b3181e56db2427456fa",
+    "role": "approved_baseline"
+  },
+  {
+    "object": "ObsidianScar_Slab",
+    "name": "LL_Field09_Redesign_Obsidian_Slab_v1.png",
+    "sha256": "dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692",
+    "guid": "62aa78512b404d7c8a5e80ee7d7b9a63",
+    "role": "approved_baseline"
+  },
+  {
+    "object": "ObsidianScar_Cliff",
+    "name": "LL_Field09_Phase2_Cliff_Blocker_v2.png",
+    "sha256": "ad995f3cc4914759d6c88fa47c80227cb1a7c5f1a9a549679e06472402fee9f1",
+    "guid": "e9a621d20b534eb783e655573fb8a515",
+    "role": "approved_baseline"
+  },
+  {
+    "object": "ObsidianScar_Fissure",
+    "name": "LL_Field09_Phase2_Fissure_Edge_v2.png",
+    "sha256": "c3dc0c131c11fef72e4d210a1a43528f9882d8c50486e8da0bc15b6984ea145a",
+    "guid": "b1f54a4d1da24963ac15b644410356ab",
+    "role": "approved_baseline"
+  },
+  {
+    "object": "ObsidianScar_Glow",
+    "name": "LL_Field09_Fissure_Glow_Derived_B_v1.png",
+    "sha256": "64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48",
+    "guid": "1ba49ce409e5492db864e3d155fef75c",
+    "role": "approved_B_derived_glow",
+    "source": "08855ead / approved A-B B candidate byte-identical"
+  }
+]

@@ -1,0 +1,14 @@
+PASS|FrostFieldMouse_A.FrameCount4
+PASS|FrostFieldMouse_A.Cell512PPU512BottomPivot
+PASS|FrostFieldMouse_A.FieldWorldScale1
+PASS|FrostTyrant_B.FrameCount4
+PASS|FrostTyrant_B.Cell512PPU512BottomPivot
+PASS|FrostTyrant_B.FieldWorldScale3
+PASS|ActualGameView1280x720
+PASS|LoopFrameReached0
+PASS|LoopFrameReached1
+PASS|LoopFrameReached2
+PASS|LoopFrameReached3
+PASS|Runtime.8FPSLoopTrace.0
+PASS|Runtime.8FPSLoopTrace.1
+PASS|Console.NewProductErrors0

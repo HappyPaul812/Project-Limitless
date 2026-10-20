@@ -1,0 +1,376 @@
+{
+  "zip_sha256": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+  "zip_bytes": 6953861,
+  "CRC": "PASS",
+  "files": [
+    {
+      "name": "Manifest.md",
+      "bytes": 2944,
+      "CRC32": 265665296,
+      "sha256": "8bbd7b5f205d1312d4a46f7ac5b6e794479716a4018e0b89a469d56fd200fa08"
+    },
+    {
+      "name": "Preview/FrostFieldMouse_A_4Frame_ContactSheet.png",
+      "bytes": 258259,
+      "CRC32": 2256897867,
+      "sha256": "00153f8f74adb19bf7792f2066f48e9c8abf94b0142ef7ed9274ad3ff7963d9b"
+    },
+    {
+      "name": "Preview/FrostFieldMouse_A_Idle_8FPS_Exact.apng",
+      "bytes": 1064357,
+      "CRC32": 246452406,
+      "sha256": "4f164e082b1c3588bb611b4d5f4eae02e76543af6c7b4395fe6084f9e6a1a716"
+    },
+    {
+      "name": "Preview/FrostFieldMouse_A_Idle_8FPS_Loop.gif",
+      "bytes": 235626,
+      "CRC32": 2086073872,
+      "sha256": "e8c9b45302bc478957e01b9d8b0a420fde9233635bfe4a4407ee8262aa55f89c"
+    },
+    {
+      "name": "Preview/FrostTyrant_B_4Frame_ContactSheet.png",
+      "bytes": 394534,
+      "CRC32": 3665145322,
+      "sha256": "c33f85141a3db8c97d3736c37a44feb8a6797346fa99e61e71d7cb71fd5d7746"
+    },
+    {
+      "name": "Preview/FrostTyrant_B_Idle_8FPS_Exact.apng",
+      "bytes": 1696413,
+      "CRC32": 2627190470,
+      "sha256": "1bf89c698710bccd546f98111a6771e9091fe71ce6663df895c88656c74a40a6"
+    },
+    {
+      "name": "Preview/FrostTyrant_B_Idle_8FPS_Loop.gif",
+      "bytes": 401588,
+      "CRC32": 4086405294,
+      "sha256": "9bc42d11987d630d21cb3b1616a5f2c8c2929416bcb59c4f744566b902288e98"
+    },
+    {
+      "name": "QA/Display_128px_Comparison.png",
+      "bytes": 185302,
+      "CRC32": 2540648010,
+      "sha256": "657765a824f016d8bf3ec415414d78b17f068a2623cf7e23b4d5c5f5e1d24621"
+    },
+    {
+      "name": "QA/Offline_QA.json",
+      "bytes": 3919,
+      "CRC32": 2272295887,
+      "sha256": "b00b5ad6bb19bf0561ad504e54ec5d0c5a31d9521a27fac468a779b25b84845b"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 1143,
+      "CRC32": 2481296794,
+      "sha256": "7b69c1907fee5e56650647784d3285134deb252ac1cd287ae0f6598ace9167b3"
+    },
+    {
+      "name": "Sprites/FrostFieldMouse_A_Idle_4Frames.png",
+      "bytes": 1061213,
+      "CRC32": 3938033541,
+      "sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2"
+    },
+    {
+      "name": "Sprites/FrostTyrant_B_Idle_4Frames.png",
+      "bytes": 1689309,
+      "CRC32": 172142246,
+      "sha256": "9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43"
+    }
+  ],
+  "README_present": false,
+  "assets": [
+    {
+      "name": "FrostFieldMouse_A_Idle_4Frames.png",
+      "sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2",
+      "approved_source_sha256": "0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2",
+      "frame00_pixel_identical": true,
+      "frames": [
+        {
+          "index": 0,
+          "RGBA_pixel_sha256": "f27f945cbbde27cce6deee6bd46183df01b9b307cea339fcf4acd5e43da760a0",
+          "alpha_bbox_threshold16": [
+            22,
+            124,
+            490,
+            490
+          ],
+          "alpha_bbox_any": [
+            22,
+            124,
+            490,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 0,
+          "foot_438_511_identical": true,
+          "small_components_under7": 81,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            102.375,
+            80.062
+          ]
+        },
+        {
+          "index": 1,
+          "RGBA_pixel_sha256": "b96347b88a479930e2dd07880dbf4110ae0dc08e0818fff4416282182b1bd113",
+          "alpha_bbox_threshold16": [
+            24,
+            122,
+            492,
+            490
+          ],
+          "alpha_bbox_any": [
+            24,
+            122,
+            492,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 86696,
+          "foot_438_511_identical": true,
+          "small_components_under7": 42,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            102.375,
+            80.5
+          ]
+        },
+        {
+          "index": 2,
+          "RGBA_pixel_sha256": "b3a1c31efd12a81527bc020368d7eb1719a2dfc3259bba5a8075a21cc3d25a15",
+          "alpha_bbox_threshold16": [
+            22,
+            124,
+            490,
+            490
+          ],
+          "alpha_bbox_any": [
+            22,
+            124,
+            490,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 82012,
+          "foot_438_511_identical": true,
+          "small_components_under7": 49,
+          "small_alpha_max": 4,
+          "visible_ui_size": [
+            102.375,
+            80.062
+          ]
+        },
+        {
+          "index": 3,
+          "RGBA_pixel_sha256": "c262549eeb93d214de941a0d5bdedd993fc34bc5f4bbb335b3603c2a6104c2c4",
+          "alpha_bbox_threshold16": [
+            19,
+            125,
+            489,
+            490
+          ],
+          "alpha_bbox_any": [
+            19,
+            125,
+            489,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 86604,
+          "foot_438_511_identical": true,
+          "small_components_under7": 37,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            102.812,
+            79.844
+          ]
+        }
+      ],
+      "transitions": [
+        {
+          "from": 0,
+          "to": 1,
+          "mean_abs_RGB_delta": 12.786027746262896,
+          "changed_pixels": 86696
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "mean_abs_RGB_delta": 12.607355234981362,
+          "changed_pixels": 86932
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "mean_abs_RGB_delta": 11.532073281481376,
+          "changed_pixels": 86306
+        },
+        {
+          "from": 3,
+          "to": 0,
+          "mean_abs_RGB_delta": 12.788365218218637,
+          "changed_pixels": 86604
+        }
+      ],
+      "scale": 1,
+      "APNG_frame_ms": [
+        125.0,
+        125.0,
+        125.0,
+        125.0
+      ],
+      "GIF_frame_ms": [
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "name": "FrostTyrant_B_Idle_4Frames.png",
+      "sha256": "9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43",
+      "approved_source_sha256": "f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830",
+      "frame00_pixel_identical": true,
+      "frames": [
+        {
+          "index": 0,
+          "RGBA_pixel_sha256": "6dcf33fc8004e0e35a76304df116a934b86fe53ba08ed6a297d14d85e9d7291d",
+          "alpha_bbox_threshold16": [
+            22,
+            25,
+            489,
+            490
+          ],
+          "alpha_bbox_any": [
+            22,
+            25,
+            490,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 0,
+          "foot_438_511_identical": true,
+          "small_components_under7": 70,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            306.469,
+            305.156
+          ]
+        },
+        {
+          "index": 1,
+          "RGBA_pixel_sha256": "ad33a81005df90a611a6357b5bf935e01b5b7cc36d4bb3d072508825c3d0a572",
+          "alpha_bbox_threshold16": [
+            21,
+            24,
+            490,
+            490
+          ],
+          "alpha_bbox_any": [
+            21,
+            24,
+            491,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 135355,
+          "foot_438_511_identical": true,
+          "small_components_under7": 78,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            307.781,
+            305.812
+          ]
+        },
+        {
+          "index": 2,
+          "RGBA_pixel_sha256": "dd1d91605586271c09e3d01416cb7298e159bfc8c867a995960d4c9fc527a176",
+          "alpha_bbox_threshold16": [
+            22,
+            25,
+            490,
+            490
+          ],
+          "alpha_bbox_any": [
+            22,
+            24,
+            491,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 129689,
+          "foot_438_511_identical": true,
+          "small_components_under7": 76,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            307.125,
+            305.156
+          ]
+        },
+        {
+          "index": 3,
+          "RGBA_pixel_sha256": "ad1b18bd47298d68d1d653f2caf8ab8c98f23e0a689c35b98b280cd9310c51ff",
+          "alpha_bbox_threshold16": [
+            22,
+            26,
+            490,
+            490
+          ],
+          "alpha_bbox_any": [
+            22,
+            25,
+            491,
+            490
+          ],
+          "outer_alpha_pixels": 0,
+          "changed_pixels_vs_approved": 134738,
+          "foot_438_511_identical": true,
+          "small_components_under7": 60,
+          "small_alpha_max": 3,
+          "visible_ui_size": [
+            307.125,
+            304.5
+          ]
+        }
+      ],
+      "transitions": [
+        {
+          "from": 0,
+          "to": 1,
+          "mean_abs_RGB_delta": 19.678099538765697,
+          "changed_pixels": 135355
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "mean_abs_RGB_delta": 17.80027047948899,
+          "changed_pixels": 135195
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "mean_abs_RGB_delta": 18.884736603381583,
+          "changed_pixels": 135274
+        },
+        {
+          "from": 3,
+          "to": 0,
+          "mean_abs_RGB_delta": 19.598333879857282,
+          "changed_pixels": 134738
+        }
+      ],
+      "scale": 3,
+      "APNG_frame_ms": [
+        125.0,
+        125.0,
+        125.0,
+        125.0
+      ],
+      "GIF_frame_ms": [
+        120,
+        130,
+        120,
+        130
+      ]
+    }
+  ]
+}

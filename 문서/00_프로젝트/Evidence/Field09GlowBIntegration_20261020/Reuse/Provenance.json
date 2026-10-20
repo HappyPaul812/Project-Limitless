@@ -1,0 +1,8 @@
+{
+  "source_AB_QA_commit": "08855ead9b46bd14270211d7d47eafc4c63182f9",
+  "source_AB_handoff": "453736cb63998234e10c920057cf4acb4a4ada7f",
+  "reuse_only": true,
+  "reexecuted_AB34_or_UI10": false,
+  "implementation_commit": "913eceb73fcbc440b49c19f71469380aeaec1168",
+  "approved_baseline_commit": "77978aa11f43a9d04c9873f0ca914bd2bf5bd8ca"
+}

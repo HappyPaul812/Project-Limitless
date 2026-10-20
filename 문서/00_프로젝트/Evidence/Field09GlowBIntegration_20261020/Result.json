@@ -1,0 +1,10 @@
+{
+  "new_delta_pass": 39,
+  "new_delta_fail": 0,
+  "visual_pass_3_aspects": true,
+  "missing_sprite": 0,
+  "audit_save_continue": "PASS (isolated audit save only)",
+  "reuse_AB34_UI10": true,
+  "original_application": "ON_HOLD",
+  "push_merge": false
+}

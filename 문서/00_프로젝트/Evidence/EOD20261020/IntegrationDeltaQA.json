@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "check": "Product allowlist exactly14 files"
+    },
+    {
+      "pass": true,
+      "check": "All14 product files byte-identical to approved QA commit"
+    },
+    {
+      "pass": true,
+      "check": "Six PNG approved SHA/512RGBA exact"
+    },
+    {
+      "pass": true,
+      "check": "Six distinct GUIDs including approved new B GUID"
+    },
+    {
+      "pass": true,
+      "check": "No duplicate new GUID across Assets"
+    },
+    {
+      "pass": true,
+      "check": "Field09 scene differs only Sprite references; all transforms/colliders/quest components preserved"
+    },
+    {
+      "pass": true,
+      "check": "Exactly six Sprite references changed"
+    },
+    {
+      "pass": true,
+      "check": "Official Glow PNG/meta/GUID preserved"
+    },
+    {
+      "pass": true,
+      "check": "Approved Chapter3 reference PNG4 exact outside Unity"
+    },
+    {
+      "pass": true,
+      "check": "No Chapter3 runtime, monster code or audio product changes"
+    },
+    {
+      "pass": true,
+      "check": "Field09 QA39 reused without rerun"
+    },
+    {
+      "pass": true,
+      "check": "No unresolved merge markers in documents"
+    },
+    {
+      "pass": true,
+      "check": "Combat Fix v2 archived separately, not approved reference"
+    }
+  ],
+  "static_pass": 13,
+  "static_fail": 0,
+  "reused": {
+    "Field09": 39,
+    "Idle": 14,
+    "AB": 34,
+    "OverheatUI": 10
+  },
+  "product_paths": [
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Fissure_Glow_Derived_B_v1.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Fissure_Glow_Derived_B_v1.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Cliff_Blocker_v2.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Cliff_Blocker_v2.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Fissure_Edge_v2.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Fissure_Edge_v2.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Base_v1.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Base_v1.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png.meta",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Obsidian_Slab_v1.png",
+    "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Obsidian_Slab_v1.png.meta",
+    "Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity"
+  ],
+  "Unity_version_note": "Batch6000.6.5f1; tracked ProjectVersion6000.5.7f1 unchanged; original handplay not verified",
+  "unity": {
+    "pass": 11,
+    "fail": 0,
+    "mode": "Isolated Editor Scene Load, not full regression"
+  },
+  "total_pass": 24,
+  "total_fail": 0
+}

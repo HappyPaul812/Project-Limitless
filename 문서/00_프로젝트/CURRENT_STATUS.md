@@ -1,3 +1,11 @@
+## 2026-10-20 EOD 승인분 통합 — 최소 QA 완료 / PR·원본 동기화 진행 중
+
+Field09 승인 환경5종+B파생Glow 제품14파일만 선별: PNG6 신규/meta/폴더meta +Scene Sprite참조6개. 공식Glow PNG/meta/GUID 및 Transform/Sorting/Collider/Quest/Save코드 불변. 기존39PASS·Idle14PASS 재사용, EOD 정적13+격리Unity11=24PASS0FAIL. Chapter3 승인1포즈·Idle4PNG는 Unity밖 `아트/몬스터/Chapter3/ApprovedReference`에 참조보존·게임연결0. 담당 문서는 파일별 선별/의미병합, 기존 main 고유 이력 보존.
+
+사용자 변경904파일188,454,129bytes 백업/보호기준6,558SHA 기록. Combat Fix v2 ZIP518d210a는 CRC/SHA 확인 후 별도Temp아카이브, QA/미술승인대기. F1/마을미승인환경·BGM미완료루프·TTS/SFX/영상·Field09실패자산 제품제외. 내일 우선: 전투Fixv2 변경셀·Idle전환 검수→대표 미술승인; BGM루프/권리확인. 원본Editor 조작0, 자연Import/손플레이 미검증. 브랜치 `codex/eod-integration-20261020`, 기준main12c69c72. 아직 원격병합/원본Sync 완료 선언 아님.
+
+[EOD 실행 보고](EOD_ApprovedIntegration_LocalSync_20261020.md) · [선별/검증 근거](Evidence/EOD20261020/IntegrationDeltaQA.json)
+
 ## 2026-10-19 EOD 승인 통합 완료 / 원본 SYNC_COMPLETE
 
 승인 기능 [PR #27](https://github.com/HappyPaul812/Project-Limitless/pull/27) main 병합 **`f7a82907221e322a29b0b4cab24f7a4b4a0d197a`**, 통합 head `57f438ab3c72fabf91c127ff52398b3b9e17997d`. 이 완료 증거 작성 시 GitHub main=origin/main=원본 local main, index=HEAD 실제 확인 **SYNC_COMPLETE**. 후속 문서 전용 PR 병합의 최종 SHA는 원본 `Temp/EOD20261019/OriginalLocalSync_Proof.json`을 최종 재검증하며, 아래 SHA는 기능 통합 확정점입니다.

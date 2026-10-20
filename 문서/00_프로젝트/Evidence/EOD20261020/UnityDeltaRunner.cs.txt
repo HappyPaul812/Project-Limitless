@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>검증된 Field09 저장 Scene을 다시 읽는 EOD 최소 검사입니다. 원본 Editor와 저장 데이터는 사용하지 않습니다.</summary>
+    public static class Eod20IntegrationDeltaAudit
+    {
+        static readonly List<string> Checks=new List<string>();
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../EOD20261020/UnityDelta"));
+        static void Check(bool ok,string label){Checks.Add((ok?"PASS|":"FAIL|")+label);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Checks);if(!ok)throw new Exception(label);}
+        public static void Run(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field05Review20261019/Client/Assets"))throw new Exception("격리 Batch 경로 외 실행 금지");
+            Directory.CreateDirectory(Root);
+            try{
+                var scene=EditorSceneManager.OpenScene("Assets/_Project/Scenes/Field_09_ObsidianScar.unity",OpenSceneMode.Single);Check(scene.isLoaded,"Field09.StoredSceneLoad");
+                var all=UnityEngine.Object.FindObjectsByType<SpriteRenderer>();
+                var pairs=new Dictionary<string,string>{{"ObsidianScar_Ground","LL_Field09_Redesign_Ground_Base_v1.png"},{"ObsidianScar_GroundCrackedWest","LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png"},{"ObsidianScar_Slab","LL_Field09_Redesign_Obsidian_Slab_v1.png"},{"ObsidianScar_Cliff","LL_Field09_Phase2_Cliff_Blocker_v2.png"},{"ObsidianScar_Fissure","LL_Field09_Phase2_Fissure_Edge_v2.png"},{"ObsidianScar_Glow","LL_Field09_Fissure_Glow_Derived_B_v1.png"}};
+                foreach(var pair in pairs){var sr=all.Single(x=>x.name==pair.Key);string path="Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/"+pair.Value;Check(sr.sprite!=null&&sr.sprite==AssetDatabase.LoadAssetAtPath<Sprite>(path),"StoredReference."+pair.Key);}
+                var glow=all.Single(x=>x.name=="ObsidianScar_Glow");var edge=all.Single(x=>x.name=="ObsidianScar_Fissure");
+                Check(glow.sprite.pixelsPerUnit==128&&glow.sprite.pivot==new Vector2(256,256)&&glow.sprite.rect.size==new Vector2(512,512),"B.ImportPPU128CentralPivot512");
+                Check(glow.sortingOrder==-7&&edge.sortingOrder==-8&&glow.maskInteraction==SpriteMaskInteraction.None&&UnityEngine.Object.FindObjectsByType<SpriteMask>().Length==0,"SortingAndMaskPreserved");
+                Check(all.Where(x=>x.name.StartsWith("ObsidianScar_")).All(x=>x.sprite!=null),"Field09.MissingSprite0");
+                Check(AssetDatabase.GUIDToAssetPath("a50d3e0a79def394685ca5e30b2f3c1b")=="Assets/_Project/Resources/Main18/Environment/ObsidianScar_Fissure_Glow.png","OfficialGlowGUIDPreserved");
+                File.WriteAllText(Path.Combine(Root,"Result.json"),"{\"pass\":"+Checks.Count+",\"fail\":0,\"mode\":\"Isolated Editor Scene Load, not full regression\"}");
+                EditorApplication.Exit(0);
+            }catch(Exception ex){File.WriteAllText(Path.Combine(Root,"failure.txt"),ex.ToString());EditorApplication.Exit(1);}
+        }
+    }
+}

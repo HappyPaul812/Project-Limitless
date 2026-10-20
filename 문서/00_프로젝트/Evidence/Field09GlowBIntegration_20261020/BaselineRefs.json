@@ -1,0 +1,27 @@
+[
+  {
+    "object": "ObsidianScar_Ground",
+    "old": "  m_Sprite: {fileID: 21300000, guid: d5488e4ee15068447a62b08e98ace4f2, type: 3}",
+    "new": "  m_Sprite: {fileID: 21300000, guid: ae04c08aafa34a448be7d49b1ae29cc2, type: 3}"
+  },
+  {
+    "object": "ObsidianScar_GroundCrackedWest",
+    "old": "  m_Sprite: {fileID: 21300000, guid: a203826bf5e8eac40b23a05a3dd4eb38, type: 3}",
+    "new": "  m_Sprite: {fileID: 21300000, guid: 7a874132a4524b3181e56db2427456fa, type: 3}"
+  },
+  {
+    "object": "ObsidianScar_Slab",
+    "old": "  m_Sprite: {fileID: 21300000, guid: b82f76c4b7b011942886175b9476a5d3, type: 3}",
+    "new": "  m_Sprite: {fileID: 21300000, guid: 62aa78512b404d7c8a5e80ee7d7b9a63, type: 3}"
+  },
+  {
+    "object": "ObsidianScar_Cliff",
+    "old": "  m_Sprite: {fileID: 21300000, guid: b01050f5fc34c0a489843e31f8c9c21c, type: 3}",
+    "new": "  m_Sprite: {fileID: 21300000, guid: e9a621d20b534eb783e655573fb8a515, type: 3}"
+  },
+  {
+    "object": "ObsidianScar_Fissure",
+    "old": "  m_Sprite: {fileID: 21300000, guid: 165119ca1c3b24346b1be86ecac1d598, type: 3}",
+    "new": "  m_Sprite: {fileID: 21300000, guid: b1f54a4d1da24963ac15b644410356ab, type: 3}"
+  }
+]

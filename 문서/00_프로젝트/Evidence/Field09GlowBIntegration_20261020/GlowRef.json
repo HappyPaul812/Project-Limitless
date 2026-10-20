@@ -1,0 +1,5 @@
+{
+  "object": "ObsidianScar_Glow",
+  "old": "  m_Sprite: {fileID: 21300000, guid: a50d3e0a79def394685ca5e30b2f3c1b, type: 3}",
+  "new": "  m_Sprite: {fileID: 21300000, guid: 1ba49ce409e5492db864e3d155fef75c, type: 3}"
+}

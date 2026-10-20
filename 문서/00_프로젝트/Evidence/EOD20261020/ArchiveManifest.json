@@ -1,0 +1,32 @@
+[
+  {
+    "file": "Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip",
+    "source": "F:\\Downloads\\Limitless_Sprites\\Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip",
+    "archive": "F:\\study\\codex\\Project-Limitless\\Temp\\EOD20261020\\Archives\\ApprovedReference\\Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip",
+    "sha256": "0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919",
+    "bytes": 1474324,
+    "files": 8,
+    "CRC": "PASS",
+    "status": "ARCHIVED_NOT_RUNTIME"
+  },
+  {
+    "file": "Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip",
+    "source": "F:\\Downloads\\Limitless_Sprites\\Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip",
+    "archive": "F:\\study\\codex\\Project-Limitless\\Temp\\EOD20261020\\Archives\\ApprovedReference\\Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip",
+    "sha256": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+    "bytes": 6953861,
+    "files": 12,
+    "CRC": "PASS",
+    "status": "ARCHIVED_NOT_RUNTIME"
+  },
+  {
+    "file": "Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip",
+    "source": "F:\\Downloads\\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip",
+    "archive": "F:\\study\\codex\\Project-Limitless\\Temp\\EOD20261020\\Archives\\PendingQA\\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip",
+    "sha256": "518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3",
+    "bytes": 10784249,
+    "files": 20,
+    "CRC": "PASS",
+    "status": "QA_PENDING_ART_APPROVAL_PENDING"
+  }
+]
