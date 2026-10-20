@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Field09 새 환경 3종 기술계약 대응 — 실제 신규 PNG3 납품 (최신)
+
+- 기획 정본: docs/planning/문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md 직접 확인. 기존 부분 수정 중단, 맵 구조/Collider/Main18/과열/몬스터/세린/전투/Save/Continue 보호.
+- PNG3 전부 512×512 RGBA / PPU128 / 중앙 Pivot 제안. Ground Base (0,0) Tiled 21×15 — SHA256 1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203. Cracked Overlay (-6,0) Tiled 9×15 — SHA256 56d8e0ea9bf3ca2167227362b87bb219a21d4470f317456f36eb8aba99caedeb. Obsidian Slab (5.2,1) 월드 약 2×2 — SHA256 dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692.
+- 신규 ZIP `Limitless_Field09_Redesign_Sample3_v1.zip`: 4,207,395 bytes / 14 entries / SHA256 4ca6ea65f6315b0e35011a902d520549ba7d944145e6ec0b05962ff945f893b4. 실제 ChatGPT 대화 파일 다운로드용. GitHub 바이너리 업로드나 F: 자동 저장 아님. 원본 공식 PNG/meta/GUID/Scene 및 main 불변.
+- PNG 3/3 Decode, 지면 2종 양축 RGBA edge exact equality, ZIP `zipfile.testzip()==None`, ZIP 내 PNG SHA 대조 PASS. 3×3 반복·정확한 WorldSize 위치 모식도 포함. 다만 실제 GameView 아님; 반복 주기성/Overlay 끝단 이종재질 연결/Slab 접지 등 Unity 시각QA 대기.
+- 상태: NEW_ART_PNG3_DELIVERED / ZIP_OFFLINE_QA_PASS / USER_ART_REVIEW_PENDING / CODEX_UNITY_VISUAL_QA_PENDING / REMAINING_ENV_HOLD.
+- [상세 납품 문서](../../Field09_Redesign_Sample3_v1_Art_Delivery_20261020.md), 최초 문서 커밋 26edd65c25359f208170eaadf45ee9feca3178aa. 바울 대표 미술승인과 Codex 시각 QA 통과 전 나머지 자산 제작·정식 반영 금지.
+
+
 ## 2026-10-20 Field09 부분수정 중단 → 환경 신규제작 3종 샘플 실제 납품 (최신/최우선)
 
 - **바울 대표 최신 결정:** Field09 v1/v2 최소 보완은 중단·역사보존. **맵 구조·Main18 조사/과열/퀘스트·충돌/몬스터/세린/전투/Save/Continue** 전부 보호. 신규 환경 미술만 다시 제작하며 전체 환경 아트 자동 발주가 아니라 **1차 샘플 3종 승인 후 다음 진행**.
