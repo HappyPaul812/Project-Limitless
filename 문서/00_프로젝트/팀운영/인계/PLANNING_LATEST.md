@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A/설빙의 폭군 B 1포즈 시각 HOLD
+
+바울 대표 Codex 정적 실제 게임UI 배율 비교 QA 보고: ZIP·PNG 구조 PASS, 그러나 **1포즈 미술 수정 권고·합격 보류**. 서리들쥐 A Source75×49→x3 Nearest로 둥근 마스코트 실루엣/128px 야생성·앞니·꼬리 미약; 폭군 B Source142×121→x3 Nearest로 두개골·뿔은 보이나 흉곽/발톱 조형 밀도 낮고 Ch2 승인 보스의 체급·위압과 불일치. Codex QA commit `d2893591`. 바울 대표가 이전에 선택한 **고해상도 디자인 방향 A·B 자체는 유지**, 픽셀아트 1포즈 v1을 자동 승인하지 말 것. 메인 아트 담당에게 **2장만 1포즈 진짜 세부 픽셀 신규 드로잉**(기존 source 단순 확대·56색 자동양자화 재포장 금지) 후 128px 및 Ch2 공식 렌더 배율 비교판 제출 요청. 기존 F1·서릿길 마을 환경10종 보호, 7종 몬스터 전체 애니메이션/Unity 구현/Push/main 병합0.
+
+기획 검수·재제작 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_CodexVisualHold_ArtRework_20261020.md` (`docs/planning`, commit `7f1eef189788d7b9ba2f9e60062bef43ae11fd61`); 담당 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. 실제 v2 PNG2 납품→Codex 최소 정적 QA→바울 대표 미술 직접 승인 후에만 애니메이션 발주. 기술PASS/디자인방향 선택/미술승인/Unity Import은 독립 상태.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 Sample3 대표 미술 승인, 잔여 아트 Phase2 착수
 
 바울 대표: OverlayFix v2 Codex 격리 GameView 3화면·Delta17PASS/0FAIL 보고 후 **“봤는데 좋아.”** 사용자 미술 승인. 합격 PNG는 BaseGround v1 `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, CrackedOverlay v2 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, ObsidianSlab v1 `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`. 이전 오버레이 v1·Field09 최소보완 v1/v2 시각FAIL은 이 승인에 포함하지 않음. 기존 3종 재제작/변경 금지. **샘플 승인 ≠ 전체 Field09 완료 ≠ 원본디스크/remote main 적용.** 현재 고립된 Unity 시각QA PASS, 원본 적용0.
