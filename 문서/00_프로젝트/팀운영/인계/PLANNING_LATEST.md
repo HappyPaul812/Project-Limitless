@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 Attack/Hit/Defeat Strip v1 실납품, 털 색감 주의·Codex 시각 QA 대기
+
+바울 대표 제공 로컬 경로 `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`. `docs/art-new` 최신 실제 제작 보고: 2048×512 RGBA 4프레임 8FPS Strip 3장(Attack/Hit/Defeat) 및 프레임별 미리보기/Manifest/CRC/SHA 납품, ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`. 게임용 독립 Strip 기술 계약 PPU512·Pivot(0.5,0) 하단중앙·VisualScale1·우향 및 기존 Idle 참조 보존. 아트 담당 오프라인 포맷 QA PASS 보고, Unity 실행 없음.
+
+**중요 미술품질 경고:** 기존 승인 서리들쥐 Idle/1포즈는 냉회백색인데 새 3모션 털은 갈색 계열이 강조됨. 상이한 야생 설치류로 보일 수 있으므로 기존 승인 Idle↔Attack/Hit/Defeat 색·체형/128px 디테일/8FPS/Attack·Hit→Idle, Defeat03 hold/좌우반전과 실제 UI 같은 배율 시각 QA 필수. 작은 Source 보드를 512셀로 변환해 디테일 저하도 의심. 다음 일은 Codex 독립 worktree에서 실제 ZIP/SHA 재검증 + 변경분 격리 Unity 시각/기술 QA→바울 대표 미술 판단→필요 시 수정 1~3 PNG만 art-new로 반환. 지금 추가 아트 재제작 지시0, 원본 Unity Editor/Save/UserData/main Push/병합0. 기획 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_Delivery_VisualTechnical_QA_Gate_20261020.md` (`docs/planning` commit `f4019777d149be62415b132acf02d151cc1c183b`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 새 댓글.
+
+별개 Field09 B 파생 Glow 격리39PASS/0FAIL·대표 원본 Unity 적용/PR 준비 승인 대기, Chapter3 설빙의 폭군 B 전투모션은 뒤로. TTS/SFX/영상 보류.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Codex 서리들쥐 A 전투3 Strip 규격확정, 메인아트 실제 제작 착수
 
 바울 대표 Codex 보고: 기술 검증 PASS, branch `codex/chapter3-mouse-combat-contract-20261020`, 제작계약 commit `ad9e4b46`, 인계 `13178071`, 기존 Chapter2 몬스터정의8종/관련 코드6종·승인 Mouse PNG SHA 대조 PASS. **4×4/PPU314 임시안 폐기, 독립3 Strip으로 확정**. Attack(앞발 할퀴기→Idle), Hit(피격반응→Idle), Defeat(마지막03 유지) 각 **2048×512 RGBA 4×512 셀 가로**, **8FPS**, **PPU512/Pivot하단중앙(0.5,0), VisualScale1/우향1종·기존 좌우반전**. 기존 Mouse 승인 Idle 원본 SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2` 바이트 동일 재사용, 보스 B/Field09 포함 타 신규 작업 금지.
