@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 새 미술 3종 Codex 기술인계 완료, 실제 PNG 샘플 제작 진행
+
+바울 대표 Codex 보고: 기존 Field09 visual fail 원인은 `PNG 경계 무늬 Tiled 반복`, `불투명 지면 간 접합`, `6종 소품 흰 가이드 픽셀`이며 실제 Scene 오브젝트 대응도 정리함. 공통 `512×512 RGBA / PPU128 / 중앙 Pivot`, 새 Base Ground `(0,0), Tiled21×15`; 새 Cracked Overlay `(-6,0), Tiled9×15`; 대표 Slab Prop `(5.2,1), 화면 약2×2`. Codex 로컬 문서 커밋 `0dcc13ab`라고 보고, GitHub Push0. 본 기획 세션이 로컬 인계서 자체를 직접 검사한 것은 아님.
+
+바울 대표의 "그렇게 해" 지시에 따라 **기존 Field09 v1/v2 픽셀보수 중단 + 화면 환경 아트 신규 제작** 확정. 다만 Main18 퀘스트13·과열/세린·몬스터/Collider·Spawn·Save 및 원본 공식 PNG/meta/GUID 보호. 새 아트 **Ground Base1·Cracked Overlay1·Slab1 = 총3개만 먼저 실제 PNG로 제작**, 이전 v1/v2 접합·흰선 실패를 피하도록 원본을 새 설계. 이 3개 ZIP 납품→Codex 격리 Unity 동일 카메라 Tiled 반복/Overlay seam/Guide/실스케일 Delta QA→바울 대표 미술 승인 이후 나머지 전체 환경으로 확대. **추가 Codex 전체 QA 반복 금지**, 기존 기능40+92PASS 역사 재사용. 신규 통합/원본 Scene 변경/PR/main병합은 아직 승인 안 됨.
+
+기획 정본: `문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md` (`docs/planning`, commit `44a4c97aebccb9d690f2e288634e86d7fee09b40`). 기획 문서만 GitHub에 기록함, 실제 새 PNG3 제작 및 담당 리뉴얼 세션에 자동 전송은 아직 실행 안 됨. 다음은 리뉴얼 담당에게 복붙용 샘플 3종 제작 지시 전달.
+
+---
+
 # PLANNING 인계 — 2026-10-20 Field09 v2 시각 재실패로 '보수 중단·미술 교체' 방향 권고
 
 바울 대표 Codex 보고: Field09 v2 GitHub ZIP SHA/CRC/Manifest/PNG8 PASS, 격리40PASS/0FAIL, Main18 델타 기존92PASS 재사용. **하지만 실제 화면 회색 반복띠6/소품 흰 가이드선6종 그대로 남아 visual FAIL, 원본 Scene 적용·Push·merge0**. 따라서 v1/v2의 같은 자동 픽셀 보완 v3 반복 중단을 권고. 바울 대표 “이럴 바엔 다 엎고 다시 하는게 더 안낫니?” → **기획은 Field09 환경 아트 새 제작이 타당**하다고 의견 제시하되, 사용자 최종 제작 지시는 아직 요청 중. 맵·퀘스트13·과열/몬스터·Spawner/Save·기존 공식 PNG/meta/GUID는 보호하고 **표시 환경 원화만 별도 새 에셋**으로 교체 계획.
