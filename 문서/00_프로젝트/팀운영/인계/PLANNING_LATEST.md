@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 서리들쥐 A 전투 3 Strip v1 기술36PASS, 시각 FAIL/HOLD, 3종 표적수정 발주
+
+바울 대표 Codex 비교 캡처: 동일 전투 UI 배율 Idle00·Attack02·Hit01·Defeat03를 112px로 비교; ZIP/PNG 규격 PASS, 격리 Unity 모션 상태전환 36PASS/0FAIL, 그러나 미술 Attack FAIL/Hit FAIL/Defeat HOLD/Idle 일관성 FAIL. Codex `codex/chapter3-mouse-combat-v1-review-20261020` QA `da55fe6e` 인계 `036037e8`; ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`.
+
+**원인** 1) Attack00·Hit03이 승인 Mouse Idle00 대비 가시크기 약18~20% 작아서 Idle 전환 시 크기 점프, 2) Attack 최대 할퀴기가01에 있는데 기술 타격 이벤트는02, 3) 신작 전투3 Strip의 갈색 털·디테일이 승인 냉회백 Idle과 불일치. **Defeat03 사망 고정 포즈 정상**. 리디자인 전체 폐기 X, `docs/art-new`는 승인 Mouse Idle/1포즈 파일 원본 불변으로 Attack/Hit/Defeat v2의 결함 프레임/색감만 수리. Attack00/Hit03 ↔ Idle00 픽셀 알파 bbox/FootAnchor/가시 크기, Attack02 최대 할퀴기, 냉회백 털색, Defeat03 hold 보존을 검증할 112px+8FPS 비교, PNG3/ZIP/Manifest/SHA/QA 실물 납품. Codex는 새 ZIP 후 해당 3종 시각 Delta만 검수; 기존 36PASS 기능 회귀 전수 재실행 금지. 원본 Unity/Save/UserData/Editor·Push/main병합 금지, Codex·바울 대표 승인대기.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md` (`docs/planning` `5ee9966f67f14d29c1b0a84e07031dc407bc8dd2`); [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. Field09 B파생Glow 격리39PASS/0FAIL 원본적용·PR 승인 대기는 별개, 챕터3 보스B 전투3 Strip 후순위.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 Attack/Hit/Defeat Strip v1 실납품, 털 색감 주의·Codex 시각 QA 대기
 
 바울 대표 제공 로컬 경로 `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`. `docs/art-new` 최신 실제 제작 보고: 2048×512 RGBA 4프레임 8FPS Strip 3장(Attack/Hit/Defeat) 및 프레임별 미리보기/Manifest/CRC/SHA 납품, ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`. 게임용 독립 Strip 기술 계약 PPU512·Pivot(0.5,0) 하단중앙·VisualScale1·우향 및 기존 Idle 참조 보존. 아트 담당 오프라인 포맷 QA PASS 보고, Unity 실행 없음.
