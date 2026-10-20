@@ -53,3 +53,11 @@
 - 오프라인: 두 PNG 크기/투명도/단일 주요 컴포넌트/외곽 여백/ZIP CRC PASS. 본 데이터는 승인 후보; PixArt 마감, 게임 내 스케일/유사 아트 결합, 움직임은 검증·제작 안 됨. `SPRITE_ART_APPROVAL_PENDING / NOT_UNITY_INTEGRATED`.
 - 정식 기록: [Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md](../../Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md), 커밋 `ad5f35cbe8d4f2ffde8768ba55b0d4c05ad4395a`.
 - 후임 다음 단계: 바울 대표 1포즈 아트 검토 → Codex Issue #35 PPU/Pivot/Collider·Monster Frame 계약 대조 → 별도 요청을 받아 필요 애니메이션만 제작. 기존 F1/서릿길 마을 환경과 Chapter1·2 원본, 하렌/태온/세린/폴/미엘/플레이어 변경 금지. `docs/art-new`만 사용하고 main 커밋/Push하지 않음.
+
+## 2026-10-20 서리들쥐 A·설빙의 폭군 B 1포즈 v2 재작업
+
+- Codex 비교검수 v1: 규격 기술 PASS, 미술 HOLD. **기존 A/B 디자인 선택 유지**. 새 512×512 RGBA **투명 1포즈 PNG 2개** 재제작했으나 사용자 미술 승인 대기.
+- 새 납품: `Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip`, SHA256 `0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919`. 게임 후보 PNG 2 + 비교 Preview1 + 128px QA1 + 공식 Ch2 이미지 비교1 + Manifest1 + Offline QA JSON1 + SHA256SUMS1 = 총8파일; CRC PASS.
+- 새 고해상도 원화에서 출력하여 이전 v1 75×49/142×121 최근접 확대 작업을 반복하지 않음. **픽셀풍 고해상도 디지털 드로잉으로서 최종 수동 픽셀 마감/Ch2 완전 일치 미확인**. 임시 Chapter2 비교판은 동일 윤곽 크기로 정규화한 시각 참고판이며 실제 Unity PPU와 동일 실게임 크기 검증 아님.
+- 담당 QA·SHA 보고: [Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md](../../Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md), 커밋 `a3822c157c754b1c17ecd1c001b245ff33a41eff`. 실제 바이너리 ZIP/PNG는 이 대화 다운로드 첨부에만 존재하며 GitHub에 올리지 않음.
+- **USER_ART_APPROVAL_PENDING / CODEX_ACTUAL_GAME_SCALE_QA_PENDING / NOT_UNITY_INTEGRATED**. 차기 우선: 바울 대표 미술 감상→Codex 실제 PPU/표시 크기 비교 QA→개별 수정 필요 시 새 승인본. F1·마을 기존 PNG10/공식 캐릭터/Chapter1·2 아트/Unity 원본 보호, 애니메이션 양산 금지, `main` 미수정.
