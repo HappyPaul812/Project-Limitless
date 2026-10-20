@@ -228,3 +228,14 @@
 - 압축 파일과 실행 안내는 사용자 대화에서 직접 제공, README 동봉. 일단 `python .\\LIMITLESS_TTS_VoiceFix9.py check` (API0), 새로운 무료 한도를 현재 해당 프로젝트에서 확인한 뒤에만 `sample-serin`/`sample-taeon`. **초기 키1 7·키2 10은 이미 소비됐을 수 있으므로 추가9회라고 가정 금지**.
 - 오프라인 compile, 기존17 SHA mock, 샘플2+나머지7 모의 성공 및 2번째 API 오류에 즉시 HOLD/lock/다음호출0 PASS. 실제 사용자 PC/실제 Gemini API **신규 호출0, WAV 신규0**; 샘플 QA 미확인, Unity0, main0.
 - 상세 새 QA 정본: [Main20·21 VoiceFix9 오류/검수](../../TTS_Main20_Main21_VoiceFix9_20261019.md). 기존 이슈 #20은 생산→청취 QA 오류/재제작 추적용으로 갱신. TTS 담당이 Python을 직접 만들고 Codex는 사용자 최종 승인 후 Unity 통합만 한다.
+
+
+## 2026-10-20 / 세린·태온 보이스 성별 설정 문제 확인 및 새 Python 샘플 팩 (최신)
+
+- 사용자: “tts 되니까 작업하자.” 최신 청취 오류9(세린8 남성처럼 들림, 태온1 여성처럼 들림) 재개.
+- **Google 공식 Firebase voice table의 원인 확인:** `Schedar=Male`, `Gacrux=Female`. 전일 작성한 “기존 보이스 유지 + 성별 Style” 실행팩은 추가 재제작에 사용하지 않는다. 해당 팩의 Style 조건만으로 프리셋의 성별 차이 보완은 신뢰할 수 없음.
+- TTS 담당이 **새 Python ZIP 직접 제작**: `LIMITLESS_TTS_Main20_Main21_GenderFix9_SampleFirst_20261020.zip`, SHA256 `c9f8e6af586c37c3b881f37cc4ff3db46b3485991022c485a2c3b9f7c752925d`, script `LIMITLESS_TTS_GenderFix9_20261020.py` SHA256 `fd55444cb033d314a462d7f3a41d109f42260c9c12569ea7e1606e8368349c27`. ZIP/CSV/README 사용자 대화에서 제공.
+- 샘플 후보 보이스 **세린=Erinome(Female, Clear)**, **태온=Alnilam(Male, Firm)**. 이번 Main20·21 테스트에서만 임시 사용, 기존 Main18 청취 승인 세린10이나 다른 챕터 음성 Voice Registry를 일방 변경하지 않음. 사용자 두 샘플 청취 승인 후 나머지 세린7 생성.
+- `F:\Downloads\Voice\LIMITLESS_TTS_GenderFix9_20261020`에 압축 해제한 뒤 `python .\\LIMITLESS_TTS_GenderFix9_20261020.py check` → 실제 Google 무료 quota 및 과금 확인 후 `sample-serin`, `sample-taeon`; 출력 `F:\Downloads\Voice\Limitless_TTS_GenderFix9_20261020\candidates`. 체크에서 기존 17 성공 WAV/결과 SHA 불일치·경로 문제 있으면 호출금지/보고.
+- offline Python compile/ZIP CRC, 17원본 SHA mock 보호, 샘플2→승인→나머지7 성공, 2번째 요청 모의 오류 시 HOLD/lock 및 뒤호출0 PASS. **실제 PC API 호출·실제 WAV 신규 생성=0**, 게임 Unity 적용0. 실사용 결과와 청취 평가는 사용자 응답 대기.
+- 상세: [2026-10-20 정정 및 실사용 Python 인계](../../TTS_Main20_Main21_VoiceGenderFix9_20261020.md). 기존 Issue #20 보이스 오류 추적 유지. Codex는 사용자 승인 WAV Unity 통합만.
