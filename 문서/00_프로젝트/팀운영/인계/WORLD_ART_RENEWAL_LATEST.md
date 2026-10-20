@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Field09 Phase2 Cliff/Fissure 실제 PNG 2종 v2 보완 납품 (현재 최신)
+
+- 바울 대표와 Codex 검수 Phase2 Pilot v1: **기술 30PASS / 미술 Visual FAIL** (Cliff 발치 밝은 매트, Fissure 외곽 매트와 기존 Glow 붉은 띠 노출). 기획 정본 `docs/planning/문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md`, Issue #38 최신 댓글 확인.
+- 기존 v1 실제 PNG에서 **두 후보만 국소 수정**: `LL_Field09_Phase2_Cliff_Blocker_v2.png` SHA256 `ad995f3cc4914759d6c88fa47c80227cb1a7c5f1a9a549679e06472402fee9f1` (13,918px 변경), `LL_Field09_Phase2_Fissure_Edge_v2.png` SHA256 `c3dc0c131c11fef72e4d210a1a43528f9882d8c50486e8da0bc15b6984ea145a` (14,574px 변경). Canvas512² RGBA, PPU128/Pivot center 제안, Collider/Sorting/Scene 원본 불변.
+- 실제 ZIP `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` **3,602,303bytes / SHA256 `0e4b7bfb3784b5b97a4a719c669f9564f502d67e88c2096d32475fa69a6876c8`**, 13 entries. Assets 신규 PNG2만, Manifest 원본/수정 SHA, 픽셀별 변경 CSV 28,492개, 승인 Base+새 소품 전후/접지 확대 PNG, 온라인 원본 Glow 정확 겹침 HTML, QA JSON, 재현 스크립트. 표준 ZIP 재해제/CRC testzip/Pillow PNG Decode/SHA **오프라인 PASS**. ZIP과 PNG는 이번 채팅 sandbox에 실제 첨부. **GitHub repo에 바이너리 넣거나 바울 대표 F: 자동 복사하였다고 주장하지 않음**.
+- 승인 Base Ground v1 SHA `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203` / Cracked Overlay v2 SHA `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7` / Obsidian Slab v1 SHA `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692` **실제 파일 재대조 3PASS / 수정0**. 공식 Fissure Glow PNG/meta/GUID 원본 그대로. Glow sorting -7가 Edge sorting -8보다 앞이므로 아트 외곽 정리만으로 Glow 붉은 띠가 전체적으로 사라진다는 주장은 **금지**. 독립 Unity 실제 Glow 결합 검증 필수, 지속 시 Renderer/Material/Mask 기술문제 분리해 추가 승인 받음. `OnlineCompare.html`은 GitHub 공식 Glow를 URL에서 읽어와 동일 위치 위아래로 겹침; 오프라인 PNG는 Glow 실제 포함하지 않고 GameView도 아님.
+- 보고서 [Field09 Phase2 Cliff/Fissure 수정 v2](../../Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_ArtFix_v2_Delivery_20261020.md) 최초 commit `6fb4701d9749b28d7735991a3b68721c713f3a14`. Codex 재현용 `Art_Tools/Field09_Phase2_CliffFissure_Fix_v2.py` commit `7e92e05f1a8cd27b17c60a6f5e4b412f5f4937fb`. 상태 `FIX_PNG2_DELIVERED / OFFLINE_QA_PASS / GLOW_RENDERMASK_RISK / CODEX_UNITY_DELTA_PENDING / USER_VISUAL_APPROVAL_PENDING / MAIN_UNCHANGED`.
+- Codex 다음은 기존 PASS30/17/92 **재실행 금지**. Cliff 접지/Edge+Glow 결합/3 GameView, 기존 Main18 시각 정보만 델타 검증. 바울 대표 최종 미술 승인 전 다른 환경 소품 양산/공식 원본 적용/메인 병합 금지.
+
+
+
 ## 2026-10-20 Field09 Phase2 신규 소품 2종 실제 납품 — 최신 결정/승인 상태
 
 - [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 및 기획 `docs/planning/문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md`: **승인된 Base Ground v1/Cracked Overlay v2/Slab v1 절대 수정 금지**. 실제 SHA256 재확인 3/3 PASS (`1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`).
