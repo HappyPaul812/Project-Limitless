@@ -290,3 +290,13 @@
 - 사용자 청취: “세린인데 남자..;;” → USER_LISTENING_FAIL. 생성 성공과 캐릭터 음색 합격 구별, 해당 WAV Unity 적용 금지. Main20/21 세린8/태온1 불합격 및 DSP 오프라인 보정 전량 FAIL 유지.
 - 관측된 오늘 생성 POST 시도2(처음 HTTP400 1, 진단 성공1), 새 WAV 성공1. 실제 무료 quota 차감은 미확인. 원래 Voice 반복 재생성 및 20회 무조건 소진 중단.
 - 다음은 정상 승인 세린 음성(Main18)과 요청 기록 비교, 음색 변경 대안 검토/사용자 승인 후 제한적 제작. 기존 승인 음성 및 모든 Save/WAV/HOLD 보호. 상세 문서 TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md.
+
+
+## 2026-10-20 최신 — 승인된 세린 WAV를 직접 참고하는 1개 Voice Conversion 시범
+
+- 사용자: “내가 OK한 세린 파형으로 니가 바꿔볼래?” 기존 단순 DSP/피치·포먼트 방식은 사용자 청취 FAIL 유지. **사용자 승인 WAV를 참조하는 OpenVoice 기반 화자 음색 변환**을 새 방식으로 1개만 검증 준비.
+- 기준 WAV: `F:\Downloads\Voice\Limitless_TTS_Serin10_Schedar_v2\sample_candidate\main18_ground_serin_01.wav`, 승인 SHA256 `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`. 대상: 2026-10-20 단발 성공·음색 FAIL `F:\Downloads\Voice\Limitless_TTS_Today20_400Diagnostic_20261020\main20_confront_serin_01_DIAGNOSTIC.wav`.
+- TTS 담당이 `LIMITLESS_Serin_ApprovedVoice_VC_20261020.zip` 직접 제작·사용자 다운로드 제공 (SHA256 `77293681c01e82f7be00fb2029f73ca287c0522dadbb338c8086097c7f567f06`). Python + 한국어 README만 동봉, 제3자 Windows x64 CPU OpenVoice 런타임/131MB 모델은 `setup` 사용자가 명시적으로 승인 후 다운로드, SHA 검사.
+- `check` API0/쓰기0 → `setup` 외부 OSS 다운로드(유료 Gemini API0) → `preview` 사용자 로컬 WAV 1개만 독립 `Limitless_TTS_Serin_ReferenceVC_20261020` 폴더에 변환해 청취 대기. 원본 승인·오류 WAV, 그 외17/25, 모든 HOLD/lock·Unity·Save 불변. 이전 Main18 승인 보이스 레지스트리 변경0.
+- 스크립트 compile/가짜 WAV 입력·승인 참조 SHA·윈도우 엔진 명령·중복 결과 방지·해시 QA mock PASS, **실제 F: 사용자 WAV, OpenVoice 모델 실행 및 음성 청취 아직 미검증**. 이 방식도 완벽한 원래 음색 복원 보장 없음. 결과 청취 FAIL시 추가7개 연속변환 금지.
+- [GitHub 상세 정본](../../TTS_Serin_ApprovedReference_VoiceConversion_Pilot_20261020.md). TTS Python 작성은 TTS 담당, Unity 통합만 Codex. docs/tts만 기록, main 수정0.
