@@ -37,3 +37,12 @@
 ## 보호 및 다음 단계
 
 기존 `HOLD/lock`, 원본17 WAV, Main18 세린 승인10, 기존 정상 Main18/19 음성25, 로컬 Save/Unity, 다른 담당 브랜치 모두 불변. 오늘 20회 재제작 프로세스는 **원인 확인 전 BLOCKED**. 오류 원인을 파악한 후에만 실제 무료 quota에 맞춰 재계획하고 사용자 승인을 얻어 진행한다. TTS Python 개발/진단 담당은 이 세션, Codex는 청취 승인 이후 Unity 연결만. `docs/tts` 브랜치만 Git 문서화, main push/merge0.
+
+
+## 2026-10-20 후속 사용자 실제 진단 로그 — API KEY INVALID 확인
+
+- 사용자가 진단 `inspect` 실행: `[CHECK PASS]`, 기존 HOLD/lock 및 원본 WAV/요청 SHA 일치, 기존 1회 HTTP400, 성공 신규 WAV0, 이후 요청0. 초기 스크립트가 HTTP 응답 원문을 저장하지 않아 첫 실패 원인 자체는 복원 불가.
+- 이어 `model-info` 모델 메타데이터 GET을 **2회** 실행. 양쪽 모두 HTTP400 / `INVALID_ARGUMENT`, `API key not valid. Please pass a valid API key.` 반환. 해당 GET은 음성 생성 요청이 아님.
+- **확인된 직접 장애:** 진단 시 입력한 KEY1이 Google API 인증에서 거절됨. 따라서 KEY1의 유효성/활성 상태/복사 완전성/Google AI Studio 발급 내역을 점검해야 함. 사용자가 이전 TTS 샘플 호출에 입력한 키와 이 진단 입력 키가 동일했는지는 현재 로그만으로 확정하지 않음.
+- 프로젝트 ID(`gen-lang-client-...`)와 실제 API Key를 혼동하지 말 것. 비밀키는 채팅·문서·로그·스크린샷에 노출하지 말고, 실제 `https://aistudio.google.com/api-keys`에서 확인한 Key로 `model-info` 재검증. `model-info` PASS 확인 전 `diagnose-one`/`sample`/HOLD 삭제/키 임의 변경에 의한 재생성 금지. KEY1 유효해진 뒤 기존 HOLD를 보존한 상태로 원인별 후속 결정.
+- 실제 새 WAV0, 사용자 로컬 HOLD 보존, Unity0, GitHub main 변경0. 모델 음색 불안정 문제와 이번 명확한 API 키 인증 거절은 **별도 이슈**로 구분.
