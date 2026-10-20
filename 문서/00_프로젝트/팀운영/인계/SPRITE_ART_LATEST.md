@@ -45,3 +45,11 @@
 - 문서·파일별 SHA·QA: [Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md](../../Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md) (커밋 `2cbe7299e0d3c88ab8cea100247fe4e826e583de`). 바이너리는 이 ChatGPT 대화에 다운로드 링크로 제공했으며 GitHub 브랜치에는 **기록 문서만** 올렸음.
 - F1/서릿길 마을 지형 PNG 10종은 별도 기존 파일럿 그대로 보존; 몬스터/보스 신시안은 기존 2개와 별도 패키지.
 - **후임 우선**: 서리들쥐/설빙의 폭군 각각 채택안 확인→게임용 픽셀아트 스타일로 단독 1포즈 제작→Codex PPU/Pivot/Collider 조사 반영→대표 미술 승인 후 Unity 연계. 전 몬스터 7종 애니메이션 양산 금지. `docs/art-new`만 사용, main 직접 수정 금지.
+
+## 2026-10-20 채택안 서리들쥐 A·설빙의 폭군 B — 픽셀아트 1포즈 v1
+
+- 바울 대표 디자인 **서리들쥐 A, 설빙의 폭군 B 채택**. 기존 반려본/기존 원본은 보호. 채택은 고해상도 콘셉트의 디자인 방향 승인이고, 아래 픽셀아트 1포즈 **별도 미술 승인 필요**.
+- 새 대화 산출 ZIP: `Limitless_Chapter3_ApprovedAB_PixelArt_1Pose_v1.zip` (SHA256 `4bd67210e4d813b1ceb5c22cd76a35af577837b63068af57392c41226da968fc`). `Sprites/FrostFieldMouse_A_PixelArt_1Pose.png`/`Sprites/FrostTyrant_B_PixelArt_1Pose.png` **512×512 투명 RGBA 각1포즈**, 비교 및 128px 검토 이미지·Manifest·QA JSON 총 6항목. 실제 PNG는 ChatGPT 대화 첨부이며 GitHub에는 바이너리 미업로드.
+- 오프라인: 두 PNG 크기/투명도/단일 주요 컴포넌트/외곽 여백/ZIP CRC PASS. 본 데이터는 승인 후보; PixArt 마감, 게임 내 스케일/유사 아트 결합, 움직임은 검증·제작 안 됨. `SPRITE_ART_APPROVAL_PENDING / NOT_UNITY_INTEGRATED`.
+- 정식 기록: [Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md](../../Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md), 커밋 `ad5f35cbe8d4f2ffde8768ba55b0d4c05ad4395a`.
+- 후임 다음 단계: 바울 대표 1포즈 아트 검토 → Codex Issue #35 PPU/Pivot/Collider·Monster Frame 계약 대조 → 별도 요청을 받아 필요 애니메이션만 제작. 기존 F1/서릿길 마을 환경과 Chapter1·2 원본, 하렌/태온/세린/폴/미엘/플레이어 변경 금지. `docs/art-new`만 사용하고 main 커밋/Push하지 않음.
