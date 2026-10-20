@@ -282,3 +282,11 @@
 - 사용자 `model-info` 2회: 모두 HTTP400 `INVALID_ARGUMENT` / `API key not valid. Please pass a valid API key.`. 이는 TTS generateContent가 아니라 모델 메타 조회 GET이므로 **이 시점에 입력한 KEY1의 API 인증이 거절된 것이 직접 문제**. 첫 실패에 사용된 키와 두 진단 입력의 동일성은 화면만으로 별도 확인 필요.
 - 다음 조치: Google AI Studio에서 해당 Google Project의 유효 API Key(프로젝트 ID와 다름)를 안전하게 재확인, 채팅·화면에 키 노출하지 않은 상태로 `model-info`만 다시 검사. PASS 전 샘플·진단 POST 추가 실행 금지. 기존 HOLD/lock 삭제·재설정 금지, 이전 Main20/21 WAV와 Main18 승인본 보존.
 - [정본 상세](../../TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md). 이 진단을 통해 새 TTS 호출0, 새 WAV0/Unity0. 기존 음색 오류9는 별도 미해결.
+
+
+## 2026-10-20 최신 — 진단1회 생성 성공, 세린 남성 음색 청취 FAIL
+
+- 바울 대표 화면으로 유효 KEY1의 단일 generateContent 요청 성공, WAV1개 별도 저장 확인. 대상 main20_confront_serin_01, Schedar, gemini-3.8-flash-tts. result.json 경로 F:\Downloads\Voice\Limitless_TTS_Today20_400Diagnostic_20261020\result.json. 추가 TTS 호출0, 기존 HOLD/lock 유지.
+- 사용자 청취: “세린인데 남자..;;” → USER_LISTENING_FAIL. 생성 성공과 캐릭터 음색 합격 구별, 해당 WAV Unity 적용 금지. Main20/21 세린8/태온1 불합격 및 DSP 오프라인 보정 전량 FAIL 유지.
+- 관측된 오늘 생성 POST 시도2(처음 HTTP400 1, 진단 성공1), 새 WAV 성공1. 실제 무료 quota 차감은 미확인. 원래 Voice 반복 재생성 및 20회 무조건 소진 중단.
+- 다음은 정상 승인 세린 음성(Main18)과 요청 기록 비교, 음색 변경 대안 검토/사용자 승인 후 제한적 제작. 기존 승인 음성 및 모든 Save/WAV/HOLD 보호. 상세 문서 TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md.
