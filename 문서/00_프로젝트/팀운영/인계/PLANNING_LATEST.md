@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 Phase2 Cliff PASS·Fissure+Glow 합성 FAIL, 기술 후보 비교
+
+바울 대표 Codex 검수 스크린샷: Field09 Phase2 `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 구조 ZIP/PNG/CRC PASS, 격리 Unity 기술19 PASS/0 FAIL, **Cliff v2 하단 접지 시각 PASS**, **Fissure Edge v2 단독 외곽 매트 시각 PASS**, 오직 **원본 Fissure Glow 결합에서 윗/오른쪽 붉은 띠/가이드 잔흔 시각 FAIL**. 원인은 Glow-Edge alpha 형태 부조화와 원래 Mask 없는 Renderer 조합; Glow sorting -7이 Fissure -8 앞쪽, 정렬 반전만으로는 해결 못함. Codex `codex/field09-phase2-fix-v2-qa-20261020`, QA `16c1fb92`, 인계 `fe0b412d`. original source3546+ Save/UserData/approved3+Glow/meta/GUID 보호, 공식 Unity 적용/Push/main 병합 없음.
+
+**기획 판단:** 리뉴얼 담당 Cliff/Edge v3 추가 제작 **중단**, 전체 환경 그림 재수정 금지. Codex 격리 기술 비교만 (A) Edge 기준 SpriteMask로 Glow 제한, (B) 공식 Glow 바이너리 변경 없이 새 파생 Glow sprite alpha를 Edge에 맞게 제작, 3 GameView 확대/과열·조사 가독성/Sorting side effect/Save 기능 비침범을 비교해 가장 안정적인 한 옵션 권고. Original Scene/Glow/승인 PNG 전부 불변; A/B 후보 미술승인 및 정식 적용은 바울 대표 후속 결정. 변경분 QA만, 기존30/17/92 전수 반복X.
+
+정본 `문서/00_프로젝트/Field09_Phase2_FissureGlow_CompositionRootCause_And_PrototypeGate_20261020.md` (`docs/planning` commit `222a9e42303c4e285eeed3d67a7be6c4654b0863`); [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트. Chapter3 메인 아트 Idle2 제작은 별도 `docs/art-new` 작업 유지, 다른 담당 재지시 금지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 Idle 기술 Lock + Field09 Phase2 Fix v2 납품
 
 바울 대표 Codex 캡처: 서리들쥐 A/설빙의 폭군 B Idle 애니메이션 기술 계약 최종 **2048×512 1행×4프레임(각512×512), 8FPS 0.5s loop, PPU512, Pivot(0.5,0) 발 중앙, 우향1, VisualScale A1/B3, UI 실제 알파 실효 A≈102×80/B≈307×305**. Codex `codex/chapter3-ab-idle-contract-20261020`, 계약 `b1793f85`, 인계 `cfed20a8`, 원본 PNG2 SHA 검증·원본 Unity 변경 없음. `docs/art-new/Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md`의 이전 조사값 PPU314·1256×314은 **최종 제작 계약이 아님**. 메인 아트는 기존 승인 1포즈 PNG2 보호, 새 Idle 실제 시트 2장만 제작→비교 미리보기/ZIP QA→Codex 간단 반복 모션 확인→사용자 미술승인. Attack/Hit/Defeat·다른 캐릭터 제작 금지.
