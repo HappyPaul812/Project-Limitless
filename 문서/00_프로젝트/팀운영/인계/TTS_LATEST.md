@@ -317,3 +317,11 @@
 - 피치/포먼트/평균스펙트럼 참조 보정은 화자 음색 변환이 아니라 음향 통계 보정이며 결과의 남성 지각을 제거하지 못함. 본 계열의 추가 보정·강도 증가 중단. WAV 포맷 검사 PASS≠청취 PASS.
 - 향후 사용자가 원하면 실제 화자 임베딩 기반 신경망 Voice Conversion 모델을 **승인 Main18 세린 기준 WAV로 1개 시범** 사용하거나, 신규 여성 보이스 한 개를 실제 청취해 정식 선정. 모델/변환의 성공은 미보장, 사용자 승인 전 기존 공식 보이스 설정·Main18 승인10 및 Unity 모두 불변. 태온1 음색 문제는 별도.
 - 상세 결과: [세린 16개 직접 보정 전량 불합격](../../TTS_Serin8_ReferenceGuided_Offline_Prevs_20261020.md). 이번 업데이트 Github docs/tts 문서만, 음성 API0/Unity0.
+
+
+## 2026-10-20 최신 — 세린 기존 Schedar 안전 재시험 Python 준비
+
+- 바울 대표 “18회 버리더라도 또 뽑아봐?” 지시. TTS 담당은 18회 무조건 소진하지 않고 원래 `Schedar`/원래 스타일/원문과 같은 설정으로 **1회 시험 후 청취 게이트**, 최대2회 수동 재시험을 준비.
+- 다운로드 `LIMITLESS_TTS_Serin_Retry2_20261020.zip` SHA256 `6369b14fe7032046111f8fe4f4296e0a6cadf8633299bc579d128bf22fee4180` (279734 bytes), 스크립트+검증된 17행 CSV+승인 Main18 세린 WAV 실파일+한글 README. 기준 WAV SHA `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`.
+- 사용자 로컬에서 `check` API0→`trial --attempt 1`(정확히 1회, 모델 GET 먼저, 유료/잔여 수동 확인) 실행. 청취 불합격일 때만 `trial --attempt 2`와 `FIRST_FAIL` 별도 게이트. 기존 HOLD/lock 및 모든 원본 변경 금지, 새 출력 폴더 격리.
+- 모의 성공1/2, 중복 번호 차단, 실패 HOLD/lock 및 다음호출0 PASS. **실제 Google API 호출0/실제 음색 미검증**. [상세](../../TTS_Serin_SameVoice_Retry2_20261020.md). TTS 제작 담당 유지, Codex는 최종 사용자 승인 WAV Unity 통합만.
