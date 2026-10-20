@@ -348,3 +348,12 @@
 - **중요 Google Voice Replication 제약:** 2026-10-12 공식 문서상 동일 실제 성인 인간 화자의 reference audio 10–30초 및 직접 낭독한 consent audio 필수. 기존 합성 세린 WAV만으로 복제를 바로 수행할 수 없음. Voice Replication을 합성 샘플 복구 정답으로 제시하지 않는다. https://ai.google.dev/gemini-api/docs/voice-replication
 - 전체 기술/운영 및 코덱스 READ-ONLY 인벤토리 지시 정본: [TTS 전체 캐스팅 일관성 감사/재제작 승인게이트](../../TTS_전체_캐스팅_일관성_재검토_및_전면재제작_판정게이트_20261020.md). GitHub **Issue #39** (read-only local Unity 290 카탈로그 + Intro18 전수 감사, 실행 승인은 아직 없음).
 - 최종 사용자 선택은 전체 290+성우 라인 등 **전면 Voice Registry v2 리캐스팅** 대 캐릭터별 전 챕터 재더빙 범위. 어느 쪽도 기존 승인본/원본/Save/HOLD를 지우지 않고 분리 제작/검증 후 Unity 연결만 교체. 사용자 승인 전 구현/TTS 호출/비용 지출0.
+
+
+## 2026-10-20 최신 사용자 지시 — 전체 TTS 폐기 아님, 세린·태온 2인 캐스팅만
+
+- 바울 대표: **“그러지 말고, 태온 세린만 새로 캐스팅 해봐. 인물 성격과 특징에 맞게.”** 전역 TTS 삭제·재녹음 추진 STOP, [전수감사 Issue39](https://github.com/HappyPaul812/Project-Limitless/issues/39)은 **범위 변경으로 closed/not_planned**, 기존 Issue20에서 2인 캐스팅 진행.
+- 공식 캐릭터 정본 대조: 세린 여성 약25세·청각의 길 사수·침착/날카로운 관찰·짧고 빠른 판단/가까워지면 건조한 유머. **공식 Female Clear Erinome 1순위**, Female Smooth Despina 차선. 태온 남성·지적의 길 수호자·관찰→이해→보호·차분하고 성숙·형과 가족식 반말/일반 존댓말. **공식 Male Smooth Algieba 1순위**, Male Firm Alnilam 차선.
+- [캐스팅 1차안/스타일/샘플 원문/승인게이트](../../TTS_세린_태온_리캐스팅_1차안_20261020.md). 공식 Gender https://docs.cloud.google.com/text-to-speech/docs/gemini-tts, Voice traits https://ai.google.dev/gemini-api/docs/speech-generation. 확정이 아니라 **실제 사용자 청취 전 제안**.
+- 시험은 Main20 세린 `main20_confront_serin_01`과 Main21 태온 `main21_route_taeon_01`의 **최우선 후보 1대사씩 최대2회**부터, Google 프로젝트·모델 무료 잔여량/요금 확인 후만 제작. 후보 WAV 청취 승인 전 전역 Voice Registry나 Unity 변경 금지; 보조후보 무단 일괄 시험 금지. 사용자가 원하는 일관성 때문에 최종 2인 VoiceID가 승인되면 두 인물의 **전 챕터** 재제작 범위를 별도 설계하며 폴·미엘·레온·내레이터를 건드리지 않음.
+- **이번 턴: 문서화/후보 선정만, 실제 TTS API0·신규 WAV0·Unity0·삭제0**. 기존 Main18 사용자 승인 세린10/Main08 태온 정상 WAV/모든 기존 입력·출력 WAV·HOLD·Save 보호. TTS 담당 스크립트 제작, Codex는 최종 승인 WAV의 Unity 연결만 수행.
