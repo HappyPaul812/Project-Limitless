@@ -300,3 +300,12 @@
 - `check` API0/쓰기0 → `setup` 외부 OSS 다운로드(유료 Gemini API0) → `preview` 사용자 로컬 WAV 1개만 독립 `Limitless_TTS_Serin_ReferenceVC_20261020` 폴더에 변환해 청취 대기. 원본 승인·오류 WAV, 그 외17/25, 모든 HOLD/lock·Unity·Save 불변. 이전 Main18 승인 보이스 레지스트리 변경0.
 - 스크립트 compile/가짜 WAV 입력·승인 참조 SHA·윈도우 엔진 명령·중복 결과 방지·해시 QA mock PASS, **실제 F: 사용자 WAV, OpenVoice 모델 실행 및 음성 청취 아직 미검증**. 이 방식도 완벽한 원래 음색 복원 보장 없음. 결과 청취 FAIL시 추가7개 연속변환 금지.
 - [GitHub 상세 정본](../../TTS_Serin_ApprovedReference_VoiceConversion_Pilot_20261020.md). TTS Python 작성은 TTS 담당, Unity 통합만 Codex. docs/tts만 기록, main 수정0.
+
+
+## 2026-10-20 최신 — 바울 대표 요청에 따라 실제 세린 WAV 8개 직접 변환해 ZIP 전달
+
+- 사용자 직접 첨부 `candidates.zip` 17 WAV 실제 바이트 확인. ChatGPT 파일 보관함에서 과거 바울 대표 승인 `main18_ground_serin_01.wav`(SHA `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`) 및 `LIMITLESS_Serin6_ConsistentVoice_Previews.zip`(SHA `a5878e6d4f1b1e858f4b505f23669ab147da2dd466fe30443b0d6116a7246cb1`) 확보·해시 확인. 이전에 파일 접근 불가하던 상태 해소.
+- TTS 담당이 실제 사용자 오류 세린8에 대해 **A_natural/B_closer 두 버전, 16개 실 WAV**를 작업 컨테이너에서 직접 작성하고 사용자에게 `LIMITLESS_Serin8_ReferenceGuided_WAV_Previews_20261020.zip` 전달. ZIP SHA256 `349d6bf7047a92d04972f68c769595969b3ff69d8b6e03f1ea8bfd7179ea535e`, 크기4,419,922 bytes.
+- 공식 승인 WAV7의 F0/평균 스펙트럼을 참조한 Praat PSOLA 피치/포먼트 + 제한적 참조 EQ 방식. **AI OpenVoice 사전학습모델을 다운로드/실행하지 못하므로 ML 목소리 복제라고 주장하지 않음**. 과거 DSP6 사용자 FAIL과 구별되지만 자연스러움 사용자 평가 **대기**, 두 샘플 모두 불합격이면 16개 전체 공식 불합격 처리/Unity 미적용.
+- WAV 16개 24kHz mono PCM16·길이·SHA·리드디코딩 PASS; 업로드 원본/승인 기준7 SHA 불변. API0/Unity0. 태온 목소리는 다른 참조가 필요하여 제외.
+- 세린 `main20_confront_serin_01` A와 B 샘플 WAV도 ZIP 밖 직접 공유. [상세 정본](../../TTS_Serin8_ReferenceGuided_Offline_Prevs_20261020.md). 브랜치 docs/tts만 기록, main 변경/Push/merge0.
