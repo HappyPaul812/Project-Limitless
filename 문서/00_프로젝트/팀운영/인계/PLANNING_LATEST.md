@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 메인 아트 파일럿·BGM 2곡 보고 검토
+
+바울 대표가 F: 드라이브의 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 납품 경로를 공유하고 BGM 최신 보고도 확인 요청. `docs/art-new`의 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`와 `docs/bgm`의 `Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md` 독해: 신규 아트 PNG12(북부 F1 6·서릿길 마을4·KeyArt2) 21항목 ZIP SHA256 `6a22ac4e...`, 기술 PNG/ZIP 오프라인 PASS 보고, **원본 Windows ZIP은 이 기획 세션에서 직접 열거나 눈으로 미술 검수하지 못했으며 Unity 기술 Import·사람 미술 승인 대기**. ZIP/PNG GitHub 바이너리 미등록. 제작법은 Pillow 결정론적 픽셀드로잉이며 기존 Chapter2 스타일/월드사이즈와 실제 비교 필요. BGM 곡2: F1 `Where_the_Grass_Bends.mp3` 74.24s, 마을 `Hearth_in_the_Low_Valley.mp3` 72.62s, BGM 담당자가 각각 곡 역할/구성 PASS 추천; 다만 둘 다 처음·끝 무음/종지로 **원본 MP3 무편집 직접 Loop는 FAIL**, 사용자 청취 승인 전. 실제 MP3는 다른 BGM 세션 업로드에 있어 이 기획 세션이 독립 청취한 것이 아님. Unity 음원 적용0. 구체 내용 `문서/00_프로젝트/Chapter3_ArtF1_BGM2_Pilot_Review_Gates_20261020.md`, `docs/planning` 커밋 `1e79835340dd3ee76909a39e4dac047aba522500`.
+
+**대표 현재 순서:** Chapter3 신규 아트·BGM 담당만 우선 활동. TTS/SFX/영상은 보류. 후속은 Codex가 사용자 로컬 ZIP을 격리 환경에서 실제 Preview/Gallery·SHA/PPU/타일/퀘스트동선 비교(기존 QA 반복 금지) → 바울 대표 미술 판단; BGM 두 곡 사용자 원본 청취 → 곡 승인 시 루프별 수정본 제작 → Unity에서 대사와 믹스/동일 scene 검증. 실제 아트/음악 승인, 바이너리 전달·원본 적용/PR/main 병합과는 별개.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 병렬 착수·각 팀 Issue #30~36
 
 바울 대표: “챕터3는 설계 끝이면 각 담당한테 작업 맡겨야지?” GitHub latest 설계 검토 결과 Chapter3 방향/Chapter3 Main22~29 1차 서사/북부 필드5+보스1/서릿길 마을(Main23)/Main24 스킬상점·한기 대응/냉기3상태·온기의 화로·설빙의 폭군/형제애 중심 서사는 부서별 작업 **시작 가능**. 다만 `STORY_V1_PROPOSAL`, 정식 Quest/Dialogue/Monster/Scene IDs/좌표/금액·턴계수는 production lock **전**이다. 지금 신규 아트·BGM·SFX 소수 시안 제작, TTS 캐스팅만(API0), Codex Main22 연결·PPU/ID 읽기전용 감사, 영상 스토리보드, 기획 Main22~24 정식 ID/대사 초안 각자 병렬 진행. 전체 Unity 구현·TTS API·Main 병합 임의 착수 금지.
