@@ -309,3 +309,11 @@
 - 공식 승인 WAV7의 F0/평균 스펙트럼을 참조한 Praat PSOLA 피치/포먼트 + 제한적 참조 EQ 방식. **AI OpenVoice 사전학습모델을 다운로드/실행하지 못하므로 ML 목소리 복제라고 주장하지 않음**. 과거 DSP6 사용자 FAIL과 구별되지만 자연스러움 사용자 평가 **대기**, 두 샘플 모두 불합격이면 16개 전체 공식 불합격 처리/Unity 미적용.
 - WAV 16개 24kHz mono PCM16·길이·SHA·리드디코딩 PASS; 업로드 원본/승인 기준7 SHA 불변. API0/Unity0. 태온 목소리는 다른 참조가 필요하여 제외.
 - 세린 `main20_confront_serin_01` A와 B 샘플 WAV도 ZIP 밖 직접 공유. [상세 정본](../../TTS_Serin8_ReferenceGuided_Offline_Prevs_20261020.md). 브랜치 docs/tts만 기록, main 변경/Push/merge0.
+
+
+## 2026-10-20 최신 — 승인참조 세린 A/B 16개 사용자 청취 전량 FAIL
+
+- 사용자 직접 피드백 **“다 남자다..;;;;”**. 실자료 기반 reference-guided PSOLA+EQ A/B 16개 전체 **USER_QA_FAIL / DO_NOT_USE / UNITY_APPLY_FORBIDDEN**. 이전 단순 DSP 실패와 마찬가지로 여성 캐릭터 음색 복구 실패.
+- 피치/포먼트/평균스펙트럼 참조 보정은 화자 음색 변환이 아니라 음향 통계 보정이며 결과의 남성 지각을 제거하지 못함. 본 계열의 추가 보정·강도 증가 중단. WAV 포맷 검사 PASS≠청취 PASS.
+- 향후 사용자가 원하면 실제 화자 임베딩 기반 신경망 Voice Conversion 모델을 **승인 Main18 세린 기준 WAV로 1개 시범** 사용하거나, 신규 여성 보이스 한 개를 실제 청취해 정식 선정. 모델/변환의 성공은 미보장, 사용자 승인 전 기존 공식 보이스 설정·Main18 승인10 및 Unity 모두 불변. 태온1 음색 문제는 별도.
+- 상세 결과: [세린 16개 직접 보정 전량 불합격](../../TTS_Serin8_ReferenceGuided_Offline_Prevs_20261020.md). 이번 업데이트 Github docs/tts 문서만, 음성 API0/Unity0.
