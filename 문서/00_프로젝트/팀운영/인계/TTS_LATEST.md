@@ -378,3 +378,13 @@
 - 하렌 캐스팅 1순위 `Alnilam` (Male/Firm), 차선 `Algenib` (Male/Gravelly). 태온 친형·시각의 길 투사·무뚝뚝하고 보호적·깊은 정, 레온 Orus 등 기존 인물과 중복 청취 확인. Main21 정확 원문 3개: `main21_haren_haren_01`/02/03. 미래 Main29 “잘.했.어.”는 확정 Dialogue ID가 아니므로 현재 3개에 미포함·선제녹음 금지.
 - 세린 1순위 `Erinome` Female/Clear, 차선 `Despina` Female/Smooth. 태온 1순위 `Algieba` Male/Smooth, 차선 `Iapetus` Male/Clear (하렌 Alnilam과 VoiceID 중복 방지). 모두 실제 한국어 음성 청취 전 **후보/미승인**.
 - 정본: [TTS 세린·태온·하렌 3인 캐스팅 및 대사집계](../../TTS_세린_태온_하렌_캐스팅_대사집계_20261020.md). GitHub [Issue20](https://github.com/HappyPaul812/Project-Limitless/issues/20). 실제 신규 API 호출0/WAV0/Unity0, 모든 원본/HOLD/Save/기존 승인 음성 보호.
+
+## 2026-10-20 최신 — 남은 17회 중 3인 한국어 샘플 3회 준비, F:\Downloads\Renewal_Voices 지정
+
+- 바울 대표: “17개 남았으니까. 해보자. 한국어 샘플 먼저.. 작업 폴더 F:\Downloads\Renewal_Voices”. 실제 무료 잔여17회는 사용자 보고이며 Google Project+Model 공식 잔량/과금 무보증.
+- **TTS 담당이 직접 새 Python ZIP 제작 완료**: `LIMITLESS_Renewal_Voices_Korean_Audition_3Samples_20261020.zip` SHA256 `8649f90cffe73baeed22e52390666833f2a263f1c4821b525cfa7ba15a0ecd10` (8040 bytes). `Renewal_Voices_Korean_Audition.py`(13504bytes)+`KOREAN_AUDITION_MANIFEST.json`+한글 README. 고정 폴더 `F:\Downloads\Renewal_Voices`, 결과 `samples`.
+- **하렌** Alnilam/`main21_haren_haren_01` / “태온. 너 아직 멀었어.” → **세린** Erinome/`main20_confront_serin_01` / 지면 맥동 두 문장 → **태온** Algieba/`main21_route_taeon_01` / 흔들림 재조사 한 문장. 정확 기존 Manifest·Stable ID 사용.
+- `conda activate py3_12`; `cd F:\Downloads\Renewal_Voices`; `python .\Renewal_Voices_Korean_Audition.py check`; `python .\Renewal_Voices_Korean_Audition.py sample`. 최대 3 POST, 성공 시 예상 잔여14(기타 호출/결과에 따라 다를 수 있음), 28초 간격, 누락/중복 저장 차단, 오류 시 HOLD/lock 및 호출중단, 자동 retry0. 개별 `sample --speaker haren|serin|taeon`도 가능.
+- 실제 사용자 Google 프로젝트/모델의 무료 잔여 및 무과금 여부를 FREE로 확인, 별도 YES3 수동 승인. 키는 가림 입력·비밀 저장 금지. 모델 GET 성공은 실제 무료 quota 검증 아님.
+- 자체 compile/ZIP 압축해제 check/mock GET+POST3/HOLD·중복보호 PASS. **실제 Gemini API 호출0/새 한국어 WAV0/Unity0** (로컬 사용자가 실행하기 전). 샘플 생성 후 **바울 대표 청취 승인 필요**, 합격 전 기존 StoryVoiceCatalog/WAV/GUID/Save 변경금지.
+- [이번 3개 한국어 오디션 실행 정본](../../TTS_RenewalVoices_3인_한국어오디션_실행계획_20261020.md); [GitHub Issue #20](https://github.com/HappyPaul812/Project-Limitless/issues/20).
