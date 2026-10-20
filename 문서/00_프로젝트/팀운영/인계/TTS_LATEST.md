@@ -265,3 +265,12 @@
 - 안전 단계: `check` API0 → `sample --confirm-free` 세린1/태온1 (KEY1 2) → 둘 다 사용자 청취 PASS면 `approve-samples` → `main --confirm-free` 나머지9 (KEY1 8, KEY2 1) → 실제 청취 FAIL인 ID에 한해 `retry --ids ... --confirm-free` 최대9 (KEY2 9). **실제 불량이 없는 상태에서 예비9를 무조건 소진하지 않음.**
 - 오프라인 모의: 17원본 SHA 감사, sample2→승인 게이트→main9→retry9 = 20/Key1 10/Key2 10 PASS. 두 번째 가짜 API 오류 시 HOLD+lock 유지·뒤호출0 PASS, WAV 변조 감지 PASS. **실제 Gemini 신규 호출/WAV0/Unity0**.
 - [상세 계획/스크립트 메타](../../TTS_Main20_21_Today20_Staged_Retry_20261020.md). Codex는 여전히 사용자 최종 청취 승인 뒤 Unity 통합만 담당. TTS 업무 책임/실행은 TTS 전담 세션+바울 대표 로컬 Python. docs/tts 브랜치만 갱신, main 변경·Push/merge 없음.
+
+
+## 2026-10-20 최신 실제 실행 로그 — 샘플 첫 API HTTP400 / HOLD 유지
+
+- 바울 대표 PowerShell 화면: 이전20회 `check` PASS; `sample --confirm-free` KEY1 첫 `main20_confront_serin_01`/`Schedar`/`gemini-3.8-flash-tts` 호출 **HTTP400**, 성공 WAV0, 이후 태온/나머지 요청0. 즉시 `HOLD.json`+`RUNNING.lock` 유지, 중복 실행 차단 정상.
+- 신규 Python 스크립트/이전17회 스크립트/Google 공식 Gemini 3.8 REST JSON 구조 일치함을 정적 확인했으나 기존 코드가 **HTTP400 상세 응답 본문 저장하지 않은 결함** 있어 원인은 미확정. Key/Voice/모델/컨텐츠 문제로 단정 금지.
+- TTS 담당 직접 안전 진단 ZIP `LIMITLESS_TTS_HTTP400_Diagnose_20261020.zip` 작성·배포 (SHA256 `d1270b807435d8f222e5a976ba00b65c133ea5fa19fb800840b87c645296815a`). 기존 스크립트 옆에 추가하고 `inspect`(API0/쓰기0), `model-info`(Google 모델 GET1/TTS POST0) 순서로 실행, 결과 보고. `diagnose-one`의 단 1회 POST는 상세진단 필요 시 사용자 추가 확인 후에만. 기존 HOLD/lock은 절대 해제/초기화/덮어쓰기 금지.
+- 가상 원본17 SHA 및 HOLD/lock 보호, 모델 GET, 오류 400 POST 상세 메시지 추출/키 마스킹, 추가 호출 차단 오프라인 테스트 PASS. **실제 신규 Google API/모델 GET은 이 ChatGPT에서 실행하지 않았으며 사용자 PC 진단 대기**. 첫 시도는 보수적으로 KEY1 소모1회로 기록. Unity0/main0.
+- 상세 정본: [2026-10-20 첫 HTTP400 진단](../../TTS_Main20_21_Initial_HTTP400_Diagnostic_20261020.md). Issue #20도 BLOCKED로 갱신.
