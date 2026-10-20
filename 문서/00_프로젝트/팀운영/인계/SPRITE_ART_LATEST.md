@@ -61,3 +61,11 @@
 - 새 고해상도 원화에서 출력하여 이전 v1 75×49/142×121 최근접 확대 작업을 반복하지 않음. **픽셀풍 고해상도 디지털 드로잉으로서 최종 수동 픽셀 마감/Ch2 완전 일치 미확인**. 임시 Chapter2 비교판은 동일 윤곽 크기로 정규화한 시각 참고판이며 실제 Unity PPU와 동일 실게임 크기 검증 아님.
 - 담당 QA·SHA 보고: [Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md](../../Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md), 커밋 `a3822c157c754b1c17ecd1c001b245ff33a41eff`. 실제 바이너리 ZIP/PNG는 이 대화 다운로드 첨부에만 존재하며 GitHub에 올리지 않음.
 - **USER_ART_APPROVAL_PENDING / CODEX_ACTUAL_GAME_SCALE_QA_PENDING / NOT_UNITY_INTEGRATED**. 차기 우선: 바울 대표 미술 감상→Codex 실제 PPU/표시 크기 비교 QA→개별 수정 필요 시 새 승인본. F1·마을 기존 PNG10/공식 캐릭터/Chapter1·2 아트/Unity 원본 보호, 애니메이션 양산 금지, `main` 미수정.
+
+## 2026-10-20 Chapter3 A/B Idle 애니메이션 기술 사전조사
+
+- 바울 대표: 서리들쥐 A/설빙의 폭군 B 1포즈 v2 미술 승인. SHA PNG A 0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2 / PNG B f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830. 원본 변경 금지.
+- GitHub 원격 Main의 MonsterDefinition, MonsterSpriteSheetAnimation, FieldMonsterInstaller, BattleSceneController와 Ch2 .asset/.png.meta 확인. 기존 Ch2 선례 Idle4/8FPS/314px 셀/PPU314/BottomCenter Pivot/Point, 일반 VisualScale1·열맥거신3, 전투 Image136×112 UI px × scale.
+- 주의: Texture2D 런타임 분할 Sprite.Create Pivot은 (0.5,0.5)이고, TextureImporter 분할 ExplicitIdleFrames Pivot은 (0.5,0). 섞으면 발밑 정렬 위험.
+- [Idle 기술 사전조사 보고](../../Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md), 커밋 104e005952ba833e4eafa7d44333410ebe721180. 아트 담당의 GitHub 원격 확인 기록이지 Codex 로컬 구현·Unity 실측 기술 계약 완료가 아님.
+- Codex가 별도 codex/작업명 로컬 worktree에서 4프레임 전용 strip/Import PPU·Pivot·실효 UI 크기/신규 Scale과 field sorting·collider 계약을 잠가 기획/아트 담당에 인계한 후에만 Idle 파일럿 PNG 제작. Main, F1/서릿길 마을, 승인 캐릭터, Unity/Save 변경 금지.
