@@ -46,3 +46,12 @@
 - **확인된 직접 장애:** 진단 시 입력한 KEY1이 Google API 인증에서 거절됨. 따라서 KEY1의 유효성/활성 상태/복사 완전성/Google AI Studio 발급 내역을 점검해야 함. 사용자가 이전 TTS 샘플 호출에 입력한 키와 이 진단 입력 키가 동일했는지는 현재 로그만으로 확정하지 않음.
 - 프로젝트 ID(`gen-lang-client-...`)와 실제 API Key를 혼동하지 말 것. 비밀키는 채팅·문서·로그·스크린샷에 노출하지 말고, 실제 `https://aistudio.google.com/api-keys`에서 확인한 Key로 `model-info` 재검증. `model-info` PASS 확인 전 `diagnose-one`/`sample`/HOLD 삭제/키 임의 변경에 의한 재생성 금지. KEY1 유효해진 뒤 기존 HOLD를 보존한 상태로 원인별 후속 결정.
 - 실제 새 WAV0, 사용자 로컬 HOLD 보존, Unity0, GitHub main 변경0. 모델 음색 불안정 문제와 이번 명확한 API 키 인증 거절은 **별도 이슈**로 구분.
+
+
+## 2026-10-20 추가 화면 — 유효 API 키로 모델 조회 성공
+
+- 같은 `model-info` 진단에서 최초 두 번은 HTTP400 `API key not valid` 반환, **이후 사용자가 다시 입력한 키로 `[MODEL GET OK] generation request 0`, `models/gemini-3.8-flash-tts`, methods=`generateContent,countTokens,batchGenerateContent` 출력**.
+- 그러므로 **최종 입력 키는 Google 모델 메타데이터 조회에 사용 가능한 유효한 인증키임을 확인**. 최초 TTS POST HTTP400의 상세 본문은 당시 기록되지 않아 그 원인 자체는 여전히 미확정. `MODEL GET OK`가 실제 음성 `generateContent` 성공을 보장하지는 않음.
+- 이후 사용자가 기존 `sample --confirm-free`를 시도했으나 기존 `HOLD/lock`으로 `[BLOCKED]` 처리됨. 의도된 중복 재호출 방지; HOLD를 수동 삭제하지 말 것.
+- **다음 권장 단계는 이미 만든 독립 진단 스크립트의 `diagnose-one` 정확히 1회 실행**(Google Project+모델 실제 무료 잔여량 확인, 해당 성공한 키 재사용, `FREE`·`DIAGNOSE` 수동 승인). 기존 `HOLD/lock` 불변, 독립 폴더에 1회 요청 결과+HTTP 상세 또는 1개 청취용 WAV를 보존하고 자동 후속 호출0. 
+- `diagnose-one` 실행 결과가 오기 전 기존 `sample` 재실행/lock 삭제/다른 키로 무작정 재호출 금지. 실제 추가 TTS 생성 호출0 상태에서 화면 판독만 수행. 기존 Unity 및 WAV 변경0.
