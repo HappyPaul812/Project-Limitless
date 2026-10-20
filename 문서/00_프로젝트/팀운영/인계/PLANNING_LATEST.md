@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 Sample3 대표 미술 승인, 잔여 아트 Phase2 착수
+
+바울 대표: OverlayFix v2 Codex 격리 GameView 3화면·Delta17PASS/0FAIL 보고 후 **“봤는데 좋아.”** 사용자 미술 승인. 합격 PNG는 BaseGround v1 `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, CrackedOverlay v2 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, ObsidianSlab v1 `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`. 이전 오버레이 v1·Field09 최소보완 v1/v2 시각FAIL은 이 승인에 포함하지 않음. 기존 3종 재제작/변경 금지. **샘플 승인 ≠ 전체 Field09 완료 ≠ 원본디스크/remote main 적용.** 현재 고립된 Unity 시각QA PASS, 원본 적용0.
+
+승인·후속 정본 `문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md` (`docs/planning` commit `05cbec14fb50503637abe48ee01baff5ea3b9af7`). 수정 이슈 [#37](https://github.com/HappyPaul812/Project-Limitless/issues/37) 완료 처리, 잔여 환경 Phase2 [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 별도 개설. 리뉴얼 담당은 실사용 나머지 6소품 후보 KEEP/REDESIGN 판정 후 필요한 것만 새 오리지널 PNG·ZIP/QA로 납품; `Ground_Cracked_02` 미사용 시 HOLD. 처음에는 대표 타입 2~3개 보수적 시각 샘플 우선, 나머지 무분별 양산 금지. Codex는 새 납품에서 이전 Sample3 Delta17/Main18 92를 반복하지 않는 좁은 QA만 수행. Chapter3 신규 아트·BGM 별개 진행, TTS/SFX/영상 대기.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 메인 아트 파일럿·BGM 2곡 보고 검토
 
 바울 대표가 F: 드라이브의 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 납품 경로를 공유하고 BGM 최신 보고도 확인 요청. `docs/art-new`의 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`와 `docs/bgm`의 `Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md` 독해: 신규 아트 PNG12(북부 F1 6·서릿길 마을4·KeyArt2) 21항목 ZIP SHA256 `6a22ac4e...`, 기술 PNG/ZIP 오프라인 PASS 보고, **원본 Windows ZIP은 이 기획 세션에서 직접 열거나 눈으로 미술 검수하지 못했으며 Unity 기술 Import·사람 미술 승인 대기**. ZIP/PNG GitHub 바이너리 미등록. 제작법은 Pillow 결정론적 픽셀드로잉이며 기존 Chapter2 스타일/월드사이즈와 실제 비교 필요. BGM 곡2: F1 `Where_the_Grass_Bends.mp3` 74.24s, 마을 `Hearth_in_the_Low_Valley.mp3` 72.62s, BGM 담당자가 각각 곡 역할/구성 PASS 추천; 다만 둘 다 처음·끝 무음/종지로 **원본 MP3 무편집 직접 Loop는 FAIL**, 사용자 청취 승인 전. 실제 MP3는 다른 BGM 세션 업로드에 있어 이 기획 세션이 독립 청취한 것이 아님. Unity 음원 적용0. 구체 내용 `문서/00_프로젝트/Chapter3_ArtF1_BGM2_Pilot_Review_Gates_20261020.md`, `docs/planning` 커밋 `1e79835340dd3ee76909a39e4dac047aba522500`.
