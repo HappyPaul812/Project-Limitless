@@ -55,3 +55,12 @@
 - 이후 사용자가 기존 `sample --confirm-free`를 시도했으나 기존 `HOLD/lock`으로 `[BLOCKED]` 처리됨. 의도된 중복 재호출 방지; HOLD를 수동 삭제하지 말 것.
 - **다음 권장 단계는 이미 만든 독립 진단 스크립트의 `diagnose-one` 정확히 1회 실행**(Google Project+모델 실제 무료 잔여량 확인, 해당 성공한 키 재사용, `FREE`·`DIAGNOSE` 수동 승인). 기존 `HOLD/lock` 불변, 독립 폴더에 1회 요청 결과+HTTP 상세 또는 1개 청취용 WAV를 보존하고 자동 후속 호출0. 
 - `diagnose-one` 실행 결과가 오기 전 기존 `sample` 재실행/lock 삭제/다른 키로 무작정 재호출 금지. 실제 추가 TTS 생성 호출0 상태에서 화면 판독만 수행. 기존 Unity 및 WAV 변경0.
+
+
+## 2026-10-20 최신 — diagnose-one 신규 WAV 1개 저장 성공, 세린 청취 불합격
+
+- 사용자 PowerShell 화면에서 LIMITLESS_TTS_400_Diagnose_20261020.py diagnose-one을 통해 KEY1, FREE, DIAGNOSE 확인 후 Main20 main20_confront_serin_01 / Schedar / gemini-3.8-flash-tts 동일 요청 1회 전송, [SUCCESS] WAV 1개 별도 저장, [SAVED REPORT] F:\Downloads\Voice\Limitless_TTS_Today20_400Diagnostic_20261020\result.json 확인. 추가 요청0, 원래 HOLD/lock 보존.
+- 바울 대표 직접 청취: “세린인데 남자..;;” — USER_LISTENING_FAIL / MALE_TIMBRE_REPRODUCED. API 호출 및 WAV 저장 성공은 캐릭터 음색 QA 성공이 아님. 이번 신규 WAV는 Unity 적용 금지.
+- 이번 화면까지 관측된 생성 POST는 최초 HTTP400 실패1 + 독립 진단 성공1 = 2회 시도, 성공1. 정확한 Google 무료 RPD 차감 수는 미확인. 모델 메타 정보 GET은 TTS 생성이 아님.
+- 기존 Schedar로 같은 문제가 재현되었으므로 무작정 잔여8+회 연속 재생성 금지. 전역 보이스 ID 임의 교체 금지; Main18 승인된 세린 WAV10, 기존 Main20/21 원본17, 사용자 Save/Unity/HOLD 보존.
+- 기존 HTTP400 최초 오류 본문은 당시 로그에서 복원 불가. 인증 성공 후 음색 문제는 별도 품질 이슈. 추가 제작 계획은 원래 정상 WAV/실제 Request 비교 및 사용자 음색 방향 승인 후 재결정.
