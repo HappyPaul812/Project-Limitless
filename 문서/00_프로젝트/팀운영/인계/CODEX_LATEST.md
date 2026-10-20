@@ -1,3 +1,17 @@
+## 2026-10-20 EOD 완료 — PR41 병합 / 원본 SYNC_COMPLETE
+
+[PR #41](https://github.com/HappyPaul812/Project-Limitless/pull/41) 승인 통합 main **`db242b77377b7c2ec08664f102b1a6bab0b3ffb3`**, 통합 head `ccad0344dacf647bd2c3530d2284783e24e7f784`. 완료 증거 작성 시 **GitHub main=origin/main=원본 local main**, index=HEAD 및 stage0 직접 확인. 후속 완료문서 PR 이후의 최종 SHA는 원본 `Temp/EOD20261020/OriginalLocalSync_Proof.json`에서 재확인합니다.
+
+Field09 승인5종+B파생Glow 제품14파일 정식 통합·원본 디스크 동기화. Scene Sprite참조6개 외 차이0, 공식Glow PNG/meta/GUID·Transform/Sorting/Collider·Main18/Save코드 보존. Chapter3 승인1포즈·Idle PNG4는 Unity밖 승인참조로만 보존, 게임연결0. 담당 문서 파일별 선별·의미병합/기존 main 이력 유지. EOD최소 정적13+격리Unity11=24PASS0FAIL, 기존39/14/34/과열UI10 재사용·전체회귀0, 원격CI등록0·충돌0.
+
+904파일188,454,129bytes 검증백업, 보호기준6,558SHA 중 승인된기존파일8개갱신 외 비인가변경0·사용자904SHA불일치0. tracked dirty308/untracked548/staged0 및 status바이트 그대로. Save/UserData/개인Settings·원본Editor Bootstrap/PlayOFF/비포커스 보호. reset-hard/clean/stash/force/main직접Push0. 원본 자연Import·손플레이 NOT_VERIFIED, Search/URP OPEN.
+
+**내일:** 서리들쥐 전투Fixv2(518d210a)는 별도보관·QA/대표미술승인대기, 변경셀/Idle연결만 검수. 미승인F1/마을환경·BGM미완료루프·TTS/SFX/영상·Field09실패자산 제품제외 유지. BGM루프·권리확인, 잔여Field09/Chapter3정식구현은 별도승인.
+
+[완료 보고](EOD_ApprovedIntegration_LocalSync_20261020.md) · [동기화 증거](Evidence/EOD20261020/OriginalLocalSync_Proof.json) · [보호 증거](Evidence/EOD20261020/UserOriginalProtectionProof.json)
+
+## HISTORY — 아래는 EOD 실행 전 준비 기록
+
 ## 2026-10-20 EOD 승인분 통합 — 최소 QA 완료 / PR·원본 동기화 진행 중
 
 Field09 승인 환경5종+B파생Glow 제품14파일만 선별: PNG6 신규/meta/폴더meta +Scene Sprite참조6개. 공식Glow PNG/meta/GUID 및 Transform/Sorting/Collider/Quest/Save코드 불변. 기존39PASS·Idle14PASS 재사용, EOD 정적13+격리Unity11=24PASS0FAIL. Chapter3 승인1포즈·Idle4PNG는 Unity밖 `아트/몬스터/Chapter3/ApprovedReference`에 참조보존·게임연결0. 담당 문서는 파일별 선별/의미병합, 기존 main 고유 이력 보존.

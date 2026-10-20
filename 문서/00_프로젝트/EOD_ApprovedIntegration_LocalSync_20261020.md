@@ -2,7 +2,7 @@
 
 ## 실행 상태
 
-**PRE_MERGE_DELTA_QA_PASS / PR_PENDING / ORIGINAL_SYNC_PENDING**. 이 문단 작성 시점에는 main 병합과 원본 동기화가 완료되지 않았습니다. 완료 후 PR/최종 SHA 증거를 추가합니다. [Issue40](https://github.com/HappyPaul812/Project-Limitless/issues/40) 및 EOD 안전 계약에 따라 실행합니다.
+**MERGED / ORIGINAL_SYNC_COMPLETE / USER_FILES_PRESERVED**. [PR41](https://github.com/HappyPaul812/Project-Limitless/pull/41)을 `db242b77377b7c2ec08664f102b1a6bab0b3ffb3`으로 병합했고 원본 fast-forward 및 HEAD/index/원격동일·사용자SHA 보존을 실제 확인했습니다. [Issue40](https://github.com/HappyPaul812/Project-Limitless/issues/40) 및 EOD 안전 계약에 따라 실행합니다.
 
 ## 통합 범위
 
@@ -35,3 +35,14 @@ Batch는6000.6.5f1로 실행했습니다. 추적 ProjectVersion6000.5.7f1은 보
 3. Field09 잔여환경 및 Chapter3 정식구현은 별도 승인 범위로 유지.
 
 [최소 QA](Evidence/EOD20261020/IntegrationDeltaQA.json) · [선별 문서](Evidence/EOD20261020/DocumentMergeInventory.json) · [백업 요약](Evidence/EOD20261020/BackupSummary.json) · [아카이브](Evidence/EOD20261020/ArchiveManifest.json)
+
+
+## 실제 완료 증거
+
+- 기능 PR41 병합 SHA `db242b77377b7c2ec08664f102b1a6bab0b3ffb3`, 원본 동기화 검증 시점 local main=origin/main=GitHub main 동일. 승인 통합158파일/제품14파일, 원격 mergeable=true·등록CI status/check-run0 확인 후 예상head를 고정해 squash 병합했습니다.
+- 기존 원본 파일6558개 중 승인된 Scene/문서8개 갱신, 나머지 비인가 변경0. **백업 사용자904파일은 모두 SHA일치**, dirty308/untracked548/staged0·status바이트 보존, 안전 fast-forward 리허설 및 실제 원본 동기화 성공. 강제 index변경/restore/reset/clean/stash0.
+- 백업·참조/대기ZIP은 `Temp/EOD20261020`에 로컬보존. 백업 원문/개인UserData/Library는 PR에 업로드하지 않았습니다. 승인참조4PNG만 Unity밖 아트 트리에 보존했습니다.
+- 제품 변경 후 원본 Editor는 여전히 Bootstrap/PlayOFF/비포커스이며 강제 Refresh/Play/Scene전환0. 실제 자연Import·사용자손플레이는 별도 미검증입니다.
+- 이 완료 기록을 문서 전용 PR로 병합한 뒤 마지막 동기화를 한 번 더 수행합니다. 자기 자신의 병합SHA를 미리 쓰지 않으며, **최종 SHA의 정본은 원본 `Temp/EOD20261020/OriginalLocalSync_Proof.json`의 마지막 검증값**입니다. 이 문서에 실린 증거는 PR41 동기화 확정 시점의 불변 스냅샷입니다.
+
+[PR41 동기화 스냅샷](Evidence/EOD20261020/OriginalLocalSync_Proof.json) · [사용자 보호](Evidence/EOD20261020/UserOriginalProtectionProof.json) · [실제 리허설](Evidence/EOD20261020/SimulationResult.json)

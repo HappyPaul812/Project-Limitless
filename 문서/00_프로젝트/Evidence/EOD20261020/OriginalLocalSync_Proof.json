@@ -1,0 +1,35 @@
+{
+  "status": "SYNC_COMPLETE",
+  "verified_at_utc": "2026-10-20T12:31:03.041849+00:00",
+  "feature_pr": 41,
+  "feature_merge_sha": "db242b77377b7c2ec08664f102b1a6bab0b3ffb3",
+  "github_main": "db242b77377b7c2ec08664f102b1a6bab0b3ffb3",
+  "origin_main": "db242b77377b7c2ec08664f102b1a6bab0b3ffb3",
+  "local_main": "db242b77377b7c2ec08664f102b1a6bab0b3ffb3",
+  "index_equals_head": true,
+  "backup_files": 904,
+  "backup_bytes": 188454129,
+  "protected_baseline_files": 6558,
+  "authorized_existing_updates": [
+    "Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity",
+    "문서/00_프로젝트/CURRENT_STATUS.md",
+    "문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md",
+    "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md",
+    "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md",
+    "문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md",
+    "문서/03_스토리/Chapter3_Main23_24_북부탐험_첫눈_한기_연결기획_v1_20261014.md"
+  ],
+  "unauthorized_changed_files": [],
+  "user_file_sha_mismatch": [],
+  "tracked_dirty": 308,
+  "untracked": 548,
+  "staged": 0,
+  "dirty_untracked_status_bytes_unchanged": true,
+  "editor_operated": false,
+  "natural_import_handplay": "NOT_VERIFIED",
+  "delta_QA": {
+    "pass": 24,
+    "fail": 0
+  }
+}
