@@ -357,3 +357,14 @@
 - [캐스팅 1차안/스타일/샘플 원문/승인게이트](../../TTS_세린_태온_리캐스팅_1차안_20261020.md). 공식 Gender https://docs.cloud.google.com/text-to-speech/docs/gemini-tts, Voice traits https://ai.google.dev/gemini-api/docs/speech-generation. 확정이 아니라 **실제 사용자 청취 전 제안**.
 - 시험은 Main20 세린 `main20_confront_serin_01`과 Main21 태온 `main21_route_taeon_01`의 **최우선 후보 1대사씩 최대2회**부터, Google 프로젝트·모델 무료 잔여량/요금 확인 후만 제작. 후보 WAV 청취 승인 전 전역 Voice Registry나 Unity 변경 금지; 보조후보 무단 일괄 시험 금지. 사용자가 원하는 일관성 때문에 최종 2인 VoiceID가 승인되면 두 인물의 **전 챕터** 재제작 범위를 별도 설계하며 폴·미엘·레온·내레이터를 건드리지 않음.
 - **이번 턴: 문서화/후보 선정만, 실제 TTS API0·신규 WAV0·Unity0·삭제0**. 기존 Main18 사용자 승인 세린10/Main08 태온 정상 WAV/모든 기존 입력·출력 WAV·HOLD·Save 보호. TTS 담당 스크립트 제작, Codex는 최종 승인 WAV의 Unity 연결만 수행.
+
+
+## 2026-10-20 최신 — 하렌 추가, 3인 대사량 실제 Unity/Manifest 집계 및 소량 우선순위
+
+- 사용자: “이왕 캐스팅 하는거 하렌도 하고. 또 태온 세린의 대사량 알려줘. 적은 개수 먼저 바꾸게.”
+- GitHub main `Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset` **290개 엔트리 전체 파싱/ID 중복0**, Main20 CSV/Main21 JSON VoiceExpected 대조.
+- **하렌 0 Unity+3 Main21=총3개**, **세린58 Unity+5 Main20+4 Main21=총67개**, **태온82 Unity+3 Main21=총85개**. 합계 현재 등록140+미등록15=155개 재제작/신규 작업 대상. Chapter3 미확정 대사는 제외, 일부 Main20/21 WAV 후보는 이미 만들었으나 새 캐스팅 기준에서 재제작 대상. 현재 적용된 WAV 숫자와 전 챕터의 향후 확정 대사량은 별개.
+- **추천 작업 순서: 하렌3 → 세린67 → 태온85**. 먼저 새 Voice ID의 첫 샘플 한 대사 사용자 청취 확인, 후속 대사 수동 진행, 한 캐릭터의 과거/현재 목소리가 Unity 안에서 섞이지 않도록 최종 승인 후 별도 Codex 교체.
+- 하렌 캐스팅 1순위 `Alnilam` (Male/Firm), 차선 `Algenib` (Male/Gravelly). 태온 친형·시각의 길 투사·무뚝뚝하고 보호적·깊은 정, 레온 Orus 등 기존 인물과 중복 청취 확인. Main21 정확 원문 3개: `main21_haren_haren_01`/02/03. 미래 Main29 “잘.했.어.”는 확정 Dialogue ID가 아니므로 현재 3개에 미포함·선제녹음 금지.
+- 세린 1순위 `Erinome` Female/Clear, 차선 `Despina` Female/Smooth. 태온 1순위 `Algieba` Male/Smooth, 차선 `Iapetus` Male/Clear (하렌 Alnilam과 VoiceID 중복 방지). 모두 실제 한국어 음성 청취 전 **후보/미승인**.
+- 정본: [TTS 세린·태온·하렌 3인 캐스팅 및 대사집계](../../TTS_세린_태온_하렌_캐스팅_대사집계_20261020.md). GitHub [Issue20](https://github.com/HappyPaul812/Project-Limitless/issues/20). 실제 신규 API 호출0/WAV0/Unity0, 모든 원본/HOLD/Save/기존 승인 음성 보호.
