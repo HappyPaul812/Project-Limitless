@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Field09 Phase2 신규 소품 2종 실제 납품 — 최신 결정/승인 상태
+
+- [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 및 기획 `docs/planning/문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md`: **승인된 Base Ground v1/Cracked Overlay v2/Slab v1 절대 수정 금지**. 실제 SHA256 재확인 3/3 PASS (`1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`).
+- 실제 Scene `Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity` 및 공식 원본 PNG6종 육안 확인 후 분류: **AshPatch KEEP 후보**, **Cliff Blocker와 Fissure Edge REDESIGN 이번 Pilot**, FissureGlow·HeatVent·Spire **REDESIGN 필요/HOLD 다음 묶음**. 분류/Renderer 실제 position/scale/sorting CSV는 ZIP에 포함. Cracked02 미사용 HOLD.
+- 신규 `512x512 RGBA` PNG 실제 제작2: `LL_Field09_Phase2_Cliff_Blocker_v1.png` SHA256 `2e7a863547688773dbb3d6672623e0958fbab01c8241d2665d8739a0777a231c`, `LL_Field09_Phase2_Fissure_Edge_v1.png` SHA256 `7c892de74b1f3327b37f4fb3ff7673954d64542498b32f6ab76826e6ca53b1d0`. 새 원화에서 개별 원본 투명 PNG2로 추출. 합격3종 수정0.
+- ZIP **`Limitless_Field09_Redesign_Phase2_Pilot_v1.zip`** (실제 ChatGPT sandbox 파일, 1,672,537 bytes, 9 entries, SHA256 **`f12b056924665eeb593d084d5a5b73ba67a1a3a335d2bd9f882a547e5b8a7ff6`**). ZIP CRC/testzip PASS, PNG2 decode/RGBA/알파/가이드선/고립픽셀 오프라인 PASS, Manifest/승인3종 해시 PASS. 승인3과 시각비교/오프라인 합성 Preview + Role/Renderer CSV 포함. **실제 Unity 시각 PASS 아님; 외곽 매트/겹침 검증 필요**.
+- **GitHub에는 보고서만 커밋**(현재 대화 ZIP 바이너리 GitHub 업로드0/사용자 F: 자동저장0). 보고서 [Field09 Phase2 Pilot v1](../../Field09_Redesign_Phase2_Pilot_v1_ActualArt_Delivery_20261020.md), 최초 문서 Commit `f5cdd9821136b7582558af6af1a08d973d90b3c5`.
+- Codex만 격리 Import/실제 GameView·기존 Glow/퀘스트/과열 델타QA; 기존 승인3 QA17/92PASS 재검증0. 대표 미술 승인 전 다음 묶음 제작/공식 Scene 적용/Push/main 병합 금지. 현재 `PHASE2_PNG2_DELIVERED / OFFLINE_QA_PASS / CODEX_UNITY_QA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED`.
+
+
+
 ## 2026-10-20 Issue #37 Field09 Cracked Overlay 1종만 보완한 v2 실제 PNG/ZIP 납품 (현재 최신)
 
 - **Codex 격리 QA**: Base Ground Visual PASS, Slab Visual PASS — **둘 다 수정0 / SHA v1 그대로**. 유일 FAIL: Cracked Overlay의 오른쪽 x≈-1.5 밝은 균열 직선 절단.
