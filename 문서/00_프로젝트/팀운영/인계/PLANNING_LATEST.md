@@ -1,3 +1,15 @@
+# PLANNING 최신 인계 — 2026-10-20 EOD 선택 병합·원본 로컬 안전 동기화 (진행 요청, 아직 완료 증거 없음)
+
+바울 대표: **“오늘은 그만하자 오늘 작업들 합치고 료컬 동기화.”** 오늘 승인·기술검증된 변경만 새 Codex branch/worktree → PR → main 병합 허용, 이후 사용자 기존 F:\\study\\codex\\Project-Limitless 원본 local 보호 동기화 지시. 기획세션 GitHub만 작성 가능하며 **직접 F: 실행/PR병합/원본 sync 완료 상태가 아님**. GitHub remote main 마지막 확인 `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` (어제 PR27/28 최종), 열린 PR0 (오늘 신규 EOD 실행 전).
+
+**통합 1순위**: Field09 Sample3 승인 BaseGround/CrackedOverlayv2/Slab, Phase2 격리 PASS Cliffv2/FissureEdgev2 및 바울 대표 미술 승인 B 파생 Glow. `codex/field09-derived-glow-b-integration-20261020` `77978aa1`→`913eceb7`→`b04c42e7`, 격리 Unity39PASS/0FAIL, 원본 공식 Glow/meta/GUID 보존, sprite reference1. 아직 원본 local/remote main 적용0. Field09 전체 환경 나머지 소품 별개.
+
+**Chapter3 1포즈 2종/Idle2**: 사용자 미술 긍정·Codex14PASS, 해시 기준 참조 보존, Main22 구현/몬스터런타임 자동 적용 금지. 마지막 신작 `F:\\Downloads\\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip` SHA `518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3`는 **오프라인 CRC/프레임QA만** 되었고 **Codex 실제 v2/사용자 최종 미술 승인 미실시**, 내일 시각 Delta검수 전 공식게임/main 제품 적용 금지. 기존 v1 Attack/Hit/Idle 색감 시각 FAIL. F1/마을 env Pilot 10 png 미승인 게임 적용 보류. BGM 두 데모곡 사용자 “좋고” 곡분위기 긍정·loop edit 미완료라 product audio 연결금지. TTS/SFX/영상 기존 보류.
+
+**실행 계약** `문서/00_프로젝트/LIMITLESS_20261020_EOD_ApprovedMerge_OriginalLocalSync_SafetyContract.md` (`docs/planning` commit `ffcf8a2d64131d22398772e6a58f50a77897692b`); Codex 실행 [Issue #40](https://github.com/HappyPaul812/Project-Limitless/issues/40). 담당 문서 브랜치 전체 merge 금지, selected files/history 유효한 부분 의미 병합. 사용자 원본 dirty/untracked/Save/UserData/Editor·공식 PNG/meta SHA 보호 백업 없으면 STOP. 정상 main PR merge + remote/origin/local main HEAD/index·원본 SHA 실측이 모두 합격할 때만 `SYNC_COMPLETE` 출력, 안되면 정확히 `SYNC_SAFE_BLOCKED`로 기록. 이전 QA 재실행 남발 금지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 서리들쥐 A 전투 3 Strip v1 기술36PASS, 시각 FAIL/HOLD, 3종 표적수정 발주
 
 바울 대표 Codex 비교 캡처: 동일 전투 UI 배율 Idle00·Attack02·Hit01·Defeat03를 112px로 비교; ZIP/PNG 규격 PASS, 격리 Unity 모션 상태전환 36PASS/0FAIL, 그러나 미술 Attack FAIL/Hit FAIL/Defeat HOLD/Idle 일관성 FAIL. Codex `codex/chapter3-mouse-combat-v1-review-20261020` QA `da55fe6e` 인계 `036037e8`; ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`.
