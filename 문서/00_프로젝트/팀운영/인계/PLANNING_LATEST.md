@@ -1,3 +1,11 @@
+# 기획 최신 인계 — 2026-10-20 Field09 Phase2 Pilot v1 기술 PASS / 실화면 시각 FAIL 2종
+
+바울 대표 Codex 검사 결과: `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_v1.zip` (SHA `f12b0569...`) ZIP/PNG/Manifest PASS, 격리 Delta30PASS/0FAIL/3 GameView. 그러나 **Cliff**는 가이드 삭제 후에도 하단 회백색·홍흑색 매트와 접지 오류, **Fissure Edge**는 외곽 매트와 기존 Glow 위 붉은 띠 노출·형태 불일치로 시각 FAIL. Codex QA `f2ad1781`, 인계 `89319b10`. 기존 승인3 PNG SHA 동일, 원본 3546/Save/UserData 보호, 공식 원본 적용·Push/main병합0. 기획 문서 `문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md` (`docs/planning`, commit `6e5e645cee5aed53db0152ace0a3623444cd2f4e`), Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 댓글 반영.
+
+다음은 **리뉴얼 담당이 Cliff/Fissure 두 신규 PNG만 매트 제거·자연스러운 접지·기존 Glow와 형상 정합**으로 v2 제작해 실제 ZIP/SHA/합성 Preview 제출. **기존 Glow는 임의 수정 금지**, 변경 없이는 안 되면 사용자 승인을 위한 별도 원인분석 보고. 기존 승인3/나머지 소품/Cracked02 보호, Phase2 전체 양산 HOLD. 실제 v2 납품 이후 Codex는 2개만 시각 Delta QA(기존30/17/92 재활용)→대표 미술 확인 후 다음 Phase. Chapter3 신규 아트 재작업 별도 담당 docs/art-new, BGM 승인 별개.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A/설빙의 폭군 B 1포즈 시각 HOLD
 
 바울 대표 Codex 정적 실제 게임UI 배율 비교 QA 보고: ZIP·PNG 구조 PASS, 그러나 **1포즈 미술 수정 권고·합격 보류**. 서리들쥐 A Source75×49→x3 Nearest로 둥근 마스코트 실루엣/128px 야생성·앞니·꼬리 미약; 폭군 B Source142×121→x3 Nearest로 두개골·뿔은 보이나 흉곽/발톱 조형 밀도 낮고 Ch2 승인 보스의 체급·위압과 불일치. Codex QA commit `d2893591`. 바울 대표가 이전에 선택한 **고해상도 디자인 방향 A·B 자체는 유지**, 픽셀아트 1포즈 v1을 자동 승인하지 말 것. 메인 아트 담당에게 **2장만 1포즈 진짜 세부 픽셀 신규 드로잉**(기존 source 단순 확대·56색 자동양자화 재포장 금지) 후 128px 및 Ch2 공식 렌더 배율 비교판 제출 요청. 기존 F1·서릿길 마을 환경10종 보호, 7종 몬스터 전체 애니메이션/Unity 구현/Push/main 병합0.
