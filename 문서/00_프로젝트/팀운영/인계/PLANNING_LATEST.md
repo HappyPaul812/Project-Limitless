@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A / 설빙의 폭군 B 1포즈 v2 미술 승인
+
+Codex QA 스크린샷: ZIP/CRC/Manifest/PNG2 PASS, 동일 Chapter2 공식 몬스터/보스 표시 비교에서 서리들쥐A=PASS(128px 꼬리/앞니/발톱·긴장 체형), 설빙의 폭군B=PASS(큰 앞손/흉곽/보스 체급·위압), 이전 v1의 3배 확대 한계 해결 권고. Codex 검수 `codex/chapter3-ab-v2-art-review-20261020`, QA `3f23d1b4`, 인계 `7f9ca843`. 바울 대표가 보고 **“좋네”** → **고해상도 A/B 방향 및 재작업 1포즈 v2 PNG2 미술 승인으로 기록**. 미술 수작업 드로잉의 제작 소스는 독립 검증 불가능하다는 기술 caveat 보존.
+
+승인 실물 `F:\Downloads\Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip`, SHA256 `0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919`; PNG A `0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2`·PNG B `f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830`. 기획 승인 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_ArtRework_v2_UserApproval_20261020.md` (`docs/planning`, commit `f828f4d271a50ea6ab5c583b5c8c56db23fef8d9`) 및 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 업데이트. **1포즈 자체만 승인**이며 기존 v1은 ART_HOLD; F1/마을 환경 PNG10·전투 애니메이션/스탯/Runtime/Unity scene/Push/main병합은 별도 미승인. 다음은 기존 Animator/PPU/Pivot/Frame 계약 실측 후 승인된 2캐릭터의 Idle 짧은 파일럿 제작·검수 단계만 발주 검토. Chapter1·2 Field09 리뉴얼 수정과 업무 분리. TTS/SFX/영상은 바울 대표 보류.
+
+---
+
 # 기획 최신 인계 — 2026-10-20 Field09 Phase2 Pilot v1 기술 PASS / 실화면 시각 FAIL 2종
 
 바울 대표 Codex 검사 결과: `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_v1.zip` (SHA `f12b0569...`) ZIP/PNG/Manifest PASS, 격리 Delta30PASS/0FAIL/3 GameView. 그러나 **Cliff**는 가이드 삭제 후에도 하단 회백색·홍흑색 매트와 접지 오류, **Fissure Edge**는 외곽 매트와 기존 Glow 위 붉은 띠 노출·형태 불일치로 시각 FAIL. Codex QA `f2ad1781`, 인계 `89319b10`. 기존 승인3 PNG SHA 동일, 원본 3546/Save/UserData 보호, 공식 원본 적용·Push/main병합0. 기획 문서 `문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md` (`docs/planning`, commit `6e5e645cee5aed53db0152ace0a3623444cd2f4e`), Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 댓글 반영.
