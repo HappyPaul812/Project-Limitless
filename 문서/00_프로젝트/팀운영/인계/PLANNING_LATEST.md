@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Codex 서리들쥐 A 전투3 Strip 규격확정, 메인아트 실제 제작 착수
+
+바울 대표 Codex 보고: 기술 검증 PASS, branch `codex/chapter3-mouse-combat-contract-20261020`, 제작계약 commit `ad9e4b46`, 인계 `13178071`, 기존 Chapter2 몬스터정의8종/관련 코드6종·승인 Mouse PNG SHA 대조 PASS. **4×4/PPU314 임시안 폐기, 독립3 Strip으로 확정**. Attack(앞발 할퀴기→Idle), Hit(피격반응→Idle), Defeat(마지막03 유지) 각 **2048×512 RGBA 4×512 셀 가로**, **8FPS**, **PPU512/Pivot하단중앙(0.5,0), VisualScale1/우향1종·기존 좌우반전**. 기존 Mouse 승인 Idle 원본 SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2` 바이트 동일 재사용, 보스 B/Field09 포함 타 신규 작업 금지.
+
+메인 아트 담당 `docs/art-new`는 **지금 바로 신규 PNG Attack/Hit/Defeat 총3장만 제작**; 4프레임별 컨택트시트/8FPS 반복미리보기/128px 비교/Manifest·SHA/ZIP CRC 동봉 실파일 납품→그때 Codex 독립 Unity 모션/Idle복귀/사망고정 최소 QA→바울 대표 최종 미술 승인→정식 전투 몬스터 등록/원본 Unity 적용 별도. 이번 Codex 기술보고는 Unity 실제 몬스터 기능 구현 또는 새 PNG 완성이 아님, Save/UserData/Editor/원본3546 보호 및 Push/main병합0.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md` (`docs/planning` commit `079e1e8bfc5cc0b35a53de228e9b9122ac31df53`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 신규 댓글. 메인 아트 담당 세션에 복붙 지시 1회 전달 필요, **Codex에게 같은 조사 중복 발주 금지**. Field09 B Glow 격리통합39PASS/0FAIL·원본적용 PR승인 대기 별개.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A 전투 스프라이트 제작 우선
 
 바울 대표: 두 Idle v1의 Codex Unity14PASS/0FAIL 보고 뒤 “좋은데. 전투 스프라이트는? 쥐는 빨리 만들어야지 되는거 아냐?” → **서리들쥐 A를 Chapter3 첫 전투 몬스터로 우선**. 메인 아트 담당에게 곧장 임의 4x4를 그리게 하지 않고 **Codex 기존 MonsterDefinition/MonsterSpriteSheetAnimation/Ch2공식 시트/전투 UI를 읽어 최종 Attack/Hit/Defeat 계약**(시트 또는 독립 strip, spriteRects, 4프레임/FPS·재생/복귀·명시적 frames, PPU512/Pivot 하단중앙·발 접지·scale) 확정 지시 후 실제 쥐의 나머지 전투 3모션만 빠르게 발주. 기존 승인 Mouse 1포즈 SHA `0516914d...` 및 Idle Sheet SHA `5afebfa1...` 보호, 보스 B 전투3모션은 후순위, 이미 작업 중인 아트 담당에게 Idle 재지시하지 않음.
