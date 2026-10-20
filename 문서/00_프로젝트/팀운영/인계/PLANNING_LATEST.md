@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 Idle 기술 Lock + Field09 Phase2 Fix v2 납품
+
+바울 대표 Codex 캡처: 서리들쥐 A/설빙의 폭군 B Idle 애니메이션 기술 계약 최종 **2048×512 1행×4프레임(각512×512), 8FPS 0.5s loop, PPU512, Pivot(0.5,0) 발 중앙, 우향1, VisualScale A1/B3, UI 실제 알파 실효 A≈102×80/B≈307×305**. Codex `codex/chapter3-ab-idle-contract-20261020`, 계약 `b1793f85`, 인계 `cfed20a8`, 원본 PNG2 SHA 검증·원본 Unity 변경 없음. `docs/art-new/Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md`의 이전 조사값 PPU314·1256×314은 **최종 제작 계약이 아님**. 메인 아트는 기존 승인 1포즈 PNG2 보호, 새 Idle 실제 시트 2장만 제작→비교 미리보기/ZIP QA→Codex 간단 반복 모션 확인→사용자 미술승인. Attack/Hit/Defeat·다른 캐릭터 제작 금지.
+
+동시 `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 리뉴얼 보고 수령. ZIP SHA `0e4b7bfb3784b5b97a4a719c669f9564f502d67e88c2096d32475fa69a6876c8`, Cliff v2 `ad995f3c...`, FissureEdge v2 `c3dc0c13...`. `docs/art-renewal` v2 파일QA PASS지만 **기존 Glow sorting -7이 Edge -8보다 앞에 있어서 붉은 띠 시각 FAIL 가능성 유지**. Codex만 안전 격리 Unity에서 Cliff 발치 매트/Edge 외곽/기존 Glow 겹침 3비율 Delta QA. 시각 Fail이면 코드/Material/Mask 원인 분리, 기존 Glow·승인 Sample3 3종·원본 3546/Save·UserData 보호, 기존 QA30/17/92전수 재실행 금지. Phase2 원본 Unity 공식 적용/main병합 계속 HOLD. 리뉴얼 신규 다른 그림 제작은 결과 전 보류.
+
+기획 실행 정본 `문서/00_프로젝트/Chapter3_Idle2_And_Field09_Phase2Fixv2_Execution_20261020.md` (`docs/planning` commit `79dc53851cf5f462b8f0b3d598c113c919fe768e`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 현재 인계 댓글 기록. 세션 간 자동전달은 아님. 사용자에게 담당별 1개씩 지시문을 복붙하도록 제공. TTS/SFX/영상 기타 제작 보류.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A / 설빙의 폭군 B 1포즈 v2 미술 승인
 
 Codex QA 스크린샷: ZIP/CRC/Manifest/PNG2 PASS, 동일 Chapter2 공식 몬스터/보스 표시 비교에서 서리들쥐A=PASS(128px 꼬리/앞니/발톱·긴장 체형), 설빙의 폭군B=PASS(큰 앞손/흉곽/보스 체급·위압), 이전 v1의 3배 확대 한계 해결 권고. Codex 검수 `codex/chapter3-ab-v2-art-review-20261020`, QA `3f23d1b4`, 인계 `7f9ca843`. 바울 대표가 보고 **“좋네”** → **고해상도 A/B 방향 및 재작업 1포즈 v2 PNG2 미술 승인으로 기록**. 미술 수작업 드로잉의 제작 소스는 독립 검증 불가능하다는 기술 caveat 보존.
