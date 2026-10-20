@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 B 파생 Glow 최종 승인, Codex 격리 Unity 구현 착수
+
+바울 대표가 기획 질문 “B안(별도 파생 Glow)을 최종 미술안으로 승인하시겠습니까?”에 **“승인”** 답변. **B 파생 Glow 미술안 채택/격리 구현·DeltaQA 착수 승인**, A SpriteMask는 PASS 기록만 유지하고 미선택. Codex A/B branch `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`, B 포함 두 안 모두 실 GameView 3비율 시각 PASS·Delta34PASS/0FAIL+과열UI10PASS; 성능은 측정0. 기존 Glow 원본 PNG/meta/GUID 보호·Approved Sample3 Base/CrackedOverlay/Slab + Phase2 Cliff v2/Fissure Edge v2 SHA 보존. **신규 B Glow 별도 asset+GUID를 도입하고 격리 Field09 Scene의 해당 Glow Sprite 참조 최소 교체**; 기존 개별 art asset 조합 시 본게임 공식 Phase2 완성 여부 분리. Codex 별도 `codex/field09-derived-glow-b-integration-20261020` 격리 worktree에서 실제 구현·동일 3 GameView+미니 기능 Delta 검증하되 **원본 PC 에디터/dirty/Save/UserData 및 원격 main 직접 적용/Push/병합 금지**, 보고 후 별도 승인. 원본 Glow 다시 그리기·Mask 추가·리뉴얼 새 그림 보완 불필요. Stage2 다른 환경 소품까지 완성했다는 주장은 금지.
+
+기획 실행 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_UserApproval_ImplementationOrder_20261020.md` (`docs/planning`, commit `afc1425c22f9f7700d787d1ee7fe48918515bd06`). GitHub [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 승인/실행댓글 기록. Codex에 복붙 지시문 1회 전달. Chapter3 메인 아트 Idle2 2048×512 시트 제작은 기존 지시 유지, TTS/SFX/영상 보류.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 Glow A/B 둘 다 실제 GameView 시각 PASS, B 파생 Glow 기술추천
 
 바울 대표 Codex QA 전달: A SpriteMask와 B 별도 파생 Glow 모두 붉은 띠/가이드 제거 PASS, 과열·조사 내부 가독성 PASS, 다른 Renderer 부작용0. B안은 기존 Glow 내부 RGB/필요 Alpha 약99.9% 유지하면서 **추가 Mask가 없어 단순 Sprite 참조 교체만 필요**. 동일 실제 3 GameView, A/B 변경분34PASS/0FAIL 및 공통 과열 위험 UI10PASS. **성능 측정은 하지 않았음**. Codex `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`. 승인 Base/Overlay/Slab + Phase2 Cliff/Fissure 원본, 기존 Glow PNG/meta/GUID, Save/UserData/Editor 보호, 원본 Scene 변경/Push/main병합0.
