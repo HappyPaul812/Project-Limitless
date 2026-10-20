@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-20 최신 — Serin Main16 자동생성 중 HTTP429 / HOLD 잠금 유지 / 다음 PT날짜 수동 안전 재개
+
+- 사용자 실제 에러: `[STOP] main16_canyon_default_serin_01 failed (HTTP_429). HOLD+RUNNING.lock preserved; NO AUTO RETRY.`. 프로그램 안전장치가 의도대로 429에서 정지함. 해당 사용자 로컬 시점 누적 성공건·Google 원격 잔여량은 이 1줄만으로 미확인.
+- Google 공식 정책: 프로젝트당 RPM/TPM/RPD 제한, RPD 태평양 자정 리셋. **HTTP429 정확 원인은 서버 오류 본문이 원 스크립트에서 남지 않아 불명**. 34회는 자체 로컬 예산이지 실제 쿼터 아님. 4키의 SEPARATE 설정도 실제 4프로젝트 소속 검증 결과 미제출.
+- 지금 즉시 사용 가능한 호출0 명령: `python .\Renewal_Auto_TTS.py check`, `Get-Content .\_progress\HOLD.json` (비밀 API.txt 업로드 금지). HOLD/lock 및 실제 로그 수동 삭제·강제리셋 금지.
+- **[HTTP429 안전 복구 정본](../../TTS_RenewalVoices_HTTP429_HOLD_ManualRecovery_20261020.md)** 기록, `LIMITLESS_Renewal_429_Safe_Resume_20261020.zip` 5176bytes, SHA256 `3aa70d65e67a4fe0b74d3039ee6fe16729ff06b59d7c3163ad30e389096af0fb` 사용자 전달. 안의 `Renewal_429_Safe_Resume.py`는 기존 원본 스크립트/키/WAV를 건드리지 않고 inspect와 next-Pacific-day resume만 지원.
+- 설치후 `python .\Renewal_429_Safe_Resume.py inspect` (당장 가능, API0). **최소 다음 PT 날짜 + Google 실제 무료 쿼터/과금 확인 + 사용자 `RESUME429` 직접 입력** 이후에만 `... resume` 실행. 본문 원문/Voice/ID, journal ATTEMPT/FAIL/HOLD/LOCK 일치, 기존 WAV SHA 검증→`_progress/recovery_snapshots/`로 원본 429 증거 SHA 보관 뒤 lock 해제. 현재 날짜/에러 불일치/partial wav면 차단.
+- 잠금 안전 해제 뒤에도 `python .\Renewal_Auto_TTS.py run --max-calls 1` 먼저; 사용자 청취 및 Google 할당량 확인 후 전체 본생산. 재차429면 HOLD 재발, 다음 안내 전 무작정 리셋 금지. 하렌 제외 규칙 유지.
+- 복구도구 직접 제작·Python compile/오프라인5유닛테스트/ZIP CRC PASS, **현재 Gemini live API 호출0/신규 WAV0/Unity0** (사용자 실제 PC에서 실행 필요). `watch`가 Google429 자동 우회하도록 바꾸지 않음.
+
+
 ## 2026-10-20 최신 — 세린67·태온85 전용 4-Key 자동 생성기 배포(오늘 로컬 예산34회)
 
 **이 단락이 과거 세린/태온/하렌 3인 1개 샘플 실험 안내와 하렌 수정 R1 즉시실행 지시보다 우선한다.**
