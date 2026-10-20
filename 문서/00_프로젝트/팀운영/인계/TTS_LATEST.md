@@ -1,5 +1,12 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-20 19:12 최신 사용자 청취 — 하렌 첫 대사 억양만 불합격 / 독립 수정 R1 준비
+
+- 바울 대표 “다 좋고, 근데 하렌 대사가 '아직 멀었어?'가 아니고 '아직 멀었어.'야”. 즉 세린 Erinome/태온 Algieba 한국어 샘플은 긍정 평가, 하렌 Alnilam 기본 음색도 긍정 평가이나 **하렌 `main21_haren_haren_01` 끝이 상승 억양(의문문)**으로 들려 부분 FAIL.
+- 정본 원문은 **`태온. 너 아직 멀었어.` (마침표 평서문)**이며 원문/ID/보이스를 변경할 일이 없다. **정서/운율(말끝 낮춤) 연기 문제**이므로 하렌 첫 대사만 Style을 강화해 1회 재시험, 다른 두 샘플·원본 WAV 재제작 금지.
+- **[하렌 단발 억양 수정 R1 정본](../../TTS_하렌_평서문_억양_수정R1_20261020.md)**. 사용자 다운로드 `LIMITLESS_Haren_Declarative_Retake_R1_20261020.zip` SHA256 `bb4624427859d503477de9f73e4d2cc49c3f7388d6125d88c6dcd32a6e8ab697` (6631bytes), Python+README. `F:\Downloads\Renewal_Voices`에 추가 후 `python .\Haren_Declarative_Retake_R1.py check` → `... retake`, **FREE/YES1** 승인 후 단1개 추가 Gemini POST. 성공 시 `samples/retakes/main21_haren_haren_01__Alnilam_DECLARATIVE_R1.wav` 별도 저장, 옛 `samples/main21_haren_haren_01__Alnilam.wav`와 JSON 및 태온/세린 2개 영구보존.
+- 오프라인 mock/원본 해시/중복생성 차단/HOLD+lock/ZIP 검사 PASS, **실제 API 호출0/새 한국어 WAV0/Unity0** (사용자 실행 전). 최종 사용자 하강 억양 청취 PASS 대기. 추가 캐스팅이나 제작 전량 재개 승인은 별도.
+
 ## 2026-10-20 최우선 — 세린·태온 음색 사고 보고서 및 하렌 포함 3인 캐스팅
 
 **다음 과거 장·시점의 Schedar 유지/“Main18 세린10 재제작 대기” 등의 역사 기록보다 아래 최신 정본을 우선한다.**
