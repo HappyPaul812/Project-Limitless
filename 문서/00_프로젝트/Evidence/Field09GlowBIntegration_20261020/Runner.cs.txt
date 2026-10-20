@@ -1,0 +1,115 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Core;
+using ProjectLimitless.Player;
+using ProjectLimitless.World;
+using ProjectLimitless.UI;
+using ProjectLimitless.Monster;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using Object=UnityEngine.Object;
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>샘플3만 격리 Play Mode에서 바꾸고 같은 카메라의 전후 화면을 기록합니다. 원본 Scene과 저장에는 접근하지 않습니다.</summary>
+    [InitializeOnLoad] public static class Field09MinimalFixVisualAudit
+    {
+        const string Armed="Field09GlowBIntegration20261020";
+        static string Mode=>SessionState.GetString(Armed+"Mode","Before");
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Field09GlowBIntegration20261020/Runtime",Mode));
+        static readonly BindingFlags Flags=BindingFlags.Instance|BindingFlags.Static|BindingFlags.Public|BindingFlags.NonPublic;
+        static readonly List<string> Checks=new List<string>(),Errors=new List<string>();
+        static IEnumerator routine;static double deadline;static Keyboard keyboard;static Gamepad gamepad;
+        static PlayerController Player=>Object.FindAnyObjectByType<PlayerController>();
+        static QuestNavigationPresenter Nav=>Object.FindAnyObjectByType<QuestNavigationPresenter>();
+        static T Get<T>(object o,string n)=>(T)o.GetType().GetField(n,Flags).GetValue(o);
+        static Field09MinimalFixVisualAudit(){EditorApplication.playModeStateChanged+=s=>{if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Armed,false))return;
+            GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));
+            Application.runInBackground=true;AudioListener.volume=0;InputSystem.settings.backgroundBehavior=InputSettings.BackgroundBehavior.IgnoreFocus;InputSystem.settings.editorInputBehaviorInPlayMode=InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+            keyboard=InputSystem.AddDevice<Keyboard>();gamepad=InputSystem.AddDevice<Gamepad>();Application.logMessageReceived+=(t,st,k)=>{if(k==LogType.Error||k==LogType.Exception){Errors.Add(t+"\n"+st);File.WriteAllLines(Path.Combine(Root,"errors.txt"),Errors);}};
+            routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+1800;EditorApplication.update+=Tick;};}
+        public static void RunBefore(){SessionState.SetString(Armed+"Mode","Before");Start();}
+        public static void RunAfter(){SessionState.SetString(Armed+"Mode","Focus");Start();}
+        static void Start(){if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field05Review20261019/Client/Assets"))throw new Exception("격리 Batch만 허용");Directory.CreateDirectory(Root);File.WriteAllText(Path.Combine(Root,"failure.txt"),"");File.WriteAllText(Path.Combine(Root,"status.txt"),"RUNNING");GameSaveService.AuditSaveDirectory=Path.Combine(Root,"Saves");UserSettingsService.BeginAudit(Path.Combine(Root,"Settings"));EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Armed,true);EditorApplication.EnterPlaymode();}
+        static void Check(bool ok,string label){Checks.Add((ok?"PASS|":"FAIL|")+label);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Checks);if(!ok)throw new Exception(label);}
+        static IEnumerator Wait(float s=.15f){float end=Time.realtimeSinceStartup+s;while(Time.realtimeSinceStartup<end)yield return null;}
+        static IEnumerator Load(string scene){if(scene!="Bootstrap"&&scene!="Battle")GameSessionData.RecordLocation(scene,scene=="Field_03"?"Spawn_From_Field02":"");SceneManager.LoadSceneAsync(scene);float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!=scene&&Time.realtimeSinceStartup<end)yield return null;Check(SceneManager.GetActiveScene().name==scene,"Scene."+scene);MonsterEncounterService.SuppressForSeconds(3600);yield return Wait(.4f);}
+        static void Seed(string path){GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"Main09 안내 QA");GameSessionData.SelectPlayerPath(path);GameSessionData.SelectJob("mage");GameSessionData.ConfigureProgress(12,0);CompanionRosterService.UnlockIntroCompanions();QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=QuestCatalog.All.Where(x=>x.QuestId.StartsWith("main_")&&string.CompareOrdinal(x.QuestId.Substring(0,7),"main_09")<0).Select(x=>x.QuestId).ToArray()});GameSessionData.SetPendingSpawnPoint("Spawn_From_Field02");}
+        static void At(Vector2 p){var b=Player.GetComponent<Rigidbody2D>();b.linearVelocity=Vector2.zero;b.position=p;Player.transform.position=p;Physics2D.SyncTransforms();}
+        static IEnumerator Press(Key key){InputSystem.QueueStateEvent(keyboard,new KeyboardState(key));yield return Wait(.09f);InputSystem.QueueStateEvent(keyboard,new KeyboardState());yield return Wait(.09f);}
+        static IEnumerator A(){InputSystem.QueueStateEvent(gamepad,new GamepadState().WithButton(GamepadButton.South));yield return Wait(.09f);InputSystem.QueueStateEvent(gamepad,new GamepadState());yield return Wait(.09f);}
+        static IEnumerator Shot(string name,int width){PlayModeWindow.SetCustomRenderingResolution((uint)width,720,"Main09 background QA");float resizeEnd=Time.realtimeSinceStartup+5;while((Screen.width!=width||Screen.height!=720)&&Time.realtimeSinceStartup<resizeEnd){PlayModeWindow.SetCustomRenderingResolution((uint)width,720,"Main09 background QA");yield return Wait(.25f);}yield return Wait(.5f);Canvas.ForceUpdateCanvases();Check(Screen.width==width&&Screen.height==720,"Capture.Resolution."+name+".Actual"+Screen.width+"x"+Screen.height);ScreenCapture.CaptureScreenshot(Path.Combine(Root,name+".png"));yield return Wait(.35f);}
+        static IEnumerator Views(string prefix){foreach(int width in new[]{1280,960,1680}){yield return Shot(prefix+"_world_"+width,width);yield return Press(Key.Q);Check(QuestLogPresenter.Instance.IsOpen,"Q.LogOpen."+prefix+width);yield return Shot(prefix+"_log_"+width,width);yield return Press(Key.Escape);Check(!QuestLogPresenter.Instance.IsOpen,"Esc.LogClosed."+prefix+width);}}
+        static IEnumerator Continue(string label){string quest=JsonUtility.ToJson(QuestService.ExportSaveData()),party=JsonUtility.ToJson(CompanionRosterService.ExportSaveData());var at=Player.transform.position;Check(GameSaveService.SaveCurrentWorldPosition(at,"Field_03"),"Save."+label);yield return Load("Bootstrap");GameSessionData.Reset();GameObject.Find("StartMenuCanvas/Slot01/Action").GetComponent<Button>().onClick.Invoke();float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!="Field_03"&&Time.realtimeSinceStartup<end)yield return null;yield return Wait(.4f);Check(SceneManager.GetActiveScene().name=="Field_03"&&quest==JsonUtility.ToJson(QuestService.ExportSaveData())&&party==JsonUtility.ToJson(CompanionRosterService.ExportSaveData())&&Vector2.Distance(at,Player.transform.position)<.05f,"Continue.Exact."+label);}
+        static HashSet<Vector2Int> routeAvoid=new HashSet<Vector2Int>();static int routeRetries;
+        static bool Clear(Vector2 p,float radius)=>!routeAvoid.Contains(new Vector2Int(Mathf.RoundToInt(p.x/.25f),Mathf.RoundToInt(p.y/.25f)))&&!Physics2D.OverlapCircleAll(p,radius).Any(x=>!x.isTrigger&&x.GetComponentInParent<PlayerController>()==null);
+        static IEnumerator Walk(Vector2 target,bool pad){
+            const float step=.25f;float radius=Player.GetComponent<CircleCollider2D>().radius*Player.transform.lossyScale.x+.03f;var start=new Vector2Int(Mathf.RoundToInt(Player.transform.position.x/step),Mathf.RoundToInt(Player.transform.position.y/step));var goal=new Vector2Int(Mathf.RoundToInt(target.x/step),Mathf.RoundToInt(target.y/step));
+            var q=new Queue<Vector2Int>();var prev=new Dictionary<Vector2Int,Vector2Int>();q.Enqueue(start);prev[start]=start;
+            bool found=false;while(q.Count>0){var n=q.Dequeue();if(Vector2.Distance((Vector2)n*step,target-Vector2.up*.7f)<=1.15f&&Clear((Vector2)n*step,radius)){goal=n;found=true;break;}foreach(var dir in new[]{Vector2Int.up,Vector2Int.down,Vector2Int.left,Vector2Int.right}){var next=n+dir;var point=(Vector2)next*step;if(Mathf.Abs(point.x)>12||Mathf.Abs(point.y)>8||prev.ContainsKey(next)||!Clear(point,radius))continue;prev[next]=n;q.Enqueue(next);}}
+            Check(found,"Route.Exists."+target+".Pad"+pad);var points=new List<Vector2>();var node=goal;while(node!=start){points.Add((Vector2)node*step);node=prev[node];}points.Reverse();
+            foreach(var point in points){float end=Time.realtimeSinceStartup+3;while(Vector2.Distance(Player.transform.position,point)>.11f&&Time.realtimeSinceStartup<end){Vector2 diff=point-(Vector2)Player.transform.position;Vector2 axis=Mathf.Abs(diff.x)>Mathf.Abs(diff.y)?new Vector2(Mathf.Sign(diff.x),0):new Vector2(0,Mathf.Sign(diff.y));if(pad)InputSystem.QueueStateEvent(gamepad,new GamepadState{leftStick=axis});else InputSystem.QueueStateEvent(keyboard,new KeyboardState(axis.x>0?Key.D:axis.x<0?Key.A:axis.y>0?Key.W:Key.S));yield return Wait(.02f);}InputSystem.QueueStateEvent(keyboard,new KeyboardState());InputSystem.QueueStateEvent(gamepad,new GamepadState());yield return Wait(.03f);if(Vector2.Distance(Player.transform.position,point)>=.23f&&routeRetries++<5){File.AppendAllText(Path.Combine(Root,"RouteReplans.txt"),"blocked target="+point+" player="+Player.transform.position+" modal="+WorldModalState.IsOpen+"\n");routeAvoid.Add(new Vector2Int(Mathf.RoundToInt(point.x/.25f),Mathf.RoundToInt(point.y/.25f)));yield return Walk(target,pad);yield break;}Check(Vector2.Distance(Player.transform.position,point)<.23f,"Route.PhysicsInput."+point+".Pad"+pad);}
+        }
+        static string[][] Map=>File.ReadAllLines(Path.Combine(Root,"mapping.tsv")).Select(x=>x.Split('\t')).ToArray();
+        static Dictionary<string,SpriteRenderer> Env()=>Object.FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Include,FindObjectsSortMode.None).Where(x=>Map.Any(y=>y[0]==x.name)||x.name.StartsWith("QA_RoadExtra_")).ToDictionary(x=>x.name);
+        static string Colliders()=>string.Join("\n",Object.FindObjectsByType<Collider2D>(FindObjectsInactive.Include,FindObjectsSortMode.None).Where(x=>x.GetComponentInParent<PlayerController>()==null&&x.GetComponentInParent<MonsterFieldController>()==null).Select(x=>x.name+"|"+x.GetType().Name+"|"+x.transform.position+"|"+x.bounds.center+"|"+x.bounds.size+"|"+x.isTrigger).OrderBy(x=>x));
+        static float Foot(SpriteRenderer r){var s=r.sprite;var image=new Texture2D(2,2,TextureFormat.RGBA32,false);image.LoadImage(File.ReadAllBytes(AssetDatabase.GetAssetPath(s.texture)));var rect=s.rect;float bottom=rect.height;bool found=false;for(int y=0;y<(int)rect.height&&!found;y++)for(int x=0;x<(int)rect.width;x++)if(image.GetPixel((int)rect.x+x,(int)rect.y+y).a>.01f){bottom=y;found=true;break;}Object.Destroy(image);return r.transform.position.y+(bottom-s.pivot.y)/s.pixelsPerUnit*r.transform.lossyScale.y;}
+        static void Swap(string option){
+            var env=Env();foreach(var row in Map){if(row[0].StartsWith("Road"))continue;env[row[0]].sprite=AssetDatabase.LoadAssetAtPath<Sprite>(row[6]);}
+            var roads=Map.Where(x=>x[0].StartsWith("Road")).Select(x=>env[x[0]]).ToArray();var positions=File.ReadAllLines(Path.Combine(Root,"roads.tsv")).Select(x=>x.Split('\t')).Where(x=>x[0]==option).ToArray();
+            for(int i=0;i<positions.Length;i++){SpriteRenderer sr;if(i<roads.Length)sr=roads[i];else {var go=new GameObject("QA_RoadExtra_"+i,typeof(SpriteRenderer));sr=go.GetComponent<SpriteRenderer>();sr.sortingLayerID=roads[0].sortingLayerID;sr.sortingOrder=roads[0].sortingOrder;}var row=positions[i];sr.transform.position=new Vector3(float.Parse(row[1],System.Globalization.CultureInfo.InvariantCulture),float.Parse(row[2],System.Globalization.CultureInfo.InvariantCulture),0);sr.sprite=AssetDatabase.LoadAssetAtPath<Sprite>(row[3]);}
+        }
+        static void Capture(string label,int width,int height,Vector2 center,float size){
+            float aspect=(float)width/height;size=Mathf.Min(size,10.49f/aspect);center.x=Mathf.Clamp(center.x,-10.49f+size*aspect,10.49f-size*aspect);center.y=Mathf.Clamp(center.y,-7.49f+size,7.49f-size);
+            var go=new GameObject("QA_RenderTextureCamera");var camera=go.AddComponent<Camera>();camera.CopyFrom(Camera.main);camera.transform.position=new Vector3(center.x,center.y,Camera.main.transform.position.z);camera.orthographic=true;camera.orthographicSize=size;camera.aspect=aspect;var rt=new RenderTexture(width,height,24);camera.targetTexture=rt;camera.Render();var old=RenderTexture.active;RenderTexture.active=rt;var image=new Texture2D(width,height,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,width,height),0,0);image.Apply();File.WriteAllBytes(Path.Combine(Root,label+".png"),image.EncodeToPNG());RenderTexture.active=old;camera.targetTexture=null;Object.Destroy(rt);Object.Destroy(image);Object.Destroy(go);Check(true,"RenderTexture."+label);
+        }
+        static IEnumerator ReviewViews(string option){foreach(int width in new[]{1280,960,1680}){Capture(option+"_"+width,width,720,Vector2.zero,6.2f);yield return null;}Capture(option+"_West",1280,720,new Vector2(-6,0),3.2f);Capture(option+"_East",1280,720,new Vector2(7,0),3.2f);yield return null;}
+        static IEnumerator LoadField(){GameSessionData.SetPendingSpawnPoint("Spawn_From_Field06");SceneManager.LoadSceneAsync("Field_07_AshenReach");float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!="Field_07_AshenReach"&&Time.realtimeSinceStartup<end)yield return null;yield return Wait(.6f);MonsterEncounterService.SuppressForSeconds(3600);Check(SceneManager.GetActiveScene().name=="Field_07_AshenReach","Field06.Load");}
+        static IEnumerator Travel(string id){var con=Resources.Load<FieldConnectionDefinition>("FieldConnections/"+id);Check(con!=null&&SceneTransitionService.TryLoad(con.TargetSceneName,con.TargetSpawnPointId),"Connection.ServiceRequest."+id);float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!=con.TargetSceneName&&Time.realtimeSinceStartup<end)yield return null;yield return Wait(.5f);MonsterEncounterService.SuppressForSeconds(3600);var back=Resources.LoadAll<FieldConnectionDefinition>("FieldConnections").First(x=>x.SceneName==con.TargetSceneName&&x.SpawnPointId==con.TargetSpawnPointId);File.AppendAllText(Path.Combine(Root,"SpawnDiagnostics.tsv"),id+"\t"+Player.transform.position+"\t"+back.SpawnPosition+"\t"+Vector2.Distance(Player.transform.position,back.SpawnPosition)+"\n");Check(SceneManager.GetActiveScene().name==con.TargetSceneName,"Connection.TargetScene."+id);}
+        // 실제 저장 대신 격리 세션의 목표만 지정해 조사/열기 표식을 같은 조건으로 비교합니다.
+        static void Stage(int index){
+            QuestCatalog.TryGet(Chapter2Main18Flow.QuestId,out var def);
+            QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=QuestCatalog.All.Where(x=>x.QuestId.StartsWith("main_")&&string.CompareOrdinal(x.QuestId.Substring(0,7),"main_18")<0).Select(x=>x.QuestId).ToArray(),ActiveQuests=new[]{new ActiveQuestSaveData{QuestId=def.QuestId,Objectives=def.Objectives.Select((x,i)=>new QuestObjectiveProgressData{ObjectiveId=x.ObjectiveId,CurrentCount=i<index?x.RequiredCount:0}).ToArray()}},TrackedQuestId=def.QuestId});
+        }
+        static string Layout(SpriteRenderer r)=>r.name+"|"+r.transform.position+"|"+r.transform.localScale+"|"+r.drawMode+"|"+r.size+"|"+r.sortingOrder+"|"+r.color+"|"+r.sharedMaterial.name;
+        static string Detail(SpriteRenderer x)=>Layout(x)+"|layer="+x.sortingLayerName+"|mask="+x.maskInteraction+"|shader="+x.sharedMaterial.shader.name+"|material="+AssetDatabase.GetAssetPath(x.sharedMaterial)+"|sprite="+AssetDatabase.GetAssetPath(x.sprite)+"|guid="+AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(x.sprite))+"|groups="+string.Join(",",x.GetComponentsInParent<UnityEngine.Rendering.SortingGroup>().Select(g=>g.name+":"+g.sortingOrder));
+        // 이 실험만의 임시 상태이며 원본 Scene/Renderer는 저장하지 않습니다.
+        static string RootAsset="Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/";
+        static void VerifySavedScene(string phase){
+            var all=Object.FindObjectsByType<SpriteRenderer>().Where(x=>x.name.StartsWith("ObsidianScar_")).ToArray();
+            foreach(var line in File.ReadAllLines(Path.Combine(Root,"../../ExpectedAssets.tsv"))){var row=line.Split('\t');var sr=all.Single(x=>x.name==row[0]);Check(sr.sprite==AssetDatabase.LoadAssetAtPath<Sprite>(RootAsset+row[1]),phase+".SavedReference."+row[0]);}
+            Check(all.All(x=>x.sprite!=null),phase+".MissingSprite0");
+        }
+        static IEnumerator Run(){
+            yield return Load("Bootstrap");GameSessionData.Reset();GameSaveService.SelectSlot(1);GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"Approved B integration QA");GameSessionData.SelectPlayerPath("path.mobility");GameSessionData.SelectJob("fighter");GameSessionData.ConfigureProgress(12,0);CompanionRosterService.UnlockIntroCompanions();
+            GameSessionData.RecordLocation(Chapter2Main18Flow.Field,"Spawn_From_Field08");GameSessionData.SetPendingSpawnPoint("Spawn_From_Field08");yield return Load(Chapter2Main18Flow.Field);
+            VerifySavedScene("InitialLoad");var env=Object.FindObjectsByType<SpriteRenderer>().Where(x=>x.name.StartsWith("ObsidianScar_")).ToArray();var glow=env.Single(x=>x.name=="ObsidianScar_Glow");var integrated=glow.sprite;var official=Resources.Load<Sprite>("Main18/Environment/ObsidianScar_Fissure_Glow");
+            Check(integrated.pixelsPerUnit==128&&integrated.pivot==new Vector2(256,256)&&integrated.rect.size==new Vector2(512,512),"B.ImportPPUPivot");
+            Check(glow.sortingOrder==-7&&glow.maskInteraction==SpriteMaskInteraction.None&&Object.FindObjectsByType<SpriteMask>().Length==0,"B.NoMaskOrSortingChange");
+            string layout=string.Join("\n",env.OrderBy(x=>x.name).Select(Layout));string collider=Colliders();var others=env.Where(x=>x!=glow).ToDictionary(x=>x,x=>Detail(x));
+            foreach(string phase in new[]{"Approved5_OriginalGlow","IntegratedB"}){
+                glow.sprite=phase=="IntegratedB"?integrated:official;
+                At(new Vector2(-5,1));Stage(8);yield return Wait(6f);
+                Check(others.All(x=>Detail(x.Key)==x.Value),phase+".OtherRenderersUnchanged");Check(string.Join("\n",env.OrderBy(x=>x.name).Select(Layout))==layout,phase+".TransformsSortingMaterialsUnchanged");Check(Colliders()==collider,phase+".CollidersUnchanged");
+                foreach(int width in new[]{1280,960,1680})yield return Shot(phase+"_GameView_"+width,width);
+                Capture(phase+"_FissureGlow",1280,720,glow.transform.position,1.8f);Capture(phase+"_Cliff",1280,720,new Vector2(-9,0),1.8f);
+            }
+            Stage(5);yield return Wait(.5f);Capture("IntegratedB_HeatMarker",1280,720,new Vector2(3,-2),3.2f);Stage(8);yield return Wait(.3f);
+            File.WriteAllText(Path.Combine(Root,"IntegratedRenderer.txt"),Detail(glow));
+            var position=Player.transform.position;string quest=JsonUtility.ToJson(QuestService.ExportSaveData());Check(GameSaveService.SaveCurrentWorldPosition(position,Chapter2Main18Flow.Field),"AuditSave.Field09");
+            yield return Load("Bootstrap");GameSessionData.Reset();GameObject.Find("StartMenuCanvas/Slot01/Action").GetComponent<Button>().onClick.Invoke();float end=Time.realtimeSinceStartup+40;while(SceneManager.GetActiveScene().name!=Chapter2Main18Flow.Field&&Time.realtimeSinceStartup<end)yield return null;yield return Wait(.6f);
+            Check(SceneManager.GetActiveScene().name==Chapter2Main18Flow.Field&&Vector2.Distance(position,Player.transform.position)<.05f&&quest==JsonUtility.ToJson(QuestService.ExportSaveData()),"AuditContinue.PositionQuestUnchanged");VerifySavedScene("ContinueLoad");
+            Check(Errors.All(x=>x.Contains("UnityEditor.Search")||x.Contains("Host type is not matching")),"Integration.NewErrors0");File.WriteAllText(Path.Combine(Root,"status.txt"),"CAPTURED_INTEGRATION_REVIEW_PENDING");
+        }
+        static IEnumerator Flatten(IEnumerator r){var s=new Stack<IEnumerator>();s.Push(r);while(s.Count>0){var t=s.Peek();if(!t.MoveNext()){s.Pop();continue;}if(t.Current is IEnumerator c){s.Push(c);continue;}yield return t.Current;}}
+        static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("Main09 QA timeout");if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Armed,false);EditorApplication.Exit(0);}catch(Exception e){File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());EditorApplication.Exit(1);}}
+    }
+}

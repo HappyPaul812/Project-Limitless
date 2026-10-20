@@ -1,0 +1,10 @@
+PASS|Scene.Bootstrap
+PASS|Scene.Field_09_ObsidianScar
+PASS|HeatSnapshot.EnterBattle
+PASS|HeatSnapshot.BattleController
+PASS|HeatSnapshot.Overheat2DangerText
+PASS|HeatSnapshot.NoFieldMaskInBattle
+PASS|Capture.Resolution.Common_Overheat2_GameView_1280.Actual1280x720
+PASS|Capture.Resolution.Common_Overheat2_GameView_960.Actual960x720
+PASS|Capture.Resolution.Common_Overheat2_GameView_1680.Actual1680x720
+PASS|HeatSnapshot.NewErrors0

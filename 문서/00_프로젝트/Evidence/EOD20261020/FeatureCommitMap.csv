@@ -1,0 +1,7 @@
+scope,source_commit,status
+Field09 approved five,77978aa11f43a9d04c9873f0ca914bd2bf5bd8ca,SELECTED
+Field09 derived B,913eceb73fcbc440b49c19f71469380aeaec1168,SELECTED
+Field09 QA39,b04c42e7,REUSED
+Idle QA14,1b9ad951,REUSED
+Combat v1 QA36,da55fe6e,HISTORY_ONLY
+Combat Fix v2,518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3,ARCHIVED_QA_PENDING

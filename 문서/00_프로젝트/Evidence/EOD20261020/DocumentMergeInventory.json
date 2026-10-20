@@ -1,0 +1,998 @@
+[
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "08be87e9177f1121dc4bbc43222026ed8a50b682c268b5bf2b455aaa9be73286"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Fissure_Glow_Derived_B_v1.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Fissure_Glow_Derived_B_v1.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "038426fe9fe710cac30ee3e4b6c1fc16389c5e9e374cb21afb456c77319ff4bb"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Cliff_Blocker_v2.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "ad995f3cc4914759d6c88fa47c80227cb1a7c5f1a9a549679e06472402fee9f1"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Cliff_Blocker_v2.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "d8e3b4b9c3e5b83238b297b39912b0c8a2494345202940424ad176db86e82368"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Fissure_Edge_v2.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "c3dc0c131c11fef72e4d210a1a43528f9882d8c50486e8da0bc15b6984ea145a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Phase2_Fissure_Edge_v2.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "2347f200e578bb4085fd7af0c82ac9a905f075029aa8501051915727cc5b32ad"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Base_v1.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Base_v1.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "a5bc4656d833d4455b2345462a79b8316a5a17e475f4e24480a41d9f6f1ce95e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Ground_Cracked_Overlay_v2.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "0b29099ee804352efdc972153dd2721b7b7cf745c6f77d5ae8290809ab9e28a6"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Obsidian_Slab_v1.png",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter2/Field09ApprovedRedesign/LL_Field09_Redesign_Obsidian_Slab_v1.png.meta",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "8d89e08b90be40c16805ab00836910edc476b6efd2fe0cba70423bbbd71430bf"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity",
+    "source": "77978aa1 + 913eceb7",
+    "action": "approved product bytes",
+    "sha256": "6bccab0dc6d3684a5b313b0cab00f3fa4fe227abcb4268eeec4b48ebac06beee"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_ArtRework_v2_UserApproval_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "72c268c303a87b7756ca4571290be88d36faa26f4a5aa5a4302ad29ccbf4b6f5"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_CodexVisualHold_ArtRework_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "a38a1a5513b6dddcca47d41a33f7fcf22ddd857db851c42a231e15f67fa5052e"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ArtF1_BGM2_Pilot_Review_Gates_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "341f7b7946a9356a461b58c32edaea2afa05745eb904212a0853b1c8ad64fd53"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "97516b4d314c3436b045cf47b22fec5e7fed18a2ffb5d63e9d65b718e06aa8cb"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_Delivery_VisualTechnical_QA_Gate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "69a9600c87e9b3a78f5e1e739b1194d5589831d7ad8369fb9cfd6ebcd9e5c3f0"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "685ee4a9214c53769d70f600a0d58d9d0594f1c71d72c75f4e1ff5168881f99a"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_FirstCombatSprite_Contract_Preflight_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "d0da14ea5976ca05698c5e4ff03aa4d00f7392cb2cbe5541d0584e3d27d8972e"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1_IsolatedUnity_14PASS_UserMotionApprovalGate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "6ca48f7a7230afb517c145ca02b6c8a618ac350a81ef253813d960d47e2e8c44"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Idle2_And_Field09_Phase2Fixv2_Execution_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "91d953081b83c3adc81eaa97dbbe7d4eeae67faf6f55b0c932caccdd33f0815b"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_SelectedAB_PixelArt_1Pose_VisualReview_Gate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "544297cacee36f48b26894fbc9a4680ee00c4792d8052bb5a6972333178c5008"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "74e0c293a9dd8a8d8c383e9bebc43136c85389626911ad770f9208928d3adbfe"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Art_Redesign_After_v2_VisualQA_Failure_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "5ba61da62050a2c315f4c24335eb43c4dda6d374a478fadeba2338250baa466c"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "b746b92499885d4ad3e72c1edaccd46bfc627ae5837e222553268503f55ab373"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_B_DerivedGlow_IsolatedIntegration_39PASS_OriginalApplyGate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "2845e105fe11034e1c23daed7e1c45b577ab7939a7b9089e5691acc357a92f05"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_B_DerivedGlow_UserApproval_ImplementationOrder_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "fea51d8b627fc0e3f587c8a8f9edc160afa91affc10ea3ba95c95a4f61e9f394"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Glow_AB_VisualPass_BDerived_Recommendation_ApprovalGate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "68683d48b0fa9d6e5e49e54741481cd48c1134826185c670504a192611924ed5"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_OfficialPNG_SourceConfirmed_ArtV2_ExecutionOrder_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "2213c9f1827ed4a3993cb18b266d7354eb1bcfff9c5e44b9355f083167e65185"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Phase2_FissureGlow_CompositionRootCause_And_PrototypeGate_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "4b9cc8f16f3ef9ec84948a7025dfe64a93eb965da4adad1b11295c735c194127"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "14f62b776e9e9eb5059fac152d1f801f9ee052e2fd932494d5eada7ee743172e"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_UnityQA_OverlayOnly_Fix_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "cefc105e2f29280f66cb388f5c02f8b0afe42f26d353b563aa33271e4eed4b87"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "6762cc500cf2b3cac955edbb2477da15bc7bf93edb351847000c5c736c7bef74"
+  },
+  {
+    "path": "문서/00_프로젝트/LIMITLESS_20261020_EOD_ApprovedMerge_OriginalLocalSync_SafetyContract.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "586b2c3d9d2eaea42f4e9b5db56b5f55817b8a35347219106b727a989972bbd9"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "source": "origin/docs/planning",
+    "action": "semantic handoff: unique incoming paragraphs + all main history preserved",
+    "sha256": "f0be2262165895ba26387c005b8ba1e276b684c3bbbafb37869c47eafc00c3d2"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_Main22_29_북부_온기의화로_스토리구성안_20261014.md",
+    "source": "origin/docs/planning",
+    "action": "reviewed story merge: latest village route + all unique main history retained",
+    "sha256": "8220b9e2746e1d951dc54c95c660f59524c707f5531fdff9059ee068743cc615"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_Main23_24_북부탐험_첫눈_한기_연결기획_v1_20261014.md",
+    "source": "origin/docs/planning",
+    "action": "reviewed story merge: latest village route + all unique main history retained",
+    "sha256": "2c5a116ab8164b88b48d61e9d3831bcd3af6a236a8b8beaf9e9d78ba0b7e4dd2"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_Main23_24_서릿길마을_스토리시퀀스_v1_20261019.md",
+    "source": "origin/docs/planning",
+    "action": "reviewed story merge: latest village route + all unique main history retained",
+    "sha256": "5d3cc9392aec1c9ba56ef5c11beddecc02e35e2965db177a1c61a39ec327724a"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_서릿길마을_NPC_서비스_서브퀘스트_v1_20261019.md",
+    "source": "origin/docs/planning",
+    "action": "reviewed story merge: latest village route + all unique main history retained",
+    "sha256": "65932ed92bca74d25610ff89be2f5140dd8f6c291daa06f86c4ddd724cd14b63"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_서릿길마을_상세마스터플랜_v1_20261019.md",
+    "source": "origin/docs/planning",
+    "action": "reviewed story merge: latest village route + all unique main history retained",
+    "sha256": "1ea74c9a2b87181f6fb5188c44ddeb660928a064e22a61e7f75b28f59b47f6d8"
+  },
+  {
+    "path": "문서/03_스토리/Chapter3_서릿길마을_첫안전거점_Main23_신설제안_20261019.md",
+    "source": "origin/docs/planning",
+    "action": "selected identical document",
+    "sha256": "5415b746ebdc4834825c4084d856706b77297fdf405cf2fb192fbf9caccce1aa"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_ArtRework_v2_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "5a82f5c6b5e850a949da20382b9a7b04070e889fc036921c87f9ded4c8f4e672"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "625c08aa14804a65019974364c3d63f9dc6a5979fd8477a463d55aa54e229c08"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "0c981038ce88c1ae9254b230163de072576d4097542b24c322468fa56b56d4ab"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_PixelArt_1Pose_v1_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "2ca7eab26701482184fd732a9e5f6344913df4ddd3997d355a8654e7f2b52072"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "99d22b08d0b5b452568f5984140650341b21fd33e746d353b4718f7fd152f5ae"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "59552f7126164c9c5cad0e10ab7a38d639582f3d70db95705c714021601774e7"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "41bc7f0329cb7e5ba67c76a94effebaab6b46f6f343241bdb6581a595990f4e6"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "ae73c999c3c54c768907c719d2c5f3c7b0402e3ef45b2d279e3eca82f58bd7f8"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md",
+    "source": "origin/docs/art-new",
+    "action": "three-way document merge",
+    "sha256": "03bc1232dd00492989a3ee3156b654c0734c2f73c1013082d00684c97abc3b35"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Environment_NewArt_3Samples_v1_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "c30270b3567b8939f322e89d7f0a4405a36301a011582e9203fd35ba4aa111f8"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_ObsidianScar_Minimal_Fix_v2_Real_PNG_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "54898aaca8188107e9b1a456ce96a1bd051e750201db47c28cae5ea89416e9ac"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_ArtFix_v2_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "d568beb47abd6f05acd714da21e8a5d18c56d68f47c745b7ded7d3ffded64183"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Phase2_Pilot_v1_ActualArt_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "a7671377bfde528a66d61b7ece060fb024cf4ccfab803ed540fdc82a700f15da"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_OverlayFix_v2_Issue37_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "7d73a8e2daf175dac63e0131c3025f89c55053e3242de10ca91270ad8dc48032"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_v1_Art_Delivery_20261020.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "1fc3d0010192c65da09f4941c5afcc3e6ecba6c37fec22281d8de687a2624b3d"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md",
+    "source": "origin/docs/art-renewal",
+    "action": "semantic handoff: unique incoming paragraphs + all main history preserved",
+    "sha256": "5fd0470467702b240e64bf05af09354731841d193f0afd8572f57f137ea97a62"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md",
+    "source": "origin/docs/bgm",
+    "action": "new selected document",
+    "sha256": "d378652456290e1183b3629a123275adee37a44bedb9eeee8954f3c0c811eb85"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_BGM_Pilot_Production_Brief_20261020.md",
+    "source": "origin/docs/bgm",
+    "action": "new selected document",
+    "sha256": "8aa0f2a14d3435c9f5530916e4f2c3d0bc68e9bfde6bab012eef49bbf5f336c5"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/BGM_LATEST.md",
+    "source": "origin/docs/bgm",
+    "action": "new selected document",
+    "sha256": "7a2520ebd7190cf612fa3379d1334f23ff328493cc5a4c989dc2dae40cbd2b72"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_AB_1Pose_ReadOnly_ArtReview_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "8b88999bf1019c46bf788b321c5476bef12ca7ad5dc746cb3fc10d92c11ea652"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_AB_ArtRework_v2_ReadOnly_Review_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "5e255f6394817b1a2f2b9e60a3266030b6ac899c69d06872310ed7ada425b07c"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_ArtRemake_3Sample_Technical_Handoff_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "3986ff4df84bbe69b18d4b0d1a981bc4dc67b68024a6cf8a1a162539c058cfae"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_MinimalFix_v1_ZipFormat_Blocker_20261019.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "selected identical document",
+    "sha256": "93556f2ef04ddcbb3f987ad0be2f0f10edcc080e63aeccd67aa1faa0a896c2ed"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_OverlayFix_v2_Unity_Delta_QA_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "d46089511f62c5be3f7bcfd814ee47fe99e89e5b53c092cb14ca1fee8265f890"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Phase2_Pilot_v1_Unity_QA_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "7fe3fcfe129ab3c2c1402f801b9dd00bbdccb51cff2f7bea5db4a5f0632b8831"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_Unity_QA_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "19f26e9910a338aca81c3adc8c6ce3e94d59bd7533022118221a93a364be0e10"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_RepackedZIP_UnityDelta_VisualFail_20261019.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "selected identical document",
+    "sha256": "ab615f7edd46ceb22d35c39fd03bbf3eeb4afc4506473cca5fd60741e6348912"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_v2_Unity_Delta_QA_20261020.md",
+    "source": "codex/chapter3-ab-v2-art-review-20261020",
+    "action": "new selected document",
+    "sha256": "f6c037f65a4459573c93bdfbed1793f4e8ee86bea2a6dba0db08dd56fb31545b"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_AB_1Pose_ReadOnly_ArtReview_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "8b88999bf1019c46bf788b321c5476bef12ca7ad5dc746cb3fc10d92c11ea652"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_AB_ArtRework_v2_ReadOnly_Review_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "5e255f6394817b1a2f2b9e60a3266030b6ac899c69d06872310ed7ada425b07c"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_ApprovedAB_Idle_Production_Contract_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "new selected document",
+    "sha256": "0733c2b355ca4c606c5014b8ab2872914b3371ae447517446557557e20d16166"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_ArtRemake_3Sample_Technical_Handoff_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "3986ff4df84bbe69b18d4b0d1a981bc4dc67b68024a6cf8a1a162539c058cfae"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_MinimalFix_v1_ZipFormat_Blocker_20261019.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "93556f2ef04ddcbb3f987ad0be2f0f10edcc080e63aeccd67aa1faa0a896c2ed"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_OverlayFix_v2_Unity_Delta_QA_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "d46089511f62c5be3f7bcfd814ee47fe99e89e5b53c092cb14ca1fee8265f890"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Phase2_Pilot_v1_Unity_QA_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "7fe3fcfe129ab3c2c1402f801b9dd00bbdccb51cff2f7bea5db4a5f0632b8831"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_Redesign_Sample3_Unity_QA_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "19f26e9910a338aca81c3adc8c6ce3e94d59bd7533022118221a93a364be0e10"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_RepackedZIP_UnityDelta_VisualFail_20261019.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "ab615f7edd46ceb22d35c39fd03bbf3eeb4afc4506473cca5fd60741e6348912"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_v2_Unity_Delta_QA_20261020.md",
+    "source": "codex/chapter3-ab-idle-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "f6c037f65a4459573c93bdfbed1793f4e8ee86bea2a6dba0db08dd56fb31545b"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Idle_v1_Isolated_Review_20261020.md",
+    "source": "codex/chapter3-idle-v1-review-20261020",
+    "action": "new selected document",
+    "sha256": "703325d083492ce7e620d1e79d975ac5f9fad8f0796dd3393f991522606474fb"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Idle_v1_Isolated_Review_20261020.md",
+    "source": "codex/chapter3-mouse-combat-contract-20261020",
+    "action": "selected identical document",
+    "sha256": "703325d083492ce7e620d1e79d975ac5f9fad8f0796dd3393f991522606474fb"
+  },
+  {
+    "path": "문서/00_프로젝트/FrostFieldMouse_Combat_Art_Handoff_20261020.md",
+    "source": "codex/chapter3-mouse-combat-contract-20261020",
+    "action": "new selected document",
+    "sha256": "34e89d8d48158720b999a261ab89bc47d1af542532c92ea77a62aaf14543234c"
+  },
+  {
+    "path": "문서/00_프로젝트/FrostFieldMouse_Combat_Production_Contract_20261020.md",
+    "source": "codex/chapter3-mouse-combat-contract-20261020",
+    "action": "new selected document",
+    "sha256": "53cff6901ddd667842fb457dfba1027b5a5f0341f54433ef05222d641b1ef916"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_Isolated_Review_20261020.md",
+    "source": "codex/chapter3-mouse-combat-v1-review-20261020",
+    "action": "new selected document",
+    "sha256": "6933f86083741c9a34edd83401a0ac8bffe6cac9fb1f59a96692258fc638700b"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Idle_v1_Isolated_Review_20261020.md",
+    "source": "codex/chapter3-mouse-combat-v1-review-20261020",
+    "action": "selected identical document",
+    "sha256": "703325d083492ce7e620d1e79d975ac5f9fad8f0796dd3393f991522606474fb"
+  },
+  {
+    "path": "문서/00_프로젝트/FrostFieldMouse_Combat_Art_Handoff_20261020.md",
+    "source": "codex/chapter3-mouse-combat-v1-review-20261020",
+    "action": "selected identical document",
+    "sha256": "34e89d8d48158720b999a261ab89bc47d1af542532c92ea77a62aaf14543234c"
+  },
+  {
+    "path": "문서/00_프로젝트/FrostFieldMouse_Combat_Production_Contract_20261020.md",
+    "source": "codex/chapter3-mouse-combat-v1-review-20261020",
+    "action": "selected identical document",
+    "sha256": "53cff6901ddd667842fb457dfba1027b5a5f0341f54433ef05222d641b1ef916"
+  },
+  {
+    "path": "문서/00_프로젝트/Field09_DerivedGlow_B_Integration_QA_20261020.md",
+    "source": "codex/field09-derived-glow-b-integration-20261020",
+    "action": "new selected document",
+    "sha256": "14da77b1bdbbe64c5175cd4539186e9e3f9e2f7c11bbaca1cb8f48133b59fe47"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Approved5_OriginalGlow_Cliff.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "5fa30dc64eb5eec2c3622df8925a2c73e26225edd03e4e7b65caffb43345d204"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Approved5_OriginalGlow_FissureGlow.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "1e06ace6db9f2954bd697fc8109133206776da39684d34815d554683a14882d0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Approved5_OriginalGlow_GameView_1280.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "34de3d00197f823fe8b5d029539ab76042529374202223c0f17aae46b446809c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Approved5_OriginalGlow_GameView_1680.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "7958fdc357280e7d9585f08e323d1b9dd72919fc3b999fa5b00a0b68a16150ba"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Approved5_OriginalGlow_GameView_960.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "20c0de9ed4e7899db7bab010ab79e8bb7e0e8ac8a3d889dd1b22ea2a6dbd6b54"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/BaselineRefs.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "102539335884dc0bf1be67a4fe0d7db3814556a5c79b9f82672c18ae7b7197d5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Compare_FissureGlow.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "9dace739d8dc2ccdd8d073c6e56f23a4eea54a796af16af60d5abd05fdf13be2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Compare_GameView_1280.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "1f0e43ef3945bdea5be23995f42175a4ed7b5b63d1e280a4f788ab866aba0ba2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Compare_GameView_1680.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "99390d09197354e49926bde1506d6076c68a6aaffb57ada4e296c043183487dd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Compare_GameView_960.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "4ae2907a64c846cf6e345324faec53f554f2182a561eed45fba94c9837eba317"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/ExpectedAssets.tsv",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "38a19640794f3165e5918f2842fc0884f94d5eb110c8283e1577cd31d54a2418"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/GlowRef.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "93dc14ca09e24c8a96cbdab521a6a134d38f447da646f75fb704a8a9f602c3d8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_Cliff.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "5fa30dc64eb5eec2c3622df8925a2c73e26225edd03e4e7b65caffb43345d204"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_FissureGlow.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "97a99b7eed90eab5ddfad7d83101fb68b29157cf8069e34c558cb5986c46e883"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_GameView_1280.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "8b9ef4aca35f444cff948e71cdf84f0d098f481c7c1aa3a11e39ff62be18dfc5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_GameView_1680.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "8d18e2a67df446bbfec811fee02d1ee84fb87322f1d594b1ef658cb184545251"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_GameView_960.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "440e15bda033b0149cfa4ae518d082b7a45a2ef2ac1d084512bc3c2f6ce9fa36"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedB_HeatMarker.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "35ae6af598b6346dff9d7cee32fc0bddc0d40f0e7beb6c59392ac6843ff03a88"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/IntegratedRenderer.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "19b30725cbead89ad27946bcc9531471dd07ab1b9174389c004a6359aeca308b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Manifest.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "54b5fab5fb67b5a2425aa528437edbfca46205edd1d5db09c973a6535c9b74cf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Product_Diff_Stat.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "7faa443d9acebb9cb2ec619684a1c8908d900e00d33aed14d56210c10be9e4b3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Protection.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "64366f80dda2f221772a7a59e224735d168bd4875565b14a260b468b944bef46"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Result.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "4d076814165a63c26f85f455c4dccb44fdc5f88feb07aa997783c50a71d5f540"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Reuse/AB34_checks.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ee167bad2952928dbb9cdff187ac94b1a199b0fe5b4f7f50a91350d455c09dd7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Reuse/AB_AlphaMetrics.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "918bb0bfca0ae836c40477868678ef38b4190aa460c67202e59f5b55bd2b777a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Reuse/OverheatUI10_checks.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "36f58972785f6cc54fa1ad2e7b08e5e2393fafce276bf35523cead5a0e2e3de2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Reuse/Provenance.json",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "593d8408797fc06c7384cccb934b891866ccec609a09a1b2581a57f9872ca16b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Reuse/Reused_Overheat2_GameView_1280.png",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "52902e660d57647613f1e0dc769d069ea14bc67e83487b023b5b9035599ba585"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Runner.cs.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "cb63ee5b9af0576bea679a794be44eaf2d16b785670e4d9e3254773812cb3499"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/Unity.log.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "54f80e24141d0cf2a4ae6b09b9dcf6fa59ef21a98c5744f5096a065833baa4f4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/checks.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "bd55adea585a1b998205e5471e677afb3ce7a6c46e81e8eff3a918d3941b27e5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/errors.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ddaf1e2c3813638a055ed7162e11a473a06c26c1a30f2e5c35111924d5234ff6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/failure.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/index.html",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "7d5987fc1fc4cc3f2627ba66bc4a4c1e94c61f45a146c9ca148c983465a96b82"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Field09GlowBIntegration_20261020/status.txt",
+    "source": "b04c42e7",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "fcfc037ddc1b64fb5e43a73934d711f0d4a49f9e2ac4a9866c568a9e327c74b3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Manifest.md",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "8bbd7b5f205d1312d4a46f7ac5b6e794479716a4018e0b89a469d56fd200fa08"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostFieldMouse_A_4Frame_ContactSheet.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "00153f8f74adb19bf7792f2066f48e9c8abf94b0142ef7ed9274ad3ff7963d9b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostFieldMouse_A_Idle_8FPS_Exact.apng",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "4f164e082b1c3588bb611b4d5f4eae02e76543af6c7b4395fe6084f9e6a1a716"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostFieldMouse_A_Idle_8FPS_Loop.gif",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e8c9b45302bc478957e01b9d8b0a420fde9233635bfe4a4407ee8262aa55f89c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostTyrant_B_4Frame_ContactSheet.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "c33f85141a3db8c97d3736c37a44feb8a6797346fa99e61e71d7cb71fd5d7746"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostTyrant_B_Idle_8FPS_Exact.apng",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "1bf89c698710bccd546f98111a6771e9091fe71ce6663df895c88656c74a40a6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Preview/FrostTyrant_B_Idle_8FPS_Loop.gif",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "9bc42d11987d630d21cb3b1616a5f2c8c2929416bcb59c4f744566b902288e98"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/QA/Display_128px_Comparison.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "657765a824f016d8bf3ec415414d78b17f068a2623cf7e23b4d5c5f5e1d24621"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/QA/Offline_QA.json",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "b00b5ad6bb19bf0561ad504e54ec5d0c5a31d9521a27fac468a779b25b84845b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/SHA256SUMS.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "7b69c1907fee5e56650647784d3285134deb252ac1cd287ae0f6598ace9167b3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Sprites/FrostFieldMouse_A_Idle_4Frames.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Delivery/Sprites/FrostTyrant_B_Idle_4Frames.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/FrostFieldMouse_A_Approved_vs_Frames.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ecc23d2864eaaf387a7fc808df247a8ef58139c2dfad80f16691359ce079c199"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/FrostTyrant_B_Approved_vs_Frames.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e15bb2ea976d2768e6a8709e04ac1c4734fbfe81dd9ee96d0a4d09f6be8b5634"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/GameView_8FPS.apng",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "57d95339a83ef364231680cc7052efe2fb692274733bfe166dbb654ff34ba682"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/ImportMetadata/FrostFieldMouse_A_1Pose_Rework_v2.png.meta",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "67f324588701b22a716f0773ccfc972d552403e48da21aabe2d1aa068c844cf9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/ImportMetadata/FrostFieldMouse_A_Idle_4Frames.png.meta",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "84addd52ded8f6bfcac3b3cf436b411a387f0305bd440313794e05a2e849920c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/ImportMetadata/FrostTyrant_B_1Pose_Rework_v2.png.meta",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "0d88a83b5e18b42306ae684700efa5618536a60e252ecd7ed9e2c673f1000b44"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/ImportMetadata/FrostTyrant_B_Idle_4Frames.png.meta",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "94fbcde7512daa069258f80577a624785fe9044303f0eea238b0f20ad9cca731"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Protection.json",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "524014a05633a15a7644ba247a0d1355f80b9ba94dec9634f8a86e57ee13e232"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Result.json",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "28756bd172ada5e237319794b9f0acf8725cd455c242eeb3ae12ba39c1155219"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/FrameTrace.tsv",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "56ddebea757b4eb1adcf43347d0c14ed10bbc92fb1273773e95c3baa2e773bd2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/GameView_Frame0.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e9f03289ef9d8153a81802a1ba44e5c264696059609d8cff75152a2379bdd9ac"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/GameView_Frame1.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "5252087b6dddc63cdfd927b9a35783029ede9d917db326a920b45dacde92ddef"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/GameView_Frame2.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "7f84acdaf06af27f08c9154802b620785fe9c72e6432aed53338587b4e1b391c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/GameView_Frame3.png",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "d7eb4184a3eb83b1adf2b9debe77b9940820754fced7249b86face0417fe942d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/checks.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "0c4bc3f912e9e1ab2e10477adf7206f26ee61b7899a0831a4a6f8c915f6cbb63"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/errors.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ddaf1e2c3813638a055ed7162e11a473a06c26c1a30f2e5c35111924d5234ff6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/failure.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Runtime/status.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "55fb120241625852b28b1457d87ccd50a0828d08f577d011da03b112254c072e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/RuntimeTiming.json",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "36b5f2faf40e77fe3dc726f4d7985d2f1770e4a48c8baee602e3620677b611a4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Unity.log.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "6a5287f99e4d4bf9ec0d6f11bb1180a33830d04af13242ccb021921955061a80"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/UnityReviewRunner.cs.txt",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "e991d49df97fb2b9ac004c8959fe9613fd6a9ad1b15c9af2f7c9ea3559b205e5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/Validation.json",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ddb6b13dde033732c6f0bbd12786dd355022e26382ffa41cdae2740354fb2e03"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Chapter3IdleV1_20261020/index.html",
+    "source": "1b9ad951",
+    "action": "existing PASS QA evidence reused",
+    "sha256": "ae5c4c7f662fd3d3e89a2bf5f76a5d75bca35248ec0a2a499ffb723ef356e767"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/FrostFieldMouse_A_1Pose_Rework_v2.png",
+    "source": "0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919",
+    "action": "approved reference only, outside Unity",
+    "sha256": "0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/FrostTyrant_B_1Pose_Rework_v2.png",
+    "source": "0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919",
+    "action": "approved reference only, outside Unity",
+    "sha256": "f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/FrostFieldMouse_A_Idle_4Frames.png",
+    "source": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+    "action": "approved reference only, outside Unity",
+    "sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/FrostTyrant_B_Idle_4Frames.png",
+    "source": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+    "action": "approved reference only, outside Unity",
+    "sha256": "9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/Manifest.json",
+    "source": "approved input archives",
+    "action": "reference hashes",
+    "sha256": "8266293859cd4b25920a7441207c2dd75eb079b0a25aac25d8dcc46f14a00732"
+  },
+  {
+    "path": "아트/몬스터/Chapter3/ApprovedReference/README.md",
+    "source": "EOD authorized reference scope",
+    "action": "reference boundary",
+    "sha256": "b6aba48285ef1449395bf38a65c706e34367d6f7f84602ed1b398f1722fb0e73"
+  }
+]

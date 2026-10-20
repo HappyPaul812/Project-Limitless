@@ -1,3 +1,177 @@
+## 2026-10-20 EOD 승인분 통합 — 최소 QA 완료 / PR·원본 동기화 진행 중
+
+Field09 승인 환경5종+B파생Glow 제품14파일만 선별: PNG6 신규/meta/폴더meta +Scene Sprite참조6개. 공식Glow PNG/meta/GUID 및 Transform/Sorting/Collider/Quest/Save코드 불변. 기존39PASS·Idle14PASS 재사용, EOD 정적13+격리Unity11=24PASS0FAIL. Chapter3 승인1포즈·Idle4PNG는 Unity밖 `아트/몬스터/Chapter3/ApprovedReference`에 참조보존·게임연결0. 담당 문서는 파일별 선별/의미병합, 기존 main 고유 이력 보존.
+
+사용자 변경904파일188,454,129bytes 백업/보호기준6,558SHA 기록. Combat Fix v2 ZIP518d210a는 CRC/SHA 확인 후 별도Temp아카이브, QA/미술승인대기. F1/마을미승인환경·BGM미완료루프·TTS/SFX/영상·Field09실패자산 제품제외. 내일 우선: 전투Fixv2 변경셀·Idle전환 검수→대표 미술승인; BGM루프/권리확인. 원본Editor 조작0, 자연Import/손플레이 미검증. 브랜치 `codex/eod-integration-20261020`, 기준main12c69c72. 아직 원격병합/원본Sync 완료 선언 아님.
+
+[EOD 실행 보고](EOD_ApprovedIntegration_LocalSync_20261020.md) · [선별/검증 근거](Evidence/EOD20261020/IntegrationDeltaQA.json)
+
+## 2026-10-20 담당 기록 선별 보존 — 아래는 시점별 이력
+
+
+
+## 기존 main 인계 이력 보존
+
+## 2026-10-20 담당 기록 선별 보존 — 아래는 시점별 이력
+
+
+
+## 기존 main 인계 이력 보존
+
+## 2026-10-20 담당 기록 선별 보존 — 아래는 시점별 이력
+
+
+
+## 기존 main 인계 이력 보존
+
+## 2026-10-20 담당 기록 선별 보존 — 아래는 시점별 이력
+
+# PLANNING 최신 인계 — 2026-10-20 EOD 선택 병합·원본 로컬 안전 동기화 (진행 요청, 아직 완료 증거 없음)
+
+바울 대표: **“오늘은 그만하자 오늘 작업들 합치고 료컬 동기화.”** 오늘 승인·기술검증된 변경만 새 Codex branch/worktree → PR → main 병합 허용, 이후 사용자 기존 F:\\study\\codex\\Project-Limitless 원본 local 보호 동기화 지시. 기획세션 GitHub만 작성 가능하며 **직접 F: 실행/PR병합/원본 sync 완료 상태가 아님**. GitHub remote main 마지막 확인 `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` (어제 PR27/28 최종), 열린 PR0 (오늘 신규 EOD 실행 전).
+
+**통합 1순위**: Field09 Sample3 승인 BaseGround/CrackedOverlayv2/Slab, Phase2 격리 PASS Cliffv2/FissureEdgev2 및 바울 대표 미술 승인 B 파생 Glow. `codex/field09-derived-glow-b-integration-20261020` `77978aa1`→`913eceb7`→`b04c42e7`, 격리 Unity39PASS/0FAIL, 원본 공식 Glow/meta/GUID 보존, sprite reference1. 아직 원본 local/remote main 적용0. Field09 전체 환경 나머지 소품 별개.
+
+**Chapter3 1포즈 2종/Idle2**: 사용자 미술 긍정·Codex14PASS, 해시 기준 참조 보존, Main22 구현/몬스터런타임 자동 적용 금지. 마지막 신작 `F:\\Downloads\\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip` SHA `518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3`는 **오프라인 CRC/프레임QA만** 되었고 **Codex 실제 v2/사용자 최종 미술 승인 미실시**, 내일 시각 Delta검수 전 공식게임/main 제품 적용 금지. 기존 v1 Attack/Hit/Idle 색감 시각 FAIL. F1/마을 env Pilot 10 png 미승인 게임 적용 보류. BGM 두 데모곡 사용자 “좋고” 곡분위기 긍정·loop edit 미완료라 product audio 연결금지. TTS/SFX/영상 기존 보류.
+
+**실행 계약** `문서/00_프로젝트/LIMITLESS_20261020_EOD_ApprovedMerge_OriginalLocalSync_SafetyContract.md` (`docs/planning` commit `ffcf8a2d64131d22398772e6a58f50a77897692b`); Codex 실행 [Issue #40](https://github.com/HappyPaul812/Project-Limitless/issues/40). 담당 문서 브랜치 전체 merge 금지, selected files/history 유효한 부분 의미 병합. 사용자 원본 dirty/untracked/Save/UserData/Editor·공식 PNG/meta SHA 보호 백업 없으면 STOP. 정상 main PR merge + remote/origin/local main HEAD/index·원본 SHA 실측이 모두 합격할 때만 `SYNC_COMPLETE` 출력, 안되면 정확히 `SYNC_SAFE_BLOCKED`로 기록. 이전 QA 재실행 남발 금지.
+
+# PLANNING 최신 인계 — 2026-10-20 서리들쥐 A 전투 3 Strip v1 기술36PASS, 시각 FAIL/HOLD, 3종 표적수정 발주
+
+바울 대표 Codex 비교 캡처: 동일 전투 UI 배율 Idle00·Attack02·Hit01·Defeat03를 112px로 비교; ZIP/PNG 규격 PASS, 격리 Unity 모션 상태전환 36PASS/0FAIL, 그러나 미술 Attack FAIL/Hit FAIL/Defeat HOLD/Idle 일관성 FAIL. Codex `codex/chapter3-mouse-combat-v1-review-20261020` QA `da55fe6e` 인계 `036037e8`; ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`.
+
+**원인** 1) Attack00·Hit03이 승인 Mouse Idle00 대비 가시크기 약18~20% 작아서 Idle 전환 시 크기 점프, 2) Attack 최대 할퀴기가01에 있는데 기술 타격 이벤트는02, 3) 신작 전투3 Strip의 갈색 털·디테일이 승인 냉회백 Idle과 불일치. **Defeat03 사망 고정 포즈 정상**. 리디자인 전체 폐기 X, `docs/art-new`는 승인 Mouse Idle/1포즈 파일 원본 불변으로 Attack/Hit/Defeat v2의 결함 프레임/색감만 수리. Attack00/Hit03 ↔ Idle00 픽셀 알파 bbox/FootAnchor/가시 크기, Attack02 최대 할퀴기, 냉회백 털색, Defeat03 hold 보존을 검증할 112px+8FPS 비교, PNG3/ZIP/Manifest/SHA/QA 실물 납품. Codex는 새 ZIP 후 해당 3종 시각 Delta만 검수; 기존 36PASS 기능 회귀 전수 재실행 금지. 원본 Unity/Save/UserData/Editor·Push/main병합 금지, Codex·바울 대표 승인대기.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md` (`docs/planning` `5ee9966f67f14d29c1b0a84e07031dc407bc8dd2`); [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. Field09 B파생Glow 격리39PASS/0FAIL 원본적용·PR 승인 대기는 별개, 챕터3 보스B 전투3 Strip 후순위.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 Attack/Hit/Defeat Strip v1 실납품, 털 색감 주의·Codex 시각 QA 대기
+
+바울 대표 제공 로컬 경로 `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`. `docs/art-new` 최신 실제 제작 보고: 2048×512 RGBA 4프레임 8FPS Strip 3장(Attack/Hit/Defeat) 및 프레임별 미리보기/Manifest/CRC/SHA 납품, ZIP SHA `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`. 게임용 독립 Strip 기술 계약 PPU512·Pivot(0.5,0) 하단중앙·VisualScale1·우향 및 기존 Idle 참조 보존. 아트 담당 오프라인 포맷 QA PASS 보고, Unity 실행 없음.
+
+**중요 미술품질 경고:** 기존 승인 서리들쥐 Idle/1포즈는 냉회백색인데 새 3모션 털은 갈색 계열이 강조됨. 상이한 야생 설치류로 보일 수 있으므로 기존 승인 Idle↔Attack/Hit/Defeat 색·체형/128px 디테일/8FPS/Attack·Hit→Idle, Defeat03 hold/좌우반전과 실제 UI 같은 배율 시각 QA 필수. 작은 Source 보드를 512셀로 변환해 디테일 저하도 의심. 다음 일은 Codex 독립 worktree에서 실제 ZIP/SHA 재검증 + 변경분 격리 Unity 시각/기술 QA→바울 대표 미술 판단→필요 시 수정 1~3 PNG만 art-new로 반환. 지금 추가 아트 재제작 지시0, 원본 Unity Editor/Save/UserData/main Push/병합0. 기획 `문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_3Strips_v1_Delivery_VisualTechnical_QA_Gate_20261020.md` (`docs/planning` commit `f4019777d149be62415b132acf02d151cc1c183b`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 새 댓글.
+
+별개 Field09 B 파생 Glow 격리39PASS/0FAIL·대표 원본 Unity 적용/PR 준비 승인 대기, Chapter3 설빙의 폭군 B 전투모션은 뒤로. TTS/SFX/영상 보류.
+
+# PLANNING 최신 인계 — 2026-10-20 Codex 서리들쥐 A 전투3 Strip 규격확정, 메인아트 실제 제작 착수
+
+바울 대표 Codex 보고: 기술 검증 PASS, branch `codex/chapter3-mouse-combat-contract-20261020`, 제작계약 commit `ad9e4b46`, 인계 `13178071`, 기존 Chapter2 몬스터정의8종/관련 코드6종·승인 Mouse PNG SHA 대조 PASS. **4×4/PPU314 임시안 폐기, 독립3 Strip으로 확정**. Attack(앞발 할퀴기→Idle), Hit(피격반응→Idle), Defeat(마지막03 유지) 각 **2048×512 RGBA 4×512 셀 가로**, **8FPS**, **PPU512/Pivot하단중앙(0.5,0), VisualScale1/우향1종·기존 좌우반전**. 기존 Mouse 승인 Idle 원본 SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2` 바이트 동일 재사용, 보스 B/Field09 포함 타 신규 작업 금지.
+
+메인 아트 담당 `docs/art-new`는 **지금 바로 신규 PNG Attack/Hit/Defeat 총3장만 제작**; 4프레임별 컨택트시트/8FPS 반복미리보기/128px 비교/Manifest·SHA/ZIP CRC 동봉 실파일 납품→그때 Codex 독립 Unity 모션/Idle복귀/사망고정 최소 QA→바울 대표 최종 미술 승인→정식 전투 몬스터 등록/원본 Unity 적용 별도. 이번 Codex 기술보고는 Unity 실제 몬스터 기능 구현 또는 새 PNG 완성이 아님, Save/UserData/Editor/원본3546 보호 및 Push/main병합0.
+
+기획 정본 `문서/00_프로젝트/Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md` (`docs/planning` commit `079e1e8bfc5cc0b35a53de228e9b9122ac31df53`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 신규 댓글. 메인 아트 담당 세션에 복붙 지시 1회 전달 필요, **Codex에게 같은 조사 중복 발주 금지**. Field09 B Glow 격리통합39PASS/0FAIL·원본적용 PR승인 대기 별개.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A 전투 스프라이트 제작 우선
+
+바울 대표: 두 Idle v1의 Codex Unity14PASS/0FAIL 보고 뒤 “좋은데. 전투 스프라이트는? 쥐는 빨리 만들어야지 되는거 아냐?” → **서리들쥐 A를 Chapter3 첫 전투 몬스터로 우선**. 메인 아트 담당에게 곧장 임의 4x4를 그리게 하지 않고 **Codex 기존 MonsterDefinition/MonsterSpriteSheetAnimation/Ch2공식 시트/전투 UI를 읽어 최종 Attack/Hit/Defeat 계약**(시트 또는 독립 strip, spriteRects, 4프레임/FPS·재생/복귀·명시적 frames, PPU512/Pivot 하단중앙·발 접지·scale) 확정 지시 후 실제 쥐의 나머지 전투 3모션만 빠르게 발주. 기존 승인 Mouse 1포즈 SHA `0516914d...` 및 Idle Sheet SHA `5afebfa1...` 보호, 보스 B 전투3모션은 후순위, 이미 작업 중인 아트 담당에게 Idle 재지시하지 않음.
+
+기획 `docs/planning/문서/00_프로젝트/Chapter3_FrostFieldMouse_FirstCombatSprite_Contract_Preflight_20261020.md` commit `d2f4e2964b24b40bf6928cc9d16dd7d26b0b5890`, Issue #30 댓글. 이번 Codex는 **문서/기술확정만** 허용; 원본 Unity/Editor/Save/UserData/Main 직접 Push·병합 금지. 나머지 Field09 B Glow 격리 통합39PASS 후 원본 적용승인 대기는 별개 작업.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 신규 몬스터 Idle 2종 실제 격리 Unity 14PASS/0FAIL, 대표 모션 승인 대기
+
+바울 대표 전달 Codex 최종 Idle v1 QA 보고: 서리들쥐A·설빙의 폭군B 모두 구조/기술PASS·**시각/모션PASS 권고**, 4×512×512 8FPS 0.500초 루프, Frame00 정적 승인 1포즈 픽셀 동일, 발 접지/크롭·03→00 자연스러움, **격리 Unity14PASS/0FAIL**. 서리들쥐 꼬리/앞니/발톱과 128px 야생성, 폭군 흉곽/어깨·긴 팔의 미세움직임·보스 체급 유지. Codex `codex/chapter3-idle-v1-review-20261020`, QA `1b9ad951`, 인계 `3ef27f34`. 사용자 PC 원본 Unity/Save/UserData/Editor·정적1포즈 보호, Unity 원본등록/Push/main 병합0.
+
+실물 ZIP `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip` SHA256 `6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c`; Mouse Sheet `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`, Tyrant Sheet `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`. 신규 아트 보고 `docs/art-new/Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md`. **중요: Codex 시각 PASS 권고는 바울 대표 최종 모션 승인과 다름**, 현재 `USER_MOTION_APPROVAL_PENDING`으로 기록. 바울 대표가 실제 루프를 보고 승인하면 Idle 시트2 SHA 동결→향후 구현/Attack·Hit·Defeat 별도 단계 승인. 이미 신규 아트 담당에게 Idle 작업 지시했으므로 반복 지시 금지. 기획 계약 `문서/00_프로젝트/Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1_IsolatedUnity_14PASS_UserMotionApprovalGate_20261020.md` (`docs/planning`, commit `bd7bee163cbb8b6c80be58b6309f87fcf0953767`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록.
+
+**별도 Field09 상태:** B 파생 Glow 승인은 이미 받고 격리 통합39PASS/0FAIL, 사용자 원본 Unity 안전 적용 및 main PR병합 승인 대기는 별도. 이 보고를 Field09 승인 답변으로 간주하지 않음.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 B안 격리 Unity 통합39PASS/0FAIL, 본게임 원본적용/PR 승인은 별개
+
+바울 대표 Codex 보고: 최종 승인된 5 PNG를 동일 SHA로 격리 등록하고 파생 Glow **신규 PNG/.meta/GUID** 연결/Glow Sprite 참조 **1곳만** 교체. Branch `codex/field09-derived-glow-b-integration-20261020`, 승인기준 commit `77978aa1`, B연결 `913eceb7`, QA 보고 `b04c42e7`; 신규 Glow SHA `64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48`. 3 GameView 붉은띠·가이드 제거/내부 열기·조사/Missing Sprite0/Collider·격리 Save/Continue 변경분 **39PASS/0FAIL**. 과거 A/B34 및 과열UI10은 재검사 없이 이력 재사용. 원본3546/공식 Glow/meta/GUID/Save/UserData/원본 Editor 전부 보호, **original local main 적용0 / remote main Push/merge0**.
+
+B는 바울 대표가 전 턴에 **최종 미술 승인**했으며 이번 보고는 격리 적용 성공만 입증. 원본PC Unity 디스크 적용 및 별도 PR main merge는 명시적 승인 필요. Field09 미완료 다른 소품(HeatVent/Spire 등)은 자동 완료 아님. 기획 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_IsolatedIntegration_39PASS_OriginalApplyGate_20261020.md` (`docs/planning`, commit `156b96eb76e0bbc2a97066205fab4caddde2182d`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 인계 댓글. 대표에게 **원본 Unity 안전 적용 + PR 준비 여부**를 묻되 실제 PR 병합까지 자동 승인으로 해석하지 않는다.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 B 파생 Glow 최종 승인, Codex 격리 Unity 구현 착수
+
+바울 대표가 기획 질문 “B안(별도 파생 Glow)을 최종 미술안으로 승인하시겠습니까?”에 **“승인”** 답변. **B 파생 Glow 미술안 채택/격리 구현·DeltaQA 착수 승인**, A SpriteMask는 PASS 기록만 유지하고 미선택. Codex A/B branch `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`, B 포함 두 안 모두 실 GameView 3비율 시각 PASS·Delta34PASS/0FAIL+과열UI10PASS; 성능은 측정0. 기존 Glow 원본 PNG/meta/GUID 보호·Approved Sample3 Base/CrackedOverlay/Slab + Phase2 Cliff v2/Fissure Edge v2 SHA 보존. **신규 B Glow 별도 asset+GUID를 도입하고 격리 Field09 Scene의 해당 Glow Sprite 참조 최소 교체**; 기존 개별 art asset 조합 시 본게임 공식 Phase2 완성 여부 분리. Codex 별도 `codex/field09-derived-glow-b-integration-20261020` 격리 worktree에서 실제 구현·동일 3 GameView+미니 기능 Delta 검증하되 **원본 PC 에디터/dirty/Save/UserData 및 원격 main 직접 적용/Push/병합 금지**, 보고 후 별도 승인. 원본 Glow 다시 그리기·Mask 추가·리뉴얼 새 그림 보완 불필요. Stage2 다른 환경 소품까지 완성했다는 주장은 금지.
+
+기획 실행 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_UserApproval_ImplementationOrder_20261020.md` (`docs/planning`, commit `afc1425c22f9f7700d787d1ee7fe48918515bd06`). GitHub [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 승인/실행댓글 기록. Codex에 복붙 지시문 1회 전달. Chapter3 메인 아트 Idle2 2048×512 시트 제작은 기존 지시 유지, TTS/SFX/영상 보류.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Glow A/B 둘 다 실제 GameView 시각 PASS, B 파생 Glow 기술추천
+
+바울 대표 Codex QA 전달: A SpriteMask와 B 별도 파생 Glow 모두 붉은 띠/가이드 제거 PASS, 과열·조사 내부 가독성 PASS, 다른 Renderer 부작용0. B안은 기존 Glow 내부 RGB/필요 Alpha 약99.9% 유지하면서 **추가 Mask가 없어 단순 Sprite 참조 교체만 필요**. 동일 실제 3 GameView, A/B 변경분34PASS/0FAIL 및 공통 과열 위험 UI10PASS. **성능 측정은 하지 않았음**. Codex `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`. 승인 Base/Overlay/Slab + Phase2 Cliff/Fissure 원본, 기존 Glow PNG/meta/GUID, Save/UserData/Editor 보호, 원본 Scene 변경/Push/main병합0.
+
+**기획은 B 기술 방향 추천, 그러나 바울 대표 B 파생 Glow 원화·실제 최종 적용은 아직 명시적 승인받지 않았음.** B 후보 PNG/GUID/Alpha SHA와 동일 화면 확대 비교·참조변경 범위를 Codex 기존 격리 결과로 대표에게 제시 → 미술 승인 → 이후 별도 코덱스 최소 Scene 참조 교체 및 안전 QA → PR/main 승인 순. A도 PASS한 대안으로 기록, 리뉴얼 담당은 기존 PNG 재작업 없이 대기. 신규 Chapter3 메인 아트 Idle2 제작은 별도 진행.
+
+정본 `문서/00_프로젝트/Field09_Glow_AB_VisualPass_BDerived_Recommendation_ApprovalGate_20261020.md` (`docs/planning` `1195e39c2f1d7d7dc43f90b1d5ac41efa2f30b84`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Phase2 Cliff PASS·Fissure+Glow 합성 FAIL, 기술 후보 비교
+
+바울 대표 Codex 검수 스크린샷: Field09 Phase2 `Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 구조 ZIP/PNG/CRC PASS, 격리 Unity 기술19 PASS/0 FAIL, **Cliff v2 하단 접지 시각 PASS**, **Fissure Edge v2 단독 외곽 매트 시각 PASS**, 오직 **원본 Fissure Glow 결합에서 윗/오른쪽 붉은 띠/가이드 잔흔 시각 FAIL**. 원인은 Glow-Edge alpha 형태 부조화와 원래 Mask 없는 Renderer 조합; Glow sorting -7이 Fissure -8 앞쪽, 정렬 반전만으로는 해결 못함. Codex `codex/field09-phase2-fix-v2-qa-20261020`, QA `16c1fb92`, 인계 `fe0b412d`. original source3546+ Save/UserData/approved3+Glow/meta/GUID 보호, 공식 Unity 적용/Push/main 병합 없음.
+
+**기획 판단:** 리뉴얼 담당 Cliff/Edge v3 추가 제작 **중단**, 전체 환경 그림 재수정 금지. Codex 격리 기술 비교만 (A) Edge 기준 SpriteMask로 Glow 제한, (B) 공식 Glow 바이너리 변경 없이 새 파생 Glow sprite alpha를 Edge에 맞게 제작, 3 GameView 확대/과열·조사 가독성/Sorting side effect/Save 기능 비침범을 비교해 가장 안정적인 한 옵션 권고. Original Scene/Glow/승인 PNG 전부 불변; A/B 후보 미술승인 및 정식 적용은 바울 대표 후속 결정. 변경분 QA만, 기존30/17/92 전수 반복X.
+
+정본 `문서/00_프로젝트/Field09_Phase2_FissureGlow_CompositionRootCause_And_PrototypeGate_20261020.md` (`docs/planning` commit `222a9e42303c4e285eeed3d67a7be6c4654b0863`); [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 업데이트. Chapter3 메인 아트 Idle2 제작은 별도 `docs/art-new` 작업 유지, 다른 담당 재지시 금지.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 Idle 기술 Lock + Field09 Phase2 Fix v2 납품
+
+바울 대표 Codex 캡처: 서리들쥐 A/설빙의 폭군 B Idle 애니메이션 기술 계약 최종 **2048×512 1행×4프레임(각512×512), 8FPS 0.5s loop, PPU512, Pivot(0.5,0) 발 중앙, 우향1, VisualScale A1/B3, UI 실제 알파 실효 A≈102×80/B≈307×305**. Codex `codex/chapter3-ab-idle-contract-20261020`, 계약 `b1793f85`, 인계 `cfed20a8`, 원본 PNG2 SHA 검증·원본 Unity 변경 없음. `docs/art-new/Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md`의 이전 조사값 PPU314·1256×314은 **최종 제작 계약이 아님**. 메인 아트는 기존 승인 1포즈 PNG2 보호, 새 Idle 실제 시트 2장만 제작→비교 미리보기/ZIP QA→Codex 간단 반복 모션 확인→사용자 미술승인. Attack/Hit/Defeat·다른 캐릭터 제작 금지.
+
+동시 `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_Fix_v2.zip` 리뉴얼 보고 수령. ZIP SHA `0e4b7bfb3784b5b97a4a719c669f9564f502d67e88c2096d32475fa69a6876c8`, Cliff v2 `ad995f3c...`, FissureEdge v2 `c3dc0c13...`. `docs/art-renewal` v2 파일QA PASS지만 **기존 Glow sorting -7이 Edge -8보다 앞에 있어서 붉은 띠 시각 FAIL 가능성 유지**. Codex만 안전 격리 Unity에서 Cliff 발치 매트/Edge 외곽/기존 Glow 겹침 3비율 Delta QA. 시각 Fail이면 코드/Material/Mask 원인 분리, 기존 Glow·승인 Sample3 3종·원본 3546/Save·UserData 보호, 기존 QA30/17/92전수 재실행 금지. Phase2 원본 Unity 공식 적용/main병합 계속 HOLD. 리뉴얼 신규 다른 그림 제작은 결과 전 보류.
+
+기획 실행 정본 `문서/00_프로젝트/Chapter3_Idle2_And_Field09_Phase2Fixv2_Execution_20261020.md` (`docs/planning` commit `79dc53851cf5f462b8f0b3d598c113c919fe768e`); Issue [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 현재 인계 댓글 기록. 세션 간 자동전달은 아님. 사용자에게 담당별 1개씩 지시문을 복붙하도록 제공. TTS/SFX/영상 기타 제작 보류.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A / 설빙의 폭군 B 1포즈 v2 미술 승인
+
+Codex QA 스크린샷: ZIP/CRC/Manifest/PNG2 PASS, 동일 Chapter2 공식 몬스터/보스 표시 비교에서 서리들쥐A=PASS(128px 꼬리/앞니/발톱·긴장 체형), 설빙의 폭군B=PASS(큰 앞손/흉곽/보스 체급·위압), 이전 v1의 3배 확대 한계 해결 권고. Codex 검수 `codex/chapter3-ab-v2-art-review-20261020`, QA `3f23d1b4`, 인계 `7f9ca843`. 바울 대표가 보고 **“좋네”** → **고해상도 A/B 방향 및 재작업 1포즈 v2 PNG2 미술 승인으로 기록**. 미술 수작업 드로잉의 제작 소스는 독립 검증 불가능하다는 기술 caveat 보존.
+
+승인 실물 `F:\Downloads\Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip`, SHA256 `0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919`; PNG A `0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2`·PNG B `f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830`. 기획 승인 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_ArtRework_v2_UserApproval_20261020.md` (`docs/planning`, commit `f828f4d271a50ea6ab5c583b5c8c56db23fef8d9`) 및 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 업데이트. **1포즈 자체만 승인**이며 기존 v1은 ART_HOLD; F1/마을 환경 PNG10·전투 애니메이션/스탯/Runtime/Unity scene/Push/main병합은 별도 미승인. 다음은 기존 Animator/PPU/Pivot/Frame 계약 실측 후 승인된 2캐릭터의 Idle 짧은 파일럿 제작·검수 단계만 발주 검토. Chapter1·2 Field09 리뉴얼 수정과 업무 분리. TTS/SFX/영상은 바울 대표 보류.
+
+# 기획 최신 인계 — 2026-10-20 Field09 Phase2 Pilot v1 기술 PASS / 실화면 시각 FAIL 2종
+
+바울 대표 Codex 검사 결과: `F:\Downloads\Limitless_Field09_Redesign_Phase2_Pilot_v1.zip` (SHA `f12b0569...`) ZIP/PNG/Manifest PASS, 격리 Delta30PASS/0FAIL/3 GameView. 그러나 **Cliff**는 가이드 삭제 후에도 하단 회백색·홍흑색 매트와 접지 오류, **Fissure Edge**는 외곽 매트와 기존 Glow 위 붉은 띠 노출·형태 불일치로 시각 FAIL. Codex QA `f2ad1781`, 인계 `89319b10`. 기존 승인3 PNG SHA 동일, 원본 3546/Save/UserData 보호, 공식 원본 적용·Push/main병합0. 기획 문서 `문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md` (`docs/planning`, commit `6e5e645cee5aed53db0152ace0a3623444cd2f4e`), Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 댓글 반영.
+
+다음은 **리뉴얼 담당이 Cliff/Fissure 두 신규 PNG만 매트 제거·자연스러운 접지·기존 Glow와 형상 정합**으로 v2 제작해 실제 ZIP/SHA/합성 Preview 제출. **기존 Glow는 임의 수정 금지**, 변경 없이는 안 되면 사용자 승인을 위한 별도 원인분석 보고. 기존 승인3/나머지 소품/Cracked02 보호, Phase2 전체 양산 HOLD. 실제 v2 납품 이후 Codex는 2개만 시각 Delta QA(기존30/17/92 재활용)→대표 미술 확인 후 다음 Phase. Chapter3 신규 아트 재작업 별도 담당 docs/art-new, BGM 승인 별개.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 서리들쥐 A/설빙의 폭군 B 1포즈 시각 HOLD
+
+바울 대표 Codex 정적 실제 게임UI 배율 비교 QA 보고: ZIP·PNG 구조 PASS, 그러나 **1포즈 미술 수정 권고·합격 보류**. 서리들쥐 A Source75×49→x3 Nearest로 둥근 마스코트 실루엣/128px 야생성·앞니·꼬리 미약; 폭군 B Source142×121→x3 Nearest로 두개골·뿔은 보이나 흉곽/발톱 조형 밀도 낮고 Ch2 승인 보스의 체급·위압과 불일치. Codex QA commit `d2893591`. 바울 대표가 이전에 선택한 **고해상도 디자인 방향 A·B 자체는 유지**, 픽셀아트 1포즈 v1을 자동 승인하지 말 것. 메인 아트 담당에게 **2장만 1포즈 진짜 세부 픽셀 신규 드로잉**(기존 source 단순 확대·56색 자동양자화 재포장 금지) 후 128px 및 Ch2 공식 렌더 배율 비교판 제출 요청. 기존 F1·서릿길 마을 환경10종 보호, 7종 몬스터 전체 애니메이션/Unity 구현/Push/main 병합0.
+
+기획 검수·재제작 정본 `문서/00_프로젝트/Chapter3_ApprovedAB_1Pose_CodexVisualHold_ArtRework_20261020.md` (`docs/planning`, commit `7f1eef189788d7b9ba2f9e60062bef43ae11fd61`); 담당 [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록. 실제 v2 PNG2 납품→Codex 최소 정적 QA→바울 대표 미술 직접 승인 후에만 애니메이션 발주. 기술PASS/디자인방향 선택/미술승인/Unity Import은 독립 상태.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 Sample3 대표 미술 승인, 잔여 아트 Phase2 착수
+
+바울 대표: OverlayFix v2 Codex 격리 GameView 3화면·Delta17PASS/0FAIL 보고 후 **“봤는데 좋아.”** 사용자 미술 승인. 합격 PNG는 BaseGround v1 `1bd8a614988ee182640a71b9771646c3009545140e0522a3290ee3b0e3138203`, CrackedOverlay v2 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`, ObsidianSlab v1 `dfa3abb2c6c86abc3f94baa213428038a1c15b4c963e76fef69491a6deb09692`. 이전 오버레이 v1·Field09 최소보완 v1/v2 시각FAIL은 이 승인에 포함하지 않음. 기존 3종 재제작/변경 금지. **샘플 승인 ≠ 전체 Field09 완료 ≠ 원본디스크/remote main 적용.** 현재 고립된 Unity 시각QA PASS, 원본 적용0.
+
+승인·후속 정본 `문서/00_프로젝트/Field09_Redesign_Sample3_UserVisualApproval_And_Phase2_20261020.md` (`docs/planning` commit `05cbec14fb50503637abe48ee01baff5ea3b9af7`). 수정 이슈 [#37](https://github.com/HappyPaul812/Project-Limitless/issues/37) 완료 처리, 잔여 환경 Phase2 [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 별도 개설. 리뉴얼 담당은 실사용 나머지 6소품 후보 KEEP/REDESIGN 판정 후 필요한 것만 새 오리지널 PNG·ZIP/QA로 납품; `Ground_Cracked_02` 미사용 시 HOLD. 처음에는 대표 타입 2~3개 보수적 시각 샘플 우선, 나머지 무분별 양산 금지. Codex는 새 납품에서 이전 Sample3 Delta17/Main18 92를 반복하지 않는 좁은 QA만 수행. Chapter3 신규 아트·BGM 별개 진행, TTS/SFX/영상 대기.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 메인 아트 파일럿·BGM 2곡 보고 검토
+
+바울 대표가 F: 드라이브의 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 납품 경로를 공유하고 BGM 최신 보고도 확인 요청. `docs/art-new`의 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`와 `docs/bgm`의 `Chapter3_BGM_Pilot_2Track_Listening_QA_20261020.md` 독해: 신규 아트 PNG12(북부 F1 6·서릿길 마을4·KeyArt2) 21항목 ZIP SHA256 `6a22ac4e...`, 기술 PNG/ZIP 오프라인 PASS 보고, **원본 Windows ZIP은 이 기획 세션에서 직접 열거나 눈으로 미술 검수하지 못했으며 Unity 기술 Import·사람 미술 승인 대기**. ZIP/PNG GitHub 바이너리 미등록. 제작법은 Pillow 결정론적 픽셀드로잉이며 기존 Chapter2 스타일/월드사이즈와 실제 비교 필요. BGM 곡2: F1 `Where_the_Grass_Bends.mp3` 74.24s, 마을 `Hearth_in_the_Low_Valley.mp3` 72.62s, BGM 담당자가 각각 곡 역할/구성 PASS 추천; 다만 둘 다 처음·끝 무음/종지로 **원본 MP3 무편집 직접 Loop는 FAIL**, 사용자 청취 승인 전. 실제 MP3는 다른 BGM 세션 업로드에 있어 이 기획 세션이 독립 청취한 것이 아님. Unity 음원 적용0. 구체 내용 `문서/00_프로젝트/Chapter3_ArtF1_BGM2_Pilot_Review_Gates_20261020.md`, `docs/planning` 커밋 `1e79835340dd3ee76909a39e4dac047aba522500`.
+
+**대표 현재 순서:** Chapter3 신규 아트·BGM 담당만 우선 활동. TTS/SFX/영상은 보류. 후속은 Codex가 사용자 로컬 ZIP을 격리 환경에서 실제 Preview/Gallery·SHA/PPU/타일/퀘스트동선 비교(기존 QA 반복 금지) → 바울 대표 미술 판단; BGM 두 곡 사용자 원본 청취 → 곡 승인 시 루프별 수정본 제작 → Unity에서 대사와 믹스/동일 scene 검증. 실제 아트/음악 승인, 바이너리 전달·원본 적용/PR/main 병합과는 별개.
+
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 병렬 착수·각 팀 Issue #30~36
+
+바울 대표: “챕터3는 설계 끝이면 각 담당한테 작업 맡겨야지?” GitHub latest 설계 검토 결과 Chapter3 방향/Chapter3 Main22~29 1차 서사/북부 필드5+보스1/서릿길 마을(Main23)/Main24 스킬상점·한기 대응/냉기3상태·온기의 화로·설빙의 폭군/형제애 중심 서사는 부서별 작업 **시작 가능**. 다만 `STORY_V1_PROPOSAL`, 정식 Quest/Dialogue/Monster/Scene IDs/좌표/금액·턴계수는 production lock **전**이다. 지금 신규 아트·BGM·SFX 소수 시안 제작, TTS 캐스팅만(API0), Codex Main22 연결·PPU/ID 읽기전용 감사, 영상 스토리보드, 기획 Main22~24 정식 ID/대사 초안 각자 병렬 진행. 전체 Unity 구현·TTS API·Main 병합 임의 착수 금지.
+
+기획 공통 발주 문서 `문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md` (`docs/planning`, commit `8fd341cbca2ff5fd4bfefbd46d3ebde8afb5e19c`). GitHub 작업 이슈: 신규 아트 [#30](https://github.com/HappyPaul812/Project-Limitless/issues/30), BGM [#31](https://github.com/HappyPaul812/Project-Limitless/issues/31), TTS API0 캐스팅/스크립트 준비 [#32](https://github.com/HappyPaul812/Project-Limitless/issues/32), SFX [#33](https://github.com/HappyPaul812/Project-Limitless/issues/33), 영상 [#34](https://github.com/HappyPaul812/Project-Limitless/issues/34), Codex read-only preflight [#35](https://github.com/HappyPaul812/Project-Limitless/issues/35), 기획 ID/Dialog release [#36](https://github.com/HappyPaul812/Project-Limitless/issues/36). 모두 담당 브랜치의 작업 목록이며 각 ChatGPT 세션이 **자동 통지를 받거나 작업을 시작한 것으로는 볼 수 없음**. 바울 대표가 담당 세션에 해당 Issue 번호/정본 확인 한 줄만 전달하면 됨.
+
+Chapter1·2 리뉴얼 담당 `docs/art-renewal`은 기존 Field09 3샘플/Slab QA 및 몬스터·Wolf 품질 관련 작업만 유지하며 Chapter3 신규 아트는 `docs/art-new` 관할. 최신 field09 환경 샘플 report GitHub PNG3 ZIP 미등록/Unity 검증 전으로 별개, Chapter3로 권한 확장 금지.
+
+# PLANNING 최신 인계 — 2026-10-20 Field09 새 미술 3종 Codex 기술인계 완료, 실제 PNG 샘플 제작 진행
+
+바울 대표 Codex 보고: 기존 Field09 visual fail 원인은 `PNG 경계 무늬 Tiled 반복`, `불투명 지면 간 접합`, `6종 소품 흰 가이드 픽셀`이며 실제 Scene 오브젝트 대응도 정리함. 공통 `512×512 RGBA / PPU128 / 중앙 Pivot`, 새 Base Ground `(0,0), Tiled21×15`; 새 Cracked Overlay `(-6,0), Tiled9×15`; 대표 Slab Prop `(5.2,1), 화면 약2×2`. Codex 로컬 문서 커밋 `0dcc13ab`라고 보고, GitHub Push0. 본 기획 세션이 로컬 인계서 자체를 직접 검사한 것은 아님.
+
+바울 대표의 "그렇게 해" 지시에 따라 **기존 Field09 v1/v2 픽셀보수 중단 + 화면 환경 아트 신규 제작** 확정. 다만 Main18 퀘스트13·과열/세린·몬스터/Collider·Spawn·Save 및 원본 공식 PNG/meta/GUID 보호. 새 아트 **Ground Base1·Cracked Overlay1·Slab1 = 총3개만 먼저 실제 PNG로 제작**, 이전 v1/v2 접합·흰선 실패를 피하도록 원본을 새 설계. 이 3개 ZIP 납품→Codex 격리 Unity 동일 카메라 Tiled 반복/Overlay seam/Guide/실스케일 Delta QA→바울 대표 미술 승인 이후 나머지 전체 환경으로 확대. **추가 Codex 전체 QA 반복 금지**, 기존 기능40+92PASS 역사 재사용. 신규 통합/원본 Scene 변경/PR/main병합은 아직 승인 안 됨.
+
+기획 정본: `문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md` (`docs/planning`, commit `44a4c97aebccb9d690f2e288634e86d7fee09b40`). 기획 문서만 GitHub에 기록함, 실제 새 PNG3 제작 및 담당 리뉴얼 세션에 자동 전송은 아직 실행 안 됨. 다음은 리뉴얼 담당에게 복붙용 샘플 3종 제작 지시 전달.
+
+# PLANNING 인계 — 2026-10-20 Field09 v2 시각 재실패로 '보수 중단·미술 교체' 방향 권고
+
+바울 대표 Codex 보고: Field09 v2 GitHub ZIP SHA/CRC/Manifest/PNG8 PASS, 격리40PASS/0FAIL, Main18 델타 기존92PASS 재사용. **하지만 실제 화면 회색 반복띠6/소품 흰 가이드선6종 그대로 남아 visual FAIL, 원본 Scene 적용·Push·merge0**. 따라서 v1/v2의 같은 자동 픽셀 보완 v3 반복 중단을 권고. 바울 대표 “이럴 바엔 다 엎고 다시 하는게 더 안낫니?” → **기획은 Field09 환경 아트 새 제작이 타당**하다고 의견 제시하되, 사용자 최종 제작 지시는 아직 요청 중. 맵·퀘스트13·과열/몬스터·Spawner/Save·기존 공식 PNG/meta/GUID는 보호하고 **표시 환경 원화만 별도 새 에셋**으로 교체 계획.
+
+선행 QA는 Codex가 화면회색띠/흰선이 실제 PNG 자체에 있는지 또는 Renderer Tiled UV/Material/Overlay/추가 중복 오브젝트 원인인지 **1회 읽기 전용 분류**. 새 원화는 **Ground Base, Ground Cracked Overlay, 대표 소품 각1개 = 총3개 먼저** 제작→격리 Unity 동일 카메라/3비율 미술 QA→이상이 사라진 후 나머지 공식 환경만 제작. 전체 PNG 양산 후 또 6+6 실패하는 낭비 금지. 신규 `main` commit/Push·원본 Scene 삭제 금지. 기획 제안 정본 `문서/00_프로젝트/Field09_Art_Redesign_After_v2_VisualQA_Failure_20261020.md` (`docs/planning`, commit `cc3579aaa0e668aedf874e8e788b646c22db07ee`). 문서 기록만 완료, Unity 원본/이미지 파일 생성·리뉴얼 세션 작업 자동 전달은 아직 아님.
+
+# 기획 최신 인계 — 2026-10-20 Field09 GitHub 공식 PNG10 확인, v2 실제 작업 지시
+
+바울 대표 요청: “Field09 미술 원본은 깃허브에 없으면 없는거니까 알아서 지시해줘.” 실제 최신 GitHub `main` `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` 폴더 `Unity/Client/Assets/_Project/Resources/Main18/Environment/`에 **공식 PNG10종과 각 .meta가 전부 존재**하고, v2 필요 수정 대상8종의 파일 크기/블롭을 GitHub Contents에서 확인. 이전 리뉴얼 세션이 자기 컨테이너에 원본 PNG가 없다고 보고한 것은 GitHub 파일 부재가 아닌 **컨테이너/바이너리 다운로드 도구 접근 제약**. 더 이상 원본없음 핑계로 보류하지 않음.
+
+새 실행 정본 `문서/00_프로젝트/Field09_OfficialPNG_SourceConfirmed_ArtV2_ExecutionOrder_20261020.md` (`docs/planning`, 커밋 `c9a1c0a6a20e323d1d0b45689b6e896fd578f4d8`). **리뉴얼 담당은** GitHub PNG8을 바이너리로 받아 실제 수정→지면 Base·Cracked01 회색 반복띠6/Overlay seam, 나머지6개의 흰 가이드선 국소 제거→**PNG8 및 표준 검증 ZIP v2 직접 납품**. 원본 및 .meta/GUID/SHA, AshPatch·Cracked02 보호. tool byte 접근만 막히면 **Codex 단1회 읽기 전용 PNG8+Unity visualFAIL 스크린샷 추출**을 요청, 사용자 업로드 요청 금지. 실제 GitHub 원본이 없는 경우만 신규 복원 원화 후보인데 **지금은 원본 존재 확인됨**. 과거 Field09 v1 정상 ZIP 재포장/Tech40PASS/Main18 92PASS에도 실제 게임 Visual FAIL 지속·원본 적용 제외. v2 납품 후에만 Codex 최소 UI/GameView Delta QA와 조건부 원본 반영. 2026-10-19 EOD remote main/original local main SYNC_COMPLETE는 승인 자산들에 한하며 Field09 v2는 미포함. 몬스터·늑대 v3 KeyArt 사용자 미술승인 및 전체 시트 제작 대기 유지.
+
+기획 문서 작성/인계만 GitHub에 반영됨. 리뉴얼 챗 세션 간 자동 지시 전달 불가; GitHub 정본/Issue 및 복붙지시를 담당에게 전달해야 수행된다.
+
+## 기존 main 인계 이력 보존
+
 ## 2026-10-19 EOD 통합 현재 상태 (과거 기록보다 우선)
 
 바울 대표 마감 통합 지시에 따라 Main09 승인27·재회순서, Main10 승인18·조사 NPC 우선권, Field06 v1.1 B42/Ground49/Spawn, Field07 v1 B42/투명 Ash7만 통합 브랜치에 준비했습니다. Main18·Field05·Main09 퀘스트 UX는 기존 main 유지/중복 적용0입니다. 아래의 이전 승인대기·미적용·API 계획은 당시 HISTORY이며 현재 실행 허가가 아닙니다.

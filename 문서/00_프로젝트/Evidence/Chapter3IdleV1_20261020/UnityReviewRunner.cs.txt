@@ -1,0 +1,69 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.U2D.Sprites;
+using ProjectLimitless.Monster;
+using Object=UnityEngine.Object;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>정식 데이터·Scene 없이 승인 시트2개만 공용 재생기에 연결하는 격리 검수입니다.</summary>
+    [InitializeOnLoad] public static class Chapter3IdleVisualReview
+    {
+        const string Armed="Chapter3IdleV1QA20261020";
+        const string Assets="Assets/_Project/QA/Chapter3IdleV1/";
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../Chapter3IdleV1QA20261020/Runtime"));
+        static readonly List<string> Checks=new List<string>(),Errors=new List<string>(),Trace=new List<string>();
+        static IEnumerator routine;static double deadline;static MonsterSpriteSheetAnimation[] players;static string[] last=new string[2];static GameObject canvas;
+        static Chapter3IdleVisualReview(){EditorApplication.playModeStateChanged+=s=>{if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Armed,false))return;Application.runInBackground=true;AudioListener.volume=0;Application.targetFrameRate=60;QualitySettings.vSyncCount=0;Application.logMessageReceived+=(t,st,k)=>{if(k==LogType.Error||k==LogType.Exception)Errors.Add(t+"\n"+st);};routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+180;EditorApplication.update+=Tick;};}
+        static void Check(bool ok,string text){Checks.Add((ok?"PASS|":"FAIL|")+text);File.WriteAllLines(Path.Combine(Root,"checks.txt"),Checks);if(!ok)throw new Exception(text);}
+        public static void Start(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field05Review20261019/Client/Assets"))throw new Exception("격리 Batch 전용");
+            Directory.CreateDirectory(Root);File.WriteAllText(Path.Combine(Root,"status.txt"),"RUNNING");File.WriteAllText(Path.Combine(Root,"failure.txt"),"");
+            foreach(string stem in new[]{"FrostFieldMouse_A","FrostTyrant_B"}){
+                Import(Assets+stem+"_1Pose_Rework_v2.png",false);Import(Assets+stem+"_Idle_4Frames.png",true);
+            }
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Armed,true);EditorApplication.EnterPlaymode();
+        }
+        static void Import(string path,bool sheet){
+            AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);var im=(TextureImporter)AssetImporter.GetAtPath(path);im.textureType=TextureImporterType.Sprite;im.spriteImportMode=sheet?SpriteImportMode.Multiple:SpriteImportMode.Single;im.spritePixelsPerUnit=512;im.maxTextureSize=2048;im.filterMode=FilterMode.Point;im.mipmapEnabled=false;im.textureCompression=TextureImporterCompression.Uncompressed;im.wrapMode=TextureWrapMode.Clamp;im.npotScale=TextureImporterNPOTScale.None;im.alphaIsTransparency=true;
+            var set=new TextureImporterSettings();im.ReadTextureSettings(set);set.spriteMeshType=SpriteMeshType.FullRect;set.spriteAlignment=(int)SpriteAlignment.BottomCenter;set.spritePivot=new Vector2(.5f,0);im.SetTextureSettings(set);im.SaveAndReimport();if(!sheet)return;
+            var fac=new SpriteDataProviderFactories();fac.Init();var provider=fac.GetSpriteEditorDataProviderFromObject(im);provider.InitSpriteEditorDataProvider();
+            // 지원 권한이 없으면 분할을 시도하지 않고 중단합니다.
+            var editor=provider.GetDataProvider<ISpriteFrameEditCapability>();if(editor==null)throw new Exception("Sprite 분할 권한 없음");var cap=editor.GetEditCapability();foreach(var required in new[]{EEditCapability.CreateAndDeleteSprite,EEditCapability.EditSpriteName,EEditCapability.EditSpriteRect,EEditCapability.EditPivot})if(!cap.HasCapability(required))throw new Exception("Sprite 권한 미지원: "+required);
+            var old=provider.GetSpriteRects();var rects=Enumerable.Range(0,4).Select(i=>new SpriteRect{name=Path.GetFileNameWithoutExtension(path)+"_"+i.ToString("00"),rect=new Rect(i*512,0,512,512),alignment=SpriteAlignment.BottomCenter,pivot=new Vector2(.5f,0),spriteID=old.FirstOrDefault(x=>x.name.EndsWith("_"+i.ToString("00")))?.spriteID??GUID.Generate()}).ToArray();
+            provider.SetSpriteRects(rects);var names=provider.GetDataProvider<ISpriteNameFileIdDataProvider>();if(names!=null)names.SetNameFileIdPairs(rects.Select(x=>new SpriteNameFileIdPair(x.name,x.spriteID)));provider.Apply();im.SaveAndReimport();
+        }
+        static IEnumerator Wait(float seconds){float end=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<end)yield return null;}
+        static Sprite[] Frames(string stem)=>AssetDatabase.LoadAllAssetsAtPath(Assets+stem+"_Idle_4Frames.png").OfType<Sprite>().OrderBy(x=>x.name).ToArray();
+        static Image Picture(string name,Sprite sp,float x,float y,Vector2 size){var go=new GameObject(name,typeof(RectTransform),typeof(CanvasRenderer),typeof(Image));go.transform.SetParent(canvas.transform,false);var im=go.GetComponent<Image>();im.sprite=sp;im.preserveAspect=true;im.color=Color.white;var t=im.rectTransform;t.anchorMin=t.anchorMax=new Vector2(0,1);t.pivot=new Vector2(.5f,.5f);t.anchoredPosition=new Vector2(x,-y);t.sizeDelta=size;return im;}
+        static void Label(string text,float x,float y){var go=new GameObject("Label",typeof(RectTransform),typeof(CanvasRenderer),typeof(Text));go.transform.SetParent(canvas.transform,false);var t=go.GetComponent<RectTransform>();t.anchorMin=t.anchorMax=new Vector2(0,1);t.pivot=new Vector2(.5f,.5f);t.anchoredPosition=new Vector2(x,-y);t.sizeDelta=new Vector2(400,35);var label=go.GetComponent<Text>();label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.fontSize=18;label.alignment=TextAnchor.MiddleCenter;label.color=Color.white;label.text=text;}
+        static MonsterDefinition Fixture(Sprite[] frames,float scale){var d=ScriptableObject.CreateInstance<MonsterDefinition>();var s=new SerializedObject(d);var arr=s.FindProperty("explicitIdleFrames");arr.arraySize=4;for(int i=0;i<4;i++)arr.GetArrayElementAtIndex(i).objectReferenceValue=frames[i];s.FindProperty("animationFramesPerSecond").floatValue=8;s.FindProperty("visualScale").floatValue=scale;s.FindProperty("sourceFacesRight").boolValue=true;s.ApplyModifiedPropertiesWithoutUndo();return d;}
+        static IEnumerator Run(){
+            PlayModeWindow.SetCustomRenderingResolution(1280,720,"Idle QA background");yield return Wait(.5f);var cam=new GameObject("QA Camera",typeof(Camera)).GetComponent<Camera>();cam.clearFlags=CameraClearFlags.SolidColor;cam.backgroundColor=new Color(.12f,.14f,.17f);cam.orthographic=true;
+            canvas=new GameObject("QA Canvas",typeof(Canvas),typeof(CanvasScaler));canvas.GetComponent<Canvas>().renderMode=RenderMode.ScreenSpaceOverlay;var scaler=canvas.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);scaler.matchWidthOrHeight=.5f;
+            string[] stems={"FrostFieldMouse_A","FrostTyrant_B"};players=new MonsterSpriteSheetAnimation[2];
+            for(int j=0;j<2;j++){
+                var frames=Frames(stems[j]);Check(frames.Length==4,stems[j]+".FrameCount4");Check(frames.All(x=>x.rect.size==new Vector2(512,512)&&x.pixelsPerUnit==512&&x.pivot==new Vector2(256,0)),stems[j]+".Cell512PPU512BottomPivot");
+                float scale=j==0?1:3;Vector2 size=new Vector2(136,112)*scale;float x=j==0?400:640,y=j==0?155:465;var im=Picture(stems[j],frames[0],x,y,size);var def=Fixture(frames,scale);players[j]=im.gameObject.AddComponent<MonsterSpriteSheetAnimation>();players[j].Configure(im,def);
+                Picture(stems[j]+"_Approved",AssetDatabase.LoadAssetAtPath<Sprite>(Assets+stems[j]+"_1Pose_Rework_v2.png"),j==0?160:220,y,size);
+                var world=new GameObject("QA_ScaleProof_"+j,typeof(SpriteRenderer));world.transform.position=new Vector3(100,100);world.transform.localScale=Vector3.one*scale;world.GetComponent<SpriteRenderer>().sprite=frames[0];Check(Mathf.Abs(world.GetComponent<SpriteRenderer>().bounds.size.x-scale)<.001f,stems[j]+".FieldWorldScale"+scale);
+            }
+            var hound=AssetDatabase.LoadAllAssetsAtPath("Assets/_Project/Art/Monsters/11_SootHound/Soot_Hound_Sprite_Sheet.png").OfType<Sprite>().First(x=>x.rect.x==0&&x.rect.y==942);var boss=AssetDatabase.LoadAllAssetsAtPath("Assets/_Project/Resources/Main20/Boss/Veinfire_Colossus_Sprite_Sheet.png").OfType<Sprite>().First(x=>x.rect.x==0&&x.rect.y==942);
+            Picture("Ch2 Hound",hound,640,155,new Vector2(136,112));Picture("Ch2 Boss",boss,1060,465,new Vector2(408,336));
+            Label("Approved pose",160,65);Label("Mouse Idle - Scale 1",400,65);Label("Ch2 Soot Hound",640,65);Label("Approved pose",220,270);Label("Tyrant Idle - Scale 3",640,270);Label("Ch2 Veinfire Colossus",1060,270);Label("4 frames / 8 FPS / 0.5s loop - actual battle UI reference size",640,695);
+            yield return Wait(2.6f);Check(Screen.width==1280&&Screen.height==720,"ActualGameView1280x720");
+            for(int i=0;i<4;i++){float until=Time.realtimeSinceStartup+2;while(!players[0].CurrentFrame.name.EndsWith("_"+i.ToString("00"))&&Time.realtimeSinceStartup<until)yield return null;Check(players[0].CurrentFrame.name.EndsWith("_"+i.ToString("00")),"LoopFrameReached"+i);ScreenCapture.CaptureScreenshot(Path.Combine(Root,"GameView_Frame"+i+".png"));yield return Wait(.03f);}
+            foreach(int j in new[]{0,1})Check(Trace.Count(x=>x.StartsWith(j+"\t"))>=16,"Runtime.8FPSLoopTrace."+j);
+            File.WriteAllLines(Path.Combine(Root,"FrameTrace.tsv"),Trace);File.WriteAllLines(Path.Combine(Root,"errors.txt"),Errors);Check(Errors.All(x=>x.Contains("UnityEditor.Search")||x.Contains("Host type is not matching")),"Console.NewProductErrors0");File.WriteAllText(Path.Combine(Root,"status.txt"),"CAPTURED_IDLE_REVIEW_PENDING");
+        }
+        static IEnumerator Flatten(IEnumerator r){var stack=new Stack<IEnumerator>();stack.Push(r);while(stack.Count>0){var it=stack.Peek();if(!it.MoveNext()){stack.Pop();continue;}if(it.Current is IEnumerator sub){stack.Push(sub);continue;}yield return it.Current;}}
+        static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("Idle QA timeout");if(players!=null)for(int i=0;i<2;i++){string n=players[i]?.CurrentFrame?.name;if(n!=null&&last[i]!=n){Trace.Add(i+"\t"+Time.realtimeSinceStartup.ToString("F5",System.Globalization.CultureInfo.InvariantCulture)+"\t"+n);last[i]=n;}}if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Armed,false);EditorApplication.Exit(0);}catch(Exception e){File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");EditorApplication.Exit(1);}}
+    }
+}

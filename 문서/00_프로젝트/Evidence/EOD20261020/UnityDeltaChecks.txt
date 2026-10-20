@@ -1,0 +1,11 @@
+PASS|Field09.StoredSceneLoad
+PASS|StoredReference.ObsidianScar_Ground
+PASS|StoredReference.ObsidianScar_GroundCrackedWest
+PASS|StoredReference.ObsidianScar_Slab
+PASS|StoredReference.ObsidianScar_Cliff
+PASS|StoredReference.ObsidianScar_Fissure
+PASS|StoredReference.ObsidianScar_Glow
+PASS|B.ImportPPU128CentralPivot512
+PASS|SortingAndMaskPreserved
+PASS|Field09.MissingSprite0
+PASS|OfficialGlowGUIDPreserved

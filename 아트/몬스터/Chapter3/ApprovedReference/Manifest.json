@@ -1,0 +1,30 @@
+[
+  {
+    "file": "FrostFieldMouse_A_1Pose_Rework_v2.png",
+    "sha256": "0516914ddad36af5854065d66d01b9664329aa89eea8b394480eed6af92e32c2",
+    "source_zip": "Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip",
+    "source_zip_sha256": "0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919",
+    "runtime_connected": false
+  },
+  {
+    "file": "FrostTyrant_B_1Pose_Rework_v2.png",
+    "sha256": "f1a3c5f91a5fef69cd881e27b578c32253d0124d5d8628a8ca748f7479333830",
+    "source_zip": "Limitless_Chapter3_ApprovedAB_1Pose_ArtRework_v2.zip",
+    "source_zip_sha256": "0b1a3711bed9616b828c83e51070f35ed161e2d8a4d93de9cb949d318dc46919",
+    "runtime_connected": false
+  },
+  {
+    "file": "FrostFieldMouse_A_Idle_4Frames.png",
+    "sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2",
+    "source_zip": "Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip",
+    "source_zip_sha256": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+    "runtime_connected": false
+  },
+  {
+    "file": "FrostTyrant_B_Idle_4Frames.png",
+    "sha256": "9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43",
+    "source_zip": "Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip",
+    "source_zip_sha256": "6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c",
+    "runtime_connected": false
+  }
+]

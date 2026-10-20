@@ -1,0 +1,18 @@
+{
+  "original_protected_files": 3546,
+  "original_changed": [],
+  "original_git_head_status_unchanged": true,
+  "official_Glow_vs_main_unchanged": true,
+  "new_GUID_occurrences": {
+    "7a874132a4524b3181e56db2427456fa": 1,
+    "62aa78512b404d7c8a5e80ee7d7b9a63": 1,
+    "1ba49ce409e5492db864e3d155fef75c": 1,
+    "b1f54a4d1da24963ac15b644410356ab": 1,
+    "ae04c08aafa34a448be7d49b1ae29cc2": 1,
+    "e9a621d20b534eb783e655573fb8a515": 1
+  },
+  "saved_scene_vs_main_only_6_sprite_refs": true,
+  "B_vs_approved5_only_1_sprite_ref": true,
+  "worktree_scene_sha256": "fb641cac9ee9fdc84026aad28c2d1c36c8be5646db63a8fe00ae27df70d9b363",
+  "verification_client_scene_identical": true
+}

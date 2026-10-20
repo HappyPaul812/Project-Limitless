@@ -1,0 +1,15 @@
+ .../Chapter2/Field09ApprovedRedesign.meta          |   8 +
+ .../LL_Field09_Fissure_Glow_Derived_B_v1.png       | Bin 0 -> 128463 bytes
+ .../LL_Field09_Fissure_Glow_Derived_B_v1.png.meta  | 169 +++++++++++++++++++++
+ .../LL_Field09_Phase2_Cliff_Blocker_v2.png         | Bin 0 -> 268086 bytes
+ .../LL_Field09_Phase2_Cliff_Blocker_v2.png.meta    | 169 +++++++++++++++++++++
+ .../LL_Field09_Phase2_Fissure_Edge_v2.png          | Bin 0 -> 212016 bytes
+ .../LL_Field09_Phase2_Fissure_Edge_v2.png.meta     | 169 +++++++++++++++++++++
+ .../LL_Field09_Redesign_Ground_Base_v1.png         | Bin 0 -> 342154 bytes
+ .../LL_Field09_Redesign_Ground_Base_v1.png.meta    | 169 +++++++++++++++++++++
+ ..._Field09_Redesign_Ground_Cracked_Overlay_v2.png | Bin 0 -> 79880 bytes
+ ...d09_Redesign_Ground_Cracked_Overlay_v2.png.meta | 169 +++++++++++++++++++++
+ .../LL_Field09_Redesign_Obsidian_Slab_v1.png       | Bin 0 -> 140714 bytes
+ .../LL_Field09_Redesign_Obsidian_Slab_v1.png.meta  | 169 +++++++++++++++++++++
+ .../_Project/Scenes/Field_09_ObsidianScar.unity    |  12 +-
+ 14 files changed, 1028 insertions(+), 6 deletions(-)

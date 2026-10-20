@@ -1,0 +1,1050 @@
+VBCSCompilerPreWarmer: watching VBCSCompiler (PID 12180)
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 40664)
+VBCSCompiler prewarm took 17.88 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.6/staging' branch; Version is '6000.6.5f1 (3ff58d469c8a) revision 4191629'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-windows" at "2026-10-20T06:58:31.1415459Z"
+OS: 'Windows 11  (10.0.26300) Professional' Language: 'ko' Physical Memory: 32559 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-10-20T06:58:31Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 1480, path: "E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              28da960610ea4746ba5746185b464726
+  Correlation Id:          2e6928f4d15e67b568c8d58c11295355
+  External correlation Id: 8721112946214722518
+  Machine Id:              y7R2IvW9VeRttEfYFqzu6QsAPWU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-windows" (connect: 0.00s, validation: 0.01s, handshake: 0.08s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-windows-notifications" at "2026-10-20T06:58:31.2282681Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 14569000994681-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.14s
+
+COMMAND LINE ARGUMENTS:
+E:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Unity.exe
+-batchmode
+-projectPath
+F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+-executeMethod
+ProjectLimitless.EditorTools.Chapter3IdleVisualReview.Start
+-logFile
+F:/study/codex/Project-Limitless/Temp/Chapter3IdleV1QA20261020/Unity.log
+Successfully changed project path to: F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [19852]  Target information:
+
+Player connection [19852]  * "[IP] 192.168.6.1 [Port] 55505 [Flags] 2 [Guid] 984876090 [EditorId] 984876090 [Version] 1048832 [Id] WindowsEditor(7,Paul-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19852]  * "[IP] 192.168.11.1 [Port] 55505 [Flags] 2 [Guid] 984876090 [EditorId] 984876090 [Version] 1048832 [Id] WindowsEditor(7,Paul-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19852]  * "[IP] 192.168.0.10 [Port] 55505 [Flags] 2 [Guid] 984876090 [EditorId] 984876090 [Version] 1048832 [Id] WindowsEditor(7,Paul-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19852]  * "[IP] 192.168.137.1 [Port] 55505 [Flags] 2 [Guid] 984876090 [EditorId] 984876090 [Version] 1048832 [Id] WindowsEditor(7,Paul-PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19852] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19852] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-41452" after 0.3 seconds.
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Launching Unity Data Store - E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Tools/Unity.DataStore.exe 
+Unity Data Store artifact dir = Library/DataStore, working dir = F:/study/codex/Project-Limitless/Temp/Field05Review20261019/ClientUnity Data Store running and initialised
+[Physics::Module] Selected backend (deferred post-plugins).
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.6.5f1 (3ff58d469c8a)
+[EntityIdStore] init: VM path (explicit commit), pageSize=4096, blockCount=1048576, entitiesPerBlock=256, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3050 (ID=0x2507)
+    Vendor:          NVIDIA
+    VRAM:            8042 MB
+    App VRAM Budget: 7274 MB
+    Driver:          32.0.16.1742
+Initialize mono
+Mono path[0] = 'E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = 'E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.006208 seconds.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.661 seconds
+Domain Reload Profiling: 1180ms
+	BeginReloadAssembly (148ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (4ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (287ms)
+		LoadAssemblies (132ms)
+		TypeCache.Refresh (200ms)
+			TypeCache.ScanAssembly (187ms)
+		AnalyzeDomain (0ms)
+	FinalizeReload (662ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			BeforeProcessingInitializeOnLoad (89ms)
+			ProcessInitializeOnLoadAttributes (118ms)
+			ProcessInitializeOnLoadMethodAttributes (243ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 70 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.animation@16.0.1 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.animation@899988b542b9)
+    com.unity.2d.aseprite@6.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.aseprite@ab909e3e9b5f)
+    com.unity.2d.psdimporter@15.0.1 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.psdimporter@e02a9153d8d9)
+    com.unity.2d.spriteshape@16.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.spriteshape@42798c9d35d3)
+    com.unity.2d.tilemap.extras@9.0.1 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.tilemap.extras@9446f3c60919)
+    com.unity.2d.tooling@4.0.1 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.tooling@4e93af4036ee)
+    com.unity.collab-proxy@2.13.6 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.collab-proxy@4628d2ba6ea4)
+    com.unity.ide.rider@3.0.38 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.20.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.visualscripting@1.9.12 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.visualscripting@4edfcc09512f)
+    com.unity.2d.common@15.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.common@b779c433ed47)
+    com.unity.nuget.newtonsoft-json@3.2.2 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.nuget.newtonsoft-json@4dfd81071c64)
+    com.unity.searcher@4.9.5 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.searcher@a463122f2c00)
+    com.unity.profiling.core@1.0.3 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.profiling.core@8a49f7027d06)
+    com.unity.nuget.mono-cecil@1.11.6 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.sprite@752945c75a6f)
+    com.unity.2d.tilemap@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.2d.tilemap@f4c7bd71ac8a)
+    com.unity.multiplayer.center@2.0.1 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.multiplayer.center@01ba5271095b)
+    com.unity.render-pipelines.universal@17.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.render-pipelines.universal@2309ae255609)
+    com.unity.test-framework@1.8.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.test-framework@80f691d4262b)
+    com.unity.timeline@6.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.timeline@4891807c6bd8)
+    com.unity.ugui@2.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.ugui@42f0bd825000)
+    com.unity.modules.accessibility@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.ext.nunit@2.1.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.ext.nunit@0198eae3b53e)
+    com.unity.render-pipelines.core@17.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.render-pipelines.core@285af6b8c83f)
+    com.unity.shadergraph@17.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.shadergraph@58bcb150677d)
+    com.unity.render-pipelines.universal-config@17.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.mathematics@1.4.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.mathematics@8306a64d0cd6)
+    com.unity.collections@6.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.collections@10fff0607388)
+    com.unity.graph-authoring@1.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.graph-authoring@cfd2588851ee)
+    com.unity.burst@2.0.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.burst@626e66ab421b)
+    com.unity.test-framework.performance@6.6.0 (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Library\PackageCache\com.unity.test-framework.performance@54c5bd86aedb)
+  Embedded packages:
+    com.coplaydev.unity-mcp@file:F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Packages\com.coplaydev.unity-mcp (location: F:\study\codex\Project-Limitless\Temp\Field05Review20261019\Client\Packages\com.coplaydev.unity-mcp)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.04 seconds
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+Starting: E:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s257ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[ 950/1236  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (0.22 seconds), 1 items updated, 949 evaluated
+Starting: E:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\DotNetSdk\dotnet.exe "E:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+ExitCode: 0 Duration: 1s817ms
+Starting: E:\Program Files\Unity\Hub\Editor\6000.6.5f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client
+ExitCode: 0 Duration: 8s326ms
+Finished compiling graph: 1240 nodes, 26376 flattened edges (22096 ToBuild, 196 ToUse), maximum node priority 1399
+[ 664/1236  0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[ 949/1236  0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[BUSY       6s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[1232/1236  6s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+Assets\_Project\Scripts\Editor\ExternalAssetImportEditor.cs(53,21): warning CS0618: 'TextureImporter.spritesheet'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'Support for accessing sprite meta data through spritesheet has been removed. Please use the UnityEditor.U2D.Sprites.ISpriteEditorDataProvider interface instead.'
+
+Assets\_Project\Scripts\Editor\ExternalAssetImportEditor.cs(59,21): warning CS0618: 'TextureImporter.spritesheet'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'Support for accessing sprite meta data through spritesheet has been removed. Please use the UnityEditor.U2D.Sprites.ISpriteEditorDataProvider interface instead.'
+
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(417,102): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(417,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(417,102): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(417,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(419,102): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(419,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(416,102): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(416,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(426,163): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(426,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(428,163): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(428,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(426,163): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(426,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(425,163): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(425,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(433,80): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(433,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(433,80): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(433,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(435,80): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(435,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(432,80): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(432,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(459,174): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(459,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(459,174): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(459,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(461,174): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(461,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(458,174): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(458,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(83,423): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(83,374): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(503,89): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(503,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(513,89): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(513,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(492,103): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(492,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(496,60): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Review.cs(496,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(515,89): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(515,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(47,98): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(47,52): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(524,103): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(524,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(526,56): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(526,7): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(64,69): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(64,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(536,103): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(536,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(538,56): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(538,7): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(47,98): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(47,52): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(89,89): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(89,48): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,196): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,159): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,316): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,279): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(99,124): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(99,87): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,278): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,241): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,398): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,361): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,931): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,898): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(58,110): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(58,65): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(64,69): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(64,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(89,89): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(89,48): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,196): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,159): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,316): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,279): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(99,124): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(99,87): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,278): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,241): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,398): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,361): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,931): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,898): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(117,96): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(117,55): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(150,72): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(150,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(160,123): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(160,74): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(169,87): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(169,25): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(146,86): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(146,45): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(186,75): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(186,42): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(248,69): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(248,28): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(263,65): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(263,24): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(132,196): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(132,134): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(135,87): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(135,25): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.cs(97,110): warning CS0618: 'FindObjectsSortMode'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.cs(97,49): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'?(?? ?ъ슜?섏? ?딆뒿?덈떎. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+[1233/1236  0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 147 defines and 403 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+1 processor(s) skipped this assembly
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+[1234/1236  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[1235/1236  0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (8.30 seconds), 6 items updated, 1236 evaluated
+Assets\_Project\Scripts\Editor\ExternalAssetImportEditor.cs(53,21): warning CS0618: 'TextureImporter.spritesheet'은(는) 사용되지 않습니다. 'Support for accessing sprite meta data through spritesheet has been removed. Please use the UnityEditor.U2D.Sprites.ISpriteEditorDataProvider interface instead.'
+Assets\_Project\Scripts\Editor\ExternalAssetImportEditor.cs(59,21): warning CS0618: 'TextureImporter.spritesheet'은(는) 사용되지 않습니다. 'Support for accessing sprite meta data through spritesheet has been removed. Please use the UnityEditor.U2D.Sprites.ISpriteEditorDataProvider interface instead.'
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2BridgeDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2SpawnDiagnosisAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Chapter2FinalGateAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(417,102): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(417,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(417,102): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(417,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(419,102): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(419,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(416,102): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(416,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(426,163): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(426,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(428,163): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(428,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(426,163): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(426,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(425,163): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(425,115): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06MappingDiagnosticAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(61,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(61,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06V11DeltaAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(62,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(62,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(433,80): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(433,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(433,80): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(433,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(435,80): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(435,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field07V1DeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(432,80): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(432,44): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field07VisualDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(62,126): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(62,57): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09ExistingVisualAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(459,174): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(459,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixDeltaAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(459,174): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(459,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(461,174): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(461,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(63,118): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field09MinimalFixVisualAudit.cs(63,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(458,174): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(458,125): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(83,423): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field06RenewalReviewAudit.cs(83,374): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(503,89): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(503,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(513,89): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05SerializedCandidateAudit.cs(513,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(492,103): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(492,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(496,60): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Review.cs(496,21): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(515,89): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(515,53): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(47,98): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(47,52): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(524,103): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(524,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(526,56): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05RoadReview.cs(526,7): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(64,69): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(64,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(536,103): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(536,67): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(538,56): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Field05Road42FinalAudit.cs(538,7): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(47,98): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(47,52): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(89,89): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(89,48): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,196): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,159): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,316): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(90,279): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(99,124): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(99,87): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,278): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,241): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,398): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,361): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,931): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18CloseoutDeltaAudit.cs(103,898): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(58,110): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(58,65): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(64,69): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(64,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(89,89): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(89,48): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,196): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,159): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,316): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(90,279): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(99,124): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(99,87): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,278): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,241): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,398): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,361): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,931): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\Main18SerinFinalAudit.cs(103,898): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(117,96): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(117,55): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(150,72): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(150,23): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(160,123): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(160,74): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(169,87): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Paths.cs(169,25): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(146,86): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(146,45): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(186,75): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SafeZonePetServiceAudit.cs(186,42): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(248,69): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(248,28): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(263,65): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SideQuestAudit.cs(263,24): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(132,196): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(132,134): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(135,87): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.Rules.cs(135,25): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.cs(97,110): warning CS0618: 'FindObjectsSortMode'은(는) 사용되지 않습니다. 'FindObjectsSortMode has been deprecated. Use the FindObjectsByType overloads that do not take a FindObjectsSortMode parameter.'
+Assets\_Project\Scripts\Editor\SecondRegressionAudit.cs(97,49): warning CS0618: 'Object.FindObjectsByType<T>(FindObjectsInactive, FindObjectsSortMode)'은(는) 사용되지 않습니다. 'FindObjectsByType with FindObjectsSortMode parameter has been deprecated. Use FindObjectsByType<T>() or FindObjectsByType<T>(FindObjectsInactive) instead. InstanceID will be replaced in the future with EntityId and previous sort order cannot be maintained.'
+AssetDatabase: script compilation time: 11.007812s
+Begin MonoManager ReloadAssembly
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Importing 'GUID: 9c55ef9c28bdd454f968e282e0a9e91d - Path: Assets/_Project/QA' with importer (DefaultImporter)
+Imported 'GUID: 9c55ef9c28bdd454f968e282e0a9e91d' -> (Import Result ID: '336dbedecf7ac208332c7b6b127dcabf') in 0.015 seconds [static dependencies only]. Details - ImportResultOutputID=fd1db8e088de615c523293f255b5a245 DependenciesID=89bea755247c1af6705f83e224101eb9 StaticDependenciesID=ad9db68339a5afc0dff9b3fd3e32af61 
+Importing 'GUID: 14a0e6f6025a3074da44e296c9f53522 - Path: Assets/_Project/QA/Chapter3IdleV1' with importer (DefaultImporter)
+Imported 'GUID: 14a0e6f6025a3074da44e296c9f53522' -> (Import Result ID: 'ddda693fa029b4b6a47c48f99582f7df') in 0.005 seconds [static dependencies only]. Details - ImportResultOutputID=6f862ffc5fb730d4ca4a7249d5a17e67 DependenciesID=e86dd691928545131ff9298351ff4af1 StaticDependenciesID=e898d39257c13c43a419338b7bf82e8c 
+Refreshing native plugins compatible for Editor in 2.99 ms, found 5 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.948 seconds
+Domain Reload Profiling: 2052ms
+	BeginReloadAssembly (354ms)
+		DisableScriptedObjects (24ms)
+		CreateAndSetChildDomain (151ms)
+	RebuildCommonClasses (8ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (663ms)
+		LoadAssemblies (392ms)
+		TypeCache.Refresh (187ms)
+			TypeCache.ScanAssembly (172ms)
+		AnalyzeDomain (84ms)
+			BuildScriptInfoCaches (76ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (949ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (391ms)
+			ProcessInitializeOnLoadMethodAttributes (220ms)
+		AwakeInstancesAfterBackupRestoration (31ms)
+Starting new worker id: 0 with log in F:/study/codex/Project-Limitless/Temp/Field05Review20261019/Client/Logs/AssetImportWorkerHW0.log
+Importing 'GUID: b7e879ffd8699ee4eb0198c960753ec0 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: b7e879ffd8699ee4eb0198c960753ec0' -> (Import Result ID: 'b04858a8efd583664c60a1f42e067649') in 0.114 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3a6432c0911f257cd7b5c55a22213ed4 DependenciesID=23a35d04d9648e7f1a9efc1635730669 StaticDependenciesID=e6c7fd5452782289c736672f26cac89e 
+Importing 'GUID: dbbfeeeb719d14740aec020fe5dda930 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: dbbfeeeb719d14740aec020fe5dda930' -> (Import Result ID: '32719122a99298aa117b68aaf73734f0') in 0.120 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4be44a4247f2fe43e7033313a88612b6 DependenciesID=7b1a090969f274734456e140bbd27c72 StaticDependenciesID=5eaecee8666edaae6e45f9a11873e164 
+Importing 'GUID: 7c8b8be3604e68a4d912ae9f1a231086 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: 7c8b8be3604e68a4d912ae9f1a231086' -> (Import Result ID: 'a83b6de049f2b74071a22b470e0afde5') in 0.247 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1535de392f282fd765e8c31ee163deab DependenciesID=e4cff73dd27de17b8f9a0951cbc3648d StaticDependenciesID=465b0973ebc3c05e4d2277ce8c24d6f8 
+Importing 'GUID: dec9ad32a19eee5459145a02ae112936 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: dec9ad32a19eee5459145a02ae112936' -> (Import Result ID: '634ff494b8ee32b7c0aaa4c02321db47') in 0.065 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=155bbb08575a760331368e9d56dd5dab DependenciesID=6564fb22095a84ae87cc5248463ae355 StaticDependenciesID=d5cdf86b9233056dc44f51665a28fa1c 
+Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.Rendering.RenderPipelineResourcesEditorUtils:TryReloadContainedNullFields (UnityEngine.Rendering.IRenderPipelineResources)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:UpdateRenderPipelineGlobalSettings (UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager/RenderPipelineGraphicsSettingsInfo,UnityEngine.Rendering.RenderPipelineGlobalSettings,bool&,UnityEngine.Rendering.IRenderPipelineGraphicsSettings&)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:PopulateRenderPipelineGraphicsSettings (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset (System.Type,UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset<UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool,System.Exception&) (at ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:138)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool) (at ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:90)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings:Ensure (bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@2309ae255609/Runtime/UniversalRenderPipelineGlobalSettings.cs:319)
+UnityEditor.Rendering.Universal.UniversalRenderPipelineGlobalSettingsPostprocessor:OnPostprocessAllAssets (string[],string[],string[],string[],bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@2309ae255609/Editor/AssetPostProcessors/UniversalRenderPipelineGlobalSettingsPostprocessor.cs:14)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs Line: 138)
+
+Refreshing native plugins compatible for Editor in 2.70 ms, found 5 plugins.
+
+Asset Pipeline Refresh (id=bdd27fecdf4f94644b06ad29add118c2): Total: 14.560 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=6 (actual=6, local cache=0, cache server=0)
+		Asset DB Process Time: managed=23 ms, native=2040 ms
+		Asset DB Callback time: managed=195 ms, native=45 ms
+		Scripting: domain reloads=1, domain reload time=1185 ms, compile time=11009 ms, other=61 ms
+		Project Asset Count: scripts=2009, non-scripts=5022
+		Asset File Changes: new=7, changed=7, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 42.812ms
+	ApplyChangesToAssetFolders: 0.658ms
+	Scan: 144.692ms
+	Collect global state as custom dependencies: 16.243ms
+	OnSourceAssetsModified: 0.577ms
+	CategorizeScriptCompilationAssets: 47.173ms
+	ProcessAssetsWithTransientArtifactChanges: 78.233ms
+	CategorizeAssets: 64.938ms
+	CompileScripts: 11008.943ms
+	ImportOutOfDateAssets: 1542.077ms (958.436ms without children)
+		ImportManagerImport: 569.455ms (1.544ms without children)
+			UpdateCategorizedAssets: 0.081ms
+		UnloadImportedAssets: 1.608ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.848ms
+		ImportSchedulerStart: 11.684ms
+	PostProcessAllAssets: 195.284ms
+		XRBuildSystem.XRAssetImported 0.378ms
+		VersionControlSettings.HiddenFilePostprocess 0.076ms
+		MonoPostProcessAllAssets: 194.232ms
+			AssetPostprocessor.OnPostprocessAllAssets 125.320ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 18.299ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 15.274ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 5.134ms
+			SpriteSlicePostprocessor.OnPostprocessAllAssets 2.758ms
+			ShaderGraphAssetPostProcessor.OnPostprocessAllAssets 1.636ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 1.460ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 1.458ms
+			AssetChangedListener.OnPostprocessAllAssets 1.423ms
+			TextAssetPostProcessor.OnPostprocessAllAssets 1.293ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.105ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.827ms
+			MaterialPostprocessor.OnPostprocessAllAssets 0.723ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.606ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.486ms
+			SpriteEditorTexturePostprocessor.OnPostprocessAllAssets 0.435ms
+			UVCSAssetPostprocessor.OnPostprocessAllAssets 0.434ms
+			ArtifactBrowserPostProcessor.OnPostprocessAllAssets 0.409ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.375ms
+			AudioMixerPostprocessor.OnPostprocessAllAssets 0.316ms
+			PostProcessor.OnPostprocessAllAssets 0.314ms
+			AssetProcessor.OnPostprocessAllAssets 0.311ms
+			InputActionJsonNameModifierAssetProcessor.OnPostprocessAllAssets 0.280ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.262ms
+			SpriteShapeAssetPostProcessor.OnPostprocessAllAssets 0.238ms
+			GrassSlimeSpritePostprocessor.OnPostprocessAllAssets 0.220ms
+			AssetEvents.OnPostprocessAllAssets 0.215ms
+			TMPro_TexturePostProcessor.OnPostprocessAllAssets 0.206ms
+			SpriteLibraryAssetPostprocessor.OnPostprocessAllAssets 0.170ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.164ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.154ms
+			ThemePostprocessor.OnPostprocessAllAssets 0.138ms
+			SyncVS.PostprocessSyncProject 0.138ms
+			SamplePostprocessor.OnPostprocessAllAssets 0.135ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.134ms
+			SpeedTreePostProcessor.OnPostprocessAllAssets 0.130ms
+			ConfigAssetsTracker.OnPostprocessAllAssets 0.128ms
+			PSDImportPostProcessor.OnPostprocessAllAssets 0.122ms
+			AssetReloadNotifier.OnPostprocessAllAssets 0.105ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 0.096ms
+			PathVisualSymbolAssetPostprocessor.OnPostprocessAllAssets 0.083ms
+			PSDImporterAssetPostProcessor.OnPostprocessAllAssets 0.071ms
+			AudioContainerPostProcessor.OnPostprocessAllAssets 0.059ms
+	PostAssetChangesProfiler: 4.997ms
+	UnloadStreamsBegin: 1.518ms
+	PersistCurrentRevisions: 0.328ms
+	GenerateScriptTypeHashes: 1.574ms
+	GenerateScriptTypeSerializationHashes: 2.720ms
+	Untracked: 1397.756ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Scanning for USB devices : 5.236ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Client
+Unloading 33 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7966 unused Assets / (9.1 MB). Loaded Objects now: 8973.
+Memory consumption went from 466.6 MB to 457.5 MB.
+Total: 10.864900 ms (FindLiveObjects: 0.742600 ms CreateObjectMapping: 0.402700 ms MarkObjects: 6.055000 ms  DeleteObjects: 3.374200 ms)
+
+Importing 'GUID: b7e879ffd8699ee4eb0198c960753ec0 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: b7e879ffd8699ee4eb0198c960753ec0' -> (Import Result ID: 'b04858a8efd583664c60a1f42e067649') in 0.025 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3a6432c0911f257cd7b5c55a22213ed4 DependenciesID=23a35d04d9648e7f1a9efc1635730669 StaticDependenciesID=e6c7fd5452782289c736672f26cac89e 
+Refreshing native plugins compatible for Editor in 2.21 ms, found 5 plugins.
+Asset Pipeline Refresh (id=d3203502ab59deb49b1381d3b9beaa51): Total: 0.103 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: b7e879ffd8699ee4eb0198c960753ec0 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: b7e879ffd8699ee4eb0198c960753ec0' -> (Import Result ID: 'd17c1ded22f3c2c7375505b81c231beb') in 0.021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c78dc192ade2b6e4ec6eb0f2bbaf5c58 DependenciesID=1aa74cfe67eb92f98bab01ba42b80192 StaticDependenciesID=026b3922671b50609fd7286596050a0c 
+Refreshing native plugins compatible for Editor in 2.19 ms, found 5 plugins.
+Asset Pipeline Refresh (id=429cec8816806fd4c81b3db9c42e404a): Total: 0.063 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: dbbfeeeb719d14740aec020fe5dda930 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: dbbfeeeb719d14740aec020fe5dda930' -> (Import Result ID: '32719122a99298aa117b68aaf73734f0') in 0.093 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4be44a4247f2fe43e7033313a88612b6 DependenciesID=7b1a090969f274734456e140bbd27c72 StaticDependenciesID=5eaecee8666edaae6e45f9a11873e164 
+Refreshing native plugins compatible for Editor in 2.45 ms, found 5 plugins.
+Asset Pipeline Refresh (id=c79a548bb115f6343abed5b9bf923a45): Total: 0.109 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: dbbfeeeb719d14740aec020fe5dda930 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: dbbfeeeb719d14740aec020fe5dda930' -> (Import Result ID: '9a5ef4d07b85ca8525f8312b099d69a2') in 0.063 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6a35ed272e273eb0951484267fcb6075 DependenciesID=163c67ab8305125456aec0fae5d58de4 StaticDependenciesID=64ca5c95d27657e5e3e27120408167ca 
+Refreshing native plugins compatible for Editor in 2.37 ms, found 5 plugins.
+Asset Pipeline Refresh (id=fc923470d1ed12b41b60bc0ce986a293): Total: 0.106 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: dbbfeeeb719d14740aec020fe5dda930 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostFieldMouse_A_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: dbbfeeeb719d14740aec020fe5dda930' -> (Import Result ID: '753cbc0b5333fb82defaa624645482bc') in 0.067 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a9473b02a62b9776b2de4008b86aed8a DependenciesID=869ee70adac65eab17985b9dd9bd9675 StaticDependenciesID=164128733b785fe613f6982879ecdb96 
+Worker ready: AssetImportWorkerHW0 0
+Refreshing native plugins compatible for Editor in 3.03 ms, found 5 plugins.
+Asset Pipeline Refresh (id=7bff6d70f985c7c48a0aced375b68260): Total: 0.114 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: dec9ad32a19eee5459145a02ae112936 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: dec9ad32a19eee5459145a02ae112936' -> (Import Result ID: '634ff494b8ee32b7c0aaa4c02321db47') in 0.056 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=155bbb08575a760331368e9d56dd5dab DependenciesID=6564fb22095a84ae87cc5248463ae355 StaticDependenciesID=d5cdf86b9233056dc44f51665a28fa1c 
+Refreshing native plugins compatible for Editor in 2.33 ms, found 5 plugins.
+Asset Pipeline Refresh (id=d01912b11cc49574087816741b2d4953): Total: 0.074 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: dec9ad32a19eee5459145a02ae112936 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_1Pose_Rework_v2.png' with importer (TextureImporter)
+Imported 'GUID: dec9ad32a19eee5459145a02ae112936' -> (Import Result ID: '3e3d35605186af074b6de1d10b8d3380') in 0.044 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d19f247983285aad1a9ff41649f83618 DependenciesID=15d3934ad5741f53fe52147d535487f1 StaticDependenciesID=d97999bb8189371eb8ae255796ce3989 
+Refreshing native plugins compatible for Editor in 2.40 ms, found 5 plugins.
+Asset Pipeline Refresh (id=61ddabe65ef86554280d956d27c9db8b): Total: 0.088 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 7c8b8be3604e68a4d912ae9f1a231086 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: 7c8b8be3604e68a4d912ae9f1a231086' -> (Import Result ID: 'a83b6de049f2b74071a22b470e0afde5') in 0.220 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1535de392f282fd765e8c31ee163deab DependenciesID=e4cff73dd27de17b8f9a0951cbc3648d StaticDependenciesID=465b0973ebc3c05e4d2277ce8c24d6f8 
+Refreshing native plugins compatible for Editor in 2.28 ms, found 5 plugins.
+Asset Pipeline Refresh (id=ed7ca52d196952547af23fef975ebf48): Total: 0.237 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 7c8b8be3604e68a4d912ae9f1a231086 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: 7c8b8be3604e68a4d912ae9f1a231086' -> (Import Result ID: '69a8780fe314316e7c6350fa78ebe5c2') in 0.156 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ab0f9e0543744ef44bb46ec28351a350 DependenciesID=1005db292bdf470abe3d81ff0d75e2c4 StaticDependenciesID=772c535c86c79a8011ffed7fec599f97 
+Refreshing native plugins compatible for Editor in 2.27 ms, found 5 plugins.
+Asset Pipeline Refresh (id=9e6c975507f97bc428e5a60442931452): Total: 0.197 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Importing 'GUID: 7c8b8be3604e68a4d912ae9f1a231086 - Path: Assets/_Project/QA/Chapter3IdleV1/FrostTyrant_B_Idle_4Frames.png' with importer (TextureImporter)
+Imported 'GUID: 7c8b8be3604e68a4d912ae9f1a231086' -> (Import Result ID: 'dd2c993dd5700fc521ff21db06441102') in 0.157 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef484c75ce4fba79a73f13ac64e85c2f DependenciesID=c2682d3f767604ca81afcdcb3d4707fe StaticDependenciesID=d3ce017666fcd742e212b11376fb7271 
+Refreshing native plugins compatible for Editor in 2.18 ms, found 5 plugins.
+Asset Pipeline Refresh (id=c48acf040cffd974cad1be8982a6c949): Total: 0.199 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 20 unused Assets / (114.2 KB). Loaded Objects now: 8973.
+Memory consumption went from 435.6 MB to 435.5 MB.
+Total: 7.076100 ms (FindLiveObjects: 0.971200 ms CreateObjectMapping: 0.216300 ms MarkObjects: 5.457300 ms  DeleteObjects: 0.042600 ms)
+
+[Project] Loading completed in 19.605 seconds
+	Project init time: 				17.145 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.252 seconds
+		Asset Database init time: 		0.263 seconds
+		Global illumination init time: 	0.003 seconds
+		Assemblies load time: 			1.222 seconds
+		Unity extensions init time: 	0.018 seconds
+		Asset Database refresh time: 	14.560 seconds
+	Scene opening time: 			2.130 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1792479530637,"processId":41452,"projectLoad":19.6052353,"projectInit":17.1445666,"templateInit":0.0,"packageManagerInit":0.251856,"assetDatabaseInit":0.2626118,"globalIlluminationInit":0.003347,"assembliesLoad":1.2223531,"unityExtensionsInit":0.0184049,"assetDatabaseRefresh":14.5601646,"sceneOpening":2.13028}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1792479530637,"processId":41452,"editorVersion":"6000.6.5f1 (3ff58d469c8a)","branch":"6000.6/staging","buildType":"Release","platform":"Windows"}
+SpriteAtlasPacking completed in 0.004800 sec
+Entering Playmode with Reload Domain disabled.
+If you experience any issues, please disable "Enter Play Mode Options" in Editor Settings
+Refreshing native plugins compatible for Editor in 2.12 ms, found 5 plugins.
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            0.313 ms
+	Integration:            480.107 ms
+	Integration of assets:  0.001 ms
+	Thread Wait Time:       0.008 ms
+	Total Operation Time:   480.430 ms
+[Licensing::Client] Successfully resolved entitlement details
+Start Indexing on Editor startup
+ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+  at System.Collections.Generic.List`1[T].get_Item (System.Int32 index) [0x00009] in <c5ae8a4eeb824526b5df2932bc2395e0>:0 
+  at UnityEditor.Search.SearchDatabase+<EnumerateAll>d__78.MoveNext () [0x00089] in <60f2bd518b604435bcf930e6d229f684>:0 
+  at System.Linq.Enumerable.TryGetFirst[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Boolean& found) [0x00045] in <f1b392d8fe224ca2b1f9fab1000b77eb>:0 
+  at System.Linq.Enumerable.First[TSource] (System.Collections.Generic.IEnumerable`1[T] source) [0x00000] in <f1b392d8fe224ca2b1f9fab1000b77eb>:0 
+  at UnityEditor.Search.SearchDatabase.GetDefaultSearchDatabase () [0x00005] in <60f2bd518b604435bcf930e6d229f684>:0 
+  at UnityEditor.Search.SearchInit.IndexationOnStartup () [0x0000a] in <60f2bd518b604435bcf930e6d229f684>:0 
+  at UnityEditor.EditorApplication.Internal_CallDelayFunctions () [0x00029] in <27ff15fd79c54f5eb7060fd0f507d441>:0 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&)
+
+Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.universal/Shaders/Nature/SpeedTree8_PBRLit.shadergraph.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.Rendering.RenderPipelineResourcesEditorUtils:TryReloadContainedNullFields (UnityEngine.Rendering.IRenderPipelineResources)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:UpdateRenderPipelineGlobalSettings (UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager/RenderPipelineGraphicsSettingsInfo,UnityEngine.Rendering.RenderPipelineGlobalSettings,bool&,UnityEngine.Rendering.IRenderPipelineGraphicsSettings&)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:PopulateRenderPipelineGraphicsSettings (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset (System.Type,UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset<UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool,System.Exception&) (at ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:138)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool) (at ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:90)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings:Ensure (bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@2309ae255609/Runtime/UniversalRenderPipelineGlobalSettings.cs:319)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset:EnsureGlobalSettings () (at ./Library/PackageCache/com.unity.render-pipelines.universal@2309ae255609/Runtime/Data/UniversalRenderPipelineAsset.cs:780)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline ()
+UnityEngine.Rendering.RenderPipelineManager:TryPrepareRenderPipeline (UnityEngine.Rendering.RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,object,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.EditorGUIUtility:RenderPlayModeViewCamerasInternal (UnityEngine.RenderTexture,int,UnityEngine.Vector2,bool,bool)
+UnityEditor.PlayModeView:RenderView (UnityEngine.Vector2,bool)
+UnityEditor.GameView:OnGUI ()
+UnityEditor.HostView:InvokeOnGUI (UnityEngine.Rect)
+UnityEditor.DockArea:DrawView (UnityEngine.Rect)
+UnityEditor.DockArea:OldOnGUI ()
+UnityEngine.UIElements.IMGUIContainer:DoOnGUI (UnityEngine.Event,UnityEngine.Matrix4x4,UnityEngine.Rect,bool,UnityEngine.Rect,System.Action,bool)
+UnityEngine.UIElements.IMGUIContainer:HandleIMGUIEvent (UnityEngine.Event,UnityEngine.Matrix4x4,UnityEngine.Rect,System.Action,bool)
+UnityEngine.UIElements.IMGUIContainer:DoIMGUIRepaint ()
+UnityEngine.UIElements.UIR.RenderChainCommand:ExecuteNonDrawMesh (UnityEngine.UIElements.UIR.DrawParams,System.Exception&)
+UnityEngine.UIElements.UIR.UIRenderDevice:EvaluateChain (UnityEngine.UIElements.UIR.RenderChainCommand,UnityEngine.Material,UnityEngine.Texture,UnityEngine.UIElements.UIR.ShaderInfoAllocator,System.Nullable`1<UnityEngine.Rect>,UnityEngine.Rect,single,bool,UnityEngine.UIElements.TextureSlotCount,bool,System.Exception&,UnityEngine.UIElements.BaseVisualElementPanel)
+UnityEngine.UIElements.UIR.RenderTreeManager:RenderSingleTree (UnityEngine.UIElements.UIR.RenderTree,UnityEngine.RenderTexture,UnityEngine.RectInt,UnityEngine.Rect)
+UnityEngine.UIElements.UIR.RenderTreeManager:RenderRootTree ()
+UnityEngine.UIElements.UIRRepaintUpdater:Render ()
+UnityEngine.UIElements.BaseVisualElementPanel:Render ()
+UnityEngine.UIElements.Panel:Render ()
+UnityEditor.UIElements.EditorEventDispatchUtility:DoDispatch (UnityEngine.UIElements.BaseVisualElementPanel,UnityEngine.Event)
+UnityEditor.UIElements.DefaultWindowBackend:ProcessEvent (UnityEngine.Event)
+UnityEditor.GUIView:ProcessEvent (UnityEngine.EntityId,intptr,bool&)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.core@285af6b8c83f/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs Line: 138)
+
+Created GICache directory at C:/Users/windows/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.012s, timestamps: [20.269 - 20.281]
+[Licensing::Client] Successfully resolved entitlement details
+MonoPathRemapper: Attempts to remap: 14509; Successful remaps: 26
+Serialized file version minimum: 23, current 23
+Killing ADB server in 2.08782 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-windows-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-windows channel disconnected successfully.
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+VBCSCompilerPreWarmer: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792479540696,"processId":41452,"allocatedMemory":25070363,"memoryLabels":[{"Default":4386900},{"Permanent":15516},{"NewDelete":73495},{"Thread":4188048},{"Manager":822461},{"VertexData":8},{"Geometry":816},{"Texture":24},{"Shader":852827},{"Material":132},{"GfxDevice":59400},{"Animation":952},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":16640},{"Input":42840},{"JobScheduler":256},{"TextLib":42342},{"Mono":48},{"MonoCode":64},{"ScriptingNativeRuntime":1307568},{"BaseObject":67984},{"Resource":1444},{"Renderer":2504},{"Transform":4685},{"File":4416},{"WebCam":616},{"Culling":32},{"Terrain":11442},{"Wind":24},{"STL":40},{"String":911590},{"StaticString":3808},{"Utility":2675350},{"Curl":2559},{"PoolAlloc":2360},{"AI":80},{"TypeTree":20933},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7816},{"Director":8296},{"CloudService":7440},{"WebRequest":11455},{"VR":49650},{"SceneManager":608},{"Video":208},{"LazyScriptCache":32},{"Camera":729},{"Secure":2377},{"SerializationCache":9256},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":768},{"Hierarchy":1188},{"UIElements":40},{"CoreStats":14456},{"Identifiers":7152},{"Gui":222},{"EditorUtility":120286},{"VersionControl":8},{"Undo":931},{"AssetDatabase":8874467},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":40465},{"Upm":1912},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"LocalIPC":264},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3604},{"Windowing":456},{"Licensing":12759},{"AssetReference":32},{"IPCStream":32}]}
