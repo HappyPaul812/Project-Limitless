@@ -1,5 +1,19 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-20 최신 — 세린67·태온85 전용 4-Key 자동 생성기 배포(오늘 로컬 예산34회)
+
+**이 단락이 과거 세린/태온/하렌 3인 1개 샘플 실험 안내와 하렌 수정 R1 즉시실행 지시보다 우선한다.**
+
+- 바울 대표 최신 지시: `F:\Downloads\Renewal_Voices`에 **Serin/** 및 **Taeon/** 두 폴더, 하렌 제외. 사용자 로컬 `API.txt`에 4키를 세미콜론(;) 및 줄바꿈으로 구분; 세린·태온 **전 확정 대사**를 일괄 생성·대사별 WAV/ID·키 슬롯/사용량 로그·일별 카운트 기록. 오늘 남은 횟수 34회 사용자 보고.
+- 실제 GitHub main catalog290과 Main07/17~21 및 Story audit 연결하여 **세린67(이미 Unity 등록58+미등록9), 태온85(등록82+미등록3) = 정확 ID152**를 [GitHub JSON 정본](../../TTS_Renewal_Voices_152_OriginalDialogue_Manifest_20261020.json)에 별도 동결. 기록 커밋 `9183376e`, 대사 ID 누락/중복0. Chapter3 미확정·하렌3·다른 인물 제외. 세린부터 생성.
+- **직접 제작 ZIP**: `LIMITLESS_Renewal_Voices_Serin67_Taeon85_Auto_20261020.zip` **16492bytes / SHA256 `4fc85d78105f08c21241877c05d351d37eae3092f42e51a5f9c247b46ddeebc2`**. Python `Renewal_Auto_TTS.py` 25921bytes / SHA256 `efb653101f34276483f821a0b3d7eb9b57142a6b999f8c9c74d805dfdf8bdf88`. ZIP에는 Serin/Taeon/_progress 디렉터리, 설정/README/selftest. **API.txt는 기존 키 보호를 위해 ZIP에서 제외**. 사용자 로컬 API 키를 직접 수집/기록/노출하지 않는다.
+- `conda activate py3_12` → `cd F:\Downloads\Renewal_Voices` → `python .\Renewal_Auto_TTS.py init`(사용자 로컬 정본 F:\study\codex\Project-Limitless 읽기, Manifest 생성, 기존 승인 세린/태온 WAV 샘플만 사본 복사) → `... check`(키4/152/개별 파일·카운트) → Google 프로젝트별 실제 무료 잔여와 무과금 확인 후 `RENEWAL_SETTINGS.json`의 `free_tier_confirmed:true`로 명시 → `... run`(RUN 승인, 하루 최대34회, 실패 시 HOLD) 또는 `... watch`(프로세스가 켜 있는 동안 PT 날짜가 바뀔 때 카운터 리셋하여 이어가기).
+- Key1..Key4 카운트는 **ATTEMPT 성공/실패/결과불확실 전부** 포함. Append-only `_progress/api_events.jsonl`, 보기용 `_progress/USAGE_LOG.csv`, 날짜/PT 일일요약 `USAGE_TODAY.json`. Google 공식 **프로젝트당 RPD/태평양시간 자정 리셋**; 4키가 같은 프로젝트면 합산한도 없음. 최초 run에 SHARED/SEPARATE 실제 프로젝트 소속 확인 필수, 혼합 프로젝트는 설정에 그룹 수동 지정. 보수적 key+project-group 10회/일 가드, 전체34회 글로벌 예산. 과금·실제 잔여는 자동 조회·보증 불가, HTTP400/429/크래시/HOLD 즉시 중단, 자동 retry0.
+- `samples/main20_confront_serin_01__Erinome.wav`→`Serin/main20_confront_serin_01.wav`, `samples/main21_route_taeon_01__Algieba.wav`→`Taeon/main21_route_taeon_01.wav` 원본 파일 존재/PCM 검증되면 사본만 복사·WAV+json SHA 기록·API0(각 67/85 제작목표에 포함). 다른 승인/원본 WAV 모두 보호.
+- ZIP Python 문법 / unittest5 / mock Google GET·POST4/중복생성 재실행/그룹 safety/WAV 형식·API 키 분리/샘플 격리 복사·ZIP 압축해제 init/check **PASS**. 이 테스트에 실제 Google API 사용 **0회**, 사용자 F 드라이브 파일 변경 **0회**, Unity/Save 수정0. 실사용 전 사용자 PC 실행 및 Google quota/한국어 청취 검증 필요.
+- **[상세 Python 제작 Runbook](../../TTS_RenewalVoices_Serin67_Taeon85_4Key_Automation_Runbook_20261020.md)** / [Issue #20](https://github.com/HappyPaul812/Project-Limitless/issues/20). Codex는 사용자가 전 범위 승인한 WAV에 한해 Unity 통합. docs/tts 브랜치만 기록, main 직접커밋·푸시·병합 금지.
+
+
 
 ## 2026-10-20 최신 사용자 결정 — 하렌 억양 재생성은 나중에 하렌 3대사 제작할 때
 
