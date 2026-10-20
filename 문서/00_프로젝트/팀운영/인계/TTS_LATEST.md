@@ -325,3 +325,15 @@
 - 다운로드 `LIMITLESS_TTS_Serin_Retry2_20261020.zip` SHA256 `6369b14fe7032046111f8fe4f4296e0a6cadf8633299bc579d128bf22fee4180` (279734 bytes), 스크립트+검증된 17행 CSV+승인 Main18 세린 WAV 실파일+한글 README. 기준 WAV SHA `3e655d2330a5caef7d6d37b3ff6be4c49a231bb89b1c9efa7ed5ec32c8b2505e`.
 - 사용자 로컬에서 `check` API0→`trial --attempt 1`(정확히 1회, 모델 GET 먼저, 유료/잔여 수동 확인) 실행. 청취 불합격일 때만 `trial --attempt 2`와 `FIRST_FAIL` 별도 게이트. 기존 HOLD/lock 및 모든 원본 변경 금지, 새 출력 폴더 격리.
 - 모의 성공1/2, 중복 번호 차단, 실패 HOLD/lock 및 다음호출0 PASS. **실제 Google API 호출0/실제 음색 미검증**. [상세](../../TTS_Serin_SameVoice_Retry2_20261020.md). TTS 제작 담당 유지, Codex는 최종 사용자 승인 WAV Unity 통합만.
+
+
+## 2026-10-20 최신 사용자 가설 검증 — 세린/태온 기존 VoiceID의 공식 성별이 역방향 (우선순위 높음)
+
+- 바울 대표: “남잔데? 혹시. 우리가 뽑았던게 오류고 오류수정이 남자 아냐?” 이전 승인 세린 WAV는 여성처럼 자연스러웠으나, 이후 동일 `Schedar`를 사용한 Main20/21 생성/재시도는 계속 남성으로 들린다고 확인. **이전 음성이 예외적인 TTS 출력이었고 현재가 원래 음색으로 돌아온 것**이라는 설명이 충분히 가능. 단, Google의 특정 버그 수정·배포 시점은 직접 확인하지 못했으므로 확정 금지.
+- Google 공식 Gemini-TTS/Cloud docs의 **프리셋 성별**: `Schedar = Male`, `Gacrux = Female`. 현재 세린 `Schedar`와 태온 `Gacrux`는 의도한 캐릭터 성별과 **공식 프로필이 반대**다.
+  - 출처 https://docs.cloud.google.com/text-to-speech/docs/gemini-tts
+  - 출처 https://firebase.google.com/docs/ai-logic/generate-speech?api=vertex
+- 과거 담당이 `Schedar`를 “세린 공식”이라 고집하며 세린 8개 재생성·DSP/PSOLA 등 시도를 반복한 것은 **사용자 승인 기준을 VoiceID와 혼동한 오류**였다. 사용자가 승인한 것은 *들린 실제 목소리*였으며 그 정체성을 우선해야 함.
+- **새 작업 원칙**: Main18 세린 기존 사용자 승인 WAV10과 기존 정상 태온 오디오는 변경/재생성 금지. 신규 세린 1대사에는 공식 여성 프리셋 중 중복 캐릭터 충돌 없는 후보(예: `Erinome` Female/Clear)를 **1회 시험**하고 과거 승인 샘플과 귀로 비교. 태온은 공식 남성 보이스 후보(예: `Alnilam` Male/Firm) 1회 시험하여 과거 정상 태온 샘플과 비교. 둘 모두 “후보”이지 사용자 청취 승인 전 전역 캐릭터 VoiceID 변경 아님. 이 기능은 앞선 GenderFix9 스크립트를 바로 재사용하라는 지시가 아니고 원본/쿼터 및 요청설정 검증 후 안전 실행 방식 결정 필요.
+- '그동안 승인 여성 음색이 원래 버그였고 현재 수정됐다'는 인과는 미검증이며, 실제 요청 wire 파라미터/날짜/모델 업데이트 자료 부재. 더 이상 `Schedar` 동일 설정으로 무의미한 18회 반복 생성하지 말 것. 남은 무료 호출을 보호.
+- 이번 확인은 공식 공개 목록을 읽은 **진단/문서화만**; TTS API 추가 호출0, Unity 0, 정상 WAV 수정0. Main20/21 세린8 + 태온1 사용자 불합격 상태 유지.
