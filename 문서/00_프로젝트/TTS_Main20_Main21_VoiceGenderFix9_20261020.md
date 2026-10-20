@@ -1,3 +1,13 @@
+> ⚠️ **2026-10-20 사용자 지적에 따른 정정 — 이 문서의 진단·실행 명령은 현재 보류(SUPERSEDED / DO_NOT_RUN)**
+>
+> 바울 대표: “근데 잘 나오다가 안나오는거잖아? 니가 뭐 바꾼거도 아니고. 그럼 tts의 오류 아니니?” 이전에 같은 Voice ID로 정상 청취 승인된 WAV가 있었으므로, 보이스 성별 분류만으로 갑자기 변한 9개를 설명할 수 없다. 여기의 **“최신 문제 원인 확인” 및 Erinome/Alnilam 샘플 실행 권고는 성급했으므로 철회**한다. ZIP/스크립트는 폐기하지 않고 역사적 시제품으로 보존하되, **새 WAV 생성에 사용하지 말 것**.
+>
+> 2026-10-12 Google AI Developers Forum에 **동일 보이스·설정·텍스트인데도 전혀 다른 음색이 출력되는 사례**가 보고됨. 2026-10-15 Google 담당자가 **음색 일관성 문제를 조사 중**이라고 답변함. `gemini-3.8-flash-tts` 모델 출력 편차 가능성이 유력하나, LIMITLESS의 실제 원본 요청값 비교는 미완료. Google 공식 문서는 `speech_metadata.style`로 성별 등 고정 화자 특성 변경을 시도하지 말라고 안내함.
+> - 증거: https://discuss.ai.google.dev/t/gemini-3-8-tts-voice-consistency-issue/186103
+> - 공식 프롬프팅 가이드: https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/text-to-speech/prompting-guide
+>
+> **수정된 정본 방향:** 1) 정상 WAV와 오류9 원본의 실제 요청 시 모델/Voice ID/Style/SDK/설정/해시 확인(읽기 전용). 2) 요청 조건이 일치하면 기존 Voice ID(`Schedar`, `Gacrux`) 유지, 스타일을 변경하지 않은 동일 입력으로 오류 샘플 **단1개만** 재생성하여 직접 청취 비교. 3) 문제 재현 시 재생성 연속 시도 금지하고 Google 보고/모델 변경 검토. 4) Main18 승인10 등 기존 사용자 승인 음색 유지, 전역 Voice Registry 변경0. 실제 API 0·Unity 0.
+
 # LIMITLESS / Main20·21 세린8·태온1 성별 보이스 정정 시범 (2026-10-20)
 
 **OFFICIAL_VOICE_GENDER_VERIFIED / PYTHON_SAMPLE_PACK_READY / MOCK_QA_PASS / USER_PC_CHECK_PENDING / LIVE_TTS_API=0 / UNITY=0**
