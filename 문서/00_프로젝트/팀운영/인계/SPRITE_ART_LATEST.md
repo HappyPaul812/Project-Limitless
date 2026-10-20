@@ -25,3 +25,14 @@
 - 완료 보고 필수: 브랜치 이름/커밋 SHA/변경 결과/사용자 승인 필요 여부.
 - 이전 Chapter3 북쪽 콘셉트 초안은 `ART_CONCEPT_DRAFT / USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED` 상태를 유지하며, 이번에는 게임 아트·Unity 자산을 변경하지 않음.
 - 이 규칙 갱신은 담당 아트 역할 문서와 인계문에 한정; 공통 규칙이나 타 담당 파일을 이 브랜치에서 수정하지 않음.
+
+## 2026-10-20 Chapter3 병렬제작 Issue #30 — 파일럿 아트 납품·사용자 미술 승인 대기
+
+- **발주:** `docs/planning`의 `문서/00_프로젝트/Chapter3_Team_Parallel_Production_Kickoff_20261020.md`, GitHub [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30). 이번 단계는 `CH3_PARALLEL_PREPRODUCTION_AUTHORIZED`; Main22~24 정식 ID/Scene/Dialogue Production Lock·아트 승인·전체 Runtime 미허가.
+- **완료(콘셉트 파일럿):** F1 흙·얇은서리 지면·Transition/길 Overlay/서리 관목/목제 표지판 6 PNG, 서릿길 마을 자갈 바닥/목석건물/보급상자/등불 4 PNG, 서리들쥐 1포즈·설빙의 폭군 실루엣 1포즈 KeyArt 2 PNG. 총 **독립 PNG12**. 미리보기3/기본 타일2×2 반복QA3 별도. 모두 새로운 독립 아트 시안, 기존 공식 인물/게임 씬/아트 파일 불변.
+- **파일:** `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip`는 이번 ChatGPT 대화에서 직접 다운로드 가능. SHA-256 `6a22ac4e9c4d4f4f9e37c2ac8270b145d5483676d00f83c320cdf0e6925382b4`. **실제 PNG/ZIP 바이너리는 GitHub에 올리지 않았고, 담당 브랜치의 문서에는 명세와 SHA만 기록**. 별도 대화 세션에서는 해당 ZIP이 자동 제공되지 않으므로 사용자/기획 담당에게 전달 경로를 확인할 것.
+- **GitHub 기록:** [Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md](../../Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md), 담당 브랜치 `docs/art-new`, 작업 보고 커밋 `5b46e3d6bed2e4dbe3b4c3ef5aba0f94949f3d44`. 최종 인계 변경 커밋은 해당 문서의 Git History 참조.
+- **오프라인 QA:** 18 PNG 디코딩, 독립 PNG12 RGBA/256·512 규격 PASS, 3 Ground Base 좌우/상하 경계 픽셀 일치 PASS, 압축21항목 CRC PASS, Manifest 파일별 SHA 기록. 반복무늬의 눈에 띔/초상화와 스타일 일치·아트 UI/동선 가독성은 사람 미술검토 필요. 샘플 이미지는 Unity 캡처가 아님.
+- **미정 및 게이트:** Codex Issue #35의 실측 PPU/Pivot/Collider/Sorting/WorldBounds/휠체어 통행 경로·Scene 구조 보고 전 `GAME_READY` 표기 금지. 마을 북문/남문·동쪽 포탈 공간은 콘셉트 표시만, 동쪽 포탈 **비작동**. Monster/NPC/Quest/Scene ID·장착 스킬 등 새 정식 ID 임의 확정 금지. 기존 하렌·태온·세린·폴·미엘·플레이어/Chapter1·2 공식 자산 보호.
+- **다음 작업:** (1) 바울 대표 F1/마을/두 KeyArt 미술 의견 받기 (2) 기획 Production Lock·Codex PPU/Pivot/Collider 보고 확인 (3) 승인받은 자산만 실제 Import 계약에 따라 조정·확장 후 아트 승인 및 Codex Unity 통합 분리 진행. `main` 직접 Push/병합 금지.
+- **새 세션 시작 문구:** “너는 LIMITLESS Chapter3 이후 신규 아트 총괄이다. `docs/art-new`의 `SPRITE_ART_LATEST.md`와 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`, 기획 `docs/planning`의 병렬 착수 문서 및 Issue #30을 읽어 와. F1·서릿길마을 독립 PNG12 파일럿은 사용자 미술 승인/PPU 기술 계약 대기 중이고, 21항목 ZIP은 이전 대화 산출물이니 실물이 확인되기 전 GitHub에 업로드됐다고 말하지 마.”
