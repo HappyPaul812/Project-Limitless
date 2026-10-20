@@ -79,3 +79,13 @@
 - [Idle v1 제작·검수 상세](../../Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md) — 최신 커밋 `8c94f9de53b3c706f67a1bf59b515cdae092eaf8` 참조.
 - **USER_ANIMATION_ART_APPROVAL_PENDING / NO_UNITY_INTEGRATION**: 움직임 미술 승인과 Codex 실제 Unity 재생 검증은 아직 하지 않았다. Attack/Hit/Defeat·다른 방향·몬스터 양산 금지. 승인된 기존 1포즈 원본·F1/마을·Chapter1·2 아트·Unity/Save 변경0. `main` 직접 Push 금지.
 - 후임: 바울 대표가 GIF/APNG 및 128px 확인 후 미술 승인하면 별도 기술 검증을 Codex에 의뢰. 신규 수정은 문제 프레임만 별도 승인받아 진행.
+
+## 2026-10-20 서리들쥐 A 전투 3동작 v1 실제 납품
+
+- 기획 발주 `Chapter3_FrostFieldMouse_AttackHitDefeat_3Strip_ProductionOrder_20261020.md`와 Codex 계약 `ad9e4b46` 기준, **Attack/Hit/Defeat PNG 시트3** 새 제작. 2048×512 RGBA, 각 4×512, 8FPS, PPU512, Pivot (0.5,0), 우향 1종, VisualScale1. Attack/Hit 후 기존 Idle 복귀, Defeat frame03 유지(미리보기 GIF/APNG은 동작 확인용 반복일 뿐 게임 loop 의미 아님).
+- 실제 ZIP: `Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_v1.zip`; SHA256 `24ef8dddf76fb5843e8e7d3fac05942f1450c9f39cf366b2422a0ab82cba6741`, 8,688,417bytes. 실제 PNG/ZIP은 본 대화 첨부 다운로드 제공, GitHub 문서에는 SHA 및 QA만 기록.
+- PNG SHA: Attack `08ed9ffb3d2807b0e1a3b27450f8f3bf1ff3e56f5f33e8b6607b2983db4e402e`, Hit `37c51117ae18f2fed2bda5a8cef6af3099812b5e0979e1368634172937568f1b`, Defeat `bda2809d177d03088e85389ecea23815b92962d61c36cc68967cd0015c96dfcc`.
+- 각 프레임 확인판·128px 전체 비교·8FPS APNG/GIF·Manifest/OfflineQA/SHA 동봉. 프레임4개 각각 상이, 셀 크기/투명 가장자리/발 접지선/ZIP CRC 오프라인 PASS.
+- **주의/미술승인 보류**: 새 전투 포즈의 털 색이 승인된 차가운 회백색보다 갈색이므로 사용자 시각 확인 필요. 픽셀아트 디테일과 Unity 실표시는 미검증. **USER_COMBAT_ART_APPROVAL_PENDING / NO_UNITY_IMPORT**.
+- 기록: [Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md), 커밋 `74d918f189ce67ea2ee7118b9dfc710d2b506264`. 기존 공식 서리들쥐 Idle·1포즈 원본, 설빙의 폭군, F1·마을, Unity/Save 등 전부 변경0. `main` 직접 반영 금지.
+- 다음: 대표님께 사용 가능한 ZIP 다운로드 확인 → 미술 승인/수정 지시 → Codex 격리 Unity QA → 별도 승인 후 게임 정식 통합. Attack/Hit/Defeat 외 양산 금지.
