@@ -1,5 +1,15 @@
-# LIMITLESS / TTS 담당 최신 인계 — 2026-10-13
+# LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-20 최우선 — 세린·태온 음색 사고 보고서 및 하렌 포함 3인 캐스팅
+
+**다음 과거 장·시점의 Schedar 유지/“Main18 세린10 재제작 대기” 등의 역사 기록보다 아래 최신 정본을 우선한다.**
+
+- **[2026-10-20 TTS 캐스팅 성별 역전·음색 불일치 사고 보고서](../../TTS_캐스팅_성별역전_음색불일치_사고보고서_및_3인재캐스팅_20261020.md)** — 사용자 피드백, 기술/청취 QA 차이, API400, DSP16 전량 실패, 캐스팅 재선정 및 재발 방지 전 과정. Google의 과거 버그 수정은 *미확정 가설*.
+- Google Voice 공식: Schedar=Male(옛 세린), Gacrux=Female(옛 태온). 초기 음성의 실제 청취 승인과 최신 캐스팅의 장기 안정성 별개. TTS 담당 검증·재시도 판단상 실수로 기록.
+- 사용자 최신 범위: **하렌3 / 세린67 / 태온85** = 총155개(현 Unity 등록 교체140 + Main20·21 미등록 확정15). Chapter3 미확정 제외. 제작은 **하렌→세린→태온**.
+- 최신 후보: 하렌 **Alnilam**, 세린 **Erinome**, 태온 **Algieba**. 각자의 Google **공식 데모를 사용자 “좋네”라며 긍정 평가**했으나 **실제 한국어 시범 생성·최종 캐스팅 승인 전**. 차선은 각각 Algenib/Despina/Iapetus.
+- 기존 Voice ID Schedar/Gacrux 재시도 및 DSP 패치 중단. 기존 사용자 승인 Main18 세린10·Main08 태온, 다른 전체 화자 WAV와 290 Catalog/Save/HOLD 원본 보존. 사용자 승인 전 게임에서 기존 성우를 삭제/교체·전체 음성 재녹음 금지.
+- 실제 한국어 시험 제작은 사전 사용자 승인·Google 프로젝트+모델 quota 확인 후 TTS 담당. 사용자가 청취 합격하고 3인 각 대사 범위가 준비됐을 때만 Codex가 Unity 별도 구현·회귀. Main 직접 Commit/Push/merge 금지. [작업 Issue #20](https://github.com/HappyPaul812/Project-Limitless/issues/20).
 ## 오늘 결과
 - **Main18 세린10 오류 전용 Schedar 안전 준비 v2** 작성 및 격리 fixture 테스트 완료. GitHub 기록: [TTS_Serin10_Schedar_v2_Preflight_20261013.md](../../TTS_Serin10_Schedar_v2_Preflight_20261013.md).
 - 별도 배포 Python: `M18_Serin10_Schedar_v2_SAFE.py`, SHA256 `2edd62ff4c7cbc7fe055c665b39f35aaa5ef126691d1393c692fb42e8e1cd741`, 13,057 bytes. **Gemini/HTTP 함수 없음; sample 명령 항상 차단**.
