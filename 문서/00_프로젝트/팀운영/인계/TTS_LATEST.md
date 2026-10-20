@@ -239,3 +239,11 @@
 - `F:\Downloads\Voice\LIMITLESS_TTS_GenderFix9_20261020`에 압축 해제한 뒤 `python .\\LIMITLESS_TTS_GenderFix9_20261020.py check` → 실제 Google 무료 quota 및 과금 확인 후 `sample-serin`, `sample-taeon`; 출력 `F:\Downloads\Voice\Limitless_TTS_GenderFix9_20261020\candidates`. 체크에서 기존 17 성공 WAV/결과 SHA 불일치·경로 문제 있으면 호출금지/보고.
 - offline Python compile/ZIP CRC, 17원본 SHA mock 보호, 샘플2→승인→나머지7 성공, 2번째 요청 모의 오류 시 HOLD/lock 및 뒤호출0 PASS. **실제 PC API 호출·실제 WAV 신규 생성=0**, 게임 Unity 적용0. 실사용 결과와 청취 평가는 사용자 응답 대기.
 - 상세: [2026-10-20 정정 및 실사용 Python 인계](../../TTS_Main20_Main21_VoiceGenderFix9_20261020.md). 기존 Issue #20 보이스 오류 추적 유지. Codex는 사용자 승인 WAV Unity 통합만.
+
+
+## 2026-10-20 최신 — 파형 보정 오프라인 시험판 (바울 대표 요청)
+
+- 사용자는 성별 프리셋 교체 대신 **이미 생성한 WAV9 파형 보정** 요청. TTS 담당이 `LIMITLESS_TTS_DSP9_Offline_20261020.zip` 직접 작성·배포 (SHA256 `1a91fa078a367c7a6336fdb44209b0cd743ee43d41da4c75c392fd04c99afec9`). Google API 호출0, Unity 수정0.
+- `check` 원본9 읽기 전용 검사 → `preview` 세린1·태온1 각각 gentle/medium/strong (6개) → 바울 대표 청취 승인 후 `apply --serin ... --taeon ...`로 오류9개만 새 위치에 후보 제작. 피치+포먼트 근사 DSP, 원본 음색 완벽 복구 보장 없음.
+- 샘플용 합성 WAV 기반 compile/check9/preview6/apply9/원본 SHA 불변/24k PCM16/중복 출력 보호 PASS. **실제 사용자 PC WAV 보정·음질 검증 미실행**.
+- [정본/기술 상세](../../TTS_Main20_Main21_Offline_DSP9_Pilot_20261020.md). 기존 VoiceFix9/GenderFix9 API 생성 패키지는 계속 사용 보류. 기존 Main18 승인, 나머지 정상음성, 원본 WAV, save/HOLD/lock, Unity 보호.
