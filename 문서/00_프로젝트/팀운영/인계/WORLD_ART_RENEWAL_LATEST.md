@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-20 Issue #37 Field09 Cracked Overlay 1종만 보완한 v2 실제 PNG/ZIP 납품 (현재 최신)
+
+- **Codex 격리 QA**: Base Ground Visual PASS, Slab Visual PASS — **둘 다 수정0 / SHA v1 그대로**. 유일 FAIL: Cracked Overlay의 오른쪽 x≈-1.5 밝은 균열 직선 절단.
+- 기존 v1 Overlay PNG만 변경. `512×512 RGBA / PPU128 / Pivot 중앙`, Tile x≈128 인접 3개 균열 끝의 Alpha만 3,705픽셀(x100..155) 국소 조정, RGB 전체 원본과 완전 동일. Old SHA256 `56d8e0ea9bf3ca2167227362b87bb219a21d4470f317456f36eb8aba99caedeb`, New SHA256 `0147e6aff58e5304fd71e7474a9c018958a4234ec4c2dc2cf7382a905a7be9b7`.
+- 신규 ZIP `Limitless_Field09_Redesign_Sample3_OverlayFix_v2.zip` **3,338,697 bytes / 11 entries / SHA256 `ec831166a753eef179da8fc283faf1fe81d1880941bce10c8d93225269cd418c`**. 실제 Sandbox ZIP/PNG 다운로드로 납품; Manifest/수정픽셀3705행/오프라인 Base 21×15 + Overlay 9×15 전후 및 접합 확대컷/QA/재현 스크립트 포함. ZIP `testzip`=None, 새 PNG 딥 검사 PASS. **Unity 실제시각 재검수 대기**.
+- GitHub `docs/art-renewal`에 실제 재현용 Python 소스 `Art_Tools/Field09_Issue37_OverlayFix_v2.py` (Commit `b9dbd5e66524eb249a86e4d7cc421c12656b60dc`) 업로드. Codex는 바울 대표 F: 기존 Sample3 v1 ZIP에서 오버레이 원본1개만 읽기전용으로 꺼내 같은 아트를 자동 재생성·SHA 대조 가능. 사용자 원본·합격2종·main 변경 금지.
+- [Issue37 새 v2 아트 납품 보고서](../../Field09_Redesign_Sample3_OverlayFix_v2_Issue37_Delivery_20261020.md), 보고서 commit `a50dcd86abca567906c2c3aada919af53b41bb76`. **다음 담당 Codex**: 동일 x≈-1.5 및 3개 GameView 시각 Delta QA만; 기존 31PASS/0FAIL·Main18 PASS 전체 재검사 하지 않음. 진짜 Unity에서 수직 경계 0FAIL, 바울 대표 미술승인, 별도 공식 적용승인 전 후속 Field09 아트/병합 금지.
+- **정확 상태**: `ISSUE37_OVERLAY_V2_PNG_AND_ZIP_DELIVERED / BASE_SLAB_PASS_UNCHANGED / OFFLINE_QA_PASS / CODEX_UNITY_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED`.
+
+
+
 ## 2026-10-20 Field09 새 환경 3종 기술계약 대응 — 실제 신규 PNG3 납품 (최신)
 
 - 기획 정본: docs/planning/문서/00_프로젝트/Field09_Art_Redesign_Sample3_Technical_Contract_20261020.md 직접 확인. 기존 부분 수정 중단, 맵 구조/Collider/Main18/과열/몬스터/세린/전투/Save/Continue 보호.
