@@ -69,3 +69,13 @@
 - 주의: Texture2D 런타임 분할 Sprite.Create Pivot은 (0.5,0.5)이고, TextureImporter 분할 ExplicitIdleFrames Pivot은 (0.5,0). 섞으면 발밑 정렬 위험.
 - [Idle 기술 사전조사 보고](../../Chapter3_ApprovedAB_Idle_Animation_Technical_Preflight_20261020.md), 커밋 104e005952ba833e4eafa7d44333410ebe721180. 아트 담당의 GitHub 원격 확인 기록이지 Codex 로컬 구현·Unity 실측 기술 계약 완료가 아님.
 - Codex가 별도 codex/작업명 로컬 worktree에서 4프레임 전용 strip/Import PPU·Pivot·실효 UI 크기/신규 Scale과 field sorting·collider 계약을 잠가 기획/아트 담당에 인계한 후에만 Idle 파일럿 PNG 제작. Main, F1/서릿길 마을, 승인 캐릭터, Unity/Save 변경 금지.
+
+## 2026-10-20 서리들쥐 A·설빙의 폭군 B Idle 4프레임 v1 실제 납품
+
+- 바울 대표가 두 1포즈 v2 미술 승인 후 Codex **최종** Idle 계약: **2048×512 RGBA / 4프레임(가로 4×512) / 8FPS / PPU512 / Pivot(0.5,0) / 우향 / VisualScale Mouse1·Tyrant3**. 이전 PPU314안은 미확정 임시 참고였으며 폐기.
+- 실제 PNG2: `FrostFieldMouse_A_Idle_4Frames.png` SHA `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`; `FrostTyrant_B_Idle_4Frames.png` SHA `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`.
+- 실제 대화 ZIP: `Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip`, SHA256 `6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c`, 약 6.95MB. 총 12개 파일: 시트PNG2 + 각 4프레임 확인PNG2 + 정확한 8FPS APNG2(125ms/프레임) + GIF2(120/130ms 교대, 총0.5초) + 128px 전체 비교PNG1 + Manifest/QA/해시목록3. 실제 ZIP/PNG는 이 ChatGPT 대화 다운로드에 존재하며 GitHub에는 문서/해시만 기록.
+- 제작: 승인된 1포즈 PNG를 직접 기준으로 사용하고 국소적인 몸통·머리/수염·꼬리·흉곽·팔 움직임을 제작. Frame00는 승인 원본 픽셀과 같고 각 후속 3프레임은 독립적 변형. 발밑 y438~511 영역 원본과 100% 픽셀 동일. 2048×512 RGBA/4×512/투명 외곽/프레임 차별화/ZIP CRC/원본 SHA 오프라인 PASS.
+- [Idle v1 제작·검수 상세](../../Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md) — 최신 커밋 `8c94f9de53b3c706f67a1bf59b515cdae092eaf8` 참조.
+- **USER_ANIMATION_ART_APPROVAL_PENDING / NO_UNITY_INTEGRATION**: 움직임 미술 승인과 Codex 실제 Unity 재생 검증은 아직 하지 않았다. Attack/Hit/Defeat·다른 방향·몬스터 양산 금지. 승인된 기존 1포즈 원본·F1/마을·Chapter1·2 아트·Unity/Save 변경0. `main` 직접 Push 금지.
+- 후임: 바울 대표가 GIF/APNG 및 128px 확인 후 미술 승인하면 별도 기술 검증을 Codex에 의뢰. 신규 수정은 문제 프레임만 별도 승인받아 진행.
