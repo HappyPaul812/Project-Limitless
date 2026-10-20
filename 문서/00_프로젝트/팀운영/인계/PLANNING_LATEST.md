@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-20 Chapter3 신규 몬스터 Idle 2종 실제 격리 Unity 14PASS/0FAIL, 대표 모션 승인 대기
+
+바울 대표 전달 Codex 최종 Idle v1 QA 보고: 서리들쥐A·설빙의 폭군B 모두 구조/기술PASS·**시각/모션PASS 권고**, 4×512×512 8FPS 0.500초 루프, Frame00 정적 승인 1포즈 픽셀 동일, 발 접지/크롭·03→00 자연스러움, **격리 Unity14PASS/0FAIL**. 서리들쥐 꼬리/앞니/발톱과 128px 야생성, 폭군 흉곽/어깨·긴 팔의 미세움직임·보스 체급 유지. Codex `codex/chapter3-idle-v1-review-20261020`, QA `1b9ad951`, 인계 `3ef27f34`. 사용자 PC 원본 Unity/Save/UserData/Editor·정적1포즈 보호, Unity 원본등록/Push/main 병합0.
+
+실물 ZIP `F:\Downloads\Limitless_Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1.zip` SHA256 `6c01e55c147ab57147c767f43503553164197cc037a3834ecd2d15d10d96a23c`; Mouse Sheet `5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2`, Tyrant Sheet `9d9b8d05be1813c013a5d784d749ce2d8ef751541ac36ce90712f3255cb53f43`. 신규 아트 보고 `docs/art-new/Chapter3_ApprovedAB_Idle_4Frame_v1_Production_QA_20261020.md`. **중요: Codex 시각 PASS 권고는 바울 대표 최종 모션 승인과 다름**, 현재 `USER_MOTION_APPROVAL_PENDING`으로 기록. 바울 대표가 실제 루프를 보고 승인하면 Idle 시트2 SHA 동결→향후 구현/Attack·Hit·Defeat 별도 단계 승인. 이미 신규 아트 담당에게 Idle 작업 지시했으므로 반복 지시 금지. 기획 계약 `문서/00_프로젝트/Chapter3_FrostFieldMouse_FrostTyrant_Idle_v1_IsolatedUnity_14PASS_UserMotionApprovalGate_20261020.md` (`docs/planning`, commit `bd7bee163cbb8b6c80be58b6309f87fcf0953767`), [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 댓글 기록.
+
+**별도 Field09 상태:** B 파생 Glow 승인은 이미 받고 격리 통합39PASS/0FAIL, 사용자 원본 Unity 안전 적용 및 main PR병합 승인 대기는 별도. 이 보고를 Field09 승인 답변으로 간주하지 않음.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 B안 격리 Unity 통합39PASS/0FAIL, 본게임 원본적용/PR 승인은 별개
 
 바울 대표 Codex 보고: 최종 승인된 5 PNG를 동일 SHA로 격리 등록하고 파생 Glow **신규 PNG/.meta/GUID** 연결/Glow Sprite 참조 **1곳만** 교체. Branch `codex/field09-derived-glow-b-integration-20261020`, 승인기준 commit `77978aa1`, B연결 `913eceb7`, QA 보고 `b04c42e7`; 신규 Glow SHA `64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48`. 3 GameView 붉은띠·가이드 제거/내부 열기·조사/Missing Sprite0/Collider·격리 Save/Continue 변경분 **39PASS/0FAIL**. 과거 A/B34 및 과열UI10은 재검사 없이 이력 재사용. 원본3546/공식 Glow/meta/GUID/Save/UserData/원본 Editor 전부 보호, **original local main 적용0 / remote main Push/merge0**.
