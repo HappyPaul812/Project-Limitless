@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-20 Field09 B안 격리 Unity 통합39PASS/0FAIL, 본게임 원본적용/PR 승인은 별개
+
+바울 대표 Codex 보고: 최종 승인된 5 PNG를 동일 SHA로 격리 등록하고 파생 Glow **신규 PNG/.meta/GUID** 연결/Glow Sprite 참조 **1곳만** 교체. Branch `codex/field09-derived-glow-b-integration-20261020`, 승인기준 commit `77978aa1`, B연결 `913eceb7`, QA 보고 `b04c42e7`; 신규 Glow SHA `64529ce564c05deda576f7bb151fa6426c22c006009b073c76a59d7b5775ab48`. 3 GameView 붉은띠·가이드 제거/내부 열기·조사/Missing Sprite0/Collider·격리 Save/Continue 변경분 **39PASS/0FAIL**. 과거 A/B34 및 과열UI10은 재검사 없이 이력 재사용. 원본3546/공식 Glow/meta/GUID/Save/UserData/원본 Editor 전부 보호, **original local main 적용0 / remote main Push/merge0**.
+
+B는 바울 대표가 전 턴에 **최종 미술 승인**했으며 이번 보고는 격리 적용 성공만 입증. 원본PC Unity 디스크 적용 및 별도 PR main merge는 명시적 승인 필요. Field09 미완료 다른 소품(HeatVent/Spire 등)은 자동 완료 아님. 기획 정본 `문서/00_프로젝트/Field09_B_DerivedGlow_IsolatedIntegration_39PASS_OriginalApplyGate_20261020.md` (`docs/planning`, commit `156b96eb76e0bbc2a97066205fab4caddde2182d`). Issue [#38](https://github.com/HappyPaul812/Project-Limitless/issues/38) 인계 댓글. 대표에게 **원본 Unity 안전 적용 + PR 준비 여부**를 묻되 실제 PR 병합까지 자동 승인으로 해석하지 않는다.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 Field09 B 파생 Glow 최종 승인, Codex 격리 Unity 구현 착수
 
 바울 대표가 기획 질문 “B안(별도 파생 Glow)을 최종 미술안으로 승인하시겠습니까?”에 **“승인”** 답변. **B 파생 Glow 미술안 채택/격리 구현·DeltaQA 착수 승인**, A SpriteMask는 PASS 기록만 유지하고 미선택. Codex A/B branch `codex/field09-glow-composition-ab-20261020`, QA `68855edd`, 인계 `453736cb`, B 포함 두 안 모두 실 GameView 3비율 시각 PASS·Delta34PASS/0FAIL+과열UI10PASS; 성능은 측정0. 기존 Glow 원본 PNG/meta/GUID 보호·Approved Sample3 Base/CrackedOverlay/Slab + Phase2 Cliff v2/Fissure Edge v2 SHA 보존. **신규 B Glow 별도 asset+GUID를 도입하고 격리 Field09 Scene의 해당 Glow Sprite 참조 최소 교체**; 기존 개별 art asset 조합 시 본게임 공식 Phase2 완성 여부 분리. Codex 별도 `codex/field09-derived-glow-b-integration-20261020` 격리 worktree에서 실제 구현·동일 3 GameView+미니 기능 Delta 검증하되 **원본 PC 에디터/dirty/Save/UserData 및 원격 main 직접 적용/Push/병합 금지**, 보고 후 별도 승인. 원본 Glow 다시 그리기·Mask 추가·리뉴얼 새 그림 보완 불필요. Stage2 다른 환경 소품까지 완성했다는 주장은 금지.
