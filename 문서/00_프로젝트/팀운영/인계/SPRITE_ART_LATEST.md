@@ -36,3 +36,12 @@
 - **미정 및 게이트:** Codex Issue #35의 실측 PPU/Pivot/Collider/Sorting/WorldBounds/휠체어 통행 경로·Scene 구조 보고 전 `GAME_READY` 표기 금지. 마을 북문/남문·동쪽 포탈 공간은 콘셉트 표시만, 동쪽 포탈 **비작동**. Monster/NPC/Quest/Scene ID·장착 스킬 등 새 정식 ID 임의 확정 금지. 기존 하렌·태온·세린·폴·미엘·플레이어/Chapter1·2 공식 자산 보호.
 - **다음 작업:** (1) 바울 대표 F1/마을/두 KeyArt 미술 의견 받기 (2) 기획 Production Lock·Codex PPU/Pivot/Collider 보고 확인 (3) 승인받은 자산만 실제 Import 계약에 따라 조정·확장 후 아트 승인 및 Codex Unity 통합 분리 진행. `main` 직접 Push/병합 금지.
 - **새 세션 시작 문구:** “너는 LIMITLESS Chapter3 이후 신규 아트 총괄이다. `docs/art-new`의 `SPRITE_ART_LATEST.md`와 `Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md`, 기획 `docs/planning`의 병렬 착수 문서 및 Issue #30을 읽어 와. F1·서릿길마을 독립 PNG12 파일럿은 사용자 미술 승인/PPU 기술 계약 대기 중이고, 21항목 ZIP은 이전 대화 산출물이니 실물이 확인되기 전 GitHub에 업로드됐다고 말하지 마.”
+
+## 2026-10-20 몬스터·보스 1차 키아트 반려 및 2안씩 재시안 v2
+
+- 바울 대표 **반려 확정**: 첫 파일럿 KeyArt `NorthF1_FrostFieldMouse_KeyArt_Concept.png` 및 `FrostTyrant_Silhouette_Concept.png`는 몬스터가 완구/마스코트 같고 보스가 충분히 무섭지 않음. **이전 1차 ZIP 안의 해당 원본을 덮어쓰지 않음.**
+- **재시안 제작/포장 완료(승인 대기)**: `Limitless_Chapter3_Monster_Boss_Concept_Revisions_v2.zip`; 영문 개별 원본 `FrostFieldMouse_Concept_A.png`/`B.png`, `FrostTyrant_Concept_A.png`/`B.png`; 비교 미리보기 1, MD/JSON Manifest 2, QA JSON 1 = 총8항목. ZIP SHA256 `7b6cc00e896ffa1ddcf4e4aa6fff4b05cbf160d587ef209db5f5e72c53e97561`.
+- **한계 명시:** 네 원본은 1254×1254 RGB(쥐)/1122×1402 RGB(보스)이며 고해상도 배경 포함 콘셉트로, 픽셀아트 투명 스프라이트가 **아님**. 사용자께 A/B 디자인 검토를 받은 뒤 Chapter2 공식 아트 톤에 맞는 정식 **2D 게임용 픽셀아트 1포즈**로 다시 제작해야 함. Unity/게임 원본 수정 없음.
+- 문서·파일별 SHA·QA: [Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md](../../Chapter3_Monster_Boss_Concept_Revisions_v2_QA_20261020.md) (커밋 `2cbe7299e0d3c88ab8cea100247fe4e826e583de`). 바이너리는 이 ChatGPT 대화에 다운로드 링크로 제공했으며 GitHub 브랜치에는 **기록 문서만** 올렸음.
+- F1/서릿길 마을 지형 PNG 10종은 별도 기존 파일럿 그대로 보존; 몬스터/보스 신시안은 기존 2개와 별도 패키지.
+- **후임 우선**: 서리들쥐/설빙의 폭군 각각 채택안 확인→게임용 픽셀아트 스타일로 단독 1포즈 제작→Codex PPU/Pivot/Collider 조사 반영→대표 미술 승인 후 Unity 연계. 전 몬스터 7종 애니메이션 양산 금지. `docs/art-new`만 사용, main 직접 수정 금지.
