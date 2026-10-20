@@ -89,3 +89,14 @@
 - **주의/미술승인 보류**: 새 전투 포즈의 털 색이 승인된 차가운 회백색보다 갈색이므로 사용자 시각 확인 필요. 픽셀아트 디테일과 Unity 실표시는 미검증. **USER_COMBAT_ART_APPROVAL_PENDING / NO_UNITY_IMPORT**.
 - 기록: [Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_v1_ArtDelivery_QA_20261020.md), 커밋 `74d918f189ce67ea2ee7118b9dfc710d2b506264`. 기존 공식 서리들쥐 Idle·1포즈 원본, 설빙의 폭군, F1·마을, Unity/Save 등 전부 변경0. `main` 직접 반영 금지.
 - 다음: 대표님께 사용 가능한 ZIP 다운로드 확인 → 미술 승인/수정 지시 → Codex 격리 Unity QA → 별도 승인 후 게임 정식 통합. Attack/Hit/Defeat 외 양산 금지.
+
+## 2026-10-20 서리들쥐 A 전투 3 Strip v1 미술 FAIL → 표적 수정 v2
+
+- Codex 이전 v1 QA: **36 PASS/0 FAIL 기술**, 미술 Attack FAIL / Hit FAIL / Defeat HOLD / 승인 Idle의 털색 불일치 FAIL. 사용자 발주: `docs/planning/문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_v1_VisualFail_3Strip_TargetedFix_20261020.md` 및 Issue #30.
+- 실 납품 v2 ZIP: `Limitless_Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2.zip`, **SHA256 `518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3`**, 10,784,249 bytes, 20 files / testzip CRC PASS. ChatGPT 대화 첨부에 실물 납품, **GitHub에 PNG/ZIP 미업로드**.
+- 신규 PNG3 SHA: Attack `c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b`, Hit `695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2`, Defeat `3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395`. 모두 2048×512 RGBA, 4×512cell, 8FPS, PPU512, Pivot(0.5,0), Scale1.
+- 수정: **Attack00과 Hit03 RGBA 전체 셀이 승인 Idle00 픽셀과 동일**, bbox [22,124,490,490]. **Attack02 최대 앞발 할퀴기** (v1 Attack01의 강한 공격을 올바른 이벤트 타이밍 위치로 이동). 중간 프레임 털 부위 냉회백 톤/명암 국소 보정, 동작 특성 유지. **Defeat03 알파 실루엣 v1과 정확 동일**, RGB는 털색 정합 목적의 부분 변경만.
+- ZIP에 프레임별 컨택트 시트·8FPS APNG/GIF·Idle→Attack/Hit 8FPS 전환 프리뷰·112px v1/v2/Idle 비교·Attack02/Defeat03 확대·128px 전체 비교·Manifest·QA JSON·SHA 제공.
+- 제작 QA 문서: [Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md), 커밋 **`3833a3262dd9966344c7ee9f946a896b37b39d6f`**.
+- **상태:** `ART_FIX_V2_DELIVERED / CODEX_DELTA_QA_PENDING / USER_COMBAT_ART_APPROVAL_PENDING`. 이전 36개 QA 전수 재검사 금지, 새 이미지 3종만 경계 프레임/Attack02 타격/Defeat03 HOLD/색상 불연속 최소 실제 Unity 검증 필요. 승인된 Idle/1포즈/보스 B/F1·서릿길 마을/Chapter1·2 및 Unity/Save/GUID 원본은 보호. **main 직접 Push/병합 없음**.
+- 후임: 이 ZIP과 승인 Idle ZIP 두 실물 확보 → Codex 변경분 QA 결과 확인 → 사용자 미술 승인 또는 표적 수정 후 새 버전. 다른 캐릭터/몬스터 애니메이션 무단 확대 제작 금지.
