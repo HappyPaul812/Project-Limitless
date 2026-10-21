@@ -1,3 +1,15 @@
+# PLANNING 최신 인계 — 2026-10-21 Main23 기술 사전점검 완료 / 마을 아트 대기 / 스킬 저장 누락 추적
+
+바울 대표 전달 Codex Main23 서릿길 마을 read-only preflight 완료: `codex/chapter3-main23-village-preflight-20261021`, commit `74bd1de8558244405a2935e5fca96fcc2f0bb307`. Main22 완료→Main23 해금, 5목표 후보, F1 북쪽→마을 남문, SafeZone/Checkpoint/SaveContinue/기존 서비스 재사용 계약, F2 북문 차단·동쪽 포탈 OFF 부지 예약. 후보 ID20개 Main22 기존 목록과 중복0. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS QA 재사용, 전수재QA0. **실제 Main23 Scene·Quest·NPC 생성0, 원본4,351파일/Save·UserData/Editor 보호, main Push/merge0**.
+
+**진행 중인 신규 미술**: `docs/art-new` 서릿길 마을 Environment ArtPilot v2 제작은 이미 사용자에게 지시/진행 중, 재발주 금지. 완성 실물→대표 미술 승인→Codex 격리 Unity 마을 GameView/동선/문·CheckPoint QA→Main23 격리5목표 최초 플레이. NPC/Quest 정식 ID, 상품·가격·보상/대사·TTS는 아직 미정.
+
+**중요 기술 부채**: 스킬 장착 정보 현재 메모리 전용, Save/Continue 영구 복원 안 됨. Main24 첫 스킬 상점 정식 런타임 출시 전 필수 `Save/Load 장착6슬롯·구매·강화/유효성·구버전 세이브 migration` 별도 추적 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46). 이는 Main23 첫 도착/Save 구현 자체는 막지 않지만 Main24 상점과 이용자 스킬 복구 필수 블로커. 사용자 원본 세이브 복구/유니티 구현은 아직 승인된 작업 아님.
+
+기획 기록 `문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md` (`docs/planning` commit `2eda4d8159c260ced19404a24c24eaec0c3fea17`), Main23 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 최신 코멘트, Skill Save Issue #46. 현 GitHub main은 EOD 10/20 SHA `e4e9891f6f01ea95cada9e63b1f09946d94d6041`, 별도 Codex Main22 원본 반영 준비완료·제품 미병합, 리뉴얼 담당 Wolf Run6 미술 FAIL 재작업 중. 두 담당 재지시 금지. 기획 내부 아이콘·잡템·따끈 어묵탕 카탈로그 누락 추적 유지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Main23 두 담당 작업 지시 완료, Main22 적용 준비 완료 / Wolf Run6 미술 FAIL
 
 바울 대표는 **Main23 art-new 서릿길 마을 ArtPilot v2 발주와 Codex 별도 Main23 기술 사전점검 지시문 두 개 모두 전달**. 현재 산출물 기다리는 중, 동일 지시 반복 금지. 정본 20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md; Issue #45.
