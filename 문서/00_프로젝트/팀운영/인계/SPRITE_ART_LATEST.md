@@ -150,3 +150,13 @@
 - **QA 문서** [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md), 커밋 `cbacca86c6a69faf3240e8fc09971a3b2fdceb6a`.
 - **승인 게이트:** v4 Codex 격리 변경분 Unity QA + 바울 대표 미술 승인 대기. 타일 패턴 때문에 전체 미술 HOLD 지속. 이전 Preview/ 의 16:9/4:3/21:9는 v3에서 생성된 **오프라인 참조이미지**로서 v4 Unity GameView 아님. Main23 Scene/Save/Unity/GUID, 공식 F1·Wolf·이전 v2 콘셉트11, Chapter1·2 변경0. `docs/art-new`만 문서 커밋, `main` 직접 Commit/Push/병합 금지.
 - 후임 세션은 해당 문서+ZIP/Issue #45 재확인→Codex 변경분 QA 확인→대표 승인 여부 확인. Tiles4는 대표 허가 전 수정하지 말고 임의 전체 타일 재제작 금지.
+
+## 2026-10-21 Main23 서릿길 마을 타일 반복 표적완화 v5
+
+- 인수 즉시 `docs/art-new` 이 문서 + `docs/planning`의 `PLANNING_LATEST.md` 최신(2026-10-21 늑대 Run6 v5 승인 / Village v4 HOLD) + Issue #45 최신 Codex 결과 참조. 늑대 Run6 v5는 이미 바울 대표 **모션 승인**이지만 Main23 마을은 **미술 HOLD**.
+- v4 원본 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip` SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896` 이 작업환경에서 다시 확인; 사용자 PC `F:\Downloads\`의 파일은 직접 다루지 않음.
+- **v5 실제 생성·납품**: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`, SHA256 **`1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 20,085,423 bytes, **72 entries**. 게임용 PNG 43 중 **수정3/바이트 동일40**. Tile Earth(24062 pixels), ThinFrost(23973), Gravel(31120) **국소 텍스처 반복 모티프 완화**. Tile StonePath·SkillShop·RoofGable v4 PASS 등 기타40 byte SHA 동일.
+- **오프라인 QA PASS**: 전부 PNG RGBA/타일 256×256/수정 타일 주변 RGBA edge 보존 + X/Y 첫/끝 edge 일치, 40 byte-identical, SHA256SUMS 71/71, ZIP CRC. Tile4의 v4↔v5 2×2·3×3 비교20 PNG/128px 원본 크기 미리보기와 독립 v5 실 PNG 사용 3 화면비 1600×900·1200×900·2100×900 **오프라인 합성**. 반복 무늬는 약화 시안이지 최종미술 합격 보증 아님.
+- **OPEN16 주의**: GitHub 기획/Issue에 기존 Codex CSV 기반 OPEN 16개라는 **집계**는 있으나 **행별 CSV 원문 파일명·좌표·조건을 해당 소스 ZIP·원격 담당자료·유저 Library에서 확보하지 못함**. 따라서 개별 OPEN16 해결0 / 종결0, 원본 검수 CSV 요청 필요. 어떤 건물/소품의 미확인 결함도 임의 수정하지 않음.
+- 상세 QA·실물 SHA/기타 제한: [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md), `docs/art-new` 커밋 `006fc8f4edfa00943052a00e4ace8217e11306fc`. **실 PNG/ZIP은 ChatGPT 대화 다운로드 첨부**이며 GitHub는 문서/해시만, Unity/Editor/Scene/Save/Main/F1/Wolf/다른 아트 변경하지 않음.
+- 다음: Codex 기존 16 CSV **행별 원본 공유** → 중복/이전 v4 해결 여부 검증 → 해당 OPEN만 표적 추가 수정. v5 3 Tile는 Codex 격리 실3×3/UI DeltaQA와 바울 대표 최종 미술 승인 필요. `main` 직접 커밋/Push/병합 금지.
