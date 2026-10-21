@@ -9,7 +9,7 @@
     "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Unity.log",
     "original_sha256": "58163336e350b977b123cb5afd6c19abd94b01b852b49670bbe7d4603e9f96c7",
     "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
-    "action": "raw local-only; public acceptance markers only"
+    "action": "Excluded from PR entirely: preserve original untracked raw log at same path"
   },
   {
     "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Unity_Final.log",

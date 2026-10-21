@@ -38,3 +38,8 @@ Codex Main22/F1/Mouse/Wolf/Village QA·OPEN16 원본CSV/좌표JSON·128px/3화�
 완료 판정은 후속 `OriginalLocalSync_Proof.json`의 GitHub main=origin/main=원본 local main, index=HEAD 및 사용자보호 검사로만 확정합니다. `SYNC_COMPLETE`는 아직 출력하지 않습니다.
 
 [허용목록](Evidence/EOD20261021/SelectedChangesAllowlist.json) · [기능출처](Evidence/EOD20261021/FeatureCommitMap.csv) · [새 검증](Evidence/EOD20261021/IntegrationDeltaQA.json) · [백업요약](Evidence/EOD20261021/BackupSummary.json) · [문서선별](Evidence/EOD20261021/DocumentMergeInventory.json).
+
+
+## 원본 진단로그 경로 충돌의 선별 제외
+
+원본의 미추적 MouseCombatV2Apply_20261021/Unity.log와 공개 최소화 로그가 같은 경로를 사용하여, 해당 로그1개는 PR에서 완전히 제외했습니다. 원본 raw 로그는 백업 및 기존 경로 그대로 보존하고 기능/QA 판정자료 통합은 계속합니다. 원본 로그 덮어쓰기0.
