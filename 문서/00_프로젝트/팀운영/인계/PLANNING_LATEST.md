@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 첫 실플레이 Main22 F1 우선 / 설빙의 폭군 전투 후순위
+
+바울 대표 최신 결정: 공식 몬스터명 서리들쥐(FrostFieldMouse), 보스명 **설빙의 폭군(FrostTyrant)**. '서리폭군'은 오기. 보스 Attack/Hit/Defeat 시트 제작을 당장 착수하지 말 것.
+서리들쥐 Combat Fix v2는 사용자 미술 승인·Codex 변경분23PASS/0FAIL. 직전 Codex 정식 연결 지시문은 이미 발행됨, 연결 완료 보고는 아직 없어 중복 발주 금지.
+최우선 단계: **북부 F1 6종 환경 시안 실물/게임 동배율 미술검토** (예전 ZIP/오프라인 QA만 통과, 사용자 미술·Runtime 미승인) → Codex 기존 Issue35 기술 조사 활용 Main22 Production Lock(ID/StarterVillage 북문/Portal/PPU/Collider/Save) → 승인 F1/서리들쥐로 Main22 초반 5목표를 별도 구현 승인 후 첫 플레이 검증. Main23 마을·Main24 F2 다음 순서. 독립 art-renewal의 Chapter1·2 맹독뱀/Wolf v3 병렬 별개.
+기획 문서 문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md (docs/planning commit a0024d21d4d3fafe7839be2336dfe1d1fdcea5dc), Issue #30 및 #35 댓글 업데이트. 현 main e4e9891f6f01ea95cada9e63b1f09946d94d6041, original Editor/Save/UserData 및 다운로드 재정리본 불변, main 직접 Push/merge 금지.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 맵 핵심 통합 완료·Field09/Field10 미결 분리, 리뉴얼 몬스터·펫 v3 재개
 
 바울 대표 “리뉴얼 쪽은 맵은 끝난거 맞으면 어제 이어서 하자” 요청에 GitHub `main` EOD·리뉴얼로드맵·Main19/Main20 아트 보고 확인. **환경의 핵심 구현·적용은 상당 부분 완료됐지만 전체 100% 미술 최종 완료 아님**: Field09는 승인 PNG5+B파생 Glow [PR41](https://github.com/HappyPaul812/Project-Limitless/pull/41) main/로컬 SYNC_COMPLETE, 그러나 [Issue38](https://github.com/HappyPaul812/Project-Limitless/issues/38) HeatVent·Spire 시각 마감과 AshPatch KEEP 후보 최종 검토 남음; Field10 공식 ArtPack13 등록·Runtime QA 있으나 `Main19_Art_Handoff.md` 최신 USER_ART_REVIEW_REQUIRED13. Field11 Main20 v3 승인/환경8·보스아트 QA 적용, Field08 공식 사용7 유지, Arbel/Field04~07 승인합본 보호. **이미 합격한 맵 재제작하지 않음.**
