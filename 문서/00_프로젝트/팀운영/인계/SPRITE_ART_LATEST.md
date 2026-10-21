@@ -120,3 +120,13 @@
 - **미술 승인 대기**: 그림은 1254 고해상도 원화에 기반한 256 후보이므로 수동 픽셀 마감/실 게임 적용 보장 아님. 큰 반복무늬는 3×3에 보일 수 있음. 단방향 오버레이·보행 통로의 실제 통행 폭/PPU/Collider/TileGrid·GameView는 Codex 실측 대기. **USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED**.
 - [제작·QA 보고](../../Chapter3_NorthF1_Environment_6_ArtImprovement_v2_QA_20261021.md), `docs/art-new` commit `4821d6fec8180a266a1580dc4eb175f6b6145474`. **main 직접 커밋/Push·병합 없음**.
 - 후임: 새 ZIP의 실물 6 PNG/비교판을 확인해 대표 미술 판단 먼저 받기 → 필요 시 그 지적 파일만 표적 수정 → Codex 기술 계약/Play Mode F1 검증 후 Unity 통합 요청. 기존 공식 캐릭터·서리들쥐 전투·설빙의 폭군·Chapter1/2 리뉴얼 보호.
+
+## 2026-10-21 북부 F1 v2 부분 합격 → 3종만 v3 표적 보완
+
+- Issue #30의 Codex v2 격리 QA: **기술 PASS / 미술 3 PASS, 2 HOLD, 1 FAIL**. 대표님 지시대로 KEEP 3 **흙 지면/흙길/서리 관목**의 바이트·SHA 절대 보존, Thin Frost/Transition/Waymarker **3종만** v3 PNG 보완.
+- 실제 납품: **`Limitless_Chapter3_NorthF1_Environment_6_TargetedFix_v3.zip`**, SHA256 **`488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054`**, 5,524,917 bytes, **20파일**. `Art/` 후보6 PNG는 모두 256×256 RGBA, PASS v2 PNG 3개는 각각 SHA `ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9`, `e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175`, `6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e`로 완전 동일.
+- 수정 v3 SHA: Thin Frost `12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c`, Transition `93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1`, Waymarker `6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589`.
+- v3 변경: 큰 반복 서리 얼룩의 밝기 감소(기술 참고 색차>28 픽셀 4358→1569), 흙 바탕+우향 알파 오버레이→얇은 서리 오른쪽 타일 **양쪽 경계 최대 RGBA delta0**, 표지판은 한쪽 평평한 꼬리/오른쪽 한쪽 화살촉. **오른쪽은 PNG 표시 기본 방향이지 Main22 실제 길 안내 방향이나 목적지를 확정한 것이 아님.**
+- 실제 ZIP/PNG는 이 ChatGPT 대화에서 다운로드 제공; GitHub에는 QA/Manifest/해시 **문서만** 기록하고 바이너리 미업로드. `docs/art-new` 제작 QA [Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md](../../Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md), 커밋 `b18d06fbbf318cfeff085a86aeb198b8b3aafe95`.
+- **오프라인 PASS / 미술·Unity 미승인**: 2×2/3×3 반복, 우측 연결, 표지판 128px 비교, ZIP CRC. 이미지 합성은 Unity GameView가 아님. Single-tile 반복 특징 잔존 가능/4방향 오토타일 아님/PPU·TileGrid·Collider·휠체어 통행폭 및 실제 F1 Play Mode 미검증. 현재 F1 전체 미술 상태 계속 **HOLD**.
+- 다음: Codex에 **이번 변경3+KEEP3 SHA만 격리 Delta QA** 요청 → 바울 대표 최종 미술 승인 → 별도 승인 후 Unity Main22 첫 플레이 구현. 다른 F2~F5·마을·설빙의 폭군·승인 서리들쥐·Chapter1/2 원본 보존, `main` 직접 반영 금지.
