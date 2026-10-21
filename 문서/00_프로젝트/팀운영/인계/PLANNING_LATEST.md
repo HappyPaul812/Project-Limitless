@@ -1,3 +1,15 @@
+# PLANNING 최신 확정 — 2026-10-21 Wolf Run6 v5 바울 대표 최종 미술·모션 승인
+
+**사용자 직접 결정:** 바울 대표가 Codex 격리 12FPS/128px 모션 QA 결과를 보고 **“늑대 괜찮아.. 승인..”**이라고 최종 승인. **Wolf Run6 ArtRework v5 `USER_ART_MOTION_APPROVED`**, 이전 `USER_FINAL_MOTION_APPROVAL_PENDING/HOLD`는 이 승인 시점부터 해제(이전 기록은 당시 단계로 보존). 기존 단일 정적 Wolf KeyArt v5 승인과 구별; 새 Run6 v5 전6프레임 모션 승인이다.
+
+- 고정 납품물 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`, **실제 Codex readback ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`**.
+- Frame00~04 기존 v4 byte 동일, Frame05 174 RGBA픽셀 수정, CRC/Manifest/PNG/Strip/Atlas 기술 PASS. 격리 Unity PlayMode 12FPS·128px 수정부 미술 PASS, 바울 대표 최종 모션 승인 완료.
+- 아트 리뉴얼 담당은 **Run6 v5 프레임 추가 재작업 금지**; 승인 PNG와 기존 KeyArt SHA 보존. 미술 승인 = **본편 Unity 적용 완료 아님**. 기존 Wolf 런타임·GUID/meta/Save/UserData·main 변경0. 실제 펫 연동/애니메이터/런타임 QA 및 PR/원본 적용·병합은 별도 Codex 통합 범위와 사용자 승인으로 진행한다. 본 승인만으로 main 커밋/Push/병합을 자동 허가하지 않는다.
+- Village v4는 별도 **전체 미술 HOLD** 계속. 흙·얇은 서리 타일 반복무늬, 자갈 수용 판단, 이전 검수 CSV OPEN16이 남는다. 늑대 승인으로 마을 승인 확대 금지.
+- 관련 기획 격리QA 보고 Codex branch `codex/qa-frostway-v4-wolfrun-v5-20261021`, 스크린샷 보고 commit `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`(원격 반영 여부 별도 확인 필요). 이슈 [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 및 [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45).
+
+---
+
 # PLANNING 최신 추가 인계 — 2026-10-21 Village v4·Wolf Run6 v5 Codex 격리 DeltaQA 결과 수신
 
 바울 대표가 Codex 검수 화면 2장을 전달함. 이는 **사용자가 전달한 Codex 검사 보고**이며 기획 담당이 사용자 Windows F: 바이트/Unity Editor를 직접 검사한 결과가 아니다. 스크린샷의 Codex 브랜치 `codex/qa-frostway-v4-wolfrun-v5-20261021`, 보고 커밋 `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`; 현재 GitHub 원격 브랜치 검색에서는 나타나지 않아 원격 Push/PR/merge 완료로 주장하지 말 것.
