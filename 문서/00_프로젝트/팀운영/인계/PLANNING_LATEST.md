@@ -1,3 +1,10 @@
+# PLANNING 최신 인계 — 2026-10-21 F1 격리 실제 Unity 64PASS, Codex Main22 5목표 첫 플레이 구현 발주
+
+바울 대표 Codex 최종 F1 preflight: branch codex/chapter3-f1-unity-preflight-20261021, QA commit **8cf6cd7ebeb2f9b5d2f08c9151ceca84bb271c77**. 승인 NorthF1 6종 SHA/Import/PPU/Pivot/TileGrid/Sorting·실제 GameView 16:9/4:3/21:9·흙↔서리 타일 접합·도보/휠체어 길·소품 Collider·카메라 경계·격리 임시 출입/SaveContinue 모두 **64PASS/0FAIL**. 시각 통로 가시폭 최소1.45WU, Collider 지름1WU. **실제 World_StarterVillage 북문은 여전히 닫힘, Main22 Quest/Scene 완료 및 원본 Unity/main 적용은 아직0**. 기존 Mouse Battle40PASS 반복검사X.
+기획 신규 Main22 5목표 vertical slice 계약 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_IsolatedImplementation_Order_20261021.md` (**docs/planning commit a0906010c530d9a4e557ff415822ddcd9e64381e**) + 신규 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 실행 지시. 별도 Codex worktree/branch codex/chapter3-main22-first-playable-20261021: 기존 F1 격리 실물과 기존 Mouse Combat40PASS 연결을 선택 재사용→Main21 13목표 완료 후 마을 펫NPC 자유사용/북문 명시 출발→F1 임계 안전 Spawn·흙서리조사1·남하 이동단서2·고유 서리들쥐 단독지정전 승리·안전 쉼터 정리→Main22 완료. HUD에 조사 조작·목표마커·도보/휠체어 접근성 명시, Save/Continue/이탈·재입장/전투 패배·도주 재시도 minimal delta QA. 미확정 ID/몬스터 숫자·드롭·EXP·보상은 현행 catalog 분석 후 임의 확정/신규 밸런스 생성 금지, 텍스트는 QA Prototype vs 최종Dialogue/TTS를 구분. **사용자 원본 Unity/Save/UserData/Editor/main 직접 Push/병합 금지**, 격리 구현 먼저 보고받고 원본 적용/PR은 별도 결정. 기존 Issue #35는 읽기전용 preflight로 마감 기록, Main22 실제 구현은 #44로 분리.
+리뉴얼 담당 `docs/art-renewal` Wolf v5 기준 Run6 고품질 실제 PNG 제작(`d3bf6e4e`), 신규 메인아트 F1은 6종 사용자 미술 승인 완료·재그림 불필요. 내부 Chapter3 스킬아이콘/냉기소모템/몬스터잡템/Quest 인벤토리 자산 누락대장 계속 기획 관리, 아직 스킬 상점·새 아이템 임의 게임 구현 금지. 최종 보스 표기 **설빙의 폭군**, 이번 Main22 범위 아님.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 리뉴얼 담당 Wolf v5 기반 Run6 실물 아트 제작 착수
 
 바울 대표 “리뉴얼도 일 시켜” 요청. Chapter1·2 리뉴얼 담당 docs/art-renewal에 **Wolf v5 사용자 미술 승인 단일 KeyArt**(SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1) 기반의 **6프레임 고품질 달리기 Run 아트 파일럿** 실PNG/12fps/128px·40px preview 제작 지시. Wolf v5 Codex 시각 HOLD(뒷다리 옆 검은 돌기)는 대표 **현 상태 허용**, Wolf v6 재보정 지시 금지.
