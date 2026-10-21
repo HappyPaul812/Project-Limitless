@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 Village v4 수정2 + Wolf Run6 v5 05프레임 합동 격리 QA 발주
+
+바울 대표 신규 Windows F: ZIP2종 실경로 전달. 기획세션은 F: 직접 bytes 확인 불가, 담당 docs/art-new·docs/art-renewal 최신 GitHub 납품문서 검사. **Codex 사용자파일 실제 ZIP SHA readback 및 두후보 미술승인 전**.
+**A Village TargetedFix v4** `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`: art-new reported SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`, 19,767,770bytes/70entry; v3 PNG43 중 41 byte-identical. 단2 PNG detached component alpha만 삭제: `Frostway_SkillShop_Building.png` x12..28/y196..376 2496px, 새 SHA ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17; `Frostway_Roof_Gable.png` x100..144/y183..206 712px 새 SHA 37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0. 정상 본체 불변. 기존 타일 4종 모두 SHA 동일·픽셀edgePASS이나 **3x3 반복 무늬 ART_HOLD**, 파일별 좌표/비교근거 존재, 변경/미술 PASS 자동선언 금지. Codex 격리 실제 Unity 3비율 단2 Sprite 교체·접합과 타일 미술 반복감 판단 후 대표 최종승인.
+**B Wolf Run6 v5** `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`: renewal 신고 ZIP SHA `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`, 2,663,380 bytes, 6x512×384/12FPS. 00..04 Run v4와 동일 PNG bytes, 유일 Frame05 174 RGBApx bbox x318..333/y245..280의 뒷다리 윤곽 아트 수정, 새 05 PNG SHA d3d53b94be9084bfd9b2a0bbe6fa492b903138b37c86e7068c9eaefbe8b1194c. 승인 Wolf 단일 KeyArt v5 unchanged, 별도 Run6 모션 최종 승인 대기. Codex 격리 실 12FPS v4→v5 05→00 루프/접지/관절 가독성 DeltaQA, 기존 공식 펫 미교체.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md` (docs/planning commit 3ab1a75078e1736bf1c48081eb488cd8245cc7fd), GitHub Issue #45/#43 최신 납품 댓글. 두 ZIP 모두 **아트 담당 자체 파일기술 PASS**, 실제 사용자 F: 바이너리 SHA/격리 Unity 실제QA/최종미술 미검증. Codex Main22 136PASS+F1 64PASS+Mouse40PASS 및 Main23 preflight 재시험 금지, 원본 Unity/Save/UserData/Editor/main 및 유저 다운로드 ZIP 보호. SKU/잡템/한기소모템/스킬아이콘 backlog + #46 영구장착 Save 미해결 유지.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 Village v3·Wolf Run6 v4 기술 PASS / 미술 FAIL 표적 2+1 수정
 
 Codex 최종 DeltaQA branch `codex/qa-frostway-v3-wolf-run6-v4-20261021`, commit `695f6f74e63996bb9d0ba0561dc6518f1e7af049`. **두 ZIP 실제 SHA가 art-new/renewal GitHub 납품보고와 각각 일치**, 내부 CRC/Manifest/PNG 전 PASS. 원본 4351 파일/Save/UserData/Editor/Git 불변, main 직접 Push/병합 없음.
