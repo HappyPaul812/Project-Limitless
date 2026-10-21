@@ -1,0 +1,12 @@
+{
+  "pr": 48,
+  "head": "f77f76d975199eb94bad1ad4871281e602ac6601",
+  "remote_file_pages_verified": 475,
+  "product_paths": 58,
+  "product_allowlist_exact": true,
+  "unexpected": [],
+  "registered_statuses": 0,
+  "workflow_runs": 0,
+  "mergeable": true,
+  "diff_api_limit": "Unified diff406 over300 files; paginated patch API successfully read all changed-file pages"
+}
