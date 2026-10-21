@@ -1,3 +1,15 @@
+# PLANNING 최신 인계 — 2026-10-21 마을 v2 GameReady FAIL / Wolf Run6 v3 모션 HOLD / 두 ZIP SHA 불일치
+
+바울 대표 전달 Codex 합동 QA 화면: 브랜치 `codex/qa-frostway-village-wolf-run6-20261021`, 커밋 접두 `c61f2b10`. **두 ZIP 내부 CRC/Manifest/PNG 디코딩 PASS**, 하지만 **담당 GitHub 납품보고의 전체 ZIP SHA256과 실제 Windows ZIP 해시 불일치**. Village 예상 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad` vs 실제 `19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`; Wolf Run v3 예상 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` vs 실제 `f7eb4122b150e351900a4ab7ea82c802809605bd0444be89e36f6bf167dcd008`. 양 아트 담당 ZIP 엔트리/메타·개별 PNG SHA 대조하여 원인을 확인할 것. 내부 파일 PASS가 동일 ZIP임을 뜻하지는 않고, SHA 불일치 자체가 곧 변조를 뜻하지도 않음.
+
+**Main23 서릿길 마을 v2**: 콘셉트 미술 HOLD/게임용 Sprite 분리·완성도 FAIL, 격리 Unity GameView 미실행·오프라인 QA만. 콘셉트 PNG11/화면비 프리뷰는 있지만 개별 독립 지면 Tile/서리 경계/길, 건물·문·서비스간판/생활 소품/비활성 포탈 Sprite가 실제 게임용으로 부족. 21:9 요청인데 16:10 프리뷰를 끼워 넣은 오류. **docs/art-new는 기존 콘셉트 원본 유지→독립 Tile/건물/소품 실제 2D 투명 PNG의 Village v3**를 제작하되 F1 승인 PNG6·기존 Scene 변경 금지. 실제 Unity Import/Quest Main23 구현 여전히 대기.
+
+**Wolf Run6 v3**: 기술/격리 Unity 실제 12FPS 재생 PASS, Frame03/04 꼬리 복원/기존 00/01/02/05 바이트보존 PASS. 하지만 Frame04 뒷다리·중간 신체 비율/발 접지/05→00 loop 문제로 **모션 미술 HOLD**, 대표 승인 없음. `docs/art-renewal`은 **Wolf v5 승인 1포즈 보존**, Run6 v4에서 동작 문제에만 표적 개선, 다음 Codex deltaQA·대표 모션 승인. 기존 공식 Wolf 펫 런타임 교체/Unity 원본·Save/UserData/Editor 변경0.
+
+기획 정본 `문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` (`docs/planning` commit `296e0ca8c8207b8119c06b0cf6f8501f71d7977a`), GitHub [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) / [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 댓글 작성. Main23 Codex preflight는 완료, 기존 Main22 격리136PASS/F1 64PASS/Mouse Battle40PASS 재QA 반복 금지. Main24 스킬 장착 Save 지속성 Issue #46, Icon/잡템/어묵탕 내부추적 계속. 전체 재시작·main 직접 커밋/Push·병합 금지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 서릿길 마을 v2 + 늑대 Run6 v3 실제 ZIP 합동 Codex QA 요청
 
 바울 대표가 이번에 로컬 두 ZIP 경로 직접 전달: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip`, `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`. docs/art-new 확인 Village v2 SHA `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`, 19파일(원화콘셉트 11/OfflinePreview4/Metadata4). **영문 재압축된 콘셉트 원화**지 Unity-ready 독립 건물·타일·소품 Sprite가 아님. Codex는 게임 실사용 분해가능성/누락 Sprite/동일 크기 미술검토만 먼저; 실제 GameView 주장 금지. docs/art-renewal 확인 Wolf v3 ZIP SHA `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` 36파일, 원본 Run 00/01/02/05 보존, Fail Run03/04 꼬리·뒷발 표적 수정. 자체 CRC·PNG/strip/atlas PASS, **실제 동작12FPS와 05→00·몸비율/발접지/Unity Import 및 대표 모션 승인 대기**. 승인 KeyArt v5 변형 금지. 두 ZIP은 F: 사용자 파일 직접 검사 전, 자체 SHA 보고만 존재. Codex 다음 작업은 두 패키지 비파괴 한배치 QA, Village Concept/RuntimeGameReady 등급과 Wolf 기술/모션/Runtime 검증 각각 별도 보고. Original Unity/Save/UserData/Editor/dirty/이미 승인 F1/마을 Main23 선행기획/Main22 적용준비 보호; main 직접 Commit/Push/merge 금지, 기존 QA136+64+40 반복금지.
