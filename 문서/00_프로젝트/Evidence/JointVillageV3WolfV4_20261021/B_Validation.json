@@ -1,0 +1,874 @@
+{
+  "zip": "Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip",
+  "zip_sha256": "3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412",
+  "zip_bytes": 3024517,
+  "expected_match": true,
+  "entries": 34,
+  "crc_bad": null,
+  "files": [
+    {
+      "path": "Assets/Poses/Wolf_Run_00_v4.png",
+      "bytes": 133874,
+      "sha256": "5ca46e209c0bb45d4bf418a1720f86470e4298675232052c2391f18e4a0e9553",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        83,
+        64,
+        448,
+        324
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Poses/Wolf_Run_01_v4.png",
+      "bytes": 119256,
+      "sha256": "df326167017962293eb1f704ddf9ec47b5e9a2af1c015b07d26043843ba10967",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        98,
+        64,
+        461,
+        317
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Poses/Wolf_Run_02_v4.png",
+      "bytes": 107724,
+      "sha256": "db60697431cfeffdfdd63b6bb57e13c10525746fb5777d0376b07100348f6b35",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        113,
+        68,
+        411,
+        323
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Poses/Wolf_Run_03_v4.png",
+      "bytes": 137652,
+      "sha256": "e68ce97aff56b1de39f85bc756c0ee9dc65c15559850e8bb765ed15d24bd9652",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        41,
+        49,
+        487,
+        282
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Poses/Wolf_Run_04_v4.png",
+      "bytes": 122818,
+      "sha256": "1edca145f5b7774cf50580aa6ef2f6fac9456200505af359aa02f3f7922b56fe",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        112,
+        72,
+        470,
+        331
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Poses/Wolf_Run_05_v4.png",
+      "bytes": 123136,
+      "sha256": "69125a562fc4a2b66455ff869a38d88fe7576298824673326ee01d8bb6a9e42d",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        102,
+        70,
+        433,
+        327
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Wolf_Run6_v4_Atlas3x2_1536x768.png",
+      "bytes": 743871,
+      "sha256": "b16028359132b47db3374f15e3d2f5d9a3f2fec5e9572bc787d0cb53782d9b06",
+      "size": [
+        1536,
+        768
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        41,
+        64,
+        1457,
+        715
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Assets/Wolf_Run6_v4_Strip_3072x384.png",
+      "bytes": 744002,
+      "sha256": "5675c61cf643cfbe3867f431de70463ee2b7518c986caf48bc1dc6a46d7177d3",
+      "size": [
+        3072,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        83,
+        49,
+        2993,
+        331
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Manifest.json",
+      "bytes": 5769,
+      "sha256": "40df766e954987271e095deeb3d00db1b92d08ca63d32ef6de0338c4ca34cd5d"
+    },
+    {
+      "path": "Preview/Frame04_Changes_RedOverlay_NotSprite.png",
+      "bytes": 120365,
+      "sha256": "1c63834d8b2cfd799723ba9d345432643c922a2bd9ea224ddc0e29284886c90d",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        112,
+        72,
+        470,
+        331
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frame04_HindLeg_Joint_Paw_v3_vs_v4_2x.png",
+      "bytes": 36727,
+      "sha256": "179fcc7d658ef5e54faec2478e3f7c7cd9b7438fef6d6c9cb0e27696da947542",
+      "size": [
+        528,
+        360
+      ],
+      "mode": "RGB",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        528,
+        360
+      ],
+      "border3_nonzero": 5328,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frame05_Changes_RedOverlay_NotSprite.png",
+      "bytes": 117623,
+      "sha256": "4be911449663c9ea6df63a078270c85175c70d44d2fa155a74e243caaed1175a",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        102,
+        70,
+        433,
+        327
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frame05_Foreleg_LoopPrep_v3_vs_v4_2x.png",
+      "bytes": 61341,
+      "sha256": "30f01afcc1dee02781a2bfd7c73f60b753ff4a6618b3a35ee12ce7b4dfd5d08d",
+      "size": [
+        760,
+        352
+      ],
+      "mode": "RGB",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        760,
+        352
+      ],
+      "border3_nonzero": 6672,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Loop_05_to_00_v3_vs_v4_Static.png",
+      "bytes": 32548,
+      "sha256": "cb493927ef6e3119775698899bbeddacd1e854564506d35fa7b33551d2dabbfa",
+      "size": [
+        512,
+        170
+      ],
+      "mode": "RGB",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        512,
+        170
+      ],
+      "border3_nonzero": 4092,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run6_v4_128px_ContactSheet.png",
+      "bytes": 79947,
+      "sha256": "a2440b1fbe9446664ad3f3f3e5d1c17edfe264d09122f12b6dac6e0ecbd9f318",
+      "size": [
+        768,
+        156
+      ],
+      "mode": "RGB",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        768,
+        156
+      ],
+      "border3_nonzero": 5544,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run6_v4_12FPS_128px.gif",
+      "bytes": 45176,
+      "sha256": "b78e8b02d9415ee94bb2ef10c6a057df0a47529063906620412a59324f09db18",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "P",
+      "frames": 6,
+      "durations_ms": [
+        80,
+        80,
+        90,
+        80,
+        80,
+        90
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run6_v4_12FPS_Transparent.apng",
+      "bytes": 105379,
+      "sha256": "6283eecf335a4d18188db44665968d203a4b3a9b68d0642286e1eec86bbd0eca",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 6,
+      "durations_ms": [
+        83.0,
+        83.0,
+        84.0,
+        83.0,
+        83.0,
+        84.0
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run6_v4_40px_ContactSheet.png",
+      "bytes": 10746,
+      "sha256": "b91f3e8d9ce94d57033a7939c4c8a43ad2d050194ad776f4ee374ef513af5496",
+      "size": [
+        240,
+        68
+      ],
+      "mode": "RGB",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        240,
+        68
+      ],
+      "border3_nonzero": 1848,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_00_128px_RGBA.png",
+      "bytes": 18743,
+      "sha256": "a77dc553b32fedf3b7026af7f9e2e8f03830d61031ed828081cd3a820af7fa0a",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        23,
+        121,
+        104
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_00_40px_RGBA.png",
+      "bytes": 2592,
+      "sha256": "9da24d2f7c487ffc5e3f13a0ff1be1cdcc7315ca664c42f5f603b6dfa0008032",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        8,
+        37,
+        32
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_01_128px_RGBA.png",
+      "bytes": 16765,
+      "sha256": "a3eec4fd1d8161955e5986ab4e6c23bfd979f7575d4a9accae66f9969fdfa771",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        24,
+        121,
+        103
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_01_40px_RGBA.png",
+      "bytes": 2395,
+      "sha256": "4ed23528a6b66d87154a3b6a9211cd319f6f424e4b85940b181406d8fed5871c",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        8,
+        37,
+        32
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_02_128px_RGBA.png",
+      "bytes": 20743,
+      "sha256": "3166f387337bf38518af4518cecffd508abd14aaab79442b6d9e0465c24f8bd1",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        15,
+        121,
+        113
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_02_40px_RGBA.png",
+      "bytes": 2661,
+      "sha256": "e293d92e4bf27abda7db2f2d6fd3b3d85b4e3caada02486bf44b937228ecadc2",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        5,
+        37,
+        34
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_03_128px_RGBA.png",
+      "bytes": 13325,
+      "sha256": "3a37e23fd45a168ccb9f185c617c1ae420d195cee805fbf813727aba893d64fa",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        34,
+        121,
+        94
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_03_40px_RGBA.png",
+      "bytes": 1879,
+      "sha256": "acc615b6d45da6c5a436de1489b099664b747067d108a88579c5c2e6d7e69645",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        11,
+        37,
+        29
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_04_128px_RGBA.png",
+      "bytes": 17091,
+      "sha256": "85e943ca79cf40664dafe5ae58d97a4016bc0d626ceddc35cfa2421fbeecf0e8",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        23,
+        121,
+        105
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_04_40px_RGBA.png",
+      "bytes": 2537,
+      "sha256": "bfb3610c1bcd306b286b687514f319222c66497e18d3f3db1273d754a5f2a77e",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        7,
+        37,
+        32
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_05_128px_RGBA.png",
+      "bytes": 19722,
+      "sha256": "b09c6bfaa0d3d1ffb0046cc6ec6dc894f96a13538bdc67e95987db312a86323e",
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        7,
+        19,
+        121,
+        108
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_05_40px_RGBA.png",
+      "bytes": 2734,
+      "sha256": "fc6d522a1593457f08093b765b7b8d71fc3bcc3086f0a47f6ffedc1fbc316b60",
+      "size": [
+        40,
+        40
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        3,
+        7,
+        37,
+        33
+      ],
+      "border3_nonzero": 0,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Wolf_Run_v3_vs_v4_12FPS.gif",
+      "bytes": 74147,
+      "sha256": "8011fe5c7c645bef8cb30b39c62744e1eda576079904341a0183882a89652071",
+      "size": [
+        264,
+        151
+      ],
+      "mode": "P",
+      "frames": 6,
+      "durations_ms": [
+        80,
+        80,
+        90,
+        80,
+        80,
+        90
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Frame_Gait_And_Alpha_Checks.csv",
+      "bytes": 1033,
+      "sha256": "7931b3417bb2d64cd3631096b26dff2947e226bf8c810ceb592c1aa06fb52d27",
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Offline_Validation.json",
+      "bytes": 4522,
+      "sha256": "390879ca41f39cc91fd047573a7c8e6526bf4b8366b948904add683e240131de",
+      "manifest_sha_match": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 1477,
+      "sha256": "537bb2f9ce3da5da4c9740320324bc4ac2d6b383857d75431b0fd58d72d836df",
+      "manifest_sha_match": true
+    }
+  ],
+  "manifest_mismatches": [],
+  "delta": [
+    {
+      "frame": 0,
+      "png_sha_equal": true,
+      "previous_sha256": "5ca46e209c0bb45d4bf418a1720f86470e4298675232052c2391f18e4a0e9553",
+      "current_sha256": "5ca46e209c0bb45d4bf418a1720f86470e4298675232052c2391f18e4a0e9553",
+      "changed_pixels": 0,
+      "changed_bbox_exclusive": null,
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": true
+    },
+    {
+      "frame": 1,
+      "png_sha_equal": true,
+      "previous_sha256": "df326167017962293eb1f704ddf9ec47b5e9a2af1c015b07d26043843ba10967",
+      "current_sha256": "df326167017962293eb1f704ddf9ec47b5e9a2af1c015b07d26043843ba10967",
+      "changed_pixels": 0,
+      "changed_bbox_exclusive": null,
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": true
+    },
+    {
+      "frame": 2,
+      "png_sha_equal": true,
+      "previous_sha256": "db60697431cfeffdfdd63b6bb57e13c10525746fb5777d0376b07100348f6b35",
+      "current_sha256": "db60697431cfeffdfdd63b6bb57e13c10525746fb5777d0376b07100348f6b35",
+      "changed_pixels": 0,
+      "changed_bbox_exclusive": null,
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": true
+    },
+    {
+      "frame": 3,
+      "png_sha_equal": true,
+      "previous_sha256": "e68ce97aff56b1de39f85bc756c0ee9dc65c15559850e8bb765ed15d24bd9652",
+      "current_sha256": "e68ce97aff56b1de39f85bc756c0ee9dc65c15559850e8bb765ed15d24bd9652",
+      "changed_pixels": 0,
+      "changed_bbox_exclusive": null,
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": true
+    },
+    {
+      "frame": 4,
+      "png_sha_equal": false,
+      "previous_sha256": "981573416b48f0cdcfd42fb689aacb81b7298ca64794efcd55dd0fcc7c42cadc",
+      "current_sha256": "1edca145f5b7774cf50580aa6ef2f6fac9456200505af359aa02f3f7922b56fe",
+      "changed_pixels": 4368,
+      "changed_bbox_exclusive": [
+        322,
+        164,
+        415,
+        296
+      ],
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": false
+    },
+    {
+      "frame": 5,
+      "png_sha_equal": false,
+      "previous_sha256": "b0ca078febc97890a414733bf3e6e8763277357747fdc749ab80774913c67c84",
+      "current_sha256": "69125a562fc4a2b66455ff869a38d88fe7576298824673326ee01d8bb6a9e42d",
+      "changed_pixels": 7542,
+      "changed_bbox_exclusive": [
+        212,
+        198,
+        336,
+        325
+      ],
+      "strip_equal": true,
+      "atlas_equal": true,
+      "tail_roi_equal_x346_486_y88_165": true
+    }
+  ]
+}

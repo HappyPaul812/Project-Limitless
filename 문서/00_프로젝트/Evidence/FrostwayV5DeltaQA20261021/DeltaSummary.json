@@ -1,0 +1,54 @@
+{
+  "unity": "6000.6.5f1",
+  "graphics": "Direct3D12",
+  "focused_route_checks": 12,
+  "route_fail": 0,
+  "walk_radius": 0.3,
+  "wheelchair_radius": 0.5,
+  "mobility_scope": "Physics2D shape query proxies, original wheelchair visual; not production controller or manual gameplay",
+  "tile_display_pixels": 128,
+  "tech": "PASS",
+  "art": {
+    "Earth": "HOLD",
+    "ThinFrost": "HOLD",
+    "Gravel": "HOLD"
+  },
+  "improvement": "Selected high-contrast clusters reduced, but grass/stone motifs still repeat visibly at 128px in 3x3 and village ground. Final acceptance reserved to user.",
+  "remaining_motif_rois_half_open": {
+    "Earth_ThinFrost": [
+      [
+        0,
+        96,
+        89,
+        256
+      ],
+      [
+        92,
+        160,
+        182,
+        251
+      ]
+    ],
+    "Gravel": [
+      [
+        4,
+        2,
+        118,
+        122
+      ],
+      [
+        80,
+        160,
+        160,
+        236
+      ]
+    ]
+  },
+  "sorting_full_image_equal": {
+    "DoorFront": false,
+    "DoorBehind": false
+  },
+  "original_editor_actions": 0,
+  "product_assets_changed": 0,
+  "previous_full_qa_repeated": 0
+}

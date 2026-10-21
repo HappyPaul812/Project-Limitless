@@ -1,0 +1,5 @@
+PASS|BeforeMain21.MouseTravelDisabled
+PASS|Playtest.PreviousChapterCompleted
+PASS|GateView.ExplicitChoice
+PASS|GateView.RenderedContent
+PASS|GateView.NoForcedStart

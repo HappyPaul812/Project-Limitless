@@ -1,0 +1,23 @@
+{
+  "half_open_roi": [
+    346,
+    88,
+    485,
+    164
+  ],
+  "changed_pixels_half_open": 0,
+  "inclusive_roi": [
+    346,
+    88,
+    485,
+    164
+  ],
+  "changed_pixels_inclusive": 5,
+  "boundary_changed_y164_x": [
+    392,
+    393,
+    394,
+    395,
+    396
+  ]
+}

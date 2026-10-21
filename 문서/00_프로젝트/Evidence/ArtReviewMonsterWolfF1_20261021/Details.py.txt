@@ -1,0 +1,36 @@
+from pathlib import Path
+import json,numpy as np
+from scipy import ndimage
+from PIL import Image,ImageDraw
+r=Path.cwd();o=r/'Temp/ArtReviewMonsterWolfF1_20261021';e=o/'Worktree/문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021';v=json.loads((e/'Validation.json').read_text())
+for m in ['VenomSnake','Wolf']:
+ a=np.array(Image.open(o/'MonsterWolf/Assets'/f'{m}_KeyArt_v3.png'))[:,:,3]
+ lab,n=ndimage.label(a>0);sz=np.bincount(lab.ravel())[1:];v['monsters'][m]['components4']={'total':int(n),'small_under16':int((sz<16).sum())}
+ v['monsters'][m]['bbox_alpha16']=Image.fromarray((a>16).astype('uint8')*255).getbbox();v['monsters'][m]['bbox_alpha128']=Image.fromarray((a>128).astype('uint8')*255).getbbox()
+print('Snake border y/alpha:',v['monsters']['VenomSnake']['left_contact_y'],v['monsters']['VenomSnake']['left_contact_alpha'])
+print('Snake t16 small:',v['monsters']['VenomSnake']['thresholds']['16']['small_components']);print('components4:',{m:v['monsters'][m]['components4'] for m in ['VenomSnake','Wolf']});print('F1 samples:',{k:a for k,a in v['f1'].items() if 'ArtSample' in k})
+# Full-size crop coordinates are printed in the diagnostic image.
+im=Image.open(o/'MonsterWolf/Assets/Wolf_KeyArt_v3.png');b=Image.new('RGB',(1080,430),(30,35,42));d=ImageDraw.Draw(b)
+for i,box in enumerate([(540,780,760,990),(650,1080,930,1270),(40,1020,300,1265)]):
+ f=im.crop(box).convert('RGBA');f.thumbnail((320,340),Image.Resampling.NEAREST);x=10+i*355;d.rectangle((x,70,x+330,410),fill=(35,85,38));b.paste(f,(x+5,75),f);d.text((x,10),'Wolf source crop '+str(box),fill='white')
+b.save(e/'Wolf_Matte_Locations.png')
+(e/'Validation.json').write_text(json.dumps(v,indent=2))
+# Use official source images directly, retaining their 512px density in a source-native panel.
+refs=[]
+for n in ['DeepCore_Ground_Base','DeepCore_Cliff_Boundary']:
+ p=r/'Unity/Client/Assets/_Project/Resources/Main20/Environment'/f'{n}.png';im=Image.open(p).convert('RGBA');refs.append((n,im));v['references'][n]={'path':str(p.relative_to(r)).replace('\\','/'),'sha256':__import__('hashlib').sha256(p.read_bytes()).hexdigest(),'size':im.size}
+b=Image.new('RGB',(1180,690),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE local official Ch2 sources 512px / F1 candidate source 256px. Native pixel sizes, NOT equal world scale.',fill='white')
+for i,(n,im) in enumerate(refs):
+ d.text((10+i*530,38),n,fill='white');b.paste(im,(10+i*530,60),im)
+b.save(e/'Ch2_Official_Environment_NativePixels.png');(e/'Validation.json').write_text(json.dumps(v,indent=2))
+# Cross-material strip and the unchanged path, shrub, sign: diagnostic composites only.
+orig=o/'F1/Original_F1';sample=o/'F1/Targeted_Samples';earth=Image.open(sample/'NorthF1_Ground_Earth_Base_ArtSample_v2.png').convert('RGBA');frost=Image.open(sample/'NorthF1_Ground_ThinFrost_Base_ArtSample_v2.png').convert('RGBA');overlay=Image.open(sample/'NorthF1_EarthToFrost_Transition_Overlay_ArtSample_v2.png').convert('RGBA');path=Image.open(orig/'NorthF1_Path_WornTrail_Overlay.png').convert('RGBA')
+blend=Image.alpha_composite(earth,overlay);b=Image.new('RGB',(1044,640),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE source-native256px strips. No F1 PPU/Grid/collider/wheelchair clearance is defined.',fill='white')
+for i,(n,img) in enumerate([('Earth',earth),('Earth + right transition',blend),('ThinFrost',frost),('ThinFrost repeat',frost)]):
+ x=10+i*256;d.text((x,40),n,fill='white');b.paste(img,(x,60),img);tile=Image.alpha_composite(img,path);b.paste(tile,(x,345),tile)
+d.text((10,325),'Same strip + unchanged path overlay; road visibility only, NOT a traversability test.',fill='white');b.save(e/'F1_Transition_Path_Offline.png')
+# Collect untouched prop silhouettes at source size on the actual candidate ground.
+b=Image.new('RGB',(800,340),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE unchanged props over candidate Earth (256px source; no world scale).',fill='white')
+for i,n in enumerate(['NorthF1_Prop_FrostShrub_01','NorthF1_Prop_Waymarker_01']):
+ im=Image.open(orig/(n+'.png')).convert('RGBA');bg=Image.alpha_composite(earth,im);x=10+i*390;b.paste(bg,(x,60),bg);d.text((x,38),n,fill='white')
+b.save(e/'F1_Unchanged_Props_Offline.png')

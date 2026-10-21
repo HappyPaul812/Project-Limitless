@@ -1,0 +1,44 @@
+[
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\Main22FirstPlayable20261021\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\Environment\\Chapter3\\NorthF1\\NorthF1_Ground_Earth_Base_v2.png",
+    "sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\Main22FirstPlayable20261021\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\Environment\\Chapter3\\NorthF1\\NorthF1_Ground_ThinFrost_Base_v3.png",
+    "sha256": "12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\JointVillageV3WolfV4QA20261021\\Extracted\\A\\Tiles\\Frostway_Ground_Earth_01.png",
+    "sha256": "6270cb24334f78194fcb2239b6154387e1545b90e85ce013af112a86d9d946e8",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\JointVillageV3WolfV4QA20261021\\Extracted\\A\\Tiles\\Frostway_Ground_Gravel_01.png",
+    "sha256": "bf620f0cdf9837f9de4db14681a368cedb774f1ba49e53cebceea520ca7484ad",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\JointVillageV3WolfV4QA20261021\\Extracted\\A\\Tiles\\Frostway_Ground_ThinFrost_01.png",
+    "sha256": "c711cc6481b46c84dc98232542524dd4fa85d0d4f24f39e6643e71b82b9d8ee7",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  },
+  {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\JointVillageV3WolfV4QA20261021\\Extracted\\A\\Tiles\\Frostway_Path_Stone_01.png",
+    "sha256": "6565215f406f4b5823fafc7b91cb16bb53f32620ac03f331220eef123895648c",
+    "ppu": 128,
+    "world_width": 2,
+    "display_px": 128
+  }
+]

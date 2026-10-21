@@ -1,0 +1,60 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+from scipy import ndimage
+import numpy as np,json,hashlib,zipfile,csv
+r=Path.cwd();o=r/'Temp/ArtReviewWolfV4F1V2_20261021';e=o/'Worktree/문서/00_프로젝트/Evidence/WolfV4F1V2_20261021';e.mkdir(parents=True,exist_ok=True)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+v={'packages':{},'wolf':{},'f1':{}}
+for key,name in [('Wolf','Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip'),('F1','Limitless_Chapter3_NorthF1_Environment_6_ArtImprovement_v2.zip')]:
+ p=Path('F:/Downloads')/name;z=zipfile.ZipFile(p);v['packages'][key]={'sha256':sha(p),'bytes':p.stat().st_size,'entries':len(z.namelist()),'crc':z.testzip() is None,'pngs':{}}
+ for p in (o/key).rglob('*.png'):
+  im=Image.open(p);im.load();v['packages'][key]['pngs'][str(p.relative_to(o/key)).replace('\\','/')]={'sha256':sha(p),'size':im.size,'mode':im.mode}
+old=o/'Wolf/Assets/Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png';new=o/'Wolf/Assets/Wolf_KeyArt_v3_AlphaFix_v4.png';historical=r/'Temp/ArtReviewMonsterWolfF1_20261021/MonsterWolf/Assets/Wolf_KeyArt_v3.png';a=np.array(Image.open(old));b=np.array(Image.open(new));delta=np.any(a!=b,axis=2);ys,xs=np.where(delta)
+v['wolf']={'original_sha':sha(old),'new_sha':sha(new),'original_v3_bytes_preserved':old.read_bytes()==historical.read_bytes(),'same_size':a.shape==b.shape,'rgb_changed_pixels':int(np.any(a[:,:,:3]!=b[:,:,:3],axis=2).sum()),'alpha_changed_pixels':int((a[:,:,3]!=b[:,:,3]).sum()),'alpha_increase_pixels':int((b[:,:,3]>a[:,:,3]).sum()),'changed_bbox':[int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)],'old_alpha_bbox':Image.open(old).getbbox(),'new_alpha_bbox':Image.open(new).getbbox(),'fraction_canvas_changed':float(delta.mean())}
+with (o/'Wolf/QA/Changed_Alpha_Pixels.csv').open(encoding='utf-8-sig') as f:
+ rows=list(csv.DictReader(f));print('CSV columns:',rows[0].keys(),'rows',len(rows))
+# Cross-check every reported coordinate and old/new alpha against actual bytes.
+reported=set()
+for row in rows:
+ x=int(row.get('x'));y=int(row.get('y'));reported.add((x,y));av=int(row.get('old_alpha',row.get('before_alpha','-1')));bv=int(row.get('new_alpha',row.get('after_alpha','-1')));assert av==int(a[y,x,3]) and bv==int(b[y,x,3])
+assert reported==set(zip(xs.tolist(),ys.tolist()));v['wolf']['csv_exact_match']=True
+for item in json.loads((o/'Wolf/Manifest.json').read_text())['assets']:assert sha(o/'Wolf'/item['path'])==item['sha256']
+for line in (o/'F1/SHA256SUMS.txt').read_text().splitlines():
+ h,n=line.split(maxsplit=1);assert sha(o/'F1'/n.lstrip('*'))==h
+v['packages']['F1']['sha_list_match']=22
+for p in (o/'F1/Original_Reference').glob('*.png'):
+ hp=r/'Temp/ArtReviewMonsterWolfF1_20261021/F1/Original_F1'/p.name;assert p.read_bytes()==hp.read_bytes()
+for p in (o/'F1/Art').glob('*.png'):
+ im=Image.open(p);assert im.size==(256,256) and im.mode=='RGBA';aa=np.array(im);name=p.stem.replace('_v2','');orig=o/'F1/Original_Reference'/(name+'.png');before=np.array(Image.open(orig));mask=np.any(aa!=before,axis=2);yy,xx=np.where(mask);alpha=aa[:,:,3]
+ v['f1'][p.name]={'sha256':sha(p),'original_preserved':sha(orig)==sha(r/'Temp/ArtReviewMonsterWolfF1_20261021/F1/Original_F1'/orig.name),'rgba_changed_pixels':int(mask.sum()),'changed_fraction':float(mask.mean()),'changed_bbox':[int(xx.min()),int(yy.min()),int(xx.max()+1),int(yy.max()+1)],'lr_exact':bool(np.array_equal(aa[:,0],aa[:,-1])),'tb_exact':bool(np.array_equal(aa[0],aa[-1])),'alpha_bbox':im.getbbox(),'alpha_range':[int(alpha.min()),int(alpha.max())],'border_alpha_positive':{'left':int((alpha[:,0]>0).sum()),'right':int((alpha[:,-1]>0).sum()),'top':int((alpha[0]>0).sum()),'bottom':int((alpha[-1]>0).sum())}}
+# Own before-after boards with identical crops/backgrounds, source coordinates stated.
+for kind,boxes in [('Chest',[(540,780,760,990)]),('HindLeg',[(80,850,320,1240)]),('Paws',[(500,1040,930,1270)])]:
+ box=boxes[0];ww=box[2]-box[0];hh=box[3]-box[1];scale=2 if ww<=260 else 1;board=Image.new('RGB',(ww*scale*2+45,hh*scale+90),(30,35,42));d=ImageDraw.Draw(board);d.text((10,8),'OFFLINE '+kind+' source crop '+str(box)+' / unchanged crop scale '+str(scale),fill='white')
+ for i,p in enumerate([old,new]):
+  f=Image.open(p).crop(box).convert('RGBA').resize((ww*scale,hh*scale),Image.Resampling.NEAREST);x=10+i*(ww*scale+20);d.rectangle((x,65,x+f.width-1,65+f.height-1),fill=(36,90,42));board.paste(f,(x,65),f);d.text((x,42),'V3 ORIGINAL' if i==0 else 'V4 CANDIDATE',fill='white')
+ board.save(e/f'Wolf_{kind}_BeforeAfter.png')
+board=Image.new('RGB',(850,400),(30,35,42));d=ImageDraw.Draw(board);d.text((10,8),'OFFLINE full canvas fit128x128; second row uses Battle Image136x112. No new PPU is set.',fill='white')
+for row,(slotw,sloth) in enumerate([(128,128),(136,112)]):
+ for col,p in enumerate([old,new]):
+  for bgidx,bg in enumerate([(35,65,38),(220,220,220)]):
+   im=Image.open(p).convert('RGBA');s=min(slotw/im.width,sloth/im.height);f=im.resize((round(im.width*s),round(im.height*s)),Image.Resampling.NEAREST);x=15+col*400+bgidx*180;y=65+row*170;d.rectangle((x,y,x+slotw-1,y+sloth-1),fill=bg);board.paste(f,(x+(slotw-f.width)//2,y+(sloth-f.height)//2),f);d.text((x,y-20),('V3' if col==0 else 'V4')+' '+str(sloth)+'px',fill='white')
+board.save(e/'Wolf_128px_BattleSlot_BeforeAfter.png')
+# Six source-native panels, then separate 128px thumbnails.
+keys=['Ground_Earth_Base','Ground_ThinFrost_Base','EarthToFrost_Transition_Overlay','Path_WornTrail_Overlay','Prop_FrostShrub_01','Prop_Waymarker_01']
+for group in [keys[:3],keys[3:]]:
+ board=Image.new('RGB',(1110,850),(30,35,42));d=ImageDraw.Draw(board);d.text((10,8),'OFFLINE originals/candidates native256px; bottom128px. NOT Unity GameView.',fill='white')
+ for j,key in enumerate(group):
+  imgs=[Image.open(o/'F1/Original_Reference'/('NorthF1_'+key+'.png')),Image.open(o/'F1/Art'/('NorthF1_'+key+'_v2.png'))]
+  for i,f in enumerate(imgs):
+   x=15+j*365;y=65+i*295;d.rectangle((x,y,x+255,y+255),fill=(75,78,80));board.paste(f,(x,y),f);d.text((x,y-20),key+(' ORIGINAL' if i==0 else ' V2'),fill='white')
+  for i,f in enumerate(imgs):
+   sm=f.resize((128,128),Image.Resampling.NEAREST);x=15+j*365+i*150;d.rectangle((x,680,x+127,807),fill=(75,78,80));board.paste(sm,(x,680),sm)
+ board.save(e/('F1_Grounds_BeforeAfter.png' if group==keys[:3] else 'F1_PathProps_BeforeAfter.png'))
+for key in keys[:2]:
+ im=Image.open(o/'F1/Art'/('NorthF1_'+key+'_v2.png'))
+ for count in [2,3]:
+  board=Image.new('RGBA',(256*count,256*count))
+  for x in range(count):
+   for y in range(count):board.paste(im,(x*256,y*256))
+  board.save(e/(key+'_Repeat'+str(count)+'x'+str(count)+'.png'))
+(e/'Validation.json').write_text(json.dumps(v,indent=2));print('Wolf delta:',v['wolf']);print('F1 stats:',v['f1'])

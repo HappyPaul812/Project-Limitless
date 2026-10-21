@@ -1,0 +1,176 @@
+{
+  "static_pass": 38,
+  "static_fail": 0,
+  "static": [
+    {
+      "pass": true,
+      "name": "Exact authorized product58 allowlist"
+    },
+    {
+      "pass": true,
+      "name": "Source to integration SHA58 exact"
+    },
+    {
+      "pass": true,
+      "name": "No village,venomSnake,QA_F1 or isolated tools in product"
+    },
+    {
+      "pass": true,
+      "name": "No unapproved audio/video product"
+    },
+    {
+      "pass": true,
+      "name": "Wolf original PNG exact/text Git-equivalent; original bytes preserved, no recopy"
+    },
+    {
+      "pass": true,
+      "name": "Save,UserData,package and version untouched"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Chapter3.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Earth.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_EarthToFrost_Transition_Overlay_v3.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_Ground_Earth_Base_v2.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_Ground_ThinFrost_Base_v3.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_Path_WornTrail_Overlay_v2.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_Prop_FrostShrub_01_v2.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique NorthF1_Prop_Waymarker_01_v3.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique ThinFrost.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Transition.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse_A_Attack_4Frames.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse_A_Defeat_4Frames.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse_A_Hit_4Frames.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse_A_Idle_4Frames.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique MonsterVisuals.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique FrostFieldMouse.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Main22_NorthwindSigns.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Main22_Encounter.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Main22_MousePrototype.asset.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique World_NorthF1.unity.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Main22Progress.cs.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Chapter3Main22Flow.cs.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Main22GuidanceHud.cs.meta"
+    },
+    {
+      "pass": true,
+      "name": "New GUID unique Wolf_Run6_v5.png.meta"
+    },
+    {
+      "pass": true,
+      "name": "All changed serialized asset GUID references close without QA_F1"
+    },
+    {
+      "pass": true,
+      "name": "BuildSettings only adds approved scene3lines, no personal config commit"
+    },
+    {
+      "pass": true,
+      "name": "No actual API credential patterns in selected textual documents"
+    },
+    {
+      "pass": true,
+      "name": "No unresolved document conflicts"
+    },
+    {
+      "pass": true,
+      "name": "No unresolved merge markers"
+    },
+    {
+      "pass": true,
+      "name": "Combined isolated Unity14 pass"
+    }
+  ],
+  "unity": {
+    "pass": 14,
+    "fail": 0,
+    "playmode_repeated": false,
+    "mode": "Combined stored-scene resource closure"
+  },
+  "existing_QA_reused_separately": {
+    "Wolf": 106,
+    "Main22": 136,
+    "F1": 64,
+    "MouseBattle": 40
+  },
+  "existing_full_suite_runs": 0,
+  "source_product_paths": 58,
+  "new_runtime_code_changes_beyond_approved": 0,
+  "raw_log_files_minimized": 12,
+  "original_editor_import_handplay": "NOT_VERIFIED",
+  "version_note": "Unity6000.6.5f1 with cached scratch dependencies; tracked ProjectVersion6000.5.7f1 preserved"
+}

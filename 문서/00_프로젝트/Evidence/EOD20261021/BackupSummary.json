@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-21T13:11:27.532561+00:00",
+  "backed_up": 957,
+  "bytes": 196911769,
+  "protected_files": 6758,
+  "tracked_dirty": 314,
+  "untracked": 595,
+  "ignored_source_personal": 26,
+  "staged": 0,
+  "head": "e4e9891f6f01ea95cada9e63b1f09946d94d6041",
+  "origin_main": "e4e9891f6f01ea95cada9e63b1f09946d94d6041",
+  "index_sha256": "93886034981295f69ebda156ad854e6e844a7e3314c1a2c787c550f3d796cd4d",
+  "original_editor_lockfile_present": false,
+  "editor_actions": 0,
+  "focus_actions": 0
+}

@@ -1,0 +1,16 @@
+{
+  "unity": "6000.6.5f1",
+  "graphics": "Direct3D11",
+  "elapsed": 2.1023853,
+  "engine_frame_advance": 226,
+  "steady_dt_min": 0.08328260000000043,
+  "steady_dt_max": 0.08338399999999879,
+  "complete_cycle": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

@@ -1,0 +1,72 @@
+{
+    "Version": 1,
+    "PlayerName": "Main22 첫 플레이",
+    "PlayerVisualId": "Male",
+    "AppearanceId": "appearance.external.v1.mobility.guardian.male",
+    "PathId": "path.mobility",
+    "JobId": "guardian",
+    "Level": 14,
+    "CurrentExperience": 0,
+    "CurrentSceneId": "World_NorthF1",
+    "SpawnPointId": "Spawn_NorthF1_FromStarterVillage",
+    "LastSafeZoneId": "safezone_northf1_shelter",
+    "LastSafeZoneSceneId": "World_NorthF1",
+    "LastSafeZoneSpawnPointId": "Spawn_NorthF1_Shelter",
+    "HasSavedWorldPosition": true,
+    "SavedPositionX": 0.0,
+    "SavedPositionY": 8.075312614440918,
+    "PartyResources": [
+        {
+            "CharacterId": "companion_miel",
+            "CurrentHp": 169,
+            "CurrentMp": 44
+        },
+        {
+            "CharacterId": "companion_paul",
+            "CurrentHp": 148,
+            "CurrentMp": 0
+        },
+        {
+            "CharacterId": "player",
+            "CurrentHp": 169,
+            "CurrentMp": 0
+        }
+    ],
+    "Currency": 77,
+    "Inventory": [],
+    "QuestProgress": {
+        "ActiveQuests": [],
+        "CompletedQuestIds": [
+            "main_21_returning_warmth",
+            "main_05_return_of_three",
+            "main_09_reunion_in_silence",
+            "main_15_burning_traces",
+            "main_22_northwind_signs"
+        ],
+        "TrackedQuestId": "",
+        "Main21Flags": 0,
+        "Main22ClueFlags": 3
+    },
+    "CompanionRoster": {
+        "UnlockedCharacterIds": [
+            "companion_miel",
+            "companion_paul",
+            "companion_serin",
+            "companion_taeon"
+        ],
+        "ActivePartyCharacterIds": [
+            "companion_miel",
+            "companion_paul"
+        ],
+        "Formation": [],
+        "HasManualComposition": false,
+        "PaulDefaultApplied": true
+    },
+    "BeastCompanions": {
+        "DefeatedMonsterIds": [
+            "prototype_main22_frost_field_mouse"
+        ],
+        "UnlockedMonsterPetIds": [],
+        "EquippedBeasts": []
+    }
+}

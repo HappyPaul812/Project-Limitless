@@ -1,0 +1,2484 @@
+{
+  "zip": "Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip",
+  "zip_sha256": "2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a",
+  "zip_bytes": 17311281,
+  "expected_match": true,
+  "entries": 59,
+  "crc_bad": null,
+  "files": [
+    {
+      "path": "Buildings/Frostway_GeneralShop_Building.png",
+      "bytes": 300490,
+      "sha256": "67b30d758436f0eb5d764130d4b6b8179578184990b366057282510feac9be6c",
+      "size": [
+        451,
+        419
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        439,
+        396
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 114193,
+          "bbox": [
+            32,
+            29,
+            439,
+            396
+          ]
+        },
+        {
+          "area": 91,
+          "bbox": [
+            12,
+            254,
+            14,
+            301
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_Inn_Building.png",
+      "bytes": 395436,
+      "sha256": "67b16d2ef8c3d3d99e066c5723bd5df9a917624c79faeaadf32a99dd4a94f14d",
+      "size": [
+        540,
+        443
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        13,
+        28,
+        528,
+        421
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 146348,
+          "bbox": [
+            14,
+            28,
+            528,
+            421
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_Residence_Building.png",
+      "bytes": 298956,
+      "sha256": "4eb505aad2aefe90170a1d3e3c08990fe4587b3a91d2136dcdc1f0e4ee37fd8a",
+      "size": [
+        502,
+        374
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        490,
+        362
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 109808,
+          "bbox": [
+            29,
+            28,
+            490,
+            362
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_ServiceHouse_Building.png",
+      "bytes": 263337,
+      "sha256": "d8bdcd0573ba849ee0449f16cdac0ba3dfdc7a8d51ba9935758f4ff767801341",
+      "size": [
+        471,
+        360
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        27,
+        28,
+        454,
+        340
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 94472,
+          "bbox": [
+            27,
+            28,
+            454,
+            340
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_SkillShop_Building.png",
+      "bytes": 326623,
+      "sha256": "7e3562c22f00a07a85f0ab0349b8119dff924f3ef4dccf199cccdc9ec367be89",
+      "size": [
+        511,
+        418
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        499,
+        399
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 119027,
+          "bbox": [
+            50,
+            29,
+            499,
+            399
+          ]
+        },
+        {
+          "area": 2443,
+          "bbox": [
+            12,
+            196,
+            29,
+            376
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneArch.png",
+      "bytes": 45688,
+      "sha256": "78df49b8f50481608176a3aa7c7d71ac0643d1bedddb838059257cc13c4a33a1",
+      "size": [
+        166,
+        221
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        154,
+        193
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 17899,
+          "bbox": [
+            37,
+            28,
+            154,
+            193
+          ]
+        },
+        {
+          "area": 54,
+          "bbox": [
+            12,
+            137,
+            13,
+            191
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneFrame.png",
+      "bytes": 37947,
+      "sha256": "b341458803f0c65ea6c995594246767d182ccb0e044d1633878797274576c34e",
+      "size": [
+        149,
+        210
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        137,
+        182
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 13691,
+          "bbox": [
+            40,
+            28,
+            137,
+            182
+          ]
+        },
+        {
+          "area": 1246,
+          "bbox": [
+            12,
+            33,
+            25,
+            181
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_WoodFrame.png",
+      "bytes": 33797,
+      "sha256": "4b359df1726465b0100e6b43611c67d8f0829e3ce35481ccfff857d6c4cea34f",
+      "size": [
+        148,
+        210
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        136,
+        182
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 13060,
+          "bbox": [
+            44,
+            28,
+            136,
+            182
+          ]
+        },
+        {
+          "area": 824,
+          "bbox": [
+            12,
+            31,
+            24,
+            182
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Gable.png",
+      "bytes": 43204,
+      "sha256": "4971eea0e473ec7c7c1579001a454be52417fd9f3f38b9e223b00e0deaaf71ec",
+      "size": [
+        175,
+        219
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        155,
+        207
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 13236,
+          "bbox": [
+            28,
+            28,
+            155,
+            182
+          ]
+        },
+        {
+          "area": 697,
+          "bbox": [
+            100,
+            183,
+            144,
+            207
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_A.png",
+      "bytes": 47090,
+      "sha256": "433b4c89e3717496d1496e951ef8d9da4f07634cd7686458e7b7a585b93dff5d",
+      "size": [
+        167,
+        191
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        155,
+        179
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 18032,
+          "bbox": [
+            28,
+            29,
+            155,
+            179
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_B.png",
+      "bytes": 61900,
+      "sha256": "6ff70cb36cd804ca882ac7dd6689aa6dfd02acb12414ccc4ca1996bf496b7934",
+      "size": [
+        206,
+        200
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        194,
+        188
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 18841,
+          "bbox": [
+            58,
+            28,
+            194,
+            169
+          ]
+        },
+        {
+          "area": 3934,
+          "bbox": [
+            12,
+            34,
+            39,
+            188
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Plain.png",
+      "bytes": 75800,
+      "sha256": "a1d7184df6fb179acb690d005d560acb3a2658fb78518e1be776acabc3c407a5",
+      "size": [
+        229,
+        224
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        217,
+        196
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 30331,
+          "bbox": [
+            27,
+            29,
+            217,
+            196
+          ]
+        },
+        {
+          "area": 188,
+          "bbox": [
+            12,
+            136,
+            16,
+            187
+          ]
+        },
+        {
+          "area": 19,
+          "bbox": [
+            12,
+            41,
+            13,
+            60
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Timber.png",
+      "bytes": 64316,
+      "sha256": "c57f938b454b09d28e0a3ec7f1f7a1f48852584d4f253e3827bafacf726483ff",
+      "size": [
+        206,
+        215
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        21,
+        28,
+        194,
+        187
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 25812,
+          "bbox": [
+            21,
+            28,
+            194,
+            187
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Window.png",
+      "bytes": 60274,
+      "sha256": "580a57ce41ecdca257dcc05433dd6a03e76afc9c741289704971389c1263f4e9",
+      "size": [
+        200,
+        215
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        22,
+        28,
+        183,
+        187
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 23807,
+          "bbox": [
+            22,
+            28,
+            183,
+            187
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Manifest.json",
+      "bytes": 27071,
+      "sha256": "a7e7621451febafeac952ce20d6d8893c91ee50c018234dbd7cbf5a463e3ad6f"
+    },
+    {
+      "path": "Manifest.md",
+      "bytes": 1612,
+      "sha256": "8041667614353b95ad1c3804052b8184cd9397193b782a82c9f626c8858ba7d1"
+    },
+    {
+      "path": "Portal_Inactive/Frostway_EmptyPortal_Platform.png",
+      "bytes": 381993,
+      "sha256": "94500cb2566f2f71f422d0c5a88d7ce0170af5d347f140cdc5fea9764d60c123",
+      "size": [
+        554,
+        358
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        23,
+        28,
+        542,
+        346
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 143560,
+          "bbox": [
+            24,
+            28,
+            542,
+            346
+          ]
+        },
+        {
+          "area": 61,
+          "bbox": [
+            31,
+            265,
+            41,
+            274
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_Portalsite_LowWall.png",
+      "bytes": 122108,
+      "sha256": "726141f217eead3d40072d1bf5c258569c90ea66f93d61f53642a08b10827d9d",
+      "size": [
+        650,
+        164
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        638,
+        152
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 42130,
+          "bbox": [
+            63,
+            28,
+            638,
+            145
+          ]
+        },
+        {
+          "area": 71,
+          "bbox": [
+            12,
+            136,
+            18,
+            152
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_StonePlinth_Short.png",
+      "bytes": 87229,
+      "sha256": "73310b3dbeb5c2ba751f42674bbb451c9b55b4f6d6acc38e4d6972153aebf9a8",
+      "size": [
+        247,
+        305
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        235,
+        293
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 16728,
+          "bbox": [
+            21,
+            12,
+            235,
+            112
+          ]
+        },
+        {
+          "area": 10458,
+          "bbox": [
+            85,
+            187,
+            235,
+            293
+          ]
+        },
+        {
+          "area": 1711,
+          "bbox": [
+            12,
+            208,
+            51,
+            283
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Asset_Overview_OFFLINE.png",
+      "bytes": 1355819,
+      "sha256": "7d1a1cd11812b52cce5c9a6047a6a0d9c28cdb4431cfb45d10abd788c08d01f7",
+      "size": [
+        1200,
+        1110
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1200,
+        1110
+      ],
+      "border3_nonzero": 13860,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_16x9.png",
+      "bytes": 2887370,
+      "sha256": "5866b3c2171aee8f626e5177832fc8399af4825d2fa73f46c2be3c4829d8bb78",
+      "size": [
+        1600,
+        900
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1600,
+        900
+      ],
+      "border3_nonzero": 15000,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_21x9.png",
+      "bytes": 2912822,
+      "sha256": "7464a30b5995f12fc5a863dd326a5b32512504d05b6072d36acd5cae10567400",
+      "size": [
+        2100,
+        900
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        2100,
+        900
+      ],
+      "border3_nonzero": 18000,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_4x3.png",
+      "bytes": 1131275,
+      "sha256": "2b1edaf99da07f2a3c0cbd17f880ee8e88da4ec6bc155abca4d6a9cdfb47d837",
+      "size": [
+        1200,
+        900
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1200,
+        900
+      ],
+      "border3_nonzero": 12600,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Barrel.png",
+      "bytes": 58754,
+      "sha256": "92c23b915c803e6c8083083443f29808377904b148d43816897e9b680a2756da",
+      "size": [
+        193,
+        222
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        181,
+        210
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 23060,
+          "bbox": [
+            28,
+            28,
+            181,
+            210
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Bench.png",
+      "bytes": 50521,
+      "sha256": "1884794b13f06069beacac1dbedffb78f20cfba5dadae6a88d7783b08e7d9467",
+      "size": [
+        328,
+        166
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        316,
+        146
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 19697,
+          "bbox": [
+            39,
+            28,
+            316,
+            146
+          ]
+        },
+        {
+          "area": 78,
+          "bbox": [
+            12,
+            108,
+            17,
+            127
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Fence.png",
+      "bytes": 101815,
+      "sha256": "4bc7d61bb09350a07a13c85106604e98d8b91dcac0096237accc7308ccf80021",
+      "size": [
+        461,
+        172
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        22,
+        12,
+        435,
+        160
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 28915,
+          "bbox": [
+            22,
+            29,
+            423,
+            160
+          ]
+        },
+        {
+          "area": 6713,
+          "bbox": [
+            270,
+            12,
+            435,
+            65
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Shed.png",
+      "bytes": 253552,
+      "sha256": "b24e2c2ebc79a57c88dab90a69a2659b502ab75a882827b01e1d394d57df9599",
+      "size": [
+        459,
+        342
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        447,
+        325
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 97593,
+          "bbox": [
+            12,
+            28,
+            446,
+            325
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Stack.png",
+      "bytes": 123939,
+      "sha256": "f1ba20f23193cd9d2bf80b8e1150ee896ec4040e4032cf92d084c5d636536c9b",
+      "size": [
+        340,
+        283
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        18,
+        28,
+        328,
+        262
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 44597,
+          "bbox": [
+            18,
+            28,
+            328,
+            262
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Hanging.png",
+      "bytes": 72323,
+      "sha256": "ce507f1e6d2c0a434e0a862190d41fcb0f82737e7c1baf99e1834163aa6edd71",
+      "size": [
+        269,
+        229
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        26,
+        28,
+        241,
+        217
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 24727,
+          "bbox": [
+            26,
+            28,
+            241,
+            217
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Post.png",
+      "bytes": 49404,
+      "sha256": "56633424fa797cc3aef1d3618f6022442020c7e7d239f263ed6ebd94c1374276",
+      "size": [
+        182,
+        275
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        16,
+        28,
+        154,
+        263
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 16910,
+          "bbox": [
+            16,
+            28,
+            150,
+            263
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyBox_Food.png",
+      "bytes": 40994,
+      "sha256": "e7168cce162ee46ca97f32208faeef3b715c597cb27440bda6cabc6bcc1178e5",
+      "size": [
+        247,
+        161
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        235,
+        144
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 14148,
+          "bbox": [
+            56,
+            28,
+            208,
+            144
+          ]
+        },
+        {
+          "area": 585,
+          "bbox": [
+            12,
+            81,
+            32,
+            136
+          ]
+        },
+        {
+          "area": 273,
+          "bbox": [
+            224,
+            55,
+            235,
+            136
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Brace.png",
+      "bytes": 50686,
+      "sha256": "10db0bf7ceaf07e1786d3cb7624b1f899255b78a2609944cd0a08fe2a2e488d9",
+      "size": [
+        201,
+        219
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        28,
+        189,
+        191
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 19088,
+          "bbox": [
+            40,
+            29,
+            189,
+            191
+          ]
+        },
+        {
+          "area": 122,
+          "bbox": [
+            12,
+            124,
+            20,
+            159
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Small.png",
+      "bytes": 37196,
+      "sha256": "01334eba921d6bda1bd42cb02ab17cb78032f77634dd225a23dcd24f3cc8e5e2",
+      "size": [
+        213,
+        177
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        13,
+        194,
+        149
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 12408,
+          "bbox": [
+            70,
+            26,
+            194,
+            149
+          ]
+        },
+        {
+          "area": 1864,
+          "bbox": [
+            12,
+            13,
+            36,
+            129
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Wood.png",
+      "bytes": 51830,
+      "sha256": "47b568e49af529c4a87087a743ef8b5c5b217ce5b261227f166ad2320b6eba45",
+      "size": [
+        211,
+        202
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        26,
+        199,
+        184
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 18661,
+          "bbox": [
+            60,
+            26,
+            199,
+            184
+          ]
+        },
+        {
+          "area": 2245,
+          "bbox": [
+            12,
+            28,
+            37,
+            157
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplySacks.png",
+      "bytes": 54651,
+      "sha256": "12aa735df75923922dca0a1c57d92f7faa140ed6e0bc54c61f689b7fbccc16ad",
+      "size": [
+        247,
+        225
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        235,
+        213
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 17434,
+          "bbox": [
+            45,
+            70,
+            235,
+            213
+          ]
+        },
+        {
+          "area": 430,
+          "bbox": [
+            12,
+            157,
+            28,
+            206
+          ]
+        },
+        {
+          "area": 360,
+          "bbox": [
+            12,
+            12,
+            68,
+            21
+          ]
+        },
+        {
+          "area": 230,
+          "bbox": [
+            154,
+            12,
+            235,
+            18
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Washline.png",
+      "bytes": 62916,
+      "sha256": "b953fe7ab96262bdfdcf455c01f62a53ed97e5c91e76391984d85b0fc8b12dfe",
+      "size": [
+        294,
+        218
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        282,
+        206
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 18042,
+          "bbox": [
+            71,
+            53,
+            282,
+            206
+          ]
+        },
+        {
+          "area": 1771,
+          "bbox": [
+            12,
+            71,
+            50,
+            199
+          ]
+        },
+        {
+          "area": 804,
+          "bbox": [
+            104,
+            12,
+            228,
+            23
+          ]
+        },
+        {
+          "area": 79,
+          "bbox": [
+            12,
+            12,
+            28,
+            20
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_WoodCart.png",
+      "bytes": 97636,
+      "sha256": "06779f12d0c7d54b440d9d103d97bde89f11433b5a973449243975143d635482",
+      "size": [
+        347,
+        222
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        333,
+        200
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 34106,
+          "bbox": [
+            29,
+            29,
+            333,
+            199
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Offline_QA.json",
+      "bytes": 7181,
+      "sha256": "be49dadd5501fcb73c762714c106276bce9725909e4ef0813415afefe66c29bf"
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Earth_01_Repeat_2x2.png",
+      "bytes": 307424,
+      "sha256": "61986b9219018d91e94447cfb2737331214260eb801148f2b5e8c20ef6da4eba",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "border3_nonzero": 6144,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Earth_01_Repeat_3x3.png",
+      "bytes": 469942,
+      "sha256": "c73dd3ee6474ed5257d0677414a0c74c220be6c98e3887819792eb3fe190fc42",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "border3_nonzero": 9216,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Gravel_01_Repeat_2x2.png",
+      "bytes": 310871,
+      "sha256": "c566cf6d4688701cb6c07f7f406df6cfa930209d86c2f7752561c43202075330",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "border3_nonzero": 6144,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Gravel_01_Repeat_3x3.png",
+      "bytes": 474224,
+      "sha256": "59f278d580fa817a4d3930eb01fa283539d972d153a7bd6858a9d7e9fd6f1bda",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "border3_nonzero": 9216,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_ThinFrost_01_Repeat_2x2.png",
+      "bytes": 306290,
+      "sha256": "46bca038fb80cb6ee888d24dcd28262e0cf7742f5ffba539706af1d1cfed8aee",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "border3_nonzero": 6144,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_ThinFrost_01_Repeat_3x3.png",
+      "bytes": 468114,
+      "sha256": "89cfe7f87ee2b03f910566fe6186f1501dec3027f410e8fd659b195523e95a68",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "border3_nonzero": 9216,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Path_Stone_01_Repeat_2x2.png",
+      "bytes": 291129,
+      "sha256": "ea08ba4e76c9913ccc5763f1a1a3b59d67e00ba4b70bcdc35cbc78b96e23fc2f",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "border3_nonzero": 6144,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Path_Stone_01_Repeat_3x3.png",
+      "bytes": 445911,
+      "sha256": "1c2663f0cc343530ae22291cbfa4eda2d4e64189f614a6745dace7e874e891ea",
+      "size": [
+        768,
+        768
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        768,
+        768
+      ],
+      "border3_nonzero": 9216,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "bytes": 6094,
+      "sha256": "34a17ceee85d2bf4f9cc6a14a3edd13fde17acfee222abd29f756f14fff3f49d"
+    },
+    {
+      "path": "Signs/Frostway_BlankWaymarker.png",
+      "bytes": 477124,
+      "sha256": "e88048915bd42863c81f20d22fff163835043e46634907e21adf750fac0621c0",
+      "size": [
+        976,
+        1066
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        28,
+        28,
+        954,
+        1043
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 342968,
+          "bbox": [
+            28,
+            29,
+            954,
+            1026
+          ]
+        },
+        {
+          "area": 929,
+          "bbox": [
+            345,
+            994,
+            385,
+            1022
+          ]
+        },
+        {
+          "area": 699,
+          "bbox": [
+            497,
+            1020,
+            535,
+            1043
+          ]
+        },
+        {
+          "area": 550,
+          "bbox": [
+            687,
+            932,
+            719,
+            954
+          ]
+        },
+        {
+          "area": 489,
+          "bbox": [
+            710,
+            961,
+            738,
+            981
+          ]
+        },
+        {
+          "area": 483,
+          "bbox": [
+            223,
+            952,
+            256,
+            970
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_NorthGate_ArrowSign.png",
+      "bytes": 473416,
+      "sha256": "285c304de4d2bfe06809d2d7485eadadd7d06ddf74f2a9f427b96e9d840c91b0",
+      "size": [
+        966,
+        1055
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        20,
+        20,
+        946,
+        1035
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 342968,
+          "bbox": [
+            20,
+            21,
+            946,
+            1018
+          ]
+        },
+        {
+          "area": 929,
+          "bbox": [
+            337,
+            986,
+            377,
+            1014
+          ]
+        },
+        {
+          "area": 699,
+          "bbox": [
+            489,
+            1012,
+            527,
+            1035
+          ]
+        },
+        {
+          "area": 550,
+          "bbox": [
+            679,
+            924,
+            711,
+            946
+          ]
+        },
+        {
+          "area": 489,
+          "bbox": [
+            702,
+            953,
+            730,
+            973
+          ]
+        },
+        {
+          "area": 483,
+          "bbox": [
+            215,
+            944,
+            248,
+            962
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_GeneralShop.png",
+      "bytes": 27684,
+      "sha256": "c81a84f42667965e45b2ee9fea4668c3ebb313a7088526d24f36f18ea9db2d52",
+      "size": [
+        99,
+        160
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        87,
+        148
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 10168,
+          "bbox": [
+            12,
+            12,
+            87,
+            148
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_Inn.png",
+      "bytes": 27204,
+      "sha256": "c16624d46acdda522a42d6ebeed03bd81eb23053dd11b91fb4b69f307fc2cb75",
+      "size": [
+        110,
+        144
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        98,
+        132
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 9842,
+          "bbox": [
+            12,
+            12,
+            98,
+            132
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_SkillShop.png",
+      "bytes": 35814,
+      "sha256": "f86c2645fa7b6ffd65893de58b75358de641b7f032f317e56f01f57da14ab263",
+      "size": [
+        125,
+        173
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        12,
+        12,
+        113,
+        161
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 13074,
+          "bbox": [
+            12,
+            12,
+            113,
+            161
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_SouthGate_ArrowSign.png",
+      "bytes": 473475,
+      "sha256": "2dcf484b2d502641f56d0282618c9ef35b75ac25bbc84847e9d1df374386b3b3",
+      "size": [
+        966,
+        1055
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        20,
+        20,
+        946,
+        1035
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 342968,
+          "bbox": [
+            20,
+            21,
+            946,
+            1018
+          ]
+        },
+        {
+          "area": 929,
+          "bbox": [
+            337,
+            986,
+            377,
+            1014
+          ]
+        },
+        {
+          "area": 699,
+          "bbox": [
+            489,
+            1012,
+            527,
+            1035
+          ]
+        },
+        {
+          "area": 550,
+          "bbox": [
+            679,
+            924,
+            711,
+            946
+          ]
+        },
+        {
+          "area": 489,
+          "bbox": [
+            702,
+            953,
+            730,
+            973
+          ]
+        },
+        {
+          "area": 483,
+          "bbox": [
+            215,
+            944,
+            248,
+            962
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Earth_01.png",
+      "bytes": 148715,
+      "sha256": "6270cb24334f78194fcb2239b6154387e1545b90e85ce013af112a86d9d946e8",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "border3_nonzero": 3072,
+      "alpha32_components_area16": [
+        {
+          "area": 65536,
+          "bbox": [
+            0,
+            0,
+            256,
+            256
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Gravel_01.png",
+      "bytes": 150676,
+      "sha256": "bf620f0cdf9837f9de4db14681a368cedb774f1ba49e53cebceea520ca7484ad",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "border3_nonzero": 3072,
+      "alpha32_components_area16": [
+        {
+          "area": 65536,
+          "bbox": [
+            0,
+            0,
+            256,
+            256
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_ThinFrost_01.png",
+      "bytes": 148194,
+      "sha256": "c711cc6481b46c84dc98232542524dd4fa85d0d4f24f39e6643e71b82b9d8ee7",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "border3_nonzero": 3072,
+      "alpha32_components_area16": [
+        {
+          "area": 65536,
+          "bbox": [
+            0,
+            0,
+            256,
+            256
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Path_Stone_01.png",
+      "bytes": 140137,
+      "sha256": "6565215f406f4b5823fafc7b91cb16bb53f32620ac03f331220eef123895648c",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        255,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "border3_nonzero": 3072,
+      "alpha32_components_area16": [
+        {
+          "area": 65536,
+          "bbox": [
+            0,
+            0,
+            256,
+            256
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Transitions/Frostway_EarthToThinFrost_Overlay_01.png",
+      "bytes": 152239,
+      "sha256": "f88396d3fe3f14e57292531c3fb620b2a312574a916aa48fc65d4b830e922f8b",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        93
+      ],
+      "alpha_bbox": [
+        32,
+        0,
+        244,
+        256
+      ],
+      "border3_nonzero": 1269,
+      "alpha32_components_area16": [
+        {
+          "area": 28778,
+          "bbox": [
+            113,
+            0,
+            244,
+            256
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Transitions/Frostway_Path_BorderOverlay_01.png",
+      "bytes": 750,
+      "sha256": "bf051082d22843eb16561851b67914a2910ab07993f10a490cffe68c8440aba0",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "frames": 1,
+      "durations_ms": [
+        null
+      ],
+      "alpha_extrema": [
+        0,
+        80
+      ],
+      "alpha_bbox": [
+        5,
+        7,
+        253,
+        249
+      ],
+      "border3_nonzero": 0,
+      "alpha32_components_area16": [
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            7,
+            13,
+            17
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            7,
+            253,
+            17
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            36,
+            13,
+            46
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            36,
+            253,
+            46
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            65,
+            13,
+            75
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            65,
+            253,
+            75
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            94,
+            13,
+            104
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            94,
+            253,
+            104
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            123,
+            13,
+            133
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            123,
+            253,
+            133
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            152,
+            13,
+            162
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            152,
+            253,
+            162
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            181,
+            13,
+            191
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            181,
+            253,
+            191
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            210,
+            13,
+            220
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            210,
+            253,
+            220
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            5,
+            239,
+            13,
+            249
+          ]
+        },
+        {
+          "area": 65,
+          "bbox": [
+            245,
+            239,
+            253,
+            249
+          ]
+        }
+      ],
+      "manifest_sha_match": true
+    }
+  ],
+  "manifest_mismatches": [],
+  "game_png_count": 43,
+  "tile_edges": [
+    {
+      "path": "Frostway_Ground_Earth_01.png",
+      "lr_equal": true,
+      "tb_equal": true,
+      "alpha_opaque": true
+    },
+    {
+      "path": "Frostway_Ground_Gravel_01.png",
+      "lr_equal": true,
+      "tb_equal": true,
+      "alpha_opaque": true
+    },
+    {
+      "path": "Frostway_Ground_ThinFrost_01.png",
+      "lr_equal": true,
+      "tb_equal": true,
+      "alpha_opaque": true
+    },
+    {
+      "path": "Frostway_Path_Stone_01.png",
+      "lr_equal": true,
+      "tb_equal": true,
+      "alpha_opaque": true
+    }
+  ],
+  "sha256sums_mismatches": []
+}

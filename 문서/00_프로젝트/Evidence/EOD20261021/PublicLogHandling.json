@@ -1,0 +1,74 @@
+[
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Unity.log",
+    "original_sha256": "23d1edb29371c67deab678d23e4b29bc255bc373ce66eeb29cee42d129136cf2",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Unity.log",
+    "original_sha256": "58163336e350b977b123cb5afd6c19abd94b01b852b49670bbe7d4603e9f96c7",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Unity_Final.log",
+    "original_sha256": "2415e5e71c827a38ea720655718de23c9ed30c9458e6da2051ccb7c42a55a260",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Battle.Unity.log",
+    "original_sha256": "1fdc78f831ec8e28a180ed8d6f5f065072b1893532f101c71ead0ccffe167750",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Capture.Unity.log",
+    "original_sha256": "851307bdd2667faf59d99a464f784be83ce35b15b3265328c36d047c6e867f3b",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Gate.Unity.log",
+    "original_sha256": "826dfa9ff33fe49455e97addaabde5ab12e32d6d82fbaaab460ef7570255610c",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough.Unity.log",
+    "original_sha256": "3f6aca57252818963f272f25d413e95d7be147ae1e8167d04c86d22423e71306",
+    "public_sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/Import.Unity.log.txt.gz",
+    "original_sha256": "e679078b4968abe3746e654c100ab0b33c3d4c2981385cc1619965737215c745",
+    "public_sha256": "25ba75403cbbe1e31cae0abf155e7e7da16ca35c03123a544474e2473b2e70b6",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/Unity3.log.txt.gz",
+    "original_sha256": "c1ee4f61e834c6db072b02a369018b0443ea203a2c33fddbc2f142602ac048dd",
+    "public_sha256": "74d58091558bb5f7aee77eb0ce70288286532fc0ee961856c35667c3a376c2df",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/Unity_Final.log.txt.gz",
+    "original_sha256": "9b750bc0a44efcf32d3267878bfab305f7623acb727d2e454c06b2131a90a146",
+    "public_sha256": "6948f8075111d4248d533af8916b998633d15fa8e56db3174dc97c2b7b11607a",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/Unity.log.txt.gz",
+    "original_sha256": "5932f991949c0a71a7fea4dd70e537f5c3606ce9b74be02836ad96eb958af6ed",
+    "public_sha256": "6948f8075111d4248d533af8916b998633d15fa8e56db3174dc97c2b7b11607a",
+    "action": "raw local-only; public acceptance markers only"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Unity.log.txt.gz",
+    "original_sha256": "4f5fcc64fc60c02dc08edc80ac711bc4b586657a62225f91349875f2f1500a66",
+    "public_sha256": "20f8ad0d65d11201e3eff219d833c4c4c89cfec995186004f863a5bb42260c62",
+    "action": "raw local-only; public acceptance markers only"
+  }
+]

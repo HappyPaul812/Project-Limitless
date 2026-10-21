@@ -1,3 +1,65 @@
+## 2026-10-21 Chapter3 Main22 첫 플레이 F1 환경 6종 시각 검토
+
+- **기획 우선순위 재잠금:** 서리들쥐 A Combat Fix v2는 바울 대표 **미술 승인 완료**, Codex **23PASS/0FAIL** Delta QA. 실제 게임 몬스터 연결 완료 보고는 별도 대기. **Main22 F1 첫 플레이**가 최우선, 설빙의 폭군 B 후반 보스 애니메이션/마을 NPC/F2~F5는 보류. 서리폭군은 잘못된 표기, 공식 보스 이름은 **설빙의 폭군**.
+- 실물 기준 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 중 **F1 PNG6** 모두 실제 열어 확인. 각 256×256 RGBA; 원본 PNG 바이트를 원본 ZIP과 SHA 대조, 6/6 완전 동일. Chapter2 공식 `DeepCore_Ground_Base.png`, `DeepCore_Cliff_Boundary.png` 2종 참조로 질감·명도만 비교(서로 다른 바이옴/다른 소스 크기).
+- 원본 미술 진단: 흙·잔디 평면적, 서리가 지나치게 전면 회색, 전환부 점무늬가 소재보다 노이즈, **길 오버레이 통로 가독성 부족**. 관목/표지판은 이번 수정 대상 제외해 보존. 6종 모두 **F1 사용자 미술 최종 승인 전: HOLD**.
+- 새 **3종 표적 수정 샘플**(흙 지면/절제된 얇은 서리/전환부 오버레이)은 별도 후보 PNG로 제작, 기존 6개를 전혀 덮어쓰지 않음. 128px 전후 비교/오프라인 길 연결 시안/Chapter2 공식 아트 참조/2×2 기본 지면 Seam QA 포함. 후보 미술완성도 PASS나 Unity GameView 주장 금지.
+- 실제 ChatGPT 다운로드 ZIP: **`Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip`**, SHA256 **`dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086`**, 약 1.15MB, 원본6+수정후보3+Preview4+QA3+Manifest1+SHA 목록1 = 18파일. GitHub에는 바이너리 미등록, 해당 대화에서 받는 실물임.
+- 제작·원본 SHA·검증·한계 문서 [Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md](../../Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md), 커밋 **`929eff1f668cbcbea1fdd97475aef75741a10bfd`**.
+- **승인/기술 게이트:** 대표가 초기 서리 밀도/흙 질감/전환부 시안을 검토해 준 뒤 좁고 불명확한 길의 **최소 수정** 범위를 확정; Codex의 진짜 F1 PPU/Pivot/TileGrid/Collider와 휠체어 통로 조사 및 실제 Unity F1 구현/Play Mode는 이후 단계. 이번에는 2×2 Seam·PNG RGBA·ZIP CRC 등 오프라인 QA만. `main`/Unity/Save/GUID/Monster 승인원본 및 다른 담당 Chapter1·2 리뉴얼 수정0.
+- 새 세션 재개 시 가장 먼저 Issue #30 및 `docs/planning/문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md`를 다시 읽고 F1 3종 후보 미술 의견 확인할 것. 설빙의 폭군 전투 애니메이션 선행 제작 금지.
+
+## 2026-10-21 F1 환경 미술 HOLD — 신규 6종 개선 v2 실물 납품
+
+- [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 및 최신 기획/코덱스 F1 미술 HOLD에 대응. F1 **흙/얇은 서리/단방향 전환/흙길/서리 관목/길 표지판** 각각 신규 후보 1종씩 **256×256 RGBA PNG6** 제작. 이전 F1 원본6 바이트 유지, 기존 지면 시안3 별도 보존. Main22 우선, 마을·F2~F5·설빙의 폭군·신규 전투 아트 제작 안 함.
+- 실물 ZIP: `Limitless_Chapter3_NorthF1_Environment_6_ArtImprovement_v2.zip`, **SHA256 `8158f501763b525022b8b9fc1645fe2b0a5c0bc8bf9f73aabcb02024c3a3235c`**, 3,897,421 bytes, 내부23파일 (후보6·원본6·Preview4·반복QA4·JSON1·Manifest1·SHA목록1). ChatGPT 대화 다운로드 첨부; GitHub에는 **PNG/ZIP 바이너리를 올리지 않음**.
+- **QA 오프라인 PASS**: 파일 디코딩/규격6, 원본6 바이트 SHA 일치, Ground/ThinFrost 첫/끝 변두리 X/Y 픽셀 일치, Ground2의 2×2 및 3×3 반복 QA, ZIP CRC. `Preview/F1_Earth_Frost_Path_Composite_OFFLINE.png`은 Unity 화면이 아니라 PIL 합성.
+- **미술 승인 대기**: 그림은 1254 고해상도 원화에 기반한 256 후보이므로 수동 픽셀 마감/실 게임 적용 보장 아님. 큰 반복무늬는 3×3에 보일 수 있음. 단방향 오버레이·보행 통로의 실제 통행 폭/PPU/Collider/TileGrid·GameView는 Codex 실측 대기. **USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED**.
+- [제작·QA 보고](../../Chapter3_NorthF1_Environment_6_ArtImprovement_v2_QA_20261021.md), `docs/art-new` commit `4821d6fec8180a266a1580dc4eb175f6b6145474`. **main 직접 커밋/Push·병합 없음**.
+- 후임: 새 ZIP의 실물 6 PNG/비교판을 확인해 대표 미술 판단 먼저 받기 → 필요 시 그 지적 파일만 표적 수정 → Codex 기술 계약/Play Mode F1 검증 후 Unity 통합 요청. 기존 공식 캐릭터·서리들쥐 전투·설빙의 폭군·Chapter1/2 리뉴얼 보호.
+
+## 2026-10-21 북부 F1 v2 부분 합격 → 3종만 v3 표적 보완
+
+- Issue #30의 Codex v2 격리 QA: **기술 PASS / 미술 3 PASS, 2 HOLD, 1 FAIL**. 대표님 지시대로 KEEP 3 **흙 지면/흙길/서리 관목**의 바이트·SHA 절대 보존, Thin Frost/Transition/Waymarker **3종만** v3 PNG 보완.
+- 실제 납품: **`Limitless_Chapter3_NorthF1_Environment_6_TargetedFix_v3.zip`**, SHA256 **`488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054`**, 5,524,917 bytes, **20파일**. `Art/` 후보6 PNG는 모두 256×256 RGBA, PASS v2 PNG 3개는 각각 SHA `ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9`, `e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175`, `6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e`로 완전 동일.
+- 수정 v3 SHA: Thin Frost `12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c`, Transition `93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1`, Waymarker `6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589`.
+- v3 변경: 큰 반복 서리 얼룩의 밝기 감소(기술 참고 색차>28 픽셀 4358→1569), 흙 바탕+우향 알파 오버레이→얇은 서리 오른쪽 타일 **양쪽 경계 최대 RGBA delta0**, 표지판은 한쪽 평평한 꼬리/오른쪽 한쪽 화살촉. **오른쪽은 PNG 표시 기본 방향이지 Main22 실제 길 안내 방향이나 목적지를 확정한 것이 아님.**
+- 실제 ZIP/PNG는 이 ChatGPT 대화에서 다운로드 제공; GitHub에는 QA/Manifest/해시 **문서만** 기록하고 바이너리 미업로드. `docs/art-new` 제작 QA [Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md](../../Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md), 커밋 `b18d06fbbf318cfeff085a86aeb198b8b3aafe95`.
+- **오프라인 PASS / 미술·Unity 미승인**: 2×2/3×3 반복, 우측 연결, 표지판 128px 비교, ZIP CRC. 이미지 합성은 Unity GameView가 아님. Single-tile 반복 특징 잔존 가능/4방향 오토타일 아님/PPU·TileGrid·Collider·휠체어 통행폭 및 실제 F1 Play Mode 미검증. 현재 F1 전체 미술 상태 계속 **HOLD**.
+- 다음: Codex에 **이번 변경3+KEEP3 SHA만 격리 Delta QA** 요청 → 바울 대표 최종 미술 승인 → 별도 승인 후 Unity Main22 첫 플레이 구현. 다른 F2~F5·마을·설빙의 폭군·승인 서리들쥐·Chapter1/2 원본 보존, `main` 직접 반영 금지.
+
+## 2026-10-21 Main23 서릿길 마을 v3 — 개별 게임 아트 후보 43종
+
+- 이번에는 ArtPilot v2 11장 콘셉트를 다시 포장한 것이 아니라 **독립 Sprite PNG 43종** 제작: Tile4 (256 RGBA/상하좌우 경계 일치), 전환/길 경계2, 독립 건물5, 지붕·벽·문 모듈9, 생활소품14, 상점/방향 표식6, 비작동 포탈 석재3. 2×2·3×3 반복QA8·16:9/4:3/21:9 오프라인 배치3·자산 미리보기1, Manifest/QA/SHA4 = ZIP 총59파일.
+- 실제 사용자 ZIP: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip`, 최종 ZIP SHA **`2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`**, 17,311,281 bytes; ChatGPT 대화 다운로드에 실제 파일 존재. 브랜치에는 **아트 바이너리 없이 보고 문서만** 기록함.
+- SHA mismatch 감사: 이 작업공간의 v2 ZIP 해시 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`는 기존 기록과 일치, 19 ZIP entry/CRC PASS·Manifest 기준 15 PNG SHA 일치. Codex 대표님 F: 실물에서 측정한 **`19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`**는 다른 사본. 두 번째 사본 실물 미접근이므로 **차이 원인 미확정**, Codex ZIP 엔트리·PNG SHA 대조 필요. 신규 v3 ZIP은 작성 후 바이트 해시 기록했으며 최종 전달 파일과 동일.
+- 오프라인 PASS: PNG 디코딩/독립 RGBA/전부 외곽에 투명 여백/지면4종 edge pixel match/2×2·3×3 자료/ZIP CRC·SHA. 최초 지면 외곽의 검은 선 결함은 최종본에서 제거 후 재검증. 오프라인 마을 배치 PNG는 **Unity GameView 아님**.
+- 제한: 건물 지붕·벽·문 모듈 간 실사용 접합/Unity PPU·Pivot·Collider·실제 휠체어 3WU 통행/포탈 비작동·캐릭터와의 스타일 조화·Sorting 미검증. 미술 **ART_CANDIDATE / REPRESENTATIVE_APPROVAL_PENDING**, 정식 GameReady PASS 주장 금지. Portal은 돌기단만 있고 VFX/연결 기능 없음.
+- [GitHub 보고](../../Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md) 커밋 `b7ddd71895288a077c55fdb3e0a91375ab43f604`. Main23 기획 정본 및 Issue #45를 우선 확인하고, Codex 변경분 검수/대표 승인 후에만 실제 Unity 적용. `docs/art-new`만 사용, **main 직접 Commit/Push·병합 금지**. F1 원본6·기존 공식 인물/몬스터·Chapter1/2 아트/Unity/Save 보호.
+
+## 2026-10-21 Main23 Frostway Village v4 — 두 PNG 분리잔여 제거
+
+- Codex [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) v3 DeltaQA: **PNG43/CRC/Manifest 기술 PASS, 격리 Unity 3화면비 조립·통행 QA 완료**, 다만 두 PNG의 다른 원화 조각 때문에 미술 FAIL, Tile4의 3×3 반복무늬 미술 HOLD. Main23 정식 씬/퀘스트 구현 완료 상태 아님.
+- **v4 표적 수정 완료**: `Buildings/Frostway_SkillShop_Building.png` x12..28/y196..376 범위의 **별도 연결조각 2496픽셀**, `Buildings/Modular/Frostway_Roof_Gable.png` x100..144/y183..206의 **별도 조각 712픽셀**만 삭제. 사각형 일괄 마스킹 아닌 alpha connected-component 제거. **두 Sprite 본체 RGBA 픽셀은 전부 v3와 동일**.
+- 변경 PNG v4 SHA: SkillShop `ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17` / Roof Gable `37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0`. v3 원본 SHA 각각 `7e3562c22f00a07a85f0ab0349b8119dff924f3ef4dccf199cccdc9ec367be89` / `4971eea0e473ec7c7c1579001a454be52417fd9f3f38b9e223b00e0deaaf71ec`.
+- **기존 게임 아트 나머지41 PNG의 원본 ZIP entry 바이트/SHA 41/41 동일**, 특히 Tiles4 PNG 모두 수정0. 새 3×3 Pattern HOLD 표시 자료 5 PNG 추가. Earth: x9..94,y120..252 풀/돌; Gravel: x23..130,y26..120 자갈; ThinFrost: x9..94,y120..252; Stone Path: x60..215,y94..240 특정 포석 배열. 2×2/3×3 경계 기술 PASS와 시각 반복 HOLD를 분리.
+- 실제 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`, **SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`**, **19,767,770 bytes / 70 entries**. 원본게임 PNG43(변경2, 보존41), 기존 반복·화면비 오프라인 참고12, 신규 before-after 6, 신규 TileHold5, Manifest/QA/SHA4. 압축 CRC/SHA/PNG 43 정상. 실물은 ChatGPT 다운로드 첨부, GitHub에는 문서만 기록.
+- **QA 문서** [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md), 커밋 `cbacca86c6a69faf3240e8fc09971a3b2fdceb6a`.
+- **승인 게이트:** v4 Codex 격리 변경분 Unity QA + 바울 대표 미술 승인 대기. 타일 패턴 때문에 전체 미술 HOLD 지속. 이전 Preview/ 의 16:9/4:3/21:9는 v3에서 생성된 **오프라인 참조이미지**로서 v4 Unity GameView 아님. Main23 Scene/Save/Unity/GUID, 공식 F1·Wolf·이전 v2 콘셉트11, Chapter1·2 변경0. `docs/art-new`만 문서 커밋, `main` 직접 Commit/Push/병합 금지.
+- 후임 세션은 해당 문서+ZIP/Issue #45 재확인→Codex 변경분 QA 확인→대표 승인 여부 확인. Tiles4는 대표 허가 전 수정하지 말고 임의 전체 타일 재제작 금지.
+
+## 2026-10-21 Main23 서릿길 마을 타일 반복 표적완화 v5
+
+- 인수 즉시 `docs/art-new` 이 문서 + `docs/planning`의 `PLANNING_LATEST.md` 최신(2026-10-21 늑대 Run6 v5 승인 / Village v4 HOLD) + Issue #45 최신 Codex 결과 참조. 늑대 Run6 v5는 이미 바울 대표 **모션 승인**이지만 Main23 마을은 **미술 HOLD**.
+- v4 원본 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip` SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896` 이 작업환경에서 다시 확인; 사용자 PC `F:\Downloads\`의 파일은 직접 다루지 않음.
+- **v5 실제 생성·납품**: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`, SHA256 **`1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 20,085,423 bytes, **72 entries**. 게임용 PNG 43 중 **수정3/바이트 동일40**. Tile Earth(24062 pixels), ThinFrost(23973), Gravel(31120) **국소 텍스처 반복 모티프 완화**. Tile StonePath·SkillShop·RoofGable v4 PASS 등 기타40 byte SHA 동일.
+- **오프라인 QA PASS**: 전부 PNG RGBA/타일 256×256/수정 타일 주변 RGBA edge 보존 + X/Y 첫/끝 edge 일치, 40 byte-identical, SHA256SUMS 71/71, ZIP CRC. Tile4의 v4↔v5 2×2·3×3 비교20 PNG/128px 원본 크기 미리보기와 독립 v5 실 PNG 사용 3 화면비 1600×900·1200×900·2100×900 **오프라인 합성**. 반복 무늬는 약화 시안이지 최종미술 합격 보증 아님.
+- **OPEN16 주의**: GitHub 기획/Issue에 기존 Codex CSV 기반 OPEN 16개라는 **집계**는 있으나 **행별 CSV 원문 파일명·좌표·조건을 해당 소스 ZIP·원격 담당자료·유저 Library에서 확보하지 못함**. 따라서 개별 OPEN16 해결0 / 종결0, 원본 검수 CSV 요청 필요. 어떤 건물/소품의 미확인 결함도 임의 수정하지 않음.
+- 상세 QA·실물 SHA/기타 제한: [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md), `docs/art-new` 커밋 `006fc8f4edfa00943052a00e4ace8217e11306fc`. **실 PNG/ZIP은 ChatGPT 대화 다운로드 첨부**이며 GitHub는 문서/해시만, Unity/Editor/Scene/Save/Main/F1/Wolf/다른 아트 변경하지 않음.
+- 다음: Codex 기존 16 CSV **행별 원본 공유** → 중복/이전 v4 해결 여부 검증 → 해당 OPEN만 표적 추가 수정. v5 3 Tile는 Codex 격리 실3×3/UI DeltaQA와 바울 대표 최종 미술 승인 필요. `main` 직접 커밋/Push/병합 금지.
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 ## 2026-10-20 EOD 실행 결과
 
 PR41 main db242b77 및 원본 main 동기화 완료. 승인/제외 경계는 아래와 동일하며, 완료문서 후속PR의 최종 SHA는 Codex 인계와 원본 Temp/EOD20261020/OriginalLocalSync_Proof.json을 따릅니다.

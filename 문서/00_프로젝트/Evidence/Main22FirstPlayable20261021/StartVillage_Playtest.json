@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "PlayerName": "Main22 첫 플레이",
+  "PlayerVisualId": "Male",
+  "AppearanceId": "appearance.external.v1.mobility.guardian.male",
+  "PathId": "path.mobility",
+  "JobId": "guardian",
+  "Level": 14,
+  "CurrentExperience": 0,
+  "CurrentSceneId": "World_StarterVillage",
+  "SpawnPointId": "Spawn_From_Field01",
+  "LastSafeZoneId": "safezone_starter_village",
+  "LastSafeZoneSceneId": "World_StarterVillage",
+  "LastSafeZoneSpawnPointId": "Spawn_From_Field01",
+  "HasSavedWorldPosition": true,
+  "SavedPositionX": 0.0,
+  "SavedPositionY": -5.0,
+  "PartyResources": [],
+  "Currency": 77,
+  "Inventory": [],
+  "QuestProgress": {
+    "ActiveQuests": [],
+    "CompletedQuestIds": [
+      "main_01_call_reaches",
+      "main_02_grassland_anomaly",
+      "main_03_unfamiliar_companion",
+      "main_04_three_people",
+      "main_05_return_of_three",
+      "main_06_into_the_forest",
+      "main_07_deep_tracks",
+      "main_08_what_they_avoid",
+      "main_09_reunion_in_silence",
+      "main_10_center_of_silence",
+      "main_11_silent_catacomb",
+      "main_12_remaining_record",
+      "main_13_drying_land",
+      "main_14_ground_pulse",
+      "main_15_burning_traces",
+      "main_16_shape_in_the_ash",
+      "main_17_red_rift",
+      "main_18_black_heat",
+      "main_19_burning_pulse",
+      "main_20_colossus_of_the_depths",
+      "main_21_returning_warmth"
+    ],
+    "TrackedQuestId": "",
+    "Main21Flags": 15,
+    "Main22ClueFlags": 0
+  },
+  "CompanionRoster": {
+    "UnlockedCharacterIds": [
+      "companion_miel",
+      "companion_paul",
+      "companion_serin",
+      "companion_taeon"
+    ],
+    "ActivePartyCharacterIds": [
+      "companion_miel",
+      "companion_paul"
+    ],
+    "Formation": [],
+    "HasManualComposition": false,
+    "PaulDefaultApplied": true
+  },
+  "BeastCompanions": {
+    "DefeatedMonsterIds": [],
+    "UnlockedMonsterPetIds": [],
+    "EquippedBeasts": []
+  }
+}

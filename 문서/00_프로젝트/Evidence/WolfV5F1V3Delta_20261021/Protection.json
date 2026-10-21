@@ -1,0 +1,17 @@
+{
+  "protected_file_count": 4351,
+  "all_hashes_equal": true,
+  "root_git_status_equal": true,
+  "root_head_equal": true,
+  "unity_import_apply_play": false,
+  "root_editor": "Bootstrap / Play OFF / focused false / compiling false; read-only MCP state query only",
+  "source_v3_v4_preserved": {
+    "Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+    "Wolf_KeyArt_v3_AlphaFix_v4.png": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+    "Wolf_KeyArt_v3_AlphaFix_v5.png": "b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1"
+  },
+  "downloads_zip_sha_rechecked": {
+    "Wolf": true,
+    "F1": true
+  }
+}

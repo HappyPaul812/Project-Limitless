@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Project/Scenes/Bootstrap.unity
+    guid: 66a117c04f6158a4a968de1f574a1f7e
+  - enabled: 1
+    path: Assets/_Project/Scenes/OpeningIntro.unity
+    guid: 55be265063b14205df533d8f02487145
+  - enabled: 1
+    path: Assets/_Project/Scenes/CharacterCreation.unity
+    guid: 0ee8c784d66e57f4eb4054d79015dbbe
+  - enabled: 1
+    path: Assets/_Project/Scenes/PathSelection.unity
+    guid: 9e47c65d3b344da48b335da575255ffa
+  - enabled: 1
+    path: Assets/_Project/Scenes/JobSelection.unity
+    guid: 3e3506b45a814b87ba486d987cefc601
+  - enabled: 1
+    path: Assets/_Project/Scenes/FinalConfirmation.unity
+    guid: c5ab839c063d4fcf8a3f84e5968e412b
+  - enabled: 1
+    path: Assets/_Project/Scenes/World_StarterVillage.unity
+    guid: d4a08be9af5ce2b4988023a66f57091c
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_01.unity
+    guid: d3294f3ff016344428247fd60ebf23c9
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_02.unity
+    guid: f2020000000000000000000000000002
+  - enabled: 1
+    path: Assets/_Project/Scenes/Battle.unity
+    guid: aeeaf599728e4385ef7ef24ef346df45
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_03.unity
+    guid: c7d0c3fd54a7cac4fb0aa9bd648810a4
+  - enabled: 1
+    path: Assets/_Project/Scenes/Dungeon_01.unity
+    guid: 453acfb22c63c514ca143ea1112bd0ad
+  - enabled: 1
+    path: Assets/_Project/Scenes/Dungeon_01_B2.unity
+    guid: c06a4b1df50f8e34796d99de36da64cc
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_04_WesternBorder.unity
+    guid: 30df47a78f514a3e89c481bdbfebb9fd
+  - enabled: 1
+    path: Assets/_Project/Scenes/Arbel.unity
+    guid: ad86be8a1cdd4b2da606ea266b2a240b
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_05_WesternOutskirts.unity
+    guid: e8c322808c8e4bdcae75234ec2af0342
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_06_ScorchedTrail.unity
+    guid: 4b57f326013047b08fc7f923bbeda7fa
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_07_AshenReach.unity
+    guid: f6fd4898372c0a54eaa201d769ce51fe
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_08_RedRift.unity
+    guid: 1f2f58692d5f71d409dc133f36a82d83
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_09_ObsidianScar.unity
+    guid: 6ec5c808e3339c6418e29d81fc191e41
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_10_BurningPulse.unity
+    guid: 4951f4ecaa7f6b64bbb230aa84042eab
+  - enabled: 1
+    path: Assets/_Project/Scenes/Field_11_DeepCore.unity
+    guid: 7f4bb919653496c4d95b212f2b7e3abb
+  - enabled: 1
+    path: Assets/_Project/Scenes/World_NorthF1.unity
+    guid: 7f5ef746a0eb33c4581e3ab5a72e1490
+  m_configObjects:
+    com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

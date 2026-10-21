@@ -1,3 +1,18 @@
+## 2026-10-21 EOD 승인분 선별 통합 — 신규 최소검증 완료 / PR·원본동기화 진행 중
+
+Wolf Run6 v5 승인6파일 + Main22/F1/서리들쥐52파일 선별, 제품58파일. Main22 대사·TTS·전투수치·경제·보상은 PROTOTYPE/DESIGN_NOT_LOCKED. 기존 Wolf106/Main22 136/F1 64/Mouse40 각 QA 재사용·전수재실행0. 새 정적38+격리 Unity14 검증 PASS, Scene/Quest/리소스·Save 선택필드 연결 확인.
+
+Village v5 타일3 미술HOLD·OPEN16 해결0·본편미구현, 청취 미승인TTS READY64/152·미완BGM/SFX/영상 제품제외. 담당 문서는 파일별 선별·의미병합/고유HISTORY 보존. raw 진단로그는 개인경로/라이선스정보 비공개로 로컬보관, 공개본에는 판정마커만 유지.
+
+새 실측 dirty314/untracked595/staged0, 사용자957파일196,911,769bytes 백업·보호6758SHA. 원본Editor/Play/Refresh/포커스 조작0. branch `codex/eod-integration-20261021`, 제품 commit `b53344ce`. 아직 PR병합·원본SYNC 완료 선언 아님. [EOD 보고](EOD_ApprovedIntegration_LocalSync_20261021.md).
+
+## 2026-10-21 서리들쥐 Fix v2 최종 미술 승인·정식 외형 연결 완료
+
+- 바울 대표 최종 승인 반영. 승인 Idle 원본바이트+Fixv2 Attack/Hit/Defeat PNG4·16프레임을 `Resources/MonsterVisuals/FrostFieldMouse` 외형 구성에 연결, PPU512/Pivot하단/8FPS/scale1. ID·수치·보상은 TBD이므로 표준 몬스터목록·새 Field/Quest/조우 추가0.
+- 실제 격리 Battle 기본공격·HP감소/Hit·Idle복귀·Defeat03유지·기존두종회귀 **40PASS/0FAIL**. Hit직후 Attack이 가려지는 기존 플래그 문제 최소 보완. 기존36건 전수반복0. [상세·GameView·동작](Chapter3_FrostFieldMouse_Fix_v2_Official_Apply_QA_20261021.md).
+- 제품13경로 원본 디스크·대상6경로 Editor Import 완료, 각모션4프레임 로드·컴파일종료·Console조회오류0 확인. 원본4,339SHA 중 승인코드1외 변경0/신규12만. Save/UserData·기존아트·Settings 보호, Bootstrap/PlayOFF/비포커스 유지.
+- 브랜치 `codex/chapter3-mouse-combat-v2-apply-20261021`, 제품 commit `2201da328e481b83f397860ea22e584b88f1da11`. 원본main HEAD e4e9891f 유지·main직접commit/Push/PR/병합 미실행. 다음: 공식ID/밸런스/Main22 조우 별도 확정 후 이 외형 재사용. 동일 미술 재승인 불필요.
+
 ## 2026-10-20 EOD 완료 — PR41 병합 / 원본 SYNC_COMPLETE
 
 [PR #41](https://github.com/HappyPaul812/Project-Limitless/pull/41) 승인 통합 main **`db242b77377b7c2ec08664f102b1a6bab0b3ffb3`**, 통합 head `ccad0344dacf647bd2c3530d2284783e24e7f784`. 완료 증거 작성 시 **GitHub main=origin/main=원본 local main**, index=HEAD 및 stage0 직접 확인. 후속 완료문서 PR 이후의 최종 SHA는 원본 `Temp/EOD20261020/OriginalLocalSync_Proof.json`에서 재확인합니다.

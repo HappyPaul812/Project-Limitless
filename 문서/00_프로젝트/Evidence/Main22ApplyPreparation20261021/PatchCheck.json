@@ -1,0 +1,7 @@
+{
+  "command": "git apply --check --whitespace=nowarn - (stdin; no mutation)",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "error: patch failed: Unity/Client/ProjectSettings/EditorBuildSettings.asset:74\nerror: Unity/Client/ProjectSettings/EditorBuildSettings.asset: patch does not apply\n",
+  "pending_count": 45
+}

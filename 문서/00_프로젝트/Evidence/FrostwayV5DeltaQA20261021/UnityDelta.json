@@ -1,0 +1,74 @@
+{
+    "unity": "6000.6.5f1",
+    "graphics": "Direct3D12",
+    "ppu": 128.0,
+    "pixelsPerWU": 64.0,
+    "checks": [
+        {
+            "name": "v4 route (0.00, 6.00) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v4 route (-6.00, 1.50) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v4 route (-6.00, -6.00) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v4 route (0.00, 6.00) radius 0.5",
+            "pass": true
+        },
+        {
+            "name": "v4 route (-6.00, 1.50) radius 0.5",
+            "pass": true
+        },
+        {
+            "name": "v4 route (-6.00, -6.00) radius 0.5",
+            "pass": true
+        },
+        {
+            "name": "v5 route (0.00, 6.00) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v5 route (-6.00, 1.50) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v5 route (-6.00, -6.00) radius 0.3",
+            "pass": true
+        },
+        {
+            "name": "v5 route (0.00, 6.00) radius 0.5",
+            "pass": true
+        },
+        {
+            "name": "v5 route (-6.00, 1.50) radius 0.5",
+            "pass": true
+        },
+        {
+            "name": "v5 route (-6.00, -6.00) radius 0.5",
+            "pass": true
+        }
+    ],
+    "images": [
+        "v4_Repeat3x3_16x9.png",
+        "v4_Repeat3x3_4x3.png",
+        "v4_Repeat3x3_21x9.png",
+        "v4_Connections_16x9.png",
+        "v4_Connections_4x3.png",
+        "v4_Connections_21x9.png",
+        "v4_DoorFront.png",
+        "v4_DoorBehind.png",
+        "v5_Repeat3x3_16x9.png",
+        "v5_Repeat3x3_4x3.png",
+        "v5_Repeat3x3_21x9.png",
+        "v5_Connections_16x9.png",
+        "v5_Connections_4x3.png",
+        "v5_Connections_21x9.png",
+        "v5_DoorFront.png",
+        "v5_DoorBehind.png"
+    ]
+}

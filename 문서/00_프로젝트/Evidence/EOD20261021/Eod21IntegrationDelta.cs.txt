@@ -1,0 +1,42 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+using ProjectLimitless.Core;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Monster;
+using ProjectLimitless.World;
+
+// 승인된 두 기능을 합친 뒤 저장 Scene/참조/이전 Save 필드만 확인합니다. 기존 전수 PlayMode QA는 호출하지 않습니다.
+public static class Eod21IntegrationDelta
+{
+ static List<string> checks=new List<string>();static string output;
+ static void Check(bool ok,string label){checks.Add((ok?"PASS|":"FAIL|")+label);File.WriteAllLines(Path.Combine(output,"checks.txt"),checks);if(!ok)throw new Exception(label);}
+ public static void Run()
+ {
+  if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/WolfRunV5Apply20261021/UnityQA/Assets"))throw new Exception("격리 프로젝트만 허용합니다.");
+  output=Path.GetFullPath(Path.Combine(Application.dataPath,"../../../EOD20261021/UnityDelta"));Directory.CreateDirectory(output);
+  try{
+   QuestCatalog.ReloadForAudit();var all=QuestCatalog.All;
+   Check(all.Count(q=>q.QuestId=="main_22_northwind_signs")==1,"Main22.UniqueQuestDefinition");
+   var q=all.Single(q=>q.QuestId=="main_22_northwind_signs");Check(q.Objectives.Count==5&&q.PrerequisiteQuestIds.Contains("main_21_returning_warmth"),"Main22.FiveObjectivesAndMain21Prerequisite");
+   Check(q.NextMainQuestId==string.Empty,"Main23.NotIntroduced");
+   var mouse=Resources.Load<MonsterDefinition>("MonsterVisuals/FrostFieldMouse");Check(mouse!=null&&mouse.ExplicitIdleFrames.Length==4&&mouse.ExplicitAttackFrames.Length==4&&mouse.ExplicitHitFrames.Length==4&&mouse.ExplicitDefeatFrames.Length==4,"Mouse.VisualFrameReferences16");
+   Check(mouse.ExplicitIdleFrames.Concat(mouse.ExplicitAttackFrames).Concat(mouse.ExplicitHitFrames).Concat(mouse.ExplicitDefeatFrames).All(s=>s!=null),"Mouse.NoMissingSprite");
+   var prototype=Resources.Load<MonsterDefinition>("StoryEncounterReturns/Main22_MousePrototype");Check(prototype!=null&&prototype.MonsterId=="prototype_main22_frost_field_mouse","Main22.PrototypeMonsterResource");
+   var old=JsonUtility.FromJson<QuestProgressSaveData>("{\"ActiveQuests\":[],\"CompletedQuestIds\":[]}");Check(old.Main22ClueFlags==0&&GameSaveService.CurrentVersion==1,"Save.OptionalFieldDefault0Version1");
+   var scene=EditorSceneManager.OpenScene("Assets/_Project/Scenes/World_NorthF1.unity",OpenSceneMode.Single);Check(scene.isLoaded,"F1.StoredSceneLoads");
+   var roots=scene.GetRootGameObjects();Check(roots.SelectMany(g=>g.GetComponentsInChildren<Transform>(true)).All(t=>GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(t.gameObject)==0),"F1.MissingScript0");
+   Check(roots.SelectMany(g=>g.GetComponentsInChildren<WorldBounds2D>(true)).Any(),"F1.WorldBoundsPresent");
+   Check(roots.SelectMany(g=>g.GetComponentsInChildren<SceneSpawnPoint>(true)).Count()==2,"F1.StoredSpawnPoints2");
+   var maps=roots.SelectMany(g=>g.GetComponentsInChildren<Tilemap>(true)).ToArray();Check(maps.Length>0&&maps.All(m=>m.GetUsedTilesCount()>0),"F1.TilemapsPopulated");
+   Check(EditorBuildSettings.scenes.Count(s=>s.path=="Assets/_Project/Scenes/World_NorthF1.unity"&&s.enabled)==1,"BuildSettings.SingleEnabledF1");
+   var wolf=BeastCompanionCatalog.Get("wolf");var sheet=Resources.Load<Texture2D>(wolf.RunResourcePath);Check(sheet!=null&&sheet.width==3072&&sheet.height==384&&wolf.FramesPerSecond==12&&wolf.IconFrameWidth==64,"Wolf.IntegratedResourceAndIconContract");
+   File.WriteAllText(Path.Combine(output,"Result.json"),"{\"pass\":"+checks.Count+",\"fail\":0,\"playmode_repeated\":false,\"mode\":\"Combined stored-scene resource closure\"}");Debug.Log("EOD21_DELTA_COMPLETE "+checks.Count);EditorApplication.Exit(0);
+  }catch(Exception ex){File.WriteAllText(Path.Combine(output,"failure.txt"),ex.ToString());EditorApplication.Exit(1);}
+ }
+}

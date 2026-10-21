@@ -1,3 +1,227 @@
+## 2026-10-21 EOD 승인분 선별 통합 — 신규 최소검증 완료 / PR·원본동기화 진행 중
+
+Wolf Run6 v5 승인6파일 + Main22/F1/서리들쥐52파일 선별, 제품58파일. Main22 대사·TTS·전투수치·경제·보상은 PROTOTYPE/DESIGN_NOT_LOCKED. 기존 Wolf106/Main22 136/F1 64/Mouse40 각 QA 재사용·전수재실행0. 새 정적38+격리 Unity14 검증 PASS, Scene/Quest/리소스·Save 선택필드 연결 확인.
+
+Village v5 타일3 미술HOLD·OPEN16 해결0·본편미구현, 청취 미승인TTS READY64/152·미완BGM/SFX/영상 제품제외. 담당 문서는 파일별 선별·의미병합/고유HISTORY 보존. raw 진단로그는 개인경로/라이선스정보 비공개로 로컬보관, 공개본에는 판정마커만 유지.
+
+새 실측 dirty314/untracked595/staged0, 사용자957파일196,911,769bytes 백업·보호6758SHA. 원본Editor/Play/Refresh/포커스 조작0. branch `codex/eod-integration-20261021`, 제품 commit `b53344ce`. 아직 PR병합·원본SYNC 완료 선언 아님. [EOD 보고](../../EOD_ApprovedIntegration_LocalSync_20261021.md).
+
+# PLANNING 최종 2026-10-21 EOD — 바울 대표 “오늘 한 작업들 다 합치고 로컬 동기화” 승인 / Codex 실행 요청 생성
+
+- 바울 대표 지시: **“오늘은 여기까지 하자. 오늘 한 작업들 다 합치고 로컬 동기화도 해줘.”** 2026-10-21 선별 통합·로컬 원본 안전 동기화 **사용자 승인**.
+- 안전 실행 문서: `문서/00_프로젝트/LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md` (**`docs/planning`**; 최근 정정 commit `6bf153a3f75ac5ad657b0d80c5db89ede820157f`). **Codex 실행 이슈 [#47](https://github.com/HappyPaul812/Project-Limitless/issues/47)**.
+- 기획 GitHub 점검 출발점 remote `main` **`e4e9891f6f01ea95cada9e63b1f09946d94d6041`**, 열린 PR **0**; Codex 실제 실행 전 반드시 재조회. 이 대화 세션은 사용자 `F:\study\codex\Project-Limitless` 로컬을 직접 조작하거나 작업 실행을 시작할 수 없다.
+- **통합 대상**: (A) Wolf Run6 v5 사용자 승인 및 로컬 제품6파일 SHA6/6 적용 완료·기존 격리106PASS → GitHub PR/main 및 **중복 원본 재복사 없이** safe sync; (B) Main22 F1/서리들쥐 첫 플레이 QA136/64/40 PASS 기반 **실파일 충돌/구Save/ID 보호 게이트를 통과하는 최소 범위에 한해서** 제품PR 후보. 정식 대사·TTS/보상·경험치/경제는 PROTOTYPE으로 명시. 안전충돌 시 Main22만 보류, Wolf+문서 마감 이어감; (C) 기획/리뉴얼/신규아트/TTS/BGM 등 승인 상태를 보존하며 날짜/파일별 선별 문서·HISTORY 통합.
+- **통합 제외**: 서릿길 마을 v5 흙·서리·자갈 타일3 `ART_HOLD`·OPEN16 해결0, Main23 실제씬·Quest 미구현, Main24 스킬장착 영속 Save #46 미구현, 신규 미청취 TTS 재캐스팅 READY64/152, 미완 BGM/SFX/영상·기존 불합격 ZIP, 과거 중복 병합.
+- **원본 보호**: Save/UserData/Editor Settings·기존 10/20 사용자 dirty308/untracked548/stage0 (오늘 실측 수치 아님), 새 `Temp/EOD20261021` 안전 SHA백업, 원본 에디터/포커스/Play 무조작, reset/clean/force/stash 위험 명령 금지. separate `codex/eod-integration-20261021` 브랜치/PR→승인범위 main 머지→3자 SHA 실검증 때만 `SYNC_COMPLETE` 선언. 예상치로 완료 보고 금지.
+- **실제 작업 현황**: GitHub 기획 마감 계약·Issue 작성까지 확인. **원격 제품 병합·사용자 원본 main 동기화는 아직 Codex가 실행/완료한 증거 없음**. 후임은 Issue #47의 실제 결과/PR·SHA·LocalSyncProof 확인 전까지 `PENDING_CODEX_EXECUTION`을 유지.
+
+# PLANNING 최신 인계 — 2026-10-21 Wolf Run6 v5 원본 적용, Village v5 기술PASS·타일3 HOLD
+
+**자료:** 바울 대표가 Codex 작업완료 캡처를 전달. 아래 결과는 Codex의 사용자 로컬 PC 검사 보고이며 이 기획 세션의 직접 Unity/Windows 검증이 아니다.
+
+## A. Wolf Run6 v5 — 원본 디스크 반영 완료, GitHub PR/main 아직 미처리
+
+- 작업 브랜치 `codex/wolf-run6-v5-apply-20261021`, 최종 커밋 `f0dd59dd010759760811a7a1b516eab3969d500c`(사용자 첨부 이미지 기준).
+- 사용자 승인 게임 자산 6파일만 **실제 원본 디스크에 복사**, 복사 후 SHA6/6 일치; 사전SHA 및 기존4파일 복구백업 확보. 격리 제품 연결 Unity 106PASS/0FAIL 기존결과 재사용, 추가 최소 Import·컴파일·Resources 참조 검사 격리 복사본 PASS.
+- 공식 Wolf 정적 KeyArt·아이콘·기존 GUID/meta·Animator/Controller·Bear/Fox·Save/UserData 불변. **원본 Unity Editor 자연 Import와 사용자의 실제 손플레이는 아직 NOT_VERIFIED**. `WOLF_LOCAL_DISK_APPLIED / REMOTE_PR_NOT_CREATED / MAIN_NOT_MERGED`. PR 초안만 준비; Push·PR생성·main 병합0. 별도 사용자 승인 또는 명시적 지시 없이 원격 반영 강행 금지.
+
+## B. 서릿길 마을 GameArt v5 — 기술PASS / 흙·서리·자갈 타일 3종 미술 HOLD
+
+- 로컬 ZIP `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`; Codex **실 readback SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 아트 납품 보고 일치. CRC·Manifest·Seam PASS. 게임용 43종 중 수정3·기존40 byte 동일, 합격 건물·지붕·돌길 보호.
+- `codex/frostway-v5-tile-delta-qa-20261021`, 최종 커밋 `6a0436c08e15c5f83fc3d1dab9a3f026ce167af6` (사용자 캡처). 실제 Unity 16:9/4:3/21:9 및 통행 proxy **12/12 PASS**. **지면 타일 미술은 Earth/ThinFrost/Gravel 모두 반복주기 무늬 잔존으로 HOLD**, 사용자 마을 최종승인0.
+- 이전 검수의 **OPEN 16건 원본 CSV와 좌표 JSON 확보**했으나 해당 16개 대상은 기존 SHA와 모두 동일, 이 v5 변경으로 해결된 항목 **0건**. 원본 CSV에 없는 심각도 등급은 추측/조작하지 않음. 현재 담당 외부에서 행별 실제 파일/좌표는 열람 불가; Codex가 원문 16행을 공유 가능한 GitHub Issue #45 댓글·기획 인계 자료로 **사실 그대로 전파**하도록 요청하고, 기획이 해당항목 범위와 현재3 타일과 관계를 분류해야 함. 기존16을 확인 없이 일괄 수정하거나 `16개 결함=16개 모두 심각`으로 치환 금지.
+- 마을/기존 승인원본 디스크 변경0, Main23 구현0, main Push/병합0. `VILLAGE_V5_TECH_PASS / TILE3_ART_HOLD / OPEN16_RESOLVED0 / UNITY_ORIGINAL_UNCHANGED`.
+
+## 다음 권고와 작업 경계
+
+1. **늑대:** 원본 디스크 적용은 끝났으므로 Codex 동일6파일 재적용/106PASS 전수재QA 금지. 원격 PR/main 병합은 승인받아 별도 실행, 사용자 Save/UserData 및 dirty 파일 비파괴 동기화.
+2. **마을:** 동일한 단일 Base 타일을 계속 재가공하는 방식으로 주기성을 제거하기 어려우므로 **대체 타일 2개씩의 소규모 변형 파일럿(흙·서리·자갈)**을 제안. 이는 **아직 사용자 승인된 v6 제작/통합 지시 아님**. 먼저 v5 기존3종 SHA 보존·다변형 조합 5x5 미술 컨셉, TileGrid·cross-seam·실측 배치 계약을 검증할 필요. Open16 항목 원본16행은 Codex에게 근거를 받아 미술 유형/기능위험 분리, 승인된 최소 대상만 수리. 기존 돌길·SkillShop·Gable·나머지40·북부F1·Wolf 변경 금지. 최종 마을PASS는 대표의 실제 미술 승인 이후만.
+
+**운영:** 팀 담당들은 온보딩 완료이므로 지시문에 “너는 담당이다. GitHub에서 공부하고 와.” 문구 넣지 말고 제목부터 바로 본문 작성. `docs/planning`에만 기획문서 커밋, main 직접 변경/Push/PR 병합 자동 실행0.
+
+# PLANNING 최신 진행 — 2026-10-21 Wolf Run6 v5 제품 연결 106PASS, Frostway Village GameArt v5 실물 납품
+
+**입력 근거:** 바울 대표 제공 Codex 결과 화면 + 사용자 로컬 ZIP 경로, art-new [v5 납품 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md) 및 Issue #45. 이 기획 세션은 사용자 F:와 실제 Codex 로컬 worktree를 직접 조작하지 않았으므로 아래 제품 연결은 **Codex 보고**, Village v5 SHA는 **아트 담당의 납품 신고값**으로 구분.
+
+### 1. Wolf Run6 ArtRework v5 — 격리 제품경로 연결 완료 / main 미병합
+
+- 바울 대표 사전 승인: “늑대 괜찮아.. 승인..” 및 후속 “늑대는 게임에 넣고”. 승인된 아트의 추가 미술 재작업 금지.
+- Codex 결과 보고: `codex/wolf-run6-v5-apply-20261021`, commit `ab1b47ff9d46f4ed5883b85b73e87ca2036c83e6`. 본문에 의하면 승인 ZIP 실 readback SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351` 일치. 승인 Wolf Run 시트 신규 자산 등록·제품 Runtime 연결, **6파일(신규 PNG/meta2·C#4)**, 문서/증거 포함 총33개 파일. 기존 Icon/KeyArt/GUID/meta/Animator/Controller, Bear/Fox 보호.
+- 격리 Unity PlayMode 변경부 **106PASS/0FAIL**, 12FPS·6프레임 loop·양방향 이동·단일 타격·전투 종료 확인. 원본 보호4,351파일 변경/추가0. 기존 Search 환경 오류 1건은 별개; 원본Editor 자연Import·실물 손플레이 NOT_VERIFIED.
+- **중요 상태:** `WOLF_GAME_PRODUCT_WORKTREE_VERIFIED / REMOTE_MAIN_NOT_MERGED / ORIGINAL_UNCHANGED`. 로컬 제품경로 격리 구현≠사용자 본편 메인 반영. 다음 Codex는 기존 커밋 재활용→현재 main과 통합 충돌검토·PR 준비 및 승인 범위에 따른 안전 병합/원본 동기화 보고. 동의 없는 강제 Push·reset·clean·사용자 저장 덮어쓰기는 금지.
+
+### 2. Main23 Frostway Village GameArt TargetedFix v5 — 오프라인 납품 / Codex 실제검수 전
+
+- 바울 대표의 Windows ZIP 경로 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`. art-new 신고 SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`, 20,085,423 bytes, 72 entries, SHA256SUMS 71/71 및 CRC PASS(아트 담당 환경).
+- 원본 GameArt 43 PNG 가운데 **3개 수정 / 40개 바이너리 보존**. 수정: `Frostway_Ground_Earth_01.png` 24,062pix, `Frostway_Ground_ThinFrost_01.png` 23,973pix, `Frostway_Ground_Gravel_01.png` 31,120pix. 256×256 타일 edge/seam 자체 PASS. `Frostway_Path_Stone_01.png`, SkillShop 및 RoofGable v4 PASS본, 기타40종 변경 금지.
+- 기존 타일 3×3 반복/이음매 개선의 **실제 격리 Unity 시각 DeltaQA·대표 최종 마을 미술 승인 미실시**. 이전 QA CSV의 **OPEN16**은 행별 원본(대상 파일·좌표·재현조건) 미확보. art-new의 이번 수정으로 해결된 개별 OPEN16 = 0, 비검증 16을 막연히 '해결' 선언 금지. Codex가 이전 QA 작업경로에서 CSV 원본/실제 시각근거 검색, 있으면 16개를 분야별/심각도별 분류하고 현재 v5와 중복해결 대조; 없으면 `EVIDENCE_NOT_FOUND`로 남긴다. 원본 CSV 미확보 자체만으로 기존 PASS43 자산 재제작 금지.
+- 다음: Codex 별도 clean worktree에서 ZIP 실제 SHA 확인, 3개 변경분 중심 3×3/서비스 동선·3화면비 검증 및 사용자 감상용 캡처. OPEN16의 실제 항목 근거 확보; 전체 Main23 Scene/Quest·F1/Main22·Save 재검증 반복 및 본편 적용·main 병합 금지. Village는 **`OFFLINE_QA_PASS / CODEX_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING`**.
+
+### 공통
+새 담당 지시문은 이미 입사·온보딩 완료했으므로 “너는 ○○ 담당이다. GitHub에서 공부하고 와” 문구 없이 작업 제목으로 바로 시작. GitHub 역할별 최신 정본은 담당자가 작업 시작 시 자율확인. 관련 Issue [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) / [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45). 기획 GitHub 문서화만 `docs/planning`, 본편 main 직접 커밋 없음.
+
+# PLANNING 최신 확정 — 2026-10-21 Wolf Run6 v5 바울 대표 최종 미술·모션 승인
+
+**사용자 직접 결정:** 바울 대표가 Codex 격리 12FPS/128px 모션 QA 결과를 보고 **“늑대 괜찮아.. 승인..”**이라고 최종 승인. **Wolf Run6 ArtRework v5 `USER_ART_MOTION_APPROVED`**, 이전 `USER_FINAL_MOTION_APPROVAL_PENDING/HOLD`는 이 승인 시점부터 해제(이전 기록은 당시 단계로 보존). 기존 단일 정적 Wolf KeyArt v5 승인과 구별; 새 Run6 v5 전6프레임 모션 승인이다.
+
+- 고정 납품물 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`, **실제 Codex readback ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`**.
+- Frame00~04 기존 v4 byte 동일, Frame05 174 RGBA픽셀 수정, CRC/Manifest/PNG/Strip/Atlas 기술 PASS. 격리 Unity PlayMode 12FPS·128px 수정부 미술 PASS, 바울 대표 최종 모션 승인 완료.
+- 아트 리뉴얼 담당은 **Run6 v5 프레임 추가 재작업 금지**; 승인 PNG와 기존 KeyArt SHA 보존. 미술 승인 = **본편 Unity 적용 완료 아님**. 기존 Wolf 런타임·GUID/meta/Save/UserData·main 변경0. 실제 펫 연동/애니메이터/런타임 QA 및 PR/원본 적용·병합은 별도 Codex 통합 범위와 사용자 승인으로 진행한다. 본 승인만으로 main 커밋/Push/병합을 자동 허가하지 않는다.
+- Village v4는 별도 **전체 미술 HOLD** 계속. 흙·얇은 서리 타일 반복무늬, 자갈 수용 판단, 이전 검수 CSV OPEN16이 남는다. 늑대 승인으로 마을 승인 확대 금지.
+- 관련 기획 격리QA 보고 Codex branch `codex/qa-frostway-v4-wolfrun-v5-20261021`, 스크린샷 보고 commit `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`(원격 반영 여부 별도 확인 필요). 이슈 [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 및 [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45).
+
+# PLANNING 최신 추가 인계 — 2026-10-21 Village v4·Wolf Run6 v5 Codex 격리 DeltaQA 결과 수신
+
+바울 대표가 Codex 검수 화면 2장을 전달함. 이는 **사용자가 전달한 Codex 검사 보고**이며 기획 담당이 사용자 Windows F: 바이트/Unity Editor를 직접 검사한 결과가 아니다. 스크린샷의 Codex 브랜치 `codex/qa-frostway-v4-wolfrun-v5-20261021`, 보고 커밋 `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`; 현재 GitHub 원격 브랜치 검색에서는 나타나지 않아 원격 Push/PR/merge 완료로 주장하지 말 것.
+
+- **공통:** 두 ZIP 실제 SHA256이 납품 보고와 각각 일치. CRC·Manifest 정상. 사용자 원본 4,351파일 변경/추가0, 기존 Wolf 교체0, Main23 구현0, 기존 전체회귀 수행0, Push/병합0이라고 Codex가 보고. PDF/이미지의 Unity 자료는 Camera/RenderTexture 촬영이며 Editor GameView UI 캡처와 구분.
+- **A 서릿길 마을 GameArt v4:** 실 ZIP SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`. PNG43/이전 나머지41 SHA 동일. SkillShop 잔여 조각 2,496셀, Gable 712셀 제거를 확인, 정상 본체 손상 없음. 실제 격리 Unity 16:9·4:3·21:9 검사에서 문·벽·지붕 접합·Sorting 이상 미확인. **기술 PASS / 표적2 PNG 미술 PASS / 마을 전체 미술 HOLD**. 흙(Earth)과 얇은 서리(ThinFrost) 타일 반복무늬 개선 권고, 자갈(Gravel) 반복은 대표 수용판단 필요, 돌길(Path Stone)은 반복 사용 가능 의견. 기존 검수 CSV의 **다른 OPEN 16종은 이번 수정으로 해결되지 않았음**. 타일 개선은 해당 파일만 표적 미술 수정 검토, 기존 41종 전면 재제작 금지. 대표 수용/수정결정 및 실제 세부16 OPEN 분석 전 마을 전체 PASS 선언 불가.
+- **B Wolf Run6 v5:** 실 ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`. Run Frame00~04 바이너리 동일, Frame05 지정 범위 174 RGBA 픽셀만 변경. 실제 격리 Unity Play Mode에서 **12 FPS, 128px** 시연 검증. Frame05 뒷다리 각진 움직임 개선, 변경 영역에서 추가 결함 미발견. **기술 PASS / 변경부 미술 PASS / 전체 달리기 모션 바울 대표 최종 승인 대기 HOLD**. 기존 승인 Wolf KeyArt v5/공식 펫 런타임/기존 GUID 보호.
+- **기획 권고/다음 1~3순위:** ① 바울 대표에게 Wolf Run6 v5 모션 최종 승인 여부 및 Village 타일 수용/개선 범위 확인(선승인 금지). ② 신규아트 담당은 승인 시 흙·얇은서리 반복 패턴만 국소 완화, 자갈은 대표 판단에 따라, 돌길/기존 건물/타일 외 자산 보호; 기존 OPEN16의 실제 범위/우선순위를 별도 확인하고 전수 반복QA 금지. ③ 승인 결과별 Codex 격리 변경분 QA 및 추후 본게임 Main23/펫 반영은 **별도 사용자 승인 후**. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS 재수행 금지. Main24 Skill Equip Save 이슈 #46 유지.
+
+근거: 사용자가 2026-10-21 업로드한 Codex 결과 이미지 2장. 이전 실물 납품 계약 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md`. 연관 Issue #45/#43.
+
+# PLANNING 최신 인계 — 2026-10-21 Village v4 수정2 + Wolf Run6 v5 05프레임 합동 격리 QA 발주
+
+바울 대표 신규 Windows F: ZIP2종 실경로 전달. 기획세션은 F: 직접 bytes 확인 불가, 담당 docs/art-new·docs/art-renewal 최신 GitHub 납품문서 검사. **Codex 사용자파일 실제 ZIP SHA readback 및 두후보 미술승인 전**.
+**A Village TargetedFix v4** `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`: art-new reported SHA `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`, 19,767,770bytes/70entry; v3 PNG43 중 41 byte-identical. 단2 PNG detached component alpha만 삭제: `Frostway_SkillShop_Building.png` x12..28/y196..376 2496px, 새 SHA ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17; `Frostway_Roof_Gable.png` x100..144/y183..206 712px 새 SHA 37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0. 정상 본체 불변. 기존 타일 4종 모두 SHA 동일·픽셀edgePASS이나 **3x3 반복 무늬 ART_HOLD**, 파일별 좌표/비교근거 존재, 변경/미술 PASS 자동선언 금지. Codex 격리 실제 Unity 3비율 단2 Sprite 교체·접합과 타일 미술 반복감 판단 후 대표 최종승인.
+**B Wolf Run6 v5** `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`: renewal 신고 ZIP SHA `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`, 2,663,380 bytes, 6x512×384/12FPS. 00..04 Run v4와 동일 PNG bytes, 유일 Frame05 174 RGBApx bbox x318..333/y245..280의 뒷다리 윤곽 아트 수정, 새 05 PNG SHA d3d53b94be9084bfd9b2a0bbe6fa492b903138b37c86e7068c9eaefbe8b1194c. 승인 Wolf 단일 KeyArt v5 unchanged, 별도 Run6 모션 최종 승인 대기. Codex 격리 실 12FPS v4→v5 05→00 루프/접지/관절 가독성 DeltaQA, 기존 공식 펫 미교체.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md` (docs/planning commit 3ab1a75078e1736bf1c48081eb488cd8245cc7fd), GitHub Issue #45/#43 최신 납품 댓글. 두 ZIP 모두 **아트 담당 자체 파일기술 PASS**, 실제 사용자 F: 바이너리 SHA/격리 Unity 실제QA/최종미술 미검증. Codex Main22 136PASS+F1 64PASS+Mouse40PASS 및 Main23 preflight 재시험 금지, 원본 Unity/Save/UserData/Editor/main 및 유저 다운로드 ZIP 보호. SKU/잡템/한기소모템/스킬아이콘 backlog + #46 영구장착 Save 미해결 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Village v3·Wolf Run6 v4 기술 PASS / 미술 FAIL 표적 2+1 수정
+
+Codex 최종 DeltaQA branch `codex/qa-frostway-v3-wolf-run6-v4-20261021`, commit `695f6f74e63996bb9d0ba0561dc6518f1e7af049`. **두 ZIP 실제 SHA가 art-new/renewal GitHub 납품보고와 각각 일치**, 내부 CRC/Manifest/PNG 전 PASS. 원본 4351 파일/Save/UserData/Editor/Git 불변, main 직접 Push/병합 없음.
+**Village GameArt v3 43png** 실제 격리 Unity 16:9/4:3/21:9/소규모 조립·통행 PASS이나 **미술 FAIL**: `Frostway_SkillShop_Building.png` 이웃 원화 조각 x12..29/y196..376, `Frostway_Roof_Gable.png` x100..144/y183..207. 타일 pixel-edge PASS/반복무늬 미술 HOLD. **art-new는 이2 PNG만 v4로 교정**, 다른41 byte SHA SAME, 타일 패턴은 문제 파일·정확 위치 증거만 별도 후속(기존타일 전면변경 금지), 3비율 비교·SHA/CRC·기존 Source11/F1승인6 보호. 아직 본 게임 Main23 Scene·Quest 미구현/미술승인대기.
+**Wolf Run6 v4** 실ZIP SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412` 및 실 격리 Unity12FPS 재생 기술 PASS, Run00..03 SHA 동일 및 Run04 뒷다리 개선 유효. **미술 FAIL**: `Wolf_Run_05_v4.png` x315..338/y235..280 뒷다리 윤곽 직각 끊김. **art-renewal은 Run6 v5 05프레임 뒷다리만 원화 수준으로 보정**(00..04 전부 SHA 동일, 기존 Wolf v5 승인 KeyArt/Run04 꼬리 보호), 모션 05→00 loop/발 접지 QA 후 대표 최종 모션 승인. 기존 공식 Wolf 펫 교체0.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v3_WolfRun_v4_ArtFail_TargetedRetouch_Orders.md` (docs/planning commit `12f8dd9ee91cd10d2c3c68addbba5ec52b038425`). Issue #45/#43 최신 댓글. 기획 내부 자산대장 신규 스킬/아이콘·어묵탕·전리품과 Skill Equipment Persistence #46 계속 유지. 기존 Main22 136/F1 64/Mouse40, Main23 기술 preflight 재실행 금지. 두 아트 새 ZIP 후 Codex 하나의 DeltaQA, 원본 Unity/Save/UserData/Editor/정식 main 변경·Push/merge 금지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Village GameArt v3 및 Wolf Run6 v4 신규 ZIP 합동 QA 발주
+
+바울 대표가 실제 로컬 입력 2개를 제시: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip` 및 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`. 기획자는 F: 직접 읽지 못했고 두 담당의 GitHub 납품 보고서 확인.
+**A. docs/art-new Village v3**: ZIP 보고 SHA `2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`, **59 entries/43 독립PNG**: Tiles4/Transitions2/Buildings5/Modular9/Props14/Signs6/InactivePortal3, QA Preview12/Metadata4. 기존 v2 합성콘셉트11 재압축 방식의 GameReady FAIL을 개선한 실제 게임용 Sprite 후보, 파일/Alpha/2x2 seam 오프라인 자체 PASS이지만 마을 Unity PPU/Pivot/Sorting/건물 조립/문/휠체어 동선/타일 반복 시각/3 GameView 및 대표 미술승인은 **별도 검증 대기**. 이전 v2 ZIP SHA 불일치 원인 미해결; 새 F: ZIP 실제SHA부터 읽고 ID 검증.
+**B. docs/art-renewal Wolf Run6 v4**: ZIP 보고 SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`, **34 entries**. v3 포즈00~03 바이너리 유지, 04 뒷다리/후지4368pix 05 전지·앞발 루프7542pix 수정. Run04 이전 꼬리복원 영역 픽셀 불변, 512×384 six LEFT/12FPS Strip/Atlas/GIF APNG 존재. 새 v4 미술/실제 12FPS Unity QA 미검증; 구 v3 실재생 PASS/미술 HOLD를 무단 수정 금지. 승인 v5 KeyArt/기존 공식 Wolf 펫 교체 금지, 이전 v3 배포본 ZIP SHA11Byte 차이 있음.
+**Codex 다음 1회 격리 QA**: `codex/qa-village-v3-wolfrun-v4-20261021` separate clean worktree, 두 ZIP SHA/CRC/Manifest actual readback 및 각 Sprite의 actual Unity GameView vs offline 결과 엄격 분리; A Village GameArt role43별 개별png+건물 조립·반복/동선·Sorting/ServiceSigns 최소 Unity 3비율 프리뷰 검수, B Wolf Run04/05 델타와 05→00 실Unity 12FPS 재생/후지·접지·128px 가독성. 이전 Main22 136PASS/F1 64PASS/Mouse Battle40PASS 전수 재실행0, Main23 scene/quest 실제 구현·원본 Unity/Save/UserData/Editor/main Push·병합0. 납품본별 기술/미술/게임준비·대표 승인게이트 각각 보고.
+기획 정본 `문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md` (`docs/planning` commit `67a0b1598883ff6f81e49561e8980c4937910ed6`), 관련 Issue #45/#43 최신 댓글 반영. Main23 기술 사전점검 이전 완료; 상품/아이콘/잡템/어묵탕, Main24 스킬 장착 영구 Save 이슈 #46는 내부 대장 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 마을 v2 GameReady FAIL / Wolf Run6 v3 모션 HOLD / 두 ZIP SHA 불일치
+
+바울 대표 전달 Codex 합동 QA 화면: 브랜치 `codex/qa-frostway-village-wolf-run6-20261021`, 커밋 접두 `c61f2b10`. **두 ZIP 내부 CRC/Manifest/PNG 디코딩 PASS**, 하지만 **담당 GitHub 납품보고의 전체 ZIP SHA256과 실제 Windows ZIP 해시 불일치**. Village 예상 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad` vs 실제 `19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`; Wolf Run v3 예상 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` vs 실제 `f7eb4122b150e351900a4ab7ea82c802809605bd0444be89e36f6bf167dcd008`. 양 아트 담당 ZIP 엔트리/메타·개별 PNG SHA 대조하여 원인을 확인할 것. 내부 파일 PASS가 동일 ZIP임을 뜻하지는 않고, SHA 불일치 자체가 곧 변조를 뜻하지도 않음.
+
+**Main23 서릿길 마을 v2**: 콘셉트 미술 HOLD/게임용 Sprite 분리·완성도 FAIL, 격리 Unity GameView 미실행·오프라인 QA만. 콘셉트 PNG11/화면비 프리뷰는 있지만 개별 독립 지면 Tile/서리 경계/길, 건물·문·서비스간판/생활 소품/비활성 포탈 Sprite가 실제 게임용으로 부족. 21:9 요청인데 16:10 프리뷰를 끼워 넣은 오류. **docs/art-new는 기존 콘셉트 원본 유지→독립 Tile/건물/소품 실제 2D 투명 PNG의 Village v3**를 제작하되 F1 승인 PNG6·기존 Scene 변경 금지. 실제 Unity Import/Quest Main23 구현 여전히 대기.
+
+**Wolf Run6 v3**: 기술/격리 Unity 실제 12FPS 재생 PASS, Frame03/04 꼬리 복원/기존 00/01/02/05 바이트보존 PASS. 하지만 Frame04 뒷다리·중간 신체 비율/발 접지/05→00 loop 문제로 **모션 미술 HOLD**, 대표 승인 없음. `docs/art-renewal`은 **Wolf v5 승인 1포즈 보존**, Run6 v4에서 동작 문제에만 표적 개선, 다음 Codex deltaQA·대표 모션 승인. 기존 공식 Wolf 펫 런타임 교체/Unity 원본·Save/UserData/Editor 변경0.
+
+기획 정본 `문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` (`docs/planning` commit `296e0ca8c8207b8119c06b0cf6f8501f71d7977a`), GitHub [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) / [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 댓글 작성. Main23 Codex preflight는 완료, 기존 Main22 격리136PASS/F1 64PASS/Mouse Battle40PASS 재QA 반복 금지. Main24 스킬 장착 Save 지속성 Issue #46, Icon/잡템/어묵탕 내부추적 계속. 전체 재시작·main 직접 커밋/Push·병합 금지.
+
+# PLANNING 최신 인계 — 2026-10-21 서릿길 마을 v2 + 늑대 Run6 v3 실제 ZIP 합동 Codex QA 요청
+
+바울 대표가 이번에 로컬 두 ZIP 경로 직접 전달: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip`, `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`. docs/art-new 확인 Village v2 SHA `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`, 19파일(원화콘셉트 11/OfflinePreview4/Metadata4). **영문 재압축된 콘셉트 원화**지 Unity-ready 독립 건물·타일·소품 Sprite가 아님. Codex는 게임 실사용 분해가능성/누락 Sprite/동일 크기 미술검토만 먼저; 실제 GameView 주장 금지. docs/art-renewal 확인 Wolf v3 ZIP SHA `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` 36파일, 원본 Run 00/01/02/05 보존, Fail Run03/04 꼬리·뒷발 표적 수정. 자체 CRC·PNG/strip/atlas PASS, **실제 동작12FPS와 05→00·몸비율/발접지/Unity Import 및 대표 모션 승인 대기**. 승인 KeyArt v5 변형 금지. 두 ZIP은 F: 사용자 파일 직접 검사 전, 자체 SHA 보고만 존재. Codex 다음 작업은 두 패키지 비파괴 한배치 QA, Village Concept/RuntimeGameReady 등급과 Wolf 기술/모션/Runtime 검증 각각 별도 보고. Original Unity/Save/UserData/Editor/dirty/이미 승인 F1/마을 Main23 선행기획/Main22 적용준비 보호; main 직접 Commit/Push/merge 금지, 기존 QA136+64+40 반복금지.
+
+기획 계약 `문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md` (`docs/planning` commit `bfff995e76297e66d22efa72890ded28597ae34b`), Issue #45/#43 동기화. Main23 기술 preflight 완료 `74bd1de85582...`, 예약ID20개 충돌0; `docs/art-new` 마을 실제 256 Tile·개별 Building/Props 미술은 아직 미승인. Main24 Skill6슬롯 저장 지속성 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46) 유효, 아이콘/소모템/잡템 대장은 내부 지속 관리.
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 기술 사전점검 완료 / 마을 아트 대기 / 스킬 저장 누락 추적
+
+바울 대표 전달 Codex Main23 서릿길 마을 read-only preflight 완료: `codex/chapter3-main23-village-preflight-20261021`, commit `74bd1de8558244405a2935e5fca96fcc2f0bb307`. Main22 완료→Main23 해금, 5목표 후보, F1 북쪽→마을 남문, SafeZone/Checkpoint/SaveContinue/기존 서비스 재사용 계약, F2 북문 차단·동쪽 포탈 OFF 부지 예약. 후보 ID20개 Main22 기존 목록과 중복0. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS QA 재사용, 전수재QA0. **실제 Main23 Scene·Quest·NPC 생성0, 원본4,351파일/Save·UserData/Editor 보호, main Push/merge0**.
+
+**진행 중인 신규 미술**: `docs/art-new` 서릿길 마을 Environment ArtPilot v2 제작은 이미 사용자에게 지시/진행 중, 재발주 금지. 완성 실물→대표 미술 승인→Codex 격리 Unity 마을 GameView/동선/문·CheckPoint QA→Main23 격리5목표 최초 플레이. NPC/Quest 정식 ID, 상품·가격·보상/대사·TTS는 아직 미정.
+
+**중요 기술 부채**: 스킬 장착 정보 현재 메모리 전용, Save/Continue 영구 복원 안 됨. Main24 첫 스킬 상점 정식 런타임 출시 전 필수 `Save/Load 장착6슬롯·구매·강화/유효성·구버전 세이브 migration` 별도 추적 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46). 이는 Main23 첫 도착/Save 구현 자체는 막지 않지만 Main24 상점과 이용자 스킬 복구 필수 블로커. 사용자 원본 세이브 복구/유니티 구현은 아직 승인된 작업 아님.
+
+기획 기록 `문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md` (`docs/planning` commit `2eda4d8159c260ced19404a24c24eaec0c3fea17`), Main23 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 최신 코멘트, Skill Save Issue #46. 현 GitHub main은 EOD 10/20 SHA `e4e9891f6f01ea95cada9e63b1f09946d94d6041`, 별도 Codex Main22 원본 반영 준비완료·제품 미병합, 리뉴얼 담당 Wolf Run6 미술 FAIL 재작업 중. 두 담당 재지시 금지. 기획 내부 아이콘·잡템·따끈 어묵탕 카탈로그 누락 추적 유지.
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 두 담당 작업 지시 완료, Main22 적용 준비 완료 / Wolf Run6 미술 FAIL
+
+바울 대표는 **Main23 art-new 서릿길 마을 ArtPilot v2 발주와 Codex 별도 Main23 기술 사전점검 지시문 두 개 모두 전달**. 현재 산출물 기다리는 중, 동일 지시 반복 금지. 정본 20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md; Issue #45.
+
+**Main22** Codex branch codex/chapter3-main22-apply-preparation-20261021, 최종 커밋 2631e8750df8d98fb298754f3c82c5ca651c2fda, 제품 경로583건/반영13 신규40 기존수정5 분류·안전 PR 통합 계획. 기존 격리 QA136PASS + F1 64PASS + 서리들쥐 Battle40PASS 재사용. 원본 Unity·Save/UserData/Editor 변경0, remote main 제품 반영/PR 병합 없음, 정식 대사·TTS/보상/밸런스 임시. 적용 승인 요청 필요. Issue #44 현황 기록.
+
+**Wolf Run6** Codex branch codex/wolf-run6-candidate-qa-20261021, 최종 c47d7ba17c6332b28379b7c2ae315ed1ad30ec1e, ZIP c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad, 29개 파일 기술 CRC/SHA/PNG PASS. 미술 FAIL: Run03·04 꼬리 잘림, 중간 프레임 몸 비율·발 접지 불안정. Unity Import/실시간 GameView 미검증. 승인 Wolf v5 정적 원화는 절대 변경하지 않고 docs/art-renewal에서 **Run6 미술만 재작업** 후 별도 후보 납품/QA/대표승인. Issue #43에 정확한 결함 기록.
+
+통합 정본 20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md (docs/planning commit 4f46cb18a453dac45557fa02af92929aa006b7cc). 현재 메인 아트와 Codex Main23 작업은 별도 진행 중. 고유 Skill·소모품·잡템 아이콘 누락목록 기획 내부에서 지속 관리. main 직접 Commit/Push/병합 금지, user original/Save/UserData 보호.
+
+# PLANNING 최신 인계 — 2026-10-21 Main23 서릿길 마을 Art Pilot v2 + Codex 기술계약 병렬 발주
+
+바울 대표 “챕터3 다음꺼 시키자.” → 다음 스토리 **Main23 「따뜻한 땅을 떠난 자들」**, F1 심부 남하 동물 흔적→서릿길 마을 남문 도착→주민/태온 하렌 대화→북부 첫 SafeZone 체크포인트와 자유 탐색. 마을 북문F2 한기/스킬은 Main24, 족제비 별도 지정전 보류. 설빙의 폭군 보스 Combat 후순위. 마을 동쪽 **미래 포탈 광장 빈 부지 약7×7WU 예약·비작동 유지**.
+
+이미 F1 승인 환경6 실제 격리 Unity64PASS/0FAIL, 서리들쥐 Battle40PASS, Main22 격리136PASS/0FAIL, 사용자 “잘된다”. Main22 사용자 원본 local Unity 및 remote main 미병합; **Codex에게 Main22 적용 준비와 WolfRun6 후보QA를 이미 별도 지시**했으므로 새 Main23 구현을 기존 기능 브랜치에 섞지 말 것.
+
+**즉시 병렬**: art-new는 서릿길 마을 **실물 환경ArtPilot v2** (과거 Village 4 PNG는 오프라인 포맷 QA만 PASS·미술 미승인); 승인 F1을 수정하지 않고 북부 회갈색 돌기초/돌길·목석건물·지붕/문·일반/스킬상점/여관 표식, 장작/랜턴/보급상자, 미래 비활성 포탈 기단/7x7 비점유 광장, 도보·휠체어 남북3WU 통로 후보·3화면비 오프라인 합성/실PNG Manifest SHA ZIP. Codex는 별도 worktree에서 현재 Main22 branch/Main21 SafeZone·Quest/SceneID/PPU/TileGrid/Spawner/Save·북부마을 NPC/Service 계약만 **읽기전용 기술감사·잠금**, Scene/Quest 실구현 전승인 필요. Meta/GUID·원본 user Save/UserData/Editor·main 직접 Push/병합0.
+
+기획 계약 `문서/00_프로젝트/20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md` (`docs/planning` commit `1dd71d4c91db1c55c4b843fb273a64f12649db44`), 새 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45), 기존 Issue #30/#36 최신 댓글. **메인 아트 담당 지시 후 Codex 프리플라이트는 현재 업무 종료 시점에 별도 전달**. 스킬 아이콘/냉기 소모품/북부 잡템 스프라이트 카탈로그 누락은 기획 내부대장 관리, 아직 ID/상품/가격 임의 확정X. 사용자에게 긴 우선순위표 노출하지 않음.
+
+# PLANNING 최신 인계 — 2026-10-21 Main22 첫 플레이 격리 Unity 136PASS/0FAIL, 바울 대표 “잘된다”
+
+Codex Main22 5단계 최초 플레이(초보 마을 북문 명시 출발→F1 안전스폰→서리 조사→동물 이동 단서2→서리들쥐 단독 지정전투 승리→F1 쉼터 종료) 구현 완료, QA branch `codex/chapter3-main22-first-playable-20261021`, 최종 `be7f64a3ff48a8848471166d4aefc4969080bd8b`. **신규 변경분 QA 136 PASS/0 FAIL**, 기존 F1 64 PASS와 서리들쥐 Battle40 PASS 재사용(반복0). 실제 격리 Unity GameView와 단계별 Quest 목표·방향/마우스/휠체어, Save/Continue, 마을 복귀, 도주·패배 재도전 보고. 바울 대표 “잘된다” 긍정 피드백 → `USER_POSITIVE_FIRST_PLAYABLE`, 사용자 원본 Unity 직접 손플레이 검증이나 `main` 공식 병합 승인으로 확대하지 않음.
+기획 최신 정본 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_136PASS_IsolatedQA_And_ProductionGate_20261021.md` (`docs/planning` commit `c773df6d73141a1ff9ed5094c5501c860c73034e`), 구현 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 진행 결과 댓글. **아직 원본 적용0 / main PR merge0**. Main22 정식 스크립트/TTS·서리들쥐 레벨/EXP/드롭·잡템 아이콘/보상 정본 미확정, Prototype 임시대사·무보상 구별. 사용자 기존 Save/UserData/Editor·4351파일 보호. 다음 작업은 신규 구현 재시도가 아니라 **분리된 원본 안전 통합/PR 승인** 또는 스토리·보상 마무리 중 우선순위 결정. 임의 Main23, 북부 폭군·한기 시스템 추가 금지. 리뉴얼 Wolf Run6 병렬 제작 계속.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 F1 격리 실제 Unity 64PASS, Codex Main22 5목표 첫 플레이 구현 발주
+
+바울 대표 Codex 최종 F1 preflight: branch codex/chapter3-f1-unity-preflight-20261021, QA commit **8cf6cd7ebeb2f9b5d2f08c9151ceca84bb271c77**. 승인 NorthF1 6종 SHA/Import/PPU/Pivot/TileGrid/Sorting·실제 GameView 16:9/4:3/21:9·흙↔서리 타일 접합·도보/휠체어 길·소품 Collider·카메라 경계·격리 임시 출입/SaveContinue 모두 **64PASS/0FAIL**. 시각 통로 가시폭 최소1.45WU, Collider 지름1WU. **실제 World_StarterVillage 북문은 여전히 닫힘, Main22 Quest/Scene 완료 및 원본 Unity/main 적용은 아직0**. 기존 Mouse Battle40PASS 반복검사X.
+기획 신규 Main22 5목표 vertical slice 계약 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_IsolatedImplementation_Order_20261021.md` (**docs/planning commit a0906010c530d9a4e557ff415822ddcd9e64381e**) + 신규 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 실행 지시. 별도 Codex worktree/branch codex/chapter3-main22-first-playable-20261021: 기존 F1 격리 실물과 기존 Mouse Combat40PASS 연결을 선택 재사용→Main21 13목표 완료 후 마을 펫NPC 자유사용/북문 명시 출발→F1 임계 안전 Spawn·흙서리조사1·남하 이동단서2·고유 서리들쥐 단독지정전 승리·안전 쉼터 정리→Main22 완료. HUD에 조사 조작·목표마커·도보/휠체어 접근성 명시, Save/Continue/이탈·재입장/전투 패배·도주 재시도 minimal delta QA. 미확정 ID/몬스터 숫자·드롭·EXP·보상은 현행 catalog 분석 후 임의 확정/신규 밸런스 생성 금지, 텍스트는 QA Prototype vs 최종Dialogue/TTS를 구분. **사용자 원본 Unity/Save/UserData/Editor/main 직접 Push/병합 금지**, 격리 구현 먼저 보고받고 원본 적용/PR은 별도 결정. 기존 Issue #35는 읽기전용 preflight로 마감 기록, Main22 실제 구현은 #44로 분리.
+리뉴얼 담당 `docs/art-renewal` Wolf v5 기준 Run6 고품질 실제 PNG 제작(`d3bf6e4e`), 신규 메인아트 F1은 6종 사용자 미술 승인 완료·재그림 불필요. 내부 Chapter3 스킬아이콘/냉기소모템/몬스터잡템/Quest 인벤토리 자산 누락대장 계속 기획 관리, 아직 스킬 상점·새 아이템 임의 게임 구현 금지. 최종 보스 표기 **설빙의 폭군**, 이번 Main22 범위 아님.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 리뉴얼 담당 Wolf v5 기반 Run6 실물 아트 제작 착수
+
+바울 대표 “리뉴얼도 일 시켜” 요청. Chapter1·2 리뉴얼 담당 docs/art-renewal에 **Wolf v5 사용자 미술 승인 단일 KeyArt**(SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1) 기반의 **6프레임 고품질 달리기 Run 아트 파일럿** 실PNG/12fps/128px·40px preview 제작 지시. Wolf v5 Codex 시각 HOLD(뒷다리 옆 검은 돌기)는 대표 **현 상태 허용**, Wolf v6 재보정 지시 금지.
+기존 컴패니언 Run 실제 384×40/64×40×6/12fps/LEFT/IconIndex4/Scale2/FootPivotBottom을 참고하되 그 작은 셀을 새 아트 원화 규격으로 강제하지 않음(이전 Wolf Run v1 보노보노형 품질 반려). 원화 6 pose 고해상도와 Candidate Strip 각각 별도 납품, 기존 v5 실루엣·털 톤·늑대다운 발달림·루프03~05→00·공격 돌진 명확성 보호. 실제 엔진 PPU/Runtime mapping·GUID/Motion 승인 미검증, 신작 64×40 임의 강제/사용자 원본 Unity 전투 교체/Chapter3 미술 침범 금지.
+기획 공식 계약 문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md (docs/planning commit d3bf6e4e52e6a20f478cd6aa793eee1b7080bdc4), Issue #43 댓글 추가. 메인아트 담당 NorthF1 v3 6종 사용자 승인→Codex 별도 격리 실제 Unity F1 GameView/TileGrid/휠체어 첫 플레이 preflight 진행, 이 작업과 병렬. 맹독뱀 v3 static Codex PASS 권고 but USER_PENDING, 추가 Snake 모션 제작 허가X. 기타 Bear/Fox는 Wolf Run 사용자 미술 승인 이후로 미룸.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Wolf v5 현 상태와 NorthF1 v3 6종 최종 미술 승인
+
+바울 대표가 Codex 2026-10-21 Delta QA 화면을 보고 **“보니까 괜찮아.. 승인..”** 답변. **두 ZIP 모두 사용자 미술 승인**으로 잠금. 근거 Codex branch codex/art-review-wolfv5-northf1v3-delta-20261021, QA commit a6472c51054fdc6933cb065c21a9438d041b1595. ZIP/PNG 기술 PASS, 기존 전수QA 반복X, 비교는 오프라인 합성(실제 Unity GameView 아님), 원본 Save/UserData/Editor/4,351파일 보호, 공식 Unity 적용/Push/main병합0.
+**Wolf v5 단일 1포즈**: 검수자는 기술PASS·미술HOLD(뒷다리 옆 검은 돌기 x150~194/y1125~1174)를 유지했으나 **사용자가 그 결함을 직접 보고 현 상태를 승인**함. **CODEX_ART_HOLD + USER_ART_APPROVED_AS_IS_WITH_KNOWN_ARTIFACT**라고 정확 기록하고 강제 Wolf v6 재수정 요구 금지. ZIP SHA 920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7, Wolf v5 PNG SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1, v3/v4 보존, RGB 변경0/Alpha 감소2,174. 이 승인은 실제 Wolf Run 애니메이션/펫 시스템 변경 허가가 아니며 정본시트 기술계약 별도. 맹독뱀 v3 CODEx static PASS 권고, 대표 최종 승인 미완.
+**NorthF1 v3**: Codex 기술 PASS, 미술 **6/6 PASS**(v2 흙/길/관목 3 SHA 그대로, v3 얇은서리/전환/길표지 3 PASS), 바울 대표 최종 미술 승인. ZIP SHA 488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054; 6 PNG 개별 SHA는 승인정본 참조. **F1은 미술완성이나 Unity 원본 실 Import/실제 GameView/PPU/TileGrid/Collider/휠체어 물리 통행/Main22 진입·퀘스트는 미검증**. 다음 Codex는 기존 #35 사전 기술조사 재사용하여 **독립 격리 Unity F1 환경 게임화 기술 계약 및 실제 GameView** 먼저 확인, 새 전체 Main22 런타임 구현/원본 main 직접 변경 없이 보고. 서리들쥐 Battle40PASS 재QA/중복 구현 금지.
+기획 승인 정본 문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md (docs/planning commit c0130e5030a04ddb0a904b1fb33097c918d223cb). GitHub Issue #43 Wolf 및 Issue #30 F1 사용자 승인 댓글 작성. F1은 이제 Main22 첫 플레이 기술 잠금 1순위, 설빙의 폭군 전투 후순위, 아이콘·잡템·소모템 내부자산 대장 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Wolf v4 HOLD / NorthF1 v2 부분 PASS: 수정 1+3종만
+
+바울 대표 Codex QA 보고: branch codex/art-review-wolfv4-northf1v2-20261021, 최종 2471b1f2e98413dfaf0a705fc63cfdd7c8688fb5. 두 ZIP 기술 PASS, 원본 Wolf v3 + F1 원본6/승인 후보 SHA 보존, 비교는 오프라인 합성(실 Unity GameView 아님). 원본 4351파일/Git/Editor/Save 보호, Art/Unity 구현/Push/main 병합 없음.
+**Wolf v4** 미술 HOLD: v4 Alpha만12,088pixel 제거/RGB 완전 불변. 아직 가슴 **위쪽** 회색 조각, 다리 미세 배경 조각, 앞발 밑 바닥 잔조각이 남아 **docs/art-renewal**에서 이 3곳만 투명화한 별도 Wolf v5 제작. v3/v4 바이트 보존, 기존 진짜 털·발끝과 전체 RGB/실루엣 불변. 맹독뱀 v3 정적1포즈 Codex PASS권고지만 대표 미술 승인 대기.
+**North F1 v2** 6개 기술 PASS, 미술 **3PASS/2HOLD/1FAIL → F1 전체 HOLD**: **흙 지면 PASS, 흙길 PASS, 서리 관목 PASS는 v2 동일 SHA KEEP**; **얇은 서리 HOLD(3×3 밝은 반복무늬), 전환부 FAIL(진한 흰 서리 옆 타일에서 급단절), 길 표지판 HOLD(양끝 비슷하고 방향 모호)**. **docs/art-new**는 해당 3종만 v3 수정, PASS3는 기존 바이트 그대로 묶어 새 6종 ZIP, 서리/전환 2×2·3×3/옆 타일 연결과 표지 방향 대비 QA. 물리적 휠체어 통행/PPU/TileGrid/Collider 실 Unity 검사 여전히 안 됨.
+작업 정본 문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md, docs/planning commit c5f63b3045eb7d4ee2a38911f1f72f279b7c9de3. GitHub Issue #43/#30 댓글 기록. 실 ZIP이 나오면 Codex만 변경된 1 Wolf+3 F1 PNG Delta 재검수, 기존 수십건 QA 전수 반복 금지. 본게임 정식 Import/main 병합·사용자 미술 승인 전에는 보류. 신규 스킬 아이콘/북부 소모템/몬스터 잡템/상태이상 아이콘 누락 추적은 내부 백로그 유지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 Codex Art QA: 맹독뱀 PASS권고, 늑대 FAIL, F1 3/3 HOLD
+
+바울 대표 제공 Codex 최종 검수 스크린샷, branch codex/art-review-monsterwolf-f1-20261021, 최종 commit 5df5f74d7e9070544bb88aa92fbfe991972498cf. **전체 비교 이미지는 오프라인 합성, Unity GameView 아님**. ZIP SHA/CRC/PNG 정상, 기존 뱀·늑대 원화2/2, F1 기존6/6 보존, Ground 2종 edge tile seam PASS. 사용자 원본 4,351파일, Git·Editor 보존, Scene/Art 제작/정식 적용/Push/main 병합0.
+**맹독뱀 v3**: 1포즈 정적 미술 PASS 권고, 독니·형태 양호/본체 잘림0. 저알파 잔여 정리 권고, Codex 보고 Snake SHA 누락 수정 필요, 실제 대표 미술 최종 승인/Unity sprite 구현은 별개. 기존 v3 SHA 그대로 보호. **늑대 v3**: FAIL, 가슴 아래 회색 배경 매트/뒷다리 배경제거 잔편; docs/art-renewal에서 이 두 부분 alpha matte만 수정 후 별도 신규 PNG, 원본 바이트 보존. 전면 재그리기/Wolf Run/Bear Fox 금지.
+**F1 3 지면 후보**: 흙 HOLD(큰 얼룩 반복/평면성), 얇은서리 HOLD(흙우세 방향 개선됐으나 결/경계·타일 반복감), 전환부 HOLD(단방향 기술정상, 재질 연결 필요). **F1 전체 HOLD**: 기존 Path_WornTrail 길 가독성+FrostShrub/Waymarker 도식성까지 미마감. docs/art-new에서 F1 이전6 PNG 기존 바이트 보존하며 지면3/길1/관목1/표지1 총6의 표적 완성 Pilot v2 제작, 완성 전 GameView/PPR/Collider·Main22 구현 승인으로 오인 금지. F1 QA JSON 내부 hash 충돌 메타 별도 정정. Codex 추가 재검수는 새 납품 후에만.
+기획 정본 문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md (docs/planning commit a990de8d03b667e9826b1cb3086e249d79a1a9e4). GitHub Issue #43/Issue #30 코멘트 갱신. 북부 몬스터·아이콘/잡템/소모템/신규 스킬 전체 누락대장은 내부 관리하며 사용자에게 불필요한 전체 표를 보내지 않음. 서리들쥐 Unity Battle 이미 40PASS/0FAIL, 또 같은 작업 지시 금지. 설빙의 폭군 보스 전투 아트 후순위.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 두 ZIP art review 접수 및 자산 누락 대장
+
+바울 대표가 ZIP2종을 전달: (1) F:\Downloads\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip (renewal) SHA a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8, 이전 Snake/Wolf v3 고해상도 원본 PNG2 SHA 동일, 오프라인QA PASS지만 원본 Ch2 공식 몬스터 314px/PPU314 실물 Unity 동표시 비교/미술 승인 없음. Snake 원본 알파 왼쪽 접촉25픽셀·작은 군집548건, Wolf 마감 매트 위험. (2) F:\Downloads\Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip (art-new) SHA dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086, F1 기존6 PNG 보존/전종 미술HOLD, 신규 Ground Earth/ThinFrost/Transition 후보3만 QA PASS; 기존 길 가독성, Shrub, Waymarker도 여전히 HOLD. 두 ZIP 로컬 경로는 사용자 제공, 기획 세션이 F: 실물 독립 검사했다고 주장 금지.
+**다음 실행**: Codex가 분리된 격리 worktree에서 두 ZIP read-only SHA/CRC/Manifest 및 원본 공식 Chapter2 환경·Monster Sprite와 동일 화면 스케일 비교/Alpha/길 가독성/256px 타일 반복 QA → 각 후보 미술 PASS/HOLD/FAIL 및 정확 문제가 생긴 픽셀/Render 자료 보고. 원본 Unity/Save/UserData/Editor/승인 아트/main 변경0. 내부 asset backlog: 북부 몬스터 5+elite1+boss1 전투 시트와 각 loot icons, 신규/강화 스킬 아이콘·상점 마킹·소모템(따끈 어묵탕/기타 대응/부활 미정) 및 냉기 상태 UI 표시, F1/서릿길 마을 환경. 신규 Item/Skill IDs·가치/수량은 카탈로그 정본 감사 전 임의 생성 금지. 보스 설빙의 폭군 Combat 후순위. 직전 사용자에게 전체 자산 대장 반복 표출 금지.
+기획 검증/내부 대장 정본 문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md (docs/planning commit 7917fa49d830d9c6c7bf50cc6316a459a484dbb1), Issue #43 및 #30 댓글 갱신. Mouse Combat Fix v2 원본 연결 Codex 40PASS/0FAIL과 구분, Codex feature 브랜치 외 main 병합 미실시.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 첫 실플레이 Main22 F1 우선 / 설빙의 폭군 전투 후순위
+
+바울 대표 최신 결정: 공식 몬스터명 서리들쥐(FrostFieldMouse), 보스명 **설빙의 폭군(FrostTyrant)**. '서리폭군'은 오기. 보스 Attack/Hit/Defeat 시트 제작을 당장 착수하지 말 것.
+서리들쥐 Combat Fix v2는 사용자 미술 승인·Codex 변경분23PASS/0FAIL. 직전 Codex 정식 연결 지시문은 이미 발행됨, 연결 완료 보고는 아직 없어 중복 발주 금지.
+최우선 단계: **북부 F1 6종 환경 시안 실물/게임 동배율 미술검토** (예전 ZIP/오프라인 QA만 통과, 사용자 미술·Runtime 미승인) → Codex 기존 Issue35 기술 조사 활용 Main22 Production Lock(ID/StarterVillage 북문/Portal/PPU/Collider/Save) → 승인 F1/서리들쥐로 Main22 초반 5목표를 별도 구현 승인 후 첫 플레이 검증. Main23 마을·Main24 F2 다음 순서. 독립 art-renewal의 Chapter1·2 맹독뱀/Wolf v3 병렬 별개.
+기획 문서 문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md (docs/planning commit a0024d21d4d3fafe7839be2336dfe1d1fdcea5dc), Issue #30 및 #35 댓글 업데이트. 현 main e4e9891f6f01ea95cada9e63b1f09946d94d6041, original Editor/Save/UserData 및 다운로드 재정리본 불변, main 직접 Push/merge 금지.
+
+---
+# PLANNING 최신 인계 — 2026-10-21 맵 핵심 통합 완료·Field09/Field10 미결 분리, 리뉴얼 몬스터·펫 v3 재개
+
+바울 대표 “리뉴얼 쪽은 맵은 끝난거 맞으면 어제 이어서 하자” 요청에 GitHub `main` EOD·리뉴얼로드맵·Main19/Main20 아트 보고 확인. **환경의 핵심 구현·적용은 상당 부분 완료됐지만 전체 100% 미술 최종 완료 아님**: Field09는 승인 PNG5+B파생 Glow [PR41](https://github.com/HappyPaul812/Project-Limitless/pull/41) main/로컬 SYNC_COMPLETE, 그러나 [Issue38](https://github.com/HappyPaul812/Project-Limitless/issues/38) HeatVent·Spire 시각 마감과 AshPatch KEEP 후보 최종 검토 남음; Field10 공식 ArtPack13 등록·Runtime QA 있으나 `Main19_Art_Handoff.md` 최신 USER_ART_REVIEW_REQUIRED13. Field11 Main20 v3 승인/환경8·보스아트 QA 적용, Field08 공식 사용7 유지, Arbel/Field04~07 승인합본 보호. **이미 합격한 맵 재제작하지 않음.**
+
+리뉴얼 담당 `docs/art-renewal` 다음 주력은 **Chapter1·2 몬스터·펫**으로 전환. 과거 VenomSnake v1/Wolf v1 반려, v2 저해상 확대 미술 HOLD, v3 고해상 Snake PNG `7001d199...` / Wolf PNG `30b2d464...` 산출 보고는 있지만 현재 GitHub/사용자 F: 실물 존재 미확인·공식5 동일 실제 Render 비교/대표 미술 승인0. **기존 v3 원본 사용가능성·해시를 먼저 확인**, 실PNG2 및 기존 공식 Chapter2 몬스터 비교/128px QA·Manifest 실제 납품→바울 대표 승인 게이트. Source raw 접근 불가면 Codex 읽기전용 인계 요청만 기록, 가짜 PASS 금지. Chapter3 메인 아트 `docs/art-new` 작업, 현재 Codex Mouse Combat Fix v2 격리QA와 중복 지시 금지. Snake/Wolf 전체 모션·Bear/Fox 추가양산 및 기존 MonsterDefinition/Unity 적용 금지.
+
+기획 정본 `문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md` (`docs/planning` commit `8678096c0e817fc298d870c43aea5b23ac3dca60`), 신규 몬스터·펫 [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43), Field09 환경잔여 [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) status 댓글 기록. main 직접 Commit/Push/병합 금지, 대표 F: Download 폴더 정리 상태 그대로 보호.
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 ## 2026-10-20 EOD 완료 — PR41 병합 / 원본 SYNC_COMPLETE
 
 [PR #41](https://github.com/HappyPaul812/Project-Limitless/pull/41) 승인 통합 main **`db242b77377b7c2ec08664f102b1a6bab0b3ffb3`**, 통합 head `ccad0344dacf647bd2c3530d2284783e24e7f784`. 완료 증거 작성 시 **GitHub main=origin/main=원본 local main**, index=HEAD 및 stage0 직접 확인. 후속 완료문서 PR 이후의 최종 SHA는 원본 `Temp/EOD20261020/OriginalLocalSync_Proof.json`에서 재확인합니다.

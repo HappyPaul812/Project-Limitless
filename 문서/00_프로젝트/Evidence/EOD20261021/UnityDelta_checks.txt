@@ -1,0 +1,14 @@
+PASS|Main22.UniqueQuestDefinition
+PASS|Main22.FiveObjectivesAndMain21Prerequisite
+PASS|Main23.NotIntroduced
+PASS|Mouse.VisualFrameReferences16
+PASS|Mouse.NoMissingSprite
+PASS|Main22.PrototypeMonsterResource
+PASS|Save.OptionalFieldDefault0Version1
+PASS|F1.StoredSceneLoads
+PASS|F1.MissingScript0
+PASS|F1.WorldBoundsPresent
+PASS|F1.StoredSpawnPoints2
+PASS|F1.TilemapsPopulated
+PASS|BuildSettings.SingleEnabledF1
+PASS|Wolf.IntegratedResourceAndIconContract

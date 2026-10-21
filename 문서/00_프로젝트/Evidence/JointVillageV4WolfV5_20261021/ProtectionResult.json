@@ -1,0 +1,15 @@
+{
+  "before_count": 4351,
+  "after_count": 4351,
+  "changed": [],
+  "new": [],
+  "head_unchanged": true,
+  "status_unchanged": true,
+  "zip_unchanged": {
+    "A": true,
+    "B": true
+  },
+  "original_editor_actions": 0,
+  "existing_full_regressions_repeated": 0,
+  "approved_keyart_sha256": "b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1"
+}

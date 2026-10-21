@@ -1,0 +1,133 @@
+{
+  "samples": [
+    {
+      "file": "NorthF1_EarthToFrost_Transition_Overlay_ArtSample_v2.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "NorthF1_Ground_Earth_Base_ArtSample_v2.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA"
+    },
+    {
+      "file": "NorthF1_Ground_ThinFrost_Base_ArtSample_v2.png",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA"
+    }
+  ],
+  "original_preserved_sha256": {
+    "NorthF1_EarthToFrost_Transition_Overlay.png": "2302177100429ce3c7d52a3fc3c1b4ef43930fb118bb92078a436c884479e7e2",
+    "NorthF1_Ground_Earth_Base.png": "e13437996d7c16aebb3b90f5e7b63ba5b9a2ffb5eca6d54573fa376c8eb1093f",
+    "NorthF1_Ground_ThinFrost_Base.png": "fa74affcbb4325f93dafd80be479879f77796bf9ee04a28650ce26e7f89ff1a9",
+    "NorthF1_Path_WornTrail_Overlay.png": "758dc6cb8ec77feea6d04bddd9287bcf870180cd4650b3fb772cc89ae53bbc01",
+    "NorthF1_Prop_FrostShrub_01.png": "3614ce66da500d45b9ab7036301a4e857f67c319b95c0ed7446c7e6c78dc0a05",
+    "NorthF1_Prop_Waymarker_01.png": "afe90ab565c53ee10fe318bd4de65d26df93536d53af1b0f451a8c4910e6e9ba"
+  },
+  "seams": {
+    "NorthF1_Ground_Earth_Base_ArtSample_v2.png": {
+      "leftRightExact": true,
+      "topBottomExact": true
+    },
+    "NorthF1_Ground_ThinFrost_Base_ArtSample_v2.png": {
+      "leftRightExact": true,
+      "topBottomExact": true
+    }
+  },
+  "metadata": {
+    "PPU": "UNCONFIRMED; Codex must inspect",
+    "Preview": "Offline composite, not Unity GameView",
+    "OriginalSix": "unchanged originals",
+    "samples": "art candidates only, not approved"
+  },
+  "source_zip_name": "Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip",
+  "source_byte_match": true,
+  "originals": {
+    "NorthF1_EarthToFrost_Transition_Overlay.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "5da0155fb31c0f2684738a642e47af074919a0732967f1f3248b3aafdab427fa"
+    },
+    "NorthF1_Ground_Earth_Base.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "dd2f4e125f97702fd4352beb4f600c5ba0bd7a0c9cb00f2922af86988b9ccbe8"
+    },
+    "NorthF1_Ground_ThinFrost_Base.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "fee1e35d61d8bb90ac27b902b81a96310a2f0918d6dd291f138bc927ffa27346"
+    },
+    "NorthF1_Path_WornTrail_Overlay.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "3595a805bc81d365985f60e1e642806f476bec601e3d3866bd0015ba282f56d7"
+    },
+    "NorthF1_Prop_FrostShrub_01.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "508ab9c7eabd5b7fa97b3baa4ce48a252a9a95f429b2d6d4e7c73bad76be860b"
+    },
+    "NorthF1_Prop_Waymarker_01.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "446a3b3121fd0531d25937abad6c8f91fc97e59fce50f67baa7f08c438bb6a47"
+    }
+  },
+  "sample_pngs": {
+    "NorthF1_EarthToFrost_Transition_Overlay_ArtSample_v2.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "6785a24c0332d3f9b5fee13b317576eada7a3fc4e1f0f2839d4c625c6a6844a9"
+    },
+    "NorthF1_Ground_Earth_Base_ArtSample_v2.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "573a11195bbc71135441688fca2792fb0fa2de0a7322e400f08275dfcf8c9a18"
+    },
+    "NorthF1_Ground_ThinFrost_Base_ArtSample_v2.png": {
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "sha256": "6158bdb1962f9f8934a673c767258f1bd2912b22e2ac8250c631fc32e027a803"
+    }
+  },
+  "visible_rgb_diff_fraction_frost_vs_earth_gte8": 0.067169189453125,
+  "art_status": "HOLD pending user review",
+  "unity_status": "NOT_TESTED"
+}

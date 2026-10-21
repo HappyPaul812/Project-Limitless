@@ -1,0 +1,13 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+import json,numpy as np
+r=Path.cwd();o=r/'Temp/ArtReviewWolfV4F1V2_20261021';e=o/'Worktree/문서/00_프로젝트/Evidence/WolfV4F1V2_20261021';art=o/'F1/Art';earth=Image.open(art/'NorthF1_Ground_Earth_Base_v2.png').convert('RGBA');b=Image.new('RGB',(1040,535),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE props on Earth: native256px above; 128px below. No PPU or physical clearance claim.',fill='white')
+for i,(name,p) in enumerate([('Shrub original',o/'F1/Original_Reference/NorthF1_Prop_FrostShrub_01.png'),('Shrub v2',art/'NorthF1_Prop_FrostShrub_01_v2.png'),('Waymarker original',o/'F1/Original_Reference/NorthF1_Prop_Waymarker_01.png'),('Waymarker v2',art/'NorthF1_Prop_Waymarker_01_v2.png')]):
+ comp=Image.alpha_composite(earth,Image.open(p).convert('RGBA'));x=10+i*255;b.paste(comp,(x,60));d.text((x,40),name,fill='white');b.paste(comp.resize((128,128),Image.Resampling.NEAREST),(x+50,365))
+b.save(e/'F1_Props_OnEarth_256px.png')
+# Remove the empty hind-leg inset and replace it with an accurately mapped edge crop.
+new=Image.open(o/'Wolf/Assets/Wolf_KeyArt_v3_AlphaFix_v4.png').convert('RGBA');boxes=[(630,785,700,870),(150,1125,195,1175),(750,1200,905,1260)];b=Image.new('RGB',(1000,410),(30,35,42));d=ImageDraw.Draw(b)
+for i,box in enumerate(boxes):
+ f=new.crop(box);scale=min(3,300//f.width,310//f.height);f=f.resize((f.width*scale,f.height*scale),Image.Resampling.NEAREST);x=10+i*330;d.text((x,10),'V4 source '+str(box),fill='white');d.rectangle((x,60,x+310,380),fill=(36,90,42));b.paste(f,(x,65),f)
+b.save(e/'Wolf_RemainingArtifacts_Coordinates.png')
+v=json.loads((e/'Validation.json').read_text());v['conclusions']={'wolf_technical':'PASS','wolf_art':'HOLD','targeted_edit_not_redraw':True,'chest':'PARTIALLY_FIXED_UPPER_TRIANGLE_REMAINS','hind_leg':'LARGE_BLOCK_REMOVED_FINE_EDGE_REVIEW','front_paw_ground_fragment':'UNCHANGED_REMAINS','f1_technical':'PASS_FILES_AND_FORMAT','f1_art':{'Ground_Earth_Base':'PASS','Ground_ThinFrost_Base':'HOLD','EarthToFrost_Transition_Overlay':'FAIL','Path_WornTrail_Overlay':'PASS_VISUAL_ONLY','Prop_FrostShrub_01':'PASS','Prop_Waymarker_01':'HOLD_DIRECTION_CLARITY'},'f1_bundle':'HOLD','unity_applied':False};(e/'Validation.json').write_text(json.dumps(v,indent=2))

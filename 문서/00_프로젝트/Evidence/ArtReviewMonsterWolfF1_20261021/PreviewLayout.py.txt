@@ -1,0 +1,11 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+r=Path.cwd();o=r/'Temp/ArtReviewMonsterWolfF1_20261021';e=o/'Worktree/문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021';keys=['Ground_Earth_Base','Ground_ThinFrost_Base','EarthToFrost_Transition_Overlay'];b=Image.new('RGB',(1110,850),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE - original and candidate at source-native256px; bottom: 128px thumbnails. NOT Unity GameView.',fill='white')
+for j,key in enumerate(keys):
+ imgs=[Image.open(o/'F1/Original_F1'/f'NorthF1_{key}.png'),Image.open(o/'F1/Targeted_Samples'/f'NorthF1_{key}_ArtSample_v2.png')]
+ for i,img in enumerate(imgs):
+  x=15+j*365;y=65+i*295;d.rectangle((x,y,x+255,y+255),fill=(75,78,80));b.paste(img,(x,y),img);d.text((x,y-20),key+(' ORIGINAL' if i==0 else ' CANDIDATE'),fill='white')
+ d.text((15+j*365,650),'Original128px                 Candidate128px',fill='white')
+ for i,img in enumerate(imgs):
+  sm=img.resize((128,128),Image.Resampling.NEAREST);x=15+j*365+i*150;d.rectangle((x,680,x+127,807),fill=(75,78,80));b.paste(sm,(x,680),sm)
+b.save(e/'F1_Original_Candidate_1to1_Offline.png')

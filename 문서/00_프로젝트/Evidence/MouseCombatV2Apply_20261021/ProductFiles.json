@@ -1,0 +1,15 @@
+[
+  "Assets/_Project/Art/Monsters/FrostFieldMouse.meta",
+  "Assets/_Project/Resources/MonsterVisuals.meta",
+  "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+  "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta",
+  "Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs"
+]

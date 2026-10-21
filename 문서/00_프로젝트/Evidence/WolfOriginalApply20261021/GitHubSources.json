@@ -1,0 +1,27 @@
+{
+  "remote_main": "e4e9891f6f01ea95cada9e63b1f09946d94d6041",
+  "planning_blob": "83729d23f853cb2d74d70bcef393a14c1eb3d72d",
+  "art_report_blob": "9f107691f96ebbaef43d3b2ce26d51224f7558a1",
+  "issues": [
+    {
+      "issue": 43,
+      "latest": [
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6315795463",
+          "body": "[2026-10-21 / Wolf Run6 v5 승인 제품 연결 결과 — Codex 작업보고 접수]\n\n바울 대표가 Codex 격리 Unity 결과 화면 전달: 브랜치 `codex/wolf-run6-v5-apply-20261021`, commit `ab1b47ff9d46f4ed5883b85b73e87ca2036c83e6` (**사용자 PC 로컬 worktree**). 승인 ZIP 실 SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351` 일치. 기존 Wolf 아이콘·KeyArt·GUID/meta·Animator/Controller·Bear/Fox 보호. 신규 Wolf Run 시트 제품경로·코드 연결: 제품6파일(PNG/meta2 + C#4), 문서/검수증거 포함 총33파일. 격리 Unity PlayMode **106PASS/0FAIL** (12FPS·6프레임 루프·양방향 이동·타격/종료). 기존 Search 환경 오류1건 별도, 원본Editor 자연Import·실손플레이 미검증. 원본보호 4,351파일 변경/추가0. **정식 main Push/PR/merge 및 원본 게임 적용은 아직 완료되지 않음.** 사용자 사전 지시 “늑대는 게임에 넣고”에 따른 다음 Codex 단계는 기존 통과 커밋을 재검증 무한 반복 없이 최신 main 대비 통합 검토·PR·원본 안전동기화 계획. 유저 Save/UserData/Editor 보호, 강제Push 금지. 기획 인계 docs/planning `f9ae2f10`."
+        }
+      ]
+    },
+    {
+      "issue": 45,
+      "latest": [
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6315796205",
+          "body": "[2026-10-21 / Frostway Village GameArt v5 ZIP 수신, Codex 실제 DeltaQA 인계]\n\n바울 대표가 로컬 경로 `F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip` 제시. `docs/art-new` 납품 문서 SHA256 **`1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`** (20,085,423 bytes/72 entries/CRC PASS/SHA256SUMS71/71) — **아트 담당 납품 신고**이며 Codex 사용자 F: readback 전. 기존 GameArt43 PNG 중 Earth(24062px)·ThinFrost(23973px)·Gravel(31120px) 3종만 국소 반복무늬 수정, 나머지40종 원본 바이너리 동일; Stone Path, SkillShop/Roof Gable 합격본 보존. 해당 3개 타일 변경 픽셀은 많지만 타일 에지/256 RGBA/기존 구조·색감은 유지라고 보고.\n\n**남은 QA:** Codex 격리 ZIP readback/CRC/Manifest/40 KEEP+3 modified/실 Unity 16:9·4:3·21:9·3x3 반복 화면·동선/접합 수정분 검수. 기존 OPEN16은 집계만 있고 원본 CSV 개별 행이 아트 담당에게 없어 아직 결함별 해결0. Codex가 이전 QA의 실제 원본 CSV(파일·좌표·재현조건·심각도)를 찾아 내용만 인계, 없으면 미확보로 보고; 추측하여 기존 PNG를 건드리지 말 것. v5는 **OFFLINE_PASS / CODEX_DELTA_PENDING / USER_ART_APPROVAL_PENDING / MAIN23_NOT_IMPLEMENTED**. 원본 Unity/Save/UserData/Main 보호, 대규모 QA 반복 금지. [아트 v5 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md), 기획 인계 `docs/planning` commit `f9ae2f10`."
+        }
+      ]
+    }
+  ],
+  "remote_wolf_branch_found": false,
+  "remote_wolf_pr_found": false
+}

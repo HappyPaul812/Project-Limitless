@@ -1,0 +1,118 @@
+{
+  "status": "ISOLATED_MAIN22_FIRST_PLAYABLE_COMPLETE",
+  "pass": 136,
+  "fail": 0,
+  "phases": {
+    "Playthrough": {
+      "pass": 111,
+      "fail": 0
+    },
+    "GameViews": {
+      "pass": 11,
+      "fail": 0
+    },
+    "BattleView": {
+      "pass": 9,
+      "fail": 0
+    },
+    "GateView": {
+      "pass": 5,
+      "fail": 0
+    }
+  },
+  "old_qa_reused_not_rerun": {
+    "F1Unity": 64,
+    "MouseBattle": 40
+  },
+  "gameview_capture": "actual Play Mode GameView.RenderView + native full Camera/GUI render; hidden memory HostView; GPU Y origin normalization only",
+  "camera_rt_capture": "Playthrough PNG are actual Unity Camera RT with actual uGUI temporarily bound to camera, not GameView window screenshots; filenames identify them",
+  "images": {
+    "Playthrough/Step2_Frost_ActualUnityCameraRT.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "6f058b5c4df95ab1cf0f49b47743b7711e41a126cb61dd3e036296232cca5073",
+      "rgb_std": 31.45806629401035
+    },
+    "Playthrough/Step3_Clue1of2_ActualUnityCameraRT.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "60a32da289e25abd243327b80b2092a7a875c08b5093d9bbeeb62b5c0ac4d61f",
+      "rgb_std": 32.12405819344974
+    },
+    "Playthrough/Step4_SingleMouseBattle_ActualUnityCameraRT.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "9e8f6672e80eac579aacd0f74d3085461fa3c1a691934162628272a2ee48ed3f",
+      "rgb_std": 28.628288241480465
+    },
+    "Playthrough/Step5_Shelter_ActualUnityCameraRT.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "b54d2bc9640b392e817ae619f20d8f58acb1ec261fb4be4d38185de0a5a0387b",
+      "rgb_std": 31.7440090523176
+    },
+    "GameViews/Main22_GameView_1280x720.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "2245d2d89aeb3d1c1a2395ea191018f902e27971dfe641de9340cb8c98b1b014",
+      "rgb_std": 33.19536032165553
+    },
+    "GameViews/Main22_GameView_1680x720.png": {
+      "size": [
+        1680,
+        720
+      ],
+      "sha256": "dd7b98511385d11c864e124f495f48094813fbfe27e8f1049d944fd67ed9894e",
+      "rgb_std": 31.228384441332867
+    },
+    "GameViews/Main22_GameView_960x720.png": {
+      "size": [
+        960,
+        720
+      ],
+      "sha256": "ecbe43119ba51002515111e7c51b510f71b10c2d3e7fcdd3b50a22b6883407f8",
+      "rgb_std": 35.472056952005104
+    },
+    "BattleView/Main22_SingleMouse_ActualGameView.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "7f2d48bd5bf34115ba6504de4fc1025d91a9d269863611d88dcf8bae94bd3bbf",
+      "rgb_std": 35.44368687054276
+    },
+    "GateView/Main22_NorthGate_ActualGameView.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "aa10efed6ff2fff82d13540c349e85627339f80d8c9f8efbd17d25f6654bc6ac",
+      "rgb_std": 56.7253586669308
+    }
+  },
+  "playtest_slot": {
+    "index": 5,
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\Main22FirstPlayable20261021\\Worktree\\Unity\\Client\\UserData\\Saves\\save_slot_05.json",
+    "sha256": "5374cbd47eb5f4dae523ea7d3b22e7d55ed337ac20c4fac4501ffcb41a420714",
+    "source": "StartVillage_Playtest.json",
+    "synthetic_fixture": true,
+    "main01_to21_completed": true,
+    "level14_currency77": "test seed only, not approved balance or new rewards"
+  },
+  "implementation_tbd": [
+    "Formal monster balance (currently inherited visual fixture HP60 Level1 AttackPercent100 Agility10)",
+    "Final dialogue and quest/battle rewards (currently none)",
+    "User direct play review and later original apply/PR approval"
+  ],
+  "prior_failed_tool_attempts": "QA Formation IEnumerable access fixed; Flee wait moved after actual initiative animation; GameView wrong active RT readback fixed. Final phase outputs all pass."
+}

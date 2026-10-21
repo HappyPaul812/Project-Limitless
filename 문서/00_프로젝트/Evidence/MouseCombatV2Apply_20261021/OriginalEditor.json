@@ -1,0 +1,19 @@
+{
+  "scene": "Assets/_Project/Scenes/Bootstrap.unity",
+  "focused": false,
+  "playing": false,
+  "paused": false,
+  "compiling": false,
+  "console_errors_returned": 0,
+  "targeted_imports": 6,
+  "loaded_official_asset": {
+    "idle": 4,
+    "attack": 4,
+    "hit": 4,
+    "defeat": 4,
+    "fps": 8,
+    "scale": 1,
+    "faces_right": true,
+    "monster_id": ""
+  }
+}
