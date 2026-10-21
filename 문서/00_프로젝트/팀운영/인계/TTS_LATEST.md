@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-21 최종 사용자 화면 — 429 프로젝트 격리 후 일일 안전 상한 정상 종료
+
+- **사용자 실제 출력:** `[GROUP/KEY CAP] All usable project groups at configured per-day safety caps.`; `PT=2026-10-21 UTC-7 attempted=39/40 remaining=1`; `HOLD=False`; `429 QUARANTINE=['PROJECT_3']`.
+- **누적 준비 파일:** 세린 **63/67**, 태온 **1/85**, 총 **64/152**. 따라서 아직 미제작은 **세린4 + 태온84 = 88개**. READY는 저장·기술 체크된 WAV 수이며 사용자 최종 청취로 64개 모두 합격했다는 뜻은 아님.
+- **키별 오늘 로컬 요청:** KEY1=10 / KEY2=10 / KEY3=9(앞선 HTTP429로 프로젝트 그룹3 격리) / KEY4=10. 남은 로컬 전체예산1회는 전환 가능한 안전 프로젝트 슬롯 부재로 **사용하지 않았음**. 이는 **새 실패가 아닌 정상 안전상한 종료**, HOLD 및 RUNNING.lock 신규 발생 없음. 사용자가 보여준 화면을 정본으로 하되 외부 Google 사용량은 미포함.
+- 기존 문서의 **KEY3 429 당시 HOLD 상태는 최신 상태가 아님**. v2 failover 및 수동 switch의 복구·격리 이후 실제 API 성공이 있었고 오늘 사용가능 프로젝트 전부 로컬 cap 도달.
+- **다음 조치:** 2026-10-22 미국 태평양 자정 이후(한국 시각 10월22일 오후4시 PDT 기준) 실제 Google 프로젝트/모델 무료 quota와 과금 상태 확인. 기존 `HOLD=False`라 **RESUME429나 SWITCH429 재실행 불필요**. `python .\Renewal_Auto_TTS_Failover_v2.py check` → `python .\Renewal_Auto_TTS_Failover_v2.py run`으로 세린 마지막4개부터 이어감. 로그·기존 WAV·샘플·API.txt·Unity 그대로 보존. 오늘 추가 Google 시도할 필요 없음.
+- 프로젝트별 할당량은 여전히 **키 수와 다르며 실제 Google 프로젝트 ID 검증 중요**. PT 날짜 변경으로 로컬 카운터·그날의 격리는 재계산되지만, 원격 Google 실제 quota 허용을 보장하지 않음.
+
+
 ## 2026-10-21 최신 — KEY3 HTTP429 후 타 독립 프로젝트 자동 전환 v2 제작 / 사용 전 프로젝트 실소속 확인
 
 - 사용자: “저기 한 API가 막히면 다른 API가 하게 못해?” **가능하나 독립 Google 프로젝트로 실제 확인된 경우에만**. 기존처럼 같은 프로젝트 내 KEY를 바꿔 쿼터를 우회하는 방식은 허용하지 않음. Google은 RPD/RPM/TPM을 API Key가 아니라 **Google Project** 단위로 산정 (https://ai.google.dev/gemini-api/docs/rate-limits).
