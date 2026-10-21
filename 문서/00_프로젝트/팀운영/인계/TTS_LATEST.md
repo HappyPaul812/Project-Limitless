@@ -1,5 +1,13 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-21 공통 로직 정본 — 앞으로 다른 모든 TTS에 재사용
+
+- 사용자: “고맙고 이 로직은 문서화해놔, 다른 TTS에도 활용하게..”. 대응해 **[TTS 공통 다중 프로젝트 Quota·429 Failover·체크포인트 운영 표준](../../TTS_공통_다중프로젝트_할당량_429자동전환_체크포인트_운영표준_20261021.md)** 신규 작성. 새 캐릭터·새 챕터·다른 Gemini TTS 작업 시작 전 필독.
+- 공통 핵심: 정확 대사 Stable ID/원문·화자·Voice/Style 동결 → 사용자 한국어 샘플 청취 승인 → 키→실제 Project ID와 Project/Model quota·Billing 확인 → POST 전에 ATTEMPT 선기록 → 성공 WAV/JSON SHA·원문/음색 QA → 429 프로젝트 단위 태평양 일자 격리 및 **검증된 다른 독립 Project에만** 자동 전환 → CAP 정상중단(잠금 없음) / 결과불명 HOLD+LOCK 및 증거 백업·수동 복구 → PT 다음날 당일 카운트만 새 계산하고 구 데이터·WAV 보존 → 사용자 음성 QA 후 Codex Unity 적용.
+- 실사용 검증 10/21: KEY3 HTTP429에서 KEY4로 전환해 세린 Main20 성공, **39/40 정상 안전 종료/HOLD=False, READY 세린63/67·태온1/85**. 40/10은 당일 배치의 로컬 안전 수치, 외부 Google 실제 quota 보장·다른 TTS 기본값이 아님.
+- **중요 코드 경계:** 현재 `Renewal_Auto_TTS_Failover_v2.py`는 세린/태온 152개 전용이고, 문서는 다른 담당이 따라야 할 **범용 운영 규약/개념 설계**이지 이미 재사용 가능한 공용 실행기가 테스트 완료됐다는 주장이 아님. 이후 실제 다른 캐릭터에 적용할 때 manifest·폴더·Voice 선택기·공유 프로젝트 장부 분리/재통합 구현·오프라인 검증 필요. 하렌 억양 수정 보류는 변함없음.
+- 본 문서 작업으로 Google 생성 POST0, 로컬 사용자 F 드라이브·WAV/Unity 변경0, 브랜치 `docs/tts` 문서만 수정. 후임 담당은 기획·TTS·Codex 역할을 준수.
+
 ## 2026-10-21 최종 사용자 화면 — 429 프로젝트 격리 후 일일 안전 상한 정상 종료
 
 - **사용자 실제 출력:** `[GROUP/KEY CAP] All usable project groups at configured per-day safety caps.`; `PT=2026-10-21 UTC-7 attempted=39/40 remaining=1`; `HOLD=False`; `429 QUARANTINE=['PROJECT_3']`.
