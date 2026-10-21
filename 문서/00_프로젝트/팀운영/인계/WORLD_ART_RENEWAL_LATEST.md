@@ -1,5 +1,19 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Chapter1·2 맵 핵심 마감 관리 → 맹독뱀·늑대 기존 v3 단일 원화 실물 재검사 (최신)
+
+- 기획 정본 `docs/planning/문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md`, 발주 `Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`, Issue #43/#38 확인. **Field09 승인 5+B Glow PR41 official main 반영됨; 기존 합격본 재제작 금지.** 잔여 HeatVent/Spire·Field10 예술 승인 backlog만. Codex 현재 Chapter3 FrostFieldMouse 전투 Fix v2 작업 중 → 중복 요청 금지.
+- 이전 세션 자체 v3 PNG **실물 2개 이번 컨테이너에서 발견**, 이전 기록 SHA256 2/2 정확히 일치, **신규 재제작 없음**:
+  - `VenomSnake_KeyArt_v3.png` 1254×1254 RGBA SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0`
+  - `Wolf_KeyArt_v3.png` 952×1306 RGBA SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`.
+- 실제 새 **검토 패키지** `Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip` **3,468,949 bytes / 13 entries / SHA256 `a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8`**. 원본바이트 동일 PNG2 + 개별 128px RGBA 미리보기2 + 밝기배경 테스트4 + 두 종 128px 동일 슬롯 이미지1 + 기존 Chapter2 공식5종 GitHub raw PNG와 비교하는 온라인 HTML + Manifest/QA/README. ZIP testzip CRC PASS.
+- 실제 Unity `.meta` 확인: 공식 Ch2 5종은 모두 314×314 sprite rect, PPU314, Pivot center → 프레임당 1 world-unit. 하지만 GitHub raw 큰 PNG5가 현재 로컬로 내려오지 않음. HTML은 공식 실제 GitHub PNG URL을 참조하며 **네트워크 필요**, 동일 GameView RenderScale로 검증한 화면 아님. v3 PPU/WorldSize는 **미결**. 공식 5와 동배율 실제 Unity 비교 `NOT_VERIFIED`.
+- 원화 미술 QA: 독사 x=0에 alpha25픽셀 접촉, low-alpha 고립 군집 다수(16px 미만 548개) → 직수입 전 아트 정리 필요 가능성. 늑대 털·발 끝 배경제거 매트 잔여 위험. 모두 **USER_ART_REVIEW_PENDING**, 전체 애니/Run/Bear/Fox 작업0.
+- [실제 PNG2 원본·128px·공식5 비교 링크·QA 납품 보고](../../MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md); 첫 문서 commit `8ee584f26e01fc3203b43f8b0c574f4cbca5fcd6`. 아트 ZIP/PNG는 채팅 Sandbox에서 제공; 브랜치에는 보고서/인계만(바이너리 GitHub 저장0, 사용자 F: 자동 복사0). 정식 장면/몬스터정의/메인 변경0.
+- 정확 상태 `MAP_CORE_CLOSEOUT_SUBSTANTIAL / FIELD09_REMAINING_PROPS_BACKLOG / FIELD10_USER_ART_REVIEW_PENDING / V3_SOURCE_2PNG_FOUND_SHA_PASS / V3_128PX_REVIEW_DELIVERED / OFFICIAL_SAME_GAME_SCALE_NOT_VERIFIED / USER_V3_APPROVAL_PENDING / NO_ANIMATION_OR_PET_EXPANSION`.
+
+
+
 ## 2026-10-20 Field09 Phase2 Cliff/Fissure 실제 PNG 2종 v2 보완 납품 (현재 최신)
 
 - 바울 대표와 Codex 검수 Phase2 Pilot v1: **기술 30PASS / 미술 Visual FAIL** (Cliff 발치 밝은 매트, Fissure 외곽 매트와 기존 Glow 붉은 띠 노출). 기획 정본 `docs/planning/문서/00_프로젝트/Field09_Phase2_Pilot_v1_VisualFail_CliffFissure_TargetedArtFix_20261020.md`, Issue #38 최신 댓글 확인.
