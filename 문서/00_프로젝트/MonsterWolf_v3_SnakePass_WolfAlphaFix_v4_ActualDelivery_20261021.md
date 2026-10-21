@@ -12,7 +12,7 @@
 - 미술 품질 주의: 검사 결과는 **오프라인 파일/마스크 QA**이며 실제 게임 Import·최종 시각승인 증거가 아님. 회색 원화의 마스킹 경계가 일부 털과 닿는 부분은 바울 대표와 Codex가 실제 GameView와 함께 확인하고 추가 국소 조정 필요 여부를 판단.
 
 ## 실제 납품 ZIP/검증
-- **실제 파일** `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip`; SHA256 **`4d31e2791bd543965771dfe6716cff736c2eae583efadeed914b9151952d836d`**; **2,466,520 bytes / 14 entries**. 납품 장소: 본 ChatGPT 대화의 `sandbox:/mnt/data/Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip`. 사용자 F: 또는 GitHub repo에 ZIP 자동 복사/업로드 없음.
+- **실제 파일** `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip`; SHA256 **`e241535f1c505bf50f4de09317e74dbc3780be722139ff0baa02c908223765c6`**; **2,466,565 bytes / 14 entries**. 납품 장소: 본 ChatGPT 대화의 `sandbox:/mnt/data/Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip`. 사용자 F: 또는 GitHub repo에 ZIP 자동 복사/업로드 없음.
 - ZIP `Assets/`: 신규 늑대 보완 후보 PNG 1종 + 비교용 기존 Wolf v3 원본을 **원본 해시 그대로** 사본 수록. Snake 원본은 ZIP에 미포함, SHA 기록만.
 - `Preview/`: Chest_Matte_BeforeAfter_2x.png, HindLeg_Background_Remnants_BeforeAfter_2x.png, Leg_And_Paw_Edge_BeforeAfter_2x.png, Wolf_128px_BeforeAfter.png, 원본/새 128px RGBA 2장, Alpha_Changes_RedOverlay.png. 모두 실제 PNG 바이트로 작성된 오프라인 체커보드 비교이며 **Unity GameView 아님**.
 - `QA/`: 변경 12,088개 모든 좌표별 old/new alpha CSV, `Offline_Validation.json`, `Final_ZIP_Result.json`. `Manifest.json`에 원본/수정/독사 정본 SHA·오프라인 QA.
