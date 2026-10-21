@@ -1,3 +1,29 @@
+# PLANNING 최신 인계 — 2026-10-21 Wolf Run6 v5 원본 적용, Village v5 기술PASS·타일3 HOLD
+
+**자료:** 바울 대표가 Codex 작업완료 캡처를 전달. 아래 결과는 Codex의 사용자 로컬 PC 검사 보고이며 이 기획 세션의 직접 Unity/Windows 검증이 아니다.
+
+## A. Wolf Run6 v5 — 원본 디스크 반영 완료, GitHub PR/main 아직 미처리
+
+- 작업 브랜치 `codex/wolf-run6-v5-apply-20261021`, 최종 커밋 `f0dd59dd010759760811a7a1b516eab3969d500c`(사용자 첨부 이미지 기준).
+- 사용자 승인 게임 자산 6파일만 **실제 원본 디스크에 복사**, 복사 후 SHA6/6 일치; 사전SHA 및 기존4파일 복구백업 확보. 격리 제품 연결 Unity 106PASS/0FAIL 기존결과 재사용, 추가 최소 Import·컴파일·Resources 참조 검사 격리 복사본 PASS.
+- 공식 Wolf 정적 KeyArt·아이콘·기존 GUID/meta·Animator/Controller·Bear/Fox·Save/UserData 불변. **원본 Unity Editor 자연 Import와 사용자의 실제 손플레이는 아직 NOT_VERIFIED**. `WOLF_LOCAL_DISK_APPLIED / REMOTE_PR_NOT_CREATED / MAIN_NOT_MERGED`. PR 초안만 준비; Push·PR생성·main 병합0. 별도 사용자 승인 또는 명시적 지시 없이 원격 반영 강행 금지.
+
+## B. 서릿길 마을 GameArt v5 — 기술PASS / 흙·서리·자갈 타일 3종 미술 HOLD
+
+- 로컬 ZIP `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`; Codex **실 readback SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`**, 아트 납품 보고 일치. CRC·Manifest·Seam PASS. 게임용 43종 중 수정3·기존40 byte 동일, 합격 건물·지붕·돌길 보호.
+- `codex/frostway-v5-tile-delta-qa-20261021`, 최종 커밋 `6a0436c08e15c5f83fc3d1dab9a3f026ce167af6` (사용자 캡처). 실제 Unity 16:9/4:3/21:9 및 통행 proxy **12/12 PASS**. **지면 타일 미술은 Earth/ThinFrost/Gravel 모두 반복주기 무늬 잔존으로 HOLD**, 사용자 마을 최종승인0.
+- 이전 검수의 **OPEN 16건 원본 CSV와 좌표 JSON 확보**했으나 해당 16개 대상은 기존 SHA와 모두 동일, 이 v5 변경으로 해결된 항목 **0건**. 원본 CSV에 없는 심각도 등급은 추측/조작하지 않음. 현재 담당 외부에서 행별 실제 파일/좌표는 열람 불가; Codex가 원문 16행을 공유 가능한 GitHub Issue #45 댓글·기획 인계 자료로 **사실 그대로 전파**하도록 요청하고, 기획이 해당항목 범위와 현재3 타일과 관계를 분류해야 함. 기존16을 확인 없이 일괄 수정하거나 `16개 결함=16개 모두 심각`으로 치환 금지.
+- 마을/기존 승인원본 디스크 변경0, Main23 구현0, main Push/병합0. `VILLAGE_V5_TECH_PASS / TILE3_ART_HOLD / OPEN16_RESOLVED0 / UNITY_ORIGINAL_UNCHANGED`.
+
+## 다음 권고와 작업 경계
+
+1. **늑대:** 원본 디스크 적용은 끝났으므로 Codex 동일6파일 재적용/106PASS 전수재QA 금지. 원격 PR/main 병합은 승인받아 별도 실행, 사용자 Save/UserData 및 dirty 파일 비파괴 동기화.
+2. **마을:** 동일한 단일 Base 타일을 계속 재가공하는 방식으로 주기성을 제거하기 어려우므로 **대체 타일 2개씩의 소규모 변형 파일럿(흙·서리·자갈)**을 제안. 이는 **아직 사용자 승인된 v6 제작/통합 지시 아님**. 먼저 v5 기존3종 SHA 보존·다변형 조합 5x5 미술 컨셉, TileGrid·cross-seam·실측 배치 계약을 검증할 필요. Open16 항목 원본16행은 Codex에게 근거를 받아 미술 유형/기능위험 분리, 승인된 최소 대상만 수리. 기존 돌길·SkillShop·Gable·나머지40·북부F1·Wolf 변경 금지. 최종 마을PASS는 대표의 실제 미술 승인 이후만.
+
+**운영:** 팀 담당들은 온보딩 완료이므로 지시문에 “너는 담당이다. GitHub에서 공부하고 와.” 문구 넣지 말고 제목부터 바로 본문 작성. `docs/planning`에만 기획문서 커밋, main 직접 변경/Push/PR 병합 자동 실행0.
+
+---
+
 # PLANNING 최신 진행 — 2026-10-21 Wolf Run6 v5 제품 연결 106PASS, Frostway Village GameArt v5 실물 납품
 
 **입력 근거:** 바울 대표 제공 Codex 결과 화면 + 사용자 로컬 ZIP 경로, art-new [v5 납품 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md) 및 Issue #45. 이 기획 세션은 사용자 F:와 실제 Codex 로컬 worktree를 직접 조작하지 않았으므로 아래 제품 연결은 **Codex 보고**, Village v5 SHA는 **아트 담당의 납품 신고값**으로 구분.
