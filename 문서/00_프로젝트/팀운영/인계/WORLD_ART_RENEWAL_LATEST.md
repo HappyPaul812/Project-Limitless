@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Wolf Run6 v3 기술/Unity PASS · 미술 HOLD → v4 모션보완 실제 PNG ZIP (최신)
+- [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 `#issuecomment-6310494103`, `docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` 확인. v3는 격리 Unity 실제 12FPS PASS이나 Frame04 어색한 후지관절/발접지·중간 몸체비율·05→00 Loop 미술 HOLD.
+- v3 ZIP 해시불일치: **초기 Codex 수령 f7eb4122… (보고상 2,788,009 bytes) vs 이 세션 실제 최종 파일 171b954d… (2,788,020 bytes)**, 최종 GIF 타이밍/인계 갱신 단계에서 서로 다른 ZIP 릴리스 존재. 11byte 차이; **초기 ZIP 바이너리가 현 컨테이너에 없으므로 어떤 ZIP 엔트리가 다른지 세부 원인은 추가 read-only 대조 필요**, 동일 바이너리라고 주장하지 않음.
+- v4 실제 `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`, **3,024,517 bytes / 34 files / SHA256 `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`**. 512×384 RGBA PNG 6장, 3072×384 Strip, 1536×768 Atlas, 12FPS GIF/APNG, 128px/40px, v3↔v4 동시 움직임, Frame04 후지·Frame05 전지의 2x Before/After, 05→00 정적 전후, Manifest/per-file SHA/foot·bbox CSV/QA.
+- v3 **00~03 PNG 파일 바이트 동일**. 04의 부자연스럽게 위로 꺾인 뒷발을 Frame01에 실제로 칠해진 관절·털·발끝을 활용해 굽힌 새 독립 다리 위치로 재구성(4,368 RGBA픽셀 변경)하고 승인된 꼬리 영역(346,88..485,164) pixel 동일. 05는 기존 뻣뻣한 앞다리를 들어 올린 전완 굽힘 자세로 재배치(7,542픽셀 변경), 05→00 루프 개선 후보. **이전 원화 조각을 회전/재배치한 포즈 구성이지 전체6 신작을 독립 손그림으로 그렸다는 주장 금지**.
+- 승인 Wolf v5 KeyArt `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 실제 SHA 재검사/변경0. ZIP stdlib CRC PASS/PNG6 Decode/Strip·Atlas 6칸 픽셀동일/3px 외곽알파0. 모션은 **Codex 격리 실제 Unity v4 재검수/바울 대표 모션 최종승인 별개**, PPU/본게임 Wolf Run 교체 금지.
+- [납품·해시·QA 보고](../../Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md), 최초 보고 커밋 `e6b80f84aecda57ebcc29c3b77ce739e4766e979`. 새 PNG/ZIP은 이번 채팅 sandbox 파일, GitHub 바이너리/F: 자동전달 아님. 다른 챕터1·2/Chapter3 asset, Bear/Fox/Snake, Scene/Save/UserData/main 변경0.
+- 현재 `WOLF_RUN6_V4_DELIVERED / OFFLINE_TECH_QA_PASS / MOTION_VISUAL_ART_PENDING / CODEX_ISOLATED_UNITY_V4_PENDING / USER_APPROVAL_PENDING`.
+
+
+
 ## 2026-10-21 Wolf Run6 v2 기술 PASS / 미술 FAIL → v3 실제 6PNG+Strip/Atlas/12FPS 재작업 (현재 최신)
 
 - 근거 Issue #43 최신 Codex 댓글 및 `docs/planning/문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md`. 이전 v2는 프레임03·04 꼬리 절단, 03 뒷발 절단, 05→00 접지·몸통 비율 미술 FAIL, 형식 PASS/실제 Unity Import 미실행.
