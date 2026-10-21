@@ -56,7 +56,7 @@
 ## 4. 최종 Codex 산출 및 판정
 
 - `Temp/EOD20261021/BackupManifest.json`, `SelectedChangesAllowlist.json`, `FeatureCommitMap.csv`, `IntegrationDeltaQA.json`, `UserOriginalProtectionProof.json`, `PRMergeCloseout.md`, `OriginalLocalSync_Proof.json` (파일명은 기존 runbook과 맞춤).
-- 필수 보고: 통합한 기능/문서 및 **제외한 HOLD**, 기존102? 등 임의 PASS숫자 합산금지; 각 기능 기존 검증 PASS 재사용 여부/이번 추가 검사 수, Source↔SHA/기존파일 비인가 변경0, branch/commit/PR, 최종 GitHub main/head·origin main·원본 local main, dirty/untracked/staged 사전·사후, 백업SHA mismatch, Save·Editor 보호, 실제 원본 Import/실사용 미검증.
+- 필수 보고: 통합한 기능/문서 및 **제외한 HOLD**, 기존 검증의 PASS 숫자를 서로 다른 범위에 중복 합산하지 말 것; 각 기능 기존 검증 PASS 재사용 여부/이번 추가 검사 수, Source↔SHA/기존파일 비인가 변경0, branch/commit/PR, 최종 GitHub main/head·origin main·원본 local main, dirty/untracked/staged 사전·사후, 백업SHA mismatch, Save·Editor 보호, 실제 원본 Import/실사용 미검증.
 - 완료 정의:
   - `SYNC_COMPLETE`: **GitHub main = origin/main = 사용자 원본 로컬 main**, index·제품경로·승인 범위 실제 동일성과 사용자 보호SHA 불일치0을 동시 입증.
   - `REMOTE_MERGED_LOCAL_SYNC_PARTIAL`: PR 머지는 확인됐으나 원본 로컬 안전한 main ref/index 동기화 미달.
