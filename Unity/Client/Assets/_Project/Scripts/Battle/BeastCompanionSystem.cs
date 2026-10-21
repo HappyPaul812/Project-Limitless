@@ -14,12 +14,15 @@ namespace ProjectLimitless.Battle
     public sealed class BeastCompanionDefinition
     {
         public BeastCompanionDefinition(string id, string displayName, string runResourcePath,
-            int frameWidth, int iconFrameIndex, float framesPerSecond, float displayScale, float travelSpeed)
+            int frameWidth, int iconFrameIndex, float framesPerSecond, float displayScale, float travelSpeed,
+            string iconResourcePath = null, int iconFrameWidth = 0)
         {
             Id = id ?? string.Empty;
             DisplayName = displayName ?? string.Empty;
             RunResourcePath = runResourcePath ?? string.Empty;
             FrameWidth = Math.Max(1, frameWidth);
+            IconResourcePath = iconResourcePath ?? RunResourcePath;
+            IconFrameWidth = iconFrameWidth > 0 ? iconFrameWidth : FrameWidth;
             IconFrameIndex = Math.Max(0, iconFrameIndex);
             FramesPerSecond = Math.Max(1f, framesPerSecond);
             DisplayScale = Math.Max(.1f, displayScale);
@@ -30,6 +33,9 @@ namespace ProjectLimitless.Battle
         public string DisplayName { get; }
         public string RunResourcePath { get; }
         public int FrameWidth { get; }
+        // 승인 Run 교체가 기존 스킬/시설 아이콘을 바꾸지 않도록 아이콘 원본 규격을 별도로 보존합니다.
+        public string IconResourcePath { get; }
+        public int IconFrameWidth { get; }
         /// <summary>
         /// Run 시트 중 작은 버튼에서도 몸통·머리·꼬리·다리가 잘 구분되는 프레임 번호입니다.
         /// 야수별 실루엣이 다르므로 UI 코드에 Wolf 전용 숫자를 넣지 않고 야수 데이터가 직접 제공합니다.
@@ -60,7 +66,9 @@ namespace ProjectLimitless.Battle
             // 프레임 속도와 이동 속도가 분리되어 있으므로 발 동작은 유지하면서 돌진 거리만 천천히 이동합니다.
             // 0부터 세는 4번 프레임(실제 다섯 번째)은 몸통과 네 다리의 간격이 비교적 분명해
             // 40px 안팎의 작은 스킬 버튼에서도 달리는 늑대 형태를 알아보기 쉽습니다.
-            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run", 64, 4, 12f, 2f, 760f * 3f / 4f);
+            // 승인 512×384 셀은 0.25배로 128×96 UI 영역에 표시합니다. 기존 아이콘 64px 원본은 유지합니다.
+            "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run6_v5", 512, 4, 12f, .25f, 760f * 3f / 4f,
+            "CompanionAssaultValidation/Wolf_Run", 64);
         private static readonly BeastCompanionDefinition Bear = new BeastCompanionDefinition(
             "bear", "Bear", "CompanionAssaultValidation/Bear_Run", 64, 0, 12f, 2f, 570f);
         private static readonly BeastCompanionDefinition Fox = new BeastCompanionDefinition(

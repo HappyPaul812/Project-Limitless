@@ -1,0 +1,67 @@
+from pathlib import Path
+import json,hashlib,re,zipfile
+import numpy as np
+from scipy import ndimage
+from PIL import Image,ImageDraw
+r=Path.cwd();o=r/'Temp/ArtReviewMonsterWolfF1_20261021';w=o/'Worktree';e=w/'문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021';e.mkdir(parents=True,exist_ok=True)
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+audit={'packages':{},'monsters':{},'f1':{},'references':{}}
+for k,n in [('MonsterWolf','Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip'),('F1','Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip')]:
+ p=Path('F:/Downloads')/n;z=zipfile.ZipFile(p);audit['packages'][k]={'sha256':sha(p),'bytes':p.stat().st_size,'entries':len(z.namelist()),'crc_pass':z.testzip() is None,'pngs':{}}
+ for p in (o/k).rglob('*.png'):
+  im=Image.open(p);im.load();audit['packages'][k]['pngs'][str(p.relative_to(o/k)).replace('\\','/')]={'sha256':sha(p),'size':im.size,'mode':im.mode}
+manifest=json.loads((o/'MonsterWolf/Manifest.json').read_text())
+for name,info in manifest['assets'].items():assert sha(o/'MonsterWolf'/info['preserved_png'])==info['source_png_sha256']
+for m in ['VenomSnake','Wolf']:
+ p=o/'MonsterWolf/Assets'/f'{m}_KeyArt_v3.png';im=Image.open(p);a=np.array(im)[:,:,3];stats={'sha256':sha(p),'bbox':im.getbbox(),'alpha_nonzero':int((a>0).sum()),'low_alpha_1_16':int(((a>0)&(a<=16)).sum()),'thresholds':{}}
+ for t in [0,16,128]:
+  lab,n=ndimage.label(a>t,structure=np.ones((3,3)));sizes=np.bincount(lab.ravel())[1:];objects=ndimage.find_objects(lab);small=[]
+  for i,size in enumerate(sizes):
+   if size>=16:continue
+   sl=objects[i];vals=a[sl][lab[sl]==i+1];small.append({'pixels':int(size),'bbox':[sl[1].start,sl[0].start,sl[1].stop,sl[0].stop],'alpha_min':int(vals.min()),'alpha_max':int(vals.max())})
+  stats['thresholds'][str(t)]={'components8':int(n),'small_under16_count':len(small),'small_components':small,'border':{'left':int((a[:,0]>t).sum()),'right':int((a[:,-1]>t).sum()),'top':int((a[0,:]>t).sum()),'bottom':int((a[-1,:]>t).sum())}}
+ ys=np.where(a[:,0]>0)[0];stats['left_contact_y']=ys.tolist();stats['left_contact_alpha']=a[ys,0].tolist();audit['monsters'][m]=stats
+# Check both conflicting QA tables against bytes and the independent 10/20 delivery report.
+qa=json.loads((o/'F1/QA/Offline_QA.json').read_text());old=(r/'문서/00_프로젝트/Chapter3_ArtNew_F1_Frostway_Pilot_Production_QA_20261020.md').read_text(encoding='utf-8-sig')
+for p in (o/'F1/Original_F1').glob('*.png'):
+ actual=sha(p);line=next(x for x in old.splitlines() if 'F1/'+p.name+'`' in x);historical=re.search(r'`([a-f0-9]{64})`',line).group(1)
+ audit['f1'][p.name]={'sha256':actual,'historical_sha':historical,'historical_match':actual==historical,'qa_originals_match':actual==qa['originals'][p.name]['sha256'],'qa_original_preserved_table_match':actual==qa['original_preserved_sha256'][p.name]}
+for line in (o/'F1/SHA256SUMS.txt').read_text().splitlines():
+ h,n=line.split(maxsplit=1);assert sha(o/'F1'/n.lstrip('*'))==h
+audit['packages']['F1']['sha_list']='all 17 matched'
+for p in (o/'F1/Targeted_Samples').glob('*.png'):
+ im=Image.open(p);a=np.array(im);stats={'sha256':sha(p),'alpha_range':[int(a[:,:,3].min()),int(a[:,:,3].max())],'lr_exact':bool(np.array_equal(a[:,0],a[:,-1])),'tb_exact':bool(np.array_equal(a[0],a[-1])),'alpha_left_mean':float(a[:,0,3].mean()),'alpha_right_mean':float(a[:,-1,3].mean())}
+ audit['f1'][p.name]=stats
+# Same actual Battle Image slot; preserve full source canvas, no bbox crop or per-subject enlargement.
+refs=[]
+for folder in ['11_SootHound','12_HeatwindHawk','13_FissureLizard','14_EmberBeetle','15_EmberWraith']:
+ p=next((r/'Unity/Client/Assets/_Project/Art/Monsters'/folder).glob('*.png'));im=Image.open(p).convert('RGBA');meta=Path(str(p)+'.meta').read_text();ppu=float(re.search(r'spritePixelsToUnits: ([\d.]+)',meta).group(1));assert ppu==314
+ f=im.crop((0,0,314,314));refs.append((folder,f));audit['references'][folder]={'path':str(p.relative_to(r)).replace('\\','/'),'sha256':sha(p),'cell':[314,314],'ppu':ppu,'frame_bbox':f.getbbox()}
+refs += [(m,Image.open(o/'MonsterWolf/Assets'/f'{m}_KeyArt_v3.png').convert('RGBA')) for m in ['VenomSnake','Wolf']]
+board=Image.new('RGB',(7*170,390),(30,35,42));d=ImageDraw.Draw(board);d.text((10,8),'OFFLINE - actual source PNGs; full canvas fitted to Battle Image 136x112. NOT Unity GameView.',fill='white')
+for i,(name,f) in enumerate(refs):
+ for j,bg in enumerate([(30,35,42),(78,90,61)]):
+  x=i*170+12;y=65+j*150;d.rectangle((x,y,x+136,y+112),fill=bg);factor=min(136/f.width,112/f.height);res=f.resize((round(f.width*factor),round(f.height*factor)),Image.Resampling.NEAREST);board.paste(res,(x+(136-res.width)//2,y+(112-res.height)//2),res)
+ d.text((i*170+7,40),name,fill='white')
+board.save(e/'Monster_ActualBattleSlot_Offline.png')
+# Diagnostic full source panels, alpha composites without modifying input images.
+for m in ['VenomSnake','Wolf']:
+ im=Image.open(o/'MonsterWolf/Assets'/f'{m}_KeyArt_v3.png').convert('RGBA');scale=min(450/im.width,550/im.height);im=im.resize((round(im.width*scale),round(im.height*scale)),Image.Resampling.NEAREST);b=Image.new('RGB',(960,620),(30,35,42));dd=ImageDraw.Draw(b);dd.text((10,8),m+' / OFFLINE alpha backgrounds / full canvas',fill='white')
+ for j,bg in enumerate(['white',(35,65,38)]):
+  xx=15+j*475;dd.rectangle((xx,40,xx+450,600),fill=bg);b.paste(im,(xx+(450-im.width)//2,45),im)
+ b.save(e/f'{m}_AlphaBackgrounds.png')
+# Source 1:1 and 128px comparisons; all captions explicitly offline.
+keys=['Ground_Earth_Base','Ground_ThinFrost_Base','EarthToFrost_Transition_Overlay']
+b=Image.new('RGB',(1110,730),(30,35,42));dd=ImageDraw.Draw(b);dd.text((10,8),'OFFLINE - top: original/source 1:1, middle: candidate 1:1, bottom: 128px thumbnails',fill='white')
+for j,key in enumerate(keys):
+ orig=Image.open(o/'F1/Original_F1'/f'NorthF1_{key}.png');new=Image.open(o/'F1/Targeted_Samples'/f'NorthF1_{key}_ArtSample_v2.png')
+ for i,img in enumerate([orig,new]):
+  x=15+j*365;y=65+i*290;dd.rectangle((x,y,x+256,y+256),fill=(75,78,80));b.paste(img,(x,y),img);dd.text((x,y-20),key+(' ORIGINAL' if i==0 else ' CANDIDATE'),fill='white')
+ for i,img in enumerate([orig,new]):sm=img.resize((128,128),Image.Resampling.NEAREST);b.paste(sm,(15+j*365+i*150,580),sm)
+b.save(e/'F1_Original_Candidate_1to1_Offline.png')
+for key in keys[:2]:
+ im=Image.open(o/'F1/Targeted_Samples'/f'NorthF1_{key}_ArtSample_v2.png');b=Image.new('RGBA',(512,512));
+ for x in [0,256]:
+  for y in [0,256]:b.paste(im,(x,y))
+ b.save(e/f'{key}_Repeat2x2_1to1.png')
+(e/'Validation.json').write_text(json.dumps(audit,indent=2));print(json.dumps({'monster_sha':{k:v['sha256'] for k,v in audit['monsters'].items()},'f1_original_preserved':{k:v.get('historical_match') for k,v in audit['f1'].items() if 'historical_match'in v},'snake_components':{t:{k:v for k,v in x.items() if k!='small_components'} for t,x in audit['monsters']['VenomSnake']['thresholds'].items()},'wolf_components':{t:{k:v for k,v in x.items() if k!='small_components'} for t,x in audit['monsters']['Wolf']['thresholds'].items()}}))

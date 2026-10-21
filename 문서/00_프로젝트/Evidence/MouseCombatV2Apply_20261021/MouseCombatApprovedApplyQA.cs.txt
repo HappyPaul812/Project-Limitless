@@ -1,0 +1,147 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Core;
+using ProjectLimitless.Monster;
+using ProjectLimitless.Player;
+using Object=UnityEngine.Object;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>승인 PNG만 Import하고 실제 Battle Scene의 기존 전투 경로를 격리 검증합니다. 제품 코드에 포함하지 않습니다.</summary>
+    [InitializeOnLoad]
+    public static class MouseCombatApprovedApplyQA
+    {
+        const string Armed="MouseCombatApprovedApplyQA20261021";
+        const string Art="Assets/_Project/Art/Monsters/FrostFieldMouse/";
+        const string Asset="Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset";
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../MouseCombatV2Apply20261021/Runtime"));
+        const BindingFlags H=BindingFlags.Instance|BindingFlags.NonPublic;
+        static IEnumerator routine;static double deadline;static BattleSceneController c;
+        static MonsterDefinition visual;static MonsterSpriteSheetAnimation watched;
+        static readonly List<string> checks=new List<string>(),trace=new List<string>(),errors=new List<string>();
+        static readonly Dictionary<string,Texture2D> captures=new Dictionary<string,Texture2D>();
+        static string phase="Setup",last="";static double started;
+        static MouseCombatApprovedApplyQA(){EditorApplication.playModeStateChanged+=s=>{
+            if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Armed,false))return;
+            Application.runInBackground=true;AudioListener.volume=0;Application.targetFrameRate=60;QualitySettings.vSyncCount=0;
+            Application.logMessageReceived+=(t,st,k)=>{if(k==LogType.Error||k==LogType.Exception)errors.Add(t+"\n"+st);};
+            routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+160;EditorApplication.update+=Tick;
+        };}
+        static void Check(bool ok,string id){checks.Add((ok?"PASS|":"FAIL|")+id);File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);if(!ok)throw new Exception(id);}
+        static T Get<T>(object o,string n)=>(T)o.GetType().GetField(n,H).GetValue(o);
+        static void Set(object o,string n,object value)=>o.GetType().GetField(n,H).SetValue(o,value);
+        static object Call(object o,string n,params object[] args)=>o.GetType().GetMethod(n,H).Invoke(o,args);
+        static object View(Combatant actor)=>((IDictionary)Get<object>(c,"combatantViews"))[actor];
+        static T V<T>(object v,string n)=>(T)v.GetType().GetField(n).GetValue(v);
+        public static void Start(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field05Review20261019/Client/Assets"))throw new Exception("격리 Batch Client만 허용합니다.");
+            Directory.CreateDirectory(Root);File.WriteAllText(Path.Combine(Root,"status.txt"),"IMPORTING");
+            foreach(string m in new[]{"Idle","Attack","Hit","Defeat"})Import(Art+"FrostFieldMouse_A_"+m+"_4Frames.png",m);
+            // 전투 수치·공식 Monster ID는 기획 미확정이므로 외형 전용 위치에 기존 Definition 형식만 재사용합니다.
+            // 표준 MonsterDefinitions 목록에 등록하거나 필드 조우·보상 데이터를 생성하지 않습니다.
+            visual=AssetDatabase.LoadAssetAtPath<MonsterDefinition>(Asset);
+            if(visual==null){visual=ScriptableObject.CreateInstance<MonsterDefinition>();AssetDatabase.CreateAsset(visual,Asset);}
+            var so=new SerializedObject(visual);so.FindProperty("displayName").stringValue="서리들쥐";
+            foreach(var item in new[]{("Idle","explicitIdleFrames"),("Attack","explicitAttackFrames"),("Hit","explicitHitFrames"),("Defeat","explicitDefeatFrames")}){
+                var sprites=Sprites(item.Item1);var a=so.FindProperty(item.Item2);a.arraySize=4;for(int i=0;i<4;i++)a.GetArrayElementAtIndex(i).objectReferenceValue=sprites[i];
+            }
+            so.FindProperty("fieldSprite").objectReferenceValue=Sprites("Idle")[0];so.FindProperty("animationFramesPerSecond").floatValue=8;so.FindProperty("visualScale").floatValue=1;so.FindProperty("sourceFacesRight").boolValue=true;
+            so.ApplyModifiedPropertiesWithoutUndo();EditorUtility.SetDirty(visual);AssetDatabase.SaveAssets();
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Armed,true);EditorApplication.EnterPlaymode();
+        }
+        static Sprite[] Sprites(string m)=>AssetDatabase.LoadAllAssetsAtPath(Art+"FrostFieldMouse_A_"+m+"_4Frames.png").OfType<Sprite>().OrderBy(s=>s.name).ToArray();
+        static void Import(string path,string m){
+            AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);var im=(TextureImporter)AssetImporter.GetAtPath(path);
+            im.textureType=TextureImporterType.Sprite;im.spriteImportMode=SpriteImportMode.Multiple;im.spritePixelsPerUnit=512;im.maxTextureSize=2048;im.filterMode=FilterMode.Point;im.mipmapEnabled=false;im.textureCompression=TextureImporterCompression.Uncompressed;im.wrapMode=TextureWrapMode.Clamp;im.npotScale=TextureImporterNPOTScale.None;im.alphaIsTransparency=true;im.sRGBTexture=true;
+            var settings=new TextureImporterSettings();im.ReadTextureSettings(settings);settings.spriteMeshType=SpriteMeshType.FullRect;im.SetTextureSettings(settings);im.SaveAndReimport();
+            var factory=new SpriteDataProviderFactories();factory.Init();var p=factory.GetSpriteEditorDataProviderFromObject(im);p.InitSpriteEditorDataProvider();
+            // 재실행하더라도 이미 만든 Sprite ID를 유지하여 Definition 참조를 보호합니다.
+            var old=p.GetSpriteRects();var rects=Enumerable.Range(0,4).Select(i=>new SpriteRect{name="FrostFieldMouse_A_"+m+"_"+i.ToString("00"),rect=new Rect(i*512,0,512,512),alignment=SpriteAlignment.BottomCenter,pivot=new Vector2(.5f,0),spriteID=old.FirstOrDefault(s=>s.name=="FrostFieldMouse_A_"+m+"_"+i.ToString("00"))?.spriteID??GUID.Generate()}).ToArray();
+            p.SetSpriteRects(rects);var names=p.GetDataProvider<ISpriteNameFileIdDataProvider>();if(names!=null)names.SetNameFileIdPairs(rects.Select(x=>new SpriteNameFileIdPair(x.name,x.spriteID)));p.Apply();im.SaveAndReimport();
+        }
+        static IEnumerator Wait(float seconds){float until=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<until)yield return null;}
+        static IEnumerator Capture(string n){yield return null;captures[n]=ScreenCapture.CaptureScreenshotAsTexture();yield return null;}
+        static void Prepare(Combatant actor){
+            // 실전 자동 턴만 통제하고, 행동·피해·피격·사망 경로는 기존 Controller/Presenter 그대로 실행합니다.
+            c.StopAllCoroutines();Set(c,"currentActor",actor);Set(c,"actionPlaying",false);Set(c,"battleEnded",false);
+        }
+        static void Attack(Combatant actor,Combatant target){Prepare(actor);Call(c,"PlayBasicAttack",actor,target,100,null,false,false);Set(c,"battleEnded",true);}
+        static IEnumerator Observe(string m){
+            var fs=m=="Attack"?visual.ExplicitAttackFrames:m=="Hit"?visual.ExplicitHitFrames:visual.ExplicitDefeatFrames;
+            for(int i=0;i<4;i++){
+                float end=Time.realtimeSinceStartup+2;while(watched.CurrentFrame!=fs[i]&&Time.realtimeSinceStartup<end)yield return null;
+                Check(watched.CurrentFrame==fs[i],"Battle."+m+".Frame"+i);yield return Capture(m+"_Frame"+i);
+            }
+            if(m!="Defeat"){
+                float end=Time.realtimeSinceStartup+2;while(!visual.ExplicitIdleFrames.Contains(watched.CurrentFrame)&&Time.realtimeSinceStartup<end)yield return null;
+                Check(visual.ExplicitIdleFrames.Contains(watched.CurrentFrame),"Battle."+m+".ReturnIdle");yield return Wait(.25f);yield return Capture(m+"_ReturnedIdle");
+            }else{
+                yield return Wait(1.3f);Check(watched.CurrentFrame==visual.ExplicitDefeatFrames[3],"Battle.Defeat.Hold03Over1Second");yield return Capture("Defeat_Hold03");
+            }
+        }
+        static IEnumerator Run(){
+            visual=Resources.Load<MonsterDefinition>("MonsterVisuals/FrostFieldMouse");Check(visual!=null,"OfficialVisual.ResourceLoad");
+            Check(string.IsNullOrEmpty(visual.MonsterId)&&!Resources.LoadAll<MonsterDefinition>("MonsterDefinitions").Contains(visual),"NoUnapprovedGameplayRegistration");
+            foreach(string m in new[]{"Idle","Attack","Hit","Defeat"})Check(Sprites(m).Length==4&&Sprites(m).All(s=>s.rect.size==new Vector2(512,512)&&s.pivot==new Vector2(256,0)&&s.pixelsPerUnit==512),"Import."+m+".4Cells512PPUPivot");
+            Check(visual.AnimationFramesPerSecond==8&&visual.VisualScale==1&&visual.SourceFacesRight,"Contract.8FPSScale1Right");
+            GameSaveService.AuditSaveDirectory=Path.Combine(Root,"IsolatedSaves");GameSessionData.Reset();GameSaveService.SelectSlot(1);
+            GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"서리들쥐 연결 검증");GameSessionData.SelectPlayerPath("path.vision");GameSessionData.SelectJob("guardian");GameSessionData.ConfigureProgress(1,0);
+            GameSessionData.RecordLocation("World_StarterVillage","Spawn_From_Field01");BattleEncounterContext.Set(visual,null,null,null,Vector2.zero,Vector2.zero);
+            PlayModeWindow.SetCustomRenderingResolution(1280,720,"Mouse approved actual Battle QA");
+            var load=SceneManager.LoadSceneAsync("Battle");while(!load.isDone)yield return null;yield return Wait(.5f);
+            c=Object.FindFirstObjectByType<BattleSceneController>();Check(c!=null&&SceneManager.GetActiveScene().name=="Battle","ActualBattleSceneLoaded");
+            float ready=Time.realtimeSinceStartup+15;while(GameObject.Find("TieBreakOverlay")!=null&&Time.realtimeSinceStartup<ready)yield return null;
+            Check(GameObject.Find("TieBreakOverlay")==null,"ActualBattle.IntroOverlayFinished");c.StopAllCoroutines();Set(c,"battleEnded",true);
+            var enemies=Get<Formation>(c,"enemies").Members.ToArray();var allies=Get<Formation>(c,"allies").Members.ToArray();var mouse=enemies[0];var ally=allies[0];
+            var view=View(mouse);watched=V<MonsterSpriteSheetAnimation>(view,"MonsterAnimation");var im=V<Image>(view,"SpriteImage");var root=V<RectTransform>(view,"ActionRoot");var origin=root.localPosition;
+            Check(watched!=null&&im.sprite!=null,"ActualBattleRendererHasOfficialFrames");Check(im.rectTransform.sizeDelta==new Vector2(136,112)&&im.preserveAspect,"ActualBattleDisplay136x112");
+            phase="Idle";yield return Wait(.4f);yield return Capture("Before_Idle");yield return Wait(.25f);
+            phase="Attack";last="";int hp=ally.CurrentHp;Attack(mouse,ally);yield return Observe("Attack");yield return Wait(.3f);
+            Check(ally.CurrentHp==hp-mouse.Attack,"Battle.Attack.ExactlyOneDamage");Check(root.localPosition==origin,"Battle.Attack.ReturnsToFormation");
+            phase="Hit";last="";hp=mouse.CurrentHp;Attack(ally,mouse);yield return Observe("Hit");yield return Wait(.25f);
+            Check(mouse.CurrentHp<hp&&mouse.IsAlive,"Battle.Hit.DamageAndSurvival");Check(root.localPosition==origin,"Battle.Hit.ShakeRestoresRoot");
+            // Hit 직후 자기 차례가 와도 Attack이 Hit에 가려지지 않는지 기존 상태 우선순위를 실제 경로로 확인합니다.
+            phase="HitThenAttack";last="";Prepare(mouse);mouse.TakeDamage(1);Call(c,"RefreshCombatantViews",(object)null);yield return Wait(.1f);Attack(mouse,ally);yield return Wait(.03f);
+            Check(visual.ExplicitAttackFrames.Contains(watched.CurrentFrame),"Battle.HitInterruptedByAttack");yield return Wait(.85f);
+            // 사망 피해만 fixture로 준비하며, 실제 마지막 타격은 Controller와 Presenter를 통해 적용합니다.
+            phase="Defeat";last="";if(mouse.CurrentHp>1)mouse.TakeDamage(mouse.CurrentHp-1);Call(c,"RefreshCombatantViews",(object)null);yield return Wait(.55f);
+            Attack(ally,mouse);yield return Observe("Defeat");Check(!mouse.IsAlive,"Battle.Defeat.NotAlive");
+            Check(im.sprite==visual.ExplicitDefeatFrames[3],"Battle.Defeat.FinalSpriteNotIdle");
+            Check(Object.FindObjectsByType<MonsterSpriteSheetAnimation>().All(a=>a.CurrentFrame!=null),"Battle.NoMissingMonsterSprite");
+            // 승인 자산만 추가되었으므로 기존 몬스터 외형 목록과 대표 기본 공격도 계속 로드되어야 합니다.
+            var hound=Resources.Load<MonsterDefinition>("MonsterDefinitions/11_SootHound");Check(hound!=null&&hound.ExplicitAttackFrames.Length==4&&hound.ExplicitIdleFrames.All(s=>s!=null),"Regression.SootHoundFramesIntact");
+            // Existing 4-motion monster state regression; no asset data is modified.
+            foreach(string key in new[]{"11_SootHound","15_EmberWraith"}){
+                var existing=Resources.Load<MonsterDefinition>("MonsterDefinitions/"+key);
+                var go=new GameObject("QA_StateRegression",typeof(RectTransform),typeof(CanvasRenderer),typeof(Image));
+                var animation=go.AddComponent<MonsterSpriteSheetAnimation>();animation.Configure(go.GetComponent<Image>(),existing);
+                animation.PlayHit();yield return Wait(.1f);animation.PlayAttack();yield return Wait(.03f);
+                Check(existing.ExplicitAttackFrames.Contains(animation.CurrentFrame),"Regression."+key+".HitToAttack");
+                animation.PlayDefeat();yield return Wait(.6f);animation.PlayAttack();
+                Check(animation.CurrentFrame==existing.ExplicitDefeatFrames[3],"Regression."+key+".DefeatCannotRestartAttack");Object.Destroy(go);
+            }
+            File.WriteAllLines(Path.Combine(Root,"FrameTrace.tsv"),trace);File.WriteAllLines(Path.Combine(Root,"errors.txt"),errors);
+            Check(errors.All(e=>e.Contains("UnityEditor.Search")||e.Contains("Host type is not matching")),"Console.NewProductErrors0");
+            foreach(var capture in captures)File.WriteAllBytes(Path.Combine(Root,capture.Key+".png"),capture.Value.EncodeToPNG());
+            GameSaveService.FinishAudit();File.WriteAllText(Path.Combine(Root,"status.txt"),"PASS");
+        }
+        static IEnumerator Flatten(IEnumerator first){var stack=new Stack<IEnumerator>();stack.Push(first);while(stack.Count>0){var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}if(top.Current is IEnumerator nested){stack.Push(nested);continue;}yield return top.Current;}}
+        static void Tick(){try{
+            if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("승인 연결 QA 시간 초과");
+            if(watched!=null&&watched.CurrentFrame!=null&&watched.CurrentFrame.name!=last){last=watched.CurrentFrame.name;trace.Add(phase+"\t"+Time.realtimeSinceStartup.ToString("F5",CultureInfo.InvariantCulture)+"\t"+last);}
+            if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Armed,false);EditorApplication.Exit(0);
+        }catch(Exception ex){File.WriteAllText(Path.Combine(Root,"failure.txt"),ex.ToString());File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");File.WriteAllLines(Path.Combine(Root,"FrameTrace.tsv"),trace);EditorApplication.Exit(1);}}
+    }
+}

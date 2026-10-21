@@ -1,0 +1,495 @@
+{
+  "packages": {
+    "Wolf": {
+      "sha256": "e241535f1c505bf50f4de09317e74dbc3780be722139ff0baa02c908223765c6",
+      "bytes": 2466565,
+      "entries": 14,
+      "crc": true,
+      "pngs": {
+        "Assets/Wolf_KeyArt_v3_AlphaFix_v4.png": {
+          "sha256": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+          "size": [
+            952,
+            1306
+          ],
+          "mode": "RGBA"
+        },
+        "Assets/Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png": {
+          "sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+          "size": [
+            952,
+            1306
+          ],
+          "mode": "RGBA"
+        },
+        "Preview/Alpha_Changes_RedOverlay.png": {
+          "sha256": "014a9c73e4b6fabb8e408af5c7ab1c202b9361309de0a68c663452a14964232f",
+          "size": [
+            952,
+            1306
+          ],
+          "mode": "RGBA"
+        },
+        "Preview/Chest_Matte_BeforeAfter_2x.png": {
+          "sha256": "42aa699d249d0b1ca0543159272f46246b25b11e6f681d1a561706e4932bd72c",
+          "size": [
+            1284,
+            480
+          ],
+          "mode": "RGB"
+        },
+        "Preview/HindLeg_Background_Remnants_BeforeAfter_2x.png": {
+          "sha256": "f45e386b0b05200ef919a69b8bfe787f9889f8985c1793527772146688cd7df6",
+          "size": [
+            672,
+            470
+          ],
+          "mode": "RGB"
+        },
+        "Preview/Leg_And_Paw_Edge_BeforeAfter_2x.png": {
+          "sha256": "3527b99ebd4ab72684c364c2d0511ed41f2d6513673cd584f81a80b81abc8fc0",
+          "size": [
+            672,
+            345
+          ],
+          "mode": "RGB"
+        },
+        "Preview/Wolf_128px_BeforeAfter.png": {
+          "sha256": "c79d39027bee5d6a629e7a8946ccc6c791ea37544b83b4e8353b46ee8ef83191",
+          "size": [
+            256,
+            148
+          ],
+          "mode": "RGB"
+        },
+        "Preview/Wolf_v3_128px_BEFORE.png": {
+          "sha256": "759e644a0b331f6fe8af61d356ffca2f1578085542bdb485997a1e66e64141ac",
+          "size": [
+            128,
+            128
+          ],
+          "mode": "RGBA"
+        },
+        "Preview/Wolf_v4_128px_AFTER.png": {
+          "sha256": "563ecbb61d0abfeb25789c1cca8bd2cf71259d20f5e3c149a8cf9222d66cbe2e",
+          "size": [
+            128,
+            128
+          ],
+          "mode": "RGBA"
+        }
+      },
+      "manifest_files_verified": 2
+    },
+    "F1": {
+      "sha256": "8158f501763b525022b8b9fc1645fe2b0a5c0bc8bf9f73aabcb02024c3a3235c",
+      "bytes": 3897421,
+      "entries": 23,
+      "crc": true,
+      "pngs": {
+        "Art/NorthF1_EarthToFrost_Transition_Overlay_v2.png": {
+          "sha256": "7d11443186fcad691a5830a4a959f3a3d9076b613669b8db26c4fe56a5551aa1",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Art/NorthF1_Ground_Earth_Base_v2.png": {
+          "sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Art/NorthF1_Ground_ThinFrost_Base_v2.png": {
+          "sha256": "5fcb2da32042a83beb036797d3e9eeb9a5e3cf0016062f88dd66d012fc969b85",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Art/NorthF1_Path_WornTrail_Overlay_v2.png": {
+          "sha256": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Art/NorthF1_Prop_FrostShrub_01_v2.png": {
+          "sha256": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Art/NorthF1_Prop_Waymarker_01_v2.png": {
+          "sha256": "40036738e7da0c25df5c0b69aacba37c3d6e4a681d566fa3a5d30d7caea7431d",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_EarthToFrost_Transition_Overlay.png": {
+          "sha256": "5da0155fb31c0f2684738a642e47af074919a0732967f1f3248b3aafdab427fa",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_Ground_Earth_Base.png": {
+          "sha256": "dd2f4e125f97702fd4352beb4f600c5ba0bd7a0c9cb00f2922af86988b9ccbe8",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_Ground_ThinFrost_Base.png": {
+          "sha256": "fee1e35d61d8bb90ac27b902b81a96310a2f0918d6dd291f138bc927ffa27346",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_Path_WornTrail_Overlay.png": {
+          "sha256": "3595a805bc81d365985f60e1e642806f476bec601e3d3866bd0015ba282f56d7",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_Prop_FrostShrub_01.png": {
+          "sha256": "508ab9c7eabd5b7fa97b3baa4ce48a252a9a95f429b2d6d4e7c73bad76be860b",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Original_Reference/NorthF1_Prop_Waymarker_01.png": {
+          "sha256": "446a3b3121fd0531d25937abad6c8f91fc97e59fce50f67baa7f08c438bb6a47",
+          "size": [
+            256,
+            256
+          ],
+          "mode": "RGBA"
+        },
+        "Preview/F1_Art6_ContactSheet.png": {
+          "sha256": "cb055f9cce424d13c1c49fca031e2d8fa94c437f277c884b6e62c050add27472",
+          "size": [
+            910,
+            703
+          ],
+          "mode": "RGB"
+        },
+        "Preview/F1_Earth_Frost_Path_Composite_OFFLINE.png": {
+          "sha256": "c272d8e1fff43b882c9f72e6a52059c677817ba4115c5a4acc655fea2c210434",
+          "size": [
+            1024,
+            768
+          ],
+          "mode": "RGB"
+        },
+        "Preview/F1_v1_vs_v2_SameDisplayScale.png": {
+          "sha256": "073ded82f1e0259967136c2821730c6de739688c7277a965427dd862bc672a48",
+          "size": [
+            800,
+            560
+          ],
+          "mode": "RGB"
+        },
+        "Preview/F1_vs_Chapter2_Official_Environment_OFFLINE.png": {
+          "sha256": "95409e207554a381b30648abe91988faa41530d8a5699e22c074cf243f61e69c",
+          "size": [
+            860,
+            322
+          ],
+          "mode": "RGB"
+        },
+        "QA/Earth_Repeat_2x2.png": {
+          "sha256": "1c9c24000a203763699aaa017eb580ff7c1fd455dec63ef782ea979bdb07b29e",
+          "size": [
+            512,
+            512
+          ],
+          "mode": "RGBA"
+        },
+        "QA/Earth_Repeat_3x3.png": {
+          "sha256": "d5146cfd5ad90130003a381e3f87f89a1951cb29ad450802f485724a825c6dc9",
+          "size": [
+            768,
+            768
+          ],
+          "mode": "RGBA"
+        },
+        "QA/ThinFrost_Repeat_2x2.png": {
+          "sha256": "e3fc5287128c2a5266df0c402058e46ca6e1d771a2d6503c0bdb2fa350aa0798",
+          "size": [
+            512,
+            512
+          ],
+          "mode": "RGBA"
+        },
+        "QA/ThinFrost_Repeat_3x3.png": {
+          "sha256": "63469533e9a5b2c364f7360a8a51639377356fe0ff9a7a231d1b76d6da73a9de",
+          "size": [
+            768,
+            768
+          ],
+          "mode": "RGBA"
+        }
+      },
+      "sha_list_match": 22,
+      "qa_asset_hashes_verified": 6,
+      "originalProtected_verified": 6
+    }
+  },
+  "wolf": {
+    "original_sha": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+    "new_sha": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+    "original_v3_bytes_preserved": true,
+    "same_size": true,
+    "rgb_changed_pixels": 0,
+    "alpha_changed_pixels": 12088,
+    "alpha_increase_pixels": 0,
+    "changed_bbox": [
+      165,
+      821,
+      684,
+      1216
+    ],
+    "old_alpha_bbox": [
+      48,
+      48,
+      904,
+      1258
+    ],
+    "new_alpha_bbox": [
+      48,
+      48,
+      904,
+      1258
+    ],
+    "fraction_canvas_changed": 0.009722418829706462,
+    "csv_exact_match": true
+  },
+  "f1": {
+    "NorthF1_EarthToFrost_Transition_Overlay_v2.png": {
+      "sha256": "7d11443186fcad691a5830a4a959f3a3d9076b613669b8db26c4fe56a5551aa1",
+      "original_preserved": true,
+      "rgba_changed_pixels": 27797,
+      "changed_fraction": 0.4241485595703125,
+      "changed_bbox": [
+        78,
+        2,
+        256,
+        255
+      ],
+      "lr_exact": false,
+      "tb_exact": true,
+      "alpha_bbox": [
+        78,
+        2,
+        256,
+        255
+      ],
+      "alpha_range": [
+        0,
+        253
+      ],
+      "border_alpha_positive": {
+        "left": 0,
+        "right": 204,
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    "NorthF1_Ground_Earth_Base_v2.png": {
+      "sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+      "original_preserved": true,
+      "rgba_changed_pixels": 65536,
+      "changed_fraction": 1.0,
+      "changed_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "lr_exact": true,
+      "tb_exact": true,
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "border_alpha_positive": {
+        "left": 256,
+        "right": 256,
+        "top": 256,
+        "bottom": 256
+      }
+    },
+    "NorthF1_Ground_ThinFrost_Base_v2.png": {
+      "sha256": "5fcb2da32042a83beb036797d3e9eeb9a5e3cf0016062f88dd66d012fc969b85",
+      "original_preserved": true,
+      "rgba_changed_pixels": 65536,
+      "changed_fraction": 1.0,
+      "changed_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "lr_exact": true,
+      "tb_exact": true,
+      "alpha_bbox": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "alpha_range": [
+        255,
+        255
+      ],
+      "border_alpha_positive": {
+        "left": 256,
+        "right": 256,
+        "top": 256,
+        "bottom": 256
+      }
+    },
+    "NorthF1_Path_WornTrail_Overlay_v2.png": {
+      "sha256": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+      "original_preserved": true,
+      "rgba_changed_pixels": 25207,
+      "changed_fraction": 0.3846282958984375,
+      "changed_bbox": [
+        66,
+        0,
+        194,
+        256
+      ],
+      "lr_exact": true,
+      "tb_exact": true,
+      "alpha_bbox": [
+        71,
+        0,
+        194,
+        256
+      ],
+      "alpha_range": [
+        0,
+        254
+      ],
+      "border_alpha_positive": {
+        "left": 0,
+        "right": 0,
+        "top": 97,
+        "bottom": 97
+      }
+    },
+    "NorthF1_Prop_FrostShrub_01_v2.png": {
+      "sha256": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+      "original_preserved": true,
+      "rgba_changed_pixels": 18933,
+      "changed_fraction": 0.2888946533203125,
+      "changed_bbox": [
+        49,
+        30,
+        207,
+        242
+      ],
+      "lr_exact": true,
+      "tb_exact": true,
+      "alpha_bbox": [
+        49,
+        30,
+        207,
+        242
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "border_alpha_positive": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    "NorthF1_Prop_Waymarker_01_v2.png": {
+      "sha256": "40036738e7da0c25df5c0b69aacba37c3d6e4a681d566fa3a5d30d7caea7431d",
+      "original_preserved": true,
+      "rgba_changed_pixels": 18144,
+      "changed_fraction": 0.27685546875,
+      "changed_bbox": [
+        28,
+        26,
+        227,
+        244
+      ],
+      "lr_exact": true,
+      "tb_exact": true,
+      "alpha_bbox": [
+        28,
+        26,
+        227,
+        244
+      ],
+      "alpha_range": [
+        0,
+        255
+      ],
+      "border_alpha_positive": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0
+      }
+    },
+    "path_support": {
+      "earth_core_luma": 86.37544444444444,
+      "composite_core_luma": 79.3066320486111,
+      "physical_wheelchair_clearance": "NOT_VERIFIED_NO_PPU_GRID"
+    },
+    "cross_material": {
+      "earth_right_vs_frost_left_equal": false,
+      "mean_absolute_rgb_edge_difference": 3.8177083333333335
+    }
+  },
+  "conclusions": {
+    "wolf_technical": "PASS",
+    "wolf_art": "HOLD",
+    "targeted_edit_not_redraw": true,
+    "chest": "PARTIALLY_FIXED_UPPER_TRIANGLE_REMAINS",
+    "hind_leg": "LARGE_BLOCK_REMOVED_FINE_EDGE_REVIEW",
+    "front_paw_ground_fragment": "UNCHANGED_REMAINS",
+    "f1_technical": "PASS_FILES_AND_FORMAT",
+    "f1_art": {
+      "Ground_Earth_Base": "PASS",
+      "Ground_ThinFrost_Base": "HOLD",
+      "EarthToFrost_Transition_Overlay": "FAIL",
+      "Path_WornTrail_Overlay": "PASS_VISUAL_ONLY",
+      "Prop_FrostShrub_01": "PASS",
+      "Prop_Waymarker_01": "HOLD_DIRECTION_CLARITY"
+    },
+    "f1_bundle": "HOLD",
+    "unity_applied": false
+  }
+}

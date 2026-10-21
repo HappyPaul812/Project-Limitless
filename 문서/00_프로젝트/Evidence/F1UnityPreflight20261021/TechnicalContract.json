@@ -1,0 +1,56 @@
+{
+  "approved_pngs_sha256": {
+    "NorthF1_EarthToFrost_Transition_Overlay_v3.png": "93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1",
+    "NorthF1_Ground_Earth_Base_v2.png": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+    "NorthF1_Ground_ThinFrost_Base_v3.png": "12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c",
+    "NorthF1_Path_WornTrail_Overlay_v2.png": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+    "NorthF1_Prop_FrostShrub_01_v2.png": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+    "NorthF1_Prop_Waymarker_01_v3.png": "6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589"
+  },
+  "approved_all_match_previous_qa": true,
+  "zip_sha256": "488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054",
+  "existing_main21_next_blank": false,
+  "proposed_scene_id_not_locked": "World_NorthF1",
+  "qa_scene_ids": [
+    "QA_NorthF1",
+    "QA_VillageNorth"
+  ],
+  "production_ids_not_created": true,
+  "path_alpha_ge_128_min_width_source_px": 68,
+  "path_alpha_ge_128_max_width_source_px": 101,
+  "ppu": 128,
+  "path_native_min_width_world": 0.484375,
+  "path_candidate_scale_x": 3,
+  "path_candidate_min_width_world": 1.453125,
+  "player_original_circle_diameter_world": 1,
+  "candidate_path_min_total_margin_world": 0.453125,
+  "props_alpha_foot_pivot_pixels": {
+    "FrostShrub": 14,
+    "Waymarker": 12
+  },
+  "qa_grid_cell_world": [
+    2,
+    2,
+    1
+  ],
+  "qa_world_bounds": [
+    32,
+    24
+  ],
+  "sorting": {
+    "ground": -20,
+    "transition": -19,
+    "path": -10,
+    "prop": 1,
+    "player_original": 5
+  },
+  "prior_qa_reused": [
+    "F1 v3 delta ZIP/PNG SHA+edge reference",
+    "Main21 implementation Scene/Spawn/Save contract",
+    "Issue35 production gap list"
+  ],
+  "mouse_battle40_rerun": false,
+  "path_alpha_ge_128_min_contiguous_run_px": 62,
+  "path_alpha_ge_128_max_contiguous_run_px": 93,
+  "width_metric_note": "68..101 is count of foreground pixels per row, 62..93 is largest contiguous run; use contiguous run for conservative clear visual width"
+}

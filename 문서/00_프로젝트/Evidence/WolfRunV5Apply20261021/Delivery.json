@@ -1,0 +1,140 @@
+{
+  "zip_sha256": "16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351",
+  "crc_errors": 0,
+  "strip_sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c",
+  "pixel_identical_frames": 6,
+  "manifest": {
+    "package": "Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip",
+    "frame_count": 6,
+    "fps": 12,
+    "direction": "LEFT",
+    "approved_keyart_v5_sha256": "b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1",
+    "v4_zip_sha256": "3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412",
+    "files": {
+      "Assets/Poses/Wolf_Run_00_v5.png": {
+        "bytes": 133874,
+        "sha256": "5ca46e209c0bb45d4bf418a1720f86470e4298675232052c2391f18e4a0e9553"
+      },
+      "Assets/Poses/Wolf_Run_01_v5.png": {
+        "bytes": 119256,
+        "sha256": "df326167017962293eb1f704ddf9ec47b5e9a2af1c015b07d26043843ba10967"
+      },
+      "Assets/Poses/Wolf_Run_02_v5.png": {
+        "bytes": 107724,
+        "sha256": "db60697431cfeffdfdd63b6bb57e13c10525746fb5777d0376b07100348f6b35"
+      },
+      "Assets/Poses/Wolf_Run_03_v5.png": {
+        "bytes": 137652,
+        "sha256": "e68ce97aff56b1de39f85bc756c0ee9dc65c15559850e8bb765ed15d24bd9652"
+      },
+      "Assets/Poses/Wolf_Run_04_v5.png": {
+        "bytes": 122818,
+        "sha256": "1edca145f5b7774cf50580aa6ef2f6fac9456200505af359aa02f3f7922b56fe"
+      },
+      "Assets/Poses/Wolf_Run_05_v5.png": {
+        "bytes": 123188,
+        "sha256": "d3d53b94be9084bfd9b2a0bbe6fa492b903138b37c86e7068c9eaefbe8b1194c"
+      },
+      "Assets/Wolf_Run6_v5_Atlas3x2_1536x768.png": {
+        "bytes": 743903,
+        "sha256": "2c931c9eb9f09a655a80f76a2fb7e1f4efd31dda94a0000bc42f6bf9ccc3a2ac"
+      },
+      "Assets/Wolf_Run6_v5_Strip_3072x384.png": {
+        "bytes": 743963,
+        "sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c"
+      },
+      "Preview/Frame05_ChangedPixels_RedOverlay_NOT_ASSET.png": {
+        "bytes": 127470,
+        "sha256": "b7fbafba63d87e5fb1af88356003eeb92ec966cbc852a162235b3d899048ffe4"
+      },
+      "Preview/Frame05_HindLeg_v4_vs_v5_5x.png": {
+        "bytes": 17019,
+        "sha256": "8c8ee161fbf0ce44204664ddb4c433785b75aff0964e92d253397a5b3acbe33a"
+      },
+      "Preview/Loop_05_to_00_v4_vs_v5.png": {
+        "bytes": 25858,
+        "sha256": "e3c1e5b6e75fd174b59edf515c6bd7748e60ba93a2850141e2683461a787274c"
+      },
+      "Preview/Wolf_Run6_v5_128px_ContactSheet.png": {
+        "bytes": 51734,
+        "sha256": "557034f4bb8a75ce56cd3296bf063e24bebd30a0093627d07224d70bef9d6b75"
+      },
+      "Preview/Wolf_Run6_v5_12FPS_128px.apng": {
+        "bytes": 70370,
+        "sha256": "16e2d4d7202436ae24cb46b1a56dff2eaee1b3bda2124c9f776caf8b90c2553a"
+      },
+      "Preview/Wolf_Run6_v5_12FPS_128px.gif": {
+        "bytes": 21790,
+        "sha256": "a486dd81dd5cb572f9481f66d4594e547f8128b18e04fe81c45420b7709a84d1"
+      },
+      "Preview/Wolf_Run6_v5_40px_ContactSheet.png": {
+        "bytes": 8248,
+        "sha256": "64a7dcb4366f3186cc9ea7077a714c9d8d7e4da1c1e3f6b02d7260fb8ac8fd6a"
+      },
+      "Preview/Wolf_Run_00_128px_RGBA.png": {
+        "bytes": 13139,
+        "sha256": "e59cec80a1a25a54f279946611aae1a0d3f37b99ccefb03523d1ce3465333f3e"
+      },
+      "Preview/Wolf_Run_00_40px_RGBA.png": {
+        "bytes": 2131,
+        "sha256": "23f666f0b1757b790e4c3adfa492b65c006ef4a1ff6a37356ffd5b8f539855ca"
+      },
+      "Preview/Wolf_Run_01_128px_RGBA.png": {
+        "bytes": 11698,
+        "sha256": "18ded3f4a2fca2ecbb02933f1a47ae4fef0c89a80d66988661f90a6d561202d5"
+      },
+      "Preview/Wolf_Run_01_40px_RGBA.png": {
+        "bytes": 1922,
+        "sha256": "04cbd528cba5178794666c8bd86c2e2be6907789c47c01ec29af5bc2b8cc0e86"
+      },
+      "Preview/Wolf_Run_02_128px_RGBA.png": {
+        "bytes": 10147,
+        "sha256": "068428b2e4e64fc937fc4d34a2b657f3b9d1ac359529111fa166311406c6d7f8"
+      },
+      "Preview/Wolf_Run_02_40px_RGBA.png": {
+        "bytes": 1686,
+        "sha256": "39ece7b8b6f7a9076ad0e260b998b1e114a713c891f941f47e9c40314a59cad3"
+      },
+      "Preview/Wolf_Run_03_128px_RGBA.png": {
+        "bytes": 12792,
+        "sha256": "e52ca4c2c4eeb89b715a7785d55ae1366ca64c595f5c03f8e95c64e8c5ed5b8d"
+      },
+      "Preview/Wolf_Run_03_40px_RGBA.png": {
+        "bytes": 1992,
+        "sha256": "85f3b454a584e85fc0fb129900851a0daddecb43dd834d38dcca177d05079881"
+      },
+      "Preview/Wolf_Run_04_128px_RGBA.png": {
+        "bytes": 11795,
+        "sha256": "e169c8837ec1c0a9f110c38df7e84d54cd6298112df8377f7e2dad117e7ada21"
+      },
+      "Preview/Wolf_Run_04_40px_RGBA.png": {
+        "bytes": 1993,
+        "sha256": "922500f28e101f6ebe49eedac098f45a2ef871b67b1c084481051e864e921ea5"
+      },
+      "Preview/Wolf_Run_05_128px_RGBA.png": {
+        "bytes": 11704,
+        "sha256": "4e5de515b3d800a82a813fac421dc8b3cda2592ada2b6c50a26a71371f373aee"
+      },
+      "Preview/Wolf_Run_05_40px_RGBA.png": {
+        "bytes": 1927,
+        "sha256": "70878dc96617cfd90fafa4a4f9f020750fdf8aad8585b4a4af3e7ec11d93640d"
+      },
+      "Preview/Wolf_Run_v4_vs_v5_12FPS_128px.gif": {
+        "bytes": 35753,
+        "sha256": "0c9b53e30cef062b6c437688c2120a5ab8f1bab9fbed0eae1dd8500071981693"
+      },
+      "QA/Frame05_Changed_Pixels.csv": {
+        "bytes": 6785,
+        "sha256": "dba664f1e86ceafb9757849f7d819b3e4042a85879dc5257cc6f8ce9f961aa2e"
+      },
+      "QA/Offline_Validation.json": {
+        "bytes": 1732,
+        "sha256": "d6259e29b6fd6adc8f5ff229498dbb7f885c7b74c00bf106b4655d0e875f46a1"
+      },
+      "README.md": {
+        "bytes": 928,
+        "sha256": "5a99e479745da5dfbefe66f620a92a56c3ede3259e95e5bf490f681cd720050e"
+      }
+    }
+  }
+}

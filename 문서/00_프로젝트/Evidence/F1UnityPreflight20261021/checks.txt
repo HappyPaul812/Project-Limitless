@@ -1,0 +1,64 @@
+PASS|Import.NorthF1_EarthToFrost_Transition_Overlay_v3.png
+PASS|Import.NorthF1_Ground_Earth_Base_v2.png
+PASS|Import.NorthF1_Ground_ThinFrost_Base_v3.png
+PASS|Import.NorthF1_Path_WornTrail_Overlay_v2.png
+PASS|Import.NorthF1_Prop_FrostShrub_01_v2.png
+PASS|Import.NorthF1_Prop_Waymarker_01_v3.png
+PASS|GraphicsDevice.RealGPU
+PASS|Save.Isolated
+PASS|ExistingVillage.NoDuplicateF1Connection
+PASS|Transition.MissingSceneRejected
+PASS|Spawn.ArrivalSafePosition
+PASS|TileGrid.Cell2x2.PPU128
+PASS|TileGrid.ApprovedGroundTransition3
+PASS|Ground.NoBlockingTileCollider
+PASS|Scene.NoMissingSprite
+PASS|Scene.NoMissingScript
+PASS|Appearance.Ready.path.vision
+PASS|Collider.OriginalRadius05.path.vision
+PASS|Walk.SouthNorth.path.vision
+PASS|Walk.SignAccess.path.vision
+PASS|Walk.ShrubBypass.path.vision
+PASS|Walk.Return.path.vision
+PASS|Collider.ShrubBlocks.path.vision
+PASS|Boundary.NonExitBlocked.path.vision
+PASS|Appearance.Ready.path.mobility
+PASS|Collider.OriginalRadius05.path.mobility
+PASS|Walk.SouthNorth.path.mobility
+PASS|Walk.SignAccess.path.mobility
+PASS|Walk.ShrubBypass.path.mobility
+PASS|Walk.Return.path.mobility
+PASS|Collider.ShrubBlocks.path.mobility
+PASS|Boundary.NonExitBlocked.path.mobility
+PASS|Transition.F1ToGate.ActualTrigger
+PASS|Spawn.ReturnOutsideTrigger
+PASS|Transition.NoPingPong
+PASS|Transition.GateToF1.ActualTrigger
+PASS|Spawn.Reentry
+PASS|Save.PositionWritten
+PASS|Save.ReadValid
+PASS|Save.Version1ScenePosition
+PASS|Continue.ActualPositionRestorer
+PASS|Continue.LegacySpawnFallback
+PASS|Camera.FollowCorner.1280.(-15.00, -11.00)
+PASS|Camera.FollowCorner.1280.(15.00, -11.00)
+PASS|Camera.FollowCorner.1280.(-15.00, 11.00)
+PASS|Camera.FollowCorner.1280.(15.00, 11.00)
+PASS|GameView.Capture.1280
+PASS|GameView.ExactSize.1280
+PASS|Camera.ViewportInsideBounds.1280
+PASS|Camera.FollowCorner.960.(-15.00, -11.00)
+PASS|Camera.FollowCorner.960.(15.00, -11.00)
+PASS|Camera.FollowCorner.960.(-15.00, 11.00)
+PASS|Camera.FollowCorner.960.(15.00, 11.00)
+PASS|GameView.Capture.960
+PASS|GameView.ExactSize.960
+PASS|Camera.ViewportInsideBounds.960
+PASS|Camera.FollowCorner.1680.(-15.00, -11.00)
+PASS|Camera.FollowCorner.1680.(15.00, -11.00)
+PASS|Camera.FollowCorner.1680.(-15.00, 11.00)
+PASS|Camera.FollowCorner.1680.(15.00, 11.00)
+PASS|GameView.Capture.1680
+PASS|GameView.ExactSize.1680
+PASS|Camera.ViewportInsideBounds.1680
+PASS|Console.NoNewRuntimeErrors

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "A_Unity_16x9.png",
+    "changed_render_pixels": 648,
+    "changed_bbox_exclusive": [
+      292,
+      660,
+      301,
+      750
+    ]
+  },
+  {
+    "name": "A_Unity_4x3.png",
+    "changed_render_pixels": 648,
+    "changed_bbox_exclusive": [
+      92,
+      660,
+      101,
+      750
+    ]
+  },
+  {
+    "name": "A_Unity_21x9.png",
+    "changed_render_pixels": 710,
+    "changed_bbox_exclusive": [
+      531,
+      664,
+      540,
+      757
+    ]
+  }
+]

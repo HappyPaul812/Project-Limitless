@@ -1,0 +1,23 @@
+from pathlib import Path
+from PIL import Image,ImageDraw
+import numpy as np,json
+r=Path.cwd();o=r/'Temp/ArtReviewWolfV4F1V2_20261021';e=o/'Worktree/문서/00_프로젝트/Evidence/WolfV4F1V2_20261021';v=json.loads((e/'Validation.json').read_text());art=o/'F1/Art';earth=Image.open(art/'NorthF1_Ground_Earth_Base_v2.png').convert('RGBA');frost=Image.open(art/'NorthF1_Ground_ThinFrost_Base_v2.png').convert('RGBA');trans=Image.open(art/'NorthF1_EarthToFrost_Transition_Overlay_v2.png').convert('RGBA');road=Image.open(art/'NorthF1_Path_WornTrail_Overlay_v2.png').convert('RGBA');shrub=Image.open(art/'NorthF1_Prop_FrostShrub_01_v2.png').convert('RGBA');sign=Image.open(art/'NorthF1_Prop_Waymarker_01_v2.png').convert('RGBA')
+# Native source strips show only the provided tile combinations, without inventing a map contract.
+b=Image.new('RGB',(1044,650),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE 256px tiles: Earth -> Earth+right overlay -> ThinFrost. Lower row: same + path.',fill='white')
+for i,(n,img) in enumerate([('Earth',earth),('Earth+transition',Image.alpha_composite(earth,trans)),('ThinFrost',frost),('ThinFrost repeat',frost)]):
+ x=10+i*256;d.text((x,40),n,fill='white');b.paste(img,(x,65),img);c=Image.alpha_composite(img,road);b.paste(c,(x,365),c)
+b.save(e/'F1_Transition_Path_Delta.png')
+# Direction reading at128px is shown on both old and new bases; no invented arrow is added.
+b=Image.new('RGB',(1040,370),(30,35,42));d=ImageDraw.Draw(b);d.text((10,8),'OFFLINE sign/shrub at128px source fit. Same source orientation; no added labels/arrows.',fill='white')
+for i,(n,img) in enumerate([('Shrub original',Image.open(o/'F1/Original_Reference/NorthF1_Prop_FrostShrub_01.png').convert('RGBA')),('Shrub v2',shrub),('Waymarker original',Image.open(o/'F1/Original_Reference/NorthF1_Prop_Waymarker_01.png').convert('RGBA')),('Waymarker v2',sign)]):
+ x=10+i*255;com=Image.alpha_composite(earth,img);b.paste(com,(x,55),com);d.text((x,35),n,fill='white')
+b.save(e/'F1_Props_OnEarth_256px.png')
+# Colour contrast measured on the path core and side shoulders is supporting evidence, not a WCAG/UI threshold.
+a=np.array(earth)[:,:,:3].astype(float);c=np.array(Image.alpha_composite(earth,road))[:,:,:3].astype(float);lum=lambda z:(z*np.array([.2126,.7152,.0722])).sum(axis=2);v['f1']['path_support']={'earth_core_luma':float(lum(a)[:,105:150].mean()),'composite_core_luma':float(lum(c)[:,105:150].mean()),'physical_wheelchair_clearance':'NOT_VERIFIED_NO_PPU_GRID'}
+# Record material difference seam explicitly. Same-tile edge equality alone cannot establish this.
+v['f1']['cross_material']={'earth_right_vs_frost_left_equal':bool(np.array_equal(np.array(earth)[:,-1],np.array(frost)[:,0])),'mean_absolute_rgb_edge_difference':float(np.abs(np.array(earth)[:,-1,:3].astype(float)-np.array(frost)[:,0,:3].astype(float)).mean())}
+# New Wolf crop is kept native (x3) for the remaining targeted artifacts.
+old=Image.open(o/'Wolf/Assets/Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png').convert('RGBA');new=Image.open(o/'Wolf/Assets/Wolf_KeyArt_v3_AlphaFix_v4.png').convert('RGBA');boxes=[(630,785,700,870),(240,1125,285,1175),(750,1200,905,1260)];b=Image.new('RGB',(1000,410),(30,35,42));d=ImageDraw.Draw(b)
+for i,box in enumerate(boxes):
+ f=new.crop(box);scale=min(3,300//f.width,310//f.height);f=f.resize((f.width*scale,f.height*scale),Image.Resampling.NEAREST);x=10+i*330;d.text((x,10),'V4 remaining source '+str(box),fill='white');d.rectangle((x,60,x+310,380),fill=(36,90,42));b.paste(f,(x,65),f)
+b.save(e/'Wolf_RemainingArtifacts_Coordinates.png');(e/'Validation.json').write_text(json.dumps(v,indent=2));print(v['f1']['cross_material']);print(v['f1']['path_support'])

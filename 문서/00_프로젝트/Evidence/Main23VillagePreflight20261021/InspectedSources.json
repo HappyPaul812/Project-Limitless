@@ -1,0 +1,122 @@
+[
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneFlow.cs",
+    "sha256": "0d04ff81c0540d498e1fc490e346d9f4a555cbb7fc6f56383125f9404486b4ec",
+    "lines": 198
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Battle/SkillLoadoutService.cs",
+    "sha256": "c8769afbf31b6ad3647ee9b9fa9d70c549635624fd9a7f138efcc56d72cb9dfc",
+    "lines": 76
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Camera/CameraFollow.cs",
+    "sha256": "8881fdc495f6f3de6b076519d44842c4bf55ba0585d7f09ca8996b32c7d933ae",
+    "lines": 108
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/GameSaveService.cs",
+    "sha256": "24976faf557dc1100a1c6eb53564f1c4681d16c43beb2e22bd7f1bd3c30cc9bb",
+    "lines": 344
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/GameSessionData.cs",
+    "sha256": "0c1a78befdc0ef51e4e240ffa60101e647e8a4b1ec32b8f274b975339d0f6271",
+    "lines": 125
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/ItemDefinition.cs",
+    "sha256": "d7d206e3584947be9dcddcc5d6e2c13907c1edbed366d3ab9f086c0a3768a7db",
+    "lines": 56
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/QuestService.cs",
+    "sha256": "85042343046c5099ddd696543efb23812372556cdf55e0f4d83eddaf98e26965",
+    "lines": 348
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/ShopDefinition.cs",
+    "sha256": "2037ed264af4843126e13ae44539ccd2a1c1601079813c02f6b3e47646c95338",
+    "lines": 31
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Core/ShopService.cs",
+    "sha256": "0618f67a641c6eae71f5be039f9ad44076908a0efc39d295ebf8ce6e527578af",
+    "lines": 73
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Editor/WorldBoundaryGeneratorUtility.cs",
+    "sha256": "3672bbe87d9b180753792e221893800c407943f162bb61b20bff96a2e55f94f1",
+    "lines": 30
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/NPC/InteractionSystem.cs",
+    "sha256": "59f325f780766f815fbc8d085732873238740eb68ad09a27d86366d60430f5cf",
+    "lines": 180
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/NPC/VillageNpcRole.cs",
+    "sha256": "a12235d7309e65ae0b6ae0422023384911c61ec55b30cbaa088cde34eb48f923",
+    "lines": 124
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Player/PlayerController.cs",
+    "sha256": "63f7efd0d470815479de56a372ce3b0172e4f9fb12a444dd934435c774e68705",
+    "lines": 100
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Player/PlayerVisualController.cs",
+    "sha256": "e3264ec1fe47a58193a26f33af6be22bac705413ab251eb8c7c443dce0756021",
+    "lines": 134
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/UI/ShopPresenter.cs",
+    "sha256": "2af1976354ba9c5a5b31d6306cd03bf3f29721ab82afc23964a1ad5fde4c2fd0",
+    "lines": 393
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/CatacombEntranceSafeZone.cs",
+    "sha256": "dcbb80d5a647c786e55394021b511da5e7780e821fa7e5c6f123acc058cbe7bb",
+    "lines": 82
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs",
+    "sha256": "a6d45835010aeba31eb72e7e5bed05e442ce8044b6a4be4eeeecdacabcac28e7",
+    "lines": 83
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs",
+    "sha256": "9c999527333686a4d7fcc2930a3b5fe9b01f0425d6747e2c3c09e44cc4919d3a",
+    "lines": 66
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/SafeZonePetServiceRollout.cs",
+    "sha256": "6ca9d1feb955b9ed065f87bcde1d1399bc1e8666e3396b632a8b23cd881b0da7",
+    "lines": 111
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/SceneSpawnPoint.cs",
+    "sha256": "f06fa94e026cdd03a89a4a342f5f51379520fee3fd32a2056f55814a489c2d25",
+    "lines": 91
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/SceneTransitionService.cs",
+    "sha256": "c366ca5da564addd2a1e9929f42a6f935e72687ed19bf4eb3e1763f1308f98d3",
+    "lines": 69
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/SceneTransitionTrigger.cs",
+    "sha256": "f82a2415c7b3cc1529ebfb3140e08ea5b63464de0d86f87cfda6e0d861209cee",
+    "lines": 37
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/WorldBounds2D.cs",
+    "sha256": "5c1d9e83ef1de070b5e3f8608f026177f22c4d4a676a5c2c4cd3f9cc0d507ac4",
+    "lines": 150
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/World/WorldPositionSaveController.cs",
+    "sha256": "0aa37d893e532167f92bba58aa80dd56f08c71639a4d05627e78b05d84e081e5",
+    "lines": 83
+  }
+]

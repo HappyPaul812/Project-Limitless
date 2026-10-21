@@ -1,0 +1,32 @@
+{
+  "changed_existing": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/PetFacilityPresenter.cs"
+  ],
+  "new": [
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png.meta"
+  ],
+  "unity_copy_sha_parity": {
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs": true,
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs": true,
+    "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs": true,
+    "Unity/Client/Assets/_Project/Scripts/UI/PetFacilityPresenter.cs": true,
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png": true,
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png.meta": true
+  },
+  "legacy_sheet_meta_preserved": {
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run.png": true,
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run.png.meta": true
+  },
+  "files": {
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs": "0f88b5fad89f6c10fb83451aa00b914dcefe759a1615a87be148aaee1c988358",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs": "c84884358a73afef8e6f13c67a8721457f94521a5f68aff65a977600754bfe34",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs": "4ef77740a27a171d2ac92d1e13e3a7d7a7147d9314a0910ef2696c3a36066987",
+    "Unity/Client/Assets/_Project/Scripts/UI/PetFacilityPresenter.cs": "f53704395275bb4d74bae8c5f7eaffd682d4624592308eb6e102fcd413900f1b",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png.meta": "159616b36caf4ca3d28104fc6a85c5b1165347515589194ad008f3e3ab569ec4"
+  }
+}

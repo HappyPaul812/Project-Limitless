@@ -1,0 +1,57 @@
+{
+  "unity_version": "6000.6.5f1",
+  "pass": 64,
+  "fail": 0,
+  "status": "ISOLATED_F1_TECH_PASS_MAIN22_PREPARATION_ONLY",
+  "real_unity_playmode": true,
+  "actual_gameview_render_path": true,
+  "os_window_screenshot": false,
+  "offline_composite": false,
+  "gameview_capture_method": "Non-shown GameView + memory-only HostView; GameView.RenderView and EditorGUIUtility.RenderPlayModeViewCamerasInternal; GPU Y origin normalized in capture readback",
+  "capture_frames": [
+    373,
+    442,
+    510
+  ],
+  "mouse_battle40_rerun": false,
+  "images": {
+    "GameView_1280x720.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "fab86f86147f529dcdf2d708ab586bda7c2edcc9e2c64a0575371d86ea609606",
+      "rgb_std": 26.095188068113394,
+      "magenta_pixels": 0
+    },
+    "GameView_1680x720.png": {
+      "size": [
+        1680,
+        720
+      ],
+      "sha256": "88bc1e3a756634dd395136ede6a9f02a7f11078b5d19e9843553f33fe8c4cf27",
+      "rgb_std": 25.484514451913228,
+      "magenta_pixels": 0
+    },
+    "GameView_960x720.png": {
+      "size": [
+        960,
+        720
+      ],
+      "sha256": "102d75199d59c7fa4859bb8607aa1bb84796e221857ba946976d2f00021ccb43",
+      "rgb_std": 26.72558600856788,
+      "magenta_pixels": 0
+    },
+    "UnityCamera_RT_TransitionJoin.png": {
+      "size": [
+        1280,
+        720
+      ],
+      "sha256": "de7754b79b915bf478a48e8b42f582cb93ee10df7c1efb2ccd93c531c2896b67",
+      "rgb_std": 24.240828377428766,
+      "magenta_pixels": 0
+    }
+  },
+  "early_capture_attempts": "Batch no GameView -> null; parentless hidden GameView -> null reference; earlier D3D12/D3D11 native target lifecycle crashes. Final run captures after all Scene/Save tests, valid RT active, normal shutdown. No product code change.",
+  "source_pngs_match_approved": true
+}

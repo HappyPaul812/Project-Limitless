@@ -1,0 +1,2444 @@
+[
+  {
+    "path": "문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "513d32466fdb9ba7e144b33a31bac33f07efbaba803c5e934f5a5d746d40dff1"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "6d70de07d28e5766ad8a22dfbc4e580aac38dba4aeb612349ed25c00a8f6a560"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "84526c057963125b576fe4ff7c23319fbec4adb7d2dd7a327a5a644d551ac920"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "0c00895fce4268b6030d1cc63727b10dda1e03e8ca63a3ff0dcaf3515c499dd6"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "b43fae12d9e7dbd8e4f405ff719f2c360e9d2ffbc8d584c748ae17841d6110a0"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Frostway_v3_WolfRun_v4_ArtFail_TargetedRetouch_Orders.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "b2173bd0417ad047ef9727cadf0f58a03da45fc7ee2f167a1fea2c6609773b1a"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "5f034e988f2fa8f4f14bc43c44d6e498be1e3cef004546252ad4cfd1a48ec929"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "dc2c79be55df1a8eed0a088f9e4459a94bf58b2f1cb214222e7d3d0ea8249b30"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "1f3bdaa25d0674e040f67e3a01b23c32e6f4bac4fa9983608c5841487865c4fd"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "7f5806c8ad33e7338e54f1095213ac84d62ad95f81e848013b235a83907f4ebc"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "660aa976a15360d4875b0b14e21e68ac946adccbe8d258c08855e40ac9b265fd"
+  },
+  {
+    "path": "문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "9e72d0d3adf32ea341b65189784c020c505c72d55d2144911209439781036721"
+  },
+  {
+    "path": "문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "08759e6ee02d0db5427f64502e6c318ab2770772e2f6f760184ba71a85dd6e88"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "9d8faa31211d51447e0f33b9f81106f291c1286989891a70bfc64ff160a958e1"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main22_FirstPlayable_136PASS_IsolatedQA_And_ProductionGate_20261021.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "a6327451de6f9d22d09bd52d2ebb890bb8f22fb413ffbabc944deae9bde0378f"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main22_FirstPlayable_IsolatedImplementation_Order_20261021.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "70e3b7c02a189e64e97361ca3d0b024aebea7959533961c6d0545b65c27c4757"
+  },
+  {
+    "path": "문서/00_프로젝트/LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "b5efa30ac8be79277460c3df01451fd878253dfe5785c4ad4f2e6c47fade2ba5"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md",
+    "source": "origin/docs/planning",
+    "action": "new selected document",
+    "sha256": "ccda1eae454474c6e77a70532ac5d771ec9e884584a0b29ad7c16982840ce51a"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "source": "origin/docs/planning",
+    "action": "handoff novel paragraphs + complete main history preserved",
+    "sha256": "6022a04183df0edd25873c91c9c65ea10683f5fb8f002d915d2c5956e5f8cc30"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "baca4303c4442ca7926004eb870a57730a467aa8e81d608d2e04f6f9e6ffb73a"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostwayVillage_Environment_ArtPilot_v2_English_Package_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "9bfdcaacd462d99984b36aead5c8c1d0a64a5b11dee898da66a6259807d87a4f"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "fc1f111235e64ccb206bbbab5be8cc30647c33beb47d8765e01d9fb6ed7591e9"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "0fa2f8f6d28c29d88e2d4a5a0b1d2958da31a6650140973925c36d6a1615ffde"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "1debc170dfce7b1ed4025bac75c45bbf3a904c6a6e3fcda79d160cce7ba865b7"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_NorthF1_Environment_6_ArtImprovement_v2_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "db55c8dae8eef78b95b12ea6b92e24c4f1cbb9784d979cb5bd8cf1fb6f08ea3c"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md",
+    "source": "origin/docs/art-new",
+    "action": "new selected document",
+    "sha256": "4d595f58f0b8d479d1cf018c33b807eece13cac8d0cab0efce46375879f844ab"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md",
+    "source": "origin/docs/art-new",
+    "action": "handoff novel paragraphs + complete main history preserved",
+    "sha256": "ae77368d52d97295de33425a600583976569b4d67580b6c8ae5d515586d0bd49"
+  },
+  {
+    "path": "문서/00_프로젝트/MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "e04d5f3befa8b7e3cd24a101ffafca50e34941be03aa235326ece21b0a7c54d9"
+  },
+  {
+    "path": "문서/00_프로젝트/MonsterWolf_v3_SnakePass_WolfAlphaFix_v4_ActualDelivery_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "3d9cc0a9e1a72a5644d3114c75b9181ecdd11c2ede8bb940dde9aafff972eb62"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_ApprovedV5_ArtRework_v3_Delivery_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "39aff180ddd79eedbd3b29d52dfa818575d6ca53765571d1541151a1142a5fe5"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "fd4b1c348a3fb90f19edccfd43e4384ea7246d1f1c4626e2e2ce390c3a8c87ed"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "76be325df1801727fa7613889416f1f03da60e8ff148bc9ce1c9794f0a296a64"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_ArtRework_v5_Frame05_Hindleg_Delivery_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "2a9119f3ca3f0e4f25af5e47c01acfb04b0160af528dcb6ac79be8044ff50f88"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md",
+    "source": "origin/docs/art-renewal",
+    "action": "new selected document",
+    "sha256": "c7ec223a4e0f766fa3944e7a29334b8c82fed4e49f277c428d17a54becddb187"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md",
+    "source": "origin/docs/art-renewal",
+    "action": "handoff novel paragraphs + complete main history preserved",
+    "sha256": "20c4be8e4afdb8d5c5def0d1a88ad8f06008619206b60bb868e1f51415afadf1"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_RenewalVoices_HTTP429_ProjectAwareFailover_v2_20261021.md",
+    "source": "origin/docs/tts",
+    "action": "new selected document",
+    "sha256": "dcde667ab2575f59b99040a9407d35e2ebf7aed2f34d2401b406a4a145cf51f0"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_공통_다중프로젝트_할당량_429자동전환_체크포인트_운영표준_20261021.md",
+    "source": "origin/docs/tts",
+    "action": "new selected document",
+    "sha256": "52bec2df84a996040b626c7f0cdffc1d4af1cd806bc32e2ad184254a370b7153"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_음성_제작_정책.md",
+    "source": "origin/docs/tts",
+    "action": "three-way semantic merge",
+    "sha256": "2a49ccfc1c1c5856b86e11711d22dd83621427d6fec90fb52931ce45b3f7926c"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/담당/TTS.md",
+    "source": "origin/docs/tts",
+    "action": "three-way semantic merge",
+    "sha256": "5867eb22845a2d40b1ac7d166144e4c46ef810bd81997f95bdab5fa6e397839c"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/TTS_LATEST.md",
+    "source": "origin/docs/tts",
+    "action": "handoff novel paragraphs + complete main history preserved",
+    "sha256": "ccb3b4ea7016822bbfe219327429ad57695ded6854b4a9254b7dac28940396d9"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_Fix_v2_Delta_QA_20261021.md",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9e1b301d16a2daf6e6aa7c7e270e78d50a56ebccda82e6c15c22cf1f22a97bec"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/AllFrames112.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "aef87a2c58b0d470778be28803951a769654ece1a3be9db86ab355dbdfe89f08"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Attack_UnityFrames_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "726dc249574451660d8b59bb43ff392d6ef73986d1b37bb477493eb7d4881157"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/BeforeAfter112.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0dda4541458b5f8b81f80184cb41123a05c28eb3e9c30c76f811b1302ce34c2c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Defeat_UnityFrames_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bfe6df342cc2a68b73f11f31031f0c510abb03578c7f3f458379729f9f9d9603"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Hit_UnityFrames_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8e2425f4b3ca5b03ddc5e2662c3e9d89a99ac50dbc94bdcd28db9bdd832f1f63"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/MouseCombatV2DeltaReview.cs.txt",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8fd4d3c2e79205d6c3fa3c397287f042a047eee0f97d85d029449772cdd3947e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/OfflineAudit.py.txt",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "71233f251c6b9686c15556b3628cc4c2f3da4cb7d81f51ed95f3fbbd09ccba95"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Protection.json",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "534054c4af021457219d81a1353a676951a8af9dc88af39a3b8491221755b7dd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5660326271234af100119aab91f20af1b53c546ca538e6c3955613263d96f344"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8a5b58bf9a832ab86624b2ed09531ea351bce98c637e7d317bb57c11282c323a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "79f365e93d717d35f8db345f42258ce8168523e4a7d56b53e78b9d8d8cc96924"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fee2f06aa447e4e062fd65975e4de572fdad539fbd1a0255a3737f62f4929b49"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_ReturnedIdle.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "41ab009f1f185d9f8efb601889e84a677b3dc50b3b057a674a75c737654e1f3e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Before_Idle.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "02a43b659827b8b9b943520251b461f797d9bbcd9bd03ac492a7d15c059ab69f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fc9b2fbe6b75cf1e51884c6559adbe37c532c6c4bcde713d3a0af7fb457a9156"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "eb5b07ce5316fd59c88fe5838253a44be4641e40f64eb5a9a54d71ae570be9c4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "739038e56aa56ed11f19ef64e6fecb0955a135d7feea87f0e0aea2277a64a38f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fabbf2de92782df7c45e64d955da16b1dadf8b06d50735a72ad465687ee9af2b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Hold03.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7c65fbe1d39b91fdb131e7c1146e67e424ce3060b214f8ea40f61460c45c99cd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/FrameTrace.tsv",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "f78c7624a277de07a26f28043dd5109a974707b24091ad60ed13971818583cba"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "926007d4e35cae47f649f56dc9fc577d39112e86db9d53c2ded0baf32c607e0c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "daf39d6842d66c1d191e08ccb89feb674606f9a707815606cdf20bc64940ac6c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ddac83240c2b45a1a7685377d53c2325b83cdf2f32b8ec8cf8de4d0560609f63"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "515f5577d2d84ff5a279cc511e4aff87b731f76455effa2def0698c5c2f390a8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_ReturnedIdle.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4eb7dad92b0af6466899b99f5ef60c2a238e45fac061cd6845fd9ffec109bee7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/checks.txt",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6f6defdc47ceadd5d1880cb5cdc6155e6471a231540068b2e34680e7901da38d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/errors.txt",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4c71a015b218c13a137a5f5bcfe9962f285724d001ecdef620e923a2075d1479"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/status.txt",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "180740fe2a0d665d575415bd3a96da8cefb587eec06d333fe1b9882cdb488ce0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Unity.log",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/UnitySequence112.png",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0754b4f0e7bf1aa23d90ad6676ceeb91f01f1cfd71fb79cbab16b29d4d80e0a1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Validation.json",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ae71382d5ce6d9e36783b4014c94105919dc4f96f7ddab53394e78fb860170d5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2_20261021/index.html",
+    "source": "codex/chapter3-mouse-combat-v2-review-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "dc79cbab8e6406068d6e824a296a3203d39713d7161e7b9397a53e9b721e7123"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_FrostFieldMouse_Fix_v2_Official_Apply_QA_20261021.md",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1d691094b77a915eefc6dc68e740f8d7a537142717918980af31fcd53c4c04da"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Attack_ActualBattle_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "44c938f5c99230dae3b8c0c99f7df9c5b81bbfca9cccd36a60eb4cb3d4d75b16"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Defeat_ActualBattle_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a67c4b8ee9ca3e84aaf0b0d2cf723cda93416db20ddfc4adb64d21458f629b8b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Hit_ActualBattle_8FPS.apng",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "f925b89bea4e4756a7563635d4e7cf0b9e5a5545b249b913fde464ae9e58b126"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/MouseCombatApprovedApplyQA.cs.txt",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "f8a99d41ff2076635a92695b92a95a7b95cd6e0a7c75929497d860e4111882ff"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/OriginalAppliedFiles.json",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "24d55d6b4554e3e82349fed417d6889ca052e5f5d37e1dcbea7b4a80b85ec43a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/OriginalEditor.json",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "36e19e9f9047a113a6ff07676e98a1502cc963f5bbfb3c7bbbe7488dee33ffcf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/ProductCodeParity.json",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "cb0586c2cfb00cc8d7c00dc6867810ceac8e7e5bc9117f13b735d0a49214a496"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/ProductFiles.json",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c14041a62edfea681e88f1a48add0f5c9ce7debcdf1a027357cd0f30f0394f47"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a75a5bab5b44a10b00b60b393bbe634a40bb9531a3b77b5f6be5141fd4d05090"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "dde04a2df2400cdb3cfd22556aa0ab6c794eadd044e9c7cd3e09604dec7b09bc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0a75ab8552ff02e316e85d5940da8d0a14b39a123866d60d9cddfc4014aec16d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bac69df31b50f7ff5175a26d0e495d47f56672055c2a98c32ef9958544e570fa"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_ReturnedIdle.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6cc0e35c9b46d1971b0d4f48c6a2e0dd2e3cde87215d013033a3b98b4de68aa8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Before_Idle.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5fef07b4acef802eb0069274e91b46074c54b4e63b22d95c4999d5fc03142312"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ff5cd64680e5f13d5eac1ff281eedddda8e6e7305371006aedd9a7a4d06e8add"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "65d0c6eb63da690b89040cb9deb88a222172871c6cd17403190b36df687b74e0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e428b605081389ebf22c5d426691664d3096defe5e1765a2215a59a7c9fa17c9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1aa3f7e5a82897be52a272479e22408a9f0e513208ee73651502310b5af3085a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Hold03.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a1f47522076347431b4bcf76ed72ccb4ae31b49af264c6d870d4920de86a2a36"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/FrameTrace.tsv",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1fc4baa5dd8c952f987d172a15e6d8cab67513a6b2e29bb74a4647c01a5ed4b9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame0.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d1a2b1de6872904836e50a83911690d3750de842d813f2696b1845c29bd6d0c9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame1.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "070399a9f790789c2382ad0c3709bceb684405610b4d55b3d9fb63e4b4397c36"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame2.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "309f4d8706c947741e47c64e55b493e33583ededbb678f7c6ada0b435a2a7f3c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame3.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3b4aa8c2be85714b2468f71de9255e39f8547b99239249cd8bb2a84f114b7628"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_ReturnedIdle.png",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "28a8399f5f9145fbdefcae42f45e853f5f118098d5521930e7a6ebad9409ed98"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/checks.txt",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "dd09ef94bd1dbe77bd68a0e310bbcab05e418244e218c6f2cff08265370566e7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/errors.txt",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4c71a015b218c13a137a5f5bcfe9962f285724d001ecdef620e923a2075d1479"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/status.txt",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2f9acb02faa121bb2a3621951f57b4c690655337edee2e5ac350be2b3be88ea8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/StaticProductAudit.json",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "70fe20c093e80050c7253ba8bb58134b5c45ec65b023e53b877ff0ac2e8259f9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Unity.log",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/index.html",
+    "source": "codex/chapter3-mouse-combat-v2-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6ed8fc4a6d6af9f3e4be4d9d50d4dd8f4ddc5bc64efe60e00078cbbc6e388ce8"
+  },
+  {
+    "path": "문서/00_프로젝트/ArtReview_MonsterWolfV3_NorthF1_Offline_QA_20261021.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2fb38d2aa77cf6b184ad48142af5060b6e4981ad570117ce7b1c928f1e9d8831"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_F1_Approved_Unity_Preflight_20261021.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "151982f148bd21505252eed2584f0cd6eabf38f13339fc6316d93e6c78b3387a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Audit.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b6ce1f284b276e8cbe2bfc56fdc437c71bd2d41b3d6521b6b05cbe7903e01df6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ch2_Official_Environment_NativePixels.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e6c7023bba8c25e7fd6018592f1fa6ff2133755541c7dbf1041aefb18cd516d3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Details.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e7ae34ad36d05f6baf2c972a2df289d2861a1094037a8542c7bcea0edafe146d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_DeliveryQA.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9fdb1d08976d05e19a3529c5f1d7edb922d1dc1a39059ef21f2d4e9b40604c53"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Manifest.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e9836edde8143af81fcb9213b42f18644fd23cc4ffba2f813a210c25895dff13"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Original_Candidate_1to1_Offline.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1bb2d41453085c887bf4fbaea6a7a034f5df6ea2acff00215b4e79374dd0faba"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_SHA256SUMS.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "f1cba909b2c8fc290261b108a746eb474974c44de61bc6f2c7e8d07e24fb19ca"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Transition_Path_Offline.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0dfafcc4ad35ce970f414361a1475522d8ffc77bd9ff83023705528d73acfbba"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Unchanged_Props_Offline.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "85e839911cc7af660d39b33c4fd84c3c8722f727b57ac055f724ce255ef2e0a2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ground_Earth_Base_Repeat2x2_1to1.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "26beee72e6bfab62632b8d94f45d4a730b3bbce313f61d33fca6354b60453829"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ground_ThinFrost_Base_Repeat2x2_1to1.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "78dd7333fc2bce51b13ef1d875a25ff0c87bf571a3cbc82afae005106b255f21"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/MonsterWolf_DeliveryQA.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5ad7d0b99e41af46c0939199ed4c3b648d1e21698ff1eb72b41d72badc6165d1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/MonsterWolf_Manifest.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bb10ec36f14a2261f99ed54e0dd31a73df3074552425fce8c46dfbe9b86083f2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Monster_ActualBattleSlot_Offline.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a64b3003f17ad14315588ec75c5057b52a3bd06bd9a8236b9b6f2cbb5593528b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/PreviewLayout.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "322c10550cfdcdc2e6085d58f57b8bc153cc2ac545c02be11a1d43d1f62fe313"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Protection.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e175f2d1bae8a5e74fba74f921e272bc5512323fca5aced919bb23d26e2f83f3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Validation.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0234167e717154f8720440c7602637d9fd17d0acf20e281f7b98e4bef6ba8e7f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/VenomSnake_AlphaBackgrounds.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fa4d53484cfba955571de421afe5824db06b26019984c3b225543dc96ca76f0d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Wolf_AlphaBackgrounds.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2e5d669d61f87e5c55aba7dbdf987d1fb301774edf49d09c9d3aaf6ed220b775"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Wolf_Matte_Locations.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5be2c770a90ebeff48aeaf0d282f25c64090aea7c1b8b9c08caf508bd14b46f8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/index.html",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "451abbaf0df6d0a0a0a7c3ee7f8463cdaf935d1bc863d789d2f424d0932e1bcb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/ApprovedPNGs.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ece09e0362bf8ecd6080fbedbd39e1449839a32872526328845ac33e02008891"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_1280x720.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fab86f86147f529dcdf2d708ab586bda7c2edcc9e2c64a0575371d86ea609606"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_1680x720.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "88bc1e3a756634dd395136ede6a9f02a7f11078b5d19e9843553f33fe8c4cf27"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_960x720.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "102d75199d59c7fa4859bb8607aa1bb84796e221857ba946976d2f00021ccb43"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Protection.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2b0e6a09a6053a3ade4308f9cc10a48e995c140a9588a314812aab5ce820251c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Result.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "329e9e89e9d933344f5253eb2e388a2ea6822eac358a811c2a5cba39665cfb84"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/TechnicalContract.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "79965bf60e81a9efbfff943c58d5b9a60c47e18744ba438d8d02255049dfff14"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/UnityCamera_RT_TransitionJoin.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "de7754b79b915bf478a48e8b42f582cb93ee10df7c1efb2ccd93c531c2896b67"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Unity_Final.log",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/checks.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2760f1a838675a440297e5a1c228ab1cd93f6eb8d1e0a0f33d987cab22dc6819"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/console_errors.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "98e672fc03ec6aaf58acc5a75655eccc521ee79afa823c16696468c3471ddf87"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/observations.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "747bf7780ad89a5b99f1bc1b59f00741121ec4634c910a3351d1a9c7df0dd747"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/F1UnityPreflight20261021/status.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2f9acb02faa121bb2a3621951f57b4c690655337edee2e5ac350be2b3be88ea8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Audit.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5855ab89665ca872fc174eeb722eb343062f13175e43a04bc6472b7e55d6c6e6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Extra.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2b0d4474c12113677fb6d917c212326d8a0e21ce60c11f612dbb9b1e0f883972"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Ch2_Material_Comparison_Offline.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a56c369e4a2d5aa4e4977cc297dac668531bcfe9dde28e2371d02822fc264491"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_DeliveryQA.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "cfa7877b1cd8a7b18f49543447db3b8ae05eddb721b8db78bd780e8a57a54a8a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Grounds_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fc1bd12b359d470fdae6ba058cb46340ea822df02d4fe65c601b8c8dcb17d32b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Manifest.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ee6d93fa60f1b199d7d8f3309c65448803e90ca5dcd853c0dd3702f2ed6eef18"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_PathProps_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "458c40c87ff0a0cb16ca9d96db35241f19324de6a8eff5b7ee85beeaa8822beb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Props_OnEarth_256px.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a23ebc6b7bf00750c58b98a3ed6bf3d8388b2d067faae070e167e7a6857f6135"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_SHA256SUMS.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "58b1602ea06e3e3ad0c4116627cff2a0a6267e9d6d8044c9cdb20850d5f70154"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Transition_Path_Delta.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c002b0bf61cb763591248a0ce3fae8f21212f6d8a1dc11217f6dbc4ac0861ce5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/FinalImages.py.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d533ef0e0ec946ae37f4ed649d4a29842d6653e8c2e0ffea3fa46d74ae70d7f5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_Earth_Base_Repeat2x2.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1c9c24000a203763699aaa017eb580ff7c1fd455dec63ef782ea979bdb07b29e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_Earth_Base_Repeat3x3.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d5146cfd5ad90130003a381e3f87f89a1951cb29ad450802f485724a825c6dc9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_ThinFrost_Base_Repeat2x2.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e3fc5287128c2a5266df0c402058e46ca6e1d771a2d6503c0bdb2fa350aa0798"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_ThinFrost_Base_Repeat3x3.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "63469533e9a5b2c364f7360a8a51639377356fe0ff9a7a231d1b76d6da73a9de"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Protection.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5c7cb5f640b76171ac662c58ac13088db7fc4ca654a4b4566f08e511890088d0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Validation.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "822d02aacac56de6d775fcfc06e7907674ff8172d5e0a855a71335b2a523879d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_128px_BattleSlot_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4ead90723409221ab4cedc1676a011f77a739bd6523dff4001e7d22eae98cc04"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Changed_Alpha_Pixels.csv",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5c2d48fe45d22634fbaa73a4ff9d2a99d0746dfb0c899c2f3a736534e76d6b04"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Chest_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "adadf6006cdb56e73208dccdf027a481118e04c5c17d80d39d2f9dc5ce1f648a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_DeliveryQA.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d1fe26410d994ae159493c89e8eaa732511efeee1f100e93d34282ee277392ed"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_HindLeg_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1743ea0980c2beef96e7172ca4ff08486d46257f70e56a3a7ea14da27dd124ee"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Manifest.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8e8bab7f65a078b91c286afe2d2fd122ceeefd13ee069aea1db316a4e395ecd0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Paws_BeforeAfter.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8277503f156ff2296d7d087f05f59cb1238b4b5b8782a5f13e4d8f3053a618c3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_RemainingArtifacts_Coordinates.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3282fc4ce95d733f12d2a2773316cd172918ab40c05841b19a650080ac1c6e4d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/index.html",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "44a9c54f7ea10b10178583bb1b49607437195348d6778e13cd2694f5b479b1ec"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Delivered_Alpha_Changes.csv",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b24c08a6ebe74755e9d2cc5de2f34f979b4cae96a4d0ea7e1f417461ee86d0a8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Delta_Audit.py",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4f78070a6f2a70201c1572f3ad92efd815a86ce4425acecedc63ce3cae1190ca"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/F1_Delivered_Manifest.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "89c650948c888209244ab053356e092f78603200671d44d56147b86682c74b9a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/F1_Delivered_SHA256SUMS.txt",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4599f0415351e38068622588261fbd8645729f52c5b8a1fc0bf339920d82ef41"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Protection.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1ecec3d59a6672416ede7f392504af5cba2647f5d9f266fec8c778bd5a01412a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_Repeat_Comparison.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fd37175da7d459848f3789290a315d0f18b15e174a063da7bb463b16de4bd07e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v2_2x2.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2cc70dd7d6b2bbb311ef105b4daa50f1a0c5dfea4fd8016dc4dfa8b24e45c7ea"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v2_3x3.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e2e229df71da20308f656154fc64716b7edb265c62b7eff10bdc5d784bae6ae2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v3_2x2.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "506f21229dd9e8e5fe90c64f50c3863f11d3095f41785ed6c3faedb4aaab43dc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v3_3x3.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6a596728120dd375d08561fd4303eeb20cb22841e6160b85bdfcd2b02b3205cb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_Adjacent_Comparison.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bb201aed20dd305fe579d09a914d8706c3342dfd6fd68b0b75463ef4b48527c8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_v2_Adjacent.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1de1b0971d31217be57201323425a2192ca09b2c76c1bacfc9bdd7d716490d9d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_v3_Adjacent.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1c55d897d2d7bb9a5bfc1f17ec45e98af8c66b74ba2029943461fae0cefdb199"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Validation.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6b3b5ef57b734f482b5b42a14c4ae4e1964dbb5e14eba095aa8045956f13dbb1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Waymarker_256_128_Comparison.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b995679fad6624879caf34f1f71a47a058f2c482dca4b54edb7a1c101b4a25fd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_128px_v3_v4_v5.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "43d8a77039793e97d69cb2dd021128cd53f811ae4335a6eb2c54132bd0de9a72"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_Delivered_Manifest.json",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1c7ffa90a5b8ce81ca6fe50f1068cb8e62cc24261643ec45080e29c71268a96a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_v3_v4_v5_AlphaCrops.png",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3a5b984d9f0eecba236097ac810b2041eca529818eac8eed0bb493ff0587ca4d"
+  },
+  {
+    "path": "문서/00_프로젝트/WolfV4_NorthF1Environment6V2_Delivery_Review_20261021.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "35f07bea11d18beb558a45aab223a71f17b3ee5283ffcded843b963aab6ef885"
+  },
+  {
+    "path": "문서/00_프로젝트/WolfV5_NorthF1V3_Delta_QA_20261021.md",
+    "source": "codex/chapter3-f1-unity-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b6bd580a58a360294f351b1ef413540d11ccad84df75efc458a668b6d16fc376"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main22_FirstPlayable_Implementation_QA_20261021.md",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "17bc923c7a36f6eff4ceb9ab4c0e8beca622cc7869043054d1b791f2ca28d25e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Battle.Unity.log",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/Main22_SingleMouse_ActualGameView.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7f2d48bd5bf34115ba6504de4fc1025d91a9d269863611d88dcf8bae94bd3bbf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/checks.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "dafd30a71e16d60689d3761feb14e64274faaf16853d117e9584bfcc34b3a3e5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/status.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Capture.Unity.log",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/ChangedFiles.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "78e1e36c56af17ec97c01aff3e44b6e2a494a690fd84db26a060e87ed793e262"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_AfterVictory.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b270197935de5b452813a4fd6bf4f00780cdb53e15a2f59a8c77caa79aec1222"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Arrival.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2c8cfb78398e133391a9a25b9d3cbab80d2a10cbc452fd116d0894b01c5716f2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_BeforeBattle.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "886ae48f22831fdb4c38aa7b4d9449a16aee3453845475df0c18b906fe12f121"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_ClueA.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a9adb15024bd8b249c8bd26e2448c556d64d73149d551effba9d890771b83b44"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Completed.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "13c27c69629a227a30ad692e56279caa7ef3394be185cb60c8598e71e482074a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_PlaytestStart.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b9671d8680080fcc1a71c2b953e5138f2f6cd916929e9a23c55014918688c6f5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_StartVillage.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b3f1b46d5b420f6415b9612cffd2a589fc8103ac578e6966283519573bc52fe1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1280x720.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2245d2d89aeb3d1c1a2395ea191018f902e27971dfe641de9340cb8c98b1b014"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1680x720.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "dd7b98511385d11c864e124f495f48094813fbfe27e8f1049d944fd67ed9894e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_960x720.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ecbe43119ba51002515111e7c51b510f71b10c2d3e7fcdd3b50a22b6883407f8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/checks.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a3af9542b28b73a024db1e6d49cc06c0c7a63308ab51b17a5a074ef62ceb5591"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/frames.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fabda4a2502e211b867335ecceab5afa3d9c0d879bb58abab5d7057ed84f20a6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/status.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Gate.Unity.log",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/Main22_NorthGate_ActualGameView.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "aa10efed6ff2fff82d13540c349e85627339f80d8c9f8efbd17d25f6654bc6ac"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/checks.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "71f8541105b573ca967582ef2499c15ca8e7660757d0a378d3555c467918e740"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/status.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough.Unity.log",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "b651db3580cb413435345e6d9481ba5c0d28bdf93207cfdb2d74bf33fe6c9626"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step2_Frost_ActualUnityCameraRT.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6f058b5c4df95ab1cf0f49b47743b7711e41a126cb61dd3e036296232cca5073"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step3_Clue1of2_ActualUnityCameraRT.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "60a32da289e25abd243327b80b2092a7a875c08b5093d9bbeeb62b5c0ac4d61f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step4_SingleMouseBattle_ActualUnityCameraRT.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9e8f6672e80eac579aacd0f74d3085461fa3c1a691934162628272a2ee48ed3f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step5_Shelter_ActualUnityCameraRT.png",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b54d2bc9640b392e817ae619f20d8f58acb1ec261fb4be4d38185de0a5a0387b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/checks.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7ba1321d7093b0b44a81e5bbc2a516bb6847e248114978c73913709ce32552fd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/console_errors.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "95494f3764923ee88252ae80a2348e883c99514f10207fb2789086d70f8af4e8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/status.txt",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c26de83abdc9496cd1301470918ec39ecca1cf389ef0ae1c6504da1800d1c431"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Protection.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6634c9b0f104367c0bd7c718f6a77226e58232ac596b911800312ad15527b8af"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Result.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9cf4c939d5aab28497fcb77874c12babb8b218cdb718484e46c41bb530c1c8d4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StartVillage_Playtest.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b9671d8680080fcc1a71c2b953e5138f2f6cd916929e9a23c55014918688c6f5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StaticAudit.json",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9515b67cc00e021eaed33f20b86d06e295c1dbd94b14cff5a6ae9a177a563318"
+  },
+  {
+    "path": "문서/00_프로젝트/Main22_Isolated_Play_Guide_20261021.md",
+    "source": "codex/chapter3-main22-first-playable-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5dfab0fec290307d4cef5f446b91c2b990a2f97c98943f65ac8623ec271c8a19"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main22_Apply_Preparation_20261021.md",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "12649c7e9bdc5ce967723e5f7200dca8bd5c580ab7a23de4c5a2ad024487ffff"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/EditorBuildSettings_Proposed_REVIEW_ONLY.txt",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "616142c6506bba75c5488b5ed11e84feb9200610cbb36345e32a747858536bb0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/PatchCheck.json",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2a2ae85dd220e59a0bd2e7d8b562cbaabcb3b7d1b5fa0fa622347b109d0e2a18"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/PatchCheck44.json",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5969062b612152b45238bd8541dfb2540c41cb3dff4e247301b6004fb4dba8b4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/Pending45_REVIEW_ONLY.patch.gz",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7e77255d2c6e0d483e7007e048c57e632a513aaac93caddefcc793bf9c5c4dae"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/ProductFiles.tsv",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "aec4d358c6b98a8516f764ba9695ab37644ff40d5166953251f7266378d09e01"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main22ApplyPreparation20261021/StaticSafetyAudit.json",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "26dba3632196ddc7fa2e55ff3135691b250a0cac41719f287ceeeb51a15b1ece"
+  },
+  {
+    "path": "문서/00_프로젝트/Main22_Apply_Preparation_Audit_20261021.py",
+    "source": "codex/chapter3-main22-apply-preparation-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e02f01e9971fe822dc653855b62b4b01490d5e72b2b6930faab84432848124e5"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_Village_Technical_Contract_20261021.md",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "17e1bccdf4bb29fc22becd152dc6a6a372113d18e721bc91435875460808c169"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23VillagePreflight20261021/GitHubSources.json",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "48b37e175edfb18831235dbc502a14b540492956b205c4971138226946bb75ab"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23VillagePreflight20261021/IdAudit.json",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "69dc7298fb264a87d76b6dbc46386e10d4cfb17e5dde0d4ddd93704400bb9eb3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23VillagePreflight20261021/InspectedSources.json",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0f8b0f6f0f2a91b421fa9a481bab9ec6926a0295c7de6c7410b6e253ccda0f9a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23VillagePreflight20261021/ProtectionResult.json",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5dd67d10bd4e0a896c51df8df69c83b8add64832585cc462211632d9cd659e19"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23VillagePreflight20261021/audit.py",
+    "source": "codex/chapter3-main23-village-preflight-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "75bfc502c575f2262566fd893913754db263ff6aafc3de552d3b62323025fcb5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/BackupManifest.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "65e3faac6a003afd7830c18d9102a46e237ec78c5dc785da1550da8ed09d803b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/FinalProtection.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b22f1eeb20518448c6d933cbc8e6fd37ea58452e411399945569ba84a1a0afe6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/GitHubSources.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8af31a4fa598abfab7281c6f9757d4efdca330f45d8d114da72fff8c9149fb8d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/Import.Unity.log.txt.gz",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "25ba75403cbbe1e31cae0abf155e7e7da16ca35c03123a544474e2473b2e70b6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/ImportDelta.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d4783fd31d4357eb57d41ab27a64ff1d399d1bdeac400b2f239f84bd35db314a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/OriginalApplyResult.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8c0f6e4fec14bcff97918ecf9c5a6a06249185644d5b3f0cd3434b749c307b77"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/PR_DRAFT.md",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "94f5b97dd446352b3a41b5f60c693163e93d5de9ecf2619d6c0ac63b919da1c5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/WolfImportDelta.cs",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3eb9e2bbc22f0cee343669eba4199ecd97332526f473cae2394d3e7140f8e8e6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfOriginalApply20261021/apply_original.py",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3c89d91f4ad7ade54dc92f269c18607ac5dc43d5a07d25346b952753a60e71d4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_FrameSequence.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e7001f1da2d162fb5c3cfae7d0d70409dd3789948fa109eeceaae7c961efe19d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial0_128px.gif",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ece23aa88d0bae35d1b9c9be84a288495581630ef0e0b439cecd90276bef3a6c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial0_Frame0.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1cce2b7128d4d95d1613be7dc840f34960d8d734ee7fce130b7ee14bdfe7af13"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial0_Frame4.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4526eaec0701407c5c77de4902c504be406d2f5599232ea83a39e68ecf45675f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial0_Frame5.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "513543b2b26669b6748226002d4cce687ea9eba7024a08546c18911389ab3673"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial1_128px.gif",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9e9b402dcd3550bb4a42d454b1fc5cd17143beed470e9682df2316aa2c74d049"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial1_Frame0.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "76b90bc3425b7ab14c9031325e8c9ec33b904f493d3b0833f3b76a55ee57735a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial1_Frame4.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4f927c8fc65c8cc651dbba923460bb8a4e78cf93de423ca228e4b9310ab7ea7d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial1_Frame5.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1864258f2707bf2ae0a4bec3d204920aae766ea2fcbdd272596ebad339387107"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial2_128px.gif",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fd51eb07b4328fbf91233d3441ed914c8d1b480adbf54433f17cc4561627a846"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial2_Frame0.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "35b58b4e45d51d9248d0bcb0ac4bed55f5a27a659c148714e572585962ef4058"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial2_Frame4.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7a04dcef67bf7073e22272a00782683432f0c4c0fc16d92d6df85283f6360da5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ActualPresenter_Trial2_Frame5.png",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "afc9afc78a5535f788dd966d2b6607987f27891c1d4a81098d619bfbb7cc612d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/Delivery.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "391245475d4f8442674a79e28523abe499e874cfc9bf0d767c4eeffea09783e4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/ManifestReadback.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "27f8579099a02d3c92b5e259178403ec8003c0a80b8f8e8cc848af1513203f5c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/Protection.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "35ff563168c9d8db814eb80db82756950d42d312ee88f045aa7febdefeb02916"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/RuntimeQA.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9e01f6e5d12624ba2ecc98a63f9d22b2fe48bd3ed68187ffafb47f9dea9ee2bf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/RuntimeSummary.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7abde62f2b3d9f49773e9995490fb2469c2595768969d6d55323949430093e0d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/StaticDeltaQA.json",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5e75377bdfa4efecf33a106a2e1fb61ce5b736fa26d68aa83c28a3c0b9eb520a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/Unity3.log.txt.gz",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "74d58091558bb5f7aee77eb0ce70288286532fc0ee961856c35667c3a376c2df"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/WolfApplyBoot.cs",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ab4105fdf608988c0ba71ab1473cbf811368cd59b386b05641c31962d4b51123"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/WolfApplyQA.cs",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d5ca0bb27522888f9662593ada243f5f18045fc4bb962e050a2f3c1ccb5f63c4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/finalize.py",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "964a90d672f771dd97e9af754d7c6b381329805c34190913a524225fce9e2639"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/WolfRunV5Apply20261021/prepare.py",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3beea425c18c47dcbfdf2105370808f3561535f68f72ee37e0b4084334890017"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_v5_Original_Disk_Apply_20261021.md",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b589a068b5216013675fe58c2a8b820a4d4f865c77c8189c21a94a0ae14dcb19"
+  },
+  {
+    "path": "문서/00_프로젝트/Wolf_Run6_v5_Product_Apply_QA_20261021.md",
+    "source": "codex/wolf-run6-v5-apply-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "cfaf1f4dbd00a1e66269c476e170e0753a75aee36e27f55b4c3be93038181192"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_DefectRects.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8b4980e081ea475ef61e7204b20474068150cfd8b9fdbfc14f0559f4daee5a60"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_F1_References.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "beecb3a70683e987d0ccd8ae8494fd7f3ae4d5aad5092be7956e526286aaf5ee"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_F1_SameScale.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a14df08d1c67a2a97d9d249476c2db27714ff8e11e7e6e9ed0a4a01b12e268da"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_ForeignFragment_Crops.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8c52f478c4a2e27d498a30fcfe7aaaea06ca40c067e017e71631d86b98ea0887"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_Earth_01_Repeat_2x2.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d70dc17b915a3b9fb3be4b7a467c039dff363dde4f21208313f9f6c84cb307d5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_Earth_01_Repeat_3x3.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9064ff266fdadf1597ddf3df6e42d429fff75ee0073a60d6a635dde2ef143e43"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_Gravel_01_Repeat_2x2.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e9e0d59ca1c50f9fb4daea2a16b9ddd9907d24a39a7f69e08eccf514216d9242"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_Gravel_01_Repeat_3x3.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9dcec05331282ae6a607ca1e89d73d35bea30774f6b3f6b81b7c8da0b3fc5441"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_ThinFrost_01_Repeat_2x2.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "67b45801ca7169bb82052c62ed34c8cb66c536910717c959f2058956f8d568cc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Ground_ThinFrost_01_Repeat_3x3.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "337e6781878a75cdc686c49ade9a36597ef5a568685b1f38f8c563298c9bf867"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Path_Stone_01_Repeat_2x2.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5eaf759e838514637a36afadbdb2c241b1d9fef9d97d22c6549d7cedb1a9f4ce"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Frostway_Path_Stone_01_Repeat_3x3.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "709d608cbf1f942b17e67e67b715f53999a179b9e311c9d30c4a6b5f76e3b674"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Modular_Assembly_B.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6df967ba9a66b3279e91b61a2817a55f696486fd76fa3b782302d592f4c35aac"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Modular_Assembly_C.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8ac1c36a7b47923f25c922dd360e4bcd6d6db2ad45350ce1d06e230804cfab40"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Modular_Assembly_NativePPU.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a8602355353fbed450e00cec865a315bca0644009c997e8e7b6fb74890d547ac"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_PNG43_ContactSheet.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9ac27cc77600359b549a8f5c43584bb7d4a177daba41c218d0409d6093da5812"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_PNG43_Review.csv",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ba285b10a3addd0d305cec03497ee525c0cbdfb46f89148d492ace1d3d4c7956"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Repeat_Overview.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c92e07b7ec124f7a7f418ace1b1148e7b6028b1450f181fdc61b5e4dbd77ad85"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Sorting_Behind.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "110da25bb858a05962329dedebc2b8a6aae11bc647fe6e598bd9598502eeb646"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Sorting_Front.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1306be41e73c0d3ca8030acbdc23031fb87af18f5b3a17c0174d26f3aa294dc4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Unity_16x9.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c4aa84b749e7088bce76545c15758baa0bd66a9ecaeaac2702423e6e9a083040"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Unity_21x9.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e35154a041123ac17a88de1db57344842fce52e804a17f14631151e1571ef400"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Unity_4x3.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "395b6942d0e0c27ddefeecbb4fa8070f9451d4b61e8a3103f14a37a6312da365"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Unity_Village.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "265873b6b15f0b9914d7adeef79cc8b979b2ca4a265c16bc52f6875ec5b70b67"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/A_Validation.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "72192de83f64fb90fe80c985f29795eb94963578f1f64f0267c12bd51468f2a0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Frame05_JointZoom.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "236b342d9befef7502361dfeb8e6d1f552023d5691d5fddb90dff4b53d095159"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Raw04_05_Comparison.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "85053ad8d11b7d8df86ee5973e66dbd091afee89f19868452478a01a160e211f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_TailROI.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "03635cea4e32f54cb446af8061259192e054b27b6cd80090915313d1a3edc60d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame00.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "37a033dd814c6399f4d6cbaff962a2abe091117c0f264a9547423b2f3c5e8e55"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame01.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4dfe76243b8b6d7b9ebb306359b47f984d4a168dacdb4689ddc83d61a352b139"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame02.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7e21e90aa60f97027a95d8b4dcb0d149742de7b714af4bafc9c3998b491afa8b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame03.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1e844ce35ea53d5ce973df16a763a6a8831b602833b33617e0f88a01d4bd10b9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame04.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0c713979d3d9113b198ed0e9d332342b96e02650524516036527a81a9d5fe763"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Frame05.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e91af904dcc683f0de92f096760d6d54b4a3f565e0544a7a6553a6e9e02df4dd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Playback.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "fa85a1d65dc414a232d7d0e01bb800f2e2fa49fccc34cced04a9c08181738c41"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Sequence.png",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ea809986056ee9f95c4dc2322e4630549965c76553d6126dd5c733a230f7c66a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_Summary.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a273643695fc93466a7544ebc4464218c975bfeeeeff4e4fceaac731c62fdcde"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_v3_v4_128_40px.gif",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "aefa9d4bc7d84fa1afc328bb89a2b1ac892fee778af4a5d6fc053365909d3cd9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Unity_v4_128px.gif",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9936d594dd430d6961d7cd1131bb199ccd58d156e132db000e2053d3e9a34b13"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/B_Validation.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8aa48074edfdb501911ab2196f1826a0364f237bb31f2c6598b95f0d4de46580"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/GitHubSources.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e217bfb85dbd3f489da19e2fd752b1fb155c30d3a6fd685cb2f35fdf7a6c1331"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/Harness_PackageManifest.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d5875d8e402c1494401ca4a522f41adb2a635596ccdd3477c01f2df8198f0b6e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/ProtectionResult.json",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8059b92dfe61cdd39e77cdcdadc1872cf30f9fb50516a285277d666935879b97"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/Unity_Final.log.txt.gz",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "6948f8075111d4248d533af8916b998633d15fa8e56db3174dc97c2b7b11607a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/VillageBlockHarness.cs",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "48aa7a7f30b4ab3e52f2e33903df2bf2d61c4052772abe98c9a7e1f0e418edad"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/WolfPlaybackHarness.cs",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "038f7fcace02749ae1b152234b27d2ed7b4cf6d29dd236259ed063df2ce70de2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/WolfQABoot.cs",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e71c2a31b666cffcd0be95f47581c09c7afe8e337866976cc3932ebccabec0bb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/export_evidence.py",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "34617886f72cce85ab8311fcf3400dc0ac45b1e1aa52be0ba70b8825e5b44465"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV3WolfV4_20261021/package_audit.py",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bc14bfb7abf013a5c4800051b9eb30e0c12535d41c4dd13e166729c6d1555acb"
+  },
+  {
+    "path": "문서/00_프로젝트/FrostwayVillage_v3_WolfRun6_v4_Delta_QA_20261021.md",
+    "source": "codex/qa-frostway-v3-wolf-run6-v4-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "de82dee076707775d6d07c2677213fe4be0e66b169c2ea92225c20ef4bf6668e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Modular_Assembly_B.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6df967ba9a66b3279e91b61a2817a55f696486fd76fa3b782302d592f4c35aac"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Modular_Assembly_C.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8ac1c36a7b47923f25c922dd360e4bcd6d6db2ad45350ce1d06e230804cfab40"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Modular_Assembly_NativePPU.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0da02a4f1b4f5a3161301f3dd0b6e58c152fc939f6a648986e60532a87965167"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_RawTarget_BeforeAfter.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0000a7d57303a38ab35d52737d7a83f0d6dca8940df934701db945a4badd8a2f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_RenderDelta.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4fcb5226503fe6c1a361c80cf38a864b44e771aa53724e07820bdf48d41a1c23"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Sorting_Behind.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "110da25bb858a05962329dedebc2b8a6aae11bc647fe6e598bd9598502eeb646"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Sorting_Front.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1306be41e73c0d3ca8030acbdc23031fb87af18f5b3a17c0174d26f3aa294dc4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Tiles_GameScale_3x3.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e48392caa66a47fa6858e8fe7bc48d3d735aff7cfb855e093cc07297575e553c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_16x9.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4f1de5c5624618523a003188c2f004236f19e9823cb571b305219266355d9141"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_21x9.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2ec8eed2cd83a164f41af86384dac8ee6f2353da2dc71d3f177eaf759d81686b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_4x3.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c4ee63734431ff03013efbfc17d076e88177c0e5c98c883e4d9d681ad0be6e43"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_BeforeAfter_16x9.jpg",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "65b23e50acc6ac0b04d29a7a611843acf51b00589b5cb1934364ba0ab6566baf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_BeforeAfter_21x9.jpg",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4021e0c431b255c8ce1ce7a6e63a9d19d1bd25bb4524076bd5e9da71cb07393d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_BeforeAfter_4x3.jpg",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8be870e4e7345e59c4f8253bfb1e24061818b1ac7381dd339a2e575a7958f615"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Unity_Village.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "265873b6b15f0b9914d7adeef79cc8b979b2ca4a265c16bc52f6875ec5b70b67"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/A_Validation.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c4b1edb8b71c355fb29e6d92835da81e681fc90cfae981c692370ad58130656b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_ChangedCSVCheck.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e3ba0d40f70c2628ebb5e7bcf26417395558e8ef1a021dbbe36d722dc2a77ad8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Frame05_Raw_BeforeAfter.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "277f7b0961c9a8f9e911cf769e0f0b4b98da4159c643a4e0a418058757ca0c2e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame00.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "37a033dd814c6399f4d6cbaff962a2abe091117c0f264a9547423b2f3c5e8e55"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame01.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4dfe76243b8b6d7b9ebb306359b47f984d4a168dacdb4689ddc83d61a352b139"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame02.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "7e21e90aa60f97027a95d8b4dcb0d149742de7b714af4bafc9c3998b491afa8b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame03.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1e844ce35ea53d5ce973df16a763a6a8831b602833b33617e0f88a01d4bd10b9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame04.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "3d6363e5ce28917f977e70fdfa5550fd92e084f170b38a4b3a55efec1e6536b6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Frame05.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "09420acc34b836b550cf26a89f50ae2d5d828dcf527ff1b83f6e57d47a882d68"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Playback.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b8ee3ba45a05f21f8c2249efd5130b0f292fad5d5f32278888b2a81164761bf9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Sequence.png",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ae61baf87c942dd2f1a6e57356135af58fd8b8c73daa779abceba0521ca2d2f7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_Summary.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4799c65f3dd76fce88e4aee96bdb8e560c60ab2f83e5a4e51a7db51349b047b6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_v4_v5_128_40px.gif",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "cc62c8e2bc71028d6b668ab30b2c2a8bfc14a884fe886f8541e678d19731b287"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Unity_v5_128px.gif",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "bfaf22a9302190db0fb4c390f745aab64f703f716f3eef47ea6de41bc6164a50"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/B_Validation.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8ccd905f8fbf937e5db72d6849ca0ee181f1d9b3fa7edad526a746aaab024c25"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/GitHubSources.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1d7d9be7b56073fbcb897a2b9f3235a89a82459c4d77a17ce374ba2f26d19406"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/Harness_PackageManifest.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d5875d8e402c1494401ca4a522f41adb2a635596ccdd3477c01f2df8198f0b6e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/InheritedOpenFindings.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "02ed1079820745c62669f21ad0dde941798bcd72ad0cc1578c7b428d38759764"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/ProtectionResult.json",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "97aae84cb77c0b04ba3bf8861feb19aa98770be7b82a613e5f53869f5687ec5a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/Unity.log.txt.gz",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "6948f8075111d4248d533af8916b998633d15fa8e56db3174dc97c2b7b11607a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/VillageBlockHarness.cs",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "69eca5c869044540007688a3a5f393de1249debe02a1022c1ef2f487e00b474b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/WolfPlaybackHarness.cs",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2992fdbd287b11cd2f768a7fbfc428ae6333b3d92c07f5a703538d7c8f7a0601"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/WolfQABoot.cs",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e71c2a31b666cffcd0be95f47581c09c7afe8e337866976cc3932ebccabec0bb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/export_scoped_evidence.py",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "aa1c83f446c9bbf34203cd084496f34eea9b81246fc56a8c873f481b69b00a18"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/JointVillageV4WolfV5_20261021/scoped_audit.py",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "eeaeb312556ad5c6386b682f3c340ccc0ff0c31fdaf5fb0ce18ce9d8ad396908"
+  },
+  {
+    "path": "문서/00_프로젝트/Frostway_v4_WolfRun6_v5_Scoped_Delta_QA_20261021.md",
+    "source": "codex/qa-frostway-v4-wolfrun-v5-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "e9f871e898122f1f44f8f4686acce9f76c5b60ee2ae50e39c91839316f0bdba8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/A_DefectRects.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8b4980e081ea475ef61e7204b20474068150cfd8b9fdbfc14f0559f4daee5a60"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/A_PNG43_Review.csv",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "ba285b10a3addd0d305cec03497ee525c0cbdfb46f89148d492ace1d3d4c7956"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Connections_16x9.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "917032202289285d9e237f7a6eb89d3b14286048fa57649aa77413b9dd1cfda8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Connections_21x9.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "92f73b279ce2a64d12675111c85f5a472e6e9fdadca8a0c0c3a89dd97dd39ed5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Connections_4x3.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "803235d473ae404e191514c04a525b345e454e873b697010c5c089d6a3088f25"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Earth_Unity128px.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0dff902e7b255087e9dc83ff36b966691daf67f8c41b8cf273c2a430d7e38ff1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Gravel_Unity128px.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "61e4a07caaaa2e2d0017180768ca01891ba21231ff3b18969ebf7968bef79a39"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Repeat3x3_16x9.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "352ebef4911f40290f64f730d3de1f368cc73e05e6cca1527345498dde608bf3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Repeat3x3_21x9.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "900a016099d8395e241a3fd051763bf9f9e34b9dc10d7d5c355bbd5b3faf8ae6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_Repeat3x3_4x3.jpg",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b8b51341aaa55a867ee9db7f52ac7e3e66d047d1a2d67b9785efa2d723ff040f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Compare_ThinFrost_Unity128px.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "39a4c22f3987989444755ec5b880bcfb11209883647b0b8cd8ed30c8ad16fe6d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/DeltaSummary.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "265243daeacc8f862dec2d79cb56c8e5af8b946f031f844edaaecf32251022be"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/FinalProtection.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b22f1eeb20518448c6d933cbc8e6fd37ea58452e411399945569ba84a1a0afe6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/GitHubSources.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8af31a4fa598abfab7281c6f9757d4efdca330f45d8d114da72fff8c9149fb8d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/OPEN16_OriginalRects_v5.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "8af64f5abab937e5aa94e081b1a496f60d558158adc6ed4fa43df33a73f798b8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/OPEN16_Reconciliation.csv",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "32eb075626d622bf7693dcd6fd986fab82cc24a8cf6ecbf3c5dda28b1e80236a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/OPEN16_Reconciliation.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "688ce298d5cbd8737ee8c2f83355e908919ca08d47227cfc97bd368db7283c5e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/OriginalProtection_B.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5d2e90dc49f45ab4394e0bc0f1e0f8e5c75f405ca5b1e9f726c75eb6f32e7d54"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/PackageDelta.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "2b8600fc0d8cb33c55e1d1d80e2eddad5a838924afe85c79f00a12d226213c7b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/TileDeltaBoot.cs",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b510d5e4a2ef9040e31bfc2c99b111d6fea366e183c8b57299fc859a29e6ecb6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/Unity.log.txt.gz",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "privacy-minimized log acceptance markers",
+    "sha256": "20f8ad0d65d11201e3eff219d833c4c4c89cfec995186004f863a5bb42260c62"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/UnityDelta.json",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "c154f08512d0250ee88478d81481b2a1eeb738d2b0484a3aa5b6a04def03d09a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/document.py",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "5220316690c3d6bff092547170629755c261a1b1009a8d67f3a1ab787cee464f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/export.py",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a112a34e38f46d6e1f1f7c265eecff55b507a5a607ede72a1d7d010ef8103385"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/prepare.py",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "569c73abbbb2280707befd1f75246abd83840d9f640b979867a946f00220625a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Connections_16x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "0f7e6b0cc0c49c711ee6b1f804323db2f5c2feb7006fef95f69a104e08015491"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Connections_21x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "42ac0043b2940c339911ac2eaae4be0e376e71ecf1dd60d86c79ea9ccfea01ee"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Connections_4x3.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "6b148911c8f64b874e82f98ed605646e605e878bf9af71f10d327a4f688cb2aa"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_DoorBehind.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "110da25bb858a05962329dedebc2b8a6aae11bc647fe6e598bd9598502eeb646"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_DoorFront.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "1306be41e73c0d3ca8030acbdc23031fb87af18f5b3a17c0174d26f3aa294dc4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Repeat3x3_16x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "97b7348aa8a653a9cbdb0e0bc064ea1bf155a59a180ce7576b5843e6b8d4df12"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Repeat3x3_21x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b4369a1fa32d884cf11a4a47f9e5cfd7c6198d8a43a3af1f48afc89ec324ea03"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v4_Repeat3x3_4x3.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "319be0c4efb51de78429935f5706cd888e373341c003cc8a75ad7a23a177415e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Connections_16x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "4704dcb3a49a2d9bd0d817800c64c1f25cd2f5c3e111ae54ababda93a336585d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Connections_21x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b49e2c439ea1d720bb2c62e0cf9137e4cef88db50aba59d7c107920261ad6010"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Connections_4x3.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "74b45af3c71fd435cbdc44b672a61cf502a27534984fd1610c3308b8d5cfa37b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_DoorBehind.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a387f34ff639d889acd141c731d7041bd46baa55d4768020a31fc3524153b43f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_DoorFront.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "b42ee7cdb596cf4c809dd77f079e6f86ef3a4050ef2f22bc5f4f1986b0fa13b2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Repeat3x3_16x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "51a7cf8b92223029d5c7eb7144e295db24ae560bec9a17d033cb744b4e47edbd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Repeat3x3_21x9.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "9ae75a066d8502f73743cf3656bdb57113bb0cb1709276eaab60715a9800adad"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/FrostwayV5DeltaQA20261021/v5_Repeat3x3_4x3.png",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "d657848602b1c9f270744a297d24e68f62bd98df81866394434ed047cd424599"
+  },
+  {
+    "path": "문서/00_프로젝트/Frostway_Village_v5_Tile_Delta_QA_20261021.md",
+    "source": "codex/frostway-v5-tile-delta-qa-20261021",
+    "action": "selected Codex report/evidence",
+    "sha256": "a4e0eaae7a49da03eb82f32569f92c487e595a4900ad0d2c46c983305f01f78b"
+  },
+  {
+    "path": "문서/00_프로젝트/CURRENT_STATUS.md",
+    "source": "original approved Codex status paragraph",
+    "action": "preserve original unique status",
+    "sha256": "da3da7066cdf94d63da008d431c2f3e8037521759227f707f1df18062ff8a72a"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "Assets/_Project/Art/Monsters/FrostFieldMouse.meta": "7ae034251f2b2ba509efd08dfb00545ff2cff056f4fa150c35f6e4c518d9a7df",
+  "Assets/_Project/Resources/MonsterVisuals.meta": "18afa8854648847298d33a3734ecaaee7e391bce511ec43478381c861a13ec57",
+  "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset": "0570a43f4f2f1f6ad720b780237fbb11b3ad289a4d39754113b4b1d56b72938b",
+  "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta": "903d787b3d943779dd2dc9afa482008e4ab98f797b15a417b7f13b567faecf16",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta": "5ead41fdef891c3f64b8238c9ee48188136594b2ab6f59cf055f3242bfb96b40",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png": "c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta": "b19c7bc5f99cc03eccd49c0c9a4fb52a9ba13eafc12e721f4ebe89bc45672ea6",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png": "695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta": "758a54eb78af3e89824be0784a60d48ca4390c58e41469fdda48d82eff06a550",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png": "3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395",
+  "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta": "9038a6acde8bc38726310cd0855202822a731a74bde3d1c22493a13cc65f11e8",
+  "Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs": "cf511ac25222549c291c697a5720ba264251de9936826e34046f8bb6d0596c39"
+}

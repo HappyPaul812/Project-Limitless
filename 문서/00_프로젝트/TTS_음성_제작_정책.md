@@ -1,5 +1,15 @@
 # LIMITLESS TTS 음성 제작 정책
 
+## 2026-10-21 추가 표준 — 프로젝트별 사용량, 429 Failover, 실패 보존
+
+**최신 다중 키·자동 제작 공식 운영 절차:** [TTS 공통 다중 프로젝트 Quota·HTTP429 Failover·체크포인트 운영 표준](TTS_공통_다중프로젝트_할당량_429자동전환_체크포인트_운영표준_20261021.md). 본 문서의 과거 날짜별 제작 기록·보이스 ID는 역사적 상태이므로 최신 캐스팅 인계와 함께 해석한다.
+
+- Google API 사용량은 Key 개수가 아닌 **실제 Google Project·Model 및 해당 서비스의 각종 제한**을 따른다. 4 API키/40회 등의 수치를 다른 배치나 다른 모델에 자동 적용하지 않는다. 같은 Project의 키는 같은 그룹으로 집계하고, 독립 Project 확인 전 Failover 기능을 켜지 않는다.
+- **Stable Dialogue ID, 화자, 정확 원문, Voice/Style 및 원본 SHA**를 고정한다. POST 직전 ATTEMPT를 영속 기록하고 성공 WAV·메타·해시를 보호한다. 실패·응답불명도 보수적으로 로컬 시도에 포함. 완료 WAV가 있으면 재실행해도 생성하지 않는다.
+- 429를 만났을 때는 해당 프로젝트를 **태평양 날짜 기준 격리**하고 검증된 다른 프로젝트에 실제 잔여 한도가 있을 때만 신규 시도로 전환한다. 429는 RPM/RPD/TPM 중 무엇인지 확인되기 전 **원인 미확정**. 다른 실패나 결과불명은 HOLD+LOCK 및 사람 재개 승인. 장부·잠금 증거 삭제 금지.
+- PT 자정에 **새 날짜 카운터만 갱신하고 옛 이력은 보존**하며 Google 서버 quota 실제 복귀/과금 여부는 별도로 확인한다. 예산 끝 `CAP_STOP`은 `HOLD=False` 정상 종료. 사람 청취 승인과 Unity 통합 승인은 기술검증과 분리한다.
+- 기존 실사용 `Renewal_Auto_TTS_Failover_v2.py`는 세린·태온 한정으로 검증된 특화판이며 **범용 TTS 코드 재사용을 원할 때 추가 엔진 분리/테스트가 필요**하다. 코드를 새 캐릭터에 무검증 복사해 실행하지 않는다.
+
 > 2026-10-05 Player Dialogue 정식 정책: 고정 Voice/TTS 없음, Portrait 없음. NPC/Narrator/남녀 기본 외형 fallback 금지. 중앙 Presenter/Portrait Resolver에서 이전 음성 정리와 Sprite clear/영역 숨김을 수행한다. 아래 Player TBD는 과거 제작 이력이며 현재 규칙은 NONE이다. Named Character의 기존 Voice Registry는 유지한다. 태온 첫 만남 005/006/007은 사용자 실제 청취 불일치로 재생성 필요 상태이며 이번에 음성을 생성하거나 가공하지 않았다. [전수 감사](Story_Dialogue_Consistency_QA.md)와 [최소 재생성 목록](Story_Dialogue_TTS_REGEN_REQUIRED.csv) 참조.
 
 > 2026-09-29 별도 조사·논의에서 확정한 **개발 방침**을 2026-09-30 기록한다. 법률 자문이나 서비스 조건의 영구 보장이 아니다. 실제 출시 전 최신 Google 약관·모델 제공 조건을 다시 확인하며, 변경된 정책을 우선한다.

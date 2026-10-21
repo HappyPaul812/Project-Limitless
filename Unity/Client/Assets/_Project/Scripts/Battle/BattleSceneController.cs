@@ -315,6 +315,11 @@ namespace ProjectLimitless.Battle
                 setup = BattlePrototypeEncounterFactory.CreateMain20(playerName, GameSessionData.SelectedJobId,
                     GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
                     playerAttack, agility, BattleEncounterContext.Monster);
+            // 고유 Main22 지정전투만 단독 서리들쥐로 연결합니다. 기존40PASS 프레임/행동 경로는 바꾸지 않습니다.
+            else if (BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter3Main22Flow.EncounterId)
+                setup = BattlePrototypeEncounterFactory.CreateMain22(playerName, GameSessionData.SelectedJobId,
+                    GameSessionData.SelectedPlayerPathId, CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId, growth),
+                    playerAttack, agility, BattleEncounterContext.Monster);
             // Main21의 고유 ID에만 승인된 두 기존 종을 사용합니다. 일반 Field10과 Main19는 아래 기존 분기로 유지합니다.
             else if (BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter2Main21Flow.EncounterA
                 || BattleEncounterContext.StoryEncounterId == ProjectLimitless.World.Chapter2Main21Flow.EncounterB)

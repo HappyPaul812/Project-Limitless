@@ -1,0 +1,53 @@
+{
+  "main21_protected_paths": {
+    "Assets/_Project/Resources/QuestDefinitions/Main21_ReturningWarmth.asset": "1f325b82feaac908da208c0e826054e45906ad02b707a2945c097903c42c6342",
+    "Assets/_Project/Resources/QuestDefinitions/Main21_ReturningWarmth.asset.meta": "e944bfe3d3505ee5ebac148d84e8d74d5a32e5c2a8f3404b39548ed728951600",
+    "Assets/_Project/Scripts/World/Chapter2Main21Flow.cs": "546d9b8e65b16023809bbc940fcf521ea2c02c69ce0f990cfa5959a386048cf1",
+    "Assets/_Project/Scripts/World/Main21ChoicePanel.cs": "4b99bdeab05ebeabca4c2bc9836570af4c3bcc0c86c0bb8149d4bfc45119c1be",
+    "Assets/_Project/Scripts/Core/Main21Progress.cs": "558f1e4b86974e91d3b5c17eb41ec7e46ae1a3f4d4266ff9895e92e41ba5e012",
+    "Assets/_Project/Scripts/Core/GameSaveService.cs": "24976faf557dc1100a1c6eb53564f1c4681d16c43beb2e22bd7f1bd3c30cc9bb",
+    "Assets/_Project/Scripts/World/SafeZonePetServiceRollout.cs": "6ca9d1feb955b9ed065f87bcde1d1399bc1e8666e3396b632a8b23cd881b0da7",
+    "Assets/_Project/Scenes/World_StarterVillage.unity": "80c83344d1765aa912d8d54bf89fcc247f1eef8fb4043a90040bcd081fa1cf6e"
+  },
+  "main21_all_same_as_original": true,
+  "approved_f1_6_sha": {
+    "NorthF1_EarthToFrost_Transition_Overlay_v3.png": "93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1",
+    "NorthF1_Ground_Earth_Base_v2.png": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+    "NorthF1_Ground_ThinFrost_Base_v3.png": "12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c",
+    "NorthF1_Path_WornTrail_Overlay_v2.png": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+    "NorthF1_Prop_FrostShrub_01_v2.png": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+    "NorthF1_Prop_Waymarker_01_v3.png": "6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589"
+  },
+  "mouse_approved_apply_13paths_same": true,
+  "ids": {
+    "quest": "main_22_northwind_signs",
+    "scene": "World_NorthF1",
+    "encounter": "northf1_main22_mouse_encounter",
+    "spawn": [
+      "Spawn_NorthF1_FromStarterVillage",
+      "Spawn_StarterVillage_FromNorthF1",
+      "Spawn_NorthF1_Shelter"
+    ],
+    "objectives": [
+      "enter_north_f1",
+      "inspect_thin_frost",
+      "inspect_two_southbound_traces",
+      "win_frost_field_mouse",
+      "summarize_at_shelter"
+    ],
+    "targets": [
+      "northf1_main22_entry",
+      "northf1_main22_thin_frost",
+      "northf1_main22_southbound_traces",
+      "northf1_main22_mouse_encounter",
+      "northf1_main22_shelter"
+    ],
+    "monster_prototype_only": "prototype_main22_frost_field_mouse"
+  },
+  "quest_objectives": 5,
+  "quest_rewards": "EXP0/Currency0/Items none - unapproved balance not finalized",
+  "prototype_stats": "Inherited approved visual fixture definition unchanged: Level1 HP60 AttackPercent100 Agility10; not final balance",
+  "main21_next_main_quest_id_unchanged_blank": true,
+  "new_ids_absent_in_original": true,
+  "old_f1_64_and_battle40_not_rerun": true
+}

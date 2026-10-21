@@ -1,0 +1,79 @@
+{
+    "Version": 1,
+    "PlayerName": "Main22 첫 플레이",
+    "PlayerVisualId": "Male",
+    "AppearanceId": "appearance.external.v1.mobility.guardian.male",
+    "PathId": "path.mobility",
+    "JobId": "guardian",
+    "Level": 14,
+    "CurrentExperience": 0,
+    "CurrentSceneId": "World_NorthF1",
+    "SpawnPointId": "Spawn_NorthF1_FromStarterVillage",
+    "LastSafeZoneId": "safezone_starter_village",
+    "LastSafeZoneSceneId": "World_StarterVillage",
+    "LastSafeZoneSpawnPointId": "Spawn_From_Field01",
+    "HasSavedWorldPosition": true,
+    "SavedPositionX": 0.5012272000312805,
+    "SavedPositionY": -2.500321865081787,
+    "PartyResources": [],
+    "Currency": 77,
+    "Inventory": [],
+    "QuestProgress": {
+        "ActiveQuests": [
+            {
+                "QuestId": "main_22_northwind_signs",
+                "Objectives": [
+                    {
+                        "ObjectiveId": "enter_north_f1",
+                        "CurrentCount": 1
+                    },
+                    {
+                        "ObjectiveId": "inspect_thin_frost",
+                        "CurrentCount": 1
+                    },
+                    {
+                        "ObjectiveId": "inspect_two_southbound_traces",
+                        "CurrentCount": 1
+                    },
+                    {
+                        "ObjectiveId": "win_frost_field_mouse",
+                        "CurrentCount": 0
+                    },
+                    {
+                        "ObjectiveId": "summarize_at_shelter",
+                        "CurrentCount": 0
+                    }
+                ]
+            }
+        ],
+        "CompletedQuestIds": [
+            "main_21_returning_warmth",
+            "main_05_return_of_three",
+            "main_09_reunion_in_silence",
+            "main_15_burning_traces"
+        ],
+        "TrackedQuestId": "main_22_northwind_signs",
+        "Main21Flags": 0,
+        "Main22ClueFlags": 1
+    },
+    "CompanionRoster": {
+        "UnlockedCharacterIds": [
+            "companion_miel",
+            "companion_paul",
+            "companion_serin",
+            "companion_taeon"
+        ],
+        "ActivePartyCharacterIds": [
+            "companion_miel",
+            "companion_paul"
+        ],
+        "Formation": [],
+        "HasManualComposition": false,
+        "PaulDefaultApplied": true
+    },
+    "BeastCompanions": {
+        "DefeatedMonsterIds": [],
+        "UnlockedMonsterPetIds": [],
+        "EquippedBeasts": []
+    }
+}

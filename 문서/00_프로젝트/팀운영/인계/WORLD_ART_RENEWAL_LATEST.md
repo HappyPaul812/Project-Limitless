@@ -1,3 +1,65 @@
+## 2026-10-21 Wolf Run6 v4 기술 PASS·Unity 12FPS PASS / Frame05 미술 FAIL → v5 국소 보완 실제 납품 (현재 최신)
+
+- 바울 대표 확정: 기존 Frame00~04/복원 03·04 꼬리/승인 Wolf 단일 v5 KeyArt **변경금지**. 실패 한 곳: `Wolf_Run_05_v4.png` 뒷다리 x315~338 / y235~280의 직각 윤곽. 다른 늑대 그림 이미지 생성기 결과는 **폐기·사용0**.
+- 새 `Wolf_Run_05_v5.png` 원본 v4 실제 PNG에서 **174 RGBA픽셀만**, bbox **x318..333 / y245..280**, 무릎-정강이 윤곽 곡선형 재구성 및 해당 복원 영역의 기존 다리 근접 색 보간. Frame00~04 5PNG **파일 바이트·SHA 완전 동일**. 독립 신규 늑대 전체 원화로 교체한 게 아니며 승인 KeyArt SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 직접 재대조 PASS.
+- 실제 ZIP **`Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`**: **2,663,380bytes / SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`**. 6 독립 PNG 512×384, Strip 3072×384, 3×2 Atlas 1536×768, 12FPS 0.5초 GIF/APNG, 128px·40px 미리보기, Frame05 5x 확대 v4↔v5, 루프 05→00 비교, 변경 RGBA 정확174행 CSV, Manifest per-file SHA, QA. ZIP CRC/readback·PNG Decode6·Strip/Atlas 6/6·00~04 원본 byte5/5 PASS.
+- [v5 수정·미술 보류·SHA 정본](../../Wolf_Run6_ArtRework_v5_Frame05_Hindleg_Delivery_20261021.md), 최초 문서 commit `1dd00402ece7cd6cfcd77c92e83d556c6cdc5b25`. ZIP/PNG 실제 파일은 본 ChatGPT 샌드박스 다운로드 제공, GitHub 바이너리와 F:에 자동저장0. 원본 Unity/main 변경0.
+- 정확 상태 `WOLF_RUN6_V5_ACTUAL_PNG_ZIP_DELIVERED / OFFLINE_TECH_QA_PASS / FRAME05_MOTION_ISOLATED_UNITY_QA_PENDING / USER_RUN_ART_APPROVAL_PENDING / NO_RUNTIME_APPLY`. Codex는 **05만 격리 12FPS 실제 Motion/05→00 DeltaQA**, 대표 승인 전 나머지 모든 아트/정식 펫 교체/전체 QA 반복 금지.
+
+## 2026-10-21 Wolf Run6 v3 기술/Unity PASS · 미술 HOLD → v4 모션보완 실제 PNG ZIP (최신)
+- [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 `#issuecomment-6310494103`, `docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` 확인. v3는 격리 Unity 실제 12FPS PASS이나 Frame04 어색한 후지관절/발접지·중간 몸체비율·05→00 Loop 미술 HOLD.
+- v3 ZIP 해시불일치: **초기 Codex 수령 f7eb4122… (보고상 2,788,009 bytes) vs 이 세션 실제 최종 파일 171b954d… (2,788,020 bytes)**, 최종 GIF 타이밍/인계 갱신 단계에서 서로 다른 ZIP 릴리스 존재. 11byte 차이; **초기 ZIP 바이너리가 현 컨테이너에 없으므로 어떤 ZIP 엔트리가 다른지 세부 원인은 추가 read-only 대조 필요**, 동일 바이너리라고 주장하지 않음.
+- v4 실제 `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`, **3,024,517 bytes / 34 files / SHA256 `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`**. 512×384 RGBA PNG 6장, 3072×384 Strip, 1536×768 Atlas, 12FPS GIF/APNG, 128px/40px, v3↔v4 동시 움직임, Frame04 후지·Frame05 전지의 2x Before/After, 05→00 정적 전후, Manifest/per-file SHA/foot·bbox CSV/QA.
+- v3 **00~03 PNG 파일 바이트 동일**. 04의 부자연스럽게 위로 꺾인 뒷발을 Frame01에 실제로 칠해진 관절·털·발끝을 활용해 굽힌 새 독립 다리 위치로 재구성(4,368 RGBA픽셀 변경)하고 승인된 꼬리 영역(346,88..485,164) pixel 동일. 05는 기존 뻣뻣한 앞다리를 들어 올린 전완 굽힘 자세로 재배치(7,542픽셀 변경), 05→00 루프 개선 후보. **이전 원화 조각을 회전/재배치한 포즈 구성이지 전체6 신작을 독립 손그림으로 그렸다는 주장 금지**.
+- 승인 Wolf v5 KeyArt `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 실제 SHA 재검사/변경0. ZIP stdlib CRC PASS/PNG6 Decode/Strip·Atlas 6칸 픽셀동일/3px 외곽알파0. 모션은 **Codex 격리 실제 Unity v4 재검수/바울 대표 모션 최종승인 별개**, PPU/본게임 Wolf Run 교체 금지.
+- [납품·해시·QA 보고](../../Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md), 최초 보고 커밋 `e6b80f84aecda57ebcc29c3b77ce739e4766e979`. 새 PNG/ZIP은 이번 채팅 sandbox 파일, GitHub 바이너리/F: 자동전달 아님. 다른 챕터1·2/Chapter3 asset, Bear/Fox/Snake, Scene/Save/UserData/main 변경0.
+- 현재 `WOLF_RUN6_V4_DELIVERED / OFFLINE_TECH_QA_PASS / MOTION_VISUAL_ART_PENDING / CODEX_ISOLATED_UNITY_V4_PENDING / USER_APPROVAL_PENDING`.
+
+## 2026-10-21 Wolf Run6 v2 기술 PASS / 미술 FAIL → v3 실제 6PNG+Strip/Atlas/12FPS 재작업 (현재 최신)
+
+- 근거 Issue #43 최신 Codex 댓글 및 `docs/planning/문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md`. 이전 v2는 프레임03·04 꼬리 절단, 03 뒷발 절단, 05→00 접지·몸통 비율 미술 FAIL, 형식 PASS/실제 Unity Import 미실행.
+- **현재 v3 ZIP 실물** `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`, **2,788,020bytes/36entries/SHA256 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0`**. Frame 00~05 각 512×384 RGBA, Strip 3072×384, 3×2Atlas 1536×768, 실제 GIF 80/80/90/80/80/90ms 총 500ms=12FPS 및 APNG, 128px·40px 아이콘/실 프레임 v2↔v3 동시 GIF, 꼬리03/04 2x 비교, 발 접지/몸통 시각비례 추정 CSV·JSON, Manifest per-file SHA, CRC 재검증 PASS. ZIP은 채팅 Sandbox 파일, GitHub 바이너리/사용자 F: 자동저장 없음.
+- **정직한 변경 범위**: 00/01/02/05 미술 원본 v2 그대로, **03 꼬리+후방 잘린 발 재구성**, **04 꼬리 스텁→연속 꼬리 재구성**. 같은 늑대 05의 실제 털 페인팅을 자세별 방향·접지에 맞게 재배치/복원. 6프레임을 단일 정적 PNG 여섯 번 위치이동한 것이 아님. 다만 v2 콤포지트의 근본적인 체형/움직임은 **Run6 미술 승인 전까지 QA 대상**, 완전 독립 신작6포즈로 허위 보고 금지.
+- 승인 원본 `Wolf_KeyArt_v3_AlphaFix_v5.png` SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 실제 재확인, 원본 변경0. v2 ZIP SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad` 재확인 변경0.
+- [Run v3 제작·실물 파일 명세 및 미술 보류사항](../../Wolf_Run6_ApprovedV5_ArtRework_v3_Delivery_20261021.md), 문서 최종 커밋 `b6800d7a5ecd84c9c26537e3aa636c621eef50b7`. 현재 `WOLF_RUN_V3_6PNG_AND_ZIP_DELIVERED / OFFLINE_FILE_TECH_PASS / 12FPS_PREVIEW_READY / USER_RUN_MOTION_ART_APPROVAL_PENDING / CODEX_RUNTIME_NOT_RUN / MAIN_UNCHANGED`. Codex는 새 ZIP만 격리 Delta 확인, 전체 타 작업 재실행·원본 Unity 변경 금지. Bear/Fox/뱀 모션과 환경 신규 제작 없음.
+
+## 2026-10-21 Wolf Run6 실제 Import 후보: 6 PNG + Strip + 12 FPS / 시각 승인 전 (최신)
+- 사용자 질의 "이걸 게임에 어떻게 넣니?"에 대한 조치: 일렬 합성 아트는 그대로 Unity 사용 불가 → 이번 이미지 소스에서 6포즈를 **실제 개별 동일 캔버스 512×384 RGBA PNG**로 추출하고 독립 strip/atlas/12FPS GIF/APNG/128·40px QA 생성.
+- 실제 ZIP `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtPilot_v2_CANDIDATE.zip`: 2,482,392 bytes, 29 entries, SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad`. Strip 3072×384/6 cells, 3×2 Atlas 1536×768도 있음. PNG Frame→Strip→Atlas 픽셀 대조6/6, Alpha frame boundary0, frame SHA 중복0, ZIP CRC PASS.
+- 승인 v5 정적 1포즈 SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` **확인·보호**. 이전 v1/v2 런 재활용/게임 코드 변경/Unity 원본 적용 없음. 기존 원본 v3/v4/v5 변경0.
+- **반드시 구분:** 이 작업은 *그림 6마리 합성 소스를 분리한 import 후보*로, 4→5/5→6 경계의 원화 겹침·모션/알파 프린지·05→00 루프는 실제 미술 심사 필요. **ART_NOT_YET_APPROVED / UNITY_NOT_APPLIED**. 유저가 ZIP 내려받아 승인한 뒤 Codex 새GUID 격리QA; 이 ZIP만 있으면 Unity에 넣을 수 있는 구조지만 즉시 공식 반영하지 않음.
+- [완료 내역과 Codex 기술 지시](../../Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md), 문서 최초 커밋 `768f77f3e2d68386311e8badd3eb0c58806d5e50`.
+
+## 2026-10-21 Wolf v4 미술 HOLD → 세 영역만 AlphaFix v5 실제 PNG/ZIP 납품 (최신)
+
+- Issue #43 최신 Codex 및 `docs/planning/문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md` 직접 확인: Wolf v4 기술 PASS, 미술 HOLD(가슴 **위쪽 회색 배경조각**, 다리 미세 배경잔여, 앞발 밑 바닥조각). **v3/v4 원본 보호, v5 별도 후보만**, RGB·생물 실털/발톱·크기·포즈 수정 금지.
+- 실제 원본 SHA 재검증: v3 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`; v4 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a`; Snake v3 원본 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 보존/Codex 정적 PASS **권고**, 대표 최종 승인 아님.
+- 새 **`Wolf_KeyArt_v3_AlphaFix_v5.png`** 실제 파일 952×1306 RGBA SHA256 **`b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`**. 원본 v4 기반 국소 alpha 감소 2,174px (**가슴 900, 다리 237, 앞발 1,037**). 전체 RGB 변경 0, Alpha 증가 0, 변경 영역 외 변화 0. v3/v4 원본 PNG 덮어쓰기0.
+- 실제 ZIP **`Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip`** 2,214,467 bytes/13 entries/SHA256 **`920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7`**. 이번 대화 Sandbox 다운로드만 제공, GitHub ZIP 바이너리·사용자 F: 자동저장 아님. Assets/ v5 단일 PNG, Manifest old/new SHA, QA/Changed_Alpha_Coordinates_v4_to_v5.csv(2,174 행), 2배 가슴/다리/앞발 v4↔v5 실제 이미지, 128px BeforeAfter(2배경), Alpha 변경 오버레이/오프라인 QA. ZIP `testzip` CRC PASS, PNG 디코드/해시 readback PASS.
+- [v5 실제 납품·픽셀·검증 기록](../../Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md), 최초 commit `56e901f271e63c70ba6bd745f3f60bd57ff061fd`. **Codex 실제 GameView 아님 / User 미술 승인 대기**. Wolf Run·Bear·Fox·Snake 모션/원본 Unity/Field09 5+B/Save/MonsterDefs/main 변경 없음. `CODEX_WOLF_V5_DELTA_ART_QA_PENDING / USER_ART_APPROVAL_PENDING / MONSTER_ANIMATION_HOLD`.
+
+## 2026-10-21 Snake v3 PASS 권고 보존 · Wolf v4 한정 알파 보정 실제 PNG/ZIP 납품 (현재 최신)
+
+- Issue #43 최신 Codex: **Snake v3 정적1포즈 미술 PASS 권고(대표 최종승인 별개), Wolf v3 미술 FAIL**. Codex 비교는 실제 Unity GameView 아닌 오프라인 합성. 이 세션에서 Snake 그림 변경0. 정본 `VenomSnake_KeyArt_v3.png` SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 실제 원본 재대조 PASS. 독사 x=0 알파 접촉25px·작은 알파 군집548건 기술 경고 기록 유지.
+- Wolf v3 실제 PNG 원본 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e` **보존**, 새 `Wolf_KeyArt_v3_AlphaFix_v4.png` SHA256 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a` (952×1306 RGBA). 회색 가슴 매트·다리 근처 배경 조각만 국소 알파 12,088px 감소/제거, 원본대비 RGB 픽셀 변경0, 새로운 늑대 재디자인0. 원본 PNG도 ZIP에 별도 보존.
+- 실제 ZIP `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip` 2,466,565 bytes / 14 entries / SHA256 `e241535f1c505bf50f4de09317e74dbc3780be722139ff0baa02c908223765c6`. 이번 ChatGPT Sandbox 파일로 실물 납품. Chest/Rear/Leg 전후 체커보드 비교·128px 전후·Alpha 변경 지도·Manifest/픽셀별 CSV/QA 제공, ZIP testzip CRC/PNG 재Decode/SHA PASS. **게임 실제 시각 최종 통과 아님**, 털 가장자리 대표 미술검수 필요. ZIP GitHub 바이너리나 사용자 F: 자동저장으로 주장 금지.
+- [실제 납품 기록](../../MonsterWolf_v3_SnakePass_WolfAlphaFix_v4_ActualDelivery_20261021.md) 최초 문서 Commit `ca455df97a405d5818d63a55f49f8b6ccd2af2ff`. `docs/art-renewal`만 커밋, 원본 공식 Field09 승인5+B/기존 18 몬스터/게임 시스템/main 변경0. Codex 별도 Chapter3 검증 방해 금지, Snake 모션/Wolf Run/Bear/Fox 제작 및 Unity 정식 적용은 사용자 승인 전 HOLD.
+- 상태 `SNAKE_V3_PASS_RECOMMENDED_USER_PENDING / WOLF_V4_ACTUAL_FIX_DELIVERED / WOLF_V4_OFFLINE_QA_PASS / WOLF_V4_USER_ART_PENDING / NO_ANIMATIONS / MAIN_UNCHANGED`.
+
+## 2026-10-21 Chapter1·2 맵 핵심 마감 관리 → 맹독뱀·늑대 기존 v3 단일 원화 실물 재검사 (최신)
+
+- 기획 정본 `docs/planning/문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md`, 발주 `Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`, Issue #43/#38 확인. **Field09 승인 5+B Glow PR41 official main 반영됨; 기존 합격본 재제작 금지.** 잔여 HeatVent/Spire·Field10 예술 승인 backlog만. Codex 현재 Chapter3 FrostFieldMouse 전투 Fix v2 작업 중 → 중복 요청 금지.
+- 이전 세션 자체 v3 PNG **실물 2개 이번 컨테이너에서 발견**, 이전 기록 SHA256 2/2 정확히 일치, **신규 재제작 없음**:
+  - `VenomSnake_KeyArt_v3.png` 1254×1254 RGBA SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0`
+  - `Wolf_KeyArt_v3.png` 952×1306 RGBA SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`.
+- 실제 새 **검토 패키지** `Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip` **3,468,949 bytes / 13 entries / SHA256 `a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8`**. 원본바이트 동일 PNG2 + 개별 128px RGBA 미리보기2 + 밝기배경 테스트4 + 두 종 128px 동일 슬롯 이미지1 + 기존 Chapter2 공식5종 GitHub raw PNG와 비교하는 온라인 HTML + Manifest/QA/README. ZIP testzip CRC PASS.
+- 실제 Unity `.meta` 확인: 공식 Ch2 5종은 모두 314×314 sprite rect, PPU314, Pivot center → 프레임당 1 world-unit. 하지만 GitHub raw 큰 PNG5가 현재 로컬로 내려오지 않음. HTML은 공식 실제 GitHub PNG URL을 참조하며 **네트워크 필요**, 동일 GameView RenderScale로 검증한 화면 아님. v3 PPU/WorldSize는 **미결**. 공식 5와 동배율 실제 Unity 비교 `NOT_VERIFIED`.
+- 원화 미술 QA: 독사 x=0에 alpha25픽셀 접촉, low-alpha 고립 군집 다수(16px 미만 548개) → 직수입 전 아트 정리 필요 가능성. 늑대 털·발 끝 배경제거 매트 잔여 위험. 모두 **USER_ART_REVIEW_PENDING**, 전체 애니/Run/Bear/Fox 작업0.
+- [실제 PNG2 원본·128px·공식5 비교 링크·QA 납품 보고](../../MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md); 첫 문서 commit `8ee584f26e01fc3203b43f8b0c574f4cbca5fcd6`. 아트 ZIP/PNG는 채팅 Sandbox에서 제공; 브랜치에는 보고서/인계만(바이너리 GitHub 저장0, 사용자 F: 자동 복사0). 정식 장면/몬스터정의/메인 변경0.
+- 정확 상태 `MAP_CORE_CLOSEOUT_SUBSTANTIAL / FIELD09_REMAINING_PROPS_BACKLOG / FIELD10_USER_ART_REVIEW_PENDING / V3_SOURCE_2PNG_FOUND_SHA_PASS / V3_128PX_REVIEW_DELIVERED / OFFICIAL_SAME_GAME_SCALE_NOT_VERIFIED / USER_V3_APPROVAL_PENDING / NO_ANIMATION_OR_PET_EXPANSION`.
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 ## 2026-10-20 EOD 실행 결과
 
 PR41 main db242b77 및 원본 main 동기화 완료. 승인/제외 경계는 아래와 동일하며, 완료문서 후속PR의 최종 SHA는 Codex 인계와 원본 Temp/EOD20261020/OriginalLocalSync_Proof.json을 따릅니다.

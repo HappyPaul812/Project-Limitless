@@ -1,0 +1,162 @@
+{
+    "unityVersion": "6000.6.5f1",
+    "graphics": "Direct3D11",
+    "fps": 12,
+    "width": 512,
+    "height": 288,
+    "cellDisplayPixels": 128.0,
+    "iconDisplayPixels": 40.0,
+    "elapsed": 2.1023853,
+    "samples": [
+        {
+            "seconds": 0.003800399999999371,
+            "frame": 0,
+            "engineFrame": 1,
+            "png": "capture_000_00.png"
+        },
+        {
+            "seconds": 0.2102189999999986,
+            "frame": 2,
+            "engineFrame": 2,
+            "png": "capture_001_02.png"
+        },
+        {
+            "seconds": 0.2525177999999997,
+            "frame": 3,
+            "engineFrame": 7,
+            "png": "capture_002_03.png"
+        },
+        {
+            "seconds": 0.33570949999999833,
+            "frame": 4,
+            "engineFrame": 17,
+            "png": "capture_003_04.png"
+        },
+        {
+            "seconds": 0.4190291999999989,
+            "frame": 5,
+            "engineFrame": 27,
+            "png": "capture_004_05.png"
+        },
+        {
+            "seconds": 0.5023457999999987,
+            "frame": 0,
+            "engineFrame": 37,
+            "png": "capture_005_00.png"
+        },
+        {
+            "seconds": 0.5856681999999989,
+            "frame": 1,
+            "engineFrame": 47,
+            "png": "capture_006_01.png"
+        },
+        {
+            "seconds": 0.6690237999999997,
+            "frame": 2,
+            "engineFrame": 57,
+            "png": "capture_007_02.png"
+        },
+        {
+            "seconds": 0.7524077999999985,
+            "frame": 3,
+            "engineFrame": 67,
+            "png": "capture_008_03.png"
+        },
+        {
+            "seconds": 0.835690399999999,
+            "frame": 4,
+            "engineFrame": 77,
+            "png": "capture_009_04.png"
+        },
+        {
+            "seconds": 0.9189974999999997,
+            "frame": 5,
+            "engineFrame": 87,
+            "png": "capture_010_05.png"
+        },
+        {
+            "seconds": 1.0023745999999996,
+            "frame": 0,
+            "engineFrame": 97,
+            "png": "capture_011_00.png"
+        },
+        {
+            "seconds": 1.085694499999999,
+            "frame": 1,
+            "engineFrame": 107,
+            "png": "capture_012_01.png"
+        },
+        {
+            "seconds": 1.1690559,
+            "frame": 2,
+            "engineFrame": 117,
+            "png": "capture_013_02.png"
+        },
+        {
+            "seconds": 1.2523703999999984,
+            "frame": 3,
+            "engineFrame": 127,
+            "png": "capture_014_03.png"
+        },
+        {
+            "seconds": 1.3356854999999985,
+            "frame": 4,
+            "engineFrame": 137,
+            "png": "capture_015_04.png"
+        },
+        {
+            "seconds": 1.4190284999999996,
+            "frame": 5,
+            "engineFrame": 147,
+            "png": "capture_016_05.png"
+        },
+        {
+            "seconds": 1.5023425999999986,
+            "frame": 0,
+            "engineFrame": 157,
+            "png": "capture_017_00.png"
+        },
+        {
+            "seconds": 1.5856651999999993,
+            "frame": 1,
+            "engineFrame": 167,
+            "png": "capture_018_01.png"
+        },
+        {
+            "seconds": 1.6690201999999985,
+            "frame": 2,
+            "engineFrame": 177,
+            "png": "capture_019_02.png"
+        },
+        {
+            "seconds": 1.7523491999999994,
+            "frame": 3,
+            "engineFrame": 187,
+            "png": "capture_020_03.png"
+        },
+        {
+            "seconds": 1.8356996999999993,
+            "frame": 4,
+            "engineFrame": 197,
+            "png": "capture_021_04.png"
+        },
+        {
+            "seconds": 1.9190635,
+            "frame": 5,
+            "engineFrame": 207,
+            "png": "capture_022_05.png"
+        },
+        {
+            "seconds": 2.0024010999999984,
+            "frame": 0,
+            "engineFrame": 217,
+            "png": "capture_023_00.png"
+        },
+        {
+            "seconds": 2.0856915999999988,
+            "frame": 1,
+            "engineFrame": 227,
+            "png": "capture_024_01.png"
+        }
+    ]
+}

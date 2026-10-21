@@ -1,0 +1,24 @@
+{
+  "graphics": "Direct3D11",
+  "unity": "6000.6.5f1",
+  "elapsed_seconds": 2.1070781000000007,
+  "engine_frame_advance": 227,
+  "steady_dt_min": 0.08326340000000165,
+  "steady_dt_max": 0.08338909999999977,
+  "full_cycle_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "gif_ms": [
+    80,
+    80,
+    90,
+    80,
+    80,
+    90
+  ]
+}

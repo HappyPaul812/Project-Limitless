@@ -1,0 +1,92 @@
+{
+  "source_sha_and_decoding": "PASS 2/2 original v3 bytes verified, images decoded",
+  "warnings": [
+    "VenomSnake_KeyArt_v3.png: original subject touches canvas border (risk of cut pixels)",
+    "VenomSnake_KeyArt_v3.png: alpha-small isolated components 548 (review before sprite import)",
+    "Wolf_KeyArt_v3.png: alpha-small isolated components 1 (review before sprite import)",
+    "v3 PPU and world size not defined; 128px thumbnail is conceptual, not actual Unity same-size comparison",
+    "Wolf source contains fine background-removal matte risk around fur and paws; visual review needed"
+  ],
+  "user_art_approval": "PENDING",
+  "chapter2_actual_gameview_same_scale": "NOT_VERIFIED",
+  "official_png_raw_downloaded_locally": false,
+  "official_reference_image_is_real_link_not_invented": true,
+  "files": {
+    "VenomSnake_KeyArt_v3.png": {
+      "input_file": "/mnt/data/LIMITLESS_KeyArt_v3/VenomSnake_KeyArt_v3.png",
+      "preserved_png": "Assets/VenomSnake_KeyArt_v3.png",
+      "source_png_sha256": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0",
+      "source_png_bytes": 2285408,
+      "canvas_px": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "subject_bbox_xyxy": [
+        0,
+        23,
+        1236,
+        1224
+      ],
+      "alpha_nonzero_px": 886220,
+      "low_alpha_1_to_16_px": 28390,
+      "connected_visible_components": 552,
+      "components_with_fewer_than_16_pixels": 548,
+      "visible_border_pixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 25,
+        "right": 0
+      },
+      "touches_canvas_edge": true,
+      "preview_128px": "Preview/VenomSnake_128px_RGBA.png",
+      "preview_image_content_edited": false,
+      "preview_resize_only": "crop to nontransparent bbox then fit into 116x116 inside transparent 128px canvas",
+      "art_user_approved": false,
+      "sprite_importer_ppu_verified": false,
+      "unity_visual_same_scale_verified": false
+    },
+    "Wolf_KeyArt_v3.png": {
+      "input_file": "/mnt/data/LIMITLESS_KeyArt_v3/Wolf_KeyArt_v3.png",
+      "preserved_png": "Assets/Wolf_KeyArt_v3.png",
+      "source_png_sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+      "source_png_bytes": 1022752,
+      "canvas_px": [
+        952,
+        1306
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "subject_bbox_xyxy": [
+        48,
+        48,
+        904,
+        1258
+      ],
+      "alpha_nonzero_px": 420522,
+      "low_alpha_1_to_16_px": 2077,
+      "connected_visible_components": 1,
+      "components_with_fewer_than_16_pixels": 1,
+      "visible_border_pixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "touches_canvas_edge": false,
+      "preview_128px": "Preview/Wolf_128px_RGBA.png",
+      "preview_image_content_edited": false,
+      "preview_resize_only": "crop to nontransparent bbox then fit into 116x116 inside transparent 128px canvas",
+      "art_user_approved": false,
+      "sprite_importer_ppu_verified": false,
+      "unity_visual_same_scale_verified": false
+    }
+  }
+}

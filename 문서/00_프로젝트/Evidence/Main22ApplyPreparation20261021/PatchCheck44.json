@@ -1,0 +1,7 @@
+{
+  "command": "git apply --check --whitespace=nowarn - (stdin; excludes BuildSettings; no mutation)",
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "pending_count": 44
+}

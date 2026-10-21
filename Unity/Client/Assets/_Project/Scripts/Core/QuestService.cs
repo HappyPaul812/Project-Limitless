@@ -33,6 +33,8 @@ namespace ProjectLimitless.Core
         public string TrackedQuestId = string.Empty;
         // 선택 필드이므로 구버전 JSON은0. 목표13개와 SaveVersion1은 변경하지 않습니다.
         public int Main21Flags;
+        // Main22의 서로 다른 두 흔적 기록입니다. 옛 Version1 저장에는 없으므로0으로 복원합니다.
+        public int Main22ClueFlags;
     }
 
     /// <summary>실행 중인 한 퀘스트의 목표별 횟수를 보관합니다.</summary>
@@ -306,7 +308,8 @@ namespace ProjectLimitless.Core
                 }).ToArray(),
                 CompletedQuestIds = completed.ToArray(),
                 TrackedQuestId = trackedQuestId,
-                Main21Flags = Main21Progress.Flags
+                Main21Flags = Main21Progress.Flags,
+                Main22ClueFlags = Main22Progress.Flags
             };
         }
 
@@ -314,6 +317,7 @@ namespace ProjectLimitless.Core
         {
             active.Clear(); completed.Clear(); trackedQuestId = string.Empty;
             Main21Progress.Restore(data?.Main21Flags ?? 0);
+            Main22Progress.Restore(data?.Main22ClueFlags ?? 0);
             if (data == null) { Changed?.Invoke(); return; }
             if (data.CompletedQuestIds != null)
                 foreach (string questId in data.CompletedQuestIds)
@@ -339,6 +343,6 @@ namespace ProjectLimitless.Core
         }
 
         public static void Reset()
-        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Main21Progress.Restore(0); Changed?.Invoke(); }
+        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Main21Progress.Restore(0); Main22Progress.Restore(0); Changed?.Invoke(); }
     }
 }

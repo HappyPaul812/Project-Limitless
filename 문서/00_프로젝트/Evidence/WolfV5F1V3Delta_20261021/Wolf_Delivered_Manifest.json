@@ -1,0 +1,69 @@
+{
+  "project": "LIMITLESS",
+  "purpose": "Wolf v4 HOLD three defect regions alpha-only repair v5",
+  "source_v3_png": "Wolf_KeyArt_v3.png",
+  "source_v3_sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+  "source_v4_png": "Wolf_KeyArt_v3_AlphaFix_v4.png",
+  "source_v4_sha256": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+  "output_v5_png": "Assets/Wolf_KeyArt_v3_AlphaFix_v5.png",
+  "output_v5_sha256": "b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1",
+  "snake_v3_sha256_UNMODIFIED": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0",
+  "canvas": {
+    "width": 952,
+    "height": 1306,
+    "mode": "RGBA"
+  },
+  "changes": {
+    "changed_alpha_pixels": 2174,
+    "rgb_changed_pixels": 0,
+    "alpha_increase_pixels": 0,
+    "alpha_only_localized": true,
+    "regions": {
+      "upper_chest_gray_fragment": {
+        "rect_xyxy": [
+          620,
+          790,
+          668,
+          844
+        ],
+        "changed_pixels": 900
+      },
+      "leg_micro_background": {
+        "rect_xyxy": [
+          475,
+          1158,
+          550,
+          1188
+        ],
+        "changed_pixels": 237
+      },
+      "front_paw_ground_fragment": {
+        "rect_xyxy": [
+          754,
+          1230,
+          883,
+          1261
+        ],
+        "changed_pixels": 1037
+      }
+    }
+  },
+  "status": "ART_CANDIDATE_V5_OFFLINE_QA_PASS / CODEX_VISUAL_PENDING / USER_ART_APPROVAL_PENDING",
+  "keep": [
+    "Wolf_KeyArt_v3.png",
+    "Wolf_KeyArt_v3_AlphaFix_v4.png",
+    "VenomSnake_KeyArt_v3.png",
+    "all Field09 approved assets",
+    "Unity Scene",
+    "Save",
+    "main"
+  ],
+  "excluded": [
+    "Wolf Run",
+    "Bear",
+    "Fox",
+    "Snake animation",
+    "Unity Import/Runtime"
+  ],
+  "preview_is_unity_gameview": false
+}

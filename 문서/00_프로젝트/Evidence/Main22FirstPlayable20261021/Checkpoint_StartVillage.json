@@ -1,0 +1,53 @@
+{
+    "Version": 1,
+    "PlayerName": "Main22 첫 플레이",
+    "PlayerVisualId": "Male",
+    "AppearanceId": "appearance.external.v1.mobility.guardian.male",
+    "PathId": "path.mobility",
+    "JobId": "guardian",
+    "Level": 14,
+    "CurrentExperience": 0,
+    "CurrentSceneId": "World_StarterVillage",
+    "SpawnPointId": "Spawn_From_Field01",
+    "LastSafeZoneId": "safezone_starter_village",
+    "LastSafeZoneSceneId": "World_StarterVillage",
+    "LastSafeZoneSpawnPointId": "Spawn_From_Field01",
+    "HasSavedWorldPosition": true,
+    "SavedPositionX": 0.0,
+    "SavedPositionY": -5.0,
+    "PartyResources": [],
+    "Currency": 77,
+    "Inventory": [],
+    "QuestProgress": {
+        "ActiveQuests": [],
+        "CompletedQuestIds": [
+            "main_21_returning_warmth",
+            "main_05_return_of_three",
+            "main_09_reunion_in_silence",
+            "main_15_burning_traces"
+        ],
+        "TrackedQuestId": "",
+        "Main21Flags": 0,
+        "Main22ClueFlags": 0
+    },
+    "CompanionRoster": {
+        "UnlockedCharacterIds": [
+            "companion_miel",
+            "companion_paul",
+            "companion_serin",
+            "companion_taeon"
+        ],
+        "ActivePartyCharacterIds": [
+            "companion_miel",
+            "companion_paul"
+        ],
+        "Formation": [],
+        "HasManualComposition": false,
+        "PaulDefaultApplied": true
+    },
+    "BeastCompanions": {
+        "DefeatedMonsterIds": [],
+        "UnlockedMonsterPetIds": [],
+        "EquippedBeasts": []
+    }
+}

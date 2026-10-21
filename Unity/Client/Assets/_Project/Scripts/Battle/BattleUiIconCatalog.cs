@@ -186,12 +186,12 @@ namespace ProjectLimitless.Battle
                 // ThirdParty 원본을 수정하거나 별도 PNG로 재생성하지 않습니다. 야수 정의가 제공하는 경로와
                 // 아이콘 프레임 번호를 읽어 런타임에 한 칸만 잘라 쓰므로 Bear/Fox도 같은 코드를 재사용합니다.
                 BeastCompanionDefinition beast = BeastCompanionCatalog.GetDefaultDefinition();
-                Texture2D runSheet = Resources.Load<Texture2D>(beast.RunResourcePath);
-                int frameCount = runSheet == null ? 0 : runSheet.width / beast.FrameWidth;
+                Texture2D runSheet = Resources.Load<Texture2D>(beast.IconResourcePath);
+                int frameCount = runSheet == null ? 0 : runSheet.width / beast.IconFrameWidth;
                 int frameIndex = Mathf.Clamp(beast.IconFrameIndex, 0, Mathf.Max(0, frameCount - 1));
                 sprite = runSheet == null || frameCount == 0 ? null : Sprite.Create(runSheet,
-                    new Rect(frameIndex * beast.FrameWidth, 0f, beast.FrameWidth, runSheet.height),
-                    new Vector2(.5f, .5f), beast.FrameWidth, 0, SpriteMeshType.FullRect);
+                    new Rect(frameIndex * beast.IconFrameWidth, 0f, beast.IconFrameWidth, runSheet.height),
+                    new Vector2(.5f, .5f), beast.IconFrameWidth, 0, SpriteMeshType.FullRect);
                 if (sprite != null) sprite.name = $"{beast.DisplayName}_CompanionAssault_Icon";
             }
             else if (iconId == HealerHealingWaveSkill)

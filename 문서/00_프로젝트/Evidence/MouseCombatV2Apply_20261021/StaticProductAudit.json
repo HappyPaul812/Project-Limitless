@@ -1,0 +1,28 @@
+{
+  "new_asset_guids": {
+    "a79549a90470f4245bd3c26035c9e913": "Assets/_Project/Art/Monsters/FrostFieldMouse.meta",
+    "88bd1b5b10c505b45a7103d66bb3879c": "Assets/_Project/Resources/MonsterVisuals.meta",
+    "27c0c0e99db4f854a8b89f2e83d0b195": "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta",
+    "6dd66eaa0fa89ad4387b49463367ff15": "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta",
+    "89af58cc731d8794ba9e39b35993812a": "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta",
+    "5a508e7ef9b122c459f4ce0bcd0d4a97": "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta",
+    "34a285ff9c549f642b922dcb1c6027d5": "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta"
+  },
+  "no_existing_guid_collision": true,
+  "definition_reference_count": 18,
+  "product_paths": [
+    "Assets/_Project/Art/Monsters/FrostFieldMouse.meta",
+    "Assets/_Project/Resources/MonsterVisuals.meta",
+    "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+    "Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+    "Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta",
+    "Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs"
+  ]
+}

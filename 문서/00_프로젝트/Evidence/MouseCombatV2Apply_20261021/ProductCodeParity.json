@@ -1,0 +1,978 @@
+[
+  {
+    "path": "Assets/_Project/Scripts/Audio/AudioSettingsService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Audio/BgmPlaybackService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Audio/BgmSceneCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Audio/VoiceClipCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Audio/VoicePlaybackSource.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleBackgroundCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleChapter2MonsterRuntime.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleCharacterSpriteAnimator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleCleanseVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleCombatantStatusViewModel.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleCore.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleDungeonMonsterRuntime.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleExperienceReward.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleFireballVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleGaiaWallVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleGuardianCoverVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleIronWallVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleItemUseService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleMain20BossRuntime.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleMonsterAbilityRuntime.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattlePoisonVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleSceneController.Main20.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleSceneFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleSkillSystem.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleThunderboltVisuals.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleVictoryReward.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BattleVisualResolver.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/MainQuest02EncounterBridge.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/MainQuest03EncounterBridge.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/MainQuest04EncounterBridge.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/MainQuest07EncounterBridge.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/PathCombatTraitRuntime.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/PoisonDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Battle/SkillLoadoutService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Camera/CameraFollow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/BeastCompanionService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/BootstrapLoader.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/CharacterCreationStatsCalculator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/CharacterGrowthCalculator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/CompanionDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/CompanionRosterService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/CurrencyPresentation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/EconomyService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ExperienceProgression.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/GameSaveService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/GameSessionData.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/InventoryService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ItemCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ItemDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ItemUseService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/JobDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/Main21Progress.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/OpeningIntroSequence.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PartyResourceService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PathPresentationResolver.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PathVisualCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PlaceholderVisual.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PlayerPathDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/PlayerPathVisualDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/QuestCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/QuestDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/QuestService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/RewardBundle.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ShopDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/ShopService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/UserSettingsService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Core/WorldModalState.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/BattleSilenceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/BattleSkillButtonIconAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/BattleSubmenuAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/DialogueFollowupLayoutAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/DialoguePortraitContentEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Dungeon01B1Builder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Dungeon01B2Builder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Dungeon01B2MonsterBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Dungeon01B2SpriteSlicer.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/EarlyLevelingAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/EconomyInventoryAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/EldiranNpcImportSettings.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/ExternalAssetImportEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Field01SceneGenerator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Field03Main08ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/ForegroundReviewQA.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/GameSaveEditorTools.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/GrassSlimeAnimationBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/GraveWightContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/HearingFixedSpriteAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/KenneyRpgBaseImportSettings.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main03RemainingVoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main03SuppRegenAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main03TaeonRegenAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main04DirectionVoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main04Late5VoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main04PostFirstEncounterVoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main05ReturnVoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main07EarlyDialogueAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main07FarewellAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main07IntegratedAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main09PartyAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main10Audit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main16AudioAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main16ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main16RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17ArtAudioAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17ClosureAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17EnvironmentArt.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main17TtsRuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main18ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main18RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main19ArtContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main19ArtRuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main19ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main19RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main20ContentBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main20RegressionBatch.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main20RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main21RuntimeAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Main21VillageAuditChecks.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MainQuest09ContentEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MainQuest10ContentEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MainQuest11ContentEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MainQuestContentEditor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MielFirstEncounterVoiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/MobilityFixedSpriteAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/OpeningIntroEditorTools.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/Partial9FixedSpriteAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/PathVisualCharacterVariantBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/PathVisualSymbolAssetPostprocessor.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/PlayerAppearanceSelectionAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/PlayerAppearanceSelectionBuild.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/PlayerSpriteCombinationAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/QuestSystemAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/SafeZonePetServiceAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/SecondRegressionAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/SecondRegressionAudit.Paths.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/SecondRegressionAudit.Rules.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/SideQuestAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/StarterVillageRenewalArt.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/StarterVillageSceneGenerator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/StoryDialogueConsistencyAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/StoryVoiceSemanticRiskAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/TaeonBattleAnimationBuilder.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/ValidatedPlayerAppearanceImport.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/WorldBoundaryGeneratorUtility.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Editor/WorldProgressUiAudit.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/FieldEntranceSafetyZoneDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/FieldMonsterInstaller.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/FieldMonsterSpawnDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/Main20PhaseOverlay.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/MonsterDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/MonsterEncounterService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/MonsterFieldController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/MonsterNameplate.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/InteractionSystem.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/MainQuest01NpcFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/NpcController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/NpcInteractionPrompt.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/NpcQuestMarkerPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/VillageNpcAppearanceCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/NPC/VillageNpcRole.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerAppearanceCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerNameplate.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerPathVisualController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerSpriteAnimator.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/PlayerVisualController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/QuestHudPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/QuestNavigationPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Player/WorldExperienceHud.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/AudioSettingsPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/CharacterCreationController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/DialoguePortraitCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/DialoguePortraitDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/DialoguePresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/FinalConfirmationController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/InventoryPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/JobSelectionController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/OpeningIntroController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/PartyManagementPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/PathSelectionController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/PathVisualPreview.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/PetFacilityPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/QuestLogPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/ShopPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/UI/SkillManagementPresenter.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Validation/CompanionAssaultRunValidation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/Validation/PilotBeeComparisonValidation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/ArbelBuildingDepth.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/CatacombEntranceSafeZone.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2IntroFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main15Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main16Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main17Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main18Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main19Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main20Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Chapter2Main21Flow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/DungeonEnvironmentDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/DungeonEnvironmentRenderer.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/FieldConnectionDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/FieldConnectionInstaller.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/FieldThemeDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/FieldThemeInstaller.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main09QuestGuidance.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main16DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main17DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main18DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main19DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main19FieldArtPresentation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main20DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main20FieldPresentation.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main21CarriageArtDefinition.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main21CarriageReturnController.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main21ChoicePanel.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main21DialogueCatalog.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/Main21HarenVisual.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest02FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest03FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest04FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest05ReturnFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest06ForestFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest07FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest08FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest09FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest10FieldFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/MainQuest11DungeonFlow.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/QuestNavigationTarget.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/SafeZonePetServiceRollout.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/SceneSpawnPoint.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/SceneTransitionService.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/SceneTransitionTrigger.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/StarterVillageFieldConnection.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/StarterVillageHubInstaller.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/WorldBounds2D.cs",
+    "same_normalized": true
+  },
+  {
+    "path": "Assets/_Project/Scripts/World/WorldPositionSaveController.cs",
+    "same_normalized": true
+  }
+]

@@ -124,7 +124,7 @@ namespace ProjectLimitless.Battle
         }
 
         /// <summary>
-        /// 384×40 한 줄 SpriteSheet를 64×40 여섯 장으로 나눈 Sprite 배열을 0→1→2→3→4→5→0 순서로
+        /// 야수 정의의 셀 너비로 한 줄 시트를 나눈 Sprite 배열을 0→1→2→3→4→5→0 순서로
         /// 반복합니다. 여기서는 위치를 바꾸지 않고 Image.sprite만 교체하므로 이동 속도와 독립된 12FPS를 유지합니다.
         /// UI 아이콘은 별도로 고른 index 4 한 장만 사용하지만, 전투 Run은 이 여섯 장 전체를 사용합니다.
         /// </summary>
@@ -167,8 +167,8 @@ namespace ProjectLimitless.Battle
             Sprite[] frames = new Sprite[count];
             for (int index = 0; index < count; index++)
             {
-                // 1행 6열 Wolf 시트는 전체 384×40이고 각 칸은 64×40입니다. 원본 파일을 수정하지 않고
-                // x=0,64,128,192,256,320 영역을 각각 별도 Sprite로 만들어 Run Coroutine에 전달합니다.
+                // 승인 Wolf Run6는 전체 3072×384, 각 칸 512×384입니다. Bear/Fox는 기존 규격을 사용하며
+                // 정의의 FrameWidth 간격으로 별도 Sprite를 만들어 Run Coroutine에 전달합니다.
                 // 아래 중앙 Pivot은 여섯 프레임 모두 발이 닿는 기준을 일정하게 유지합니다.
                 frames[index] = Sprite.Create(sheet,
                     new Rect(index * beast.FrameWidth, 0f, beast.FrameWidth, sheet.height),

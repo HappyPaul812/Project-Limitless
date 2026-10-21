@@ -1,0 +1,11 @@
+PASS|HUD.MouseNavigateButtonArrives
+PASS|HUD.NearbyActionEnabled
+PASS|HUD.MouseActionOpensInvestigation
+PASS|Dialogue.CancelDoesNotCountClue
+PASS|GameView.ActualCheckpointRestored
+PASS|GameView.ExactSize.1280
+PASS|GameView.RenderedContent.1280
+PASS|GameView.ExactSize.960
+PASS|GameView.RenderedContent.960
+PASS|GameView.ExactSize.1680
+PASS|GameView.RenderedContent.1680

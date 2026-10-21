@@ -1,0 +1,63 @@
+{
+  "product": "LIMITLESS Field09 unrelated; Chapter1-2 wolf key art v3 targeted cleanup",
+  "status": "WOLF_V4_OFFLINE_QA_PASS_USER_ART_APPROVAL_PENDING",
+  "version": "4",
+  "assets": [
+    {
+      "path": "Assets/Wolf_KeyArt_v3_AlphaFix_v4.png",
+      "sha256": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+      "bytes": 1020181,
+      "size": [
+        952,
+        1306
+      ],
+      "format": "RGBA"
+    },
+    {
+      "path": "Assets/Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png",
+      "sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+      "bytes": 1022752,
+      "role": "comparison only; preserved original"
+    }
+  ],
+  "protected": {
+    "VenomSnake_KeyArt_v3.png": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0"
+  },
+  "technical": [
+    "No Unity import",
+    "No Wolf Run / Bear / Fox",
+    "No modification of existing approved monster sprites"
+  ],
+  "qa": {
+    "source": "Wolf_KeyArt_v3.png",
+    "source_sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+    "fixed_sha256": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+    "source_dimensions": [
+      952,
+      1306
+    ],
+    "fixed_dimensions": [
+      952,
+      1306
+    ],
+    "pixel_format": "RGBA",
+    "rgb_pixel_changes": 0,
+    "only_alpha_decrease": true,
+    "changed_alpha_pixels": 12088,
+    "changed_bbox": [
+      165,
+      821,
+      683,
+      1215
+    ],
+    "regions": [
+      "chest_gray_matte",
+      "hind_leg_background_fragments",
+      "occlusion_background_fragments_near_leg"
+    ],
+    "original_snake_sha256_unchanged": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0",
+    "actual_unity_gameview": "NOT_TESTED",
+    "user_final_art_approval": "PENDING",
+    "manual_visual_note": "Source alpha artifacts targeted; possible remaining fine fringe pixels need final in-engine human review; RGB/paws original retained."
+  }
+}

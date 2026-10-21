@@ -18,6 +18,10 @@ namespace ProjectLimitless.Player
         private InputAction moveAction;
         private Rigidbody2D body;
         private Vector2 movement;
+        private Vector2 guidedMovement;
+        /// <summary>마우스 길 안내가 기존 물리 이동에 방향만 공급합니다. 수동 입력과 메뉴 잠금이 항상 우선합니다.</summary>
+        public void SetGuidedMovement(Vector2 direction) => guidedMovement = Vector2.ClampMagnitude(direction, 1f);
+        public bool HasManualMovement => moveAction != null && moveAction.ReadValue<Vector2>().sqrMagnitude > .01f;
 
         /// <summary>현재 입력된 이동 방향입니다. PlayerSpriteAnimator가 걷는 방향을 정할 때 읽습니다.</summary>
         public Vector2 Movement => movement;
@@ -64,6 +68,8 @@ namespace ProjectLimitless.Player
                 return;
             }
             movement = moveAction.ReadValue<Vector2>();
+            if (movement.sqrMagnitude > .01f) guidedMovement = Vector2.zero;
+            else movement = guidedMovement;
             // 가로와 세로를 동시에 누를 때 대각선 속도가 더 빨라지지 않도록 방향 벡터의 길이를 1로 맞춥니다.
             if (movement.sqrMagnitude > 1f)
             {

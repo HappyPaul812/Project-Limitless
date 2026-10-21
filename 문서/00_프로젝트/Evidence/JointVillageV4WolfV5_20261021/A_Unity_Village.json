@@ -1,0 +1,64 @@
+{
+    "unity": "6000.6.5f1",
+    "graphics": "Direct3D11",
+    "ppu": 128.0,
+    "gridWU": 2.0,
+    "pathClearanceWU": 3.0,
+    "actor": "CircleCollider2D radius0.5 proxy + original wheelchair visual; not production controller",
+    "probes": [
+        {
+            "name": "South_to_North",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "Door_Inn",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "Door_General",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "Door_Skill",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "East_Reserved",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "SouthNorth_LeftMargin",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "SouthNorth_RightMargin",
+            "clear": true,
+            "obstacle": "",
+            "radius": 0.5
+        },
+        {
+            "name": "NorthStop_ExpectedBlocked",
+            "clear": false,
+            "obstacle": "North_Unopened_Stop",
+            "radius": 0.5
+        }
+    ],
+    "portalColliderCount": 0,
+    "shots": [
+        "A_Unity_16x9.png",
+        "A_Unity_4x3.png",
+        "A_Unity_21x9.png"
+    ]
+}

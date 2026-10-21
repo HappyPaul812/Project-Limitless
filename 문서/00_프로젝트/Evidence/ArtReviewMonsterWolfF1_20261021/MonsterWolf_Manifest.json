@@ -1,0 +1,200 @@
+{
+  "title": "LIMITLESS Monster Wolf existing v3 single-pose actual file verification 2026-10-21",
+  "source_policy": "Preserve both v3 PNG byte-for-byte. No new pose, no animations.",
+  "git_repo": "HappyPaul812/Project-Limitless",
+  "issues": [
+    43,
+    38
+  ],
+  "approved_source_status": "v1 REJECTED, v2 QUALITY_HOLD, v3 USER_ART_PENDING",
+  "assets": {
+    "VenomSnake_KeyArt_v3.png": {
+      "input_file": "/mnt/data/LIMITLESS_KeyArt_v3/VenomSnake_KeyArt_v3.png",
+      "preserved_png": "Assets/VenomSnake_KeyArt_v3.png",
+      "source_png_sha256": "7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0",
+      "source_png_bytes": 2285408,
+      "canvas_px": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "subject_bbox_xyxy": [
+        0,
+        23,
+        1236,
+        1224
+      ],
+      "alpha_nonzero_px": 886220,
+      "low_alpha_1_to_16_px": 28390,
+      "connected_visible_components": 552,
+      "components_with_fewer_than_16_pixels": 548,
+      "visible_border_pixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 25,
+        "right": 0
+      },
+      "touches_canvas_edge": true,
+      "preview_128px": "Preview/VenomSnake_128px_RGBA.png",
+      "preview_image_content_edited": false,
+      "preview_resize_only": "crop to nontransparent bbox then fit into 116x116 inside transparent 128px canvas",
+      "art_user_approved": false,
+      "sprite_importer_ppu_verified": false,
+      "unity_visual_same_scale_verified": false
+    },
+    "Wolf_KeyArt_v3.png": {
+      "input_file": "/mnt/data/LIMITLESS_KeyArt_v3/Wolf_KeyArt_v3.png",
+      "preserved_png": "Assets/Wolf_KeyArt_v3.png",
+      "source_png_sha256": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+      "source_png_bytes": 1022752,
+      "canvas_px": [
+        952,
+        1306
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        0,
+        255
+      ],
+      "subject_bbox_xyxy": [
+        48,
+        48,
+        904,
+        1258
+      ],
+      "alpha_nonzero_px": 420522,
+      "low_alpha_1_to_16_px": 2077,
+      "connected_visible_components": 1,
+      "components_with_fewer_than_16_pixels": 1,
+      "visible_border_pixels": {
+        "top": 0,
+        "bottom": 0,
+        "left": 0,
+        "right": 0
+      },
+      "touches_canvas_edge": false,
+      "preview_128px": "Preview/Wolf_128px_RGBA.png",
+      "preview_image_content_edited": false,
+      "preview_resize_only": "crop to nontransparent bbox then fit into 116x116 inside transparent 128px canvas",
+      "art_user_approved": false,
+      "sprite_importer_ppu_verified": false,
+      "unity_visual_same_scale_verified": false
+    }
+  },
+  "official_chapter2_sources": [
+    {
+      "name": "Soot Hound",
+      "file": "Soot_Hound_Sprite_Sheet.png",
+      "official_raw_url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/main/Unity/Client/Assets/_Project/Art/Monsters/11_SootHound/Soot_Hound_Sprite_Sheet.png",
+      "frame_pixel_rect_on_sheet_top_left": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "verified_unity_importer_cell_size": [
+        314,
+        314
+      ],
+      "verified_unity_ppu": 314,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "source_image_bytes_locally_available": false
+    },
+    {
+      "name": "Heatwind Hawk",
+      "file": "Heatwind_Hawk_Sprite_Sheet.png",
+      "official_raw_url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/main/Unity/Client/Assets/_Project/Art/Monsters/12_HeatwindHawk/Heatwind_Hawk_Sprite_Sheet.png",
+      "frame_pixel_rect_on_sheet_top_left": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "verified_unity_importer_cell_size": [
+        314,
+        314
+      ],
+      "verified_unity_ppu": 314,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "source_image_bytes_locally_available": false
+    },
+    {
+      "name": "Fissure Lizard",
+      "file": "Fissure_Lizard_Sprite_Sheet.png",
+      "official_raw_url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/main/Unity/Client/Assets/_Project/Art/Monsters/13_FissureLizard/Fissure_Lizard_Sprite_Sheet.png",
+      "frame_pixel_rect_on_sheet_top_left": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "verified_unity_importer_cell_size": [
+        314,
+        314
+      ],
+      "verified_unity_ppu": 314,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "source_image_bytes_locally_available": false
+    },
+    {
+      "name": "Ember Beetle",
+      "file": "Ember_Beetle_Sprite_Sheet.png",
+      "official_raw_url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/main/Unity/Client/Assets/_Project/Art/Monsters/14_EmberBeetle/Ember_Beetle_Sprite_Sheet.png",
+      "frame_pixel_rect_on_sheet_top_left": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "verified_unity_importer_cell_size": [
+        314,
+        314
+      ],
+      "verified_unity_ppu": 314,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "source_image_bytes_locally_available": false
+    },
+    {
+      "name": "Ember Wraith",
+      "file": "Ember_Wraith_Sprite_Sheet.png",
+      "official_raw_url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/main/Unity/Client/Assets/_Project/Art/Monsters/15_EmberWraith/Ember_Wraith_Sprite_Sheet.png",
+      "frame_pixel_rect_on_sheet_top_left": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "verified_unity_importer_cell_size": [
+        314,
+        314
+      ],
+      "verified_unity_ppu": 314,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "source_image_bytes_locally_available": false
+    }
+  ],
+  "official_reference_method": "GitHub actual PNG URLs + Unity .meta first frame 314x314 PPU314 center pivot; online HTML uses real remote source if accessible. NOT offline image verification or Unity same-scale QA.",
+  "offline_review_method": "128x128 canvases with each original art cropped to visible subject bbox and aspect-preserving resize to 116x116; background tests are synthetic not game assets.",
+  "game_ready": false,
+  "animation_authorized": false,
+  "bear_fox_authorized": false
+}

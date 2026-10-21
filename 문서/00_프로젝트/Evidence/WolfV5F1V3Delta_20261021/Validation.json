@@ -1,0 +1,156 @@
+{
+  "wolf_sources": {
+    "Wolf_KeyArt_v3_ORIGINAL_READ_ONLY.png": "30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e",
+    "Wolf_KeyArt_v3_AlphaFix_v4.png": "62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a",
+    "Wolf_KeyArt_v3_AlphaFix_v5.png": "b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1"
+  },
+  "wolf_rgb_changed": 0,
+  "wolf_alpha_changed": 2174,
+  "wolf_alpha_increased": 0,
+  "wolf_regions": {
+    "Chest": {
+      "box": [
+        610,
+        775,
+        710,
+        880
+      ],
+      "changed": 900
+    },
+    "Prior flagged rear leg": {
+      "box": [
+        140,
+        1110,
+        210,
+        1195
+      ],
+      "changed": 0
+    },
+    "Delivered leg edit": {
+      "box": [
+        460,
+        1140,
+        570,
+        1205
+      ],
+      "changed": 237
+    },
+    "Front paw": {
+      "box": [
+        740,
+        1190,
+        915,
+        1270
+      ],
+      "changed": 1037
+    }
+  },
+  "packages": {
+    "Wolf": {
+      "name": "Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip",
+      "sha256": "920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7",
+      "files": 13,
+      "crc": null,
+      "png_decode_count": 9
+    },
+    "F1": {
+      "name": "Limitless_Chapter3_NorthF1_Environment_6_TargetedFix_v3.zip",
+      "sha256": "488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054",
+      "files": 20,
+      "crc": null,
+      "png_decode_count": 17
+    }
+  },
+  "f1": {
+    "NorthF1_EarthToFrost_Transition_Overlay_v3.png": {
+      "sha256": "93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": false,
+      "changed_pixels": 65536
+    },
+    "NorthF1_Ground_Earth_Base_v2.png": {
+      "sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": true,
+      "changed_pixels": 0
+    },
+    "NorthF1_Ground_ThinFrost_Base_v3.png": {
+      "sha256": "12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": false,
+      "changed_pixels": 14807
+    },
+    "NorthF1_Path_WornTrail_Overlay_v2.png": {
+      "sha256": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": true,
+      "changed_pixels": 0
+    },
+    "NorthF1_Prop_FrostShrub_01_v2.png": {
+      "sha256": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": true,
+      "changed_pixels": 0
+    },
+    "NorthF1_Prop_Waymarker_01_v3.png": {
+      "sha256": "6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589",
+      "size": [
+        256,
+        256
+      ],
+      "mode": "RGBA",
+      "same_v2_bytes": false,
+      "changed_pixels": 2016
+    },
+    "thin_v2_edge_max": [
+      0,
+      0
+    ],
+    "join_v2_max": [
+      0,
+      186
+    ],
+    "thin_v2_rgb_distance_gt28": 4360,
+    "thin_v3_edge_max": [
+      0,
+      0
+    ],
+    "join_v3_max": [
+      0,
+      0
+    ],
+    "thin_v3_rgb_distance_gt28": 1569
+  },
+  "wolf_csv_exact": true,
+  "f1_sha_manifest_matches": 19,
+  "verdict": {
+    "wolf_technical": "PASS",
+    "wolf_art": "HOLD",
+    "wolf_remaining": "Unchanged black spike beside rear leg at x150..194/y1125..1174, source top-left origin",
+    "f1_technical": "PASS",
+    "f1_art_all6": "PASS",
+    "f1_bundle": "PASS_OFFLINE_ART_RECOMMENDATION",
+    "user_final_art_approval": "REQUIRED",
+    "unity_gameview": "NOT_RUN"
+  }
+}

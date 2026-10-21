@@ -1,0 +1,1428 @@
+{
+  "base": "e4e9891f6f01ea95cada9e63b1f09946d94d6041",
+  "candidate": "be7f64a3ff48a8848471166d4aefc4969080bd8b",
+  "main_is_ancestor": true,
+  "product_count": 58,
+  "counts": {
+    "ALREADY_IDENTICAL": 12,
+    "ALREADY_TEXT_EQUIVALENT": 1,
+    "CLEAN_TEXT_EQUIVALENT": 3,
+    "CLEAN_TRACKED": 1,
+    "LOCAL_DIVERGED": 1,
+    "NEW_ABSENT": 40
+  },
+  "rows": [
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "4d64793e45ca4bbdec5fb33d87f69c3fc7729eaf5255e1b1a034421baae186c1"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "ae48d79c98b67bde4e425dff60a29afe930a57ce5df74500c73e03d47198bc11"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "614e336805272082faee2ea2865b2bddaae3e6541c406e0458294320006cee84"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "810a32a3c7b393249952ab236f2f21d07f63d1d602385ab4aae31e9af953ab69"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "93126dd1cda0f3b97823ae4756344600ed7f6af619eb42013d1ec45a4933c4d1"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "df2f2ce486cbeec2c3fd2783e3900d697f0ea387c977eaae58e9912995cbe701"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "477a56182d756c433d1fc793b9a9fd317db000568a22ed1abb02c25007b1a8ba"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "12fe03d156944e1b72aec4e807770ee8016c61fe1de5804366819e716b97c30c"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "8e0fbc66ff12796e1e0fc7051994c4b854bf66835431a4345063f91d0b97e52d"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "126b95a90cd09fb5aad3adf1d4452437c34945422c2513684223aa40191eec20"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "e2c4bcab8d9182b079a1547e96065d5ebbde192afacecb4401f0238c1e622d58"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "6e55b64dbc2e906a50cf8b7310849bb156a90bc40436f28a86832e59e232b589"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "a3c9ad6b423953c40cbb04ec871d44344bc6fc70f8ac0cfed008b497acf10f75"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "8e9ba8ede4c2b6e6e2d2903bdd655d7f9f5f67a52edcdbea6a600f096044cd78"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "9d2c0a6310e0b3843e21133689a07950ab7997a011e6611548ac044e11fe9946"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "3651004d61dbb82120ab0ab78d053588ddb61406b6b04c6cddaf40dcbe5e30ec"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "d7b1d4e26f4885fbc116cee502d9a5d2f3c1eee564df9a72f7f6e72c8551ba78"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "7ae034251f2b2ba509efd08dfb00545ff2cff056f4fa150c35f6e4c518d9a7df",
+      "candidate_sha256": "7ae034251f2b2ba509efd08dfb00545ff2cff056f4fa150c35f6e4c518d9a7df"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b",
+      "candidate_sha256": "c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "b19c7bc5f99cc03eccd49c0c9a4fb52a9ba13eafc12e721f4ebe89bc45672ea6",
+      "candidate_sha256": "b19c7bc5f99cc03eccd49c0c9a4fb52a9ba13eafc12e721f4ebe89bc45672ea6"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395",
+      "candidate_sha256": "3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "9038a6acde8bc38726310cd0855202822a731a74bde3d1c22493a13cc65f11e8",
+      "candidate_sha256": "9038a6acde8bc38726310cd0855202822a731a74bde3d1c22493a13cc65f11e8"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2",
+      "candidate_sha256": "695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "758a54eb78af3e89824be0784a60d48ca4390c58e41469fdda48d82eff06a550",
+      "candidate_sha256": "758a54eb78af3e89824be0784a60d48ca4390c58e41469fdda48d82eff06a550"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2",
+      "candidate_sha256": "5afebfa1f95ca5673162513fdea63b025546aa836550c0ceb17f0334659988f2"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "5ead41fdef891c3f64b8238c9ee48188136594b2ab6f59cf055f3242bfb96b40",
+      "candidate_sha256": "5ead41fdef891c3f64b8238c9ee48188136594b2ab6f59cf055f3242bfb96b40"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/MonsterVisuals.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "18afa8854648847298d33a3734ecaaee7e391bce511ec43478381c861a13ec57",
+      "candidate_sha256": "18afa8854648847298d33a3734ecaaee7e391bce511ec43478381c861a13ec57"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "0570a43f4f2f1f6ad720b780237fbb11b3ad289a4d39754113b4b1d56b72938b",
+      "candidate_sha256": "0570a43f4f2f1f6ad720b780237fbb11b3ad289a4d39754113b4b1d56b72938b"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta",
+      "state": "ALREADY_IDENTICAL",
+      "base_sha256": null,
+      "disk_sha256": "903d787b3d943779dd2dc9afa482008e4ab98f797b15a417b7f13b567faecf16",
+      "candidate_sha256": "903d787b3d943779dd2dc9afa482008e4ab98f797b15a417b7f13b567faecf16"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "52e3639a6ac72bf8043a99bc37c82b3c256c32c6cf675748b99b2ddf0727d843"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "881d35c98bca39c800711b83c59abaf38beec99d6ee4c20972e09f4473059361"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "b5dd57bac28120d99a56cc4467d28f65217b64b12811905ae7f0a0217d52535d"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "f057889600371e174d2b37f33bac66f702d4fb4526f469149afeb1b844f4a370"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "403c37f26425ee0f721f3d7e404fc39cff0b7dae8d0e3228cab39c791c4b9a00"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "7c2b1a8d5a62f8fc3bd958bc289ed962ea7d113c1d67a4340d05c16ca2cc51a0"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "d5028081ee9cf0f189eb06c95f54ed420156ced802ac7e876a2c1b966e010f40"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "2b9afbaec3e1e4947c921b55fe11706a467f448a77ed18dc05ec2f0b4ecdab07"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+      "state": "CLEAN_TEXT_EQUIVALENT",
+      "base_sha256": "c53419bed195a727fb94095342d9b2162fa68db4ed1e5016e31fefe2180d9bd0",
+      "disk_sha256": "645d2e050f22728af4b419011be4f894830c38e9618a47d6c8b46a45c9cbdd5c",
+      "candidate_sha256": "5610c0def20f892fc990e849d969ce4222b7ecd5e36563237b13e393e2fcd32d"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+      "state": "CLEAN_TEXT_EQUIVALENT",
+      "base_sha256": "41f45a69d987ad96a1521695c1fd1f2565b9966bf9f681d9abfc7b93732bffcb",
+      "disk_sha256": "7edf967fc05ff42f7651320c343b827250116b8036b193460fe1984be5dc7029",
+      "candidate_sha256": "2adf4b8cea71bccd97bc726bbeffed4c45b59761c4bd33f545980bd6c5c5a4ff"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "d93d66c9da6839d07ac9c99e93a7fe4cb60063f90491d91c5ecae0404975f3f9"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "04beef1891bb211c33a5edba48ebecfc04acca712df75c05a54f71c7ab7b6ff0"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Core/QuestService.cs",
+      "state": "CLEAN_TEXT_EQUIVALENT",
+      "base_sha256": "3d29b0a854ce386d47dc6bd57d3e1338fc95efbf17a671e26383751490d52010",
+      "disk_sha256": "76713e69adb666d97401eed6c3c9ee5c36a45af4a4da81dbb14cf704883676a7",
+      "candidate_sha256": "daed4305c6fa558116487ca6c58c55a672338e8b518fb7433f3b60459e02b0e1"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "8631d8cf54c15272507280935ece9a83416672fdb15f98fdf696654cb7095df9"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "de8e957d416b17bc6b6c746e4dfb1bc3727c4e541b61758b0a613e8f5fecfa63"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "5308fcf3dd4eafdb9e039724e5c0ff09c0ec360f408b8ccf5fe688b72200d829"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "c5d98a61bfd21e6b179129acd431cba1533bbbbe5874f4f01b6c15e16456d77b"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "175df1ab185fb97dfbd980527ad9d16bba0f46439cd38cdd051fa04e23460430"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "204e48e99c32551c93974a9672c6fa86704a1fc096e31b6fee7a45b243d161a0"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs",
+      "state": "ALREADY_TEXT_EQUIVALENT",
+      "base_sha256": "983556e4366f1b006d47b574f0928d1007783e7baf48a68a452b0c9f18f59988",
+      "disk_sha256": "cf511ac25222549c291c697a5720ba264251de9936826e34046f8bb6d0596c39",
+      "candidate_sha256": "9462f31edc4515a3055c040c48f11e9d4861b854150db64e68ed6561aa50ee6c"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Player/PlayerController.cs",
+      "state": "CLEAN_TRACKED",
+      "base_sha256": "799439b8c5a8ab86103e49bdbec082992fb0f1339f9351e236bded16e5d9cd31",
+      "disk_sha256": "799439b8c5a8ab86103e49bdbec082992fb0f1339f9351e236bded16e5d9cd31",
+      "candidate_sha256": "67dcec5bf58e1253d7442e0de75154d1a83b233354efe1cf3bf6d5e35013fcbc"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "e4f0918c9a7528c7042330bb7df2e9a4b35fa47688ec589643087f75f379b9fd"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "128fb5ac4fa3e98e7a57bcc269800688425bd3a22de6e5347320c633ca6f0987"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "1d9c796485c8481bb5722eab668852541b7146eb40f529b7b12e13aa82c55891"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs.meta",
+      "state": "NEW_ABSENT",
+      "base_sha256": null,
+      "disk_sha256": null,
+      "candidate_sha256": "dbc91d4a4ac8401f80775a13415760879ac7dbd29af93682b41d6a7af9f0622c"
+    },
+    {
+      "path": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "state": "LOCAL_DIVERGED",
+      "base_sha256": "cec6b25f10309e801f8c2c92017d3e50f8c1ffba140ba0f876406cf645dad9f8",
+      "disk_sha256": "7ceea345b6193f9bbe4bf7236ea9bcc340896e394086f6fb998dcc0a80efd081",
+      "candidate_sha256": "83d31f6406b98d654c76d94af868d2db3dda99147f0a2ae3b5596bbcc27da978"
+    }
+  ],
+  "guid_references": [
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+      "guid": "0000000000000000e000000000000000",
+      "resolves": [],
+      "builtin": true
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+      "guid": "4f45f8c0972188b459d11e2b1e1faf80",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+      "guid": "0000000000000000e000000000000000",
+      "resolves": [],
+      "builtin": true
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+      "guid": "57635d9b5c7c3834e8c21def60ce5baa",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+      "guid": "0000000000000000e000000000000000",
+      "resolves": [],
+      "builtin": true
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+      "guid": "f586c522b1152e54fab40108548e59f9",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "guid": "11bfa9e4e73d4ce5978021aa82a74fa2",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/Monster/MonsterDefinition.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "guid": "34a285ff9c549f642b922dcb1c6027d5",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "guid": "5a508e7ef9b122c459f4ce0bcd0d4a97",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "guid": "6dd66eaa0fa89ad4387b49463367ff15",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+      "guid": "89af58cc731d8794ba9e39b35993812a",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset",
+      "guid": "c5c82de195ab08742b4c2ed83c2494f1",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/Core/QuestDefinition.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset",
+      "guid": "1a9c75bc98a206349844b1cccacae1bf",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset",
+      "guid": "9aff533e0f0c4e91a17a57cb14010833",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/Monster/FieldMonsterSpawnDefinition.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "guid": "11bfa9e4e73d4ce5978021aa82a74fa2",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/Monster/MonsterDefinition.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "guid": "34a285ff9c549f642b922dcb1c6027d5",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "guid": "5a508e7ef9b122c459f4ce0bcd0d4a97",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "guid": "6dd66eaa0fa89ad4387b49463367ff15",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+      "guid": "89af58cc731d8794ba9e39b35993812a",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "0000000000000000e000000000000000",
+      "resolves": [],
+      "builtin": true
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "0000000000000000f000000000000000",
+      "resolves": [],
+      "builtin": true
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "4f45f8c0972188b459d11e2b1e1faf80",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "57635d9b5c7c3834e8c21def60ce5baa",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "58b6f96f81ec2f74d836d086811723bc",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "624c274a3d8efd745befd82f4df249af",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Prefabs/PlayerPlaceholder.prefab",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "6670a47dee13360469e116a412a39ac3",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/World/SceneSpawnPoint.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "7cdaa627b7ae55b45957b8d9575312c2",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "8e67f1ae6b9941f6b1a35e2c4d7a0204",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/Camera/CameraFollow.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "a97c105638bdf8b4a8650670310a4cd3",
+      "resolves": [
+        {
+          "path": "Unity\\Client\\Library\\PackageCache\\com.unity.render-pipelines.universal@2309ae255609\\Runtime\\Materials\\Sprite-Lit-Default.mat.meta",
+          "source": "ORIGINAL_URP_PACKAGE"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "b18ba265bb0ca31419f9db0bf6b56367",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "c6f32cc9435b4f15858e8f7e9679aa10",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scripts/World/WorldBounds2D.cs",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "caac41153e9121f489de52a91299f4d7",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "ec28a564019d69e4c9f502ae3f920d9a",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "f586c522b1152e54fab40108548e59f9",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+      "guid": "facbc5abeed90804787a38b3894221b1",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "0ee8c784d66e57f4eb4054d79015dbbe",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/CharacterCreation.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "1f2f58692d5f71d409dc133f36a82d83",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_08_RedRift.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "2bcd2660ca9b64942af0de543d8d7100",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/Settings/InputSystem_Actions.inputactions",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "30df47a78f514a3e89c481bdbfebb9fd",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_04_WesternBorder.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "3e3506b45a814b87ba486d987cefc601",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/JobSelection.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "453acfb22c63c514ca143ea1112bd0ad",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Dungeon_01.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "4951f4ecaa7f6b64bbb230aa84042eab",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_10_BurningPulse.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "4b57f326013047b08fc7f923bbeda7fa",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_06_ScorchedTrail.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "55be265063b14205df533d8f02487145",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/OpeningIntro.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "66a117c04f6158a4a968de1f574a1f7e",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Bootstrap.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "6ec5c808e3339c6418e29d81fc191e41",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_09_ObsidianScar.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "7f4bb919653496c4d95b212f2b7e3abb",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_11_DeepCore.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "7f5ef746a0eb33c4581e3ab5a72e1490",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+          "source": "PRODUCT"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "8c9cfa26abfee488c85f1582747f6a02",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/Scenes/SampleScene.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "9e47c65d3b344da48b335da575255ffa",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/PathSelection.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "ad86be8a1cdd4b2da606ea266b2a240b",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Arbel.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "aeeaf599728e4385ef7ef24ef346df45",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Battle.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "c06a4b1df50f8e34796d99de36da64cc",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Dungeon_01_B2.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "c5ab839c063d4fcf8a3f84e5968e412b",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/FinalConfirmation.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "c7d0c3fd54a7cac4fb0aa9bd648810a4",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_03.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "d3294f3ff016344428247fd60ebf23c9",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_01.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "d4a08be9af5ce2b4988023a66f57091c",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/World_StarterVillage.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "e8c322808c8e4bdcae75234ec2af0342",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_05_WesternOutskirts.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "f2020000000000000000000000000002",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_02.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    },
+    {
+      "owner": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+      "guid": "f6fd4898372c0a54eaa201d769ce51fe",
+      "resolves": [
+        {
+          "path": "Unity/Client/Assets/_Project/Scenes/Field_07_AshenReach.unity",
+          "source": "MAIN"
+        }
+      ],
+      "builtin": false
+    }
+  ],
+  "excluded_dependencies": [],
+  "unresolved": [],
+  "duplicate_guids": {
+    "ea7264dba5af46cda070ad3e3aa3eac3": [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/GoldenArrow/golden_arrow_00.png",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00.png",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_01.png",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_02.png",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_03.png",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_04.png"
+    ]
+  },
+  "branch_delta": [
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Attack_4Frames.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Defeat_4Frames.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Hit_4Frames.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png",
+    "A\tUnity/Client/Assets/_Project/Art/Monsters/FrostFieldMouse/FrostFieldMouse_A_Idle_4Frames.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_EarthToFrost_Transition_Overlay_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Ground_Earth_Base_v2.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Ground_Earth_Base_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Ground_ThinFrost_Base_v3.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Ground_ThinFrost_Base_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Path_WornTrail_Overlay_v2.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Path_WornTrail_Overlay_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Prop_FrostShrub_01_v2.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Prop_FrostShrub_01_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Prop_Waymarker_01_v3.png",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Art/NorthF1_Prop_Waymarker_01_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Earth.asset",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Earth.asset.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/QA_NorthF1.unity",
+    "A\tUnity/Client/Assets/_Project/QA_F1/QA_NorthF1.unity.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/QA_VillageNorth.unity",
+    "A\tUnity/Client/Assets/_Project/QA_F1/QA_VillageNorth.unity.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/ThinFrost.asset",
+    "A\tUnity/Client/Assets/_Project/QA_F1/ThinFrost.asset.meta",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Transition.asset",
+    "A\tUnity/Client/Assets/_Project/QA_F1/Transition.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/MonsterVisuals.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/MonsterVisuals/FrostFieldMouse.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+    "A\tUnity/Client/Assets/_Project/Scenes/World_NorthF1.unity.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "M\tUnity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Core/QuestService.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/F1UnityPreflight.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/F1UnityPreflight.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Monster/MonsterSpriteSheetAnimation.cs",
+    "M\tUnity/Client/Assets/_Project/Scripts/Player/PlayerController.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs.meta",
+    "M\tUnity/Client/ProjectSettings/EditorBuildSettings.asset",
+    "A\t문서/00_프로젝트/ArtReview_MonsterWolfV3_NorthF1_Offline_QA_20261021.md",
+    "M\t문서/00_프로젝트/CURRENT_STATUS.md",
+    "A\t문서/00_프로젝트/Chapter3_F1_Approved_Unity_Preflight_20261021.md",
+    "A\t문서/00_프로젝트/Chapter3_FrostFieldMouse_Combat_Fix_v2_Delta_QA_20261021.md",
+    "A\t문서/00_프로젝트/Chapter3_FrostFieldMouse_Fix_v2_Official_Apply_QA_20261021.md",
+    "A\t문서/00_프로젝트/Chapter3_Main22_FirstPlayable_Implementation_QA_20261021.md",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Audit.py.txt",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ch2_Official_Environment_NativePixels.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Details.py.txt",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_DeliveryQA.json",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Manifest.md",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Original_Candidate_1to1_Offline.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_SHA256SUMS.txt",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Transition_Path_Offline.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/F1_Unchanged_Props_Offline.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ground_Earth_Base_Repeat2x2_1to1.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Ground_ThinFrost_Base_Repeat2x2_1to1.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/MonsterWolf_DeliveryQA.json",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/MonsterWolf_Manifest.json",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Monster_ActualBattleSlot_Offline.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/PreviewLayout.py.txt",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Validation.json",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/VenomSnake_AlphaBackgrounds.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Wolf_AlphaBackgrounds.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/Wolf_Matte_Locations.png",
+    "A\t문서/00_프로젝트/Evidence/ArtReviewMonsterWolfF1_20261021/index.html",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/ApprovedPNGs.json",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_1280x720.png",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_1680x720.png",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/GameView_960x720.png",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Result.json",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/TechnicalContract.json",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/UnityCamera_RT_TransitionJoin.png",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/Unity_Final.log",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/console_errors.txt",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/observations.txt",
+    "A\t문서/00_프로젝트/Evidence/F1UnityPreflight20261021/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Battle.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/Main22_SingleMouse_ActualGameView.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Capture.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/ChangedFiles.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_AfterVictory.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Arrival.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_BeforeBattle.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_ClueA.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Completed.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_PlaytestStart.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_StartVillage.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1280x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1680x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_960x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/frames.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Gate.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/Main22_NorthGate_ActualGameView.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step2_Frost_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step3_Clue1of2_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step4_SingleMouseBattle_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step5_Shelter_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/console_errors.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Result.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StartVillage_Playtest.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StaticAudit.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Attack_ActualBattle_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Defeat_ActualBattle_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Hit_ActualBattle_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/MouseCombatApprovedApplyQA.cs.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/OriginalAppliedFiles.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/OriginalEditor.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/ProductCodeParity.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/ProductFiles.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/ProtectionAfter.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Attack_ReturnedIdle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Before_Idle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Defeat_Hold03.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/FrameTrace.tsv",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/Hit_ReturnedIdle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/errors.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Runtime/status.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/StaticProductAudit.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/Unity.log",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2Apply_20261021/index.html",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/AllFrames112.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Attack_UnityFrames_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/BeforeAfter112.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Defeat_UnityFrames_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Hit_UnityFrames_8FPS.apng",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/MouseCombatV2DeltaReview.cs.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/OfflineAudit.py.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Attack_ReturnedIdle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Before_Idle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Defeat_Hold03.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/FrameTrace.tsv",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame0.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame1.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame2.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_Frame3.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/Hit_ReturnedIdle.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/errors.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Runtime/status.txt",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Unity.log",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/UnitySequence112.png",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/Validation.json",
+    "A\t문서/00_프로젝트/Evidence/MouseCombatV2_20261021/index.html",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Audit.py.txt",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Extra.py.txt",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Ch2_Material_Comparison_Offline.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_DeliveryQA.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Grounds_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Manifest.md",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_PathProps_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Props_OnEarth_256px.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_SHA256SUMS.txt",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/F1_Transition_Path_Delta.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/FinalImages.py.txt",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_Earth_Base_Repeat2x2.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_Earth_Base_Repeat3x3.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_ThinFrost_Base_Repeat2x2.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Ground_ThinFrost_Base_Repeat3x3.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Validation.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_128px_BattleSlot_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Changed_Alpha_Pixels.csv",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Chest_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_DeliveryQA.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_HindLeg_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Manifest.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_Paws_BeforeAfter.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/Wolf_RemainingArtifacts_Coordinates.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV4F1V2_20261021/index.html",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Delivered_Alpha_Changes.csv",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Delta_Audit.py",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/F1_Delivered_Manifest.md",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/F1_Delivered_SHA256SUMS.txt",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_Repeat_Comparison.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v2_2x2.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v2_3x3.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v3_2x2.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/ThinFrost_v3_3x3.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_Adjacent_Comparison.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_v2_Adjacent.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Transition_v3_Adjacent.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Validation.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Waymarker_256_128_Comparison.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_128px_v3_v4_v5.png",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_Delivered_Manifest.json",
+    "A\t문서/00_프로젝트/Evidence/WolfV5F1V3Delta_20261021/Wolf_v3_v4_v5_AlphaCrops.png",
+    "A\t문서/00_프로젝트/Main22_Isolated_Play_Guide_20261021.md",
+    "A\t문서/00_프로젝트/WolfV4_NorthF1Environment6V2_Delivery_Review_20261021.md",
+    "A\t문서/00_프로젝트/WolfV5_NorthF1V3_Delta_QA_20261021.md",
+    "M\t문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md"
+  ],
+  "main22_feature_delta": [
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Earth.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_EarthToFrost_Transition_Overlay_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_Earth_Base_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Ground_ThinFrost_Base_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Path_WornTrail_Overlay_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_FrostShrub_01_v2.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/NorthF1_Prop_Waymarker_01_v3.png.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/ThinFrost.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset",
+    "A\tUnity/Client/Assets/_Project/Art/Environment/Chapter3/NorthF1/Transition.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/QuestDefinitions/Main22_NorthwindSigns.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_Encounter.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset",
+    "A\tUnity/Client/Assets/_Project/Resources/StoryEncounterReturns/Main22_MousePrototype.asset.meta",
+    "A\tUnity/Client/Assets/_Project/Scenes/World_NorthF1.unity",
+    "A\tUnity/Client/Assets/_Project/Scenes/World_NorthF1.unity.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Battle/BattlePrototypeEncounter.cs",
+    "M\tUnity/Client/Assets/_Project/Scripts/Battle/BattleSceneController.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Core/Main22Progress.cs.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Core/QuestService.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22ContentBuilder.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22FirstPlayableQA.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/Editor/Main22PlaytestSetup.cs.meta",
+    "M\tUnity/Client/Assets/_Project/Scripts/Player/PlayerController.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Chapter3Main22Flow.cs.meta",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs",
+    "A\tUnity/Client/Assets/_Project/Scripts/World/Main22GuidanceHud.cs.meta",
+    "M\tUnity/Client/ProjectSettings/EditorBuildSettings.asset",
+    "A\t문서/00_프로젝트/Chapter3_Main22_FirstPlayable_Implementation_QA_20261021.md",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Battle.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/Main22_SingleMouse_ActualGameView.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/BattleView/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Capture.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/ChangedFiles.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_AfterVictory.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Arrival.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_BeforeBattle.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_ClueA.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_Completed.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_PlaytestStart.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Checkpoint_StartVillage.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1280x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_1680x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/Main22_GameView_960x720.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/frames.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GameViews/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Gate.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/Main22_NorthGate_ActualGameView.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/GateView/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough.Unity.log",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step2_Frost_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step3_Clue1of2_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step4_SingleMouseBattle_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/Step5_Shelter_ActualUnityCameraRT.png",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/checks.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/console_errors.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Playthrough/status.txt",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Protection.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/Result.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StartVillage_Playtest.json",
+    "A\t문서/00_프로젝트/Evidence/Main22FirstPlayable20261021/StaticAudit.json",
+    "A\t문서/00_프로젝트/Main22_Isolated_Play_Guide_20261021.md"
+  ]
+}

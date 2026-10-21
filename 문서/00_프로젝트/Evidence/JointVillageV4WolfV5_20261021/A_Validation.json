@@ -1,0 +1,707 @@
+{
+  "zip": "Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip",
+  "zip_sha256": "ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896",
+  "zip_bytes": 19767770,
+  "expected_match": true,
+  "entries": 70,
+  "crc_bad": null,
+  "manifest_sha_mismatches": [],
+  "files": [
+    {
+      "path": "Buildings/Frostway_GeneralShop_Building.png",
+      "sha256": "67b30d758436f0eb5d764130d4b6b8179578184990b366057282510feac9be6c",
+      "bytes": 300490,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_Inn_Building.png",
+      "sha256": "67b16d2ef8c3d3d99e066c5723bd5df9a917624c79faeaadf32a99dd4a94f14d",
+      "bytes": 395436,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_Residence_Building.png",
+      "sha256": "4eb505aad2aefe90170a1d3e3c08990fe4587b3a91d2136dcdc1f0e4ee37fd8a",
+      "bytes": 298956,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_ServiceHouse_Building.png",
+      "sha256": "d8bdcd0573ba849ee0449f16cdac0ba3dfdc7a8d51ba9935758f4ff767801341",
+      "bytes": 263337,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Frostway_SkillShop_Building.png",
+      "sha256": "ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17",
+      "bytes": 319086,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneArch.png",
+      "sha256": "78df49b8f50481608176a3aa7c7d71ac0643d1bedddb838059257cc13c4a33a1",
+      "bytes": 45688,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneFrame.png",
+      "sha256": "b341458803f0c65ea6c995594246767d182ccb0e044d1633878797274576c34e",
+      "bytes": 37947,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_WoodFrame.png",
+      "sha256": "4b359df1726465b0100e6b43611c67d8f0829e3ce35481ccfff857d6c4cea34f",
+      "bytes": 33797,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Gable.png",
+      "sha256": "37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0",
+      "bytes": 40486,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_A.png",
+      "sha256": "433b4c89e3717496d1496e951ef8d9da4f07634cd7686458e7b7a585b93dff5d",
+      "bytes": 47090,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_B.png",
+      "sha256": "6ff70cb36cd804ca882ac7dd6689aa6dfd02acb12414ccc4ca1996bf496b7934",
+      "bytes": 61900,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Plain.png",
+      "sha256": "a1d7184df6fb179acb690d005d560acb3a2658fb78518e1be776acabc3c407a5",
+      "bytes": 75800,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Timber.png",
+      "sha256": "c57f938b454b09d28e0a3ec7f1f7a1f48852584d4f253e3827bafacf726483ff",
+      "bytes": 64316,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Window.png",
+      "sha256": "580a57ce41ecdca257dcc05433dd6a03e76afc9c741289704971389c1263f4e9",
+      "bytes": 60274,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Manifest.json",
+      "sha256": "98a5c2d21259e44f0d4d0968dfcf5aa7df6570a4382a499dad9e2e66ee42655f",
+      "bytes": 31118
+    },
+    {
+      "path": "Manifest.md",
+      "sha256": "232e845071cbce52209e65d75b1694a0739f602470a2e7f76998a5cbf40a3237",
+      "bytes": 1969
+    },
+    {
+      "path": "Portal_Inactive/Frostway_EmptyPortal_Platform.png",
+      "sha256": "94500cb2566f2f71f422d0c5a88d7ce0170af5d347f140cdc5fea9764d60c123",
+      "bytes": 381993,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_Portalsite_LowWall.png",
+      "sha256": "726141f217eead3d40072d1bf5c258569c90ea66f93d61f53642a08b10827d9d",
+      "bytes": 122108,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_StonePlinth_Short.png",
+      "sha256": "73310b3dbeb5c2ba751f42674bbb451c9b55b4f6d6acc38e4d6972153aebf9a8",
+      "bytes": 87229,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Asset_Overview_OFFLINE.png",
+      "sha256": "7d1a1cd11812b52cce5c9a6047a6a0d9c28cdb4431cfb45d10abd788c08d01f7",
+      "bytes": 1355819,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_16x9.png",
+      "sha256": "5866b3c2171aee8f626e5177832fc8399af4825d2fa73f46c2be3c4829d8bb78",
+      "bytes": 2887370,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_21x9.png",
+      "sha256": "7464a30b5995f12fc5a863dd326a5b32512504d05b6072d36acd5cae10567400",
+      "bytes": 2912822,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Preview/Frostway_Layout_OFFLINE_4x3.png",
+      "sha256": "2b1edaf99da07f2a3c0cbd17f880ee8e88da4ec6bc155abca4d6a9cdfb47d837",
+      "bytes": 1131275,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Barrel.png",
+      "sha256": "92c23b915c803e6c8083083443f29808377904b148d43816897e9b680a2756da",
+      "bytes": 58754,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Bench.png",
+      "sha256": "1884794b13f06069beacac1dbedffb78f20cfba5dadae6a88d7783b08e7d9467",
+      "bytes": 50521,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Fence.png",
+      "sha256": "4bc7d61bb09350a07a13c85106604e98d8b91dcac0096237accc7308ccf80021",
+      "bytes": 101815,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Shed.png",
+      "sha256": "b24e2c2ebc79a57c88dab90a69a2659b502ab75a882827b01e1d394d57df9599",
+      "bytes": 253552,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Stack.png",
+      "sha256": "f1ba20f23193cd9d2bf80b8e1150ee896ec4040e4032cf92d084c5d636536c9b",
+      "bytes": 123939,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Hanging.png",
+      "sha256": "ce507f1e6d2c0a434e0a862190d41fcb0f82737e7c1baf99e1834163aa6edd71",
+      "bytes": 72323,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Post.png",
+      "sha256": "56633424fa797cc3aef1d3618f6022442020c7e7d239f263ed6ebd94c1374276",
+      "bytes": 49404,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyBox_Food.png",
+      "sha256": "e7168cce162ee46ca97f32208faeef3b715c597cb27440bda6cabc6bcc1178e5",
+      "bytes": 40994,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Brace.png",
+      "sha256": "10db0bf7ceaf07e1786d3cb7624b1f899255b78a2609944cd0a08fe2a2e488d9",
+      "bytes": 50686,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Small.png",
+      "sha256": "01334eba921d6bda1bd42cb02ab17cb78032f77634dd225a23dcd24f3cc8e5e2",
+      "bytes": 37196,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Wood.png",
+      "sha256": "47b568e49af529c4a87087a743ef8b5c5b217ce5b261227f166ad2320b6eba45",
+      "bytes": 51830,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_SupplySacks.png",
+      "sha256": "12aa735df75923922dca0a1c57d92f7faa140ed6e0bc54c61f689b7fbccc16ad",
+      "bytes": 54651,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_Washline.png",
+      "sha256": "b953fe7ab96262bdfdcf455c01f62a53ed97e5c91e76391984d85b0fc8b12dfe",
+      "bytes": 62916,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Props/Frostway_WoodCart.png",
+      "sha256": "06779f12d0c7d54b440d9d103d97bde89f11433b5a973449243975143d635482",
+      "bytes": 97636,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/BeforeAfter/Roof_Gable_Defect_Zoom_2x.png",
+      "sha256": "d1bc0190ee5eb96612af184c3993814d7d3047062db4983a5a0019a063068e9d",
+      "bytes": 23316
+    },
+    {
+      "path": "QA/BeforeAfter/Roof_Gable_Display128_Compare.png",
+      "sha256": "8dcfdb6105f10d51999e7ab166f78dde77fa7f2a316272464e99cc865c8d0174",
+      "bytes": 22334
+    },
+    {
+      "path": "QA/BeforeAfter/Roof_Gable_FullScale_1x.png",
+      "sha256": "ad040d7f294d1349a1766a823d9776793058b9469d0ca6fd6834103934ecd2e5",
+      "bytes": 43680
+    },
+    {
+      "path": "QA/BeforeAfter/SkillShop_Defect_Zoom_2x.png",
+      "sha256": "5920a7ab6d06c8628ff0429de9bd15f603bd5debeb092b0f0b63c0d82e7497fc",
+      "bytes": 38432
+    },
+    {
+      "path": "QA/BeforeAfter/SkillShop_Display128_Compare.png",
+      "sha256": "b33bec2ddc261798ee1480a8614007057b2b378682dae007baef12ab54035034",
+      "bytes": 40159
+    },
+    {
+      "path": "QA/BeforeAfter/SkillShop_FullScale_1x.png",
+      "sha256": "2af44aa8ad444b338ca37cdf8e4f57d850f7ef10a374770cd8373d865a4296ee",
+      "bytes": 292185
+    },
+    {
+      "path": "QA/Offline_QA.json",
+      "sha256": "5ac1f2f990005b6dd9061f6210801f3906a28827b76e03bf2c22f2eb38174d2a",
+      "bytes": 7167
+    },
+    {
+      "path": "QA/PatternHOLD/Frostway_Ground_Earth_01_3x3_Annotated.png",
+      "sha256": "5d98fd3003c086a332271693b024223a3fb6dc4cf66e3ec8c3b1bb97919590b1",
+      "bytes": 404368
+    },
+    {
+      "path": "QA/PatternHOLD/Frostway_Ground_Gravel_01_3x3_Annotated.png",
+      "sha256": "d1eb32ce757a000e677eb6968ba5c93813955d708babf18cb7341ef1f111bf78",
+      "bytes": 406164
+    },
+    {
+      "path": "QA/PatternHOLD/Frostway_Ground_ThinFrost_01_3x3_Annotated.png",
+      "sha256": "d3e58e5cb0e7702981fcf3d21547812a303130a16b03c75cb4c5eb28ea89d307",
+      "bytes": 402095
+    },
+    {
+      "path": "QA/PatternHOLD/Frostway_Path_Stone_01_3x3_Annotated.png",
+      "sha256": "d06bba06e22073045db6036141fe482258d6ac6ba3fa79449499a837bd35e190",
+      "bytes": 377175
+    },
+    {
+      "path": "QA/PatternHOLD/TilePattern_3x3_Overview.png",
+      "sha256": "d02088c5d5289df9808f6d93aeeacda425354694941a7e417f847f05b90da1ac",
+      "bytes": 452107
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Earth_01_Repeat_2x2.png",
+      "sha256": "61986b9219018d91e94447cfb2737331214260eb801148f2b5e8c20ef6da4eba",
+      "bytes": 307424,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Earth_01_Repeat_3x3.png",
+      "sha256": "c73dd3ee6474ed5257d0677414a0c74c220be6c98e3887819792eb3fe190fc42",
+      "bytes": 469942,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Gravel_01_Repeat_2x2.png",
+      "sha256": "c566cf6d4688701cb6c07f7f406df6cfa930209d86c2f7752561c43202075330",
+      "bytes": 310871,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_Gravel_01_Repeat_3x3.png",
+      "sha256": "59f278d580fa817a4d3930eb01fa283539d972d153a7bd6858a9d7e9fd6f1bda",
+      "bytes": 474224,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_ThinFrost_01_Repeat_2x2.png",
+      "sha256": "46bca038fb80cb6ee888d24dcd28262e0cf7742f5ffba539706af1d1cfed8aee",
+      "bytes": 306290,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Ground_ThinFrost_01_Repeat_3x3.png",
+      "sha256": "89cfe7f87ee2b03f910566fe6186f1501dec3027f410e8fd659b195523e95a68",
+      "bytes": 468114,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Path_Stone_01_Repeat_2x2.png",
+      "sha256": "ea08ba4e76c9913ccc5763f1a1a3b59d67e00ba4b70bcdc35cbc78b96e23fc2f",
+      "bytes": 291129,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "QA/Repeat/Frostway_Path_Stone_01_Repeat_3x3.png",
+      "sha256": "1c2663f0cc343530ae22291cbfa4eda2d4e64189f614a6745dace7e874e891ea",
+      "bytes": 445911,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "sha256": "1adeb104e96476064989273ee0f1e309760fc6d478552d3b5b44f4e810b0bdc8",
+      "bytes": 7370
+    },
+    {
+      "path": "Signs/Frostway_BlankWaymarker.png",
+      "sha256": "e88048915bd42863c81f20d22fff163835043e46634907e21adf750fac0621c0",
+      "bytes": 477124,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_NorthGate_ArrowSign.png",
+      "sha256": "285c304de4d2bfe06809d2d7485eadadd7d06ddf74f2a9f427b96e9d840c91b0",
+      "bytes": 473416,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_GeneralShop.png",
+      "sha256": "c81a84f42667965e45b2ee9fea4668c3ebb313a7088526d24f36f18ea9db2d52",
+      "bytes": 27684,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_Inn.png",
+      "sha256": "c16624d46acdda522a42d6ebeed03bd81eb23053dd11b91fb4b69f307fc2cb75",
+      "bytes": 27204,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_SkillShop.png",
+      "sha256": "f86c2645fa7b6ffd65893de58b75358de641b7f032f317e56f01f57da14ab263",
+      "bytes": 35814,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Signs/Frostway_SouthGate_ArrowSign.png",
+      "sha256": "2dcf484b2d502641f56d0282618c9ef35b75ac25bbc84847e9d1df374386b3b3",
+      "bytes": 473475,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Earth_01.png",
+      "sha256": "6270cb24334f78194fcb2239b6154387e1545b90e85ce013af112a86d9d946e8",
+      "bytes": 148715,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Gravel_01.png",
+      "sha256": "bf620f0cdf9837f9de4db14681a368cedb774f1ba49e53cebceea520ca7484ad",
+      "bytes": 150676,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_ThinFrost_01.png",
+      "sha256": "c711cc6481b46c84dc98232542524dd4fa85d0d4f24f39e6643e71b82b9d8ee7",
+      "bytes": 148194,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Tiles/Frostway_Path_Stone_01.png",
+      "sha256": "6565215f406f4b5823fafc7b91cb16bb53f32620ac03f331220eef123895648c",
+      "bytes": 140137,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Transitions/Frostway_EarthToThinFrost_Overlay_01.png",
+      "sha256": "f88396d3fe3f14e57292531c3fb620b2a312574a916aa48fc65d4b830e922f8b",
+      "bytes": 152239,
+      "manifest_sha_match": true
+    },
+    {
+      "path": "Transitions/Frostway_Path_BorderOverlay_01.png",
+      "sha256": "bf051082d22843eb16561851b67914a2910ab07993f10a490cffe68c8440aba0",
+      "bytes": 750,
+      "manifest_sha_match": true
+    }
+  ],
+  "delta": [
+    {
+      "path": "Buildings/Frostway_SkillShop_Building.png",
+      "mode": "RGBA",
+      "size": [
+        511,
+        418
+      ],
+      "sha256": "ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17",
+      "changed_pixels": 2496,
+      "changed_bbox_exclusive": [
+        12,
+        196,
+        29,
+        377
+      ],
+      "changed_main_component_pixels": 0,
+      "changed_pixels_new_alpha_nonzero": 0,
+      "unchanged_outside_diff": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Gable.png",
+      "mode": "RGBA",
+      "size": [
+        175,
+        219
+      ],
+      "sha256": "37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0",
+      "changed_pixels": 712,
+      "changed_bbox_exclusive": [
+        100,
+        183,
+        145,
+        207
+      ],
+      "changed_main_component_pixels": 0,
+      "changed_pixels_new_alpha_nonzero": 0,
+      "unchanged_outside_diff": true
+    }
+  ],
+  "game_count": 43,
+  "keep41": [
+    {
+      "path": "Buildings/Frostway_Inn_Building.png",
+      "previous_sha256": "67b16d2ef8c3d3d99e066c5723bd5df9a917624c79faeaadf32a99dd4a94f14d",
+      "sha256": "67b16d2ef8c3d3d99e066c5723bd5df9a917624c79faeaadf32a99dd4a94f14d",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Frostway_GeneralShop_Building.png",
+      "previous_sha256": "67b30d758436f0eb5d764130d4b6b8179578184990b366057282510feac9be6c",
+      "sha256": "67b30d758436f0eb5d764130d4b6b8179578184990b366057282510feac9be6c",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Frostway_Residence_Building.png",
+      "previous_sha256": "4eb505aad2aefe90170a1d3e3c08990fe4587b3a91d2136dcdc1f0e4ee37fd8a",
+      "sha256": "4eb505aad2aefe90170a1d3e3c08990fe4587b3a91d2136dcdc1f0e4ee37fd8a",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Frostway_ServiceHouse_Building.png",
+      "previous_sha256": "d8bdcd0573ba849ee0449f16cdac0ba3dfdc7a8d51ba9935758f4ff767801341",
+      "sha256": "d8bdcd0573ba849ee0449f16cdac0ba3dfdc7a8d51ba9935758f4ff767801341",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_A.png",
+      "previous_sha256": "433b4c89e3717496d1496e951ef8d9da4f07634cd7686458e7b7a585b93dff5d",
+      "sha256": "433b4c89e3717496d1496e951ef8d9da4f07634cd7686458e7b7a585b93dff5d",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Roof_Shingle_B.png",
+      "previous_sha256": "6ff70cb36cd804ca882ac7dd6689aa6dfd02acb12414ccc4ca1996bf496b7934",
+      "sha256": "6ff70cb36cd804ca882ac7dd6689aa6dfd02acb12414ccc4ca1996bf496b7934",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Window.png",
+      "previous_sha256": "580a57ce41ecdca257dcc05433dd6a03e76afc9c741289704971389c1263f4e9",
+      "sha256": "580a57ce41ecdca257dcc05433dd6a03e76afc9c741289704971389c1263f4e9",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Timber.png",
+      "previous_sha256": "c57f938b454b09d28e0a3ec7f1f7a1f48852584d4f253e3827bafacf726483ff",
+      "sha256": "c57f938b454b09d28e0a3ec7f1f7a1f48852584d4f253e3827bafacf726483ff",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Wall_Plain.png",
+      "previous_sha256": "a1d7184df6fb179acb690d005d560acb3a2658fb78518e1be776acabc3c407a5",
+      "sha256": "a1d7184df6fb179acb690d005d560acb3a2658fb78518e1be776acabc3c407a5",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneArch.png",
+      "previous_sha256": "78df49b8f50481608176a3aa7c7d71ac0643d1bedddb838059257cc13c4a33a1",
+      "sha256": "78df49b8f50481608176a3aa7c7d71ac0643d1bedddb838059257cc13c4a33a1",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_StoneFrame.png",
+      "previous_sha256": "b341458803f0c65ea6c995594246767d182ccb0e044d1633878797274576c34e",
+      "sha256": "b341458803f0c65ea6c995594246767d182ccb0e044d1633878797274576c34e",
+      "equal": true
+    },
+    {
+      "path": "Buildings/Modular/Frostway_Door_WoodFrame.png",
+      "previous_sha256": "4b359df1726465b0100e6b43611c67d8f0829e3ce35481ccfff857d6c4cea34f",
+      "sha256": "4b359df1726465b0100e6b43611c67d8f0829e3ce35481ccfff857d6c4cea34f",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Shed.png",
+      "previous_sha256": "b24e2c2ebc79a57c88dab90a69a2659b502ab75a882827b01e1d394d57df9599",
+      "sha256": "b24e2c2ebc79a57c88dab90a69a2659b502ab75a882827b01e1d394d57df9599",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Firewood_Stack.png",
+      "previous_sha256": "f1ba20f23193cd9d2bf80b8e1150ee896ec4040e4032cf92d084c5d636536c9b",
+      "sha256": "f1ba20f23193cd9d2bf80b8e1150ee896ec4040e4032cf92d084c5d636536c9b",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Brace.png",
+      "previous_sha256": "10db0bf7ceaf07e1786d3cb7624b1f899255b78a2609944cd0a08fe2a2e488d9",
+      "sha256": "10db0bf7ceaf07e1786d3cb7624b1f899255b78a2609944cd0a08fe2a2e488d9",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Wood.png",
+      "previous_sha256": "47b568e49af529c4a87087a743ef8b5c5b217ce5b261227f166ad2320b6eba45",
+      "sha256": "47b568e49af529c4a87087a743ef8b5c5b217ce5b261227f166ad2320b6eba45",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_SupplyCrate_Small.png",
+      "previous_sha256": "01334eba921d6bda1bd42cb02ab17cb78032f77634dd225a23dcd24f3cc8e5e2",
+      "sha256": "01334eba921d6bda1bd42cb02ab17cb78032f77634dd225a23dcd24f3cc8e5e2",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_SupplySacks.png",
+      "previous_sha256": "12aa735df75923922dca0a1c57d92f7faa140ed6e0bc54c61f689b7fbccc16ad",
+      "sha256": "12aa735df75923922dca0a1c57d92f7faa140ed6e0bc54c61f689b7fbccc16ad",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_SupplyBox_Food.png",
+      "previous_sha256": "e7168cce162ee46ca97f32208faeef3b715c597cb27440bda6cabc6bcc1178e5",
+      "sha256": "e7168cce162ee46ca97f32208faeef3b715c597cb27440bda6cabc6bcc1178e5",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Barrel.png",
+      "previous_sha256": "92c23b915c803e6c8083083443f29808377904b148d43816897e9b680a2756da",
+      "sha256": "92c23b915c803e6c8083083443f29808377904b148d43816897e9b680a2756da",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Hanging.png",
+      "previous_sha256": "ce507f1e6d2c0a434e0a862190d41fcb0f82737e7c1baf99e1834163aa6edd71",
+      "sha256": "ce507f1e6d2c0a434e0a862190d41fcb0f82737e7c1baf99e1834163aa6edd71",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Lantern_Post.png",
+      "previous_sha256": "56633424fa797cc3aef1d3618f6022442020c7e7d239f263ed6ebd94c1374276",
+      "sha256": "56633424fa797cc3aef1d3618f6022442020c7e7d239f263ed6ebd94c1374276",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_WoodCart.png",
+      "previous_sha256": "06779f12d0c7d54b440d9d103d97bde89f11433b5a973449243975143d635482",
+      "sha256": "06779f12d0c7d54b440d9d103d97bde89f11433b5a973449243975143d635482",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Bench.png",
+      "previous_sha256": "1884794b13f06069beacac1dbedffb78f20cfba5dadae6a88d7783b08e7d9467",
+      "sha256": "1884794b13f06069beacac1dbedffb78f20cfba5dadae6a88d7783b08e7d9467",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Fence.png",
+      "previous_sha256": "4bc7d61bb09350a07a13c85106604e98d8b91dcac0096237accc7308ccf80021",
+      "sha256": "4bc7d61bb09350a07a13c85106604e98d8b91dcac0096237accc7308ccf80021",
+      "equal": true
+    },
+    {
+      "path": "Props/Frostway_Washline.png",
+      "previous_sha256": "b953fe7ab96262bdfdcf455c01f62a53ed97e5c91e76391984d85b0fc8b12dfe",
+      "sha256": "b953fe7ab96262bdfdcf455c01f62a53ed97e5c91e76391984d85b0fc8b12dfe",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_BlankWaymarker.png",
+      "previous_sha256": "e88048915bd42863c81f20d22fff163835043e46634907e21adf750fac0621c0",
+      "sha256": "e88048915bd42863c81f20d22fff163835043e46634907e21adf750fac0621c0",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_NorthGate_ArrowSign.png",
+      "previous_sha256": "285c304de4d2bfe06809d2d7485eadadd7d06ddf74f2a9f427b96e9d840c91b0",
+      "sha256": "285c304de4d2bfe06809d2d7485eadadd7d06ddf74f2a9f427b96e9d840c91b0",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_SouthGate_ArrowSign.png",
+      "previous_sha256": "2dcf484b2d502641f56d0282618c9ef35b75ac25bbc84847e9d1df374386b3b3",
+      "sha256": "2dcf484b2d502641f56d0282618c9ef35b75ac25bbc84847e9d1df374386b3b3",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_Inn.png",
+      "previous_sha256": "c16624d46acdda522a42d6ebeed03bd81eb23053dd11b91fb4b69f307fc2cb75",
+      "sha256": "c16624d46acdda522a42d6ebeed03bd81eb23053dd11b91fb4b69f307fc2cb75",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_GeneralShop.png",
+      "previous_sha256": "c81a84f42667965e45b2ee9fea4668c3ebb313a7088526d24f36f18ea9db2d52",
+      "sha256": "c81a84f42667965e45b2ee9fea4668c3ebb313a7088526d24f36f18ea9db2d52",
+      "equal": true
+    },
+    {
+      "path": "Signs/Frostway_Sign_SkillShop.png",
+      "previous_sha256": "f86c2645fa7b6ffd65893de58b75358de641b7f032f317e56f01f57da14ab263",
+      "sha256": "f86c2645fa7b6ffd65893de58b75358de641b7f032f317e56f01f57da14ab263",
+      "equal": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_EmptyPortal_Platform.png",
+      "previous_sha256": "94500cb2566f2f71f422d0c5a88d7ce0170af5d347f140cdc5fea9764d60c123",
+      "sha256": "94500cb2566f2f71f422d0c5a88d7ce0170af5d347f140cdc5fea9764d60c123",
+      "equal": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_StonePlinth_Short.png",
+      "previous_sha256": "73310b3dbeb5c2ba751f42674bbb451c9b55b4f6d6acc38e4d6972153aebf9a8",
+      "sha256": "73310b3dbeb5c2ba751f42674bbb451c9b55b4f6d6acc38e4d6972153aebf9a8",
+      "equal": true
+    },
+    {
+      "path": "Portal_Inactive/Frostway_Portalsite_LowWall.png",
+      "previous_sha256": "726141f217eead3d40072d1bf5c258569c90ea66f93d61f53642a08b10827d9d",
+      "sha256": "726141f217eead3d40072d1bf5c258569c90ea66f93d61f53642a08b10827d9d",
+      "equal": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Earth_01.png",
+      "previous_sha256": "6270cb24334f78194fcb2239b6154387e1545b90e85ce013af112a86d9d946e8",
+      "sha256": "6270cb24334f78194fcb2239b6154387e1545b90e85ce013af112a86d9d946e8",
+      "equal": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_Gravel_01.png",
+      "previous_sha256": "bf620f0cdf9837f9de4db14681a368cedb774f1ba49e53cebceea520ca7484ad",
+      "sha256": "bf620f0cdf9837f9de4db14681a368cedb774f1ba49e53cebceea520ca7484ad",
+      "equal": true
+    },
+    {
+      "path": "Tiles/Frostway_Path_Stone_01.png",
+      "previous_sha256": "6565215f406f4b5823fafc7b91cb16bb53f32620ac03f331220eef123895648c",
+      "sha256": "6565215f406f4b5823fafc7b91cb16bb53f32620ac03f331220eef123895648c",
+      "equal": true
+    },
+    {
+      "path": "Tiles/Frostway_Ground_ThinFrost_01.png",
+      "previous_sha256": "c711cc6481b46c84dc98232542524dd4fa85d0d4f24f39e6643e71b82b9d8ee7",
+      "sha256": "c711cc6481b46c84dc98232542524dd4fa85d0d4f24f39e6643e71b82b9d8ee7",
+      "equal": true
+    },
+    {
+      "path": "Transitions/Frostway_EarthToThinFrost_Overlay_01.png",
+      "previous_sha256": "f88396d3fe3f14e57292531c3fb620b2a312574a916aa48fc65d4b830e922f8b",
+      "sha256": "f88396d3fe3f14e57292531c3fb620b2a312574a916aa48fc65d4b830e922f8b",
+      "equal": true
+    },
+    {
+      "path": "Transitions/Frostway_Path_BorderOverlay_01.png",
+      "previous_sha256": "bf051082d22843eb16561851b67914a2910ab07993f10a490cffe68c8440aba0",
+      "sha256": "bf051082d22843eb16561851b67914a2910ab07993f10a490cffe68c8440aba0",
+      "equal": true
+    }
+  ],
+  "sha256sums_mismatches": [],
+  "sha256sums_count": 69
+}

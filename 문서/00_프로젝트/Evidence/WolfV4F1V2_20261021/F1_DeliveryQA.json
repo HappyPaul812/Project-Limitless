@@ -1,0 +1,93 @@
+{
+  "generatedAssets": [
+    {
+      "file": "Art/NorthF1_Ground_Earth_Base_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "ccf2c22e90bee292ecf2d0d030dad53e0032457272ebb94fccdf6491fabcf8b9",
+      "transparentPixelCount": 0,
+      "alphaTouchesCanvasEdge": true
+    },
+    {
+      "file": "Art/NorthF1_Ground_ThinFrost_Base_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "5fcb2da32042a83beb036797d3e9eeb9a5e3cf0016062f88dd66d012fc969b85",
+      "transparentPixelCount": 0,
+      "alphaTouchesCanvasEdge": true
+    },
+    {
+      "file": "Art/NorthF1_EarthToFrost_Transition_Overlay_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "7d11443186fcad691a5830a4a959f3a3d9076b613669b8db26c4fe56a5551aa1",
+      "transparentPixelCount": 38688,
+      "alphaTouchesCanvasEdge": true
+    },
+    {
+      "file": "Art/NorthF1_Path_WornTrail_Overlay_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "e78b41d48707dfce6a79dd4e826f864c5c2608b45a0f457af414ee9768a20175",
+      "transparentPixelCount": 43592,
+      "alphaTouchesCanvasEdge": true
+    },
+    {
+      "file": "Art/NorthF1_Prop_FrostShrub_01_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "6c83c88881e7f89245ed580d50424b2671629ad9491da93f247aab99bfe4746e",
+      "transparentPixelCount": 48539,
+      "alphaTouchesCanvasEdge": false
+    },
+    {
+      "file": "Art/NorthF1_Prop_Waymarker_01_v2.png",
+      "mode": "RGBA",
+      "size": [
+        256,
+        256
+      ],
+      "sha256": "40036738e7da0c25df5c0b69aacba37c3d6e4a681d566fa3a5d30d7caea7431d",
+      "transparentPixelCount": 49710,
+      "alphaTouchesCanvasEdge": false
+    }
+  ],
+  "originalProtected": {
+    "NorthF1_Ground_Earth_Base.png": "dd2f4e125f97702fd4352beb4f600c5ba0bd7a0c9cb00f2922af86988b9ccbe8",
+    "NorthF1_Ground_ThinFrost_Base.png": "fee1e35d61d8bb90ac27b902b81a96310a2f0918d6dd291f138bc927ffa27346",
+    "NorthF1_EarthToFrost_Transition_Overlay.png": "5da0155fb31c0f2684738a642e47af074919a0732967f1f3248b3aafdab427fa",
+    "NorthF1_Path_WornTrail_Overlay.png": "3595a805bc81d365985f60e1e642806f476bec601e3d3866bd0015ba282f56d7",
+    "NorthF1_Prop_FrostShrub_01.png": "508ab9c7eabd5b7fa97b3baa4ce48a252a9a95f429b2d6d4e7c73bad76be860b",
+    "NorthF1_Prop_Waymarker_01.png": "446a3b3121fd0531d25937abad6c8f91fc97e59fce50f67baa7f08c438bb6a47"
+  },
+  "knownLimitations": [
+    "Concept-quality PNGs, not Unity import verified.",
+    "256px is texture source size, NOT a confirmed Unity TileGrid or PPU.",
+    "Transition overlay has directional right-heavy density, not four-way seamless autotile.",
+    "Walkable visual path does not establish a Collider or wheelchair clearance.",
+    "Source art was downsampled from a larger authored image; manual final pixel cleanup can still be needed."
+  ],
+  "EarthSeam": {
+    "leftRightEqual": true,
+    "topBottomEqual": true
+  },
+  "ThinFrostSeam": {
+    "leftRightEqual": true,
+    "topBottomEqual": true
+  }
+}

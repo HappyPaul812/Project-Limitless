@@ -1,0 +1,489 @@
+{
+  "contract": {
+    "content": "# LIMITLESS — 2026-10-21 서릿길 마을 GameArt v3 · Wolf Run6 v4 합동 Codex 델타 검수 계약\n\n기획 docs/planning. 바울 대표 2026-10-21 전달:\n- `F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip`\n- `F:\\Downloads\\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`\n\n이번 대화의 기획 담당은 **사용자 PC F:에 직접 접근하지 못함**. 아래 SHA는 docs/art-new 및 docs/art-renewal의 자체 납품보고 값이며 Codex가 로컬 ZIP readback 확인 전 제품 승인 아님. 두 ZIP을 **한 번에 격리 QA하되 결과는 A/B로 분리**, 서로 다른 아트 브랜치 / 게임 제품 범위를 섞지 말 것.\n\n## A. Main23 Frostway Village GameArt v3\n\n- art-new 정본 `문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md`, GitHub [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45), report ZIP SHA256 **`2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`**, 17,311,281 bytes, **59 entries = 게임 후보 PNG 43 + Preview12 + 메타4**.\n- Sprite43 구성: Tiles 기본4(256×256 RGBA), Transitions2(단방향 포함), Buildings 독립5, Buildings/Modular 지붕·벽·문9, Props14, Signs6, Portal_Inactive3. 기존 v2 콘셉트11 PNG를 다시 포장한 것이 아니라 독립 게임용 후보 PNG43. v2 자체 SHA 불일치: art-new retained ZIP2142fe.. vs Codex 사용자 전달 ZIP19dfad.., **그때 사용자 로컬 ZIP 엔트리 바이트 비교 못해 원인 미확정**; 신규 v3의 실제 F: ZIP SHA부터 우선 확인.\n- **검수1 파일·보존**: ZIP SHA/압축CRC/Manifest JSON/SHA256SUMS/PNG43 RGBA decode/불투명 tile4 규격·개별 Sprite alpha·bbox·외딴픽셀·고립 알파·테두리 침범0·빈 셀0. README나 문서에 43 실제 독립 PNG가 있는지 파일명·역할 대조. 승인 F1 6 PNG/Chapter2 공식 원본 hash 및 기존 village v2 콘셉트11 바이트보호.\n- **검수2 실제 사용성**: 승인 F1 Tile과 새 흙·자갈·돌길·서리 Tile4 및 전환오버레이2의 2×2/3×3 **시각 반복 패턴까지 확인**(엣지 픽셀 일치는 반복무늬 미술 PASS가 아님). 특히 방향지정 오버레이를 4방향 자동타일로 취급하지 말 것. NPC·휠체어 진입에 필요한 타일·길 노출, 건물5+모듈9(지붕·벽·문 정합), 외관 지붕 sorting/문 collider 후보, 소품14 alpha/접지/door blocking, 표지6에서 여관·일반·스킬상점 명확히 식별되는지, 비작동 포탈 돌기단3 **기능·Collider/Spawn/전송0**.\n- **검수3 격리 Unity 시각**: Main23 기술 Preflight branch `codex/chapter3-main23-village-preflight-20261021`의 Scene/PPU/TileGrid/Spawn/Quest·IDs/안전지점 계약을 재활용. 기존 16:9 / 4:3 / 21:9 Offline Preview3와 **실제 격리 Unity GameView(가능하면 3비율)** 구분 표기. 43 PNG만으로 **마을 전역 완성 scene/동선 인증**을 강요하지 말고 격리 구성 가능한 기준 1개 거리 블록 또는 방대한 구조 없이 남문→중앙 서비스 앞→미래 북문/포탈 공터 미니 레이아웃 테스트. 오버랩·알파 프린지·타일 seams·보행/휠체어 Collider 클리어런스·문 앞 접근·서비스 글자/아이콘 가독성 확인. 아트 결함과 구현 계약 미확정 각각 분리.\n- **판정 분리**: `ZIP_IDENTITY_PASS|FAIL`, `PNG43_TECH_PASS|FAIL`, `GAME_ART_READY_PASS|HOLD|FAIL`, `CONCEPT_VISUAL_PASS|HOLD|FAIL`, `ISOLATED_UNITY_TESTED|OFFLINE_ONLY`, `USER_FINAL_ART_APPROVAL_PENDING`. 부족 자산·정확 파일명·좌표/문/건물 접합·비주얼 결함만 보완 요청. 새로운 마을 전체 재작화·Main23 실제 Quest/NPC/SkillStore/Save 구현/본편 game scene 적용은 이번 검수로 허가되지 않음.\n\n## B. Chapter1·2 Wolf Run6 v4\n\n- art-renewal 정본 `문서/00_프로젝트/Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md`, [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43). 신고 ZIP SHA **`3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`**, 3,024,517 bytes, **34 entries**. 6 poses 512×384 RGBA, 6-cell Strip 3072×384, 3×2 Atlas1536×768, 12FPS GIF/APNG·128/40px preview.\n- 변경: Run **00/01/02/03 PNG v3 원본바이트 동일**, Run04 **4,368 pixel** 뒷다리 재구성, Run05 **7,542 pixel** 루프 앞발 가동 변경. 이전 통과 꼬리 Run04 지역 `(x346..485,y88..164)` Pixel identical 유지. KeyArt v5 원본 SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 보호. 현재 Run v3는 **기술·격리Unity12FPS PASS/미술 HOLD**, 아직 승인된 모션 아님.\n- **검수1 파일·보존**: 실제 F: ZIP SHA (이전 v3 배포본 v3 report 171b954d.. vs actual f7eb4122.. 11Byte 불일치 전례 있어 최종 바이너리 동일성 PASS 없이는 승인 불가), CRC/Manifest/PNG6 SHA·strip/atlas Rect, 프레임 00~03 exact byte SHA, 04 꼬리 영역 pixel exact, GIF/APNG 프레임6/총0.5초 LEFT/다른 포즈6/셀 침범·alpha.\n- **검수2 12FPS 실재생**: **새 격리 Unity harness에서 실제 12FPS 애니메이션**, 기존 v3에서 04 뒷다리 어색함, 새 v4 04 뒷다리/관절/발 회전·포즈·가슴·엉덩이 비율, 05 앞발→00 접지/회복, 02→03→04→05 중간 균형, 꼬리 유지, 루프 `05→00` 정지컷과 128px 실제 실크기 재생 비교. 바이트 변경 최소·발 최하단 좌표 3px 일치는 자연스러운 Run 예술 PASS 증거가 아니므로 해부학/지면 고정 여부와 루프 시각을 별도로 평가. 한도 내 동일 테스트 영상/GIF 캡처. Editor Search 예외 1건이 재발하면 별도 환경 이슈로 로그/영상 기록, Wolf 미술 FAIL이라고 오인하지 말 것.\n- **판정 분리**: `ZIP_IDENTITY_PASS|FAIL`, `FILE_TECH_PASS|FAIL`, `UNITY_12FPS_PLAYBACK_PASS|FAIL|NOT_TESTED`, `MOTION_ART_PASS|HOLD|FAIL`, `USER_RUN_FINAL_APPROVAL_PENDING`. **기존 공식 Wolf 펫 Sprite/GUID/Meta/BeastCompanionSystem 교체·main 병합 금지**. 후보 v4가 PASS여도 반드시 바울 대표 모션 최종 승인 별도.\n\n## 공통 실행 원칙/완료 보고\n\n- Codex 별도 `codex/qa-village-v3-wolfrun-v4-20261021` clean worktree 사용. 이미 Main22 격리 Quest **136PASS**, F1 승인 환경 실제 Unity **64PASS**, 서리들쥐 Battle **40PASS** 및 Main23 기술 preflight 결과는 재사용·전수 재시험 없음. Main22 본게임 통합 준비는 완료했으나 실제 원본/main 적용 전에 별도 사용자 승인 필요, 해당 Unity 원본 파일 접근/설정/Save/UserData/Editor/dirty·untracked 보호.\n- 변경 후보 ZIP2 자체는 읽기 전용. 예상 SHA가 실제와 다른 경우, 이전 v2/v3처럼 `WARN: NONIDENTICAL_PACKAGE` + 정확 ZIP 크기/entry metadata와 각 파일 SHA를 따로 기록하고 **사용자 파일 자동 이동·재압축·삭제하지 말 것**. 파일 포맷 자체 정상이나 패키지 동일성 FAIL인 상태에서 '모두 PASS' 주장하지 말 것.\n- 보고: 실제 SHA·파일수/보존 증거, village PNG43 각 주요 TECH/Art/Scene usability 판정, Wolf 프레임 04/05 및 실 12FPS motion/loop 정지화면과 QA, 독립 `PART_A`,`PART_B` **각각** QA PASS/FAIL·HOLD/후속 미술 수정 3개 이내 정확히 표시, branch·commit, `original local changed0`, `main direct Commit/Push/merge0`, 사용자 미술 최종 승인 필요.\n",
+    "encoding": "utf-8",
+    "sha": "9ab1c601ae72f2fc18b4e4ed162cd84115b36594",
+    "display_url": "https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md",
+    "display_title": "20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md"
+  },
+  "comments": [
+    {
+      "comments": [
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6309708408",
+          "body": "2026-10-21 Codex Main23 Village **기술 Preflight 완료(실제 Scene/Quest 생성0)**. Branch `codex/chapter3-main23-village-preflight-20261021`, commit `74bd1de8558244405a2935e5fca96fcc2f0bb307`. Main22 완료 후 해금, 후보 목표5, F1 북쪽→서릿길 남문, 체크포인트·Save/Continue·기존 서비스 재사용 계약. 마을 북문→F2 차단, 동쪽 포탈 공간만 예약·기능 OFF. 예약 ID 20개는 현재 Main22 기존 정의와 충돌 없음(전역 최종 ID 확정 아님). 기존 Main22 136/F1 64/Mouse Battle40 PASS 재사용·전수재QA0. 원본 4,351 파일/Save/UserData/Editor SHA 보존, 원본 씬 수정·Push/main병합0.\n\n**남은 게이트:** 신규아트팀 서릿길 마을 PNG 제작 중(재발주 금지) → 대표 마을 미술 승인 → 실제 Unity 배치·화면·휠체어/Collider/안전저장 QA → 별도 Main23 구현. 추가 발견: 기존 **스킬 장착 정보가 메모리 전용**, 세이브 영구복원이 없어 **Main24 스킬 상점 정식 구현 전 별도 Save/Load schema·migration·6장착 슬롯 회귀 QA 필수**. 정본 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md (`docs/planning` commit `2eda4d81`).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309708408,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 Codex Main23 Village <strong>기술 Preflight 완료(실제 Scene/Quest 생성0)</strong>. Branch <code class=\"notranslate\">codex/chapter3-main23-village-preflight-20261021</code>, commit <code class=\"notranslate\">74bd1de8558244405a2935e5fca96fcc2f0bb307</code>. Main22 완료 후 해금, 후보 목표5, F1 북쪽→서릿길 남문, 체크포인트·Save/Continue·기존 서비스 재사용 계약. 마을 북문→F2 차단, 동쪽 포탈 공간만 예약·기능 OFF. 예약 ID 20개는 현재 Main22 기존 정의와 충돌 없음(전역 최종 ID 확정 아님). 기존 Main22 136/F1 64/Mouse Battle40 PASS 재사용·전수재QA0. 원본 4,351 파일/Save/UserData/Editor SHA 보존, 원본 씬 수정·Push/main병합0.</p>\n<p dir=\"auto\"><strong>남은 게이트:</strong> 신규아트팀 서릿길 마을 PNG 제작 중(재발주 금지) → 대표 마을 미술 승인 → 실제 Unity 배치·화면·휠체어/Collider/안전저장 QA → 별도 Main23 구현. 추가 발견: 기존 <strong>스킬 장착 정보가 메모리 전용</strong>, 세이브 영구복원이 없어 <strong>Main24 스킬 상점 정식 구현 전 별도 Save/Load schema·migration·6장착 슬롯 회귀 QA 필수</strong>. 정본 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Main23_Village_Preflight_Complete_And_SkillPersistence_Gate.md</a> (<code class=\"notranslate\">docs/planning</code> commit <code class=\"notranslate\">2eda4d81</code>).</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6309838241",
+          "body": "[Chapter3 Main23 / 서릿길 마을 아트 / 2026-10-21 / English ZIP 패키징]\n\n사용자가 기존 생성 이미지의 **A: 영문 파일명 ZIP 패키징**을 요청하여 실제 기존 이미지 원본 **11장 바이트 동일 보존** + 16:9/4:3/21:9 레이아웃 미리보기3 + 전체 Asset ContactSheet1 + Manifest 2 + QA JSON + SHA목록을 합쳐 **총19파일** 압축했습니다.\n\n- ZIP: `Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip`\n- SHA256: `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`\n- 실제 바이너리 ZIP은 해당 ChatGPT 대화에서 다운로드로 제공, **GitHub에는 바이너리 미업로드**.\n- QA: 원본11 SHA 바이트 동일, 이미지 디코딩 PASS, 압축파일 CRC PASS.\n- **주의**: 1254px 원본 타일화/1448px 건물·소품 분해/Pixel QA/2×2 seam/Unity PPU/TileGrid/Collider/길접근성 검증은 미실시. 이는 정식 Unity Import 패키지가 아니라 기존 **콘셉트 이미지 재패키징**임. 화면비 3종은 Unity GameView 아닌 offline presentations.\n- `docs/art-new` 문서 기록: https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_FrostwayVillage_Environment_ArtPilot_v2_English_Package_QA_20261021.md\n- commit `b1a0a10d1bb6c5c3767ee971bd59c47d8e055017`, **USER_ART_APPROVAL_PENDING / NOT_UNITY_INTEGRATED**. 기존 F1·몬스터·공식 자산·원본 Unity/Save 미변경. main 미변경·직접 Push/병합 안 함.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309838241,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[Chapter3 Main23 / 서릿길 마을 아트 / 2026-10-21 / English ZIP 패키징]</p>\n<p dir=\"auto\">사용자가 기존 생성 이미지의 <strong>A: 영문 파일명 ZIP 패키징</strong>을 요청하여 실제 기존 이미지 원본 <strong>11장 바이트 동일 보존</strong> + 16:9/4:3/21:9 레이아웃 미리보기3 + 전체 Asset ContactSheet1 + Manifest 2 + QA JSON + SHA목록을 합쳐 <strong>총19파일</strong> 압축했습니다.</p>\n<ul dir=\"auto\">\n<li>ZIP: <code class=\"notranslate\">Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip</code></li>\n<li>SHA256: <code class=\"notranslate\">2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad</code></li>\n<li>실제 바이너리 ZIP은 해당 ChatGPT 대화에서 다운로드로 제공, <strong>GitHub에는 바이너리 미업로드</strong>.</li>\n<li>QA: 원본11 SHA 바이트 동일, 이미지 디코딩 PASS, 압축파일 CRC PASS.</li>\n<li><strong>주의</strong>: 1254px 원본 타일화/1448px 건물·소품 분해/Pixel QA/2×2 seam/Unity PPU/TileGrid/Collider/길접근성 검증은 미실시. 이는 정식 Unity Import 패키지가 아니라 기존 <strong>콘셉트 이미지 재패키징</strong>임. 화면비 3종은 Unity GameView 아닌 offline presentations.</li>\n<li><code class=\"notranslate\">docs/art-new</code> 문서 기록: <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/Chapter3_FrostwayVillage_Environment_ArtPilot_v2_English_Package_QA_20261021.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_FrostwayVillage_Environment_ArtPilot_v2_English_Package_QA_20261021.md</a></li>\n<li>commit <code class=\"notranslate\">b1a0a10d1bb6c5c3767ee971bd59c47d8e055017</code>, <strong>USER_ART_APPROVAL_PENDING / NOT_UNITY_INTEGRATED</strong>. 기존 F1·몬스터·공식 자산·원본 Unity/Save 미변경. main 미변경·직접 Push/병합 안 함.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6309965880",
+          "body": "2026-10-21 바울 대표가 실제 로컬 파일 F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip 접수. docs/art-new 최신 납품: ZIP SHA 2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad, 총19파일(소스 콘셉트 PNG11/오프라인 미리보기4/Meta4). **기존 이미지의 영문 ZIP 재포장**이라 256×256 seamless Tile/독립 건물·문·소품 스프라이트로 게임용 분해되지 않음, PNG 다수1254×1254/건물·소품 콤포지트1448×1086. ZIP CRC 자체 PASS 보고지만 미술승인·Unity GameView·실사용 TileGrid·NPC 통행/Scene Save 검증 없음. 이번 Codex는 SHA/Manifest 실물검사 + 승인 F1과 동배율 오프라인 미술 비교 + Tile/Building/Props/ServiceSigns/InactivePortal의 **실제 게임용 Sprite 분해 가능 여부 및 부족한 역할 목록**만 QA. GameReady 미달이면 원본 source11은 보존하고 art-new가 v3에 개별 PNG 분해/국소미술 보완하도록 문제목록 인계, 통째 새 컨셉 다시 그림 지시 금지. Wolf v3도 같은 Codex 배치로 QA하되 별도 판정. 기획 계약 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md (docs/planning bfff995e), original Unity/Main22/Main23 실구현·main병합 금지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309965880,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표가 실제 로컬 파일 F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip 접수. docs/art-new 최신 납품: ZIP SHA 2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad, 총19파일(소스 콘셉트 PNG11/오프라인 미리보기4/Meta4). <strong>기존 이미지의 영문 ZIP 재포장</strong>이라 256×256 seamless Tile/독립 건물·문·소품 스프라이트로 게임용 분해되지 않음, PNG 다수1254×1254/건물·소품 콤포지트1448×1086. ZIP CRC 자체 PASS 보고지만 미술승인·Unity GameView·실사용 TileGrid·NPC 통행/Scene Save 검증 없음. 이번 Codex는 SHA/Manifest 실물검사 + 승인 F1과 동배율 오프라인 미술 비교 + Tile/Building/Props/ServiceSigns/InactivePortal의 <strong>실제 게임용 Sprite 분해 가능 여부 및 부족한 역할 목록</strong>만 QA. GameReady 미달이면 원본 source11은 보존하고 art-new가 v3에 개별 PNG 분해/국소미술 보완하도록 문제목록 인계, 통째 새 컨셉 다시 그림 지시 금지. Wolf v3도 같은 Codex 배치로 QA하되 별도 판정. 기획 계약 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md</a> (docs/planning <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/bfff995e76297e66d22efa72890ded28597ae34b/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/bfff995e76297e66d22efa72890ded28597ae34b\"><tt>bfff995</tt></a>), original Unity/Main22/Main23 실구현·main병합 금지.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6310492973",
+          "body": "Codex 2026-10-21 QA: Village v2 ZIP/CRC/PNG/Manifest PASS, 콘셉트 HOLD, Game-Ready Sprite 분해 FAIL, Unity GameView 미검증. ZIP 예상 SHA 2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad vs 실제 19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d 불일치. 실제 파일 해시/ZIP 엔트리/PNG SHA를 대조하여 원인 확정 필요. 원본 콘셉트11 유지하고 신규 art-new는 독립 타일·돌길·서리 경계·건물/지붕/문·상점 표식·소품·비작동 포탈 Sprite로 실 PNG 패키지 제작. 21:9 프리뷰에 16:10 들어간 오류도 바로잡고 16:9/4:3/21:9 정확한 화면비, 2×2/3×3 seam QA. 사용자 미술 승인/Unity 적용/PR 병합 전. 기획 정본: https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md commit 296e0ca8.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6310492973,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">Codex 2026-10-21 QA: Village v2 ZIP/CRC/PNG/Manifest PASS, 콘셉트 HOLD, Game-Ready Sprite 분해 FAIL, Unity GameView 미검증. ZIP 예상 SHA 2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad vs 실제 19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d 불일치. 실제 파일 해시/ZIP 엔트리/PNG SHA를 대조하여 원인 확정 필요. 원본 콘셉트11 유지하고 신규 art-new는 독립 타일·돌길·서리 경계·건물/지붕/문·상점 표식·소품·비작동 포탈 Sprite로 실 PNG 패키지 제작. 21:9 프리뷰에 16:10 들어간 오류도 바로잡고 16:9/4:3/21:9 정확한 화면비, 2×2/3×3 seam QA. 사용자 미술 승인/Unity 적용/PR 병합 전. 기획 정본: <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md</a> commit <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/296e0ca8c8207b8119c06b0cf6f8501f71d7977a/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/296e0ca8c8207b8119c06b0cf6f8501f71d7977a\"><tt>296e0ca</tt></a>.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6312625749",
+          "body": "[Chapter3 신규 아트 / Main23 서릿길 마을 v3 실물 ZIP 납품 / 2026-10-21]\n\n**기존 v2 콘셉트11 재포장 방식 중단**. 별도 투명배경 개별 게임 아트 후보 **43 PNG** 제작: Tiles4(256×256 RGBA seamless pixel-edge) + 전환/길 경계2 + Buildings5 + Modular roofs/walls/doors9 + Props14 + Signs6(여관/일반/스킬, 남·북문) + 미래 포탈 **비작동** 석재3. 타일 2×2/3×3 반복8, 16:9/4:3/21:9 오프라인 합성3, 자산 Overview1, Manifest+SHA+QA 메타4 = **ZIP 59항목**.\n\n- 영문 ZIP: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip`\n- **완성 ZIP SHA256 `2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`**, 17,311,281 bytes, CRC PASS. 실제 파일은 해당 ChatGPT 대화 클릭 다운로드 첨부, GitHub에는 문서·SHA만 기록.\n- QA: 43개 독립 자산 PNG RGBA/투명 객체 경계 여백 PASS, 지면 4종 상하좌우 맨자리 pixel match PASS, 2×2/3×3 Repeat QA8 생성, ZIP PNG 디코딩/CRC/SHA 일치 PASS.\n- 화면비 파일은 **1600×900 / 1200×900 / 2100×900** = 16:9/4:3/21:9. 정식 Scene 캡처 **아님**. PPU·Pivot·door/wall 접합/휠체어 접근 3WU/Collider/실제 GameView는 Codex 확인 전 미검증.\n- **v2 SHA 차이**: 아트 담당 작업공간의 v2 ZIP은 기록 SHA `2142fe641...`와 같고 19엔트리 CRC/Manifest 내 15 PNG 해시 모두 일치. Codex가 F:에서 확인한 `19dfad3c...`는 다른 사본이나 해당 F: 사본 바이트가 없어 **정확한 차이 원인은 아직 미확정**. F: ZIP 엔트리별 SHA 비교 요청.\n- [v3 제작·QA 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md), `docs/art-new` commit `b7ddd71895288a077c55fdb3e0a91375ab43f604`; 최신 [후임 인계](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md), commit `ae6f718b663fa356e4463c2ee8a3e642e1a088c8`.\n- **USER_ART_APPROVAL_PENDING / CODEX_MAIN23_UNITY_QA_PENDING / NOT_UNITY_INTEGRATED**. 기존 공식 F1/서리들쥐/하렌 등 승인 자산과 원본 Unity·Save·GUID 불변. `main` 직접 Commit/Push/병합 금지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6312625749,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[Chapter3 신규 아트 / Main23 서릿길 마을 v3 실물 ZIP 납품 / 2026-10-21]</p>\n<p dir=\"auto\"><strong>기존 v2 콘셉트11 재포장 방식 중단</strong>. 별도 투명배경 개별 게임 아트 후보 <strong>43 PNG</strong> 제작: Tiles4(256×256 RGBA seamless pixel-edge) + 전환/길 경계2 + Buildings5 + Modular roofs/walls/doors9 + Props14 + Signs6(여관/일반/스킬, 남·북문) + 미래 포탈 <strong>비작동</strong> 석재3. 타일 2×2/3×3 반복8, 16:9/4:3/21:9 오프라인 합성3, 자산 Overview1, Manifest+SHA+QA 메타4 = <strong>ZIP 59항목</strong>.</p>\n<ul dir=\"auto\">\n<li>영문 ZIP: <code class=\"notranslate\">Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip</code></li>\n<li><strong>완성 ZIP SHA256 <code class=\"notranslate\">2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a</code></strong>, 17,311,281 bytes, CRC PASS. 실제 파일은 해당 ChatGPT 대화 클릭 다운로드 첨부, GitHub에는 문서·SHA만 기록.</li>\n<li>QA: 43개 독립 자산 PNG RGBA/투명 객체 경계 여백 PASS, 지면 4종 상하좌우 맨자리 pixel match PASS, 2×2/3×3 Repeat QA8 생성, ZIP PNG 디코딩/CRC/SHA 일치 PASS.</li>\n<li>화면비 파일은 <strong>1600×900 / 1200×900 / 2100×900</strong> = 16:9/4:3/21:9. 정식 Scene 캡처 <strong>아님</strong>. PPU·Pivot·door/wall 접합/휠체어 접근 3WU/Collider/실제 GameView는 Codex 확인 전 미검증.</li>\n<li><strong>v2 SHA 차이</strong>: 아트 담당 작업공간의 v2 ZIP은 기록 SHA <code class=\"notranslate\">2142fe641...</code>와 같고 19엔트리 CRC/Manifest 내 15 PNG 해시 모두 일치. Codex가 F:에서 확인한 <code class=\"notranslate\">19dfad3c...</code>는 다른 사본이나 해당 F: 사본 바이트가 없어 <strong>정확한 차이 원인은 아직 미확정</strong>. F: ZIP 엔트리별 SHA 비교 요청.</li>\n<li><a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md\">v3 제작·QA 보고</a>, <code class=\"notranslate\">docs/art-new</code> commit <code class=\"notranslate\">b7ddd71895288a077c55fdb3e0a91375ab43f604</code>; 최신 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%8C%80%EC%9A%B4%EC%98%81/%EC%9D%B8%EA%B3%84/SPRITE_ART_LATEST.md\">후임 인계</a>, commit <code class=\"notranslate\">ae6f718b663fa356e4463c2ee8a3e642e1a088c8</code>.</li>\n<li><strong>USER_ART_APPROVAL_PENDING / CODEX_MAIN23_UNITY_QA_PENDING / NOT_UNITY_INTEGRATED</strong>. 기존 공식 F1/서리들쥐/하렌 등 승인 자산과 원본 Unity·Save·GUID 불변. <code class=\"notranslate\">main</code> 직접 Commit/Push/병합 금지.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45#issuecomment-6312706669",
+          "body": "2026-10-21 바울 대표 **신규 실물 ZIP** `F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip` 접수. art-new 보고 SHA `2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`, 17,311,281 bytes/59 entries, **개별 게임용 43PNG**: Tiles4(256RGBA), Transitions2, Building5/Modular9, Props14, Signs6, InactivePortal3, Preview12, meta4. 기존 v2는 컨셉11 PNG 재압축으로 GameReady FAIL였음; v3는 Sprite 실제 분해·alpha/타일 Edge QA 자체 PASS라 이전 실패에 대한 개선. **Codex 독립 ZIP SHA readback 및 Unity 실제 3 GameView·건물 문/지붕 접합·seam 반복감/ServiceSigns·휠체어 경로 QA 아직 대기**. 오프라인 16:9/4:3/21:9 Preview를 Unity GameView라고 주장 금지. v2 ZIP SHA mismatch 해결은 담당 사본2142.. vs Codex 수령19df.. 원인 추가 파일 엔트리 비교 필요, 새v3도 F: byte hash 동일성 확인. 새 Main23 Quest/원본 Unity 적용·main merge 금지. 기획 델타QA 계약 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md (`docs/planning` commit `67a0b159`).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6312706669,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표 <strong>신규 실물 ZIP</strong> <code class=\"notranslate\">F:\\Downloads\\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip</code> 접수. art-new 보고 SHA <code class=\"notranslate\">2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a</code>, 17,311,281 bytes/59 entries, <strong>개별 게임용 43PNG</strong>: Tiles4(256RGBA), Transitions2, Building5/Modular9, Props14, Signs6, InactivePortal3, Preview12, meta4. 기존 v2는 컨셉11 PNG 재압축으로 GameReady FAIL였음; v3는 Sprite 실제 분해·alpha/타일 Edge QA 자체 PASS라 이전 실패에 대한 개선. <strong>Codex 독립 ZIP SHA readback 및 Unity 실제 3 GameView·건물 문/지붕 접합·seam 반복감/ServiceSigns·휠체어 경로 QA 아직 대기</strong>. 오프라인 16:9/4:3/21:9 Preview를 Unity GameView라고 주장 금지. v2 ZIP SHA mismatch 해결은 담당 사본2142.. vs Codex 수령19df.. 원인 추가 파일 엔트리 비교 필요, 새v3도 F: byte hash 동일성 확인. 새 Main23 Quest/원본 Unity 적용·main merge 금지. 기획 델타QA 계약 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md</a> (<code class=\"notranslate\">docs/planning</code> commit <code class=\"notranslate\">67a0b159</code>).</p>"
+        }
+      ],
+      "url": "https://github.com/HappyPaul812/Project-Limitless/issues/45",
+      "title": "HappyPaul812/Project-Limitless Issue #45 comments",
+      "display_url": "https://github.com/HappyPaul812/Project-Limitless/issues/45",
+      "display_title": "HappyPaul812/Project-Limitless Issue #45 comments"
+    },
+    {
+      "comments": [
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6305005450",
+          "body": "[리뉴얼 아트 / Issue #43 / 2026-10-21] 기존 v3 두 PNG 실파일을 과거 납품 Sandbox에서 찾아 **원본 SHA256 2/2 재검증**했습니다. 새 그림을 재제작하지 않았습니다.\n\n- VenomSnake v3 (1254×1254 RGBA / 2,285,408 bytes) SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0`\n- Wolf v3 (952×1306 RGBA / 1,022,752 bytes) SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`\n- 실제 128×128 투명 미리보기 각각 1개, 어둡고 숲색 소형 배경 가독성 테스트, 같은 128px 슬롯 비교 및 Manifest/QA 제작 완료.\n- 납품 ZIP `Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip`: 3,468,949 bytes / 13 entries / SHA256 `a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8`; ZIP testzip CRC / 원본 PNG 바이트 재대조 PASS. 실제 파일은 담당 ChatGPT 답변의 sandbox 다운로드로 제공(사용자 F: 자동저장, GitHub 바이너리 푸시 아님).\n- Chapter2 공식 Monster Sprite 5종은 GitHub 원본 경로/.meta 검사: 모두 314×314px 단일 프레임, PPU314, Pivot 중앙. RAW PNG가 큰 용량으로 이번 컨테이너에 전달되지 않아 **동일 게임월드 배율 정적 비교는 미완료**. 대신 실제 공식 GitHub raw PNG를 외부 URL에서 로드해 128px에 배치하는 HTML 비교 자료(네트워크 필요) 제공. 새 v3 PPU/WorldSize 미확정이므로 HTML은 Unity 동일 Scale PASS가 아닌 개념상 동일 128px 슬롯에 불과합니다.\n- 아트 QA 위험: Snake 원화가 왼쪽 경계 25px 접촉 및 소형 알파 군집 548개, Wolf는 털/발끝 마스크 정리 검토 필요. **USER_ART_APPROVAL_PENDING**, 신규 모션/Run/Bear/Fox 없음.\n- 문서 `docs/art-renewal/문서/00_프로젝트/MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md`, 인계 `WORLD_ART_RENEWAL_LATEST.md`, 브랜치 `docs/art-renewal`. 승인된 Field09 5+B(PR41), 공식 몬스터5, Field10 기존 자산, main/원본 Unity 모두 수정0. Codex는 현재 서리들쥐 Combat Fix v2 작업이므로 **이번에는 Codex에게 새 작업 지시하지 않았습니다**.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6305005450,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[리뉴얼 아트 / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / 2026-10-21] 기존 v3 두 PNG 실파일을 과거 납품 Sandbox에서 찾아 <strong>원본 SHA256 2/2 재검증</strong>했습니다. 새 그림을 재제작하지 않았습니다.</p>\n<ul dir=\"auto\">\n<li>VenomSnake v3 (1254×1254 RGBA / 2,285,408 bytes) SHA256 <code class=\"notranslate\">7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0</code></li>\n<li>Wolf v3 (952×1306 RGBA / 1,022,752 bytes) SHA256 <code class=\"notranslate\">30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e</code></li>\n<li>실제 128×128 투명 미리보기 각각 1개, 어둡고 숲색 소형 배경 가독성 테스트, 같은 128px 슬롯 비교 및 Manifest/QA 제작 완료.</li>\n<li>납품 ZIP <code class=\"notranslate\">Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip</code>: 3,468,949 bytes / 13 entries / SHA256 <code class=\"notranslate\">a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8</code>; ZIP testzip CRC / 원본 PNG 바이트 재대조 PASS. 실제 파일은 담당 ChatGPT 답변의 sandbox 다운로드로 제공(사용자 F: 자동저장, GitHub 바이너리 푸시 아님).</li>\n<li>Chapter2 공식 Monster Sprite 5종은 GitHub 원본 경로/.meta 검사: 모두 314×314px 단일 프레임, PPU314, Pivot 중앙. RAW PNG가 큰 용량으로 이번 컨테이너에 전달되지 않아 <strong>동일 게임월드 배율 정적 비교는 미완료</strong>. 대신 실제 공식 GitHub raw PNG를 외부 URL에서 로드해 128px에 배치하는 HTML 비교 자료(네트워크 필요) 제공. 새 v3 PPU/WorldSize 미확정이므로 HTML은 Unity 동일 Scale PASS가 아닌 개념상 동일 128px 슬롯에 불과합니다.</li>\n<li>아트 QA 위험: Snake 원화가 왼쪽 경계 25px 접촉 및 소형 알파 군집 548개, Wolf는 털/발끝 마스크 정리 검토 필요. <strong>USER_ART_APPROVAL_PENDING</strong>, 신규 모션/Run/Bear/Fox 없음.</li>\n<li>문서 <code class=\"notranslate\">docs/art-renewal/문서/00_프로젝트/MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md</code>, 인계 <code class=\"notranslate\">WORLD_ART_RENEWAL_LATEST.md</code>, 브랜치 <code class=\"notranslate\">docs/art-renewal</code>. 승인된 Field09 5+B(PR41), 공식 몬스터5, Field10 기존 자산, main/원본 Unity 모두 수정0. Codex는 현재 서리들쥐 Combat Fix v2 작업이므로 <strong>이번에는 Codex에게 새 작업 지시하지 않았습니다</strong>.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6305398057",
+          "body": "2026-10-21 바울 대표가 실제 Windows ZIP `F:\\Downloads\\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip` 전달. `docs/art-renewal/문서/00_프로젝트/MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md` 기준 담당 ZIP SHA `a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8` (13항목). 기존 v3 PNG 원본 동일 SHA: Snake `7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0`, Wolf `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`. 오프라인 ZIP·PNG QA PASS 보고. **Snake alpha x=0 경계접촉25px·작은 알파군집548건**, Wolf 털·발 가장자리 matte 가능성. Chapter2 공식몬스터 실제314px PPU314 게임 비교는 **검증되지 않음** (raw 이미지 다운로드 제한). Codex 격리 read-only에서 실 Ch2 공식 PNG와 동일 세계/전투 크기 비교, 각 Snake/Wolf 미술 판정/Alpha 보고만. 게임용 Sheet/펫 Run, 임의 PNG 재생성·코드/Scene 변경 금지. 사용자 최종 미술 승인 대기. 기획 QA 및 내장 아이콘 backlog https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md (commit `7917fa49`).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6305398057,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표가 실제 Windows ZIP <code class=\"notranslate\">F:\\Downloads\\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip</code> 전달. <code class=\"notranslate\">docs/art-renewal/문서/00_프로젝트/MonsterWolf_v3_ActualFile_Review_128px_And_Chapter2_Reference_20261021.md</code> 기준 담당 ZIP SHA <code class=\"notranslate\">a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8</code> (13항목). 기존 v3 PNG 원본 동일 SHA: Snake <code class=\"notranslate\">7001d199b279cb8e541fc603bd62351ab460d3b44da91a2d65dc099f8fd0</code>, Wolf <code class=\"notranslate\">30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e</code>. 오프라인 ZIP·PNG QA PASS 보고. <strong>Snake alpha x=0 경계접촉25px·작은 알파군집548건</strong>, Wolf 털·발 가장자리 matte 가능성. Chapter2 공식몬스터 실제314px PPU314 게임 비교는 <strong>검증되지 않음</strong> (raw 이미지 다운로드 제한). Codex 격리 read-only에서 실 Ch2 공식 PNG와 동일 세계/전투 크기 비교, 각 Snake/Wolf 미술 판정/Alpha 보고만. 게임용 Sheet/펫 Run, 임의 PNG 재생성·코드/Scene 변경 금지. 사용자 최종 미술 승인 대기. 기획 QA 및 내장 아이콘 backlog <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md</a> (commit <code class=\"notranslate\">7917fa49</code>).</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6305728893",
+          "body": "## 2026-10-21 Codex 오프라인 동배율 아트 QA 결과 — 맹독뱀 PASS 권고 / Wolf FAIL\n\n바울 대표 전달 Codex 검수 `codex/art-review-monsterwolf-f1-20261021`, 최종 `5df5f74d7e9070544bb88aa92fbfe991972498cf`. **제출 비교는 오프라인 합성이며 Unity GameView가 아님**. 압축·CRC·PNG decode 및 원본2 PNG SHA 보존 PASS.\n\n- **맹독뱀 v3** 정적 1포즈 시각 **PASS 권고**: 형태/독니 판독 양호, 본체 잘림0. 저알파 외딴 잔여 cleanup 권고와 검증보고 내 Snake SHA 누락 정정 필요. **최종 바울 대표 미술 승인은 아직 없음**. v3 원본 변경/새 뱀 전체 전투 모션 제작 금지.\n- **늑대 v3** 시각 **FAIL**: 가슴 아래 회색 배경 매트 + 뒷다리 배경조각/알파 잔여. `docs/art-renewal`에서 **그 두 결함만 표적 alpha matte 제거**; 늑대의 털·발·가슴 형태/색·크기 재디자인 금지. 기존 v3 원본 바이너리 보존 및 새로운 Wolf MatteFix 파일 별도 납품. 128px 전후 및 실제 alpha 확대한 비교, ZIP CRC/Manifest/SHA 제출. Wolf Run·Bear/Fox 및 Unity 등록 미승인.\n- 품질 검수는 올바른 **후보 심사**일 뿐 user final ART_APPROVED 판정 아님. 원본 Unity/펫 시스템/Save/UserData/Editor/main 원형 보존.\n\n기획 정본 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md (`docs/planning` `a990de8d`), Issue #43 OPEN 유지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6305728893,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<h2 dir=\"auto\">2026-10-21 Codex 오프라인 동배율 아트 QA 결과 — 맹독뱀 PASS 권고 / Wolf FAIL</h2>\n<p dir=\"auto\">바울 대표 전달 Codex 검수 <code class=\"notranslate\">codex/art-review-monsterwolf-f1-20261021</code>, 최종 <code class=\"notranslate\">5df5f74d7e9070544bb88aa92fbfe991972498cf</code>. <strong>제출 비교는 오프라인 합성이며 Unity GameView가 아님</strong>. 압축·CRC·PNG decode 및 원본2 PNG SHA 보존 PASS.</p>\n<ul dir=\"auto\">\n<li><strong>맹독뱀 v3</strong> 정적 1포즈 시각 <strong>PASS 권고</strong>: 형태/독니 판독 양호, 본체 잘림0. 저알파 외딴 잔여 cleanup 권고와 검증보고 내 Snake SHA 누락 정정 필요. <strong>최종 바울 대표 미술 승인은 아직 없음</strong>. v3 원본 변경/새 뱀 전체 전투 모션 제작 금지.</li>\n<li><strong>늑대 v3</strong> 시각 <strong>FAIL</strong>: 가슴 아래 회색 배경 매트 + 뒷다리 배경조각/알파 잔여. <code class=\"notranslate\">docs/art-renewal</code>에서 <strong>그 두 결함만 표적 alpha matte 제거</strong>; 늑대의 털·발·가슴 형태/색·크기 재디자인 금지. 기존 v3 원본 바이너리 보존 및 새로운 Wolf MatteFix 파일 별도 납품. 128px 전후 및 실제 alpha 확대한 비교, ZIP CRC/Manifest/SHA 제출. Wolf Run·Bear/Fox 및 Unity 등록 미승인.</li>\n<li>품질 검수는 올바른 <strong>후보 심사</strong>일 뿐 user final ART_APPROVED 판정 아님. 원본 Unity/펫 시스템/Save/UserData/Editor/main 원형 보존.</li>\n</ul>\n<p dir=\"auto\">기획 정본 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md</a> (<code class=\"notranslate\">docs/planning</code> <code class=\"notranslate\">a990de8d</code>), Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> OPEN 유지.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6306433679",
+          "body": "[리뉴얼 / Issue #43 / Wolf v4 실 PNG 보완 납품] 지난 답변의 새로 그린 늑대 이미지는 **폐기**하고, 기존 Wolf v3 원본 바이트를 입력으로 쓴 **alpha-only 국소 수정**을 실제 PNG/ZIP으로 제작했습니다.\n\n- 기존 Wolf 원본 `Wolf_KeyArt_v3.png` SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e` (952×1306 RGBA) **그대로 보존**.\n- 새 후보 `Wolf_KeyArt_v3_AlphaFix_v4.png` SHA256 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a`. 가슴 아래 회색 배경 매트와 다리 뒤 불필요한 배경 잔여를 지정된 부분만 투명화. alpha 변경12,088픽셀, **RGB 변경0 / 크기 변경0 / 신규 늑대 재디자인0**. 백색/회색 털·발끝에 색상 변형 없음. 동일 원본/후보 확대 및 128px 미리보기, alpha 차이 지도와 각 좌표별 CSV 제출.\n- ZIP 실제 파일 `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip`: **2,466,565 bytes / 14 files / SHA256 `e241535f1c505bf50f4de09317e74dbc3780be722139ff0baa02c908223765c6`**. 표준 ZIP testzip CRC PASS, 내장 PNG SHA/바이트 대조 PASS. 채팅 다운로드 파일이며 GitHub 바이너리나 대표 F:에 자동 복사하지 않음.\n- **맹독뱀 v3 정적 PASS 권고 원본 유지**. Snake SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 재확인, 좌측 알파 접촉 25px/소형 알파 군집548건 기술경고 기록만. 원본 독사 파일 자체 수정0.\n- docs/art-renewal 기록: `문서/00_프로젝트/MonsterWolf_v3_SnakePass_WolfAlphaFix_v4_ActualDelivery_20261021.md`; 최신 인계 `WORLD_ART_RENEWAL_LATEST.md`, 현재 head `8a3519cb7d738b2519bc16f59da79805f5e58bd3`.\n- 이번 v4는 **OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / ACTUAL_UNITY_NOT_TESTED**이며, Codex 현재의 타 전투 QA에 새 작업을 중복 지시하지 않았습니다. Snake 애니메이션/Wolf Run/Bear/Fox, main/원본 Unity/Save/펫 시스템 일절 변경·병합0.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6306433679,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[리뉴얼 / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / Wolf v4 실 PNG 보완 납품] 지난 답변의 새로 그린 늑대 이미지는 <strong>폐기</strong>하고, 기존 Wolf v3 원본 바이트를 입력으로 쓴 <strong>alpha-only 국소 수정</strong>을 실제 PNG/ZIP으로 제작했습니다.</p>\n<ul dir=\"auto\">\n<li>기존 Wolf 원본 <code class=\"notranslate\">Wolf_KeyArt_v3.png</code> SHA256 <code class=\"notranslate\">30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e</code> (952×1306 RGBA) <strong>그대로 보존</strong>.</li>\n<li>새 후보 <code class=\"notranslate\">Wolf_KeyArt_v3_AlphaFix_v4.png</code> SHA256 <code class=\"notranslate\">62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a</code>. 가슴 아래 회색 배경 매트와 다리 뒤 불필요한 배경 잔여를 지정된 부분만 투명화. alpha 변경12,088픽셀, <strong>RGB 변경0 / 크기 변경0 / 신규 늑대 재디자인0</strong>. 백색/회색 털·발끝에 색상 변형 없음. 동일 원본/후보 확대 및 128px 미리보기, alpha 차이 지도와 각 좌표별 CSV 제출.</li>\n<li>ZIP 실제 파일 <code class=\"notranslate\">Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip</code>: <strong>2,466,565 bytes / 14 files / SHA256 <code class=\"notranslate\">e241535f1c505bf50f4de09317e74dbc3780be722139ff0baa02c908223765c6</code></strong>. 표준 ZIP testzip CRC PASS, 내장 PNG SHA/바이트 대조 PASS. 채팅 다운로드 파일이며 GitHub 바이너리나 대표 F:에 자동 복사하지 않음.</li>\n<li><strong>맹독뱀 v3 정적 PASS 권고 원본 유지</strong>. Snake SHA256 <code class=\"notranslate\">7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0</code> 재확인, 좌측 알파 접촉 25px/소형 알파 군집548건 기술경고 기록만. 원본 독사 파일 자체 수정0.</li>\n<li>docs/art-renewal 기록: <code class=\"notranslate\">문서/00_프로젝트/MonsterWolf_v3_SnakePass_WolfAlphaFix_v4_ActualDelivery_20261021.md</code>; 최신 인계 <code class=\"notranslate\">WORLD_ART_RENEWAL_LATEST.md</code>, 현재 head <code class=\"notranslate\">8a3519cb7d738b2519bc16f59da79805f5e58bd3</code>.</li>\n<li>이번 v4는 <strong>OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / ACTUAL_UNITY_NOT_TESTED</strong>이며, Codex 현재의 타 전투 QA에 새 작업을 중복 지시하지 않았습니다. Snake 애니메이션/Wolf Run/Bear/Fox, main/원본 Unity/Save/펫 시스템 일절 변경·병합0.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6306969646",
+          "body": "2026-10-21 Codex 늑대 v4 격리 art QA: **ZIP/PNG 기술 PASS / Wolf 미술 HOLD**. branch `codex/art-review-wolfv4-northf1v2-20261021` commit `2471b1f2`; 오프라인 비교 이미지, Unity GameView 아님. v4 RGB 변화0, alpha 감소12,088px로 과도한 전면재드로잉 없음. 다만 **가슴 위쪽 회색 조각, 다리 주변 미세 배경 잔여, 앞발 밑 바닥 조각** 3곳 남음. docs/art-renewal은 **v3/v4 보존 + Wolf v5 신규 PNG에 해당 3군데 Alpha만 정리** (실제 털·발끝 유지, RGB/색/포즈/크기 불변), 전후 확대·128px/Alpha 변경좌표·CRC/SHA 실물 ZIP 납품. 기존 맹독뱀 v3는 1포즈 Codex PASS권고 유지, 원본 손대지 말고 대표 승인 전 모션 진행X. 기획 정본: https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md, commit `c5f63b30`. 원본 Unity·main 불변.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6306969646,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 Codex 늑대 v4 격리 art QA: <strong>ZIP/PNG 기술 PASS / Wolf 미술 HOLD</strong>. branch <code class=\"notranslate\">codex/art-review-wolfv4-northf1v2-20261021</code> commit <code class=\"notranslate\">2471b1f2</code>; 오프라인 비교 이미지, Unity GameView 아님. v4 RGB 변화0, alpha 감소12,088px로 과도한 전면재드로잉 없음. 다만 <strong>가슴 위쪽 회색 조각, 다리 주변 미세 배경 잔여, 앞발 밑 바닥 조각</strong> 3곳 남음. docs/art-renewal은 <strong>v3/v4 보존 + Wolf v5 신규 PNG에 해당 3군데 Alpha만 정리</strong> (실제 털·발끝 유지, RGB/색/포즈/크기 불변), 전후 확대·128px/Alpha 변경좌표·CRC/SHA 실물 ZIP 납품. 기존 맹독뱀 v3는 1포즈 Codex PASS권고 유지, 원본 손대지 말고 대표 승인 전 모션 진행X. 기획 정본: <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md</a>, commit <code class=\"notranslate\">c5f63b30</code>. 원본 Unity·main 불변.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6307233464",
+          "body": "[리뉴얼 아트 / Issue #43 / Wolf v5 표적 알파 수정 납품 — 2026-10-21]\n\n**Wolf v4 기술 PASS/미술 HOLD**를 반영해 기존 Wolf v4 실 PNG에서 정확히 세 부위(가슴 위쪽 회색 매트/다리 미세 배경잔여/앞발 밑 바닥조각)의 알파만 줄인 **Wolf v5 독립 PNG**를 실제 제작했습니다. 그림 새로 생성/몸·털·발톱 RGB 변경/전체 재디자인 없음.\n\n- 원본 Wolf v3 SHA256 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`, 원본 Wolf v4 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a`: 둘 다 변경 없음, 실제 파일 SHA 대조 PASS.\n- **신규 `Wolf_KeyArt_v3_AlphaFix_v5.png` SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`** / 952×1306 RGBA. v4→v5 정확히 2,174 alpha 감소 픽셀(가슴 900/다리 237/앞발 1037), **RGB 변화0·Alpha 증가0**; 각 변경 좌표/전후 alpha CSV 제출.\n- **실제 ZIP `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip`**: 2,214,467 bytes/13 entries/**SHA256 `920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7`**. PNG1 + Manifest 원본·수정 SHA, 3부위 2배 전후 확대, 128px 동일 슬롯 비교, 변경 좌표 CSV, 파일 QA. `zipfile.testzip()==None`, ZIP 항목 재읽기/PNG Decode/해시 대조 PASS.\n- 이전 Snake v3 Codex PASS 권고 원본 SHA `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` **변경 없음**, 대표 최종 승인 전.\n- 문서: `docs/art-renewal/문서/00_프로젝트/Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md`; 최신 인계 갱신 완료. 실제 ZIP/PNG는 리뉴얼 담당 ChatGPT 대화 파일로 제공, GitHub/사용자 F:에 바이너리 자동 업로드한 것 아님.\n- 현재 상태: **OFFLINE_FILE_QA_PASS / CODEX_V5_VISUAL_DELTA_PENDING / USER_ART_APPROVAL_PENDING**. 3부위만 한정 동일 크기 오프라인/실제 GameView QA 권고(기존 기능 전체 전수 QA 재실행 금지). Wolf Run, Bear/Fox, Snake 모션, Unity 공식 적용, main 직접 Push/병합 모두 금지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6307233464,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[리뉴얼 아트 / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / Wolf v5 표적 알파 수정 납품 — 2026-10-21]</p>\n<p dir=\"auto\"><strong>Wolf v4 기술 PASS/미술 HOLD</strong>를 반영해 기존 Wolf v4 실 PNG에서 정확히 세 부위(가슴 위쪽 회색 매트/다리 미세 배경잔여/앞발 밑 바닥조각)의 알파만 줄인 <strong>Wolf v5 독립 PNG</strong>를 실제 제작했습니다. 그림 새로 생성/몸·털·발톱 RGB 변경/전체 재디자인 없음.</p>\n<ul dir=\"auto\">\n<li>원본 Wolf v3 SHA256 <code class=\"notranslate\">30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e</code>, 원본 Wolf v4 <code class=\"notranslate\">62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a</code>: 둘 다 변경 없음, 실제 파일 SHA 대조 PASS.</li>\n<li><strong>신규 <code class=\"notranslate\">Wolf_KeyArt_v3_AlphaFix_v5.png</code> SHA256 <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code></strong> / 952×1306 RGBA. v4→v5 정확히 2,174 alpha 감소 픽셀(가슴 900/다리 237/앞발 1037), <strong>RGB 변화0·Alpha 증가0</strong>; 각 변경 좌표/전후 alpha CSV 제출.</li>\n<li><strong>실제 ZIP <code class=\"notranslate\">Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip</code></strong>: 2,214,467 bytes/13 entries/<strong>SHA256 <code class=\"notranslate\">920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7</code></strong>. PNG1 + Manifest 원본·수정 SHA, 3부위 2배 전후 확대, 128px 동일 슬롯 비교, 변경 좌표 CSV, 파일 QA. <code class=\"notranslate\">zipfile.testzip()==None</code>, ZIP 항목 재읽기/PNG Decode/해시 대조 PASS.</li>\n<li>이전 Snake v3 Codex PASS 권고 원본 SHA <code class=\"notranslate\">7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0</code> <strong>변경 없음</strong>, 대표 최종 승인 전.</li>\n<li>문서: <code class=\"notranslate\">docs/art-renewal/문서/00_프로젝트/Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md</code>; 최신 인계 갱신 완료. 실제 ZIP/PNG는 리뉴얼 담당 ChatGPT 대화 파일로 제공, GitHub/사용자 F:에 바이너리 자동 업로드한 것 아님.</li>\n<li>현재 상태: <strong>OFFLINE_FILE_QA_PASS / CODEX_V5_VISUAL_DELTA_PENDING / USER_ART_APPROVAL_PENDING</strong>. 3부위만 한정 동일 크기 오프라인/실제 GameView QA 권고(기존 기능 전체 전수 QA 재실행 금지). Wolf Run, Bear/Fox, Snake 모션, Unity 공식 적용, main 직접 Push/병합 모두 금지.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6307797717",
+          "body": "2026-10-21 바울 대표는 검수 비교를 보고 \"보니까 괜찮아.. 승인..\"으로 **Wolf v5 현 1포즈를 최종 미술 승인**. Codex report branch codex/art-review-wolfv5-northf1v3-delta-20261021 QA a6472c51054fdc6933cb065c21a9438d041b1595: **기술 PASS·Codex 미술 HOLD** — 뒷다리 옆 검은 돌기 잔여 (좌표 x150~194 y1125~1174). 검수 HOLD를 PASS로 고치지 않고 USER_ART_APPROVED_AS_IS_WITH_KNOWN_ARTIFACT로 기획 기록. 지금 상태로 승인하셨으므로 Wolf v6 강제 수정·재디자인 금지. 실제 펫 런타임에 보이는 결함일 때만 별도 검토. ZIP SHA 920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7, 신규 PNG Wolf_KeyArt_v3_AlphaFix_v5.png SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1. 기존 v3/v4 원본 보호, RGB 변경 0·알파 감소 2174. **1포즈 승인이지 Wolf Run/BeastCompanionSystem/Unity 실게임 적용 승인 아님**. Snake v3 최종 사용자 승인 대기 유지. 정본 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md (docs/planning c0130e50).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6307797717,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표는 검수 비교를 보고 \"보니까 괜찮아.. 승인..\"으로 <strong>Wolf v5 현 1포즈를 최종 미술 승인</strong>. Codex report branch codex/art-review-wolfv5-northf1v3-delta-20261021 QA a6472c51054fdc6933cb065c21a9438d041b1595: <strong>기술 PASS·Codex 미술 HOLD</strong> — 뒷다리 옆 검은 돌기 잔여 (좌표 x150<del>194 y1125</del>1174). 검수 HOLD를 PASS로 고치지 않고 USER_ART_APPROVED_AS_IS_WITH_KNOWN_ARTIFACT로 기획 기록. 지금 상태로 승인하셨으므로 Wolf v6 강제 수정·재디자인 금지. 실제 펫 런타임에 보이는 결함일 때만 별도 검토. ZIP SHA 920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7, 신규 PNG Wolf_KeyArt_v3_AlphaFix_v5.png SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1. 기존 v3/v4 원본 보호, RGB 변경 0·알파 감소 2174. <strong>1포즈 승인이지 Wolf Run/BeastCompanionSystem/Unity 실게임 적용 승인 아님</strong>. Snake v3 최종 사용자 승인 대기 유지. 정본 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md</a> (docs/planning <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/c0130e5030a04ddb0a904b1fb33097c918d223cb/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/c0130e5030a04ddb0a904b1fb33097c918d223cb\"><tt>c0130e5</tt></a>).</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6308087448",
+          "body": "### 2026-10-21 리뉴얼 담당 다음 작업 발주 — Wolf v5 승인본 기반 고품질 Run 6포즈 아트 파일럿\n\n바울 대표 “리뉴얼도 일 시켜” 요청. **Wolf v5 정적 1포즈는 잔여 검은 돌기 알고 수용하며 최종 미술 승인**, 추가 Wolf v6 보정 강요 금지. 승인 PNG SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`. 리뉴얼 담당 `docs/art-renewal`은 이 KeyArt를 스타일·체형 기준으로 **달리기 Run 6개의 고품질 실제 포즈/투명 PNG와 12FPS 루프/128px 표시/40px 아이콘 미리보기**를 제작. 기존 ScratchIO 게임 런타임 Wolf `384×40`(64×40×6), 12FPS/LEFT/아이콘 Frame4/DisplayScale2는 **참조 계약**이며 그대로 신작을 64×40으로 축소하면 과거 저해상 만화 강아지 문제 재발: high-res Source 6포즈와 candidate Strip 따로 납품하고 Unity 최종 PPU/실세트 Import는 Codex 후속 사전 검증. 이전 Wolf Run v1 미술 반려 시트/ThirdParty 그림을 재색칠·확대 재활용 금지, 승인 Wolf v5 원본 바이트 무변경. Bear/Fox/독사애니/다른 환경/Chapter3 Art는 제작하지 말 것. `main` 직접 Push·병합, 실제 Unity 코드/MonsterDef/Save 변경 금지. 납품 ZIP/6 PNG/ContactSheet/12FPS GIF/APNG/Alpha QA/Manifest SHA CRC·브랜치커밋 보고. **후속 Codex 모션·기술 QA 및 바울 대표 Run 승인은 별도 게이트.**\n\n기획 계약 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md (`docs/planning` commit `d3bf6e4e`).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6308087448,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<h3 dir=\"auto\">2026-10-21 리뉴얼 담당 다음 작업 발주 — Wolf v5 승인본 기반 고품질 Run 6포즈 아트 파일럿</h3>\n<p dir=\"auto\">바울 대표 “리뉴얼도 일 시켜” 요청. <strong>Wolf v5 정적 1포즈는 잔여 검은 돌기 알고 수용하며 최종 미술 승인</strong>, 추가 Wolf v6 보정 강요 금지. 승인 PNG SHA <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code>. 리뉴얼 담당 <code class=\"notranslate\">docs/art-renewal</code>은 이 KeyArt를 스타일·체형 기준으로 <strong>달리기 Run 6개의 고품질 실제 포즈/투명 PNG와 12FPS 루프/128px 표시/40px 아이콘 미리보기</strong>를 제작. 기존 ScratchIO 게임 런타임 Wolf <code class=\"notranslate\">384×40</code>(64×40×6), 12FPS/LEFT/아이콘 Frame4/DisplayScale2는 <strong>참조 계약</strong>이며 그대로 신작을 64×40으로 축소하면 과거 저해상 만화 강아지 문제 재발: high-res Source 6포즈와 candidate Strip 따로 납품하고 Unity 최종 PPU/실세트 Import는 Codex 후속 사전 검증. 이전 Wolf Run v1 미술 반려 시트/ThirdParty 그림을 재색칠·확대 재활용 금지, 승인 Wolf v5 원본 바이트 무변경. Bear/Fox/독사애니/다른 환경/Chapter3 Art는 제작하지 말 것. <code class=\"notranslate\">main</code> 직접 Push·병합, 실제 Unity 코드/MonsterDef/Save 변경 금지. 납품 ZIP/6 PNG/ContactSheet/12FPS GIF/APNG/Alpha QA/Manifest SHA CRC·브랜치커밋 보고. <strong>후속 Codex 모션·기술 QA 및 바울 대표 Run 승인은 별도 게이트.</strong></p>\n<p dir=\"auto\">기획 계약 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md</a> (<code class=\"notranslate\">docs/planning</code> commit <code class=\"notranslate\">d3bf6e4e</code>).</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6308613279",
+          "body": "[리뉴얼 / Issue #43 / 2026-10-21] **Wolf Run6 합성 이미지를 실제 Unity Import 후보 파일로 분리·패키징했습니다.** 처음 전달한 콤포지트 이미지는 그 상태로 Unity Run으로 쓸 수 없음을 확인했으며, 이번에는 독립 프레임 6 PNG(512×384 RGBA 각) + 3072×384 Strip(6 cells) + 3×2 1536×768 Atlas + 12FPS GIF/APNG + 128px/40px 실물 미리보기를 만들었습니다.\n- 실제 ZIP `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtPilot_v2_CANDIDATE.zip`: **2,482,392 bytes**, **29 entries**, SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad`. 현재 아트 담당 ChatGPT sandbox 파일 다운로드 경로에 실제 존재. PNG6/strip/atlas 셀 RGB+Alpha 일치6/6, 프레임 투명 경계/유일 SHA, ZIP testzip CRC/해시 재읽기 PASS.\n- 승인된 정적 `Wolf_KeyArt_v3_AlphaFix_v5.png` SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 변경0.\n- 중요한 **미술 HOLD:** 원본 합성 이미지 내 6포즈가 가까이 붙어 일부 털/꼬리 픽셀이 겹침(4→5/5→6 경계부). 분리해 떨어져 나온 큰 잔여 조각은 제거했지만 실제 올바른 Run 형태, 손발 접지, 05→00 루프·프린지는 별도 시각 QA 후 승인 필요. 이걸 게임에서 바로 사용되는 승인 asset이라고 주장하지 않음. v5를 리깅해 만든 모션도 아님.\n- Codex용 Import 안내는 ZIP `CODEX_IMPORT_QA_KO.md`, GitHub 문서 `docs/art-renewal/문서/00_프로젝트/Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md`. 격리 codex/* 새 GUID만, 12FPS/LEFT, sprites 512×384×6, Max Texture Size4096 또는 atlas 3×2, pivot 후보 (0.5,0.14), PPU/월드크기 미결. 원본 Wolf Run/BeastSystem/Scene/Save/MonsterDefinition/main 교체 금지. 사용자 Run 모션 미술 승인 후 최소 통합 결정.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6308613279,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[리뉴얼 / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / 2026-10-21] <strong>Wolf Run6 합성 이미지를 실제 Unity Import 후보 파일로 분리·패키징했습니다.</strong> 처음 전달한 콤포지트 이미지는 그 상태로 Unity Run으로 쓸 수 없음을 확인했으며, 이번에는 독립 프레임 6 PNG(512×384 RGBA 각) + 3072×384 Strip(6 cells) + 3×2 1536×768 Atlas + 12FPS GIF/APNG + 128px/40px 실물 미리보기를 만들었습니다.</p>\n<ul dir=\"auto\">\n<li>실제 ZIP <code class=\"notranslate\">Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtPilot_v2_CANDIDATE.zip</code>: <strong>2,482,392 bytes</strong>, <strong>29 entries</strong>, SHA256 <code class=\"notranslate\">c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad</code>. 현재 아트 담당 ChatGPT sandbox 파일 다운로드 경로에 실제 존재. PNG6/strip/atlas 셀 RGB+Alpha 일치6/6, 프레임 투명 경계/유일 SHA, ZIP testzip CRC/해시 재읽기 PASS.</li>\n<li>승인된 정적 <code class=\"notranslate\">Wolf_KeyArt_v3_AlphaFix_v5.png</code> SHA256 <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code> 변경0.</li>\n<li>중요한 <strong>미술 HOLD:</strong> 원본 합성 이미지 내 6포즈가 가까이 붙어 일부 털/꼬리 픽셀이 겹침(4→5/5→6 경계부). 분리해 떨어져 나온 큰 잔여 조각은 제거했지만 실제 올바른 Run 형태, 손발 접지, 05→00 루프·프린지는 별도 시각 QA 후 승인 필요. 이걸 게임에서 바로 사용되는 승인 asset이라고 주장하지 않음. v5를 리깅해 만든 모션도 아님.</li>\n<li>Codex용 Import 안내는 ZIP <code class=\"notranslate\">CODEX_IMPORT_QA_KO.md</code>, GitHub 문서 <code class=\"notranslate\">docs/art-renewal/문서/00_프로젝트/Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md</code>. 격리 codex/* 새 GUID만, 12FPS/LEFT, sprites 512×384×6, Max Texture Size4096 또는 atlas 3×2, pivot 후보 (0.5,0.14), PPU/월드크기 미결. 원본 Wolf Run/BeastSystem/Scene/Save/MonsterDefinition/main 교체 금지. 사용자 Run 모션 미술 승인 후 최소 통합 결정.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6309566186",
+          "body": "2026-10-21 Codex Wolf Run6 Candidate 기술 PASS, 미술 FAIL. 검수 브랜치 codex/wolf-run6-candidate-qa-20261021, 커밋 c47d7ba17c6332b28379b7c2ae315ed1ad30ec1e, ZIP SHA c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad. 29파일 CRC/Manifest/PNG/Strip/Atlas/GIF/APNG 정상. 프레임 03·04 꼬리 잘림, 중간 포즈의 몸 비율과 발 접지 연결 문제가 있어 정식 Wolf Run 미술 승인 불가. Unity Import·실시간 런타임 검증 없음. docs/art-renewal에서 승인 v5 단일 원화 SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1 보존하고 03·04 꼬리+프레임 간 비율/접지만 표적 수정하되, composite 추출 원천 문제로 불가능하면 여섯 독립 포즈를 정확하게 재구성. 6프레임/12FPS/05→00 루프, 128px preview·정확 SHA/CRC/Manifest 납품 후 다시 Codex QA/대표 미술승인. 본게임 Unity 적용·Push·main 병합 금지. 기획 정본: 문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md (docs/planning 4f46cb18).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309566186,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 Codex Wolf Run6 Candidate 기술 PASS, 미술 FAIL. 검수 브랜치 codex/wolf-run6-candidate-qa-20261021, 커밋 c47d7ba17c6332b28379b7c2ae315ed1ad30ec1e, ZIP SHA c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad. 29파일 CRC/Manifest/PNG/Strip/Atlas/GIF/APNG 정상. 프레임 03·04 꼬리 잘림, 중간 포즈의 몸 비율과 발 접지 연결 문제가 있어 정식 Wolf Run 미술 승인 불가. Unity Import·실시간 런타임 검증 없음. docs/art-renewal에서 승인 v5 단일 원화 SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1 보존하고 03·04 꼬리+프레임 간 비율/접지만 표적 수정하되, composite 추출 원천 문제로 불가능하면 여섯 독립 포즈를 정확하게 재구성. 6프레임/12FPS/05→00 루프, 128px preview·정확 SHA/CRC/Manifest 납품 후 다시 Codex QA/대표 미술승인. 본게임 Unity 적용·Push·main 병합 금지. 기획 정본: 문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md (docs/planning <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/4f46cb18a453dac45557fa02af92929aa006b7cc/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/4f46cb18a453dac45557fa02af92929aa006b7cc\"><tt>4f46cb1</tt></a>).</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6309929007",
+          "body": "[리뉴얼 / Issue #43 / Wolf Run6 v3 실제 미술 표적재작업 2026-10-21]\n\n기획 정본 `20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md`와 Codex v2 미술 FAIL 결과를 확인한 뒤 실제 PNG 프레임 재작업·ZIP 납품했습니다.\n\n**패키지** `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`: **2,788,020 bytes / 36 ZIP entries / SHA256 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0`**. 채팅 Sandbox에 실제 ZIP 다운로드 파일 존재; 사용자의 F: 자동 복사나 GitHub 바이너리 업로드는 아님.\n- 512×384 RGBA **독립 Run6 PNG** (LEFT), 3072×384 Strip/1536×768 Atlas, GIF/APNG **6프레임/12FPS/0.5초**, 128px·40px 검토 이미지, v2↔v3 동일배율 실제 모션 비교 GIF, 03·04 tail 2x 전후, 프레임별 발·신체비례 추정 QA CSV/JSON, Manifest 모든 파일 SHA 포함.\n- **실제 수정:** v2 00/01/02/05 각각 바이트 동일; 03 잘린 꼬리와 공중 발끝을 Run05 동일 털/발톱 원화의 디테일로 원형 복구; 04 꼬리 잘림을 Run05의 동일 늑대 질감으로 포즈에 맞게 복구. 정적 1장을 6번 이동시켜 모션으로 속이지 않았으며, 기존 v2의 여섯 서로 다른 포즈 중 문제 프레임 두 장을 재작업했습니다. v2 원화 전체 비율/자세가 완전히 합격했다는 의미는 아닙니다.\n- 실제 PNG6 해독6/6, Strip/Atlas 각 셀과 frame 픽셀 동일6/6, 프레임 테두리 3px alpha 누수0, ZIP `testzip()==None` CRC/Manifest SHA 대조 PASS. 발 하한선 y=[322,316,322,281(공중),330,325], 05→00 하한선 차이3px. **실제 게임 미술/모션 최종 PASS는 아직 아님**.\n- 사용자 승인 정적 v5 원본 SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`, 기존 후보 v2 ZIP SHA `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad` 원본 모두 변동0.\n- docs/art-renewal 문서 `문서/00_프로젝트/Wolf_Run6_ApprovedV5_ArtRework_v3_Delivery_20261021.md`, 최신 인계 `WORLD_ART_RENEWAL_LATEST.md`, head `e52869c99b4e9de12443cabcfe7f6e87b098bf90`.\n- **다음 게이트**: Codex 격리 변경분 시각 QA 및 바울 대표 Wolf Run6 모션 미술 승인. v2에서 남았던 신체비율/05→00 루프 판단 미승인이므로 승인 전 공식 Unity/BeastCompanionSystem 교체 금지. Bear/Fox·Snake 애니·Main22/23·main/Unity 원본/Save 작업0.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309929007,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[리뉴얼 / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / Wolf Run6 v3 실제 미술 표적재작업 2026-10-21]</p>\n<p dir=\"auto\">기획 정본 <code class=\"notranslate\">20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md</code>와 Codex v2 미술 FAIL 결과를 확인한 뒤 실제 PNG 프레임 재작업·ZIP 납품했습니다.</p>\n<p dir=\"auto\"><strong>패키지</strong> <code class=\"notranslate\">Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip</code>: <strong>2,788,020 bytes / 36 ZIP entries / SHA256 <code class=\"notranslate\">171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0</code></strong>. 채팅 Sandbox에 실제 ZIP 다운로드 파일 존재; 사용자의 F: 자동 복사나 GitHub 바이너리 업로드는 아님.</p>\n<ul dir=\"auto\">\n<li>512×384 RGBA <strong>독립 Run6 PNG</strong> (LEFT), 3072×384 Strip/1536×768 Atlas, GIF/APNG <strong>6프레임/12FPS/0.5초</strong>, 128px·40px 검토 이미지, v2↔v3 동일배율 실제 모션 비교 GIF, 03·04 tail 2x 전후, 프레임별 발·신체비례 추정 QA CSV/JSON, Manifest 모든 파일 SHA 포함.</li>\n<li><strong>실제 수정:</strong> v2 00/01/02/05 각각 바이트 동일; 03 잘린 꼬리와 공중 발끝을 Run05 동일 털/발톱 원화의 디테일로 원형 복구; 04 꼬리 잘림을 Run05의 동일 늑대 질감으로 포즈에 맞게 복구. 정적 1장을 6번 이동시켜 모션으로 속이지 않았으며, 기존 v2의 여섯 서로 다른 포즈 중 문제 프레임 두 장을 재작업했습니다. v2 원화 전체 비율/자세가 완전히 합격했다는 의미는 아닙니다.</li>\n<li>실제 PNG6 해독6/6, Strip/Atlas 각 셀과 frame 픽셀 동일6/6, 프레임 테두리 3px alpha 누수0, ZIP <code class=\"notranslate\">testzip()==None</code> CRC/Manifest SHA 대조 PASS. 발 하한선 y=[322,316,322,281(공중),330,325], 05→00 하한선 차이3px. <strong>실제 게임 미술/모션 최종 PASS는 아직 아님</strong>.</li>\n<li>사용자 승인 정적 v5 원본 SHA <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code>, 기존 후보 v2 ZIP SHA <code class=\"notranslate\">c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad</code> 원본 모두 변동0.</li>\n<li>docs/art-renewal 문서 <code class=\"notranslate\">문서/00_프로젝트/Wolf_Run6_ApprovedV5_ArtRework_v3_Delivery_20261021.md</code>, 최신 인계 <code class=\"notranslate\">WORLD_ART_RENEWAL_LATEST.md</code>, head <code class=\"notranslate\">e52869c99b4e9de12443cabcfe7f6e87b098bf90</code>.</li>\n<li><strong>다음 게이트</strong>: Codex 격리 변경분 시각 QA 및 바울 대표 Wolf Run6 모션 미술 승인. v2에서 남았던 신체비율/05→00 루프 판단 미승인이므로 승인 전 공식 Unity/BeastCompanionSystem 교체 금지. Bear/Fox·Snake 애니·Main22/23·main/Unity 원본/Save 작업0.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6309966919",
+          "body": "2026-10-21 바울 대표 실제 로컬 파일 F:\\Downloads\\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip 접수. docs/art-renewal 최신 납품: ZIP SHA 171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0, 36파일, 개별 512×384 RGBA 포즈6, 3072×384 strip, 1536×768 atlas, 12FPS GIF/APNG/전후비교. v2 미술 FAIL 결함 프레임03·04 꼬리·발을 표적 수정, 00/01/02/05 원본프레임 바이트 불변, 승인 Wolf v5 SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1 보호. 자체 CRC/Strip/Atlas QA PASS 보고, **Codex 모션 품질/실제 Unity Run 재생/대표 승인 미검증**. 이번 Codex 합동 batch에서 v2→v3 정확 frame03·04 12FPS 움직임/몸길이/발접지·05→00 루프를 최소 Delta 격리QA, Legacy Wolf 기존 참조·GUID·실제 펫런타임 변경0. 전체 포즈가 독립 신규 드로잉은 아니라는 source 이력 유지. 기획 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md (docs/planning bfff995e), 미술 품질 PASS 단정 금지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6309966919,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표 실제 로컬 파일 F:\\Downloads\\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip 접수. docs/art-renewal 최신 납품: ZIP SHA 171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0, 36파일, 개별 512×384 RGBA 포즈6, 3072×384 strip, 1536×768 atlas, 12FPS GIF/APNG/전후비교. v2 미술 FAIL 결함 프레임03·04 꼬리·발을 표적 수정, 00/01/02/05 원본프레임 바이트 불변, 승인 Wolf v5 SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1 보호. 자체 CRC/Strip/Atlas QA PASS 보고, <strong>Codex 모션 품질/실제 Unity Run 재생/대표 승인 미검증</strong>. 이번 Codex 합동 batch에서 v2→v3 정확 frame03·04 12FPS 움직임/몸길이/발접지·05→00 루프를 최소 Delta 격리QA, Legacy Wolf 기존 참조·GUID·실제 펫런타임 변경0. 전체 포즈가 독립 신규 드로잉은 아니라는 source 이력 유지. 기획 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md</a> (docs/planning <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/bfff995e76297e66d22efa72890ded28597ae34b/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/bfff995e76297e66d22efa72890ded28597ae34b\"><tt>bfff995</tt></a>), 미술 품질 PASS 단정 금지.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6310494103",
+          "body": "Codex 2026-10-21 QA: Wolf Run6 v3 ZIP/CRC/PNG PASS, 기존 프레임 00/01/02/05 바이트 동일, 03/04 꼬리 복원 확인, 격리 Unity 12FPS 재생 완료. 모션 미술 HOLD: 04 뒷다리 형태·중간 자세/접지·05→00 루프가 불자연스러움. ZIP 예상 SHA 171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0 vs 실제 f7eb4122b150e351900a4ab7ea82c802809605bd0444be89e36f6bf167dcd008 불일치. 서명된 ZIP 엔트리/PNG SHA 대조하여 원인 보고. art-renewal은 승인 Wolf v5 KeyArt 보존, Run6 중 04 뒷다리·접지·몸길이/루프 문제만 품질 우선 보완해 v4 별도 납품. 다음 Codex 실제 12FPS 변경분 QA+사용자 모션 최종 승인 필요. 기존 펫 런타임/원본 Unity/main 미변경. 기획 정본: https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md commit 296e0ca8.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6310494103,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">Codex 2026-10-21 QA: Wolf Run6 v3 ZIP/CRC/PNG PASS, 기존 프레임 00/01/02/05 바이트 동일, 03/04 꼬리 복원 확인, 격리 Unity 12FPS 재생 완료. 모션 미술 HOLD: 04 뒷다리 형태·중간 자세/접지·05→00 루프가 불자연스러움. ZIP 예상 SHA 171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0 vs 실제 f7eb4122b150e351900a4ab7ea82c802809605bd0444be89e36f6bf167dcd008 불일치. 서명된 ZIP 엔트리/PNG SHA 대조하여 원인 보고. art-renewal은 승인 Wolf v5 KeyArt 보존, Run6 중 04 뒷다리·접지·몸길이/루프 문제만 품질 우선 보완해 v4 별도 납품. 다음 Codex 실제 12FPS 변경분 QA+사용자 모션 최종 승인 필요. 기존 펫 런타임/원본 Unity/main 미변경. 기획 정본: <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md</a> commit <a class=\"commit-link\" data-hovercard-type=\"commit\" data-hovercard-url=\"https://github.com/HappyPaul812/Project-Limitless/commit/296e0ca8c8207b8119c06b0cf6f8501f71d7977a/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/commit/296e0ca8c8207b8119c06b0cf6f8501f71d7977a\"><tt>296e0ca</tt></a>.</p>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6312125157",
+          "body": "[LIMITLESS art-renewal / Issue #43 / 2026-10-21] **Wolf Run6 v4 실제 6프레임 PNG + Strip/Atlas + 12FPS GIF/APNG ZIP 납품**.\n\nCodex 검수 v3는 기술 및 격리 Unity12FPS 재생 PASS / 미술 HOLD. 04 후지 관절과 05→00 전환을 실제 독립 포즈 구성 변경으로 보완했습니다.\n- v3 Frame00·01·02·03 **개별 PNG 원본 바이트 그대로**. 03·04 복원 꼬리 보호(04 Tail 영역 pixel exact). Frame04 뒷발을 같은 늑대 소스 원화의 관절·발톱을 이용해 보다 낮고 자연스러운 접지 자세로 재구성(4,368 변경 픽셀), Frame05 전완을 들고 다음 00으로 넘어가게 관절 포즈 보완(7,542 변경 픽셀). 모두 원본 회화 조각 활용/별도 자세 구성, 6장 단순 XY 이동/색보정 가짜 모션 아님. 다만 신규 전체 6포즈 순수 손그림 원화도 아니며 **최종 모션 미술 PASS 보증 없음**.\n- ZIP **`Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`**, **3,024,517 bytes, 34 entries, SHA256 `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`**. 실제 파일은 리뉴얼 ChatGPT 대화 sandbox 다운로드로 제공, F: 자동 복사 또는 GitHub ZIP 바이너리 업로드는 아님.\n- Assets/Poses 6장 512×384 RGBA 좌향, strip3072×384, 3×2atlas1536×768, 12FPS 0.5초 GIF/APNG, 128/40 미리보기, v3/v4 병렬 동작 GIF, 04 뒷발과 05 굽힌 전지 2배 전후, 05→00 전후, Manifest/QA/프레임 foot-bbox CSV 포함. PNG6 decode·cell pixel 6/6 · ZIP testzip CRC PASS.\n- **v3 SHA mismatch 원인 범위**: Codex 수령 보고 `f7eb4122...f167dcd008`(초기기록상 2,788,009B), 이 세션 현존 최종 v3 ZIP `171b954d...09b87b5e0`(2,788,020B). 같은 파일명이면서 11B 다른 재생성/배포본을 사용한 이력 확인. **Codex 초기 바이너리가 없으므로 원인이 되는 ZIP 엔트리/압축 메타 구체 차이까지는 확정 불가**; 불일치 자체를 임의 PASS로 돌리지 않음. v4 ZIP는 최종 고정 후 바이트/CRC/SHA 검증.\n- 승인 단일 Wolf v5 원본 PNG SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 재대조/무변경. 기존 v2·v3 ZIP, main/Unity/BeastCompanionSystem/Scene/Save 등 무변경.\n- 보고서 `docs/art-renewal/문서/00_프로젝트/Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md`, 인계 `WORLD_ART_RENEWAL_LATEST.md`, 브랜치 `docs/art-renewal` 최신 Commit `775750940ffa16dbc1ddb6a69d920524a783ed19`.\n- **다음은 Codex 격리 v4 변경분 12FPS 실제 GameView 모션 QA와 바울 대표 최종 승인이며**, 본게임 Wolf 펫 교체/메인 병합, Bear·Fox·Snake 애니 제작 금지.",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6312125157,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">[LIMITLESS art-renewal / Issue <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"5951907483\" data-permission-text=\"Title is private\" data-url=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\" data-hovercard-type=\"issue\" data-hovercard-url=\"/HappyPaul812/Project-Limitless/issues/43/hovercard\" href=\"https://github.com/HappyPaul812/Project-Limitless/issues/43\">#43</a> / 2026-10-21] <strong>Wolf Run6 v4 실제 6프레임 PNG + Strip/Atlas + 12FPS GIF/APNG ZIP 납품</strong>.</p>\n<p dir=\"auto\">Codex 검수 v3는 기술 및 격리 Unity12FPS 재생 PASS / 미술 HOLD. 04 후지 관절과 05→00 전환을 실제 독립 포즈 구성 변경으로 보완했습니다.</p>\n<ul dir=\"auto\">\n<li>v3 Frame00·01·02·03 <strong>개별 PNG 원본 바이트 그대로</strong>. 03·04 복원 꼬리 보호(04 Tail 영역 pixel exact). Frame04 뒷발을 같은 늑대 소스 원화의 관절·발톱을 이용해 보다 낮고 자연스러운 접지 자세로 재구성(4,368 변경 픽셀), Frame05 전완을 들고 다음 00으로 넘어가게 관절 포즈 보완(7,542 변경 픽셀). 모두 원본 회화 조각 활용/별도 자세 구성, 6장 단순 XY 이동/색보정 가짜 모션 아님. 다만 신규 전체 6포즈 순수 손그림 원화도 아니며 <strong>최종 모션 미술 PASS 보증 없음</strong>.</li>\n<li>ZIP <strong><code class=\"notranslate\">Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip</code></strong>, <strong>3,024,517 bytes, 34 entries, SHA256 <code class=\"notranslate\">3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412</code></strong>. 실제 파일은 리뉴얼 ChatGPT 대화 sandbox 다운로드로 제공, F: 자동 복사 또는 GitHub ZIP 바이너리 업로드는 아님.</li>\n<li>Assets/Poses 6장 512×384 RGBA 좌향, strip3072×384, 3×2atlas1536×768, 12FPS 0.5초 GIF/APNG, 128/40 미리보기, v3/v4 병렬 동작 GIF, 04 뒷발과 05 굽힌 전지 2배 전후, 05→00 전후, Manifest/QA/프레임 foot-bbox CSV 포함. PNG6 decode·cell pixel 6/6 · ZIP testzip CRC PASS.</li>\n<li><strong>v3 SHA mismatch 원인 범위</strong>: Codex 수령 보고 <code class=\"notranslate\">f7eb4122...f167dcd008</code>(초기기록상 2,788,009B), 이 세션 현존 최종 v3 ZIP <code class=\"notranslate\">171b954d...09b87b5e0</code>(2,788,020B). 같은 파일명이면서 11B 다른 재생성/배포본을 사용한 이력 확인. <strong>Codex 초기 바이너리가 없으므로 원인이 되는 ZIP 엔트리/압축 메타 구체 차이까지는 확정 불가</strong>; 불일치 자체를 임의 PASS로 돌리지 않음. v4 ZIP는 최종 고정 후 바이트/CRC/SHA 검증.</li>\n<li>승인 단일 Wolf v5 원본 PNG SHA <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code> 재대조/무변경. 기존 v2·v3 ZIP, main/Unity/BeastCompanionSystem/Scene/Save 등 무변경.</li>\n<li>보고서 <code class=\"notranslate\">docs/art-renewal/문서/00_프로젝트/Wolf_Run6_ArtRework_v4_RealPNGs_DeltaQA_20261021.md</code>, 인계 <code class=\"notranslate\">WORLD_ART_RENEWAL_LATEST.md</code>, 브랜치 <code class=\"notranslate\">docs/art-renewal</code> 최신 Commit <code class=\"notranslate\">775750940ffa16dbc1ddb6a69d920524a783ed19</code>.</li>\n<li><strong>다음은 Codex 격리 v4 변경분 12FPS 실제 GameView 모션 QA와 바울 대표 최종 승인이며</strong>, 본게임 Wolf 펫 교체/메인 병합, Bear·Fox·Snake 애니 제작 금지.</li>\n</ul>"
+        },
+        {
+          "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43#issuecomment-6312708650",
+          "body": "2026-10-21 바울 대표 신규 실물 `F:\\Downloads\\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip` 접수. art-renewal ZIP 신고 SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412`, 3,024,517bytes/34entries. Run6 LEFT/12fps/6x512×384: **00~03 v3 byte 동일**, 04 뒷다리 재포즈 RGBA4368px 변경 (기존 복원 꼬리 pixel exact), 05 전완·발 루프 재포즈7542px 변경, Strip·Atlas·Preview/Manifest 자체 QA PASS. 기존 v3는 격리 Unity12FPS 기술PASS·미술HOLD. 이번 v4는 **Codex 실제 F: ZIP SHA·코덱스 격리 Unity 12FPS 재생·128px 모션/05→00 루프 QA·바울 대표 최종 Motion 승인 전**. 이미 승인 Wolf v5 KeyArt SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 무변경. v3 ZIP SHA mismatch 11바이트 이력 있으니 v4 사용자 실제 ZIP 그대로 확인; 기존 공식 Wolf 펫/Unity/Save·main 변경금지. 합동 Codex QA 세부계약 https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md (`docs/planning` commit `67a0b159`).",
+          "user": {
+            "login": "HappyPaul812",
+            "name": "HappyPaul812",
+            "email": null,
+            "avatar_url": "https://avatars.githubusercontent.com/u/104484113?v=4",
+            "id": 104484113
+          },
+          "id": 6312708650,
+          "pull_request_review_id": null,
+          "in_reply_to_id": null,
+          "created_at": null,
+          "updated_at": null,
+          "review": null,
+          "side": null,
+          "line": null,
+          "start_line": null,
+          "path": null,
+          "body_html": "<p dir=\"auto\">2026-10-21 바울 대표 신규 실물 <code class=\"notranslate\">F:\\Downloads\\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip</code> 접수. art-renewal ZIP 신고 SHA <code class=\"notranslate\">3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412</code>, 3,024,517bytes/34entries. Run6 LEFT/12fps/6x512×384: <strong>00~03 v3 byte 동일</strong>, 04 뒷다리 재포즈 RGBA4368px 변경 (기존 복원 꼬리 pixel exact), 05 전완·발 루프 재포즈7542px 변경, Strip·Atlas·Preview/Manifest 자체 QA PASS. 기존 v3는 격리 Unity12FPS 기술PASS·미술HOLD. 이번 v4는 <strong>Codex 실제 F: ZIP SHA·코덱스 격리 Unity 12FPS 재생·128px 모션/05→00 루프 QA·바울 대표 최종 Motion 승인 전</strong>. 이미 승인 Wolf v5 KeyArt SHA <code class=\"notranslate\">b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1</code> 무변경. v3 ZIP SHA mismatch 11바이트 이력 있으니 v4 사용자 실제 ZIP 그대로 확인; 기존 공식 Wolf 펫/Unity/Save·main 변경금지. 합동 Codex QA 세부계약 <a href=\"https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md\">https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261021_FrostwayGameArt_v3_WolfRun6_v4_JointCodeX_DeltaQA_Contract.md</a> (<code class=\"notranslate\">docs/planning</code> commit <code class=\"notranslate\">67a0b159</code>).</p>"
+        }
+      ],
+      "url": "https://github.com/HappyPaul812/Project-Limitless/issues/43",
+      "title": "HappyPaul812/Project-Limitless Issue #43 comments",
+      "display_url": "https://github.com/HappyPaul812/Project-Limitless/issues/43",
+      "display_title": "HappyPaul812/Project-Limitless Issue #43 comments"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+PASS|BattleView.RouteFound
+PASS|BattleView.Arrived
+PASS|BattleView.WithinInteractionRadius
+PASS|BattleView.Enter
+PASS|BattleView.Scene
+PASS|BattleView.SingleApprovedMouse
+PASS|BattleView.PartyMax3
+PASS|BattleView.ActualPlayerTurn
+PASS|BattleView.RenderedContent

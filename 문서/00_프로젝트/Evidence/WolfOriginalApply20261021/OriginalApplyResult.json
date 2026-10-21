@@ -1,0 +1,69 @@
+{
+  "status": "ORIGINAL_DISK_APPLIED",
+  "source_commit": "ab1b47ff9d46f4ed5883b85b73e87ca2036c83e6",
+  "baseline_files": 6743,
+  "rows": [
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png",
+      "existed_before": false,
+      "before_sha256": null,
+      "approved_sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c",
+      "readback_sha256": "96f09da273c0e438b37ede80a6673c797b7623ed78b8e6e93de77eddb6aa649c"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png.meta",
+      "existed_before": false,
+      "before_sha256": null,
+      "approved_sha256": "159616b36caf4ca3d28104fc6a85c5b1165347515589194ad008f3e3ab569ec4",
+      "readback_sha256": "159616b36caf4ca3d28104fc6a85c5b1165347515589194ad008f3e3ab569ec4"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+      "existed_before": true,
+      "before_sha256": "da11d54228713336d48e9be6f60bab214e18b5fa35fde3fc1b8559fc29cb9f30",
+      "approved_sha256": "0f88b5fad89f6c10fb83451aa00b914dcefe759a1615a87be148aaee1c988358",
+      "readback_sha256": "0f88b5fad89f6c10fb83451aa00b914dcefe759a1615a87be148aaee1c988358"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs",
+      "existed_before": true,
+      "before_sha256": "60810c04c06b6fd6110baa0fd64ae60aba0b1d414f84f502de6c93db93b677d0",
+      "approved_sha256": "c84884358a73afef8e6f13c67a8721457f94521a5f68aff65a977600754bfe34",
+      "readback_sha256": "c84884358a73afef8e6f13c67a8721457f94521a5f68aff65a977600754bfe34"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+      "existed_before": true,
+      "before_sha256": "69e20e33bf02160a0e833255f8f9ceb246c1829d33797130c405b1cbb8305689",
+      "approved_sha256": "4ef77740a27a171d2ac92d1e13e3a7d7a7147d9314a0910ef2696c3a36066987",
+      "readback_sha256": "4ef77740a27a171d2ac92d1e13e3a7d7a7147d9314a0910ef2696c3a36066987"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/UI/PetFacilityPresenter.cs",
+      "existed_before": true,
+      "before_sha256": "287672ef02294a40b9157c70452d8a4d5536c83fee6e617873feef3582519f2d",
+      "approved_sha256": "f53704395275bb4d74bae8c5f7eaffd682d4624592308eb6e102fcd413900f1b",
+      "readback_sha256": "f53704395275bb4d74bae8c5f7eaffd682d4624592308eb6e102fcd413900f1b"
+    }
+  ],
+  "changed": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleUiIconCatalog.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/PetFacilityPresenter.cs"
+  ],
+  "new": [
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Wolf_Run6_v5.png.meta"
+  ],
+  "unauthorized_changes": [],
+  "root_head_unchanged": true,
+  "root_index_unchanged": true,
+  "backup_directory": "F:\\study\\codex\\Project-Limitless\\Temp\\WolfOriginalApply20261021\\Backup",
+  "reused_runtime_pass": 106,
+  "runtime_repeated": 0,
+  "original_editor_actions": 0,
+  "natural_import": "NOT_VERIFIED",
+  "handplay": "NOT_VERIFIED",
+  "push_pr_merge": 0
+}

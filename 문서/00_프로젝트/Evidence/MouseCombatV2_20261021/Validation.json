@@ -1,0 +1,244 @@
+{
+  "crc": "PASS",
+  "files": {
+    "Attack": {
+      "sha256": "c83e35b5aebbce908b6025d5a071fafc463cfe301763f68806ecddb8bd4f576b",
+      "bboxes": [
+        [
+          22,
+          124,
+          490,
+          490
+        ],
+        [
+          41,
+          154,
+          472,
+          490
+        ],
+        [
+          22,
+          172,
+          491,
+          490
+        ],
+        [
+          19,
+          125,
+          489,
+          490
+        ]
+      ]
+    },
+    "Hit": {
+      "sha256": "695ed7db1f794c3f71df1b058eb5e91f01de7ecb125369264f3624b36c9fd3c2",
+      "bboxes": [
+        [
+          28,
+          153,
+          484,
+          489
+        ],
+        [
+          41,
+          215,
+          471,
+          490
+        ],
+        [
+          43,
+          181,
+          470,
+          490
+        ],
+        [
+          22,
+          124,
+          490,
+          490
+        ]
+      ]
+    },
+    "Defeat": {
+      "sha256": "3f6a52039b766c57a5367c7145e0234b68ac0a552940de1e88ffe8f2404f3395",
+      "bboxes": [
+        [
+          37,
+          162,
+          476,
+          490
+        ],
+        [
+          62,
+          238,
+          450,
+          490
+        ],
+        [
+          58,
+          284,
+          454,
+          490
+        ],
+        [
+          47,
+          312,
+          464,
+          489
+        ]
+      ]
+    }
+  },
+  "attack00_idle00": true,
+  "hit03_idle00": true,
+  "defeat03_alpha_v1": true,
+  "zip_sha256": "518d210a0e5b29c7214ad960c0baa3d23a88d13d4f789b5f7420982ce701bfe3",
+  "zip_entries": 20,
+  "sha_list": "19 entries matched",
+  "cells": [
+    {
+      "motion": "Attack",
+      "index": 0,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        22,
+        124,
+        490,
+        490
+      ]
+    },
+    {
+      "motion": "Attack",
+      "index": 1,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        41,
+        154,
+        472,
+        490
+      ]
+    },
+    {
+      "motion": "Attack",
+      "index": 2,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        22,
+        172,
+        491,
+        490
+      ]
+    },
+    {
+      "motion": "Attack",
+      "index": 3,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        19,
+        125,
+        489,
+        490
+      ]
+    },
+    {
+      "motion": "Hit",
+      "index": 0,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        26,
+        151,
+        486,
+        491
+      ]
+    },
+    {
+      "motion": "Hit",
+      "index": 1,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        41,
+        215,
+        471,
+        490
+      ]
+    },
+    {
+      "motion": "Hit",
+      "index": 2,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        43,
+        181,
+        470,
+        490
+      ]
+    },
+    {
+      "motion": "Hit",
+      "index": 3,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        22,
+        124,
+        490,
+        490
+      ]
+    },
+    {
+      "motion": "Defeat",
+      "index": 0,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        37,
+        162,
+        476,
+        490
+      ]
+    },
+    {
+      "motion": "Defeat",
+      "index": 1,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        60,
+        236,
+        452,
+        491
+      ]
+    },
+    {
+      "motion": "Defeat",
+      "index": 2,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        56,
+        282,
+        456,
+        491
+      ]
+    },
+    {
+      "motion": "Defeat",
+      "index": 3,
+      "nonempty": true,
+      "boundary_clear": true,
+      "alpha_bbox": [
+        45,
+        310,
+        466,
+        491
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_EarthToFrost_Transition_Overlay_v3.png|PPU=128|pivotPixels=(128.00, 128.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_Ground_Earth_Base_v2.png|PPU=128|pivotPixels=(128.00, 128.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_Ground_ThinFrost_Base_v3.png|PPU=128|pivotPixels=(128.00, 128.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_Path_WornTrail_Overlay_v2.png|PPU=128|pivotPixels=(128.00, 128.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_Prop_FrostShrub_01_v2.png|PPU=128|pivotPixels=(128.00, 14.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+IMPORT|Assets/_Project/QA_F1/Art/NorthF1_Prop_Waymarker_01_v3.png|PPU=128|pivotPixels=(128.00, 12.00)|Point/NoMip/Uncompressed/FullRect/Clamp
+EXISTING_VILLAGE_EXIT|Exit_To_Field01|(0.00, -6.50, 0.00)|Field_01|Spawn_From_StarterVillage
+EXISTING_VILLAGE_SPAWN|Spawn_From_Field01|(0.00, -4.65, 0.00)
+EXISTING_VILLAGE_SPAWN|Spawn_Main21_CarriageArrival|(0.00, -4.65, 0.00)
+EXISTING_NORTH_COLLIDER|Boundary_Top_0|Center: (0.00, 6.50, 0.00), Extents: (9.50, 0.25, 0.00)
+EXISTING_MAIN21_NEXT=
+ACTOR|path.vision|Center: (0.00, -9.00, 0.00), Extents: (0.50, 0.50, 0.00)|appearance=appearance.external.v1.vision.guardian.male
+ACTOR|path.mobility|Center: (0.00, -0.68, 0.00), Extents: (0.50, 0.50, 0.00)|appearance=appearance.external.v1.mobility.guardian.male
+GAMEVIEW_RENDER_METHOD|Void RenderPlayModeViewCamerasInternal(UnityEngine.RenderTexture, Int32, UnityEngine.Vector2, Boolean, Boolean)
+GAMEVIEW|requested=(1280, 720)|captured=1280x720|frame=373
+GAMEVIEW_RENDER_METHOD|Void RenderPlayModeViewCamerasInternal(UnityEngine.RenderTexture, Int32, UnityEngine.Vector2, Boolean, Boolean)
+GAMEVIEW|requested=(960, 720)|captured=960x720|frame=442
+GAMEVIEW_RENDER_METHOD|Void RenderPlayModeViewCamerasInternal(UnityEngine.RenderTexture, Int32, UnityEngine.Vector2, Boolean, Boolean)
+GAMEVIEW|requested=(1680, 720)|captured=1680x720|frame=510

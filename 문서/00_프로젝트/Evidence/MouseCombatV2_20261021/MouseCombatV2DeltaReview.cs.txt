@@ -1,0 +1,100 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.U2D.Sprites;
+using ProjectLimitless.Monster;
+
+namespace ProjectLimitless.EditorTools
+{
+    /// <summary>원본 게임과 분리된 Batch Client에서 신규 전투 Strip만 검수하는 일회성 하네스입니다.</summary>
+    [InitializeOnLoad] public static class MouseCombatV2DeltaReview
+    {
+        const string Armed="MouseCombatV2Review20261021";
+        const string Assets="Assets/_Project/QA/MouseCombatV2/";
+        static string Root=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../MouseCombatV2Review20261021/Runtime"));
+        static List<string> checks=new List<string>(),errors=new List<string>(),trace=new List<string>();
+        static IEnumerator routine;static double deadline;static MonsterSpriteSheetAnimation player;
+        static GameObject canvas;static Image mirrored,reference128;static Text state;static string phase="Setup",last="";
+        static Dictionary<string,Sprite[]> frames=new Dictionary<string,Sprite[]>();
+        static MouseCombatV2DeltaReview(){EditorApplication.playModeStateChanged+=s=>{
+            if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Armed,false))return;
+            Application.runInBackground=true;AudioListener.volume=0;Application.targetFrameRate=60;QualitySettings.vSyncCount=0;
+            Application.logMessageReceived+=(t,st,k)=>{if(k==LogType.Error||k==LogType.Exception)errors.Add(t+"\n"+st);};
+            routine=Flatten(Run());deadline=EditorApplication.timeSinceStartup+150;EditorApplication.update+=Tick;
+        };}
+        static void Check(bool ok,string text){checks.Add((ok?"PASS|":"FAIL|")+text);File.WriteAllLines(Path.Combine(Root,"checks.txt"),checks);if(!ok)throw new Exception(text);}
+        public static void Start(){
+            if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/Field05Review20261019/Client/Assets"))throw new Exception("격리 Batch 경로만 허용");
+            Directory.CreateDirectory(Root);File.WriteAllText(Path.Combine(Root,"status.txt"),"RUNNING");
+            foreach(var m in new[]{"Idle","Attack","Hit","Defeat"})Import(Assets+"FrostFieldMouse_A_"+m+"_4Frames.png",m);
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Armed,true);EditorApplication.EnterPlaymode();
+        }
+        static void Import(string path,string motion){
+            AssetDatabase.ImportAsset(path,ImportAssetOptions.ForceSynchronousImport);
+            var im=(TextureImporter)AssetImporter.GetAtPath(path);im.textureType=TextureImporterType.Sprite;im.spriteImportMode=SpriteImportMode.Multiple;im.spritePixelsPerUnit=512;im.maxTextureSize=2048;im.filterMode=FilterMode.Point;im.mipmapEnabled=false;im.textureCompression=TextureImporterCompression.Uncompressed;im.wrapMode=TextureWrapMode.Clamp;im.npotScale=TextureImporterNPOTScale.None;im.alphaIsTransparency=true;im.sRGBTexture=true;
+            var settings=new TextureImporterSettings();im.ReadTextureSettings(settings);settings.spriteMeshType=SpriteMeshType.FullRect;settings.spriteAlignment=(int)SpriteAlignment.BottomCenter;settings.spritePivot=new Vector2(.5f,0);im.SetTextureSettings(settings);im.SaveAndReimport();
+            var factory=new SpriteDataProviderFactories();factory.Init();var p=factory.GetSpriteEditorDataProviderFromObject(im);p.InitSpriteEditorDataProvider();
+            var ec=p.GetDataProvider<ISpriteFrameEditCapability>();if(ec==null)throw new Exception("분할 권한 없음");
+            foreach(var flag in new[]{EEditCapability.CreateAndDeleteSprite,EEditCapability.EditSpriteName,EEditCapability.EditSpriteRect,EEditCapability.EditPivot})if(!ec.GetEditCapability().HasCapability(flag))throw new Exception("미지원 Sprite 권한: "+flag);
+            var rects=Enumerable.Range(0,4).Select(i=>new SpriteRect{name="FrostFieldMouse_A_"+motion+"_"+i.ToString("00"),rect=new Rect(i*512,0,512,512),alignment=SpriteAlignment.BottomCenter,pivot=new Vector2(.5f,0),spriteID=GUID.Generate()}).ToArray();
+            p.SetSpriteRects(rects);var names=p.GetDataProvider<ISpriteNameFileIdDataProvider>();if(names!=null)names.SetNameFileIdPairs(rects.Select(x=>new SpriteNameFileIdPair(x.name,x.spriteID)));p.Apply();im.SaveAndReimport();
+        }
+        static IEnumerator Wait(float seconds){float end=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<end)yield return null;}
+        static Image Picture(string name,Sprite sp,float x,float y,Vector2 size){var go=new GameObject(name,typeof(RectTransform),typeof(CanvasRenderer),typeof(Image));go.transform.SetParent(canvas.transform,false);var im=go.GetComponent<Image>();im.sprite=sp;im.preserveAspect=true;im.color=Color.white;var t=im.rectTransform;t.anchorMin=t.anchorMax=new Vector2(0,1);t.pivot=new Vector2(.5f,.5f);t.anchoredPosition=new Vector2(x,-y);t.sizeDelta=size;return im;}
+        static Text Label(string text,float x,float y,int size=18){var go=new GameObject("Label",typeof(RectTransform),typeof(CanvasRenderer),typeof(Text));go.transform.SetParent(canvas.transform,false);var t=go.GetComponent<RectTransform>();t.anchorMin=t.anchorMax=new Vector2(0,1);t.pivot=new Vector2(.5f,.5f);t.anchoredPosition=new Vector2(x,-y);t.sizeDelta=new Vector2(390,42);var label=go.GetComponent<Text>();label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.fontSize=size;label.alignment=TextAnchor.MiddleCenter;label.color=Color.white;label.text=text;return label;}
+        static IEnumerator Capture(string name){ScreenCapture.CaptureScreenshot(Path.Combine(Root,name+".png"));yield return Wait(.025f);}
+        static IEnumerator Run(){
+            PlayModeWindow.SetCustomRenderingResolution(1280,720,"Mouse combat QA background");yield return Wait(.5f);
+            var cam=new GameObject("QA Camera",typeof(Camera)).GetComponent<Camera>();cam.clearFlags=CameraClearFlags.SolidColor;cam.backgroundColor=new Color(.12f,.14f,.17f);cam.orthographic=true;
+            canvas=new GameObject("QA Canvas",typeof(Canvas),typeof(CanvasScaler));canvas.GetComponent<Canvas>().renderMode=RenderMode.ScreenSpaceOverlay;var scaler=canvas.GetComponent<CanvasScaler>();scaler.uiScaleMode=CanvasScaler.ScaleMode.ScaleWithScreenSize;scaler.referenceResolution=new Vector2(1280,720);scaler.matchWidthOrHeight=.5f;
+            foreach(string m in new[]{"Idle","Attack","Hit","Defeat"}){
+                frames[m]=AssetDatabase.LoadAllAssetsAtPath(Assets+"FrostFieldMouse_A_"+m+"_4Frames.png").OfType<Sprite>().OrderBy(s=>s.name).ToArray();
+
+            }
+            // 기존 Definition을 만들지 않고 검수 전용 메모리 데이터에 배열을 전달합니다。
+            var def=ScriptableObject.CreateInstance<MonsterDefinition>();var so=new SerializedObject(def);
+            foreach(var pair in new[]{("Idle","explicitIdleFrames"),("Attack","explicitAttackFrames"),("Hit","explicitHitFrames"),("Defeat","explicitDefeatFrames")}){var arr=so.FindProperty(pair.Item2);arr.arraySize=4;for(int i=0;i<4;i++)arr.GetArrayElementAtIndex(i).objectReferenceValue=frames[pair.Item1][i];}
+            so.FindProperty("animationFramesPerSecond").floatValue=8;so.FindProperty("visualScale").floatValue=1;so.FindProperty("sourceFacesRight").boolValue=true;so.ApplyModifiedPropertiesWithoutUndo();Check(def.AnimationFramesPerSecond==8,"Definition.8FPS");
+            Picture("Approved Idle00",frames["Idle"][0],200,230,new Vector2(136,112));Label("Approved Idle00 / cell112px",200,125);
+            var im=Picture("Animation",frames["Idle"][0],500,230,new Vector2(136,112));player=im.gameObject.AddComponent<MonsterSpriteSheetAnimation>();player.Configure(im,def);Label("Runtime / cell112px",500,125);
+            mirrored=Picture("Mirrored",frames["Idle"][0],800,230,new Vector2(136,112));mirrored.rectTransform.localScale=new Vector3(-1,1,1);Label("X mirror / cell112px",800,125);
+            reference128=Picture("128px",frames["Idle"][0],1100,230,new Vector2(128,128));Label("Runtime / cell128px",1100,125);
+            int j=0;foreach(var m in new[]{"Idle","Attack","Hit","Defeat"}){int i=m=="Attack"?2:m=="Hit"?1:m=="Defeat"?3:0;Picture("Static"+m,frames[m][i],200+j*300,480,new Vector2(136,112));Label(m+" "+i.ToString("00"),200+j*300,390);j++;}
+            state=Label("Idle",640,55,22);Label("Isolated QA Canvas / current battle UI rect136x112 / Scale1",640,650);
+            var world=new GameObject("QA World size",typeof(SpriteRenderer));world.transform.position=new Vector3(100,100);world.GetComponent<SpriteRenderer>().sprite=frames["Idle"][0];
+            var anchor=im.rectTransform.anchoredPosition;var scale=im.rectTransform.localScale;
+            phase="Idle";yield return Wait(.6f);Check(Screen.width==1280&&Screen.height==720,"GameView.1280x720");yield return Capture("Before_Idle");
+            foreach(var m in new[]{"Attack","Hit","Defeat"}){
+                phase=m;last="";float start=Time.realtimeSinceStartup;
+                if(m=="Attack")player.PlayAttack();else if(m=="Hit")player.PlayHit();else player.PlayDefeat();
+                for(int i=0;i<4;i++){
+                    var wanted=frames[m][i];float until=Time.realtimeSinceStartup+1;
+                    while(player.CurrentFrame!=wanted&&Time.realtimeSinceStartup<until)yield return null;
+                    Check(player.CurrentFrame==wanted,m+".Frame"+i.ToString("00"));state.text=m+" "+i.ToString("00")+" / 8 FPS";yield return Capture(m+"_Frame"+i);
+                }
+                if(m!="Defeat"){
+                    float until=Time.realtimeSinceStartup+1;while(!frames["Idle"].Contains(player.CurrentFrame)&&Time.realtimeSinceStartup<until)yield return null;
+                    float elapsed=Time.realtimeSinceStartup-start;Check(frames["Idle"].Contains(player.CurrentFrame),m+".ReturnIdle");Check(Mathf.Abs(elapsed-.5f)<.07f,m+".DurationApproximatelyHalfSecond="+elapsed.ToString("F5",CultureInfo.InvariantCulture));state.text=m+" -> Idle";yield return Capture(m+"_ReturnedIdle");yield return Wait(.55f);
+                }else{yield return Wait(1.25f);Check(player.CurrentFrame==frames[m][3],"Defeat.Hold03Over1Second");state.text="Defeat03 held >1 second";yield return Capture("Defeat_Hold03");}
+                Check(im.rectTransform.anchoredPosition==anchor&&im.rectTransform.localScale==scale,m+".UIRootUnchanged");
+
+            }
+
+            File.WriteAllLines(Path.Combine(Root,"FrameTrace.tsv"),trace);File.WriteAllLines(Path.Combine(Root,"errors.txt"),errors);
+            Check(errors.All(e=>e.Contains("UnityEditor.Search")||e.Contains("Host type is not matching")),"Console.NewProductErrors0");File.WriteAllText(Path.Combine(Root,"status.txt"),"RUNTIME_PASS_VISUAL_REVIEW_SEPARATE");
+        }
+        static IEnumerator Flatten(IEnumerator r){var stack=new Stack<IEnumerator>();stack.Push(r);while(stack.Count>0){var it=stack.Peek();if(!it.MoveNext()){stack.Pop();continue;}if(it.Current is IEnumerator sub){stack.Push(sub);continue;}yield return it.Current;}}
+        static void Tick(){try{
+            if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("Combat QA timeout");
+            if(player!=null&&player.CurrentFrame!=null){string name=player.CurrentFrame.name;mirrored.sprite=reference128.sprite=player.CurrentFrame;if(name!=last){trace.Add(phase+"\t"+Time.realtimeSinceStartup.ToString("F5",CultureInfo.InvariantCulture)+"\t"+name);last=name;}}
+            if(routine.MoveNext())return;EditorApplication.update-=Tick;SessionState.SetBool(Armed,false);EditorApplication.Exit(0);
+        }catch(Exception e){File.WriteAllText(Path.Combine(Root,"failure.txt"),e.ToString());File.WriteAllText(Path.Combine(Root,"status.txt"),"FAIL");EditorApplication.Exit(1);}}
+    }
+}
