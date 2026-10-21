@@ -1,3 +1,15 @@
+# PLANNING 최종 2026-10-21 EOD — 바울 대표 “오늘 한 작업들 다 합치고 로컬 동기화” 승인 / Codex 실행 요청 생성
+
+- 바울 대표 지시: **“오늘은 여기까지 하자. 오늘 한 작업들 다 합치고 로컬 동기화도 해줘.”** 2026-10-21 선별 통합·로컬 원본 안전 동기화 **사용자 승인**.
+- 안전 실행 문서: `문서/00_프로젝트/LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md` (**`docs/planning`**; 최근 정정 commit `6bf153a3f75ac5ad657b0d80c5db89ede820157f`). **Codex 실행 이슈 [#47](https://github.com/HappyPaul812/Project-Limitless/issues/47)**.
+- 기획 GitHub 점검 출발점 remote `main` **`e4e9891f6f01ea95cada9e63b1f09946d94d6041`**, 열린 PR **0**; Codex 실제 실행 전 반드시 재조회. 이 대화 세션은 사용자 `F:\study\codex\Project-Limitless` 로컬을 직접 조작하거나 작업 실행을 시작할 수 없다.
+- **통합 대상**: (A) Wolf Run6 v5 사용자 승인 및 로컬 제품6파일 SHA6/6 적용 완료·기존 격리106PASS → GitHub PR/main 및 **중복 원본 재복사 없이** safe sync; (B) Main22 F1/서리들쥐 첫 플레이 QA136/64/40 PASS 기반 **실파일 충돌/구Save/ID 보호 게이트를 통과하는 최소 범위에 한해서** 제품PR 후보. 정식 대사·TTS/보상·경험치/경제는 PROTOTYPE으로 명시. 안전충돌 시 Main22만 보류, Wolf+문서 마감 이어감; (C) 기획/리뉴얼/신규아트/TTS/BGM 등 승인 상태를 보존하며 날짜/파일별 선별 문서·HISTORY 통합.
+- **통합 제외**: 서릿길 마을 v5 흙·서리·자갈 타일3 `ART_HOLD`·OPEN16 해결0, Main23 실제씬·Quest 미구현, Main24 스킬장착 영속 Save #46 미구현, 신규 미청취 TTS 재캐스팅 READY64/152, 미완 BGM/SFX/영상·기존 불합격 ZIP, 과거 중복 병합.
+- **원본 보호**: Save/UserData/Editor Settings·기존 10/20 사용자 dirty308/untracked548/stage0 (오늘 실측 수치 아님), 새 `Temp/EOD20261021` 안전 SHA백업, 원본 에디터/포커스/Play 무조작, reset/clean/force/stash 위험 명령 금지. separate `codex/eod-integration-20261021` 브랜치/PR→승인범위 main 머지→3자 SHA 실검증 때만 `SYNC_COMPLETE` 선언. 예상치로 완료 보고 금지.
+- **실제 작업 현황**: GitHub 기획 마감 계약·Issue 작성까지 확인. **원격 제품 병합·사용자 원본 main 동기화는 아직 Codex가 실행/완료한 증거 없음**. 후임은 Issue #47의 실제 결과/PR·SHA·LocalSyncProof 확인 전까지 `PENDING_CODEX_EXECUTION`을 유지.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Wolf Run6 v5 원본 적용, Village v5 기술PASS·타일3 HOLD
 
 **자료:** 바울 대표가 Codex 작업완료 캡처를 전달. 아래 결과는 Codex의 사용자 로컬 PC 검사 보고이며 이 기획 세션의 직접 Unity/Windows 검증이 아니다.
