@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 Wolf v5 현 상태와 NorthF1 v3 6종 최종 미술 승인
+
+바울 대표가 Codex 2026-10-21 Delta QA 화면을 보고 **“보니까 괜찮아.. 승인..”** 답변. **두 ZIP 모두 사용자 미술 승인**으로 잠금. 근거 Codex branch codex/art-review-wolfv5-northf1v3-delta-20261021, QA commit a6472c51054fdc6933cb065c21a9438d041b1595. ZIP/PNG 기술 PASS, 기존 전수QA 반복X, 비교는 오프라인 합성(실제 Unity GameView 아님), 원본 Save/UserData/Editor/4,351파일 보호, 공식 Unity 적용/Push/main병합0.
+**Wolf v5 단일 1포즈**: 검수자는 기술PASS·미술HOLD(뒷다리 옆 검은 돌기 x150~194/y1125~1174)를 유지했으나 **사용자가 그 결함을 직접 보고 현 상태를 승인**함. **CODEX_ART_HOLD + USER_ART_APPROVED_AS_IS_WITH_KNOWN_ARTIFACT**라고 정확 기록하고 강제 Wolf v6 재수정 요구 금지. ZIP SHA 920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7, Wolf v5 PNG SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1, v3/v4 보존, RGB 변경0/Alpha 감소2,174. 이 승인은 실제 Wolf Run 애니메이션/펫 시스템 변경 허가가 아니며 정본시트 기술계약 별도. 맹독뱀 v3 CODEx static PASS 권고, 대표 최종 승인 미완.
+**NorthF1 v3**: Codex 기술 PASS, 미술 **6/6 PASS**(v2 흙/길/관목 3 SHA 그대로, v3 얇은서리/전환/길표지 3 PASS), 바울 대표 최종 미술 승인. ZIP SHA 488a65c051d1d017787771e0169124e47437b472911caa9949fdd59e55079054; 6 PNG 개별 SHA는 승인정본 참조. **F1은 미술완성이나 Unity 원본 실 Import/실제 GameView/PPU/TileGrid/Collider/휠체어 물리 통행/Main22 진입·퀘스트는 미검증**. 다음 Codex는 기존 #35 사전 기술조사 재사용하여 **독립 격리 Unity F1 환경 게임화 기술 계약 및 실제 GameView** 먼저 확인, 새 전체 Main22 런타임 구현/원본 main 직접 변경 없이 보고. 서리들쥐 Battle40PASS 재QA/중복 구현 금지.
+기획 승인 정본 문서/00_프로젝트/20261021_Wolfv5_And_NorthF1v3_UserArtApproval_NextImplementationGate.md (docs/planning commit c0130e5030a04ddb0a904b1fb33097c918d223cb). GitHub Issue #43 Wolf 및 Issue #30 F1 사용자 승인 댓글 작성. F1은 이제 Main22 첫 플레이 기술 잠금 1순위, 설빙의 폭군 전투 후순위, 아이콘·잡템·소모템 내부자산 대장 유지.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 Wolf v4 HOLD / NorthF1 v2 부분 PASS: 수정 1+3종만
 
 바울 대표 Codex QA 보고: branch codex/art-review-wolfv4-northf1v2-20261021, 최종 2471b1f2e98413dfaf0a705fc63cfdd7c8688fb5. 두 ZIP 기술 PASS, 원본 Wolf v3 + F1 원본6/승인 후보 SHA 보존, 비교는 오프라인 합성(실 Unity GameView 아님). 원본 4351파일/Git/Editor/Save 보호, Art/Unity 구현/Push/main 병합 없음.
