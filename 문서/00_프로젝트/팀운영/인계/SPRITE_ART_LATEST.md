@@ -111,3 +111,12 @@
 - 제작·원본 SHA·검증·한계 문서 [Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md](../../Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md), 커밋 **`929eff1f668cbcbea1fdd97475aef75741a10bfd`**.
 - **승인/기술 게이트:** 대표가 초기 서리 밀도/흙 질감/전환부 시안을 검토해 준 뒤 좁고 불명확한 길의 **최소 수정** 범위를 확정; Codex의 진짜 F1 PPU/Pivot/TileGrid/Collider와 휠체어 통로 조사 및 실제 Unity F1 구현/Play Mode는 이후 단계. 이번에는 2×2 Seam·PNG RGBA·ZIP CRC 등 오프라인 QA만. `main`/Unity/Save/GUID/Monster 승인원본 및 다른 담당 Chapter1·2 리뉴얼 수정0.
 - 새 세션 재개 시 가장 먼저 Issue #30 및 `docs/planning/문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md`를 다시 읽고 F1 3종 후보 미술 의견 확인할 것. 설빙의 폭군 전투 애니메이션 선행 제작 금지.
+
+## 2026-10-21 F1 환경 미술 HOLD — 신규 6종 개선 v2 실물 납품
+
+- [Issue #30](https://github.com/HappyPaul812/Project-Limitless/issues/30) 및 최신 기획/코덱스 F1 미술 HOLD에 대응. F1 **흙/얇은 서리/단방향 전환/흙길/서리 관목/길 표지판** 각각 신규 후보 1종씩 **256×256 RGBA PNG6** 제작. 이전 F1 원본6 바이트 유지, 기존 지면 시안3 별도 보존. Main22 우선, 마을·F2~F5·설빙의 폭군·신규 전투 아트 제작 안 함.
+- 실물 ZIP: `Limitless_Chapter3_NorthF1_Environment_6_ArtImprovement_v2.zip`, **SHA256 `8158f501763b525022b8b9fc1645fe2b0a5c0bc8bf9f73aabcb02024c3a3235c`**, 3,897,421 bytes, 내부23파일 (후보6·원본6·Preview4·반복QA4·JSON1·Manifest1·SHA목록1). ChatGPT 대화 다운로드 첨부; GitHub에는 **PNG/ZIP 바이너리를 올리지 않음**.
+- **QA 오프라인 PASS**: 파일 디코딩/규격6, 원본6 바이트 SHA 일치, Ground/ThinFrost 첫/끝 변두리 X/Y 픽셀 일치, Ground2의 2×2 및 3×3 반복 QA, ZIP CRC. `Preview/F1_Earth_Frost_Path_Composite_OFFLINE.png`은 Unity 화면이 아니라 PIL 합성.
+- **미술 승인 대기**: 그림은 1254 고해상도 원화에 기반한 256 후보이므로 수동 픽셀 마감/실 게임 적용 보장 아님. 큰 반복무늬는 3×3에 보일 수 있음. 단방향 오버레이·보행 통로의 실제 통행 폭/PPU/Collider/TileGrid·GameView는 Codex 실측 대기. **USER_ART_REVIEW_PENDING / NOT_UNITY_INTEGRATED**.
+- [제작·QA 보고](../../Chapter3_NorthF1_Environment_6_ArtImprovement_v2_QA_20261021.md), `docs/art-new` commit `4821d6fec8180a266a1580dc4eb175f6b6145474`. **main 직접 커밋/Push·병합 없음**.
+- 후임: 새 ZIP의 실물 6 PNG/비교판을 확인해 대표 미술 판단 먼저 받기 → 필요 시 그 지적 파일만 표적 수정 → Codex 기술 계약/Play Mode F1 검증 후 Unity 통합 요청. 기존 공식 캐릭터·서리들쥐 전투·설빙의 폭군·Chapter1/2 리뉴얼 보호.
