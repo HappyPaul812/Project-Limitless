@@ -1,3 +1,9 @@
+# PLANNING 최신 인계 — 2026-10-21 Main22 첫 플레이 격리 Unity 136PASS/0FAIL, 바울 대표 “잘된다”
+
+Codex Main22 5단계 최초 플레이(초보 마을 북문 명시 출발→F1 안전스폰→서리 조사→동물 이동 단서2→서리들쥐 단독 지정전투 승리→F1 쉼터 종료) 구현 완료, QA branch `codex/chapter3-main22-first-playable-20261021`, 최종 `be7f64a3ff48a8848471166d4aefc4969080bd8b`. **신규 변경분 QA 136 PASS/0 FAIL**, 기존 F1 64 PASS와 서리들쥐 Battle40 PASS 재사용(반복0). 실제 격리 Unity GameView와 단계별 Quest 목표·방향/마우스/휠체어, Save/Continue, 마을 복귀, 도주·패배 재도전 보고. 바울 대표 “잘된다” 긍정 피드백 → `USER_POSITIVE_FIRST_PLAYABLE`, 사용자 원본 Unity 직접 손플레이 검증이나 `main` 공식 병합 승인으로 확대하지 않음.
+기획 최신 정본 `문서/00_프로젝트/Chapter3_Main22_FirstPlayable_136PASS_IsolatedQA_And_ProductionGate_20261021.md` (`docs/planning` commit `c773df6d73141a1ff9ed5094c5501c860c73034e`), 구현 [Issue #44](https://github.com/HappyPaul812/Project-Limitless/issues/44) 진행 결과 댓글. **아직 원본 적용0 / main PR merge0**. Main22 정식 스크립트/TTS·서리들쥐 레벨/EXP/드롭·잡템 아이콘/보상 정본 미확정, Prototype 임시대사·무보상 구별. 사용자 기존 Save/UserData/Editor·4351파일 보호. 다음 작업은 신규 구현 재시도가 아니라 **분리된 원본 안전 통합/PR 승인** 또는 스토리·보상 마무리 중 우선순위 결정. 임의 Main23, 북부 폭군·한기 시스템 추가 금지. 리뉴얼 Wolf Run6 병렬 제작 계속.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 F1 격리 실제 Unity 64PASS, Codex Main22 5목표 첫 플레이 구현 발주
 
 바울 대표 Codex 최종 F1 preflight: branch codex/chapter3-f1-unity-preflight-20261021, QA commit **8cf6cd7ebeb2f9b5d2f08c9151ceca84bb271c77**. 승인 NorthF1 6종 SHA/Import/PPU/Pivot/TileGrid/Sorting·실제 GameView 16:9/4:3/21:9·흙↔서리 타일 접합·도보/휠체어 길·소품 Collider·카메라 경계·격리 임시 출입/SaveContinue 모두 **64PASS/0FAIL**. 시각 통로 가시폭 최소1.45WU, Collider 지름1WU. **실제 World_StarterVillage 북문은 여전히 닫힘, Main22 Quest/Scene 완료 및 원본 Unity/main 적용은 아직0**. 기존 Mouse Battle40PASS 반복검사X.
