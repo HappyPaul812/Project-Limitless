@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 Codex Art QA: 맹독뱀 PASS권고, 늑대 FAIL, F1 3/3 HOLD
+
+바울 대표 제공 Codex 최종 검수 스크린샷, branch codex/art-review-monsterwolf-f1-20261021, 최종 commit 5df5f74d7e9070544bb88aa92fbfe991972498cf. **전체 비교 이미지는 오프라인 합성, Unity GameView 아님**. ZIP SHA/CRC/PNG 정상, 기존 뱀·늑대 원화2/2, F1 기존6/6 보존, Ground 2종 edge tile seam PASS. 사용자 원본 4,351파일, Git·Editor 보존, Scene/Art 제작/정식 적용/Push/main 병합0.
+**맹독뱀 v3**: 1포즈 정적 미술 PASS 권고, 독니·형태 양호/본체 잘림0. 저알파 잔여 정리 권고, Codex 보고 Snake SHA 누락 수정 필요, 실제 대표 미술 최종 승인/Unity sprite 구현은 별개. 기존 v3 SHA 그대로 보호. **늑대 v3**: FAIL, 가슴 아래 회색 배경 매트/뒷다리 배경제거 잔편; docs/art-renewal에서 이 두 부분 alpha matte만 수정 후 별도 신규 PNG, 원본 바이트 보존. 전면 재그리기/Wolf Run/Bear Fox 금지.
+**F1 3 지면 후보**: 흙 HOLD(큰 얼룩 반복/평면성), 얇은서리 HOLD(흙우세 방향 개선됐으나 결/경계·타일 반복감), 전환부 HOLD(단방향 기술정상, 재질 연결 필요). **F1 전체 HOLD**: 기존 Path_WornTrail 길 가독성+FrostShrub/Waymarker 도식성까지 미마감. docs/art-new에서 F1 이전6 PNG 기존 바이트 보존하며 지면3/길1/관목1/표지1 총6의 표적 완성 Pilot v2 제작, 완성 전 GameView/PPR/Collider·Main22 구현 승인으로 오인 금지. F1 QA JSON 내부 hash 충돌 메타 별도 정정. Codex 추가 재검수는 새 납품 후에만.
+기획 정본 문서/00_프로젝트/20261021_ArtReview_Result_SnakeWolfAndNorthF1_TargetedProduction.md (docs/planning commit a990de8d03b667e9826b1cb3086e249d79a1a9e4). GitHub Issue #43/Issue #30 코멘트 갱신. 북부 몬스터·아이콘/잡템/소모템/신규 스킬 전체 누락대장은 내부 관리하며 사용자에게 불필요한 전체 표를 보내지 않음. 서리들쥐 Unity Battle 이미 40PASS/0FAIL, 또 같은 작업 지시 금지. 설빙의 폭군 보스 전투 아트 후순위.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 두 ZIP art review 접수 및 자산 누락 대장
 
 바울 대표가 ZIP2종을 전달: (1) F:\Downloads\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip (renewal) SHA a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8, 이전 Snake/Wolf v3 고해상도 원본 PNG2 SHA 동일, 오프라인QA PASS지만 원본 Ch2 공식 몬스터 314px/PPU314 실물 Unity 동표시 비교/미술 승인 없음. Snake 원본 알파 왼쪽 접촉25픽셀·작은 군집548건, Wolf 마감 매트 위험. (2) F:\Downloads\Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip (art-new) SHA dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086, F1 기존6 PNG 보존/전종 미술HOLD, 신규 Ground Earth/ThinFrost/Transition 후보3만 QA PASS; 기존 길 가독성, Shrub, Waymarker도 여전히 HOLD. 두 ZIP 로컬 경로는 사용자 제공, 기획 세션이 F: 실물 독립 검사했다고 주장 금지.
