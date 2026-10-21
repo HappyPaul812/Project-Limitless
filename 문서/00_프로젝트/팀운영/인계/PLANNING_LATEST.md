@@ -1,3 +1,16 @@
+# PLANNING 최신 추가 인계 — 2026-10-21 Village v4·Wolf Run6 v5 Codex 격리 DeltaQA 결과 수신
+
+바울 대표가 Codex 검수 화면 2장을 전달함. 이는 **사용자가 전달한 Codex 검사 보고**이며 기획 담당이 사용자 Windows F: 바이트/Unity Editor를 직접 검사한 결과가 아니다. 스크린샷의 Codex 브랜치 `codex/qa-frostway-v4-wolfrun-v5-20261021`, 보고 커밋 `133fa4ea27c9141990eb8ca75c4d0f8ed43e8d3d`; 현재 GitHub 원격 브랜치 검색에서는 나타나지 않아 원격 Push/PR/merge 완료로 주장하지 말 것.
+
+- **공통:** 두 ZIP 실제 SHA256이 납품 보고와 각각 일치. CRC·Manifest 정상. 사용자 원본 4,351파일 변경/추가0, 기존 Wolf 교체0, Main23 구현0, 기존 전체회귀 수행0, Push/병합0이라고 Codex가 보고. PDF/이미지의 Unity 자료는 Camera/RenderTexture 촬영이며 Editor GameView UI 캡처와 구분.
+- **A 서릿길 마을 GameArt v4:** 실 ZIP SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`. PNG43/이전 나머지41 SHA 동일. SkillShop 잔여 조각 2,496셀, Gable 712셀 제거를 확인, 정상 본체 손상 없음. 실제 격리 Unity 16:9·4:3·21:9 검사에서 문·벽·지붕 접합·Sorting 이상 미확인. **기술 PASS / 표적2 PNG 미술 PASS / 마을 전체 미술 HOLD**. 흙(Earth)과 얇은 서리(ThinFrost) 타일 반복무늬 개선 권고, 자갈(Gravel) 반복은 대표 수용판단 필요, 돌길(Path Stone)은 반복 사용 가능 의견. 기존 검수 CSV의 **다른 OPEN 16종은 이번 수정으로 해결되지 않았음**. 타일 개선은 해당 파일만 표적 미술 수정 검토, 기존 41종 전면 재제작 금지. 대표 수용/수정결정 및 실제 세부16 OPEN 분석 전 마을 전체 PASS 선언 불가.
+- **B Wolf Run6 v5:** 실 ZIP SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`. Run Frame00~04 바이너리 동일, Frame05 지정 범위 174 RGBA 픽셀만 변경. 실제 격리 Unity Play Mode에서 **12 FPS, 128px** 시연 검증. Frame05 뒷다리 각진 움직임 개선, 변경 영역에서 추가 결함 미발견. **기술 PASS / 변경부 미술 PASS / 전체 달리기 모션 바울 대표 최종 승인 대기 HOLD**. 기존 승인 Wolf KeyArt v5/공식 펫 런타임/기존 GUID 보호.
+- **기획 권고/다음 1~3순위:** ① 바울 대표에게 Wolf Run6 v5 모션 최종 승인 여부 및 Village 타일 수용/개선 범위 확인(선승인 금지). ② 신규아트 담당은 승인 시 흙·얇은서리 반복 패턴만 국소 완화, 자갈은 대표 판단에 따라, 돌길/기존 건물/타일 외 자산 보호; 기존 OPEN16의 실제 범위/우선순위를 별도 확인하고 전수 반복QA 금지. ③ 승인 결과별 Codex 격리 변경분 QA 및 추후 본게임 Main23/펫 반영은 **별도 사용자 승인 후**. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS 재수행 금지. Main24 Skill Equip Save 이슈 #46 유지.
+
+근거: 사용자가 2026-10-21 업로드한 Codex 결과 이미지 2장. 이전 실물 납품 계약 `문서/00_프로젝트/20261021_Frostway_v4_WolfRun6_v5_Scoped_Unity_DeltaQA_Contract.md`. 연관 Issue #45/#43.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Village v4 수정2 + Wolf Run6 v5 05프레임 합동 격리 QA 발주
 
 바울 대표 신규 Windows F: ZIP2종 실경로 전달. 기획세션은 F: 직접 bytes 확인 불가, 담당 docs/art-new·docs/art-renewal 최신 GitHub 납품문서 검사. **Codex 사용자파일 실제 ZIP SHA readback 및 두후보 미술승인 전**.
