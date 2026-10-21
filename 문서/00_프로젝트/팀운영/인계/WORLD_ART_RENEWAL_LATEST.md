@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Wolf Run6 v4 기술 PASS·Unity 12FPS PASS / Frame05 미술 FAIL → v5 국소 보완 실제 납품 (현재 최신)
+
+- 바울 대표 확정: 기존 Frame00~04/복원 03·04 꼬리/승인 Wolf 단일 v5 KeyArt **변경금지**. 실패 한 곳: `Wolf_Run_05_v4.png` 뒷다리 x315~338 / y235~280의 직각 윤곽. 다른 늑대 그림 이미지 생성기 결과는 **폐기·사용0**.
+- 새 `Wolf_Run_05_v5.png` 원본 v4 실제 PNG에서 **174 RGBA픽셀만**, bbox **x318..333 / y245..280**, 무릎-정강이 윤곽 곡선형 재구성 및 해당 복원 영역의 기존 다리 근접 색 보간. Frame00~04 5PNG **파일 바이트·SHA 완전 동일**. 독립 신규 늑대 전체 원화로 교체한 게 아니며 승인 KeyArt SHA `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 직접 재대조 PASS.
+- 실제 ZIP **`Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v5.zip`**: **2,663,380bytes / SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351`**. 6 독립 PNG 512×384, Strip 3072×384, 3×2 Atlas 1536×768, 12FPS 0.5초 GIF/APNG, 128px·40px 미리보기, Frame05 5x 확대 v4↔v5, 루프 05→00 비교, 변경 RGBA 정확174행 CSV, Manifest per-file SHA, QA. ZIP CRC/readback·PNG Decode6·Strip/Atlas 6/6·00~04 원본 byte5/5 PASS.
+- [v5 수정·미술 보류·SHA 정본](../../Wolf_Run6_ArtRework_v5_Frame05_Hindleg_Delivery_20261021.md), 최초 문서 commit `1dd00402ece7cd6cfcd77c92e83d556c6cdc5b25`. ZIP/PNG 실제 파일은 본 ChatGPT 샌드박스 다운로드 제공, GitHub 바이너리와 F:에 자동저장0. 원본 Unity/main 변경0.
+- 정확 상태 `WOLF_RUN6_V5_ACTUAL_PNG_ZIP_DELIVERED / OFFLINE_TECH_QA_PASS / FRAME05_MOTION_ISOLATED_UNITY_QA_PENDING / USER_RUN_ART_APPROVAL_PENDING / NO_RUNTIME_APPLY`. Codex는 **05만 격리 12FPS 실제 Motion/05→00 DeltaQA**, 대표 승인 전 나머지 모든 아트/정식 펫 교체/전체 QA 반복 금지.
+
+
+
 ## 2026-10-21 Wolf Run6 v3 기술/Unity PASS · 미술 HOLD → v4 모션보완 실제 PNG ZIP (최신)
 - [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43) 최신 `#issuecomment-6310494103`, `docs/planning/문서/00_프로젝트/20261021_Village_WolfRun_JointQA_ShaMismatch_TargetedProduction.md` 확인. v3는 격리 Unity 실제 12FPS PASS이나 Frame04 어색한 후지관절/발접지·중간 몸체비율·05→00 Loop 미술 HOLD.
 - v3 ZIP 해시불일치: **초기 Codex 수령 f7eb4122… (보고상 2,788,009 bytes) vs 이 세션 실제 최종 파일 171b954d… (2,788,020 bytes)**, 최종 GIF 타이밍/인계 갱신 단계에서 서로 다른 ZIP 릴리스 존재. 11byte 차이; **초기 ZIP 바이너리가 현 컨테이너에 없으므로 어떤 ZIP 엔트리가 다른지 세부 원인은 추가 read-only 대조 필요**, 동일 바이너리라고 주장하지 않음.
