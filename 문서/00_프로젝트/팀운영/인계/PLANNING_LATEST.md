@@ -1,3 +1,14 @@
+# PLANNING 최종 확정 — 2026-10-21 EOD `SYNC_COMPLETE` (Codex 실증 보고 및 GitHub PR 병합 확인)
+
+- 바울 대표가 Codex 최종 스크린샷으로 **`SYNC_COMPLETE`** 보고 전달. GitHub 기능 [PR #48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 병합 `c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8` 및 문서 [PR #49](https://github.com/HappyPaul812/Project-Limitless/pull/49) 병합 `510c021b4159167e211be60ca90e1cb7328bafe9` **GitHub에서 merged=true 재확인**.
+- Codex 로컬 보호 및 Sync 보고: GitHub `main=origin/main=사용자 원본 local main` = **`510c021b4159167e211be60ca90e1cb7328bafe9`**; 승인 Wolf·Main22/F1·서리들쥐 **제품58파일** + 담당 문서 선별 통합. 기존 검증재사용, 신규 **정적38 + Unity14 PASS/FAIL0**.
+- 사용자 로컬 백업 957파일, 보호 SHA 차이0, 기존 사용자 작업 보존 **tracked dirty308/untracked550/staged0**. Save/UserData/Editor/포커스 보호, 유저 원본Editor **자연 Import·손플레이 미검증**.
+- 제외 유지: **서릿길 마을 GameArt v5 ART_HOLD (타일 Earth/ThinFrost/Gravel), OPEN16 해결0, Main23 본편미구현**, TTS 세린/태온 제작64/152 청취미승인·음성게임반영0, Main24 스킬 장착 Save 영속성 이슈 #46 미해결. Main22 **정식 대사·보상·경제**는 임시/미확정.
+- 종전 인계 문단의 “PR 생성 대기/원본 main 미병합/EOD 실행 대기”는 당시 기록이며 **2026-10-21 EOD 이후 최신 사실이 아님**. 후속 작업은 완료된 Main22·Wolf 재병합·전수QA 없이 Village variant/OPEN16 실근거 검토·Main23 선별 착수/스킬 Save 문제를 우선.
+- 사용자는 **“나 자러 가”**라고 했으므로 이 확인 이후 별도 진행/새 발주 없음. 원본 LocalSync 상세증거는 Codex PR #49 완료보고 및 로컬 `Temp/EOD20261021` 증거에서 확인. 이 기획 세션이 로컬 디스크를 직접 검사한 것은 아님.
+
+---
+
 # PLANNING 최종 2026-10-21 EOD — 바울 대표 “오늘 한 작업들 다 합치고 로컬 동기화” 승인 / Codex 실행 요청 생성
 
 - 바울 대표 지시: **“오늘은 여기까지 하자. 오늘 한 작업들 다 합치고 로컬 동기화도 해줘.”** 2026-10-21 선별 통합·로컬 원본 안전 동기화 **사용자 승인**.
