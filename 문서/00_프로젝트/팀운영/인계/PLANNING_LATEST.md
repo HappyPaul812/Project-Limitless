@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 서릿길 마을 v2 + 늑대 Run6 v3 실제 ZIP 합동 Codex QA 요청
+
+바울 대표가 이번에 로컬 두 ZIP 경로 직접 전달: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_ArtPilot_v2.zip`, `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`. docs/art-new 확인 Village v2 SHA `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`, 19파일(원화콘셉트 11/OfflinePreview4/Metadata4). **영문 재압축된 콘셉트 원화**지 Unity-ready 독립 건물·타일·소품 Sprite가 아님. Codex는 게임 실사용 분해가능성/누락 Sprite/동일 크기 미술검토만 먼저; 실제 GameView 주장 금지. docs/art-renewal 확인 Wolf v3 ZIP SHA `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0` 36파일, 원본 Run 00/01/02/05 보존, Fail Run03/04 꼬리·뒷발 표적 수정. 자체 CRC·PNG/strip/atlas PASS, **실제 동작12FPS와 05→00·몸비율/발접지/Unity Import 및 대표 모션 승인 대기**. 승인 KeyArt v5 변형 금지. 두 ZIP은 F: 사용자 파일 직접 검사 전, 자체 SHA 보고만 존재. Codex 다음 작업은 두 패키지 비파괴 한배치 QA, Village Concept/RuntimeGameReady 등급과 Wolf 기술/모션/Runtime 검증 각각 별도 보고. Original Unity/Save/UserData/Editor/dirty/이미 승인 F1/마을 Main23 선행기획/Main22 적용준비 보호; main 직접 Commit/Push/merge 금지, 기존 QA136+64+40 반복금지.
+
+기획 계약 `문서/00_프로젝트/20261021_FrostwayVillage_v2_WolfRun6_v3_Joint_DeltaQA_And_GameReady_Gate.md` (`docs/planning` commit `bfff995e76297e66d22efa72890ded28597ae34b`), Issue #45/#43 동기화. Main23 기술 preflight 완료 `74bd1de85582...`, 예약ID20개 충돌0; `docs/art-new` 마을 실제 256 Tile·개별 Building/Props 미술은 아직 미승인. Main24 Skill6슬롯 저장 지속성 [Issue #46](https://github.com/HappyPaul812/Project-Limitless/issues/46) 유효, 아이콘/소모템/잡템 대장은 내부 지속 관리.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Main23 기술 사전점검 완료 / 마을 아트 대기 / 스킬 저장 누락 추적
 
 바울 대표 전달 Codex Main23 서릿길 마을 read-only preflight 완료: `codex/chapter3-main23-village-preflight-20261021`, commit `74bd1de8558244405a2935e5fca96fcc2f0bb307`. Main22 완료→Main23 해금, 5목표 후보, F1 북쪽→마을 남문, SafeZone/Checkpoint/SaveContinue/기존 서비스 재사용 계약, F2 북문 차단·동쪽 포탈 OFF 부지 예약. 후보 ID20개 Main22 기존 목록과 중복0. Main22 격리136PASS/F1 64PASS/서리들쥐40PASS QA 재사용, 전수재QA0. **실제 Main23 Scene·Quest·NPC 생성0, 원본4,351파일/Save·UserData/Editor 보호, main Push/merge0**.
