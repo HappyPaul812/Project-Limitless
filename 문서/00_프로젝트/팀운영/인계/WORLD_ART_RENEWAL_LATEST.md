@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Snake v3 PASS 권고 보존 · Wolf v4 한정 알파 보정 실제 PNG/ZIP 납품 (현재 최신)
+
+- Issue #43 최신 Codex: **Snake v3 정적1포즈 미술 PASS 권고(대표 최종승인 별개), Wolf v3 미술 FAIL**. Codex 비교는 실제 Unity GameView 아닌 오프라인 합성. 이 세션에서 Snake 그림 변경0. 정본 `VenomSnake_KeyArt_v3.png` SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 실제 원본 재대조 PASS. 독사 x=0 알파 접촉25px·작은 알파 군집548건 기술 경고 기록 유지.
+- Wolf v3 실제 PNG 원본 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e` **보존**, 새 `Wolf_KeyArt_v3_AlphaFix_v4.png` SHA256 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a` (952×1306 RGBA). 회색 가슴 매트·다리 근처 배경 조각만 국소 알파 12,088px 감소/제거, 원본대비 RGB 픽셀 변경0, 새로운 늑대 재디자인0. 원본 PNG도 ZIP에 별도 보존.
+- 실제 ZIP `Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v4.zip` 2,466,520 bytes / 14 entries / SHA256 `4d31e2791bd543965771dfe6716cff736c2eae583efadeed914b9151952d836d`. 이번 ChatGPT Sandbox 파일로 실물 납품. Chest/Rear/Leg 전후 체커보드 비교·128px 전후·Alpha 변경 지도·Manifest/픽셀별 CSV/QA 제공, ZIP testzip CRC/PNG 재Decode/SHA PASS. **게임 실제 시각 최종 통과 아님**, 털 가장자리 대표 미술검수 필요. ZIP GitHub 바이너리나 사용자 F: 자동저장으로 주장 금지.
+- [실제 납품 기록](../../MonsterWolf_v3_SnakePass_WolfAlphaFix_v4_ActualDelivery_20261021.md) 최초 문서 Commit `ca455df97a405d5818d63a55f49f8b6ccd2af2ff`. `docs/art-renewal`만 커밋, 원본 공식 Field09 승인5+B/기존 18 몬스터/게임 시스템/main 변경0. Codex 별도 Chapter3 검증 방해 금지, Snake 모션/Wolf Run/Bear/Fox 제작 및 Unity 정식 적용은 사용자 승인 전 HOLD.
+- 상태 `SNAKE_V3_PASS_RECOMMENDED_USER_PENDING / WOLF_V4_ACTUAL_FIX_DELIVERED / WOLF_V4_OFFLINE_QA_PASS / WOLF_V4_USER_ART_PENDING / NO_ANIMATIONS / MAIN_UNCHANGED`.
+
+
+
 ## 2026-10-21 Chapter1·2 맵 핵심 마감 관리 → 맹독뱀·늑대 기존 v3 단일 원화 실물 재검사 (최신)
 
 - 기획 정본 `docs/planning/문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md`, 발주 `Chapter1_2_Monsters_And_Beasts_Original_Art_Renewal_Assignment_20261019.md`, Issue #43/#38 확인. **Field09 승인 5+B Glow PR41 official main 반영됨; 기존 합격본 재제작 금지.** 잔여 HeatVent/Spire·Field10 예술 승인 backlog만. Codex 현재 Chapter3 FrostFieldMouse 전투 Fix v2 작업 중 → 중복 요청 금지.
