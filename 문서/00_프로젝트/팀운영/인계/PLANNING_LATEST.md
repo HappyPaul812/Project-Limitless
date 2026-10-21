@@ -1,3 +1,10 @@
+# PLANNING 최신 인계 — 2026-10-21 두 ZIP art review 접수 및 자산 누락 대장
+
+바울 대표가 ZIP2종을 전달: (1) F:\Downloads\Limitless_MonsterWolf_KeyArt_v3_Review_20261021.zip (renewal) SHA a5189bdb542988da69581135f137b39c98b3c5434272cb5020d13310a98fdae8, 이전 Snake/Wolf v3 고해상도 원본 PNG2 SHA 동일, 오프라인QA PASS지만 원본 Ch2 공식 몬스터 314px/PPU314 실물 Unity 동표시 비교/미술 승인 없음. Snake 원본 알파 왼쪽 접촉25픽셀·작은 군집548건, Wolf 마감 매트 위험. (2) F:\Downloads\Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip (art-new) SHA dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086, F1 기존6 PNG 보존/전종 미술HOLD, 신규 Ground Earth/ThinFrost/Transition 후보3만 QA PASS; 기존 길 가독성, Shrub, Waymarker도 여전히 HOLD. 두 ZIP 로컬 경로는 사용자 제공, 기획 세션이 F: 실물 독립 검사했다고 주장 금지.
+**다음 실행**: Codex가 분리된 격리 worktree에서 두 ZIP read-only SHA/CRC/Manifest 및 원본 공식 Chapter2 환경·Monster Sprite와 동일 화면 스케일 비교/Alpha/길 가독성/256px 타일 반복 QA → 각 후보 미술 PASS/HOLD/FAIL 및 정확 문제가 생긴 픽셀/Render 자료 보고. 원본 Unity/Save/UserData/Editor/승인 아트/main 변경0. 내부 asset backlog: 북부 몬스터 5+elite1+boss1 전투 시트와 각 loot icons, 신규/강화 스킬 아이콘·상점 마킹·소모템(따끈 어묵탕/기타 대응/부활 미정) 및 냉기 상태 UI 표시, F1/서릿길 마을 환경. 신규 Item/Skill IDs·가치/수량은 카탈로그 정본 감사 전 임의 생성 금지. 보스 설빙의 폭군 Combat 후순위. 직전 사용자에게 전체 자산 대장 반복 표출 금지.
+기획 검증/내부 대장 정본 문서/00_프로젝트/ArtReview_20261021_MonsterWolfV3_And_NorthF1_Sample_ValidationGates.md (docs/planning commit 7917fa49d830d9c6c7bf50cc6316a459a484dbb1), Issue #43 및 #30 댓글 갱신. Mouse Combat Fix v2 원본 연결 Codex 40PASS/0FAIL과 구분, Codex feature 브랜치 외 main 병합 미실시.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 첫 실플레이 Main22 F1 우선 / 설빙의 폭군 전투 후순위
 
 바울 대표 최신 결정: 공식 몬스터명 서리들쥐(FrostFieldMouse), 보스명 **설빙의 폭군(FrostTyrant)**. '서리폭군'은 오기. 보스 Attack/Hit/Defeat 시트 제작을 당장 착수하지 말 것.
