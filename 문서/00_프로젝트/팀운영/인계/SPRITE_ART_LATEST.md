@@ -139,3 +139,14 @@
 - 오프라인 PASS: PNG 디코딩/독립 RGBA/전부 외곽에 투명 여백/지면4종 edge pixel match/2×2·3×3 자료/ZIP CRC·SHA. 최초 지면 외곽의 검은 선 결함은 최종본에서 제거 후 재검증. 오프라인 마을 배치 PNG는 **Unity GameView 아님**.
 - 제한: 건물 지붕·벽·문 모듈 간 실사용 접합/Unity PPU·Pivot·Collider·실제 휠체어 3WU 통행/포탈 비작동·캐릭터와의 스타일 조화·Sorting 미검증. 미술 **ART_CANDIDATE / REPRESENTATIVE_APPROVAL_PENDING**, 정식 GameReady PASS 주장 금지. Portal은 돌기단만 있고 VFX/연결 기능 없음.
 - [GitHub 보고](../../Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md) 커밋 `b7ddd71895288a077c55fdb3e0a91375ab43f604`. Main23 기획 정본 및 Issue #45를 우선 확인하고, Codex 변경분 검수/대표 승인 후에만 실제 Unity 적용. `docs/art-new`만 사용, **main 직접 Commit/Push·병합 금지**. F1 원본6·기존 공식 인물/몬스터·Chapter1/2 아트/Unity/Save 보호.
+
+## 2026-10-21 Main23 Frostway Village v4 — 두 PNG 분리잔여 제거
+
+- Codex [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) v3 DeltaQA: **PNG43/CRC/Manifest 기술 PASS, 격리 Unity 3화면비 조립·통행 QA 완료**, 다만 두 PNG의 다른 원화 조각 때문에 미술 FAIL, Tile4의 3×3 반복무늬 미술 HOLD. Main23 정식 씬/퀘스트 구현 완료 상태 아님.
+- **v4 표적 수정 완료**: `Buildings/Frostway_SkillShop_Building.png` x12..28/y196..376 범위의 **별도 연결조각 2496픽셀**, `Buildings/Modular/Frostway_Roof_Gable.png` x100..144/y183..206의 **별도 조각 712픽셀**만 삭제. 사각형 일괄 마스킹 아닌 alpha connected-component 제거. **두 Sprite 본체 RGBA 픽셀은 전부 v3와 동일**.
+- 변경 PNG v4 SHA: SkillShop `ef34b49de4f807debf4a69e1947eb9b8e02a543ee117ca2867fe3aa06a5efb17` / Roof Gable `37ea6a69844b662c40583cea3d457ff0c47344aef7054ff8e32b4d09870dceb0`. v3 원본 SHA 각각 `7e3562c22f00a07a85f0ab0349b8119dff924f3ef4dccf199cccdc9ec367be89` / `4971eea0e473ec7c7c1579001a454be52417fd9f3f38b9e223b00e0deaaf71ec`.
+- **기존 게임 아트 나머지41 PNG의 원본 ZIP entry 바이트/SHA 41/41 동일**, 특히 Tiles4 PNG 모두 수정0. 새 3×3 Pattern HOLD 표시 자료 5 PNG 추가. Earth: x9..94,y120..252 풀/돌; Gravel: x23..130,y26..120 자갈; ThinFrost: x9..94,y120..252; Stone Path: x60..215,y94..240 특정 포석 배열. 2×2/3×3 경계 기술 PASS와 시각 반복 HOLD를 분리.
+- 실제 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v4.zip`, **SHA256 `ee25baef91ec740b85dd3bb62b32583292d703f9261863bd534d0eb8241d1896`**, **19,767,770 bytes / 70 entries**. 원본게임 PNG43(변경2, 보존41), 기존 반복·화면비 오프라인 참고12, 신규 before-after 6, 신규 TileHold5, Manifest/QA/SHA4. 압축 CRC/SHA/PNG 43 정상. 실물은 ChatGPT 다운로드 첨부, GitHub에는 문서만 기록.
+- **QA 문서** [Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v4_QA_20261021.md), 커밋 `cbacca86c6a69faf3240e8fc09971a3b2fdceb6a`.
+- **승인 게이트:** v4 Codex 격리 변경분 Unity QA + 바울 대표 미술 승인 대기. 타일 패턴 때문에 전체 미술 HOLD 지속. 이전 Preview/ 의 16:9/4:3/21:9는 v3에서 생성된 **오프라인 참조이미지**로서 v4 Unity GameView 아님. Main23 Scene/Save/Unity/GUID, 공식 F1·Wolf·이전 v2 콘셉트11, Chapter1·2 변경0. `docs/art-new`만 문서 커밋, `main` 직접 Commit/Push/병합 금지.
+- 후임 세션은 해당 문서+ZIP/Issue #45 재확인→Codex 변경분 QA 확인→대표 승인 여부 확인. Tiles4는 대표 허가 전 수정하지 말고 임의 전체 타일 재제작 금지.
