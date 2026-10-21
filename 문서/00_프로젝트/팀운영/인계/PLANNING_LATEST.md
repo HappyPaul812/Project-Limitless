@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 Wolf v4 HOLD / NorthF1 v2 부분 PASS: 수정 1+3종만
+
+바울 대표 Codex QA 보고: branch codex/art-review-wolfv4-northf1v2-20261021, 최종 2471b1f2e98413dfaf0a705fc63cfdd7c8688fb5. 두 ZIP 기술 PASS, 원본 Wolf v3 + F1 원본6/승인 후보 SHA 보존, 비교는 오프라인 합성(실 Unity GameView 아님). 원본 4351파일/Git/Editor/Save 보호, Art/Unity 구현/Push/main 병합 없음.
+**Wolf v4** 미술 HOLD: v4 Alpha만12,088pixel 제거/RGB 완전 불변. 아직 가슴 **위쪽** 회색 조각, 다리 미세 배경 조각, 앞발 밑 바닥 잔조각이 남아 **docs/art-renewal**에서 이 3곳만 투명화한 별도 Wolf v5 제작. v3/v4 바이트 보존, 기존 진짜 털·발끝과 전체 RGB/실루엣 불변. 맹독뱀 v3 정적1포즈 Codex PASS권고지만 대표 미술 승인 대기.
+**North F1 v2** 6개 기술 PASS, 미술 **3PASS/2HOLD/1FAIL → F1 전체 HOLD**: **흙 지면 PASS, 흙길 PASS, 서리 관목 PASS는 v2 동일 SHA KEEP**; **얇은 서리 HOLD(3×3 밝은 반복무늬), 전환부 FAIL(진한 흰 서리 옆 타일에서 급단절), 길 표지판 HOLD(양끝 비슷하고 방향 모호)**. **docs/art-new**는 해당 3종만 v3 수정, PASS3는 기존 바이트 그대로 묶어 새 6종 ZIP, 서리/전환 2×2·3×3/옆 타일 연결과 표지 방향 대비 QA. 물리적 휠체어 통행/PPU/TileGrid/Collider 실 Unity 검사 여전히 안 됨.
+작업 정본 문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md, docs/planning commit c5f63b3045eb7d4ee2a38911f1f72f279b7c9de3. GitHub Issue #43/#30 댓글 기록. 실 ZIP이 나오면 Codex만 변경된 1 Wolf+3 F1 PNG Delta 재검수, 기존 수십건 QA 전수 반복 금지. 본게임 정식 Import/main 병합·사용자 미술 승인 전에는 보류. 신규 스킬 아이콘/북부 소모템/몬스터 잡템/상태이상 아이콘 누락 추적은 내부 백로그 유지.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 Codex Art QA: 맹독뱀 PASS권고, 늑대 FAIL, F1 3/3 HOLD
 
 바울 대표 제공 Codex 최종 검수 스크린샷, branch codex/art-review-monsterwolf-f1-20261021, 최종 commit 5df5f74d7e9070544bb88aa92fbfe991972498cf. **전체 비교 이미지는 오프라인 합성, Unity GameView 아님**. ZIP SHA/CRC/PNG 정상, 기존 뱀·늑대 원화2/2, F1 기존6/6 보존, Ground 2종 edge tile seam PASS. 사용자 원본 4,351파일, Git·Editor 보존, Scene/Art 제작/정식 적용/Push/main 병합0.
