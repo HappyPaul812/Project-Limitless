@@ -1,3 +1,11 @@
+# PLANNING 최신 인계 — 2026-10-21 Village v3·Wolf Run6 v4 기술 PASS / 미술 FAIL 표적 2+1 수정
+
+Codex 최종 DeltaQA branch `codex/qa-frostway-v3-wolf-run6-v4-20261021`, commit `695f6f74e63996bb9d0ba0561dc6518f1e7af049`. **두 ZIP 실제 SHA가 art-new/renewal GitHub 납품보고와 각각 일치**, 내부 CRC/Manifest/PNG 전 PASS. 원본 4351 파일/Save/UserData/Editor/Git 불변, main 직접 Push/병합 없음.
+**Village GameArt v3 43png** 실제 격리 Unity 16:9/4:3/21:9/소규모 조립·통행 PASS이나 **미술 FAIL**: `Frostway_SkillShop_Building.png` 이웃 원화 조각 x12..29/y196..376, `Frostway_Roof_Gable.png` x100..144/y183..207. 타일 pixel-edge PASS/반복무늬 미술 HOLD. **art-new는 이2 PNG만 v4로 교정**, 다른41 byte SHA SAME, 타일 패턴은 문제 파일·정확 위치 증거만 별도 후속(기존타일 전면변경 금지), 3비율 비교·SHA/CRC·기존 Source11/F1승인6 보호. 아직 본 게임 Main23 Scene·Quest 미구현/미술승인대기.
+**Wolf Run6 v4** 실ZIP SHA `3ab0b57d2389b55ed33f73c1d3d13862b9b595245e196d1f3a4c98f090b8a412` 및 실 격리 Unity12FPS 재생 기술 PASS, Run00..03 SHA 동일 및 Run04 뒷다리 개선 유효. **미술 FAIL**: `Wolf_Run_05_v4.png` x315..338/y235..280 뒷다리 윤곽 직각 끊김. **art-renewal은 Run6 v5 05프레임 뒷다리만 원화 수준으로 보정**(00..04 전부 SHA 동일, 기존 Wolf v5 승인 KeyArt/Run04 꼬리 보호), 모션 05→00 loop/발 접지 QA 후 대표 최종 모션 승인. 기존 공식 Wolf 펫 교체0.
+기획 정본 `문서/00_프로젝트/20261021_Frostway_v3_WolfRun_v4_ArtFail_TargetedRetouch_Orders.md` (docs/planning commit `12f8dd9ee91cd10d2c3c68addbba5ec52b038425`). Issue #45/#43 최신 댓글. 기획 내부 자산대장 신규 스킬/아이콘·어묵탕·전리품과 Skill Equipment Persistence #46 계속 유지. 기존 Main22 136/F1 64/Mouse40, Main23 기술 preflight 재실행 금지. 두 아트 새 ZIP 후 Codex 하나의 DeltaQA, 원본 Unity/Save/UserData/Editor/정식 main 변경·Push/merge 금지.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 Village GameArt v3 및 Wolf Run6 v4 신규 ZIP 합동 QA 발주
 
 바울 대표가 실제 로컬 입력 2개를 제시: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip` 및 `F:\Downloads\Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v4.zip`. 기획자는 F: 직접 읽지 못했고 두 담당의 GitHub 납품 보고서 확인.
