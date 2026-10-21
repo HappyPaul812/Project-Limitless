@@ -100,3 +100,14 @@
 - 제작 QA 문서: [Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md](../../Chapter3_FrostFieldMouse_Combat_3Strips_Fix_v2_ArtDelivery_QA_20261020.md), 커밋 **`3833a3262dd9966344c7ee9f946a896b37b39d6f`**.
 - **상태:** `ART_FIX_V2_DELIVERED / CODEX_DELTA_QA_PENDING / USER_COMBAT_ART_APPROVAL_PENDING`. 이전 36개 QA 전수 재검사 금지, 새 이미지 3종만 경계 프레임/Attack02 타격/Defeat03 HOLD/색상 불연속 최소 실제 Unity 검증 필요. 승인된 Idle/1포즈/보스 B/F1·서릿길 마을/Chapter1·2 및 Unity/Save/GUID 원본은 보호. **main 직접 Push/병합 없음**.
 - 후임: 이 ZIP과 승인 Idle ZIP 두 실물 확보 → Codex 변경분 QA 결과 확인 → 사용자 미술 승인 또는 표적 수정 후 새 버전. 다른 캐릭터/몬스터 애니메이션 무단 확대 제작 금지.
+
+## 2026-10-21 Chapter3 Main22 첫 플레이 F1 환경 6종 시각 검토
+
+- **기획 우선순위 재잠금:** 서리들쥐 A Combat Fix v2는 바울 대표 **미술 승인 완료**, Codex **23PASS/0FAIL** Delta QA. 실제 게임 몬스터 연결 완료 보고는 별도 대기. **Main22 F1 첫 플레이**가 최우선, 설빙의 폭군 B 후반 보스 애니메이션/마을 NPC/F2~F5는 보류. 서리폭군은 잘못된 표기, 공식 보스 이름은 **설빙의 폭군**.
+- 실물 기준 `Limitless_Chapter3_ArtNew_F1_Frostway_Pilot_v1.zip` 중 **F1 PNG6** 모두 실제 열어 확인. 각 256×256 RGBA; 원본 PNG 바이트를 원본 ZIP과 SHA 대조, 6/6 완전 동일. Chapter2 공식 `DeepCore_Ground_Base.png`, `DeepCore_Cliff_Boundary.png` 2종 참조로 질감·명도만 비교(서로 다른 바이옴/다른 소스 크기).
+- 원본 미술 진단: 흙·잔디 평면적, 서리가 지나치게 전면 회색, 전환부 점무늬가 소재보다 노이즈, **길 오버레이 통로 가독성 부족**. 관목/표지판은 이번 수정 대상 제외해 보존. 6종 모두 **F1 사용자 미술 최종 승인 전: HOLD**.
+- 새 **3종 표적 수정 샘플**(흙 지면/절제된 얇은 서리/전환부 오버레이)은 별도 후보 PNG로 제작, 기존 6개를 전혀 덮어쓰지 않음. 128px 전후 비교/오프라인 길 연결 시안/Chapter2 공식 아트 참조/2×2 기본 지면 Seam QA 포함. 후보 미술완성도 PASS나 Unity GameView 주장 금지.
+- 실제 ChatGPT 다운로드 ZIP: **`Limitless_Chapter3_NorthF1_ArtReview_Samples_v1.zip`**, SHA256 **`dd9963d2a2ce442ad12ecccc8c3ae74edbfb7421eb838003d21ae2df767bd086`**, 약 1.15MB, 원본6+수정후보3+Preview4+QA3+Manifest1+SHA 목록1 = 18파일. GitHub에는 바이너리 미등록, 해당 대화에서 받는 실물임.
+- 제작·원본 SHA·검증·한계 문서 [Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md](../../Chapter3_F1_Original6_ArtReview_TargetedGroundSamples_20261021.md), 커밋 **`929eff1f668cbcbea1fdd97475aef75741a10bfd`**.
+- **승인/기술 게이트:** 대표가 초기 서리 밀도/흙 질감/전환부 시안을 검토해 준 뒤 좁고 불명확한 길의 **최소 수정** 범위를 확정; Codex의 진짜 F1 PPU/Pivot/TileGrid/Collider와 휠체어 통로 조사 및 실제 Unity F1 구현/Play Mode는 이후 단계. 이번에는 2×2 Seam·PNG RGBA·ZIP CRC 등 오프라인 QA만. `main`/Unity/Save/GUID/Monster 승인원본 및 다른 담당 Chapter1·2 리뉴얼 수정0.
+- 새 세션 재개 시 가장 먼저 Issue #30 및 `docs/planning/문서/00_프로젝트/Chapter3_20261021_F1_Main22_FirstPlayable_Priority_And_BossDefer.md`를 다시 읽고 F1 3종 후보 미술 의견 확인할 것. 설빙의 폭군 전투 애니메이션 선행 제작 금지.
