@@ -1,3 +1,10 @@
+# PLANNING 최신 인계 — 2026-10-21 리뉴얼 담당 Wolf v5 기반 Run6 실물 아트 제작 착수
+
+바울 대표 “리뉴얼도 일 시켜” 요청. Chapter1·2 리뉴얼 담당 docs/art-renewal에 **Wolf v5 사용자 미술 승인 단일 KeyArt**(SHA b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1) 기반의 **6프레임 고품질 달리기 Run 아트 파일럿** 실PNG/12fps/128px·40px preview 제작 지시. Wolf v5 Codex 시각 HOLD(뒷다리 옆 검은 돌기)는 대표 **현 상태 허용**, Wolf v6 재보정 지시 금지.
+기존 컴패니언 Run 실제 384×40/64×40×6/12fps/LEFT/IconIndex4/Scale2/FootPivotBottom을 참고하되 그 작은 셀을 새 아트 원화 규격으로 강제하지 않음(이전 Wolf Run v1 보노보노형 품질 반려). 원화 6 pose 고해상도와 Candidate Strip 각각 별도 납품, 기존 v5 실루엣·털 톤·늑대다운 발달림·루프03~05→00·공격 돌진 명확성 보호. 실제 엔진 PPU/Runtime mapping·GUID/Motion 승인 미검증, 신작 64×40 임의 강제/사용자 원본 Unity 전투 교체/Chapter3 미술 침범 금지.
+기획 공식 계약 문서/00_프로젝트/20261021_Chapter12_Wolf_v5_Approved_Run6_ArtProduction_Order.md (docs/planning commit d3bf6e4e52e6a20f478cd6aa793eee1b7080bdc4), Issue #43 댓글 추가. 메인아트 담당 NorthF1 v3 6종 사용자 승인→Codex 별도 격리 실제 Unity F1 GameView/TileGrid/휠체어 첫 플레이 preflight 진행, 이 작업과 병렬. 맹독뱀 v3 static Codex PASS 권고 but USER_PENDING, 추가 Snake 모션 제작 허가X. 기타 Bear/Fox는 Wolf Run 사용자 미술 승인 이후로 미룸.
+
+---
 # PLANNING 최신 인계 — 2026-10-21 Wolf v5 현 상태와 NorthF1 v3 6종 최종 미술 승인
 
 바울 대표가 Codex 2026-10-21 Delta QA 화면을 보고 **“보니까 괜찮아.. 승인..”** 답변. **두 ZIP 모두 사용자 미술 승인**으로 잠금. 근거 Codex branch codex/art-review-wolfv5-northf1v3-delta-20261021, QA commit a6472c51054fdc6933cb065c21a9438d041b1595. ZIP/PNG 기술 PASS, 기존 전수QA 반복X, 비교는 오프라인 합성(실제 Unity GameView 아님), 원본 Save/UserData/Editor/4,351파일 보호, 공식 Unity 적용/Push/main병합0.
