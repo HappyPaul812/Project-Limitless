@@ -1,5 +1,14 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Wolf Run6 실제 Import 후보: 6 PNG + Strip + 12 FPS / 시각 승인 전 (최신)
+- 사용자 질의 "이걸 게임에 어떻게 넣니?"에 대한 조치: 일렬 합성 아트는 그대로 Unity 사용 불가 → 이번 이미지 소스에서 6포즈를 **실제 개별 동일 캔버스 512×384 RGBA PNG**로 추출하고 독립 strip/atlas/12FPS GIF/APNG/128·40px QA 생성.
+- 실제 ZIP `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtPilot_v2_CANDIDATE.zip`: 2,482,392 bytes, 29 entries, SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad`. Strip 3072×384/6 cells, 3×2 Atlas 1536×768도 있음. PNG Frame→Strip→Atlas 픽셀 대조6/6, Alpha frame boundary0, frame SHA 중복0, ZIP CRC PASS.
+- 승인 v5 정적 1포즈 SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` **확인·보호**. 이전 v1/v2 런 재활용/게임 코드 변경/Unity 원본 적용 없음. 기존 원본 v3/v4/v5 변경0.
+- **반드시 구분:** 이 작업은 *그림 6마리 합성 소스를 분리한 import 후보*로, 4→5/5→6 경계의 원화 겹침·모션/알파 프린지·05→00 루프는 실제 미술 심사 필요. **ART_NOT_YET_APPROVED / UNITY_NOT_APPLIED**. 유저가 ZIP 내려받아 승인한 뒤 Codex 새GUID 격리QA; 이 ZIP만 있으면 Unity에 넣을 수 있는 구조지만 즉시 공식 반영하지 않음.
+- [완료 내역과 Codex 기술 지시](../../Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md), 문서 최초 커밋 `768f77f3e2d68386311e8badd3eb0c58806d5e50`.
+  
+
+
 ## 2026-10-21 Wolf v4 미술 HOLD → 세 영역만 AlphaFix v5 실제 PNG/ZIP 납품 (최신)
 
 - Issue #43 최신 Codex 및 `docs/planning/문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md` 직접 확인: Wolf v4 기술 PASS, 미술 HOLD(가슴 **위쪽 회색 배경조각**, 다리 미세 배경잔여, 앞발 밑 바닥조각). **v3/v4 원본 보호, v5 별도 후보만**, RGB·생물 실털/발톱·크기·포즈 수정 금지.
