@@ -2,7 +2,7 @@
 
 ## 실행 상태
 
-**PRE_MERGE_QA_PASS / PR_PENDING / ORIGINAL_SYNC_PENDING**. Issue #47 및 `LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md`에 따라 실행합니다. 이 단계에서는 병합과 로컬 동기화 완료를 주장하지 않습니다. 실행 후 실제 PR·최종 SHA·보호증거를 후속 기록합니다.
+**MERGED / ORIGINAL_SYNC_COMPLETE / USER_FILES_PRESERVED**. [PR48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 병합 및 원본동기화를 실제 확인했습니다. Issue #47 및 `LIMITLESS_20261021_EOD_ApprovedIntegration_LocalSync_Contract.md`에 따라 실행합니다. 아래 완료 증거는 기능 PR48 동기화 시점의 불변 스냅샷입니다. 문서 전용 후속 PR 이후의 최종3자 SHA는 로컬 정본 증거와 Issue47 완료 기록에서 확인합니다.
 
 ## 선별 제품과 재사용 검증
 
@@ -43,3 +43,18 @@ Codex Main22/F1/Mouse/Wolf/Village QA·OPEN16 원본CSV/좌표JSON·128px/3화�
 ## 원본 진단로그 경로 충돌의 선별 제외
 
 원본의 미추적 MouseCombatV2Apply_20261021/Unity.log와 공개 최소화 로그가 같은 경로를 사용하여, 해당 로그1개는 PR에서 완전히 제외했습니다. 원본 raw 로그는 백업 및 기존 경로 그대로 보존하고 기능/QA 판정자료 통합은 계속합니다. 원본 로그 덮어쓰기0.
+
+
+## 실제 완료 증거 — 기능 통합 및 원본 동기화
+
+- [PR48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 승인 통합 **`c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8`**. PR head `f77f76d975199eb94bad1ad4871281e602ac6601`, 제품 commit `b53344ce`. 475변경파일을 페이지별 API로 읽어 제품58파일이 allowlist와 정확히 같고 비인가제품0임을 확인했습니다. 통합diff API의300파일 한도406은 페이지별 patch API로 대체했습니다. mergeable=true, 등록status/workflow0 확인 후 예상head를 고정해 squash 병합했습니다.
+- GitHub main=origin/main=원본 local main=c2750d1f… 실제 검증, index=HEAD/staged0. **SYNC_COMPLETE**는 이 실측에 근거합니다. 이후 문서 PR만 병합하고 다시 최종 검증합니다.
+- 원본 tracked dirty **314→308**, untracked **595→550**, staged **0→0**. 승인돼 이미 디스크에 있던 Wolf/Mouse/QA문서 등50파일은 bytes를 재작성하지 않고 index에만 편입했습니다. 승인 범위 밖의 사용자 dirty/untracked 상태와 SHA는 동일합니다. git reset/clean/stash/원본checkout/rebase/main직접commit/forcePush0.
+- **957파일196,911,769bytes** 복구백업 유지. 승인 의미병합 대상2파일(BuildSettings·CURRENT_STATUS)을 제외한 모든 백업 SHA 불일치0. BuildSettings는 F1 Scene3줄만 추가하고 기존app-ui/configObjects 전부 보존, CURRENT_STATUS는 원본고유 문서 전체를 substring으로 보존했습니다. 원본 보호6758파일 중 승인코드4·설정1·문서8 변경만 있으며 비인가 변경0. 기존 Wolf6파일·사용자 Save/UserData/개인 Settings·PNG/WAV·메타 바이트 보존.
+- 복사본 리허설에서 추가로 표시된21개 설정 파일의 stat/EOL 표시 차이는 canonical blob=HEAD를 확인해 복사본 index만 갱신했습니다. 원본 해당 파일 재작성0입니다. 실제 원본 동기화의 보호·상태 검사는 모두 통과했습니다.
+- 원본 EditorLockfile은 시작 시 없었고 종료까지 Editor/Scene/Play/Refresh/포커스 조작0. **원본 자연Import·실사용 손플레이는 NOT_VERIFIED**, 기존URP/Search/추적6000.5.7f1와실행6000.6.5f1 차이 OPEN입니다.
+- 마을 미술HOLD/OPEN16·미승인TTS·Main23/24 미구현은 여전히 미완료입니다. 이것은 승인 범위를 안전하게 마감했다는 뜻이며 미승인 작업까지 완료했다는 뜻이 아닙니다.
+
+완료 문서 자체의 merge SHA를 미리 쓸 수 없으므로, **최종 SHA 정본은 원본 `Temp/EOD20261021/OriginalLocalSync_Proof.json` 및 GitHub Issue47의 마지막 완료 기록**입니다. 이 PR에 들어가는 `Evidence/EOD20261021/OriginalLocalSync_Proof.json`은 PR48 동기화 확정점의 스냅샷으로 보존합니다.
+
+[원본동기화 스냅샷](Evidence/EOD20261021/OriginalLocalSync_Proof.json) · [보호검증](Evidence/EOD20261021/UserOriginalProtectionProof.json) · [복사본 리허설](Evidence/EOD20261021/SimulationResult.json) · [원격PR 범위검증](Evidence/EOD20261021/RemotePRVerification.json).

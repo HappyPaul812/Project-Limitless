@@ -1,3 +1,15 @@
+## 2026-10-21 EOD 완료 — PR48 병합 / 원본 SYNC_COMPLETE
+
+[PR48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 승인 Wolf6+Main22/F1/Mouse52 제품58 및 담당 문서 선별통합 **`c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8`**. 이 완료증거 작성시 GitHub main=origin/main=원본local main, index=HEAD/staged0 실측 **SYNC_COMPLETE**. 후속문서 PR 이후 최종SHA는 `Temp/EOD20261021/OriginalLocalSync_Proof.json` 및 Issue47 완료기록을 따릅니다.
+
+기존 Wolf106/Main22 136/F1 64/Mouse40 재사용·전수재실행0. 신규 정적38/격리Unity14 PASS. Main22는 PROTOTYPE 대사/수치·보상·경제 미확정. Village v5 타일3 ART_HOLD/OPEN16 해결0·Main23/24미구현, 청취미승인TTS READY64/152·미완BGM/SFX/영상은 제품제외 유지.
+
+957파일196,911,769bytes 백업·6758SHA 보호. 승인범위밖 SHA/사용자상태차이0, 이미승인50파일 무재작성. BuildSettings 개인config·원본문서고유이력 보존. dirty314→308/untracked595→550/staged0, 승인경로 편입에 따른 변화. 원본Editor/Play/Refresh/포커스0, 자연Import·손플레이 미검증·URP/Search OPEN. reset/clean/stash/force/main직접Push0.
+
+내일: 대표 평소 자연Import·기존 Main21완료 캐릭터 북문→Main22 시작 확인, 마을타일 수용/OPEN16 처리범위·정식대사/TTS·보상 설계·Main24Save #46 별도 결정. 완료 기능 재구현/전체QA 반복 금지. [완료 보고](EOD_ApprovedIntegration_LocalSync_20261021.md).
+
+## HISTORY — 아래는 실제 EOD 실행 전 기록
+
 ## 2026-10-21 EOD 승인분 선별 통합 — 신규 최소검증 완료 / PR·원본동기화 진행 중
 
 Wolf Run6 v5 승인6파일 + Main22/F1/서리들쥐52파일 선별, 제품58파일. Main22 대사·TTS·전투수치·경제·보상은 PROTOTYPE/DESIGN_NOT_LOCKED. 기존 Wolf106/Main22 136/F1 64/Mouse40 각 QA 재사용·전수재실행0. 새 정적38+격리 Unity14 검증 PASS, Scene/Quest/리소스·Save 선택필드 연결 확인.
