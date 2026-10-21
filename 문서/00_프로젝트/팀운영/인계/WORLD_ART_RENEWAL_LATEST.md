@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Wolf v4 미술 HOLD → 세 영역만 AlphaFix v5 실제 PNG/ZIP 납품 (최신)
+
+- Issue #43 최신 Codex 및 `docs/planning/문서/00_프로젝트/20261021_Wolfv4_F1v2_QA_TargetedFix_Orders.md` 직접 확인: Wolf v4 기술 PASS, 미술 HOLD(가슴 **위쪽 회색 배경조각**, 다리 미세 배경잔여, 앞발 밑 바닥조각). **v3/v4 원본 보호, v5 별도 후보만**, RGB·생물 실털/발톱·크기·포즈 수정 금지.
+- 실제 원본 SHA 재검증: v3 `30b2d464fe2c456c0fa7d82f1fad51f64065b6e8379ea174548deec7d1b91b4e`; v4 `62f72e97525f0266cbb6132da8b21571594f7c0deb3b1e1749cce749c9bf1c0a`; Snake v3 원본 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 보존/Codex 정적 PASS **권고**, 대표 최종 승인 아님.
+- 새 **`Wolf_KeyArt_v3_AlphaFix_v5.png`** 실제 파일 952×1306 RGBA SHA256 **`b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`**. 원본 v4 기반 국소 alpha 감소 2,174px (**가슴 900, 다리 237, 앞발 1,037**). 전체 RGB 변경 0, Alpha 증가 0, 변경 영역 외 변화 0. v3/v4 원본 PNG 덮어쓰기0.
+- 실제 ZIP **`Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip`** 2,214,467 bytes/13 entries/SHA256 **`920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7`**. 이번 대화 Sandbox 다운로드만 제공, GitHub ZIP 바이너리·사용자 F: 자동저장 아님. Assets/ v5 단일 PNG, Manifest old/new SHA, QA/Changed_Alpha_Coordinates_v4_to_v5.csv(2,174 행), 2배 가슴/다리/앞발 v4↔v5 실제 이미지, 128px BeforeAfter(2배경), Alpha 변경 오버레이/오프라인 QA. ZIP `testzip` CRC PASS, PNG 디코드/해시 readback PASS.
+- [v5 실제 납품·픽셀·검증 기록](../../Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md), 최초 commit `56e901f271e63c70ba6bd745f3f60bd57ff061fd`. **Codex 실제 GameView 아님 / User 미술 승인 대기**. Wolf Run·Bear·Fox·Snake 모션/원본 Unity/Field09 5+B/Save/MonsterDefs/main 변경 없음. `CODEX_WOLF_V5_DELTA_ART_QA_PENDING / USER_ART_APPROVAL_PENDING / MONSTER_ANIMATION_HOLD`.
+  
+
+
 ## 2026-10-21 Snake v3 PASS 권고 보존 · Wolf v4 한정 알파 보정 실제 PNG/ZIP 납품 (현재 최신)
 
 - Issue #43 최신 Codex: **Snake v3 정적1포즈 미술 PASS 권고(대표 최종승인 별개), Wolf v3 미술 FAIL**. Codex 비교는 실제 Unity GameView 아닌 오프라인 합성. 이 세션에서 Snake 그림 변경0. 정본 `VenomSnake_KeyArt_v3.png` SHA256 `7001d199b279cb8e541fc603bd62351ab460d3b44da91bc91a2d65dc099f8fd0` 실제 원본 재대조 PASS. 독사 x=0 알파 접촉25px·작은 알파 군집548건 기술 경고 기록 유지.
