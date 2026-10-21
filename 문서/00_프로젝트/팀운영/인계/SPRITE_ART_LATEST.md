@@ -130,3 +130,12 @@
 - 실제 ZIP/PNG는 이 ChatGPT 대화에서 다운로드 제공; GitHub에는 QA/Manifest/해시 **문서만** 기록하고 바이너리 미업로드. `docs/art-new` 제작 QA [Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md](../../Chapter3_NorthF1_Environment_6_TargetedFix_v3_QA_20261021.md), 커밋 `b18d06fbbf318cfeff085a86aeb198b8b3aafe95`.
 - **오프라인 PASS / 미술·Unity 미승인**: 2×2/3×3 반복, 우측 연결, 표지판 128px 비교, ZIP CRC. 이미지 합성은 Unity GameView가 아님. Single-tile 반복 특징 잔존 가능/4방향 오토타일 아님/PPU·TileGrid·Collider·휠체어 통행폭 및 실제 F1 Play Mode 미검증. 현재 F1 전체 미술 상태 계속 **HOLD**.
 - 다음: Codex에 **이번 변경3+KEEP3 SHA만 격리 Delta QA** 요청 → 바울 대표 최종 미술 승인 → 별도 승인 후 Unity Main22 첫 플레이 구현. 다른 F2~F5·마을·설빙의 폭군·승인 서리들쥐·Chapter1/2 원본 보존, `main` 직접 반영 금지.
+
+## 2026-10-21 Main23 서릿길 마을 v3 — 개별 게임 아트 후보 43종
+
+- 이번에는 ArtPilot v2 11장 콘셉트를 다시 포장한 것이 아니라 **독립 Sprite PNG 43종** 제작: Tile4 (256 RGBA/상하좌우 경계 일치), 전환/길 경계2, 독립 건물5, 지붕·벽·문 모듈9, 생활소품14, 상점/방향 표식6, 비작동 포탈 석재3. 2×2·3×3 반복QA8·16:9/4:3/21:9 오프라인 배치3·자산 미리보기1, Manifest/QA/SHA4 = ZIP 총59파일.
+- 실제 사용자 ZIP: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_v3.zip`, 최종 ZIP SHA **`2a74677d5f62d7e13e64ea85ba62e12175be0be0e0d19864c23233f1bd84e79a`**, 17,311,281 bytes; ChatGPT 대화 다운로드에 실제 파일 존재. 브랜치에는 **아트 바이너리 없이 보고 문서만** 기록함.
+- SHA mismatch 감사: 이 작업공간의 v2 ZIP 해시 `2142fe641c64a2ead8ad37309258d49727f35e5aaea74e429cbd6bae546154ad`는 기존 기록과 일치, 19 ZIP entry/CRC PASS·Manifest 기준 15 PNG SHA 일치. Codex 대표님 F: 실물에서 측정한 **`19dfad3cc6f7e27b03e1dcfc194cdb1bf56d9e133b48f303288eff98886833d`**는 다른 사본. 두 번째 사본 실물 미접근이므로 **차이 원인 미확정**, Codex ZIP 엔트리·PNG SHA 대조 필요. 신규 v3 ZIP은 작성 후 바이트 해시 기록했으며 최종 전달 파일과 동일.
+- 오프라인 PASS: PNG 디코딩/독립 RGBA/전부 외곽에 투명 여백/지면4종 edge pixel match/2×2·3×3 자료/ZIP CRC·SHA. 최초 지면 외곽의 검은 선 결함은 최종본에서 제거 후 재검증. 오프라인 마을 배치 PNG는 **Unity GameView 아님**.
+- 제한: 건물 지붕·벽·문 모듈 간 실사용 접합/Unity PPU·Pivot·Collider·실제 휠체어 3WU 통행/포탈 비작동·캐릭터와의 스타일 조화·Sorting 미검증. 미술 **ART_CANDIDATE / REPRESENTATIVE_APPROVAL_PENDING**, 정식 GameReady PASS 주장 금지. Portal은 돌기단만 있고 VFX/연결 기능 없음.
+- [GitHub 보고](../../Chapter3_Main23_FrostwayVillage_GameArt_v3_ActualDelivery_QA_20261021.md) 커밋 `b7ddd71895288a077c55fdb3e0a91375ab43f604`. Main23 기획 정본 및 Issue #45를 우선 확인하고, Codex 변경분 검수/대표 승인 후에만 실제 Unity 적용. `docs/art-new`만 사용, **main 직접 Commit/Push·병합 금지**. F1 원본6·기존 공식 인물/몬스터·Chapter1/2 아트/Unity/Save 보호.
