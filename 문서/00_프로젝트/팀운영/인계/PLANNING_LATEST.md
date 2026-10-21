@@ -1,3 +1,26 @@
+# PLANNING 최신 진행 — 2026-10-21 Wolf Run6 v5 제품 연결 106PASS, Frostway Village GameArt v5 실물 납품
+
+**입력 근거:** 바울 대표 제공 Codex 결과 화면 + 사용자 로컬 ZIP 경로, art-new [v5 납품 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_TargetedFix_v5_QA_20261021.md) 및 Issue #45. 이 기획 세션은 사용자 F:와 실제 Codex 로컬 worktree를 직접 조작하지 않았으므로 아래 제품 연결은 **Codex 보고**, Village v5 SHA는 **아트 담당의 납품 신고값**으로 구분.
+
+### 1. Wolf Run6 ArtRework v5 — 격리 제품경로 연결 완료 / main 미병합
+
+- 바울 대표 사전 승인: “늑대 괜찮아.. 승인..” 및 후속 “늑대는 게임에 넣고”. 승인된 아트의 추가 미술 재작업 금지.
+- Codex 결과 보고: `codex/wolf-run6-v5-apply-20261021`, commit `ab1b47ff9d46f4ed5883b85b73e87ca2036c83e6`. 본문에 의하면 승인 ZIP 실 readback SHA256 `16ba7923771c98f05b0f041b5c5a63857cdecfcdfd2e1f7768d9f24d1af0e351` 일치. 승인 Wolf Run 시트 신규 자산 등록·제품 Runtime 연결, **6파일(신규 PNG/meta2·C#4)**, 문서/증거 포함 총33개 파일. 기존 Icon/KeyArt/GUID/meta/Animator/Controller, Bear/Fox 보호.
+- 격리 Unity PlayMode 변경부 **106PASS/0FAIL**, 12FPS·6프레임 loop·양방향 이동·단일 타격·전투 종료 확인. 원본 보호4,351파일 변경/추가0. 기존 Search 환경 오류 1건은 별개; 원본Editor 자연Import·실물 손플레이 NOT_VERIFIED.
+- **중요 상태:** `WOLF_GAME_PRODUCT_WORKTREE_VERIFIED / REMOTE_MAIN_NOT_MERGED / ORIGINAL_UNCHANGED`. 로컬 제품경로 격리 구현≠사용자 본편 메인 반영. 다음 Codex는 기존 커밋 재활용→현재 main과 통합 충돌검토·PR 준비 및 승인 범위에 따른 안전 병합/원본 동기화 보고. 동의 없는 강제 Push·reset·clean·사용자 저장 덮어쓰기는 금지.
+
+### 2. Main23 Frostway Village GameArt TargetedFix v5 — 오프라인 납품 / Codex 실제검수 전
+
+- 바울 대표의 Windows ZIP 경로 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_TargetedFix_v5.zip`. art-new 신고 SHA256 `1affc1a4c23f3bcc6a9e9e18924b08bce3134eab065d8362757725f96e7f71b4`, 20,085,423 bytes, 72 entries, SHA256SUMS 71/71 및 CRC PASS(아트 담당 환경).
+- 원본 GameArt 43 PNG 가운데 **3개 수정 / 40개 바이너리 보존**. 수정: `Frostway_Ground_Earth_01.png` 24,062pix, `Frostway_Ground_ThinFrost_01.png` 23,973pix, `Frostway_Ground_Gravel_01.png` 31,120pix. 256×256 타일 edge/seam 자체 PASS. `Frostway_Path_Stone_01.png`, SkillShop 및 RoofGable v4 PASS본, 기타40종 변경 금지.
+- 기존 타일 3×3 반복/이음매 개선의 **실제 격리 Unity 시각 DeltaQA·대표 최종 마을 미술 승인 미실시**. 이전 QA CSV의 **OPEN16**은 행별 원본(대상 파일·좌표·재현조건) 미확보. art-new의 이번 수정으로 해결된 개별 OPEN16 = 0, 비검증 16을 막연히 '해결' 선언 금지. Codex가 이전 QA 작업경로에서 CSV 원본/실제 시각근거 검색, 있으면 16개를 분야별/심각도별 분류하고 현재 v5와 중복해결 대조; 없으면 `EVIDENCE_NOT_FOUND`로 남긴다. 원본 CSV 미확보 자체만으로 기존 PASS43 자산 재제작 금지.
+- 다음: Codex 별도 clean worktree에서 ZIP 실제 SHA 확인, 3개 변경분 중심 3×3/서비스 동선·3화면비 검증 및 사용자 감상용 캡처. OPEN16의 실제 항목 근거 확보; 전체 Main23 Scene/Quest·F1/Main22·Save 재검증 반복 및 본편 적용·main 병합 금지. Village는 **`OFFLINE_QA_PASS / CODEX_DELTA_QA_PENDING / USER_ART_APPROVAL_PENDING`**.
+
+### 공통
+새 담당 지시문은 이미 입사·온보딩 완료했으므로 “너는 ○○ 담당이다. GitHub에서 공부하고 와” 문구 없이 작업 제목으로 바로 시작. GitHub 역할별 최신 정본은 담당자가 작업 시작 시 자율확인. 관련 Issue [#43](https://github.com/HappyPaul812/Project-Limitless/issues/43) / [#45](https://github.com/HappyPaul812/Project-Limitless/issues/45). 기획 GitHub 문서화만 `docs/planning`, 본편 main 직접 커밋 없음.
+
+---
+
 # PLANNING 최신 확정 — 2026-10-21 Wolf Run6 v5 바울 대표 최종 미술·모션 승인
 
 **사용자 직접 결정:** 바울 대표가 Codex 격리 12FPS/128px 모션 QA 결과를 보고 **“늑대 괜찮아.. 승인..”**이라고 최종 승인. **Wolf Run6 ArtRework v5 `USER_ART_MOTION_APPROVED`**, 이전 `USER_FINAL_MOTION_APPROVAL_PENDING/HOLD`는 이 승인 시점부터 해제(이전 기록은 당시 단계로 보존). 기존 단일 정적 Wolf KeyArt v5 승인과 구별; 새 Run6 v5 전6프레임 모션 승인이다.
