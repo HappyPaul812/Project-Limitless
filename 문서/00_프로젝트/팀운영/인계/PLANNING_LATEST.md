@@ -1,3 +1,15 @@
+# PLANNING 최신 인계 — 2026-10-21 Main23 서릿길 마을 Art Pilot v2 + Codex 기술계약 병렬 발주
+
+바울 대표 “챕터3 다음꺼 시키자.” → 다음 스토리 **Main23 「따뜻한 땅을 떠난 자들」**, F1 심부 남하 동물 흔적→서릿길 마을 남문 도착→주민/태온 하렌 대화→북부 첫 SafeZone 체크포인트와 자유 탐색. 마을 북문F2 한기/스킬은 Main24, 족제비 별도 지정전 보류. 설빙의 폭군 보스 Combat 후순위. 마을 동쪽 **미래 포탈 광장 빈 부지 약7×7WU 예약·비작동 유지**.
+
+이미 F1 승인 환경6 실제 격리 Unity64PASS/0FAIL, 서리들쥐 Battle40PASS, Main22 격리136PASS/0FAIL, 사용자 “잘된다”. Main22 사용자 원본 local Unity 및 remote main 미병합; **Codex에게 Main22 적용 준비와 WolfRun6 후보QA를 이미 별도 지시**했으므로 새 Main23 구현을 기존 기능 브랜치에 섞지 말 것.
+
+**즉시 병렬**: art-new는 서릿길 마을 **실물 환경ArtPilot v2** (과거 Village 4 PNG는 오프라인 포맷 QA만 PASS·미술 미승인); 승인 F1을 수정하지 않고 북부 회갈색 돌기초/돌길·목석건물·지붕/문·일반/스킬상점/여관 표식, 장작/랜턴/보급상자, 미래 비활성 포탈 기단/7x7 비점유 광장, 도보·휠체어 남북3WU 통로 후보·3화면비 오프라인 합성/실PNG Manifest SHA ZIP. Codex는 별도 worktree에서 현재 Main22 branch/Main21 SafeZone·Quest/SceneID/PPU/TileGrid/Spawner/Save·북부마을 NPC/Service 계약만 **읽기전용 기술감사·잠금**, Scene/Quest 실구현 전승인 필요. Meta/GUID·원본 user Save/UserData/Editor·main 직접 Push/병합0.
+
+기획 계약 `문서/00_프로젝트/20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md` (`docs/planning` commit `1dd71d4c91db1c55c4b843fb273a64f12649db44`), 새 [Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45), 기존 Issue #30/#36 최신 댓글. **메인 아트 담당 지시 후 Codex 프리플라이트는 현재 업무 종료 시점에 별도 전달**. 스킬 아이콘/냉기 소모품/북부 잡템 스프라이트 카탈로그 누락은 기획 내부대장 관리, 아직 ID/상품/가격 임의 확정X. 사용자에게 긴 우선순위표 노출하지 않음.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Main22 첫 플레이 격리 Unity 136PASS/0FAIL, 바울 대표 “잘된다”
 
 Codex Main22 5단계 최초 플레이(초보 마을 북문 명시 출발→F1 안전스폰→서리 조사→동물 이동 단서2→서리들쥐 단독 지정전투 승리→F1 쉼터 종료) 구현 완료, QA branch `codex/chapter3-main22-first-playable-20261021`, 최종 `be7f64a3ff48a8848471166d4aefc4969080bd8b`. **신규 변경분 QA 136 PASS/0 FAIL**, 기존 F1 64 PASS와 서리들쥐 Battle40 PASS 재사용(반복0). 실제 격리 Unity GameView와 단계별 Quest 목표·방향/마우스/휠체어, Save/Continue, 마을 복귀, 도주·패배 재도전 보고. 바울 대표 “잘된다” 긍정 피드백 → `USER_POSITIVE_FIRST_PLAYABLE`, 사용자 원본 Unity 직접 손플레이 검증이나 `main` 공식 병합 승인으로 확대하지 않음.
