@@ -1,5 +1,17 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-21 최신 — KEY3 HTTP429 후 타 독립 프로젝트 자동 전환 v2 제작 / 사용 전 프로젝트 실소속 확인
+
+- 사용자: “저기 한 API가 막히면 다른 API가 하게 못해?” **가능하나 독립 Google 프로젝트로 실제 확인된 경우에만**. 기존처럼 같은 프로젝트 내 KEY를 바꿔 쿼터를 우회하는 방식은 허용하지 않음. Google은 RPD/RPM/TPM을 API Key가 아니라 **Google Project** 단위로 산정 (https://ai.google.dev/gemini-api/docs/rate-limits).
+- 사용자 마지막 증거 (10/21): **세린59/67·태온1/85**, READY60/152. PT 10/21 요청 **35/40**, 성공34/실패1, KEY1=9/KEY2=9/KEY3=9/KEY4=8. `main20_confront_serin_02`에서 **KEY3 / HTTP429 / HOLD+LOCK**. 원인 RPD인지 RPM/TPM인지는 미확정. `PROJECT_1...4`는 표시 라벨일 뿐 실제 4개 다른 프로젝트라는 공식 검증 아님.
+- 직접 만든 **`LIMITLESS_Renewal_Voices_HTTP429_ProjectFailover_v2_20261021.zip`** 22109bytes SHA256 `cd0a063d5c6d2b7463ab37363fbe2c9c9de45ab9ae257899f55347d231b7d643` 제공. 기존 `Renewal_Auto_TTS.py`와 `API.txt`, WAV/설정/로그 덮어쓰기 **없음**. 신규 분리된 `Renewal_Auto_TTS_Failover_v2.py`, `Configure_Failover_v2.py`, `Renewal_429_SameDay_Switch_v2.py`, README, offline tests 2개.
+- 사용자가 https://aistudio.google.com/api-keys 에서 실제 Key→Project ID/Model 무료 잔량/과금 확인 후 그룹을 실소속대로 표시, `python .\Configure_Failover_v2.py`에서 `VERIFIED_PROJECTS` 승인하면 원 `RENEWAL_SETTINGS.json` SHA 백업 및 두 설정(`auto_failover_on_429:true`와 `verified_independent_projects_for_failover:true`) 활성화. 실제 공식 프로젝트 확인이 없으면 **동작 활성화 금지**.
+- 기존 **같은날** KEY3 429 HOLD/LOCK은 `python .\Renewal_429_SameDay_Switch_v2.py inspect`(API0) 후 조건 PASS면 `... switch` `SWITCH429` 사용자 직접 승인이 있어야 SHA 백업·프로젝트3 PT 당일 격리 이벤트 append·잠금 해제. 사용자 승인 없는 자동 해제·잠금 삭제 불가.
+- 이후 **새 runner만** `python .\Renewal_Auto_TTS_Failover_v2.py check` → `... run --max-calls 1` (1건 실제 청취/사용량 검수) → `... run`. 429 시 해당 그룹 격리, 다른 독립 그룹 남은 로컬 예산으로 같은 미완료 DialogueID 시도. 이전 실패는 ATTEMPT1·FAIL, 그룹 PROJECT_QUARANTINE 기록, 성공 WAV/원본 ID·SHA 유지. 다른 프로젝트 없으면 기존 HOLD. HTTP400/500/타임아웃도 기존 HOLD+LOCK. 40회는 로컬 한도이지 Google 쿼터 보장이 아님.
+- v2 원본 코드 사용한 **오프라인 테스트 총9개 PASS**, 모의 Google 429+다른 그룹 성공, same-day 엄격한 증거·잠금 보관·승인/계수, 다른 그룹 없거나 미활성 기존 HOLD, 152 원문 검사, WAV 24k/mono/PCM16. 실제 Gemini API POST0, 사용자 F 드라이브 조작0, Unity0.
+- [정식 신기능 Runbook](../../TTS_RenewalVoices_HTTP429_ProjectAwareFailover_v2_20261021.md) / [Issue #20](https://github.com/HappyPaul812/Project-Limitless/issues/20). 하렌은 계속 본작업 제외. 완료 보고에 브랜치 docs/tts/커밋 명시.
+
+
 ## 2026-10-20 최신 — Serin Main16 자동생성 중 HTTP429 / HOLD 잠금 유지 / 다음 PT날짜 수동 안전 재개
 
 - 사용자 실제 에러: `[STOP] main16_canyon_default_serin_01 failed (HTTP_429). HOLD+RUNNING.lock preserved; NO AUTO RETRY.`. 프로그램 안전장치가 의도대로 429에서 정지함. 해당 사용자 로컬 시점 누적 성공건·Google 원격 잔여량은 이 1줄만으로 미확인.
