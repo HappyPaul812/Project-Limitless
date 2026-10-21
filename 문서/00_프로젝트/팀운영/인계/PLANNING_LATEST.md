@@ -1,3 +1,13 @@
+# PLANNING 최신 인계 — 2026-10-21 맵 핵심 통합 완료·Field09/Field10 미결 분리, 리뉴얼 몬스터·펫 v3 재개
+
+바울 대표 “리뉴얼 쪽은 맵은 끝난거 맞으면 어제 이어서 하자” 요청에 GitHub `main` EOD·리뉴얼로드맵·Main19/Main20 아트 보고 확인. **환경의 핵심 구현·적용은 상당 부분 완료됐지만 전체 100% 미술 최종 완료 아님**: Field09는 승인 PNG5+B파생 Glow [PR41](https://github.com/HappyPaul812/Project-Limitless/pull/41) main/로컬 SYNC_COMPLETE, 그러나 [Issue38](https://github.com/HappyPaul812/Project-Limitless/issues/38) HeatVent·Spire 시각 마감과 AshPatch KEEP 후보 최종 검토 남음; Field10 공식 ArtPack13 등록·Runtime QA 있으나 `Main19_Art_Handoff.md` 최신 USER_ART_REVIEW_REQUIRED13. Field11 Main20 v3 승인/환경8·보스아트 QA 적용, Field08 공식 사용7 유지, Arbel/Field04~07 승인합본 보호. **이미 합격한 맵 재제작하지 않음.**
+
+리뉴얼 담당 `docs/art-renewal` 다음 주력은 **Chapter1·2 몬스터·펫**으로 전환. 과거 VenomSnake v1/Wolf v1 반려, v2 저해상 확대 미술 HOLD, v3 고해상 Snake PNG `7001d199...` / Wolf PNG `30b2d464...` 산출 보고는 있지만 현재 GitHub/사용자 F: 실물 존재 미확인·공식5 동일 실제 Render 비교/대표 미술 승인0. **기존 v3 원본 사용가능성·해시를 먼저 확인**, 실PNG2 및 기존 공식 Chapter2 몬스터 비교/128px QA·Manifest 실제 납품→바울 대표 승인 게이트. Source raw 접근 불가면 Codex 읽기전용 인계 요청만 기록, 가짜 PASS 금지. Chapter3 메인 아트 `docs/art-new` 작업, 현재 Codex Mouse Combat Fix v2 격리QA와 중복 지시 금지. Snake/Wolf 전체 모션·Bear/Fox 추가양산 및 기존 MonsterDefinition/Unity 적용 금지.
+
+기획 정본 `문서/00_프로젝트/Renewal_20261021_Map_Closeout_And_MonsterWolf_V3_Resume.md` (`docs/planning` commit `8678096c0e817fc298d870c43aea5b23ac3dca60`), 신규 몬스터·펫 [Issue #43](https://github.com/HappyPaul812/Project-Limitless/issues/43), Field09 환경잔여 [Issue #38](https://github.com/HappyPaul812/Project-Limitless/issues/38) status 댓글 기록. main 직접 Commit/Push/병합 금지, 대표 F: Download 폴더 정리 상태 그대로 보호.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-20 EOD 선택 병합·원본 로컬 안전 동기화 (진행 요청, 아직 완료 증거 없음)
 
 바울 대표: **“오늘은 그만하자 오늘 작업들 합치고 료컬 동기화.”** 오늘 승인·기술검증된 변경만 새 Codex branch/worktree → PR → main 병합 허용, 이후 사용자 기존 F:\\study\\codex\\Project-Limitless 원본 local 보호 동기화 지시. 기획세션 GitHub만 작성 가능하며 **직접 F: 실행/PR병합/원본 sync 완료 상태가 아님**. GitHub remote main 마지막 확인 `12c69c72f9c09f716ee6242418b1d62f83a4a0d2` (어제 PR27/28 최종), 열린 PR0 (오늘 신규 EOD 실행 전).
