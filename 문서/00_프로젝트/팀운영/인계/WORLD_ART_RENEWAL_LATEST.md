@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-21 Wolf Run6 v2 기술 PASS / 미술 FAIL → v3 실제 6PNG+Strip/Atlas/12FPS 재작업 (현재 최신)
+
+- 근거 Issue #43 최신 Codex 댓글 및 `docs/planning/문서/00_프로젝트/20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md`. 이전 v2는 프레임03·04 꼬리 절단, 03 뒷발 절단, 05→00 접지·몸통 비율 미술 FAIL, 형식 PASS/실제 Unity Import 미실행.
+- **현재 v3 ZIP 실물** `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtRework_v3.zip`, **2,788,020bytes/36entries/SHA256 `171b954ddeef2b37d1bfaeb197b8a9f028293494457b66664c1d83509b87b5e0`**. Frame 00~05 각 512×384 RGBA, Strip 3072×384, 3×2Atlas 1536×768, 실제 GIF 80/80/90/80/80/90ms 총 500ms=12FPS 및 APNG, 128px·40px 아이콘/실 프레임 v2↔v3 동시 GIF, 꼬리03/04 2x 비교, 발 접지/몸통 시각비례 추정 CSV·JSON, Manifest per-file SHA, CRC 재검증 PASS. ZIP은 채팅 Sandbox 파일, GitHub 바이너리/사용자 F: 자동저장 없음.
+- **정직한 변경 범위**: 00/01/02/05 미술 원본 v2 그대로, **03 꼬리+후방 잘린 발 재구성**, **04 꼬리 스텁→연속 꼬리 재구성**. 같은 늑대 05의 실제 털 페인팅을 자세별 방향·접지에 맞게 재배치/복원. 6프레임을 단일 정적 PNG 여섯 번 위치이동한 것이 아님. 다만 v2 콤포지트의 근본적인 체형/움직임은 **Run6 미술 승인 전까지 QA 대상**, 완전 독립 신작6포즈로 허위 보고 금지.
+- 승인 원본 `Wolf_KeyArt_v3_AlphaFix_v5.png` SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` 실제 재확인, 원본 변경0. v2 ZIP SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad` 재확인 변경0.
+- [Run v3 제작·실물 파일 명세 및 미술 보류사항](../../Wolf_Run6_ApprovedV5_ArtRework_v3_Delivery_20261021.md), 문서 최종 커밋 `b6800d7a5ecd84c9c26537e3aa636c621eef50b7`. 현재 `WOLF_RUN_V3_6PNG_AND_ZIP_DELIVERED / OFFLINE_FILE_TECH_PASS / 12FPS_PREVIEW_READY / USER_RUN_MOTION_ART_APPROVAL_PENDING / CODEX_RUNTIME_NOT_RUN / MAIN_UNCHANGED`. Codex는 새 ZIP만 격리 Delta 확인, 전체 타 작업 재실행·원본 Unity 변경 금지. Bear/Fox/뱀 모션과 환경 신규 제작 없음.
+
+
+
 ## 2026-10-21 Wolf Run6 실제 Import 후보: 6 PNG + Strip + 12 FPS / 시각 승인 전 (최신)
 - 사용자 질의 "이걸 게임에 어떻게 넣니?"에 대한 조치: 일렬 합성 아트는 그대로 Unity 사용 불가 → 이번 이미지 소스에서 6포즈를 **실제 개별 동일 캔버스 512×384 RGBA PNG**로 추출하고 독립 strip/atlas/12FPS GIF/APNG/128·40px QA 생성.
 - 실제 ZIP `Limitless_Beast_Wolf_Run6_FromApprovedV5_ArtPilot_v2_CANDIDATE.zip`: 2,482,392 bytes, 29 entries, SHA256 `c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad`. Strip 3072×384/6 cells, 3×2 Atlas 1536×768도 있음. PNG Frame→Strip→Atlas 픽셀 대조6/6, Alpha frame boundary0, frame SHA 중복0, ZIP CRC PASS.
