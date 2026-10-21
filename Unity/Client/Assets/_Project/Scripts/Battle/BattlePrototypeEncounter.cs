@@ -222,6 +222,15 @@ namespace ProjectLimitless.Battle
             return new BattleEncounterSetup(party.Allies,foes.ToArray());
         }
 
+        /// <summary>Main22는 승인된 서리들쥐 한 기와 기존 저장 파티만 연결합니다. 수치는 기존 외형 시험 정의를 그대로 사용하며 정식 밸런스는 미확정입니다.</summary>
+        public static BattleEncounterSetup CreateMain22(string playerName, string jobId, string pathId,
+            int maxHp, int attack, int agility, MonsterDefinition mouse)
+        {
+            var party = CreateThreeVsThree(playerName, jobId, pathId, maxHp, attack, agility, null, null, mouse);
+            return new BattleEncounterSetup(party.Allies, new[] {
+                CreateMonster(mouse, "main22_frost_field_mouse", mouse.DisplayName, FormationRow.Front, 0, mouse.BattleAgility) });
+        }
+
         /// <summary>Main21 두 지정 조우만 기존 몬스터와 자유 편성3인을 사용합니다. 새 AI/보상 규칙을 만들지 않습니다.</summary>
         public static BattleEncounterSetup CreateMain21(string playerName, string jobId, string pathId,
             int maxHp, int attack, int agility, string encounterId, MonsterDefinition first, MonsterDefinition second)

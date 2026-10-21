@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11bfa9e4e73d4ce5978021aa82a74fa2, type: 3}
+  m_Name: Main22_MousePrototype
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Monster.MonsterDefinition
+  monsterId: prototype_main22_frost_field_mouse
+  displayName: "\uC11C\uB9AC\uB4E4\uC950"
+  monsterLevel: 1
+  baseExperience: 0
+  currencyReward: 0
+  lootEntries: []
+  maxHp: 60
+  encounterSupportMonster: {fileID: 0}
+  fieldMoveSpeed: 0.8
+  minimumIdleTime: 0.8
+  maximumIdleTime: 2
+  fieldSprite: {fileID: -1481457045, guid: 6dd66eaa0fa89ad4387b49463367ff15, type: 3}
+  fieldAnimatorController: {fileID: 0}
+  placeholderColor: {r: 0.35, g: 0.8, b: 0.35, a: 1}
+  visualSize: {x: 0.8, y: 0.65}
+  idleSpriteSheet: {fileID: 0}
+  idleFrameSize: {x: 0, y: 0}
+  idleColumns: 1
+  idleFrameCount: 1
+  attackSpriteSheet: {fileID: 0}
+  attackFrameSize: {x: 0, y: 0}
+  attackColumns: 1
+  attackFrameCount: 1
+  animationFramesPerSecond: 8
+  visualScale: 1
+  sourceFacesRight: 1
+  explicitIdleFrames:
+  - {fileID: -1481457045, guid: 6dd66eaa0fa89ad4387b49463367ff15, type: 3}
+  - {fileID: -346299648, guid: 6dd66eaa0fa89ad4387b49463367ff15, type: 3}
+  - {fileID: -1201514395, guid: 6dd66eaa0fa89ad4387b49463367ff15, type: 3}
+  - {fileID: 2120101668, guid: 6dd66eaa0fa89ad4387b49463367ff15, type: 3}
+  explicitWalkFrames: []
+  explicitAttackFrames:
+  - {fileID: 2127471557, guid: 89af58cc731d8794ba9e39b35993812a, type: 3}
+  - {fileID: 360080237, guid: 89af58cc731d8794ba9e39b35993812a, type: 3}
+  - {fileID: 662045865, guid: 89af58cc731d8794ba9e39b35993812a, type: 3}
+  - {fileID: 1105186695, guid: 89af58cc731d8794ba9e39b35993812a, type: 3}
+  explicitHitFrames:
+  - {fileID: -1853434356, guid: 5a508e7ef9b122c459f4ce0bcd0d4a97, type: 3}
+  - {fileID: 257423251, guid: 5a508e7ef9b122c459f4ce0bcd0d4a97, type: 3}
+  - {fileID: -390521992, guid: 5a508e7ef9b122c459f4ce0bcd0d4a97, type: 3}
+  - {fileID: 137967000, guid: 5a508e7ef9b122c459f4ce0bcd0d4a97, type: 3}
+  explicitDefeatFrames:
+  - {fileID: -1233978593, guid: 34a285ff9c549f642b922dcb1c6027d5, type: 3}
+  - {fileID: -281891067, guid: 34a285ff9c549f642b922dcb1c6027d5, type: 3}
+  - {fileID: 1970495773, guid: 34a285ff9c549f642b922dcb1c6027d5, type: 3}
+  - {fileID: 823839963, guid: 34a285ff9c549f642b922dcb1c6027d5, type: 3}
+  idleFrameResourcePath:
+  walkFrameResourcePath:
+  attackFrameResourcePath:
+  shootFrameResourcePath:
+  battleAttackPercent: 100
+  battleAgility: 10
+  useDefinitionBattleAgility: 0
+  basicAttackPoisonActions: 0
+  basicAttackPoisonCooldownActions: 0
+  basicAttackPoison:
+    id: poison
+    displayName: "\uB3C5"
+    damageMode: 0
+    power: 5
+    strength: 5
+  directAreaAttackName:
+  directAreaAttackDamage: 0

@@ -216,10 +216,10 @@ namespace ProjectLimitless.UI
                 }
                 return frames[0];
             }
-            Texture2D sheet = Resources.Load<Texture2D>(beast.RunResourcePath);
+            Texture2D sheet = Resources.Load<Texture2D>(beast.IconResourcePath);
             if (sheet == null) return null;
-            int frame = Mathf.Clamp(beast.IconFrameIndex, 0, sheet.width / beast.FrameWidth - 1);
-            icon = Sprite.Create(sheet, new Rect(frame * beast.FrameWidth, 0, beast.FrameWidth, sheet.height),
+            int frame = Mathf.Clamp(beast.IconFrameIndex, 0, sheet.width / beast.IconFrameWidth - 1);
+            icon = Sprite.Create(sheet, new Rect(frame * beast.IconFrameWidth, 0, beast.IconFrameWidth, sheet.height),
                 new Vector2(.5f, .5f), 1f);
             createdIcons[beast.Id] = icon;
             return icon;

@@ -71,7 +71,10 @@ namespace ProjectLimitless.Monster
         /// </summary>
         public void PlayAttack()
         {
-            if (attackFrames.Length == 0) return;
+            if (defeated || attackFrames.Length == 0) return;
+            // 피격 직후 자기 턴이 시작되면 Hit 상태를 끝내고 공격 프레임이 우선하게 합니다.
+            // 이미 쓰러진 몬스터는 뒤늦은 공격 호출로 마지막 사망 자세가 바뀌지 않도록 위에서 차단합니다.
+            reacting = false;
             attacking = true;
             shooting = false;
             usingSkill = false;
