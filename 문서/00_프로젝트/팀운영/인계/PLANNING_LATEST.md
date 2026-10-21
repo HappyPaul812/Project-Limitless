@@ -1,3 +1,15 @@
+# PLANNING 최신 인계 — 2026-10-21 Main23 두 담당 작업 지시 완료, Main22 적용 준비 완료 / Wolf Run6 미술 FAIL
+
+바울 대표는 **Main23 art-new 서릿길 마을 ArtPilot v2 발주와 Codex 별도 Main23 기술 사전점검 지시문 두 개 모두 전달**. 현재 산출물 기다리는 중, 동일 지시 반복 금지. 정본 20261021_Chapter3_Main23_Frostway_Village_Art_And_Tech_Parallel_Kickoff.md; Issue #45.
+
+**Main22** Codex branch codex/chapter3-main22-apply-preparation-20261021, 최종 커밋 2631e8750df8d98fb298754f3c82c5ca651c2fda, 제품 경로583건/반영13 신규40 기존수정5 분류·안전 PR 통합 계획. 기존 격리 QA136PASS + F1 64PASS + 서리들쥐 Battle40PASS 재사용. 원본 Unity·Save/UserData/Editor 변경0, remote main 제품 반영/PR 병합 없음, 정식 대사·TTS/보상/밸런스 임시. 적용 승인 요청 필요. Issue #44 현황 기록.
+
+**Wolf Run6** Codex branch codex/wolf-run6-candidate-qa-20261021, 최종 c47d7ba17c6332b28379b7c2ae315ed1ad30ec1e, ZIP c69ca17e8ebe2b8591c4dc77ebc6531b60dbe8a44ee3475d39d4cc6159f8f2ad, 29개 파일 기술 CRC/SHA/PNG PASS. 미술 FAIL: Run03·04 꼬리 잘림, 중간 프레임 몸 비율·발 접지 불안정. Unity Import/실시간 GameView 미검증. 승인 Wolf v5 정적 원화는 절대 변경하지 않고 docs/art-renewal에서 **Run6 미술만 재작업** 후 별도 후보 납품/QA/대표승인. Issue #43에 정확한 결함 기록.
+
+통합 정본 20261021_Main22_ApplyReady_WolfRun6_ArtFail_NextActions.md (docs/planning commit 4f46cb18a453dac45557fa02af92929aa006b7cc). 현재 메인 아트와 Codex Main23 작업은 별도 진행 중. 고유 Skill·소모품·잡템 아이콘 누락목록 기획 내부에서 지속 관리. main 직접 Commit/Push/병합 금지, user original/Save/UserData 보호.
+
+---
+
 # PLANNING 최신 인계 — 2026-10-21 Main23 서릿길 마을 Art Pilot v2 + Codex 기술계약 병렬 발주
 
 바울 대표 “챕터3 다음꺼 시키자.” → 다음 스토리 **Main23 「따뜻한 땅을 떠난 자들」**, F1 심부 남하 동물 흔적→서릿길 마을 남문 도착→주민/태온 하렌 대화→북부 첫 SafeZone 체크포인트와 자유 탐색. 마을 북문F2 한기/스킬은 Main24, 족제비 별도 지정전 보류. 설빙의 폭군 보스 Combat 후순위. 마을 동쪽 **미래 포탈 광장 빈 부지 약7×7WU 예약·비작동 유지**.
