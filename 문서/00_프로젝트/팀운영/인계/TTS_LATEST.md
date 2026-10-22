@@ -1,5 +1,17 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-22 최신 사용자 결정 — Main21 기존 정상 후보 WAV 7개 KEEP / 재생성 금지 / 후일 Unity 일괄 통합
+
+- 사용자: `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\candidates`에서 **오류 후보들은 직접 정리**했고, 남은 WAV **7개만 보존**한다고 보고. **다시 TTS API로 생성하지 말 것**, 추후 다른 완성 성우 WAV와 **한 번에 Unity에 추가**. 지금 게임 반영 금지.
+- **[7개 WAV 보존/후일 통합 지시 정본](../../TTS_Main21_기존보존_7WAV_통합대기_20261022.md)**. 사용자 제공 7 ID 모두 실제 GitHub `main` `Main21_TTS_Manifest_20261010.json`에서 정확 대사/화자/VoiceExpected=true 대조 완료:
+  - **레온 Orus 2개:** `main21_carriage_leon_01.wav`, `main21_arbel_leon_01.wav`
+  - **미엘 Sulafat 2개:** `main21_aid_miel_02.wav`, `main21_aid_miel_01.wav`
+  - **폴 Achird 3개:** `main21_aid_paul_01.wav`, `main21_route_paul_02.wav`, `main21_route_paul_01.wav`
+- **상태 분리:** 해당 7개는 사용자 `KEEP` 지정, `TTS_NOT_REQUIRED`, `UNITY_PENDING`. API 다시 사용 금지. 실제 로컬 WAV 바이트/SHA/발화/PCM/사용자 청취 PASS는 ChatGPT에서 F: 직접 확인하지 못했으므로 **최종 통합 전 Codex가 검증**. 기존 WAV 삭제·이동·덮어쓰기 금지. TTS 자동 생성기에서도 대상 제외.
+- 현재 다른 제작현황(최근 사용자 로그): 세린 **67/67 READY**, 태온 **37/85 READY**(48 미제작), 하렌3은 별도 제작 대기/원래 `main21_haren_haren_01`의 평서문 하강 억양 주의. 이는 별개 제작 영역. **모든 음성이 준비되고 사용자 일괄 통합 승인 시에만** Codex가 Main20·21 전수 목록/기존 7 SHA 감사 후 하나의 구현 배치로 Unity 연결·검증. `main` 직접 커밋 금지.
+- 이번 턴 문서 기록만: Google API0/사용자 로컬 F: 변경0/Unity0. 7개 외에 과거 잘못된 후보가 삭제됐다는 내용은 **사용자 보고이지 직접 파일시스템 감사 결과가 아님**.
+
+
 ## 2026-10-22 실제 사용자 콘솔 최종 상태 — 세린67/67 완료, 태온37/85, PT 40/40 안전 종료
 
 **최신 실행 증거 우선:** 2026-10-22 사용자 `Renewal_Auto_TTS_Failover_v2.py` 최종 출력 `[DAILY CAP] 2026-10-22 No more calls this PT day.`
