@@ -1,6 +1,6 @@
 # 2026-10-22 EOD 승인 통합·로컬 동기화
 
-**DELTA_QA_PASS / PR_PENDING / ORIGINAL_SYNC_PENDING**. Issue #53 및 EOD SafetyContract 실행. 이 문서는 실제 마감 증거가 추가되기 전 동기화 완료를 주장하지 않습니다.
+**PR54_MERGED / ORIGINAL_SYNC_COMPLETE / USER_FILES_PRESERVED**. Issue #53 및 EOD SafetyContract 실행. 아래는 PR54 실제 병합·원본동기화 완료 시점의 스냅샷입니다. 문서 후속PR의 최종 SHA는 Issue53 및 로컬 증거에 후속 기록합니다.
 
 | 범위 | 판정·처리 |
 |---|---|
@@ -19,3 +19,19 @@ OPEN16 미해결16 유지, Main23 Quest/NPC/마을 전체구현0, Main24 SkillSa
 백업 원문·index·refs·patch·Save/UserData는 로컬 Temp/EOD20261022에만 보관합니다. 공개본은 SHA·판정 요약만 포함하며 개인경로/로그 라이선스정보를 제거합니다. reset-hard/clean/stash/forcePush/main직접commit0. 별도 복사본 FF 리허설 뒤 원본FF만 허용합니다. 이미 디스크에 있는6개 승인 파일은 bytes를 재작성하지 않고 index에 인식시킵니다.
 
 [허용목록](Evidence/EOD20261022/ApprovedChangeAllowlist.json) · [신규 검증](Evidence/EOD20261022/IntegrationDeltaQA.json) · [공유 코드 증거](Evidence/EOD20261022/SharedCompanionCodeMergeProof.md) · [타일 출처](Evidence/EOD20261022/VillageRegistrationSource.json).
+
+
+## 실제 마감 증거
+
+## 2026-10-22 EOD 마감 — PR54 병합·원본 SYNC_COMPLETE 확인
+
+[PR54](https://github.com/HappyPaul812/Project-Limitless/pull/54) merge `e2801286ccd26fe2060d9fee658ac272da4b4f2b`: 승인 Bear v4·Fox v7 공유 코드 양쪽 보존6파일 + 마을 최종승인9 Sprite/Tile 신규등록39파일 = 제품45파일, 담당 문서·근거152파일, 총197파일 통합. 신규 정적10/격리Unity15 PASS, 기존154/162/Wolf/Main22 전체QA 재실행0.
+
+실제 GitHub main=origin/main=원본local main=e2801286, index=HEAD/staged0 확인. 백업912파일190,738,290bytes SHA불일치0, 보호7179파일 중 승인문서6개 외 변경0. Save/UserData/개인설정/Editor·미커밋 작업 보존. 이미 원본적용 Bear/Fox6파일 재작성0. dirty310→308/untracked554→550은 승인6경로 Git 편입이며 그 밖 상태 동일. 원본Editor/Play/포커스0, 자연Import·손플레이는 미검증.
+
+이 문서는 PR54 완료 시점 스냅샷입니다. 문서 후속PR 이후 최종3자 SHA는 로컬 `Temp/EOD20261022/OriginalLocalSync_Proof.json` 및 Issue #53 완료기록을 정본으로 확인합니다. 마지막 관련 제품통합 commit e2801286. 추가제품 변경0.
+
+OPEN16 미해결16 유지, Main23 전체·Main24 Save #46 HOLD. 미승인TTS READY104/152·Main21 KEEP WAV7·미완BGM/SFX 게임 적용0. 다음은 별도 승인 후 해당 범위만 진행합니다. 기존 승인기능 재구현·전체QA 반복 금지.
+
+
+[실제동기화 스냅샷](Evidence/EOD20261022/OriginalLocalSync_Proof.json) · [원본보호](Evidence/EOD20261022/UserOriginalProtectionProof.json) · [복사본 리허설](Evidence/EOD20261022/SimulationResult.json).
