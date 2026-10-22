@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-22 Bear/Fox Run6 v3 실 PNG·ZIP 및 bbox CSV 12행 전체 수정 (현재 최신)
+- User reports Codex v2 Unity technical PASS / art HOLD. Bear issue 03→04 landing and realistic fore/hind foot support; Fox issue 02→03 far foreleg visibility/recovery. Bear v2 05→00 improved head-height and Fox v2 tail preserved.
+- Bear actual deliverable Limitless_Beast_Bear_Run6_v3.zip; 5,554,445 bytes; SHA256 adc3f36a65c9bc093cf2c1b3e68b7da3abe5d68c4edac461096fb1611f4a0a35. Changed independent art poses 03/04; exact v2 PNG compressed bytes preserved 00/01/02/05. Six RGBA 512x384, strip3072x384, atlas1536x768, 12FPS GIF/APNG, 128px/40px, frame/transition comparisons, CSV/meta/Manifest/SHA256SUMS. Documentation commit 83944ecbe22b5181e8886f2c49bd62cf71b356bf.
+- Fox actual deliverable Limitless_Beast_Fox_Run6_v3.zip; 4,138,420 bytes; SHA256 d4727d0e5fedbb2db7d224f0684fc6c80c78221aa120da3bef356ab43b800696. Local painted-source far leg cutout from v2 Frame01 added beneath unchanged torso on frames02/03; v2 compressed bytes of 00/01/04/05 preserved. Remaining knee/shoulder movement requires Codex art QA. Documentation commit 26ee05c2535b5460caa9666d95ba87e3974bb2f9.
+- Both ZIPs are tangible user-download files in this conversation sandbox, NOT uploaded as GitHub binaries or directly copied to F:. 24 entries each; zip CRC PASS, manifest SHA readback, PNG decode 6/6, strip/atlas per frame pixel equality 6/6, 3px no alpha bleed, 12FPS 6 frames per 500ms cycle.
+- Important QA fix: Both QA/Frame_Gait_And_Contact.csv have actual PNG A>0 bbox values in order bbox_min_x,bbox_min_y,bbox_max_x_exclusive,bbox_max_y_exclusive, 0-based top-left x-right/y-down. All 12 rows checked by included Python QA/verify_bbox.py. Unchanged frames NOT reworked to fix metadata.
+- Status BEAR_V3_FILE_QA_PASS / FOX_V3_FILE_QA_PASS / BBOX_CSV_12_OF_12_PASS / REAL_UNITY_12FPS_V3_NOT_RUN / USER_ART_APPROVAL_PENDING / WOLF_APPROVED_UNTOUCHED / MAIN_UNCHANGED. Genuine gait/weight and paw timing cannot be established by ZIP integrity alone. Codex delta-only Unity visual QA for each before user final acceptance; no auto game replacement.
+- Documents: [Bear v3](../../Beast_Bear_Run6_v3_TargetedArt_BBoxFix_Delivery_20261022.md); [Fox v3](../../Beast_Fox_Run6_v3_TargetedArt_BBoxFix_Delivery_20261022.md).
+
+
 ## 2026-10-22 Bear/Fox Run6 v1 Codex 기술 PASS·미술 HOLD → 독립 v2 실제 PNG/ZIP 납품 (최신)
 
 - 바울 대표: Wolf Run6 v5 사용자 최종 미술 승인/실게임 반영 완료이므로 **Wolf 정본 재제작 및 변경 금지**. Bear와 Fox 각 v1이 격리 Unity 기술 PASS/미술 HOLD. Bear Frame05→00 머리/접지, Fox 앞발 구분/꼬리 일관성을 집중 보완한 **동물별 v2 독립 아트 후보** 제작.
