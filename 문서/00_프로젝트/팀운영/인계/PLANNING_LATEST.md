@@ -1,3 +1,17 @@
+# PLANNING 2026-10-22 Fox Run6 v7 — 바울 대표 최종 미술·모션 승인 완료
+
+**사용자 직접 승인 원문:** “Fox Run6 v7도 이대로 최종 승인..”  
+**최신 상태:** `FOX_RUN6_V7_USER_ART_MOTION_APPROVED / ASSET_FROZEN / CODEX_GAME_APPLY_REQUESTED / GAME_APPLY_NOT_YET_VERIFIED / GITHUB_MAIN_UNCHANGED`. 이전 `ART_PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 승인 전 역사 기록으로 보존하지만 **현재 승인은 확정**.
+
+- 승인 실물: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; 실제 Codex SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`, CRC/Manifest26/26/SHA256SUMS27/27/alpha CSV6/6, Strip/Atlas 정확6/6. v5 ManifestFix 대비 Frame00·01·02·04·05 PNG **5개 압축바이트 동일**, Frame03 **6,275 RGBA픽셀만** 개선. v6 미술반려 전신교체본 사용 금지.
+- 이미 통과한 **실제 격리 Unity 12FPS(평균11.95 FPS),128px/40px·좌우 4루프**, 앞다리 흰 쐐기 제거·02→03→04 연결 개선, 확대 4× 화면에 잔존한 미세 밝은 털띠는 **바울 대표 현 상태 수용**. **Fox v7 PNG/ZIP/Manifest SHA 원본 동결, 추가 v8 미술 수정 금지**.
+- 공식 Run6 세 동물 사용자 미술·모션 확정: **Wolf Run6 v5** 게임 적용+기존 EOD 원격 병합 완료, **Bear Run6 v4** 원본 게임 디스크 반영/격리Unity154PASS·원격PR/main 병합대기(Issue #51), **Fox Run6 v7** 미술 승인/게임 제품경로 반영은 아직 시작/완료 증거 없음(Issue #52).
+- Codex 제품 연결 신규 실행 이슈: **[#52](https://github.com/HappyPaul812/Project-Limitless/issues/52)**. 승인 Wolf/Bear 변경 금지, 사용자 원본 Unity HEAD/index·Save/UserData·dirty/untracked·Editor 포커스 보호, 별도 `codex/fox-run6-v7-apply-20261022` worktree에서 Fox 관련 최소 제품 자산/호출 등록·Unity 변경분 검사 → 안전 원본 적용 및 branch/commit/검증 보고. 기존 Wolf/Bear/전체 Main22 전수QA 반복 금지, main 직접 commit/Push/merge 금지. 실제 적용 여부는 Codex 새 보고 후 확정.
+- Village v10 Candidate9 최종 미술승인 별도 유지, OPEN16 해결0/16·Main23 게임 통합은 미완. 여우 미술 승인이 마을 전체 승인을 뜻하지 않음.
+- 보고 문서 변경은 `docs/planning` 한정, 현재 대화에서 바울 대표 로컬 F: Unity를 직접 편집한 것은 없음.
+
+---
+
 # PLANNING 2026-10-22 — Fox Run6 v7 Codex 실제 격리 Unity QA: 기술 PASS·Frame03 미술 PASS 권고 / 사용자 승인 대기
 
 바울 대표가 Codex v7 최신 결과 캡처를 직접 제공. 이 기획 세션은 로컬 F:를 직접 읽거나 Unity 실동작을 직접 검증한 것은 아님. 아래는 **사용자 제공 Codex 검사 보고**이다. 이전 v6은 미술 반려, v7은 **v5 ManifestFix 기준 Frame03만 국소 복원**한 별개 후보.
