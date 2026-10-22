@@ -1,3 +1,13 @@
+# PLANNING 2026-10-22 Codex 격리 QA 인수 — Village v6 / Bear Run6 v1 / Fox Run6 v1 전부 기술PASS·미술HOLD
+
+바울 대표가 실제 Codex 보고 화면 전달. ZIP SHA256 세 건 납품값과 일치, 기술 PASS. 격리 Unity Village v6 3화면비·통행 proxy6/6 PASS이나 Earth·ThinFrost·Gravel 5×5 혼합에도 **모티프 주기성 재현→각 미술 HOLD**. Bear Run6 12FPS/128·40px 기술PASS이나 **Frame05→00 머리 높이 변화 + 관절·지지 접지 부정확→미술 HOLD**. Fox 동일기술 PASS이나 **앞다리 구분 약함 + 꼬리 곡률/몸통 일관성 부족→미술 HOLD**.
+
+검수 보고 브랜치 `codex/qa-village-v6-bear-fox-run6-20261022` 커밋 화면 표기 `6df8e1d5`, `9f9b560b`. 원본4400파일/Wolf/Save/UserData/dirty/index/HEAD 보호, 본게임 적용·Push/병합0. OPEN16 원본CSV+좌표JSON 확보·해결0/16; 검수측 전달자료 준비(공유확인 별도). 기존 SearchDatabase 환경 예외1 OPEN. 원본 Editor 자연 Import·손플레이 미검증.
+
+**후속 미술 수정 방향(미승인 후보):** 신규 아트 Village v7에서 02/03 기반의 진짜 모티프 다양화 및 5×5/8×8 어색한 반복 제거, edge seam 유지와 원본43 보존. Bear v2는 05→00 머리·지지다리 및 필요한 인접 프레임 국소수정; Fox v2는 앞다리 분리·꼬리 형태 전6프레임 일관성. 동일 픽셀 단순 재배치로 반복미술 PASS 주장 금지; 공식 Bear/Fox KeyArt 사용 근거 없음. 각자 아트 실제 다시 납품→Codex 변경분만 QA→대표 최종 미술 승인 전 런타임 적용 금지. 최신 기획 정본 `문서/00_프로젝트/20261022_Village_v6_Bear_Fox_Run6_v1_CodexQA_ArtHold_NextActions.md` (docs/planning commit `fbe6746b7dc96805f31b1517ac456452a84c9991`).
+
+---
+
 # PLANNING 2026-10-22 — Village v6·Bear Run6 v1·Fox Run6 v1 ZIP3종 검수 접수
 
 바울 대표가 사용자 Windows 실제 ZIP 경로 3종을 제공. 납품 문서 GitHub 확인:
