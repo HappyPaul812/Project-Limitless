@@ -1,3 +1,15 @@
+# PLANNING 최신 2026-10-22 20:19 KST — Village v9 후보6 PASS권고/Gravel HOLD, Bear Run6 v4 PASS권고, Fox Run6 v4 HOLD
+
+**근거:** 바울 대표 제공 Codex 격리 Unity 결과 스크린샷. 기획 담당은 사용자 PC F: 실 ZIP·Unity를 직접 재검사하지 않았으므로 화면의 Codex 실증보고로 구분. 세 ZIP 모두 실제 readback SHA256가 아트 담당 신고와 일치:
+- **Village v9** `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79` / CRC PASS, Manifest **58/58**, SHA256SUMS **72/72**. 기존 원본 공식 후보43 PNG + 변형6 = **49 게임PNG 전부 바이트 동일**, **새로운 Candidate 9종만** 별도 후보. 규격·alpha·경계 seam **54종 PASS**, 실제 Unity 동일 Tile ID·동일 카메라 5×5/8×8·16:9/4:3/21:9 비교+통행 검증. **Earth 후보 family3종 `ART_PASS_RECOMMENDED`; ThinFrost family3종 `ART_PASS_RECOMMENDED`; Gravel 후보 family3종 `ART_HOLD`** — 큰 타일 격자는 개선됐으나 자갈 고유 **미세 격자/미세 텍스처 주기성** 잔존. 후보9 전체를 승인한 것이 아님. PASS권고 6종은 **파일 SHA 동결**하고 Gravel 후보3종만 다음 버전 소규모 아트 보완; 기존43/49 PNG와 Earth/ThinFrost 후보6 절대 재제작/덮어쓰기 금지. 바울 대표 최종 미술 승인 이전 Main23/Unity 실제 제품 적용 금지.
+- **Bear Run6 v4** `4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. 실제 Unity PlayMode 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. Codex 미술 **`ART_PASS_RECOMMENDED`**: 03→04 높이/착지 차이 감소, 02·05 이웃 체형 연결 개선. **최종 승인 아님**. Bear v4 **수정 동결·바울 대표 시각 최종승인 요청**, 승인 전 제품 Pet runtime 적용·main 병합 금지.
+- **Fox Run6 v4** `9c46764df7f88194b1d15663e4df34ecdb24367f7e65eed298dfc089221b5827` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. Unity 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. `ART_HOLD`: **Frame03 회수 앞다리의 밝은 접합부와 관절 연결이 끊겨 보임**. 리뉴얼 아트 담당에 **Fox v5 표적 Frame03 국소 교정** 요청, 02→03→04 실제 루프 연결 검사. 기존 개선된 꼬리·머리·몸통·기타 정상 프레임 원형 보존. 전체 6프레임 재작업/늑대 수정 금지.
+- **안전/미해결:** 10/21 승인 Wolf와 4,400파일 원본·Save/UserData·기존 dirty·HEAD/status/index 보호, 제품 적용0, PR/Push/병합0. **OPEN16: 유지16·완화0·해결0**, 현재 파일럿 타일과 직접 관련 있다는 근거 없음. 서릿길 마을 후보 전체 `USER_ART_APPROVAL_PENDING`, Bear는 `USER_BEAR_RUN_V4_ART_APPROVAL_PENDING`, Fox는 `ART_HOLD`.
+- **Codex 분리 QA branch:** `codex/qa-village-v9-bear-fox-v4-20261022`, 캡처 단축 커밋 `38f72951`, `59b205a7` (로컬 여부 별도 확인).
+- **후속 최소 병렬 발주:** 신규아트 **Village v10 Gravel family3 후보만** 보완, 기존 Earth·ThinFrost 후보 SHA+49 PNG 완전 보존. 리뉴얼 **Fox Run6 v5 Frame03 접합/관절만** 개선, Bear v4/정식 Wolf 동결. 미술 PASS 권고는 바울 대표 최종 승인과 분리. 중복 전수 QA/본게임 자동적용 금지.
+
+---
+
 # PLANNING 2026-10-22 저녁 최신 — Fox Run6 v3 / Bear Run6 v3 / Village v8 실제 Codex 미술 HOLD
 
 바울 대표가 2026-10-22 최신 Codex 격리 QA 스크린샷 전달 (기획 세션이 사용자 PC/Unity를 직접 검사한 것은 아님). **세 산출물 실 ZIP SHA가 각 담당 신고와 일치, ZIP CRC PASS, 이미지/실제 격리 Unity 기술 PASS. Fox와 Bear의 지난 v2 CSV bbox 오류는 각 6/6, 합계12/12 실 PNG alpha/헤더/좌표계 대조 PASS로 해결**. SHA256SUMS Fox/Bear22/22, Village97/97. Village 원본43 byte-identical, 변경6·신규0, 기존 승인 Wolf 및 원본4400파일/Save/UserData/HEAD/index 보호, 제품적용/Push/merge 없음.
