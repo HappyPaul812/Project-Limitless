@@ -167,7 +167,7 @@ namespace ProjectLimitless.Battle
             Sprite[] frames = new Sprite[count];
             for (int index = 0; index < count; index++)
             {
-                // 승인 Wolf Run6는 전체 3072×384, 각 칸 512×384입니다. Bear/Fox는 기존 규격을 사용하며
+                // 승인 Wolf/Bear Run6는 전체 3072×384, 각 칸 512×384입니다. Fox는 기존 규격을 사용하며
                 // 정의의 FrameWidth 간격으로 별도 Sprite를 만들어 Run Coroutine에 전달합니다.
                 // 아래 중앙 Pivot은 여섯 프레임 모두 발이 닿는 기준을 일정하게 유지합니다.
                 frames[index] = Sprite.Create(sheet,

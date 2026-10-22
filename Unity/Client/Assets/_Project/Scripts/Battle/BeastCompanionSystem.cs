@@ -70,7 +70,9 @@ namespace ProjectLimitless.Battle
             "wolf", "Wolf", "CompanionAssaultValidation/Wolf_Run6_v5", 512, 4, 12f, .25f, 760f * 3f / 4f,
             "CompanionAssaultValidation/Wolf_Run", 64);
         private static readonly BeastCompanionDefinition Bear = new BeastCompanionDefinition(
-            "bear", "Bear", "CompanionAssaultValidation/Bear_Run", 64, 0, 12f, 2f, 570f);
+            // 최종 승인 v4 달리기만 128×96으로 연결하고, 시설/스킬 아이콘은 기존 64px 원본을 보존합니다.
+            "bear", "Bear", "CompanionAssaultValidation/Bear_Run6_v4", 512, 0, 12f, .25f, 570f,
+            "CompanionAssaultValidation/Bear_Run", 64);
         private static readonly BeastCompanionDefinition Fox = new BeastCompanionDefinition(
             "fox", "Fox", "CompanionAssaultValidation/Fox_Run", 64, 0, 12f, 2f, 570f);
         private static readonly Dictionary<string, BeastCompanionDefinition> Definitions =
