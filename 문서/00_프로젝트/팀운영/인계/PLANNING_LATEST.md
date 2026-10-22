@@ -1,3 +1,28 @@
+# PLANNING 최종 최신 2026-10-22 21:48 KST — 서릿길 마을 v10 Candidate9 바울 대표 최종 미술 승인 / Fox v5 ManifestFix 기술 PASS, 모션 HOLD
+
+## A. 바울 대표 직접 승인 — Main23 Frostway Village v10 Candidate9
+
+- **사용자 명시 승인 문구:** “서릿길 마을 v10의 후보 타일 9종은 이대로 최종 미술 승인.” 기존 `VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`은 당시 기록이고, 최신 상태는 **`VILLAGE_V10_CANDIDATE9_USER_ART_APPROVED`**.
+- 승인 대상 ZIP: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v10.zip`, Codex 격리 실제 SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5` 및 PNG 9후보. **Earth 3·ThinFrost 3 = 이전 v9 승인권고 미술 후보 byte SHA 보존, Gravel 3 = v10 표적 개선본**, Candidate 9/9 사용자 최종 미술 승인.
+- SHA/PNG/Manifest/CRC·기존49 game PNG byte preservation/경계 seam·Unity 3화면비 5×5·8×8 동배율 및 통행 proxy 변경분 QA PASS (2026-10-22 Codex 스크린샷). *현 후보 9종 추가 재제작/미술 수정 금지, 각 PNG와 ZIP SHA 동결*.
+- **범위 제한:** 후보9종의 **미술** 승인으로서, `Candidate/` PNG 9종을 정식 타일 자산 승격/게임 적용하는 후속 Codex 통합 작업의 **기획 게이트는 열렸지만 실행/완료가 증명된 것은 아님**. 기존 `Tiles/` 공식게임PNG49, Main23 Scene·Quest·SafeZone, Tilemap PPU/Pivot/GUID/meta/배치 패턴 구현·검증, 런타임, GitHub main/원본 로컬 반영은 **별도 Codex 안전 통합 절차와 실제 결과** 필요. **Village 전체 마을 최종 PASS 선언 금지**, 기존 QA `OPEN16` **유지16/완화0/해결0** 및 그에 따른 후속 게이트 계속. 사용자 승인 후보가 기존 asset 원본을 자동 덮어쓰는 허가로 오독하지 말 것.
+- [Village Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 승인/OPEN16 추적, art-new v10 후보 동결 지시.
+
+## B. Fox v5 ManifestFix — 기술 무결성 PASS / 미술 HOLD
+
+- 바울 대표 Codex 결과 캡처: `F:\Downloads\Limitless_Beast_Fox_Run6_v5_ManifestFix.zip` 실 SHA `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29`; **CRC PASS, Manifest37/37 PASS, SHA256SUMS38/38 PASS, bbox CSV6/6 PASS**. 이전 Manifest 자기 참조 오류는 수정 완료. 기존 이미지/애니메이션 총13종이 수정 전 v5와 동일 SHA였다는 Codex 체크(이전 ZIP 실 바이너리 미보유 관계로 직접 전수 대조 대신 출력된 원 SHA 비교); 의도된 아트파일 변경 없음.
+- 격리 Unity 12FPS(실측 평균 12.004FPS), 128/40px·좌우, 4 loop 실제 재생 확인. **`FOX_V5_MANIFESTFIX_TECH_PASS / FOX_FRAME03_ART_HOLD`**: Frame03 회수 앞다리의 흰색 쐐기·스푸핑 경계가 남아 있고 Frame02→03→04 연결/무게·관절 회수가 부자연스러움. GIF480ms timing 별도 보완 필요 여부를 메타데이터/미술평가와 구분하고 실제 캡처 12FPS 판단 기준 유지. **바울 대표 최종 Fox 승인0, 제품 런타임 적용0**.
+- 다음 리뉴얼 담당은 **Frame03만 미술 표적 수정한 Fox v6 후보**(실제 아트 수정 버전) 제작. Frame00/01/02/04/05는 **바이트 동결**, Frame03 흰색 밝은 접합/관절을 본체·두 앞발·접지와 자연스럽게 합성; 02→03→04 12FPS·128/40px 동적 검증. 다른 정상 꼬리/몸통/귀·승인 Wolf 및 Bear v4 보호. 새 ZIP 자기참조 없는 Manifest/CRC/SHA/CSV bbox 명세와 릴리스 검증 후 Codex 변경분 QA, 대표 최종 미술 승인 전 공식 Fox 자산 반영 금지.
+- 별도 기존 수치: local QA branch `codex/qa-fox-v5-manifestfix-20261022`, 보고 커밋 `5eefa345`, `b88a8778` (단축, 실제 SHA 별도). 원본4,402파일 및 사용자 미커밋862파일, HEAD/index·승인 Wolf/Bear·Save/UserData 보호, GitHub Push/병합0.
+
+## 공통 기록·상태
+
+- **Bear Run6 v4** 사용자 최종 미술 승인 및 원본 게임 파일 적용 격리 Unity154PASS, 아직 GitHub Push/PR/병합 없음(Issue #51); 반복 테스트/재적용 금지.
+- **Village v10** 사용자 후보9 최종 미술 승인 기록은 **이번 문서 및 Issue #45**에 고정. 마을 전체/OPEN16/본편 Main23 적용은 별도. Fox 미술 `HOLD`, 두 아트 작업의 상태 전염 금지.
+- 기획 담당만 `docs/planning` 수정, user F: ZIP/Unity 로컬 main 파일 및 Save/UserData/Editor 직접 변경하지 않음. 마감 승인(merge/sync)은 별도 사용자 지시.
+
+---
+
 # PLANNING 최신 2026-10-22 Fox Run6 v5 패키징 게이트 실패 / Village v10 후보9 PASS권고 / Bear 제품 반영
 
 **근거:** 바울 대표 제공 Codex 최신 격리 Unity QA 캡처. 이 기획 담당은 사용자 F: 로컬 ZIP·Unity 원본을 직접 조작/재검사하지 않았으므로 아래는 Codex 실증 보고를 인계한 것임.
