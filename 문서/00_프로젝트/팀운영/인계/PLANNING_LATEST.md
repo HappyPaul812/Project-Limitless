@@ -7,7 +7,7 @@
 - **Bear v2 ART_HOLD:** v1의 05→00 머리 높이 변화는 개선. **새로운 03→04 착지/발 접지·무게 하중 연결이 급변**. 다음 Bear v3는 Frame03/04 주축, 필요시 02/05만 연속성 보완. 승인 Wolf 변경0.
 - **Fox v2 ART_HOLD:** v1 꼬리 형태 개선. **Frame02→03 전지(앞다리) 두 개가 겹치고 회수 동작의 읽힘 부족**. 다음 Fox v3는 02/03 주축, 필요시 01/04만 연결 수정. 기존 꼬리 v2 성과 보호.
 - **Village v7 ART_HOLD:** Earth/ThinFrost/Gravel 각 모티프 반복은 완화했으나 기존 01과 새 02/03의 **질감 통계·입자 크기·밀도·명암이 달라 5×5·8×8 타일별 사각 구획이 드러남**. 다음 v8은 01/기존43 PNG 보존, 02·03의 미세 질감 및 중저주파 명암분포를 01과 조화시키되 명백한 모티프 반복은 되돌리지 않는 **질감 통일형 국소 미술 수정**. 화면 edge 1px PASS만 미술PASS 근거로 쓰지 말고 실제 동배율 5×5/8×8 비교.
-- Unity 근거: 격리 실제 PlayMode 12FPS 128/40px Bear/Fox, Village 3화면비·5×5/8×8 Camera/RenderTexture; 통행 proxy **v6/v7 각각6/6 PASS**. OPEN16 원본자료 기반 **유지16·완화0·해결0**. 4,000파일 원본/HEAD/status/index/Wolf/Save/UserData 보호, 제품 적용/Push/merge0. 브랜치 `codex/qa-village-v7-bear-fox-v2-20261022`, 스크린샷 커밋 약식 `f76d8dbf`, `8982d40a`.
+- Unity 근거: 격리 실제 PlayMode 12FPS 128/40px Bear/Fox, Village 3화면비·5×5/8×8 Camera/RenderTexture; 통행 proxy **v6/v7 각각6/6 PASS**. OPEN16 원본자료 기반 **유지16·완화0·해결0**. 4,400파일 원본/HEAD/status/index/Wolf/Save/UserData 보호, 제품 적용/Push/merge0. 브랜치 `codex/qa-village-v7-bear-fox-v2-20261022`, 스크린샷 커밋 약식 `f76d8dbf`, `8982d40a`.
 - **다음 액션:** 신규 아트 v8, 리뉴얼 Bear/Fox v3 **각각 미술 표적보완**. Codex bbox metadata 오류는 우선 소스 이미지에서 다시 산출해 다음 v3 QA/CSV 바로잡기(그 자체를 모션 FAIL과 혼동 금지). OPEN16 원문/좌표를 art-new와 공유, 관련성확인 전 억측·임의 심각도 등급 금지. Main23 게임 실제 적용 및 10/21 승인 `main`/Wolf 교체 재시도 금지.
 - 근거: 사용자 2026-10-22 최신 Codex 스크린샷, `docs/art-renewal` Bear/Fox v2 납품정본, `docs/art-new` Village v7 정본. 이 기획 세션은 사용자 PC 로컬을 직접 실행/접근한 것은 아님.
 
