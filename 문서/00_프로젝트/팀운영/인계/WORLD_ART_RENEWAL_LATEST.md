@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-22 승인 Wolf Run6 v5 다음 단계 — Bear/Fox 각각 Run6 v1 실제 PNG+ZIP 납품 (현재 최신)
+
+- 바울 대표 직접 최신 결정: **Wolf Run6 v5 최종 미술승인/실제 게임 적용/main 통합·로컬동기화 완료, 기존 Wolf 변경 금지**. 이번 발주는 **Bear → Fox 독립 Run6 v1 파일럿 2종**. Codex Unity 실제 Bear/Fox 검증/본게임 반영은 아직 아님.
+- GitHub main 전체 tree 7088 항목에서 Bear/Fox 각각 공식 승인 고해상도 정적 PNG는 발견하지 못하고 `Resources/CompanionAssaultValidation/{Bear,Fox}_Run.png` 제3자 ScratchIO 임시 후보만 확인. 제3자 그림 픽셀 트레이스/리컬러0. 신규 동물 원화는 ChatGPT 이미지 생성 원본 6포즈 보드에서 서로 다른 6포즈를 개별 분리·투명 처리한 후보이며 **보드 원본 각 포즈의 정보량은 약120px, 512px는 확대 후보**. '승인 정적 Bear/Fox 원화' 혹은 512px 수작업 순수 원화라고 주장 금지.
+- **Bear ZIP** `Limitless_Beast_Bear_Run6_v1.zip` 실제 채팅 Sandbox 파일, **5,725,723 bytes / 37 entries / SHA256 `1a29475207c0f99db87726b637d301e5010bf5ef6790e2415ad679f67ffd7f19`**. 512×384 투명 좌향 PNG 6개, 3072×384 Strip/1536×768 3×2 Atlas, 12FPS/0.5초 GIF/APNG, 128px·40px 콘택트 시트/개별/05→00, Manifest/SHA256SUMS/오프라인 QA/프레임 설명/원본·분리 코드. **CRC/PNG6/Strip·Atlas6 동등/프레임 테두리 Alpha0 PASS**. 보고서 [Bear v1](../../Beast_Bear_Run6_v1_ArtPilot_Delivery_20261022.md) Commit `cd9a666fbc549c9deb97a494e1f1ce68c44c681f`.
+- **Fox ZIP** `Limitless_Beast_Fox_Run6_v1.zip` 실제 채팅 Sandbox 파일, **4,860,377 bytes / 37 entries / SHA256 `6d352219505497a261ffe2c1d687cece28bdf4859003d16fce88334d9a15f43d`**, 위와 같은 독립 6 PNG/Strip/Atlas/12FPS/128·40/검증 구성, **CRC/PNG6/셀 동등/Alpha0 PASS**. 보고서 [Fox v1](../../Beast_Fox_Run6_v1_ArtPilot_Delivery_20261022.md) Commit `fc0bc2afac2a6751ca4e055dbc42b29b569b4cb4`.
+- 현재 정확 상태 `BEAR_V1_PNG6_ZIP_DELIVERED / FOX_V1_PNG6_ZIP_DELIVERED / BOTH_OFFLINE_FILE_QA_PASS / BOTH_USER_MOTION_STYLE_APPROVAL_PENDING / BOTH_NOT_UNITY_APPLIED / MAIN_UNCHANGED`. 아트 위험: 프레임 사이 접지/05→00 모션 자연스러움 **아직 미술 검토 필요**, 확대 원화 detail은 생성 원본의 소형 포즈 한계 있음. 128px 검토는 실제 Unity 동일 WorldSize/GameView가 아님.
+- 다음: 바울 대표 Bear/Fox **각각 별도 미술/모션 승인** 후 필요한 포즈만 보완; 그 후 Codex 격리 실제 PPU/게임 런타임/40px UI 12FPS QA. 기존 승인 Wolf Run6 v5, Field09 합격6, 몬스터, Unity Editor·Save·UserData, main 직접 commit/Push/merge 보호. GitHub에는 문서만 커밋; PNG/ZIP 바이너리는 채팅 Sandbox에서 납품(바울 대표 F: 자동 복사0).
+
+
+
 ## 2026-10-21 Wolf Run6 v4 기술 PASS·Unity 12FPS PASS / Frame05 미술 FAIL → v5 국소 보완 실제 납품 (현재 최신)
 
 - 바울 대표 확정: 기존 Frame00~04/복원 03·04 꼬리/승인 Wolf 단일 v5 KeyArt **변경금지**. 실패 한 곳: `Wolf_Run_05_v4.png` 뒷다리 x315~338 / y235~280의 직각 윤곽. 다른 늑대 그림 이미지 생성기 결과는 **폐기·사용0**.
