@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-22 Bear Run6 v4 바울 대표 최종 미술·모션 승인
+
+- **바울 대표 직접 승인 문구:** “곰 Run6 v4는 이대로 최종 승인”. Codex 기술 PASS·실제 격리 Unity 12FPS/128px/40px 양방향 및 메타데이터 6/6 PASS·미술 PASS 권고를 기초로 **`BEAR_RUN6_V4_USER_ART_MOTION_APPROVED`** 확정. 전날 `PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 당시 기록으로 유지, 최신 상태는 승인완료.
+- 승인 ZIP: `F:\Downloads\Limitless_Beast_Bear_Run6_v4.zip`; Codex 실제 SHA256 readback = art-renewal 신고 **`4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a`**, 파일 기술/CRC·Manifest33/33·SHA256SUMS34/34, CSV bbox6/6 PASS. Bear v4 six frames `512×384 RGBA`, 12FPS, Strip/Atlas. v3 대비 Frame03/04 수정, 00·01·02·05 바이트 보존. 동작 02→03→04→05·05→00 연결 미술 최종 사용자 승인.
+- **동결:** Bear Run6 v4 ZIP 및 동봉 PNG·Manifest·SHA 원본 동결, **Bear v5 추가 수정·재제작 불필요/금지**. 반면 **Fox v4 ART_HOLD / Fox v5 Frame03 보완 진행**, Village v9 Earth/ThinFrost PASS 권고+Gravel HOLD는 이 승인과 무관하며 자동 승인·적용 금지. 승인 Wolf Run6 v5 정식 자산 변경 금지.
+- **구현 게이트:** 이 승인은 **Codex의 Bear 제품 경로 안전 통합 착수**를 허용하는 아트 승인이지, `Unity 원본 제품 반영 완료 / GitHub main 병합 / 로컬 동기화 완료`가 아니다. Codex는 승인 ZIP 실제SHA 재확인 후 격리 worktree에서 Bear Run 신규 asset 및 runtime/Resources/BeastCompanionSystem 참조를 최소범위로 연결하고 12FPS·양방향·PetFacility/Save와 간섭, Wolf 기존6프레임 안정성, Bear/Fox 타원본·GUID/meta·씬·퀘스트를 변경분만 검사. 사용자 원본 dirty/untracked·Editor·Save/UserData 보호, main 직접 commit/Push·force 금지. 기존 10/21 Wolf/EOD와 현재 Bear QA 전수 반복하지 말고 재사용.
+- 제품 소스 반영·PR/병합/원본 디스크 동기화의 완료 여부는 Codex **실제 결과와 SHA 증명** 후 변경. 본 GitHub `docs/planning` 수정은 기획 기록이며 제품 파일 수정 아님.
+- 관련 [Bear/Fox QA Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 Bear v4 납품 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Beast_Bear_Run6_v4_Continuity_Motion_Delivery_20261022.md).
+
+---
+
 # PLANNING 최신 2026-10-22 20:19 KST — Village v9 후보6 PASS권고/Gravel HOLD, Bear Run6 v4 PASS권고, Fox Run6 v4 HOLD
 
 **근거:** 바울 대표 제공 Codex 격리 Unity 결과 스크린샷. 기획 담당은 사용자 PC F: 실 ZIP·Unity를 직접 재검사하지 않았으므로 화면의 Codex 실증보고로 구분. 세 ZIP 모두 실제 readback SHA256가 아트 담당 신고와 일치:
