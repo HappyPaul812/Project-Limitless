@@ -1,3 +1,15 @@
+# PLANNING 2026-10-22 — Fox Run6 v7 Codex 실제 격리 Unity QA: 기술 PASS·Frame03 미술 PASS 권고 / 사용자 승인 대기
+
+바울 대표가 Codex v7 최신 결과 캡처를 직접 제공. 이 기획 세션은 로컬 F:를 직접 읽거나 Unity 실동작을 직접 검증한 것은 아님. 아래는 **사용자 제공 Codex 검사 보고**이다. 이전 v6은 미술 반려, v7은 **v5 ManifestFix 기준 Frame03만 국소 복원**한 별개 후보.
+
+- 입력: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; **실 ZIP SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**, 납품 신고와 일치. **CRC PASS / Manifest 26/26 / SHA256SUMS 27/27 / bbox CSV 6/6 PASS**, Source PNG6·Strip·Atlas **6/6 픽셀동일**. 기존 v5 기반 **Frame00·01·02·04·05 압축 PNG 바이트5/5 동일**, Frame03만 지정 범위 **6,275 RGBA픽셀** 변경. v6의 통짜 전신 교체본을 사용하지 않음.
+- 실제 **격리 Unity PlayMode 12FPS /128px·40px / 좌우 / 4회 루프** 실행, 실측 평균 **11.95 FPS**. **Frame03 분리된 흰 쐐기 제거·앞다리 연결 개선, 02→03→04에 뚜렷한 새 단절 미관찰** → **`FOX_V7_TECH_PASS / FRAME03_ART_PASS_RECOMMENDED`**. 다만 **4× 확대 사진에서 미세한 밝은 털띠 잔존**; 축소 128px/40px에선 Codex가 문제로 판정하지 않은 상태로 사용자가 최종 미술 수용 여부를 판단한다. 극미세 흔적을 '전혀 없음'으로 과장하지 말 것.
+- **승인·게임 적용 게이트:** Codex PASS권고≠바울 대표 미술·모션 최종 승인. 현재 **`FOX_V7_USER_APPROVAL_PENDING / NOT_GAME_APPLIED`**. 바울 대표가 최종 승인하면 승인 PNG/ZIP SHA 동결하고 Bear v4·Wolf v5의 제품 연결 방식을 참고하여 **새로운 별도 Codex 안전 제품경로 적용** (기존 게임/Save/UserData/씬/GUID/meta/dirty 보호, 실제 변경분 격리 Unity QA), main 직접 Push/merge 금지.
+- Codex 보고 브랜치 `codex/qa-fox-v7-foreleg-20261022`, 커밋 약식 `46c2ac83`·`941c1485`. 사용자 원본 **4,402파일**, 미커밋 **862파일**, HEAD/index 보호, 승인 Bear/Wolf/Main22 재검수0, 제품 적용0, GitHub Push/병합0.
+- 연관 [미술 Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 v7 원본 납품 QA](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md). 마을 Candidate9 사용자 최종 승인 완료지만 OPEN16/본편 Main23 적용은 별도; Bear v4 이미 원본 게임 파일 연결+154PASS, 원격 PR/main 아직 보류.
+
+---
+
 # PLANNING 2026-10-22 — Fox Run6 v7 Frame03 ForelegFix 실물 경로 접수 / Codex 격리 미술 검수 대기
 
 - **바울 대표가 Windows 실물 ZIP 경로를 전달**: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`. 기획 세션은 바울 대표 Windows F:를 직접 읽은 것이 아니므로 아래 SHA/무결성은 `docs/art-renewal` 납품 담당 신고값. **Codex 실제 ZIP SHA readback과 Unity 검수 아직 없음**.
