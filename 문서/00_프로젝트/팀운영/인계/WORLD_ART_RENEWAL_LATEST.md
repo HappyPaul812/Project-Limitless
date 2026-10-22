@@ -1,5 +1,15 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-22 Fox Run6 v5 ManifestFix ZIP 무결성 정상화 — 최신
+- Codex v5: CRC PASS, SHA256SUMS 38/38 PASS, Manifest 37/38 FAIL. 기존 Manifest가 자기 자신(기록 9,184bytes / 실제 9,345bytes)을 해시 목록에 넣어 SHA·CRC·크기 순환 불일치. 일반 37개 항목은 기존 해시 검사 PASS.
+- 실제 새 아카이브 Limitless_Beast_Fox_Run6_v5_ManifestFix.zip 3,131,729 bytes / SHA256 `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29` / 39 entries; 원본 v5 ZIP SHA `5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df` 보존.
+- 변경된 내부 파일 정확히 Manifest.json, SHA256SUMS.txt만 2개. 새 Manifest에서는 자기 자신과 SHA256SUMS를 제외한 37개 항목의 SHA/bytes/CRC32만 검사. SHA256SUMS에는 나머지 37 + 최종 Manifest 38항목 기록, 자기 자신은 제외.
+- **실물 재검증:** ZIP CRC PASS, Manifest 37/37 PASS, SHA256SUMS 38/38 PASS, 원본 대비 나머지 37/37 바이너리 파일 byte-for-byte 동일. 그중 이미지 31/31(독립 포즈 PNG6/6) SHA·바이트 변경0, CSV ↔ 실제 Alpha bbox 6/6 동일. 승인 Wolf/Bear v4 및 본게임(main) 변경0.
+- [Fox v5 ManifestFix 공식 납품 문서](../../Fox_Run6_v5_ManifestFix_Integrity_Delivery_20261022.md); 최초 문서 커밋 `cf9e7485847a84e31299081985a432da77c4c5a0`.
+- 파일은 이번 ChatGPT 대화 sandbox 다운로드로만 납품하고 ZIP 자체 GitHub 업로드/대표 F: 자동 복사는 하지 않음. Codex는 이 ZIP SHA부터 대조한 후 Frame03 밝은 접합부/02→03→04 실제 12FPS Unity 미술 QA 재개. 미술 사용자 최종 승인 대기, 정식 게임 적용 금지.
+- STATUS: FOX_V5_MANIFESTFIX_ACTUAL_ZIP_DELIVERED / MANIFEST37_PASS / SUMS38_PASS / IMAGE31_BYTE_IDENTICAL / CODEX_ART_DELTA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED.
+
+
 ## 2026-10-22 Bear/Fox Run6 v4 연속 모션 보완 — 실제 독립 ZIP 납품 (최신)
 - Codex v3 Bear/Fox PNG/metadata tech PASS, gait art HOLD. Bear 02→03→04→05 mass/head/foot transition; Fox 01→02→03→04 forepaw release/recovery/landing. Already corrected bbox CSV convention kept exactly, no unnecessary metadata refix.
 - Bear v4 6×512×384 PNG/3072×384 Strip/1536×768 Atlas/6-frame 500ms GIF/APNG/128·40 previews, target motion v3-v4 comparison, Manifest/SHA256SUMS/alpha bbox QA. v3 00,01,02,05 PNG compressed bytes unchanged; 03 controlled descent/recovery, 04 shoulder-height continuity with planted paws. ZIP **Limitless_Beast_Bear_Run6_v4.zip**, **5,130,611 bytes**, **SHA256 4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a**, 35 entries. [실제 납품 보고](../../Beast_Bear_Run6_v4_Continuity_Motion_Delivery_20261022.md); doc commit `37b30a6dbbd457445c2989ddcb3d321b06de59cc`.
