@@ -171,3 +171,14 @@
 - **OPEN16**: Codex가 이전 CSV/좌표JSON 실물을 로컬 확보했다는 Issue #45 최신 보고 확인. 그러나 **행별 원문 파일·좌표·재현조건은 현재 아트 세션 및 공개 Issue에서 열람 불가**. v6는 신규변형6만 제작해 기존 원본 OPEN16 **해결0 / 현재16**. 행별 근거가 없으므로 타일 관련 항목과의 정확한 매핑·타 담당 기존 PASS 항목 수정 금지. 증거 문서 공유 후 후속 선별수정.
 - 제작·QA 상세 [Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v6_Art_QA_20261022.md](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v6_Art_QA_20261022.md), 커밋 `baeaee947f44233a4e50e6456dc3725c4f7e958d`.
 - **후임**: Issue #45, docs/planning 최신 정본 → ZIP 실제 readback SHA 확인 → Codex 격리 5×5 01/02/03 섞은 실제 Unity 3비율·통행 DeltaQA → 대표 미술 승인 판단. 본게임 Main23/원본 Unity/Save/UserData/F1/승인 Wolf/Bear/Fox/main 변경 금지. `main` 직접 Commit·Push·Merge 금지.
+
+## 2026-10-22 Main23 Frostway GameArt v7 — 기존43 보호, 변형02/03 모티프 재설계
+
+- 바울 대표 v7 별도 승인 발주와 Issue #45 최신 Codex v6 격리 검수: 43PNG+신규6 ZIP 기술 PASS·Unity 3화면비/통행6/6 PASS이지만 Earth/ThinFrost/Gravel 01/02/03 혼합 5×5 모티프 유사성으로 미술 HOLD. 개별 OPEN16 원본 CSV/좌표JSON은 Codex 로컬 회수 보고만 존재, art-new가 직접 열람할 원문 없음.
+- 소스 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip` SHA `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`. 최종 v7 실물 ZIP `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v7.zip`, **SHA256 `d499f08481751c0fcda3298bbd37513466168b73105dd224b2cb767651bb691c`**, 30,503,515 bytes / ZIP 멤버 **88**, CRC·내부 SHA256SUMS 87/87 PASS.
+- **43 PNG 기존 v6 바이너리 43/43 완전 동일** (01 타일3·SkillShop/Gable/StonePath/포탈 등). **02·03 변형6 PNG만 변경**, 파일명 그대로. 256×256 RGBA/alpha255. 다른 PNG나 자동 배치·Overlay 추가 없음.
+- 변형 미술 방향: 원본 미세 입자의 **공간 주파수/색 범위**를 참조한 새 독립 바탕 질감과 서로 다른 **각진 파쇄암·토양 미세균열·서리결정 띠·비대칭 자갈 퇴적/풀 실루엣** 사용. 같은 원본 대형 돌/풀 픽셀패치 위치만 바꾸는 v6 방법에서 전환.
+- **오프라인 QA**: 동일 지형 내 01/02/03 가로9/세로9 이웃조합(18/family) 모든 max edge RGBA delta **0**; v6/v7 동일 Tile ID 랜덤배치 **3×3(원본256/cell)·5×5·8×8(표시128/cell)** 전후 비교, 01 단독 반복/실제 셀 접합/모티프 중심2× 확대, SHA/Pillow PNG PASS. v6 대비 변형 SSIM 크게 감소. **주의**: 01은 기존 미술 보존 때문에 v7 02/03과 질감이 차이나 큰 사각 구획이 느껴질 수 있음. 실제 Unity 시각 반복/타일 그리드 은폐 **미술 승인 미완**.
+- GitHub [제작·QA 문서](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v7_Art_QA_20261022.md), 커밋 `e641438cf2010164c2ec83298bab7e5709504004`. **실제 PNG/ZIP은 ChatGPT 현재 대화 다운로드 첨부만**, GitHub에 바이너리를 올리지 않음.
+- **OPEN16 해결0/미해결16**: 로컬 Codex가 원본 CSV/좌표 JSON 확보했지만 파일별 16행 원문이 art-new에게 공유되지 않음. 현재 원본 43 자산 모두 보존했으므로 OPEN16이 사라졌다고 주장 금지. 다음 세션/담당은 Codex 증거 전달→기획/아트 항목 분류→근거에 따라 해당 자산만 추가 수정.
+- **후속:** Codex 격리 Unity 16:9/4:3/21:9 실제 TileGrid에 v7 5×5/8×8 설정·통행 proxy/접합/격자 판단 후 대표 미술 승인. v7 상태 `CANDIDATES_DELIVERED / OFFLINE_QA_PASS / ART_HOLD_REVIEW_PENDING / NOT_INTEGRATED`. 본게임 Main23, 승인 F1/Wolf, Bear/Fox/다른 챕터, Save/UserData 변경 없음. `main` 직접 commit/push/merge 금지.
