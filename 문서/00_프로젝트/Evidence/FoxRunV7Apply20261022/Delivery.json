@@ -1,0 +1,17 @@
+{
+  "zip_sha256": "de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030",
+  "crc": "PASS",
+  "strip_sha256": "5487868681c3c93278417b754201aff681c2f78317e66774b3404b0629570e8a",
+  "strip_bytes": 840191,
+  "prior_full_art_qa": "FoxV7ForelegQA20261022, reused without rerun",
+  "source_sha_unchanged": true,
+  "product": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+    "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png",
+    "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png.meta"
+  ],
+  "base_commit": "5b89ac925402855251f01386009390780d74a6d4",
+  "qa_project_reused": "Temp\\BearRunV4Apply20261022\\UnityQA",
+  "only_Fox_runtime_harness_executed": true
+}

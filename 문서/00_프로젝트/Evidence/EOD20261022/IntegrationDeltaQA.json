@@ -1,0 +1,33 @@
+{
+  "static_pass": 10,
+  "static_fail": 0,
+  "static": [
+    "Exact45 product paths: approved BearFox6 + new Village39",
+    "Only approved run strips2 and candidate9 PNG",
+    "No audio, scene or runtime script addition",
+    "New9 SHA exact to verified approved cache; no art edit",
+    "Approved BearFox6 already original Git-equivalent; no original recopy",
+    "All new GUIDs unique in integration Assets",
+    "Scenes Packages ProjectSettings no change",
+    "Document merge conflicts0",
+    "No unresolved document markers",
+    "Original protected7179 hashes still unchanged before sync"
+  ],
+  "unity": {
+    "pass": 15,
+    "fail": 0,
+    "unity": "6000.6.5f1",
+    "scope": "new9 sprite/tile import and combined catalog closure",
+    "full_suite_runs": 0
+  },
+  "reused_full_qa": {
+    "Bear": 154,
+    "Fox": 162
+  },
+  "existing_full_suite_runs": 0,
+  "original_editor_actions": 0,
+  "focus_actions": 0,
+  "OPEN16_unresolved": 16,
+  "original_natural_import": "NOT_VERIFIED",
+  "initial_harness_compile_issue": "TextureImporter settings API fixed; final compile errors0"
+}

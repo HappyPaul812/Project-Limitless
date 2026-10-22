@@ -1,3 +1,65 @@
+## 2026-10-22 EOD 승인분 통합 — 신규 delta PASS / PR·원본 동기화 대기
+
+Issue #53: Bear Run6 v4 + Fox Run6 v7 공유 펫 정의를 모두 보존하고 승인 제품6파일을 선별했습니다. 기존154/162 전수QA 재실행0, 원본 이미 적용된 파일 재복사0. 마을 최종승인9 PNG는 별도 FrostwayVillageV10 Sprite9/Tile9 및 meta39파일로 등록, 기존49/Scene/Sorting/통행 변경0. 제품 총45파일. 격리 Unity15 PASS/0FAIL, 신규 정적10 PASS. 기존 Wolf/Main22/F1/서리들쥐 재검수0.
+
+담당 문서는 오늘 변경분만 파일별 병합·고유 HISTORY 보존. TTS READY104/152는 청취승인이 아니며 Main21 KEEP WAV7 및 미완 BGM/SFX 제품 적용0. OPEN16 미해결16, Main23 전체·Main24 Save #46 HOLD.
+
+원본912파일190,738,290bytes SHA백업, 총7179 SHA 보호. 원본Editor/Play/포커스0. 브랜치 codex/eod-integration-20261022. 마지막 승인 제품 commit cad73927(선행 Bear 9cf0e569). 최종 PR/merge/동기화 증거는 후속 마감 기록으로 확정합니다.
+
+## HISTORY — 실행 전 기존 기록
+
+## 2026-10-22 Fox Run6 v6 미술 FAIL → v7 Frame03 앞다리 국소 복원 후보 (최신)
+- 바울 대표 직접 피드백: v6 오른쪽 앞발 이상. v6는 Frame03 결함 국소수정 주문 위반으로 전신 포즈 교체, 기존 v5 대비 60,629 픽셀 변경하여 동작·앞발 방향이 달라진 **미술 FAIL**. ZIP·CRC PASS는 미술 PASS 아님. v6 정식 사용 금지.
+- v7 기준은 Fox v5 ManifestFix 6개 원본 PNG. Frame03만 기존 v3에서 **원래 그려진 정상적인 연속 앞다리/관절/발끝 페인팅**으로 국소 복원, 잘려 떠있는 흰 사각형/쐐기·분리된 발 제거. 변경 6,275 RGBA 픽셀 (x159..255,y185..294). Frame00/01/02/04/05 PNG 압축바이트 해시 **5/5 그대로**; 승인 Wolf·Bear v4·게임 원본·main/Unity/Save 변경0.
+- 실제 사용자 다운로드 **Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip** 2,990,546바이트, SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`. 6PNG 512x384, strip3072x384, atlas1536x768, 12FPS GIF/APNG, 128/40 contact, frame03 old/new zoom, v6 rejection comparison, 02→03→04/05→00→01, changed coord CSV, bbox script, Manifest self-hash excluded, SHA256SUMS external. ZIP CRC PASS, Manifest 26/26 PASS, SHA256SUMS 27/27 PASS, frames exact6/6, bbox6/6 PASS. ZIP is in chat sandbox, not automatically uploaded to Github or F:.
+- [Fox v7 local foreleg repair report](../../Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md), initial commit `dfd714c7428c13592e22d1332dfcfbfe6b1e8a95`. Accurate state **V7_REAL_FILE_DELIVERED / OFFLINE_FILE_QA_PASS / RUN_MOTION_ART_APPROVAL_PENDING / CODEX_ISOLATED_UNITY_V7_NOT_RUN / MAIN_UNCHANGED**. Do not call the candidate approved; restore physical leg continuity is not proof of 12FPS gait acceptance.
+
+## 2026-10-22 Fox Run6 v5 ManifestFix ZIP 무결성 정상화 — 최신
+- Codex v5: CRC PASS, SHA256SUMS 38/38 PASS, Manifest 37/38 FAIL. 기존 Manifest가 자기 자신(기록 9,184bytes / 실제 9,345bytes)을 해시 목록에 넣어 SHA·CRC·크기 순환 불일치. 일반 37개 항목은 기존 해시 검사 PASS.
+- 실제 새 아카이브 Limitless_Beast_Fox_Run6_v5_ManifestFix.zip 3,131,729 bytes / SHA256 `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29` / 39 entries; 원본 v5 ZIP SHA `5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df` 보존.
+- 변경된 내부 파일 정확히 Manifest.json, SHA256SUMS.txt만 2개. 새 Manifest에서는 자기 자신과 SHA256SUMS를 제외한 37개 항목의 SHA/bytes/CRC32만 검사. SHA256SUMS에는 나머지 37 + 최종 Manifest 38항목 기록, 자기 자신은 제외.
+- **실물 재검증:** ZIP CRC PASS, Manifest 37/37 PASS, SHA256SUMS 38/38 PASS, 원본 대비 나머지 37/37 바이너리 파일 byte-for-byte 동일. 그중 이미지 31/31(독립 포즈 PNG6/6) SHA·바이트 변경0, CSV ↔ 실제 Alpha bbox 6/6 동일. 승인 Wolf/Bear v4 및 본게임(main) 변경0.
+- [Fox v5 ManifestFix 공식 납품 문서](../../Fox_Run6_v5_ManifestFix_Integrity_Delivery_20261022.md); 최초 문서 커밋 `cf9e7485847a84e31299081985a432da77c4c5a0`.
+- 파일은 이번 ChatGPT 대화 sandbox 다운로드로만 납품하고 ZIP 자체 GitHub 업로드/대표 F: 자동 복사는 하지 않음. Codex는 이 ZIP SHA부터 대조한 후 Frame03 밝은 접합부/02→03→04 실제 12FPS Unity 미술 QA 재개. 미술 사용자 최종 승인 대기, 정식 게임 적용 금지.
+- STATUS: FOX_V5_MANIFESTFIX_ACTUAL_ZIP_DELIVERED / MANIFEST37_PASS / SUMS38_PASS / IMAGE31_BYTE_IDENTICAL / CODEX_ART_DELTA_PENDING / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED.
+
+## 2026-10-22 Bear/Fox Run6 v4 연속 모션 보완 — 실제 독립 ZIP 납품 (최신)
+- Codex v3 Bear/Fox PNG/metadata tech PASS, gait art HOLD. Bear 02→03→04→05 mass/head/foot transition; Fox 01→02→03→04 forepaw release/recovery/landing. Already corrected bbox CSV convention kept exactly, no unnecessary metadata refix.
+- Bear v4 6×512×384 PNG/3072×384 Strip/1536×768 Atlas/6-frame 500ms GIF/APNG/128·40 previews, target motion v3-v4 comparison, Manifest/SHA256SUMS/alpha bbox QA. v3 00,01,02,05 PNG compressed bytes unchanged; 03 controlled descent/recovery, 04 shoulder-height continuity with planted paws. ZIP **Limitless_Beast_Bear_Run6_v4.zip**, **5,130,611 bytes**, **SHA256 4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a**, 35 entries. [실제 납품 보고](../../Beast_Bear_Run6_v4_Continuity_Motion_Delivery_20261022.md); doc commit `37b30a6dbbd457445c2989ddcb3d321b06de59cc`.
+- Fox v4 6×512×384 PNG/Strip/Atlas/12FPS GIF/APNG/128·40 previews. v3 00,05 PNG compressed bytes unchanged. 01/04 head/chest continuity, 02 near forepaw lift, 03 far foreleg bending from existing painted source and near paw recovery. Tail silhouette remains consistent. ZIP **Limitless_Beast_Fox_Run6_v4.zip**, **3,698,704 bytes**, **SHA256 9c46764df7f88194b1d15663e4df34ecdb24367f7e65eed298dfc089221b5827**, 35 entries. [실제 납품 보고](../../Beast_Fox_Run6_v4_Continuity_Motion_Delivery_20261022.md); doc commit `5a809599f54354b31911fdcf5030b41b7f14a69d`.
+- **Actual files in ChatGPT sandbox** (not copied to representative's F:, not binary-uploaded to GitHub): `/mnt/data/Limitless_Beast_Bear_Run6_v4.zip`, `/mnt/data/Limitless_Beast_Fox_Run6_v4.zip`.
+- Each: Pillow PNG6/6, RGB+Alpha Strip/Atlas per-frame 6/6, 3px alpha border leak0, unique6, GIF/APNG duration500ms/6frames, Python recompute alpha bbox 6/6 from final pixels, ZIP CRC testzip PASS, all Manifest per-file SHA/readback PASS. Combined bbox12/12 PASS. ZIP SHA readback from final immutable archive. QA indicates asset integrity only; NOT 12FPS Unity art PASS.
+- **Important provenance**: v4 local pose deformation and painted-source far-foreleg rearticulation, not newly hand-painted all six original animals; 6-motion aesthetic PASS subject to Codex and user. User-approved Wolf v5 and main/Unity/Scene/Save/monsters untouched. Current `BEAR_FOX_V4_FILE_QA_PASS / CODEX_ISOLATED_UNITY_V4_PENDING / EACH_USER_MOTION_ART_APPROVAL_PENDING / NO_PRODUCTION_APPLY`.
+
+## 2026-10-22 Bear/Fox Run6 v3 실 PNG·ZIP 및 bbox CSV 12행 전체 수정 (현재 최신)
+- User reports Codex v2 Unity technical PASS / art HOLD. Bear issue 03→04 landing and realistic fore/hind foot support; Fox issue 02→03 far foreleg visibility/recovery. Bear v2 05→00 improved head-height and Fox v2 tail preserved.
+- Bear actual deliverable Limitless_Beast_Bear_Run6_v3.zip; 5,554,445 bytes; SHA256 adc3f36a65c9bc093cf2c1b3e68b7da3abe5d68c4edac461096fb1611f4a0a35. Changed independent art poses 03/04; exact v2 PNG compressed bytes preserved 00/01/02/05. Six RGBA 512x384, strip3072x384, atlas1536x768, 12FPS GIF/APNG, 128px/40px, frame/transition comparisons, CSV/meta/Manifest/SHA256SUMS. Documentation commit 83944ecbe22b5181e8886f2c49bd62cf71b356bf.
+- Fox actual deliverable Limitless_Beast_Fox_Run6_v3.zip; 4,138,420 bytes; SHA256 d4727d0e5fedbb2db7d224f0684fc6c80c78221aa120da3bef356ab43b800696. Local painted-source far leg cutout from v2 Frame01 added beneath unchanged torso on frames02/03; v2 compressed bytes of 00/01/04/05 preserved. Remaining knee/shoulder movement requires Codex art QA. Documentation commit 26ee05c2535b5460caa9666d95ba87e3974bb2f9.
+- Both ZIPs are tangible user-download files in this conversation sandbox, NOT uploaded as GitHub binaries or directly copied to F:. 24 entries each; zip CRC PASS, manifest SHA readback, PNG decode 6/6, strip/atlas per frame pixel equality 6/6, 3px no alpha bleed, 12FPS 6 frames per 500ms cycle.
+- Important QA fix: Both QA/Frame_Gait_And_Contact.csv have actual PNG A>0 bbox values in order bbox_min_x,bbox_min_y,bbox_max_x_exclusive,bbox_max_y_exclusive, 0-based top-left x-right/y-down. All 12 rows checked by included Python QA/verify_bbox.py. Unchanged frames NOT reworked to fix metadata.
+- Status BEAR_V3_FILE_QA_PASS / FOX_V3_FILE_QA_PASS / BBOX_CSV_12_OF_12_PASS / REAL_UNITY_12FPS_V3_NOT_RUN / USER_ART_APPROVAL_PENDING / WOLF_APPROVED_UNTOUCHED / MAIN_UNCHANGED. Genuine gait/weight and paw timing cannot be established by ZIP integrity alone. Codex delta-only Unity visual QA for each before user final acceptance; no auto game replacement.
+- Documents: [Bear v3](../../Beast_Bear_Run6_v3_TargetedArt_BBoxFix_Delivery_20261022.md); [Fox v3](../../Beast_Fox_Run6_v3_TargetedArt_BBoxFix_Delivery_20261022.md).
+
+## 2026-10-22 Bear/Fox Run6 v1 Codex 기술 PASS·미술 HOLD → 독립 v2 실제 PNG/ZIP 납품 (최신)
+
+- 바울 대표: Wolf Run6 v5 사용자 최종 미술 승인/실게임 반영 완료이므로 **Wolf 정본 재제작 및 변경 금지**. Bear와 Fox 각 v1이 격리 Unity 기술 PASS/미술 HOLD. Bear Frame05→00 머리/접지, Fox 앞발 구분/꼬리 일관성을 집중 보완한 **동물별 v2 독립 아트 후보** 제작.
+- 신규 1774×887 3×2 포즈 시트에서 **실제 서로 다른 동물 자세6을 각각 분리**하고 세부 실루엣 정돈, 512×384 RGBA PNG6, 3072×384 Strip, 1536×768 Atlas, 12FPS GIF/APNG 500ms/6, 128px·40px·v1 대비·05→00 미리보기 및 QA 생성. 기존 v1의 작은 그림 확대를 다시 재사용한 게 아니라 신규 원화 시트 이용. **전 프레임 512px 단위 완전 수작업 드로잉이 아님**, 미술 PASS 아직 미정.
+- **Bear** `Limitless_Beast_Bear_Run6_v2.zip`: **5,784,917 bytes / SHA256 `3d74103e01fcd9f17127afcecf52eaa9f578af96f8fa23a197a1237681c3c147` / 36 entries**. Frame05→00 바닥 bbox 최하단 325→326px, 머리/가슴 무게감 새 6포즈. `docs/art-renewal/문서/00_프로젝트/Beast_Bear_Run6_v2_TargetedMotion_Delivery_20261022.md`, 첫 문서 commit `5a6a451de1205b82ba81ff953d6ff4748c015722`.
+- **Fox** `Limitless_Beast_Fox_Run6_v2.zip`: **4,166,008 bytes / SHA256 `22e780627a96a87b2d1ce06f746248b0b9158cc59c834b8c6d4b2c6f9661c6ea` / 36 entries**. 앞다리 교차 자세와 꼬리 기준 윤곽을 유지한 신규 6포즈, 바닥 bbox 마지막05→첫00 325→326px. `docs/art-renewal/문서/00_프로젝트/Beast_Fox_Run6_v2_TargetedMotion_Delivery_20261022.md`, 첫 문서 commit `b1bffed559f871da2723a780a8a992df063d9072`.
+- 실제 ZIP/개별 PNG는 해당 ChatGPT 대화 Sandbox 다운로드로만 납품. GitHub 브랜치에는 문서/인계만 저장, 바울 대표 F: 로컬 파일 직접 사용·복사0. Bear/Fox 별도 GitHub 승인 KeyArt 정본은 main tree에서 확인 못하고 제3자 ScratchIO 임시 Sprite 두 개만 존재 → 새 두 v2 원화는 자체 제작 6포즈 시트 출처, 기존 제3자 픽셀 복제 아님.
+- 검사: 각 ZIP 6 PNG 재해독, 사방 프레임 Alpha 침범0, Strip/Atlas 6cell RGBA 바이트 동일6/6, GIF/APNG 총0.5sec/12FPS, ZIP testzip CRC/모든 entry SHA PASS. 단 이것은 `OFFLINE_ASSET_TECH_PASS / CODEX_V2_UNITY_QA_PENDING / BEAR_FOX_INDEPENDENT_USER_MOTION_APPROVAL_PENDING / OFFICIAL_WOLF_AND_MAIN_UNCHANGED`. Codex 격리 GameView 05→00·자세/접지 및 바울 대표 종별 승인 필요. 승인 이전 Bear/Fox 정식 Unity 적용 금지, 기존 승인 Wolf 등 자산/게임/Save/main 불변.
+
+## 2026-10-22 승인 Wolf Run6 v5 다음 단계 — Bear/Fox 각각 Run6 v1 실제 PNG+ZIP 납품 (현재 최신)
+
+- 바울 대표 직접 최신 결정: **Wolf Run6 v5 최종 미술승인/실제 게임 적용/main 통합·로컬동기화 완료, 기존 Wolf 변경 금지**. 이번 발주는 **Bear → Fox 독립 Run6 v1 파일럿 2종**. Codex Unity 실제 Bear/Fox 검증/본게임 반영은 아직 아님.
+- GitHub main 전체 tree 7088 항목에서 Bear/Fox 각각 공식 승인 고해상도 정적 PNG는 발견하지 못하고 `Resources/CompanionAssaultValidation/{Bear,Fox}_Run.png` 제3자 ScratchIO 임시 후보만 확인. 제3자 그림 픽셀 트레이스/리컬러0. 신규 동물 원화는 ChatGPT 이미지 생성 원본 6포즈 보드에서 서로 다른 6포즈를 개별 분리·투명 처리한 후보이며 **보드 원본 각 포즈의 정보량은 약120px, 512px는 확대 후보**. '승인 정적 Bear/Fox 원화' 혹은 512px 수작업 순수 원화라고 주장 금지.
+- **Bear ZIP** `Limitless_Beast_Bear_Run6_v1.zip` 실제 채팅 Sandbox 파일, **5,725,723 bytes / 37 entries / SHA256 `1a29475207c0f99db87726b637d301e5010bf5ef6790e2415ad679f67ffd7f19`**. 512×384 투명 좌향 PNG 6개, 3072×384 Strip/1536×768 3×2 Atlas, 12FPS/0.5초 GIF/APNG, 128px·40px 콘택트 시트/개별/05→00, Manifest/SHA256SUMS/오프라인 QA/프레임 설명/원본·분리 코드. **CRC/PNG6/Strip·Atlas6 동등/프레임 테두리 Alpha0 PASS**. 보고서 [Bear v1](../../Beast_Bear_Run6_v1_ArtPilot_Delivery_20261022.md) Commit `cd9a666fbc549c9deb97a494e1f1ce68c44c681f`.
+- **Fox ZIP** `Limitless_Beast_Fox_Run6_v1.zip` 실제 채팅 Sandbox 파일, **4,860,377 bytes / 37 entries / SHA256 `6d352219505497a261ffe2c1d687cece28bdf4859003d16fce88334d9a15f43d`**, 위와 같은 독립 6 PNG/Strip/Atlas/12FPS/128·40/검증 구성, **CRC/PNG6/셀 동등/Alpha0 PASS**. 보고서 [Fox v1](../../Beast_Fox_Run6_v1_ArtPilot_Delivery_20261022.md) Commit `fc0bc2afac2a6751ca4e055dbc42b29b569b4cb4`.
+- 현재 정확 상태 `BEAR_V1_PNG6_ZIP_DELIVERED / FOX_V1_PNG6_ZIP_DELIVERED / BOTH_OFFLINE_FILE_QA_PASS / BOTH_USER_MOTION_STYLE_APPROVAL_PENDING / BOTH_NOT_UNITY_APPLIED / MAIN_UNCHANGED`. 아트 위험: 프레임 사이 접지/05→00 모션 자연스러움 **아직 미술 검토 필요**, 확대 원화 detail은 생성 원본의 소형 포즈 한계 있음. 128px 검토는 실제 Unity 동일 WorldSize/GameView가 아님.
+- 다음: 바울 대표 Bear/Fox **각각 별도 미술/모션 승인** 후 필요한 포즈만 보완; 그 후 Codex 격리 실제 PPU/게임 런타임/40px UI 12FPS QA. 기존 승인 Wolf Run6 v5, Field09 합격6, 몬스터, Unity Editor·Save·UserData, main 직접 commit/Push/merge 보호. GitHub에는 문서만 커밋; PNG/ZIP 바이너리는 채팅 Sandbox에서 납품(바울 대표 F: 자동 복사0).
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 ## 2026-10-21 Wolf Run6 v4 기술 PASS·Unity 12FPS PASS / Frame05 미술 FAIL → v5 국소 보완 실제 납품 (현재 최신)
 
 - 바울 대표 확정: 기존 Frame00~04/복원 03·04 꼬리/승인 Wolf 단일 v5 KeyArt **변경금지**. 실패 한 곳: `Wolf_Run_05_v4.png` 뒷다리 x315~338 / y235~280의 직각 윤곽. 다른 늑대 그림 이미지 생성기 결과는 **폐기·사용0**.
@@ -339,5 +401,5 @@ Chapter2 Field04 실제 아트 ZIP 제작부터 시작. 환경 순서 Field04 �
 - 원본/후보 Alpha>0 하단은 그림자 포함 **오프라인 계측**이며 **본체·Collider 물리 접지 PASS가 아님**. v3 CSV `QA/Props_9_Grounding_Audit_v3.csv`·`QA/Props_8_Rect_BeforeAfter_v3.csv`·Manifest를 정본으로 사용. **v2 Props9 Preview의 숫자 자막은 의도적으로 보존한 구 버전 수치이므로 재사용 금지**.
 - Codex 보고 QA: `main` 대응 **2455 PASS**, 패키지 **191 PASS/FAIL0**, rect 정정 오류0, Road RGB/Alpha Seam0, ZIP CRC·Manifest·PNGDecode PASS, 기존 원본5,221개 SHA 및 dirty·HEAD 불변, Unity/Play/포커스/원본 PNG·GUID/meta/Scene/Quest/Save 변경0, Codex commit·Push·main병합0.
 - **HOLD 유지:** Roof2 NPC·출입구·Camera 가림, Props9 실제 본체 접지, Optional11 개별 미술·배치 승인, Portal(-7,-4)/TreeSouthWest(-7,-4.2) 겹침. **미술 승인·Unity 적용·Runtime 승인 없음**.
-- 정본 문서: [Arbel v3 Codex 문서 정정 인계](../../Arbel_Renewal_Art_v3_Metadata_Correction_Handoff_20261014.md). Codex 로컬 상세보고: `F:\study\codex\Project-Limitless\Temp\ArbelV3Metadata20261014\Arbel_v3_Metadata_Correction_Report_20261014.md` (이 세션 미열람). 문서 담당 브랜치 `docs/art-renewal`, main 직접 커밋/강제 Push/병합 금지.
+- 정본 문서: [Arbel v3 Codex 문서 정정 인계](../../Arbel_Renewal_Art_v3_Metadata_Correction_Handoff_20261014.md). Codex 로컬 상세보고: `Temp\ArbelV3Metadata20261014\Arbel_v3_Metadata_Correction_Report_20261014.md` (이 세션 미열람). 문서 담당 브랜치 `docs/art-renewal`, main 직접 커밋/강제 Push/병합 금지.
 - **현재 상태:** `CODEX_METADATA_QA_PASS / USER_ART_FINAL_APPROVAL_PENDING / UNITY_NOT_APPLIED / RUNTIME_NOT_APPROVED`. 다음: 바울 대표 v3 미술 승인 범위 결정 → Codex가 원본 물리 접지·Roof·Portal/선택장식 HOLD 재검토 → 승인 범위만 Unity 적용 후 Runtime QA.

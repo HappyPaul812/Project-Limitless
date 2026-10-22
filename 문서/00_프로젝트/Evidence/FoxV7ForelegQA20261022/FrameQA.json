@@ -1,0 +1,341 @@
+{
+  "frames": [
+    {
+      "frame": 0,
+      "file": "Assets/Poses/Fox_Run_00_v7.png",
+      "sha256": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        29,
+        61,
+        482,
+        330
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    },
+    {
+      "frame": 1,
+      "file": "Assets/Poses/Fox_Run_01_v7.png",
+      "sha256": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        29,
+        67,
+        482,
+        325
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    },
+    {
+      "frame": 2,
+      "file": "Assets/Poses/Fox_Run_02_v7.png",
+      "sha256": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        34,
+        56,
+        482,
+        295
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    },
+    {
+      "frame": 3,
+      "file": "Assets/Poses/Fox_Run_03_v7.png",
+      "sha256": "ea609981deb76602e7777496d6a7e506c9923d59fc3d78e7463e9e167e8c4b1e",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        30,
+        53,
+        482,
+        297
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    },
+    {
+      "frame": 4,
+      "file": "Assets/Poses/Fox_Run_04_v7.png",
+      "sha256": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        29,
+        63,
+        482,
+        321
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    },
+    {
+      "frame": 5,
+      "file": "Assets/Poses/Fox_Run_05_v7.png",
+      "sha256": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd",
+      "size": [
+        512,
+        384
+      ],
+      "mode": "RGBA",
+      "bbox": [
+        29,
+        65,
+        482,
+        329
+      ],
+      "alpha_edge3_clear": true,
+      "strip_equal": true,
+      "atlas_equal": true
+    }
+  ],
+  "deltas": [
+    {
+      "frame": 0,
+      "v5_byte_identical": true,
+      "changed_rgba_pixels": 0,
+      "changed_bbox": null
+    },
+    {
+      "frame": 1,
+      "v5_byte_identical": true,
+      "changed_rgba_pixels": 0,
+      "changed_bbox": null
+    },
+    {
+      "frame": 2,
+      "v5_byte_identical": true,
+      "changed_rgba_pixels": 0,
+      "changed_bbox": null
+    },
+    {
+      "frame": 3,
+      "v5_byte_identical": false,
+      "changed_rgba_pixels": 6275,
+      "changed_bbox": [
+        159,
+        185,
+        256,
+        295
+      ],
+      "outside_local_rectangle_rgba_equal": true
+    },
+    {
+      "frame": 4,
+      "v5_byte_identical": true,
+      "changed_rgba_pixels": 0,
+      "changed_bbox": null
+    },
+    {
+      "frame": 5,
+      "v5_byte_identical": true,
+      "changed_rgba_pixels": 0,
+      "changed_bbox": null
+    }
+  ],
+  "baseline": "v5 ManifestFix extracted original PNGs, hashes rechecked against its verified Manifest; v6 excluded",
+  "baseline_sha256": {
+    "Assets/Poses/Fox_Run_00_v5.png": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+    "Assets/Poses/Fox_Run_01_v5.png": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+    "Assets/Poses/Fox_Run_02_v5.png": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+    "Assets/Poses/Fox_Run_03_v5.png": "24ba9d5635a90d88ea9b5d53af6037601331033f4fc76c95daeba007587e8b80",
+    "Assets/Poses/Fox_Run_04_v5.png": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+    "Assets/Poses/Fox_Run_05_v5.png": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd"
+  },
+  "metadata": [
+    {
+      "frame": 0,
+      "row": {
+        "frame": "00",
+        "bbox_min_x": "29",
+        "bbox_min_y": "61",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "330",
+        "alpha_occupied_pixels": "57795",
+        "lowest_occupied_y": "329",
+        "changed_rgba_pixels_vs_v5": "0"
+      },
+      "actual_bbox": [
+        29,
+        61,
+        482,
+        330
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    },
+    {
+      "frame": 1,
+      "row": {
+        "frame": "01",
+        "bbox_min_x": "29",
+        "bbox_min_y": "67",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "325",
+        "alpha_occupied_pixels": "57369",
+        "lowest_occupied_y": "324",
+        "changed_rgba_pixels_vs_v5": "0"
+      },
+      "actual_bbox": [
+        29,
+        67,
+        482,
+        325
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    },
+    {
+      "frame": 2,
+      "row": {
+        "frame": "02",
+        "bbox_min_x": "34",
+        "bbox_min_y": "56",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "295",
+        "alpha_occupied_pixels": "51864",
+        "lowest_occupied_y": "294",
+        "changed_rgba_pixels_vs_v5": "0"
+      },
+      "actual_bbox": [
+        34,
+        56,
+        482,
+        295
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    },
+    {
+      "frame": 3,
+      "row": {
+        "frame": "03",
+        "bbox_min_x": "30",
+        "bbox_min_y": "53",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "297",
+        "alpha_occupied_pixels": "53507",
+        "lowest_occupied_y": "296",
+        "changed_rgba_pixels_vs_v5": "6275"
+      },
+      "actual_bbox": [
+        30,
+        53,
+        482,
+        297
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    },
+    {
+      "frame": 4,
+      "row": {
+        "frame": "04",
+        "bbox_min_x": "29",
+        "bbox_min_y": "63",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "321",
+        "alpha_occupied_pixels": "56270",
+        "lowest_occupied_y": "320",
+        "changed_rgba_pixels_vs_v5": "0"
+      },
+      "actual_bbox": [
+        29,
+        63,
+        482,
+        321
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    },
+    {
+      "frame": 5,
+      "row": {
+        "frame": "05",
+        "bbox_min_x": "29",
+        "bbox_min_y": "65",
+        "bbox_max_x_exclusive": "482",
+        "bbox_max_y_exclusive": "329",
+        "alpha_occupied_pixels": "56470",
+        "lowest_occupied_y": "328",
+        "changed_rgba_pixels_vs_v5": "0"
+      },
+      "actual_bbox": [
+        29,
+        65,
+        482,
+        329
+      ],
+      "checks": {
+        "frame": true,
+        "bbox": true,
+        "header_order": true,
+        "alpha_pixels": true,
+        "lowest_y": true,
+        "changed_pixels": true,
+        "coordinate_contract": true
+      }
+    }
+  ]
+}

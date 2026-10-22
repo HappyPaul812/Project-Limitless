@@ -1,0 +1,165 @@
+{
+  "title": "LIMITLESS Fox Run6 v7: Frame03 true localized foreleg art repair",
+  "source_package": "Limitless_Beast_Fox_Run6_v5_ManifestFix.zip",
+  "rejected_art_reference": "Limitless_Beast_Fox_Run6_v6.zip (art failed; not used)",
+  "fps": 12,
+  "facing": "left",
+  "frames": 6,
+  "frame_px": [
+    512,
+    384
+  ],
+  "modified_frames": [
+    "03"
+  ],
+  "byte_preserved_frames": [
+    "00",
+    "01",
+    "02",
+    "04",
+    "05"
+  ],
+  "bbox_contract": "PNG alpha>0, origin top left, x to right, y downward, max exclusive",
+  "checksum_policy": "Manifest excludes itself and SHA256SUMS; SHA256SUMS lists Manifest but excludes itself.",
+  "frame03_changes": {
+    "pixels": 6275,
+    "bbox": [
+      159,
+      185,
+      256,
+      295
+    ]
+  },
+  "file_hashes": {
+    "Assets/Fox_Run6_v7_Atlas3x2_1536x768.png": {
+      "sha256": "1f7d806f3c4526b5a8bf7378559d3601a1277c4d5797a581372c332df6f5e133",
+      "bytes": 841658,
+      "crc32": "93e1d10e"
+    },
+    "Assets/Fox_Run6_v7_Strip_3072x384.png": {
+      "sha256": "5487868681c3c93278417b754201aff681c2f78317e66774b3404b0629570e8a",
+      "bytes": 840191,
+      "crc32": "01264729"
+    },
+    "Assets/Poses/Fox_Run_00_v7.png": {
+      "sha256": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+      "bytes": 146191,
+      "crc32": "654c83c8"
+    },
+    "Assets/Poses/Fox_Run_01_v7.png": {
+      "sha256": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+      "bytes": 141302,
+      "crc32": "b6148aad"
+    },
+    "Assets/Poses/Fox_Run_02_v7.png": {
+      "sha256": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+      "bytes": 128350,
+      "crc32": "129325e4"
+    },
+    "Assets/Poses/Fox_Run_03_v7.png": {
+      "sha256": "ea609981deb76602e7777496d6a7e506c9923d59fc3d78e7463e9e167e8c4b1e",
+      "bytes": 136663,
+      "crc32": "0a601826"
+    },
+    "Assets/Poses/Fox_Run_04_v7.png": {
+      "sha256": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+      "bytes": 137263,
+      "crc32": "7bab25c7"
+    },
+    "Assets/Poses/Fox_Run_05_v7.png": {
+      "sha256": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd",
+      "bytes": 143434,
+      "crc32": "fba983e1"
+    },
+    "Docs/Art_Delta_Report.md": {
+      "sha256": "fe31e3f6420d1dd9e8bec05b2c679cd2a415517a9ff5b85b89dec6e316a8fdca",
+      "bytes": 708,
+      "crc32": "d838fa81"
+    },
+    "Preview/Fox_02_03_04_128px.png": {
+      "sha256": "6c711fba99843d54c3a8cea034d69d8f31a2178d46bfd094a3b1a80d3dea0d2a",
+      "bytes": 28971,
+      "crc32": "7ee8f9be"
+    },
+    "Preview/Fox_05_00_01_128px.png": {
+      "sha256": "70093472920dc4bbdfcb508e6296424a8a351d02646dea5d1753e7ad07bfbdf1",
+      "bytes": 30671,
+      "crc32": "e6a90f9c"
+    },
+    "Preview/Fox_Run6_v7_128px_ContactSheet.png": {
+      "sha256": "5d426277b6ef7e6d4ef188e3ddd4e84a0a533747f3924bc77992fd8aaa3401c5",
+      "bytes": 58812,
+      "crc32": "0c25c55a"
+    },
+    "Preview/Fox_Run6_v7_12FPS_128px.gif": {
+      "sha256": "808c73c9262e48725e9b02094f81701db59122307182e5802b5ec469cb5dc256",
+      "bytes": 33643,
+      "crc32": "622d3da6"
+    },
+    "Preview/Fox_Run6_v7_12FPS_40px.gif": {
+      "sha256": "b29ab01e84d4899b19816a312332d73388dd4075b381229841abfe2271bb9a9d",
+      "bytes": 8799,
+      "crc32": "e9e537b2"
+    },
+    "Preview/Fox_Run6_v7_12FPS_Transparent.apng": {
+      "sha256": "e41bd6fe9f7b3f7f9e9746002ea4cebe8cc657d098ffa95f37ba855052ffb40f",
+      "bytes": 79207,
+      "crc32": "322ced98"
+    },
+    "Preview/Fox_Run6_v7_40px_ContactSheet.png": {
+      "sha256": "48acab3b2d9e66cec52ef132d1a3f3228c4b732eeea07ec9d7a220a9dc108fc9",
+      "bytes": 9460,
+      "crc32": "4fb92e43"
+    },
+    "Preview/Fox_v5_vs_v7_12FPS.gif": {
+      "sha256": "d5b48e3c59d848f9b795589811ba64b5fabdf391190448f04f84b96c54719121",
+      "bytes": 51364,
+      "crc32": "2891456a"
+    },
+    "Preview/Frame03_Foreleg_v5_vs_v7_4x.png": {
+      "sha256": "396d5e9a4bb5c372c410c1488536abb6fec4fab3f7b237da6138c70fa6d992fd",
+      "bytes": 45155,
+      "crc32": "fd2c4f08"
+    },
+    "Preview/Frame03_Foreleg_v6_vs_v7_4x.png": {
+      "sha256": "de343719dd038549c6ba74e147b5835dc8d7237052c09df8ff17e0b5639edc8e",
+      "bytes": 47264,
+      "crc32": "dbf58c49"
+    },
+    "Preview/Frame03_v5_vs_v7_128px.png": {
+      "sha256": "cd2aa786d016fe94b2b5d6107f9bf6ab83c2408617c1e5f6cdad2ce943d7de5f",
+      "bytes": 12106,
+      "crc32": "d38cf8ce"
+    },
+    "Preview/Frame03_v6_vs_v7_128px.png": {
+      "sha256": "a4575b5bfba21aa0279c02c44342c467e242da9e64af7ecacd4c54917524d993",
+      "bytes": 18055,
+      "crc32": "d76a34be"
+    },
+    "QA/Frame03_Changed_RGBA.csv": {
+      "sha256": "8f336c6b467a879fb92994546f4a10e9b4c1bb2a51cd61cd3b7ebc1fed05d5b8",
+      "bytes": 218357,
+      "crc32": "ae9c37cd"
+    },
+    "QA/Frame_Gait_And_Contact.csv": {
+      "sha256": "6df06f537e14e5fb40a068183ebdbe1238aab5b055afe086e519d494d115037b",
+      "bytes": 323,
+      "crc32": "619c26ed"
+    },
+    "QA/Frame_Preservation.csv": {
+      "sha256": "5c145a2b8f4f20a980eb5d373f1f34b5a310ede62c16ef16009c18752b5ce162",
+      "bytes": 867,
+      "crc32": "f1073dee"
+    },
+    "QA/verify_bbox.py": {
+      "sha256": "2b8bdb2d82086003c714437b21d58e8d7255693fc58a91f264d4957b12fcb942",
+      "bytes": 626,
+      "crc32": "3f5bc78f"
+    },
+    "README.md": {
+      "sha256": "4222f18a550e1c96ebb0ff46ccc5abb6dcf4200103f30ce955be5b019bb1b22b",
+      "bytes": 806,
+      "crc32": "2620c729"
+    }
+  }
+}

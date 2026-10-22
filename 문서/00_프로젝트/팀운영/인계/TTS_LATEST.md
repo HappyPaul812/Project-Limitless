@@ -1,3 +1,27 @@
+## 2026-10-22 최신 사용자 결정 — Main21 기존 정상 후보 WAV 7개 KEEP / 재생성 금지 / 후일 Unity 일괄 통합
+
+- 사용자: `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\candidates`에서 **오류 후보들은 직접 정리**했고, 남은 WAV **7개만 보존**한다고 보고. **다시 TTS API로 생성하지 말 것**, 추후 다른 완성 성우 WAV와 **한 번에 Unity에 추가**. 지금 게임 반영 금지.
+- **[7개 WAV 보존/후일 통합 지시 정본](../../TTS_Main21_기존보존_7WAV_통합대기_20261022.md)**. 사용자 제공 7 ID 모두 실제 GitHub `main` `Main21_TTS_Manifest_20261010.json`에서 정확 대사/화자/VoiceExpected=true 대조 완료:
+  - **레온 Orus 2개:** `main21_carriage_leon_01.wav`, `main21_arbel_leon_01.wav`
+  - **미엘 Sulafat 2개:** `main21_aid_miel_02.wav`, `main21_aid_miel_01.wav`
+  - **폴 Achird 3개:** `main21_aid_paul_01.wav`, `main21_route_paul_02.wav`, `main21_route_paul_01.wav`
+- **상태 분리:** 해당 7개는 사용자 `KEEP` 지정, `TTS_NOT_REQUIRED`, `UNITY_PENDING`. API 다시 사용 금지. 실제 로컬 WAV 바이트/SHA/발화/PCM/사용자 청취 PASS는 ChatGPT에서 F: 직접 확인하지 못했으므로 **최종 통합 전 Codex가 검증**. 기존 WAV 삭제·이동·덮어쓰기 금지. TTS 자동 생성기에서도 대상 제외.
+- 현재 다른 제작현황(최근 사용자 로그): 세린 **67/67 READY**, 태온 **37/85 READY**(48 미제작), 하렌3은 별도 제작 대기/원래 `main21_haren_haren_01`의 평서문 하강 억양 주의. 이는 별개 제작 영역. **모든 음성이 준비되고 사용자 일괄 통합 승인 시에만** Codex가 Main20·21 전수 목록/기존 7 SHA 감사 후 하나의 구현 배치로 Unity 연결·검증. `main` 직접 커밋 금지.
+- 이번 턴 문서 기록만: Google API0/사용자 로컬 F: 변경0/Unity0. 7개 외에 과거 잘못된 후보가 삭제됐다는 내용은 **사용자 보고이지 직접 파일시스템 감사 결과가 아님**.
+
+## 2026-10-22 실제 사용자 콘솔 최종 상태 — 세린67/67 완료, 태온37/85, PT 40/40 안전 종료
+
+**최신 실행 증거 우선:** 2026-10-22 사용자 `Renewal_Auto_TTS_Failover_v2.py` 최종 출력 `[DAILY CAP] 2026-10-22 No more calls this PT day.`
+- `[STATUS] PT=2026-10-22 (UTC-7) / attempted=40/40 / remaining=0`.
+- `[KEYS] KEY1=10, KEY2=10, KEY3=10, KEY4=10` / 로컬 그룹 `PROJECT_1~4` 각각10. 이는 **로컬 사용량**이지 Google의 실시간 무료 quota 또는 프로젝트 소속 증거가 아님.
+- `[READY] Serin=67/67, Taeon=37/85, total=104/152` = 전체 **68.4%**. 전날 64/152에서 파일 준비 수 **+40**. 남은 제작 **태온48개**이며 세린은 추가 TTS 생성 대상0. READY는 저장된 PCM/메타 기준이며 **전량 사용자 청취 승인 아님**.
+- `HOLD=False`, `[429 QUARANTINE] []`: 에러 잠금이나 격리 없이 **정상 일일 안전상한 정지**. `RUNNING.lock` 복구나 `RESUME429`/`SWITCH429` 수동 복구 **불필요**. 기존 104 WAV/원문·SHA·사용량 원장을 보존한다.
+- 작업 예산은 *오늘 로컬40회 전부 사용*. Google 서버의 실제 프로젝트별 quota와 과금상태는 별도 확인 필요. 하렌3은 여전히 이 자동화 제외, 제작 보류.
+- **다음 실행 계획:** 2026-10-23 **00:00 PDT = 한국 시각 16:00** 이후 제공자 일일 리셋 및 실제 프로젝트/모델 무료 사용가능량 확인 → `cd F:\Downloads\Renewal_Voices` → `python .\Renewal_Auto_TTS_Failover_v2.py check` → `python .\Renewal_Auto_TTS_Failover_v2.py run`. 세린 완료본 skip 후 태온 다음 미제작부터 이어감. 예상대로 하루40이 허용된다면 10/23 +40, 10/24 +8회로 끝나지만 **Google 실제 성공/제작량은 보장 불가**.
+- 완료 뒤 104개를 즉시 Unity에 넣지 않는다. 태온 나머지 전량 제조 완료 + 세린/태온 전 챕터 발음·인물성·감정/음색 청취 QA + 사용자 승인 후에만 Codex Unity 무손실 통합. `docs/tts` 문서만 기록, main 직접 수정/Push/merge 금지.
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
 ## 2026-10-21 공통 로직 정본 — 앞으로 다른 모든 TTS에 재사용

@@ -1,0 +1,228 @@
+{
+    "unity": "6000.6.5f1",
+    "graphics": "Direct3D12",
+    "playMode": true,
+    "ppu": 128.0,
+    "tileScreenWidth": 128.0,
+    "samples": [
+        {
+            "animal": "Fox",
+            "cycleFrame": 0,
+            "pose": 0,
+            "engineFrame": 3,
+            "time": 0.0048554999999996795,
+            "image": "Fox_Motion_00.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 1,
+            "pose": 1,
+            "engineFrame": 8,
+            "time": 0.09588609999999953,
+            "image": "Fox_Motion_01.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 2,
+            "pose": 2,
+            "engineFrame": 17,
+            "time": 0.17589850000000062,
+            "image": "Fox_Motion_02.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 3,
+            "pose": 3,
+            "engineFrame": 27,
+            "time": 0.2638265999999998,
+            "image": "Fox_Motion_03.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 4,
+            "pose": 4,
+            "engineFrame": 36,
+            "time": 0.3435699000000003,
+            "image": "Fox_Motion_04.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 5,
+            "pose": 5,
+            "engineFrame": 46,
+            "time": 0.43215619999999966,
+            "image": "Fox_Motion_05.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 6,
+            "pose": 0,
+            "engineFrame": 55,
+            "time": 0.5130949999999999,
+            "image": "Fox_Motion_06.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 7,
+            "pose": 1,
+            "engineFrame": 64,
+            "time": 0.5927562000000002,
+            "image": "Fox_Motion_07.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 8,
+            "pose": 2,
+            "engineFrame": 74,
+            "time": 0.6808084000000001,
+            "image": "Fox_Motion_08.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 9,
+            "pose": 3,
+            "engineFrame": 83,
+            "time": 0.7601505999999993,
+            "image": "Fox_Motion_09.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 10,
+            "pose": 4,
+            "engineFrame": 93,
+            "time": 0.8483213000000003,
+            "image": "Fox_Motion_10.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 11,
+            "pose": 5,
+            "engineFrame": 102,
+            "time": 0.9303352999999994,
+            "image": "Fox_Motion_11.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 12,
+            "pose": 0,
+            "engineFrame": 111,
+            "time": 1.0125948000000005,
+            "image": "Fox_Motion_12.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 13,
+            "pose": 1,
+            "engineFrame": 120,
+            "time": 1.0959097,
+            "image": "Fox_Motion_13.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 14,
+            "pose": 2,
+            "engineFrame": 129,
+            "time": 1.1782099000000006,
+            "image": "Fox_Motion_14.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 15,
+            "pose": 3,
+            "engineFrame": 138,
+            "time": 1.2607408000000007,
+            "image": "Fox_Motion_15.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 16,
+            "pose": 4,
+            "engineFrame": 147,
+            "time": 1.3429719999999996,
+            "image": "Fox_Motion_16.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 17,
+            "pose": 5,
+            "engineFrame": 156,
+            "time": 1.4252374000000003,
+            "image": "Fox_Motion_17.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 18,
+            "pose": 0,
+            "engineFrame": 166,
+            "time": 1.5146201000000001,
+            "image": "Fox_Motion_18.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 19,
+            "pose": 1,
+            "engineFrame": 175,
+            "time": 1.5961783,
+            "image": "Fox_Motion_19.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 20,
+            "pose": 2,
+            "engineFrame": 184,
+            "time": 1.6771299000000006,
+            "image": "Fox_Motion_20.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 21,
+            "pose": 3,
+            "engineFrame": 193,
+            "time": 1.7584353000000004,
+            "image": "Fox_Motion_21.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 22,
+            "pose": 4,
+            "engineFrame": 203,
+            "time": 1.8482053,
+            "image": "Fox_Motion_22.png"
+        },
+        {
+            "animal": "Fox",
+            "cycleFrame": 23,
+            "pose": 5,
+            "engineFrame": 212,
+            "time": 1.9297676,
+            "image": "Fox_Motion_23.png"
+        }
+    ],
+    "checks": [],
+    "images": [
+        "Fox_Motion_00.png",
+        "Fox_Motion_01.png",
+        "Fox_Motion_02.png",
+        "Fox_Motion_03.png",
+        "Fox_Motion_04.png",
+        "Fox_Motion_05.png",
+        "Fox_Motion_06.png",
+        "Fox_Motion_07.png",
+        "Fox_Motion_08.png",
+        "Fox_Motion_09.png",
+        "Fox_Motion_10.png",
+        "Fox_Motion_11.png",
+        "Fox_Motion_12.png",
+        "Fox_Motion_13.png",
+        "Fox_Motion_14.png",
+        "Fox_Motion_15.png",
+        "Fox_Motion_16.png",
+        "Fox_Motion_17.png",
+        "Fox_Motion_18.png",
+        "Fox_Motion_19.png",
+        "Fox_Motion_20.png",
+        "Fox_Motion_21.png",
+        "Fox_Motion_22.png",
+        "Fox_Motion_23.png"
+    ]
+}

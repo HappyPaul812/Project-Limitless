@@ -1,0 +1,193 @@
+{
+  "zip_sha256": "4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a",
+  "crc_errors": 0,
+  "strip_sha256": "47177f72a202039b4a806bf4607e25384cf811d245169235862760152151bcb3",
+  "pixel_identical_frames": 6,
+  "manifest": {
+    "title": "LIMITLESS Bear Run6 v4 motion pilot",
+    "date": "2026-10-22",
+    "status": "OFFLINE_FILE_QA_PASS_MOTION_ART_REVIEW_PENDING",
+    "previous_v3_zip_sha256": "adc3f36a65c9bc093cf2c1b3e68b7da3abe5d68c4edac461096fb1611f4a0a35",
+    "frame_size": [
+      512,
+      384
+    ],
+    "fps": 12,
+    "facing": "left",
+    "frame_count": 6,
+    "strip": [
+      3072,
+      384
+    ],
+    "atlas": [
+      1536,
+      768
+    ],
+    "bbox_coordinates": "0-based top-left, x right y down, max_x/max_y exclusive, alpha>0",
+    "source_bundled_keyart_modified": false,
+    "unity_import_done": false,
+    "main_modified": false,
+    "modified_frames": [
+      3,
+      4
+    ],
+    "unchanged_frames": [
+      0,
+      1,
+      2,
+      5
+    ],
+    "changed_rgba_pixels_vs_v3": [
+      0,
+      0,
+      0,
+      73333,
+      79739,
+      0
+    ],
+    "art_limitations": "Local limb pose interpolation and source-paint far foreleg rearticulation, not newly handpainted six complete frames. 12FPS real game visual QA and artistic approval pending.",
+    "qa": {
+      "bboxes_verified": 6,
+      "manifest_hashes_verified": true,
+      "png6_decode": true,
+      "strip_cell_equality": 6,
+      "atlas_cell_equality": 6,
+      "crc": "PASS",
+      "gif_loop_500ms": true
+    },
+    "file_hashes": {
+      "Assets/Bear_Run6_v4_Atlas3x2_1536x768.png": {
+        "sha256": "bfe39dfe5ed7ffe5127fd049a64ac25f63d1f2e1add894252fe6b149e348eb50",
+        "bytes": 1176386
+      },
+      "Assets/Bear_Run6_v4_Strip_3072x384.png": {
+        "sha256": "47177f72a202039b4a806bf4607e25384cf811d245169235862760152151bcb3",
+        "bytes": 1176266
+      },
+      "Assets/Poses/Bear_Run_00_v4.png": {
+        "sha256": "60a4a9e236bbe4577c36565f309e10e4c42175163cb4bfdff421fe006bb7e064",
+        "bytes": 210621
+      },
+      "Assets/Poses/Bear_Run_01_v4.png": {
+        "sha256": "93e905f199136a2203bed4c9ff939cedb9684bf61c16d0bd563b3c3fc18cf875",
+        "bytes": 188983
+      },
+      "Assets/Poses/Bear_Run_02_v4.png": {
+        "sha256": "7590925461b8ff8f2ceefe6053211ecfe8e939bafcd75ba192f502171a782ab4",
+        "bytes": 189714
+      },
+      "Assets/Poses/Bear_Run_03_v4.png": {
+        "sha256": "def329e1796f7e3636b55ad832a3965b5074c3754b12ed307b9a296c4610e724",
+        "bytes": 164020
+      },
+      "Assets/Poses/Bear_Run_04_v4.png": {
+        "sha256": "71560fb6e2cddc10e3cc9a3b2a09d569b091246306b6504d946cac81326c4d2b",
+        "bytes": 185048
+      },
+      "Assets/Poses/Bear_Run_05_v4.png": {
+        "sha256": "adbce8fe6443e6a32dc513884921f8bd1f3b21fdbc7edb361c81bc9f2c9a29d4",
+        "bytes": 196106
+      },
+      "Frame_Descriptions_KO.md": {
+        "sha256": "defa03a4a5c1c22f5ca02bd2c98aebf63201f6cf62640c72a1ae4fa84cd21981",
+        "bytes": 339
+      },
+      "Preview/Bear_Loop_05_to_00_to_01_128px.png": {
+        "sha256": "f8562ef7b7ef20239500271e6cdba7191c0779f76caabe72ef4f2c3a633fbae3",
+        "bytes": 37080
+      },
+      "Preview/Bear_Run6_v3_vs_v4_12FPS_128px.gif": {
+        "sha256": "dc6797422d2f36d76c62db747f90a6a43ffd3d8f7bbb14d13f23b2b433eaff42",
+        "bytes": 68671
+      },
+      "Preview/Bear_Run6_v4_128px_ContactSheet.png": {
+        "sha256": "1e6bdbb6f56a2daedb44ca9c1e7ebb359b00a8f7150c1e2d295beed3cd510d61",
+        "bytes": 71388
+      },
+      "Preview/Bear_Run6_v4_12FPS_128px.gif": {
+        "sha256": "e5d9bb36fa463a9768b11cb1fe1b15f14f8057aa2fa9d60566294b0d0aa01149",
+        "bytes": 41989
+      },
+      "Preview/Bear_Run6_v4_12FPS_Transparent.apng": {
+        "sha256": "3adf86787f59aa3435275284e294bf409979f2bb64a3ed291e47d7dac1c00659",
+        "bytes": 91106
+      },
+      "Preview/Bear_Run6_v4_40px_ContactSheet.png": {
+        "sha256": "24bbc69af414f05c0dd27b4d7d2664c626d6961bfb9f6e998b6e07565ebb44aa",
+        "bytes": 8530
+      },
+      "Preview/Bear_Run_00_v4_128px.png": {
+        "sha256": "c4893f31ea5b497253a78e20ad3ff13755c8e560109df86b6909a93ac3612197",
+        "bytes": 16900
+      },
+      "Preview/Bear_Run_00_v4_40px.png": {
+        "sha256": "fb3284f2e56c4301dccdf938d24536437bc4f3aa0b38fe4d1c22f04f4b098e04",
+        "bytes": 2075
+      },
+      "Preview/Bear_Run_01_v4_128px.png": {
+        "sha256": "af9d688c32bb5680af925746afddd1f9128e4e1e0ebfe2a9524fc00b2b8ea262",
+        "bytes": 15047
+      },
+      "Preview/Bear_Run_01_v4_40px.png": {
+        "sha256": "2542ddc9b67c7a462700a20ce00ddef5a9a08b2ea691e0405e60872d29721496",
+        "bytes": 1913
+      },
+      "Preview/Bear_Run_02_v4_128px.png": {
+        "sha256": "364c05bf60b4c1dea3fad67f50c428113fd2b7011531d0426cb5d25b0b833cd5",
+        "bytes": 15229
+      },
+      "Preview/Bear_Run_02_v4_40px.png": {
+        "sha256": "e6e73f0f27bea8da1af94499b526d8c0529ddd867475a9ec40b91241d0bacc19",
+        "bytes": 1919
+      },
+      "Preview/Bear_Run_03_v4_128px.png": {
+        "sha256": "cd9ca81f3dc12032a82cdfc5be0615389138619716fc7ace713df5c27de12ad1",
+        "bytes": 13743
+      },
+      "Preview/Bear_Run_03_v4_40px.png": {
+        "sha256": "a82a4ec92751ae457c98e0a98ebb69d48cac23623d6cdfe2fadcf4196b559280",
+        "bytes": 1788
+      },
+      "Preview/Bear_Run_04_v4_128px.png": {
+        "sha256": "658f4ecd6360ece0bb56d12f08cb429e8400e958b7a6a782d804e2f7d05ead88",
+        "bytes": 15447
+      },
+      "Preview/Bear_Run_04_v4_40px.png": {
+        "sha256": "9e76ba10cbc5488665e0e5aa93cee20ed41ad11172f18de861d912f3a71f9133",
+        "bytes": 1977
+      },
+      "Preview/Bear_Run_05_v4_128px.png": {
+        "sha256": "5375cce7770fa241f0cc57a05a40110ac84ce7a8533cd4771dca8f1af62b5308",
+        "bytes": 15810
+      },
+      "Preview/Bear_Run_05_v4_40px.png": {
+        "sha256": "c6868dd3e63d0ccdcfa37e7a10efb3181c3677659fde780d41f3329c9da5e184",
+        "bytes": 1995
+      },
+      "Preview/Bear_TargetMotion_v3_vs_v4_FullResolution.png": {
+        "sha256": "0fe7debc244e449db93a3f20184b5eca4aecf98e5626bc269b16edf70d37ac97",
+        "bytes": 1230635
+      },
+      "QA/BBox_Coordinates_Contract.md": {
+        "sha256": "de67d11479b8d43b726ba553eab8cc7fd58c97583eb783dccfc2d5428fa71925",
+        "bytes": 376
+      },
+      "QA/Frame_Gait_And_Contact.csv": {
+        "sha256": "616ed29d660be09737e22635ea059ac7a62b2a94e8487e9dc02d57fe2b622cd5",
+        "bytes": 407
+      },
+      "QA/Offline_Validation.json": {
+        "sha256": "58505a49458e220b07d0f0bdfa16464304fb2285a60738c0cedbcc5b00e666d9",
+        "bytes": 546
+      },
+      "QA/verify_bbox.py": {
+        "sha256": "de57046f3751a41c65bdd5acd10cacc89f34ddbcf855509ea0bac7185e5e9eea",
+        "bytes": 766
+      },
+      "README.md": {
+        "sha256": "f8e93bb9b4e6cb0e5b5c072d5f2bdb6b273f2b6f79de70a7947e046a48580981",
+        "bytes": 772
+      }
+    }
+  }
+}

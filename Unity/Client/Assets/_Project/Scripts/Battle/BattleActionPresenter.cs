@@ -84,7 +84,7 @@ namespace ProjectLimitless.Battle
             float contactGroundOffset = target.rect.height * .5f - 2f;
             Vector3 contact = target.localPosition - new Vector3(moveDirection * contactSideGap, contactGroundOffset, 0f);
             beastRect.localPosition = start;
-            // 원본 Wolf는 왼쪽을 향합니다. 향후 반대편 사수가 같은 Presenter를 사용하면 원본 PNG를
+            // 승인 야수 원본은 왼쪽을 향합니다. 향후 반대편 사수가 같은 Presenter를 사용하면 원본 PNG를
             // 수정하지 않고 Transform만 뒤집어 실제 이동 방향을 바라보게 합니다.
             bool sourceFacesRight = beast.Monster != null && beast.Monster.SourceFacesRight;
             bool flip = (moveDirection > 0f) != sourceFacesRight;
@@ -126,7 +126,7 @@ namespace ProjectLimitless.Battle
         /// <summary>
         /// 야수 정의의 셀 너비로 한 줄 시트를 나눈 Sprite 배열을 0→1→2→3→4→5→0 순서로
         /// 반복합니다. 여기서는 위치를 바꾸지 않고 Image.sprite만 교체하므로 이동 속도와 독립된 12FPS를 유지합니다.
-        /// UI 아이콘은 별도로 고른 index 4 한 장만 사용하지만, 전투 Run은 이 여섯 장 전체를 사용합니다.
+        /// UI 아이콘은 야수 정의의 기존 아이콘 원본/프레임을 사용하고, 전투 Run은 이 여섯 장 전체를 사용합니다.
         /// </summary>
         private static IEnumerator PlayBeastRunAnimation(Image beastImage, Sprite[] frames, float framesPerSecond,
             BeastRunPlayback playback)
@@ -167,7 +167,7 @@ namespace ProjectLimitless.Battle
             Sprite[] frames = new Sprite[count];
             for (int index = 0; index < count; index++)
             {
-                // 승인 Wolf Run6는 전체 3072×384, 각 칸 512×384입니다. Bear/Fox는 기존 규격을 사용하며
+                // 승인 Wolf/Bear/Fox Run6는 전체 3072×384, 각 칸 512×384이며
                 // 정의의 FrameWidth 간격으로 별도 Sprite를 만들어 Run Coroutine에 전달합니다.
                 // 아래 중앙 Pivot은 여섯 프레임 모두 발이 닿는 기준을 일정하게 유지합니다.
                 frames[index] = Sprite.Create(sheet,

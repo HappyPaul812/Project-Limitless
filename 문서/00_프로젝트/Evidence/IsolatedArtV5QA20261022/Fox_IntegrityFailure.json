@@ -1,0 +1,16 @@
+{
+  "file": "Manifest.json",
+  "expected": {
+    "sha256": "376fee362f408da91366cfec88dc5bf1b30489db5127fc1835de829843e6f176",
+    "bytes": 9184,
+    "crc32": "7540cc8e"
+  },
+  "actual": {
+    "sha256": "7b7e17c241864b4694081675713cd6adf2e3ee2b74ecb3938decf39fc02bfc3c",
+    "bytes": 9345,
+    "crc32": "8ce870ab"
+  },
+  "integrity_stop": true,
+  "png_cell_csv_unity_art_checks": "NOT_RUN_AFTER_MANIFEST_MISMATCH",
+  "correction_required": "Remove self-reference from Manifest file_hashes, finalize Manifest, then regenerate SHA256SUMS and ZIP. Do not repaint or alter approved/preserved PNGs."
+}

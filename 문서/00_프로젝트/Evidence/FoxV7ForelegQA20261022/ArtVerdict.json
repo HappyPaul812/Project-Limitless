@@ -1,0 +1,13 @@
+{
+  "technical": "PASS",
+  "metadata": "PASS 6/6",
+  "art": "PASS_RECOMMENDED",
+  "user_final_approval": "PENDING",
+  "game_applied": false,
+  "frame03_white_detached_wedge": "Removed in actual 128px/40px comparison against v5",
+  "frame03_leg_silhouette": "Continuous from torso through recovering foreleg to paw",
+  "sequence_02_03_04": "No conspicuous sudden paw-direction reversal or newly detached silhouette observed at requested display sizes",
+  "loop_05_00": "Preserved baseline frames; no new visible loop discontinuity observed",
+  "remaining_detail": "A lighter fur band remains at the upper far foreleg under magnification. It is not read as the prior detached triangular fragment at requested scale; owner final visual judgement remains necessary.",
+  "scope": "Delta motion art recommendation only; not product movement/contact gameplay approval or use of rejected v6 reference"
+}

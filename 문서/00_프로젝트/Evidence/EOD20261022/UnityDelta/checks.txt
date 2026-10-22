@@ -1,0 +1,15 @@
+PASS Sprite import Frostway_Ground_Earth_01
+PASS Sprite import Frostway_Ground_Earth_02
+PASS Sprite import Frostway_Ground_Earth_03
+PASS Sprite import Frostway_Ground_Gravel_01
+PASS Sprite import Frostway_Ground_Gravel_02
+PASS Sprite import Frostway_Ground_Gravel_03
+PASS Sprite import Frostway_Ground_ThinFrost_01
+PASS Sprite import Frostway_Ground_ThinFrost_02
+PASS Sprite import Frostway_Ground_ThinFrost_03
+PASS New native Tile resources9
+PASS Tile references and no navigation collider change
+PASS Combined catalog bear
+PASS Original icon bear
+PASS Combined catalog fox
+PASS Original icon fox

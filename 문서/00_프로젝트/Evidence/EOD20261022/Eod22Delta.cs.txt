@@ -1,0 +1,37 @@
+using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+using ProjectLimitless.Battle;
+
+// 원본 Editor를 열지 않고 신규 자산 등록과 공유 카탈로그 병합만 검사합니다.
+public static class Eod22Delta
+{
+ static List<string> checks=new List<string>();
+ static void Check(bool ok,string text){checks.Add((ok?"PASS ":"FAIL ")+text);if(!ok)throw new Exception(text);}
+ public static void Run()
+ {
+  if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/Temp/BearRunV4Apply20261022/UnityQA/Assets"))throw new Exception("Scratch only");
+  string output=Path.GetFullPath(Path.Combine(Application.dataPath,"../../../EOD20261022/UnityDelta"));Directory.CreateDirectory(output);
+  try{
+   const string root="Assets/_Project/Resources/FrostwayVillageV10";
+   AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+   foreach(string png in Directory.GetFiles(root+"/Sprites","*.png")){
+    var importer=(TextureImporter)AssetImporter.GetAtPath(png);importer.textureType=TextureImporterType.Sprite;importer.spriteImportMode=SpriteImportMode.Single;importer.spritePixelsPerUnit=128;importer.spritePivot=new Vector2(.5f,0);var settings=new TextureImporterSettings();importer.ReadTextureSettings(settings);settings.spriteAlignment=(int)SpriteAlignment.Custom;settings.spritePivot=new Vector2(.5f,0);importer.SetTextureSettings(settings);importer.filterMode=FilterMode.Point;importer.mipmapEnabled=false;importer.alphaIsTransparency=true;importer.textureCompression=TextureImporterCompression.Uncompressed;importer.maxTextureSize=4096;importer.SaveAndReimport();
+    var sprite=AssetDatabase.LoadAssetAtPath<Sprite>(png);Check(sprite!=null&&sprite.rect.width==256&&sprite.rect.height==256&&sprite.pixelsPerUnit==128,"Sprite import "+sprite.name);
+    string path=root+"/Tiles/"+Path.GetFileNameWithoutExtension(png)+".asset";var tile=ScriptableObject.CreateInstance<Tile>();tile.sprite=sprite;tile.colliderType=Tile.ColliderType.None;AssetDatabase.CreateAsset(tile,path);
+   }
+   AssetDatabase.SaveAssets();AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+   var tiles=Resources.LoadAll<Tile>("FrostwayVillageV10/Tiles");Check(tiles.Length==9,"New native Tile resources9");
+   Check(tiles.All(t=>t.sprite!=null&&t.colliderType==Tile.ColliderType.None),"Tile references and no navigation collider change");
+   foreach(string id in new[]{"bear","fox"}){var def=BeastCompanionCatalog.Get(id);string version=id=="bear"?"Bear_Run6_v4":"Fox_Run6_v7";var sheet=Resources.Load<Texture2D>(def.RunResourcePath);Check(def.RunResourcePath.EndsWith(version)&&sheet!=null&&sheet.width/def.FrameWidth==6&&def.FramesPerSecond==12&&def.DisplayScale==.25f,"Combined catalog "+id);Check(def.IconFrameWidth==64&&!def.IconResourcePath.Contains("Run6"),"Original icon "+id);}
+   File.WriteAllLines(Path.Combine(output,"checks.txt"),checks);
+   File.WriteAllText(Path.Combine(output,"Result.json"),"{\"pass\":"+checks.Count+",\"fail\":0,\"unity\":\""+Application.unityVersion+"\",\"scope\":\"new9 sprite/tile import and combined catalog closure\",\"full_suite_runs\":0}");
+   Debug.Log("EOD22_DELTA_COMPLETE "+checks.Count);EditorApplication.Exit(0);
+  }catch(Exception ex){File.WriteAllLines(Path.Combine(output,"checks.txt"),checks);File.WriteAllText(Path.Combine(output,"failure.txt"),ex.ToString());EditorApplication.Exit(1);}
+ }
+}
+
