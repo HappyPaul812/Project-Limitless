@@ -1,3 +1,16 @@
+# PLANNING 2026-10-22 최종 EOD — Bear·Fox 제품 연결 완료 보고 + Village Candidate9 승인 / 통합 및 로컬 sync 사용자 지시
+
+- **바울 대표 직접 마감 지시**: “오늘은 여기까지 하자. 오늘 한 작업들 합치고, 로컬 동기화까지 해줘..”. 사용자 오늘 승인+QA 통과분에 대한 GitHub PR/main 선별병합 및 원본 Local 비파괴 동기화 실행을 Codex에 요청하는 EOD 승인. **GitHub [Issue #53](https://github.com/HappyPaul812/Project-Limitless/issues/53) 신규 생성**, 본 [EOD 안전실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261022_EOD_ApprovedMerge_LocalSync_SafetyContract.md) `docs/planning` 생성커밋 `cdd8e497724966de259d41f67f364d3804442c38`.
+- 기획 GitHub 실측 `main` **`510c021b4159167e211be60ca90e1cb7328bafe9`**, 열린 PR0(2026-10-22 마감 직전). 이 GitHub 기획 세션에서 Codex 사용자 PC F: 로컬 Git/Unity를 직접 다룰 수 없으므로 **본 EOD는 `CODEX_EXECUTION_PENDING / REMOTE_MERGE_NOT_DONE / LOCAL_SYNC_NOT_VERIFIED`**. 이슈/계약 생성은 실제 동기화 실행이 아님.
+- **Bear Run6 v4** 사용자 미술/모션 최종 승인 + Codex 원본 게임디스크 제품 안전반영, 격리 Unity **154PASS/0FAIL**, 로컬 `codex/bear-run6-v4-apply` 제품 커밋 단축 `5b89ac92`, QA `6e86d05d`. Issue #51. **원격PR/병합 대기**. 기존 원본 디스크 재복사·154건 전수 재QA 금지.
+- **Fox Run6 v7** 사용자 미술/모션 최종 승인 + Codex 원본 게임 제품 안전 반영. 제품 변경4파일 `Fox_Run6_v7.png` 신규/meta 및 `BeastCompanionSystem.cs`·`BattleActionPresenter.cs`. 격리 Unity **162PASS/0FAIL** 소환/장착/양방향6frame/저장복원. 로컬 `codex/fox-run6-v7-apply-20261022`, 제품 commit 단축 `332d9932`, QA `5167841a`. Issue #52. **원격PR/병합 대기**. Bear와 Fox 공통 펫 코드 충돌 시 무손실 **semantic merge** 필수, 승인 Wolf v5 그대로.
+- **Village v10** 사용자 **Candidate 타일 Earth3·ThinFrost3·Gravel3=9종 최종 미술승인**, ZIP SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`; 기존게임 PNG49와 후보 기존6 SHA보호. **EOD에는 승인9 새 게임 자산의 별도 안전등록만 통합 후보**, 기존 Tiles/Scene 전면 치환·Main23 신규 Quest 구현 금지. 안전 기술 gate 미충족 시 Village 제품 등록만 `PARTIAL_HOLD`하고 문서/approval은 병합.
+- **미승인 제외** Village `OPEN16` 유지16/완화0/해결0, Main23 본편 Scene/Quest/안전거점, Main24 skill loadout save #46, TTS 새 WAV·Main21 KEEP7 후일 Unity 일괄 적용대기, Main22 원래 임시대사/경제/보상 확정, 미완 BGM/SFX/영상 및 Fox v6 미술반려본. **TTS 10/22 최신 상태 세린67/67·태온37/85 총104/152 READY** — 사용자 전량 청취 합격 아님, 게임 적용 금지.
+- **마감 프로토콜** 최신 GitHub main과 local 원본 user dirty/untracked/Save/UserData/Editor/HEAD/index/new SHA 읽기전용 측정 → Temp/EOD20261022 SHA backup/proof → 별도 `codex/eod-integration-20261022` worktree Bear→Fox 공통코드 의미병합, Village 안전승격 및 문서 담당별 파일단위 의미통합, 신규 영향delta QA → EOD 승인된 안전분만 PR방식 main 병합 → 사용자 원본 dirty/unique commit/이미반영 Bear·Fox 파일 덮어쓰기 없이 비파괴 FF local sync → **GitHub main/origin/main/original local main 3자 SHA와 Save/개인파일 SHA 차이0** 실증 후 `SYNC_COMPLETE` 기록.
+- reset-hard/clean/무단 stash/강제checkout/main 직접 commit·Push, Editor foreground/Play/원본 Save 변경 금지. 충돌은 해당범위 보류하고 안전한 다른 범위만 진행. ***Codex의 PR URL/mergeSHA + OriginalLocalSync_Proof가 없는 현재는 동기화 완료로 주장하지 말 것***.
+
+---
+
 # PLANNING 2026-10-22 Fox Run6 v7 — 바울 대표 최종 미술·모션 승인 완료
 
 **사용자 직접 승인 원문:** “Fox Run6 v7도 이대로 최종 승인..”  
