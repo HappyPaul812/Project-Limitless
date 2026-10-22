@@ -1,3 +1,15 @@
+# PLANNING 2026-10-22 저녁 최신 — Fox Run6 v3 / Bear Run6 v3 / Village v8 실제 Codex 미술 HOLD
+
+바울 대표가 2026-10-22 최신 Codex 격리 QA 스크린샷 전달 (기획 세션이 사용자 PC/Unity를 직접 검사한 것은 아님). **세 산출물 실 ZIP SHA가 각 담당 신고와 일치, ZIP CRC PASS, 이미지/실제 격리 Unity 기술 PASS. Fox와 Bear의 지난 v2 CSV bbox 오류는 각 6/6, 합계12/12 실 PNG alpha/헤더/좌표계 대조 PASS로 해결**. SHA256SUMS Fox/Bear22/22, Village97/97. Village 원본43 byte-identical, 변경6·신규0, 기존 승인 Wolf 및 원본4400파일/Save/UserData/HEAD/index 보호, 제품적용/Push/merge 없음.
+- **Fox Run6 v3 `ART_HOLD`**: 전지 Frame02→03 앞발 분리 자체는 개선, 하지만 **발이 공중에 뜨는 타이밍과 회수 관절 움직임이 어색함**. 다음 v4 후보는 프레임01→02→03→04 연속 보폭·관절·착지 타이밍을 연결해 해결, v2부터 개선된 꼬리 일관성은 유지. 특정 프레임만 isolated repaint했다가 이웃에 새 튐 만들지 말 것.
+- **Bear Run6 v3 `ART_HOLD`**: Frame03→04 새 자세와 Frame02·05 양옆의 체형·접지 연결이 부자연스러움. 다음 v4 후보는 Frame02→03→04→05 연속성을 전체 보는 모션 아크 재구성, 개선된 05→00 머리높이 안정성·곰 체중감 유지.
+- **Village VariantTiles v8 `ART_HOLD`**: Earth/ThinFrost/Gravel 미세입자/명암 편차는 개선됐으나 **보호한 base01 고유 큰 모티프 반복 + 01↔02/03 사각 지면 구획**이 남음. 02·03만 다시 바꾸는 반복 로컬 패치 멈춤. 기존 공식 43 PNG는 일단 **원본 바이트 보존**하되 별도 비파괴 **대체 01 후보 포함 family 전3종 일괄 디자인**으로 사각 구획을 제거할 수 있는 5x5/8x8 실제 비교용 파일럿 검토. 대안은 미세 투명 overlay이나 기존 TileGrid/PPU/Sorting 계약 없이 Scene 구현 금지. 기존 base01 직접 덮어쓰기·공식 런타임 반영은 사용자 최종 미술 승인 후에만.
+- **OPEN16**: 원본 CSV/좌표 JSON Codex 보유, 미해결16/완화0/해결0. 신규아트 담당에게 **원문 파일·XY·조건** 실제 전달되어야 표적수정 가능. 기밀/사용자 절대 PC 경로 제거 후 자료 공유하고 severity 조작 금지.
+- Codex 로컬 검수 브랜치 `codex/qa-village-v8-bear-fox-v3-20261022`, 보고 캡처 commit 약식 `9576fcb9`, `226f0756`; 실제 두 ZIP/미술/기술 적용은 0. 오늘 당시 기획/아트 HEAD는 후속 업데이트 시 재확인.
+- **후속**: 신규 아트 담당 마을 v9 *대체 family 시안만*, 리뉴얼 Bear/Fox v4는 각 motion arc 시안, 각각 별도 SHA/자료·Unity 변경분 QA·대표님 최종 미술 승인 후에만 제품 Unity 적용/PR 병합. 기존 Main22/F1/Wolf QA 재실행 금지.
+
+---
+
 # PLANNING 2026-10-22 14:10 KST — Bear/Fox v2·Village v7 Codex 실제 QA 인수 (v1/v6 과거 캡처 정정)
 
 바울 대표가 직전 v1/v6 화면을 착오로 보낸 뒤, **“미안 와우 하다 헷갈렸다”**며 최신 **Bear v2·Fox v2·Village v7** 실제 검수 화면을 제공. 과거 v1/v6 판정과 혼합·재검증 금지.
