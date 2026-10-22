@@ -1,0 +1,240 @@
+{
+  "source_v9_zip_sha256": "afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79",
+  "source_v9_entry_count": 73,
+  "source_crc_ok": true,
+  "preserved_game_png_total_count": 49,
+  "preserved_game_png_byte_hashes_match": true,
+  "frozen_pass_recommended_candidate_count": 6,
+  "frozen_candidate_sha_unchanged": true,
+  "gravel_candidate_count_changed": 3,
+  "gravel_candidate_sha256": {
+    "Candidate/Tiles/Frostway_Ground_Gravel_01_v10_CANDIDATE.png": "8a36b719f2411f1d590e8ff9dd51ac589836ca4824d4f8ca43d1eb0fda1f839b",
+    "Candidate/Tiles/Frostway_Ground_Gravel_02_v10_CANDIDATE.png": "3fc485cf3f6ebf1a692e2c06d23b95044dafa071baa225dd1bf127b5a580cb99",
+    "Candidate/Tiles/Frostway_Ground_Gravel_03_v10_CANDIDATE.png": "58f171d88a1974e6ad011400e7e7f9d205fd8d39c4b70a3ce704715f4c16e5b8"
+  },
+  "families": {
+    "Gravel": {
+      "seam_pairs": [
+        {
+          "left": "01",
+          "right": "01",
+          "edge_max_diff": 0,
+          "top": "01",
+          "bottom": "01",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "01",
+          "right": "02",
+          "edge_max_diff": 0,
+          "top": "01",
+          "bottom": "02",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "01",
+          "right": "03",
+          "edge_max_diff": 0,
+          "top": "01",
+          "bottom": "03",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "02",
+          "right": "01",
+          "edge_max_diff": 0,
+          "top": "02",
+          "bottom": "01",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "02",
+          "right": "02",
+          "edge_max_diff": 0,
+          "top": "02",
+          "bottom": "02",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "02",
+          "right": "03",
+          "edge_max_diff": 0,
+          "top": "02",
+          "bottom": "03",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "03",
+          "right": "01",
+          "edge_max_diff": 0,
+          "top": "03",
+          "bottom": "01",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "03",
+          "right": "02",
+          "edge_max_diff": 0,
+          "top": "03",
+          "bottom": "02",
+          "top_bottom_max_diff": 0
+        },
+        {
+          "left": "03",
+          "right": "03",
+          "edge_max_diff": 0,
+          "top": "03",
+          "bottom": "03",
+          "top_bottom_max_diff": 0
+        }
+      ],
+      "seam_max_diff": 0,
+      "notes": "Ordered 3x3 horizontal and 3x3 vertical pair checks all zero at exact edge pixels."
+    }
+  },
+  "comparison_layout": {
+    "Gravel_5x5": {
+      "variant_id_grid": [
+        [
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "cell_render_size_px": 128,
+      "resampling": "Pillow LANCZOS (both identical)",
+      "capture_type": "OFFLINE_NOT_UNITY",
+      "same_layout": true
+    },
+    "Gravel_8x8": {
+      "variant_id_grid": [
+        [
+          2,
+          1,
+          2,
+          0,
+          2,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          0,
+          1,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1
+        ]
+      ],
+      "cell_render_size_px": 128,
+      "resampling": "Pillow LANCZOS (both identical)",
+      "capture_type": "OFFLINE_NOT_UNITY",
+      "same_layout": true
+    }
+  },
+  "codex_v10_scope": "Gravel only; Earth/ThinFrost candidate six frozen by user direction.",
+  "unity_integration": "NOT_APPLIED",
+  "open16_resolved": 0,
+  "open16_remaining": 16,
+  "earth_thinfrost_frozen_sha256": {
+    "Candidate/Tiles/Frostway_Ground_Earth_01_v9_CANDIDATE.png": "70cc14876d7da7a4cc1ffd616ff62971b1b181cd1c6f9d64287a54af3afd8dd6",
+    "Candidate/Tiles/Frostway_Ground_Earth_02_v9_CANDIDATE.png": "bd82fcba2294b2e67abce52d8aeb7de0e15be5421a432fece130d4979238f51b",
+    "Candidate/Tiles/Frostway_Ground_Earth_03_v9_CANDIDATE.png": "74cbc2d75a4ba92a7d497790aaf75cc69228939edeb66775b249e0df9d3c0e4a",
+    "Candidate/Tiles/Frostway_Ground_ThinFrost_01_v9_CANDIDATE.png": "5fbce4d42edb70a9d54317245f8d3a42f1b2aa1b839aea8ebdeb13cc28acaa80",
+    "Candidate/Tiles/Frostway_Ground_ThinFrost_02_v9_CANDIDATE.png": "0420859875968b353f46ab481a35c6b546f4424f86f6e8652a04c35694f90038",
+    "Candidate/Tiles/Frostway_Ground_ThinFrost_03_v9_CANDIDATE.png": "3b8276c79ec79d78e3c46e8e52a84e54802f4b720c27649b9c947fc0c453308d"
+  }
+}

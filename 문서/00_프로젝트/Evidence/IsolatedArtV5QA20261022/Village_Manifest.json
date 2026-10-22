@@ -1,0 +1,23 @@
+{
+  "status": "GRAVEL_TARGETED_FIX_CANDIDATE / OFFLINE_QA_PASS / NOT_UNITY_INTEGRATED / USER_ART_APPROVAL_PENDING",
+  "source_zip": "Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v9.zip",
+  "source_sha256": "afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79",
+  "preserve_game_png_count": 49,
+  "freeze_pass_recommended_candidate_count": 6,
+  "gravel_candidate_count": 3,
+  "gravel_candidate_sha256": {
+    "Candidate/Tiles/Frostway_Ground_Gravel_01_v10_CANDIDATE.png": "8a36b719f2411f1d590e8ff9dd51ac589836ca4824d4f8ca43d1eb0fda1f839b",
+    "Candidate/Tiles/Frostway_Ground_Gravel_02_v10_CANDIDATE.png": "3fc485cf3f6ebf1a692e2c06d23b95044dafa071baa225dd1bf127b5a580cb99",
+    "Candidate/Tiles/Frostway_Ground_Gravel_03_v10_CANDIDATE.png": "58f171d88a1974e6ad011400e7e7f9d205fd8d39c4b70a3ce704715f4c16e5b8"
+  },
+  "comparison_previews": [
+    "Preview/Gravel_V9_vs_V10_5x5_SameLayout_128pxCell_OFFLINE.png",
+    "Preview/Gravel_V9_vs_V10_8x8_SameLayout_128pxCell_OFFLINE.png"
+  ],
+  "notes": [
+    "Earth and ThinFrost candidate six carried forward byte-identical from v9 by user instruction.",
+    "Only Gravel candidate 01/02/03 were replaced with new v10 targeted-fix candidates.",
+    "Existing game PNG 49 were preserved byte-for-byte, including approved SkillShop/RoofGable/StonePath and official candidates.",
+    "OPEN16 unchanged with no new claim of resolution."
+  ]
+}

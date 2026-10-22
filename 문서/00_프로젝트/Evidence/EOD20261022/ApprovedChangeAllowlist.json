@@ -1,0 +1,237 @@
+{
+  "base": "510c021b4159167e211be60ca90e1cb7328bafe9",
+  "product": [
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Bear_Run6_v4.png",
+      "sha256": "47177f72a202039b4a806bf4607e25384cf811d245169235862760152151bcb3",
+      "source": "approved BearFox product"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Bear_Run6_v4.png.meta",
+      "sha256": "8a6c37c446c7b64a5c48e660c848e6c515a564751b5ad5c2c9319d5222699c77",
+      "source": "approved BearFox product"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png",
+      "sha256": "5487868681c3c93278417b754201aff681c2f78317e66774b3404b0629570e8a",
+      "source": "approved BearFox product"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/CompanionAssaultValidation/Fox_Run6_v7.png.meta",
+      "sha256": "51d96eec1f8b509b9e12c1871adb30ac23b21c80977ff787078bdf836ee908bc",
+      "source": "approved BearFox product"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10.meta",
+      "sha256": "4d0813d4d4f2e2d3e0ae0ea27434065682183c10a30cbf75509d81b2a3fa0f1f",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites.meta",
+      "sha256": "68b98fc3c9c5b229466020828ed6d01e9be583bad7c37f054a926ba94470dcf3",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_01.png",
+      "sha256": "70cc14876d7da7a4cc1ffd616ff62971b1b181cd1c6f9d64287a54af3afd8dd6",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_01.png.meta",
+      "sha256": "2af9d1c7dcd906825bdce5ef15ed30b9eaba270d2483139c543780a070b38dd9",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_02.png",
+      "sha256": "bd82fcba2294b2e67abce52d8aeb7de0e15be5421a432fece130d4979238f51b",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_02.png.meta",
+      "sha256": "afc5b9ed67ed258ba32273067447a10f507b9377b1f191435c91e09c6c2272d1",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_03.png",
+      "sha256": "74cbc2d75a4ba92a7d497790aaf75cc69228939edeb66775b249e0df9d3c0e4a",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_03.png.meta",
+      "sha256": "378a47024c562222411e6d9165570ae7ad17ec7bc5db5bdee9524af2489d8e74",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_01.png",
+      "sha256": "8a36b719f2411f1d590e8ff9dd51ac589836ca4824d4f8ca43d1eb0fda1f839b",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_01.png.meta",
+      "sha256": "45e5a6df7140ad94749fb76cb31f1c5aac0e0e151e7de21237514eee7c41f695",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_02.png",
+      "sha256": "3fc485cf3f6ebf1a692e2c06d23b95044dafa071baa225dd1bf127b5a580cb99",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_02.png.meta",
+      "sha256": "97518dc52e8668cad269a65e406194e9c22d5dbcc2da39658cd9e7f23dce044e",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_03.png",
+      "sha256": "58f171d88a1974e6ad011400e7e7f9d205fd8d39c4b70a3ce704715f4c16e5b8",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_03.png.meta",
+      "sha256": "1125b32ad5b251f506cc0754643dd0f5f7ba65439c4c2cb4a5ea745d5fcb41ef",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_01.png",
+      "sha256": "5fbce4d42edb70a9d54317245f8d3a42f1b2aa1b839aea8ebdeb13cc28acaa80",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_01.png.meta",
+      "sha256": "53f4b6d861369cac38643aca31a445279c92949cd1055453007c712cb01152d7",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_02.png",
+      "sha256": "0420859875968b353f46ab481a35c6b546f4424f86f6e8652a04c35694f90038",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_02.png.meta",
+      "sha256": "416424376cde6945012d5d2bb36b76d4c213deaff5cfe4d9497fa120778fce84",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_03.png",
+      "sha256": "3b8276c79ec79d78e3c46e8e52a84e54802f4b720c27649b9c947fc0c453308d",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_03.png.meta",
+      "sha256": "650f7e7ed27802e4220ba94a86bdf00048c2919a61ee41aad0c63e65d267455b",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles.meta",
+      "sha256": "ef49f6e6bb308a85e1a2fc0cfa9ff069252d3e56780bd0e6129144d4ea345878",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_01.asset",
+      "sha256": "dcd65187a192b1caaedfd1a8997f51b42d9a40cbd5d73628851e7b5069763275",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_01.asset.meta",
+      "sha256": "2a4e9b217a173c994d42da559dfaa6c508abfd2f587c9bd5fad331e9f773b042",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_02.asset",
+      "sha256": "fe14147d0a26520eed40096c75e3cd50a2595ea9f5ff7ae8586d410ff268ef70",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_02.asset.meta",
+      "sha256": "ef4e3f027486d9b3042185e6296e5365d49886d64553fbd4c1bc46eb369ad754",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_03.asset",
+      "sha256": "db937fbbfc47b58032fbad3f68d568c4aed82de223e2f5e9d35a3145d3ab9754",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Earth_03.asset.meta",
+      "sha256": "dfd0b4ade5de425a81e9bb7593e232d89c21a9b1d8da44dbcd5f953c8b2dac69",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_01.asset",
+      "sha256": "b9c9b36a50158de1fec805bb0531255a291c62ee3baf7ced420dde8235c8ce58",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_01.asset.meta",
+      "sha256": "8b72210c7280b7e21440a083b20d43332b8c175cef538de0a4d72a60946c8141",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_02.asset",
+      "sha256": "b732b96360c0c95748137077fef8997c994c678b2b4b08637a49fd36e8e4e2a8",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_02.asset.meta",
+      "sha256": "286823d53461b67b35d88b03eaacf07d879280246b0b5475481e5a4fc512c7f1",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_03.asset",
+      "sha256": "d4930b2cf33a9d1a461d941f34489d63ddf1bd4661efae1897fc301a79742ddc",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_Gravel_03.asset.meta",
+      "sha256": "7a18373cd53d69721b2e1a9d5d58cec7158b404f2d8e8fc21612cb77949b5a09",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_01.asset",
+      "sha256": "85972ce728662fdbe2e96f05d6adac088427a3731a6530335017cd3725c4b362",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_01.asset.meta",
+      "sha256": "80f30f137a96f237ee05bad6b7536aa1bc491eda5d6c2751650e4ac0f0f0f5c0",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_02.asset",
+      "sha256": "a7eb9a1fc0b97c1a47acab21d8a00d7421c23fcd6acf89970c36ea6d2eee0806",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_02.asset.meta",
+      "sha256": "d640fb90f74ff40fe580ad05f00bfef2226d13a74b4dbb22ebc7bb56466a4841",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_03.asset",
+      "sha256": "0fbd664dd7dd8665b28004b06564af5b582575b51bff52a076c67763d46fbb9a",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Tiles/Frostway_Ground_ThinFrost_03.asset.meta",
+      "sha256": "0fee82790cae769a573d9e5849f20aac6428c3cf159058a1531935f88f3a0bc6",
+      "source": "approved Village v10 candidate registration"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BattleActionPresenter.cs",
+      "sha256": "ed939cfdae561e89c7fdb1325ed6b31a36997c45ed646bf90e263a24858767ae",
+      "source": "approved BearFox product"
+    },
+    {
+      "path": "Unity/Client/Assets/_Project/Scripts/Battle/BeastCompanionSystem.cs",
+      "sha256": "43e5be388437a5df9bd8e26c091175f9209ea8e5e029b3166cabffe9b25fddfe",
+      "source": "approved BearFox product"
+    }
+  ],
+  "excluded": [
+    "unapproved audio",
+    "Fox v6",
+    "Main23 Scene Quest",
+    "OPEN16 fixes",
+    "full existing QA"
+  ]
+}

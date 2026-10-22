@@ -1,0 +1,7 @@
+frame,bbox_min_x,bbox_min_y,bbox_max_x_exclusive,bbox_max_y_exclusive,alpha_occupied_pixels,lowest_occupied_y,changed_rgba_pixels_vs_v5
+00,29,61,482,330,57795,329,0
+01,29,67,482,325,57369,324,0
+02,34,56,482,295,51864,294,0
+03,30,53,482,297,53507,296,6275
+04,29,63,482,321,56270,320,0
+05,29,65,482,329,56470,328,0

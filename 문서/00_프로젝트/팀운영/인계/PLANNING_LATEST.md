@@ -1,3 +1,173 @@
+## 2026-10-22 EOD 승인분 통합 — 신규 delta PASS / PR·원본 동기화 대기
+
+Issue #53: Bear Run6 v4 + Fox Run6 v7 공유 펫 정의를 모두 보존하고 승인 제품6파일을 선별했습니다. 기존154/162 전수QA 재실행0, 원본 이미 적용된 파일 재복사0. 마을 최종승인9 PNG는 별도 FrostwayVillageV10 Sprite9/Tile9 및 meta39파일로 등록, 기존49/Scene/Sorting/통행 변경0. 제품 총45파일. 격리 Unity15 PASS/0FAIL, 신규 정적10 PASS. 기존 Wolf/Main22/F1/서리들쥐 재검수0.
+
+담당 문서는 오늘 변경분만 파일별 병합·고유 HISTORY 보존. TTS READY104/152는 청취승인이 아니며 Main21 KEEP WAV7 및 미완 BGM/SFX 제품 적용0. OPEN16 미해결16, Main23 전체·Main24 Save #46 HOLD.
+
+원본912파일190,738,290bytes SHA백업, 총7179 SHA 보호. 원본Editor/Play/포커스0. 브랜치 codex/eod-integration-20261022. 마지막 승인 제품 commit cad73927(선행 Bear 9cf0e569). 최종 PR/merge/동기화 증거는 후속 마감 기록으로 확정합니다.
+
+## HISTORY — 실행 전 기존 기록
+
+# PLANNING 2026-10-22 최종 EOD — Bear·Fox 제품 연결 완료 보고 + Village Candidate9 승인 / 통합 및 로컬 sync 사용자 지시
+
+- **바울 대표 직접 마감 지시**: “오늘은 여기까지 하자. 오늘 한 작업들 합치고, 로컬 동기화까지 해줘..”. 사용자 오늘 승인+QA 통과분에 대한 GitHub PR/main 선별병합 및 원본 Local 비파괴 동기화 실행을 Codex에 요청하는 EOD 승인. **GitHub [Issue #53](https://github.com/HappyPaul812/Project-Limitless/issues/53) 신규 생성**, 본 [EOD 안전실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261022_EOD_ApprovedMerge_LocalSync_SafetyContract.md) `docs/planning` 생성커밋 `cdd8e497724966de259d41f67f364d3804442c38`.
+- 기획 GitHub 실측 `main` **`510c021b4159167e211be60ca90e1cb7328bafe9`**, 열린 PR0(2026-10-22 마감 직전). 이 GitHub 기획 세션에서 Codex 사용자 PC F: 로컬 Git/Unity를 직접 다룰 수 없으므로 **본 EOD는 `CODEX_EXECUTION_PENDING / REMOTE_MERGE_NOT_DONE / LOCAL_SYNC_NOT_VERIFIED`**. 이슈/계약 생성은 실제 동기화 실행이 아님.
+- **Bear Run6 v4** 사용자 미술/모션 최종 승인 + Codex 원본 게임디스크 제품 안전반영, 격리 Unity **154PASS/0FAIL**, 로컬 `codex/bear-run6-v4-apply` 제품 커밋 단축 `5b89ac92`, QA `6e86d05d`. Issue #51. **원격PR/병합 대기**. 기존 원본 디스크 재복사·154건 전수 재QA 금지.
+- **Fox Run6 v7** 사용자 미술/모션 최종 승인 + Codex 원본 게임 제품 안전 반영. 제품 변경4파일 `Fox_Run6_v7.png` 신규/meta 및 `BeastCompanionSystem.cs`·`BattleActionPresenter.cs`. 격리 Unity **162PASS/0FAIL** 소환/장착/양방향6frame/저장복원. 로컬 `codex/fox-run6-v7-apply-20261022`, 제품 commit 단축 `332d9932`, QA `5167841a`. Issue #52. **원격PR/병합 대기**. Bear와 Fox 공통 펫 코드 충돌 시 무손실 **semantic merge** 필수, 승인 Wolf v5 그대로.
+- **Village v10** 사용자 **Candidate 타일 Earth3·ThinFrost3·Gravel3=9종 최종 미술승인**, ZIP SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`; 기존게임 PNG49와 후보 기존6 SHA보호. **EOD에는 승인9 새 게임 자산의 별도 안전등록만 통합 후보**, 기존 Tiles/Scene 전면 치환·Main23 신규 Quest 구현 금지. 안전 기술 gate 미충족 시 Village 제품 등록만 `PARTIAL_HOLD`하고 문서/approval은 병합.
+- **미승인 제외** Village `OPEN16` 유지16/완화0/해결0, Main23 본편 Scene/Quest/안전거점, Main24 skill loadout save #46, TTS 새 WAV·Main21 KEEP7 후일 Unity 일괄 적용대기, Main22 원래 임시대사/경제/보상 확정, 미완 BGM/SFX/영상 및 Fox v6 미술반려본. **TTS 10/22 최신 상태 세린67/67·태온37/85 총104/152 READY** — 사용자 전량 청취 합격 아님, 게임 적용 금지.
+- **마감 프로토콜** 최신 GitHub main과 local 원본 user dirty/untracked/Save/UserData/Editor/HEAD/index/new SHA 읽기전용 측정 → Temp/EOD20261022 SHA backup/proof → 별도 `codex/eod-integration-20261022` worktree Bear→Fox 공통코드 의미병합, Village 안전승격 및 문서 담당별 파일단위 의미통합, 신규 영향delta QA → EOD 승인된 안전분만 PR방식 main 병합 → 사용자 원본 dirty/unique commit/이미반영 Bear·Fox 파일 덮어쓰기 없이 비파괴 FF local sync → **GitHub main/origin/main/original local main 3자 SHA와 Save/개인파일 SHA 차이0** 실증 후 `SYNC_COMPLETE` 기록.
+- reset-hard/clean/무단 stash/강제checkout/main 직접 commit·Push, Editor foreground/Play/원본 Save 변경 금지. 충돌은 해당범위 보류하고 안전한 다른 범위만 진행. ***Codex의 PR URL/mergeSHA + OriginalLocalSync_Proof가 없는 현재는 동기화 완료로 주장하지 말 것***.
+
+# PLANNING 2026-10-22 Fox Run6 v7 — 바울 대표 최종 미술·모션 승인 완료
+
+**사용자 직접 승인 원문:** “Fox Run6 v7도 이대로 최종 승인..”  
+**최신 상태:** `FOX_RUN6_V7_USER_ART_MOTION_APPROVED / ASSET_FROZEN / CODEX_GAME_APPLY_REQUESTED / GAME_APPLY_NOT_YET_VERIFIED / GITHUB_MAIN_UNCHANGED`. 이전 `ART_PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 승인 전 역사 기록으로 보존하지만 **현재 승인은 확정**.
+
+- 승인 실물: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; 실제 Codex SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`, CRC/Manifest26/26/SHA256SUMS27/27/alpha CSV6/6, Strip/Atlas 정확6/6. v5 ManifestFix 대비 Frame00·01·02·04·05 PNG **5개 압축바이트 동일**, Frame03 **6,275 RGBA픽셀만** 개선. v6 미술반려 전신교체본 사용 금지.
+- 이미 통과한 **실제 격리 Unity 12FPS(평균11.95 FPS),128px/40px·좌우 4루프**, 앞다리 흰 쐐기 제거·02→03→04 연결 개선, 확대 4× 화면에 잔존한 미세 밝은 털띠는 **바울 대표 현 상태 수용**. **Fox v7 PNG/ZIP/Manifest SHA 원본 동결, 추가 v8 미술 수정 금지**.
+- 공식 Run6 세 동물 사용자 미술·모션 확정: **Wolf Run6 v5** 게임 적용+기존 EOD 원격 병합 완료, **Bear Run6 v4** 원본 게임 디스크 반영/격리Unity154PASS·원격PR/main 병합대기(Issue #51), **Fox Run6 v7** 미술 승인/게임 제품경로 반영은 아직 시작/완료 증거 없음(Issue #52).
+- Codex 제품 연결 신규 실행 이슈: **[#52](https://github.com/HappyPaul812/Project-Limitless/issues/52)**. 승인 Wolf/Bear 변경 금지, 사용자 원본 Unity HEAD/index·Save/UserData·dirty/untracked·Editor 포커스 보호, 별도 `codex/fox-run6-v7-apply-20261022` worktree에서 Fox 관련 최소 제품 자산/호출 등록·Unity 변경분 검사 → 안전 원본 적용 및 branch/commit/검증 보고. 기존 Wolf/Bear/전체 Main22 전수QA 반복 금지, main 직접 commit/Push/merge 금지. 실제 적용 여부는 Codex 새 보고 후 확정.
+- Village v10 Candidate9 최종 미술승인 별도 유지, OPEN16 해결0/16·Main23 게임 통합은 미완. 여우 미술 승인이 마을 전체 승인을 뜻하지 않음.
+- 보고 문서 변경은 `docs/planning` 한정, 현재 대화에서 바울 대표 로컬 F: Unity를 직접 편집한 것은 없음.
+
+# PLANNING 2026-10-22 — Fox Run6 v7 Codex 실제 격리 Unity QA: 기술 PASS·Frame03 미술 PASS 권고 / 사용자 승인 대기
+
+바울 대표가 Codex v7 최신 결과 캡처를 직접 제공. 이 기획 세션은 로컬 F:를 직접 읽거나 Unity 실동작을 직접 검증한 것은 아님. 아래는 **사용자 제공 Codex 검사 보고**이다. 이전 v6은 미술 반려, v7은 **v5 ManifestFix 기준 Frame03만 국소 복원**한 별개 후보.
+
+- 입력: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`; **실 ZIP SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**, 납품 신고와 일치. **CRC PASS / Manifest 26/26 / SHA256SUMS 27/27 / bbox CSV 6/6 PASS**, Source PNG6·Strip·Atlas **6/6 픽셀동일**. 기존 v5 기반 **Frame00·01·02·04·05 압축 PNG 바이트5/5 동일**, Frame03만 지정 범위 **6,275 RGBA픽셀** 변경. v6의 통짜 전신 교체본을 사용하지 않음.
+- 실제 **격리 Unity PlayMode 12FPS /128px·40px / 좌우 / 4회 루프** 실행, 실측 평균 **11.95 FPS**. **Frame03 분리된 흰 쐐기 제거·앞다리 연결 개선, 02→03→04에 뚜렷한 새 단절 미관찰** → **`FOX_V7_TECH_PASS / FRAME03_ART_PASS_RECOMMENDED`**. 다만 **4× 확대 사진에서 미세한 밝은 털띠 잔존**; 축소 128px/40px에선 Codex가 문제로 판정하지 않은 상태로 사용자가 최종 미술 수용 여부를 판단한다. 극미세 흔적을 '전혀 없음'으로 과장하지 말 것.
+- **승인·게임 적용 게이트:** Codex PASS권고≠바울 대표 미술·모션 최종 승인. 현재 **`FOX_V7_USER_APPROVAL_PENDING / NOT_GAME_APPLIED`**. 바울 대표가 최종 승인하면 승인 PNG/ZIP SHA 동결하고 Bear v4·Wolf v5의 제품 연결 방식을 참고하여 **새로운 별도 Codex 안전 제품경로 적용** (기존 게임/Save/UserData/씬/GUID/meta/dirty 보호, 실제 변경분 격리 Unity QA), main 직접 Push/merge 금지.
+- Codex 보고 브랜치 `codex/qa-fox-v7-foreleg-20261022`, 커밋 약식 `46c2ac83`·`941c1485`. 사용자 원본 **4,402파일**, 미커밋 **862파일**, HEAD/index 보호, 승인 Bear/Wolf/Main22 재검수0, 제품 적용0, GitHub Push/병합0.
+- 연관 [미술 Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 v7 원본 납품 QA](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md). 마을 Candidate9 사용자 최종 승인 완료지만 OPEN16/본편 Main23 적용은 별도; Bear v4 이미 원본 게임 파일 연결+154PASS, 원격 PR/main 아직 보류.
+
+# PLANNING 2026-10-22 — Fox Run6 v7 Frame03 ForelegFix 실물 경로 접수 / Codex 격리 미술 검수 대기
+
+- **바울 대표가 Windows 실물 ZIP 경로를 전달**: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`. 기획 세션은 바울 대표 Windows F:를 직접 읽은 것이 아니므로 아래 SHA/무결성은 `docs/art-renewal` 납품 담당 신고값. **Codex 실제 ZIP SHA readback과 Unity 검수 아직 없음**.
+- **중요 기획 변경 사실:** 중간 `Fox Run6 v6`은 바울 대표가 오른쪽 앞발 이상으로 직접 미술 반려. v6은 원래 요청한 Frame03 국소 수정이 아니라 전신 60,629픽셀을 교체해 동작·발목 방향이 불연속이 된 것으로 art-renewal 보고. **`FOX_V6_ART_REJECTED / NEVER_GAME_APPLY`**. v7은 v6을 기반으로 하지 않고 승인 전 단계의 **Fox v5 ManifestFix 프레임6**을 기준으로 다시 수리한 파일럿.
+- **v7 납품 보고**: ZIP **2,990,546 bytes**, SHA256 **`de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**. `Fox_Run6_v5_ManifestFix` 대비 Frame00/01/02/04/05 **압축 PNG byte/SHA 5/5 고정**, Frame03만 **6,275 RGBA픽셀** 변경 (bbox x159..255 inclusive,y185..294 inclusive), v3에 있던 원래 그린 연속 앞다리 원화를 가슴 아래 국소 합성·밝은 흰 쐐기/분리발 제거 목표. Frame03 외 몸통·귀·꼬리·다른 다리 보존. PNG6 512×384 RGBA, Strip 3072×384·Atlas1536×768 정확 6/6, ZIP CRC PASS, Manifest 자신과 SHA256SUMS 제외 **26/26 PASS**, SHA256SUMS 자기 자신 제외 **27/27 PASS**, alpha bbox CSV 6/6 PASS, GIF/APNG 6frames 12FPS 500ms 보고(오프라인 검사).
+- **검수 계약:** Codex 별도 격리 worktree에서 사용자 실 ZIP readback SHA/CRC/Manifest/26·27/SHA, 기준 v5 ManifestFix PNG5/5 동일, Frame03 변경 영역/Strip·Atlas 정확성만 확인. **v6 미술 FAIL을 v7의 미술 판정에 전가하지 않되 v6 전신 교체 재도입 여부 확인**. Unity 실제 PlayMode 12FPS 128px·40px 양방향, 집중 구간 02→03→04와 05→00 연결 및 Frame03 밝은 쐐기·관절·발목·접지 타이밍·실루엣 검사. 프레임 외곽, 동물 디자인, 호환성 결함 새로 나타났으면 범위를 명시. **기술 PASS/FAIL 및 미술 PASS 권고/HOLD/FAIL 별도 보고.** 사용자 최종 승인 전 게임 런타임 적용/PR/main 병합 금지, Codex의 PASS 권고만으로 Bear처럼 사용자 승인 확정 금지.
+- **변경 금지:** 승인 Wolf Run6 v5, 승인·실원본 게임 반영 Bear Run6 v4(격리 Unity 154PASS, 원격 Push/PR·병합 대기), Main22/F1/마을 v10 후보9 사용자 미술 승인본·원본 Unity Editor/Save/UserData/HEAD/index·dirty/untracked. Bear/Wolf QA 재수행0, Fox 기존 전체 QA 재수행 금지.
+- **최신 상태:** `FOX_V7_DELIVERY_PATH_RECEIVED / ART_RENEWAL_OFFLINE_INTEGRITY_PASS / CODEX_ACTUAL_LOCAL_READBACK_PENDING / ISOLATED_UNITY_MOTION_QA_PENDING / USER_FINAL_MOTION_APPROVAL_PENDING / GAME_NOT_APPLIED`.
+- 정본: [Fox v6 미술 반려 및 v7 국소 복원 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md), [Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50). GitHub 역할별 최신 문서 검토는 기존 온보딩된 담당이 스스로 수행, 별도 반복 안내문 없음.
+
+# PLANNING 최종 최신 2026-10-22 21:48 KST — 서릿길 마을 v10 Candidate9 바울 대표 최종 미술 승인 / Fox v5 ManifestFix 기술 PASS, 모션 HOLD
+
+## A. 바울 대표 직접 승인 — Main23 Frostway Village v10 Candidate9
+
+- **사용자 명시 승인 문구:** “서릿길 마을 v10의 후보 타일 9종은 이대로 최종 미술 승인.” 기존 `VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`은 당시 기록이고, 최신 상태는 **`VILLAGE_V10_CANDIDATE9_USER_ART_APPROVED`**.
+- 승인 대상 ZIP: `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v10.zip`, Codex 격리 실제 SHA `f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5` 및 PNG 9후보. **Earth 3·ThinFrost 3 = 이전 v9 승인권고 미술 후보 byte SHA 보존, Gravel 3 = v10 표적 개선본**, Candidate 9/9 사용자 최종 미술 승인.
+- SHA/PNG/Manifest/CRC·기존49 game PNG byte preservation/경계 seam·Unity 3화면비 5×5·8×8 동배율 및 통행 proxy 변경분 QA PASS (2026-10-22 Codex 스크린샷). *현 후보 9종 추가 재제작/미술 수정 금지, 각 PNG와 ZIP SHA 동결*.
+- **범위 제한:** 후보9종의 **미술** 승인으로서, `Candidate/` PNG 9종을 정식 타일 자산 승격/게임 적용하는 후속 Codex 통합 작업의 **기획 게이트는 열렸지만 실행/완료가 증명된 것은 아님**. 기존 `Tiles/` 공식게임PNG49, Main23 Scene·Quest·SafeZone, Tilemap PPU/Pivot/GUID/meta/배치 패턴 구현·검증, 런타임, GitHub main/원본 로컬 반영은 **별도 Codex 안전 통합 절차와 실제 결과** 필요. **Village 전체 마을 최종 PASS 선언 금지**, 기존 QA `OPEN16` **유지16/완화0/해결0** 및 그에 따른 후속 게이트 계속. 사용자 승인 후보가 기존 asset 원본을 자동 덮어쓰는 허가로 오독하지 말 것.
+- [Village Issue #45](https://github.com/HappyPaul812/Project-Limitless/issues/45) 승인/OPEN16 추적, art-new v10 후보 동결 지시.
+
+## B. Fox v5 ManifestFix — 기술 무결성 PASS / 미술 HOLD
+
+- 바울 대표 Codex 결과 캡처: `F:\Downloads\Limitless_Beast_Fox_Run6_v5_ManifestFix.zip` 실 SHA `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29`; **CRC PASS, Manifest37/37 PASS, SHA256SUMS38/38 PASS, bbox CSV6/6 PASS**. 이전 Manifest 자기 참조 오류는 수정 완료. 기존 이미지/애니메이션 총13종이 수정 전 v5와 동일 SHA였다는 Codex 체크(이전 ZIP 실 바이너리 미보유 관계로 직접 전수 대조 대신 출력된 원 SHA 비교); 의도된 아트파일 변경 없음.
+- 격리 Unity 12FPS(실측 평균 12.004FPS), 128/40px·좌우, 4 loop 실제 재생 확인. **`FOX_V5_MANIFESTFIX_TECH_PASS / FOX_FRAME03_ART_HOLD`**: Frame03 회수 앞다리의 흰색 쐐기·스푸핑 경계가 남아 있고 Frame02→03→04 연결/무게·관절 회수가 부자연스러움. GIF480ms timing 별도 보완 필요 여부를 메타데이터/미술평가와 구분하고 실제 캡처 12FPS 판단 기준 유지. **바울 대표 최종 Fox 승인0, 제품 런타임 적용0**.
+- 다음 리뉴얼 담당은 **Frame03만 미술 표적 수정한 Fox v6 후보**(실제 아트 수정 버전) 제작. Frame00/01/02/04/05는 **바이트 동결**, Frame03 흰색 밝은 접합/관절을 본체·두 앞발·접지와 자연스럽게 합성; 02→03→04 12FPS·128/40px 동적 검증. 다른 정상 꼬리/몸통/귀·승인 Wolf 및 Bear v4 보호. 새 ZIP 자기참조 없는 Manifest/CRC/SHA/CSV bbox 명세와 릴리스 검증 후 Codex 변경분 QA, 대표 최종 미술 승인 전 공식 Fox 자산 반영 금지.
+- 별도 기존 수치: local QA branch `codex/qa-fox-v5-manifestfix-20261022`, 보고 커밋 `5eefa345`, `b88a8778` (단축, 실제 SHA 별도). 원본4,402파일 및 사용자 미커밋862파일, HEAD/index·승인 Wolf/Bear·Save/UserData 보호, GitHub Push/병합0.
+
+## 공통 기록·상태
+
+- **Bear Run6 v4** 사용자 최종 미술 승인 및 원본 게임 파일 적용 격리 Unity154PASS, 아직 GitHub Push/PR/병합 없음(Issue #51); 반복 테스트/재적용 금지.
+- **Village v10** 사용자 후보9 최종 미술 승인 기록은 **이번 문서 및 Issue #45**에 고정. 마을 전체/OPEN16/본편 Main23 적용은 별도. Fox 미술 `HOLD`, 두 아트 작업의 상태 전염 금지.
+- 기획 담당만 `docs/planning` 수정, user F: ZIP/Unity 로컬 main 파일 및 Save/UserData/Editor 직접 변경하지 않음. 마감 승인(merge/sync)은 별도 사용자 지시.
+
+# PLANNING 최신 2026-10-22 Fox Run6 v5 패키징 게이트 실패 / Village v10 후보9 PASS권고 / Bear 제품 반영
+
+**근거:** 바울 대표 제공 Codex 최신 격리 Unity QA 캡처. 이 기획 담당은 사용자 F: 로컬 ZIP·Unity 원본을 직접 조작/재검사하지 않았으므로 아래는 Codex 실증 보고를 인계한 것임.
+
+### A. Fox Run6 v5 — 실물 Manifest 자기 참조 결함, 미술 검증 중단
+
+- 입력 `F:\Downloads\Limitless_Beast_Fox_Run6_v5.zip`; Codex 실 SHA256 **`5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df`**. ZIP CRC PASS, `SHA256SUMS` **38/38 PASS**, 그러나 `Manifest` **37/38**, 실패항목은 **Manifest 파일 자신**의 기록 SHA/크기/CRC. Manifest 신고 크기 **9,184 bytes**, 실제 **9,345 bytes**. **`FOX_V5_PACKAGE_TECH_FAIL / FOX_MOTION_ART_NOT_VERIFIED`**. “Fox v5 미술 FAIL”이라고 판정하지 말 것.
+- 원인 확인/복구 우선: **리뉴얼 아트 담당은 Fox v5 기존 6 PNG/Strip/Atlas/GIF/APNG/preview/QA의 파일 SHA를 그대로 보호**하고 **Manifest 자신을 Manifest 내부 digest/size 목록의 검사 대상에서 제외**(정의상 자기 자신의 SHA를 파일 본문에서 직접 맞추는 순환 검증은 피함). 별도 `SHA256SUMS.txt`는 최종 비자기참조 파일에 대해 ZIP 생성 전 freeze 후 검증, 해당 checksum 목록 역시 자체 digest를 기록하지 않도록 처리. 진단상 별도 실제 문제 파일이 있으면 정확히 보고. Manifest/README/ZIP checksum 갱신 외 정상 이미지 재제작 금지.
+- 고정 v5 ZIP은 **변경하지 않은 보존본**으로 두고 수정본을 새 `Limitless_Beast_Fox_Run6_v5_ManifestFix.zip`로 납품·새 SHA 명시. 이후 Codex는 변경된 metadata/ZIP 무결성의 변경분만 확인하고 **Fox v4 Frame03 접합부/02→03→04 자연스러움 실 Unity PlayMode 12FPS 128/40px 시각QA**를 그때 수행. 중복 Wolf/Bear/Main22 전수QA 금지. **정식 게임 적용 금지**.
+
+### B. Village VariantTiles v10 — 후보9 미술 PASS 권고, 대표 최종승인 대기
+
+- 실 ZIP SHA256 **`f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`**. ZIP CRC, Candidate Manifest Gravel **3/3**, `SHA256SUMS` **64/64** PASS. 기존 게임PNG **49/49 바이트 보존**, 기존 Earth/ThinFrost 후보6 byte 보존; Gravel candidate3 수정. 실제 격리 Unity 3화면비·5×5/8×8 및 통행 proxy 정상, 후보9 전체 seam/alpha 등 **22항목 PASS**. **Gravel candidate01/02/03 각 `ART_PASS_RECOMMENDED`**, 이전 Earth/ThinFrost 각3종도 PASS 권고 → **`VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`**.
+- 미술 PASS 권고는 **마을 전체 최종 승인이나 Main23 게임 적용 허가 아님**. 기존 **OPEN16 유지16·완화0·해결0** 및 Village 기능/구성/퀘스트 게이트 별도. 사용자 승인 전 Candidate9 공식 타일 승격/Unity 본편 적용/PR main 병합 금지. 후보9은 미술 결함 새로 확인되기 전 원형/SHA 동결 권고.
+
+### C. Bear Run6 v4 — 이미 원본 게임 파일 안전 반영, GitHub PR/병합 아직 없음
+
+- 바울 대표가 제공한 별도 Codex 적용완료 캡처: **승인 Bear v4 게임 파일 안전 적용**, 격리 Unity 변경분 **154 PASS**, 설치/장착/복원/6프레임 루프·좌우 이동·128/40px. 사용자 미커밋 **858개 SHA 보존** 및 Wolf/Fox/Save/UserData 보호, 원본 Editor 자연 Import/손플레이는 미검증. Codex branch `codex/bear-run6-v4-apply`, 제품 커밋 약식 `5b89ac92`, 검증문서 `6e86d05d`. **`BEAR_LOCAL_GAME_DISK_APPLIED / REMOTE_PUSH_PR_MERGE_0`** — 재복사/154 PASS 재검수 금지. 담당 Issue #51 OPEN.
+
+### 공통
+- Fox/Village Codex 브랜치 `codex/qa-village-v10-fox-v5-20261022`, 커밋 약식 `5a51296e`, `2d28b8aa`. 대상 원본 **4,402파일**, 사용자 미커밋 **862파일**, HEAD/status/index 및 Wolf/Bear 승인 자산 보호, Push·병합0. 기존 Unity Search 초기화 예외1 별도, 새 결함 판정으로 합산 금지.
+- 다음 가장 효율적 작업: **Fox ManifestFix 아트 담당에게 재포장 요청**, Codex Fox v5 변경분 무결성 확인 + 실제 미술 QA, **Village v10 후보9 바울 대표 최종 미술 승인 질문**. EOD 본게임 merge/로컬 sync는 별도 사용자 지시. 이미 완료된 Bear 적용/기존 QA 중복하지 말 것.
+
+# PLANNING / 2026-10-22 Bear Run6 v4 바울 대표 최종 미술·모션 승인
+
+- **바울 대표 직접 승인 문구:** “곰 Run6 v4는 이대로 최종 승인”. Codex 기술 PASS·실제 격리 Unity 12FPS/128px/40px 양방향 및 메타데이터 6/6 PASS·미술 PASS 권고를 기초로 **`BEAR_RUN6_V4_USER_ART_MOTION_APPROVED`** 확정. 전날 `PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 당시 기록으로 유지, 최신 상태는 승인완료.
+- 승인 ZIP: `F:\Downloads\Limitless_Beast_Bear_Run6_v4.zip`; Codex 실제 SHA256 readback = art-renewal 신고 **`4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a`**, 파일 기술/CRC·Manifest33/33·SHA256SUMS34/34, CSV bbox6/6 PASS. Bear v4 six frames `512×384 RGBA`, 12FPS, Strip/Atlas. v3 대비 Frame03/04 수정, 00·01·02·05 바이트 보존. 동작 02→03→04→05·05→00 연결 미술 최종 사용자 승인.
+- **동결:** Bear Run6 v4 ZIP 및 동봉 PNG·Manifest·SHA 원본 동결, **Bear v5 추가 수정·재제작 불필요/금지**. 반면 **Fox v4 ART_HOLD / Fox v5 Frame03 보완 진행**, Village v9 Earth/ThinFrost PASS 권고+Gravel HOLD는 이 승인과 무관하며 자동 승인·적용 금지. 승인 Wolf Run6 v5 정식 자산 변경 금지.
+- **구현 게이트:** 이 승인은 **Codex의 Bear 제품 경로 안전 통합 착수**를 허용하는 아트 승인이지, `Unity 원본 제품 반영 완료 / GitHub main 병합 / 로컬 동기화 완료`가 아니다. Codex는 승인 ZIP 실제SHA 재확인 후 격리 worktree에서 Bear Run 신규 asset 및 runtime/Resources/BeastCompanionSystem 참조를 최소범위로 연결하고 12FPS·양방향·PetFacility/Save와 간섭, Wolf 기존6프레임 안정성, Bear/Fox 타원본·GUID/meta·씬·퀘스트를 변경분만 검사. 사용자 원본 dirty/untracked·Editor·Save/UserData 보호, main 직접 commit/Push·force 금지. 기존 10/21 Wolf/EOD와 현재 Bear QA 전수 반복하지 말고 재사용.
+- 제품 소스 반영·PR/병합/원본 디스크 동기화의 완료 여부는 Codex **실제 결과와 SHA 증명** 후 변경. 본 GitHub `docs/planning` 수정은 기획 기록이며 제품 파일 수정 아님.
+- 관련 [Bear/Fox QA Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50), [리뉴얼 Bear v4 납품 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Beast_Bear_Run6_v4_Continuity_Motion_Delivery_20261022.md).
+
+# PLANNING 최신 2026-10-22 20:19 KST — Village v9 후보6 PASS권고/Gravel HOLD, Bear Run6 v4 PASS권고, Fox Run6 v4 HOLD
+
+**근거:** 바울 대표 제공 Codex 격리 Unity 결과 스크린샷. 기획 담당은 사용자 PC F: 실 ZIP·Unity를 직접 재검사하지 않았으므로 화면의 Codex 실증보고로 구분. 세 ZIP 모두 실제 readback SHA256가 아트 담당 신고와 일치:
+- **Village v9** `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79` / CRC PASS, Manifest **58/58**, SHA256SUMS **72/72**. 기존 원본 공식 후보43 PNG + 변형6 = **49 게임PNG 전부 바이트 동일**, **새로운 Candidate 9종만** 별도 후보. 규격·alpha·경계 seam **54종 PASS**, 실제 Unity 동일 Tile ID·동일 카메라 5×5/8×8·16:9/4:3/21:9 비교+통행 검증. **Earth 후보 family3종 `ART_PASS_RECOMMENDED`; ThinFrost family3종 `ART_PASS_RECOMMENDED`; Gravel 후보 family3종 `ART_HOLD`** — 큰 타일 격자는 개선됐으나 자갈 고유 **미세 격자/미세 텍스처 주기성** 잔존. 후보9 전체를 승인한 것이 아님. PASS권고 6종은 **파일 SHA 동결**하고 Gravel 후보3종만 다음 버전 소규모 아트 보완; 기존43/49 PNG와 Earth/ThinFrost 후보6 절대 재제작/덮어쓰기 금지. 바울 대표 최종 미술 승인 이전 Main23/Unity 실제 제품 적용 금지.
+- **Bear Run6 v4** `4a9fedd54d58999def05b92839a1f00bc1d001375746e572f5d88bcade44977a` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. 실제 Unity PlayMode 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. Codex 미술 **`ART_PASS_RECOMMENDED`**: 03→04 높이/착지 차이 감소, 02·05 이웃 체형 연결 개선. **최종 승인 아님**. Bear v4 **수정 동결·바울 대표 시각 최종승인 요청**, 승인 전 제품 Pet runtime 적용·main 병합 금지.
+- **Fox Run6 v4** `9c46764df7f88194b1d15663e4df34ecdb24367f7e65eed298dfc089221b5827` / CRC PASS, Manifest **33/33**, SHA256SUMS **34/34**. Unity 12FPS·128/40px·좌우 flip PASS, bbox CSV **6/6 PASS**. `ART_HOLD`: **Frame03 회수 앞다리의 밝은 접합부와 관절 연결이 끊겨 보임**. 리뉴얼 아트 담당에 **Fox v5 표적 Frame03 국소 교정** 요청, 02→03→04 실제 루프 연결 검사. 기존 개선된 꼬리·머리·몸통·기타 정상 프레임 원형 보존. 전체 6프레임 재작업/늑대 수정 금지.
+- **안전/미해결:** 10/21 승인 Wolf와 4,400파일 원본·Save/UserData·기존 dirty·HEAD/status/index 보호, 제품 적용0, PR/Push/병합0. **OPEN16: 유지16·완화0·해결0**, 현재 파일럿 타일과 직접 관련 있다는 근거 없음. 서릿길 마을 후보 전체 `USER_ART_APPROVAL_PENDING`, Bear는 `USER_BEAR_RUN_V4_ART_APPROVAL_PENDING`, Fox는 `ART_HOLD`.
+- **Codex 분리 QA branch:** `codex/qa-village-v9-bear-fox-v4-20261022`, 캡처 단축 커밋 `38f72951`, `59b205a7` (로컬 여부 별도 확인).
+- **후속 최소 병렬 발주:** 신규아트 **Village v10 Gravel family3 후보만** 보완, 기존 Earth·ThinFrost 후보 SHA+49 PNG 완전 보존. 리뉴얼 **Fox Run6 v5 Frame03 접합/관절만** 개선, Bear v4/정식 Wolf 동결. 미술 PASS 권고는 바울 대표 최종 승인과 분리. 중복 전수 QA/본게임 자동적용 금지.
+
+# PLANNING 2026-10-22 저녁 최신 — Fox Run6 v3 / Bear Run6 v3 / Village v8 실제 Codex 미술 HOLD
+
+바울 대표가 2026-10-22 최신 Codex 격리 QA 스크린샷 전달 (기획 세션이 사용자 PC/Unity를 직접 검사한 것은 아님). **세 산출물 실 ZIP SHA가 각 담당 신고와 일치, ZIP CRC PASS, 이미지/실제 격리 Unity 기술 PASS. Fox와 Bear의 지난 v2 CSV bbox 오류는 각 6/6, 합계12/12 실 PNG alpha/헤더/좌표계 대조 PASS로 해결**. SHA256SUMS Fox/Bear22/22, Village97/97. Village 원본43 byte-identical, 변경6·신규0, 기존 승인 Wolf 및 원본4400파일/Save/UserData/HEAD/index 보호, 제품적용/Push/merge 없음.
+- **Fox Run6 v3 `ART_HOLD`**: 전지 Frame02→03 앞발 분리 자체는 개선, 하지만 **발이 공중에 뜨는 타이밍과 회수 관절 움직임이 어색함**. 다음 v4 후보는 프레임01→02→03→04 연속 보폭·관절·착지 타이밍을 연결해 해결, v2부터 개선된 꼬리 일관성은 유지. 특정 프레임만 isolated repaint했다가 이웃에 새 튐 만들지 말 것.
+- **Bear Run6 v3 `ART_HOLD`**: Frame03→04 새 자세와 Frame02·05 양옆의 체형·접지 연결이 부자연스러움. 다음 v4 후보는 Frame02→03→04→05 연속성을 전체 보는 모션 아크 재구성, 개선된 05→00 머리높이 안정성·곰 체중감 유지.
+- **Village VariantTiles v8 `ART_HOLD`**: Earth/ThinFrost/Gravel 미세입자/명암 편차는 개선됐으나 **보호한 base01 고유 큰 모티프 반복 + 01↔02/03 사각 지면 구획**이 남음. 02·03만 다시 바꾸는 반복 로컬 패치 멈춤. 기존 공식 43 PNG는 일단 **원본 바이트 보존**하되 별도 비파괴 **대체 01 후보 포함 family 전3종 일괄 디자인**으로 사각 구획을 제거할 수 있는 5x5/8x8 실제 비교용 파일럿 검토. 대안은 미세 투명 overlay이나 기존 TileGrid/PPU/Sorting 계약 없이 Scene 구현 금지. 기존 base01 직접 덮어쓰기·공식 런타임 반영은 사용자 최종 미술 승인 후에만.
+- **OPEN16**: 원본 CSV/좌표 JSON Codex 보유, 미해결16/완화0/해결0. 신규아트 담당에게 **원문 파일·XY·조건** 실제 전달되어야 표적수정 가능. 기밀/사용자 절대 PC 경로 제거 후 자료 공유하고 severity 조작 금지.
+- Codex 로컬 검수 브랜치 `codex/qa-village-v8-bear-fox-v3-20261022`, 보고 캡처 commit 약식 `9576fcb9`, `226f0756`; 실제 두 ZIP/미술/기술 적용은 0. 오늘 당시 기획/아트 HEAD는 후속 업데이트 시 재확인.
+- **후속**: 신규 아트 담당 마을 v9 *대체 family 시안만*, 리뉴얼 Bear/Fox v4는 각 motion arc 시안, 각각 별도 SHA/자료·Unity 변경분 QA·대표님 최종 미술 승인 후에만 제품 Unity 적용/PR 병합. 기존 Main22/F1/Wolf QA 재실행 금지.
+
+# PLANNING 2026-10-22 14:10 KST — Bear/Fox v2·Village v7 Codex 실제 QA 인수 (v1/v6 과거 캡처 정정)
+
+바울 대표가 직전 v1/v6 화면을 착오로 보낸 뒤, **“미안 와우 하다 헷갈렸다”**며 최신 **Bear v2·Fox v2·Village v7** 실제 검수 화면을 제공. 과거 v1/v6 판정과 혼합·재검증 금지.
+
+- **실 ZIP readback** (사용자 제공 Codex 화면 기준): Bear v2 `3d74103e01fcd9f17127afcecf52eaa9f578af96f8fa23a197a1237681c3c147`, Fox v2 `22e780627a96a87b2d1ce06f746248b0b9158cc59c834b8c6d4b2c6f9661c6ea`, Village v7 `d499f08481751c0fcda3298bbd37513466168b73105dd224b2cb767651bb691c`; 담당 art-renewal/art-new 신고값 각각 일치. ZIP CRC PASS, Bear/Fox Manifest **34/34**, Village **49/49**, SHA256SUMS Bear/Fox **35/35**, Village **87/87**.
+- **QA 결과 정확히 분리:** Bear·Fox 이미지/Unity PASS, 그러나 각각 `QA/Frame_Gait_And_Contact.csv` bbox 좌표 열 순서 **12행 모두 metadata FAIL**. 통째 “기술 QA 완전 PASS” 선언 금지; 다음 리뉴얼 산출물에서 원 프레임 Pixel alpha bbox를 재측정해 CSV 열 이름/순서/좌표계를 바로잡고 cross-check 필수. Village v7 기술 PASS.
+- **Bear v2 ART_HOLD:** v1의 05→00 머리 높이 변화는 개선. **새로운 03→04 착지/발 접지·무게 하중 연결이 급변**. 다음 Bear v3는 Frame03/04 주축, 필요시 02/05만 연속성 보완. 승인 Wolf 변경0.
+- **Fox v2 ART_HOLD:** v1 꼬리 형태 개선. **Frame02→03 전지(앞다리) 두 개가 겹치고 회수 동작의 읽힘 부족**. 다음 Fox v3는 02/03 주축, 필요시 01/04만 연결 수정. 기존 꼬리 v2 성과 보호.
+- **Village v7 ART_HOLD:** Earth/ThinFrost/Gravel 각 모티프 반복은 완화했으나 기존 01과 새 02/03의 **질감 통계·입자 크기·밀도·명암이 달라 5×5·8×8 타일별 사각 구획이 드러남**. 다음 v8은 01/기존43 PNG 보존, 02·03의 미세 질감 및 중저주파 명암분포를 01과 조화시키되 명백한 모티프 반복은 되돌리지 않는 **질감 통일형 국소 미술 수정**. 화면 edge 1px PASS만 미술PASS 근거로 쓰지 말고 실제 동배율 5×5/8×8 비교.
+- Unity 근거: 격리 실제 PlayMode 12FPS 128/40px Bear/Fox, Village 3화면비·5×5/8×8 Camera/RenderTexture; 통행 proxy **v6/v7 각각6/6 PASS**. OPEN16 원본자료 기반 **유지16·완화0·해결0**. 4,400파일 원본/HEAD/status/index/Wolf/Save/UserData 보호, 제품 적용/Push/merge0. 브랜치 `codex/qa-village-v7-bear-fox-v2-20261022`, 스크린샷 커밋 약식 `f76d8dbf`, `8982d40a`.
+- **다음 액션:** 신규 아트 v8, 리뉴얼 Bear/Fox v3 **각각 미술 표적보완**. Codex bbox metadata 오류는 우선 소스 이미지에서 다시 산출해 다음 v3 QA/CSV 바로잡기(그 자체를 모션 FAIL과 혼동 금지). OPEN16 원문/좌표를 art-new와 공유, 관련성확인 전 억측·임의 심각도 등급 금지. Main23 게임 실제 적용 및 10/21 승인 `main`/Wolf 교체 재시도 금지.
+- 근거: 사용자 2026-10-22 최신 Codex 스크린샷, `docs/art-renewal` Bear/Fox v2 납품정본, `docs/art-new` Village v7 정본. 이 기획 세션은 사용자 PC 로컬을 직접 실행/접근한 것은 아님.
+
+# PLANNING 2026-10-22 Codex 격리 QA 인수 — Village v6 / Bear Run6 v1 / Fox Run6 v1 전부 기술PASS·미술HOLD
+
+바울 대표가 실제 Codex 보고 화면 전달. ZIP SHA256 세 건 납품값과 일치, 기술 PASS. 격리 Unity Village v6 3화면비·통행 proxy6/6 PASS이나 Earth·ThinFrost·Gravel 5×5 혼합에도 **모티프 주기성 재현→각 미술 HOLD**. Bear Run6 12FPS/128·40px 기술PASS이나 **Frame05→00 머리 높이 변화 + 관절·지지 접지 부정확→미술 HOLD**. Fox 동일기술 PASS이나 **앞다리 구분 약함 + 꼬리 곡률/몸통 일관성 부족→미술 HOLD**.
+
+검수 보고 브랜치 `codex/qa-village-v6-bear-fox-run6-20261022` 커밋 화면 표기 `6df8e1d5`, `9f9b560b`. 원본4400파일/Wolf/Save/UserData/dirty/index/HEAD 보호, 본게임 적용·Push/병합0. OPEN16 원본CSV+좌표JSON 확보·해결0/16; 검수측 전달자료 준비(공유확인 별도). 기존 SearchDatabase 환경 예외1 OPEN. 원본 Editor 자연 Import·손플레이 미검증.
+
+**후속 미술 수정 방향(미승인 후보):** 신규 아트 Village v7에서 02/03 기반의 진짜 모티프 다양화 및 5×5/8×8 어색한 반복 제거, edge seam 유지와 원본43 보존. Bear v2는 05→00 머리·지지다리 및 필요한 인접 프레임 국소수정; Fox v2는 앞다리 분리·꼬리 형태 전6프레임 일관성. 동일 픽셀 단순 재배치로 반복미술 PASS 주장 금지; 공식 Bear/Fox KeyArt 사용 근거 없음. 각자 아트 실제 다시 납품→Codex 변경분만 QA→대표 최종 미술 승인 전 런타임 적용 금지. 최신 기획 정본 `문서/00_프로젝트/20261022_Village_v6_Bear_Fox_Run6_v1_CodexQA_ArtHold_NextActions.md` (docs/planning commit `fbe6746b7dc96805f31b1517ac456452a84c9991`).
+
+# PLANNING 2026-10-22 — Village v6·Bear Run6 v1·Fox Run6 v1 ZIP3종 검수 접수
+
+바울 대표가 사용자 Windows 실제 ZIP 경로 3종을 제공. 납품 문서 GitHub 확인:
+- Village v6 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip`, art-new 신고 SHA256 `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`: 기존43 PNG 바이트 유지 + 신규 변형 타일6, 총49PNG, ZIP71. **Codex 실제 SHA/실Unity 혼합5x5·대표미술 승인 대기**, OPEN16 원본CSV/좌표JSON Codex 기보유·해결0.
+- Bear Run6 v1 `F:\Downloads\Limitless_Beast_Bear_Run6_v1.zip`, renewal 신고 SHA256 `1a29475207c0f99db87726b637d301e5010bf5ef6790e2415ad679f67ffd7f19`, 37항목, source6+strip+atlas/12FPS. **승인된 Bear 정적 원화 기준이었다고 확인 불가**, AI 소스 콘셉트 보드에서 포즈 추출한 **미술 파일럿**. 
+- Fox Run6 v1 `F:\Downloads\Limitless_Beast_Fox_Run6_v1.zip`, renewal 신고 SHA256 `6d352219505497a261ffe2c1d687cece28bdf4859003d16fce88334d9a15f43d`, 37항목. **Fox 역시 승인된 고해상도 원본 근거 없음**, 새 AI 콘셉트 추출 파일럿.
+- 각각 파일 기술 오프라인 PASS(아트 담당 신고)이나 기획세션 사용자 F: ZIP 바이너리 직접 readback 불가. **아직 모든 산출물 사용자 최종 미술 승인/본편 Unity Import 0**. Codex 사전 기술 QA와 모션 Play 검수 후 Bear/Fox 별도 PASS/HOLD, Village tile OPEN16 별도 판단.
+- [기획 검수 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261022_Frostway_v6_Bear_Fox_Run6_Isolated_QA_Contract.md) `docs/planning` commit `42e0e5e9f6c6d9778d25aaf01193f950acd1fddb`. 승인 Wolf Run6 v5 및 10/21 `main`/local `SYNC_COMPLETE` 기준 보호, 과거 Main22·Wolf 106 PASS 재검사 금지, main 직접 쓰기/미승인 Import 금지.
+- 사용자 선호: 담당 지시문 “너는 담당이다. GitHub 공부하고 와” 문구 생략.
+
+# PLANNING 최종 확정 — 2026-10-21 EOD `SYNC_COMPLETE` (Codex 실증 보고 및 GitHub PR 병합 확인)
+
+- 바울 대표가 Codex 최종 스크린샷으로 **`SYNC_COMPLETE`** 보고 전달. GitHub 기능 [PR #48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 병합 `c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8` 및 문서 [PR #49](https://github.com/HappyPaul812/Project-Limitless/pull/49) 병합 `510c021b4159167e211be60ca90e1cb7328bafe9` **GitHub에서 merged=true 재확인**.
+- Codex 로컬 보호 및 Sync 보고: GitHub `main=origin/main=사용자 원본 local main` = **`510c021b4159167e211be60ca90e1cb7328bafe9`**; 승인 Wolf·Main22/F1·서리들쥐 **제품58파일** + 담당 문서 선별 통합. 기존 검증재사용, 신규 **정적38 + Unity14 PASS/FAIL0**.
+- 사용자 로컬 백업 957파일, 보호 SHA 차이0, 기존 사용자 작업 보존 **tracked dirty308/untracked550/staged0**. Save/UserData/Editor/포커스 보호, 유저 원본Editor **자연 Import·손플레이 미검증**.
+- 제외 유지: **서릿길 마을 GameArt v5 ART_HOLD (타일 Earth/ThinFrost/Gravel), OPEN16 해결0, Main23 본편미구현**, TTS 세린/태온 제작64/152 청취미승인·음성게임반영0, Main24 스킬 장착 Save 영속성 이슈 #46 미해결. Main22 **정식 대사·보상·경제**는 임시/미확정.
+- 종전 인계 문단의 “PR 생성 대기/원본 main 미병합/EOD 실행 대기”는 당시 기록이며 **2026-10-21 EOD 이후 최신 사실이 아님**. 후속 작업은 완료된 Main22·Wolf 재병합·전수QA 없이 Village variant/OPEN16 실근거 검토·Main23 선별 착수/스킬 Save 문제를 우선.
+- 사용자는 **“나 자러 가”**라고 했으므로 이 확인 이후 별도 진행/새 발주 없음. 원본 LocalSync 상세증거는 Codex PR #49 완료보고 및 로컬 `Temp/EOD20261021` 증거에서 확인. 이 기획 세션이 로컬 디스크를 직접 검사한 것은 아님.
+
+## HISTORY — 기존 main·담당 고유 기록 보존
+
 ## 2026-10-21 EOD 완료 — PR48 병합 / 원본 SYNC_COMPLETE
 
 [PR48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 승인 Wolf6+Main22/F1/Mouse52 제품58 및 담당 문서 선별통합 **`c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8`**. 이 완료증거 작성시 GitHub main=origin/main=원본local main, index=HEAD/staged0 실측 **SYNC_COMPLETE**. 후속문서 PR 이후 최종SHA는 `Temp/EOD20261021/OriginalLocalSync_Proof.json` 및 Issue47 완료기록을 따릅니다.

@@ -1,0 +1,7 @@
+{
+  "rows": 6275,
+  "coordinates_unique": true,
+  "exact_changed_pixel_set": true,
+  "old_v5_and_new_v7_channels_match": true,
+  "baseline": "v5 ManifestFix, not v6"
+}

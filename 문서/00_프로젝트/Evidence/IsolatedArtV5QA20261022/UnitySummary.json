@@ -1,0 +1,969 @@
+{
+  "unity": "6000.6.5f1",
+  "graphics": "Direct3D12",
+  "play_mode": true,
+  "engine_frame": [
+    1,
+    3
+  ],
+  "realtime": [
+    0.9082522048752839,
+    2.535724504875285
+  ],
+  "capture_count": 22,
+  "capture_type": "Actual Camera/RenderTexture, not Editor GameView UI",
+  "ppi_note": "PPU128;256px tile rendered128px; ortho8.4375, image height1080",
+  "layout": "System.Random(602210+n); x-major/y-minor; same IDs in both versions",
+  "aspect_ratios": [
+    "1920x1080 16:9",
+    "1440x1080 4:3",
+    "2520x1080 21:9"
+  ],
+  "route_proxy": [
+    {
+      "name": "V9 route (0.00, 6.00) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "V9 route (-6.00, 1.50) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "V9 route (-6.00, -6.00) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "V9 route (0.00, 6.00) radius=0.5",
+      "pass": true
+    },
+    {
+      "name": "V9 route (-6.00, 1.50) radius=0.5",
+      "pass": true
+    },
+    {
+      "name": "V9 route (-6.00, -6.00) radius=0.5",
+      "pass": true
+    },
+    {
+      "name": "Village route (0.00, 6.00) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "Village route (-6.00, 1.50) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "Village route (-6.00, -6.00) radius=0.3",
+      "pass": true
+    },
+    {
+      "name": "Village route (0.00, 6.00) radius=0.5",
+      "pass": true
+    },
+    {
+      "name": "Village route (-6.00, 1.50) radius=0.5",
+      "pass": true
+    },
+    {
+      "name": "Village route (-6.00, -6.00) radius=0.5",
+      "pass": true
+    }
+  ],
+  "door_proxy_same_pixels_v9_v10": {
+    "DoorFront": true,
+    "DoorBehind": true
+  },
+  "importers": [
+    {
+      "path": "Assets/QAInput/wheel.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Earth_01_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Earth_02_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Earth_03_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Gravel_01_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Gravel_02_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_Gravel_03_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_ThinFrost_01_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_ThinFrost_02_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/V9/Candidate/Tiles/Frostway_Ground_ThinFrost_03_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Frostway_GeneralShop_Building.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Frostway_Inn_Building.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Frostway_Residence_Building.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Frostway_ServiceHouse_Building.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Frostway_SkillShop_Building.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Door_StoneArch.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Door_StoneFrame.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Door_WoodFrame.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Roof_Gable.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Roof_Shingle_A.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Roof_Shingle_B.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Wall_Plain.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Wall_Timber.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Buildings/Modular/Frostway_Wall_Window.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Earth_01_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Earth_02_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Earth_03_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Gravel_01_v10_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Gravel_02_v10_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_Gravel_03_v10_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_ThinFrost_01_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_ThinFrost_02_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Candidate/Tiles/Frostway_Ground_ThinFrost_03_v9_CANDIDATE.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Portal_Inactive/Frostway_EmptyPortal_Platform.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Portal_Inactive/Frostway_Portalsite_LowWall.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Portal_Inactive/Frostway_StonePlinth_Short.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Barrel.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Bench.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Fence.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Firewood_Shed.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Firewood_Stack.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Lantern_Hanging.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Lantern_Post.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_SupplyBox_Food.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_SupplyCrate_Brace.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_SupplyCrate_Small.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_SupplyCrate_Wood.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_SupplySacks.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_Washline.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Props/Frostway_WoodCart.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_BlankWaymarker.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_NorthGate_ArrowSign.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_Sign_GeneralShop.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_Sign_Inn.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_Sign_SkillShop.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Signs/Frostway_SouthGate_ArrowSign.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Earth_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Earth_02.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Earth_03.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Gravel_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Gravel_02.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_Gravel_03.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_ThinFrost_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_ThinFrost_02.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Ground_ThinFrost_03.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Tiles/Frostway_Path_Stone_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Transitions/Frostway_EarthToThinFrost_Overlay_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    },
+    {
+      "path": "Assets/QAInput/Village/Transitions/Frostway_Path_BorderOverlay_01.png.meta",
+      "pass": true,
+      "values": {
+        "spritePixelsToUnits": "128",
+        "spritePivot": "{x: 0.5, y: 0}",
+        "enableMipMap": "0",
+        "filterMode": "0",
+        "isReadable": "1",
+        "maxTextureSize": "4096",
+        "textureCompression": "0"
+      }
+    }
+  ],
+  "compile_errors": [],
+  "null_reference": 0,
+  "missing_reference": 0,
+  "editor_search_exception_count": 1,
+  "runtime_scope": "Gravel ground only; unchanged proxy geometry; no actual full-game regression",
+  "fox_unity": "NOT_RUN: Manifest integrity gate failed",
+  "bear_wolf_retest": 0
+}

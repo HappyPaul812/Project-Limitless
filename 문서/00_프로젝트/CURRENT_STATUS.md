@@ -1,3 +1,13 @@
+## 2026-10-22 EOD 승인분 통합 — 신규 delta PASS / PR·원본 동기화 대기
+
+Issue #53: Bear Run6 v4 + Fox Run6 v7 공유 펫 정의를 모두 보존하고 승인 제품6파일을 선별했습니다. 기존154/162 전수QA 재실행0, 원본 이미 적용된 파일 재복사0. 마을 최종승인9 PNG는 별도 FrostwayVillageV10 Sprite9/Tile9 및 meta39파일로 등록, 기존49/Scene/Sorting/통행 변경0. 제품 총45파일. 격리 Unity15 PASS/0FAIL, 신규 정적10 PASS. 기존 Wolf/Main22/F1/서리들쥐 재검수0.
+
+담당 문서는 오늘 변경분만 파일별 병합·고유 HISTORY 보존. TTS READY104/152는 청취승인이 아니며 Main21 KEEP WAV7 및 미완 BGM/SFX 제품 적용0. OPEN16 미해결16, Main23 전체·Main24 Save #46 HOLD.
+
+원본912파일190,738,290bytes SHA백업, 총7179 SHA 보호. 원본Editor/Play/포커스0. 브랜치 codex/eod-integration-20261022. 마지막 승인 제품 commit cad73927(선행 Bear 9cf0e569). 최종 PR/merge/동기화 증거는 후속 마감 기록으로 확정합니다.
+
+## HISTORY — 실행 전 기존 기록
+
 ## 2026-10-21 EOD 완료 — PR48 병합 / 원본 SYNC_COMPLETE
 
 [PR48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 승인 Wolf6+Main22/F1/Mouse52 제품58 및 담당 문서 선별통합 **`c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8`**. 이 완료증거 작성시 GitHub main=origin/main=원본local main, index=HEAD/staged0 실측 **SYNC_COMPLETE**. 후속문서 PR 이후 최종SHA는 `Temp/EOD20261021/OriginalLocalSync_Proof.json` 및 Issue47 완료기록을 따릅니다.

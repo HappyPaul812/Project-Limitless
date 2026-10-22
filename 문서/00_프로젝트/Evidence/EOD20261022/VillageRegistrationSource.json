@@ -1,0 +1,57 @@
+{
+  "zip_sha256": "f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5",
+  "source_cached_verified": true,
+  "original49_verified": 49,
+  "assets": [
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Earth_01_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_01.png",
+      "sha256": "70cc14876d7da7a4cc1ffd616ff62971b1b181cd1c6f9d64287a54af3afd8dd6"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Earth_02_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_02.png",
+      "sha256": "bd82fcba2294b2e67abce52d8aeb7de0e15be5421a432fece130d4979238f51b"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Earth_03_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Earth_03.png",
+      "sha256": "74cbc2d75a4ba92a7d497790aaf75cc69228939edeb66775b249e0df9d3c0e4a"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Gravel_01_v10_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_01.png",
+      "sha256": "8a36b719f2411f1d590e8ff9dd51ac589836ca4824d4f8ca43d1eb0fda1f839b"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Gravel_02_v10_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_02.png",
+      "sha256": "3fc485cf3f6ebf1a692e2c06d23b95044dafa071baa225dd1bf127b5a580cb99"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_Gravel_03_v10_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_Gravel_03.png",
+      "sha256": "58f171d88a1974e6ad011400e7e7f9d205fd8d39c4b70a3ce704715f4c16e5b8"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_ThinFrost_01_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_01.png",
+      "sha256": "5fbce4d42edb70a9d54317245f8d3a42f1b2aa1b839aea8ebdeb13cc28acaa80"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_ThinFrost_02_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_02.png",
+      "sha256": "0420859875968b353f46ab481a35c6b546f4424f86f6e8652a04c35694f90038"
+    },
+    {
+      "source": "Candidate/Tiles/Frostway_Ground_ThinFrost_03_v9_CANDIDATE.png",
+      "path": "Unity/Client/Assets/_Project/Resources/FrostwayVillageV10/Sprites/Frostway_Ground_ThinFrost_03.png",
+      "sha256": "3b8276c79ec79d78e3c46e8e52a84e54802f4b720c27649b9c947fc0c453308d"
+    }
+  ],
+  "zip_actual_reverified": true,
+  "zip_bytes": 11472703,
+  "crc": "PASS",
+  "source_matches_zip9": true,
+  "existing49_matches_zip": true
+}

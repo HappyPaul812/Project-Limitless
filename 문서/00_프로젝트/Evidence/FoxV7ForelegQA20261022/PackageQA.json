@@ -1,0 +1,54 @@
+{
+  "zip": "Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip",
+  "actual_sha256": "de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030",
+  "reported_sha256": "de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030",
+  "size_bytes": 2990546,
+  "entries": 28,
+  "crc": "PASS",
+  "manifest_pass": 26,
+  "sha256sums_pass": 27,
+  "self_reference_excluded": true,
+  "previews": {
+    "Preview/Fox_Run6_v7_12FPS_128px.gif": {
+      "frames": 6,
+      "duration_ms": [
+        80,
+        90,
+        80,
+        90,
+        80,
+        80
+      ],
+      "total_ms": 500,
+      "loop": 0
+    },
+    "Preview/Fox_Run6_v7_12FPS_40px.gif": {
+      "frames": 6,
+      "duration_ms": [
+        80,
+        90,
+        80,
+        90,
+        80,
+        80
+      ],
+      "total_ms": 500,
+      "loop": 0
+    },
+    "Preview/Fox_Run6_v7_12FPS_Transparent.apng": {
+      "frames": 6,
+      "duration_ms": [
+        83.0,
+        83.0,
+        84.0,
+        83.0,
+        83.0,
+        84.0
+      ],
+      "total_ms": 500.0,
+      "loop": 0
+    }
+  },
+  "changed_csv_rows": 6275,
+  "v6_used_as_baseline": false
+}

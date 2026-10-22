@@ -1,0 +1,86 @@
+{
+    "unity": "6000.6.5f1",
+    "graphics": "Direct3D12",
+    "playMode": true,
+    "frameStart": 1,
+    "frameEnd": 3,
+    "timeStart": 0.9082522048752839,
+    "timeEnd": 2.535724504875285,
+    "ppu": 128.0,
+    "tileScreenWidth": 128.0,
+    "samples": [],
+    "checks": [
+        {
+            "name": "V9 route (0.00, 6.00) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "V9 route (-6.00, 1.50) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "V9 route (-6.00, -6.00) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "V9 route (0.00, 6.00) radius=0.5",
+            "pass": true
+        },
+        {
+            "name": "V9 route (-6.00, 1.50) radius=0.5",
+            "pass": true
+        },
+        {
+            "name": "V9 route (-6.00, -6.00) radius=0.5",
+            "pass": true
+        },
+        {
+            "name": "Village route (0.00, 6.00) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "Village route (-6.00, 1.50) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "Village route (-6.00, -6.00) radius=0.3",
+            "pass": true
+        },
+        {
+            "name": "Village route (0.00, 6.00) radius=0.5",
+            "pass": true
+        },
+        {
+            "name": "Village route (-6.00, 1.50) radius=0.5",
+            "pass": true
+        },
+        {
+            "name": "Village route (-6.00, -6.00) radius=0.5",
+            "pass": true
+        }
+    ],
+    "images": [
+        "Gravel_v9_Mix5x5_16x9.png",
+        "Gravel_v9_Mix5x5_4x3.png",
+        "Gravel_v9_Mix5x5_21x9.png",
+        "Gravel_v10_Mix5x5_16x9.png",
+        "Gravel_v10_Mix5x5_4x3.png",
+        "Gravel_v10_Mix5x5_21x9.png",
+        "Gravel_v9_Mix8x8_16x9.png",
+        "Gravel_v9_Mix8x8_4x3.png",
+        "Gravel_v9_Mix8x8_21x9.png",
+        "Gravel_v10_Mix8x8_16x9.png",
+        "Gravel_v10_Mix8x8_4x3.png",
+        "Gravel_v10_Mix8x8_21x9.png",
+        "V9_Connections_16x9.png",
+        "V9_Connections_4x3.png",
+        "V9_Connections_21x9.png",
+        "V9_DoorFront.png",
+        "V9_DoorBehind.png",
+        "Village_Connections_16x9.png",
+        "Village_Connections_4x3.png",
+        "Village_Connections_21x9.png",
+        "Village_DoorFront.png",
+        "Village_DoorBehind.png"
+    ]
+}

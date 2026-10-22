@@ -1,0 +1,273 @@
+{
+  "title": "LIMITLESS Fox Run6 v5 targeted Frame03 joint fix",
+  "date": "2026-10-22",
+  "status": "OFFLINE_FILE_QA_PASS_MOTION_ART_REVIEW_PENDING",
+  "previous_v4_zip_sha256": "9c46764df7f88194b1d15663e4df34ecdb24367f7e65eed298dfc089221b5827",
+  "frame_size": [
+    512,
+    384
+  ],
+  "fps": 12,
+  "facing": "left",
+  "frame_count": 6,
+  "strip": [
+    3072,
+    384
+  ],
+  "atlas": [
+    1536,
+    768
+  ],
+  "bbox_coordinates": "0-based top-left, x right y down, max_x/max_y exclusive, alpha>0",
+  "modified_frames": [
+    3
+  ],
+  "unchanged_frames": [
+    0,
+    1,
+    2,
+    4,
+    5
+  ],
+  "changed_rgba_pixels_vs_v4": [
+    0,
+    0,
+    0,
+    4897,
+    0,
+    0
+  ],
+  "preservation_against_v4": {
+    "00": {
+      "v4_sha256": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+      "v5_sha256": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+      "same_as_v4": true
+    },
+    "01": {
+      "v4_sha256": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+      "v5_sha256": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+      "same_as_v4": true
+    },
+    "02": {
+      "v4_sha256": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+      "v5_sha256": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+      "same_as_v4": true
+    },
+    "03": {
+      "v4_sha256": "a736006f83f4c08a06fdd4674645e836032fb4743fd943f7eb46f157bb085a9e",
+      "v5_sha256": "24ba9d5635a90d88ea9b5d53af6037601331033f4fc76c95daeba007587e8b80",
+      "same_as_v4": false
+    },
+    "04": {
+      "v4_sha256": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+      "v5_sha256": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+      "same_as_v4": true
+    },
+    "05": {
+      "v4_sha256": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd",
+      "v5_sha256": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd",
+      "same_as_v4": true
+    }
+  },
+  "art_change_summary": "Frame03 only: recovering foreleg bright seam softened and upper-leg joint connection locally rejoined while preserving body, ear, tail, and surrounding motion timing. Frames 00/01/02/04/05 are byte-preserved from v4.",
+  "qa": {
+    "png6_decode": true,
+    "strip_cell_equality": 2,
+    "atlas_cell_equality": 2,
+    "bboxes_verified": 6,
+    "bbox_csv_matches_png_alpha": true,
+    "gif_loop_12fps": true
+  },
+  "file_hashes": {
+    "Assets/Fox_Run6_v5_Atlas3x2_1536x768.png": {
+      "sha256": "94d3868204f53c9b37df64cbe0b0f9369d8df9f407918828c54c447c331b735b",
+      "bytes": 844591,
+      "crc32": "525f6c28"
+    },
+    "Assets/Fox_Run6_v5_Strip_3072x384.png": {
+      "sha256": "6192660f47e42e60f6ed40096e2b54a4fc2944bbe3fb6b3c74658f4d005b42dd",
+      "bytes": 843304,
+      "crc32": "0ff3183c"
+    },
+    "Assets/Poses/Fox_Run_00_v5.png": {
+      "sha256": "79b450725dc514fce77d921c6f5748097c995df3c004b2d175a86ac1751c4630",
+      "bytes": 146191,
+      "crc32": "654c83c8"
+    },
+    "Assets/Poses/Fox_Run_01_v5.png": {
+      "sha256": "4e2ee40cc7c4f60faf8eeb321585fcba10aca645d8871b24b6728daaffafdea3",
+      "bytes": 141302,
+      "crc32": "b6148aad"
+    },
+    "Assets/Poses/Fox_Run_02_v5.png": {
+      "sha256": "232571ee9cb7306366c94d94a7901bd634349f4cb34dd1c49670e1bdd7f2ce64",
+      "bytes": 128350,
+      "crc32": "129325e4"
+    },
+    "Assets/Poses/Fox_Run_03_v5.png": {
+      "sha256": "24ba9d5635a90d88ea9b5d53af6037601331033f4fc76c95daeba007587e8b80",
+      "bytes": 140121,
+      "crc32": "c3ec87f6"
+    },
+    "Assets/Poses/Fox_Run_04_v5.png": {
+      "sha256": "4400654fc24d1dc0305b480d3ce67571a7bd15efa8fa1b3b610f101d7a803d2b",
+      "bytes": 137263,
+      "crc32": "7bab25c7"
+    },
+    "Assets/Poses/Fox_Run_05_v5.png": {
+      "sha256": "fc5a5bee6cd19d81ae3a386c05f0ab4c9a44756221f5f81b98887361f8e121bd",
+      "bytes": 143434,
+      "crc32": "fba983e1"
+    },
+    "Docs/Fox_Run6_v5_Local_Report.md": {
+      "sha256": "6b5b21d6c6f4b535c6f245648169293c3e09e3491a98eba59837b29b87b1da42",
+      "bytes": 443,
+      "crc32": "52d54cb7"
+    },
+    "Frame_Descriptions_KO.md": {
+      "sha256": "828ff98b6e3100dc7fedeb8160f693fba894c9ac0015854a85445536be460964",
+      "bytes": 399,
+      "crc32": "ff81747a"
+    },
+    "Manifest.json": {
+      "sha256": "376fee362f408da91366cfec88dc5bf1b30489db5127fc1835de829843e6f176",
+      "bytes": 9184,
+      "crc32": "7540cc8e"
+    },
+    "Preview/Fox_Loop_05_to_00_to_01_128px.png": {
+      "sha256": "28f67503a0fca11aca62d9fe7b6d90bb46aa9fb2aec630b181735eefaf8f92ce",
+      "bytes": 34716,
+      "crc32": "0d05ffea"
+    },
+    "Preview/Fox_Run6_v4_vs_v5_Compare.gif": {
+      "sha256": "57e9af299fcf514c664fa0dad18a18000d0cbe9ea2bdc696b8ab1847c96983c4",
+      "bytes": 41443,
+      "crc32": "e5bc14e2"
+    },
+    "Preview/Fox_Run6_v5_128px_ContactSheet.png": {
+      "sha256": "43dae79d8af21ac8defcfb51b06d9f52c076344875139a69ad55517ee76bdec6",
+      "bytes": 66996,
+      "crc32": "5e028d0e"
+    },
+    "Preview/Fox_Run6_v5_12FPS_128px.gif": {
+      "sha256": "7f79261cf90f8348cb4be251c8c9046b4fcfc5e5059c0374a112f49378690928",
+      "bytes": 26833,
+      "crc32": "69ebffa7"
+    },
+    "Preview/Fox_Run6_v5_12FPS_40px.gif": {
+      "sha256": "fe7de4462152213f65a954e6b16c5b4284b404650e877874fcae34b9d62d8ade",
+      "bytes": 8508,
+      "crc32": "393aee9b"
+    },
+    "Preview/Fox_Run6_v5_12FPS_Transparent.apng": {
+      "sha256": "960522b3b1bec759bfb3de98d298180324ad1fd184cfd3b3ac694f53225dceef",
+      "bytes": 79534,
+      "crc32": "bf412b01"
+    },
+    "Preview/Fox_Run6_v5_40px_ContactSheet.png": {
+      "sha256": "42f26c743432a9fbc5e9c29c30e70bb98f34c5eaf74268cfbc8b2c307d6c5f06",
+      "bytes": 10468,
+      "crc32": "28d9b837"
+    },
+    "Preview/Fox_Run_00_v5_128px.png": {
+      "sha256": "87692e9d97b9a67227c0411b8adfa25b29e93c28853a4840be342a3832a00164",
+      "bytes": 14117,
+      "crc32": "0ba273b3"
+    },
+    "Preview/Fox_Run_00_v5_40px.png": {
+      "sha256": "f0275225d88984509de46a9330e3bf706e5547478a8e9713b9248bbac0b2d57d",
+      "bytes": 2305,
+      "crc32": "6a5fe189"
+    },
+    "Preview/Fox_Run_01_v5_128px.png": {
+      "sha256": "6743c7479c2d488b14555bfbc44e6498764a807b3f905ce624407433b4fc5787",
+      "bytes": 13572,
+      "crc32": "38090111"
+    },
+    "Preview/Fox_Run_01_v5_40px.png": {
+      "sha256": "b5942d3ea65cde53e9f4cbac26c8d2fd1f89863506807bd1e9c0d42bcecbc5f6",
+      "bytes": 2222,
+      "crc32": "4fdc27e3"
+    },
+    "Preview/Fox_Run_02_v5_128px.png": {
+      "sha256": "d73cb265d6fb72edd9099fc516a1b992ecf5d39e57367a732d289388b4400b19",
+      "bytes": 12344,
+      "crc32": "8f9f5cc1"
+    },
+    "Preview/Fox_Run_02_v5_40px.png": {
+      "sha256": "c39753140e164040b0f9c138a5ad8711783e18e5b5121152442b961bb14e30b1",
+      "bytes": 2045,
+      "crc32": "ae59fee2"
+    },
+    "Preview/Fox_Run_03_v5_128px.png": {
+      "sha256": "fb65c63084d37d9f010f812dc866ff7c1ec42f6d5c59f7757012c99ae318ec62",
+      "bytes": 13166,
+      "crc32": "7ae39d05"
+    },
+    "Preview/Fox_Run_03_v5_40px.png": {
+      "sha256": "133f29fdf02039cd5f281f6ed9e16933ae3ec746827e61af21abc2718bfe7b90",
+      "bytes": 2142,
+      "crc32": "682f3849"
+    },
+    "Preview/Fox_Run_04_v5_128px.png": {
+      "sha256": "f609d94aed561692663491f07fba21840a6370a1945a0a44ccb05bc70c1151c0",
+      "bytes": 13382,
+      "crc32": "d7bd049a"
+    },
+    "Preview/Fox_Run_04_v5_40px.png": {
+      "sha256": "e3ee697ad476c6c68dc4c46dad089ca105f5822b35bdfd721376863891e6be29",
+      "bytes": 2223,
+      "crc32": "92b552ed"
+    },
+    "Preview/Fox_Run_05_v5_128px.png": {
+      "sha256": "6d3c9907d85625928199a1f6d1cc96ad0346ddf7bb678e3b6b58522decface11",
+      "bytes": 13527,
+      "crc32": "3c9af13c"
+    },
+    "Preview/Fox_Run_05_v5_40px.png": {
+      "sha256": "e547a202e375d6729da8729ab02acebea7a1bcca0b61bf2ba24bfec8567f0bbc",
+      "bytes": 2223,
+      "crc32": "e2ec150b"
+    },
+    "Preview/Fox_Sequence_02_03_04_128px.png": {
+      "sha256": "559d8addb021281598c5e44886f546e69d8e3cc1337aa98b02765274a459afb6",
+      "bytes": 33123,
+      "crc32": "ef32abff"
+    },
+    "Preview/Frame03_128px_v4_vs_v5.png": {
+      "sha256": "993e662fe6c2ed1207bbfe7fc3d9e24006aa93074751f3ce610dbd22d2ecbd62",
+      "bytes": 12982,
+      "crc32": "031d3ec0"
+    },
+    "Preview/Frame03_Joint_Focus_v4_vs_v5_4x.png": {
+      "sha256": "b6ae0ca117d016312f68f5c63380eaead056b84a87f0521197aefb141b2d57c0",
+      "bytes": 46958,
+      "crc32": "60176312"
+    },
+    "Preview/Frame03_v4_vs_v5_BeforeAfter_2x.png": {
+      "sha256": "04c9ca414a4a27bf025082f3750fed7f6fa04a1ea0e84427257e13110aecc986",
+      "bytes": 186060,
+      "crc32": "133fcd80"
+    },
+    "QA/BBox_Coordinates_Contract.md": {
+      "sha256": "de67d11479b8d43b726ba553eab8cc7fd58c97583eb783dccfc2d5428fa71925",
+      "bytes": 376,
+      "crc32": "2e19e75a"
+    },
+    "QA/Frame_Gait_And_Contact.csv": {
+      "sha256": "09669f4a4acf56ee83da9d6e4be0b150e66e2692a269c583440628ccc67ebd0f",
+      "bytes": 388,
+      "crc32": "458f1941"
+    },
+    "QA/verify_bbox.py": {
+      "sha256": "de57046f3751a41c65bdd5acd10cacc89f34ddbcf855509ea0bac7185e5e9eea",
+      "bytes": 766,
+      "crc32": "c3678209"
+    },
+    "README.md": {
+      "sha256": "da906b006447286b792f06827021a4c6820602d571af4c4c673d10a51fb91196",
+      "bytes": 528,
+      "crc32": "fa996b20"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "path": "Assets/QAInput/Fox/Assets/Fox_Run6_v7_Atlas3x2_1536x768.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Fox_Run6_v7_Strip_3072x384.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_00_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_01_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_02_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_03_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_04_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/Fox/Assets/Poses/Fox_Run_05_v7.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_00.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_01.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_02.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_03.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_04.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  },
+  {
+    "path": "Assets/QAInput/FoxV5/Fox_05.png.meta",
+    "values": {
+      "spritePixelsToUnits": "128",
+      "spritePivot": "{x: 0.5, y: 0}",
+      "enableMipMap": "0",
+      "filterMode": "0",
+      "isReadable": "1",
+      "maxTextureSize": "4096",
+      "textureCompression": "0"
+    },
+    "pass": true
+  }
+]
