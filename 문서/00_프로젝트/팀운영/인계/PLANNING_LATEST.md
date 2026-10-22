@@ -1,3 +1,15 @@
+# PLANNING 2026-10-22 — Fox Run6 v7 Frame03 ForelegFix 실물 경로 접수 / Codex 격리 미술 검수 대기
+
+- **바울 대표가 Windows 실물 ZIP 경로를 전달**: `F:\Downloads\Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip`. 기획 세션은 바울 대표 Windows F:를 직접 읽은 것이 아니므로 아래 SHA/무결성은 `docs/art-renewal` 납품 담당 신고값. **Codex 실제 ZIP SHA readback과 Unity 검수 아직 없음**.
+- **중요 기획 변경 사실:** 중간 `Fox Run6 v6`은 바울 대표가 오른쪽 앞발 이상으로 직접 미술 반려. v6은 원래 요청한 Frame03 국소 수정이 아니라 전신 60,629픽셀을 교체해 동작·발목 방향이 불연속이 된 것으로 art-renewal 보고. **`FOX_V6_ART_REJECTED / NEVER_GAME_APPLY`**. v7은 v6을 기반으로 하지 않고 승인 전 단계의 **Fox v5 ManifestFix 프레임6**을 기준으로 다시 수리한 파일럿.
+- **v7 납품 보고**: ZIP **2,990,546 bytes**, SHA256 **`de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`**. `Fox_Run6_v5_ManifestFix` 대비 Frame00/01/02/04/05 **압축 PNG byte/SHA 5/5 고정**, Frame03만 **6,275 RGBA픽셀** 변경 (bbox x159..255 inclusive,y185..294 inclusive), v3에 있던 원래 그린 연속 앞다리 원화를 가슴 아래 국소 합성·밝은 흰 쐐기/분리발 제거 목표. Frame03 외 몸통·귀·꼬리·다른 다리 보존. PNG6 512×384 RGBA, Strip 3072×384·Atlas1536×768 정확 6/6, ZIP CRC PASS, Manifest 자신과 SHA256SUMS 제외 **26/26 PASS**, SHA256SUMS 자기 자신 제외 **27/27 PASS**, alpha bbox CSV 6/6 PASS, GIF/APNG 6frames 12FPS 500ms 보고(오프라인 검사).
+- **검수 계약:** Codex 별도 격리 worktree에서 사용자 실 ZIP readback SHA/CRC/Manifest/26·27/SHA, 기준 v5 ManifestFix PNG5/5 동일, Frame03 변경 영역/Strip·Atlas 정확성만 확인. **v6 미술 FAIL을 v7의 미술 판정에 전가하지 않되 v6 전신 교체 재도입 여부 확인**. Unity 실제 PlayMode 12FPS 128px·40px 양방향, 집중 구간 02→03→04와 05→00 연결 및 Frame03 밝은 쐐기·관절·발목·접지 타이밍·실루엣 검사. 프레임 외곽, 동물 디자인, 호환성 결함 새로 나타났으면 범위를 명시. **기술 PASS/FAIL 및 미술 PASS 권고/HOLD/FAIL 별도 보고.** 사용자 최종 승인 전 게임 런타임 적용/PR/main 병합 금지, Codex의 PASS 권고만으로 Bear처럼 사용자 승인 확정 금지.
+- **변경 금지:** 승인 Wolf Run6 v5, 승인·실원본 게임 반영 Bear Run6 v4(격리 Unity 154PASS, 원격 Push/PR·병합 대기), Main22/F1/마을 v10 후보9 사용자 미술 승인본·원본 Unity Editor/Save/UserData/HEAD/index·dirty/untracked. Bear/Wolf QA 재수행0, Fox 기존 전체 QA 재수행 금지.
+- **최신 상태:** `FOX_V7_DELIVERY_PATH_RECEIVED / ART_RENEWAL_OFFLINE_INTEGRITY_PASS / CODEX_ACTUAL_LOCAL_READBACK_PENDING / ISOLATED_UNITY_MOTION_QA_PENDING / USER_FINAL_MOTION_APPROVAL_PENDING / GAME_NOT_APPLIED`.
+- 정본: [Fox v6 미술 반려 및 v7 국소 복원 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md), [Issue #50](https://github.com/HappyPaul812/Project-Limitless/issues/50). GitHub 역할별 최신 문서 검토는 기존 온보딩된 담당이 스스로 수행, 별도 반복 안내문 없음.
+
+---
+
 # PLANNING 최종 최신 2026-10-22 21:48 KST — 서릿길 마을 v10 Candidate9 바울 대표 최종 미술 승인 / Fox v5 ManifestFix 기술 PASS, 모션 HOLD
 
 ## A. 바울 대표 직접 승인 — Main23 Frostway Village v10 Candidate9
