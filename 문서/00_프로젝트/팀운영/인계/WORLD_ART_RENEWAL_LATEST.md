@@ -1,5 +1,12 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-22 Fox Run6 v6 미술 FAIL → v7 Frame03 앞다리 국소 복원 후보 (최신)
+- 바울 대표 직접 피드백: v6 오른쪽 앞발 이상. v6는 Frame03 결함 국소수정 주문 위반으로 전신 포즈 교체, 기존 v5 대비 60,629 픽셀 변경하여 동작·앞발 방향이 달라진 **미술 FAIL**. ZIP·CRC PASS는 미술 PASS 아님. v6 정식 사용 금지.
+- v7 기준은 Fox v5 ManifestFix 6개 원본 PNG. Frame03만 기존 v3에서 **원래 그려진 정상적인 연속 앞다리/관절/발끝 페인팅**으로 국소 복원, 잘려 떠있는 흰 사각형/쐐기·분리된 발 제거. 변경 6,275 RGBA 픽셀 (x159..255,y185..294). Frame00/01/02/04/05 PNG 압축바이트 해시 **5/5 그대로**; 승인 Wolf·Bear v4·게임 원본·main/Unity/Save 변경0.
+- 실제 사용자 다운로드 **Limitless_Beast_Fox_Run6_v7_Frame03_ForelegFix.zip** 2,990,546바이트, SHA256 `de6139858b2f5de95c9e8256a350f0e45744f15e404efb00161688c88e1c0030`. 6PNG 512x384, strip3072x384, atlas1536x768, 12FPS GIF/APNG, 128/40 contact, frame03 old/new zoom, v6 rejection comparison, 02→03→04/05→00→01, changed coord CSV, bbox script, Manifest self-hash excluded, SHA256SUMS external. ZIP CRC PASS, Manifest 26/26 PASS, SHA256SUMS 27/27 PASS, frames exact6/6, bbox6/6 PASS. ZIP is in chat sandbox, not automatically uploaded to Github or F:.
+- [Fox v7 local foreleg repair report](../../Fox_Run6_v6_VisualReject_v7_Frame03_LocalForeleg_Repair_20261022.md), initial commit `dfd714c7428c13592e22d1332dfcfbfe6b1e8a95`. Accurate state **V7_REAL_FILE_DELIVERED / OFFLINE_FILE_QA_PASS / RUN_MOTION_ART_APPROVAL_PENDING / CODEX_ISOLATED_UNITY_V7_NOT_RUN / MAIN_UNCHANGED**. Do not call the candidate approved; restore physical leg continuity is not proof of 12FPS gait acceptance.
+
+
 ## 2026-10-22 Fox Run6 v5 ManifestFix ZIP 무결성 정상화 — 최신
 - Codex v5: CRC PASS, SHA256SUMS 38/38 PASS, Manifest 37/38 FAIL. 기존 Manifest가 자기 자신(기록 9,184bytes / 실제 9,345bytes)을 해시 목록에 넣어 SHA·CRC·크기 순환 불일치. 일반 37개 항목은 기존 해시 검사 PASS.
 - 실제 새 아카이브 Limitless_Beast_Fox_Run6_v5_ManifestFix.zip 3,131,729 bytes / SHA256 `b0968d4358c916057bd23734d426f6fa0e6548a0ad8880400e4d061413f2ae29` / 39 entries; 원본 v5 ZIP SHA `5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df` 보존.
