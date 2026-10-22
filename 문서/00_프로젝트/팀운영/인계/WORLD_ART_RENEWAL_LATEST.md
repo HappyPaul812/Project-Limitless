@@ -1,5 +1,16 @@
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
 
+## 2026-10-22 Bear/Fox Run6 v1 Codex 기술 PASS·미술 HOLD → 독립 v2 실제 PNG/ZIP 납품 (최신)
+
+- 바울 대표: Wolf Run6 v5 사용자 최종 미술 승인/실게임 반영 완료이므로 **Wolf 정본 재제작 및 변경 금지**. Bear와 Fox 각 v1이 격리 Unity 기술 PASS/미술 HOLD. Bear Frame05→00 머리/접지, Fox 앞발 구분/꼬리 일관성을 집중 보완한 **동물별 v2 독립 아트 후보** 제작.
+- 신규 1774×887 3×2 포즈 시트에서 **실제 서로 다른 동물 자세6을 각각 분리**하고 세부 실루엣 정돈, 512×384 RGBA PNG6, 3072×384 Strip, 1536×768 Atlas, 12FPS GIF/APNG 500ms/6, 128px·40px·v1 대비·05→00 미리보기 및 QA 생성. 기존 v1의 작은 그림 확대를 다시 재사용한 게 아니라 신규 원화 시트 이용. **전 프레임 512px 단위 완전 수작업 드로잉이 아님**, 미술 PASS 아직 미정.
+- **Bear** `Limitless_Beast_Bear_Run6_v2.zip`: **5,784,917 bytes / SHA256 `3d74103e01fcd9f17127afcecf52eaa9f578af96f8fa23a197a1237681c3c147` / 36 entries**. Frame05→00 바닥 bbox 최하단 325→326px, 머리/가슴 무게감 새 6포즈. `docs/art-renewal/문서/00_프로젝트/Beast_Bear_Run6_v2_TargetedMotion_Delivery_20261022.md`, 첫 문서 commit `5a6a451de1205b82ba81ff953d6ff4748c015722`.
+- **Fox** `Limitless_Beast_Fox_Run6_v2.zip`: **4,166,008 bytes / SHA256 `22e780627a96a87b2d1ce06f746248b0b9158cc59c834b8c6d4b2c6f9661c6ea` / 36 entries**. 앞다리 교차 자세와 꼬리 기준 윤곽을 유지한 신규 6포즈, 바닥 bbox 마지막05→첫00 325→326px. `docs/art-renewal/문서/00_프로젝트/Beast_Fox_Run6_v2_TargetedMotion_Delivery_20261022.md`, 첫 문서 commit `b1bffed559f871da2723a780a8a992df063d9072`.
+- 실제 ZIP/개별 PNG는 해당 ChatGPT 대화 Sandbox 다운로드로만 납품. GitHub 브랜치에는 문서/인계만 저장, 바울 대표 F: 로컬 파일 직접 사용·복사0. Bear/Fox 별도 GitHub 승인 KeyArt 정본은 main tree에서 확인 못하고 제3자 ScratchIO 임시 Sprite 두 개만 존재 → 새 두 v2 원화는 자체 제작 6포즈 시트 출처, 기존 제3자 픽셀 복제 아님.
+- 검사: 각 ZIP 6 PNG 재해독, 사방 프레임 Alpha 침범0, Strip/Atlas 6cell RGBA 바이트 동일6/6, GIF/APNG 총0.5sec/12FPS, ZIP testzip CRC/모든 entry SHA PASS. 단 이것은 `OFFLINE_ASSET_TECH_PASS / CODEX_V2_UNITY_QA_PENDING / BEAR_FOX_INDEPENDENT_USER_MOTION_APPROVAL_PENDING / OFFICIAL_WOLF_AND_MAIN_UNCHANGED`. Codex 격리 GameView 05→00·자세/접지 및 바울 대표 종별 승인 필요. 승인 이전 Bear/Fox 정식 Unity 적용 금지, 기존 승인 Wolf 등 자산/게임/Save/main 불변.
+
+
+
 ## 2026-10-22 승인 Wolf Run6 v5 다음 단계 — Bear/Fox 각각 Run6 v1 실제 PNG+ZIP 납품 (현재 최신)
 
 - 바울 대표 직접 최신 결정: **Wolf Run6 v5 최종 미술승인/실제 게임 적용/main 통합·로컬동기화 완료, 기존 Wolf 변경 금지**. 이번 발주는 **Bear → Fox 독립 Run6 v1 파일럿 2종**. Codex Unity 실제 Bear/Fox 검증/본게임 반영은 아직 아님.
