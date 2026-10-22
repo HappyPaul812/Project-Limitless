@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-22 Main23 서릿길 마을 v9 — 새 01 포함 family 9종 비파괴 대체 파일럿
+
+- **사용자 최신 발주**: Codex v8 실제 기술PASS/미술 Earth·ThinFrost·Gravel 모두 HOLD. 02·03만 반복 수정하는 방향 중단. 기존 공식43 PNG 원본 보존 상태로 **family별 새 01/02/03 전9개 `Candidate/Tiles/` 독립 후보**. 원본 v8 ZIP 실물 SHA `6a9fa1c3c0c1ffef3ac43d3541a28bbc0a16310d2e0f8c267ec7177d731d712f` 확인.
+- **v9 납품 실물**: `Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v9.zip` / SHA256 `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79` / 21,738,388bytes / 73 entries. 오프라인 QA: 원본 게임 PNG49 byte/SHA 모두 보존(승인43 포함); 새 후보9 전부256 RGBA/opaque; 54 ordered seam delta0; ZIP CRC·SHA256SUMS72/72 PASS. v8↔v9 동일 타일ID/128px 셀 5×5/8×8 비교6, **Unity GameView 아님**.
+- **01 고정 원인**: v8만의 큰 01 돌/풀과 신02/03 가는 입자 차이가 사각 구획의 유력 원인. v9 전3종 질감·모티프를 한꺼번에 교체한 후보에서 개선 가능성을 시각 비교하지만 01 단독의 인과 검증은 아니다. **Gravel 등의 미세 반복/그리드 잔존·ThinFrost 표현**은 바울 대표 미술 검토 및 Codex 실제 Unity 검사 필요.
+- **OPEN16**: Codex CSV/XY 원문 art-new에 아직 미전달. 미해결16/완화0/해결0, 원본문제와 무관한 자산 수정0. 공식 SkillShop·RoofGable·StonePath·43게임PNG·v8 variant6 및 F1/Wolf/Bear/Fox/Mouse·Unity/Save/원본 PC파일 보호.
+- **GitHub 보고**: [v9 제작·QA](../../Chapter3_Main23_FrostwayVillage_GameArt_VariantTiles_v9_Art_QA_20261022.md), `docs/art-new` 보고 커밋 `134271fbc83c6d0a79e465c4ac0388a5a004b077`. ZIP/PNG는 대화 다운로드로 납품, GitHub 바이너리 업로드0. v9는 **CANDIDATE / OFFLINE_QA_PASS / USER_ART_APPROVAL_PENDING / NO_UNITY_APPLY**.
+- **다음**: 바울 대표 9개 PNG 및 5×5/8×8 동일배치 전후 미술 검토 → (별도 승인/지시 시) Codex 격리 Unity DeltaQA 및 OPEN16 원문 전달 → 최종 미술 승인 후에만 공식 타일 반영 검토. `main` 직접 commit/Push/merge 금지.
+
+
 **최종 사용자 결정(2026-10-12): 리뉴얼 담당은 Chapter 1·2 기존 아트 교체(환경·몬스터·보스·펫·NPC·VFX)만 전담합니다. 기존 스프라이트 담당은 Chapter 3 이후 모든 신규 아트(환경·필드·던전·몬스터·보스·펫·NPC·캐릭터·VFX·UI 필요 이미지)를 총괄합니다. 기존 공식 승인 자산은 별도 승인 없이 교체하지 않습니다. Codex는 구현·Unity 통합·QA 전담입니다.**
 
 **Chapter 3 이후 모든 신규 아트** 전담. 신규 배경·지역·던전·몬스터·보스·펫·NPC·캐릭터·초상화·VFX·필요 UI 제작. Chapter1·2 무료 아트 교체는 리뉴얼 담당 작업이므로 중복 제작 금지. 최신 Chapter3 설계 `문서/06_스킬/Chapter3_스킬상점_강화_냉기_동결괴사_20261012.md`와 스토리·몬스터 정본을 확인하고 공식 원본 보존. 실제 사용자 미술 승인·Codex QA 전에는 구현 완료로 보고하지 않습니다. 자세한 결정은 `../../LIMITLESS_20261012_전체대화_결정_인계.md`.
