@@ -1,3 +1,28 @@
+# PLANNING 최신 2026-10-22 Fox Run6 v5 패키징 게이트 실패 / Village v10 후보9 PASS권고 / Bear 제품 반영
+
+**근거:** 바울 대표 제공 Codex 최신 격리 Unity QA 캡처. 이 기획 담당은 사용자 F: 로컬 ZIP·Unity 원본을 직접 조작/재검사하지 않았으므로 아래는 Codex 실증 보고를 인계한 것임.
+
+### A. Fox Run6 v5 — 실물 Manifest 자기 참조 결함, 미술 검증 중단
+
+- 입력 `F:\Downloads\Limitless_Beast_Fox_Run6_v5.zip`; Codex 실 SHA256 **`5f6da110fe64f280528d9768bc9154d4175c0724f8541d72aa9ebbecf1cd44df`**. ZIP CRC PASS, `SHA256SUMS` **38/38 PASS**, 그러나 `Manifest` **37/38**, 실패항목은 **Manifest 파일 자신**의 기록 SHA/크기/CRC. Manifest 신고 크기 **9,184 bytes**, 실제 **9,345 bytes**. **`FOX_V5_PACKAGE_TECH_FAIL / FOX_MOTION_ART_NOT_VERIFIED`**. “Fox v5 미술 FAIL”이라고 판정하지 말 것.
+- 원인 확인/복구 우선: **리뉴얼 아트 담당은 Fox v5 기존 6 PNG/Strip/Atlas/GIF/APNG/preview/QA의 파일 SHA를 그대로 보호**하고 **Manifest 자신을 Manifest 내부 digest/size 목록의 검사 대상에서 제외**(정의상 자기 자신의 SHA를 파일 본문에서 직접 맞추는 순환 검증은 피함). 별도 `SHA256SUMS.txt`는 최종 비자기참조 파일에 대해 ZIP 생성 전 freeze 후 검증, 해당 checksum 목록 역시 자체 digest를 기록하지 않도록 처리. 진단상 별도 실제 문제 파일이 있으면 정확히 보고. Manifest/README/ZIP checksum 갱신 외 정상 이미지 재제작 금지.
+- 고정 v5 ZIP은 **변경하지 않은 보존본**으로 두고 수정본을 새 `Limitless_Beast_Fox_Run6_v5_ManifestFix.zip`로 납품·새 SHA 명시. 이후 Codex는 변경된 metadata/ZIP 무결성의 변경분만 확인하고 **Fox v4 Frame03 접합부/02→03→04 자연스러움 실 Unity PlayMode 12FPS 128/40px 시각QA**를 그때 수행. 중복 Wolf/Bear/Main22 전수QA 금지. **정식 게임 적용 금지**.
+
+### B. Village VariantTiles v10 — 후보9 미술 PASS 권고, 대표 최종승인 대기
+
+- 실 ZIP SHA256 **`f50e312eea52a6bca8272d78532224e2c66a6b40c4b1c8be5cd164b52b2bcee5`**. ZIP CRC, Candidate Manifest Gravel **3/3**, `SHA256SUMS` **64/64** PASS. 기존 게임PNG **49/49 바이트 보존**, 기존 Earth/ThinFrost 후보6 byte 보존; Gravel candidate3 수정. 실제 격리 Unity 3화면비·5×5/8×8 및 통행 proxy 정상, 후보9 전체 seam/alpha 등 **22항목 PASS**. **Gravel candidate01/02/03 각 `ART_PASS_RECOMMENDED`**, 이전 Earth/ThinFrost 각3종도 PASS 권고 → **`VILLAGE_V10_CANDIDATE_9_ART_PASS_RECOMMENDED / USER_ART_APPROVAL_PENDING`**.
+- 미술 PASS 권고는 **마을 전체 최종 승인이나 Main23 게임 적용 허가 아님**. 기존 **OPEN16 유지16·완화0·해결0** 및 Village 기능/구성/퀘스트 게이트 별도. 사용자 승인 전 Candidate9 공식 타일 승격/Unity 본편 적용/PR main 병합 금지. 후보9은 미술 결함 새로 확인되기 전 원형/SHA 동결 권고.
+
+### C. Bear Run6 v4 — 이미 원본 게임 파일 안전 반영, GitHub PR/병합 아직 없음
+
+- 바울 대표가 제공한 별도 Codex 적용완료 캡처: **승인 Bear v4 게임 파일 안전 적용**, 격리 Unity 변경분 **154 PASS**, 설치/장착/복원/6프레임 루프·좌우 이동·128/40px. 사용자 미커밋 **858개 SHA 보존** 및 Wolf/Fox/Save/UserData 보호, 원본 Editor 자연 Import/손플레이는 미검증. Codex branch `codex/bear-run6-v4-apply`, 제품 커밋 약식 `5b89ac92`, 검증문서 `6e86d05d`. **`BEAR_LOCAL_GAME_DISK_APPLIED / REMOTE_PUSH_PR_MERGE_0`** — 재복사/154 PASS 재검수 금지. 담당 Issue #51 OPEN.
+
+### 공통
+- Fox/Village Codex 브랜치 `codex/qa-village-v10-fox-v5-20261022`, 커밋 약식 `5a51296e`, `2d28b8aa`. 대상 원본 **4,402파일**, 사용자 미커밋 **862파일**, HEAD/status/index 및 Wolf/Bear 승인 자산 보호, Push·병합0. 기존 Unity Search 초기화 예외1 별도, 새 결함 판정으로 합산 금지.
+- 다음 가장 효율적 작업: **Fox ManifestFix 아트 담당에게 재포장 요청**, Codex Fox v5 변경분 무결성 확인 + 실제 미술 QA, **Village v10 후보9 바울 대표 최종 미술 승인 질문**. EOD 본게임 merge/로컬 sync는 별도 사용자 지시. 이미 완료된 Bear 적용/기존 QA 중복하지 말 것.
+
+---
+
 # PLANNING / 2026-10-22 Bear Run6 v4 바울 대표 최종 미술·모션 승인
 
 - **바울 대표 직접 승인 문구:** “곰 Run6 v4는 이대로 최종 승인”. Codex 기술 PASS·실제 격리 Unity 12FPS/128px/40px 양방향 및 메타데이터 6/6 PASS·미술 PASS 권고를 기초로 **`BEAR_RUN6_V4_USER_ART_MOTION_APPROVED`** 확정. 전날 `PASS_RECOMMENDED / USER_APPROVAL_PENDING`은 당시 기록으로 유지, 최신 상태는 승인완료.
