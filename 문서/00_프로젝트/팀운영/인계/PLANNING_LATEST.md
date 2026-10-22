@@ -1,3 +1,15 @@
+# PLANNING 2026-10-22 — Village v6·Bear Run6 v1·Fox Run6 v1 ZIP3종 검수 접수
+
+바울 대표가 사용자 Windows 실제 ZIP 경로 3종을 제공. 납품 문서 GitHub 확인:
+- Village v6 `F:\Downloads\Limitless_Chapter3_FrostwayVillage_Environment_GameArt_VariantTiles_v6.zip`, art-new 신고 SHA256 `519ed96fa6157b7de451830412d6e881b633241b0f8cc459d186465765a4ea7e`: 기존43 PNG 바이트 유지 + 신규 변형 타일6, 총49PNG, ZIP71. **Codex 실제 SHA/실Unity 혼합5x5·대표미술 승인 대기**, OPEN16 원본CSV/좌표JSON Codex 기보유·해결0.
+- Bear Run6 v1 `F:\Downloads\Limitless_Beast_Bear_Run6_v1.zip`, renewal 신고 SHA256 `1a29475207c0f99db87726b637d301e5010bf5ef6790e2415ad679f67ffd7f19`, 37항목, source6+strip+atlas/12FPS. **승인된 Bear 정적 원화 기준이었다고 확인 불가**, AI 소스 콘셉트 보드에서 포즈 추출한 **미술 파일럿**. 
+- Fox Run6 v1 `F:\Downloads\Limitless_Beast_Fox_Run6_v1.zip`, renewal 신고 SHA256 `6d352219505497a261ffe2c1d687cece28bdf4859003d16fce88334d9a15f43d`, 37항목. **Fox 역시 승인된 고해상도 원본 근거 없음**, 새 AI 콘셉트 추출 파일럿.
+- 각각 파일 기술 오프라인 PASS(아트 담당 신고)이나 기획세션 사용자 F: ZIP 바이너리 직접 readback 불가. **아직 모든 산출물 사용자 최종 미술 승인/본편 Unity Import 0**. Codex 사전 기술 QA와 모션 Play 검수 후 Bear/Fox 별도 PASS/HOLD, Village tile OPEN16 별도 판단.
+- [기획 검수 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/20261022_Frostway_v6_Bear_Fox_Run6_Isolated_QA_Contract.md) `docs/planning` commit `42e0e5e9f6c6d9778d25aaf01193f950acd1fddb`. 승인 Wolf Run6 v5 및 10/21 `main`/local `SYNC_COMPLETE` 기준 보호, 과거 Main22·Wolf 106 PASS 재검사 금지, main 직접 쓰기/미승인 Import 금지.
+- 사용자 선호: 담당 지시문 “너는 담당이다. GitHub 공부하고 와” 문구 생략.
+
+---
+
 # PLANNING 최종 확정 — 2026-10-21 EOD `SYNC_COMPLETE` (Codex 실증 보고 및 GitHub PR 병합 확인)
 
 - 바울 대표가 Codex 최종 스크린샷으로 **`SYNC_COMPLETE`** 보고 전달. GitHub 기능 [PR #48](https://github.com/HappyPaul812/Project-Limitless/pull/48) 병합 `c2750d1faea7ef9d54df1b4fcd7d6efb2bd49ac8` 및 문서 [PR #49](https://github.com/HappyPaul812/Project-Limitless/pull/49) 병합 `510c021b4159167e211be60ca90e1cb7328bafe9` **GitHub에서 merged=true 재확인**.
