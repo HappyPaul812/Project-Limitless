@@ -23,9 +23,12 @@ AUTO_CODEX_SLOT = 'AUTO63_CODEX_20261023_ONE_APPROVED'
 NEW_ART_SLOT = 'NEW_ART_READONLY_20261023_ONE_APPROVED'
 RENEWAL_ART_SLOT = 'RENEWAL_ART_READONLY_20261023_ONE_APPROVED'
 NEW_ART_RETEST_SLOT = 'NEW_ART_RETEST_READONLY_20261023_ONE_APPROVED'
+FOUR_SLOTS = {role:'FOUR_ROLE_PILOT_20261023_'+role+'_ONE_APPROVED' for role in
+              ('PlanningAgent','NewArtAgent','RenewalArtAgent','CodexAgent')}
 
 
 def slot_role(slot):
+    if slot in FOUR_SLOTS.values():return next(role for role,value in FOUR_SLOTS.items() if value==slot)
     return {CODEX_SLOT:'CodexAgent',AUTO_CODEX_SLOT:'CodexAgent',
             NEW_ART_SLOT:'NewArtAgent',NEW_ART_RETEST_SLOT:'NewArtAgent',RENEWAL_ART_SLOT:'RenewalArtAgent'}.get(slot,'PlanningAgent')
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
@@ -69,7 +72,7 @@ def make_plan(role, sources, clock=time.time):
 
 def validate(plan):
     body={k:v for k,v in plan.items() if k!='sha256'}
-    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT) or
+    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()) or
         plan.get('role') not in ROLE_FILES or plan.get('total_calls')!=1 or
         plan.get('timeout_seconds')!=90 or plan.get('mode')!='REAL_CLI_READONLY' or
         plan.get('auto_next_ai') is not False or plan.get('api_fallback') is not False or
@@ -135,7 +138,26 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
                 digest(parent_evidence.get('answer'))!=plan['request_sha256']):
                 raise Denied('자동 인계의 원래 기획 업무가 아닙니다')
             payload.update(parent_task=parent['id'],request_sha256=plan['request_sha256'])
-        task_id=store._create(db,slot,payload,root=plan.get('parent_task','') if slot==AUTO_CODEX_SLOT else '',depth=1 if slot==AUTO_CODEX_SLOT else 0)
+        root_task=plan.get('parent_task','') if slot==AUTO_CODEX_SLOT else ''
+        depth=1 if slot==AUTO_CODEX_SLOT else 0
+        if slot in FOUR_SLOTS.values() and plan['role']!='PlanningAgent':
+            original=store.task(db,plan.get('parent_task'))
+            if original['event_key']!=FOUR_SLOTS['PlanningAgent'] or original['state']!='REVIEW_PENDING':
+                raise Denied('네 역할 파일럿의 원래 기획 업무가 아닙니다')
+            expected=['NewArtAgent','RenewalArtAgent'] if plan['role']=='CodexAgent' else ['PlanningAgent']
+            upstream=plan.get('upstream',[])
+            if [u.get('role') for u in upstream]!=expected:raise Denied('네 역할 선행 담당 불일치')
+            for item in upstream:
+                parent=store.task(db,item['task_id']);evidence=json.loads(parent['evidence'] or '{}')
+                if (parent['event_key']!=FOUR_SLOTS[item['role']] or parent['root']!=original['id'] or
+                    parent['state']!='REVIEW_PENDING' or parent['tech']!='TECH_PASS' or
+                    json.loads(parent['payload'])['base_sha']!=plan['source_refs']['main'] or
+                    evidence.get('mode')!='REAL_CLI_READONLY' or evidence.get('status')!='PASS' or
+                    digest(evidence.get('answer'))!=item['answer_sha256']):
+                    raise Denied('네 역할 선행 실제 결과 또는 기준 SHA 불일치')
+            root_task=original['id'];depth=2 if plan['role']=='CodexAgent' else 1
+            payload.update(parent_task=original['id'],upstream=upstream)
+        task_id=store._create(db,slot,payload,root=root_task,depth=depth)
         db.execute("UPDATE tasks SET state='RUNNING',lease=?,lease_until=? WHERE id=?",(slot,store.clock()+120,task_id))
         db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps({**grant,'state':'CONSUMED'}),slot))
         store.audit(db,'REAL_ROLE_EXEC_RESERVED',task_id)
@@ -196,7 +218,7 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     if current['state']=='RUNNING' and current['lease']==slot and current['lease_until']>store.clock():
         try:
             store.finish(task_id,slot,'TECH_PASS' if result['status']=='PASS' else 'NOT_VERIFIED',result)
-            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT):
+            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()):
                 # 후속 큐 생성만 허가합니다. 다음 AI 호출은 절대로 연쇄 실행하지 않습니다.
                 result['handoff']=store.auto_handoff(task_id)
         except Denied:
