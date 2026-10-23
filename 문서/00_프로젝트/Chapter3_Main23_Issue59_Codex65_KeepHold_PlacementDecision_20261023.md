@@ -1,5 +1,24 @@
 # LIMITLESS / Chapter 3 Main23 — Issue #59 × Codex #65 최종 배치 후보·KEEP/HOLD 판정 기록
 
+## 2026-10-23 최종 표시 기준 정정 — 이전 82px 전체캔버스 기본 후보를 대체 (기획 확정, 미술 미승인)
+
+**이번 갱신 후 적용할 최신 기획 기본안은 `보이는 인물(alpha bbox) 높이 80px`**입니다. **전체 캔버스 높이는 별도 값 `84.63px`**이며 80과 84.63은 같은 단위/기준값이 아닙니다. 본 문서의 아래쪽에 보존된 `82px 전체캔버스 기본 후보`는 **2026-10-23 이전 시점의 임시 기록**으로서 더 이상 최신 기본안이 아닙니다.
+
+| 구분 | 우선 기획 표시안 | 비교용 대안 | 이전 후보(정본 대체됨) |
+|---|---|---|---|
+| **보이는 alpha 인물 높이** | **80px (기본)** | 96px | 약77.5px |
+| **전체 캔버스 표시 높이** | **84.63px** | 101.55px | 82px |
+| **Transform scale** | **1.175390** | 1.410468 | 1.1389 |
+| **공통/기타** | 512×512 원본, PPU512, Pivot(256,0), ortho5·화면세로720에서 테스트, 새 Collider0 | 사용자 미술 판단 시 비교 | PPU·Pivot 등 그대로 |
+
+- [Codex #65 추가 Unity 실측](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358720003): alpha bbox=(107,24)~(403,508), 원화 Master/512 바이트 불변, **40/80/96/128px alpha 인물높이 시연** 및 신규23 PASS/0 FAIL. 이전 82px의 **캔버스** 표시 높이를 80px **인물** 높이로 이름만 바꾼 것이 아니라 **실측 기반으로 선택을 변경**한 것임.
+- [최신 #65 기획 결정](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6359021033), [#59 최신 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359022163): 80px visible 기획 기본안, 96px visible 비교 대안. **바울 대표 최종 외형 미술 승인 및 정식 Unity 제품 적용 아님**. 근접 이름표의 NPC 하체 가림 OPEN. StableID/VoiceID/Quest 변경 없음.
+- **주택**: 기존 Residence 본체·지붕·출입문 **KEEP_OLD**, 신규 RoofGable·RoofTrim·EntryDoor 3 PNG는 삭제·수정 없이 **CANDIDATE_HOLD / NOT_PLACED**. #65 북서 Residence (-12.5,7.2)와 #58 남문 목표 초안 (-13,1)은 동일 대상이라고 단정할 수 없음. **Codex가 실제 남문 목표 좌표/신규 문짝 필요성을 확인하고 바울 대표가 별도 제작 승인하기 전 신규 문 PNG 생성 금지.**
+- **여관**: 기존 Inn **본체 내장 간판 하나만 KEEP_OLD**, 외부 `Signs/Frostway_Sign_Inn.png`을 2차로 붙이지 않음. `Inn_StandaloneSign_CANDIDATE.png` 후보 원본 보관/배치 HOLD.
+- **새 아트 산출/수정:** PNG 0 / ZIP 0 / Scene·Prefab 0 / 원본 파일 0, 금회 Markdown 보고+최신 인계+Issue 갱신만. 기존43 환경·승인지면9·공식 NPC·펫·몬스터 및 Main23 기능·Save·Quest·OPEN16 불변. `USER_FINAL_ART_REVIEW_PENDING / NOT_UNITY_APPLIED / NO_MAIN_MERGE`.
+- **실 Unity 대 오프라인**: Codex의 실 Unity 검수·SHA **댓글 텍스트만 이 세션 직접 확인**. 사용자 로컬 `F:\Downloads\Limitless_MinimalDelta65_Final_Unity_20261023_17db915d.zip`의 실제 34 PNG, index.html은 이 담당이 직접 열지 않았음; 이전 `OFFLINE/APPROX` 합성을 Unity 캡처로 간주하지 않는다.
+
+
 **일자:** 2026-10-23  
 **담당:** Chapter3 신규 아트 / `docs/art-new`  
 **업무상태:** `ISSUE65_TECH_DELTA_PASS / ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`  
