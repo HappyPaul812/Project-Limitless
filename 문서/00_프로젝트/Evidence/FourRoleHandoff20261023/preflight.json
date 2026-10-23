@@ -1,0 +1,36 @@
+{
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "plans": [
+    {
+      "role": "PlanningAgent",
+      "preview_prompt_bytes": 25554
+    },
+    {
+      "role": "NewArtAgent",
+      "preview_prompt_bytes": 26718
+    },
+    {
+      "role": "RenewalArtAgent",
+      "preview_prompt_bytes": 21425
+    },
+    {
+      "role": "CodexAgent",
+      "preview_prompt_bytes": 25673
+    }
+  ],
+  "job_unused": true,
+  "slots_unused": true,
+  "actual_parallelism": 1,
+  "parallel_limit": 2
+}

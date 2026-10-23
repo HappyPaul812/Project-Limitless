@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "mode": "REAL_CLI_READONLY",
+  "execution_status": "EXIT_ZERO",
+  "validation_status": "PASS",
+  "usage": {
+    "input_tokens": 18710,
+    "cached_input_tokens": 0,
+    "output_tokens": 265
+  },
+  "completed_turns": 1,
+  "reason": "OK",
+  "reason_codes": [],
+  "diagnostics": {
+    "event_counts": {
+      "thread.started": 1,
+      "turn.started": 1,
+      "item.completed": 1,
+      "turn.completed": 1
+    },
+    "item_counts": {
+      "agent_message": 1
+    },
+    "commentary_completed": 0,
+    "explicit_final_completed": 0,
+    "legacy_messages_completed": 1,
+    "invalid_line_numbers": [],
+    "final_source": "output-last-message",
+    "final_chars": 538,
+    "stdout_chars": 891,
+    "stderr_chars": 0
+  },
+  "exit_code": 0,
+  "launch_observation": {
+    "observed_stage": "TURN_EVENT_OBSERVED",
+    "elapsed_ms": 12093,
+    "process_returned": true,
+    "completed_turn_observed": true,
+    "stderr_signals": [
+      "UNCLASSIFIED_NO_RAW_LOG"
+    ],
+    "os_errno": null,
+    "windows_error": null,
+    "raw_output_logged": false
+  }
+}
