@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-23 사용자 실제 로그 — 세린67/67, 태온77/85 / PT 40/40 정상 안전 종료
+
+- 사용자 콘솔 원문: `[DAILY CAP] 2026-10-23 No more calls this PT day.`; `[STATUS] PT=2026-10-23 (UTC-7) / attempted=40/40 / remaining=0`.
+- 오늘 슬롯 사용량: `KEY1=10, KEY2=10, KEY3=10, KEY4=10`. 그룹 `PROJECT_1,2,3,4` 모두 로컬10회. 실제 Google 프로젝트 ID 독립성·서버 잔여량을 사용량 로그만으로 확정 불가; 이 값은 *로컬 안전 운영계수*.
+- `[READY] Serin=67/67 Taeon=77/85 total=144/152` → 전날104/152 대비 WAV 준비 +40, **남은 태온8개**, 전체 진행률 약 **94.7%**. 세린67개는 추가 생성 대상 없음. READY는 생성/기술파일 준비일 뿐 사용자 전체 청취 QA PASS는 별개.
+- `HOLD=False`, `[429 QUARANTINE] []`: API 키 그룹 격리도 잠금도 없이 **하루 로컬 40회 안전예산 정상 소진**. 이미 만든 WAV/Meta/로그/원문 수정·중복 재제작 없음. 복구 프로그램 사용 불필요.
+- **다음 PT 날짜:** 2026-10-24 00:00 PDT = 2026-10-24 16:00 KST 이후 서버의 실제 프로젝트·모델별 무료 quota와 과금/키 소속 조건을 확인하고 `cd F:\Downloads\Renewal_Voices` → `python .\Renewal_Auto_TTS_Failover_v2.py check` → `python .\Renewal_Auto_TTS_Failover_v2.py run`. 태온 잔여8개부터 이어 제작. 실제 호출/결과에 따라 8회보다 더 필요하거나 429 가능; 8회 성공 가정 시 152/152.
+- **보존해야 할 별도 Main21 7개:** 사용자 보존 지정 `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\candidates` 내 레온2·미엘2·폴3, [7개 WAV KEEP 정본](../../TTS_Main21_기존보존_7WAV_통합대기_20261022.md) 참고. 신규 합성 금지. 세린·태온·하렌 등 모두 실제 청취 QA 및 사용자 승인 후 Codex가 한번에 Unity 통합. 하렌 R1은 여전히 제작 보류 상태.
+- 이번 보고는 사용자 로그/경로만 문서화: 사용자 로컬 `F:` 직접 검사0, Google POST0, WAV 수정0, Unity/main 변경0.
+
+
 ## 2026-10-22 최신 사용자 결정 — Main21 기존 정상 후보 WAV 7개 KEEP / 재생성 금지 / 후일 Unity 일괄 통합
 
 - 사용자: `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\candidates`에서 **오류 후보들은 직접 정리**했고, 남은 WAV **7개만 보존**한다고 보고. **다시 TTS API로 생성하지 말 것**, 추후 다른 완성 성우 WAV와 **한 번에 Unity에 추가**. 지금 게임 반영 금지.
