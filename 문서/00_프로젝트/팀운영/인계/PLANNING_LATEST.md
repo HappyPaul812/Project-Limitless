@@ -1,3 +1,14 @@
+# 2026-10-23 / 리뉴얼 다음 독립 제작 승인 — Chapter1 Field01 독침벌 원화 파일럿 Issue #63
+
+- 바울 대표 사용자 지시: **“리뉴얼도 일 시켜줘.”** [신규 리뉴얼 작업 #63](https://github.com/HappyPaul812/Project-Limitless/issues/63) 직접 작성·발주. `Chapter1` 실제 초기 Field01 출현 대상 `venom_bee`를 **실 Sprite 출처·권리 표적 확인+오리지널 1포즈 원화 후보**로 진행. 기존 NPC3 미승인·숲거미 source HOLD를 그대로 두고 별도 진행; 진행 담당 브랜치 `docs/art-renewal`. 사용자 기존 Windows Unity/Save나 main 적용 승인 아님.
+- 2026-10-23 `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`에서 직접 `02_VenomBee.asset`: 독침벌 몬스터 ID `venom_bee`, `idleSpriteSheet` GUID `24000000000000000000000000000004` 238×215/10프레임, `attackSpriteSheet` GUID `24000000000000000000000000000005` 315×253/10프레임, 10FPS·right facing·visualScale0.85; Field01 `Field01_VenomBee_01~03.asset` 3개 Spawn 객체가 해당 정의 참조. 실제 GameView 가시와 PNG GUID 소스·권리는 **읽기전용 대조 필요**. 비교 PilotBee README는 실 Field/Battle 미연결이라고 기록하나 실제 VenomBee MonsterDefinition에는 idle/attack 시트 GUID 연결 존재하므로 **고정 관념 대신 GUID 매핑으로 사실 판단**. PilotBee 외부 원본 LICENSE CC BY3/4 표기 차이, 원본 보호·저작권 확인 선행.
+- **이번 납품:** Chapter2 공식 몬스터5 품질 기준의 독창적 VenomBee 단독 1포즈 PNG 투명 RGBA+128/40px 비교·필요 QA/Manifest/ZIP SHA, 기존 Chapter1 Sprite/MonsterDef/AI/독/드랍/성장 수치 변경0. 기존 이미지 트레이싱/단순 32px 업스케일 금지, 20프레임 완전 모션 제작은 사용자 1포즈 미술승인 뒤. `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- [직전 #60에 후속 인계 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6355809997): OGA03·OGA09·OGA20 기존 NPC3 후보 전부 승인 대기, GateGuard 태온 유사성 우려 시안 유지, `forest_spider` animation rights/GUID 실측 전 새 아트0 HOLD, 기존 #60 문서가 있어도 `WORLD_ART_RENEWAL_LATEST.md` 및 담당 완료 댓글 미확인 → 신규 작업과 함께 누락 보고 정리.
+- **GitHub 의무화:** 신규 #63 납품 시 반드시 `docs/art-renewal` 정식 문서 commit + `WORLD_ART_RENEWAL_LATEST.md` 갱신 + Issue #63 본인 완료 댓글 + 바울 대표에게 GitHub 링크·브랜치·실 SHA 및 사용자 미술승인 필요 여부. 승인된 Wolf/Bear/Fox Run6, Chapter2 몬스터·보스와 Field06~11 공식 맵, Ch3 Main23 격리 작업 보호; main 직접 commit/Push·무단 Unity 적용 금지.
+- **현재 상태:** 기획 Issue 발주 완료 / 리뉴얼 담당 실제 PNG 제작 **시작·완료 증거 아직 없음**. 기존 `docs/art-renewal` HEAD `c0faf9d`는 10/23 1차 GateGuard 보고 상태. 신규 독침벌 시안 사용자 미술승인0.
+
+---
+
 # PLANNING 2026-10-23 / Main23 화면 변경분 136PASS 보고·신규 아트 #59 실제 납품 여부 확인
 
 - 바울 대표 전달 Codex 새 보고: Main23 `codex/chapter3-main23-first-playable-20261023` 화면·UX 격리 보완 **변경분136 PASS/0 FAIL**, 초기5목표 기능148PASS는 재검증하지 않음. 기존 마을 GameArt43 중 **18종** 격리 시연 배치·승인 지면 Tile9 보존, 클릭/E/F/취소, 도보·휠체어·16:9/4:3/21:9, 남문 왕복/Save/Continue delta 검증. 원본 파일 **637개**·Save/UserData/HEAD/index 보호. 제품 단축 `f90966df`, 화면/QA `9c9f361d`, Main24 #46 읽기전용 SkillSave 설계 `3f30d135`. 사용자 원본 게임 적용·remote Git Push/main 병합은 **미완료**, 기존 OPEN16 유지.
