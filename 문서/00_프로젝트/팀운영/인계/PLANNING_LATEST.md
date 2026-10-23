@@ -1,3 +1,12 @@
+# 2026-10-23 / Chapter3 신규 아트 #59 구두 보고 전달 — GitHub 보고 원칙 변경
+
+- 바울 대표가 #59 마을 외형 보완 담당 보고를 **대화에 복사**해 전달: `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`, 범위 오르나1·남문 목석 건물 정면/문/지붕1세트·스킬상점 또는 여관 외형/간판1세트. 기존43 중 사용 가능 자산 보존, 승인 지면9 보호, 따뜻한 마을·북쪽 추위·LIMITLESS 화풍 유지, 임시 시각후보/게임 기능 변경0. **실 PNG/ZIP, 파일별 명세·SHA, 스케일/접합 Preview, 실제 Unity 검사 내용은 보고 본문에 첨부되지 않아 미확인**; 아트 납품·게임 적용·대표 승인 완료로 판단하지 않음.
+- 사용자 새 지시 **“앞으론 깃으로 하라고 그래줘.”**: 신규 아트 담당은 앞으로 완료보고를 먼저 담당 브랜치 `docs/art-new`에 Markdown 문서 실제 커밋 및 `SPRITE_ART_LATEST.md` 인계 갱신 → 해당 Issue #59 또는 후속 작업 이슈에 보고링크/실제 SHA/필요 파일·사용자 승인 필요 여부를 댓글로 게시 → 사용자에게는 GitHub 문서링크+branch+commit SHA를 간결히 전한다. 채팅 단독 보고는 완료 보고로 인정하지 않음. PNG·ZIP 바이너리 자체의 GitHub 업로드 여부는 별도 검증, 문서만 commit한 것을 실물 등록으로 과장 금지.
+- [Issue #59 GitHub 정식 납품 재보고 지시 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355299474) 게시. **요약 보고 상태 자체는 유효한 `ART_CANDIDATE`이나 기획 미술 판정 `USER_REVIEW_PENDING`**, 누락 비교/QA/Manifest/ZIP 검증 근거와 실제 Codex VisualGapList/실 GameView QA 구분 후 대표에게 승인 검토 상정.
+- 리뉴얼 #60는 독립 진행, 승인된 서릿길 지면9·기존43 및 Main23 148PASS 코드·Save/UserData·원본/메인 절대 무단 변경 금지.
+
+---
+
 # PLANNING 2026-10-23 — 신임 리뉴얼 담당 완료보고 실제 검토·새 작업 #60 발주
 
 바울 대표: “보고서 확인하고 리뉴얼도 일 시켜,”. `docs/art-renewal` 실제 최신 보고 [2026-10-23 비고유 자산 정적감사+NPC2 시안](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_NonOriginal_ActiveVsStored_Audit_NPCPilot2_20261023.md)와 최신 인계 확인. 담당 commit `2ea29d6a82b3722ba1822bb3d3d848826c25605e`, `1c121d9ac6d54bd8df858353081bf3787e4d83d0`.
