@@ -26,9 +26,13 @@ def create_bot(store: Store, data_root):
         def __init__(self):
             super().__init__(intents=discord.Intents.none(),allowed_mentions=discord.AllowedMentions.none())
             self.tree = app_commands.CommandTree(self)
+            self.verified_ready = asyncio.Event()
 
         async def setup_hook(self):
             guild = discord.Object(id=store.guild)
+            existing = await self.tree.fetch_commands(guild=guild)
+            if any(command.name != 'limitless' for command in existing):
+                raise Denied('UNRELATED_COMMANDS_PRESENT: 다른 명령을 지우지 않고 연결을 중단합니다')
             self.tree.copy_global_to(guild=guild)
             commands = await self.tree.sync(guild=guild)
             names = sorted(c.name for c in self.tree.get_command('limitless').commands)
@@ -42,6 +46,7 @@ def create_bot(store: Store, data_root):
             result.update(status='CONNECTED_COMMANDS_REGISTERED',gateway='PASS')
             path.write_text(json.dumps(result,indent=2),encoding='utf8')
             receipt('DISCORD_READY')
+            self.verified_ready.set()
             print('Discord 연결 및 명령9종 등록 완료. 실제 명령·권한 검증은 설정한 서버에서 수행하세요.',flush=True)
 
     bot = Relay()

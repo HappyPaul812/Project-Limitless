@@ -1,5 +1,11 @@
 # LIMITLESS Discord AI 협업 — 로컬 파일럿
 
+## 암호화 등록 및 실연결 후속
+
+[안전한 로컬 설정 안내](SECURE_DISCORD_SETUP_KO.md)를 따릅니다. `register-discord.ps1 -Action Setup`은 숨김 입력·현재 Windows 사용자 DPAPI 저장·최대45초 연결 검사를 수행합니다. 실제 연결/명령9등록/메시지 전송 PASS는 확인했으며 실제 Slash 실행은 별도 영수증으로 구분합니다. `-Action Run`은 봇을 유지합니다. 기존 connect-discord.ps1은 메모리 입력용으로 보존합니다.
+
+`HandoffPrepare`는 고정 모의 업무1건을 REVIEW_PENDING으로 준비하고 지정 채널에 안내를 전송합니다. 바울 대표가 실제 `/limitless handoff`를 실행한 뒤 `HandoffFinish`가 Codex→기획→승인대기까지 모의 결과만 전달합니다. 모의 TECH_PASS는 실제 Unity 검수/미술 승인 의미가 아닙니다. 신규 아트는 Codex 검수 후 바울 대표 최종 승인, 적용 이후에도 Push/merge는 별도 승인입니다. 실제 AI runner는 비활성입니다.
+
 ## Phase2 후속 상태 (2026-10-23)
 
 [대표 설정 안내](PHASE2_SETUP_KO.md)를 추가했습니다. Discord 설정은 WAITING_FOR_USER_SETUP이며 숨김 입력 connect-discord.ps1로 대표가 직접 연결합니다. 기존9명령·큐를 재사용하고 응답 성공/권한 거부 영수증만 추가합니다. 고정 Codex 실행1회는 bootstrap provider override 거부로 완료turn0이며 자동 재실행0입니다. 수정 준비안은 추론 없는 설정 검사만 PASS, 새 추론은 별도 승인 필요입니다. 이전 단계의57 PASS와 새 변경분 테스트는 구분합니다. 아래 최초 파일럿 이력은 보존합니다.

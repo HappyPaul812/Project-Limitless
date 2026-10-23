@@ -1,0 +1,53 @@
+{
+  "mode": "MOCK_DISCORD_PLUS_ONE_FOCUSED_REGRESSION",
+  "run": 11,
+  "failures": 0,
+  "errors": 0,
+  "tests": [
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_bounded_mock_gateway_commands_and_single_message",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_login_rejection_never_echoes_secret",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_other_app_commands_safety_stop_does_not_echo_raw_exception",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_ready_timeout_closes_without_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_sync_never_overwrites_unrelated_commands",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_sync_owned_group_uses_existing_registration",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_timeout_upper_bound",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_without_secret_no_network",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_wrong_guild_never_sends",
+      "status": "PASS"
+    },
+    {
+      "test": "test_discord_check.DiscordCheckTests.test_wrong_remote_command_contract_never_sends",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_ready_receipt_has_no_token_or_account_data",
+      "status": "PASS"
+    }
+  ],
+  "real_discord_calls": 0
+}

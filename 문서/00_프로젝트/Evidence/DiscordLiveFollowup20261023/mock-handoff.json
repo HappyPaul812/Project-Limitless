@@ -1,0 +1,44 @@
+{
+  "mode": "MOCK_NO_AI",
+  "checks": {
+    "single_root_three_stages": true,
+    "renewal_codex_planning": true,
+    "owner_approval_pending": true,
+    "no_art_approval": true,
+    "main_art_routes_to_codex": true,
+    "sfx_paused": true,
+    "no_ai_usage": true,
+    "non_owner_denied": true
+  },
+  "tasks": [
+    {
+      "id": "L-ba8b76d5f3e44d90",
+      "title": "MOCK ONLY / Discord 후속 인계 1건",
+      "role": "RenewalArtAgent",
+      "state": "DONE",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    },
+    {
+      "id": "L-126a9a466fa4451f",
+      "title": "MOCK ONLY / Discord 후속 인계 1건 / 인계",
+      "role": "CodexAgent",
+      "state": "DONE",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    },
+    {
+      "id": "L-68be0ed181b44d48",
+      "title": "MOCK ONLY / Discord 후속 인계 1건 / 인계 / 인계",
+      "role": "PlanningAgent",
+      "state": "APPROVAL_PENDING",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    }
+  ],
+  "pass": 8,
+  "fail": 0,
+  "main_art_execution": "NOT_VERIFIED_ROUTE_ONLY",
+  "ai_calls": 0,
+  "additional_api_cost_usd": 0
+}

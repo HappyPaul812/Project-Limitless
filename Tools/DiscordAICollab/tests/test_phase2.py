@@ -264,6 +264,7 @@ class Phase2Tests(unittest.TestCase):
     def test_ready_receipt_has_no_token_or_account_data(self):
         async def scenario():
             bot=create_bot(self.store,self.root/'data')
+            bot.tree.fetch_commands=AsyncMock(return_value=[])
             bot.tree.sync=AsyncMock(return_value=[SimpleNamespace(name='limitless')])
             await bot.setup_hook(); await bot.on_ready()
             receipt=json.loads((self.root/'data/discord-connection.json').read_text(encoding='utf8'))

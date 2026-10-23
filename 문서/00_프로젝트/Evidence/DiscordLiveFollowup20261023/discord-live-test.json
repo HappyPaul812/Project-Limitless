@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "gateway": "PASS",
+  "commands": "PASS",
+  "message": "PASS",
+  "ai_calls": 0,
+  "product_changes": 0,
+  "token_logged": false,
+  "slash_interactions": "NOT_VERIFIED",
+  "command_count": 9,
+  "message_id": "1563121648474001449"
+}
