@@ -1,3 +1,7 @@
+## 2026-10-24 실제 부팅 등록 승인·로컬 입력 대기
+
+대표의 OnBoot2종 실제등록/필요최소권한 승인 유지. 관리자 로컬 등록기·서비스계정 보안입력창 준비(6721ed4b0fc1d0839610b82530922c5073bc8501). 구문2·배치권한보조코드컴파일PASS, 전체QA반복0. 관리자 PowerShell 실행 명령을 안내했고 암호/토큰 직접입력 대기 WAITING_FOR_LOCAL_SETUP. 마지막확인 계정없음/작업0/2·기존프로세스유지·추가AI/재부팅/종료/제품변경/Push/merge0. 실제PIN전부팅 NOT_VERIFIED. 다음은 추가승인요청 없이 대표 실행 후 registration-result.json과 실제태스크/일반계정/트리거 검증. [실행절차](../../Tools/DiscordAICollab/BOOT_REGISTER_KO.md)
+
 ## 2026-10-24 PIN 없는 부팅 중계 등록 전 준비
 
 전용 일반계정 LIMITLESSRelaySvc·OnBoot+30초·Password/LeastPrivilege·C:bootstrap·기존단일SQLite/lock·새계정DPAPI·MANUAL/AI HOLD 경로 준비. OS등록/계정생성/C배포0. 새13 PASS·호환선별3 PASS/0 FAIL·PS구문2 PASS·승인없음HOLD·현재Discord HTTPS PASS. 실제 로그인전/USB재연결/새계정권한·Codex인증/F·납품함접근/재부팅 NOT_VERIFIED(계정아직없음). 기존서비스미재시작·MANUAL/큐0·원본7356변경/누락0·기존DB동일·AI/유료API/종료/Push/merge0. 구현be274f93842ac726f959afbe50d6f6b1bddd70eb. 다음은 등록안·제한권한 별도승인 후 계정/토큰/비대화형 실증, 실제재부팅은 별도승인. Unity 사용자확인 없음. [등록안](팀운영/Boot_Relay_PreRegistration_20261024.md)
