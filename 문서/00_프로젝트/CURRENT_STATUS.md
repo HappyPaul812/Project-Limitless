@@ -1,3 +1,8 @@
+## 2026-10-23 PlanningAgent 첫 시험 준비·한국어 Discord 조회 완료
+
+status/pending을 한국어로 표시하고 바울 대표 실제확인 PASS. 기존DONE2/APPROVAL_PENDING1/NOT_VERIFIED1·SQLite정상·MOCK업무보존. 모의/텍스트연결결과를 실제미술승인에서 제외. 첫실제시험은 PlanningAgent 최신GitHub정본요약1회만 허용, Codex우선권고는 최신지시로대체·확장은별도승인. CLI구독인증/설정PASS, 실제추론0·승인슬롯미등록·새실제업무0·비용0.
+
+새 계획SHA e9e0e683f43456f67b7468e014699221e3c563eb63f9ba4257a466b3dbba0b38, 입력25497bytes·읽기전용1회/90초/Discord보고에 별도승인필요. 변경분19테스트PASS/FAIL0, 기존전수QA반복0. 원본7356 SHA변경/누락0·status동일·게임/미술승인/유료API/Push/merge0·SFX PAUSED. 사용량조회시계정전체5시간96%·주간71%잔여, 실제호출별구독차감은미검증. 구현ca356af7. [보고](팀운영/Discord_Planning_First_Approval_Pending_20261023.md). Unity추가확인없음. 다음은 계획검토후별도승인대기이며 실제AI자동호출없음.
 ## 2026-10-23 Discord 실제 AI 준비 — 별도 승인 대기
 
 실제 status2/pending1/handoff1 응답 영수증으로3명령 PASS 확인. MOCK 보존·별도 구독 CLI 실행기/4역할 SHA고정 입력 준비, 실제 AI0·승인슬롯미등록. 변경분 가짜subprocess12 PASS/FAIL0, 기존QA반복0. GitHub main/기획/신규/리뉴얼 역할·최신인계 발췌 조회, 실제4AI 연속실행은 미검증. 공식 CLI구독인증·설정검사PASS이나 실제추론/구독차감은 승인후1회까지NOT_VERIFIED.
