@@ -44,6 +44,10 @@ class Deliveries:
         with self.store.tx() as db:
             old=db.execute('SELECT result FROM art_delivery_events WHERE event_key=?',(key,)).fetchone()
             if old:return json.loads(old[0])
+        from .scheduling import gate
+        with self.store.tx() as db:
+            if gate(db, self.store.clock(), intake=True):
+                raise Denied('SCHEDULE_HOLD: 아트 원본은 납품함에 남겨두고 신규 접수를 보류합니다')
         try:report=inspect(name,data,metadata,self.catalog,self.base_sha)
         except Denied as exc:
             label=str(exc)

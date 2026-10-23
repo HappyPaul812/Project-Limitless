@@ -102,6 +102,11 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     slot=plan['slot']
     if plan['role']!=slot_role(slot):
         raise Denied('승인 슬롯의 담당 역할과 다릅니다')
+    # 예약·공식 사용량이 불명확하면 CLI 사전 점검 이전에 중지합니다.
+    from .scheduling import gate
+    with store.tx() as db:
+        if gate(db, store.clock(), ai=True, duration=90):
+            raise Denied('SCHEDULE_OR_USAGE_HOLD: 예약·공식 사용량 새 확인 필요')
     # 승인 확인이 없으면 인증 조회나 모델 프로세스조차 만들지 않습니다.
     with store.tx() as db:
         row=db.execute('SELECT value FROM settings WHERE key=?',(slot,)).fetchone()
@@ -118,6 +123,8 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     if controls['status']!='PASS':
         raise Denied('CLI 설정 검사 필요')
     with store.tx() as db:
+        if gate(db, store.clock(), ai=True, duration=90):
+            raise Denied('SCHEDULE_OR_USAGE_HOLD: 실행 직전 재검증 실패')
         fresh=json.loads(store.setting(db,slot))
         if fresh!=grant or grant['expires']<store.clock():
             raise Denied('승인 상태 변경')

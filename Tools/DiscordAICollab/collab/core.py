@@ -74,6 +74,10 @@ class Store:
             for key in ('task_limit','day_limit','month_limit'):
                 db.execute('INSERT OR IGNORE INTO settings VALUES(?,?)', (key, '0'))
 
+        from .scheduling import initialize
+        with self.tx() as db:
+            initialize(db)
+
     @contextmanager
     def tx(self):
         db = sqlite3.connect(self.path, timeout=15, isolation_level=None)
@@ -131,6 +135,9 @@ class Store:
         previous = db.execute('SELECT id FROM tasks WHERE event_key=?', (key,)).fetchone()
         if previous:
             return previous[0]
+        from .scheduling import gate
+        if gate(db, self.clock(), intake=True):
+            raise Denied('SCHEDULE_HOLD: 신규 업무 접수 중단·다음 예약 확인 필요')
         required = ('title','role','issue','base_sha','scope','protected_assets',
                     'inputs','verification','approval_required','artifact')
         if not isinstance(payload, dict) or any(k not in payload for k in required):
@@ -258,6 +265,9 @@ class Store:
 
     def claim(self):
         with self.tx() as db:
+            from .scheduling import gate
+            if gate(db, self.clock(), duration=300):
+                return None
             if datetime.fromtimestamp(self.clock(),KST).weekday() == 6 or self.setting(db,'paused') == '1':
                 return None
             if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0] >= 2:

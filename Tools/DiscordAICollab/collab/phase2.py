@@ -133,6 +133,10 @@ def parse_events(stdout,returncode):
 def run_probe_once(store,workspace,executable,*,approved=False,invoke=subprocess.run):
     if not approved:
         raise Denied('이번 고정 추론1회에 대한 명시적 승인이 필요합니다')
+    from .scheduling import gate
+    with store.tx() as db:
+        if gate(db, store.clock(), ai=True, duration=90):
+            raise Denied('SCHEDULE_OR_USAGE_HOLD: 레거시 단발 시험도 공식 사용량 확인 필요')
     info=cli_info(executable,invoke)
     if not info['subscription_available']:
         return {'status':'WAITING_FOR_USER_SETUP','reason':'CHATGPT_SUBSCRIPTION_SIGN_IN_REQUIRED','cli_version':info['cli_version'],'cli_exec_attempts':0}
@@ -143,6 +147,8 @@ def run_probe_once(store,workspace,executable,*,approved=False,invoke=subprocess
         return {'status':'NOT_VERIFIED','reason':'CLI_CONTROLS_NOT_VALIDATED','cli_exec_attempts':0}
     # 기존 API 비용 예산을 올리지 않고 이번 구독 단발 승인만 별도 장부에 선점합니다.
     with store.tx() as db:
+        if gate(db, store.clock(), ai=True, duration=90):
+            raise Denied('SCHEDULE_OR_USAGE_HOLD: 실행 직전 재확인 실패')
         if db.execute('SELECT 1 FROM settings WHERE key=?',(APPROVAL,)).fetchone():
             raise Denied('이번 승인 추론1회를 이미 사용했습니다; 재호출 금지')
         if store.setting(db,'paused')=='1' or datetime.fromtimestamp(store.clock(),KST).weekday()==6:

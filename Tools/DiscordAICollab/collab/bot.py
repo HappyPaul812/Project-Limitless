@@ -14,10 +14,12 @@ from discord import app_commands
 from .core import Denied, Identity, Store
 from .intake import MAX_ZIP, inspect_zip, safe_root
 from .query_text import format_query
+from .scheduling import Scheduler, format_control
 
 
 def create_bot(store: Store, data_root):
     root = safe_root(data_root)
+    scheduler = Scheduler(store)
 
     def receipt(kind):
         with store.tx() as db:
@@ -28,6 +30,7 @@ def create_bot(store: Store, data_root):
             super().__init__(intents=discord.Intents.none(),allowed_mentions=discord.AllowedMentions.none())
             self.tree = app_commands.CommandTree(self)
             self.verified_ready = asyncio.Event()
+            self.control_timer = None
 
         async def setup_hook(self):
             guild = discord.Object(id=store.guild)
@@ -41,6 +44,34 @@ def create_bot(store: Store, data_root):
                 'status':'COMMANDS_REGISTERED','root_commands':len(commands),'subcommands':names,
                 'gateway':'NOT_VERIFIED','tokens_logged':False},indent=2),encoding='utf8')
 
+            scheduler.recover_reports()
+            self.control_timer = asyncio.create_task(self.control_loop())
+
+        async def control_loop(self):
+            while not self.is_closed():
+                try:
+                    await asyncio.to_thread(scheduler.tick)
+                    async def publish(text):
+                        channel = await self.fetch_channel(min(store.channels))
+                        if channel.guild.id != store.guild:
+                            raise Denied('예약 보고 채널 범위 불일치')
+                        message = await channel.send(text, allowed_mentions=discord.AllowedMentions.none())
+                        return message.id
+                    await scheduler.flush_reports(publish)
+                except Exception:
+                    # 게이트는 모든 시작 트랜잭션에서도 재확인합니다. 보고 실패로 실행을 허용하지 않습니다.
+                    receipt('CONTROL_TICK_OR_REPORT_NOT_VERIFIED')
+                await asyncio.sleep(5)
+
+        async def close(self):
+            if self.control_timer:
+                self.control_timer.cancel()
+                try:
+                    await self.control_timer
+                except asyncio.CancelledError:
+                    pass
+            await super().close()
+
         async def on_ready(self):
             path = root/'discord-connection.json'
             result=json.loads(path.read_text(encoding='utf8'))
@@ -48,7 +79,7 @@ def create_bot(store: Store, data_root):
             path.write_text(json.dumps(result,indent=2),encoding='utf8')
             receipt('DISCORD_READY')
             self.verified_ready.set()
-            print('Discord 연결 및 명령9종 등록 완료. 실제 명령·권한 검증은 설정한 서버에서 수행하세요.',flush=True)
+            print('Discord 연결 및 명령 등록 완료. 실제 명령·권한 검증은 설정한 서버에서 수행하세요.',flush=True)
 
     bot = Relay()
     group = app_commands.Group(name='limitless',description='LIMITLESS 협업 로컬 파일럿')
@@ -138,6 +169,47 @@ def create_bot(store: Store, data_root):
     @group.command(name='budget',description='micro-USD 호출 상한 설정; 실제 AI 실행은 별도 단계')
     async def budget(interaction: discord.Interaction, task_limit: int, day_limit: int, month_limit: int):
         await dispatch(interaction,'budget',dict(task_limit=task_limit,day_limit=day_limit,month_limit=month_limit))
+
+    async def control_dispatch(interaction, action, args=None):
+        await interaction.response.defer(ephemeral=True, thinking=True)
+        try:
+            result = await asyncio.to_thread(scheduler.command, identity(interaction),
+                                             str(interaction.id), action, args)
+            await interaction.followup.send(format_control(action, result)[:1800], ephemeral=True,
+                                            allowed_mentions=discord.AllowedMentions.none())
+            receipt('DISCORD_CONTROL_REPLY_' + action.upper())
+        except Denied as exc:
+            await interaction.followup.send(str(exc), ephemeral=True,
+                                            allowed_mentions=discord.AllowedMentions.none())
+            receipt('DISCORD_CONTROL_DENIED')
+        except Exception:
+            await interaction.followup.send('안전 제어 처리 실패·작업 보류. 로컬 장부를 확인하세요.', ephemeral=True)
+
+    @group.command(name='schedule', description='서울 시각 마감 예약·수정; AI·통합·PC 종료 승인 아님')
+    async def schedule(interaction: discord.Interaction, until: str, cleanup_minutes: int = 10,
+                       next_start: str | None = None, schedule_id: str | None = None):
+        await control_dispatch(interaction, 'schedule', dict(until=until, cleanup_minutes=cleanup_minutes,
+                                                           next_start=next_start, schedule_id=schedule_id))
+
+    @group.command(name='schedule-status', description='예약·사용량 보류 상태 확인')
+    async def schedule_status(interaction: discord.Interaction):
+        await control_dispatch(interaction, 'schedule-status')
+
+    @group.command(name='cancel', description='예약 및 모의 종료 요청 취소; 승인·수동 정지는 유지')
+    async def cancel(interaction: discord.Interaction, schedule_id: str):
+        await control_dispatch(interaction, 'cancel', dict(schedule_id=schedule_id))
+
+    @group.command(name='usage', description='공식 관측의 5시간·주간 한도 및 회복 시각')
+    async def usage(interaction: discord.Interaction):
+        await control_dispatch(interaction, 'usage')
+
+    @group.command(name='finish', description='신규 접수 차단·마감 점검 기록; Git 통합 없음')
+    async def finish(interaction: discord.Interaction, schedule_id: str):
+        await control_dispatch(interaction, 'finish', dict(schedule_id=schedule_id))
+
+    @group.command(name='shutdown', description='특정 예약 PC 종료 조건 모의 확인; 실제 종료 비활성')
+    async def shutdown(interaction: discord.Interaction, schedule_id: str, confirm: str):
+        await control_dispatch(interaction, 'shutdown', dict(schedule_id=schedule_id, confirm=confirm))
 
     return bot
 
