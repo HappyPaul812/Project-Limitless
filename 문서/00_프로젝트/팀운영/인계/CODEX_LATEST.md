@@ -1,3 +1,15 @@
+## 2026-10-23 Discord 협업 로컬 파일럿 인계
+
+바울 대표 첨부 통합 지시의 0단계+1·2단계 모의 및 ZIP 검역 일부 완료. 별도 codex/discord-ai-collaboration, main47ad2eec 기준. 설계ba82c396·구현094ea98d. 도구 Tools/DiscordAICollab, [완료 보고](../Discord_AI_Collab_Local_Pilot_Report_20261023.md)·[운영 안내](../../../../Tools/DiscordAICollab/README.md). 최종 문서 SHA는 전용 브랜치 HEAD.
+
+신규57 LOCAL/MOCK PASS/0FAIL, 실제 프로세스 재시작 포함. 큐/동시2/숫자ID/예산0/일요일/임대/인계/SHA승인/ZIP PNG/9slash 모의 확인. 원본7343 SHA변경0·858status 동일, 관련 기존worktree4 clean. 기존148/136/41/15 아트·게임 QA 반복0. 원본Unity·Save/UserData·승인아트 미변경, 원격Push/main병합0.
+
+**미완료**: 실제 Discord 연결·AI추론·Unity검수·역할별 알림outbox·월간영상스케줄러·TTS/BGM 제작·제품적용기·GitHub쓰기. CodexRunner는 preview만, run항상차단. SFX PAUSED. TECH_PASS≠ART_APPROVED, MOCK은 실제 미술승인 불가. 기존 담당 ChatGPT 세션을 읽거나 대신 운영하지 않습니다.
+
+후임 우선: ①실연결 승인·테스트guild/ID·봇권한 설정 ②공식CLI 읽기전용 추론1건의 승인·모델/한도/OS/MCP격리 확인 ③strictManifest 변환·Unity증거수집·알림outbox 단계별 구현. 실제 제작/배포/게임적용/Push/merge는 각각 별도 승인. 현 파일럿 자체에 추가 Unity 수동 QA는 없습니다.
+
+시작 문구: “너는 LIMITLESS Codex 담당이다. Discord_AI_Collab_Local_Pilot_Report_20261023.md와 Tools/DiscordAICollab/README.md를 확인하고, 실제 연결 승인이 있는 범위만 진행해.”
+
 ## 2026-10-22 EOD 마감 — PR54 병합·원본 SYNC_COMPLETE 확인
 
 [PR54](https://github.com/HappyPaul812/Project-Limitless/pull/54) merge `e2801286ccd26fe2060d9fee658ac272da4b4f2b`: 승인 Bear v4·Fox v7 공유 코드 양쪽 보존6파일 + 마을 최종승인9 Sprite/Tile 신규등록39파일 = 제품45파일, 담당 문서·근거152파일, 총197파일 통합. 신규 정적10/격리Unity15 PASS, 기존154/162/Wolf/Main22 전체QA 재실행0.

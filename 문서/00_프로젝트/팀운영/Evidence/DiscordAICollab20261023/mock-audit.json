@@ -1,0 +1,236 @@
+{
+  "mode": "MOCK",
+  "events": [
+    {
+      "id": 1,
+      "at": 1792740120.04797,
+      "kind": "TASK_NEW",
+      "task": "L-3790923b64c446e6",
+      "actor": "owner"
+    },
+    {
+      "id": 2,
+      "at": 1792740120.04897,
+      "kind": "COMMAND_TASK",
+      "task": "",
+      "actor": "1"
+    },
+    {
+      "id": 3,
+      "at": 1792740120.173599,
+      "kind": "TASK_NEW",
+      "task": "L-dd7900fc219b4999",
+      "actor": "owner"
+    },
+    {
+      "id": 4,
+      "at": 1792740120.173599,
+      "kind": "COMMAND_TASK",
+      "task": "",
+      "actor": "1"
+    },
+    {
+      "id": 5,
+      "at": 1792740120.3073962,
+      "kind": "TASK_NEW",
+      "task": "L-66ca5690a42e4915",
+      "actor": "owner"
+    },
+    {
+      "id": 6,
+      "at": 1792740120.3073962,
+      "kind": "COMMAND_TASK",
+      "task": "",
+      "actor": "1"
+    },
+    {
+      "id": 7,
+      "at": 1792740120.4327462,
+      "kind": "TRIAGED",
+      "task": "L-3790923b64c446e6",
+      "actor": "system"
+    },
+    {
+      "id": 8,
+      "at": 1792740120.558216,
+      "kind": "TRIAGED",
+      "task": "L-dd7900fc219b4999",
+      "actor": "system"
+    },
+    {
+      "id": 9,
+      "at": 1792740120.6837668,
+      "kind": "TRIAGED",
+      "task": "L-66ca5690a42e4915",
+      "actor": "system"
+    },
+    {
+      "id": 10,
+      "at": 1792740120.8088124,
+      "kind": "CLAIM",
+      "task": "L-3790923b64c446e6",
+      "actor": "RenewalArtAgent"
+    },
+    {
+      "id": 11,
+      "at": 1792740120.9342985,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-3790923b64c446e6",
+      "actor": "RenewalArtAgent"
+    },
+    {
+      "id": 12,
+      "at": 1792740121.0763273,
+      "kind": "TASK_NEW",
+      "task": "L-c3796075df1e41bc",
+      "actor": "RenewalArtAgent"
+    },
+    {
+      "id": 13,
+      "at": 1792740121.0763273,
+      "kind": "HANDOFF",
+      "task": "L-3790923b64c446e6",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 14,
+      "at": 1792740121.2442486,
+      "kind": "TRIAGED",
+      "task": "L-c3796075df1e41bc",
+      "actor": "system"
+    },
+    {
+      "id": 15,
+      "at": 1792740121.3612661,
+      "kind": "CLAIM",
+      "task": "L-dd7900fc219b4999",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 16,
+      "at": 1792740121.4771352,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-dd7900fc219b4999",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 17,
+      "at": 1792740121.6366117,
+      "kind": "TASK_NEW",
+      "task": "L-e8d81a44c7e84e70",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 18,
+      "at": 1792740121.6376333,
+      "kind": "HANDOFF",
+      "task": "L-dd7900fc219b4999",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 19,
+      "at": 1792740121.7446198,
+      "kind": "TRIAGED",
+      "task": "L-e8d81a44c7e84e70",
+      "actor": "system"
+    },
+    {
+      "id": 20,
+      "at": 1792740121.8698423,
+      "kind": "CLAIM",
+      "task": "L-66ca5690a42e4915",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 21,
+      "at": 1792740122.003655,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-66ca5690a42e4915",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 22,
+      "at": 1792740122.1635494,
+      "kind": "OWNER_REVIEW_PENDING",
+      "task": "L-66ca5690a42e4915",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 23,
+      "at": 1792740122.3048997,
+      "kind": "CLAIM",
+      "task": "L-c3796075df1e41bc",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 24,
+      "at": 1792740122.4292147,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-c3796075df1e41bc",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 25,
+      "at": 1792740122.5462563,
+      "kind": "TASK_NEW",
+      "task": "L-10651052c4334a28",
+      "actor": "CodexAgent"
+    },
+    {
+      "id": 26,
+      "at": 1792740122.5462563,
+      "kind": "HANDOFF",
+      "task": "L-c3796075df1e41bc",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 27,
+      "at": 1792740122.672813,
+      "kind": "TRIAGED",
+      "task": "L-10651052c4334a28",
+      "actor": "system"
+    },
+    {
+      "id": 28,
+      "at": 1792740122.7970679,
+      "kind": "CLAIM",
+      "task": "L-e8d81a44c7e84e70",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 29,
+      "at": 1792740122.9491222,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-e8d81a44c7e84e70",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 30,
+      "at": 1792740123.091549,
+      "kind": "OWNER_REVIEW_PENDING",
+      "task": "L-e8d81a44c7e84e70",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 31,
+      "at": 1792740123.2342062,
+      "kind": "CLAIM",
+      "task": "L-10651052c4334a28",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 32,
+      "at": 1792740123.391282,
+      "kind": "REPORT_TECH_PASS",
+      "task": "L-10651052c4334a28",
+      "actor": "PlanningAgent"
+    },
+    {
+      "id": 33,
+      "at": 1792740123.668229,
+      "kind": "OWNER_REVIEW_PENDING",
+      "task": "L-10651052c4334a28",
+      "actor": "PlanningAgent"
+    }
+  ]
+}

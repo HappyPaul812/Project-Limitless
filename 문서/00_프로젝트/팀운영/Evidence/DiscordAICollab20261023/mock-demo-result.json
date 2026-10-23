@@ -1,0 +1,74 @@
+{
+  "mode": "MOCK",
+  "external_calls": 0,
+  "additional_cost_usd": 0,
+  "snapshot": {
+    "paused": false,
+    "tasks": [
+      {
+        "id": "L-3790923b64c446e6",
+        "title": "MOCK # 63 복제 검토 이벤트",
+        "role": "RenewalArtAgent",
+        "state": "DONE",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      },
+      {
+        "id": "L-dd7900fc219b4999",
+        "title": "MOCK # 64 복제 검토 이벤트",
+        "role": "CodexAgent",
+        "state": "DONE",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      },
+      {
+        "id": "L-66ca5690a42e4915",
+        "title": "MOCK # 65 복제 검토 이벤트",
+        "role": "PlanningAgent",
+        "state": "APPROVAL_PENDING",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      },
+      {
+        "id": "L-c3796075df1e41bc",
+        "title": "MOCK # 63 복제 검토 이벤트 / 인계",
+        "role": "CodexAgent",
+        "state": "DONE",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      },
+      {
+        "id": "L-e8d81a44c7e84e70",
+        "title": "MOCK # 64 복제 검토 이벤트 / 인계",
+        "role": "PlanningAgent",
+        "state": "APPROVAL_PENDING",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      },
+      {
+        "id": "L-10651052c4334a28",
+        "title": "MOCK # 63 복제 검토 이벤트 / 인계 / 인계",
+        "role": "PlanningAgent",
+        "state": "APPROVAL_PENDING",
+        "tech": "TECH_PASS",
+        "art": "USER_REVIEW_PENDING"
+      }
+    ],
+    "usage": [],
+    "roles": {
+      "PlanningAgent": false,
+      "CodexAgent": false,
+      "NewArtAgent": false,
+      "RenewalArtAgent": false,
+      "TTSAgent": false,
+      "BGMAgent": false,
+      "VideoAgent": false,
+      "SFXAgent": true
+    },
+    "limits": {
+      "task_limit": 0,
+      "day_limit": 0,
+      "month_limit": 0
+    }
+  }
+}

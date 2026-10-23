@@ -1,0 +1,240 @@
+{
+  "mode": "LOCAL_UNIT_AND_MOCK",
+  "run": 57,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "tests": [
+    {
+      "test": "test_pilot.AdapterTests.test_codex_runner_never_executes_live_or_arbitrary_shell",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_demo_restart_in_distinct_process_has_no_duplicate_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_discord_message_mentions_sanitized",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_discord_nine_commands_registered_offline",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_discord_real_connection_disabled_by_default",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_discord_status_callback_uses_authenticated_identity",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_discord_task_attachment_mock_intake",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_github_read_uses_fixed_get_and_blocks_write",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.AdapterTests.test_stdio_relay_rejects_non_owner_and_protected_actions",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_audit_has_events_but_never_payload_secrets",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_budget_caps_task_day_month_and_double_call",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_budget_defaults_zero_and_cannot_fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_concurrent_claims_never_exceed_two",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_contract_and_prompt_injection_have_no_tool_permission",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_denied_command_audit_survives_transaction_rollback",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_duplicate_handoff_reuses_child",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_event_key_cannot_be_rebound",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_expired_lease_does_not_repeat_uncertain_call",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_expired_work_cannot_reserve_cost",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_fail_and_unverified_do_not_handoff",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_game_shell_push_merge_publish_always_blocked",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_handoff_depth_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_invalid_budget_rolls_back_all_fields",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_invalid_result_cannot_self_approve",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_korean_sunday_blocks_new_work_but_status_and_stop_work",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_mock_handoff_reaches_owner_once",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_mock_qa_cannot_become_real_art_approval",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_mutation_after_approval_invalidates_grant",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_mutation_before_approval_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_no_owner_fails_closed",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_on_demand_has_no_unsolicited_generation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_owner_id_guild_channel_bot_isolation",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_pause_invalidates_running_result",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_paused_role_stays_queued",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_quota_exceeded_pauses_without_paid_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_rejection_is_separate_from_technical_result",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_restart_preserves_task_and_receipt",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_role_config_and_sfx_paused",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_sha_scope_exact_approval_and_no_application",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_tech_and_art_are_separate",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_unchanged_approved_asset_needs_no_new_review",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.CoreTests.test_worker_cannot_submit_wrong_or_duplicate_lease",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_casefold_collision_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_crc_corruption_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_executable_and_disguised_executable_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_intake_repeat_preserves_same_quarantine",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_manifest_content_hash_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_manifest_missing_hash_and_dimensions_contract_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_official_asset_collision_is_reported_without_overwrite",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_png_alpha_mode_corruption_and_frame_contract",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_producer_sha_mismatch_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_protected_output_paths_and_ssrf_urls_blocked",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_quarantine_tamper_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_traversal_absolute_ads_windows_reserved_names",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_valid_bundle_crc_manifest_decode_hash_and_quarantine_only",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_zip_bomb_ratio_rejected_without_extraction",
+      "status": "PASS"
+    },
+    {
+      "test": "test_pilot.IntakeTests.test_zip_symlink_rejected",
+      "status": "PASS"
+    }
+  ],
+  "live_discord": "NOT_VERIFIED",
+  "live_ai": "NOT_VERIFIED",
+  "unity": "NOT_VERIFIED"
+}
