@@ -1,3 +1,8 @@
+## 2026-10-23 Discord 실연결 후속 — 모의 1건 승인 대기
+
+실제 Gateway·명령9등록·메시지 전송 PASS. 바울 대표가 status/pending/handoff 응답 확인, 자동 영수증은 status/handoff PASS·pending NOT_VERIFIED. 모의1건 리뉴얼→Codex→기획 APPROVAL_PENDING 완료, art USER_REVIEW_PENDING 유지. 로컬8점검+회귀1 PASS/FAIL0. 메인 아트는 Codex 라우팅 설정 확인만, 실제 업무/비소유자 Discord 거부 미검증. 실제 AI0·유료API0·SFX PAUSED·Push/merge0.
+
+CLI 구독인증 가능 및 추론 없는 설정검사 PASS, 실제 추론 성공은 별도 승인 후 읽기전용1회까지 미검증. 원본7356 SHA변경/누락0·status동일. 구현040224ee. [보고](팀운영/Discord_AI_Collab_Live_Followup_20261023.md). 다음: pending 자동영수증/비소유자 실증, 메인아트 실업무는 별도 승인된 범위에서만. Unity 추가 확인 없음. 검증용 Run 프로세스는 자동 재시작/AI실행 없이 연결 유지 중이며 필요 시 로컬 Run으로 재실행합니다.
 ## 2026-10-23 Discord 협업 Phase2 — 설정 대기 / 실제 단발 실패 보존
 
 기존de619848을 재사용해 숨김 토큰 설정·Discord 영수증·구독 단발 게이트를 보완했습니다. 변경분22 로컬/모의 PASS, 기존57·UnityQA 반복0. Discord는 WAITING_FOR_USER_SETUP. 실제CLI exec1은 reserved openai provider override로 bootstrap 실패/완료turn0, 자동 재호출0. 수정 준비안은 추론 없는 설정검사만PASS. 큐에 NOT_VERIFIED·미술승인대기로 보존했습니다.
