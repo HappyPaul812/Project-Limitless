@@ -1,3 +1,8 @@
+## 2026-10-23 Planning 최종 승인 재시험 VERIFIED — 성공 후 중지
+
+바울 대표 재시험명시승인으로 PlanningAgent만 공식ChatGPT구독CLI1회/읽기전용/90초제한 실행. exit0·completed_turns1·수정파서/최종파일대조PASS·도구/오류0. 입력15747/캐시0/출력371토큰, 실제summary Discord [REAL AI / VERIFIED] 1563149428318015663 전송PASS. 다른담당추론0·자동재시도0·유료API전환/추가결제0. 호출별구독금액은독립확인불가.
+
+계획f19fd546.../16687bytes. 옛슬롯CONSUMED보존·이번별도슬롯CONSUMED·usage1행COMPLETED. 텍스트검토대기추가로APPROVAL_PENDING2/DONE2/NOT_VERIFIED2, 미술승인아님. 기존39PASS보존·슬롯분리신규1/기존회귀1PASS. 원본7356 SHA변경/누락0·git상태동일·Unity/아트/Save/제품/Push/merge0·SFX PAUSED. 구현bfe387a6. [성공보고](../Planning_Final_Retest_Verified_20261023.md). 이번시험완료후중지. CodexAgent등확장은별도승인필요. Unity추가확인없음.
 ## 2026-10-23 출력 거부 오프라인 조사·최소 수정 완료 — 추가 AI0 / 중지
 
 과거a59b5783 real_roles.py:107 통합거부 위치 확인. 원문JSONL/최종파일/진단미보존·ephemeral 저장스레드0이라 실제세부거부조건확정불가. 중간agent_message를최종JSON으로오해하는 결함은 합성재현해수정했으나 과거실제원인으로단정하지않음. JSONL정책검사와공식output-last-message 대조 분리·개별거부사유/turn/카운터보존·한국어오류·임시원문정리. 필수필드/역할/단일turn/도구차단등유지.
