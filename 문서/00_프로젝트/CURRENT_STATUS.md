@@ -1,3 +1,7 @@
+## 2026-10-23 NewArt 실행 실패 조사 — 추가 AI0·진단 누락 보완 후 중지
+
+프로세스 exit1 반환·첫 JSONL 전 종료 확인, timeout/OSError 생성실패 아님. stderr 원문 폐기로 내부 초기화/모델요청 도달 여부·근본 원인 미확정. 성공 Planning/Codex와 공통CLI/ChatGPT/옵션/schema 동일, 입력·폴더만 다름; 역사적 실행 환경값/바깥권한은 미기록. argv/cwd/경과시간/관측단계·비밀 없는 오류분류만 추가, 보안/파서/PASS판정 유지. 신규fake8+기존자동인계선별1=9PASS/0FAIL·구문PASS, 실제AI추가0/usage증가0. 기존10업무+NewArt실패evidence불변·원본7356 SHA변경/누락0·git상태동일·제품/Unity/PNG/Save/미술승인/Push/merge0. 구현1129756c. [조사보고](팀운영/NewArt_Exec_Failure_Forensics_20261023.md). 실제재시험 미실행·성공미검증, 별도승인과새계획/슬롯 전 재개금지. Unity 사용자확인 없음.
+
 ## 2026-10-23 아트 AI 실제 연결 — NewArt 첫 실패로 중지
 
 대표 승인 각1회 범위에서 NewArt CLI1회 시도 exit1/JSONL0/최종응답0/NOT_VERIFIED, Renewal0회. 토큰 미수신·추론 성공 미확인·자동 재시도/API전환0. Discord 실패보고1563161292213063801. 새 fake 경계8PASS/0FAIL·Python구문PASS, 실제 연결 실패1/후속미검증1. 기존 Planning/Codex 업무10개 불변·원본7356 SHA변경/누락0·git상태동일·제품/Unity/아트/Save/미술승인/Push/merge0. 구현85e1e243. [보고](팀운영/Art_Roles_ReadOnly_Stopped_20261023.md). 두 담당 성공조건 미충족으로 다음 납품 자동화 조사는 보류. Unity 사용자확인 없음. 다음 실제 재시험은 별도 승인 필요, 이번 소비슬롯 재사용금지.
