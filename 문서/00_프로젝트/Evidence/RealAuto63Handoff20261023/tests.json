@@ -1,0 +1,13 @@
+{
+  "local_fake_tests_pass": 7,
+  "local_tests_fail": 0,
+  "real_success_criteria_pass": 7,
+  "real_success_criteria_fail": 0,
+  "actual_planning_calls": 1,
+  "actual_codex_calls": 1,
+  "retries": 0,
+  "other_role_calls": 0,
+  "compile": "PASS",
+  "powershell_syntax_errors": 0,
+  "existing_full_QA_rerun": false
+}

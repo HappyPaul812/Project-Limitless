@@ -1,0 +1,15 @@
+{
+  "before": {
+    "primary_remaining_percent": 61,
+    "weekly_remaining_percent": 65,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE"
+  },
+  "after": {
+    "primary_remaining_percent": 58,
+    "weekly_remaining_percent": 65,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE"
+  },
+  "attribution": "ACCOUNT_WIDE_NOT_SINGLE_JOB_BILLING"
+}

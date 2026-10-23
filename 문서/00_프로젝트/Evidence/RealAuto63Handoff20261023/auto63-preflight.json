@@ -1,0 +1,23 @@
+{
+  "job_unused": true,
+  "planner_input_bytes": 23040,
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "latest_comment_id": 6358875778,
+  "issue_updated": "2026-10-23T06:24:45Z",
+  "preserved_evidence_hashes": {
+    "PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED": "8c6290382fa53e9b5a034e12887c5215c69ca5346fd4168fd1fbf84a75f576da",
+    "CODEX_ISSUE63_READONLY_20261023_ONE_APPROVED": "642ecba89cc2960c3b3e0d517e65b4a6b744bb880dffc29c5f3e807e4f37c067"
+  },
+  "source_sha256": "581acd473013bf4fa097bf5d3c8e4e1cbe24bd7ce0eeccfd9c9c28812a0e5d3f"
+}

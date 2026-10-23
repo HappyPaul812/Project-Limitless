@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -27,7 +27,9 @@ try {
     $env:LIMITLESS_GUILD_ID = $saved.Guild
     $env:LIMITLESS_CHANNEL_IDS = $saved.Channels
     $env:LIMITLESS_ALLOW_DISCORD = '1'
-    if ($Action -eq 'CodexIssue63Once') {
+    if ($Action -eq 'AutoHandoff63Once') {
+        & '.venv/Scripts/python.exe' -m collab.auto63
+    } elseif ($Action -eq 'CodexIssue63Once') {
         & '.venv/Scripts/python.exe' -m collab.codex_issue63_once
     } elseif ($Action -eq 'CodexIssue63Report') {
         & '.venv/Scripts/python.exe' -m collab.ai_ready codex63-result-report

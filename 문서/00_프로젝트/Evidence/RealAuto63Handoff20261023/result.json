@@ -1,0 +1,120 @@
+{
+  "job_id": "AUTO63-85cd0486e4e5",
+  "mode": "REAL_AUTOMATIC_HANDOFF",
+  "state": "COMPLETED",
+  "manual_relay": false,
+  "stages": [
+    {
+      "status": "PASS",
+      "mode": "REAL_CLI_READONLY",
+      "execution_status": "EXIT_ZERO",
+      "validation_status": "PASS",
+      "usage": {
+        "input_tokens": 16914,
+        "cached_input_tokens": 0,
+        "output_tokens": 283
+      },
+      "completed_turns": 1,
+      "reason": "OK",
+      "reason_codes": [],
+      "diagnostics": {
+        "event_counts": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 1,
+          "turn.completed": 1
+        },
+        "item_counts": {
+          "agent_message": 1
+        },
+        "commentary_completed": 0,
+        "explicit_final_completed": 0,
+        "legacy_messages_completed": 1,
+        "invalid_line_numbers": [],
+        "final_source": "output-last-message",
+        "final_chars": 621,
+        "stdout_chars": 974,
+        "stderr_chars": 0
+      },
+      "answer": {
+        "role": "PlanningAgent",
+        "summary": "CodexAgent님, 제공된 Issue63 본문과 최신 보고만 근거로 문서 분석을 부탁드립니다. 보고상 단일 포즈 격리 표시 TECH_PASS와 교체 ART_HOLD_REPLACEMENT를 구분하고, USER_ART_REVIEW_PENDING / MOTION_NOT_STARTED / NOT_UNITY_APPLIED / MAIN_UNCHANGED / REMOTE_IMAGE_UNAVAILABLE 상태를 정리해 주세요. #65의 23PASS는 독침벌 신규 PASS가 아님을 명시해 주세요. 현행 PNG의 PilotBee 바이트 동일성은 Codex 보고에 따른 사실로 한정하고, OGA CC BY3.0과 동봉 CC BY4.0 충돌 및 권리 미결 사항을 정리해 주세요. 최종 미술 승인은 Paul(바울 대표)만 결정하며, 실제 비교판 열람과 명시적 디자인 승인 전 키포즈·20프레임 제작은 보류되고 승인 후에도 별도 단계 발주가 필요함을 확인해 주세요. Unity·PNG·라이선스 실물 검사, 아트 제작·승인, 게임 적용, push·merge 없이 문서상 근거와 미검증 사항만 구분해 회신해 주세요.",
+        "next_review": "CodexAgent"
+      },
+      "exit_code": 0,
+      "task_id": "L-37f83d21152d4df8",
+      "plan_sha256": "864b6655b62c9a228643151869feab1a15c11bb22fd3fd6d12506c10ab617e6e",
+      "cli_exec_attempts": 1,
+      "api_fallback": false,
+      "subscription_applied": "AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED"
+    },
+    {
+      "status": "PASS",
+      "mode": "REAL_CLI_READONLY",
+      "execution_status": "EXIT_ZERO",
+      "validation_status": "PASS",
+      "usage": {
+        "input_tokens": 15110,
+        "cached_input_tokens": 0,
+        "output_tokens": 305
+      },
+      "completed_turns": 1,
+      "reason": "OK",
+      "reason_codes": [],
+      "diagnostics": {
+        "event_counts": {
+          "thread.started": 1,
+          "turn.started": 1,
+          "item.completed": 1,
+          "turn.completed": 1
+        },
+        "item_counts": {
+          "agent_message": 1
+        },
+        "commentary_completed": 0,
+        "explicit_final_completed": 0,
+        "legacy_messages_completed": 1,
+        "invalid_line_numbers": [],
+        "final_source": "output-last-message",
+        "final_chars": 672,
+        "stdout_chars": 1025,
+        "stderr_chars": 0
+      },
+      "answer": {
+        "role": "CodexAgent",
+        "summary": "제공된 최신 보고에 따르면 과거 TECH_PASS는 v1 단일 포즈의 격리 Unity 표시 결과이며, 기존 Idle10+Attack10 대체는 ART_HOLD_REPLACEMENT입니다. 현재 USER_ART_REVIEW_PENDING / MOTION_NOT_STARTED / NOT_UNITY_APPLIED / MAIN_UNCHANGED / REMOTE_IMAGE_UNAVAILABLE로, 미술 검토 대기·모션 미착수·게임 미적용·main 미변경·원격 이미지 열람 불가 상태입니다. #65의 23PASS는 Main23 오르나 Delta 결과로 독침벌 신규 PASS가 아닙니다. 현행 PNG와 PilotBee의 바이트 동일성은 Codex 보고에 한정하며, OGA CC BY3.0과 동봉 LICENSE CC BY4.0의 충돌 및 권리 조건은 미해결입니다. 최종 미술 승인은 Paul(바울 대표)만 결정합니다. 실제 비교판 열람과 명시적 디자인 승인 전 키포즈·20프레임 제작은 보류되며, 승인 후에도 별도 단계 발주가 필요합니다. 문서만 분석했으며 Unity·PNG·라이선스 실물 검사는 하지 않아 독립 검증되지 않았습니다. 제작·승인·게임 적용·push·merge도 수행하지 않았습니다.",
+        "next_review": "PlanningAgent"
+      },
+      "exit_code": 0,
+      "task_id": "L-85bcfa2bec254668",
+      "plan_sha256": "e56772ef045855aa5e32b1ab2d0a0fbda0139f5fa169fa6b0af9315900864d95",
+      "cli_exec_attempts": 1,
+      "api_fallback": false,
+      "subscription_applied": "AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED"
+    }
+  ],
+  "messages": [
+    {
+      "message_id": "1563156041301102605"
+    },
+    {
+      "message_id": "1563156097441988609"
+    },
+    {
+      "message_id": "1563156106249769031"
+    }
+  ],
+  "request_sha256": "b164459d292e2dc4ea7a88c018d1ffde153cd7fb50290d78c66886ae72244c0e",
+  "reply_received": true,
+  "planning_task": "L-37f83d21152d4df8",
+  "request": {
+    "role": "PlanningAgent",
+    "summary": "CodexAgent님, 제공된 Issue63 본문과 최신 보고만 근거로 문서 분석을 부탁드립니다. 보고상 단일 포즈 격리 표시 TECH_PASS와 교체 ART_HOLD_REPLACEMENT를 구분하고, USER_ART_REVIEW_PENDING / MOTION_NOT_STARTED / NOT_UNITY_APPLIED / MAIN_UNCHANGED / REMOTE_IMAGE_UNAVAILABLE 상태를 정리해 주세요. #65의 23PASS는 독침벌 신규 PASS가 아님을 명시해 주세요. 현행 PNG의 PilotBee 바이트 동일성은 Codex 보고에 따른 사실로 한정하고, OGA CC BY3.0과 동봉 CC BY4.0 충돌 및 권리 미결 사항을 정리해 주세요. 최종 미술 승인은 Paul(바울 대표)만 결정하며, 실제 비교판 열람과 명시적 디자인 승인 전 키포즈·20프레임 제작은 보류되고 승인 후에도 별도 단계 발주가 필요함을 확인해 주세요. Unity·PNG·라이선스 실물 검사, 아트 제작·승인, 게임 적용, push·merge 없이 문서상 근거와 미검증 사항만 구분해 회신해 주세요.",
+    "next_review": "CodexAgent"
+  },
+  "forwarded_request_sha256": "b164459d292e2dc4ea7a88c018d1ffde153cd7fb50290d78c66886ae72244c0e",
+  "codex_task": "L-85bcfa2bec254668",
+  "returned_answer_sha256": "edf882fb2b44247439d688826f0c343ec526464e9af6e0dc1cc964cce0124a49",
+  "verification": "PASS",
+  "actual_cli_attempts": 2
+}

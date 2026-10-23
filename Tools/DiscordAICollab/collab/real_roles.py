@@ -17,6 +17,8 @@ from .output_parser import parse_result, korean_reason
 SLOT = 'REAL_ROLE_READONLY_20261023_ONE_TOTAL'
 RETEST_SLOT = 'PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED'
 CODEX_SLOT = 'CODEX_ISSUE63_READONLY_20261023_ONE_APPROVED'
+AUTO_PLANNING_SLOT = 'AUTO63_PLANNING_20261023_ONE_APPROVED'
+AUTO_CODEX_SLOT = 'AUTO63_CODEX_20261023_ONE_APPROVED'
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
               'NewArtAgent':'SPRITE_ART','RenewalArtAgent':'WORLD_ART_RENEWAL'}
 SCHEMA = {'type':'object','properties':{'role':{'type':'string'},'summary':{'type':'string'},
@@ -58,7 +60,7 @@ def make_plan(role, sources, clock=time.time):
 
 def validate(plan):
     body={k:v for k,v in plan.items() if k!='sha256'}
-    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT) or
+    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT) or
         plan.get('role') not in ROLE_FILES or plan.get('total_calls')!=1 or
         plan.get('timeout_seconds')!=90 or plan.get('mode')!='REAL_CLI_READONLY' or
         plan.get('auto_next_ai') is not False or plan.get('api_fallback') is not False or
@@ -71,7 +73,7 @@ def grant_once(store, identity, plan):
     store.authorize(identity)
     validate(plan)
     slot=plan['slot']
-    if plan['role']!=('CodexAgent' if slot==CODEX_SLOT else 'PlanningAgent'):
+    if plan['role']!=('CodexAgent' if slot in (CODEX_SLOT,AUTO_CODEX_SLOT) else 'PlanningAgent'):
         raise Denied('승인 슬롯의 담당 역할과 다릅니다. 아트 AI 실행은 허용하지 않습니다')
     if not 0 <= store.clock()-plan['created'] <= 86400:
         raise Denied('정본/계획을 새로 준비한 뒤 승인하세요')
@@ -86,7 +88,7 @@ def grant_once(store, identity, plan):
 def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run):
     store.authorize(identity); validate(plan)
     slot=plan['slot']
-    if plan['role']!=('CodexAgent' if slot==CODEX_SLOT else 'PlanningAgent'):
+    if plan['role']!=('CodexAgent' if slot in (CODEX_SLOT,AUTO_CODEX_SLOT) else 'PlanningAgent'):
         raise Denied('승인 슬롯의 담당 역할과 다릅니다')
     # 승인 확인이 없으면 인증 조회나 모델 프로세스조차 만들지 않습니다.
     with store.tx() as db:
@@ -113,7 +115,16 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
                  'base_sha':plan['source_refs']['main'],'scope':slot,'protected_assets':['Unity','Save','UserData','approved_art'],
                  'inputs':['SHA-pinned GitHub text excerpts'],'verification':['one structured turn; no tools'],
                  'approval_required':True,'artifact':'NO_ART_FROM_READONLY_REVIEW'}
-        task_id=store._create(db,slot,payload)
+        if slot==AUTO_CODEX_SLOT:
+            parent=store.task(db,plan.get('parent_task'))
+            parent_evidence=json.loads(parent['evidence'] or '{}')
+            if (parent['role']!='PlanningAgent' or parent['event_key']!=AUTO_PLANNING_SLOT or
+                parent['state']!='REVIEW_PENDING' or parent['tech']!='TECH_PASS' or
+                parent_evidence.get('mode')!='REAL_CLI_READONLY' or parent_evidence.get('status')!='PASS' or
+                digest(parent_evidence.get('answer'))!=plan['request_sha256']):
+                raise Denied('자동 인계의 원래 기획 업무가 아닙니다')
+            payload.update(parent_task=parent['id'],request_sha256=plan['request_sha256'])
+        task_id=store._create(db,slot,payload,root=plan.get('parent_task','') if slot==AUTO_CODEX_SLOT else '',depth=1 if slot==AUTO_CODEX_SLOT else 0)
         db.execute("UPDATE tasks SET state='RUNNING',lease=?,lease_until=? WHERE id=?",(slot,store.clock()+120,task_id))
         db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps({**grant,'state':'CONSUMED'}),slot))
         store.audit(db,'REAL_ROLE_EXEC_RESERVED',task_id)
@@ -164,7 +175,7 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     if current['state']=='RUNNING' and current['lease']==slot and current['lease_until']>store.clock():
         try:
             store.finish(task_id,slot,'TECH_PASS' if result['status']=='PASS' else 'NOT_VERIFIED',result)
-            if result['status']=='PASS':
+            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT):
                 # 후속 큐 생성만 허가합니다. 다음 AI 호출은 절대로 연쇄 실행하지 않습니다.
                 result['handoff']=store.auto_handoff(task_id)
         except Denied:

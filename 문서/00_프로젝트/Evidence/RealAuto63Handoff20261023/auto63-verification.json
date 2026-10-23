@@ -1,0 +1,27 @@
+{
+  "job_id": "AUTO63-85cd0486e4e5",
+  "checks": {
+    "both_real_cli_verified": true,
+    "request_exactly_forwarded": true,
+    "codex_answers_requested_conditions": true,
+    "reply_attached_original_planning_record": true,
+    "three_discord_receipts": true,
+    "no_manual_relay": true,
+    "no_art_approval": true
+  },
+  "pass": 7,
+  "fail": 0,
+  "planning_task": "L-37f83d21152d4df8",
+  "planning_state": "REVIEW_PENDING",
+  "codex_task": "L-85bcfa2bec254668",
+  "codex_state": "DONE",
+  "prior_verified_evidence_unchanged": true,
+  "slots": {
+    "AUTO63_PLANNING_20261023_ONE_APPROVED": "CONSUMED",
+    "AUTO63_CODEX_20261023_ONE_APPROVED": "CONSUMED"
+  },
+  "usage_rows_this_job": 2,
+  "total_input_tokens": 32024,
+  "total_output_tokens": 588,
+  "integrity": "ok"
+}
