@@ -1,3 +1,7 @@
+## 2026-10-23 NewArtAgent 실제 재시험 VERIFIED — 1회 성공 후 중지
+
+대표 새 승인으로 NewArt만 공식ChatGPT구독CLI 읽기전용1회/90초상한 실행. exit0/13.641초/turn1/최종파일·JSONL·엄격검증PASS, 입력18134/캐시0/출력378토큰. Discord [REAL AI / VERIFIED / NewArtAgent] 1563167449531154594 게시PASS. Chapter3범위·승인43/지면9보호·Orna visible80/canvas84.63·KEEP/HOLD·최신58 NEW_ART_REQUIRED_0·대표최종미술승인대기 인식 확인. Renewal/다른AI/재시도/API전환0. 새슬롯CONSUMED/과거실패보존·기존11업무evidence불변·원본7356 SHA변경/누락0·git상태동일·Unity/PNG/Save/제품/미술승인/Push/merge0. 새경계fake4PASS/0FAIL·구문PASS, 기존9및전수QA반복0. 구현fcb9167e. [성공보고](팀운영/NewArtAgent_Retest_Verified_20261023.md). 이번1회종료후중지, Renewal등다음단계별도승인필요. Unity 사용자확인 없음.
+
 ## 2026-10-23 NewArt 실행 실패 조사 — 추가 AI0·진단 누락 보완 후 중지
 
 프로세스 exit1 반환·첫 JSONL 전 종료 확인, timeout/OSError 생성실패 아님. stderr 원문 폐기로 내부 초기화/모델요청 도달 여부·근본 원인 미확정. 성공 Planning/Codex와 공통CLI/ChatGPT/옵션/schema 동일, 입력·폴더만 다름; 역사적 실행 환경값/바깥권한은 미기록. argv/cwd/경과시간/관측단계·비밀 없는 오류분류만 추가, 보안/파서/PASS판정 유지. 신규fake8+기존자동인계선별1=9PASS/0FAIL·구문PASS, 실제AI추가0/usage증가0. 기존10업무+NewArt실패evidence불변·원본7356 SHA변경/누락0·git상태동일·제품/Unity/PNG/Save/미술승인/Push/merge0. 구현1129756c. [조사보고](팀운영/NewArt_Exec_Failure_Forensics_20261023.md). 실제재시험 미실행·성공미검증, 별도승인과새계획/슬롯 전 재개금지. Unity 사용자확인 없음.

@@ -1,0 +1,17 @@
+{
+  "original_files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_same": true,
+  "prior_tasks_count": 11,
+  "all_prior_tasks_identical": true,
+  "usage_rows_added": 1,
+  "actual_cli_attempts": 1,
+  "new_tasks": 1,
+  "renewal_slot_absent": true,
+  "old_newart_consumed_preserved": true,
+  "new_retest_slot_consumed": true,
+  "new_task_state": "REVIEW_PENDING",
+  "new_task_art": "USER_REVIEW_PENDING",
+  "raw_final_file_exists": false
+}
