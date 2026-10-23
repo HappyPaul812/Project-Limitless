@@ -1,5 +1,16 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 #59 / Codex #65 최신 실측 — 오르나 82px 기본·남문/여관 KEEP 판정
+
+- **최신 바울 대표 지시·기획/기술 보고 우선**: [#59 최신 기획](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358511540), [#65 첫 실 Unity A/B](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358407741), [#65 후속 실 Unity 높이 검증](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358720003). **이번 회차 신규 게임 PNG/ZIP 생성·수정·삭제 0, GitHub 문서만 변경**.
+- **오르나** 원본 Master/512 Candidate SHA/바이트 보존. **전체 캔버스 표시82px 기본 후보**, 96px 대안(사용자 최종 미술 승인 전 배치 규격 미확정). 82px whole-canvas 인물alpha약77.5px, scale1.1389; 최신 Codex 후속 **80px alpha visible**/캔버스84.63px는 **별개 단위**로 검증(새23 PASS). 40px는 작고128px는 큼; 근접이름표 하체가림 HOLD. PPU512/Pivot(256,0)/오르나(-3,-4), Collider0/현 클릭Owner 유지. StableID/VoiceID/Quest 변경·확정0.
+- **Residence/남문** 기존 주택·지붕·출입문·Collider **KEEP_OLD**, 신규 RoofGable/RoofTrim/EntryDoor **현재 배치 모두 HOLD**, 파일 원본 보존. #65 실제 EntryDoor-only Unity에서도 작은 눈지붕/계단/문틀이 기존 출입문과 중복되어 ART_HOLD. #65 실제 검수는 **북서 Residence(-12.5,7.2)**이며 #58 초기 **남문 제안(-13,1)**과 다른 지점! 남문 실제 목표를 Main23 Scene/VisualGapList로 Codex가 확인하기 전 **새 문짝·문틀1PNG라도 제작0**. 필요 입증+대표 제작 지시 후에만 국소 제작 검토.
+- **여관** 기존 본체 PNG **내장 간판 딱 1개만 KEEP**. 기존 `Signs/Frostway_Sign_Inn.png`을 별도로 설치해 두 개로 만들지 않음. 신규 `Inn_StandaloneSign_CANDIDATE.png` 후보 바이트 보존·미설치 HOLD. Codex 기술/휠체어 PASS는 최종 사용자 미술승인과 구분.
+- **비교 근거:** Codex 실제 Unity board 사진은 사용자 **Windows F:\Downloads 로컬 ZIP** `Limitless_Issue65_ArtReview_20261023_4a3afef6.zip` SHA `4a3afef6e0abfc3a6b90afd19fe35005c67d9522bcefbdc5993a2777d52c95d1` 또는 최신 `Limitless_MinimalDelta65_Final_Unity_20261023_17db915d.zip` SHA `17db915d60dab9dcf0de521d0ac4e37e8cf9a7c0a8876461dd2aa6e944c333fd`의 `index.html`에서 사용자 직접 열람. GitHub에는 **Codex 실측 텍스트/파일별SHA만** 있고 이미지 바이너리 원격 업로드0. 본 담당은 Unity 원본 사진 직접 열람하지 않았으므로 **`CODEX_GAMEVIEW_TEXT_EVIDENCE_ONLY`**. 기존 `MinimalDelta_Review_20261023.zip`의 `OFFLINE/APPROX` PNG3은 실제 Unity 캡처가 **아님**.
+- **[이번 정식 판정 보고](../../Chapter3_Main23_Issue59_Codex65_KeepHold_PlacementDecision_20261023.md)** 브랜치 `docs/art-new`, 보고 커밋 `213cffb0db80187bc89276bd418d05ee6caade58`. Codex #65 기술 새33+8 및 후속23 PASS 결과는 **독립 과거/후속 검수 수치**로 합산하지 않고 전체 기존148/136/41/15 재검증0. 원본43/승인지면9/기존 NPC·펫·몬스터·OPEN16·Main23 Quest/Save/Scene/HEAD/index 유지. **`ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`**, main 직접 Push/merge0.
+- **다음:** 대표님 Board1~3 검토·최종 미술 수용 여부 판단 → 필요시 Codex가 남문 실제 타깃 위치/결함만 읽기전용 대조 → 실제 필요 확인 + 사용자 별도 제작 지시 시만 국소 1PNG 제안. 승인 전 제품 적용 금지.
+
+
 ## 2026-10-23 Main23 #59 Codex #64·#65 후속 / 최소 보완 비교, 실제 GameView 근거 대기
 
 - 최신 지시/근거 [#59](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358022168), [#64](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621), [#65](https://github.com/HappyPaul812/Project-Limitless/issues/65). #64 사용자 전달 Codex 로컬 QA상 오르나 TECH_PASS/40px 너무 작음, 남문 이중 지붕 ART_HOLD, 여관 신규 간판 렌더 PASS이나 기존 간판과 중복; #65 실제 Unity 비교캡처·GapList 파일은 아트 담당에게 미전달, 2026-10-23 조회시 #65 댓글0. **실 Unity A/B 최종 QA 주장 금지**.
