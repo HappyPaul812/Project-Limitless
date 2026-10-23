@@ -1,0 +1,21 @@
+{
+  "cli_help_only_no_inference": true,
+  "supported_flags": {
+    "--output-schema": true,
+    "--output-last-message": true,
+    "--json": true,
+    "--ephemeral": true
+  },
+  "ledger": {
+    "slot_state": "CONSUMED",
+    "actual_exec_reservations": 1,
+    "real_role_usage_rows": 1,
+    "task_state": "NOT_VERIFIED",
+    "counts": {
+      "APPROVAL_PENDING": 1,
+      "DONE": 2,
+      "NOT_VERIFIED": 2
+    }
+  },
+  "additional_ai_calls": 0
+}

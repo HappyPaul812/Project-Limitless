@@ -1,0 +1,14 @@
+{
+  "commit": "a59b578334c4df210977b5239a6231d868956aa9",
+  "function": "parse_result",
+  "lines": [
+    82,
+    108
+  ],
+  "return_rejection_line": 107,
+  "raw_stdout_saved": false,
+  "last_message_option_used_in_trial": false,
+  "ephemeral_used": true,
+  "actual_exit_code": 0,
+  "historical_subcause": "UNDETERMINABLE"
+}

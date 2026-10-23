@@ -1,0 +1,33 @@
+{
+  "historical_raw_available": false,
+  "actual_failure_exact_cause": "NOT_RECOVERABLE_FROM_RETAINED_EVIDENCE",
+  "synthetic_replays": [
+    {
+      "case": "single_final",
+      "mode": "SYNTHETIC_NOT_HISTORICAL_OUTPUT",
+      "old_status": "PASS",
+      "old_reason": null,
+      "new_status": "PASS",
+      "new_reasons": []
+    },
+    {
+      "case": "commentary_then_final",
+      "mode": "SYNTHETIC_NOT_HISTORICAL_OUTPUT",
+      "old_status": "NOT_VERIFIED",
+      "old_reason": "CLI_OUTPUT_REJECTED_NO_RETRY",
+      "new_status": "PASS",
+      "new_reasons": []
+    },
+    {
+      "case": "forbidden_tool",
+      "mode": "SYNTHETIC_NOT_HISTORICAL_OUTPUT",
+      "old_status": "NOT_VERIFIED",
+      "old_reason": "CLI_OUTPUT_REJECTED_NO_RETRY",
+      "new_status": "NOT_VERIFIED",
+      "new_reasons": [
+        "FORBIDDEN_ITEM"
+      ]
+    }
+  ],
+  "additional_ai_calls": 0
+}

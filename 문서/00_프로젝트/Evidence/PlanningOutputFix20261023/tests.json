@@ -1,0 +1,14 @@
+{
+  "unique_tests_pass": 39,
+  "fail": 0,
+  "parser_tests": 22,
+  "compact_input_tests": 4,
+  "fake_runner_regressions": 13,
+  "final_focused_rechecks": 2,
+  "rechecks_included_in_unique_total": false,
+  "additional_real_ai_calls": 0,
+  "historical_raw_replay_available": false,
+  "synthetic_replay_old_and_new": true,
+  "actual_discord_existing_error_repost": "PASS",
+  "existing_game_full_QA_rerun": false
+}

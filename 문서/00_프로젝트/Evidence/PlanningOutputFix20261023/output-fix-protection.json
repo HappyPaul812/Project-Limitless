@@ -1,0 +1,15 @@
+{
+  "protected_files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_unchanged": true,
+  "ledger": {
+    "exec_reservations": 1,
+    "counts": {
+      "APPROVAL_PENDING": 1,
+      "DONE": 2,
+      "NOT_VERIFIED": 2
+    }
+  },
+  "additional_ai_calls": 0
+}

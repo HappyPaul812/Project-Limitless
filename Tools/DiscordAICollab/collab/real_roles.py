@@ -12,6 +12,7 @@ from pathlib import Path
 from .core import Denied, KST, ROLES
 from .intake import safe_root
 from .phase2 import child_environment, cli_info, probe_command, verify_cli_controls
+from .output_parser import parse_result, korean_reason
 
 SLOT = 'REAL_ROLE_READONLY_20261023_ONE_TOTAL'
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
@@ -79,35 +80,6 @@ def grant_once(store, identity, plan):
         store.audit(db,'REAL_ROLE_PLAN_OWNER_GRANTED',actor=identity.user_id)
 
 
-def parse_result(stdout, code, role):
-    """CLI 원문 로그/추론 내용은 저장하지 않고 최종 구조화 응답과 숫자만 채택합니다."""
-    turns=0; messages=[]; usage={}; invalid=False
-    for line in stdout.splitlines():
-        try:
-            event=json.loads(line)
-            kind=event.get('type')
-            if kind=='turn.completed':
-                turns+=1
-                usage={k:v for k,v in (event.get('usage') or {}).items()
-                       if k in ('input_tokens','cached_input_tokens','output_tokens') and type(v) is int and v>=0}
-            if kind in ('error','turn.failed'):
-                invalid=True
-            if kind in ('item.started','item.updated','item.completed'):
-                item=event.get('item') or {}
-                if item.get('type') not in ('reasoning','agent_message'):
-                    invalid=True
-                if kind=='item.completed' and item.get('type')=='agent_message':
-                    messages.append(json.loads(item['text']))
-        except (ValueError,TypeError,AttributeError,KeyError):
-            invalid=True
-    answer=messages[0] if len(messages)==1 else {}
-    valid=(isinstance(answer,dict) and set(answer)=={'role','summary','next_review'} and
-           answer.get('role')==role and all(isinstance(v,str) and 0<len(v)<=1200 for v in answer.values()))
-    if code!=0 or turns!=1 or invalid or not valid:
-        return {'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','usage':usage,'reason':'CLI_OUTPUT_REJECTED_NO_RETRY'}
-    return {'status':'PASS','mode':'REAL_CLI_READONLY','usage':usage,'answer':answer,'completed_turns':1}
-
-
 def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run):
     store.authorize(identity); validate(plan)
     if plan['role']!='PlanningAgent':
@@ -143,21 +115,41 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
         store.audit(db,'REAL_ROLE_EXEC_RESERVED',task_id)
     try:
         schema=root/'response-schema.json'; schema.write_text(json.dumps(SCHEMA),encoding='utf8')
+        last_path=root/'last-message.json'
         command=probe_command(executable,root)
-        command=command[:-1]+['--output-schema',str(schema),'-']
+        command=command[:-1]+['--output-schema',str(schema),'--output-last-message',str(last_path),'-']
         completed=invoke(command,input=plan['prompt'],capture_output=True,text=True,encoding='utf8',errors='replace',
                          env=child_environment(),timeout=90,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
-        result=parse_result(completed.stdout,completed.returncode,plan['role'])
+        try:
+            final_text=last_path.read_text(encoding='utf8')
+        except (OSError,UnicodeError):
+            final_text=None
+        result=parse_result(completed.stdout,completed.returncode,plan['role'],last_message=final_text,require_last_message=True)
+        # 최종 원문은 메모리에서 검사한 뒤 삭제하고 이벤트 수·고정 사유만 기록합니다.
         result['exit_code']=completed.returncode
-        if result['status']!='PASS':
+        result['diagnostics']['stdout_chars']=len(completed.stdout)
+        result['diagnostics']['stderr_chars']=len(completed.stderr)
+        if result['status']!='PASS' and completed.returncode!=0:
             raw=(completed.stdout+completed.stderr).lower()
             for fragment,label in [('reserved','BUILTIN_PROVIDER_CONFIG_REJECTED'),('unknown field','CONFIG_UNSUPPORTED'),
                                    ('unauthorized','AUTH_REJECTED'),('401','AUTH_REJECTED'),('quota','QUOTA_EXCEEDED'),
                                    ('rate limit','QUOTA_EXCEEDED'),('failed to connect','NETWORK_FAILED'),('certificate','TLS_FAILED')]:
                 if fragment in raw:
                     result['reason']=label;break
+    except subprocess.TimeoutExpired:
+        result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','execution_status':'TIMEOUT',
+                'validation_status':'NOT_EVALUATED','reason':'TIMEOUT_NO_RETRY','usage':{}}
     except (OSError,subprocess.SubprocessError):
-        result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','reason':'EXEC_FAILED_NO_RETRY','usage':{}}
+        result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','execution_status':'EXEC_FAILED',
+                'validation_status':'NOT_EVALUATED','reason':'EXEC_FAILED_NO_RETRY','usage':{}}
+    finally:
+        # timeout이나 파서 오류에서도 임시 응답 원문을 보존하지 않습니다.
+        if 'last_path' in locals():
+            try:
+                last_path.unlink(missing_ok=True)
+            except OSError:
+                result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','reason':'RAW_OUTPUT_CLEANUP_FAILED','usage':result.get('usage',{})}
+    (root/'validation-diagnostics.json').write_text(json.dumps({k:v for k,v in result.items() if k!='answer'},ensure_ascii=False,indent=2),encoding='utf8')
     result.update(task_id=task_id,plan_sha256=plan['sha256'],cli_exec_attempts=1,api_fallback=False,
                   subscription_applied='AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED')
     usage=result['usage']; now=datetime.fromtimestamp(store.clock(),KST)
@@ -183,7 +175,7 @@ def discord_text(result):
         usage=result.get('usage',{})
         return ('[REAL AI / READ ONLY] 실제 CLI 1회 실행, 결과 검증 미통과(NOT_VERIFIED). '
                 +'입력 '+str(usage.get('input_tokens','미수신'))+' / 출력 '+str(usage.get('output_tokens','미수신'))
-                +' 토큰. 재시도0·API전환0·제품적용0·미술승인0. 원인분류: '+str(result.get('reason','UNKNOWN')))
+                +' 토큰. 재시도0·API전환0·제품적용0·미술승인0. '+korean_reason(result))
     summary=result['answer']['summary']
     # mention·코드블록·제어 문자는 게시 전에 제거합니다. 모델 텍스트는 명령으로 해석하지 않습니다.
     summary=re.sub(r'[\x00-\x1f@`<>]',' ',summary)[:900]

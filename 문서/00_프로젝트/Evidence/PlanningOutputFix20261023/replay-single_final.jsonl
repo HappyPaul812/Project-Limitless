@@ -1,0 +1,2 @@
+{"type": "item.completed", "item": {"type": "agent_message", "text": "{\"role\": \"PlanningAgent\", \"summary\": \"\\ud569\\uc131 \\uc7ac\\uc0dd \\uc694\\uc57d\", \"next_review\": \"\\ubc14\\uc6b8 \\ub300\\ud45c\"}"}}
+{"type": "turn.completed", "usage": {"input_tokens": 18, "output_tokens": 3}}

@@ -32,6 +32,8 @@ class RealRoleTests(unittest.TestCase):
         if 'features' in command:
             return SimpleNamespace(returncode=0,stdout='\n'.join(k+' stable false' for k in ('shell_tool','apps','browser_use','computer_use','multi_agent')),stderr='')
         answer={'role':'PlanningAgent','summary':'독립 모의 모델 응답','next_review':'바울 대표'}
+        if '--output-last-message' in command:
+            Path(command[command.index('--output-last-message')+1]).write_text(json.dumps(answer),encoding='utf8')
         events=[{'type':'item.completed','item':{'type':'agent_message','text':json.dumps(answer)}},
                 {'type':'turn.completed','usage':{'input_tokens':12,'output_tokens':8}}]
         return SimpleNamespace(returncode=0,stdout='\n'.join(json.dumps(x) for x in events),stderr='')

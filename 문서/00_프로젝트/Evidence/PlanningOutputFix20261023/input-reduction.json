@@ -1,0 +1,9 @@
+{
+  "old_prompt_bytes": 25497,
+  "candidate_prompt_bytes": 16687,
+  "byte_reduction_percent": 34.6,
+  "candidate_sha256": "beeff74c5482f9fb374a58530c11d19d30811e9dc87f221a48e6a3c6ac1f8022",
+  "actual_token_reduction": "NOT_VERIFIED_NO_AI_CALL",
+  "original_plan_unchanged": true,
+  "full_AGENTS_and_role_blob_verified": true
+}
