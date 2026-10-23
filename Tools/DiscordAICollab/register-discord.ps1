@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -27,7 +27,12 @@ try {
     $env:LIMITLESS_GUILD_ID = $saved.Guild
     $env:LIMITLESS_CHANNEL_IDS = $saved.Channels
     $env:LIMITLESS_ALLOW_DISCORD = '1'
-    if ($Action -eq 'FourRolePilotOnce') {
+    if ($Action -in @('Phase3Setup','Phase3Run','Phase3LiveTest')) {
+        $phase3Action = @{Phase3Setup='setup';Phase3Run='run';Phase3LiveTest='live-test'}[$Action]
+        & '.venv/Scripts/python.exe' -m collab.delivery_discord $phase3Action
+    } elseif ($Action -eq 'Phase3Inspect') {
+        & '.venv/Scripts/python.exe' -m collab.delivery_discord inspect
+    } elseif ($Action -eq 'FourRolePilotOnce') {
         & '.venv/Scripts/python.exe' -m collab.four_role_pilot
     } elseif ($Action -eq 'RenewalOnce') {
         & '.venv/Scripts/python.exe' -m collab.renewal_once
