@@ -1,3 +1,14 @@
+# PLANNING 2026-10-23 / Main23 화면 변경분 136PASS 보고·신규 아트 #59 실제 납품 여부 확인
+
+- 바울 대표 전달 Codex 새 보고: Main23 `codex/chapter3-main23-first-playable-20261023` 화면·UX 격리 보완 **변경분136 PASS/0 FAIL**, 초기5목표 기능148PASS는 재검증하지 않음. 기존 마을 GameArt43 중 **18종** 격리 시연 배치·승인 지면 Tile9 보존, 클릭/E/F/취소, 도보·휠체어·16:9/4:3/21:9, 남문 왕복/Save/Continue delta 검증. 원본 파일 **637개**·Save/UserData/HEAD/index 보호. 제품 단축 `f90966df`, 화면/QA `9c9f361d`, Main24 #46 읽기전용 SkillSave 설계 `3f30d135`. 사용자 원본 게임 적용·remote Git Push/main 병합은 **미완료**, 기존 OPEN16 유지.
+- Codex VisualGapList CSV 및 3비율 실제 GameView가 **Codex 로컬에서 만들어졌다는 사용자 보고**; 해당 CSV를 기획/신규아트가 파일바이트로 직접 읽은 것은 아니며 명세 내용과 경로·SHA는 추정하지 않음. Codex 부족아트 상위: **주민 고유 외형, 주택 문·지붕 접합, 여관 독립 간판**. 실 18종 배치/게임화면 확인 후 새로운 코덱스 총전수QA 불필요.
+- GitHub `docs/art-new` **실제 신규아트 #59 정식 보고서** [2026-10-23 메인아트 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_VisualCompletion_Pilot_20261023.md) commit `88e0e60a2048e25f1fab6effb782848c5c13516c`, 최신 인계 `181511911ba5208f4e6b4c294eb63bd1fdacba51`, #59 담당 댓글 [실제 증거 보고](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355480384) 확인. 이는 **기존 v9 ZIP49 PNG 실물 재사용 인벤토리/오프라인 contact sheet 보고**(참고 ZIP `Limitless_Main23_Issue59_ReuseAudit_PRELIMINARY_20261023.zip`, SHA `83d621d8f32fde8f31b10f10e4fa5fb29c25ff2677b472e74862f9eccd93739d`, 내부 QA CRC/SHA3PASS), **오르나·남문 건물 접합·스킬샵/여관 간판 신규 PNG는 모두 NOT_DELIVERED**. GapList 실물/Unity 미전달 당시 3비율 신규미술 QA는 `NOT_TESTED`. 사용자 최종 미술승인/본편 Unity 연결 없음. 기존43, 승인9 및 3펫 불변.
+- **기획 확정 다음 미술순서:** [Issue #59 우선순위 업데이트](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355677632)로 Codex GapList 실제 자료 제공 후 ① **오르나 주민 고유NPC 1종**, ② **남문 주택 문·지붕 접합1세트**, ③ **여관 독립 간판1종**만 신규아트 필요 여부에 따라 표적 생산. 기존 18종 배치 자산 재활용, 43전체 재생성 금지. 새 아트 파일/ZIP 실제 SHA·40/128px 접합 미리보기 → 담당 `docs/art-new` 보고+인계+이슈댓글+바울 대표 미술 검토 순서. 완성 전 `NEW_ART_NOT_DELIVERED` 유지.
+- [Codex #58 자료 전달](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6355678485): VisualGapList 상위 행·XY·PPU·Pivot·Sorting·Collider와 실제 3비율 GameView 중 비기밀만 신규아트 #59로 넘기도록 요청. 로컬만의 제품 commit과 GitHub 공식 반영 구분, Codex 로컬 Git Push는 별도 사용자 허가 필요, original Scene/Save 보호.
+- Main24 6슬롯 SkillSave #46은 **설계/테스트 계획서 작성만** 완료 보고이며 구매·결제·저장/복원 코드는 미변경. MAIN23 원본/메인에 PR·병합하지 않은 상태에서 **기능·미술 완료 선언 불가**. 재현 영상/사용자 손플레이·기승인 지면9 외 외형 확정은 추후.
+
+---
+
 # 2026-10-23 / 리뉴얼 GateGuard 시안 접수 — 태온과 유사하다는 바울 대표 의견
 
 - 바울 대표 납품 안내: `F:\Downloads\Limitless_Eldiran_GateGuard_Concept_SpiderResearch_20261023.zip`. `docs/art-renewal` [실물보고서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_GateGuard_Concept_Spider_PreResearch_20261023.md) 새 commit `c0faf9daf31489a3e35ceab087bc71d5b760a6a9` 확인. ZIP **보고상** 318790바이트/SHA256 `692d1a72e12f59e61373b880f3ebf1afd8fec909b2659563b35b370eb63c3cab`/CRC PASS; 실제 F: ZIP·이미지 픽셀을 이 기획 세션에서 직접 검수한 것 아님.
