@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-23 — 바울 대표 검수 순서 교정: Codex 실물·격리 Unity QA 우선 #64
+
+- 사용자 직접 지적: **“코덱스에 안돌리고 그냥 결정하라고?”** 기존 기획의 `#59 남문 겹지붕 ART_HOLD` 및 `#63 VenomBee 비교 부족`은 제작담당 **오프라인 파일 QA/자기 보고**를 읽어 잠정 검토한 내용이지 바울 대표가 실제 시각 비교한 최종 미술 승인이나 Codex QA가 아님. **최종 미술결정 전에 실제 Codex에서 F: ZIP 바이트 및 격리 Unity GameView 시각 검증이 필수**로 순서 정정.
+- Codex 전용 [Issue #64](https://github.com/HappyPaul812/Project-Limitless/issues/64) 작성·발주. 로컬 F: 두 ZIP `Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip` 제작 SHA `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`; `Limitless_Chapter1_VenomBee_OriginalKeyArt_Pilot_v1_20261023.zip` 제작 SHA `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478`. **실 Windows 파일 SHA/Manifest/CRC와 PNG alpha, 기존 실제 GameView/PPU·Sorting·Collider·40px 비교**는 Codex 아직 돌리지 않았으므로 `NOT_TESTED`.
+- **Main23 #59:** 기존 GameArt43 중 시연18, 지면 승인9·Main23 148+136 QA 유지. 신규 오르나/남문 문·지붕/여관 간판은 독립 시험만. 남문 이중 박공·겹지붕을 실제 동배율 Unity에서 재현/관찰, 남문 3WU 통행·오르나·기존 Inn Sign 대체 필요성 판정, 정식 Sprite 적용 X.
+- **VenomBee #63:** 현 MonsterDefinition의 Idle10/Attack10 Sprite GUID 원본 추적 및 license와 40/128/실게임·Ch2공식몬스터 동배율 비교, alpha 외곽 검증. 신규 후보 1포즈일 뿐 20프레임 미제작. **실물/게임 시각 자료→Codex 기술 판정→바울 대표 미술 결정→미술 담당 필요한 국소 보완→사용자 승인된 자산만 별도 Codex 본편 적용 검토**로 계약 수정.
+- [메인아트 #59 우선 Codex QA 통지](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6357516461), [리뉴얼 #63 순서 교정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6357517038), [Codex 기존 #58 통합 QA 연계](https://github.com/HappyPaul812/Project-Limitless/issues/58#issuecomment-6357517601) 댓글 등록. `docs/planning` 이 기록만 갱신. **GitHub Issue 생성은 사용자 Windows Codex 세션 자동 실행이 아니므로 실제 코덱스 로컬 검증 전 QA PASS 주장 금지.** 사용자 원본 Unity/Editor·Save/637files/dirty/HEAD/index, 공식 Wolf/Bear/Fox·Ch2 monsters·승인지면9, main 모두 동결.
+- Codex는 별도 worktree에서 delta-only 비전면 QA, 보고 Markdown·캡처·CSV와 SHA 로컬 commit. **원격 push는 기존 사용자 별도 명시 승인 필요**, GitHub 연결로 허가된 issue 댓글이 가능하면 link; 아니면 `LOCAL_COMMITTED/REMOTE_NOT_PUSHED` 명시. 미술 승인 최종 권한은 바울 대표.
+
+---
+
 # PLANNING / 2026-10-23 — 메인 아트 #59·리뉴얼 #63 정식 납품 보고 검토 완료
 
 바울 대표 “메인 아트, 리뉴얼 보고서 확인,” 지시. 아래 담당별 GitHub **실제 정식 보고서·최신 인계·Issue 댓글을 모두 열어 확인**했으며, 사용자 F: ZIP 자체와 원본 PNG 픽셀을 기획이 직접 읽지 않았으므로 **보고된 오프라인 파일 QA**와 대표 최종 미술 판정을 분리.
