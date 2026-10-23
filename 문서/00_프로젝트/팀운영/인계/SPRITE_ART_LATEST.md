@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 #59 Codex #64·#65 후속 / 최소 보완 비교, 실제 GameView 근거 대기
+
+- 최신 지시/근거 [#59](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358022168), [#64](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621), [#65](https://github.com/HappyPaul812/Project-Limitless/issues/65). #64 사용자 전달 Codex 로컬 QA상 오르나 TECH_PASS/40px 너무 작음, 남문 이중 지붕 ART_HOLD, 여관 신규 간판 렌더 PASS이나 기존 간판과 중복; #65 실제 Unity 비교캡처·GapList 파일은 아트 담당에게 미전달, 2026-10-23 조회시 #65 댓글0. **실 Unity A/B 최종 QA 주장 금지**.
+- 새 게임용 PNG 0 / 기존 후보 및 기승인 PNG 수정 0. **기존 오르나 Master·512 보존**, 오프라인 40/80/96/128px 표시 높이 비교(80·96 중간 검토, 128 Codex 요청 대조); 기존 Residence 주택·지붕 **KEEP**, 신규 큰 RoofGable/RoofTrim **배치 제외 후보**, EntryDoor 단독 오프라인 접합 C안에서 큰 중복은 줄지만 EntryDoor 자체의 작은 눈지붕/기존 출입문 겹침 위험으로 **ART_HOLD 유지**; Inn 기존 간판 **KEEP_OLD_RECOMMENDED**, 신 StandaloneSign 삭제 없이 HOLD 보존.
+- **실물 파일(신규 아트 ZIP이 아닌 A/B 증거 ZIP):** `Limitless_Main23_Issue59_MinimalDelta_Review_20261023.zip` 812,046 bytes / 7 entries / SHA256 `2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11`; SHA256SUMS6/6 + ZIP CRC PASS. 오프라인 비교 PNG3(오르나 1480×590 `376cd075...`, 남문 1840×680 `52172ca3...`, 여관 1350×655 `f7e83059...`)와 QA 보존 목록·Manifest. 과거 파일럿 v1 ZIP SHA `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351` 보존. 실물 ZIP은 본 ChatGPT 세션 다운로드용 /mnt/data, GitHub 바이너리 미업로드.
+- [새 정식 검토 보고](../../Chapter3_Main23_Art59_PostCodex_MinimalDelta_Review_20261023.md) `docs/art-new` commit `d5a07c99b722bb2f00fd69088ccb6c5a0f1ee08e`.
+- **상태:** `ART_CONTRACT_WAITING_CODEX_EVIDENCE / ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`. 기존43·승인 타일9·공식 NPC/펫/몬스터/Save/Quest/Scene/OPEN16 보호, Unity 제품/import/원격 main 병합0. 다음은 #65 실제 화면/PPU·Pivot/Collider 전달 후 새 PNG 없이 배치 판단 → 필요 입증된 국소 변경만 별도 지시 → 대표 미술 승인.
+
+
 ## 2026-10-23 Main23 #59 정식 파일럿 수령 확인 — 사용자 Windows ZIP / 미술 승인 대기
 
 - 바울 대표가 `F:\Downloads\Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip` **수령 직접 확인**. ZIP 제작본 SHA256 `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`, 8,008,308 bytes / 20 entries / ZIP CRC PASS / SHA256SUMS 19/19 재확인. 사용자의 F 드라이브 복사본 바이트를 아트 세션에서 직접 해시한 것은 아님.
