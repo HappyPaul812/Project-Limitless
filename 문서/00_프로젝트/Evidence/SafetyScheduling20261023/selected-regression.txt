@@ -1,0 +1,8 @@
+test_png_snapshot_hash_queue_and_pending (tests.test_art_delivery.DeliveryTests.test_png_snapshot_hash_queue_and_pending) ... ok
+test_mock_worker_does_not_claim_delivery_request (tests.test_art_delivery.DeliveryTests.test_mock_worker_does_not_claim_delivery_request) ... ok
+test_same_event_and_sha_never_duplicate_tasks (tests.test_art_delivery.DeliveryTests.test_same_event_and_sha_never_duplicate_tasks) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 6.104s
+
+OK

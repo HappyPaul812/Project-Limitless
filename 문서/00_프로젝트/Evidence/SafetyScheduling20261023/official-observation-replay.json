@@ -1,0 +1,27 @@
+{
+  "mode": "SIMULATION_ONLY",
+  "schedule": null,
+  "usage": {
+    "status": "AVAILABLE",
+    "reason": "\uc0c8 \uad00\uce21 \uae30\uc900 \uc794\uc5ec \uc788\uc74c; \uc2e4\ud589 \uc2b9\uc778\uc740 \ubcc4\ub3c4",
+    "recheck_at": null,
+    "observed": 1792764528.764,
+    "source": "CODEX_APP_OFFICIAL_TOOL",
+    "windows": [
+      {
+        "minutes": 300,
+        "used_percent": 22,
+        "resets_at": 1792779833
+      },
+      {
+        "minutes": 10080,
+        "used_percent": 3,
+        "resets_at": 1793366633
+      }
+    ],
+    "ordinary_allowed": true
+  },
+  "ai_calls": 0,
+  "shutdown_calls": 0,
+  "git_mutations": 0
+}

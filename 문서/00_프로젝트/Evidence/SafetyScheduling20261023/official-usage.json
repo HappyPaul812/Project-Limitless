@@ -1,0 +1,17 @@
+{
+  "source": "CODEX_APP_OFFICIAL_TOOL",
+  "observed": 1792764528.764,
+  "ordinary_allowed": true,
+  "windows": [
+    {
+      "minutes": 300,
+      "used_percent": 22,
+      "resets_at": 1792779833
+    },
+    {
+      "minutes": 10080,
+      "used_percent": 3,
+      "resets_at": 1793366633
+    }
+  ]
+}

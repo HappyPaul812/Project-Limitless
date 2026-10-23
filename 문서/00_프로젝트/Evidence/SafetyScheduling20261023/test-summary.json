@@ -1,0 +1,13 @@
+{
+  "new_tests_pass": 48,
+  "new_tests_fail": 0,
+  "full_new_suite_pass": 47,
+  "additional_legacy_gate_pass": 1,
+  "selected_existing_delivery_pass": 3,
+  "python_compile": "PASS",
+  "powershell_parse": "PASS",
+  "task_xml_export_and_checks": "PASS",
+  "production_slash_commands": "NOT_VERIFIED",
+  "real_shutdown": "NOT_EXECUTED",
+  "ai_runner_calls": 0
+}

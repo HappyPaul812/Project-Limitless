@@ -1,0 +1,6 @@
+test_legacy_probe_also_blocks_before_cli_without_usage (tests.test_scheduling.SafetyTests.test_legacy_probe_also_blocks_before_cli_without_usage) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.555s
+
+OK

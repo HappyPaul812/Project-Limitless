@@ -1,3 +1,7 @@
+## 2026-10-23 예약·사용량 보류·조건부 종료 — 모의 검증 완료
+
+서울 마감/정리/수정/취소·영속 보류·6개 Discord 명령 소스·공식 사용량 UNKNOWN/소진 차단·고정 Windows 점검 XML·종료 조건 모의 평가 구현. 신규48 PASS/0 FAIL(47+레거시1), 기존 납품 선별3 PASS/0 FAIL·구문 PASS. 원본7356 SHA변경/누락0·기존21업무/13사용량/승인/28설정 내용동일. 추가 외부AI/Unity/제품/OS등록/실제종료/Push/merge0. 구현08f6973ab91f22efe58bedba4006568be9ea22f0. [완료 보고](팀운영/Scheduling_Usage_Shutdown_Simulation_20261023.md). 기존 봇/수령 서비스 미재시작·새 Slash 실제 등록/응답 NOT_VERIFIED. 공식 사용량 자동 브리지/무인 재개/실제 통합·종료 실행기는 미연결, 기본 HOLD. 다음은 별도 활성화 후 새 명령 실연결 및 공식 관측 브리지 검토, Unity 사용자확인 없음.
+
 ## 2026-10-23 Phase3 아트 자동 납품 — 수령 감시 실행 중
 
 Discord 아트-납품 및 Windows 납품함 연결·격리 PNG/ZIP 검사·SHA 중복 차단·Codex BLOCKED 업무 등록·Discord 보고 구현. 신규 로컬45 PASS/0 FAIL, 실제 파일 기준8 PASS/0 FAIL·보고5건·HOLD 업무3건. Discord 실제 첨부는 봇 SELF_TRANSPORT_TEST이며 대표 신규 첨부 일반 수령은 NOT_VERIFIED. 원본7356 SHA변경/누락0·기존17업무/승인장부보존·추가AI/Unity/제품/Push/merge0. 코드 be8441e4bdb4769b67b9e925a981bcc4ccc9a283. [완료 보고](팀운영/Phase3_Art_Delivery_Verified_20261023.md). 수령 감시만 RUNNING·AI/Unity worker 비활성·Windows 자동 시작 미설치. 다음은 대표 첨부 관찰 및 별도 승인 후 격리 Unity Worker 구현·실행 검토이며 이번 Unity 사용자 확인 없음. 아래 과거 단계의 미구현 표기는 당시 이력입니다.

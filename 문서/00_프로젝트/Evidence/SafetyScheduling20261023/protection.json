@@ -1,0 +1,30 @@
+{
+  "original_files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_identical": true,
+  "existing_tables_unchanged": true,
+  "tables": {
+    "tasks": {
+      "rows": 21,
+      "sha256": "6b2a61548841056f1a86dd5e33b781195a0cd06c6dedfbd14afabdb3359a0819"
+    },
+    "usage": {
+      "rows": 13,
+      "sha256": "de167cae8b991d0c5da6b272049c8990129f1238cc9230687a72823cebf7efb2"
+    },
+    "approvals": {
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "settings": {
+      "rows": 28,
+      "sha256": "2b2588164f4058f4341554010b6cf6b004338b01eba02e7334aa0549f10542d0"
+    }
+  },
+  "new_ai_runner_calls": 0,
+  "unity_runs": 0,
+  "shutdown_calls": 0,
+  "os_tasks_registered": 0,
+  "push_or_merge": 0
+}

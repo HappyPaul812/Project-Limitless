@@ -1,0 +1,12 @@
+{
+  "official_cmdlet_export": "PASS",
+  "registered": false,
+  "start_utc": "2026-10-24T11:00:00Z",
+  "arguments": "-m collab.safety_tick",
+  "run_level": "LeastPrivilege",
+  "multiple_instances": "IgnoreNew",
+  "allow_hard_terminate": "false",
+  "logon_type": "InteractiveToken",
+  "raw_xml_sha256": "160e8b433a04ca67bf1a979cf19850889e07b68bca03c1ab7df3bcd55f7047e6",
+  "user_identity": "LOCAL_CURRENT_USER"
+}

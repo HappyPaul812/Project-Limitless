@@ -1,0 +1,63 @@
+test_deadline_outbox_posts_once_and_restores_receipt (tests.test_scheduling.DiscordSafetyAdapterTests.test_deadline_outbox_posts_once_and_restores_receipt) ... F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\.venv\Lib\site-packages\discord\player.py:30: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+  import audioop
+Executing <Task finished name='Task-1' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.781 seconds
+Executing <Task finished name='Task-2' coro=<DiscordSafetyAdapterTests.test_deadline_outbox_posts_once_and_restores_receipt() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:382> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.328 seconds
+ok
+test_inflight_report_recovery_never_reposts (tests.test_scheduling.DiscordSafetyAdapterTests.test_inflight_report_recovery_never_reposts) ... Executing <Task finished name='Task-7' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.594 seconds
+Executing <Task finished name='Task-8' coro=<DiscordSafetyAdapterTests.test_inflight_report_recovery_never_reposts() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:408> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.156 seconds
+ok
+test_report_ambiguous_no_automatic_retry (tests.test_scheduling.DiscordSafetyAdapterTests.test_report_ambiguous_no_automatic_retry) ... Executing <Task finished name='Task-13' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.594 seconds
+Executing <Task finished name='Task-14' coro=<DiscordSafetyAdapterTests.test_report_ambiguous_no_automatic_retry() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:396> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.328 seconds
+ok
+test_schedule_reply_is_ephemeral_korean (tests.test_scheduling.DiscordSafetyAdapterTests.test_schedule_reply_is_ephemeral_korean) ... Executing <Task finished name='Task-19' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.609 seconds
+ok
+test_six_new_and_nine_old_commands_preserved (tests.test_scheduling.DiscordSafetyAdapterTests.test_six_new_and_nine_old_commands_preserved) ... Executing <Task finished name='Task-25' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.687 seconds
+ok
+test_unauthorized_shutdown_rejected_in_adapter (tests.test_scheduling.DiscordSafetyAdapterTests.test_unauthorized_shutdown_rejected_in_adapter) ... Executing <Task finished name='Task-31' coro=<DiscordSafetyAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_scheduling.py:352> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.610 seconds
+ok
+test_all_commands_require_owner_guild_channel_and_human (tests.test_scheduling.SafetyTests.test_all_commands_require_owner_guild_channel_and_human) ... ok
+test_both_windows_require_latest_reset (tests.test_scheduling.SafetyTests.test_both_windows_require_latest_reset) ... ok
+test_cancel_active_does_not_clear_manual_pause (tests.test_scheduling.SafetyTests.test_cancel_active_does_not_clear_manual_pause) ... ok
+test_cancel_closed_keeps_admission_hold (tests.test_scheduling.SafetyTests.test_cancel_closed_keeps_admission_hold) ... ok
+test_claim_stops_but_running_lease_untouched (tests.test_scheduling.SafetyTests.test_claim_stops_but_running_lease_untouched) ... ok
+test_cleanup_blocks_intake_and_preserves_pending_task (tests.test_scheduling.SafetyTests.test_cleanup_blocks_intake_and_preserves_pending_task) ... ok
+test_cleanup_time_required (tests.test_scheduling.SafetyTests.test_cleanup_time_required) ... ok
+test_concurrency_two_limit_still_applies (tests.test_scheduling.SafetyTests.test_concurrency_two_limit_still_applies) ... ok
+test_concurrent_duplicate_command_creates_once (tests.test_scheduling.SafetyTests.test_concurrent_duplicate_command_creates_once) ... ok
+test_discord_cannot_set_usage_or_run_arbitrary_commands (tests.test_scheduling.SafetyTests.test_discord_cannot_set_usage_or_run_arbitrary_commands) ... ok
+test_duplicate_event_reuses_schedule (tests.test_scheduling.SafetyTests.test_duplicate_event_reuses_schedule) ... ok
+test_finish_does_not_erase_usage_or_consumed_slots (tests.test_scheduling.SafetyTests.test_finish_does_not_erase_usage_or_consumed_slots) ... ok
+test_finish_stores_tasks_without_mutating_approvals_or_evidence (tests.test_scheduling.SafetyTests.test_finish_stores_tasks_without_mutating_approvals_or_evidence) ... ok
+test_finished_result_can_arrive_while_schedule_closed (tests.test_scheduling.SafetyTests.test_finished_result_can_arrive_while_schedule_closed) ... ok
+test_five_hour_exhausted_blocks (tests.test_scheduling.SafetyTests.test_five_hour_exhausted_blocks) ... ok
+test_fixed_tick_on_isolated_db_has_no_external_calls (tests.test_scheduling.SafetyTests.test_fixed_tick_on_isolated_db_has_no_external_calls) ... ok
+test_folder_intake_hold_preserves_file_for_later (tests.test_scheduling.SafetyTests.test_folder_intake_hold_preserves_file_for_later) ... ok
+test_fresh_two_windows_allow_gate_not_execution (tests.test_scheduling.SafetyTests.test_fresh_two_windows_allow_gate_not_execution) ... ok
+test_invalid_missing_or_unofficial_observations (tests.test_scheduling.SafetyTests.test_invalid_missing_or_unofficial_observations) ... ok
+test_invalid_time_and_past_never_rolls_to_tomorrow (tests.test_scheduling.SafetyTests.test_invalid_time_and_past_never_rolls_to_tomorrow) ... ok
+test_long_job_not_started_before_cleanup (tests.test_scheduling.SafetyTests.test_long_job_not_started_before_cleanup) ... ok
+test_modify_requires_current_id (tests.test_scheduling.SafetyTests.test_modify_requires_current_id) ... ok
+test_next_start_does_not_implicitly_approve_ai (tests.test_scheduling.SafetyTests.test_next_start_does_not_implicitly_approve_ai) ... ok
+test_no_production_shutdown_or_git_executor (tests.test_scheduling.SafetyTests.test_no_production_shutdown_or_git_executor) ... ok
+test_official_denial_blocks_even_with_unused_percent (tests.test_scheduling.SafetyTests.test_official_denial_blocks_even_with_unused_percent) ... ok
+test_register_seoul_and_default_cleanup (tests.test_scheduling.SafetyTests.test_register_seoul_and_default_cleanup) ... ok
+test_reset_time_passed_requires_new_observation (tests.test_scheduling.SafetyTests.test_reset_time_passed_requires_new_observation) ... ok
+test_restart_restores_schedule_and_hold (tests.test_scheduling.SafetyTests.test_restart_restores_schedule_and_hold) ... ok
+test_safety_status_korean_and_no_raw_payload (tests.test_scheduling.SafetyTests.test_safety_status_korean_and_no_raw_payload) ... ok
+test_shutdown_requires_specific_confirmation (tests.test_scheduling.SafetyTests.test_shutdown_requires_specific_confirmation) ... ok
+test_stale_available_snapshot_blocks (tests.test_scheduling.SafetyTests.test_stale_available_snapshot_blocks) ... ok
+test_stale_or_nan_official_values_rejected (tests.test_scheduling.SafetyTests.test_stale_or_nan_official_values_rejected) ... ok
+test_sunday_start_rejected (tests.test_scheduling.SafetyTests.test_sunday_start_rejected) ... ok
+test_unknown_usage_blocks_before_cli (tests.test_scheduling.SafetyTests.test_unknown_usage_blocks_before_cli) ... ok
+test_weekly_exhausted_blocks (tests.test_scheduling.SafetyTests.test_weekly_exhausted_blocks) ... ok
+test_all_conditions_only_would_shutdown (tests.test_scheduling.ShutdownPreviewTests.test_all_conditions_only_would_shutdown) ... ok
+test_each_missing_or_false_check_blocks (tests.test_scheduling.ShutdownPreviewTests.test_each_missing_or_false_check_blocks) ... ok
+test_old_or_future_evidence_blocks (tests.test_scheduling.ShutdownPreviewTests.test_old_or_future_evidence_blocks) ... ok
+test_sync_conflict_blocks (tests.test_scheduling.ShutdownPreviewTests.test_sync_conflict_blocks) ... ok
+test_unity_copy_and_unsaved_work_block (tests.test_scheduling.ShutdownPreviewTests.test_unity_copy_and_unsaved_work_block) ... ok
+test_user_cancellation_blocks (tests.test_scheduling.ShutdownPreviewTests.test_user_cancellation_blocks) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 72.601s
+
+OK
