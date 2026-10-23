@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-23 — 메인아트 MinimalDelta 파일·리뉴얼 권리보고 검토 및 Codex #65 실 Unity 인계 강화
+
+- **바울 대표 신규 제공 파일명:** `F:\Downloads\Limitless_Main23_Issue59_MinimalDelta_Review_20261023.zip`. 이 기획 세션은 사용자 Windows F:에 직접 접근하지 못하므로 **바울 대표 경로 전달 접수만**, F: 내용 CRC/SHA 직접 재검증0. **아트 담당** `docs/art-new` [정식 MinimalDelta 보고](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_Art59_PostCodex_MinimalDelta_Review_20261023.md) commit `d5a07c99b722bb2f00fd69088ccb6c5a0f1ee08e`, 인계 `bfa8100becf0be9f10fc436cfb9ff8e6554a13b6`, #59 댓글 확인. **제작본 기준** ZIP 812,046bytes SHA256 `2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11`, 7entries/CRC PASS/SHA256SUMS6/6 PASS. **새 게임 PNG0/수정 기존 PNG0**, 오프라인 이미지 3장(오르나 40/80/96/128, 남문 기존 Roof KEEP+Gable/Trim placement 제외 EntryDoor ONLY vs 기존 문 KEEP 비교, 여관 기존 간판 KEEP vs 후보 중복). 남문 EntryDoor 자체 눈지붕·기존 문 겹침 위험 **ART_HOLD**; 오르나 실제 스케일/배율 미확정, Inn `KEEP_OLD_RECOMMENDED`, 바울 대표 최종 미술승인0.
+- **리뉴얼 독침벌 최신 보고:** `docs/art-renewal` [VenomBee Codex64/65 Rights+Motion Contract](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) commit `f908e6761433a21d4c459b13ccd2bf6e5277439c`, 인계 `e3b64fe2b93e5eeb07d46ab0c7fa6547c5c8e04c`, #63 댓글·#65 인계 요청 확인. **기존 현행 활성 PilotBee와 외부 원본 바이트 동일**은 Codex #64 사용자 캡처 보고 기준, 원본 OGA CC BY3 vs 동봉 LICENSE BY4 충돌 `RIGHTS_VERSION_CONFLICT_OPEN`. 새 VenomBee v1 좌향1포즈/512RGBA vs 우향 Idle10+Attack10/10FPS 계약 차이, 미술 승인 전 신규 20프레임0, 게임 원본·MonsterDefinition 변경0. 실제 #65 동배율 GameView 원본 그림/파일SHA가 담당에게 전달되지 않아 `BOARD_EVIDENCE_REMOTE_PENDING`.
+- **다음 실제 작업은 Codex에서**: [Codex #65 실물 MinimalDelta+리뉴얼 자료 연결 후속댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358377122) 작성. 로컬 F: MinimalDelta SHA/CRC 확인 + 기존 #64 Unity41PASS/보정15PASS 실제 캡처·문제11·VisualGapList 재사용, 실제 Unity **오르나 40/80/96/128 장면 비례, 남문 DoorOnly와 기존 도어 KEEP, 여관 기존 SignOnly**, VenomBee 신1포즈↔현행 Idle/Attack↔Ch2 공식몬스터 동배율 A/B. 기존 Main23 148+136/QA64 41+15 재실행 금지, 필요한 Delta만, 사용자 원본14,206파일·Save/UserData/dirty/HEAD/index·원격 main 보존. Codex 로컬 product/QA commit의 remote Push는 사용자 별도 명시 요청 전 금지.
+- [#59 기획 검토댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358383242) 접수; 새 PNG 제작0, 기존 후보 원본·공식43/지면9·펫·몬스터 변경0; #65 실물 Unity A/B 증거 제공 전 최종 미술승인/본편 Unity 적용/main 병합0. 담당별 GitHub 보고 의무는 이행.
+- **사용자 필수 기획응답 규칙 재확인:** 업무 진행 설명 시 반드시 Codex 및 해당 담당 **복붙용 구체 지시문을 같은 응답에 첨부**. GitHub Issue 등록만으로 Windows Codex 자동 실행되지 않음.
+
+---
+
 # PLANNING / 2026-10-23 — 바울 대표 상시 지시: 업무 설명에는 반드시 담당별 복붙 지시문 동봉
 
 **바울 대표 직접 지시(2026-10-23): “전달 완료. 앞으로 설명만 하자 말고 지시문도 같이 줘. 이건 넌 꼭 지켜.”**
