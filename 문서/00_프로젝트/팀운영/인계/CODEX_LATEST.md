@@ -1,3 +1,8 @@
+## 2026-10-23 출력 거부 오프라인 조사·최소 수정 완료 — 추가 AI0 / 중지
+
+과거a59b5783 real_roles.py:107 통합거부 위치 확인. 원문JSONL/최종파일/진단미보존·ephemeral 저장스레드0이라 실제세부거부조건확정불가. 중간agent_message를최종JSON으로오해하는 결함은 합성재현해수정했으나 과거실제원인으로단정하지않음. JSONL정책검사와공식output-last-message 대조 분리·개별거부사유/turn/카운터보존·한국어오류·임시원문정리. 필수필드/역할/단일turn/도구차단등유지.
+
+로컬39 PASS/FAIL0(파서22·입력선별4·fake실행기13), 실제추가호출0·유료전환0·슬롯CONSUMED/기존업무상태유지·Discord연결유지/기존오류재게시PASS. 입력후보25497→16687bytes/34.6%감소, AGENTS/역할전체blob검증, 실제토큰절감미검증·미승인후보만. 원본7356 SHA변경/누락0·git상태동일·제품/미술승인/Unity/Push/merge0·SFX PAUSED. 구현5d2e4241. [보고](../Planning_Output_Rejection_Offline_Fix_20261023.md). 실제CLI end-to-end 재시험은 별도승인필요하며 이번작업중지. Unity추가확인없음.
 ## 2026-10-23 PlanningAgent 승인 실제1회 — 결과 검증 NOT_VERIFIED / 중지
 
 바울 대표 별도승인으로 계획e9e0e683...의PlanningAgent만 공식구독CLI1회/90초제한 실행. exit0·입력18075/캐시0/출력385토큰 수신, 최종구조/정책검증 CLI_OUTPUT_REJECTED_NO_RETRY로NOT_VERIFIED. 원문미보존이라 상세거부조건확정불가. 실제호출완료와요약채택실패를구분합니다. 승인슬롯CONSUMED·재호출0·다른역할추론0·API전환0. Discord [REAL AI / READ ONLY] 실패/사용량보고1563141744839888897 전송PASS.
