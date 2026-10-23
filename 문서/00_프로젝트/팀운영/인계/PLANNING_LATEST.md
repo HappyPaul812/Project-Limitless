@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-23 14:16 KST — 바울 대표 “후속 진행 해줘” / Codex #65+메인 #59·리뉴얼 #63 병렬 계약
+
+- **실행 의도:** Codex 로컬 #64의 두 ZIP SHA PASS / Unity 신검41PASS·보정캡처15PASS·런타임0 / 원본14,206파일 보호를 **다시 전수 돌리지 않고** 실제 A/B 비교판·필요한 최소 격리 Delta로 바울 대표가 미술결정할 수 있도록 한다. 새 [Codex #65](https://github.com/HappyPaul812/Project-Limitless/issues/65) **실 Unity 캡처·파일별11문제·VisualGapList 재사용, 4주제 비교판+필요할 때만 Delta 시연** 발주. 승인 전 본편 적용·main push·remote codex push·user Save/Editor 변경0; GitHub Issue 등록은 Codex 세션의 로컬 실행 증거가 아니므로 `ISSUE_CREATED / CODEX_EXECUTION_PENDING`.
+- **Codex 화면 4주제:** ① 오르나40↔128px 실제 표시 크기/동선·가독성·기존NPC 비례 ② 남문 기존 Residence+기존 Roof 유지, 신규 RoofGable/RoofTrim 후보만 **배치 제외**, EntryDoor만 재현; 겹지붕 전후/Colliders·Sort·남북3WU·화면비3종 ③ 여관 기존 Sign 하나만 **KEEP_OLD**하고 신규 StandaloneSign은 미삭제 HOLD ④ 독침벌 **좌향1포즈 예시 vs 현재 PilotBee Idle10/Attack10 10FPS vs Ch2 공식몬스터 동배율**, 후보 실제 교체 금지. GitHub 증거 게시가 권한상 불가하면 사용자 로컬 파일 경로+SHA 및 `REMOTE_NOT_PUSHED` 보고.
+- **#59 신규 아트 담당 독립 통보:** [표적 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358022168). Orna Master+512 보존/스케일 제안 2안, 남문 문 조인트만 최소 대안(실Unity 비교가 불량일 경우에만 단일PNG 국소 보완), 여관 기존 Sign KEEP·후보 HOLD. **새 대형 PNG·43전체 재생산 불가**, Codex A/B 증거 전 GameView QA를 가장하지 않음, 공식 승인 전 Unity 정식 적용0. `docs/art-new` 보고+인계+Issue 결과댓글.
+- **#63 리뉴얼 담당 독립 통보:** [VenomBee 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6358022754). 기존 PilotBee 실제 활성이미지 바이트 동일 + CC BY3/4 버전 충돌 `RIGHTS_PENDING`; 신규 v1 좌향1포즈는 기존 Idle10/Attack10 우향 모션과 계약 불일치. **대표 실제 Ch2 동배율 비교/미술 승인 전 새 20프레임 제작 금지**, 신규 스프라이트/소스 변경0. 병렬 가능한 **라이선스·저작자 출처 및 motion compatibility 한 페이지 읽기전용 계약만** `docs/art-renewal`에 문서화/인계·이슈댓글.
+- **#64 기존 QA 인계 댓글:** [후속 #65 별도 수행 요청](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6358021412). #64 완료 자체는 로컬 QA 보고로 충분히 기술되었으나 **Codex 소유 GitHub QA 원본 커밋·증거 링크 미제출**, 원격 main SHA `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` 그대로, 검증 없는 공식 병합/완료 종결 지양.
+- **기획 상태:** `GITHUB_TASKS_DISPATCHED / ASSET_DECISION_STILL_USER_PENDING / LOCAL_CODEX_NOT_YET_REEXECUTED`. 각 담당 다른 세션을 GitHub 댓글만으로 자동 실행시키는 능력은 없음. 담당들은 다음 접속에서 GitHub 이슈 직접 읽고 해당 브랜치 실제 commit+댓글로 의무 보고. 본편 적용·PR 병합·강제 Push는 별도 사용자 승인.
+
+---
+
 # PLANNING / 2026-10-23 — Codex 실제 격리 QA #64: 41PASS+캡처15PASS, 4자산 표적 판정
 
 - 바울 대표 업로드 **Codex 로컬 QA 완료 화면**에서 읽은 결과임. 원격 `main` 그대로 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`; GitHub `codex/art-pilots-isolated-qa-20261023` 원격 브랜치 및 Codex의 #64 공식 완료댓글 **미존재**, 기획이 화면 제공 사실을 [#64 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621)에 증거 등급 구분하여 등록. 실제 Codex 로컬 보고서/11행 문제 CSV/캡처 실파일은 이 기획 세션에서 열지 못했으므로 `CODEX_LOCAL_QA_REPORTED / REMOTE_ARTIFACTS_NOT_AVAILABLE / USER_ART_APPROVAL_PENDING`.
