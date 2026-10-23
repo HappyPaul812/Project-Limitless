@@ -1,3 +1,8 @@
+## 2026-10-23 Discord 실제 AI 준비 — 별도 승인 대기
+
+실제 status2/pending1/handoff1 응답 영수증으로3명령 PASS 확인. MOCK 보존·별도 구독 CLI 실행기/4역할 SHA고정 입력 준비, 실제 AI0·승인슬롯미등록. 변경분 가짜subprocess12 PASS/FAIL0, 기존QA반복0. GitHub main/기획/신규/리뉴얼 역할·최신인계 발췌 조회, 실제4AI 연속실행은 미검증. 공식 CLI구독인증·설정검사PASS이나 실제추론/구독차감은 승인후1회까지NOT_VERIFIED.
+
+다음: CodexAgent 계획SHA d572d0ea8154abbf3af159b3c02c39c5d419d84404f7c24d541aab3a837e4988·4역할합계읽기전용1회·90초·Discord결과보고에 별도 승인 필요. 입력25~31KB/600자응답요청은 과금토큰 강제상한 아님. 사용량조회시5시간5%/주간72%잔여·유료크레딧없음, 리셋/구매0. 원본7356 SHA변경/누락0·status동일·게임/미술승인/유료API/Push/merge0·SFX PAUSED. 구현1d0ab0e6. [상세보고](팀운영/Discord_AI_Real_Connection_Readiness_20261023.md). Unity추가확인없음. 기존실패단발장부 보존·다음AI자동호출금지.
 ## 2026-10-23 Discord 실연결 후속 — 모의 1건 승인 대기
 
 실제 Gateway·명령9등록·메시지 전송 PASS. 바울 대표가 status/pending/handoff 응답 확인, 자동 영수증은 status/handoff PASS·pending NOT_VERIFIED. 모의1건 리뉴얼→Codex→기획 APPROVAL_PENDING 완료, art USER_REVIEW_PENDING 유지. 로컬8점검+회귀1 PASS/FAIL0. 메인 아트는 Codex 라우팅 설정 확인만, 실제 업무/비소유자 Discord 거부 미검증. 실제 AI0·유료API0·SFX PAUSED·Push/merge0.
