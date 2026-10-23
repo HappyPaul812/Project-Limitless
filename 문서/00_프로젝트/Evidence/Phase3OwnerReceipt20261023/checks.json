@@ -1,0 +1,11 @@
+{
+  "service_live": true,
+  "channel_permissions_and_intent": true,
+  "normal_owner_attachment_verified": true,
+  "actual_png_and_sha": true,
+  "single_sha_single_task": true,
+  "automatic_existing_watcher_task": true,
+  "test_only_approval_ineligible": true,
+  "discord_original_and_final_report": true,
+  "existing_three_and_original_protected": true
+}

@@ -1,0 +1,20 @@
+{
+  "phase3_startup_shortcuts": 0,
+  "registered_anything": false,
+  "phase3_scheduled_tasks": 0,
+  "processes": [
+    {
+      "ProcessId": 36296,
+      "ParentProcessId": 5636,
+      "CreationDate": "2026-10-23T22:36:41.526478+09:00",
+      "Name": "python.exe"
+    },
+    {
+      "ProcessId": 50196,
+      "ParentProcessId": 36296,
+      "CreationDate": "2026-10-23T22:36:41.541784+09:00",
+      "Name": "python.exe"
+    }
+  ],
+  "phase3_run_registry_entries": 0
+}

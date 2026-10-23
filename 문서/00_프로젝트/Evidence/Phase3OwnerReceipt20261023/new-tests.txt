@@ -1,0 +1,12 @@
+test_missing_owner_or_report_proof_rejected (tests.test_owner_receipt.OwnerReceiptTests.test_missing_owner_or_report_proof_rejected) ... ok
+test_other_tasks_unchanged (tests.test_owner_receipt.OwnerReceiptTests.test_other_tasks_unchanged) ... ok
+test_real_receipt_marked_without_new_task_or_file_change (tests.test_owner_receipt.OwnerReceiptTests.test_real_receipt_marked_without_new_task_or_file_change) ... ok
+test_replay_one_test_report_and_no_extra_task (tests.test_owner_receipt.OwnerReceiptTests.test_replay_one_test_report_and_no_extra_task) ... ok
+test_self_upload_cannot_be_presented_as_owner_normal (tests.test_owner_receipt.OwnerReceiptTests.test_self_upload_cannot_be_presented_as_owner_normal) ... ok
+test_sha_or_stored_tamper_rejected (tests.test_owner_receipt.OwnerReceiptTests.test_sha_or_stored_tamper_rejected) ... ok
+test_test_only_cannot_approve_even_after_state_changed (tests.test_owner_receipt.OwnerReceiptTests.test_test_only_cannot_approve_even_after_state_changed) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 14.275s
+
+OK

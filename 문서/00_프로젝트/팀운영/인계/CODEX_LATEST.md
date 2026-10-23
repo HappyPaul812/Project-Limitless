@@ -1,3 +1,7 @@
+## 2026-10-23 Phase3 대표 일반 PNG 자동 수령 VERIFIED
+
+대표23:05:32 일반첨부→감시기23:05:34 자동등록 기록을23:26:56 실제 Discord/저장 SHA 대조. L-5546382550914017, PNG677×626 RGBA/563323bytes/SHA b9a6be63…176006. 기존3대기업무와 별도 TEST_ONLY·BLOCKED/NOT_VERIFIED 유지·승인전환 차단 보강. 신규로컬7 PASS/0 FAIL·실제9 PASS/0 FAIL, TEST_ONLY Discord보고1563197037779099649 SENT/재조회PASS. 이번재업로드/수동업무생성0·전체21→21·원본7356변경/누락0·다른업무/승인/사용량/설정/수령이벤트동일·AI/Unity/제품/Push/merge0. 구현51a60ca38c07357032b7901e64afdca45e0d8f01. [실제 보고](../Phase3_Owner_Attachment_Verified_20261023.md). 수령서비스 정상·미재시작, 자동시작 조사/설계만·OS등록0. 다음은 별도 승인 후 같은 사용자 로그인 기반 자동시작 구현/등록 검토, 실제 재부팅/로그아웃 검증과 Unity 사용자확인 없음.
+
 ## 2026-10-23 예약·사용량 보류·조건부 종료 — 모의 검증 완료
 
 서울 마감/정리/수정/취소·영속 보류·6개 Discord 명령 소스·공식 사용량 UNKNOWN/소진 차단·고정 Windows 점검 XML·종료 조건 모의 평가 구현. 신규48 PASS/0 FAIL(47+레거시1), 기존 납품 선별3 PASS/0 FAIL·구문 PASS. 원본7356 SHA변경/누락0·기존21업무/13사용량/승인/28설정 내용동일. 추가 외부AI/Unity/제품/OS등록/실제종료/Push/merge0. 구현08f6973ab91f22efe58bedba4006568be9ea22f0. [완료 보고](../Scheduling_Usage_Shutdown_Simulation_20261023.md). 기존 봇/수령 서비스 미재시작·새 Slash 실제 등록/응답 NOT_VERIFIED. 공식 사용량 자동 브리지/무인 재개/실제 통합·종료 실행기는 미연결, 기본 HOLD. 다음은 별도 활성화 후 새 명령 실연결 및 공식 관측 브리지 검토, Unity 사용자확인 없음.

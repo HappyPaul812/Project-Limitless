@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "task_id": "L-5546382550914017",
+  "sha256": "b9a6be63ea275a8710191f1be050b44868ff55b5c59bfdf787986dbe92176006",
+  "artifact": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\phase3\\quarantine\\b9a6be63ea275a8710191f1be050b44868ff55b5c59bfdf787986dbe92176006\\source.png",
+  "report_event_key": "owner-receipt-test:discord:1563191652171124807:1563191651848036453",
+  "verification": {
+    "mode": "TEST_ONLY",
+    "owner_verified": true,
+    "source": "DISCORD_ATTACHMENT",
+    "event_key": "discord:1563191652171124807:1563191651848036453",
+    "attachment_sha256": "b9a6be63ea275a8710191f1be050b44868ff55b5c59bfdf787986dbe92176006",
+    "stored_sha256": "b9a6be63ea275a8710191f1be050b44868ff55b5c59bfdf787986dbe92176006",
+    "bytes": 563323,
+    "format": "PNG",
+    "png": {
+      "dimensions": [
+        677,
+        626
+      ],
+      "mode": "RGBA",
+      "alpha_range": [
+        255,
+        255
+      ],
+      "bbox": [
+        0,
+        0,
+        677,
+        626
+      ]
+    },
+    "verified_at": 1792765615.4041317,
+    "task_created_by_existing_watcher": true,
+    "manual_task_creation": false,
+    "ai_calls": 0,
+    "unity_runs": 0,
+    "art_approval": "TEST_ONLY_NOT_APPROVABLE"
+  },
+  "channel_id": "1563179817715638403",
+  "message_content_intent": true,
+  "permissions": {
+    "view_channel": true,
+    "read_message_history": true,
+    "send_messages": true,
+    "attach_files": true
+  },
+  "original_auto_report_message_id": "1563191666414723246",
+  "verification_report_status": "SENT",
+  "verification_report_message_id": "1563197037779099649",
+  "original_uploaded_at": 1792764332.574,
+  "observed_at": 1792765616.1528118,
+  "new_upload_requested": false,
+  "new_manual_task_created": false,
+  "final_report_on_discord_verified": true
+}

@@ -1,0 +1,21 @@
+{
+  "original_files": 7356,
+  "changed": 0,
+  "missing": 0,
+  "original_git_status_identical": true,
+  "existing_three_tasks_identical": true,
+  "all_other_tasks_identical": true,
+  "task_count_before": 21,
+  "task_count_after": 21,
+  "usage_identical": true,
+  "approvals_identical": true,
+  "settings_identical": true,
+  "original_receipt_events_identical": true,
+  "all_other_delivery_records_identical": true,
+  "additional_ai_calls": 0,
+  "unity_runs": 0,
+  "product_changes": 0,
+  "push_or_merge": 0,
+  "startup_registered": false,
+  "services_restarted": false
+}
