@@ -22,11 +22,12 @@ AUTO_PLANNING_SLOT = 'AUTO63_PLANNING_20261023_ONE_APPROVED'
 AUTO_CODEX_SLOT = 'AUTO63_CODEX_20261023_ONE_APPROVED'
 NEW_ART_SLOT = 'NEW_ART_READONLY_20261023_ONE_APPROVED'
 RENEWAL_ART_SLOT = 'RENEWAL_ART_READONLY_20261023_ONE_APPROVED'
+NEW_ART_RETEST_SLOT = 'NEW_ART_RETEST_READONLY_20261023_ONE_APPROVED'
 
 
 def slot_role(slot):
     return {CODEX_SLOT:'CodexAgent',AUTO_CODEX_SLOT:'CodexAgent',
-            NEW_ART_SLOT:'NewArtAgent',RENEWAL_ART_SLOT:'RenewalArtAgent'}.get(slot,'PlanningAgent')
+            NEW_ART_SLOT:'NewArtAgent',NEW_ART_RETEST_SLOT:'NewArtAgent',RENEWAL_ART_SLOT:'RenewalArtAgent'}.get(slot,'PlanningAgent')
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
               'NewArtAgent':'SPRITE_ART','RenewalArtAgent':'WORLD_ART_RENEWAL'}
 SCHEMA = {'type':'object','properties':{'role':{'type':'string'},'summary':{'type':'string'},
@@ -68,7 +69,7 @@ def make_plan(role, sources, clock=time.time):
 
 def validate(plan):
     body={k:v for k,v in plan.items() if k!='sha256'}
-    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT) or
+    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT) or
         plan.get('role') not in ROLE_FILES or plan.get('total_calls')!=1 or
         plan.get('timeout_seconds')!=90 or plan.get('mode')!='REAL_CLI_READONLY' or
         plan.get('auto_next_ai') is not False or plan.get('api_fallback') is not False or
@@ -195,7 +196,7 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     if current['state']=='RUNNING' and current['lease']==slot and current['lease_until']>store.clock():
         try:
             store.finish(task_id,slot,'TECH_PASS' if result['status']=='PASS' else 'NOT_VERIFIED',result)
-            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT):
+            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT):
                 # 후속 큐 생성만 허가합니다. 다음 AI 호출은 절대로 연쇄 실행하지 않습니다.
                 result['handoff']=store.auto_handoff(task_id)
         except Denied:
