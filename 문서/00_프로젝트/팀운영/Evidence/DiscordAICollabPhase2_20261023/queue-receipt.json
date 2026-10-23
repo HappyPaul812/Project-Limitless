@@ -1,0 +1,37 @@
+{
+  "mode": "LOCAL_REAL_QUEUE_ADAPTER",
+  "discord_delivery": "NOT_VERIFIED",
+  "tasks": [
+    {
+      "id": "L-bd113b185adf4a60",
+      "role": "CodexAgent",
+      "state": "NOT_VERIFIED",
+      "tech": "NOT_VERIFIED",
+      "art": "USER_REVIEW_PENDING"
+    }
+  ],
+  "usage": [
+    {
+      "category": "text",
+      "units": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "status": "UNKNOWN"
+    }
+  ],
+  "audit": [
+    {
+      "kind": "TASK_NEW",
+      "task": "L-bd113b185adf4a60"
+    },
+    {
+      "kind": "SUBSCRIPTION_PROBE_RESERVED",
+      "task": "L-bd113b185adf4a60"
+    },
+    {
+      "kind": "SUBSCRIPTION_PROBE_FINISHED",
+      "task": "L-bd113b185adf4a60"
+    }
+  ],
+  "sfx_paused": true
+}

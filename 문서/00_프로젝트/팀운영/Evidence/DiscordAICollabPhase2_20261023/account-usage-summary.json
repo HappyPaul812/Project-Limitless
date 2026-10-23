@@ -1,0 +1,15 @@
+{
+  "before": {
+    "primary_used_percent": 61,
+    "weekly_used_percent": 23,
+    "primary_window_minutes": 300,
+    "secondary_window_minutes": 10080
+  },
+  "after": {
+    "primary_used_percent": 69,
+    "weekly_used_percent": 24,
+    "primary_window_minutes": 300,
+    "secondary_window_minutes": 10080
+  },
+  "note": "Account-wide shared usage, not attributable to the single probe."
+}

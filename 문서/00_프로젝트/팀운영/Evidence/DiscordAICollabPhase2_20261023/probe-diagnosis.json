@@ -1,0 +1,9 @@
+{
+  "original_exec_attempts": 1,
+  "completed_turns": 0,
+  "bootstrap_cause": "BUILTIN_PROVIDER_OVERRIDE_REJECTED",
+  "inference_started": false,
+  "no_retry": true,
+  "prepared_config_check": "PASS",
+  "raw_auth_or_stderr_saved": false
+}

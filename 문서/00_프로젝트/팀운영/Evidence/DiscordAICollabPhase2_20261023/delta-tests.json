@@ -1,0 +1,100 @@
+{
+  "mode": "LOCAL_MOCK_DELTA_ONLY",
+  "run": 22,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 40.765,
+  "tests": [
+    {
+      "test": "test_phase2.Phase2Tests.test_all_nine_callbacks_owner_and_reply_receipts",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_all_nine_commands_reject_non_owner",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_api_auth_fails_closed_without_fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_child_process_has_no_api_discord_github_or_provider_override",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_command_is_readonly_subscription_no_tools_and_no_reserved_override",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_config_bootstrap_failure_never_starts_model",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_discord_requires_numeric_ids_and_explicit_switch",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_live_bot_error_message_never_echoes_token",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_malformed_events_and_invalid_usage_not_pass_or_counted",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_missing_discord_config_is_waiting_without_token_output",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_no_approval_no_inference",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_no_arbitrary_model_text_or_auth_output_is_stored",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_nonempty_probe_workspace_is_rejected",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_pause_and_sunday_never_start_probe",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_pause_during_result_does_not_reactivate_job",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_probe_result_cannot_be_art_approved",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_quota_error_pauses_without_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_ready_receipt_has_no_token_or_account_data",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_single_call_restart_gate_and_usage_are_durable",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_timeout_never_retries_and_preserves_unknown_usage",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_tool_output_and_multiple_turns_are_not_pass",
+      "status": "PASS"
+    },
+    {
+      "test": "test_phase2.Phase2Tests.test_two_running_jobs_prevent_probe",
+      "status": "PASS"
+    }
+  ],
+  "live_discord": "NOT_VERIFIED",
+  "actual_inference_in_tests": 0
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "mode": "CONFIG_ONLY_NO_INFERENCE",
+  "exit_code": 0,
+  "required_tool_controls_disabled": true,
+  "builtin_provider_override": false,
+  "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+}

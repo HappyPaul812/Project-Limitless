@@ -1,3 +1,11 @@
+## 2026-10-23 Discord 협업 Phase2 — 설정 대기 / 실제 단발 실패 보존
+
+기존de619848을 재사용해 숨김 토큰 설정·Discord 영수증·구독 단발 게이트를 보완했습니다. 변경분22 로컬/모의 PASS, 기존57·UnityQA 반복0. Discord는 WAITING_FOR_USER_SETUP. 실제CLI exec1은 reserved openai provider override로 bootstrap 실패/완료turn0, 자동 재호출0. 수정 준비안은 추론 없는 설정검사만PASS. 큐에 NOT_VERIFIED·미술승인대기로 보존했습니다.
+
+원본Save/UserData 포함7356 SHA변경0·원본status/HEAD불변·제품0·SFX PAUSED·Push/main병합0. 구현1390086a. 다음: 대표 Portal/로컬설정 후 실제Discord 확인, 새추론1회는 별도승인 필요. [Phase2 보고](../Discord_AI_Collab_Phase2_Report_20261023.md).
+
+실제토큰·계정연결은 바울 대표가 connect-discord.ps1에서 직접 수행. 단발실패장부 삭제/새DB 우회 금지. 계약c7102c5f/구현1390086a/최종보고SHA는 전용브랜치HEAD. 추가 유료API0, 구독토큰사용량 미수신; 계정공유 사용률을 이 호출 비용으로 간주하지 마세요. 일반CodexRunner·Discord자동AI·게임적용기는 여전히 비활성입니다.
+
 ## 2026-10-23 Discord 협업 로컬 파일럿 인계
 
 바울 대표 첨부 통합 지시의 0단계+1·2단계 모의 및 ZIP 검역 일부 완료. 별도 codex/discord-ai-collaboration, main47ad2eec 기준. 설계ba82c396·구현094ea98d. 도구 Tools/DiscordAICollab, [완료 보고](../Discord_AI_Collab_Local_Pilot_Report_20261023.md)·[운영 안내](../../../../Tools/DiscordAICollab/README.md). 최종 문서 SHA는 전용 브랜치 HEAD.

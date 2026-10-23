@@ -1,0 +1,17 @@
+{
+  "cli_version": "0.163.0-alpha.11.2",
+  "cli_exec_attempts": 1,
+  "api_fallback": false,
+  "task_id": "L-bd113b185adf4a60",
+  "approval": "LIMITLESS_PHASE2_20261023_ONE_READONLY_TURN",
+  "additional_api_cost_usd": 0,
+  "subscription_cost": "INCLUDED_ALLOWANCE; EXACT_MONEY_NOT_AVAILABLE",
+  "status": "NOT_VERIFIED",
+  "completed_turns": 0,
+  "response_marker_valid": false,
+  "tool_use_detected": false,
+  "usage": {},
+  "reason": "CLI_EXEC_FAILED_NO_RETRY",
+  "exit_code": 1,
+  "workspace_unchanged": true
+}

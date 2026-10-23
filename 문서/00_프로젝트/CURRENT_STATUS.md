@@ -1,3 +1,9 @@
+## 2026-10-23 Discord 협업 Phase2 — 설정 대기 / 실제 단발 실패 보존
+
+기존de619848을 재사용해 숨김 토큰 설정·Discord 영수증·구독 단발 게이트를 보완했습니다. 변경분22 로컬/모의 PASS, 기존57·UnityQA 반복0. Discord는 WAITING_FOR_USER_SETUP. 실제CLI exec1은 reserved openai provider override로 bootstrap 실패/완료turn0, 자동 재호출0. 수정 준비안은 추론 없는 설정검사만PASS. 큐에 NOT_VERIFIED·미술승인대기로 보존했습니다.
+
+원본Save/UserData 포함7356 SHA변경0·원본status/HEAD불변·제품0·SFX PAUSED·Push/main병합0. 구현1390086a. 다음: 대표 Portal/로컬설정 후 실제Discord 확인, 새추론1회는 별도승인 필요. [Phase2 보고](팀운영/Discord_AI_Collab_Phase2_Report_20261023.md).
+
 ## 2026-10-23 Discord 협업 로컬 파일럿 — LOCAL_ONLY
 
 별도 codex/discord-ai-collaboration에서 SQLite 큐·역할8·최대동시2·SHA/범위 승인·예산/일요일·ZIP/PNG 검역·Discord slash9 모의 어댑터를 구현했습니다. 신규 로컬57 PASS/0 FAIL, 실제 별도 프로세스 재시작 중복0. 설계 ba82c396·구현094ea98d. [완료 보고](팀운영/Discord_AI_Collab_Local_Pilot_Report_20261023.md).

@@ -1,0 +1,10 @@
+{
+  "status": "WAITING_FOR_USER_SETUP",
+  "missing_fields": [
+    "DISCORD_BOT_TOKEN",
+    "LIMITLESS_OWNER_IDS",
+    "LIMITLESS_GUILD_ID",
+    "LIMITLESS_CHANNEL_IDS"
+  ],
+  "live_test": "NOT_VERIFIED"
+}
