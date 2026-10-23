@@ -29,11 +29,13 @@ async def main():
             receipts=[dict(r) for r in db.execute('SELECT * FROM control_interactions ORDER BY created')]
             schedules=[{k:r[k] for k in r.keys() if k!='owner'} for r in db.execute('SELECT * FROM control_schedules ORDER BY created')]
             reports=[dict(r) for r in db.execute('SELECT id,state,message_id FROM control_outbox')]
+            operation=db.execute('SELECT mode FROM operation_mode WHERE singleton=1').fetchone()[0]
+            checkpoints=db.execute('SELECT count(*) FROM operation_checkpoints').fetchone()[0]
             monitor=db.execute("SELECT value FROM control_settings WHERE key='usage_monitor'").fetchone()
         status_path=Path('data/phase2/bot-service-status.json')
         status=json.loads(status_path.read_text(encoding='utf8')) if status_path.exists() else {}
         result={'registered_subcommands':names,'required_six_registered':required<=set(names),
-                'one_owner_configured':True,'real_gateway_receipts':receipts,'schedules':schedules,
+                'operation_mode':operation,'checkpoints':checkpoints,'mode_commands_registered':{'mode','resume','finish'}<=set(names),'one_owner_configured':True,'real_gateway_receipts':receipts,'schedules':schedules,
                 'reports':reports,'bot_status':status,'heartbeat_fresh':time.time()-status.get('last_tick',0)<30,
                 'usage_monitor':json.loads(monitor[0]) if monitor else None,
                 'ai_calls':0,'shutdown_enabled':False,'autostart_registered':False,'observed':time.time()}

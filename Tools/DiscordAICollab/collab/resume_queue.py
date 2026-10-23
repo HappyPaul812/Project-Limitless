@@ -42,6 +42,10 @@ class ResumeQueue:
         from .real_roles import run_once,validate,discord_text
         self.store.authorize(identity)
         with self.store.tx() as db:
+            from .operating_modes import mode,observe
+            from .scheduling import usage_decision
+            observe(db,self.store.clock(),usage_decision(db,self.store.clock()))
+            if mode(db)!='AUTO_RESUME':return None
             if gate(db,self.store.clock(),ai=True,duration=90) or self.store.setting(db,'paused')=='1':return None
             if db.execute("SELECT count(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]>=2:return None
             if db.execute("SELECT count(*) FROM control_resume WHERE state='RUNNING'").fetchone()[0]>=1:return None
@@ -61,6 +65,18 @@ class ResumeQueue:
                 binary=Path(row['executable'])
                 if binary.is_symlink() or not binary.is_file() or hashlib.sha256(binary.read_bytes()).hexdigest()!=row['exe_sha']:
                     db.execute("UPDATE control_resume SET state='NOT_VERIFIED',result='EXECUTABLE_CHANGED' WHERE id=?",(row['id'],));continue
+                # 재개 직전 최신 정본을 읽습니다. 불명·변경은 호출 없이 영속 HOLD합니다.
+                from .adapters import GitHubReader
+                reason=None
+                try:
+                    reader=GitHubReader()
+                    for ref,expected in plan['source_refs'].items():
+                        latest=reader.read('base' if ref=='main' else 'canonical_ref',None if ref=='main' else ref).get('sha')
+                        if latest!=expected:reason='BASE_SHA_CHANGED';break
+                except Exception:reason='BASE_SHA_NOT_VERIFIED'
+                if reason:
+                    db.execute("UPDATE control_resume SET state='HOLD',result=? WHERE id=?",(reason,row['id']))
+                    continue
                 db.execute("UPDATE control_resume SET state='RUNNING' WHERE id=?",(row['id'],))
                 chosen=dict(row);break
         if chosen is None:return None

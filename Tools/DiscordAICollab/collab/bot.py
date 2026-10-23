@@ -178,9 +178,18 @@ def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None):
     async def pause(interaction: discord.Interaction, role: str = 'all'):
         await dispatch(interaction,'pause',{'role':role})
 
-    @group.command(name='resume',description='전체 또는 역할 재개; 결과불명 작업 자동 재실행 없음')
+    @group.command(name='unpause',description='기존 수동 정지 해제; AI 재실행 승인 아님')
     async def resume(interaction: discord.Interaction, role: str = 'all'):
         await dispatch(interaction,'resume',{'role':role})
+
+    @group.command(name='mode',description='운영 모드 조회·선택: MANUAL / AUTO_RESUME / SAFE_SHUTDOWN')
+    @app_commands.choices(value=[app_commands.Choice(name=x,value=x) for x in ('MANUAL','AUTO_RESUME','SAFE_SHUTDOWN')])
+    async def operating_mode(interaction: discord.Interaction,value: str | None = None):
+        await control_dispatch(interaction,'mode',dict(value=value))
+
+    @group.command(name='resume',description='A 자동 재개 모드 설정; 기존 승인·사용량·SHA 재검증 필수')
+    async def auto_resume(interaction: discord.Interaction):
+        await control_dispatch(interaction,'resume')
 
     @group.command(name='budget',description='micro-USD 호출 상한 설정; 실제 AI 실행은 별도 단계')
     async def budget(interaction: discord.Interaction, task_limit: int, day_limit: int, month_limit: int):
@@ -226,8 +235,8 @@ def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None):
         await control_dispatch(interaction, 'usage')
 
     @group.command(name='finish', description='신규 접수 차단·마감 점검 기록; Git 통합 없음')
-    async def finish(interaction: discord.Interaction, schedule_id: str):
-        await control_dispatch(interaction, 'finish', dict(schedule_id=schedule_id))
+    async def finish(interaction: discord.Interaction, schedule_id: str | None = None, until: str | None = None, cleanup_minutes: int = 10, scope: str | None = None):
+        await control_dispatch(interaction, 'finish', dict(schedule_id=schedule_id,until=until,cleanup_minutes=cleanup_minutes,scope=scope))
 
     @group.command(name='shutdown', description='특정 예약 PC 종료 조건 모의 확인; 실제 종료 비활성')
     async def shutdown(interaction: discord.Interaction, schedule_id: str, confirm: str):

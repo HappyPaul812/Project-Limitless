@@ -19,6 +19,9 @@ class GitHubReader:
         # 경로·호스트·HTTP method를 호출자가 조립할 수 없게 합니다.
         if kind == 'base':
             endpoint = 'commits/main'
+        elif kind=='canonical_ref' and number in ('main','docs/planning','docs/art-new','docs/art-renewal'):
+            from urllib.parse import quote
+            endpoint='commits/'+quote(number,safe='')
         elif kind in ('issues','pulls','comments') and type(number) is int and number>0:
             endpoint = f'issues/{number}/comments?per_page=100' if kind=='comments' else f'{kind}/{number}'
         else:

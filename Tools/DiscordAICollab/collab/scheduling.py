@@ -10,7 +10,7 @@ from datetime import datetime
 
 from .core import Denied, KST
 
-ACTIONS = {'schedule', 'schedule-status', 'cancel', 'usage', 'finish', 'shutdown'}
+ACTIONS = {'mode', 'resume', 'schedule', 'schedule-status', 'cancel', 'usage', 'finish', 'shutdown'}
 SCHEMA = '''
 CREATE TABLE IF NOT EXISTS control_schedules(
  id TEXT PRIMARY KEY, deadline REAL NOT NULL, cleanup INTEGER NOT NULL,
@@ -33,6 +33,8 @@ INSERT OR IGNORE INTO control_settings VALUES('mode','SIMULATION_ONLY');
 
 
 def initialize(db):
+    from .operating_modes import initialize as initialize_modes
+    initialize_modes(db)
     # executescript는 기존 트랜잭션을 commit하므로 각 문장을 따로 실행합니다.
     for statement in SCHEMA.split(';'):
         if statement.strip():
@@ -116,7 +118,7 @@ def usage_decision(db, now):
 def gate(db, now, *, ai=False, intake=False, duration=90):
     """공통 트랜잭션에서 마감과 사용량을 재검증합니다. 회복만으로 모델을 호출하지 않습니다."""
     row = advance(db, now)
-    if not intake and datetime.fromtimestamp(now, KST).weekday() == 6:
+    if datetime.fromtimestamp(now, KST).weekday() == 6:
         return 'SUNDAY_HOLD'
     if row:
         if row['state'] != 'ACTIVE':
@@ -175,6 +177,9 @@ class Scheduler:
     def tick(self):
         with self.store.tx() as db:
             row = advance(db, self.store.clock())
+            from .operating_modes import observe,checkpoint
+            observe(db,self.store.clock(),usage_decision(db,self.store.clock()))
+            if row and row['state']!='ACTIVE':checkpoint(db,self.store.clock(),'DEADLINE_HOLD')
             mode=db.execute("SELECT value FROM control_settings WHERE key='mode'").fetchone()[0]
             return {'mode': mode, 'schedule': row,
                     'usage': usage_decision(db, self.store.clock()),
@@ -205,6 +210,11 @@ class Scheduler:
     def command(self, identity, event, action, args=None):
         self.store.authorize(identity)
         args = args or {}
+        if action=='finish' and args.get('until'):
+            with self.store.tx() as db:
+                from .operating_modes import mode as current_mode
+                if current_mode(db)!='SAFE_SHUTDOWN':raise Denied('먼저 SAFE_SHUTDOWN 모드를 선택하세요')
+            return self.command(identity,event,'schedule',args | {'next_start':None})
         if action not in ACTIONS or not isinstance(args, dict) or not isinstance(event, str) or not 1 <= len(event) <= 160:
             raise Denied('예약 명령 형식 오류')
         fingerprint = hashlib.sha256(json.dumps([action, args], sort_keys=True).encode()).hexdigest()
@@ -218,7 +228,11 @@ class Scheduler:
             now = self.store.clock()
             current = advance(db, now)
             mode=db.execute("SELECT value FROM control_settings WHERE key='mode'").fetchone()[0]
-            if action == 'schedule':
+            if action in ('mode','resume'):
+                from .operating_modes import mode as current_mode,change
+                target = 'AUTO_RESUME' if action=='resume' else args.get('value')
+                result = change(db,now,target) if target else {'operation_mode':current_mode(db),'note':'주일 신규 업무·자동 재개 금지 / 종료·Push 비활성'}
+            elif action == 'schedule':
                 cleanup = args.get('cleanup_minutes', 10)
                 if type(cleanup) is not int or not 2 <= cleanup <= 120:
                     raise Denied('정리 시간은 2~120분입니다')
@@ -236,17 +250,23 @@ class Scheduler:
                     db.execute("UPDATE control_schedules SET state='SUPERSEDED' WHERE id=?", (current['id'],))
                 elif args.get('schedule_id'):
                     raise Denied('수정 대상 예약이 없습니다')
+                scope=args.get('scope') or '기존 승인된 읽기 전용 업무 정리만; 통합·Push·종료 승인 없음'
+                if not isinstance(scope,str) or len(scope)>500:raise Denied('작업 범위는 500자 이하입니다')
                 sid = 'SCH-' + uuid.uuid4().hex[:12]
                 db.execute('INSERT INTO control_schedules VALUES(?,?,?,?,?,?,?)',
                            (sid, deadline, cleanup * 60, next_start, 'ACTIVE', identity.user_id, now))
+                db.execute('INSERT INTO operation_scopes VALUES(?,?,?)',(sid,scope,'NO_INTEGRATION_APPROVAL'))
+                from .operating_modes import mode as current_mode
+                if current_mode(db)=='AUTO_RESUME':raise Denied('A 모드 해제 후 B 모드와 마감 예약을 선택하세요')
                 result = {'mode': mode, 'id': sid, 'state': 'ACTIVE',
                           'deadline': seoul(deadline), 'stop_intake': seoul(deadline - cleanup * 60),
                           'next_start': seoul(next_start) if next_start else '미지정',
-                          'note': '예약은 AI·통합·PC 종료 승인이 아닙니다'}
+                          'note': '예약은 AI·통합·PC 종료 승인이 아닙니다 / 범위: '+scope}
             elif action == 'usage':
                 result = usage_decision(db, now)
             elif action == 'schedule-status':
-                result = {'schedule': current, 'usage': usage_decision(db, now),
+                from .operating_modes import mode as current_mode
+                result = {'schedule': current, 'operation_mode':current_mode(db), 'usage': usage_decision(db, now),
                           'mode': mode, 'next_start_behavior': '시간 이후 재검증만; 자동 AI 실행 없음'}
             else:
                 if not current or args.get('schedule_id') != current['id']:
@@ -303,6 +323,8 @@ def shutdown_preview(evidence, now):
 
 
 def format_control(action, value):
+    if action in ('mode','resume') and 'operation_mode' in value:
+        return '운영 모드: '+value['operation_mode']+'\n'+value['note']
     """Discord 응답에는 비밀이나 전체 업무 payload를 포함하지 않습니다."""
     labels = {'AVAILABLE': '사용 가능 관측', 'UNKNOWN': '확인 불가·보류',
               'EXHAUSTED': '한도 소진·보류', 'RECHECK_REQUIRED': '회복 시각 경과·재확인 필요'}
@@ -314,12 +336,12 @@ def format_control(action, value):
         if 'observed' in value:
             lines.append('확인 시각: ' + seoul(value['observed']))
         return '\n'.join(lines + [('공식 App Server 자동 조회 연결·확인 불가 시 보류.' if value.get('source')=='CODEX_APP_SERVER_OFFICIAL' else '공식 자동 갱신 미연결.')+' 유료 전환·크레딧·재설정권 사용 없음.'])
-    if action == 'schedule':
+    if action == 'schedule' or (action=='finish' and 'deadline' in value):
         return f"예약 {value['id']} / 서울 시각\n신규 접수 중단: {value['stop_intake']}\n마감: {value['deadline']}\n다음 확인: {value['next_start']}\n{value['note']}"
     if action == 'schedule-status':
         row = value['schedule']
         if not row:
-            return '현재 예약 없음. 실제 종료·자동 AI 실행 비활성.'
+            return '운영 모드: '+value.get('operation_mode','MANUAL')+' / 현재 예약 없음. 실제 종료 비활성; A 재개는 기존 유효 승인만 허용.'
         return (f"예약 {row['id']} / {row['state']}\n마감: {seoul(row['deadline'])}\n"
                 f"다음 확인: {seoul(row['next_start']) if row['next_start'] else '미지정'}\n"
                 + ('운영 제어·실제 종료 비활성.' if value.get('mode')=='LIVE_CONTROL' else '모의 안전 제어 모드·다음 시각 자동 호출 없음.'))
