@@ -1,0 +1,26 @@
+[
+  {
+    "action": "mode",
+    "response_id": "1563220451394588885",
+    "gateway": 1,
+    "ephemeral": 1,
+    "owner_verified": 1,
+    "created": 1792771198.5871727
+  },
+  {
+    "action": "usage",
+    "response_id": "1563220770954682408",
+    "gateway": 1,
+    "ephemeral": 1,
+    "owner_verified": 1,
+    "created": 1792771276.194657
+  },
+  {
+    "action": "schedule-status",
+    "response_id": "1563221094306156644",
+    "gateway": 1,
+    "ephemeral": 1,
+    "owner_verified": 1,
+    "created": 1792771352.479942
+  }
+]

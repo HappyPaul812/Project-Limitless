@@ -1,0 +1,13 @@
+{
+  "operation_mode": "MANUAL",
+  "resume_queue": 0,
+  "observed_kst": "2026-10-24 01:05:06 KST",
+  "bot": {
+    "status": "RUNNING",
+    "heartbeat_fresh": true
+  },
+  "art": {
+    "status": "RUNNING",
+    "heartbeat_fresh": true
+  }
+}

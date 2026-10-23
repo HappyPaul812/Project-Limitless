@@ -1,0 +1,38 @@
+{
+  "actual_registered_count": 0,
+  "plans": [
+    {
+      "delay": "PT30S",
+      "wrapper_sha_matches": true,
+      "restart_count": "3",
+      "service": "Art",
+      "approval_present": false,
+      "same_user": true,
+      "multiple_instances": "IgnoreNew",
+      "run_level": "LeastPrivilege",
+      "logon_type": "InteractiveToken",
+      "restart_interval": "PT1M",
+      "enabled": "false",
+      "starter_sha_matches": true,
+      "allow_hard_terminate": "false",
+      "trigger_same_user": true
+    },
+    {
+      "delay": "PT30S",
+      "wrapper_sha_matches": true,
+      "restart_count": "3",
+      "service": "Bot",
+      "approval_present": false,
+      "same_user": true,
+      "multiple_instances": "IgnoreNew",
+      "run_level": "LeastPrivilege",
+      "logon_type": "InteractiveToken",
+      "restart_interval": "PT1M",
+      "enabled": "false",
+      "starter_sha_matches": true,
+      "allow_hard_terminate": "false",
+      "trigger_same_user": true
+    }
+  ],
+  "checked_utc": "2026-10-23T16:00:19.3949186Z"
+}
