@@ -1,3 +1,16 @@
+# PLANNING 2026-10-23 — 신임 리뉴얼 담당 완료보고 실제 검토·새 작업 #60 발주
+
+바울 대표: “보고서 확인하고 리뉴얼도 일 시켜,”. `docs/art-renewal` 실제 최신 보고 [2026-10-23 비고유 자산 정적감사+NPC2 시안](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_NonOriginal_ActiveVsStored_Audit_NPCPilot2_20261023.md)와 최신 인계 확인. 담당 commit `2ea29d6a82b3722ba1822bb3d3d848826c25605e`, `1c121d9ac6d54bd8df858353081bf3787e4d83d0`.
+
+- **정적감사 완료(실 Unity GameView 아직 X):** 54행 CSV, Eldiran NPC12 Stable ID→Resources.Load Sprite12/12→.meta GUID/PPU28. 실제 NPC12 렌더 보장 아님. MonsterDefinitions18의 01~04 일부 Scene Spawn 연결 확인, `forest_spider` 기존 Spider Idle/Walk/Attack/Shoot Sprite의 원본 권리/최종승인 미확정. PVFX Foundry 효과8(Resource/코드7), Kenney BattleIcons 21 로드경로, Game-icons.net14 보관(실UI미확정), Xariami 라이선스 확인 불가, PilotBee ThirdParty 미연결. 승인 Wolf/Bear/Fox·Ch2 공식11~18·맵 전부 보호.
+- **리뉴얼 NPC 시안2 실제 납품 보고:** `OGA03_GeneralShop` 상인 + `OGA09_VillageRepresentative` 주민대표 512PNG2, SVG/128·40 Preview/ZIP manifest·SHA. 통합감사 ZIP `Limitless_Chapter12_NonOriginal_Audit_NPCPilot2_20261023.zip` SHA256 `4b9e08538f8669cc00c2a8a9f73db5141f8377fe5a94cf69a9d137e38847b4dd`; NPC 시안 ZIP `Limitless_Eldiran_NPC_Pilot2_Concepts_20261023.zip` SHA256 `7162600a51fddffc8a51087c8d1bbb1f8b14c928250ade120c197d23677fb0b3`. GitHub는 문서만; 그림 바이너리 이 대화에서 실물 접근 안 됨. **바울 대표 미술승인/실게임 공식 Sprite 적용0**.
+- 지난 기획 우선 대상은 `OGA03 + OGA20_GateGuard`였으므로 추가된 `OGA09` 시안은 **보류·보존**, 누락된 남문경비 `OGA20` 1종만 다음 미술 콘셉트. **[신규 리뉴얼 Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60)** 작성·발주: GateGuard 오리지널 512 PNG1+3인 비교/128·40/Manifest SHA/ZIP, `forest_spider` 현행 아트/Scene Spawn/권리 1페이지 사전조사. 실제 사용/공식승인 미확인 Spider **대량 재제작 금지**, existing NPC 2 PNG 및 감사54 중복 금지.
+- 원본 `Resources/VillageNpcSprites/Eldiran/OGA20_GateGuard.png` 및 StableID `starter-village-gate-guard`, GUID/meta/PPU28, NPC 상호작용·씬·퀘스트·Save 변경0. 새 512 콘셉트는 원본 Sprite 직접대체가 아님. 이후 사용자 스타일 승인 + Codex 별도 격리 Unity GameView·통행/Collider 검수 전 공식 적용 금지.
+- [기존 감사 이슈 #57](https://github.com/HappyPaul812/Project-Limitless/issues/57)에 결과 검토와 #60로 역할 분리 기록. 리뉴얼 담당 `docs/art-renewal`에서 새 미술 보고, main 변경0. 기획은 `docs/planning`에 기록. **Issue 등록은 실제 담당 세션 자동 실행이 아니며, 사용자 전달/담당 결과 확인 필요**.
+- Chapter3 Main23 격리148PASS 및 화면정리 #58·신규아트 #59·Main24 SkillSave #46은 기획 기존 흐름 그대로, 리뉴얼이 Chapter3 미술로 넘어오지 않게 병렬 분리.
+
+---
+
 # PLANNING 2026-10-23 사용자 최신 지시 — 리뉴얼 담당 독립 진행 유지 / Chapter3 Main23 마을 화면+Main24 Save 기획 선행
 
 - 바울 대표 명시: **“됐어 지금 열심히 일 하고 있어. 넵둬. 우리는 챕터 3 계속하자.”** 따라서 앞서 리뉴얼 [#57] 작업축소/진행독촉 지시는 **추가 추진하지 않음**. 리뉴얼 담당 현재 작업 독립 보장, 금일 추가 Issue댓글/재할당/독촉0. 기획/Codex/신규 아트는 Chapter3 업무만.
