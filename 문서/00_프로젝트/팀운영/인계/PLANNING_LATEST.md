@@ -1,3 +1,13 @@
+# 2026-10-23 / 바울 대표 최종 운영 지시 — 전체 8담당 GitHub 정식 보고 의무화
+
+- 바울 대표 원문: **“각 담당은 다 의무화로 해줘.”** 이제 **기획·Codex·Ch1/2 리뉴얼·Ch3+ 신규 아트·TTS·BGM·SFX·개발기록 영상** 및 새/후임 담당이 전부 **GitHub 정식 보고 필수**. 보고서 복붙 전달을 바울 대표에게 요청하는 일을 원칙적으로 중단. 업무 완료/일일마감/인계는 자기 문서브랜치 Markdown 보고서 **실제 commit** + 역할 최신 인계 + 관련 Issue/PR 완료댓글 + 바울 대표에게 GitHub URL/브랜치/실제 SHA/승인·검증 상태 보고, 총4개를 원칙으로 한다. GitHub 쓰기 미완이면 `REPORT_PENDING_GITHUB_WRITE`, 문서 저장 성공·로컬 Push/본게임 적용/원격 main 병합 구별.
+- [전담당 정책 정본](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/팀운영/ALL_TEAMS_GITHUB_REPORTING_POLICY_20261023.md) `docs/planning` 최초 생성 commit `c9e6adfa106674d5a37985e4a6ca2ceb539d3a1d`, [공통 운영 시행 Issue #61](https://github.com/HappyPaul812/Project-Limitless/issues/61) 생성. `COMMON_RULES.md` 정책 추가, `START_HERE.md` 및 `SESSION_HANDOFF.md` 링크, Codex 루트 `AGENTS.md` 개별 안전규칙 추가 모두 **docs/planning**에 실제 커밋: `89e7f70f5161d8cd59b089880bbf8bb1b2511289` → `c715ba3aa029a735a79d423f0151227e26fe49d0` → `394c7b0884a90968a782bf9a907ec720d5ead7a3` → `78e99a90697b6f0b82815b5168b97c6f96a4d37b`. **원격 main 미병합, main 직접 커밋 금지.**
+- 기존 활성 업무에 정책을 **담당별 GitHub 댓글로 통보**: 신규아트 [#59](https://github.com/HappyPaul812/Project-Limitless/issues/59), 리뉴얼 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60), Codex [#58](https://github.com/HappyPaul812/Project-Limitless/issues/58), TTS [#20](https://github.com/HappyPaul812/Project-Limitless/issues/20), BGM [#31](https://github.com/HappyPaul812/Project-Limitless/issues/31), SFX [#33](https://github.com/HappyPaul812/Project-Limitless/issues/33), 개발 영상 [#34](https://github.com/HappyPaul812/Project-Limitless/issues/34). 기획은 본 인계와 #61로 이행. 각 담당이 자신의 브랜치/인계를 실제 갱신해 **수용 완료한 것까지는 아직 확인되지 않음**. 기존 작업/승인 미술/음원·게임 동작 변경 지시 없음.
+- **예외/보호:** 대용량 아트·오디오·영상 바이너리 자동 GitHub upload 강제가 아니라 파일명/검증된 SHA/실납품위치 및 GitHub 등록여부를 문서화. 개인키·TTS API키·Save/UserData·사용자 고유 로컬 파일 유출금지. Codex의 원격 `git push`는 이전처럼 사용자 **명시적 요청 있을 때만**. `main` PR 병합 또한 별도 사용자 승인 EOD. 새 세션들이 GitHub 댓글만 보고 자동 행동한다고 주장하지 않음; 다음 업무 전달 시 #61 확인 요구.
+- **후속:** 각 역할 `*_LATEST.md`의 정책 준수 commit/SHA 확인→#61 체크. 공통정책 파일 및 COMMON_RULES·START_HERE·SESSION_HANDOFF·AGENTS 변경은 사용자의 통합 요청/검증 과정에서만 선별 PR로 main 반영. 보고 완료는 `GITHUB_REPORT_COMPLETE` 4조건 증명 시.
+
+---
+
 # 2026-10-23 / Chapter3 신규 아트 #59 구두 보고 전달 — GitHub 보고 원칙 변경
 
 - 바울 대표가 #59 마을 외형 보완 담당 보고를 **대화에 복사**해 전달: `ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`, 범위 오르나1·남문 목석 건물 정면/문/지붕1세트·스킬상점 또는 여관 외형/간판1세트. 기존43 중 사용 가능 자산 보존, 승인 지면9 보호, 따뜻한 마을·북쪽 추위·LIMITLESS 화풍 유지, 임시 시각후보/게임 기능 변경0. **실 PNG/ZIP, 파일별 명세·SHA, 스케일/접합 Preview, 실제 Unity 검사 내용은 보고 본문에 첨부되지 않아 미확인**; 아트 납품·게임 적용·대표 승인 완료로 판단하지 않음.
