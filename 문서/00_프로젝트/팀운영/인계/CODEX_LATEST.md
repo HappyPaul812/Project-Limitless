@@ -1,3 +1,7 @@
+## 2026-10-23 RenewalArtAgent 실제1회 VERIFIED — 네 역할 개별 확인 후 중지
+
+대표 승인 Renewal만 공식ChatGPT구독CLI 읽기전용1회/90초상한. exit0/15.313초/turn1/최종파일·JSONL검증PASS, 입력17737/캐시0/출력335토큰. Discord [REAL AI / VERIFIED / RenewalArtAgent] 1563169806088142859 게시PASS. Ch1·2범위/승인원본보호·단일포즈TECH_PASS/애니메이션교체HOLD/대표미술승인대기/CC BY3·4충돌미해결 인식 확인. 다른AI/재시도/API전환0·네AI전체자동협업미실행. 신규fake4PASS/0FAIL·구문PASS, 기존12업무evidence불변·원본7356 SHA변경/누락0·git상태동일·Unity/PNG/Save/제품/미술승인/Push/merge0. 구현84c72a1d. [성공보고](../RenewalArtAgent_Real_Verified_20261023.md). 이번시험종료후중지, 다음업무인계는별도지시필요. Unity 사용자확인 없음.
+
 ## 2026-10-23 NewArtAgent 실제 재시험 VERIFIED — 1회 성공 후 중지
 
 대표 새 승인으로 NewArt만 공식ChatGPT구독CLI 읽기전용1회/90초상한 실행. exit0/13.641초/turn1/최종파일·JSONL·엄격검증PASS, 입력18134/캐시0/출력378토큰. Discord [REAL AI / VERIFIED / NewArtAgent] 1563167449531154594 게시PASS. Chapter3범위·승인43/지면9보호·Orna visible80/canvas84.63·KEEP/HOLD·최신58 NEW_ART_REQUIRED_0·대표최종미술승인대기 인식 확인. Renewal/다른AI/재시도/API전환0. 새슬롯CONSUMED/과거실패보존·기존11업무evidence불변·원본7356 SHA변경/누락0·git상태동일·Unity/PNG/Save/제품/미술승인/Push/merge0. 새경계fake4PASS/0FAIL·구문PASS, 기존9및전수QA반복0. 구현fcb9167e. [성공보고](../NewArtAgent_Retest_Verified_20261023.md). 이번1회종료후중지, Renewal등다음단계별도승인필요. Unity 사용자확인 없음.

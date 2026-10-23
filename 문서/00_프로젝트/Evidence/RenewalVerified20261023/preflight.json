@@ -1,0 +1,18 @@
+{
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "prompt_bytes": 22580,
+  "role": "RenewalArtAgent",
+  "timeout_seconds": 90,
+  "slot_unused": true
+}
