@@ -1,0 +1,15 @@
+{
+  "before": {
+    "primary_remaining_percent": 79,
+    "weekly_remaining_percent": 68,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE"
+  },
+  "after": {
+    "primary_remaining_percent": 76,
+    "weekly_remaining_percent": 68,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE"
+  },
+  "scope": "ACCOUNT_WIDE_DELTA_NOT_ATTRIBUTED_TO_THIS_CALL"
+}

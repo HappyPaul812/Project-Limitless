@@ -1,0 +1,19 @@
+{
+  "plan_sha256": "f19fd546a3f0c37c136093e419ded07a3582a2618d0b35277017d9f44fbabfc0",
+  "prompt_bytes": 16687,
+  "role": "PlanningAgent",
+  "new_slot_unused": true,
+  "old_slot_state": "CONSUMED",
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  }
+}

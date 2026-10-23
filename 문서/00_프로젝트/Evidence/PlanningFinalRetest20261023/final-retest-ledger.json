@@ -1,0 +1,21 @@
+{
+  "slots": {
+    "REAL_ROLE_READONLY_20261023_ONE_TOTAL": "CONSUMED",
+    "PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED": "CONSUMED"
+  },
+  "this_retest_usage_rows": 1,
+  "counts": {
+    "APPROVAL_PENDING": 2,
+    "DONE": 2,
+    "NOT_VERIFIED": 2
+  },
+  "usage": [
+    [
+      15747,
+      371,
+      "COMPLETED"
+    ]
+  ],
+  "integrity": "ok",
+  "raw_final_file_removed": true
+}

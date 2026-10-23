@@ -8,7 +8,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock
 
 from collab.core import Store, Identity, Denied
-from collab.real_roles import SLOT, ROLE_FILES, make_plan, grant_once, run_once, parse_result, discord_text
+from collab.real_roles import SLOT, RETEST_SLOT, ROLE_FILES, digest, make_plan, grant_once, run_once, parse_result, discord_text
 
 
 class RealRoleTests(unittest.TestCase):
@@ -115,3 +115,16 @@ class RealRoleTests(unittest.TestCase):
     def test_first_trial_other_roles_are_denied(self):
         with self.assertRaises(Denied):
             grant_once(self.store,self.owner,make_plan('CodexAgent',self.sources,clock=lambda:self.now))
+
+    def test_explicit_retest_slot_preserves_consumed_first_slot(self):
+        grant_once(self.store,self.owner,self.plan);self.execute()
+        retest={**self.plan,'slot':RETEST_SLOT}
+        retest['sha256']=digest({k:v for k,v in retest.items() if k!='sha256'})
+        grant_once(self.store,self.owner,retest)
+        result=run_once(self.store,self.owner,retest,self.root/'retest-empty','codex-test',invoke=self.fake)
+        self.assertEqual('PASS',result['status'])
+        with self.store.tx() as db:
+            for slot in (SLOT,RETEST_SLOT):
+                self.assertEqual('CONSUMED',json.loads(self.store.setting(db,slot))['state'])
+        with self.assertRaises(Denied):grant_once(self.store,self.owner,retest)
+        self.assertIn('[REAL AI / VERIFIED]',discord_text(result))

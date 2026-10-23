@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "mode": "REAL_CLI_READONLY",
+  "execution_status": "EXIT_ZERO",
+  "validation_status": "PASS",
+  "usage": {
+    "input_tokens": 15747,
+    "cached_input_tokens": 0,
+    "output_tokens": 371
+  },
+  "completed_turns": 1,
+  "reason": "OK",
+  "reason_codes": [],
+  "diagnostics": {
+    "event_counts": {
+      "thread.started": 1,
+      "turn.started": 1,
+      "item.completed": 1,
+      "turn.completed": 1
+    },
+    "item_counts": {
+      "agent_message": 1
+    },
+    "commentary_completed": 0,
+    "explicit_final_completed": 0,
+    "legacy_messages_completed": 1,
+    "invalid_line_numbers": [],
+    "final_source": "output-last-message",
+    "final_chars": 718,
+    "stdout_chars": 1072,
+    "stderr_chars": 0
+  },
+  "answer": {
+    "role": "PlanningAgent",
+    "summary": "현재 업무는 #59 아트 표시·배치 기준과 #58 남문 대상의 미결 사항을 정리하고 담당 간 인계를 조율하는 것입니다. 최신 인계 기준 오르나는 visible80px(전체 캔버스84.63px)이 우선안이며, 과거 wholecanvas82px은 구안입니다. 주택 본체·지붕·문·Collider는 KEEP_OLD, 신규 부품과 독립 간판은 배치 HOLD입니다. #65 격리 Unity 23PASS는 Codex 보고이며 제가 QA·아트 제작을 수행한 것은 아닙니다. 기존 수동 이미지·정상 기능·Quest·Save·Scene 등을 보호하며 본편 적용·Push·병합은 없습니다. 최종 미술 승인은 바울 대표만 결정하고 다음 AI 호출도 별도 승인입니다. main 정본과 별도 브랜치의 최신 보고는 구분해야 하며, 인계 하단은 잘려 있어 이후 내용은 확인할 수 없습니다.",
+    "next_review": "제공된 인계에 따르면 기존 지시를 받은 Codex의 #58 Scene·VisualGapList 읽기전용 대조 보고가 다음 검토 대상입니다. 남문 건물이 제안인지 필수 실자산인지와 실제 위치를 확인하고, 북서 Residence와 혼동하지 않아야 합니다. 최신 크기 기준과 구안의 차이, 원본 외형에 대한 최종 미술 승인 미완료 상태를 유지해 검토하겠습니다. 이번 응답에서는 도구 접근·변경·추가 AI 호출을 실행하지 않았습니다."
+  },
+  "exit_code": 0,
+  "task_id": "L-1989925c534a45a8",
+  "plan_sha256": "f19fd546a3f0c37c136093e419ded07a3582a2618d0b35277017d9f44fbabfc0",
+  "cli_exec_attempts": 1,
+  "api_fallback": false,
+  "subscription_applied": "AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED",
+  "handoff": {
+    "task_id": "L-1989925c534a45a8",
+    "state": "APPROVAL_PENDING"
+  }
+}

@@ -9,7 +9,7 @@ from pathlib import Path
 
 import discord
 from .core import Store, Denied
-from .real_roles import ROLE_FILES, SLOT, make_plan, discord_text
+from .real_roles import ROLE_FILES, SLOT, RETEST_SLOT, make_plan, discord_text
 from .phase2 import cli_info, verify_cli_controls
 
 
@@ -32,7 +32,7 @@ def prepare(root):
     return result
 
 
-async def report(root, actual_result=False):
+async def report(root, actual_result=False, slot=SLOT):
     result=json.loads((root/'readiness.json').read_text(encoding='utf8'))
     channels=[int(x) for x in os.environ['LIMITLESS_CHANNEL_IDS'].split(',')]
     guild=int(os.environ['LIMITLESS_GUILD_ID'])
@@ -50,7 +50,7 @@ async def report(root, actual_result=False):
     if actual_result:
         # 임의 모델 결과 JSON을 신뢰하지 않고 승인 실행기가 기록한 큐 근거만 게시합니다.
         with store.tx() as db:
-            row=db.execute('SELECT evidence FROM tasks WHERE event_key=?',(SLOT,)).fetchone()
+            row=db.execute('SELECT evidence FROM tasks WHERE event_key=?',(slot,)).fetchone()
         if not row or not row[0]:
             raise Denied('실제 AI 결과 없음: MOCK를 REAL로 게시하지 않습니다')
         message=discord_text(json.loads(row[0]))
@@ -62,16 +62,17 @@ async def report(root, actual_result=False):
             raise Denied('허용된 서버 텍스트 채널 필요')
         sent=await channel.send(message,allowed_mentions=discord.AllowedMentions.none())
     receipt={'status':'MESSAGE_SENT','message_id':str(sent.id),'slash_receipts':slash,'kind':'REAL_RESULT' if actual_result else 'READINESS_ONLY'}
-    (root/('discord-result-report.json' if actual_result else 'discord-report.json')).write_text(json.dumps(receipt,indent=2),encoding='utf8')
+    filename='discord-retest-report.json' if slot==RETEST_SLOT else ('discord-result-report.json' if actual_result else 'discord-report.json')
+    (root/filename).write_text(json.dumps(receipt,indent=2),encoding='utf8')
     return receipt
 
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('action',choices=('prepare','report','result-report'))
+    parser.add_argument('action',choices=('prepare','report','result-report','retest-result-report'))
     args=parser.parse_args(); root=Path('data/ai-ready'); root.mkdir(parents=True,exist_ok=True)
     try:
-        result=prepare(root) if args.action=='prepare' else asyncio.run(asyncio.wait_for(report(root,args.action=='result-report'),45))
+        result=prepare(root) if args.action=='prepare' else asyncio.run(asyncio.wait_for(report(root,args.action in ('result-report','retest-result-report'),RETEST_SLOT if args.action=='retest-result-report' else SLOT),45))
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except Exception:
         print('AI_READINESS_NOT_VERIFIED: 비밀 없는 설정/문서/채널 상태를 확인하세요.')

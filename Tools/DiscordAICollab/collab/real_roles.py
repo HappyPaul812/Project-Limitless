@@ -15,6 +15,7 @@ from .phase2 import child_environment, cli_info, probe_command, verify_cli_contr
 from .output_parser import parse_result, korean_reason
 
 SLOT = 'REAL_ROLE_READONLY_20261023_ONE_TOTAL'
+RETEST_SLOT = 'PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED'
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
               'NewArtAgent':'SPRITE_ART','RenewalArtAgent':'WORLD_ART_RENEWAL'}
 SCHEMA = {'type':'object','properties':{'role':{'type':'string'},'summary':{'type':'string'},
@@ -56,7 +57,7 @@ def make_plan(role, sources, clock=time.time):
 
 def validate(plan):
     body={k:v for k,v in plan.items() if k!='sha256'}
-    if (plan.get('sha256')!=digest(body) or plan.get('slot')!=SLOT or
+    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT) or
         plan.get('role') not in ROLE_FILES or plan.get('total_calls')!=1 or
         plan.get('timeout_seconds')!=90 or plan.get('mode')!='REAL_CLI_READONLY' or
         plan.get('auto_next_ai') is not False or plan.get('api_fallback') is not False or
@@ -68,25 +69,27 @@ def grant_once(store, identity, plan):
     """바울 대표가 정확한 계획 SHA를 별도 승인한 다음에만 호출하는 로컬 운영 API입니다."""
     store.authorize(identity)
     validate(plan)
+    slot=plan['slot']
     if plan['role']!='PlanningAgent':
         raise Denied('첫 실제 시험은 PlanningAgent만 허용합니다; 확장은 별도 승인 단계입니다')
     if not 0 <= store.clock()-plan['created'] <= 86400:
         raise Denied('정본/계획을 새로 준비한 뒤 승인하세요')
     with store.tx() as db:
-        if db.execute('SELECT 1 FROM settings WHERE key=?',(SLOT,)).fetchone():
+        if db.execute('SELECT 1 FROM settings WHERE key=?',(slot,)).fetchone():
             raise Denied('공통 1회 승인 슬롯이 이미 존재합니다; 자동 재승인 금지')
         grant={'sha256':plan['sha256'],'role':plan['role'],'expires':store.clock()+600,'state':'APPROVED'}
-        db.execute('INSERT INTO settings VALUES(?,?)',(SLOT,json.dumps(grant)))
+        db.execute('INSERT INTO settings VALUES(?,?)',(slot,json.dumps(grant)))
         store.audit(db,'REAL_ROLE_PLAN_OWNER_GRANTED',actor=identity.user_id)
 
 
 def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run):
     store.authorize(identity); validate(plan)
+    slot=plan['slot']
     if plan['role']!='PlanningAgent':
         raise Denied('첫 시험은 PlanningAgent로 제한합니다')
     # 승인 확인이 없으면 인증 조회나 모델 프로세스조차 만들지 않습니다.
     with store.tx() as db:
-        row=db.execute('SELECT value FROM settings WHERE key=?',(SLOT,)).fetchone()
+        row=db.execute('SELECT value FROM settings WHERE key=?',(slot,)).fetchone()
         grant=json.loads(row[0]) if row else {}
     if grant.get('state')!='APPROVED' or grant.get('sha256')!=plan['sha256'] or grant.get('expires',0)<store.clock():
         raise Denied('WAITING_FOR_OWNER_APPROVAL: 정확한 계획 SHA의 별도 승인 필요')
@@ -98,7 +101,7 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     if verify_cli_controls(executable,root,invoke)['status']!='PASS':
         raise Denied('CLI 설정 검사 필요')
     with store.tx() as db:
-        fresh=json.loads(store.setting(db,SLOT))
+        fresh=json.loads(store.setting(db,slot))
         if fresh!=grant or grant['expires']<store.clock():
             raise Denied('승인 상태 변경')
         if store.setting(db,'paused')=='1' or store.setting(db,'role:'+plan['role'])=='1' or datetime.fromtimestamp(store.clock(),KST).weekday()==6:
@@ -106,12 +109,12 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
         if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]>=2:
             raise Denied('최대 동시2 제한')
         payload={'title':'REAL / '+plan['role']+' 읽기전용 검토','role':plan['role'],'issue':None,
-                 'base_sha':plan['source_refs']['main'],'scope':SLOT,'protected_assets':['Unity','Save','UserData','approved_art'],
+                 'base_sha':plan['source_refs']['main'],'scope':slot,'protected_assets':['Unity','Save','UserData','approved_art'],
                  'inputs':['SHA-pinned GitHub text excerpts'],'verification':['one structured turn; no tools'],
                  'approval_required':True,'artifact':'NO_ART_FROM_READONLY_REVIEW'}
-        task_id=store._create(db,SLOT,payload)
-        db.execute("UPDATE tasks SET state='RUNNING',lease=?,lease_until=? WHERE id=?",(SLOT,store.clock()+120,task_id))
-        db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps({**grant,'state':'CONSUMED'}),SLOT))
+        task_id=store._create(db,slot,payload)
+        db.execute("UPDATE tasks SET state='RUNNING',lease=?,lease_until=? WHERE id=?",(slot,store.clock()+120,task_id))
+        db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps({**grant,'state':'CONSUMED'}),slot))
         store.audit(db,'REAL_ROLE_EXEC_RESERVED',task_id)
     try:
         schema=root/'response-schema.json'; schema.write_text(json.dumps(SCHEMA),encoding='utf8')
@@ -154,12 +157,12 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
                   subscription_applied='AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED')
     usage=result['usage']; now=datetime.fromtimestamp(store.clock(),KST)
     with store.tx() as db:
-        db.execute('INSERT INTO usage VALUES(?,?,?,?,?,?,?,?,?)',(SLOT,task_id,'text',0,usage.get('input_tokens'),usage.get('output_tokens'),
+        db.execute('INSERT INTO usage VALUES(?,?,?,?,?,?,?,?,?)',(slot,task_id,'text',0,usage.get('input_tokens'),usage.get('output_tokens'),
                    'COMPLETED' if result['status']=='PASS' else 'UNKNOWN',now.strftime('%Y-%m-%d'),now.strftime('%Y-%m')))
     current=store.get(task_id)
-    if current['state']=='RUNNING' and current['lease']==SLOT and current['lease_until']>store.clock():
+    if current['state']=='RUNNING' and current['lease']==slot and current['lease_until']>store.clock():
         try:
-            store.finish(task_id,SLOT,'TECH_PASS' if result['status']=='PASS' else 'NOT_VERIFIED',result)
+            store.finish(task_id,slot,'TECH_PASS' if result['status']=='PASS' else 'NOT_VERIFIED',result)
             if result['status']=='PASS':
                 # 후속 큐 생성만 허가합니다. 다음 AI 호출은 절대로 연쇄 실행하지 않습니다.
                 result['handoff']=store.auto_handoff(task_id)
@@ -179,4 +182,4 @@ def discord_text(result):
     summary=result['answer']['summary']
     # mention·코드블록·제어 문자는 게시 전에 제거합니다. 모델 텍스트는 명령으로 해석하지 않습니다.
     summary=re.sub(r'[\x00-\x1f@`<>]',' ',summary)[:900]
-    return '[REAL AI / READ ONLY] '+summary+' / 구독 CLI 1회·텍스트 검토만·미술 승인 아님·후속 AI 자동호출 없음'
+    return '[REAL AI / VERIFIED] '+summary+' / 구독 CLI 1회·읽기 전용 텍스트 검토·미술 승인 아님·후속 AI 자동호출 없음'
