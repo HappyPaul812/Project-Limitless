@@ -1,3 +1,14 @@
+# PLANNING 2026-10-23 사용자 최신 지시 — 리뉴얼 담당 독립 진행 유지 / Chapter3 Main23 마을 화면+Main24 Save 기획 선행
+
+- 바울 대표 명시: **“됐어 지금 열심히 일 하고 있어. 넵둬. 우리는 챕터 3 계속하자.”** 따라서 앞서 리뉴얼 [#57] 작업축소/진행독촉 지시는 **추가 추진하지 않음**. 리뉴얼 담당 현재 작업 독립 보장, 금일 추가 Issue댓글/재할당/독촉0. 기획/Codex/신규 아트는 Chapter3 업무만.
+- 기존 Codex Main23 첫 플레이 격리 **148PASS/0FAIL**, 5목표/F1↔마을/Save·Continue·SafeZone·휠체어/가상마우스·3비율 기능 완료. **제품 원본/remote main 반영은 아직 확인되지 않음**, 임시 건물·NPC·안내 표시와 원본 Editor 손플레이 미검증.
+- 다음 [**Chapter3 Main23 화면·퀘스트 안내 플레이패스 Codex #58**](https://github.com/HappyPaul812/Project-Limitless/issues/58): 기존 `codex/chapter3-main23-first-playable-20261023` 자산·코드 기반으로 5목표 UX(목표·E/F·마우스) 개선·위치/휠체어 접근성 보완, 기존 미승인 v5 GameArt43의 건물/지붕/문·NPC 임시박스 3화면비 시연·VisualGapList. 기존 승인 Village9 Sprite/Tile 변경 금지, Main23 148 전수QA 반복금지, 본게임 무단 Import/PR0.
+- [**Chapter3 신규 아트 표적 시안 #59**](https://github.com/HappyPaul812/Project-Limitless/issues/59): 오르나 1종, 남문 목석 건물 입면·문/지붕 1세트, 스킬샵/여관 중 부족한 입면/표식1세트 이하 우선, 기존 43 GameArt 및 v10 승인9 재제작 금지. Codex gap evidence를 우선. 신규 담당 `docs/art-new`만 수행, 리뉴얼과 무관.
+- [**Main24 SkillSave 사전 기획 #46**](https://github.com/HappyPaul812/Project-Limitless/issues/46): SkillLoadout 6슬롯 메모리 전용→Save/Continue 영속 DTO/migration/결제·강화 원자성의 **읽기전용 설계와 QA 매트릭스** 준비. 미승인 스킬가격/상품/실상점 기능·F2 한기 구현/기존Save 수정 금지. Main23 실기능과 독립 병행.
+- 상세 실행 정본 [2026-10-23 Chapter3 Main23 presentation + Main24 skill Save prep](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261023_Chapter3_Main23_PresentationPass_Main24_SavePrep.md) 생성 `docs/planning` commit `69e1620fcf8ffffd6078f90bf14ffaac8ab4d94e`. 추가 GitHub Issue 발주는 현 사용자 Windows Unity 작업 자동 실행이 아니므로 **실제 결과 대기**, 사용자 원본·main 미변경.
+
+---
+
 # 2026-10-23 업데이트 — Main23 격리 148PASS, 리뉴얼 전수조사 범위 축소
 
 - 바울 대표 보고 Codex **Main23 격리 첫 플레이** 5목표 전부 PASS, 신규 **148PASS / 0FAIL**. F1 심부·두 흔적·서릿길 남문·주민 및 태온/하렌 대사·SafeZone 등록과 Save/Continue·남문 F1 왕복·가상 Mouse/Keyboard·휠체어·화면비3종 실 Unity 검증. 작업브랜치 `codex/chapter3-main23-first-playable-20261023`, 제품 약식 `dcf9d6af`, 문서 약식 `2979e327`. **건물·NPC는 임시 표시, 장치 손플레이/최종 미술 미검증. 원본/remote main 미반영**, 기존 Search 예외 OPEN. [Issue #56](https://github.com/HappyPaul812/Project-Limitless/issues/56) 결과기록.
