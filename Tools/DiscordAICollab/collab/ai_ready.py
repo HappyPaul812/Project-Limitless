@@ -9,7 +9,7 @@ from pathlib import Path
 
 import discord
 from .core import Store, Denied
-from .real_roles import ROLE_FILES, SLOT, RETEST_SLOT, CODEX_SLOT, make_plan, discord_text
+from .real_roles import ROLE_FILES, SLOT, RETEST_SLOT, CODEX_SLOT, NEW_ART_SLOT, make_plan, discord_text
 from .phase2 import cli_info, verify_cli_controls
 
 
@@ -54,6 +54,8 @@ async def report(root, actual_result=False, slot=SLOT):
         if not row or not row[0]:
             raise Denied('실제 AI 결과 없음: MOCK를 REAL로 게시하지 않습니다')
         message=discord_text(json.loads(row[0]))
+        if slot==NEW_ART_SLOT:
+            message='[REAL AI / NOT_VERIFIED / NewArtAgent] '+message+' RenewalArtAgent 호출0·첫 실패로 중지. 이번 두 담당 VERIFIED 미달, 추가 실행에는 별도 승인 필요.'
     logging.getLogger('discord').disabled=True
     async with discord.Client(intents=discord.Intents.none()) as client:
         await client.login(os.environ['DISCORD_BOT_TOKEN'])
@@ -64,16 +66,17 @@ async def report(root, actual_result=False, slot=SLOT):
     receipt={'status':'MESSAGE_SENT','message_id':str(sent.id),'slash_receipts':slash,'kind':'REAL_RESULT' if actual_result else 'READINESS_ONLY'}
     filename='discord-retest-report.json' if slot==RETEST_SLOT else ('discord-result-report.json' if actual_result else 'discord-report.json')
     if slot==CODEX_SLOT:filename='discord-codex63-report.json'
+    if slot==NEW_ART_SLOT:filename='discord-art-roles-failure-report.json'
     (root/filename).write_text(json.dumps(receipt,indent=2),encoding='utf8')
     return receipt
 
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('action',choices=('prepare','report','result-report','retest-result-report','codex63-result-report'))
+    parser.add_argument('action',choices=('prepare','report','result-report','retest-result-report','codex63-result-report','art-failure-result-report'))
     args=parser.parse_args(); root=Path('data/ai-ready'); root.mkdir(parents=True,exist_ok=True)
     try:
-        slot=CODEX_SLOT if args.action=='codex63-result-report' else (RETEST_SLOT if args.action=='retest-result-report' else SLOT)
+        slot=NEW_ART_SLOT if args.action=='art-failure-result-report' else (CODEX_SLOT if args.action=='codex63-result-report' else (RETEST_SLOT if args.action=='retest-result-report' else SLOT))
         result=prepare(root) if args.action=='prepare' else asyncio.run(asyncio.wait_for(report(root,args.action.endswith('result-report'),slot),45))
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except Exception:
