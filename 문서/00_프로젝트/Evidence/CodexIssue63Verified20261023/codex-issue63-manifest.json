@@ -1,0 +1,22 @@
+{
+  "plan_sha256": "989abfb44c06b4700b7c7448b47dc01836ddd83a651b24c794541c793eb44de3",
+  "prompt_bytes": 22997,
+  "new_slot_unused": true,
+  "planning_slot_state": "CONSUMED",
+  "planning_result_sha256": "1a4b137ab7d710279070331c5059e3a26b66b0bdfa9bd2819ac9440e82c445bf",
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "issue_updated_at": "2026-10-23T06:24:45Z",
+  "latest_comment_id": 6358875778,
+  "latest_comment_sha256": "61c7ded62b79ed73b9e36437f948595beb4f5fc78d88fa731d0d0dfd081d5b23"
+}

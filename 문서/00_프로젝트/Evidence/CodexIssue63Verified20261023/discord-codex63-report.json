@@ -1,0 +1,10 @@
+{
+  "status": "MESSAGE_SENT",
+  "message_id": "1563152371192827905",
+  "slash_receipts": {
+    "status": "PASS",
+    "pending": "PASS",
+    "handoff": "PASS"
+  },
+  "kind": "REAL_RESULT"
+}

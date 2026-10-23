@@ -8,7 +8,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock
 
 from collab.core import Store, Identity, Denied
-from collab.real_roles import SLOT, RETEST_SLOT, ROLE_FILES, digest, make_plan, grant_once, run_once, parse_result, discord_text
+from collab.real_roles import SLOT, RETEST_SLOT, CODEX_SLOT, ROLE_FILES, digest, make_plan, grant_once, run_once, parse_result, discord_text
 
 
 class RealRoleTests(unittest.TestCase):
@@ -128,3 +128,29 @@ class RealRoleTests(unittest.TestCase):
                 self.assertEqual('CONSUMED',json.loads(self.store.setting(db,slot))['state'])
         with self.assertRaises(Denied):grant_once(self.store,self.owner,retest)
         self.assertIn('[REAL AI / VERIFIED]',discord_text(result))
+
+    def test_codex_slot_separates_role_and_never_runs_next_planning_ai(self):
+        grant_once(self.store,self.owner,self.plan);first=self.execute()
+        p={**self.plan,'slot':CODEX_SLOT,'role':'CodexAgent','issue':63}
+        p['sha256']=digest({k:v for k,v in p.items() if k!='sha256'})
+        grant_once(self.store,self.owner,p)
+        def fake(command,**kwargs):
+            result=self.fake(command,**kwargs)
+            if 'exec' in command:
+                result.stdout=result.stdout.replace('PlanningAgent','CodexAgent')
+                Path(command[command.index('--output-last-message')+1]).write_text(json.dumps({'role':'CodexAgent','summary':'독침벌 검토 대기 요약','next_review':'기획'}),encoding='utf8')
+                events=[{'type':'item.completed','item':{'type':'agent_message','text':json.dumps({'role':'CodexAgent','summary':'독침벌 검토 대기 요약','next_review':'기획'})}},{'type':'turn.completed','usage':{'input_tokens':1,'output_tokens':1}}]
+                result.stdout='\n'.join(json.dumps(e) for e in events)
+            return result
+        invoked=Mock(side_effect=fake)
+        result=run_once(self.store,self.owner,p,self.root/'codex-empty','fake',invoke=invoked)
+        self.assertEqual('PASS',result['status']);self.assertIn('[REAL AI / VERIFIED / CodexAgent]',discord_text(result))
+        self.assertEqual(1,sum('exec' in c.args[0] for c in invoked.call_args_list))
+        self.assertEqual('NEW',result['handoff']['state'])
+        self.assertEqual('APPROVAL_PENDING',self.store.get(first['task_id'])['state'])
+        with self.assertRaises(Denied):grant_once(self.store,self.owner,p)
+
+    def test_codex_slot_cannot_run_art_or_planning(self):
+        for role in ('PlanningAgent','NewArtAgent','RenewalArtAgent'):
+            p={**self.plan,'slot':CODEX_SLOT,'role':role};p['sha256']=digest({k:v for k,v in p.items() if k!='sha256'})
+            with self.assertRaises(Denied):grant_once(self.store,self.owner,p)

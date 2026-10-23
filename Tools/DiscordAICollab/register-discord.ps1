@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -27,7 +27,11 @@ try {
     $env:LIMITLESS_GUILD_ID = $saved.Guild
     $env:LIMITLESS_CHANNEL_IDS = $saved.Channels
     $env:LIMITLESS_ALLOW_DISCORD = '1'
-    if ($Action -eq 'PlanningFinalRetest') {
+    if ($Action -eq 'CodexIssue63Once') {
+        & '.venv/Scripts/python.exe' -m collab.codex_issue63_once
+    } elseif ($Action -eq 'CodexIssue63Report') {
+        & '.venv/Scripts/python.exe' -m collab.ai_ready codex63-result-report
+    } elseif ($Action -eq 'PlanningFinalRetest') {
         & '.venv/Scripts/python.exe' -m collab.planning_retest
     } elseif ($Action -eq 'PlanningRetestReport') {
         & '.venv/Scripts/python.exe' -m collab.ai_ready retest-result-report

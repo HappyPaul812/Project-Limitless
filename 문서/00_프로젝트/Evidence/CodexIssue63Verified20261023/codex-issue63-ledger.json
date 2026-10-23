@@ -1,0 +1,40 @@
+{
+  "slots": {
+    "REAL_ROLE_READONLY_20261023_ONE_TOTAL": "CONSUMED",
+    "PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED": "CONSUMED",
+    "CODEX_ISSUE63_READONLY_20261023_ONE_APPROVED": "CONSUMED"
+  },
+  "codex_usage_rows": 1,
+  "codex_usage": [
+    [
+      16928,
+      316,
+      "COMPLETED"
+    ]
+  ],
+  "planning_verified_task": [
+    [
+      "PlanningAgent",
+      "APPROVAL_PENDING",
+      "TECH_PASS",
+      "USER_REVIEW_PENDING"
+    ]
+  ],
+  "codex_task": [
+    [
+      "L-eae92127f4d442f4",
+      "CodexAgent",
+      "DONE",
+      "TECH_PASS",
+      "USER_REVIEW_PENDING"
+    ]
+  ],
+  "counts": {
+    "APPROVAL_PENDING": 2,
+    "DONE": 3,
+    "NEW": 1,
+    "NOT_VERIFIED": 2
+  },
+  "planning_result_file_unchanged": true,
+  "integrity": "ok"
+}

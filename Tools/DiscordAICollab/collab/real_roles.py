@@ -16,6 +16,7 @@ from .output_parser import parse_result, korean_reason
 
 SLOT = 'REAL_ROLE_READONLY_20261023_ONE_TOTAL'
 RETEST_SLOT = 'PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED'
+CODEX_SLOT = 'CODEX_ISSUE63_READONLY_20261023_ONE_APPROVED'
 ROLE_FILES = {'PlanningAgent':'PLANNING','CodexAgent':'CODEX',
               'NewArtAgent':'SPRITE_ART','RenewalArtAgent':'WORLD_ART_RENEWAL'}
 SCHEMA = {'type':'object','properties':{'role':{'type':'string'},'summary':{'type':'string'},
@@ -57,7 +58,7 @@ def make_plan(role, sources, clock=time.time):
 
 def validate(plan):
     body={k:v for k,v in plan.items() if k!='sha256'}
-    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT) or
+    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT) or
         plan.get('role') not in ROLE_FILES or plan.get('total_calls')!=1 or
         plan.get('timeout_seconds')!=90 or plan.get('mode')!='REAL_CLI_READONLY' or
         plan.get('auto_next_ai') is not False or plan.get('api_fallback') is not False or
@@ -70,8 +71,8 @@ def grant_once(store, identity, plan):
     store.authorize(identity)
     validate(plan)
     slot=plan['slot']
-    if plan['role']!='PlanningAgent':
-        raise Denied('첫 실제 시험은 PlanningAgent만 허용합니다; 확장은 별도 승인 단계입니다')
+    if plan['role']!=('CodexAgent' if slot==CODEX_SLOT else 'PlanningAgent'):
+        raise Denied('승인 슬롯의 담당 역할과 다릅니다. 아트 AI 실행은 허용하지 않습니다')
     if not 0 <= store.clock()-plan['created'] <= 86400:
         raise Denied('정본/계획을 새로 준비한 뒤 승인하세요')
     with store.tx() as db:
@@ -85,8 +86,8 @@ def grant_once(store, identity, plan):
 def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run):
     store.authorize(identity); validate(plan)
     slot=plan['slot']
-    if plan['role']!='PlanningAgent':
-        raise Denied('첫 시험은 PlanningAgent로 제한합니다')
+    if plan['role']!=('CodexAgent' if slot==CODEX_SLOT else 'PlanningAgent'):
+        raise Denied('승인 슬롯의 담당 역할과 다릅니다')
     # 승인 확인이 없으면 인증 조회나 모델 프로세스조차 만들지 않습니다.
     with store.tx() as db:
         row=db.execute('SELECT value FROM settings WHERE key=?',(slot,)).fetchone()
@@ -108,7 +109,7 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
             raise Denied('정지/일요일 실행 금지')
         if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]>=2:
             raise Denied('최대 동시2 제한')
-        payload={'title':'REAL / '+plan['role']+' 읽기전용 검토','role':plan['role'],'issue':None,
+        payload={'title':'REAL / '+plan['role']+' 읽기전용 검토','role':plan['role'],'issue':plan.get('issue'),
                  'base_sha':plan['source_refs']['main'],'scope':slot,'protected_assets':['Unity','Save','UserData','approved_art'],
                  'inputs':['SHA-pinned GitHub text excerpts'],'verification':['one structured turn; no tools'],
                  'approval_required':True,'artifact':'NO_ART_FROM_READONLY_REVIEW'}
@@ -182,4 +183,5 @@ def discord_text(result):
     summary=result['answer']['summary']
     # mention·코드블록·제어 문자는 게시 전에 제거합니다. 모델 텍스트는 명령으로 해석하지 않습니다.
     summary=re.sub(r'[\x00-\x1f@`<>]',' ',summary)[:900]
-    return '[REAL AI / VERIFIED] '+summary+' / 구독 CLI 1회·읽기 전용 텍스트 검토·미술 승인 아님·후속 AI 자동호출 없음'
+    label='[REAL AI / VERIFIED / CodexAgent]' if result['answer']['role']=='CodexAgent' else '[REAL AI / VERIFIED]'
+    return label+' '+summary+' / 구독 CLI 1회·읽기 전용 텍스트 검토·미술 승인 아님·후속 AI 자동호출 없음'

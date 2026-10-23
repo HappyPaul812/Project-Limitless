@@ -9,7 +9,7 @@ from pathlib import Path
 
 import discord
 from .core import Store, Denied
-from .real_roles import ROLE_FILES, SLOT, RETEST_SLOT, make_plan, discord_text
+from .real_roles import ROLE_FILES, SLOT, RETEST_SLOT, CODEX_SLOT, make_plan, discord_text
 from .phase2 import cli_info, verify_cli_controls
 
 
@@ -63,16 +63,18 @@ async def report(root, actual_result=False, slot=SLOT):
         sent=await channel.send(message,allowed_mentions=discord.AllowedMentions.none())
     receipt={'status':'MESSAGE_SENT','message_id':str(sent.id),'slash_receipts':slash,'kind':'REAL_RESULT' if actual_result else 'READINESS_ONLY'}
     filename='discord-retest-report.json' if slot==RETEST_SLOT else ('discord-result-report.json' if actual_result else 'discord-report.json')
+    if slot==CODEX_SLOT:filename='discord-codex63-report.json'
     (root/filename).write_text(json.dumps(receipt,indent=2),encoding='utf8')
     return receipt
 
 
 def main():
     parser=argparse.ArgumentParser()
-    parser.add_argument('action',choices=('prepare','report','result-report','retest-result-report'))
+    parser.add_argument('action',choices=('prepare','report','result-report','retest-result-report','codex63-result-report'))
     args=parser.parse_args(); root=Path('data/ai-ready'); root.mkdir(parents=True,exist_ok=True)
     try:
-        result=prepare(root) if args.action=='prepare' else asyncio.run(asyncio.wait_for(report(root,args.action in ('result-report','retest-result-report'),RETEST_SLOT if args.action=='retest-result-report' else SLOT),45))
+        slot=CODEX_SLOT if args.action=='codex63-result-report' else (RETEST_SLOT if args.action=='retest-result-report' else SLOT)
+        result=prepare(root) if args.action=='prepare' else asyncio.run(asyncio.wait_for(report(root,args.action.endswith('result-report'),slot),45))
         print(json.dumps(result,ensure_ascii=False,indent=2))
     except Exception:
         print('AI_READINESS_NOT_VERIFIED: 비밀 없는 설정/문서/채널 상태를 확인하세요.')
