@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "usage": {
+    "source": "CODEX_APP_SERVER_OFFICIAL",
+    "observed": 1792766723.8323727,
+    "ordinary_allowed": true,
+    "windows": [
+      {
+        "minutes": 300,
+        "used_percent": 39,
+        "resets_at": 1792779833
+      },
+      {
+        "minutes": 10080,
+        "used_percent": 6,
+        "resets_at": 1793366633
+      }
+    ]
+  },
+  "inference_calls": 0,
+  "rpc_methods": [
+    "initialize",
+    "initialized",
+    "account/read",
+    "account/rateLimits/read"
+  ]
+}

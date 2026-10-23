@@ -1,0 +1,38 @@
+test_live_reader_success_cached_without_duplicate_queries (tests.test_operations.MonitorTests.test_live_reader_success_cached_without_duplicate_queries) ... Executing <Task finished name='Task-1' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:89> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.547 seconds
+Executing <Task finished name='Task-2' coro=<MonitorTests.test_live_reader_success_cached_without_duplicate_queries() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:91> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.140 seconds
+ok
+test_recovery_is_rechecked_after_reset_then_gate_opens (tests.test_operations.MonitorTests.test_recovery_is_rechecked_after_reset_then_gate_opens) ... Executing <Task finished name='Task-6' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:89> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.609 seconds
+Executing <Task finished name='Task-7' coro=<MonitorTests.test_recovery_is_rechecked_after_reset_then_gate_opens() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:104> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.313 seconds
+ok
+test_three_failures_open_circuit_and_do_not_guess (tests.test_operations.MonitorTests.test_three_failures_open_circuit_and_do_not_guess) ... Executing <Task finished name='Task-11' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:89> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.546 seconds
+Executing <Task finished name='Task-12' coro=<MonitorTests.test_three_failures_open_circuit_and_do_not_guess() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:97> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.469 seconds
+ok
+test_unauthorized_usage_does_not_reach_provider (tests.test_operations.MonitorTests.test_unauthorized_usage_does_not_reach_provider) ... Executing <Task finished name='Task-16' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:89> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.719 seconds
+F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\.venv\Lib\site-packages\discord\player.py:30: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+  import audioop
+Executing <Task pending name='Task-17' coro=<MonitorTests.test_unauthorized_usage_does_not_reach_provider() running at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:120> wait_for=<Task pending name='Task-18' coro=<Client.close.<locals>._close() running at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\.venv\Lib\site-packages\discord\client.py:801> cb=[Task.task_wakeup()] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\tasks.py:420> cb=[_run_until_complete_cb() at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\base_events.py:181] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.453 seconds
+ok
+test_changed_executable_blocks (tests.test_operations.ResumeTests.test_changed_executable_blocks) ... ok
+test_consumed_slot_not_reused (tests.test_operations.ResumeTests.test_consumed_slot_not_reused) ... ok
+test_exact_approved_job_runs_at_most_once_after_recovery (tests.test_operations.ResumeTests.test_exact_approved_job_runs_at_most_once_after_recovery) ... ok
+test_expired_grant_not_extended_or_retried (tests.test_operations.ResumeTests.test_expired_grant_not_extended_or_retried) ... ok
+test_failed_attempt_has_no_auto_retry (tests.test_operations.ResumeTests.test_failed_attempt_has_no_auto_retry) ... ok
+test_restart_running_is_unknown_never_retried (tests.test_operations.ResumeTests.test_restart_running_is_unknown_never_retried) ... ok
+test_sunday_never_runs (tests.test_operations.ResumeTests.test_sunday_never_runs) ... ok
+test_unapproved_plan_cannot_enter_resume_queue (tests.test_operations.ResumeTests.test_unapproved_plan_cannot_enter_resume_queue) ... ok
+test_unknown_usage_keeps_granted_job_held_without_runner_call (tests.test_operations.ResumeTests.test_unknown_usage_keeps_granted_job_held_without_runner_call) ... ok
+test_failure_invalidates_even_previous_available_snapshot (tests.test_operations.UsageTests.test_failure_invalidates_even_previous_available_snapshot) ... ok
+test_missing_or_wrong_window_blocks (tests.test_operations.UsageTests.test_missing_or_wrong_window_blocks) ... ok
+test_missing_ordinary_permission_is_not_guessed (tests.test_operations.UsageTests.test_missing_ordinary_permission_is_not_guessed) ... ok
+test_only_read_rpc_allowlist (tests.test_operations.UsageTests.test_only_read_rpc_allowlist) ... ok
+test_release_intake_requires_explicit_confirmation (tests.test_operations.UsageTests.test_release_intake_requires_explicit_confirmation) ... ok
+test_shutdown_preflight_is_bound_but_never_enables_shutdown (tests.test_operations.UsageTests.test_shutdown_preflight_is_bound_but_never_enables_shutdown) ... ok
+test_test_only_query_label_is_not_art_approval (tests.test_operations.UsageTests.test_test_only_query_label_is_not_art_approval) ... ok
+test_two_exhausted_windows_use_later_reset (tests.test_operations.UsageTests.test_two_exhausted_windows_use_later_reset) ... ok
+test_whitelist_normalization_drops_account_and_credits (tests.test_operations.UsageTests.test_whitelist_normalization_drops_account_and_credits) ... ok
+test_wrong_bucket_or_nan_rejected (tests.test_operations.UsageTests.test_wrong_bucket_or_nan_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 42.288s
+
+OK

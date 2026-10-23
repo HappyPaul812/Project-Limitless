@@ -1,0 +1,18 @@
+{
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792769343.5465274,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": true,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792769344.74648,
+    "ai_calls": 0,
+    "unity_runs": 0
+  },
+  "art_graceful_restart_verified": true,
+  "old_art_receipts_and_tasks_unchanged": true,
+  "stopped_old_art_then_restarted": true
+}

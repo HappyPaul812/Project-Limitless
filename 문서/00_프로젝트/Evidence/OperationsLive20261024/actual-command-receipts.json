@@ -1,0 +1,65 @@
+[
+  {
+    "interaction": "1563203646425141278",
+    "action": "usage",
+    "response_id": "1563203648329220176",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767194.4964612
+  },
+  {
+    "interaction": "1563204116182859888",
+    "action": "schedule",
+    "response_id": "1563204118061785158",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767304.4929867
+  },
+  {
+    "interaction": "1563204495943540787",
+    "action": "schedule-status",
+    "response_id": "1563204498308997210",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767395.1123831
+  },
+  {
+    "interaction": "1563205216525099179",
+    "action": "shutdown",
+    "response_id": "1563205218022465689",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767566.635968
+  },
+  {
+    "interaction": "1563205625498837163",
+    "action": "finish",
+    "response_id": "1563205626971295794",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767664.2120621
+  },
+  {
+    "interaction": "1563205977476563024",
+    "action": "cancel",
+    "response_id": "1563205979166744796",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792767748.205778
+  },
+  {
+    "interaction": "1563210765572509696",
+    "action": "usage",
+    "response_id": "1563210767484850337",
+    "owner_verified": 1,
+    "ephemeral": 1,
+    "gateway": 1,
+    "created": 1792768892.4535031
+  }
+]

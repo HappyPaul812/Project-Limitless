@@ -1,0 +1,18 @@
+[
+  {
+    "service": "Art",
+    "xml_enabled": "false",
+    "restart_count": "3",
+    "delay": "PT30S",
+    "allow_hard_terminate": "false",
+    "registered": false
+  },
+  {
+    "service": "Bot",
+    "xml_enabled": "false",
+    "restart_count": "3",
+    "delay": "PT30S",
+    "allow_hard_terminate": "false",
+    "registered": false
+  }
+]

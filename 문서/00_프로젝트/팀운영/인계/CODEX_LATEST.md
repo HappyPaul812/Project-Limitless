@@ -1,3 +1,7 @@
+## 2026-10-24 운영 자동화 실연동 VERIFIED
+
+기존9+새6 Slash 실제등록·대표계정6종 Gateway/비공개응답 확인. 시험SCH-79e9740a0440 취소/접수보류해제. 공식Codex App Server 사용량120초 자동조회·소진/실패보류·회복후재검증·기존미소비승인 단발재개연결, 실제 재개대기0/추론0. 신규모의27 PASS/0 FAIL·정상중지exit0/재접속/중복차단PASS. Windows Art/Bot 동일사용자로그인30초·최소권한·재시작3회 비활성XML 준비·등록0. PC종료 실제비활성·동기화/미저장작업 미확인HOLD. 원본7356변경/누락0·기존21업무/13usage/승인/설정/아트입고동일·격리SHA일치·TEST_ONLY재처리0·AI/Unity/제품/Push/merge0. 구현7ef5495312ab6d986a646f8ee32d3656e823c2bd. [완료보고](../Operations_Automation_Live_Verified_20261024.md). 봇·수령서비스 정상재접속 후 실행중. 다음은 별도 승인 후 자동시작 등록/활성화, 실제 한도소진/AI재개·재부팅·로그아웃 미검증. Unity 사용자확인 없음.
+
 ## 2026-10-23 Phase3 대표 일반 PNG 자동 수령 VERIFIED
 
 대표23:05:32 일반첨부→감시기23:05:34 자동등록 기록을23:26:56 실제 Discord/저장 SHA 대조. L-5546382550914017, PNG677×626 RGBA/563323bytes/SHA b9a6be63…176006. 기존3대기업무와 별도 TEST_ONLY·BLOCKED/NOT_VERIFIED 유지·승인전환 차단 보강. 신규로컬7 PASS/0 FAIL·실제9 PASS/0 FAIL, TEST_ONLY Discord보고1563197037779099649 SENT/재조회PASS. 이번재업로드/수동업무생성0·전체21→21·원본7356변경/누락0·다른업무/승인/사용량/설정/수령이벤트동일·AI/Unity/제품/Push/merge0. 구현51a60ca38c07357032b7901e64afdca45e0d8f01. [실제 보고](../Phase3_Owner_Attachment_Verified_20261023.md). 수령서비스 정상·미재시작, 자동시작 조사/설계만·OS등록0. 다음은 별도 승인 후 같은 사용자 로그인 기반 자동시작 구현/등록 검토, 실제 재부팅/로그아웃 검증과 Unity 사용자확인 없음.

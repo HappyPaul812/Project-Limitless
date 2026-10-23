@@ -1,0 +1,14 @@
+{
+  "new_unique_tests_pass": 27,
+  "fail": 0,
+  "suite_23": 23,
+  "additional_unique": 4,
+  "selected_rechecks_not_added": 2,
+  "actual_slash_commands": 6,
+  "bot_graceful_stop_actual_exit_code": 0,
+  "bot_restarted_running": true,
+  "initial_stop_cancellation_conflict": "FIXED_AND_RETESTED",
+  "original_4_ai_qa_replayed": false,
+  "actual_quota_exhaustion_not_induced": true,
+  "actual_ai_resume_not_executed": true
+}

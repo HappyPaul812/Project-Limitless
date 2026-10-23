@@ -1,0 +1,10 @@
+test_stop_marker_closes_without_cancelling_sdk_close (tests.test_operations.MonitorTests.test_stop_marker_closes_without_cancelling_sdk_close) ... Executing <Task finished name='Task-1' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:104> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.562 seconds
+F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\.venv\Lib\site-packages\discord\player.py:30: DeprecationWarning: 'audioop' is deprecated and slated for removal in Python 3.13
+  import audioop
+Executing <Task pending name='Task-2' coro=<MonitorTests.test_stop_marker_closes_without_cancelling_sdk_close() running at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:133> wait_for=<Task pending name='Task-3' coro=<create_bot.<locals>.Relay.control_loop() running at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\collab\bot.py:54> cb=[Task.task_wakeup()] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\tasks.py:420> cb=[_run_until_complete_cb() at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\base_events.py:181] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.219 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.789s
+
+OK

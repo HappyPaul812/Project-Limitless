@@ -1,0 +1,10 @@
+test_exhausted_backend_denial_preserves_known_reset (tests.test_operations.UsageTests.test_exhausted_backend_denial_preserves_known_reset) ... ok
+test_failure_invalidates_even_previous_available_snapshot (tests.test_operations.UsageTests.test_failure_invalidates_even_previous_available_snapshot) ... ok
+test_recovery_is_rechecked_after_reset_then_gate_opens (tests.test_operations.MonitorTests.test_recovery_is_rechecked_after_reset_then_gate_opens) ... Executing <Task finished name='Task-1' coro=<MonitorTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:96> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.547 seconds
+Executing <Task finished name='Task-2' coro=<MonitorTests.test_recovery_is_rechecked_after_reset_then_gate_opens() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_operations.py:111> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.375 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 5.277s
+
+OK

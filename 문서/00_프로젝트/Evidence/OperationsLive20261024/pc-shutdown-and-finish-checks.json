@@ -1,0 +1,196 @@
+[
+  {
+    "id": "CTL-1f39ec2cbe80",
+    "body": {
+      "id": "SCH-79e9740a0440",
+      "state": "HOLD",
+      "mode": "SHUTDOWN_DISABLED",
+      "preflight": {
+        "pc_id": "068b45740b3010f6",
+        "platform": "Windows",
+        "running_tasks": 0,
+        "unsaved_user_work": "UNKNOWN",
+        "file_copy_idle": "UNKNOWN",
+        "unity_idle": "NOT_VERIFIED",
+        "scoped_integration_approval": "MISSING",
+        "github_local_sync": "HOLD_NO_APPROVAL",
+        "shutdown_enabled": false,
+        "os_shutdown_calls": 0,
+        "cancel_grace_seconds": 120
+      },
+      "blockers": [
+        "실제 종료 비활성",
+        "별도 로컬 확인·권한 미검증",
+        "Git 동기화·보호·미저장 작업·Unity·복사·최종 보고 검증 필요"
+      ],
+      "cancel": "/limitless cancel schedule_id:SCH-79e9740a0440"
+    }
+  },
+  {
+    "id": "CTL-ef526e4ac9bf",
+    "body": {
+      "id": "SCH-79e9740a0440",
+      "state": "REVIEW_REQUIRED",
+      "running": [],
+      "tasks": [
+        {
+          "id": "L-bd113b185adf4a60",
+          "role": "CodexAgent",
+          "state": "NOT_VERIFIED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-3748cd0899ca4c80",
+          "role": "RenewalArtAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-5ec5fde0032c4b31",
+          "role": "CodexAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-c2bb1722a38d485b",
+          "role": "PlanningAgent",
+          "state": "APPROVAL_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-453288981e4443ea",
+          "role": "PlanningAgent",
+          "state": "NOT_VERIFIED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-1989925c534a45a8",
+          "role": "PlanningAgent",
+          "state": "APPROVAL_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-eae92127f4d442f4",
+          "role": "CodexAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-ad951113bdea49f0",
+          "role": "PlanningAgent",
+          "state": "NEW",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-37f83d21152d4df8",
+          "role": "PlanningAgent",
+          "state": "REVIEW_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-85bcfa2bec254668",
+          "role": "CodexAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-cf2b95ce985346d8",
+          "role": "NewArtAgent",
+          "state": "NOT_VERIFIED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-d1e7c15753694e67",
+          "role": "NewArtAgent",
+          "state": "REVIEW_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-2c9d26367a964c0f",
+          "role": "RenewalArtAgent",
+          "state": "REVIEW_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-0bab0c680e614b80",
+          "role": "PlanningAgent",
+          "state": "REVIEW_PENDING",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-3d3b19a8a45b4a45",
+          "role": "NewArtAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-87326cb61cc14978",
+          "role": "RenewalArtAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-ef8324ba26ab44ca",
+          "role": "CodexAgent",
+          "state": "DONE",
+          "tech": "TECH_PASS",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-bf8ebb36f38240c9",
+          "role": "CodexAgent",
+          "state": "BLOCKED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-169ba798cf6646cc",
+          "role": "CodexAgent",
+          "state": "BLOCKED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-79a30df7eb18488c",
+          "role": "CodexAgent",
+          "state": "BLOCKED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        },
+        {
+          "id": "L-5546382550914017",
+          "role": "CodexAgent",
+          "state": "BLOCKED",
+          "tech": "NOT_VERIFIED",
+          "art": "USER_REVIEW_PENDING"
+        }
+      ],
+      "integration": "HOLD_NO_SCOPED_APPROVAL_OR_ADAPTER",
+      "note": "상태 정리 기록만 완료. 실행 중 업무 강제 종료·Git 동기화·PC 종료 없음"
+    }
+  },
+  {
+    "id": "CTL-915862cc2a5a",
+    "body": {
+      "state": "CANCELLED",
+      "id": "SCH-79e9740a0440",
+      "note": "종료 요청 취소·기존 수동 정지와 승인 보류 유지"
+    }
+  }
+]

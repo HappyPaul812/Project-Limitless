@@ -1,0 +1,26 @@
+{
+  "original_files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_same": true,
+  "existing_tables_identical": {
+    "tasks": true,
+    "usage": true,
+    "approvals": true,
+    "settings": true,
+    "art_deliveries": true,
+    "art_delivery_events": true,
+    "art_delivery_outbox": true
+  },
+  "tasks_count_before": 21,
+  "tasks_count_after": 21,
+  "model_usage_rows_before": 13,
+  "model_usage_rows_after": 13,
+  "additional_ai_inference_calls": 0,
+  "unity_worker_runs": 0,
+  "shutdown_calls": 0,
+  "autostart_registrations": 0,
+  "push_or_merge": 0,
+  "readonly_resume_jobs": 0,
+  "quarantine_source_sha_all_match": true
+}

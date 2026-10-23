@@ -1,0 +1,123 @@
+{
+  "registered_subcommands": [
+    "approve",
+    "budget",
+    "cancel",
+    "finish",
+    "handoff",
+    "pause",
+    "pending",
+    "reject",
+    "resume",
+    "schedule",
+    "schedule-status",
+    "shutdown",
+    "status",
+    "task",
+    "usage"
+  ],
+  "required_six_registered": true,
+  "one_owner_configured": true,
+  "real_gateway_receipts": [
+    {
+      "interaction": "1563203646425141278",
+      "action": "usage",
+      "response_id": "1563203648329220176",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767194.4964612
+    },
+    {
+      "interaction": "1563204116182859888",
+      "action": "schedule",
+      "response_id": "1563204118061785158",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767304.4929867
+    },
+    {
+      "interaction": "1563204495943540787",
+      "action": "schedule-status",
+      "response_id": "1563204498308997210",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767395.1123831
+    },
+    {
+      "interaction": "1563205216525099179",
+      "action": "shutdown",
+      "response_id": "1563205218022465689",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767566.635968
+    },
+    {
+      "interaction": "1563205625498837163",
+      "action": "finish",
+      "response_id": "1563205626971295794",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767664.2120621
+    },
+    {
+      "interaction": "1563205977476563024",
+      "action": "cancel",
+      "response_id": "1563205979166744796",
+      "owner_verified": 1,
+      "ephemeral": 1,
+      "gateway": 1,
+      "created": 1792767748.205778
+    }
+  ],
+  "schedules": [
+    {
+      "id": "SCH-79e9740a0440",
+      "deadline": 1792774800.0,
+      "cleanup": 600,
+      "next_start": null,
+      "state": "CANCELLED",
+      "created": 1792767304.061531
+    }
+  ],
+  "reports": [
+    {
+      "id": "CTL-1f39ec2cbe80",
+      "state": "SENT",
+      "message_id": "1563205236997230653"
+    },
+    {
+      "id": "CTL-ef526e4ac9bf",
+      "state": "SENT",
+      "message_id": "1563205639868522673"
+    },
+    {
+      "id": "OPERATIONS_FINAL_20261024",
+      "state": "SENT",
+      "message_id": "1563209891034693767"
+    }
+  ],
+  "bot_status": {
+    "status": "RUNNING",
+    "last_tick": 1792768735.649038,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": true,
+    "shutdown_enabled": false
+  },
+  "heartbeat_fresh": true,
+  "usage_monitor": {
+    "failures": 0,
+    "circuit": "CLOSED",
+    "next_check": 1792768787.01679,
+    "status": "OBSERVED",
+    "last_success": 1792768669.5290012
+  },
+  "ai_calls": 0,
+  "shutdown_enabled": false,
+  "autostart_registered": false,
+  "observed": 1792768737.9836037
+}

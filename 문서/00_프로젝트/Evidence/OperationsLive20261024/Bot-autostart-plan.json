@@ -1,0 +1,16 @@
+{
+  "task_name": "LIMITLESS-Bot-OnLogon",
+  "multiple_instances": "IgnoreNew",
+  "registered": false,
+  "identity": "CURRENT_DPAPI_USER",
+  "trigger": "same user logon +30seconds",
+  "service": "Bot",
+  "starter_sha256": "31be0c88af7582fc08ff6a49caaf611e208b6e3554c4308f13417cc4dafdaf44",
+  "argument_template": "-NoProfile -WindowStyle Hidden -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\operations-service.ps1\" -Action StartIfEnabled -Service Bot",
+  "enabled": false,
+  "restart_minutes": 1,
+  "restart_count": 3,
+  "run_level": "Limited",
+  "force_termination": false,
+  "wrapper_sha256": "1074392502aabcce0ab0bcecb07c298bdaf71b4d81eeaf2e9b4bfe5cf45455ef"
+}
