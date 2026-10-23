@@ -1,0 +1,17 @@
+{
+  "slot_state": "CONSUMED",
+  "new_real_tasks": 1,
+  "counts": {
+    "APPROVAL_PENDING": 1,
+    "DONE": 2,
+    "NOT_VERIFIED": 2
+  },
+  "integrity": "ok",
+  "usage": [
+    [
+      18075,
+      385,
+      "UNKNOWN"
+    ]
+  ]
+}

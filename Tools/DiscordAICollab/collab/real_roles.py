@@ -148,6 +148,14 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
         completed=invoke(command,input=plan['prompt'],capture_output=True,text=True,encoding='utf8',errors='replace',
                          env=child_environment(),timeout=90,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         result=parse_result(completed.stdout,completed.returncode,plan['role'])
+        result['exit_code']=completed.returncode
+        if result['status']!='PASS':
+            raw=(completed.stdout+completed.stderr).lower()
+            for fragment,label in [('reserved','BUILTIN_PROVIDER_CONFIG_REJECTED'),('unknown field','CONFIG_UNSUPPORTED'),
+                                   ('unauthorized','AUTH_REJECTED'),('401','AUTH_REJECTED'),('quota','QUOTA_EXCEEDED'),
+                                   ('rate limit','QUOTA_EXCEEDED'),('failed to connect','NETWORK_FAILED'),('certificate','TLS_FAILED')]:
+                if fragment in raw:
+                    result['reason']=label;break
     except (OSError,subprocess.SubprocessError):
         result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','reason':'EXEC_FAILED_NO_RETRY','usage':{}}
     result.update(task_id=task_id,plan_sha256=plan['sha256'],cli_exec_attempts=1,api_fallback=False,
@@ -172,8 +180,11 @@ def discord_text(result):
     if str(result.get('mode','')).startswith('MOCK'):
         return '[MOCK / 실제 AI 호출 없음] 고정 모의 결과; 미술 승인 아님'
     if result.get('mode')!='REAL_CLI_READONLY' or result.get('status')!='PASS':
-        return '[REAL AI / NOT_VERIFIED] 결과 미검증·재시도 없음·제품 적용 없음'
+        usage=result.get('usage',{})
+        return ('[REAL AI / READ ONLY] 실제 CLI 1회 실행, 결과 검증 미통과(NOT_VERIFIED). '
+                +'입력 '+str(usage.get('input_tokens','미수신'))+' / 출력 '+str(usage.get('output_tokens','미수신'))
+                +' 토큰. 재시도0·API전환0·제품적용0·미술승인0. 원인분류: '+str(result.get('reason','UNKNOWN')))
     summary=result['answer']['summary']
     # mention·코드블록·제어 문자는 게시 전에 제거합니다. 모델 텍스트는 명령으로 해석하지 않습니다.
     summary=re.sub(r'[\x00-\x1f@`<>]',' ',summary)[:900]
-    return '[REAL AI / 구독 CLI / 읽기 전용1회] '+summary+' / 기술 검토만·바울 대표 미술 승인 필요·후속 AI 자동호출 없음'
+    return '[REAL AI / READ ONLY] '+summary+' / 구독 CLI 1회·텍스트 검토만·미술 승인 아님·후속 AI 자동호출 없음'

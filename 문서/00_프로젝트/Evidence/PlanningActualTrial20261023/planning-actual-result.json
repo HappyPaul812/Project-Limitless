@@ -1,0 +1,16 @@
+{
+  "status": "NOT_VERIFIED",
+  "mode": "REAL_CLI_READONLY",
+  "usage": {
+    "input_tokens": 18075,
+    "cached_input_tokens": 0,
+    "output_tokens": 385
+  },
+  "reason": "CLI_OUTPUT_REJECTED_NO_RETRY",
+  "exit_code": 0,
+  "task_id": "L-453288981e4443ea",
+  "plan_sha256": "e9e0e683f43456f67b7468e014699221e3c563eb63f9ba4257a466b3dbba0b38",
+  "cli_exec_attempts": 1,
+  "api_fallback": false,
+  "subscription_applied": "AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED"
+}

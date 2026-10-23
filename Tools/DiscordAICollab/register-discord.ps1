@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -27,7 +27,9 @@ try {
     $env:LIMITLESS_GUILD_ID = $saved.Guild
     $env:LIMITLESS_CHANNEL_IDS = $saved.Channels
     $env:LIMITLESS_ALLOW_DISCORD = '1'
-    if ($Action -in @('AIReadyReport','AIResultReport')) {
+    if ($Action -eq 'PlanningApprovedOnce') {
+        & '.venv/Scripts/python.exe' -m collab.planning_once
+    } elseif ($Action -in @('AIReadyReport','AIResultReport')) {
         $reportAction = if ($Action -eq 'AIResultReport') { 'result-report' } else { 'report' }
         & '.venv/Scripts/python.exe' -m collab.ai_ready $reportAction
     } elseif ($Action -in @('HandoffPrepare','HandoffFinish')) {
@@ -39,7 +41,14 @@ try {
         # Setup 직후 또는 Test는 최대45초 동안 연결/명령9종/메시지1개만 검사하고 닫습니다.
         & '.venv/Scripts/python.exe' -m collab.discord_check --data data/phase2 --timeout 45
     }
-    if ($LASTEXITCODE -ne 0) { Write-Output '연결 검증 미완료. data/phase2/discord-live-test.json의 비밀 없는 결과를 확인하세요.'; exit 2 }
+    if ($LASTEXITCODE -ne 0) {
+        if ($Action -eq 'PlanningApprovedOnce') {
+            Write-Output 'PlanningAgent 결과 미검증. data/ai-ready/planning-actual-result.json을 확인하세요. 자동 재실행하지 않습니다.'
+        } else {
+            Write-Output '연결 검증 미완료. 비밀 없는 해당 작업 결과 파일을 확인하세요.'
+        }
+        exit 2
+    }
 } catch {
     # 예외 원문이나 암호문도 터미널/대화에 복사하지 않습니다.
     Write-Output '설정/읽기 실패: 숫자 ID, 현재 Windows 사용자, 기존 등록 여부를 확인하세요. 처음이면 Setup, 교체는 Setup -Replace를 사용하세요.'

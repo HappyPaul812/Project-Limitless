@@ -1,0 +1,15 @@
+{
+  "before": {
+    "primary_remaining_percent": 93,
+    "weekly_remaining_percent": 70,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE_NOT_CALL_ATTRIBUTABLE"
+  },
+  "after": {
+    "primary_remaining_percent": 91,
+    "weekly_remaining_percent": 70,
+    "paid_credits_available": false,
+    "scope": "ACCOUNT_WIDE_NOT_CALL_ATTRIBUTABLE"
+  },
+  "account_change_not_attributed_to_single_call": true
+}
