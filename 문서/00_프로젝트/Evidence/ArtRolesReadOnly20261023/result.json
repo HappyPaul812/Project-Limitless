@@ -1,0 +1,44 @@
+{
+  "state": "FAILED",
+  "stages": [
+    {
+      "status": "NOT_VERIFIED",
+      "mode": "REAL_CLI_READONLY",
+      "execution_status": "EXIT_NONZERO",
+      "validation_status": "REJECTED",
+      "usage": {},
+      "completed_turns": 0,
+      "reason": "EXIT_NONZERO",
+      "reason_codes": [
+        "EXIT_NONZERO",
+        "JSONL_EMPTY",
+        "TURN_COUNT_INVALID_OR_INCOMPLETE",
+        "FINAL_OUTPUT_MISSING"
+      ],
+      "diagnostics": {
+        "event_counts": {},
+        "item_counts": {},
+        "commentary_completed": 0,
+        "explicit_final_completed": 0,
+        "legacy_messages_completed": 0,
+        "invalid_line_numbers": [],
+        "final_source": "output-last-message",
+        "final_chars": 0,
+        "stdout_chars": 0,
+        "stderr_chars": 330
+      },
+      "exit_code": 1,
+      "task_id": "L-cf2b95ce985346d8",
+      "plan_sha256": "c9f37e631abffbdf960071932430f8cf6d9d14ae0eb790479b4c216873295d46",
+      "cli_exec_attempts": 1,
+      "api_fallback": false,
+      "subscription_applied": "AUTH_CHATGPT_CONFIRMED; BILLING_NOT_INDEPENDENTLY_VERIFIED"
+    }
+  ],
+  "messages": [],
+  "retry_count": 0,
+  "api_fallback": false,
+  "actual_cli_attempts": 1,
+  "verification": "NOT_VERIFIED",
+  "reason": "ROLE_OUTPUT_NOT_VERIFIED"
+}

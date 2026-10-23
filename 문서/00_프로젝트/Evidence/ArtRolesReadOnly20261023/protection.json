@@ -1,0 +1,16 @@
+{
+  "original_files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_same": true,
+  "previous_tasks_identical": true,
+  "previous_tasks_count": 10,
+  "new_usage_rows": 1,
+  "cli_attempts": 1,
+  "renewal_cli_attempts": 0,
+  "slots": {
+    "NEW_ART_READONLY_20261023_ONE_APPROVED": "CONSUMED"
+  },
+  "raw_last_message_exists": false,
+  "source_sha256": "36e3b3eb5a944aab83e4e7bfa2ce7f49cbabb9f2cd8dc3278e1bc72b422fad91"
+}

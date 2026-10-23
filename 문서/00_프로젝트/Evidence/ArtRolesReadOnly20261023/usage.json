@@ -1,0 +1,16 @@
+{
+  "before": {
+    "primary_remaining_percent": 49,
+    "weekly_remaining_percent": 64
+  },
+  "after": {
+    "primary_remaining_percent": 48,
+    "weekly_remaining_percent": 63
+  },
+  "scope": "ACCOUNT_WIDE_NOT_ATTRIBUTABLE_TO_THIS_ATTEMPT",
+  "paid_credits_available": false,
+  "input_tokens": null,
+  "output_tokens": null,
+  "api_fallback": false,
+  "additional_paid_api_calls": 0
+}

@@ -1,0 +1,27 @@
+{
+  "cli": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "controls": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "plans": [
+    {
+      "role": "NewArtAgent",
+      "prompt_bytes": 39661,
+      "sha256": "b162fb22295fa11b14aee4697ebfeca73ce2cc8414753995b53cbefcf7f36e51"
+    },
+    {
+      "role": "RenewalArtAgent",
+      "prompt_bytes": 25102,
+      "sha256": "c49697614701c37e15f38625dda4e37c58992de6506826b7c7d0e974aadc2f3d"
+    }
+  ],
+  "source_sha256": "fd4c40085062370d4eb05713c783ed6f57c6ea72e6c607a13ebe8be79d2a917c"
+}

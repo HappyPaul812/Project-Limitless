@@ -1,3 +1,7 @@
+## 2026-10-23 아트 AI 실제 연결 — NewArt 첫 실패로 중지
+
+대표 승인 각1회 범위에서 NewArt CLI1회 시도 exit1/JSONL0/최종응답0/NOT_VERIFIED, Renewal0회. 토큰 미수신·추론 성공 미확인·자동 재시도/API전환0. Discord 실패보고1563161292213063801. 새 fake 경계8PASS/0FAIL·Python구문PASS, 실제 연결 실패1/후속미검증1. 기존 Planning/Codex 업무10개 불변·원본7356 SHA변경/누락0·git상태동일·제품/Unity/아트/Save/미술승인/Push/merge0. 구현85e1e243. [보고](팀운영/Art_Roles_ReadOnly_Stopped_20261023.md). 두 담당 성공조건 미충족으로 다음 납품 자동화 조사는 보류. Unity 사용자확인 없음. 다음 실제 재시험은 별도 승인 필요, 이번 소비슬롯 재사용금지.
+
 ## 2026-10-23 첫 실제 AI 자동 인계1건 VERIFIED — 성공 후 중지
 
 인계AUTO63-85cd0486e4e5: Planning1회→Codex1회→원래Planning업무기록수신 자동완료. 기획L-37f83d21152d4df8 REVIEW_PENDING·Codex L-85bcfa2bec254668 DONE, 요청해시/실제Codex입력해시동일·답변원업무evidence연결. Discord요청/답변/수신3영수증PASS. 기획수신은추가AI추론아님·중간수동복사0·재시도0·다른AI0.
