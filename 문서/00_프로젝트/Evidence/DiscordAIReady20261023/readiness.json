@@ -1,0 +1,55 @@
+{
+  "status": "WAITING_FOR_OWNER_APPROVAL",
+  "actual_inference_calls": 0,
+  "auth": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "config": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "api_calls": 0,
+  "additional_api_cost_usd": 0,
+  "subscription_consumption_this_probe": "NOT_EXECUTED",
+  "source_refs": {
+    "main": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+    "docs/planning": "d73bdbf9a3162132b959f4672e88c3975b361c3c",
+    "docs/art-new": "d9d14c0f6b7f8c0652c13b769e205dd5de426c7f",
+    "docs/art-renewal": "1d171f79ea95ba12dc6ffcb288f3466ebc3dfb31"
+  },
+  "plans": [
+    {
+      "role": "PlanningAgent",
+      "sha256": "6997865bc8c9f29e648026be694f8c755fa85bef48ffc61f846e6cf4b569bb55",
+      "prompt_bytes": 25454,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "CodexAgent",
+      "sha256": "d572d0ea8154abbf3af159b3c02c39c5d419d84404f7c24d541aab3a837e4988",
+      "prompt_bytes": 25255,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "NewArtAgent",
+      "sha256": "15ab21e2135db268d1ea6e78c36a9dc0a0cd8d7f3d6bbaeccbf7e9d0c28bac48",
+      "prompt_bytes": 30891,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "RenewalArtAgent",
+      "sha256": "c8a0c13c4a9d62a9c0bf60893262ff86179d775eab4da1b5ce37ffe764b13e51",
+      "prompt_bytes": 30964,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "suite": "tests.test_real_roles",
+  "mode": "MOCK_SUBPROCESS_NO_REAL_INFERENCE",
+  "unique_tests_pass": 12,
+  "fail": 0,
+  "real_model_calls": 0,
+  "python_compile": "PASS",
+  "powershell_syntax_errors": 0,
+  "existing_full_QA_rerun": false
+}

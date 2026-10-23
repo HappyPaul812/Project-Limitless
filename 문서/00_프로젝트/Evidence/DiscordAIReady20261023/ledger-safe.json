@@ -1,0 +1,9 @@
+{
+  "approval_slot_absent": true,
+  "new_real_tasks": 0,
+  "slash_reply_receipts": {
+    "DISCORD_REPLY_SENT_HANDOFF": 1,
+    "DISCORD_REPLY_SENT_PENDING": 1,
+    "DISCORD_REPLY_SENT_STATUS": 2
+  }
+}

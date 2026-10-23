@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-23",
+  "primary_used_percent": 95,
+  "primary_remaining_percent": 5,
+  "primary_reset_unix": 1792751439,
+  "weekly_remaining_percent": 72,
+  "paid_credits_available": false,
+  "reset_credits_used": 0,
+  "inference_calls_this_stage": 0,
+  "attribution": "ACCOUNT_WIDE_NOT_THIS_PROBE"
+}

@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -27,7 +27,10 @@ try {
     $env:LIMITLESS_GUILD_ID = $saved.Guild
     $env:LIMITLESS_CHANNEL_IDS = $saved.Channels
     $env:LIMITLESS_ALLOW_DISCORD = '1'
-    if ($Action -in @('HandoffPrepare','HandoffFinish')) {
+    if ($Action -in @('AIReadyReport','AIResultReport')) {
+        $reportAction = if ($Action -eq 'AIResultReport') { 'result-report' } else { 'report' }
+        & '.venv/Scripts/python.exe' -m collab.ai_ready $reportAction
+    } elseif ($Action -in @('HandoffPrepare','HandoffFinish')) {
         $env:LIMITLESS_HANDOFF_FINISH = if ($Action -eq 'HandoffFinish') { '1' } else { '0' }
         & '.venv/Scripts/python.exe' -m collab.handoff_live
     } elseif ($Action -eq 'Run') {

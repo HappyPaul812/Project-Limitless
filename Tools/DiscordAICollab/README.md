@@ -1,5 +1,9 @@
 # LIMITLESS Discord AI 협업 — 로컬 파일럿
 
+## 실제 AI 준비 — 별도 승인 대기
+
+`collab.real_roles`는 기존 MOCK worker와 별도의 구독 CLI 실행기입니다. `python -m collab.ai_ready prepare`로4역할 SHA 고정 입력을 만들고, 바울 대표의 별도 승인 후에만 같은 협업DB의 공통1회 슬롯을 grant/run합니다. 승인 전 실제 모델 호출0. Discord9명령에는 추론 실행/승인 명령을 추가하지 않았습니다. `register-discord.ps1 -Action AIReadyReport`는 준비 상태만 게시하며 `AIResultReport`는 승인 실행 장부의 실제 결과만 게시합니다. [범위·계획 SHA·예상 사용량](../../문서/00_프로젝트/팀운영/Discord_AI_Real_Connection_Readiness_20261023.md)을 먼저 확인하세요.
+
 ## 암호화 등록 및 실연결 후속
 
 [안전한 로컬 설정 안내](SECURE_DISCORD_SETUP_KO.md)를 따릅니다. `register-discord.ps1 -Action Setup`은 숨김 입력·현재 Windows 사용자 DPAPI 저장·최대45초 연결 검사를 수행합니다. 실제 연결/명령9등록/메시지 전송 PASS는 확인했으며 실제 Slash 실행은 별도 영수증으로 구분합니다. `-Action Run`은 봇을 유지합니다. 기존 connect-discord.ps1은 메모리 입력용으로 보존합니다.
