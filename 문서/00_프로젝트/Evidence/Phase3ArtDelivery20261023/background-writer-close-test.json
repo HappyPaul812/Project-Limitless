@@ -1,0 +1,12 @@
+{
+  "mode": "REAL_BACKGROUND_WATCHER_FILE_TEST",
+  "sha256": "14ac63e19add07391a9d24f73006e837be927e438494621da5faa728239f4c5a",
+  "source_bytes_unchanged": true,
+  "no_task_while_writer_open": true,
+  "task_id": "L-79a30df7eb18488c",
+  "status": "HOLD",
+  "discord_message_id": "1563181682582884413",
+  "direct_watcher_calls": 0,
+  "ai_calls": 0,
+  "unity_runs": 0
+}

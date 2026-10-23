@@ -1,0 +1,16 @@
+{
+  "unique_tests_pass": 45,
+  "fail": 0,
+  "groups": {
+    "delivery_security": 35,
+    "discord_adapter_and_local_stop": 10
+  },
+  "selected_post_change_rechecks_pass": 3,
+  "real_ai_calls": 0,
+  "legacy_ai_qa_replayed": false,
+  "initial_findings_resolved": [
+    "JSON bbox tuple/list consistency",
+    "Windows ZIP original filename before normalization"
+  ],
+  "asyncio_tests": "LOCAL_FAKE_ONLY_WINDOWS_ALLOWED_CONTEXT"
+}

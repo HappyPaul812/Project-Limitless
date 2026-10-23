@@ -1,0 +1,232 @@
+{
+  "mode": "REAL_FILE_TRANSPORT_TEST_NO_AI",
+  "original_zip_sha256": "2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478",
+  "png_sha256": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+  "upload_message_id": "1563180766165205003",
+  "discord_received": [
+    {
+      "status": "HOLD",
+      "sha256": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+      "task_id": "L-bf8ebb36f38240c9",
+      "new_task_created": true,
+      "inspection": {
+        "status": "HOLD",
+        "integrity": "TECH_PASS",
+        "format": "PNG",
+        "zip_crc": "NOT_APPLICABLE",
+        "artist_role": "RenewalArtAgent",
+        "issue": 63,
+        "base_sha": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+        "art": "USER_REVIEW_PENDING",
+        "unity": "NOT_VERIFIED",
+        "rights": "RIGHTS_SOURCE_PENDING",
+        "hold_reasons": [
+          "ART_APPROVAL_PENDING",
+          "RIGHTS_HUMAN_REVIEW_REQUIRED",
+          "RIGHTS_OR_SOURCE_UNCLEAR"
+        ],
+        "png": {
+          "Phase3_Bee_PILOT_COPY.png": {
+            "dimensions": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_range": [
+              0,
+              255
+            ],
+            "bbox": [
+              11,
+              39,
+              501,
+              472
+            ],
+            "frame_size": [
+              512,
+              512
+            ],
+            "frames": 1,
+            "frame_layout": "PASS"
+          }
+        },
+        "files": {
+          "Phase3_Bee_PILOT_COPY.png": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e"
+        },
+        "collisions": [],
+        "sha256": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+        "bytes": 326395,
+        "source": "DISCORD_SELF_TRANSPORT_TEST",
+        "ai_called": false,
+        "product_applied": false
+      }
+    }
+  ],
+  "folder_received": [
+    {
+      "status": "DUPLICATE",
+      "sha256": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+      "task_id": "L-bf8ebb36f38240c9",
+      "original_status": "HOLD",
+      "new_task_created": false
+    },
+    {
+      "status": "HOLD",
+      "sha256": "2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478",
+      "task_id": "L-169ba798cf6646cc",
+      "new_task_created": true,
+      "inspection": {
+        "status": "HOLD",
+        "integrity": "TECH_PASS",
+        "format": "ZIP",
+        "zip_crc": "PASS",
+        "artist_role": "RenewalArtAgent",
+        "issue": 63,
+        "base_sha": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+        "art": "USER_REVIEW_PENDING",
+        "unity": "NOT_VERIFIED",
+        "rights": "RIGHTS_SOURCE_PENDING",
+        "hold_reasons": [
+          "ART_APPROVAL_PENDING",
+          "FRAME_CONTRACT_UNKNOWN_OR_MISMATCH",
+          "MANIFEST_UNLISTED_FILES",
+          "PNG_NOT_RGBA",
+          "PNG_TRANSPARENCY_OR_CONTENT_HOLD",
+          "RIGHTS_HUMAN_REVIEW_REQUIRED",
+          "RIGHTS_OR_SOURCE_UNCLEAR",
+          "SPRITE_DIMENSIONS_UNKNOWN_OR_MISMATCH"
+        ],
+        "png": {
+          "VenomBee_DesignBoard_Source.png": {
+            "dimensions": [
+              1536,
+              1024
+            ],
+            "mode": "RGB",
+            "alpha_range": null,
+            "bbox": null,
+            "frame_size": null,
+            "frames": null,
+            "frame_layout": "HOLD"
+          },
+          "VenomBee_OriginalKeyArt_Pilot_v1_512.png": {
+            "dimensions": [
+              512,
+              512
+            ],
+            "mode": "RGBA",
+            "alpha_range": [
+              0,
+              255
+            ],
+            "bbox": [
+              11,
+              39,
+              501,
+              472
+            ],
+            "frame_size": null,
+            "frames": null,
+            "frame_layout": "HOLD"
+          },
+          "VenomBee_Preview_128.png": {
+            "dimensions": [
+              128,
+              128
+            ],
+            "mode": "RGBA",
+            "alpha_range": [
+              0,
+              255
+            ],
+            "bbox": [
+              0,
+              7,
+              128,
+              121
+            ],
+            "frame_size": null,
+            "frames": null,
+            "frame_layout": "HOLD"
+          },
+          "VenomBee_Preview_40.png": {
+            "dimensions": [
+              40,
+              40
+            ],
+            "mode": "RGBA",
+            "alpha_range": [
+              0,
+              255
+            ],
+            "bbox": [
+              0,
+              0,
+              40,
+              39
+            ],
+            "frame_size": null,
+            "frames": null,
+            "frame_layout": "HOLD"
+          }
+        },
+        "files": {
+          "Manifest.json": "435e39950dfbbf66a4cc47dac80b136eb93ea03af2154477b3596051e5bdf2ec",
+          "QA.md": "5fb14bd229478b0c34d0d2ba41fd4e331dac536702ca23e207afff60c30a333f",
+          "SHA256SUMS.txt": "1cd9278d5b27468052c80fea0f9557467b9f5fb39865ddc0a8feca9d3fc25cc1",
+          "SourceAndRuntimeMapping.md": "72b627153a0bc1b9183d1e37355bb4c62c97d953eb22867ff1aae3fd3cfd2bdf",
+          "VenomBee_DesignBoard_Source.png": "eeedb7b80c8ce5250f045b626b73cbaeef7a792a246a3696dc4d305c3ed9c1fb",
+          "VenomBee_OriginalKeyArt_Pilot_v1_512.png": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+          "VenomBee_Preview_128.png": "14ac63e19add07391a9d24f73006e837be927e438494621da5faa728239f4c5a",
+          "VenomBee_Preview_40.png": "4a4d3e59baef2ef075c889995f7033a073dc2fc522875a920f21d66b8923366e"
+        },
+        "collisions": [],
+        "sha256": "2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478",
+        "bytes": 2291579,
+        "source": "WINDOWS_SHARED_INBOX",
+        "ai_called": false,
+        "product_applied": false
+      }
+    },
+    {
+      "status": "REJECTED",
+      "sha256": "19f8e4c734c3b0b5fba51b718aef15f0a0a747ae5e68aba09f93c7a39aca6b1b",
+      "task_id": null,
+      "new_task_created": false,
+      "inspection": {
+        "status": "REJECTED",
+        "integrity": "TECH_FAIL",
+        "reason": "UNSAFE_DELIVERY_REJECTED",
+        "art": "USER_REVIEW_PENDING",
+        "unity": "NOT_VERIFIED",
+        "rights": "RIGHTS_SOURCE_PENDING",
+        "sha256": "19f8e4c734c3b0b5fba51b718aef15f0a0a747ae5e68aba09f93c7a39aca6b1b",
+        "bytes": 216,
+        "source": "WINDOWS_SHARED_INBOX",
+        "ai_called": false,
+        "product_applied": false
+      }
+    }
+  ],
+  "unsafe_zip_did_not_escape": true,
+  "discord_repeat": [],
+  "outbox": [
+    {
+      "status": "SENT",
+      "message_id": "1563180797370826778"
+    },
+    {
+      "status": "SENT",
+      "message_id": "1563180799954526231"
+    },
+    {
+      "status": "SENT",
+      "message_id": "1563180802630754326"
+    },
+    {
+      "status": "SENT",
+      "message_id": "1563180804606267395"
+    }
+  ],
+  "original_zip_unchanged": true
+}

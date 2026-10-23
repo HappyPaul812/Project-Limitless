@@ -1,3 +1,7 @@
+# Phase3 현재 운영 상태
+
+아트-납품 Discord 첨부 및 Windows 납품함 감시·격리 검사·Codex 대기 업무·Discord 보고를 연결했습니다. [운영 안내](PHASE3_ART_DELIVERY_KO.md)와 [검증 보고](../../문서/00_프로젝트/팀운영/Phase3_Art_Delivery_Verified_20261023.md)를 확인하세요. 수령 감시만 실행 중이며 AI·Unity worker는 실행하지 않습니다. 대표 계정 신규 첨부 수령은 아직 직접 관찰하지 않았습니다. 아래 내용은 이전 단계 이력이며 watcher 미연결 등 당시 상태를 보존합니다.
+
 # LIMITLESS Discord AI 협업 — 로컬 파일럿
 
 ## 2026-10-23 최신 검증 — 네 역할 단발 자동 인계 성공
