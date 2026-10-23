@@ -229,8 +229,8 @@ class Store:
                 raise Denied('기술 검수 미완료')
             evidence = json.loads(task['evidence'] or '{}')
             if action == 'approve':
-                if evidence.get('mode') == 'MOCK':
-                    raise Denied('모의 결과를 실제 미술 승인에 사용할 수 없습니다')
+                if evidence.get('mode') in ('MOCK','CODEX_SUBSCRIPTION_PROBE'):
+                    raise Denied('모의·추론 연결 결과를 실제 미술 승인에 사용할 수 없습니다')
                 artifact = Path(payload['artifact'])
                 if not artifact.is_file() or artifact.is_symlink() or sha256(artifact) != digest:
                     raise Denied('실제 승인 대상 파일이 없거나 SHA가 변경되었습니다')

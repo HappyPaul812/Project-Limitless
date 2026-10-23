@@ -1,5 +1,9 @@
 # LIMITLESS Discord AI 협업 — 로컬 파일럿
 
+## Phase2 후속 상태 (2026-10-23)
+
+[대표 설정 안내](PHASE2_SETUP_KO.md)를 추가했습니다. Discord 설정은 WAITING_FOR_USER_SETUP이며 숨김 입력 connect-discord.ps1로 대표가 직접 연결합니다. 기존9명령·큐를 재사용하고 응답 성공/권한 거부 영수증만 추가합니다. 고정 Codex 실행1회는 bootstrap provider override 거부로 완료turn0이며 자동 재실행0입니다. 수정 준비안은 추론 없는 설정 검사만 PASS, 새 추론은 별도 승인 필요입니다. 이전 단계의57 PASS와 새 변경분 테스트는 구분합니다. 아래 최초 파일럿 이력은 보존합니다.
+
 바울 대표의 2026-10-23 통합 구축 지시를 위한 독립 Python 도구입니다. 실제 ChatGPT 담당 세션을 제어하는 완성 서비스는 아닙니다. 기존 세션·로그인·비공개 생성물에 접근하지 않습니다.
 
 ## 현재 실행 가능한 범위
