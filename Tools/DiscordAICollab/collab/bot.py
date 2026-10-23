@@ -17,7 +17,7 @@ from .query_text import format_query
 from .scheduling import Scheduler, format_control
 
 
-def create_bot(store: Store, data_root):
+def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None):
     root = safe_root(data_root)
     scheduler = Scheduler(store)
 
@@ -31,6 +31,7 @@ def create_bot(store: Store, data_root):
             self.tree = app_commands.CommandTree(self)
             self.verified_ready = asyncio.Event()
             self.control_timer = None
+            self.stop_task = None
 
         async def setup_hook(self):
             guild = discord.Object(id=store.guild)
@@ -44,13 +45,26 @@ def create_bot(store: Store, data_root):
                 'status':'COMMANDS_REGISTERED','root_commands':len(commands),'subcommands':names,
                 'gateway':'NOT_VERIFIED','tokens_logged':False},indent=2),encoding='utf8')
 
+            (root/'bot-stop-request').unlink(missing_ok=True)
             scheduler.recover_reports()
+            if resume_queue:
+                resume_queue.recover()
             self.control_timer = asyncio.create_task(self.control_loop())
 
         async def control_loop(self):
             while not self.is_closed():
+                if (root/'bot-stop-request').exists():
+                    # timer가 SDK closing task를 직접 기다리면 close()의 timer 취소가 SDK 종료까지 취소합니다.
+                    # 현재 루프를 먼저 끝내고 별도 close task가 연결을 닫도록 합니다.
+                    self.stop_task=asyncio.create_task(self.close())
+                    return
                 try:
+                    if usage_monitor:
+                        await usage_monitor.refresh()
                     await asyncio.to_thread(scheduler.tick)
+                    if resume_queue:
+                        actor=Identity(next(iter(store.owners)),store.guild,min(store.channels))
+                        await asyncio.to_thread(resume_queue.tick,actor)
                     async def publish(text):
                         channel = await self.fetch_channel(min(store.channels))
                         if channel.guild.id != store.guild:
@@ -58,19 +72,21 @@ def create_bot(store: Store, data_root):
                         message = await channel.send(text, allowed_mentions=discord.AllowedMentions.none())
                         return message.id
                     await scheduler.flush_reports(publish)
+                    (root/'bot-service-status.json').write_text(json.dumps({'status':'RUNNING','last_tick':store.clock(),'ai_worker_enabled':False,'approved_readonly_resume_only':resume_queue is not None,'shutdown_enabled':False}),encoding='utf8')
                 except Exception:
                     # 게이트는 모든 시작 트랜잭션에서도 재확인합니다. 보고 실패로 실행을 허용하지 않습니다.
                     receipt('CONTROL_TICK_OR_REPORT_NOT_VERIFIED')
                 await asyncio.sleep(5)
 
         async def close(self):
-            if self.control_timer:
+            if self.control_timer and not self.control_timer.done() and self.control_timer is not asyncio.current_task():
                 self.control_timer.cancel()
                 try:
                     await self.control_timer
                 except asyncio.CancelledError:
                     pass
             await super().close()
+            (root/'bot-service-status.json').write_text(json.dumps({'status':'STOPPED','ai_calls':0}),encoding='utf8')
 
         async def on_ready(self):
             path = root/'discord-connection.json'
@@ -173,10 +189,16 @@ def create_bot(store: Store, data_root):
     async def control_dispatch(interaction, action, args=None):
         await interaction.response.defer(ephemeral=True, thinking=True)
         try:
+            store.authorize(identity(interaction))
+            if action=='usage' and usage_monitor:
+                await usage_monitor.refresh(force=True)
             result = await asyncio.to_thread(scheduler.command, identity(interaction),
                                              str(interaction.id), action, args)
-            await interaction.followup.send(format_control(action, result)[:1800], ephemeral=True,
-                                            allowed_mentions=discord.AllowedMentions.none())
+            response = await interaction.followup.send(format_control(action, result)[:1800], ephemeral=True,
+                                            allowed_mentions=discord.AllowedMentions.none(),wait=True)
+            with store.tx() as db:
+                db.execute('INSERT OR REPLACE INTO control_interactions VALUES(?,?,?,?,?,?,?)',
+                    (str(interaction.id),action,str(response.id),1,int(bool(response.flags.ephemeral)),int(getattr(interaction,'type',None)==discord.InteractionType.application_command),store.clock()))
             receipt('DISCORD_CONTROL_REPLY_' + action.upper())
         except Denied as exc:
             await interaction.followup.send(str(exc), ephemeral=True,
@@ -196,8 +218,8 @@ def create_bot(store: Store, data_root):
         await control_dispatch(interaction, 'schedule-status')
 
     @group.command(name='cancel', description='예약 및 모의 종료 요청 취소; 승인·수동 정지는 유지')
-    async def cancel(interaction: discord.Interaction, schedule_id: str):
-        await control_dispatch(interaction, 'cancel', dict(schedule_id=schedule_id))
+    async def cancel(interaction: discord.Interaction, schedule_id: str, release_intake: bool = False):
+        await control_dispatch(interaction, 'cancel', dict(schedule_id=schedule_id,release_intake=release_intake))
 
     @group.command(name='usage', description='공식 관측의 5시간·주간 한도 및 회복 시각')
     async def usage(interaction: discord.Interaction):
@@ -226,7 +248,7 @@ def run_bot(data_root):
         guild = int(os.environ['LIMITLESS_GUILD_ID'])
         channels = {int(x) for x in os.environ['LIMITLESS_CHANNEL_IDS'].split(',')}
         token = os.environ['DISCORD_BOT_TOKEN']
-        if not token or guild<=0 or not channels or any(x<=0 for x in channels):
+        if not token or guild<=0 or not channels or len(owners)!=1 or any(x<=0 for x in channels):
             raise ValueError()
     except (KeyError,ValueError):
         raise Denied('Discord ID·토큰 환경변수가 필요합니다') from None
@@ -238,7 +260,20 @@ def run_bot(data_root):
     logging.getLogger('discord').disabled=True
     logging.getLogger('discord').addHandler(logging.NullHandler())
     logging.getLogger('discord').propagate=False
+    import msvcrt
+    lock=(root/'bot-service.lock').open('a+b');lock.seek(0);lock.write(b'1');lock.flush();lock.seek(0)
     try:
-        create_bot(store,root).run(token,log_handler=None,reconnect=False)
+        msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
+    except OSError:
+        lock.close()
+        raise Denied('BOT_SERVICE_ALREADY_RUNNING') from None
+    from .usage_bridge import UsageMonitor
+    monitor=UsageMonitor(Scheduler(store))
+    from .resume_queue import ResumeQueue
+    resume_queue=ResumeQueue(store)
+    try:
+        create_bot(store,root,monitor,resume_queue).run(token,log_handler=None,reconnect=False)
     except Exception:
         raise Denied('DISCORD_CONNECTION_FAILED: 토큰·초대·서버/채널 권한을 로컬에서 확인하세요. 원문 로그는 보존하지 않습니다') from None
+    finally:
+        lock.close()

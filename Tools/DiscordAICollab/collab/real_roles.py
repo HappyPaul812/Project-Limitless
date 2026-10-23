@@ -105,8 +105,15 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     # 예약·공식 사용량이 불명확하면 CLI 사전 점검 이전에 중지합니다.
     from .scheduling import gate
     with store.tx() as db:
-        if gate(db, store.clock(), ai=True, duration=90):
-            raise Denied('SCHEDULE_OR_USAGE_HOLD: 예약·공식 사용량 새 확인 필요')
+        blocked=gate(db, store.clock(), ai=True, duration=90)
+    if blocked:
+        # 유효한 기존 승인만 보류 큐에 연결합니다. 승인 생성·기한 연장·CLI 실행은 하지 않습니다.
+        from .resume_queue import ResumeQueue
+        try:
+            ResumeQueue(store).defer(identity,plan,workspace,executable)
+        except (Denied,OSError):
+            pass
+        raise Denied('SCHEDULE_OR_USAGE_HOLD: 예약·공식 사용량 새 확인 필요')
     # 승인 확인이 없으면 인증 조회나 모델 프로세스조차 만들지 않습니다.
     with store.tx() as db:
         row=db.execute('SELECT value FROM settings WHERE key=?',(slot,)).fetchone()

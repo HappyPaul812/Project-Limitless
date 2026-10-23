@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS control_holds(
 CREATE TABLE IF NOT EXISTS control_reports(
  id TEXT PRIMARY KEY, schedule TEXT NOT NULL, body TEXT NOT NULL, created REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS control_settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS control_interactions(interaction TEXT PRIMARY KEY,action TEXT,response_id TEXT,owner_verified INTEGER,ephemeral INTEGER,gateway INTEGER,created REAL);
 CREATE TABLE IF NOT EXISTS control_outbox(
  id TEXT PRIMARY KEY, body TEXT NOT NULL, state TEXT NOT NULL, message_id TEXT);
 INSERT OR IGNORE INTO control_settings VALUES('mode','SIMULATION_ONLY');
@@ -75,7 +76,8 @@ def advance(db, now):
     if state != row['state']:
         db.execute('UPDATE control_schedules SET state=? WHERE id=?', (state, row['id']))
         row['state'] = state
-        text = ('[SCHEDULE / SIMULATION_ONLY] 예약 ' + row['id'] + ' / ' + state +
+        mode=db.execute("SELECT value FROM control_settings WHERE key='mode'").fetchone()[0]
+        text = ('[SCHEDULE / '+mode+'] 예약 ' + row['id'] + ' / ' + state +
                 ' 신규 접수·실행 보류. 진행중 업무는 강제 종료하지 않으며 미완료 장부를 보존합니다. '
                 'Git 통합·PC 종료·추가 AI 호출 없음.')
         db.execute('INSERT OR IGNORE INTO control_outbox VALUES(?,?,?,?)',
@@ -97,13 +99,15 @@ def usage_decision(db, now):
     if row is None:
         return {'status': 'UNKNOWN', 'reason': '공식 사용량 확인 필요', 'recheck_at': None}
     value = json.loads(row['body'])
-    if value.get('ordinary_allowed') is not True:
-        return {'status': 'UNKNOWN', 'reason': '공식 일반 사용 허용을 확인할 수 없습니다', 'recheck_at': None, **value}
+    if value.get('status') == 'UNKNOWN':
+        return {'status':'UNKNOWN','reason':'공식 자동 조회 실패·새 확인 전 실행 차단','recheck_at':None,'source':value['source']}
     exhausted = [w for w in value['windows'] if w['used_percent'] >= 100]
     recheck = max((w['resets_at'] for w in exhausted), default=None)
     if exhausted:
         return {'status': 'EXHAUSTED' if now < recheck else 'RECHECK_REQUIRED',
                 'reason': '회복 시각 후 새 공식 관측 필요', 'recheck_at': recheck, **value}
+    if value.get('ordinary_allowed') is not True:
+        return {'status': 'UNKNOWN', 'reason': '공식 일반 사용 허용을 확인할 수 없습니다', 'recheck_at': None, **value}
     if not 0 <= now - row['observed'] <= 300 or any(now >= w['resets_at'] for w in value['windows']):
         return {'status': 'UNKNOWN', 'reason': '관측 만료: 새 공식 사용량 확인 필요', 'recheck_at': None, **value}
     return {'status': 'AVAILABLE', 'reason': '새 관측 기준 잔여 있음; 실행 승인은 별도', 'recheck_at': None, **value}
@@ -138,7 +142,7 @@ class Scheduler:
         now = self.store.clock()
         if not isinstance(observed, (float, int)) or not math.isfinite(observed) or not 0 <= now - observed <= 60:
             raise Denied('최신 공식 관측만 허용합니다')
-        if not isinstance(body, dict) or body.get('source') != 'CODEX_APP_OFFICIAL_TOOL':
+        if not isinstance(body, dict) or body.get('source') not in ('CODEX_APP_OFFICIAL_TOOL','CODEX_APP_SERVER_OFFICIAL'):
             raise Denied('지원되는 공식 관측 출처가 아닙니다')
         windows = body.get('windows')
         if not isinstance(windows, list) or len(windows) != 2:
@@ -162,10 +166,17 @@ class Scheduler:
                        (observed, clean['source'], json.dumps(clean)))
         return clean
 
+    def invalidate_usage(self, reason):
+        with self.store.tx() as db:
+            body={'status':'UNKNOWN','source':'CODEX_APP_SERVER_OFFICIAL','reason':reason}
+            db.execute('INSERT INTO control_usage(observed,source,body) VALUES(?,?,?)',
+                       (self.store.clock(),body['source'],json.dumps(body)))
+
     def tick(self):
         with self.store.tx() as db:
             row = advance(db, self.store.clock())
-            return {'mode': 'SIMULATION_ONLY', 'schedule': row,
+            mode=db.execute("SELECT value FROM control_settings WHERE key='mode'").fetchone()[0]
+            return {'mode': mode, 'schedule': row,
                     'usage': usage_decision(db, self.store.clock()),
                     'ai_calls': 0, 'shutdown_calls': 0, 'git_mutations': 0}
 
@@ -206,6 +217,7 @@ class Scheduler:
                 return json.loads(old['result'])
             now = self.store.clock()
             current = advance(db, now)
+            mode=db.execute("SELECT value FROM control_settings WHERE key='mode'").fetchone()[0]
             if action == 'schedule':
                 cleanup = args.get('cleanup_minutes', 10)
                 if type(cleanup) is not int or not 2 <= cleanup <= 120:
@@ -227,7 +239,7 @@ class Scheduler:
                 sid = 'SCH-' + uuid.uuid4().hex[:12]
                 db.execute('INSERT INTO control_schedules VALUES(?,?,?,?,?,?,?)',
                            (sid, deadline, cleanup * 60, next_start, 'ACTIVE', identity.user_id, now))
-                result = {'mode': 'SIMULATION_ONLY', 'id': sid, 'state': 'ACTIVE',
+                result = {'mode': mode, 'id': sid, 'state': 'ACTIVE',
                           'deadline': seoul(deadline), 'stop_intake': seoul(deadline - cleanup * 60),
                           'next_start': seoul(next_start) if next_start else '미지정',
                           'note': '예약은 AI·통합·PC 종료 승인이 아닙니다'}
@@ -235,12 +247,15 @@ class Scheduler:
                 result = usage_decision(db, now)
             elif action == 'schedule-status':
                 result = {'schedule': current, 'usage': usage_decision(db, now),
-                          'mode': 'SIMULATION_ONLY', 'next_start_behavior': '시간 이후 재검증만; 자동 AI 실행 없음'}
+                          'mode': mode, 'next_start_behavior': '시간 이후 재검증만; 자동 AI 실행 없음'}
             else:
                 if not current or args.get('schedule_id') != current['id']:
                     raise Denied('현재 예약 ID가 필요합니다')
                 if action == 'cancel':
-                    state = 'CANCELLED' if current['state'] == 'ACTIVE' else 'CANCELLED_HOLD'
+                    release = args.get('release_intake') is True
+                    if release and db.execute("SELECT count(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]:
+                        raise Denied('실행 중 업무가 있으면 접수 보류를 해제할 수 없습니다')
+                    state = 'CANCELLED' if current['state'] == 'ACTIVE' or release else 'CANCELLED_HOLD'
                     db.execute('UPDATE control_schedules SET state=?,next_start=NULL WHERE id=?', (state, current['id']))
                     result = {'state': state, 'id': current['id'], 'note': '종료 요청 취소·기존 수동 정지와 승인 보류 유지'}
                 elif action == 'finish':
@@ -255,12 +270,17 @@ class Scheduler:
                     # Discord 확인도 현재는 모의 의사 기록입니다. local evidence를 외부 인수로 받지 않습니다.
                     if args.get('confirm') != current['id']:
                         raise Denied('해당 예약 ID로 PC 종료 의사를 다시 확인하세요')
-                    result = {'id': current['id'], 'state': 'HOLD', 'mode': 'SIMULATION_ONLY',
+                    from .operations_safety import pc_preflight
+                    preflight=pc_preflight(self.store,db)
+                    result = {'id': current['id'], 'state': 'HOLD', 'mode': 'SHUTDOWN_DISABLED', 'preflight':preflight,
                               'blockers': ['실제 종료 비활성', '별도 로컬 확인·권한 미검증',
                                            'Git 동기화·보호·미저장 작업·Unity·복사·최종 보고 검증 필요'],
                               'cancel': '/limitless cancel schedule_id:' + current['id']}
                 rid = 'CTL-' + uuid.uuid4().hex[:12]
                 db.execute('INSERT INTO control_reports VALUES(?,?,?,?)', (rid, current['id'], json.dumps(result), now))
+                if action in ('finish','shutdown'):
+                    text='[OPERATIONS / HOLD] '+action+' 예약 '+current['id']+' / 승인·동기화·미저장 작업 검증 부족. 실제 PC 종료·Push·병합 없음.'
+                    db.execute('INSERT OR IGNORE INTO control_outbox VALUES(?,?,?,?)',(rid,text,'PENDING',None))
             db.execute('INSERT INTO control_events VALUES(?,?,?)', (key, fingerprint, json.dumps(result)))
             self.store.audit(db, 'CONTROL_' + action.upper(), actor=identity.user_id)
             return result
@@ -293,7 +313,7 @@ def format_control(action, value):
             lines.append(f"{name}: 사용 {window['used_percent']}% / 회복 {seoul(window['resets_at'])}")
         if 'observed' in value:
             lines.append('확인 시각: ' + seoul(value['observed']))
-        return '\n'.join(lines + ['공식 자동 갱신 미연결. 유료 전환·크레딧·재설정권 사용 없음.'])
+        return '\n'.join(lines + [('공식 App Server 자동 조회 연결·확인 불가 시 보류.' if value.get('source')=='CODEX_APP_SERVER_OFFICIAL' else '공식 자동 갱신 미연결.')+' 유료 전환·크레딧·재설정권 사용 없음.'])
     if action == 'schedule':
         return f"예약 {value['id']} / 서울 시각\n신규 접수 중단: {value['stop_intake']}\n마감: {value['deadline']}\n다음 확인: {value['next_start']}\n{value['note']}"
     if action == 'schedule-status':
@@ -302,7 +322,7 @@ def format_control(action, value):
             return '현재 예약 없음. 실제 종료·자동 AI 실행 비활성.'
         return (f"예약 {row['id']} / {row['state']}\n마감: {seoul(row['deadline'])}\n"
                 f"다음 확인: {seoul(row['next_start']) if row['next_start'] else '미지정'}\n"
-                '모의 안전 제어 모드·다음 시각 자동 호출 없음.')
+                + ('운영 제어·실제 종료 비활성.' if value.get('mode')=='LIVE_CONTROL' else '모의 안전 제어 모드·다음 시각 자동 호출 없음.'))
     if action == 'finish':
         counts = {}
         for task in value['tasks']:
@@ -310,4 +330,5 @@ def format_control(action, value):
         return f"마감 점검: {value['state']}\n실행 중 {len(value['running'])}건 / 상태별 {counts}\n통합 HOLD·실제 종료 없음. 미완료 업무는 장부에 보존했습니다."
     if action == 'cancel':
         return f"예약 취소: {value['id']} / {value['state']}\n{value['note']}"
-    return 'PC 종료 HOLD: 실제 종료 기능 비활성·로컬 권한/동기화/보호/미저장 작업 검증 필요.\n취소: ' + value['cancel']
+    preflight=value.get('preflight',{})
+    return ('PC 종료 HOLD / 대상 PC '+preflight.get('pc_id','확인 불가')+'\n실행 중 업무 '+str(preflight.get('running_tasks','미확인'))+'건 / 미저장 작업·복사·동기화 승인 미검증.\n실제 종료 비활성. 취소: '+value['cancel']+' release_intake:true')

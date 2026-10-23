@@ -10,6 +10,8 @@ ROLES={'PlanningAgent':'기획','CodexAgent':'Codex','NewArtAgent':'메인 아�
 def kind(task):
     evidence=json.loads(task.get('evidence') or '{}')
     payload=json.loads(task.get('payload') or '{}')
+    if evidence.get('test_only') is True or payload.get('test_only') is True:
+        return 'TEST_ONLY 시험 납품·실제 미술 승인 불가'
     mode=str(evidence.get('mode',''))
     if mode.startswith('MOCK') or str(payload.get('scope','')).startswith('MOCK') or task.get('title','').startswith('MOCK'):
         return 'MOCK 모의 업무'
@@ -32,7 +34,7 @@ def format_query(action,result,store):
     for row in result['tasks'][:8]:
         label=kind(store.get(row['id']))
         lines.append(f"• {row['id']} | {ROLES.get(row['role'],row['role'])} | {STATES.get(row['state'],row['state'])}\n  {label}")
-        if label.startswith('MOCK'):
+        if label.startswith(('MOCK','TEST_ONLY')):
             lines.append('  실제 미술 승인에 사용하지 않습니다.')
         elif label.startswith('실제 AI') or label.startswith('과거 연결'):
             lines.append('  텍스트 연결 검토이며 미술 승인 대상이 아닙니다.')
