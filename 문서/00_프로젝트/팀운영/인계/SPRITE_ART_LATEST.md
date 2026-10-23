@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 #59 — 오르나·남문 접합·여관 간판 실 PNG 시안 납품 v1
+
+- **현재 정본 신규 아트**: 사용자 요청 3작업군(오르나 NPC1, 남문 주택 출입구/지붕접합3 PNG, 여관 독립간판1), 오르나 Master+512파생을 포함해 **독립 후보 PNG6**. 기존 43개 환경과 승인 지면9·F1/펫·Scene/Quest/Save/GUID 수정0.
+- **실물** `Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip` / SHA256 `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351` / 8,008,308 bytes / 20 entries / ZIP CRC PASS / SHA256SUMS19/19 PASS. ZIP과 개별 신규 RGBA PNG는 이번 ChatGPT 대화 다운로드로 사용자 수령 가능, GitHub는 바이너리 미업로드. Manifest/개별 후보SHA·크기/오르나 512·128·40px 오프라인 미리보기/접합·간판 전후/오프라인 3화면비 증거 포함.
+- **중요 HOLD**: 남문 기존 Residence에 새 출입구·지붕을 합성한 참조판에 이중 박공/겹지붕 결함이 보이므로 **SOUTHGATE_JOIN_ART_HOLD**. 현재 신규 3작업군은 `ART_CANDIDATE / USER_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`, 재사용 가능한 기존 건물·문·간판(43자산)은 KEEP 검토. 오르나 StableID·VoiceID 정식확정0.
+- Codex #58 사용자 제공 요약 **격리화면 변경분136PASS/0FAIL, 기존43 중18종 시연, 승인 지면9 보존**을 확인. 하지만 행별 `Main23_Frostway_VisualGapList.csv`와 실제 GameView 파일은 아트측에 미전달이므로 신규 PNG의 PPU/Pivot/footprint/Sorting/Collider/휠체어동선 **NOT_TESTED**. 128·40px 미리보기는 오프라인 대용이지 실제 게임 크기 QA PASS 아님.
+- **[GitHub 상세 제작·QA 보고](../../Chapter3_Main23_Orna_SouthGate_InnSign_ArtPilot_v1_QA_20261023.md)** `docs/art-new` commit `1921c3020f77eb53f232ef58b73490ac962fb948`. Issue #59 최신 기획 댓글 `#issuecomment-6355677632` 반영. 운영방침: 아트 완료 보고 → 최신 인계 갱신 → #59 보고 댓글 → 대표님 링크·SHA 전달. 사용자 승인 전 Unity 본편/main PR·Push·병합 없음. OPEN16 미해결16 유지.
+- **후속 작업**: Codex GapList 상위3행/실화면 근거 안전 전달 → 남문 접합 표적 보완과 여관 중복 간판 실제 재사용 판정 → 대표 최종 미술 승인 → 승인분만 Codex 격리 DeltaQA/별도 적용 승인.
+
+
 ## 2026-10-23 Main23 서릿길 마을 외형 보완 #59 — 정식 GitHub 증거보고 / 신규 아트 미납품
 
 - 바울 대표 명시 새 운영규칙: 작업 완료 보고는 **`docs/art-new` 문서+본 인계 실제 커밋, Issue 댓글**로만 성립. 대화 요약은 납품 완료 증거가 아님. 해당 작업의 파일별 실제 존재/SHA256/QA/사용자 승인, `main` 미반영을 반드시 분리한다.
