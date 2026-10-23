@@ -1,4 +1,16 @@
-# WORLD_ART_RENEWAL 최신 인계 — 2026-10-12
+# WORLD_ART_RENEWAL 최신 인계 — 2026-10-23
+
+## 2026-10-23 / Issue #57 — Chapter1·2 비고유 자산 사용·보관 정적감사 및 Eldiran NPC 2종 시안 (최신)
+
+- 기준 main 47ad2eecb40135b2ee28e4947d642ebdbf0bf68a; Issue #57 및 10/23 기획 계약. 승인 Wolf/Bear/Fox Run6, Ch2 몬스터·보스, 공식 초상화·환경 모두 보호·변경0.
+- Eldiran NPC **12 StableID**는 StarterVillageHubInstaller에서 생성하고 VillageNpcAppearanceCatalog.Resources.Load<Sprite> 경로에 12/12 매핑; 실제 PNG meta GUID 12/12, PPU28. 게임 Unity 실제 GameView 렌더12/12는 아직 검증하지 않아 Codex 읽기전용 QA 필요.
+- MonsterDefinitions 18개 + Field01/02 독침벌/거미/뱀 실제 Spawn YAML 참조 확인. 독침벌/숲거미/맹독뱀 아트 출처·최종 시각 미확정; Ch2 11~18 KEEP. PilotBee README상 미연결, CC BY3.0/4.0 충돌. PVFX Foundry 8 Resources 그룹(7 그룹 연동 문서·코드, FrostNova 호출 불명), Kenney BattleIcons 14+7 런타임 매핑, Game-icons.net Path10+Material4는 실제 화면 확인 전; Xariami license unknown HOLD.
+- 54행 로컬 CSV NonOriginal_Asset_Runtime_Audit_20261023.csv + 한국어 보고서 + **오리지널 디자인 시안 2종만**(잡화상인 starter-village-general-shop, 주민대표 starter-village-main-guide) 실제 PNG512/SVG/128·40 미리보기 납품. 캐논/Unity 규격 승인은 별도이며 교체0.
+- ZIP 실제 납품: Limitless_Chapter12_NonOriginal_Audit_NPCPilot2_20261023.zip SHA256 4b9e08538f8669cc00c2a8a9f73db5141f8377fe5a94cf69a9d137e38847b4dd CRC PASS; NPC ZIP Limitless_Eldiran_NPC_Pilot2_Concepts_20261023.zip SHA256 7162600a51fddffc8a51087c8d1bbb1f8b14c928250ade120c197d23677fb0b3 CRC PASS. Both in ChatGPT sandbox; ZIP/PNG 바이너리 GitHub 업로드·대표 F: 자동복사 아님.
+- 문서 정본: ../../Renewal_NonOriginal_ActiveVsStored_Audit_NPCPilot2_20261023.md (최초 commit 2ea29d6a82b3722ba1822bb3d3d848826c25605e).
+- 후속: Codex read-only Scene/Prefab Sprite GUID/MonsterSpawn/Renderer/UI icon/Resources dynamic usage + GameView 실사, ACTIVE_RENDER_CONFIRMED/STORED_ONLY/UNKNOWN 분류. 바울 대표 NPC 2종 스타일 승인 후에만 1포즈 게임용 규격 Pilot; 12종 전체 제작 금지. Chapter3 Main23 병렬 실행 방해·main 병합 금지.
+- 상태 STATIC_REPO_AUDIT_COMPLETE / LOCAL_UNITY_READ_ONLY_AUDIT_PENDING / TWO_NPC_DESIGN_CANDIDATES_CREATED / USER_ART_APPROVAL_PENDING / MAIN_UNCHANGED.
+
 
 ## 2026-10-22 Fox Run6 v6 미술 FAIL → v7 Frame03 앞다리 국소 복원 후보 (최신)
 - 바울 대표 직접 피드백: v6 오른쪽 앞발 이상. v6는 Frame03 결함 국소수정 주문 위반으로 전신 포즈 교체, 기존 v5 대비 60,629 픽셀 변경하여 동작·앞발 방향이 달라진 **미술 FAIL**. ZIP·CRC PASS는 미술 PASS 아님. v6 정식 사용 금지.
