@@ -1,3 +1,8 @@
+## 2026-10-23 PlanningAgent 승인 실제1회 — 결과 검증 NOT_VERIFIED / 중지
+
+바울 대표 별도승인으로 계획e9e0e683...의PlanningAgent만 공식구독CLI1회/90초제한 실행. exit0·입력18075/캐시0/출력385토큰 수신, 최종구조/정책검증 CLI_OUTPUT_REJECTED_NO_RETRY로NOT_VERIFIED. 원문미보존이라 상세거부조건확정불가. 실제호출완료와요약채택실패를구분합니다. 승인슬롯CONSUMED·재호출0·다른역할추론0·API전환0. Discord [REAL AI / READ ONLY] 실패/사용량보고1563141744839888897 전송PASS.
+
+기존DONE2/모의승인대기1/과거미검증1보존, 새미검증1추가. SQLite정상·원본7356 SHA변경/누락0·status동일·게임/미술승인/Unity적용/Push/merge0·SFX PAUSED. 추가유료API비용0, 구독호출별금액/차감정산미확인. 구현908d738d. [결과보고](팀운영/PlanningAgent_First_Real_Trial_Result_20261023.md). 이번시험중지. 후속실제재시험/Codex연결은별도승인필요, 장부초기화/자동재시도금지. Unity추가확인없음.
 ## 2026-10-23 PlanningAgent 첫 시험 준비·한국어 Discord 조회 완료
 
 status/pending을 한국어로 표시하고 바울 대표 실제확인 PASS. 기존DONE2/APPROVAL_PENDING1/NOT_VERIFIED1·SQLite정상·MOCK업무보존. 모의/텍스트연결결과를 실제미술승인에서 제외. 첫실제시험은 PlanningAgent 최신GitHub정본요약1회만 허용, Codex우선권고는 최신지시로대체·확장은별도승인. CLI구독인증/설정PASS, 실제추론0·승인슬롯미등록·새실제업무0·비용0.
