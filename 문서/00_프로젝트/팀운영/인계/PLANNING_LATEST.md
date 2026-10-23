@@ -1,3 +1,12 @@
+# 2026-10-23 / 전 담당 GitHub 보고 의무화 완료 공지·main 대상 분리 PR 준비
+
+- 바울 대표: **“각 담당은 다 의무화로 해줘.”** 공통 운영 정책 정본 `문서/00_프로젝트/팀운영/ALL_TEAMS_GITHUB_REPORTING_POLICY_20261023.md`, `COMMON_RULES.md`, `START_HERE.md`, `SESSION_HANDOFF.md`, `AGENTS.md` 5개 `docs/planning`에서 작성·갱신하고 실제 GitHub 확인.
+- 일곱 역할의 기존 업무 Issue에 개별 댓글 공지 #59(art-new),#60(art-renewal),#58(Codex),#20(TTS),#31(BGM),#33(SFX),#34(video). 기획은 본 인계로 수행; 새/후임 포함 총8 역할 대상. 중앙 [정책 수용 추적 #61](https://github.com/HappyPaul812/Project-Limitless/issues/61)에서 담당별 실제 수용 SHA+댓글 확인 후 완료로 체크.
+- 기존 `docs/planning` 브랜치의 다른 여러 기획 변경과 **절대 한꺼번에 main merge하지 않도록**, 순수 `main`에서 새로운 `docs/planning-github-reporting-20261023` 브랜치를 만들어 위 **정책 문서만 정확5파일** 선별한 [GitHub 문서 PR #62](https://github.com/HappyPaul812/Project-Limitless/pull/62) OPEN. 해당 브랜치 HEAD commit `532d0dd7a2b07f00488dedc564ce80772b7754a4`, 5파일 변경·5commit, base `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`. GitHub PR `mergeable_state=unknown`(서버 아직 평가 전), **현재 `main` 미병합/로컬 sync 미실시**, 추후 사용자 마감/병합 지시 단계에서 검증. 본 정책 지시는 기존 main 직접 commit·Push 금지와 Codex 명시적 Push 승인 정책을 변경하지 않음.
+- 공통 절차: 담당 브랜치 문서 실제 Commit → 인계`*_LATEST` 갱신 → Issue/PR 결과댓글 → 바울 대표에게 URL/브랜치/commitSHA/승인 상태. 대용량 미술/음원/영상 바이너리는 GitHub 필수등록 아님, 파일명·실물경로·SHA/검증·GitHub 존재 여부 기록만 필수. 세션 자동실행은 보장되지 않으므로 각 담당의 수용 커밋은 아직 추적 대기.
+
+---
+
 # 2026-10-23 / 바울 대표 최종 운영 지시 — 전체 8담당 GitHub 정식 보고 의무화
 
 - 바울 대표 원문: **“각 담당은 다 의무화로 해줘.”** 이제 **기획·Codex·Ch1/2 리뉴얼·Ch3+ 신규 아트·TTS·BGM·SFX·개발기록 영상** 및 새/후임 담당이 전부 **GitHub 정식 보고 필수**. 보고서 복붙 전달을 바울 대표에게 요청하는 일을 원칙적으로 중단. 업무 완료/일일마감/인계는 자기 문서브랜치 Markdown 보고서 **실제 commit** + 역할 최신 인계 + 관련 Issue/PR 완료댓글 + 바울 대표에게 GitHub URL/브랜치/실제 SHA/승인·검증 상태 보고, 총4개를 원칙으로 한다. GitHub 쓰기 미완이면 `REPORT_PENDING_GITHUB_WRITE`, 문서 저장 성공·로컬 Push/본게임 적용/원격 main 병합 구별.
