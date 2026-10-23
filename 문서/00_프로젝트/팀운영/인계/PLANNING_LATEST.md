@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-23 굿모닝 — Chapter1·2 비고유 잔여 브리핑 / Chapter3 Main23 FirstPlayable 신규 착수 지시
+
+- 바울 대표 사용자 지시: “먼저 리뉴얼 쪽은 우리의 고유 자산 말고 뭐가 남아있나 브리핑해주고, 챕터3는 계속 진해.” 최신 원격 `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`, 2026-10-22 PR#54+#55 및 사용자 원본 `SYNC_COMPLETE`을 기준으로 이틀 전 상태와 혼동 금지.
+- [금일 확정 기획·실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261023_ArtRenewal_NonOriginal_Inventory_And_Main23_FirstPlayable_Kickoff.md), 문서 생성 commit `499a1c9119711ae51ab33e36d11887db2193eaf2`. Codex 실제 로컬 작업이 자동 시작된 것은 아님.
+- **리뉴얼 잔여:** [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57) 실사용·권리 감사 + 실제 Eldiran 12 NPC 중 2종 오리지널 아트 시안. 외부·공용 **NPC12**, `MonsterDefinitions` **18종에서 공식·사용자 승인/비고유 구분 전에는 교체 수 미확정**, PVFX Foundry CC0 기반 `BattleSkillEffects`, Game-icons.net CC BY 재료4·Path trait10, Kenney CC0 전투토큰/아이콘, ThirdParty Schwarnhild·Xariami 원본 보관 중 실제 사용 Sprite 참조만 탐색. 외부 라이브러리 원본 존재≠제품 사용, 공식 Wolf/Bear/Fox Run6 및 Chapter2 기존5/보스 KEEP. Field09 HeatVent·Obsidian Spire [#38], Field10 공식13 사용자 최종 미술리뷰 backlog. Chapter1·2 맵 전면재제작0. 출처 및 런타임 GUID 감사 없이는 몇 개를 새로 그려야 하는지 확정하지 않음.
+- **Chapter3:** [Main23 격리 실제 첫 플레이 구현 발주 #56](https://github.com/HappyPaul812/Project-Limitless/issues/56) (Quest5목표/F1 북쪽조사2/마을 남문/F1↔Village/SafeZone/주민 증언·형제애/SaveContinue/휠체어·마우스). `FrostwayVillageV10` 승인 PNG9+Tile9는 **main 등록**, 그러나 `World_FrostwayVillage.unity` **미존재**. 신규 Scene 및 Main23 Quest 실제 구현은 Codex가 격리 `codex/chapter3-main23-first-playable-20261023`에 한정. 기존 Main22/F1/Mouse 및 공식 3펫 재QA·재적용금지. 승인9 지면 타일과 아직 최종 미술승인 아닌 나머지 건물·서비스 아트 구분; 임시 기능용 표시물을 `VISUAL_PLACEHOLDER`로 명시.
+- **경계:** 마을 북문 F2 비활성·동쪽 포탈 비활성, Main24 최초 한기/신규스킬 판매·6슬롯 Save 영속성 [#46]·마을 Main23 정식대사/보상/아이콘/TTS 등 미완 별도 보류. Main23 SafeZone·Checkpoint 구현은 스킬상점 판매완료가 필요없음, 불필요한 Quest 보상=영구0 확정 금지. 사용자 Save/UserData/Editor/dirty/HEAD/index 및 전체 원본 보호, main 직접 commit·Push/병합0. Codex QA 후 사용자 실제 플레이 확인 다음 별도 EOD/원본적용 허가.
+- 오늘 작성 내용과 Issue 발주는 기획 작업 완료, **Codex 사용자 로컬 F: 작업은 실행·완료 확인 전**이므로 `MAIN23_ISOLATED_IMPLEMENTATION_REQUESTED / ART_AUDIT_REQUESTED / EXECUTION_PENDING` 최신 상태.
+
+---
+
 # PLANNING 2026-10-22 최종 EOD — Bear·Fox 제품 연결 완료 보고 + Village Candidate9 승인 / 통합 및 로컬 sync 사용자 지시
 
 - **바울 대표 직접 마감 지시**: “오늘은 여기까지 하자. 오늘 한 작업들 합치고, 로컬 동기화까지 해줘..”. 사용자 오늘 승인+QA 통과분에 대한 GitHub PR/main 선별병합 및 원본 Local 비파괴 동기화 실행을 Codex에 요청하는 EOD 승인. **GitHub [Issue #53](https://github.com/HappyPaul812/Project-Limitless/issues/53) 신규 생성**, 본 [EOD 안전실행 계약](https://github.com/HappyPaul812/Project-Limitless/blob/docs/planning/문서/00_프로젝트/LIMITLESS_20261022_EOD_ApprovedMerge_LocalSync_SafetyContract.md) `docs/planning` 생성커밋 `cdd8e497724966de259d41f67f364d3804442c38`.
