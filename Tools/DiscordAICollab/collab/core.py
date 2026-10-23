@@ -228,6 +228,8 @@ class Store:
             digest = valid_sha(args.get('sha'))
             scope = args.get('scope')
             payload = json.loads(task['payload'])
+            if action == 'approve' and (payload.get('test_only') is True or json.loads(task['evidence'] or '{}').get('test_only') is True):
+                raise Denied('TEST_ONLY: 시험 납품은 실제 미술 승인 대상으로 전환할 수 없습니다')
             if scope != payload['scope'] or digest != payload.get('artifact_sha'):
                 raise Denied('검토한 SHA·범위와 다릅니다')
             if task['state'] != 'APPROVAL_PENDING':

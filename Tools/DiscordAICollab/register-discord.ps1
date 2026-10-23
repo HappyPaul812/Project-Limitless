@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest','Phase3Stop')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest','Phase3Stop','Phase3OwnerReceiptVerify')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -34,6 +34,8 @@ try {
     if ($Action -in @('Phase3Setup','Phase3Run','Phase3LiveTest')) {
         $phase3Action = @{Phase3Setup='setup';Phase3Run='run';Phase3LiveTest='live-test'}[$Action]
         & '.venv/Scripts/python.exe' -m collab.delivery_discord $phase3Action
+    } elseif ($Action -eq 'Phase3OwnerReceiptVerify') {
+        & '.venv/Scripts/python.exe' -m collab.owner_receipt
     } elseif ($Action -eq 'Phase3Inspect') {
         & '.venv/Scripts/python.exe' -m collab.delivery_discord inspect
     } elseif ($Action -eq 'FourRolePilotOnce') {
