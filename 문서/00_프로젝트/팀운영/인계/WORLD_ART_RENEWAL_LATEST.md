@@ -1,3 +1,9 @@
+## 2026-10-23 / Issue #63 — VenomBee 오리지널 원화 1포즈 후보
+
+- 보고서 `../../Renewal_VenomBee_OriginalKeyArt_Pilot_20261023.md` commit `3840193957f8f83e67f820bd4065ee4519e00c50`. 기존 MonsterDefinition Idle GUID ...04, Attack ...05, 10FPS·각10프레임 확인. GUID에 매핑된 물리 PNG/라이선스 미확정 `RIGHTS_SOURCE_PENDING`.
+- 신규 512×512 RGBA 1포즈 + 128/40 미리보기, 원화 보드, Manifest/SHA/QA ZIP `Limitless_Chapter1_VenomBee_OriginalKeyArt_Pilot_v1_20261023.zip`, SHA256 `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478`, CRC PASS. 자동 마스킹 가장자리·실 GameView 미검증. 실제 기존 게임 PNG와의 정밀 비교 불가. `USER_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- **기존 54행 감사·OGA03/09/20 세 NPC 시안·Issue #60 숲거미 출처 HOLD** 이력 보존. 승인 Wolf/Bear/Fox 및 모든 공식 몬스터/보스, 독/드롭/Spawn/Unity/Save/Main 무변경. Idle10/Attack10 전체20 제작0.
+
 # WORLD_ART_RENEWAL 최신 인계 — 2026-10-23
 
 ## 2026-10-23 / Issue #57 — Chapter1·2 비고유 자산 사용·보관 정적감사 및 Eldiran NPC 2종 시안 (최신)
