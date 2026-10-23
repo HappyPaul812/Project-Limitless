@@ -1,3 +1,10 @@
+## 2026-10-23 / Issue #63·#64·#65 — VenomBee v1 권리·모션 조건부 계약·실 Unity 비교판 인계
+
+- [정식 보고](../../Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) commit **`f908e6761433a21d4c459b13ccd2bf6e5277439c`**. 외부 `Pilot_Bee_Game_Character` 원작 **Jana Ochse / 2D!PIXX**, OGA 웹 **CC BY3.0** vs 보존 `LICENSE.TXT` **CC BY4.0** 버전 불일치 **RIGHTS_VERSION_CONFLICT_OPEN**. Original idle/attack GUID (`210000...07/08`)와 활성 MonsterDefinition GUID (`240000...04/05`)는 별개이며 Codex #64가 실제 사용 이미지의 바이트 동일을 보고함.
+- v1 ZIP **2,291,579 bytes/SHA256 `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478` 재확인**, 512 RGBA 좌향 1포즈/128·40 미리보기. #64 단일 격리 Unity 표시 `TECH_PASS`, 그러나 기존 우향 Idle10+Attack10·10FPS를 대체하지 못해 `ART_HOLD`. 후보 알파·40px 세부/양쪽 가장자리·사용자 미술승인 여전히 필요.
+- **#65 실 GameView 동배율 Ch2 공식·기존독침벌·신규 후보 비교판은 GitHub 원격 공개 실물·SHA 아직 없음**(검색 당시 #65 댓글0, Codex 브랜치 원격 없음). 따라서 그림을 직접 검수했다고 주장 금지. Codex 기존 캡처 재사용하여 파일 경로·비기밀 이미지·SHA 공유 요청, Unity 전수 재실행 금지.
+- **조건부 모션 계약만 작성, 신규 20프레임/키포즈 제작0**. 바울 대표 #65 실제 그림 열람 및 `DESIGN_V1_USER_APPROVED` 명시 전 제작·정식 Unity 적용·main 병합 전부 금지. 승인 후 기존 우향·Idle10/Attack10/10FPS·독/드롭/Spawn/AI/Quest/Save를 보존하는 별도 키포즈 게이트부터 진행. 공식 Ch2몬스터·Wolf/Bear/Fox·NPC3·Spider HOLD·54행 감사 변경0.
+
 ## 2026-10-23 / Issue #63 독침벌 v1 정식 납품 재확인 (기존 작업 보호)
 
 - 정식 재확인 보고: [Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md](../../Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md), 커밋 `4b5a40608d20121505e42282234087aa80470083`.
