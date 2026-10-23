@@ -1,0 +1,20 @@
+test_mode_a_denied_and_usage_hold (tests.test_boot_relay.BootAdapterTests.test_mode_a_denied_and_usage_hold) ... Executing <Task finished name='Task-1' coro=<BootAdapterTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_boot_relay.py:75> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.562 seconds
+Executing <Task finished name='Task-2' coro=<BootAdapterTests.test_mode_a_denied_and_usage_hold() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_boot_relay.py:78> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.157 seconds
+ok
+test_auth_or_runtime_error_no_blind_retry (tests.test_boot_relay.SupervisorTests.test_auth_or_runtime_error_no_blind_retry) ... ok
+test_backoff_capped (tests.test_boot_relay.SupervisorTests.test_backoff_capped) ... ok
+test_boot_run_has_no_usage_or_ai_worker (tests.test_boot_relay.SupervisorTests.test_boot_run_has_no_usage_or_ai_worker) ... ok
+test_boot_xml_offline_disabled_password_standard_account (tests.test_boot_relay.SupervisorTests.test_boot_xml_offline_disabled_password_standard_account) ... ok
+test_disconnect_rechecks_before_restart (tests.test_boot_relay.SupervisorTests.test_disconnect_rechecks_before_restart) ... ok
+test_fixed_services (tests.test_boot_relay.SupervisorTests.test_fixed_services) ... ok
+test_missing_service_account_store_never_uses_user_store (tests.test_boot_relay.SupervisorTests.test_missing_service_account_store_never_uses_user_store) ... ok
+test_offline_bounded_no_launch (tests.test_boot_relay.SupervisorTests.test_offline_bounded_no_launch) ... ok
+test_owner_stop_before_launch (tests.test_boot_relay.SupervisorTests.test_owner_stop_before_launch) ... ok
+test_reconnect_limit (tests.test_boot_relay.SupervisorTests.test_reconnect_limit) ... ok
+test_stop_during_child_writes_safe_marker_only (tests.test_boot_relay.SupervisorTests.test_stop_during_child_writes_safe_marker_only) ... ok
+test_wifi_delay_then_connected (tests.test_boot_relay.SupervisorTests.test_wifi_delay_then_connected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 22.821s
+
+OK

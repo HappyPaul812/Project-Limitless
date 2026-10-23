@@ -1,0 +1,13 @@
+test_a_private_reply_receipt_then_manual (tests.test_readiness.ReadinessTests.test_a_private_reply_receipt_then_manual) ... Executing <Task finished name='Task-1' coro=<ReadinessTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_readiness.py:14> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.563 seconds
+Executing <Task pending name='Task-2' coro=<ReadinessTests.test_a_private_reply_receipt_then_manual() running at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_readiness.py:35> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\futures.py:389, Task.task_wakeup()] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\base_events.py:448> cb=[_run_until_complete_cb() at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\base_events.py:181] created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.140 seconds
+Executing <Task finished name='Task-2' coro=<ReadinessTests.test_a_private_reply_receipt_then_manual() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_readiness.py:29> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.235 seconds
+ok
+test_manual_query_no_mode_change (tests.test_readiness.ReadinessTests.test_manual_query_no_mode_change) ... Executing <Task finished name='Task-7' coro=<ReadinessTests.asyncSetUp() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_readiness.py:14> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 1.610 seconds
+Executing <Task finished name='Task-8' coro=<ReadinessTests.test_manual_query_no_mode_change() done, defined at F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\tests\test_readiness.py:26> result=None created at E:\Program Files\anaconda3\envs\py3_12\Lib\asyncio\runners.py:100> took 0.156 seconds
+ok
+test_restart_running_is_unknown_never_retried (tests.test_modes.ModeResumeTests.test_restart_running_is_unknown_never_retried) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 6.189s
+
+OK

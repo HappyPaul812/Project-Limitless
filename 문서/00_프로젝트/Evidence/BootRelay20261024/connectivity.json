@@ -1,0 +1,7 @@
+{
+  "discord_public_https_reachable_current_user": true,
+  "prelogin_usb_reconnect": "NOT_VERIFIED",
+  "service_account_codex_auth": "NOT_VERIFIED_NO_SERVICE_ACCOUNT",
+  "role_ai_calls": 0,
+  "boot_token_store_present": false
+}

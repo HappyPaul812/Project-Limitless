@@ -1,3 +1,5 @@
+> 최신 자동 시작 승인안은 부팅 전용 `Boot_Relay_PreRegistration_20261024.md`입니다. 아래 OnLogon 방식은 이력으로 보존하며 활성화하지 않습니다. 부팅 전용 프로필은 MANUAL·AI HOLD입니다.
+
 # 운영 모드 A·B 사용 안내
 
 날짜·시각은 Asia/Seoul입니다. 기존 `/resume role` 수동 정지 해제는 `/unpause role`로 이동했습니다. 새 `/resume`은 A 모드 선택이며 실행 승인을 발급하지 않습니다.

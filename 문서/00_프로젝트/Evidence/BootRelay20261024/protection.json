@@ -1,0 +1,32 @@
+{
+  "files": 7356,
+  "sha_changed": 0,
+  "missing": 0,
+  "original_git_status_same": true,
+  "old_records_identical": {
+    "tasks": true,
+    "usage": true,
+    "approvals": true,
+    "settings": true,
+    "art_deliveries": true
+  },
+  "mode": "MANUAL",
+  "resume_jobs": 0,
+  "service_restarts": 0,
+  "actual_boots": 0,
+  "actual_logouts": 0,
+  "role_ai_calls": 0,
+  "paid_api_calls": 0,
+  "task_registrations": 0,
+  "account_creations": 0,
+  "shutdowns": 0,
+  "push_merges": 0,
+  "bot": {
+    "status": "RUNNING",
+    "fresh": true
+  },
+  "art": {
+    "status": "RUNNING",
+    "fresh": true
+  }
+}

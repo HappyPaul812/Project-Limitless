@@ -1,0 +1,16 @@
+{
+  "storage_dependency": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab",
+  "ai": "HOLD",
+  "registered": false,
+  "run_level": "LeastPrivilege",
+  "existing_user_credentials": "NOT_USED",
+  "trigger": "BOOT+30s",
+  "bootstrap": "C:\\ProgramData\\LimitlessRelay",
+  "dpapi_profile": "NEW_ACCOUNT_OWNED_BOOT_STORE",
+  "service_account_setup": "REQUIRED",
+  "service": "Art",
+  "mode": "MANUAL",
+  "enabled": false,
+  "account_created": false,
+  "logon": "Password"
+}

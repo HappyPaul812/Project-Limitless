@@ -1,3 +1,7 @@
+## 2026-10-24 PIN 없는 부팅 중계 등록 전 준비
+
+전용 일반계정 LIMITLESSRelaySvc·OnBoot+30초·Password/LeastPrivilege·C:bootstrap·기존단일SQLite/lock·새계정DPAPI·MANUAL/AI HOLD 경로 준비. OS등록/계정생성/C배포0. 새13 PASS·호환선별3 PASS/0 FAIL·PS구문2 PASS·승인없음HOLD·현재Discord HTTPS PASS. 실제 로그인전/USB재연결/새계정권한·Codex인증/F·납품함접근/재부팅 NOT_VERIFIED(계정아직없음). 기존서비스미재시작·MANUAL/큐0·원본7356변경/누락0·기존DB동일·AI/유료API/종료/Push/merge0. 구현be274f93842ac726f959afbe50d6f6b1bddd70eb. 다음은 등록안·제한권한 별도승인 후 계정/토큰/비대화형 실증, 실제재부팅은 별도승인. Unity 사용자확인 없음. [등록안](../Boot_Relay_PreRegistration_20261024.md)
+
 ## 2026-10-24 운영 실사용 준비 최종 점검
 
 실제 mode/usage/schedule-status 한국어 조회3종 대표확인·Gateway영수증PASS, MANUAL/재개큐0 유지. 추가 격리선별8 PASS/0 FAIL, 기존36/27 전체재실행0. A서버/합성응답PASS이나 이전화면오류 해결확정 NOT_VERIFIED. OS XML2종 로그인30초/동일사용자/최소권한/IgnoreNew/재시작3/강제종료금지/SHA일치·비활성/미등록 확인. 실제quota회복AI/재부팅/로그아웃/통합/종료 미검증. 원본7356변경/누락0·기존21업무/13usage/승인/설정/아트5동일. 실행코드변경/서비스재시작/AI/유료API/OS등록/종료/Push/merge0. 관련검증996f8888. 다음은 별도승인 후 자동시작 등록 또는 실제 재개 실증, Unity 사용자확인 없음. [최종보고](../Operations_Readiness_Final_20261024.md)

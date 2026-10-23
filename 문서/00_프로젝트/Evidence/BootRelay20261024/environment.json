@@ -1,0 +1,13 @@
+{
+  "service_account_exists": false,
+  "usb_network_enabled_count": 1,
+  "wlan_status": "Running",
+  "usb_network_adapter_count": 1,
+  "wlan_start_type": "Automatic",
+  "bootstrap_deployed": false,
+  "f_fixed": true,
+  "new_account_token_registered": false,
+  "f_present": true,
+  "onlogon_tasks_registered": 0,
+  "boot_tasks_registered": 0
+}

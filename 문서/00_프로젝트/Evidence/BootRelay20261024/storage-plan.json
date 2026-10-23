@@ -1,0 +1,8 @@
+{
+  "canonical_queue": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\phase2\\relay.sqlite",
+  "delivery_inbox": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeliveryInbox",
+  "inbox_accessible_current_user": true,
+  "python_runtime_base": "E:\\Program Files\\anaconda3\\envs\\py3_12",
+  "service_identity_path_access": "NOT_VERIFIED_ACCOUNT_NOT_CREATED",
+  "implementation_commit": "be274f93842ac726f959afbe50d6f6b1bddd70eb"
+}
