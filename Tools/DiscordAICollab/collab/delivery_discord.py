@@ -114,6 +114,7 @@ async def run():
     lock=(ROOT/'service.lock').open('a+b');lock.seek(0);lock.write(b'1');lock.flush();lock.seek(0)
     try:msvcrt.locking(lock.fileno(),msvcrt.LK_NBLCK,1)
     except OSError:raise Denied('PHASE3_SERVICE_ALREADY_RUNNING') from None
+    (ROOT/'stop-request').unlink(missing_ok=True)
     deliveries,owner=engine(config);deliveries.recover_outbox()
     watcher=FolderWatcher(deliveries,owner,config['inbox'],config['quiet_seconds'])
     async with discord.Client(intents=discord.Intents.none()) as client:
@@ -121,6 +122,9 @@ async def run():
         if channel.guild.id!=owner.guild_id:raise Denied('CHANNEL_SCOPE_INVALID')
         print('PHASE3_RUNNING: 파일 감시/첨부 수령만. AI/Unity worker 비활성.',flush=True)
         while True:
+            if (ROOT/'stop-request').exists():
+                (ROOT/'service-status.json').write_text(json.dumps({'status':'STOPPED','ai_calls':0,'unity_runs':0}),encoding='utf8')
+                lock.close();return
             try:
                 await asyncio.to_thread(watcher.tick)
                 with deliveries.store.tx() as db:cursor=int(db.execute('SELECT message_id FROM art_delivery_cursors WHERE channel=?',(str(channel.id),)).fetchone()[0])
@@ -183,10 +187,12 @@ async def main():
     elif action=='setup':await setup()
     elif action=='run':await run()
     elif action=='live-test':await live_test()
+    elif action=='stop':
+        safe_root(ROOT);(ROOT/'stop-request').write_text('STOP',encoding='ascii');print('PHASE3_STOP_REQUESTED; 기존 봇/AI 영향 없음')
     else:raise Denied('UNKNOWN_PHASE3_ACTION')
 
 
 if __name__=='__main__':
     try:asyncio.run(main())
     except Exception:
-        print('PHASE3_DISCORD_INSPECT_NOT_VERIFIED: 비밀 원문 출력 없음');raise SystemExit(2)
+        print('PHASE3_DISCORD_NOT_VERIFIED: 비밀 원문 출력 없음');raise SystemExit(2)

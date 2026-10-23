@@ -44,6 +44,11 @@ class DiscordDeliveryTests(unittest.TestCase):
     def test_executable_not_downloaded(self):
         m=self.message();m.attachments=[Attachment('attack.exe',b'MZbad')];r=self.ingest(m)
         self.assertEqual('REJECTED',r[0]['status']);self.assertEqual(0,m.attachments[0].reads)
+    def test_stop_request_is_local_only(self):
+        from collab import delivery_discord
+        with patch.object(delivery_discord,'ROOT',self.root/'control'),patch('sys.argv',['delivery_discord','stop']):
+            asyncio.run(delivery_discord.main())
+            self.assertTrue((self.root/'control/stop-request').exists())
 
 
 if __name__=='__main__':unittest.main()

@@ -1,4 +1,4 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest','Phase3Stop')][string]$Action='Setup',[switch]$Replace)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
@@ -8,6 +8,10 @@ $oldEnvironment = @{}
 $names = @('DISCORD_BOT_TOKEN','LIMITLESS_OWNER_IDS','LIMITLESS_GUILD_ID','LIMITLESS_CHANNEL_IDS','LIMITLESS_ALLOW_DISCORD','LIMITLESS_HANDOFF_FINISH')
 foreach ($name in $names) { $oldEnvironment[$name] = [Environment]::GetEnvironmentVariable($name,'Process') }
 try {
+    if ($Action -eq 'Phase3Stop') {
+        & '.venv/Scripts/python.exe' -m collab.delivery_discord stop
+        return
+    }
     if ($Action -eq 'Status') {
         Get-LimitlessDiscordCredentialStatus $secretRoot | ConvertTo-Json -Compress
         return

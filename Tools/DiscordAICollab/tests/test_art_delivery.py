@@ -48,6 +48,16 @@ class DeliveryTests(unittest.TestCase):
         t=self.store.get(r['task_id']);self.assertEqual('BLOCKED',t['state']);self.assertEqual('USER_REVIEW_PENDING',t['art'])
         p=json.loads(t['payload']);self.assertEqual('RenewalArtAgent',p['artist_role']);self.assertEqual(63,p['issue'])
         self.assertEqual(self.data,Path(p['artifact']).read_bytes());self.assertEqual('NOT_VERIFIED',t['tech'])
+    def test_newart_issue59_request_stays_pending(self):
+        m=manifest(self.data);m.update(artist_role='NewArtAgent',issue=59)
+        r=self.receive(meta=json.dumps(m).encode());p=json.loads(self.store.get(r['task_id'])['payload'])
+        self.assertEqual('NewArtAgent',p['artist_role']);self.assertEqual(59,p['issue']);self.assertEqual('USER_REVIEW_PENDING',self.store.get(r['task_id'])['art'])
+    def test_concurrent_same_sha_creates_only_one_task(self):
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            futures=[pool.submit(self.receive,key=k) for k in ('parallel-a','parallel-b')]
+            results=[f.result() for f in futures]
+        self.assertEqual({'HOLD','DUPLICATE'},{r['status'] for r in results});self.assertEqual(1,len(self.store.snapshot()['tasks']))
     def test_same_event_and_sha_never_duplicate_tasks(self):
         a=self.receive();b=self.receive();c=self.receive(key='evt2')
         self.assertEqual(a,b);self.assertEqual('DUPLICATE',c['status']);self.assertEqual(a['task_id'],c['task_id']);self.assertEqual(1,len(self.store.snapshot()['tasks']))
