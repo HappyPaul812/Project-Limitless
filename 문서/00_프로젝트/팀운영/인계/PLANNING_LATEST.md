@@ -1,3 +1,12 @@
+# 2026-10-23 업데이트 — Main23 격리 148PASS, 리뉴얼 전수조사 범위 축소
+
+- 바울 대표 보고 Codex **Main23 격리 첫 플레이** 5목표 전부 PASS, 신규 **148PASS / 0FAIL**. F1 심부·두 흔적·서릿길 남문·주민 및 태온/하렌 대사·SafeZone 등록과 Save/Continue·남문 F1 왕복·가상 Mouse/Keyboard·휠체어·화면비3종 실 Unity 검증. 작업브랜치 `codex/chapter3-main23-first-playable-20261023`, 제품 약식 `dcf9d6af`, 문서 약식 `2979e327`. **건물·NPC는 임시 표시, 장치 손플레이/최종 미술 미검증. 원본/remote main 미반영**, 기존 Search 예외 OPEN. [Issue #56](https://github.com/HappyPaul812/Project-Limitless/issues/56) 결과기록.
+- 바울 대표 “리뉴얼 걔는 왜 이렇게 오래 걸리니?” 피드백. 기획이 NPC12+몬스터18+VFX+아이콘+라이선스 전체를 한 번에 발주해 **일감 과대**였음을 인정하여 [Issue #57](https://github.com/HappyPaul812/Project-Limitless/issues/57) **당일 할당범위 축소**: 우선 `Eldiran/OGA03_GeneralShop`, `OGA20_GateGuard` 기존 역할·간단 사용여부만 확인하고 **독립 오리지널 후보2종 PNG·Preview·ZIP** 먼저 보고. 나머지 NPC10·몬스터18·VFX/아이콘 전수감사는 후속 backlog로 분리. 사용자 기존 자산/씬 대체0, 두 후보 대표 최종 미술 승인 대기.
+- 10/23 검색 당시 GitHub `docs/art-renewal` 최신 커밋 `a56c9950` 생성시각 2026-10-22T13:19:15Z(한국시각 10/22 22:19), Issue #57 댓글0. **현재 세션이 진행 중인지 멈췄는지 증명하지 못함**. 사용자가 바로 보낼 수 있는 범위축소 지시와 작업현황 요청 준비.
+- Main23은 격리 성공으로 기획 게이트 통과, 이후 사용자 시각확인/임시 NPC 미술 대체/원본적용·PR 등은 별도. Main24 SkillSave #46/OPEN16/F2 및 정식 Main23 대사·TTS·보상 구분 유지.
+
+---
+
 # PLANNING / 2026-10-23 굿모닝 — Chapter1·2 비고유 잔여 브리핑 / Chapter3 Main23 FirstPlayable 신규 착수 지시
 
 - 바울 대표 사용자 지시: “먼저 리뉴얼 쪽은 우리의 고유 자산 말고 뭐가 남아있나 브리핑해주고, 챕터3는 계속 진해.” 최신 원격 `main` `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`, 2026-10-22 PR#54+#55 및 사용자 원본 `SYNC_COMPLETE`을 기준으로 이틀 전 상태와 혼동 금지.
