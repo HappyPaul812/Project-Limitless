@@ -1,3 +1,16 @@
+# PLANNING / 2026-10-23 — Codex 실제 격리 QA #64: 41PASS+캡처15PASS, 4자산 표적 판정
+
+- 바울 대표 업로드 **Codex 로컬 QA 완료 화면**에서 읽은 결과임. 원격 `main` 그대로 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`; GitHub `codex/art-pilots-isolated-qa-20261023` 원격 브랜치 및 Codex의 #64 공식 완료댓글 **미존재**, 기획이 화면 제공 사실을 [#64 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621)에 증거 등급 구분하여 등록. 실제 Codex 로컬 보고서/11행 문제 CSV/캡처 실파일은 이 기획 세션에서 열지 못했으므로 `CODEX_LOCAL_QA_REPORTED / REMOTE_ARTIFACTS_NOT_AVAILABLE / USER_ART_APPROVAL_PENDING`.
+- 실물 ZIP2종: Main23 Orna/SouthGate/Inn `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`; VenomBee `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478` — **Windows F: 실제 SHA256 제작본 동일**, CRC 오류0로 사용자 전달. **새 Unity 41 PASS + 보정캡처 15 PASS / 런타임 오류0**, 기존148/136 회귀 전체 재실행0. **기존/원본 worktree 14,206파일 보호**, 제품 `3bb4f983`, 검수 보고 `91510554` 로컬커밋 2개 단축SHA, 원본적용/Push/main 병합0.
+- **오르나:** 표시/접근 TECH_PASS, **40px 너무 작음**, 실제 128px 스케일 접근성·40/128 비교 후 사용자 미술 결정. StableID/VoiceID/최종 외형 미승인.
+- **남문 주택 문·지붕:** 기존 주택+신규 박공/받침의 이중지붕 재현 `ART_HOLD`. Codex가 제시한 **신규 큰 Gable/Trim 제외 + 기존 주택 원형 유지, 문 조인트만 남기는 최소 대안** 우선. 신 PNG 삭제/전체 재제작 금지.
+- **여관 간판:** 표시 TECH_PASS, 기존 내장 간판+신규 독립간판 중복 `ART_HOLD`, 현재 `KEEP_OLD` 권고. 신규 후보는 보관, 중복 배치 금지. 대표 최종 외형 결정 전 공식 변경0.
+- **독침벌:** 1포즈 표시 TECH_PASS·전체교체 ART_HOLD; **신규 후보는 좌향1포즈**여서 기존 Idle10/Attack10 기술 계약 대체 불가, 20프레임 생산은 바울 대표의 시각 승인 전 보류. 실제 활성 독침벌 이미지가 ThirdParty **Pilot Bee 원본과 바이트 동일**로 Codex 확인 보고. OGA `CC BY3.0` vs 동봉 `LICENSE` `CC BY4.0` 버전 불일치 오픈; 현재 공식 외부 아트의 상업적 권리/표기 확인 필요. 기존 MonsterDefinition/독/드롭/Spawn/AI·Wolf/Bear/Fox/Ch2 공식 아트 보호.
+- 후속 GitHub: [메인아트 #59 기술결과 기준 최소 수정계약](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6357913863), [리뉴얼 독침벌 #63 20모션 생산 유보·원본권리](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6357914530), [Codex 통합QA #64 사용자 제공 결과 정식 접수](https://github.com/HappyPaul812/Project-Limitless/issues/64#issuecomment-6357901621). **담당에게 이슈만 남겼다고 개별 세션 자동 실행되는 것은 아님**. 다음 팀별 업무 착수 시 해당 최신 댓글을 직접 읽고 담당 브랜치에서 보고할 것.
+- 이전 기획의 메인·리뉴얼 `ART_CANDIDATE / USER_REVIEW_PENDING` 상태는 유지. 실제 Codex QA가 나왔다고 해서 **바울 대표 미술 최종 승인이나 Unity 본편 등록/remote main 병합, OPEN16 해결을 자동 실행하지 않음**. 리뉴얼 파일럿 1포즈 자체 무결성 합격과 모션 교체 부적합을 구분하고 여관 기존 간판 KEEP는 새 자산 표적 수정필요 없음에 대한 현재 권고로 기록.
+
+---
+
 # PLANNING / 2026-10-23 — 바울 대표 검수 순서 교정: Codex 실물·격리 Unity QA 우선 #64
 
 - 사용자 직접 지적: **“코덱스에 안돌리고 그냥 결정하라고?”** 기존 기획의 `#59 남문 겹지붕 ART_HOLD` 및 `#63 VenomBee 비교 부족`은 제작담당 **오프라인 파일 QA/자기 보고**를 읽어 잠정 검토한 내용이지 바울 대표가 실제 시각 비교한 최종 미술 승인이나 Codex QA가 아님. **최종 미술결정 전에 실제 Codex에서 F: ZIP 바이트 및 격리 Unity GameView 시각 검증이 필수**로 순서 정정.
