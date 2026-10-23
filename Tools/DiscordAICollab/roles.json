@@ -1,0 +1,10 @@
+{
+  "PlanningAgent": {"mode":"event", "branch":"docs/planning", "channel":"기획-회의", "next":"owner"},
+  "CodexAgent": {"mode":"event", "branch":"codex/*", "channel":"codex-검수", "next":"PlanningAgent"},
+  "NewArtAgent": {"mode":"event", "branch":"docs/art-new", "channel":"아트-협업", "next":"CodexAgent"},
+  "RenewalArtAgent": {"mode":"event", "branch":"docs/art-renewal", "channel":"아트-협업", "next":"CodexAgent"},
+  "TTSAgent": {"mode":"on_demand", "branch":"docs/tts", "channel":"tts-오디오", "next":"CodexAgent"},
+  "BGMAgent": {"mode":"on_demand", "branch":"docs/bgm", "channel":"tts-오디오", "next":"CodexAgent"},
+  "VideoAgent": {"mode":"on_demand", "branch":"docs/video", "channel":"업무-완료", "next":"PlanningAgent"},
+  "SFXAgent": {"mode":"PAUSED", "branch":"docs/sfx", "channel":"tts-오디오", "next":"CodexAgent"}
+}
