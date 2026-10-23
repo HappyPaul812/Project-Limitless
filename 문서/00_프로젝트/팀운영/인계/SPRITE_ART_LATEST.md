@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 #59 정식 파일럿 수령 확인 — 사용자 Windows ZIP / 미술 승인 대기
+
+- 바울 대표가 `F:\Downloads\Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip` **수령 직접 확인**. ZIP 제작본 SHA256 `425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351`, 8,008,308 bytes / 20 entries / ZIP CRC PASS / SHA256SUMS 19/19 재확인. 사용자의 F 드라이브 복사본 바이트를 아트 세션에서 직접 해시한 것은 아님.
+- 작업군 오르나 안내 NPC1, 남문 주택 문·지붕 접합1세트(3 PNG), 여관 독립 간판1; 신규 RGBA PNG6(오르나 원본/512 2종 포함). 오르나 128·40px 오프라인 미리보기/단독 원화, 남문·간판 전후, 모의 3비율 포함. ZIP에는 Manifest/파일별 SHA/QA 포함. 기존 건물·문·지붕·간판 재사용 KEEP, 기존 게임용43과 승인 지면9 및 공식 기능 변경0.
+- 상태 **`ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 남문 기존 지붕과 후보 박공이 중복되는 **`SOUTHGATE_JOIN_ART_HOLD`**, Codex 실 GapList CSV 행·GameView·PPU/Pivot/Sorting/Collider 실측 미입수/아트 QA NOT_TESTED. Codex 다른 격리 변경분136 PASS/0 FAIL은 **이 신규 미술 승인 아님**. 오르나 StableID/VoiceID 미확정.
+- 공식 문서 [Main23 오르나·남문·여관 간판 v1 QA](../../Chapter3_Main23_Orna_SouthGate_InnSign_ArtPilot_v1_QA_20261023.md) 수령·승인 게이트 보강 커밋 `f1c559d370b0016fd346d2b8b97328438ee13f49`, 담당 브랜치 `docs/art-new`. Issue #59 댓글 최신화 대상. **사용자 최종 미술 승인 전 Unity 본게임 적용·main 병합 금지**. OPEN16 현상 유지.
+
+
 ## 2026-10-23 Main23 #59 — 오르나·남문 접합·여관 간판 실 PNG 시안 납품 v1
 
 - **현재 정본 신규 아트**: 사용자 요청 3작업군(오르나 NPC1, 남문 주택 출입구/지붕접합3 PNG, 여관 독립간판1), 오르나 Master+512파생을 포함해 **독립 후보 PNG6**. 기존 43개 환경과 승인 지면9·F1/펫·Scene/Quest/Save/GUID 수정0.
