@@ -1,3 +1,13 @@
+# 2026-10-23 / 리뉴얼 GateGuard 시안 접수 — 태온과 유사하다는 바울 대표 의견
+
+- 바울 대표 납품 안내: `F:\Downloads\Limitless_Eldiran_GateGuard_Concept_SpiderResearch_20261023.zip`. `docs/art-renewal` [실물보고서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-renewal/문서/00_프로젝트/Renewal_GateGuard_Concept_Spider_PreResearch_20261023.md) 새 commit `c0faf9daf31489a3e35ceab087bc71d5b760a6a9` 확인. ZIP **보고상** 318790바이트/SHA256 `692d1a72e12f59e61373b880f3ebf1afd8fec909b2659563b35b370eb63c3cab`/CRC PASS; 실제 F: ZIP·이미지 픽셀을 이 기획 세션에서 직접 검수한 것 아님.
+- **사용자 실제 미술 피드백:** “컨셉 아트 보니까 태온이랑 비슷해. 뭐, 초상화는 없으니 괜찮겠지만...” → 현재 남문 경비 **시안 유지, 대규모 재제작 금지, 최종 승인 아직 X**, `GATEGUARD_CONCEPT_KEEP / TAEON_SIMILARITY_OBSERVED / GAME_SCALE_DISTINCTIVENESS_PENDING / USER_ART_APPROVAL_PENDING`. 남문 경비 투구·문장·창/깃발 등 역할 시각 특징, 공식 태온 Sprite/초상화와 40px/실Unity 비교로 필요할 때만 국소 표적 보완. 초상화가 없다는 이유만으로 플레이어 혼동 위험0 주장하지 않음.
+- NPC1 `Eldiran_GateGuard_Concept_512.png` 512RGBA, 128/40 preview 보고됨. 이전 두 OGA03/OGA09 원본 아트 바이너리가 새 담당 세션에 없어 `NPC_3_Concept_Comparison_Limited.png`는 placeholder 포함·실제 3NPC 비교 PASS 아님. Unity/본편/Stable ID·GUID/Save 변경0.
+- forest_spider 는 현행 Spawn·Spider 애니메이션 정적참조까지, 실 렌더·소스·권리/공식 미술 미확정으로 `HOLD_EVIDENCE / ART_NEW_0`. 기존 공식 몬스터/펫 보호.
+- [리뉴얼 Issue #60 구체 피드백·정식 GitHub 보고 의무](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6355575500) 댓글 작성. 새 담당은 기존 #60 보고 원문 재작성보다 **`WORLD_ART_RENEWAL_LATEST.md` 갱신+실제 commit SHA+이슈 완료 댓글** 먼저, 전 부서 공통 정책 #61 준수. 게임 비교 증거가 없는 현 시점에 최종 미술 PASS/정식 Unity 적용 지시하지 않음.
+
+---
+
 # 2026-10-23 / 전 담당 GitHub 보고 의무화 완료 공지·main 대상 분리 PR 준비
 
 - 바울 대표: **“각 담당은 다 의무화로 해줘.”** 공통 운영 정책 정본 `문서/00_프로젝트/팀운영/ALL_TEAMS_GITHUB_REPORTING_POLICY_20261023.md`, `COMMON_RULES.md`, `START_HERE.md`, `SESSION_HANDOFF.md`, `AGENTS.md` 5개 `docs/planning`에서 작성·갱신하고 실제 GitHub 확인.
