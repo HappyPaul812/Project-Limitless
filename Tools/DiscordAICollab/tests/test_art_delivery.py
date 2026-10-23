@@ -130,6 +130,12 @@ class DeliveryTests(unittest.TestCase):
     def test_zip_entry_count_limit(self):
         data=bundle({str(i)+'.txt':b'x' for i in range(257)})
         self.assertEqual('REJECTED',self.receive('sample.zip',data,False)['status'])
+    def test_combined_png_pixel_budget_blocks_many_images(self):
+        from unittest.mock import patch
+        data=bundle({str(n)+'.png':self.data for n in range(3)})
+        with patch('collab.art_inspection.MAX_TOTAL_PIXELS',256):
+            r=self.receive('sample.zip',data,False)
+        self.assertEqual('REJECTED',r['status']);self.assertEqual('PNG_TOTAL_PIXEL_LIMIT',r['inspection']['reason'])
     def test_writer_handle_blocks_snapshot_until_closed(self):
         p=self.root/'writing.png'
         with p.open('wb') as writer:

@@ -14,6 +14,7 @@ from .core import Denied
 from .intake import safe_name,MAX_ZIP,MAX_TOTAL,MAX_MEMBER,MAX_FILES,PROTECTED
 
 ALLOWED={'.png','.json','.md','.txt','.csv'}
+MAX_TOTAL_PIXELS=67_108_864
 
 
 def strict_json(data):
@@ -122,10 +123,13 @@ def inspect(name,data,metadata,catalog,base_sha):
     report={'status':'HOLD','integrity':'TECH_PASS','format':'ZIP' if is_zip else 'PNG','zip_crc':'PASS' if is_zip else 'NOT_APPLICABLE',
             'artist_role':role,'issue':issue,'base_sha':base_sha,'art':'USER_REVIEW_PENDING','unity':'NOT_VERIFIED',
             'rights':'RIGHTS_SOURCE_PENDING','hold_reasons':hold,'png':{},'files':{},'collisions':[]}
+    total_pixels=0
     for filename,value in files.items():
         digest=hashlib.sha256(value).hexdigest();report['files'][filename]=digest
         if filename.lower().endswith('.png'):
             info=png(value);c=declared.get(filename,{})
+            total_pixels+=info['dimensions'][0]*info['dimensions'][1]
+            if total_pixels>MAX_TOTAL_PIXELS:raise Denied('PNG_TOTAL_PIXEL_LIMIT')
             if info['mode']!='RGBA':hold.append('PNG_NOT_RGBA')
             if info['alpha_range'] is None or info['alpha_range'][0]!=0 or info['alpha_range'][1]==0:hold.append('PNG_TRANSPARENCY_OR_CONTENT_HOLD')
             if c.get('dimensions')!=info['dimensions']:hold.append('SPRITE_DIMENSIONS_UNKNOWN_OR_MISMATCH')

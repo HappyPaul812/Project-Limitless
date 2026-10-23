@@ -181,7 +181,8 @@ async def live_test():
 
 
 async def main():
-    logging.getLogger('discord').disabled=True
+    logger=logging.getLogger('discord');logger.disabled=True
+    logger.addHandler(logging.NullHandler());logger.propagate=False
     action=sys.argv[1] if len(sys.argv)>1 else 'inspect'
     if action=='inspect':await inspect()
     elif action=='setup':await setup()
