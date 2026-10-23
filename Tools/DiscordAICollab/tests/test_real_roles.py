@@ -21,7 +21,7 @@ class RealRoleTests(unittest.TestCase):
         self.owner=Identity(1,1,1)
         self.sources={'refs':{'main':'a'*40},'files':[
             {'path':'문서/담당/'+name+'.md','ref':'main','content':'모의 역할 문서'} for name in ROLE_FILES.values()]}
-        self.plan=make_plan('RenewalArtAgent',self.sources,clock=lambda:self.now)
+        self.plan=make_plan('PlanningAgent',self.sources,clock=lambda:self.now)
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -31,7 +31,7 @@ class RealRoleTests(unittest.TestCase):
         if 'login' in command: return SimpleNamespace(returncode=0,stdout='Logged in using ChatGPT',stderr='')
         if 'features' in command:
             return SimpleNamespace(returncode=0,stdout='\n'.join(k+' stable false' for k in ('shell_tool','apps','browser_use','computer_use','multi_agent')),stderr='')
-        answer={'role':'RenewalArtAgent','summary':'독립 모의 모델 응답','next_review':'CodexAgent'}
+        answer={'role':'PlanningAgent','summary':'독립 모의 모델 응답','next_review':'바울 대표'}
         events=[{'type':'item.completed','item':{'type':'agent_message','text':json.dumps(answer)}},
                 {'type':'turn.completed','usage':{'input_tokens':12,'output_tokens':8}}]
         return SimpleNamespace(returncode=0,stdout='\n'.join(json.dumps(x) for x in events),stderr='')
@@ -67,7 +67,7 @@ class RealRoleTests(unittest.TestCase):
         invoke=Mock(side_effect=self.fake)
         result=self.execute(invoke)
         self.assertEqual('PASS',result['status'])
-        self.assertEqual('NEW',result['handoff']['state'])
+        self.assertEqual('APPROVAL_PENDING',result['handoff']['state'])
         self.assertEqual(1,sum('exec' in c.args[0] for c in invoke.call_args_list))
         self.assertTrue(all(t['art']=='USER_REVIEW_PENDING' for t in self.store.snapshot()['tasks']))
         self.assertIn('[REAL AI',discord_text(result))
@@ -94,7 +94,7 @@ class RealRoleTests(unittest.TestCase):
     def test_multiple_turns_and_wrong_role_rejected(self):
         raw=self.fake(['exec']).stdout
         self.assertEqual('NOT_VERIFIED',parse_result(raw,0,'CodexAgent')['status'])
-        self.assertEqual('NOT_VERIFIED',parse_result(raw+'\n'+json.dumps({'type':'turn.completed'}),0,'RenewalArtAgent')['status'])
+        self.assertEqual('NOT_VERIFIED',parse_result(raw+'\n'+json.dumps({'type':'turn.completed'}),0,'PlanningAgent')['status'])
 
     def test_api_only_auth_never_executes(self):
         grant_once(self.store,self.owner,self.plan)
@@ -109,3 +109,7 @@ class RealRoleTests(unittest.TestCase):
     def test_mock_cannot_be_labelled_real(self):
         self.assertIn('[MOCK',discord_text({'mode':'MOCK','status':'PASS'}))
         self.assertIn('[MOCK',discord_text({'mode':'MOCK_NO_AI','status':'PASS'}))
+
+    def test_first_trial_other_roles_are_denied(self):
+        with self.assertRaises(Denied):
+            grant_once(self.store,self.owner,make_plan('CodexAgent',self.sources,clock=lambda:self.now))

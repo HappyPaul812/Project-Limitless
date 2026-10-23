@@ -1,0 +1,10 @@
+{
+  "integrity": "ok",
+  "counts": {
+    "APPROVAL_PENDING": 1,
+    "DONE": 2,
+    "NOT_VERIFIED": 1
+  },
+  "new_ai_tasks": 0,
+  "approval_slot_absent": true
+}

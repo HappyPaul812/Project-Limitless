@@ -2,6 +2,8 @@
 
 ## 실제 AI 준비 — 별도 승인 대기
 
+최신 첫 시험은 **PlanningAgent 정본 요약1회**로 제한합니다. 다른 역할 grant/run은 차단하며 성공 후 확장은 별도 승인입니다. status/pending 한국어 표시와 MOCK 미술승인 제외 안내를 실제 Discord에서 확인했습니다. 최신 승인계획은 [PlanningAgent 준비 보고](../../문서/00_프로젝트/팀운영/Discord_Planning_First_Approval_Pending_20261023.md)를 따릅니다.
+
 `collab.real_roles`는 기존 MOCK worker와 별도의 구독 CLI 실행기입니다. `python -m collab.ai_ready prepare`로4역할 SHA 고정 입력을 만들고, 바울 대표의 별도 승인 후에만 같은 협업DB의 공통1회 슬롯을 grant/run합니다. 승인 전 실제 모델 호출0. Discord9명령에는 추론 실행/승인 명령을 추가하지 않았습니다. `register-discord.ps1 -Action AIReadyReport`는 준비 상태만 게시하며 `AIResultReport`는 승인 실행 장부의 실제 결과만 게시합니다. [범위·계획 SHA·예상 사용량](../../문서/00_프로젝트/팀운영/Discord_AI_Real_Connection_Readiness_20261023.md)을 먼저 확인하세요.
 
 ## 암호화 등록 및 실연결 후속

@@ -1,0 +1,57 @@
+{
+  "status": "WAITING_FOR_OWNER_APPROVAL",
+  "actual_inference_calls": 0,
+  "first_trial_role": "PlanningAgent",
+  "expansion": "SEPARATE_APPROVAL_AFTER_SUCCESS",
+  "auth": {
+    "cli_version": "0.163.0-alpha.11.2",
+    "subscription_available": true
+  },
+  "config": {
+    "status": "PASS",
+    "mode": "CONFIG_ONLY_NO_INFERENCE",
+    "exit_code": 0,
+    "required_tool_controls_disabled": true,
+    "builtin_provider_override": false,
+    "transport_retry_policy": "BUILTIN_BOUNDED_DEFAULT; NO_APPLICATION_RETRY"
+  },
+  "api_calls": 0,
+  "additional_api_cost_usd": 0,
+  "subscription_consumption_this_probe": "NOT_EXECUTED",
+  "source_refs": {
+    "main": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+    "docs/planning": "d73bdbf9a3162132b959f4672e88c3975b361c3c",
+    "docs/art-new": "d9d14c0f6b7f8c0652c13b769e205dd5de426c7f",
+    "docs/art-renewal": "1d171f79ea95ba12dc6ffcb288f3466ebc3dfb31"
+  },
+  "plans": [
+    {
+      "role": "PlanningAgent",
+      "sha256": "e9e0e683f43456f67b7468e014699221e3c563eb63f9ba4257a466b3dbba0b38",
+      "prompt_bytes": 25497,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "CodexAgent",
+      "sha256": "9a87842bf959ad0a670d262feee38cc13487925b0a0461618a912ebc8b7a657f",
+      "prompt_bytes": 25298,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "NewArtAgent",
+      "sha256": "91731e41fc4db756db55b0392698e36232c13e6946a23658a1159b3f69af89c8",
+      "prompt_bytes": 30934,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    },
+    {
+      "role": "RenewalArtAgent",
+      "sha256": "41db6413c3a73e5d3bb7885051ada36d47c3ca0386d36bc219e760af271376a0",
+      "prompt_bytes": 31007,
+      "timeout_seconds": 90,
+      "expected_response": "600 Korean characters requested; not a billing token cap"
+    }
+  ]
+}

@@ -22,6 +22,7 @@ def prepare(root):
     config=verify_cli_controls(executable,root) if executable else {'status':'NOT_VERIFIED'}
     auth=cli_info(executable) if executable else {'subscription_available':False}
     result={'status':'WAITING_FOR_OWNER_APPROVAL','actual_inference_calls':0,
+            'first_trial_role':'PlanningAgent','expansion':'SEPARATE_APPROVAL_AFTER_SUCCESS',
             'auth':auth,'config':config,'api_calls':0,'additional_api_cost_usd':0,
             'subscription_consumption_this_probe':'NOT_EXECUTED',
             'source_refs':source['refs'],
@@ -44,7 +45,7 @@ async def report(root, actual_result=False):
     message=('[AI 연결 준비 / 실제 추론 미실행] Slash 실제 응답 영수증 '+json.dumps(slash,ensure_ascii=False)+
              '. 4역할 GitHub 문서 스냅샷·독립 계획 준비. ChatGPT 구독 인증/CLI 설정검사 '+
              ('PASS' if result['auth']['subscription_available'] and result['config']['status']=='PASS' else 'NOT_VERIFIED')+
-             '. 다음 실제 AI는 4역할 합계 읽기전용1회·90초·별도 계획 SHA 승인 필요. MOCK 결과와 REAL AI 표시 분리. '
+             '. 첫 실제 AI는 PlanningAgent의 최신 정본 요약만, 읽기전용1회·90초·별도 계획 SHA 승인 필요. MOCK 결과와 REAL AI 표시 분리. '
              '현재 추론0·추가유료API0·게임변경0·미술승인0·Push/merge0. 실제 AI 연쇄호출은 비활성.')
     if actual_result:
         # 임의 모델 결과 JSON을 신뢰하지 않고 승인 실행기가 기록한 큐 근거만 게시합니다.

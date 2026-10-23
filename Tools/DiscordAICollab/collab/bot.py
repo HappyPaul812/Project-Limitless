@@ -13,6 +13,7 @@ from discord import app_commands
 
 from .core import Denied, Identity, Store
 from .intake import MAX_ZIP, inspect_zip, safe_root
+from .query_text import format_query
 
 
 def create_bot(store: Store, data_root):
@@ -62,7 +63,7 @@ def create_bot(store: Store, data_root):
         await interaction.response.defer(ephemeral=True,thinking=True)
         try:
             result = await asyncio.to_thread(store.command,identity(interaction),str(interaction.id),action,args)
-            text = json.dumps(result,ensure_ascii=False)
+            text = format_query(action,result,store) if action in ('status','pending') else json.dumps(result,ensure_ascii=False)
             if len(text)>1800:
                 text = text[:1750]+'… (로컬 장부에서 전체 확인)'
             await interaction.followup.send(text,ephemeral=True,allowed_mentions=discord.AllowedMentions.none())

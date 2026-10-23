@@ -1,0 +1,9 @@
+{
+  "new_or_changed_tests_pass": 19,
+  "tests_fail": 0,
+  "model_calls": 0,
+  "subprocess_tests": "FAKE_NO_MODEL",
+  "korean_discord_status_pending": "USER_CONFIRMED_PASS",
+  "python_compile": "PASS",
+  "existing_full_QA_rerun": false
+}
