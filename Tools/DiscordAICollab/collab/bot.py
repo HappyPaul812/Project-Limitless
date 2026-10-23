@@ -17,7 +17,7 @@ from .query_text import format_query
 from .scheduling import Scheduler, format_control
 
 
-def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None):
+def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None, relay_only=False):
     root = safe_root(data_root)
     scheduler = Scheduler(store)
 
@@ -199,10 +199,14 @@ def create_bot(store: Store, data_root, usage_monitor=None, resume_queue=None):
         await interaction.response.defer(ephemeral=True, thinking=True)
         try:
             store.authorize(identity(interaction))
+            if relay_only and (action=='resume' or (action=='mode' and (args or {}).get('value') not in (None,'MANUAL'))):
+                raise Denied('로그인 전 중계 전용: MANUAL 유지·서비스 계정 Codex 인증 미검증으로 AI HOLD')
             if action=='usage' and usage_monitor:
                 await usage_monitor.refresh(force=True)
             result = await asyncio.to_thread(scheduler.command, identity(interaction),
                                              str(interaction.id), action, args)
+            if relay_only and action=='usage':
+                result={'status':'UNKNOWN','boot_relay_only':True}
             response = await interaction.followup.send(format_control(action, result)[:1800], ephemeral=True,
                                             allowed_mentions=discord.AllowedMentions.none(),wait=True)
             with store.tx() as db:
@@ -277,11 +281,17 @@ def run_bot(data_root):
         lock.close()
         raise Denied('BOT_SERVICE_ALREADY_RUNNING') from None
     from .usage_bridge import UsageMonitor
-    monitor=UsageMonitor(Scheduler(store))
+    boot_relay=os.getenv('LIMITLESS_BOOT_RELAY_ONLY')=='1'
+    monitor=None if boot_relay else UsageMonitor(Scheduler(store))
     from .resume_queue import ResumeQueue
-    resume_queue=ResumeQueue(store)
+    resume_queue=None if boot_relay else ResumeQueue(store)
+    if boot_relay:
+        with store.tx() as db:
+            if db.execute('SELECT mode FROM operation_mode WHERE singleton=1').fetchone()[0]!='MANUAL':
+                raise Denied('BOOT_MANUAL_REQUIRED: 기존 모드를 임의 변경하지 않고 부팅 중계를 보류합니다')
+        ResumeQueue(store).recover()
     try:
-        create_bot(store,root,monitor,resume_queue).run(token,log_handler=None,reconnect=False)
+        create_bot(store,root,monitor,resume_queue,relay_only=boot_relay).run(token,log_handler=None,reconnect=boot_relay)
     except Exception:
         raise Denied('DISCORD_CONNECTION_FAILED: 토큰·초대·서버/채널 권한을 로컬에서 확인하세요. 원문 로그는 보존하지 않습니다') from None
     finally:

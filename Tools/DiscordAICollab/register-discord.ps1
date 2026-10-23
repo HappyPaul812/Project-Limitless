@@ -1,13 +1,19 @@
-param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest','Phase3Stop','Phase3OwnerReceiptVerify','OperationsInspect','OperationsBotStop')][string]$Action='Setup',[switch]$Replace)
+param([ValidateSet('Setup','Status','Test','Run','HandoffPrepare','HandoffFinish','AIReadyReport','AIResultReport','PlanningApprovedOnce','PlanningFinalRetest','PlanningRetestReport','CodexIssue63Once','CodexIssue63Report','AutoHandoff63Once','ArtRolesOnce','ArtRolesFailureReport','NewArtRetestOnce','RenewalOnce','FourRolePilotOnce','Phase3Inspect','Phase3Setup','Phase3Run','Phase3LiveTest','Phase3Stop','Phase3OwnerReceiptVerify','OperationsInspect','OperationsBotStop')][string]$Action='Setup',[switch]$Replace,[switch]$BootRelay)
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot
 Import-Module (Join-Path $PSScriptRoot 'DiscordSecretStore.psm1') -Force
 $secretRoot = Join-Path $PSScriptRoot 'data/private/discord'
 $secureInput = $null; $saved = $null; $bstr = [IntPtr]::Zero
 $oldEnvironment = @{}
-$names = @('DISCORD_BOT_TOKEN','LIMITLESS_OWNER_IDS','LIMITLESS_GUILD_ID','LIMITLESS_CHANNEL_IDS','LIMITLESS_ALLOW_DISCORD','LIMITLESS_HANDOFF_FINISH','PYTHONIOENCODING')
+$names = @('DISCORD_BOT_TOKEN','LIMITLESS_OWNER_IDS','LIMITLESS_GUILD_ID','LIMITLESS_CHANNEL_IDS','LIMITLESS_ALLOW_DISCORD','LIMITLESS_HANDOFF_FINISH','PYTHONIOENCODING','LIMITLESS_BOOT_RELAY_ONLY')
 foreach ($name in $names) { $oldEnvironment[$name] = [Environment]::GetEnvironmentVariable($name,'Process') }
 try {
+    if ($BootRelay) {
+        # 새 서비스 계정 자신의 DPAPI 저장소만 사용합니다. 기존 사용자 저장소는 열지 않습니다.
+        $secretRoot=Join-Path $PSScriptRoot 'data/private/boot-discord'
+        $env:LIMITLESS_BOOT_RELAY_ONLY='1'
+        if ($Action -notin @('Setup','Status','Run','Phase3Run','OperationsBotStop','Phase3Stop')) {throw 'BOOT_RELAY_ACTION_NOT_ALLOWED'}
+    }
     if ($Action -eq 'OperationsBotStop') {
         New-Item -ItemType Directory -Force -Path 'data/phase2' | Out-Null
         Set-Content -LiteralPath 'data/phase2/bot-stop-request' -Value 'STOP' -Encoding ascii

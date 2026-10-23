@@ -330,6 +330,8 @@ def format_control(action, value):
               'EXHAUSTED': '한도 소진·보류', 'RECHECK_REQUIRED': '회복 시각 경과·재확인 필요'}
     if action == 'usage':
         lines = ['Codex 사용량: ' + labels.get(value['status'], value['status'])]
+        if value.get('boot_relay_only'):
+            lines.append('서비스 계정의 Codex 구독 인증은 미검증입니다. 중계만 실행·AI HOLD·MANUAL 유지.')
         for window in value.get('windows', []):
             name = '5시간' if window['minutes'] == 300 else '주간'
             lines.append(f"{name}: 사용 {window['used_percent']}% / 회복 {seoul(window['resets_at'])}")

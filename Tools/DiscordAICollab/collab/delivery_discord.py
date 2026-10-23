@@ -121,6 +121,7 @@ async def run():
         await client.login(os.environ['DISCORD_BOT_TOKEN']);channel=await client.fetch_channel(int(config['channel_id']))
         if channel.guild.id!=owner.guild_id:raise Denied('CHANNEL_SCOPE_INVALID')
         print('PHASE3_RUNNING: 파일 감시/첨부 수령만. AI/Unity worker 비활성.',flush=True)
+        failures=0
         while True:
             if (ROOT/'stop-request').exists():
                 (ROOT/'service-status.json').write_text(json.dumps({'status':'STOPPED','ai_calls':0,'unity_runs':0}),encoding='utf8')
@@ -132,10 +133,13 @@ async def run():
                     await ingest_message(message,client,deliveries,config)
                     with deliveries.store.tx() as db:db.execute('UPDATE art_delivery_cursors SET message_id=? WHERE channel=?',(str(message.id),str(channel.id)))
                 await publish_outbox(deliveries,channel)
+                failures=0
                 (ROOT/'service-status.json').write_text(json.dumps({'status':'RUNNING','last_tick':__import__('time').time(),'ai_calls':0,'unity_runs':0}),encoding='utf8')
             except Exception:
+                failures=min(failures+1,6)
                 (ROOT/'service-status.json').write_text(json.dumps({'status':'POLL_OR_REPORT_NOT_VERIFIED','ai_calls':0,'unity_runs':0}),encoding='utf8')
-            await asyncio.sleep(config['poll_seconds'])
+            delay=min(120,config['poll_seconds']*(2**failures)) if os.getenv('LIMITLESS_BOOT_RELAY_ONLY')=='1' else config['poll_seconds']
+            await asyncio.sleep(delay)
 
 
 async def live_test():
