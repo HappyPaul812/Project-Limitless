@@ -13,6 +13,7 @@ from .core import Denied, KST, ROLES
 from .intake import safe_root
 from .phase2 import child_environment, cli_info, probe_command, verify_cli_controls
 from .output_parser import parse_result, korean_reason
+from .exec_diagnostics import launch_manifest, failure_observation
 
 SLOT = 'REAL_ROLE_READONLY_20261023_ONE_TOTAL'
 RETEST_SLOT = 'PLANNING_PARSER_FINAL_RETEST_20261023_ONE_APPROVED'
@@ -106,9 +107,11 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
     root=safe_root(workspace)
     if any(root.iterdir()):
         raise Denied('빈 격리 실행 폴더만 허용합니다')
-    if not cli_info(executable,invoke)['subscription_available']:
+    cli=cli_info(executable,invoke)
+    if not cli['subscription_available']:
         raise Denied('CHATGPT_SIGN_IN_REQUIRED; API fallback 없음')
-    if verify_cli_controls(executable,root,invoke)['status']!='PASS':
+    controls=verify_cli_controls(executable,root,invoke)
+    if controls['status']!='PASS':
         raise Denied('CLI 설정 검사 필요')
     with store.tx() as db:
         fresh=json.loads(store.setting(db,slot))
@@ -135,13 +138,19 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
         db.execute("UPDATE tasks SET state='RUNNING',lease=?,lease_until=? WHERE id=?",(slot,store.clock()+120,task_id))
         db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps({**grant,'state':'CONSUMED'}),slot))
         store.audit(db,'REAL_ROLE_EXEC_RESERVED',task_id)
+    started=time.monotonic()
+    invoking=False
     try:
         schema=root/'response-schema.json'; schema.write_text(json.dumps(SCHEMA),encoding='utf8')
         last_path=root/'last-message.json'
         command=probe_command(executable,root)
         command=command[:-1]+['--output-schema',str(schema),'--output-last-message',str(last_path),'-']
+        environment=child_environment()
+        manifest=launch_manifest(command,environment,cli,controls,plan['prompt'])
+        (root/'launch-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
+        invoking=True
         completed=invoke(command,input=plan['prompt'],capture_output=True,text=True,encoding='utf8',errors='replace',
-                         env=child_environment(),timeout=90,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+                         env=environment,timeout=90,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
         try:
             final_text=last_path.read_text(encoding='utf8')
         except (OSError,UnicodeError):
@@ -158,12 +167,16 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
                                    ('rate limit','QUOTA_EXCEEDED'),('failed to connect','NETWORK_FAILED'),('certificate','TLS_FAILED')]:
                 if fragment in raw:
                     result['reason']=label;break
+        result['launch_observation']=failure_observation(result,completed.stderr,elapsed_ms=(time.monotonic()-started)*1000,process_returned=True)
     except subprocess.TimeoutExpired:
         result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','execution_status':'TIMEOUT',
                 'validation_status':'NOT_EVALUATED','reason':'TIMEOUT_NO_RETRY','usage':{}}
-    except (OSError,subprocess.SubprocessError):
+        result['launch_observation']=failure_observation(result,elapsed_ms=(time.monotonic()-started)*1000)
+    except (OSError,subprocess.SubprocessError) as exc:
         result={'status':'NOT_VERIFIED','mode':'REAL_CLI_READONLY','execution_status':'EXEC_FAILED',
                 'validation_status':'NOT_EVALUATED','reason':'EXEC_FAILED_NO_RETRY','usage':{}}
+        result['launch_observation']=failure_observation(result,elapsed_ms=(time.monotonic()-started)*1000,os_error=exc if isinstance(exc,OSError) else None)
+        if not invoking:result['launch_observation']['observed_stage']='LOCAL_PRELAUNCH_SETUP_FAILED'
     finally:
         # timeout이나 파서 오류에서도 임시 응답 원문을 보존하지 않습니다.
         if 'last_path' in locals():
