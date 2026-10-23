@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 #59 최종 표시 기획 규격 — 80px visible 우선 (82px canvas 과거 후보 대체)
+
+- **최신 정본 지시**: 바울 대표 + [Issue #65 기획 최신 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6359021033) + [#59 기획 선택](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359022163)에 따라 **오르나 보이는 alpha 인물 높이80px을 기획 기본안**으로 한다. **전체캔버스84.63px**은 별도 관측치이다. **96px visible**은 비교 대안(전체캔버스101.55px). `512×512 PNG / PPU512 / Pivot(256,0) / scale1.175390`, #65 실제 Unity23PASS/0FAIL은 Codex 검증치; 과거 **82px 전체캔버스 / alpha약77.5px**은 이전 시점 비교안으로 보존만 하고 **최신 기본값 아님**. 원화 Master·512·StableID·VoiceID·Quest 및 콜라이더·기능 변경0; 근접 이름표 하체 가림은 OPEN 관찰. **기획 추천 ≠ 사용자 최종 미술 승인**.
+- **기존 북서 Residence(주택)**의 건물 본체·지붕·출입문·Collider **KEEP_OLD**. 후보 PNG `SouthGate_RoofGable_Joint_CANDIDATE.png` / `SouthGate_RoofTrim_Joint_CANDIDATE.png` / `SouthGate_EntryDoor_Joint_CANDIDATE.png` **원본 유지 + 배치 HOLD**. EntryDoor는 작은 눈지붕·계단/문틀이 기존 주택과 중복되어 `ART_HOLD_JOIN`. 현재 북서 `(-12.5,7.2)` Residence와 #58 남문 예상 `(-13,1)`은 다름. Codex가 실제 목표 남문 필요 아트를 입증하고 대표님이 별도 제작 지시하기 전까지 **신규 PNG/기존 원화 보완0**.
+- **여관**은 Inn 본체 PNG에 **내장된 간판 하나만 KEEP_OLD**. 기존 `Signs/Frostway_Sign_Inn.png` 조각도 별도 두 번째 설치하지 않음. `Inn_StandaloneSign_CANDIDATE.png`는 **원본 파일 보관/CANDIDATE_HOLD/배치0**.
+- **이번 작업 산출/변경**: `docs/art-new` Markdown 보고 수정 및 인계/Issue 댓글만; PNG0 / ZIP0 / Unity 본편0 / main merge0. 기존43/승인 Earth·ThinFrost·Gravel9/기타 공식 NPC·펫·몬스터/Save·Quest·Main23 기능·OPEN16 유지.
+- [최신 **오르나 visible80px 정정 + KEEP/HOLD 보고서**](../../Chapter3_Main23_Issue59_Codex65_KeepHold_PlacementDecision_20261023.md) `docs/art-new` 보고 수정 실제커밋 `855d501c56f2107df01e49a5fefe84d87b0320bb`. Codex 실제 GameView는 로컬 ZIP·텍스트 SHA로 존재하지만 **이 신규 아트 세션은 이미지 자체 미열람**(`CODEX_GAMEVIEW_TEXT_EVIDENCE_ONLY`), 기존 OFFLINE/APPROX 비교와 혼동 금지. **최종 `PLANNING_VISUAL_RECOMMENDED / USER_FINAL_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`**. 바울 대표 최종 승인 전 본게임 적용·main push/merge 금지.
+
+
 ## 2026-10-23 Main23 #59 / Codex #65 최신 실측 — 오르나 82px 기본·남문/여관 KEEP 판정
 
 - **최신 바울 대표 지시·기획/기술 보고 우선**: [#59 최신 기획](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6358511540), [#65 첫 실 Unity A/B](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358407741), [#65 후속 실 Unity 높이 검증](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6358720003). **이번 회차 신규 게임 PNG/ZIP 생성·수정·삭제 0, GitHub 문서만 변경**.
