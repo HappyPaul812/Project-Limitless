@@ -1,3 +1,10 @@
+## 2026-10-23 / Issue #63 독침벌 v1 정식 납품 재확인 (기존 작업 보호)
+
+- 정식 재확인 보고: [Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md](../../Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md), 커밋 `4b5a40608d20121505e42282234087aa80470083`.
+- 바울 대표 F: Downloads ZIP 전달 확인. 작업 컨테이너 원본 **2,291,579바이트 SHA256 `2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478` 재계산 일치**. F: 파일 자체 SHA는 직접 검증하지 않았음.
+- 512×512 RGBA 1포즈, 128×128·40×40 PNG, 디자인 참고 보드, Manifest/SHA256SUMS/QA. 기존 게임 원본 PNG와 공식 Ch2 원화 간 **실물 비교판은 아직 NOT_VERIFIED**, 참고용 보드를 실측 비교로 오인 금지. 기존 GUID 원본·라이선스 `RIGHTS_SOURCE_PENDING`.
+- 사용자 **미술 승인 필요** / 20프레임 제작 0 / Unity 적용 0 / main 병합 0. 원본 MonsterDefinition·독·Spawn·드롭 및 승인 공식아트·NPC3·Spider HOLD·54행 감사 보존.
+
 ## 2026-10-23 / Issue #63 — VenomBee 오리지널 원화 1포즈 후보
 
 - 보고서 `../../Renewal_VenomBee_OriginalKeyArt_Pilot_20261023.md` commit `3840193957f8f83e67f820bd4065ee4519e00c50`. 기존 MonsterDefinition Idle GUID ...04, Attack ...05, 10FPS·각10프레임 확인. GUID에 매핑된 물리 PNG/라이선스 미확정 `RIGHTS_SOURCE_PENDING`.
