@@ -1,0 +1,25 @@
+{
+  "status": "CONNECTED_COMMANDS_REGISTERED",
+  "root_commands": 1,
+  "subcommands": [
+    "approve",
+    "budget",
+    "cancel",
+    "finish",
+    "handoff",
+    "mode",
+    "pause",
+    "pending",
+    "reject",
+    "resume",
+    "schedule",
+    "schedule-status",
+    "shutdown",
+    "status",
+    "task",
+    "unpause",
+    "usage"
+  ],
+  "gateway": "PASS",
+  "tokens_logged": false
+}

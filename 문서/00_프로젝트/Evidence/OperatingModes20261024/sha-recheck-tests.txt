@@ -1,0 +1,8 @@
+test_changed_sha_hold (tests.test_modes.ModeResumeTests.test_changed_sha_hold) ... ok
+test_unknown_sha_hold (tests.test_modes.ModeResumeTests.test_unknown_sha_hold) ... ok
+test_exact_approved_job_runs_at_most_once_after_recovery (tests.test_modes.ModeResumeTests.test_exact_approved_job_runs_at_most_once_after_recovery) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 6.374s
+
+OK

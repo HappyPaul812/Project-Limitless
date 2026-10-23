@@ -1,3 +1,7 @@
+## 2026-10-24 Discord A·B 운영 모드 구현
+
+A/B 영속선택·배타전환·체크포인트·주일접수/재개금지·정본SHA 재검증 HOLD·B finish 예약/범위/취소 구현. 변경분36 PASS/0 FAIL; Discord17명령 실제등록/재접속 PASS, 대표 전체정상 확인·장부 B/MANUAL 실제응답PASS, A서버전송PASS/대표오류보고로화면 NOT_VERIFIED·새finish예약실응답 NOT_VERIFIED. 로컬시험정리MANUAL복귀. 실제 quota회복 AI재개/재부팅/PC종료 미검증. 실제 통합 실행기 미연결·승인/미저장/동기화 불명시 HOLD. 기본MANUAL/대기0·추론/유료API/종료/OS등록/Push/merge0. 원본7356변경/누락0·기존21업무/13usage/승인/설정/아트5동일. 구현1e794393. 다음: 대표 새 Slash 응답 확인, 별도 승인 후 실제 운영 검증. Unity 사용자확인 없음. [보고](../OperatingModes_AB_20261024.md)
+
 ## 2026-10-24 운영 자동화 실연동 VERIFIED
 
 기존9+새6 Slash 실제등록·대표계정6종 Gateway/비공개응답 확인. 시험SCH-79e9740a0440 취소/접수보류해제. 공식Codex App Server 사용량120초 자동조회·소진/실패보류·회복후재검증·기존미소비승인 단발재개연결, 실제 재개대기0/추론0. 신규모의27 PASS/0 FAIL·정상중지exit0/재접속/중복차단PASS. Windows Art/Bot 동일사용자로그인30초·최소권한·재시작3회 비활성XML 준비·등록0. PC종료 실제비활성·동기화/미저장작업 미확인HOLD. 원본7356변경/누락0·기존21업무/13usage/승인/설정/아트입고동일·격리SHA일치·TEST_ONLY재처리0·AI/Unity/제품/Push/merge0. 구현7ef5495312ab6d986a646f8ee32d3656e823c2bd. [완료보고](../Operations_Automation_Live_Verified_20261024.md). 봇·수령서비스 정상재접속 후 실행중. 다음은 별도 승인 후 자동시작 등록/활성화, 실제 한도소진/AI재개·재부팅·로그아웃 미검증. Unity 사용자확인 없음.

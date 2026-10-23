@@ -1,0 +1,17 @@
+{
+  "original_files": 7356,
+  "changed": 0,
+  "missing": 0,
+  "original_status_identical": true,
+  "existing_tables_identical": {
+    "tasks": true,
+    "usage": true,
+    "approvals": true,
+    "settings": true,
+    "art_deliveries": true
+  },
+  "actual_ai_calls": 0,
+  "shutdowns": 0,
+  "autostart_registrations": 0,
+  "push_merge": 0
+}

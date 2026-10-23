@@ -1,0 +1,85 @@
+{
+  "mode": {
+    "singleton": 1,
+    "mode": "MANUAL",
+    "updated": 1792770658.2880971
+  },
+  "new_mode_receipts": [
+    {
+      "action": "mode",
+      "response_id": "1563217078486573107",
+      "gateway": 1,
+      "ephemeral": 1,
+      "owner_verified": 1
+    },
+    {
+      "action": "mode",
+      "response_id": "1563217304400035981",
+      "gateway": 1,
+      "ephemeral": 1,
+      "owner_verified": 1
+    },
+    {
+      "action": "resume",
+      "response_id": "1563217994253860956",
+      "gateway": 1,
+      "ephemeral": 1,
+      "owner_verified": 1
+    }
+  ],
+  "history": [
+    {
+      "mode": "SAFE_SHUTDOWN",
+      "reason": "OWNER_COMMAND",
+      "created": 1792770393.9958258
+    },
+    {
+      "mode": "MANUAL",
+      "reason": "OWNER_COMMAND",
+      "created": 1792770447.8414822
+    },
+    {
+      "mode": "AUTO_RESUME",
+      "reason": "OWNER_COMMAND",
+      "created": 1792770612.3039036
+    },
+    {
+      "mode": "MANUAL",
+      "reason": "OWNER_COMMAND",
+      "created": 1792770658.2880971
+    }
+  ],
+  "representative_a_display_report": "ERROR_OR_NO_RESPONSE",
+  "a_server_result": "AUTO_RESUME_AND_REPLY_SENT",
+  "a_display": "NOT_VERIFIED",
+  "cleanup": "LOCAL_MANUAL_RESTORE_NOT_A_DISCORD_COMMAND",
+  "report": {
+    "id": "OPERATING_MODES_AB_20261024",
+    "state": "SENT",
+    "message_id": "1563216982562701345"
+  },
+  "tasks": 21,
+  "usage_rows": 13,
+  "resume_jobs": 0,
+  "old_tables_identical": {
+    "tasks": true,
+    "usage": true,
+    "approvals": true,
+    "settings": true,
+    "art_deliveries": true
+  },
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792770696.1117473,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": true,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792770697.8382096,
+    "ai_calls": 0,
+    "unity_runs": 0
+  },
+  "observed": 1792770699.076485
+}

@@ -1,0 +1,39 @@
+test_changed_executable_blocks (tests.test_modes.ModeResumeTests.test_changed_executable_blocks) ... ok
+test_changed_sha_hold (tests.test_modes.ModeResumeTests.test_changed_sha_hold) ... ok
+test_consumed_slot_not_reused (tests.test_modes.ModeResumeTests.test_consumed_slot_not_reused) ... ok
+test_corrupt_pending_plan_is_not_retried (tests.test_modes.ModeResumeTests.test_corrupt_pending_plan_is_not_retried) ... ok
+test_exact_approved_job_runs_at_most_once_after_recovery (tests.test_modes.ModeResumeTests.test_exact_approved_job_runs_at_most_once_after_recovery) ... ok
+test_expired_grant_not_extended_or_retried (tests.test_modes.ModeResumeTests.test_expired_grant_not_extended_or_retried) ... ok
+test_failed_attempt_has_no_auto_retry (tests.test_modes.ModeResumeTests.test_failed_attempt_has_no_auto_retry) ... ok
+test_restart_running_is_unknown_never_retried (tests.test_modes.ModeResumeTests.test_restart_running_is_unknown_never_retried) ... ok
+test_sunday_never_runs (tests.test_modes.ModeResumeTests.test_sunday_never_runs) ... ok
+test_unapproved_plan_cannot_enter_resume_queue (tests.test_modes.ModeResumeTests.test_unapproved_plan_cannot_enter_resume_queue) ... ok
+test_unknown_sha_hold (tests.test_modes.ModeResumeTests.test_unknown_sha_hold) ... ok
+test_unknown_usage_keeps_granted_job_held_without_runner_call (tests.test_modes.ModeResumeTests.test_unknown_usage_keeps_granted_job_held_without_runner_call) ... ok
+test_a (tests.test_modes.ModesTests.test_a) ... ok
+test_a_schedule_conflict (tests.test_modes.ModesTests.test_a_schedule_conflict) ... ok
+test_b (tests.test_modes.ModesTests.test_b) ... ok
+test_b_a_conflict (tests.test_modes.ModesTests.test_b_a_conflict) ... ok
+test_cancel (tests.test_modes.ModesTests.test_cancel) ... ok
+test_cleanup (tests.test_modes.ModesTests.test_cleanup) ... ok
+test_dedup (tests.test_modes.ModesTests.test_dedup) ... ok
+test_default (tests.test_modes.ModesTests.test_default) ... ok
+test_event_tamper (tests.test_modes.ModesTests.test_event_tamper) ... ok
+test_finish_requires_b (tests.test_modes.ModesTests.test_finish_requires_b) ... ok
+test_finish_schedule (tests.test_modes.ModesTests.test_finish_schedule) ... ok
+test_five_hour (tests.test_modes.ModesTests.test_five_hour) ... ok
+test_invalid (tests.test_modes.ModesTests.test_invalid) ... ok
+test_no_manual_resume (tests.test_modes.ModesTests.test_no_manual_resume) ... ok
+test_owner (tests.test_modes.ModesTests.test_owner) ... ok
+test_recovery (tests.test_modes.ModesTests.test_recovery) ... ok
+test_restart (tests.test_modes.ModesTests.test_restart) ... ok
+test_shutdown (tests.test_modes.ModesTests.test_shutdown) ... ok
+test_sunday (tests.test_modes.ModesTests.test_sunday) ... ok
+test_unknown (tests.test_modes.ModesTests.test_unknown) ... ok
+test_unsaved (tests.test_modes.ModesTests.test_unsaved) ... ok
+test_weekly (tests.test_modes.ModesTests.test_weekly) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 62.281s
+
+OK
