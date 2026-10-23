@@ -1,5 +1,16 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-23 Main23 서릿길 마을 외형 보완 #59 — 정식 GitHub 증거보고 / 신규 아트 미납품
+
+- 바울 대표 명시 새 운영규칙: 작업 완료 보고는 **`docs/art-new` 문서+본 인계 실제 커밋, Issue 댓글**로만 성립. 대화 요약은 납품 완료 증거가 아님. 해당 작업의 파일별 실제 존재/SHA256/QA/사용자 승인, `main` 미반영을 반드시 분리한다.
+- [Issue #59](https://github.com/HappyPaul812/Project-Limitless/issues/59) 최신 [2026-10-23 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6355299474), `docs/planning` Main23 Presentation 계약 확인. Main23 첫 플레이 **격리 기능 148PASS**는 신규 아트 검수/유저승인 아님. Codex #58 실제 `Main23_Frostway_VisualGapList.csv`, GameView·PPU/Pivot·Sorting/footprint 증거 **미전달**.
+- **현재 #59 신규 실물 상태: 오르나 PNG `NOT_DELIVERED`; 남문 목석 건물 접합 신규1세트 `NOT_DELIVERED`; 스킬상점/여관 신규 외형·간판1세트 `NOT_DELIVERED`; 접합 전후/128px·40px/화면비3종 신규 아트 QA `NOT_TESTED`.** 잘못된 요약의 ‘제작 완료’를 따르지 않는다.
+- 실물 보유 과거 v9 ZIP SHA `afea1ed0b357a5bdce9e962c7969b81b77d29e1ed11b7b9dc170d57747fbeb79`에서 기존 49 게임 PNG 49/49 RGBA 경로·SHA 확인. 기존 Residence502×374 / SkillShop511×418 / Inn540×443 및 Roof Gable175×219, WoodFrame Door148×210, SkillShop Sign125×173 등은 **재사용 검토 후보**; v5 실제 로컬 ZIP·Unity 화면 및 동일SHA는 직접 미검증. 승인 지면9/기존 43/펫3종 불변.
+- **이번 턴 실제 생성한 것은 신규 게임 PNG가 아니라 검수 참고자료**: `Limitless_Main23_Issue59_ReuseAudit_PRELIMINARY_20261023.zip` SHA `83d621d8f32fde8f31b10f10e4fa5fb29c25ff2677b472e74862f9eccd93739d` (CSV49 + 기존자산 Contact Sheet + Manifest + SHA256SUMS; CRC/SHA 3PASS). 실물은 이 대화 다운로드 첨부, **GitHub 바이너리 미업로드**.
+- [정식 #59 보고서](../../Chapter3_Main23_FrostwayVillage_VisualCompletion_Pilot_20261023.md) 보고 커밋 `88e0e60a2048e25f1fab6effb782848c5c13516c`. 상태 **`REUSE_BASELINE_AUDITED / NEW_ART_NOT_DELIVERED / USER_ART_REVIEW_PENDING / NO_UNITY_APPLY`**. `OPEN16` 미해결16, main 직접 commit/Push/merge0.
+- 다음: Codex #58 실 GapList와 GameView/좌표/PPU 확보→KEEP 대 신규 필요표 확정→3개 표적 신규 자산 비파괴 제작/비교/실물 SHA·ZIP→**그때** `docs/art-new` 새 완성보고 커밋·Issue 댓글·바울 대표 미술 승인 판단. 공식 적용 금지.
+
+
 ## 2026-10-22 Main23 서릿길 마을 v9 — 새 01 포함 family 9종 비파괴 대체 파일럿
 
 - **사용자 최신 발주**: Codex v8 실제 기술PASS/미술 Earth·ThinFrost·Gravel 모두 HOLD. 02·03만 반복 수정하는 방향 중단. 기존 공식43 PNG 원본 보존 상태로 **family별 새 01/02/03 전9개 `Candidate/Tiles/` 독립 후보**. 원본 v8 ZIP 실물 SHA `6a9fa1c3c0c1ffef3ac43d3541a28bbc0a16310d2e0f8c267ec7177d731d712f` 확인.
