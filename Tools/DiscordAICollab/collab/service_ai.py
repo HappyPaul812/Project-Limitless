@@ -2,6 +2,7 @@
 인증/계정/사용량 불명은 중계만 유지합니다. 로그인·자격 증명 복사·승인 발급·추론은 없습니다.
 """
 import asyncio
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -49,12 +50,24 @@ def service_environment(context,approval,environ,root):
     env.update(USERPROFILE=str(profile),HOME=str(profile),CODEX_HOME=str(home))
     return env
 
+def select_executable(approval,env,explicit=None):
+    # 서비스 PATH에 개인 설치 경로를 복사하지 않고 대표가 승인한 공식 실행 파일의 SHA만 검증해 사용합니다.
+    pin=approval.get('service_codex')
+    if pin and explicit is None:
+        binary=Path(pin.get('path',''))
+        if (not binary.is_absolute() or binary.is_symlink() or not binary.is_file()
+            or hashlib.sha256(binary.read_bytes()).hexdigest()!=pin.get('sha256')):
+            raise Denied('PINNED_CLI_ACCESS_OR_SHA_NOT_VERIFIED')
+        return str(binary)
+    binary=explicit or shutil.which('codex',path=env.get('PATH',env.get('Path','')))
+    if not binary:raise Denied('SERVICE_CODEX_CLI_NOT_FOUND')
+    return binary
+
 def prepare_provider(root=ROOT,context=None,approval=None,environ=None,executable=None):
     context=windows_context() if context is None else context
     approval=json.loads(APPROVAL.read_text(encoding='utf8')) if approval is None else approval
     env=service_environment(context,approval,os.environ if environ is None else environ,root)
-    binary=executable or shutil.which('codex',path=env.get('PATH',env.get('Path','')))
-    if not binary:raise Denied('SERVICE_CODEX_CLI_NOT_FOUND')
+    binary=select_executable(approval,env,executable)
     return OfficialUsage(binary,environment=env)
 
 def probe(root=ROOT,provider_factory=None):

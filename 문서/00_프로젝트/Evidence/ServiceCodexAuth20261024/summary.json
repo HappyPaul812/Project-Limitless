@@ -1,0 +1,45 @@
+{
+  "at": 1792804630.2980819,
+  "status": "DEVICE_AUTH_SUPPORTED_LOCAL_SERVICE_INSPECTION_PENDING",
+  "mode": "MANUAL",
+  "cli": {
+    "path": "C:\\Users\\windows\\AppData\\Local\\OpenAI\\Codex\\bin\\8925276705115dea\\codex.exe",
+    "sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "version": "0.164.0-alpha.11.1"
+  },
+  "official_auth_document": "https://learn.chatgpt.com/docs/auth",
+  "method": "codex login --device-auth",
+  "credential_store": "SERVICE_OWN_OS_KEYRING_NO_FILE_FALLBACK",
+  "tests": {
+    "pin": {
+      "run": 3,
+      "failures": 0,
+      "errors": 0,
+      "actual_ai_calls": 0
+    },
+    "powershell_native_read_argument_and_capture": "2_PASS",
+    "powershell_parsers": "2_PASS",
+    "wrong_account_guard": "HOLD_NO_AUTH_REQUEST"
+  },
+  "db_fingerprints_unchanged": true,
+  "service_inspection": "LAUNCH_FAILED_GENERIC_HOLD_STAGE_DIAGNOSTIC_PREPARED",
+  "device_login_started": false,
+  "actual_ai_calls": 0,
+  "a_activated": false,
+  "services_restarted": false,
+  "auth_files_copied": false,
+  "paid_api_push_merge_product_changes": 0,
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792804628.0196476,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": false,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792804630.1251729,
+    "ai_calls": 0,
+    "unity_runs": 0
+  }
+}
