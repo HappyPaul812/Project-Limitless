@@ -31,7 +31,7 @@ Windows 표준 Start-Process -Credential -LoadUserProfile로 바울 대표가 �
 ```
 
 - 서비스 계정 콘솔을 닫았다면 start-service-auth-console.ps1 -Action Login으로 다시 직접 엽니다. Windows 암호는 로컬 입력에만 사용하고 저장하지 않습니다.
-- 서비스 계정 자신의 .codex 디렉터리만 초기화하고 ACL을 해당 SID·SYSTEM·Administrators로 보호합니다. 다른 사용자 프로필/상위 경로는 수정하지 않습니다.
+- 서비스 계정 자신의 .codex 디렉터리만 초기화합니다. 현재 소유자가 해당 SID인지 확인하고 소유자는 변경하지 않은 채 DACL만 해당 SID·SYSTEM·Administrators로 보호합니다. 다른 사용자 프로필/상위 경로는 수정하지 않습니다.
 - 신규 config.toml에 keyring 저장과 ChatGPT 로그인만 지정합니다. 기존 별도 config가 있으면 덮어쓰지 않고 HOLD합니다.
 - 기기 인증 코드는 이 로컬 창의 native Codex 출력에만 나타납니다. 바울 대표가 안내된 공식 OpenAI 주소를 브라우저에서 열고 직접 로그인/코드 입력합니다. **코드·토큰·Windows 암호·전체 콘솔 출력은 채팅/Discord/GitHub에 보내지 마세요.**
 - keyring은 공식 OS 자격 증명 저장소이며 지원되지 않으면 실패합니다. 파일 저장·API 키로 자동 전환하지 않습니다. Codex 자체의 로컬 로그인 진단 로그도 보호 프로필에 남을 수 있으므로 이를 열어 보내지 않습니다.
@@ -59,3 +59,7 @@ PIN 전에는 기존 LIMITLESSRelaySvc의 Discord 중계·아트 감시만 유�
 ## 인증 후에도 남는 A 실운영 조건
 
 새 코드의 정상 로드/동일 Bot·Art lock 확인, 새 정확한 단일 읽기 계획/슬롯 승인, 바울 대표의 명시적 A 활성화, 별도 승인된 읽기 전용 추론1회 전체 검증이 필요합니다. 이번 작업의 실제 추론0·유료전환0·제품/Save/아트 변경0·Push/main 병합0을 유지합니다.
+
+구현 보정: 최초 로그인 전 Set-Acl의 소유자 재지정이 PrivilegeNotHeldException(원본57행)을 일으켰습니다. 일반 서비스 계정에 권한을 추가하지 않고 Get-Acl로 기존 소유자를 보존한 DACL 갱신으로 수정했습니다. 자기 소유 테스트 디렉터리에서 소유자 보존·보호 DACL·쓰기를 검증했습니다. 실제 OAuth 이전 실패였으므로 이를 Codex 구독 미지원으로 분류하지 않습니다.
+
+최종 ACL 보정: 서비스 계정에서는 Get-Acl 기반의 Set-Acl 호출도 PrivilegeNotHeldException(보정본64행)을 냈습니다. Set-Acl을 제거하고 [Microsoft가 문서화한 SetNamedSecurityInfoW](https://learn.microsoft.com/en-us/windows/win32/api/aclapi/nf-aclapi-setnamedsecurityinfow)에 DACL_SECURITY_INFORMATION/PROTECTED_DACL_SECURITY_INFORMATION만 전달하도록 변경했습니다. 소유자·그룹·SACL 포인터는 NULL이며 복원/관리자 권한을 부여하지 않습니다. 고정 자기 프로필·소유자 검사 후 실행하며 Win32 숫자 결과를 기록합니다. 원래 cmdlet 테스트 통과를 서비스 실제 통과로 승격하지 않습니다.

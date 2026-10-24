@@ -1,0 +1,23 @@
+{
+  "service_cmdlet_failure": {
+    "failure_line": 64,
+    "stage": "SERVICE_PROFILE_ACL",
+    "exception_type": "PrivilegeNotHeldException",
+    "hresult": -2147024891
+  },
+  "fix": "SetNamedSecurityInfoW_DACL_ONLY_PROTECTED",
+  "security_information": "0x80000004",
+  "owner_group_sacl_parameters": "NULL",
+  "api_document": "https://learn.microsoft.com/en-us/windows/win32/api/aclapi/nf-aclapi-setnamedsecurityinfow",
+  "fixture_tests": {
+    "native_return_code": 0,
+    "owner_preserved": true,
+    "group_preserved": true,
+    "protected_dacl": true,
+    "ace_count": 3,
+    "write": true
+  },
+  "service_actual_retry": "OWNER_REQUESTED_PENDING",
+  "privileges_granted": false,
+  "actual_ai_calls": 0
+}

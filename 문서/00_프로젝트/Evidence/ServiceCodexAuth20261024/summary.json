@@ -27,7 +27,7 @@
   },
   "db_fingerprints_unchanged": true,
   "service_inspection": "PASS_INTERACTIVE_SERVICE_CONTEXT",
-  "device_login_started": "OWNER_LOCAL_COMMAND_REQUESTED_NOT_CONFIRMED",
+  "device_login_started": "OWNER_RETRY_REQUESTED_AFTER_PRELOGIN_ACL_FIX",
   "actual_ai_calls": 0,
   "a_activated": false,
   "services_restarted": false,
@@ -81,5 +81,9 @@
     "status": "HOLD"
   },
   "approved_runtime_hashes_match": 39,
-  "auth_script_hashes_match": 3
+  "auth_script_hashes_match": 4,
+  "profile_acl_fix": "WIN32_DACL_ONLY_NATIVE_FIXTURE_PASS_SERVICE_RETRY_PENDING",
+  "service_account_privileges_unchanged": true,
+  "actual_authentication_success": "NOT_CONFIRMED",
+  "native_dacl_module": "ServiceProfileDacl.psm1"
 }

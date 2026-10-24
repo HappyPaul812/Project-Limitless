@@ -5,6 +5,7 @@ $root=$PSScriptRoot
 if($RequestId -ne 'local' -and $RequestId -notmatch '^[a-f0-9]{32}$') {throw 'INVALID_REQUEST_ID'}
 $result=@{status='HOLD';reason='AUTH_INSPECTION_NOT_COMPLETED';request_id=$RequestId;actual_ai_calls=0;api_fallback=$false;mode_changed=$false;action=$Action}
 $oldEnvironment=@{}
+$result.stage='SERVICE_CONTEXT'
 function Read-Cli([string[]]$CliArguments) {
  $start=[Diagnostics.ProcessStartInfo]::new($script:binary)
  $start.UseShellExecute=$false;$start.CreateNoWindow=$true;$start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
@@ -40,21 +41,24 @@ try {
  }
  foreach($managed in @('USERPROFILE','HOME','CODEX_HOME')) {if(-not $oldEnvironment.ContainsKey($managed)) {$oldEnvironment[$managed]=$null}}
  $env:USERPROFILE=$profile;$env:HOME=$profile;$env:CODEX_HOME=$homePath
+ $result.stage='CLI_CAPABILITIES'
  $version=Read-Cli -CliArguments @('--version');$result.cli_version=[regex]::Match($version.text,'codex-cli\s+([0-9A-Za-z.\-]+)').Groups[1].Value
  $help=Read-Cli -CliArguments @('login','--help');$result.device_auth_supported=($help.code -eq 0 -and $help.text.Contains('--device-auth'))
  if($version.code -ne 0 -or -not $result.cli_version -or -not $result.device_auth_supported) {throw 'CLI_VERSION_OR_DEVICE_AUTH_NOT_SUPPORTED'}
  if($Action -eq 'Login') {
   # 자동 점검/리다이렉트된 출력에서 로그인 코드를 만들지 않습니다. 대표가 연 서비스 계정 콘솔에서만 실행합니다.
   if(-not [Environment]::UserInteractive -or [Console]::IsOutputRedirected -or [Console]::IsInputRedirected) {throw 'OWNER_LOCAL_INTERACTIVE_CONSOLE_REQUIRED'}
+  $result.stage='SERVICE_PROFILE_ACL'
   New-Item -ItemType Directory -Force -Path $homePath | Out-Null
   # 서비스 계정 자신의 신규 프로필만 보호합니다. 상위 폴더나 기존 개인 계정 ACL은 건드리지 않습니다.
-  $acl=[Security.AccessControl.DirectorySecurity]::new();$acl.SetAccessRuleProtection($true,$false)
-  $acl.SetOwner($identity.User)
-  foreach($sidValue in @($identity.User.Value,'S-1-5-18','S-1-5-32-544')) {
-   $rule=[Security.AccessControl.FileSystemAccessRule]::new([Security.Principal.SecurityIdentifier]::new($sidValue),[Security.AccessControl.FileSystemRights]::FullControl,[Security.AccessControl.InheritanceFlags]'ContainerInherit,ObjectInherit',[Security.AccessControl.PropagationFlags]::None,[Security.AccessControl.AccessControlType]::Allow)
-   $acl.AddAccessRule($rule)
-  }
-  Set-Acl -LiteralPath $homePath -AclObject $acl
+  # Set-Acl의 복원 권한 요구를 피하고 Windows API에 DACL 플래그만 전달합니다.
+  $modulePath=Join-Path $root 'ServiceProfileDacl.psm1'
+  if($approval.service_auth_scripts.'ServiceProfileDacl.psm1' -ne (Get-FileHash -LiteralPath $modulePath -Algorithm SHA256).Hash.ToLower()) {throw 'PROFILE_DACL_MODULE_SHA_NOT_VERIFIED'}
+  Import-Module -Name $modulePath -Force
+  $aclResult=Set-LimitlessProfileDacl -Path $homePath -ServiceSid $identity.User.Value
+  $result.dacl_native_error=$aclResult.native_error
+  if($aclResult.native_error -ne 0 -or -not $aclResult.owner_preserved -or -not $aclResult.protected) {throw 'SERVICE_DACL_UPDATE_FAILED'}
+  $result.stage='SERVICE_PROFILE_CONFIG'
   $configPath=Join-Path $homePath 'config.toml'
   $configText='cli_auth_credentials_store = "keyring"'+[Environment]::NewLine+'forced_login_method = "chatgpt"'+[Environment]::NewLine
   if(Test-Path -LiteralPath $configPath) {
@@ -63,10 +67,12 @@ try {
   $result.config_sha256_before_login=(Get-FileHash -LiteralPath $configPath -Algorithm SHA256).Hash.ToLower()
   Write-Host '이 서비스 계정 로컬 창의 안내로 바울 대표가 직접 인증하세요. 코드/토큰은 채팅·Discord·GitHub에 복사하지 마세요.'
   # 이 호출의 stdout/stderr를 변수/파일/봇으로 수집하지 않습니다. 실제 추론/exec 호출은 없습니다.
+  $result.stage='OWNER_DEVICE_LOGIN'
   & $binary login --device-auth
   if($LASTEXITCODE -ne 0) {throw 'DEVICE_AUTH_NOT_COMPLETED'}
  }
  if(Test-Path -LiteralPath $homePath) {
+  $result.stage='LOGIN_STATUS'
   $status=Read-Cli -CliArguments @('login','status')
   $result.subscription_authenticated=($status.code -eq 0 -and $status.text.Contains('using ChatGPT'))
  } else {$result.subscription_authenticated=$false}
@@ -80,6 +86,7 @@ try {
   $result.login_context_unchanged=$true
   $result.config_sha256_after_login=if(Test-Path -LiteralPath (Join-Path $homePath 'config.toml')){(Get-FileHash -LiteralPath (Join-Path $homePath 'config.toml') -Algorithm SHA256).Hash.ToLower()}else{$null}
   Set-Location -LiteralPath $root
+  $result.stage='OFFICIAL_USAGE'
   $usageText=& (Join-Path $root '.venv/Scripts/python.exe') -m collab.service_ai --request-id $RequestId
   $usage=$usageText | ConvertFrom-Json
   $result.official_usage=$usage
@@ -87,6 +94,9 @@ try {
   $result.reason=if($result.status -eq 'AUTH_AND_USAGE_VERIFIED'){'MANUAL_KEEP_NO_AI_INFERENCE'}else{$usage.reason}
  }
 } catch {
+ $result.failure_line=$_.InvocationInfo.ScriptLineNumber
+ $result.exception_type=$_.Exception.GetType().Name
+ $result.hresult=$_.Exception.HResult
  $reason=$_.Exception.Message
  $result.status='HOLD';$result.reason=if($reason -match '^[A-Z_]+$'){$reason}else{'SERVICE_AUTH_INSPECTION_OR_LOGIN_NOT_VERIFIED'}
 } finally {
