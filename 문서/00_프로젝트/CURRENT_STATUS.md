@@ -1,3 +1,10 @@
+## 2026-10-24 이중 실행 구조 준비 — PREPARED_NOT_DEPLOYED / AI0
+
+- 새 Tools/DiscordAIUserWorker에 같은 SQLite 승인 큐/사용자 Worker 상태머신 준비. 승인된 계획만 로그인 전 보관, 로그인 후 실제SID·자기HOME·CLI SHA·ChatGPT인증·공식usage·정본·예약·정지·미소비승인 재검증. 기존4역할 real_roles.run_once 그대로 재사용. 전용claim 중복차단/중단claim 자동재획득0·실패재시도0·기본released=false/자동시작·실행CLI없음.
+- 격리SQLite/모의callback 20 PASS. 운영상태 읽기전용 확인: MANUAL·worker_enabled=false·새 schema 미배포. 운영DB migration/새승인/실제AI/auth/usage/Discord게시0, 기존Bot/Art RUNNING heartbeat 유지. 실제 연결·사용자ACL/완전runtime pinning/private로그/승인slot 확장·실증은 배포 전 필요. 기존승인TTL10분·소비된 과거slot 재사용금지 유지.
+- 새로 발견: 앞선 진단 추가collab4파일이 ProgramData 부팅승인에 미등록. 실행중 정상과 다음 시작SHA통과는 별개, 다음 시작HOLD 가능. 파일이동 제안은 자동검토가 무결성우회 위험으로 거부하여 이동0/우회0. 부팅작업·승인·검사·기존runtime수정0. 검사유지+정확한4SHA 추가등록 제안서만 준비, 대표 별도검토 필요.
+- PIN없는 공식대안 조사: workspace Codex access token(Business/Enterprise)·headless service accounts(pay-as-you-go) 문서 확인, 현재계정 자격/비용 미확인·도입/유료전환0. Session0 원인UNKNOWN·CLI/SHA/모델/Sandbox/프록시차이는 이전보고 보존. Unity/Push/merge/PC종료0. 선행f32d4f04. [구조·가능/불가·검토안](../../Tools/DiscordAIUserWorker/README_KO.md).
+
 ## 2026-10-24 서비스 AI 환경 최종 조사 — 원인 UNKNOWN / 추론0
 
 - Operational 로그 비활성화(IsEnabled=false) 확인·변경0. 두 CLI는 같은 버전0.164.0-alpha.11.1이나 SHA/배포구성 다름: 일반 사용자 설치는 동반실행파일3개, 서비스 고정폴더는 codex.exe만. 정상 사용자 model=gpt-6.1-sol, 과거 서비스 config SHA는 keyring/chatgpt 두 설정 템플릿과 일치·명시모델없음. 이 차이는 원인 확정이 아님.

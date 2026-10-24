@@ -1,0 +1,13 @@
+{
+  "approval_file_changed": false,
+  "boot_tasks_changed": false,
+  "requested_change": "ADD_EXACT_REVIEWED_HASHES_KEEP_EXISTING_SCANNER_UNCHANGED",
+  "actual_ai_calls": 0,
+  "files": {
+    "collab/service_batch_once.py": "de3ce4c90fbad6c2de6e99d278b3ab10ca0e65ab9d16106ef09f79360ab54bdb",
+    "collab/offline_batch_diagnosis.py": "ad544477ab7149103799c44071ea6a4d15a8b8bca28d58607e2e77e9216180df",
+    "collab/failure_evidence.py": "83d129e36da79aeff500b279109fa4e528c722cc0f78242c3f2e9fdd1c458302",
+    "collab/private_execution_log.py": "691c8e433b8e46e3f3e3f777084184b006973bc1ec62dd898abeba770fe2e492"
+  },
+  "kind": "PROPOSAL_ONLY_NOT_APPLIED"
+}
