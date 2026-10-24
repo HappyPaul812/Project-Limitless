@@ -1,5 +1,13 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 하렌 첫 대사 재차 청취 FAIL — 의문형 상승 억양 / 분리 R2 시험 지시
+
+- 사용자 최신 피드백 **“또 의문문이야.”** 대상 `main21_haren_haren_01` “태온. 너 아직 멀었어.” 기존 하렌 Main21 재생성 음성 **질문형 말끝 상승으로 청취 FAIL**. 하렌3 전체 준비 완료로 보고하면 안 됨; 02·03 생성 STOP. 세린67·태온85는 WAV READY=152/152 유지, 별도 기존 레온2/미엘2/폴3=7 KEEP.
+- **새 [하렌 R2 교정 정본](../../TTS_Main21_하렌01_의문문재발_교정_R2_20261024.md)** 작성. 별도 패키지 `LIMITLESS_Haren_Prosody_Retake_R2_20261024.zip` 6160bytes SHA256 `f66a1e7ea3fbc44de689a91dceb083fb738486cf7e02a562b0c423e8693286f6`. 사용자 직접 `F:\Downloads\Voice`에 압축 풀어 `Haren_Prosody_Retake_R2.py check` → `retake`에서 `RUN_RETAKE_01` 승인 시만 **새 샘플 최대1 Google POST**. 기존 불합격 공식 WAV/meta는 그대로 두고 신규 R2를 `F:\Downloads\Voice\Haren_Main21\ProsodyRetakes\R2\Haren\main21_haren_haren_01.wav`에 생성.
+- **근거/추정 구별:** 기존 스크립트는 공식 Gemini3.8 generateContent REST `speech_metadata.style` 형식이 올바르며, 지시가 무시되었다고 확정 불가. 긴 영어 지시보다 간결한 한국어 **말끝 하강 평서문** 지시를 R2 샘플1에 사용. 모델 운율을 실제로 바로잡을지는 사용자 청취 전 미검증 (공식 https://ai.google.dev/gemini-api/docs/generate-content/speech-generation).
+- R2 듣고 실패면 `reject-r2` (추가 생성0/기존 WAV 보존). **실제 청취 합격시에만** `approve` 입력 + `APPROVE_FALLING_R2`으로 원 불합격 WAV SHA 보관/이관, R2 교체, QA 마커 검증. 그 후만 **`remaining`** 실행으로 나머지 하렌2 생성. 구 `Haren_Main21_AfterRenewal_3.py run` 직접 호출하면 승인 여부를 모른 채 2·3을 만들 수 있어 금지.
+- 실제 PT 남은 사용량/Google quota/프로젝트 독립성은 사용자 확인. 공유 장부와 HOLD/LOCK을 유지하고 API값 노출 금지. **사용자 직접 합성, Codex 합성 금지**, 후일 게임 통합은 별도 승인. ChatGPT 이번 작업 실제 API0/사용자 F: 수정0/Unity0.
+
 ## 2026-10-24 사용자 실제 완료 로그 — 세린·태온 전량 152/152 WAV READY
 
 - **최신 직접 실행 결과:** `[STATUS] PT=2026-10-24 (UTC-7) / attempted=8/40 / remaining=32`; `[KEYS] KEY1=2 KEY2=2 KEY3=2 KEY4=2`, `PROJECT_1~4` 각2(로컬 그룹 라벨). `[READY] Serin=67/67 Taeon=85/85 total=152/152` → **세린/태온 합성 WAV 전량 준비 완료**. 이전 144/152에서 오늘 태온8개가 추가됨.
