@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-24 21:30 KST — 바울 대표 EOD 전체 승인분 통합 및 로컬 무손실 동기화 지시
+
+- 사용자 원문 **“지금까지 한 작업들 모두 합치고 로컬 동기화 해줘.”** → 승인·실제 검증 가능한 완료 제품/정본문서만 선별 EOD 통합하고 미술 후보·Discord AI 장애 HOLD를 게임 제품으로 끌어오지 않는 안전 범위로 실행.
+- **즉시 실제 GitHub 완료:** [전담당 GitHub 정식 보고 의무화 docs-only PR #62](https://github.com/HappyPaul812/Project-Limitless/pull/62), 정확5파일, 예상 head `532d0dd7a2b07f00488dedc564ce80772b7754a4`, **squash merge 성공**. 새 `main` SHA **`e8d9436ae4fe1a435efcd266b5e25221c282dcc8`**를 직접 GitHub 확인. 사용자 원본 로컬 main 및 main23/TTS 로컬 브랜치는 기획이 PC에 직접 접근할 수 없어 **아직 동기화 불가/미확인**. 로컬 Git SHA를 추정하지 않음.
+- **Codex EOD 안전실행 신규 [Issue #67](https://github.com/HappyPaul812/Project-Limitless/issues/67)**을 완료절차·파일보호/QA/미승인HOLD/PR/3자 SHA 동기화 게이트 포함해 발주. 대상 로컬 격리 Main23 5목표 F1왕복/Save/접근성 [#56/#58/#65], TTS 162/162 `codex/tts-voice-integration-20261024` 제품(보고상 140 WAV교체/신규22 ID, Unity Play1031PASS) 및 팀별 실제 최신 정본 문서 의미선별. 이 브랜치들의 remote GitHub 제품 PR은 **현시점 존재하지 않아** GitHub UI로는 병합 불가. 기존 `main` 제품 10/21·22 Wolf/Bear/Fox·Ch3 F1/Main22/Mouse·지면9는 재통합/재복사 불가.
+- **미승인 제품 제외:** 신규 오르나 원화(visible80/whole84.63은 `PLANNING_VISUAL_RECOMMENDED`일 뿐 최종아트 사용자승인 전), 남문 신규 Gable/Trim/EntryDoor(실 #58 남문 `SOUTHGATE_PROPOSAL_ONLY`/NEW_ART_REQUIRED_0), 여관 Standalone, NPC3/독침벌 좌향1포즈·20frames, Spider HOLD/Field09잔여, BGM/SFX 신규 음원, Main24 Save 설계만, #66 Discord Worker `MANUAL/HOLD/OFFICIAL_READ_REJECTED`; 승인 없는 새 TTS WAV/API 호출 금지. 담당별 보고서만 정확 `HOLD` 표기해 선별 main 문서 정본 반영.
+- **Codex 원본 Windows 보존필수:** `F:\study\codex\Project-Limitless`, 사용자 미커밋/미추적·Save/UserData·Editor·개인 작업, 이미 승인된 원본 PNG/WAV 등 변경/삭제/stash/reset/clean 없이 사전SHA 백업. 최신 origin/main에서 별도 codex EOD worktree, Main23/TTS 커밋·Resource GUID·ID 충돌 검증, 신규 통합 delta만 Unity 검사, Main23 기존148/136/41/15/33/8/23 및 TTS1031/162 전수불필요, QA 실패 범위만 HOLD. 제품PR/문서PR 통해 GitHub main 반영, 원본 local main은 안전한 `--ff-only`로 3자SHA 비교. 실제 병합/원본 동기화 성공 전 `SYNC_COMPLETE` 금지. 사용자 명령은 안전한 승인범위 통합 요청이지만 미승인 후보 적용에 대한 포괄 승인은 아님.
+- **현 단계 기획 판정** `DOCS_PR62_MERGED / EOD67_ISSUED / MAIN23_TTS_LOCAL_INTEGRATION_PENDING / ORIGINAL_LOCAL_SYNC_PENDING`. 2026-10-24 제품통합/원본PC sync는 Codex가 Windows에서 실행하고 Issue #67에 PR·전체 커밋·3자 SHA·보호/Unity QA를 직접 남겨야만 완료. 기획 답변에는 언제나 **Codex 복붙용 상세 지시문 함께 제공**.
+
+---
+
 # PLANNING / 2026-10-24 — Discord AI 협업 운영 정본 문서화 및 무인 추론 HOLD
 
 - **새 운영 정본**: [LIMITLESS Discord AI 협업 — 운영·장애·인계 (2026-10-24)](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md). `docs/planning` 작성 commit [`72a00697`](https://github.com/HappyPaul812/Project-Limitless/commit/72a00697fe466a875c8bc89e2dc7ccecc0bc1e4c).
