@@ -1,3 +1,10 @@
+## 2026-10-24 PIN 없는 무인 AI 우선 — 원인 UNKNOWN / 실제 추론0
+
+- 최종 목표는 잠금화면 부팅→Discord 승인→구독 AI→검수·보고. 로그인 후 Worker는 예비로 유지하며 승인 대기 슬롯/기존CONSUMED12개 변경0. PIN전 end-to-end NOT_VERIFIED, Session0 불가로 단정하지 않음.
+- CLI SHA/배포 구성 차이 재확인: 사용자 공식4exe vs 서비스 단독exe. 서비스 로그 접근권한 없음·최초 stderr/JSONL 유실로 직접원인 미확정. 완전배포본/서비스내부 설정·sandbox 로그 무호출 수집을 우선, 실제 설치/배포/승인목록 변경0.
+- 공식 headless ChatGPT 인증·영속runner 안내 확인. Linux VM/별도장치/VPS 검토안, 현재 PC Pro 확인·관련서비스 조회 미발견. VPS 예시 월US$12(2GiB), 설치/성능/인증검증 전. 기존토큰복사·API전환0. 실제 재시험은 별도 서비스용 승인 및 로그보존 사전검사 후 최대1회/90초만.
+- Bot/Art 상태 RUNNING·Worker비활성 확인, MANUAL/부팅작업/42파일SHA정책/SQLite/게임·Save/인증 보호. 문서만 변경·기존테스트 반복0·AI/Discord/Push/merge/설치/재부팅0. 선행8a0191c4. [진단·비용·재시험조건](NoPIN_Unattended_AI_Diagnosis_20261024.md).
+
 ## 2026-10-24 Planning 사용자 Worker 실전 준비 — 승인 대기 / AI0
 
 - PAUL-PC\windows/Session8 자기CODEX_HOME에서 공식구독인증·AppServerusage PASS(16:19:44KST,5h68%/주간26%,사용허용). exec/로그인변경/API fallback0. 등록51 SHA동일·Bot/Art RUNNING/잠금유지·MANUAL/claim0. 실제실행직전usage다시확인필요.
