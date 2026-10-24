@@ -1,3 +1,12 @@
+## 2026-10-24 서비스 계정 Codex 기기 인증 준비 — 실제 CLI 점검 통과 / 대표 로그인 대기
+
+- 서비스 SID/프로필/CODEX_HOME·공식 CLI0.164.0-alpha.11.1·device-auth 지원을 실제 서비스 계정 콘솔에서 확인. 현재 subscription_authenticated=false, 대표 직접 Login 절차 안내. 인증코드/토큰/암호를 채팅·Discord·Git에 수집하지 않음. MANUAL·추론0 유지.
+- 개인 설치 폴더 ACL은 그대로 두고 동일SHA 실행파일만 공유 data/runtime에 배치(인증/설정 복사0). 경로/SHA·인증 스크립트 SHA를 기존 C: 승인에 고정. 런타임39 SHA 유지, Bot/Art/부팅 재시작0.
+- 임시 작업 등록은 REGISTER_SERVICE_LOGON_TASK/CimException으로 실패했고, runas 인수 전달 문제는 PowerShell 전용 Start-Process -Credential -LoadUserProfile 도구로 해소. 새 서비스 콘솔 Inspect 실제 통과. 배치 문맥 인증까지 검증된 것은 아님.
+- 새 pin3 PASS·PS읽기2 PASS·구문/잘못된계정 HOLD·콘솔 실행의 비밀 환경 제거/자기 프로필/인수/부모 환경 복원 모의검증 PASS. 기존전체QA 반복0. 구현30b62f23, 후속 공유실행경로·콘솔 도구는 같은 브랜치 후속 commit 참조.
+- 다음: 대표 공식 기기 인증 → 같은 서비스 계정 login status/설정SHA/공식 사용량 확인 → 배치 문맥 재검증 → 정상 새코드 로드 → 대표 A 및 새 읽기1건 계획 별도 승인. 현재 A 활성화/추론/유료API/제품·Save·아트원본/Push/main병합0.
+- [인증 절차·대안](../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md), [근거](Evidence/ServiceCodexAuth20261024/summary.json). 마지막 관련 commit30b62f23. Unity 직접 확인사항 없음.
+
 ## 2026-10-24 A 서비스 실행기 연결 준비 — 16 PASS / 실제 서비스 인증 HOLD
 
 - 부팅 Bot의 동일 lock/DB 경로에 서비스 SID/일반계정/자기 프로필 확인·공식 구독/사용량 읽기 검사 연결. 성공 시 기존 UsageMonitor→ResumeQueue→네 역할 공용 VERIFIED run_once 재사용, 실패 시 중계만 유지. MANUAL 자동 변경0. 구현 commit `94a0f739`.

@@ -46,3 +46,6 @@ HOLD_SERVICE_CODEX_PROFILE_NOT_INITIALIZED / SERVICE_CODEX_CLI_NOT_FOUND / CHATG
 5. Discord 요청→큐 선점→구독 실행→결과 검증→사용량/업무 장부→Discord 영수증까지 확인하고 반복 실행 없이 종료.
 
 실제 A 활성화 전 남은 조건: 실제 서비스 계정 인증/공식 두 창 조회, 새 코드의 정상 로드·동일서비스 확인, 새 단일 계획 승인, 대표 A 활성화, 이후 승인1건 실증입니다. 실제 PIN전 부팅·USB Wi-Fi 단절/복구 실증은 기존 미검증 경계를 유지합니다. 게임·Save·미술 최종 승인·Push/main 병합 보호는 동일합니다.
+
+
+서비스 계정 프로필/CLI 접근·공식 기기 인증 초기화의 최신 절차는 [SERVICE_CODEX_AUTH_KO.md](SERVICE_CODEX_AUTH_KO.md)를 따릅니다. 초기 .codex 부재를 서비스 계정의 공식 인증 미지원으로 단정하지 않습니다. 2026-10-24 실제 서비스 콘솔에서 CLI/device-auth 지원까지 확인했고 대표 직접 로그인을 기다립니다.

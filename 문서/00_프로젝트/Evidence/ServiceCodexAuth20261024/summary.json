@@ -1,11 +1,15 @@
 {
-  "at": 1792804630.2980819,
-  "status": "DEVICE_AUTH_SUPPORTED_LOCAL_SERVICE_INSPECTION_PENDING",
+  "at": 1792805144.7284284,
+  "status": "SERVICE_CLI_INSPECTED_DEVICE_LOGIN_WAITING_OWNER",
   "mode": "MANUAL",
   "cli": {
-    "path": "C:\\Users\\windows\\AppData\\Local\\OpenAI\\Codex\\bin\\8925276705115dea\\codex.exe",
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
     "sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
-    "version": "0.164.0-alpha.11.1"
+    "version": "0.164.0-alpha.11.1",
+    "source_executable": "C:\\Users\\windows\\AppData\\Local\\OpenAI\\Codex\\bin\\8925276705115dea\\codex.exe",
+    "source_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "only_executable_copied": true,
+    "auth_or_config_copied": false
   },
   "official_auth_document": "https://learn.chatgpt.com/docs/auth",
   "method": "codex login --device-auth",
@@ -22,8 +26,8 @@
     "wrong_account_guard": "HOLD_NO_AUTH_REQUEST"
   },
   "db_fingerprints_unchanged": true,
-  "service_inspection": "LAUNCH_FAILED_GENERIC_HOLD_STAGE_DIAGNOSTIC_PREPARED",
-  "device_login_started": false,
+  "service_inspection": "PASS_INTERACTIVE_SERVICE_CONTEXT",
+  "device_login_started": "OWNER_LOCAL_COMMAND_REQUESTED_NOT_CONFIRMED",
   "actual_ai_calls": 0,
   "a_activated": false,
   "services_restarted": false,
@@ -41,5 +45,41 @@
     "last_tick": 1792804630.1251729,
     "ai_calls": 0,
     "unity_runs": 0
-  }
+  },
+  "prelogin_inspection": {
+    "device_auth_supported": true,
+    "action": "Inspect",
+    "context_verified": true,
+    "cli_version": "0.164.0-alpha.11.1",
+    "actual_ai_calls": 0,
+    "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "subscription_authenticated": false,
+    "profile": "C:\\Users\\LIMITLESSRelaySvc",
+    "api_fallback": false,
+    "reason": "OWNER_DEVICE_LOGIN_REQUIRED",
+    "mode_changed": false,
+    "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
+    "status": "INSPECTED",
+    "home_existed_before": false,
+    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+    "request_id": "local"
+  },
+  "windows_batch_inspection": "REGISTER_SERVICE_LOGON_TASK_CIM_FAILURE",
+  "launcher": "POWERSHELL_START_PROCESS_WITH_CREDENTIAL_AND_LOADUSERPROFILE",
+  "launcher_mock_tests": "SECRET_STRIP_OWN_PROFILE_ARGUMENT_PARENT_RESTORE_PASS",
+  "source_personal_binary_acl_unchanged": true,
+  "only_executable_copied": true,
+  "auth_or_config_files_copied": false,
+  "windows_batch_launch": {
+    "actual_ai_calls": 0,
+    "hresult": -2146233088,
+    "exception_type": "CimException",
+    "request_id": "66b56bca27014e32a0d25a4c7b9626b4",
+    "stage": "REGISTER_SERVICE_LOGON_TASK",
+    "reason": "SERVICE_LOGON_OR_READINESS_NOT_VERIFIED",
+    "mode_changed": false,
+    "status": "HOLD"
+  },
+  "approved_runtime_hashes_match": 39,
+  "auth_script_hashes_match": 3
 }

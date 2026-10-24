@@ -1,0 +1,18 @@
+{
+  "device_auth_supported": true,
+  "action": "Inspect",
+  "context_verified": true,
+  "cli_version": "0.164.0-alpha.11.1",
+  "actual_ai_calls": 0,
+  "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+  "subscription_authenticated": false,
+  "profile": "C:\\Users\\LIMITLESSRelaySvc",
+  "api_fallback": false,
+  "reason": "OWNER_DEVICE_LOGIN_REQUIRED",
+  "mode_changed": false,
+  "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
+  "status": "INSPECTED",
+  "home_existed_before": false,
+  "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+  "request_id": "local"
+}

@@ -6,29 +6,31 @@
 
 [공식 인증 문서](https://learn.chatgpt.com/docs/auth)에 headless용 `codex login --device-auth`가 제공됩니다. 개인 계정의 ChatGPT 보안 설정 또는 workspace 관리자 권한에서 기기 인증 로그인이 허용되어야 합니다. 이는 브라우저 콜백을 대신하는 방식이며 바울 대표의 직접 인증은 필요합니다.
 
-로컬 공식 실행 파일 `codex-cli 0.164.0-alpha.11.1`의 login --help에서 --device-auth 지원을 확인했습니다. 이 파일을 복사/재설치하지 않고 기존 C: 부팅 승인에 경로와 SHA만 고정했습니다. 서비스 계정의 실제 파일 접근은 아래 InspectAuthAsService 결과로 별도 판단합니다. CLI 버전만으로 서비스 계정 인증 성공을 단정하지 않습니다.
+로컬 공식 실행 파일 `codex-cli 0.164.0-alpha.11.1`의 login --help에서 --device-auth 지원을 확인했습니다. 개인 폴더의 실행 ACL에 서비스 계정이 없어 동일 SHA 실행 파일만 data/runtime/codex에 복사했습니다. 인증·설정 파일 복사나 원본 ACL 변경은 없습니다. 서비스 계정 실제 Inspect에서 context_verified=true·버전·device-auth 지원·공유 실행 경로를 확인했습니다. 현재 subscription_authenticated=false이며 직접 로그인 대기입니다.
 
-## 1. 서비스 계정에서 읽기 점검
+## 1. 서비스 계정에서 읽기 점검 (현재 통과)
 
 관리자 PowerShell에서:
 
 ```powershell
-pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1" -Action InspectAuthAsService
+pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\start-service-auth-console.ps1" -Action Inspect
 ```
 
-기존 단발 점검 도구를 재사용합니다. 새 `LIMITLESS-Codex-AuthInspect-Once` 임시 작업만 서비스 계정 Password/Limited 문맥으로 실행하고 기존 Bot/Art/OnBoot를 변경하지 않습니다. Windows 암호는 로컬 입력창에만 입력합니다. 결과 JSON에는 경로·버전·로그인 종류 분류만 있고 CLI 원문/토큰/메일/기기 코드는 없습니다.
+Windows 표준 Start-Process -Credential -LoadUserProfile로 바울 대표가 직접 서비스 계정 콘솔을 엽니다. 부모의 개인 프로필/API 비밀 환경을 제거하고 승인 SID의 프로필만 지정합니다. Windows 암호는 로컬 창에만 입력합니다. 자동으로 창을 열거나 로그인하지 않습니다. 기존 Bot/Art/OnBoot/작업 스케줄러를 변경하지 않습니다.
+
+초기 임시 작업 방식은 REGISTER_SERVICE_LOGON_TASK/CimException으로 막혀 CLI에 도달하지 못했습니다. runas 명령은 현재 PowerShell의 네이티브 인수 전달 문제로 사용법만 출력해 폐기했습니다. PowerShell 전용 실행 도구로 같은 서비스 SID·프로필·CLI 읽기 점검은 실제 통과했습니다. 이 이력으로 배치 실행까지 통과했다고 주장하지 않습니다.
 
 이 점검은 프로필이 없더라도 고정 CLI의 SHA·실제 접근·버전·device-auth 지원을 먼저 확인합니다. 서비스 자신의 .codex를 지정하며 개인 계정 인증 저장소를 읽지 않습니다. login status는 자기 프로필이 확인될 때만 실행하고 원문은 버립니다. CLI 자체가 자기 임시 디렉터리를 준비할 수 있지만 이 점검에서 로그인을 시작하거나 설정을 덮어쓰지 않습니다.
 
 ## 2. 바울 대표의 직접 기기 인증
 
-1번에서 context_verified=true·CLI 접근·device_auth_supported=true를 확인한 뒤 진행합니다. 다음 명령은 **바울 대표가 직접 실행**하며 서비스 계정 로컬 콘솔을 엽니다. Codex가 화면을 조작하거나 이 명령을 자동 실행하지 않습니다.
+1번에서 context_verified=true·CLI 접근·device_auth_supported=true를 확인한 뒤 진행합니다. 다음 명령은 **바울 대표가 방금 열린 서비스 계정 콘솔에서 직접 실행**합니다. Codex가 화면을 조작하거나 이 명령을 자동 실행하지 않습니다.
 
 ```powershell
-runas /profile /user:PAUL-PC\LIMITLESSRelaySvc "pwsh -NoProfile -NoExit -File F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\service-codex-auth.ps1 -Action Login"
+& "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\service-codex-auth.ps1" -Action Login
 ```
 
-- Windows 서비스 계정 암호는 runas의 로컬 입력에만 사용합니다. `/netonly`나 `/savecred`는 사용하지 않습니다.
+- 서비스 계정 콘솔을 닫았다면 start-service-auth-console.ps1 -Action Login으로 다시 직접 엽니다. Windows 암호는 로컬 입력에만 사용하고 저장하지 않습니다.
 - 서비스 계정 자신의 .codex 디렉터리만 초기화하고 ACL을 해당 SID·SYSTEM·Administrators로 보호합니다. 다른 사용자 프로필/상위 경로는 수정하지 않습니다.
 - 신규 config.toml에 keyring 저장과 ChatGPT 로그인만 지정합니다. 기존 별도 config가 있으면 덮어쓰지 않고 HOLD합니다.
 - 기기 인증 코드는 이 로컬 창의 native Codex 출력에만 나타납니다. 바울 대표가 안내된 공식 OpenAI 주소를 브라우저에서 열고 직접 로그인/코드 입력합니다. **코드·토큰·Windows 암호·전체 콘솔 출력은 채팅/Discord/GitHub에 보내지 마세요.**
@@ -40,7 +42,7 @@ runas /profile /user:PAUL-PC\LIMITLESSRelaySvc "pwsh -NoProfile -NoExit -File F:
 
 ## 3. 실제 배치 문맥에서 다시 확인
 
-로컬 콘솔 성공은 배치 계정의 동작을 보장하지 않습니다. 1번 `InspectAuthAsService`를 다시 실행해 같은 SID/프로필/실행파일과 ChatGPT 상태를 확인한 다음, 기존 단발 공식 사용량 점검을 실행합니다:
+로컬 콘솔 성공은 배치 계정의 동작을 보장하지 않습니다. 기존 `probe-service-ai.ps1 -Action InspectAuthAsService`를 실행해 같은 SID/프로필/실행파일과 ChatGPT 상태를 확인한 다음, 기존 단발 공식 사용량 점검을 실행합니다:
 
 ```powershell
 pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1" -Action RunOnceAsService
