@@ -1,3 +1,9 @@
+## 2026-10-24 신규 진단4파일 SHA 검토 — 제안서만 / 적용0
+
+- 4개 원문·SHA·생성branch/reflog/commit·기존코드 참조 검토 완료. 기존승인Python38 SHA일치/변경0, 미등록4개는 이전제안SHA·현재commit blob과4/4일치. 실비밀하드코딩 발견0(전체읽기+알려진키/JWT/PEM패턴0), runtime출력 비밀없음까지 보증하지 않음.
+- 네 파일 모두 실행코드(라이브러리2/수동진입점2)이며 자료파일 아님. failure_evidence 낮음/offline_batch_diagnosis 중간/private_execution_log 중간~높음/service_batch_once 높음. 정상부팅·현재UserWorker 기능의존성 필요0, 자동실행/배포대상에서모두제외. 단 현재위치+전체SHA검사유지 전제면4개모두 조건부무결성등록검토대상이며 일부등록으로HOLD해결불가.
+- 제안JSON을 파일별 절대경로·SHA·생성/current commit·용도·위험·조건부필요·실행승인false로 보강. ProgramData승인/OnBoot2/실행코드/ACL변경0·이동/우회0·MANUAL유지·AI/auth/usage/Discord0·Bot/Art RUNNING확인. 새승인은 제안작성만, 실제등록/배포/재시험은 별도검토. 전체테스트반복0, 정적JSON/SHA/commit내용일치PASS. 선행eb08148d. [파일별검토](Boot_SHA_FourFile_Review_20261024.md).
+
 ## 2026-10-24 이중 실행 구조 준비 — PREPARED_NOT_DEPLOYED / AI0
 
 - 새 Tools/DiscordAIUserWorker에 같은 SQLite 승인 큐/사용자 Worker 상태머신 준비. 승인된 계획만 로그인 전 보관, 로그인 후 실제SID·자기HOME·CLI SHA·ChatGPT인증·공식usage·정본·예약·정지·미소비승인 재검증. 기존4역할 real_roles.run_once 그대로 재사용. 전용claim 중복차단/중단claim 자동재획득0·실패재시도0·기본released=false/자동시작·실행CLI없음.
