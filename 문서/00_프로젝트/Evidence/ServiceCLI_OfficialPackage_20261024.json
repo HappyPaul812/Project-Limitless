@@ -1,0 +1,350 @@
+{
+  "status": "PACKAGE_INTEGRITY_PASS_SERVICE_CONTEXT_HOLD",
+  "version": "0.164.0-alpha.11.1",
+  "source": "https://releases.openai.com/codex/releases/0.164.0-alpha.11.1/codex-package-x86_64-pc-windows-msvc.tar.gz",
+  "archive_sha256": "410520596d802c955859446bb75f2939f911a97eb738a68f9adc1cb377cd2a57",
+  "archive_published_sha_match": true,
+  "package_manifest": {
+    "layoutVersion": 1,
+    "version": "0.164.0-alpha.11.1",
+    "target": "x86_64-pc-windows-msvc",
+    "variant": "codex",
+    "entrypoint": "bin/codex.exe",
+    "resourcesDir": "codex-resources",
+    "pathDir": "codex-path"
+  },
+  "files": [
+    {
+      "path": "codex-package.json",
+      "sha256": "5a30b23d5d3cfec6e9dc1642720e767b01549422bce22bab6db4e66ec20d2537",
+      "bytes": 226,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "bin/codex-code-mode-host.exe",
+      "sha256": "89713bec82069f1fefc70ec6d52fcb96d79cfd5f0d8d831aedde0b2005a39402",
+      "bytes": 78139688,
+      "authenticode": "Valid",
+      "signer": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+    },
+    {
+      "path": "bin/codex.exe",
+      "sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+      "bytes": 354661168,
+      "authenticode": "Valid",
+      "signer": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+    },
+    {
+      "path": "codex-path/rg.exe",
+      "sha256": "14231169855ec5205cf5a1b6f1db358ff4aed4247c86b69ce8aae647c77f6680",
+      "bytes": 4218880,
+      "authenticode": "NotSigned",
+      "signer": null
+    },
+    {
+      "path": "codex-resources/codex-command-runner.exe",
+      "sha256": "61d0b76d62cd1b852cb4b404a025bb9b26cb927550c0d2225fd17ee9b743db62",
+      "bytes": 8743216,
+      "authenticode": "Valid",
+      "signer": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+    },
+    {
+      "path": "codex-resources/codex-windows-sandbox-setup.exe",
+      "sha256": "834d3be787e1c669ea9b18e5f33799b743819a4e6e84bd3d0b6f7b9158564565",
+      "bytes": 18792240,
+      "authenticode": "Valid",
+      "signer": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+    },
+    {
+      "path": "codex-resources/voice/manifest.json",
+      "sha256": "dd8d102b36e1af77d81a2d8c96c1d3fea032f480bf6dd4662119f6a238015fa7",
+      "bytes": 4784,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/NOTICE.md",
+      "sha256": "473fcf8ccb68ce726111d016d133f0555adba730d057591512f3f71fb46aeb6e",
+      "bytes": 2439,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/runtime.json",
+      "sha256": "7f2ab32f76a8b2d38e9244d3e3c8ba3616df539ea5b354ebf70bcd46eba3c389",
+      "bytes": 16894,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/sources.json",
+      "sha256": "e2f6b124f6277e7c3c4f5c7cc8830c66190f671ad65e972bb2cc9507dbfcb937",
+      "bytes": 4911,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/windows-crt.json",
+      "sha256": "d16939bc85da395ded5411724fed84ffd36810b78d47c756cf094b0956bc3892",
+      "bytes": 1385,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/codex-voice-host.exe",
+      "sha256": "c3de04606ed392df5cceca6ffdcb0eb93ddf48eb9daa48cf812f11e644a3c79a",
+      "bytes": 8903472,
+      "authenticode": "Valid",
+      "signer": "CN=\"OpenAI OpCo, LLC\", O=\"OpenAI OpCo, LLC\", L=San Francisco, S=California, C=US"
+    },
+    {
+      "path": "codex-resources/voice/bin/gio-2.0-0.dll",
+      "sha256": "606b12a67bff7204ebc3d5b0a3edc4da620a4077f6b0c314cf42608e6eaba972",
+      "bytes": 1695536,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/glib-2.0-0.dll",
+      "sha256": "2ee762bf624c15c572a9e51aef6f28ca6c982342aa704d298354bd2cac8ab81e",
+      "bytes": 1390896,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gmodule-2.0-0.dll",
+      "sha256": "7f910643a1b7b3a811de89fa73fad9c42801ea175f3459cde51d2d817291c0b0",
+      "bytes": 34608,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gobject-2.0-0.dll",
+      "sha256": "2a37adab3df1ee0d97b62d177ba5ef1534c4895dc3d7f49cefe60607b2c33816",
+      "bytes": 348464,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstapp-1.0-0.dll",
+      "sha256": "e762cadb03d02cb63446699324bc92551e48d0d63de83a1f46056dd2bcfdb4aa",
+      "bytes": 100144,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstapp.dll",
+      "sha256": "6c8996beabb3f3ab1b94a1b570b427940b42f23210b65b18379080dff112a1e6",
+      "bytes": 25392,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstaudio-1.0-0.dll",
+      "sha256": "d2f7038dc7808c2accd79e0fb80298b02facd4106e93762e00858a301724cdaa",
+      "bytes": 512304,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstaudioconvert.dll",
+      "sha256": "3e271375959f845319ef4f3ee7c198272fe10adf4cec811fadcc2495e9f10a94",
+      "bytes": 48432,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstaudioresample.dll",
+      "sha256": "adea4c97f24836b1df06f95871be59e7caf5d682e1a2b190ad24de2e0f5b3d4f",
+      "bytes": 45360,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstbase-1.0-0.dll",
+      "sha256": "c2387a8c9e55a0dfaf57e5c27e6af5e0cc5f7207b02fd1cef8810efb99838dbc",
+      "bytes": 484144,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstcoreelements.dll",
+      "sha256": "264893eab2eb0b3caeedac108ba7d824ebb833de53ffe5b76db3b89339df80c3",
+      "bytes": 409904,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstnet-1.0-0.dll",
+      "sha256": "b4210bc8cc169a5ba591bdd1e69d9744bb890e815e49d65dde7de910558d76a3",
+      "bytes": 116528,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstopus.dll",
+      "sha256": "ec066d0f6fe1d9988c42e1cb59e52eaba9181ac63f2858049fa2b8c32bdeacfa",
+      "bytes": 69424,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstpbutils-1.0-0.dll",
+      "sha256": "93910d669abcca5f99f26a10ba22e75d8ba86e14e0ce35b61dd765373ffa8032",
+      "bytes": 262448,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstreamer-1.0-0.dll",
+      "sha256": "13ee2ec92aaef4845c35be0e8906758ac0fe0fba97be4c1f94e021fc08586012",
+      "bytes": 1257264,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstrtp-1.0-0.dll",
+      "sha256": "73a0bd1fbe011cb5d1ea6c225c44eb3f8e90862f7e2f1407151b4d3e7fbe2df0",
+      "bytes": 167216,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstrtp.dll",
+      "sha256": "bb3009293ca24b4a4073bb67fcb6390c6ce41241968bbfa51732708782c44151",
+      "bytes": 607536,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstrtpmanager.dll",
+      "sha256": "599c29f2ce9fa92f2e4732030a280451abf15de69cab68cbc5df41949af2289f",
+      "bytes": 501040,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gsttag-1.0-0.dll",
+      "sha256": "e8986172e48d74ed79b21ffe1fe31cf121f89391576d8f1f8dd765941ce36c7c",
+      "bytes": 254256,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/gstvideo-1.0-0.dll",
+      "sha256": "acd0a5d3f9bdc49c16eb2112bf0f84df2f08d8c8b5e531b93915484e632bf02c",
+      "bytes": 769840,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/intl-8.dll",
+      "sha256": "072c43980fb2be40b37e1a5903b23f32fb513f2c563cc2636f85e19ca809aba8",
+      "bytes": 25392,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/libffi-8.dll",
+      "sha256": "dc33937fe3fe8aace9821f0260f3b13086aacc80ee7b9bc714d0589786a836d4",
+      "bytes": 43312,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/opus.dll",
+      "sha256": "bd081ea944e9e075b0d66f7181fd3d42f842d0945be135f4bdf7249e749385c2",
+      "bytes": 440112,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/pcre2-8.dll",
+      "sha256": "6096e926b50c1c53036f8657f93c2343004e9a43d66228aef0bb690e4c8afa12",
+      "bytes": 398128,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/vcruntime140.dll",
+      "sha256": "184146852727a9db4eea06178716bec3cdbb1015c911f6b0f915b184ad7775b2",
+      "bytes": 123472,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/bin/z.dll",
+      "sha256": "77da39f4b4a0b96371e14ac01ae11745feb9650fd95e11a07fc3c0b786c813a4",
+      "bytes": 105264,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/LGPL-2.1.txt",
+      "sha256": "c7ce1276717604c29c5469179a2f368eac42846557be671bb52f4e16e884b2ad",
+      "bytes": 26934,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/libffi.txt",
+      "sha256": "e2a9b884b1c5d718efd6121457a1fbe7ece431352ca75c901260cef2e7d040e5",
+      "bytes": 1153,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/Opus.txt",
+      "sha256": "cbd8bd07329a234413710c02b19d22c0cf78fc451882593e817130779b5455e3",
+      "bytes": 1989,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/PCRE2.md",
+      "sha256": "4195c519dcfe4a4ffedc4b8ccc5d49e4dd02efd5ece6b69a4fba5d20080902a9",
+      "bytes": 4115,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/proxy-libintl.txt",
+      "sha256": "aa092600e3f475f0a55821fb9c529583d8e23e41bf0461254f02fcf94d3a32c2",
+      "bytes": 25774,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/sljit.txt",
+      "sha256": "37c7a090fc61388430d63fc97bf8a22ffce92d3ca2249aac572cfaf411d3070f",
+      "bytes": 1469,
+      "authenticode": null,
+      "signer": null
+    },
+    {
+      "path": "codex-resources/voice/licenses/zlib.txt",
+      "sha256": "439c75ab12b340c5362b9d4b08ff05ec3a4d0eb7667a6fff49a9b16d8795c78e",
+      "bytes": 1024,
+      "authenticode": null,
+      "signer": null
+    }
+  ],
+  "file_count": 45,
+  "python_count": 42,
+  "python_sha_mismatches": [],
+  "boot_approval_sha256": "0cd2ce55f7e23b44190e7f4786c2e9f68e2e291b1888e5768ea606f391c8d2d6",
+  "mode": "MANUAL",
+  "user_worker_jobs": [
+    [
+      "WAITING_FOR_OWNER_APPROVAL",
+      1
+    ]
+  ],
+  "new_ai_calls": 0,
+  "package_executed": false,
+  "service_diagnostic_executed": false,
+  "deployment_changed": false,
+  "service_context_hold": "CURRENT_WINDOWS_ACCOUNT_NOT_ADMIN; TASK_ACCESS_DENIED; ORIGINAL_BATCH_REQUIRES_SERVICE_CREDENTIAL_INPUT",
+  "past_root_cause": "UNKNOWN_ORIGINAL_STDERR_JSONL_NOT_PRESERVED"
+}

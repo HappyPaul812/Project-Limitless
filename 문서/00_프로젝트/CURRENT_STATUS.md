@@ -1,3 +1,9 @@
+## 2026-10-24 공식 전체 CLI 격리 검증 — PACKAGE PASS / SERVICE HOLD / AI0
+
+- 공식0.164.0-alpha.11.1 x64전체tar.gz 실제확보·게시SHA41052059…일치·안전추출45파일. manifest버전/레이아웃·본체/host/runner/setup OpenAI Authenticode Valid. rg NotSigned는별도명시. 전체파일SHA근거JSON보존. 새바이너리실행/설치/운영교체0.
+- 현재windows비관리자·두task조회거부·서비스config/log접근거부를sandbox밖에서도확인. 기존batch경로는관리자+로컬서비스자격증명입력필수, 새서비스자체진단실행못함. 우회/인증복사0·과거원인UNKNOWN. 정확경로/전후SHA·전체공식배포·참조최소변경·정밀복원·별도1회시험안제출.
+- 42PythonSHA일치·승인JSON SHA보존·MANUAL·Bot/Art RUNNING·사용자slot승인대기1건. 실제AI/Worker/Discord/부팅작업/게임/Unity/Push/merge/재부팅0. PIN전추론NOT_VERIFIED. 선행834d785c. [무결성·서비스차단·복구안](ServiceCLI_IsolatedIntegrity_20261024.md).
+
 ## 2026-10-24 서비스 CLI 공식 복구 사전 검토 — 배포0 / AI0
 
 - 공식문서에서 단독exe는 완전standalone패키지가 아님 확인. 현재사용자보조3exe 정확SHA/역할·두CLI동일표시버전/서로다른SHA·유효OpenAI서명 확인. helper누락은원인후보이며 최초원본유실로turn.failed직접원인UNKNOWN.
