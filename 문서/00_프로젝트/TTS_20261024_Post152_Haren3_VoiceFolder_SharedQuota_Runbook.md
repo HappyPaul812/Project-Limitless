@@ -1,5 +1,8 @@
 # LIMITLESS TTS / 2026-10-24 태온 잔여 8개 이후 제작할 음성 감사 및 하렌 3개 실행 준비
 
+**담당 최신 정정:** 아래 절차의 **TTS 합성·PowerShell 실행·API 사용자는 사용자 본인**이다. “Codex가 로컬 파일 담당”이라는 구 표현이 있어도 TTS 생성을 Codex에게 위임하는 의미로 사용하지 않는다. Codex는 별도 승인 후 읽기 전용 조사 및 최종 Unity 연동만 담당.
+
+
 **사용자 요청:** “이따 8개 뽑으면 또 뽑을꺼 있니? 있으면 작업 폴더 `F:\Downloads\Voice`로 알아서 해줘. api키도 거기 있어.”
 
 **상태:** NEXT_AFTER_TAEON_8 / HAREN3_SCRIPT_PREPARED_AND_OFFLINE_QA_PASS / GOOGLE_API_0 / LOCAL_F_DRIVE_NOT_ACCESSED / UNITY_PENDING
@@ -36,7 +39,7 @@
 - 오프라인 검증: `python -m py_compile` PASS, fake 기존 152 파일/Meta SHA, 키/슬롯 일치 검사, 152 아닌 경우 안전 차단, Google POST 없는 점검, mock 제작 3건의 **공유 장부 8+3=11** 반영 및 재실행 중복0 — 총 **4개 unittest PASS**. 실제 Google API POST **0**, `F:` 쓰기 **0**, Unity **0**.
 - 동일 프로젝트의 API 키 간 무단 우회 금지. 장부/잠금/기존 WAV/사용자가 KEEP한 Main21 7개 보존, 새 스크립트의 429 HOLD는 기존 **세린·태온 전용** 복구 스크립트를 무검증으로 적용하지 않는다.
 
-## 4. 실행/통합 순서 — Codex가 로컬 파일 담당
+## 4. 실행/통합 순서 — 사용자 직접 TTS 생성, Codex는 추후 별도 승인 시 Unity 검수
 
 **태온 마지막 8개 우선**
 
