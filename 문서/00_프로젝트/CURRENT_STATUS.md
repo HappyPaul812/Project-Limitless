@@ -1,3 +1,10 @@
+## 2026-10-24 서비스 배치 첫 추론 실패 분석 — NOT_VERIFIED / 추가 AI 0회
+
+- 첫 실제 결과 CLI1/배치2·error10·forbidden item2·완료턴0·최종응답없음. Discord는 검증 실패로 NOT_SENT이며 전송 실패 근거 아님. 인증/공식조회 PASS와 추론 성공은 분리. 원본 JSONL/stderr는 최초 구현에서 저장하지 않아 첫 오류/10개 원인/두 item type/turn.failed 직접 원인 UNKNOWN. 서비스 프로필 로그는 현재 Windows 권한으로 접근 불가.
+- 확인된 근거 손실만 수정: 단발 실패 시 고정 오류 분류·알려진 item type·내용 제거 projection·고정 실행 manifest 보존. 검증기/금지도구/Sandbox/인증·모델/provider 변경0. 기존 소비 marker·DB CONSUMED 유지, 재실행 안 함.
+- 오프라인30 PASS + 과거 합성 replay3 재생(정상2 PASS/금지도구1 거부). 첫 실패 원본 replay는 UNAVAILABLE이며 재생 PASS로 간주하지 않음. 기존 로그만 읽는 추가 진단기 준비·실행 결과 ACCESS_DENIED, CLI/네트워크/AI/Discord 호출0.
+- MANUAL·Bot/Art RUNNING heartbeat 증가·OnBoot/서비스코드 수정0. 첫 summary에서 OnBoot2 보존/임시삭제 확인, 현 세션 XML 읽기 권한 없어 새 대조 미검증. 다음은 관리자/기존 서비스 계정에서 오프라인 로그만 확인. 실제 재시험은 원인 또는 진단 계획 검토·별도 새 승인/슬롯 필요. Unity 확인사항 없음. 선행 commit293db5d6. [진단 보고](ServiceBatch_FirstFailure_Diagnosis_20261024.md).
+
 ## 2026-10-24 서비스 배치 인증 PASS / 실제 추론 1회 실행 준비
 
 - 대표 실행 결과와 로컬 evidence `service-codex-auth-46bee54f62714b42838b595c731da1b2.json` 대조: 서비스 Codex 인증·공식 5시간/주간 조회 각각 PASS. 대표 전달 결과에서 OnBoot2 보존·임시 작업 제거 확인. 실제 추론0·MANUAL 유지.

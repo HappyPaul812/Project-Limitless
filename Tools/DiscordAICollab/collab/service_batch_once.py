@@ -17,6 +17,8 @@ from .phase2 import child_environment, cli_info, probe_command, verify_cli_contr
 from .real_roles import SCHEMA
 from .scheduling import Scheduler, gate
 from .service_ai import prepare_provider, windows_context
+from .failure_evidence import save_failure_evidence
+from .exec_diagnostics import launch_manifest
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data/service-batch-once-20261024'
@@ -99,7 +101,8 @@ def main():
         if not info['subscription_available']:
             raise Denied('CHATGPT_AUTH_REQUIRED')
         result['cli'] = info
-        if verify_cli_controls(provider.executable, workspace)['status'] != 'PASS':
+        controls = verify_cli_controls(provider.executable, workspace)
+        if controls['status'] != 'PASS':
             raise Denied('CLI_CONTROLS_HOLD')
         source = fetch_source()
         result['source'] = {k: v for k, v in source.items() if k != 'text'}
@@ -130,15 +133,21 @@ def main():
                 raise Denied('OTHER_AI_RUNNING_HOLD')
             db.execute('INSERT INTO settings VALUES(?,?)', (SLOT, json.dumps({'state': 'CONSUMED', 'prompt_sha256': result['prompt_sha256']})))
             store.audit(db, 'SERVICE_BATCH_ONCE_RESERVED')
+        environment = child_environment()
+        # 실행 인수·환경변수 이름만 남기며 값·입력 문서·인증 원문은 기록하지 않습니다.
+        manifest = launch_manifest(command, environment, info, controls, prompt)
+        (OUT / 'launch-manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf8')
         result['actual_ai_calls'] = 1
         started = time.monotonic()
         completed = subprocess.run(command, input=prompt, capture_output=True, text=True, encoding='utf8', errors='replace',
-                                   env=child_environment(), timeout=90, creationflags=subprocess.CREATE_NO_WINDOW)
+                                   env=environment, timeout=90, creationflags=subprocess.CREATE_NO_WINDOW)
         result['elapsed_seconds'] = round(time.monotonic() - started, 3)
         parsed = parse_result(completed.stdout, completed.returncode, 'PlanningAgent',
                               last_message=last.read_text(encoding='utf8') if last.exists() else None, require_last_message=True)
         result.update(parsed, exit_code=completed.returncode)
         if parsed['status'] != 'PASS':
+            # 검증을 완화하지 않습니다. 오류 코드·항목 유형을 안전하게 남겨 다음 진단의 근거 손실만 막습니다.
+            result['failure_details'] = save_failure_evidence(OUT, completed.stdout, completed.stderr)
             raise Denied('OUTPUT_OR_JSONL_NOT_VERIFIED')
         if not summary_valid(parsed['answer']) or parsed['answer']['next_review'] != '바울 대표':
             result.pop('answer', None)
