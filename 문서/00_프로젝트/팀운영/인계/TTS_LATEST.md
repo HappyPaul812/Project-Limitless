@@ -1,5 +1,13 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 하렌 R2.1 긴급 수정 — 원본 WAV 없음 / JSON 메타+성공 장부 있음
+
+- **사용자 새 콘솔 증거:** Haren `main21_haren_haren_01` 1개는 이전 실행에서 `[HAREN CREATED]`까지 성공했다고 표시됐고 PT 2026-10-24 **9/40**, 세린·태온152/152, `HOLD=False`, 사용자 보존 Main21 old7 **7/7**. 그러나 `Haren_Prosody_Retake_R2.py check`에서 **`Haren first WAV exists=False meta=True`**, 후보 R2는 WAV/meta 모두 미생성. `retake` 재시도 둘 다 `[STOP] Previous Haren first WAV/meta missing`으로 API 추가호출0. 원본 WAV 누락 원인은 미확인(삭제·이동 단정 금지).
+- **신규 [하렌 R2.1 기록 및 안내 정본](../../TTS_Main21_Haren_R2_1_기존WAV실종_메타장부검증_20261024.md)**. 파일 ZIP `LIMITLESS_Haren_Prosody_Retake_R2_1_OrphanMetaFix_20261024.zip` 7737B SHA256 `679b825293f19a6524bfae62dbcc39f9d98bca777e72ccc7d16f2a36826c345d`. 새 파일 `Haren_Prosody_Retake_R2_1.py`를 사용자 직접 `F:\Downloads\Voice`에 압축 해제(기존 R2/하렌 프로그램 덮어쓰기 금지).
+- R2.1은 `main21_haren_haren_01.json` 원본 보존 + 같은 WAV SHA가 기록된 **공유 `api_events.jsonl`의 원 하렌 SUCCESS 기록 교차 확인** 후만 원본 WAV 부재 상태에서 R2 1회 시험을 허용한다. 메타/이벤트 불일치면 API POST0 차단. 기존 7개 보호·공유 PT/프로젝트 상한/HOLD·LOCK 유지.
+- **사용자 직접 명령:** `cd F:\Downloads\Voice` → `python .\Haren_Prosody_Retake_R2_1.py check` → `python .\Haren_Prosody_Retake_R2_1.py retake`, `RUN_RETAKE_01` 승인 후 **R2 신규1 WAV 청취**. 질문형이면 `reject-r2`만 하고 추가 생성 STOP. 평서문 하강 PASS면 `approve` `APPROVE_FALLING_R2` 승인 후에만 `remaining` 하렌02/03 직접 제작. 원본 WAV 없으면 메타만 백업했다는 사실을 기록하고 승인 전 공식 WAV 경로 수정0.
+- 새 Python은 오프라인 byte/SHA·mock 1 POST/approve/remaining, 누락 메타·SHA mismatch 안전차단, ZIP/구문 검사 PASS. **실제 Google 요청0, 사용자 F: 수정0, Unity0**. 다른 캐릭터·하렌02/03 최종 청취/Unity 승인 여전히 미완.
+
 ## 2026-10-24 하렌 첫 대사 재차 청취 FAIL — 의문형 상승 억양 / 분리 R2 시험 지시
 
 - 사용자 최신 피드백 **“또 의문문이야.”** 대상 `main21_haren_haren_01` “태온. 너 아직 멀었어.” 기존 하렌 Main21 재생성 음성 **질문형 말끝 상승으로 청취 FAIL**. 하렌3 전체 준비 완료로 보고하면 안 됨; 02·03 생성 STOP. 세린67·태온85는 WAV READY=152/152 유지, 별도 기존 레온2/미엘2/폴3=7 KEEP.
