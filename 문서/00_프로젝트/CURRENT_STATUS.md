@@ -1,3 +1,8 @@
+## 2026-10-24 서비스 격리 CLI 배치 검증 준비 — 로컬 관리자 입력 대기 / AI0
+
+- 기존성공 Password/Batch/Limited 임시작업+Get-Credential 절차확인. 독립 verify-isolated-batch.ps1 준비: 45SHA/서명·SID/Session0/logon4·고정version/help만·부팅XML/승인SHA전후·임시작업제거, 암호/원문로그0·재시도0.
+- 구문0오류·비관리자가드변경없이HOLD검증. 실제서비스실행은대표의관리자PowerShell/로컬보안입력대기. PASS로선언하지않음. 운영참조/42Python/승인목록/SQLite/CODEX_HOME/Task2/모드변경0·AI0. 선행1742abe5. [명령·결과위치·후속승인](ServiceCLI_BatchVerification_Ready_20261024.md).
+
 ## 2026-10-24 공식 CLI 격리 배치 — 45SHA PASS / 서비스 실행 HOLD / AI0
 
 - 기존검증공식패키지를 data/runtime/codex/official-0.164.0-alpha.11.1-x64에전체45파일배치, 재다운로드0·전후SHA45일치·본체/보조3개OpenAI서명Valid. 새루트에만보호DACL/서비스RX·현재소유자SYSTEM관리자Full, 기존ACL변경0.
