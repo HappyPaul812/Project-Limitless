@@ -1,6 +1,6 @@
 {
-  "at": 1792805144.7284284,
-  "status": "SERVICE_CLI_INSPECTED_DEVICE_LOGIN_WAITING_OWNER",
+  "at": 1792806818.713262,
+  "status": "SERVICE_CLI_SUPPORTED_NATIVE_PROFILE_FIX_PREPARED_OWNER_LOGIN_RESULT_PENDING",
   "mode": "MANUAL",
   "cli": {
     "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
@@ -27,7 +27,7 @@
   },
   "db_fingerprints_unchanged": true,
   "service_inspection": "PASS_INTERACTIVE_SERVICE_CONTEXT",
-  "device_login_started": "OWNER_RETRY_REQUESTED_AFTER_PRELOGIN_ACL_FIX",
+  "device_login_started": "NOT_CONFIRMED_AFTER_NATIVE_DACL_FIX",
   "actual_ai_calls": 0,
   "a_activated": false,
   "services_restarted": false,
@@ -35,14 +35,14 @@
   "paid_api_push_merge_product_changes": 0,
   "bot": {
     "status": "RUNNING",
-    "last_tick": 1792804628.0196476,
+    "last_tick": 1792806681.8266764,
     "ai_worker_enabled": false,
     "approved_readonly_resume_only": false,
     "shutdown_enabled": false
   },
   "art": {
     "status": "RUNNING",
-    "last_tick": 1792804630.1251729,
+    "last_tick": 1792806680.9736938,
     "ai_calls": 0,
     "unity_runs": 0
   },
@@ -85,5 +85,36 @@
   "profile_acl_fix": "WIN32_DACL_ONLY_NATIVE_FIXTURE_PASS_SERVICE_RETRY_PENDING",
   "service_account_privileges_unchanged": true,
   "actual_authentication_success": "NOT_CONFIRMED",
-  "native_dacl_module": "ServiceProfileDacl.psm1"
+  "native_dacl_module": "ServiceProfileDacl.psm1",
+  "last_actual_service_result": {
+    "exception_type": "PrivilegeNotHeldException",
+    "device_auth_supported": true,
+    "action": "Login",
+    "context_verified": true,
+    "cli_version": "0.164.0-alpha.11.1",
+    "failure_line": 64,
+    "actual_ai_calls": 0,
+    "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "stage": "SERVICE_PROFILE_ACL",
+    "profile": "C:\\Users\\LIMITLESSRelaySvc",
+    "api_fallback": false,
+    "reason": "SERVICE_AUTH_INSPECTION_OR_LOGIN_NOT_VERIFIED",
+    "mode_changed": false,
+    "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
+    "hresult": -2147024891,
+    "status": "HOLD",
+    "home_existed_before": true,
+    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+    "request_id": "local"
+  },
+  "runtime39_and_auth4_sha_match": true,
+  "source_commit": "a0eaae4f",
+  "heartbeat_age_seconds": {
+    "bot": 2.25,
+    "art": 3.11
+  },
+  "discord_report": {
+    "state": "SENT",
+    "message_id": "1563369689558552581"
+  }
 }
