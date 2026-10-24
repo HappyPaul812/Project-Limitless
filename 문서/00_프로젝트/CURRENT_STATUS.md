@@ -1,3 +1,10 @@
+## 2026-10-24 서비스 배치 인증 PASS / 실제 추론 1회 실행 준비
+
+- 대표 실행 결과와 로컬 evidence `service-codex-auth-46bee54f62714b42838b595c731da1b2.json` 대조: 서비스 Codex 인증·공식 5시간/주간 조회 각각 PASS. 대표 전달 결과에서 OnBoot2 보존·임시 작업 제거 확인. 실제 추론0·MANUAL 유지.
+- 대표의 별도 실제 AI 1회 승인으로 `service-batch-once.ps1` 및 `collab/service_batch_once.py` 준비. 기존 Password/Limited/비대화형 Session0, 실행 직전 공식 사용량·기존 마감 gate, 최신 GitHub docs/planning PLANNING.md 단일 입력, 추론1회/90초, 기존 출력·JSONL 검증기 및 5문장 검사를 통과한 결과만 지정 Discord 채널에 게시. 1회 소비 마커/DB 슬롯으로 재시도 차단.
+- 현재 **PREPARED / NOT_RUN**. 현 Codex 세션은 비관리자이고 이전 Windows 암호는 폐기되어 관리자 PowerShell의 로컬 보안 입력이 필요함. 구문·출력 제한/도구 거부 focused6 PASS, GitHub 실제 단일문서 fetch PASS(d73bdbf9), 운영DB MANUAL/정지0/실행중0. AI/Discord 게시 미실행.
+- 다음: 대표가 관리자 PowerShell에서 `Tools/DiscordAICollab/service-batch-once.ps1` 1회 실행 후 `data/service-batch-once-20261024/batch-summary.json` 확인. 실패 자동재시도·A 활성화 금지. Unity 확인사항 없음, 게임/아트/기존 서비스/Push/merge 변경0. 선행 관련 commit a1c5a7bc.
+
 ## 2026-10-24 Windows 1326 최소 복구 — 안전 배치 PASS
 
 - 대표 로컬 입력 후 Windows 배치 인증1회 PASS(0), 임시 Password/Limited 작업1건 등록·실행·삭제 PASS. 실제 PAUL-PC\LIMITLESSRelaySvc/일반계정/SID 일치/로그온4/세션0/비대화형/종료0, 14:19 KST. 이전1326 재현 안 됨, 과거 오입력 여부 단정 안 함.
