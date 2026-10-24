@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-10-24T00:10:38Z",
+  "actual_prelogin_boot": "NOT_VERIFIED",
+  "service_restart_performed": false,
+  "ai_calls_performed": 0,
+  "registration": {
+    "registered_count": 2,
+    "start_test": "PASS_NONINTERACTIVE_BATCH_ONLY",
+    "account_is_admin": false,
+    "account_enabled": true,
+    "status": "VERIFIED_REGISTERED"
+  },
+  "services": {
+    "bot": {
+      "status": "RUNNING",
+      "fresh": true,
+      "age_seconds": 0.85
+    },
+    "art": {
+      "status": "RUNNING",
+      "fresh": true,
+      "age_seconds": 2.6
+    }
+  },
+  "ledger": {
+    "mode": "MANUAL",
+    "resume_jobs": 0,
+    "tasks": 21,
+    "usage_rows": 13
+  },
+  "pass": true
+}

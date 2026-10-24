@@ -1,3 +1,5 @@
+> **최신 후속 상태 — 2026-10-24 09:10 KST:** 아래 등록 전 내용은 준비 당시 기록입니다. 대표의 관리자 등록 완료 및 `verify-boot-tasks.ps1 -StartTest` 결과 `PASS_NONINTERACTIVE_BATCH_ONLY`를 확인했습니다. 등록2/2, 활성 일반계정·관리자 아님·Password/Limited·BootTrigger는 관리자 결과 파일 근거입니다. 현재 일반권한의 직접 태스크 조회는 접근 거부이므로 등록 결과 파일과 현재 서비스 상태를 구분합니다. 후속 읽기 조회에서 Bot/Art RUNNING 및 heartbeat 3초 이내, MANUAL·재개큐0·업무21·usage13 확인. 추가 서비스 재시작/AI/Unity/재부팅/Push/merge는 수행하지 않았습니다. 실제 재부팅 후 PIN 전 기동·USB Wi-Fi 재연결은 NOT_VERIFIED입니다. 이는 비대화형 수동 시작 시험 PASS와 별개이며 별도 재부팅 승인 시 확인합니다. 근거: `../Evidence/BootRelay20261024/resume-verification.json`. 마지막 관련 기존 commit `c8965d33`.
+
 # PIN 입력 없는 부팅 중계 — 등록 전 승인안 / 2026-10-24 KST
 
 **준비 코드·비활성 Boot XML 완료, 실제 등록·계정 생성·부팅 실증 전입니다.**

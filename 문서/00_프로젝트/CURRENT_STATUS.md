@@ -1,3 +1,7 @@
+## 2026-10-24 부팅 중계 등록·비대화형 시작 시험 완료
+
+LIMITLESS-Bot-OnBoot / LIMITLESS-Art-OnBoot 등록2/2 및 대표 실행 결과 PASS_NONINTERACTIVE_BATCH_ONLY 확인. 관리자 검증 기록상 서비스 일반계정 활성·관리자 아님·Password/Limited·BootTrigger 유지. 09:10 KST 후속 읽기 조회에서 Bot/Art RUNNING·heartbeat 3초 이내, MANUAL·재개큐0·기존업무21/usage13 확인. 이번 재시작·AI·재부팅·Unity·원본게임변경·Push/merge0. 일반권한의 태스크 직접 조회는 기존 ACCESS_DENIED이므로 관리자 결과 파일 근거와 현재 heartbeat를 구분합니다. 실제 PIN 전 부팅/USB Wi-Fi 재연결은 NOT_VERIFIED이며 별도 재부팅 승인 때 확인합니다. Unity 사용자 확인 사항 없음. 마지막 관련 commit c8965d33(등록 안내), 이번 마감 commit은 해당 브랜치 로그 참조. [완료근거](Evidence/BootRelay20261024/resume-verification.json), [등록 후속](팀운영/Boot_Relay_PreRegistration_20261024.md).
+
 ## 2026-10-24 실제 부팅 등록 승인·로컬 입력 대기
 
 대표의 OnBoot2종 실제등록/필요최소권한 승인 유지. 관리자 로컬 등록기·서비스계정 보안입력창 준비(6721ed4b0fc1d0839610b82530922c5073bc8501). 구문2·배치권한보조코드컴파일PASS, 전체QA반복0. 관리자 PowerShell 실행 명령을 안내했고 암호/토큰 직접입력 대기 WAITING_FOR_LOCAL_SETUP. 마지막확인 계정없음/작업0/2·기존프로세스유지·추가AI/재부팅/종료/제품변경/Push/merge0. 실제PIN전부팅 NOT_VERIFIED. 다음은 추가승인요청 없이 대표 실행 후 registration-result.json과 실제태스크/일반계정/트리거 검증. [실행절차](../../Tools/DiscordAICollab/BOOT_REGISTER_KO.md)
