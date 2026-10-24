@@ -1,0 +1,8 @@
+PASS|Capture.Orna.SameCameraTransform.1280
+PASS|Capture.Orna.SameCameraTransform.960
+PASS|Capture.Orna.SameCameraTransform.1680
+PASS|CandidateLoaded.SouthGate_EntryDoor_Joint_CANDIDATE.png
+PASS|Capture.EntryBeforeAfter.SameCameraTransform.1280
+PASS|Capture.EntryBeforeAfter.SameCameraTransform.960
+PASS|Capture.EntryBeforeAfter.SameCameraTransform.1680
+PASS|FinalFrames.NoRuntimeErrors

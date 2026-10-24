@@ -1,0 +1,16 @@
+{
+  "reuse": "A: Issue64 41/15 evidence; no rerun",
+  "new_runtime_delta": 33,
+  "frozen_capture_assertions": 8,
+  "final_runtime_errors": 0,
+  "final_compiler_errors": 0,
+  "initial_harness_compile_failure": "GetInstanceID obsolete in Unity6.6; fixed before first Play execution",
+  "original_148_136_rerun": false,
+  "previous_41_15_rerun": false,
+  "new_play_camera_ui_png": 21,
+  "review_png_total": 28,
+  "code_commit": "7076fadeb50f8aa19c1d1e6008311451c586c07e",
+  "production_applied": false,
+  "remote_git_push": false,
+  "final_art_approval": "PENDING"
+}

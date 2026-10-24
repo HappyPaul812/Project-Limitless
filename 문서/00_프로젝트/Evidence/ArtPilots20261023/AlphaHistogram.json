@@ -1,0 +1,317 @@
+[
+  {
+    "file": "Main23\\Buildings\\SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        253,
+        286023
+      ],
+      [
+        0,
+        135651
+      ],
+      [
+        252,
+        90541
+      ],
+      [
+        251,
+        5392
+      ],
+      [
+        250,
+        1610
+      ],
+      [
+        249,
+        904
+      ],
+      [
+        2,
+        752
+      ]
+    ],
+    "partial_black_count": 64250,
+    "black_opaque_count": 575
+  },
+  {
+    "file": "Main23\\Buildings\\SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        0,
+        157319
+      ],
+      [
+        253,
+        130366
+      ],
+      [
+        252,
+        51831
+      ],
+      [
+        251,
+        4587
+      ],
+      [
+        250,
+        1225
+      ],
+      [
+        249,
+        856
+      ],
+      [
+        3,
+        760
+      ]
+    ],
+    "partial_black_count": 31708,
+    "black_opaque_count": 591
+  },
+  {
+    "file": "Main23\\Buildings\\SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        0,
+        29883
+      ],
+      [
+        253,
+        19671
+      ],
+      [
+        252,
+        12210
+      ],
+      [
+        251,
+        1307
+      ],
+      [
+        250,
+        597
+      ],
+      [
+        249,
+        265
+      ],
+      [
+        255,
+        249
+      ]
+    ],
+    "partial_black_count": 7534,
+    "black_opaque_count": 249
+  },
+  {
+    "file": "Main23\\NPC\\Orna_VillageGuide_512_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        0,
+        189829
+      ],
+      [
+        253,
+        34760
+      ],
+      [
+        252,
+        28456
+      ],
+      [
+        251,
+        1543
+      ],
+      [
+        255,
+        900
+      ],
+      [
+        250,
+        671
+      ],
+      [
+        1,
+        660
+      ]
+    ],
+    "partial_black_count": 7299,
+    "black_opaque_count": 461
+  },
+  {
+    "file": "Main23\\NPC\\Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        0,
+        491744
+      ],
+      [
+        253,
+        229631
+      ],
+      [
+        252,
+        190608
+      ],
+      [
+        251,
+        14439
+      ],
+      [
+        250,
+        5779
+      ],
+      [
+        249,
+        3044
+      ],
+      [
+        2,
+        2475
+      ]
+    ],
+    "partial_black_count": 57302,
+    "black_opaque_count": 199
+  },
+  {
+    "file": "Main23\\Signs\\Inn_StandaloneSign_CANDIDATE.png",
+    "top_alpha_values": [
+      [
+        253,
+        510271
+      ],
+      [
+        0,
+        502892
+      ],
+      [
+        252,
+        184854
+      ],
+      [
+        251,
+        12771
+      ],
+      [
+        250,
+        4276
+      ],
+      [
+        249,
+        2357
+      ],
+      [
+        2,
+        2294
+      ]
+    ],
+    "partial_black_count": 107309,
+    "black_opaque_count": 1643
+  },
+  {
+    "file": "Bee\\VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+    "top_alpha_values": [
+      [
+        0,
+        143760
+      ],
+      [
+        255,
+        108571
+      ],
+      [
+        254,
+        780
+      ],
+      [
+        1,
+        598
+      ],
+      [
+        253,
+        473
+      ],
+      [
+        2,
+        462
+      ],
+      [
+        248,
+        444
+      ]
+    ],
+    "partial_black_count": 557,
+    "black_opaque_count": 12501
+  },
+  {
+    "file": "Bee\\VenomBee_Preview_128.png",
+    "top_alpha_values": [
+      [
+        0,
+        7929
+      ],
+      [
+        255,
+        5968
+      ],
+      [
+        1,
+        302
+      ],
+      [
+        3,
+        233
+      ],
+      [
+        254,
+        201
+      ],
+      [
+        2,
+        185
+      ],
+      [
+        253,
+        170
+      ]
+    ],
+    "partial_black_count": 86,
+    "black_opaque_count": 432
+  },
+  {
+    "file": "Bee\\VenomBee_Preview_40.png",
+    "top_alpha_values": [
+      [
+        0,
+        592
+      ],
+      [
+        255,
+        440
+      ],
+      [
+        1,
+        61
+      ],
+      [
+        254,
+        43
+      ],
+      [
+        3,
+        35
+      ],
+      [
+        2,
+        34
+      ],
+      [
+        253,
+        34
+      ]
+    ],
+    "partial_black_count": 2,
+    "black_opaque_count": 17
+  }
+]

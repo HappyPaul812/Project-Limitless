@@ -1,0 +1,46 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using ProjectLimitless.Core;
+using ProjectLimitless.World;
+using ProjectLimitless.Player;
+using ProjectLimitless.UI;
+using ProjectLimitless.Audio;
+using Object=UnityEngine.Object;
+namespace ProjectLimitless.EditorTools {
+// 승인 Main23 KEEP Scene과 TTS Catalog의 새 결합 경계만 검사하며 기존 전수 QA는 호출하지 않습니다.
+[InitializeOnLoad] public static class EodApprovedDeltaQA {
+ const string Key="EOD20261024Delta"; static IEnumerator run;static double deadline;static List<string> checks=new List<string>(),errors=new List<string>();
+ static string Out=>Path.GetFullPath(Path.Combine(Application.dataPath,"../../../../Results"));
+ static EodApprovedDeltaQA(){EditorApplication.playModeStateChanged+=s=>{if(s!=PlayModeStateChange.EnteredPlayMode||!SessionState.GetBool(Key,false))return;Application.runInBackground=true;AudioListener.volume=0;QualitySettings.vSyncCount=0;Application.targetFrameRate=60;GameSaveService.AuditSaveDirectory=Path.Combine(Out,"Saves");UserSettingsService.BeginAudit(Path.Combine(Out,"Settings"));UserSettingsService.SetMuteAll(false);UserSettingsService.SetAudioVolumes(100,100,80);Application.logMessageReceived+=(t,st,k)=>{if((k==LogType.Error||k==LogType.Exception||k==LogType.Assert)&&!st.Contains("UnityEditor.Search"))errors.Add(t+"\n"+st);};run=Flat(Run());deadline=EditorApplication.timeSinceStartup+180;EditorApplication.update+=Tick;};}
+ public static void Start(){if(!Application.isBatchMode||!Application.dataPath.Replace('\\','/').Contains("/EOD20261024/Validation/"))throw new Exception("격리 QA만 허용");Directory.CreateDirectory(Out);EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);SessionState.SetBool(Key,true);EditorApplication.EnterPlaymode();}
+ static void C(bool ok,string name){checks.Add((ok?"PASS|":"FAIL|")+name);if(!ok)throw new Exception(name);}
+ static IEnumerator Wait(float seconds){float end=Time.realtimeSinceStartup+seconds;while(Time.realtimeSinceStartup<end)yield return null;}
+ static IEnumerator Load(string scene){var op=SceneManager.LoadSceneAsync(scene);while(!op.isDone)yield return null;yield return Wait(.7f);}
+ static void At(Vector2 p){var player=Object.FindAnyObjectByType<PlayerController>();player.transform.position=p;player.GetComponent<Rigidbody2D>().position=p;Physics2D.SyncTransforms();}
+ static IEnumerator Close(){var p=DialoguePresenter.Instance;for(int i=0;i<25&&p.IsOpen;i++){p.Advance();yield return Wait(.04f);}yield return Wait(.1f);}
+ static Main23Site Site(Main23Site.Kind kind)=>Object.FindObjectsByType<Main23Site>(FindObjectsSortMode.None).Single(x=>x.SiteKind==kind);
+ static IEnumerator Run(){
+ GameSessionData.Reset();GameSessionData.ConfigurePlayer(PlayerVisualType.Male,"EOD통합검증");GameSessionData.SelectPlayerPath("path.mobility");GameSessionData.SelectJob("guardian");GameSessionData.ConfigureProgress(14,0);QuestService.ImportSaveData(new QuestProgressSaveData{CompletedQuestIds=new[]{Chapter3Main22Flow.QuestId,Chapter2Main21Flow.QuestId,"main_05_return_of_three","main_09_reunion_in_silence","main_15_burning_traces"}});CompanionRosterService.UnlockIntroCompanions();CompanionRosterService.UnlockPaul("guardian");CompanionRosterService.UnlockSerin();GameSaveService.SelectSlot(1);
+ C(QuestService.TryStart(Chapter3Main23Flow.QuestId),"Combined.Main23Starts");QuestService.NotifyLocationReached(Chapter3Main23Flow.Deep);Main23Progress.Observe(0);QuestService.NotifyInteraction(Chapter3Main23Flow.Traces);Main23Progress.Observe(1);QuestService.NotifyInteraction(Chapter3Main23Flow.Traces);C(Chapter3Main23Flow.Step==2,"Combined.FiveGoalDefinitionAndDistinctFlags");
+ GameSessionData.RecordLocation(Chapter3Main23Flow.Village,Chapter3Main23Flow.ArrivalSpawn);yield return Load(Chapter3Main23Flow.Village);C(Chapter3Main23Flow.Step==3,"Combined.VillageArrival");
+ C(!Object.FindObjectsByType<Transform>(FindObjectsSortMode.None).Any(x=>x.name.Contains("ART_CANDIDATE_UNAPPROVED")),"Art.UnapprovedCandidatePlacementAbsent");C(Object.FindObjectsByType<BoxCollider2D>(FindObjectsSortMode.None).Any(x=>x.name.StartsWith("VISUAL_PLACEHOLDER")),"Art.InitialKeepPlaceholdersRetained");
+ var catalog=Resources.Load<VoiceClipCatalog>("Audio/Voice/Story/StoryVoiceCatalog");C(catalog!=null,"Voice.CatalogLoadedAlongsideMain23");var so=new SerializedObject(catalog);C(so.FindProperty("entries").arraySize==312,"Voice.Catalog312");
+ var presenter=DialoguePresenter.Instance;var voice=presenter.GetComponent<VoicePlaybackSource>();
+ foreach(var item in new[]{new[]{"main21_haren_haren_01","story_haren","태온. 너 아직 멀었어."},new[]{"main21_serin_serin_01","companion_serin","검증"}}){
+ var clip=catalog.Find(item[0],item[1]);if(item[1]!="story_haren"&&clip==null)continue;C(clip!=null,"Voice.Clip."+item[0]);presenter.ShowSequence(new[]{new DialogueLine(item[1],item[1],item[2],item[0])},null);yield return Wait(.12f);C(voice.Clip==clip,"Voice.PresenterInMain23Scene."+item[0]);presenter.Hide();}
+ At(new Vector2(-3,-4));yield return Wait(.2f);C(Site(Main23Site.Kind.Guide).TryInteract(),"Combined.ResidentDialogue");yield return null;C(voice.Clip==null,"Voice.Main23PrototypeRemainsSilentNoWrongTTS");yield return Close();C(Chapter3Main23Flow.Step==4,"Combined.ResidentStepPreserved");
+ var hud=Object.FindAnyObjectByType<Main23GuidanceHud>();C(hud.CurrentText.Contains("Esc")&&hud.CurrentText.Contains("E·F"),"Accessibility.LatestCancelAndInteractionHUD");var travel=Object.FindAnyObjectByType<Main23MouseTravel>();C(travel.GoTo(Site(Main23Site.Kind.Checkpoint)),"Accessibility.KeepSceneRouteAvailable");travel.Cancel();C(!travel.IsTravelling,"Accessibility.Cancel");
+ At(Vector2.zero);yield return Wait(.2f);C(Site(Main23Site.Kind.Checkpoint).TryInteract(),"Combined.CheckpointChoice");yield return Wait(.1f);Object.FindAnyObjectByType<Main21ChoicePanel>().Select(0);yield return Close();C(Chapter3Main23Flow.Completed,"Combined.CompletedWithoutTTSInterference");C(GameSaveService.TryLoadSlot(1,out var save),"Save.ReadWithCombinedContent");GameSaveService.RestoreSession(1,save);yield return Load(save.CurrentSceneId);C(Chapter3Main23Flow.Completed&&Main23Progress.Flags==3,"Save.ContinueFlagsAndQuest");C(catalog.Find("main21_haren_haren_01","story_haren")!=null,"Save.VoiceCatalogAfterContinue");
+ At(new Vector2(0,-10));yield return Wait(.2f);C(Site(Main23Site.Kind.SouthGate).TryInteract(),"Combined.SouthGateChoice");yield return Wait(.1f);Object.FindAnyObjectByType<Main21ChoicePanel>().Select(0);yield return Wait(1f);C(SceneManager.GetActiveScene().name==Chapter3Main23Flow.Field,"Combined.SouthGateF1Return");C(Vector2.Distance(Object.FindAnyObjectByType<PlayerController>().transform.position,new Vector2(0,20))<.3f,"Combined.F1SafeSpawn");C(errors.Count==0,"Console.NoProductRuntimeErrors");C(Time.frameCount>5,"Runtime.FramesAdvanced");
+ }
+ static IEnumerator Flat(IEnumerator start){var stack=new Stack<IEnumerator>();stack.Push(start);while(stack.Count>0){var top=stack.Peek();if(!top.MoveNext()){stack.Pop();continue;}if(top.Current is IEnumerator nested){stack.Push(nested);continue;}yield return top.Current;}}
+ static void Tick(){try{if(EditorApplication.timeSinceStartup>deadline)throw new Exception("QA timeout");if(run.MoveNext())return;Finish(0);}catch(Exception e){errors.Add(e.ToString());Finish(1);}}
+ static void Finish(int code){EditorApplication.update-=Tick;SessionState.SetBool(Key,false);File.WriteAllLines(Path.Combine(Out,"checks.txt"),checks);File.WriteAllLines(Path.Combine(Out,"errors.txt"),errors);File.WriteAllText(Path.Combine(Out,"status.txt"),code==0?"PASS":"FAIL");GameSaveService.FinishAudit();UserSettingsService.FinishAudit();EditorApplication.Exit(code);}
+}}

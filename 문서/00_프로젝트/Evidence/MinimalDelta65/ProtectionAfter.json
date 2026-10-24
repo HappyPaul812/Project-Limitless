@@ -1,0 +1,34 @@
+{
+  "files": 28180,
+  "changed": [],
+  "git": [
+    {
+      "workspace": "OriginalRepository",
+      "head": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "workspace": "Temp\\Main23FirstPlayable20261023\\Worktree",
+      "head": "3f30d135738009dbe72ec9987abebe964662f3b9",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "workspace": "Temp\\ArtPilots20261023\\Worktree",
+      "head": "915105540ad8cf23071a6a00b09a30a1b3d96625",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    },
+    {
+      "workspace": "Temp\\ArtReview65\\Worktree",
+      "head": "00e6d3c441bc28583afe887997d7aedfb742ba7c",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    }
+  ]
+}

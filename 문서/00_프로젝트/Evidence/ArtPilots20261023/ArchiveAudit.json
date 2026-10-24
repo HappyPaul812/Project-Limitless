@@ -1,0 +1,52 @@
+[
+  {
+    "file": "F:\\Downloads\\Limitless_Main23_Orna_SouthGate_InnSign_ArtPilot_20261023.zip",
+    "bytes": 8008308,
+    "sha256": "425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351",
+    "expected": "425292ebd1e8a58ab7c4486f6fac39491c265d49b5db933dfe7586e69cee7351",
+    "match": true,
+    "entries": 20,
+    "crc_bad": null,
+    "files": [
+      "Buildings/SouthGate_EntryDoor_Joint_CANDIDATE.png",
+      "Buildings/SouthGate_RoofGable_Joint_CANDIDATE.png",
+      "Buildings/SouthGate_RoofTrim_Joint_CANDIDATE.png",
+      "Manifest.json",
+      "NPC/Orna_VillageGuide_512_CANDIDATE.png",
+      "NPC/Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+      "Preview/Inn_Sign_Before_After_APPROX_OFFLINE.png",
+      "Preview/Inn_Sign_Existing_vs_New_OFFLINE.png",
+      "Preview/OfflineTown_16x9_NO_UNITY.png",
+      "Preview/OfflineTown_21x9_NO_UNITY.png",
+      "Preview/OfflineTown_4x3_NO_UNITY.png",
+      "Preview/Orna_128px_FullCanvas_OFFLINE.png",
+      "Preview/Orna_40px_FullCanvas_OFFLINE.png",
+      "Preview/Orna_512_128_40_Readability_OFFLINE.png",
+      "Preview/SouthGate_Entry_Roof_Before_After_APPROX_OFFLINE.png",
+      "Preview/SouthGate_Separated_ModuleSheet_OFFLINE.png",
+      "QA/Individual_NewAsset_Sizes_SHA256.csv",
+      "QA/Offline_Art_QA.json",
+      "SHA256SUMS.txt",
+      "Signs/Inn_StandaloneSign_CANDIDATE.png"
+    ]
+  },
+  {
+    "file": "F:\\Downloads\\Limitless_Chapter1_VenomBee_OriginalKeyArt_Pilot_v1_20261023.zip",
+    "bytes": 2291579,
+    "sha256": "2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478",
+    "expected": "2e65662d68c77cfb90d7e39d9d40c2cd2816ee33882debe8a8e93ace782bd478",
+    "match": true,
+    "entries": 8,
+    "crc_bad": null,
+    "files": [
+      "Manifest.json",
+      "QA.md",
+      "SHA256SUMS.txt",
+      "SourceAndRuntimeMapping.md",
+      "VenomBee_DesignBoard_Source.png",
+      "VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+      "VenomBee_Preview_128.png",
+      "VenomBee_Preview_40.png"
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "worktrees": 85,
+  "backup_files": 14433,
+  "backup_bytes": 1636665989,
+  "original_dirty_untracked_files": 858,
+  "original_protected_files": 6842,
+  "original_protected_mismatches": [],
+  "user_file_mismatches": [],
+  "tts_source_and_original_checks": 1430,
+  "tts_protection_mismatches": []
+}

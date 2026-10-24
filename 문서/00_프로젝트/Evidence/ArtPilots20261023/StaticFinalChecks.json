@@ -1,0 +1,46 @@
+[
+  {
+    "check": "CandidatePNGByteIdentical.Frostway_Sign_Inn_REFERENCE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.Inn_StandaloneSign_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.Orna_VillageGuide_512_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "pass": true
+  },
+  {
+    "check": "CandidatePNGByteIdentical.VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+    "pass": true
+  },
+  {
+    "check": "TrackedProductFilesUnchangedAfterEnvironmentRestore",
+    "pass": true
+  },
+  {
+    "check": "FrozenDocument.Main23_Frostway_VisualGapList.csv",
+    "pass": true
+  },
+  {
+    "check": "FrozenDocument.Main24_SkillSixSlot_Save_ReadOnly_Design_20261023.md",
+    "pass": true
+  }
+]

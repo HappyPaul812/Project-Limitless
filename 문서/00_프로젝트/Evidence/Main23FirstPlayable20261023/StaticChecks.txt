@@ -1,0 +1,14 @@
+PASS|Original.HeadUnchanged
+PASS|Original.StatusUnchanged
+PASS|Original.IndexEmpty
+PASS|Original.ProtectedSHA256.Count61
+PASS|ApprovedArtPetsAndMain22Quest.NoProductDelta
+PASS|ApprovedPetSHA256.Wolf_Run6_v5.png
+PASS|ApprovedPetSHA256.Bear_Run6_v4.png
+PASS|ApprovedPetSHA256.Fox_Run6_v7.png
+PASS|F1.OnlyBoundsAndSceneRootsChanged
+PASS|F1.OnlyOldNorthWallRemoved
+PASS|BuildSettings.ConfigObjectsPreserved
+PASS|BuildSettings.SceneGUIDUnique
+PASS|Quest.ReservedIdAndFiveGoals
+PASS|Unity.FinalCompileSceneTile9Validation

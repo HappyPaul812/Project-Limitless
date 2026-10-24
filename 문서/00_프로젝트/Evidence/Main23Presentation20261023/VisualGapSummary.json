@@ -1,0 +1,15 @@
+{
+  "source": "historical v5 UnityQA/Input/v5; requested ZIP no longer present",
+  "source43_match_historical_sha256": 43,
+  "placed_png_count": 18,
+  "used_with_inherited_open16": [
+    "Buildings/Frostway_GeneralShop_Building.png",
+    "Props/Frostway_Bench.png",
+    "Buildings/Modular/Frostway_Door_StoneArch.png"
+  ],
+  "open16_unchanged": 16,
+  "resolved": 0,
+  "new_pilot_proposals": 3,
+  "csv_rows": 47,
+  "all_existing_source_png_edited": false
+}

@@ -1,0 +1,5 @@
+error: Your local changes to the following files would be overwritten by merge:
+	Unity/Client/ProjectSettings/EditorBuildSettings.asset
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 47ad2eec..26643f16

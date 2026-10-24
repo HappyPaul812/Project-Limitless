@@ -1,0 +1,21 @@
+{
+  "base_commit": "3f30d135738009dbe72ec9987abebe964662f3b9",
+  "qa_code_commit": "3bb4f9835fbb13264cf07c907a11e9eee4dc12f0",
+  "unity_version": "6000.6.5f1",
+  "execution_1_assertions": 41,
+  "capture_correction_assertions": 15,
+  "capture_correction_repeats_some_reference_assertions": true,
+  "static_checks": 11,
+  "internal_sha_manifest_checks": 38,
+  "runtime_errors": 0,
+  "compiler_errors": 0,
+  "original_QA148_rerun": false,
+  "presentation_QA136_rerun": false,
+  "art_approval": "USER_ART_REVIEW_PENDING",
+  "original_application": false,
+  "remote_push": false,
+  "environment_tracked_paths_restored": 244,
+  "actual_play_camera_ui_images": 24,
+  "unscaled_composite_images": 3,
+  "offline_diagnostic_images": 2
+}

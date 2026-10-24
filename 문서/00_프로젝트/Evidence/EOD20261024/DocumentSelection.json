@@ -1,0 +1,1393 @@
+[
+  {
+    "path": "문서/00_프로젝트/LIMITLESS_20261022_EOD_ApprovedMerge_LocalSync_SafetyContract.md",
+    "source": "origin/docs/planning",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "ce24c0ec2340f9d6498d1d0ab6fdc80deb153b0a797984805c91dd73a3445ebf"
+  },
+  {
+    "path": "문서/00_프로젝트/LIMITLESS_20261023_ArtRenewal_NonOriginal_Inventory_And_Main23_FirstPlayable_Kickoff.md",
+    "source": "origin/docs/planning",
+    "decision": "SELECT",
+    "source_sha256": "2cbc7c5a46ea6f2bbfbbbf2aa2d0c2d608d979c8c94f3d7ad8c6166a77f5a8ed"
+  },
+  {
+    "path": "문서/00_프로젝트/LIMITLESS_20261023_Chapter3_Main23_PresentationPass_Main24_SavePrep.md",
+    "source": "origin/docs/planning",
+    "decision": "SELECT",
+    "source_sha256": "2308b1eb47babc43f6455532f26a7f8c7726247a244b0c46feb6dc3d6aa76f80"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md",
+    "source": "origin/docs/planning",
+    "decision": "SELECT",
+    "source_sha256": "50ce59f0de2dab5f905a6004beab39e456b708253a720207c3140fea894fd6b9"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/PLANNING_LATEST.md",
+    "source": "origin/docs/planning",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "17a273ed1697c728d308c6dd3becd1d41d38b26c55b13500d56777a31d38a9be"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_Art59_PostCodex_MinimalDelta_Review_20261023.md",
+    "source": "origin/docs/art-new",
+    "decision": "SELECT",
+    "source_sha256": "36702dfb68ebbdaddc42ce9e7d50b86d6ef5a2349b4a65e0a6d0bed0fc5e3a7e"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_FrostwayVillage_VisualCompletion_Pilot_20261023.md",
+    "source": "origin/docs/art-new",
+    "decision": "SELECT",
+    "source_sha256": "3bba206991fc6a88170968e9fd0925a577865d9045e110f38dd95b947bda5ff6"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_Issue59_Codex65_KeepHold_PlacementDecision_20261023.md",
+    "source": "origin/docs/art-new",
+    "decision": "SELECT",
+    "source_sha256": "f305659fcd206debb97e9b3b14457782e3253427a54e8b5e8dd8e13c278e5dee"
+  },
+  {
+    "path": "문서/00_프로젝트/Chapter3_Main23_Orna_SouthGate_InnSign_ArtPilot_v1_QA_20261023.md",
+    "source": "origin/docs/art-new",
+    "decision": "SELECT",
+    "source_sha256": "5b1ac22bd59496e28bc0817ce700da9df60d082fda767442b303f1a00010345e"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md",
+    "source": "origin/docs/art-new",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "a3af9949b154c0bcfc634d00fca6eb740e8f91c3faaf142d46b12b62c6935057"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_GateGuard_Concept_Spider_PreResearch_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "d70058af88d221d45b973d6be84311ea500830c12be26af076428d4dc15dacb4"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_NonOriginal_ActiveVsStored_Audit_NPCPilot2_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "8aee87530b69b7b1d6bdc480ba035a389d83e43c6a888b54ecd1e2a27b97aa58"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "d50b91cd02d5274129314c660614abe077c4be08d051162bf6eee65ff970fdc6"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "b3f7e6c3c6019f7e9ed94f1259579b2d85f854b6720665a63a49ba7ebf896e93"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_VenomBee_OriginalKeyArt_Pilot_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "693b1b7c5165d727adaad650f4888463f7417b08a46bf6e0a9ab509f976f2656"
+  },
+  {
+    "path": "문서/00_프로젝트/Renewal_VenomBee_v1_Formal_Delivery_Verification_20261023.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "SELECT",
+    "source_sha256": "8158f475645c8ac3e925d2556dc2c8d755c064a6e93af107c45cfc3753015c6b"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/WORLD_ART_RENEWAL_LATEST.md",
+    "source": "origin/docs/art-renewal",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "386de692b3c92236e1be5ef84a51341399c5baa9a46947336525d36c485fd69f"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_20261024_162WAV_Unity_일괄통합_Codex_인계.md",
+    "source": "origin/docs/tts",
+    "decision": "SELECT",
+    "source_sha256": "5b2296f60b50cd834b734ff698fb48b4a306bb5d25d464effce1c1cdc41e9a7f"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_20261024_Post152_Haren3_VoiceFolder_SharedQuota_Runbook.md",
+    "source": "origin/docs/tts",
+    "decision": "SELECT",
+    "source_sha256": "d6ea53d2c02542c543751ff6c97b40387a75254c9cd89f5fbd672bbcad048675"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_Main21_Haren_R2_1_기존WAV실종_메타장부검증_20261024.md",
+    "source": "origin/docs/tts",
+    "decision": "SELECT",
+    "source_sha256": "64968bdc139d247a7dbcf6b8d6ab88793679348e378fa59fe40cd1346a39f27a"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_Main21_하렌01_의문문재발_교정_R2_20261024.md",
+    "source": "origin/docs/tts",
+    "decision": "SELECT",
+    "source_sha256": "fa3b896eab87538404c977d654b3bd2c47eb6723e7fc24d99f20993526efe2bc"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/담당/TTS.md",
+    "source": "origin/docs/tts",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "861e5f92a0ee79ef625afcd65d358860c81dc1e12d405e3aaec5462c5923e702"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/TTS_LATEST.md",
+    "source": "origin/docs/tts",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "29c359773801ad925e18a0650b5bf42e6ea821456d0b3c4b20073fe1516aeb8d"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/인계/BGM_LATEST.md",
+    "source": "origin/docs/bgm",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "7a2520ebd7190cf612fa3379d1334f23ff328493cc5a4c989dc2dae40cbd2b72"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/DeltaChecks.txt",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8c71d81340670e986b5f85396307c78b202435422ad4d782f2fa52f4612e2d4a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/F1DeltaProof.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "4b47cb4a58e613809184d620cbaa4b9d9df445f561505cb84d509092ecc8f26a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/F1_TwoTraces_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8c66c7852959e9c38590ed5af2f565a3530d9b1c8ead7984d2ec0bf679667990"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/PlayChecks.txt",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "49bb49e5d5fd798323853d171224f359751949a92479f111a74cdb2c1563a6ae"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/StaticChecks.txt",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "85d9af5302f2d0572fe22af0d0e09878141a18b70951e2ebbef394c6d0b7b076"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/Village_Testimony_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1c351ca53cbcdb93efbd917355adb2532ead98ee8d14cbfda2d356a0a18f105b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/Village_UnityCameraUI_1280x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d92f07205d3ee2a6eff7ca435f21197ac32c76f39ce10d163a2200e79f3e6b06"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/Village_UnityCameraUI_1680x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d4a4cbab3aebd9c66166fe22317f4ad8a2711f8726b77b20dee7eb37a354383d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23FirstPlayable20261023/Village_UnityCameraUI_960x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fdaf4aa73e88b829facc5cc13e427cd8f6dbd434622ed2c4b7f87477d682c612"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/CandidateRendererMap.csv",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b8443a75be16dc5167f09d85635e0102173daba247823016b8e1e93f80200582"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/DeltaChecks.txt",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "97e01a8c2ae242a5a42b7af5189835c52dcc1eeac0e741a2156c1a9f4605fc7d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/East_InactivePortal_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "954c37a099ac5710887e8377e31a74cc8ac6f2737ced862434a6ae855de603ab"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/FinalResult.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "58368b46513829a0b1f7616890962d2a8d6bf99af44ba02c4fb5c5c67b490503"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Goals/Goal1_DeepDestination.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "511c039a01ea97533993c69e5a87c30efa19f8f3aeb8c3763d710ecbe8c6a6a2"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Goals/Goal2_DistinctTrace.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d285a0943b2f0d787c4bb0b3065dba899db2491b417b262c90f0e64e690f4976"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Goals/Goal3_VillageDestination.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f9bb318d66f7a88679b8cc72d8e1ff464a11b6db7300845082a7a88496c8da03"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Goals/Goal4_ResidentDestination.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a95d71391100081a63dfc28f832bc531a212614026657fc873f618f6a18d0b15"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Goals/Goal5_CheckpointDestination.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0e006594002aec81aabdb369219e634c5b2297be1b8e8e4d9b6ce4188f916809"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Inherited_OPEN16.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "688ce298d5cbd8737ee8c2f83355e908919ca08d47227cfc97bd368db7283c5e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/North_F2Closed_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "4175219bcddd20e60d4db22bf6afff18cd3a771e33bf6964891427e3784f8cad"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Source43.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "2a6252eac2571580a7e16b49ef92994e1af976226f057c1eb842a62aa844bbfc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/South_ResidentAndShops_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "5285dd043e11233e23164f0a87a697018b8c75053a74d182cede0470e5c8492b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/StaticChecks.txt",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a1ad6519bf9fe347eaefcba2c316ef12173b35e7c3f9edac4ef5ffe8b993c459"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/VillageDeltaProof.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "113f4f14ee0ea3b5d354415994300d32ad814838abf73422ea9560b911a927a6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Village_Presentation_1280x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "28933f5f4799c2fb9e68036f0663f734d097f66fcfbf3a76f706bf78de15073e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Village_Presentation_1680x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3b492da51e566821816a813a92790175992d253db63460a28af80da56e165543"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/Village_Presentation_960x720.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a0483e2908c50ac62bb51dded191958b1c08ef7327a177a8fee95a7573bd7780"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/VisualGapSummary.json",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "5bfeab3a312f46d221249a72ffe2623ded2f82b13f71443f5d3091a9bf050a0f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/Main23Presentation20261023/West_ModularCandidate_UnityCameraUI.png",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b794f1d105b7435faa8bdf7f065feda594083ac4576fb8e6d860ed1aa14d97a1"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_FirstPlayable_20261023.md",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0ba1cc5e7fffe9919e748524944a07e7202a277eb1858cebd35761ce24ef576e"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_Frostway_VisualGapList.csv",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "5973756bd0d2bf6e3a77ad7a9073e8823aac24acd3db2e16d932557ed2562bde"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_PresentationPass_20261023.md",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b9714a6fee68cffecf46d04d37d5e273158add0d57c7f4e3999f86c72be47155"
+  },
+  {
+    "path": "문서/00_프로젝트/Main24_SkillSixSlot_Save_ReadOnly_Design_20261023.md",
+    "source": "codex/chapter3-main23-first-playable-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7f5b6bab55933d18722bd7cbce12b23ad5d37198f86ac689fb07e3472a0d0362"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/applied.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "6a5826b034b20665e53e6c7d66a0b88b4f4d56737438a418c3ab2a2680eae184"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/mapping_verified.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "d165c5d7f426b02ad60b2aea6d5f403e7ba8538cb55c2fa918d87235f709ef01"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/original_protection.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "8abecd6b1933d232b3de05f3485cef01a4abc15351fbc0be38faf23125968a7a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/runtime-first-fixture-fail.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "53d0619cc0b59d163179dcb8e01af06c1cbda086932bdaa3a308885939699828"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/runtime.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "ee2d34cf9002a940585dcc2fadef93d821732a44707f1b75a32cdc37b7eee92c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/runtime_dialogues.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "268be57dbbf5782e6f27bf4cb5376232d7bf82f25467dcf52a197d4c03484145"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/unity_changed_files.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "33ef32ec1ab4dc63bc6c11f3c6caaa60da8915c958706f20761511426a8464c8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/TTS162Integration20261024/unity_environment_and_console.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "af59c7bdcd842f65b385db1b3c59183ad7bc8a7012f843d406974591ec8ac99c"
+  },
+  {
+    "path": "문서/00_프로젝트/Main20_TTS_Manifest.csv",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "daccf745f2960acbda275295f2e6f1cc0aaa880e3b4d536e32d34a3c48ede03e"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_162WAV_Unity_Integration_QA_20261024.md",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "f8fea3422fa22ec35f2eb2ffda5a2e6fbb8c4732537d2df823f8d6d995fb5d9a"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_20261024_162WAV_Unity_일괄통합_Codex_인계.md",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "cfe6e3161cf1d221a2862b93ec240089d30167a70a6f47d2ff0ea00ecb542f56"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_Main21_기존보존_7WAV_통합대기_20261022.md",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "c9d6f7f9a1a6aa480745a6bd87db5be8c47d397cd9b65a6e38b4ffba1e297979"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_Renewal_Voices_152_OriginalDialogue_Manifest_20261020.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "SELECT",
+    "source_sha256": "075371745a674f9bcce20e19ef244ba8165ebc062a7574f1c5495bd182476fe8"
+  },
+  {
+    "path": "문서/00_프로젝트/TTS_음성_제작_정책.md",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "MERGE_HISTORY",
+    "source_sha256": "d0963fc8af78a12e9c9731b73f31b5c52b56c013fc09681e0d55026d022d899f"
+  },
+  {
+    "path": "문서/03_스토리/Main21_TTS_Manifest_20261010.json",
+    "source": "codex/tts-voice-integration-20261024",
+    "decision": "HOLD_JSON_CONFLICT"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/AlphaHistogram.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1a918766ef015a2003247697bed3b48f521f27adf1a04fd60ffab2d73bb2c383"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/ArchiveAudit.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a3fc0e7a8dc0400911196c3be5a0aad97b538e7556916822f0cb09a73594345b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Chapter2FiveReferenceMapping.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "ca9a2ccfbdd75f23e7f2d1040bee30c1d858fc6c2089e801005ffc139b586d5e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Corrected_RuntimeRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "534b9470e7fd4263d1cd05495c81d6e723f1c2dc8ebf697df2e9fff691959b4e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Corrected_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fdb27d5c6f5f7af9e1afeadd52f90a30c97051fda3fe6d9e1d7a250b6b103764"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/ExecutionSummary.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "dd26f26f67e6c9ec3075508cab895fb70d0290db592fa0d53b706c5efbc8149f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/ImageIndex.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "063eb459a0326ed405f9256b838d0a0567f0d37a900c9597ab3cd169ff7e0855"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Initial_LiveBeeFrame.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "032a828a152ac957af6411188cd5e458876accf54af7c0c0a2cbe7a2dfe49105"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Initial_RuntimeRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "be1d7e69b0c0a2918ed541731d32f9d9a47248a78619f9a6e42afb2b31b893d3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Initial_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "aa08a63056700b43cea3ca37e1bccf921870db3bb81b22447ab1e0280beaa26f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Inn_BeforeAfter_UnityComparison_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3990216bdb22ad0a4c7971bc2f6a39a41d7c8238e6f9c2a4dfc42fdd6a0511dc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/InternalManifestChecks.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "88df791be8b4e4715e6d0a5adbc6c63d72178261afc8711d080985b02ddb6893"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/LiveBeeFrame.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "032a828a152ac957af6411188cd5e458876accf54af7c0c0a2cbe7a2dfe49105"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/OFFLINE_Alpha_3Backgrounds_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b74364122080238a22e2fa0c23a4a799bb22e3c2b85fc76a5b8c196971640f73"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/OFFLINE_ExistingBee_Idle10_Attack10_SourceCells.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d4ded7f3653e240cfb3c7cdef51a955e73d62ab870797bf314dd40c020a87e40"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Orna_Scale_UnityComparison_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3ad47836da6953412c8127cb03d4093d28ead809cb1c2e41762a33608b0e7d10"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/PilotBeeOriginalArchive.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fb37661f8585709cea99b7e9849cdae223786ded79c49983349b251a5f63177e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/PngAudit.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e1aac7898871af8b3572aa8f552d24c02bcca8d536afe1ee2e57600a5f39efad"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/ProtectionAfter.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "ed2d97f139bf5d6d182d9d265a99e3026d52f5024c406a454509a5599c4f702d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Reproduce.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a57ad19326f8de30906ee6dc907412d545e4faea7f4034a744b79ac50868e64b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/RoofOverlapMeasurement.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "70b9ca66d392e5102f206d8500a5fcef4f45427fd7dc19833a4d22caccbd48e5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Roof_BeforeAfter_UnityComparison_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "4756ac1b69c8021c69889df11afb5af4eef09146dc9acc7b5e1af64faef534a7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/RuntimeRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "55d0d6f39b7f303f98f1c63b4afede2a7bcd2584ca59b5d19df688eae5990dcc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/StaticFinalChecks.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f94b2f390dd1a11ffa2fdbab417ec1f8489d1a4d9347e4166a9e268f85725a75"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Tools/alpha_board.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "9d75b4d310599a4ad9cc8bf53faa79a5adb7e91b7528f3391bcdc9ba63fd3874"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Tools/audit_delta.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "51ff5c1686f15475a775a358ac6ac19132e08c8951218c5c23703c2d70a35e4a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Tools/ch2_mapping.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1dea4f18c59bf2ebf71e36dd4da1c39eb3dc4ae30d70a0be10c45adedb217662"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Tools/collect.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e05cdf62658adb311977194514e825a9f286863262b6c9161b5e775f6dfcdfcf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/Tools/original_zip.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3c4a206b175f4701c9967ff009a52ba27ec12544981d18a487ea8bb389810b8b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_CandidateRightFacing_PREVIEW_ONLY.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "447f0dc0d3d58a60dbc7b821fc01fb95ffd914ec7ec9689b56d419692a23aea4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_Ch2_Comparison_UnityCanvas_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "07d177712e584a70db83c3620375782facceae7392a93a5c0a5461704d689d7c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_Ch2_Comparison_UnityCanvas_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b4eb2946e3012a51a19c782d89d167c6911d4c57e83c031f05442ed807b330b5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_Ch2_Comparison_UnityCanvas_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0c228ce8d9f679b6b6f88564f038e7eb2371234ce98d32d73cd3983d46b77777"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_OldAndNew_ActualField01_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fb3efb3bc357098660486ec35146840f0a348abb4be5697e10b3667baa2eecef"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_OldAndNew_ActualField01_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7bdc813be9c89e728ec26275a0379c2087bca074dedfe6c1ee61f945f616e4a4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Bee_OldAndNew_ActualField01_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "ddb116cbaa8ac4b3b1bd85016d654d4b1df57d3c45c33a6f2b6c27932a2e3d01"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_ExistingBee_ActualField01_Attack.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "71573b9233a2b9acb1613ba6ab192a3f31d6a95dcea90652d359669df629452f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_ExistingBee_ActualField01_Idle.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "6f61269e70ebde455007db4a3a2bb64df7a5fad54ab10787808586d793b5ec8e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Inn_Before_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "cbee0805ae15a9028219e88890c7e5456515a2279838af6328ecaed8171f6eaf"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Inn_NewSign_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "56f562e9730504d11ad560cf79665ccef8b01bb6fdf4290c3a73f31cc3d7f701"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Inn_NewSign_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8038bb3b197c38ac7246cb545e33715a97e2c811eff3a50897a03e401cd51cef"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Inn_NewSign_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "4fe65779cc37a146663167157464b584f312593dc0ab118d4846eb2d9fcdac98"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Inn_OldSignReference_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fe793a3d5a4d3d9aea7f74c3d2a2d1461c6b030dbef421fc780b3aa0c2cc4001"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Orna128_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d1eed92c90a1ffbcd74af2c74009b706f5d2e477aa5b791ee5ee2024dcb885d8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Orna40_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7deeb0543315d0cff84c0de72a9cb73254cecf2daa5a818ec5da195b7db094fc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Orna40_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a4e9523b7ff4d9580ebd4c518be0e0b8dc78d4271726e69677dbb20579a89c66"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Orna40_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3ba59469e9c16c347af9f88156742fabf63da427a6e166d32bc15657a6e23f31"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_Orna_Before_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "34f0b41c68d94a384493b88dd37fad04b4c84bda449e01030352fd5230bcad72"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_SouthGateModule_ActualResidence_Before_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "37f0a0161b30949f2a6e33df8724f21ec2f1a228e9fd31fd29fd7e6e3c85da25"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_SouthGate_DoorOnly_MINIMAL_OPTION_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "ae911eadd5d96f2dccb5972927d7b3804ec96cfdcd16bea9bcc7555fe0782dc4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_SouthGate_DoubleRoof_ART_HOLD_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8cb6e57cd3e449c691ecd41054b9f5eb6a36ed1ec2945c94895394371a704b71"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_SouthGate_DoubleRoof_ART_HOLD_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "804249d395495feedfa41d369ef4c1a0fb56d8d5e344e2c98ddc4ac7693ec4b9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/UNAPPROVED_SouthGate_DoubleRoof_ART_HOLD_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1bc769d3c42b5aafe0070cafc9e7e8c0e117546cca47ddc2d72cc2c94a330218"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtPilots20261023/VenomBeeSourceMapping.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1b15db0a5e91c17f2175cf6f41b83f6223ee470c6f2d54b44a63973962cba283"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/A64_Bee_Ch2_Original_UnityBoard_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0c228ce8d9f679b6b6f88564f038e7eb2371234ce98d32d73cd3983d46b77777"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/A64_Bee_RightFacing_PREVIEW_ONLY.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "447f0dc0d3d58a60dbc7b821fc01fb95ffd914ec7ec9689b56d419692a23aea4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/A64_OFFLINE_Alpha_3Backgrounds.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b74364122080238a22e2fa0c23a4a799bb22e3c2b85fc76a5b8c196971640f73"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/A_OriginalGapThreeRows.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e7044b5c09c838f0aea5f9290299674bdcb6fc8e9a9835004101aebf2de7a57b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/B_FinalFrames_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b8e4e1c5b291fa1fc834cdd64be1be48426156abd2f280e66ddf284c2b1f9697"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/B_New65_RuntimeRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1988e3a5f35f6f9f646cd549258663636fdc7c17b207277065e7b2bc8ec636cd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/B_New65_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3dcdb288b17e48db7421f3fe534db13b90dcc9e524de69965548252325e67988"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Board1_Orna_40_82_96_128_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "66cbe5ea6e6f12cf4f79f0b1ea144245bfc4cfd22ddb3f5af9689442874f87f7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8c01be54b4a2eeaf66c3c3d1f2f811d229efb2b84a7cddddd55dd7da4973eb25"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Board3_Inn_OneSign_KEEP_OLD.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fd1d3f4e7d5baa1eccb9fab3a3c5e67c53d881a67b59cf96bac0e4b2746583a1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/BoardSourceMap.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "83205fb3b973bd961f2d844733a93f24843f730fe9351b916b52b01a60823e0f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ExecutionSummary.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "5beca3445b12f32de7bc5251453f4799a0f94f607d9ac147442383a86d688b33"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/GitHubHandoffReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "aa501abd6fe7eedd23b7c8163ed8b378ea525e5969811b22c1d8f79f2530761a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ImageIndex_SHA256.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e2e0882139f5d84024c6913cd005c50e761cea5ca75de2591a26d24f000f3b6c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Overview_4Topics_SCALED_ContactSheet.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "cbefa8c27b053425f12c645c9a70ab4063023fc8fadb2e7efccd82d7be8420e6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ProtectionAfter.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "94626ced1be03fe928ed28e5e11fde90b3807236c57383ebc8ae6f616a4a7744"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Reproduce65.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "096785f5ff90f11d5618b2b85e820a625b76a78af2e034679498064dbe980050"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ReuseReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1e338b4d23c1a44f9a42e8a0a8fee27d0486501829627dd4c6e2709118c48bd9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ReviewPackageReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d8a9b0462ff4eea3ba919b50bfa6f3a201b2a2ce052acb7421e2fe1927859957"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/ReviewViewer.html",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "33fad4e2692e5d74a6faf4ccbdbc19d8ab242ab0ca0424fcf1f6ce3aa708716d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/StaticChecks.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "64b3a3380f77a68b43e4f2cf8493c9c17ee2716ae7cbb6ce64a0d824b2debd26"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/Tools/boards.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "01566bb4706857d3fc63d01c4ac1ca80856103e82803cef491c4ece725b83d6f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_EntryDoor_WheelchairPocket.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d009543912d45475ff5a40a55d00bd24e930449b5efc796aa041d00ac60b3820"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Inn_KEEP_OLD_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "442d9dff84937fc743f2f876075433f596a71dd98ede122c1040fdd8b30cc33c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Inn_KEEP_OLD_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "845fb95176548c902b1028f79bf79833e0d625d1efb8013ac016a104f33c19a3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Inn_KEEP_OLD_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "6bdd78f0eac9de554175d53c82122201d9087255327e4fe1a2d47e7430c6e87f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna128_ReferencePlayer_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "976d4c1b35b8c803dfe9b5f15f10a9b5e566670294f42252a834868550399b5d"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna128_ReferencePlayer_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3b40a6ddf8300f8182c4f2c5b63956c96838933ea7366be10b440d3407561b46"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna128_ReferencePlayer_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "6faa5527a428a1068a9361f27b384a2dc1ad4a35eaa8fe1e4a6e281e8d6315d7"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna128_WheelchairFront.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f92fcac05a91f20db0aad897bd8064000b0ad059117ebea305cfa1abce681369"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna40_ReferencePlayer_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3b1056cbe41988ad8234addd79237a738c9e982670e53c8468408ea2465da3cc"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna40_ReferencePlayer_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "9f21a0a84bf1937397bdb24a7ed8b71606e9f5af9c42b068051879dd9d809acb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna40_ReferencePlayer_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "30d7032a70ca8d0a537bba807bd3336719c6f1d3f1466ce0631ed51e322d9246"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna40_WheelchairFront.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8ca1f373692cbf4220156b2e27102e6a6c1b3d12712b5fefbf9cbadc51c19605"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna82_ReferencePlayer_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "2283cb2bebb0f6084b0c512165d7b4401163bc9fd74cd09c071364382b3b2db3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna96_ReferencePlayer_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b8da60087d10aa162a0e41b0dc1a5294a261bb7264ac9fbde5cc93f0c2cc5b8b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Orna96_WheelchairFront.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a81378b1368b1348aad6c6069396aac582d30b3cff1ef808fc6f84c8bd4b15c8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_EntryDoorOnly_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "276d81ee624ed5f4ea69db078c5ef6d74e8507502b3b87120fea2ce01914afc9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_EntryDoorOnly_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "62df82191fbe2ea607ad552450319cd5fc27228f132ad9c0b1ff326c3adcf628"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_EntryDoorOnly_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "05941279595335adb91e66eba15773f0c56b3cc998b137a3b1090d6ffec1ac71"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_KEEP_OLD_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "42996ee6b4f04b8ecd85a56c6d7d5528dbdeb862baac1d5f2bd0ebfd58da1cde"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_KEEP_OLD_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e5942ee92f8b12db81965ff7099590bc1deb009d65b6804159440c6bfda23867"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/ArtReview65/UNAPPROVED_NEW65_Residence_KEEP_OLD_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3cace5c968bcc79f566111f068027b58d424596ea9828046069e9d049dd3cfe5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_A64_Bee_Ch2_Original_UnityBoard_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0c228ce8d9f679b6b6f88564f038e7eb2371234ce98d32d73cd3983d46b77777"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_A64_Bee_RightFacing_PREVIEW_ONLY.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "447f0dc0d3d58a60dbc7b821fc01fb95ffd914ec7ec9689b56d419692a23aea4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_A64_OFFLINE_Alpha_3Backgrounds.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b74364122080238a22e2fa0c23a4a799bb22e3c2b85fc76a5b8c196971640f73"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_B_FinalFrames_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b8e4e1c5b291fa1fc834cdd64be1be48426156abd2f280e66ddf284c2b1f9697"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_B_New65_RuntimeRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1988e3a5f35f6f9f646cd549258663636fdc7c17b207277065e7b2bc8ec636cd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_B_New65_checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3dcdb288b17e48db7421f3fe534db13b90dcc9e524de69965548252325e67988"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8c01be54b4a2eeaf66c3c3d1f2f811d229efb2b84a7cddddd55dd7da4973eb25"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_Board3_Inn_OneSign_KEEP_OLD.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fd1d3f4e7d5baa1eccb9fab3a3c5e67c53d881a67b59cf96bac0e4b2746583a1"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_EntryDoor_WheelchairPocket.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d009543912d45475ff5a40a55d00bd24e930449b5efc796aa041d00ac60b3820"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "442d9dff84937fc743f2f876075433f596a71dd98ede122c1040fdd8b30cc33c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "845fb95176548c902b1028f79bf79833e0d625d1efb8013ac016a104f33c19a3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "6bdd78f0eac9de554175d53c82122201d9087255327e4fe1a2d47e7430c6e87f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "276d81ee624ed5f4ea69db078c5ef6d74e8507502b3b87120fea2ce01914afc9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "62df82191fbe2ea607ad552450319cd5fc27228f132ad9c0b1ff326c3adcf628"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "05941279595335adb91e66eba15773f0c56b3cc998b137a3b1090d6ffec1ac71"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "42996ee6b4f04b8ecd85a56c6d7d5528dbdeb862baac1d5f2bd0ebfd58da1cde"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "e5942ee92f8b12db81965ff7099590bc1deb009d65b6804159440c6bfda23867"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3cace5c968bcc79f566111f068027b58d424596ea9828046069e9d049dd3cfe5"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/B_BoardSources.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "1c57fd0c22e6b7d608b41477cdc54b9efc9e7e02a3486443883cfbb2afaec144"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/B_NewDelta23Checks.txt",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a344e6201426bf784c5db95fe7c041137bf394656a4f618ba01078ddba7ef913"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/B_Orna_Visible40_80_96_128_UnityCrops_UNAPPROVED.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "8fb0c1cff9268e02760bdad84364169ec705a77e1ed154397a803d5c458eb566"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ExecutionSummary.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "145dd8484b2f82fff55e13f80ddbd5e631d0534e333175767ef2dcc1e1681451"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/FrozenProductPaths.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "705d705cbdc7900408f819489a497a2c206a2e491aea4508b4b578ddbf963df4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/GitHubHandoffReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "41fe43fac4a95bbba1e94f3ae53c42109b6beb421d3f591c65684eb1f9285b7b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/INPUT_OFFLINE_Inn_KeepOriginal_vs_DuplicateStandalone_APPROX_OFFLINE.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f7e83059ee85bacf6f570169658f841cb17798561cccf7868bc4bb8a2434eff0"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/INPUT_OFFLINE_Orna_40_80_96_128_Height_ABCD_OFFLINE.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "376cd07592168488bef968bc1ccb29ab9bdb9e944cb386c6bab68206bdf4137b"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/INPUT_OFFLINE_SouthGate_Residence_Keep_vs_DoubleRoof_vs_DoorOnly_APPROX_OFFLINE.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "52172ca356109fe4455b7ffab197f4509c72fb6f6d77ea044d1b545f64010009"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ImageIndex_SHA256.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3130a9b1e640da72dc73dbf28bf5914aca6ee3af7382021bc34607d1f16b51c3"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/OfflinePreviewInfo.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7f2102a7216a38eb2b994ec2c1219f5d0c01a48d67558b9d57e50e683b8ce89c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/OrnaReferenceRendererMap.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "5e05ee0c13ba39c067d215c17b386933d0bb6acafee793c80fcff35aa0e10362"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/OutputPackageReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "083e6973cf8fbd96a6631a4c17b4d17ac27ca9af8ff52546c2f4850058bc6a78"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/Overview_SCALED_4Topics.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f28f3edeb4cb566d86ee83e6f7b9db550063b2d527dd7ca8b9c643dd1799f563"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ProtectionAfter.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3795ecbedbe24b7dc5a973af282f5bfd432fc30299cfc7e35e39da65c38afd66"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ReusedEvidenceReceipt.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "697d5c82430f586d797e7285b04b032c6fcc1fd94cf54feb4c1649194703f8c4"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ReviewViewer.html",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d7e4a305c48f5fea8665bbb6f19d9352cb24e6cebcac4f73611de91403687cdb"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ScaleDefinition.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "276e86b6140bbb1672639072a02a6b70403d49da55937e58f323b6ab7bce586f"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/StaticPackageChecks.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a6caef744aca68de049764c0234cf3b3c8984a35d045ef3840cf0a2eaf48ec8c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/Tools/boards.py",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "817d28a167c6588e0263ad21437a561eb02c1d9052e6ddcef750fa0c319201d6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible128_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "dc9ccec548efce9f60eefd5b2be3e4f3dd33790f26291b315d9716d50728b52c"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible128_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "fdb2a81bdc3a2489c581158278d4dd073b74929944064e00de61083456e5412e"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible128_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "597291131fc8ac1ecaeaee74ac7a0a7847d0df50a2af1fd9b2bd6a3a9c9ba306"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible128_WheelchairFront.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "be1f775eead2ecb855f49966de99d561d49614e6420b28590e3584c6f1965920"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible40_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d23434ce1d6bd77dcbf145a0b81df715bde21fcac49f5c17b52c47f489217306"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible40_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "9e53b6bea61554828f559f2b4f6cea652e6566d77d6d98a420dabd120bdfd8da"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible40_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0cfc0614227120899358c0060f65b67e2ed73c77ffe64893dc36153257862207"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible80_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a734996be39e8c685314bb5cba678a9a25e76eaa89e6d3bc34e7b58c0ba1477a"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible80_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "dcd08c39d5a403f29ee6b01f7d333ca55dc5e654136ef594c2a238bfd9e77a72"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible80_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "6072ca2d243aea6e71cef56df5b2c10e2f5b8ed04eb218563f6b69e267765cbd"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible80_WheelchairFront.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "230ae470cb37134b2ed4adb8135d80efd31e22135ba628947a65ed66becb27f9"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible96_1280x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7a90dfcf070c190fc5225df94c29b6afb7c5f52574a0cfcb48f2b0371d9670db"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible96_1680x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "d5bfc60968c8859634783d51a9811ffdfd42102a31e451c26aed8b7d690f73d6"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/UNAPPROVED_MinimalFinal_OrnaVisible96_960x720.png",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "71e75df479634d7e59460c9b281f3caf41ef0771bdfd87c1582989bd71391cf8"
+  },
+  {
+    "path": "문서/00_프로젝트/Evidence/MinimalDelta65/ZipAudit.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "f83cf51cb70f1b6c91fb6633630c1a877b79e9940b73ad507f4d8fafa9486d41"
+  },
+  {
+    "path": "문서/00_프로젝트/Issue65_ArtReview_Contract_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "b6ad0f2fbecb2c4f814084c8c75d73f7ddf7d709871c4ba3620c15ccc6eb00b7"
+  },
+  {
+    "path": "문서/00_프로젝트/Issue65_ArtReview_FileProblems.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "ee3f58d2cf9ca4af83aee6f2ad9966a2d91113aeaa69f3740d9fb0a766e29c32"
+  },
+  {
+    "path": "문서/00_프로젝트/Issue65_ArtReview_MinimalDelta_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a47cf3757d9add93f5a21d1e72f9dad58e707c262dc9764bd2bf6ee967a49e62"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_SouthGate_Contract_ReadOnly_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "9800e8f91f348a82ec24a4613af33b22ad14bf6c81153598d57ad4070086a267"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_SouthGate_Contract_SourceSHA_20261023.json",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "3d63bd998e20b3324752d3de565434a0eddfd092740a13f5c6dc8efd954cf3f8"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_VenomBee_ArtPilot_Problems_20261023.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "03658c526524dda1a3597a51918df7b994e37081dad1069391ec1e6299ed9725"
+  },
+  {
+    "path": "문서/00_프로젝트/Main23_VenomBee_Art_Pilot_ActualUnityDeltaQA_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "912b307551d2aa2b4ec98294fdb77dd36b1201d92ded0dca3bf159f213b4c950"
+  },
+  {
+    "path": "문서/00_프로젝트/MinimalDelta65_FileProblems.csv",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "a29119e5b3fb52b26e02b8d5d1fd94cf08c0bd83c821f0c57c869cf38ced6e32"
+  },
+  {
+    "path": "문서/00_프로젝트/MinimalDelta65_Final_Contract_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "7f4e46344f1b6fc04b1b25ce350ea153420160c7dc6577f0303cd9749646389a"
+  },
+  {
+    "path": "문서/00_프로젝트/MinimalDelta65_Final_Unity_Review_20261023.md",
+    "source": "codex/main23-southgate-contract-readonly-20261023",
+    "decision": "SELECT",
+    "source_sha256": "0e3f7a48597c3781ba66b62caa1af522aa9be68f0b05e8062baee6b06bbfce86"
+  }
+]

@@ -883,3 +883,69 @@ MonoBehaviour:
   - id: main18_watcher_witness_serin_02
     clip: {fileID: 8300000, guid: 3b569239107140fca3f7bb116411d994, type: 3}
     speakerId: companion_serin
+  - id: main20_confront_serin_01
+    clip: {fileID: 8300000, guid: 6c99e96cbeb7d444c84c45f362121213, type: 3}
+    speakerId: companion_serin
+  - id: main20_confront_serin_02
+    clip: {fileID: 8300000, guid: f12e67eb723aa4a4a9ecae3e8f1dddff, type: 3}
+    speakerId: companion_serin
+  - id: main20_confront_serin_03
+    clip: {fileID: 8300000, guid: 8f5d03d51e4941d42b9907a6fddd3cc2, type: 3}
+    speakerId: companion_serin
+  - id: main20_after_colossus_serin_01
+    clip: {fileID: 8300000, guid: 02ef6eefaa45cf043b647651f956f8f6, type: 3}
+    speakerId: companion_serin
+  - id: main20_after_colossus_serin_02
+    clip: {fileID: 8300000, guid: 77892256d84610d4ba52116058660b0b, type: 3}
+    speakerId: companion_serin
+  - id: main21_heat_serin_01
+    clip: {fileID: 8300000, guid: 21ec9d3ba0f912049a5c19813f68ed25, type: 3}
+    speakerId: companion_serin
+  - id: main21_pulse_serin_01
+    clip: {fileID: 8300000, guid: 8d0f7f02e01d8d24fa8a5336be0ca7bf, type: 3}
+    speakerId: companion_serin
+  - id: main21_route_serin_01
+    clip: {fileID: 8300000, guid: cef17822d47d247408dee8da5f04fb87, type: 3}
+    speakerId: companion_serin
+  - id: main21_route_taeon_01
+    clip: {fileID: 8300000, guid: ba452e706f1678343b9b6fa312bec888, type: 3}
+    speakerId: companion_taeon
+  - id: main21_haren_taeon_01
+    clip: {fileID: 8300000, guid: 67b2fd14fe6f8f645b902293e254ccad, type: 3}
+    speakerId: companion_taeon
+  - id: main21_haren_taeon_02
+    clip: {fileID: 8300000, guid: 1abd1caa9d07bed46b0bdb5ce9e4d095, type: 3}
+    speakerId: companion_taeon
+  - id: main21_prepare_serin_01
+    clip: {fileID: 8300000, guid: f237d4ac74f03ac4c8549e7252ddc634, type: 3}
+    speakerId: companion_serin
+  - id: main21_route_paul_01
+    clip: {fileID: 8300000, guid: e7b16c2e093b3ff41b57f05b1a632f02, type: 3}
+    speakerId: companion_paul
+  - id: main21_route_paul_02
+    clip: {fileID: 8300000, guid: ce328c781e831be4584344346a3a6d9e, type: 3}
+    speakerId: companion_paul
+  - id: main21_arbel_leon_01
+    clip: {fileID: 8300000, guid: 936cb48e8bcc38b4fa9c397ec4b8bf8d, type: 3}
+    speakerId: arbel-leon
+  - id: main21_aid_miel_01
+    clip: {fileID: 8300000, guid: 89dfe60cfaf4c3945a760a667dd7cde8, type: 3}
+    speakerId: companion_miel
+  - id: main21_aid_paul_01
+    clip: {fileID: 8300000, guid: 898e6e9fc2e4e0a4a92bda8fb65dddd2, type: 3}
+    speakerId: companion_paul
+  - id: main21_aid_miel_02
+    clip: {fileID: 8300000, guid: aae84a25bbdfb254dabba1407e17caea, type: 3}
+    speakerId: companion_miel
+  - id: main21_carriage_leon_01
+    clip: {fileID: 8300000, guid: 9af51f62589cf8242aed3cf5ff4856bd, type: 3}
+    speakerId: arbel-leon
+  - id: main21_haren_haren_01
+    clip: {fileID: 8300000, guid: 89c98a507f1193244a09addc3c6b08d0, type: 3}
+    speakerId: story_haren
+  - id: main21_haren_haren_02
+    clip: {fileID: 8300000, guid: c818bad40c1e59846bbd209c87b8b687, type: 3}
+    speakerId: story_haren
+  - id: main21_haren_haren_03
+    clip: {fileID: 8300000, guid: 60f8d8bc334faa64f89cb5e2c574a672, type: 3}
+    speakerId: story_haren

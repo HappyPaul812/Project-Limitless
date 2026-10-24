@@ -17,6 +17,7 @@ namespace ProjectLimitless.World
         // 향후 정식 거점이 생기면 해당 안전 영역 안에서 검증한 좌표를 이 목록에 등록합니다.
         private static readonly ServiceSite[] Sites =
         {
+            new ServiceSite("safezone_frostway_village", "World_FrostwayVillage", new Vector2(-6, 5), new Vector2(6, 5)),
             new ServiceSite("safezone_starter_village", "World_StarterVillage",
                 new Vector2(-5.8f, -3.6f), new Vector2(5.8f, -3.6f)),
             new ServiceSite("safezone_arbel", "Arbel", new Vector2(5, -3), new Vector2(7, -3)),
@@ -90,6 +91,7 @@ namespace ProjectLimitless.World
                 foreach (VillageNpcRole existing in root.GetComponentsInChildren<VillageNpcRole>(false))
                     if (existing.Role == role) return;
             string id = site.Id + "-" + suffix;
+            if(site.Scene=="World_FrostwayVillage") displayName += " / 임시 외형";
             created = new GameObject(id, typeof(SpriteRenderer), typeof(NpcController), typeof(VillageNpcRole));
             created.transform.SetParent(transform, false);
             created.transform.position = position;

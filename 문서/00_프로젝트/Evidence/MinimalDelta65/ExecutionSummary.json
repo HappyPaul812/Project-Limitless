@@ -1,0 +1,26 @@
+{
+  "new_unity_checks": 23,
+  "new_failed_checks": 0,
+  "runtime_errors": 0,
+  "compiler_errors": 0,
+  "static_package_comparisons": 18,
+  "old_148_136_41_15_rerun": false,
+  "previous_33_8_rerun": false,
+  "new_ornas_basis": "source alpha bbox projected visible height; not canvas height",
+  "source_bbox": [
+    107,
+    24,
+    403,
+    508
+  ],
+  "recommended_visible_height_at720": 80,
+  "ppu": 512,
+  "scale": 1.1753902662993572,
+  "new_unity_images": 14,
+  "total_review_png": 34,
+  "protected_files": 28180,
+  "code_commit": "bc357232b16f45cab541ee496694049950d7fdf0",
+  "production_applied": false,
+  "git_push": false,
+  "user_art_approval": "PENDING"
+}

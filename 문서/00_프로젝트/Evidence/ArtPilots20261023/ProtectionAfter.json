@@ -1,0 +1,18 @@
+{
+  "files_compared": 14206,
+  "changed": [],
+  "git": {
+    "original": {
+      "head": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    },
+    "previous": {
+      "head": "3f30d135738009dbe72ec9987abebe964662f3b9",
+      "head_unchanged": true,
+      "status_unchanged": true,
+      "index_unchanged": true
+    }
+  }
+}

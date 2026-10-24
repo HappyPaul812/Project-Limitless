@@ -1,0 +1,6 @@
+{
+  "overlapping_user_paths": [
+    "Unity/Client/ProjectSettings/EditorBuildSettings.asset"
+  ],
+  "decision": "HOLD_OVERLAPPING_PATHS"
+}

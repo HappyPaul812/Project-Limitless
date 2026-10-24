@@ -35,6 +35,8 @@ namespace ProjectLimitless.Core
         public int Main21Flags;
         // Main22의 서로 다른 두 흔적 기록입니다. 옛 Version1 저장에는 없으므로0으로 복원합니다.
         public int Main22ClueFlags;
+        // Main23의 두 독립 흔적입니다. 이전 저장에서 빠져 있으면 0입니다.
+        public int Main23ClueFlags;
     }
 
     /// <summary>실행 중인 한 퀘스트의 목표별 횟수를 보관합니다.</summary>
@@ -309,7 +311,8 @@ namespace ProjectLimitless.Core
                 CompletedQuestIds = completed.ToArray(),
                 TrackedQuestId = trackedQuestId,
                 Main21Flags = Main21Progress.Flags,
-                Main22ClueFlags = Main22Progress.Flags
+                Main22ClueFlags = Main22Progress.Flags,
+                Main23ClueFlags = Main23Progress.Flags
             };
         }
 
@@ -318,6 +321,7 @@ namespace ProjectLimitless.Core
             active.Clear(); completed.Clear(); trackedQuestId = string.Empty;
             Main21Progress.Restore(data?.Main21Flags ?? 0);
             Main22Progress.Restore(data?.Main22ClueFlags ?? 0);
+            Main23Progress.Restore(data?.Main23ClueFlags ?? 0);
             if (data == null) { Changed?.Invoke(); return; }
             if (data.CompletedQuestIds != null)
                 foreach (string questId in data.CompletedQuestIds)
@@ -334,6 +338,13 @@ namespace ProjectLimitless.Core
                             && string.Equals(x.ObjectiveId, definition.Objectives[i].ObjectiveId, StringComparison.Ordinal));
                         counts[i] = Math.Min(definition.Objectives[i].RequiredCount, Math.Max(0, progress?.CurrentCount ?? 0));
                     }
+                    // Main23은 독립 흔적 비트가 정본입니다. 손상된 횟수로 조사나 뒤 단계를 건너뛰지 않도록 복원합니다.
+                    if (definition.QuestId == "main_23_southbound_traces" && counts.Length == 5)
+                    {
+                        if (counts[0] == 0) Main23Progress.Restore(0);
+                        counts[1] = (Main23Progress.HasClue(0) ? 1 : 0) + (Main23Progress.HasClue(1) ? 1 : 0);
+                        if (counts[1] < 2) for (int j = 2; j < counts.Length; j++) counts[j] = 0;
+                    }
                     if (definition.QuestType == QuestType.Main && active.Values.Any(x => x.Definition.QuestType == QuestType.Main)) continue;
                     active[definition.QuestId] = new QuestRuntimeState(definition, counts);
                 }
@@ -343,6 +354,6 @@ namespace ProjectLimitless.Core
         }
 
         public static void Reset()
-        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Main21Progress.Restore(0); Main22Progress.Restore(0); Changed?.Invoke(); }
+        { active.Clear(); completed.Clear(); trackedQuestId = string.Empty; Main21Progress.Restore(0); Main22Progress.Restore(0); Main23Progress.Restore(0); Changed?.Invoke(); }
     }
 }

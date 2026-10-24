@@ -1,0 +1,122 @@
+[
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_1280x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_EntryDoorOnly_1280x720.png",
+    "sha256": "276d81ee624ed5f4ea69db078c5ef6d74e8507502b3b87120fea2ce01914afc9",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_1680x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_EntryDoorOnly_1680x720.png",
+    "sha256": "62df82191fbe2ea607ad552450319cd5fc27228f132ad9c0b1ff326c3adcf628",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_EntryDoorOnly_960x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_EntryDoorOnly_960x720.png",
+    "sha256": "05941279595335adb91e66eba15773f0c56b3cc998b137a3b1090d6ffec1ac71",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_1280x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_KEEP_OLD_1280x720.png",
+    "sha256": "42996ee6b4f04b8ecd85a56c6d7d5528dbdeb862baac1d5f2bd0ebfd58da1cde",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_1680x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_KEEP_OLD_1680x720.png",
+    "sha256": "e5942ee92f8b12db81965ff7099590bc1deb009d65b6804159440c6bfda23867",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Residence_KEEP_OLD_960x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_KEEP_OLD_960x720.png",
+    "sha256": "3cace5c968bcc79f566111f068027b58d424596ea9828046069e9d049dd3cfe5",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_1280x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Inn_KEEP_OLD_1280x720.png",
+    "sha256": "442d9dff84937fc743f2f876075433f596a71dd98ede122c1040fdd8b30cc33c",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_1680x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Inn_KEEP_OLD_1680x720.png",
+    "sha256": "845fb95176548c902b1028f79bf79833e0d625d1efb8013ac016a104f33c19a3",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_Inn_KEEP_OLD_960x720.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Inn_KEEP_OLD_960x720.png",
+    "sha256": "6bdd78f0eac9de554175d53c82122201d9087255327e4fe1a2d47e7430c6e87f",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_UNAPPROVED_NEW65_EntryDoor_WheelchairPocket.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_EntryDoor_WheelchairPocket.png",
+    "sha256": "d009543912d45475ff5a40a55d00bd24e930449b5efc796aa041d00ac60b3820",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "sha256": "8c01be54b4a2eeaf66c3c3d1f2f811d229efb2b84a7cddddd55dd7da4973eb25",
+    "kind": "UNSCALED_CAPTURE_COMPOSITE_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_Board3_Inn_OneSign_KEEP_OLD.png",
+    "source_commit": "00e6d3c4",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\Board3_Inn_OneSign_KEEP_OLD.png",
+    "sha256": "fd1d3f4e7d5baa1eccb9fab3a3c5e67c53d881a67b59cf96bac0e4b2746583a1",
+    "kind": "UNSCALED_CAPTURE_COMPOSITE_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_A64_Bee_Ch2_Original_UnityBoard_UNAPPROVED.png",
+    "source_commit": "91510554",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\A64_Bee_Ch2_Original_UnityBoard_UNAPPROVED.png",
+    "sha256": "0c228ce8d9f679b6b6f88564f038e7eb2371234ce98d32d73cd3983d46b77777",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_A64_Bee_RightFacing_PREVIEW_ONLY.png",
+    "source_commit": "91510554",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\A64_Bee_RightFacing_PREVIEW_ONLY.png",
+    "sha256": "447f0dc0d3d58a60dbc7b821fc01fb95ffd914ec7ec9689b56d419692a23aea4",
+    "kind": "ACTUAL_UNITY_CAMERA_UI_REUSE",
+    "new_execution": false
+  },
+  {
+    "file": "A_REUSED_A64_OFFLINE_Alpha_3Backgrounds.png",
+    "source_commit": "91510554",
+    "source_relative": "Temp\\ArtReview65\\Worktree\\\ubb38\uc11c\\00_\ud504\ub85c\uc81d\ud2b8\\Evidence\\ArtReview65\\A64_OFFLINE_Alpha_3Backgrounds.png",
+    "sha256": "b74364122080238a22e2fa0c23a4a799bb22e3c2b85fc76a5b8c196971640f73",
+    "kind": "OFFLINE_ALPHA_REUSE",
+    "new_execution": false
+  }
+]

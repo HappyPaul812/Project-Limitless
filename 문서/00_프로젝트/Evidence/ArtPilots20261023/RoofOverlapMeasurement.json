@@ -1,0 +1,21 @@
+{
+  "units": "WU",
+  "body_rect": [
+    -14.4609375,
+    7.2,
+    -10.5390625,
+    10.121875
+  ],
+  "roof_rect": [
+    -14.444140625,
+    8.8,
+    -10.555859375,
+    11.5234375
+  ],
+  "aabb_intersection_width": 3.88828125,
+  "aabb_intersection_height": 1.321875,
+  "sample_ppu": 128,
+  "alpha_threshold": 128,
+  "intersection_samples": 19955,
+  "approx_alpha_overlap_area_WU2": 1.21795654296875
+}

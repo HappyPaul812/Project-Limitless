@@ -1,0 +1,2 @@
+venom_bee_Idle_04
+Assets/_Project/Resources/MonsterValidation/PilotBee/pilot_bee_idle.png

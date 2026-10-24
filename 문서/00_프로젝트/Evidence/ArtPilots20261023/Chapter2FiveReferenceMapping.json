@@ -1,0 +1,42 @@
+[
+  {
+    "definition": "11_SootHound",
+    "guid": "0d5438e41c815754baa7949dadbc24d2",
+    "file": "Unity\\Client\\Assets\\_Project\\Art\\Monsters\\11_SootHound\\Soot_Hound_Sprite_Sheet.png",
+    "sha256": "bf4a5353645eeb809842b3a3c7897c0af6e6ca70c5688b0a18934d5c5c630c26",
+    "ppu": "314",
+    "basis": "actual explicitIdleFrames[0] in current MonsterDefinition"
+  },
+  {
+    "definition": "12_HeatwindHawk",
+    "guid": "6ab6d6d68930b7942baf46a93fdce1c8",
+    "file": "Unity\\Client\\Assets\\_Project\\Art\\Monsters\\12_HeatwindHawk\\Heatwind_Hawk_Sprite_Sheet.png",
+    "sha256": "8ac3fec6938ec746a6883b17e6fcf0a8c28a0027a2693a09023456481e7b9923",
+    "ppu": "314",
+    "basis": "actual explicitIdleFrames[0] in current MonsterDefinition"
+  },
+  {
+    "definition": "13_FissureLizard",
+    "guid": "957f30b97265d15499122b5d24108aad",
+    "file": "Unity\\Client\\Assets\\_Project\\Art\\Monsters\\13_FissureLizard\\Fissure_Lizard_Sprite_Sheet.png",
+    "sha256": "25152de5f17beb7b020497b07caaba3bd3d22ebcac209a112118b9c07fe2f4ff",
+    "ppu": "314",
+    "basis": "actual explicitIdleFrames[0] in current MonsterDefinition"
+  },
+  {
+    "definition": "14_EmberBeetle",
+    "guid": "889e4686ecce9bb40bfe92a69ca86a80",
+    "file": "Unity\\Client\\Assets\\_Project\\Art\\Monsters\\14_EmberBeetle\\Ember_Beetle_Sprite_Sheet.png",
+    "sha256": "55eed47159766b21e5c6e056bba2921d4177c1fc7e5be6fdbec085b671759a10",
+    "ppu": "314",
+    "basis": "actual explicitIdleFrames[0] in current MonsterDefinition"
+  },
+  {
+    "definition": "15_EmberWraith",
+    "guid": "4828f7482c83eb949abd1f3017c227b3",
+    "file": "Unity\\Client\\Assets\\_Project\\Art\\Monsters\\15_EmberWraith\\Ember_Wraith_Sprite_Sheet.png",
+    "sha256": "e6dfe61da6d754f615aaeff7f10719cc336b46d0ff7f5c09249545fd10c25655",
+    "ppu": "314",
+    "basis": "actual explicitIdleFrames[0] in current MonsterDefinition"
+  }
+]

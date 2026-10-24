@@ -1,0 +1,18 @@
+{
+  "Status": "PRESENTATION_CANDIDATE_DELTA_QA_PASS",
+  "ProductCommit": "f90966df8e9e84da7670b6e7ef1551ff1bbe8850",
+  "DeltaRuntimeChecks": 118,
+  "StaticAndProtectionChecks": 18,
+  "UnresolvedProductFailures": 0,
+  "InitialHarnessFailure": {
+    "Check": "Wheelchair.PortalAccessRoute",
+    "Reason": "Cached destroyed travel component after Continue",
+    "ResolvedBy": "VisualDelta2/Wheelchair.PortalAccessRoute",
+    "FullBaselineRerun": 0
+  },
+  "ArtApproval": "USER_REVIEW_PENDING",
+  "InheritedArtOpen": 16,
+  "ArtResolved": 0,
+  "EditorSearch": "OPEN",
+  "Issue46": "READ_ONLY_DESIGN_ONLY"
+}

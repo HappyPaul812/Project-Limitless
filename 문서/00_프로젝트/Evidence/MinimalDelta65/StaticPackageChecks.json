@@ -1,0 +1,110 @@
+[
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "Manifest.json",
+    "pass": true
+  },
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "Preview/Inn_KeepOriginal_vs_DuplicateStandalone_APPROX_OFFLINE.png",
+    "pass": true
+  },
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "Preview/Orna_40_80_96_128_Height_ABCD_OFFLINE.png",
+    "pass": true
+  },
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "Preview/SouthGate_Residence_Keep_vs_DoubleRoof_vs_DoorOnly_APPROX_OFFLINE.png",
+    "pass": true
+  },
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "QA/SourceAssets_9_SHA256_FROZEN.csv",
+    "pass": true
+  },
+  {
+    "kind": "ZIP_INTERNAL_SHA",
+    "file": "README.md",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "NPC/Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "sha256": "ba750bde78fdc41f560625258a584055779ce7e06323628b3556cdbd50fbb57e",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "NPC/Orna_VillageGuide_512_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\Orna_VillageGuide_512_CANDIDATE.png",
+    "sha256": "9b6ebe892777874a859724d4c2326083e3c2d25541d3b5f7013c88498ffba74d",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Buildings/SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "sha256": "f90c096d71e11258b5bbb087197652f6bc31019b4c2fd669386ed965d7973e52",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Buildings/SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "sha256": "a8b8fc6d7a911f05a7eabe1ad7096e21963fb53db0d630dff96e27df9f262d6a",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Buildings/SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "sha256": "eaf17535a1565ee1d4c153b7cbc859191fd77ef31cf4275ff44ebf29dc3412db",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Signs/Inn_StandaloneSign_CANDIDATE.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\Inn_StandaloneSign_CANDIDATE.png",
+    "sha256": "c2806a5ba3b4feed8e10433d96c43a12e59fb53209600d09e0ee6cb4e67c6ddf",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Buildings/Frostway_Residence_Building.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\FrostwayV5\\Buildings\\Frostway_Residence_Building.png",
+    "sha256": "4eb505aad2aefe90170a1d3e3c08990fe4587b3a91d2136dcdc1f0e4ee37fd8a",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Buildings/Frostway_Inn_Building.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\FrostwayV5\\Buildings\\Frostway_Inn_Building.png",
+    "sha256": "67b16d2ef8c3d3d99e066c5723bd5df9a917624c79faeaadf32a99dd4a94f14d",
+    "pass": true
+  },
+  {
+    "kind": "FROZEN_SOURCE9",
+    "file": "Signs/Frostway_Sign_Inn.png",
+    "actual_file": "Temp\\ArtReview65\\Worktree\\Unity\\Client\\Assets\\_Project\\Art\\PresentationCandidates\\Issue64\\Frostway_Sign_Inn_REFERENCE.png",
+    "sha256": "c16624d46acdda522a42d6ebeed03bd81eb23053dd11b91fb4b69f307fc2cb75",
+    "pass": true
+  },
+  {
+    "kind": "PREVIEW_MANIFEST",
+    "file": "Orna_40_80_96_128_Height_ABCD_OFFLINE.png",
+    "pass": true
+  },
+  {
+    "kind": "PREVIEW_MANIFEST",
+    "file": "SouthGate_Residence_Keep_vs_DoubleRoof_vs_DoorOnly_APPROX_OFFLINE.png",
+    "pass": true
+  },
+  {
+    "kind": "PREVIEW_MANIFEST",
+    "file": "Inn_KeepOriginal_vs_DuplicateStandalone_APPROX_OFFLINE.png",
+    "pass": true
+  }
+]

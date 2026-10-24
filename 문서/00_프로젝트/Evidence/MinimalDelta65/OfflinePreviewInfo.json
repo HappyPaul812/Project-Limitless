@@ -1,0 +1,29 @@
+[
+  {
+    "file": "Orna_40_80_96_128_Height_ABCD_OFFLINE.png",
+    "size": [
+      1480,
+      590
+    ],
+    "mode": "RGB",
+    "type": "OFFLINE_APPROX_NOT_UNITY"
+  },
+  {
+    "file": "SouthGate_Residence_Keep_vs_DoubleRoof_vs_DoorOnly_APPROX_OFFLINE.png",
+    "size": [
+      1840,
+      680
+    ],
+    "mode": "RGB",
+    "type": "OFFLINE_APPROX_NOT_UNITY"
+  },
+  {
+    "file": "Inn_KeepOriginal_vs_DuplicateStandalone_APPROX_OFFLINE.png",
+    "size": [
+      1350,
+      655
+    ],
+    "mode": "RGB",
+    "type": "OFFLINE_APPROX_NOT_UNITY"
+  }
+]

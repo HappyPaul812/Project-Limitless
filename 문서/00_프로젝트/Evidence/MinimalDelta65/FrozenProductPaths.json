@@ -1,0 +1,26 @@
+[
+  {
+    "check": "Unity/Client/Assets/_Project/Scenes",
+    "unchanged": true
+  },
+  {
+    "check": "Unity/Client/Assets/_Project/Resources",
+    "unchanged": true
+  },
+  {
+    "check": "Unity/Client/Assets/_Project/Art",
+    "unchanged": true
+  },
+  {
+    "check": "Unity/Client/Assets/ThirdParty",
+    "unchanged": true
+  },
+  {
+    "check": "Unity/Client/Packages",
+    "unchanged": true
+  },
+  {
+    "check": "Unity/Client/ProjectSettings",
+    "unchanged": true
+  }
+]
