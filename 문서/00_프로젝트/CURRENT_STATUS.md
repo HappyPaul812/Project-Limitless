@@ -1,3 +1,12 @@
+## 2026-10-24 1번 배치 오류 진단 — 원인 1326 확인 / 등록 FAIL 후 중단
+
+- 실제 관리자 진단1회: Register-ScheduledTask에서 Windows 자격 증명 거부. 외부 CimException HRESULT0x80131500이 아니라 ErrorId/CIM MessageID의 **0x8007052e / 1326 / ERROR_LOGON_FAILURE**가 실제 원인 계층. 입력 암호 오류/다른 인증 조건의 세부 구분은 비밀 검사 없이 단정하지 않음.
+- LIMITLESSRelaySvc 활성·일반계정·SID 일치, SeBatchLogonRight 직접 보유·직접 및 알려진 공통 그룹의 배치 거부0. 실행/작업 경로 확인. 권한/암호/정상 부팅 작업을 임의 수정하지 않음.
+- 등록 FAIL, 자식 실행 NOT_RUN, 임시 작업 미등록/정리대상0. 기존 Bot/Art OnBoot2 XML SHA 전후 동일·권한 전후 동일·MANUAL·SQLite 보존, Bot/Art heartbeat 유지. Codex/AI 호출0·2번/3번 미진행.
+- 최소 수정: probe-service-ai 오류 진단이 현지화 메시지 대신 ErrorId/CIM MessageID에서 원래 HRESULT를 표시. 안전 배치 전용 진단/계정환경 자식/읽기 LSA 메타데이터 도구 준비. 새 회귀(구문4·암호제거·1326 매핑) PASS, 기존 전체QA 반복0.
+- [원인·판정](../../Tools/DiscordAICollab/BATCH_ENVIRONMENT_CHECK_KO.md), [증거](Evidence/BatchEnvironment20261024/summary.json). 다음은 대표의 로컬 서비스 Windows 자격 증명 확인 후 별도 재개 지시로 1번 안전 검증. 아직 AI 추론·A 활성화 단계 진행 불가.
+- 원본게임/Unity/Save/아트/기존인증/재부팅·종료/유료API/Push/main병합0. 마지막 관련 선행commit64a0fd81, 이번 관련 commit은 codex/discord-ai-collaboration 후속 기록 참조. Unity 사용자 확인사항 없음.
+
 ## 2026-10-24 서비스 계정 Codex 공식 구독 인증·사용량 VERIFIED — MANUAL 유지
 
 - 실제 LIMITLESSRelaySvc 일반계정 콘솔에서 공식 device-auth로 로그인 성공. login status ChatGPT 확인·같은 SID/프로필/CODEX_HOME/실행파일·설정SHA 전후 동일. Win32 DACL 실제 오류0, 소유자/그룹/SACL/계정권한 변경0. keyring에 자기 신규 인증 저장, 개인 계정 인증/설정 복사0.

@@ -1,0 +1,96 @@
+{
+  "mode_changed": false,
+  "status": "HOLD",
+  "batch_rights_after": [
+    "SeBatchLogonRight"
+  ],
+  "stage": "REGISTER_SAFE_BATCH",
+  "action": "Diagnose",
+  "batch_rights_before": [
+    "SeBatchLogonRight"
+  ],
+  "task_name": "LIMITLESS-BatchCheck-ddf523d693344818828c2d1a1a752c74",
+  "execution": {
+    "working_directory": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab",
+    "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "arguments": "-NoProfile -NonInteractive -WindowStyle Hidden -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\batch-account-check.ps1\" -RequestId ddf523d693344818828c2d1a1a752c74"
+  },
+  "request_id": "ddf523d693344818828c2d1a1a752c74",
+  "error": {
+    "category": "AuthenticationError",
+    "error_id": "HRESULT 0x8007052e,Register-ScheduledTask",
+    "chain": [
+      {
+        "native_error_code": "Failed",
+        "type": "Microsoft.Management.Infrastructure.CimException",
+        "hresult": -2146233088,
+        "cim_error_data": {
+          "MessageID": "HRESULT 0x8007052e",
+          "ProbableCause": "",
+          "CIMStatusCodeDescription": "",
+          "ErrorType": "",
+          "CIMStatusCode": "1",
+          "ProbableCauseDescription": "",
+          "RecommendedActions": "",
+          "ErrorSource": "",
+          "Message": "사용자 이름 또는 암호가 올바르지 않습니다.\r\n"
+        },
+        "message": "사용자 이름 또는 암호가 올바르지 않습니다.\r\n"
+      }
+    ]
+  },
+  "cleanup": "NO_TEST_TASK_REGISTERED",
+  "codex_calls": 0,
+  "before": {
+    "LIMITLESS-Art-OnBoot": {
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "xml_sha256": "8191077216351ff90d0db99134ed9a145adb4ffa5fa154fb914485781bd59a38",
+      "logon": "Password",
+      "enabled": true,
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Art -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\"",
+      "run_level": "Limited"
+    },
+    "LIMITLESS-Bot-OnBoot": {
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "xml_sha256": "85e3b3c654d4a3882619e07db20401d0ed19d5499a5a5f94fc4e258bfd118c5b",
+      "logon": "Password",
+      "enabled": true,
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Bot -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\"",
+      "run_level": "Limited"
+    }
+  },
+  "service": {
+    "batch_right_direct": true,
+    "is_admin": false,
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "deny_batch_direct": false,
+    "enabled": true,
+    "name": "PAUL-PC\\LIMITLESSRelaySvc",
+    "implicit_deny_sids": []
+  },
+  "after": {
+    "LIMITLESS-Art-OnBoot": {
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "xml_sha256": "8191077216351ff90d0db99134ed9a145adb4ffa5fa154fb914485781bd59a38",
+      "logon": "Password",
+      "enabled": true,
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Art -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\"",
+      "run_level": "Limited"
+    },
+    "LIMITLESS-Bot-OnBoot": {
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "xml_sha256": "85e3b3c654d4a3882619e07db20401d0ed19d5499a5a5f94fc4e258bfd118c5b",
+      "logon": "Password",
+      "enabled": true,
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Bot -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\"",
+      "run_level": "Limited"
+    }
+  },
+  "original_tasks_changed": false,
+  "rights_unchanged": true,
+  "actual_ai_calls": 0
+}

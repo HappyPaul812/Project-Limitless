@@ -1,0 +1,68 @@
+{
+  "at": 1792809463.9792068,
+  "scope": "STEP_1_SAFE_BATCH_ONLY",
+  "status": "REGISTRATION_FAIL_WINDOWS_LOGON_1326_STOPPED",
+  "registration_attempts": 1,
+  "outer_hresult": -2146233088,
+  "outer_hresult_hex": "0x80131500",
+  "native_hresult": "0x8007052e",
+  "native_win32_code": 1326,
+  "error_category": "AuthenticationError",
+  "cause_confirmed": "TASK_SCHEDULER_REJECTED_SUPPLIED_REGISTRATION_CREDENTIALS",
+  "specific_password_input_or_other_auth_condition": "NOT_DETERMINED_NO_SECRET_INSPECTION",
+  "registration": "FAIL",
+  "noninteractive_execution": "NOT_RUN",
+  "actual_execution_account": "NOT_AVAILABLE_NO_CHILD_STARTED",
+  "intended_account": "PAUL-PC\\LIMITLESSRelaySvc",
+  "account_enabled": true,
+  "account_is_admin": false,
+  "batch_right_present": true,
+  "deny_batch_right_direct": false,
+  "known_implicit_deny_sids": [],
+  "batch_rights_unchanged": true,
+  "temporary_task_cleanup": "NO_TASK_REGISTERED_NOTHING_TO_REMOVE",
+  "original_two_boot_task_xml_unchanged": true,
+  "db_unchanged": true,
+  "mode": "MANUAL",
+  "runtime39_and_auth4_hashes_match": true,
+  "codex_calls": 0,
+  "actual_ai_calls": 0,
+  "a_mode_enabled": false,
+  "reboot_shutdown_unity_game_push_merge_paid_api": 0,
+  "password_or_auth_reset": false,
+  "retry_after_failure": false,
+  "diagnostic_changes": [
+    "EXTRACT_NATIVE_HRESULT_FROM_ERROR_ID_AND_CIM_MESSAGE_ID",
+    "PRESERVE_OUTER_AND_INNER_ERROR_SEPARATELY",
+    "REDACT_WINDOWS_PASSWORD_BEFORE_WRITING_ERROR",
+    "SINGLE_SAFE_REGISTRATION_AND_IDENTITY_CHECKED_CLEANUP"
+  ],
+  "tests": {
+    "four_scripts_parse": "PASS",
+    "dummy_password_xml_uri_redaction": "PASS",
+    "localized_no_hex_message_native_error_mapping": "PASS",
+    "own_logon_metadata_outside_sandbox": "PASS",
+    "service_right_read_in_agent": "NOT_VERIFIED_ACCESS_DENIED_USE_ACTUAL_ADMIN_DIAG_RESULT",
+    "registration": "FAIL_1326",
+    "execution": "NOT_RUN",
+    "preservation": "PASS"
+  },
+  "next": "STOP_CURRENT_RUN_LOCAL_CREDENTIAL_VERIFICATION_BEFORE_NEW_STEP_1_ATTEMPT_NOT_STEP_2_OR_3",
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792809463.1528926,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": false,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792809463.3509126,
+    "ai_calls": 0,
+    "unity_runs": 0
+  },
+  "heartbeat_age_seconds": {
+    "bot": 0.83,
+    "art": 0.63
+  }
+}

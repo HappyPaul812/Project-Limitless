@@ -57,7 +57,15 @@ try {
  }
  if(-not (Test-Path -LiteralPath $resultPath)) {Write-Output 'HOLD_SERVICE_PROBE_RESULT_NOT_VERIFIED'}
 } catch {
- $diagnostic=@{status='HOLD';reason='SERVICE_LOGON_OR_READINESS_NOT_VERIFIED';stage=$stage;request_id=$nonce;exception_type=$_.Exception.GetType().Name;hresult=$_.Exception.HResult;native_status_hex=@([regex]::Matches($_.Exception.Message,'(?i)0x[0-9a-f]{8}') | ForEach-Object {$_.Value} | Select-Object -Unique);actual_ai_calls=0;mode_changed=$false}
+ # CIM 외부 HRESULT만으로 원인을 판정하지 않습니다. 실제 Windows HRESULT는 ErrorId/MessageID에 있습니다.
+ $nativeSource=[string]$_.FullyQualifiedErrorId
+ if($_.Exception -is [Microsoft.Management.Infrastructure.CimException] -and $_.Exception.ErrorData){
+  foreach($property in $_.Exception.ErrorData.CimInstanceProperties){if($property.Name -eq 'MessageID'){$nativeSource+=' '+[string]$property.Value}}
+ }
+ $nativeHex=@([regex]::Matches($nativeSource,'(?i)0x[0-9a-f]{8}') | ForEach-Object {$_.Value.ToLower()} | Select-Object -Unique)
+ $nativeWin32=if($nativeHex -contains '0x8007052e'){1326}else{$null}
+ $failureReason=if($nativeWin32 -eq 1326){'WINDOWS_REGISTRATION_CREDENTIAL_REJECTED'}else{'SERVICE_LOGON_OR_READINESS_NOT_VERIFIED'}
+ $diagnostic=@{status='HOLD';reason=$failureReason;stage=$stage;native_win32_code=$nativeWin32;native_hresult=$nativeHex;error_category=$_.CategoryInfo.Category.ToString();request_id=$nonce;exception_type=$_.Exception.GetType().Name;hresult=$_.Exception.HResult;native_status_hex=@([regex]::Matches($_.Exception.Message,'(?i)0x[0-9a-f]{8}') | ForEach-Object {$_.Value} | Select-Object -Unique);actual_ai_calls=0;mode_changed=$false}
  $diagnostic | ConvertTo-Json | Set-Content (Join-Path $root ('data/boot/service-auth-launch-'+$nonce+'.json')) -Encoding utf8
  $diagnostic | ConvertTo-Json
 }
