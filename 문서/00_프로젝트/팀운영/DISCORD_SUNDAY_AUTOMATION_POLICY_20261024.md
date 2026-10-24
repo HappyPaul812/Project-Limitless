@@ -46,6 +46,6 @@
 
 ## 검증과 증거
 
-핵심 주일 테스트11 PASS. 추가 회귀 결과·배포 SHA·보호 파일·DB 지문·Discord 영수증은 Evidence/DiscordSundayPolicy20261024/summary.json 및 regression-tests.json에 기록합니다. 초기 테스트 명령이 원래 모듈을 잘못 로드하고 sandbox TEMP 권한 오류를 낸 것은 검증 실행기 문제였으며, 격리 경로·저장소 내 TEMP·명시적 테스트 목록으로 수정했습니다. 초기 실패를 제품 통과 근거에 포함하지 않습니다. 추가 비동기 시험의 sandbox socketpair 대기도 faulthandler로 확인하여 해당 테스트 프로세스만 정리한 뒤 같은 격리 시험을 제한 밖에서 재검증했습니다.
+핵심 주일11을 포함한 격리28 PASS/0 FAIL. Discord 보고 SENT(영수증1563350905108168806). 구현 commit9cf84605. 추가 회귀 결과·배포 SHA·보호 파일·DB 지문·Discord 영수증은 Evidence/DiscordSundayPolicy20261024/summary.json 및 regression-tests.json에 기록합니다. 초기 테스트 명령이 원래 모듈을 잘못 로드하고 sandbox TEMP 권한 오류를 낸 것은 검증 실행기 문제였으며, 격리 경로·저장소 내 TEMP·명시적 테스트 목록으로 수정했습니다. 초기 실패를 제품 통과 근거에 포함하지 않습니다. 추가 비동기 시험의 sandbox socketpair 대기도 faulthandler로 확인하여 해당 테스트 프로세스만 정리한 뒤 같은 격리 시험을 제한 밖에서 재검증했습니다.
 
 현재 프로세스는 계속 MANUAL/AI HOLD이며 실제 AI 호출·유료 API·Unity·제품 적용·Push·병합0. 서비스 재설치·작업 등록 변경0. 기준 commit47288310. 완료 commit은 codex/discord-ai-collaboration 브랜치 로그 참조.

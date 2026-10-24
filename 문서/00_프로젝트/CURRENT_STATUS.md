@@ -1,3 +1,12 @@
+## 2026-10-24 주일 승인 AI 업무 허용 — 코드·부팅 SHA 반영 / MANUAL·AI HOLD 유지
+
+- 기존 Discord 협업 실행기 네 파일의 주일 차단만 제거. 일요일 승인 업무·활성 A의 사용량 회복 재개 허용, 승인/모드/한도/미술 최종 승인·제품 적용·Push/main 병합 제한 유지. 구현 commit `9cf84605`.
+- 격리28 PASS/0 FAIL, 실제 AI 호출0. 부팅 승인38 SHA 및 C:bootstrap/wrapper/supervisor 일치, 승인파일 ACL/소유자 보존. 부팅/Wi-Fi 보호7파일·기존업무21/usage13/설정28/승인0/재개큐0/실제MANUAL 지문 동일. Bot/Art heartbeat 유지·서비스재시작0.
+- 현재 Bot은 부팅전용 중계(AI worker/재개큐 미연결)이므로 **실제 AI 자동 실행 불가**. 새 코드는 다음 정상 시작 때 로드되며 BootRelay AI HOLD는 유지. A 가능으로 오보고하지 않음.
+- Discord 완료/보류/승인필요 보고 SENT 영수증1563350905108168806. 태스크 경로는 저장된 관리자 검증+현재 C:승인파일 대조 일치, 현재 태스크원문/프로세스명령줄 직접 조회는 접근 제한으로 NOT_VERIFIED.
+- 다음: 서비스계정 Codex 인증/공식사용량·AI 실행경로·실제quota회복 재개 검증 후 대표 명시적 A 활성화. 현재 AI범위는 읽기전용 검토이며 일반 개발/Unity worker 미연결. 실제 PIN전부팅/USB재연결 미검증. Unity 사용자확인 없음, 원본게임/유료API/Push/merge0.
+- [정책·미검증 조건](팀운영/DISCORD_SUNDAY_AUTOMATION_POLICY_20261024.md), [근거](Evidence/DiscordSundayPolicy20261024/summary.json). 마지막 관련 구현 commit `9cf84605`; 마감문서는 동일 브랜치 후속 commit 참조.
+
 ## 2026-10-24 부팅 중계 등록·비대화형 시작 시험 완료
 
 LIMITLESS-Bot-OnBoot / LIMITLESS-Art-OnBoot 등록2/2 및 대표 실행 결과 PASS_NONINTERACTIVE_BATCH_ONLY 확인. 관리자 검증 기록상 서비스 일반계정 활성·관리자 아님·Password/Limited·BootTrigger 유지. 09:10 KST 후속 읽기 조회에서 Bot/Art RUNNING·heartbeat 3초 이내, MANUAL·재개큐0·기존업무21/usage13 확인. 이번 재시작·AI·재부팅·Unity·원본게임변경·Push/merge0. 일반권한의 태스크 직접 조회는 기존 ACCESS_DENIED이므로 관리자 결과 파일 근거와 현재 heartbeat를 구분합니다. 실제 PIN 전 부팅/USB Wi-Fi 재연결은 NOT_VERIFIED이며 별도 재부팅 승인 때 확인합니다. Unity 사용자 확인 사항 없음. 마지막 관련 commit c8965d33(등록 안내), 이번 마감 commit은 해당 브랜치 로그 참조. [완료근거](Evidence/BootRelay20261024/resume-verification.json), [등록 후속](팀운영/Boot_Relay_PreRegistration_20261024.md).

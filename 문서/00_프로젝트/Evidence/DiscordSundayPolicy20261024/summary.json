@@ -57,14 +57,14 @@
   },
   "bot": {
     "status": "RUNNING",
-    "last_tick": 1792802259.4277413,
+    "last_tick": 1792802306.0786757,
     "ai_worker_enabled": false,
     "approved_readonly_resume_only": false,
     "shutdown_enabled": false
   },
   "art": {
     "status": "RUNNING",
-    "last_tick": 1792802257.9931736,
+    "last_tick": 1792802305.062005,
     "ai_calls": 0,
     "unity_runs": 0
   },
@@ -78,6 +78,23 @@
   "real_usb_wifi_reconnect": "NOT_VERIFIED",
   "service_account_codex_auth_and_usage": "NOT_VERIFIED",
   "real_quota_resume": "NOT_VERIFIED",
-  "discord_report": "PENDING",
-  "unity_product_paid_api_push_merge": 0
+  "discord_report": {
+    "state": "SENT",
+    "message_id": "1563350905108168806"
+  },
+  "unity_product_paid_api_push_merge": 0,
+  "implementation_commit": "9cf84605",
+  "post_report_db_fingerprints_unchanged": true,
+  "heartbeat_age_seconds": {
+    "bot": 0.11,
+    "art": 1.13
+  },
+  "boot_chain_hashes_match": true,
+  "approval_only_changed_runtime_entries": [
+    "collab/core.py",
+    "collab/phase2.py",
+    "collab/scheduling.py",
+    "collab/real_roles.py"
+  ],
+  "approval_acl_owner_preserved_verified": true
 }
