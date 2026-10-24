@@ -1,3 +1,12 @@
+## 2026-10-24 A 서비스 실행기 연결 준비 — 16 PASS / 실제 서비스 인증 HOLD
+
+- 부팅 Bot의 동일 lock/DB 경로에 서비스 SID/일반계정/자기 프로필 확인·공식 구독/사용량 읽기 검사 연결. 성공 시 기존 UsageMonitor→ResumeQueue→네 역할 공용 VERIFIED run_once 재사용, 실패 시 중계만 유지. MANUAL 자동 변경0. 구현 commit `94a0f739`.
+- 새/선별14+Bot연결2=16 PASS/0 FAIL, PS구문0오류. 기존28·전체QA 반복0. 부팅 승인39 SHA 및 C:bootstrap/wrapper/supervisor 일치·ACL/소유자 보존. 기존업무21/usage13/설정28/승인0/재개큐0/체크포인트14 및 MANUAL 보존, 보호7파일 동일. Bot/Art 재시작·중복기동0.
+- 현재 실제 프로세스는 기존 relay_only AI HOLD 유지·새 코드 로드 전. 실제 서비스 계정 단발 점검은 SERVICE_CODEX_PROFILE_NOT_INITIALIZED HOLD. SID/일반계정/자기 프로필 검사 후 .codex 초기화 확인 불가로 공식 인증·사용량 RPC 시작0, 5시간/주간 실제 회복시각 UNKNOWN. 다른 계정 인증 복사·우회·로그인/설치0.
+- 대표가 pwsh -File 방식으로 서비스 단발 점검 완료(request_id4858235fe10c40bea75ccc55f35521df). 결과·현재 장부 지문 동일 근거 저장. 최종 Discord HOLD 보고 SENT(영수증1563356946449301625). 최초 local 결과와 실제 서비스 결과를 구분했으며 초기화 불가 시 AI HOLD 지시 준수.
+- 다음: 별도 서비스 계정 정식 Codex 프로필/구독 로그인 준비·필요 시 CLI 접근 확인 → 단발 읽기 재검증 → 성공 시 기존 서비스 정상재시작/동일 lock 확인 → 최신 정본의 새 읽기1건 계획·슬롯 승인 → 대표 명시적 A 활성화 → 승인1건 실증. 승인 TTL600초는 연장하지 않으며 장시간 소진 후 만료 시 재승인 필요.
+- [절차·검증](팀운영/Service_AI_Bridge_Readiness_20261024.md), [근거](Evidence/ServiceAIBridge20261024/summary.json). 실제AI/유료API/원본게임·Save/미승인아트제품적용/Push/merge0, Unity 확인사항 없음. 실제 PIN전부팅/USB재연결은 기존 미검증 경계 유지. 마지막 관련 구현 commit `94a0f739`.
+
 ## 2026-10-24 주일 승인 AI 업무 허용 — 코드·부팅 SHA 반영 / MANUAL·AI HOLD 유지
 
 - 기존 Discord 협업 실행기 네 파일의 주일 차단만 제거. 일요일 승인 업무·활성 A의 사용량 회복 재개 허용, 승인/모드/한도/미술 최종 승인·제품 적용·Push/main 병합 제한 유지. 구현 commit `9cf84605`.

@@ -19,12 +19,12 @@ PlanningAgent·CodexAgent·NewArtAgent·RenewalArtAgent의 과거 VERIFIED 경�
 
 ## 서비스 계정에서 실제 읽기 점검
 
-현재 Codex 실행 계정은 windows입니다. 이 계정으로 실행한 독립 프로브는 SERVICE_ACCOUNT_CONTEXT_REQUIRED로 HOLD했고 공식 인증 조회도 시작하지 않았습니다. 서비스 계정 인증 불가가 확정된 것은 아니며 실제 서비스 문맥 검증 대기입니다.
+현재 Codex 실행 계정은 windows이며 초기 독립 프로브는 SERVICE_ACCOUNT_CONTEXT_REQUIRED로 HOLD했습니다. 이후 바울 대표가 관리자 pwsh -File 명령으로 실제 서비스 계정 단발 점검을 완료했습니다. 서비스 SID/일반계정/자기 프로필 검사 후 SERVICE_CODEX_PROFILE_NOT_INITIALIZED로 HOLD했습니다. 서비스 계정의 초기화된 .codex 프로필을 확인하지 못해 공식 인증/사용량 RPC를 시작하지 않았으며, 구독 인증 성공이나 실제 회복 시각은 아직 미확인입니다. 임의 설치·로그인·다른 계정 비밀 복사 없이 AI HOLD를 유지합니다.
 
 다음은 바울 대표가 관리자 PowerShell에서 직접 실행하는 **단발 읽기 점검**입니다. 서비스 계정 암호는 로컬 Windows 입력창에만 입력하고 채팅에 보내지 마세요.
 
 ```powershell
-& 'F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1' -Action RunOnceAsService
+pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1" -Action RunOnceAsService
 ```
 
 이 도구는 기존 OnBoot2종을 수정하지 않고 LIMITLESS-AI-Readiness-Once 임시 점검 작업만 만듭니다. Password/Limited·트리거없음·한번실행이며 기존 Bot/Art는 시작하지 않습니다. 결과 nonce를 확인하고 완료된 점검 작업만 삭제합니다. 실행 중이면 강제 종료/삭제하지 않습니다. 결과는 data/boot/service-ai-probe-<nonce>.json에 비밀 없이 저장합니다. 읽기 점검이 성공해도 A 활성화·업무 승인·재시작은 수행하지 않습니다.

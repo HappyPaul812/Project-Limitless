@@ -1,5 +1,5 @@
 {
-  "status": "BRIDGE_DEPLOYED_NOT_RELOADED_SERVICE_AUTH_HOLD",
+  "status": "BRIDGE_PREPARED_SERVICE_CONTEXT_CHECKED_AI_HOLD_PROFILE_NOT_INITIALIZED",
   "tests": {
     "delta": {
       "run": 14,
@@ -18,13 +18,21 @@
   "local_identity_probe": {
     "status": "HOLD",
     "reason": "SERVICE_ACCOUNT_CONTEXT_REQUIRED",
-    "observed": 1792803174.8112793,
+    "observed": 1792803330.9729102,
     "actual_ai_calls": 0,
     "api_fallback": false,
     "mode_changed": false,
     "request_id": "local"
   },
-  "actual_service_probe": "WAITING_FOR_LOCAL_SERVICE_LOGON",
+  "actual_service_probe": {
+    "status": "HOLD",
+    "reason": "SERVICE_CODEX_PROFILE_NOT_INITIALIZED",
+    "observed": 1792803598.2707472,
+    "actual_ai_calls": 0,
+    "api_fallback": false,
+    "mode_changed": false,
+    "request_id": "4858235fe10c40bea75ccc55f35521df"
+  },
   "mode": "MANUAL",
   "db_unchanged": true,
   "counts": {
@@ -55,14 +63,14 @@
   "services_restarted": false,
   "bot": {
     "status": "RUNNING",
-    "last_tick": 1792803366.0217304,
+    "last_tick": 1792803766.808864,
     "ai_worker_enabled": false,
     "approved_readonly_resume_only": false,
     "shutdown_enabled": false
   },
   "art": {
     "status": "RUNNING",
-    "last_tick": 1792803364.5146565,
+    "last_tick": 1792803770.972394,
     "ai_calls": 0,
     "unity_runs": 0
   },
@@ -87,10 +95,39 @@
   ],
   "current_loaded_bridge": "OLD_RELAY_ONLY_NO_RESTART",
   "service_probe_outputs": [
+    "service-ai-probe-4858235fe10c40bea75ccc55f35521df.json",
     "service-ai-probe-local.json"
   ],
   "heartbeat_age_seconds": {
-    "bot": 0.96,
-    "art": 2.46
-  }
+    "bot": 4.51,
+    "art": 0.35
+  },
+  "implementation_commit": "94a0f739",
+  "manual_service_probe_command": "COMPLETED_VIA_PWSH_FILE",
+  "powershell_action_parameter_binding": "PASS_ON_CURRENT_ACCOUNT_ADMIN_GATE_HOLD",
+  "lock_read_probe": {
+    "bot": {
+      "state": "NOT_VERIFIED",
+      "winerror": null
+    },
+    "art": {
+      "state": "NOT_VERIFIED",
+      "winerror": null
+    }
+  },
+  "at": 1792803556.8757155,
+  "discord_report": {
+    "state": "SENT",
+    "message_id": "1563356272919707693"
+  },
+  "post_report_db_unchanged": true,
+  "service_context_gate": "PASSED_BEFORE_OWN_CODEX_PROFILE_CHECK",
+  "official_auth_and_usage_rpc": "NOT_STARTED_PROFILE_PREREQUISITE_HOLD",
+  "service_reset_times": "UNKNOWN",
+  "service_account_cli_access": "NOT_VERIFIED_AFTER_PROFILE_HOLD",
+  "final_discord_report": {
+    "state": "SENT",
+    "message_id": "1563356946449301625"
+  },
+  "final_db_unchanged": true
 }

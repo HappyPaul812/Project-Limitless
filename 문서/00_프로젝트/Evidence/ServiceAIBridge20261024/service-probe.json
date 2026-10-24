@@ -1,0 +1,9 @@
+{
+  "status": "HOLD",
+  "reason": "SERVICE_CODEX_PROFILE_NOT_INITIALIZED",
+  "observed": 1792803598.2707472,
+  "actual_ai_calls": 0,
+  "api_fallback": false,
+  "mode_changed": false,
+  "request_id": "4858235fe10c40bea75ccc55f35521df"
+}
