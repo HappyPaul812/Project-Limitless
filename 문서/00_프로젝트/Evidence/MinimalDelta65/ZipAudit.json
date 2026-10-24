@@ -1,0 +1,17 @@
+{
+  "file": "Limitless_Main23_Issue59_MinimalDelta_Review_20261023.zip",
+  "bytes": 812046,
+  "sha256": "2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11",
+  "expected": "2bb31ffaba77f977f426c216b2a1cc9b86934d640c993f4697679b4eb9d67e11",
+  "crc_bad": null,
+  "entries": 7,
+  "files": [
+    "Manifest.json",
+    "Preview/Inn_KeepOriginal_vs_DuplicateStandalone_APPROX_OFFLINE.png",
+    "Preview/Orna_40_80_96_128_Height_ABCD_OFFLINE.png",
+    "Preview/SouthGate_Residence_Keep_vs_DoubleRoof_vs_DoorOnly_APPROX_OFFLINE.png",
+    "QA/SourceAssets_9_SHA256_FROZEN.csv",
+    "README.md",
+    "SHA256SUMS.txt"
+  ]
+}

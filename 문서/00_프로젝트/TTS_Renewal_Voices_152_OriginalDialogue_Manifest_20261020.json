@@ -1,0 +1,1111 @@
+{
+  "version": 1,
+  "as_of": "2026-10-20",
+  "repo": "HappyPaul812/Project-Limitless",
+  "branch": "main",
+  "model": "gemini-3.8-flash-tts",
+  "voices": {
+    "companion_taeon": "Algieba",
+    "companion_serin": "Erinome"
+  },
+  "sources": {
+    "catalog": {
+      "path": "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset",
+      "sha": "12d860d83e49db975372d9084abbd8b2dc52c776"
+    },
+    "story_audit": {
+      "path": "문서/00_프로젝트/Story_Dialogue_Audit_Matrix.csv",
+      "sha": "57b4f9bf9292a6bf0751148f8b7e9ff00f025fba"
+    },
+    "main07_handoff": {
+      "path": "문서/00_프로젝트/Main07_Early_TTS_Handoff.csv",
+      "sha": "6658882e00d6a69d85179564e3b8cdf7fdbf3906"
+    },
+    "main17": {
+      "path": "문서/00_프로젝트/Main17_TTS_Manifest.csv",
+      "sha": "8c4f55dbad4bde70a5f6c9fb6e1e2af8cce8bc17"
+    },
+    "main18": {
+      "path": "문서/00_프로젝트/Main18_TTS_Manifest.csv",
+      "sha": "c8d19ecbf4d4e08a1e63fff94f2f08b667932088"
+    },
+    "main19": {
+      "path": "문서/00_프로젝트/Main19_TTS_Manifest.csv",
+      "sha": "050e5961230f91e1bb9cc1d0f79b7911f137c434"
+    },
+    "main20": {
+      "path": "문서/00_프로젝트/Main20_TTS_Manifest.csv",
+      "sha": "2746d645317da651949a71247be89e6ff10f1707"
+    },
+    "main21": {
+      "path": "문서/03_스토리/Main21_TTS_Manifest_20261010.json",
+      "sha": "90dfa70452731f04d47af7dcb0334bd2ae8dd5ec"
+    }
+  },
+  "rows": [
+    {
+      "id": "main06_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "초원에서 봤던 움직임과 비슷합니다.",
+      "source": "story_audit",
+      "chapter": 6
+    },
+    {
+      "id": "main06_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "하지만 여기서는 더 넓게 퍼져 있어요.",
+      "source": "story_audit",
+      "chapter": 6
+    },
+    {
+      "id": "main07_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "바퀴가 빠지셨는데요.",
+      "source": "story_audit",
+      "chapter": 7
+    },
+    {
+      "id": "main07_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "옵니다.",
+      "source": "story_audit",
+      "chapter": 7
+    },
+    {
+      "id": "main07_taeon_003",
+      "speaker": "companion_taeon",
+      "text": "저희도 같은 현상을 따라 여기까지 왔습니다.",
+      "source": "story_audit",
+      "chapter": 7
+    },
+    {
+      "id": "main09_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "빛의 정체는 아직 모릅니다. 남아 있는 흔적부터 보죠.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "두 줄의 폭이 일정합니다. 이번에는 깊게 빠진 자국이 아니에요.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_003",
+      "speaker": "companion_taeon",
+      "text": "지나오신 길을 확인하고 계셨습니까?",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_004",
+      "speaker": "companion_taeon",
+      "text": "이동 흔적이 방향을 바꾸는 지점이 있었습니다.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_005",
+      "speaker": "companion_taeon",
+      "text": "사실과 추측을 나눠두는 게 좋겠습니다.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_006",
+      "speaker": "companion_taeon",
+      "text": "모서리의 간격이 반복됩니다. 자연 암반과는 다릅니다.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main09_taeon_007",
+      "speaker": "companion_taeon",
+      "text": "안전한 경로부터 같이 확인하겠습니다.",
+      "source": "story_audit",
+      "chapter": 9
+    },
+    {
+      "id": "main10_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "폴이 가리킨 석재가 여기입니다. 주변 흙과 모서리의 방향이 다릅니다.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main10_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "모서리 간격이 반복됩니다. 자연 암반과는 형태가 다릅니다.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main10_taeon_003",
+      "speaker": "companion_taeon",
+      "text": "몬스터의 흔적도 안쪽을 피해 돌아갑니다. 먼저 안전한 길을 확인하죠.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main10_taeon_004",
+      "speaker": "companion_taeon",
+      "text": "발 디딜 곳부터 살펴야 합니다. 흙이 밀린 자리는 피하세요.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main10_taeon_005",
+      "speaker": "companion_taeon",
+      "text": "몬스터들이 피하던 방향과 일치합니다.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main10_taeon_006",
+      "speaker": "companion_taeon",
+      "text": "무너진 돌을 밟지 않도록 입구 위치를 기억해두겠습니다.",
+      "source": "story_audit",
+      "chapter": 10
+    },
+    {
+      "id": "main11_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "이 존재가 빛의 근원은 아니었던 것 같습니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "석관과 묘표가 남아 있습니다. 실제 안치 공간으로 쓰였던 곳입니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_003",
+      "speaker": "companion_taeon",
+      "text": "무너진 돌 사이의 긁힌 자국은 다른 흔적보다 새롭습니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_004",
+      "speaker": "companion_taeon",
+      "text": "양쪽 구조를 확인했습니다. 이제 이 장치를 움직일 수 있겠습니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_005",
+      "speaker": "companion_taeon",
+      "text": "돌을 다듬은 방식도 더 정교합니다. 안쪽부터 확인하죠.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_006",
+      "speaker": "companion_taeon",
+      "text": "석재의 홈과 문양이 반복됩니다. 의미는 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_007",
+      "speaker": "companion_taeon",
+      "text": "방향은 확인했습니다. 근원은 아직 모릅니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_008",
+      "speaker": "companion_taeon",
+      "text": "그렇다면 지금 보이는 균열로 내려갈 수 있겠습니까?",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_009",
+      "speaker": "companion_taeon",
+      "text": "지금 억지로 들어가는 건 위험합니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main11_taeon_010",
+      "speaker": "companion_taeon",
+      "text": "지하묘지에서 본 것과 같은 문양입니다. 가져가는 편이 좋겠습니다.",
+      "source": "story_audit",
+      "chapter": 11
+    },
+    {
+      "id": "main13_serin_001",
+      "speaker": "companion_serin",
+      "text": "잠시만요. 바람이 강하면 말소리가 흐려져서요.",
+      "source": "story_audit",
+      "chapter": 13
+    },
+    {
+      "id": "main13_serin_002",
+      "speaker": "companion_serin",
+      "text": "이 장치가 땅의 진동을 제가 알아볼 수 있는 신호로 바꿔 줘요. 중요한지는 제가 판단하고요.",
+      "source": "story_audit",
+      "chapter": 13
+    },
+    {
+      "id": "main13_serin_003",
+      "speaker": "companion_serin",
+      "text": "잠깐만요. 앞에 둘, 오른쪽 뒤에 하나 더 있어요. 발밑으로 울립니다.",
+      "source": "story_audit",
+      "chapter": 13
+    },
+    {
+      "id": "main13_serin_004",
+      "speaker": "companion_serin",
+      "text": "저도 아르벨로 갑니다. 그곳까지 함께 움직이죠.",
+      "source": "story_audit",
+      "chapter": 13
+    },
+    {
+      "id": "main14_serin_001",
+      "speaker": "companion_serin",
+      "text": "마을 안에서는 약한데 서쪽으로 갈수록 진동이 커져요. 일정한 간격으로 반복되고요.",
+      "source": "story_audit",
+      "chapter": 14
+    },
+    {
+      "id": "main14_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "열기는 계속 이어집니다. 같은 원인인지는 더 확인해야겠습니다.",
+      "source": "story_audit",
+      "chapter": 14
+    },
+    {
+      "id": "main14_serin_002",
+      "speaker": "companion_serin",
+      "text": "그 야수는 이쪽으로 오던 게 아니에요. 서쪽에서 도망치고 있었어요.",
+      "source": "story_audit",
+      "chapter": 14
+    },
+    {
+      "id": "main14_serin_003",
+      "speaker": "companion_serin",
+      "text": "이번 건 큽니다.",
+      "source": "story_audit",
+      "chapter": 14
+    },
+    {
+      "id": "main14_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "이번에는 저도 느꼈습니다. 아직 원인은 알 수 없습니다.",
+      "source": "story_audit",
+      "chapter": 14
+    },
+    {
+      "id": "main15_serin_001",
+      "speaker": "companion_serin",
+      "text": "저도 계속 서쪽을 확인할 생각이에요. 같이 살펴보죠.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_taeon_001",
+      "speaker": "companion_taeon",
+      "text": "가까이 가기 전에 상태를 확인하죠.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_002",
+      "speaker": "companion_serin",
+      "text": "움직임은 보통 야생동물과 비슷해요.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_taeon_002",
+      "speaker": "companion_taeon",
+      "text": "발자국이 동쪽으로 향합니다. 이곳에서 도망치는 듯합니다.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_003",
+      "speaker": "companion_serin",
+      "text": "또 시작됐어요. 간격은 조금 짧고 강해졌지만 완전히 일정하지는 않아요.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_004",
+      "speaker": "companion_serin",
+      "text": "또 시작됐어요. 지난번보다 간격이 조금 짧아요. 서쪽에서 오지만 위치까지는 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_005",
+      "speaker": "companion_serin",
+      "text": "땅이 뜨거워서요?",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_taeon_003",
+      "speaker": "companion_taeon",
+      "text": "그렇다고 여기가 시작점이라고 단정할 수는 없습니다.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_006",
+      "speaker": "companion_serin",
+      "text": "진동은 더 서쪽에서 옵니다.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_007",
+      "speaker": "companion_serin",
+      "text": "저도 계속 서쪽을 확인할 생각이에요. 혼자보다 함께 움직이는 편이 낫겠습니다.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_taeon_004",
+      "speaker": "companion_taeon",
+      "text": "그렇다면 앞으로도 함께하시겠습니까?",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main15_serin_008",
+      "speaker": "companion_serin",
+      "text": "네. 당분간이 아니어도 괜찮다면요.",
+      "source": "story_audit",
+      "chapter": 15
+    },
+    {
+      "id": "main03_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "바닥에 간단히 치료한 흔적과 떨어진 붕대가 남아 있습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "text": "누군가 먼저 이곳을 지나간 것 같습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "text": "옵니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "text": "제가 앞을 막겠습니다.\n뒤를 부탁드리겠습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "text": "잠깐만요. 더 가까이 가지 않는 게 좋겠습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "text": "저 몬스터들 말입니다.\n그냥 돌아다니는 것 같지만…\n계속 같은 쪽을 피하고 있어요.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "text": "그렇군요.\n그러면 제가 보고 있던 움직임하고\n이어질지도 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_008",
+      "speaker": "companion_taeon",
+      "text": "역시 이상합니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_009",
+      "speaker": "companion_taeon",
+      "text": "네.\n싸우는 동안에도 몇 번이나\n그쪽으로 움직이지 않으려고 했어요.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_010",
+      "speaker": "companion_taeon",
+      "text": "그렇다면 우연은 아닌 것 같습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_011",
+      "speaker": "companion_taeon",
+      "text": "저도 저쪽을 확인하려던 참이었습니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main03_taeon_supp_012",
+      "speaker": "companion_taeon",
+      "text": "목적이 같다면 잠시 함께 가시죠.\n혼자 움직이는 것보다는 안전할 겁니다.",
+      "source": "story_audit",
+      "chapter": 3
+    },
+    {
+      "id": "main04_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "괜찮으십니까?",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "text": "당신도 다친 것 같은데요.",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "text": "무언가를 피하고 있었습니까?",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "text": "또 옵니다.\n제가 앞을 맡겠습니다.",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "text": "본인부터 보셔야 하는 것 아닙니까?",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "text": "제가 본 움직임과\n이곳에서 있었던 일까지 합치면…",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main04_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "text": "여기서 더 들어가는 건\n지금은 위험할 것 같습니다.",
+      "source": "story_audit",
+      "chapter": 4
+    },
+    {
+      "id": "main05_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "몬스터들이 마을 쪽으로 움직이는 건 맞습니다.\n하지만 마을을 노리고 있는 것 같지는 않습니다.",
+      "source": "story_audit",
+      "chapter": 5
+    },
+    {
+      "id": "main05_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "text": "저도 이 움직임이\n어디서 시작됐는지 확인하고 싶습니다.",
+      "source": "story_audit",
+      "chapter": 5
+    },
+    {
+      "id": "main05_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "text": "괜찮으시다면…\n조금 더 함께 가겠습니다.",
+      "source": "story_audit",
+      "chapter": 5
+    },
+    {
+      "id": "main08_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "잠깐만요.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "text": "여기부터 흔적이 거의 없습니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "text": "평소라면 그렇겠죠.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "text": "그런데 조금 전까지 이쪽으로 이어지던 흔적들이 전부 방향을 바꾸고 있습니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "text": "초원에서는 무언가를 피해 밀려오는 것처럼 보였습니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "text": "여기서는 그 방향이 조금 더 분명합니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "text": "폭이 같습니다. 아마 맞을 겁니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_008",
+      "speaker": "companion_taeon",
+      "text": "누군가 이곳을 조사한 흔적입니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_009",
+      "speaker": "companion_taeon",
+      "text": "너무 조용합니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_010",
+      "speaker": "companion_taeon",
+      "text": "그 이유가 무엇인지는 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main08_taeon_supp_011",
+      "speaker": "companion_taeon",
+      "text": "마법 같습니다.",
+      "source": "story_audit",
+      "chapter": 8
+    },
+    {
+      "id": "main12_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "직접 확인하는 편이 좋겠습니다. 미엘도 서쪽으로 가볼 이유는 충분하다고 합니다.",
+      "source": "story_audit",
+      "chapter": 12
+    },
+    {
+      "id": "main16_ash_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "저도 그렇게 잡혀요.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_ash_hearing_serin_02",
+      "speaker": "companion_serin",
+      "text": "다만 어느 쪽이 먼저인지는 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_ash_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "땅이 울릴 때마다 움직여요.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_ash_default_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "진동과 관련이 있다는 말씀이십니까?",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_ash_default_serin_02",
+      "speaker": "companion_serin",
+      "text": "같이 일어나는 건 맞아요. 어느 쪽이 원인인지는 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_vibration_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "네. 방향은 같습니다. 다만 어디에서 시작되는지는 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_vibration_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "서쪽에서 오는 진동이 더 강해요. 간격에도 변화가 있습니다. 발생원은 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_tracks_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "무언가를 피한 것으로 보입니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "모두 준비하세요. 저 형체가 다가옵니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_retry_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "아직 그 형체가 남아 있습니다. 준비가 되면 다시 상대하죠.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_afterimage_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "네. 저도 잡힙니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_afterimage_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "아직 계속됩니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_afterimage_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "적어도 모든 원인은 아니라는 뜻이겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_afterimage_taeon_02",
+      "speaker": "companion_taeon",
+      "text": "열기의 일부가 지하에서 올라오는 것일 수 있습니다. 아직 가설입니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_canyon_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "네. 그 방향과 반복이 같이 잡힙니다. 정확한 발생 위치는 아직 모릅니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_canyon_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "진동은 붉은 균열 협곡 방향에서 더 강해요. 정확한 발생 위치는 아직 모르겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_canyon_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "오늘은 여기까지 확인하는 편이 좋겠습니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main16_report_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "열기의 일부가 지하에서 올라올 가능성은 있습니다. 가설일 뿐이며 재와 진동의 원인, 형체의 정체는 아직 모릅니다.",
+      "source": "story_audit",
+      "chapter": 16
+    },
+    {
+      "id": "main07_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "text": "수레가 지나간 흔적은 아닌 것 같습니다.",
+      "source": "main07_handoff",
+      "chapter": 7
+    },
+    {
+      "id": "main07_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "text": "폭이 일정하고… 한쪽이 계속 더 깊게 눌려 있어요.",
+      "source": "main07_handoff",
+      "chapter": 7
+    },
+    {
+      "id": "main07_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "text": "혼자 괜찮겠습니까?",
+      "source": "main07_handoff",
+      "chapter": 7
+    },
+    {
+      "id": "main17_after_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "아직 계속됩니다. 처치로 이 현상이 멎지는 않았어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_after_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "네. 저도 잡힙니다. 처치로 이 현상이 멎지는 않았어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_compare_serin_01",
+      "speaker": "companion_serin",
+      "text": "진동이 올 때 재도 움직입니다. 황야와 비슷해요. 무엇이 먼저인지, 어디서 시작됐는지는 아직 모르겠습니다.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_resonance_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "서쪽 틈 가까이에서 더 강해집니다. 표면의 흔들림 뒤에 약한 신호가 한 번 더 잡혀요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_resonance_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "저도 확인했습니다. 뒤따르는 신호는 약합니다. 아래쪽에서 올라오는 반응일 수도 있겠어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_route_serin_01",
+      "speaker": "companion_serin",
+      "text": "더 아래쪽 반응이 있습니다. 하지만 지금 위치만으로 안전한 경로를 판단할 수는 없겠어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_serin_serin_01",
+      "speaker": "companion_serin",
+      "text": "황야에서 잡힌 신호를 이곳에서도 기록하고 있습니다. 혼자 확인한 것보다 함께 비교하면 차이가 분명하겠네요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_vibration_default_serin_01",
+      "speaker": "companion_serin",
+      "text": "바닥에서 반복되는 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_vibration_hearing_serin_01",
+      "speaker": "companion_serin",
+      "text": "저도 같은 신호가 잡힙니다. 황야보다 강하지만, 같은 간격인지는 더 비교해야겠어요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_withdraw_serin_01",
+      "speaker": "companion_serin",
+      "text": "동의합니다. 기록은 충분하고, 돌아갈 길도 남아 있네요.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_withdraw_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "우선 안전한 곳으로 돌아가겠습니다. 준비 없이 더 들어가는 것은 위험합니다.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main17_witness_serin_01",
+      "speaker": "companion_serin",
+      "text": "돌아갈 길을 확보하죠. 싸우는 동안 틈 가장자리는 피하겠습니다.",
+      "source": "main17",
+      "chapter": 17
+    },
+    {
+      "id": "main18_after_watcher_serin_01",
+      "speaker": "companion_serin",
+      "text": "쓰러뜨렸는데도 주변 열기가 줄지 않아요.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_after_watcher_serin_02",
+      "speaker": "companion_serin",
+      "text": "네. 원인이라기보다 수문장에 가까워 보여요.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_after_watcher_serin_03",
+      "speaker": "companion_serin",
+      "text": "진동도 계속 더 깊은 곳에서 올라옵니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_deeper_route_serin_01",
+      "speaker": "companion_serin",
+      "text": "진동이 저 아래에서 올라옵니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_deeper_route_serin_02",
+      "speaker": "companion_serin",
+      "text": "이제 중심부가 멀지 않은 것 같아요.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_watcher_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "한 사람에게 열이 몰리지 않게 상태를 계속 확인하겠습니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main19_pulse_1_serin_01",
+      "speaker": "companion_serin",
+      "text": "둘이 우연히 모인 게 아니에요.\n같은 맥동에 밀려 한쪽으로 몰린 것처럼 움직였습니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_pulse_1_serin_02",
+      "speaker": "companion_serin",
+      "text": "네. 더 깊은 쪽일수록 반응이 빨라집니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_track_1_serin_01",
+      "speaker": "companion_serin",
+      "text": "발자국 하나의 간격이 너무 넓어요.\n여러 개체가 아니라, 큰 하나가 지나간 흔적에 가깝습니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_track_1_serin_02",
+      "speaker": "companion_serin",
+      "text": "단정은 이르지만, 적어도 여기까지 남은 압력은 그 수준입니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_track_2_serin_01",
+      "speaker": "companion_serin",
+      "text": "네. 여기서부터는 '무언가가 지나갔다'가 아니라,\n'무언가가 이 길을 쓰고 있다'에 가깝습니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_withdraw_serin_01",
+      "speaker": "companion_serin",
+      "text": "저게 중심부에 가까운 존재라면, 다음에는 피할 수 없을 거예요.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_witness_serin_01",
+      "speaker": "companion_serin",
+      "text": "저 존재가 모든 일의 원인이라고 단정할 수는 없어요.\n하지만 움직일 때마다 열기와 진동이 함께 치솟습니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main19_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "준비를 갖추고 다시 오겠습니다.",
+      "source": "main19",
+      "chapter": 19
+    },
+    {
+      "id": "main18_leon_serin_01",
+      "speaker": "companion_serin",
+      "text": "진동도 끊기지 않았어요. 오히려 더 깊은 쪽에서 간격이 짧아졌습니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_ground_serin_01",
+      "speaker": "companion_serin",
+      "text": "지면 아래 반응은 계속됩니다. 원인과 표면의 변화는 구분해서 기록하죠.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_heat_vent_serin_01",
+      "speaker": "companion_serin",
+      "text": "열이 올라오는 간격이 짧아요. 물러날 공간부터 확보하겠습니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_overheat_serin_01",
+      "speaker": "companion_serin",
+      "text": "방금 공격은 상처보다 몸에 열을 남기는 쪽이었어요.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_overheat_serin_02",
+      "speaker": "companion_serin",
+      "text": "네. 열이 겹쳐 쌓입니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_overheat_serin_03",
+      "speaker": "companion_serin",
+      "text": "세 번째까지 쌓이면 한꺼번에 터져요. 두 겹이 보이면 냉각약을 쓸지 판단하는 게 좋겠습니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_overheat_serin_04",
+      "speaker": "companion_serin",
+      "text": "네. 이 열은 정화로는 빠지지 않습니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_vibration_serin_01",
+      "speaker": "companion_serin",
+      "text": "저도 같은 방향을 보고 있었어요. 더 깊은 곳으로 갈수록 반응이 빨라집니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_watcher_witness_serin_01",
+      "speaker": "companion_serin",
+      "text": "저 앞의 개체, 주변 열기가 움직임에 맞춰 올라갑니다.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main18_watcher_witness_serin_02",
+      "speaker": "companion_serin",
+      "text": "앞의 갑충보다 열을 모으는 속도가 훨씬 빨라요.",
+      "source": "main18",
+      "chapter": 18
+    },
+    {
+      "id": "main20_confront_serin_01",
+      "speaker": "companion_serin",
+      "text": "저 존재가 움직일 때마다 지면의 맥동이 따라옵니다.\n가까이 오니 더 분명해졌어요.",
+      "source": "main20",
+      "chapter": 20
+    },
+    {
+      "id": "main20_confront_serin_02",
+      "speaker": "companion_serin",
+      "text": "네. 하지만 지금 이 지역의 열기를 크게 키우고 있는 건 확실해 보여요.",
+      "source": "main20",
+      "chapter": 20
+    },
+    {
+      "id": "main20_confront_serin_03",
+      "speaker": "companion_serin",
+      "text": "열핵이 뛰는 간격을 보세요.\n공격하기 전마다 반응이 달라집니다.",
+      "source": "main20",
+      "chapter": 20
+    },
+    {
+      "id": "main20_after_colossus_serin_01",
+      "speaker": "companion_serin",
+      "text": "열기가 내려가고 있어요.\n적어도 이 존재가 크게 증폭시키고 있던 건 맞았던 것 같습니다.",
+      "source": "main20",
+      "chapter": 20
+    },
+    {
+      "id": "main20_after_colossus_serin_02",
+      "speaker": "companion_serin",
+      "text": "네. 훨씬 약해졌지만…\n완전히 멈추지는 않았어요.",
+      "source": "main20",
+      "chapter": 20
+    },
+    {
+      "id": "main21_heat_serin_01",
+      "speaker": "companion_serin",
+      "text": "바람이 달라졌어요. 아직 뜨겁긴 하지만, 전처럼 밀어붙이는 느낌은 아닙니다.",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_pulse_serin_01",
+      "speaker": "companion_serin",
+      "text": "울림은 남아 있어요. 하지만 간격이 훨씬 길어졌습니다.",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_route_serin_01",
+      "speaker": "companion_serin",
+      "text": "중앙 쪽은 아직 일정한 간격으로 흔들립니다.",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_route_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "여긴 지난번에 흔들리던 곳과 다릅니다. 제가 다시 확인하겠습니다.",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_haren_taeon_01",
+      "speaker": "companion_taeon",
+      "text": "형? 오랜만에 만나서 첫마디가 그거야?",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_haren_taeon_02",
+      "speaker": "companion_taeon",
+      "text": "응. 괜찮아.",
+      "source": "main21",
+      "chapter": 21
+    },
+    {
+      "id": "main21_prepare_serin_01",
+      "speaker": "companion_serin",
+      "text": "이번엔 북쪽이군요. 먼저 길부터 살펴봐야겠어요.",
+      "source": "main21",
+      "chapter": 21
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Role,Asset,X,Y,PPU,PivotX,PivotY,Scale,Order,GroupOrder,WidthWU,HeightWU,CanvasHeightAt720,OwnCollider
+OLD_INN_SIGN_CORRECTED,Assets/_Project/Art/PresentationCandidates/Issue64/Frostway_Sign_Inn_REFERENCE.png,-5.35,3.8,128,55,0,1,5,1780,0.859375,1.125,81,NONE
+NEW_INN_SIGN,Assets/_Project/Art/PresentationCandidates/Issue64/Inn_StandaloneSign_CANDIDATE.png,-5.35,3.8,512,567.5,0,0.55,5,1780,1.219238,1.178418,84.8461,NONE
+BEE_CENTRED_FIELD_CANDIDATE,Assets/_Project/Art/PresentationCandidates/Issue64/VenomBee_OriginalKeyArt_Pilot_v1_512.png,-6,-1.5,512,256,256,0.85,3,,0.85,0.85,61.2,NONE

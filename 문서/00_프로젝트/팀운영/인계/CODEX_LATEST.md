@@ -1,3 +1,9 @@
+## 2026-10-24 EOD 승인분 통합 — Delta QA PASS / PR 진행 / 원본 SYNC HOLD
+
+Main23 KEEP 아트 Scene과 5목표·접근성 보완20파일 + 승인 TTS162(Unity189/140교체22신규/Catalog312)를 선별 통합했습니다. 제품 commit `26643f16531e5d2b7be635d95c02ff06c12c3a88`. 신규 정적472·격리 Unity25 PASS, 기존 전수QA 재실행0. 미승인 시안18 PNG/오르나/남문 부품/여관 간판/독침벌/NPC/BGM/SFX 제외. Main24 Save 미구현·OPEN16·Discord #66 MANUAL/HOLD 유지.
+
+원본858파일/보호6842/TTS1430 SHA 보존, 85 worktree 비파괴백업 완료. 원본 BuildSettings 사용자 app-ui 설정과 Scene 추가의 경로 충돌로 복제본 ff-only 거부. 원본 main `47ad2eec` 유지·동기화 HOLD이며 SYNC_COMPLETE 아님. Editor·Save·포커스 변경0. [상세](../../EOD_ApprovedIntegration_LocalSync_20261024.md).
+
 ## 2026-10-22 EOD 마감 — PR54 병합·원본 SYNC_COMPLETE 확인
 
 [PR54](https://github.com/HappyPaul812/Project-Limitless/pull/54) merge `e2801286ccd26fe2060d9fee658ac272da4b4f2b`: 승인 Bear v4·Fox v7 공유 코드 양쪽 보존6파일 + 마을 최종승인9 Sprite/Tile 신규등록39파일 = 제품45파일, 담당 문서·근거152파일, 총197파일 통합. 신규 정적10/격리Unity15 PASS, 기존154/162/Wolf/Main22 전체QA 재실행0.

@@ -1,0 +1,8 @@
+﻿Files,Status,Observation,MinimumRecommendation
+Orna_VillageGuide_512_CANDIDATE.png,TECH_PASS / USER_ART_REVIEW_PENDING,40px는 작고128px는 기존NPC82.3px 대비1.56배; 가까운 플레이어 이름표와 NPC 하체 겹침,720px높이 카메라에서82px 전체캔버스를 권고;96px 보조안. 정식크기/StableID/VoiceID 미확정
+SouthGate_RoofGable_Joint_CANDIDATE.png;SouthGate_RoofTrim_Joint_CANDIDATE.png,TECH_PASS_EXCLUSION / ART_HOLD_AS_OVERLAY,이번 대안에서 두 모듈 미설치; 기존 이미지·지붕 유지,두 후보 보존하되 현 주택에는 배치하지 않음
+SouthGate_EntryDoor_Joint_CANDIDATE.png,TECH_PASS_LAYOUT / ART_HOLD_JOIN,EntryDoor가 문짝뿐 아니라 작은 박공·문틀·계단을 포함; 기존 출입구 위에 중첩되고 다락창 주변을 가림,현 주택 KEEP_OLD 우선. 채택 필요 시 문짝/문틀만 독립한 최소 후보1PNG 또는 본체와 정확한 접합 좌표 납품
+Inn_StandaloneSign_CANDIDATE.png,TECH_PASS_EXCLUSION / USER_ART_REVIEW_PENDING,이번에는 신규간판 미설치. 본체 내장간판1개만 남아 중복 해소,KEEP_OLD 권고; 후보ZIP/PNG 삭제0. 독립 간판은 sign-less 입면이 있을 때 별도 검토
+VenomBee_OriginalKeyArt_Pilot_v1_512.png,A_REUSED_TECH_PASS / ART_HOLD_FOR_RUNTIME,좌향1포즈. 기존 우향Idle10+Attack10·10FPS와 대체 불가,원본애니메이션 그대로 보존. 방향·40px 실루엣 단순화·모션생산은 대표 승인 후 별도 단계
+VenomBee_Preview_40.png;VenomBee_Preview_128.png,A_REUSED_ART_REVIEW_PENDING,작은 납품Preview의 외곽alpha 접촉 기록 유지;512Master 외곽0,기존Alpha3배경판 재사용. 소스 수정 없이 후보 소형판 여백만 후속 검토
+PilotBee/Original/LICENSE.TXT;PilotBee/README.md,A_REUSED_RIGHTS_SOURCE_PENDING,활성PNG=원본PNG 확인;CC BY3.0/4.0 충돌 및 미연결README 모순 유지,원본/크레딧 유지. 별도 출처 확인·문서 정정 승인 필요

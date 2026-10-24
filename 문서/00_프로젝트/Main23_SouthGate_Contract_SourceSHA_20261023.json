@@ -1,0 +1,13 @@
+{
+  "source_commit": "dd5c0f4600857d14aa647d0dda6ab4318bad7a52",
+  "files": {
+    "Unity/Client/Assets/_Project/Scenes/World_FrostwayVillage.unity": "05e58e1bffb44c5c9f1a2375af3ad567b936d0c1d4cfd16ceb860e82dc97b16b",
+    "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main23Flow.cs": "96e3ca85060569d3be03bb2ecf54321a83b3d033e7a8fbcd62e42fb184481bc9",
+    "Unity/Client/Assets/_Project/Scripts/Editor/Main23PresentationBuilder.cs": "a6f3f17024b273a3a3893e1bb4b0d49bdf0d373ec181207a41c03de887dee157",
+    "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main23_WarmLand.asset": "eea9c8e4765f05984bdf2ec7faf404e641b8cf143685e6362a46e0f8f78013f9",
+    "문서/00_프로젝트/Main23_Frostway_VisualGapList.csv": "404a3d333df23f0349cb2cce2431892d47c3c01804b493c55dc732fb631b16b3"
+  },
+  "method": "READ_ONLY_SOURCE_COMPARISON",
+  "unity_runs": 0,
+  "new_qa_pass_claims": 0
+}

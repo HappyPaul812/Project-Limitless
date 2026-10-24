@@ -1,0 +1,40 @@
+[
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/Assets/_Project/Scenes",
+    "pass": true
+  },
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/Assets/_Project/Resources",
+    "pass": true
+  },
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/Assets/_Project/Art",
+    "pass": true
+  },
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/Assets/ThirdParty",
+    "pass": true
+  },
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/Packages",
+    "pass": true
+  },
+  {
+    "check": "ProductBaselineUnchanged.Unity/Client/ProjectSettings",
+    "pass": true
+  },
+  {
+    "check": "B_New65_checks.txt",
+    "rows": 33,
+    "pass": true
+  },
+  {
+    "check": "B_FinalFrames_checks.txt",
+    "rows": 8,
+    "pass": true
+  },
+  {
+    "check": "LocalReviewPackageDeliveredSameSHA256",
+    "pass": true
+  }
+]

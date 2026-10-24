@@ -1,0 +1,6 @@
+﻿Role,Asset,X,Y,PPU,PivotX,PivotY,Scale,Order,GroupOrder,WidthWU,HeightWU,CanvasHeightAt720,OwnCollider
+EXISTING_NPC_REFERENCE_CLONE,Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA09_VillageRepresentative.png,-5.4,-4,28,16,0,1,2400,,1.142857,1.142857,82.28572,NONE
+ORNA_ALPHA_HEIGHT_40,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,0.5876951,2400,,0.5876951,0.5876951,42.31405,NONE
+ORNA_ALPHA_HEIGHT_80,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.17539,2400,,1.17539,1.17539,84.6281,NONE
+ORNA_ALPHA_HEIGHT_96,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.410468,2400,,1.410468,1.410468,101.5537,NONE
+ORNA_ALPHA_HEIGHT_128,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.880624,2400,,1.880624,1.880624,135.405,NONE

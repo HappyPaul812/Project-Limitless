@@ -1,0 +1,16 @@
+{
+  "archive": "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee.zip",
+  "sha256": "c979b691e76e850fb8c1949d8bf53fe55b0b085b0a5012d83d5f6262ae48a2b6",
+  "crc_bad": null,
+  "entries": [
+    "p_bee/",
+    "p_bee/LICENSE.TXT",
+    "p_bee/pilot_bee_attack.png",
+    "p_bee/pilot_bee_idle.png"
+  ],
+  "png_entry_matches": {
+    "p_bee/pilot_bee_attack.png": true,
+    "p_bee/pilot_bee_idle.png": true
+  },
+  "license_text": "This work is licensed under the Creative Commons Attribution 4.0  License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.\n\nAuthor: Jana Ochse, 2D!PIXX, www.2dpixx.de\n"
+}

@@ -1,0 +1,1909 @@
+{
+  "status": "PASS",
+  "checks": 472,
+  "targets": 162,
+  "catalog": 312,
+  "replaced": 140,
+  "new": 22,
+  "voice_guid_collisions": 0,
+  "existing_nonvoice_guid_collision_groups": {
+    "ea7264dba5af46cda070ad3e3aa3eac3": [
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/GoldenArrow/golden_arrow_00.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_00.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_01.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_02.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_03.png.meta",
+      "Unity/Client/Assets/_Project/Resources/BattleProjectiles/HealerMagicalProjectile/healer_magical_projectile_04.png.meta"
+    ]
+  },
+  "checks_detail": [
+    {
+      "check": "162 approved targets preserved",
+      "pass": true
+    },
+    {
+      "check": "WAV:main06_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main06_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main09_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main10_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_008",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_009",
+      "pass": true
+    },
+    {
+      "check": "WAV:main11_taeon_010",
+      "pass": true
+    },
+    {
+      "check": "WAV:main13_serin_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main13_serin_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main13_serin_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main13_serin_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main14_serin_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main14_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main14_serin_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main14_serin_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main14_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main15_serin_008",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "WAV:main03_taeon_supp_012",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main04_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main05_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main05_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main05_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "WAV:main08_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "WAV:main12_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_ash_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_ash_hearing_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_ash_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_ash_default_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_ash_default_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_tracks_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_retry_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_afterimage_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_afterimage_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_afterimage_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_afterimage_taeon_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_canyon_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_canyon_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_canyon_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main16_report_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "WAV:main07_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_after_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_after_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_compare_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_resonance_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_resonance_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_serin_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_withdraw_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main17_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_after_watcher_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_after_watcher_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_after_watcher_serin_03",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_deeper_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_deeper_route_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_watcher_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_pulse_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_pulse_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_track_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_track_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_track_2_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main19_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_leon_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_ground_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_heat_vent_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_overheat_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_overheat_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_overheat_serin_03",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_overheat_serin_04",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_vibration_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_watcher_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main18_watcher_witness_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main20_confront_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main20_confront_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main20_confront_serin_03",
+      "pass": true
+    },
+    {
+      "check": "WAV:main20_after_colossus_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main20_after_colossus_serin_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_heat_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_pulse_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_route_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_haren_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_haren_taeon_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_prepare_serin_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_route_paul_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_route_paul_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_arbel_leon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_aid_miel_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_aid_paul_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_aid_miel_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_carriage_leon_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_haren_haren_01",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_haren_haren_02",
+      "pass": true
+    },
+    {
+      "check": "WAV:main21_haren_haren_03",
+      "pass": true
+    },
+    {
+      "check": "312 unique catalog IDs",
+      "pass": true
+    },
+    {
+      "check": "150 non-target mappings unchanged",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main06_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main06_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main06_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main06_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main09_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main09_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main10_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main10_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_008",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_008",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_009",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_009",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main11_taeon_010",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main11_taeon_010",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main13_serin_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main13_serin_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main13_serin_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main13_serin_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main13_serin_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main13_serin_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main13_serin_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main13_serin_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main14_serin_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main14_serin_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main14_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main14_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main14_serin_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main14_serin_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main14_serin_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main14_serin_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main14_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main14_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_taeon_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_taeon_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_taeon_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_taeon_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main15_serin_008",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main15_serin_008",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main03_taeon_supp_012",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main03_taeon_supp_012",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main04_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main04_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main05_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main05_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main05_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main05_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main05_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main05_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_004",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_005",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_006",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_007",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_008",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_009",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_010",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main08_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main08_taeon_supp_011",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main12_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main12_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_ash_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_ash_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_ash_hearing_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_ash_hearing_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_ash_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_ash_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_ash_default_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_ash_default_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_ash_default_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_ash_default_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_tracks_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_tracks_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_retry_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_retry_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_afterimage_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_afterimage_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_afterimage_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_afterimage_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_afterimage_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_afterimage_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_afterimage_taeon_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_afterimage_taeon_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_canyon_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_canyon_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_canyon_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_canyon_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_canyon_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_canyon_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main16_report_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main16_report_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_supp_001",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_supp_002",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main07_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main07_taeon_supp_003",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_after_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_after_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_after_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_after_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_compare_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_compare_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_resonance_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_resonance_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_resonance_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_resonance_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_serin_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_serin_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_vibration_default_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_vibration_hearing_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_withdraw_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_withdraw_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main17_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main17_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_after_watcher_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_after_watcher_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_after_watcher_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_after_watcher_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_after_watcher_serin_03",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_after_watcher_serin_03",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_deeper_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_deeper_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_deeper_route_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_deeper_route_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_watcher_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_watcher_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_pulse_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_pulse_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_pulse_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_pulse_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_track_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_track_1_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_track_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_track_1_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_track_2_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_track_2_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_withdraw_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main19_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main19_witness_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_leon_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_leon_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_ground_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_ground_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_heat_vent_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_heat_vent_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_overheat_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_overheat_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_overheat_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_overheat_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_overheat_serin_03",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_overheat_serin_03",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_overheat_serin_04",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_overheat_serin_04",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_vibration_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_vibration_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_watcher_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_watcher_witness_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main18_watcher_witness_serin_02",
+      "pass": true
+    },
+    {
+      "check": "ExistingGUID:main18_watcher_witness_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main20_confront_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main20_confront_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main20_confront_serin_03",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main20_after_colossus_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main20_after_colossus_serin_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_heat_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_pulse_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_route_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_route_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_haren_taeon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_haren_taeon_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_prepare_serin_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_route_paul_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_route_paul_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_arbel_leon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_aid_miel_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_aid_paul_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_aid_miel_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_carriage_leon_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_haren_haren_01",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_haren_haren_02",
+      "pass": true
+    },
+    {
+      "check": "GUID/Speaker:main21_haren_haren_03",
+      "pass": true
+    },
+    {
+      "check": "Voice GUID collision zero",
+      "pass": true
+    },
+    {
+      "check": "No unapproved presentation assets",
+      "pass": true
+    },
+    {
+      "check": "Initial KEEP scene exact:World_FrostwayVillage.unity",
+      "pass": true
+    },
+    {
+      "check": "Initial KEEP scene exact:World_NorthF1.unity",
+      "pass": true
+    },
+    {
+      "check": "Existing approved products unchanged outside selected paths",
+      "pass": true
+    }
+  ]
+}

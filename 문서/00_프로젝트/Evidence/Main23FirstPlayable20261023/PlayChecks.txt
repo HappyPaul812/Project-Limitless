@@ -1,0 +1,106 @@
+PASS|Prerequisite.Main22Required
+PASS|LegacyMain22.Main23AvailableManual state=Available main22=True step=-1 catalog=main_23_southbound_traces
+PASS|Start.Cancel.OpenedChoice
+PASS|Start.Cancel.ActualChoicePanel
+PASS|Cancel.NoStart
+PASS|Start.Manual.OpenedChoice
+PASS|Start.Manual.ActualChoicePanel
+PASS|Goal1.Started
+PASS|Save.Started
+PASS|Wheelchair.DeepPhysicalWalk.RouteFound
+PASS|Wheelchair.DeepPhysicalWalk.Arrived
+PASS|Wheelchair.DeepPhysicalWalk.WithinInteractionRadius position=(-1.42, 14.50, 0.00) target=(-2.00, 15.00, 0.00)
+PASS|Goal1.ActualDeepReached
+PASS|Mouse.TraceA.OwnerOpened
+PASS|Dialogue.OpenDoesNotCount
+PASS|Dialogue.Closed
+PASS|Goal2.OneDistinctTrace
+PASS|TraceA.DuplicateRejected
+PASS|Save.OneTrace
+PASS|Continue.Read.OneTrace
+PASS|Continue.OneTracePreserved
+PASS|Wheelchair.CartTrace.RouteFound
+PASS|Wheelchair.CartTrace.Arrived
+PASS|Wheelchair.CartTrace.WithinInteractionRadius position=(1.43, 17.50, 0.00) target=(2.00, 18.00, 0.00)
+PASS|Keyboard.F.TraceB.Open
+PASS|Dialogue.Closed
+PASS|Goal2.TwoDistinctTraces
+PASS|Wheelchair.NorthGate.RouteFound
+PASS|Wheelchair.NorthGate.Arrived
+PASS|Wheelchair.NorthGate.WithinInteractionRadius position=(0.61, 21.49, 0.00) target=(0.00, 22.00, 0.00)
+PASS|Gate.EnterVillage.OpenedChoice
+PASS|Gate.EnterVillage.ActualChoicePanel
+PASS|Village.Loaded
+PASS|Goal3.ValidArrivalSpawn
+PASS|Arrival.NoForcedDialogue
+PASS|Save.Arrival
+PASS|Continue.Read.Arrival
+PASS|Continue.Arrival
+PASS|Village.NoMonsters
+PASS|Village.NoAutomaticF2OrEastTransition
+PASS|Wheelchair.Guide.RouteFound
+PASS|Wheelchair.Guide.Arrived
+PASS|Wheelchair.Guide.WithinInteractionRadius position=(-2.39, -4.50, 0.00) target=(-3.00, -4.00, 0.00)
+PASS|Keyboard.E.Testimony.Open
+PASS|Goal4.WaitForDialogueEnd
+PASS|Dialogue.Closed
+PASS|Goal4.CompletedWithoutAutoCheckpoint
+PASS|Save.Testimony
+PASS|Continue.Read.Testimony
+PASS|Continue.Testimony
+PASS|Wheelchair.Checkpoint.RouteFound
+PASS|Wheelchair.Checkpoint.Arrived
+PASS|Wheelchair.Checkpoint.WithinInteractionRadius position=(-0.60, -0.50, 0.00) target=(0.00, 0.00, 0.00)
+PASS|Checkpoint.Cancel.OpenedChoice
+PASS|Checkpoint.Cancel.ActualChoicePanel
+PASS|Checkpoint.CancelNoComplete
+PASS|Checkpoint.Register.OpenedChoice
+PASS|Checkpoint.Register.ActualChoicePanel
+PASS|Dialogue.Closed
+PASS|Goal5.Main23Completed
+PASS|SafeZone.SceneRegistered
+PASS|Save.Complete
+PASS|Continue.Read.Complete
+PASS|Continue.BothMain22Main23Preserved
+PASS|Camera.ViewportInsideBounds.1280
+PASS|Camera.ViewportInsideBounds.960
+PASS|Camera.ViewportInsideBounds.1680
+PASS|Services.PetRolesNoDuplicates
+PASS|Wheelchair.PartyAccess.RouteFound
+PASS|Wheelchair.PartyAccess.Arrived
+PASS|Wheelchair.PartyAccess.WithinInteractionRadius position=(5.38, 1.50, 0.00) target=(6.00, 2.00, 0.00)
+PASS|Party.OpenRequest
+PASS|Party.ActualUiOpen
+PASS|Keyboard.Escape.PartyCancel
+PASS|Wheelchair.InnAccess.RouteFound
+PASS|Wheelchair.InnAccess.Arrived
+PASS|Wheelchair.InnAccess.WithinInteractionRadius position=(-5.41, 1.50, 0.00) target=(-6.00, 2.00, 0.00)
+PASS|Inn.Cancel.OpenedChoice
+PASS|Inn.Cancel.ActualChoicePanel
+PASS|Inn.Rest.OpenedChoice
+PASS|Inn.Rest.ActualChoicePanel
+PASS|Services.MainQuestPreserved
+PASS|Wheelchair.LockedNorth.RouteFound
+PASS|Wheelchair.LockedNorth.Arrived
+PASS|Wheelchair.LockedNorth.WithinInteractionRadius position=(-0.61, 8.50, 0.00) target=(0.00, 9.00, 0.00)
+PASS|North.InfoOnly
+PASS|Dialogue.Closed
+PASS|North.NoF2Load
+PASS|Wheelchair.SouthGate.RouteFound
+PASS|Wheelchair.SouthGate.Arrived
+PASS|Wheelchair.SouthGate.WithinInteractionRadius position=(-0.50, -9.39, 0.00) target=(0.00, -10.00, 0.00)
+PASS|Gate.ReturnF1.OpenedChoice
+PASS|Gate.ReturnF1.ActualChoicePanel
+PASS|RoundTrip.F1SafeSpawn
+PASS|Walking.ReenterGate.RouteFound
+PASS|Walking.ReenterGate.Arrived
+PASS|Walking.ReenterGate.WithinInteractionRadius position=(0.00, 21.42, 0.00) target=(0.00, 22.00, 0.00)
+PASS|Gate.Reenter.OpenedChoice
+PASS|Gate.Reenter.ActualChoicePanel
+PASS|RoundTrip.VillageReenter
+PASS|DefeatReturn.ActualSafeSpawn
+PASS|Legacy.OptionalFlagsDefaultZero
+PASS|Legacy.RestoreCompleted
+PASS|Main24.NotCreated
+PASS|Save.Version1Preserved
+PASS|Console.NoRuntimeErrors

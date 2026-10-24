@@ -1,0 +1,15 @@
+PASS|CandidateLoaded.Frostway_Sign_Inn_REFERENCE.png
+PASS|OldSign.ReferencePPU128MatchesGapContract
+PASS|CandidateLoaded.Inn_StandaloneSign_CANDIDATE.png
+PASS|CandidateLoaded.VenomBee_OriginalKeyArt_Pilot_v1_512.png
+PASS|Bee.CandidateCentrePivotMatchesRuntimeCells
+PASS|Bee.FieldSameCentreLine
+PASS|OfficialChapter2Reference.11_SootHound
+PASS|OfficialChapter2Reference.12_HeatwindHawk
+PASS|OfficialChapter2Reference.13_FissureLizard
+PASS|OfficialChapter2Reference.14_EmberBeetle
+PASS|OfficialChapter2Reference.15_EmberWraith
+PASS|Comparison.SamePhysicalPixels.1280
+PASS|Comparison.SamePhysicalPixels.960
+PASS|Comparison.SamePhysicalPixels.1680
+PASS|CaptureFix.NoRuntimeErrors

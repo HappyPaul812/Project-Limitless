@@ -1,0 +1,146 @@
+[
+  {
+    "board": "Board1_Orna_40_82_96_128_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Orna40_ReferencePlayer_1280x720.png",
+    "source_sha256": "3b1056cbe41988ad8234addd79237a738c9e982670e53c8468408ea2465da3cc",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "paste": [
+      0,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board1_Orna_40_82_96_128_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Orna82_ReferencePlayer_1280x720.png",
+    "source_sha256": "2283cb2bebb0f6084b0c512165d7b4401163bc9fd74cd09c071364382b3b2db3",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "paste": [
+      620,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board1_Orna_40_82_96_128_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Orna96_ReferencePlayer_1280x720.png",
+    "source_sha256": "b8da60087d10aa162a0e41b0dc1a5294a261bb7264ac9fbde5cc93f0c2cc5b8b",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "paste": [
+      0,
+      385
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board1_Orna_40_82_96_128_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Orna128_ReferencePlayer_1280x720.png",
+    "source_sha256": "976d4c1b35b8c803dfe9b5f15f10a9b5e566670294f42252a834868550399b5d",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "paste": [
+      620,
+      385
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source": "Temp\\ArtPilots20261023\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtPilots20261023\\UNAPPROVED_SouthGate_DoubleRoof_ART_HOLD_1280x720.png",
+    "source_sha256": "8cb6e57cd3e449c691ecd41054b9f5eb6a36ed1ec2945c94895394371a704b71",
+    "crop": [
+      385,
+      20,
+      695,
+      345
+    ],
+    "paste": [
+      0,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_KEEP_OLD_1280x720.png",
+    "source_sha256": "42996ee6b4f04b8ecd85a56c6d7d5528dbdeb862baac1d5f2bd0ebfd58da1cde",
+    "crop": [
+      197,
+      20,
+      507,
+      345
+    ],
+    "paste": [
+      310,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board2_Roof_Excluded_EntryDoorOnly_UNAPPROVED.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Residence_EntryDoorOnly_1280x720.png",
+    "source_sha256": "276d81ee624ed5f4ea69db078c5ef6d74e8507502b3b87120fea2ce01914afc9",
+    "crop": [
+      197,
+      20,
+      507,
+      345
+    ],
+    "paste": [
+      620,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board3_Inn_OneSign_KEEP_OLD.png",
+    "source": "Temp\\ArtPilots20261023\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtPilots20261023\\UNAPPROVED_Inn_NewSign_1280x720.png",
+    "source_sha256": "56f562e9730504d11ad560cf79665ccef8b01bb6fdf4290c3a73f31cc3d7f701",
+    "crop": [
+      430,
+      0,
+      840,
+      280
+    ],
+    "paste": [
+      0,
+      75
+    ],
+    "rescale": false
+  },
+  {
+    "board": "Board3_Inn_OneSign_KEEP_OLD.png",
+    "source": "Temp\\ArtReview65\\Worktree\\문서\\00_프로젝트\\Evidence\\ArtReview65\\UNAPPROVED_NEW65_Inn_KEEP_OLD_1280x720.png",
+    "source_sha256": "442d9dff84937fc743f2f876075433f596a71dd98ede122c1040fdd8b30cc33c",
+    "crop": [
+      430,
+      0,
+      840,
+      280
+    ],
+    "paste": [
+      410,
+      75
+    ],
+    "rescale": false
+  }
+]

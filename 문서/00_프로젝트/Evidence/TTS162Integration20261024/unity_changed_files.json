@@ -1,0 +1,758 @@
+[
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav",
+    "sha256": "ad21f3b546712d98da6ea43dc25a23b1b2af6d791c63e07951d08e38e0f8b111"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav",
+    "sha256": "cde3e5057a2bb13840f416337ec0a623237140bf777d55e6e3cc25d97b41be29"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav",
+    "sha256": "8becf3380ae7419f6557e9dc84d8870a6adf133b7e855014020ec5b7ec394a1b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav",
+    "sha256": "4b641ed6ee20b6a9c66a9d21e521f60cc24eb2ad0e45f9843d51f0425bc370ac"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav",
+    "sha256": "23f678cbc73353e9298aeae939646414d1cebbc35be78626ae6fc39c794b3e5f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav",
+    "sha256": "d403f5909b6f46cf51ab9841e243b982b9e513172f38826ceb538834795404a0"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav",
+    "sha256": "a432223ac1e8b802a17ab68dd6337912797da3d01d4920dbdc1eb3e9efec4504"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav",
+    "sha256": "e7443de732add6d000ba7ce68c93e9b0503a8eef3e2c66264d1c7f1b18ad76aa"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav",
+    "sha256": "e5cfe5317639366203b4f3734872176c09f3751c7b1fe7857e6484b5253ae53e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav",
+    "sha256": "0e18c8d74e6eb29c64ae19e76a0a5a491cf5180c114771790496826b9451c65c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav",
+    "sha256": "24eae7df30ac527e9a314d0b21b105e68680a908b5d471f432b5fcd0dfb8ffa5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav",
+    "sha256": "77c122b0124a7ad2ec08e7febf3c28d87d124302f1eac6c90efec7f822af35fd"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_001.wav",
+    "sha256": "f6fa1e802d3a627b2f49ed92d41e4d81c7a78d6ca8dd1943f1ea4d8eaeb32468"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_002.wav",
+    "sha256": "269fd41a6d88a7f68bdbb347ac345ec42b568de71b9dc8f86448c39fffbccd61"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_003.wav",
+    "sha256": "e85e3edb48363d13f4ebb5eb1eb8439927d08ca64e7c28e09defa6e76639eba9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_004.wav",
+    "sha256": "1c2de430e602c891663c07c6c53a831ff906f762505d0abc877b8f49ad2b8952"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_005.wav",
+    "sha256": "e006912a11d65b4b7e50ae3e20a90e6a4aee84ebd650a663f16c69ff74d80963"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_006.wav",
+    "sha256": "75d76be9ec150df4a429d981194d91e87ae81f40939c4730c3da7b3a037d5001"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_007.wav",
+    "sha256": "e57c2b85cb40f4f0de26df86c4435d8b67cfbf0d0bbd9f485599a64fe5bd4668"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+    "sha256": "84954b155a3189613637128b6108cfc6656c03955a80e2d77ba04cba76fd3bcd"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav",
+    "sha256": "f830e074bcd306912cdbc20346becd2b44380525754813a974380712f95ce98c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav",
+    "sha256": "2dda66970d6d70fd83489f319d5eb705bdb5d110fd4e49171f5f1cce5fafe91c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_001.wav",
+    "sha256": "dbfc48720ae3b0e38afdd2989bb43595d8b05ded33d9d332d4b62d0d99fa8e23"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_002.wav",
+    "sha256": "f357e4aaac398b49999766cfd17b786f453491c7f0fb7ff07a3eb6a1f21fc815"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_001.wav",
+    "sha256": "c27fa15c83f1f5d6717cf242a17862584f030fe671e986a9d87ffdd8f849c31a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_002.wav",
+    "sha256": "07156e5ba8f5a8d3b6ece2826f44b6b2e5cbd634fcc2afc1d711ba2a32823e4e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_003.wav",
+    "sha256": "a0171f27207050ec346ff8ddbf0f1dfbb51c7bafe726d19eae2de1a9adb99a29"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_001.wav",
+    "sha256": "b274c3bf83ff284617e91904ff91aaca2b841bdc987f1864f46c58ff6a76d5fe"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_002.wav",
+    "sha256": "361426c17c3a6c1dc0cd8668eb4382bb94900bad4e9a4dbe5eaac7a67191ca0c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_003.wav",
+    "sha256": "d7187161e421276fcc768e46da54e6b65c8b861dd47be8a4aaecb582ad59b5b9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav",
+    "sha256": "c5ce973507e8389b13b28b4aced0bc74cd753d641421e6d1a594a949436665ad"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav",
+    "sha256": "92081c8cf8a25cb210c755a568f5fc60056e6c9ac202d77b432d6909e5963ef1"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav",
+    "sha256": "61ff86f60714ff7da74e0c2cd29649d4b1ee1389a9d50ce2e77244c21b640e20"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_005.wav",
+    "sha256": "c479846377e0eaf3338082ed11336b9edd7e671e28f68a5c656289da71146422"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_006.wav",
+    "sha256": "5144027b3b15bbf30913d3f97d8b51a59a66a8ef535d61f8c68d95714942a961"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_007.wav",
+    "sha256": "14bf48bb23b9ed96f1f3ae850bd4edf50ccd2623d12adcc2b4b231550b906f08"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_008.wav",
+    "sha256": "bba0b74dfd63ee3a93f99f537feeef156af65cb61b9093d8d29595c6863dc0b5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_009.wav",
+    "sha256": "c7d2e6461e4985995bae276f33242f6a2f60c62ae20fc20a076eabca5e308bf6"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_010.wav",
+    "sha256": "241a70ce305ef7713b46e182f6c768da71ddbee88adb63535082d8a9051f1b8c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_011.wav",
+    "sha256": "d6942b49049ecddc92d1196abb55e9f657ce59262e4cf82d7398e47acd3903e9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main08/main08_taeon_supp_001.wav",
+    "sha256": "882824297cd79588843415c459abd99127dcf16ba1af30ab15380f8d3cbc9225"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_001.wav",
+    "sha256": "66953c78062c3033d725449474c355c6e5aa1fb04f0c86def59feddf62ecd810"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_002.wav",
+    "sha256": "033ecd4dbfe9335ff1b204450765dc4a22e8979cd6d71e7f92ad6fecc2884953"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_003.wav",
+    "sha256": "0b5b1ad467955b8c85d5dc2a1ee10d5f8737af9823c70115a090b858d00cac0b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_004.wav",
+    "sha256": "1be48d4811b8ee700d298b80dabba7fca4513b5281a95f4ab1d42e4e10e18928"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_005.wav",
+    "sha256": "44fcf8f32899889e3088c92ed5773cef81f824fa1ffe4fdf411522b665328625"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_006.wav",
+    "sha256": "129cfa2e1f19f0a5ce588dc72514747bffd4199e7d540f7bb6c9679483e667d9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_007.wav",
+    "sha256": "6001391f15eb5719978d1860e05437048114e0781c15dc99025fbb2a02b1d598"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_001.wav",
+    "sha256": "4a601abd04eccb74343b8cc3fbcc689578434f0cddaa4d7b3918a87278c0618b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_002.wav",
+    "sha256": "abb4ad309cb026860e258e4f531494aa314c125eaeeac56e7e2a6febebc15653"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_003.wav",
+    "sha256": "0d657d144c4c4266af4de44d1fdc2adc4b849eac8ec2cd1b644d0334a1f68b5e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_004.wav",
+    "sha256": "5147765fe758db88f046c994577faca6b19b8955acadf840908e8bd07efa9602"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_005.wav",
+    "sha256": "d940f8714f231956fd4ffc77b447286369f036e21f837923b13d0d041e216814"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_006.wav",
+    "sha256": "705ff05b07652fa9eed2b46b7eab9d36eca8a9070accbc06448eb24454a52870"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_001.wav",
+    "sha256": "1ff0cbceb7d7c8d46b139150a2557e2ae400b4934b4c55076fad8b7624658da3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_002.wav",
+    "sha256": "d6838df2b1acf12670380e87c761836ec8256ba76c3281009522736d092a4fa3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_003.wav",
+    "sha256": "903479e8d74b93343042e319b7fa7e8fae1e7358bb9fc4724a6de43d96f89c76"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_004.wav",
+    "sha256": "4f2ae01cd0a9e5ab860355cb32b2d16b0bb5f35299eb4df574ed33bed61c65a7"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_005.wav",
+    "sha256": "6a87c9cc2bdacd3c63b16d19a17edd34b7500981d57084bcf378f3d8b7c5b169"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_006.wav",
+    "sha256": "13a044eb21456bda619d04be663ac33f513863ca3246a84350dfcd9e24fce7bf"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_007.wav",
+    "sha256": "6069581e0d4e07cf8cb9ca1b0686382eaea0ac36378edfa5fa11809ea0c14103"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_008.wav",
+    "sha256": "ff4d21ae5c1caa63330761fcdc698550353aea50b6e3faaea05748f1ec1bd067"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_009.wav",
+    "sha256": "0018889691ea2b50d0cff1b85d814fd109f422c0c70cc0fa016df492006d3ddc"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_010.wav",
+    "sha256": "b79c98ccdddefb6da4885fea7ff5944d78256ff00ea45e41ea7523a459a63651"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main12/main12_taeon_supp_001.wav",
+    "sha256": "528a2eadc91f71e569ddde17c46dbd71717645f30dd0c518edcd88c575f30ee3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main13/main13_serin_001.wav",
+    "sha256": "f2092345a0e3bd6b292b2ec55e2ff97a770cdc0194162ea41eb1476679a18cf3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main13/main13_serin_002.wav",
+    "sha256": "ed435c5e1299c89ed6b0c3902e959e1f54d3fdbd1f4c2273900685efc9f838a9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main13/main13_serin_003.wav",
+    "sha256": "4f63e373a6215716b4604f0e298b1da40d658ceaa1f801268ac7577ecbf97431"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main13/main13_serin_004.wav",
+    "sha256": "34b1cd4d793415384b2f81aab1bd66f970b23d3fdae82e22947ca571e30be8c3"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main14/main14_serin_001.wav",
+    "sha256": "887c563c7483412566a518bc6b9778df7e794f2501a68af6cf91b2811e92da87"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main14/main14_serin_002.wav",
+    "sha256": "3636689611be496f332ac0e4258085364f55e653e2c14f97fb508b8479997767"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main14/main14_serin_003.wav",
+    "sha256": "a5d70c0cc53f9c6e5dd7c17c0ccc1fe59aa309060bdbdc865c6a8fffbbaef67b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_001.wav",
+    "sha256": "1f6d3b6906d8bc22a3ff856fd2eb360479678390a4957884820b364d6c0ba018"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_002.wav",
+    "sha256": "cfdd9dd33b4450215621ea35bbc07b1971327cfbe61e73e21fdf1a32a94d812d"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_001.wav",
+    "sha256": "1d700d72ad0032257cb240ed94965094fd597d4577f4df0a01cc209092b3475a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_002.wav",
+    "sha256": "78ff984e676fbffe5744381c0c733b7e8b12d7e81435bb0020b1d033b3807cca"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_003.wav",
+    "sha256": "63329e2ec7020a39657e0168834214c1a55c50e5a915d0cda39476e5787f5297"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_004.wav",
+    "sha256": "73c9f3f31c87d6166786016576a596702af4c85d91705f6430a061122a45c096"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_005.wav",
+    "sha256": "0f2a4deda59331f1bc7c95f3ce6d23cebcc97c39f307ecdd6fc6207816c0b6a9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_006.wav",
+    "sha256": "bb212d552444024b1c462cfc09ae15e6439b77162e7fbe2e4a7eef128bb8110f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_007.wav",
+    "sha256": "f48a480d388ba8ffd0f767acf22789d6101fe32d7d3d7c02e8e423d324eb5269"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_serin_008.wav",
+    "sha256": "439604262e52df1b74d9941dcb7ec42d2f78078a6a8e356c82ae443d65d41499"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_001.wav",
+    "sha256": "27d6c74f0a43e447574b7ef16739a3697aec9788e42bf03fad7b94b59d887e44"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_002.wav",
+    "sha256": "1118d161e1884de191f7005f7855a8afad35cdf378f6899229dfdf8cc24fa478"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_003.wav",
+    "sha256": "d988789784180171aa338965cbe2c5a64e74e4b833d667539764221f8641dd21"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_004.wav",
+    "sha256": "32ca084558c511d85842d4fe0fdb6b861acf4621b6e72e4c7ec00a27449f75e4"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_default_serin_01.wav",
+    "sha256": "def39bdca8cb29fd3b21032dda4295b729ffe3ebc8c1973d1eaf12b76d6f147a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_hearing_serin_01.wav",
+    "sha256": "4222fe5f0c2d7cfde6a85340e19792e3c30aa34bda362c86b59b919b299e05b5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_01.wav",
+    "sha256": "7eaa1aaf8a278a8fd199136db7888a8a484a3e2fe4b49e75d702539aa6bc1395"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_02.wav",
+    "sha256": "a4cd0eddf5ec7255ed152523ab5dd019bec733f485a3034792fffa15c95ed73c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_01.wav",
+    "sha256": "11220894dd078a6752afa066442171b9953ec13cca05f2ada26e369f9b027572"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_02.wav",
+    "sha256": "603769769bdbc2d4adc8552758bf70bdbdb66e389befd5b65bbb2fbcb4801d6e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_taeon_01.wav",
+    "sha256": "71c0a52c9096a8a23e22e79c02fb0b1f61f52cc4b39d42411f05187b36ce2bba"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_01.wav",
+    "sha256": "2fb370c5d79dcdceea18b9d94cf1d1525d626c964c851889cd818bbf0bac4765"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_02.wav",
+    "sha256": "9c7ff7f26c2ac96a7a87aad7c4d170760a1e805bec518db405540989c1f0f855"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_default_serin_01.wav",
+    "sha256": "0a7f178fd7a8be4302c6da88fda5610e9118eb86ecd190dd27d8dfbec60728bc"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_hearing_serin_01.wav",
+    "sha256": "85b97999f8d8e2c855b3758d427a952e763fa8b760b365c93c11bb62597f189d"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_taeon_01.wav",
+    "sha256": "91ece88b2fd9c4ea22bb2d8c73299ece1495a9be6d2f4356fa08fa8da095956c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_report_taeon_01.wav",
+    "sha256": "1e88aa017ee810f7177e5fefa538e1be7a4dac04cf1030b6f5981a9691cc00f2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_retry_taeon_01.wav",
+    "sha256": "5e8929ab08a0c4e73a268f083b50a87502c94c7e09e54d25ff5fe12539806f4a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_tracks_taeon_01.wav",
+    "sha256": "a69489596dd85712eefd53fda68ca45f2ae2f0b9b08c6137c8ff6487cb20803b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_default_serin_01.wav",
+    "sha256": "b8b96f3701a43652c5f39e3dd1177866709fd415de11e803d3246b2998eda6ae"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_hearing_serin_01.wav",
+    "sha256": "0c4bf4f95d3873f2a8fecea29317127d4d57598b64e8324829e54aee477b5191"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main16/main16_witness_taeon_01.wav",
+    "sha256": "9754bd40533df67f085855468362e8e2f9509d253c56add232f91d41efa6c61e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_after_default_serin_01.wav",
+    "sha256": "f462fa440787f848705c3313a2a2e65b37f6eb30541738ebe2fdf42086e8e9e8"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_after_hearing_serin_01.wav",
+    "sha256": "3915ccd00fabd967a9fc1903cbeb8ad49d521b4149a1b02303ba6a1064d923b7"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_compare_serin_01.wav",
+    "sha256": "96c950f7852ff1da86b2ce4d2edc195aac281cb8dc60d7d3c61d848aa020e907"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_default_serin_01.wav",
+    "sha256": "b9bbf2135314e79d07eaaa097a526fcd9290e8cbb9a2816b7389ea6dd52c67ed"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_hearing_serin_01.wav",
+    "sha256": "48cdbf747c0edcd97e7dae9674b90439b5189c758b9cb76811dd3b5398f90750"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_route_serin_01.wav",
+    "sha256": "58e7af2bb3999e65cd6ac71937f473e514aa4e369e7985165b28e0ceb2a4af42"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_serin_serin_01.wav",
+    "sha256": "81ae0bcb4801da28f3bbdcb1a9bb5a1e07437c3d71e82e64b8e44d03d862514b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_default_serin_01.wav",
+    "sha256": "56445037f134ef97256c2c5f389c7e616921818ca70269811dd8b45f1d9a6e4e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_hearing_serin_01.wav",
+    "sha256": "63fb2a29bc51ad9526a607a265e2459fa7dfd86a5b136fa46ed597a1b61df3f8"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_serin_01.wav",
+    "sha256": "e9a3c43dcce6517889fb1713cfa3f3f85a81bdaa8107ed663dba92ab1b792f39"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_taeon_01.wav",
+    "sha256": "64e4439b054203f95e3061d54500016f5365d246aba6de2f0ea16cf4a98c2aeb"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main17/main17_witness_serin_01.wav",
+    "sha256": "8760e0c4f4712b5b71796ffe016dba9d2da09fa0d44569ed00c75900a9bb8a2f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_01.wav",
+    "sha256": "2a73eab9142d849ec3bbe4790b9369802ee0b7f42ac8dd496779079e7a7af8f2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_02.wav",
+    "sha256": "5efd6d3f4f7afe6ac75f165f13688486feb5a313c220b8406e97ab41ee2da7f4"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_03.wav",
+    "sha256": "19bb134e3171854cbdc186c803d1b732e2372b388c55bd1ef3615c74cfbea2d2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_01.wav",
+    "sha256": "3f997b1b85939494d2580b66f58f1a1c508d378379525b32d9f2d910bb01d09b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_02.wav",
+    "sha256": "4856eb3b0f7426258e4c48c7dea3175cdcba7d4a1a4050e36cd40ca9ea2514c9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_ground_serin_01.wav",
+    "sha256": "67c63e8a98df20cfec4a6903ccd36d809a8ca295409caed64e20a3869a8788a0"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_heat_vent_serin_01.wav",
+    "sha256": "d8b26010d8eaeee0ffc56d28170da9a01571351592038d79724ee6e8ac3d1b4b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_leon_serin_01.wav",
+    "sha256": "a3f76bbb3a3da24835569d1aac91d78ee6bf201e751ddbc748704accbe775392"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_01.wav",
+    "sha256": "a67076d82d8ec89cad6763f102e975fadb8b44c8bdc6890d53c73ded7795daf6"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_02.wav",
+    "sha256": "611384e837017105ff83fa5325dd12814922865a88d382abda9f404aae3df2c5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_03.wav",
+    "sha256": "e3601dae47e553dde8ed373058e5abefdc394e30438543dbb7a27f24336c2e04"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_04.wav",
+    "sha256": "70edf887acbd700e6c66460360e78c8d0fe02a59ec75d9a3779aab842cb8a13b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_vibration_serin_01.wav",
+    "sha256": "96fa6744ea32ae8f1755be07df27131c894668db816039ac04e06ace3c0a3d39"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_01.wav",
+    "sha256": "f86ff7e77d5a0af4b5644039030d53c294e77c2fd2709fb0c7b63f78c2719432"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_02.wav",
+    "sha256": "a8817da46652d0adea2c9c361b5240416d9c8be85a984b3dd56557bafe777d5f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_taeon_01.wav",
+    "sha256": "5344e4c4b8eff10702603bfb58b4ccc8dc2687a8a3887422ffbabc8ca6f981b2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_01.wav",
+    "sha256": "d7cb075778612f561ca55215d156e2747f8cf889a9ad12474958643e0f938235"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_02.wav",
+    "sha256": "ab7fb0cf36509e5561d743b040a0de3e36fab5654311766c6c728a36e1a58f40"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_01.wav",
+    "sha256": "2026ca970368c3ee3bf2eb2a446c16ae02a3fce6cf59da85e129602ec09e3613"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_02.wav",
+    "sha256": "2d7d883949f138d8501ca219f3fefb620f5141df5f09296aae4741057a3604b2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_track_2_serin_01.wav",
+    "sha256": "26c7650bb47d900ee30950a9c153905b5b38a4a61ab8e4e10963c54d16e322ad"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_withdraw_serin_01.wav",
+    "sha256": "3e07981bfdc8f540330f9530a6a7804e57e5c90f114a3e65b0084f42e5f809f8"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_witness_serin_01.wav",
+    "sha256": "ec0ac4824c0878df19fc5541ed59751a310aecb00e91a912a2048a7371764c2f"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main19/main19_witness_taeon_01.wav",
+    "sha256": "6a7b0d36ccdedf1965ce332c7503c470e8d3eed692e7df09f4abf19ee5c0278c"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20.meta",
+    "sha256": "8873b0d69757d786ba17c048895a1d2fb0d2ae849adeb1fc4636913b98f0c871"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_01.wav",
+    "sha256": "45e06af8b43a3deca40bd7b8474dcb47bcaf87d362e7a615b68ca12db81d0193"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_01.wav.meta",
+    "sha256": "f76dca023ab8caeccbffc8660e44117a6c0aad5c80b146b8f89220ee7dc17174"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_02.wav",
+    "sha256": "846015803e0c418c73469e274b7818b1f3abe5583e02d47bcea44642e22b0d13"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_02.wav.meta",
+    "sha256": "d1497487c60d8f351d126fc5810804e3637099e30a35f22b9e5fd008246e6878"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_01.wav",
+    "sha256": "7e7b495e4d3a7e165e6a83ccd6b41f03397e9765d25b2a9a12bf150eff28c9cf"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_01.wav.meta",
+    "sha256": "906608a5bf5853936d58f72e65ec5ba0c1ca1acc2db2964effcf349542e04ea8"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_02.wav",
+    "sha256": "7cb2c62d78da4fbe0ef2e02831b89704f2d8fcd39a73f5051d1ad02e90f048b0"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_02.wav.meta",
+    "sha256": "044bb937acbea145ee8f2f63d9f526d6e1adb8159dbdae178ed9ca9ee67ad194"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_03.wav",
+    "sha256": "2fb28f84baa1af0330ae868a1807e73f0c62be011f8a53c4d8e65c1139e5c08d"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_03.wav.meta",
+    "sha256": "4feecd29bd8922cb737e03ca132ffaa35754278b9d44420f2b598eafb7695ef1"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21.meta",
+    "sha256": "7903c6f10f301e95ae267a880b37b0be92dc2a70f3803272c46b4279974f7b76"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_01.wav",
+    "sha256": "83b136a0ffd662a76e2ebd058176c7f366e01f20b768da365dd84915c6ef5899"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_01.wav.meta",
+    "sha256": "6abaee32c5b6640c7cebbb8c7c6d4bedc788f3c288fd85574113b172edb77c31"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_02.wav",
+    "sha256": "8efb07c3456920df7629b733e9b5c28e5bc9f3dd68379ffc6631923c0fef3f0a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_02.wav.meta",
+    "sha256": "89943037d11efb6a2d19ce54e9a33d54996fcebfba3c3b62cf1161198bb40591"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_paul_01.wav",
+    "sha256": "dad9fea950d2b2986cd6cc9239040343b5785347dad8e2b22fbee89c19dc5bd6"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_aid_paul_01.wav.meta",
+    "sha256": "1854ef8559220e47dfca7037b1ae33e5187f7dbf4d46e1ba25d659afa287c994"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_arbel_leon_01.wav",
+    "sha256": "b8828447dda8067e68198c2b4556bcc447b0090b2e479e734b06fe29eaa08142"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_arbel_leon_01.wav.meta",
+    "sha256": "e8a16b18e24d9188cca87034c7396f70e788752f00e1518f9255120a64ed1b63"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_carriage_leon_01.wav",
+    "sha256": "045ffa25da97c98db8ca2676ab3a2234d241665ee4e3f77950aca2bca0913558"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_carriage_leon_01.wav.meta",
+    "sha256": "e5b71ca085b66726cd8719be3a08daf9c9b774edd6890faae4dd4b7d504e63c9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_01.wav",
+    "sha256": "d6188257ac6d72a86336c89c211e6e3701dec6dedaa1d3516ffccd3db61cb3c2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_01.wav.meta",
+    "sha256": "69ef27bacfea6849bf8619d3fa3206d45b4768fd107c5ba1030d745fdbe2e10e"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_02.wav",
+    "sha256": "9ffdf12120e59e5cdd1891218636856c7944e4e4b202e9c1fa2d88099d545860"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_02.wav.meta",
+    "sha256": "31683e66b8c1cb70aa84c04aac0693c3e85ce698c9f1c1e2a65329e53ca3c4f7"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_03.wav",
+    "sha256": "c5de2269c71b3aa01b50b11b762862a42fc8469aa544566ecca6c765a23232e0"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_03.wav.meta",
+    "sha256": "f897fa17cee2222734d6e1b61b5d625a9e8afb75fb711323da3a96b089f1dd35"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_01.wav",
+    "sha256": "cfac6665705de3c352110aea778252c61a099a4e2379bd1b03984cc4e1b29d32"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_01.wav.meta",
+    "sha256": "fa485e883f213d058074b635f4ad17aa625ad8485492f72319ba62baab6bfb88"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_02.wav",
+    "sha256": "dcce21ccb07860541e44898d5f6a4706477af196bcb2955ecfa654bc63a8b389"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_02.wav.meta",
+    "sha256": "eb940e5048f5e6879fe0bbce90cbbf76fb0f68c666b3ee2db1ae1c391d82e4ab"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_heat_serin_01.wav",
+    "sha256": "6a1ac2a2ca2a687f640e6779ea77b81ea34f607f57764e860e0cfec7fd8f609a"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_heat_serin_01.wav.meta",
+    "sha256": "f28e5a96e4446bb2308770450a6825183f385e8eb8960206cb6e874d0cd3cd46"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_prepare_serin_01.wav",
+    "sha256": "92f3c0d8a9f9b5a239d21db5abae97b2863eaaafbda5c9287f7365f59e710fc1"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_prepare_serin_01.wav.meta",
+    "sha256": "561da241e971ee9038e9c13180a2023bf118310cb73dc8bc1731e79142dca7f2"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_pulse_serin_01.wav",
+    "sha256": "18d52fb0664cac8f8cf053a5b21676ccf1dfc359e575474d4a3b93181c03d7bb"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_pulse_serin_01.wav.meta",
+    "sha256": "c5afe585e381a7d99c079bd76c8b2b28e88857b8becb5de021e9667910af0fe5"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_01.wav",
+    "sha256": "a973f09428dae84de11a3fd183b2010385af974dd297c8aba03d9f601d1607b9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_01.wav.meta",
+    "sha256": "75433e53128d2605b3695e14d5f44da2d502d37c6244e946ba7e52ff3f616a33"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_02.wav",
+    "sha256": "911e30637fd79dcd8fc6d54083836b07663eacbf8e28a4a8d0b7855416e05841"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_02.wav.meta",
+    "sha256": "febaa818bed7f038280e45f8177ffe6533b0d31cb5cd69a948cf4b0c39bd417b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_serin_01.wav",
+    "sha256": "83406294e4b319fea9245a1ad72131a1fb871ef63b30539e932c9a60dd609d32"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_serin_01.wav.meta",
+    "sha256": "6335ea6a6b7e0758269183f5fb944fa0bfc138e9d69f845ba07de1418ff431c6"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_taeon_01.wav",
+    "sha256": "40de0635e35ca645ab4f4321e7a3236f6174d3ffeb543aa56bd66c1261e44fa9"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Audio/Voice/Story/Main21/main21_route_taeon_01.wav.meta",
+    "sha256": "19cc2793db318c18677cafaa607ad0407c2227851961bdb8f3cb35dbbcdd378b"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Resources/Audio/Voice/Story/StoryVoiceCatalog.asset",
+    "sha256": "b229b296556aff28b0c24282c14a29f67060bc48a4340733a99630738221c991"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Editor/Tts162IntegrationAudit.cs",
+    "sha256": "3c02f0e8842aae01cbfcb2e3ef391801601058372273061e9b7161607a8a71dd"
+  },
+  {
+    "path": "Unity/Client/Assets/_Project/Scripts/Editor/Tts162IntegrationAudit.cs.meta",
+    "sha256": "9b1560408f27fd30f5042250621e6b1239d66557407ba95174dc9d70debd0d4d"
+  }
+]

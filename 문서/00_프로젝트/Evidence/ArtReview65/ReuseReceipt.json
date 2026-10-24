@@ -1,0 +1,42 @@
+{
+  "protected_files": 21170,
+  "previous_head": "915105540ad8cf23071a6a00b09a30a1b3d96625",
+  "reused": [
+    {
+      "file": "UNAPPROVED_Bee_Ch2_Comparison_UnityCanvas_960x720.png",
+      "sha256": "0c228ce8d9f679b6b6f88564f038e7eb2371234ce98d32d73cd3983d46b77777",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    },
+    {
+      "file": "UNAPPROVED_Bee_CandidateRightFacing_PREVIEW_ONLY.png",
+      "sha256": "447f0dc0d3d58a60dbc7b821fc01fb95ffd914ec7ec9689b56d419692a23aea4",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    },
+    {
+      "file": "OFFLINE_Alpha_3Backgrounds_UNAPPROVED.png",
+      "sha256": "b74364122080238a22e2fa0c23a4a799bb22e3c2b85fc76a5b8c196971640f73",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    },
+    {
+      "file": "Roof_BeforeAfter_UnityComparison_UNAPPROVED.png",
+      "sha256": "4756ac1b69c8021c69889df11afb5af4eef09146dc9acc7b5e1af64faef534a7",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    },
+    {
+      "file": "Orna_Scale_UnityComparison_UNAPPROVED.png",
+      "sha256": "3ad47836da6953412c8127cb03d4093d28ead809cb1c2e41762a33608b0e7d10",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    },
+    {
+      "file": "Inn_BeforeAfter_UnityComparison_UNAPPROVED.png",
+      "sha256": "3990216bdb22ad0a4c7971bc2f6a39a41d7c8238e6f9c2a4dfc42fdd6a0511dc",
+      "source_commit": "91510554",
+      "kind": "ISSUE64_REUSE_NO_RERUN"
+    }
+  ]
+}

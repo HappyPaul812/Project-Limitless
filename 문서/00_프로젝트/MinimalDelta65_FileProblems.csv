@@ -1,0 +1,8 @@
+﻿Files,Status,ObservedProblem,MinimumRecommendation
+Orna_VillageGuide_512_CANDIDATE.png,B_NEW_TECH_PASS / USER_ART_REVIEW_PENDING,새 표기의40/80/96/128은 alpha 인물높이. 이전 전체캔버스 높이와 구분 필요,"인물높이80px 권고. PPU512 유지/scale1.17539, 전체캔버스84.63px. 모든NPC PPU 강제변경0"
+Orna_VillageGuide_512_CANDIDATE.png,ART_REVIEW_PENDING,근접 플레이어 이름표가 NPC 하체를 가릴 수 있음.128px는 배경 점유 증가,"대표가 크기·화풍 확인. 휠체어 전면 정렬 PASS, 이름표/상호작용 UI 변경은 이번 범위 밖"
+SouthGate_EntryDoor_Joint_CANDIDATE.png,A_REUSED_TECH_PASS_LAYOUT / ART_HOLD_JOIN,기존 Residence 위에 작은 눈지붕·문·계단이 중첩됨. 큰 Gable/Trim 미설치만으로 자연스러운 접합은 아님,기존 출입문 KEEP 우선. 필요 시 문틀/문짝만 독립한1PNG로 최소 보완 후 별도 검수
+SouthGate_RoofGable_Joint_CANDIDATE.png;SouthGate_RoofTrim_Joint_CANDIDATE.png,A_REUSED_TECH_PASS_EXCLUSION,이중 큰 지붕 원인인 두 파일은 보존하고 배치에서 제외,기존 Residence 건물·지붕 그대로 유지
+Inn_StandaloneSign_CANDIDATE.png;Frostway_Inn_Building.png,A_REUSED_TECH_PASS_KEEP_OLD,기존 내장간판 하나만 유지하면 신규간판 중복이 없음,"현재 Inn KEEP_OLD. 신규 후보는 보관/사용보류, 기존 조각 간판 별도 중복설치0"
+VenomBee_OriginalKeyArt_Pilot_v1_512.png,A64_REUSED_TECH_PASS_SINGLE_POSE / ART_HOLD_REPLACEMENT,좌향1포즈는 기존 우향Idle10+Attack10 10FPS를 대체하지 못함,기존 동배율/방향/alpha 실제자료 재사용.20프레임 제작·전투Sprite교체0
+PilotBee/Original/LICENSE.TXT,A64_REUSED_RIGHTS_SOURCE_PENDING,OGA CC BY3.0/원본LICENSE CC BY4.0 표기 충돌 미해결,"기존 제작자/원본 보존, 최종 배포권 확정 주장0"

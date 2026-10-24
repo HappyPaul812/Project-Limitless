@@ -1,0 +1,230 @@
+[
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Buildings/SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Buildings/SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Buildings/SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Manifest.json",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "NPC/Orna_VillageGuide_512_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "NPC/Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/Inn_Sign_Before_After_APPROX_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/Inn_Sign_Existing_vs_New_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/OfflineTown_16x9_NO_UNITY.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/OfflineTown_21x9_NO_UNITY.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/OfflineTown_4x3_NO_UNITY.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/Orna_128px_FullCanvas_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/Orna_40px_FullCanvas_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/Orna_512_128_40_Readability_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/SouthGate_Entry_Roof_Before_After_APPROX_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Preview/SouthGate_Separated_ModuleSheet_OFFLINE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "QA/Individual_NewAsset_Sizes_SHA256.csv",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "QA/Offline_Art_QA.json",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "SHA256SUMS",
+    "file": "Signs/Inn_StandaloneSign_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "NPC/Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "Buildings/SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "Buildings/SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "Buildings/SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "Signs/Inn_StandaloneSign_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Main23",
+    "kind": "Manifest",
+    "file": "NPC/Orna_VillageGuide_512_CANDIDATE.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "VenomBee_Preview_128.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "QA.md",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "Manifest.json",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "SourceAndRuntimeMapping.md",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "VenomBee_Preview_40.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "SHA256SUMS",
+    "file": "VenomBee_DesignBoard_Source.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "VenomBee_Preview_128.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "QA.md",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "SourceAndRuntimeMapping.md",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "VenomBee_Preview_40.png",
+    "pass_": true
+  },
+  {
+    "package": "Bee",
+    "kind": "Manifest",
+    "file": "VenomBee_DesignBoard_Source.png",
+    "pass_": true
+  }
+]

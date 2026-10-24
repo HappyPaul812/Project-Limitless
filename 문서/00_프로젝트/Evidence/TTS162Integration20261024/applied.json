@@ -1,0 +1,1302 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "id": "main06_taeon_001",
+      "guid": "23e83f7f88f624a449aafa5a901bb52a",
+      "path": "Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_001.wav",
+      "samples": 70080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main06_taeon_002",
+      "guid": "f5821461fa87641489e5e85008d7f4d4",
+      "path": "Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_002.wav",
+      "samples": 71040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_001",
+      "guid": "019ec55bf2ae18f47b4338fbcca21d9e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_001.wav",
+      "samples": 59520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_002",
+      "guid": "e923b87362d34ac439ea54bb38032d02",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_002.wav",
+      "samples": 32640,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_003",
+      "guid": "fff8729432b80d9498783dc9b554fc78",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_003.wav",
+      "samples": 92160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_001",
+      "guid": "3e59abff6f35bf967a6269eaf428b630",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_001.wav",
+      "samples": 119040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_002",
+      "guid": "ca031d2f5e286f49d9f4ea8d92ce4f80",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_002.wav",
+      "samples": 127680,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_003",
+      "guid": "40cca272d18a4496c20f4fdb67abf4dd",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_003.wav",
+      "samples": 72000,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_004",
+      "guid": "8d3ed46b85d97f97b20dbd0fc24b2426",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_004.wav",
+      "samples": 91200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_005",
+      "guid": "5eec54a2a26a2637ed33ab0086600d6b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_005.wav",
+      "samples": 86400,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_006",
+      "guid": "b664bf17f301be23e389a3d2e49b4bda",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_006.wav",
+      "samples": 119040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main09_taeon_007",
+      "guid": "45fb637ce27ee85c9f54c94debac8d55",
+      "path": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_007.wav",
+      "samples": 72000,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_001",
+      "guid": "305354596d453125da2924348a67b331",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_001.wav",
+      "samples": 142080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_002",
+      "guid": "22c221264643695f5e6af5367ba2808a",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_002.wav",
+      "samples": 125760,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_003",
+      "guid": "f62748268d75cf3d55ea856f968fb31e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_003.wav",
+      "samples": 146880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_004",
+      "guid": "530dc9ed9bfc73d79031644d2e3c8c79",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_004.wav",
+      "samples": 119040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_005",
+      "guid": "0a54e0bf5df2f9c16a67253bf6c68ae6",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_005.wav",
+      "samples": 75840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main10_taeon_006",
+      "guid": "f6798d688956dc1b92f8fe32d56c72fa",
+      "path": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_006.wav",
+      "samples": 119040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_001",
+      "guid": "7d87148a2d889e34992e0c7e1a7387a5",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_001.wav",
+      "samples": 98880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_002",
+      "guid": "59c2d338c3d9cb94bb80d42664d48a14",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_002.wav",
+      "samples": 145920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_003",
+      "guid": "91455b4bc171bcc4c9b0183d942893cd",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_003.wav",
+      "samples": 133440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_004",
+      "guid": "7c477d805c55c6c4f94e54ef0afdfd38",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_004.wav",
+      "samples": 136320,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_005",
+      "guid": "98f06a071471ebd4aa4af8f4b2a5ace5",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_005.wav",
+      "samples": 120960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_006",
+      "guid": "38e54470a5c80bc48adfcb7688a6c4e5",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_006.wav",
+      "samples": 138240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_007",
+      "guid": "7a29e55920c6c664d9f2cef26eb2e940",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_007.wav",
+      "samples": 99840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_008",
+      "guid": "467c5d2ebc0b31d429dd1bb284462384",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_008.wav",
+      "samples": 114240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_009",
+      "guid": "03e3127a965296c43a9d250a35e08578",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_009.wav",
+      "samples": 72960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main11_taeon_010",
+      "guid": "5d097a42fb0b84743bd0e2d129aaebd7",
+      "path": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_010.wav",
+      "samples": 115200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main13_serin_001",
+      "guid": "40573fc1e17cd504a8edbcb708c21677",
+      "path": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_001.wav",
+      "samples": 106560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main13_serin_002",
+      "guid": "92a29c3a042998f4dbba2cfe00926506",
+      "path": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_002.wav",
+      "samples": 189120,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main13_serin_003",
+      "guid": "c30628720589e6f4abd44bf6d19318b2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_003.wav",
+      "samples": 159360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main13_serin_004",
+      "guid": "434410bf05fda1a4ba5b5b600e17a74f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_004.wav",
+      "samples": 111360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main14_serin_001",
+      "guid": "f648bd02b7f026744b77de3ee838d11e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_001.wav",
+      "samples": 180480,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main14_taeon_001",
+      "guid": "39db0bfc29bc54d4687733277abac61f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_001.wav",
+      "samples": 161280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main14_serin_002",
+      "guid": "b2af673c2bcd1024f881de6e21bcf592",
+      "path": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_002.wav",
+      "samples": 131520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main14_serin_003",
+      "guid": "94660d6c1d15d904e8f1a3ba33f333c3",
+      "path": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_003.wav",
+      "samples": 37440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main14_taeon_002",
+      "guid": "7a0e572c48a03164f8aa9af2c1722589",
+      "path": "Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_002.wav",
+      "samples": 111360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_001",
+      "guid": "d58749bc65f51ef43991ae78562dfeaf",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_001.wav",
+      "samples": 90240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_taeon_001",
+      "guid": "9aa2646d26e839b428c04ff4009c647b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_001.wav",
+      "samples": 76800,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_002",
+      "guid": "8b6306d2d4e62cf44800fe49337f3d5f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_002.wav",
+      "samples": 79680,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_taeon_002",
+      "guid": "961abb73ba4179847a8f4edf51b0ae35",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_002.wav",
+      "samples": 143040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_003",
+      "guid": "9b841e9953df1f649b7370fb7e4019eb",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_003.wav",
+      "samples": 170880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_004",
+      "guid": "5c88d3f77a017c940b0fd2071fda9618",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_004.wav",
+      "samples": 235200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_005",
+      "guid": "4689c68730c43dc468d24919a59586bc",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_005.wav",
+      "samples": 43200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_taeon_003",
+      "guid": "f79d5cb764674794cbcbd1150b783c2f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_003.wav",
+      "samples": 101760,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_006",
+      "guid": "77d7df44b78a96945abf508590727efd",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_006.wav",
+      "samples": 70080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_007",
+      "guid": "5c62785020163b146a9b7fd1b5a5e00c",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_007.wav",
+      "samples": 162240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_taeon_004",
+      "guid": "b0e79f907fc0ed740ac0e3f20702ce60",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_004.wav",
+      "samples": 96960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main15_serin_008",
+      "guid": "e09674083ac0c7c44b0bb77805e98f34",
+      "path": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_008.wav",
+      "samples": 73920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_001",
+      "guid": "b05384306c5fa854dbc912630b330974",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav",
+      "samples": 148800,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_002",
+      "guid": "09e41a7b9fed74348b429c7c07a813f1",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav",
+      "samples": 88320,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_003",
+      "guid": "9e9daa2d47a707049a7c0c73b5921ae4",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav",
+      "samples": 29760,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_004",
+      "guid": "574895e9a2b5b3b45a251673fd085670",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav",
+      "samples": 101760,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_005",
+      "guid": "0dc9970aa869f5645add7545bc7696ca",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav",
+      "samples": 82560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_006",
+      "guid": "86cecb5f27e225f4f9a992b37e2e17e9",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav",
+      "samples": 174720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_007",
+      "guid": "50d6684884c921344a0d2630b2b07e66",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav",
+      "samples": 162240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_008",
+      "guid": "16a05ac1b6d319545a8f9113e2bd9aba",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav",
+      "samples": 50880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_009",
+      "guid": "dde64e7754b8a3c4c8a39ff54113e2a4",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav",
+      "samples": 157440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_010",
+      "guid": "df90274da1dfe6349a613703673baa14",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav",
+      "samples": 75840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_011",
+      "guid": "e6098de83891e8d4a848af3eb519d63f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav",
+      "samples": 75840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main03_taeon_supp_012",
+      "guid": "997f362bba765564c811ef7d9d7aa0c3",
+      "path": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav",
+      "samples": 157440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_001",
+      "guid": "32b0b29db4708a24cb9df2b73f45e3e3",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_001.wav",
+      "samples": 34560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_002",
+      "guid": "f947e47f07a49304082926e9299a95d0",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_002.wav",
+      "samples": 51840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_003",
+      "guid": "d1cef965a60b4994a9efc9355fb3e79b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_003.wav",
+      "samples": 67200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_004",
+      "guid": "62b5719981958b14683804f53f69086f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_004.wav",
+      "samples": 71040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_005",
+      "guid": "2b77adb51516d734aa5348f18fc42086",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_005.wav",
+      "samples": 59520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_006",
+      "guid": "6dc204a95cf23ea418494ccc6c56a51a",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_006.wav",
+      "samples": 120000,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main04_taeon_supp_007",
+      "guid": "ddba3d554e929884ca239babdcb04012",
+      "path": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_007.wav",
+      "samples": 110400,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main05_taeon_supp_001",
+      "guid": "ce4de626ea7fb7244b8e8ae2f02f5e53",
+      "path": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+      "samples": 182400,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main05_taeon_supp_002",
+      "guid": "b48a7ef6325de664f9cc8de19ad9b729",
+      "path": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav",
+      "samples": 134400,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main05_taeon_supp_003",
+      "guid": "214a4ae0abdd7944095eb85ed5e23b1b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav",
+      "samples": 102720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_001",
+      "guid": "746aeb0f63566a3438b794c12a1136c2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/main08_taeon_supp_001.wav",
+      "samples": 30720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_002",
+      "guid": "1a883bbf6bf44abf88d0b6dac61ac25c",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav",
+      "samples": 71040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_003",
+      "guid": "da59f79aca5c4c129ea03e12a65b4426",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav",
+      "samples": 51840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_004",
+      "guid": "7e7575c82fcb4b8697dfd97c0d64b6e0",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav",
+      "samples": 154560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_005",
+      "guid": "601079344d264b3ebfc4f9c062fac747",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_005.wav",
+      "samples": 102720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_006",
+      "guid": "7d72425d36bd4d2494a62c54f93d38c2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_006.wav",
+      "samples": 90240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_007",
+      "guid": "cc4b746ef0ee41548ee4451cbcc27809",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_007.wav",
+      "samples": 73920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_008",
+      "guid": "3cd8315d1a5b4a51920cd34db83b7922",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_008.wav",
+      "samples": 82560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_009",
+      "guid": "873470efd83f4c27ae4efb8042e8aff5",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_009.wav",
+      "samples": 46080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_010",
+      "guid": "f97ab25720004c098f3de0bf503ac26d",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_010.wav",
+      "samples": 81600,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main08_taeon_supp_011",
+      "guid": "830db786a4a64a41913755c02f21c1f7",
+      "path": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_011.wav",
+      "samples": 44160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main12_taeon_supp_001",
+      "guid": "d0423b2b15a7e4643b85d966181ed25a",
+      "path": "Assets/_Project/Audio/Voice/Story/Main12/main12_taeon_supp_001.wav",
+      "samples": 159360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_ash_hearing_serin_01",
+      "guid": "de7fbc3344594225a49c547361e58dd8",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_01.wav",
+      "samples": 42240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_ash_hearing_serin_02",
+      "guid": "59e08c2eb5234581bebe790f70e895af",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_02.wav",
+      "samples": 90240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_ash_default_serin_01",
+      "guid": "f916c1050d5341f088c1c5b49fa7dd01",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_01.wav",
+      "samples": 70080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_ash_default_taeon_01",
+      "guid": "9c79606bf02d4738871350747a4fb3d8",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_taeon_01.wav",
+      "samples": 88320,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_ash_default_serin_02",
+      "guid": "6667a77a3eb849838835ca56f8fa48fc",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_02.wav",
+      "samples": 116160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_vibration_hearing_serin_01",
+      "guid": "9f3a85ff13504f32a23a859fce54338a",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_hearing_serin_01.wav",
+      "samples": 170880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_vibration_default_serin_01",
+      "guid": "69efba0df24249d290f2b376f5991afa",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_default_serin_01.wav",
+      "samples": 171840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_tracks_taeon_01",
+      "guid": "714fd5538e3345d182d9ab819695afb5",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_tracks_taeon_01.wav",
+      "samples": 71040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_witness_taeon_01",
+      "guid": "e8234f74d9e74855bba744f78ed02eed",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_witness_taeon_01.wav",
+      "samples": 85440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_retry_taeon_01",
+      "guid": "82ec5ceac9ce40febe4a5700655b0e53",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_retry_taeon_01.wav",
+      "samples": 126720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_afterimage_hearing_serin_01",
+      "guid": "9e99b20d87424807adbb9b335a5278a2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_hearing_serin_01.wav",
+      "samples": 65280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_afterimage_default_serin_01",
+      "guid": "1f5ce02745cb4873b64e0a29a1cc20c6",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_default_serin_01.wav",
+      "samples": 44160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_afterimage_taeon_01",
+      "guid": "55a7f2394c2442d2ab889849f7da771d",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_01.wav",
+      "samples": 82560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_afterimage_taeon_02",
+      "guid": "7b63a90637774053a582c99e237a210c",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_02.wav",
+      "samples": 163200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_canyon_hearing_serin_01",
+      "guid": "b5e0293ed7fa43adbcc7786d5760034e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_hearing_serin_01.wav",
+      "samples": 168960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_canyon_default_serin_01",
+      "guid": "cddb00b17d404589a63d9de81d794ffb",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_default_serin_01.wav",
+      "samples": 165120,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_canyon_taeon_01",
+      "guid": "6b9acdc68cb9456faf7dd54bcdd4dbae",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_taeon_01.wav",
+      "samples": 84480,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main16_report_taeon_01",
+      "guid": "1a1976f805164200a9abdf8e0a097d95",
+      "path": "Assets/_Project/Audio/Voice/Story/Main16/main16_report_taeon_01.wav",
+      "samples": 279360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_supp_001",
+      "guid": "634cc37c9f0c4b2d953d92e4f94a2763",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_001.wav",
+      "samples": 84480,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_supp_002",
+      "guid": "f5bc7559789b479da5895107f57ee9ea",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_002.wav",
+      "samples": 142080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main07_taeon_supp_003",
+      "guid": "e8ddfe492534480ab992a6c595b7283e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_003.wav",
+      "samples": 50880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_after_default_serin_01",
+      "guid": "bde9d657b699d7042be35e736b206dd4",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_after_default_serin_01.wav",
+      "samples": 116160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_after_hearing_serin_01",
+      "guid": "f240dcbe6211ead4b9538bf7c9427f23",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_after_hearing_serin_01.wav",
+      "samples": 122880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_compare_serin_01",
+      "guid": "2735cb18045ebfa49a65d6ae86e6c47b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_compare_serin_01.wav",
+      "samples": 240960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_resonance_default_serin_01",
+      "guid": "aadb44f698158fe4eb149237746dabf8",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_default_serin_01.wav",
+      "samples": 185280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_resonance_hearing_serin_01",
+      "guid": "e9bf96c8284389d438b27444063097de",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_hearing_serin_01.wav",
+      "samples": 185280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_route_serin_01",
+      "guid": "8b58322de4907954ab76c41e95890708",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_route_serin_01.wav",
+      "samples": 177600,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_serin_serin_01",
+      "guid": "d14313c8cc195084db35cc884c0d02bc",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_serin_serin_01.wav",
+      "samples": 200640,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_vibration_default_serin_01",
+      "guid": "d46d06f81bbd50648b81b43329d94eb1",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_default_serin_01.wav",
+      "samples": 217920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_vibration_hearing_serin_01",
+      "guid": "ec1e34dca0a987e479eaf6b95552d136",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_hearing_serin_01.wav",
+      "samples": 179520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_withdraw_serin_01",
+      "guid": "e6a90a4116a129d4496dda10a2b34e4f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_serin_01.wav",
+      "samples": 139200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_withdraw_taeon_01",
+      "guid": "01d7f1df5ffd0b3489b7eca142bd810c",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_taeon_01.wav",
+      "samples": 165120,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main17_witness_serin_01",
+      "guid": "ec27746366a53e0438b401b200dbc7ff",
+      "path": "Assets/_Project/Audio/Voice/Story/Main17/main17_witness_serin_01.wav",
+      "samples": 139200,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_after_watcher_serin_01",
+      "guid": "c9f9282d1508bfd42820ea62a5c7d08b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_01.wav",
+      "samples": 98880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_after_watcher_serin_02",
+      "guid": "124e56c6e353398429edf7768881b431",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_02.wav",
+      "samples": 122880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_after_watcher_serin_03",
+      "guid": "4c9f69ab845b72e4388a2c15817f5b45",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_03.wav",
+      "samples": 95040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_deeper_route_serin_01",
+      "guid": "6e3da5e22c97aa34d81cd431e844d4c8",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_01.wav",
+      "samples": 78720,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_deeper_route_serin_02",
+      "guid": "b92aba53d5541e84c9225503efe49cf2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_02.wav",
+      "samples": 65280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_watcher_witness_taeon_01",
+      "guid": "8817aeb34bd5d4c409e305f78f04a134",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_taeon_01.wav",
+      "samples": 106560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_pulse_1_serin_01",
+      "guid": "3bf2f93e164ee76488722fe2662e2a5e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_01.wav",
+      "samples": 162240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_pulse_1_serin_02",
+      "guid": "9bc9dbb77b200b64b95ebe7cb2ecb425",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_02.wav",
+      "samples": 92160,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_track_1_serin_01",
+      "guid": "5d9e71bbef98cfe42ba806c67f4962ae",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_01.wav",
+      "samples": 193920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_track_1_serin_02",
+      "guid": "a345606b8a6c5dd4b9b40c48454e2ba1",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_02.wav",
+      "samples": 133440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_track_2_serin_01",
+      "guid": "59eae6ff797e9f542b111180bcaee4fc",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_2_serin_01.wav",
+      "samples": 217920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_withdraw_serin_01",
+      "guid": "e651d42e2e7d4964c8e67e3efe6d1ec9",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_withdraw_serin_01.wav",
+      "samples": 133440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_witness_serin_01",
+      "guid": "8df7edeea668b9240a43d6d74ddd0bfc",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_witness_serin_01.wav",
+      "samples": 215040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main19_witness_taeon_01",
+      "guid": "dcc3cefd84e10b4419f44e4dc800ae10",
+      "path": "Assets/_Project/Audio/Voice/Story/Main19/main19_witness_taeon_01.wav",
+      "samples": 72960,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_leon_serin_01",
+      "guid": "32e98ae840614b97b25f808d6a1364ca",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_leon_serin_01.wav",
+      "samples": 132480,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_ground_serin_01",
+      "guid": "72ae914093aa4624b67986bf77ccd3fb",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_ground_serin_01.wav",
+      "samples": 171840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_heat_vent_serin_01",
+      "guid": "af2752afce044d39b32f35f06078bd37",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_heat_vent_serin_01.wav",
+      "samples": 123840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_overheat_serin_01",
+      "guid": "ec1fd2e480504d7db6d82e997993cbf7",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_01.wav",
+      "samples": 121920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_overheat_serin_02",
+      "guid": "b844b48b384a47ddb88b11d258282864",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_02.wav",
+      "samples": 65280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_overheat_serin_03",
+      "guid": "fec7030d836f44f098b5ae7d6d09e626",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_03.wav",
+      "samples": 178560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_overheat_serin_04",
+      "guid": "6ce364df02c043d88f4fd862748f906f",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_04.wav",
+      "samples": 96000,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_vibration_serin_01",
+      "guid": "0d44d69429634bd18502aa93dd901983",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_vibration_serin_01.wav",
+      "samples": 159360,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_watcher_witness_serin_01",
+      "guid": "dd5a0e75b27848e8b15642082efe19ce",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_01.wav",
+      "samples": 146880,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main18_watcher_witness_serin_02",
+      "guid": "3b569239107140fca3f7bb116411d994",
+      "path": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_02.wav",
+      "samples": 97920,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main20_confront_serin_01",
+      "guid": "6c99e96cbeb7d444c84c45f362121213",
+      "path": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_01.wav",
+      "samples": 153600,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main20_confront_serin_02",
+      "guid": "f12e67eb723aa4a4a9ecae3e8f1dddff",
+      "path": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_02.wav",
+      "samples": 142080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main20_confront_serin_03",
+      "guid": "8f5d03d51e4941d42b9907a6fddd3cc2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_03.wav",
+      "samples": 131520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main20_after_colossus_serin_01",
+      "guid": "02ef6eefaa45cf043b647651f956f8f6",
+      "path": "Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_01.wav",
+      "samples": 178560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main20_after_colossus_serin_02",
+      "guid": "77892256d84610d4ba52116058660b0b",
+      "path": "Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_02.wav",
+      "samples": 130560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_heat_serin_01",
+      "guid": "21ec9d3ba0f912049a5c19813f68ed25",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_heat_serin_01.wav",
+      "samples": 161280,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_pulse_serin_01",
+      "guid": "8d0f7f02e01d8d24fa8a5336be0ca7bf",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_pulse_serin_01.wav",
+      "samples": 136320,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_route_serin_01",
+      "guid": "cef17822d47d247408dee8da5f04fb87",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_serin_01.wav",
+      "samples": 88320,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_route_taeon_01",
+      "guid": "ba452e706f1678343b9b6fa312bec888",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_taeon_01.wav",
+      "samples": 129600,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_haren_taeon_01",
+      "guid": "67b2fd14fe6f8f645b902293e254ccad",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_01.wav",
+      "samples": 109440,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_haren_taeon_02",
+      "guid": "1abd1caa9d07bed46b0bdb5ce9e4d095",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_02.wav",
+      "samples": 51840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_prepare_serin_01",
+      "guid": "f237d4ac74f03ac4c8549e7252ddc634",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_prepare_serin_01.wav",
+      "samples": 138240,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_route_paul_01",
+      "guid": "e7b16c2e093b3ff41b57f05b1a632f02",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_01.wav",
+      "samples": 132480,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_route_paul_02",
+      "guid": "ce328c781e831be4584344346a3a6d9e",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_02.wav",
+      "samples": 131520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_arbel_leon_01",
+      "guid": "936cb48e8bcc38b4fa9c397ec4b8bf8d",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_arbel_leon_01.wav",
+      "samples": 119040,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_aid_miel_01",
+      "guid": "89dfe60cfaf4c3945a760a667dd7cde8",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_01.wav",
+      "samples": 151680,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_aid_paul_01",
+      "guid": "898e6e9fc2e4e0a4a92bda8fb65dddd2",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_paul_01.wav",
+      "samples": 154560,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_aid_miel_02",
+      "guid": "aae84a25bbdfb254dabba1407e17caea",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_02.wav",
+      "samples": 81600,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_carriage_leon_01",
+      "guid": "9af51f62589cf8242aed3cf5ff4856bd",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_carriage_leon_01.wav",
+      "samples": 123840,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_haren_haren_01",
+      "guid": "89c98a507f1193244a09addc3c6b08d0",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_01.wav",
+      "samples": 70080,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_haren_haren_02",
+      "guid": "c818bad40c1e59846bbd209c87b8b687",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_02.wav",
+      "samples": 35520,
+      "frequency": 24000,
+      "channels": 1
+    },
+    {
+      "id": "main21_haren_haren_03",
+      "guid": "60f8d8bc334faa64f89cb5e2c574a672",
+      "path": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_03.wav",
+      "samples": 34560,
+      "frequency": 24000,
+      "channels": 1
+    }
+  ],
+  "catalogCount": 312
+}

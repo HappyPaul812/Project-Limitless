@@ -1,0 +1,46 @@
+[
+  {
+    "source": "UNAPPROVED_MinimalFinal_OrnaVisible40_1280x720.png",
+    "sha256": "d23434ce1d6bd77dcbf145a0b81df715bde21fcac49f5c17b52c47f489217306",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "rescale": false
+  },
+  {
+    "source": "UNAPPROVED_MinimalFinal_OrnaVisible80_1280x720.png",
+    "sha256": "a734996be39e8c685314bb5cba678a9a25e76eaa89e6d3bc34e7b58c0ba1477a",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "rescale": false
+  },
+  {
+    "source": "UNAPPROVED_MinimalFinal_OrnaVisible96_1280x720.png",
+    "sha256": "7a90dfcf070c190fc5225df94c29b6afb7c5f52574a0cfcb48f2b0371d9670db",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "rescale": false
+  },
+  {
+    "source": "UNAPPROVED_MinimalFinal_OrnaVisible128_1280x720.png",
+    "sha256": "dc9ccec548efce9f60eefd5b2be3e4f3dd33790f26291b315d9716d50728b52c",
+    "crop": [
+      190,
+      110,
+      810,
+      380
+    ],
+    "rescale": false
+  }
+]

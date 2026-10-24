@@ -1,0 +1,13 @@
+{
+  "unity_version": "6000.6.5f1",
+  "exit_code": 0,
+  "compile_errors": 0,
+  "editor_search_exception_count": 1,
+  "game_save_errors": 0,
+  "final_log_sha256": "ea78bbc344c2eb40efed952ffc0235fc82f99b471739d835ca3d748c28aa717a",
+  "log_path": "F:\\study\\codex\\Project-Limitless\\Temp\\TTSVoiceIntegration20261024\\Worktree\\Temp\\TTS162Validation\\integration-final.log",
+  "scene_load_scope": "EMPTY_VALIDATION_SCENE; ORIGINAL_STORY_DIALOGUE_ARRAYS; NO_FULL_QUEST_PLAYTHROUGH",
+  "human_full_listening": false,
+  "validation_packages_from": "EXISTING_ORIGINAL_LOCAL_6000.6.5_ENVIRONMENT_ONLY",
+  "product_packages_unchanged": true
+}

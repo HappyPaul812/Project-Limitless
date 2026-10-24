@@ -1,0 +1,12 @@
+﻿ID,Files,Status,ObservedIssue,MinimumDeltaOrDecision,Evidence
+A01,SouthGate_RoofGable_Joint_CANDIDATE.png,ART_HOLD,기존 Residence 지붕 위에 큰 박공이 추가되어 이중 지붕,신규 Gable/Trim 배치 제외가 최소안; 새 지붕 채택 시 기존 본체의 roof-less 시안 1종 또는 접합 전용 모듈 필요,UNAPPROVED_SouthGate_DoubleRoof_ART_HOLD_1280x720.png
+A02,SouthGate_EntryDoor_Joint_CANDIDATE.png;SouthGate_RoofTrim_Joint_CANDIDATE.png,USER_ART_REVIEW_PENDING,문은 작은 박공/계단까지 포함; Trim은 독립 받침 형태로 이음 마감 좌표 미확정,DoorOnly 대안의 문틀/계단 접합 확인; Trim 단독 접점과 XY 계약 확정,UNAPPROVED_SouthGate_DoorOnly_MINIMAL_OPTION_1280x720.png
+A03,Orna_VillageGuide_512_CANDIDATE.png,ART_HOLD_AT_40PX,40px에서 기존 NPC 82px보다 작고 얼굴/의복 세부가 소실; 플레이어 이름표와 발 주변 시각 간섭,40px를 주 표시 규격으로 채택하지 않음 권고; 82px 전후 예산 또는 128px 예산은 대표님 결정,Orna_Scale_UnityComparison_UNAPPROVED.png
+A04,Orna_VillageGuide_512_CANDIDATE.png,USER_ART_REVIEW_PENDING,128px에서는 인물/복식이 읽히나 기존 픽셀 NPC와 질감·비례가 다름; 정지 정면1장,고유 NPC 스타일·정면 정지 허용 여부 결정; StableID/VoiceID 확정하지 않음,UNAPPROVED_Orna128_1280x720.png
+A05,Inn_StandaloneSign_CANDIDATE.png,ART_HOLD_PLACEMENT,기존 Inn 본체에 맥주 간판이 이미 있어 신규 간판과 중복; 상단 상호작용 패널이 신규 상부 일부와 겹침,현재 Scene KEEP_OLD 권고; 신규는 sign-less 입면 후보 또는 중복 없는 설치 접점 승인 시 사용,Inn_BeforeAfter_UnityComparison_UNAPPROVED.png
+A06,Signs/Frostway_Sign_Inn.png,KEEP_REFERENCE_ONLY,110x144 구 간판 파일에 외벽/술통이 있어 독립 간판 붙임용으로 부적합,기존 완성형 Inn의 내장 간판 유지; 원본 크롭/수정 없음,UNAPPROVED_Inn_OldSignReference_1280x720.png
+B01,VenomBee_OriginalKeyArt_Pilot_v1_512.png,ART_HOLD_FOR_RUNTIME,좌향 단일 자세; 기존 계약 우향 Idle10 Attack10을 대체할 수 없음,후속 승인 후 방향·분리 가능한 날개/앞다리·모션 기준 확정. 지금20프레임 제작0,UNAPPROVED_Bee_Ch2_Comparison_UnityCanvas_960x720.png
+B02,VenomBee_Preview_40.png;VenomBee_Preview_128.png,USER_ART_REVIEW_PENDING,축소 납품본 외곽 nonzero alpha가 캔버스 끝에 접함(40px23/128px14 경계 샘플); Master는 외곽0,주게임 판정은 여백 있는512 Master로 수행; 축소 납품본만 최소 여백/리샘플 점검,OFFLINE_Alpha_3Backgrounds_UNAPPROVED.png
+B03,pilot_bee_idle.png;pilot_bee_attack.png;Original/LICENSE.TXT,RIGHTS_SOURCE_PENDING,활성 PNG=원본 ZIP PNG; OGA CC BY3.0 대 동봉 CC BY4.0 표기 충돌,원본/크레딧 보존; 배포자 라이선스 버전 확인은 별도 연락 승인 후,VenomBeeSourceMapping.json
+B04,ThirdParty/2DPIXX/PilotBee/README.md;MonsterValidation/PilotBee/README.md,DOC_CONFLICT,미연결 설명과 현재 MonsterDefinition/Field01 런타임 연결 충돌,원본 README를 이번에 수정하지 않고 후속 문서 정정 대상으로 인계,LiveBeeFrame.txt
+S01,World_FrostwayVillage.unity,PLACEMENT_CONTRACT_PENDING,남문에는 주택이 없고 Residence는 북서(-12.5;7.2); 제안 모듈 목적지와 실제 배치 다름,남문 주택 신설/이동을 기획으로 확정하지 않고 실제 기존 Residence에서 접합만 검수,RuntimeRendererMap.csv

@@ -1,0 +1,1640 @@
+{
+  "status": "PASS",
+  "count": 162,
+  "replaced": 140,
+  "added": 22,
+  "catalogBefore": 290,
+  "catalogAfter": 312,
+  "preservedNonTargetCatalog": 150,
+  "speakers": {
+    "companion_taeon": 85,
+    "companion_serin": 67,
+    "companion_paul": 3,
+    "arbel-leon": 2,
+    "companion_miel": 2,
+    "story_haren": 3
+  },
+  "voiceGuidCollisions": [],
+  "rows": [
+    {
+      "id": "main06_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "23e83f7f88f624a449aafa5a901bb52a",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_001.wav",
+      "sourceSha": "dbfc48720ae3b0e38afdd2989bb43595d8b05ded33d9d332d4b62d0d99fa8e23",
+      "action": "REPLACE",
+      "textSha": "8dd5cf6371443d657ef4fb5ad9c5f968be86c9d248131e04c0e455e19df11bfa"
+    },
+    {
+      "id": "main06_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f5821461fa87641489e5e85008d7f4d4",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main06/main06_taeon_002.wav",
+      "sourceSha": "f357e4aaac398b49999766cfd17b786f453491c7f0fb7ff07a3eb6a1f21fc815",
+      "action": "REPLACE",
+      "textSha": "231d18cad8dd31d0cf207b44a57ed7fd4a3a6be09a2018d257bc07ba4c5acfab"
+    },
+    {
+      "id": "main07_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "019ec55bf2ae18f47b4338fbcca21d9e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_001.wav",
+      "sourceSha": "c27fa15c83f1f5d6717cf242a17862584f030fe671e986a9d87ffdd8f849c31a",
+      "action": "REPLACE",
+      "textSha": "abc6839be94825e08ef8166238c96199b8baa3b5c1dcd2b60102732023860bf2"
+    },
+    {
+      "id": "main07_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "e923b87362d34ac439ea54bb38032d02",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_002.wav",
+      "sourceSha": "07156e5ba8f5a8d3b6ece2826f44b6b2e5cbd634fcc2afc1d711ba2a32823e4e",
+      "action": "REPLACE",
+      "textSha": "681b068e85bc32bc6104fd7871be5d1d82877c91eb87b924f0d77539c3e6bf39"
+    },
+    {
+      "id": "main07_taeon_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "fff8729432b80d9498783dc9b554fc78",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_003.wav",
+      "sourceSha": "a0171f27207050ec346ff8ddbf0f1dfbb51c7bafe726d19eae2de1a9adb99a29",
+      "action": "REPLACE",
+      "textSha": "fe277a0fd1c30c8f5e353dc99c55bc4615fce9186fab6855b6bb32066ccb852f"
+    },
+    {
+      "id": "main09_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "3e59abff6f35bf967a6269eaf428b630",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_001.wav",
+      "sourceSha": "66953c78062c3033d725449474c355c6e5aa1fb04f0c86def59feddf62ecd810",
+      "action": "REPLACE",
+      "textSha": "77b4fc7471f65d3dd8a9f25a76371a10129622c14634b367ba22a5e6794501c6"
+    },
+    {
+      "id": "main09_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "ca031d2f5e286f49d9f4ea8d92ce4f80",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_002.wav",
+      "sourceSha": "033ecd4dbfe9335ff1b204450765dc4a22e8979cd6d71e7f92ad6fecc2884953",
+      "action": "REPLACE",
+      "textSha": "877597d85c8e14231643c1d5b464b709a865d2bd98878989ad153e6182e231b2"
+    },
+    {
+      "id": "main09_taeon_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "40cca272d18a4496c20f4fdb67abf4dd",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_003.wav",
+      "sourceSha": "0b5b1ad467955b8c85d5dc2a1ee10d5f8737af9823c70115a090b858d00cac0b",
+      "action": "REPLACE",
+      "textSha": "6b8cd49995d6549c4c3c95758be169f5e46e4657e610698c16c962ab59198227"
+    },
+    {
+      "id": "main09_taeon_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "8d3ed46b85d97f97b20dbd0fc24b2426",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_004.wav",
+      "sourceSha": "1be48d4811b8ee700d298b80dabba7fca4513b5281a95f4ab1d42e4e10e18928",
+      "action": "REPLACE",
+      "textSha": "5156e3e0e4f56ed51f2f528b93c9dc8930922ad9dfe84e802b8fa60e26786d50"
+    },
+    {
+      "id": "main09_taeon_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "5eec54a2a26a2637ed33ab0086600d6b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_005.wav",
+      "sourceSha": "44fcf8f32899889e3088c92ed5773cef81f824fa1ffe4fdf411522b665328625",
+      "action": "REPLACE",
+      "textSha": "59a012c0e5c05d99e1358a08cf7215abb9ab0ed842b818647e08d0bb6bcb193a"
+    },
+    {
+      "id": "main09_taeon_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "b664bf17f301be23e389a3d2e49b4bda",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_006.wav",
+      "sourceSha": "129cfa2e1f19f0a5ce588dc72514747bffd4199e7d540f7bb6c9679483e667d9",
+      "action": "REPLACE",
+      "textSha": "4dcc61096b1bfc76df593bdef90813e4a3c07fc458ffdf190009816757beac66"
+    },
+    {
+      "id": "main09_taeon_007",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "45fb637ce27ee85c9f54c94debac8d55",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main09Approved20261019/main09_taeon_007.wav",
+      "sourceSha": "6001391f15eb5719978d1860e05437048114e0781c15dc99025fbb2a02b1d598",
+      "action": "REPLACE",
+      "textSha": "96c5499bc0611df6c7eea96a325d5bd27356a5b73b0747f3d37faef77da4591f"
+    },
+    {
+      "id": "main10_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "305354596d453125da2924348a67b331",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_001.wav",
+      "sourceSha": "4a601abd04eccb74343b8cc3fbcc689578434f0cddaa4d7b3918a87278c0618b",
+      "action": "REPLACE",
+      "textSha": "a332418fdfb48f6098eebff7fa1dafb48152c9397ec0925bce6169c9ee4bd4fd"
+    },
+    {
+      "id": "main10_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "22c221264643695f5e6af5367ba2808a",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_002.wav",
+      "sourceSha": "abb4ad309cb026860e258e4f531494aa314c125eaeeac56e7e2a6febebc15653",
+      "action": "REPLACE",
+      "textSha": "8cc4f8a579ef358974a77374aa71a508665d32245d129a197dad64aa88860f97"
+    },
+    {
+      "id": "main10_taeon_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f62748268d75cf3d55ea856f968fb31e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_003.wav",
+      "sourceSha": "0d657d144c4c4266af4de44d1fdc2adc4b849eac8ec2cd1b644d0334a1f68b5e",
+      "action": "REPLACE",
+      "textSha": "5fafba4c1bb0af438577bc862910360f469b3aa76a9a18943fd5c61bf7426ce8"
+    },
+    {
+      "id": "main10_taeon_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "530dc9ed9bfc73d79031644d2e3c8c79",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_004.wav",
+      "sourceSha": "5147765fe758db88f046c994577faca6b19b8955acadf840908e8bd07efa9602",
+      "action": "REPLACE",
+      "textSha": "9971f27cbaec14d7cda928b05050032cc52f74e376082a80f5f60a10c9073130"
+    },
+    {
+      "id": "main10_taeon_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "0a54e0bf5df2f9c16a67253bf6c68ae6",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_005.wav",
+      "sourceSha": "d940f8714f231956fd4ffc77b447286369f036e21f837923b13d0d041e216814",
+      "action": "REPLACE",
+      "textSha": "0c09e83b6ed8b7dc690eabd72ef998cb14cdac11f2e0660ad83c01254443dd2f"
+    },
+    {
+      "id": "main10_taeon_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f6798d688956dc1b92f8fe32d56c72fa",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main10Approved20261019/main10_taeon_006.wav",
+      "sourceSha": "705ff05b07652fa9eed2b46b7eab9d36eca8a9070accbc06448eb24454a52870",
+      "action": "REPLACE",
+      "textSha": "8eb051e2b562aad0385bb7c68a35e5d7609d9273426f3f626962bc6e5ce2bb93"
+    },
+    {
+      "id": "main11_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7d87148a2d889e34992e0c7e1a7387a5",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_001.wav",
+      "sourceSha": "1ff0cbceb7d7c8d46b139150a2557e2ae400b4934b4c55076fad8b7624658da3",
+      "action": "REPLACE",
+      "textSha": "5a30a64344bba70cfd89a5b0b61591269d65770aac77ef2e1bca39e462bc8733"
+    },
+    {
+      "id": "main11_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "59c2d338c3d9cb94bb80d42664d48a14",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_002.wav",
+      "sourceSha": "d6838df2b1acf12670380e87c761836ec8256ba76c3281009522736d092a4fa3",
+      "action": "REPLACE",
+      "textSha": "d8e340182bd4c23e9d3945c91df374a703330da5f9ddb4035980b7492cd78b8b"
+    },
+    {
+      "id": "main11_taeon_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "91455b4bc171bcc4c9b0183d942893cd",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_003.wav",
+      "sourceSha": "903479e8d74b93343042e319b7fa7e8fae1e7358bb9fc4724a6de43d96f89c76",
+      "action": "REPLACE",
+      "textSha": "909b171975ba55ceb3449ccae8128310d6efc26a5527b221276b14f6512d994c"
+    },
+    {
+      "id": "main11_taeon_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7c477d805c55c6c4f94e54ef0afdfd38",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_004.wav",
+      "sourceSha": "4f2ae01cd0a9e5ab860355cb32b2d16b0bb5f35299eb4df574ed33bed61c65a7",
+      "action": "REPLACE",
+      "textSha": "6082176c48f13a9bb801aef8804e8ed0affd8d70d07f9a4a6418935918faa2d0"
+    },
+    {
+      "id": "main11_taeon_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "98f06a071471ebd4aa4af8f4b2a5ace5",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_005.wav",
+      "sourceSha": "6a87c9cc2bdacd3c63b16d19a17edd34b7500981d57084bcf378f3d8b7c5b169",
+      "action": "REPLACE",
+      "textSha": "1e6b1e726e70feb225c590f31cba16a79fd981544be4bb8862c3ab4788c06b8e"
+    },
+    {
+      "id": "main11_taeon_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "38e54470a5c80bc48adfcb7688a6c4e5",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_006.wav",
+      "sourceSha": "13a044eb21456bda619d04be663ac33f513863ca3246a84350dfcd9e24fce7bf",
+      "action": "REPLACE",
+      "textSha": "0e2e07a1a7378bf88e8b04184c0bc036c3ba31e176629e70452c062355a405fd"
+    },
+    {
+      "id": "main11_taeon_007",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7a29e55920c6c664d9f2cef26eb2e940",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_007.wav",
+      "sourceSha": "6069581e0d4e07cf8cb9ca1b0686382eaea0ac36378edfa5fa11809ea0c14103",
+      "action": "REPLACE",
+      "textSha": "cbed196e8ae849550bb05cfe94dce75cf2bd94bd95e3660c1bc3b16ff6427e1f"
+    },
+    {
+      "id": "main11_taeon_008",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "467c5d2ebc0b31d429dd1bb284462384",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_008.wav",
+      "sourceSha": "ff4d21ae5c1caa63330761fcdc698550353aea50b6e3faaea05748f1ec1bd067",
+      "action": "REPLACE",
+      "textSha": "add82dcbb39e5996ece4ec274f8962ee553753eb75003f0e938f8b5d5502ddb7"
+    },
+    {
+      "id": "main11_taeon_009",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "03e3127a965296c43a9d250a35e08578",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_009.wav",
+      "sourceSha": "0018889691ea2b50d0cff1b85d814fd109f422c0c70cc0fa016df492006d3ddc",
+      "action": "REPLACE",
+      "textSha": "6cee4cb945bd742e257a3ef40e297ee52109fb6e3599270a2942a3181a715cdb"
+    },
+    {
+      "id": "main11_taeon_010",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "5d097a42fb0b84743bd0e2d129aaebd7",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main11/main11_taeon_010.wav",
+      "sourceSha": "b79c98ccdddefb6da4885fea7ff5944d78256ff00ea45e41ea7523a459a63651",
+      "action": "REPLACE",
+      "textSha": "4794c1b4cee2f383358ec16b8d990010dd641dbe07331ff13652b4af8865cd20"
+    },
+    {
+      "id": "main13_serin_001",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "40573fc1e17cd504a8edbcb708c21677",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_001.wav",
+      "sourceSha": "f2092345a0e3bd6b292b2ec55e2ff97a770cdc0194162ea41eb1476679a18cf3",
+      "action": "REPLACE",
+      "textSha": "ac5bd27f16f9a113e113df804b68793723014d1f03887f76e75a77dea69edcff"
+    },
+    {
+      "id": "main13_serin_002",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "92a29c3a042998f4dbba2cfe00926506",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_002.wav",
+      "sourceSha": "ed435c5e1299c89ed6b0c3902e959e1f54d3fdbd1f4c2273900685efc9f838a9",
+      "action": "REPLACE",
+      "textSha": "d0a8f17007ee4496ba52bf111bfbb5c8d1f37dbeb335cc0e32e16fb44fe9d8de"
+    },
+    {
+      "id": "main13_serin_003",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "c30628720589e6f4abd44bf6d19318b2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_003.wav",
+      "sourceSha": "4f63e373a6215716b4604f0e298b1da40d658ceaa1f801268ac7577ecbf97431",
+      "action": "REPLACE",
+      "textSha": "ddf6692c7af4a738034b6eab68e534e73ef1945a76842a4414ee545ccfc9f4ca"
+    },
+    {
+      "id": "main13_serin_004",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "434410bf05fda1a4ba5b5b600e17a74f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main13/main13_serin_004.wav",
+      "sourceSha": "34b1cd4d793415384b2f81aab1bd66f970b23d3fdae82e22947ca571e30be8c3",
+      "action": "REPLACE",
+      "textSha": "e5f8dcfefbd43effef95b937a592f29da11772c0f11f25dbc1f80d544e48d74a"
+    },
+    {
+      "id": "main14_serin_001",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "f648bd02b7f026744b77de3ee838d11e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_001.wav",
+      "sourceSha": "887c563c7483412566a518bc6b9778df7e794f2501a68af6cf91b2811e92da87",
+      "action": "REPLACE",
+      "textSha": "9bf43a29ab9504833314d3f96cd10c11601fb17f12158cfb71b1c30065ce06e2"
+    },
+    {
+      "id": "main14_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "39db0bfc29bc54d4687733277abac61f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_001.wav",
+      "sourceSha": "1f6d3b6906d8bc22a3ff856fd2eb360479678390a4957884820b364d6c0ba018",
+      "action": "REPLACE",
+      "textSha": "c4e37e60e235db2d51f16f3170b5e7ad73f182865b1fd75152196b4be0826f8f"
+    },
+    {
+      "id": "main14_serin_002",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "b2af673c2bcd1024f881de6e21bcf592",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_002.wav",
+      "sourceSha": "3636689611be496f332ac0e4258085364f55e653e2c14f97fb508b8479997767",
+      "action": "REPLACE",
+      "textSha": "b68c2d88f6dbd11da0fa88f15074a94a6b36b2f3628e800ca938d14818e8a602"
+    },
+    {
+      "id": "main14_serin_003",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "94660d6c1d15d904e8f1a3ba33f333c3",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main14/main14_serin_003.wav",
+      "sourceSha": "a5d70c0cc53f9c6e5dd7c17c0ccc1fe59aa309060bdbdc865c6a8fffbbaef67b",
+      "action": "REPLACE",
+      "textSha": "cef581eea19d94cbf9d104185b1c8366f5e4d7d60b998c469346b5e095e39af1"
+    },
+    {
+      "id": "main14_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7a0e572c48a03164f8aa9af2c1722589",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main14/main14_taeon_002.wav",
+      "sourceSha": "cfdd9dd33b4450215621ea35bbc07b1971327cfbe61e73e21fdf1a32a94d812d",
+      "action": "REPLACE",
+      "textSha": "46f6a950965577327a0ab0fd3986aedde0daf1dd59fd2d64dfc841b87d2b5aff"
+    },
+    {
+      "id": "main15_serin_001",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "d58749bc65f51ef43991ae78562dfeaf",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_001.wav",
+      "sourceSha": "1d700d72ad0032257cb240ed94965094fd597d4577f4df0a01cc209092b3475a",
+      "action": "REPLACE",
+      "textSha": "d3bf1ad5118f5f5ab02445c89ccd15f54a8a184316a0bfe03729854e13d9e120"
+    },
+    {
+      "id": "main15_taeon_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "9aa2646d26e839b428c04ff4009c647b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_001.wav",
+      "sourceSha": "27d6c74f0a43e447574b7ef16739a3697aec9788e42bf03fad7b94b59d887e44",
+      "action": "REPLACE",
+      "textSha": "eae6e0126c3016163101183d29defc490325114f7d818cd94c9eee58b3122a43"
+    },
+    {
+      "id": "main15_serin_002",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "8b6306d2d4e62cf44800fe49337f3d5f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_002.wav",
+      "sourceSha": "78ff984e676fbffe5744381c0c733b7e8b12d7e81435bb0020b1d033b3807cca",
+      "action": "REPLACE",
+      "textSha": "f71395ec6d0efc9728356b6b16b559b8df975f6e0d8b7bf90b53686d6fce2e14"
+    },
+    {
+      "id": "main15_taeon_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "961abb73ba4179847a8f4edf51b0ae35",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_002.wav",
+      "sourceSha": "1118d161e1884de191f7005f7855a8afad35cdf378f6899229dfdf8cc24fa478",
+      "action": "REPLACE",
+      "textSha": "6182eb0f4bf76976793502eceb7d50867e1a6bdcb570701c965c3dea3098d198"
+    },
+    {
+      "id": "main15_serin_003",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "9b841e9953df1f649b7370fb7e4019eb",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_003.wav",
+      "sourceSha": "63329e2ec7020a39657e0168834214c1a55c50e5a915d0cda39476e5787f5297",
+      "action": "REPLACE",
+      "textSha": "35a6094ad0b128a3b2140c5b6a6f85616841a607e8c131d7511ff8ba19275cae"
+    },
+    {
+      "id": "main15_serin_004",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "5c88d3f77a017c940b0fd2071fda9618",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_004.wav",
+      "sourceSha": "73c9f3f31c87d6166786016576a596702af4c85d91705f6430a061122a45c096",
+      "action": "REPLACE",
+      "textSha": "c3e93ccc5197892eb0c3dc97a9834c134f6657a04ed8b44662a87aca2609ab58"
+    },
+    {
+      "id": "main15_serin_005",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "4689c68730c43dc468d24919a59586bc",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_005.wav",
+      "sourceSha": "0f2a4deda59331f1bc7c95f3ce6d23cebcc97c39f307ecdd6fc6207816c0b6a9",
+      "action": "REPLACE",
+      "textSha": "11d50713501ccbb3a11119f8b0d874162d47ef8d0257d6d45c57780365865a76"
+    },
+    {
+      "id": "main15_taeon_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f79d5cb764674794cbcbd1150b783c2f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_003.wav",
+      "sourceSha": "d988789784180171aa338965cbe2c5a64e74e4b833d667539764221f8641dd21",
+      "action": "REPLACE",
+      "textSha": "a74c5e266facfb24fd4b2be213f31b77319f753c5b60632bcc1c94b46974d145"
+    },
+    {
+      "id": "main15_serin_006",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "77d7df44b78a96945abf508590727efd",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_006.wav",
+      "sourceSha": "bb212d552444024b1c462cfc09ae15e6439b77162e7fbe2e4a7eef128bb8110f",
+      "action": "REPLACE",
+      "textSha": "d675db56a3a88828a17558ebadb8c137487b383596a9f3693f451e21ee304810"
+    },
+    {
+      "id": "main15_serin_007",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "5c62785020163b146a9b7fd1b5a5e00c",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_007.wav",
+      "sourceSha": "f48a480d388ba8ffd0f767acf22789d6101fe32d7d3d7c02e8e423d324eb5269",
+      "action": "REPLACE",
+      "textSha": "d39d819f0c6273520e848e7ab8a9ddfdefa7b69435c1bfbf720c2742d723135a"
+    },
+    {
+      "id": "main15_taeon_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "b0e79f907fc0ed740ac0e3f20702ce60",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_taeon_004.wav",
+      "sourceSha": "32ca084558c511d85842d4fe0fdb6b861acf4621b6e72e4c7ec00a27449f75e4",
+      "action": "REPLACE",
+      "textSha": "e08d01aa9930d6a55f3372104e58036c0bf6277ce61d6a2618bdbbf7a6afdcee"
+    },
+    {
+      "id": "main15_serin_008",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "e09674083ac0c7c44b0bb77805e98f34",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main15/main15_serin_008.wav",
+      "sourceSha": "439604262e52df1b74d9941dcb7ec42d2f78078a6a8e356c82ae443d65d41499",
+      "action": "REPLACE",
+      "textSha": "d77904a95fd9b8335622c356a6e5d7f8a45e98f6d35efbe22ba79bc70f4bd4ad"
+    },
+    {
+      "id": "main03_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "b05384306c5fa854dbc912630b330974",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_001.wav",
+      "sourceSha": "ad21f3b546712d98da6ea43dc25a23b1b2af6d791c63e07951d08e38e0f8b111",
+      "action": "REPLACE",
+      "textSha": "2d398ff4a60608a559ee1ebeb53520fceaa331e76c1382cfcdfb5e740871c472"
+    },
+    {
+      "id": "main03_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "09e41a7b9fed74348b429c7c07a813f1",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_002.wav",
+      "sourceSha": "cde3e5057a2bb13840f416337ec0a623237140bf777d55e6e3cc25d97b41be29",
+      "action": "REPLACE",
+      "textSha": "0702132315c21b61ddc492c15f6a1368ebdbc58ad46d6d16a874edf9d19ef7dd"
+    },
+    {
+      "id": "main03_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "9e9daa2d47a707049a7c0c73b5921ae4",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_003.wav",
+      "sourceSha": "8becf3380ae7419f6557e9dc84d8870a6adf133b7e855014020ec5b7ec394a1b",
+      "action": "REPLACE",
+      "textSha": "681b068e85bc32bc6104fd7871be5d1d82877c91eb87b924f0d77539c3e6bf39"
+    },
+    {
+      "id": "main03_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "574895e9a2b5b3b45a251673fd085670",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_004.wav",
+      "sourceSha": "4b641ed6ee20b6a9c66a9d21e521f60cc24eb2ad0e45f9843d51f0425bc370ac",
+      "action": "REPLACE",
+      "textSha": "895989fcff69a07dbb7ecee654704d8370a7b9e104134560c928b41c42391a58"
+    },
+    {
+      "id": "main03_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "0dc9970aa869f5645add7545bc7696ca",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_005.wav",
+      "sourceSha": "23f678cbc73353e9298aeae939646414d1cebbc35be78626ae6fc39c794b3e5f",
+      "action": "REPLACE",
+      "textSha": "cea24648d865f053b7986c164b693054b2262a5343f4411227f5090e66bad110"
+    },
+    {
+      "id": "main03_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "86cecb5f27e225f4f9a992b37e2e17e9",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_006.wav",
+      "sourceSha": "d403f5909b6f46cf51ab9841e243b982b9e513172f38826ceb538834795404a0",
+      "action": "REPLACE",
+      "textSha": "7a8af5c8e1a63ffae0dcac98a3f776dedde9b1c3df973678df4ccfa7e326f571"
+    },
+    {
+      "id": "main03_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "50d6684884c921344a0d2630b2b07e66",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_007.wav",
+      "sourceSha": "a432223ac1e8b802a17ab68dd6337912797da3d01d4920dbdc1eb3e9efec4504",
+      "action": "REPLACE",
+      "textSha": "bb4f6e7dd31559b2464ff5c480088b45d7b44f3ce07d7f3b921cb78479e0883f"
+    },
+    {
+      "id": "main03_taeon_supp_008",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "16a05ac1b6d319545a8f9113e2bd9aba",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_008.wav",
+      "sourceSha": "e7443de732add6d000ba7ce68c93e9b0503a8eef3e2c66264d1c7f1b18ad76aa",
+      "action": "REPLACE",
+      "textSha": "e0a7b8dd0505bba164933b2dcc05ab41716e623032b108001edeaaf5d6168be4"
+    },
+    {
+      "id": "main03_taeon_supp_009",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "dde64e7754b8a3c4c8a39ff54113e2a4",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_009.wav",
+      "sourceSha": "e5cfe5317639366203b4f3734872176c09f3751c7b1fe7857e6484b5253ae53e",
+      "action": "REPLACE",
+      "textSha": "c939a9996905b6c07e7075d960a9ec9a723abd7d7f38b1ba236cf634d2a7ef59"
+    },
+    {
+      "id": "main03_taeon_supp_010",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "df90274da1dfe6349a613703673baa14",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_010.wav",
+      "sourceSha": "0e18c8d74e6eb29c64ae19e76a0a5a491cf5180c114771790496826b9451c65c",
+      "action": "REPLACE",
+      "textSha": "70f4f0e6ea84a99a31a74acef0e0c946d7282f9bdbf6e800a74618a27f2e7190"
+    },
+    {
+      "id": "main03_taeon_supp_011",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "e6098de83891e8d4a848af3eb519d63f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_011.wav",
+      "sourceSha": "24eae7df30ac527e9a314d0b21b105e68680a908b5d471f432b5fcd0dfb8ffa5",
+      "action": "REPLACE",
+      "textSha": "596e09c436e34dbb10aa1843e53f339cdb2eff0c902089d9108fee8452e4a739"
+    },
+    {
+      "id": "main03_taeon_supp_012",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "997f362bba765564c811ef7d9d7aa0c3",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main03/main03_taeon_supp_012.wav",
+      "sourceSha": "77c122b0124a7ad2ec08e7febf3c28d87d124302f1eac6c90efec7f822af35fd",
+      "action": "REPLACE",
+      "textSha": "03ffa700cc320049b3747f233bb22c0e76595682180e54cfb1de4381a7238f36"
+    },
+    {
+      "id": "main04_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "32b0b29db4708a24cb9df2b73f45e3e3",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_001.wav",
+      "sourceSha": "f6fa1e802d3a627b2f49ed92d41e4d81c7a78d6ca8dd1943f1ea4d8eaeb32468",
+      "action": "REPLACE",
+      "textSha": "83cd00f6e1e3dbc0da9abe946d5f1f0ff5a64e97122131059e9814979996df22"
+    },
+    {
+      "id": "main04_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f947e47f07a49304082926e9299a95d0",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_002.wav",
+      "sourceSha": "269fd41a6d88a7f68bdbb347ac345ec42b568de71b9dc8f86448c39fffbccd61",
+      "action": "REPLACE",
+      "textSha": "8d5e3b0ee86fe9432d8311210b9e3c9c2ac9709760379216dab71cb125f85134"
+    },
+    {
+      "id": "main04_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "d1cef965a60b4994a9efc9355fb3e79b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_003.wav",
+      "sourceSha": "e85e3edb48363d13f4ebb5eb1eb8439927d08ca64e7c28e09defa6e76639eba9",
+      "action": "REPLACE",
+      "textSha": "c077df42245f65bdd745cb823e3d2edb74fe450131d280cf239c504648b905bb"
+    },
+    {
+      "id": "main04_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "62b5719981958b14683804f53f69086f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_004.wav",
+      "sourceSha": "1c2de430e602c891663c07c6c53a831ff906f762505d0abc877b8f49ad2b8952",
+      "action": "REPLACE",
+      "textSha": "4f3601e292dbeab61b6410cc4eb069c10c64b99e9a79a2e71ef0f0ae1f0fde00"
+    },
+    {
+      "id": "main04_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "2b77adb51516d734aa5348f18fc42086",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_005.wav",
+      "sourceSha": "e006912a11d65b4b7e50ae3e20a90e6a4aee84ebd650a663f16c69ff74d80963",
+      "action": "REPLACE",
+      "textSha": "e0d70541b477db9e102c851cfff7f3c3898a6489f725418df8c74cd242ff163f"
+    },
+    {
+      "id": "main04_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "6dc204a95cf23ea418494ccc6c56a51a",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_006.wav",
+      "sourceSha": "75d76be9ec150df4a429d981194d91e87ae81f40939c4730c3da7b3a037d5001",
+      "action": "REPLACE",
+      "textSha": "e1667aa1c5dcc96f3155c91c77e65099c45587c250c6a22ec8805b93f07e7fc3"
+    },
+    {
+      "id": "main04_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "ddba3d554e929884ca239babdcb04012",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main04/main04_taeon_supp_007.wav",
+      "sourceSha": "e57c2b85cb40f4f0de26df86c4435d8b67cfbf0d0bbd9f485599a64fe5bd4668",
+      "action": "REPLACE",
+      "textSha": "9b49a9df684898f057fe76c19f54126a4795edf39ed1987c0f63fb2c9d1af07f"
+    },
+    {
+      "id": "main05_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "ce4de626ea7fb7244b8e8ae2f02f5e53",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_001.wav",
+      "sourceSha": "84954b155a3189613637128b6108cfc6656c03955a80e2d77ba04cba76fd3bcd",
+      "action": "REPLACE",
+      "textSha": "0bf87fe4498bb221b5a3c5356abf35b9cf0a7062f8aeeec390ff7ca7dfc142af"
+    },
+    {
+      "id": "main05_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "b48a7ef6325de664f9cc8de19ad9b729",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_002.wav",
+      "sourceSha": "f830e074bcd306912cdbc20346becd2b44380525754813a974380712f95ce98c",
+      "action": "REPLACE",
+      "textSha": "e126f23ad56b9aab48bcf51bb135927c17087c5a272ff07a527da82512820808"
+    },
+    {
+      "id": "main05_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "214a4ae0abdd7944095eb85ed5e23b1b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main05/main05_taeon_supp_003.wav",
+      "sourceSha": "2dda66970d6d70fd83489f319d5eb705bdb5d110fd4e49171f5f1cce5fafe91c",
+      "action": "REPLACE",
+      "textSha": "f14305ee433d3d24d2c5b05be0779e0b76955b10185aa1a11d0a1a2361fb75af"
+    },
+    {
+      "id": "main08_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "746aeb0f63566a3438b794c12a1136c2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/main08_taeon_supp_001.wav",
+      "sourceSha": "882824297cd79588843415c459abd99127dcf16ba1af30ab15380f8d3cbc9225",
+      "action": "REPLACE",
+      "textSha": "328562d12270aef0c87f2d2435cca02604fd255628bc36fafc5d51e06b2236a1"
+    },
+    {
+      "id": "main08_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "1a883bbf6bf44abf88d0b6dac61ac25c",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_002.wav",
+      "sourceSha": "c5ce973507e8389b13b28b4aced0bc74cd753d641421e6d1a594a949436665ad",
+      "action": "REPLACE",
+      "textSha": "317494e20d6c92622d11bf6d6a5339e9415d1aae2a8c80b6bce0048a9096964d"
+    },
+    {
+      "id": "main08_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "da59f79aca5c4c129ea03e12a65b4426",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_003.wav",
+      "sourceSha": "92081c8cf8a25cb210c755a568f5fc60056e6c9ac202d77b432d6909e5963ef1",
+      "action": "REPLACE",
+      "textSha": "710eb97cac1c5dc15ab9da4ef60b50fc930717d49b65a8d9319319414afaa54b"
+    },
+    {
+      "id": "main08_taeon_supp_004",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7e7575c82fcb4b8697dfd97c0d64b6e0",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedRecovery20261013/main08_taeon_supp_004.wav",
+      "sourceSha": "61ff86f60714ff7da74e0c2cd29649d4b1ee1389a9d50ce2e77244c21b640e20",
+      "action": "REPLACE",
+      "textSha": "208b0a39d8fe9db5d1b6d777eb97e63bc03ef9dec96ab5ea9af70e91dc7e4959"
+    },
+    {
+      "id": "main08_taeon_supp_005",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "601079344d264b3ebfc4f9c062fac747",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_005.wav",
+      "sourceSha": "c479846377e0eaf3338082ed11336b9edd7e671e28f68a5c656289da71146422",
+      "action": "REPLACE",
+      "textSha": "041f7802306f77c9840bdf1ccb5e4ba5dfab734d3e91851a6e8b3dfbeaa4f7c7"
+    },
+    {
+      "id": "main08_taeon_supp_006",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7d72425d36bd4d2494a62c54f93d38c2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00500620261014/main08_taeon_supp_006.wav",
+      "sourceSha": "5144027b3b15bbf30913d3f97d8b51a59a66a8ef535d61f8c68d95714942a961",
+      "action": "REPLACE",
+      "textSha": "ab4a3cd8e05e8532b7aec2fedc7986a31e1f59e857a677f669174d1644aaccfe"
+    },
+    {
+      "id": "main08_taeon_supp_007",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "cc4b746ef0ee41548ee4451cbcc27809",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_007.wav",
+      "sourceSha": "14bf48bb23b9ed96f1f3ae850bd4edf50ccd2623d12adcc2b4b231550b906f08",
+      "action": "REPLACE",
+      "textSha": "68f5dcc8f7fd87cd43cd17123788c110b45db3069875363dc10c642b47335ca6"
+    },
+    {
+      "id": "main08_taeon_supp_008",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "3cd8315d1a5b4a51920cd34db83b7922",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_008.wav",
+      "sourceSha": "bba0b74dfd63ee3a93f99f537feeef156af65cb61b9093d8d29595c6863dc0b5",
+      "action": "REPLACE",
+      "textSha": "3f96407f211f44ffbde92aabd7175d702c810b2384bbfd37bcedbb9a6ef0aedf"
+    },
+    {
+      "id": "main08_taeon_supp_009",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "873470efd83f4c27ae4efb8042e8aff5",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_009.wav",
+      "sourceSha": "c7d2e6461e4985995bae276f33242f6a2f60c62ae20fc20a076eabca5e308bf6",
+      "action": "REPLACE",
+      "textSha": "3203f8dcfd991bddb64006e1dbf14ef23f060109e6b783acd9c37fe01670e073"
+    },
+    {
+      "id": "main08_taeon_supp_010",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f97ab25720004c098f3de0bf503ac26d",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_010.wav",
+      "sourceSha": "241a70ce305ef7713b46e182f6c768da71ddbee88adb63535082d8a9051f1b8c",
+      "action": "REPLACE",
+      "textSha": "408779ae7b11efcc48afd0674658c630bd5546b2dbd882968e2fbf4520610dc9"
+    },
+    {
+      "id": "main08_taeon_supp_011",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "830db786a4a64a41913755c02f21c1f7",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main08/ApprovedTaeon00701120261014/main08_taeon_supp_011.wav",
+      "sourceSha": "d6942b49049ecddc92d1196abb55e9f657ce59262e4cf82d7398e47acd3903e9",
+      "action": "REPLACE",
+      "textSha": "5e8817f668bd8e3dfd103dcbdebc356ed9eb5fa38bd35adf0cc54bc9de437894"
+    },
+    {
+      "id": "main12_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "d0423b2b15a7e4643b85d966181ed25a",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main12/main12_taeon_supp_001.wav",
+      "sourceSha": "528a2eadc91f71e569ddde17c46dbd71717645f30dd0c518edcd88c575f30ee3",
+      "action": "REPLACE",
+      "textSha": "a08439e089c6d6c6b8dc3db785d91619018dcb79641bb84360c9942ec98a3b82"
+    },
+    {
+      "id": "main16_ash_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "de7fbc3344594225a49c547361e58dd8",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_01.wav",
+      "sourceSha": "2fb370c5d79dcdceea18b9d94cf1d1525d626c964c851889cd818bbf0bac4765",
+      "action": "REPLACE",
+      "textSha": "2f6ea90173cf2708d166f55aef15b68c0ee43f115cb480fa3f9040fd8657166a"
+    },
+    {
+      "id": "main16_ash_hearing_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "59e08c2eb5234581bebe790f70e895af",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_hearing_serin_02.wav",
+      "sourceSha": "9c7ff7f26c2ac96a7a87aad7c4d170760a1e805bec518db405540989c1f0f855",
+      "action": "REPLACE",
+      "textSha": "dcac0f6352239e39ace850f5299d66908d7f209b215f9a30c9c343fc6912cc80"
+    },
+    {
+      "id": "main16_ash_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "f916c1050d5341f088c1c5b49fa7dd01",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_01.wav",
+      "sourceSha": "11220894dd078a6752afa066442171b9953ec13cca05f2ada26e369f9b027572",
+      "action": "REPLACE",
+      "textSha": "ff0632ff29d0f0f7bb14ea8dfc163d05bc04e39be73278e718cedb86941e9fe8"
+    },
+    {
+      "id": "main16_ash_default_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "9c79606bf02d4738871350747a4fb3d8",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_taeon_01.wav",
+      "sourceSha": "71c0a52c9096a8a23e22e79c02fb0b1f61f52cc4b39d42411f05187b36ce2bba",
+      "action": "REPLACE",
+      "textSha": "c5abffdb3e0d10a8a6192a4b53f4bc642d9ddfc65a052a4fa54726f293ae3e8b"
+    },
+    {
+      "id": "main16_ash_default_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "6667a77a3eb849838835ca56f8fa48fc",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_ash_default_serin_02.wav",
+      "sourceSha": "603769769bdbc2d4adc8552758bf70bdbdb66e389befd5b65bbb2fbcb4801d6e",
+      "action": "REPLACE",
+      "textSha": "2405d48e6ec777c89b70282e810e5b59ad8223dca95fcf8ede8d6ff5aa978e53"
+    },
+    {
+      "id": "main16_vibration_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "9f3a85ff13504f32a23a859fce54338a",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_hearing_serin_01.wav",
+      "sourceSha": "0c4bf4f95d3873f2a8fecea29317127d4d57598b64e8324829e54aee477b5191",
+      "action": "REPLACE",
+      "textSha": "8d773ad7430728d23890bcb09d400a26b8ad2aee90148160803cd11863b513d5"
+    },
+    {
+      "id": "main16_vibration_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "69efba0df24249d290f2b376f5991afa",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_vibration_default_serin_01.wav",
+      "sourceSha": "b8b96f3701a43652c5f39e3dd1177866709fd415de11e803d3246b2998eda6ae",
+      "action": "REPLACE",
+      "textSha": "1eb53b19ead1551bb60f2ce7bd74b2066669217311fbf7859251007ca2982e53"
+    },
+    {
+      "id": "main16_tracks_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "714fd5538e3345d182d9ab819695afb5",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_tracks_taeon_01.wav",
+      "sourceSha": "a69489596dd85712eefd53fda68ca45f2ae2f0b9b08c6137c8ff6487cb20803b",
+      "action": "REPLACE",
+      "textSha": "dae1c33d564e4afd48d070ee94f1b041e6011aa7180bb8d613eb40704710767c"
+    },
+    {
+      "id": "main16_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "e8234f74d9e74855bba744f78ed02eed",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_witness_taeon_01.wav",
+      "sourceSha": "9754bd40533df67f085855468362e8e2f9509d253c56add232f91d41efa6c61e",
+      "action": "REPLACE",
+      "textSha": "462c4a2f585dcde2325d9ca8b9c0bb5c1cba74b2ecbbbae67dd52f5acf222df3"
+    },
+    {
+      "id": "main16_retry_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "82ec5ceac9ce40febe4a5700655b0e53",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_retry_taeon_01.wav",
+      "sourceSha": "5e8929ab08a0c4e73a268f083b50a87502c94c7e09e54d25ff5fe12539806f4a",
+      "action": "REPLACE",
+      "textSha": "be591067e8db0de069598e3210e29cc2865ed8175f98668882da115cea5778c4"
+    },
+    {
+      "id": "main16_afterimage_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "9e99b20d87424807adbb9b335a5278a2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_hearing_serin_01.wav",
+      "sourceSha": "4222fe5f0c2d7cfde6a85340e19792e3c30aa34bda362c86b59b919b299e05b5",
+      "action": "REPLACE",
+      "textSha": "887fc34dfc7e314ef32598f5a5192d0360798a63094361856d43abe938c21ce0"
+    },
+    {
+      "id": "main16_afterimage_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "1f5ce02745cb4873b64e0a29a1cc20c6",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_default_serin_01.wav",
+      "sourceSha": "def39bdca8cb29fd3b21032dda4295b729ffe3ebc8c1973d1eaf12b76d6f147a",
+      "action": "REPLACE",
+      "textSha": "5b2c57f04471a5118ba9c23fb142bd43d46c7199f8e3f0b903943fb07369a274"
+    },
+    {
+      "id": "main16_afterimage_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "55a7f2394c2442d2ab889849f7da771d",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_01.wav",
+      "sourceSha": "7eaa1aaf8a278a8fd199136db7888a8a484a3e2fe4b49e75d702539aa6bc1395",
+      "action": "REPLACE",
+      "textSha": "14da5e12bcfea16966d9544d8058f43084676ffbbb47e422e6b2ccd356b9b4c6"
+    },
+    {
+      "id": "main16_afterimage_taeon_02",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "7b63a90637774053a582c99e237a210c",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_afterimage_taeon_02.wav",
+      "sourceSha": "a4cd0eddf5ec7255ed152523ab5dd019bec733f485a3034792fffa15c95ed73c",
+      "action": "REPLACE",
+      "textSha": "9a9d8efa7cfca5ba513483bc4d207403257e6af501d2d1081a8229ad56b95e5c"
+    },
+    {
+      "id": "main16_canyon_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "b5e0293ed7fa43adbcc7786d5760034e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_hearing_serin_01.wav",
+      "sourceSha": "85b97999f8d8e2c855b3758d427a952e763fa8b760b365c93c11bb62597f189d",
+      "action": "REPLACE",
+      "textSha": "a97eb73d05b217581d38c8c1e0ee076dd7443cdd8fa46f8aa33840e58f34efc7"
+    },
+    {
+      "id": "main16_canyon_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "cddb00b17d404589a63d9de81d794ffb",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_default_serin_01.wav",
+      "sourceSha": "0a7f178fd7a8be4302c6da88fda5610e9118eb86ecd190dd27d8dfbec60728bc",
+      "action": "REPLACE",
+      "textSha": "25280e725f078f3600e3be05b49a2f00b8be92689e9ee2fc534124910a765782"
+    },
+    {
+      "id": "main16_canyon_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "6b9acdc68cb9456faf7dd54bcdd4dbae",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_canyon_taeon_01.wav",
+      "sourceSha": "91ece88b2fd9c4ea22bb2d8c73299ece1495a9be6d2f4356fa08fa8da095956c",
+      "action": "REPLACE",
+      "textSha": "fe4af041376101ddb53023671374c556469b9f9b7e6455e4a43958cdd335dbbd"
+    },
+    {
+      "id": "main16_report_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "1a1976f805164200a9abdf8e0a097d95",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main16/main16_report_taeon_01.wav",
+      "sourceSha": "1e88aa017ee810f7177e5fefa538e1be7a4dac04cf1030b6f5981a9691cc00f2",
+      "action": "REPLACE",
+      "textSha": "5b0a67bc58bd42c3cc03fe6aff82dca209a48b6124f8b70027267c74d7597fe4"
+    },
+    {
+      "id": "main07_taeon_supp_001",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "634cc37c9f0c4b2d953d92e4f94a2763",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_001.wav",
+      "sourceSha": "b274c3bf83ff284617e91904ff91aaca2b841bdc987f1864f46c58ff6a76d5fe",
+      "action": "REPLACE",
+      "textSha": "f7337f81fa34c2894a9172c66628af4f53fdfa399bc512090b9be54668ce9ae6"
+    },
+    {
+      "id": "main07_taeon_supp_002",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "f5bc7559789b479da5895107f57ee9ea",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_002.wav",
+      "sourceSha": "361426c17c3a6c1dc0cd8668eb4382bb94900bad4e9a4dbe5eaac7a67191ca0c",
+      "action": "REPLACE",
+      "textSha": "7538551b322a6f7958e9cfff9b6c4817042fddcf3ad18169c4cfd64883e15890"
+    },
+    {
+      "id": "main07_taeon_supp_003",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "e8ddfe492534480ab992a6c595b7283e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main07/main07_taeon_supp_003.wav",
+      "sourceSha": "d7187161e421276fcc768e46da54e6b65c8b861dd47be8a4aaecb582ad59b5b9",
+      "action": "REPLACE",
+      "textSha": "2608d1c6f9751526c64c9f31e1955049a8ff03f6387d1c98bea26c8b66090be1"
+    },
+    {
+      "id": "main17_after_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "bde9d657b699d7042be35e736b206dd4",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_after_default_serin_01.wav",
+      "sourceSha": "f462fa440787f848705c3313a2a2e65b37f6eb30541738ebe2fdf42086e8e9e8",
+      "action": "REPLACE",
+      "textSha": "f009960f87890ae3dfcefef27760b50d59ab8c3b711da6bb2ed9a9e164605dc2"
+    },
+    {
+      "id": "main17_after_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "f240dcbe6211ead4b9538bf7c9427f23",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_after_hearing_serin_01.wav",
+      "sourceSha": "3915ccd00fabd967a9fc1903cbeb8ad49d521b4149a1b02303ba6a1064d923b7",
+      "action": "REPLACE",
+      "textSha": "714fa5c6d8c46baf691c9769f86b080fd9a8e841f2c501075962a5f41d7b18ab"
+    },
+    {
+      "id": "main17_compare_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "2735cb18045ebfa49a65d6ae86e6c47b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_compare_serin_01.wav",
+      "sourceSha": "96c950f7852ff1da86b2ce4d2edc195aac281cb8dc60d7d3c61d848aa020e907",
+      "action": "REPLACE",
+      "textSha": "5b6e1366974494b45d2571ea2d9e1c22ff324458d8eea67e6e974be1a6222358"
+    },
+    {
+      "id": "main17_resonance_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "aadb44f698158fe4eb149237746dabf8",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_default_serin_01.wav",
+      "sourceSha": "b9bbf2135314e79d07eaaa097a526fcd9290e8cbb9a2816b7389ea6dd52c67ed",
+      "action": "REPLACE",
+      "textSha": "3b60749ecb6a67a9beb0774c7a0328dbf5885841ef766dced703e921b0bce0f4"
+    },
+    {
+      "id": "main17_resonance_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "e9bf96c8284389d438b27444063097de",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_resonance_hearing_serin_01.wav",
+      "sourceSha": "48cdbf747c0edcd97e7dae9674b90439b5189c758b9cb76811dd3b5398f90750",
+      "action": "REPLACE",
+      "textSha": "d8c7e8d2b7e3c7dd67487c63ed692cc91bf0eaf7bafcee354e16106cdd0d2fd5"
+    },
+    {
+      "id": "main17_route_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "8b58322de4907954ab76c41e95890708",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_route_serin_01.wav",
+      "sourceSha": "58e7af2bb3999e65cd6ac71937f473e514aa4e369e7985165b28e0ceb2a4af42",
+      "action": "REPLACE",
+      "textSha": "1dcfaf1b8580217aded0691865d6c3f0f140e12478c563ecf7d4de8e50e060fb"
+    },
+    {
+      "id": "main17_serin_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "d14313c8cc195084db35cc884c0d02bc",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_serin_serin_01.wav",
+      "sourceSha": "81ae0bcb4801da28f3bbdcb1a9bb5a1e07437c3d71e82e64b8e44d03d862514b",
+      "action": "REPLACE",
+      "textSha": "719456cae9877da2f5ca35b87c629c7c1392dc66f6bc8aa38e14a0853a7b1b85"
+    },
+    {
+      "id": "main17_vibration_default_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "d46d06f81bbd50648b81b43329d94eb1",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_default_serin_01.wav",
+      "sourceSha": "56445037f134ef97256c2c5f389c7e616921818ca70269811dd8b45f1d9a6e4e",
+      "action": "REPLACE",
+      "textSha": "89bd54b2f9486bbdf2e58ffeaaa3af17229365a319aeb7bfcbbec213966c76cf"
+    },
+    {
+      "id": "main17_vibration_hearing_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "ec1e34dca0a987e479eaf6b95552d136",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_vibration_hearing_serin_01.wav",
+      "sourceSha": "63fb2a29bc51ad9526a607a265e2459fa7dfd86a5b136fa46ed597a1b61df3f8",
+      "action": "REPLACE",
+      "textSha": "def1f31b8efbcb380617517f304b1d68d72cd10cb970b1087188a7d27315a68e"
+    },
+    {
+      "id": "main17_withdraw_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "e6a90a4116a129d4496dda10a2b34e4f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_serin_01.wav",
+      "sourceSha": "e9a3c43dcce6517889fb1713cfa3f3f85a81bdaa8107ed663dba92ab1b792f39",
+      "action": "REPLACE",
+      "textSha": "34ea8536796da41f69109bb09d9c4a48f5b09609ebcff3048df89c5a7febd908"
+    },
+    {
+      "id": "main17_withdraw_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "01d7f1df5ffd0b3489b7eca142bd810c",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_withdraw_taeon_01.wav",
+      "sourceSha": "64e4439b054203f95e3061d54500016f5365d246aba6de2f0ea16cf4a98c2aeb",
+      "action": "REPLACE",
+      "textSha": "73e13e22ec7b43b5b6efa50e6eadc75845d466b0b3647c02cca855cc3d1ad01f"
+    },
+    {
+      "id": "main17_witness_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "ec27746366a53e0438b401b200dbc7ff",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main17/main17_witness_serin_01.wav",
+      "sourceSha": "8760e0c4f4712b5b71796ffe016dba9d2da09fa0d44569ed00c75900a9bb8a2f",
+      "action": "REPLACE",
+      "textSha": "b35e67aca59a91dda5f5b6d03ec2f06ce4849b50305e96ae651f8e085db7a783"
+    },
+    {
+      "id": "main18_after_watcher_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "c9f9282d1508bfd42820ea62a5c7d08b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_01.wav",
+      "sourceSha": "2a73eab9142d849ec3bbe4790b9369802ee0b7f42ac8dd496779079e7a7af8f2",
+      "action": "REPLACE",
+      "textSha": "bcb0ddea0ea2cdf0e6af037a2cbc008192d97f9817f14b81bfa1e20fdbc5beac"
+    },
+    {
+      "id": "main18_after_watcher_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "124e56c6e353398429edf7768881b431",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_02.wav",
+      "sourceSha": "5efd6d3f4f7afe6ac75f165f13688486feb5a313c220b8406e97ab41ee2da7f4",
+      "action": "REPLACE",
+      "textSha": "c8d9f0d89518810975580a82e48565903fec433867ef4ed46b17153e2a22c1bd"
+    },
+    {
+      "id": "main18_after_watcher_serin_03",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "4c9f69ab845b72e4388a2c15817f5b45",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_after_watcher_serin_03.wav",
+      "sourceSha": "19bb134e3171854cbdc186c803d1b732e2372b388c55bd1ef3615c74cfbea2d2",
+      "action": "REPLACE",
+      "textSha": "f1049176b53e534d7b4871c824738cf331b21d900e9bb45132d8bcb74d4b100d"
+    },
+    {
+      "id": "main18_deeper_route_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "6e3da5e22c97aa34d81cd431e844d4c8",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_01.wav",
+      "sourceSha": "3f997b1b85939494d2580b66f58f1a1c508d378379525b32d9f2d910bb01d09b",
+      "action": "REPLACE",
+      "textSha": "b90a55c321c3762fa93e5fa7bef2c54430fe879fca54a6f42b4623cdf54e5dfd"
+    },
+    {
+      "id": "main18_deeper_route_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "b92aba53d5541e84c9225503efe49cf2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_deeper_route_serin_02.wav",
+      "sourceSha": "4856eb3b0f7426258e4c48c7dea3175cdcba7d4a1a4050e36cd40ca9ea2514c9",
+      "action": "REPLACE",
+      "textSha": "27a10621eac8a5a34c4b0a9484eea6fd4f24ab0ffdfde35cef5d8e9b152edeb2"
+    },
+    {
+      "id": "main18_watcher_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "8817aeb34bd5d4c409e305f78f04a134",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_taeon_01.wav",
+      "sourceSha": "5344e4c4b8eff10702603bfb58b4ccc8dc2687a8a3887422ffbabc8ca6f981b2",
+      "action": "REPLACE",
+      "textSha": "848c1eba47adc3e2159e80b40ccdd6cd7e684b467e799e154c4e23c90d50a0f9"
+    },
+    {
+      "id": "main19_pulse_1_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "3bf2f93e164ee76488722fe2662e2a5e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_01.wav",
+      "sourceSha": "d7cb075778612f561ca55215d156e2747f8cf889a9ad12474958643e0f938235",
+      "action": "REPLACE",
+      "textSha": "8247b8e658dfdd338ed4b334a18fdc6667b3c42d664ea878a335787b80abfd63"
+    },
+    {
+      "id": "main19_pulse_1_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "9bc9dbb77b200b64b95ebe7cb2ecb425",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_pulse_1_serin_02.wav",
+      "sourceSha": "ab7fb0cf36509e5561d743b040a0de3e36fab5654311766c6c728a36e1a58f40",
+      "action": "REPLACE",
+      "textSha": "fba5cbdc118aec76ed2a18594882ad421ab391e4fde9eec6ac535753156658b0"
+    },
+    {
+      "id": "main19_track_1_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "5d9e71bbef98cfe42ba806c67f4962ae",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_01.wav",
+      "sourceSha": "2026ca970368c3ee3bf2eb2a446c16ae02a3fce6cf59da85e129602ec09e3613",
+      "action": "REPLACE",
+      "textSha": "37eb42bf1ac04cf6bf827576ea48e8c1ad9ccc0153127f8f205adfaa8c7d875a"
+    },
+    {
+      "id": "main19_track_1_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "a345606b8a6c5dd4b9b40c48454e2ba1",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_1_serin_02.wav",
+      "sourceSha": "2d7d883949f138d8501ca219f3fefb620f5141df5f09296aae4741057a3604b2",
+      "action": "REPLACE",
+      "textSha": "ba8e387ff667265733015caa417639e19a94b448b9ddcebcd4779bf9f92be75f"
+    },
+    {
+      "id": "main19_track_2_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "59eae6ff797e9f542b111180bcaee4fc",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_track_2_serin_01.wav",
+      "sourceSha": "26c7650bb47d900ee30950a9c153905b5b38a4a61ab8e4e10963c54d16e322ad",
+      "action": "REPLACE",
+      "textSha": "53f54d512a892ee9af9ec13705d72414820879c1632ce06b88ace9fcd20c2475"
+    },
+    {
+      "id": "main19_withdraw_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "e651d42e2e7d4964c8e67e3efe6d1ec9",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_withdraw_serin_01.wav",
+      "sourceSha": "3e07981bfdc8f540330f9530a6a7804e57e5c90f114a3e65b0084f42e5f809f8",
+      "action": "REPLACE",
+      "textSha": "2c41ee9c62d7d30fcc7fe04a0c7636f12a6e6ee0e326cd672967bf3b7953241c"
+    },
+    {
+      "id": "main19_witness_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "8df7edeea668b9240a43d6d74ddd0bfc",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_witness_serin_01.wav",
+      "sourceSha": "ec0ac4824c0878df19fc5541ed59751a310aecb00e91a912a2048a7371764c2f",
+      "action": "REPLACE",
+      "textSha": "ce01ca08f2fbeb3a3a696e75111fc60d4c3ece16945baab67f028e56cfe6a558"
+    },
+    {
+      "id": "main19_witness_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "dcc3cefd84e10b4419f44e4dc800ae10",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main19/main19_witness_taeon_01.wav",
+      "sourceSha": "6a7b0d36ccdedf1965ce332c7503c470e8d3eed692e7df09f4abf19ee5c0278c",
+      "action": "REPLACE",
+      "textSha": "114b5b4a1bbfd63fbd1773a3a55bd64d935b7cc6ac4ffc19ab9c0c58cbc62e52"
+    },
+    {
+      "id": "main18_leon_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "32e98ae840614b97b25f808d6a1364ca",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_leon_serin_01.wav",
+      "sourceSha": "a3f76bbb3a3da24835569d1aac91d78ee6bf201e751ddbc748704accbe775392",
+      "action": "REPLACE",
+      "textSha": "014b1ba12dba35c0e8b4fecbe257802717a07fd69efdbb080afdcb0e2954bf21"
+    },
+    {
+      "id": "main18_ground_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "72ae914093aa4624b67986bf77ccd3fb",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_ground_serin_01.wav",
+      "sourceSha": "67c63e8a98df20cfec4a6903ccd36d809a8ca295409caed64e20a3869a8788a0",
+      "action": "REPLACE",
+      "textSha": "e3bac231f7c1a3f1c230d24fc2ce21489e05ba5d88ab9fc2f9c71358b1ba2968"
+    },
+    {
+      "id": "main18_heat_vent_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "af2752afce044d39b32f35f06078bd37",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_heat_vent_serin_01.wav",
+      "sourceSha": "d8b26010d8eaeee0ffc56d28170da9a01571351592038d79724ee6e8ac3d1b4b",
+      "action": "REPLACE",
+      "textSha": "73f38e79658b73f8771eaac8390c4d790a083ff37cd7032570869c9d0eec2f19"
+    },
+    {
+      "id": "main18_overheat_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "ec1fd2e480504d7db6d82e997993cbf7",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_01.wav",
+      "sourceSha": "a67076d82d8ec89cad6763f102e975fadb8b44c8bdc6890d53c73ded7795daf6",
+      "action": "REPLACE",
+      "textSha": "b39abea4ebfe512e6070b4a33d5aeb81d65c3735666899718eef158933d52be0"
+    },
+    {
+      "id": "main18_overheat_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "b844b48b384a47ddb88b11d258282864",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_02.wav",
+      "sourceSha": "611384e837017105ff83fa5325dd12814922865a88d382abda9f404aae3df2c5",
+      "action": "REPLACE",
+      "textSha": "4947e45296ea6024ee3088770f4d0e89e0911f92dbe38d7f5f29f51b9c63459f"
+    },
+    {
+      "id": "main18_overheat_serin_03",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "fec7030d836f44f098b5ae7d6d09e626",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_03.wav",
+      "sourceSha": "e3601dae47e553dde8ed373058e5abefdc394e30438543dbb7a27f24336c2e04",
+      "action": "REPLACE",
+      "textSha": "5ee556bd3064ae680981db8d2194d8a90daf351bf7e7b0b7c182f7f31c68bf96"
+    },
+    {
+      "id": "main18_overheat_serin_04",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "6ce364df02c043d88f4fd862748f906f",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_overheat_serin_04.wav",
+      "sourceSha": "70edf887acbd700e6c66460360e78c8d0fe02a59ec75d9a3779aab842cb8a13b",
+      "action": "REPLACE",
+      "textSha": "51bbf1e5e16fee358eaa54fe06ed78933f45cbe84a13dadcffb5178a770c78c3"
+    },
+    {
+      "id": "main18_vibration_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "0d44d69429634bd18502aa93dd901983",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_vibration_serin_01.wav",
+      "sourceSha": "96fa6744ea32ae8f1755be07df27131c894668db816039ac04e06ace3c0a3d39",
+      "action": "REPLACE",
+      "textSha": "52bf11124cf1d71bfedebe30a5f6ba858f7ae504ff9d971d95f968a1ac79a8ff"
+    },
+    {
+      "id": "main18_watcher_witness_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "dd5a0e75b27848e8b15642082efe19ce",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_01.wav",
+      "sourceSha": "f86ff7e77d5a0af4b5644039030d53c294e77c2fd2709fb0c7b63f78c2719432",
+      "action": "REPLACE",
+      "textSha": "06b9c09c98247f6c90709151237b7653ed400a9f8bf67295562c7dd6460139a2"
+    },
+    {
+      "id": "main18_watcher_witness_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "3b569239107140fca3f7bb116411d994",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main18/main18_watcher_witness_serin_02.wav",
+      "sourceSha": "a8817da46652d0adea2c9c361b5240416d9c8be85a984b3dd56557bafe777d5f",
+      "action": "REPLACE",
+      "textSha": "1d6c72f1392d1006bf2a79cbe187c73c3fceb506d3e6f38d2273368d1efa60f8"
+    },
+    {
+      "id": "main20_confront_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "6c99e96cbeb7d444c84c45f362121213",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_01.wav",
+      "sourceSha": "7e7b495e4d3a7e165e6a83ccd6b41f03397e9765d25b2a9a12bf150eff28c9cf",
+      "action": "ADD",
+      "textSha": "684272421c63a607b3782e431f418c1a559c51196476459c3882c43ff49f9327"
+    },
+    {
+      "id": "main20_confront_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "f12e67eb723aa4a4a9ecae3e8f1dddff",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_02.wav",
+      "sourceSha": "7cb2c62d78da4fbe0ef2e02831b89704f2d8fcd39a73f5051d1ad02e90f048b0",
+      "action": "ADD",
+      "textSha": "1fbebc9a03c9ef35c63a2b62dc1defcd1c3e02d24577c85177887872801b5647"
+    },
+    {
+      "id": "main20_confront_serin_03",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "8f5d03d51e4941d42b9907a6fddd3cc2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main20/main20_confront_serin_03.wav",
+      "sourceSha": "2fb28f84baa1af0330ae868a1807e73f0c62be011f8a53c4d8e65c1139e5c08d",
+      "action": "ADD",
+      "textSha": "5d41b5c2f3693981e9d559ce73b9bf13dcf6d5eb6d4ceb8db9e44e2771ba1fde"
+    },
+    {
+      "id": "main20_after_colossus_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "02ef6eefaa45cf043b647651f956f8f6",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_01.wav",
+      "sourceSha": "45e06af8b43a3deca40bd7b8474dcb47bcaf87d362e7a615b68ca12db81d0193",
+      "action": "ADD",
+      "textSha": "e58d2ac19888d5360d17bf4c30e1910cc4d2338612688015c3f801a545778ff4"
+    },
+    {
+      "id": "main20_after_colossus_serin_02",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "77892256d84610d4ba52116058660b0b",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main20/main20_after_colossus_serin_02.wav",
+      "sourceSha": "846015803e0c418c73469e274b7818b1f3abe5583e02d47bcea44642e22b0d13",
+      "action": "ADD",
+      "textSha": "932617a18e0c5691fd457e2d3fe6b0ec38ac8be694baf24578c09f5690566c22"
+    },
+    {
+      "id": "main21_heat_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "21ec9d3ba0f912049a5c19813f68ed25",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_heat_serin_01.wav",
+      "sourceSha": "6a1ac2a2ca2a687f640e6779ea77b81ea34f607f57764e860e0cfec7fd8f609a",
+      "action": "ADD",
+      "textSha": "c5bc870e142255c8582f64bc47683e062951e713e6121255ffaf81a1b9392694"
+    },
+    {
+      "id": "main21_pulse_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "8d0f7f02e01d8d24fa8a5336be0ca7bf",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_pulse_serin_01.wav",
+      "sourceSha": "18d52fb0664cac8f8cf053a5b21676ccf1dfc359e575474d4a3b93181c03d7bb",
+      "action": "ADD",
+      "textSha": "97856d2b1075f7d7c3f7986a00489e51da4cbfcee826fd9179b2594624e12275"
+    },
+    {
+      "id": "main21_route_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "cef17822d47d247408dee8da5f04fb87",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_serin_01.wav",
+      "sourceSha": "83406294e4b319fea9245a1ad72131a1fb871ef63b30539e932c9a60dd609d32",
+      "action": "ADD",
+      "textSha": "6b1459cbc1c44d5418efebd8b71497e14e05deafba3d3fb0a58e4f4cdcbfa74d"
+    },
+    {
+      "id": "main21_route_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "ba452e706f1678343b9b6fa312bec888",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_taeon_01.wav",
+      "sourceSha": "40de0635e35ca645ab4f4321e7a3236f6174d3ffeb543aa56bd66c1261e44fa9",
+      "action": "ADD",
+      "textSha": "148d45829af5ead81457b16446a03f1a85f0fd25733cc6aa531d3ab1071ca6e6"
+    },
+    {
+      "id": "main21_haren_taeon_01",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "67b2fd14fe6f8f645b902293e254ccad",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_01.wav",
+      "sourceSha": "cfac6665705de3c352110aea778252c61a099a4e2379bd1b03984cc4e1b29d32",
+      "action": "ADD",
+      "textSha": "f2eb45f1873c21313f8726b9393fa5c15bdddd439815b5b4a4d7113c297001db"
+    },
+    {
+      "id": "main21_haren_taeon_02",
+      "speaker": "companion_taeon",
+      "voice": "Algieba",
+      "guid": "1abd1caa9d07bed46b0bdb5ce9e4d095",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_taeon_02.wav",
+      "sourceSha": "dcce21ccb07860541e44898d5f6a4706477af196bcb2955ecfa654bc63a8b389",
+      "action": "ADD",
+      "textSha": "dc038aac44d167027a539dfad554b5bfd2b3c5a0fdc5cf34553d25ad7abdac52"
+    },
+    {
+      "id": "main21_prepare_serin_01",
+      "speaker": "companion_serin",
+      "voice": "Erinome",
+      "guid": "f237d4ac74f03ac4c8549e7252ddc634",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_prepare_serin_01.wav",
+      "sourceSha": "92f3c0d8a9f9b5a239d21db5abae97b2863eaaafbda5c9287f7365f59e710fc1",
+      "action": "ADD",
+      "textSha": "e7f2913bc81736a81e9eb0c233d0978239189c87d0d2a0c22a5672c08bd5c306"
+    },
+    {
+      "id": "main21_route_paul_01",
+      "speaker": "companion_paul",
+      "voice": "Achird",
+      "guid": "e7b16c2e093b3ff41b57f05b1a632f02",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_01.wav",
+      "sourceSha": "a973f09428dae84de11a3fd183b2010385af974dd297c8aba03d9f601d1607b9",
+      "action": "ADD",
+      "textSha": "103786ab9b7d2fb54c8e5160925881452f576fd4c4aff821b5c027d28ae34fd7"
+    },
+    {
+      "id": "main21_route_paul_02",
+      "speaker": "companion_paul",
+      "voice": "Achird",
+      "guid": "ce328c781e831be4584344346a3a6d9e",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_route_paul_02.wav",
+      "sourceSha": "911e30637fd79dcd8fc6d54083836b07663eacbf8e28a4a8d0b7855416e05841",
+      "action": "ADD",
+      "textSha": "736f5f59ea44bcf94f7684551f0a534f5cd29247d7556c6e98b0118847daade0"
+    },
+    {
+      "id": "main21_arbel_leon_01",
+      "speaker": "arbel-leon",
+      "voice": "Orus",
+      "guid": "936cb48e8bcc38b4fa9c397ec4b8bf8d",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_arbel_leon_01.wav",
+      "sourceSha": "b8828447dda8067e68198c2b4556bcc447b0090b2e479e734b06fe29eaa08142",
+      "action": "ADD",
+      "textSha": "471f0b08da062d5333a8e9d2d7c0539d8dfc7e549a4875444103e8df270700ee"
+    },
+    {
+      "id": "main21_aid_miel_01",
+      "speaker": "companion_miel",
+      "voice": "Sulafat",
+      "guid": "89dfe60cfaf4c3945a760a667dd7cde8",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_01.wav",
+      "sourceSha": "83b136a0ffd662a76e2ebd058176c7f366e01f20b768da365dd84915c6ef5899",
+      "action": "ADD",
+      "textSha": "601bf2b76062b25cb8fd39ce8f6de2a06c75df65c97f280a299310344f8026d5"
+    },
+    {
+      "id": "main21_aid_paul_01",
+      "speaker": "companion_paul",
+      "voice": "Achird",
+      "guid": "898e6e9fc2e4e0a4a92bda8fb65dddd2",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_paul_01.wav",
+      "sourceSha": "dad9fea950d2b2986cd6cc9239040343b5785347dad8e2b22fbee89c19dc5bd6",
+      "action": "ADD",
+      "textSha": "9c38a076af113941eb14635ffd8edf29bc2382c8fb9d59b8946433588aa0ab13"
+    },
+    {
+      "id": "main21_aid_miel_02",
+      "speaker": "companion_miel",
+      "voice": "Sulafat",
+      "guid": "aae84a25bbdfb254dabba1407e17caea",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_aid_miel_02.wav",
+      "sourceSha": "8efb07c3456920df7629b733e9b5c28e5bc9f3dd68379ffc6631923c0fef3f0a",
+      "action": "ADD",
+      "textSha": "0e1a9d9adfe1297a99c6e79828a1d09103b198fd2cbefaa87d37ee3a37f1a8f9"
+    },
+    {
+      "id": "main21_carriage_leon_01",
+      "speaker": "arbel-leon",
+      "voice": "Orus",
+      "guid": "9af51f62589cf8242aed3cf5ff4856bd",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_carriage_leon_01.wav",
+      "sourceSha": "045ffa25da97c98db8ca2676ab3a2234d241665ee4e3f77950aca2bca0913558",
+      "action": "ADD",
+      "textSha": "9c77415772cd4ac69350dba65ea9e81344d7f4ff7c50443617b112269b417d09"
+    },
+    {
+      "id": "main21_haren_haren_01",
+      "speaker": "story_haren",
+      "voice": "Alnilam",
+      "guid": "89c98a507f1193244a09addc3c6b08d0",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_01.wav",
+      "sourceSha": "d6188257ac6d72a86336c89c211e6e3701dec6dedaa1d3516ffccd3db61cb3c2",
+      "action": "ADD",
+      "textSha": "d0081c7ee090b57cb5b5464347dcbc622d9be038bab9ec40709272bd3b91e94a"
+    },
+    {
+      "id": "main21_haren_haren_02",
+      "speaker": "story_haren",
+      "voice": "Alnilam",
+      "guid": "c818bad40c1e59846bbd209c87b8b687",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_02.wav",
+      "sourceSha": "9ffdf12120e59e5cdd1891218636856c7944e4e4b202e9c1fa2d88099d545860",
+      "action": "ADD",
+      "textSha": "a023f0904459a974472089ec9edc4e1d25a7ba0fc1d3839a45a03bc7abda1105"
+    },
+    {
+      "id": "main21_haren_haren_03",
+      "speaker": "story_haren",
+      "voice": "Alnilam",
+      "guid": "60f8d8bc334faa64f89cb5e2c574a672",
+      "assetPath": "Assets/_Project/Audio/Voice/Story/Main21/main21_haren_haren_03.wav",
+      "sourceSha": "c5de2269c71b3aa01b50b11b762862a42fc8469aa544566ecca6c765a23232e0",
+      "action": "ADD",
+      "textSha": "754c2818f052eb0d316f3b85bccadaf43c5261bc30c6156198df4b1977511a0b"
+    }
+  ]
+}

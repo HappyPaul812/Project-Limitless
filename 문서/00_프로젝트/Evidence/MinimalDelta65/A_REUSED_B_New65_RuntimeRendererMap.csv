@@ -1,0 +1,8 @@
+Role,Asset,X,Y,PPU,PivotX,PivotY,Scale,Order,GroupOrder,WidthWU,HeightWU,CanvasHeightAt720,OwnCollider
+EXISTING_NPC_REFERENCE_CLONE,Assets/_Project/Resources/VillageNpcSprites/Eldiran/OGA09_VillageRepresentative.png,-5.4,-4,28,16,0,1,2400,,1.142857,1.142857,82.28572,NONE
+CURRENT_WHEELCHAIR_BODY,Assets/_Project/Art/Characters/Player/Validated50/Mobility/Physical_Guardian_Male.png,0,-4.8,128,64,0,1,5,2480,1,1,72,NONE
+ORNA_CANVAS_40,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,0.5555556,2400,,0.5555556,0.5555556,40,NONE
+ORNA_CANVAS_82,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.138889,2400,,1.138889,1.138889,82,NONE
+ORNA_CANVAS_96,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.333333,2400,,1.333333,1.333333,96,NONE
+ORNA_CANVAS_128,Assets/_Project/Art/PresentationCandidates/Issue64/Orna_VillageGuide_512_CANDIDATE.png,-3,-4,512,256,0,1.777778,2400,,1.777778,1.777778,128,NONE
+ENTRY_DOOR_ONLY_CANDIDATE,Assets/_Project/Art/PresentationCandidates/Issue64/SouthGate_EntryDoor_Joint_CANDIDATE.png,-12.5,7.3,256,287.5,0,0.55,3,1280,1.235352,1.983008,142.7766,NONE

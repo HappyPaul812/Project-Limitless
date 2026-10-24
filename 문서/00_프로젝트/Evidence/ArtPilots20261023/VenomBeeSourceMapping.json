@@ -1,0 +1,28 @@
+[
+  {
+    "role": "Idle",
+    "guid": "24000000000000000000000000000004",
+    "active": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterValidation\\PilotBee\\pilot_bee_idle.png",
+    "sha256": "febcca0316167d50d4638216d9534ed2974de01c62e1c0c2daaba849726b6c63",
+    "source": "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee_idle.png",
+    "sourceSHA256": "febcca0316167d50d4638216d9534ed2974de01c62e1c0c2daaba849726b6c63",
+    "byte_identical": true,
+    "size": [
+      1904,
+      430
+    ]
+  },
+  {
+    "role": "Attack",
+    "guid": "24000000000000000000000000000005",
+    "active": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterValidation\\PilotBee\\pilot_bee_attack.png",
+    "sha256": "0e8886c56d7670fb317d4cada41a03e4684f9cf97adf908f2b860740630c018e",
+    "source": "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee_attack.png",
+    "sourceSHA256": "0e8886c56d7670fb317d4cada41a03e4684f9cf97adf908f2b860740630c018e",
+    "byte_identical": true,
+    "size": [
+      3150,
+      253
+    ]
+  }
+]

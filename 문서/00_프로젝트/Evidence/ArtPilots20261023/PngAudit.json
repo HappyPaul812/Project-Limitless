@@ -1,0 +1,402 @@
+[
+  {
+    "file": "Buildings\\SouthGate_EntryDoor_Joint_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "f90c096d71e11258b5bbb087197652f6bc31019b4c2fd669386ed965d7973e52",
+    "mode": "RGBA",
+    "size": [
+      575,
+      923
+    ],
+    "alpha_bbox": [
+      8,
+      8,
+      567,
+      915
+    ],
+    "transparent": 135651,
+    "partial": 394499,
+    "opaque": 575,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "Buildings\\SouthGate_RoofGable_Joint_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "a8b8fc6d7a911f05a7eabe1ad7096e21963fb53db0d630dff96e27df9f262d6a",
+    "mode": "RGBA",
+    "size": [
+      711,
+      498
+    ],
+    "alpha_bbox": [
+      8,
+      8,
+      703,
+      490
+    ],
+    "transparent": 157319,
+    "partial": 196166,
+    "opaque": 593,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "Buildings\\SouthGate_RoofTrim_Joint_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "eaf17535a1565ee1d4c153b7cbc859191fd77ef31cf4275ff44ebf29dc3412db",
+    "mode": "RGBA",
+    "size": [
+      280,
+      240
+    ],
+    "alpha_bbox": [
+      8,
+      8,
+      272,
+      232
+    ],
+    "transparent": 29883,
+    "partial": 37068,
+    "opaque": 249,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "NPC\\Orna_VillageGuide_512_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "9b6ebe892777874a859724d4c2326083e3c2d25541d3b5f7013c88498ffba74d",
+    "mode": "RGBA",
+    "size": [
+      512,
+      512
+    ],
+    "alpha_bbox": [
+      107,
+      24,
+      403,
+      508
+    ],
+    "transparent": 189829,
+    "partial": 71415,
+    "opaque": 900,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "NPC\\Orna_VillageGuide_Concept_Master_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "ba750bde78fdc41f560625258a584055779ce7e06323628b3556cdbd50fbb57e",
+    "mode": "RGBA",
+    "size": [
+      769,
+      1251
+    ],
+    "alpha_bbox": [
+      8,
+      1,
+      761,
+      1243
+    ],
+    "transparent": 491744,
+    "partial": 470063,
+    "opaque": 212,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "Preview\\Inn_Sign_Before_After_APPROX_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "e54415b2c1ac6ccf14d1e23bd6f187f4df8a3a0b919d27ce1676ac2b9850afe8",
+    "mode": "RGBA",
+    "size": [
+      1356,
+      575
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1356,
+      575
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 779700,
+    "edge_nonzero": 3862
+  },
+  {
+    "file": "Preview\\Inn_Sign_Existing_vs_New_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "4b16b176ffc572c393235ec7bb2ef5003ce97559a12f800876d359ff2939e4a4",
+    "mode": "RGBA",
+    "size": [
+      890,
+      410
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      890,
+      410
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 364900,
+    "edge_nonzero": 2600
+  },
+  {
+    "file": "Preview\\OfflineTown_16x9_NO_UNITY.png",
+    "package": "Main23",
+    "sha256": "7cb435e2b4cf3f4cff67019af3b68994b02187898d569fed469d118bf5b9e441",
+    "mode": "RGBA",
+    "size": [
+      1600,
+      900
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1600,
+      900
+    ],
+    "transparent": 0,
+    "partial": 77748,
+    "opaque": 1362252,
+    "edge_nonzero": 5000
+  },
+  {
+    "file": "Preview\\OfflineTown_21x9_NO_UNITY.png",
+    "package": "Main23",
+    "sha256": "b6d2ad77341fbe214233391f7c9b7eafc78eeef3e369d7478b872d1801e0fd6f",
+    "mode": "RGBA",
+    "size": [
+      2100,
+      900
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      2100,
+      900
+    ],
+    "transparent": 0,
+    "partial": 102241,
+    "opaque": 1787759,
+    "edge_nonzero": 6000
+  },
+  {
+    "file": "Preview\\OfflineTown_4x3_NO_UNITY.png",
+    "package": "Main23",
+    "sha256": "3c6f35a665288a98aa8de74ed5c9f5178e1b53b6656a2fcf0f7004dd6c7d5e4c",
+    "mode": "RGBA",
+    "size": [
+      1200,
+      900
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1200,
+      900
+    ],
+    "transparent": 0,
+    "partial": 58144,
+    "opaque": 1021856,
+    "edge_nonzero": 4200
+  },
+  {
+    "file": "Preview\\Orna_128px_FullCanvas_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "40c38350a079484889a68213eb94d8e75014f48665ae08d9e52b810d99724ab1",
+    "mode": "RGBA",
+    "size": [
+      128,
+      128
+    ],
+    "alpha_bbox": [
+      25,
+      4,
+      103,
+      128
+    ],
+    "transparent": 11374,
+    "partial": 4770,
+    "opaque": 240,
+    "edge_nonzero": 1
+  },
+  {
+    "file": "Preview\\Orna_40px_FullCanvas_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "3dfd022b2d044813a782d31e11bb673f3547dbc6cbab05e30e2907acfbfdaefd",
+    "mode": "RGBA",
+    "size": [
+      40,
+      40
+    ],
+    "alpha_bbox": [
+      6,
+      0,
+      34,
+      40
+    ],
+    "transparent": 987,
+    "partial": 564,
+    "opaque": 49,
+    "edge_nonzero": 11
+  },
+  {
+    "file": "Preview\\Orna_512_128_40_Readability_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "527274b550463bc73884c2aef313fcb7809030b930ebe85042fb43ab9efee158",
+    "mode": "RGBA",
+    "size": [
+      1020,
+      650
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1020,
+      650
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 663000,
+    "edge_nonzero": 3340
+  },
+  {
+    "file": "Preview\\SouthGate_Entry_Roof_Before_After_APPROX_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "ac4861edfb1b0b6984f004ebc4234344a8b9789b3772356ce90752c295d410e4",
+    "mode": "RGBA",
+    "size": [
+      1356,
+      575
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1356,
+      575
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 779700,
+    "edge_nonzero": 3862
+  },
+  {
+    "file": "Preview\\SouthGate_Separated_ModuleSheet_OFFLINE.png",
+    "package": "Main23",
+    "sha256": "09766bfd751fd8788758409aa1b7b2b1a395684d721e3b5f0a9511c47b86cf69",
+    "mode": "RGBA",
+    "size": [
+      1180,
+      720
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1180,
+      720
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 849600,
+    "edge_nonzero": 3800
+  },
+  {
+    "file": "Signs\\Inn_StandaloneSign_CANDIDATE.png",
+    "package": "Main23",
+    "sha256": "c2806a5ba3b4feed8e10433d96c43a12e59fb53209600d09e0ee6cb4e67c6ddf",
+    "mode": "RGBA",
+    "size": [
+      1135,
+      1097
+    ],
+    "alpha_bbox": [
+      8,
+      8,
+      1127,
+      1089
+    ],
+    "transparent": 502892,
+    "partial": 740560,
+    "opaque": 1643,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "VenomBee_DesignBoard_Source.png",
+    "package": "Bee",
+    "sha256": "eeedb7b80c8ce5250f045b626b73cbaeef7a792a246a3696dc4d305c3ed9c1fb",
+    "mode": "RGB",
+    "size": [
+      1536,
+      1024
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "transparent": 0,
+    "partial": 0,
+    "opaque": 1572864,
+    "edge_nonzero": 5120
+  },
+  {
+    "file": "VenomBee_OriginalKeyArt_Pilot_v1_512.png",
+    "package": "Bee",
+    "sha256": "55aa7d26b15d8291370345c53decf9fd13a95d40a0a7e3a53dabe9343a5de17e",
+    "mode": "RGBA",
+    "size": [
+      512,
+      512
+    ],
+    "alpha_bbox": [
+      11,
+      39,
+      501,
+      472
+    ],
+    "transparent": 143760,
+    "partial": 9813,
+    "opaque": 108571,
+    "edge_nonzero": 0
+  },
+  {
+    "file": "VenomBee_Preview_128.png",
+    "package": "Bee",
+    "sha256": "14ac63e19add07391a9d24f73006e837be927e438494621da5faa728239f4c5a",
+    "mode": "RGBA",
+    "size": [
+      128,
+      128
+    ],
+    "alpha_bbox": [
+      0,
+      7,
+      128,
+      121
+    ],
+    "transparent": 7929,
+    "partial": 2487,
+    "opaque": 5968,
+    "edge_nonzero": 14
+  },
+  {
+    "file": "VenomBee_Preview_40.png",
+    "package": "Bee",
+    "sha256": "4a4d3e59baef2ef075c889995f7033a073dc2fc522875a920f21d66b8923366e",
+    "mode": "RGBA",
+    "size": [
+      40,
+      40
+    ],
+    "alpha_bbox": [
+      0,
+      0,
+      40,
+      39
+    ],
+    "transparent": 592,
+    "partial": 568,
+    "opaque": 440,
+    "edge_nonzero": 23
+  }
+]
