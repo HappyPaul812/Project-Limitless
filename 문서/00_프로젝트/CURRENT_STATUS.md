@@ -5,7 +5,7 @@
 - 서비스 계정 CLI0.164.0-alpha.11.1·공유 동일SHA 실행파일·device-auth/App Server 지원 PASS. 개인 설치 폴더 ACL은 그대로. 런타임39/인증도구4 SHA 고정, 기존 Bot/Art/부팅 미재시작·MANUAL·업무/승인/usage/체크포인트 보존. 실제AI/유료API/제품·Save·아트원본/Push/main병합0.
 - 관리자 창의 실제 VerifyAuthAsService도 REGISTER_SERVICE_LOGON_TASK/CimException으로 등록 단계 HOLD(native_status_hex 없음). 인증 RPC에 도달하지 않았으며 콘솔 인증 성공과 분리. 배치 keyring/프로필 읽기 미검증, 기존 OnBoot2종 수정/재등록0·Bot/Art 유지. 최초 비관리자 창 거부도 정상 보호 게이트로 구분.
 - 다음: Windows 단발 배치 등록 오류 별도 확인 후 동일 keyring/프로필/login status/사용량 검증 → 새 연결 코드 정상 로드 → 대표 명시적 A 활성화 및 새 정확한 읽기1건 계획/슬롯 승인 → 별도 승인된 추론1회 실증. 이번에는 승인/큐 삽입·A 자동전환0.
-- [성공근거](Evidence/ServiceCodexAuth20261024/login-success.json)·[상태](Evidence/ServiceCodexAuth20261024/summary.json)·[절차/대안](../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md). 코드 a0eaae4f, 후속 배치검증 도구 commit은 같은 브랜치 로그 참조. 기존 전체QA 반복0, Unity 직접 확인사항 없음.
+- [성공근거](Evidence/ServiceCodexAuth20261024/login-success.json)·[상태](Evidence/ServiceCodexAuth20261024/summary.json)·[절차/대안](../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md). 인증수정 a0eaae4f·배치검증 도구/완료근거485e4665. Discord 최종 인증성공/별도배치HOLD 보고 SENT(영수증1563374682206503015). 기존 전체QA 반복0, Unity 직접 확인사항 없음.
 
 ## 2026-10-24 A 서비스 실행기 연결 준비 — 16 PASS / 실제 서비스 인증 HOLD
 

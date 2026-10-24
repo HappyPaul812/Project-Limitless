@@ -151,5 +151,12 @@
   "heartbeat_age_seconds": {
     "bot": 1.33,
     "art": 3.09
-  }
+  },
+  "discord_report": {
+    "state": "SENT",
+    "message_id": "1563374682206503015"
+  },
+  "verification_code_commit": "485e4665",
+  "final_db_unchanged": true,
+  "final_sha_match": true
 }
