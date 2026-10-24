@@ -1,3 +1,13 @@
+## 2026-10-24 14:19 KST 최소 복구 확인 — 배치 PASS
+
+대표 로컬 보안 입력 후 LogonUserW 배치 인증1회(Win32 0), 임시 Password/Limited 등록·비대화형 실행·삭제 모두 PASS. 실제 계정 PAUL-PC\LIMITLESSRelaySvc, SID 일치·일반계정·로그온4·세션0·프로필 C:\Users\LIMITLESSRelaySvc, 작업 및 자식 종료코드0. request_id f2b59f2347604f7db67be3181fc8eab4.
+
+이전 1326은 이번 입력에서 재현되지 않았습니다. 과거 입력 내용은 검사하지 않았으므로 오입력으로 단정하지 않습니다. 암호 재설정/권한/등록 방식 변경 없이 통과했습니다. 원본 OnBoot2 XML SHA·배치 권한 전후 동일, Codex/AI/네트워크 호출0, 임시 작업 REMOVED. 기존 인증 저장소 변경0, MANUAL 유지, AI 시험/A 활성화 진행0.
+
+CODEX_HOME 환경변수는 null이며 서비스 프로필 경로는 확인됐습니다. 이번 환경 시험은 Codex를 실행하지 않았으므로 배치 컨텍스트의 keyring/login status/공식 사용량 접근 성공까지 증명하지 않습니다. 다음 단계는 별도 지시가 있을 때 해당 읽기 점검부터 진행합니다. 기존 전체 테스트 반복0, Unity 확인사항 없음. 구현 commit a1c5a7bc.
+
+[성공 원본](../../문서/00_프로젝트/Evidence/BatchEnvironment20261024/recovery-pass.json)
+
 # 1번 배치 등록·환경 검증 결과 — 2026-10-24 KST
 
 이번 실행은 Windows 등록 인증 오류로 중단했습니다. 실제 비대화형 실행은 검증하지 못했으며 2번 AI 추론·3번 A 활성화는 수행하지 않았습니다.

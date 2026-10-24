@@ -1,0 +1,107 @@
+{
+  "actual_ai_calls": 0,
+  "credential_check": {
+    "method": "LogonUserW_BATCH",
+    "native_win32_code": 0,
+    "expected_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "verified": true,
+    "attempts": 1
+  },
+  "after": {
+    "LIMITLESS-Bot-OnBoot": {
+      "xml_sha256": "85e3b3c654d4a3882619e07db20401d0ed19d5499a5a5f94fc4e258bfd118c5b",
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "enabled": true,
+      "logon": "Password",
+      "run_level": "Limited",
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Bot -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\""
+    },
+    "LIMITLESS-Art-OnBoot": {
+      "xml_sha256": "8191077216351ff90d0db99134ed9a145adb4ffa5fa154fb914485781bd59a38",
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "enabled": true,
+      "logon": "Password",
+      "run_level": "Limited",
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Art -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\""
+    }
+  },
+  "registered": {
+    "user": "LIMITLESSRelaySvc",
+    "run_level": "Limited",
+    "logon": "Password"
+  },
+  "mode_changed": false,
+  "original_tasks_changed": false,
+  "action": "Diagnose",
+  "task_name": "LIMITLESS-BatchCheck-f2b59f2347604f7db67be3181fc8eab4",
+  "request_id": "f2b59f2347604f7db67be3181fc8eab4",
+  "execution": {
+    "working_directory": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab",
+    "arguments": "-NoProfile -NonInteractive -WindowStyle Hidden -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\batch-account-check.ps1\" -RequestId f2b59f2347604f7db67be3181fc8eab4",
+    "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+  },
+  "batch_rights_after": [
+    "SeBatchLogonRight"
+  ],
+  "stage": "SAFE_BATCH_VERIFIED",
+  "task_exit_code": 0,
+  "cleanup": "REMOVED",
+  "before": {
+    "LIMITLESS-Bot-OnBoot": {
+      "xml_sha256": "85e3b3c654d4a3882619e07db20401d0ed19d5499a5a5f94fc4e258bfd118c5b",
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "enabled": true,
+      "logon": "Password",
+      "run_level": "Limited",
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Bot -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\""
+    },
+    "LIMITLESS-Art-OnBoot": {
+      "xml_sha256": "8191077216351ff90d0db99134ed9a145adb4ffa5fa154fb914485781bd59a38",
+      "user": "LIMITLESSRelaySvc",
+      "execute": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "enabled": true,
+      "logon": "Password",
+      "run_level": "Limited",
+      "arguments": "-NoProfile -WindowStyle Hidden -File \"C:\\ProgramData\\LimitlessRelay\\boot-service.ps1\" -Action StartIfApproved -Service Art -ToolRoot \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\""
+    }
+  },
+  "status": "PASS",
+  "codex_calls": 0,
+  "service": {
+    "name": "PAUL-PC\\LIMITLESSRelaySvc",
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "deny_batch_direct": false,
+    "enabled": true,
+    "implicit_deny_sids": [],
+    "is_admin": false,
+    "batch_right_direct": true
+  },
+  "rights_unchanged": true,
+  "child": {
+    "process_path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "network_calls": 0,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "at": "2026-10-24T05:19:28.7846548Z",
+    "actual_ai_calls": 0,
+    "script_root": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab",
+    "is_admin": false,
+    "codex_home_environment": null,
+    "profile": "C:\\Users\\LIMITLESSRelaySvc",
+    "logon_type": 4,
+    "userprofile": "C:\\Users\\LIMITLESSRelaySvc",
+    "exit_code": 0,
+    "request_id": "f2b59f2347604f7db67be3181fc8eab4",
+    "working_directory": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab",
+    "status": "PASS",
+    "codex_calls": 0,
+    "user_interactive": false,
+    "sid_matches": true,
+    "session_id": 0
+  },
+  "batch_rights_before": [
+    "SeBatchLogonRight"
+  ]
+}

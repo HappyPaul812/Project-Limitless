@@ -1,3 +1,9 @@
+## 2026-10-24 Windows 1326 최소 복구 — 안전 배치 PASS
+
+- 대표 로컬 입력 후 Windows 배치 인증1회 PASS(0), 임시 Password/Limited 작업1건 등록·실행·삭제 PASS. 실제 PAUL-PC\LIMITLESSRelaySvc/일반계정/SID 일치/로그온4/세션0/비대화형/종료0, 14:19 KST. 이전1326 재현 안 됨, 과거 오입력 여부 단정 안 함.
+- OnBoot2 XML SHA·배치 권한 전후 동일, 저장 인증/암호 재설정0·AI/Codex/네트워크 호출0·MANUAL 유지·A/게임/Push/merge0. 기존 테스트 반복0, Unity 확인사항 없음.
+- CODEX_HOME 환경null·서비스 프로필 정상. 배치에서 Codex 인증/keyring/공식 사용량 접근은 이번 시험 범위 밖이며 별도 지시 시 읽기 검증 필요. 실제 추론/A 활성화 미진행. 구현 a1c5a7bc, [성공근거](Evidence/BatchEnvironment20261024/recovery-pass.json).
+
 ## 2026-10-24 Windows 1326 최소 복구 재개 — 로컬 보안 입력 대기
 
 - 계정 LIMITLESSRelaySvc 활성·기존 SID 일치 재확인. 기존 Password/Limited 등록 방식 유지, 선행 배치 권한 보유 근거 유지·관리자 실행 때 새로 점검.
