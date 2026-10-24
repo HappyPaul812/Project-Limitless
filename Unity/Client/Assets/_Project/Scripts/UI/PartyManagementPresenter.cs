@@ -46,7 +46,7 @@ namespace ProjectLimitless.UI
 
         // 열기·유지·확정에 같은 안전지역 정책을 적용하여 허용 지역에서 화면이 닫히거나 확정이 막히지 않게 합니다.
         private static bool IsAllowedScene(string sceneName) =>
-            sceneName == "World_StarterVillage" || sceneName == "Field_03" || sceneName == "Arbel";
+            sceneName == "World_StarterVillage" || sceneName == "Field_03" || sceneName == "Arbel" || sceneName == "World_FrostwayVillage";
 
         private void Awake()
         {

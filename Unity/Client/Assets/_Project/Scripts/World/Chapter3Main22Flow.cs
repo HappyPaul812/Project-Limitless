@@ -37,7 +37,7 @@ public sealed class Chapter3Main22Flow : MonoBehaviour
    for(int i=0;i<30&&FindAnyObjectByType<PlayerController>()==null;i++)yield return null;
    if(Step==0&&FindAnyObjectByType<PlayerController>()!=null&&GameSessionData.PendingSpawnPointId==string.Empty){QuestService.NotifyLocationReached(EntryTarget);Save();}
   }
-  gameObject.AddComponent<Main22MouseTravel>();gameObject.AddComponent<Main22GuidanceHud>();
+  if(!Completed||gameObject.scene.name==Village){gameObject.AddComponent<Main22MouseTravel>();gameObject.AddComponent<Main22GuidanceHud>();}
  }
  void CreateSite(Main22Site.Kind kind,Vector2 at,string title){var g=new GameObject("Main22_"+kind,typeof(Main22Site));g.transform.SetParent(transform,false);g.transform.position=at;g.GetComponent<Main22Site>().Configure(kind,title);}
  bool northOpened;
@@ -51,7 +51,7 @@ public sealed class Chapter3Main22Flow : MonoBehaviour
   Box("NorthGateGuideLeft",new Vector2(-1.7f,6.4f),new Vector2(.4f,1));Box("NorthGateGuideRight",new Vector2(1.7f,6.4f),new Vector2(.4f,1));Box("NorthGateManualStop",new Vector2(0,6.9f),new Vector2(3.4f,.4f));
  }
  void Box(string name,Vector2 pos,Vector2 size){var g=new GameObject(name,typeof(BoxCollider2D));g.transform.SetParent(transform,false);g.transform.position=pos;g.GetComponent<BoxCollider2D>().size=size;}
- void Update(){if(gameObject.scene.name==Village&&Unlocked&&!northOpened){InstallVillageGate();}if(!Unlocked||WorldModalState.IsOpen)return;bool pressed=Keyboard.current?.eKey.wasPressedThisFrame==true||Keyboard.current?.fKey.wasPressedThisFrame==true||Gamepad.current?.buttonSouth.wasPressedThisFrame==true;if(!pressed)return;NearestInRange()?.TryInteract();}
+ void Update(){if(Completed&&gameObject.scene.name==Field){var travel=GetComponent<Main22MouseTravel>();if(travel!=null)travel.enabled=false;var hud=GetComponent<Main22GuidanceHud>();if(hud!=null)hud.enabled=false;var canvas=transform.Find("Main22Guidance");if(canvas!=null)canvas.gameObject.SetActive(false);return;}if(gameObject.scene.name==Village&&Unlocked&&!northOpened){InstallVillageGate();}if(!Unlocked||WorldModalState.IsOpen)return;bool pressed=Keyboard.current?.eKey.wasPressedThisFrame==true||Keyboard.current?.fKey.wasPressedThisFrame==true||Gamepad.current?.buttonSouth.wasPressedThisFrame==true;if(!pressed)return;NearestInRange()?.TryInteract();}
  public static Main22Site CurrentSite(){var sites=FindObjectsByType<Main22Site>(FindObjectsSortMode.None);if(SceneManager.GetActiveScene().name==Village)return sites.FirstOrDefault(x=>x.SiteKind==Main22Site.Kind.NorthGate);var kind=Completed?Main22Site.Kind.SouthGate:Step==1?Main22Site.Kind.Frost:Step==2?(!Main22Progress.HasClue(0)?Main22Site.Kind.TraceA:Main22Site.Kind.TraceB):Step==3?Main22Site.Kind.Mouse:Step==4?Main22Site.Kind.Shelter:Main22Site.Kind.SouthGate;return sites.FirstOrDefault(x=>x.SiteKind==kind);}
  public static Main22Site NearestInRange(){var p=FindAnyObjectByType<PlayerController>();return p==null?null:FindObjectsByType<Main22Site>(FindObjectsSortMode.None).Where(x=>x.Available&&Vector2.Distance(p.transform.position,x.transform.position)<=Main22Site.Range).OrderBy(x=>Vector2.Distance(p.transform.position,x.transform.position)).FirstOrDefault();}
  public static void Save(){if(GameSaveService.CurrentSlotIndex>0)GameSaveService.SaveCurrentSession();}
