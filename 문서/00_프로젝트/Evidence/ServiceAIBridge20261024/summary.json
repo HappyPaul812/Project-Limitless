@@ -1,0 +1,96 @@
+{
+  "status": "BRIDGE_DEPLOYED_NOT_RELOADED_SERVICE_AUTH_HOLD",
+  "tests": {
+    "delta": {
+      "run": 14,
+      "failures": 0,
+      "errors": 0,
+      "actual_ai_calls": 0
+    },
+    "boot_connection": {
+      "run": 2,
+      "errors": 0,
+      "failures": 0
+    },
+    "total_pass": 16,
+    "full_suite_repeated": false
+  },
+  "local_identity_probe": {
+    "status": "HOLD",
+    "reason": "SERVICE_ACCOUNT_CONTEXT_REQUIRED",
+    "observed": 1792803174.8112793,
+    "actual_ai_calls": 0,
+    "api_fallback": false,
+    "mode_changed": false,
+    "request_id": "local"
+  },
+  "actual_service_probe": "WAITING_FOR_LOCAL_SERVICE_LOGON",
+  "mode": "MANUAL",
+  "db_unchanged": true,
+  "counts": {
+    "tasks": 21,
+    "usage": 13,
+    "settings": 28,
+    "approvals": 0,
+    "control_resume": 0,
+    "operation_checkpoints": 14
+  },
+  "protected_unchanged": {
+    "boot-service.ps1": true,
+    "register-discord.ps1": true,
+    "collab/boot_relay.py": true,
+    "collab/delivery_discord.py": true,
+    "collab/resume_queue.py": true,
+    "collab/real_roles.py": true,
+    "collab/operating_modes.py": true
+  },
+  "official_service_usage": {
+    "status": "NOT_SERVICE_VERIFIED",
+    "last_shared_observation_age_seconds": 26654,
+    "service_reset_times": "UNKNOWN_UNTIL_SERVICE_PROBE_SUCCESS"
+  },
+  "boot_runtime_hash_count": 39,
+  "bootstrap_wrapper_supervisor_unchanged": true,
+  "boot_approval_acl_owner_preserved": true,
+  "services_restarted": false,
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792803366.0217304,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": false,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792803364.5146565,
+    "ai_calls": 0,
+    "unity_runs": 0
+  },
+  "actual_ai_calls": 0,
+  "paid_api_product_push_merge": 0,
+  "first_readonly": {
+    "state": "PREPARED_PROCEDURE_NOT_APPROVED",
+    "runner": "collab.real_roles.run_once",
+    "first_role": "PlanningAgent",
+    "maximum_calls": 1,
+    "source_sha": "FRESH_CANONICAL_REF_CHECK_REQUIRED",
+    "old_consumed_slots": "DO_NOT_REUSE",
+    "new_exact_plan_slot_approval": "REQUIRED_AFTER_AUTH_SUCCESS",
+    "api_fallback": false
+  },
+  "actual_prelogin_boot_usb_reconnect": "NOT_VERIFIED_UNCHANGED_FROM_PREVIOUS_REPORT",
+  "runtime_hashes_match": true,
+  "boot_chain_hashes_match": true,
+  "approval_changed_fields": [
+    "runtime_sha256",
+    "service_ai_bridge"
+  ],
+  "current_loaded_bridge": "OLD_RELAY_ONLY_NO_RESTART",
+  "service_probe_outputs": [
+    "service-ai-probe-local.json"
+  ],
+  "heartbeat_age_seconds": {
+    "bot": 0.96,
+    "art": 2.46
+  }
+}

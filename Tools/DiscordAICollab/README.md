@@ -159,3 +159,5 @@ DB 백업은 relay 프로세스를 정상 종료한 뒤 data 폴더 전체를 �
 2. 제한된 읽기 전용 Codex 단일 작업의 실제 추론 승인·모델/구독잔여량 확인·credential/MCP 격리·외부 권한 차단. 이 검증 전 자동 AI worker는 연결하지 않습니다.
 3. 실제 아트 Manifest 변환 계약, Unity 검수 실행기와 증거 수집기, 승인한 SHA의 게임 적용기, 역할별 알림 outbox, 월간 영상 scheduler를 각각 후속 구현합니다. 영상 자동 게시0·SFX PAUSED 유지.
 4. GitHub 쓰기/배포/실제 제작·API 비용/원본 적용/Push/merge는 각각 별도 승인입니다.
+
+서비스 계정 A 실행기 연결 및 인증 HOLD/단발 점검은 [SERVICE_AI_BRIDGE_KO.md](SERVICE_AI_BRIDGE_KO.md)를 따릅니다. MANUAL은 대표 명시적 활성화 전까지 유지합니다.

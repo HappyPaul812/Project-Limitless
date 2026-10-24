@@ -35,8 +35,9 @@ def normalize(raw, observed):
 
 
 class OfficialUsage:
-    def __init__(self,executable=None):
+    def __init__(self,executable=None,environment=None):
         self.executable=executable or shutil.which('codex')
+        self.environment=child_environment() if environment is None else child_environment(environment)
 
     async def read(self):
         if not self.executable:raise Denied('CODEX_CLI_NOT_INSTALLED')
@@ -45,7 +46,7 @@ class OfficialUsage:
             async with asyncio.timeout(20):
                 process=await asyncio.create_subprocess_exec(self.executable,'app-server','--listen','stdio://',
                     stdin=asyncio.subprocess.PIPE,stdout=asyncio.subprocess.PIPE,stderr=asyncio.subprocess.DEVNULL,
-                    env=child_environment(),limit=1024*1024,
+                    env=self.environment,limit=1024*1024,
                     creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
                 async def rpc(method,number=None,params=None):
                     if method not in ALLOWED:raise Denied('RPC_METHOD_FORBIDDEN')

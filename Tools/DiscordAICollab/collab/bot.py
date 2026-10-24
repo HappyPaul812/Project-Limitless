@@ -285,13 +285,16 @@ def run_bot(data_root):
     monitor=None if boot_relay else UsageMonitor(Scheduler(store))
     from .resume_queue import ResumeQueue
     resume_queue=None if boot_relay else ResumeQueue(store)
+    relay_only=boot_relay
     if boot_relay:
-        with store.tx() as db:
-            if db.execute('SELECT mode FROM operation_mode WHERE singleton=1').fetchone()[0]!='MANUAL':
-                raise Denied('BOOT_MANUAL_REQUIRED: 기존 모드를 임의 변경하지 않고 부팅 중계를 보류합니다')
-        ResumeQueue(store).recover()
+        # 서비스 계정의 공식 읽기 검증만 수행합니다. 실패해도 Discord 중계는 유지하고 AI만 HOLD합니다.
+        # MANUAL/A 선택은 기존 DB·대표 명령을 따르며 부팅 자체가 모드/새 업무 승인을 만들지 않습니다.
+        from .service_ai import connect_boot_ai
+        monitor,resume_queue,readiness=connect_boot_ai(store,root)
+        relay_only=readiness['status']!='READONLY_LINK_READY'
+        if resume_queue is None:ResumeQueue(store).recover()
     try:
-        create_bot(store,root,monitor,resume_queue,relay_only=boot_relay).run(token,log_handler=None,reconnect=boot_relay)
+        create_bot(store,root,monitor,resume_queue,relay_only=relay_only).run(token,log_handler=None,reconnect=boot_relay)
     except Exception:
         raise Denied('DISCORD_CONNECTION_FAILED: 토큰·초대·서버/채널 권한을 로컬에서 확인하세요. 원문 로그는 보존하지 않습니다') from None
     finally:
