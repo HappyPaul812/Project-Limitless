@@ -1,0 +1,50 @@
+{
+  "status": "WAITING_FOR_OWNER_APPROVAL",
+  "slot": "USER_WORKER_PLANNING_READONLY_20261024_01",
+  "plan_sha256": "42b0861a9b9dc5920d6afcc4654c2d28c13d00dad89d797446eaa095b7e5cb10",
+  "contract_sha256": "8fc083d9f1a02d71af9805fdefa143165b4fe3bac81f939accf132dc71af7813",
+  "source": {
+    "ref": "docs/planning",
+    "commit": "d73bdbf9a3162132b959f4672e88c3975b361c3c",
+    "path": "문서/00_프로젝트/팀운영/담당/PLANNING.md",
+    "sha256": "ad23c0caeb18122a0053a24fe3ad540f694e20b69092c82948f79ff80e138469",
+    "url": "https://raw.githubusercontent.com/HappyPaul812/Project-Limitless/d73bdbf9a3162132b959f4672e88c3975b361c3c/%EB%AC%B8%EC%84%9C/00_%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/%ED%8C%80%EC%9A%B4%EC%98%81/%EB%8B%B4%EB%8B%B9/PLANNING.md"
+  },
+  "code": {
+    "active_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\collab\\real_roles.py",
+    "active_sha256": "8bf4738d98883c2beedb476eba1faa591de621caf5f021ae451bdbd7493982ad",
+    "candidate_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAIUserWorker\\candidates\\real_roles.py",
+    "candidate_sha256": "bd133ff0792a0932006e1a87b66499b1efe788d4447b06905232a2b34dda6ee3",
+    "deployed": false,
+    "changes": [
+      "단일 Planning 슬롯 상수/허용목록 추가",
+      "정확한 WAITING 계획을 승인하는 전용 함수",
+      "기존 검증 후 5문장 계약 검사",
+      "해당 슬롯의 후속 업무 자동 생성 제외"
+    ]
+  },
+  "active_execution_permission": false,
+  "actual_ai_calls": 0,
+  "consumed_slots_reused": 0,
+  "auto_start_registered": false,
+  "worker_code": {
+    "active_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAIUserWorker\\durable_queue.py",
+    "active_sha256": "e41a0d881f1c4e33c742421af832634721089be958f4f1dd5b9bd10c8c4b4ccc",
+    "candidate_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAIUserWorker\\candidates\\durable_queue.py",
+    "candidate_sha256": "1614f510abcdad909b25b69780c99f9536b3ff49bf24d40cdeb64661877cb8b5",
+    "deployed": false,
+    "changes": [
+      "해당 계획 auto_handoff=false이면 추가 인계 금지",
+      "publish_verified=true 계획의 PASS 결과만 기존 outbox 게시"
+    ]
+  },
+  "contract_sha256_definition": "SHA256 canonical sorted UTF-8 JSON via real_roles.digest",
+  "contract_file_sha256": "a77ef622854a60525e537a83e8b513961e913d3ed42bcf4247afc0b2c8a06500",
+  "plan_file_sha256": "74cd7acff081cc7960e5a6a3b4678bd8f36a7e76f49c622ceec22c20cb9c75b6",
+  "preflight_observed_kst": "2026-10-24T16:19:44.497047+09:00",
+  "existing_consumed_slots_preserved": 12,
+  "candidate_tests_passed": 6,
+  "candidate_tests_actual_ai_calls": 0,
+  "ready_state": "READY_FOR_OWNER_REVIEW_NOT_EXECUTABLE",
+  "candidate_code_deployment_approved": false
+}

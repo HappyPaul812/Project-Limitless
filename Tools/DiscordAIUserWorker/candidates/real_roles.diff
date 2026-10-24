@@ -1,0 +1,38 @@
+--- APPROVED/collab/real_roles.py
++++ CANDIDATE/collab/real_roles.py
+@@ -17,0 +18 @@
++USER_WORKER_PLANNING_TRIAL = 'USER_WORKER_PLANNING_READONLY_20261024_01'
+@@ -75 +76 @@
+-    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()) or
++    if (plan.get('sha256')!=digest(body) or plan.get('slot') not in (USER_WORKER_PLANNING_TRIAL,SLOT,RETEST_SLOT,CODEX_SLOT,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()) or
+@@ -97,0 +99,18 @@
++
++
++def approve_waiting_planning_trial(store, identity, plan):
++    """대표가 정확한 새 계획을 승인한 뒤에만 호출합니다. 이번 준비 단계에서는 호출하지 않습니다."""
++    store.authorize(identity); validate(plan)
++    if plan['slot'] != USER_WORKER_PLANNING_TRIAL or plan['role'] != 'PlanningAgent':
++        raise Denied('PLANNING_TRIAL_SCOPE_REQUIRED')
++    if not 0 <= store.clock()-plan['created'] <= 86400:
++        raise Denied('PLANNING_TRIAL_PLAN_STALE')
++    with store.tx() as db:
++        row=db.execute('SELECT value FROM settings WHERE key=?',(plan['slot'],)).fetchone()
++        pending=json.loads(row[0]) if row else {}
++        if pending.get('state')!='WAITING_FOR_OWNER_APPROVAL' or pending.get('sha256')!=plan['sha256']:
++            raise Denied('EXACT_WAITING_TRIAL_REQUIRED')
++        grant={**pending,'state':'APPROVED','expires':store.clock()+600}
++        db.execute('UPDATE settings SET value=? WHERE key=?',(json.dumps(grant),plan['slot']))
++        db.execute("UPDATE user_worker_jobs SET state='PENDING_LOGIN' WHERE id=? AND state='WAITING_FOR_OWNER_APPROVAL'",(plan['sha256'],))
++        store.audit(db,'PLANNING_TRIAL_EXACT_OWNER_GRANTED',actor=identity.user_id)
+@@ -195,0 +215,8 @@
++        if slot == USER_WORKER_PLANNING_TRIAL and result['status'] == 'PASS':
++            summary=result['answer']['summary']
++            lines=[line.strip() for line in summary.splitlines() if line.strip()]
++            if (not 1 <= len(lines) <= 5 or len(summary)>600
++                    or any(len(re.findall(r'[.!?。！？]+',line))!=1 or not line.endswith('.') for line in lines)
++                    or result['answer']['next_review']!='바울 대표'):
++                result.update(status='NOT_VERIFIED',validation_status='REJECTED',reason='PLANNING_TRIAL_CONTRACT_REJECTED')
++                result.pop('answer',None)
+@@ -235 +262 @@
+-            if result['status']=='PASS' and slot not in (AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()):
++            if result['status']=='PASS' and slot not in (USER_WORKER_PLANNING_TRIAL,AUTO_PLANNING_SLOT,AUTO_CODEX_SLOT,NEW_ART_SLOT,RENEWAL_ART_SLOT,NEW_ART_RETEST_SLOT,*FOUR_SLOTS.values()):

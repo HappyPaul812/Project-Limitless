@@ -1,0 +1,10 @@
+--- APPROVED/DiscordAIUserWorker/durable_queue.py
++++ CANDIDATE/DiscordAIUserWorker/durable_queue.py
+@@ -242 +242 @@
+-            if state == 'DONE' and result.get('task_id'):
++            if state == 'DONE' and result.get('task_id') and chosen.get('auto_handoff', True):
+@@ -255,0 +256,4 @@
++                if state == 'DONE' and chosen.get('publish_verified') is True:
++                    from collab.real_roles import discord_text
++                    db.execute('INSERT OR IGNORE INTO control_outbox VALUES(?,?,?,?)',
++                               ('user-worker:'+chosen['sha256']+':VERIFIED',discord_text(result),'PENDING',None))

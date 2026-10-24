@@ -1,3 +1,9 @@
+## 2026-10-24 Planning 사용자 Worker 실전 준비 — 승인 대기 / AI0
+
+- PAUL-PC\windows/Session8 자기CODEX_HOME에서 공식구독인증·AppServerusage PASS(16:19:44KST,5h68%/주간26%,사용허용). exec/로그인변경/API fallback0. 등록51 SHA동일·Bot/Art RUNNING/잠금유지·MANUAL/claim0. 실제실행직전usage다시확인필요.
+- 신규1슬롯 USER_WORKER_PLANNING_READONLY_20261024_01을 WAITING_FOR_OWNER_APPROVAL로 등록. plan42b0861a…/contract정규화8fc083d9…/역할정본ad23c0ca…(docs/planning d73bdbf9). 기존CONSUMED12변경/재사용0·기존task추가0·outbox10유지.
+- 기존 실행코드/승인목록은 미변경, real_roles와Worker 두 후보/diff만 별도준비: 단일Planning슬롯·정확승인·5문장계약·추가인계금지·PASS만기존outbox게시. 신규후보6모의테스트PASS·실제AI/Discord0. 후보반영/무결성갱신/실행허가도 대표의 신규슬롯·계획·후보SHA 명시승인 후에만 진행. 자동시작/A/게임/Save/Push/merge/종료0. 선행cd1b3327. [준비보고·정확SHA·차이](PlanningWorker_Trial_Preparation_20261024.md).
+
 ## 2026-10-24 SHA 등록·운영 Worker 오프라인 연결 완료 — 실행 비활성 / AI0
 
 - 검토된4파일 내용/SHA 재확인4PASS, ProgramData 별도 Worker 무결성 목록 등록(execution_permission=false/auto_start=false). 기존 부팅검사는 그대로 두고 호환SHA4개만 추가. 기존Python38·원래승인map39항목·그밖모든승인필드·ACL/소유자 보존. collab42 SHA불일치0, 별도진단4/기존38/Worker5/사용자CLI묶음4 총51 SHA검사PASS. OnBoot작업변경0·XML재열람권한불가/실재부팅미검증.
