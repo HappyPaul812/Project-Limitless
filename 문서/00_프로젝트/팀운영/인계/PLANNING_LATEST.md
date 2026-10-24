@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-24 — Discord AI 협업 운영 정본 문서화 및 무인 추론 HOLD
+
+- **새 운영 정본**: [LIMITLESS Discord AI 협업 — 운영·장애·인계 (2026-10-24)](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md). `docs/planning` 작성 commit [`72a00697`](https://github.com/HappyPaul812/Project-Limitless/commit/72a00697fe466a875c8bc89e2dc7ccecc0bc1e4c).
+- **기존 성공·보존**: 대표 PIN 입력 없는 Windows 부팅 봇/아트 감시, 실제 Discord Slash 명령·PNG TEST_ONLY 수령, 네 역할 개별 실추론 및 4역할 텍스트 자동 인계는 보고·사용자 화면상 VERIFIED. 이 결과를 현재 Session 0 실제 모델 성공으로 오인하지 않는다.
+- **현재 차단/사용자 결정**: 서비스 계정 공식 CLI 패키지·구독 인증 및 `--version`/`--help` 성공과 달리 Session 0 실제 AI 추론은 `NOT_VERIFIED`. 가장 최근 재시험은 `OFFICIAL_USAGE_AND_APPROVAL` 사전 게이트 `OFFICIAL_READ_REJECTED (Denied)`로 실제 AI 호출 **0회**. 과거 `turn.failed`의 직접 원인도 미확정. **바울 대표가 2026-10-24 Discord 무인 AI 장애 작업을 오늘은 중단**하고 Codex 사용량을 게임 개발에 사용하도록 결정.
+- **운영·보호**: MANUAL 유지, A 자동 재개/무인 AI 실행 미승인, B 원격 동기화/종료 미검증. 기존 부팅 작업·운영 SQLite·게임 원본·Save·아트 승인 게이트·GitHub main 보호. 추가 유료 API/무단 재시도/무단 Push 금지. 주일은 대표 휴식 가능, AI 사전 승인 업무는 정책상 허용하되 실제 무인 추론은 HOLD.
+- **후속 최우선**: 대표가 재개를 명시하면 추가 추론 호출 없이 마지막 `Denied` 실제 원인·진단 보존 상태를 로컬 Codex에서 확인 → 근거 기반 수정보고 → 별도 승인으로 최대 1회/90초 읽기 전용 실험 → 성공 후에도 별도 A 전환 승인. `docs/planning` 문서 커밋과 Codex 로컬 `codex/discord-ai-collaboration` 미Push 작업은 구분할 것.
+- **원격 적용 상태**: 이 기획 문서/인계만 담당 브랜치에 commit. main 병합/원본 로컬 동기화/AI 재시험 실행 없음.
+
+---
+
 # PLANNING / 2026-10-23 16:46 KST — 신규 아트 #59 visible80px 최종 표시 기준 정식 보고 검토
 
 - 사용자 “메인 아트 보고서 확인.” → 실제 `docs/art-new` 최신 [문서](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/Chapter3_Main23_Issue59_Codex65_KeepHold_PlacementDecision_20261023.md) **갱신 commit `855d501c56f2107df01e49a5fefe84d87b0320bb`**, [`SPRITE_ART_LATEST.md`](https://github.com/HappyPaul812/Project-Limitless/blob/docs/art-new/문서/00_프로젝트/팀운영/인계/SPRITE_ART_LATEST.md) **최신 commit `d9d14c0f6b7f8c0652c13b769e205dd5de426c7f`**, [#59 담당 정식댓글](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359573006) **3단계 GitHub 보고 이행 완료** 확인. GitHub `main` 여전히 `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` 불변.
