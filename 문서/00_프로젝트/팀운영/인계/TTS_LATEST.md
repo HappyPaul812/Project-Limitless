@@ -1,5 +1,17 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 20:22 KST 사용자 Codex 결과 스크린샷 — 162 음성 격리 worktree 적용 및 검증 보고 / main 미반영
+
+- **보고 근거:** 사용자 제공 Codex 화면. 별도 worktree `codex/tts-voice-integration-20261024`에서 적용 완료, **원본 작업 폴더 변경0** 보고. 세린 Erinome67 + 태온 Algieba85 + 하렌 Alnilam3 + 기존 KEEP 폴3/미엘2/레온2 = **162/162**.
+- 기존 StoryVoiceCatalog **140 클립 교체 + 신규22 ID 등록**, 총 **290→312**. 최종 하렌 01 **R2.1 청취 승인 SHA 일치**. 원래 140 WAV GUID/.meta 및 비대상 150 연결 보호, ID 중복0, Missing Clip0, GUID 충돌(음성)0 보고.
+- Unity **6000.5.7f1** (현재 원격 `main`의 `Unity/Client/ProjectSettings/ProjectVersion.txt` 실제 버전과 일치), Compile 오류0, **Play Mode 1,031 PASS**, 재생시작 **162/162** 확인. 핵심 대사 배열·Next/Skip·무음·음량·격리 Save/Load PASS 보고.
+- 변경물 **189 파일**, 보호한 원본 WAV·Save·기존 작업 **1,430개 파일 SHA 동일** 보고. branch 구현 커밋 짧은 SHA `1cb99be2`, 최종 기록 `73a1b212b15cd749145a3eccb5075b9f32458db8` **사용자 화면에서 전사**, 자체 원격 확인된 commit SHA는 아님.
+- **잔여 QA:** Editor Search 기존 예외1, 비음성 GUID 중복 기존사유 별도, 전용 독립 창/전체 퀘스트 미실행. 음성 통합 관련 새 오류로 단정하지 말되 실제 QA 보고서에서 사전 존재 증거와 영향 범위 분리. 단일 PlayMode 수치로 모든 장면 완전 청취검수 완료라고 주장 금지.
+- **원격 현황 별도 확인:** `codex/tts-voice-integration-20261024` remote branch 검색 결과 없음, 해당 최종 SHA remote commit 조회 결과 없음, 동일 작업 PR 검색 결과 없음(2026-10-24 확인시점). 작업 내용이 **로컬에만 있는 것으로 추정**하며 push/PR/merge 완료 주장 금지.
+- **사용자 추가 승인 전 금지:** `main` 직접 commit·merge·Push 및 사용자 원본 로컬 작업 폴더 동기화. 후속 Codex는 격리 worktree 산출물의 git status, 189 변경 파일/140+22 mapping diff/보고서/SHA/선행 오류를 **읽기 전용 교차검증** 후 PR 준비 보고. push/PR/merge/원본 sync는 별도 사용자 승인 때만. TTS API/합성 새 호출0.
+- 참고: [TTS 162개 Codex 인계](../../TTS_20261024_162WAV_Unity_일괄통합_Codex_인계.md), [GitHub Issue #20](https://github.com/HappyPaul812/Project-Limitless/issues/20).
+
+
 ## 2026-10-24 저녁 7시 Codex용 전체 음성 통합 준비 — 합계162, 하렌3 청취 PASS 사용자 보고
 
 - 사용자 직접 보고: 하렌 R2.1 첫 대사의 평서문 하강 청취 합격 후 `APPROVE_FALLING_R2` 승인 처리, 이어 남은 02/03 제작. 최신 메시지 “좋아 다 잘됐어. 이따 7시쯤에 다 넣게 코덱스 지시문 줘”. **하렌 `main21_haren_haren_01`의 R2.1 승인본 + 02/03 세 대사 청취 PASS는 사용자 보고**. 실제 3/3 SHA·WAV·JSON 검증은 Codex 작업 전 로컬 감사 필요. 과거 의문형 오류 WAV/R1/R2 미승인 후보는 절대 게임에 적용 금지.
