@@ -1,3 +1,10 @@
+## 2026-10-24 SHA 등록·운영 Worker 오프라인 연결 완료 — 실행 비활성 / AI0
+
+- 검토된4파일 내용/SHA 재확인4PASS, ProgramData 별도 Worker 무결성 목록 등록(execution_permission=false/auto_start=false). 기존 부팅검사는 그대로 두고 호환SHA4개만 추가. 기존Python38·원래승인map39항목·그밖모든승인필드·ACL/소유자 보존. collab42 SHA불일치0, 별도진단4/기존38/Worker5/사용자CLI묶음4 총51 SHA검사PASS. OnBoot작업변경0·XML재열람권한불가/실재부팅미검증.
+- 기존relay.sqlite 온라인백업 후 Worker전용표4개 연결. 같은transaction에서 기존표12개 모든행SHA동일(tasks21/checkpoint14/outbox10포함). 운영Worker업무0·모의승인/보고삽입0·MANUAL유지·Bot/Art RUNNING heartbeat증가. 로컬 data/user-worker-registration.json/connection.json/runtime-binding.json 근거.
+- 인증/usage/승인/checkpoint/정본 gate·중복claim·역할auto_handoff·실패HOLD/기존봇outbox 연결. 후속AI새승인필요. 기존4역할run_once/JSONL검증 그대로, 별도adapter가 자기계정DPAPI원본/timeout부분로그연결. 실제auth/usage/AI/Discord호출0·자동시작/A/유료/아트/Unity/Save/Push/merge/종료0.
+- 신규연결8+회귀20+로그3 고유31오프라인PASS, 영향있는4역할전달은최종선별재검증. 실제1회조건: 허용12슬롯모두CONSUMED이므로 새slot지원·변경코드SHA 별도검토가선행, 이후 정확한단일계획/실행허가/사용자SID·CLI·로그검증/공식인증·두usage·정본·예약gate필요. 기존slot재사용/새실행안함. 선행fe0f9865. [완료근거·남은조건](UserWorker_SHA_OfflineConnection_20261024.md).
+
 ## 2026-10-24 신규 진단4파일 SHA 검토 — 제안서만 / 적용0
 
 - 4개 원문·SHA·생성branch/reflog/commit·기존코드 참조 검토 완료. 기존승인Python38 SHA일치/변경0, 미등록4개는 이전제안SHA·현재commit blob과4/4일치. 실비밀하드코딩 발견0(전체읽기+알려진키/JWT/PEM패턴0), runtime출력 비밀없음까지 보증하지 않음.

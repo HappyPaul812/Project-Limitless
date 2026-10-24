@@ -10,6 +10,28 @@ from collab.real_roles import validate, slot_role, run_once
 from collab.scheduling import Scheduler, gate
 
 
+def execution_policy(path=Path('C:/ProgramData/LimitlessRelay/user-worker-integrity.json')):
+    """내용 등록과 실행 허가를 분리합니다. 현재 등록은 false이므로 실제 경로는 계속 HOLD합니다."""
+    registry = json.loads(path.read_text(encoding='utf-8-sig'))
+    if registry.get('kind') != 'USER_WORKER_INTEGRITY_ONLY' or registry.get('execution_permission') is not True:
+        raise Denied('WORKER_EXECUTION_NOT_APPROVED')
+    entries = registry.get('worker_adapter_files') or []
+    original = registry.get('approved_runtime_files') or []
+    if not entries or len(original) != 38:
+        raise Denied('WORKER_ADAPTER_PIN_REQUIRED')
+    for entry in [*registry['files'], *entries, *original]:
+        source = Path(entry['absolute_path'])
+        if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != entry['sha256']:
+            raise Denied('WORKER_REGISTERED_CONTENT_CHANGED')
+    cli_files = registry.get('user_cli_files') or []
+    if not cli_files:
+        raise Denied('WORKER_FULL_CLI_PIN_REQUIRED')
+    for entry in cli_files:
+        if hashlib.sha256(Path(entry['absolute_path']).read_bytes()).hexdigest() != entry['sha256']:
+            raise Denied('WORKER_USER_CLI_CHANGED')
+    return registry
+
+
 def current_user_context():
     """활성 사용자 SID·프로필은 Windows 토큰에서 읽고 서비스/환경변수 사칭을 피합니다."""
     import ctypes
@@ -49,9 +71,11 @@ def official_source_refs(plan):
 
 
 def initialize(db):
-    # 승인·예약·기존 업무 테이블은 바꾸지 않습니다. 배포 전 fixture DB에서만 호출합니다.
+    # 승인·예약·기존 업무 테이블은 바꾸지 않고 같은 DB에 Worker 전용 표만 추가합니다.
     db.execute('CREATE TABLE IF NOT EXISTS user_worker_jobs(id TEXT PRIMARY KEY,plan TEXT NOT NULL,worker_sid TEXT NOT NULL,state TEXT NOT NULL,result TEXT,created REAL NOT NULL)')
     db.execute('CREATE TABLE IF NOT EXISTS user_worker_lock(singleton INTEGER PRIMARY KEY CHECK(singleton=1),owner TEXT NOT NULL,job TEXT NOT NULL)')
+    db.execute('CREATE TABLE IF NOT EXISTS user_worker_checkpoints(job TEXT PRIMARY KEY,role TEXT,state TEXT,remaining TEXT,updated REAL)')
+    db.execute('CREATE TABLE IF NOT EXISTS user_worker_handoffs(job TEXT PRIMARY KEY,parent_task TEXT,next_task TEXT,next_role TEXT,state TEXT)')
 
 
 def approval(store, db, plan):
@@ -64,6 +88,20 @@ def approval(store, db, plan):
             or grant.get('role') != plan['role'] or grant.get('expires', 0) <= store.clock()
             or not 0 <= store.clock() - plan['created'] <= 86400):
         raise Denied('WORKER_EXACT_UNCONSUMED_APPROVAL_REQUIRED')
+    prior = db.execute('SELECT state FROM tasks WHERE event_key=?', (plan['slot'],)).fetchone()
+    if prior and prior['state'] not in ('NEW', 'TRIAGED'):
+        raise Denied('WORKER_PRIOR_ATTEMPT_OR_RESULT_HOLD')
+    checkpoint_task = plan.get('checkpoint_task')
+    if checkpoint_task:
+        checkpoint = db.execute('SELECT * FROM operation_checkpoints WHERE task=?', (checkpoint_task,)).fetchone()
+        task = db.execute('SELECT role,state,payload FROM tasks WHERE id=?', (checkpoint_task,)).fetchone()
+        payload = json.loads(task['payload']) if task else {}
+        if (not checkpoint or not task or task['state'] not in ('NEW', 'TRIAGED')
+                or task['role'] != plan['role'] or payload.get('scope') != plan['slot']
+                or payload.get('base_sha') != plan['source_refs']['main']
+                or checkpoint['role'] != plan['role'] or checkpoint['scope'] != plan['slot']
+                or checkpoint['base_sha'] != plan['source_refs']['main'] or checkpoint['stage'] == 'RUNNING'):
+            raise Denied('WORKER_CHECKPOINT_SCOPE_HOLD')
 
 
 def enqueue(store, identity, plan, worker_sid):
@@ -80,6 +118,8 @@ def enqueue(store, identity, plan, worker_sid):
         row = db.execute('SELECT worker_sid FROM user_worker_jobs WHERE id=?', (plan['sha256'],)).fetchone()
         if row[0] != worker_sid:
             raise Denied('WORKER_ASSIGNMENT_IMMUTABLE')
+        db.execute('INSERT OR IGNORE INTO user_worker_checkpoints VALUES(?,?,?,?,?)',
+                   (plan['sha256'], plan['role'], 'PENDING_LOGIN', '로그인·공식 사용량·미소비 승인 재확인', store.clock()))
     return plan['sha256']
 
 
@@ -98,7 +138,8 @@ def existing_role_runner(store, identity, plan, workspace, executable):
         # 전용 Worker 프로세스의 자기 프로필 경로만 지정합니다. 인증파일/키링은 복사하지 않습니다.
         for key in old:
             os.environ[key] = environment[key]
-        return run_once(store, identity, plan, workspace, executable)
+        from .runtime_adapter import recorded_run_once
+        return recorded_run_once(store, identity, plan, workspace, executable, context, run_once)
     finally:
         for key, value in old.items():
             if value is None:
@@ -120,8 +161,14 @@ class UserWorker:
         if not released:
             return {'state': 'HOLD_NOT_RELEASED', 'actual_ai_calls': 0}
         if runner is existing_role_runner:
+            try:
+                policy = execution_policy()
+            except (Denied, OSError, ValueError):
+                return {'state': 'HOLD_EXECUTION_NOT_APPROVED', 'actual_ai_calls': 0}
             # 실제 실행 경로에서는 호출자가 넘긴 모의 context를 신뢰하지 않습니다.
             context = current_user_context()
+            if context.get('sid') != policy.get('user_sid') or self.binary != Path(policy.get('user_cli_path', '')):
+                return {'state': 'HOLD_REGISTERED_USER_OR_CLI_MISMATCH', 'actual_ai_calls': 0}
         self.store.authorize(self.identity)
         if (context.get('session_id', 0) <= 0 or context.get('is_admin') is not False
                 or context.get('name', '').split('\\')[-1].lower() == 'limitlessrelaysvc'):
@@ -192,6 +239,10 @@ class UserWorker:
             state = 'DONE' if (result.get('status') == 'PASS' and result.get('mode') == 'REAL_CLI_READONLY'
                                and result.get('queue_acceptance') != 'NOT_VERIFIED_PAUSE_OR_LEASE_CHANGED') else 'NOT_VERIFIED'
             reason = 'EXISTING_RUNNER_RESULT'
+            if state == 'DONE' and result.get('task_id'):
+                state = 'NOT_VERIFIED'
+                result['worker_handoff'] = record_handoff(self.store, chosen, result)
+                state = 'DONE'
         except Exception as exc:
             # 외부 예외 원문·토큰·인증정보는 큐에 저장하지 않습니다.
             reason = str(exc) if isinstance(exc, Denied) else 'WORKER_STOPPED_NO_RETRY'
@@ -199,5 +250,29 @@ class UserWorker:
             with self.store.tx() as db:
                 db.execute('UPDATE user_worker_jobs SET state=?,result=? WHERE id=?',
                            (state, json.dumps({'reason': reason, 'result': result}), chosen['sha256']))
+                db.execute('INSERT OR REPLACE INTO user_worker_checkpoints VALUES(?,?,?,?,?)',
+                           (chosen['sha256'], chosen['role'], state,
+                            '후속 계획 별도 승인 필요' if state == 'DONE' else 'HOLD·기존 승인/사용량/체크포인트 재확인', self.store.clock()))
+                if state != 'DONE':
+                    # 기존 봇의 영속 outbox에만 연결합니다. Worker는 Discord 토큰을 읽거나 직접 게시하지 않습니다.
+                    text = '[USER AI WORKER / HOLD] '+chosen['role']+' / '+chosen['sha256'][:12]+' / '+state+' / 자동 재시도·유료전환 없음·MANUAL 유지'
+                    db.execute('INSERT OR IGNORE INTO control_outbox VALUES(?,?,?,?)',
+                               ('user-worker:'+chosen['sha256']+':'+state, text, 'PENDING', None))
                 db.execute('DELETE FROM user_worker_lock WHERE owner=?', (token,))
         return {'id': chosen['sha256'], 'state': state, 'reason': reason}
+
+
+def record_handoff(store, plan, result):
+    """검증된 기존 task만 기존 역할 규칙으로 인계합니다. 새 AI 승인/후속 호출은 만들지 않습니다."""
+    task = store.get(result['task_id'])
+    evidence = json.loads(task['evidence'] or '{}')
+    if (task['role'] != plan['role'] or task['event_key'] != plan['slot'] or task['tech'] != 'TECH_PASS'
+            or evidence.get('status') != 'PASS' or evidence.get('mode') != 'REAL_CLI_READONLY'
+            or evidence.get('plan_sha256') != plan['sha256']):
+        raise Denied('WORKER_HANDOFF_EVIDENCE_NOT_VERIFIED')
+    handoff = store.auto_handoff(task['id'])
+    next_task = store.get(handoff['task_id'])
+    with store.tx() as db:
+        db.execute('INSERT OR IGNORE INTO user_worker_handoffs VALUES(?,?,?,?,?)',
+                   (plan['sha256'], task['id'], next_task['id'], next_task['role'], handoff['state']))
+    return {**handoff, 'next_role': next_task['role'], 'next_ai_approved': False}

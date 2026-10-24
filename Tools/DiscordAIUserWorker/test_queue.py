@@ -165,7 +165,7 @@ class QueueTests(unittest.TestCase):
     def test_four_roles_reuse_existing_runner_without_real_call(self):
         for role in ROLE_FILES:
             plan = self.add(role=role)
-            with patch('DiscordAIUserWorker.durable_queue.current_user_context',return_value=self.context), patch('DiscordAIUserWorker.durable_queue.run_once',return_value={'status':'PASS','mode':'REAL_CLI_READONLY'}) as existing:
+            with patch('DiscordAIUserWorker.durable_queue.execution_policy',return_value={'user_sid':SID,'user_cli_path':str(self.binary)}), patch('DiscordAIUserWorker.durable_queue.current_user_context',return_value=self.context), patch('DiscordAIUserWorker.durable_queue.run_once',return_value={'status':'PASS','mode':'REAL_CLI_READONLY'}) as existing:
                 self.assertEqual('DONE',self.tick(runner=existing_role_runner)['state'])
                 self.assertEqual(plan, existing.call_args.args[2])
 
