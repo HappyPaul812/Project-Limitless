@@ -1,5 +1,16 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 저녁 7시 Codex용 전체 음성 통합 준비 — 합계162, 하렌3 청취 PASS 사용자 보고
+
+- 사용자 직접 보고: 하렌 R2.1 첫 대사의 평서문 하강 청취 합격 후 `APPROVE_FALLING_R2` 승인 처리, 이어 남은 02/03 제작. 최신 메시지 “좋아 다 잘됐어. 이따 7시쯤에 다 넣게 코덱스 지시문 줘”. **하렌 `main21_haren_haren_01`의 R2.1 승인본 + 02/03 세 대사 청취 PASS는 사용자 보고**. 실제 3/3 SHA·WAV·JSON 검증은 Codex 작업 전 로컬 감사 필요. 과거 의문형 오류 WAV/R1/R2 미승인 후보는 절대 게임에 적용 금지.
+- **Unity 통합 합계162 대상:** 세린 `Erinome` 67 + 태온 `Algieba` 85 = 제작 READY152 / 하렌 `Alnilam` 3(신규 승인 보고) / 사용자 KEEP 기존 Main21 폴3·미엘2·레온2=7(재생성 금지). **162=매핑 합집합**, 전부 새 Catalog ID가 아니다. 이전 main 사전 감사에서는 세린58+태온82=140개 기등록 음성 재캐스팅 및 Main20·21 신규22개 예정, 실제 local 최신 런타임 재검증 필수.
+- **[2026-10-24 전체 162 WAV Unity 통합용 Codex 작업 인계 정본](../../TTS_20261024_162WAV_Unity_일괄통합_Codex_인계.md)** 준비. Codex는 저녁7시경 사용자가 프롬프트를 **직접 전달한 때**만 작업 착수. 승인 범위는 Unity 기능 브랜치 내 복사·연결·검증 및 문서 보고. **main 병합·원본 로컬 동기화·remote push 자동 승인 아님**.
+- 실파일 경로: `F:\Downloads\Renewal_Voices\Serin` / `Taeon`; `F:\Downloads\Voice\Haren_Main21\Haren`(하렌01 정식 R2.1 승인본 SHA 확인), `F:\Downloads\Voice\Limitless_TTS_Main20_Main21_20261019\candidates` 기존 KEEP7. user-provided full path와 Github manifest의 ID, 원문, Voice 사전 감사.
+- Codex는 **TTS 합성/Google API 호출 금지**, 기존 WAV 복제·재합성 금지. 로컬 파일 hash/audioclip/GUID/메타·Story Script/CharacterId/Unity Console/편집 범위 먼저 검증. Play Mode는 사용자 전면 화면을 빼앗지 않는 방법만 시행. Scene/Save/Quest/UI·타 챕터 무단 변경 금지.
+- 완료 정의: 162개 정확 매핑(기존140 교체·신규22 후보는 실제 등록 상태에 따라 유동), 불합격 WAV 제외, Player/지문 무음, 타 캐릭터/타 음성 보호, git diff + Unity 컴파일/가능하면 Play Mode; 제품 변경은 `codex/tts-voice-integration-20261024` 브랜치에 한정. Codex 결과·커밋 SHA/PR 준비·사용자 별도 최종 승인 상태 보고 후 main 통합 검토.
+- 본 안내는 **문서 작성만**: API0 / 사용자 F: 작업0 / Unity0 / 제품 commit0 / main0.
+
+
 ## 2026-10-24 하렌 R2.1 긴급 수정 — 원본 WAV 없음 / JSON 메타+성공 장부 있음
 
 - **사용자 새 콘솔 증거:** Haren `main21_haren_haren_01` 1개는 이전 실행에서 `[HAREN CREATED]`까지 성공했다고 표시됐고 PT 2026-10-24 **9/40**, 세린·태온152/152, `HOLD=False`, 사용자 보존 Main21 old7 **7/7**. 그러나 `Haren_Prosody_Retake_R2.py check`에서 **`Haren first WAV exists=False meta=True`**, 후보 R2는 WAV/meta 모두 미생성. `retake` 재시도 둘 다 `[STOP] Previous Haren first WAV/meta missing`으로 API 추가호출0. 원본 WAV 누락 원인은 미확인(삭제·이동 단정 금지).
