@@ -1,5 +1,17 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 우선 인계 — 태온 마지막8 이후 하렌3 추가 제작 / F:\Downloads\Voice 작업 준비
+
+- 사용자 직접 요청: “이따 8개 뽑으면 또 뽑을꺼 있니? 있으면 작업 폴더 `F:\Downloads\Voice`로 알아서 해줘. api키도 거기 있어.” **확정 추가 합성 하렌 3개**. 다른 인물/Chapter3 미확정 대사 임의 생성 금지.
+- 현재 사용자 마지막 실사용 로그는 **2026-10-23 PT 40/40**, 세린67/67·태온77/85·합계144/152·HOLD=False. 10/24 PT 일자 시작 후 **태온 잔여8을 기존 v2로 먼저 완료**하고 실제 152/152 WAV+메타/SHA 검사되기 전에는 신규 하렌3 API 사용0.
+- Main20 VoiceExpected **5(세린5)**, Main21 VoiceExpected **17** = 152 리캐스팅 매니페스트 커버 **7**, 사용자 KEEP 폴3+미엘2+레온2 기존WAV **7**, 신규 하렌 **3**. Main20·21 정본 합집합에서 빠진 ID 0. 하지만 Unity의 전 챕터 추가 음성 결함까지 0이라고 선언하지 말 것.
+- **신규 실행기 GitHub:** [`Tools/TTS/Haren_Main21_AfterRenewal_3.py`](https://github.com/HappyPaul812/Project-Limitless/blob/docs/tts/Tools/TTS/Haren_Main21_AfterRenewal_3.py), 사용자 파일 ZIP `LIMITLESS_TTS_Haren3_SharedQuota_AfterTaeon_20261024.zip`(8684B SHA256 `8a44b807cbac8a306de2e9d8b6d4b9a1dd86607e9f734a0607e373c4be001661`). 사용자 PC `F:\Downloads\Voice\Haren_Main21_AfterRenewal_3.py`로 CodeX 배치 예정, 현 대화 도구로 사용자 F: 쓰기 불가이므로 아직 **PC 설치/실제 API 호출0**.
+- **정식 실행/감사 문서:** [`TTS_20261024_Post152_Haren3_VoiceFolder_SharedQuota_Runbook.md`](../../TTS_20261024_Post152_Haren3_VoiceFolder_SharedQuota_Runbook.md). 정확 하렌 stable 3 ID/원문은 `태온. 너 아직 멀었어.` (평서문 하강) / `다친 데는 없고?` (질문) / `그럼 됐어.` (평서문 하강). 성우 Alnilam. 기존 하렌 첫 오디션은 말끝 상승 오류로 재사용 금지.
+- 핵심 안전: `F:\Downloads\Voice\API.txt`의 4키가 `Renewal_Voices\API.txt`와 **완전히 같은 실제 4키**인지 비밀값 출력 없이 확인(순서만 다르면 기존 슬롯에 맞춤; 키가 다르면 차단). 기존 `Renewal_Voices\RENEWAL_SETTINGS.json`/ `_progress\api_events.jsonl` 및 HOLD/LOCK를 공유하여 마지막 태온8과 하렌3을 **같은 PT날짜 전체40회 및 프로젝트별10회 로컬 안전 예산** 안에서 계수. Google 실제 quota, 프로젝트 독립성과 과금상태 확인 필수. 서로 다른 제작기 동시 실행 금지.
+- 오프라인 **4 unittest PASS**(152 완료 게이트, 프로젝트 키 일치, no API check, fake 생성3과 동일PT 8+3 장부·중복호출 방지). **실제 Google POST0, 사용자 F: 변경0, Unity0**. 첫 대사는 `run --max-calls 1` 생성 후 **사용자 청취 QA PASS를 먼저 받은 다음** 남은 2개 제작. 사용자가 새 WAV를 최종 승인하고 통합을 명시 승인하기 전에는 Unity 반영 금지.
+- 원본 보존: 사용자 KEEP Main21 레온2/미엘2/폴3 = **7 WAV 재제작 금지**, 세린67/태온 완료본 재생성 금지. 필요 시 Codex 로컬 읽기 전용 조사 후 새로운 확정 누락이 있으면 사전 보고/추가승인.
+
+
 ## 2026-10-23 사용자 실제 로그 — 세린67/67, 태온77/85 / PT 40/40 정상 안전 종료
 
 - 사용자 콘솔 원문: `[DAILY CAP] 2026-10-23 No more calls this PT day.`; `[STATUS] PT=2026-10-23 (UTC-7) / attempted=40/40 / remaining=0`.
