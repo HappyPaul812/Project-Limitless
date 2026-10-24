@@ -1,3 +1,7 @@
+## EOD 최종: 승인162 WAV·Catalog PR68 main 병합 완료 / 원본 적용 HOLD
+
+PR68 merge `b0a666be631e87e451d8bc8d6549a6b664b03ee7`. 아래 PR 진행·승인대기는 이전 시점 기록입니다. 신규 QA25 PASS, 원본 BuildSettings 사용자 설정 충돌로 로컬 적용 미완료.
+
 ## EOD 2026-10-24 최신: 승인 통합 QA PASS / PR 진행 / 원본 동기화 HOLD
 
 승인162 WAV와 Catalog를 Main23 KEEP 기능과 결합했습니다. 기존1031 전수 재실행0, 신규 결합 Unity 25 PASS. 원본 BuildSettings 충돌 때문에 원본 적용은 미완료입니다. 아래 승인 대기 기록은 해당 시점 HISTORY로 보존합니다.

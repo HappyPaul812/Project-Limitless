@@ -1,3 +1,11 @@
+## 2026-10-24 EOD 마감 — PR68 MERGED / 원본 동기화 PARTIAL·HOLD
+
+[PR68](https://github.com/HappyPaul812/Project-Limitless/pull/68) 실제 merge **`b0a666be631e87e451d8bc8d6549a6b664b03ee7`**. Main23 KEEP 기능20파일 + TTS162(Unity189파일/140교체22신규) + 재현도구3파일, 정본·인계·QA 근거241파일을 포함한 총453파일 통합 완료. 신규 정적472/격리 Unity25 PASS·compile0/제품runtime오류0, 기존 전수QA 재실행0. 기존 Search예외1/비음성GUID중복/지정Unity6000.5.7 직접검증은 OPEN. 미승인 아트·오디오 적용0, Main24 Save 미구현, Discord #66 MANUAL/HOLD·추론/재시도/설정변경0.
+
+**원본 동기화는 HOLD입니다.** 원본 `EditorBuildSettings.asset`의 사용자 `com.unity.dt.app-ui` 설정과 Main23 Scene 등록이 같은 경로를 수정하여 복제본 ff-only가 거부됐습니다. 계약에 따라 원본 merge/덮어쓰기/index우회0. 원본 main **`47ad2eecb40135b2ee28e4947d642ebdbf0bf68a`**, 이 제품병합 시점 GitHub/origin main **`b0a666be631e87e451d8bc8d6549a6b664b03ee7`**; 3자 불일치이므로 SYNC_COMPLETE 아님. 후속 docs-only PR 이후 최종 원격SHA는 Issue67·로컬 `Temp/EOD20261024/FinalProof.json`을 따릅니다.
+
+85 worktree 백업14433파일(1,636,665,989bytes). 원본 사용자858/보호6842/TTS1430 SHA 불일치0, 원본 status바이트/index항목/HEAD 보존, Save/UserData·Editor·포커스 변경0. 다음은 사용자 app-ui 설정을 보존한 BuildSettings 의미 결합과 안전 원본 동기화 범위 확정입니다. 자동 재작성하지 않았습니다. [상세](EOD_ApprovedIntegration_LocalSync_20261024.md).
+
 ## 2026-10-24 EOD 승인분 통합 — Delta QA PASS / PR 진행 / 원본 SYNC HOLD
 
 Main23 KEEP 아트 Scene과 5목표·접근성 보완20파일 + 승인 TTS162(Unity189/140교체22신규/Catalog312)를 선별 통합했습니다. 제품 commit `26643f16531e5d2b7be635d95c02ff06c12c3a88`. 신규 정적472·격리 Unity25 PASS, 기존 전수QA 재실행0. 미승인 시안18 PNG/오르나/남문 부품/여관 간판/독침벌/NPC/BGM/SFX 제외. Main24 Save 미구현·OPEN16·Discord #66 MANUAL/HOLD 유지.
