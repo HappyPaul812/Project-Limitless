@@ -1,3 +1,9 @@
+## 2026-10-24 공식 CLI 운영 참조 전환 PASS — MANUAL / 추론0
+
+- 대표로컬실행984adccf… 결과·현설정·백업대조PASS. service_codex.path/sha256 두값만 공식전체패키지 bin/codex.exe /4fd2f057…로변경, 그밖JSON값·기존42Python보존. 승인JSON SHA 0cd2ce55…→3e032ebc… 확인. 원본백업 before-cli-reference-984adccf569441ee9248ff0934af56e5.json SHA검증.
+- 전환후서비스 PAUL-PC\LIMITLESSRelaySvc/Session0/logon4에서version/help/taskexit0·45파일PASS·CODEX_HOME유지·임시작업REMOVED·부팅2개불변. 추가읽기대조45SHA/42SHA PASS·SQLite읽기전용MANUAL·Bot/Art RUNNING·AI Worker비활성.
+- 실제추론/재시도/A/재시작/인증복사/Unity/Push/merge0. 전환완료이며실제읽기전용1회는별도승인, 새서비스슬롯/직전구독usage/로그보존/90초1회조건필요. 원래turn.failed원인UNKNOWN유지. 선행fd77ce30. [완료근거](Evidence/ServiceCLI_ReferenceSwitch_PASS_20261024.json).
+
 ## 2026-10-24 서비스 CLI 운영 참조 전환 승인 — 로컬 관리자 실행 대기 / 미전환
 
 - 승인된두값변경·정확백업/원자적교체·서비스version/help재확인·실패자동복원 단발전환기준비. 기존검증기/42Python/boot실행코드변경0. 합성검사4 PASS(필드보존/교체/실패복원/ACL)·실제운영참조미변경·승인JSON SHA0cd2ce55…유지.

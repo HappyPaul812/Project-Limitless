@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "only_service_codex_path_sha_changed": true,
+  "backup_sha_verified": true,
+  "package45_verified": true,
+  "python42_preserved": true,
+  "mode": "MANUAL",
+  "actual_ai_calls": 0,
+  "transition": {
+    "request_id": "984adccf569441ee9248ff0934af56e5",
+    "status": "PASS",
+    "backup_path": "C:\\ProgramData\\LimitlessRelay\\before-cli-reference-984adccf569441ee9248ff0934af56e5.json",
+    "before_sha256": "0cd2ce55f7e23b44190e7f4786c2e9f68e2e291b1888e5768ea606f391c8d2d6",
+    "reference_switched": true,
+    "before_reference": {
+      "sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe"
+    },
+    "rollback": "NOT_NEEDED_BACKUP_VERIFIED",
+    "service_check": {
+      "task_exit_code": 0,
+      "actual_ai_calls": 0,
+      "approval_unchanged": true,
+      "status": "PASS",
+      "task_name": "LIMITLESS-IsolatedCLI-b65bfd112f1a40079bf947a654fd42df",
+      "boot_tasks_unchanged": true,
+      "automatic_retries": 0,
+      "cleanup": "REMOVED",
+      "request_id": "b65bfd112f1a40079bf947a654fd42df",
+      "child": {
+        "commands": [
+          "--version",
+          "--help"
+        ],
+        "help_usage_present": true,
+        "codex_home_unchanged": true,
+        "logon_type": 4,
+        "status": "PASS",
+        "files_verified": 45,
+        "request_id": "b65bfd112f1a40079bf947a654fd42df",
+        "version_exit": 0,
+        "session_id": 0,
+        "help_exit": 0,
+        "version_matches": true,
+        "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\official-0.164.0-alpha.11.1-x64\\bin\\codex.exe",
+        "actual_ai_calls": 0,
+        "account": "PAUL-PC\\LIMITLESSRelaySvc",
+        "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73"
+      }
+    },
+    "automatic_retries": 0,
+    "approval_after_sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f",
+    "after_reference": {
+      "sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\official-0.164.0-alpha.11.1-x64\\bin\\codex.exe"
+    },
+    "actual_ai_calls": 0
+  }
+}

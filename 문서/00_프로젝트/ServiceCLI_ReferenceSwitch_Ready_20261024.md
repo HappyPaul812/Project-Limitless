@@ -1,3 +1,9 @@
+## 후속 확인 — 운영 참조 전환 PASS
+
+대표의 request 984adccf569441ee9248ff0934af56e5를 로컬 기록/현재설정/백업과 대조했다. 두 참조값만 변경됐고 원본백업 SHA·공식45개 SHA·기존42Python·MANUAL 보존 확인. 새 승인JSON SHA는 3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f. 서비스 Session0/logon4의 --version/--help/작업종료0, 임시작업 제거·부팅2개/CODEX_HOME 유지 PASS. 복원은 불필요했으며 기존 참조 백업은 보존됐다. [정확한 전후값과 근거](Evidence/ServiceCLI_ReferenceSwitch_PASS_20261024.json).
+
+아래 로컬 입력 대기 기록은 완료 이력으로 전환됐다. 전환 스크립트는 이전 SHA를 전제로 하므로 성공 후 재실행하지 않는다. 실제 추론/재시작/A 활성화는 수행하지 않았다. 실제 추론은 별도 승인 대상이다.
+
 # 운영 CLI 참조 전환 — 로컬 관리자 실행 대기
 
 대표의 이번 승인은 운영 참조 두 값의 전환뿐이다. 실제 추론·A·서비스 재시작·게임 변경은 승인 대상이 아니다. 현재는 관리자 문맥과 로컬 서비스 암호가 없어 **PENDING_LOCAL_ADMIN_EXECUTION / 운영 참조 미변경**이다. 과거 서비스 bootstrap PASS를 이번 전환 후 재검증으로 대체하지 않는다.
