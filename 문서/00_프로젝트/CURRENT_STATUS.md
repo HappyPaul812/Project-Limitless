@@ -1,3 +1,9 @@
+## 2026-10-24 서비스 CLI 공식 복구 사전 검토 — 배포0 / AI0
+
+- 공식문서에서 단독exe는 완전standalone패키지가 아님 확인. 현재사용자보조3exe 정확SHA/역할·두CLI동일표시버전/서로다른SHA·유효OpenAI서명 확인. helper누락은원인후보이며 최초원본유실로turn.failed직접원인UNKNOWN.
+- 공식배포metadata HTTP200/tag rust-v0.164.0-alpha.11.1 및 Windows완전package/SHA 확인. installer는manifest/rg/resources까지검사하므로3exe수동추가불가. 별도공식설치→전체SHA/서비스문맥검증→참조변경별도승인·정밀복원안만제출. 복사/설치/교체/setup0.
+- 42PythonSHA모두일치·승인JSON SHA동일·MANUAL·Bot/Art RUNNING·사용자slot1승인대기보존. 서비스PATH/현재config/제한자식프로세스·추론네트워크/오류로그는서비스자체진단필요. 신규Worker실행/12slot재사용/AI/Discord/Task/게임/Push/merge0. 선행2704d1a4. [정확해시·최소복구안](ServiceCLI_OfficialRecovery_Review_20261024.md).
+
 ## 2026-10-24 PIN 없는 무인 AI 우선 — 원인 UNKNOWN / 실제 추론0
 
 - 최종 목표는 잠금화면 부팅→Discord 승인→구독 AI→검수·보고. 로그인 후 Worker는 예비로 유지하며 승인 대기 슬롯/기존CONSUMED12개 변경0. PIN전 end-to-end NOT_VERIFIED, Session0 불가로 단정하지 않음.
