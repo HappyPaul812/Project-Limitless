@@ -1,0 +1,21 @@
+{
+  "status": "PARTIAL/HOLD",
+  "product_pr": 68,
+  "product_merge_sha": "b0a666be631e87e451d8bc8d6549a6b664b03ee7",
+  "github_main_at_product_merge": "b0a666be631e87e451d8bc8d6549a6b664b03ee7",
+  "origin_main": "b0a666be631e87e451d8bc8d6549a6b664b03ee7",
+  "original_main": "47ad2eecb40135b2ee28e4947d642ebdbf0bf68a",
+  "original_status_bytes_unchanged": true,
+  "original_index_entries_unchanged": true,
+  "original_merge_executed": false,
+  "reason": "SAFE_FF_SIMULATION_REJECTED_USER_BUILDSETTINGS",
+  "blocked_path": "Unity/Client/ProjectSettings/EditorBuildSettings.asset",
+  "user_setting": "com.unity.dt.app-ui",
+  "user_files_sha_mismatch": 0,
+  "save_userdata_changed": 0,
+  "unity_original_focus_changes": 0,
+  "actual_ai_calls": 0,
+  "discord_worker": "MANUAL/HOLD",
+  "main_direct_push": false,
+  "reset_clean_stash_force": false
+}
