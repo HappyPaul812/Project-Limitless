@@ -1,3 +1,10 @@
+## 2026-10-24 서비스 AI 환경 최종 조사 — 원인 UNKNOWN / 추론0
+
+- Operational 로그 비활성화(IsEnabled=false) 확인·변경0. 두 CLI는 같은 버전0.164.0-alpha.11.1이나 SHA/배포구성 다름: 일반 사용자 설치는 동반실행파일3개, 서비스 고정폴더는 codex.exe만. 정상 사용자 model=gpt-6.1-sol, 과거 서비스 config SHA는 keyring/chatgpt 두 설정 템플릿과 일치·명시모델없음. 이 차이는 원인 확정이 아님.
+- 현재 사용자 프록시없음/WinHTTP직접·DNS/TCP443 성공. 서비스 당시 전체 환경/추론통신/기존 Codex·sandbox 로그는 미기록 또는 권한부족으로 미확인. Session0·keyring 조합 안정성은 공식 문서만으로 보증 못함. 일반 비대화형 ChatGPT 실행은 공식 안내되므로 서비스 불가로 단정하지 않음.
+- 향후 기록 보완: 원본 JSONL 바이트는 서비스 자신의 .codex/limitless-diagnostics/request에 CurrentUser DPAPI 암호화, 비밀제거stderr/전체이벤트·최초error/turn.failed·종료코드·계정/세션/설정 보존. 공용결과로 원문 복사0, timeout partial 보존. 도구/부작용보고와 미지원item 분리 기록하되 양쪽 거부 유지. 새 슬롯/재시험 추가0.
+- 합성DPAPI roundtrip 포함 오프라인36 PASS, PS구문/Python compile/diff PASS. 실제AI/로그인/usage조회/Discord게시0·MANUAL/소비슬롯 유지·Bot/Art RUNNING heartbeat 증가·OnBoot수정0. 다음: 같은 계정에서 기존로그/완전런타임 무호출 확인 후 원인 수정 또는 새 단발 진단계획 별도 승인. 사용자 로그인 후 자기 인증CLI AI Worker 분리 대안은 제안만. Unity/아트/Push/merge/종료0. 선행8dbe4076. [최종환경보고](ServiceBatch_Environment_FinalDiagnosis_20261024.md).
+
 ## 2026-10-24 서비스 배치 첫 추론 실패 분석 — NOT_VERIFIED / 추가 AI 0회
 
 - 첫 실제 결과 CLI1/배치2·error10·forbidden item2·완료턴0·최종응답없음. Discord는 검증 실패로 NOT_SENT이며 전송 실패 근거 아님. 인증/공식조회 PASS와 추론 성공은 분리. 원본 JSONL/stderr는 최초 구현에서 저장하지 않아 첫 오류/10개 원인/두 item type/turn.failed 직접 원인 UNKNOWN. 서비스 프로필 로그는 현재 Windows 권한으로 접근 불가.

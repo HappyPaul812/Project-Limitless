@@ -9,6 +9,8 @@ from .output_parser import EVENTS, strict_json
 # 인증정보·모델 추론·명령 인수를 기록하지 않도록 알려진 유형만 보존합니다.
 ITEM_TYPES = {'reasoning', 'agent_message', 'command_execution', 'file_change', 'mcp_tool_call',
               'web_search', 'todo_list', 'error', 'warning', 'collab_tool_call', 'image_generation'}
+ACTION_ITEMS = {'command_execution', 'file_change', 'mcp_tool_call', 'web_search',
+                'collab_tool_call', 'image_generation'}
 ERROR_CODES = {'invalid_api_key', 'invalid_authentication', 'authentication_error', 'insufficient_quota',
                'rate_limit_exceeded', 'model_not_found', 'model_not_supported', 'permission_denied',
                'invalid_request_error', 'invalid_json_schema', 'unsupported_value', 'server_error'}
@@ -71,7 +73,10 @@ def failure_projection(stdout, stderr):
             item_type = original_type if isinstance(original_type, str) and original_type in ITEM_TYPES else 'unknown_item'
             counts[item_type] += 1
             details['items'].append({'line': number, 'event_type': kind, 'item_type': item_type,
-                                     'policy_allowed': item_type in ('reasoning', 'agent_message')})
+                                     'policy_allowed': item_type in ('reasoning', 'agent_message'),
+                                     'classification': ('TOOL_OR_SIDE_EFFECT_REPORTED' if item_type in ACTION_ITEMS else
+                                                        'SUPPORTED_TEXT' if item_type in ('reasoning', 'agent_message') else
+                                                        'UNSUPPORTED_ITEM_TYPE')})
             safe['item'] = {'type': item_type}
             if item_type == 'agent_message':
                 safe['item']['text'] = '[CONTENT_OMITTED]'

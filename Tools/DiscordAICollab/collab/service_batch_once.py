@@ -19,6 +19,7 @@ from .scheduling import Scheduler, gate
 from .service_ai import prepare_provider, windows_context
 from .failure_evidence import save_failure_evidence
 from .exec_diagnostics import launch_manifest
+from .private_execution_log import prepare_archive, save_execution_log
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'data/service-batch-once-20261024'
@@ -85,11 +86,22 @@ def main():
               'api_fallback': False, 'exit_code': None, 'usage': {}, 'discord_status': 'NOT_SENT'}
     last = OUT / 'last-message.json'
     store = None
+    archive = None
+    log_metadata = {}
+    # 비밀은 로그 정제용 메모리에서만 사용하며 CLI 하위 환경으로 넘기지 않습니다.
+    secrets = [v for k, v in os.environ.items() if any(word in k.upper() for word in ('TOKEN', 'SECRET', 'PASSWORD', 'API_KEY'))]
     try:
         context = windows_context()
         provider = prepare_provider()
         os.environ.update(provider.environment)
         result.update(account=context['name'], profile=context['profile'], codex_home=provider.environment['CODEX_HOME'])
+        request_id = os.environ.get('LIMITLESS_BATCH_REQUEST_ID', '')
+        archive = prepare_archive(context['profile'], request_id)
+        result['request_id'] = request_id
+        log_metadata = {'request_id': request_id, 'account': context['name'],
+                        'session_id': os.environ.get('LIMITLESS_BATCH_SESSION_ID'),
+                        'logon_type': os.environ.get('LIMITLESS_BATCH_LOGON_TYPE'),
+                        'codex_home': provider.environment['CODEX_HOME']}
         owners = [int(x) for x in os.environ['LIMITLESS_OWNER_IDS'].split(',')]
         channels = [int(x) for x in os.environ['LIMITLESS_CHANNEL_IDS'].split(',')]
         store = Store(ROOT / 'data/phase2/relay.sqlite', owners, int(os.environ['LIMITLESS_GUILD_ID']), channels)
@@ -136,18 +148,25 @@ def main():
         environment = child_environment()
         # 실행 인수·환경변수 이름만 남기며 값·입력 문서·인증 원문은 기록하지 않습니다.
         manifest = launch_manifest(command, environment, info, controls, prompt)
+        log_metadata.update(manifest)
         (OUT / 'launch-manifest.json').write_text(json.dumps(manifest, indent=2), encoding='utf8')
         result['actual_ai_calls'] = 1
         started = time.monotonic()
-        completed = subprocess.run(command, input=prompt, capture_output=True, text=True, encoding='utf8', errors='replace',
+        completed = subprocess.run(command, input=prompt.encode('utf8'), capture_output=True,
                                    env=environment, timeout=90, creationflags=subprocess.CREATE_NO_WINDOW)
         result['elapsed_seconds'] = round(time.monotonic() - started, 3)
-        parsed = parse_result(completed.stdout, completed.returncode, 'PlanningAgent',
+        result['exit_code'] = completed.returncode
+        # 파서보다 먼저 원본 바이트를 보존해 파서/파일 읽기 실패에도 근거가 남게 합니다.
+        result['private_log'] = save_execution_log(archive, completed.stdout, completed.stderr,
+                                                   {**log_metadata, 'exit_code': completed.returncode}, secrets)
+        stdout = completed.stdout.decode('utf8', errors='replace')
+        stderr = completed.stderr.decode('utf8', errors='replace')
+        parsed = parse_result(stdout, completed.returncode, 'PlanningAgent',
                               last_message=last.read_text(encoding='utf8') if last.exists() else None, require_last_message=True)
         result.update(parsed, exit_code=completed.returncode)
         if parsed['status'] != 'PASS':
             # 검증을 완화하지 않습니다. 오류 코드·항목 유형을 안전하게 남겨 다음 진단의 근거 손실만 막습니다.
-            result['failure_details'] = save_failure_evidence(OUT, completed.stdout, completed.stderr)
+            result['failure_details'] = save_failure_evidence(OUT, stdout, stderr)
             raise Denied('OUTPUT_OR_JSONL_NOT_VERIFIED')
         if not summary_valid(parsed['answer']) or parsed['answer']['next_review'] != '바울 대표':
             result.pop('answer', None)
@@ -162,8 +181,14 @@ def main():
         (OUT / 'result.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf8')
         result['discord'] = asyncio.run(asyncio.wait_for(publish(result, channels[0]), 25))
         result['discord_status'] = 'MESSAGE_SENT'
-    except subprocess.TimeoutExpired:
+    except subprocess.TimeoutExpired as exc:
         result.update(status='NOT_VERIFIED', reason='TIMEOUT_90S_NO_RETRY')
+        if archive:
+            try:
+                result['private_log'] = save_execution_log(archive, exc.output or b'', exc.stderr or b'',
+                                                           {**log_metadata, 'exit_code': None, 'termination': 'TIMEOUT'}, secrets)
+            except OSError:
+                result['private_log_status'] = 'FAILED_NO_RETRY'
     except Exception as exc:
         # 원문 CLI/네트워크/비밀 예외를 로그로 내보내지 않습니다.
         result['reason'] = str(exc) if isinstance(exc, Denied) else 'SERVICE_BATCH_FAILURE_NO_RETRY'

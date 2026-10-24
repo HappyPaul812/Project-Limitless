@@ -21,6 +21,9 @@ if($Child){
   $env:DISCORD_BOT_TOKEN=[Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer)
   $env:LIMITLESS_OWNER_IDS=$saved.Owners;$env:LIMITLESS_GUILD_ID=$saved.Guild;$env:LIMITLESS_CHANNEL_IDS=$saved.Channels
   $env:PYTHONIOENCODING='utf-8'
+  $env:LIMITLESS_BATCH_REQUEST_ID=$RequestId
+  $env:LIMITLESS_BATCH_SESSION_ID=[string]$logon[1]
+  $env:LIMITLESS_BATCH_LOGON_TYPE=[string]$logon[0]
   Set-Location -LiteralPath $root
   & (Join-Path $root '.venv/Scripts/python.exe') -m collab.service_batch_once | Out-Null
   $code=$LASTEXITCODE

@@ -19,6 +19,9 @@ def inspect():
               'files': [], 'observations': []}
     try:
         files = list((profile / 'log').glob('*.log'))
+        sandbox_log = profile / '.sandbox/sandbox.log'
+        if sandbox_log.is_file():
+            files.append(sandbox_log)
         for path in files:
             report['files'].append({'path': str(path), 'bytes': path.stat().st_size})
             # 시각이 확인된 같은 실행 구간만 검사하며 자유 텍스트는 반환하지 않습니다.
