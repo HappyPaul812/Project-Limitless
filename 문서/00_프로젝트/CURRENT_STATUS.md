@@ -1,3 +1,9 @@
+## 2026-10-24 서비스 공식 CLI 실제 추론1회 승인 — 준비완료/로컬 입력 대기 / 실제AI0
+
+- 새 SERVICE_FINAL_PLANNING_20261024_01·별도out/marker 단발실행기준비. 기존42Python/12CONSUMED/과거실패/사용자Worker슬롯재사용0. 실제서비스문맥에서CLI승인SHA/45파일/구독인증/직전공식usage/읽기전용/90초1회/응용재시도0 gate.
+- 기존검증기·DPAPI로그·실패투영·Discord게시재사용, 게임전후해시·게시실패NOT_VERIFIED·두마커재실행차단. 순수mock8 PASS·PS구문0·비관리자가드PASS. 실제CLI추론/Discord0·trial소비마커아직없음.
+- 현세션비관리자라대표관리자PowerShell의로컬서비스암호입력필요. 이미승인된1회실행이며추가승인요청아님. [한줄명령·보존경로·판정](ServiceCLI_FinalInference_Ready_20261024.md). Bot/Art RUNNING·MANUAL유지·운영참조/부팅/인증/게임/Push변경0. A활성화는후속승인. 선행75117899.
+
 ## 2026-10-24 공식 CLI 운영 참조 전환 PASS — MANUAL / 추론0
 
 - 대표로컬실행984adccf… 결과·현설정·백업대조PASS. service_codex.path/sha256 두값만 공식전체패키지 bin/codex.exe /4fd2f057…로변경, 그밖JSON값·기존42Python보존. 승인JSON SHA 0cd2ce55…→3e032ebc… 확인. 원본백업 before-cli-reference-984adccf569441ee9248ff0934af56e5.json SHA검증.
