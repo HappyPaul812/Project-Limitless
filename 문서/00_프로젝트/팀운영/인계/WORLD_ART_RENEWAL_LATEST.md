@@ -137,7 +137,7 @@
 - 승인 v5 정적 1포즈 SHA256 `b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1` **확인·보호**. 이전 v1/v2 런 재활용/게임 코드 변경/Unity 원본 적용 없음. 기존 원본 v3/v4/v5 변경0.
 - **반드시 구분:** 이 작업은 *그림 6마리 합성 소스를 분리한 import 후보*로, 4→5/5→6 경계의 원화 겹침·모션/알파 프린지·05→00 루프는 실제 미술 심사 필요. **ART_NOT_YET_APPROVED / UNITY_NOT_APPLIED**. 유저가 ZIP 내려받아 승인한 뒤 Codex 새GUID 격리QA; 이 ZIP만 있으면 Unity에 넣을 수 있는 구조지만 즉시 공식 반영하지 않음.
 - [완료 내역과 Codex 기술 지시](../../Wolf_Run6_ArtPilot_Composite_ImportCandidate_20261021.md), 문서 최초 커밋 `768f77f3e2d68386311e8badd3eb0c58806d5e50`.
-  
+
 
 
 ## 2026-10-21 Wolf v4 미술 HOLD → 세 영역만 AlphaFix v5 실제 PNG/ZIP 납품 (최신)
@@ -147,7 +147,7 @@
 - 새 **`Wolf_KeyArt_v3_AlphaFix_v5.png`** 실제 파일 952×1306 RGBA SHA256 **`b770c73c36b9035a2bb0e70b8c126090b5fa248d27db542af077094d12ee2ea1`**. 원본 v4 기반 국소 alpha 감소 2,174px (**가슴 900, 다리 237, 앞발 1,037**). 전체 RGB 변경 0, Alpha 증가 0, 변경 영역 외 변화 0. v3/v4 원본 PNG 덮어쓰기0.
 - 실제 ZIP **`Limitless_Wolf_KeyArt_v3_TargetedAlphaFix_v5.zip`** 2,214,467 bytes/13 entries/SHA256 **`920459eb2ef4e160461b2b6425a9b183da633cd14411655a4d5affdbaf3d8bc7`**. 이번 대화 Sandbox 다운로드만 제공, GitHub ZIP 바이너리·사용자 F: 자동저장 아님. Assets/ v5 단일 PNG, Manifest old/new SHA, QA/Changed_Alpha_Coordinates_v4_to_v5.csv(2,174 행), 2배 가슴/다리/앞발 v4↔v5 실제 이미지, 128px BeforeAfter(2배경), Alpha 변경 오버레이/오프라인 QA. ZIP `testzip` CRC PASS, PNG 디코드/해시 readback PASS.
 - [v5 실제 납품·픽셀·검증 기록](../../Wolf_v4_HOLD_TargetedAlphaFix_v5_ActualDelivery_20261021.md), 최초 commit `56e901f271e63c70ba6bd745f3f60bd57ff061fd`. **Codex 실제 GameView 아님 / User 미술 승인 대기**. Wolf Run·Bear·Fox·Snake 모션/원본 Unity/Field09 5+B/Save/MonsterDefs/main 변경 없음. `CODEX_WOLF_V5_DELTA_ART_QA_PENDING / USER_ART_APPROVAL_PENDING / MONSTER_ANIMATION_HOLD`.
-  
+
 
 
 ## 2026-10-21 Snake v3 PASS 권고 보존 · Wolf v4 한정 알파 보정 실제 PNG/ZIP 납품 (현재 최신)

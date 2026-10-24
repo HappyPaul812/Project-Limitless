@@ -19,9 +19,9 @@
 - **실 Unity 대 오프라인**: Codex의 실 Unity 검수·SHA **댓글 텍스트만 이 세션 직접 확인**. 사용자 로컬 `F:\Downloads\Limitless_MinimalDelta65_Final_Unity_20261023_17db915d.zip`의 실제 34 PNG, index.html은 이 담당이 직접 열지 않았음; 이전 `OFFLINE/APPROX` 합성을 Unity 캡처로 간주하지 않는다.
 
 
-**일자:** 2026-10-23  
-**담당:** Chapter3 신규 아트 / `docs/art-new`  
-**업무상태:** `ISSUE65_TECH_DELTA_PASS / ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`  
+**일자:** 2026-10-23
+**담당:** Chapter3 신규 아트 / `docs/art-new`
+**업무상태:** `ISSUE65_TECH_DELTA_PASS / ART_CANDIDATE / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`
 **사용자 결정 반영:** 오르나 **82px 전체 표시 높이 기본 후보**, **96px 대안**; 기존 Residence 지붕·출입문 KEEP; 신규 RoofGable·RoofTrim·EntryDoor 배치 HOLD; 여관 본체 **내장 간판 1개만 KEEP**, 신규 독립 간판 보관.
 
 > 본 문서는 **신규 게임 PNG 제작·수정 보고가 아니라, Codex 검수 결과를 근거로 한 배치 및 미술 후보 기록**이다. 사용자 최종 미술 승인과 Unity 본편 적용은 모두 **미완료**.
@@ -74,4 +74,3 @@
 - 미술/사용자 승인 상태: `ORNA_82PX_WHOLECANVAS_DEFAULT_CANDIDATE / ORNA_96PX_ALTERNATIVE / RESIDENCE_ROOF_DOOR_KEEP / GABLE_TRIM_ENTRYDOOR_HOLD / INN_BUILTIN_SIGN_KEEP / INN_STANDALONE_CANDIDATE_HOLD / SOUTHGATE_TARGET_LOCATION_CHECK_NEEDED / CODEX_GAMEVIEW_TEXT_EVIDENCE_ONLY / USER_REVIEW_PENDING / NOT_UNITY_APPLIED`.
 - 바울 대표가 Codex 실제 이미지 Board1 Orna/Board2 Residence/Board3 Inn의 **시각적 수용을 결정하기 전까지 미술 최종 승인0**. #65 기술 PASS만으로 게임 등록/제품 PR·main 병합을 진행하지 않는다.
 - 다음은 Codex가 실제 목표 남문 좌표·중복 문 유무를 읽기 전용 확인하여 Issue #59에 알리는 것. **확정되지 않은 미술 결함을 추정해 새 PNG를 생성하거나 대규모 재제작하지 않는다**.
-
