@@ -1,3 +1,9 @@
+## 2026-10-24 공식 CLI 격리 배치 — 45SHA PASS / 서비스 실행 HOLD / AI0
+
+- 기존검증공식패키지를 data/runtime/codex/official-0.164.0-alpha.11.1-x64에전체45파일배치, 재다운로드0·전후SHA45일치·본체/보조3개OpenAI서명Valid. 새루트에만보호DACL/서비스RX·현재소유자SYSTEM관리자Full, 기존ACL변경0.
+- 현재windows/Session8에서격리CLI --version/--help각exit0, CODEX_HOME변경0. 서비스batch는현계정비관리자/서비스자격증명부재로미실행HOLD. ACL확인과서비스실행성공구분·turn.failed원인UNKNOWN유지. 실제추론/운영참조전환은각각후속승인.
+- 42PythonSHA/승인JSON불변·MANUAL·Bot/Art RUNNING·사용자slot승인대기보존. 운영CLI/Task2/SQLite/인증/Sandbox/게임/Push변경0·AI0. 선행0a71e56d. [배치·권한·미완검증·복원](ServiceCLI_IsolatedDeployment_20261024.md).
+
 ## 2026-10-24 공식 전체 CLI 격리 검증 — PACKAGE PASS / SERVICE HOLD / AI0
 
 - 공식0.164.0-alpha.11.1 x64전체tar.gz 실제확보·게시SHA41052059…일치·안전추출45파일. manifest버전/레이아웃·본체/host/runner/setup OpenAI Authenticode Valid. rg NotSigned는별도명시. 전체파일SHA근거JSON보존. 새바이너리실행/설치/운영교체0.

@@ -1,0 +1,60 @@
+{
+  "status": "ISOLATED_LAYOUT_PASS_SERVICE_EXECUTION_HOLD",
+  "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\official-0.164.0-alpha.11.1-x64",
+  "files_verified": 45,
+  "file_sha_mismatches": [],
+  "new_downloads": 0,
+  "acl_scope": "NEW_ISOLATED_DIRECTORY_ONLY",
+  "service_permission": "ReadAndExecute; no Write; protected inheritance",
+  "service_execution_verified": false,
+  "hold_reason": "CALLER_NOT_ADMIN_NO_SERVICE_BATCH_CREDENTIAL_AVAILABLE",
+  "bootstrap": {
+    "help_exit": 0,
+    "codex_home_unchanged": true,
+    "account": "PAUL-PC\\windows",
+    "help_usage_present": true,
+    "status": "CURRENT_USER_BOOTSTRAP_PASS_SERVICE_NOT_TESTED",
+    "actual_ai_calls": 0,
+    "signatures": [
+      {
+        "path": "bin/codex.exe",
+        "sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+        "signature": "Valid"
+      },
+      {
+        "path": "bin/codex-code-mode-host.exe",
+        "sha256": "89713bec82069f1fefc70ec6d52fcb96d79cfd5f0d8d831aedde0b2005a39402",
+        "signature": "Valid"
+      },
+      {
+        "path": "codex-resources/codex-command-runner.exe",
+        "sha256": "61d0b76d62cd1b852cb4b404a025bb9b26cb927550c0d2225fd17ee9b743db62",
+        "signature": "Valid"
+      },
+      {
+        "path": "codex-resources/codex-windows-sandbox-setup.exe",
+        "sha256": "834d3be787e1c669ea9b18e5f33799b743819a4e6e84bd3d0b6f7b9158564565",
+        "signature": "Valid"
+      }
+    ],
+    "version_exit": 0,
+    "session": 8,
+    "version": "codex-cli 0.164.0-alpha.11.1"
+  },
+  "python42_mismatches": [],
+  "boot_approval_sha256": "0cd2ce55f7e23b44190e7f4786c2e9f68e2e291b1888e5768ea606f391c8d2d6",
+  "service_codex_unchanged": {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+    "sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "version": "0.164.0-alpha.11.1"
+  },
+  "mode": "MANUAL",
+  "worker_jobs": [
+    [
+      "WAITING_FOR_OWNER_APPROVAL",
+      1
+    ]
+  ],
+  "actual_ai_calls": 0,
+  "operating_reference_changed": false
+}
