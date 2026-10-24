@@ -1,5 +1,15 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 사용자 실제 완료 로그 — 세린·태온 전량 152/152 WAV READY
+
+- **최신 직접 실행 결과:** `[STATUS] PT=2026-10-24 (UTC-7) / attempted=8/40 / remaining=32`; `[KEYS] KEY1=2 KEY2=2 KEY3=2 KEY4=2`, `PROJECT_1~4` 각2(로컬 그룹 라벨). `[READY] Serin=67/67 Taeon=85/85 total=152/152` → **세린/태온 합성 WAV 전량 준비 완료**. 이전 144/152에서 오늘 태온8개가 추가됨.
+- `HOLD=False`, `[429 QUARANTINE] []`; 사용량 로그/각 캐릭터 dialogues.csv 유지. 일일 안전 예산은 **총40 중 8회 사용, 32회 로컬 잔여**. 실제 Google 프로젝트별 Free Tier/Billing/원격 당일 사용 가능량이 32회라는 뜻은 아니다.
+- **다음 단계(사용자가 직접 제작):** GitHub `docs/tts/Tools/TTS/Haren_Main21_AfterRenewal_3.py`를 본인이 `F:\Downloads\Voice\Haren_Main21_AfterRenewal_3.py`로 저장했는지 확인 → `cd F:\Downloads\Voice` → `python .\Haren_Main21_AfterRenewal_3.py check`(Google POST0/152 완료 및 같은 키·공유일일장부 검사) → `python .\Haren_Main21_AfterRenewal_3.py run --max-calls 1`(사용자 `RUN_HAREN3` 승인) → 하렌 `main21_haren_haren_01` “태온. 너 아직 멀었어.” 하강 평서문 직접 청취 QA → 합격 후 `python .\Haren_Main21_AfterRenewal_3.py run` 나머지2개. 키값 공유 금지. 실제 Google quota·과금상태 확인 및 단일 프로세스 실행.
+- 하렌3은 **아직 합성 완료라고 보고받지 않음**. 사용자가 파일을 저장했다거나 API를 실제 호출했다고 가정하지 않음. 기존 Main21 폴3/미엘2/레온2 **KEEP 7 WAV 무재제작**. 제작 완료 ≠ 인간 청취 합격, 전체 음성 통합은 사용자 별도 승인 전 Unity 적용 금지.
+- Codex는 TTS 생성/키 사용을 담당하지 않음. 마지막 일괄 Unity 통합/읽기 전용 QA만 추후 사용자 승인을 받아 수행.
+- 관련 [10/24 하렌 준비·공유 장부 Runbook](../../TTS_20261024_Post152_Haren3_VoiceFolder_SharedQuota_Runbook.md), [Main21 기존7 보존 목록](../../TTS_Main21_기존보존_7WAV_통합대기_20261022.md). 이번 GitHub 갱신은 `docs/tts` 문서만 수정; 실제 사용자의 WAV/API/Unity 변경0.
+
+
 ## 2026-10-24 사용자 최신 담당 정정 — 음성 생성 실행은 사용자 직접 수행
 
 - 사용자 명시: **“뽑는겅 코덱스가 안하고 내가 할꺼야”**. **TTS API 호출·자동생성 스크립트 실행·하렌 1번 음성 직접 청취·승인 뒤 나머지 2개 실행은 전부 사용자 직접 담당**. Codex가 TTS를 생성하거나 API 키를 사용하도록 지시하지 않는다.
