@@ -64,6 +64,34 @@ try{
  if(Get-ScheduledTask -TaskPath '\' -TaskName $name -ErrorAction SilentlyContinue){throw 'UNEXPECTED_TEST_TASK_EXISTS'}
  $credential=Get-Credential -UserName $account -Message '1번 배치 환경 검증 전용입니다. 서비스 계정 Windows 암호를 로컬 입력창에만 입력하세요.'
  if(-not $credential -or $credential.UserName -ine $account){throw 'SERVICE_CREDENTIAL_REQUIRED'}
+ # 로컬 보안 입력을 Windows 배치 로그온으로 1회 확인합니다. 토큰은 사용하지 않고 즉시 닫습니다.
+ $result.stage='VALIDATE_LOCAL_BATCH_CREDENTIAL'
+ if(-not ('LimitlessLocalBatchCredentialV1' -as [type])){
+ Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+using System.Security;
+public static class LimitlessLocalBatchCredentialV1 {
+ [DllImport("advapi32.dll",EntryPoint="LogonUserW",CharSet=CharSet.Unicode,SetLastError=true)]
+ [return:MarshalAs(UnmanagedType.Bool)] static extern bool LogonUser(string user,string domain,IntPtr password,int type,int provider,out IntPtr token);
+ [DllImport("kernel32.dll")] [return:MarshalAs(UnmanagedType.Bool)] static extern bool CloseHandle(IntPtr handle);
+ public static int Check(string domain,SecureString password,string expectedSid){
+  IntPtr secret=IntPtr.Zero,token=IntPtr.Zero;
+  try {
+   secret=Marshal.SecureStringToGlobalAllocUnicode(password);
+   if(!LogonUser("LIMITLESSRelaySvc",domain,secret,4,0,out token))return Marshal.GetLastWin32Error();
+   using(var identity=new System.Security.Principal.WindowsIdentity(token)){
+    if(identity.User.Value!=expectedSid)return 1332;
+   }
+   return 0;
+  } finally {if(token!=IntPtr.Zero)CloseHandle(token);if(secret!=IntPtr.Zero)Marshal.ZeroFreeGlobalAllocUnicode(secret);}
+ }
+}
+"@
+ }
+ $credentialError=[LimitlessLocalBatchCredentialV1]::Check($env:COMPUTERNAME,$credential.Password,$approval.service_sid)
+ $result.credential_check=@{method='LogonUserW_BATCH';native_win32_code=$credentialError;verified=($credentialError -eq 0);expected_sid=$approval.service_sid;attempts=1}
+ if($credentialError -ne 0){throw ('LOCAL_BATCH_CREDENTIAL_REJECTED_'+$credentialError)}
  $script:plainPassword=$credential.GetNetworkCredential().Password
  $actionSpec=New-ScheduledTaskAction -Execute $pwsh -Argument $arguments -WorkingDirectory $root
  $settings=New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 2) -MultipleInstances IgnoreNew -DisallowHardTerminate

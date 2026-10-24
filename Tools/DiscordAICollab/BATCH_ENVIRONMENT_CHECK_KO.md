@@ -53,3 +53,9 @@
 [진단 원본(비밀 제거)](../../문서/00_프로젝트/Evidence/BatchEnvironment20261024/diagnose.json) · [요약](../../문서/00_프로젝트/Evidence/BatchEnvironment20261024/summary.json)
 
 다음은 로컬 서비스 계정 자격 증명을 확인한 뒤 별도 재개 지시로 1번의 안전한 등록·실행 검증부터 다시 확인하는 것입니다. 아직 2번이나 3번으로 진행할 수 없습니다.
+
+## 2026-10-24 최소 복구 재개 — 로컬 입력 대기
+
+대표의 재검증 지시로 1번만 재개합니다. 계정 활성·SID 일치를 다시 확인했습니다. 기존 Password/Limited 등록 방식은 유지합니다. 등록 직전 공식 Windows LogonUserW(LOGON32_LOGON_BATCH, 기본 provider)로 보안 입력 암호와 예상 SID를 1회 검증합니다. 토큰은 실행/가장에 사용하지 않고 닫으며 네이티브 암호 버퍼를 즉시 지웁니다. 실패 시 등록 없이 중단하고 숫자 오류만 기록합니다. 성공 시 기존 안전 환경 작업 1건만 등록·실행·정리합니다. 암호는 CLI 인수/파일/로그에 저장하지 않습니다. 작업 스케줄러에 전달하는 암호 문자열은 등록용 메모리에만 일시 존재합니다.
+
+[Microsoft LogonUserW](https://learn.microsoft.com/windows/win32/api/winbase/nf-winbase-logonuserw). 구문·네이티브 헬퍼 컴파일 PASS, 실제 자격 증명 시도0. 현 단계는 WAITING_FOR_LOCAL_CREDENTIAL이며 새 인증/배치 성공으로 간주하지 않습니다. 기존 부팅 작업 및 Codex 인증은 변경하지 않았습니다.

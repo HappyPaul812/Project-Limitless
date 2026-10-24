@@ -1,3 +1,9 @@
+## 2026-10-24 Windows 1326 최소 복구 재개 — 로컬 보안 입력 대기
+
+- 계정 LIMITLESSRelaySvc 활성·기존 SID 일치 재확인. 기존 Password/Limited 등록 방식 유지, 선행 배치 권한 보유 근거 유지·관리자 실행 때 새로 점검.
+- 등록 전 LogonUserW 배치 인증1회 및 SID 확인 추가. 실패 시 등록0/중단, 성공 시 AI 없는 임시 환경 작업1건만 검증·정리. 구문/네이티브 컴파일 PASS, 실제 인증/등록 재시도는 대표 로컬 입력 대기.
+- 기존 부팅2개/저장 Codex 인증/권한 변경0·MANUAL 유지, AI/A/게임/Push/merge0. Unity 확인사항 없음. 선행 commit e41fe62a. 다음은 로컬 실행 결과 확인이며 2번/3번 진행 금지.
+
 ## 2026-10-24 1번 배치 오류 진단 — 원인 1326 확인 / 등록 FAIL 후 중단
 
 - 실제 관리자 진단1회: Register-ScheduledTask에서 Windows 자격 증명 거부. 외부 CimException HRESULT0x80131500이 아니라 ErrorId/CIM MessageID의 **0x8007052e / 1326 / ERROR_LOGON_FAILURE**가 실제 원인 계층. 입력 암호 오류/다른 인증 조건의 세부 구분은 비밀 검사 없이 단정하지 않음.
