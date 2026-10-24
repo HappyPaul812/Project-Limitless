@@ -1,0 +1,11 @@
+{
+  "hresult": -2146233088,
+  "actual_ai_calls": 0,
+  "stage": "REGISTER_SERVICE_LOGON_TASK",
+  "status": "HOLD",
+  "request_id": "a333fa38b13248448fa561b5ef84b5c4",
+  "exception_type": "CimException",
+  "mode_changed": false,
+  "native_status_hex": [],
+  "reason": "SERVICE_LOGON_OR_READINESS_NOT_VERIFIED"
+}

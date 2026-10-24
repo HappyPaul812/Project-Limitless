@@ -1,12 +1,14 @@
 # 서비스 계정 Codex 구독 인증 초기화
 
-2026-10-24 KST. 현재 MANUAL/AI HOLD이며 모델 추론·A 활성화는 이 절차에 포함하지 않습니다.
+2026-10-24 KST. 서비스 계정 콘솔에서 공식 ChatGPT 구독 로그인·App Server 사용량 조회가 실제 성공했습니다(AUTH_AND_USAGE_VERIFIED). MANUAL 유지·실제 추론0입니다. 부팅 배치 문맥 재확인과 A 활성화는 별도입니다.
 
 ## 확인한 공식 방법과 설치 버전
 
 [공식 인증 문서](https://learn.chatgpt.com/docs/auth)에 headless용 `codex login --device-auth`가 제공됩니다. 개인 계정의 ChatGPT 보안 설정 또는 workspace 관리자 권한에서 기기 인증 로그인이 허용되어야 합니다. 이는 브라우저 콜백을 대신하는 방식이며 바울 대표의 직접 인증은 필요합니다.
 
-로컬 공식 실행 파일 `codex-cli 0.164.0-alpha.11.1`의 login --help에서 --device-auth 지원을 확인했습니다. 개인 폴더의 실행 ACL에 서비스 계정이 없어 동일 SHA 실행 파일만 data/runtime/codex에 복사했습니다. 인증·설정 파일 복사나 원본 ACL 변경은 없습니다. 서비스 계정 실제 Inspect에서 context_verified=true·버전·device-auth 지원·공유 실행 경로를 확인했습니다. 현재 subscription_authenticated=false이며 직접 로그인 대기입니다.
+로컬 공식 실행 파일 `codex-cli 0.164.0-alpha.11.1`의 login --help에서 --device-auth 지원을 확인했습니다. 개인 폴더의 실행 ACL에 서비스 계정이 없어 동일 SHA 실행 파일만 data/runtime/codex에 복사했습니다. 인증·설정 파일 복사나 원본 ACL 변경은 없습니다. 서비스 계정 실제 Inspect에서 context_verified=true·버전·device-auth 지원·공유 실행 경로를 확인했습니다. 이후 대표의 직접 기기 인증으로 subscription_authenticated=true·login_context_unchanged=true·설정SHA 전후 동일·공식 두 사용량 창 조회까지 통과했습니다.
+
+현재 상태: 대표의 직접 로그인은 완료됐으므로 재로그인할 필요가 없습니다. 아래는 완료한 공식 절차와 재현 방법입니다. 배치 검증은 관리자 창에서도 임시 작업 등록 단계 CimException으로 막혀 미검증이며, 이 실패를 구독 인증 실패로 취급하지 않습니다. 기존 부팅 작업은 수정하지 않았습니다.
 
 ## 1. 서비스 계정에서 읽기 점검 (현재 통과)
 
@@ -42,10 +44,10 @@ Windows 표준 Start-Process -Credential -LoadUserProfile로 바울 대표가 �
 
 ## 3. 실제 배치 문맥에서 다시 확인
 
-로컬 콘솔 성공은 배치 계정의 동작을 보장하지 않습니다. 기존 `probe-service-ai.ps1 -Action InspectAuthAsService`를 실행해 같은 SID/프로필/실행파일과 ChatGPT 상태를 확인한 다음, 기존 단발 공식 사용량 점검을 실행합니다:
+로컬 콘솔 성공은 배치 계정의 동작을 보장하지 않습니다. 원래 Windows 사용자에서 관리자 PowerShell을 열어 아래 단발 VerifyAuthAsService를 실행합니다. 서비스 계정 콘솔은 일반계정이므로 여기서 실행하면 HOLD_ADMIN_LOCAL_EXECUTION_REQUIRED가 정상 반환됩니다. 이 검증은 새 로그인/기기 코드/AI 없이 같은 SID/프로필/실행파일/설정SHA/login status/사용량만 읽습니다:
 
 ```powershell
-pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1" -Action RunOnceAsService
+pwsh -NoProfile -File "F:\study\codex\Project-Limitless\Temp\DiscordAICollab20261023\Worktree\Tools\DiscordAICollab\probe-service-ai.ps1" -Action VerifyAuthAsService
 ```
 
 READONLY_LINK_READY는 인증/공식 조회가 가능하다는 의미이며 A 활성화나 실행 승인이 아닙니다. MANUAL을 유지합니다. 사용량 두 창 소진/UNKNOWN/오래된 관측은 기존 게이트가 HOLD합니다. 현재 CLI 경로는 고정 SHA로 검증하므로 앱 업데이트로 파일이 바뀌면 자동 우회 없이 다시 검토합니다.
@@ -63,3 +65,8 @@ PIN 전에는 기존 LIMITLESSRelaySvc의 Discord 중계·아트 감시만 유�
 구현 보정: 최초 로그인 전 Set-Acl의 소유자 재지정이 PrivilegeNotHeldException(원본57행)을 일으켰습니다. 일반 서비스 계정에 권한을 추가하지 않고 Get-Acl로 기존 소유자를 보존한 DACL 갱신으로 수정했습니다. 자기 소유 테스트 디렉터리에서 소유자 보존·보호 DACL·쓰기를 검증했습니다. 실제 OAuth 이전 실패였으므로 이를 Codex 구독 미지원으로 분류하지 않습니다.
 
 최종 ACL 보정: 서비스 계정에서는 Get-Acl 기반의 Set-Acl 호출도 PrivilegeNotHeldException(보정본64행)을 냈습니다. Set-Acl을 제거하고 [Microsoft가 문서화한 SetNamedSecurityInfoW](https://learn.microsoft.com/en-us/windows/win32/api/aclapi/nf-aclapi-setnamedsecurityinfow)에 DACL_SECURITY_INFORMATION/PROTECTED_DACL_SECURITY_INFORMATION만 전달하도록 변경했습니다. 소유자·그룹·SACL 포인터는 NULL이며 복원/관리자 권한을 부여하지 않습니다. 고정 자기 프로필·소유자 검사 후 실행하며 Win32 숫자 결과를 기록합니다. 원래 cmdlet 테스트 통과를 서비스 실제 통과로 승격하지 않습니다.
+
+
+실제 성공 기록: 서비스 콘솔 로그인과 같은 문맥의 login status·설정 SHA·공식 App Server 조회 완료. DACL 네이티브 반환0. 증거 문서/00_프로젝트/Evidence/ServiceCodexAuth20261024/login-success.json. 권한 cmdlet의 두 초기 실패는 수정 후 실제 성공으로 닫았으며, 배치 등록/키링 읽기는 독립 검증 항목입니다.
+
+최종 배치 결과: 관리자 PowerShell의 VerifyAuthAsService가 REGISTER_SERVICE_LOGON_TASK 단계에서 CimException/HRESULT -2146233088로 실패했으며 native_status_hex는 비어 있습니다. Windows 등록 원인 미확인 상태로 남기고 기존 OnBoot2종을 대체/재등록하거나 새 로그인으로 우회하지 않았습니다. 서비스 콘솔 인증·설정 일치·공식 조회 성공은 유효하며, 무인 A 실운영의 배치 검증은 별도 조건입니다.

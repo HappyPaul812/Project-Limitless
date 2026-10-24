@@ -1,8 +1,12 @@
-param([ValidateSet('ProbeHere','RunOnceAsService','InspectAuthHere','InspectAuthAsService')][string]$Action='ProbeHere',[string]$RequestId='local')
+param([ValidateSet('ProbeHere','RunOnceAsService','InspectAuthHere','InspectAuthAsService','VerifyAuthHere','VerifyAuthAsService')][string]$Action='ProbeHere',[string]$RequestId='local')
 # 기존 OnBoot 작업/봇/아트/자격 증명은 변경하지 않는 단발 읽기 점검입니다.
 $ErrorActionPreference='Stop'
 $root=$PSScriptRoot
 if($RequestId -ne 'local' -and $RequestId -notmatch '^[a-f0-9]{32}$') {throw 'INVALID_REQUEST_ID'}
+if($Action -eq 'VerifyAuthHere') {
+ & (Join-Path $root 'service-codex-auth.ps1') -Action Verify -RequestId $RequestId
+ exit $LASTEXITCODE
+}
 if($Action -eq 'InspectAuthHere') {
  & (Join-Path $root 'service-codex-auth.ps1') -Action Inspect -RequestId $RequestId
  exit $LASTEXITCODE
@@ -12,14 +16,15 @@ if($Action -eq 'ProbeHere') {
  & (Join-Path $root '.venv/Scripts/python.exe') -m collab.service_ai --request-id $RequestId
  exit $LASTEXITCODE
 }
-if($Action -eq 'InspectAuthAsService') {
+if($Action -in @('InspectAuthAsService','VerifyAuthAsService')) {
  $approved=Get-Content 'C:\ProgramData\LimitlessRelay\boot-approval.json' -Raw | ConvertFrom-Json
  if($approved.service_auth_scripts.'probe-service-ai.ps1' -ne (Get-FileHash -LiteralPath $PSCommandPath -Algorithm SHA256).Hash.ToLower()) {throw 'AUTH_INSPECT_WRAPPER_SHA_NOT_VERIFIED'}
 }
 # 별도 계정 실행은 Windows의 정상 배치 로그온을 사용합니다. 토큰 복제·다른 계정 Codex 비밀 복사는 없습니다.
 if(-not ([Security.Principal.WindowsPrincipal]::new([Security.Principal.WindowsIdentity]::GetCurrent())).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {Write-Output 'HOLD_ADMIN_LOCAL_EXECUTION_REQUIRED';exit 2}
-$authInspect=$Action -eq 'InspectAuthAsService'
-$name=if($authInspect){'LIMITLESS-Codex-AuthInspect-Once'}else{'LIMITLESS-AI-Readiness-Once'}
+$authVerify=$Action -eq 'VerifyAuthAsService'
+$authInspect=$Action -in @('InspectAuthAsService','VerifyAuthAsService')
+$name=if($authVerify){'LIMITLESS-Codex-AuthVerify-Once'}elseif($authInspect){'LIMITLESS-Codex-AuthInspect-Once'}else{'LIMITLESS-AI-Readiness-Once'}
 if(Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue) {Write-Output 'HOLD_EXISTING_READINESS_TASK_REVIEW_REQUIRED';exit 2}
 $nonce=[guid]::NewGuid().ToString('N')
 $account=$env:COMPUTERNAME+'\LIMITLESSRelaySvc'
@@ -28,7 +33,7 @@ if($null -eq $credential -or $credential.UserName -ne $account) {Write-Output 'H
 $registered=$false
 $stage='PREPARE_TASK'
 try {
- $childAction=if($authInspect){'InspectAuthHere'}else{'ProbeHere'}
+ $childAction=if($authVerify){'VerifyAuthHere'}elseif($authInspect){'InspectAuthHere'}else{'ProbeHere'}
  $arguments='-NoProfile -WindowStyle Hidden -File "'+$PSCommandPath+'" -Action '+$childAction+' -RequestId '+$nonce
  $actionSpec=New-ScheduledTaskAction -Execute (Get-Command pwsh).Source -Argument $arguments -WorkingDirectory $root
  $settings=New-ScheduledTaskSettingsSet -ExecutionTimeLimit (New-TimeSpan -Minutes 2) -MultipleInstances IgnoreNew -DisallowHardTerminate
@@ -52,7 +57,7 @@ try {
  }
  if(-not (Test-Path -LiteralPath $resultPath)) {Write-Output 'HOLD_SERVICE_PROBE_RESULT_NOT_VERIFIED'}
 } catch {
- $diagnostic=@{status='HOLD';reason='SERVICE_LOGON_OR_READINESS_NOT_VERIFIED';stage=$stage;request_id=$nonce;exception_type=$_.Exception.GetType().Name;hresult=$_.Exception.HResult;actual_ai_calls=0;mode_changed=$false}
+ $diagnostic=@{status='HOLD';reason='SERVICE_LOGON_OR_READINESS_NOT_VERIFIED';stage=$stage;request_id=$nonce;exception_type=$_.Exception.GetType().Name;hresult=$_.Exception.HResult;native_status_hex=@([regex]::Matches($_.Exception.Message,'(?i)0x[0-9a-f]{8}') | ForEach-Object {$_.Value} | Select-Object -Unique);actual_ai_calls=0;mode_changed=$false}
  $diagnostic | ConvertTo-Json | Set-Content (Join-Path $root ('data/boot/service-auth-launch-'+$nonce+'.json')) -Encoding utf8
  $diagnostic | ConvertTo-Json
 }

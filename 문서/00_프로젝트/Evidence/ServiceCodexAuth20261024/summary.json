@@ -1,7 +1,92 @@
 {
-  "at": 1792806818.713262,
-  "status": "SERVICE_CLI_SUPPORTED_NATIVE_PROFILE_FIX_PREPARED_OWNER_LOGIN_RESULT_PENDING",
+  "at": 1792807848.0808141,
+  "status": "SERVICE_SUBSCRIPTION_INITIALIZED_CONSOLE_VERIFIED_BATCH_REGISTRATION_HOLD",
+  "authentication_success": true,
+  "profile_initialized": true,
+  "official_method": "codex login --device-auth",
+  "credential_store": "SERVICE_OWN_OS_KEYRING",
+  "context": "INTERACTIVE_LIMITLESSRelaySvc_SAME_SID_PROFILE_CODEX_HOME_CONFIG_AND_EXECUTABLE",
+  "config_sha_before": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+  "config_sha_after": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+  "profile_dacl_native_actual_result": 0,
+  "actual_service_login": {
+    "official_usage": {
+      "status": "READONLY_LINK_READY",
+      "reason": "OWNER_A_ACTIVATION_AND_EXACT_TASK_APPROVAL_REQUIRED",
+      "observed": 1792807289.5354183,
+      "actual_ai_calls": 0,
+      "api_fallback": false,
+      "mode_changed": false,
+      "usage": {
+        "source": "CODEX_APP_SERVER_OFFICIAL",
+        "observed": 1792807293.0954916,
+        "ordinary_allowed": true,
+        "windows": [
+          {
+            "minutes": 300,
+            "used_percent": 72,
+            "resets_at": 1792818597
+          },
+          {
+            "minutes": 10080,
+            "used_percent": 11,
+            "resets_at": 1793405397
+          }
+        ]
+      },
+      "request_id": "local"
+    },
+    "device_auth_supported": true,
+    "action": "Login",
+    "context_verified": true,
+    "login_context_unchanged": true,
+    "cli_version": "0.164.0-alpha.11.1",
+    "subscription_authenticated": true,
+    "actual_ai_calls": 0,
+    "dacl_native_error": 0,
+    "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+    "stage": "OFFICIAL_USAGE",
+    "profile": "C:\\Users\\LIMITLESSRelaySvc",
+    "api_fallback": false,
+    "reason": "MANUAL_KEEP_NO_AI_INFERENCE",
+    "config_sha256_after_login": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+    "mode_changed": false,
+    "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
+    "status": "AUTH_AND_USAGE_VERIFIED",
+    "home_existed_before": true,
+    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+    "config_sha256_before_login": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+    "request_id": "local"
+  },
+  "batch_verification": {
+    "status": "NOT_VERIFIED",
+    "blocker": {
+      "hresult": -2146233088,
+      "actual_ai_calls": 0,
+      "stage": "REGISTER_SERVICE_LOGON_TASK",
+      "status": "HOLD",
+      "request_id": "a333fa38b13248448fa561b5ef84b5c4",
+      "exception_type": "CimException",
+      "mode_changed": false,
+      "native_status_hex": [],
+      "reason": "SERVICE_LOGON_OR_READINESS_NOT_VERIFIED"
+    },
+    "authentication_rpc_started": false,
+    "separate_from_console_auth_success": true
+  },
   "mode": "MANUAL",
+  "db_fingerprints_unchanged": true,
+  "db_counts": {
+    "tasks": 21,
+    "usage": 13,
+    "settings": 28,
+    "approvals": 0,
+    "operation_mode": 1,
+    "control_resume": 0,
+    "operation_checkpoints": 14
+  },
+  "runtime39_and_auth4_hashes_match": true,
+  "bootstrap_hash_match": true,
   "cli": {
     "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
     "sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
@@ -11,110 +96,60 @@
     "only_executable_copied": true,
     "auth_or_config_copied": false
   },
-  "official_auth_document": "https://learn.chatgpt.com/docs/auth",
-  "method": "codex login --device-auth",
-  "credential_store": "SERVICE_OWN_OS_KEYRING_NO_FILE_FALLBACK",
   "tests": {
-    "pin": {
-      "run": 3,
-      "failures": 0,
-      "errors": 0,
-      "actual_ai_calls": 0
-    },
-    "powershell_native_read_argument_and_capture": "2_PASS",
-    "powershell_parsers": "2_PASS",
-    "wrong_account_guard": "HOLD_NO_AUTH_REQUEST"
+    "pin": 3,
+    "powershell_read_arguments_and_capture": 2,
+    "launcher_mock": "SECRET_STRIP_OWN_PROFILE_ARGS_PARENT_RESTORE_PASS",
+    "native_dacl_fixture": "OWNER_GROUP_PROTECTED_3ACES_WRITE_PASS",
+    "native_dacl_service_actual": "PASS_0",
+    "full_suite_repeated": false
   },
-  "db_fingerprints_unchanged": true,
-  "service_inspection": "PASS_INTERACTIVE_SERVICE_CONTEXT",
-  "device_login_started": "NOT_CONFIRMED_AFTER_NATIVE_DACL_FIX",
   "actual_ai_calls": 0,
-  "a_activated": false,
+  "api_fallback": false,
+  "mode_changed": false,
   "services_restarted": false,
-  "auth_files_copied": false,
-  "paid_api_push_merge_product_changes": 0,
+  "privileges_granted": false,
+  "auth_or_personal_config_copied": false,
+  "game_save_art_push_merge_changes": 0,
+  "remaining": [
+    "WINDOWS_BATCH_REGISTRATION_AND_KEYRING_READ_VERIFICATION",
+    "NORMAL_RELOAD_EXISTING_BOT_NO_DUPLICATE",
+    "OWNER_EXPLICIT_A_ACTIVATION",
+    "FRESH_EXACT_READONLY_PLAN_AND_NEW_SLOT_APPROVAL",
+    "SEPARATELY_APPROVED_ONE_READONLY_INFERENCE"
+  ],
+  "code_commit": "a0eaae4f",
+  "official_usage_kst": [
+    {
+      "minutes": 300,
+      "used_percent": 72,
+      "resets_at": 1792818597,
+      "remaining_percent": 28,
+      "reset_kst": "2026-10-24 14:09:57 KST"
+    },
+    {
+      "minutes": 10080,
+      "used_percent": 11,
+      "resets_at": 1793405397,
+      "remaining_percent": 89,
+      "reset_kst": "2026-10-31 09:09:57 KST"
+    }
+  ],
   "bot": {
     "status": "RUNNING",
-    "last_tick": 1792806681.8266764,
+    "last_tick": 1792807846.7484384,
     "ai_worker_enabled": false,
     "approved_readonly_resume_only": false,
     "shutdown_enabled": false
   },
   "art": {
     "status": "RUNNING",
-    "last_tick": 1792806680.9736938,
+    "last_tick": 1792807844.9949288,
     "ai_calls": 0,
     "unity_runs": 0
   },
-  "prelogin_inspection": {
-    "device_auth_supported": true,
-    "action": "Inspect",
-    "context_verified": true,
-    "cli_version": "0.164.0-alpha.11.1",
-    "actual_ai_calls": 0,
-    "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
-    "subscription_authenticated": false,
-    "profile": "C:\\Users\\LIMITLESSRelaySvc",
-    "api_fallback": false,
-    "reason": "OWNER_DEVICE_LOGIN_REQUIRED",
-    "mode_changed": false,
-    "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
-    "status": "INSPECTED",
-    "home_existed_before": false,
-    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
-    "request_id": "local"
-  },
-  "windows_batch_inspection": "REGISTER_SERVICE_LOGON_TASK_CIM_FAILURE",
-  "launcher": "POWERSHELL_START_PROCESS_WITH_CREDENTIAL_AND_LOADUSERPROFILE",
-  "launcher_mock_tests": "SECRET_STRIP_OWN_PROFILE_ARGUMENT_PARENT_RESTORE_PASS",
-  "source_personal_binary_acl_unchanged": true,
-  "only_executable_copied": true,
-  "auth_or_config_files_copied": false,
-  "windows_batch_launch": {
-    "actual_ai_calls": 0,
-    "hresult": -2146233088,
-    "exception_type": "CimException",
-    "request_id": "66b56bca27014e32a0d25a4c7b9626b4",
-    "stage": "REGISTER_SERVICE_LOGON_TASK",
-    "reason": "SERVICE_LOGON_OR_READINESS_NOT_VERIFIED",
-    "mode_changed": false,
-    "status": "HOLD"
-  },
-  "approved_runtime_hashes_match": 39,
-  "auth_script_hashes_match": 4,
-  "profile_acl_fix": "WIN32_DACL_ONLY_NATIVE_FIXTURE_PASS_SERVICE_RETRY_PENDING",
-  "service_account_privileges_unchanged": true,
-  "actual_authentication_success": "NOT_CONFIRMED",
-  "native_dacl_module": "ServiceProfileDacl.psm1",
-  "last_actual_service_result": {
-    "exception_type": "PrivilegeNotHeldException",
-    "device_auth_supported": true,
-    "action": "Login",
-    "context_verified": true,
-    "cli_version": "0.164.0-alpha.11.1",
-    "failure_line": 64,
-    "actual_ai_calls": 0,
-    "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
-    "stage": "SERVICE_PROFILE_ACL",
-    "profile": "C:\\Users\\LIMITLESSRelaySvc",
-    "api_fallback": false,
-    "reason": "SERVICE_AUTH_INSPECTION_OR_LOGIN_NOT_VERIFIED",
-    "mode_changed": false,
-    "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
-    "hresult": -2147024891,
-    "status": "HOLD",
-    "home_existed_before": true,
-    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
-    "request_id": "local"
-  },
-  "runtime39_and_auth4_sha_match": true,
-  "source_commit": "a0eaae4f",
   "heartbeat_age_seconds": {
-    "bot": 2.25,
-    "art": 3.11
-  },
-  "discord_report": {
-    "state": "SENT",
-    "message_id": "1563369689558552581"
+    "bot": 1.33,
+    "art": 3.09
   }
 }

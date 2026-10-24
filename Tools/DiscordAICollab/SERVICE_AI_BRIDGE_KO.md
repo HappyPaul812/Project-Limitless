@@ -49,3 +49,5 @@ HOLD_SERVICE_CODEX_PROFILE_NOT_INITIALIZED / SERVICE_CODEX_CLI_NOT_FOUND / CHATG
 
 
 서비스 계정 프로필/CLI 접근·공식 기기 인증 초기화의 최신 절차는 [SERVICE_CODEX_AUTH_KO.md](SERVICE_CODEX_AUTH_KO.md)를 따릅니다. 초기 .codex 부재를 서비스 계정의 공식 인증 미지원으로 단정하지 않습니다. 2026-10-24 실제 서비스 콘솔에서 CLI/device-auth 지원까지 확인했고 대표 직접 로그인을 기다립니다.
+
+2026-10-24 후속: 실제 서비스 계정 콘솔의 공식 기기 인증·ChatGPT login status·설정SHA 동일·공식 App Server 사용량 조회가 AUTH_AND_USAGE_VERIFIED로 통과했습니다. MANUAL과 실제 추론0을 유지하며 배치 문맥 검증/정상 새코드 로드/A 활성화/새 1건 승인 조건은 남아 있습니다. 최신 근거는 SERVICE_CODEX_AUTH_KO.md와 ServiceCodexAuth20261024 증거를 따릅니다.

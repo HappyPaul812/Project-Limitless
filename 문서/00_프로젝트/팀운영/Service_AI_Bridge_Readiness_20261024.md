@@ -17,3 +17,8 @@
 기준 commit47267df5. 이번 관련 commit은 codex/discord-ai-collaboration의 서비스 연결 구현/마감 이력을 참조합니다. 실제 부팅/USB재연결은 이전 보고의 NOT_VERIFIED를 유지하며 이번 요청에서 정상으로 재판정하지 않습니다.
 
 구현 commit94a0f739. 실제 서비스 계정 결과는 [service-probe.json](../Evidence/ServiceAIBridge20261024/service-probe.json)에 저장했습니다. 인증 준비 불가 시 HOLD하라는 지시에 따라 이번에는 여기서 AI 실행을 차단합니다. 다음은 별도 서비스 계정의 정식 Codex 프로필/구독 로그인 준비 및 필요 시 CLI 접근 확인 → 단발 읽기 점검 재확인 → 정상 코드 로드 → 새 1건 계획/슬롯 승인 → 대표 A 활성화입니다. 기존 계정 비밀 복사는 대안으로 사용하지 않습니다.
+
+
+## 2026-10-24 후속 — 서비스 콘솔 공식 인증 성공
+
+초기 SERVICE_CODEX_PROFILE_NOT_INITIALIZED와 프로필 권한 오류는 해소했습니다. 공식 device-auth→같은 서비스 SID/프로필/CODEX_HOME/설정SHA→ChatGPT login status→공식 두 사용량 창 조회가 AUTH_AND_USAGE_VERIFIED로 통과했고 Native DACL 실제 반환0입니다. 최신 증거는 [서비스 인증 성공](../Evidence/ServiceCodexAuth20261024/login-success.json)과 [인증 절차](../../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md)를 따릅니다. 단, 관리자 창의 별도 배치 검증은 임시 작업 등록 단계 CimException으로 실패했습니다. 기존 OnBoot2종/프로세스를 변경하지 않고 MANUAL·실제 추론0을 유지합니다. 이전 프로필 부재 HOLD는 당시 기록이며 현재 구독 인증 실패를 뜻하지 않습니다.

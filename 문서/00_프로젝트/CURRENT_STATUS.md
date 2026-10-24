@@ -1,11 +1,11 @@
-## 2026-10-24 서비스 계정 Codex 기기 인증 — 실제 CLI PASS / DACL 수정 후 로그인 결과 대기
+## 2026-10-24 서비스 계정 Codex 공식 구독 인증·사용량 VERIFIED — MANUAL 유지
 
-- 서비스 SID/프로필/CODEX_HOME·공식 CLI0.164.0-alpha.11.1·device-auth 지원을 실제 서비스 계정 콘솔에서 확인. 현재 subscription_authenticated=false, 대표 직접 Login 절차 안내. 인증코드/토큰/암호를 채팅·Discord·Git에 수집하지 않음. MANUAL·추론0 유지.
-- 개인 설치 폴더 ACL은 그대로 두고 동일SHA 실행파일만 공유 data/runtime에 배치(인증/설정 복사0). 경로/SHA·인증 스크립트 SHA를 기존 C: 승인에 고정. 런타임39 SHA 유지, Bot/Art/부팅 재시작0.
-- 임시 작업 등록은 REGISTER_SERVICE_LOGON_TASK/CimException으로 실패했고, runas 인수 전달 문제는 PowerShell 전용 Start-Process -Credential -LoadUserProfile 도구로 해소. 새 서비스 콘솔 Inspect 실제 통과. 배치 문맥 인증까지 검증된 것은 아님.
-- 새 pin3 PASS·PS읽기2 PASS·구문/잘못된계정 HOLD·콘솔 실행 비밀환경/프로필/인수/복원 모의PASS. 실제 로그인 전 Set-Acl이 PrivilegeNotHeldException을 내 Win32 DACL 전용 API로 제거(소유자/그룹/SACL/계정권한 변경0). Native 자기소유 fixture에서 owner/group 보존·보호DACL3·쓰기PASS. 실제 서비스 재시도 결과 대기, 구독 로그인 성공 미확인. 기존전체QA 반복0. 구현30b62f23/공유콘솔7ad51efb/최종ACL수정a0eaae4f.
-- 다음: 대표 공식 기기 인증 → 같은 서비스 계정 login status/설정SHA/공식 사용량 확인 → 배치 문맥 재검증 → 정상 새코드 로드 → 대표 A 및 새 읽기1건 계획 별도 승인. 현재 A 활성화/추론/유료API/제품·Save·아트원본/Push/main병합0.
-- [인증 절차·대안](../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md), [근거](Evidence/ServiceCodexAuth20261024/summary.json). Discord 준비/로그인대기 보고 SENT(영수증1563369689558552581). 마지막 관련 코드 commit a0eaae4f. Unity 직접 확인사항 없음.
+- 실제 LIMITLESSRelaySvc 일반계정 콘솔에서 공식 device-auth로 로그인 성공. login status ChatGPT 확인·같은 SID/프로필/CODEX_HOME/실행파일·설정SHA 전후 동일. Win32 DACL 실제 오류0, 소유자/그룹/SACL/계정권한 변경0. keyring에 자기 신규 인증 저장, 개인 계정 인증/설정 복사0.
+- 공식 App Server 조회 AUTH_AND_USAGE_VERIFIED/READONLY_LINK_READY. 로그인 직후 관측은 5시간72% 사용/28% 남음·초기화 10/24 14:09:57 KST, 주간11% 사용/89% 남음·초기화 10/31 09:09:57 KST. 과거 관측으로 실행하지 않으며 실제 시작 전 새 공식 확인 필수.
+- 서비스 계정 CLI0.164.0-alpha.11.1·공유 동일SHA 실행파일·device-auth/App Server 지원 PASS. 개인 설치 폴더 ACL은 그대로. 런타임39/인증도구4 SHA 고정, 기존 Bot/Art/부팅 미재시작·MANUAL·업무/승인/usage/체크포인트 보존. 실제AI/유료API/제품·Save·아트원본/Push/main병합0.
+- 관리자 창의 실제 VerifyAuthAsService도 REGISTER_SERVICE_LOGON_TASK/CimException으로 등록 단계 HOLD(native_status_hex 없음). 인증 RPC에 도달하지 않았으며 콘솔 인증 성공과 분리. 배치 keyring/프로필 읽기 미검증, 기존 OnBoot2종 수정/재등록0·Bot/Art 유지. 최초 비관리자 창 거부도 정상 보호 게이트로 구분.
+- 다음: Windows 단발 배치 등록 오류 별도 확인 후 동일 keyring/프로필/login status/사용량 검증 → 새 연결 코드 정상 로드 → 대표 명시적 A 활성화 및 새 정확한 읽기1건 계획/슬롯 승인 → 별도 승인된 추론1회 실증. 이번에는 승인/큐 삽입·A 자동전환0.
+- [성공근거](Evidence/ServiceCodexAuth20261024/login-success.json)·[상태](Evidence/ServiceCodexAuth20261024/summary.json)·[절차/대안](../../Tools/DiscordAICollab/SERVICE_CODEX_AUTH_KO.md). 코드 a0eaae4f, 후속 배치검증 도구 commit은 같은 브랜치 로그 참조. 기존 전체QA 반복0, Unity 직접 확인사항 없음.
 
 ## 2026-10-24 A 서비스 실행기 연결 준비 — 16 PASS / 실제 서비스 인증 HOLD
 

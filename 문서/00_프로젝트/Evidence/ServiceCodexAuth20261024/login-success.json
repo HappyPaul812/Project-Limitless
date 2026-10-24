@@ -1,0 +1,49 @@
+{
+  "official_usage": {
+    "status": "READONLY_LINK_READY",
+    "reason": "OWNER_A_ACTIVATION_AND_EXACT_TASK_APPROVAL_REQUIRED",
+    "observed": 1792807289.5354183,
+    "actual_ai_calls": 0,
+    "api_fallback": false,
+    "mode_changed": false,
+    "usage": {
+      "source": "CODEX_APP_SERVER_OFFICIAL",
+      "observed": 1792807293.0954916,
+      "ordinary_allowed": true,
+      "windows": [
+        {
+          "minutes": 300,
+          "used_percent": 72,
+          "resets_at": 1792818597
+        },
+        {
+          "minutes": 10080,
+          "used_percent": 11,
+          "resets_at": 1793405397
+        }
+      ]
+    },
+    "request_id": "local"
+  },
+  "device_auth_supported": true,
+  "action": "Login",
+  "context_verified": true,
+  "login_context_unchanged": true,
+  "cli_version": "0.164.0-alpha.11.1",
+  "subscription_authenticated": true,
+  "actual_ai_calls": 0,
+  "dacl_native_error": 0,
+  "cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+  "stage": "OFFICIAL_USAGE",
+  "profile": "C:\\Users\\LIMITLESSRelaySvc",
+  "api_fallback": false,
+  "reason": "MANUAL_KEEP_NO_AI_INFERENCE",
+  "config_sha256_after_login": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+  "mode_changed": false,
+  "codex_home": "C:\\Users\\LIMITLESSRelaySvc\\.codex",
+  "status": "AUTH_AND_USAGE_VERIFIED",
+  "home_existed_before": true,
+  "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\c6144bc19b2705f2\\codex.exe",
+  "config_sha256_before_login": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+  "request_id": "local"
+}

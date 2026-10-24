@@ -17,7 +17,7 @@
     "ace_count": 3,
     "write": true
   },
-  "service_actual_retry": "OWNER_REQUESTED_PENDING",
+  "service_actual_retry": "PASS_NATIVE_ERROR_0_AUTH_AND_USAGE_VERIFIED",
   "privileges_granted": false,
   "actual_ai_calls": 0
 }
