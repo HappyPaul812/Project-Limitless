@@ -1,3 +1,9 @@
+## 2026-10-24 서비스 Session0 격리 CLI 실행 PASS — 운영 전환0 / AI0
+
+- 대표의관리자로컬입력실행결과를로컬 run-3483af069a9c4f1387e2fec54f15dd65.json과대조PASS. PAUL-PC\LIMITLESSRelaySvc/Session0/logon4·45SHA·격리공식CLI --version/--help각exit0·taskexit0·CODEX_HOME불변.
+- 임시작업REMOVED·부팅2XML/승인목록불변·실제AI0/자동재시도0. 승인JSON SHA0cd2ce55…재확인·Bot/Art RUNNING·DB읽기전용MANUAL확인. 운영CLI전환/실제추론은별도승인, 최초turn.failed원인UNKNOWN·Sandbox/추론성공/PIN전end-to-end미검증.
+- 다음승인: service_codex.path/sha와전체45파일무결성관리전환검토, 이후새서비스전용슬롯/90초1회/공식구독usage/로그보존검증. 선행80845ea7. [실행PASS근거](Evidence/ServiceCLI_ServiceBatch_PASS_20261024.json).
+
 ## 2026-10-24 서비스 격리 CLI 배치 검증 준비 — 로컬 관리자 입력 대기 / AI0
 
 - 기존성공 Password/Batch/Limited 임시작업+Get-Credential 절차확인. 독립 verify-isolated-batch.ps1 준비: 45SHA/서명·SID/Session0/logon4·고정version/help만·부팅XML/승인SHA전후·임시작업제거, 암호/원문로그0·재시도0.

@@ -1,3 +1,9 @@
+## 후속 확인: 서비스 배치 PASS
+
+대표가 실행한 request 3483af069a9c4f1387e2fec54f15dd65의 로컬 결과와 전달 JSON을 대조했다. 서비스 계정/Session0/logon4, 전체45파일, version/help/task 종료0, CODEX_HOME 유지, 임시 작업 제거, 부팅2개/승인목록 불변 모두 PASS. 실제AI0·자동재시도0. [보존 근거](Evidence/ServiceCLI_ServiceBatch_PASS_20261024.json).
+
+현재 단계는 격리 CLI의 비대화형 bootstrap 성공이다. 운영 참조·Sandbox setup·실제 추론을 실행하지 않았으며 과거 turn.failed 원인 확정도 아니다. 아래 준비 당시의 로컬 입력 대기 기록은 이 결과로 해소됐다. 운영 전환과 실제 추론은 각각 별도 승인이 필요하다.
+
 # 서비스 격리 CLI 배치 검증 — 로컬 보안 입력 대기
 
 2026-10-24. 선행1742abe53b8644a93eb2e1d8e5fd75e29164c029. 실제 AI0, 서비스 실행 아직 미검증.

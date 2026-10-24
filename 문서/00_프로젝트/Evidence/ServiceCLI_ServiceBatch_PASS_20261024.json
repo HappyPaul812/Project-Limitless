@@ -1,0 +1,31 @@
+{
+  "task_name": "LIMITLESS-IsolatedCLI-3483af069a9c4f1387e2fec54f15dd65",
+  "request_id": "3483af069a9c4f1387e2fec54f15dd65",
+  "boot_tasks_unchanged": true,
+  "actual_ai_calls": 0,
+  "automatic_retries": 0,
+  "approval_unchanged": true,
+  "cleanup": "REMOVED",
+  "status": "PASS",
+  "task_exit_code": 0,
+  "child": {
+    "codex_home_unchanged": true,
+    "help_exit": 0,
+    "cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "version_matches": true,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "files_verified": 45,
+    "actual_ai_calls": 0,
+    "logon_type": 4,
+    "commands": [
+      "--version",
+      "--help"
+    ],
+    "status": "PASS",
+    "cli_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\official-0.164.0-alpha.11.1-x64\\bin\\codex.exe",
+    "version_exit": 0,
+    "session_id": 0,
+    "request_id": "3483af069a9c4f1387e2fec54f15dd65",
+    "help_usage_present": true
+  }
+}
