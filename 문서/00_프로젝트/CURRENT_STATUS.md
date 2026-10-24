@@ -1,3 +1,9 @@
+## 2026-10-24 서비스 CLI 운영 참조 전환 승인 — 로컬 관리자 실행 대기 / 미전환
+
+- 승인된두값변경·정확백업/원자적교체·서비스version/help재확인·실패자동복원 단발전환기준비. 기존검증기/42Python/boot실행코드변경0. 합성검사4 PASS(필드보존/교체/실패복원/ACL)·실제운영참조미변경·승인JSON SHA0cd2ce55…유지.
+- 공식45 SHA/RX재확인·Bot/Art RUNNING·실제AI0. 현세션비관리자/서비스로컬자격증명필요로전환/사후서비스재확인미실행. 대표관리자PowerShell1줄실행이필요하며암호는로컬보안입력만. [실행명령·전후값·복원](ServiceCLI_ReferenceSwitch_Ready_20261024.md).
+- 실제추론/A/서비스재시작/SQLite/인증·CODEX_HOME/Unity/Push/merge0. 전환PASS와실제추론은별개, 다음읽기전용1회는후속승인. 선행e6325932.
+
 ## 2026-10-24 서비스 Session0 격리 CLI 실행 PASS — 운영 전환0 / AI0
 
 - 대표의관리자로컬입력실행결과를로컬 run-3483af069a9c4f1387e2fec54f15dd65.json과대조PASS. PAUL-PC\LIMITLESSRelaySvc/Session0/logon4·45SHA·격리공식CLI --version/--help각exit0·taskexit0·CODEX_HOME불변.
