@@ -1,5 +1,14 @@
 # LIMITLESS / TTS 담당 최신 인계 — 2026-10-20
 
+## 2026-10-24 사용자 최신 담당 정정 — 음성 생성 실행은 사용자 직접 수행
+
+- 사용자 명시: **“뽑는겅 코덱스가 안하고 내가 할꺼야”**. **TTS API 호출·자동생성 스크립트 실행·하렌 1번 음성 직접 청취·승인 뒤 나머지 2개 실행은 전부 사용자 직접 담당**. Codex가 TTS를 생성하거나 API 키를 사용하도록 지시하지 않는다.
+- TTS 담당 ChatGPT 역할: 준비된 실행기와 명령 안내, GitHub/정본 대사 감사, 실행 결과 판독, 보존·문서화. 사용자 Windows `F:` 실제 폴더는 이 세션에서 직접 수정할 수 없으므로 설치/다운로드 시 필요한 단계를 정확하게 안내.
+- **Codex 역할은 나중에 사용자가 별도 승인할 경우에만** 로컬 TTS·Story Voice WAV 파일 읽기 전용 전수검수, Unity 연결·테스트·브랜치 통합. 현재는 Unity 변경도 Codex에게 TTS 제작 지시도 금지.
+- 사용자 실행 순서: PT 2026-10-24 자정(서울 16시) 이후 `F:\Downloads\Renewal_Voices`에서 `Renewal_Auto_TTS_Failover_v2.py check` → `run` → 152/152 / `HOLD=False` 확인. 그 다음 `F:\Downloads\Voice`에 GitHub `Tools/TTS/Haren_Main21_AfterRenewal_3.py` 소스 파일을 사용자가 직접 내려받아 저장하고, `python .\Haren_Main21_AfterRenewal_3.py check` → `python .\Haren_Main21_AfterRenewal_3.py run --max-calls 1` → 1번 대사를 직접 청취 검수, 최종 청취 승인 후 `python .\Haren_Main21_AfterRenewal_3.py run`으로 나머지2개 생성. 4키 같은 프로젝트·과금·실제 무료quota 조건 확인, 같은 날 전역 장부 공유. 첫 음성 말끝 하강은 사용자 청취가 기준.
+- 사용자 KEEP한 폴/미엘/레온 Main21 7 WAV 재생성 금지, 세린/태온 WAV 보존, API값 GitHub/공개 출력 금지, 나중에 사용자 별도 승인 전 Unity 적용 금지.
+
+
 ## 2026-10-24 우선 인계 — 태온 마지막8 이후 하렌3 추가 제작 / F:\Downloads\Voice 작업 준비
 
 - 사용자 직접 요청: “이따 8개 뽑으면 또 뽑을꺼 있니? 있으면 작업 폴더 `F:\Downloads\Voice`로 알아서 해줘. api키도 거기 있어.” **확정 추가 합성 하렌 3개**. 다른 인물/Chapter3 미확정 대사 임의 생성 금지.
