@@ -1,0 +1,120 @@
+{
+  "run": 28,
+  "failures": 0,
+  "errors": 0,
+  "actual_ai_calls": 0,
+  "tests": [
+    {
+      "test": "tests.test_sunday_policy.SundayCLITests.test_actual_readonly_path_sunday_fake_cli_once",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayProbeTests.test_sunday_probe_still_needs_explicit_approval",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayQueueTests.test_sunday_concurrency_and_pause_preserved",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayQueueTests.test_sunday_quota_recovery_exactly_once",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayQueueTests.test_sunday_role_pause_skips_to_independent_approved_queue",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayQueueTests.test_sunday_unapproved_plan_cannot_enqueue",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayTests.test_manual_no_runner_even_after_sunday_recovery",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayTests.test_seoul_week_boundaries_no_calendar_block",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayTests.test_sunday_schedule_preserves_deadline_validation",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayTests.test_sunday_usage_unknown_exhausted_stale_block",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_sunday_policy.SundayTests.test_waiting_art_does_not_block_independent_task_and_needs_owner",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModesTests.test_sunday",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModesTests.test_no_manual_resume",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_changed_sha_hold",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_unknown_sha_hold",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_expired_grant_not_extended_or_retried",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_consumed_slot_not_reused",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_failed_attempt_has_no_auto_retry",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_restart_running_is_unknown_never_retried",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_modes.ModeResumeTests.test_sunday_manual_never_runs",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_pilot.CoreTests.test_korean_sunday_allows_work_and_preserves_stop",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_scheduling.SafetyTests.test_sunday_start_allowed_with_usage_gate",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.SupervisorTests.test_wifi_delay_then_connected",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.SupervisorTests.test_offline_bounded_no_launch",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.SupervisorTests.test_disconnect_rechecks_before_restart",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.SupervisorTests.test_reconnect_limit",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.SupervisorTests.test_boot_run_has_no_usage_or_ai_worker",
+      "status": "PASS"
+    },
+    {
+      "test": "tests.test_boot_relay.BootAdapterTests.test_mode_a_denied_and_usage_hold",
+      "status": "PASS"
+    }
+  ]
+}

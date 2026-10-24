@@ -55,7 +55,7 @@ class ReadinessTests(unittest.IsolatedAsyncioTestCase,fixtures.Fixture):
     async def test_sunday_kst_boundary(self):
         saturday=datetime(2026,10,24,23,59,59,tzinfo=KST).timestamp();sunday=saturday+1
         with self.store.tx() as db:
-            self.assertIsNone(gate(db,saturday,intake=True));self.assertEqual(gate(db,sunday,intake=True),'SUNDAY_HOLD')
+            self.assertIsNone(gate(db,saturday,intake=True));self.assertIsNone(gate(db,sunday,intake=True))
     async def test_sync_or_unsaved_unknown_never_complete(self):
         value=shutdown_preview({'sync_verified':False,'unsaved_work_clear':None},self.now)
         self.assertEqual(value['state'],'HOLD');self.assertEqual(value['os_calls'],0)

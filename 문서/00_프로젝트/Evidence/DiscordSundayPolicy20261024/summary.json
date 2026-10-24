@@ -1,0 +1,83 @@
+{
+  "at": 1792802260.6942475,
+  "status": "DISK_POLICY_UPDATED_MANUAL_RELAY_AI_HOLD",
+  "tests": {
+    "run": 28,
+    "failures": 0,
+    "errors": 0,
+    "actual_ai_calls": 0
+  },
+  "deployment": {
+    "status": "DISK_POLICY_UPDATED_BOOT_HASHES_MATCH",
+    "changed_runtime": [
+      "collab/core.py",
+      "collab/phase2.py",
+      "collab/real_roles.py",
+      "collab/scheduling.py"
+    ],
+    "runtime_hashes_verified": 38,
+    "protected_files_unchanged": 7,
+    "mode": "MANUAL",
+    "services_restarted": false,
+    "running_process_policy_reload": "PENDING_NORMAL_RESTART",
+    "actual_ai_calls": 0,
+    "at": 1792802241.9695191
+  },
+  "protected": {
+    "boot-service.ps1": true,
+    "register-discord.ps1": true,
+    "operations-service.ps1": true,
+    "collab/boot_relay.py": true,
+    "DiscordSecretStore.psm1": true,
+    "collab/art_delivery.py": true,
+    "collab/delivery_watch.py": true
+  },
+  "db_fingerprints_unchanged": true,
+  "db_counts": {
+    "tasks": 21,
+    "usage": 13,
+    "settings": 28,
+    "approvals": 0,
+    "control_resume": 0,
+    "operation_mode": 1
+  },
+  "task_states": {
+    "APPROVAL_PENDING": 2,
+    "BLOCKED": 4,
+    "DONE": 7,
+    "NEW": 1,
+    "NOT_VERIFIED": 3,
+    "REVIEW_PENDING": 4
+  },
+  "limits_unchanged": {
+    "day_limit": "0",
+    "month_limit": "0",
+    "paused": "0",
+    "task_limit": "0"
+  },
+  "bot": {
+    "status": "RUNNING",
+    "last_tick": 1792802259.4277413,
+    "ai_worker_enabled": false,
+    "approved_readonly_resume_only": false,
+    "shutdown_enabled": false
+  },
+  "art": {
+    "status": "RUNNING",
+    "last_tick": 1792802257.9931736,
+    "ai_calls": 0,
+    "unity_runs": 0
+  },
+  "task_path_comparison": {
+    "evidence": "stored_admin_verification_and_current_boot_approval",
+    "tool_root_matches": true,
+    "live_task_query": "NOT_VERIFIED_ACCESS_LIMITED",
+    "live_process_commandline": "NOT_VERIFIED_OTHER_ACCOUNT_NULL"
+  },
+  "real_prelogin_boot": "NOT_VERIFIED",
+  "real_usb_wifi_reconnect": "NOT_VERIFIED",
+  "service_account_codex_auth_and_usage": "NOT_VERIFIED",
+  "real_quota_resume": "NOT_VERIFIED",
+  "discord_report": "PENDING",
+  "unity_product_paid_api_push_merge": 0
+}

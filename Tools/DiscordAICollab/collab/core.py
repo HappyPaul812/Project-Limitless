@@ -270,7 +270,7 @@ class Store:
             from .scheduling import gate
             if gate(db, self.clock(), duration=300):
                 return None
-            if datetime.fromtimestamp(self.clock(),KST).weekday() == 6 or self.setting(db,'paused') == '1':
+            if self.setting(db,'paused') == '1':
                 return None
             if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0] >= 2:
                 return None
@@ -367,7 +367,7 @@ class Store:
         with self.tx() as db:
             task = self.task(db,task_id)
             if (task['state'] != 'RUNNING' or self.clock()>=task['lease_until'] or
-                now.weekday()==6 or self.setting(db,'paused') == '1'):
+                self.setting(db,'paused') == '1'):
                 raise Denied('실행 중 작업만 비용 선점 가능')
             if db.execute('SELECT 1 FROM usage WHERE id=?',(task_id,)).fetchone():
                 raise Denied('이미 호출을 선점한 작업입니다')

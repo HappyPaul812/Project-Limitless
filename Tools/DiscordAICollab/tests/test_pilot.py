@@ -104,10 +104,10 @@ class CoreTests(unittest.TestCase):
         self.assertIsNone(self.store.claim())
         self.assertEqual('TRIAGED',self.store.get(task)['state'])
 
-    def test_korean_sunday_blocks_new_work_but_status_and_stop_work(self):
+    def test_korean_sunday_allows_work_and_preserves_stop(self):
         self.store.triage(self.new())
         self.now = datetime(2026,10,25,0,1,tzinfo=KST).timestamp()
-        self.assertIsNone(self.store.claim())
+        self.assertIsNotNone(self.store.claim())
         self.assertIn('counts',self.cmd('status'))
         self.cmd('pause')
         self.assertTrue(self.store.snapshot()['paused'])

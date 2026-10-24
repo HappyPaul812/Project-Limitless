@@ -175,7 +175,7 @@ class Phase2Tests(unittest.TestCase):
         with self.assertRaises(Denied):
             self.store.command(self.owner,'approve-probe','approve',{'task_id':task['id'],'sha':sha256(artifact),'scope':APPROVAL})
 
-    def test_pause_and_sunday_never_start_probe(self):
+    def test_pause_and_stale_usage_never_start_probe(self):
         fake=FakeCLI()
         self.store.command(self.owner,'pause','pause')
         with self.assertRaises(Denied): self.probe(fake)

@@ -135,8 +135,8 @@ def run_once(store, identity, plan, workspace, executable, invoke=subprocess.run
         fresh=json.loads(store.setting(db,slot))
         if fresh!=grant or grant['expires']<store.clock():
             raise Denied('승인 상태 변경')
-        if store.setting(db,'paused')=='1' or store.setting(db,'role:'+plan['role'])=='1' or datetime.fromtimestamp(store.clock(),KST).weekday()==6:
-            raise Denied('정지/일요일 실행 금지')
+        if store.setting(db,'paused')=='1' or store.setting(db,'role:'+plan['role'])=='1':
+            raise Denied('전체 또는 담당 정지 중 실행 금지')
         if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]>=2:
             raise Denied('최대 동시2 제한')
         payload={'title':'REAL / '+plan['role']+' 읽기전용 검토','role':plan['role'],'issue':plan.get('issue'),

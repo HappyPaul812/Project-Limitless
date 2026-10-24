@@ -203,6 +203,7 @@ class ResumeTests(unittest.TestCase,Fixture):
         runner=Mock();self.queue.tick(self.owner,runner)
         runner.assert_not_called();self.assertEqual('NOT_VERIFIED',self.state())
 
-    def test_sunday_never_runs(self):
+    def test_sunday_manual_never_runs(self):
+        self.scheduler.command(self.owner,'manual-sunday','mode',{'value':'MANUAL'})
         self.enqueue();self.now=datetime(2026,10,25,1,tzinfo=KST).timestamp();self.observe()
         runner=Mock();self.queue.tick(self.owner,runner);runner.assert_not_called()

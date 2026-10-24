@@ -139,13 +139,13 @@ class SafetyTests(unittest.TestCase):
         with self.store.tx() as db:
             self.assertEqual(1, db.execute("SELECT count(*) FROM control_outbox WHERE id LIKE '%:NEXT_CHECK'").fetchone()[0])
 
-    def test_sunday_start_rejected(self):
-        with self.assertRaises(Denied):
-            self.schedule(next_start='2026-10-25 10:00')
+    def test_sunday_start_allowed_with_usage_gate(self):
+        self.schedule(next_start='2026-10-25 10:00')
         self.now = datetime(2026,10,25,12,tzinfo=KST).timestamp()
-        self.assertEqual('SUNDAY_HOLD', self.decision(ai=True))
-        with self.assertRaises(Denied):
-            self.schedule()
+        with self.store.tx() as db:
+            db.execute("UPDATE control_schedules SET state='CANCELLED'")
+        self.assertEqual('USAGE_HOLD', self.decision(ai=True))
+        self.schedule()
 
     def test_unknown_usage_blocks_before_cli(self):
         self.assertEqual('USAGE_HOLD', self.decision(ai=True))

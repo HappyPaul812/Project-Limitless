@@ -151,8 +151,8 @@ def run_probe_once(store,workspace,executable,*,approved=False,invoke=subprocess
             raise Denied('SCHEDULE_OR_USAGE_HOLD: 실행 직전 재확인 실패')
         if db.execute('SELECT 1 FROM settings WHERE key=?',(APPROVAL,)).fetchone():
             raise Denied('이번 승인 추론1회를 이미 사용했습니다; 재호출 금지')
-        if store.setting(db,'paused')=='1' or datetime.fromtimestamp(store.clock(),KST).weekday()==6:
-            raise Denied('정지 또는 KST 일요일에는 추론을 시작하지 않습니다')
+        if store.setting(db,'paused')=='1':
+            raise Denied('정지 중에는 추론을 시작하지 않습니다')
         if db.execute("SELECT COUNT(*) FROM tasks WHERE state='RUNNING'").fetchone()[0]>=2:
             raise Denied('최대 동시작업2개 제한')
         payload={'title':'Phase2 고정 읽기 전용 추론1회','role':'CodexAgent','issue':None,

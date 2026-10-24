@@ -32,7 +32,7 @@ class ModesTests(unittest.TestCase,fixtures.Fixture):
         self.observe(100,100);self.now+=1201;self.assertEqual(self.decision(),'USAGE_HOLD');self.observe();self.assertIsNone(self.decision())
     def test_sunday(self):
         self.now=datetime(2026,10,25,1,tzinfo=KST).timestamp()
-        with self.store.tx() as db:self.assertEqual(gate(db,self.now,intake=True),'SUNDAY_HOLD')
+        with self.store.tx() as db:self.assertIsNone(gate(db,self.now,intake=True))
     def test_no_manual_resume(self):
         runner=Mock();ResumeQueue(self.store).tick(self.owner,runner);runner.assert_not_called()
     def test_finish_schedule(self):

@@ -118,8 +118,7 @@ def usage_decision(db, now):
 def gate(db, now, *, ai=False, intake=False, duration=90):
     """공통 트랜잭션에서 마감과 사용량을 재검증합니다. 회복만으로 모델을 호출하지 않습니다."""
     row = advance(db, now)
-    if datetime.fromtimestamp(now, KST).weekday() == 6:
-        return 'SUNDAY_HOLD'
+    # 주일에도 기존 승인 업무는 허용합니다. 모드·승인·정지·사용량·마감 검사는 각 실행 경로에서 유지합니다.
     if row:
         if row['state'] != 'ACTIVE':
             return 'SCHEDULE_HOLD'
@@ -231,7 +230,7 @@ class Scheduler:
             if action in ('mode','resume'):
                 from .operating_modes import mode as current_mode,change
                 target = 'AUTO_RESUME' if action=='resume' else args.get('value')
-                result = change(db,now,target) if target else {'operation_mode':current_mode(db),'note':'주일 신규 업무·자동 재개 금지 / 종료·Push 비활성'}
+                result = change(db,now,target) if target else {'operation_mode':current_mode(db),'note':'주일 승인 업무 허용 / MANUAL 자동 전환 없음 / 종료·Push 비활성'}
             elif action == 'schedule':
                 cleanup = args.get('cleanup_minutes', 10)
                 if type(cleanup) is not int or not 2 <= cleanup <= 120:
@@ -240,10 +239,8 @@ class Scheduler:
                 if deadline - cleanup * 60 <= now:
                     raise Denied('정리 시간을 확보할 수 없는 마감입니다')
                 next_start = parse_time(args['next_start'], now) if args.get('next_start') else None
-                if next_start and (next_start <= deadline or datetime.fromtimestamp(next_start, KST).weekday() == 6):
-                    raise Denied('다음 시작은 마감 이후이며 주일이 아니어야 합니다')
-                if datetime.fromtimestamp(deadline, KST).weekday() == 6 or datetime.fromtimestamp(now, KST).weekday() == 6:
-                    raise Denied('주일 작업 예약 금지')
+                if next_start and next_start <= deadline:
+                    raise Denied('다음 시작은 마감 이후여야 합니다')
                 if current:
                     if args.get('schedule_id') != current['id']:
                         raise Denied('현재 예약 ID를 지정하여 수정하세요')
