@@ -1,5 +1,7 @@
 # LIMITLESS Discord AI 협업 — 운영 정본·인계·장애 보류 기록 (2026-10-24)
 
+> **2026-10-26 재개 결정:** 바울 대표가 “디스코드 작업 계속 하자”라고 명시했습니다. **Issue #66 조사 재개는 승인**, 단 기존 `MANUAL`·정식 AI 호출/자동재개 `HOLD`는 유지합니다. 지금 허용된 범위는 마지막 `OFFICIAL_USAGE_AND_APPROVAL → OFFICIAL_READ_REJECTED (Denied)`의 로컬 코드·원시 로그를 이용한 **모델 호출 0회의 오프라인 근본원인 조사**입니다. 이 상태 변경은 운영 서비스 재시작·실제 추론 1회·A 모드 활성화·운영 파일 교체·Git Push·main 병합의 승인이 아닙니다. 원인 확인 후 대표에게 다음 단계 승인 요청 없이 자동 실행하지 않습니다. 이전 2026-10-24 ‘오늘 중단’ 기록은 역사로 보존합니다.
+
 - **문서 상태:** `DOCUMENTED / CURRENT_OPERATION_MANUAL / SESSION0_AI_HOLD / PIN_FREE_BOT_VERIFIED / NOT_MAIN_MERGED`
 - **근거 범위:** 2026-10-23~24 바울 대표가 전달한 Codex 로컬 보고 화면과 Discord 실제 조작 결과. 기획 담당은 F: 로컬 실행 파일·로그를 직접 열어 재검증하지 않았다. 화면에 없는 성공 결과를 추정하지 않는다.
 - **담당:** 총괄 기획 / Discord AI 협업 구현은 Codex 담당
