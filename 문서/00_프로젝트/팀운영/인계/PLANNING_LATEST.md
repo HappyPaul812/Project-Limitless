@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-26 — Discord AI 협업 Issue #66 오프라인 조사 재개
+
+- 바울 대표가 **Discord 작업 재개**를 지시. 이전 10/24 ‘오늘 중단’ 결정을 이력으로 유지하되, 이제 **원인 조사 범위에 한해 재개 승인**. **실제 AI 추론, A 활성화, 서비스/부팅 작업 재시작은 아직 승인되지 않음**.
+- 마지막 실패: `OFFICIAL_USAGE_AND_APPROVAL` 사전 확인 → `OFFICIAL_READ_REJECTED (Denied)`, 해당 시도 모델 호출0. 과거 `turn.failed` 직접 원인도 계속 미확정이며 별건으로 관리.
+- 공식 운영 정본 [2026-10-24 기록에 10/26 재개 주석 추가](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md), [Issue #66](https://github.com/HappyPaul812/Project-Limitless/issues/66)에서 후속 기록. 현재 운영 상태 `MANUAL / SESSION0_AI_HOLD / OFFLINE_DIAGNOSTICS_RESUMED`.
+- Codex 후속 범위: 기존 로컬 worktree에서 사용량 조회 게이트·오류 원시로그·서비스 Session 0 vs 사용자 실행 환경 비교, 0 모델 호출·0 설정 변경 원칙. 원인·근거·다음 최소 검증 계획만 보고하고 중단. PIN 없는 원격 사용 목표 및 승인/원본 보호 정책 유지.
+- **문서 직접 GitHub 커밋 ≠ Codex 로컬 Push/코드 실행.** main 병합·게임 적용·모델 재시험 없음.
+
+---
+
 # PLANNING / 2026-10-26 — 바울 대표 원본 로컬 main 무손실 동기화 완료 (SYNC_COMPLETE)
 
 - 사용자 업로드 Codex 최종 화면 및 [Codex Issue #67 원본 동기화 완료 정식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6404293491) 재검토. GitHub에서 `main` HEAD **`bfd281545632877325f5d21e04cefb924042c465`** 재확인. Codex가 사용자 PC의 `origin/main` 및 원본 local main도 동일한 완전 SHA로 실측했으므로 **`SYNC_COMPLETE`** 판정. 과거 #67의 `PARTIAL/HOLD`는 이 후속 정식 완료로 해소되었음.
