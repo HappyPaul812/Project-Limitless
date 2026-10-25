@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 배포 사전점검·usage-only 준비 — 신규12PASS / 미승인·미배포
+
+970a7247 기존5파일+테스트2SHA동일·기존22검증반복0. 승인목록은42Python+PSM1=43항목, 후보는43Python+PSM1=44. 의미변경3+신규진단모듈1만필요하며 미변경40항목승인SHA보존. checkout의26Python+PSM1 줄바꿈차이는검토패키지에서운영원본bytes로보존했습니다.
+
+새 collab밖 usage-only-once.py: 별도보호permit/정확root·집합SHA·entry/roles/기존CLI·1회20초/소비marker/HOLD를검사하고 provider.read만1회. 모델/Discord/SQLite업무/모드변경0. 기본/비활성초안HOLD. 신규진입점12PASS/0FAIL, 실제AI·실조회·재시도0. ReviewPackage와approved=false초안만준비, 실제ProgramData승인/배포/OnBoot/봇/ACL/인증/게임/Push변경0. 운영52SHA/DB8테이블/MANUAL/원본상태보호.
+
+상세 Discord_UsageOnly_Deployment_Preflight_20261026.md / Evidence/UsageDeploymentPreflight20261026/. 다음은대표의별도trial패키지·정확SHA/44항목/신규permit·실행문맥및20초supervisor검토와실조회1회명시승인. 기존모델runner사용금지·소비marker초기화금지. 지금배포·실조회·AI/A하지말고중지. 최종commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 오류 진단 보존 수정 — 격리22PASS / NOT_DEPLOYED
 
 codex/discord-usage-diagnostics-20261026 격리 브랜치에서 RPC method/id/code·정제message/data·실제종료code·단계/위치·제한stderr를 서비스자기프로필 전용으로 기록하도록 수정했습니다. HOLD/승인/응답검증/Sandbox/인증정책 유지. stderr 동시drain32KiB·정제4096자/로그24KiB·최대64파일·RPC18초+종료정리1.8초. 로그준비/저장실패·비정상종료도HOLD.

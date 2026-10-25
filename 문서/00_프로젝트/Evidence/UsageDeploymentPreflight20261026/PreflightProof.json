@@ -1,0 +1,192 @@
+{
+  "status": "PREFLIGHT_READY_NOT_DEPLOYED_NOT_AUTHORIZED",
+  "base_candidate_commit": "970a724775b5dfdffd407412fdd3cfc8a130a52a",
+  "prior_22_tests_rerun": false,
+  "new_entrypoint_tests": {
+    "pass": 12,
+    "fail": 0,
+    "real_provider_calls": 0
+  },
+  "actual_ai_calls": 0,
+  "official_usage_live_reads": 0,
+  "discord_posts": 0,
+  "entrypoint_sqlite_operations": 0,
+  "automatic_retries": 0,
+  "approval_file_before_after_sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f",
+  "approved_existing_python": 42,
+  "approved_existing_total": 43,
+  "candidate_python": 43,
+  "review_manifest_total": 44,
+  "exact_changes": [
+    {
+      "path": "collab/service_ai.py",
+      "before_sha256": "6bc4351fb5288b0edc2e7ad6adeeb46864aa197144291f7529073dd81895ddeb",
+      "after_review_sha256": "c72d88ee558824287c0284e349c1b51e65f906782eb3f0b4f8d39fa963980215"
+    },
+    {
+      "path": "collab/service_batch_once.py",
+      "before_sha256": "de3ce4c90fbad6c2de6e99d278b3ab10ca0e65ab9d16106ef09f79360ab54bdb",
+      "after_review_sha256": "1dfa673007b71ebc2c70b75d6f107cee3a558f8e4fc4070ff032e7ac2be8be70"
+    },
+    {
+      "path": "collab/usage_bridge.py",
+      "before_sha256": "d410857d4046721cf63bbf380b78dc1e710d81bba101c2780e41c6cfb6587751",
+      "after_review_sha256": "2bc508b260f9bedaebbe58f27d663b7c989b39b66263c28bf949fb712483c0af"
+    },
+    {
+      "path": "collab/usage_diagnostics.py",
+      "before_sha256": null,
+      "after_review_sha256": "869deb9382404fae002055e562852a394e6fddbddb1b553196c21bb9667c29e2"
+    }
+  ],
+  "unchanged_approved_entries": 40,
+  "preserved_entries": {
+    "collab/bot.py": "ce46893f7684b4ca0f0b8785fcf9d42bb06a87f82284a42ebb3f6cc87c5346ab",
+    "collab/output_parser.py": "fa40f804d008858d5d9202a8d543337569eade298167603170e4bd0793502df7",
+    "collab/art_delivery.py": "5586008da5e380551481dbbdd83e17e9ce8eb3b0cf26c4500d37c54b3ef70139",
+    "collab/core.py": "c117c31306734192e0bda0bffa07b67ea5cfd1f9580e8972e051e13a25bb42a6",
+    "collab/phase2.py": "b1d0ff4d01b0abd0de0de14eae6afb7fb5a72048217bfb694aa4be7bd667f5ba",
+    "collab/scheduling.py": "48fa944b2bb91def112e1137b3f12061b4a6a5657c152d54c9392b5ffd86155f",
+    "collab/handoff_live.py": "e64916f94f1c80287cc332e64af39356318d529c3c7bd951e204dc731a3aa1b9",
+    "collab/safety_tick.py": "96fe694ae729a4079af3b374ee45723106e7344ff0c459ac01a81b2fd7d4305f",
+    "collab/renewal_once.py": "e2153d2d8ace10afd2bb790f17aedb44cd254a41e20ef7c26cba96292656c1ea",
+    "collab/discord_check.py": "d28062843455f1cf0ad481f6b58f1ad96966deedd5b835d2af629d7e2c31927d",
+    "collab/__main__.py": "7be07990ba2d794e7a4523a37cfb4f0cbaedb7790358261c5fd59a38a6ef2100",
+    "collab/art_inspection.py": "ab30c1e89d9653a9da20f782360a0ff91795b1fd0282de0147491aae33573a3f",
+    "collab/boot_relay.py": "ad47b419e90167141b217d256b56858054eef7f6da7c5742acc74c52c9dee221",
+    "collab/real_roles.py": "8bf4738d98883c2beedb476eba1faa591de621caf5f021ae451bdbd7493982ad",
+    "collab/planning_once.py": "bc102e74a6641550276a52633b86e6e90573308e1c182ec0ad827dcfd4e4c425",
+    "collab/operations_safety.py": "1dfff7041d74ad02f386eb8f5d18b456bc22734f43537b152c19fa596c69faa2",
+    "collab/owner_receipt.py": "5a581104c3d65bf2aa0c361c857ddf65f9a929d7369ea5ef789acceb8d069af6",
+    "collab/exec_diagnostics.py": "ab4e9f44d4e52dbf184fb56bea7cddd055b5f72d40716018d7b39c7b683750e0",
+    "collab/query_text.py": "b62fd1e78d602d02495b58d911dca54eb134f5a7dfcab22168feeaeea525863f",
+    "collab/handoff_rehearsal.py": "05412b3f7a7593cfafb82d7fd37b385fee9141232dc671cd836afe95b702f19b",
+    "collab/resume_queue.py": "e759103c90f958f8cdf4c3944857748b820c5e05e89ef3f305346d6988aea7e8",
+    "collab/intake.py": "469caec2069bc1041b0484a94102ee23b44b22ffa83076b00df83e7f6ac1e4b0",
+    "collab/codex_issue63_once.py": "dec17ce309f792fef56a1dfd4aff0469713a8ffebe0796d8d15f11f1d4c0c325",
+    "DiscordSecretStore.psm1": "6d5d41ff54471f17a3bbe112c64b4470cc7950fe2ed8668cc0992614a4228b7b",
+    "collab/four_role_pilot.py": "67786f262f979d2dc5daef425ef18c8471b35c7c3e59e242f29839145de261a0",
+    "collab/auto63.py": "9557a9246f0bd088ac464e9f5cd66891ed44cc00523d1012c242708f0426ee42",
+    "collab/newart_retest.py": "e3e34a7bb707be505db07b0d515fa4156918eb3fabf28321653b3fc1da5cfe5c",
+    "collab/compact_input.py": "e4790a5b3c0927be2a55d771def750c5480c7cd10f490f3f1968a97d15830978",
+    "collab/planning_retest.py": "8af2f94069cf58e76d5f9b8cb54d28a1f14ab693aa9de6d3adf22f748e5b4510",
+    "collab/art_roles_once.py": "838484ba19edeadd0e7840d684c54d1637733cfa7b9bcaec1744785277280bdb",
+    "collab/delivery_watch.py": "4283a051db10fe90bfb7ebb125a587b4d27fc34dff091bc9de5fe0b0fae82e9e",
+    "collab/operating_modes.py": "322da9bfc3b529bca4d0277a33ae7197b783b8ed2a71e0f97ac8bb142438ad98",
+    "collab/ai_ready.py": "c7c80a9afe0b4090cc501332c396cdfb6203e446e3e62242557d45798dc2bfcf",
+    "collab/adapters.py": "c9a825ea8088119ec126eed90e4591bbb77f7fa65cc67a50fc2328943ed18ced",
+    "collab/__init__.py": "4680918a913b50e86893d2fb1b9b52324c4a3da7101626fa63d252fbe3a0f1f6",
+    "collab/operations_live.py": "31a7dd7389bf65206d9ecba343fcc85e75f94ba0c43c396733c6fa960050ff67",
+    "collab/delivery_discord.py": "f579e68fd10a2711967fcf4701b6ab3ac62b0d92b4177eca21fd449802d7981b",
+    "collab/failure_evidence.py": "83d129e36da79aeff500b279109fa4e528c722cc0f78242c3f2e9fdd1c458302",
+    "collab/offline_batch_diagnosis.py": "ad544477ab7149103799c44071ea6a4d15a8b8bca28d58607e2e77e9216180df",
+    "collab/private_execution_log.py": "691c8e433b8e46e3f3e3f777084184b006973bc1ec62dd898abeba770fe2e492"
+  },
+  "checkout_newline_only": [
+    "DiscordSecretStore.psm1",
+    "collab/__init__.py",
+    "collab/__main__.py",
+    "collab/ai_ready.py",
+    "collab/art_inspection.py",
+    "collab/art_roles_once.py",
+    "collab/auto63.py",
+    "collab/codex_issue63_once.py",
+    "collab/compact_input.py",
+    "collab/delivery_watch.py",
+    "collab/discord_check.py",
+    "collab/exec_diagnostics.py",
+    "collab/failure_evidence.py",
+    "collab/four_role_pilot.py",
+    "collab/handoff_live.py",
+    "collab/handoff_rehearsal.py",
+    "collab/intake.py",
+    "collab/newart_retest.py",
+    "collab/offline_batch_diagnosis.py",
+    "collab/operations_safety.py",
+    "collab/output_parser.py",
+    "collab/owner_receipt.py",
+    "collab/planning_once.py",
+    "collab/planning_retest.py",
+    "collab/private_execution_log.py",
+    "collab/renewal_once.py",
+    "collab/safety_tick.py"
+  ],
+  "checkout_same_bytes": [
+    "collab/adapters.py",
+    "collab/art_delivery.py",
+    "collab/boot_relay.py",
+    "collab/bot.py",
+    "collab/core.py",
+    "collab/delivery_discord.py",
+    "collab/operating_modes.py",
+    "collab/operations_live.py",
+    "collab/phase2.py",
+    "collab/query_text.py",
+    "collab/real_roles.py",
+    "collab/resume_queue.py",
+    "collab/scheduling.py"
+  ],
+  "files": [
+    {
+      "path": "Tools/DiscordAICollab/collab/usage_bridge.py",
+      "before_source_bytes_sha256": "d410857d4046721cf63bbf380b78dc1e710d81bba101c2780e41c6cfb6587751",
+      "after_isolated_bytes_sha256": "2bc508b260f9bedaebbe58f27d663b7c989b39b66263c28bf949fb712483c0af",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/usage_diagnostics.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "869deb9382404fae002055e562852a394e6fddbddb1b553196c21bb9667c29e2",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/service_ai.py",
+      "before_source_bytes_sha256": "6bc4351fb5288b0edc2e7ad6adeeb46864aa197144291f7529073dd81895ddeb",
+      "after_isolated_bytes_sha256": "c72d88ee558824287c0284e349c1b51e65f906782eb3f0b4f8d39fa963980215",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/service_batch_once.py",
+      "before_source_bytes_sha256": "de3ce4c90fbad6c2de6e99d278b3ab10ca0e65ab9d16106ef09f79360ab54bdb",
+      "after_isolated_bytes_sha256": "1dfa673007b71ebc2c70b75d6f107cee3a558f8e4fc4070ff032e7ac2be8be70",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/service-final-once.py",
+      "before_source_bytes_sha256": "1c21aa6b584e0b0d166551658f96085652d9ec27b49d02d44528df46531127be",
+      "after_isolated_bytes_sha256": "36a3213652d883c5c1e849babe8bd755477d9ba33e7e827e442ac99a12ff13ca",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/fake_usage_app_server.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "9f2ebce678044a2aeb57098efa1d1c423811db58cf7b85dffb5bde81baf5bd05",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/test_usage_diagnostics_delta.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "340de06bd402688a8974629ee5add469177c8a81710906e03c52cc45c993ef69",
+      "still_matches_970a7247": true
+    },
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/usage-only-once.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "f176f64145009894659daecdeaed5085e633d624eebfcb0db3a651e0aea48fd7"
+    },
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/test_usage_only_once.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "1e59e499d94acf18adcf5254c02973f0a531cba3db0cdabcff5bc97533dc619d"
+    }
+  ],
+  "operating_files_sha_mismatches": 0,
+  "operating_files_checked": 52,
+  "critical_sqlite_tables_same": 8,
+  "mode": "MANUAL",
+  "review_root": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\DeploymentPreflight\\ReviewPackage",
+  "review_only_no_autostart": true,
+  "active_permit_created": false,
+  "deployment": false,
+  "push": false
+}
