@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Issue #66 오프라인 원인 조사 결과 및 다음 제한 단계
+
+- Codex Issue #66 [보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404484227), 로컬 `codex/discord-ai-collaboration` commit `fcd0488ccc8a140cd08661822383f7ec3194e058`(`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`) 기준, 실제 서버 원인 **미확정**. `collab/usage_bridge.py:64`가 app-server RPC `error`를 `Denied('OFFICIAL_READ_REJECTED')`로 축약하여 error.code/message/data·method/id가 사라지는 **진단 결함은 확정**. 과거 `turn.failed` 별개.
+- 이번 오프라인 조사: 모델 호출0·사용량 재조회0·설정변경0. 서비스 보호 로그 WinError5 및 스케줄러 실시간 조회 실패로 *현재 RUNNING* 확정 금지. 이전 부팅/봇 검증 결과는 보존.
+- 기획 다음 권고: 사용량 사전 게이트에서도 **비밀 제거한 원시 오류 구조·stderr/종료 코드**를 서비스 자기 프로필에 안전하게 기록하는 최소 변경/오프라인 모의 검증만. 보안 완화·운영 코드 배포·실제 사용량 조회·모델 추론·A 활성화는 별도 승인 전 보류.
+- [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) 업데이트 `docs/planning` commit `e5f6787ca5b8448afbfd87ded1756e09473802b2`. 게임 원본·main·부팅 작업 변경 없음.
+
+---
+
 # PLANNING / 2026-10-26 — Discord AI 협업 Issue #66 오프라인 조사 재개
 
 - 바울 대표가 **Discord 작업 재개**를 지시. 이전 10/24 ‘오늘 중단’ 결정을 이력으로 유지하되, 이제 **원인 조사 범위에 한해 재개 승인**. **실제 AI 추론, A 활성화, 서비스/부팅 작업 재시작은 아직 승인되지 않음**.
