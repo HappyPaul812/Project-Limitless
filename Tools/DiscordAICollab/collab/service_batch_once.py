@@ -131,7 +131,8 @@ def main():
         schema.write_text(json.dumps(SCHEMA), encoding='utf8')
         command = probe_command(provider.executable, workspace)[:-1] + ['--output-schema', str(schema), '--output-last-message', str(last), '-']
         # 공식 두 창을 실행 직전에 읽습니다. 소진·UNKNOWN·마감·정지·동시 작업은 중지합니다.
-        observed = asyncio.run(provider.read())
+        result['stage'] = 'OFFICIAL_USAGE_AND_APPROVAL'
+        observed = asyncio.run(provider.read(stage='OFFICIAL_USAGE_AND_APPROVAL'))
         result['official_usage_before'] = observed
         Scheduler(store).record_official_usage(observed, observed['observed'])
         with store.tx() as db:

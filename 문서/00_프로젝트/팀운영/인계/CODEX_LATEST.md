@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 오류 진단 보존 수정 — 격리22PASS / NOT_DEPLOYED
+
+codex/discord-usage-diagnostics-20261026 격리 브랜치에서 RPC method/id/code·정제message/data·실제종료code·단계/위치·제한stderr를 서비스자기프로필 전용으로 기록하도록 수정했습니다. HOLD/승인/응답검증/Sandbox/인증정책 유지. stderr 동시drain32KiB·정제4096자/로그24KiB·최대64파일·RPC18초+종료정리1.8초. 로그준비/저장실패·비정상종료도HOLD.
+
+신규 가짜서버22PASS/0FAIL·Python7구문/diff-check PASS. 실제AI0/실조회0/재시도0. 운영52파일SHA동일·DB핵심8테이블동일·MANUAL·원본main/status동일. 운영배포/승인SHA갱신/ACL/인증/OnBoot/봇재시작/A/Unity/Push/merge0. 새모듈로43개이므로 기존42개검증기는HOLD가정상; 승인목록은 다음 별도리뷰 없이 갱신금지.
+
+상세 Discord_UsageDiagnostics_Preservation_OfflineQA_20261026.md 및 Evidence/UsageDiagnosticsPreservation20261026/. 마지막관련 기반fcd0488c, 최종commit은Issue66참조. 다음은 격리diff/배포·SHA항목승인과 모델없는 usage-only 진입점검토 후 대표별도승인 최대1회20초재시도0 검증. 과거추론runner 재사용금지. 실제조회·AI/A를 실행하지 말고 중지합니다.
+
 ## 2026-10-26 Issue #66 오프라인 진단 완료 — AI_EXECUTION_HOLD / MANUAL
 
 마지막 OFFICIAL_READ_REJECTED는 usage_bridge.py:64의 RPC error 키 변환 예외입니다. initialize/account/read/rateLimits 세 RPC가 같은 오류로 축약되어 실제 실패 RPC·원시코드는 기존 결과만으로 복구 불가합니다. stderr=DEVNULL, 추론 이후에만 private JSONL 기록하는 구조 때문에 이번 usage 오류는 보존되지 않았습니다. 서비스 프로필 로그는 현재 계정 WinError5 접근거부이며 당시 RPC 코드와 별개입니다. 과거 turn.failed도 별도 장애·직접원인 미확정입니다.

@@ -1,0 +1,62 @@
+{
+  "status": "OFFLINE_PASS_NOT_DEPLOYED",
+  "branch": "codex/discord-usage-diagnostics-20261026",
+  "base_commit": "fcd0488ccc8a140cd08661822383f7ec3194e058",
+  "tests": {
+    "pass": 22,
+    "fail": 0,
+    "type": "LOCAL_FAKE_APP_SERVER_ONLY"
+  },
+  "syntax_files": 7,
+  "actual_ai_calls": 0,
+  "official_live_usage_reads": 0,
+  "automatic_retries": 0,
+  "operating_files_sha_checked": 52,
+  "operating_files_sha_mismatches": 0,
+  "sqlite_critical_tables_unchanged": 8,
+  "mode": "MANUAL",
+  "operating_worktree_status_unchanged": true,
+  "original_main_status_unchanged": true,
+  "operating_deployment": false,
+  "approval_updates": false,
+  "acl_changes": false,
+  "boot_task_changes": false,
+  "push": false,
+  "sha256": [
+    {
+      "path": "Tools/DiscordAICollab/collab/usage_bridge.py",
+      "before_source_bytes_sha256": "d410857d4046721cf63bbf380b78dc1e710d81bba101c2780e41c6cfb6587751",
+      "after_isolated_bytes_sha256": "2bc508b260f9bedaebbe58f27d663b7c989b39b66263c28bf949fb712483c0af"
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/usage_diagnostics.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "869deb9382404fae002055e562852a394e6fddbddb1b553196c21bb9667c29e2"
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/service_ai.py",
+      "before_source_bytes_sha256": "6bc4351fb5288b0edc2e7ad6adeeb46864aa197144291f7529073dd81895ddeb",
+      "after_isolated_bytes_sha256": "c72d88ee558824287c0284e349c1b51e65f906782eb3f0b4f8d39fa963980215"
+    },
+    {
+      "path": "Tools/DiscordAICollab/collab/service_batch_once.py",
+      "before_source_bytes_sha256": "de3ce4c90fbad6c2de6e99d278b3ab10ca0e65ab9d16106ef09f79360ab54bdb",
+      "after_isolated_bytes_sha256": "1dfa673007b71ebc2c70b75d6f107cee3a558f8e4fc4070ff032e7ac2be8be70"
+    },
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/service-final-once.py",
+      "before_source_bytes_sha256": "1c21aa6b584e0b0d166551658f96085652d9ec27b49d02d44528df46531127be",
+      "after_isolated_bytes_sha256": "36a3213652d883c5c1e849babe8bd755477d9ba33e7e827e442ac99a12ff13ca"
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/fake_usage_app_server.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "9f2ebce678044a2aeb57098efa1d1c423811db58cf7b85dffb5bde81baf5bd05"
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/test_usage_diagnostics_delta.py",
+      "before_source_bytes_sha256": null,
+      "after_isolated_bytes_sha256": "340de06bd402688a8974629ee5add469177c8a81710906e03c52cc45c993ef69"
+    }
+  ]
+}

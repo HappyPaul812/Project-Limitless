@@ -127,7 +127,7 @@ def run():
         schema.write_text(json.dumps(SCHEMA), encoding='utf-8')
         command = probe_command(provider.executable, workspace)[:-1] + ['--output-schema', str(schema), '--output-last-message', str(last), '-']
         result['stage'] = 'OFFICIAL_USAGE_AND_APPROVAL'
-        observed = asyncio.run(provider.read())
+        observed = asyncio.run(provider.read(stage='OFFICIAL_USAGE_AND_APPROVAL'))
         result['official_usage_before'] = observed
         Scheduler(store).record_official_usage(observed, observed['observed'])
         with store.tx() as db:

@@ -1,0 +1,27 @@
+test_access_rejection (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_access_rejection) ... ok
+test_auth_rejection (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_auth_rejection) ... ok
+test_diagnostic_privacy_and_size (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_diagnostic_privacy_and_size) ... ok
+test_early_exit (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_early_exit) ... ok
+test_exhausted_and_disallowed_still_not_permission (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_exhausted_and_disallowed_still_not_permission) ... ok
+test_initialize_rejection (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_initialize_rejection) ... ok
+test_invalid_json (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_invalid_json) ... ok
+test_invalid_object (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_invalid_object) ... ok
+test_invalid_usage (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_invalid_usage) ... ok
+test_log_failure_blocks_even_valid_usage (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_log_failure_blocks_even_valid_usage) ... ok
+test_no_log_permission_no_spawn (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_no_log_permission_no_spawn) ... ok
+test_nonzero_after_valid_response (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_nonzero_after_valid_response) ... ok
+test_normal (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_normal) ... ok
+test_oversized_stdout (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_oversized_stdout) ... ok
+test_private_path_capacity_and_no_overwrite (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_private_path_capacity_and_no_overwrite) ... ok
+test_rate_rejection (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_rate_rejection) ... ok
+test_record_limit_fails_closed (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_record_limit_fails_closed) ... ok
+test_related_runner_stages_connected (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_related_runner_stages_connected) ... ok
+test_reparse_path_rejected (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_reparse_path_rejected) ... ok
+test_service_provider_requires_private_log (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_service_provider_requires_private_log) ... ok
+test_stderr_flood (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_stderr_flood) ... ok
+test_timeout (test_usage_diagnostics_delta.UsageDiagnosticsTests.test_timeout) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.025s
+
+OK

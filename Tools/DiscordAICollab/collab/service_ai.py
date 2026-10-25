@@ -13,6 +13,7 @@ import time
 from .core import Denied
 from .phase2 import child_environment
 from .usage_bridge import OfficialUsage, UsageMonitor
+from .usage_diagnostics import ProtectedUsageLog
 from .scheduling import Scheduler
 from .resume_queue import ResumeQueue
 
@@ -68,7 +69,7 @@ def prepare_provider(root=ROOT,context=None,approval=None,environ=None,executabl
     approval=json.loads(APPROVAL.read_text(encoding='utf8')) if approval is None else approval
     env=service_environment(context,approval,os.environ if environ is None else environ,root)
     binary=select_executable(approval,env,executable)
-    return OfficialUsage(binary,environment=env)
+    return OfficialUsage(binary,environment=env,diagnostics=ProtectedUsageLog(env['CODEX_HOME']))
 
 def probe(root=ROOT,provider_factory=None):
     """현재 계정의 공식 인증·5시간/주간 한도만 1회 읽고 정규화된 숫자만 반환합니다."""
@@ -77,7 +78,7 @@ def probe(root=ROOT,provider_factory=None):
     provider=None
     try:
         provider=(provider_factory or prepare_provider)(root)
-        value=asyncio.run(provider.read())
+        value=asyncio.run(provider.read(stage='SERVICE_READINESS'))
         # ordinary_allowed=false나 소진도 인증 성공과 실행 허용을 구분합니다. 실행 여부는 기존 gate가 판단합니다.
         result.update(status='READONLY_LINK_READY',reason='OWNER_A_ACTIVATION_AND_EXACT_TASK_APPROVAL_REQUIRED',usage=value)
     except Exception as exc:

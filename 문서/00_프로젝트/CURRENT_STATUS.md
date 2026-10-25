@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 오류 진단 보존 수정 — 격리22PASS / NOT_DEPLOYED
+
+codex/discord-usage-diagnostics-20261026 격리 브랜치에서 RPC method/id/code·정제message/data·실제종료code·단계/위치·제한stderr를 서비스자기프로필 전용으로 기록하도록 수정했습니다. HOLD/승인/응답검증/Sandbox/인증정책 유지. stderr 동시drain32KiB·정제4096자/로그24KiB·최대64파일·RPC18초+종료정리1.8초. 로그준비/저장실패·비정상종료도HOLD.
+
+신규 가짜서버22PASS/0FAIL·Python7구문/diff-check PASS. 실제AI0/실조회0/재시도0. 운영52파일SHA동일·DB핵심8테이블동일·MANUAL·원본main/status동일. 운영배포/승인SHA갱신/ACL/인증/OnBoot/봇재시작/A/Unity/Push/merge0. 새모듈로43개이므로 기존42개검증기는HOLD가정상; 승인목록은 다음 별도리뷰 없이 갱신금지.
+
+상세 Discord_UsageDiagnostics_Preservation_OfflineQA_20261026.md 및 Evidence/UsageDiagnosticsPreservation20261026/. 마지막관련 기반fcd0488c, 최종commit은Issue66참조. 다음은 격리diff/배포·SHA항목승인과 모델없는 usage-only 진입점검토 후 대표별도승인 최대1회20초재시도0 검증. 과거추론runner 재사용금지. 실제조회·AI/A를 실행하지 말고 중지합니다.
+
 ## 2026-10-24 서비스 공식 CLI 실제 추론1회 승인 — 준비완료/로컬 입력 대기 / 실제AI0
 
 - 새 SERVICE_FINAL_PLANNING_20261024_01·별도out/marker 단발실행기준비. 기존42Python/12CONSUMED/과거실패/사용자Worker슬롯재사용0. 실제서비스문맥에서CLI승인SHA/45파일/구독인증/직전공식usage/읽기전용/90초1회/응용재시도0 gate.
