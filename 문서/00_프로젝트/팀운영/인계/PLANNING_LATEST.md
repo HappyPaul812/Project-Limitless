@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord #66 오류 진단 수정 22 PASS 및 승인 게이트
+
+- Codex [Issue #66 최신 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404667041) 확인. 서비스 사용량 조회 에러 진단보존 최소수정 후보(기존 4개 관련 파일 수정+신규 `usage_diagnostics.py` 등) **격리 오프라인 22 PASS/0 FAIL**, 실제 AI/사용량 API 조회0, 운영 배포0. **이 오류의 실제 원인 및 Session0 AI 추론 성공은 여전히 미확정**.
+- 후보 코드는 `codex/discord-usage-diagnostics-20261026` 로컬 commit `970a724775b5dfdffd407412fdd3cfc8a130a52a`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 기존 운영42 허용 상한 대비 신규 모듈 후보43이므로 변경 파일 경로·내용·전후 SHA·고정 manifest·테스트 entrypoint·복구계획을 오프라인 검토한 후에만 운영 반영 승인 검토. 기존 승인 상한 자동 확장·검증 우회 금지.
+- 다음 실제 시험은 **독립된 사용량-only 진입점**으로 최대 1회/20초·자동 재시도0·모델0·Discord 메시지0·A변경0으로 제한. **해당 실조회와 운영 배포는 아직 미승인**. 기존 사용량→모델 자동 연결 runner 재사용 금지. 서비스 자기 인증/보호 로그 경로·실행 계정·모든 승인 SHA 재검증 필요.
+- 기획 정본 [Discord 운영 이력](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 커밋 `8de449e0cf5036b8f421232561f78cd837804d6e`에 기록. 봇/아트 감시·SQLite·Unity/Save·main 보호, MANUAL/AI_EXECUTION_HOLD 유지.
+
+---
+
 # PLANNING / 2026-10-26 — Issue #66 오프라인 원인 조사 결과 및 다음 제한 단계
 
 - Codex Issue #66 [보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404484227), 로컬 `codex/discord-ai-collaboration` commit `fcd0488ccc8a140cd08661822383f7ec3194e058`(`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`) 기준, 실제 서버 원인 **미확정**. `collab/usage_bridge.py:64`가 app-server RPC `error`를 `Denied('OFFICIAL_READ_REJECTED')`로 축약하여 error.code/message/data·method/id가 사라지는 **진단 결함은 확정**. 과거 `turn.failed` 별개.
