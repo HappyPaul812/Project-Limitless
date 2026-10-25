@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-26 아침 — 바울 대표 원본 local main 안전 동기화 재개(단일 EditorBuildSettings 충돌)
+
+- **바울 대표 직접 지시** “굿모닝~ BuildSettings 충돌을 안전하게 해결하고 원본 로컬을 동기화하는 작업해줘.” 최신 GitHub `main` 실 조회 `bfd281545632877325f5d21e04cefb924042c465`. [10/24 EOD #67](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6384533893) 결과 기준 원본 local main `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` **과거 실측**으로 3자 SHA 불일치 `PARTIAL/HOLD`. GitHub PR#68 제품(Main23 KEEP + TTS162) 및 PR#69 문서 **이미 병합 완료**; 다시 PR 생성/병합/제품 통합 불필요.
+- 원격`main`에서 실제 비교: `Unity/Client/ProjectSettings/EditorBuildSettings.asset`은 옛`47ad2eec` 이후 **`World_FrostwayVillage.unity` 등록 1개만 추가**(path `Assets/_Project/Scenes/World_FrostwayVillage.unity`, GUID `42a253fb196cf584b89d837a04fb56db`), 그 Scene meta GUID 실존. `m_configObjects/com.unity.input.settings.actions` 원격 old/current 보존. **사용자 원본에만 존재하는 `com.unity.dt.app-ui` YAML 정확한 값은 기획 원격에서 조회 불가** → Codex가 F: 원본 YAML raw bytes를 백업·의미병합하여 유지. app-ui private setting은 GitHub 공개 main에 추가 commit X, 안전 동기화 후 BuildSettings가 dirty인 건 정상.
+- [#67 후속 작업·안전 트랜잭션 지시](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6404168194): 지금 원본 local의 `HEAD/index/status` 및 사용자858 dirty/untracked·Save/UserData·지난 백업, 기존 85 worktree SHA를 **읽기전용 preflight** 후 신규 유일 백업 디렉터리에 app-ui 포함 해당 file raw bytes와 모든 사용자 상태 스냅샷 복구가능하게 보호. Clean 격리 copy에서 현재 local-only 장면/설정 추가가 전부 빠짐없이 포함된 `latest main scene1 + local app-ui exact object` YAML 시뮬레이션, GUID/scene path 유일성·YAML·m_configObjects 확인.
+- 충돌 교집합이 오직 `EditorBuildSettings.asset` 하나이고 백업 검증 성공하면, Codex가 **보호된 단일 경로만** 통제한 트랜잭션으로 임시 중립화 → `git merge --ff-only origin/main` → 검증한 합성 user setting만 working tree 복구. `git stash/clean/reset --hard/index 우회/force` 금지. 작업 중 다른 dirty 경로 충돌·원본 Unity Editor 파일변경/불명 HEAD/해시 불일치 → **STOP/HOLD**. 개인 app-ui YAML 및 원본 SHA는 공개 GitHub에 내지 말 것.
+- 완료: **원격 GitHub main == origin/main == original local main 같은 SHA**, 모든 original user `app-ui` 및 다른 로컬 전용 설정 정확 보존, `World_FrostwayVillage` 신규 scene GUID 등록1, 원본 사용자 기타 파일 SHA불일치0, Unity/Save/UserData/기승인 PNG/WAV 보호, 기존 Main23/TTS 통합 제품파일 존재/정적 scene 참조만 delta QA. 기존 Main23 148/136·TTS1031·#65 23·10/24 새 Unity25 전수반복하지 않음; 원본 Unity Editor 직접 실행/자연 import/손플레이는 별도 `NOT_TESTED`.
+- **상태:** `GITHUB_TARGET_VERIFIED / ISSUE67_SYNC_FOLLOWUP_POSTED / CODEX_ORIGINAL_LOCAL_EXECUTION_REQUIRED`. GitHub 이슈 댓글을 남겼다고 사용자의 Windows Codex가 자동 실행되는 것은 아님. 실제 sync 성공 전 `SYNC_COMPLETE` 주장 금지. 다음 응답에 반드시 **Codex 복붙용 실행 지시문** 함께 제공, Discord #66 무인 AI는 사용자 중단지시로 현재 HOLD이므로 직접 자동전달했다고 주장 금지.
+
+---
+
 # PLANNING / 2026-10-24 21:30 KST — 바울 대표 EOD 전체 승인분 통합 및 로컬 무손실 동기화 지시
 
 - 사용자 원문 **“지금까지 한 작업들 모두 합치고 로컬 동기화 해줘.”** → 승인·실제 검증 가능한 완료 제품/정본문서만 선별 EOD 통합하고 미술 후보·Discord AI 장애 HOLD를 게임 제품으로 끌어오지 않는 안전 범위로 실행.
