@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 오프라인 진단 완료 — AI_EXECUTION_HOLD / MANUAL
+
+마지막 OFFICIAL_READ_REJECTED는 usage_bridge.py:64의 RPC error 키 변환 예외입니다. initialize/account/read/rateLimits 세 RPC가 같은 오류로 축약되어 실제 실패 RPC·원시코드는 기존 결과만으로 복구 불가합니다. stderr=DEVNULL, 추론 이후에만 private JSONL 기록하는 구조 때문에 이번 usage 오류는 보존되지 않았습니다. 서비스 프로필 로그는 현재 계정 WinError5 접근거부이며 당시 RPC 코드와 별개입니다. 과거 turn.failed도 별도 장애·직접원인 미확정입니다.
+
+신규 메모리 모형 재생3건에서 정보유실 확인. 실제 AI0/사용량실조회0/운영수정0. 현재 승인 CLI SHA4fd2f057과 실패 당시 일치; 과거 성공 c6144bc1과 차이 확인, 원인 확정 아님. 운영52파일SHA 동일·SQLite핵심8테이블동일·MANUAL, DB파일 전체bytes는 운영 중 변화하여 불변 주장 안 함. OnBoot2 현재조회 CIM오류 NOT_VERIFIED, 작업변경0. 인증·PIN·Unity·게임·Push·main병합·재부팅0.
+
+상세 Discord_OfficialRead_Denied_OfflineDiagnosis_20261026.md 및 Evidence/DiscordDeniedDiagnosis20261026/OfflineDiagnosis_20261026.json. 다음은 진단보존 최소수정의 별도 승인 → 필요 시 사용량-only 단발 별도 승인 → 원인에 맞는 최소복구 검토 순서입니다. 실제모델시험/A활성화는 추가 별도승인. 현재 수정/배포/재실행하지 말고 중지합니다. 브랜치 codex/discord-ai-collaboration, 시작관련commit9477b24d, 최종문서commit은 Issue66/최종보고 참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
 ## 2026-10-24 실제 부팅 등록 승인·로컬 입력 대기
 
 대표의 OnBoot2종 실제등록/필요최소권한 승인 유지. 관리자 로컬 등록기·서비스계정 보안입력창 준비(6721ed4b0fc1d0839610b82530922c5073bc8501). 구문2·배치권한보조코드컴파일PASS, 전체QA반복0. 관리자 PowerShell 실행 명령을 안내했고 암호/토큰 직접입력 대기 WAITING_FOR_LOCAL_SETUP. 마지막확인 계정없음/작업0/2·기존프로세스유지·추가AI/재부팅/종료/제품변경/Push/merge0. 실제PIN전부팅 NOT_VERIFIED. 다음은 추가승인요청 없이 대표 실행 후 registration-result.json과 실제태스크/일반계정/트리거 검증. [실행절차](../../../../Tools/DiscordAICollab/BOOT_REGISTER_KO.md)

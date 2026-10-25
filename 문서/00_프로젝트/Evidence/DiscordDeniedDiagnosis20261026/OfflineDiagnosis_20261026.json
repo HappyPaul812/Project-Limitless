@@ -1,0 +1,47 @@
+{
+  "status": "DIAGNOSIS_COMPLETE_EXECUTION_HOLD",
+  "root_cause": "RPC_ERROR_RESPONSE_CONFIRMED_UNDERLYING_CODE_NOT_RETAINED",
+  "latest_stage": "OFFICIAL_USAGE_AND_APPROVAL",
+  "latest_reason": "OFFICIAL_READ_REJECTED",
+  "latest_actual_ai_calls": 0,
+  "latest_cli_sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+  "current_cli_sha256_matches_approval": true,
+  "current_cli_sha256_matches_failed_attempt": true,
+  "historical_success_cli_sha256": "c6144bc19b2705f25a40d8488b3d57d17a223c5df3c5f65e3c58d72601956c1e",
+  "raw_error_code": "NOT_RETAINED_IN_AVAILABLE_ATTEMPT_EVIDENCE",
+  "failed_rpc": "NOT_IDENTIFIABLE: id 1/2/3 all map to same Denied",
+  "offline_replay_cases": [
+    {
+      "synthetic_error_rpc_id": 1,
+      "method": "initialize",
+      "observed_exception": "OFFICIAL_READ_REJECTED",
+      "original_error_code_retained": false
+    },
+    {
+      "synthetic_error_rpc_id": 2,
+      "method": "account/read",
+      "observed_exception": "OFFICIAL_READ_REJECTED",
+      "original_error_code_retained": false
+    },
+    {
+      "synthetic_error_rpc_id": 3,
+      "method": "account/rateLimits/read",
+      "observed_exception": "OFFICIAL_READ_REJECTED",
+      "original_error_code_retained": false
+    }
+  ],
+  "actual_ai_calls_this_diagnosis": 0,
+  "live_usage_reads_this_diagnosis": 0,
+  "operations_config_changes": 0,
+  "protected_runtime_files": 52,
+  "protected_runtime_sha_mismatches": 0,
+  "sqlite_critical_tables_unchanged": true,
+  "mode": "MANUAL",
+  "tasks_count": 21,
+  "approvals_count": 0,
+  "production_code_modified": false,
+  "database_file_bytes_changed": true,
+  "onboot_live_query": "NOT_VERIFIED_CIM_ERROR",
+  "service_profile_log_read": "ACCESS_DENIED_WINERROR_5_UNRELATED_TO_RPC",
+  "actual_service_raw_error_code": "UNKNOWN"
+}
