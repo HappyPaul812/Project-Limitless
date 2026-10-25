@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-26 — 바울 대표 원본 로컬 main 무손실 동기화 완료 (SYNC_COMPLETE)
+
+- 사용자 업로드 Codex 최종 화면 및 [Codex Issue #67 원본 동기화 완료 정식 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6404293491) 재검토. GitHub에서 `main` HEAD **`bfd281545632877325f5d21e04cefb924042c465`** 재확인. Codex가 사용자 PC의 `origin/main` 및 원본 local main도 동일한 완전 SHA로 실측했으므로 **`SYNC_COMPLETE`** 판정. 과거 #67의 `PARTIAL/HOLD`는 이 후속 정식 완료로 해소되었음.
+- 원본 `Unity/Client/ProjectSettings/EditorBuildSettings.asset`의 사용자 `com.unity.dt.app-ui`+기존 input 설정·기존24개 Scene 원형 보존, Main23 `World_FrostwayVillage.unity` GUID `42a253fb196cf584b89d837a04fb56db` **정확1회** 추가하여 Scene 총25. 별도 원본 RAW 백업·격리 의미병합·SHA roundtrip 검사 후 한 파일만 최소 트랜잭션 완충하고 `git merge --ff-only origin/main` 성공. 사용자 app-ui 때문에 **BuildSettings는 로컬 working tree에서 dirty로 남는 것이 정상**. `main` 원격에 개인 설정 commit/Push하지 않음.
+- 보호 검증: 기존 사용자 기타 보호파일 **7,369 SHA 검사**, 승인 동기화 대상 외 SHA 차이0; dirty308→308, untracked550→550, staged0, Git porcelain 상태 raw 전후 byte동일. 독립 백업906파일(188,629,119 bytes)+참조4. 원본 Save/UserData/UserSettings/Packages 및 사용자 환경 보존, 기존 10/24 원본 백업 무수정. 신규 YAML/Scene path/GUID/config/제품212파일 **정적 Delta PASS**. 기존 제품 Main23 20 + TTS/Tool192 존재 정적 확인; 새 기능·아트·음성·BGM·Discord Worker AI 재시도0.
+- **Unity 버전 정확히 구분:** GitHub 제품 정본 `ProjectVersion.txt` 6000.5.7f1 vs 사용자 **원본로컬 설치/설정은 시작부터 `6000.6.5f1`** (Codex 실측). 원본 바이트를 최신 main의 제품 버전으로 덮어쓰지 않음. 원본 Editor/Play/Import/포커스 조작0, **원본 Unity 자연Import·컴파일·손플레이 `NOT_TESTED`**. 완료가 곧 실제 사용자 PlayMode/오디오 청취 최종 QA는 아님. Main23 Main24 Open16·미승인 아트 HOLD/Discord #66 HOLD 유지.
+- Codex 로컬 전용 증거/커밋: `codex/original-main-sync-20261026`, 보고 commit `1811ec87fbeb0c8e25d3b755148d785d4b0c4fad`; 사용자 로컬 `Temp/OriginalMainSync20261026/ReportWorktree/문서/00_프로젝트/BuildSettings_SemanticMerge_DeltaQA_20261026.md` 및 증거 `Evidence/OriginalMainSync20261026/OriginalLocalSync_Proof_20261026.json`. **Push/PR0**, 원본 main은 remote `bfd28154`로 3자 동기화. 별도 Codex 문서 커밋이 새 main 제품 commit은 아님.
+- 기획 보고: Issue #67은 제품 PR#68/마감 PR#69 및 이번 원본 Sync가 모두 완료되어 닫아도 되며, 추가 동기화/전수 Unity 재시험 지시 필요없음. 다음 자연스러운 사용자 Editor Import/Play 확인은 별도 검증 대상이고 **현 동기화 완료를 취소할 근거는 아님**. 부서별 새 작업 발주가 없으므로 이 상태보고에 복붙 지시문 필수는 적용되지 않음.
+
+---
+
 # PLANNING / 2026-10-26 아침 — 바울 대표 원본 local main 안전 동기화 재개(단일 EditorBuildSettings 충돌)
 
 - **바울 대표 직접 지시** “굿모닝~ BuildSettings 충돌을 안전하게 해결하고 원본 로컬을 동기화하는 작업해줘.” 최신 GitHub `main` 실 조회 `bfd281545632877325f5d21e04cefb924042c465`. [10/24 EOD #67](https://github.com/HappyPaul812/Project-Limitless/issues/67#issuecomment-6384533893) 결과 기준 원본 local main `47ad2eecb40135b2ee28e4947d642ebdbf0bf68a` **과거 실측**으로 3자 SHA 불일치 `PARTIAL/HOLD`. GitHub PR#68 제품(Main23 KEEP + TTS162) 및 PR#69 문서 **이미 병합 완료**; 다시 PR 생성/병합/제품 통합 불필요.
