@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 LSA 최소 수정 후보 — 신규36 PASS / 미설치
 
-기준d41ceaf1…/격리branch. UTF-16 길이동적계산·34/36·종료NULL/범위/메모리 검증, 실제 LSA 오류NtStatus/Win32·정리오류 보존, installer 단계/InnerException 정제·원자 protected private log, runner exit제거/JSON logical_exit_code·LASTEXITCODE 분리 구현. 관리자/SID/권한정책/원자SDDL4함수 보존. **신규36 PASS/0 FAIL**, 기존29·35·42 전체재시험0, 실제LSA/Scheduler/설치본문0.
+구현 commit `b2ae449450c7042bda413fe07427e402babb0480` (LOCAL_ONLY), 기준d41ceaf1…/격리branch. UTF-16 길이동적계산·34/36·종료NULL/범위/메모리 검증, 실제 LSA 오류NtStatus/Win32·정리오류 보존, installer 단계/InnerException 정제·원자 protected private log, runner exit제거/JSON logical_exit_code·LASTEXITCODE 분리 구현. 관리자/SID/권한정책/원자SDDL4함수 보존. **신규36 PASS/0 FAIL**, 기존29·35·42 전체재시험0, 실제LSA/Scheduler/설치본문0.
 
 새 Temp/Session0LsaRepairCandidate20261026: 855중 Policy.cs+Installer2 변경/853동일/추가삭제0. Installer79194ad6…/Manifest33ed9a83…/ZIPd678e760… 전체값은 DiscordSession0_LsaRepair_Candidate_20261026.md 및 Evidence/Session0LsaRepair20261026/Candidate.json. 이전Atomic/Ready/Install1 증거 보존. 부분Code/Bot1008 Disabled·task부재 자산 수정0·자동재사용없음/부분환경설치거부. 실제 복구·재설치는 새SHA와부분자산정리 범위 별도승인 필요. 운영/인증/부팅/Unity/Save/Push/main 변경0, MANUAL/A HOLD. 다음 승인 전 중지. 관련commit Issue66 마감 참조.
 

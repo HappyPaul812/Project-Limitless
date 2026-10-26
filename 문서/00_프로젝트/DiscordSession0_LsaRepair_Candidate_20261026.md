@@ -1,6 +1,6 @@
 # Issue66 LSA 배치 권한·오류 기록 최소 수정 후보
 
-2026-10-26. 기준 `d41ceaf156755ad18d8f8557d2b815ffb936ce3e`, branch `codex/discord-usage-diagnostics-20261026`. **OFFLINE36_PASS / NEW_CANDIDATE_NOT_APPROVED / NOT_INSTALLED**. 이번 승인은 수정·오프라인·새 SHA 보고까지이며 실제 복구·재설치 승인이 아닙니다.
+2026-10-26. 구현 commit `b2ae449450c7042bda413fe07427e402babb0480`, 기준 `d41ceaf156755ad18d8f8557d2b815ffb936ce3e`, branch `codex/discord-usage-diagnostics-20261026`. **OFFLINE36_PASS / NEW_CANDIDATE_NOT_APPROVED / NOT_INSTALLED**. 이번 승인은 수정·오프라인·새 SHA 보고까지이며 실제 복구·재설치 승인이 아닙니다.
 
 ## 변경 내용
 

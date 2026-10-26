@@ -1,5 +1,6 @@
 {
   "status": "OFFLINE_CANDIDATE_NOT_APPROVED_NOT_INSTALLED",
+  "implementation_commit": "b2ae449450c7042bda413fe07427e402babb0480",
   "new_tests": {"passed": 36, "failed": 0},
   "previous_29_35_42_suites_repeated": 0,
   "fake_lsa_and_scheduler_used": true,
