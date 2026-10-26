@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-26 — Discord #66 설치 전 SDDL 원자성 미검증으로 HOLD
+
+- Codex [Issue #66 Preflight 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416602437): 설치 후보 Manifest/Installer SHA 일치, **855/855파일 PASS**이나 `install-session0-trial.ps1:112`에서 작업 생성 `Register-ScheduledTask` → `114`에서 `SetSecurityDescriptor` 사후 적용이며 실제 DACL readback이 없어 **원자적 권한 경계 미검증**. 실제 권한 유출 발생 주장 금지. 신규 계정0, Task0, Fake0, AI0/usage0/Discord0. 기존 29 PASS는 작업 등록 ACL 검증 근거가 아니므로 **HOLD_BEFORE_INSTALL** 유지.
+- 사용자/기획 후속 지시: **기존 설치 명령 실행 금지**. 기존 후보 855개 bytes/Manifest/Installer 보존, Codex 격리 브랜치에서 COM `RegisterTaskDefinition`의 생성 호출에 정확한 SDDL을 함께 전달하고 `GetSecurityDescriptor`로 owner/group/DACL/의도치 않은 principal ACE 확인. create-only·중복 이름 거부·unknown response 재시도0 및 원자 등록/불일치 fail-closed를 합성 작업 스케줄러에 대해 오프라인 테스트. 등록 API 및 필드 제약 문서 검증, 최소 권한·기존 OnBoot 보호. 후보 새 SHA·차이/rollback 문서화 후 중지. 별도 명시 승인 전 새 계정 생성/Task 등록/실 OS IPC·모델/usage/Discord 호출 금지.
+- Codex 브랜치 `codex/discord-usage-diagnostics-20261026`, 최신 로컬 문서 `5d259e2738768dd0816540b9a31228049db70a56` (`REMOTE_NOT_PUSHED`). 기존 `MANUAL/A HOLD`. 기획 운영 정본 `docs/planning` commit `84a2b3a6d9f42c9988ea21b7fa0e001e7e94a7bf`. 기존 봇·아트/OnBoot2/boot approval/SQLite·CLI 인증·게임/Save/main 불변.
+
+---
+
 # PLANNING / 2026-10-26 — Session0 Host↔고정 Worker 접합29 PASS, 실계정 설치 대기
 
 - Codex [Issue #66 상세 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6415686545): 모바일 5버튼→LiveSession0Bridge→Windows pipe→Session0Host→BrokerJob90→고정 read-only Planning Worker→strict JSONL→정제 결과 코드 접합 **완료**, 신규 오프라인29 PASS/0 FAIL. **실제 계정 간 OS IPC/Session0 Host 운영 설치/Discord→실모델 E2E는 미실행·미검증**. MANUAL/A HOLD 유지. 이전 성공테스트는 반복하지 않았음.
