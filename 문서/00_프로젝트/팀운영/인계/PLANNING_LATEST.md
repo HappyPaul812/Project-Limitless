@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-27 — V1 HOLD 보존, V2 독립 시험 후보의 오프라인 구현 우선
+
+- Codex [Issue #66 V1 참조HOLD 대안 비교](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429561131)에서 **V2 완전 새 namespace 후보 구현 우선** 권고: V1 비활성 BotSID1008/관리자 code root/855 원본·Install1소비·모든 증거 보존. Restart Manager `RmStartSession/RegisterResources/GetList/EndSession`은 현재 등록 파일 사용자 탐색 보조 수단일 뿐 간접·과거/누락PID 참조의 무해함 보증 아님; 실제 RM 사용0. 기존 Cleanup 재시도·삭제 금지.
+- V2 설계 후보: `PAUL-PC\\LIMITLESSBotTrialV2` 신규 OS SID, `C:\Program Files\LimitlessRelayTrialV2_20261027`, `C:\ProgramData\LimitlessRelayTrialV2_20261027`, `LIMITLESS-Trial-V2-20261027-S0Host`, `LimitlessPlanningV2-<GUID>` Windows pipe; schema2/새 request·approval·consume epoch, 별도 Manifest/ZIP/고정코드 경로/보호 DACL 생성시 적용, Disabled/Trigger0/FAKE_ONLY/자동재시도0. 기존 WorkerSID1007 공유하므로 인증/스케줄러/파이프/런타임 권한·중복 워커 작업 충돌 위협은 여전히 별도 실측 게이트.
+- 새 추상 오프라인 모델 **72 PASS/0 FAIL**. 모델 산출물 및 디자인 SHA만 존재; V2 **실제 installer·Manifest·ZIP SHA null**, 설치/OS IPC/실 Worker 사용 불가. 다음 안전한 범위는 **8 구성요소(candidate builder, installer, wrapper, C# pipe boundary, host startPS, clientPS, Python transport/runtime)의 결합 코드 구현과 off-line package 빌드/정적·모의 실패검증**, 기존 V1 보안 gate(fresh-state/dacl/SID/암호분리/consume/double-run/no retry) 완화 금지. 성공 시 새 파일별 실제 SHA·manifest/zip inventory를 제시하고 STOP. 그 후 새 OS 계정/task 생성·패키지 설치는 별도 명시 승인 필요, FAKE_ONLY IPC/Discord/모델/A는 다시 분리.
+- Codex 격리 브랜치 `codex/discord-usage-diagnostics-20261026`, 비교 설계 최종 로컬 commit `63b97539ae4e1655d9f36e905b1cb2e3601b22d7`, `REMOTE_NOT_PUSHED`; [기획 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `8fee9bafac851b4ef20fff6745d35bcb25daaedc`. MANUAL/A HOLD·원본 Unity/Save·OnBoot·봇·아트/CLI/CODEX_HOME/SQLite/main 보호.
+
+---
+
 # PLANNING / 2026-10-27 — 관리자 15현재+종료객체1+누락3, 비파괴 대안 검토
 
 - [Issue #66 관리자 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429320304): 기존 Process UNKNOWN19 중 현재 이름/ownerSID/session/생성시각 **15확인**, PID32660의 현재 종료 객체1(**과거 동일성 불명**), `Select-Object -First16`로 누락된 원본 PID3은 당시 증거로 복구불가. 15건 현재 명령줄 전부 미제공, 보호프로세스 포함; **당시 PID 동일성 검증0·직접 참조발견0·비참조 확정0**. 이전 Cleanup의 19개 확인 실패=실제 위험 입증 아님, 임의로 안전 확정할 근거도 아님. `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`; 파일/계정/Task 삭제0, 기존 Bot SID1008 Disabled 및 기존 protected 855 Code root/Install1 소비 증거 보존.
