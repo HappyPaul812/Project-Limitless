@@ -62,3 +62,5 @@ PIN 없는 실행은 기존 Session0 모델 VERIFIED 근거가 있지만, 이번
 향후 별도 승인 시 새 시험 계정/새 고정 task/새 설치만 사용합니다. 시작 전 운영 파일·명령 inventory·승인 SHA snapshot을 보존하고, 시험 후 신규 접수 차단→서비스 arm 비활성→취소 Job 종료/active0→시험 Host 종료→반환 command ID 하나만 삭제→전후 대조 순서입니다. 새 시험 설치/task만 철수하고 소비·체크포인트·정제 증거는 보존하며 기존 OnBoot2개나 기존 운영 승인을 복구 명목으로 덮어쓰지 않습니다.
 
 공식 근거: [MSRC 보안 경계·UAC 분류](https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria), [Windows pipe 보안 권한](https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipe-security-and-access-rights), [RunAsClient](https://learn.microsoft.com/en-us/dotnet/api/system.io.pipes.namedpipeserverstream.runasclient), [WindowsPrincipal.IsInRole](https://learn.microsoft.com/en-us/dotnet/api/system.security.principal.windowsprincipal.isinrole).
+
+구현 로컬 commit: `82af13e15469ae23d8ca13e96ac6b651f3160a9f`. 문서 마감 실제 commit은 Issue #66 완료 댓글을 따릅니다. Push 없음.

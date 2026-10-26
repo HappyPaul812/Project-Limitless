@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 Session0 보안 중개기 후보 — 신규42 PASS / SECURITY HOLD
 
-기준 `f93d13e79b336453711a69ea5de34be2035b1d99`. 봇/관리자/Worker SID를 모두 분리해야 하는 fail-closed 후보를 구현했습니다. UAC 일반/관리자 토큰만으로 동일 SID 문제를 해결했다고 주장하지 않으며 같은 SID는 상승 토큰도 거부합니다. 로컬 인증 pipe(arm/work/control)·고정 JSON schema·서비스 별도 소비장부·정제 reader·LiveSession0Bridge IPC 경로·취소 Job 파생본을 추가했습니다.
+구현 commit `82af13e15469ae23d8ca13e96ac6b651f3160a9f` (LOCAL_ONLY). 기준 `f93d13e79b336453711a69ea5de34be2035b1d99`. 봇/관리자/Worker SID를 모두 분리해야 하는 fail-closed 후보를 구현했습니다. UAC 일반/관리자 토큰만으로 동일 SID 문제를 해결했다고 주장하지 않으며 같은 SID는 상승 토큰도 거부합니다. 로컬 인증 pipe(arm/work/control)·고정 JSON schema·서비스 별도 소비장부·정제 reader·LiveSession0Bridge IPC 경로·취소 Job 파생본을 추가했습니다.
 
 **PARTIAL / SECURITY_DEPLOYMENT_HOLD**. 실제 Host와 고정 Worker backend 접합 및 서비스 계정 간 IPC는 아직 미완/미검증입니다. 현재 별도 최소권한 시험 봇 계정과 보호된 설치가 없으므로 활성화하지 않습니다. 새 계정/서비스/task/ACL/토큰 복사0. 이 조건은 후보가 보안 요구를 만족하지 못하면 HOLD하라는 대표 지시에 따릅니다.
 
