@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 새 원자 SDDL 후보 설치 승인 — 관리자 로컬 입력 대기
+
+대표가 Installer117065bb…/Manifest6efbd783…/zip4b2c56ed… 새 후보의 최소권한 계정·Disabled/trigger0/FAKE_ONLY 작업 설치를 승인. 세 SHA·855개 hash·854개 보존 사전검사 PASS. 현재 Codex Session9/비관리자이므로 **WAIT_ADMIN_INSTALL / 설치 시도0**. 신규 SID/실제 task SD/운영 OnBoot 전후 PASS는 아직 미확정. 기존29/35 재시험0.
+
+신규 run-atomic-trial-install.ps1은 승인 설치기 bytes만 한 번 호출하고 SID3개/Users/배치 직접권한/24시간 만료/설치855 SHA/실제 SDDL/고정 action/Disabled/trigger0/기존 OnBoot SHA 전후를 검사하는 보조 명령. 승인 payload 수정0. 관리자 PowerShell7의 로컬 보안 입력이 필요하며 정확 명령은 DiscordSession0_AtomicInstall_AdminPending_20261026.md. HOLD면 재등록/자동삭제 금지. Host/IPC/FakeWorker/AI/usage/Discord0, MANUAL/A HOLD 및 기존 운영·Unity/Save 보호. 설치 PASS 후 다음 IPC 승인 전 중지. 실제 관련 commit은 Issue66 마감 기록 참조.
+
 ## 2026-10-26 Issue #66 예약 작업 원자 보안 등록 후보 — 신규35 PASS / 설치 대기
 
 구현 commit `2ef4012fb9a963a80de5a9910b8853917fd870fd`, 기준 `5d259e2738768dd0816540b9a31228049db70a56`, LOCAL_ONLY. COM RegisterTaskDefinition CREATE-only(flags50)에 SDDL 동시 전달, 실제 GetSecurityDescriptor(7) owner/group/보호DACL/정확ACE3 검사·실패HOLD/재등록0 구현. 기존29 재시험0, 신규 가짜Scheduler **35 PASS/0 FAIL**. 실제 Windows 등록·IPC 검증 아님. 알 수 없는 실제 mask 정규화도 HOLD.

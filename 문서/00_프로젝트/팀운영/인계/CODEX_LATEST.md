@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 새 후보 실제 설치 승인 — WAIT_ADMIN_INSTALL
+
+기준3f6ec586…/동일격리branch. 대표가 새 SHA117065bb…/6efbd783…/4b2c56ed… 후보만 설치 승인. 실제 파일855 hash/854 원본 동일 PASS. 현재 PAUL-PC\windows Session9 비관리자이므로 실제 설치0, 새 BOT SID·Task owner/DACL·OnBoot SHA 전후 PASS 아직 미확정. 기존29/35 재시험0.
+
+run-atomic-trial-install.ps1 신규 SHA75ce33d6…는 payload 밖의 설치/검증 보조. 관리자 토큰·고정 Worker SID·기존 OnBoot export·기존 계정/task 부재 확인 후 승인 installer 메모리bytes만1회 실행. 로컬 SecureString 암호 입력, 실제 SD/ACL·Users/직접배치권한/24h·설치SHA·OnBoot 보존 검사. Install/Inspect/Preflight만 존재, Start/IPC/AI/Discord 없음. 정확 관리자PowerShell7 명령/복구는 DiscordSession0_AtomicInstall_AdminPending_20261026.md. 초기 byte[] pipeline 오류 preflight 수정, 설치시도 전후0; 읽기전용 LSA reader 컴파일 PASS/native호출0.
+
+실행 결과 JSON을 받은 뒤 실제 설치 PASS 또는 HOLD를 이어서 보고할 것. HOLD이면 Install 재실행/자동삭제/권한 완화 금지. 현재 운영/인증/부팅/Unity/게임/Save/Push/main 변경0, MANUAL/A HOLD. 설치 PASS 후 별도 FAKE_ONLY IPC 승인 전 중지. 관련 commit은 Issue66 완료 기록 참조.
+
 ## 2026-10-26 Issue #66 예약 작업 보안 원자 등록 후보 — 35 PASS / NOT_INSTALLED
 
 구현 commit `2ef4012fb9a963a80de5a9910b8853917fd870fd`, 기준 `5d259e2738768dd0816540b9a31228049db70a56`, branch codex/discord-usage-diagnostics-20261026. 기존 설치기만 COM CREATE-only flags50+SDDL 동시 등록/즉시 GetSecurityDescriptor(7) 검사로 변경. ownerBA/groupSY/보호DACL·SY/BA Full+Worker GR 정확3ACE, 불명·변조·추가principal·재등록 거부. 생성 후 권한 수정0. Verify/StartFake도 SD 재검사. 실제 mask 정규화 미확인값은 HOLD.

@@ -1,0 +1,21 @@
+{
+  "status": "HOLD",
+  "stage": "PACKAGE_PREFLIGHT",
+  "action": "Preflight",
+  "install_attempts": 0,
+  "automatic_retries": 0,
+  "host_starts": 0,
+  "ipc_calls": 0,
+  "fake_worker_calls": 0,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_calls": 0,
+  "sqlite_operations": 0,
+  "mode": "MANUAL_UNCHANGED",
+  "a_mode": "HOLD_UNCHANGED",
+  "request_id": "031c002265604f3fa0f18ac5eb2bd767",
+  "error_type": "MethodException",
+  "hresult": -2146233087,
+  "reason": "NO_RETRY_NO_AUTOMATIC_DELETE_REVIEW_PARTIAL_STATE",
+  "receipt_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\Session0AtomicInstall20261026\\031c002265604f3fa0f18ac5eb2bd767.json"
+}
