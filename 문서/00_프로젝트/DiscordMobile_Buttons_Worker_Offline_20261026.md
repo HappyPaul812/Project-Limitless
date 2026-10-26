@@ -1,6 +1,6 @@
 # Issue #66 모바일 버튼·Session0 Worker 연결 후보 — 2026-10-26
 
-판정: **OFFLINE_CONNECTION_READY / LIVE_DEPLOYMENT_HOLD**. 실제 Discord→AI E2E 성공을 뜻하지 않습니다. 기준 commit `243bf0bab0841b545f5ff9cc4f187f2880826b4c`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 실제 구현 commit은 CURRENT_STATUS 및 Issue #66 완료 댓글에 기록합니다.
+판정: **OFFLINE_CONNECTION_READY / LIVE_DEPLOYMENT_HOLD**. 실제 Discord→AI E2E 성공을 뜻하지 않습니다. 기준 commit `243bf0bab0841b545f5ff9cc4f187f2880826b4c`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 구현 commit `a61d8c17a8414335830939d7c1ec159ab1d8a023` (LOCAL_ONLY). 문서 마감 commit은 Issue #66 완료 댓글에 기록합니다.
 
 ## 구현과 보호 경계
 

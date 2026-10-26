@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 모바일 버튼·Worker 오프라인 후보 — 35 PASS / 실전 배포 HOLD
 
-기준 commit `243bf0bab0841b545f5ff9cc4f187f2880826b4c`. 새 버튼5개와 전체 SHA/대표/역할/상위범위/절대만료/승인소비/단발 인계·보고를 격리 구현했습니다. 새 합성 Session0→기존 strict JSONL→격리 SQLite→Discord 보고 callback 연결 등 **35 PASS / 0 FAIL**. 기존 성공 전체 재시험0. 실제 모델/usage/Discord/운영 DB/서비스 task/active permit0, MANUAL/A 미활성.
+구현 commit `a61d8c17a8414335830939d7c1ec159ab1d8a023` (LOCAL_ONLY). 기준 commit `243bf0bab0841b545f5ff9cc4f187f2880826b4c`. 새 버튼5개와 전체 SHA/대표/역할/상위범위/절대만료/승인소비/단발 인계·보고를 격리 구현했습니다. 새 합성 Session0→기존 strict JSONL→격리 SQLite→Discord 보고 callback 연결 등 **35 PASS / 0 FAIL**. 기존 성공 전체 재시험0. 실제 모델/usage/Discord/운영 DB/서비스 task/active permit0, MANUAL/A 미활성.
 
 **실제 Worker 연결은 미완료이며 배포 HOLD**입니다. live adapter는 무조건 거부, fixture 결과는 live 주입 금지. 다음에는 관리자 전용 arm/결과 ACL·보호 reader·고정 서비스 task 인계·전달/준비/정리 포함 전체90초 Supervisor·실행 중 취소를 구현/오프라인 검증한 뒤 별도 승인받아야 합니다. 현재 일반 봇과 관리자 동일 SID의 FullControl/사용자 소유 파일은 보호 경계로 인정하지 않습니다. 기존 계정/ACL/auth/boot 변경0. 기존 서비스 실행기4 SHA와 boot approval SHA 일치.
 
