@@ -1,0 +1,23 @@
+{
+  "status": "OFFLINE_CANDIDATE_PASS_NOT_INSTALLED",
+  "source": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0HostBundle20261026Ready",
+  "candidate": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0TaskSecurityAtomicCandidate20261026",
+  "archive": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0TaskSecurityAtomicCandidate20261026.zip",
+  "payload_files": 855,
+  "unchanged_payload_files": 854,
+  "changed_payload_files": [
+    "Deployment/install-session0-trial.ps1"
+  ],
+  "added_files": [],
+  "removed_files": [],
+  "original_manifest_sha256": "9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec",
+  "manifest_sha256": "6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab",
+  "original_installer_sha256": "337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829",
+  "installer_sha256": "117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9",
+  "archive_sha256": "4b2c56edf5bb8edc6ee7a40a10504f537223bc77874b43a36e61be735c318f83",
+  "original_preserved": true,
+  "manifest_semantic_changes": [
+    "files_sha256.Deployment/install-session0-trial.ps1"
+  ],
+  "system_changes": 0
+}

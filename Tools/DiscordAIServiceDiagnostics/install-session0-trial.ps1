@@ -6,6 +6,65 @@ $install=Join-Path $env:ProgramFiles 'LimitlessRelayTrial'
 $state=Join-Path $env:ProgramData 'LimitlessRelayTrial'
 $account='LIMITLESSBotTrial';$taskName='LIMITLESS-Trial-S0Host';$marker='LIMITLESS_TRIAL_BOUNDARY_V1'
 function Digest([byte[]]$bytes){return [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($bytes)).ToLower()}
+function Get-TrialTaskSddl([string]$WorkerSid){
+ $sid=[Security.Principal.SecurityIdentifier]::new($WorkerSid)
+ if($sid.Value -in @('S-1-5-18','S-1-5-32-544') -or -not $sid.IsAccountSid()){throw 'TASK_WORKER_SID_HOLD'}
+ return 'O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;GR;;;'+$sid.Value+')'
+}
+function Assert-TrialTaskSecurity([string]$Sddl,[string]$WorkerSid){
+ $null=Get-TrialTaskSddl $WorkerSid
+ if(-not $Sddl){throw 'TASK_SD_MISSING_HOLD'}
+ $sd=[Security.AccessControl.RawSecurityDescriptor]::new($Sddl)
+ if($sd.Owner.Value -ne 'S-1-5-32-544' -or $sd.Group.Value -ne 'S-1-5-18'){throw 'TASK_OWNER_GROUP_HOLD'}
+ $flags=[Security.AccessControl.ControlFlags]
+ if(-not ($sd.ControlFlags -band $flags::DiscretionaryAclPresent) -or -not ($sd.ControlFlags -band $flags::DiscretionaryAclProtected) -or $null -eq $sd.DiscretionaryAcl -or $sd.DiscretionaryAcl.Count -ne 3){throw 'TASK_DACL_HOLD'}
+ $seen=@{}
+ foreach($ace in $sd.DiscretionaryAcl){
+  if($ace -isnot [Security.AccessControl.CommonAce] -or $ace.IsCallback -or $ace.AceQualifier -ne [Security.AccessControl.AceQualifier]::AccessAllowed -or $ace.AceFlags -ne [Security.AccessControl.AceFlags]::None){throw 'TASK_ACE_KIND_HOLD'}
+  $sid=$ace.SecurityIdentifier.Value
+  if($seen.ContainsKey($sid) -or $sid -notin @('S-1-5-18','S-1-5-32-544',$WorkerSid)){throw 'TASK_ACE_SID_HOLD'}
+  $seen[$sid]=$true
+  # Task Scheduler의 실제 반환 mask를 추측하여 확대하지 않습니다. 알 수 없는 정규화는 HOLD입니다.
+  $mask=[BitConverter]::ToUInt32([BitConverter]::GetBytes([int]$ace.AccessMask),0)
+  $expected=if($sid -eq $WorkerSid){[uint32]2147483648}else{[uint32]2032127}
+  if($mask -ne $expected){throw 'TASK_ACE_RIGHTS_HOLD'}
+ }
+}
+function New-TrialTaskDefinition($Scheduler,[string]$WorkerSid,[string]$Arguments,[string]$WorkingDirectory,[string]$Description){
+ $definition=$Scheduler.NewTask(0)
+ $definition.RegistrationInfo.Description=$Description
+ $definition.Principal.UserId=$WorkerSid
+ $definition.Principal.LogonType=1 # TASK_LOGON_PASSWORD. Windows 실행 로그에서는 배치 logon4입니다.
+ $definition.Principal.RunLevel=0
+ $definition.Settings.Enabled=$false
+ $definition.Settings.MultipleInstances=2 # TASK_INSTANCES_IGNORE_NEW
+ $definition.Settings.ExecutionTimeLimit='PT15M'
+ $definition.Settings.AllowHardTerminate=$true
+ $definition.Settings.DisallowStartIfOnBatteries=$false
+ $definition.Settings.StopIfGoingOnBatteries=$false
+ $definition.Settings.RestartCount=0
+ if($definition.Triggers.Count -ne 0){throw 'TASK_TRIGGER_HOLD'}
+ $action=$definition.Actions.Create(0)
+ $action.Path='C:/Program Files/PowerShell/7/pwsh.exe'
+ $action.Arguments=$Arguments;$action.WorkingDirectory=$WorkingDirectory
+ return $definition
+}
+function Register-TrialTaskAtomic($Folder,$Definition,[string]$Name,[string]$WorkerSid,[string]$UserName,[string]$Password,[hashtable]$Attempt){
+ if($Attempt.attempted){throw 'TASK_ALREADY_ATTEMPTED_NO_RETRY'}
+ if($Name -cne 'LIMITLESS-Trial-S0Host' -or $UserName -ine 'PAUL-PC\LIMITLESSRelaySvc' -or $Definition.Principal.UserId -ne $WorkerSid -or $Definition.Principal.LogonType -ne 1 -or $Definition.Principal.RunLevel -ne 0 -or $Definition.Settings.Enabled -ne $false -or $Definition.Triggers.Count -ne 0 -or $Definition.Settings.RestartCount -ne 0){throw 'TASK_DEFINITION_HOLD'}
+ $sddl=Get-TrialTaskSddl $WorkerSid
+ Assert-TrialTaskSecurity $sddl $WorkerSid
+ # CREATE(2) + DONT_ADD_PRINCIPAL_ACE(16) + IGNORE_REGISTRATION_TRIGGERS(32). UPDATE는 포함하지 않습니다.
+ # 예외나 응답 불명에도 재등록하지 않습니다. 기존 이름과의 충돌은 Scheduler의 CREATE가 거부합니다.
+ $Attempt.attempted=$true
+ $registered=$Folder.RegisterTaskDefinition($Name,$Definition,50,$UserName,$Password,1,$sddl)
+ if($null -eq $registered){throw 'TASK_REGISTRATION_UNKNOWN_HOLD'}
+ # 소유자(1)·그룹(2)·DACL(4)을 읽어 대조하며, 생성 후 권한을 수정하지 않습니다.
+ Assert-TrialTaskSecurity ($registered.GetSecurityDescriptor(7)) $WorkerSid
+ if($registered.Path -cne ('\'+$Name) -or $registered.Enabled -ne $false -or $registered.Definition.Triggers.Count -ne 0){throw 'TASK_REGISTERED_STATE_HOLD'}
+ $Attempt.verified=$true
+ return $registered
+}
 if($Action -eq 'Plan'){
  @{status='PLAN_ONLY';account=$account;groups=@('Users');new_right='SeBatchLogonRight';task=$taskName;task_enabled=$false;auto_start=$false;execution_mode='FAKE_ONLY';token_copy=$false;system_changes=0}|ConvertTo-Json
  return
@@ -103,15 +162,11 @@ public static class LimitlessAtomicTrialPublishV1 {
   if((Get-FileHash -LiteralPath $manifest -Algorithm SHA256).Hash.ToLower() -ne $sha){throw 'INSTALLED_MANIFEST_HOLD'}
   $script=Join-Path $install 'Code/Tools/DiscordAIServiceDiagnostics/start-session0-host.ps1'
   $arguments='-NoProfile -NonInteractive -File "'+$script+'" -ManifestSha '+$sha
-  $taskAction=New-ScheduledTaskAction -Execute 'C:/Program Files/PowerShell/7/pwsh.exe' -Argument $arguments -WorkingDirectory $install
-  $principal=New-ScheduledTaskPrincipal -UserId $config.worker_sid -LogonType Password -RunLevel Limited
-  $settings=New-ScheduledTaskSettingsSet -Disable -MultipleInstances IgnoreNew -ExecutionTimeLimit (New-TimeSpan -Minutes 15) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
-  $settings.RestartCount=0
-  $definition=New-ScheduledTask -Action $taskAction -Principal $principal -Settings $settings -Description $marker
+  $scheduler=New-Object -ComObject 'Schedule.Service';$scheduler.Connect()
+  $definition=New-TrialTaskDefinition $scheduler $config.worker_sid $arguments $install $marker
   $plain=$credential.GetNetworkCredential().Password
-  $null=Register-ScheduledTask -TaskName $taskName -InputObject $definition -User $credential.UserName -Password $plain
-  $scheduler=New-Object -ComObject 'Schedule.Service';$scheduler.Connect();$registered=$scheduler.GetFolder('\').GetTask($taskName)
-  $registered.SetSecurityDescriptor(('O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;GR;;;'+$config.worker_sid+')'),0)
+  $attempt=@{attempted=$false;verified=$false}
+  $registered=Register-TrialTaskAtomic ($scheduler.GetFolder('\')) $definition $taskName $config.worker_sid $credential.UserName $plain $attempt
   $record=@{marker=$marker;bot_sid=$config.bot_sid;installed_manifest_sha256=$sha;source_bundle_sha256=$BundleManifestSha;task=$taskName;execution_mode='FAKE_ONLY'}
   [LimitlessAtomicTrialPublishV1]::NewFile((Join-Path $install 'DeploymentRecord.json'),[Text.UTF8Encoding]::new($false).GetBytes(($record|ConvertTo-Json)))
   @{status='INSTALLED_DISABLED_FAKE_ONLY';manifest_sha256=$sha;task_enabled=$false;auto_start=$false;token_registered=$false}|ConvertTo-Json
@@ -128,12 +183,16 @@ if($config.execution_mode -ne 'FAKE_ONLY' -or $config.bot_sid -ne $record.bot_si
 $existing=Get-ScheduledTask -TaskName $taskName
 if($existing.Description -ne $marker -or $existing.Actions[0].Arguments -notlike ('*'+$record.installed_manifest_sha256)){throw 'OWN_TASK_ONLY_HOLD'}
 if($Action -eq 'Verify'){
+ $scheduler=New-Object -ComObject 'Schedule.Service';$scheduler.Connect()
+ Assert-TrialTaskSecurity ($scheduler.GetFolder('\').GetTask($taskName).GetSecurityDescriptor(7)) $config.worker_sid
  Add-Type -Path (Join-Path $install 'Code/Tools/DiscordAIServiceDiagnostics/Session0PipeBoundary.cs')
  [LimitlessSession0PipeV1]::VerifyProtectedPath($install,$false,$config.worker_sid)
  [LimitlessSession0PipeV1]::VerifyProtectedPath($state,$true,$config.worker_sid)
  if((Get-LocalUser -Name $account).SID.Value -ne $record.bot_sid){throw 'BOT_SID_HOLD'}
  @{status='LOCAL_INSTALL_VERIFY_ONLY';disabled=(-not $existing.Settings.Enabled);triggers=@($existing.Triggers).Count;mode='FAKE_ONLY';real_ipc_verified=$false}|ConvertTo-Json
 } elseif($Action -eq 'StartFake'){
+ $scheduler=New-Object -ComObject 'Schedule.Service';$scheduler.Connect()
+ Assert-TrialTaskSecurity ($scheduler.GetFolder('\').GetTask($taskName).GetSecurityDescriptor(7)) $config.worker_sid
  if(@($existing.Triggers).Count -ne 0){throw 'NO_AUTOSTART_TRIGGERS_ALLOWED'}
  Enable-ScheduledTask -TaskName $taskName|Out-Null;Start-ScheduledTask -TaskName $taskName
  'FAKE_HOST_STARTED_ONCE_NO_AI_NO_DISCORD'

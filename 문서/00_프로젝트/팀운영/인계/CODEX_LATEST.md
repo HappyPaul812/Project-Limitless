@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 예약 작업 보안 원자 등록 후보 — 35 PASS / NOT_INSTALLED
+
+기준 `5d259e2738768dd0816540b9a31228049db70a56`, branch codex/discord-usage-diagnostics-20261026. 기존 설치기만 COM CREATE-only flags50+SDDL 동시 등록/즉시 GetSecurityDescriptor(7) 검사로 변경. ownerBA/groupSY/보호DACL·SY/BA Full+Worker GR 정확3ACE, 불명·변조·추가principal·재등록 거부. 생성 후 권한 수정0. Verify/StartFake도 SD 재검사. 실제 mask 정규화 미확인값은 HOLD.
+
+신규 가짜Scheduler35 PASS/0 FAIL, 이전29 전체 재실행0. 실제 COM등록/계정간IPC PASS 아님. 원본 Ready855+Manifest/Installer 불변. 새 Temp/Session0TaskSecurityAtomicCandidate20261026은 payload설치기1만 변경·854동일·추가삭제0. Manifest6efbd783…/Installer117065bb…/zip4b2c56ed… 전체값은 DiscordSession0_TaskSecurity_AtomicCandidate_20261026.md 및 Evidence/Session0TaskSecurityAtomic20261026/Candidate.json 참조. 기존 read-only Preflight도 그대로 HOLD.
+
+실제 계정/task/service/ACL/Host/Fake/AI/usage/Discord0. 운영/인증/OnBoot/SQLite/Unity/게임/Save 변경0, MANUAL/A HOLD. 다음: **새 패키지 SHA에 대한 별도 설치 승인** 후에만 관리자 SecureString 입력/설치/실제 SD 검증. 등록 불명은 자동재시도·자동삭제0, 부분설치 확인 후 새 시험 자원만 안전정리. 지금 실행 명령·암호입력 요청하지 않고 중지합니다. 실제 구현 commit은 아래 마감 기록 참조.
+
 ## 2026-10-26 Issue #66 실제 설치 승인 후 사전검사 — 설치 전 SECURITY HOLD
 
 HOLD 기록 commit `f230d0dbf9920dac2c619f318841a94f665921a0` (LOCAL_ONLY). 기준 `a8b0be3971aa461d09432348b309179cade27981`. 대표의 새 계정/FAKE_ONLY IPC 승인은 확인했습니다. Manifest9aa4a60d…/Installer337ad613…/정확855개(Code66 Runtime741 Legacy47 Deployment1) SHA PASS·불일치0. 그러나 승인 Installer112행 작업 등록→114행 DACL 적용 구조이며 실제 SD readback이 없습니다. 생성 시점 권한 검증 미충족으로 **HOLD_BEFORE_INSTALL**. 실제 권한 유출을 재현/확정한 것은 아님.

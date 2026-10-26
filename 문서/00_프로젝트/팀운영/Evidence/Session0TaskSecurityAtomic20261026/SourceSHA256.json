@@ -1,0 +1,18 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/install-session0-trial.ps1",
+    "sha256": "117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/test-task-security-offline.ps1",
+    "sha256": "615fe94d6866c3c91a7e2ebb23871b382d8e5c15738f66df555b0a0cc40edd94"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/prepare-task-security-candidate.py",
+    "sha256": "18f6ed49cceda60868bc61eff4df7a109852b152c6842334f065598007317ab0"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/run-approved-trial-install.ps1",
+    "sha256": "42befb2a631ce9f61489f15586b22ead13cce899dffac8dbe4d106d8598fb8b2"
+  }
+]
