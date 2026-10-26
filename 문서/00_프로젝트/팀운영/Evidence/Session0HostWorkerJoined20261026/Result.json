@@ -29,5 +29,6 @@
   "installer_sha256": "337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829",
   "local_agent_lsa_probe": "HOLD_C0000022_NOT_SERVICE_ACCOUNT_TEST",
   "install_default": "FAKE_ONLY_DISABLED_NO_TRIGGERS",
-  "code_files": 23
+  "code_files": 23,
+  "implementation_commit": "5f1dad2284d7c2cf78c4d80d451555c3619eb60a"
 }

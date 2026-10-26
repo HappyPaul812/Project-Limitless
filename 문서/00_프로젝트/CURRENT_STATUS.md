@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 Host↔Worker 접합 완료 — 오프라인29 PASS / 설치 전 중지
 
-기준 `ef1dec16bf285024c9caa733845ff93985e07d7f`. 인증된 pipe→고정 C# Host→익명 stdin Job→서비스 broker→고정 Worker wrapper/sidecar→기존 frozen 추론/JSONL→정제 결과→단발 Discord callback까지 코드 접합을 완료했습니다. CODE_JOIN_COMPLETE / OFFLINE_VERIFIED / NOT_INSTALLED. 실제 Windows 계정 IPC·실제 Discord→AI 성공 아님.
+구현 commit `5f1dad2284d7c2cf78c4d80d451555c3619eb60a` (LOCAL_ONLY). 기준 `ef1dec16bf285024c9caa733845ff93985e07d7f`. 인증된 pipe→고정 C# Host→익명 stdin Job→서비스 broker→고정 Worker wrapper/sidecar→기존 frozen 추론/JSONL→정제 결과→단발 Discord callback까지 코드 접합을 완료했습니다. CODE_JOIN_COMPLETE / OFFLINE_VERIFIED / NOT_INSTALLED. 실제 Windows 계정 IPC·실제 Discord→AI 성공 아님.
 
 신규29 PASS/0 FAIL: 중단 전 통합17/native5 보존·재개 후 callback4/사용자 소유 코드 거부1/원자 게시기2 추가. 완료 성공 시험 재실행0, 이전42 전체 반복0. 패키지 기초4 PASS 재사용, 최종855파일 SHA/변경분/동일 Runtime·Legacy 무결성3 확인. 실제 모델/usage/Discord/계정·task·서비스/시스템 ACL/운영 DB/토큰 복사0, MANUAL/A 미활성.
 

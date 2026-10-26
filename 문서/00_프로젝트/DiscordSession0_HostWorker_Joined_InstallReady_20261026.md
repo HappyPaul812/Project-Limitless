@@ -144,3 +144,5 @@ runas.exe /profile /user:PAUL-PC\LIMITLESSBotTrial powershell.exe
 5. 허용 작업은 PlanningAgent 고정 읽기 전용 한 문장1건, exec1/App Server1, 자동 재실행0, 로컬90초, 공식 내부 HTTP/stream 기본 재시도만 허용합니다. 원격 요청 정확1회는 보장하지 않습니다. 실제 4역할/A 활성화는 포함하지 않습니다.
 
 참고: [Windows scheduled task 설정](https://learn.microsoft.com/en-us/powershell/module/scheduledtasks/new-scheduledtasksettingsset), [Windows 사용자 보안 경계](https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria), [named pipe 권한](https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipe-security-and-access-rights).
+
+구현 로컬 commit: `5f1dad2284d7c2cf78c4d80d451555c3619eb60a`. 문서 마감 실제 commit은 Issue #66 완료 댓글에 기록합니다. Push 없음.
