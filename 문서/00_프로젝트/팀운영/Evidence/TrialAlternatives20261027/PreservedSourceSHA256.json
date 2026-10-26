@@ -1,0 +1,66 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/install-session0-trial.ps1",
+    "sha256": "79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/run-atomic-trial-install.ps1",
+    "sha256": "04ccc520cf9271cb055674f5636e6360fdbaceefddaae73077c247644349de0e"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/prepare-session0-host-bundle.py",
+    "sha256": "200fca8240fae7ee811dbe0689183cc93341cdae11c61ee3003d998dff10d6cc"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/Session0PipeBoundary.cs",
+    "sha256": "d16d33e6f4e4f4c989b21d0407acfcb4f702a14ae52263ea77b8a313d264aed6"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/start-session0-host.ps1",
+    "sha256": "1d46108c3bbc3e7d79021889400f67b3536d3e92332e247873b0b2ed251c83fa"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/session0-pipe-client.ps1",
+    "sha256": "613ac4bae0fcf3ab332a9a30305ff8b588ae009ed8179fe61c84503adc7bd0f2"
+  },
+  {
+    "path": "Tools/DiscordAICollab/collab/session0_pipe_transport.py",
+    "sha256": "cfd3e81030656ce07b651ba3ce25b4b9eef6aba77caab6c9897b8cecc64afe1e"
+  },
+  {
+    "path": "Tools/DiscordAICollab/collab/broker_host_runtime.py",
+    "sha256": "b0cd70a346ed5070e54ff883468ebc7055ec0d666acbb013025cd76566faa8b0"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs",
+    "sha256": "d9a0bc50137119bc28c17c5496b5fc20b4da81925b806bc472a538c4415f850b"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/Session0Host.cs",
+    "sha256": "f77f4cc593663725742ebd0ecf8cb6afadfabfa592d53b3edae640dae1613450"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/fixed-planning-entry.py",
+    "sha256": "12318849da5fbb1e653c9ec8f8f7cb249a5f45841e9d44699c71a7a95a3e06cb"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/probe-session0-host.py",
+    "sha256": "41c2e8171384705dc6ccd1f37f4e049da2621482ee24d2046ea227e666a6afed"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/cleanup-partial-trial.ps1",
+    "sha256": "4d2725591b67eb8d744299a6fe8e15fbad8069a0dc72725323b1b208c606ce29"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/Evidence/Session0AtomicInstall20261026/0f8e15c951a144efa79f5ccdbeed9c55.json",
+    "sha256": "80523d2b2320cabce31789d7322a3a7c480ff8f225d42c1f0120a3bdcbea5d6b"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/Evidence/Session0TrialCleanup20261027/39d34e6461e94a97b0ccac01b611ef8f.json",
+    "sha256": "2379842226cb58aa83c01132915c0a7d1675b8f9243dce2d29532d4a751bdc9f"
+  },
+  {
+    "path": "문서/00_프로젝트/팀운영/Evidence/UnknownProcesses20261027/f5c37d29d1d1448d8bc296e801a72ecb.json",
+    "sha256": "1b981f432d715025724d94381e97c993532bacd773ad2a6de9b16389b2a65a18"
+  }
+]

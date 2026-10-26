@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 HOLD 대안 — 신규 합성72PASS / V2 설계 권고
+
+기존15개메타데이터/종료객체1/누락3·참조0/비참조확정0 재사용, REFERENCE_VERIFICATION_HOLD 유지. RM4함수는 등록한855파일의 현재사용 보조근거일 뿐 빈목록도HOLD·내부등록쓰기동반. 실제RM호출0. V2는 기존1008Disabled/Code/소비/승인 보존·별도SID/root/State/Task/pipe/epoch·FAKE_ONLY/Disabled/trigger0·생성시점ACL의 별도후보를 구현하는 안을 권고. 현패키지V2설치불가·기존fresh guard완전보존·실제설치기/Manifest/ZIP미생성. 최소8구성요소 파생+결합시험 필요, 미래SHA없음(null).
+
+신규 C# 상태모델/가짜파일·Scheduler·Worker호출차단72PASS/0FAIL, 실제Windows/RM/계정/Task/권한/IPC/FakeWorker/AI/usage/Discord/기존운영/Unity/Save변경0. 855전수/기존성공suite반복0. sourceSHA4개·보존source13/JSON3 SHA와 정확한 제약은 Discord_ReferenceHold_Alternatives_20261027.md 및 Evidence/TrialAlternatives20261027/. 실제커널/원자ACL/Session0미검증. 실제V2구현→새후보SHA/오프라인결합→별도관리자설치승인→다시별도IPC1회승인 순서. 기존Cleanup/Install자동재실행금지. 로컬브랜치 codex/discord-usage-diagnostics-20261026, 마지막기준d6de3befd4449cb733ce23c9ed64f17068fb7e8a. 실제신규commit Issue66마감참조, LOCAL_COMMITTED/REMOTE_NOT_PUSHED. 설계검증후HOLD중지.
+
 ## 2026-10-27 Issue66 관리자 프로세스 결과 수신 — HOLD 유지
 
 판독 commit `a6ad6760040684402c7f692b54a6095f5cabff30`, 실제 Issue66 보고: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429320304 . LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

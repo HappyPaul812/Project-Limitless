@@ -1,0 +1,18 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialAlternativesOfflineModel.cs",
+    "sha256": "9a54522d106bdfdd514b06c12446c9a0dd74e090af2a55d78fe05f6de2e19f89"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialAlternativesOfflineTests.cs",
+    "sha256": "9c102f1c94b765c9cf5d75ec074b054765ee7dba90a4f2526f590db4f1158449"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/test-trial-alternatives-offline.ps1",
+    "sha256": "61eded4faab654b8a32a20072f0ba78fe27b695bef292797aa1636537b01c448"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/v2-isolation-design.json",
+    "sha256": "f75d41fdf455188e3db87f1e78d9fed9e463b6be7e5de29de32096187813f8e9"
+  }
+]

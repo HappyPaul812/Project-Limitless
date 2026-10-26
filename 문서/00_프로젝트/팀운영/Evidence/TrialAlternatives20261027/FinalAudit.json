@@ -1,0 +1,14 @@
+{
+  "offline_passed": 72,
+  "actual_rm_calls": 0,
+  "preserved_paths": 16,
+  "reference_hold_released": false,
+  "live_installer_available": false,
+  "actual_account_or_scheduler_calls": 0,
+  "new_source_hash_mismatches": 0,
+  "actual_worker_or_ipc_calls": 0,
+  "status": "OFFLINE_ALTERNATIVES_HOLD",
+  "actual_windows_changes": 0,
+  "offline_failed": 0,
+  "preserved_source_and_json_hash_mismatches": 0
+}
