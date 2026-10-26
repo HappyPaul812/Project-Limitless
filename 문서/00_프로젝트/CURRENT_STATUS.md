@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 인증수정본 신규1회 명시승인 — 새request d56fdba9618044b98f98fe98e4cff211 / 관리자실행대기
+
+대표가d9fa4f7c 후보(b841cf65)의새실전1회를승인. config818c/keyring/ChatGPT증거20b0확인·features.view_image등11제어false/기존read-only검증gate유지. 새ZIPe5315fcc/최종Manifest5de623d3, 47파일runtime44/기존40보호·CLI전체45/운영43SHA일치. 이전usage marker2+717a추론marker총3/이전ZIP·Manifest보존.
+
+새전용run-approved-inference-authfix-once90.ps1·기존90초Job/worker예산/Session0-logon4/usage AppServer1후exec1/자동재실행0/내부builtin retry허용. 신규wrapper구문·변수/비관리자가드/새package집합SHA/marker PASS·기존38/native7전체재실행0. 현재비관리자S9·로컬서비스암호필요로대표직접실행대기. 신규model/usage/configCLI/실배포/activepermit/소비0.
+
+정확관리자명령 Inference90_AuthFix_NewApproval_Ready_20261026.md. 실제결과 ProgramData/LimitlessRelay/InferenceTrials/d56fdba9618044b98f98fe98e4cff211/Output/summary.json대조. **실제1단계6조건VERIFIED면추가지시없이즉시2단계오프라인연결구현·가짜검증시작**. 추가실model/A/운영bot변경금지. 현재1단계미시작·2단계미착수,실패HOLD/자동재시험금지. MANUAL·운영/게임/Push/main/PC변경0. 후보d9fa·준비최종commit은Issue66참조.
+
 ## 2026-10-26 Issue66 현재keyring/무효view_image확인 — 지원제어후보갱신 / 새실전승인필요
 
 review93fa150e서비스진단성공·projection20b0e1b0대조. 현재서비스config818c2e7b과거승인일치·keyring/ChatGPT확인. 직접실패401인증누락유지. 시작전error2는tools.view_image무시경고로확인. 승인CLI의인증없는features list2회에서구tools옵션에도view_image=true, features.view_image=false는false(exit0/stderr없음)확인.

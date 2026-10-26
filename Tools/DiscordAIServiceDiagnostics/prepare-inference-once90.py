@@ -15,7 +15,10 @@ EVIDENCE=REPO/'문서/00_프로젝트/Evidence/Inference90Prepared20261026'
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def prepare():
+def prepare(*,launcher_name='run-approved-inference-once90.ps1',base_commit='67669b9b69b297280381a258bb3c5a80ae427bcd',
+            prior_marker=None,validation_results=None):
+    if launcher_name not in {'run-approved-inference-once90.ps1','run-approved-inference-authfix-once90.ps1'}:
+        raise RuntimeError('LAUNCHER_SCOPE_HOLD')
     if PREPARED.exists() or EVIDENCE.exists():raise RuntimeError('PREPARATION_EXISTS_DO_NOT_REGENERATE_APPROVAL_ID')
     spec=importlib.util.spec_from_file_location('core_prepare',HERE/'inference-once-core.py')
     core=importlib.util.module_from_spec(spec);spec.loader.exec_module(core)
@@ -54,6 +57,10 @@ def prepare():
     if sha(metadata)!='09458bfc9a2b5516784efa7e9bda7013506dc0c21673b8aad7aec84240b60faf':raise RuntimeError('METADATA_SHA_HOLD')
     markers={str(p):sha(p) for p in [Path('C:/ProgramData/LimitlessRelay/UsageOnly20261026.launch-consumed.json'),
         Path('C:/ProgramData/LimitlessRelay/UsageOnly20261026.bindingfix-e10d02cb.launch-consumed.json')]}
+    if prior_marker is not None:
+        expected=Path('C:/ProgramData/LimitlessRelay/InferenceOnce90-717a0afa735d485daf790579b964e8c2.launch-consumed.json')
+        if Path(prior_marker)!=expected:raise RuntimeError('PRIOR_INFERENCE_MARKER_SCOPE_HOLD')
+        markers[str(expected)]=sha(expected)
     PREPARED.mkdir();EVIDENCE.mkdir()
     package=PREPARED/'inference-package.zip'
     with zipfile.ZipFile(package,'x',compression=zipfile.ZIP_DEFLATED) as archive:
@@ -63,7 +70,7 @@ def prepare():
       'entry_sha256':sha(HERE/'inference-once90.py'),'core_sha256':sha(HERE/'inference-once-core.py'),
       'roles_sha256':draft['roles_sha256'],'runtime_sha256':draft['runtime_sha256'],'cli_sha256':draft['cli_sha256'],'policy':core.POLICY}
     manifest={'kind':'PREPARED_INFERENCE_ONCE90','request_id':request,'permit':permit,
-      'launcher_sha256':sha(HERE/'run-approved-inference-once90.ps1'),'job_sha256':sha(HERE/'InferenceJob90.cs'),
+      'launcher_sha256':sha(HERE/launcher_name),'job_sha256':sha(HERE/'InferenceJob90.cs'),
       'metadata_sha256':sha(metadata),'archive_sha256':sha(package),'files_sha256':{k:hashlib.sha256(v).hexdigest() for k,v in files.items()},
       'official_package_sha256':official_files,'previous_markers_sha256':markers}
     raw=json.dumps(manifest,ensure_ascii=False,indent=2)+'\n'
@@ -72,16 +79,16 @@ def prepare():
       'model_calls':0,'official_usage_reads':0,'operating_changes':0,'runtime44_count':44,'unchanged40_preserved':True,
       'package_files':47,'archive_sha256':sha(package),'manifest_sha256':sha(PREPARED/'Manifest.json'),
       'new_source_sha256':{p.name:sha(p) for p in HERE.iterdir() if p.name in {
-          'inference-once-core.py','inference-once90.py','InferenceJob90.cs','run-approved-inference-once90.ps1',
+          'inference-once-core.py','inference-once90.py','InferenceJob90.cs',launcher_name,
           'test_inference_once90.py','test_inference_job90.ps1','prepare-inference-once90.py'}},
-      'offline_results':{'python_new_cases_pass':36,'native_new_cases_pass':7,'phase_budget_cases_pass':1,'fail':0},
+      'offline_results':validation_results if validation_results is not None else {'python_new_cases_pass':36,'native_new_cases_pass':7,'phase_budget_cases_pass':1,'fail':0},
       'prior_operating_runtime43_sha256':operating,
       'previous_reserved_request':'e0d2e6fb9a6e48708b35052c02ad133c','previous_reserved_request_consumed':False,
-      'manual_command':'pwsh -NoProfile -File "'+str(HERE/'run-approved-inference-once90.ps1')+'"',
+      'manual_command':'pwsh -NoProfile -File "'+str(HERE/launcher_name)+'"',
       'process_scope_owner_clarified':'ONE_USAGE_APP_SERVER_PLUS_ONE_INFERENCE_EXEC',
       'budget':{'task_limit_s':90,'supervisor_max_ms':75000,'supervisor_absolute_guard_ms':85000,'worker_max_ms':70000,'worker_logging_reserve_s':3,'parent_wait_ceiling_ms':80000},
       'not_measured':['live service execution','live model result','live internal retry count'],
-      'base_commit':'67669b9b69b297280381a258bb3c5a80ae427bcd'}
+      'base_commit':base_commit}
     with zipfile.ZipFile(package) as archive:
         if len(archive.namelist())!=47 or any(hashlib.sha256(archive.read(k)).hexdigest()!=v for k,v in manifest['files_sha256'].items()):raise RuntimeError('NEW_PACKAGE_VERIFY_HOLD')
     (EVIDENCE/'Preparation.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n',encoding='utf8')

@@ -1,0 +1,52 @@
+{
+  "status": "AUTHFIX_NEW_ONCE_AUTHORIZED_READY_WAIT_OWNER_ADMIN",
+  "source_candidate_commit": "d9fa4f7c4e7eeb8f78c34ab6bc19ec92d4595635",
+  "request_id": "d56fdba9618044b98f98fe98e4cff211",
+  "owner_authorization_scope": "AUTHFIX_D9FA4F7C_NEW_READONLY_ONCE_20261026",
+  "phase1": "AUTHORIZED_NOT_STARTED",
+  "phase2": "NOT_STARTED_AWAIT_ACTUAL_VERIFIED",
+  "new_model_exec_launches": 0,
+  "new_official_usage_reads": 0,
+  "new_config_only_cli_processes": 0,
+  "permit_active": false,
+  "request_consumed": false,
+  "operating_deployment": false,
+  "source_sha256": {
+    "run-approved-inference-authfix-once90.ps1": "a9986f29c4a6ee8dc4d52439a86fce3cf451ac3f4e03b1daaae4d1ede0ec726a",
+    "prepare-inference-authfix-once90.py": "c8acaf5c5f5ac6a16216d6a41dfebfd91f1e654e2c9fcfe4d04fd3ec233f9f60",
+    "prepare-inference-once90.py": "58b9791c988ec2d4daa16a4b659a9c802455143572eebbe5d0e28f529bd7adb7"
+  },
+  "entry_sha256": "b841cf6557046ada96b67564be7e093dcb0666980577de8ab37273dd0c22b1ab",
+  "core_sha256": "c9fa6329849ed28713bbfb0fb2f7ded043a04c721c02c10c80fb71d5206adcdf",
+  "job_sha256": "93a9cd26ee7bf268e9327cb10bed92cc27d273ffc697e9da5b679675cca846cf",
+  "archive_sha256": "e5315fcc4da62f30baa543898073c2dd005d8657bced4f3dba865f23dc61b82e",
+  "manifest_sha256": "5de623d338ccca50fe736f21127353e4f315ab90d50b8f3bc775329dfc52c293",
+  "previous_consumption_markers_preserved_count": 3,
+  "old_failed_trial_package_preserved": true,
+  "package_files47_scope_sha": "PASS",
+  "old_runtime43_sha": "PASS",
+  "isolated_runtime44_and_unchanged40_sha": "PASS",
+  "official_full_package45_sha": "PASS",
+  "existing_service_config_sha256": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+  "service_proof_sha256": "20b0e1b09c31b3f772b46f773448e4d30662482a839c21e1e0f58816824fcb15",
+  "targeted_checks": [
+    "new_launcher_parse_and_variable_bindings_PASS",
+    "nonadmin_guard_PASS",
+    "new_request_package47_scope_sha_PASS",
+    "prior_markers3_sha_PASS",
+    "exact_d9fa_entry_and_inactive_permit_PASS"
+  ],
+  "whole_prior_suites_rerun": 0,
+  "prior_38_and_native7_and_budget_reused": true,
+  "operator_requirement": "OWNER_ADMIN_POWERSHELL_AND_LOCAL_SERVICE_WINDOWS_PASSWORD_NOT_AVAILABLE_TO_AGENT",
+  "manual_command": "pwsh -NoProfile -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\Tools\\DiscordAIServiceDiagnostics\\run-approved-inference-authfix-once90.ps1\"",
+  "expected_summary_path": "C:\\ProgramData\\LimitlessRelay\\InferenceTrials\\d56fdba9618044b98f98fe98e4cff211\\Output\\summary.json",
+  "conditional_phase2": {
+    "authorized": true,
+    "start_only_after_local_actual_stage1_verified_six_gates": true,
+    "scope": "OFFLINE_DISCORD_MOBILE_APPROVED_SQLITE_QUEUE_FOUR_EXISTING_ROLES_VALIDATION_REPORTING",
+    "extra_live_model_calls": 0,
+    "A_mode": false,
+    "operating_bot_or_art_changes": false
+  }
+}
