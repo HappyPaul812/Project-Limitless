@@ -24,5 +24,7 @@
   "parent_is_admin": false,
   "boot_tasks_live_sha": "NOT_VERIFIED_REQUIRES_ADMIN_READBACK",
   "wrapper_mode": "READ_ONLY_NO_INSTALL_ACTION",
-  "wrapper_sha256": "42befb2a631ce9f61489f15586b22ead13cce899dffac8dbe4d106d8598fb8b2"
+  "wrapper_sha256": "42befb2a631ce9f61489f15586b22ead13cce899dffac8dbe4d106d8598fb8b2",
+  "hold_record_commit": "f230d0dbf9920dac2c619f318841a94f665921a0",
+  "boot_approval_sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f"
 }

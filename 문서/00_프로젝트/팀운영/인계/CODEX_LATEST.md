@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 실제 설치 승인 후 사전검사 — 설치 전 SECURITY HOLD
 
-기준 `a8b0be3971aa461d09432348b309179cade27981`. 대표의 새 계정/FAKE_ONLY IPC 승인은 확인했습니다. Manifest9aa4a60d…/Installer337ad613…/정확855개(Code66 Runtime741 Legacy47 Deployment1) SHA PASS·불일치0. 그러나 승인 Installer112행 작업 등록→114행 DACL 적용 구조이며 실제 SD readback이 없습니다. 생성 시점 권한 검증 미충족으로 **HOLD_BEFORE_INSTALL**. 실제 권한 유출을 재현/확정한 것은 아님.
+HOLD 기록 commit `f230d0dbf9920dac2c619f318841a94f665921a0` (LOCAL_ONLY). 기준 `a8b0be3971aa461d09432348b309179cade27981`. 대표의 새 계정/FAKE_ONLY IPC 승인은 확인했습니다. Manifest9aa4a60d…/Installer337ad613…/정확855개(Code66 Runtime741 Legacy47 Deployment1) SHA PASS·불일치0. 그러나 승인 Installer112행 작업 등록→114행 DACL 적용 구조이며 실제 SD readback이 없습니다. 생성 시점 권한 검증 미충족으로 **HOLD_BEFORE_INSTALL**. 실제 권한 유출을 재현/확정한 것은 아님.
 
 이전29 PASS가 이 설치 권한 경계까지 검증하지 못한 점을 정정합니다. 이전 설치 문서 상단에 실행 금지를 표시했습니다. 승인 후보/855파일은 수정하지 않았고, 읽기 전용 Preflight만 추가했습니다. 등록 시 SDDL 동시 전달/0x10 flag/owner·DACL readback의 별도 수정 후보·새 SHA 검증이 먼저 필요합니다. 이번 지시의 검증 실패 시 중단을 따르며 현재 관리자 설치 명령이나 암호 입력을 요청하지 않습니다.
 

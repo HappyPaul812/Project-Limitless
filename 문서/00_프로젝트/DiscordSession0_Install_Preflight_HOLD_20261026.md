@@ -46,3 +46,5 @@ Microsoft는 기본적으로 작업 생성자에게 조회·변경·삭제·실�
 `팀운영/Evidence/Session0InstallPreflightHOLD20261026/`에 파일 검사 결과·행 번호·읽기 전용 보안 gate 결과를 보존합니다. CURRENT_STATUS 및 CODEX_LATEST를 최신 HOLD로 갱신합니다. 실제 로컬 commit과 Issue 링크는 마감 보고에 기록합니다.
 
 공식 근거: [작업 생성자의 기본 권한](https://learn.microsoft.com/en-us/windows/win32/taskschd/security-contexts-for-running-tasks), [등록 시 SDDL·생성 flags](https://learn.microsoft.com/en-us/windows/win32/taskschd/taskfolder-registertaskdefinition), [SetSecurityDescriptor flags](https://learn.microsoft.com/en-us/windows/win32/taskschd/registeredtask-setsecuritydescriptor).
+
+사전검사·HOLD 기록 commit: `f230d0dbf9920dac2c619f318841a94f665921a0`. 최종 문서 commit과 Issue 댓글은 마감 보고를 따릅니다.
