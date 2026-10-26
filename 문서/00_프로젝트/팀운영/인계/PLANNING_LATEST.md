@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-26 — 모바일 버튼·Session0 Worker 후보 35 PASS, 실전 HOLD
+
+- [Issue #66 최신 Codex 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411977426): `mobile_planning_buttons.py` 신규 대표 전용 버튼5종(내용·승인·실행·취소·상태) + `session0_planning_bridge.py` 합성 인계 후보 **35 PASS/0 FAIL**. 기존 SHA·단발 소비·권한/만료·handoff 검증 유지. 이번 실제 모델·공식 사용량·Discord REST/Gateway·운영 DB·서비스 task 모두0회, 현재 MANUAL/A HOLD.
+- **중요 blocker:** `LiveSession0Bridge`는 **무조건 HOLD**이며 운영 Process를 실행하지 않음. 관리자 사전 arm/고정 service task·민감 없는 요청 mailbox·엄격한 관리자/서비스측 DACL·결과 reader·총90초 Job+청소/종료 및 실행 중 취소가 아직 미구현/실제 Windows 미검증. 현재 사용자 SID가 관리자 SID와 같은 환경에서 사용자 writable folder ACL만으로 안전성 주장 금지; 보안 경계 분석을 통과하지 못하면 유지 HOLD.
+- 다음은 모델·usage·Discord 등록/게시0인 격리 오프라인 구현/테스트만 승인 검토. 원본 OnBoot·운영 봇·아트·SQLite·CLI/CODEX_HOME/게임/Save·main 보존. 실제 Discord→Session0 AI 1회나 A 자동 재개는 명시적 후속 승인 필요.
+- Codex 로컬 브랜치 `codex/discord-usage-diagnostics-20261026`, 구현 commit `a61d8c17a8414335830939d7c1ec159ab1d8a023`, 문서 commit `f93d13e79b336453711a69ea5de34be2035b1d99` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `896177cb69bb87ceea11ff80086e86a38915faef`.
+- 범위 구분: 과거 Session0 단발 실제 AI는 VERIFIED, 웹 Discord Fake 4역할/휴대전화 status·task는 PASS지만, 버튼 실전 UX/실Discord→실모델 E2E/부팅 후 A 자동재개 성공 증거는 없음.
+
+---
+
 # PLANNING / 2026-10-26 — 실제 Discord Web 4역할 Fake PASS 및 시험 정리 완료
 
 - [Issue #66 최신 실전 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411156106): 휴대전화 `/limitless-trial status`·`task` 2개 실제 왕복, 이어 **PC 웹 Discord에서** 승인4·FakeExecutor4·기획→두 아트→Codex→기획 회신 TECH_PASS, 새 Discord SENT11·불명0. FakeExecutor만 사용: 실제 새 AI/공식 usage 조회/운영 SQLite 업무0. **모바일 전체 승인·실행 미검증, 실제 Discord→실제 Codex Worker 연결 미완료**.
