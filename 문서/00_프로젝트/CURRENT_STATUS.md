@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 부분 설치 읽기 전용 조사 — NOT_VERIFIED / 관리자 진단 대기
 
-이전 Install1 소비 유지·추가설치0. 현재 root존재/State부모목록상부재/승인3SHA 및 원래 receipt SHA보존 확인. 계정·그룹·배치권한·task SD·Code/Manifest·로그는 비관리자 토큰 조회 실패(부재 아님). 설치 직접원인은 고정throw로 원문 소실되어 NOT_VERIFIED. 현재 진단 접근거부를 과거 설치 원인으로 해석하지 않음. 창 종료는 기존wrapper 대화형 exit2로 별도 확정.
+진단 구현 commit `6d037658420e4f36121a1e3555d6b72a9efba0ea` (LOCAL_ONLY). 이전 Install1 소비 유지·추가설치0. 현재 root존재/State부모목록상부재/승인3SHA 및 원래 receipt SHA보존 확인. 계정·그룹·배치권한·task SD·Code/Manifest·로그는 비관리자 토큰 조회 실패(부재 아님). 설치 직접원인은 고정throw로 원문 소실되어 NOT_VERIFIED. 현재 진단 접근거부를 과거 설치 원인으로 해석하지 않음. 창 종료는 기존wrapper 대화형 exit2로 별도 확정.
 
 신규 readonly 진단 SHA2e53e489…/합성16 PASS·기존29/35 반복0. 설치기 호출/exit/권한변경/암호입력 없음. 관리자PowerShell7 한줄 진단 명령은 DiscordSession0_PartialInstall_ReadOnly_20261026.md. 최종 일반토큰 증거328ab780…; 기존 승인코드/소비/부분자산 보존, MANUAL/A HOLD·운영/Unity/Save 변경0. 다음: 관리자 정제 JSON 판독 후 중지; 복구·재설치는 별도 승인 필요. 관련 commit은 Issue66 마감 기록 참조.
 
