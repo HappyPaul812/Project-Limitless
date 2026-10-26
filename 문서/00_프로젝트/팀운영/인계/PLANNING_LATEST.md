@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-27 — Discord #66 Cleanup 미확인 프로세스19 참조 조사 HOLD
+
+- [Issue #66 마지막 실제 관리자 CleanUp 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6420663492): Task282, 서비스·드라이버792, 프로세스334 조사, 확정 시험자산 참조 **0**, 그러나 **19개 프로세스에서 실행 이미지/명령줄 필드 미확보**로 참조 부재 불증명 → `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`, 계정/파일/폴더/Task 삭제0·backup 미실행·`cleanup_consumed=false`. 과거 `Install1`은 이미 소모; 시험 BotSID1008 Disabled, 보호 Code root·855 SHA·이전 증거 보존. 새 LSA 수정 후보 ZIP/Manifest/Installer는 여전히 **미설치·미승인**.
+- **금일 1순위:** 지난 Cleanup script **재실행하지 않고**, 현재 Windows 관리자 읽기 전용 조사기를 별도 만들거나 기존 결과 JSON에 보조 대조를 추가: 원본 요청 ID/오류 분류, 과거 PID+생성시각이 있으면 동일성, 현재 PID·새 생성시각·Owner SID·Session·이미지/명령줄 각 조회 HRESULT/Win32 상태, 종료/OS 보호·권한거부 여부, 코드root/계정·Task 참조 여부. 원시 명령줄·토큰·민감정보는 저장하지 않고 경로 매칭 결과/근거·정제 코드만; 관리자 토큰·SeDebug 권한 자동 상승/허용 목록 추정/프로세스 kill/OS ACL 변경 금지. Windows Protected Process 등으로 필수 정보 확보 불가면 정상이라 가정하지 않고 불명·HOLD, 안전한 대체 검증 방안 제안.
+- 이 작업에서 계정/Code root/Task/Install/Remove/cleanup 재시도/실 IPC·Fake/AI/usage/Discord/A·Unity/Save/main 변경 금지. 필요 시 대표에게 관리자로 실행 가능한 **별도 no-exit·읽기 전용 단발** 검증 스크립트의 정확 SHA와 명령 제시. 해당 실행도 사용자 확인 후. 기존 성공 검사 전체 반복 금지. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `7d7b48a434926c7bd28f7b852170dd69ff3f24b6`.
+- Codex 기존 브랜치 `codex/discord-usage-diagnostics-20261026`, 마지막 실제 Cleanup 판독 로컬 commit `a8ec860e922d088a5f4699157ac957aa441204e0` (Push 없음). 복구/삭제 승인 범위가 기존에 있으나 미확인 19건 해소 전 실제 정리 수행 금지, 정리 재개도 명시적 변경·실행 범위 분리하여 재확인.
+
+---
+
 # PLANNING / 2026-10-26 — LSA 설치 후보36 PASS, 부분 자산 복구와 재설치 별도 승인
 
 - [Issue #66 Codex 최신 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418802491): LSA `SeBatchLogonRight` UTF16 34/36·null/해제, 설치기 오류 단계·native/HRESULT/InnerException 보호 로그, runner `exit` 제거의 **격리 신규36 PASS/0 FAIL**. 실제 설치/IPC/모델/usage/Discord0. 기존 Phase1 실제 Session0 추론 PASS·Phase2 Fake 4역할·웹 모바일 일부 확인 결과와 혼동 금지. 과거 Installer 원시 오류는 소급 검증 불가.
