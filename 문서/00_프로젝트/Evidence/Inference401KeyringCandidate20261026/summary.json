@@ -1,0 +1,41 @@
+{
+  "source_request_id": "717a0afa735d485daf790579b964e8c2",
+  "projection_path": "C:\\ProgramData\\LimitlessRelay\\InferenceLogReviews\\2a87401a0faa4b0b989870c9b3096930\\Output\\projection.json",
+  "model_calls": 0,
+  "task_exit_code": 0,
+  "official_usage_reads": 0,
+  "new_ai_permit_created": false,
+  "child": {
+    "sid_matches": true,
+    "source_request_id": "717a0afa735d485daf790579b964e8c2",
+    "review_id": "2a87401a0faa4b0b989870c9b3096930",
+    "projection_sha256": "2adef4fd1fbd77b1fcd8748b84a677169d2915993229d68f08fb6571a24be41d",
+    "discord_posts": 0,
+    "job": {
+      "stderr_truncated": false,
+      "stdout_truncated": false,
+      "active_processes": 0,
+      "timed_out": false,
+      "exit_code": 0,
+      "cleanup_verified": true
+    },
+    "status": "SANITIZED_LOG_PROJECTION_WRITTEN",
+    "sqlite_work_operations": 0,
+    "logon_type": 4,
+    "source_logs_unchanged": true,
+    "model_calls": 0,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "session_id": 0,
+    "official_usage_reads": 0
+  },
+  "ledger_unchanged": true,
+  "discord_posts": 0,
+  "status": "SANITIZED_LOG_PROJECTION_WRITTEN",
+  "review_id": "2a87401a0faa4b0b989870c9b3096930",
+  "cleanup": "REMOVED",
+  "approval_unchanged": true,
+  "boot_tasks_unchanged": true,
+  "sqlite_work_operations": 0,
+  "inference_consumption_marker_preserved": true,
+  "projection_sha256": "2adef4fd1fbd77b1fcd8748b84a677169d2915993229d68f08fb6571a24be41d"
+}

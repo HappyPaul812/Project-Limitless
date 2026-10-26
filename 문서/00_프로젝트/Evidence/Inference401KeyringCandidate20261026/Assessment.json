@@ -1,0 +1,72 @@
+{
+  "status": "DIRECT_HTTP401_CONFIRMED_KEYRING_SELECTION_CANDIDATE_OFFLINE_PASS",
+  "source_request_id": "717a0afa735d485daf790579b964e8c2",
+  "review_id": "2a87401a0faa4b0b989870c9b3096930",
+  "projection_sha256": "2adef4fd1fbd77b1fcd8748b84a677169d2915993229d68f08fb6571a24be41d",
+  "service_log_review_pass": true,
+  "http_error_events": 10,
+  "http_status": 401,
+  "turn_failed_http_status": 401,
+  "item_types": [
+    "error",
+    "error",
+    "error"
+  ],
+  "structured_error_code": "NULL_IN_SANITIZED_PROJECTION_DO_NOT_INVENT",
+  "remote_completed_turns": 0,
+  "agent_message_items": 0,
+  "old_inference_exit_code": 1,
+  "direct_cause": "INFERENCE_REQUEST_AUTHENTICATION_REJECTED_MISSING_AUTHENTICATION",
+  "candidate_causal_mechanism": "IGNORE_USER_CONFIG_OMITS_EXISTING_KEYRING_SELECTION_NOT_CONFIRMED_AS_SOLE_CAUSE",
+  "historical_auth_config": {
+    "source_sha256": "d43f79412a87e6064b253d22968dfd080f5bc9c7252c8c6b674856418a8c2ce9",
+    "config_sha256": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+    "source_status": "AUTH_AND_USAGE_VERIFIED",
+    "store_template": "KEYRING_AND_FORCED_CHATGPT_CRLF",
+    "current_service_config_verified": false
+  },
+  "candidate_guard": "CURRENT_SERVICE_CONFIG_SHA_MUST_EQUAL_HISTORICAL_APPROVED_SHA_ELSE_HOLD_BEFORE_USAGE",
+  "changes": {
+    "inference-once90.py": {
+      "before_sha256": "14a502cd36ec2d54d6f381212bad8125aecc503f76bba1adf53d7f0d7f99a367",
+      "after_sha256": "058d6274cdc430eff86eaae7eccf33256681ec4175dc934e3290b3f869fdd2cc",
+      "before_sha_scope": "GIT_BLOB_BYTES_LF_MATCH_PRIOR_RECORDED_SOURCE"
+    },
+    "project-existing-inference-log.py": {
+      "before_sha256": "0a11e451d023b31197535bbaddcb1dc33db171133af22e910b781bf586454be9",
+      "after_sha256": "bee6ce254079cb5ad61ffff898c0940affa20229b5908f6902132475c34aa4fe",
+      "before_sha_scope": "GIT_BLOB_BYTES_LF_MATCH_PRIOR_RECORDED_SOURCE"
+    },
+    "test_inference_once90.py": {
+      "before_sha256": "6040bbb25c002a3655e02e884d5cf2c7a2326c169f0bed0afabed371aff2c93d",
+      "after_sha256": "880670aba528d3da354307077045e6fc262e06b9ebc78e1c5518df2fb7d02071",
+      "before_sha_scope": "GIT_BLOB_BYTES_LF_MATCH_PRIOR_RECORDED_SOURCE"
+    },
+    "test_existing_log_projection.py": {
+      "before_sha256": "42fd354fcc09392ec4ba4deb2a358ec0efebea27c240d840b37215914ee25f8c",
+      "after_sha256": "297099bb6ece84e286660cf954f9553afa639fcafb59c7cd33b47633a6f63b37",
+      "before_sha_scope": "GIT_BLOB_BYTES_LF_MATCH_PRIOR_RECORDED_SOURCE"
+    }
+  },
+  "offline_tests": {
+    "inference_cases_pass": 38,
+    "projection_cases_pass": 17,
+    "fail": 0
+  },
+  "not_deployed": true,
+  "candidate_live_verified": false,
+  "new_model_calls": 0,
+  "new_usage_reads": 0,
+  "new_permit_created": false,
+  "old_package_and_prepared_manifest_preserved": true,
+  "old_consumed_request_reused": false,
+  "remaining_blockers": [
+    "CURRENT_SERVICE_CONFIG_SHA_AND_STORE_ENUM_NOT_YET_READ",
+    "TWO_PRETURN_CONFIG_ITEM_ERRORS_REQUIRE_MORE_PRECISE_SANITIZED_DETAIL"
+  ],
+  "next_diagnostic_command": "pwsh -NoProfile -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\Tools\\DiscordAIServiceDiagnostics\\review-existing-inference-log.ps1\"",
+  "phase2_authorized_conditionally": true,
+  "phase1_verified": false,
+  "phase2_started": false,
+  "base_commit": "446b62d1c5c21e261847ce0fa1da725a38b3e567"
+}

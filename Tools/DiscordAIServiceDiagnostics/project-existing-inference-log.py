@@ -34,11 +34,17 @@ WORDS=set(('authentication authorization unauthorized unauthenticated forbidden 
  'agent turn item final output input command execution retryable nonretryable transporterror '
  'module program file path cannot find sandboxed elevated elevation restricted desktop '
  'child parent handle job broken pipe operation canceled cancelled context initialization '
- 'preflight environment user profile logon interactive batch error occurred encountered').split())
+ 'preflight environment user profile logon interactive batch error occurred encountered '
+ 'bearer basic header headers default cache cached keyring store config ignoring ignored overrides override '
+ 'options option unsupported disabled unrecognized deprecated retired only requested supported session '
+ 'falling fallback back configuration fields field transport').split())
 SAFE_CODES={'unauthorized','forbidden','permission_denied','rate_limit_exceeded','invalid_request_error',
  'bad_request','internal_server_error','network_error','stream_disconnected','http_connection_failed',
  'connection_failed','sandbox_setup_failed','model_not_found','context_window_exceeded','unknown'}
 EVENTS={'thread.started','turn.started','turn.completed','turn.failed','error','item.started','item.updated','item.completed'}
+KNOWN_CONFIG_KEYS={'tools','shell_tool','shell_snapshot','apps','browser_use','computer_use','multi_agent','mcp_servers',
+ 'plugins','hooks','web_search','view_image','memories','model_reasoning_effort','forced_login_method','cli_auth_credentials_store','model_provider'}
+HISTORICAL_CONFIG_SHA='818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3'
 
 
 def strict_json(text):
@@ -88,8 +94,8 @@ def identifier(value):
 def signals(text):
     text=text.lower()
     rules={
-      'AUTH_OR_PERMISSION':['unauthorized','authentication failed','permission denied','forbidden','401','403'],
-      'QUOTA_OR_RATE_LIMIT':['429','rate limit','quota exceeded'],
+      'AUTH_OR_PERMISSION':['unauthorized','authentication failed','permission denied','forbidden'],
+      'QUOTA_OR_RATE_LIMIT':['rate limit','quota exceeded','too many requests'],
       'DNS':['dns','name resolution','failed to lookup','resolve host','hostname'],
       'TLS':['certificate','tls','ssl'],
       'TRANSPORT':['stream disconnected','error sending request','failed to connect','connection reset','connection refused','websocket','transport'],
@@ -98,7 +104,12 @@ def signals(text):
       'CONFIG':['reserved built-in','unknown field','unexpected argument','failed to load bootstrap'],
       'MCP':['mcp','mcp startup'],
     }
-    return [key for key,fragments in rules.items() if any(part in text for part in fragments)]
+    found=[key for key,fragments in rules.items() if any(part in text for part in fragments)]
+    # UUID/요청식별자 중간의 숫자429를 실제HTTP429로 오판하지 않습니다.
+    statuses={int(v) for v in re.findall(r'(?:http(?:\s+status)?|status(?:\s+code)?)[\s:=]+([1-5][0-9]{2})\b',text)}
+    if statuses & {401,403} and 'AUTH_OR_PERMISSION' not in found:found.append('AUTH_OR_PERMISSION')
+    if 429 in statuses and 'QUOTA_OR_RATE_LIMIT' not in found:found.append('QUOTA_OR_RATE_LIMIT')
+    return found
 
 
 def error_projection(event,line):
@@ -113,6 +124,18 @@ def error_projection(event,line):
     return {'line':line,'event':event['type'],'error_code':code,'message':safe_text(message),
             'http_status_codes':statuses,'os_error_codes':os_codes,'signals':signals(message),
             'endpoint_class':'OFFICIAL_CHATGPT_CODEX' if 'chatgpt.com/backend-api/codex' in message.lower() else 'NOT_EXPORTED_OR_UNKNOWN'}
+
+
+def config_metadata(raw):
+    """config 파일 내용은 내보내지 않고 기존 저장소 선택의 enum·SHA만 반환합니다."""
+    text=raw.decode('utf-8-sig')
+    def field(key,allowed):
+        found=re.findall(r'(?m)^\s*'+key+r'\s*=\s*["\']([a-z_]+)["\']\s*(?:#.*)?$',text)
+        return found[0] if len(found)==1 and found[0] in allowed else 'UNCONFIRMED'
+    return {'sha256':sha(raw),'matches_historical_approved_sha':sha(raw)==HISTORICAL_CONFIG_SHA,
+      'credential_store':field('cli_auth_credentials_store',{'file','keyring','auto','ephemeral'}),
+      'forced_login_method':field('forced_login_method',{'chatgpt','api'}),
+      'raw_config_exported':False,'observation_scope':'CURRENT_READ_ONLY_METADATA_NOT_FAILURE_TIME_SNAPSHOT'}
 
 
 def project(stdout,stderr,execution,launch,preflight):
@@ -138,6 +161,7 @@ def project(stdout,stderr,execution,launch,preflight):
             items.append({'line':number,'item_type':item_type,'before_turn_started':not turn_started,
                 'legacy_validator_allowed':item_type in ('reasoning','agent_message'),
                 'diagnostic_message':safe_text(item.get('message',item.get('text','')),512),
+                'configuration_keys_mentioned':sorted(key for key in KNOWN_CONFIG_KEYS if re.search(r'(?<![a-z0-9_])'+key+r'(?![a-z0-9_])',str(item.get('message',item.get('text',''))),re.I)),
                 'status':item.get('status') if item.get('status') in ('completed','failed','in_progress') else None})
     args=launch.get('argv',[])
     if not isinstance(args,list) or not all(isinstance(arg,str) for arg in args):args=[]
@@ -222,12 +246,16 @@ def run(review):
     if sha(stdout)!=execution.get('original_stdout_sha256'):raise ValueError('LOG_ORIGINAL_SHA_HOLD')
     value=project(stdout,data['stderr'],execution,strict_json(data['launch'].decode('utf8')),strict_json(data['preflight'].decode('utf8')))
     del stdout
+    config_path=profile/'.codex/config.toml'
+    config_raw=bounded_read(config_path,16384)
+    value['current_auth_config_metadata']=config_metadata(config_raw)
     summary_raw=bounded_read(SUMMARY,65536)
     if sha(summary_raw)!=SUMMARY_SHA:raise ValueError('LOG_SOURCE_SUMMARY_SHA_HOLD')
     summary=strict_json(summary_raw.decode('utf-8-sig'))
     if value['event_counts']!=summary['child']['entry_result']['validation']['event_counts']:raise ValueError('LOG_EVENT_COUNTS_MISMATCH_HOLD')
     after={k:sha(bounded_read(folder/name,524288 if k=='encrypted' else 65536)) for k,name in names.items()}
     if after!={k:sha(v) for k,v in data.items()}:raise ValueError('LOG_SOURCE_CHANGED_HOLD')
+    if sha(bounded_read(config_path,16384))!=sha(config_raw):raise ValueError('LOG_CONFIG_CHANGED_HOLD')
     value.update(review_id=review,service_sid_matches=True,source_logs_unchanged=True,source_file_sha256=after,
       original_jsonl_sha_verified=True,read_as_service_account=True,prior_usage_chatgpt_preflight_passed=True)
     target=Path('C:/ProgramData/LimitlessRelay/InferenceLogReviews')/review/'Output/projection.json'

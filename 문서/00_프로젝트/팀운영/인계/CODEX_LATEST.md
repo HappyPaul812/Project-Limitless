@@ -1,3 +1,13 @@
+## 2026-10-26 Issue66 717a직접원인HTTP401확인 — keyring선택후보55PASS/미배포/1단계미성공
+
+서비스로그review2a87401a성공·projection SHA2adef4fd대조. error10+turn.failed모두HTTP401 Unauthorized/Missing authentication. item3은error/error/error(초기2개설정진단+HTTPS전환오류)·실제도구항목아님. CLIexit1/완료turn0/agent_message0. QUOTA휴리스틱429부분문자열오판가능수정·실제429확인없음. 기존로그/boot/DB/소비marker보호·진단TaskREMOVED/Jobexit0자식0.
+
+과거서비스config818c2e7b=keyring/forcedChatGPT확인·exec ignore-user-config의keyring재선택누락발견. 격리entry에기존configSHA일치gate+cli_auth_credentials_store=keyring명시후보추가, 인증/저장소/토큰/운영/검증기/Sandbox전환완화0. 직접401확정이나선택누락이유일원인·실전해결은미검증. 현재service configSHA/시작전설정경고키는추가정제자료필요.
+
+55PASS(38+17)/0FAIL·새모델/usage/CLI0·후보미배포/새실전permit발급0. 이전ZIP/Manifest/717a소비marker보존·기존모델명령재실행금지. 상세 Inference401_KeyringSelection_Candidate_20261026.md에업데이트된로그전용관리자명령. 서비스계정현재config enum/SHA·기존경고키만정제읽기, 새모델조회아님. 실제재시험은별도신규승인필수.
+
+현재1단계NOT_VERIFIED·2단계미착수. 향후별도승인실전6조건VERIFIED시추가지시없이2단계오프라인연결구현즉시착수승인유효·추가실제모델/A/운영봇변경금지. MANUAL/HOLD·Push/게임/부팅변경0. 기반446b62d1·최종commit은Issue66참조.
+
 ## 2026-10-26 Issue66 서비스기존로그진단 준비13PASS — 대표직접실행대기 / 조건부2단계승인기록
 
 실패717a의원인미확정. agent비관리자S9·보호로그는서비스SID로만읽어야하므로새로그전용wrapper/projector준비. 서비스자기DPAPI복호화·원본SHA대조·error10/turn.failed/item3유형·순서·stderr/실행metadata를엄격정제출력, 원본로그전후SHA보호. 모델/usage/CLI실행경로없음·새AIpermit/slot없음. 합성13PASS·PS구문/변수/비관리자가드PASS. 운영/인증/ACL/게임/Push변경0·MANUAL/HOLD.

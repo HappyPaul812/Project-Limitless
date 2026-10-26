@@ -25,6 +25,7 @@ BOOT = Path('C:/ProgramData/LimitlessRelay/boot-approval.json')
 PERMIT = Path('C:/ProgramData/LimitlessRelay/inference-once90-approval.json')
 CHANGED = {'collab/usage_bridge.py', 'collab/service_ai.py', 'collab/service_batch_once.py'}
 NEW = 'collab/usage_diagnostics.py'
+SERVICE_CONFIG_SHA = '818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3'
 
 
 def digest(path, deadline):
@@ -42,6 +43,19 @@ def read(path):
     value = core.strict_json(raw.decode('utf-8-sig'))
     if not isinstance(value, dict): raise Denied('INFERENCE_JSON_FORMAT_HOLD')
     return value
+
+
+def preserved_keyring_control(home):
+    """기존 인증 당시 keyring 설정을 그대로 선택합니다. 저장·전환·토큰 읽기는 하지 않습니다.
+
+    exec의 ignore-user-config가 이 설정도 생략하므로 동일한 저장소 선택만 명시합니다.
+    현재 서비스 설정이 기존 승인 기록과 다르면 임의 해석하지 않고 모델/usage 전에 멈춥니다.
+    """
+    path = home/'config.toml'; no_link(path)
+    with path.open('rb') as source: raw = source.read(4097)
+    if len(raw) > 4096 or hashlib.sha256(raw).hexdigest() != SERVICE_CONFIG_SHA:
+        raise Denied('INFERENCE_EXISTING_AUTH_CONFIG_CHANGED_HOLD')
+    return 'cli_auth_credentials_store="keyring"'
 
 
 def verify(base, permit, request, deadline):
@@ -90,6 +104,8 @@ def run(request, budget_ms):
             or os.environ.get('LIMITLESS_BATCH_LOGON_TYPE') != '4'
             or os.environ.get('LIMITLESS_BATCH_SESSION_ID') != '0'): raise Denied('INFERENCE_SERVICE_CONTEXT_HOLD')
         verify(base, permit, request, deadline)
+        store_control = preserved_keyring_control(home)
+        result['credential_store_selection'] = 'EXISTING_KEYRING_EXPLICIT'
         archive = prepare_archive(home.parent, request)
         no_link(archive); last = archive/'final-response.txt'
         workspace = TOOL.parents[2]/'EmptyWorkspace'
@@ -98,7 +114,8 @@ def run(request, budget_ms):
         snapshot = []
         (archive/'preflight.safe.json').write_text(json.dumps({'request_id': request,
             'stage': 'BEFORE_USAGE', 'account': context['name'], 'session_id': 0, 'logon_type': 4,
-            'policy': core.POLICY, 'cli_sha256': permit['cli_sha256']}), encoding='utf8')
+            'policy': core.POLICY, 'cli_sha256': permit['cli_sha256'],
+            'existing_auth_config_sha256': SERVICE_CONFIG_SHA}), encoding='utf8')
         slot = home/'limitless-inference-once90'
         no_link(slot); slot.mkdir(exist_ok=True)
         with (slot/(request+'.consumed')).open('x', encoding='ascii') as target: target.write('INFERENCE_ONCE90_NO_RETRY')
@@ -112,7 +129,7 @@ def run(request, budget_ms):
             raise Denied('INFERENCE_USAGE_HOLD')
         if time.time()-value['observed'] > 30: raise Denied('INFERENCE_USAGE_STALE_HOLD')
         command = probe_command(provider.executable, workspace)[:-1]
-        for item in ['tools.view_image=false', 'features.hooks=false', 'features.memories=false']:
+        for item in [store_control, 'tools.view_image=false', 'features.hooks=false', 'features.memories=false']:
             command += ['-c', item]
         command += ['--output-last-message', str(last), '-']
         if any('model_providers.' in arg for arg in command): raise Denied('INFERENCE_PROVIDER_OVERRIDE_HOLD')

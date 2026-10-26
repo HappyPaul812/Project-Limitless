@@ -68,6 +68,20 @@ class ProjectionTests(unittest.TestCase):
         helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
         fixture=b'SYNTHETIC_LOG_ONLY_NO_AUTH'
         self.assertEqual(m.decrypt_own(helper.protect_bytes(fixture)),fixture)
+    def test_401_with_request_id_digits_is_not_quota(self):
+        self.assertNotIn('QUOTA_OR_RATE_LIMIT',m.signals('unexpected status 401 Unauthorized request id a429b123'))
+        self.assertNotIn('AUTH_OR_PERMISSION',m.signals('request id a401b403c429'))
+    def test_explicit_http_429_is_quota(self):
+        self.assertIn('QUOTA_OR_RATE_LIMIT',m.signals('HTTP status 429 retrying'))
+    def test_auth_config_metadata_only(self):
+        cfg=b'cli_auth_credentials_store = "keyring"\r\nforced_login_method = "chatgpt"\r\n'
+        r=m.config_metadata(cfg);self.assertEqual(r['credential_store'],'keyring');self.assertTrue(r['matches_historical_approved_sha'])
+        r=m.config_metadata(cfg+b'private_extra="SECRET_PRIVATE_VALUE"\r\n')
+        self.assertFalse(r['matches_historical_approved_sha']);self.assertNotIn('SECRET_PRIVATE_VALUE',json.dumps(r))
+    def test_config_warning_key_selected_without_private_value(self):
+        r=self.project([{'type':'item.completed','item':{'type':'error','message':'Codex is ignoring configuration overrides for tools. PRIVATE_OWNER_NAME'}}])
+        self.assertEqual(r['completed_items'][0]['configuration_keys_mentioned'],['tools'])
+        self.assertNotIn('PRIVATE_OWNER_NAME',json.dumps(r))
 
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -49,6 +49,7 @@ class EntryTests(unittest.TestCase):
         scratch=Path('F:/study/codex/Project-Limitless/Temp/Inf90Offline');scratch.mkdir(parents=True,exist_ok=True)
         # 합성 보호 프로필은 증거로 남깁니다. sandbox에서 .codex 재귀삭제를 시도하지 않습니다.
         self.root=scratch/uuid.uuid4().hex;self.profile=self.root/'LIMITLESSRelaySvc';(self.profile/'.codex').mkdir(parents=True)
+        (self.profile/'.codex/config.toml').write_bytes(b'cli_auth_credentials_store = "keyring"\r\nforced_login_method = "chatgpt"\r\n')
         self.folder=self.root/'Trial';self.tool=self.folder/'Package/Tools/DiscordAICollab';self.tool.mkdir(parents=True)
         (self.folder/'EmptyWorkspace').mkdir();self.archive=self.profile/'.codex/archive'
         self.base={'service_sid':'SYNTHETIC','service_codex':{'path':'NOT_AN_EXECUTABLE'}}
@@ -69,6 +70,7 @@ class EntryTests(unittest.TestCase):
             self.calls.append('exec');self.assertEqual(prompt,c.PROMPT)
             self.assertNotIn('model_providers.openai',' '.join(command))
             self.assertIn('--sandbox',command);self.assertIn('read-only',command)
+            self.assertIn('cli_auth_credentials_store="keyring"',command)
             self.assertFalse(any('TOKEN' in name or 'API_KEY' in name for name in environment))
             if self.mode=='no_budget':raise TimeoutError()
             (self.archive/'final-response.txt').write_text(c.EXPECTED,encoding='utf8')
@@ -108,6 +110,12 @@ class EntryTests(unittest.TestCase):
         with patch.object(m,'windows_context',return_value={'name':'WRONG','sid':'WRONG'}):r=self.run_case()
         self.assertEqual(r['status'],'NOT_VERIFIED');self.assertEqual(self.calls,[])
     def test_no_budget_argument_no_usage(self):self.assertEqual(m.run(self.request,1)['status'],'NOT_VERIFIED');self.assertEqual(self.calls,[])
+    def test_changed_auth_config_stops_before_usage(self):
+        (self.profile/'.codex/config.toml').write_text('cli_auth_credentials_store="file"',encoding='utf8')
+        r=self.run_case();self.assertEqual(r['reason'],'INFERENCE_EXISTING_AUTH_CONFIG_CHANGED_HOLD');self.assertEqual(self.calls,[])
+    def test_missing_auth_config_stops_before_usage(self):
+        (self.profile/'.codex/config.toml').unlink()
+        self.assertEqual(self.run_case()['status'],'NOT_VERIFIED');self.assertEqual(self.calls,[])
 
 
 class CaptureTests(unittest.TestCase):
