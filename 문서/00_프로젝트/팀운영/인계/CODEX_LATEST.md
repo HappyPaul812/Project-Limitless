@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 현재 — trial 종료/삭제 완료, 모바일 상태/접수 PASS·승인 UX 미완
+
+대표 휴대전화 status/task 실제 수신 확인, SENT2·root NEW1·grant0·Fake0. 긴 SHA 모바일 입력이 불편하여 컴 웹 가능 안내. 실제 승인/실행/역할 인계 미시험, 전체 VERIFIED가 아닌 PARTIAL. 16:34:38 KST 만료 후 Host exit0/active0/cleanup_verified, 정확 command1564175559733551186 DELETE1·guild/global inventory 복원 PASS. 이전 READY를 현재 온라인으로 해석하지 않습니다.
+
+현재 새 Host/명령 없음. 소비·Queue/receipt/checkpoint·로그 보존, root 초기화/만료 연장/자동 재시험0. 모델/usage/운영 DB0·MANUAL·A 미활성/운영·게임·Save/Push/main/PC 보호. 완료 증거 CompletionSanitized.json, 상세 DiscordMobile_LiveTrial_PARTIAL_Cleanup_20261026.md. worker summary 초기status READY 잔존은 stop_reason/parent/cleanup으로 판정해야 함.
+
+다음: 대표가 웹으로 진행 가능하지만 새 시험 범위를 먼저 확정, 또는 owner/SHA/scope/expiry/단발 gate를 유지하는 버튼/짧은 코드 모바일 UX를 오프라인 개선. 추가 AI/A 승인 없음. Host 구현95a4c60c, 완료 문서 실제 commit은 Issue66 참조.
+
 ## 2026-10-26 Issue #66 현재 — 실제 Discord READY / 모바일 결과·종료 정리 대기
 
 trial1564156403571105906/prod1563102982386749440 분리. 대표 token Setup 성공·DPAPI 자기 사용자 읽기·API 소유 PASS. Host 실제 Gateway/대표·채널 권한 PASS, CREATE1 반환 command1564175559733551186, 기존 guild/global0 백업. 모바일 `/limitless-trial status` 확인 대기. 종료2026-10-26 16:34:38 KST, 현재사용자Session9(PID26424/부모34112), 서비스/부팅 시험 아님.

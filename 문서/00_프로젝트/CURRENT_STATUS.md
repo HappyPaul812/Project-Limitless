@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 실제 시험 종료 — 모바일 상태/접수 PASS · 승인/실행 미시험 · 정리 PASS
+
+대표 휴대전화 status/task 응답 확인·실제 SENT receipt2·기획 task NEW 확인. 64자리 SHA 수동 입력 UX가 길어 컴퓨터 웹 사용 가능 안내. 승인 grant0/Fake0, 승인/실행/인계는 미시험으로 PARTIAL. 새 Host·만료 연장·소비 초기화0.
+
+16:34:38 KST EXPIRED, Host exit0·active0·cleanup_verified, 반환 command1564175559733551186 단일 DELETE1·guild/global 전후 inventory 일치 CLEANUP_PASS. 현재 봇/명령은 종료·삭제됐고 아래 READY는 역사입니다. 모델/usage/운영 SQLite0, MANUAL·A 미활성/운영·게임·Save/Push/main/PC 보호. 상세 DiscordMobile_LiveTrial_PARTIAL_Cleanup_20261026.md 및 CompletionSanitized.json. 다음은 웹 시험 또는 버튼/짧은 코드 UX 개선 검토, 자동 재시험/추가 AI 금지. 구현95a4c60c, 완료 문서 commit은 Issue66 참조.
+
 ## 2026-10-26 Issue #66 실제 시험 Host READY — 모바일 확인 대기 / 16:34:38 KST 자동 종료
 
 시험 앱/대표 소유 token 저장·현재 사용자 읽기 PASS. 별도 앱1564156403571105906에 단일 guild 명령 CREATE1, 반환 ID1564175559733551186, Gateway/대표·채널 권한 PASS. 운영 app1563102982386749440과 분리, 기존 명령0/global0 백업. `/limitless-trial status` 모바일 첫 응답 확인 대기. root1/Fake최대4/동시1, 실제 AI/usage/운영 DB0, MANUAL/A 미활성.
