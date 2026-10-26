@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 — 두 앱 분리 정정 / 시험 token 로컬 입력 대기
+
+최신 대표 확인: 시험1564156403571105906 / 운영1563102982386749440으로 서로 다름. 이전 동일 앱 HOLD 정정·새 앱 생성 불필요. 기존 대표/guild 승인 대조 및 로컬 공개 사전 점검 PASS. 별도 setup-mobile-trial-token.ps1 준비: 숨김 token 입력→고정 시험 앱/대표 소유 REST 검증→새 현재 사용자 DPAPI 저장/읽기. 기존 저장소/ACL/운영 token 변경·복사0.
+
+구문/새 fixture8 PASS, Inspect PASS(token/네트워크0). 대표가 `DiscordMobile_TrialToken_Input_20261026.md`의 일반 PowerShell 명령으로 직접 입력 필요. 현재 token 저장/실API 검증/Host/등록/모바일/모델/usage/운영 SQLite0. Host 진입점은 token 결과 확인 뒤 준비할 단계이며 READY가 아닙니다. MANUAL/A 미활성·기존 패키지/source·운영/게임/Save/Push/main/PC 보호. 아래 동일 앱 판정은 역사이며 현재 적용하지 않습니다.
+
 ## 2026-10-26 Issue #66 Phase3 — 운영/시험 앱 동일 확인으로 실행 전 HOLD
 
 대표가 시험/운영 Application ID `1564156403571105906`을 동일하게 제공한 뒤 “같은 앱”이라고 직접 확인했습니다. 별도 시험 앱 조건 FAIL이므로 token 입력·저장/Host/명령 등록/Discord 요청0으로 HOLD했습니다. 기존 공개 운영 설정에서 대표 승인 ID와 guild 일치는 확인. 새 application을 만들고 다른 새 ID/소유 확인만 제공해야 재개할 수 있습니다. 서버/ai-시험실 채널은 유지 가능합니다.

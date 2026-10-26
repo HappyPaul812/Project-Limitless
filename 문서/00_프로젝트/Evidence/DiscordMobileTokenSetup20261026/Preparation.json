@@ -1,0 +1,21 @@
+{
+  "status": "APP_IDS_DISTINCT_LOCAL_PREFLIGHT_PASS_WAIT_LOCAL_TOKEN",
+  "trial_application_id": "1564156403571105906",
+  "production_application_id": "1563102982386749440",
+  "correction": "Previous same-app finding superseded by explicit latest user IDs",
+  "owner_approved_id_matches": true,
+  "fixture_pass": 8,
+  "fixture_fail": 0,
+  "powershell_parse": "PASS",
+  "inspect": "PASS",
+  "token_prompted_by_agent": false,
+  "token_store_created": false,
+  "discord_requests": 0,
+  "host_launches": 0,
+  "command_creates": 0,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "operational_sqlite_operations": 0,
+  "script_sha256": "1203db10818159c64d82d9dc0cc3108fade4c8efb6c3dc253663684c12ee3af0",
+  "existing_full_tests_repeated": false
+}

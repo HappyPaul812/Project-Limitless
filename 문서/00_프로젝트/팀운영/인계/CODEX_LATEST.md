@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 현재 상태 — 앱 분리 정정 / 로컬 시험 token 입력 대기
+
+대표 최신 두 ID: 시험1564156403571105906 / 운영1563102982386749440. 이전 동일 앱 HOLD는 용어 혼동으로 정정, 새 앱 다시 생성 불필요. 기존 대표/guild 승인 대조 PASS. 새 setup-mobile-trial-token.ps1은 고정 SHA/분리/owner 확인→숨김 SecureString→시험 앱/owner 단발 REST 검증→새 전용 DPAPI 저장/같은 Windows 사용자 읽기. 새 폴더만 사용·기존 token/ACL 변경0, token 미출력.
+
+새 fixture8+구문/Inspect PASS, 이전 전체 QA 반복0. 대표 일반 PowerShell 직접 입력 필요(문서 DiscordMobile_TrialToken_Input_20261026.md). token 저장/API/Host/등록/모바일/Fake/AI/usage/운영 DB 전부 아직0. 저장 결과 확인 뒤 한시 Host/CREATE1/반환 ID DELETE/안전 종료 진입점 준비가 남음. 현재 READY/연결 성공으로 보고 금지. MANUAL·A 미활성, 운영/게임/Save/Push/main/PC 보호. 아래 이전 충돌 기록을 현재 블로커로 재사용하지 않습니다.
+
 ## 2026-10-26 Issue #66 현재 블로커 — 시험/운영 앱 동일(대표 직접 확인)
 
 시험 Limitless-test ID1564156403571105906, 운영 ID 질문에 동일 값 응답 후 재확인에서 “같은 앱”이라고 확인. 별도 앱이라는 필수 게이트 FAIL. token 프롬프트/열람/저장, Host 구현·기동, Discord 요청/CREATE/DELETE/모바일/Fake/AI/usage/운영 DB 업무 전부0. 운영 앱을 시험용으로 대체하거나 token reset/복사 금지.
