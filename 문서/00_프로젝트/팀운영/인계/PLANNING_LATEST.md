@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-27 — 관리자 15현재+종료객체1+누락3, 비파괴 대안 검토
+
+- [Issue #66 관리자 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429320304): 기존 Process UNKNOWN19 중 현재 이름/ownerSID/session/생성시각 **15확인**, PID32660의 현재 종료 객체1(**과거 동일성 불명**), `Select-Object -First16`로 누락된 원본 PID3은 당시 증거로 복구불가. 15건 현재 명령줄 전부 미제공, 보호프로세스 포함; **당시 PID 동일성 검증0·직접 참조발견0·비참조 확정0**. 이전 Cleanup의 19개 확인 실패=실제 위험 입증 아님, 임의로 안전 확정할 근거도 아님. `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`; 파일/계정/Task 삭제0, 기존 Bot SID1008 Disabled 및 기존 protected 855 Code root/Install1 소비 증거 보존.
+- 권고: 동일 관리자/프로세스 명령 반복, SeDebug/ACL완화·보호 OS 프로세스 우회 중단. 대신 **자산 중심(read-only) 검사 가능성** (Microsoft Restart Manager API `RmRegisterResources/RmGetList` 등은 실제 resource 사용 프로세스 식별에 유용하나 사용중인 프로세스의 모든 간접/과거 참조를 증명하지 못함), 기존 Task282/서비스792/코드 Manifest·모듈·file-handle 증거 재활용. 우선 off-line feasibility/fake만 검증하고 운영 프로세스 중단/RmShutdown·RmRestart 사용 금지. 해소되지 않는 경우 **옛 비활성 BotSID1008과 코드root를 보존한 채 V2 별도 사용자/작업/폴더 namespace·CLI신뢰·소유DACL·boot 별도 유지** 전략을 설계하여 정확 충돌/자산/실패/롤백/보안증거를 비교; 실제 설치/삭제/토큰이동 하지 말 것. 기존 설치기가 partial resources 감지 시 HOLD함을 인정, 이를 우회해 덮어쓰기 금지.
+- Codex `codex/discord-usage-diagnostics-20261026` local 보고 `a6ad6760040684402c7f692b54a6095f5cabff30` (REMOTE_NOT_PUSHED). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `d5ba9390110eaea617537193498390ac1ecae157`. 이 단계는 설계·오프라인 조사만, Cleanup 재실행 및 실 계정/task/IPC/Fake/모델/usage/Discord/A 금지.
+
+---
+
 # PLANNING / 2026-10-27 — Discord #66 Cleanup 미확인 프로세스19 참조 조사 HOLD
 
 - [Issue #66 마지막 실제 관리자 CleanUp 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6420663492): Task282, 서비스·드라이버792, 프로세스334 조사, 확정 시험자산 참조 **0**, 그러나 **19개 프로세스에서 실행 이미지/명령줄 필드 미확보**로 참조 부재 불증명 → `REFERENCE_VERIFICATION_HOLD / NOT_CLEANED`, 계정/파일/폴더/Task 삭제0·backup 미실행·`cleanup_consumed=false`. 과거 `Install1`은 이미 소모; 시험 BotSID1008 Disabled, 보호 Code root·855 SHA·이전 증거 보존. 새 LSA 수정 후보 ZIP/Manifest/Installer는 여전히 **미설치·미승인**.
