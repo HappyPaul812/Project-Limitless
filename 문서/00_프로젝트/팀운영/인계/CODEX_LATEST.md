@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 Phase3 실전 승인 후 사전 HOLD — 별도 앱 설정 미확인
+
+이번 사용자 지시로 별도 시험 앱의 제한 등록/FakeExecutor 왕복/정리 승인 유효. 그러나 확인한 로컬 경로에 전용 앱/owner/guild/channel·시험 token 보안 설정 없음으로 확인 불가. 외부 앱 부재를 단정하지 않음. 지시된 Portal 최소 안내 후 HOLD 분기 적용, 운영 토큰/인증 복사·조회0. Host 추가 구현/기동도 아직 하지 않음.
+
+우선순위: 대표의 시험 application/owner/guild/channel ID·소유권 및 로컬 보안 설정 확인 → 같은 미실행 승인 범위에서 별도 Host 진입점/정확 SHA·한시 실행/단일 CREATE·반환 ID DELETE 경로 준비 → 휴대전화 Fake 왕복. 기존 `/limitless approve`/bot/아트/부팅/운영 DB 변경 금지, 모델/usage/A 금지. 세부 Portal/모바일/정리 절차 `DiscordMobile_Phase3_LiveTrial_HOLD_20261026.md`.
+
+현재 Host/명령등록/모바일/Fake/모델/usage/운영 SQLite 모두0, 소비/permit 없음. 기존 Phase1 VERIFIED/Phase2 24/Phase3 18+패키지5 증거 및 고정 ZIP/Manifest 보호, 전체 재시험0. PreflightHold.json 보존. MANUAL·A 미활성/운영·게임·Save·Push/main·PC 변경0. 코드 source6fcaafa0 그대로, 문서 최종 commit은 Issue66 참조. 새 승인 요청 때문에 막힌 것이 아니라 앱 선행조건 미확인입니다.
+
 ## 2026-10-26 Issue #66 Phase3 — 모바일 Discord 연결 준비 완료 / 미배포
 
 Phase3 implementation commit: `8cbf90ba84c93f9c45f4979a65a605fda727d464` (LOCAL_ONLY).

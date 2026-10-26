@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "original_head_unchanged": true,
+    "original_tracked_status_unchanged": true,
+    "preflight_preservation_pass": true
+  },
+  "all_pass": true,
+  "tests_repeated": 0
+}

@@ -1,0 +1,47 @@
+{
+  "status": "HOLD_TEST_APPLICATION_NOT_CONFIGURED_OR_UNVERIFIED",
+  "base_commit": "6fcaafa06ca5b89bde7eeffe55431afa125ddb40",
+  "checks": {
+    "zip_sha": true,
+    "prepared_manifest_sha": true,
+    "candidate_manifest_sha": true,
+    "adapter_sha": true,
+    "phase2_source_sha": true,
+    "boot_approval_sha": true,
+    "DiscordMobileOffline20261026/Stage1Verified.json:git_exact_or_CRLF_only": true,
+    "DiscordMobileOffline20261026/Stage1Verified.json:prior_raw_baseline": true,
+    "DiscordMobileOffline20261026/OfflineTests.json:git_exact_or_CRLF_only": true,
+    "DiscordMobileOffline20261026/OfflineTests.json:prior_raw_baseline": true,
+    "DiscordMobilePhase3Prepared20261026/OfflineTests.json:git_exact_or_CRLF_only": true,
+    "phase3_package_5_pass_evidence_preserved": true
+  },
+  "all_preservation_checks_pass": true,
+  "local_discovery": {
+    "programdata_mobile_trial_directory_present": false,
+    "prepared_root_files": [
+      "Manifest.UNAPPROVED.json",
+      "MobileDiscordPhase3.UNAPPROVED.zip"
+    ],
+    "dedicated_trial_environment_variable_names": []
+  },
+  "remote_application_existence": "NOT_QUERIED_NOT_PROVEN_ABSENT",
+  "application_id": "NOT_VERIFIED",
+  "owner": "NOT_VERIFIED",
+  "guild_channel_permissions": "NOT_VERIFIED",
+  "trial_secret_store": "NO_CONFIRMED_DEDICATED_STORE",
+  "host_launches": 0,
+  "command_creates": 0,
+  "command_deletes": 0,
+  "mobile_roundtrip": "NOT_ATTEMPTED",
+  "fake_executor_calls": 0,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_posts": 0,
+  "operational_sqlite_operations": 0,
+  "tests_repeated": 0,
+  "cleanup": "NOT_APPLICABLE_NO_NEW_HOST_OR_COMMAND_OR_PERMIT",
+  "original_head": "bfd281545632877325f5d21e04cefb924042c465",
+  "original_tracked_dirty_lines": 308,
+  "original_tracked_status_sha256": "95cc820464252e3d6e19bc885df4ee95ce3f5f999e08ee7201078142df71482c",
+  "evidence_comparison_note": "Git checkout line endings differ; normalized Git content and previous raw baseline checked separately; source evidence not rewritten."
+}

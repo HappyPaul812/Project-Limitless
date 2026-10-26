@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 Phase3 실제 시험 승인 — 앱 설정 미확인 HOLD
+
+대표의 별도 시험 앱 등록/Fake 왕복/정리 승인은 확인했지만 전용 application·대표 소유권·guild/channel·로컬 시험 token 저장소를 확인하지 못해 실행 전 HOLD했습니다. 외부에 앱이 없다고 단정하지 않으며 운영 인증을 읽어 대체하지 않았습니다. Portal 최소 절차와 모바일 순서는 `DiscordMobile_Phase3_LiveTrial_HOLD_20261026.md`에 기록했습니다.
+
+Host/등록/삭제/모바일 실행/Fake/실제 모델/공식 usage/운영 SQLite0, 새 permit·소비 없음. 기존 ZIP/Manifest/source/boot approval SHA 및 Phase1/2/3 증거 보존, 기존 성공 테스트 반복0. MANUAL/실업무 HOLD·A 미활성, 운영 bot·아트·부팅·인증/게임·Save·Push/main·PC 변경0. 현재 모바일 시험 승인은 미실행이며 앱/ID/권한/보안 설정 준비 후 같은 승인 범위에서 재개할 수 있습니다. 시작/source commit6fcaafa0, 문서 commit은 Issue66 완료 보고 참조.
+
 ## 2026-10-26 Issue #66 Phase3 — Discord SDK 어댑터 준비 / 실연결 미실행
 
 Phase3 implementation commit: `8cbf90ba84c93f9c45f4979a65a605fda727d464` (LOCAL_ONLY).
