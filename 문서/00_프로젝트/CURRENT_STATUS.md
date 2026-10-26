@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 현재keyring/무효view_image확인 — 지원제어후보갱신 / 새실전승인필요
+
+review93fa150e서비스진단성공·projection20b0e1b0대조. 현재서비스config818c2e7b과거승인일치·keyring/ChatGPT확인. 직접실패401인증누락유지. 시작전error2는tools.view_image무시경고로확인. 승인CLI의인증없는features list2회에서구tools옵션에도view_image=true, features.view_image=false는false(exit0/stderr없음)확인.
+
+격리entry에서구옵션을지원키로대체하고image_generation/sleep_tool/tool_suggest도false추가. 기존keyringSHA gate/명시·Sandbox/검증기/승인/도구차단유지. 회귀38PASS/0FAIL+config비교2PASS·이전정제기17/native7/예산/제품전체재실행0. 실제모델/usage0·config전용CLI2만. 원격추론해결은미검증.
+
+상세 Keyring_ViewImage_Candidate_Resolution_20261026.md / Evidence/KeyringViewImageResolution20261026/. 새후보미배포·새모델request/permit/패키지발급0·기존소비marker/ZIP불변. 이전모델명령재실행금지·새실전은현후보범위/새패키지SHA/신규승인필수. 1단계여전히NOT_VERIFIED·2단계미착수; 향후별도승인실전6조건VERIFIED시추가지시없이2단계오프라인즉시착수승인유효. MANUAL/HOLD·A/운영/게임/Push/부팅변경0. 기반67216003·최종commit은Issue66참조.
+
 ## 2026-10-26 Issue66 717a직접원인HTTP401확인 — keyring선택후보55PASS/미배포/1단계미성공
 
 서비스로그review2a87401a성공·projection SHA2adef4fd대조. error10+turn.failed모두HTTP401 Unauthorized/Missing authentication. item3은error/error/error(초기2개설정진단+HTTPS전환오류)·실제도구항목아님. CLIexit1/완료turn0/agent_message0. QUOTA휴리스틱429부분문자열오판가능수정·실제429확인없음. 기존로그/boot/DB/소비marker보호·진단TaskREMOVED/Jobexit0자식0.

@@ -71,6 +71,9 @@ class EntryTests(unittest.TestCase):
             self.assertNotIn('model_providers.openai',' '.join(command))
             self.assertIn('--sandbox',command);self.assertIn('read-only',command)
             self.assertIn('cli_auth_credentials_store="keyring"',command)
+            for control in ('features.view_image=false','features.image_generation=false','features.sleep_tool=false','features.tool_suggest=false'):
+                self.assertIn(control,command)
+            self.assertNotIn('tools.view_image=false',command)
             self.assertFalse(any('TOKEN' in name or 'API_KEY' in name for name in environment))
             if self.mode=='no_budget':raise TimeoutError()
             (self.archive/'final-response.txt').write_text(c.EXPECTED,encoding='utf8')

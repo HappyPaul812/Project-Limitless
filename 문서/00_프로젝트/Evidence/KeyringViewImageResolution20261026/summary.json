@@ -1,0 +1,41 @@
+{
+  "boot_tasks_unchanged": true,
+  "cleanup": "REMOVED",
+  "discord_posts": 0,
+  "sqlite_work_operations": 0,
+  "approval_unchanged": true,
+  "new_ai_permit_created": false,
+  "task_exit_code": 0,
+  "official_usage_reads": 0,
+  "status": "SANITIZED_LOG_PROJECTION_WRITTEN",
+  "review_id": "93fa150e749d4d6ea661d6040e3aed8b",
+  "inference_consumption_marker_preserved": true,
+  "child": {
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "status": "SANITIZED_LOG_PROJECTION_WRITTEN",
+    "sqlite_work_operations": 0,
+    "review_id": "93fa150e749d4d6ea661d6040e3aed8b",
+    "model_calls": 0,
+    "source_request_id": "717a0afa735d485daf790579b964e8c2",
+    "source_logs_unchanged": true,
+    "session_id": 0,
+    "job": {
+      "stdout_truncated": false,
+      "timed_out": false,
+      "active_processes": 0,
+      "cleanup_verified": true,
+      "stderr_truncated": false,
+      "exit_code": 0
+    },
+    "discord_posts": 0,
+    "projection_sha256": "20b0e1b09c31b3f772b46f773448e4d30662482a839c21e1e0f58816824fcb15",
+    "official_usage_reads": 0,
+    "sid_matches": true,
+    "logon_type": 4
+  },
+  "projection_path": "C:\\ProgramData\\LimitlessRelay\\InferenceLogReviews\\93fa150e749d4d6ea661d6040e3aed8b\\Output\\projection.json",
+  "projection_sha256": "20b0e1b09c31b3f772b46f773448e4d30662482a839c21e1e0f58816824fcb15",
+  "model_calls": 0,
+  "ledger_unchanged": true,
+  "source_request_id": "717a0afa735d485daf790579b964e8c2"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "required_disabled": {
+    "shell_tool": "false",
+    "apps": "false",
+    "browser_use": "false",
+    "computer_use": "false",
+    "multi_agent": "false",
+    "view_image": "false",
+    "image_generation": "false",
+    "sleep_tool": "false",
+    "tool_suggest": "false",
+    "hooks": "false",
+    "memories": "false"
+  },
+  "stderr": "",
+  "model_calls": 0,
+  "usage_reads": 0,
+  "cli_config_only_processes": 1,
+  "isolated_codex_home_no_auth": true
+}

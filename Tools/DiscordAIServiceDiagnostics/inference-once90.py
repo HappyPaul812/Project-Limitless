@@ -129,7 +129,10 @@ def run(request, budget_ms):
             raise Denied('INFERENCE_USAGE_HOLD')
         if time.time()-value['observed'] > 30: raise Denied('INFERENCE_USAGE_STALE_HOLD')
         command = probe_command(provider.executable, workspace)[:-1]
-        for item in [store_control, 'tools.view_image=false', 'features.hooks=false', 'features.memories=false']:
+        # 고정CLI는 tools.view_image를무시합니다. 실제features조회에서 false를확인한키만사용합니다.
+        for item in [store_control, 'features.view_image=false', 'features.image_generation=false',
+                     'features.sleep_tool=false', 'features.tool_suggest=false',
+                     'features.hooks=false', 'features.memories=false']:
             command += ['-c', item]
         command += ['--output-last-message', str(last), '-']
         if any('model_providers.' in arg for arg in command): raise Denied('INFERENCE_PROVIDER_OVERRIDE_HOLD')

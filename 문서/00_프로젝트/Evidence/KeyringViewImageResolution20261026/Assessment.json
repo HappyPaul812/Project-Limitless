@@ -1,0 +1,71 @@
+{
+  "status": "CURRENT_KEYRING_CONFIRMED_SUPPORTED_TOOL_CONTROLS_CANDIDATE_OFFLINE_PASS",
+  "source_request_id": "717a0afa735d485daf790579b964e8c2",
+  "review_id": "93fa150e749d4d6ea661d6040e3aed8b",
+  "projection_sha256": "20b0e1b09c31b3f772b46f773448e4d30662482a839c21e1e0f58816824fcb15",
+  "service_context": {
+    "sid_matches": true,
+    "session_id": 0,
+    "logon_type": 4
+  },
+  "current_auth_config_metadata": {
+    "sha256": "818c2e7b52f1c574fd1f9e0ac49dd876ad10746ff5ad95ce427d636938747bc3",
+    "matches_historical_approved_sha": true,
+    "credential_store": "keyring",
+    "forced_login_method": "chatgpt",
+    "raw_config_exported": false,
+    "observation_scope": "CURRENT_READ_ONLY_METADATA_NOT_FAILURE_TIME_SNAPSHOT"
+  },
+  "http401_events": 10,
+  "turn_failed_http401": true,
+  "configuration_error_items": {
+    "count": 2,
+    "type": "error",
+    "key_mentioned": "tools.view_image",
+    "before_turn_started": true
+  },
+  "pinned_cli_config_comparison": {
+    "legacy_tools_view_image_false_effective_view_image": true,
+    "replacement_features_view_image_false_effective_view_image": false,
+    "required_disabled": {
+      "shell_tool": "false",
+      "apps": "false",
+      "browser_use": "false",
+      "computer_use": "false",
+      "multi_agent": "false",
+      "view_image": "false",
+      "image_generation": "false",
+      "sleep_tool": "false",
+      "tool_suggest": "false",
+      "hooks": "false",
+      "memories": "false"
+    }
+  },
+  "changes": {
+    "inference-once90.py": {
+      "before_sha256": "058d6274cdc430eff86eaae7eccf33256681ec4175dc934e3290b3f869fdd2cc",
+      "after_sha256": "b841cf6557046ada96b67564be7e093dcb0666980577de8ab37273dd0c22b1ab"
+    },
+    "test_inference_once90.py": {
+      "before_sha256": "880670aba528d3da354307077045e6fc262e06b9ebc78e1c5518df2fb7d02071",
+      "after_sha256": "e8c61f571ac625f584cd35e4d47456bd04f99b01ff8bdb09e77ca55dfba42d81"
+    }
+  },
+  "regression_tests": {
+    "new_changed_entry_pass": 38,
+    "fail": 0,
+    "config_only_comparison_pass": 2,
+    "prior_projector17_rerun": false
+  },
+  "official_cli_config_only_processes": 2,
+  "inference_exec_processes": 0,
+  "official_usage_reads": 0,
+  "new_ai_permit": false,
+  "candidate_deployed": false,
+  "candidate_live_verified": false,
+  "old_consumption_markers_preserved": true,
+  "stage1_verified": false,
+  "stage2_started": false,
+  "phase2_conditional_owner_authorization_retained": true,
+  "base_commit": "6721600339f08e657786693af8552c940cee2d62"
+}
