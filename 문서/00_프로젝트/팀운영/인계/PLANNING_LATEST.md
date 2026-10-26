@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord #66 Session9 실행 조건 HOLD / 사용량 시험 1회 미소진
+
+- [Codex Issue #66 사전게이트 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6405623813): 승인된 격리 trial·공식 사용량-only 최대1회 진행 시 비관리자 일반 사용자 **Session9** 및 작업 스케줄러 `CimJobException`으로 서비스 계정 **Session0/logon4** 확인이 불가능해 선행조건에서 HOLD. **패키지 SHA44 PASS/기존40 보호**, 그러나 trial 배포0·permit0·실조회0·모델0·Discord0. 승인된 1회 시험은 미소진, 자동 재시도 금지.
+- 다음 제한작업: 바울 대표가 직접 관리자 PowerShell을 여는 로컬 단계에서 기존 서비스 계정/배치 실행경로의 **권한·실행 정체성·Session0** 검증. 관리자 토큰 = 서비스 Session0 토큰이 아님. 기존 OnBoot2·봇/아트 감시·SHA/운영52·SQLite·CODEX_HOME/토큰 변경하지 말고, 경로 검증이 되지 않으면 HOLD. 암호·토큰 공유 금지, PIN 자동 로그인 금지.
+- 이전 `OFFICIAL_READ_REJECTED` 실질 원인과 과거 `turn.failed`는 여전히 미확정. 새 RPC 조회 호출 자체가 없어 이번 Session9/CIM 오류를 서버 사용량 오류로 판단하지 않음. Codex 로컬 보고 commit `84486500a79cdf59c41d4204d6a7c3427356422d` (`REMOTE_NOT_PUSHED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `77d032e448312bafd810f5dfc77ecda96d77e726`.
+- MANUAL 및 AI_EXECUTION_HOLD 유지. GitHub Push/main 병합·Unity/게임/Save·실제 A 재개/컴퓨터 종료 없음.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 12 PASS, usage-only 격리 배포 사전검증 완료
 
 - Codex [Issue #66 latest](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404994131) + 사용자 보고 기준 신규 usage-only 독립 진입점 오프라인 **12 PASS/0 FAIL**. 기존 검증22건/공식 전체 CLI 설치 검사 재실행 없음. **실제 사용량 조회0·AI 추론0·운영 배포0, MANUAL 유지.**
