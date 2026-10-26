@@ -1,0 +1,40 @@
+{
+  "task_exit_code": 0,
+  "automatic_retries": 0,
+  "parent_session_id": 9,
+  "model_calls": 0,
+  "discord_posts": 0,
+  "parent_is_admin": true,
+  "scheduler_retry_count": 0,
+  "request_id": "c332610ebdfa43f1b4b13b3dea5120d6",
+  "task_limit_seconds": 20.0,
+  "usage_permit_created": false,
+  "stage": "WAIT_SERVICE_ENVIRONMENT",
+  "cleanup": "REMOVED",
+  "task_policy": {
+    "allow_hard_terminate": true,
+    "limit_seconds": 20.0,
+    "logon_type": "Password",
+    "run_level": "Limited",
+    "restart_count": 0
+  },
+  "ledger_unchanged": true,
+  "status": "ENVIRONMENT_PASS_USAGE_NOT_ATTEMPTED",
+  "boot_tasks_unchanged": true,
+  "approval_unchanged": true,
+  "usage_calls": 0,
+  "child_sqlite_operations": 0,
+  "child": {
+    "codex_home_unchanged": true,
+    "sid_matches": true,
+    "cli_sha_matches": true,
+    "error_chain": null,
+    "reason": null,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "logon_type": 4,
+    "session_id": 0,
+    "stage": "ENVIRONMENT_ONLY_COMPLETE",
+    "status": "PASS",
+    "protected_path_read_write": true
+  }
+}

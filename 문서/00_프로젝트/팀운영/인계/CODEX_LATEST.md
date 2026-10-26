@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 서비스환경 실제PASS 대조·사용량 단발 최종명령 준비
+
+대표전달c332610e와로컬summary일치: 관리자parent Session9/서비스childSession0-logon4·SID/CLI·CODEX_HOME/보호I/O·20초/재시도0·task종료0·REMOVED·부팅/승인/장부불변PASS. 실제usage0/AI0로기존1회승인미소진.
+
+run-approved-usage-once.ps1/UsageOnlyJob.cs 준비: 별도ProgramData trial/정확44허용범위·전체단발fuse/CreateNew/20초Scheduler+Job kill-on-close/남은시간최대17초Python/필수배포SHA/기존entryf176유지. permit비활성·해당임시작업제거·보호로그보존. 가짜Python새Job4건PASS·구문/비관리자가드PASS·기존44/22+12재실행0. 현재새배포/활성permit/실조회/모델0.
+
+정확한관리자직접명령은 ServiceEnvironment_PASS_UsageOnce_LocalRun_20261026.md. 기존승인범위이며새승인요구아님; 이전암호입력을저장하지않아로컬Get-Credential만한번더필요. 대표실행결과후최대1회여부/RPC코드/정리/보호확인하고중지. 지금자동실행/추가조회/AI/A금지. Evidence/ServiceEnvironmentPassUsageOnce20261026/. commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 안전 배치 환경 확인 명령 준비 — 관리자 직접 실행 대기
 
 과거3483af06 서비스Session0/logon4 PASS의 Password/Limited 등록·정리 방식과 기존 BatchReadOnlyMetadata 모듈을 재사용한 restore-service-environment.ps1 준비. 새 parser/비관리자가드/readonly장부도우미/사용량없는명령범위 PASS. 실제관리자/서비스실행은대표직접실행대기이며 기존44·22+12재검증0.

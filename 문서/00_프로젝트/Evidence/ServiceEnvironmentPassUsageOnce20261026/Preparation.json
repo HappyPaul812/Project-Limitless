@@ -1,0 +1,23 @@
+{
+  "status": "ENVIRONMENT_PASS_CONFIRMED_USAGE_COMMAND_READY_WAITING_OWNER",
+  "environment_request": "c332610ebdfa43f1b4b13b3dea5120d6",
+  "native_fake_tests": {
+    "normal": "PASS",
+    "bounded_pipes": "PASS",
+    "timeout_tree": "PASS",
+    "parent_exit_kill_on_close": "PASS"
+  },
+  "launcher_parser": "PASS",
+  "nonadmin_guard": "PASS_NO_WRITES",
+  "previous_44_22_12_tests_repeated": false,
+  "actual_usage_reads": 0,
+  "actual_model_calls": 0,
+  "actual_discord_posts": 0,
+  "active_permit_created": false,
+  "global_launch_marker_created": false,
+  "sha256": {
+    "run-approved-usage-once.ps1": "ea7a24d93315baadfab9a62ef37b5174a00695dfff1405fe595e00b8a43afe5a",
+    "UsageOnlyJob.cs": "4be51b7fdbabb681bf822c5d22cd624f64bcf73f483fd017575a6e81759fd155"
+  },
+  "push": false
+}
