@@ -1,0 +1,21 @@
+{
+  "status": "OFFLINE_35_PASS_LIVE_DEPLOYMENT_HOLD",
+  "tests": 35,
+  "pass": 35,
+  "fail": 0,
+  "test_scope": "NEW_BUTTON_WORKER_BOUNDARIES_ONLY",
+  "actual_model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_calls": 0,
+  "operational_sqlite_operations": 0,
+  "service_task_registrations": 0,
+  "active_permits_created": 0,
+  "source_sha_verified": true,
+  "legacy_runner_four_pins_unchanged": true,
+  "boot_approval_sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f",
+  "live_bridge_implemented": false,
+  "live_admin_acl_and_outer_supervisor_verified": false,
+  "mode": "MANUAL",
+  "a_mode_enabled": false,
+  "remaining": "admin arm/mailbox reader/outer supervisor and cancel before real deployment"
+}

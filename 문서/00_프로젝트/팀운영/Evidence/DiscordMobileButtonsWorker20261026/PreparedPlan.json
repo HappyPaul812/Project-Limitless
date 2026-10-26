@@ -1,0 +1,80 @@
+{
+  "approved": false,
+  "status": "OFFLINE_READY_LIVE_HOLD",
+  "policy": {
+    "role": "PlanningAgent",
+    "scope": "PLANNING_CONNECTIVITY_READONLY",
+    "model_exec_max": 1,
+    "usage_app_server_max": 1,
+    "automatic_retries": 0,
+    "local_limit_seconds": 90,
+    "sandbox": "read-only",
+    "tools": false,
+    "provider": "openai",
+    "authentication": "existing_chatgpt_keyring",
+    "mode": "MANUAL",
+    "internal_http_retries": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+    "internal_stream_reconnects": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+    "remote_requests_exactly_one_guaranteed": false
+  },
+  "runner_pins": {
+    "inference-once90.py": "b841cf6557046ada96b67564be7e093dcb0666980577de8ab37273dd0c22b1ab",
+    "inference-once-core.py": "c9fa6329849ed28713bbfb0fb2f7ded043a04c721c02c10c80fb71d5206adcdf",
+    "InferenceJob90.cs": "93a9cd26ee7bf268e9327cb10bed92cc27d273ffc697e9da5b679675cca846cf",
+    "run-approved-inference-authfix-once90.ps1": "a9986f29c4a6ee8dc4d52439a86fce3cf451ac3f4e03b1daaae4d1ede0ec726a"
+  },
+  "runtime_count": 44,
+  "runtime_unchanged": 40,
+  "service": "PAUL-PC\\LIMITLESSRelaySvc",
+  "session": 0,
+  "logon": 4,
+  "native_budget_ms": 75000,
+  "python_budget_ms": 70000,
+  "deadline_includes": [
+    "handoff",
+    "preparation",
+    "usage",
+    "inference",
+    "cleanup"
+  ],
+  "required_live_gates": [
+    "separate_explicit_approval",
+    "admin_prearmed_temporary_task",
+    "real_service_sid_session0_logon4",
+    "admin_owned_arm_and_result_acl",
+    "bot_write_inbox_only",
+    "protected_projection_reader",
+    "outer_90s_monotonic_supervisor_and_cancel",
+    "exact44_and_cli_config_sha"
+  ],
+  "prepared_request_id": "1a2ffc6823db49fd8fe25a86ad72f51b",
+  "request_state": "PREPARED_ONLY_NOT_PERMIT_NOT_CONSUMED",
+  "base_commit": "243bf0bab0841b545f5ff9cc4f187f2880826b4c",
+  "application_id": "1564156403571105906",
+  "production_application_id": "1563102982386749440",
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_calls": 0,
+  "service_task_registrations": 0,
+  "active_permits_created": 0,
+  "operational_sqlite_operations": 0,
+  "mode_changed": false,
+  "new_files": {
+    "Tools/DiscordAICollab/collab/mobile_planning_buttons.py": {
+      "before": null,
+      "after": "c970065786e49a8aae50e77fa80505c367a7a6e525cb6e6e9987be47dccbc0ee"
+    },
+    "Tools/DiscordAICollab/collab/session0_planning_bridge.py": {
+      "before": null,
+      "after": "2461749d928871e780413b9e0b5c675975c000cd2265a6d3618c68aa27acfee8"
+    },
+    "Tools/DiscordAICollab/tests/test_mobile_planning_buttons.py": {
+      "before": null,
+      "after": "bef508094b561c20d284f33410aaef76203667eab1ef634e2e076899495095ac"
+    },
+    "Tools/DiscordAIServiceDiagnostics/mobile-worker-contract.py": {
+      "before": null,
+      "after": "16fc5cd329a3da6c53d1c2865acee7dd4f685433164470c82c71872171270710"
+    }
+  }
+}

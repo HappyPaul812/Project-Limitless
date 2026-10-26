@@ -1,3 +1,13 @@
+## 2026-10-26 Issue #66 모바일 버튼·Worker 오프라인 후보 — 35 PASS / 실전 배포 HOLD
+
+기준 commit `243bf0bab0841b545f5ff9cc4f187f2880826b4c`. 새 버튼5개와 전체 SHA/대표/역할/상위범위/절대만료/승인소비/단발 인계·보고를 격리 구현했습니다. 새 합성 Session0→기존 strict JSONL→격리 SQLite→Discord 보고 callback 연결 등 **35 PASS / 0 FAIL**. 기존 성공 전체 재시험0. 실제 모델/usage/Discord/운영 DB/서비스 task/active permit0, MANUAL/A 미활성.
+
+**실제 Worker 연결은 미완료이며 배포 HOLD**입니다. live adapter는 무조건 거부, fixture 결과는 live 주입 금지. 다음에는 관리자 전용 arm/결과 ACL·보호 reader·고정 서비스 task 인계·전달/준비/정리 포함 전체90초 Supervisor·실행 중 취소를 구현/오프라인 검증한 뒤 별도 승인받아야 합니다. 현재 일반 봇과 관리자 동일 SID의 FullControl/사용자 소유 파일은 보호 경계로 인정하지 않습니다. 기존 계정/ACL/auth/boot 변경0. 기존 서비스 실행기4 SHA와 boot approval SHA 일치.
+
+준비 ID `1a2ffc6823db49fd8fe25a86ad72f51b`는 approved=false인 계획만, permit/소비 아님. 새 실전 ID/SHA는 이후 실행 전 다시 바인딩. 지금 대표에게 실제 모바일 명령/관리자 명령을 실행하도록 안내하지 않습니다. 준비 후 `/limitless-trial task`→내용→실행 승인→실행→진행 확인, Planning 고정 문장1건만. 후속 역할 자동 승인/미술 승인 변경 없음. 운영/Unity/Save/Push/main/PC 변경0. 현재 live 봇 건강/운영 DB 내용 재검증을 한 것은 아님.
+
+상세 DiscordMobile_Buttons_Worker_Offline_20261026.md, Evidence/DiscordMobileButtonsWorker20261026/{PreparedPlan.json,Tests.txt,Result.json}. SHA는 PreparedPlan 전체64자리 참조. 기존 후보/마커 보존·운영 배포0이므로 현재 원상복구 작업 없음. 구현 commit은 아래 또는 Issue66 완료 댓글에 기재합니다.
+
 ## 2026-10-26 Issue #66 미진행 웹 시험 완료 — Fake4역할 PASS / 정상 정리 PASS
 
 마지막 관련 구현 commit: `341f6a5168a4e14b89f417de4089b5a59167d88e` (LOCAL_ONLY).

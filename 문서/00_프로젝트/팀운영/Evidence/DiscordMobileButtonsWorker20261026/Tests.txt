@@ -1,0 +1,40 @@
+test_absolute_expiry (test_mobile_planning_buttons.ButtonWorkerTests.test_absolute_expiry) ... ok
+test_approval_click_does_not_extend_expiry (test_mobile_planning_buttons.ButtonWorkerTests.test_approval_click_does_not_extend_expiry) ... ok
+test_approval_not_execution (test_mobile_planning_buttons.ButtonWorkerTests.test_approval_not_execution) ... ok
+test_button_worker_discord_connection (test_mobile_planning_buttons.ButtonWorkerTests.test_button_worker_discord_connection) ... ok
+test_cancel_after_consumption_no_restore (test_mobile_planning_buttons.ButtonWorkerTests.test_cancel_after_consumption_no_restore) ... ok
+test_cancel_before_run (test_mobile_planning_buttons.ButtonWorkerTests.test_cancel_before_run) ... ok
+test_cancel_completed_preserves_result (test_mobile_planning_buttons.ButtonWorkerTests.test_cancel_completed_preserves_result) ... ok
+test_changed_interaction_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_changed_interaction_denied) ... ok
+test_discord_failure_never_reruns (test_mobile_planning_buttons.ButtonWorkerTests.test_discord_failure_never_reruns) ... ok
+test_duplicate_receipt_and_request (test_mobile_planning_buttons.ButtonWorkerTests.test_duplicate_receipt_and_request) ... ok
+test_fixture_cannot_enter_live (test_mobile_planning_buttons.ButtonWorkerTests.test_fixture_cannot_enter_live) ... ok
+test_full_fixture_result_and_report (test_mobile_planning_buttons.ButtonWorkerTests.test_full_fixture_result_and_report) ... ok
+test_jsonl_forbidden_tool_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_jsonl_forbidden_tool_hold) ... ok
+test_live_gate_disabled_and_frozen_runner_unchanged (test_mobile_planning_buttons.ButtonWorkerTests.test_live_gate_disabled_and_frozen_runner_unchanged) ... ok
+test_nonowner_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_nonowner_denied) ... ok
+test_nonzero_exit_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_nonzero_exit_hold) ... ok
+test_plain_dictionary_not_trusted (test_mobile_planning_buttons.ButtonWorkerTests.test_plain_dictionary_not_trusted) ... ok
+test_quota_five_hour_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_quota_five_hour_hold) ... ok
+test_quota_weekly_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_quota_weekly_hold) ... ok
+test_restart_holds_and_preserves_consumption (test_mobile_planning_buttons.ButtonWorkerTests.test_restart_holds_and_preserves_consumption) ... ok
+test_run_requires_approval (test_mobile_planning_buttons.ButtonWorkerTests.test_run_requires_approval) ... ok
+test_sdk_callback_handoff_once (test_mobile_planning_buttons.ButtonWorkerTests.test_sdk_callback_handoff_once) ... ok
+test_sdk_five_buttons_no_sha_parameter (test_mobile_planning_buttons.ButtonWorkerTests.test_sdk_five_buttons_no_sha_parameter) ... ok
+test_sdk_permission_denied_before_approval (test_mobile_planning_buttons.ButtonWorkerTests.test_sdk_permission_denied_before_approval) ... ok
+test_service_context_variations_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_service_context_variations_hold) ... ok
+test_sha_role_and_upstream_change_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_sha_role_and_upstream_change_denied) ... ok
+test_stale_quota_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_stale_quota_hold) ... ok
+test_strict_json_duplicate_keys (test_mobile_planning_buttons.ButtonWorkerTests.test_strict_json_duplicate_keys) ... ok
+test_ticket_and_arm_sha_tamper (test_mobile_planning_buttons.ButtonWorkerTests.test_ticket_and_arm_sha_tamper) ... ok
+test_view_and_status (test_mobile_planning_buttons.ButtonWorkerTests.test_view_and_status) ... ok
+test_whole_deadline_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_whole_deadline_hold) ... ok
+test_wrong_app_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_wrong_app_denied) ... ok
+test_wrong_channel_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_wrong_channel_denied) ... ok
+test_wrong_final_hold (test_mobile_planning_buttons.ButtonWorkerTests.test_wrong_final_hold) ... ok
+test_wrong_message_denied (test_mobile_planning_buttons.ButtonWorkerTests.test_wrong_message_denied) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 79.715s
+
+OK
