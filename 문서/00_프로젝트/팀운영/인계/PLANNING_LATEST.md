@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-26 — LSA 설치 후보36 PASS, 부분 자산 복구와 재설치 별도 승인
+
+- [Issue #66 Codex 최신 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418802491): LSA `SeBatchLogonRight` UTF16 34/36·null/해제, 설치기 오류 단계·native/HRESULT/InnerException 보호 로그, runner `exit` 제거의 **격리 신규36 PASS/0 FAIL**. 실제 설치/IPC/모델/usage/Discord0. 기존 Phase1 실제 Session0 추론 PASS·Phase2 Fake 4역할·웹 모바일 일부 확인 결과와 혼동 금지. 과거 Installer 원시 오류는 소급 검증 불가.
+- 새 비승인 패키지 `F:\study\codex\Project-Limitless\Temp\Session0LsaRepairCandidate20261026`, Installer SHA `79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8`, Manifest SHA `33ed9a8318c039cd70cf8260338f56e81025ce891c0156ac18556c2aec36d165`, ZIP SHA `d678e760c1ccd41d05a4683a776cf2e877026c1de9bc5fd0a61aeccb4231daf3`, payload855중2변경/853불변, 별도 wrapper SHA `04ccc520cf9271cb055674f5636e6360fdbaceefddaae73077c247644349de0e`. `codex/discord-usage-diagnostics-20261026` impl `b2ae449450c7042bda413fe07427e402babb0480`, docs `ae163034dd299254fbc0b2e30a482f821faf08ca` (LOCAL/NO PUSH).
+- 관리자 최근 판독: 새 BOT SID...-1008 Disabled·Users만/직접 batch0, 새 Trial Task 현재 부재, 기존 보호 Code root(855 SHA)만 남고 State/Record 없음. 지난 Install1 소비 보존, 새 후보는 **기존 부분 자산 자동재사용/덮어쓰기 불가**.
+- **다음 별도 승인 ① 부분 자산 검증·정리만:** 관리자 읽기전용 ID/SID/소유/경로/reparse/SHA/Task·서비스·타 참조 및 증거 Snapshot 확인 후 정확 신규 시험 Bot 계정/Code root만 제한 정리; 자산 식별/참조 불명·해시 차이/Task 존재 시 HOLD, 나머지 계정/기존 부팅/토큰·인증/코드·증거/SQLite 불변. 정리 결과 보고/STOP. **별도 승인 ② 새 설치**: 후보 sha 재검증/작업 부재·새 계정 없음/보호 Manifest/854? (이번 기준 853 불변) 검사 후 신규 1회 제한 설치 및 실제 SD/SID 확인, IPC/AI/A는 추가 승인. 기존 설치 래퍼 재사용·Install1 초기화 절대 금지. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) commit `92d10d917379e69c54e2b96b3918bc0da5b9b388`.
+- MANUAL/A HOLD, Unity·Save·본편·기존 봇·아트·OnBoot·main 보호.
+
+---
+
 # PLANNING / 2026-10-26 — LSA 권한 이름 Length 결함 확정, 설치 사고 원시 코드 미확정
 
 - Codex [Issue #66 관리자 읽기 전용 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418116443): `TrialAccountPolicy.cs:21` `SeBatchLogonRight`는 실제 UTF-16 byte length **34**(+NUL2, maximum **36**)인데 `Length=32/Max=34`로 마지막 `t`가 누락되는 **정적/문자열 재현 가능한 코드 결함 확정**. 반면 실제 1차 install의 LSA 도달 여부, 원래 HRESULT/NTSTATUS/NativeErrorCode 및 유일한 실패 원인은 catch에 의해 소실 → `CODE_DEFECT_CONFIRMED / INCIDENT_NATIVE_CAUSE_NOT_VERIFIED`.
