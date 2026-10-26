@@ -1,0 +1,50 @@
+{
+  "status": "USAGE_ONLY_SESSION0_VERIFIED_STOPPED",
+  "request_id": "773d9ecb7d944d9783c57ead117f471c",
+  "source_summary_sha256": "d786251204baf8464b1d8b58d2f5ad9461870ef86db46690adeb34c9fcc24a76",
+  "run_source_commit": "b44da900d36f8940161d941139952cc789a5721f",
+  "service_account": "PAUL-PC\\LIMITLESSRelaySvc",
+  "session_id": 0,
+  "logon_type": 4,
+  "official_usage_reads": 1,
+  "actual_ai_calls": 0,
+  "discord_posts": 0,
+  "automatic_retries": 0,
+  "child_sqlite_operations": 0,
+  "rpc": {
+    "status": "PASS",
+    "process_exit_code": 0,
+    "error_code": null,
+    "method": "account/rateLimits/read",
+    "request_id": 3
+  },
+  "ordinary_allowed": true,
+  "observed_kst": "2026-10-26T10:58:46.131802+09:00",
+  "windows": [
+    {
+      "minutes": 300,
+      "used_percent": 81.0,
+      "resets_at": 1792984740.0,
+      "remaining_percent": 19.0,
+      "resets_at_kst": "2026-10-26T12:19:00+09:00"
+    },
+    {
+      "minutes": 10080,
+      "used_percent": 13.0,
+      "resets_at": 1793571540.0,
+      "remaining_percent": 87.0,
+      "resets_at_kst": "2026-11-02T07:19:00+09:00"
+    }
+  ],
+  "permit_active_path_absent": true,
+  "inactive_permit_preserved": true,
+  "temporary_task_removed": true,
+  "job_active_processes": 0,
+  "consumed_markers_preserved": true,
+  "mode": "MANUAL",
+  "operating_protection_reported_pass": true,
+  "further_live_checks": 0,
+  "actual_model_tested": false,
+  "auto_resume_enabled": false,
+  "push": false
+}

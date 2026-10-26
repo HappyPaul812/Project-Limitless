@@ -1,0 +1,79 @@
+{
+  "automatic_retries": 0,
+  "ledger_unchanged": true,
+  "usage_launch_attempts": 1,
+  "boot_tasks_unchanged": true,
+  "model_calls": 0,
+  "task_exit_code": 0,
+  "approval_unchanged": true,
+  "parent_session_id": 9,
+  "permit_deactivated": true,
+  "stage": "START_APPROVED_USAGE_ONCE",
+  "usage_read_attempts": 1,
+  "cleanup": "REMOVED",
+  "parent_is_admin": true,
+  "child": {
+    "sqlite_operations": 0,
+    "model_calls": 0,
+    "status": "USAGE_ONLY_OBSERVED",
+    "usage_read_attempts": 1,
+    "session_id": 0,
+    "stage": "JOB_SUPERVISED_USAGE",
+    "rpc": {
+      "status": "PASS",
+      "process_exit_code": 0,
+      "error_code": null,
+      "method": "account/rateLimits/read",
+      "request_id": 3
+    },
+    "entry_result": {
+      "status": "USAGE_ONLY_OBSERVED",
+      "discord_posts": 0,
+      "automatic_retries": 0,
+      "official_usage": {
+        "windows": [
+          {
+            "minutes": 300,
+            "used_percent": 81.0,
+            "resets_at": 1792984740.0
+          },
+          {
+            "minutes": 10080,
+            "used_percent": 13.0,
+            "resets_at": 1793571540.0
+          }
+        ],
+        "observed": 1792979926.131802,
+        "ordinary_allowed": true,
+        "source": "CODEX_APP_SERVER_OFFICIAL"
+      },
+      "model_calls": 0,
+      "usage_read_attempts": 1,
+      "reason": "NO_MODEL_OR_MODE_CHANGE",
+      "mode_changed": false,
+      "sqlite_operations": 0
+    },
+    "private_diagnostics": "PROTECTED_SERVICE_PROFILE_ONLY_NOT_EXPORTED",
+    "discord_posts": 0,
+    "supervisor_budget_ms": 17000,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "job": {
+      "timed_out": false,
+      "stderr_truncated": false,
+      "stdout_truncated": false,
+      "exit_code": 0,
+      "active_processes": 0,
+      "cleanup_verified": true
+    },
+    "codex_home_unchanged": true,
+    "request_id": "773d9ecb7d944d9783c57ead117f471c",
+    "automatic_retries": 0,
+    "logon_type": 4,
+    "sid_matches": true
+  },
+  "deployment": "PASS_44_EXACT_40_PRESERVED",
+  "discord_posts": 0,
+  "request_id": "773d9ecb7d944d9783c57ead117f471c",
+  "previous_launch_marker_preserved": true,
+  "status": "USAGE_ONLY_OBSERVED"
+}

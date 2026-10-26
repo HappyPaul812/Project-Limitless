@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 공식사용량 단발 실제성공 — Session0/logon4 / 종료완료
+
+request773d9ecb7d944d9783c57ead117f471c 실제로컬summary대조PASS. PAUL-PC\LIMITLESSRelaySvc SID일치·Session0/logon4·격리배포44/기존40보존·account/rateLimits/read id3 PASS/에러없음·appserver/Job/task exit0. launch1/공식사용량1·모델0/Discord0/자식SQLite업무0/재시도0.
+
+관측10/26 10:58:46 KST: 5시간사용81%(잔여19%,10/26 12:19회복), 주간사용13%(잔여87%,11/2 07:19회복), ordinary_allowed=true. 재조회하지않은당시값입니다. permit비활성·활성경로부재/TaskREMOVED/Job자식0/정리확인·소비marker및이전marker보존·OnBoot/boot승인/장부/ManuAL/CODEX_HOME보호PASS.
+
+단발성공후추가조회/모델/A/배포/재시작0으로중지. 과거OFFICIAL_READ_REJECTED/turn.failed원인소급확정금지·실제AI/A는여전히미승인·부팅직후무인AI체인전체검증아님. 상세 UsageOnly_Session0_Observed_PASS_20261026.md / Evidence/UsageOnlySession0PASS20261026/. 실행source b44da900, 완료docs commit은Issue66/최종보고참조. Push/main병합/Unity/게임/Save/종료재부팅0.
+
 ## 2026-10-26 Issue66 변수수정본 신규1회 명시승인 — 관리자 실행대기
 
 대표가 e10d02cb 수정본의 새trial1회를승인. serviceCodexHome/childSummaryPath 유지·부모/자식AST충돌0. 이전987a request/launch marker62a867/배포본/ZIP 보존, 새 bindingfix-e10d02cb 전용marker와 실행시새Guid만허용. 새permit은정확trial만·44runtime맵/기존40보존불변.
