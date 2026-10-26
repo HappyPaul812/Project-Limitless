@@ -1,0 +1,35 @@
+{
+  "status": "HOLD",
+  "stage": "VERIFY_ADMIN",
+  "action": "Inspect",
+  "request_id": "ce0507152c8c407d85e8a02999b91bbf",
+  "cleanup_consumed": false,
+  "code_files_deleted": 0,
+  "directories_deleted": 0,
+  "account_deleted": false,
+  "task_deletion_calls": 0,
+  "install_calls": 0,
+  "new_account_calls": 0,
+  "host_ipc_fake_calls": 0,
+  "model_calls": 0,
+  "usage_reads": 0,
+  "discord_calls": 0,
+  "automatic_retries": 0,
+  "reader": {
+    "session_id": 9,
+    "is_admin": false,
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1001",
+    "account": "PAUL-PC\\windows"
+  },
+  "error": {
+    "exceptions": [
+      {
+        "type": "System.Management.Automation.RuntimeException",
+        "hresult": -2146233087
+      }
+    ],
+    "code": "FIXED_ADMIN_REQUIRED"
+  },
+  "logical_exit_code": 2,
+  "receipt_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\Session0TrialCleanup20261027\\ce0507152c8c407d85e8a02999b91bbf.json"
+}

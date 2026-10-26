@@ -1,0 +1,14 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/cleanup-partial-trial.ps1",
+    "sha256": "4d2725591b67eb8d744299a6fe8e15fbad8069a0dc72725323b1b208c606ce29"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialCleanupNative.cs",
+    "sha256": "1c8abecf66cacf45e4dcc1958f1ea44f4243472012f273c46e2255722d9b50f9"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/test-trial-cleanup-offline.ps1",
+    "sha256": "62ec9cc0bf4610c89c424b6a76e260fc102b419192d5c2f5b30d545abefdf6a7"
+  }
+]

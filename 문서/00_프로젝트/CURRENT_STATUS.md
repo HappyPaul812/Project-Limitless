@@ -1,3 +1,9 @@
+## 2026-10-27 Issue #66 부분 자산 정리 승인 — WAIT_ADMIN_CLEANUP
+
+기준ae163034…/격리branch. 대표가 옛 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled Bot SID1008 정리만 승인. 현재 Codex Session9 비관리자라 실제 정리/백업0, FIXED_ADMIN_REQUIRED. 신규 정리 도구/Native helper 준비·합성 **43 PASS/0 FAIL**(실제삭제/LSA/Scheduler0), 기존 성공 suite 반복0.
+
+Admin/SID/owner·DACL·855 SHA·예상밖파일/ADS/reparse·전체Task/서비스·드라이버/프로세스 참조/보존검사→관리자보호855백업 및 evidence→재검사→handle파일별 삭제/빈디렉터리 비재귀→정확 SID계정삭제→최종검사. 참조/조회불가/불일치면HOLD, task등록삭제/권한완화/exit/설치경로 없음. 실제정리 대상·단일 관리자 명령·실패대응은 DiscordSession0_PartialCleanup_AdminPending_20261027.md. 현재 신규설치가능성 미확정, Install1/실패증거/LSA후보 그대로 보존. 정리PASS 후에도 새패키지 별도승인 전 미설치 유지. 관련commit Issue66 마감 참조.
+
 ## 2026-10-26 Issue #66 LSA 최소 수정 후보 — 신규36 PASS / 미설치
 
 구현 commit `b2ae449450c7042bda413fe07427e402babb0480` (LOCAL_ONLY), 기준d41ceaf1…/격리branch. UTF-16 길이동적계산·34/36·종료NULL/범위/메모리 검증, 실제 LSA 오류NtStatus/Win32·정리오류 보존, installer 단계/InnerException 정제·원자 protected private log, runner exit제거/JSON logical_exit_code·LASTEXITCODE 분리 구현. 관리자/SID/권한정책/원자SDDL4함수 보존. **신규36 PASS/0 FAIL**, 기존29·35·42 전체재시험0, 실제LSA/Scheduler/설치본문0.

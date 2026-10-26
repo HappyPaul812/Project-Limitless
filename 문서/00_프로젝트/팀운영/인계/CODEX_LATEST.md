@@ -1,3 +1,11 @@
+## 2026-10-27 Issue #66 정리 승인 — WAIT_ADMIN_CLEANUP / 실제 정리0
+
+대표가 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled SID1008 계정만 정리승인, 새설치미승인. ae163034…기준. 현 Codex Session9 비관리자 Inspect ce050715… FIXED_ADMIN_REQUIRED/cleanup소비false/삭제0. 새 cleanup-partial-trial.ps1 SHA4d272559…/Native1c8abecf…/신규합성43 PASS·실제Windows효과0. 기존29/35/36/42 전체반복0.
+
+정확SID/marker/expiry/Users/직접권한[]/profile·logon부재, task부재, root 및855 hash·ACL·reparse·ADS·hardlink/독점read·전체tasks/services/drivers/process 참조와OnBoot/SHA보존 모두 확인 후만 C:\ProgramData\LimitlessRelayTrialCleanup20261027에원자보호백업/단발소비→상태재검사→검증handle파일별삭제·빈폴더비재귀→계정재검사/SID삭제→최종검사. 보호프로세스정보 등 하나라도 불명이면삭제전HOLD. task등록삭제/프로세스중단/권한변경/설치/exit 없음.
+
+정확 NoProfile 자식 관리자 명령은 DiscordSession0_PartialCleanup_AdminPending_20261027.md. 사용자JSON수신후실제cleanup상태판독할것. 백업/소비있으면재실행금지. 현재기존Windows부분자산변경0·Install1/실패증거/승인후보보존·MANUAL/A HOLD. 정리PASS여도새LSA설치자동시작금지. 보고commit Issue66 마감 참조.
+
 ## 2026-10-26 Issue #66 LSA 최소수정 후보 — 신규36 PASS / NOT_INSTALLED
 
 구현 commit `b2ae449450c7042bda413fe07427e402babb0480` (LOCAL_ONLY), 기준d41ceaf1…/동일격리branch. Policy UnicodeRight가 UTF-16 실제byte·null·USHORT검증, 내부fake LSA경계/공개Admin·SID검사 유지, 실제NtStatus/Win32/cleanup보존. installer 단계/inner types·codes만 정제·SY/BA protected atomic private log·실패HOLD. runner exit2제거/JSON logical_exit_code 및LASTEXITCODE. 기존원자SDDL4함수AST동일, 부분환경신규설치거부.
