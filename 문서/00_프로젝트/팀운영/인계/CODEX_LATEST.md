@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 현재 블로커 — 시험/운영 앱 동일(대표 직접 확인)
+
+시험 Limitless-test ID1564156403571105906, 운영 ID 질문에 동일 값 응답 후 재확인에서 “같은 앱”이라고 확인. 별도 앱이라는 필수 게이트 FAIL. token 프롬프트/열람/저장, Host 구현·기동, Discord 요청/CREATE/DELETE/모바일/Fake/AI/usage/운영 DB 업무 전부0. 운영 앱을 시험용으로 대체하거나 token reset/복사 금지.
+
+기존 공개 setup-public에서 대표 승인 User ID·guild 일치 확인(원문 ID는 GitHub 기록에 복제하지 않음). 다음은 대표가 Portal New Application으로 별도 앱 생성→다른 새 App ID/소유 확인→새 bot의 시험 채널 접근/전용 token 로컬 DPAPI 준비. 기존 서버/ai-시험실은 유지 가능, 기존 운영 bot 권한 변경 금지. 같은 미실행 승인 범위가 유효하며 재승인 요청이 필요한 상황은 아닙니다.
+
+코드/준비 ZIP·Manifest/기존 결과 불변, 문서만 추가. 상세 `DiscordMobile_Phase3_AppIdentity_COLLISION_20261026.md`, 증거 Evidence/DiscordMobileAppCollision20261026/. MANUAL·A 미활성/운영·인증/게임·Save/Push/main/PC 변경0. 시작4f944707, 실제 문서 commit은 Issue66 완료 보고. 앱 분리 확인 전 Host/등록 재개 금지.
+
 ## 2026-10-26 Issue #66 Phase3 실전 승인 후 사전 HOLD — 별도 앱 설정 미확인
 
 이번 사용자 지시로 별도 시험 앱의 제한 등록/FakeExecutor 왕복/정리 승인 유효. 그러나 확인한 로컬 경로에 전용 앱/owner/guild/channel·시험 token 보안 설정 없음으로 확인 불가. 외부 앱 부재를 단정하지 않음. 지시된 Portal 최소 안내 후 HOLD 분기 적용, 운영 토큰/인증 복사·조회0. Host 추가 구현/기동도 아직 하지 않음.

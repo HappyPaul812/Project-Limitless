@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 Phase3 — 운영/시험 앱 동일 확인으로 실행 전 HOLD
+
+대표가 시험/운영 Application ID `1564156403571105906`을 동일하게 제공한 뒤 “같은 앱”이라고 직접 확인했습니다. 별도 시험 앱 조건 FAIL이므로 token 입력·저장/Host/명령 등록/Discord 요청0으로 HOLD했습니다. 기존 공개 운영 설정에서 대표 승인 ID와 guild 일치는 확인. 새 application을 만들고 다른 새 ID/소유 확인만 제공해야 재개할 수 있습니다. 서버/ai-시험실 채널은 유지 가능합니다.
+
+코드/패키지 변경0·기존 ZIP/Manifest/adapter/Phase2/boot approval SHA 보존. Fake/모델/usage/운영 SQLite0, 기존 성공 전체 반복0. MANUAL·A 미활성·운영/인증/게임·Save/Push/main/PC 변경0. 상세 `DiscordMobile_Phase3_AppIdentity_COLLISION_20261026.md`, Evidence/DiscordMobileAppCollision20261026/. 시작 commit4f944707, 실제 문서 commit은 Issue66 참조. 새 실행 승인이 부족한 것이 아니라 대상 앱 충돌로 중지합니다.
+
 ## 2026-10-26 Issue #66 Phase3 실제 시험 승인 — 앱 설정 미확인 HOLD
 
 대표의 별도 시험 앱 등록/Fake 왕복/정리 승인은 확인했지만 전용 application·대표 소유권·guild/channel·로컬 시험 token 저장소를 확인하지 못해 실행 전 HOLD했습니다. 외부에 앱이 없다고 단정하지 않으며 운영 인증을 읽어 대체하지 않았습니다. Portal 최소 절차와 모바일 순서는 `DiscordMobile_Phase3_LiveTrial_HOLD_20261026.md`에 기록했습니다.
