@@ -24,7 +24,7 @@ SCHEMA = (
 
 
 class PlanningButtons:
-    def __init__(self, relay, *, offline_fixture=False):
+    def __init__(self, relay, *, offline_fixture=False, prepared_request_id=None):
         # 새 격리 DB만 허용하고 기존 운영 Store를 받지 않습니다.
         if type(relay) is not OfflineMobileRelay:
             raise Denied('ISOLATED_RELAY_REQUIRED')
@@ -33,6 +33,9 @@ class PlanningButtons:
                 or self.store.channels != {contract.CHANNEL}):
             raise Denied('FIXED_TRIAL_OWNER_AND_CHANNEL_REQUIRED')
         self.offline_fixture = offline_fixture
+        if prepared_request_id is not None and not re.fullmatch('[a-f0-9]{32}', prepared_request_id):
+            raise Denied('PREPARED_REQUEST_ID_HOLD')
+        self.prepared_request_id = prepared_request_id
         with self.store.tx() as db:
             for sql in SCHEMA: db.execute(sql)
             db.execute('CREATE TABLE IF NOT EXISTS planning_meta(key TEXT PRIMARY KEY,value TEXT)')
@@ -145,7 +148,7 @@ class PlanningButtons:
             raise Denied('EXACT_UNCONSUMED_APPROVAL_REQUIRED')
         if db.execute('SELECT COUNT(*) FROM planning_jobs').fetchone()[0]: raise Denied('ONE_WORKER_REQUEST_PER_TRIAL')
         now = self.store.clock()
-        ticket = {'request_id': uuid.uuid4().hex, 'task_id': task['id'], 'task_sha256': panel['sha'], 'plan': plan,
+        ticket = {'request_id': self.prepared_request_id or uuid.uuid4().hex, 'task_id': task['id'], 'task_sha256': panel['sha'], 'plan': plan,
                   'owner': identity.user_id, 'application': contract.TRIAL_APP, 'guild': identity.guild_id,
                   'channel': identity.channel_id, 'approved_until': grant['expires'], 'created': now,
                   'deadline': now + 90, 'policy': contract.POLICY}

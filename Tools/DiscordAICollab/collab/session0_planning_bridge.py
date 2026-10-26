@@ -1,6 +1,6 @@
-"""Session0 계약 어댑터. 현재 후보는 오프라인 전용이며 실제 프로세스를 실행하지 않습니다.
+"""Session0 계약 어댑터. 현재 미배포 후보이며 이번에는 합성 검증만 수행합니다.
 
-실전 arm/보호 mailbox/Scheduler 전달은 별도 관리자 배포 검증 전까지 닫혀 있습니다.
+실전 arm/인증된 pipe/Scheduler 전달은 별도 관리자 배포 검증 전까지 닫혀 있습니다.
 봇 프로세스에 서비스 인증이나 임의 명령 실행 함수를 전달하지 않습니다.
 """
 from dataclasses import dataclass
@@ -23,9 +23,20 @@ class TrustedProjection:
     fixture: bool = True
 
     def __post_init__(self):
-        # 실제 결과의 출처 검증을 구현하기 전에는 live 객체 발급 자체를 막습니다.
+        # 직접 live 객체를 만들 수 없고 인증된 pipe 응답 경로에서만 발급합니다.
         if self.fixture is not True:
             raise Denied('LIVE_PROTECTED_MAILBOX_NOT_ARMED')
+
+    @classmethod
+    def from_pipe(cls, transport, value):
+        from .session0_pipe_transport import WindowsPipeTransport, PipeReply
+        if type(transport) is not WindowsPipeTransport or type(value) is not PipeReply or not value.verified():
+            raise Denied('WINDOWS_PIPE_PROOF_REQUIRED')
+        # Windows 토큰으로 확인한 서버의 bounded 응답만 live로 발급합니다.
+        result = cls.__new__(cls)
+        object.__setattr__(result, 'value', value.value)
+        object.__setattr__(result, 'fixture', False)
+        return result
 
 
 def verify_frozen_runner():
@@ -41,15 +52,55 @@ def deployment_plan():
             'native_budget_ms': 75000, 'python_budget_ms': 70000,
             'deadline_includes': ['handoff', 'preparation', 'usage', 'inference', 'cleanup'],
             'required_live_gates': ['separate_explicit_approval', 'admin_prearmed_temporary_task',
-                'real_service_sid_session0_logon4', 'admin_owned_arm_and_result_acl',
-                'bot_write_inbox_only', 'protected_projection_reader',
+                'distinct_bot_admin_service_sids', 'real_service_sid_session0_logon4',
+                'protected_install_and_service_state', 'native_authenticated_pipe',
                 'outer_90s_monotonic_supervisor_and_cancel', 'exact44_and_cli_config_sha']}
 
 
 class LiveSession0Bridge:
-    """실제 권한 경계 배포 전에는 모든 요청을 HOLD합니다."""
+    """인증된 로컬 pipe만 사용합니다. 서비스/task를 시작하거나 승인하지 않습니다."""
+    def __init__(self, transport=None):
+        self.transport = transport
+
     def submit(self, ticket):
-        raise Denied('LIVE_DEPLOYMENT_NOT_APPROVED_OR_ARMED')
+        from .session0_pipe_transport import WindowsPipeTransport
+        if type(self.transport) is not WindowsPipeTransport:
+            raise Denied('LIVE_DEPLOYMENT_NOT_APPROVED_OR_ARMED')
+        import time
+        contract.validate_ticket(ticket, ticket, time.time())
+        value = self.transport.exchange({'op': 'submit', 'ticket': ticket}, ticket['deadline'])
+        return self._project(ticket, value)
+
+    def _project(self, ticket, reply):
+        from .session0_pipe_transport import PipeReply
+        if type(reply) is not PipeReply or not reply.verified(): raise Denied('SERVICE_AUTHENTICATED_REPLY_REQUIRED')
+        value = reply.value
+        keys = {'request_id', 'task_id', 'task_sha256', 'ticket_sha256', 'status', 'final_response',
+                'usage', 'reason', 'finished', 'role', 'model_exec_launches'}
+        if type(value) is not dict or set(value) != keys: raise Denied('SERVICE_REPLY_SCHEMA_HOLD')
+        if any(value[k] != ticket[k] for k in ('request_id', 'task_id', 'task_sha256', 'ticket_sha256')):
+            raise Denied('SERVICE_REPLY_BINDING_HOLD')
+        if value['role'] != 'PlanningAgent' or value['status'] not in {'VERIFIED', 'HOLD'}:
+            raise Denied('SERVICE_REPLY_STATUS_HOLD')
+        if value['status'] == 'VERIFIED' and value['final_response'] != contract.EXPECTED:
+            raise Denied('SERVICE_REPLY_FINAL_HOLD')
+        import math
+        if (value['reason'] not in {'EXACT_PLANNING_SENTENCE', 'SERVICE_RESULT_REJECTED'}
+                or type(value['finished']) not in (int, float) or not math.isfinite(value['finished'])
+                or not ticket['created'] <= value['finished'] <= ticket['deadline']
+                or type(value['model_exec_launches']) is not int or value['model_exec_launches'] not in (0, 1)
+                or type(value['usage']) is not dict
+                or set(value['usage']) - {'input_tokens', 'output_tokens', 'cached_input_tokens'}
+                or any(type(v) is not int or v < 0 for v in value['usage'].values())
+                or (value['status'] == 'HOLD' and (value['final_response'] is not None or value['usage']))):
+            raise Denied('SERVICE_SANITIZED_REPLY_HOLD')
+        return TrustedProjection.from_pipe(self.transport, reply)
+
+    def cancel(self, request):
+        import time
+        from .session0_pipe_transport import WindowsPipeTransport
+        if type(self.transport) is not WindowsPipeTransport: raise Denied('LIVE_PIPE_NOT_CONFIGURED')
+        return self.transport.exchange({'op': 'cancel', 'request_id': request}, time.time() + 2)
 
 
 class OfflineSession0Harness:

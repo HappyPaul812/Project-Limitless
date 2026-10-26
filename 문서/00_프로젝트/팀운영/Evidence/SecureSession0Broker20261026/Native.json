@@ -1,0 +1,21 @@
+{
+  "timeout_active": 0,
+  "checks": {
+    "normal": true,
+    "timeout": true,
+    "cancel_tree": true,
+    "limited_admin_rejected": true,
+    "compile": true,
+    "worktree_rejected": true,
+    "nonservice_cannot_listen": true,
+    "oversize_frame_rejected": true
+  },
+  "model_calls": 0,
+  "distinct_bot_account_configured": false,
+  "actual_service_ipc_verified": false,
+  "cancel_active": 0,
+  "normal_active": 0,
+  "usage_reads": 0,
+  "cancel_total": 4,
+  "protected_install_exists": false
+}

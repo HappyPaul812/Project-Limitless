@@ -1,0 +1,38 @@
+{
+  "Tools/DiscordAICollab/collab/mobile_planning_buttons.py": {
+    "before_git_blob": "c970065786e49a8aae50e77fa80505c367a7a6e525cb6e6e9987be47dccbc0ee",
+    "after_working_bytes": "05faddc83a264c894e9f6efd22139d6a9a7c6541cc6254c1b37708115ec57425"
+  },
+  "Tools/DiscordAICollab/collab/session0_planning_bridge.py": {
+    "before_git_blob": "2461749d928871e780413b9e0b5c675975c000cd2265a6d3618c68aa27acfee8",
+    "after_working_bytes": "b1f804c040c3ea778d35f79ab1a67d8724be37c3392e0fd89bc91a85c09d7682"
+  },
+  "Tools/DiscordAICollab/collab/secure_session0_broker.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "6b6eeb91d6d23ac5b8a61992d0eea52c810c7e2ef576d9a92f9cfa84456391b0"
+  },
+  "Tools/DiscordAICollab/collab/session0_pipe_transport.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "cfd3e81030656ce07b651ba3ce25b4b9eef6aba77caab6c9897b8cecc64afe1e"
+  },
+  "Tools/DiscordAICollab/tests/test_secure_session0_broker.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "5b33f19ac2a39f469f1ac795095d7c99654bdf4148229d9a5cbba6e10593699f"
+  },
+  "Tools/DiscordAIServiceDiagnostics/BrokerJob90.cs": {
+    "before_git_blob": null,
+    "after_working_bytes": "05455ed1369819e530473217c4537607216ecffd9df3ec1e317366868540affc"
+  },
+  "Tools/DiscordAIServiceDiagnostics/Session0PipeBoundary.cs": {
+    "before_git_blob": null,
+    "after_working_bytes": "365875aebd4ef5d8eed86a12423eae4059a22d350aff0576efb6171a9b2a6cbb"
+  },
+  "Tools/DiscordAIServiceDiagnostics/session0-pipe-client.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "613ac4bae0fcf3ab332a9a30305ff8b588ae009ed8179fe61c84503adc7bd0f2"
+  },
+  "Tools/DiscordAIServiceDiagnostics/test-session0-native-offline.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "31490305bb3a99407f877699e85577a162337579565ed3ca6c1eb3a87d924c1b"
+  }
+}

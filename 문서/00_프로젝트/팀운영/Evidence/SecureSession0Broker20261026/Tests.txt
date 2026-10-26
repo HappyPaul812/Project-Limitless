@@ -1,0 +1,39 @@
+test_cancel_before_launch (test_secure_session0_broker.SecureBrokerTests.test_cancel_before_launch) ... ok
+test_cancel_during_work_stops_tree (test_secure_session0_broker.SecureBrokerTests.test_cancel_during_work_stops_tree) ... ok
+test_cleanup_unknown_hold (test_secure_session0_broker.SecureBrokerTests.test_cleanup_unknown_hold) ... ok
+test_duplicate_consumption_rejected (test_secure_session0_broker.SecureBrokerTests.test_duplicate_consumption_rejected) ... ok
+test_elevated_flag_without_admin_rejected (test_secure_session0_broker.SecureBrokerTests.test_elevated_flag_without_admin_rejected) ... ok
+test_expired_arm_rejected (test_secure_session0_broker.SecureBrokerTests.test_expired_arm_rejected) ... ok
+test_expired_ticket_rejected (test_secure_session0_broker.SecureBrokerTests.test_expired_ticket_rejected) ... ok
+test_forged_projection_cannot_enter_live (test_secure_session0_broker.SecureBrokerTests.test_forged_projection_cannot_enter_live) ... ok
+test_json_admin_claim_not_peer (test_secure_session0_broker.SecureBrokerTests.test_json_admin_claim_not_peer) ... ok
+test_late_result_not_accepted (test_secure_session0_broker.SecureBrokerTests.test_late_result_not_accepted) ... ok
+test_missing_final_hold (test_secure_session0_broker.SecureBrokerTests.test_missing_final_hold) ... ok
+test_missing_result_deadline_stops_tree (test_secure_session0_broker.SecureBrokerTests.test_missing_result_deadline_stops_tree) ... ok
+test_mocked_ipc_helper_complete_reply (test_secure_session0_broker.SecureBrokerTests.test_mocked_ipc_helper_complete_reply) ... ok
+test_mocked_ipc_private_usage_field_rejected (test_secure_session0_broker.SecureBrokerTests.test_mocked_ipc_private_usage_field_rejected) ... ok
+test_mocked_ipc_wrong_hash_rejected (test_secure_session0_broker.SecureBrokerTests.test_mocked_ipc_wrong_hash_rejected) ... ok
+test_normal_arm_delivery_sanitized_response (test_secure_session0_broker.SecureBrokerTests.test_normal_arm_delivery_sanitized_response) ... ok
+test_oversize_duplicate_json_rejected (test_secure_session0_broker.SecureBrokerTests.test_oversize_duplicate_json_rejected) ... ok
+test_owner_guild_channel_app_tamper_rejected (test_secure_session0_broker.SecureBrokerTests.test_owner_guild_channel_app_tamper_rejected) ... ok
+test_plan_tamper_rejected (test_secure_session0_broker.SecureBrokerTests.test_plan_tamper_rejected) ... ok
+test_projection_strips_private_fields (test_secure_session0_broker.SecureBrokerTests.test_projection_strips_private_fields) ... ok
+test_quota_exhausted_result_hold (test_secure_session0_broker.SecureBrokerTests.test_quota_exhausted_result_hold) ... ok
+test_remote_peer_rejected (test_secure_session0_broker.SecureBrokerTests.test_remote_peer_rejected) ... ok
+test_request_id_and_full_sha_tamper_rejected (test_secure_session0_broker.SecureBrokerTests.test_request_id_and_full_sha_tamper_rejected) ... ok
+test_restart_retains_consumption (test_secure_session0_broker.SecureBrokerTests.test_restart_retains_consumption) ... ok
+test_restart_revokes_armed_permit (test_secure_session0_broker.SecureBrokerTests.test_restart_revokes_armed_permit) ... ok
+test_result_lookup_never_reexecutes (test_secure_session0_broker.SecureBrokerTests.test_result_lookup_never_reexecutes) ... ok
+test_same_sid_limited_token_cannot_arm (test_secure_session0_broker.SecureBrokerTests.test_same_sid_limited_token_cannot_arm) ... ok
+test_second_arm_rejected (test_secure_session0_broker.SecureBrokerTests.test_second_arm_rejected) ... ok
+test_service_same_sid_as_bot_holds (test_secure_session0_broker.SecureBrokerTests.test_service_same_sid_as_bot_holds) ... ok
+test_start_failure_consumed_no_retry (test_secure_session0_broker.SecureBrokerTests.test_start_failure_consumed_no_retry) ... ok
+test_unarmed_request_rejected (test_secure_session0_broker.SecureBrokerTests.test_unarmed_request_rejected) ... ok
+test_unknown_operation_and_file_paths_rejected (test_secure_session0_broker.SecureBrokerTests.test_unknown_operation_and_file_paths_rejected) ... ok
+test_wrong_admin_sid_rejected (test_secure_session0_broker.SecureBrokerTests.test_wrong_admin_sid_rejected) ... ok
+test_wrong_service_context_holds (test_secure_session0_broker.SecureBrokerTests.test_wrong_service_context_holds) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 18.788s
+
+OK
