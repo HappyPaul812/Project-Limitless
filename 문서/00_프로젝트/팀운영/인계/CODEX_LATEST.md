@@ -1,3 +1,9 @@
+## 2026-10-26 Issue66 Session0 실제추론 단발 NOT_VERIFIED — 소비완료/종료/재실행금지
+
+request 717a0afa735d485daf790579b964e8c2 실제summary대조. 서비스SID일치·Session0/logon4·usage AppServer1성공후exec1시작, CLIexit1/turn.failed/완료turn0/최종응답없음·Worker/Taskexit2. error10≠retry10, forbidden3실제유형미확인·도구실행단정금지. 내부retry/원격성공·소비미확인. 전체28.758초·Job자식0/정리true·permit비활성/활성경로부재·TaskREMOVED·소비marker존재. 이전승인/마커/CODEX_HOME/부팅/장부보호결과true·MANUAL/HOLD.
+
+상세서비스프로필은현계정OS접근거부로error.code/정제stderr직접원인미확정. ACL/권한우회/검증기완화/새모델·usage/시험재실행0. 필요시다음은기존서비스로그만정제투영하여원인확인; 새실전은별도신규승인필수. 과거prepared미소비상태는이결과로갱신됨. 상세 Inference90_Actual_NOT_VERIFIED_20261026.md / Evidence/Inference90ActualNOTVERIFIED20261026/. 실행source adbcddbd·이번docs-only최종commit은Issue66참조. Push/main/A/게임변경0·중지.
+
 ## 2026-10-26 Issue66 내부retry 명시승인 반영 — 90초 독립추론 준비44PASS / 실제0
 
 대표가 app재실행0·추론exec1·builtin HTTP/stream기본retry허용·원격요청/구독정확1회보장불가 승인. 추가답변으로 usage AppServer1+추론exec1 허용확인. 신규request 717a0afa735d485daf790579b964e8c2 미소비, prepared approved=false/expiry0·실전permit/marker/trial없음. 구e0문서예약/사용량소비증거보존.

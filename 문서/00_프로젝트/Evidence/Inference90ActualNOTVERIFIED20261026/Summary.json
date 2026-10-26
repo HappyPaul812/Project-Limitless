@@ -1,0 +1,130 @@
+{
+  "usage_app_server_launches": 1,
+  "request_id": "717a0afa735d485daf790579b964e8c2",
+  "sqlite_work_operations": 0,
+  "permit_deactivated": true,
+  "child": {
+    "job": {
+      "stderr_truncated": false,
+      "exit_code": 2,
+      "timed_out": false,
+      "cleanup_verified": true,
+      "stdout_truncated": false,
+      "active_processes": 0
+    },
+    "supervisor_budget_ms": 75000,
+    "request_id": "717a0afa735d485daf790579b964e8c2",
+    "worker_budget_ms": 70000,
+    "inference_exec_launches": 1,
+    "sqlite_work_operations": 0,
+    "session_id": 0,
+    "application_retries": 0,
+    "child_elapsed_ms": 20378,
+    "account": "PAUL-PC\\LIMITLESSRelaySvc",
+    "logon_type": 4,
+    "sid_matches": true,
+    "discord_posts": 0,
+    "entry_result": {
+      "status": "NOT_VERIFIED",
+      "stage": "JSONL_VALIDATION",
+      "reason": "INFERENCE_RESPONSE_HOLD",
+      "request_id": "717a0afa735d485daf790579b964e8c2",
+      "inference_exec_launches": 1,
+      "usage_app_server_launches": 1,
+      "application_retries": 0,
+      "discord_posts": 0,
+      "sqlite_work_operations": 0,
+      "mode_changed": false,
+      "internal_retry_count": "UNKNOWN",
+      "policy": {
+        "application_retries": 0,
+        "inference_exec_max": 1,
+        "usage_app_server_max": 1,
+        "internal_http_retries": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+        "internal_stream_reconnects": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+        "remote_requests_exactly_one_guaranteed": false,
+        "local_limit_seconds": 90,
+        "discord_posts": 0,
+        "sqlite_work_operations": 0,
+        "mode": "MANUAL"
+      },
+      "official_usage_before": {
+        "source": "CODEX_APP_SERVER_OFFICIAL",
+        "observed": 1792986838.95441,
+        "ordinary_allowed": true,
+        "windows": [
+          {
+            "minutes": 300,
+            "used_percent": 20,
+            "resets_at": 1793002760
+          },
+          {
+            "minutes": 10080,
+            "used_percent": 18,
+            "resets_at": 1793571540
+          }
+        ]
+      },
+      "process": {
+        "stdout_bytes": 3425,
+        "stderr_bytes": 1239,
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "exit_code": 1,
+        "timed_out": false,
+        "pipes_complete": true
+      },
+      "validation": {
+        "status": "NOT_VERIFIED",
+        "reason_codes": [
+          "EXIT_NONZERO",
+          "TURN_SEQUENCE_INVALID",
+          "FORBIDDEN_ITEM",
+          "CLI_ERROR_EVENT",
+          "TURN_COUNT_INVALID",
+          "FINAL_COUNT_INVALID",
+          "FINAL_FILE_MISMATCH"
+        ],
+        "completed_turns": 0,
+        "event_counts": {
+          "thread.started": 1,
+          "item.completed": 3,
+          "turn.started": 1,
+          "error": 10,
+          "turn.failed": 1
+        },
+        "item_counts": {
+          "forbidden": 3
+        },
+        "usage": {},
+        "final_response": null
+      },
+      "error_type": "Denied",
+      "os_error": {
+        "errno": null,
+        "winerror": null
+      }
+    },
+    "codex_home_unchanged": true,
+    "reason": "INFERENCE_NOT_VERIFIED_NO_RETRY",
+    "stage": "JOB_SUPERVISED_INFERENCE",
+    "usage_app_server_launches": 1,
+    "status": "NOT_VERIFIED"
+  },
+  "application_retries": 0,
+  "local_execution_elapsed_ms": 28758,
+  "cleanup": "REMOVED",
+  "parent_session_id": 9,
+  "deployment": "PASS_44_EXACT_40_PRESERVED",
+  "parent_is_admin": true,
+  "inference_exec_launches": 1,
+  "status": "NOT_VERIFIED",
+  "task_exit_code": 2,
+  "ledger_unchanged": true,
+  "trial_task_launches": 1,
+  "approval_unchanged": true,
+  "stage": "START_APPROVED_INFERENCE_ONCE90",
+  "discord_posts": 0,
+  "previous_markers_preserved": true,
+  "boot_tasks_unchanged": true
+}
