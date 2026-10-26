@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — LSA 권한 이름 Length 결함 확정, 설치 사고 원시 코드 미확정
+
+- Codex [Issue #66 관리자 읽기 전용 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6418116443): `TrialAccountPolicy.cs:21` `SeBatchLogonRight`는 실제 UTF-16 byte length **34**(+NUL2, maximum **36**)인데 `Length=32/Max=34`로 마지막 `t`가 누락되는 **정적/문자열 재현 가능한 코드 결함 확정**. 반면 실제 1차 install의 LSA 도달 여부, 원래 HRESULT/NTSTATUS/NativeErrorCode 및 유일한 실패 원인은 catch에 의해 소실 → `CODE_DEFECT_CONFIRMED / INCIDENT_NATIVE_CAUSE_NOT_VERIFIED`.
+- 실제 관리자 확인: Trial Bot SID `...-1008` Disabled, Users만, 직접 batch right 없음(`[]`), 만료 2026-10-27 22:41:13 KST. 시험 예약 Task **현재 부재(관리자 exact+hidden inventory)**, 설치 Code root BA 소유/보호ACL 존재·855 SHA 불일치0, HostManifest/DeploymentRecord/State root 부재. ADMIN SID1001/WORKER1007/BOT1008 서로 다름. 기존 OnBoot2 XML SHA·boot approval 일치. 사건 당시 로그4104 문자열을 직접 AccessDenied 오류로 단정하지 않음.
+- 이번 단발 관리자 진단에서는 설치·계정활성화·권한/ACL/Task 변경·IPC/모델/usage/Discord **0회**; 기존 Install1 소비/기록 유지. 기존 설치/Remove 재시도 금지, MANUAL·A HOLD 지속. 다음 Codex 범위는 **오프라인 코드 후보 수정과 테스트만**: LSA_UNICODE_STRING Length를 실제 UTF-16 bytes로 계산하고 MaximumLength=Length+2, 예외 단계/원래 native/inner 코드의 보안 마스킹된 로컬 기록, 대화형 PowerShell `exit` 제거. 기존 후보·증거 보존, **새 Code/Installer/Manifest/ZIP SHA**와 정확 delta·부분자원 별도 복구 제안 후 중지; 실제 복구·재설치·서비스 IPC는 대표 후속 명시 승인.
+- Codex branch `codex/discord-usage-diagnostics-20261026` local commit `d41ceaf156755ad18d8f8557d2b815ffb936ce3e` (PUSH 없음). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `04afce658e435455942713b01dd3389fa554d83d`. 기존 봇·아트·OnBoot·운영 SQLite·게임/Save/main 보호.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 실제 설치 부분 진행 후 HOLD, 재설치 금지
 
 - Codex [Issue #66 설치 1회 기록](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6417537981): 승인 855 SHA 검사 PASS 후 새 Bot 계정 `PAUL-PC\\LIMITLESSBotTrial` SID `S-1-5-21-2858504392-1958168942-1662906075-1008` 생성, **Enabled=false**. 새 코드 root 존재/state root 없음. 새 Task 실제 존재·SD는 조회 **UNKNOWN_OR_ABSENT**로 확정 금지. 설치 결과 `PARTIAL_INSTALL_HOLD`, RuntimeException HRESULT -2146233087, **원시 직접 원인 미확정**(installer catch 원시 오류 소실). 승인 Install1 소모, 신규 설치/재시도·자산 삭제0. 새 BOT 계정·Task·ACL/만료 최종 PASS 주장 금지.
