@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-26 — Session0 Host↔고정 Worker 접합29 PASS, 실계정 설치 대기
+
+- Codex [Issue #66 상세 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6415686545): 모바일 5버튼→LiveSession0Bridge→Windows pipe→Session0Host→BrokerJob90→고정 read-only Planning Worker→strict JSONL→정제 결과 코드 접합 **완료**, 신규 오프라인29 PASS/0 FAIL. **실제 계정 간 OS IPC/Session0 Host 운영 설치/Discord→실모델 E2E는 미실행·미검증**. MANUAL/A HOLD 유지. 이전 성공테스트는 반복하지 않았음.
+- Bot·ADMIN·WORKER 모두 **서로 다른 실제 Windows 사용자 SID**가 필요함. 후보 새 비관리자 Bot 사용자 `PAUL-PC\\LIMITLESSBotTrial`(Users만/24시간 만료), 신규 작업 `LIMITLESS-Trial-S0Host`(기존 worker 계정 batch4, 기본 Disabled/trigger0/FAKE_ONLY). 관리자 소유 코드 무결성/원자 게시·전체90초·고정 Worker·보안 pipe/실 SID·로그on4 검사 필요. 사용자/관리자 같은 SID에서 UAC 차이만으로는 신뢰 경계 불인정.
+- 다음 제한 작업: 대표가 명시적으로 승인하면 기존 설치 후보의 Manifest/SHA·현재 계정/기존 OnBoot·원본 boot approval 확인 → 새 시험 계정/전용 코드·비활성 task만 안전하게 설치 → **실제 계정 간 FAKE_ONLY IPC 성공 여부** 확인; 보안 미확인 시 모델/사용량/Gateway 호출하지 말고 HOLD. 현재 사용자 시험 token DPAPI/운영 token·서비스 인증을 새 SID로 복사하지 말고, 별도 계정의 사용자 직접 로컬 입력은 후속 안내. 기본 자동 시작/A 사용 금지, 기존 운영 변경 금지.
+- 준비된 로컬 Bundle `Temp/Session0HostBundle20261026Ready`, Manifest SHA `9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec`, 설치기 SHA `337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829`. Codex `codex/discord-usage-diagnostics-20261026` local impl commit `5f1dad2284d7c2cf78c4d80d451555c3619eb60a`, docs commit `a8b0be3971aa461d09432348b309179cade27981` (**REMOTE_NOT_PUSHED**).
+- 기획 운영 정본 `docs/planning` 커밋 `3442b28b07a5d4d8a946f8e25596f38be5c57be8`. 원본 게임/Save·봇·아트·서비스 인증·기존 CLI/CODEX_HOME·OnBoot2·운영 SQLite·main 모두 변경 금지 유지.
+
+---
+
 # PLANNING / 2026-10-26 — Session0 보안 중개기 42 PASS, 실제 SID·Host SECURITY HOLD
 
 - Codex [Issue #66 상세 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6412596448): secure pipe·단발 승인·중복/취소·Job90 파생·결과 판독 **42 PASS/0 FAIL(합성34+native8)**. 단 **실제 서비스 Host → 고정 Worker backend 조립·서로 다른 계정의 IPC/서비스 OS 경계 검증 미완료**, 42PASS=실전 AI 연결 VERIFIED 아님. 새 실제 모델/usage/Discord·운영 DB/서비스작업·계정·ACL 변경0.
