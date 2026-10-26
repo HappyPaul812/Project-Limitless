@@ -1,0 +1,14 @@
+Tools\DiscordAICollab\install-boot-tasks.ps1:68: [DllImport("advapi32.dll")] static extern uint LsaAddAccountRights(IntPtr policy,byte[] sid,US[] rights,uint count);
+Tools\DiscordAICollab\install-boot-tasks.ps1:69: [DllImport("advapi32.dll")] static extern uint LsaEnumerateAccountRights(IntPtr policy,byte[] sid,out IntPtr rights,out uint count);
+Tools\DiscordAICollab\install-boot-tasks.ps1:77:   string name="SeBatchLogonRight";text=Marshal.StringToHGlobalUni(name);
+Tools\DiscordAICollab\install-boot-tasks.ps1:79:   if(LsaAddAccountRights(policy,sid,new US[]{right},1)!=0) throw new Exception("BATCH_RIGHT_GRANT_FAILED");
+Tools\DiscordAICollab\install-boot-tasks.ps1:80:   uint count;if(LsaEnumerateAccountRights(policy,sid,out buffer,out count)!=0) return false;
+Tools\DiscordAIServiceDiagnostics\probe-partial-install-readonly.ps1:61: [DllImport("advapi32.dll")]static extern uint LsaEnumerateAccountRights(IntPtr handle,byte[] sid,out IntPtr rights,out uint count);
+Tools\DiscordAIServiceDiagnostics\probe-partial-install-readonly.ps1:71:   uint count;status=LsaEnumerateAccountRights(handle,bytes,out rights,out count);
+Tools\DiscordAIServiceDiagnostics\probe-partial-install-readonly.ps1:88: $functions=@('Add-LocalGroupMember','New-LocalUser','GrantNewBotBatch','LsaOpenPolicy','LsaAddAccountRights','NewFile','Set-Acl','RegisterTaskDefinition','GetSecurityDescriptor')|Where-Object{$Text.Contains($_)}
+Tools\DiscordAIServiceDiagnostics\run-atomic-trial-install.ps1:60: [DllImport("advapi32.dll")]static extern uint LsaEnumerateAccountRights(IntPtr handle,byte[] sid,out IntPtr rights,out uint count);
+Tools\DiscordAIServiceDiagnostics\run-atomic-trial-install.ps1:70:   uint count;status=LsaEnumerateAccountRights(handle,bytes,out rights,out count);
+Tools\DiscordAIServiceDiagnostics\test-partial-readonly-offline.ps1:24: Require ($n.Value -notmatch 'LsaAddAccountRights|LsaRemoveAccountRights' -and $n.Value.Contains('0x800,out handle'))
+Tools\DiscordAIServiceDiagnostics\TrialAccountPolicy.cs:11: [DllImport("advapi32.dll")]static extern uint LsaAddAccountRights(IntPtr handle,byte[] sid,Text[] rights,uint count);
+Tools\DiscordAIServiceDiagnostics\TrialAccountPolicy.cs:29:  public uint Add(IntPtr handle,byte[] sid,Text[] rights){return LsaAddAccountRights(handle,sid,rights,1);}
+Tools\DiscordAIServiceDiagnostics\TrialAccountPolicy.cs:39:   IntPtr memory=Marshal.StringToHGlobalUni(name);

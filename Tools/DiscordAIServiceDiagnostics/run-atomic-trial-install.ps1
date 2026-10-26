@@ -1,19 +1,34 @@
 param([ValidateSet('Preflight','Install','Inspect')][string]$Action='Preflight')
 # 이번 승인의 설치/읽기 전용 검증만 제공합니다. Host 시작·IPC·AI·Discord 동작은 없습니다.
 $ErrorActionPreference='Stop'
-$bundle='F:/study/codex/Project-Limitless/Temp/Session0TaskSecurityAtomicCandidate20261026'
+$bundle='F:/study/codex/Project-Limitless/Temp/Session0LsaRepairCandidate20261026'
 $repo='F:/study/codex/Project-Limitless/Temp/DiscordUsageDiagnostics20261026/Worktree'
 $install=Join-Path $env:ProgramFiles 'LimitlessRelayTrial'
 $state=Join-Path $env:ProgramData 'LimitlessRelayTrial'
 $bootPath='C:/ProgramData/LimitlessRelay/boot-approval.json'
-$expectedInstaller='117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9'
-$expectedManifest='6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab'
-$expectedZip='4b2c56edf5bb8edc6ee7a40a10504f537223bc77874b43a36e61be735c318f83'
+$expectedInstaller='79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8'
+$expectedManifest='33ed9a8318c039cd70cf8260338f56e81025ce891c0156ac18556c2aec36d165'
+$expectedZip='d678e760c1ccd41d05a4683a776cf2e877026c1de9bc5fd0a61aeccb4231daf3'
 $expectedBoot='3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f'
 $taskName='LIMITLESS-Trial-S0Host'
 $result=[ordered]@{status='HOLD';stage='PACKAGE_PREFLIGHT';action=$Action;install_attempts=0;automatic_retries=0;host_starts=0;ipc_calls=0;fake_worker_calls=0;model_calls=0;official_usage_reads=0;discord_calls=0;sqlite_operations=0;mode='MANUAL_UNCHANGED';a_mode='HOLD_UNCHANGED';request_id=([guid]::NewGuid().ToString('N'))}
 function Hash-Bytes([byte[]]$Bytes){[Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($Bytes)).ToLower()}
 function Require($Value,[string]$Code){if(-not $Value){throw $Code}}
+function Get-RunnerFailure($Record){
+ $chain=@();$ex=$Record.Exception;$installFailure=$null
+ for($i=0;$null -ne $ex -and $i -lt 8;$i++){
+  $node=[ordered]@{type=$ex.GetType().FullName;hresult=$ex.HResult}
+  if($ex -is [ComponentModel.Win32Exception]){$node.win32=$ex.NativeErrorCode}
+  if($ex.PSObject.Properties['NtStatus']){$node.ntstatus=[uint32]$ex.NtStatus}
+  if($ex.Data.Contains('LimitlessInstallFailureV2')){$installFailure=$ex.Data['LimitlessInstallFailureV2']}
+  $chain+=$node;$ex=$ex.InnerException
+ }
+ return @{exceptions=$chain;install_failure=$installFailure;summary='RUNNER_FAILURE_MESSAGES_REDACTED'}
+}
+function Get-LogicalExitCode([string]$Status){
+ if($Status -in @('PACKAGE_PASS_ADMIN_LOCAL_INPUT_REQUIRED','INSTALL_PASS_DISABLED_FAKE_ONLY_NO_EXECUTION')){return 0}
+ return 2
+}
 function Plain-File([string]$Path){
  $p=Get-Item -LiteralPath $Path -Force
  Require (-not $p.PSIsContainer -and -not ($p.Attributes -band [IO.FileAttributes]::ReparsePoint)) 'FILE_REPARSE_HOLD'
@@ -117,12 +132,13 @@ try {
   Require ($entry.Name -cmatch '^(Code|Runtime|Legacy|Deployment)/' -and -not $entry.Name.Contains('..') -and -not $entry.Name.Contains(':') -and -not $entry.Name.Contains([char]92)) 'PACKAGE_PATH_HOLD'
   Require ((Hash-Bytes (Plain-File (Join-Path $bundle $entry.Name))) -ceq $entry.Value) 'PACKAGE_FILE_SHA_HOLD'
  }
- $oldManifestBytes=Plain-File 'F:/study/codex/Project-Limitless/Temp/Session0HostBundle20261026Ready/HostManifest.json'
- Require ((Hash-Bytes $oldManifestBytes) -ceq '9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec') 'ORIGINAL_MANIFEST_HOLD'
+ $oldManifestBytes=Plain-File 'F:/study/codex/Project-Limitless/Temp/Session0TaskSecurityAtomicCandidate20261026/HostManifest.json'
+ Require ((Hash-Bytes $oldManifestBytes) -ceq '6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab') 'ORIGINAL_MANIFEST_HOLD'
  $original=([Text.Encoding]::UTF8.GetString($oldManifestBytes)|ConvertFrom-Json).files_sha256
  $changed=@($entries|Where-Object{$original.($_.Name) -cne $_.Value})
- Require ($changed.Count -eq 1 -and $changed[0].Name -ceq 'Deployment/install-session0-trial.ps1' -and $config.execution_mode -ceq 'FAKE_ONLY' -and $config.auto_start -eq $false) 'EXACT854_PRESERVED_HOLD'
- $result.package='PASS_855_EXACT_854_PRESERVED';$result.installer_sha256=$expectedInstaller;$result.manifest_sha256=$expectedManifest;$result.zip_sha256=$expectedZip
+ $allowed=@('Deployment/install-session0-trial.ps1','Code/Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs')
+ Require ($changed.Count -eq 2 -and @($changed|Where-Object{$_.Name -notin $allowed}).Count -eq 0 -and $config.execution_mode -ceq 'FAKE_ONLY' -and $config.auto_start -eq $false) 'EXACT853_PRESERVED_HOLD'
+ $result.package='PASS_855_EXACT_853_PRESERVED';$result.installer_sha256=$expectedInstaller;$result.manifest_sha256=$expectedManifest;$result.zip_sha256=$expectedZip
  $identity=[Security.Principal.WindowsIdentity]::GetCurrent()
  $admin=([Security.Principal.WindowsPrincipal]::new($identity)).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
  $result.parent_account=$identity.Name;$result.parent_sid=$identity.User.Value;$result.parent_session_id=(Get-Process -Id $PID).SessionId;$result.parent_is_admin=$admin
@@ -152,6 +168,7 @@ try {
  $result.status='INSTALL_PASS_DISABLED_FAKE_ONLY_NO_EXECUTION';$result.stage='COMPLETE'
 } catch {
  $result.status='HOLD';$result.error_type=$_.Exception.GetType().Name;$result.hresult=$_.Exception.HResult
+ $result.diagnostics=Get-RunnerFailure $_
  # 오류 본문/스택에 credential이 섞일 수 있으므로 출력하거나 저장하지 않습니다.
  if($_.Exception.Message -cmatch '^[A-Z][A-Z0-9_]{2,100}$'){$result.safe_error_code=$_.Exception.Message}
  $result.reason='NO_RETRY_NO_AUTOMATIC_DELETE_REVIEW_PARTIAL_STATE'
@@ -177,9 +194,12 @@ try {
  $null=New-Item -ItemType Directory -Path $receiptRoot -Force
  $receipt=Join-Path $receiptRoot ($result.request_id+'.json')
  $result.receipt_path=$receipt
+ $result.logical_exit_code=Get-LogicalExitCode $result.status
  $json=$result|ConvertTo-Json -Depth 12
  [IO.File]::WriteAllText($receipt,$json,[Text.UTF8Encoding]::new($false))
  Write-Output $json
+ # 현재 대화형 세션을 종료하지 않습니다. 논리적 실패 코드는 JSON과 LASTEXITCODE로 따로 전달합니다.
+ $global:LASTEXITCODE=[int]$result.logical_exit_code
  $approvedScript=$null;$installerBytes=$null
 }
-if($result.status -eq 'HOLD'){exit 2}
+return

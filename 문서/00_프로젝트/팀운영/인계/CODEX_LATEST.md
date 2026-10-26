@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 LSA 최소수정 후보 — 신규36 PASS / NOT_INSTALLED
+
+기준d41ceaf1…/동일격리branch. Policy UnicodeRight가 UTF-16 실제byte·null·USHORT검증, 내부fake LSA경계/공개Admin·SID검사 유지, 실제NtStatus/Win32/cleanup보존. installer 단계/inner types·codes만 정제·SY/BA protected atomic private log·실패HOLD. runner exit2제거/JSON logical_exit_code 및LASTEXITCODE. 기존원자SDDL4함수AST동일, 부분환경신규설치거부.
+
+신규 test-lsa-repair-offline36 PASS/0 FAIL, 기존29·35·42 전체반복0·실제LSA/Scheduler/설치본문실행0. 새 Temp/Session0LsaRepairCandidate20261026/855개중2변경853동일·추가삭제0. Policy d9a0bc50…/Installer79194ad6…/Manifest33ed9a83…/zipd678e760…/runner04ccc520… 전체값은 상세 DiscordSession0_LsaRepair_Candidate_20261026.md와Evidence/Session0LsaRepair20261026/.
+
+기존Atomic/Ready/소비Install1/관리자증거/boot승인SHA보존. 기존Windows부분root/Bot1008Disabled/task부재 자산변경0. 기존계정자동재사용·덮어쓰기없음. 다음은 새SHA·신규부분자산정리 범위 승인 후 fresh 설치, 기존Install1 재사용금지. 지금실제복구/권한부여/재설치/IPC/AI/usage/Discord0, MANUAL/A HOLD. 다음승인전중지. 관련commit Issue66 마감참조.
+
 ## 2026-10-26 Issue #66 관리자 판독 — Unicode 길이 코드결함 확정 / 원시예외 미복구
 
 관리자a11561f51e114b398c4b58d7686b9a57 수신/로컬JSON동일. Bot1008 Disabled/Users·직접권한[]·24h만료, Worker1007/Admin1001 분리. task부재/Manifest·record·State부재 확인, root/code BA소유 SY/BA Full·855 SHA일치. OnBoot2개/boot approval/승인3SHA/Install1증거 보존.

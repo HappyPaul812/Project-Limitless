@@ -1,0 +1,33 @@
+{
+  "status": "OFFLINE_CANDIDATE_NOT_APPROVED_NOT_INSTALLED",
+  "candidate": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0LsaRepairCandidate20261026",
+  "archive": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0LsaRepairCandidate20261026.zip",
+  "payload_files": 855,
+  "unchanged_payload_files": 853,
+  "added": [],
+  "removed": [],
+  "changed": [
+    {
+      "path": "Code/Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs",
+      "before": "1d85ea2b3b99027dbf0eeb4ee61b590b8be3539d7c9e7992af0dee03c8d8d96e",
+      "after": "d9a0bc50137119bc28c17c5496b5fc20b4da81925b806bc472a538c4415f850b"
+    },
+    {
+      "path": "Deployment/install-session0-trial.ps1",
+      "before": "117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9",
+      "after": "79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8"
+    }
+  ],
+  "installer_sha256": "79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8",
+  "policy_sha256": "d9a0bc50137119bc28c17c5496b5fc20b4da81925b806bc472a538c4415f850b",
+  "manifest_sha256": "33ed9a8318c039cd70cf8260338f56e81025ce891c0156ac18556c2aec36d165",
+  "zip_sha256": "d678e760c1ccd41d05a4683a776cf2e877026c1de9bc5fd0a61aeccb4231daf3",
+  "manifest_semantic_changes": [
+    "files_sha256.Code/Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs",
+    "files_sha256.Deployment/install-session0-trial.ps1"
+  ],
+  "atomic_candidate_preserved": true,
+  "ready_candidate_preserved": true,
+  "previous_install1_preserved": true,
+  "installed_system_assets_written": 0
+}

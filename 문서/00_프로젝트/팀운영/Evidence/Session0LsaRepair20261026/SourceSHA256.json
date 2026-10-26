@@ -1,0 +1,30 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs",
+    "sha256": "d9a0bc50137119bc28c17c5496b5fc20b4da81925b806bc472a538c4415f850b"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/install-session0-trial.ps1",
+    "sha256": "79194ad63dfaf500158d7afa8aadf59e26e0a7487ee595ae9c685e35003c75f8"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/run-atomic-trial-install.ps1",
+    "sha256": "04ccc520cf9271cb055674f5636e6360fdbaceefddaae73077c247644349de0e"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/LsaRepairOfflineTests.cs",
+    "sha256": "3fcf5beb49e4816e7ac168aefda251772843f90482f0e466e22ff76b319e1133"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/test-lsa-repair-offline.ps1",
+    "sha256": "7feadf41ad51eb13943206d4e26523ddbe61ef1d490bfb826885d95fe4cc92b9"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/prepare-lsa-repair-candidate.py",
+    "sha256": "e12c78ec6caecff8b1d6e448bc6c1855727bd9641e29f267c770859cd2e10a83"
+  },
+  {
+    "path": "Tools/DiscordAICollab/install-boot-tasks.ps1",
+    "sha256": "b38dc7d0018fcb534048cee343e7b90b678a7bd3f87fd17edca2e82eeb755e8d"
+  }
+]
