@@ -1,3 +1,9 @@
+## 2026-10-27 Issue #66 실제 관리자 정리 사전검사 — 참조 확인 HOLD / 삭제0
+
+관리자 요청39d34e64… 판독: 계정1008 Disabled/Users/직접권한[]·profile/logon0 및855개 검증 통과. Task282/서비스·드라이버792/프로세스334의 확인참조0이나 미확인프로세스19로 CHECK_REFERENCES HOLD. 필요한경로/명령행 부재 원인은 아직 미확정, 정상OS라고추정하지 않음. cleanup소비false·백업단계미도달·파일/폴더/계정/Task삭제0·설치0.
+
+기존Install1/실패·관리자증거/부분자산/승인후보 보존, MANUAL/A HOLD. 이번에코드·권한기준변경/재실행/프로세스중단0. 동일명령반복금지, 새LSA설치불가·미승인 유지. 다음필요조사는미확인process의 생성시각/SID/가용경로/조회불가원인 읽기전용 분류이며 PID재사용주의. 상세 cleanup문서후속판독 및 Evidence/Session0TrialCleanup20261027/39d34e6461e94a97b0ccac01b611ef8f.json(SHA23798422…) 참조. 실제보고commit Issue66 마감 참조.
+
 ## 2026-10-27 Issue #66 부분 자산 정리 승인 — WAIT_ADMIN_CLEANUP
 
 구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa` (LOCAL_ONLY), 기준ae163034…/격리branch. 대표가 옛 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled Bot SID1008 정리만 승인. 현재 Codex Session9 비관리자라 실제 정리/백업0, FIXED_ADMIN_REQUIRED. 신규 정리 도구/Native helper 준비·합성 **43 PASS/0 FAIL**(실제삭제/LSA/Scheduler0), 기존 성공 suite 반복0.

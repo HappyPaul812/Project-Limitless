@@ -1,5 +1,19 @@
 # Issue66 과거 부분 설치 자산 정리 — 관리자 실행 대기
 
+## 후속 실제 관리자 실행 — 참조 확인 HOLD / 정리0
+
+대표의 관리자 실행 `39d34e6461e94a97b0ccac01b611ef8f` 결과를 판독했습니다. 원본 JSON SHA `2379842226cb58aa83c01132915c0a7d1675b8f9243dce2d29532d4a751bdc9f`.
+
+- 실제 Admin SID1001/Session9, Action Cleanup. 계정1008은 Disabled·Users만·직접권한[]·원래만료/marker 일치·LastLogon null·profile/logon0 확인.
+- Code root의855개 검증 완료. 앞선 owner/DACL/기대 layout·ADS/reparse/hardlink/독점읽기·task/state부재·보존 단계가 통과한 뒤 CHECK_REFERENCES에서 멈췄습니다.
+- Task282/서비스+드라이버792/프로세스334를 조사해 확인된 참조 hits0. 그러나 필요한 executable/command line이 비어 있거나 조회되지 않은 프로세스 **19개**가 있어 unknown19, 나머지 unknown서비스/Task는0입니다. **hits0만으로 안전한 무참조를 확정하지 않습니다.**
+- JSON은 unknown PID 앞16개만 포함합니다. 어느 필드가 비었는지/원시 조회 오류/실행 이미지·생성시각은 기록되지 않아 보호 프로세스인지, 다른 원인인지 아직 구분할 수 없습니다. Windows 정상 프로세스라고 추정해 예외 처리하지 않았습니다.
+- `CLEANUP_REFERENCES_OR_LAYOUT_HOLD`, cleanup_consumed=false. **보호 백업 생성 단계 미도달, 파일/폴더/계정 삭제0, task삭제0, install/new account/IPC/Fake/AI/usage/Discord/자동재시도0.** 기존 Install1 소비와 부분 자산은 그대로입니다.
+
+현재 상태는 **REFERENCE_VERIFICATION_HOLD / NOT_CLEANED**. 같은 명령 반복, 프로세스 중단, ACL 변경, UNKNOWN 무시·자동 예외처리, 새 설치를 하지 않습니다. 다음에 필요하다면 미확인 프로세스의 생성시각·소유 SID·가용 경로와 조회 실패 이유만 별도 읽기 전용으로 조사해야 합니다. PID 재사용 가능성이 있어 과거 PID만으로 현재 프로세스를 동일시하지 않습니다.
+
+정리 조건이 해결되지 않았으므로 새 LSA 패키지는 계속 미설치·설치미승인입니다. 아래 관리자 명령은 과거 실행 안내이며 **현재 재실행하지 않습니다**. 이번에는 결과 JSON/문서만 보존하고 HOLD로 중지했습니다.
+
 2026-10-27, 구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa`, 기준 `ae163034dd299254fbc0b2e30a482f821faf08ca`, branch `codex/discord-usage-diagnostics-20261026`.
 
 **CLEANUP_APPROVED / WAIT_ADMIN_CLEANUP / 실제 삭제0**. 대표는 실패한 Install1의 신규 시험 계정과 옛 Code root 정리만 승인했습니다. 새 패키지 설치 승인 아님. 현재 Codex는 PAUL-PC\windows/Session9/비관리자이므로 관리자 재검사·정리는 대표가 아래 명령으로 직접 수행해야 합니다. 정리 승인을 다시 묻지 않습니다.

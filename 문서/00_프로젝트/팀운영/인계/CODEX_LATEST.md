@@ -1,3 +1,9 @@
+## 2026-10-27 Issue #66 관리자 실행39d34e64… — 참조확인HOLD / 실제정리0
+
+실제 Admin1001/Session9. Bot1008Disabled/Users/직접권한[]/marker·expiry·LastLogonnull/profile0/logon0 확인, Code855검증완료. Task282/서비스+드라이버792/process334 hits0이나 unknown process19(목록앞16만보존)로 CHECK_REFERENCES/CLEANUP_REFERENCES_OR_LAYOUT_HOLD. metadata공백/불가 원인은미확정. 무참조확정/정상OS추정금지.
+
+cleanup_consumed=false·backup단계미도달·파일/폴더/계정/Task삭제0·설치/IPC/Fake/AI/usage/Discord0. 기존Install1/부분자산/후보보존·MANUAL/A HOLD. 코드수정·기준완화·프로세스중단·재실행0, 동일명령반복금지. 후속필요사항은PID생성시각/SID/가용이미지/조회불가이유의읽기전용분류(과거PID재사용주의). 정리조건미해결로새LSA설치계속미승인. 실제결과JSON SHA2379842226cb58aa83c01132915c0a7d1675b8f9243dce2d29532d4a751bdc9f. 상세cleanup문서후속판독/Issue66 보고commit 참조. **HOLD중지**.
+
 ## 2026-10-27 Issue #66 정리 승인 — WAIT_ADMIN_CLEANUP / 실제 정리0
 
 구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa` (LOCAL_ONLY). 대표가 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled SID1008 계정만 정리승인, 새설치미승인. ae163034…기준. 현 Codex Session9 비관리자 Inspect ce050715… FIXED_ADMIN_REQUIRED/cleanup소비false/삭제0. 새 cleanup-partial-trial.ps1 SHA4d272559…/Native1c8abecf…/신규합성43 PASS·실제Windows효과0. 기존29/35/36/42 전체반복0.

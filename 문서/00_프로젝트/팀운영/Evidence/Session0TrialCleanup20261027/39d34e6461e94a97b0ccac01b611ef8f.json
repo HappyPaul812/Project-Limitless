@@ -1,0 +1,81 @@
+{
+  "status": "HOLD",
+  "stage": "CHECK_REFERENCES",
+  "action": "Cleanup",
+  "request_id": "39d34e6461e94a97b0ccac01b611ef8f",
+  "cleanup_consumed": false,
+  "code_files_deleted": 0,
+  "directories_deleted": 0,
+  "account_deleted": false,
+  "task_deletion_calls": 0,
+  "install_calls": 0,
+  "new_account_calls": 0,
+  "host_ipc_fake_calls": 0,
+  "model_calls": 0,
+  "usage_reads": 0,
+  "discord_calls": 0,
+  "automatic_retries": 0,
+  "reader": {
+    "session_id": 9,
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1001",
+    "account": "PAUL-PC\\windows",
+    "is_admin": true
+  },
+  "account": {
+    "group_sids": [
+      "S-1-5-32-545"
+    ],
+    "last_logon_null": true,
+    "description": "LIMITLESS_TRIAL_BOUNDARY_V1",
+    "enabled": false,
+    "name": "LIMITLESSBotTrial",
+    "direct_rights": [],
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1008",
+    "profile_count": 0,
+    "expiry_utc": "2026-10-27T13:41:13.2064794Z",
+    "logon_count": 0
+  },
+  "verified_code_files": 855,
+  "references": {
+    "process_hits": 0,
+    "service_hits": 0,
+    "unknown_processes": 19,
+    "service_count": 792,
+    "task_hits": 0,
+    "process_count": 334,
+    "task_count": 282,
+    "hits": 0,
+    "unknown_pids": [
+      288,
+      328,
+      940,
+      1316,
+      1452,
+      1532,
+      1552,
+      1588,
+      3360,
+      5000,
+      5128,
+      10376,
+      19404,
+      4912,
+      28124,
+      32660
+    ],
+    "unknown": 19,
+    "unknown_services": 0,
+    "unknown_tasks": 0
+  },
+  "error": {
+    "code": "CLEANUP_REFERENCES_OR_LAYOUT_HOLD",
+    "exceptions": [
+      {
+        "type": "System.Management.Automation.RuntimeException",
+        "hresult": -2146233087
+      }
+    ]
+  },
+  "logical_exit_code": 2,
+  "receipt_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\Session0TrialCleanup20261027\\39d34e6461e94a97b0ccac01b611ef8f.json"
+}
