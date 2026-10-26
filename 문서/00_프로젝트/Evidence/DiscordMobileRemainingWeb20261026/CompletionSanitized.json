@@ -1,0 +1,82 @@
+{
+  "status": "LIVE_DISCORD_FAKE_FOUR_ROLE_PASS_CLEANUP_PASS",
+  "checks": {
+    "all_flow_checks": true,
+    "fake_four": true,
+    "job_exit_zero": true,
+    "job_active_zero": true,
+    "job_cleanup_verified": true,
+    "single_returned_command_deleted": true,
+    "inventory_restored": true,
+    "manual": true,
+    "no_art_approval": true,
+    "no_billed_reservation": true,
+    "model_zero": true,
+    "usage_reads_zero": true,
+    "boot_approval_unchanged": true,
+    "source_queue_unchanged": true
+  },
+  "all_pass": true,
+  "trial_scope": "UNFINISHED_ONLY_EXPLICIT_USER_REAUTHORIZATION",
+  "interface": "DESKTOP_WEB_FOR_APPROVAL_EXECUTION_HANDOFF; PREVIOUS_MOBILE_STATUS_TASK_REUSED",
+  "request_id": "04e77f6b821840adb0edf65a96829567",
+  "command_id": "1564182523351662602",
+  "create_count": 1,
+  "delete_count": 1,
+  "stop_reason": "OWNER_STOP",
+  "stopped_at_kst": "2026-10-26T16:53:56.837590+09:00",
+  "fake_calls": 4,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "operational_sqlite_operations": 0,
+  "new_discord_sent_receipts": 11,
+  "old_receipts_preserved": 2,
+  "job": {
+    "total_processes": 2,
+    "timed_out": false,
+    "cleanup_verified": true,
+    "active_processes": 0,
+    "exit_code": 0
+  },
+  "cleanup": {
+    "status": "CLEANUP_PASS",
+    "command_deleted": true,
+    "command_id": "1564182523351662602",
+    "original_inventory_restored": true
+  },
+  "not_live_tested": [
+    "non_owner_rejection",
+    "approval_expiry",
+    "unconsumed_approval_cancel"
+  ],
+  "mobile_long_sha_ux": "OPEN",
+  "evidence_sha256": {
+    "run-config.json": "a38d686eb36d031bf3c8c8d75fa83d6538770e15d6dc86923268fc7760c7826b",
+    "launch-consumed.json": "e3dd27cfe669672731e2e9fb938171459199ed884c0469a99fe1ea5462812581",
+    "registered.json": "2ef54968634a3ad5741f0add2a935a3158699ebd64a578a6b93e307660ea05d9",
+    "delete-attempted.json": "0f610de1f3750e766af2ed05a0b8a37581f2d35218dd6997ddda1db2562a07ae",
+    "summary.json": "ace6d086d792bd6abcde03d0b38f1795e5468d60fc9f63eb6cb61ec5e88bbd8a",
+    "parent-result.json": "6807cc7a1ec4a1e44d849a780d7ff16f18ca247321ac43f2dc7993a6eb462175",
+    "cleanup.json": "e991efb75ccd70e6663204b5aad36d6dd98aeee8745d8de700154b95962b5462",
+    "commands-before.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "commands-after.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "global-commands-before.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "global-commands-after.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "current_source_commit_before_completion": "89f76240b45f85a11f43d4cd3c1cd67a83aeece0",
+  "model_or_a_activation_authorized": false,
+  "implementation_commit": "341f6a5168a4e14b89f417de4089b5a59167d88e",
+  "external_pid_remaining": 0,
+  "source_changes": [
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/mobile-trial-host.py",
+      "before_sha256": "c98e7459e53a131a30665c41b9867435114a70091cf071f22ca3f4e2fb798d35",
+      "after_sha256": "7a474ebc207656c7fa727b951f7d7186e431425dd394d262164f8c30a1e57ba3"
+    },
+    {
+      "path": "Tools/DiscordAIServiceDiagnostics/test_mobile_trial_resume.py",
+      "before_sha256": null,
+      "after_sha256": "36bfd41aa7200dda685b9a52930b63bf23b0f6c45825e814cc1ac802bf1e1f50"
+    }
+  ]
+}

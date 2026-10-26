@@ -1,0 +1,37 @@
+{
+  "root": "F:\\study\\codex\\Project-Limitless\\Temp\\MobileLive\\04e77f6b821840adb0edf65a96829567",
+  "request_id": "04e77f6b821840adb0edf65a96829567",
+  "source_run": "F:\\study\\codex\\Project-Limitless\\Temp\\MobileLive\\2de25e01be5646f7b07a4a3bcf2413b4",
+  "source_queue_sha256": "f5ac00f5fe4afdd068398c622a25f95d088c562a383898188e5082c631f95f34",
+  "source_queue_unchanged": true,
+  "resume_task_id": "L-29e2a0f4c1e741ef",
+  "resume_queue_sha256": "30058eb1bef6b69a319d762923d84f3070393de5a1e8a8b58ec19fb9784f1ea9",
+  "grant_count": 0,
+  "repeat_status_task_tests": false,
+  "host_sha256": {
+    "MobileTrialJob.cs": "1fa65ede1f18e8273e4e09c82acfeeb693daf67cb36a77799ae2d0d4b6932393",
+    "mobile-trial-host.py": "7a474ebc207656c7fa727b951f7d7186e431425dd394d262164f8c30a1e57ba3",
+    "run-mobile-trial-host.ps1": "00fd8c759c3b60f8335f85b9b945eaf5150be580458f629ab54f4a3d565268bc"
+  },
+  "model_calls_allowed": 0,
+  "official_usage_reads_allowed": 0,
+  "new_authorization": "USER_REQUEST_RETRY_ONLY_UNFINISHED",
+  "new_continuation_tests": [
+    {
+      "case": "valid",
+      "pass": true
+    },
+    {
+      "case": "bad_hash",
+      "pass": true
+    },
+    {
+      "case": "has_grant",
+      "pass": true
+    },
+    {
+      "case": "non_new",
+      "pass": true
+    }
+  ]
+}

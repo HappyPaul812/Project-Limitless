@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 미진행 웹 시험 완료 — Fake4역할 PASS / 정상 정리 PASS
+
+마지막 관련 구현 commit: `341f6a5168a4e14b89f417de4089b5a59167d88e` (LOCAL_ONLY).
+
+대표 새 지시로 이전 NEW/grant0 기획 업무를 원본 불변 격리 snapshot으로 재개했습니다. 휴대전화 status/task 재시험0, 웹에서 승인→기획→두 아트→Codex→기획 회신 실제 확인. Fake정확4·승인소비4·TECH_PASS4·신규 SENT11(과거2 별도), 실제 모델/usage/운영 SQLite0. USER_REVIEW_PENDING 유지·미술 승인/게임 적용0.
+
+16:53:56 KST 완료 후 Host exit0/active0·부모/worker 모두 종료, 반환 command1564182523351662602만 DELETE1·guild/global inventory 복원 CLEANUP_PASS. 이전 snapshot/마커 보존, 완료된 재개 Queue에는 소비4가 있으므로 옛 NEW copy를 다시 자동 실행하지 않습니다. MANUAL/A 미활성·운영/게임·Save/Push/main/PC 보호. 모바일 전체 승인 UX/비대표/실제 취소·만료 live검증은 남음. 상세 DiscordMobile_RemainingWeb_FourRole_PASS_20261026.md 및 CompletionSanitized.json. 실제 AI/A 별도 승인 필수.
+
 ## 2026-10-26 Issue #66 실제 시험 종료 — 모바일 상태/접수 PASS · 승인/실행 미시험 · 정리 PASS
 
 대표 휴대전화 status/task 응답 확인·실제 SENT receipt2·기획 task NEW 확인. 64자리 SHA 수동 입력 UX가 길어 컴퓨터 웹 사용 가능 안내. 승인 grant0/Fake0, 승인/실행/인계는 미시험으로 PARTIAL. 새 Host·만료 연장·소비 초기화0.

@@ -1,0 +1,20 @@
+{
+  "status": "READY_FOR_MOBILE_FAKE_TRIAL",
+  "mode": "MANUAL",
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "operational_sqlite_operations": 0,
+  "application_retries": 0,
+  "trial_application_id": "1564156403571105906",
+  "production_application_id": "1563102982386749440",
+  "expires_at_kst": "2026-10-26T17:02:20.926069+09:00",
+  "command_id": "1564182523351662602",
+  "owner_permissions_pass": true,
+  "bot_permissions_pass": true,
+  "gateway": "PASS",
+  "actual_models": 0,
+  "host_pid": 26984,
+  "source_task_preserved": "L-29e2a0f4c1e741ef",
+  "previous_success_repeated": false,
+  "resumed_from_new_grants_zero": true
+}

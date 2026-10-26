@@ -1,0 +1,80 @@
+{
+  "status": "LIVE_DISCORD_FAKE_FOUR_ROLE_FLOW_PASS_CLEANUP_PENDING",
+  "checks": {
+    "fake_exactly_four": true,
+    "all_four_roles_tech_pass": true,
+    "four_role_return_recorded": true,
+    "four_grants_consumed_once": true,
+    "art_approval_not_granted": true,
+    "unknown_reports_zero": true,
+    "source_queue_unchanged": true
+  },
+  "web_success_human_confirmed": true,
+  "mobile_scope_previously_passed": [
+    "status",
+    "task"
+  ],
+  "remaining_scope_tested_on": "DESKTOP_WEB_DISCORD",
+  "fake_calls": 4,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "operational_sqlite_operations": 0,
+  "receipt_count_including_previous_two": 13,
+  "new_receipts": 11,
+  "grants": [
+    {
+      "task": "L-29e2a0f4c1e741ef",
+      "state": "CONSUMED"
+    },
+    {
+      "task": "L-a728f1606f3a44ee",
+      "state": "CONSUMED"
+    },
+    {
+      "task": "L-11e4c295626f4537",
+      "state": "CONSUMED"
+    },
+    {
+      "task": "L-a9921e17d61942cf",
+      "state": "CONSUMED"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "L-29e2a0f4c1e741ef",
+      "role": "PlanningAgent",
+      "state": "REVIEW_PENDING",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    },
+    {
+      "id": "L-a728f1606f3a44ee",
+      "role": "NewArtAgent",
+      "state": "REVIEW_PENDING",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    },
+    {
+      "id": "L-11e4c295626f4537",
+      "role": "RenewalArtAgent",
+      "state": "REVIEW_PENDING",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    },
+    {
+      "id": "L-a9921e17d61942cf",
+      "role": "CodexAgent",
+      "state": "REVIEW_PENDING",
+      "tech": "TECH_PASS",
+      "art": "USER_REVIEW_PENDING"
+    }
+  ],
+  "returned_role": "CodexAgent",
+  "not_live_tested": [
+    "non_owner_rejection",
+    "approval_expiry",
+    "unconsumed_approval_cancel"
+  ],
+  "mode": "MANUAL",
+  "a_mode_activated": false
+}

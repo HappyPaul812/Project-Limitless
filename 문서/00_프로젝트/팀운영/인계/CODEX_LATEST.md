@@ -1,3 +1,13 @@
+## 2026-10-26 Issue #66 현재 — 미진행 웹 4역할 Fake PASS / 종료·삭제 PASS
+
+마지막 관련 구현 commit: `341f6a5168a4e14b89f417de4089b5a59167d88e` (LOCAL_ONLY).
+
+대표 “미진행만 다시” 새 승인에 따라 이전 기획 NEW/grant0를 원본 불변 격리 복사본으로 재개. task ID/SHA·과거 receipt2 보존, 신규 실행루트/Host04e77f6b821840adb0edf65a96829567. 웹 실제 승인/기획·NewArt·Renewal·Codex/기획 four_role_return PASS, Fake4·소비4·TECH_PASS4·신규 receipt11. 실제 AI/usage/운영 DB0, 미술 승인 USER_REVIEW_PENDING/예약0. 이전 성공 status/task 재시험0. 새 재개 gate4 PASS, 기존 전체검사0.
+
+완료 후16:53:56 KST Stop→exit0/active0/부모30464·worker26984 없음→command1564182523351662602 DELETE1·guild/global inventory 복원PASS. 현재 Host/명령 없음. source 원본 SHA/과거마커·완료Queue보존. 오래된 이전 snapshot은 NEW여도 실제 완료 Queue의 소비4를 무시하고 재복제/자동실행 금지.
+
+MANUAL/A 미활성/운영·게임·Save/Push/main/PC 보호. 모바일 긴 SHA UX OPEN, 비대표/승인취소·만료 live검증 미진행. 실제 AI/A 별도 승인. 상세 DiscordMobile_RemainingWeb_FourRole_PASS_20261026.md, Evidence/DiscordMobileRemainingWeb20261026/. 다음 단계 자동 착수 금지, 실제 commit은 Issue66 완료 기록 참조.
+
 ## 2026-10-26 Issue #66 현재 — trial 종료/삭제 완료, 모바일 상태/접수 PASS·승인 UX 미완
 
 대표 휴대전화 status/task 실제 수신 확인, SENT2·root NEW1·grant0·Fake0. 긴 SHA 모바일 입력이 불편하여 컴 웹 가능 안내. 실제 승인/실행/역할 인계 미시험, 전체 VERIFIED가 아닌 PARTIAL. 16:34:38 KST 만료 후 Host exit0/active0/cleanup_verified, 정확 command1564175559733551186 DELETE1·guild/global inventory 복원 PASS. 이전 READY를 현재 온라인으로 해석하지 않습니다.
