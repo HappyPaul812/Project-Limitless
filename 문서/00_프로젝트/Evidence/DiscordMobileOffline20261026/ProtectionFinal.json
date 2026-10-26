@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "boot_approval": true,
+    "trial_summary": true,
+    "manifest": true,
+    "prior_marker_0": true,
+    "prior_marker_1": true,
+    "prior_marker_2": true,
+    "new_marker": true,
+    "original_head": true,
+    "original_tracked_status": true,
+    "no_active_permit": true
+  },
+  "all_pass": true,
+  "scope": "File hashes and original tracked status; running service/task/SQLite protection additionally confirmed by actual trial summary."
+}

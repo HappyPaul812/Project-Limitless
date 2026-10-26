@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 — Session0 추론 VERIFIED / 2단계 오프라인 연결
+
+실제 request `d56fdba9618044b98f98fe98e4cff211`의 로컬 summary 대조: 서비스 계정 Session0/logon4, CLI exit0·완료 turn1·정확한 한 문장 응답·JSONL PASS. AppServer1+exec1, 응용 재실행0, 전체23.170초, stderr0. permit 비활성·임시 작업 REMOVED·Job 자식0. 운영 보호 및 이전 marker SHA 확인. 추론 토큰 input9934/output22/cached8192. 실제 서버 요청/내부 retry 수 UNKNOWN.
+
+조건부 승인에 따라 2단계 오프라인 구현 착수: 새 합성 DB, 기존 Store/4역할 표/검증기/체크포인트 재사용, SHA 바인딩 실행 승인 후보, 기획→두 아트→Codex→기획 기록, 중복/실패 HOLD/outbox. 운영 `/approve`는 미술 승인용 유지, 새 approve-execution은 오프라인 후보이며 Discord 등록 없음. 가짜 연결 검증 결과는 Evidence/DiscordMobileOffline20261026/OfflineTests.json 참조.
+
+추가 실제 모델/usage/Discord/운영 DB 업무0. MANUAL/신규 실업무 HOLD, 운영 bot·아트·부팅·인증·CLI·게임·Save·Push/main 변경0. 상세 `DiscordMobile_Offline_Integration_20261026.md`. 실운영 연결·추가 모델·A 모드는 별도 승인 필요. 시작 commit90e8e7dd; 마지막 관련 실제 commit은 Issue66 완료 보고 참조.
+
 ## 2026-10-26 Issue66 인증수정본 신규1회 명시승인 — 새request d56fdba9618044b98f98fe98e4cff211 / 관리자실행대기
 
 대표가d9fa4f7c 후보(b841cf65)의새실전1회를승인. config818c/keyring/ChatGPT증거20b0확인·features.view_image등11제어false/기존read-only검증gate유지. 새ZIPe5315fcc/최종Manifest5de623d3, 47파일runtime44/기존40보호·CLI전체45/운영43SHA일치. 이전usage marker2+717a추론marker총3/이전ZIP·Manifest보존.

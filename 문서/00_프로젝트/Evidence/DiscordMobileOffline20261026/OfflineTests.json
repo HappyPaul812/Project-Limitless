@@ -1,0 +1,16 @@
+{
+  "tests": 24,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 54.187,
+  "process_launch_attempts": 0,
+  "network_attempts": 0,
+  "outside_scratch_write_attempts": [],
+  "actual_model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_posts": 0,
+  "production_sqlite_operations": 0,
+  "test_scope": "NEW_MOBILE_OFFLINE_BOUNDARIES_ONLY",
+  "status": "PASS"
+}

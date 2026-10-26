@@ -1,0 +1,147 @@
+{
+  "source": "C:\\ProgramData\\LimitlessRelay\\InferenceTrials\\d56fdba9618044b98f98fe98e4cff211\\Output\\summary.json",
+  "source_sha256": "919efb9255b5f5766a32803248b5088628f839ce1e6e8bb536b6b72718b02115",
+  "result": {
+    "sqlite_work_operations": 0,
+    "permit_deactivated": true,
+    "deployment": "PASS_44_EXACT_40_PRESERVED",
+    "status": "VERIFIED",
+    "discord_posts": 0,
+    "stage": "START_APPROVED_INFERENCE_ONCE90",
+    "usage_app_server_launches": 1,
+    "parent_session_id": 9,
+    "previous_markers_preserved": true,
+    "task_exit_code": 0,
+    "child": {
+      "sqlite_work_operations": 0,
+      "entry_result": {
+        "status": "VERIFIED",
+        "stage": "COMPLETE",
+        "reason": "EXACT_READONLY_SENTENCE_VERIFIED",
+        "request_id": "d56fdba9618044b98f98fe98e4cff211",
+        "inference_exec_launches": 1,
+        "usage_app_server_launches": 1,
+        "application_retries": 0,
+        "discord_posts": 0,
+        "sqlite_work_operations": 0,
+        "mode_changed": false,
+        "internal_retry_count": "UNKNOWN",
+        "policy": {
+          "application_retries": 0,
+          "inference_exec_max": 1,
+          "usage_app_server_max": 1,
+          "internal_http_retries": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+          "internal_stream_reconnects": "OFFICIAL_BUILTIN_DEFAULT_ALLOWED",
+          "remote_requests_exactly_one_guaranteed": false,
+          "local_limit_seconds": 90,
+          "discord_posts": 0,
+          "sqlite_work_operations": 0,
+          "mode": "MANUAL"
+        },
+        "credential_store_selection": "EXISTING_KEYRING_EXPLICIT",
+        "official_usage_before": {
+          "source": "CODEX_APP_SERVER_OFFICIAL",
+          "observed": 1792990877.914707,
+          "ordinary_allowed": true,
+          "windows": [
+            {
+              "minutes": 300,
+              "used_percent": 53,
+              "resets_at": 1793002760
+            },
+            {
+              "minutes": 10080,
+              "used_percent": 23,
+              "resets_at": 1793571540
+            }
+          ]
+        },
+        "process": {
+          "stdout_bytes": 429,
+          "stderr_bytes": 0,
+          "stdout_truncated": false,
+          "stderr_truncated": false,
+          "exit_code": 0,
+          "timed_out": false,
+          "pipes_complete": true
+        },
+        "validation": {
+          "status": "PASS",
+          "reason_codes": [],
+          "completed_turns": 1,
+          "event_counts": {
+            "thread.started": 1,
+            "turn.started": 1,
+            "item.completed": 1,
+            "turn.completed": 1
+          },
+          "item_counts": {
+            "agent_message": 1
+          },
+          "usage": {
+            "input_tokens": 9934,
+            "output_tokens": 22,
+            "cached_input_tokens": 8192
+          },
+          "final_response": "LIMITLESS 기획 담당 AI입니다. 읽기 전용 연결 시험에 성공했습니다."
+        }
+      },
+      "discord_posts": 0,
+      "request_id": "d56fdba9618044b98f98fe98e4cff211",
+      "account": "PAUL-PC\\LIMITLESSRelaySvc",
+      "worker_budget_ms": 70000,
+      "usage_app_server_launches": 1,
+      "child_elapsed_ms": 15928,
+      "supervisor_budget_ms": 75000,
+      "application_retries": 0,
+      "inference_exec_launches": 1,
+      "job": {
+        "exit_code": 0,
+        "cleanup_verified": true,
+        "timed_out": false,
+        "stdout_truncated": false,
+        "active_processes": 0,
+        "stderr_truncated": false
+      },
+      "codex_home_unchanged": true,
+      "stage": "JOB_SUPERVISED_INFERENCE",
+      "sid_matches": true,
+      "logon_type": 4,
+      "status": "VERIFIED",
+      "session_id": 0
+    },
+    "inference_exec_launches": 1,
+    "parent_is_admin": true,
+    "trial_task_launches": 1,
+    "boot_tasks_unchanged": true,
+    "local_execution_elapsed_ms": 23170,
+    "ledger_unchanged": true,
+    "approval_unchanged": true,
+    "request_id": "d56fdba9618044b98f98fe98e4cff211",
+    "cleanup": "REMOVED",
+    "application_retries": 0
+  },
+  "checks": {
+    "summary_verified": true,
+    "six_gates": true,
+    "permit_absent": true,
+    "disabled_permit_present": true,
+    "child_marker_present": true,
+    "launch_marker_present": true,
+    "boot_approval_sha": true,
+    "previous_marker:C:\\ProgramData\\LimitlessRelay\\UsageOnly20261026.launch-consumed.json": true,
+    "previous_marker:C:\\ProgramData\\LimitlessRelay\\UsageOnly20261026.bindingfix-e10d02cb.launch-consumed.json": true,
+    "previous_marker:C:\\ProgramData\\LimitlessRelay\\InferenceOnce90-717a0afa735d485daf790579b964e8c2.launch-consumed.json": true,
+    "launcher_sha": true,
+    "entry_sha": true,
+    "core_sha": true,
+    "exact_response": true,
+    "service_context": true,
+    "cleanup": true,
+    "protected_execution_summary": true,
+    "no_mode_or_discord_or_db_actions": true,
+    "bounded_single_launch": true,
+    "no_error_or_forbidden_event": true,
+    "approved_deployment": true
+  }
+}

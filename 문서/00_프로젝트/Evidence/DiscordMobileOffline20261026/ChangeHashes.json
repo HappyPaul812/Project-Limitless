@@ -1,0 +1,32 @@
+{
+  "base_commit": "90e8e7dde33d25a66d95651395d866a1cc1a48f4",
+  "changes": [
+    {
+      "path": "Tools/DiscordAICollab/collab/mobile_offline.py",
+      "before_sha256": null,
+      "after_sha256": "aef705df03cffb4e631a5e5514a0924776d2f19fac7d66404dff1b5dbfc7ce98"
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/test_mobile_offline.py",
+      "before_sha256": null,
+      "after_sha256": "3a859aab2059f2e6aa15358bde0cf5914c92d5953e01752a64f8370b762e8cac"
+    },
+    {
+      "path": "문서/00_프로젝트/DiscordMobile_Offline_Integration_20261026.md",
+      "before_sha256": null,
+      "after_sha256": "b56802949afb631a4a71dcf89791623b0ac169506d4183cb25e1e00056a97b55"
+    },
+    {
+      "path": "문서/00_프로젝트/CURRENT_STATUS.md",
+      "before_sha256": "839d5321bd07bcf3602483ef00ab47732ad0e6a9d4eaebf5c6d478d41d609a0c",
+      "after_sha256": "505a31f096db2adb9b30be4970173059365af1dd1c535aa5aecc128b83636e68"
+    },
+    {
+      "path": "문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md",
+      "before_sha256": "cfc73498f419772f40dc61e32b47896bbade539e5f099a142c47297f9086ba74",
+      "after_sha256": "bd9765d1c763d2107266902feee043f1fd8af0b5292c6ec660fd4c2b4e3e05b5"
+    }
+  ],
+  "operational_approval_list_changes": 0,
+  "deployment": false
+}
