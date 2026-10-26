@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord AI 1단계 실제 VERIFIED / 2단계 오프라인 24 PASS
+
+- Codex [Issue #66 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6408778370) 확인. 서비스계정 Session0/logon4 **실제 Codex 추론 성공**(exit0, completed turn1, 한국어 최종답변, JSONL PASS, 23.170초, stderr0). 자동 재실행0, 실제 원격 HTTP 횟수 미확정; 토큰 input9934/output22/cached8192. 임시Task·permit 정리, 기존 승인/SQLite/봇·아트·OnBoot·CODEX_HOME 보호.
+- 사용자의 '1단계 성공 시 2단계 바로 진행' 조건에 따라 **2단계 가짜 SQLite/Executor/Discord 통합 24 PASS/0 FAIL**. 코드 `Tools/DiscordAICollab/collab/mobile_offline.py` 후보. `approve-execution`은 실제 봇 명령 미등록; `/limitless approve`는 기존 미술 승인으로 보호. 실제 Discord 모바일 왕복 및 운영 Worker, A 자동재개는 **아직 미검증**. MANUAL/HOLD 유지.
+- Codex 구현 브랜치 `codex/discord-usage-diagnostics-20261026`: 로컬 구현 `0dffe9738eb8e56fe06af413e19411ab87f72b25`, 완료기록 `d2db1e47b541e3e578985dc746eb31ec066b318c` (**LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_DEPLOYED**). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 반영 commit `168b848fd3e1a6bc1cb5a915058b20fc0158c713`.
+- 다음 단계 권장: 기존 봇·아트감시를 보호한 채 실제 Discord 모바일 명령/승인 구분·소유자 ID/서버/채널 스코프·서명/상태/manifest SHA·명령 롤백을 검토, 합성 실행기로 단계적 실제 Discord 왕복시험을 준비. 추가 실제 모델 호출/운영봇 변경/A 활성화·모바일 프로덕션 검증은 별도 승인 게이트로 분리하고 오해 없이 보고할 것.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 PowerShell 충돌 2건 격리 수정
 
 - Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6406235162): 실제 서비스 Session0/logon4 및 44 SHA/기존40 보존 성공 후 usage-only 시험은 Python/App Server 시작 **전** PowerShell 스크립트 변수 충돌로 중단. `$home` ↔ ReadOnly `$HOME`, 결과변수 `$child` ↔ `[switch]$Child`. 격리 후보만 `serviceCodexHome`·`childSummaryPath`로 rename, 오프라인 3 PASS/0 FAIL. **실제 공식 사용량 조회0·모델0·Discord0**, 과거 `OFFICIAL_READ_REJECTED`/ `turn.failed` 원인 미확정.
