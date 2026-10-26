@@ -1,0 +1,22 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/install-session0-trial.ps1",
+    "sha256": "117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/run-atomic-trial-install.ps1",
+    "sha256": "75ce33d60c34327b37d61cabd2fa362941933a280f919426c01eb7c9118bab70"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs",
+    "sha256": "1d85ea2b3b99027dbf0eeb4ee61b590b8be3539d7c9e7992af0dee03c8d8d96e"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/probe-partial-install-readonly.ps1",
+    "sha256": "2e53e4898c10fd0ddd8654b1a368ec1e386ac114dc9e8f2393ff40780f4922b8"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/test-partial-readonly-offline.ps1",
+    "sha256": "bc1d7826bc42709f3b5c03b5ba8024127424fbb2f1f7b78ec76ba230e98a9023"
+  }
+]

@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 읽기 전용 부분 조사 — NOT_VERIFIED_HOLD
+
+기준a0037099…/동일격리branch. 이전 Install1 소비 완료 유지, 추가0. 현재 설치root 존재·State부모목록부재·승인3SHA/원래receipt SHA80523d2b…보존. 계정/그룹/배치/Task/보호파일/로그는 조회거부 또는LocalAccounts NullReference로UNKNOWN. 이전관리자 Bot1008 Disabled 증거와 현재상태 재검증을 구분. task부재/삭제 단정금지.
+
+신규 probe-partial-install-readonly.ps1 SHA2e53e489…: installer 호출/exit/시스템변경/암호입력 없음. 관리자 exact-notfound+열거/부모목록으로만 부재판정, InnerException type/code만, 로그 한정오류토큰만. fake16 PASS/0 FAIL, 기존29/35 반복0. 최종 일반토큰328ab780…json. 관리자 명령/후속원인·최소복구계획은 DiscordSession0_PartialInstall_ReadOnly_20261026.md. 실제원인 NOT_VERIFIED, 현재AccessDenied를과거원인으로혼동금지. wrapper exit2 창종료 별도확정. 승인파일수정0/복구재설치0/MANUAL·A HOLD. 관리자결과 이후에도 자동복구금지. 관련commit Issue66 마감 기록 참조.
+
 ## 2026-10-26 Issue #66 관리자 실제 설치1회 — PARTIAL_INSTALL_HOLD
 
 요청0f8e15c951a144efa79f5ccdbeed9c55 실제 관리자 Session9. 승인SHA/855/854 PASS 후 INSTALL_HOLD, 신규 Bot SID S-1-5-21-2858504392-1958168942-1662906075-1008 생성/Disabled. 코드root존재·state root없음, task UNKNOWN_OR_ABSENT(부재 확정 아님). OnBoot2개/boot approval SHA 전후 동일. Host/IPC/Fake/AI/usage/Discord0. 실제 SD/설치최종검증은 미완료.

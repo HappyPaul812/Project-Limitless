@@ -1,0 +1,199 @@
+{
+  "status": "NOT_VERIFIED_HOLD",
+  "diagnostic_id": "11088f289e0847c683c816a52d333527",
+  "source_request_id": "0f8e15c951a144efa79f5ccdbeed9c55",
+  "install_attempts_added": 0,
+  "system_changes": 0,
+  "host_ipc_fake_calls": 0,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "discord_calls": 0,
+  "credential_reads": 0,
+  "reader": {
+    "session_id": 9,
+    "account": "PAUL-PC\\windows",
+    "is_admin": false,
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1001"
+  },
+  "source_receipt_sha256": "80523d2b2320cabce31789d7322a3a7c480ff8f225d42c1f0120a3bdcbea5d6b",
+  "previous": {
+    "boot_tasks_unchanged": true,
+    "stage": "APPROVED_INSTALL_ONCE",
+    "install_attempts": 1,
+    "approval_unchanged": true,
+    "safe_error_code": "INSTALL_HOLD_NEW_TRIAL_ONLY_NO_RETRY_CHECK_PARTIAL_INSTALL",
+    "error_type": "RuntimeException",
+    "hresult": -2146233087,
+    "status": "HOLD"
+  },
+  "account": {
+    "errors": [
+      {
+        "type": "NullReferenceException",
+        "hresult": -2147467261
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "groups": {
+    "errors": [
+      {
+        "type": "NullReferenceException",
+        "hresult": -2147467261
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "batch_rights": {
+    "errors": [
+      {
+        "type": "MethodInvocationException",
+        "hresult": -2146233087
+      },
+      {
+        "type": "Win32Exception",
+        "hresult": -2147467259,
+        "native_error_code": 5
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "task": {
+    "errors": [
+      {
+        "type": "UnauthorizedAccessException",
+        "hresult": -2147024891
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "paths": {
+    "C:\\Program Files\\LimitlessRelayTrial\\Code": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "C:\\Program Files\\LimitlessRelayTrial\\HostManifest.json": {
+      "errors": [
+        {
+          "type": "ItemNotFoundException",
+          "hresult": -2146233087
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "C:\\Program Files\\LimitlessRelayTrial\\Code\\Tools\\DiscordAIServiceDiagnostics\\TrialAccountPolicy.cs": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "C:\\Program Files\\LimitlessRelayTrial\\DeploymentRecord.json": {
+      "errors": [
+        {
+          "type": "ItemNotFoundException",
+          "hresult": -2146233087
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "C:/ProgramData/LimitlessRelayTrial": {
+      "status": "ABSENT_FROM_READABLE_PARENT"
+    },
+    "C:/Program Files/LimitlessRelayTrial": {
+      "directory": true,
+      "reparse": false,
+      "status": "PRESENT",
+      "acl": {
+        "errors": [
+          {
+            "type": "UnauthorizedAccessException",
+            "hresult": -2147024891
+          }
+        ],
+        "status": "UNKNOWN_READ_FAILED"
+      }
+    }
+  },
+  "approved_sha": {
+    "installer": "117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9",
+    "zip": "4b2c56edf5bb8edc6ee7a40a10504f537223bc77874b43a36e61be735c318f83",
+    "status": "READ",
+    "manifest": "6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab",
+    "all_match": true
+  },
+  "installed_payload": {
+    "errors": [
+      {
+        "type": "UnauthorizedAccessException",
+        "hresult": -2147024891
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "boot_tasks": {
+    "errors": [
+      {
+        "type": "MethodInvocationException",
+        "hresult": -2146233087
+      },
+      {
+        "type": "CimException",
+        "hresult": -2146233088
+      }
+    ],
+    "status": "UNKNOWN_READ_FAILED"
+  },
+  "boot_approval": {
+    "matches": true,
+    "status": "READ",
+    "sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f"
+  },
+  "events": {
+    "PowerShellCore/Operational": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "Microsoft-Windows-PowerShell/Operational": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "Windows PowerShell": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    },
+    "Microsoft-Windows-TaskScheduler/Operational": {
+      "errors": [
+        {
+          "type": "UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN_READ_FAILED"
+    }
+  },
+  "original_exception_recovery": "NOT_VERIFIED_FIXED_THROW_RECEIPT_NO_INNER_EXCEPTION",
+  "receipt_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\Session0PartialReadOnly20261026\\11088f289e0847c683c816a52d333527.json"
+}

@@ -1,0 +1,17 @@
+PASS no-exit-statement
+PASS no-install-or-system-mutation-commands
+PASS no-mutating-com-methods
+PASS readonly-lsa-reader-compiles-no-native-call
+PASS inner-hresult-preserved-without-message
+PASS read-probe-denied-is-unknown
+PASS absent-path-requires-readable-parent
+PASS absence-with-successful-parent-list
+PASS nonadmin-not-found-stays-unknown
+PASS admin-notfound-with-enumeration-confirms-absence
+PASS admin-enumeration-failure-stays-unknown
+PASS contradictory-task-result-stays-unknown
+PASS task-denied-is-not-absence
+PASS event-projection-removes-secrets
+PASS unrelated-event-excluded
+PASS event-text-bounded
+{"failed":0,"system_changes":0,"passed":16,"actual_scheduler_calls":0,"installer_executions":0,"actual_lsa_calls":0}

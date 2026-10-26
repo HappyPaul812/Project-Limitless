@@ -1,5 +1,7 @@
 # Issue66 원자 SDDL 후보 실제 설치 승인 — 관리자 로컬 입력 대기
 
+> 후속 실제 Install1은 부분 설치 HOLD로 끝났습니다. **아래 과거 Install 명령 재실행 금지**. 최신 `DiscordSession0_PartialInstall_ReadOnly_20261026.md`의 새 읽기 전용 진단만 사용합니다. 기존 소비/부분 자산 보존, 복구·재설치 별도 승인 필요.
+
 2026-10-26. 기준 `3f6ec5861622296100377277c908bc6915840d94`, branch `codex/discord-usage-diagnostics-20261026`.
 
 **PACKAGE_PASS / WAIT_ADMIN_INSTALL / 설치 시도0**. 대표가 새 후보의 최소권한 계정 및 Disabled/trigger0/FAKE_ONLY 예약 작업 설치를 명시 승인했습니다. 추가 승인 질문은 필요하지 않습니다. 그러나 현재 Codex는 `PAUL-PC\windows` Session9 비관리자 토큰이므로 실제 설치와 로컬 암호 입력은 대표가 관리자 PowerShell7에서 직접 수행해야 합니다. Codex가 암호를 수집하거나 UAC/PIN/인증을 우회하지 않습니다.
