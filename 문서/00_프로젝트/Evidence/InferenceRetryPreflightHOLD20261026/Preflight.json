@@ -1,0 +1,73 @@
+{
+  "status": "NOT_VERIFIED",
+  "stage": "OFFLINE_CLI_RETRY_POLICY_PREFLIGHT",
+  "reason": "BUILTIN_RETRY_ZERO_NOT_VERIFIED",
+  "trial_request_id_reserved_offline": "e0d2e6fb9a6e48708b35052c02ad133c",
+  "request_started": false,
+  "permit_created": false,
+  "marker_created": false,
+  "model_calls": 0,
+  "official_usage_reads": 0,
+  "automatic_retries": 0,
+  "discord_posts": 0,
+  "sqlite_work_operations": 0,
+  "current_agent": {
+    "is_admin": false,
+    "session_id": 9
+  },
+  "service_execution_this_trial": false,
+  "target_service_account": "PAUL-PC\\LIMITLESSRelaySvc",
+  "target_session_id": 0,
+  "target_logon_type": 4,
+  "config_probe": {
+    "command_kind": "features list",
+    "isolated_home": "EMPTY_TEMP_NO_AUTH",
+    "overrides": [
+      "model_providers.openai.request_max_retries=0",
+      "model_providers.openai.stream_max_retries=0"
+    ],
+    "exit_code": 1,
+    "sanitized_stderr": "Error: failed to load bootstrap configuration\n\nCaused by:\n    model_providers contains reserved built-in provider IDs: `openai`. Built-in providers cannot be overridden. Rename your custom provider (for example, `openai-custom`).\n    in `model_providers`",
+    "network_or_model_request": false,
+    "preliminary_help_probe": {
+      "exit_code": 2,
+      "reason": "features list does not accept --strict-config; removed for configuration probe"
+    }
+  },
+  "cli": {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordAICollab20261023\\Worktree\\Tools\\DiscordAICollab\\data\\runtime\\codex\\official-0.164.0-alpha.11.1-x64\\bin\\codex.exe",
+    "sha256": "4fd2f057bad603bf53dc202457ffd0c3591de62e867a8b01e73816e3fbce5a73",
+    "approval_match": true
+  },
+  "official_package": {
+    "manifest_sha256": "04cecc241628c7a17a46ef9fc3befbe32e287792f938ecc4f854f20a40eb9833",
+    "expected_files": 45,
+    "actual_files": 45,
+    "mismatches": []
+  },
+  "existing_operating_approval": {
+    "sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f",
+    "runtime_entries": 43,
+    "runtime_sha_mismatches": []
+  },
+  "preserved_usage_markers": {
+    "UsageOnly20261026.launch-consumed.json": "62a867f542d6800a68f9a626d1c792ace7143081a7ff8e15ce1638b412cab97b",
+    "UsageOnly20261026.bindingfix-e10d02cb.launch-consumed.json": "dc348c9dbffd2f81e822caa2e9d4369fa607d2e12729878f74bdaf83525dcd2e"
+  },
+  "active_usage_permit_exists": false,
+  "prompt": "LIMITLESS 게임의 기획 담당 AI로서, 읽기 전용 연결 시험에 성공했다는 사실을 한국어 한 문장으로 답변하세요. 파일이나 외부 시스템은 수정하지 마세요.",
+  "prompt_sha256": "6f25b6b4de8fce640b6b8d3a6567cc90120b20640428946b400b202657e1937d",
+  "executed_inference_source_commit": null,
+  "base_commit": "862b860090add1bca365100da4c1e0aee5bf0440",
+  "branch": "codex/discord-usage-diagnostics-20261026",
+  "live_operations_changed": false,
+  "not_freshly_reverified": [
+    "service Session0/logon4",
+    "subscription auth",
+    "official usage",
+    "boot task state",
+    "SQLite table content",
+    "bot/art process health"
+  ],
+  "official_reference": "https://learn.chatgpt.com/docs/config-file/config-reference"
+}

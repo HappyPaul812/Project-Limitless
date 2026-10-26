@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 실제AI 단발 신규승인 — 추론 전 RETRY_POLICY_HOLD
+
+바울 대표가 고정한국어 요청 모델최대1회/90초/자동재시도0 승인. 실제 모델/공식사용량/Discord/SQLite업무0, 새permit/작업/소비marker0. 새request `e0d2e6fb9a6e48708b35052c02ad133c`는 문서예약만·미소비. 현재 agent 비관리자 Session9, 서비스Session0/logon4는 이전PASS이며 이번새실행없음.
+
+기존 phase2는 응용retry0·builtin bounded기본값. 승인CLI의 빈Temp CODEX_HOME `features list`에서 openai request/stream_max_retries=0 override는 reserved builtin provider 오류 exit1. 내부retry0 제어 미확인으로 HOLD, custom provider/보안우회/조건완화0. package45/runtime43 SHA불일치0·기존승인/마커보존. 운영코드/봇/아트/부팅/DB/MANUAL/인증/게임/Save 변경0, 새실시간건강PASS주장금지.
+
+상세 Inference_Session0_RetryPolicy_HOLD_20261026.md / Evidence/InferenceRetryPreflightHOLD20261026/Preflight.json. 다음은 공식builtin retry0지원확인 또는 대표의retry범위결정 후에만 새90초격리runner 준비. 구Discord/SQLite runner사용금지. 기반862b8600·이번docs commit은Issue66참조. Push/merge0·실제AI/A/모바일체인미검증으로중지.
+
 ## 2026-10-26 Issue66 공식사용량 단발 실제성공 — Session0/logon4 / 종료완료
 
 request773d9ecb7d944d9783c57ead117f471c 실제로컬summary대조PASS. PAUL-PC\LIMITLESSRelaySvc SID일치·Session0/logon4·격리배포44/기존40보존·account/rateLimits/read id3 PASS/에러없음·appserver/Job/task exit0. launch1/공식사용량1·모델0/Discord0/자식SQLite업무0/재시도0.
