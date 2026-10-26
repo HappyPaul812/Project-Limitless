@@ -1,6 +1,6 @@
 ## 2026-10-27 Issue #66 부분 자산 정리 승인 — WAIT_ADMIN_CLEANUP
 
-기준ae163034…/격리branch. 대표가 옛 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled Bot SID1008 정리만 승인. 현재 Codex Session9 비관리자라 실제 정리/백업0, FIXED_ADMIN_REQUIRED. 신규 정리 도구/Native helper 준비·합성 **43 PASS/0 FAIL**(실제삭제/LSA/Scheduler0), 기존 성공 suite 반복0.
+구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa` (LOCAL_ONLY), 기준ae163034…/격리branch. 대표가 옛 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled Bot SID1008 정리만 승인. 현재 Codex Session9 비관리자라 실제 정리/백업0, FIXED_ADMIN_REQUIRED. 신규 정리 도구/Native helper 준비·합성 **43 PASS/0 FAIL**(실제삭제/LSA/Scheduler0), 기존 성공 suite 반복0.
 
 Admin/SID/owner·DACL·855 SHA·예상밖파일/ADS/reparse·전체Task/서비스·드라이버/프로세스 참조/보존검사→관리자보호855백업 및 evidence→재검사→handle파일별 삭제/빈디렉터리 비재귀→정확 SID계정삭제→최종검사. 참조/조회불가/불일치면HOLD, task등록삭제/권한완화/exit/설치경로 없음. 실제정리 대상·단일 관리자 명령·실패대응은 DiscordSession0_PartialCleanup_AdminPending_20261027.md. 현재 신규설치가능성 미확정, Install1/실패증거/LSA후보 그대로 보존. 정리PASS 후에도 새패키지 별도승인 전 미설치 유지. 관련commit Issue66 마감 참조.
 

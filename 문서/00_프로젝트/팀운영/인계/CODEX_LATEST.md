@@ -1,6 +1,6 @@
 ## 2026-10-27 Issue #66 정리 승인 — WAIT_ADMIN_CLEANUP / 실제 정리0
 
-대표가 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled SID1008 계정만 정리승인, 새설치미승인. ae163034…기준. 현 Codex Session9 비관리자 Inspect ce050715… FIXED_ADMIN_REQUIRED/cleanup소비false/삭제0. 새 cleanup-partial-trial.ps1 SHA4d272559…/Native1c8abecf…/신규합성43 PASS·실제Windows효과0. 기존29/35/36/42 전체반복0.
+구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa` (LOCAL_ONLY). 대표가 Code root C:\Program Files\LimitlessRelayTrial 및 Disabled SID1008 계정만 정리승인, 새설치미승인. ae163034…기준. 현 Codex Session9 비관리자 Inspect ce050715… FIXED_ADMIN_REQUIRED/cleanup소비false/삭제0. 새 cleanup-partial-trial.ps1 SHA4d272559…/Native1c8abecf…/신규합성43 PASS·실제Windows효과0. 기존29/35/36/42 전체반복0.
 
 정확SID/marker/expiry/Users/직접권한[]/profile·logon부재, task부재, root 및855 hash·ACL·reparse·ADS·hardlink/독점read·전체tasks/services/drivers/process 참조와OnBoot/SHA보존 모두 확인 후만 C:\ProgramData\LimitlessRelayTrialCleanup20261027에원자보호백업/단발소비→상태재검사→검증handle파일별삭제·빈폴더비재귀→계정재검사/SID삭제→최종검사. 보호프로세스정보 등 하나라도 불명이면삭제전HOLD. task등록삭제/프로세스중단/권한변경/설치/exit 없음.
 

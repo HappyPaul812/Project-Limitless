@@ -1,6 +1,6 @@
 # Issue66 과거 부분 설치 자산 정리 — 관리자 실행 대기
 
-2026-10-27, 기준 `ae163034dd299254fbc0b2e30a482f821faf08ca`, branch `codex/discord-usage-diagnostics-20261026`.
+2026-10-27, 구현 commit `82e41f64e85e57bc3675c7e4413c6f4857023caa`, 기준 `ae163034dd299254fbc0b2e30a482f821faf08ca`, branch `codex/discord-usage-diagnostics-20261026`.
 
 **CLEANUP_APPROVED / WAIT_ADMIN_CLEANUP / 실제 삭제0**. 대표는 실패한 Install1의 신규 시험 계정과 옛 Code root 정리만 승인했습니다. 새 패키지 설치 승인 아님. 현재 Codex는 PAUL-PC\windows/Session9/비관리자이므로 관리자 재검사·정리는 대표가 아래 명령으로 직접 수행해야 합니다. 정리 승인을 다시 묻지 않습니다.
 
