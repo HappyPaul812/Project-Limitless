@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-26 — Discord #66 12 PASS, usage-only 격리 배포 사전검증 완료
+
+- Codex [Issue #66 latest](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404994131) + 사용자 보고 기준 신규 usage-only 독립 진입점 오프라인 **12 PASS/0 FAIL**. 기존 검증22건/공식 전체 CLI 설치 검사 재실행 없음. **실제 사용량 조회0·AI 추론0·운영 배포0, MANUAL 유지.**
+- 승인 목록 정확한 산식: 운영 `Python42 + DiscordSecretStore.psm1 1 = 총43`, 격리 후보 `Python43 + PSM1 1 = 총44`. 기존 3파일 변경+신규 `usage_diagnostics.py` 1파일, 나머지 **40개 항목은 기존 SHA 보호**. Git checkout 줄바꿈 차이(26 Python+PSM1)를 무조건 승인하지 않은 것이 핵심. 새 `usage-only-once.py`는 운영 승인 목록에 자동 등록된 것이 아님.
+- 별도 비활성 시험 패키지, 보호 ProgramData permit, 서비스 Session0/logon4, 최소20초 supervisor, 신규 request ID, 1회 소비마커, 재시도0, 로그 경로 및 권한, 원본 보호·복구를 시험 전 확인할 것. 기존 사용량→모델 추론 runner는 사용금지.
+- Codex 작업 `codex/discord-usage-diagnostics-20261026`, 로컬 `0f98620bbd565e0ee8df6b743a6a251b21ae75b6` (`LOCAL_COMMITTED/REMOTE_NOT_PUSHED/NOT_DEPLOYED`). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) 이력 갱신 `docs/planning` commit `fd4b741f4da8e9751a259cec800de9af87e2297b`.
+- 다음 **분리된 승인**: 격리 trial 패키지/permit 배포 → 확인 후 사용량-only 최대 1회/20초/모델0 실행. 실제 `OFFICIAL_READ_REJECTED` 원인·과거 `turn.failed` 원인 모두 미확정. A 모드/게임/CLI/부팅/본편·main/로컬 동기화 변경 승인 없음.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 오류 진단 수정 22 PASS 및 승인 게이트
 
 - Codex [Issue #66 최신 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6404667041) 확인. 서비스 사용량 조회 에러 진단보존 최소수정 후보(기존 4개 관련 파일 수정+신규 `usage_diagnostics.py` 등) **격리 오프라인 22 PASS/0 FAIL**, 실제 AI/사용량 API 조회0, 운영 배포0. **이 오류의 실제 원인 및 Session0 AI 추론 성공은 여전히 미확정**.
