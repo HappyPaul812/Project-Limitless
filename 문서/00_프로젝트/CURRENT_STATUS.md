@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 새 원자 SDDL 후보 설치 승인 — 관리자 로컬 입력 대기
 
-대표가 Installer117065bb…/Manifest6efbd783…/zip4b2c56ed… 새 후보의 최소권한 계정·Disabled/trigger0/FAKE_ONLY 작업 설치를 승인. 세 SHA·855개 hash·854개 보존 사전검사 PASS. 현재 Codex Session9/비관리자이므로 **WAIT_ADMIN_INSTALL / 설치 시도0**. 신규 SID/실제 task SD/운영 OnBoot 전후 PASS는 아직 미확정. 기존29/35 재시험0.
+실행 준비 commit `30cc720d59396409b76ee4642ec56d16fdb79816` (LOCAL_ONLY). 대표가 Installer117065bb…/Manifest6efbd783…/zip4b2c56ed… 새 후보의 최소권한 계정·Disabled/trigger0/FAKE_ONLY 작업 설치를 승인. 세 SHA·855개 hash·854개 보존 사전검사 PASS. 현재 Codex Session9/비관리자이므로 **WAIT_ADMIN_INSTALL / 설치 시도0**. 신규 SID/실제 task SD/운영 OnBoot 전후 PASS는 아직 미확정. 기존29/35 재시험0.
 
 신규 run-atomic-trial-install.ps1은 승인 설치기 bytes만 한 번 호출하고 SID3개/Users/배치 직접권한/24시간 만료/설치855 SHA/실제 SDDL/고정 action/Disabled/trigger0/기존 OnBoot SHA 전후를 검사하는 보조 명령. 승인 payload 수정0. 관리자 PowerShell7의 로컬 보안 입력이 필요하며 정확 명령은 DiscordSession0_AtomicInstall_AdminPending_20261026.md. HOLD면 재등록/자동삭제 금지. Host/IPC/FakeWorker/AI/usage/Discord0, MANUAL/A HOLD 및 기존 운영·Unity/Save 보호. 설치 PASS 후 다음 IPC 승인 전 중지. 실제 관련 commit은 Issue66 마감 기록 참조.
 

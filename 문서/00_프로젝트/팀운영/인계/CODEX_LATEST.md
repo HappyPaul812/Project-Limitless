@@ -1,6 +1,6 @@
 ## 2026-10-26 Issue #66 새 후보 실제 설치 승인 — WAIT_ADMIN_INSTALL
 
-기준3f6ec586…/동일격리branch. 대표가 새 SHA117065bb…/6efbd783…/4b2c56ed… 후보만 설치 승인. 실제 파일855 hash/854 원본 동일 PASS. 현재 PAUL-PC\windows Session9 비관리자이므로 실제 설치0, 새 BOT SID·Task owner/DACL·OnBoot SHA 전후 PASS 아직 미확정. 기존29/35 재시험0.
+실행 준비 commit `30cc720d59396409b76ee4642ec56d16fdb79816` (LOCAL_ONLY), 기준3f6ec586…/동일격리branch. 대표가 새 SHA117065bb…/6efbd783…/4b2c56ed… 후보만 설치 승인. 실제 파일855 hash/854 원본 동일 PASS. 현재 PAUL-PC\windows Session9 비관리자이므로 실제 설치0, 새 BOT SID·Task owner/DACL·OnBoot SHA 전후 PASS 아직 미확정. 기존29/35 재시험0.
 
 run-atomic-trial-install.ps1 신규 SHA75ce33d6…는 payload 밖의 설치/검증 보조. 관리자 토큰·고정 Worker SID·기존 OnBoot export·기존 계정/task 부재 확인 후 승인 installer 메모리bytes만1회 실행. 로컬 SecureString 암호 입력, 실제 SD/ACL·Users/직접배치권한/24h·설치SHA·OnBoot 보존 검사. Install/Inspect/Preflight만 존재, Start/IPC/AI/Discord 없음. 정확 관리자PowerShell7 명령/복구는 DiscordSession0_AtomicInstall_AdminPending_20261026.md. 초기 byte[] pipeline 오류 preflight 수정, 설치시도 전후0; 읽기전용 LSA reader 컴파일 PASS/native호출0.
 
