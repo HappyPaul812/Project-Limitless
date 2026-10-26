@@ -1,0 +1,43 @@
+{
+  "status": "READY_WAIT_OWNER_SERVICE_LOG_REVIEW",
+  "source_request_id": "717a0afa735d485daf790579b964e8c2",
+  "base_commit": "9b46a03ffd01b8b0d01fdc4a0e271f5b56c9a25f",
+  "branch": "codex/discord-usage-diagnostics-20261026",
+  "source_summary_sha256": "900e016992f1b27af291b56129a42d66b329a1ffbe50a2d007a1fa75f3137dae",
+  "new_sources_sha256": {
+    "project-existing-inference-log.py": "0a11e451d023b31197535bbaddcb1dc33db171133af22e910b781bf586454be9",
+    "review-existing-inference-log.ps1": "bfed719bc6c0b7ea8acd46249ea77bf6a3793ef1607e0712734e94d89ca2dcf2",
+    "test_existing_log_projection.py": "42fd354fcc09392ec4ba4deb2a358ec0efebea27c240d840b37215914ee25f8c"
+  },
+  "offline_tests": {
+    "pass": 13,
+    "fail": 0,
+    "inputs": "SYNTHETIC_JSONL_AND_CURRENT_USER_SYNTHETIC_DPAPI_ONLY"
+  },
+  "powershell_parse_bindings": "PASS",
+  "nonadmin_guard": "PASS_NO_MODEL_NO_USAGE",
+  "actual_service_log_read": "NOT_RUN_AGENT_NONADMIN_SESSION9_LOCAL_SERVICE_CREDENTIAL_REQUIRED",
+  "underlying_cause": "NOT_CONFIRMED",
+  "inference_fix": "NOT_WRITTEN_BEFORE_CAUSE_CONFIRMED",
+  "phase2_started": false,
+  "new_model_calls": 0,
+  "official_usage_reads": 0,
+  "model_cli_processes": 0,
+  "new_ai_permit_or_slot": false,
+  "operating_deployment": false,
+  "operator_command": "pwsh -NoProfile -File \"F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\Tools\\DiscordAIServiceDiagnostics\\review-existing-inference-log.ps1\"",
+  "conditional_phase2_authorization": {
+    "approved_by_owner": true,
+    "condition_satisfied": false,
+    "trigger": "FUTURE_SEPARATELY_APPROVED_LIVE_STAGE1_VERIFIED_WITH_ALL_SIX_GATES",
+    "action": "BEGIN_PHASE2_OFFLINE_IMPLEMENTATION_AND_TESTS_IMMEDIATELY_WITHOUT_REQUESTING_ANOTHER_INSTRUCTION",
+    "limits": [
+      "MANUAL",
+      "NO_ADDITIONAL_LIVE_MODEL",
+      "NO_A_MODE",
+      "NO_OPERATIONAL_BOT_OR_ART_CHANGE",
+      "NO_PUSH_OR_MAIN_MERGE",
+      "NO_GAME_SAVE_CHANGE"
+    ]
+  }
+}

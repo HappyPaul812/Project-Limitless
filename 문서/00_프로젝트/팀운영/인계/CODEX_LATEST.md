@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 서비스기존로그진단 준비13PASS — 대표직접실행대기 / 조건부2단계승인기록
+
+실패717a의원인미확정. agent비관리자S9·보호로그는서비스SID로만읽어야하므로새로그전용wrapper/projector준비. 서비스자기DPAPI복호화·원본SHA대조·error10/turn.failed/item3유형·순서·stderr/실행metadata를엄격정제출력, 원본로그전후SHA보호. 모델/usage/CLI실행경로없음·새AIpermit/slot없음. 합성13PASS·PS구문/변수/비관리자가드PASS. 운영/인증/ACL/게임/Push변경0·MANUAL/HOLD.
+
+정확관리자명령 Existing_Inference_LogReview_Ready_20261026.md. 승인부족이아니라서비스계정로컬암호입력필요로대표실행대기. 정제projection수신후원인확인→최소수정/오프라인검증. 기존소비marker보존·추론재시험은별도신규승인필수.
+
+**대표조건부지속승인:** 향후별도승인된실제1단계가exit0/정상turn/최종응답/JSONL PASS/읽기전용준수/기존보안보호모두VERIFIED이면추가지시없이즉시2단계(Discord모바일→승인큐→실행기→결과보고)오프라인구현·가짜검증시작. 실제추가모델/A/운영봇변경금지·MANUAL. 현재조건false로2단계착수0. 새로그projection성공은실제AI성공이아님. 기반9b46a03f·로컬최종commit은Issue66참조.
+
 ## 2026-10-26 Issue66 Session0 실제추론 단발 NOT_VERIFIED — 소비완료/종료/재실행금지
 
 request 717a0afa735d485daf790579b964e8c2 실제summary대조. 서비스SID일치·Session0/logon4·usage AppServer1성공후exec1시작, CLIexit1/turn.failed/완료turn0/최종응답없음·Worker/Taskexit2. error10≠retry10, forbidden3실제유형미확인·도구실행단정금지. 내부retry/원격성공·소비미확인. 전체28.758초·Job자식0/정리true·permit비활성/활성경로부재·TaskREMOVED·소비marker존재. 이전승인/마커/CODEX_HOME/부팅/장부보호결과true·MANUAL/HOLD.
