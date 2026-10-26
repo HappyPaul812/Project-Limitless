@@ -136,6 +136,8 @@ def run(request_id,clock=None):
         result['usage_read_attempts']=1
         record['stage']='USAGE_ONLY_READ'
         value=asyncio.run(read_once(provider,budget))
+        # 같은 1회 응답의 정규화된 숫자만 보고합니다. 계정/인증 원문이나 추가 조회는 없습니다.
+        result['official_usage']=value
         if clock()>=deadline:raise Denied('USAGE_ONLY_DEADLINE_HOLD')
         # 조회 성공은 업무 실행 승인이 아닙니다. 소진/불명 상태는 이 진입점에서도 HOLD합니다.
         if value.get('ordinary_allowed') is not True or any(w['used_percent']>=100 for w in value['windows']):

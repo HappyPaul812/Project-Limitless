@@ -1,0 +1,33 @@
+{
+  "status": "NEW_OWNER_APPROVED_TRIAL_READY_WAITING_ADMIN_LOCAL_EXECUTION",
+  "approval_key": "BINDINGFIX_E10D02CB_20261026",
+  "base_commit": "e10d02cbb4fccc9679a2ebd035c8426f3c603557",
+  "previous_request": "987a8f4268534a0496a9e600e7af5dd7",
+  "previous_fuse_sha256": "62a867f542d6800a68f9a626d1c792ace7143081a7ff8e15ce1638b412cab97b",
+  "previous_archive_sha256": "395264ca39ff3f64afd97ef8c848a142bdc51a0c83a9b8b2fb3328170e8ee482",
+  "old_evidence_unchanged": true,
+  "new_request_id": "GENERATED_ON_OWNER_LOCAL_LAUNCH_ONLY",
+  "new_marker": "C:/ProgramData/LimitlessRelay/UsageOnly20261026.bindingfix-e10d02cb.launch-consumed.json",
+  "new_marker_created": false,
+  "runtime_44_map_unchanged": true,
+  "new_entry_numeric_output_only": true,
+  "single_provider_read_static_check": "PASS",
+  "offline_binding_tests": {
+    "pass": 3,
+    "fail": 0
+  },
+  "offline_numeric_report_tests": {
+    "pass": 3,
+    "fail": 0
+  },
+  "official_usage_live_reads": 0,
+  "model_calls": 0,
+  "discord_posts": 0,
+  "automatic_retries": 0,
+  "active_permit_created": false,
+  "package_sha256": "55241c88d0f43c518faac6f66d7b892fc3128e4bffa320bfc899f613e5b466a9",
+  "manifest_sha256": "1f561edc3f68e1c7fd599b1608c4b43613e80e9a30705d89e27673bb6f9fae79",
+  "launcher_sha256": "7fe0b17f73c6a55fd3a676d10bddc5060a7e9f335d40a8e95f8f50a850bd39aa",
+  "entry_sha256": "670c922eb22d721e2c79eb52ef39e54c9ca627cefa0d7bfd38cf94c9eeeb38ed",
+  "push": false
+}

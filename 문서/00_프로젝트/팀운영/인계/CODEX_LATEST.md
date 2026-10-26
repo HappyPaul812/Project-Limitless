@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 변수수정본 신규1회 명시승인 — 관리자 실행대기
+
+대표가 e10d02cb 수정본의 새trial1회를승인. serviceCodexHome/childSummaryPath 유지·부모/자식AST충돌0. 이전987a request/launch marker62a867/배포본/ZIP 보존, 새 bindingfix-e10d02cb 전용marker와 실행시새Guid만허용. 새permit은정확trial만·44runtime맵/기존40보존불변.
+
+같은1회응답의안전한사용량숫자를보고하도록entry2줄/PS엄격숫자선택추가, 추가조회0. 표적binding3+보고경계3PASS·구문/단일read정적/비관리자가드/diff PASS·기존44/22+12/Job4전체반복0. launcher7fe0b17f/entry670c922e/새ZIP55241c88. 현재새배포/permit/marker/request/실조회/AI0.
+
+정확한관리자명령 UsageOnly_BindingFix_NewApproval_20261026.md / Evidence/UsageTrialBindingFix20261026/. 현재비관리자라대표직접로컬암호입력대기·새승인재요구아님. 결과후실제계정/S0-logon4/조회수/공식결과/RPC코드/정리/기존보호확인하고성공실패무관중지. 이전marker초기화/자동재시도/모델/A/운영변경금지. 최종commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 단발실패 원인확정·격리변수수정 — 실조회0/재실행금지
 
 987a8f42 배포PASS44/서비스Session0-logon4/SID일치 뒤 PowerShell변수충돌로실패. 자식 home변수→읽기전용HOME 쓰기, 부모결과경로 child변수→switch Child충돌. 실제로Job/Python/appserver시작전차단·후속child-run-marker없음·공식RPC0/AI0/Discord0. 기존OFFICIAL_READ_REJECTED와별개이며환경/인증오류로오인금지.
