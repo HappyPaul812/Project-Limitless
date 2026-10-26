@@ -146,10 +146,27 @@ def cleanup(root, rest):
     return result
 
 
+def open_trial_relay(root, config):
+    from collab.mobile_offline import OfflineMobileRelay
+    if config.get('resume_unconsumed_queue'):
+        queue = root / 'Queue/mobile-offline.sqlite'
+        if hashlib.sha256(queue.read_bytes()).hexdigest() != config['resume_queue_sha256']:
+            raise ValueError('RESUME_QUEUE_SHA_HOLD')
+        relay = OfflineMobileRelay.reopen(root / 'Queue', {OWNER}, clock=time.time, guild=GUILD, channels=(CHANNEL,))
+        with relay.store.tx() as db:
+            tasks = db.execute('SELECT id,role,state FROM tasks').fetchall()
+            if (len(tasks) != 1 or tasks[0]['id'] != config['resume_task_id']
+                    or tasks[0]['role'] != 'PlanningAgent' or tasks[0]['state'] != 'NEW'
+                    or db.execute('SELECT COUNT(*) FROM mobile_grants').fetchone()[0] != 0):
+                raise ValueError('ONLY_UNCONSUMED_NEW_TASK_CAN_RESUME')
+    else:
+        relay = OfflineMobileRelay.create(root / 'Queue', {OWNER}, clock=time.time, guild=GUILD, channels=(CHANNEL,))
+    return relay
+
+
 async def serve(root, config, rest, token):
     import discord
     from discord import app_commands
-    from collab.mobile_offline import OfflineMobileRelay
     from collab.mobile_discord_trial import MobileTrialController, build_trial_group, registration_plan
     started = time.monotonic()
     deadline = started + 1170
@@ -158,7 +175,7 @@ async def serve(root, config, rest, token):
     result = {'status': 'NOT_READY', 'mode': 'MANUAL', 'model_calls': 0, 'official_usage_reads': 0,
               'operational_sqlite_operations': 0, 'application_retries': 0, 'trial_application_id': str(TRIAL),
               'production_application_id': str(PRODUCTION), 'expires_at_kst': expires.isoformat()}
-    relay = OfflineMobileRelay.create(root / 'Queue', {OWNER}, clock=time.time, guild=GUILD, channels=(CHANNEL,))
+    relay = open_trial_relay(root, config)
     controller = MobileTrialController(relay, base_sha=config['base_sha'], trial_application_id=TRIAL, production_application_id=PRODUCTION)
     intents = discord.Intents.none()
     intents.guilds = True  # role/channel overwrite 확인용 비특권 intent만 사용합니다.
@@ -262,6 +279,8 @@ async def serve(root, config, rest, token):
         result['fake_executor_calls'] = len(relay.executor.calls)
         try: result['cleanup'] = cleanup(root, rest)
         except Exception as exc: result['cleanup'] = {'status': 'CLEANUP_HOLD_NO_RETRY', 'error_type': type(exc).__name__}
+        if result['status'] == 'READY_FOR_MOBILE_FAKE_TRIAL' and result.get('stop_reason'):
+            result['status'] = 'STOPPED_' + result['stop_reason']
         save(root / 'summary.json', result)
     return result
 
