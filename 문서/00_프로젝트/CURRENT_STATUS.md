@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 실제 시험 Host READY — 모바일 확인 대기 / 16:34:38 KST 자동 종료
+
+시험 앱/대표 소유 token 저장·현재 사용자 읽기 PASS. 별도 앱1564156403571105906에 단일 guild 명령 CREATE1, 반환 ID1564175559733551186, Gateway/대표·채널 권한 PASS. 운영 app1563102982386749440과 분리, 기존 명령0/global0 백업. `/limitless-trial status` 모바일 첫 응답 확인 대기. root1/Fake최대4/동시1, 실제 AI/usage/운영 DB0, MANUAL/A 미활성.
+
+한시 Host Session9(PAUL-PC\windows), PID26424/부모34112, 자동 만료2026-10-26 16:34:38 KST. 새 Native Job active1/강제정리+원격 반환 ID만 DELETE/전후 목록 대조. 새 경계8 PASS+Native/구문 PASS, 기존 전체 테스트 반복0. 아직 모바일 결과/최종 정리 완료 아님. 상세 `DiscordMobile_LiveHost_READY_20261026.md`, Evidence/DiscordMobileLiveHost20261026/. 기존 운영/부팅/인증/게임·Save/Push/main/PC 보호, 추가 AI 금지. 기존 ID/token HOLD는 해소됐습니다.
+
 ## 2026-10-26 Issue #66 — 두 앱 분리 정정 / 시험 token 로컬 입력 대기
 
 최신 대표 확인: 시험1564156403571105906 / 운영1563102982386749440으로 서로 다름. 이전 동일 앱 HOLD 정정·새 앱 생성 불필요. 기존 대표/guild 승인 대조 및 로컬 공개 사전 점검 PASS. 별도 setup-mobile-trial-token.ps1 준비: 숨김 token 입력→고정 시험 앱/대표 소유 REST 검증→새 현재 사용자 DPAPI 저장/읽기. 기존 저장소/ACL/운영 token 변경·복사0.

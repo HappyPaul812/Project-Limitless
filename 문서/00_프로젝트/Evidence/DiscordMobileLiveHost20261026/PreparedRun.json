@@ -1,0 +1,24 @@
+{
+  "root": "F:\\study\\codex\\Project-Limitless\\Temp\\MobileLive\\2de25e01be5646f7b07a4a3bcf2413b4",
+  "request_id": "2de25e01be5646f7b07a4a3bcf2413b4",
+  "config_sha256": "6d0d38ab15d90bce0858618566c6dd82bd172db17c64cea2718d916165e33d4d",
+  "host_sha256": {
+    "MobileTrialJob.cs": "1fa65ede1f18e8273e4e09c82acfeeb693daf67cb36a77799ae2d0d4b6932393",
+    "mobile-trial-host.py": "c98e7459e53a131a30665c41b9867435114a70091cf071f22ca3f4e2fb798d35",
+    "run-mobile-trial-host.ps1": "00fd8c759c3b60f8335f85b9b945eaf5150be580458f629ab54f4a3d565268bc"
+  },
+  "token_setup_status": "TRIAL_TOKEN_READY_HOST_NOT_STARTED",
+  "new_host_unit_tests": {
+    "pass": 8,
+    "fail": 0
+  },
+  "native_new_boundary_checks": [
+    "normal_exit_cleanup_PASS",
+    "deadline_tree_cleanup_PASS",
+    "child_creation_blocked_PASS",
+    "base_python_sdk_import_PASS"
+  ],
+  "native_note": "venv redirector blocked by process limit; use pinned base interpreter from unchanged pyvenv.cfg; cumulative job membership count is not concurrent count",
+  "trial_dpapi_current_user_read": "PASS_NO_NETWORK",
+  "previous_full_tests_repeated": false
+}

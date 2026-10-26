@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 현재 — 실제 Discord READY / 모바일 결과·종료 정리 대기
+
+trial1564156403571105906/prod1563102982386749440 분리. 대표 token Setup 성공·DPAPI 자기 사용자 읽기·API 소유 PASS. Host 실제 Gateway/대표·채널 권한 PASS, CREATE1 반환 command1564175559733551186, 기존 guild/global0 백업. 모바일 `/limitless-trial status` 확인 대기. 종료2026-10-26 16:34:38 KST, 현재사용자Session9(PID26424/부모34112), 서비스/부팅 시험 아님.
+
+현재 루트 Temp/MobileLive/2de25e01be5646f7b07a4a3bcf2413b4/. stop-request 또는 wrapper -Action Stop으로 접수차단/Host 종료/정확 ID DELETE1/목록 대조. Native 외부 watchdog active1/kill-on-close, 원격 DELETE 실패는 HOLD/재시도0. summary/parent-result/cleanup/mobile-observed 증거를 다음 턴에 확인해야 하며 READY만 보고 완료 판정 금지. 운영 계정과 저장소/부팅/게임·Save/Push/main/PC 보호, 모델/usage/운영 DB0, MANUAL/A 미활성.
+
+새 Host REST/정리 경계8 PASS, Native 정상/timeout/자식차단/SDK import PASS, 기존 전체 검사0. venv redirector 대신 불변 cfg의 base interpreter와 기존 SDK를 사용해 active1 유지. 추가 AI 연결 금지. 상세 DiscordMobile_LiveHost_READY_20261026.md 및 Evidence/DiscordMobileLiveHost20261026/. 프로세스 존재 확인은 기본 sandbox에서 보이지 않을 수 있어 필요한 경우 승인된 읽기 전용 외부 조회로 확인합니다.
+
 ## 2026-10-26 Issue #66 현재 상태 — 앱 분리 정정 / 로컬 시험 token 입력 대기
 
 대표 최신 두 ID: 시험1564156403571105906 / 운영1563102982386749440. 이전 동일 앱 HOLD는 용어 혼동으로 정정, 새 앱 다시 생성 불필요. 기존 대표/guild 승인 대조 PASS. 새 setup-mobile-trial-token.ps1은 고정 SHA/분리/owner 확인→숨김 SecureString→시험 앱/owner 단발 REST 검증→새 전용 DPAPI 저장/같은 Windows 사용자 읽기. 새 폴더만 사용·기존 token/ACL 변경0, token 미출력.
