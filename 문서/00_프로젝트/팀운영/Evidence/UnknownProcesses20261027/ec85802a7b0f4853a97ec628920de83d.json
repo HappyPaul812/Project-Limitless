@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "observed_utc": "2026-10-26T22:48:01.6088399Z",
+  "status": "REFERENCE_VERIFICATION_HOLD",
+  "source_sha256": "2379842226cb58aa83c01132915c0a7d1675b8f9243dce2d29532d4a751bdc9f",
+  "source_creation_missing": true,
+  "source_pid_missing": 3,
+  "is_admin": false,
+  "short_alias_error": null,
+  "rows": [
+    {
+      "historical_pid": 288,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 328,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 940,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 1316,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 1452,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 1532,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 1552,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 1588,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 3360,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 5000,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 5128,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 10376,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 19404,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 4912,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 28124,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": 32660,
+      "historical_creation_utc": null,
+      "historical_error": "NOT_RECORDED",
+      "historical_status": "UNKNOWN",
+      "identity": "UNPROVEN_MISSING_HISTORICAL_CREATION",
+      "current_status": "ACCESS_DENIED",
+      "name": null,
+      "creation_utc": null,
+      "session_id": null,
+      "owner_account": null,
+      "owner_sid": null,
+      "image_path": null,
+      "command_line_available": false,
+      "command_line_match": null,
+      "image_match": null,
+      "owner_match": null,
+      "protected_level": null,
+      "protected_windows_system": "UNKNOWN",
+      "native": {
+        "open_error": 5
+      },
+      "cim": {},
+      "errors": [
+        {
+          "codes": [
+            {
+              "type": "Microsoft.Management.Infrastructure.CimException",
+              "hresult": -2146233088
+            }
+          ],
+          "operation": "CIM_EXISTENCE"
+        }
+      ],
+      "reference_scope": "image/command_line/owner literal aliases only; indirect references not verified"
+    },
+    {
+      "historical_pid": null,
+      "historical_status": "UNKNOWN",
+      "identity": "SOURCE_PID_TRUNCATED",
+      "current_status": "UNKNOWN",
+      "historical_error": "NOT_RECORDED",
+      "protected_windows_system": "UNKNOWN"
+    },
+    {
+      "historical_pid": null,
+      "historical_status": "UNKNOWN",
+      "identity": "SOURCE_PID_TRUNCATED",
+      "current_status": "UNKNOWN",
+      "historical_error": "NOT_RECORDED",
+      "protected_windows_system": "UNKNOWN"
+    },
+    {
+      "historical_pid": null,
+      "historical_status": "UNKNOWN",
+      "identity": "SOURCE_PID_TRUNCATED",
+      "current_status": "UNKNOWN",
+      "historical_error": "NOT_RECORDED",
+      "protected_windows_system": "UNKNOWN"
+    }
+  ],
+  "scope": "Only preserved16 PIDs; no repeat of tasks/services/all processes; no handles/modules/environment scan",
+  "cleanup_or_install_calls": 0
+}

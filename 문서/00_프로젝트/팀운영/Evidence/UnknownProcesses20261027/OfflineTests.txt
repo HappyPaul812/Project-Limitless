@@ -1,0 +1,4 @@
+Offline 9 PASS / 0 FAIL; native/CIM calls 0
+PowerShell parse PASS; ExitStatementAst 0
+AST command/native imports manually reviewed; no cleanup/installer invoked
+Final script parameter-only amendment offline verified; actual16-PID result93caaadf retained; admin success paths NOT_VERIFIED
