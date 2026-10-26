@@ -1,5 +1,7 @@
 # Issue #66 Host ↔ 고정 Worker 최종 접합·설치 전 준비
 
+> **후속 설치 사전검사 HOLD:** 승인 Installer가 작업을 먼저 등록하고 DACL을 나중에 제한하며 실제 descriptor readback이 없어, 생성 시점 권한 검증이 충족되지 않았습니다. **아래 역사적 설치 명령을 실행하지 마세요.** 현재 승인 후보/855파일은 그대로 보존했습니다. 최신 판단은 `DiscordSession0_Install_Preflight_HOLD_20261026.md`를 따릅니다. 계정/작업/IPC는 생성·실행하지 않았습니다.
+
 **CODE_JOIN_COMPLETE / OFFLINE_VERIFIED / NOT_INSTALLED.** 기존에 남았던 Host와 고정 Worker 접합 코드를 완성했습니다. 서로 다른 실제 Windows 계정 간 IPC, 계정 생성/설치, 실제 Discord→AI는 아직 실행하지 않았습니다. 실전 성공을 뜻하지 않습니다.
 
 브랜치 `codex/discord-usage-diagnostics-20261026`, 기준 `ef1dec16bf285024c9caa733845ff93985e07d7f`. 마지막 관련 로컬 commit은 CURRENT_STATUS/인계 및 Issue #66 완료 댓글에 기록합니다. Push/main 병합 없음.

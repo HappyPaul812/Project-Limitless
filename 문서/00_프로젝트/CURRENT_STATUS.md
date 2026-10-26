@@ -1,3 +1,13 @@
+## 2026-10-26 Issue #66 실제 설치 승인 후 사전검사 — 설치 전 SECURITY HOLD
+
+기준 `a8b0be3971aa461d09432348b309179cade27981`. 대표의 새 계정/FAKE_ONLY IPC 승인은 확인했습니다. Manifest9aa4a60d…/Installer337ad613…/정확855개(Code66 Runtime741 Legacy47 Deployment1) SHA PASS·불일치0. 그러나 승인 Installer112행 작업 등록→114행 DACL 적용 구조이며 실제 SD readback이 없습니다. 생성 시점 권한 검증 미충족으로 **HOLD_BEFORE_INSTALL**. 실제 권한 유출을 재현/확정한 것은 아님.
+
+이전29 PASS가 이 설치 권한 경계까지 검증하지 못한 점을 정정합니다. 이전 설치 문서 상단에 실행 금지를 표시했습니다. 승인 후보/855파일은 수정하지 않았고, 읽기 전용 Preflight만 추가했습니다. 등록 시 SDDL 동시 전달/0x10 flag/owner·DACL readback의 별도 수정 후보·새 SHA 검증이 먼저 필요합니다. 이번 지시의 검증 실패 시 중단을 따르며 현재 관리자 설치 명령이나 암호 입력을 요청하지 않습니다.
+
+계정/task/서비스/ACL/Host/Fake/모델/usage/Discord/암호입력/인증복사0. 신규 BOT SID 없음·서비스 Session0 실행 없음·실제 IPC 미검증. 현재 조사자는 Session9 비관리자이며 OnBoot2개 export 조회는 실패해 실제 정의 SHA는 확인보류(수정/실행0). 기존MANUAL/A 미활성·운영/Unity/게임/Save/Push/main/PC 보호, 운영 rollback0. 기존 성공시험 재실행0.
+
+상세 DiscordSession0_Install_Preflight_HOLD_20261026.md, Evidence/Session0InstallPreflightHOLD20261026/. 다음: 최소 작업 원자 등록 수정안 별도 후보→가짜Scheduler 경계 검증→새 Installer/Manifest SHA 승인→그 후 실제 새 계정/fake IPC. 기존 운영 환경 재설치·기존 소비 초기화 금지. 실제 commit은 마감 기록 참조.
+
 ## 2026-10-26 Issue #66 Host↔Worker 접합 완료 — 오프라인29 PASS / 설치 전 중지
 
 구현 commit `5f1dad2284d7c2cf78c4d80d451555c3619eb60a` (LOCAL_ONLY). 기준 `ef1dec16bf285024c9caa733845ff93985e07d7f`. 인증된 pipe→고정 C# Host→익명 stdin Job→서비스 broker→고정 Worker wrapper/sidecar→기존 frozen 추론/JSONL→정제 결과→단발 Discord callback까지 코드 접합을 완료했습니다. CODE_JOIN_COMPLETE / OFFLINE_VERIFIED / NOT_INSTALLED. 실제 Windows 계정 IPC·실제 Discord→AI 성공 아님.

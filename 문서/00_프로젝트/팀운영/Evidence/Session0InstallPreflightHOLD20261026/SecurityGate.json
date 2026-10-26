@@ -1,0 +1,17 @@
+{
+  "model_calls": 0,
+  "manifest_sha_match": true,
+  "task_security_descriptor_readback": false,
+  "discord_operations": 0,
+  "stage": "SECURITY_PREFLIGHT",
+  "fake_worker_calls": 0,
+  "new_install_attempted": false,
+  "status": "HOLD_TASK_DACL_AT_REGISTRATION_NOT_VERIFIED",
+  "installer_sha_match": true,
+  "system_changes": 0,
+  "exact_files_verified": 855,
+  "real_ipc_verified": false,
+  "official_usage_reads": 0,
+  "installation_blocked": true,
+  "post_create_dacl": true
+}

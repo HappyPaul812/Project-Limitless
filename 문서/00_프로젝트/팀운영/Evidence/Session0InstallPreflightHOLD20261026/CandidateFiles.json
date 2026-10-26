@@ -1,0 +1,17 @@
+{
+  "manifest_sha_match": true,
+  "installer_sha_match": true,
+  "exact_files": 855,
+  "mismatches": [],
+  "mode": "FAKE_ONLY",
+  "auto_start": false,
+  "scope_counts": {
+    "Code": 66,
+    "Runtime": 741,
+    "Legacy": 47,
+    "Deployment": 1
+  },
+  "new_install_exists": false,
+  "new_state_exists": false,
+  "system_changes": 0
+}

@@ -1,0 +1,11 @@
+{
+  "registration_lines": [
+    112
+  ],
+  "post_registration_dacl_lines": [
+    114
+  ],
+  "descriptor_readback_present": false,
+  "actual_exploit_tested": false,
+  "system_changes": 0
+}
