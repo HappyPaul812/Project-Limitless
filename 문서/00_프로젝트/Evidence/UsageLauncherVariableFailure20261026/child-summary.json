@@ -1,0 +1,19 @@
+{
+  "sid_matches": true,
+  "usage_read_attempts": null,
+  "discord_posts": 0,
+  "session_id": 0,
+  "stage": "SERVICE_IDENTITY",
+  "account": "PAUL-PC\\LIMITLESSRelaySvc",
+  "error_chain": {
+    "type": "SessionStateUnauthorizedAccessException",
+    "hresult": -2146233087
+  },
+  "sqlite_operations": 0,
+  "request_id": "987a8f4268534a0496a9e600e7af5dd7",
+  "logon_type": 4,
+  "status": "HOLD",
+  "automatic_retries": 0,
+  "reason": "USAGE_CHILD_HOLD",
+  "model_calls": 0
+}

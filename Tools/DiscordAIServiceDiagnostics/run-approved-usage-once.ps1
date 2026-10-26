@@ -42,9 +42,9 @@ if($Child){
   $r.account=$id.Name;$r.sid_matches=$true;$r.session_id=$logon[1];$r.logon_type=$logon[0]
   $homeBefore=$env:CODEX_HOME;$serviceProfile=[Environment]::GetFolderPath([Environment+SpecialFolder]::UserProfile)
   if($serviceProfile -ine 'C:\Users\LIMITLESSRelaySvc' -or $env:USERPROFILE -ine $serviceProfile){throw 'USAGE_PROFILE_HOLD'}
-  $home=Join-Path $serviceProfile '.codex';No-Link $home
-  if($homeBefore -and $homeBefore -ine $home){throw 'USAGE_HOME_HOLD'}
-  $privateRoot=Join-Path $home 'limitless-usage-trials'
+  $serviceCodexHome=Join-Path $serviceProfile '.codex';No-Link $serviceCodexHome
+  if($homeBefore -and $homeBefore -ine $serviceCodexHome){throw 'USAGE_HOME_HOLD'}
+  $privateRoot=Join-Path $serviceCodexHome 'limitless-usage-trials'
   if(Test-Path -LiteralPath $privateRoot){No-Link $privateRoot}else{$null=New-Item -ItemType Directory -Path $privateRoot}
   $private=Join-Path $privateRoot $RequestId
   if(Test-Path -LiteralPath $private){throw 'USAGE_PRIVATE_REQUEST_ALREADY_EXISTS_HOLD'}
@@ -61,7 +61,7 @@ if($Child){
   if((Sha $jobSource) -ne $jobSha){throw 'USAGE_JOB_SOURCE_HOLD'}
   Add-Type -Path $jobSource
   New-FileJson (Join-Path $out 'child-run-consumed.json') @{request_id=$RequestId;kind='USAGE_ONLY_NO_RETRY'}
-  $diagnostics=Join-Path $home 'limitless-usage-diagnostics'
+  $diagnostics=Join-Path $serviceCodexHome 'limitless-usage-diagnostics'
   $beforeNames=@();if(Test-Path -LiteralPath $diagnostics){$beforeNames=@(Get-ChildItem -LiteralPath $diagnostics -File -Filter 'usage-*.json'|ForEach-Object Name)}
   $budget=[Math]::Min(17000,[Math]::Floor(18000-$watch.Elapsed.TotalMilliseconds))
   if($budget -le 0){throw 'USAGE_SUPERVISOR_DEADLINE_HOLD'}
@@ -166,8 +166,8 @@ try{
  Start-ScheduledTask -TaskName $name -TaskPath '\'
  for($i=0;$i -lt 35;$i++){Start-Sleep -Seconds 1;$t=Get-ScheduledTask -TaskName $name -TaskPath '\';$info=Get-ScheduledTaskInfo -TaskName $name -TaskPath '\';if($t.State.ToString() -ne 'Running' -and $info.LastRunTime.Year -gt 2000){break}}
  $r.task_exit_code=$info.LastTaskResult
- $child=Join-Path $out 'child-summary.json'
- if(Test-Path -LiteralPath $child){$c=Get-Content -LiteralPath $child -Raw|ConvertFrom-Json;$r.child=$c;$r.usage_read_attempts=$c.usage_read_attempts;if($c.status -eq 'USAGE_ONLY_OBSERVED' -and $r.task_exit_code -eq 0){$r.status='USAGE_ONLY_OBSERVED'}}
+ $childSummaryPath=Join-Path $out 'child-summary.json'
+ if(Test-Path -LiteralPath $childSummaryPath){$c=Get-Content -LiteralPath $childSummaryPath -Raw|ConvertFrom-Json;$r.child=$c;$r.usage_read_attempts=$c.usage_read_attempts;if($c.status -eq 'USAGE_ONLY_OBSERVED' -and $r.task_exit_code -eq 0){$r.status='USAGE_ONLY_OBSERVED'}}
 }catch{$r.reason=if($_.Exception.Message -match '^USAGE_[A-Z0-9_]+$'){$_.Exception.Message}else{'USAGE_PARENT_HOLD'};$r.error_chain=Safe-Error $_}
 finally{
  $plain=$null;if($credential){$credential.Password.Dispose()};$credential=$null

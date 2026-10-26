@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 단발실패 원인확정·격리변수수정 — 실조회0/재실행금지
+
+987a8f42 배포PASS44/서비스Session0-logon4/SID일치 뒤 PowerShell변수충돌로실패. 자식 home변수→읽기전용HOME 쓰기, 부모결과경로 child변수→switch Child충돌. 실제로Job/Python/appserver시작전차단·후속child-run-marker없음·공식RPC0/AI0/Discord0. 기존OFFICIAL_READ_REJECTED와별개이며환경/인증오류로오인금지.
+
+격리후보에서 serviceCodexHome/childSummaryPath로만rename, 신규binding회귀3PASS·parser/diff PASS. live배포본ea7a 보존·수정후격리3a57. 기존44/22+12/Job4 재실행0. permit비활성/TaskREMOVED·boot승인/OnBoot/장부불변. 날짜별launch fuse62a867 보존·소비슬롯삭제/재발급/새request/permit/실행0. 실제조회0이라도자동재시도하지말고대표새재개지시전중지.
+
+상세 UsageTrial_LauncherVariableFailure_20261026.md / Evidence/UsageLauncherVariableFailure20261026/. source작성오류이며관련로컬fix만완료·미배포. 기존CLI/CODEX_HOME/인증/ACL/게임/Push변경0. 선행e6b24a0b·최종commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 서비스환경 실제PASS 대조·사용량 단발 최종명령 준비
 
 대표전달c332610e와로컬summary일치: 관리자parent Session9/서비스childSession0-logon4·SID/CLI·CODEX_HOME/보호I/O·20초/재시도0·task종료0·REMOVED·부팅/승인/장부불변PASS. 실제usage0/AI0로기존1회승인미소진.

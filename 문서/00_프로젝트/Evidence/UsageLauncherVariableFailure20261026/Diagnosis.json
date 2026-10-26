@@ -1,0 +1,24 @@
+{
+  "status": "HOLD_USAGE_NOT_STARTED_LOCAL_FIX_NOT_DEPLOYED",
+  "request_id": "987a8f4268534a0496a9e600e7af5dd7",
+  "confirmed_child_cause": "WRITE_TO_READONLY_AUTOMATIC_HOME",
+  "confirmed_parent_cause": "LOCAL_CHILD_PATH_OVERWRITES_SWITCH_CHILD",
+  "official_usage_reads": 0,
+  "python_app_server_started": false,
+  "model_calls": 0,
+  "discord_posts": 0,
+  "automatic_retries": 0,
+  "new_binding_tests": {
+    "pass": 3,
+    "fail": 0
+  },
+  "deployed_source_sha256": "ea7a24d93315baadfab9a62ef37b5174a00695dfff1405fe595e00b8a43afe5a",
+  "fixed_local_source_sha256": "3a57e70ac09ac2d357d4224ef4cc9c5ad23d7610f499380436eeb2aac80fec74",
+  "regression_sha256": "8005b9a646ea10364f71511058ae88e3b195f5feb6254ebe5e845c1096f5ab0d",
+  "launch_marker_sha256": "62a867f542d6800a68f9a626d1c792ace7143081a7ff8e15ce1638b412cab97b",
+  "launch_marker_preserved": true,
+  "active_permit_absent": true,
+  "live_source_modified": false,
+  "new_permit_or_request_created": false,
+  "push": false
+}

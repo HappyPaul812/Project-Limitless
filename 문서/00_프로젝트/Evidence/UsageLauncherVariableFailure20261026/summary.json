@@ -1,0 +1,30 @@
+{
+  "task_exit_code": 2,
+  "automatic_retries": 0,
+  "usage_launch_attempts": 1,
+  "permit_deactivated": true,
+  "approval_unchanged": true,
+  "deployment": "PASS_44_EXACT_40_PRESERVED",
+  "reason": "USAGE_PARENT_HOLD",
+  "status": "HOLD",
+  "request_id": "987a8f4268534a0496a9e600e7af5dd7",
+  "usage_read_attempts": null,
+  "parent_session_id": 9,
+  "ledger_unchanged": true,
+  "stage": "START_APPROVED_USAGE_ONCE",
+  "discord_posts": 0,
+  "error_chain": [
+    {
+      "hresult": -2146233087,
+      "type": "ArgumentTransformationMetadataException"
+    },
+    {
+      "hresult": -2147467262,
+      "type": "PSInvalidCastException"
+    }
+  ],
+  "parent_is_admin": true,
+  "cleanup": "REMOVED",
+  "boot_tasks_unchanged": true,
+  "model_calls": 0
+}
