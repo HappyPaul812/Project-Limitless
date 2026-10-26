@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord Phase3 오프라인 어댑터 READY / 실제 모바일 시험 미등록
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6409096093) 기준: 기존 1단계 서비스 Session0 AI VERIFIED, 2단계 가짜 4역할 인계24 PASS 유지. 신규 `discord.py` SDK 명령 callback 후보 `collab/mobile_discord_trial.py` **18 PASS / 0 FAIL**, 정확16개 trial ZIP smoke **5/5 PASS**. 실제 Discord 연결/게시·명령 등록·새모델/공식 usage·운영 DB 변경 **전부0**, MANUAL·A HOLD.
+- 시험용 별도 guild `/limitless-trial` 7명령: status/task/plan/approve-execution/cancel-execution/run-fake/handoff. 기존 `/limitless approve`의 **미술 승인은 건드리지 않는다**. 오직 별도 시험 application/bot와 제한 guild/channel, owner 검증, 짧은 TTL, FakeExecutor, root 최대1/가짜역할 호출 최대4/동시1, 재시도0, UNKNOWN_NO_RETRY, 임시 command 반환 ID 전용 DELETE 및 trial host 종료/정리 계획 후 제한 모바일 실제 E2E 추진.
+- 코드 브랜치 `codex/discord-usage-diagnostics-20261026` 로컬 구현 `8cbf90ba84c93f9c45f4979a65a605fda727d464` / 문서 `6fcaafa06ca5b89bde7eeffe55431afa125ddb40` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED`). 패키지 ZIP SHA `103ecc96c6796d288986eb6ba3ddf5e8612153010b4976f4b9c39a4dcc88099b`, manifest `f69049c61737476e6707bcb9559957e88115fbc19da0a56a92c8ae339348e5a7`. `approved=false`, permit 0, 미배포.
+- 다음 승인 게이트: test app/guild/channel/owner/ACL/Discord 명령 목록 사전 스냅샷과 **single guild CREATE/해당 ID DELETE** 허용 범위. 운영 봇 재시작·운영 CLI/계정/부팅 변경·새 AI 모델/A 활성화·게임·Save/main/Push 금지. [기획 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `9ecec485f2de79feddb039b4fa31ec17178acf78`.
+
+---
+
 # PLANNING / 2026-10-26 — Discord AI 1단계 실제 VERIFIED / 2단계 오프라인 24 PASS
 
 - Codex [Issue #66 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6408778370) 확인. 서비스계정 Session0/logon4 **실제 Codex 추론 성공**(exit0, completed turn1, 한국어 최종답변, JSONL PASS, 23.170초, stderr0). 자동 재실행0, 실제 원격 HTTP 횟수 미확정; 토큰 input9934/output22/cached8192. 임시Task·permit 정리, 기존 승인/SQLite/봇·아트·OnBoot·CODEX_HOME 보호.
