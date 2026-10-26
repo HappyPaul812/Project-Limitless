@@ -1,0 +1,21 @@
+{
+  "status": "WAITING_FOR_OWNER_ADMIN_EXECUTION",
+  "script_sha256": "f0b3589cadf63a2c47d363b614453ecf4a72bc565769436ac8ebb9f5b4eca7a0",
+  "past_pass_request": "3483af069a9c4f1387e2fec54f15dd65",
+  "new_checks": {
+    "powershell_parser": "PASS",
+    "nonadmin_guard": "PASS_EXIT2_NO_CHANGES",
+    "readonly_ledger_helper": "PASS",
+    "static_no_usage_model_service_restart": "PASS"
+  },
+  "prior_44_22_12_checks_rerun": false,
+  "service_account_executed": false,
+  "programdata_changes_this_turn": false,
+  "task_created": false,
+  "usage_live_reads": 0,
+  "model_calls": 0,
+  "discord_posts": 0,
+  "usage_permit_created": false,
+  "owner_local_command_required": true,
+  "push": false
+}

@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 안전 배치 환경 확인 명령 준비 — 관리자 직접 실행 대기
+
+과거3483af06 서비스Session0/logon4 PASS의 Password/Limited 등록·정리 방식과 기존 BatchReadOnlyMetadata 모듈을 재사용한 restore-service-environment.ps1 준비. 새 parser/비관리자가드/readonly장부도우미/사용량없는명령범위 PASS. 실제관리자/서비스실행은대표직접실행대기이며 기존44·22+12재검증0.
+
+관리자PowerShell에서로컬Get-Credential 후 새20초임시환경작업만실행·정리하도록설계. 실제SID/Session0/logon4/ProgramData I/O/CLI·CODEX_HOME/OnBoot·승인·SQLite·MANUAL보호확인. 이스크립트에는사용량/모델/Discord/업무DB처리경로없음. 현재ProgramData/작업/permit미생성·실조회0·AI0. 기존계정암호/인증/ACL/부팅/봇/게임/Push변경0.
+
+정확한직접실행명령과결과경로는 ServiceEnvironment_LocalAdmin_Wait_20261026.md, 증거 Evidence/ServiceEnvironmentLocalAdmin20261026/Preparation.json. 대표실행완료후 summary와보호/정리조건전부PASS인지확인한뒤기존승인usage1회20초절차계속. 지금자동실행하지말고로컬실행결과대기. 선행84486500/패키지0f98620b보존·최종commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 격리배포·실조회 승인 실행 — 선행환경 HOLD / 실조회0
 
 바울 대표의 배포+조건부사용량1회 승인은 유효합니다. 기준0f98620b·패키지44SHA/기존40·변경3+신규1·PSM1/entry/roles/CLI/boot승인 점검PASS. 현재토큰은비관리자·서비스계정아님·Session9, sandbox밖읽기에서도Task API CimJobException/HResult-2146233087. Session0/logon4와20초supervisor검증불가로 ProgramData배포/permit활성화 전에 지시대로중지했습니다. 공식RPC실패가아닌실행환경게이트입니다.
