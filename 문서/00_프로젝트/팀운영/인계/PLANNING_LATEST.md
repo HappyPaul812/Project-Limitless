@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — 설치기 SDDL 동시등록 후보35 PASS / 실제 설치 승인 대기
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416993559): Task Scheduler COM `RegisterTaskDefinition` 등록 호출에 제한 SDDL 동시 제공+즉시 `GetSecurityDescriptor(7)` 대조, CREATE-only flags50/Disabled·trigger0/인증 제한 및 실패 불명 HOLD. 신규 fake-Scheduler **35 PASS/0 FAIL**. **실제 Windows 작업 등록/계정간 IPC/AI E2E는 아직 미검증**. 일반 사용자 SID와 admin SID가 같던 문제는 신규 독립 BOT trial 계정 설치 전까지 보류.
+- 기존 Ready 원본 **855 payload/원래 Manifest/installer 보존**. 새 후보 payload 855개 중 Installer1만 변경, 854 원본SHA 유지. 새 시험 후보 `Temp/Session0TaskSecurityAtomicCandidate20261026`의 Installer SHA `117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9`, Manifest SHA `6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab`, ZIP SHA `4b2c56edf5bb8edc6ee7a40a10504f537223bc77874b43a36e61be735c318f83`. 이전 취약 Installer SHA `337ad613...` 실행 금지. Codex local 구현 `2ef4012fb9a963a80de5a9910b8853917fd870fd`, docs `3f6ec5861622296100377277c908bc6915840d94` (`REMOTE_NOT_PUSHED`).
+- 별도 명시 승인 후 관리자 PowerShell 직접 보안 입력/새 `PAUL-PC\\LIMITLESSBotTrial` Users SID/24h 시험 제한 및 **신규 `LIMITLESS-Trial-S0Host`** 작업 `Disabled`/`trigger0`/`FAKE_ONLY`만 설치. 시작 전 OS 실제 owner/DACL/SID 검증; 실제 Scheduler SD 정규화 등 예상 밖 상태는 재시도0·무단수정0·HOLD. 관리자·서비스 인증/기존 OnBoot2·봇·아트·게임·Save/운영 DB/CLI/본편/main 보호. 실제 FAKE_ONLY IPC와 AI/usage/Discord 호출은 분리 승인 경계.
+- 운영 `MANUAL/A_HOLD` 유지, 설치/계정생성/실 IPC/모델/usage/Discord0. 기획 운영 정본 `docs/planning` commit `569975efa33555fe3f0a7d9bfb9af370e1b08327`.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 설치 전 SDDL 원자성 미검증으로 HOLD
 
 - Codex [Issue #66 Preflight 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416602437): 설치 후보 Manifest/Installer SHA 일치, **855/855파일 PASS**이나 `install-session0-trial.ps1:112`에서 작업 생성 `Register-ScheduledTask` → `114`에서 `SetSecurityDescriptor` 사후 적용이며 실제 DACL readback이 없어 **원자적 권한 경계 미검증**. 실제 권한 유출 발생 주장 금지. 신규 계정0, Task0, Fake0, AI0/usage0/Discord0. 기존 29 PASS는 작업 등록 ACL 검증 근거가 아니므로 **HOLD_BEFORE_INSTALL** 유지.
