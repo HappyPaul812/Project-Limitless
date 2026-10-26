@@ -1,4 +1,12 @@
-## 2026-10-26 Issue #66 — Session0 추론 VERIFIED / 2단계 오프라인 연결
+## 2026-10-26 Issue #66 Phase3 — 모바일 Discord 연결 준비 완료 / 미배포
+
+Phase1 VERIFIED·Phase2 24 PASS 보존. 신규 SDK 어댑터 `/limitless-trial`은 FakeExecutor 전용, 신규18 PASS/0 FAIL+패키지 smoke5/5. 기존 mobile_offline/검증기/미술 승인/운영 bot 수정0. 별도 시험 앱·단일 guild 등록 계획, owner/app/guild/channel/권한·승인 SHA/만료/취소·중복·실제 followup receipt·HOLD/checkpoint를 구현했습니다.
+
+승인 bytes13+Phase1 roles1+신규 모듈2의 16파일 ZIP/approved=false Manifest. source runtime4개 및 roles 줄바꿈 차이는 승인 raw bytes로 해결. 기존 boot approval runtime43 불변. 다음: 별도 승인→시험 앱/실제 ID·권한/명령 inventory/서비스 SID ACL·한시적 host 확인→가짜 실행기 모바일 왕복. 현재 배포/등록/접속/추가 모델/usage/운영 SQLite0, MANUAL·실업무 HOLD·A 미활성.
+
+휴대전화 명령/되돌리기는 `DiscordMobile_Phase3_Adapter_Preparation_20261026.md`. 증거 Evidence/DiscordMobilePhase3Prepared20261026/. 기존 소비·Phase1/2 증거 보존. Push/main/게임·Save/부팅/봇·아트·인증/PC 변경0. 시작 commit d2db1e47; 최종 commit은 Issue66 완료 보고. 실제 시험 전 별도 승인 필수, 준비 완료 후 중지.
+
+## 2026-10-26 Issue #66 — Session0 추론 VERIFIED /2단계 오프라인 연결
 
 실제 request `d56fdba9618044b98f98fe98e4cff211`의 로컬 summary 대조: 서비스 계정 Session0/logon4, CLI exit0·완료 turn1·정확한 한 문장 응답·JSONL PASS. AppServer1+exec1, 응용 재실행0, 전체23.170초, stderr0. permit 비활성·임시 작업 REMOVED·Job 자식0. 운영 보호 및 이전 marker SHA 확인. 추론 토큰 input9934/output22/cached8192. 실제 서버 요청/내부 retry 수 UNKNOWN.
 

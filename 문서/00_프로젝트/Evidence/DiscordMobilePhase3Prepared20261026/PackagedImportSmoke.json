@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "packaged_module_loaded": true,
+    "exact_payload": true,
+    "fake_calls_zero": true,
+    "manifest_16_exact": true,
+    "exact_file_sha": true
+  },
+  "status": "PASS",
+  "model_calls": 0,
+  "discord_calls": 0
+}

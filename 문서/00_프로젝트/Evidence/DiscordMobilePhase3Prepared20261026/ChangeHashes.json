@@ -1,0 +1,37 @@
+{
+  "base_commit": "d2db1e47b541e3e578985dc746eb31ec066b318c",
+  "changes": [
+    {
+      "path": "Tools/DiscordAICollab/collab/mobile_discord_trial.py",
+      "before_sha256": null,
+      "after_sha256": "dbe27663a4d47bcbc1c30e8d85cc1c343ec46476b151967d582b2df9824d06de"
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/test_mobile_discord_trial.py",
+      "before_sha256": null,
+      "after_sha256": "27eb0018a354f7b0c6882b497ced0aafe8a50cf9391c88f9379e0e3413d59a09"
+    },
+    {
+      "path": "Tools/DiscordAICollab/tests/run_mobile_discord_trial_offline.py",
+      "before_sha256": null,
+      "after_sha256": "3857b49523b23335c5eb00a22acbc038acd7fdde28a21c18787dd13fb943912e"
+    },
+    {
+      "path": "문서/00_프로젝트/DiscordMobile_Phase3_Adapter_Preparation_20261026.md",
+      "before_sha256": null,
+      "after_sha256": "354e471a1f25e0b4070eb3c6a16462ac4fd784204e1869d82babbbdc594ee643"
+    },
+    {
+      "path": "문서/00_프로젝트/CURRENT_STATUS.md",
+      "before_sha256": "fbeaa9c5f0d4ac7c7c0b1a27b0b1943b90b35e3e6ee342517807eb4d865d1642",
+      "after_sha256": "da8f47cf21766fa401b71020425d7dba5136a71d2690c5c42ef6c879a556fb96"
+    },
+    {
+      "path": "문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md",
+      "before_sha256": "dd89c2eb106f63917b46e1e904b91d24111d9bc3c27227a43d11ac3ed224f7fe",
+      "after_sha256": "d932d788d3714ba7340b3ecc86206c12c122d3f00257a1bdcc6fc3d840b6e84f"
+    }
+  ],
+  "approval_changes": 0,
+  "source_push": false
+}

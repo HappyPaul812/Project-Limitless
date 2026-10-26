@@ -1,0 +1,154 @@
+{
+  "approved": false,
+  "status": "OFFLINE_PREPARED_NOT_DEPLOYABLE_WITH_EXISTING_BOOT_APPROVAL",
+  "base_commit": "d2db1e47b541e3e578985dc746eb31ec066b318c",
+  "sdk_version": "2.7.1",
+  "boot_approval_sha256": "3e032ebcce3d91bd762a8dec81048d04607ddde761afd62489c0fa2b8e49140f",
+  "boot_runtime_count": 43,
+  "candidate_dependency_sha256": {
+    "collab/adapters.py": "c9a825ea8088119ec126eed90e4591bbb77f7fa65cc67a50fc2328943ed18ced",
+    "collab/core.py": "c117c31306734192e0bda0bffa07b67ea5cfd1f9580e8972e051e13a25bb42a6",
+    "collab/exec_diagnostics.py": "974f195ea3117a036e7cc64d73811e0a41622a892eb1aebd7d7b713b88d099c3",
+    "collab/intake.py": "8f2f5a7c477c4613c87e085e6bf99457e019661c5e3af416edd27200e496a61f",
+    "collab/mobile_discord_trial.py": "dbe27663a4d47bcbc1c30e8d85cc1c343ec46476b151967d582b2df9824d06de",
+    "collab/mobile_offline.py": "aef705df03cffb4e631a5e5514a0924776d2f19fac7d66404dff1b5dbfc7ce98",
+    "collab/operating_modes.py": "322da9bfc3b529bca4d0277a33ae7197b783b8ed2a71e0f97ac8bb142438ad98",
+    "collab/operations_safety.py": "a770f80ddd73132bd22980051639bfddb59497111b97b5b024fbbaa6f3747472",
+    "collab/output_parser.py": "7e930017834154020535a8066685e86c42509277bde09ca57d9f6fa88aaa78dc",
+    "collab/phase2.py": "b1d0ff4d01b0abd0de0de14eae6afb7fb5a72048217bfb694aa4be7bd667f5ba",
+    "collab/real_roles.py": "8bf4738d98883c2beedb476eba1faa591de621caf5f021ae451bdbd7493982ad",
+    "collab/resume_queue.py": "e759103c90f958f8cdf4c3944857748b820c5e05e89ef3f305346d6988aea7e8",
+    "collab/scheduling.py": "48fa944b2bb91def112e1137b3f12061b4a6a5657c152d54c9392b5ffd86155f",
+    "roles.json": "89e1ecd3b25ea3faf8a8653f490952d11a2ddb65335402ba626acae8ef2c2281"
+  },
+  "raw_byte_mismatches_vs_boot": {
+    "collab/exec_diagnostics.py": {
+      "approved_sha256": "ab4e9f44d4e52dbf184fb56bea7cddd055b5f72d40716018d7b39c7b683750e0",
+      "candidate_sha256": "974f195ea3117a036e7cc64d73811e0a41622a892eb1aebd7d7b713b88d099c3"
+    },
+    "collab/intake.py": {
+      "approved_sha256": "469caec2069bc1041b0484a94102ee23b44b22ffa83076b00df83e7f6ac1e4b0",
+      "candidate_sha256": "8f2f5a7c477c4613c87e085e6bf99457e019661c5e3af416edd27200e496a61f"
+    },
+    "collab/operations_safety.py": {
+      "approved_sha256": "1dfff7041d74ad02f386eb8f5d18b456bc22734f43537b152c19fa596c69faa2",
+      "candidate_sha256": "a770f80ddd73132bd22980051639bfddb59497111b97b5b024fbbaa6f3747472"
+    },
+    "collab/output_parser.py": {
+      "approved_sha256": "fa40f804d008858d5d9202a8d543337569eade298167603170e4bd0793502df7",
+      "candidate_sha256": "7e930017834154020535a8066685e86c42509277bde09ca57d9f6fa88aaa78dc"
+    }
+  },
+  "new_runtime_paths_vs_boot": [
+    "collab/mobile_discord_trial.py",
+    "collab/mobile_offline.py"
+  ],
+  "test_files": {
+    "tests/test_mobile_discord_trial.py": "27eb0018a354f7b0c6882b497ced0aafe8a50cf9391c88f9379e0e3413d59a09",
+    "tests/run_mobile_discord_trial_offline.py": "3857b49523b23335c5eb00a22acbc038acd7fdde28a21c18787dd13fb943912e"
+  },
+  "command_payload_sha256": "1c003c340f3978edf37faffc729071a86b6f62aaaea30bcd8a5f4c92aba44617",
+  "required_live_inputs": [
+    "distinct_approved_test_application",
+    "owner_id_verified_locally",
+    "guild_and_channel_ids_verified",
+    "command_inventory_before_registration",
+    "protected_trial_path_and_service_SID_ACL",
+    "exact_reviewed_trial_manifest",
+    "explicit_registration_and_gateway_permission"
+  ],
+  "operational_changes": 0,
+  "model_calls": 0,
+  "usage_reads": 0,
+  "mismatch_classification": {
+    "collab/exec_diagnostics.py": {
+      "approved_source_matches_boot": true,
+      "equal_after_CRLF_normalization": true
+    },
+    "collab/intake.py": {
+      "approved_source_matches_boot": true,
+      "equal_after_CRLF_normalization": true
+    },
+    "collab/operations_safety.py": {
+      "approved_source_matches_boot": true,
+      "equal_after_CRLF_normalization": true
+    },
+    "collab/output_parser.py": {
+      "approved_source_matches_boot": true,
+      "equal_after_CRLF_normalization": true
+    }
+  },
+  "prepared_root": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\MobileDiscordPhase3Prepared20261026",
+  "package_zip_sha256": "103ecc96c6796d288986eb6ba3ddf5e8612153010b4976f4b9c39a4dcc88099b",
+  "package_file_count": 16,
+  "packaged_files": {
+    "DiscordSecretStore.psm1": {
+      "sha256": "6d5d41ff54471f17a3bbe112c64b4470cc7950fe2ed8668cc0992614a4228b7b",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/__init__.py": {
+      "sha256": "4680918a913b50e86893d2fb1b9b52324c4a3da7101626fa63d252fbe3a0f1f6",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/adapters.py": {
+      "sha256": "c9a825ea8088119ec126eed90e4591bbb77f7fa65cc67a50fc2328943ed18ced",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/core.py": {
+      "sha256": "c117c31306734192e0bda0bffa07b67ea5cfd1f9580e8972e051e13a25bb42a6",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/exec_diagnostics.py": {
+      "sha256": "ab4e9f44d4e52dbf184fb56bea7cddd055b5f72d40716018d7b39c7b683750e0",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/intake.py": {
+      "sha256": "469caec2069bc1041b0484a94102ee23b44b22ffa83076b00df83e7f6ac1e4b0",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/mobile_discord_trial.py": {
+      "sha256": "dbe27663a4d47bcbc1c30e8d85cc1c343ec46476b151967d582b2df9824d06de",
+      "kind": "NEW_MODULE_UNAPPROVED"
+    },
+    "collab/mobile_offline.py": {
+      "sha256": "aef705df03cffb4e631a5e5514a0924776d2f19fac7d66404dff1b5dbfc7ce98",
+      "kind": "NEW_MODULE_UNAPPROVED"
+    },
+    "collab/operating_modes.py": {
+      "sha256": "322da9bfc3b529bca4d0277a33ae7197b783b8ed2a71e0f97ac8bb142438ad98",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/operations_safety.py": {
+      "sha256": "1dfff7041d74ad02f386eb8f5d18b456bc22734f43537b152c19fa596c69faa2",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/output_parser.py": {
+      "sha256": "fa40f804d008858d5d9202a8d543337569eade298167603170e4bd0793502df7",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/phase2.py": {
+      "sha256": "b1d0ff4d01b0abd0de0de14eae6afb7fb5a72048217bfb694aa4be7bd667f5ba",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/real_roles.py": {
+      "sha256": "8bf4738d98883c2beedb476eba1faa591de621caf5f021ae451bdbd7493982ad",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/resume_queue.py": {
+      "sha256": "e759103c90f958f8cdf4c3944857748b820c5e05e89ef3f305346d6988aea7e8",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "collab/scheduling.py": {
+      "sha256": "48fa944b2bb91def112e1137b3f12061b4a6a5657c152d54c9392b5ffd86155f",
+      "kind": "EXISTING_APPROVED_BYTES"
+    },
+    "roles.json": {
+      "sha256": "5ce1ea41a0de03e58e8929368dc2534a49287a5a40b2e6b45178e993bde1f060",
+      "kind": "PHASE1_PINNED_ROLE_BYTES"
+    }
+  },
+  "existing_approved_bytes_preserved": 13,
+  "raw_mismatch_resolution": "COPY_EXACT_APPROVED_RUNTIME_AND_PHASE1_PINNED_ROLE_BYTES",
+  "permit_created": false,
+  "secrets_copied": false
+}

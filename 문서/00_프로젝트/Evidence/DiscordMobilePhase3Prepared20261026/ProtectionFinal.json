@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "C:\\ProgramData\\LimitlessRelay\\boot-approval.json": true,
+    "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\Evidence\\DiscordMobileOffline20261026\\Stage1Verified.json": true,
+    "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\Evidence\\DiscordMobileOffline20261026\\OfflineTests.json": true,
+    "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\Tools\\DiscordAICollab\\collab\\mobile_offline.py": true,
+    "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\Tools\\DiscordAICollab\\collab\\bot.py": true,
+    "original_head": true,
+    "original_tracked_status": true,
+    "packaged_approved_sources_still_exact": true,
+    "manifest_inactive": true
+  },
+  "all_pass": true,
+  "operational_runtime_list_count": 43,
+  "operational_list_changed": false,
+  "scope": "read-only SHA/status verification; no new service health or scheduler query"
+}

@@ -1,0 +1,108 @@
+{
+  "name": "limitless-trial",
+  "description": "LIMITLESS 가짜 실행 한정 연결 시험",
+  "type": 1,
+  "options": [
+    {
+      "name": "status",
+      "description": "시험 업무·모의 사용량·HOLD 상태",
+      "type": 1,
+      "options": []
+    },
+    {
+      "name": "task",
+      "description": "가짜 실행 시험 업무 접수; 실제 AI 실행 없음",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "title",
+          "description": "…",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "plan",
+      "description": "업무 역할·범위·정확한 승인 SHA 확인",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "task_id",
+          "description": "…",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "approve-execution",
+      "description": "가짜 실행 단발 승인; 미술 최종 승인 아님",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "task_id",
+          "description": "…",
+          "required": true
+        },
+        {
+          "type": 3,
+          "name": "sha256",
+          "description": "…",
+          "required": true
+        },
+        {
+          "type": 4,
+          "name": "ttl_seconds",
+          "description": "…",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "cancel-execution",
+      "description": "시험 업무 실행 승인 취소·기록 보존",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "task_id",
+          "description": "…",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "run-fake",
+      "description": "승인된 가짜 worker 최대1회; 실제 AI0",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "task_id",
+          "description": "…",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "handoff",
+      "description": "보고 영수증 확인 후 4역할 업무 인계",
+      "type": 1,
+      "options": [
+        {
+          "type": 3,
+          "name": "task_id",
+          "description": "…",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "nsfw": false,
+  "dm_permission": false,
+  "default_member_permissions": 0,
+  "contexts": null,
+  "integration_types": null
+}
