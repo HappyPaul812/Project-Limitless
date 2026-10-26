@@ -14,19 +14,20 @@
     {
       "path": "문서/00_프로젝트/DiscordMobile_Offline_Integration_20261026.md",
       "before_sha256": null,
-      "after_sha256": "b56802949afb631a4a71dcf89791623b0ac169506d4183cb25e1e00056a97b55"
+      "after_sha256": "ddfd727f6462620ec3ed697a241a2bfbfc381011c6e6344cdaa4bc612fc88876"
     },
     {
       "path": "문서/00_프로젝트/CURRENT_STATUS.md",
       "before_sha256": "839d5321bd07bcf3602483ef00ab47732ad0e6a9d4eaebf5c6d478d41d609a0c",
-      "after_sha256": "505a31f096db2adb9b30be4970173059365af1dd1c535aa5aecc128b83636e68"
+      "after_sha256": "aada5417a88c9b6bd4d1d1203dd11ffae957c80b89bb0a7199eb3ee3d3cee361"
     },
     {
       "path": "문서/00_프로젝트/팀운영/인계/CODEX_LATEST.md",
       "before_sha256": "cfc73498f419772f40dc61e32b47896bbade539e5f099a142c47297f9086ba74",
-      "after_sha256": "bd9765d1c763d2107266902feee043f1fd8af0b5292c6ec660fd4c2b4e3e05b5"
+      "after_sha256": "27d9d3aa1d08efdb7b9256bbbdccb241120be7f75ea8baedf4874e86e22b5c4a"
     }
   ],
   "operational_approval_list_changes": 0,
-  "deployment": false
+  "deployment": false,
+  "implementation_commit": "0dffe9738eb8e56fe06af413e19411ab87f72b25"
 }

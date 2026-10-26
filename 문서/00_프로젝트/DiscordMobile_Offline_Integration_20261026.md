@@ -44,7 +44,7 @@
 
 ## 새 검증과 보호
 
-`tests/test_mobile_offline.py`의 새 연결 경계만 실행했습니다. 기존 38/22+12/native/Unity 대규모 PASS 검사는 반복하지 않았습니다. 최종 결과는 같은 Evidence 폴더의 `OfflineTests.json`을 기준으로 합니다. 테스트 중 subprocess.run/Popen과 socket.socket을 차단하고 Python open의 쓰기 경로를 짧은 합성 scratch로 감시했습니다. SQLite는 새 합성 경로만 생성하도록 별도로 제한했습니다.
+`tests/test_mobile_offline.py`의 새 연결 경계만 실행했습니다. 기존 38/22+12/native/Unity 대규모 PASS 검사는 반복하지 않았습니다. 최종 **24 PASS / 0 FAIL / 0 ERROR / 0 SKIP**, 프로세스/네트워크 시도0·scratch 밖 Python 쓰기 시도0. 같은 Evidence 폴더의 `OfflineTests.json`을 기준으로 합니다. 테스트 중 subprocess.run/Popen과 socket.socket을 차단하고 Python open의 쓰기 경로를 짧은 합성 scratch로 감시했습니다. SQLite는 새 합성 경로만 생성하도록 별도로 제한했습니다.
 
 모바일 인증 4가지 거부, interaction 중복/내용 변경, 정확한 승인 SHA·만료·계약 변경, 비승인/정지/합성 quota/모드 HOLD, 4역할 정상 인계 및 양쪽 아트 취합, 상위 결과 변조, 금지 항목/exit/error/invalid/timeout/경로 오류, 보고 전후 실패·중복, worker 중복·중단 복구·lease 만료를 검증합니다.
 
@@ -56,4 +56,4 @@
 
 실제 Discord 명령 등록/봇 배포·재시작, 운영 SQLite 변경, 추가 실제 모델 호출과 usage 조회에는 별도 승인 범위를 확정해야 합니다. A 모드는 여전히 미승인입니다. 기존 d56f 요청은 소비 완료이므로 재실행하지 않습니다.
 
-브랜치 `codex/discord-usage-diagnostics-20261026`. 시작 HEAD `90e8e7dde33d25a66d95651395d866a1cc1a48f4`. 최종 실제 로컬 commit과 파일 SHA는 Issue #66 완료 댓글 및 `ChangeHashes.json`에 기록합니다. 소스 push는 하지 않습니다.
+브랜치 `codex/discord-usage-diagnostics-20261026`. 시작 HEAD `90e8e7dde33d25a66d95651395d866a1cc1a48f4`. 구현 commit `0dffe9738eb8e56fe06af413e19411ab87f72b25`. 최종 문서 commit은 Issue #66 완료 댓글, 파일 SHA는 `ChangeHashes.json`에 기록합니다. 소스 push는 하지 않습니다.
