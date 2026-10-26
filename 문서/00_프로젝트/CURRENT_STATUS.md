@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 관리자 설치 실제1회 — 부분 설치 HOLD
+
+대표 로컬 실행 요청0f8e15c9… 결과 확인: 승인SHA/855/854 PASS, 실제 관리자 Install1회 후 고정 INSTALL_HOLD 오류. 새 Bot SID 끝1008 생성 후 Disabled, 코드폴더 존재·상태폴더 미생성, task UNKNOWN_OR_ABSENT. 실제 SD/완전 설치 검증 미완료. OnBoot2개/boot approval 전후SHA 동일, Host/IPC/Fake/AI/usage/Discord0. 자동재설치·삭제·권한완화0, MANUAL/A HOLD.
+
+HOLD시 wrapper exit2를 현재 메모리ScriptBlock에서 실행하도록 안내해 PowerShell 창까지 종료됐습니다. 설치 실패의 직접원인은 기존 installer catch의 원문 소실로 미확정. 현재 승인파일 수정/재실행0. 다음은 관리자 읽기전용 부분상태 진단, 기존 Install/Remove 재실행 금지. 상세 DiscordSession0_AtomicInstall_PartialHOLD_20261026.md 및 Evidence/Session0AtomicInstall20261026/0f8e15c951a144efa79f5ccdbeed9c55.json. 관련 설치 준비 commit30cc720d…/이번 실제 보고 commit은 Issue66 참조.
+
 ## 2026-10-26 Issue #66 새 원자 SDDL 후보 설치 승인 — 관리자 로컬 입력 대기
 
 실행 준비 commit `30cc720d59396409b76ee4642ec56d16fdb79816` (LOCAL_ONLY). 대표가 Installer117065bb…/Manifest6efbd783…/zip4b2c56ed… 새 후보의 최소권한 계정·Disabled/trigger0/FAKE_ONLY 작업 설치를 승인. 세 SHA·855개 hash·854개 보존 사전검사 PASS. 현재 Codex Session9/비관리자이므로 **WAIT_ADMIN_INSTALL / 설치 시도0**. 신규 SID/실제 task SD/운영 OnBoot 전후 PASS는 아직 미확정. 기존29/35 재시험0.

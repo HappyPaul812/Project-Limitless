@@ -1,3 +1,9 @@
+## 2026-10-26 Issue #66 관리자 실제 설치1회 — PARTIAL_INSTALL_HOLD
+
+요청0f8e15c951a144efa79f5ccdbeed9c55 실제 관리자 Session9. 승인SHA/855/854 PASS 후 INSTALL_HOLD, 신규 Bot SID S-1-5-21-2858504392-1958168942-1662906075-1008 생성/Disabled. 코드root존재·state root없음, task UNKNOWN_OR_ABSENT(부재 확정 아님). OnBoot2개/boot approval SHA 전후 동일. Host/IPC/Fake/AI/usage/Discord0. 실제 SD/설치최종검증은 미완료.
+
+창 종료는 wrapper exit2를 현재 대화형 메모리ScriptBlock에서 실행시킨 안내 구조로 설명됩니다. 설치 실패 직접원인은 승인installer catch가 원문을 소실해 미확정. 승인코드 변경0/재등록0/자동삭제0, MANUAL/A HOLD. 기존 Install/Remove 반복 금지. 다음은 관리자 읽기전용 계정그룹/직접권한/파일/manifest/record/task SD 부분진단. 상세 DiscordSession0_AtomicInstall_PartialHOLD_20261026.md 및 실제결과JSON 보존. 설치준비30cc720d…/이번 보고commit Issue66 참조. IPC는 여전히 별도 승인 대상.
+
 ## 2026-10-26 Issue #66 새 후보 실제 설치 승인 — WAIT_ADMIN_INSTALL
 
 실행 준비 commit `30cc720d59396409b76ee4642ec56d16fdb79816` (LOCAL_ONLY), 기준3f6ec586…/동일격리branch. 대표가 새 SHA117065bb…/6efbd783…/4b2c56ed… 후보만 설치 승인. 실제 파일855 hash/854 원본 동일 PASS. 현재 PAUL-PC\windows Session9 비관리자이므로 실제 설치0, 새 BOT SID·Task owner/DACL·OnBoot SHA 전후 PASS 아직 미확정. 기존29/35 재시험0.
