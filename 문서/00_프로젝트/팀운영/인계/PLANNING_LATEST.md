@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Session0 보안 중개기 42 PASS, 실제 SID·Host SECURITY HOLD
+
+- Codex [Issue #66 상세 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6412596448): secure pipe·단발 승인·중복/취소·Job90 파생·결과 판독 **42 PASS/0 FAIL(합성34+native8)**. 단 **실제 서비스 Host → 고정 Worker backend 조립·서로 다른 계정의 IPC/서비스 OS 경계 검증 미완료**, 42PASS=실전 AI 연결 VERIFIED 아님. 새 실제 모델/usage/Discord·운영 DB/서비스작업·계정·ACL 변경0.
+- **핵심 SID:** 현재 trial 봇 Windows 사용자와 관리자 PowerShell SID가 동일. UAC 상승 토큰/사용자 쓰기 가능 폴더 ACL만으론 관리자–봇 독립경계 아님. 현재 후보는 BOT / ADMIN / WORKER 별도 SID 전제. 다음 오프라인 범위는 기존 Host↔고정 read-only Worker 결합 코드+synthetic fake-only fault 테스트와 보호 DAC/IPC 위협모델·배포/rollback 보고. 새 bot 최소권한 계정/ACL/DPAPI 토큰 재입력/Task 설치는 대표 별도 승인 전 실행 금지.
+- 기존 trial CurrentUser DPAPI token/운영 Token/서비스 인증을 새 계정에 복사·공유하지 않는다. 별도 계정이 필요하면 새 보안 입력 절차·PIN 없는 부팅/USB 무선랜 재접속 조건을 계획. 기존 MANUAL/A HOLD 및 OnBoot 봇·아트 감시 보호.
+- Codex 로컬 격리 브랜치 `codex/discord-usage-diagnostics-20261026`, 구현 commit `82af13e15469ae23d8ca13e96ac6b651f3160a9f`, docs `ef1dec16bf285024c9caa733845ff93985e07d7f` (**REMOTE_NOT_PUSHED/NOT_DEPLOYED**). [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` 갱신 commit `0c5500e3ed805345e6921256ec28c32d2c3a177a`.
+
+---
+
 # PLANNING / 2026-10-26 — 모바일 버튼·Session0 Worker 후보 35 PASS, 실전 HOLD
 
 - [Issue #66 최신 Codex 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411977426): `mobile_planning_buttons.py` 신규 대표 전용 버튼5종(내용·승인·실행·취소·상태) + `session0_planning_bridge.py` 합성 인계 후보 **35 PASS/0 FAIL**. 기존 SHA·단발 소비·권한/만료·handoff 검증 유지. 이번 실제 모델·공식 사용량·Discord REST/Gateway·운영 DB·서비스 task 모두0회, 현재 MANUAL/A HOLD.
