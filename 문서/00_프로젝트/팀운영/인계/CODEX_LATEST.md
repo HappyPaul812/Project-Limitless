@@ -1,5 +1,7 @@
 ## 2026-10-27 Issue66 미확인19개 읽기 전용 조사 — WAIT_ADMIN_READONLY / HOLD
 
+진단·결과 commit `80776f95df9b77b2f8efab1c8b29b48630c0b99c`. 실제 GitHub 보고 댓글: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429198580 . 보고서·인계는 로컬 커밋이며 원격 미Push, GITHUB_REPORT_COMPLETE 아님.
+
 정체확인0/19. 보존PID16개는 현재 OpenProcess Win325 ACCESS_DENIED 및 CIM NativeErrorCode2/HRESULT-2146233088/StatusCode0. 과거19개는 생성시각·개별실패정보 부재로 동일성UNKNOWN, 누락3개는 기존 First16 잘림으로 PID복구불가. 참조발견0이나 무참조확정0, Windows보호시스템판정0. 기존 Task282/service-driver792/process334 성공검사반복0. Cleanup/설치/계정/권한/프로세스/Unity변경0.
 
 전용 probe-unknown-processes-readonly.ps1 SHA33bc59120213a49f1e27a9e96f25cb872db566783d8eed46c3595d168d28aaf1, 신규합성9PASS/0FAIL·parsePASS·exit0. 관리자용 SHA검증 bytes/NoProfile 자식명령과 결과경로는 Discord_UnknownProcesses_ReadOnly_20261027.md. 관리자결과도 과거생성시각/누락3개를 자동복원하지 않음. 경로문자열 불일치를 NO_REFERENCE_VERIFIED로 승격하지 않으며 간접참조/별칭 한계 유지. 안전하게 해소불가면 HOLD, 정리재개는 바울 대표 후속승인 필수. 같은 Cleanup 자동재실행/새LSA설치 금지. branch codex/discord-usage-diagnostics-20261026, 기준 a8ec860e922d088a5f4699157ac957aa441204e0, 실제후속commit은 Issue66 마감 참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
