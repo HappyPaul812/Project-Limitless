@@ -25,7 +25,7 @@ class Peer:
 
 class Broker:
     """새 서비스 전용 DB만 주입합니다. 원본 업무 SQLite와는 별개의 소비 장부입니다."""
-    def __init__(self, path, *, bot_sid, admin_sid, service_sid, utc, monotonic, context):
+    def __init__(self, path, *, bot_sid, admin_sid, service_sid, utc, monotonic, context, recover=True):
         self.path, self.bot_sid, self.admin_sid, self.service_sid = str(path), bot_sid, admin_sid, service_sid
         self.utc, self.monotonic, self.context = utc, monotonic, context
         self.lock = threading.RLock()
@@ -37,8 +37,9 @@ class Broker:
               INSERT OR IGNORE INTO control VALUES(1,0);
             ''')
             # 프로세스가 재시작돼도 소비를 복구하거나 불명 업무를 다시 시작하지 않습니다.
-            db.execute("UPDATE calls SET state='HOLD' WHERE state='RUNNING'")
-            db.execute("UPDATE permits SET state='REVOKED' WHERE state='ARMED'")
+            if recover:
+                db.execute("UPDATE calls SET state='HOLD' WHERE state='RUNNING'")
+                db.execute("UPDATE permits SET state='REVOKED' WHERE state='ARMED'")
 
     def db(self):
         class Connection:

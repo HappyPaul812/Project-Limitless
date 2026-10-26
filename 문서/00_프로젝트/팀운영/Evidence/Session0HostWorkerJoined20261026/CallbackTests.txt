@@ -1,0 +1,9 @@
+test_bridge_failure_holds_without_retry (test_live_button_connection.CallbackTests.test_bridge_failure_holds_without_retry) ... ok
+test_cancel_unknown_holds (test_live_button_connection.CallbackTests.test_cancel_unknown_holds) ... ok
+test_delivery_failure_never_submits_again (test_live_button_connection.CallbackTests.test_delivery_failure_never_submits_again) ... ok
+test_success_and_duplicate_callback_only_one_submit (test_live_button_connection.CallbackTests.test_success_and_duplicate_callback_only_one_submit) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

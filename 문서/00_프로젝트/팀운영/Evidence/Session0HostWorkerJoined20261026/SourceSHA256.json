@@ -1,0 +1,94 @@
+{
+  "Tools/DiscordAICollab/collab/broker_host_runtime.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "b0cd70a346ed5070e54ff883468ebc7055ec0d666acbb013025cd76566faa8b0"
+  },
+  "Tools/DiscordAICollab/collab/fixed_planning_worker.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "cb06860c2061f200ebf98ed9c5ce71a6730ad3a505affb1db737d1392bd6ec66"
+  },
+  "Tools/DiscordAICollab/collab/secure_session0_broker.py": {
+    "before_git_blob": "6b6eeb91d6d23ac5b8a61992d0eea52c810c7e2ef576d9a92f9cfa84456391b0",
+    "after_working_bytes": "4f72a005b4ad1a768ba2d1c082ce146f2c3b51bdac600f7c412107911a5b6aff"
+  },
+  "Tools/DiscordAICollab/collab/session0_planning_bridge.py": {
+    "before_git_blob": "b1f804c040c3ea778d35f79ab1a67d8724be37c3392e0fd89bc91a85c09d7682",
+    "after_working_bytes": "39b090f89731de224f4de78a9201d12be97d29fb6fa6e3ffc448950deee9f7b0"
+  },
+  "Tools/DiscordAICollab/tests/test_host_fixed_worker_integration.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "bc1ae310d621a411534dcea55fc1db334bebee337f5064d1a3cc0131b21d2307"
+  },
+  "Tools/DiscordAICollab/tests/test_live_button_connection.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "428bb20b6697f1b4d0a50e2d7e4f3c4c7c826296a816f6f2696c65d551b8c6fa"
+  },
+  "Tools/DiscordAIServiceDiagnostics/BrokerJob90.cs": {
+    "before_git_blob": "81d1a1e88939f70f595dec38ae2baa8cdd2f0b868e6ea193f5d5b29ed4ef10e3",
+    "after_working_bytes": "613e21bffbbd6cc619e5df783f4a0995e17e6d2bdab5a20c8c3b667bfaa5c5b0"
+  },
+  "Tools/DiscordAIServiceDiagnostics/HostJoiningNativeTests.cs": {
+    "before_git_blob": null,
+    "after_working_bytes": "dd289c0d02f3f51e437cf9f1eded6c682d4f48ca99f842e68401325a323ebd28"
+  },
+  "Tools/DiscordAIServiceDiagnostics/Session0Host.cs": {
+    "before_git_blob": null,
+    "after_working_bytes": "f77f4cc593663725742ebd0ecf8cb6afadfabfa592d53b3edae640dae1613450"
+  },
+  "Tools/DiscordAIServiceDiagnostics/Session0PipeBoundary.cs": {
+    "before_git_blob": "365875aebd4ef5d8eed86a12423eae4059a22d350aff0576efb6171a9b2a6cbb",
+    "after_working_bytes": "d16d33e6f4e4f4c989b21d0407acfcb4f702a14ae52263ea77b8a313d264aed6"
+  },
+  "Tools/DiscordAIServiceDiagnostics/TrialAccountPolicy.cs": {
+    "before_git_blob": null,
+    "after_working_bytes": "1d85ea2b3b99027dbf0eeb4ee61b590b8be3539d7c9e7992af0dee03c8d8d96e"
+  },
+  "Tools/DiscordAIServiceDiagnostics/broker-host-entry.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "a4f71c1717734fe2df2e118b2d85105769ad5b713ef290314acda569c494d4b1"
+  },
+  "Tools/DiscordAIServiceDiagnostics/fixed-planning-entry.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "12318849da5fbb1e653c9ec8f8f7cb249a5f45841e9d44699c71a7a95a3e06cb"
+  },
+  "Tools/DiscordAIServiceDiagnostics/fixed-planning-worker.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "8b0a01f02ecd656cd555e9ecc3b89605108463d94ec4c65993a1aa9a0b15eed4"
+  },
+  "Tools/DiscordAIServiceDiagnostics/install-session0-trial.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829"
+  },
+  "Tools/DiscordAIServiceDiagnostics/prepare-session0-host-bundle.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "200fca8240fae7ee811dbe0689183cc93341cdae11c61ee3003d998dff10d6cc"
+  },
+  "Tools/DiscordAIServiceDiagnostics/probe-session0-host.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "41c2e8171384705dc6ccd1f37f4e049da2621482ee24d2046ea227e666a6afed"
+  },
+  "Tools/DiscordAIServiceDiagnostics/service-token-metadata.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "95117686d1b38cf28945003c587fe5c285f115828184b642dc5cb947e50ba568"
+  },
+  "Tools/DiscordAIServiceDiagnostics/setup-trial-bot-own-token.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "e44cc673415f92bad94c85dcf7f36a01b674a18412b270979dfa5f261fad72cf"
+  },
+  "Tools/DiscordAIServiceDiagnostics/start-session0-host.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "1d46108c3bbc3e7d79021889400f67b3536d3e92332e247873b0b2ed251c83fa"
+  },
+  "Tools/DiscordAIServiceDiagnostics/test-host-joining-native.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "cd8aa1499e38eb353adafc2094626d10b801717ecac8d0b11bdf955db5d2bc36"
+  },
+  "Tools/DiscordAIServiceDiagnostics/test-install-publish-boundary.ps1": {
+    "before_git_blob": null,
+    "after_working_bytes": "6c1e29ee5dc3af566443a495c4442394110a7701f20a57bc9e3f8765ef3a53b6"
+  },
+  "Tools/DiscordAIServiceDiagnostics/verify-session0-host-bundle.py": {
+    "before_git_blob": null,
+    "after_working_bytes": "fe86c61f3665d31bcc665bb2817e60a89f4579d6e0c849fe9260159d1cb5eb9d"
+  }
+}

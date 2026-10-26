@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "full_package_sha": true,
+    "isolated_runtime_host_import": true,
+    "frozen_worker_import_no_run": true,
+    "installer_plan_no_changes": true
+  },
+  "pass": 4,
+  "fail": 0,
+  "files": 855,
+  "bytes": 41220068,
+  "manifest_sha256": "f45b9e0d8497fbe594e3f109b6dbe72f7c6092f2bd35448e974c7f64ddbb7e53",
+  "installer_sha256": "63e4f36462de0a195bc3dcb661a80dcdbb172c8edc0a7eb5827897b941658abe",
+  "actual_models": 0,
+  "actual_usage": 0,
+  "actual_discord": 0,
+  "system_changes": 0
+}

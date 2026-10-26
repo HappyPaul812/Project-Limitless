@@ -179,3 +179,32 @@ class OfflineButtonWorkerConnection:
                                                        allowed_mentions=discord.AllowedMentions.none())
             return message.id
         await send_result_once(self.workflow, request, send)
+
+
+class LiveButtonWorkerConnection:
+    """승인된 시험 봇에 주입할 callback. 등록/접속/arm/자동 재실행은 하지 않습니다."""
+    def __init__(self, workflow, bridge):
+        if workflow.offline_fixture or type(bridge) is not LiveSession0Bridge:
+            raise Denied('LIVE_BUTTON_CONNECTION_CONTRACT_HOLD')
+        self.workflow,self.bridge=workflow,bridge
+        self.started=set()  # 프로세스 재시작 후에도 서비스의 durable 소비 장부가 재실행을 차단합니다.
+
+    async def on_run(self,request,interaction):
+        import asyncio
+        if request in self.started:return
+        self.started.add(request)
+        try:
+            result=await asyncio.to_thread(self.bridge.submit,self.workflow.ticket(request))
+            if not self.workflow.accept_result(request,result):return
+        except Exception:
+            self.workflow.hold(request);return
+        async def send(text):
+            import discord
+            message=await interaction.followup.send(text,ephemeral=True,wait=True,allowed_mentions=discord.AllowedMentions.none())
+            return message.id
+        await send_result_once(self.workflow,request,send)
+
+    async def on_cancel(self,request):
+        import asyncio
+        try:await asyncio.to_thread(self.bridge.cancel,request)
+        except Exception:self.workflow.hold(request,'SERVICE_CANCEL_UNKNOWN_NO_RETRY')

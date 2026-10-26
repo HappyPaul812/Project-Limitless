@@ -1,0 +1,12 @@
+{
+  "actual_usage": 0,
+  "actual_service_ipc": false,
+  "actual_models": 0,
+  "checks": {
+    "host_assembly_compiles": true,
+    "stdin_roundtrip": true,
+    "parallel_private_stdin": true,
+    "cancel_input_tree": true,
+    "nonservice_cannot_change_query_acl": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "system_changes": 0,
+  "checks": {
+    "nonadmin_rejected_before_creation": true,
+    "atomic_publisher_compiles": true
+  }
+}

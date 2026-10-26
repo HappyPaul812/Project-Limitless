@@ -1,3 +1,13 @@
+## 2026-10-26 Issue #66 Host↔Worker 접합 완료 — 오프라인29 PASS / 설치 전 중지
+
+기준 `ef1dec16bf285024c9caa733845ff93985e07d7f`. 인증된 pipe→고정 C# Host→익명 stdin Job→서비스 broker→고정 Worker wrapper/sidecar→기존 frozen 추론/JSONL→정제 결과→단발 Discord callback까지 코드 접합을 완료했습니다. CODE_JOIN_COMPLETE / OFFLINE_VERIFIED / NOT_INSTALLED. 실제 Windows 계정 IPC·실제 Discord→AI 성공 아님.
+
+신규29 PASS/0 FAIL: 중단 전 통합17/native5 보존·재개 후 callback4/사용자 소유 코드 거부1/원자 게시기2 추가. 완료 성공 시험 재실행0, 이전42 전체 반복0. 패키지 기초4 PASS 재사용, 최종855파일 SHA/변경분/동일 Runtime·Legacy 무결성3 확인. 실제 모델/usage/Discord/계정·task·서비스/시스템 ACL/운영 DB/토큰 복사0, MANUAL/A 미활성.
+
+최종 Ready bundle은 Temp/Session0HostBundle20261026Ready, Manifest SHA `9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec`. 기본설치 FAKE_ONLY/비활성/trigger0·새 LIMITLESSBotTrial(Users/Batch/24시간)만 준비. 계정/설치 명령은 문서에만 제공, 실행하지 않았습니다. BOT/ADMIN/WORKER SID 분리·새 Host identity-query 최소권한·원자 BA 소유 게시·실제모드 사용자-writable CLI 거부. 기존 CLI 경로/ACL/인증은 변경하지 않습니다.
+
+다음: 별도 설치 승인 후 문서의 SHA 검증 메모리 설치 명령→Verify→별도 승인된 실제 fake-only SID/IPC/종료 검사. 그 다음 새 state epoch/요청/manifest·CLI 신뢰·시험앱/token/권한과 실제 모델1건 승인을 별도로 확인. 소비 초기화/자동 모델/A 활성화 금지. 현재 제한 토큰 LSA C0000022는 실제 서비스 계정 검사 아님. 상세 DiscordSession0_HostWorker_Joined_InstallReady_20261026.md, Evidence/Session0HostWorkerJoined20261026/. 실제 구현 commit은 마감 기록 참조.
+
 ## 2026-10-26 Issue #66 Session0 보안 중개기 후보 — 신규42 PASS / SECURITY HOLD
 
 구현 commit `82af13e15469ae23d8ca13e96ac6b651f3160a9f` (LOCAL_ONLY). 기준 `f93d13e79b336453711a69ea5de34be2035b1d99`. 봇/관리자/Worker SID를 모두 분리해야 하는 fail-closed 후보를 구현했습니다. UAC 일반/관리자 토큰만으로 동일 SID 문제를 해결했다고 주장하지 않으며 같은 SID는 상승 토큰도 거부합니다. 로컬 인증 pipe(arm/work/control)·고정 JSON schema·서비스 별도 소비장부·정제 reader·LiveSession0Bridge IPC 경로·취소 Job 파생본을 추가했습니다.

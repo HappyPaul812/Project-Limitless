@@ -29,6 +29,9 @@ public static class LimitlessSession0PipeV1 {
  [DllImport("kernel32.dll",SetLastError=true)] static extern IntPtr OpenProcess(uint access,bool inherit,uint pid);
  [DllImport("advapi32.dll",SetLastError=true)] static extern bool OpenProcessToken(IntPtr process,uint access,out IntPtr token);
  [DllImport("kernel32.dll")] static extern bool CloseHandle(IntPtr handle);
+ [DllImport("kernel32.dll")] static extern IntPtr GetCurrentProcess();
+ [DllImport("advapi32.dll",SetLastError=true)] static extern bool GetKernelObjectSecurity(IntPtr handle,uint information,byte[] descriptor,uint length,out uint required);
+ [DllImport("advapi32.dll",SetLastError=true)] static extern bool SetKernelObjectSecurity(IntPtr handle,uint information,byte[] descriptor);
  public sealed class Peer {
   public string Sid { get; private set; }
   public bool Elevated { get; private set; }
@@ -72,6 +75,26 @@ public static class LimitlessSession0PipeV1 {
  public static bool CanArm(Peer peer,string allowedSid) {
   return peer!=null && peer.Local && peer.Sid==allowedSid && peer.Elevated && peer.Administrator && peer.Integrity>=12288;
  }
+ static void AddQueryOnly(IntPtr handle,string sid,int mask) {
+  uint size;GetKernelObjectSecurity(handle,4,null,0,out size);
+  if(size<1 || size>65536)throw new UnauthorizedAccessException("QUERY_DACL_SIZE_HOLD");
+  var bytes=new byte[size];Check(GetKernelObjectSecurity(handle,4,bytes,size,out size));
+  var descriptor=new RawSecurityDescriptor(bytes,0);
+  if(descriptor.DiscretionaryAcl==null)throw new UnauthorizedAccessException("QUERY_DACL_HOLD");
+  descriptor.DiscretionaryAcl.InsertAce(descriptor.DiscretionaryAcl.Count,new CommonAce(AceFlags.None,AceQualifier.AccessAllowed,mask,new SecurityIdentifier(sid),false,null));
+  var output=new byte[descriptor.BinaryLength];descriptor.GetBinaryForm(output,0);Check(SetKernelObjectSecurity(handle,4,output));
+ }
+ public static void GrantIdentityQueryForBot(string botSid,string serviceSid) {
+  var current=Current();
+  if(current.Sid!=serviceSid || botSid==serviceSid || current.Administrator || current.Elevated)
+   throw new UnauthorizedAccessException("QUERY_SERVICE_CONTEXT_HOLD");
+  var logon=CurrentLogon();if(logon[0]!=4 || logon[1]!=0)throw new UnauthorizedAccessException("QUERY_LOGON_HOLD");
+  // 새 Host 자신에게만 QueryLimitedInformation / TokenQuery를 줍니다. 기존 프로세스·계정·파일 ACL은 수정하지 않습니다.
+  IntPtr process=GetCurrentProcess(),token=IntPtr.Zero;
+  AddQueryOnly(process,botSid,0x1000);
+  Check(OpenProcessToken(process,0x60008,out token));
+  try{AddQueryOnly(token,botSid,8);}finally{CloseHandle(token);}
+ }
  public static void VerifyProtectedPath(string path,bool mutableState,string serviceSid) {
   string install=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"LimitlessRelayTrial");
   string state=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData),"LimitlessRelayTrial");
@@ -92,10 +115,34 @@ public static class LimitlessSession0PipeV1 {
    var mask=FileSystemRights.DeleteSubdirectoriesAndFiles|FileSystemRights.Delete|FileSystemRights.ChangePermissions|FileSystemRights.TakeOwnership;
    if(inside)mask|=FileSystemRights.WriteData|FileSystemRights.AppendData|FileSystemRights.WriteAttributes|FileSystemRights.WriteExtendedAttributes;
    foreach(FileSystemAccessRule rule in acl.GetAccessRules(true,true,typeof(SecurityIdentifier))) {
+    if((rule.PropagationFlags&PropagationFlags.InheritOnly)!=0)continue;
+    if(rule.IdentityReference.Value=="S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464")continue;
     if(rule.AccessControlType==AccessControlType.Allow && !writers.Contains(rule.IdentityReference.Value) && (rule.FileSystemRights&mask)!=0)
      throw new UnauthorizedAccessException("UNTRUSTED_WRITE_HOLD");
    }
    if(Path.GetDirectoryName(current)==current)break;
+  }
+ }
+ public static void VerifyExternalReadonly(string path,string adminSid,string expectedSha) {
+  string full=Path.GetFullPath(path);bool file=true;
+  // 사용자 SID는 관리자 승인자와 같아도 신뢰 writer가 아닙니다. 그 SID의 일반 토큰도 파일을 쓸 수 있기 때문입니다.
+  var writers=new HashSet<string>{"S-1-5-18","S-1-5-32-544","S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464"};
+  for(string current=full;current!=null;current=Path.GetDirectoryName(current)) {
+   var attr=File.GetAttributes(current);if((attr&FileAttributes.ReparsePoint)!=0)throw new UnauthorizedAccessException("EXTERNAL_REPARSE_HOLD");
+   FileSystemSecurity acl=(attr&FileAttributes.Directory)!=0?new DirectoryInfo(current).GetAccessControl():new FileInfo(current).GetAccessControl();
+   if(file && !writers.Contains(acl.GetOwner(typeof(SecurityIdentifier)).Value))throw new UnauthorizedAccessException("EXTERNAL_OWNER_HOLD");
+   var mask=FileSystemRights.DeleteSubdirectoriesAndFiles|FileSystemRights.Delete|FileSystemRights.ChangePermissions|FileSystemRights.TakeOwnership;
+   if(file || current==Path.GetDirectoryName(full))mask|=FileSystemRights.WriteData|FileSystemRights.AppendData|FileSystemRights.WriteAttributes|FileSystemRights.WriteExtendedAttributes;
+   foreach(FileSystemAccessRule rule in acl.GetAccessRules(true,true,typeof(SecurityIdentifier))) {
+    if((rule.PropagationFlags&PropagationFlags.InheritOnly)!=0)continue;
+    if(rule.AccessControlType==AccessControlType.Allow && !writers.Contains(rule.IdentityReference.Value) && (rule.FileSystemRights&mask)!=0)
+     throw new UnauthorizedAccessException("EXTERNAL_UNTRUSTED_WRITE_HOLD");
+   }
+   file=false;if(Path.GetDirectoryName(current)==current)break;
+  }
+  using(var stream=File.OpenRead(full)) {
+   string sha=Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(stream)).ToLowerInvariant();
+   if(sha!=expectedSha)throw new UnauthorizedAccessException("EXTERNAL_SHA_HOLD");
   }
  }
  public static NamedPipeServerStream CreateServicePipe(string name,string botSid,string serviceSid) {

@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "reviewed_delta_only": true,
+    "final_package_sha": true,
+    "runtime_and_frozen_legacy_unchanged": true
+  },
+  "changed": [
+    "Code/Tools/DiscordAICollab/collab/session0_planning_bridge.py",
+    "Code/Tools/DiscordAIServiceDiagnostics/fixed-planning-worker.ps1",
+    "Code/Tools/DiscordAIServiceDiagnostics/Session0PipeBoundary.cs",
+    "Code/Tools/DiscordAIServiceDiagnostics/start-session0-host.ps1",
+    "Deployment/install-session0-trial.ps1"
+  ],
+  "files": 855,
+  "functional_tests_repeated": 0,
+  "base_package_checks_reused": 4,
+  "manifest_sha256": "9aa4a60d6dd57c320f2d268ef96dcf86694e53ca9dfdcbb6a3e97d1f33dfe7ec",
+  "installer_sha256": "337ad613ef6471ae6f4058043965bb3b812a0e6b31adc05ce1efb61ce0158829",
+  "bundle": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0HostBundle20261026Ready"
+}

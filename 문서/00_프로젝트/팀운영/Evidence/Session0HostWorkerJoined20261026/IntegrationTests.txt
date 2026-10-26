@@ -1,0 +1,22 @@
+test_cancel_before_launch (test_host_fixed_worker_integration.IntegrationTests.test_cancel_before_launch) ... ok
+test_complete_real_branch_with_fake_engine_and_native_contract (test_host_fixed_worker_integration.IntegrationTests.test_complete_real_branch_with_fake_engine_and_native_contract) ... ok
+test_duplicate_does_not_launch_again (test_host_fixed_worker_integration.IntegrationTests.test_duplicate_does_not_launch_again) ... ok
+test_entry_rejects_non_batch_os_identity_before_broker (test_host_fixed_worker_integration.IntegrationTests.test_entry_rejects_non_batch_os_identity_before_broker) ... ok
+test_expired_request_no_launch (test_host_fixed_worker_integration.IntegrationTests.test_expired_request_no_launch) ... ok
+test_fake_install_never_imports_model_engine (test_host_fixed_worker_integration.IntegrationTests.test_fake_install_never_imports_model_engine) ... ok
+test_forbidden_jsonl_never_verified (test_host_fixed_worker_integration.IntegrationTests.test_forbidden_jsonl_never_verified) ... ok
+test_host_restart_retains_consumption (test_host_fixed_worker_integration.IntegrationTests.test_host_restart_retains_consumption) ... ok
+test_host_restart_revokes_arm (test_host_fixed_worker_integration.IntegrationTests.test_host_restart_revokes_arm) ... ok
+test_request_tamper_stops_before_fixed_worker (test_host_fixed_worker_integration.IntegrationTests.test_request_tamper_stops_before_fixed_worker) ... ok
+test_result_missing_never_verified (test_host_fixed_worker_integration.IntegrationTests.test_result_missing_never_verified) ... ok
+test_rpc_processes_do_not_recover_each_other (test_host_fixed_worker_integration.IntegrationTests.test_rpc_processes_do_not_recover_each_other) ... ok
+test_same_sid_rejected_at_host_broker (test_host_fixed_worker_integration.IntegrationTests.test_same_sid_rejected_at_host_broker) ... ok
+test_scoped_permit_deactivated_after_engine (test_host_fixed_worker_integration.IntegrationTests.test_scoped_permit_deactivated_after_engine) ... ok
+test_start_failure_no_retry (test_host_fixed_worker_integration.IntegrationTests.test_start_failure_no_retry) ... ok
+test_timeout_does_not_reexecute (test_host_fixed_worker_integration.IntegrationTests.test_timeout_does_not_reexecute) ... ok
+test_untrusted_peer_cannot_execute (test_host_fixed_worker_integration.IntegrationTests.test_untrusted_peer_cannot_execute) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 10.969s
+
+OK

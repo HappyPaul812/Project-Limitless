@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.Win32.SafeHandles;
 
 public static class LimitlessBrokerJob90V1 {
+ static readonly object SpawnLock=new object();
  [StructLayout(LayoutKind.Sequential)] struct Security { public int Length; public IntPtr Descriptor; public int Inherit; }
  [StructLayout(LayoutKind.Sequential,CharSet=CharSet.Unicode)] struct Startup {
   public int Size; public string Reserved,Desktop,Title; public uint X,Y,XSize,YSize,XChars,YChars,Fill,Flags;
@@ -81,27 +82,37 @@ public static class LimitlessBrokerJob90V1 {
   return b.ToString(0,Math.Min(b.Length,4096));
  }
  public static Result Run(string executable,string[] args,string cwd,int milliseconds,CancellationToken cancel) {
+  return RunInput(executable,args,cwd,milliseconds,cancel,null);
+ }
+ public static Result RunInput(string executable,string[] args,string cwd,int milliseconds,CancellationToken cancel,byte[] payload) {
   if(milliseconds<1 || milliseconds>85000)throw new ArgumentOutOfRangeException("milliseconds");
+  if(payload!=null && payload.Length>32768)throw new ArgumentOutOfRangeException("payload");
   var deadlineWatch=System.Diagnostics.Stopwatch.StartNew();
-  IntPtr job=IntPtr.Zero,outputRead=IntPtr.Zero,outputWrite=IntPtr.Zero,errorRead=IntPtr.Zero,errorWrite=IntPtr.Zero,input=IntPtr.Zero;
-  ProcessInfo child=new ProcessInfo();Task<Capture> stdout=null,stderr=null;bool assigned=false;
+  IntPtr job=IntPtr.Zero,outputRead=IntPtr.Zero,outputWrite=IntPtr.Zero,errorRead=IntPtr.Zero,errorWrite=IntPtr.Zero,input=IntPtr.Zero,inputWrite=IntPtr.Zero;
+  ProcessInfo child=new ProcessInfo();Task<Capture> stdout=null,stderr=null;Task feed=null;bool assigned=false;
   var result=new Result();
   try {
    job=CreateJobObject(IntPtr.Zero,null);Check(job!=IntPtr.Zero);
    var limits=new ExtendedLimit();limits.Basic.Flags=0x2000;
    Check(SetInformationJobObject(job,9,ref limits,Marshal.SizeOf<ExtendedLimit>()));
+   lock(SpawnLock) {
+    try {
    var security=new Security{Length=Marshal.SizeOf<Security>(),Inherit=1};
    Check(CreatePipe(out outputRead,out outputWrite,ref security,0));Check(SetHandleInformation(outputRead,1,0));
    Check(CreatePipe(out errorRead,out errorWrite,ref security,0));Check(SetHandleInformation(errorRead,1,0));
-   input=CreateFile("NUL",0x80000000,3,ref security,3,0,IntPtr.Zero);Check(input!=new IntPtr(-1));
+   if(payload==null){input=CreateFile("NUL",0x80000000,3,ref security,3,0,IntPtr.Zero);Check(input!=new IntPtr(-1));}
+   else {Check(CreatePipe(out input,out inputWrite,ref security,0));Check(SetHandleInformation(inputWrite,1,0));}
    var startup=new Startup{Size=Marshal.SizeOf<Startup>(),Flags=0x100,Input=input,Output=outputWrite,Error=errorWrite};
    var command=new StringBuilder(Quote(executable));foreach(string arg in args)command.Append(' ').Append(Quote(arg));
    // 새 프로세스를 정지 상태로 만든 뒤 Job에 넣습니다. 배치 전에 실행되는 자식은 없습니다.
    Check(CreateProcess(executable,command,IntPtr.Zero,IntPtr.Zero,true,0x08000004,IntPtr.Zero,cwd,ref startup,out child));
    Close(ref outputWrite);Close(ref errorWrite);Close(ref input);
+    } finally {Close(ref outputWrite);Close(ref errorWrite);Close(ref input);}
+   }
    Check(AssignProcessToJobObject(job,child.Process));assigned=true;
    IntPtr op=outputRead,ep=errorRead;outputRead=errorRead=IntPtr.Zero;
    stdout=Task.Run(()=>Drain(op,65536));stderr=Task.Run(()=>Drain(ep,8192));
+   if(payload!=null){IntPtr iw=inputWrite;inputWrite=IntPtr.Zero;feed=Task.Run(()=>{using(var stream=new FileStream(new SafeFileHandle(iw,true),FileAccess.Write)){stream.Write(payload,0,payload.Length);}});}
    Check(ResumeThread(child.Thread)!=0xffffffff);
    uint wait=258;
    while(!cancel.IsCancellationRequested && deadlineWatch.ElapsedMilliseconds < milliseconds-1500) {
@@ -118,7 +129,7 @@ public static class LimitlessBrokerJob90V1 {
    }
    result.TotalProcesses=accounting.Total;result.ActiveProcesses=accounting.Active;result.CleanupVerified=accounting.Active==0;
    Check(GetExitCodeProcess(child.Process,out result.ExitCode));
-   bool drained=Task.WaitAll(new Task[]{stdout,stderr},500);result.CleanupVerified &= drained;
+   bool drained=Task.WaitAll(feed==null?new Task[]{stdout,stderr}:new Task[]{stdout,stderr,feed},500);result.CleanupVerified &= drained;
    if(drained) {
     var o=stdout.Result;var e=stderr.Result;
     result.Stdout=Encoding.UTF8.GetString(o.Bytes);result.StderrSummary=Sanitize(Encoding.UTF8.GetString(e.Bytes));
@@ -130,7 +141,10 @@ public static class LimitlessBrokerJob90V1 {
    if(child.Process!=IntPtr.Zero && !assigned)TerminateProcess(child.Process,126);
    // PowerShell 작업이 강제 종료되어도 OS가 이 handle을 닫아 자식 트리를 정리합니다.
    Close(ref job);Close(ref child.Thread);Close(ref child.Process);
-   Close(ref outputRead);Close(ref outputWrite);Close(ref errorRead);Close(ref errorWrite);Close(ref input);
+   Close(ref outputRead);Close(ref outputWrite);Close(ref errorRead);Close(ref errorWrite);Close(ref input);Close(ref inputWrite);
   }
+ }
+ public static Task WatchInputClose(Stream input,CancellationTokenSource stop) {
+  return Task.Run(()=>{try{input.ReadByte();}finally{stop.Cancel();}});
  }
 }

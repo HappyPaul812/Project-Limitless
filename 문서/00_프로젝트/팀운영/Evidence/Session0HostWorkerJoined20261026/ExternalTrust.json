@@ -1,0 +1,7 @@
+{
+  "check": "user_owned_code_not_trusted_even_for_admin_sid",
+  "system_acl_changes": 0,
+  "models": 0,
+  "reason": "EXTERNAL_OWNER_HOLD",
+  "pass": true
+}
