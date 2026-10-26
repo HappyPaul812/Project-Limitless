@@ -1,6 +1,6 @@
 # Issue #66 예약 작업 보안 설치기 원자 등록 후보
 
-2026-10-26. 기준 commit `5d259e2738768dd0816540b9a31228049db70a56`, branch `codex/discord-usage-diagnostics-20261026`. **OFFLINE_CANDIDATE_PASS / NOT_INSTALLED / 실제 설치 승인 대기**.
+2026-10-26. 구현 commit `2ef4012fb9a963a80de5a9910b8853917fd870fd`, 기준 commit `5d259e2738768dd0816540b9a31228049db70a56`, branch `codex/discord-usage-diagnostics-20261026`. **OFFLINE_CANDIDATE_PASS / NOT_INSTALLED / 실제 설치 승인 대기**.
 
 이번 변경은 예약 작업 생성 시점 SDDL 전달과 실제 descriptor 대조만 다룹니다. 기존29 PASS는 반복하지 않았습니다. 기존 Ready 후보 및 승인 SHA를 변경하지 않았고 기존 설치 명령도 실행하지 않았습니다. 실제 Windows Scheduler/계정/권한 검증 PASS를 뜻하지 않습니다.
 

@@ -1,10 +1,10 @@
 ## 2026-10-26 Issue #66 예약 작업 원자 보안 등록 후보 — 신규35 PASS / 설치 대기
 
-기준 `5d259e2738768dd0816540b9a31228049db70a56`, LOCAL_ONLY. COM RegisterTaskDefinition CREATE-only(flags50)에 SDDL 동시 전달, 실제 GetSecurityDescriptor(7) owner/group/보호DACL/정확ACE3 검사·실패HOLD/재등록0 구현. 기존29 재시험0, 신규 가짜Scheduler **35 PASS/0 FAIL**. 실제 Windows 등록·IPC 검증 아님. 알 수 없는 실제 mask 정규화도 HOLD.
+구현 commit `2ef4012fb9a963a80de5a9910b8853917fd870fd`, 기준 `5d259e2738768dd0816540b9a31228049db70a56`, LOCAL_ONLY. COM RegisterTaskDefinition CREATE-only(flags50)에 SDDL 동시 전달, 실제 GetSecurityDescriptor(7) owner/group/보호DACL/정확ACE3 검사·실패HOLD/재등록0 구현. 기존29 재시험0, 신규 가짜Scheduler **35 PASS/0 FAIL**. 실제 Windows 등록·IPC 검증 아님. 알 수 없는 실제 mask 정규화도 HOLD.
 
 새 Temp/Session0TaskSecurityAtomicCandidate20261026: 855 payload 중 설치기1 변경/동일854/추가삭제0, metadata 의미차이 hash1개. Manifest `6efbd7839bd4e452d9fbca8a465290533472e87cde71845a73bd37bdb21493ab`, Installer `117065bbfca686474f9104bc0dff20fa6528dfb9c204e5a2f2720d91994958e9`. 원본 Ready Manifest9aa4…/Installer337a…/855개 전부 보존. 상세 DiscordSession0_TaskSecurity_AtomicCandidate_20261026.md 및 Evidence/Session0TaskSecurityAtomic20261026/.
 
-계정/task/service/시스템ACL/부팅/Host/Fake/AI/usage/Discord0. MANUAL/A HOLD, 기존 봇·인증·SQLite·Unity/게임/Save/Push/main/PC 보존. **실제 설치 명령 실행 금지**, 새 SHA 별도 승인 후 관리자 로컬 보안 입력→실제 SD/ACL→FAKE_ONLY IPC 순서. 현재 Unity 사용자 확인사항 없음. 최종 관련 commit은 아래 마감 기록 참조.
+계정/task/service/시스템ACL/부팅/Host/Fake/AI/usage/Discord0. MANUAL/A HOLD, 기존 봇·인증·SQLite·Unity/게임/Save/Push/main/PC 보존. **실제 설치 명령 실행 금지**, 새 SHA 별도 승인 후 관리자 로컬 보안 입력→실제 SD/ACL→FAKE_ONLY IPC 순서. 현재 Unity 사용자 확인사항 없음. 원본 main bfd28154…/tracked dirty308/untracked36 동일. 상세 Result.json 및 Issue66 완료 보고 참조.
 
 ## 2026-10-26 Issue #66 실제 설치 승인 후 사전검사 — 설치 전 SECURITY HOLD
 
