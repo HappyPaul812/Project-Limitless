@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 공식 builtin 재시도 정책 검토완료 — POLICY_APPROVAL_PENDING
+
+공식문서/기존exit1증거대조: model_providers는custom정의·openai예약ID 덮어쓰기금지. 실패한retry0두줄은 이전Temp features-list의 -c목록에만존재·운영config/phase2미적용. builtin내부retry0 공식지원법미확인. HTTP4/stream5 문서참고값을 고정CLI의 전체요청상한으로단정금지.
+
+제안만: app/Scheduler재실행0·CLI프로세스최대1/완료턴1·전체90초, builtin HTTP/stream기본retry는대표별도승인필요. 프로세스1≠원격요청1, 재시도는구독한도추가소비가능·로컬kill은서버취소/비용상한보장못함. 기존Job최대20초/구AI작업6분·hardkill금지여서그대로사용불가. 승인후새격리90초Job/entry·정리예산분리·변경분오프라인검증필요, 이번미구현.
+
+모델/usage실조회/CLI/기존QA재실행/운영설정/slot실행소비/permit/배포0. MANUAL/AI_EXECUTION_HOLD·기존운영/인증/부팅/SQLite/게임보존. 과거request e0d2e6fb9a6e48708b35052c02ad133c 미소비유지. 상세 Official_OpenAI_RetryPolicy_Review_20261026.md / Evidence/OfficialRetryPolicyReview20261026/Review.json. 기반b5cd8d9a·이번docs-only commit은Issue66참조. Push/merge0·검토후중지.
+
 ## 2026-10-26 Issue66 실제AI 단발 신규승인 — 추론 전 RETRY_POLICY_HOLD
 
 바울 대표가 고정한국어 요청 모델최대1회/90초/자동재시도0 승인. 실제 모델/공식사용량/Discord/SQLite업무0, 새permit/작업/소비marker0. 새request `e0d2e6fb9a6e48708b35052c02ad133c`는 문서예약만·미소비. 현재 agent 비관리자 Session9, 서비스Session0/logon4는 이전PASS이며 이번새실행없음.

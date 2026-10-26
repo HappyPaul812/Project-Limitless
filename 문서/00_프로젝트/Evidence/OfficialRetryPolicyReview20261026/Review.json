@@ -1,0 +1,77 @@
+{
+  "status": "REVIEW_COMPLETE_POLICY_APPROVAL_PENDING",
+  "operating_mode_policy": "MANUAL",
+  "execution_policy": "AI_EXECUTION_HOLD",
+  "branch": "codex/discord-usage-diagnostics-20261026",
+  "base_commit": "b5cd8d9a17de973f6faedfe3cd946926e4d7b6b6",
+  "official_builtin_retry_zero_support": "NOT_FOUND_IN_REVIEWED_OFFICIAL_DOCS_AND_PINNED_CLI_EVIDENCE",
+  "builtin_provider_id": "openai",
+  "authentication": "EXISTING_CHATGPT_SUBSCRIPTION_UNCHANGED",
+  "failed_settings_location": {
+    "path": "F:\\study\\codex\\Project-Limitless\\Temp\\inference_config_probe_20261026.py",
+    "sha256": "c10a52b60f21a64026f02665bf9560c79e36d2e31da5b041ddb63b80267ff0b0",
+    "scope": "PRIOR_TEMP_FEATURES_LIST_CONFIG_OVERRIDES_ONLY",
+    "persisted_to_operating_config": false
+  },
+  "source_evidence_sha256": {
+    "Tools/DiscordAICollab/collab/phase2.py": "b1d0ff4d01b0abd0de0de14eae6afb7fb5a72048217bfb694aa4be7bd667f5ba",
+    "Tools/DiscordAIServiceDiagnostics/UsageOnlyJob.cs": "4be51b7fdbabb681bf822c5d22cd624f64bcf73f483fd017575a6e81759fd155",
+    "Tools/DiscordAIServiceDiagnostics/run-service-final-once.ps1": "a1a5d13e43af40156586e391660b2c441456d3d4a01526a427230333b0a877b1",
+    "Tools/DiscordAIServiceDiagnostics/service-final-once.py": "36a3213652d883c5c1e849babe8bd755477d9ba33e7e827e442ac99a12ff13ca",
+    "Tools/DiscordAIServiceDiagnostics/run-approved-usage-once.ps1": "7fe0b17f73c6a55fd3a676d10bddc5060a7e9f335d40a8e95f8f50a850bd39aa",
+    "문서/00_프로젝트/Evidence/InferenceRetryPreflightHOLD20261026/Preflight.json": "449e75c9658f2bb35428e35fe1534bf2005e431ec2e813d6f88c91b21682879c"
+  },
+  "static_findings": {
+    "production_probe_contains_failed_retry_overrides": false,
+    "usage_job_maximum_ms": 20000,
+    "old_inference_task_limit_seconds": 360,
+    "old_inference_task_disallows_hard_termination": true
+  },
+  "proposal": {
+    "implemented": false,
+    "approved": false,
+    "application_retries": 0,
+    "model_cli_process_launches_max": 1,
+    "internal_http_retry_policy": "BUILTIN_DEFAULT_REQUIRES_OWNER_APPROVAL",
+    "internal_stream_retry_policy": "BUILTIN_DEFAULT_REQUIRES_OWNER_APPROVAL",
+    "execution_budget_seconds": 90,
+    "remote_request_count_guaranteed_one": false,
+    "remote_usage_hard_cap_guaranteed": false,
+    "process_tree_supervisor": "ISOLATED_90_SECOND_VARIANT_NOT_IMPLEMENTED",
+    "deadline_cleanup_report_distinct": true
+  },
+  "this_review": {
+    "model_calls": 0,
+    "official_usage_reads": 0,
+    "cli_invocations": 0,
+    "test_reruns": 0,
+    "operating_config_changes": 0,
+    "new_slot_executions": 0,
+    "slot_consumptions": 0,
+    "permits_created": 0,
+    "runtime_code_changes": 0,
+    "discord_posts": 0,
+    "sqlite_work_operations": 0,
+    "boot_task_changes": 0,
+    "pushes": 0,
+    "main_merges": 0
+  },
+  "prior_reserved_request_id": "e0d2e6fb9a6e48708b35052c02ad133c",
+  "prior_reserved_request_started": false,
+  "official_sources": [
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "finding": "provider definition reserved IDs; forced_login_method; per-provider retry fields"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-advanced",
+      "finding": "Custom model providers and Azure/per-provider tuning; no builtin openai override"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-sample",
+      "finding": "reserved IDs; custom provider examples; generic defaults request4/stream5 not a verified pinned builtin total request bound"
+    }
+  ],
+  "new_service_health_verification": false,
+  "stop_after_review": true
+}
