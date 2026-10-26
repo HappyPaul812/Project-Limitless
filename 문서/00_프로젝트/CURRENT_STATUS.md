@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 격리배포·실조회 승인 실행 — 선행환경 HOLD / 실조회0
+
+바울 대표의 배포+조건부사용량1회 승인은 유효합니다. 기준0f98620b·패키지44SHA/기존40·변경3+신규1·PSM1/entry/roles/CLI/boot승인 점검PASS. 현재토큰은비관리자·서비스계정아님·Session9, sandbox밖읽기에서도Task API CimJobException/HResult-2146233087. Session0/logon4와20초supervisor검증불가로 ProgramData배포/permit활성화 전에 지시대로중지했습니다. 공식RPC실패가아닌실행환경게이트입니다.
+
+배포0/서비스시험0/실조회0/AI0/Discord0/trial SQLite업무0/재시도0/시험프로세스0. permit/requestID 미생성·활성permit부재·소비marker/증거보존. 운영52SHA일치·MANUALreadonly확인·원본/운영상태동일. 인증/ACL/CODEX_HOME/OnBoot/봇/아트/게임/Push변경0. 제품코드수정0·문서만기록.
+
+상세 Discord_UsageTrial_ExecutionGate_HOLD_20261026.md 및 Evidence/UsageTrialExecutionGateHold20261026/ExecutionGateHold.json. 재개전기존안전한관리자/서비스배치실행환경·실제Session0/logon4·20초supervisor가필요합니다. 암호/토큰복사·일반사용자시험대체·기존부팅변경금지. 지금자동재시도/대기예약하지말고중지. 마지막진입점commit0f98620b, 문서commit은Issue66/최종보고참조.
+
 ## 2026-10-26 Issue66 배포 사전점검·usage-only 준비 — 신규12PASS / 미승인·미배포
 
 970a7247 기존5파일+테스트2SHA동일·기존22검증반복0. 승인목록은42Python+PSM1=43항목, 후보는43Python+PSM1=44. 의미변경3+신규진단모듈1만필요하며 미변경40항목승인SHA보존. checkout의26Python+PSM1 줄바꿈차이는검토패키지에서운영원본bytes로보존했습니다.
