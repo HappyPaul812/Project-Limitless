@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — 실제 Discord Web 4역할 Fake PASS 및 시험 정리 완료
+
+- [Issue #66 최신 실전 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6411156106): 휴대전화 `/limitless-trial status`·`task` 2개 실제 왕복, 이어 **PC 웹 Discord에서** 승인4·FakeExecutor4·기획→두 아트→Codex→기획 회신 TECH_PASS, 새 Discord SENT11·불명0. FakeExecutor만 사용: 실제 새 AI/공식 usage 조회/운영 SQLite 업무0. **모바일 전체 승인·실행 미검증, 실제 Discord→실제 Codex Worker 연결 미완료**.
+- 시험 Host 대표 완료(2026-10-26 16:53:56 KST)로 정상 종료/자식0, CREATE 1명령 반환 ID 하나만 DELETE1, 기존 guild/global 목록 복원 및 원본 queue SHA 보호. 소비/승인/receipt/checkpoint 기록 보존. 새 시험 없음; MANUAL 및 A HOLD. 기존 운영 봇·아트/OnBoot/인증/CLI/SQLite/Unity·게임/Save/main 보호.
+- 다음 권고: 모바일에서 **긴 SHA 입력을 요구하지 않는 버튼/짧은 확인 코드**(전체 SHA·역할/기준커밋/upstream/owner/채널/TTL 서버측 엄격 검증), 실제 AI 연결을 위한 Session0 Supervisor·공식 5시간/주간 usage 게이트·단일 승인 1작업/90초·검증된 보고/실패 HOLD를 **먼저 격리·오프라인**으로 구축. 이후 별도 대표 승인으로 일시 시험용 앱에서 실제 Discord→AI 읽기전용 1회 E2E. 운영 봇과 A 활성화/게임 적용은 별도 추가 승인.
+- Codex `codex/discord-usage-diagnostics-20261026` 로컬 구현 `341f6a5168a4e14b89f417de4089b5a59167d88e`, 최종 보고 `243bf0bab0841b545f5ff9cc4f187f2880826b4c` (**LOCAL_COMMITTED/REMOTE_NOT_PUSHED**). 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `d99562096b432f6c58076aa49a31462f479688c4`. 전체 모바일 VERIFIED/A READY로 과대평가 금지.
+
+---
+
 # PLANNING / 2026-10-26 — Discord Phase3 오프라인 어댑터 READY / 실제 모바일 시험 미등록
 
 - Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6409096093) 기준: 기존 1단계 서비스 Session0 AI VERIFIED, 2단계 가짜 4역할 인계24 PASS 유지. 신규 `discord.py` SDK 명령 callback 후보 `collab/mobile_discord_trial.py` **18 PASS / 0 FAIL**, 정확16개 trial ZIP smoke **5/5 PASS**. 실제 Discord 연결/게시·명령 등록·새모델/공식 usage·운영 DB 변경 **전부0**, MANUAL·A HOLD.
