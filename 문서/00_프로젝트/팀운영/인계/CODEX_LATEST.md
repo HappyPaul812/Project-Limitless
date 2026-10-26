@@ -1,3 +1,11 @@
+## 2026-10-26 Issue66 내부retry 명시승인 반영 — 90초 독립추론 준비44PASS / 실제0
+
+대표가 app재실행0·추론exec1·builtin HTTP/stream기본retry허용·원격요청/구독정확1회보장불가 승인. 추가답변으로 usage AppServer1+추론exec1 허용확인. 신규request 717a0afa735d485daf790579b964e8c2 미소비, prepared approved=false/expiry0·실전permit/marker/trial없음. 구e0문서예약/사용량소비증거보존.
+
+새Job/entry/core/관리자wrapper/준비도구/테스트7파일만추가. 기존20초Job/운영runtime/인증/CLI/HOME/부팅/DB/봇·아트/게임불변. 서비스90초/부모대기80초/준비차감Job75초·worker70초/로그3초예산. 정확한국어고정응답·도구차단·JSONL/토큰·보호DPAPI로그·kill-on-close/permit/task정리. 준비/보안입력대기는서비스실행과구분·OS90.000초/원격취소보증아님.
+
+신규Python36+native7+예산1=44PASS/0FAIL·최종PS/비관리자가드/47파일SHA PASS. 실제모델/공식usage/Discord/SQLite업무/운영배포0·MANUAL. 상세 Inference90_ReadOnly_Prepared_20261026.md / Evidence/Inference90Prepared20261026/. 관리자정확명령은보고서참조; agent실행금지·다음대표직접실행후summary로판정. A/모바일연결미검증·미승인. 기반67669b9b·로컬최종commit은Issue66/최종보고. Push/merge0·준비후중지.
+
 ## 2026-10-26 Issue66 공식 builtin 재시도 정책 검토완료 — POLICY_APPROVAL_PENDING
 
 공식문서/기존exit1증거대조: model_providers는custom정의·openai예약ID 덮어쓰기금지. 실패한retry0두줄은 이전Temp features-list의 -c목록에만존재·운영config/phase2미적용. builtin내부retry0 공식지원법미확인. HTTP4/stream5 문서참고값을 고정CLI의 전체요청상한으로단정금지.
