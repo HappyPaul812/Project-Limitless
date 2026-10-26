@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord #66 실제 설치 부분 진행 후 HOLD, 재설치 금지
+
+- Codex [Issue #66 설치 1회 기록](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6417537981): 승인 855 SHA 검사 PASS 후 새 Bot 계정 `PAUL-PC\\LIMITLESSBotTrial` SID `S-1-5-21-2858504392-1958168942-1662906075-1008` 생성, **Enabled=false**. 새 코드 root 존재/state root 없음. 새 Task 실제 존재·SD는 조회 **UNKNOWN_OR_ABSENT**로 확정 금지. 설치 결과 `PARTIAL_INSTALL_HOLD`, RuntimeException HRESULT -2146233087, **원시 직접 원인 미확정**(installer catch 원시 오류 소실). 승인 Install1 소모, 신규 설치/재시도·자산 삭제0. 새 BOT 계정·Task·ACL/만료 최종 PASS 주장 금지.
+- 관리자 대화형 PowerShell이 닫힌 것은 launcher 메모리 ScriptBlock의 **`exit 2` 설계** 탓으로 판독. 설치 예외와 별도 원인. **종전 설치 명령 반복 실행·Remove/계정 활성화/예약 Task 재등록/권한 변경 금지**, 운영 BOT·아트/OnBoot2/boot 승인 SHA/SQLite·기존 CODEX_HOME/인증·Unity/Save·main 보호. 모델/usage/Discord/IPC/Fake0; `MANUAL / A HOLD` 유지.
+- 후속 Codex 최소범위는 **관리자 로컬 읽기 전용**: 새 시험 SID/상태·그룹·직접 batch right/24h 만료, task 경로/SD/원인별 조회 결과, code/state root·owner/DACL·Manifest/record·기존 설치 로그/Windows event 확인. 비밀정보를 마스킹하고 계정·Task·서비스·기존 증거 변경0. 원인 불명은 미확정으로 기록. 읽기 전용 PowerShell 안내는 기존 인터랙티브 세션 `exit` 금지; 별도 일회성 격리 자식 프로세스로 정확한 종료코드/오류를 받고 사용자가 창을 잃지 않도록 제안.
+- 설치 재개/부분자산 복구·새 installer 후보/실제 FAKE_ONLY IPC 및 실AI/A는 진단 보고와 새 명시 승인 이후로 연기. 로컬 Codex 문서 `a0037099cb3d9ef86d5f28b7bdc56f63c1d5f738` / branch `codex/discord-usage-diagnostics-20261026`, PUSH 없음. [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `32dbe06bf570a9e70dc4781c573c705b9675a659`.
+
+---
+
 # PLANNING / 2026-10-26 — 설치기 SDDL 동시등록 후보35 PASS / 실제 설치 승인 대기
 
 - Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6416993559): Task Scheduler COM `RegisterTaskDefinition` 등록 호출에 제한 SDDL 동시 제공+즉시 `GetSecurityDescriptor(7)` 대조, CREATE-only flags50/Disabled·trigger0/인증 제한 및 실패 불명 HOLD. 신규 fake-Scheduler **35 PASS/0 FAIL**. **실제 Windows 작업 등록/계정간 IPC/AI E2E는 아직 미검증**. 일반 사용자 SID와 admin SID가 같던 문제는 신규 독립 BOT trial 계정 설치 전까지 보류.
