@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-26 — Discord #66 PowerShell 충돌 2건 격리 수정
+
+- Codex [Issue #66 최신 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6406235162): 실제 서비스 Session0/logon4 및 44 SHA/기존40 보존 성공 후 usage-only 시험은 Python/App Server 시작 **전** PowerShell 스크립트 변수 충돌로 중단. `$home` ↔ ReadOnly `$HOME`, 결과변수 `$child` ↔ `[switch]$Child`. 격리 후보만 `serviceCodexHome`·`childSummaryPath`로 rename, 오프라인 3 PASS/0 FAIL. **실제 공식 사용량 조회0·모델0·Discord0**, 과거 `OFFICIAL_READ_REJECTED`/ `turn.failed` 원인 미확정.
+- 실제 배포된 기존 launcher는 불변, 새 후보 launcher SHA `3a57e70ac09ac2d357d4224ef4cc9c5ad23d7610f499380436eeb2aac80fec74`, Codex 로컬 `codex/discord-usage-diagnostics-20261026` fix commit `e10d02cbb4fccc9679a2ebd035c8426f3c603557` (`LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_DEPLOYED`).
+- **기존 시험 launch fuse는 소비됐고 안전상 보존**; usage RPC 0회와 혼동 금지. 무단 reset/reuse/신규 permit 발급/시험 자동 재개 금지. 사용자가 새 trial을 명시 승인하기 전에는 수정안/보호 조건 확인까지만 가능. 기존 MANUAL·OnBoot·bot/art·SQLite·boot승인·CLI·게임/Save·main 보호.
+- 기획 [Discord 운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `fdc5da9bd26a3f5486cc002dbda6c8518151467e`에 상세 반영.
+
+---
+
 # PLANNING / 2026-10-26 — Discord #66 Session9 실행 조건 HOLD / 사용량 시험 1회 미소진
 
 - [Codex Issue #66 사전게이트 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6405623813): 승인된 격리 trial·공식 사용량-only 최대1회 진행 시 비관리자 일반 사용자 **Session9** 및 작업 스케줄러 `CimJobException`으로 서비스 계정 **Session0/logon4** 확인이 불가능해 선행조건에서 HOLD. **패키지 SHA44 PASS/기존40 보호**, 그러나 trial 배포0·permit0·실조회0·모델0·Discord0. 승인된 1회 시험은 미소진, 자동 재시도 금지.
