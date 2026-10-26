@@ -1,5 +1,7 @@
 ## 2026-10-26 Issue #66 Phase3 — 모바일 Discord 연결 준비 완료 / 미배포
 
+Phase3 implementation commit: `8cbf90ba84c93f9c45f4979a65a605fda727d464` (LOCAL_ONLY).
+
 Phase1 VERIFIED·Phase2 24 PASS 보존. 신규 SDK 어댑터 `/limitless-trial`은 FakeExecutor 전용, 신규18 PASS/0 FAIL+패키지 smoke5/5. 기존 mobile_offline/검증기/미술 승인/운영 bot 수정0. 별도 시험 앱·단일 guild 등록 계획, owner/app/guild/channel/권한·승인 SHA/만료/취소·중복·실제 followup receipt·HOLD/checkpoint를 구현했습니다.
 
 승인 bytes13+Phase1 roles1+신규 모듈2의 16파일 ZIP/approved=false Manifest. source runtime4개 및 roles 줄바꿈 차이는 승인 raw bytes로 해결. 기존 boot approval runtime43 불변. 다음: 별도 승인→시험 앱/실제 ID·권한/명령 inventory/서비스 SID ACL·한시적 host 확인→가짜 실행기 모바일 왕복. 현재 배포/등록/접속/추가 모델/usage/운영 SQLite0, MANUAL·실업무 HOLD·A 미활성.

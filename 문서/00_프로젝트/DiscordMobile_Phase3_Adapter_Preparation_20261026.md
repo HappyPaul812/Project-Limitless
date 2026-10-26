@@ -102,3 +102,5 @@ Discord 업무→승인 범위→공식 usage→Session0 제한 Worker→4역할
 - ZIP: `103ecc96c6796d288986eb6ba3ddf5e8612153010b4976f4b9c39a4dcc88099b`
 - Manifest approved=false: `f69049c61737476e6707bcb9559957e88115fbc19da0a56a92c8ae339348e5a7`
 - Phase2 mobile_offline (unchanged): `aef705df03cffb4e631a5e5514a0924776d2f19fac7d66404dff1b5dbfc7ce98`
+
+Implementation commit: `8cbf90ba84c93f9c45f4979a65a605fda727d464` (LOCAL_ONLY / NOT_DEPLOYED).
