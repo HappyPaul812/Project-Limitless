@@ -1,5 +1,48 @@
 # Issue66 부분 설치 읽기 전용 조사 — NOT_VERIFIED / 관리자 진단 대기
 
+## 후속 관리자 결과 판독 — 코드 결함 확정 / 실제 원시 실패 코드 미확정
+
+관리자 진단 `a11561f51e114b398c4b58d7686b9a57`를 대표가 전달했습니다. 작업 브랜치의 실제 JSON과 붙여넣은 JSON의 의미 내용이 동일합니다. 결과 파일 SHA `f6f8c9e3589299a3dd918a4bb1395164d6797812bbfe85c832fda0cb234fb9be`. 아래 과거 ‘조회 불가’ 항목을 이번 실제 관리자 결과로 갱신합니다. **새 설치/복구/권한 변경은 하지 않았습니다.**
+
+### 발견한 코드 결함
+
+설치된 파일과 같은 SHA `1d85ea2b3b99027dbf0eeb4ee61b590b8be3539d7c9e7992af0dee03c8d8d96e`의 `TrialAccountPolicy.cs` **21행**:
+
+```csharp
+var right=new Text{Length=32,Max=34,Buffer=text};
+```
+
+Buffer의 `SeBatchLogonRight`는 **17글자/UTF-16 34바이트**이며 종료 null을 포함한 버퍼는36바이트입니다. Length32는 마지막 t를 제외한 **SeBatchLogonRigh**를 뜻합니다. 문자열/byte 연산만으로 이를 재현했고 LSA 호출0/시스템변경0입니다. 설치된 파일의 SHA와 조사 source SHA가 같으므로 실제 설치 사본에 이 결함이 있음을 확인했습니다. 증거 `LsaUnicodeLengthProof.json`.
+
+[공식 LSA_UNICODE_STRING](https://learn.microsoft.com/en-us/windows/win32/api/lsalookup/ns-lsalookup-lsa_unicode_string)은 Length를 종료 null 제외 byte 길이로 정의합니다. [LsaAddAccountRights](https://learn.microsoft.com/en-us/windows/win32/api/ntsecapi/nf-ntsecapi-lsaaddaccountrights)는 잘못된 권한 이름에 STATUS_NO_SUCH_PRIVILEGE를 반환한다고 명시합니다. 따라서 이 호출에 도달했다면 현재 코드가 잘못된 권한 이름을 전달하는 결함은 **확정**입니다.
+
+다만 이전 관리자 실행이 정확히 이 호출에서 어떤 NTSTATUS/Win32 코드로 실패했는지는 기록되지 않았습니다. **CODE_DEFECT_CONFIRMED / INCIDENT_NATIVE_CAUSE_NOT_VERIFIED**로 구분합니다. 실제 native code를 복구했다고 주장하지 않습니다. 현재 ‘Users 소속/직접권한 없음/Manifest 없음’ 상태와 결함은 일치하지만 Add-LocalGroupMember 성공이나 LsaAddAccountRights 도달 자체의 실행 추적을 대신하지는 못합니다.
+
+### 관리자 실제 상태
+
+- ADMIN SID1001 / Worker SID1007 / Bot SID1008로3자 분리 확인.
+- Bot은 Disabled, 로컬 그룹 Users 하나·그룹 조회 실패0. 만료 `2026-10-27T22:41:13.2064794+09:00`.
+- **직접 부여 권한 []**. 그룹 상속 권한은 포함하지 않은 조회이므로 모든 유효 권한이0이라고 표현하지 않습니다.
+- 시험 task는 GetTask file-not-found 및 관리자 hidden 포함 열거로 **현재 부재 확인**. 과거 생성 후 삭제됐다고 추정하지 않습니다. 현재 task owner/DACL/Principal/action은 해당 없음입니다.
+- Code/root 존재, BA 소유·SYSTEM/BA만 FullControl, root 보호DACL/reparse아님. TrialAccountPolicy.cs 사본 SHA 일치.
+- 설치 payload **855개 확인/불일치0/읽기실패0**. HostManifest/DeploymentRecord/State root는 읽기 가능한 부모 목록에서 부재 확인.
+- 기존 OnBoot2개 정의 SHA·boot approval SHA 현재도 동일. 승인 Installer/Manifest/ZIP 세 SHA 일치. 이전 Install1 결과 JSON SHA80523d2b… 동일.
+
+### 로그 판독 한계
+
+PowerShellCore의 `ACCESS_DENIED_TEXT`는 **4104(record47397)**에서 나온 문자열 분류입니다. 4104는 [스크립트 블록 내용을 기록하는 이벤트](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.5)로, 코드의 문자열/함수명이 포함됐다는 사실만으로 실행된 함수나 실제 권한 오류를 확정할 수 없습니다. 분류는 원문 토큰일 뿐 실행 오류 판정이 아닙니다.
+
+4100(record47403)은 정제 projection에 원시 코드/함수/InnerException 단서가 없습니다. TaskScheduler Operational은 disabled라 해당 범위 오류 이벤트가 없다는 결과를 등록 성공/실패의 증거로 삼지 않습니다. 로그 설정은 변경하지 않았습니다. 기존 고정 throw로 소실된 원시 예외는 이번 결과에서도 복구되지 않았습니다.
+
+### 최소 후속 변경안 — 아직 수정하지 않음
+
+1. TrialAccountPolicy.cs의 권한 이름을 하나의 상수로 재사용하고 `Length`는 실제 UTF-16 byte 수, `Max`는 그 값+종료 null2로 계산하도록 별도 수정 후보를 만듭니다. 해당 이름의 정답은34/36이며 고정 숫자 교체보다 계산을 권장합니다.
+2. 설치기 catch에서 실패 단계·원래 예외/InnerException/가능한 NTSTATUS 및 NativeErrorCode를 비밀정보 없이 보존한 뒤 HOLD. wrapper 대화형 exit 제거. 실패해도 보안 권한·SDDL·중복 gate 완화 금지.
+3. 수정 후보 오프라인 검증과 새 Code/Installer/Manifest/ZIP SHA를 보고한 후 **대표의 별도 복구·재설치 승인**을 받습니다. 기존855개 승인 후보는 덮어쓰지 않습니다. 현재 변경 필요파일 SHA는 아래 표 그대로입니다.
+4. 부분 자원은 Bot1008 Disabled와 Code root를 보존합니다. 정리 필요 시 SID/경로/해시가 일치한 신규 자원만 승인 범위에서 처리하고 증거/Install1 소비를 유지합니다. 현재 계정 활성화/권한 부여/파일 삭제/재설치0.
+
+**관리자 판독을 완료하고 HOLD로 중지합니다. 기존16/29/35 성공검사 반복0, 실제 IPC/Fake/AI/usage/Discord0.** 아래는 관리자 결과 수신 전 조사 이력입니다.
+
 2026-10-26. 기준 `a0037099cb3d9ef86d5f28b7bdc56f63c1d5f738`, branch `codex/discord-usage-diagnostics-20261026`. 이전 설치 요청 `0f8e15c951a144efa79f5ccdbeed9c55`는 **Install1 소비 완료**로 유지합니다. 재설치·복구·삭제·활성화·등록·IPC를 하지 않았습니다.
 
 ## 직접 원인 판정

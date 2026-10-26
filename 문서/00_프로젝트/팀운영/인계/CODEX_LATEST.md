@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 관리자 판독 — Unicode 길이 코드결함 확정 / 원시예외 미복구
+
+관리자a11561f51e114b398c4b58d7686b9a57 수신/로컬JSON동일. Bot1008 Disabled/Users·직접권한[]·24h만료, Worker1007/Admin1001 분리. task부재/Manifest·record·State부재 확인, root/code BA소유 SY/BA Full·855 SHA일치. OnBoot2개/boot approval/승인3SHA/Install1증거 보존.
+
+설치사본과동일SHA1d85ea2b… TrialAccountPolicy.cs21행 권한 Length32/Max34가 17글자SeBatchLogonRight를 SeBatchLogonRigh로 잘라 전달. UTF-16 정답34/36, 순수연산proof/native0로 **코드결함 확정**. 다만 당시 native예외/호출도달 추적소실로 INCIDENT_NATIVE_CAUSE_NOT_VERIFIED 유지. 4104 ACCESS_DENIED_TEXT는 소스텍스트이며 실제실패로 단정금지.
+
+현재 원본코드수정/재설치/권한변경/삭제0·Install1소비유지·MANUAL/A HOLD. 최소후속은 길이동적계산+catch단계/원시예외보존+wrapper exit제거 후보→오프라인/새SHA→별도 복구재설치 승인. IPC/AI/usage/Discord0, 이전성공시험반복0. 상세 readOnly보고서 관리자판독부 및 LsaUnicodeLengthProof.json. 보고commit Issue66 참조. **판독 후 HOLD중지**.
+
 ## 2026-10-26 Issue #66 읽기 전용 부분 조사 — NOT_VERIFIED_HOLD
 
 진단 구현 commit `6d037658420e4f36121a1e3555d6b72a9efba0ea` (LOCAL_ONLY), 기준a0037099…/동일격리branch. 이전 Install1 소비 완료 유지, 추가0. 현재 설치root 존재·State부모목록부재·승인3SHA/원래receipt SHA80523d2b…보존. 계정/그룹/배치/Task/보호파일/로그는 조회거부 또는LocalAccounts NullReference로UNKNOWN. 이전관리자 Bot1008 Disabled 증거와 현재상태 재검증을 구분. task부재/삭제 단정금지.

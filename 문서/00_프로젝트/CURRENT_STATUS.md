@@ -1,3 +1,11 @@
+## 2026-10-26 Issue #66 관리자 진단 판독 — LSA 길이 결함 확정 / 복구 전 HOLD
+
+관리자 a11561f5…: SID ADMIN1001/Worker1007/Bot1008 분리, Bot Disabled/Users만/만료10-27 22:41, 직접권한[]; task 현재부재·Manifest/record/State부재 확인. Code/root BA 소유·SY/BA만 Full, 855 SHA 불일치0. OnBoot2개/boot approval/승인3SHA 및Install1 원본증거 보존.
+
+설치 사본과SHA동일한 TrialAccountPolicy.cs21행 Length32/Max34 결함 발견: SeBatchLogonRight는17글자/UTF-16 34byte+null2=36인데 마지막t가 잘림. 순수byte연산 증거 LsaUnicodeLengthProof.json, native호출0. 코드결함 확정이나 당시 원시예외는 catch로 소실되어 실제실패 nativecode/해당호출 도달은 NOT_VERIFIED. 4104 ACCESS_DENIED_TEXT는 소스본문 단서이며 실행오류 증거 아님.
+
+기존코드수정/권한변경/재설치/삭제0. 다음 후보는 길이 계산·단계/InnerException 보존·대화형exit제거 최소안, 새SHA/오프라인검증 뒤 별도 복구·재설치 승인 필요. 현재 HOLD로 중지·MANUAL/A HOLD. 상세 DiscordSession0_PartialInstall_ReadOnly_20261026.md 관리자판독부, Evidence/a115…json 및 proof 참조. 관련 보고commit Issue66 참조.
+
 ## 2026-10-26 Issue #66 부분 설치 읽기 전용 조사 — NOT_VERIFIED / 관리자 진단 대기
 
 진단 구현 commit `6d037658420e4f36121a1e3555d6b72a9efba0ea` (LOCAL_ONLY). 이전 Install1 소비 유지·추가설치0. 현재 root존재/State부모목록상부재/승인3SHA 및 원래 receipt SHA보존 확인. 계정·그룹·배치권한·task SD·Code/Manifest·로그는 비관리자 토큰 조회 실패(부재 아님). 설치 직접원인은 고정throw로 원문 소실되어 NOT_VERIFIED. 현재 진단 접근거부를 과거 설치 원인으로 해석하지 않음. 창 종료는 기존wrapper 대화형 exit2로 별도 확정.

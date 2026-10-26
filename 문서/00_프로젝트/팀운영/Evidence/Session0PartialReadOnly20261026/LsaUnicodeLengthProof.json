@@ -1,0 +1,16 @@
+{
+  "status": "CODE_DEFECT_CONFIRMED_INCIDENT_NATIVE_CAUSE_NOT_VERIFIED",
+  "source_sha256": "1d85ea2b3b99027dbf0eeb4ee61b590b8be3539d7c9e7992af0dee03c8d8d96e",
+  "installed_source_sha_matches": true,
+  "right_name": "SeBatchLogonRight",
+  "actual_characters": 17,
+  "required_length_bytes": 34,
+  "required_max_bytes": 36,
+  "declared_length": 32,
+  "declared_max": 34,
+  "counted_name": "SeBatchLogonRigh",
+  "length_contract_violated": true,
+  "actual_lsa_calls": 0,
+  "system_changes": 0,
+  "original_native_status_recovered": false
+}
