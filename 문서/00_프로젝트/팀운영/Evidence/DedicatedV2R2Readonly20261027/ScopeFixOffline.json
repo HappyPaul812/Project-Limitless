@@ -1,0 +1,95 @@
+{
+  "os_queries": 0,
+  "fail": 0,
+  "kind": "R2_READONLY_SYNTHETIC",
+  "install_calls": 0,
+  "tests": [
+    {
+      "name": "ACCESS_DENIED_NOT_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "name": "EXACT_NOT_FOUND_CODE",
+      "status": "PASS"
+    },
+    {
+      "name": "UNKNOWN_GENERIC_HRESULT",
+      "status": "PASS"
+    },
+    {
+      "name": "COM_TIMEOUT_NOT_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "name": "INNER_RAW_CODE_NO_MESSAGE",
+      "status": "PASS"
+    },
+    {
+      "name": "RECORD_ALLOWLIST_NO_SECRET",
+      "status": "PASS"
+    },
+    {
+      "name": "EVENT_EXACT_TASK_NO_ACTION",
+      "status": "PASS"
+    },
+    {
+      "name": "OTHER_TASK_NOT_EXPORTED",
+      "status": "PASS"
+    },
+    {
+      "name": "NATIVE_SCOPE_REJECT_BEFORE_OS",
+      "status": "PASS"
+    },
+    {
+      "name": "RIGHTS_OTHER_SID_REJECT_BEFORE_OS",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_SECURITY_READER_EXACT_FAKE",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_SECURITY_READER_HEADER_MISMATCH_FAKE",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_SECURITY_READER_ACCESS_DENIED_FAKE",
+      "status": "PASS"
+    },
+    {
+      "name": "WIN32_ACCESS_DENIED_PRESERVED",
+      "status": "PASS"
+    },
+    {
+      "name": "EVENT_DTD_REJECT",
+      "status": "PASS"
+    },
+    {
+      "name": "RAW_RECORD_NESTED_SECRET_REMOVED",
+      "status": "PASS"
+    },
+    {
+      "name": "NATIVE_IMPORT_READONLY_ALLOWLIST",
+      "status": "PASS"
+    },
+    {
+      "name": "SCRIPTBLOCK_QUERY_ACCUMULATION_ACTUAL_FUNCTION",
+      "status": "PASS"
+    },
+    {
+      "name": "SCRIPTBLOCK_QUERY_FAILURE_ACCUMULATION",
+      "status": "PASS"
+    },
+    {
+      "name": "SCRIPTBLOCK_DISCOVERED_RECORD_PERSISTENCE",
+      "status": "PASS"
+    },
+    {
+      "name": "SCRIPTBLOCK_COM_AND_MANIFEST_STATE_PERSISTENCE",
+      "status": "PASS"
+    }
+  ],
+  "changes": 0,
+  "password_reads": 0,
+  "pass": 21
+}

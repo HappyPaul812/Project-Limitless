@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 읽기 진단 ScopeFix — ScriptBlock 경로21PASS / 관리자 결과 대기
+
+대표 실행에서 $script:r 미정의로 첫 읽기query 누적 실패·Task/계정/최종JSON 미도달. 원인 -File과 &ScriptBlock의 범위차이, 도구 결함. 구도구/hash보존·구명령사용중지. 별도 probe-r2-partial-v2.ps1 결과/기록/시험변수 script초기화 일치, 실제 EncodedCommand→ScriptBlock SelfTest21PASS0FAIL(OS조회변경0). 새명령/SHA Discord_DedicatedV2_R2_Readonly_ScopeFix_20261027.md. 관리자Collect/설치실행0·소비승인보존·Task/설치원인UNKNOWN·V1/MANUAL/A/runtimeHOLD. Issue후속SHA / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 r2 관리자 읽기 진단 준비 — 17 PASS / Collect 미실행
 
 기준 f6b61621, 최신Issue6439920038 재사용·보호Entry/Result Codex열람거부로 원본판독미완료. 새 R2Readonly/probe-r2-partial.ps1(기본SelfTest/명시Collect) 준비, 신규17PASS0FAIL/C#컴파일·명령구문PASS. Task COM 단계별 GetTask/숨김목록/SD·Action비교·정제이벤트, NetAPI/LSA 신규계정권리, 새설치766 SHA/ACL/Lease/승인소비, OnBoot2·기존SID·보존루트metadata 읽기만. 실제관리자Collect0/설치재실행0/변경0. Task/직접원인/권한·부분파일은 UNKNOWN 결과대기, existing_preserved 보고와 독립감사 분리. 명령·SHA·한계·복구조건 Discord_DedicatedV2_R2_Readonly_20261027.md. 재시도·복구·설치·IPC금지, V1/MANUAL/A/토큰GROUPJob HOLD. LOCAL_COMMITTED / REMOTE_NOT_PUSHED, 최종SHA Issue후속.

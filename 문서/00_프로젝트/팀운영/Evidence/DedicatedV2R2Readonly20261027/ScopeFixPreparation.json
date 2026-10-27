@@ -1,0 +1,8 @@
+{
+  "old_script_sha256": "d3e9b499491dae3b6087878c1b40c2b8f4d6b3d96c1b0d8c4847377d621fe407",
+  "admin_collect_executed": false,
+  "command_parse": "PASS",
+  "new_script_sha256": "d3d9fe8f10ad2e18028f1e4e8010eb1e7421a36ef0f062e9743dc597fe59ea84",
+  "test_launch": "NoProfile EncodedCommand ScriptBlock SelfTest",
+  "old_preserved": true
+}
