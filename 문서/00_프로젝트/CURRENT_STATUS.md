@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 Task GR/FR 검증기 격리 후보 — 신규48PASS / 실제Windows재검증0
+
+기준97028645/기획6440747926·고정Admin JSON/기존2PASS 재사용. 새 TaskSecurityCandidate C# Task전용 계약: 객체/정확Task/SID/고정snapshot 근거 필요·GR만 파일읽기0x120089로정규화/추가비트삭제0·exact OwnerGroup/보호DACL/ACE3·순서·SID·기존FA유지. 쓰기삭제실행/WDAC/WOWNER/unknown/추가ACE등거부. 신규48PASS0FAIL·snapshot후보PASS(LiveVerified/RuntimeAdmittedfalse), 원설치HOLD/HRESULT별도보존. 기존 DedicatedContract/r2 ZIP/설치계정TaskACL/Stage/승인소비 불변·실콜사이트연결0·관리자조회/설치/IPC0. 문서 Discord_DedicatedV2_TaskSecurityCandidate_20261027.md에파일SHA/근거/후속Task재등록없는읽기검증절차/HOLD조건. V1/MANUAL/A/runtimeHOLD·Push0, 최종로컬SHA Issue후속.
 ## 2026-10-27 Issue66 r2 관리자 진단 판독 완료 — Task PRESENT / SDDL 재현불일치 / HOLD 중지
 
 대표 Admin-33a677… JSON 확인(SHA4de232b3…): query45=READ_OK44/UNKNOWN1(Operational Disabled), payload766 SHA/CodeACL 모두일치·파일768/누락예상외0/Auth빈상태. Bot1009Disabled·Worker1010Enabled/Users·직접Batch+deny4, OnBoot2 pin일치/기존1007Enabled1008Disabled. Task PRESENT/Disabled/Trigger0/90초/Principal정상·Action비교true. 기대GR0x80000000 vs 실제FR0x120089, header일치/right불일치. 고정Contract에 관측SDDL 넣어 D3_SD_RIGHTS와 원설치예외체인 재현(신규오프라인2PASS). 과거throw태그/실등록시각은 로그미활성으로 미확정. 설치/복구/재시도0·소비증거보존, Task전용권리표현계약 수정방향만 기록. 상세 Discord_DedicatedV2_R2_Readonly_Review_20261027.md/AdminReviewSummary.json. 실제토큰/GROUP/IPC/Job·V1/MANUAL/A HOLD 유지, 전체운영보존감사주장0/Push0. 최종 로컬SHA Issue후속.

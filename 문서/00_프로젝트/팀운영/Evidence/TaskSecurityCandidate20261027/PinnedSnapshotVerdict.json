@@ -1,0 +1,35 @@
+{
+  "verdict": {
+    "Status": "OFFLINE_CANDIDATE_PASS_NOT_WINDOWS_REVERIFIED",
+    "RawWorkerMask": 1179785,
+    "NormalizedWorkerMask": 1179785,
+    "LiveVerified": false,
+    "RuntimeAdmitted": false
+  },
+  "runtime_admitted": false,
+  "original_install_status": "HOLD",
+  "admin_queries": 0,
+  "automatic_retries": 0,
+  "install_calls": 0,
+  "model_calls": 0,
+  "windows_reverified": false,
+  "mapping_evidence_sha256": "4de232b3d5af7aa6662ce4e4ec6a4d28ddc529b5c0d50656a9114f71e679140e",
+  "schema": 1,
+  "stage": "OFFLINE_TASK_SPECIFIC_COMPARE",
+  "changes": 0,
+  "ipc_calls": 0,
+  "kind": "TASK_READ_VERIFIER_OFFLINE_CANDIDATE",
+  "task_changes": 0,
+  "status": "OFFLINE_CANDIDATE_PASS_NOT_WINDOWS_REVERIFIED",
+  "original_contract_changed": false,
+  "original_native_errors": [
+    {
+      "type": "System.Management.Automation.MethodInvocationException",
+      "hresult": -2146233087
+    },
+    {
+      "type": "System.InvalidOperationException",
+      "hresult": -2146233079
+    }
+  ]
+}

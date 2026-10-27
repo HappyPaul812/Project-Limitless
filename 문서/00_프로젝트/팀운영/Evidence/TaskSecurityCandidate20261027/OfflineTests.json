@@ -1,0 +1,205 @@
+{
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "GENERIC_READ_WITH_BOUND_PROOF"
+    },
+    {
+      "status": "PASS",
+      "name": "SPECIFIC_FILE_READ_WITH_BOUND_PROOF"
+    },
+    {
+      "status": "PASS",
+      "name": "OBSERVED_SNAPSHOT_ONLY_OFFLINE_PASS"
+    },
+    {
+      "status": "PASS",
+      "name": "REDUNDANT_GENERIC_READ_NO_EXPANSION"
+    },
+    {
+      "status": "PASS",
+      "name": "MISSING_MAPPING_PROOF_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "WRONG_OBJECT_MAPPING_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "WRONG_TASK_SCOPE_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "WRONG_WORKER_BINDING_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "TAMPERED_MAPPING_EVIDENCE_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000002"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000004"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000010"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000020"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000040"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000100"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00010000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00040000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00080000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x01000000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x02000000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x10000000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x20000000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x40000000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00000200"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_ADDED_BIT_0x00800000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_MISSING_READ_BIT_0x00000001"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_MISSING_READ_BIT_0x00000008"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_MISSING_READ_BIT_0x00000080"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_MISSING_READ_BIT_0x00020000"
+    },
+    {
+      "status": "PASS",
+      "name": "REJECT_MISSING_READ_BIT_0x00100000"
+    },
+    {
+      "status": "PASS",
+      "name": "WORKER_FULL_CONTROL_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "UNEXPECTED_SID_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "ADDED_ACE_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "DUPLICATE_WORKER_ACE_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "OWNER_MISMATCH_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "GROUP_MISMATCH_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "PROTECTED_DACL_MISSING_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "UNEXPECTED_CONTROL_FLAGS_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "ACE_ORDER_CHANGE_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "ACE_INHERIT_FLAGS_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "DENY_ACE_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "SYSTEM_RIGHTS_CHANGE_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "ADMIN_UNKNOWN_BIT_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "NULL_DACL_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "EMPTY_DACL_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "MALFORMED_DESCRIPTOR_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "NULL_DESCRIPTOR_REJECT"
+    },
+    {
+      "status": "PASS",
+      "name": "OBJECT_SPECIFIC_ACE_REJECT"
+    }
+  ],
+  "admin_queries": 0,
+  "windows_reverified": false,
+  "install_calls": 0,
+  "fail": 0,
+  "changes": 0,
+  "kind": "TASK_READ_SECURITY_CANDIDATE_OFFLINE",
+  "pass": 48,
+  "model_calls": 0,
+  "ipc_calls": 0
+}
