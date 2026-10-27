@@ -1,0 +1,93 @@
+{
+  "install_calls": 0,
+  "checks": [
+    {
+      "errors": [
+        {
+          "type": "System.UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN",
+      "name": "APPROVAL_ROOT"
+    },
+    {
+      "status": "UNKNOWN",
+      "name": "INSTALL_APPROVAL_JSON",
+      "reason": "PROTECTED_PARENT_NOT_VERIFIED"
+    },
+    {
+      "status": "UNKNOWN",
+      "name": "CONSUMPTION_DIRECTORY",
+      "reason": "PROTECTED_PARENT_NOT_VERIFIED"
+    },
+    {
+      "status": "UNKNOWN",
+      "name": "CONSUMED_MARKER",
+      "reason": "PROTECTED_PARENT_NOT_VERIFIED"
+    },
+    {
+      "status": "UNKNOWN",
+      "name": "INSTALL_LEASE",
+      "reason": "PROTECTED_PARENT_NOT_VERIFIED"
+    },
+    {
+      "status": "ABSENT",
+      "name": "DEDICATED_CODE_ROOT"
+    },
+    {
+      "status": "ABSENT",
+      "name": "DEDICATED_STATE_ROOT"
+    },
+    {
+      "errors": [
+        {
+          "type": "System.NullReferenceException",
+          "hresult": -2147467261
+        }
+      ],
+      "status": "UNKNOWN",
+      "name": "LIMITLESSBotV2D"
+    },
+    {
+      "errors": [
+        {
+          "type": "System.NullReferenceException",
+          "hresult": -2147467261
+        }
+      ],
+      "status": "UNKNOWN",
+      "name": "LIMITLESSWorkV2D"
+    },
+    {
+      "errors": [
+        {
+          "type": "System.UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "UNKNOWN",
+      "name": "DEDICATED_TASK"
+    },
+    {
+      "count": null,
+      "status": "UNKNOWN",
+      "errors": [
+        {
+          "type": "System.Management.Automation.RuntimeException",
+          "hresult": -2146233087
+        }
+      ],
+      "name": "PROTECTED_RESULTS"
+    }
+  ],
+  "schema": 3,
+  "status": "HOLD_REQUIRES_RECOVERY_REVIEW",
+  "model_calls": 0,
+  "changes": 0,
+  "password_reads": 0,
+  "ipc_calls": 0,
+  "kind": "R1_INSTALL_HOLD_READONLY",
+  "retry_authorized_by_probe": false,
+  "admin": false
+}

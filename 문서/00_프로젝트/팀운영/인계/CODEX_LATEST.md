@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 재개 요청 인계 — 신규 관리자 읽기 도구 준비
+
+대표“다시해줘”→재개준비·기존helper무조건재시도/소비삭제해석0. approvalroot실제존재·현재내부accessdenied, nonadmin UNKNOWN9/CodeState부재2·관리자최소읽기필요. 새 R1Preparation/probe-install-hold-readonly.ps1 SHA c34be6d7bd023c3575b2cf16a2b53f4a06c3225209fcfff42edf8916ffad5874·PS구문PASS. 승인binding/만료/admin·consume/lease·새계정2/Task/CodeState·Result개수만읽음, 암호/환경/Result본문읽기0·변경/설치0. parent미검증자식UNKNOWN·falseABSENT방지. Discord_DedicatedR1_Recovery_20261027.md 관리자한줄, Evidence/…/InstallRecoveryReadonlyNonAdmin.json. 입출력리디렉션dummy메타는비관리자관측일뿐실제throw확정아님. 관리자JSON판독후필요한입력경계/승인복구범위검토, 기존r1/helper/approval변경·자동재시도0·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 Install HOLD 인계 — IOException invalidhandle / 재실행금지
 
 대표최신결과 outer FIXED_INSTALLER_FRESH_CHILD·creation_attemptedtrue, inner HOLD/stageNATIVE_PROTECTED_DEDICATED_STAGING/IOException -2147024890=80070006. 암호오타로단정금지·ReadHost콘솔입력과stdout수집child경계가능성검토, stage변수는ReadHost전에갱신안됨·정확throwUNKNOWN. 이전reverify/creationfalseJSON과분리, 시각/실행횟수/원본파일미제공. helper순서상보호approval root/JSON이미생성경로도달·같은helperroot재사용거부정책유지. 소비/계정/Task실제상태는읽기감사필요·생성false로임의기록금지. 명령재실행/승인삭제/비번변경/계정복구/권한완화0. 다음은입출력경계오류와approval/consume/계정/Task최소읽기확인, 재설치별도승인. 상세Install보고갱신·코드/후보불변·V1/MANUAL/A/runtimeHOLD·Push0. 암호/prompt마스킹값저장0.

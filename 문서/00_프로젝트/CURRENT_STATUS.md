@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 재개 요청 — 관리자 최소 읽기 감사 대기
+
+대표재개요청에기존Install재실행0·소비삭제0. 실제approvalroot존재/내부접근거부확인, 새 probe-install-hold-readonly.ps1 SHA c34be6d7…·구문PASS·비관리자UNKNOWN9/CodeState부재2·changes0. 보호부모미확인은자식ABSENT로오인금지. 진단은승인binding/만료·소비/lease·신규계정/Task/CodeState/Result개수만읽고암호/생성/수정/설치0. 관리자JSON필요·HOLD_REQUIRES_RECOVERY_REVIEW, source/helper/r1불변·기존12/10/151재실행0. 정본 Discord_DedicatedR1_Recovery_20261027.md 한줄진단, 결과이후안전재개검토·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 설치 HOLD — 자식 IOException 0x80070006
 
 대표최신JSON FIXED_INSTALLER_FRESH_CHILD/actual_creation_attempted=true·내부HOLD/NATIVE_PROTECTED_DEDICATED_STAGING·IOException -2147024890=0x80070006 invalidhandle. 암호오타증거아님, stdout수집자식의Read-Host 콘솔handle가능성·정확throw위치UNKNOWN. stage라벨이암호전후갱신되지않아staging실패로단정금지. helper순서상신규보호approval root/JSON도달, 소비/계정/Task실제상태는결과없어읽기감사필요. 같은설치명령재실행/승인삭제/암호변경0·HOLD, 이전reverify생성falseJSON과구분. 상세 Discord_DedicatedR1_Install_20261027.md. 코드/후보/운영변경0·V1/MANUAL/A/runtimeHOLD·Push0.
