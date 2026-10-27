@@ -1,0 +1,20 @@
+{
+  "schema": 2,
+  "status": "HOLD",
+  "utc": "2026-10-27T01:12:02.4738556+00:00",
+  "checks": [
+    {
+      "status": "PASS",
+      "name": "R9_PACKAGE_766_PLUS_1_AND_PINNED_BYTES"
+    },
+    {
+      "name": "ADMIN_WINDOWS_PREFLIGHT",
+      "status": "HOLD",
+      "reason": "ADMIN_REQUIRED_OR_PACKAGE_HOLD"
+    }
+  ],
+  "installed": false,
+  "system_changes": 0,
+  "v1_reference_status": "REFERENCE_VERIFICATION_HOLD",
+  "admin": false
+}

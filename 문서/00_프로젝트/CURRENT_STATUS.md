@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 V2 r9 설치 준비 — WAIT_ADMIN_READONLY / HOLD
+
+r9 SHA3·payload766+Manifest1·ZIP767 bytes 대조 PASS. 현재 토큰 admin=false라 Windows 경계 NOT_VERIFIED. 읽기 전용 prepare-r9-readonly.ps1 SHA8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a845a2d51a8, parse/변경호출allowlist/비관리자HOLD 확인. 관리자 직접 SHA검증 메모리 실행 명령은 Discord_Session0_V2_R9_AdminPreparation_20261027.md. 결과 Temp/V2R9Preflight20261027/<GUID>.json. 모든 관리자 조건 PASS 전 설치 명령·승인 파일 발급0, 설치/계정/ACL/Task/IPC0. V1 REFERENCE_VERIFICATION_HOLD·기존운영 보존, 권한거부/불명/Worker busy/후보owner·writer불일치 HOLD, 기준완화/자동재시도/삭제0. 기준구현62578e5, 직전53fb709; 실제마감commit/Issue댓글 후속기록. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
 ## 2026-10-27 Issue66 V2 독립 후보 구현 완료 — NOT_APPROVED / NOT_INSTALLED
 
 V1 코드/guard·1008Disabled/기존소비·Worker1007·인증/OnBoot/게임 불변, REFERENCE_VERIFICATION_HOLD 유지. 필수8개구성요소+shared계약/원자publisher/ledger 구현. 최종 로컬 Temp/Session0V2Candidate20261027-r9, payload766/ZIP767·약15.25MB, schema2/approved=false/auto_start=false/FAKE_ONLY, 임의newSID없음. Installer1a1d671d1cf86aab56c9c2392ed4ba35a8240e348134e6a467f8eb8ec81f17a0 / Manifest250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e / ZIPa4a652bdf73c9a1007bd1e761ae539d3459896b46d8a021fa1459012a1d15c41.
