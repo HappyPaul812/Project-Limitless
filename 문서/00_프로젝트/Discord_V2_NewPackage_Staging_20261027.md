@@ -77,3 +77,5 @@ r9 대비 정확한 payload 변경:
 V1 계정/Code root/소비·참조 HOLD, Worker1007/인증/CODEX_HOME, OnBoot2/봇·아트, 운영SQLite·Unity·게임·Save 변경0. V1 설치855를 이번에 재검사하거나 안전한 삭제를 확정하지 않았습니다. 실제 보호 staging/계정/Task/ACL/LSA/IPC/FakeWorker/AI/usage/Discord/설치기/승인파일 생성/Push/main병합/재부팅0.
 
 LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Worker 결과는 HOLD로 남기고 새 후보 준비 범위에서 중지합니다.
+
+마감 근거: 구현·증거 커밋98e7787fe0e4f653f64cb9fb6380900e0caf0e44, 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6432178495 . 최종후보r11·78PASS/0FAIL, Worker실측HOLD/관리자결과대기, 실제staging·설치·IPC0, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
