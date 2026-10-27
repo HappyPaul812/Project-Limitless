@@ -1,5 +1,7 @@
 # 전용 Worker r1 관리자 PowerShell 7 명령
 
+최신 native 설치 결과는 HOLD입니다. **아래4번을 포함해 설치/재개 명령을 다시 실행하지 않습니다.** 원본 승인 보존/새승인/marker 생성·자식1회는 이미 보고됐습니다. 현재는 [Recovery보고 최상단의 guard/현재상태 읽기 전용 명령](Discord_DedicatedR1_Recovery_20261027.md)만 실행 대상으로 안내합니다.
+
 후속 재개: 관리자 읽기에서 만료 승인만 남고 계정/Task/소비/설치 경로가 없음을 확인했습니다. 앞선 대표 재개 요청에 따른 **4번 새 보존형 재개 명령**만 사용합니다. 기존1/2/3은 이력이며 재실행하지 않습니다. 4번은 원본 승인 보존 이동·새15분 승인·고정 설치기 콘솔 실행을 최대1회 수행하므로 내용을 확인한 후 대표가 직접 실행합니다.
 
 2026-10-27 후속: Stage 성공 수신 후 바울 대표가 **3번 Install의 계정2·Task1 설치1회만 승인**했습니다. 대표가 관리자 PowerShell7에서 3번만 최대1회 직접 실행합니다. **1·2번 재실행 금지.** 도구SHA/고정3SHA·보안 분기를 확인했고 실제 생성/설치 결과는 아직 대기입니다. 결과 정상/HOLD 후 중지하며 Task/IPC/AI를 시작하지 않습니다. 상세 Discord_DedicatedR1_Install_20261027.md 참조.
@@ -30,7 +32,7 @@
 
 [전체 사전·사후 조건과 부분 실패 복구](Discord_DedicatedR1_InstallPreparation_20261027.md)를 먼저 확인합니다.
 
-## 4. 만료 승인 보존·콘솔 직접 재개 — alias 수정본 / 대표 직접 최대 1회
+## 4. 만료 승인 보존·콘솔 직접 재개 — native HOLD 후 재실행 금지 / 이력
 
 ```powershell
 $resumeBytes=[IO.File]::ReadAllBytes('F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\resume-r1-console.ps1');if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($resumeBytes)).ToLowerInvariant() -cne 'cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4'){throw 'R1_RESUME_SHA_HOLD'};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($resumeBytes))) -Action Resume -ConfirmPreserveExpiredApprovalAndInstallOnce

@@ -1,0 +1,7 @@
+{
+  "parse_pass": true,
+  "known_guard_pass": true,
+  "sha256": "1d8cde5dc0c3f6052cdce079dbd305a81ae2dcc2c976aff2e1b34a4703e85f37",
+  "actual_guard_probe_runs": 0,
+  "private_message_redacted": true
+}

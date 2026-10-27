@@ -1,0 +1,4 @@
+{
+  "native_result":{"schema":3,"status":"HOLD","stage":"NATIVE_PROTECTED_DEDICATED_STAGING","automatic_retries":0,"errors":{"type":"System.InvalidOperationException","hresult":-2146233079},"partial_assets_preserve":true},
+  "resume_envelope":{"old_preserved":true,"phase":"AWAIT_NATIVE_RESULT_REVIEW","fresh_approval":true,"model_calls":0,"status":"CHILD_RETURNED_REVIEW_INSTALLER_JSON_NOT_SUCCESS_PROOF","schema":3,"reserved":true,"ipc_calls":0,"runtime_status":"HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED","kind":"R1_CONSOLE_RESUME","automatic_retries":0,"installer_launches":1}
+}

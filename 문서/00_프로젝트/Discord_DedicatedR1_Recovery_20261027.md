@@ -1,5 +1,25 @@
 # Issue66 — r1 설치 재개 요청 / 최소 읽기 감사
 
+## 최신 재개 결과 — native HOLD / 원본 보존·새승인·자식1회 확인
+
+대표 제공 두 JSON을 ResumeNativeHoldUserProvided.json에 값 동일 재직렬화했습니다. **설치 판정 HOLD**: native stage=NATIVE_PROTECTED_DEDICATED_STAGING, InvalidOperationException/-2146233079. supervisor는 reserved/old_preserved/fresh_approval=true·installer_launches1/retry0이고 CHILD_RETURNED_REVIEW_INSTALLER_JSON_NOT_SUCCESS_PROOF는 성공 증거가 아닙니다. 이전 만료 승인 원본/새 승인/Resume marker/lease/outcome은 보존하며 같은 재개 명령을 다시 실행하지 않습니다.
+
+현재 고정 Installer의 stage 라벨은 native stage 검증·승인 file DACL 검증·정의 로드·Read-Host·core호출 뒤 metadata 재검사까지 갱신되지 않습니다. 따라서 라벨과 generic HRESULT만으로 정확한 guard·암호 문제·계정 미생성을 확정하지 않습니다. **마지막 재검사 실패라면 core의 생성/소비 이후일 가능성도 배제하지 않습니다.** 이전 관리자 ABSENT snapshot을 최신 계정/Task 상태로 재사용하지 않습니다. 새 승인 갱신/marker 보존이 실행됐다는 supervisor 보고는 확인하되 raw metadata/디스크 원본 경로/시각은 미제공입니다.
+
+새 `probe-native-guard-readonly.ps1` SHA256 `1d8cde5dc0c3f6052cdce079dbd305a81ae2dcc2c976aff2e1b34a4703e85f37`는 고정 ZIP/Manifest/assembly를 검증해 readonly NativeStage.Verify, 현재 승인 file 권한, sealedCore/Windows **정의 로드만**, metadata recheck·콘솔 capability 메타·기존 pin된 읽기도구를 통한 소비/계정/Task/경로/Result개수 snapshot을 수집합니다. 함수 New-D3WindowsApi/Invoke-D3Install·Read-Host는 실행하지 않습니다. guard는 고정SHA C#소스의 STAGE_/D3_/V2_ 상수 allowlist와 정확히 일치하는 예외문만 출력하고 나머지 원문은 출력/저장하지 않습니다.
+
+구문/알려진 guard 추출/가짜 민감 예외문 비출력 검사 PASS(GuardProbePreparation.json), 실제 관리자 probe 실행0·설치/암호/승인/소비 변경0, 이전12/10/151 재실행0. status는 결과와 관계없이 HOLD_DIAGNOSTIC_ONLY_NO_RETRY이며 guards_status PASS도 설치 재시도 허용이 아닙니다. 실제 throw는 이 진단에서 동일 guard가 재현되면 좁힐 수 있고, 보호검사 모두PASS여도 원래 암호입력/다른지점의 throw를 증명했다고 하지 않습니다.
+
+대표 관리자 진단은 아래 한 줄입니다. SHA검증한 메모리 소스를 EncodedCommand로 새 NoProfile 프로세스에 전달해, 이전 C#타입이 남은 부모 세션과 분리하고 **직전 설치와 같은 NoNewWindow 콘솔 경계**에서 읽습니다. Encode되는 것은 비밀 없는 코드만이며 암호/Token을 인수로 전달하지 않습니다. 결과 JSON만 전달하고 설치/재개/승인삭제/갱신은 하지 않습니다.
+
+```powershell
+$guardBytes=[IO.File]::ReadAllBytes('F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\probe-native-guard-readonly.ps1');if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($guardBytes)).ToLowerInvariant() -cne '1d8cde5dc0c3f6052cdce079dbd305a81ae2dcc2c976aff2e1b34a4703e85f37'){throw 'R1_GUARD_PROBE_SHA_HOLD'};$guardEncoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes([Text.Encoding]::UTF8.GetString($guardBytes)));Start-Process -FilePath 'C:\Program Files\PowerShell\7\pwsh.exe' -ArgumentList @('-NoLogo','-NoProfile','-EncodedCommand',$guardEncoded) -NoNewWindow -Wait
+```
+
+コード/기존r1·core/wrapper/승인/staging을 다시 수정·실행하지 않았습니다. 다음은 실제 guard/현재 자산 판독이며 복구/재설치는 별도 검토, V1/MANUAL/A/runtimeHOLD·기존Worker11/운영보호·Task/IPC/AI/usage/로그인/Discord/Push0입니다.
+
+## 이하: 앞선 alias 수정·재개 준비 이력
+
 ## 재개 bootstrap 별칭 충돌 수정 — 28 PASS / 실제 설치 대기
 
 [Issue #66 직접 원인·수정 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435993722), 수정/회귀 로컬 커밋 `4a3df548fc6e4202949a3999d06faeb9fbbdaec2` / REMOTE_NOT_PUSHED. 수정본 명령은 관리자 콘솔에서 검증 바이트를 직접 ScriptBlock으로 호출해 바깥 자식 PowerShell 경계도 제거합니다. 타입이 이미 로드된 세션이면 fresh-process guard가 변경 전 HOLD하므로 새 관리자 PowerShell7에서 실행합니다. 보호된 Installer 자식은 동일 콘솔 Start-Process 방식 그대로입니다.

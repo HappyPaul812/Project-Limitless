@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 native 설치 HOLD — guard·최신 생성상태 읽기 대기
+
+대표두JSON nativeHOLD/NATIVE_PROTECTED_DEDICATED_STAGING/InvalidOperation(-2146233079), supervisor원본보존/새승인/markertrue·자식1회·retry0. CHILD_RETURNED는성공아님, 같은재개명령재실행금지. stage라벨은ReadHost/core뒤recheck까지같아계정미생성·정확실패지점단정금지. 새 probe-native-guard-readonly.ps1 SHA1d8cde5d…: 고정source guard상수allowlist만출력·stage/승인권한/정의로드/콘솔메타·소비/계정/Task현황읽기, 암호/설치/변경0·구문/guard/민감문자비출력PASS. 정본Recovery보고한줄·대표진단대기, 기존12/10/151재실행0·r1불변·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 재개 bootstrap 수정 — H alias충돌 재현·28PASS
 
 대표READ_ONLY_BOOTSTRAP/ParameterBindingValidationException HOLD는해시함수H가Get-History기본alias에가려진wrapper결함, 비밀없는0/1/2입력동일오류FQID재현. Get-R1ResumeSha256로수정·단계태그세분화·alias/프로필변경0. 실제wrapper bootstrap ZIP/Manifest/assembly경로까지신규28PASS/0FAIL·승인/설치/암호실행0·151/12/10재실행0. 새wrapper SHA cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4/core/r1불변. AdminCommands4번핀교체, 실제관리자재개결과대기·원본승인보존/단발/오류HOLD·V1/MANUAL/A/runtimeHOLD·Push0.

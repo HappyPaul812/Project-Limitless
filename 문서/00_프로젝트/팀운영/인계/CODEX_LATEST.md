@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 native HOLD 인계 — 재시도금지·정확guard읽기 대기
+
+대표nativeHOLD(stageNATIVE_PROTECTED_DEDICATED_STAGING, InvalidOperation/-2146233079), supervisorreserved/old_preserved/fresh_approvaltrue·installer1/retry0. 성공아님·보존된approval/archive/marker삭제금지·최신소비/계정Task미확정. 라벨이ReadHost/core후metadata재검사까지같아이전ABSENT를현재로확정금지. 새readonlyprobe SHA1d8cde5dc0c3f6052cdce079dbd305a81ae2dcc2c976aff2e1b34a4703e85f37·세정적검증PASS·관리자실행0. 고정CS guard상수만allowlist출력, NativeStage/approvalDACL/정의로드/readOnly상태snapshot·콘솔메타, 암호/설치호출0. Recovery보고한줄은NoNewWindow freshPS7 EncodedCommand(비밀없는소스만)로직전설치경계와같게읽음. 결과항상HOLD_DIAGNOSTIC_ONLY_NO_RETRY·같은guard재현안되면원래throwUNKNOWN유지, r1/기존helper재수정0·V1MANUALA/runtimeHOLD·운영/소비보존·Push0.
+
 ## 2026-10-27 Issue66 r1 bootstrap alias 수정 인계 — 28PASS / 실제재개대기
 
 수정/회귀 커밋 `4a3df548fc6e4202949a3999d06faeb9fbbdaec2`, [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435993722). AdminCommands4번은관리자콘솔에서해시검증메모리ScriptBlock직접호출로외부pwsh-hop제거·parserPASS, 고정Installer만StartProcess동일콘솔. 타입이미로드됐으면새관리자PS7필요·freshguard완화0. 후속문서커밋Issue참조/REMOTE_NOT_PUSHED.
