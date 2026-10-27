@@ -1,5 +1,7 @@
 ## 2026-10-27 Issue66 전용 Worker V2 후보 인계 — 151PASS / native HOLD
 
+구현·검증 커밋 `60fc6484e9a77b12f52b527b3b18eeb5161d6113` / [Issue #66 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434471862). 소스/패키지 원격 Push 없음. 본 후속 커밋은 보고 연결만 포함합니다.
+
 완료: DedicatedV2 새 소스·fake/native 공통 설치기·새 SID/권리/전용 경로/auth/Task/IPC/승인/consume/lease·90초 가짜Job 검증. 전용 후보 Session0DedicatedV2Candidate20261027-r1은 payload766+Manifest1, schema3/wire2, approved=false/auto_start=false/FAKE_ONLY, 기존 r11 설치 금지 유지. Installer83c97d78… / Manifest43f6afcc… / ZIPbe58f8cd… 전체SHA·실물경로·변경목록·인증/복구는 Discord_V2_DedicatedWorker_20261027.md, Evidence/DedicatedV2_20261027/PackageProof.json·SourceSHA256.json·3개시험JSON 정본입니다. 새결합71+67+13=151PASS/0FAIL, 실제 Windows API 적용/IPC/Worker/AI0.
 
 다음 담당: 실제 설치 가능 판정은 아직 HOLD입니다. 신규 SID 유효그룹/실행 가능한 GROUP/비협조launcher 통제 증거와 protected approval provisioning·native 보호staging/권한 재조회 필요. GROUP4를deny권리만으로 제외하지 않음. 미래 계정설치는 두계정Disabled 생성→권리/보호파일→새Worker만 명시 승인된 ENABLED_BATCH_ONLY, BotDisabled·TaskDisabled/Trigger0. Bot Batch client launch/enrollment 도구는 미구현·별도 승인. 같은PC/구독한도·관리자 우회/타 실행기 동시성은 SID분리로해결되지 않음. PIN전/WiFi지연 검증·로그인·실IPC·AI·Discord/A 모두 후속범위. 실패는소비/부분자산보존HOLD·자동재시도/삭제0.

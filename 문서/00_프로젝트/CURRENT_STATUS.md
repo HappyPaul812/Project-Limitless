@@ -1,5 +1,7 @@
 ## 2026-10-27 Issue66 전용 Worker V2 후보 — 신규151 PASS / 실제 설치·독점성 HOLD
 
+구현·검증 로컬 커밋 `60fc6484e9a77b12f52b527b3b18eeb5161d6113`, [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434471862). LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
 기존 SID1007/11개/Task4·OnBoot2/r11을 수정하지 않고 DedicatedV2 신규 소스와 별도 schema3 후보 r1을 구현했습니다. Bot LIMITLESSBotV2D·Worker LIMITLESSWorkV2D는 OS 신규 SID만 허용, 전용 Code/State/Auth/CODEX_HOME/Task/IPC/승인/consume/lease, FAKE_ONLY/approved=false/auto_start=false. payload766+Manifest1·소스동일성·전체 SHA/ZIP·통합C# 컴파일/PS·Python 구문 확인. fake 설치/staging71+fake runtime/Job67+패키지13=151PASS/0FAIL. 상세 Discord_V2_DedicatedWorker_20261027.md 및 Evidence/DedicatedV2_20261027/에 전체SHA·r11차이·시험·인계 기록.
 
 새 Worker는 미래 설치시 Disabled 생성→최소권리/보호파일→별도 승인된 ENABLED_BATCH_ONLY, Bot과Task는Disabled/Trigger0 유지. 네이티브 설치/권한·실제Job·PIN 전 부팅·유효GROUP/비협조launcher 통제·동일구독 충돌은 미검증/HOLD. 기존 인증 복사0, 기기코드 로그인은 별도 승인/Batch enrollment 도구 설계 필요. 실제 staging/계정/ACL/Task/설치/IPC/AI/usage/Discord/A/Push0. V1 REFERENCE_VERIFICATION_HOLD·MANUAL/A HOLD 유지. 로컬 커밋·Issue 보고 링크는 CODEX_LATEST 후속에 기록, REMOTE_NOT_PUSHED.

@@ -2,7 +2,7 @@
 
 2026-10-27. **분리 구조 구현 가능 / 신규 151 PASS·0 FAIL / 실제 Windows 설치·독점성 검증 HOLD**입니다. 기존 운영 Worker의 11개 프로세스는 조사 정본을 재사용했으며 종료·제외·재조사하지 않았습니다. 새 후보는 `Session0DedicatedV2Candidate20261027-r1`, 배포 schema3 / 기존 검증 wire2 결합입니다. r11을 새 계약으로 덮어쓰거나 승인하지 않습니다.
 
-기준 요청 커밋 `d2102bb9eca1d0e0826cbcb6b3ae4f8f35deb3e3`, 실제 작업 시작 HEAD `27b9108966f09c1f965a862ecc7e482eb0dc365d`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 구현·시험 커밋은 후속 인계 항목에 기록합니다. 상태는 LOCAL_COMMITTED / REMOTE_NOT_PUSHED이며 원격 소스 링크가 제공된 것으로 오해하지 않습니다.
+기준 요청 커밋 `d2102bb9eca1d0e0826cbcb6b3ae4f8f35deb3e3`, 실제 작업 시작 HEAD `27b9108966f09c1f965a862ecc7e482eb0dc365d`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 구현·시험 커밋 `60fc6484e9a77b12f52b527b3b18eeb5161d6113`. [Issue #66 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434471862) 완료. 상태는 LOCAL_COMMITTED / REMOTE_NOT_PUSHED이며 원격 소스 링크가 제공된 것으로 오해하지 않습니다.
 
 ## 선택과 비용
 
