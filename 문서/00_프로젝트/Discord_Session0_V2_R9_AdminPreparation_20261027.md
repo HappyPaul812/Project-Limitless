@@ -56,3 +56,17 @@ LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 Windows 설치0, 설치 명령 실�
 바울 대표 화면의 checks 속성 오류는 메모리 ScriptBlock 실행에서 script:result/script:m이 다른 범위를 가리킨 도구 결함입니다. 결과 객체를 상속 범위에서 수정하고 Manifest는 공유 객체에 담아 두 참조를 제거했습니다. r9 패키지·SHA·설치기·보안조건 변경0. 위 명령의 도구 SHA를 새 값으로 교체했습니다. 이전 SHA 명령은 폐기합니다.
 
 동일 메모리 호출로 실제 비관리자 package PASS/admin HOLD·JSON9fc1203a387a40d09dd49b416c7d0b4b 저장 확인. 메모리 범위 회귀 PASS/false HOLD/Win325 오류 보존 3 PASS, AST parse0/script범위참조0. 관리자 분기는 여전히 미검증, 설치0. 대표가 새 명령을 관리자에서 실행한 결과만 판독하며 자동 재실행하지 않습니다.
+
+## 관리자 결과 3a5803a2 수신 — 설치 HOLD 확정 (2026-10-27)
+
+실물 JSON SHA256 fc7085b0412a0ac3e120500b0c9d1038a53b4493c3ded6c738400eccc0614fd3, admin=true, 2026-10-27 10:24:50 KST. Evidence/Session0V2R9Preflight20261027/에 원본 그대로 보존.
+
+- PASS6: r9 bytes766+1, 정의 컴파일, Worker SID1007/batch/그룹/boot승인, V1 855/owner/DACL/OnBoot pin, V2 계정·경로·Task 부재, pipe namespace 부재. 검사 시점의 근거이며 영구 유효/설치 승인 아님.
+- HOLD2: Worker 유휴·타작업 조회와 후보 owner/writer. 설치0, 소비0, 실제 Worker/IPC/변경0, V1 REFERENCE_VERIFICATION_HOLD 유지.
+- 전체 JSON worker_state는 foreign_processes=11, known=false, other_launchable_tasks=0, 오류 MethodInvocationException/HRESULT-2146233087 → ArgumentException/-2147024809. 계정에 연결된11개가 집계됐지만 조회 전체가 실패했으므로 정확한 현재 개수나 유휴/타작업0으로 확정하지 않습니다. 오류 위치/실제 Task 식별 정보는 원본에 없고 추측하지 않습니다. Scheduler Principal SID 변환 등 단계별 원인 분리는 별도 읽기 진단 설계 대상으로 남깁니다. 프로세스 종료·운영작업 비활성화 요청0.
+- 후보 ACL ItemNotFoundException은 @($root,$root+'.zip')가 root/root/.zip 세 원소로 평가되는 도구 결함을 로컬 재현했습니다. @($root,($root+'.zip'))로 수정, 정확 두 경로 존재 회귀 PASS. 도구 현재 SHA1fe25f911859c534b7e2785a763d80028871aca244719b3e0c7fc2fe4541bf42. r9 Manifest/ZIP/Installer 변경0. 이전 명령 SHA는 과거 도구 버전이므로 재사용 금지. 관리자 전체 재검사는 요청하지 않습니다.
+- 별도 비관리자 읽기 전용 root 및 ZIP ACL 조회에서 owner SID1001(BA/SY 아님), Authenticated Users(S-1-5-11) 및 사용자별 Allow Modify 계열 ACE 확인. CandidateRootAclReadback.json에 owner/SID/숫자 mask/전파 정보만 보존. 루트/ZIP 두 객체 조회이며 767개 전체 ACL을 검사했다고 주장하지 않습니다. 현재 후보 staging은 요구한 관리자 보호 owner/writer 조건을 충족하지 못합니다. inherited/일반 사용자 write를 안전으로 완화하지 않습니다.
+
+다음 조건: (1) 기존 Worker를 종료하지 않고 실제 유휴 시점 확보 및 scoped 조회 실패 원인 분리, (2) 별도 승인된 새 관리자 보호 staging을 생성 시점 제한 DACL로 만들고 같은 r9 bytes/767집합/모든 owner·writer·조상 경로 검증. 기존 후보/운영 경로 ACL을 자동 변경하거나 이동·삭제하지 않습니다. 보호 staging 설계와 wrapper Bundle 경로 바인딩 검토 후에도 설치는 대표 직접 단발 승인 절차가 필요합니다. 현재 사전검사 전부 PASS가 아니므로 설치 명령·승인 파일 발급0, 비밀번호 요청0. 부분 실패가 생기면 consume유지·자동재시도/삭제/권한완화0·V2실제SID/생성객체 확인 후 별도 복구 승인입니다.
+
+LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 설치·계정/Task·ACL 변경·IPC0. 같은 관리자 전체 검사를 반복하지 않고 HOLD 중지.

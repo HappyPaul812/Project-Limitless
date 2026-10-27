@@ -1,0 +1,145 @@
+{
+  "kind": "READONLY_CANDIDATE_ROOT_ACL",
+  "paths": [
+    {
+      "owner": "S-1-5-21-2858504392-1958168942-1662906075-1001",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r9",
+      "rules": [
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-521226579-1139435471-213902026-3980281006"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-2858504392-1958168942-1662906075-1004"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-2335796030-81064479-2833792331-599128022"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 2032127,
+          "propagation": "None",
+          "sid": "S-1-5-32-544"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": 268435456,
+          "propagation": "InheritOnly",
+          "sid": "S-1-5-32-544"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 2032127,
+          "propagation": "None",
+          "sid": "S-1-5-18"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": 268435456,
+          "propagation": "InheritOnly",
+          "sid": "S-1-5-18"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-11"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": -536805376,
+          "propagation": "InheritOnly",
+          "sid": "S-1-5-11"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1179817,
+          "propagation": "None",
+          "sid": "S-1-5-32-545"
+        },
+        {
+          "inheritance": "ContainerInherit, ObjectInherit",
+          "type": "Allow",
+          "rights": -1610612736,
+          "propagation": "InheritOnly",
+          "sid": "S-1-5-32-545"
+        }
+      ]
+    },
+    {
+      "owner": "S-1-5-21-2858504392-1958168942-1662906075-1001",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r9.zip",
+      "rules": [
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-521226579-1139435471-213902026-3980281006"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-2858504392-1958168942-1662906075-1004"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-21-2335796030-81064479-2833792331-599128022"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 2032127,
+          "propagation": "None",
+          "sid": "S-1-5-32-544"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 2032127,
+          "propagation": "None",
+          "sid": "S-1-5-18"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1245631,
+          "propagation": "None",
+          "sid": "S-1-5-11"
+        },
+        {
+          "inheritance": "None",
+          "type": "Allow",
+          "rights": 1179817,
+          "propagation": "None",
+          "sid": "S-1-5-32-545"
+        }
+      ]
+    }
+  ],
+  "utc": "2026-10-27T01:26:11.9692894+00:00",
+  "source_admin_json_sha256": "fc7085b0412a0ac3e120500b0c9d1038a53b4493c3ded6c738400eccc0614fd3"
+}

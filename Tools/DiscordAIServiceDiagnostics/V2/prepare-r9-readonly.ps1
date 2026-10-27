@@ -36,7 +36,7 @@ if($result.checks[0].status -eq 'PASS' -and $admin){
  Check 'V2_PIPE_NAMESPACE_ABSENT_NO_CONNECT' {$pipes=[IO.Directory]::GetFiles('\\.\pipe\');@($pipes|Where-Object{[IO.Path]::GetFileName($_).StartsWith($m.pipe_name,[StringComparison]::OrdinalIgnoreCase)}).Count -eq 0}
  Check 'CANDIDATE_OWNER_AND_WRITERS' {
   $bad=0;$owners=@{}
-  foreach($p in @($root,$root+'.zip')+@(Get-ChildItem -LiteralPath $root -Recurse -Force|ForEach-Object FullName)){
+  foreach($p in @($root,($root+'.zip'))+@(Get-ChildItem -LiteralPath $root -Recurse -Force|ForEach-Object FullName)){
    $i=Get-Item -LiteralPath $p -Force;if($i.Attributes -band [IO.FileAttributes]::ReparsePoint){$bad++;continue}
    $a=Get-Acl -LiteralPath $p;$o=$a.GetOwner([Security.Principal.SecurityIdentifier]).Value;$owners[$o]=$true
    if($o -notin @('S-1-5-18','S-1-5-32-544')){$bad++}

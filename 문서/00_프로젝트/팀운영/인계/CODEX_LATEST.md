@@ -1,3 +1,7 @@
+## 2026-10-27 V2 r9 관리자 결과 수신 — HOLD / 설치0
+
+3a5803a2 원본SHAfc7085b0… 관리자PASS6/HOLD2. Worker연결11개집계이나known=false·ArgumentException(-2147024809)로유휴미확정·타작업0확정불가. 후보ACL 조회배열 root/root/.zip 결함수정·2경로회귀PASS, 별도읽기root/ZIP owner1001·AuthenticatedUsers write로실제보호조건미충족. 도구SHA1fe25f911859c534b7e2785a763d80028871aca244719b3e0c7fc2fe4541bf42. 상세AdminPreparation문서/증거 참조. 같은전체검사재요청0, 설치명령·승인발급0. 다음은Worker조회오류분리·정상유휴확보 및 별도승인보호staging설계. V1 HOLD/운영보존, 실제계정/ACL/Task/IPC변경0, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
 ## V2 r9 사전검사 메모리 범위 오류 수정
 ## 관리자 화면 오류 수정 (후속 정본)
 

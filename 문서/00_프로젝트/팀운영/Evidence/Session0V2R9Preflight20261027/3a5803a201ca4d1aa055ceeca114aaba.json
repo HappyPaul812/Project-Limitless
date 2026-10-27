@@ -1,0 +1,71 @@
+{
+  "schema": 2,
+  "status": "HOLD",
+  "utc": "2026-10-27T01:24:50.4146385+00:00",
+  "checks": [
+    {
+      "name": "R9_PACKAGE_766_PLUS_1_AND_PINNED_BYTES",
+      "status": "PASS"
+    },
+    {
+      "name": "READONLY_DEFINITIONS",
+      "status": "PASS"
+    },
+    {
+      "name": "WORKER_SID_BATCH_GROUPS_BOOT_APPROVAL",
+      "status": "PASS"
+    },
+    {
+      "name": "V1_855_OWNER_DACL_ONBOOT_OPERATIONAL_PINS",
+      "status": "PASS"
+    },
+    {
+      "name": "V2_ACCOUNT_PATH_TASK_ABSENCE",
+      "status": "PASS"
+    },
+    {
+      "name": "WORKER_IDLE_AND_OTHER_TASKS",
+      "status": "HOLD",
+      "errors": [
+        {
+          "type": "System.Management.Automation.RuntimeException",
+          "hresult": -2146233087
+        }
+      ]
+    },
+    {
+      "name": "V2_PIPE_NAMESPACE_ABSENT_NO_CONNECT",
+      "status": "PASS"
+    },
+    {
+      "name": "CANDIDATE_OWNER_AND_WRITERS",
+      "status": "HOLD",
+      "errors": [
+        {
+          "type": "System.Management.Automation.ItemNotFoundException",
+          "hresult": -2146233087
+        }
+      ]
+    }
+  ],
+  "installed": false,
+  "system_changes": 0,
+  "v1_reference_status": "REFERENCE_VERIFICATION_HOLD",
+  "admin": true,
+  "worker_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+  "worker_state": {
+    "other_launchable_tasks": 0,
+    "foreign_processes": 11,
+    "known": false,
+    "errors": [
+      {
+        "type": "System.Management.Automation.MethodInvocationException",
+        "hresult": -2146233087
+      },
+      {
+        "type": "System.ArgumentException",
+        "hresult": -2147024809
+      }
+    ]
+  }
+}
