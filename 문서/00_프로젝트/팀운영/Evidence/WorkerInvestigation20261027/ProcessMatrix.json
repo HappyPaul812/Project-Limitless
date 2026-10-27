@@ -1,0 +1,112 @@
+[
+  {
+    "pid": 6356,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:25.196322Z"
+  },
+  {
+    "pid": 7432,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:23.227586Z"
+  },
+  {
+    "pid": 7936,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:23.233489Z"
+  },
+  {
+    "pid": 18796,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:25.20452Z"
+  },
+  {
+    "pid": 23564,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:23.955773Z"
+  },
+  {
+    "pid": 28788,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:24.478345Z"
+  },
+  {
+    "pid": 31460,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:23.823013Z"
+  },
+  {
+    "pid": 34416,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:23.814385Z"
+  },
+  {
+    "pid": 36008,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:24.486655Z"
+  },
+  {
+    "pid": 41880,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:24.616597Z"
+  },
+  {
+    "pid": 47064,
+    "native_codes": [
+      5
+    ],
+    "owner_sid": null,
+    "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+    "identity": "ACCESS_DENIED",
+    "expected_created_utc": "2026-10-23T17:40:24.622847Z"
+  }
+]

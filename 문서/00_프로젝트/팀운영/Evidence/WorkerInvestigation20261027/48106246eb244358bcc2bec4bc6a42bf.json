@@ -1,0 +1,397 @@
+{
+  "system_changes": 0,
+  "utc": "2026-10-27T04:20:06.6879789+00:00",
+  "investigation": {
+    "status": "HOLD",
+    "policy_note": "Role labels never exclude processes, rewrite the original count, or authorize staging/install/IPC.",
+    "parents": [],
+    "schema": 1,
+    "r11_foreign_zero_guard_unchanged": true,
+    "global_exclusive_execution_verified": false,
+    "ai_or_cli_image_indicators": [],
+    "children": [],
+    "targets": [
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 6356,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:25.1963220Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 7432,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:23.2275860Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 7936,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:23.2334890Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 18796,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:25.2045200Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 23564,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:23.9557730Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 28788,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:24.4783450Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 31460,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:23.8230130Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 34416,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:23.8143850Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 36008,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:24.4866550Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 41880,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:24.6165970Z"
+      },
+      {
+        "identity": "ACCESS_DENIED",
+        "errors": [
+          {
+            "codes": [
+              {
+                "hresult": -2146233087,
+                "type": "System.Management.Automation.MethodInvocationException"
+              },
+              {
+                "operation": "OpenProcess_QUERY_LIMITED_INFORMATION",
+                "type": "WorkerQueryFailure",
+                "win32": 5,
+                "hresult": -2147467259
+              }
+            ],
+            "stage": "PROCESS_LIMITED_INFORMATION"
+          }
+        ],
+        "cim_consistent": false,
+        "scope": "BASELINE",
+        "pid": 47064,
+        "assessment": {
+          "role": "BASELINE_IDENTITY_ACCESS_DENIED",
+          "ai_activity": "NOT_VERIFIED",
+          "risk": "UNKNOWN",
+          "safe_to_exclude": false
+        },
+        "expected_created_utc": "2026-10-23T17:40:24.6228470Z"
+      }
+    ],
+    "baseline_process_count": 11,
+    "tasks": [],
+    "lease_metadata": {
+      "ancestor_chain_verified": false,
+      "contents_read": false,
+      "locks_acquired": 0,
+      "entries": {
+        "worker_lease": {
+          "status": "ABSENT"
+        },
+        "r11_approval": {
+          "status": "ABSENT"
+        },
+        "r11_consume": {
+          "status": "ABSENT"
+        },
+        "r9_consume": {
+          "status": "ABSENT"
+        }
+      },
+      "coverage": "KNOWN_V2_PATHS_ONLY_NOT_GLOBAL"
+    },
+    "actual_ai_request_verified": false,
+    "errors": [
+      {
+        "codes": [
+          {
+            "hresult": -2147024891,
+            "type": "System.UnauthorizedAccessException"
+          }
+        ],
+        "stage": "TASK_PRINCIPAL_METADATA_ONLY"
+      }
+    ],
+    "collision_assessment": "UNKNOWN_NO_EXCLUSIVITY_PROOF_FROM_SNAPSHOT",
+    "lease_consume_contents_read": false
+  },
+  "expected_target_count": 11,
+  "actual_ai_calls": 0,
+  "schema": 1,
+  "stage": "SCOPED_PROCESS_AND_GROUP_INVESTIGATION",
+  "status": "HOLD",
+  "privileges_enabled": 0,
+  "worker_binding": {
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "name": "LIMITLESSRelaySvc",
+    "domain": "PAUL-PC",
+    "sid_name_use": 1,
+    "category": "LOCAL_USER",
+    "resolved": true
+  },
+  "admin": false
+}

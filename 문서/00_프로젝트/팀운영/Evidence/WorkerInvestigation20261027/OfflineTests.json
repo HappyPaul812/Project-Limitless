@@ -1,0 +1,235 @@
+{
+  "live_scheduler_queries": 0,
+  "live_token_queries": 0,
+  "signature_api_calls": 0,
+  "failed": 0,
+  "live_process_queries": 0,
+  "passed": 56,
+  "system_changes": 0,
+  "tests": [
+    {
+      "name": "source-microsecond-matches-native-100ns",
+      "status": "PASS"
+    },
+    {
+      "name": "next-microsecond-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "timezone-equivalence-not-tolerance",
+      "status": "PASS"
+    },
+    {
+      "name": "json-datetime-preserves-subsecond-before-native-binding",
+      "status": "PASS"
+    },
+    {
+      "name": "datetimeoffset-preserves-timezone-and-fraction",
+      "status": "PASS"
+    },
+    {
+      "name": "pid-reuse-is-unknown-not-reassigned",
+      "status": "PASS"
+    },
+    {
+      "name": "access-denied-native-code-preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "exit-requires-open-notfound-and-cim-absence",
+      "status": "PASS"
+    },
+    {
+      "name": "notfound-with-current-object-remains-unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "cim-generation-race-blocks-parent-relations",
+      "status": "PASS"
+    },
+    {
+      "name": "owner-is-verified-not-logon-association-assumption",
+      "status": "PASS"
+    },
+    {
+      "name": "owner-denied-remains-unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "codex-image-is-indicator-not-model-call-proof",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime-role-not-guessed-ai-or-safe",
+      "status": "PASS"
+    },
+    {
+      "name": "signed-windows-resident-not-whitelisted",
+      "status": "PASS"
+    },
+    {
+      "name": "system-looking-name-untrusted-location",
+      "status": "PASS"
+    },
+    {
+      "name": "signature-unknown-not-safe",
+      "status": "PASS"
+    },
+    {
+      "name": "image-denied-not-swallowed-as-normal",
+      "status": "PASS"
+    },
+    {
+      "name": "exited-during-query-not-active-cli-proof",
+      "status": "PASS"
+    },
+    {
+      "name": "group-id-null-user-resolved-through-os-provider",
+      "status": "PASS"
+    },
+    {
+      "name": "scheduler-group4-versus-security-batch4",
+      "status": "PASS"
+    },
+    {
+      "name": "group-category-observed-LOCAL_GROUP",
+      "status": "PASS"
+    },
+    {
+      "name": "group-category-observed-BUILTIN_ALIAS",
+      "status": "PASS"
+    },
+    {
+      "name": "group-category-observed-WELL_KNOWN_GROUP",
+      "status": "PASS"
+    },
+    {
+      "name": "group-category-observed-DOMAIN_GROUP_OR_DIRECTORY_GROUP",
+      "status": "PASS"
+    },
+    {
+      "name": "group-resolver-error-hold-5",
+      "status": "PASS"
+    },
+    {
+      "name": "group-resolver-error-hold-1332",
+      "status": "PASS"
+    },
+    {
+      "name": "group-resolver-error-hold-1722",
+      "status": "PASS"
+    },
+    {
+      "name": "empty-group-no-null-name-lookup",
+      "status": "PASS"
+    },
+    {
+      "name": "both-user-group-ambiguous",
+      "status": "PASS"
+    },
+    {
+      "name": "group-not-used-as-batch-principal",
+      "status": "PASS"
+    },
+    {
+      "name": "non-group-os-sid-use-rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "actual-token-group-not-inferred-from-name",
+      "status": "PASS"
+    },
+    {
+      "name": "deny-only-attributes-do-not-enable-group",
+      "status": "PASS"
+    },
+    {
+      "name": "disabled-token-group-not-enabled",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted-token-context-not-unconditional-membership",
+      "status": "PASS"
+    },
+    {
+      "name": "token-denied-group-membership-unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "group-membership-not-a-future-token-guarantee",
+      "status": "PASS"
+    },
+    {
+      "name": "configured-user-principal-bound-to-worker-sid",
+      "status": "PASS"
+    },
+    {
+      "name": "parent-pid-reuse-detected",
+      "status": "PASS"
+    },
+    {
+      "name": "parent-order-not-launch-proof",
+      "status": "PASS"
+    },
+    {
+      "name": "direct-child-scope-and-creation",
+      "status": "PASS"
+    },
+    {
+      "name": "direct-child-limit-hold-not-global-scan",
+      "status": "PASS"
+    },
+    {
+      "name": "child-before-parent-generation-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "any-job-membership-not-v2-job-proof",
+      "status": "PASS"
+    },
+    {
+      "name": "task-engine-pid-not-action-or-job-proof",
+      "status": "PASS"
+    },
+    {
+      "name": "task-denied-preserves-process-evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "lease-absence-not-exclusivity",
+      "status": "PASS"
+    },
+    {
+      "name": "lease-present-does-not-acquire-or-clear",
+      "status": "PASS"
+    },
+    {
+      "name": "lease-denied-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "logon-luid-denied-keeps-context-unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "eleven-target-rows-preserved-no-force-zero",
+      "status": "PASS"
+    },
+    {
+      "name": "private-path-extra-fields-never-serialized",
+      "status": "PASS"
+    },
+    {
+      "name": "exception-message-not-serialized",
+      "status": "PASS"
+    },
+    {
+      "name": "runner-parse-and-no-forbidden-members-or-commands",
+      "status": "PASS"
+    },
+    {
+      "name": "native-only-query-access-and-no-dangerous-apis",
+      "status": "PASS"
+    }
+  ]
+}

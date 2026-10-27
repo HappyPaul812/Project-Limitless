@@ -1,3 +1,10 @@
+## 2026-10-27 Issue66 Worker11·GroupPrincipal 전용 조사 — 56PASS / 실제 HOLD
+
+원본76eec5af(SHA82237991…)의PID/생성시각11개고정. 새도구WorkerInvestigation20261027/만추가, 기존V2/r11코드변경0. OS계정Lookup으로PAUL-PC\LIMITLESSRelaySvc SID1007/LOCAL_USER확인. 실제비관리자최종48106246… 결과는11개모두OpenProcess QUERY_LIMITED Win325로현재동일성·소유·역할UNKNOWN, TaskCOM UnauthorizedAccess/-2147024891로GroupId/SID·멤버십UNKNOWN. 이미지·서명·부모/자식·Job/실제AI충돌미확정, 빈배열을0건판정금지. 알려진V2 lease/consume/approval메타ABSENT는전역배타증명아님.
+
+새Native읽기(TokenQuery/그룹속성/LUID/파일handleSHA+WinVerifyTrust cache-only/인접관계)·OS GroupId LookupAccountNameW/SidW·GROUP4 vs Security BATCH4분리. 정상서명/이름도후보일뿐safe_to_exclude=false, r11 foreign_zero변경0. 신규fake56PASS/0FAIL(원시비밀비출력·PID재사용·그룹거부/불명·deny/restricted·Job/lease오판/날짜소수초포함). 실제서명/토큰그룹/GroupPrincipal성공아직미검증. 새도구SHA955a1d717ba42da7a9439946da8970d7976bc0adeb395eb91fc6b717c655fd38. 관리자PowerShell7한줄과11개역할표/공유실행기경합·별도WorkerSID/VM설계권고는 Discord_Worker11_GroupPrincipal_Investigation_20261027.md.
+
+Evidence/WorkerInvestigation20261027/FinalProof·원본결과·ProcessMatrix·SourceSHA·OfflineTests. r11 Installer/Manifest/ZIP 실제SHA불변확인. V1/MANUAL/A HOLD·기존Worker/인증/CODEX_HOME/OnBoot2/봇아트/운영SQLite/Unity/Save보존, 종료/재시작/권한/계정/Task/staging/설치/IPC/AI/usage/Discord/Push0. 진단·오프라인검증후HOLD중지. branch codex/discord-usage-diagnostics-20261026, 기준8b137161; LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Worker 관리자 단발 결과 — 11개 확인 / HOLD_NOT_IDLE
 
 76eec5af 원본SHA8223799133dea9736f9dbe341d4498c0a020ec1880a2cb1797fea1cb7e86ccbe, 11:39:40KST. process_query_known=true/PID+생성시각11개→정책상유휴아님/HOLD. V2 lease ABSENT/known=true. Task조회는GroupNotFoundException(-2146233088), group String길이11/UserId null/LogonType4, task_query_known=false/다른작업수null. 실제GroupId미기록으로그룹정체추측금지, 로컬SAM조회한계·비-SAM/도메인여부미확정. 오류해결해도11개유휴차단은별개. 원본Evidence/Session0V2R11_20261027/WorkerAdminResult_76eec… 보존, 상세Discord_V2_NewPackage_Staging_20261027.md후속판독. 같은진단재실행/프로세스종료/Task·권한수정요청0. r11/SHA/78PASS불변·실측안전승격0, 실제staging/설치/IPC/승인생성0. V1/MANUAL/A HOLD·운영보존. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.

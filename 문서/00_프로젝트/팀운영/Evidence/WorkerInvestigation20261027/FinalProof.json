@@ -1,0 +1,39 @@
+{
+  "actual_ai_collision": "UNKNOWN",
+  "old_worker_probe_runs": 0,
+  "actual_token_group_membership": "UNKNOWN",
+  "live_result_sha256": "c82fd16d72130e0cffd0bab04abefc6d64431057d4946f5968aa861cb368c03a",
+  "actual_system_changes": 0,
+  "global_exclusivity_verified": false,
+  "actual_ai_calls": 0,
+  "actual_group_sid": "UNKNOWN",
+  "r11_guard_changed": false,
+  "access_denied": 11,
+  "v1_reference_status": "REFERENCE_VERIFICATION_HOLD",
+  "targets_recorded": 11,
+  "offline_failed": 0,
+  "source_admin_json_sha256": "8223799133dea9736f9dbe341d4498c0a020ec1880a2cb1797fea1cb7e86ccbe",
+  "actual_install": 0,
+  "final_tool_sha256": "955a1d717ba42da7a9439946da8970d7976bc0adeb395eb91fc6b717c655fd38",
+  "full_preflight_runs": 0,
+  "identity_verified": 0,
+  "actual_ipc": 0,
+  "r11_frozen_sha256": {
+    "manifest": "e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0",
+    "zip": "0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0",
+    "installer": "eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2"
+  },
+  "status": "HOLD_ACCESS_DENIED_11_GROUP_UNKNOWN",
+  "actual_staging": 0,
+  "worker_account_binding": {
+    "sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "name": "LIMITLESSRelaySvc",
+    "domain": "PAUL-PC",
+    "sid_name_use": 1,
+    "category": "LOCAL_USER",
+    "resolved": true
+  },
+  "offline_passed": 56,
+  "utc": "2026-10-27T04:24:28.5242388+00:00",
+  "current_admin": false
+}
