@@ -1,0 +1,262 @@
+[
+  {
+    "image_sha256": "2f2adeda344aa5bf4189778a4e0216a95fe3ba3050b96e7014c52d079dd562d6",
+    "image_name": "python.exe",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [],
+    "role": "GENERAL_RUNTIME_OR_LAUNCHER_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 6356,
+    "actual_created_utc": "2026-10-23T17:40:25.1963227Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": "VALID_AT_CACHE_POLICY",
+    "security_logon_type": 4,
+    "parent_pid": 41880
+  },
+  {
+    "image_sha256": "bfb46af89433268872ddb43d1ca7a3f433452ee91ed356a9786940f90118e285",
+    "image_name": "OTHER_EXECUTABLE_NAME_REDACTED",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [],
+    "role": "UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 7432,
+    "actual_created_utc": "2026-10-23T17:40:23.2275861Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a134d4",
+    "signature_status": "VALID_AT_CACHE_POLICY",
+    "security_logon_type": 4,
+    "parent_pid": 18828
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 7936,
+    "actual_created_utc": "2026-10-23T17:40:23.2334896Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a134d4",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 7432
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 18796,
+    "actual_created_utc": "2026-10-23T17:40:25.2045202Z",
+    "in_any_job": true,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 6356
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 23564,
+    "actual_created_utc": "2026-10-23T17:40:23.9557739Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 15004
+  },
+  {
+    "image_sha256": "2f2adeda344aa5bf4189778a4e0216a95fe3ba3050b96e7014c52d079dd562d6",
+    "image_name": "python.exe",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [],
+    "role": "GENERAL_RUNTIME_OR_LAUNCHER_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 28788,
+    "actual_created_utc": "2026-10-23T17:40:24.4783458Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": "VALID_AT_CACHE_POLICY",
+    "security_logon_type": 4,
+    "parent_pid": 15004
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 31460,
+    "actual_created_utc": "2026-10-23T17:40:23.8230139Z",
+    "in_any_job": true,
+    "authentication_luid": "00000000c4a134d4",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 34416
+  },
+  {
+    "image_sha256": "2f2adeda344aa5bf4189778a4e0216a95fe3ba3050b96e7014c52d079dd562d6",
+    "image_name": "python.exe",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [],
+    "role": "GENERAL_RUNTIME_OR_LAUNCHER_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 34416,
+    "actual_created_utc": "2026-10-23T17:40:23.8143854Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a134d4",
+    "signature_status": "VALID_AT_CACHE_POLICY",
+    "security_logon_type": 4,
+    "parent_pid": 7432
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 36008,
+    "actual_created_utc": "2026-10-23T17:40:24.4866556Z",
+    "in_any_job": true,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 28788
+  },
+  {
+    "image_sha256": "bfb46af89433268872ddb43d1ca7a3f433452ee91ed356a9786940f90118e285",
+    "image_name": "OTHER_EXECUTABLE_NAME_REDACTED",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [],
+    "role": "UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 41880,
+    "actual_created_utc": "2026-10-23T17:40:24.6165976Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": "VALID_AT_CACHE_POLICY",
+    "security_logon_type": 4,
+    "parent_pid": 36008
+  },
+  {
+    "image_sha256": null,
+    "image_name": "UNKNOWN_IMAGE_GUARD_FAILURE",
+    "owner_sid": "S-1-5-21-2858504392-1958168942-1662906075-1007",
+    "errors": [
+      {
+        "codes": [
+          {
+            "type": "System.Management.Automation.MethodInvocationException",
+            "hresult": -2146233087
+          },
+          {
+            "type": "System.InvalidOperationException",
+            "hresult": -2146233079
+          }
+        ],
+        "stage": "IMAGE_HANDLE_SHA_SIGNATURE"
+      }
+    ],
+    "role": "IMAGE_UNKNOWN",
+    "identity": "MATCH",
+    "session_id": 0,
+    "pid": 47064,
+    "actual_created_utc": "2026-10-23T17:40:24.6228471Z",
+    "in_any_job": false,
+    "authentication_luid": "00000000c4a1e55b",
+    "signature_status": null,
+    "security_logon_type": 4,
+    "parent_pid": 41880
+  }
+]

@@ -1,3 +1,10 @@
+## 2026-10-27 13:34KST Worker 관리자 판독 — 동일성/owner11·GroupSID성공 / 역할·독점HOLD
+
+f1f6f399 원본SHAfdcf6351873fe5eeb999381f0b5c9ccab96c5abd84fcbe8ec94ededeb74c6200. 11/11 sourceWMI정밀도 생성시각MATCH·실제ownerSID1007·Session0·Security BATCH4·기본token조회성공, LUID2개(4+7). Python6356/28788/34416 서명cache유효; 같은이름정제서명파일7432/41880 역할미확정. 나머지6개 IMAGE_HANDLE_SHA_SIGNATURE InvalidOperation/-2146233079·가드종류미기록→UNKNOWN, 완화0. Job포함3/구체Job미확인. 실제AI/CLI부재·작업내용증명0.
+
+관련96행=GROUP92+Worker user4, resolver오류0. 실제Group Everyone S-1-1-0 / AuthenticatedUsers S-1-5-11 / Users S-1-5-32-545 활성토큰소속, Administrators S-1-5-32-544·INTERACTIVE S-1-5-4 관측토큰부재. 이전길이11오류객체와동일성은옛ID누락으로미확정. GROUP4와Security BATCH4분리. 직접Worker4개Enabled/Ready/instances0(OnBoot2포함), GROUP실행상태를WorkerAI실행으로단정금지. 알려진V2메타ABSENT=전역lease/독점증명아님.
+
+상태 HOLD_ROLE_AND_EXCLUSIVITY_UNKNOWN, r11/helper/패키지/보호정책수정0·새진단재실행0. 상세 Discord_Worker11_AdminReadout_20261027.md, Evidence/WorkerInvestigation20261027/원본+AdminMatrix+AdminInterpretation. 다음은필요시이미지가드6개상수tag·정제식별최소진단/독립Worker설계검토, 같은전체명령재요청0·프로세스중단/운영변경0. V1/MANUAL/A HOLD·실제staging/설치/IPC/승인생성/Push0. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 Worker11·GroupPrincipal 전용 조사 — 56PASS / 실제 HOLD
 
 원본76eec5af(SHA82237991…)의PID/생성시각11개고정. 새도구WorkerInvestigation20261027/만추가, 기존V2/r11코드변경0. OS계정Lookup으로PAUL-PC\LIMITLESSRelaySvc SID1007/LOCAL_USER확인. 실제비관리자최종48106246… 결과는11개모두OpenProcess QUERY_LIMITED Win325로현재동일성·소유·역할UNKNOWN, TaskCOM UnauthorizedAccess/-2147024891로GroupId/SID·멤버십UNKNOWN. 이미지·서명·부모/자식·Job/실제AI충돌미확정, 빈배열을0건판정금지. 알려진V2 lease/consume/approval메타ABSENT는전역배타증명아님.

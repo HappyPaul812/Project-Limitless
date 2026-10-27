@@ -1,3 +1,5 @@
+후속 관리자 실측(2026-10-27 13:34KST)은 **Discord_Worker11_AdminReadout_20261027.md**가 정본입니다. 11개 동일성·owner1007 및 Group SID 조회는 성공했고, 이미지6개/역할·AI·독점실행은 HOLD입니다. 아래의 접근거부11개는 초기 비관리자 조사 이력으로 보존합니다.
+
 # Issue66 Worker11·GroupPrincipal 전용 읽기 조사
 
 **신규 오프라인56 PASS / 0 FAIL. 실제 조사 HOLD_ACCESS_DENIED_11 / GROUP_UNKNOWN / EXCLUSIVITY_UNKNOWN.** r11의 기존 차단 정책을 변경하지 않았고 프로세스를 제외하거나 0개로 만들지 않았습니다. 실제 AI 실행·동시 충돌의 존재와 부재 모두 확정하지 못했습니다.

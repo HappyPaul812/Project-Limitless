@@ -1,0 +1,55 @@
+{
+  "relevant_task_rows": 96,
+  "r11_changed": false,
+  "actual_ai_activity": "NOT_VERIFIED",
+  "group_rows": [
+    {
+      "running_state": 0,
+      "rows": 2,
+      "sid": "S-1-1-0",
+      "enabled": 1
+    },
+    {
+      "running_state": 0,
+      "rows": 5,
+      "sid": "S-1-5-11",
+      "enabled": 3
+    },
+    {
+      "running_state": 0,
+      "rows": 5,
+      "sid": "S-1-5-32-544",
+      "enabled": 3
+    },
+    {
+      "running_state": 2,
+      "rows": 21,
+      "sid": "S-1-5-32-545",
+      "enabled": 19
+    },
+    {
+      "running_state": 1,
+      "rows": 59,
+      "sid": "S-1-5-4",
+      "enabled": 55
+    }
+  ],
+  "python_images": 3,
+  "owner_sid_verified": 11,
+  "signature_valid_at_cache_policy": 5,
+  "identities_verified": 11,
+  "system_changes": 0,
+  "group_principal_rows": 92,
+  "job_identity": "UNKNOWN",
+  "configured_worker_user_tasks": 4,
+  "global_exclusivity": false,
+  "group_sid_resolution_errors": 0,
+  "enabled_configured_worker_user_tasks": 4,
+  "security_batch_logon": 11,
+  "session0": 11,
+  "image_guard_unknown": 6,
+  "job_membership_true": 3,
+  "source_sha256": "fdcf6351873fe5eeb999381f0b5c9ccab96c5abd84fcbe8ec94ededeb74c6200",
+  "status": "HOLD_ROLE_AND_EXCLUSIVITY_UNKNOWN",
+  "redacted_identical_signed_images": 2
+}
