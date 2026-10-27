@@ -48,3 +48,5 @@ if ($preflightSha -cne '8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a84
 오류/부분 상태는 HOLD, 기존 consume 유지, 자동 재시도/삭제/권한완화0. 생성된 V2 SID·객체·정제 오류 단계·보호된 결과를 확인한 뒤 별도 복구 승인으로만 처리합니다. V1 HOLD를 V2 설치로 해제하지 않으며 V1/기존Worker/OnBoot/운영을 복구 대상으로 섞지 않습니다. 설치 후 판독은 실제 설치가 실행된 경우에만 수행합니다.
 
 LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 Windows 설치0, 설치 명령 실행0, 관리자 검증 대기 후 중지.
+
+마감 근거: 사전검사 도구/증거 커밋 b08fb5c00661318d5c30f64749f4563c84297311. 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6431260341 . LOCAL_COMMITTED / REMOTE_NOT_PUSHED, WAIT_ADMIN_READONLY/HOLD/설치0.

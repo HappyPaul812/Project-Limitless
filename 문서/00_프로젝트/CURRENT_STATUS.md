@@ -2594,3 +2594,5 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 - 실제 Issue #66 보고: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6430994946
 - LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Issue 댓글만 원격 반영, 코드·문서는 로컬입니다.
 - V1 REFERENCE_VERIFICATION_HOLD 유지. V2 r9 미승인·미설치이며 별도 실제 설치 승인 전 중지합니다.
+
+마감 근거: 사전검사 도구/증거 커밋 b08fb5c00661318d5c30f64749f4563c84297311. 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6431260341 . LOCAL_COMMITTED / REMOTE_NOT_PUSHED, WAIT_ADMIN_READONLY/HOLD/설치0.
