@@ -99,3 +99,5 @@ $b=[IO.File]::ReadAllBytes('F:\study\codex\Project-Limitless\Temp\DiscordUsageDi
 r11 Installer `eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2`, Manifest `e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0`, ZIP `0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0` 실제 SHA 불변 확인. 기존 V2 코드도 수정0. V1 참조HOLD/MANUAL/A·Worker/인증/CODEX_HOME/OnBoot2/봇아트/운영SQLite·Unity·게임·Save 보존. 프로세스 종료/재시작·계정/Task/ACL/LSA·staging/설치·IPC/FakeWorker/AI/usage/Discord·Push/main병합/재부팅0.
 
 LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 조사 코드와 오프라인 검증 완료, 관리자 추가 자료 전 HOLD로 중지합니다.
+
+마감: 구현·증거 로컬 커밋07ef386bd150af8b2f81ae77edd35722e3870dc1. 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6433810712 . 신규56PASS/0FAIL, 실제11개ACCESS_DENIED/역할UNKNOWN·GroupPrincipal UNKNOWN·독점실행HOLD. r11불변/운영변경0, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
