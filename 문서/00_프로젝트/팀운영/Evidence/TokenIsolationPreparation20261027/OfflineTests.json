@@ -1,0 +1,124 @@
+{
+  "actual_tokens": 0,
+  "fail": 0,
+  "actual_jobs": 0,
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "NORMAL_MODEL_OWNED_CLEANUP_AND_INTENT_BEFORE_LOGON"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_Session0LauncherVerified"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_PrivilegesAlreadyAvailable"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_AtomicJobList"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_ChildPolicy"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_NoForeignPrivilegedHandles"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_ImageSealed"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_PrivateNonInheritedJob"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_CleanEnvironment"
+    },
+    {
+      "status": "PASS",
+      "name": "PRELOGON_HOLD_PreservationKnown"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_JOURNAL_FAILURE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_JOB_READBACK_FAILURE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_LOGON_FAILURE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_SESSION_NOT_ZERO"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_WRONG_SID"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_PRIVILEGE_MISSING"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_CREATE_READBACK_FAILURE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_PID_REUSE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_TOKEN_MUTATION"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_CANCEL"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_ACCESSCHECK_FAILURE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_TIMEOUT"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_CLEANUP_CHILD_ATTEMPT"
+    },
+    {
+      "status": "PASS",
+      "name": "WINDOW_CLOSE_KERNEL_KILL_NO_FINALLY_EVIDENCE_CLAIM"
+    },
+    {
+      "status": "PASS",
+      "name": "MONOTONIC_WALL_BUDGET_NOT_JOB_CPU_LIMIT"
+    },
+    {
+      "status": "PASS",
+      "name": "UNCONFIRMED_CLEANUP_IS_UNKNOWN"
+    },
+    {
+      "status": "PASS",
+      "name": "FINAL_EVIDENCE_FAILURE_HOLD_NO_RETRY"
+    },
+    {
+      "status": "PASS",
+      "name": "RUN_BRANCH_CANNOT_EXECUTE_WINDOWS"
+    }
+  ],
+  "kind": "SID1010_ISOLATION_OFFLINE_MODEL",
+  "actual_logons": 0,
+  "existing_pass_tests_repeated": false,
+  "actual_worker_processes": 0,
+  "pass": 28
+}

@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 SID1010 FAKE_ONLY 격리 사전 준비 — 모의28PASS / 실실행경로HOLD
+
+기준813d37ea/사전준비승인만. BatchLogon→SID1010/Session0/실token→원자JobList+childrestrict→AccessCheck/정리 조건부계약설계, 기존Task불변. 공식문서상 interactive관리자만으로Session0보장불가·필요privilege/TCB·실행주체근거없음으로실제로그온전HOLD; 우회/권한변경0. Jobactive1/kill-on-close/noinherit/nobreakaway·85초종료+90초drain·창종료finally보장금지·사전intent/unknowncleanupHOLD. 새순수모델28PASS0FAIL(실로그온processJobtoken0/기존시험반복0). Inspect명령/SHA는 Discord_DedicatedV2_TokenIsolation_Preparation_20261027.md, Run차단·실launcher/PE봉인미완료를명시. 실제시험승인전Session0경로·native이미지SHA/cleanup권한검토필요. 기존PASS·V1/MANUAL/A/runtimeHOLD보존·계정TaskACL/승인/IPC/AI/운영변경/Push0. 최종SHA Issue후속.
 ## 2026-10-27 Issue66 SID1010 기존 토큰 대상 조사 — 확정PID/생성UTC 없음 / HOLD
 
 기준f8f46a5/Issue최신재사용. 기존SID1010·계정일치Evidence9파일에PID객체0(파싱오류0), 별도Temp진단2폴더5JSON에1010일치0. 기존소유권·생성UTC검증11프로세스는모두SID1007로배제. TaskPrincipal/Enabled만으로실토큰PASS금지·현재전PC부재확정아님. 대상없어기존토큰명령재안내/실행0, 신규검증기0/31·48·22반복0/실OS조회0. 상세 Discord_DedicatedV2_WorkerTokenTargetReview_20261027.md/ExistingEvidenceReview.json. 지금승인1개=SID1010 토큰관측용 FAKE_ONLY 단발격리 '사전준비만'(실행제외): 기존대상없고새로그온프로세스현재금지여서안전한생성·Job90종료경계구체화필요. 기존descriptorPASS 및 유효토큰/독점/V1/MANUAL/A HOLD보존·계정TaskACL/로그온IPC모델Push0. 최종로컬SHA Issue후속.

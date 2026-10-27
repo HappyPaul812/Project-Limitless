@@ -1,0 +1,13 @@
+{
+  "actual_logons": 0,
+  "scope": "OFFLINE_PREPARATION_ONLY",
+  "native_launcher_implemented": false,
+  "actual_trial_ready": false,
+  "actual_jobs": 0,
+  "actual_token_queries": 0,
+  "command_kind": "INSPECT_NOT_TRIAL",
+  "command_parse": "PASS",
+  "diagnostic_executable_sealed": false,
+  "session0_launch_path_approved": false,
+  "actual_worker_processes": 0
+}
