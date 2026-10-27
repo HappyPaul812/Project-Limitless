@@ -1,0 +1,210 @@
+{
+  "expected_worker_mask": "0x80000000",
+  "onboot": [
+    {
+      "status": "READ_OK",
+      "stage": "ONBOOT_XML_PIN_LIMITLESS-Art-OnBoot",
+      "value": {
+        "name": "LIMITLESS-Art-OnBoot",
+        "sha_match": true,
+        "enabled": true
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ONBOOT_XML_PIN_LIMITLESS-Bot-OnBoot",
+      "value": {
+        "name": "LIMITLESS-Bot-OnBoot",
+        "sha_match": true,
+        "enabled": true
+      }
+    }
+  ],
+  "read_ok": 44,
+  "payload_count": 766,
+  "expected_task_sddl": "O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;GR;;;S-1-5-21-2858504392-1958168942-1662906075-1010)",
+  "observed_worker_mask": "0x00120089",
+  "payload_acl_mismatch": 0,
+  "status": "HOLD_READONLY_REVIEW_COMPLETE_NO_RECOVERY",
+  "payload_link_or_ads_bad": 0,
+  "query_count": 45,
+  "task_presence": "PRESENT",
+  "offline_frozen_contract_source_sha256": "d0c0b053be0a0cfc1eb662f24a4a31b8ff62418fde80f0ea27cbec4fceaa3d2d",
+  "operational_log": {
+    "log_mode": "Circular",
+    "enabled": false,
+    "record_count": null
+  },
+  "source_result_sha256": "4de232b3d5af7aa6662ce4e4ec6a4d28ddc529b5c0d50656a9114f71e679140e",
+  "task_state": {
+    "multiple_instances": 2,
+    "last_run_time": "1999-11-30T00:00:00",
+    "state": 1,
+    "enabled": false,
+    "restarts": 0,
+    "logon_type": 1,
+    "registration_date_declared": null,
+    "triggers": 0,
+    "user_id": "LIMITLESSWorkV2D",
+    "group_id": null,
+    "actual_registration_time": "UNKNOWN_USE_EVENTS",
+    "last_task_result": 267011,
+    "run_level": 0,
+    "seconds": 90.0
+  },
+  "collected_utc": "2026-10-27T11:15:47.8969903Z",
+  "offline_tests": [
+    {
+      "status": "PASS",
+      "safe_contract_tag": "D3_SD_RIGHTS",
+      "errors": [
+        {
+          "type": "System.Management.Automation.MethodInvocationException",
+          "hresult": -2146233087
+        },
+        {
+          "type": "System.InvalidOperationException",
+          "hresult": -2146233079
+        }
+      ],
+      "name": "FROZEN_EXACT_OBSERVED_REJECTS"
+    },
+    {
+      "status": "PASS",
+      "safe_contract_tag": "ACCEPT",
+      "errors": [],
+      "name": "FROZEN_EXACT_IDENTICAL_ACCEPTS"
+    }
+  ],
+  "task_security": {
+    "dacl_protected": true,
+    "historical_failure_proven": false,
+    "frozen_rights_match": false,
+    "frozen_header_matches": true,
+    "sddl": "O:BAG:SYD:PAI(A;;FA;;;SY)(A;;FA;;;BA)(A;;FR;;;S-1-5-21-2858504392-1958168942-1662906075-1010)",
+    "group_sid": "S-1-5-18",
+    "frozen_exact_sddl_matches": false,
+    "owner_sid": "S-1-5-32-544"
+  },
+  "payload_sha_pass": 766,
+  "unknown_queries": [
+    {
+      "failure": "UNKNOWN",
+      "status": "UNKNOWN",
+      "stage": "TASK_OPERATIONAL_EXACT_20261027_UTC",
+      "errors": [
+        {
+          "type": "System.Exception",
+          "hex": "0x80131500",
+          "hresult": -2146233088
+        }
+      ]
+    }
+  ],
+  "auth_entries": 0,
+  "install_calls": 0,
+  "ipc_calls": 0,
+  "changes": 0,
+  "code_entries": {
+    "missing_count": 0,
+    "files": 768,
+    "unexpected_count": 0,
+    "expected": 768
+  },
+  "model_calls": 0,
+  "accounts": [
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_NETAPI_LIMITLESSBotV2D",
+      "value": {
+        "expected_sid_match": true,
+        "distinct_from_admin": true,
+        "facts": {
+          "sid": "S-1-5-21-2858504392-1958168942-1662906075-1009",
+          "enabled": false,
+          "flags": 547,
+          "privilege_level": 1,
+          "expires_unix": 1793183811,
+          "password_expired": false,
+          "locked_out": false,
+          "logon_hours_restricted": false,
+          "logon_units_per_week": 168,
+          "workstation_restricted": false
+        }
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_GROUPS_LIMITLESSBotV2D",
+      "value": {
+        "token_groups_verified": false,
+        "effective_local_group_sids": [
+          "S-1-5-32-545"
+        ]
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_DIRECT_RIGHTS_LIMITLESSBotV2D",
+      "value": {
+        "sid": "S-1-5-21-2858504392-1958168942-1662906075-1009",
+        "effective_batch_token_verified": false,
+        "direct_rights": [
+          "SeBatchLogonRight",
+          "SeDenyInteractiveLogonRight",
+          "SeDenyNetworkLogonRight",
+          "SeDenyServiceLogonRight",
+          "SeDenyRemoteInteractiveLogonRight"
+        ],
+        "direct_batch": true
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_NETAPI_LIMITLESSWorkV2D",
+      "value": {
+        "expected_sid_match": true,
+        "distinct_from_admin": true,
+        "facts": {
+          "sid": "S-1-5-21-2858504392-1958168942-1662906075-1010",
+          "enabled": true,
+          "flags": 545,
+          "privilege_level": 1,
+          "expires_unix": 1793183811,
+          "password_expired": false,
+          "locked_out": false,
+          "logon_hours_restricted": false,
+          "logon_units_per_week": 168,
+          "workstation_restricted": false
+        }
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_GROUPS_LIMITLESSWorkV2D",
+      "value": {
+        "token_groups_verified": false,
+        "effective_local_group_sids": [
+          "S-1-5-32-545"
+        ]
+      }
+    },
+    {
+      "status": "READ_OK",
+      "stage": "ACCOUNT_DIRECT_RIGHTS_LIMITLESSWorkV2D",
+      "value": {
+        "sid": "S-1-5-21-2858504392-1958168942-1662906075-1010",
+        "effective_batch_token_verified": false,
+        "direct_rights": [
+          "SeBatchLogonRight",
+          "SeDenyInteractiveLogonRight",
+          "SeDenyNetworkLogonRight",
+          "SeDenyServiceLogonRight",
+          "SeDenyRemoteInteractiveLogonRight"
+        ],
+        "direct_batch": true
+      }
+    }
+  ],
+  "source_result_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\DedicatedV2R2Readonly20261027\\Admin-33a67728035f4fe88db7f539e5b648dc.json"
+}

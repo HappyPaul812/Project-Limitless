@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 r2 관리자 진단 판독 완료 — Task PRESENT / SDDL 재현불일치 / HOLD 중지
+
+대표 Admin-33a677… JSON 확인(SHA4de232b3…): query45=READ_OK44/UNKNOWN1(Operational Disabled), payload766 SHA/CodeACL 모두일치·파일768/누락예상외0/Auth빈상태. Bot1009Disabled·Worker1010Enabled/Users·직접Batch+deny4, OnBoot2 pin일치/기존1007Enabled1008Disabled. Task PRESENT/Disabled/Trigger0/90초/Principal정상·Action비교true. 기대GR0x80000000 vs 실제FR0x120089, header일치/right불일치. 고정Contract에 관측SDDL 넣어 D3_SD_RIGHTS와 원설치예외체인 재현(신규오프라인2PASS). 과거throw태그/실등록시각은 로그미활성으로 미확정. 설치/복구/재시도0·소비증거보존, Task전용권리표현계약 수정방향만 기록. 상세 Discord_DedicatedV2_R2_Readonly_Review_20261027.md/AdminReviewSummary.json. 실제토큰/GROUP/IPC/Job·V1/MANUAL/A HOLD 유지, 전체운영보존감사주장0/Push0. 최종 로컬SHA Issue후속.
 ## 2026-10-27 Issue66 읽기 진단 ScopeFix — ScriptBlock 경로21PASS / 관리자 결과 대기
 
 대표 실행에서 $script:r 미정의로 첫 읽기query 누적 실패·Task/계정/최종JSON 미도달. 원인 -File과 &ScriptBlock의 범위차이, 도구 결함. 구도구/hash보존·구명령사용중지. 별도 probe-r2-partial-v2.ps1 결과/기록/시험변수 script초기화 일치, 실제 EncodedCommand→ScriptBlock SelfTest21PASS0FAIL(OS조회변경0). 새명령/SHA Discord_DedicatedV2_R2_Readonly_ScopeFix_20261027.md. 관리자Collect/설치실행0·소비승인보존·Task/설치원인UNKNOWN·V1/MANUAL/A/runtimeHOLD. Issue후속SHA / REMOTE_NOT_PUSHED.
