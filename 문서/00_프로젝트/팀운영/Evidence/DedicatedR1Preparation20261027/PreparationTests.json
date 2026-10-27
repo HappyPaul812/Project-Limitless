@@ -1,0 +1,49 @@
+{
+  "kind": "NEW_PREPARATION_STATIC_CHECKS_NOT_151_RERUN",
+  "pass_count": 10,
+  "fail_count": 0,
+  "helper_sha256": "c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d",
+  "tests": [
+    {
+      "name": "DEFAULT_READONLY",
+      "status": "PASS"
+    },
+    {
+      "name": "EXPLICIT_STAGE_APPROVAL",
+      "status": "PASS"
+    },
+    {
+      "name": "EXPLICIT_INSTALL_APPROVAL",
+      "status": "PASS"
+    },
+    {
+      "name": "PREFLIGHT_HOLD_BLOCKS_MUTATION",
+      "status": "PASS"
+    },
+    {
+      "name": "FIXED_R1_BYTES",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_OLD_PACKAGE_OR_LOGIN",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_DELETE_RETRY_OR_EXIT",
+      "status": "PASS"
+    },
+    {
+      "name": "DEFERRED_NEW_TOKEN_NOT_PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_DISTINCT_EMPTY_AUTH_CONTRACT",
+      "status": "PASS"
+    },
+    {
+      "name": "PROTECTED_STAGE_HANDLES_HELD_ACROSS_INSTALL",
+      "status": "PASS"
+    }
+  ],
+  "actual_staging_install_calls": 0
+}

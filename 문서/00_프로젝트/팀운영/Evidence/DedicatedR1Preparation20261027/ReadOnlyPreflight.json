@@ -1,0 +1,125 @@
+{
+  "ipc_calls": 0,
+  "install_preconditions_status": "HOLD",
+  "step": "Preflight",
+  "deferred": [
+    "OS_ISSUED_NEW_SIDS",
+    "NEW_ACCOUNT_GROUPS_EFFECTIVE_BATCH_RIGHTS",
+    "NEW_WORKER_TOKEN_LOGON_SESSION",
+    "NEW_SID_GROUP_TASK_APPLICABILITY",
+    "INSTALLED_OWNER_DACL_SHA_TASK",
+    "IPC_EXCLUSIVITY_JOB_CLEANUP"
+  ],
+  "v1_status": "REFERENCE_VERIFICATION_HOLD",
+  "runtime_status": "HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED",
+  "status": "HOLD",
+  "checks": [
+    {
+      "name": "R1_FIXED_ZIP_MANIFEST_INSTALLER_766_PLUS_1",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMIN_POWERSHELL7_X64",
+      "errors": [
+        {
+          "type": "System.Management.Automation.RuntimeException",
+          "hresult": -2146233087
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "NEW_ACCOUNT_NAMES_ABSENT",
+      "errors": [
+        {
+          "type": "System.NullReferenceException",
+          "hresult": -2147467261
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "NEW_CODE_STATE_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_TASK_NAME_ABSENT",
+      "errors": [
+        {
+          "type": "System.UnauthorizedAccessException",
+          "hresult": -2147024891
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "NEW_PIPE_NAMES_ABSENT_NO_CONNECT",
+      "status": "PASS"
+    },
+    {
+      "name": "SYSTEM_ROOT_PARENT_SAFE",
+      "errors": [
+        {
+          "type": "System.Management.Automation.MethodInvocationException",
+          "hresult": -2146233087
+        },
+        {
+          "type": "System.InvalidOperationException",
+          "hresult": -2146233079
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "STAGING_CODE_PARENT_SAFE",
+      "errors": [
+        {
+          "type": "System.Management.Automation.MethodInvocationException",
+          "hresult": -2146233087
+        },
+        {
+          "type": "System.InvalidOperationException",
+          "hresult": -2146233079
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "STATE_APPROVAL_PARENT_NO_TAKEOVER",
+      "errors": [
+        {
+          "type": "System.Management.Automation.MethodInvocationException",
+          "hresult": -2146233087
+        },
+        {
+          "type": "System.InvalidOperationException",
+          "hresult": -2146233079
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "OLD_WORKER_V1_ACCOUNT_ID_STATE",
+      "errors": [
+        {
+          "type": "System.NullReferenceException",
+          "hresult": -2147467261
+        }
+      ],
+      "status": "HOLD"
+    },
+    {
+      "name": "NEW_STAGING_ROOT_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_APPROVAL_ROOT_ABSENT",
+      "status": "PASS"
+    }
+  ],
+  "actual_creation_attempted": false,
+  "model_calls": 0,
+  "automatic_retries": 0,
+  "schema": 3,
+  "admin": false
+}

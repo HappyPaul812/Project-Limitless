@@ -1,0 +1,99 @@
+{
+  "admin": false,
+  "schema": 3,
+  "ipc_calls": 0,
+  "v1_status": "REFERENCE_VERIFICATION_HOLD",
+  "deferred": [
+    "OS_ISSUED_NEW_SIDS",
+    "NEW_ACCOUNT_GROUPS_EFFECTIVE_BATCH_RIGHTS",
+    "NEW_WORKER_TOKEN_LOGON_SESSION",
+    "NEW_SID_GROUP_TASK_APPLICABILITY",
+    "INSTALLED_OWNER_DACL_SHA_TASK",
+    "IPC_EXCLUSIVITY_JOB_CLEANUP"
+  ],
+  "model_calls": 0,
+  "step": "Preflight",
+  "status": "HOLD",
+  "actual_creation_attempted": false,
+  "runtime_status": "HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED",
+  "checks": [
+    {
+      "name": "R1_FIXED_ZIP_MANIFEST_INSTALLER_766_PLUS_1",
+      "status": "PASS"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.Management.Automation.RuntimeException",
+        "hresult": -2146233087
+      },
+      "name": "ADMIN_POWERSHELL7_X64"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.NullReferenceException",
+        "hresult": -2147467261
+      },
+      "name": "NEW_ACCOUNT_NAMES_ABSENT"
+    },
+    {
+      "name": "NEW_CODE_STATE_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.UnauthorizedAccessException",
+        "hresult": -2147024891
+      },
+      "name": "NEW_TASK_NAME_ABSENT"
+    },
+    {
+      "name": "NEW_PIPE_NAMES_ABSENT_NO_CONNECT",
+      "status": "PASS"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.Management.Automation.MethodInvocationException",
+        "hresult": -2146233087
+      },
+      "name": "SYSTEM_ROOT_PARENT_SAFE"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.Management.Automation.MethodInvocationException",
+        "hresult": -2146233087
+      },
+      "name": "STAGING_CODE_PARENT_SAFE"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.Management.Automation.MethodInvocationException",
+        "hresult": -2146233087
+      },
+      "name": "STATE_APPROVAL_PARENT_NO_TAKEOVER"
+    },
+    {
+      "status": "HOLD",
+      "errors": {
+        "type": "System.NullReferenceException",
+        "hresult": -2147467261
+      },
+      "name": "OLD_WORKER_V1_ACCOUNT_ID_STATE"
+    },
+    {
+      "name": "NEW_STAGING_ROOT_ABSENT",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_APPROVAL_ROOT_ABSENT",
+      "status": "PASS"
+    }
+  ],
+  "automatic_retries": 0,
+  "install_preconditions_status": "HOLD"
+}

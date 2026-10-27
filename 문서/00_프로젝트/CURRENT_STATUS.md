@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 전용 r1 설치 사전 준비 — 비관리자5PASS/7HOLD, 실제 변경0
+
+r1 Installer/Manifest/ZIP 고정, payload766+Manifest1 읽기 검증. 기존151 재실행0·후보/기존DedicatedV2 수정0. 외부 R1Preparation helper/관리자 한줄3개/설치전·설치후·실IPC전 계약을 준비했습니다. 새 절차 정적10PASS/0FAIL·PS/명령 구문PASS. 현재 좁은 읽기 사전검사5PASS/7HOLD(admin=false, 계정provider NullReference·Task접근거부·native부모admin guard), 미확인PASS처리0. 새 SID/그룹/Batch 유효토큰은 설치 후 필수이며 실행 가능한 GROUP에 대한 r1의HOLD guard 유지. 설치완료는 IPC가능 판정이 아닙니다.
+
+다음 최소행동: 관리자 PowerShell7에서 읽기전용 Preflight 한줄만 실행·정제JSON 판독. Stage/Install은 각각 후속승인, 현재 실행0. 상세 Discord_DedicatedR1_InstallPreparation_20261027.md·Discord_DedicatedR1_AdminCommands_20261027.md, Evidence/DedicatedR1Preparation20261027/. 실제 계정/권리/ACL/Task/staging/승인파일/설치/IPC/AI/usage/Discord/Push0, Worker1007/11개·V1/r11·기존운영/인증/OnBoot보호, V1/MANUAL/A HOLD. 로컬커밋·Issue실제보고는 후속 연결, REMOTE_NOT_PUSHED.
+
 ## 2026-10-27 Issue66 전용 Worker V2 후보 — 신규151 PASS / 실제 설치·독점성 HOLD
 
 구현·검증 로컬 커밋 `60fc6484e9a77b12f52b527b3b18eeb5161d6113`, [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434471862). LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

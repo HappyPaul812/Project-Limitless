@@ -1,0 +1,13 @@
+{
+  "helper_sha256": "c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d",
+  "live_admin": false,
+  "command_parse_errors": 0,
+  "new_static_tests_fail": 0,
+  "live_readonly_hold": 7,
+  "previous_151_rerun": false,
+  "actual_stage_calls": 0,
+  "new_static_tests_pass": 10,
+  "actual_install_calls": 0,
+  "live_readonly_pass": 5,
+  "actual_approval_files": 0
+}
