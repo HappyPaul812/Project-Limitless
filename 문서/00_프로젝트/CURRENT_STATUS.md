@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 Task descriptor 실제 읽기 PASS — 유효권한/런타임 HOLD 유지
+
+대표Admin-acd610…(11:53:17Z) 판독 TASK_DESCRIPTOR_READONLY_PASS_EFFECTIVE_ACCESS_HOLD. 정확Task/Principal1010/Disabled·Trigger0·Action정책true·OwnerBA/GroupSY/보호DACL·ACE3/FR0x120089 계약PASS, XML기준4ef912…일치·ManifestBindingHost3개확인/WorkerEnabled·도구전후지문비교통과(read2/retry0). 후보LiveVerified/RuntimeAdmittedfalse는유지, descriptorPASS만독립기록. effective_worker_accessUNKNOWN_TOKEN_NOT_CHECKED·GROUP/Session0/Job/독점·V1/MANUAL/A HOLD. 원설치consumed/HOLD·증거그대로보존, 설치/계정TaskACL변경/IPC/AI/추가조회0·새테스트반복0/Push0. 상세 Discord_DedicatedV2_TaskSecurityReadback_Pass_20261027.md. 최종로컬SHA Issue후속 / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 Task 읽기 PREPARE 오류 — 기준 query 선택 수정/신규9PASS
 
 대표Admin-354b78…: PREPARE/read0/PropertyNotFoundException, TaskCOM·후보비교미도달. 도구가 Manifest/Host 별도stage 선택 전에 없는 FILESYSTEM_.value 접근한 결함. 구도구/JSON보존·구명령중지. 별도 probe-task-security-readonly-v2.ps1 먼저stage선택→정확1개READ_OK후접근, 누락중복불명HOLD. 실제File메서드 가짜FS로 신규9PASS0FAIL(구오류2재현/새3파일/누락등거부), 기존48/22반복0·관리자재조회0. 수정명령/SHA Discord_DedicatedV2_TaskReadback_FileBaselineFix_20261027.md, 별도직접승인대기. Taskdescriptor/effectiveUNKNOWN·V1/MANUAL/A/runtimeHOLD, 설치/계정TaskACL/IPC/AI/Push0. 최종로컬SHA Issue후속.

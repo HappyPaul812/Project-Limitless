@@ -1,0 +1,50 @@
+{
+  "automatic_retries": 0,
+  "effective_worker_access": "UNKNOWN_TOKEN_NOT_CHECKED",
+  "collected_utc": "2026-10-27T11:53:17.6429857Z",
+  "changes": 0,
+  "descriptor_readback_status": "PASS",
+  "task": {
+    "principal_sid": "S-1-5-21-2858504392-1958168942-1662906075-1010",
+    "principal_sid_match": true,
+    "trigger0": true,
+    "xml_sha256": "4ef912d925510838b18765f6b18204c7da83de4b5d0b182381eaf36dde89a47b",
+    "xml_baseline_match": true,
+    "disabled": true,
+    "state_disabled": true,
+    "sddl": "O:BAG:SYD:PAI(A;;FA;;;SY)(A;;FA;;;BA)(A;;FR;;;S-1-5-21-2858504392-1958168942-1662906075-1010)",
+    "task_path": "\\LIMITLESS-DedicatedV2-20261027-Host",
+    "path_match": true,
+    "fingerprint": "84a94749a8737c7e446d5a763e5ee108bf06746f23f54197bce0101c91f92748",
+    "action_match": true,
+    "policy_settings_match": true
+  },
+  "v1_status": "REFERENCE_VERIFICATION_HOLD",
+  "result_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\TaskSecurityReadback20261027\\Admin-acd610e6e04348c88b881e8c0f17fe33.json",
+  "stage": "STOP_NO_IPC",
+  "kind": "R2_TASK_SECURITY_TARGETED_READONLY",
+  "candidate_verdict": {
+    "Status": "OFFLINE_CANDIDATE_PASS_NOT_WINDOWS_REVERIFIED",
+    "RawWorkerMask": 1179785,
+    "NormalizedWorkerMask": 1179785,
+    "LiveVerified": false,
+    "RuntimeAdmitted": false
+  },
+  "schema": 1,
+  "runtime_status": "HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED",
+  "runtime_admitted": false,
+  "model_calls": 0,
+  "ipc_calls": 0,
+  "read_attempts": 2,
+  "status": "TASK_DESCRIPTOR_READONLY_PASS_EFFECTIVE_ACCESS_HOLD",
+  "source_checks": {
+    "worker_enabled": true,
+    "binding_sha256": "d698ae90f0909a9363b04dea67c186f95bfa5f7f2f5d937adf3ae7a23aa011c9",
+    "worker_sid": "S-1-5-21-2858504392-1958168942-1662906075-1010",
+    "fingerprint": "4480a832d2944cd679df5df99eaa3cf6d0ee10924eeaba24a4a5cfa03070c73f",
+    "manifest_sha256": "7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976",
+    "host_sha256": "063c063223f8989605b1031ea0978d890b43ee95d4787e8ad578b923ba361f46",
+    "verified": true
+  },
+  "install_calls": 0
+}
