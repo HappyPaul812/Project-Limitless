@@ -1,0 +1,11 @@
+{
+  "system_changes": 0,
+  "utc": "2026-10-27T01:44:23.5837068+00:00",
+  "status": "HOLD",
+  "schema": 2,
+  "errors": {
+    "type": "System.Management.Automation.RuntimeException",
+    "hresult": -2146233087
+  },
+  "staging_created": false
+}

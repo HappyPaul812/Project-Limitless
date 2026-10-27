@@ -1,0 +1,192 @@
+{
+  "tests": [
+    {
+      "name": "original-empty-NTAccount-exact-error",
+      "status": "PASS"
+    },
+    {
+      "name": "empty-principal-rejected-before-translation",
+      "status": "PASS"
+    },
+    {
+      "name": "null-principal-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "typed-principal-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "group-principal-resolved-no-empty-constructor",
+      "status": "PASS"
+    },
+    {
+      "name": "group-logon-invalid",
+      "status": "PASS"
+    },
+    {
+      "name": "both-user-group-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "fake-idle-pass",
+      "status": "PASS"
+    },
+    {
+      "name": "eleven-processes-busy-not-query-failure",
+      "status": "PASS"
+    },
+    {
+      "name": "pid-time-reuse-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "process-time-missing-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "account-sid-mismatch-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "task-worker-enabled-conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "task-worker-disabled-running-conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "task-unmapped-hold-no-secret",
+      "status": "PASS"
+    },
+    {
+      "name": "group-worker-conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "group-membership-unknown-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "lease-present-never-probed-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "lease-denied-hold",
+      "status": "PASS"
+    },
+    {
+      "name": "original-function-empty-principal-hold-with-shape",
+      "status": "PASS"
+    },
+    {
+      "name": "original-function-memory-task-counter-two",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-fake-good-no-create",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-exact_set",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-path",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-entry_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-source_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-manifest_sha",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-ads_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-handle_ancestors_pinned",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-all_payload_sha",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-reparse_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-creation_sddl",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-parent_write_safe",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-all_owners_ba_sy",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-unexpected_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-hardlink_count_max",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-payload_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-all_dacl_exact",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-install_revalidation_required",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-parent_owner_verified",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-created_new",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-atomic_create_new",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-readback_verified",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-case_alias_count",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-zip_sha",
+      "status": "PASS"
+    },
+    {
+      "name": "staging-reject-exclusive_source_bytes",
+      "status": "PASS"
+    }
+  ],
+  "staging_created": false,
+  "native_calls": 0,
+  "failed": 0,
+  "passed": 46
+}

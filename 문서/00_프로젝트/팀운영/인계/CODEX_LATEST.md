@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 HOLD2 원인 수정·계획 완료 — 실측 HOLD 유지
+
+기존3a5803a2 재사용·PASS6재검사0. 빈UserId NTAccount(string)에서 동일ArgumentException/-2147024809 합성재현; 당시Task/인수는원본누락으로확정불가. 원래조회함수 빈인수HOLD/함수·자료형·길이기록/counter범위수정. 별도Worker전용query가process/task/lease를분리, 실제SID1007유휴는관리자결과대기. 신규46PASS/0FAIL(fake)·native0. staging새경로 ProgramFiles/LimitlessV2Staging20261027/R9-01f8… 설계·protected생성DACL/owner/readback/SHA766+1/link/ADS거부모델, native생성기미구현·실제배치미승인. 원본r9ZIP불변·수정소스미포함, 실제설치전별도패키지/SHA결정필요. 최소관리자Worker전용한줄명령·SHA5개는 Discord_V2_Hold2_Resolution_20261027.md. V1/운영보존·MANUAL/A/HOLD유지·계정/ACL/Task/IPC/승인생성0. 원인수정/검증계획범위에서중지. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
+
 ## 2026-10-27 V2 r9 관리자 결과 수신 — HOLD / 설치0
 
 3a5803a2 원본SHAfc7085b0… 관리자PASS6/HOLD2. Worker연결11개집계이나known=false·ArgumentException(-2147024809)로유휴미확정·타작업0확정불가. 후보ACL 조회배열 root/root/.zip 결함수정·2경로회귀PASS, 별도읽기root/ZIP owner1001·AuthenticatedUsers write로실제보호조건미충족. 도구SHA1fe25f911859c534b7e2785a763d80028871aca244719b3e0c7fc2fe4541bf42. 상세AdminPreparation문서/증거 참조. 같은전체검사재요청0, 설치명령·승인발급0. 다음은Worker조회오류분리·정상유휴확보 및 별도승인보호staging설계. V1 HOLD/운영보존, 실제계정/ACL/Task/IPC변경0, LOCAL_COMMITTED/REMOTE_NOT_PUSHED.

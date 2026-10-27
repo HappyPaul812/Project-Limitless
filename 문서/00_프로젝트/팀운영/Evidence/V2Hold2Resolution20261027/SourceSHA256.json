@@ -1,0 +1,7 @@
+{
+  "V2WindowsAdapter.ps1": "f161ee6b91659a53adf5cb1063fdd3d2bbcb14bcb0515fa201ebeb51bb5ae527",
+  "V2StagingPlan.ps1": "9fdadb938ffffe1e8432850761219f1a0e0644b175027ebb4f85ee65346d68ca",
+  "probe-worker-hold2-readonly.ps1": "0fa7933f00ad42ab7fcd20dc2d07063d6b076aa72718841948aab57500d85307",
+  "test_hold2_offline.ps1": "9ef8bd64277e0e88a6c2d89e1e1ee2582504230f468c3d963c3d171ad638b599",
+  "V2WorkerQuery.ps1": "d6471b2b2427da3b94b9724c45e367408a1846d1ec230a4957c45c0e01265a18"
+}

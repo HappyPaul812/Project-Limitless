@@ -1,28 +1,35 @@
 # 실제 adapter는 별도 승인된 Install에서만 생성합니다. 오프라인 시험은 이 함수를 호출하지 않습니다.
 function Get-V2WorkerSnapshot([string]$WorkerSid,[int[]]$AllowedPids=@()){
- $known=$true;$count=0;$launchers=0;$codes=@()
+ $known=$true;$count=0;$launchers=0;$codes=@();$stage='SID';$shape=$null;$taskCounter=@{count=0}
  try{
   if(-not [LimitlessV2Contract]::Sid($WorkerSid)){throw 'V2_WORKER_SID_HOLD'}
-  $accounts=@(Get-CimInstance Win32_UserAccount -Filter "SID='$WorkerSid'" -ErrorAction Stop)
+  $stage='ACCOUNT_LOOKUP';$accounts=@(Get-CimInstance Win32_UserAccount -Filter "SID='$WorkerSid'" -ErrorAction Stop)
   if($accounts.Count -ne 1){throw 'V2_WORKER_ACCOUNT_QUERY_HOLD'}
   $seen=@{}
+  $stage='PROCESS_ASSOCIATION'
   foreach($session in Get-CimAssociatedInstance -InputObject $accounts[0] -Association Win32_LoggedOnUser -ResultClassName Win32_LogonSession -ErrorAction Stop){
    foreach($p in Get-CimAssociatedInstance -InputObject $session -Association Win32_SessionProcess -ResultClassName Win32_Process -ErrorAction Stop){$seen[[int]$p.ProcessId]=$true}
   }
   foreach($id in $seen.Keys){if($id -notin $AllowedPids){$count++}}
   if($AllowedPids.Count -gt 0 -and @($AllowedPids|Where-Object{-not $seen.ContainsKey($_)}).Count){$known=$false}
-  $s=New-Object -ComObject 'Schedule.Service';$s.Connect()
+  $stage='TASK_ENUMERATION';$s=New-Object -ComObject 'Schedule.Service';$s.Connect()
   function Visit-V2Tasks($Folder){
    foreach($t in $Folder.GetTasks(1)){
     $u=$t.Definition.Principal.UserId
-    $sid=if($u -like 'S-1-*'){$u}else{([Security.Principal.NTAccount]::new($u)).Translate([Security.Principal.SecurityIdentifier]).Value}
-    if($sid -ceq $WorkerSid -and $t.Enabled -and $t.Path -cne ('\'+[LimitlessV2Contract]::TaskName)){$script:v2OtherLaunchers++}
+    # Group principal/빈 인수를 사용자 이름으로 변환하지 않습니다. 불명은 HOLD합니다.
+    $taskCounter.shape=@{user_type=if($null -eq $u){'null'}else{$u.GetType().FullName};user_length=([string]$u).Length;group_length=([string]$t.Definition.Principal.GroupId).Length;logon_type=[int]$t.Definition.Principal.LogonType}
+    if($u -isnot [string] -or [string]::IsNullOrWhiteSpace($u)){throw 'V2_TASK_USER_PRINCIPAL_UNKNOWN_HOLD'}
+    $sid=if($u -like 'S-1-*'){$u}else{
+     $taskCounter.function='NTAccount.ctor(string)';$account=[Security.Principal.NTAccount]::new($u)
+     $taskCounter.function='NTAccount.Translate(Type)';$account.Translate([Security.Principal.SecurityIdentifier]).Value
+    }
+    if($sid -ceq $WorkerSid -and $t.Enabled -and $t.Path -cne ('\'+[LimitlessV2Contract]::TaskName)){$taskCounter.count++}
    }
    foreach($f in $Folder.GetFolders(0)){Visit-V2Tasks $f}
   }
-  $script:v2OtherLaunchers=0;Visit-V2Tasks ($s.GetFolder('\'));$launchers=$script:v2OtherLaunchers
+  Visit-V2Tasks ($s.GetFolder('\'));$launchers=$taskCounter.count
  }catch{$known=$false;$codes=[LimitlessV2Contract]::ErrorCodes($_.Exception)}
- return @{known=$known;foreign_processes=$count;other_launchable_tasks=$launchers;errors=$codes}
+ return @{known=$known;foreign_processes=$count;other_launchable_tasks=$launchers;errors=$codes;stage=$stage;failed_function=if($known){$null}else{$taskCounter.function};argument_shape=$taskCounter.shape}
 }
 function New-V2WindowsAdapter([string]$Bundle,[Security.SecureString]$NewBotPassword,[pscredential]$WorkerCredential,[hashtable]$VerifiedPayloads=@{}){
  $preservation=if($VerifiedPayloads.ContainsKey('Deployment/V1Preservation.json')){[Text.Encoding]::UTF8.GetString($VerifiedPayloads['Deployment/V1Preservation.json'])|ConvertFrom-Json -AsHashtable}else{@{}}
