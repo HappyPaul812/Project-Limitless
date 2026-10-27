@@ -1,6 +1,6 @@
 # 전용 Worker r1 관리자 PowerShell 7 명령
 
-2026-10-27 관리자 Preflight12PASS 후 바울 대표가 **2번 Stage 생성1회만 승인**했습니다. 대표가 관리자 PowerShell7에서 2번만 직접 실행하고 정제 JSON을 판독합니다. 1번/151시험을 별도로 반복하지 않으며 3번 Install은 여전히 실행 금지입니다. 각 코드 블록은 한 줄이며 기존 PowerShell 창을 닫지 않습니다. 새 helper의 고정 SHA를 확인한 메모리 바이트를 새 NoProfile 프로세스에서 실행합니다.
+2026-10-27 후속: 대표의 승인된 **2번 Stage 생성1회 실행 결과 STAGING_CREATED_VERIFIED_NOT_INSTALLED**를 수신했습니다. **1·2번을 재실행하지 않습니다. 3번 Install은 여전히 별도 승인 전 실행 금지입니다.** 아래 명령은 절차 이력으로 보존하며, Stage 성공이 설치/계정/Task/IPC 승인은 아닙니다. 상세 Discord_DedicatedR1_Staging_20261027.md 참조.
 
 ## 1. 읽기 전용 관리자 사전검사
 
@@ -10,7 +10,7 @@
 
 출력 JSON의 HOLD를 먼저 판독합니다. 새 SID·토큰·실제 Batch 실행은 계정 생성 전 미검증이며 이 명령은 생성하지 않습니다. 이전151/Worker11 진단을 실행하지 않습니다.
 
-## 2. Staging 전용 생성 1회 승인 — 대표 관리자 직접 실행
+## 2. Staging 전용 생성 1회 실행 완료 — 재실행 금지
 
 ```powershell
 & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -Command '$b=[IO.File]::ReadAllBytes("F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\prepare-r1.ps1");if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($b)).ToLowerInvariant() -cne "c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d"){throw "R1_HELPER_SHA_HOLD"};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($b))) -Step Stage -ApprovalScope "STAGE_R1_ONLY_NO_INSTALL"'

@@ -1,4 +1,27 @@
-# Issue #66 — 전용 Worker r1 보호 Staging 1회 승인 / 관리자 실행 대기
+# Issue #66 — 전용 Worker r1 보호 Staging 생성·검증 완료 / 미설치
+
+## 관리자 실행 결과 후속 판독
+
+[Issue #66 생성·검증 성공 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435141316). 제공 JSON 재직렬화 저장본 SHA256 `03335ccc8a92e49a036ec01a0201a04e8f01eed970c9bd6c4f6fb2f5d595bd34`, 관리자 원본 파일 해시 아님. 최종 로컬 문서 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+바울 대표 제공 JSON은 **STAGING_CREATED_VERIFIED_NOT_INSTALLED**, admin=true/Step=Stage/actual_creation_attempted=true, 내부 안전 검사10개 모두 PASS입니다. 아래 실행 대기 내용은 당시 이력으로 보존하며 최신 상태는 **보호 staging 생성·검증 성공 보고 수신 / 설치 미실행 / runtime HOLD**입니다. 승인된 생성1회는 완료됐으며 재실행하지 않습니다.
+
+제공값은 [AdminStageUserProvided.json](팀운영/Evidence/DedicatedR1Preparation20261027/AdminStageUserProvided.json)에 값 동일하게 재직렬화했습니다. 원본 디스크 JSON 경로·실행 시각·도구 SHA·개별 파일 metadata/inventory가 제공 출력에 없어 독립 native 재조회나 원본 바이트 해시 검증을 수행했다고 표현하지 않습니다. 이번 판독에서는 생성/검사/151/Preflight를 재실행하지 않았습니다.
+
+| 필수 보고 | 판독 결과와 근거 범위 |
+|---|---|
+| 생성·검증 상태 | PASS — 제공된 관리자 결과의 고정 native verifier 성공 반환. 설치 성공 아님 |
+| 실제 반환 경로 | `C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\a5af3087b78b45d1baae46067d5b7ac9\Bundle`, 같은 package의 `Bundle.zip`은 Create 계약에 포함 |
+| Owner/Group/DACL | 성공 반환까지 고정 verifier가 BA Owner/SY Group·protected BA/SY-only DACL의 각 entry 일치를 검사하는 계약. 개별 관측 SDDL/파일ID 값은 JSON에 없고 임의로 추가하지 않음 |
+| 파일 수·SHA | 고정 검증기 성공 계약상 Bundle 내부 payload766+Manifest1=767파일의 정확 entry·모든 SHA 및 별도 Bundle.zip SHA 검증 완료 보고. 전체 파일수는 Bundle.zip까지768개이며 디렉터리는 별도 |
+| source/복사본 | 고정 생성기의 entry별 source 메모리 바이트와 복사 후 handle readback SHA·ZIP SHA 일치 성공 반환. 독립 두 번째 비교0 |
+| 오류·부분 생성·복구 | 오류/HOLD/close-error 필드 없이 성공 반환, retry0. 보고된 실패/부분 실패 없음, 현재 복구 필요 증거 없음. 자동 삭제/복구 실행0 |
+| 기존 운영 | 내부 계정 SID/state·신규 계정/CodeState/Task/pipe 부재 검사 PASS. Stage 분기에는 기존 운영/인증/Task를 수정하는 경로 없음. 11개 프로세스·OnBoot/봇아트/운영DB 전체를 새로 조사했다는 주장은 하지 않음 |
+| 설치 전 남은 조건 | 별도 실제 설치 승인, 해당 시점 stage 전체 handle/FileID/Owner/DACL/SHA 재검증·외부 보호 승인/소비·계정2/권리·Task1 범위 확정. 새 SID·토큰/GROUP·설치readback·Job/IPC독점은 계속 deferred |
+
+검증된 고정 계약의 디렉터리 SDDL은 `O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)`, 파일은 `O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)`입니다. 위 계약에 대한 관리자 검증 성공 보고로 기록하며 raw metadata 원본을 받은 것으로 표시하지 않습니다. 원본 r1 3SHA/후보 및 F: ACL 변경0, 코드/도구 변경0. 신규 계정/Batch권리/Task/설치승인JSON/설치/로그인/IPC/FakeWorker/AI/usage/Discord/Push 실행0. V1 REFERENCE_VERIFICATION_HOLD·MANUAL/A HOLD 및 runtime HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED 유지 후 중지합니다.
+
+## 이하: 생성 명령 안내 당시 이력
 
 [Issue #66 실제 상태 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435083422). LOCAL_COMMITTED / REMOTE_NOT_PUSHED, 최종 커밋은 Issue 후속 보고 참조.
 
