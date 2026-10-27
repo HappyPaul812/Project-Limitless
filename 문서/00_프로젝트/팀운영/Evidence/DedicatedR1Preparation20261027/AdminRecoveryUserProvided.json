@@ -1,0 +1,17 @@
+{
+  "status": "HOLD_REQUIRES_RECOVERY_REVIEW",
+  "checks": [
+    {"sddl":"O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)","name":"APPROVAL_ROOT","status":"PRESENT","owner_sid":"S-1-5-32-544"},
+    {"status":"PRESENT","sha256":"2ee977688b2cd0d11590aff0232318f8bf936f2f1f25e3a9dace64e2669e9cdf","fixed_r1_binding":true,"sddl":"O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)","owner_sid":"S-1-5-32-544","name":"INSTALL_APPROVAL_JSON","same_admin":true,"expired":true},
+    {"name":"CONSUMPTION_DIRECTORY","status":"ABSENT"},
+    {"name":"CONSUMED_MARKER","status":"ABSENT"},
+    {"name":"INSTALL_LEASE","status":"ABSENT"},
+    {"name":"DEDICATED_CODE_ROOT","status":"ABSENT"},
+    {"name":"DEDICATED_STATE_ROOT","status":"ABSENT"},
+    {"name":"LIMITLESSBotV2D","status":"ABSENT"},
+    {"name":"LIMITLESSWorkV2D","status":"ABSENT"},
+    {"name":"DEDICATED_TASK","status":"ABSENT"},
+    {"name":"PROTECTED_RESULTS","status":"DIRECTORY_ABSENT","count":0}
+  ],
+  "ipc_calls":0,"install_calls":0,"password_reads":0,"admin":true,"model_calls":0,"schema":3,"changes":0,"kind":"R1_INSTALL_HOLD_READONLY","retry_authorized_by_probe":false
+}

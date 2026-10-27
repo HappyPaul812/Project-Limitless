@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 재개 — 관리자 미소비/무계정 확인·보존형 콘솔 도구24PASS
+
+대표관리자진단: 만료승인2ee97768…만PRESENT·BA/SY DACL/동일관리자/고정r1일치, consume/lease/계정2/Task/CodeState없음·Result0. 원본값재직렬화AdminRecoveryUserProvided.json, 별도앞선재개요청에보존형단발도구준비. 만료승인원본SHA/DACL확인이동보존→보호ResumeMarker CREATE_NEW→새15분승인→수정없는r1Installer 콘솔직접1회·stdout수집0. 새fake24PASS/0FAIL·실제승인이동/발급/설치0·12/10/151재실행0. wrapper SHA2fdf7a49…/core01fa6f5f…·콘솔/소비/자산불명HOLD·중복차단. 정본Recovery보고·AdminCommands4번, 대표직접결과대기·envelope exit0는설치PASS아님·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 재개 요청 — 관리자 최소 읽기 감사 대기
 
 대표재개요청에기존Install재실행0·소비삭제0. 실제approvalroot존재/내부접근거부확인, 새 probe-install-hold-readonly.ps1 SHA c34be6d7…·구문PASS·비관리자UNKNOWN9/CodeState부재2·changes0. 보호부모미확인은자식ABSENT로오인금지. 진단은승인binding/만료·소비/lease·신규계정/Task/CodeState/Result개수만읽고암호/생성/수정/설치0. 관리자JSON필요·HOLD_REQUIRES_RECOVERY_REVIEW, source/helper/r1불변·기존12/10/151재실행0. 정본 Discord_DedicatedR1_Recovery_20261027.md 한줄진단, 결과이후안전재개검토·V1/MANUAL/A/runtimeHOLD·Push0.

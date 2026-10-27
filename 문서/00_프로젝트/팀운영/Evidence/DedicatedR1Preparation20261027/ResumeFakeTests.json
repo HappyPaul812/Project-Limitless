@@ -1,0 +1,106 @@
+{
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "PRESERVE_BEFORE_FRESH_APPROVAL_BEFORE_SINGLE_LAUNCH"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_admin"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_console_input"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_console_output"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_fresh_namespace"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_private_approval_verified"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_stage_verified"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_unused"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_expired"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_same_admin"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_WRONG_SHA"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_BAD_ROLE"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_OLD_EPOCH"
+    },
+    {
+      "status": "PASS",
+      "name": "GATE_NO_MUTATION_BOOL_STRING"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_RESERVE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_PRESERVE"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_PUBLISH"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_LAUNCH"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_EXIT"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_RECHECK"
+    },
+    {
+      "status": "PASS",
+      "name": "FAULT_HOLD_NO_RETRY_RECORD"
+    },
+    {
+      "status": "PASS",
+      "name": "DUPLICATE_RESUME_BLOCKED"
+    },
+    {
+      "status": "PASS",
+      "name": "NEW_CORE_AND_WRAPPER_PARSE"
+    },
+    {
+      "status": "PASS",
+      "name": "NATIVE_CONSOLE_NO_REDIRECT_OR_PASSWORD_ARGUMENT"
+    }
+  ],
+  "fail": 0,
+  "actual_password_reads": 0,
+  "actual_approval_changes": 0,
+  "pass": 24,
+  "actual_installer_launches": 0,
+  "kind": "NEW_RESUME_FAKE_TESTS_NOT_151"
+}

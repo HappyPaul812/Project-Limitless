@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r1 콘솔 재개 준비 인계 — 관리자 무계정/미소비·24PASS
+
+[Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435886677), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+대표adminJSON: approvalroot/정확r1만료승인PRESENT·SHA2ee977688b2cd0d11590aff0232318f8bf936f2f1f25e3a9dace64e2669e9cdf·동일admin/BA-SY; consume/lease/CodeState/계정2/Task모두ABSENT·Result0. 진단자체retryfalse유지·앞선대표재개지시에외부resume도구준비, 실제승인/설치변경0. ResumeCore+resume-r1-console는원본SHA고정/expired/미소비/무자산/실콘솔검사→보호marker1회→ExpiredApproval.json이동보존→새15분동일계약승인→고정r1Installer StartProcessNoNewWindowWait(출력수집0)최대1회. 새fake24PASS/0FAIL·기존151/12/10재실행0·r1/helper/기존staging불변. wrapper2fdf7a494fa3b7e0d82cf4592568b36ad562678581015f1f31f7d099d91c010e/core01fa6f5f…핀. AdminCommands4번한줄·실행결과대기, NativeJSON+ResumeEnvelope구분·exit0/CHILD_RETURNED가설치PASS아님. 중복/어느오류든marker보존HOLD·자동재시도/삭제0, Task/IPC/AI로그인금지·기존운영보호/V1/MANUAL/A/runtimeHOLD·Push0. 상세Recovery보고·AdminRecovery제공JSON·ResumeFakeTests증거.
+
 ## 2026-10-27 Issue66 r1 재개 요청 인계 — 신규 관리자 읽기 도구 준비
 
 대표“다시해줘”→재개준비·기존helper무조건재시도/소비삭제해석0. approvalroot실제존재·현재내부accessdenied, nonadmin UNKNOWN9/CodeState부재2·관리자최소읽기필요. 새 R1Preparation/probe-install-hold-readonly.ps1 SHA c34be6d7bd023c3575b2cf16a2b53f4a06c3225209fcfff42edf8916ffad5874·PS구문PASS. 승인binding/만료/admin·consume/lease·새계정2/Task/CodeState·Result개수만읽음, 암호/환경/Result본문읽기0·변경/설치0. parent미검증자식UNKNOWN·falseABSENT방지. Discord_DedicatedR1_Recovery_20261027.md 관리자한줄, Evidence/…/InstallRecoveryReadonlyNonAdmin.json. 입출력리디렉션dummy메타는비관리자관측일뿐실제throw확정아님. 관리자JSON판독후필요한입력경계/승인복구범위검토, 기존r1/helper/approval변경·자동재시도0·V1/MANUAL/A/runtimeHOLD·Push0.
