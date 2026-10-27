@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-27 — Worker11 프로세스·GROUP TaskPrincipal 조사 HOLD, V2 r11 불변
+
+- [Issue #66 관리자 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6433227907): `process_query_known=true` 및 SID1007 연관 PID/생성시각11 확보, 하지만 각 역할과 실행 충돌 관계는 미확정. 현 정책 `foreign_processes=0` 미충족 → Worker **HOLD_NOT_IDLE**. `lease_query_known=true/ABSENT`는 V2 전용만 빈 상태. `task_query_known=false/other_launchable_tasks=null`, `TASK_PRINCIPAL_RESOLUTION` GroupNotFoundException(HRESULT-2146233088), 원본은 GroupId string 길이11/UserId null/LogonType4이고 실제 그룹명/SID 값 **기록 없음**. 그룹이 로컬/도메인/내장인지 추측하지 말 것. **Task Scheduler LogonType4=GROUP (Windows 보안 이벤트 logon type4=BATCH와 다른 enum)**. `Get-LocalGroupMember -SID`는 local SAM 한정; OS GroupId SID 조회/토큰 그룹 활성화·별도 GroupId/LogonType 처리와 fail-closed를 오프라인 구현.
+- 다음 Codex **2개 범위 읽기 전용**: ① 기존 PID+생성시각 11과 Worker 계정SID1007의 연관(Owner/logon session/parent tree/실행코드 서명/작업/Job/Lease 연결) 증거를 경로민감값 없이 조사; PID 재사용·권한거부/불명 HOLD. ② 예약 작업 실제 GroupId에 대한 OS name→SID 검증, 그룹 principal과 Worker SID1007의 토큰 그룹 관계·해당 작업의 실행 가능 여부·중첩/비로컬 그룹 미지원 리스크 분리. 관리자 전체검사·Workerprobe 반복 금지, 안전 진단 후보/정확 SHA/관리자 별도 직접 한줄 안내. 보수적 zero-fp 조건을 근거없이 무력화하거나 11개 프로세스를 종료/화이트리스트하지 않는다. existing Worker 구독/계정 공유 구조로 동시 실행 통제 검증 불가하면 별도 Worker isolate 대안 설계만 보고한다.
+- V2 r11 설치 후보는 **그대로 보존**(Installer SHA `eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2`, Manifest `e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0`, ZIP `0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0`, payload769+Manifest1), staging 실제 배치·설치·IPC/모델/official usage/Discord/A 0. 기존 V1 reference hold·BotSID1008/기존 root/Install1·기존 운영 봇·아트/OnBoot2/CODEX_HOME/인증/SQLite/Unity·Save/main 보존.
+- Codex branch `codex/discord-usage-diagnostics-20261026`, local report commit `8b1371618153b8494bf0f67456c08241a3f66ac6`, PUSH 없음. 기획 [운영 정본](../LIMITLESS_DISCORD_AI_COLLAB_OPERATIONS_20261024.md) `docs/planning` commit `c61ecd3cb1bc939bc962def6109b59baf4f6804a`.
+
+---
+
 # PLANNING / 2026-10-27 — V2 r9 HOLD2 오프라인46 PASS / 실 Worker 및 Staging HOLD
 
 - Codex [Issue #66 최신 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6431728309): Worker 조회 오류 `NTAccount.ctor(string)` 빈 UserId 예외 재현, 전 검증 및 GroupId/LogonType 분기 보완. 다만 과거 원본 오류 발생의 정확 Task·인수 증거가 없어 **실제 직접 원인/Worker 유휴 아직 UNKNOWN**. 새 Worker관련 offline **21 PASS**, protected staging 계획 모델 **25 PASS**, 합계46 PASS/0 FAIL. Windows 관리자 targeted 분기는 아직 미실행. 과거 관리자 PASS6는 유지하며 다시 전체검사하지 않음.
