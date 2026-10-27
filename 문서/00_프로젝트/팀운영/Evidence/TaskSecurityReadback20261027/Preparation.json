@@ -1,0 +1,8 @@
+{
+  "candidate_sha256": "5cca69ee5991e6f20d58d3325c67eb102e94a9b92464884d0d3b615df696b103",
+  "command_parse": "PASS",
+  "live_queries": 0,
+  "admin_execution_attempted": false,
+  "candidate48_reused": true,
+  "requires_separate_user_approval": true
+}

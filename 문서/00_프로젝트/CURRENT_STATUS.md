@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 Task 실제 보안 재검증 준비 — 신규결합22PASS / 별도관리자승인대기
+
+기준7cbb7e4c/기존48PASS·후보5cca69ee…재사용·45항목재실행0. 새TaskSecurityReadback: 고정Task COM GetTask/GetSD7/PrincipalSID·DisabledTrigger0·Action·정책, ManifestBindingHost3개 SHA/ACL·Worker1개만 읽음. 시작종료지문다르면HOLD. 가짜COM/계정파일·실제adapter/Core 결합22PASS0FAIL·EncodedCommand ScriptBlock검증, 실제관리자조회0. 명령/SHA/결과경로 Discord_DedicatedV2_TaskSecurityReadback_Preparation_20261027.md, 다음별도승인전실행금지. 성공후에도 descriptorPASS와 effective_worker_accessUNKNOWN/runtimefalse분리·토큰GROUPJob/IPC·V1/MANUAL/A HOLD. 계정TaskACL변경·설치·AI·Push0. 최종로컬SHA Issue후속 / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 Task GR/FR 검증기 격리 후보 — 신규48PASS / 실제Windows재검증0
 
 기준97028645/기획6440747926·고정Admin JSON/기존2PASS 재사용. 새 TaskSecurityCandidate C# Task전용 계약: 객체/정확Task/SID/고정snapshot 근거 필요·GR만 파일읽기0x120089로정규화/추가비트삭제0·exact OwnerGroup/보호DACL/ACE3·순서·SID·기존FA유지. 쓰기삭제실행/WDAC/WOWNER/unknown/추가ACE등거부. 신규48PASS0FAIL·snapshot후보PASS(LiveVerified/RuntimeAdmittedfalse), 원설치HOLD/HRESULT별도보존. 기존 DedicatedContract/r2 ZIP/설치계정TaskACL/Stage/승인소비 불변·실콜사이트연결0·관리자조회/설치/IPC0. 문서 Discord_DedicatedV2_TaskSecurityCandidate_20261027.md에파일SHA/근거/후속Task재등록없는읽기검증절차/HOLD조건. V1/MANUAL/A/runtimeHOLD·Push0, 최종로컬SHA Issue후속.

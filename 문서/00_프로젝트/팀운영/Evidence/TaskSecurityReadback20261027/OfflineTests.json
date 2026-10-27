@@ -1,0 +1,101 @@
+{
+  "model_calls": 0,
+  "tests": [
+    {
+      "name": "TARGETED_READONLY_ORDER_AND_EFFECTIVE_HOLD",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_SOURCE",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_DENIED",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_GETTASK",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_OVERGRANT",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_SOURCE_CHANGED",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_TASK_CHANGED",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_path_match",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_principal_sid_match",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_disabled",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_trigger0",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_state_disabled",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_policy_settings_match",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_action_match",
+      "status": "PASS"
+    },
+    {
+      "name": "HOLD_xml_baseline_match",
+      "status": "PASS"
+    },
+    {
+      "name": "RAW_HRESULT_PRESERVED_NO_SECRET",
+      "status": "PASS"
+    },
+    {
+      "name": "MISSING_EVIDENCE_HOLD",
+      "status": "PASS"
+    },
+    {
+      "name": "ENTRY_PARSE_NO_RESERVED_HOST_ASSIGNMENT",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_BACKEND_CONSTRUCTS_NO_CONNECT_NO_COLLISION",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_MUTATION_METHODS_IN_ENTRY",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_COM_READ_METHOD_FAKE_TASK_AND_SID_NO_OS",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_PREPARE_WITH_FAKE_FILES_AND_FAKE_LOCALUSER",
+      "status": "PASS"
+    }
+  ],
+  "install_calls": 0,
+  "kind": "TARGETED_TASK_READBACK_NEW_INTEGRATION_ONLY",
+  "changes": 0,
+  "pass": 22,
+  "fail": 0,
+  "existing_48_tests_repeated": false,
+  "ipc_calls": 0,
+  "admin_queries": 0
+}

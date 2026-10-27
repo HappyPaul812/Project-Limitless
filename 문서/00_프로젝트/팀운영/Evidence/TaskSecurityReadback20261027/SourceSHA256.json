@@ -1,0 +1,5 @@
+{
+  "probe-task-security-readonly.ps1": "de9bf4639b1d1ae079802ade7d1e5f8bdc251af51a587bfdfa61f799eb95af41",
+  "ReadbackCore.ps1": "3f29d411c2aa2453c02c5a9ef5c77aeb9b52b29c31c60bd3e09f627b5a0e0b0f",
+  "test-readback-offline.ps1": "fd5e3d279938bee03e647d965be6997c918e42e1777993e212a8b000dc421102"
+}
