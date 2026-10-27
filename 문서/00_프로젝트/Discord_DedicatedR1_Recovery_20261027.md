@@ -2,6 +2,8 @@
 
 ## 재개 bootstrap 별칭 충돌 수정 — 28 PASS / 실제 설치 대기
 
+[Issue #66 직접 원인·수정 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435993722), 수정/회귀 로컬 커밋 `4a3df548fc6e4202949a3999d06faeb9fbbdaec2` / REMOTE_NOT_PUSHED. 수정본 명령은 관리자 콘솔에서 검증 바이트를 직접 ScriptBlock으로 호출해 바깥 자식 PowerShell 경계도 제거합니다. 타입이 이미 로드된 세션이면 fresh-process guard가 변경 전 HOLD하므로 새 관리자 PowerShell7에서 실행합니다. 보호된 Installer 자식은 동일 콘솔 Start-Process 방식 그대로입니다.
+
 대표 제공 READ_ONLY_BOOTSTRAP/ParameterBindingValidationException(-2146233087) HOLD를 ResumeBootstrapHoldUserProvided.json에 값 동일 재직렬화했습니다. **외부 재개 wrapper의 해시 함수 `H`와 기본 alias `h`→Get-History가 충돌한 도구 결함**입니다. PowerShell의 alias 우선 해석으로 바이트 배열이 Get-History 인수가 되었고, 같은 예외/FullyQualifiedErrorId=ParameterArgumentValidationError,Microsoft.PowerShell.Commands.GetHistoryCommand를 비밀 없는0/1/2 바이트로 재현했습니다. 실제 명령 기록을 출력하지 않았습니다. 암호·Windows 자산 권한 문제로 판정하지 않습니다.
 
 해시 함수와 호출을 `Get-R1ResumeSha256`으로 바꾸고 읽기 단계를 ZIP/Manifest/assembly/compile로 세분화했습니다. alias 삭제·프로필 변경으로 우회하지 않았고 core/권한·SHA/소비/단발 정책은 그대로입니다. 이번 실패 경로는 첫 ZIP 해시 계산에서 멈춰 stage native 검증·승인 보존/갱신·marker·설치에 도달하지 않습니다. 기존 관리자 읽기의 미소비·무계정 결과는 이력으로 유지하고 재개 직전 보호 검사는 여전히 수행합니다.

@@ -1,5 +1,7 @@
 ## 2026-10-27 Issue66 r1 bootstrap alias 수정 인계 — 28PASS / 실제재개대기
 
+수정/회귀 커밋 `4a3df548fc6e4202949a3999d06faeb9fbbdaec2`, [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435993722). AdminCommands4번은관리자콘솔에서해시검증메모리ScriptBlock직접호출로외부pwsh-hop제거·parserPASS, 고정Installer만StartProcess동일콘솔. 타입이미로드됐으면새관리자PS7필요·freshguard완화0. 후속문서커밋Issue참조/REMOTE_NOT_PUSHED.
+
 최신대표HOLD READ_ONLY_BOOTSTRAP/ParameterBindingValidation(-2146233087)원인 H함수와Get-History기본alias충돌 재현(FQIDGetHistoryCommand/0포함바이트), 암호오타아님. 함수/모든call Get-R1ResumeSha256로수정·phase태그보강, alias삭제/정책완화0. 새회귀28PASS/0FAIL(24fake+alias재현+실제함수2+실제ZIP/Manifest/assembly bootstrap), 실제승인/설치/암호0·12/10/151재실행0. wrapper새SHA cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4/core01fa…·고정r1불변, AdminCommands4번만핀교체. 이번실패는승인/marker변경전·새경로기존안전gate유지·실제관리자결과대기. 증거ResumeBootstrapHoldUserProvided/ResumeAliasRegressionTests, 상세Recovery보고. 기존HOLD/만료승인보존/재발급1회/TaskIPC금지/V1MANUALA런타임HOLD·Push0.
 
 ## 2026-10-27 Issue66 r1 콘솔 재개 준비 인계 — 관리자 무계정/미소비·24PASS
