@@ -784,3 +784,10 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 - 다음 우선작업: (1)원본Editor정상재개후A자연Import확인 (2)바울대표B개별청취승인기록,특히007폭이/포기·008조사한/조사하는 (3)승인된B ID만신규GUID/WAV폴더Catalog연결후Field02/03·승인8·미엘·Player·SaveContinue재QA와별도허가된브랜치CommitPush. 확정TTS_REGEN_REQUIRED0, 청취에서본문불일치확정시해당ID만재조사.
 - 다른담당: 기획은B청취승인경계와Portal-나무/Teleport미구현OPEN유지, 아트담당신규PNG납품필요0. Main08대화중조우OPEN은QAfixture에서만억제했고수정하지않음.
 - 후임은각QA/인계·CURRENT_STATUS·최신원격Gate를대조하고원본dirty를reset/clean하거나원본Play/focus를조작하지말것. 재개자료 Temp/ArbelMain08Integration20261014 및A/B인계문서.
+
+## V2 후보 구현 마감 기록 (2026-10-27)
+
+- 구현·증거 로컬 커밋: 62578e5174d208dd4e83ebe23c2ac438303eb478
+- 실제 Issue #66 보고: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6430994946
+- LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Issue 댓글만 원격 반영, 코드·문서는 로컬입니다.
+- V1 REFERENCE_VERIFICATION_HOLD 유지. V2 r9 미승인·미설치이며 별도 실제 설치 승인 전 중지합니다.
