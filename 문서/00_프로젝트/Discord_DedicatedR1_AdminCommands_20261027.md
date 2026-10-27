@@ -30,10 +30,10 @@
 
 [전체 사전·사후 조건과 부분 실패 복구](Discord_DedicatedR1_InstallPreparation_20261027.md)를 먼저 확인합니다.
 
-## 4. 만료 승인 보존·콘솔 직접 재개 — 대표 직접 최대 1회
+## 4. 만료 승인 보존·콘솔 직접 재개 — alias 수정본 / 대표 직접 최대 1회
 
 ```powershell
-& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -Command '$resumeBytes=[IO.File]::ReadAllBytes("F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\resume-r1-console.ps1");if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($resumeBytes)).ToLowerInvariant() -cne "2fdf7a494fa3b7e0d82cf4592568b36ad562678581015f1f31f7d099d91c010e"){throw "R1_RESUME_SHA_HOLD"};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($resumeBytes))) -Action Resume -ConfirmPreserveExpiredApprovalAndInstallOnce'
+& 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -Command '$resumeBytes=[IO.File]::ReadAllBytes("F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\resume-r1-console.ps1");if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($resumeBytes)).ToLowerInvariant() -cne "cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4"){throw "R1_RESUME_SHA_HOLD"};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($resumeBytes))) -Action Resume -ConfirmPreserveExpiredApprovalAndInstallOnce'
 ```
 
 관리자 실제 콘솔에서만 실행하며 입력/출력 리디렉션이면 승인 변경 전 HOLD합니다. 이전승인 SHA·만료/미소비·무계정/Task/경로·보호 stage를 검사하고 원본을 보호 Resume기록에 보존한 뒤 새15분 승인을 발급합니다. 암호는 설치기의 로컬 보안 입력만 사용하고 대화에 보내지 않습니다. 새 창을 띄우거나 기존 창을 닫는 exit는 없습니다. stdout를 수집하지 않는 Start-Process -NoNewWindow -Wait로 고정 설치기만 실행합니다.

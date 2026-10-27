@@ -1,5 +1,17 @@
 # Issue66 — r1 설치 재개 요청 / 최소 읽기 감사
 
+## 재개 bootstrap 별칭 충돌 수정 — 28 PASS / 실제 설치 대기
+
+대표 제공 READ_ONLY_BOOTSTRAP/ParameterBindingValidationException(-2146233087) HOLD를 ResumeBootstrapHoldUserProvided.json에 값 동일 재직렬화했습니다. **외부 재개 wrapper의 해시 함수 `H`와 기본 alias `h`→Get-History가 충돌한 도구 결함**입니다. PowerShell의 alias 우선 해석으로 바이트 배열이 Get-History 인수가 되었고, 같은 예외/FullyQualifiedErrorId=ParameterArgumentValidationError,Microsoft.PowerShell.Commands.GetHistoryCommand를 비밀 없는0/1/2 바이트로 재현했습니다. 실제 명령 기록을 출력하지 않았습니다. 암호·Windows 자산 권한 문제로 판정하지 않습니다.
+
+해시 함수와 호출을 `Get-R1ResumeSha256`으로 바꾸고 읽기 단계를 ZIP/Manifest/assembly/compile로 세분화했습니다. alias 삭제·프로필 변경으로 우회하지 않았고 core/권한·SHA/소비/단발 정책은 그대로입니다. 이번 실패 경로는 첫 ZIP 해시 계산에서 멈춰 stage native 검증·승인 보존/갱신·marker·설치에 도달하지 않습니다. 기존 관리자 읽기의 미소비·무계정 결과는 이력으로 유지하고 재개 직전 보호 검사는 여전히 수행합니다.
+
+**신규 28 PASS/0 FAIL**, ResumeAliasRegressionTests.json: 기존재개fake24 + alias오류 재현 + 실제wrapper의이름변경함수(0포함바이트/고정r1 ZIP) + 실제wrapper에서추출한ZIP/Manifest/assembly readonly bootstrap 경로. 구문검사 포함, C# assembly는 기존frozen패키지 정의로 컴파일만 했습니다. 이전151/Preflight12/Stage10 재실행0, 실제 승인/계정/Task/설치/암호읽기0. 실제 관리자 콘솔/설치는 아직 미검증입니다.
+
+새 wrapper SHA256 **`cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4`**. core SHA `01fa6f5f51f5a3a269d149be74ccb540ab0422a18ad8b1089490a6af6bf57785` 불변, 고정r1 Installer/Manifest/ZIP 불변. 관리자 문서4번의 새 SHA 명령을 최대1회 직접 실행합니다. 기존2fdf7a49… wrapper 명령은 교체됐으며 다시 사용하지 않습니다. 만료승인 원본 보존 이동/15분 새승인/동일콘솔설치기1회 계약·실패HOLD/기록보존·Task/IPC/AI 시작금지는 유지합니다.
+
+## 이하: 최초 재개 준비 이력
+
 ## 관리자 읽기 결과 수신 / 콘솔 재개 도구 준비
 
 [Issue #66 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435886677), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.

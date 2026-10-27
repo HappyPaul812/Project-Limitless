@@ -1,0 +1,4 @@
+{
+  "phase":"READ_ONLY_BOOTSTRAP","schema":3,"status":"HOLD","automatic_retries":0,"kind":"R1_CONSOLE_RESUME_BOOTSTRAP","partial_assets_preserve":true,
+  "errors":{"type":"System.Management.Automation.ParameterBindingValidationException","hresult":-2146233087}
+}

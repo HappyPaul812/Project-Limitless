@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 재개 bootstrap 수정 — H alias충돌 재현·28PASS
+
+대표READ_ONLY_BOOTSTRAP/ParameterBindingValidationException HOLD는해시함수H가Get-History기본alias에가려진wrapper결함, 비밀없는0/1/2입력동일오류FQID재현. Get-R1ResumeSha256로수정·단계태그세분화·alias/프로필변경0. 실제wrapper bootstrap ZIP/Manifest/assembly경로까지신규28PASS/0FAIL·승인/설치/암호실행0·151/12/10재실행0. 새wrapper SHA cc6357c8e071ebad6109d51a6b8f9c6f3d08d9aa177b0b6e15c15d057ac589a4/core/r1불변. AdminCommands4번핀교체, 실제관리자재개결과대기·원본승인보존/단발/오류HOLD·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 재개 — 관리자 미소비/무계정 확인·보존형 콘솔 도구24PASS
 
 대표관리자진단: 만료승인2ee97768…만PRESENT·BA/SY DACL/동일관리자/고정r1일치, consume/lease/계정2/Task/CodeState없음·Result0. 원본값재직렬화AdminRecoveryUserProvided.json, 별도앞선재개요청에보존형단발도구준비. 만료승인원본SHA/DACL확인이동보존→보호ResumeMarker CREATE_NEW→새15분승인→수정없는r1Installer 콘솔직접1회·stdout수집0. 새fake24PASS/0FAIL·실제승인이동/발급/설치0·12/10/151재실행0. wrapper SHA2fdf7a49…/core01fa6f5f…·콘솔/소비/자산불명HOLD·중복차단. 정본Recovery보고·AdminCommands4번, 대표직접결과대기·envelope exit0는설치PASS아님·V1/MANUAL/A/runtimeHOLD·Push0.

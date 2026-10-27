@@ -31,6 +31,27 @@ foreach($f in @('RESERVE','PRESERVE','PUBLISH','LAUNCH','EXIT','RECHECK','RECORD
 Check 'DUPLICATE_RESUME_BLOCKED' {$a=NewFake;$null=Invoke-R1ConsoleResume $a $pins;$r=Invoke-R1ConsoleResume $a $pins;$r.status -eq 'HOLD' -and @($a.calls|Where-Object {$_ -eq 'Launch'}).Count -eq 1}
 Check 'NEW_CORE_AND_WRAPPER_PARSE' {foreach($name in @('ResumeCore.ps1','resume-r1-console.ps1')){$t=$null;$e=$null;$null=[Management.Automation.Language.Parser]::ParseFile((Join-Path $PSScriptRoot $name),[ref]$t,[ref]$e);if($e.Count){return $false}};$true}
 Check 'NATIVE_CONSOLE_NO_REDIRECT_OR_PASSWORD_ARGUMENT' {$s=Get-Content (Join-Path $PSScriptRoot 'resume-r1-console.ps1') -Raw;$line=@($s -split "`n"|Where-Object {$_ -match '^  \$child=Start-Process'});$line.Count -eq 1 -and $line[0].Contains('-NoNewWindow -Wait -PassThru') -and $line[0] -notmatch 'Redirect|Credential|Password' -and $s -notmatch '\$json\s*=\s*&|Remove-Item|Set-Acl|Clear-Content'}
+Check 'BUILTIN_H_ALIAS_CAUSE_REPRODUCED_NO_HISTORY_OUTPUT' {try{$null=H ([byte[]]@(0,1,2));$false}catch{($_.Exception.GetType().FullName -ceq 'System.Management.Automation.ParameterBindingValidationException') -and $_.FullyQualifiedErrorId -like '*GetHistoryCommand*'}}
+Check 'ACTUAL_RENAMED_WRAPPER_FUNCTION_HASHES_ZERO_BYTES' {
+ $t=$null;$e=$null;$ast=[Management.Automation.Language.Parser]::ParseFile((Join-Path $PSScriptRoot 'resume-r1-console.ps1'),[ref]$t,[ref]$e)
+ $fn=$ast.Find({param($node)$node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -ceq 'Get-R1ResumeSha256'},$true)
+ . ([scriptblock]::Create($fn.Extent.Text))
+ (Get-R1ResumeSha256 ([byte[]]@(0,1,2))) -ceq 'ae4b3280e56e2faf83f414a6e3dabe9d5fbe18976544c05fed121accb85b53fc' -and (Get-Command H).CommandType -eq 'Alias'
+}
+Check 'ACTUAL_RENAMED_WRAPPER_FUNCTION_HASHES_PINNED_R1_ZIP' {
+ $t=$null;$e=$null;$ast=[Management.Automation.Language.Parser]::ParseFile((Join-Path $PSScriptRoot 'resume-r1-console.ps1'),[ref]$t,[ref]$e)
+ $fn=$ast.Find({param($node)$node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -ceq 'Get-R1ResumeSha256'},$true);. ([scriptblock]::Create($fn.Extent.Text))
+ (Get-R1ResumeSha256 ([IO.File]::ReadAllBytes('F:\study\codex\Project-Limitless\Temp\Session0DedicatedV2Candidate20261027-r1.zip'))) -ceq $pins.zip
+}
+Check 'ACTUAL_WRAPPER_READONLY_BOOTSTRAP_ZIP_MANIFEST_ASSEMBLY' {
+ $source=[IO.File]::ReadAllText((Join-Path $PSScriptRoot 'resume-r1-console.ps1'));$t=$null;$e=$null;$ast=[Management.Automation.Language.Parser]::ParseInput($source,[ref]$t,[ref]$e)
+ $fn=$ast.Find({param($node)$node -is [Management.Automation.Language.FunctionDefinitionAst] -and $node.Name -ceq 'Get-R1ResumeSha256'},$true);. ([scriptblock]::Create($fn.Extent.Text))
+ $start=$source.IndexOf(' $zbytes=');$stop=$source.IndexOf(" `$phase='COMPILE_FIXED_ASSEMBLY'")
+ if($start -lt 0 -or $stop -le $start){return $false}
+ . ([scriptblock]::Create($source.Substring($start,$stop-$start)))
+ [DedicatedContract]::Manifest([Text.Encoding]::UTF8.GetString($mb))
+ (Get-R1ResumeSha256 $mb) -ceq $pins.ms -and (Get-R1ResumeSha256 $assembly) -ceq $m.files_sha256['Code/V2/InstallAssembly.cs']
+}
 $out=@{kind='NEW_RESUME_FAKE_TESTS_NOT_151';pass=@($rows|Where-Object status -eq PASS).Count;fail=@($rows|Where-Object status -eq FAIL).Count;tests=$rows;actual_approval_changes=0;actual_installer_launches=0;actual_password_reads=0}
 $out|ConvertTo-Json -Depth 8|Set-Content -LiteralPath $OutputPath -Encoding utf8NoBOM;$out|Select-Object pass,fail|ConvertTo-Json
 if($out.fail){throw 'RESUME_FAKE_FAILURE'}
