@@ -1,6 +1,10 @@
 # Issue #66 — 전용 Worker r1 실제 설치 사전 준비
 
-2026-10-27. **사전 절차 준비 완료, 현재 실제 설치 사전조건은 HOLD**입니다. 새 후보/구조를 만들지 않고 기존 r1을 고정했습니다. 기존 151 PASS는 이전 오프라인 근거로 재사용했고 다시 실행하지 않았습니다. 최신 [기획 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434585541)의 설치 전후 증거 분리 방침을 확인했습니다.
+관리자12PASS 후속 [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434820211). 재직렬화 저장본 SHA256 `81ed9bf943bc329c994823fc76b964b10f5fed501a2518fd743f91518c9c2531`이며 관리자 원본 파일의 해시가 아닙니다.
+
+2026-10-27 후속: **대표가 제공한 관리자 Preflight JSON은 12 PASS/0 HOLD, PASS_READONLY_SNAPSHOT입니다.** 사전 조건의 읽기 시점 검증이 완료됐으며 staging 생성·설치 승인이나 runtime 독점성 PASS를 뜻하지 않습니다. 새 후보/구조를 만들지 않고 기존 r1을 고정했습니다. 기존 151 PASS는 이전 오프라인 근거로 재사용했고 다시 실행하지 않았습니다. [기획 판독](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434585541)의 설치 전후 증거 분리 방침을 유지합니다.
+
+제공 JSON은 [AdminPreflightUserProvided](팀운영/Evidence/DedicatedR1Preparation20261027/AdminPreflightUserProvided.json)에 값 동일하게 재직렬화했습니다. 원본 디스크 JSON 경로·실행 시각·도구 SHA 필드는 제공되지 않아 독립 판독/바이트 원본 검증 완료로 표현하지 않습니다. admin=true, 12개 고유 검사명 모두 PASS, actual_creation_attempted=false, ipc/model0·retry0입니다. 기존 비관리자5PASS/7HOLD 결과는 당시 이력으로 보존합니다. 다음 최소 단계는 **staging 생성만의 별도 승인**이며 이번에는 실행하지 않습니다. 설치 전에는 변화 가능 조건을 해당 시점 다시 확인해야 합니다. 신규 SID/유효 Batch 토큰/GROUP 실행 영향/설치 권한·SHA/Job 독점성 6개 deferred와 V1 REFERENCE_VERIFICATION_HOLD·MANUAL/A HOLD는 그대로입니다.
 
 기준 구현 `60fc6484e9a77b12f52b527b3b18eeb5161d6113`, 작업 시작 HEAD `057d8503bbef69a17cfbf6465d60e5cf90c83c25`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 신규 외부 절차 도구 `Tools/DiscordAIServiceDiagnostics/R1Preparation/prepare-r1.ps1`만 추가하며 r1/V1/r11·기존 DedicatedV2 코드는 수정하지 않습니다. 실제 생성·승인·설치·시작은 이번 범위에 없습니다.
 
@@ -19,7 +23,7 @@
 
 후보 고정 무결성 확인은 이번 설치 준비를 위한 읽기입니다. 전체151시험/기존 관리자 전수조사/Worker 진단을 다시 실행하지 않았습니다. 내장 `Archive` 순수 검증으로 ZIP 전체·Manifest·Installer·payload766 SHA, entry767·경로/중복/링크 속성 제한을 확인했고 C#은 메모리에서만 로드했습니다.
 
-새 전용 사전검사의 실제 비관리자 결과는 **PASS5 / HOLD7**입니다. 상세 [ReadOnlyPreflight](팀운영/Evidence/DedicatedR1Preparation20261027/ReadOnlyPreflight.json).
+이하 표는 **이전 비관리자 검사 이력 PASS5 / HOLD7**입니다. 최신 대표 제공 관리자 결과는 위의 12PASS이며 서로 다른 실행의 원시 결과를 덮어쓰지 않습니다. 상세 [ReadOnlyPreflight](팀운영/Evidence/DedicatedR1Preparation20261027/ReadOnlyPreflight.json).
 
 | 설치 전 항목 | 실제 판정/근거 |
 |---|---|
@@ -82,6 +86,6 @@ Step2/3 명령은 **현재 승인·실행 대상이 아닌 후속 절차**입니
 
 ## 완료 범위와 다음 행동
 
-새 helper·명령 3개·전후 체크리스트·10개 정적 검사·정제된 비관리자 읽기 결과를 준비했습니다. **다음 최소 행동은 관리자 Preflight 한 줄만 실행하고 JSON을 판독하는 것**입니다. staging·승인 파일 생성·계정2/권리·Task1·설치는 각각 다음 승인 없이는 실행하지 않습니다.
+새 helper·명령 3개·전후 체크리스트·10개 정적 검사·정제된 비관리자 읽기 결과 및 대표 제공 관리자12PASS 결과를 기록했습니다. **다음 최소 행동은 staging 생성만의 별도 승인**입니다. 이미 성공한 검사를 지금 반복하지 않습니다. staging·승인 파일 생성·계정2/권리·Task1·설치는 다음 승인 없이는 실행하지 않습니다.
 
 기존151 재실행0, r1/r11/V1 후보 수정0, 실제 계정/권리/ACL/staging/승인/Task/설치/로그인/IPC/Worker/AI/usage/Discord/A/Push/main병합/종료·재부팅0. 기존 Worker1007/11개·V1 REFERENCE_VERIFICATION_HOLD·OnBoot2·봇/아트·CODEX_HOME/인증·운영SQLite·게임/Unity/Save 보호, MANUAL/A HOLD 유지. 준비 완료 후 중지합니다.

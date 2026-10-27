@@ -1,0 +1,28 @@
+{
+  "v1_status": "REFERENCE_VERIFICATION_HOLD",
+  "runtime_status": "HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED",
+  "deferred": ["OS_ISSUED_NEW_SIDS", "NEW_ACCOUNT_GROUPS_EFFECTIVE_BATCH_RIGHTS", "NEW_WORKER_TOKEN_LOGON_SESSION", "NEW_SID_GROUP_TASK_APPLICABILITY", "INSTALLED_OWNER_DACL_SHA_TASK", "IPC_EXCLUSIVITY_JOB_CLEANUP"],
+  "ipc_calls": 0,
+  "actual_creation_attempted": false,
+  "model_calls": 0,
+  "step": "Preflight",
+  "schema": 3,
+  "admin": true,
+  "install_preconditions_status": "PASS_READONLY_SNAPSHOT",
+  "checks": [
+    {"status": "PASS", "name": "R1_FIXED_ZIP_MANIFEST_INSTALLER_766_PLUS_1"},
+    {"status": "PASS", "name": "ADMIN_POWERSHELL7_X64"},
+    {"status": "PASS", "name": "NEW_ACCOUNT_NAMES_ABSENT"},
+    {"status": "PASS", "name": "NEW_CODE_STATE_ABSENT"},
+    {"status": "PASS", "name": "NEW_TASK_NAME_ABSENT"},
+    {"status": "PASS", "name": "NEW_PIPE_NAMES_ABSENT_NO_CONNECT"},
+    {"status": "PASS", "name": "SYSTEM_ROOT_PARENT_SAFE"},
+    {"status": "PASS", "name": "STAGING_CODE_PARENT_SAFE"},
+    {"status": "PASS", "name": "STATE_APPROVAL_PARENT_NO_TAKEOVER"},
+    {"status": "PASS", "name": "OLD_WORKER_V1_ACCOUNT_ID_STATE"},
+    {"status": "PASS", "name": "NEW_STAGING_ROOT_ABSENT"},
+    {"status": "PASS", "name": "NEW_APPROVAL_ROOT_ABSENT"}
+  ],
+  "automatic_retries": 0,
+  "status": "PREFLIGHT_PASS_POSTINSTALL_CHECKS_PENDING"
+}

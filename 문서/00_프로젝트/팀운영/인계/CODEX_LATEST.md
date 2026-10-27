@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r1 관리자 Preflight 판독 인계 — 12PASS / 실행 승인 대기
+
+[Issue #66 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434820211). 로컬 문서/제공 증거만 변경·REMOTE_NOT_PUSHED. 최종 로컬 커밋은 Issue 후속 참조.
+
+대표가제공한JSON admin=true·12고유검사전부PASS/0HOLD, PASS_READONLY_SNAPSHOT·PREFLIGHT_PASS_POSTINSTALL_CHECKS_PENDING. Evidence/DedicatedR1Preparation20261027/AdminPreflightUserProvided.json에값동일재직렬화, 디스크원본경로/시각/도구SHA미제공을명시. 이전비관리자5/7은이력, 동일검사재실행0·코드/후보/r1SHA변경0. 다음은staging생성만별도승인, 현재승인으로처리금지. 신규SID/유효Batch토큰/새SID의GROUP Task영향·설치ACL/SHA·IPC/Job독점은미검증HOLD. 실제생성시도false·IPC/model/retry0, 실제stage/승인파일/계정/Task/설치실행0. V1/MANUAL/A HOLD·기존운영보존. 후속설치전변화가능조건재확인, 고정r1GROUP guard완화0.
+
 ## 2026-10-27 Issue66 전용 r1 설치 준비 인계 — 실제Preflight HOLD / 변경0
 
 사전 준비 커밋 `862473f7e66f010acafbe7a99750200fa55a2a64`, [Issue #66 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434754454). REMOTE_NOT_PUSHED, 후속은 보고 연결 문서만 포함합니다.

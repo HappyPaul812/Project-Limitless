@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r1 관리자 Preflight 제공 결과 — 12PASS / runtime HOLD
+
+[Issue 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434820211), 로컬 문서·제공 증거만 반영 / REMOTE_NOT_PUSHED.
+
+대표 제공 JSON admin=true·12개 고유 검사 모두PASS·PASS_READONLY_SNAPSHOT/PREFLIGHT_PASS_POSTINSTALL_CHECKS_PENDING. 값 동일 재직렬화 AdminPreflightUserProvided.json 보존, 원본디스크경로/실행시각/도구SHA 미제공·독립실행주장0. 기존비관리자5/7은이력보존. 실제생성시도false·IPC/AI/retry0, r1/151/도구변경·진단재실행0. 다음은staging생성만별도승인, 설치승인아님. 신규SID/Batch토큰/GROUP/설치readback/Job독점은deferred·runtimeHOLD, V1/MANUAL/A HOLD유지. 실제staging/승인/계정/ACL/Task/설치/로그인/IPC/Push0. 상세 Discord_DedicatedR1_InstallPreparation_20261027.md.
+
 ## 2026-10-27 Issue66 전용 r1 설치 사전 준비 — 비관리자5PASS/7HOLD, 실제 변경0
 
 사전 준비 커밋 `862473f7e66f010acafbe7a99750200fa55a2a64`, [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434754454). LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
