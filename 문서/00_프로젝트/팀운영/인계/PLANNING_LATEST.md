@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-27 — Session0 V2 r9 패키지766/767 완성, 실설치 별도 승인
+
+- Codex [Issue #66 V2 r9 구현 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6430994946): V2 후보 핵심8개 구성요소 구현, `Session0V2Candidate20261027-r9.zip` **15,254,406 bytes**, payload **766**, ZIP entry **767(Manifest1 포함)**. SHA256 **Installer `1a1d671d1cf86aab56c9c2392ed4ba35a8240e348134e6a467f8eb8ec81f17a0`, Manifest `250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e`, ZIP `a4a652bdf73c9a1007bd1e761ae539d3459896b46d8a021fa1459012a1d15c41`**. r1~r8은 superseded/미승인. runtime18 PASS는 r4→r9 SHA 동일5모듈의 결과 재사용. 신규 Core84 PASS/0 FAIL, final contract9 PASS, builder2 PASS. 기존 성공 통합검사 반복 없음. `approved=false/auto_start=false/FAKE_ONLY/schema2` 유지.
+- 원격 미푸시 Codex `codex/discord-usage-diagnostics-20261026` local 구현 `62578e5174d208dd4e83ebe23c2ac438303eb478`, 완료 문서 `53fb709d171b532de2262545f6f8462621f2ce6f`. 기존 V1 BotSID1008 Disabled·보호 설치 root·Install1/cleanup 기록·`REFERENCE_VERIFICATION_HOLD` 불변; WorkerSID1007/서비스 인증/CODEX_HOME/OnBoot2/운영 봇·아트/SQLite/Unity·Game/Save/main 불변. V2 아직 실제 설치·OS IPC·A 활성화 미승인.
+- 후속은 **정확 r9 SHA/실제 실행계정/Task·Pipe·새 root 부재/기존 Worker1007 권한 및 유휴·OnBoot SHA 등 관리자 preflight 먼저**. Windows OS SDDL readback/LSA/Scheduler/Job·실 IPC는 기존 off-line PASS와 혼동하지 말 것. 대표가 새 r9 후보 설치를 별도 명시 승인하고 직접 PowerShell에서 로컬 보안 입력한 뒤에만 V2 전용 계정/Disabled·trigger0·FAKE_ONLY 신규 task 최소 설치 단1회. 부분/unknown 실패 시 HOLD·실행 승인 재사용/자동삭제/재시도 금지. **설치 후 FAKE_ONLY 계정 간 IPC1회는 또 별도 승인**, 이후 실Discord/모델/official usage/A도 별도.
+- 기획 운영 정본 `docs/planning` commit `8b1aeec9200ca71bd8c1f883c1afac3c20e6f6bb`.
+
+---
+
 # PLANNING / 2026-10-27 — V1 HOLD 보존, V2 독립 시험 후보의 오프라인 구현 우선
 
 - Codex [Issue #66 V1 참조HOLD 대안 비교](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429561131)에서 **V2 완전 새 namespace 후보 구현 우선** 권고: V1 비활성 BotSID1008/관리자 code root/855 원본·Install1소비·모든 증거 보존. Restart Manager `RmStartSession/RegisterResources/GetList/EndSession`은 현재 등록 파일 사용자 탐색 보조 수단일 뿐 간접·과거/누락PID 참조의 무해함 보증 아님; 실제 RM 사용0. 기존 Cleanup 재시도·삭제 금지.
