@@ -1,0 +1,52 @@
+{
+  "failed": 0,
+  "actual_workers": 0,
+  "native_calls": 0,
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "adapter-idle-uses-shared-query"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-enabled-user-tasks-two"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-group-empty-user-resolves-with-membership"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-unrelated-group-no-conflict"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-group-unknown-hold-no-secret"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-disabled-running-conflict"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-eleven-processes-busy"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-denied-real-code-no-idle-pass"
+    },
+    {
+      "status": "PASS",
+      "name": "adapter-no-allowed-pid-bypass"
+    },
+    {
+      "status": "PASS",
+      "name": "installer-staging-before-password-and-core"
+    },
+    {
+      "status": "PASS",
+      "name": "probe-original-sha-preserved"
+    }
+  ],
+  "passed": 11
+}

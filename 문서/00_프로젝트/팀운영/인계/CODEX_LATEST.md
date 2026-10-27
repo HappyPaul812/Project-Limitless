@@ -1,3 +1,10 @@
+## 2026-10-27 Issue66 native staging 구현·새 V2 r11 — 78PASS / 실제 Worker HOLD
+
+원본Workerprobe SHA0fa7933f… 및 helperd6471b2b… 불변 확인. 현재admin=false·관리자단발결과미수신으로유휴HOLD, 기존PASS6/855/19전수/성공suite반복0. Worker전용관리자한줄명령은 Discord_V2_NewPackage_Staging_20261027.md. 기존Worker종료/인증/권한변경0.
+
+SECURITY_ATTRIBUTES 생성DACL+Owner/Group/DACL·부모handle/finalpath/fileID/NTFS/reparse/hardlink/ADS/정확집합·SHA/readback·설치직전재검증 native구현. 같은Create/Verify fakeFS60PASS, Worker공통조회결합11PASS, 새실물패키지7PASS=78/0FAIL. Native보호staging생성/검증 호출0·실측미검증. 최종새후보Temp/Session0V2Candidate20261027-r11, package13f746811f8a4b7da4c1bc3402c67f41, payload769+Manifest1/ZIP770/15,270,008bytes. r9기존766유지(3수정)+3추가, 삭제0. r10중간후보superseded/보존. schema2/approved=false/auto_start=false/FAKE_ONLY. Installer eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2 / Manifest e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0 / ZIP 0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0.
+
+실제staging경로예정 C:\Program Files\LimitlessV2Staging20261027\13f746811f8a4b7da4c1bc3402c67f41\Bundle. 실제생성·배치·계정/Task/ACL·설치/IPC/승인파일0. V1참조HOLD/MANUAL/A·Worker1007/인증/CODEX_HOME/OnBoot2/봇아트/운영SQLite/Unity/Save보존. 다음은Worker관리자JSON판독+정확r11SHA의별도staging생성승인/실측readback→다시단발설치승인→별도IPC승인. 부분실패보존/HOLD/자동재시도·삭제·권한완화0. Evidence/Session0V2R11_20261027/FinalProof·전체Manifest/파일별SHA·r9diff. branch codex/discord-usage-diagnostics-20261026 / 기준124be621, 실제마감commit Issue66후속참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 HOLD2 원인 수정·계획 완료 — 실측 HOLD 유지
 
 기존3a5803a2 재사용·PASS6재검사0. 빈UserId NTAccount(string)에서 동일ArgumentException/-2147024809 합성재현; 당시Task/인수는원본누락으로확정불가. 원래조회함수 빈인수HOLD/함수·자료형·길이기록/counter범위수정. 별도Worker전용query가process/task/lease를분리, 실제SID1007유휴는관리자결과대기. 신규46PASS/0FAIL(fake)·native0. staging새경로 ProgramFiles/LimitlessV2Staging20261027/R9-01f8… 설계·protected생성DACL/owner/readback/SHA766+1/link/ADS거부모델, native생성기미구현·실제배치미승인. 원본r9ZIP불변·수정소스미포함, 실제설치전별도패키지/SHA결정필요. 최소관리자Worker전용한줄명령·SHA5개는 Discord_V2_Hold2_Resolution_20261027.md. V1/운영보존·MANUAL/A/HOLD유지·계정/ACL/Task/IPC/승인생성0. 원인수정/검증계획범위에서중지. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.

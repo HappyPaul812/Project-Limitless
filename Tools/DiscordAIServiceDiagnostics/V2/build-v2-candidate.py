@@ -42,9 +42,9 @@ def build(destination):
             if digest(data)!=sha:raise ValueError('V2_RUNTIME_COPY_SHA_HOLD')
             payload[name]=data
     for path in sorted(HERE.iterdir()):
-        if path.name=='run-session0-v2-install.ps1':
+        if path.name in ('run-session0-v2-install.ps1','stage-v2-package.ps1'):
             payload['Deployment/'+path.name]=plain(path);continue
-        if path.name.startswith(('test_','build-','run-session0-')) or path.suffix not in ('.cs','.ps1','.py'):continue
+        if path.name.startswith(('test_','build-','run-session0-','prepare-','probe-')) or path.name=='V2StagingPlan.ps1' or path.suffix not in ('.cs','.ps1','.py'):continue
         if path.name=='install-session0-v2.ps1':payload['Deployment/'+path.name]=plain(path)
         else:payload['Code/V2/'+path.name]=plain(path)
     original_diag=HERE.parent
@@ -57,7 +57,7 @@ def build(destination):
     payload['Deployment/OperationalPins.json']=(json.dumps({'LIMITLESS-Art-OnBoot':'bb5ccabf40f7148fca44fdf538bd30cca2590e08122338cc0ae1c0d1836ab579','LIMITLESS-Bot-OnBoot':'e0c74168b935aa5d3fa418d65d66e03e49abeb1179975586c0ead4afd5b4df99'},sort_keys=True,indent=2)+'\n').encode()
     # 관리자 설치는 mutable candidate의 파일을 다시 compile하지 않고 검증한 bytes만 사용합니다.
     usings=set();bodies=[]
-    for name in ('V2Contract.cs','V2Publish.cs','V2PolicyReadback.cs','TrialAccountPolicy.cs'):
+    for name in ('V2Contract.cs','V2Publish.cs','V2PolicyReadback.cs','TrialAccountPolicy.cs','V2Staging.cs'):
         lines=payload['Code/V2/'+name].decode('utf-8-sig').splitlines();body=[]
         for line in lines:
             if re.fullmatch(r'using [A-Za-z0-9_.]+;',line.strip()):usings.add(line.strip())

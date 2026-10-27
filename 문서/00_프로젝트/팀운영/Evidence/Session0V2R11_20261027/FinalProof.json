@@ -1,0 +1,49 @@
+{
+  "zip_entries": 770,
+  "current_codex_admin": false,
+  "payload_count": 769,
+  "source_payload_mismatches": [],
+  "actual_ipc": 0,
+  "package_id": "13f746811f8a4b7da4c1bc3402c67f41",
+  "exit_nodes": 0,
+  "zip_bytes": 15270008,
+  "r9_diff": {
+    "changed": [
+      "Code/V2/InstallAssembly.cs",
+      "Code/V2/V2WindowsAdapter.ps1",
+      "Deployment/install-session0-v2.ps1"
+    ],
+    "manifest_changed": true,
+    "runtime_unchanged": 741,
+    "removed": [],
+    "added": [
+      "Code/V2/V2Staging.cs",
+      "Code/V2/V2WorkerQuery.ps1",
+      "Deployment/stage-v2-package.ps1"
+    ]
+  },
+  "worker_integration_passed": 11,
+  "candidate": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r11",
+  "v1_reference_status": "REFERENCE_VERIFICATION_HOLD",
+  "native_staging_calls": 0,
+  "parse_errors": 0,
+  "worker_actual_status": "HOLD_WAIT_ADMIN_TARGETED_RESULT",
+  "passed": 78,
+  "staging_passed": 60,
+  "actual_workers": 0,
+  "actual_tasks": 0,
+  "actual_sha": {
+    "manifest_sha256": "e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0",
+    "installer_sha256": "eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2",
+    "zip_sha256": "0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0"
+  },
+  "approval_files_created": 0,
+  "actual_accounts": 0,
+  "status": "NEW_V2_R11_OFFLINE_PASS_NOT_APPROVED_NOT_INSTALLED",
+  "probe_helper_sha256": "d6471b2b2427da3b94b9724c45e367408a1846d1ec230a4957c45c0e01265a18",
+  "probe_original_sha256": "0fa7933f00ad42ab7fcd20dc2d07063d6b076aa72718841948aab57500d85307",
+  "actual_installs": 0,
+  "failed": 0,
+  "package_passed": 7,
+  "actual_staging_created": 0
+}

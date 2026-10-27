@@ -1,35 +1,11 @@
-# 실제 adapter는 별도 승인된 Install에서만 생성합니다. 오프라인 시험은 이 함수를 호출하지 않습니다.
+# 설치 시에는 core가 별도 lease를 획득/유지합니다. 이 함수는 계정·프로세스·작업 조회만 공유합니다.
 function Get-V2WorkerSnapshot([string]$WorkerSid,[int[]]$AllowedPids=@()){
- $known=$true;$count=0;$launchers=0;$codes=@();$stage='SID';$shape=$null;$taskCounter=@{count=0}
- try{
-  if(-not [LimitlessV2Contract]::Sid($WorkerSid)){throw 'V2_WORKER_SID_HOLD'}
-  $stage='ACCOUNT_LOOKUP';$accounts=@(Get-CimInstance Win32_UserAccount -Filter "SID='$WorkerSid'" -ErrorAction Stop)
-  if($accounts.Count -ne 1){throw 'V2_WORKER_ACCOUNT_QUERY_HOLD'}
-  $seen=@{}
-  $stage='PROCESS_ASSOCIATION'
-  foreach($session in Get-CimAssociatedInstance -InputObject $accounts[0] -Association Win32_LoggedOnUser -ResultClassName Win32_LogonSession -ErrorAction Stop){
-   foreach($p in Get-CimAssociatedInstance -InputObject $session -Association Win32_SessionProcess -ResultClassName Win32_Process -ErrorAction Stop){$seen[[int]$p.ProcessId]=$true}
-  }
-  foreach($id in $seen.Keys){if($id -notin $AllowedPids){$count++}}
-  if($AllowedPids.Count -gt 0 -and @($AllowedPids|Where-Object{-not $seen.ContainsKey($_)}).Count){$known=$false}
-  $stage='TASK_ENUMERATION';$s=New-Object -ComObject 'Schedule.Service';$s.Connect()
-  function Visit-V2Tasks($Folder){
-   foreach($t in $Folder.GetTasks(1)){
-    $u=$t.Definition.Principal.UserId
-    # Group principal/빈 인수를 사용자 이름으로 변환하지 않습니다. 불명은 HOLD합니다.
-    $taskCounter.shape=@{user_type=if($null -eq $u){'null'}else{$u.GetType().FullName};user_length=([string]$u).Length;group_length=([string]$t.Definition.Principal.GroupId).Length;logon_type=[int]$t.Definition.Principal.LogonType}
-    if($u -isnot [string] -or [string]::IsNullOrWhiteSpace($u)){throw 'V2_TASK_USER_PRINCIPAL_UNKNOWN_HOLD'}
-    $sid=if($u -like 'S-1-*'){$u}else{
-     $taskCounter.function='NTAccount.ctor(string)';$account=[Security.Principal.NTAccount]::new($u)
-     $taskCounter.function='NTAccount.Translate(Type)';$account.Translate([Security.Principal.SecurityIdentifier]).Value
-    }
-    if($sid -ceq $WorkerSid -and $t.Enabled -and $t.Path -cne ('\'+[LimitlessV2Contract]::TaskName)){$taskCounter.count++}
-   }
-   foreach($f in $Folder.GetFolders(0)){Visit-V2Tasks $f}
-  }
-  Visit-V2Tasks ($s.GetFolder('\'));$launchers=$taskCounter.count
- }catch{$known=$false;$codes=[LimitlessV2Contract]::ErrorCodes($_.Exception)}
- return @{known=$known;foreign_processes=$count;other_launchable_tasks=$launchers;errors=$codes;stage=$stage;failed_function=if($known){$null}else{$taskCounter.function};argument_shape=$taskCounter.shape}
+ if($AllowedPids.Count -ne 0){return @{known=$false;foreign_processes=$null;other_launchable_tasks=$null;errors=@{stage='INSTALL_NO_ALLOWED_PROCESS_EXCEPTION'}}}
+ $provider=New-V2WorkerReadOnlyProvider
+ # Consume 이전에 조회하고 이후에는 core의 소유 lease와 충돌하지 않게 lease 상태를 여기서 판정하지 않습니다.
+ $provider.Lease={'ABSENT'}
+ $q=Invoke-V2WorkerQuery $WorkerSid $provider
+ return @{known=($q.process_query_known -and $q.task_query_known);foreign_processes=$q.foreign_processes;other_launchable_tasks=$q.other_launchable_tasks;errors=$q.errors;stage=$q.stage;lease_checked_by_install_core=$true}
 }
 function New-V2WindowsAdapter([string]$Bundle,[Security.SecureString]$NewBotPassword,[pscredential]$WorkerCredential,[hashtable]$VerifiedPayloads=@{}){
  $preservation=if($VerifiedPayloads.ContainsKey('Deployment/V1Preservation.json')){[Text.Encoding]::UTF8.GetString($VerifiedPayloads['Deployment/V1Preservation.json'])|ConvertFrom-Json -AsHashtable}else{@{}}

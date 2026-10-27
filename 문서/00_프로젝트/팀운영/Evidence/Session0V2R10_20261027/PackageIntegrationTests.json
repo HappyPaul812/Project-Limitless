@@ -1,0 +1,49 @@
+{
+  "actual_installs": 0,
+  "actual_staging_created": false,
+  "archive": {
+    "installed": false,
+    "automatic_retries": 0,
+    "package_id": "0435d675f4cc47a199123ceeafa3f3bc",
+    "created": false,
+    "status": "STAGING_ARCHIVE_OFFLINE_PASS_NOT_CREATED",
+    "schema": 2,
+    "payload_count": 769,
+    "zip_entries": 770
+  },
+  "passed": 4,
+  "sealed_inspect": {
+    "files": 769,
+    "approved": false,
+    "status": "V2_CANDIDATE_INSPECT_ONLY",
+    "system_changes": 0,
+    "manifest_sha256": "e92f564d387dee79895836efd06fc8e65e6dfebbc2caabd96b6ad9b57a7eaae8"
+  },
+  "native_calls": 0,
+  "wrapper": {
+    "schema": 2,
+    "installer_sha256": "eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2",
+    "status": "V2_PACKAGE_INSPECT_PASS_NOT_INSTALLED",
+    "zip_sha256": "d50ebf0093bac7f49fd345744863336421d3d9a0dc048410a93177f7481a1f78",
+    "system_changes": 0,
+    "approved": false,
+    "automatic_retries": 0,
+    "manifest_sha256": "e92f564d387dee79895836efd06fc8e65e6dfebbc2caabd96b6ad9b57a7eaae8"
+  },
+  "failed": 0,
+  "unapproved_create_gate": {
+    "errors": [
+      {
+        "type": "System.Management.Automation.RuntimeException",
+        "hresult": -2146233087
+      }
+    ],
+    "partial_assets_preserve_no_retry": true,
+    "installed": false,
+    "automatic_retries": 0,
+    "stage": "PIN_ARCHIVE",
+    "created": false,
+    "status": "HOLD",
+    "schema": 2
+  }
+}

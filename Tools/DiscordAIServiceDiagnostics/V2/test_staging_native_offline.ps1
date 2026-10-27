@@ -1,0 +1,38 @@
+param([string]$Output)
+$ErrorActionPreference='Stop'
+Add-Type -Path @((Join-Path $PSScriptRoot 'V2Contract.cs'),(Join-Path $PSScriptRoot 'V2Staging.cs'),(Join-Path $PSScriptRoot 'test_V2StagingFake.cs'))
+$results=[Collections.Generic.List[object]]::new()
+function Need($ok){if(-not $ok){throw 'ASSERT'}}
+function Test($name,[scriptblock]$body){try{& $body;$results.Add(@{name=$name;status='PASS'})}catch{$results.Add(@{name=$name;status='FAIL';type=$_.Exception.GetType().FullName})}}
+function Hash([byte[]]$b){[LimitlessV2Staging]::Hash($b)}
+function Fixture([string]$ZipFault=''){
+ $files=@{'Deployment/install-session0-v2.ps1'=[Text.Encoding]::UTF8.GetBytes('FIXTURE_INSTALLER')}
+ foreach($n in 1..8){$files['Code/V2/fake'+$n+'.txt']=[Text.Encoding]::UTF8.GetBytes('FAKE'+$n)}
+ $sha=@{};foreach($n in $files.Keys){$sha[$n]=Hash $files[$n]}
+ $id='a'*32;$m=@{schema=2;kind='LIMITLESS_SESSION0_V2_CANDIDATE';package_id=$id;epoch=('20261027-v2-'+$id);approval_id=('v2-install-'+$id);approved=$false;auto_start=$false;execution_mode='FAKE_ONLY';max_seconds=90;bot_account=[LimitlessV2Contract]::Account;code_root=[LimitlessV2Contract]::CodeRoot;state_root=[LimitlessV2Contract]::StateRoot;task_name=[LimitlessV2Contract]::TaskName;pipe_name=('LimitlessPlanningV2-'+$id);boot_approval_sha256=[LimitlessV2Contract]::BootSha;files_sha256=$sha}
+ $raw=[Text.UTF8Encoding]::new($false).GetBytes(($m|ConvertTo-Json -Depth 10 -Compress));$files['HostManifest.json']=$raw
+ switch($ZipFault){'EXTRA'{$files['Code/extra.txt']=[byte[]]@(1)};'MISSING'{$files.Remove('Code/V2/fake1.txt')};'CORRUPT'{$files['Code/V2/fake1.txt']=[byte[]]@(1)};'TRAVERSAL'{$files.Remove('Code/V2/fake1.txt');$files['Code/../escape']=[byte[]]@(1)};'ADS'{$files.Remove('Code/V2/fake1.txt');$files['Code/f:ads']=[byte[]]@(1)};'DIRECTORY'{$files.Remove('Code/V2/fake1.txt');$files['Code/folder/']=[byte[]]@(1)}}
+ $ms=[IO.MemoryStream]::new();$z=[IO.Compression.ZipArchive]::new($ms,[IO.Compression.ZipArchiveMode]::Create,$true)
+ foreach($n in $files.Keys){$e=$z.CreateEntry($n);if($ZipFault -eq 'SYMLINK' -and $n -eq 'Code/V2/fake1.txt'){$e.ExternalAttributes=[BitConverter]::ToInt32([BitConverter]::GetBytes(([int64]0xA1FF -shl 16)),0)};$s=$e.Open();try{$s.Write($files[$n])}finally{$s.Dispose()}}
+ if($ZipFault -eq 'DUPLICATE'){$e=$z.CreateEntry('code/v2/FAKE1.txt');$s=$e.Open();$s.WriteByte(1);$s.Dispose()}
+ $z.Dispose();$bytes=$ms.ToArray();$ms.Dispose()
+ @{zip=$bytes;ms=(Hash $raw);ins=(Hash $files['Deployment/install-session0-v2.ps1']);zs=(Hash $bytes);count=9;bundle=([LimitlessV2Staging]::Root+'\'+$id+'\Bundle')}
+}
+function Create($fs,$f){[LimitlessV2Staging]::Create($fs,[V2FakeStageFs]::Source,$f.ms,$f.ins,$f.zs,$f.count)}
+function Verify($fs,$f){[LimitlessV2Staging]::Verify($fs,$f.bundle,$f.ms,$f.ins,$f.zs,$f.count)}
+Test 'same-core-create-and-install-reverify-no-native' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$s=Create $fs $f;Need ($s.PayloadCount -eq 9 -and $s.Bytes.Count -eq 10);$s.Dispose();Need ($fs.Live -eq 0);$v=Verify $fs $f;$v.Recheck();$v.Dispose();Need ($fs.Live -eq 0 -and $fs.FilesCreated -eq 11);Need (@($fs.CreationDescriptors|Where-Object{$_ -notin @([LimitlessV2Staging]::DirSd,[LimitlessV2Staging]::FileSd)}).Count -eq 0)}
+foreach($fault in @('EXTRA','MISSING','CORRUPT','TRAVERSAL','ADS','DIRECTORY','SYMLINK','DUPLICATE')){Test ('zip-reject-'+$fault) {$f=Fixture $fault;$fs=[V2FakeStageFs]::new($f.zip);$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.MutationCalls -eq 0 -and $fs.Live -eq 0)}}
+foreach($pin in @('ms','ins','zs')){Test ('pin-reject-'+$pin) {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$f[$pin]='0'*64;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.MutationCalls -eq 0 -and $fs.Live -eq 0)}}
+foreach($fault in @('TARGET_HARDLINK','TARGET_ADS','TARGET_REPARSE','TARGET_OWNER','TARGET_GROUP','TARGET_WRITER','TARGET_UNPROTECTED','TARGET_CALLBACK','TARGET_PENDING','TARGET_FINALPATH','TARGET_NONNTFS','CORRUPT_COPY','EXTRA_ENTRY','OUTSIDE_ENTRY','EXISTS_DENIED','READ_DENIED')){Test ('native-adapter-fault-'+$fault) {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$fs.Fault=$fault;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.Live -eq 0)}}
+foreach($n in 1..10){Test ('partial-write-no-retry-'+$n) {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$fs.Fault='MUTATION_FAIL';$fs.FailNumber=$n;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.MutationCalls -eq $n -and $fs.Live -eq 0)}}
+foreach($n in 1..7){Test ('handle-open-denied-'+$n) {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$fs.Fault='OPEN_DENIED';$fs.FailNumber=$n;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.Live -eq 0)}}
+foreach($fault in @('OWNER','WRITER','REPARSE','PATH','ID')){Test ('ancestor-or-id-'+$fault) {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);switch($fault){'OWNER'{$fs.Nodes['C:\Program Files'].Sd='O:BUG:SYD:P(A;;FA;;;BA)'};'WRITER'{$fs.Nodes['C:\Program Files'].Sd+='(A;;FA;;;BU)'};'REPARSE'{$fs.Nodes['C:\Program Files'].Reparse=$true};'PATH'{$fs.Nodes['C:\Program Files'].Path='C:\OTHER'}};$caught=$false;$s=$null;try{$s=Create $fs $f;if($fault -eq 'ID'){$fs.Nodes[$f.bundle].Id='CHANGED';$s.Recheck()}}catch{$caught=$true}finally{if($s){$s.Dispose()}};Need ($caught -and $fs.Live -eq 0)}}
+Test 'duplicate-package-no-second-create' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$s=Create $fs $f;$s.Dispose();$before=$fs.MutationCalls;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.MutationCalls -eq $before -and $fs.Live -eq 0)}
+Test 'source-bytes-preserved' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$before=Hash $fs.Nodes[[V2FakeStageFs]::Source].Bytes;$s=Create $fs $f;$s.Dispose();Need ((Hash $fs.Nodes[[V2FakeStageFs]::Source].Bytes) -ceq $before)}
+Test 'source-hardlink-before-copy-hold' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$fs.Nodes[[V2FakeStageFs]::Source].Links=2;$caught=$false;try{$s=Create $fs $f;$s.Dispose()}catch{$caught=$true};Need ($caught -and $fs.MutationCalls -eq 0)}
+Test 'install-revalidation-corrupt-file-hold' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$s=Create $fs $f;$s.Dispose();$fs.Nodes[$f.bundle+'\Code\V2\fake1.txt'].Bytes=[byte[]]@(7);$caught=$false;try{$v=Verify $fs $f;$v.Dispose()}catch{$caught=$true};Need ($caught -and $fs.Live -eq 0)}
+Test 'install-revalidation-rejects-unprotected-temp-path' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$f.bundle='F:\Temp\candidate';$caught=$false;try{$v=Verify $fs $f;$v.Dispose()}catch{$caught=$true};Need ($caught -and $fs.Opens -eq 0)}
+foreach($path in @('C:\Program Files\LimitlessV2Staging20261027\..\outside','C:\Program Files\LimitlessV2Staging20261027\file:ads','C:\outside','\\server\share\file')){Test ('native-write-scope-reject-'+$path) {$caught=$false;try{[V2NativeStageFs]::WriteScope($path)}catch{$caught=$true};Need $caught}}
+Test 'verify-package-parent-owner-before-zip-read' {$f=Fixture;$fs=[V2FakeStageFs]::new($f.zip);$s=Create $fs $f;$s.Dispose();$package=Split-Path $f.bundle;$fs.Nodes[$package].Sd=$fs.Nodes[$package].Sd.Replace('O:BA','O:BU');$caught=$false;try{$v=Verify $fs $f;$v.Dispose()}catch{$caught=$true};Need ($caught -and $fs.Live -eq 0)}
+$summary=@{passed=@($results|Where-Object status -eq 'PASS').Count;failed=@($results|Where-Object status -eq 'FAIL').Count;tests=@($results);native_calls=0;actual_staging_created=$false}
+$json=$summary|ConvertTo-Json -Depth 8;if($Output){[IO.File]::WriteAllText($Output,$json,[Text.UTF8Encoding]::new($false))};$json

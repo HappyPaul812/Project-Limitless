@@ -36,13 +36,14 @@ $tok=$null;$err=$null;$tree=[Management.Automation.Language.Parser]::ParseFile((
 . ([scriptblock]::Create($tree.Find({param($n)$n -is [Management.Automation.Language.FunctionDefinitionAst] -and $n.Name -eq 'Get-V2WorkerSnapshot'},$true).Extent.Text))
 function Get-CimInstance {param($Class,$Filter,$ErrorAction)@{SID=$worker}}
 function Get-CimAssociatedInstance {param($InputObject,$Association,$ResultClassName,$ErrorAction)if($ResultClassName -eq 'Win32_LogonSession'){@{id='FAKE'}}else{@()}}
+function Get-LocalGroupMember {param($SID,$ErrorAction)[pscustomobject]@{ObjectClass='Group';SID=[pscustomobject]@{Value='S-1-5-32-545'}}}
 function New-Object {param($ComObject)
  $folder=[pscustomobject]@{}
  $folder|Add-Member ScriptMethod GetTasks {param($flags)$fixtureTasks}
  $folder|Add-Member ScriptMethod GetFolders {param($flags)@()}
  $scheduler=[pscustomobject]@{folder=$folder};$scheduler|Add-Member ScriptMethod Connect {};$scheduler|Add-Member ScriptMethod GetFolder {param($path)$this.folder};$scheduler
 }
-Test 'original-function-empty-principal-hold-with-shape' {$fixtureTasks=@(@{Definition=@{Principal=@{UserId='';GroupId='S-1-5-32-545';LogonType=4}};Enabled=$true;Path='fake'});$r=Get-V2WorkerSnapshot $worker;Need (-not $r.known -and $r.argument_shape.user_length -eq 0 -and $r.stage -ceq 'TASK_ENUMERATION')}
+Test 'original-function-empty-principal-hold-with-shape' {$fixtureTasks=@(@{Definition=@{Principal=@{UserId='';GroupId='S-1-5-32-545';LogonType=4}};Enabled=$true;Path='fake'});$r=Get-V2WorkerSnapshot $worker;Need (-not $r.known -and $r.errors[0].argument_shape.user_length -eq 0 -and $r.stage -ceq 'TASK_PRINCIPAL_RESOLUTION')}
 Test 'original-function-memory-task-counter-two' {$fixtureTasks=@(1..2|ForEach-Object{@{Definition=@{Principal=@{UserId=$worker;GroupId='';LogonType=1}};Enabled=$true;Path='fake'}});$r=Get-V2WorkerSnapshot $worker;Need ($r.known -and $r.other_launchable_tasks -eq 2)}
 $good=@{path='C:\Program Files\LimitlessV2Staging20261027\R9-01f8a36c9bfe4241b24b7eaa6caaddc2';created_new=$true;source_preserved=$true;parent_owner_verified=$true;parent_write_safe=$true;handle_ancestors_pinned=$true;creation_sddl='O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)';zip_sha='a4a652bdf73c9a1007bd1e761ae539d3459896b46d8a021fa1459012a1d15c41';manifest_sha='250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e';payload_count=766;entry_count=767;exact_set=$true;all_payload_sha=$true;all_owners_ba_sy=$true;all_dacl_exact=$true;readback_verified=$true;reparse_count=0;hardlink_count_max=1;ads_count=0;unexpected_count=0;case_alias_count=0;exclusive_source_bytes=$true;atomic_create_new=$true;install_revalidation_required=$true}
 Test 'staging-fake-good-no-create' {$r=Test-V2StagingProof $good;Need ($r.status -ceq 'OFFLINE_PLAN_PASS_NOT_CREATED' -and -not $r.created -and -not $r.native_verified)}

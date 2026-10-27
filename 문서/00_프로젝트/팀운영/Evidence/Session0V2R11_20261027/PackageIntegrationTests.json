@@ -1,0 +1,68 @@
+{
+  "actual_staging_created": false,
+  "source_mismatches": [],
+  "candidate": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r11",
+  "wrapper": {
+    "system_changes": 0,
+    "approved": false,
+    "installer_sha256": "eb321fc5ee0426cdd7e1c8f989f05a5e2ec55e6d1887789f0e16490598311bc2",
+    "status": "V2_PACKAGE_INSPECT_PASS_NOT_INSTALLED",
+    "automatic_retries": 0,
+    "schema": 2,
+    "zip_sha256": "0250f736b44798d3ba73b5d9674fc154fa233bc74e3b972f85931c2aa59a41d0",
+    "manifest_sha256": "e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0"
+  },
+  "failed": 0,
+  "approval_files_created": 0,
+  "archive": {
+    "zip_entries": 770,
+    "package_id": "13f746811f8a4b7da4c1bc3402c67f41",
+    "created": false,
+    "payload_count": 769,
+    "status": "STAGING_ARCHIVE_OFFLINE_PASS_NOT_CREATED",
+    "automatic_retries": 0,
+    "installed": false,
+    "schema": 2
+  },
+  "sealed_inspect": {
+    "manifest_sha256": "e8d6ed623934a577f88a5bb99ebafc78a2a469c10485a0c648c40dd457356dc0",
+    "status": "V2_CANDIDATE_INSPECT_ONLY",
+    "approved": false,
+    "system_changes": 0,
+    "files": 769
+  },
+  "native_calls": 0,
+  "actual_installs": 0,
+  "passed": 7,
+  "r9_diff": {
+    "changed": [
+      "Code/V2/InstallAssembly.cs",
+      "Code/V2/V2WindowsAdapter.ps1",
+      "Deployment/install-session0-v2.ps1"
+    ],
+    "manifest_changed": true,
+    "runtime_unchanged": 741,
+    "removed": [],
+    "added": [
+      "Code/V2/V2Staging.cs",
+      "Code/V2/V2WorkerQuery.ps1",
+      "Deployment/stage-v2-package.ps1"
+    ]
+  },
+  "unapproved_create_gate": {
+    "partial_assets_preserve_no_retry": true,
+    "errors": [
+      {
+        "hresult": -2146233087,
+        "type": "System.Management.Automation.RuntimeException"
+      }
+    ],
+    "created": false,
+    "stage": "PIN_ARCHIVE",
+    "status": "HOLD",
+    "automatic_retries": 0,
+    "installed": false,
+    "schema": 2
+  },
+  "r9_approval_mix_rejected": true
+}

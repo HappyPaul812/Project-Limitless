@@ -1,0 +1,248 @@
+{
+  "actual_staging_created": false,
+  "failed": 0,
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "same-core-create-and-install-reverify-no-native"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-EXTRA"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-MISSING"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-CORRUPT"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-TRAVERSAL"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-ADS"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-DIRECTORY"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-SYMLINK"
+    },
+    {
+      "status": "PASS",
+      "name": "zip-reject-DUPLICATE"
+    },
+    {
+      "status": "PASS",
+      "name": "pin-reject-ms"
+    },
+    {
+      "status": "PASS",
+      "name": "pin-reject-ins"
+    },
+    {
+      "status": "PASS",
+      "name": "pin-reject-zs"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_HARDLINK"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_ADS"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_REPARSE"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_OWNER"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_GROUP"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_WRITER"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_UNPROTECTED"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_CALLBACK"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_PENDING"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_FINALPATH"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-TARGET_NONNTFS"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-CORRUPT_COPY"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-EXTRA_ENTRY"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-OUTSIDE_ENTRY"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-EXISTS_DENIED"
+    },
+    {
+      "status": "PASS",
+      "name": "native-adapter-fault-READ_DENIED"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-1"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-2"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-3"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-4"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-5"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-6"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-7"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-8"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-9"
+    },
+    {
+      "status": "PASS",
+      "name": "partial-write-no-retry-10"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-1"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-2"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-3"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-4"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-5"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-6"
+    },
+    {
+      "status": "PASS",
+      "name": "handle-open-denied-7"
+    },
+    {
+      "status": "PASS",
+      "name": "ancestor-or-id-OWNER"
+    },
+    {
+      "status": "PASS",
+      "name": "ancestor-or-id-WRITER"
+    },
+    {
+      "status": "PASS",
+      "name": "ancestor-or-id-REPARSE"
+    },
+    {
+      "status": "PASS",
+      "name": "ancestor-or-id-PATH"
+    },
+    {
+      "status": "PASS",
+      "name": "ancestor-or-id-ID"
+    },
+    {
+      "status": "PASS",
+      "name": "duplicate-package-no-second-create"
+    },
+    {
+      "status": "PASS",
+      "name": "source-bytes-preserved"
+    },
+    {
+      "status": "PASS",
+      "name": "source-hardlink-before-copy-hold"
+    },
+    {
+      "status": "PASS",
+      "name": "install-revalidation-corrupt-file-hold"
+    },
+    {
+      "status": "PASS",
+      "name": "install-revalidation-rejects-unprotected-temp-path"
+    },
+    {
+      "status": "PASS",
+      "name": "native-write-scope-reject-C:\\Program Files\\LimitlessV2Staging20261027\\..\\outside"
+    },
+    {
+      "status": "PASS",
+      "name": "native-write-scope-reject-C:\\Program Files\\LimitlessV2Staging20261027\\file:ads"
+    },
+    {
+      "status": "PASS",
+      "name": "native-write-scope-reject-C:\\outside"
+    },
+    {
+      "status": "PASS",
+      "name": "native-write-scope-reject-\\\\server\\share\\file"
+    },
+    {
+      "status": "PASS",
+      "name": "verify-package-parent-owner-before-zip-read"
+    }
+  ],
+  "native_calls": 0,
+  "passed": 60
+}
