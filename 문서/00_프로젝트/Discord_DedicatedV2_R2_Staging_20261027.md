@@ -1,4 +1,31 @@
-# Issue #66 — r2 보호 Staging 준비 PASS / 대표 관리자 실행 대기
+# Issue #66 — r2 보호 Staging 생성·검증 PASS / 미설치
+
+## 대표 관리자 실행 결과 판독
+
+[Issue #66 실제 Stage 성공 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438760726). 제공 JSON 재직렬화 저장본 SHA256 `9233a98a61d6515f369459e28b1ab2dddb56ed75172ba3fa5adc87775941c5ad`, 관리자 원본 해시 아님. 최종 로컬 문서 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+**R2_STAGING_CREATED_VERIFIED_NOT_INSTALLED — 보호 Stage 생성·검증 PASS / installed=false**입니다. 대표 제공 JSON을 [AdminStageUserProvided.json](팀운영/Evidence/DedicatedV2R2Staging20261027/AdminStageUserProvided.json)에 값 동일 재직렬화했습니다. 원본 디스크 JSON 경로·실행시각·도구SHA 필드는 제공되지 않았으므로 독립 native 재조회/원본 바이트 해시 검증으로 표현하지 않습니다. 다음 표는 대표가 제공한 실제 관측 필드이며 예정 계약과 구분합니다.
+
+| 보고 항목 | 관리자 제공 결과 |
+|---|---|
+| Bundle | `C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\3effaac30bf44760986fee9e6019b283\Bundle` |
+| ZIP | 같은 package의 `Bundle.zip` |
+| Owner / Group | S-1-5-32-544(Administrators) / S-1-5-18(SYSTEM) |
+| Bundle directory SDDL | `O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)` |
+| Manifest file SDDL | `O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)` |
+| Directory FileID / volume | `00730000000311c1` / `ca54aa62` |
+| Bundle 수 / ZIP 포함 생성시도 수 | payload766+Manifest1=767 / file_creation_attempts768 |
+| 전체 metadata·SHA / 정확byte | all_file_metadata_sha_verified=true / exact_bytes_verified=true |
+| r1 보존 / 생성범위 | r1_directory_metadata_preserved=true / writes_restricted_to_r2=true |
+| 계정 / Task / 승인 / IPC·AI / retry | 모두0 |
+
+3SHA와 Package ID도 고정 r2 값과 일치합니다. 디렉터리/FileID·SDDL은 위 관측값이며 전체파일 metadata/SHA·link/ADS/reparse/path·원본과복사본 exact byte 검증은 고정 도구의 성공 반환·명시된 true 필드로 판독합니다. 개별767개 raw inventory를 추가 제공받았다고 주장하지 않습니다. r1 보존은 boundary 쓰기 제한·directory metadata 동일성의 보고 범위이며 r1 전체 파일을 새로 재검사한 결과는 아닙니다.
+
+오류/close-error/부분실패 없이 성공 반환됐고 복구 필요 증거는 없습니다. **Stage1회 완료, 같은 명령 재실행·삭제·자동복구0**. Codex는 이번 판독에서 Stage/시험/Inspect를 반복하지 않고 문서만 갱신했습니다. 아래 실행 명령은 당시 절차 이력으로 보존합니다.
+
+**다음 실제 설치는 별도 승인 필요**: 새 승인ID/소비기록·계정2/Batch권리·보호CodeStateAuth·Task1 범위와 설치직전 Stage 무결성/권한 재검증 절차. 신규SID/유효토큰/GROUP/Session0IPC/Job독점·V1/MANUAL/A/runtime HOLD 유지, 실제계정/Task/승인JSON/설치/로그인/IPC/FakeWorker/AI/usage/Discord/Push0. 설치·시작 없이 중지합니다.
+
+## 이하: Stage 준비·실행 안내 당시 이력
 
 [Issue #66 실제 준비 상태 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438597021), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
 

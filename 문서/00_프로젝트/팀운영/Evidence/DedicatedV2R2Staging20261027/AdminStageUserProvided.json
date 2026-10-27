@@ -1,0 +1,8 @@
+{
+ "zip_sha256":"4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0","kind":"R2_STAGE_ONLY","all_file_metadata_sha_verified":true,"bundle_file_count":767,"volume":"ca54aa62","payload_count":766,"approval_writes":0,"automatic_retries":0,
+ "directory_sddl":"O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)","owner_sid":"S-1-5-32-544","group_sid":"S-1-5-18","r1_directory_metadata_preserved":true,"writes_restricted_to_r2":true,"model_calls":0,
+ "manifest_sha256":"7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976","manifest_file_sddl":"O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)","schema":3,"creation_attempted":true,"file_creation_attempts":768,
+ "installer_sha256":"83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f","exact_bytes_verified":true,"task_calls":0,"ipc_calls":0,
+ "bundle_zip":"C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283\\Bundle.zip","directory_file_id":"00730000000311c1","status":"R2_STAGING_CREATED_VERIFIED_NOT_INSTALLED","action":"Stage","installed":false,
+ "bundle":"C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283\\Bundle","package_id":"3effaac30bf44760986fee9e6019b283","account_calls":0
+}
