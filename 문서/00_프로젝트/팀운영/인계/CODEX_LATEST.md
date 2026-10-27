@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 r2 관리자 읽기 진단 준비 — 17 PASS / Collect 미실행
+
+기준 f6b61621, 최신Issue6439920038 재사용·보호Entry/Result Codex열람거부로 원본판독미완료. 새 R2Readonly/probe-r2-partial.ps1(기본SelfTest/명시Collect) 준비, 신규17PASS0FAIL/C#컴파일·명령구문PASS. Task COM 단계별 GetTask/숨김목록/SD·Action비교·정제이벤트, NetAPI/LSA 신규계정권리, 새설치766 SHA/ACL/Lease/승인소비, OnBoot2·기존SID·보존루트metadata 읽기만. 실제관리자Collect0/설치재실행0/변경0. Task/직접원인/권한·부분파일은 UNKNOWN 결과대기, existing_preserved 보고와 독립감사 분리. 명령·SHA·한계·복구조건 Discord_DedicatedV2_R2_Readonly_20261027.md. 재시도·복구·설치·IPC금지, V1/MANUAL/A/토큰GROUPJob HOLD. LOCAL_COMMITTED / REMOTE_NOT_PUSHED, 최종SHA Issue후속.
 ## 2026-10-27 Issue66 r2 부분 설치 HOLD — 승인 소비됨 / 재실행 금지
 
 대표 결과 install1/consumedtrue/account2(Bot1009·Worker1010)/Task시도1, CREATE_ONLY_DISABLED_TASK에서 MethodInvocationException→InvalidOperationException(-2146233079). Task 등록 및 SDDL/readback 중 직접 실패 위치 미확정·Task 존재/Disabled/그룹권리/파일 최종감사 미완료. Codex 읽기조회 Task AccessDenied(-2147024891), 계정조회 NullReference(-2147467261) → UNKNOWN. 실패를 부재/PASS로 추정하지 않음. 기존보존true는 native 보고·최종감사완료 아님. 설치/Stage/Resume 재시도·삭제·권한완화0, IPC/model/authimport0. 보호 Entry/Result 및 부분자산 보존 후 관리자 읽기전용 감사 필요. 상세 Discord_DedicatedV2_R2_Install_Hold_20261027.md. V1/MANUAL/A/토큰GROUPIPCJob HOLD 유지, 기존 운영변경/Push0. 최종 로컬 SHA Issue 참조.

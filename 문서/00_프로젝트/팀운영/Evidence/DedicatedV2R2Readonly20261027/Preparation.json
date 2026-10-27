@@ -1,0 +1,11 @@
+{
+  "administrator_collect_executed": false,
+  "issue_latest_reviewed": "https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6439920038",
+  "source_commit": "f6b616213c6a77f1ba726d4e27a9b516cfdac97d",
+  "command_parse": "PASS",
+  "protected_entry_result_read": {
+    "reason": "Codex non-admin directory enumeration denied; raw Entry/Result not read",
+    "status": "ACCESS_DENIED"
+  },
+  "script_sha256": "d3e9b499491dae3b6087878c1b40c2b8f4d6b3d96c1b0d8c4847377d621fe407"
+}
