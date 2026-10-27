@@ -1,0 +1,33 @@
+{
+  "descriptor_readback_status": "UNKNOWN",
+  "runtime_status": "HOLD_NEW_TOKEN_GROUP_EXCLUSIVITY_NOT_VERIFIED",
+  "schema": 1,
+  "stage": "PREPARE",
+  "install_calls": 0,
+  "ipc_calls": 0,
+  "model_calls": 0,
+  "result_path": "F:\\study\\codex\\Project-Limitless\\Temp\\DiscordUsageDiagnostics20261026\\Worktree\\문서\\00_프로젝트\\팀운영\\Evidence\\TaskSecurityReadback20261027\\Admin-354b78ca922a41ebb1ff3f4765c96652.json",
+  "automatic_retries": 0,
+  "status": "HOLD",
+  "errors": [
+    {
+      "type": "System.Management.Automation.MethodInvocationException",
+      "hresult": -2146233087
+    },
+    {
+      "type": "System.Management.Automation.MethodInvocationException",
+      "hresult": -2146233087
+    },
+    {
+      "type": "System.Management.Automation.PropertyNotFoundException",
+      "hresult": -2146233087
+    }
+  ],
+  "v1_status": "REFERENCE_VERIFICATION_HOLD",
+  "kind": "R2_TASK_SECURITY_TARGETED_READONLY",
+  "collected_utc": "2026-10-27T11:48:38.5653092Z",
+  "read_attempts": 0,
+  "changes": 0,
+  "effective_worker_access": "UNKNOWN_TOKEN_NOT_CHECKED",
+  "runtime_admitted": false
+}

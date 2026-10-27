@@ -1,0 +1,49 @@
+{
+  "existing_48_repeated": false,
+  "tests": [
+    {
+      "name": "LEGACY_MANIFEST_PROPERTY_EXCEPTION_REPRODUCED",
+      "status": "PASS"
+    },
+    {
+      "name": "LEGACY_HOST_PROPERTY_EXCEPTION_REPRODUCED",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_FIXED_FILE_METHOD_InstalledBinding.json",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_FIXED_FILE_METHOD_HostManifest.json",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_FIXED_FILE_METHOD_Code/V2/start-host-v2.ps1",
+      "status": "PASS"
+    },
+    {
+      "name": "MISSING_BASELINE_REJECTED",
+      "status": "PASS"
+    },
+    {
+      "name": "DUPLICATE_BASELINE_REJECTED",
+      "status": "PASS"
+    },
+    {
+      "name": "UNKNOWN_BASELINE_REJECTED",
+      "status": "PASS"
+    },
+    {
+      "name": "ENTRY_SYNTAX_VALID",
+      "status": "PASS"
+    }
+  ],
+  "ipc_calls": 0,
+  "changes": 0,
+  "fail": 0,
+  "existing_22_repeated": false,
+  "admin_queries": 0,
+  "kind": "TASK_READBACK_FILE_BASELINE_V2_REGRESSION",
+  "install_calls": 0,
+  "pass": 9
+}

@@ -1,0 +1,8 @@
+{
+  "admin_requery_executed": false,
+  "admin_result_sha256": "679ea522860d4e321a53d3841e8b8806255d983b4fa90143b7e179793c920f13",
+  "new_script_sha256": "8968636afea53fdba1c371ff2b54cc53bd07ac0937059b07a090730f41b280f4",
+  "command_parse": "PASS",
+  "old_script_sha256": "de9bf4639b1d1ae079802ade7d1e5f8bdc251af51a587bfdfa61f799eb95af41",
+  "regression_sha256": "d5e26b5501993f4505c1d7e13becc54f609529fccd770c30f6a83dc61c5fcb28"
+}

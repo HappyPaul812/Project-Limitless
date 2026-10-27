@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 Task 읽기 PREPARE 오류 — 기준 query 선택 수정/신규9PASS
+
+대표Admin-354b78…: PREPARE/read0/PropertyNotFoundException, TaskCOM·후보비교미도달. 도구가 Manifest/Host 별도stage 선택 전에 없는 FILESYSTEM_.value 접근한 결함. 구도구/JSON보존·구명령중지. 별도 probe-task-security-readonly-v2.ps1 먼저stage선택→정확1개READ_OK후접근, 누락중복불명HOLD. 실제File메서드 가짜FS로 신규9PASS0FAIL(구오류2재현/새3파일/누락등거부), 기존48/22반복0·관리자재조회0. 수정명령/SHA Discord_DedicatedV2_TaskReadback_FileBaselineFix_20261027.md, 별도직접승인대기. Taskdescriptor/effectiveUNKNOWN·V1/MANUAL/A/runtimeHOLD, 설치/계정TaskACL/IPC/AI/Push0. 최종로컬SHA Issue후속.
 ## 2026-10-27 Issue66 Task 실제 보안 재검증 준비 — 신규결합22PASS / 별도관리자승인대기
 
 기준7cbb7e4c/기존48PASS·후보5cca69ee…재사용·45항목재실행0. 새TaskSecurityReadback: 고정Task COM GetTask/GetSD7/PrincipalSID·DisabledTrigger0·Action·정책, ManifestBindingHost3개 SHA/ACL·Worker1개만 읽음. 시작종료지문다르면HOLD. 가짜COM/계정파일·실제adapter/Core 결합22PASS0FAIL·EncodedCommand ScriptBlock검증, 실제관리자조회0. 명령/SHA/결과경로 Discord_DedicatedV2_TaskSecurityReadback_Preparation_20261027.md, 다음별도승인전실행금지. 성공후에도 descriptorPASS와 effective_worker_accessUNKNOWN/runtimefalse분리·토큰GROUPJob/IPC·V1/MANUAL/A HOLD. 계정TaskACL변경·설치·AI·Push0. 최종로컬SHA Issue후속 / REMOTE_NOT_PUSHED.
