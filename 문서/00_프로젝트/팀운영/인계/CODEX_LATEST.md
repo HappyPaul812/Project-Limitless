@@ -1,3 +1,10 @@
+## V2 r9 사전검사 메모리 범위 오류 수정
+## 관리자 화면 오류 수정 (후속 정본)
+
+바울 대표 화면의 checks 속성 오류는 메모리 ScriptBlock 실행에서 script:result/script:m이 다른 범위를 가리킨 도구 결함입니다. 결과 객체를 상속 범위에서 수정하고 Manifest는 공유 객체에 담아 두 참조를 제거했습니다. r9 패키지·SHA·설치기·보안조건 변경0. 위 명령의 도구 SHA를 새 값으로 교체했습니다. 이전 SHA 명령은 폐기합니다.
+
+동일 메모리 호출로 실제 비관리자 package PASS/admin HOLD·JSON9fc1203a387a40d09dd49b416c7d0b4b 저장 확인. 메모리 범위 회귀 PASS/false HOLD/Win325 오류 보존 3 PASS, AST parse0/script범위참조0. 관리자 분기는 여전히 미검증, 설치0. 대표가 새 명령을 관리자에서 실행한 결과만 판독하며 자동 재실행하지 않습니다.
+
 ## 2026-10-27 Issue66 V2 r9 설치 준비 — WAIT_ADMIN_READONLY / HOLD
 
 r9 SHA3·payload766+Manifest1·ZIP767 bytes 대조 PASS. 현재 토큰 admin=false라 Windows 경계 NOT_VERIFIED. 읽기 전용 prepare-r9-readonly.ps1 SHA8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a845a2d51a8, parse/변경호출allowlist/비관리자HOLD 확인. 관리자 직접 SHA검증 메모리 실행 명령은 Discord_Session0_V2_R9_AdminPreparation_20261027.md. 결과 Temp/V2R9Preflight20261027/<GUID>.json. 모든 관리자 조건 PASS 전 설치 명령·승인 파일 발급0, 설치/계정/ACL/Task/IPC0. V1 REFERENCE_VERIFICATION_HOLD·기존운영 보존, 권한거부/불명/Worker busy/후보owner·writer불일치 HOLD, 기준완화/자동재시도/삭제0. 기준구현62578e5, 직전53fb709; 실제마감commit/Issue댓글 후속기록. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

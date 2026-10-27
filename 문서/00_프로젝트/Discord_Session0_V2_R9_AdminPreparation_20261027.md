@@ -14,7 +14,7 @@
 
 도구: `Tools/DiscordAIServiceDiagnostics/V2/prepare-r9-readonly.ps1` (후보 패키지 밖의 전용 도구).
 
-SHA256: `8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a845a2d51a8`.
+SHA256: `23d854d3ec05715378956dd0a590fabbc4b9f1ae5fe5c4bfba221ce150aa7c52`.
 
 새 관리자 PowerShell 7에서 아래 블록을 실행합니다. **설치 승인/설치 명령이 아닙니다.** 암호를 요구하지 않습니다. 기존 Windows 보호 경계를 우회하지 않습니다. 창을 닫는 exit나 실행 정책 변경이 없습니다.
 
@@ -22,7 +22,7 @@ SHA256: `8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a845a2d51a8`.
 $preflightPath = 'F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\V2\prepare-r9-readonly.ps1'
 $preflightBytes = [IO.File]::ReadAllBytes($preflightPath)
 $preflightSha = [Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($preflightBytes)).ToLowerInvariant()
-if ($preflightSha -cne '8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a845a2d51a8') {
+if ($preflightSha -cne '23d854d3ec05715378956dd0a590fabbc4b9f1ae5fe5c4bfba221ce150aa7c52') {
     throw 'V2_R9_PREFLIGHT_SHA_HOLD'
 }
 & ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($preflightBytes)))
@@ -50,3 +50,9 @@ if ($preflightSha -cne '8193c5a121082866ec5473c6d99d4ca025bfbc8b84737a13af591a84
 LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 Windows 설치0, 설치 명령 실행0, 관리자 검증 대기 후 중지.
 
 마감 근거: 사전검사 도구/증거 커밋 b08fb5c00661318d5c30f64749f4563c84297311. 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6431260341 . LOCAL_COMMITTED / REMOTE_NOT_PUSHED, WAIT_ADMIN_READONLY/HOLD/설치0.
+
+## 관리자 화면 오류 수정 (후속 정본)
+
+바울 대표 화면의 checks 속성 오류는 메모리 ScriptBlock 실행에서 script:result/script:m이 다른 범위를 가리킨 도구 결함입니다. 결과 객체를 상속 범위에서 수정하고 Manifest는 공유 객체에 담아 두 참조를 제거했습니다. r9 패키지·SHA·설치기·보안조건 변경0. 위 명령의 도구 SHA를 새 값으로 교체했습니다. 이전 SHA 명령은 폐기합니다.
+
+동일 메모리 호출로 실제 비관리자 package PASS/admin HOLD·JSON9fc1203a387a40d09dd49b416c7d0b4b 저장 확인. 메모리 범위 회귀 PASS/false HOLD/Win325 오류 보존 3 PASS, AST parse0/script범위참조0. 관리자 분기는 여전히 미검증, 설치0. 대표가 새 명령을 관리자에서 실행한 결과만 판독하며 자동 재실행하지 않습니다.
