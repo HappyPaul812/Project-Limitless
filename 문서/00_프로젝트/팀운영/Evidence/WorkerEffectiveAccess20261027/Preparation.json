@@ -1,0 +1,10 @@
+{
+  "new_logons": 0,
+  "source_commit": "9c3582c7dcd62658c9ef694f491dbc190b736493",
+  "command_parse": "PASS",
+  "new_processes": 0,
+  "admin_executed": false,
+  "task_descriptor_prior_result_sha256": "e22bb23bdce8e6780faeaee70a2a400266d0f3ad21dc639e86f8f58de9ff0fae",
+  "existing_target_pid_provided": false,
+  "existing_48_22_repeated": false
+}

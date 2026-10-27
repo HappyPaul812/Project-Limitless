@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 Worker 실제토큰/독점성 후속 준비 — 신규31PASS / 관리자실행0
+
+기준9c3582c7·TaskdescriptorPASS·48/22재사용. 새 WorkerEffectiveAccess 도구는 확인된기존1010PID+생성UTC만대상, 없으면TARGET_REQUIRED HOLD(토큰부재확정아님). 실제TokenUser/groups deny-only/restricted/통계·AccessCheck·기존로그온Session0Batch/any-job읽기 준비. 평가용DuplicateToken 메모리사본만·새로그온/impersonation/권한변경API0. 그룹목록만PASS불가/Task특정DACL모델PASS와미래실행·threadtoken·Job/1007공용경합HOLD분리. 신규모의31PASS0FAIL·C#컴파일/EncodedScriptBlock, 실제token/관리자조회0·기존검사반복0. 상세 Discord_DedicatedV2_WorkerEffectiveAccess_Preparation_20261027.md에SHA/후속명령/예상HOLD/Session0BatchJob1007구분/FAKE_ONLY독립계획. 기존계정TaskACL/소비인증OnBoot게임변경0·Task/로그온/IPC/AI/Push0, V1/MANUAL/A/runtimeHOLD. 최종SHA Issue후속.
 ## 2026-10-27 Issue66 Task descriptor 실제 읽기 PASS — 유효권한/런타임 HOLD 유지
 
 대표Admin-acd610…(11:53:17Z) 판독 TASK_DESCRIPTOR_READONLY_PASS_EFFECTIVE_ACCESS_HOLD. 정확Task/Principal1010/Disabled·Trigger0·Action정책true·OwnerBA/GroupSY/보호DACL·ACE3/FR0x120089 계약PASS, XML기준4ef912…일치·ManifestBindingHost3개확인/WorkerEnabled·도구전후지문비교통과(read2/retry0). 후보LiveVerified/RuntimeAdmittedfalse는유지, descriptorPASS만독립기록. effective_worker_accessUNKNOWN_TOKEN_NOT_CHECKED·GROUP/Session0/Job/독점·V1/MANUAL/A HOLD. 원설치consumed/HOLD·증거그대로보존, 설치/계정TaskACL변경/IPC/AI/추가조회0·새테스트반복0/Push0. 상세 Discord_DedicatedV2_TaskSecurityReadback_Pass_20261027.md. 최종로컬SHA Issue후속 / REMOTE_NOT_PUSHED.

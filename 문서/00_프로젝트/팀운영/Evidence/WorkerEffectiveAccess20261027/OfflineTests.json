@@ -1,0 +1,136 @@
+{
+  "kind": "EXISTING_TOKEN_POLICY_NEW_OFFLINE",
+  "fail": 0,
+  "pass": 31,
+  "existing_48_22_repeated": false,
+  "native_token_queries": 0,
+  "changes": 0,
+  "new_logons": 0,
+  "admin_queries": 0,
+  "tests": [
+    {
+      "status": "PASS",
+      "name": "REAL_TOKEN_RESULT_SHAPE_PASS_STILL_RUNTIME_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_32"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_2"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_4"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_16"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_256"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_65536"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_262144"
+    },
+    {
+      "status": "PASS",
+      "name": "INDIRECT_GROUP_OR_DIRECT_OVERGRANT_HOLD_524288"
+    },
+    {
+      "status": "PASS",
+      "name": "DENY_ACE_OR_DENY_ONLY_GROUP_READ_DENIED_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "RESTRICTED_TOKEN_READ_DENIED_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "GROUP_LIST_WITHOUT_REAL_TOKEN_NEVER_PASS"
+    },
+    {
+      "status": "PASS",
+      "name": "WRONG_SID_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "GENERATION_OR_TOKEN_CHANGED_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "PRIVILEGE_USED_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "UNKNOWN_MAXIMUM_RIGHTS_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "ELEVATED_TOKEN_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "GROUP_LOGON4_IS_NOT_SECURITY_BATCH4"
+    },
+    {
+      "status": "PASS",
+      "name": "NONZERO_SESSION_NOT_SESSION0"
+    },
+    {
+      "status": "PASS",
+      "name": "LOGON_QUERY_UNKNOWN_NOT_BATCH_PASS"
+    },
+    {
+      "status": "PASS",
+      "name": "NO_CHECK_RESULT_HOLD"
+    },
+    {
+      "status": "PASS",
+      "name": "PID_ZERO_REJECTED_BEFORE_NATIVE_CALL"
+    },
+    {
+      "status": "PASS",
+      "name": "ENTRY_PARSE_AND_NO_FORBIDDEN_APIS"
+    },
+    {
+      "status": "PASS",
+      "name": "MOCK_USERS_GROUP_WRITE_GRANT_DETECTED"
+    },
+    {
+      "status": "PASS",
+      "name": "MOCK_DENY_ONLY_GROUP_CANNOT_ALLOW"
+    },
+    {
+      "status": "PASS",
+      "name": "MOCK_DENY_ONLY_GROUP_CAN_DENY"
+    },
+    {
+      "status": "PASS",
+      "name": "MOCK_DISABLED_GROUP_CANNOT_ALLOW"
+    },
+    {
+      "status": "PASS",
+      "name": "MOCK_RESTRICTED_SECOND_CHECK_REQUIRED"
+    },
+    {
+      "status": "PASS",
+      "name": "IN_ANY_JOB_IS_NOT_JOB_EXCLUSIVITY"
+    },
+    {
+      "status": "PASS",
+      "name": "ABSENT_LEASE_DOES_NOT_PROVE_OLD_WORKER_IDLE"
+    },
+    {
+      "status": "PASS",
+      "name": "SESSION0_BATCH_OBSERVATION_IS_NOT_RUNTIME_ADMISSION"
+    }
+  ]
+}

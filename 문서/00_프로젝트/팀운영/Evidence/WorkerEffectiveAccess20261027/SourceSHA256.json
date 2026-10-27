@@ -1,0 +1,6 @@
+{
+  "probe-existing-token-readonly.ps1": "581d2c91ee4ce4037e251169dc1a99793b71b6700bfc7ed3bfc8645901c7eb7d",
+  "test-token-policy-offline.ps1": "d392bbf368da2341e049891c3fb22baf904147ff0617adb14428c960739a6322",
+  "ExistingTokenRead.cs": "a00de5e9a49c550a1aa2c261a5c735d37938d897a5670eaaa238469a3fecc365",
+  "TokenPolicy.ps1": "567f01ea08b1eb6c3fbe7ef47c8f7626e9cab00d1889ce894cd126a1fad3eb10"
+}
