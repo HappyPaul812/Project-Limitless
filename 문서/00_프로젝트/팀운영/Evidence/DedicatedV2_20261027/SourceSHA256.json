@@ -1,0 +1,18 @@
+{
+  ".gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+  "AuthenticationPlan.md": "e4ef85c9935c8ba999e5f692a4bf61ad9f9c69c53428609a7869f7632461470d",
+  "build-dedicated.py": "99056d8b198dd3a2abb1d6bb90172d16014e9e84f1efa6245a0aaa1cf2d7d7d9",
+  "DedicatedAccountPolicy.cs": "c883c5da5fe2961607446dcceec3552a3f1f0a270ddbf15e79e853cbdb633690",
+  "DedicatedBootstrap.ps1": "2239ce69f5ef601eed77fbdd8a9b7b8b9942ce152cc4450f7a5202e442c33e9a",
+  "DedicatedContract.cs": "d0c0b053be0a0cfc1eb662f24a4a31b8ff62418fde80f0ea27cbec4fceaa3d2d",
+  "DedicatedCore.ps1": "04da414e5e074990a77ddb5382a86b352402572140f5016eb26f06fa33c2d6d2",
+  "DedicatedWindows.ps1": "ddf6f2998d4b77c5bba9a0f78d95cf88e7d8c52f7a4cc0a776c1245328291a42",
+  "fixed-worker-v2.ps1": "79ec1c9b42a28cfc74710943a3956b57345a79711021c65b29dbdff0688c6f3a",
+  "install-session0-v2.ps1": "83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f",
+  "session0-client-v2.ps1": "5134848dec6a45309e029d99c6d23f4cf6d9085cbc710feb3cb62d4a4c717012",
+  "start-host-v2.ps1": "063c063223f8989605b1031ea0978d890b43ee95d4787e8ad578b923ba361f46",
+  "test_dedicated.ps1": "c4543a60cd4e6ce7d9a9b74fba3219bc7211ba4ef466a9973981035b7b4d9831",
+  "test_package.py": "ac6f3162b32d287badad41f184ceb9927edfb7a285955ab39a4067d66314af02",
+  "test_runtime.py": "8ac46bbdc064d86e3653261f3145510e43deb45c92b99d8335fdfd24465cc7be",
+  "v2_contract.py": "4af60e9d8e287490bdf456a060d75c4c528aaf2d8769b17826a75265b2f7687b"
+}

@@ -1,0 +1,296 @@
+{
+  "model_calls": 0,
+  "real_worker_calls": 0,
+  "real_ipc_calls": 0,
+  "tests": [
+    {
+      "name": "NEW_INSTALL_NEW_OS_SIDS_PRESERVES_OLD11_TASK4",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_ADMIN",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_UNKNOWN",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_PATH",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_TASK",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_PIPE",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_ACCOUNT",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_LEASE",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_OLD_SID",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_SAME_SID",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_ADMIN_SID",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_EXISTING_SID",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_GROUPS",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_RIGHTS",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_ACL",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_AUTH",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_COPY",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_REGISTER",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_TASK_ACL",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_ENABLED_TASK",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_TRIGGER",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_READBACK",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALL_HOLD_CHANGED",
+      "status": "PASS"
+    },
+    {
+      "name": "CONSUMED_RETRY_REJECTED",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_epoch",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_admin_sid",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_manifest_sha256",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_installer_sha256",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_zip_sha256",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_create_worker",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_worker_install_state",
+      "status": "PASS"
+    },
+    {
+      "name": "APPROVAL_REJECT_preserve_existing",
+      "status": "PASS"
+    },
+    {
+      "name": "BAD_PAYLOAD_SHA_BEFORE_MUTATION",
+      "status": "PASS"
+    },
+    {
+      "name": "DEDICATED_FAKE_RUNTIME_ADMISSION",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_no_other_dedicated_tasks",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_users_only",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_rights_exact",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_elevated",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_codex_home",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_other_auth_imported",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_session",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_launcher_control_verified",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_security_logon_type",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_credential_scope_unshared",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_process_generation_verified",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_admin",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_worker_sid",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_no_foreign_dedicated_processes",
+      "status": "PASS"
+    },
+    {
+      "name": "ADMISSION_REJECT_auth_empty",
+      "status": "PASS"
+    },
+    {
+      "name": "PROTECTED_CODE_BOT_NO_WRITE_AUTH_NO_BOT_OLD",
+      "status": "PASS"
+    },
+    {
+      "name": "LSA_UTF16_BYTE_LENGTH",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_STAGING_MEMORY_CREATE_VERIFY",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_EXISTS_DENIED",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_OPEN_DENIED",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_MUTATION_FAIL",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_CORRUPT_COPY",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_HARDLINK",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_ADS",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_REPARSE",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_OWNER",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_GROUP",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_WRITER",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_UNPROTECTED",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_PENDING",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_FINALPATH",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_TARGET_NONNTFS",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_EXTRA_ENTRY",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_OUTSIDE_ENTRY",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGING_HOLD_READ_DENIED",
+      "status": "PASS"
+    },
+    {
+      "name": "PS_PARSE_ALL_SOURCE",
+      "status": "PASS"
+    }
+  ],
+  "fail": 0,
+  "actual_windows_changes": 0,
+  "pass": 71,
+  "kind": "DEDICATED_FAKE_ADAPTER_TESTS",
+  "schema": 3
+}

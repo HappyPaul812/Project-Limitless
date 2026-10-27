@@ -1,0 +1,59 @@
+{
+  "pass_count": 13,
+  "fail_count": 0,
+  "tests": [
+    {
+      "name": "PAYLOAD766_MANIFEST1",
+      "status": "PASS"
+    },
+    {
+      "name": "ALL_PAYLOAD_SHA",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_SHA",
+      "status": "PASS"
+    },
+    {
+      "name": "INSTALLER_SHA",
+      "status": "PASS"
+    },
+    {
+      "name": "ZIP_SHA",
+      "status": "PASS"
+    },
+    {
+      "name": "ZIP_EXACT767_SAME_BYTES",
+      "status": "PASS"
+    },
+    {
+      "name": "SOURCE_PACKAGE_IDENTICAL",
+      "status": "PASS"
+    },
+    {
+      "name": "AUTH_PLAN_IDENTICAL",
+      "status": "PASS"
+    },
+    {
+      "name": "PYTHON_SYNTAX_ALL_SOURCE",
+      "status": "PASS"
+    },
+    {
+      "name": "R11_FROZEN_Deployment/install-session0-v2.ps1",
+      "status": "PASS"
+    },
+    {
+      "name": "R11_FROZEN_HostManifest.json",
+      "status": "PASS"
+    },
+    {
+      "name": "R11_FROZEN_ZIP",
+      "status": "PASS"
+    },
+    {
+      "name": "BORROWED741_RUNTIME_UNCHANGED",
+      "status": "PASS"
+    }
+  ],
+  "actual_windows_changes": 0
+}

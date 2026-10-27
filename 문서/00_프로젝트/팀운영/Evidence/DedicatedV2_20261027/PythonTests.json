@@ -1,0 +1,278 @@
+{
+  "schema": 3,
+  "pass_count": 67,
+  "fail_count": 0,
+  "tests": [
+    {
+      "name": "BINDING3_NEW_ROLES",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_schema_2",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_kind_DING",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_worker_sid_1007",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_worker_sid_1200",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_admin_sid_1201",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_epoch_old",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_approval_id_old",
+      "status": "PASS"
+    },
+    {
+      "name": "BINDING_REJECT_manifest_sha256_0000",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_schema",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_approved",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_auto_start",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_real_ai_enabled",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_execution_mode",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_auth_policy",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_worker_account",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_code_root",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_max_seconds",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_max_parallel_jobs",
+      "status": "PASS"
+    },
+    {
+      "name": "MANIFEST_REJECT_worker_install_state",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_DUPLICATE_KEYS",
+      "status": "PASS"
+    },
+    {
+      "name": "EXACT_ZIP_SOURCE_BYTES",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_PATH_Code/../auth",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_PATH_Code/a:secret",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_PATH_Code/CON.txt",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_PATH_Code/a.",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_PATH_Code/abc\\x",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_ok",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_ok",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_ok",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_ok",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_ok",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_start_error",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_start_error",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_start_error",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_start_error",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_timeout",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_timeout",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_timeout",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_timeout",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_timeout",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_AI",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_AI",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_AI",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_AI",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_AI",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_child_alive",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_child_alive",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_child_alive",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_child_alive",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_child_alive",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_cleanup_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_cleanup_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_cleanup_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_cleanup_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_cleanup_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "ARM_concurrent",
+      "status": "PASS"
+    },
+    {
+      "name": "FAKE_JOB_concurrent",
+      "status": "PASS"
+    },
+    {
+      "name": "SINGLE_CONSUME_concurrent",
+      "status": "PASS"
+    },
+    {
+      "name": "NO_SECRET_concurrent",
+      "status": "PASS"
+    },
+    {
+      "name": "OWN_JOB_CLOSE_concurrent",
+      "status": "PASS"
+    },
+    {
+      "name": "CONCURRENT_SUBMIT_BLOCKED",
+      "status": "PASS"
+    },
+    {
+      "name": "OTHER_SID_ARM_1007",
+      "status": "PASS"
+    },
+    {
+      "name": "OTHER_SID_ARM_1008",
+      "status": "PASS"
+    },
+    {
+      "name": "OTHER_SID_ARM_1201",
+      "status": "PASS"
+    },
+    {
+      "name": "OLD_EPOCH_ARM",
+      "status": "PASS"
+    },
+    {
+      "name": "OLD_CONSUMPTION_DB_REJECT",
+      "status": "PASS"
+    }
+  ],
+  "actual_worker_calls": 0,
+  "actual_ipc_calls": 0,
+  "actual_ai_calls": 0
+}
