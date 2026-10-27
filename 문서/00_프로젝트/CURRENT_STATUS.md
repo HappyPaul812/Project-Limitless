@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 보호 staging 1회 승인 — 관리자 직접 실행 대기
+
+대표가Stage만1회승인, 기존문서2번명령의도구SHA c6a4b7b6…·코드분기확인. 원본r1의3SHA·payload766+Manifest1/모든SHA확인, Preflight12/151시험재실행0·후보/도구수정0. Codex생성실행0·대표결과미수신으로WAITING_ADMIN_EXECUTION, 실제Owner/DACL/767복사파일·source일치·부분생성/복구필요여부는미확정. 고정경로/기대SDDL·보고계약은 Discord_DedicatedR1_Staging_20261027.md, 관리자문서2번한줄안내. 실패시HOLD·재시도/삭제0. 계정/권리/Task/설치승인JSON/설치/IPC/AI/usage/Discord/Push0·V1/MANUAL/A HOLD·기존Worker11/운영보호, 설치별도승인필요.
+
 ## 2026-10-27 Issue66 r1 관리자 Preflight 제공 결과 — 12PASS / runtime HOLD
 
 [Issue 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434820211), 로컬 문서·제공 증거만 반영 / REMOTE_NOT_PUSHED.
