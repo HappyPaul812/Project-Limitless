@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 r2 부분 설치 HOLD — 승인 소비됨 / 재실행 금지
+
+대표 결과 install1/consumedtrue/account2(Bot1009·Worker1010)/Task시도1, CREATE_ONLY_DISABLED_TASK에서 MethodInvocationException→InvalidOperationException(-2146233079). Task 등록 및 SDDL/readback 중 직접 실패 위치 미확정·Task 존재/Disabled/그룹권리/파일 최종감사 미완료. Codex 읽기조회 Task AccessDenied(-2147024891), 계정조회 NullReference(-2147467261) → UNKNOWN. 실패를 부재/PASS로 추정하지 않음. 기존보존true는 native 보고·최종감사완료 아님. 설치/Stage/Resume 재시도·삭제·권한완화0, IPC/model/authimport0. 보호 Entry/Result 및 부분자산 보존 후 관리자 읽기전용 감사 필요. 상세 Discord_DedicatedV2_R2_Install_Hold_20261027.md. V1/MANUAL/A/토큰GROUPIPCJob HOLD 유지, 기존 운영변경/Push0. 최종 로컬 SHA Issue 참조.
 ## 2026-10-27 Issue66 r2 설치 전용 실행 준비 — 20 PASS / 직접 관리자 실행 대기
 
 r2 고정 Package3eff…/3SHA 유지. 새 R2Install 실행기는 고정 core/native API 직접 사용·consumeDirectory/Consume 객체 구성 검증, 신규 승인/epoch/단발소비·Stage Handle/metadata/전체 SHA·과거증거 fingerprint·생성 직전 재검증 유지. 신규20PASS/0FAIL + 실제 Inspect13메서드/766payload PASS. 계정/Task/승인/암호/설치 실행0. 대표 직접 명령은 Discord_DedicatedV2_R2_Install_20261027.md. 실패 시 HOLD/증거보존/재시도삭제0. r1/r2Stage 재실행금지. 실제SID/권리/Task는 결과대기, 유효토큰/GROUP/IPC/Job 및 V1/MANUAL/A HOLD 유지. 기존 운영 보호·Push0. 최종 커밋은 Issue 참조, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

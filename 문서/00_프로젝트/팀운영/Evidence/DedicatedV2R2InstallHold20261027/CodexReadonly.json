@@ -1,0 +1,24 @@
+{
+  "changes": 0,
+  "accounts": [
+    {
+      "type": "System.NullReferenceException",
+      "status": "UNKNOWN",
+      "name": "LIMITLESSBotV2D",
+      "hresult": -2147467261
+    },
+    {
+      "type": "System.NullReferenceException",
+      "status": "UNKNOWN",
+      "name": "LIMITLESSWorkV2D",
+      "hresult": -2147467261
+    }
+  ],
+  "task": {
+    "type": "System.UnauthorizedAccessException",
+    "status": "UNKNOWN",
+    "hresult": -2147024891
+  },
+  "kind": "R2_POST_HOLD_READONLY",
+  "task_name": "LIMITLESS-DedicatedV2-20261027-Host"
+}
