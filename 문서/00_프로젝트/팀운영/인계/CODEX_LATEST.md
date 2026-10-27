@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 Install HOLD 인계 — IOException invalidhandle / 재실행금지
+
+대표최신결과 outer FIXED_INSTALLER_FRESH_CHILD·creation_attemptedtrue, inner HOLD/stageNATIVE_PROTECTED_DEDICATED_STAGING/IOException -2147024890=80070006. 암호오타로단정금지·ReadHost콘솔입력과stdout수집child경계가능성검토, stage변수는ReadHost전에갱신안됨·정확throwUNKNOWN. 이전reverify/creationfalseJSON과분리, 시각/실행횟수/원본파일미제공. helper순서상보호approval root/JSON이미생성경로도달·같은helperroot재사용거부정책유지. 소비/계정/Task실제상태는읽기감사필요·생성false로임의기록금지. 명령재실행/승인삭제/비번변경/계정복구/권한완화0. 다음은입출력경계오류와approval/consume/계정/Task최소읽기확인, 재설치별도승인. 상세Install보고갱신·코드/후보불변·V1/MANUAL/A/runtimeHOLD·Push0. 암호/prompt마스킹값저장0.
+
 ## 2026-10-27 Issue66 r1 Install 1회 승인 인계 — 대표 관리자 결과 대기
 
 [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435281477), 최종 문서 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.

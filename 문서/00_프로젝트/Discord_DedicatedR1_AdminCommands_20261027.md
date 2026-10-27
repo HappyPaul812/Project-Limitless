@@ -18,7 +18,7 @@
 
 새 BA/SY staging만 생성합니다. 설치·계정·Task·승인 파일은 생성하지 않습니다. 부분 생성 시 HOLD·보존·재시도0입니다.
 
-## 3. 실제 설치 1회 승인 — 대표 관리자 직접 실행 / 결과 대기
+## 3. 설치 HOLD 결과 수신 — 재실행 금지, 아래 명령은 이력
 
 ```powershell
 & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -Command '$b=[IO.File]::ReadAllBytes("F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\prepare-r1.ps1");if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($b)).ToLowerInvariant() -cne "c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d"){throw "R1_HELPER_SHA_HOLD"};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($b))) -Step Install -ApprovalScope "INSTALL_R1_ONCE_TWO_NEW_ACCOUNTS_BATCH_WORKER_DISABLED_TASK"'

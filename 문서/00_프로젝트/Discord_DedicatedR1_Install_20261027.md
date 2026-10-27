@@ -1,5 +1,17 @@
 # Issue #66 — 전용 Worker r1 설치 1회 승인 / 관리자 직접 실행 대기
 
+## 후속 관리자 오류 판독 — HOLD, 재실행 금지
+
+대표가 제공한 최신 결과는 outer phase=FIXED_INSTALLER_FRESH_CHILD, actual_creation_attempted=true, 내장 status=HOLD/stage=NATIVE_PROTECTED_DEDICATED_STAGING, System.IO.IOException/HRESULT -2147024890(0x80070006, ERROR_INVALID_HANDLE)입니다. 앞서 제공한 actual_creation_attempted=false/phase=STAGING_INSTALL_TIME_REVERIFY 결과와 단계가 다르며 한 실행으로 합치지 않습니다. 실행 횟수·시각·원본 파일 경로는 미제공입니다. 암호 prompt 원문/마스킹 문자·암호는 저장하지 않습니다.
+
+암호 불일치·Windows 암호 정책 실패를 증명하는 오류가 아닙니다. helper가 `$json=& pwsh ...`로 자식 stdout을 수집하고 자식이 Read-Host -AsSecureString을 호출하는 구조에서 콘솔 입력 handle 문제가 발생했을 가능성이 있습니다. 정확한 throw 위치/입력 handle 상태는 제공 JSON에 없어 아직 확정하지 않습니다. Installer의 stage label이 암호 입력 직전 갱신되지 않아 staging 함수 실패만을 의미하지도 않습니다. [Microsoft 오류코드](https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes--0-499-)에 따라 0x6을 invalid handle로 판독했습니다.
+
+helper 실행 순서상 이번 최신 결과는 보호 승인 root/설치 승인 JSON 생성 뒤 자식 호출까지 도달한 것으로 해석합니다. 따라서 같은 Install helper를 다시 실행하면 기존 approval root 때문에 HOLD할 수 있으며 삭제/재사용/새 승인 생성으로 우회하지 않습니다. core 결과의 consumed/created_accounts는 제공되지 않았습니다. 계정·Task가 실제 생성됐거나 생성되지 않았다고 전역 확정하지 않고 승인/소비/계정/Task/보호결과에 대한 최소 읽기 감사가 필요합니다. actual_creation_attempted=true 자체는 계정 생성 증명이 아닙니다.
+
+현재 설치 HOLD·부분 승인 자산 보존, 자동 재시도/암호변경/삭제/권한완화/신규실행0. r1·도구 SHA/후보/코드변경0. 다음은 콘솔 입출력 경계와 실제 approval/consume/생성 자산 상태의 읽기 확인이며, 재설치/복구는 그 결과와 별도 승인 없이 진행하지 않습니다. V1/MANUAL/A/runtime HOLD·운영 보호 유지.
+
+## 이하: 설치 명령 안내 당시 기록
+
 [Issue #66 실제 상태 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435281477). 최종 로컬 문서 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
 
 2026-10-27. 바울 대표가 **신규 시험 계정2·예약 작업1의 설치1회만 승인**했습니다. 기준 문서 커밋 `93d9a7029e04d9fd1b6bd6921961dd214392c77a`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 현재 **WAITING_ADMIN_INSTALL_RESULT**이며 설치 PASS/HOLD 및 실제 생성 SID·자산 목록은 미확인입니다. 대표 직접 실행 전 Codex 생성/설치 실행0입니다.

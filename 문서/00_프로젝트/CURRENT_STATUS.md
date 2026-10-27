@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 설치 HOLD — 자식 IOException 0x80070006
+
+대표최신JSON FIXED_INSTALLER_FRESH_CHILD/actual_creation_attempted=true·내부HOLD/NATIVE_PROTECTED_DEDICATED_STAGING·IOException -2147024890=0x80070006 invalidhandle. 암호오타증거아님, stdout수집자식의Read-Host 콘솔handle가능성·정확throw위치UNKNOWN. stage라벨이암호전후갱신되지않아staging실패로단정금지. helper순서상신규보호approval root/JSON도달, 소비/계정/Task실제상태는결과없어읽기감사필요. 같은설치명령재실행/승인삭제/암호변경0·HOLD, 이전reverify생성falseJSON과구분. 상세 Discord_DedicatedR1_Install_20261027.md. 코드/후보/운영변경0·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 계정2·Task1 설치 1회 승인 — 대표 관리자 실행 대기
 
 기준93d9a702…·Install도구SHA c6a4b7b6…/고정r1 3SHA·보안코드확인, 기존Preflight12/Stage10/151재실행0·코드/후보수정0. 대표직접실행전Codex생성/설치0, 현재WAITING_ADMIN_INSTALL_RESULT·실제SID/계정/Task상태미확인. 내부stage767+ZIP/OwnerDACL/FileID/SHA·보존/충돌/승인소비검사는유지. 로컬암호SecureString2회·BotDisabled/새WorkerBatch-only/TaskDisabled Trigger0/FAKE_ONLY EMPTYauth 계약, 성공/HOLD 후중지·재시도/자동삭제0. 상세 Discord_DedicatedR1_Install_20261027.md·관리자문서3번만안내, 계정실행토큰/GROUP/Session0IPC/Job독점·V1/MANUAL/A HOLD유지·Push0.
