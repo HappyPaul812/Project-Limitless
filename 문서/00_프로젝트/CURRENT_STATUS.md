@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 계정2·Task1 설치 1회 승인 — 대표 관리자 실행 대기
+
+기준93d9a702…·Install도구SHA c6a4b7b6…/고정r1 3SHA·보안코드확인, 기존Preflight12/Stage10/151재실행0·코드/후보수정0. 대표직접실행전Codex생성/설치0, 현재WAITING_ADMIN_INSTALL_RESULT·실제SID/계정/Task상태미확인. 내부stage767+ZIP/OwnerDACL/FileID/SHA·보존/충돌/승인소비검사는유지. 로컬암호SecureString2회·BotDisabled/새WorkerBatch-only/TaskDisabled Trigger0/FAKE_ONLY EMPTYauth 계약, 성공/HOLD 후중지·재시도/자동삭제0. 상세 Discord_DedicatedR1_Install_20261027.md·관리자문서3번만안내, 계정실행토큰/GROUP/Session0IPC/Job독점·V1/MANUAL/A HOLD유지·Push0.
+
 ## 2026-10-27 Issue66 r1 관리자 Staging 성공 보고 — 생성·검증 완료 / 미설치
 
 [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435141316), 로컬 문서·제공 JSON만 갱신 / REMOTE_NOT_PUSHED.

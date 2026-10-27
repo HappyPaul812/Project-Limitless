@@ -1,6 +1,6 @@
 # 전용 Worker r1 관리자 PowerShell 7 명령
 
-2026-10-27 후속: 대표의 승인된 **2번 Stage 생성1회 실행 결과 STAGING_CREATED_VERIFIED_NOT_INSTALLED**를 수신했습니다. **1·2번을 재실행하지 않습니다. 3번 Install은 여전히 별도 승인 전 실행 금지입니다.** 아래 명령은 절차 이력으로 보존하며, Stage 성공이 설치/계정/Task/IPC 승인은 아닙니다. 상세 Discord_DedicatedR1_Staging_20261027.md 참조.
+2026-10-27 후속: Stage 성공 수신 후 바울 대표가 **3번 Install의 계정2·Task1 설치1회만 승인**했습니다. 대표가 관리자 PowerShell7에서 3번만 최대1회 직접 실행합니다. **1·2번 재실행 금지.** 도구SHA/고정3SHA·보안 분기를 확인했고 실제 생성/설치 결과는 아직 대기입니다. 결과 정상/HOLD 후 중지하며 Task/IPC/AI를 시작하지 않습니다. 상세 Discord_DedicatedR1_Install_20261027.md 참조.
 
 ## 1. 읽기 전용 관리자 사전검사
 
@@ -18,7 +18,7 @@
 
 새 BA/SY staging만 생성합니다. 설치·계정·Task·승인 파일은 생성하지 않습니다. 부분 생성 시 HOLD·보존·재시도0입니다.
 
-## 3. 후속 실제 설치 승인 후 — 현재 실행 금지
+## 3. 실제 설치 1회 승인 — 대표 관리자 직접 실행 / 결과 대기
 
 ```powershell
 & 'C:/Program Files/PowerShell/7/pwsh.exe' -NoLogo -NoProfile -Command '$b=[IO.File]::ReadAllBytes("F:\study\codex\Project-Limitless\Temp\DiscordUsageDiagnostics20261026\Worktree\Tools\DiscordAIServiceDiagnostics\R1Preparation\prepare-r1.ps1");if([Convert]::ToHexString([Security.Cryptography.SHA256]::HashData($b)).ToLowerInvariant() -cne "c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d"){throw "R1_HELPER_SHA_HOLD"};& ([scriptblock]::Create([Text.Encoding]::UTF8.GetString($b))) -Step Install -ApprovalScope "INSTALL_R1_ONCE_TWO_NEW_ACCOUNTS_BATCH_WORKER_DISABLED_TASK"'

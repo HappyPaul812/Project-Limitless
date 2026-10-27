@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r1 Install 1회 승인 인계 — 대표 관리자 결과 대기
+
+[Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435281477), 최종 문서 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+시작/기준93d9a7029e04d9fd1b6bd6921961dd214392c77a·브랜치동일. 대표가신규계정2(LIMITLESSBotV2D/LIMITLESSWorkV2D)·Task1 설치1회만승인·직접실행지시. 도구SHA c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d·고정r1 ZIP/Manifest/Installer3SHA/보안분기확인, 코드변경0·12/10/151재실행0. AdminCommands3번Install한줄만안내·1/2금지. 실제생성/설치Codex0·WAITING_ADMIN_INSTALL_RESULT·실제SID/상태아직UNKNOWN. 내부직전stage검증/보존snapshot/충돌/승인소비/신규SID검사/원자적SDDL·readback유지. 로컬SecureString암호2회외인증복사0. 결과받으면실제SID·계정/권리·보호경로ACL/SHA·TaskDisabled/Trigger0/Principal/DACL·기존운영/생성자산증거를판독, 부족하면읽기감사만·재설치금지. 정상/HOLD 후중지·부분자산보존·자동삭제/재시도0. 실제토큰/GROUP/IPC/Job독점미검증HOLD·V1/MANUAL/A HOLD·로그인/AI/usage/Discord/Task시작/Push0. 상세 Discord_DedicatedR1_Install_20261027.md.
+
 ## 2026-10-27 Issue66 r1 Stage 완료 판독 인계 — 미설치 / runtime HOLD
 
 [Issue 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6435141316), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
