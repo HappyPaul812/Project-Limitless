@@ -1,0 +1,83 @@
+{
+  "status": "HOLD",
+  "staging_created": false,
+  "system_changes": 0,
+  "utc": "2026-10-27T02:39:40.3218200+00:00",
+  "schema": 2,
+  "worker": {
+    "lease_status": "ABSENT",
+    "processes": [
+      {
+        "created_utc": "2026-10-23T17:40:25.1963220Z",
+        "pid": 6356
+      },
+      {
+        "created_utc": "2026-10-23T17:40:23.2275860Z",
+        "pid": 7432
+      },
+      {
+        "created_utc": "2026-10-23T17:40:23.2334890Z",
+        "pid": 7936
+      },
+      {
+        "created_utc": "2026-10-23T17:40:25.2045200Z",
+        "pid": 18796
+      },
+      {
+        "created_utc": "2026-10-23T17:40:23.9557730Z",
+        "pid": 23564
+      },
+      {
+        "created_utc": "2026-10-23T17:40:24.4783450Z",
+        "pid": 28788
+      },
+      {
+        "created_utc": "2026-10-23T17:40:23.8230130Z",
+        "pid": 31460
+      },
+      {
+        "created_utc": "2026-10-23T17:40:23.8143850Z",
+        "pid": 34416
+      },
+      {
+        "created_utc": "2026-10-23T17:40:24.4866550Z",
+        "pid": 36008
+      },
+      {
+        "created_utc": "2026-10-23T17:40:24.6165970Z",
+        "pid": 41880
+      },
+      {
+        "created_utc": "2026-10-23T17:40:24.6228470Z",
+        "pid": 47064
+      }
+    ],
+    "other_launchable_tasks": null,
+    "status": "HOLD",
+    "errors": [
+      {
+        "function": "TASK_PRINCIPAL_RESOLUTION",
+        "codes": [
+          {
+            "type": "Microsoft.PowerShell.Commands.GroupNotFoundException",
+            "hresult": -2146233088
+          }
+        ],
+        "stage": "TASK_PRINCIPAL_RESOLUTION",
+        "argument_shape": {
+          "group_type": "System.String",
+          "group_length": 11,
+          "user_length": 0,
+          "user_type": "null",
+          "logon_type": 4
+        }
+      }
+    ],
+    "foreign_processes": 11,
+    "process_query_known": true,
+    "task_query_known": false,
+    "known": false,
+    "stage": "TASK_PRINCIPAL_RESOLUTION",
+    "lease_query_known": true
+  }
+}

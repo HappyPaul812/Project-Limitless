@@ -6,7 +6,7 @@ branch `codex/discord-usage-diagnostics-20261026`, 지정 기준124be621ce1883b7
 
 ## Worker 단발 관리자 확인
 
-원본 probe SHA `0fa7933f00ad42ab7fcd20dc2d07063d6b076aa72718841948aab57500d85307`, helper SHA `d6471b2b2427da3b94b9724c45e367408a1846d1ec230a4957c45c0e01265a18`을 먼저 확인했고 변경하지 않았습니다. 현재 Codex 토큰 admin=false이며 새 관리자 결과는 아직 없습니다. 기존 foreign_processes11/known=false만으로 현재 사용/유휴를 확정하지 않습니다. 실제 상태 **HOLD_WAIT_ADMIN_TARGETED_RESULT**.
+원본 probe SHA `0fa7933f00ad42ab7fcd20dc2d07063d6b076aa72718841948aab57500d85307`, helper SHA `d6471b2b2427da3b94b9724c45e367408a1846d1ec230a4957c45c0e01265a18`을 먼저 확인했고 변경하지 않았습니다. 후보 생성 당시 Codex 토큰은 admin=false였으며, 후속 관리자 결과76eec5af를 본문 마지막에 판독했습니다. 기존 foreign_processes11/known=false만으로 현재 사용/유휴를 확정하지 않습니다. 후속 실측 상태 **HOLD_NOT_IDLE / TASK_QUERY_UNKNOWN**.
 
 새 관리자 PowerShell7에서 아래 **한 줄**만 실행합니다. Worker SID1007 계정/로그온 관계의 PID·생성시각, UserId/GroupId/LogonType 및 활성/실행중 작업 충돌, 기존 V2 lease 부재를 읽습니다. 이전 전체 preflight·인증·운영DB·보호프로세스 전수조회는 하지 않습니다. Worker/Task 종료·권한 변경·lease 획득·생성0입니다.
 
@@ -79,3 +79,17 @@ V1 계정/Code root/소비·참조 HOLD, Worker1007/인증/CODEX_HOME, OnBoot2/�
 LOCAL_COMMITTED / REMOTE_NOT_PUSHED. Worker 결과는 HOLD로 남기고 새 후보 준비 범위에서 중지합니다.
 
 마감 근거: 구현·증거 커밋98e7787fe0e4f653f64cb9fb6380900e0caf0e44, 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6432178495 . 최종후보r11·78PASS/0FAIL, Worker실측HOLD/관리자결과대기, 실제staging·설치·IPC0, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+## 2026-10-27 관리자 Worker 결과 76eec5af 수신 — HOLD_NOT_IDLE / TASK_QUERY_UNKNOWN
+
+원본 SHA256 8223799133dea9736f9dbe341d4498c0a020ec1880a2cb1797fea1cb7e86ccbe. 실제 조회시각 2026-10-27 11:39:40 KST. 원본 JSON을 Evidence/Session0V2R11_20261027/WorkerAdminResult_76eec5af0bca409fbbbe3930e8eae3db.json에 bytes 그대로 보존했습니다. 후보 생성 당시 FinalProof의 WAIT_ADMIN 상태는 과거 기록으로 보존하며 이번 판독이 현재 상태입니다.
+
+- process_query_known=true, foreign_processes=11: SID1007 계정의 로그온 관계에서 PID/생성시각 11건 확보. 정책상 유휴 조건(0개)을 충족하지 못하므로 HOLD. 각 객체의 역할·이미지·실제 작업 내용이나 CPU 사용을 확인한 것은 아니며 신규 V2 Worker라고 판정하지 않습니다.
+- PID: 6356,7432,7936,18796,23564,28788,31460,34416,36008,41880,47064. 생성시각은 원본 UTC를 보존합니다(모두 2026-10-23 17:40:23~25 UTC). 과거 PID와 생성시각 없는 객체나 종전 미확인19개와 연결하지 않습니다. 조회 이후의 동일성/현재 실행은 별도 시간대 근거 없이 단정하지 않습니다.
+- lease_query_known=true, lease_status=ABSENT: 이 시점의 전용 V2 lease 부재만 확인했습니다. 다른 소비DB/기존 실행 lease 전체의 부재나 동시실행 안전을 뜻하지 않습니다.
+- task_query_known=false, other_launchable_tasks=null: 작업 충돌 여부 UNKNOWN이며 0건으로 바꾸지 않습니다. errors=null은 최상위 실행 오류 없음일 뿐 worker.errors가 있으므로 전체 PASS가 아닙니다.
+- 실제 실패는 TASK_PRINCIPAL_RESOLUTION의 GroupNotFoundException/HRESULT -2146233088. group_type=System.String/length11, UserId=null/length0, LogonType4. helper의 그룹 멤버십 provider가 Get-LocalGroupMember -SID로 로컬 SAM 그룹만 조회하는 범위가 한계입니다. 실제 GroupId/SID 값은 원본에 기록되지 않아 어떤 그룹인지 추측하지 않습니다. 잘 알려진 비-SAM/도메인/기타 principal 여부도 미확정입니다. 이를 무시하거나 그룹 작업을 안전으로 제외하지 않습니다.
+
+작업 조회의 추가 원인 분리가 성공하더라도 프로세스11건 유휴 차단은 독립적으로 남습니다. 같은 전체 검사·Worker probe 재실행 요청0, 프로세스 종료/재시작·Task 변경·멤버십/권한 변경0. 필요한 후속은 정상 운영을 보존한 대상11개의 정체/계정 관계 확인 및 지원하지 못한 그룹 범위에 대한 최소 읽기 진단 설계입니다. 추가 관리자 명령/패키지 재발행은 이번 판독에서 하지 않았습니다.
+
+r11 코드/Installer/Manifest/ZIP/SHA 및 기존 오프라인78PASS 증거 불변. native staging/설치/IPC 실측 PASS로 승격하지 않습니다. 실제 보호 staging 생성·배치·설치·승인파일0, V1 REFERENCE_VERIFICATION_HOLD 및 MANUAL/A HOLD·Worker1007/인증/CODEX_HOME/OnBoot2/운영자산 유지. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

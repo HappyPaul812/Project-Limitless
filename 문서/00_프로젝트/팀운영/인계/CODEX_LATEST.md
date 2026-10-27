@@ -1,3 +1,6 @@
+## 2026-10-27 Worker 관리자 단발 결과 — 11개 확인 / HOLD_NOT_IDLE
+
+76eec5af 원본SHA8223799133dea9736f9dbe341d4498c0a020ec1880a2cb1797fea1cb7e86ccbe, 11:39:40KST. process_query_known=true/PID+생성시각11개→정책상유휴아님/HOLD. V2 lease ABSENT/known=true. Task조회는GroupNotFoundException(-2146233088), group String길이11/UserId null/LogonType4, task_query_known=false/다른작업수null. 실제GroupId미기록으로그룹정체추측금지, 로컬SAM조회한계·비-SAM/도메인여부미확정. 오류해결해도11개유휴차단은별개. 원본Evidence/Session0V2R11_20261027/WorkerAdminResult_76eec… 보존, 상세Discord_V2_NewPackage_Staging_20261027.md후속판독. 같은진단재실행/프로세스종료/Task·권한수정요청0. r11/SHA/78PASS불변·실측안전승격0, 실제staging/설치/IPC/승인생성0. V1/MANUAL/A HOLD·운영보존. LOCAL_COMMITTED/REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 native staging 구현·새 V2 r11 — 78PASS / 실제 Worker HOLD
 
 원본Workerprobe SHA0fa7933f… 및 helperd6471b2b… 불변 확인. 현재admin=false·관리자단발결과미수신으로유휴HOLD, 기존PASS6/855/19전수/성공suite반복0. Worker전용관리자한줄명령은 Discord_V2_NewPackage_Staging_20261027.md. 기존Worker종료/인증/권한변경0.
