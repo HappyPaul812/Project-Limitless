@@ -1,0 +1,43 @@
+{
+  "fail": 0,
+  "real_password_reads": 0,
+  "actual_windows_changes": 0,
+  "kind": "ACTUAL_NATIVE_ADAPTER_CONSTRUCTOR_ONLY",
+  "actual_backend_methods_invoked": 0,
+  "model_calls": 0,
+  "pass": 8,
+  "tests": [
+    {
+      "name": "FROZEN_R1_EXACT_MEMBER_COLLISION_REPRODUCED",
+      "status": "PASS"
+    },
+    {
+      "name": "R2_ACTUAL_NATIVE_ADAPTER_CONSTRUCTS_WITH_STOP",
+      "status": "PASS"
+    },
+    {
+      "name": "R2_ALL_THIRTEEN_NATIVE_METHODS_REGISTER_NO_FORCE",
+      "status": "PASS"
+    },
+    {
+      "name": "ONLY_ADAPTER_PAYLOAD_CHANGED_FROM_R1",
+      "status": "PASS"
+    },
+    {
+      "name": "EXACT_MINIMAL_RENAME_NO_SECURITY_RELAXATION",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_PACKAGE_APPROVAL_EPOCH_PIPE_ISOLATED",
+      "status": "PASS"
+    },
+    {
+      "name": "CANDIDATE_FAKE_DISABLED_UNAPPROVED_AUTH_EMPTY_POLICY",
+      "status": "PASS"
+    },
+    {
+      "name": "ADAPTER_SOURCE_PS_PARSE",
+      "status": "PASS"
+    }
+  ]
+}

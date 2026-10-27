@@ -1,0 +1,13 @@
+{
+ "state_snapshot":{"model_calls":0,"retry_authorized_by_probe":false,"changes":0,"install_calls":0,"status":"HOLD_REQUIRES_RECOVERY_REVIEW","password_reads":0,"admin":true,"schema":3,"kind":"R1_INSTALL_HOLD_READONLY","ipc_calls":0,"checks":[
+  {"sddl":"O:BAG:SYD:P(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)","name":"APPROVAL_ROOT","owner_sid":"S-1-5-32-544","status":"PRESENT"},
+  {"owner_sid":"S-1-5-32-544","sddl":"O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)","sha256":"845f3f7818e0302cb5ac0cec43822860758e184b541426683f94bc8a7719b4e8","name":"INSTALL_APPROVAL_JSON","expired":true,"status":"PRESENT","same_admin":true,"fixed_r1_binding":true},
+  {"name":"CONSUMPTION_DIRECTORY","status":"ABSENT"},{"name":"CONSUMED_MARKER","status":"ABSENT"},{"name":"INSTALL_LEASE","status":"ABSENT"},
+  {"name":"DEDICATED_CODE_ROOT","status":"ABSENT"},{"name":"DEDICATED_STATE_ROOT","status":"ABSENT"},{"name":"LIMITLESSBotV2D","status":"ABSENT"},{"name":"LIMITLESSWorkV2D","status":"ABSENT"},{"name":"DEDICATED_TASK","status":"ABSENT"},{"count":0,"name":"PROTECTED_RESULTS","status":"DIRECTORY_ABSENT"}
+ ]},
+ "kind":"R1_NATIVE_GUARD_READONLY","model_calls":0,"approval_changes":0,"ipc_calls":0,"consume_changes":0,
+ "checks":[{"status":"PASS","name":"NATIVE_STAGE_VERIFY"},{"status":"PASS","name":"CURRENT_APPROVAL_FILE_PROTECTION"},{"status":"PASS","name":"SEALED_CORE_WINDOWS_DEFINITION_ONLY"},{"status":"PASS","name":"FINAL_STAGE_METADATA_RECHECK"},{"status":"PASS","name":"CONSUMPTION_ACCOUNT_TASK_STATE_READONLY"}],
+ "password_reads":0,"install_calls":0,"status":"HOLD_DIAGNOSTIC_ONLY_NO_RETRY",
+ "console":{"output_redirected":false,"console_host":true,"secure_input_not_executed":true,"error_redirected":false,"input_redirected":false,"raw_ui_present":true},
+ "phase":"COMPLETE_READONLY","automatic_retries":0,"guards_status":"READONLY_GUARDS_PASS_EXACT_INSTALLER_THROW_STILL_UNVERIFIED","schema":3
+}

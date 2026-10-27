@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r1 native Consume충돌 확정 / 최소수정r2 후보·새승인필요
+
+[Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438090445), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+대표최신probe5PASS·콘솔redirectfalse·계정2/Task/CodeState/consume없음·approval845f3f78…expired, 답변Worker암호까지입력. 고정r1 consume필드+Consume메서드충돌(PS case-insensitive)을실제New-D3WindowsApi 구성/Stop에서InvalidOperation/-2146233079/FQIDMemberAlreadyExists로재현, 실제backend호출0. 저장필드consumeDirectory만rename·참조수정, Force/보호완화0. 새실제native생성테스트8PASS/0FAIL+패키지InspectPASS·기존151/12/10재실행0. r2 package3effaac30bf44760986fee9e6019b283·payload변경1개(Windowsadapter), 나머지765동일·766+Manifest1. Installer83c97d78…불변/Manifest7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976/ZIP4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0. r1/staging/승인marker원본보존·실제r2stage/승인/설치0. r1SHA고정승인을r2로옮기지않음·별도r2stage/설치승인필요. 상세R2_AdapterFix보고·NativeGuardAdminUserProvided/NativeAdapterConstructorR2Tests, 기존fake는nativeadapter생성을놓친검증누락명시. Task/IPC/AI실행금지·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 native HOLD 인계 — 재시도금지·정확guard읽기 대기
 
 대표nativeHOLD(stageNATIVE_PROTECTED_DEDICATED_STAGING, InvalidOperation/-2146233079), supervisorreserved/old_preserved/fresh_approvaltrue·installer1/retry0. 성공아님·보존된approval/archive/marker삭제금지·최신소비/계정Task미확정. 라벨이ReadHost/core후metadata재검사까지같아이전ABSENT를현재로확정금지. 새readonlyprobe SHA1d8cde5dc0c3f6052cdce079dbd305a81ae2dcc2c976aff2e1b34a4703e85f37·세정적검증PASS·관리자실행0. 고정CS guard상수만allowlist출력, NativeStage/approvalDACL/정의로드/readOnly상태snapshot·콘솔메타, 암호/설치호출0. Recovery보고한줄은NoNewWindow freshPS7 EncodedCommand(비밀없는소스만)로직전설치경계와같게읽음. 결과항상HOLD_DIAGNOSTIC_ONLY_NO_RETRY·같은guard재현안되면원래throwUNKNOWN유지, r1/기존helper재수정0·V1MANUALA/runtimeHOLD·운영/소비보존·Push0.

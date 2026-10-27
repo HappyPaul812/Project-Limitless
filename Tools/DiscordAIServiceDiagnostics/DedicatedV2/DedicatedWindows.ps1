@@ -2,7 +2,7 @@
 function Get-D3Groups([string]$Sid){@(Get-LocalGroup|ForEach-Object{$g=$_;if(@(Get-LocalGroupMember -SID $g.SID -ErrorAction Stop|Where-Object {$_.SID.Value -ceq $Sid}).Count){$g.SID.Value}})}
 function New-D3WindowsApi($Manifest,$Payloads,[Security.SecureString]$BotPassword,[Security.SecureString]$WorkerPassword){
  $pins=[Text.Encoding]::UTF8.GetString($Payloads['Deployment/Preservation.json'])|ConvertFrom-Json -AsHashtable
- $api=[pscustomobject]@{m=$Manifest;pins=$pins;botPassword=$BotPassword;workerPassword=$WorkerPassword;created=@{};consume=$null;bindingSha=$null}
+ $api=[pscustomobject]@{m=$Manifest;pins=$pins;botPassword=$BotPassword;workerPassword=$WorkerPassword;created=@{};consumeDirectory=$null;bindingSha=$null}
  $api|Add-Member ScriptMethod Context {
   $id=[Security.Principal.WindowsIdentity]::GetCurrent();@{admin=([Security.Principal.WindowsPrincipal]::new($id)).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator);admin_sid=$id.User.Value;now=[datetimeoffset]::UtcNow.ToUnixTimeSeconds();preexisting_sids=@(Get-LocalUser|ForEach-Object{$_.SID.Value})}
  }
@@ -27,11 +27,11 @@ function New-D3WindowsApi($Manifest,$Payloads,[Security.SecureString]$BotPasswor
  }
  $api|Add-Member ScriptMethod Consume {param($m,$ms)
   [LimitlessV2Publish]::Verify($m.approval_root,[DedicatedContract]::FsSddl('private',$true,'',''))
-  $this.consume=Join-Path $m.approval_root $m.approval_id;[LimitlessV2Publish]::NewDirectory($this.consume,[DedicatedContract]::FsSddl('private',$true,'',''))
-  [LimitlessV2Publish]::NewFile((Join-Path $this.consume 'consumed.json'),[Text.UTF8Encoding]::new($false).GetBytes((@{schema=3;epoch=$m.epoch;manifest_sha256=$ms;consumed=$true}|ConvertTo-Json -Compress)),[DedicatedContract]::FsSddl('private',$false,'',''))
+  $this.consumeDirectory=Join-Path $m.approval_root $m.approval_id;[LimitlessV2Publish]::NewDirectory($this.consumeDirectory,[DedicatedContract]::FsSddl('private',$true,'',''))
+  [LimitlessV2Publish]::NewFile((Join-Path $this.consumeDirectory 'consumed.json'),[Text.UTF8Encoding]::new($false).GetBytes((@{schema=3;epoch=$m.epoch;manifest_sha256=$ms;consumed=$true}|ConvertTo-Json -Compress)),[DedicatedContract]::FsSddl('private',$false,'',''))
  }
  $api|Add-Member ScriptMethod InstallLease {param($m)
-  $p=Join-Path $this.consume 'install.lease';[LimitlessV2Publish]::NewFile($p,[byte[]]::new(0),[DedicatedContract]::FsSddl('private',$false,'',''));[IO.File]::Open($p,[IO.FileMode]::Open,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None)
+  $p=Join-Path $this.consumeDirectory 'install.lease';[LimitlessV2Publish]::NewFile($p,[byte[]]::new(0),[DedicatedContract]::FsSddl('private',$false,'',''));[IO.File]::Open($p,[IO.FileMode]::Open,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None)
  }
  $api|Add-Member ScriptMethod CreateUser {param($name,$package,$role)
   $password=if($role -ceq 'bot'){$this.botPassword}else{$this.workerPassword}
@@ -83,7 +83,7 @@ function New-D3WindowsApi($Manifest,$Payloads,[Security.SecureString]$BotPasswor
   [LimitlessV2Publish]::Verify($m.codex_home,[DedicatedContract]::FsSddl('auth',$true,$b.worker_sid,''));if(@(Get-ChildItem -LiteralPath $m.codex_home -Force -ErrorAction Stop).Count){throw 'D3_AUTH_NOT_EMPTY'}
  }
  $api|Add-Member ScriptMethod Record {param($r)
-  $r.partial_new_sids=$this.created;[LimitlessV2Publish]::NewFile((Join-Path $this.consume ('Result-'+[guid]::NewGuid().ToString('N')+'.json')),[Text.UTF8Encoding]::new($false).GetBytes(($r|ConvertTo-Json -Depth 12)),[DedicatedContract]::FsSddl('private',$false,'',''))
+  $r.partial_new_sids=$this.created;[LimitlessV2Publish]::NewFile((Join-Path $this.consumeDirectory ('Result-'+[guid]::NewGuid().ToString('N')+'.json')),[Text.UTF8Encoding]::new($false).GetBytes(($r|ConvertTo-Json -Depth 12)),[DedicatedContract]::FsSddl('private',$false,'',''))
  }
  $api
 }

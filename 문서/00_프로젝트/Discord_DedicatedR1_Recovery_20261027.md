@@ -1,5 +1,7 @@
 # Issue66 — r1 설치 재개 요청 / 최소 읽기 감사
 
+**후속 직접 원인 확정:** 대표가 두 암호를 모두 입력했다고 확인한 뒤 고정 r1 `New-D3WindowsApi` 생성에서 `consume` note property/`Consume` ScriptMethod 충돌을 동일 InvalidOperation/-2146233079·MemberAlreadyExists로 재현했습니다. 보호검사5PASS/콘솔정상/미소비·무계정 최신JSON도 보존했습니다. [최소 수정 r2 후보·8PASS+Inspect·새 SHA/승인 조건](Discord_DedicatedV2_R2_AdapterFix_20261027.md)이 최신 정본입니다. r1 설치/재개·동일진단 반복 금지, 실제 r2 staging/설치0.
+
 ## 최신 재개 결과 — native HOLD / 원본 보존·새승인·자식1회 확인
 
 대표 제공 두 JSON을 ResumeNativeHoldUserProvided.json에 값 동일 재직렬화했습니다. **설치 판정 HOLD**: native stage=NATIVE_PROTECTED_DEDICATED_STAGING, InvalidOperationException/-2146233079. supervisor는 reserved/old_preserved/fresh_approval=true·installer_launches1/retry0이고 CHILD_RETURNED_REVIEW_INSTALLER_JSON_NOT_SUCCESS_PROOF는 성공 증거가 아닙니다. 이전 만료 승인 원본/새 승인/Resume marker/lease/outcome은 보존하며 같은 재개 명령을 다시 실행하지 않습니다.

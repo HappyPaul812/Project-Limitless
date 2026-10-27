@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r1 native 원인 확정·r2 오프라인 후보 — 8PASS+Inspect / 설치HOLD
+
+대표readonly5PASS/실콘솔정상·계정Task소비없음·갱신승인만845f3f78… expired, Worker암호까지입력확인. 고정r1의 consume note property와 Consume ScriptMethod 대소문자충돌을실제adapter생성에서같은InvalidOperation/-2146233079/MemberAlreadyExists로재현. consumeDirectory저장속성최소rename, backend호출0·기존fake의native생성경로누락보완. r2 payload변경1개·766+1·새package3effaac3…/승인/epoch/pipe, 8PASS/0FAIL+InspectPASS. Manifest7c841014…/ZIP4efa0aa8…·Installer불변, r1/staging/기록보존·r2실staging/승인/설치0. r1명령재실행금지·새SHA후보는별도r2승인필요. 상세 Discord_DedicatedV2_R2_AdapterFix_20261027.md·V1/MANUAL/A/runtimeHOLD·Push0.
+
 ## 2026-10-27 Issue66 r1 native 설치 HOLD — guard·최신 생성상태 읽기 대기
 
 대표두JSON nativeHOLD/NATIVE_PROTECTED_DEDICATED_STAGING/InvalidOperation(-2146233079), supervisor원본보존/새승인/markertrue·자식1회·retry0. CHILD_RETURNED는성공아님, 같은재개명령재실행금지. stage라벨은ReadHost/core뒤recheck까지같아계정미생성·정확실패지점단정금지. 새 probe-native-guard-readonly.ps1 SHA1d8cde5d…: 고정source guard상수allowlist만출력·stage/승인권한/정의로드/콘솔메타·소비/계정/Task현황읽기, 암호/설치/변경0·구문/guard/민감문자비출력PASS. 정본Recovery보고한줄·대표진단대기, 기존12/10/151재실행0·r1불변·V1/MANUAL/A/runtimeHOLD·Push0.
