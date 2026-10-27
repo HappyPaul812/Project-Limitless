@@ -4,6 +4,8 @@
 
 기준 구현 `60fc6484e9a77b12f52b527b3b18eeb5161d6113`, 작업 시작 HEAD `057d8503bbef69a17cfbf6465d60e5cf90c83c25`, 브랜치 `codex/discord-usage-diagnostics-20261026`. 신규 외부 절차 도구 `Tools/DiscordAIServiceDiagnostics/R1Preparation/prepare-r1.ps1`만 추가하며 r1/V1/r11·기존 DedicatedV2 코드는 수정하지 않습니다. 실제 생성·승인·설치·시작은 이번 범위에 없습니다.
 
+사전 준비 로컬 커밋 `862473f7e66f010acafbe7a99750200fa55a2a64`, [Issue #66 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434754454). LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 후속 문서 커밋은 보고 연결만 포함합니다.
+
 ## 고정 후보와 실제 판독
 
 원본 `F:\study\codex\Project-Limitless\Temp\Session0DedicatedV2Candidate20261027-r1.zip`.

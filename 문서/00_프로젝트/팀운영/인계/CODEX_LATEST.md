@@ -1,5 +1,7 @@
 ## 2026-10-27 Issue66 전용 r1 설치 준비 인계 — 실제Preflight HOLD / 변경0
 
+사전 준비 커밋 `862473f7e66f010acafbe7a99750200fa55a2a64`, [Issue #66 실제 보고 완료](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6434754454). REMOTE_NOT_PUSHED, 후속은 보고 연결 문서만 포함합니다.
+
 기준구현60fc6484…·시작HEAD057d8503…, 브랜치codex/discord-usage-diagnostics-20261026. r1/151근거재사용·151재실행0·패키지변경0. 새외부도구 Tools/DiscordAIServiceDiagnostics/R1Preparation/prepare-r1.ps1 SHA c6a4b7b6dec6158b7191bdecf120d0c9efb3bc2b668e009aeba104975337671d. 새정적경계10PASS/0FAIL/PS·3명령parsePASS. 실제좁은비관리자읽기5PASS/7HOLD: r1SHA+766/1·새CodeState/Pipe/Staging/Approval부재PASS; adminfalse·계정NullReference(-2147467261)·TaskUnauthorized(-2147024891)·nativeParentAdminGuard HOLD. 계정조회오류를부재로해석금지. 최초오류기록후inner코드보완결과모두Evidence/DedicatedR1Preparation20261027/에보존.
 
 정본 Discord_DedicatedR1_InstallPreparation_20261027.md·관리자한줄 Discord_DedicatedR1_AdminCommands_20261027.md. 다음은관리자Preflight만실행해JSON판독. Stage/Install 명령은미래별도승인용이며지금실행금지. helper는Stage새root CREATE_NEW/DACL/readback만, Install은protectedStagehandle유지·새ApprovalRoot/15분승인·r1고정설치기새프로세스·로컬SecureString으로구성, 둘다HOLD시재시도/자동삭제0. 기존root존재시자동재사용0. helper는이번Stage/Install호출0·승인파일0.
