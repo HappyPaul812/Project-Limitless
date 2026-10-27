@@ -1,0 +1,65 @@
+{
+  "tests": 18,
+  "failures": 0,
+  "errors": 0,
+  "actual_workers": 0,
+  "actual_ipc": 0,
+  "actual_network": 0,
+  "tested_module_root": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r4\\Code\\V2",
+  "cross_contract_cases": [
+    {
+      "name": "valid",
+      "accepted": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "schema1",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "v1root",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "v1pipe",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "approved",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "auto_start",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "over90",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "forged_sid",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "duplicate_key",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    }
+  ]
+}

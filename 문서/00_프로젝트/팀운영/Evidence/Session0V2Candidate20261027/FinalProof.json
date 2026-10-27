@@ -1,0 +1,112 @@
+{
+  "status": "V2_CANDIDATE_OFFLINE_PASS_NOT_APPROVED_NOT_INSTALLED",
+  "final_candidate": "F:\\study\\codex\\Project-Limitless\\Temp\\Session0V2Candidate20261027-r9",
+  "core_passed": 84,
+  "core_failed": 0,
+  "runtime_passed": 18,
+  "runtime_failed": 0,
+  "runtime_reuse": [
+    {
+      "name": "v2_contract.py",
+      "tested_sha256": "5d6a563b04ffa736b816cfdd674b7a4a9379a2d0ac5982fc9c2c0ec15ebcdd4d",
+      "final_sha256": "5d6a563b04ffa736b816cfdd674b7a4a9379a2d0ac5982fc9c2c0ec15ebcdd4d",
+      "same": true
+    },
+    {
+      "name": "v2_runtime.py",
+      "tested_sha256": "dfe860ae1ddc3b11d99d92f0e5aae1c9967840f60d9d3c08abf1cb315dd9961d",
+      "final_sha256": "dfe860ae1ddc3b11d99d92f0e5aae1c9967840f60d9d3c08abf1cb315dd9961d",
+      "same": true
+    },
+    {
+      "name": "v2_worker.py",
+      "tested_sha256": "389fc66c8fa2fc185b0e49a75e630b60cb5bfaa3f1e7c45410cdcc32c3639ca7",
+      "final_sha256": "389fc66c8fa2fc185b0e49a75e630b60cb5bfaa3f1e7c45410cdcc32c3639ca7",
+      "same": true
+    },
+    {
+      "name": "v2_transport.py",
+      "tested_sha256": "28d53ba693eb914048d38edc96788ac8c7e1d9646afdeb857f433d35382537b3",
+      "final_sha256": "28d53ba693eb914048d38edc96788ac8c7e1d9646afdeb857f433d35382537b3",
+      "same": true
+    },
+    {
+      "name": "entry-v2.py",
+      "tested_sha256": "2e3a7cbf6e20f1122cc15ffc0a7251596db50edbde42b574a323ec75c9acf9bd",
+      "final_sha256": "2e3a7cbf6e20f1122cc15ffc0a7251596db50edbde42b574a323ec75c9acf9bd",
+      "same": true
+    }
+  ],
+  "cross_contract_final_cases": [
+    {
+      "name": "valid",
+      "accepted": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "schema1",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "v1root",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "v1pipe",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "approved",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "auto_start",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "over90",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "forged_sid",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "duplicate_key",
+      "accepted": false,
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "builder_guard_passed": 2,
+  "builder_guard_failed": 0,
+  "preserved_source_json_paths": 16,
+  "preserved_sha_mismatches": 0,
+  "source_payload_sha_mismatches": 0,
+  "payload_files": 766,
+  "zip_entries": 767,
+  "zip_bytes": 15254406,
+  "actual_windows_account_task_lsa_calls": 0,
+  "actual_ipc_worker_ai_usage_discord_calls": 0,
+  "installed_v1_855_rescan": false,
+  "v1_hold_released": false,
+  "approved": false,
+  "auto_start": false,
+  "execution_mode": "FAKE_ONLY",
+  "mutations_to_existing_v1_sources": 0
+}

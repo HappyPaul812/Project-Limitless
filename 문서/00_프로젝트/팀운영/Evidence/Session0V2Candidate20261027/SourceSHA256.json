@@ -1,0 +1,94 @@
+[
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/build-v2-candidate.py",
+    "sha256": "f949e656f7721998a887ff2a9362ab58469346bde3f4bd590bb4d00030dfe0ff"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/entry-v2.py",
+    "sha256": "2e3a7cbf6e20f1122cc15ffc0a7251596db50edbde42b574a323ec75c9acf9bd"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/fixed-worker-v2.ps1",
+    "sha256": "f798e17bf0fd6c7f8ee75d109e63f25eeca9723d29f030a0bc982880f2efa923"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/install-session0-v2.ps1",
+    "sha256": "1a1d671d1cf86aab56c9c2392ed4ba35a8240e348134e6a467f8eb8ec81f17a0"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/run-session0-v2-install.ps1",
+    "sha256": "81ea1b0de4f25748cf62fff9b4d4217e0b8dfa4adb79b1cde833661998664a40"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/session0-client-v2.ps1",
+    "sha256": "a48809dc14e7f1bfb6d9a753aebee7d241fd756631011517bd40f14dec299589"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/Session0PipeBoundary.cs",
+    "sha256": "9d23032215e8e5298126f688bb2bdb0814e769770404d17e9b48201bf28a5dcf"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/start-host-v2.ps1",
+    "sha256": "14ab29c921b8e447cf11a852cbb8e9ce9ed1c796ad54410482b37b07ffaeee1c"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/test_v2_core.ps1",
+    "sha256": "758f200065c5e6c0e7111b16026924d94b36c9e5cc2a17d5e6769832e29a9d4a"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/test_v2_package.ps1",
+    "sha256": "82257f62438ced62d382baa319075508ee00ee6e3c98a42d96b259be95256fb3"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/test_v2_runtime.py",
+    "sha256": "b39bfc2eb2459459cfd736228258b61a7b5386cd6a5090a60a0880d93aee4f1f"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/v2_contract.py",
+    "sha256": "5d6a563b04ffa736b816cfdd674b7a4a9379a2d0ac5982fc9c2c0ec15ebcdd4d"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/v2_runtime.py",
+    "sha256": "dfe860ae1ddc3b11d99d92f0e5aae1c9967840f60d9d3c08abf1cb315dd9961d"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/v2_transport.py",
+    "sha256": "28d53ba693eb914048d38edc96788ac8c7e1d9646afdeb857f433d35382537b3"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/v2_worker.py",
+    "sha256": "389fc66c8fa2fc185b0e49a75e630b60cb5bfaa3f1e7c45410cdcc32c3639ca7"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2Contract.cs",
+    "sha256": "6f55474aa6c49691051f8edd0cfe5ade5e8732b5759e372475010ddfc4e76900"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2Host.cs",
+    "sha256": "588fc1af7b1245d60f9bddcf0f432c763678def1154271be2e1048cfb7346c0a"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2InstallCore.ps1",
+    "sha256": "c6adac5a41a1c63a29a5dca876c55698e1e1492f5e33015a18fe40ea7d161ede"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2Installed.ps1",
+    "sha256": "36f207d9983eaa5ac81ccb6f8b2b0ce818ce43ba094be4368df6eb62b014c254"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2PolicyReadback.cs",
+    "sha256": "1fdb6970d0bb26a10f9e670d47654c8c630565fa29570ec7322393e635d61d1b"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2Publish.cs",
+    "sha256": "3cb1c3335c7e9e64bd58e05346a07e3c568126629559fe54f6c914e244174f8e"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2WindowsAdapter.ps1",
+    "sha256": "5ed613d84b83822e8d7ba109be2e40799352ce7c725459d3fabef73da9719da4"
+  },
+  {
+    "path": "Tools/DiscordAIServiceDiagnostics/V2/V2WorkerFence.cs",
+    "sha256": "009428c147b0b715ea2eb3ea7aa46711bd047793e35752ad2d186d5e60cd70b7"
+  }
+]

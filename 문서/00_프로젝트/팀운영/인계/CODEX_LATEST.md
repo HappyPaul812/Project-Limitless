@@ -1,3 +1,11 @@
+## 2026-10-27 Issue66 V2 독립 후보 구현 완료 — NOT_APPROVED / NOT_INSTALLED
+
+V1 코드/guard·1008Disabled/기존소비·Worker1007·인증/OnBoot/게임 불변, REFERENCE_VERIFICATION_HOLD 유지. 필수8개구성요소+shared계약/원자publisher/ledger 구현. 최종 로컬 Temp/Session0V2Candidate20261027-r9, payload766/ZIP767·약15.25MB, schema2/approved=false/auto_start=false/FAKE_ONLY, 임의newSID없음. Installer1a1d671d1cf86aab56c9c2392ed4ba35a8240e348134e6a467f8eb8ec81f17a0 / Manifest250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e / ZIPa4a652bdf73c9a1007bd1e761ae539d3459896b46d8a021fa1459012a1d15c41.
+
+신규 코어84/Python18/교차9/Builder2 PASS·0FAIL, 실제계정/ACL/Task/LSA/IPC/Worker/AI/usage/Discord0. Python18은최종5모듈SHA동일증명으로재사용. 원본소스13/JSON3 SHA불일치0, 기존전수QA·19프로세스재검사0. Worker직접Batch·Users확인(없으면기존권한수정없이HOLD), SID세션관계·다른launchable task·lease·PID생성시각·250ms감시; VM격리/실전충돌없음증명은아님. 검증된메모리bytes만설치/compile·consume분리·TaskDisabled/trigger0/flags50/90초readback·UTF16계약·정제stage/raw코드보존. 실제WindowsNative/Session0/logon4미검증.
+
+상세 Discord_Session0_V2_Candidate_20261027.md, Evidence/Session0V2Candidate20261027/ 전체Manifest·파일별SHA·비교·시험·FinalProof. 다음은대표의정확r9 SHA별도설치승인후관리자사전검사/Disabled설치만, 설치판독후다시별도IPC1회승인. 기존Cleanup/Install/신규실행자동재개금지, 부분실패는consume·제한된신규자산보존/HOLD/자동삭제·복구0. branch codex/discord-usage-diagnostics-20261026, 코드기준63b97539… / 실제마감commit Issue66참조. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 후보검증후중지.
+
 ## 2026-10-27 Issue66 HOLD 대안 — 신규 합성72PASS / V2 설계 권고
 
 대안모델·검증 commit `63b97539ae4e1655d9f36e905b1cb2e3601b22d7`, 실제 Issue66 보고 https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6429561131 . LOCAL_COMMITTED / REMOTE_NOT_PUSHED.

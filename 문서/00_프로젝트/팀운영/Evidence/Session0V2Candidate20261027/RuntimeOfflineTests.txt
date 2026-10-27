@@ -1,0 +1,23 @@
+test_binding_old_sid_schema_epoch_denied (v2_packaged_tests.V2Tests) ... ok
+test_cancel_before_launch (v2_packaged_tests.V2Tests) ... ok
+test_deadline_over90_and_nan_denied (v2_packaged_tests.V2Tests) ... ok
+test_duplicate_consumption_survives_new_runtime (v2_packaged_tests.V2Tests) ... ok
+test_fake_90second_timeout_closes_within_budget (v2_packaged_tests.V2Tests) ... ok
+test_fixed_entry_reads_only_consumed_running_request (v2_packaged_tests.V2Tests) ... ok
+test_joined_fake_job_result_not_AI_verified (v2_packaged_tests.V2Tests) ... ok
+test_manifest_duplicate_key_and_file_alias_denied (v2_packaged_tests.V2Tests) ... ok
+test_manifest_schema_and_path_contract (v2_packaged_tests.V2Tests) ... ok
+test_non_native_peer_schema_cannot_arm (v2_packaged_tests.V2Tests) ... ok
+test_real_worker_command_only_fake_popen_injected (v2_packaged_tests.V2Tests) ... ok
+test_restart_revokes_unconsumed_arm (v2_packaged_tests.V2Tests) ... ok
+test_transport_pins_epoch_and_channel_no_legacy_command (v2_packaged_tests.V2Tests) ... ok
+test_transport_tampered_client_stops_before_popen (v2_packaged_tests.V2Tests) ... ok
+test_unprivileged_arm (v2_packaged_tests.V2Tests) ... ok
+test_v1_approval_rejected_before_launch (v2_packaged_tests.V2Tests) ... ok
+test_v1_epoch_record_cannot_be_reused (v2_packaged_tests.V2Tests) ... ok
+test_worker_failure_matrix_no_leak_retry_and_job_closed (v2_packaged_tests.V2Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 19.796s
+
+OK

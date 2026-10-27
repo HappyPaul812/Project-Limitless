@@ -1,0 +1,68 @@
+{
+  "status": "PACKAGE_OFFLINE_PASS_NOT_INSTALLED",
+  "cross_contract_cases": [
+    {
+      "expected": true,
+      "name": "valid",
+      "accepted": true,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "schema1",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "v1root",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "v1pipe",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "approved",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "auto_start",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "over90",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "forged_sid",
+      "accepted": false,
+      "pass": true
+    },
+    {
+      "expected": false,
+      "name": "duplicate_key",
+      "accepted": false,
+      "pass": true
+    }
+  ],
+  "actual_windows_calls": 0,
+  "payload_files": 766,
+  "manifest_sha256": "250bab2d46010841353a319fbcf34581784366ac3042e6bc0fdc97aadd17c09e",
+  "verified_memory_bootstrap": true,
+  "actual_workers": 0,
+  "actual_installs": 0,
+  "zip_entries": 767,
+  "mutable_source_not_reloaded": true,
+  "actual_ipc_calls": 0
+}
