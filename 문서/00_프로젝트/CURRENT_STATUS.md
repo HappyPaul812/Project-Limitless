@@ -1,3 +1,7 @@
+## 2026-10-27 Issue66 r2 Stage 준비PASS — 신규25PASS+실제Inspect / 관리자실행대기
+
+고정r2 3SHA/package3eff…/766+Manifest1·별도R2Staging도구준비, 새보호대상 공통부모아래3effGUID/Bundle·Bundle.zip. 공유부모ACL변경0·r1/a5af…쓰기는C# 경계가거부, 모든생성경로r2하위만. 메모리25PASS/0FAIL(정확byte·r1sentinel/보호DACL·범위/링크/오류), 실제전체InspectPASS·Native컴파일/정확entry/SHA검증·creationfalse. 도구SHA87509891…/boundary7203eec5…·실제privateStage/OwnerDACL 관측아직없음. 대표관리자한줄직접1회안내·계정Task승인JSON/설치0·기존r1명령재실행/자산수정0. 정본 Discord_DedicatedV2_R2_Staging_20261027.md, V1/MANUAL/A/runtimeHOLD·운영보호·Push0.
+
 ## 2026-10-27 Issue66 r1 native 원인 확정·r2 오프라인 후보 — 8PASS+Inspect / 설치HOLD
 
 대표readonly5PASS/실콘솔정상·계정Task소비없음·갱신승인만845f3f78… expired, Worker암호까지입력확인. 고정r1의 consume note property와 Consume ScriptMethod 대소문자충돌을실제adapter생성에서같은InvalidOperation/-2146233079/MemberAlreadyExists로재현. consumeDirectory저장속성최소rename, backend호출0·기존fake의native생성경로누락보완. r2 payload변경1개·766+1·새package3effaac3…/승인/epoch/pipe, 8PASS/0FAIL+InspectPASS. Manifest7c841014…/ZIP4efa0aa8…·Installer불변, r1/staging/기록보존·r2실staging/승인/설치0. r1명령재실행금지·새SHA후보는별도r2승인필요. 상세 Discord_DedicatedV2_R2_AdapterFix_20261027.md·V1/MANUAL/A/runtimeHOLD·Push0.

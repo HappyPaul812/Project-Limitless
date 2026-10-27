@@ -1,3 +1,9 @@
+## 2026-10-27 Issue66 r2 Stage 준비 인계 — 25PASS/실제InspectPASS·직접실행대기
+
+[Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438597021), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.
+
+기준1b9b054b…·r2고정3SHA/ID3effaac30bf44760986fee9e6019b283·candidate불변. 새R2Staging도구Inspect/Stage만·account/task/approval/install분기없음. 새타깃 C:\Program Files\LimitlessRelayDedicatedV2Staging20261027\3eff… 아래Bundle/Zip만생성, frozenManifest공유부모ACL은읽기만/r1/a5af…metadata읽기보존·쓰기금지. boundaryC#Target가r2하위만File/Directory허용·원본복사SequenceEqualbyte까지검증. 새메모리25PASS/0FAIL+실제entryInspectPASS·StageNative아직0. tool87509891aa464805d3b86e3a4e1bb3969d5a14a99f77c2500205d3eee550431c/shim7203eec5d26fe02b18fb9379e1ad12cb36fb8fea7169a58c6987e012f4cf3664. 새관리자NoProfile한줄은R2_Staging보고서, 대표직접max1·실제Owner/DACL/767+별도ZIP·partial/복구는결과대기. 기존r1도구/승인/소비재사용0·151/12/10/8재실행0·r2실계정Task설치미승인0·V1/MANUAL/A/runtimeHOLD·운영보호·Push0.
+
 ## 2026-10-27 Issue66 r1 native Consume충돌 확정 / 최소수정r2 후보·새승인필요
 
 [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438090445), 최종 로컬 커밋은 Issue 후속 참조 / REMOTE_NOT_PUSHED.

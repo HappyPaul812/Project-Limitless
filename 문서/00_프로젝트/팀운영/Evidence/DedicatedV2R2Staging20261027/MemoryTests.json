@@ -1,0 +1,111 @@
+{
+  "tests": [
+    {
+      "name": "R2_CREATE_IN_MEMORY_EXACT_BYTES_AND_R1_PRESERVED",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\a5af3087b78b45d1baae46067d5b7ac9",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\a5af3087b78b45d1baae46067d5b7ac9\\tamper",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\ProgramData\\LimitlessRelayDedicatedV2Approvals",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283-other\\x",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283\\..\\r1",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283\\x:ads",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_C:\\outside",
+      "status": "PASS"
+    },
+    {
+      "name": "REJECT_WRITE_SCOPE_\\\\server\\share\\x",
+      "status": "PASS"
+    },
+    {
+      "name": "EXISTING_R2_PACKAGE_HOLD_NO_OVERWRITE",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_CORRUPT_COPY",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_TARGET_HARDLINK",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_TARGET_ADS",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_TARGET_REPARSE",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_TARGET_WRITER",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_TARGET_GROUP",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_EXTRA_ENTRY",
+      "status": "PASS"
+    },
+    {
+      "name": "FAULT_HOLD_R1_PRESERVED_MUTATION_FAIL",
+      "status": "PASS"
+    },
+    {
+      "name": "WRONG_ZIP_SHA_HOLD_NO_MUTATION",
+      "status": "PASS"
+    },
+    {
+      "name": "WRONG_MANIFEST_SHA_HOLD_NO_MUTATION",
+      "status": "PASS"
+    },
+    {
+      "name": "R1_ARCHIVE_REJECTED_WITH_R2_PINS",
+      "status": "PASS"
+    },
+    {
+      "name": "EXACT_BYTE_VERIFICATION_REJECTS_POSTCOPY_CHANGE",
+      "status": "PASS"
+    },
+    {
+      "name": "STAGE_TOOL_ONLY_INSPECT_STAGE_NO_INSTALL_BRANCH",
+      "status": "PASS"
+    },
+    {
+      "name": "PS_PARSE_FULL_ENTRY",
+      "status": "PASS"
+    }
+  ],
+  "pass": 25,
+  "real_staging_creations": 0,
+  "account_calls": 0,
+  "fail": 0,
+  "kind": "R2_STAGE_NEW_BOUNDARY_MEMORY_TESTS",
+  "approval_writes": 0,
+  "install_calls": 0
+}

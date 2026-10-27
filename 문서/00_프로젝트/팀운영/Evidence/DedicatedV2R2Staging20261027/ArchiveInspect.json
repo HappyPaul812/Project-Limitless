@@ -1,0 +1,21 @@
+{
+  "payload_count": 766,
+  "status": "R2_ARCHIVE_PASS_NOT_CREATED",
+  "kind": "R2_STAGE_ONLY",
+  "bundle_file_count": 767,
+  "action": "Inspect",
+  "model_calls": 0,
+  "account_calls": 0,
+  "automatic_retries": 0,
+  "ipc_calls": 0,
+  "approval_writes": 0,
+  "task_calls": 0,
+  "zip_sha256": "4efa0aa8a38b32fa40fa5a2dfb4042e028eeb07b1ab8d73c713a1d80efe028d0",
+  "manifest_sha256": "7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976",
+  "installed": false,
+  "creation_attempted": false,
+  "bundle": "C:\\Program Files\\LimitlessRelayDedicatedV2Staging20261027\\3effaac30bf44760986fee9e6019b283\\Bundle",
+  "installer_sha256": "83c97d781fb2d9aed797b41ea6bc799b83e939ad3ffa6f7af6a2d26f1080d68f",
+  "package_id": "3effaac30bf44760986fee9e6019b283",
+  "schema": 3
+}
