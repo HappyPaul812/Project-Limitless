@@ -1,0 +1,85 @@
+{
+  "sid1010_in_external_diagnostic_files": 0,
+  "sid1010_or_account_matching_evidence_files": 9,
+  "ai_calls": 0,
+  "status": "HOLD_NO_CONFIRMED_SID1010_PID_CREATION_TARGET",
+  "base_commit": "f8f46a599df18a9c7dc34558908160b8e1012c70",
+  "historical_owner_sids": [
+    "S-1-5-21-2858504392-1958168942-1662906075-1007"
+  ],
+  "external_diagnostic_files_reviewed": 5,
+  "kind": "EXISTING_EVIDENCE_ONLY_TARGET_REVIEW",
+  "json_parse_failures": 0,
+  "new_logons": 0,
+  "live_queries": 0,
+  "historical_source": "문서/00_프로젝트/팀운영/Evidence/WorkerInvestigation20261027/f1f6f3991b5e4a78bffef16aac347c98.json",
+  "task_starts": 0,
+  "new_mock_tools": 0,
+  "ipc_calls": 0,
+  "sid1010_live_absence_proven": false,
+  "new_tests": 0,
+  "inventory": [
+    {
+      "sha256": "b857f2412e82873c28317422db6c5924f2d624b604fbd7d3305252fec8cad6b6",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedR1Preparation20261027\\AdminRecoveryUserProvided.json"
+    },
+    {
+      "sha256": "4de232b3d5af7aa6662ce4e4ec6a4d28ddc529b5c0d50656a9114f71e679140e",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedV2R2Readonly20261027\\Admin-33a67728035f4fe88db7f539e5b648dc.json"
+    },
+    {
+      "sha256": "a30007e7ff2af587a19e18eb55ba7d67121f011338bc224f1000f84ee30c0432",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedV2R2Readonly20261027\\AdminReviewSummary.json"
+    },
+    {
+      "sha256": "4deba432eaec6a2f9896838281713f5ae6a9ed858733fc301b6985f3601f0518",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedR1Preparation20261027\\InstallRecoveryReadonlyNonAdmin.json"
+    },
+    {
+      "sha256": "fd3da2e75f679f424227e8c29c70c9a7ae4b1db186a92965858a8426fd20a545",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedR1Preparation20261027\\NativeGuardAdminUserProvided.json"
+    },
+    {
+      "sha256": "01d1dfa5385635453f00673d465d64db227a50b9ad6d1a7e02f6fc3eade938c2",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedV2R2InstallHold20261027\\CodexReadonly.json"
+    },
+    {
+      "sha256": "7c8410145ed84f06fc9901e93f78e18d0cc103ad89757172e08c84f91d8a3976",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedV2R2_20261027\\HostManifest.json"
+    },
+    {
+      "sha256": "43f6afcc91eae196e015393670cd9cd4ff37194099b313c2b901177226cd32e3",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\DedicatedV2_20261027\\HostManifest.json"
+    },
+    {
+      "sha256": "e22bb23bdce8e6780faeaee70a2a400266d0f3ad21dc639e86f8f58de9ff0fae",
+      "path": "문서/00_프로젝트/팀운영/Evidence\\TaskSecurityReadback20261027\\Admin-acd610e6e04348c88b881e8c0f17fe33.json"
+    },
+    {
+      "sha256": "fdcf6351873fe5eeb999381f0b5c9ccab96c5abd84fcbe8ec94ededeb74c6200",
+      "path": "문서/00_프로젝트/팀운영/Evidence/WorkerInvestigation20261027/f1f6f3991b5e4a78bffef16aac347c98.json"
+    },
+    {
+      "sha256": "71ea394acd37404e6caeb4db3221739b712f212cfb97ec22582e67b5c4eab261",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\WorkerProcessGroupInvestigation20261027\\04b19e43e49c47ab970b36aa6d3515b2.json"
+    },
+    {
+      "sha256": "c82fd16d72130e0cffd0bab04abefc6d64431057d4946f5968aa861cb368c03a",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\WorkerProcessGroupInvestigation20261027\\48106246eb244358bcc2bec4bc6a42bf.json"
+    },
+    {
+      "sha256": "fdcf6351873fe5eeb999381f0b5c9ccab96c5abd84fcbe8ec94ededeb74c6200",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\WorkerProcessGroupInvestigation20261027\\f1f6f3991b5e4a78bffef16aac347c98.json"
+    },
+    {
+      "sha256": "8223799133dea9736f9dbe341d4498c0a020ec1880a2cb1797fea1cb7e86ccbe",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\V2Hold2Worker20261027\\76eec5af0bca409fbbbe3930e8eae3db.json"
+    },
+    {
+      "sha256": "dee1646e69daf125c94e508766abded682f2e478e7eae154c4ef764b8cff9294",
+      "path": "F:\\study\\codex\\Project-Limitless\\Temp\\V2Hold2Worker20261027\\cdb2ef919b73411a9e16a043d6696153.json"
+    }
+  ],
+  "pid_records_in_matching_files": 0,
+  "historical_process_records": 11
+}

@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 SID1010 기존 토큰 대상 조사 — 확정PID/생성UTC 없음 / HOLD
+
+기준f8f46a5/Issue최신재사용. 기존SID1010·계정일치Evidence9파일에PID객체0(파싱오류0), 별도Temp진단2폴더5JSON에1010일치0. 기존소유권·생성UTC검증11프로세스는모두SID1007로배제. TaskPrincipal/Enabled만으로실토큰PASS금지·현재전PC부재확정아님. 대상없어기존토큰명령재안내/실행0, 신규검증기0/31·48·22반복0/실OS조회0. 상세 Discord_DedicatedV2_WorkerTokenTargetReview_20261027.md/ExistingEvidenceReview.json. 지금승인1개=SID1010 토큰관측용 FAKE_ONLY 단발격리 '사전준비만'(실행제외): 기존대상없고새로그온프로세스현재금지여서안전한생성·Job90종료경계구체화필요. 기존descriptorPASS 및 유효토큰/독점/V1/MANUAL/A HOLD보존·계정TaskACL/로그온IPC모델Push0. 최종로컬SHA Issue후속.
 ## 2026-10-27 Issue66 Worker 실제토큰/독점성 후속 준비 — 신규31PASS / 관리자실행0
 
 기준9c3582c7·TaskdescriptorPASS·48/22재사용. 새 WorkerEffectiveAccess 도구는 확인된기존1010PID+생성UTC만대상, 없으면TARGET_REQUIRED HOLD(토큰부재확정아님). 실제TokenUser/groups deny-only/restricted/통계·AccessCheck·기존로그온Session0Batch/any-job읽기 준비. 평가용DuplicateToken 메모리사본만·새로그온/impersonation/권한변경API0. 그룹목록만PASS불가/Task특정DACL모델PASS와미래실행·threadtoken·Job/1007공용경합HOLD분리. 신규모의31PASS0FAIL·C#컴파일/EncodedScriptBlock, 실제token/관리자조회0·기존검사반복0. 상세 Discord_DedicatedV2_WorkerEffectiveAccess_Preparation_20261027.md에SHA/후속명령/예상HOLD/Session0BatchJob1007구분/FAKE_ONLY독립계획. 기존계정TaskACL/소비인증OnBoot게임변경0·Task/로그온/IPC/AI/Push0, V1/MANUAL/A/runtimeHOLD. 최종SHA Issue후속.
