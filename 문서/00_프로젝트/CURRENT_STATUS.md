@@ -1,3 +1,6 @@
+## 2026-10-27 Issue66 r2 설치 전용 실행 준비 — 20 PASS / 직접 관리자 실행 대기
+
+r2 고정 Package3eff…/3SHA 유지. 새 R2Install 실행기는 고정 core/native API 직접 사용·consumeDirectory/Consume 객체 구성 검증, 신규 승인/epoch/단발소비·Stage Handle/metadata/전체 SHA·과거증거 fingerprint·생성 직전 재검증 유지. 신규20PASS/0FAIL + 실제 Inspect13메서드/766payload PASS. 계정/Task/승인/암호/설치 실행0. 대표 직접 명령은 Discord_DedicatedV2_R2_Install_20261027.md. 실패 시 HOLD/증거보존/재시도삭제0. r1/r2Stage 재실행금지. 실제SID/권리/Task는 결과대기, 유효토큰/GROUP/IPC/Job 및 V1/MANUAL/A HOLD 유지. 기존 운영 보호·Push0. 최종 커밋은 Issue 참조, LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 r2 보호 Stage 성공 수신 — 생성·검증PASS / 미설치
 
 [Issue 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6438760726), 결과·문서만 갱신 / REMOTE_NOT_PUSHED.

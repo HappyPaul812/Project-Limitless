@@ -1,0 +1,14 @@
+{
+  "status": "R2_OFFLINE_ENTRY_NATIVE_CONSTRUCTOR_PASS_NOT_INSTALLED",
+  "account_calls": 0,
+  "schema": 3,
+  "payload_count": 766,
+  "native_methods": 13,
+  "password_reads": 0,
+  "task_calls": 0,
+  "approval_writes": 0,
+  "kind": "R2_INSTALL_ONLY",
+  "package_id": "3effaac30bf44760986fee9e6019b283",
+  "native_constructor": true,
+  "install_calls": 0
+}

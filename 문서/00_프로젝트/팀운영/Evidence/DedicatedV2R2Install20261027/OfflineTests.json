@@ -1,0 +1,92 @@
+{
+  "pass": 20,
+  "actual_installs": 0,
+  "real_accounts": 0,
+  "kind": "R2_INSTALL_NEW_GATES_AND_ACTUAL_TASK_METHOD_FAKE",
+  "fail": 0,
+  "real_password_reads": 0,
+  "approval_writes": 0,
+  "tests": [
+    {
+      "name": "R2_ONE_INSTALL_APPROVAL_SCOPE_AND_CALL_ORDER",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_admin",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_console",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_stage",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_native_constructor",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_fresh_namespace",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_r2_records_absent",
+      "status": "PASS"
+    },
+    {
+      "name": "GATE_BEFORE_PASSWORD_AND_CREATION_old_preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "FAIL_HOLD_PRESERVE_NO_RETRY_PASSWORD",
+      "status": "PASS"
+    },
+    {
+      "name": "FAIL_HOLD_PRESERVE_NO_RETRY_REVALIDATE",
+      "status": "PASS"
+    },
+    {
+      "name": "FAIL_HOLD_PRESERVE_NO_RETRY_APPROVAL",
+      "status": "PASS"
+    },
+    {
+      "name": "FAIL_HOLD_PRESERVE_NO_RETRY_NATIVE",
+      "status": "PASS"
+    },
+    {
+      "name": "FAIL_HOLD_PRESERVE_NO_RETRY_AUDIT",
+      "status": "PASS"
+    },
+    {
+      "name": "DUPLICATE_APPROVAL_BLOCKED",
+      "status": "PASS"
+    },
+    {
+      "name": "R1_APPROVAL_ID_CANNOT_PASS_R2_NEW_PINS",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_COORDINATOR_MEMBERS_CONSTRUCT_WITHOUT_COLLISION",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_OLD_EVIDENCE_FINGERPRINT_PRESERVES_R1_DETECTS_CHANGE",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_PACKAGED_TASK_CREATE_ONLY_ATOMIC_SDDL_DISABLED",
+      "status": "PASS"
+    },
+    {
+      "name": "ACTUAL_PACKAGED_TASK_EXISTING_REJECT_NO_UPDATE",
+      "status": "PASS"
+    },
+    {
+      "name": "NEW_ENTRY_AND_CONTROL_PARSE",
+      "status": "PASS"
+    }
+  ],
+  "real_task_registrations": 0
+}
