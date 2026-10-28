@@ -136,3 +136,7 @@ $ownedRunningTask.Stop()
 - [Job limits](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_limit_information), [TerminateJobObject](https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-terminatejobobject): active/kill-on-close/CPU시간 및 자기Job 종료.
 - [RegisterTaskDefinition](https://learn.microsoft.com/en-us/windows/win32/taskschd/taskfolder-registertaskdefinition), [Run](https://learn.microsoft.com/en-us/windows/win32/taskschd/registeredtask-run), [RunningTask.Stop](https://learn.microsoft.com/en-us/windows/win32/taskschd/runningtask-stop): create-only/자동ACE 제한/정확instance 중지.
 - [NativeAOT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/): C# native 배포와 Windows C++ 빌드도구 전제.
+
+## 후속 GitHub 게시 상태
+
+기존 NO_GO는 댓글6457892285로 실제 게시 완료입니다. 상세 명세·최종commit5221895dc4487818565da999292790ffc767f546를 담은 후속 댓글은 자동 승인 검토가 새Task 이름·ACL·암호입력/API·종료 설계의 확장 payload에 별도 명시 승인이 필요하다고 거부했습니다. **상세 후속 게시0/REPORT_PENDING_GITHUB_WRITE/우회0**. 본문 준비 명세는 로컬에 보존하며 실행 NO_GO/중지 유지입니다. 본 상태기록 후속commit은 최종채팅에 보고합니다.

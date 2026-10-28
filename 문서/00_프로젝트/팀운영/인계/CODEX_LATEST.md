@@ -1,3 +1,4 @@
+<!-- 최신: NO_GO 기본댓글6457892285 게시완료. 상세명세commit5221895d 후속댓글은 확장 보안payload 별도승인필요로 자동검토거부/게시0/우회0. 마지막 관련5221895dc4487818565da999292790ffc767f546; 최종상태commit 채팅참조. -->
 ## 2026-10-28 Issue66 게시 완료·최소 배치 경로 명세 — 실행 NO_GO
 
 바울 대표의 명시적 게시 승인으로 [Issue66 NO_GO 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6457892285) 실제 게시 완료(앞선 거부는 이력). 기준 b093aee9. 별도 Password Task→SID1010 Supervisor→같은토큰 Probe1/Job1 경로 구체화, 총2프로그램/Job안1개·Scheduler helper 추가면HOLD. C# NativeAOT2PE+동일exe등록/단발/자기instance정리 모드·CreateProcessW/생성시JOB_LIST/actualTokenSession0+LSABatch4/예정10초자기Job강제종료·85/90초예산 설계. 기존Job runner는 사후Assign·pipe라재사용불가. 명령은 미구현Supervisor CLI 계약이며 실행가능납품 아님; toolchain/암호/만료·실토큰/Jobcleanup/봉인/OS준비·실행승인 미확보로NO_GO. 새계정0/모의·관리자조회반복0/OS·실행·IPC·AI·게임변경0/Push0. [상세](../../Discord_Session0_MinimalBatch_PathSpec_20261028.md). 기한11-01후연장없이게임복귀, 준비보고후중지. 마지막 관련commit b093aee99cb3356d3f6b7a4e831e5c0fc8583eb7; 이번최종SHA는후속Issue/채팅. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
