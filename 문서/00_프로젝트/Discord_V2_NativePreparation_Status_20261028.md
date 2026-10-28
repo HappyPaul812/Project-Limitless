@@ -30,3 +30,5 @@
 이번 OS 변경·Task 등록/실행·계정조회·계정/ACL 변경·시험 로그온/대상 생성/Job 생성·IPC/AI/자동업무·운영모드 변경·기존 승인 소비 재사용/초기화·기존 Task/OnBoot/게임 변경·Push/main병합은 모두0입니다. 빌드용 도구 실행과 시험용 프로세스 생성은 구분합니다.
 
 **보고 후 실제 실행 없이 중지합니다. 2026-11-01 이후 별도 연장 없이 증거·인계·복구 가능한 상태를 보존하고 게임 개발로 복귀합니다.**
+
+GitHub 공개 상태 댓글 실제 게시 완료: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6458123153 . 보안 상세 전송0. 준비 보고 commit fbb9923a0518f31bb3a8d3f6f948f997a02118e0, source/native 상태는 위 보고와 동일하며 실행 NO_GO/중지 유지.
