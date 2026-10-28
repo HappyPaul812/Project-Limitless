@@ -43,3 +43,5 @@
 이후에도남은실행admission/관리자준비정리구현→native이미지2개와SHA→최소OS준비승인→단발Session0/Batch/Job종료정리승인이필요합니다. native이미지0/SHA미발급이며실행가능판정은아닙니다.
 
 새계정·Task/로그온·Job·IPC·AI0, 기존소비/OnBoot/게임원본변경0, Push/main병합0. 이번두차단조사와자료준비후중지합니다. **마감2026-11-01, 이후별도연장없이게임개발복귀.**
+
+Issue66 공개 상태 게시 완료: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6458283473 . 상세 명령·Task/ACL·보호 경로 게시0. 조사 보고 commit641c6d0672d73a7358d882aaa2504895f74b1c21. 관리자수집/다운로드/설치 미실행·NO_GO 유지.
