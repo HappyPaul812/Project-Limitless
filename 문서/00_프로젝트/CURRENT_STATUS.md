@@ -1,3 +1,6 @@
+## 2026-10-28 Supervisor 핵심·관리자 CLI 구현 — 신규52PASS / AOT 보안 HOLD
+
+기준c97ef554/Issue6461020709. 기존두프로젝트에승인Scope·동작별승인/등록-start-instance기록검증·원자영구소비·AccessCheck/ACL/파일pinning·비상속HANDLE·외부독점과native관리자등록/시작/정리연결. Job루프취소/10초force·85/90초한도·실행중독점재검사구현. 신규실코드단위/모의52PASS0FAIL, SDK x64 ABI/COM슬롯구문컴파일PASS, Supervisor/Probe일반컴파일각경고오류0. Nt class64지원성/제한SID-PPL관측·실kernel DACL/OWNER RIGHTS·COM readback/cleanup미검증으로실행gate=false 및NativeAOT0/SHA없음. [구현보고](Discord_V2_Supervisor_CoreAndAdmin_20261028.md). 기존PASS반복/다운로드/실Task계정ACLOnBootJobSession0IPCAIUnitySave/Push0. SDK부수효과차단환경·새비공개checkpoint보존. NO_GO/MANUAL/HOLD·11-01기한유지후중지. 마지막관련c97ef5542bbe40e9388d01125a6d67de73dfd34b;최종SHA완료보고.
 ## 2026-10-28 Supervisor Admission WIP 보존 — 컴파일0오류 / 5시간98%로안전중지
 
 기준6f9e81cd/Issue6460822429. 기존Supervisor프로젝트에Tools/DiscordV2/NativeBatch/Supervisor의실제승인/AccessCheck·ACL/handle pinning·kernel DACL/영구단발소비/외부handle·독점검사연결. flag=false유지/실행gate HOLD·미완료. SDK10.0.403일반컴파일오류경고0, 단위테스트미작성/미실행·AOT0. Nt 내부ABI·관측권한/TOCTOU/실경계검증·관리자CLI남음. 5시간98%확인후신규구현중단·재설정권0. SDKfirst-run개발HTTPS인증서자동설치메시지관측/실변경미확인·trust/삭제0. [WIP인계](Discord_V2_Supervisor_Admission_WIP_20261028.md). Task계정OnBootSession0JobIPCAIUnitySave/Push0. NO_GO/MANUAL/HOLD·11-01유지.

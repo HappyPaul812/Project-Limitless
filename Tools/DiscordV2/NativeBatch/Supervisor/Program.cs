@@ -12,6 +12,23 @@ internal sealed class TrialContract
     public string SupervisorSha256 { get; set; } = "";
     public string ProbeSha256 { get; set; } = "";
     public DateTimeOffset ExpiresUtc { get; set; }
+    public TrialScope? Scope { get; set; }
+}
+internal sealed class TrialScope
+{
+    public string WorkerSid { get; set; } = "";
+    public string TaskPath { get; set; } = "";
+    public string CodeRoot { get; set; } = "";
+    public string EvidenceRoot { get; set; } = "";
+    public string Mode { get; set; } = "";
+    public bool NoIpc { get; set; }
+    public bool NoAi { get; set; }
+    public int JobSeconds { get; set; }
+    public int SupervisorCount { get; set; }
+    public int ProbeCount { get; set; }
+    public bool Register { get; set; }
+    public bool Start { get; set; }
+    public bool Cleanup { get; set; }
 }
 [JsonSerializable(typeof(TrialContract))]
 internal partial class ContractJson : JsonSerializerContext { }
@@ -19,7 +36,7 @@ internal partial class ContractJson : JsonSerializerContext { }
 internal static class Program
 {
     // 핵심 admission 구현은 아래 실제 어댑터에 연결되어 있습니다. 이 gate는 Windows 실검증 전 유지합니다.
-    // 이번 준비본은 실행 승인용 이미지가 아니며, 등록·시작·삭제 모드는 구현하지 않습니다.
+    // 관리자 모드도 같은 실행 봉인 뒤에서만 접근합니다. 이번 시험은 모의 backend만 사용합니다.
     private static readonly bool ReleaseAdmissionImplemented = false;
     private static readonly byte[] Intent = Encoding.UTF8.GetBytes("TOKEN_PROBE_INTENT_ONLY\n");
     private static readonly byte[] Complete = Encoding.UTF8.GetBytes("TOKEN_PROBE_ONLY_COMPLETE\n");
@@ -30,6 +47,11 @@ internal static class Program
         var wall = Stopwatch.StartNew();
         try
         {
+            if (args.Length > 0 && AdminController.IsMode(args[0]))
+            {
+                Native.Need(ReleaseAdmissionImplemented, "HOLD_NATIVE_ADMIN_VALIDATION_PENDING");
+                return AdminWindows.Run(args);
+            }
             Native.Need(args.Length == 5 && args[0] == "--supervise" && args[1] == "--contract" && args[3] == "--contract-sha", "MODE_NOT_IMPLEMENTED");
             Native.Need(Environment.ProcessPath == Path.Combine(Native.CodeRoot, "Supervisor.exe"), "SUPERVISOR_LOCATION");
             Native.Need(args[2] == Path.Combine(Native.CodeRoot, "TrialContract.json"), "CONTRACT_LOCATION");
@@ -41,7 +63,6 @@ internal static class Program
         }
         catch { return 70; }
     }
-    private static string Hash(byte[] bytes) => Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
     private static void DurableNew(string path, byte[] bytes)
     {
         // CREATE_NEW 실패를 성공으로 덮어쓰지 않으며 기존 승인소비와 별개 trial 기록만 씁니다.
@@ -96,17 +117,9 @@ internal static class Program
             admission.BeforeResume(job, child);
             Native.Need(wall.ElapsedMilliseconds < 8000, "RESUME_BUDGET");
             Native.Check(Native.ResumeThread(child.Thread) != uint.MaxValue);
-            while (wall.ElapsedMilliseconds < 10000)
-            {
-                uint wait = Native.WaitForSingleObject(child.Process, 20);
-                Native.Need(wait == Native.WaitTimeout, "PROBE_EXITED_BEFORE_FORCE_CHECK");
-            }
-            Native.Need(wall.ElapsedMilliseconds < 85000, "WATCHDOG_LATE");
-            Native.Check(Native.TerminateJobObject(job, 125)); terminated = true;
-            cleanup = Drain(job, child.Process, wall);
-            Native.Check(Native.GetExitCodeProcess(child.Process, out uint code));
-            Native.Need(cleanup && code == 125 && wall.ElapsedMilliseconds < 90000, "EXIT_OR_DRAIN_UNKNOWN");
-            completed = true;
+            var result = JobMonitor.Run(new NativeJobOperations(job, child.Process, wall, () => admission.CheckIsolation(child.Pid)), CancellationToken.None);
+            terminated = result.Terminated; cleanup = result.Drained; completed = result.Completed;
+            Native.Need(completed, "EXIT_OR_DRAIN_UNKNOWN");
         }
         finally
         {
@@ -114,7 +127,7 @@ internal static class Program
             if (job != 0 && child.Process != 0 && !cleanup)
             {
                 if (!terminated) Native.TerminateJobObject(job, 126);
-                cleanup = Drain(job, child.Process, wall);
+                cleanup = JobMonitor.Drain(new NativeJobOperations(job, child.Process, wall));
             }
             if (child.Thread != 0) cleanup &= Native.CloseHandle(child.Thread);
             if (child.Process != 0) cleanup &= Native.CloseHandle(child.Process);
@@ -130,17 +143,5 @@ internal static class Program
             DurableNew(prefix + ".final", completed ? Complete : Hold);
         }
         return completed ? 0 : 72;
-    }
-    private static bool Drain(nint job, nint process, Stopwatch wall)
-    {
-        // deadline 이후 반복하지 않고 UNKNOWN을 반환하며 기존 Task/PID로 범위를 넓히지 않습니다.
-        while (wall.ElapsedMilliseconds < 90000)
-        {
-            if (!Native.QueryAccounting(job, 1, out var state, (uint)Marshal.SizeOf<Native.Accounting>(), 0)) return false;
-            uint wait = Native.WaitForSingleObject(process, 20);
-            if (wait == 0 && state.Active == 0 && state.Total == 1) return true;
-            if (wait != 0 && wait != Native.WaitTimeout) return false;
-        }
-        return false;
     }
 }

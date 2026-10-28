@@ -10,7 +10,7 @@ internal static class HandleCensus
     [DllImport("kernel32.dll",SetLastError=true)] private static extern nint CreateToolhelp32Snapshot(uint flags,uint pid);
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] private static extern bool Process32FirstW(nint snapshot,ref ProcessEntry entry);
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)] private static extern bool Process32NextW(nint snapshot,ref ProcessEntry entry);
-    [StructLayout(LayoutKind.Sequential,CharSet=CharSet.Unicode)] private struct ProcessEntry
+    [StructLayout(LayoutKind.Sequential,CharSet=CharSet.Unicode)] internal struct ProcessEntry
     {
         internal uint Size,Usage,Pid; internal nuint Heap; internal uint Module,Threads,Parent;
         internal int Priority; internal uint Flags; [MarshalAs(UnmanagedType.ByValTStr,SizeConst=260)] internal string Name;

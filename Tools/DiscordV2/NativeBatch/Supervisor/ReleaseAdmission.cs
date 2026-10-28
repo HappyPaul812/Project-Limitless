@@ -11,7 +11,8 @@ internal sealed class ReleaseAdmission : IDisposable
     private readonly List<SafeFileHandle> pins=[];
     private readonly Dictionary<nint,uint> watched=[];
     private IDisposable? consumption;
-    private nint token,process,thread;
+    private nint token,process,thread,childToken;
+    private ControlReceipt startIntent=null!;
     internal TrialContract Contract { get; private set; }=null!;
     internal Native.TokenStats Identity { get; private set; }
     internal AdmissionWindows.KernelSecurity Security { get; }=new(Native.Worker);
@@ -31,14 +32,19 @@ internal sealed class ReleaseAdmission : IDisposable
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentThread(),Native.GetCurrentProcess(),out thread,0,false,2));
         Security.Harden(process);Security.Harden(thread);
         using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(token);
-        watched.Add(process,0x000d0a7b);watched.Add(thread,0x000d03fb);watched.Add(token,0x000d01ef);
+        watched.Add(process,AdmissionPolicy.ProcessDanger);watched.Add(thread,AdmissionPolicy.ThreadDanger);watched.Add(token,AdmissionPolicy.TokenDanger);
         foreach(var handle in watched.Keys)NonInherited(handle);
 
         PinDirectoryTree(Native.CodeRoot,false);PinDirectoryTree(Native.EvidenceRoot,true);
         var contract=PinFile(contractPath);byte[] raw=ReadSmall(contract,4096);
         AdmissionPolicy.Require(Hash(raw)==contractSha,"CONTRACT_SHA");
-        AdmissionPolicy.Contract(raw,DateTimeOffset.UtcNow);
+        AdmissionPolicy.Contract(raw,DateTimeOffset.UtcNow,AdmissionBinding.Current);
         Contract=System.Text.Json.JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract) ?? throw new InvalidOperationException("CONTRACT_NULL");
+        AdmissionPolicy.Require(Contract.Scope!.Start,"SUPERVISOR_START_NOT_APPROVED");
+        var startApproval=PinFile(Path.Combine(Native.CodeRoot,OperationApproval.FileName(Contract.TrialId,"--start-once")));
+        var operation=OperationApproval.Validate(ReadSmall(startApproval,4096),Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false);
+        var registration=ControlRecord("registered");startIntent=ControlRecord("start-intent");
+        ReceiptPolicy.Start(registration,startIntent,operation,Contract.TrialId,contractSha);
         var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
         var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
         AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
@@ -75,16 +81,30 @@ internal sealed class ReleaseAdmission : IDisposable
     }
     internal void BeforeResume(nint job,Native.ProcessInfo child)
     {
+        // 승인 파일만 읽고 관리자 시작 순서를 건너뛰는 수동 실행은 허용하지 않습니다.
+        // 응답 기록이 아직 없거나 유실됐으면 suspended Probe를 재개하지 않고 HOLD합니다.
+        ReceiptPolicy.Instance(ControlRecord("instance"),startIntent);
         Security.Harden(child.Process);Security.Harden(child.Thread);
-        using var childToken=new TokenLease(AdmissionWindows.Token(child.Process));
-        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(childToken.Handle);
-        AdmissionWindows.LimitedToken(childToken.Handle);
-        var current=new Dictionary<nint,uint>(watched) { [job]=0x000d001f,[child.Process]=0x000d0a7b,[child.Thread]=0x000d03fb,[childToken.Handle]=0x000d01ef };
-        foreach(var handle in current.Keys)NonInherited(handle);
-        HandleCensus.Exclusive(child.Pid);HandleCensus.Check(current);
+        AdmissionPolicy.Require(childToken==0,"CHILD_TOKEN_ALREADY_BOUND");childToken=AdmissionWindows.Token(child.Process);
+        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(childToken);
+        AdmissionWindows.LimitedToken(childToken);
+        watched.Add(job,AdmissionPolicy.JobDanger);watched.Add(child.Process,AdmissionPolicy.ProcessDanger);watched.Add(child.Thread,AdmissionPolicy.ThreadDanger);watched.Add(childToken,AdmissionPolicy.TokenDanger);
+        foreach(var handle in watched.Keys)NonInherited(handle);
+        CheckIsolation(child.Pid);
         // 파일/디렉터리 HANDLE은 계속 열려 있어 swap/rename/write 공유를 차단합니다.
         AdmissionPolicy.Require(Contract.ExpiresUtc>DateTimeOffset.UtcNow,"APPROVAL_EXPIRED_BEFORE_RESUME");
     }
+    private ControlReceipt ControlRecord(string suffix)
+    {
+        var file=AdmissionWindows.Pin(Path.Combine(Native.EvidenceRoot,Contract.TrialId+".admin."+suffix),false);pins.Add(file);
+        byte[] sd=AdmissionWindows.Descriptor(file.DangerousGetHandle(),1);
+        AdmissionPolicy.Descriptor(new RawSecurityDescriptor(sd,0),Native.Worker,false);
+        foreach(uint access in new uint[]{2,4,0x10,0x100,AdmissionPolicy.Delete,AdmissionPolicy.WriteDac,AdmissionPolicy.WriteOwner})
+            AdmissionPolicy.Require(!AdmissionWindows.Allowed(sd,token,access),"ADMIN_RECEIPT_WORKER_MUTATION");
+        return ControlReceipt.Parse(ReadSmall(file,4096));
+    }
+    internal void CheckIsolation(uint childPid)
+    {HandleCensus.Exclusive(childPid);HandleCensus.Check(watched);}
     private static void NonInherited(nint handle)
     {Native.Check(Native.SetHandleInformation(handle,1,0));Native.Check(Native.GetHandleInformation(handle,out uint flags));AdmissionPolicy.Require((flags&1)==0,"INHERITABLE_ADMISSION_HANDLE");}
     private static byte[] ReadSmall(SafeFileHandle file,int limit)
@@ -97,12 +117,11 @@ internal sealed class ReleaseAdmission : IDisposable
         while(offset<length){int count=RandomAccess.Read(file,buffer.AsSpan(0,(int)Math.Min(buffer.Length,length-offset)),offset);AdmissionPolicy.Require(count>0,"IMAGE_SHORT_READ");hash.AppendData(buffer,0,count);offset+=count;}
         return Convert.ToHexString(hash.GetHashAndReset()).ToLowerInvariant();
     }
-    private sealed class TokenLease(nint handle):IDisposable {internal nint Handle=handle;public void Dispose(){if(Handle!=0){Native.CloseHandle(Handle);Handle=0;}}}
     public void Dispose()
     {
         consumption?.Dispose();consumption=null;
         for(int i=pins.Count-1;i>=0;i--)pins[i].Dispose();pins.Clear();
-        if(thread!=0){Native.CloseHandle(thread);thread=0;}if(process!=0){Native.CloseHandle(process);process=0;}if(token!=0){Native.CloseHandle(token);token=0;}
+        if(childToken!=0){Native.CloseHandle(childToken);childToken=0;}if(thread!=0){Native.CloseHandle(thread);thread=0;}if(process!=0){Native.CloseHandle(process);process=0;}if(token!=0){Native.CloseHandle(token);token=0;}
         Security.Dispose();
     }
 }
