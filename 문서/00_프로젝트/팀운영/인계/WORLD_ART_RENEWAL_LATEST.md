@@ -1,3 +1,10 @@
+## 2026-10-28 / Issue #60 후속 — OGA20·태온 참고 비교판 및 숲거미 CC0 정적 조사 (현재 최신)
+
+- 담당 보고서: [Renewal_Issue60_GateGuard_Taeon_Spider_Review_20261028.md](../../Renewal_Issue60_GateGuard_Taeon_Spider_Review_20261028.md) commit fc23cd6fa9ed8aa9b03157c40dc4639a1297879c. 기존 #60 후보·#63 VenomBee 조사/제작 계약과 기존54행 감사 원형 보존.
+- OGA20 기존 RGBA512 SHA256 6e52a6f1c9a7e66e915e20652ee6171b7e6b43f2da5beda61bb5568116b2b9a4. 태온 Library 참고 픽셀 전투 시트 대기 포즈를 사용한 128×128/40×40 참고판 SHA256 a54e405875912119c380c61903e6d01ad4774dccfbfb3cf569df464c65b58656. **공식 Taeon Portrait_Taeon.png의 정본 바이너리 및 실제 Unity PPU/GameView 비교는 미확인**; 참고 그림과 공식 이미지 구별. 갈색 머리·회색 판금·푸른 의복의 높은 공통점, 창 vs 검·방패는 차별점. USER_ART_APPROVAL_PENDING / STYLE_SIMILARITY_REVIEW_HOLD. 기존 OGA03/09/20 및 NPC 모든 기능 보존.
+- Spider: MonsterDefinitions/03_ForestSpider.asset의 Idle/Walk/Attack/Shoot ResourcePath·10FPS·우향, Field02의4 Spawn 및 Field03 Spider Spawn 데이터 확인. 실제 PNG 8+8+8+8=32, 각 첫 이미지 크기336×226 /359×229 /325×228 /357×236 및 첫 meta PPU256/pivot0.5 확인. ThirdParty ethanf30games/2DSpider 원본·OGA 공식 https://opengameart.org/content/2d-spider **CC0 1.0** 직접 확인. 현재 정적 Runtime/Spawn 연결 있지만 실제 GameView·원본62프레임 바이트 대조·공식 사용자 최종 아트 승인 기록 미확정. SPIDER_NEW_ART_HOLD / GAMEVIEW_NOT_VERIFIED.
+- 결과 ZIP Limitless_Issue60_GateGuard_Spider_Review_20261028.zip / 263760 bytes / SHA256 064c1ecee4a01c7c8826c2b8763d2cb1765b334ca7cb1376631395c2f6c03905 / 6 entries / CRC PASS. 비교판·감사 MD·프레임CSV·QA·Manifest·SHA. 사용자 F: 직접 저장/깃허브 바이너리 등록은 하지 않음.
+- VenomBee 기존 TECH_PASS_SINGLE_POSE / ART_HOLD_REPLACEMENT / CC_BY3_4_LICENSE_CONFLICT_OPEN 및 신규 키포즈0·20프레임0 유지. Wolf/Bear/Fox, Ch2 공식 원화·환경·NPC 기능·Unity/Save/main 변경0. 차기 Codex가 공식 태온 PNG와 OGA20 동배율 비교/Spider 전체 소스 실제 QA를 **읽기전용** 확인, 바울 대표 최종 승인 전 일체 원화교체·main 병합 금지.
 ## 2026-10-23 / Issue #63·#65 Codex 최종 실물 비교판 인계 — 미술 승인 대기 (현재 최신)
 
 - **이번 새 보고서**: [Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md](../../Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md), `docs/art-renewal` commit **`0b58085a48a43c7481d69d07f949b791ecd27817`**. 기존 [독침벌 PilotBee 원본·라이선스·모션 계약](../../Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) 및 v1 원화/ZIP은 **그대로 보존**.
