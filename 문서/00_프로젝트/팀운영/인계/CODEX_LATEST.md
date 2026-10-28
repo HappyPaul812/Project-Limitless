@@ -1,3 +1,17 @@
+## Codex 최신 인계 — 2026-10-28 / 안전 정리 완료
+
+- **담당/기준:** Codex, codex/discord-usage-diagnostics-20261026. 구현fe5b22e60a3c505961cead1b7b80089194f0a44a, 관련Issue #66. 이번문서최종SHA는완료보고/Issue댓글.
+- **확정 정책:** 11-01은안전정리범위,전체기능완성강제기한아님.11-02부터게임복귀하며안랩#745042회신지연으로늦추지않음. NO_GO/MANUAL/HOLD·gate=false유지.
+- **완료/증거:** 핵심/관리자CLI source,전용FAKE_ONLY계약 source,기존52/17/관리자7 및변경관리형3 근거보존. IL2091 constructor보존수정과일반DLLcompile완료.시험반복없음.
+- **중단 지점:** [안전 정리·복구·후속 순서](../../Discord_V2_SafeCloseout_Handoff_20261028.md) 정리완료. 원본source/로그/승인소비·게임보존. 현재source추가수정·빌드·실행없음.
+- **HOLD:** 안랩공식판정,IL2091 NativeAOT진단소멸/링크·두이미지,실행신뢰근거,실제제한token/Session0·Job90초·FAKE_ONLY·등록시작정리. 코드cutoff/승인·계정만료자동연장아님. 실제악성/오진UNKNOWN.
+- **복구/금지:** 새OS변경없어자동되돌림대상없음.기존Task/OnBoot/계정/ACL/소비초기화·reset/clean/worktree삭제 금지. 복원Probe.exe/제출Probe.zip접근·실행/재빌드·V3예외/추가전송금지. 상세보존경로는로컬전용인계.
+- **다음1~3:** (1)11-02게임정본·게임branch확인후요청된게임개발, (2)대표제공회신은사실기록만/자동감시·재개0, (3)별도재개지시때만cutoff정책→공식판정/빌드승인→이미지봉인→실행근거/동작별승인 순서.
+- **다른담당:** 게임복귀와vendor대기분리/Discord실행미승인을인계문에명시. 다른담당자동메시지0.
+- **후임첫답변:** 위네상태(소스수정완료·native미검증·vendor대기·11-02게임복귀독립)와git status/Issue최신대조결과를보고. 이번main최신재조회/변경없음.
+- **시작문구:** “너는 Codex 담당이다. GitHub Issue #66과 CODEX_LATEST.md, Discord_V2_SafeCloseout_Handoff_20261028.md를 확인해. Discord HOLD를보존하고11월2일게임복귀를안랩회신때문에지연하지마.”
+
+LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 이번정리시험/컴파일/Publish/샘플/계정TaskACLOnBoot/UnitySave/Push main 변경0. 아래는과거이력입니다.
 ## 2026-10-28 IL2091 근본 계약 수정 — 관리형3 PASS / NativeAOT NOT_VERIFIED
 
 대표 안랩#745042에샘플제출/공식판정대기(추가전송0). Native.Info<T>에 PtrToStructure가요구하는 Public/NonPublicConstructors 보존선언만추가, 구조체/필드/버퍼/API·보안gate=false유지. 새메타데이터·int/TokenStats x64 메모리검사3 PASS0FAIL, Probe/Supervisor DLL전용compile 경고오류0(Probe오래된obj NU1100은새관리형obj로분리). [수정보고](../../Discord_V2_IL2091_ContractFix_20261028.md). 일반분석대조군도IL2091미발생→경고소멸/NativeAOT 링크·실행 NOT_VERIFIED, 경고억제/분석회피0. 기존52/17/Windows7 반복0·복원exe/제출zip접근/NativePublish/외부전송/계정TaskACLOnBootUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01유지, 회신후별도빌드승인/실행신뢰·등록시작정리승인필요. 마지막관련c7085cf4bdd4804784cd0f25d166ac132c900f22;최종SHA완료보고/Issue66.

@@ -1,5 +1,7 @@
 # NativeBatch Supervisor 소스와 시험
 
+> 2026-10-28 최신 정책: 11-01은 안전한 독립 정리 범위이고 전체 기능 완성 강제기한이 아닙니다. 안랩 #745042 공식판정 대기와 무관하게11-02 게임 개발로 복귀합니다. IL2091 소스 보존계약 수정/관리형3 PASS와 NativeAOT NOT_VERIFIED를 구분하며 gate=false를 유지합니다. 복원 sample/제출zip 접근·실행/재빌드·V3예외/실 Session0·Job90초·FAKE_ONLY는 금지 또는 별도승인 HOLD입니다. 코드의 기존 승인 cutoff와 계정/승인 만료는 자동 연장하지 않았습니다. [최신 인계](../../../문서/00_프로젝트/Discord_V2_SafeCloseout_Handoff_20261028.md)를 먼저 읽으십시오.
+
 기존 Probe/Supervisor 두 프로젝트가 이 폴더의 공통 코드를 링크합니다. 새로운 실행 아키텍처나 운영 진입점은 아닙니다. 실제 배포 SID·Task/경로 상수와 프로젝트 준비본은 Git 제외 로컬 자료에 두며, 공개 시험은 존재하지 않는 `Native.TestBinding.cs`만 사용합니다.
 
 `Supervisor.Core.projitems`는 실제 Supervisor 구현 입력입니다. `NativeInterop.cs`는 두 프로그램이 공유하는 Windows ABI, `TokenPolicy.cs`는 TOKEN_QUERY만으로 위험 그룹을 거부하는 공통 코드입니다. `AdminController`는 실제 Windows 어댑터와 모의 backend가 공유하는 등록/시작/정리 순서입니다. Windows 어댑터에는 기존 Task 갱신·계정/권리 부여·ACL staging 수정 코드가 없습니다. 신규 Task 생성과 자기 runtime kernel object 보호 코드는 실제 실행 승인이 있어야만 사용할 수 있습니다.
@@ -30,4 +32,4 @@ NativeAOT 생성물과 Task/계정/ACL·실제 단발 실행 승인은 이 소�
 
 ## 승인된 FAKE_ONLY 전용 독점성 확장
 
-기본 계약의 전역 동일SID 검사는 유지합니다. 선택적 `FakeOnlyIsolation`의 `FAKE_ONLY_EXECUTION_V1`만 전용 시험 범위를 적용하며 `GlobalSidAbsence=UNKNOWN`으로 남깁니다. 관리자 소유의 신뢰 진술·검토 원문/정확 SHA·trial/이미지/자산·유효 시각이 없으면 Supervisor와 관리자 CLI는 HOLD합니다. 실제 계정 사용에 대한 신뢰 근거를 합성 시험이나 위험 수용 승인으로 대체하지 않습니다. Job/HANDLE/단발 소비·lease/정리·noIPC/noAI/실행 게이트는 유지합니다. `--fake-only-contract`는 기존52개를 재실행하지 않는17개 정책/모의 시험입니다. 실제 Windows7개와 구분하며 이번 NativeAOT 발행은 신뢰 근거 부재로0회입니다.
+기본 계약의 전역 동일SID 검사는 유지합니다. 선택적 `FakeOnlyIsolation`의 `FAKE_ONLY_EXECUTION_V1`만 전용 시험 범위를 적용하며 `GlobalSidAbsence=UNKNOWN`으로 남깁니다. 관리자 소유의 신뢰 진술·검토 원문/정확 SHA·trial/이미지/자산·유효 시각이 없으면 Supervisor와 관리자 CLI는 HOLD합니다. 실제 계정 사용에 대한 신뢰 근거를 합성 시험이나 위험 수용 승인으로 대체하지 않습니다. Job/HANDLE/단발 소비·lease/정리·noIPC/noAI/실행 게이트는 유지합니다. `--fake-only-contract`는 기존52개를 재실행하지 않는17개 정책/모의 시험입니다. 실제 Windows7개와 구분합니다. 이후 빌드 전용 승인으로 Probe1회 발행은 V3 삭제/MSB3021로 실패했고 Supervisor0회입니다. 실행 신뢰 근거는 미완료이며 빌드 승인과 구분합니다. 최신 상태와 후속 제한은 위 인계를 따릅니다.
