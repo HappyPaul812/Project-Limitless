@@ -1,3 +1,6 @@
+## 2026-10-28 빌드 전용 NativeAOT — Probe1회 FAIL / Supervisor0회 중지
+
+대표 승인으로 신뢰근거와 빌드를 분리해 E격리/offline10.0.10·SDK10.0.403 사용. Probe restore/native code 단계 후 MSB3021 원본exe copy 접근거부 exit1, 이후 중간/최종exe 미발견→SHA/크기/실PE검증 불가. IL2091 annotation 경고 별도. 보안로그 읽기 권한거부로 세부원인UNKNOWN·격리/오탐 단정0. 실패 즉시중지·자동재시도0·Supervisor0. source gate=false/실행미승인/신뢰미검증 표식 유지·이미지실행0. [빌드결과](../../Discord_V2_NativeAOT_BuildOnly_Result_20261028.md), 기존17/52/실제7 반복0. 계정ACLTaskOnBootSession0JobIPCAIUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련00141490b80c582509271b5f46801ef41a64cc37;이번 최종SHA 완료보고/Issue66.
 ## 2026-10-28 승인된 FAKE_ONLY 별도 계약 구현 — 신규17 PASS / 신뢰 근거 HOLD
 
 기본 운영 계약/전역검사 유지, 선택 FAKE_ONLY_EXECUTION_V1만 관리자 보호 신뢰진술·검토원문SHA/정확trial·이미지·자산·만료 결합. 글로벌UNKNOWN 고정, Job/child/HANDLE·lease·영구소비/정리 유지·gate=false. Supervisor/관리자CLI 연결·신규17 PASS0FAIL(모의/정책), 일반컴파일 경고오류0. 기존52/실제7 재실행0·PID4조회0. [구현보고](../../Discord_V2_FakeOnlyContract_Implementation_20261028.md). 위험수용 승인은 완료이나 계정·자산의 비협조코드 부재/자격증명비공유/다른실행기미사용 사실검토 근거 미제공→조건부 NativeAOT각0/SHA없음. 실행불가 로컬예시만 보존·실제승인0. 운영계정ACLTaskOnBootUnitySave/IPC AI/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련aa3a4fac34b406258c57881a0b3cec3f1d0b39c2;최종SHA 완료보고/Issue66.
