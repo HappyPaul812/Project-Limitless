@@ -1,3 +1,6 @@
+## 2026-10-28 Discord V2 차단2건 집중조사 — 관리자읽기대기 / NU1100 source0 확정
+
+기준62be493c. 계정현재상태·기존Task는추측없이UNKNOWN/관리자결과대기. 기존읽기코드재사용최소PowerShell7수집기·SHA/한줄명령을로컬준비(구문0오류/실행0), 계정만료·암호정책·현재암호만료·직접/그룹Batch권리·Task상태분리. NU1100은기존명시config의source0+격리패키지미공급으로확정(원격feed실패아님),7개모두10.0.10. SDK/공유runtime·RefHost있음/AOTpack캐시없음, VS설치는찾았으나C++x64component0·WindowsSDK등록만확인. 해결각1개=A직접최소읽기/B공식패키지오프라인공급+기존VS필요C++/SDK보충. 재publish/다운로드/설치/OS변경/모의/새검증기0. [공개보고](../../Discord_V2_TwoBlockers_20261028.md). NO_GO/MANUAL/HOLD·실행0/Push0. 마지막관련62be493ce9e709c780c0c2d7d4a81ad2338ee8f4;최종SHA후속.11-01후연장없이게임복귀.
 <!-- GitHub 공개 상태 댓글 실제 게시 완료: https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6458123153 . 보안 상세 전송0. 준비 보고 commit fbb9923a0518f31bb3a8d3f6f948f997a02118e0, source/native 상태는 위 보고와 동일하며 실행 NO_GO/중지 유지. -->
 ## 2026-10-28 Discord V2 native 준비 — source compile 확인 / native image 없음 / NO_GO
 
