@@ -1,3 +1,6 @@
+## 2026-10-28 Issue66 Session0 경로 결정 — NO_GO / 준비 보고 후 중지
+
+기준 c04c17c99a5d71d387c9f36de0c697e16cf7a51e. Issue 최신6441915174 확인. 기존 r2 Disabled/IPC Host·소비 경로이므로 토큰 관측 시험 재사용 불가. 현재 Windows 조사 Session11/비상승1001; Task 접근거부0x80070005·서비스/계정조회오류로 LIVE UNKNOWN. 과거 관리자 근거는 10-28 19:36:51 KST 계정만료 예정(현재 재확인불가). 최소 변경 후보=별도 SID1010 Password 배치 Task/native 감독기1+대상1, 신규 Task/보호경로 ACL·PE 봉인/필요 만료연장·2프로세스 범위와 별도 실제실행 승인 필요. 기존 r2/암호/권리/ACL/소비 변경0. native PE/Job90 보장·현재주체/Session0 미확보, 실제시험명령 발급불가. 기존PASS재사용·신규모의/검증기0·실시험/IPC/AI/게임/Push0. 11-01 미검증이면 인계/복구상태 보존 후 게임복귀. [상세](../../Discord_Session0_ExecutionPath_Decision_20261028.md). 최종SHA는 Issue66 후속 / LOCAL_COMMITTED·REMOTE_NOT_PUSHED.
 ## 2026-10-27 Issue66 SID1010 FAKE_ONLY 격리 사전 준비 — 모의28PASS / 실실행경로HOLD
 
 기준813d37ea/사전준비승인만. BatchLogon→SID1010/Session0/실token→원자JobList+childrestrict→AccessCheck/정리 조건부계약설계, 기존Task불변. 공식문서상 interactive관리자만으로Session0보장불가·필요privilege/TCB·실행주체근거없음으로실제로그온전HOLD; 우회/권한변경0. Jobactive1/kill-on-close/noinherit/nobreakaway·85초종료+90초drain·창종료finally보장금지·사전intent/unknowncleanupHOLD. 새순수모델28PASS0FAIL(실로그온processJobtoken0/기존시험반복0). Inspect명령/SHA는 Discord_DedicatedV2_TokenIsolation_Preparation_20261027.md, Run차단·실launcher/PE봉인미완료를명시. 실제시험승인전Session0경로·native이미지SHA/cleanup권한검토필요. 기존PASS·V1/MANUAL/A/runtimeHOLD보존·계정TaskACL/승인/IPC/AI/운영변경/Push0. 최종SHA Issue후속.
