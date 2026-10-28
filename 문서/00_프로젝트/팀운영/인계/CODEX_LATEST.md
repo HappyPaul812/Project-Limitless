@@ -1,3 +1,6 @@
+## 2026-10-28 Catalog 최종 단발 수신 — HTTP200 / 고정hash·size FAIL / 추가수신 종료
+
+기준b5e03a2a/Issue6459812141. 승인GET1회 E새폴더 수신: 최종URL동일/redirect0/HTTP200/Content-Length18,366,761·실제동일, Content-Encoding응답없어UNKNOWN. 자동디코딩·JSON변환0. SHA6e85…/첫수신 전체bytes동일, 기존기대31,191,413/hash879b…불일치·기대변경0. 불일치지점은channel고정참조와HTTP본문 사이, 원본/CDN/중간경로/표현/snapshot 세부원인미확정. Windows Authenticode조회는형식미지원UnknownError로문서서명·chain미검증. [공개보고](../../Discord_V2_Catalog_FinalOnce_20261028.md). 추가수신종료·Layout/payload359 NO_GO. 다음은공식Installer전환여부별도판단:bootstrapper신뢰/고정version·공식verify버전제한·metadata/engine/update범위확정과별도승인필요. NuGet/기존원본보존, Layout설치RestorePublish/계정TaskOnBootUnity/Push0. NO_GO/MANUAL/HOLD·11-01마감유지. 마지막관련b5e03a2a9a2d10df5857bbf4486bf37508bdcc76;최종SHA완료보고.
 ## 2026-10-28 Catalog 로컬 원인 조사 — 출처 분리 확인 / 전송 원인 UNKNOWN
 
 기준f7155b7b/Issue66. 수신Catalog와Installer캐시 전체바이트 동일(18,366,761bytes/SHA6e85…)·제품18.8.2/stable·계획132node/359payload 일치. 구성 선택은 캐시, 기대SHA879b…/31,191,413bytes는 channel 참조라는 출처 분리 확인. 버전변경·임의손상 근거없음, 전송 최종URL/HTTP헤더 미기록으로 실제 불일치 원인 UNKNOWN. 서명구조만 존재/암호학적 검증 증거없어 공식 신뢰 HOLD·기대값 변경0. [공개보고](../../Discord_V2_Catalog_OfflineInvestigation_20261028.md). 최소 후속 별도승인=동일 고정Catalog1개 E새폴더1회 재수신+전송증거 보존; 원SHA유지/불일치즉시중지, 공식서명·bootstrapper검증전payload재개0. 이번 다운로드/Layout/설치/RestorePublish/계정Task게임/Push0. NO_GO/MANUAL/HOLD·11-01마감유지. 마지막관련f7155b7b675833cd58d60f9c960b71b8b2c7ea72;최종SHA완료보고.
