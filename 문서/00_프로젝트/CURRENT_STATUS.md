@@ -1,3 +1,6 @@
+## 2026-10-28 계정 만료·AOT 보충 승인 준비 — 적용·다운로드 미실행
+
+기준88edfe83/Issue최신6458350517. 지정유한기한AccountExpires만변경하는고정SID/이름/기존값guard·전후계정metadata·증거/실패복구조건과SHA명령을Git제외로컬준비. 정적구문0오류/쓰기콜사이트1·실조회변경0. 공식누락7종10.0.10공급URI계획, 기존SDK/VS유지·MSVC x64/x86/WindowsSDK26100component+필수의존성범위확정·실제payloadrevision미취득. 별도승인=A적용/B공급설치/B복원빌드/후속OS시험, 미포함범위확대0. [공개보고](Discord_V2_Expiry_AOT_ApprovalPreparation_20261028.md). native image0/SHA없음·미완료admission/관리자정리/Session0Jobcleanup HOLD. 과거PASS/관리자조회반복·다운로드설치복원·실행·운영게임변경/Push0. NO_GO/MANUAL/HOLD유지후중지·11-01기한유지. 마지막관련88edfe834049b7ce66716299ae2745d6f7b92915;최종SHA후속.
 ## 2026-10-28 관리자 읽기 결과 수령 — 최소 상태 조회 완료 / 실행 NO_GO
 
 바울대표 제공원본 SHA일치·7query READ_OK/UNKNOWN0 판독. 이번수집범위에서 관리자현재상태조회대기 해소, 실제계정/암호/직접·그룹Batch/Task스냅샷은 Git제외 로컬에만 보존. unknown0를실로그온·Session0·유효token·Job/보존전체PASS로확장하지않음. 계정유효기간은집중기간동안자동유효하지않아필요시만료일단일속성유한연장별도승인필요, 관측된암호만료대응변경근거없음/변경미실행. NU1100/build의존성·구현미완료·native image0/SHA없음·OS준비/실행승인HOLD유지. 추가Windows조회/변경·다운로드설치·실행0/Push0. 마지막관련3d69763dfc6c596b946622bab7d867c74a87dac1;최종SHA후속. 보고후중지·11-01후연장없이게임복귀.
