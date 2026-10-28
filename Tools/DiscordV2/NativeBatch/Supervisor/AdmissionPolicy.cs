@@ -27,7 +27,10 @@ internal static class AdmissionPolicy
         string[] fields = ["Approved", "TrialId", "SupervisorSha256", "ProbeSha256", "ExpiresUtc", "Scope"];
         var seen = new HashSet<string>(StringComparer.Ordinal);
         foreach (var property in doc.RootElement.EnumerateObject())
+            if(property.Name=="FakeOnlyIsolation")FakeOnlyPolicy.Profile(property.Value);
+            else
             Require(fields.Contains(property.Name, StringComparer.Ordinal) && seen.Add(property.Name), "CONTRACT_UNKNOWN_OR_DUPLICATE");
+        Require(doc.RootElement.EnumerateObject().Count(p=>p.Name=="FakeOnlyIsolation")<=1,"FAKE_PROFILE_DUPLICATE");
         Require(seen.Count == fields.Length, "CONTRACT_MISSING");
         var root = doc.RootElement;
         Require(root.GetProperty("Approved").GetBoolean(), "APPROVAL_HOLD");

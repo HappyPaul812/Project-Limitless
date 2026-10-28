@@ -11,6 +11,7 @@ internal sealed class ReleaseAdmission : IDisposable
     private readonly List<SafeFileHandle> pins=[];
     private readonly Dictionary<nint,uint> watched=[];
     private IDisposable? consumption;
+    private readonly Dictionary<string,byte[]> trustInputs=[];
     private nint token,process,thread,childToken;
     private ControlReceipt startIntent=null!;
     internal TrialContract Contract { get; private set; }=null!;
@@ -48,10 +49,15 @@ internal sealed class ReleaseAdmission : IDisposable
         var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
         var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
         AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
-        HandleCensus.Exclusive(null);HandleCensus.Check(watched);
+        CheckScope(null);HandleCensus.Check(watched);
         // 검증을 모두 마친 뒤에만 영구 marker를 원자 생성하고 flush합니다.
         // 실패/취소/프로세스종료 후에도 남기며 기존 소비 기록은 건드리지 않습니다.
         consumption=AdmissionConsumption.Acquire(Native.EvidenceRoot,Encoding.UTF8.GetBytes(Contract.TrialId+"\n"+contractSha+"\n"),AdmissionWindows.CreateRecord);
+        if(Contract.FakeOnlyIsolation is not null)
+        {
+            using var evidence=AdmissionWindows.CreateRecord(Path.Combine(Native.EvidenceRoot,Contract.TrialId+".exclusivity"));
+            evidence.Write(Encoding.UTF8.GetBytes("FAKE_ONLY_EXECUTION_V1\nGLOBAL_SID_ABSENCE_UNKNOWN\n"));((FileStream)evidence).Flush(true);
+        }
     }
     private void PinDirectoryTree(string path,bool evidence)
     {
@@ -104,7 +110,15 @@ internal sealed class ReleaseAdmission : IDisposable
         return ControlReceipt.Parse(ReadSmall(file,4096));
     }
     internal void CheckIsolation(uint childPid)
-    {HandleCensus.Exclusive(childPid);HandleCensus.Check(watched);}
+    {CheckScope(childPid);HandleCensus.Check(watched);}
+    private void CheckScope(uint? childPid)=>FakeOnlyPolicy.Exclusivity(Contract,DateTimeOffset.UtcNow,
+        ReadTrust,()=>HandleCensus.Exclusive(childPid));
+    private byte[] ReadTrust(string name,int limit)
+    {
+        // 최종 경로를 검증한 공유읽기 HANDLE을 수명 내내 보유하고, 주기 검사에서 HANDLE을 늘리지 않습니다.
+        if(!trustInputs.TryGetValue(name,out var bytes)){bytes=ReadSmall(PinFile(Path.Combine(Native.CodeRoot,name)),limit);trustInputs.Add(name,bytes);}
+        AdmissionPolicy.Require(bytes.Length<=limit,"FAKE_TRUST_SIZE");return bytes;
+    }
     private static void NonInherited(nint handle)
     {Native.Check(Native.SetHandleInformation(handle,1,0));Native.Check(Native.GetHandleInformation(handle,out uint flags));AdmissionPolicy.Require((flags&1)==0,"INHERITABLE_ADMISSION_HANDLE");}
     private static byte[] ReadSmall(SafeFileHandle file,int limit)

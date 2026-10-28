@@ -43,6 +43,7 @@ internal interface IAdminBackend
 {
     DateTimeOffset Now { get; }
     void Preflight(TrialContract contract, bool cleanup);
+    byte[] IsolationEvidence(string name,int limit)=>throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
     byte[] Approval(string operation,string trialId);
     AccountObservation Account();
     TaskObservation? Observe();
@@ -69,6 +70,7 @@ internal static class AdminController
         var scope = contract.Scope!;
         AdmissionPolicy.Require(mode == "--register-only" ? scope.Register : mode == "--start-once" ? scope.Start : scope.Cleanup, "OPERATION_NOT_APPROVED");
         cancellation.ThrowIfCancellationRequested();
+        FakeOnlyPolicy.Evidence(contract,backend.Now,backend.IsolationEvidence,cleanup);
         backend.Preflight(contract, cleanup);
         var approval=OperationApproval.Validate(backend.Approval(mode,contract.TrialId),contract.TrialId,sha,mode,backend.Now,cleanup);
         var account = backend.Account();

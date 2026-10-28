@@ -13,6 +13,8 @@ internal sealed class TrialContract
     public string ProbeSha256 { get; set; } = "";
     public DateTimeOffset ExpiresUtc { get; set; }
     public TrialScope? Scope { get; set; }
+    [JsonIgnore(Condition=JsonIgnoreCondition.WhenWritingNull)]
+    public FakeOnlyIsolation? FakeOnlyIsolation { get; set; }
 }
 internal sealed class TrialScope
 {

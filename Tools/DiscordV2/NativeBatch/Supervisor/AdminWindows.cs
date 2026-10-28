@@ -11,6 +11,7 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     private readonly List<SafeFileHandle> pins=[];
     private TaskSchedulerNative? scheduler;
     private AccountObservation? account;
+    private TrialContract? preparedContract;
     private readonly string expectedSha;
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
     private TaskSchedulerNative Scheduler=>scheduler??=new(Native.TaskPath);
@@ -38,11 +39,17 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     }
     public void Preflight(TrialContract contract,bool cleanup)
     {
+        preparedContract=contract;
         AdmissionPolicy.Require(Environment.ProcessPath==Path.Combine(Native.CodeRoot,"Supervisor.exe"),"ADMIN_IMAGE_LOCATION");
         AdmissionPolicy.Require(FileHash(Path.Combine(Native.CodeRoot,"Supervisor.exe"))==contract.SupervisorSha256 && FileHash(Path.Combine(Native.CodeRoot,"Probe.exe"))==contract.ProbeSha256,"ADMIN_IMAGE_SHA");
         account=AccountNative.Read(Now,!cleanup && contract.Scope!.Register);
     }
     public AccountObservation Account()=>account??throw new InvalidOperationException("PREFLIGHT_REQUIRED");
+    public byte[] IsolationEvidence(string name,int limit)
+    {
+        AdmissionPolicy.Require(name==Path.GetFileName(name),"FAKE_TRUST_PATH");
+        return Read(Path.Combine(Native.CodeRoot,name),limit,true);
+    }
     public byte[] Approval(string operation,string trialId)=>Read(Path.Combine(Native.CodeRoot,OperationApproval.FileName(trialId,operation)),4096,false);
     public TaskObservation? Observe()=>Scheduler.Observe();
     public ControlReceipt? Receipt(string name)
@@ -69,8 +76,8 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     {
         byte[] final=Read(Path.Combine(Native.EvidenceRoot,trialId+".final"),128,false,true);
         if(!final.AsSpan().SequenceEqual(Encoding.UTF8.GetBytes("TOKEN_PROBE_ONLY_COMPLETE\n")))return false;
-        // 관리자에게도 전체 SID 관측을 생략하지 않습니다. 접근불가/미확정은 예외→HOLD입니다.
-        HandleCensus.Exclusive(null);return true;
+        // 기본 계약은 전역 검사를 유지합니다. 별도 FAKE_ONLY 계약만 보호된 신뢰 근거를 다시 요구합니다.
+        FakeOnlyPolicy.Exclusivity(preparedContract??throw new InvalidOperationException("PREFLIGHT_REQUIRED"),Now,IsolationEvidence,()=>HandleCensus.Exclusive(null),cleanup:true);return true;
     }
     private static string RecordPath(string name)
     {

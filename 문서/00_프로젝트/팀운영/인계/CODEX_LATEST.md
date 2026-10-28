@@ -1,3 +1,6 @@
+## 2026-10-28 승인된 FAKE_ONLY 별도 계약 구현 — 신규17 PASS / 신뢰 근거 HOLD
+
+기본 운영 계약/전역검사 유지, 선택 FAKE_ONLY_EXECUTION_V1만 관리자 보호 신뢰진술·검토원문SHA/정확trial·이미지·자산·만료 결합. 글로벌UNKNOWN 고정, Job/child/HANDLE·lease·영구소비/정리 유지·gate=false. Supervisor/관리자CLI 연결·신규17 PASS0FAIL(모의/정책), 일반컴파일 경고오류0. 기존52/실제7 재실행0·PID4조회0. [구현보고](../../Discord_V2_FakeOnlyContract_Implementation_20261028.md). 위험수용 승인은 완료이나 계정·자산의 비협조코드 부재/자격증명비공유/다른실행기미사용 사실검토 근거 미제공→조건부 NativeAOT각0/SHA없음. 실행불가 로컬예시만 보존·실제승인0. 운영계정ACLTaskOnBootUnitySave/IPC AI/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련aa3a4fac34b406258c57881a0b3cec3f1d0b39c2;최종SHA 완료보고/Issue66.
 ## 2026-10-28 최종 독점성 계약 판정 — 현 계약 HOLD / 전용 범위 변경 승인 검토 권고
 
 대표 실제7 PASS/1 UNKNOWN 보존: HANDLE 외부zero-rights차단 PASS, 다른SID381·System token query오류5. PID4/기존PASS 반복0. 전역SID부재 snapshot은 지속적인 생성 차단이 아니며 현 제한·API로 전체관측/지속보장 불가. Job/lease/HANDLE/IgnoreNew는 해당 전용 실행 범위만 강제. 현재 계약·source·gate=false 유지·AOT0. [계약판정보고](../../Discord_V2_ExclusivityContract_Decision_20261028.md): 전용FAKE_ONLY 보장 축소와 전역UNKNOWN/비협조 동일SID 위험 수용은 대표 명시승인 필요; hostile 환경 필요 시 변경안도NO_GO. 검증기/권한상승/계정ACLTaskOnBoot운영UnitySave/Push/main 변경0. NO_GO/MANUAL/HOLD·11-01 유지후중지. 마지막관련54e924ad002ec5ac446e698507b8d5e6f2e28e1c;이번 최종SHA 완료보고/Issue66.

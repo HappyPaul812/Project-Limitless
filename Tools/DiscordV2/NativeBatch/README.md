@@ -27,3 +27,7 @@ Supervisor도 관리자 소유의 등록/시작 intent와 해당 승인 ID를 �
 - 90초는 단조 deadline과 기존 Scheduler 한도의 계약입니다. OS 정지·sleep·API block에 대한 절대 wall-clock 보장이 아닙니다. 감독 중에도 주기적/종료 직전 독점 검사를 실패하면 자기 Job 종료·HOLD로 처리합니다.
 
 NativeAOT 생성물과 Task/계정/ACL·실제 단발 실행 승인은 이 소스·시험과 별개입니다. 기존 NuGet PASS·Catalog 실패 원본과 승인 소비 기록은 보존합니다.
+
+## 승인된 FAKE_ONLY 전용 독점성 확장
+
+기본 계약의 전역 동일SID 검사는 유지합니다. 선택적 `FakeOnlyIsolation`의 `FAKE_ONLY_EXECUTION_V1`만 전용 시험 범위를 적용하며 `GlobalSidAbsence=UNKNOWN`으로 남깁니다. 관리자 소유의 신뢰 진술·검토 원문/정확 SHA·trial/이미지/자산·유효 시각이 없으면 Supervisor와 관리자 CLI는 HOLD합니다. 실제 계정 사용에 대한 신뢰 근거를 합성 시험이나 위험 수용 승인으로 대체하지 않습니다. Job/HANDLE/단발 소비·lease/정리·noIPC/noAI/실행 게이트는 유지합니다. `--fake-only-contract`는 기존52개를 재실행하지 않는17개 정책/모의 시험입니다. 실제 Windows7개와 구분하며 이번 NativeAOT 발행은 신뢰 근거 부재로0회입니다.

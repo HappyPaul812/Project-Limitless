@@ -6,7 +6,7 @@ using System.Text.Json;
 using System.Xml.Linq;
 
 // 신규 구현을 직접 시험합니다. Scheduler/계정/ACL 변경, Supervisor.Main, Job/Probe는 호출하지 않습니다.
-internal static class AdmissionTests
+internal static partial class AdmissionTests
 {
     private static int passed,failed;
     private static string? filter;
@@ -28,6 +28,7 @@ internal static class AdmissionTests
     {
         if(args.FirstOrDefault()=="--windows-boundary")return WindowsBoundaryTests.Run(args.Skip(1).ToArray());
         if(args.FirstOrDefault()=="--windows-handle-peer")return WindowsBoundaryTests.Peer(args.Skip(1).ToArray());
+        if(args is ["--fake-only-contract"])return FakeOnlyContracts();
         if(args.Length>0&&args[0]=="--windows-object-peer")return WindowsBoundaryTests.ObjectPeer(args.Skip(1).ToArray());
         filter=args.SingleOrDefault();
         Test("contract-valid-scope",()=>Policy(Contract()));
@@ -146,6 +147,8 @@ internal static class AdmissionTests
         internal string Xml="";internal bool Present,Enabled,FailRun,Clean,BadReadback;
         internal Guid[] Instances=[];internal int RegisterCalls,RunCalls,StopCalls,RemoveCalls;internal int? StateOverride;internal Action? OnEnable;
         internal string? ApprovalOperation;internal bool GrantApproved=true;internal DateTimeOffset? GrantExpiry;private TrialContract? contract;
+        internal readonly Dictionary<string,byte[]> IsolationFiles=[];
+        public byte[] IsolationEvidence(string name,int limit)=>IsolationFiles.TryGetValue(name,out var raw)&&raw.Length<=limit?raw:throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
         public void Preflight(TrialContract value,bool cleanup) {contract=value;}
         public byte[] Approval(string operation,string trial)=>JsonSerializer.SerializeToUtf8Bytes(new OperationApproval{Approved=GrantApproved,ApprovalId="abcdefabcdefabcdefabcdefabcdefab",TrialId=trial,ContractSha=Hash(Raw(contract!)),Operation=ApprovalOperation??operation,ExpiresUtc=GrantExpiry??contract!.ExpiresUtc},ApprovalJson.Default.OperationApproval);
         public AccountObservation Account()=>AccountState;
