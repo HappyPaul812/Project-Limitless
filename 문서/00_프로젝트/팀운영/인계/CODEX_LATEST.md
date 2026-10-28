@@ -1,3 +1,6 @@
+## 2026-10-28 Catalog 로컬 원인 조사 — 출처 분리 확인 / 전송 원인 UNKNOWN
+
+기준f7155b7b/Issue66. 수신Catalog와Installer캐시 전체바이트 동일(18,366,761bytes/SHA6e85…)·제품18.8.2/stable·계획132node/359payload 일치. 구성 선택은 캐시, 기대SHA879b…/31,191,413bytes는 channel 참조라는 출처 분리 확인. 버전변경·임의손상 근거없음, 전송 최종URL/HTTP헤더 미기록으로 실제 불일치 원인 UNKNOWN. 서명구조만 존재/암호학적 검증 증거없어 공식 신뢰 HOLD·기대값 변경0. [공개보고](../../Discord_V2_Catalog_OfflineInvestigation_20261028.md). 최소 후속 별도승인=동일 고정Catalog1개 E새폴더1회 재수신+전송증거 보존; 원SHA유지/불일치즉시중지, 공식서명·bootstrapper검증전payload재개0. 이번 다운로드/Layout/설치/RestorePublish/계정Task게임/Push0. NO_GO/MANUAL/HOLD·11-01마감유지. 마지막관련f7155b7b675833cd58d60f9c960b71b8b2c7ea72;최종SHA완료보고.
 ## 2026-10-28 E드라이브 공식 공급 부분완료 — NuGet7 PASS / VS catalog hash·size FAIL 즉시중지
 
 기준5ad31e13/Issue6459162941. 대표다운로드·검증/Layout승인만수행. C/E여유사전확인·C로그/PKI여유0.5GB사전보고, E격리payload/cache/tmp 사용·시스템전역설정변경0. 공식NuGet7종10.0.10 크기/SHA512·nuget verify모두exit0/SHA256기록,134765337bytes PASS. VSbootstrapper hash/sizePASS·서명분기미도달/실행0. 공식catalog기대31,191,413bytes/hash879b… vs실제18,366,761/hash6e85…모두불일치로즉시공급중지. 실제hash가이전로컬가공catalog와같아도기준대체0/원인미확정. 다운로드9개158.8MB중NuGet7만전체PASS, Layout359payload0/빈폴더·실행0/설치RestorePublish0. [공개보고](../../Discord_V2_OfficialSupply_E_Result_20261028.md). 정확경로/공간/원시hash는Git제외로컬보존. 후속설치명령보류·재다운로드/우회0·계정Task운영게임/Push0. NO_GO/MANUAL/HOLD·11-01마감유지. 마지막관련5ad31e13698862c629b91fd75630b295cc656260;최종SHA후속.
