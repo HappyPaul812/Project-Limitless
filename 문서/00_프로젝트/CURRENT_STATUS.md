@@ -1,3 +1,6 @@
+## 2026-10-28 잔여 HANDLE·프로세스 검증 — 파일 경쟁 수정 / 전체 독점 HOLD
+
+대표 관리자6 PASS·원본SHA 일치 보존, 기존6/합성52 재실행0. ready 쓰기중 최종경로 노출+양방향 공유충돌 원인확인, PID/nonce 임시·게시·release 분리 후 해당 실제 시험 PASS/peer_exit0. 외부HANDLE 실제 차단은 관리자 재확인 전 UNKNOWN. 프로세스 관측을 PID·단계별 분리/한 건이라도 미확인 시HOLD 유지. 기존Job/HANDLE/lease는 Job밖 동일SID 부재를 대체 입증 못함·범위축소0. 일반컴파일 경고오류0·AOT각0/gate=false. [잔여보고](Discord_V2_ResidualBoundary_20261028.md), 잔여2개만 관리자 직접 실행 준비는 Git제외 로컬 보관/미실행. NO_GO/MANUAL/HOLD·11-01 유지. 운영자원/기존승인/UnitySave/Push/main 변경0. 마지막관련6e211e6b57c1f0efb3fde04782935c26573655f8;이번 최종SHA 완료보고/Issue66.
 ## 2026-10-28 실제 Windows 보안 경계 — 부분 PASS / NativeAOT HOLD
 
 새 격리 파일 공유 잠금·제한token거부·빈Job ABI/DACL·새token/thread/process DACL 실제 PASS. OWNER RIGHTS AccessCheck/커널 WRITE_DAC 비교 FAIL, 전체HANDLE/전체process/Task COM은 AppContainer 권한·필터링으로 UNKNOWN. Group누락1338·generic권리 매핑·AppContainer 전체성오판만 최소수정, 관련항목만 재확인/합성52 재실행0. 관리형시험/Supervisor 컴파일 경고오류0·gate=false, AOT각0/SHA없음. [실제검증보고](Discord_V2_WindowsBoundary_20261028.md). 관리자 직접 절차/SHA는 Git제외 로컬 보관·미실행, 별도승인 필요. 기존 운영자원/Unity/Save/승인기록/Push/main 변경0, NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련d6d8c007deb754c2685f2a9542c0f0a76612cb40;이번 최종SHA 완료보고/Issue66.

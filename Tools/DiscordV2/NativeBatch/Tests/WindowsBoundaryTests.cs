@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using Microsoft.Win32.SafeHandles;
 
 // 기존 시험 프로젝트의 별도 live 경로입니다. 합성52개/운영 entry point를 호출하지 않습니다.
-// 새 fixture 파일·비어 있는 익명 Job·현재 token의 제한 clone만 만들고 기존 자원은 조회만 합니다.
+// 새 fixture 파일·빈 Job·token clone·시험 thread/process만 만들고 기존 자원은 조회만 합니다.
 internal static class WindowsBoundaryTests
 {
     [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]private static extern bool CreateDirectoryW(string path,nint attributes);
@@ -143,6 +143,11 @@ internal static class WindowsBoundaryTests
                 }
                 finally{finish.Set();if(thread.IsAlive)thread.Join(3000);if(threadHandle!=0)Native.CloseHandle(threadHandle);if(clone!=0)Native.CloseHandle(clone);}
             });
+            if(only is not null&&Select("handle-peer-publication"))Case("handle-peer-publication",row=>
+            {
+                if(job==0){job=Native.CreateJobObjectW(0,null);Native.Check(job!=0);}
+                WithPeer(root,job,row,()=>{});
+            });
             if(Select("actual-handle-census"))Case("actual-handle-census",row=>
             {
                 if(job==0){job=Native.CreateJobObjectW(0,null);Native.Check(job!=0);}
@@ -150,26 +155,11 @@ internal static class WindowsBoundaryTests
                 var statuses=new List<string>();row["query_statuses"]=statuses;
                 HandleCensus.Check(new Dictionary<nint,uint>{{job,AdmissionPolicy.JobDanger},{duplicate,AdmissionPolicy.JobDanger}},(status,length)=>statuses.Add("0x"+unchecked((uint)status).ToString("x8")+"/"+length));
                 row["own_real_handles_matched"]=2;
-                Need(Process.GetCurrentProcess().SessionId!=0,"NO_SESSION0_FIXTURE_PROCESS");
-                string ready=Path.Combine(root,"peer-ready.json");
-                var info=new ProcessStartInfo(Environment.ProcessPath!){UseShellExecute=false,CreateNoWindow=true};
-                foreach(string argument in new[]{typeof(AdmissionTests).Assembly.Location,"--windows-handle-peer",Environment.ProcessId.ToString(),((nuint)job).ToString(),ready})info.ArgumentList.Add(argument);
-                using var peer=Process.Start(info)??throw new Failure("FIXTURE_PEER_START");
-                try
+                WithPeer(root,job,row,()=>
                 {
-                    var watch=Stopwatch.StartNew();
-                    while(!File.Exists(ready)&&!peer.HasExited&&watch.ElapsedMilliseconds<4000)Thread.Sleep(20);
-                    Need(File.Exists(ready),"FIXTURE_PEER_DUPLICATION_UNAVAILABLE");
-                    using var proof=JsonDocument.Parse(File.ReadAllBytes(ready));Need(proof.RootElement.GetProperty("pid").GetInt32()==peer.Id,"FIXTURE_PEER_ID");
                     try{HandleCensus.Check(new Dictionary<nint,uint>{{job,AdmissionPolicy.JobDanger}});throw new Failure("FOREIGN_JOB_HANDLE_NOT_DETECTED");}
                     catch(InvalidOperationException e)when(e.Message=="EXTERNAL_DANGEROUS_HANDLE"){row["foreign_test_handle_transfer"]="OBSERVED_AND_REJECTED_ZERO_RIGHTS";}
-                }
-                finally
-                {
-                    // 기존 process에는 작용하지 않고, 이번에 생성해 반환받은 시험 process만 회수합니다.
-                    if(!peer.WaitForExit(9000)){peer.Kill();peer.WaitForExit(1000);}
-                }
-                Need(peer.ExitCode==0,"FIXTURE_PEER_EXIT");
+                });
             });
             if(Select("process-denial-block"))Case("process-denial-block",row=>
             {
@@ -179,8 +169,10 @@ internal static class WindowsBoundaryTests
                 row["snapshot_count"]=count;row["pid4_in_snapshot"]=systemSeen;
                 nint direct=AdmissionWindows.OpenProcess(0x1000,false,4);row["direct_pid4_open_error"]=direct==0?Marshal.GetLastWin32Error():0;if(direct!=0)Native.CloseHandle(direct);
                 // 기존 프로세스는 조회만 합니다. 열 수 없으면 production 경로가 HOLD하는지 확인합니다.
-                try{HandleCensus.Exclusive(null);row["complete_census"]=true;}
+                var observations=new List<object>();row["process_observations"]=observations;
+                try{HandleCensus.Exclusive(null,(pid,name,stage,error)=>observations.Add(new{pid,name,stage,error}));row["complete_census"]=true;}
                 catch(InvalidOperationException e)when(e.Message=="PROCESS_CENSUS_APPCONTAINER_VIEW_UNKNOWN"){row["safe_block"]=true;row["complete_census"]="UNKNOWN_FILTERED_VIEW";row["status"]="UNKNOWN_HOLD";}
+                catch(InvalidOperationException e)when(e.Message=="PROCESS_CENSUS_OBSERVATIONS_UNKNOWN"){row["safe_block"]=true;row["complete_census"]="UNKNOWN_PARTIAL_OBSERVATIONS";row["status"]="UNKNOWN_HOLD";}
                 catch(Win32Exception e)when(e.NativeErrorCode==5){row["safe_block"]=true;row["complete_census"]="UNKNOWN_ACCESS_DENIED";row["win32"]=5;row["status"]="UNKNOWN_HOLD";}
             });
             if(Select("task-com-readonly"))Case("task-com-readonly",row=>
@@ -208,23 +200,53 @@ internal static class WindowsBoundaryTests
         return Rows.Count==8&&Rows.All(r=>(r["status"] as string)=="PASS")?0:2;
     }
     internal static int ObjectPeer(string[] args){if(args.Length!=1||Process.GetCurrentProcess().SessionId==0)return 3;string ready=Path.GetFullPath(args[0]);if(!Path.GetFileName(Path.GetDirectoryName(ready)!).StartsWith("WindowsBoundary-",StringComparison.Ordinal)||File.Exists(ready))return 4;File.WriteAllText(ready,Environment.ProcessId.ToString());Thread.Sleep(4000);return 0;}
+    private static void WithPeer(string root,nint job,Dictionary<string,object?> row,Action whileHeld)
+    {
+        Need(Process.GetCurrentProcess().SessionId!=0,"NO_SESSION0_FIXTURE_PROCESS");
+        string ready=Path.Combine(root,$"peer-{Environment.ProcessId}-{Guid.NewGuid():N}.ready.json");
+        var info=new ProcessStartInfo(Environment.ProcessPath!){UseShellExecute=false,CreateNoWindow=true};
+        foreach(string argument in new[]{typeof(AdmissionTests).Assembly.Location,"--windows-handle-peer",Environment.ProcessId.ToString(),((nuint)job).ToString(),ready})info.ArgumentList.Add(argument);
+        using var peer=Process.Start(info)??throw new Failure("FIXTURE_PEER_START");
+        try
+        {
+            var watch=Stopwatch.StartNew();while(!File.Exists(ready)&&!peer.HasExited&&watch.ElapsedMilliseconds<4000)Thread.Sleep(20);
+            Need(File.Exists(ready),"FIXTURE_PEER_DUPLICATION_UNAVAILABLE");
+            // ready는 자식의 write/flush/close 이후에만 게시됩니다. 공유 조건을 완화하지 않습니다.
+            using var proof=JsonDocument.Parse(File.ReadAllBytes(ready));Need(proof.RootElement.GetProperty("pid").GetInt32()==peer.Id&&proof.RootElement.GetProperty("zero_rights_duplicate").GetBoolean(),"FIXTURE_PEER_ID");
+            row["peer_publication"]="CLOSED_THEN_MOVED_UNIQUE_PARENT_NONCE_CHILD_TEMP";
+            whileHeld();
+        }
+        finally
+        {
+            try{using var release=new FileStream(ready+".release",FileMode.CreateNew,FileAccess.Write,FileShare.Read);release.Flush(true);}
+            finally
+            {
+                // release 기록 실패도 자신이 생성한 시험 process의 정리를 건너뛰지 않습니다.
+                if(!peer.WaitForExit(12000)){peer.Kill();peer.WaitForExit(1000);}
+            }
+        }
+        row["peer_exit"]=peer.ExitCode;Need(peer.ExitCode==0,"FIXTURE_PEER_EXIT");
+    }
     internal static int Peer(string[] args)
     {
         nint parent=0,copy=0,snapshot=0;
         try
         {
             Need(args.Length==3 && uint.TryParse(args[0],out _ ) && ulong.TryParse(args[1],out _),"PEER_ARGUMENTS");
-            Need(Path.GetFileName(args[2])=="peer-ready.json"&&Path.GetFileName(Path.GetDirectoryName(Path.GetFullPath(args[2]))!).StartsWith("WindowsBoundary-",StringComparison.Ordinal),"PEER_FIXTURE_PATH");
             uint expected=uint.Parse(args[0]);Need(Process.GetCurrentProcess().SessionId!=0,"NO_SESSION0_PEER");
+            Need(System.Text.RegularExpressions.Regex.IsMatch(Path.GetFileName(args[2]),"^peer-"+expected+"-[a-f0-9]{32}\\.ready\\.json$")&&Path.GetFileName(Path.GetDirectoryName(Path.GetFullPath(args[2]))!).StartsWith("WindowsBoundary-",StringComparison.Ordinal),"PEER_FIXTURE_PATH");
             snapshot=CreateToolhelp32Snapshot(2,0);Native.Check(snapshot!=new nint(-1));
             var entry=new HandleCensus.ProcessEntry{Size=(uint)Marshal.SizeOf<HandleCensus.ProcessEntry>(),Name=""};Native.Check(Process32FirstW(snapshot,ref entry));uint actualParent=0;
             do{if(entry.Pid==Environment.ProcessId){actualParent=entry.Parent;break;}}while(Process32NextW(snapshot,ref entry));
             Need(actualParent==expected,"PEER_ONLY_ACTUAL_PARENT");
             parent=AdmissionWindows.OpenProcess(0x40,false,expected);Native.Check(parent!=0);
             Native.Check(AdmissionWindows.DuplicateHandle(parent,(nint)(nuint)ulong.Parse(args[1]),Native.GetCurrentProcess(),out copy,0,false,0));
-            using(var file=new FileStream(args[2],FileMode.CreateNew,FileAccess.Write,FileShare.Read))
+            string writing=args[2]+".writing."+Environment.ProcessId;
+            using(var file=new FileStream(writing,FileMode.CreateNew,FileAccess.Write,FileShare.Read))
             {JsonSerializer.Serialize(file,new{pid=Environment.ProcessId,zero_rights_duplicate=true});file.Flush(true);}
-            Thread.Sleep(5000);return 0;
+            File.Move(writing,args[2],false); // 같은 디렉터리에서 닫힌 결과만 게시하고 기존 파일은 덮어쓰지 않습니다.
+            var watch=Stopwatch.StartNew();while(!File.Exists(args[2]+".release")&&watch.ElapsedMilliseconds<10000)Thread.Sleep(20);
+            return File.Exists(args[2]+".release")?0:5;
         }
         catch{return 3;}
         finally{if(copy!=0)Native.CloseHandle(copy);if(parent!=0)Native.CloseHandle(parent);if(snapshot!=0&&snapshot!=new nint(-1))Native.CloseHandle(snapshot);}

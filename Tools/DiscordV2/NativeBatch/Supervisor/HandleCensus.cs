@@ -60,7 +60,7 @@ internal static class HandleCensus
         throw new InvalidOperationException("HANDLE_CENSUS_UNSTABLE");
     }
 
-    internal static void Exclusive(uint? child)
+    internal static void Exclusive(uint? child,Action<uint,string,string,int>? observe=null)
     {
         // AppContainer 목록은 필터링될 수 있으므로 전체 독점 증거로 사용하지 않습니다.
         Native.Check(Native.OpenProcessToken(Native.GetCurrentProcess(),8,out nint callerToken));
@@ -71,23 +71,40 @@ internal static class HandleCensus
         {
             var entry=new ProcessEntry { Size=(uint)Marshal.SizeOf<ProcessEntry>(),Name="" };
             AdmissionWindows.Check(Process32FirstW(snapshot,ref entry));
-            bool seenSelf=false,seenChild=child is null; uint self=AdmissionWindows.GetCurrentProcessId();
+            bool seenSelf=false,seenChild=child is null,unknown=false; uint self=AdmissionWindows.GetCurrentProcessId();
             do
             {
                 if(entry.Pid==self){seenSelf=true;continue;}
                 if(entry.Pid==child){seenChild=true;continue;}
                 if(entry.Pid==0)continue; // Idle은 사용자 process가 아닙니다.
                 nint process=AdmissionWindows.OpenProcess(0x1000,false,entry.Pid);
-                if(process==0)throw new Win32Exception(Marshal.GetLastWin32Error(),"PROCESS_CENSUS_UNKNOWN");
+                if(process==0)
+                {
+                    int error=Marshal.GetLastWin32Error();observe?.Invoke(entry.Pid,entry.Name,"PROCESS_OPEN_UNKNOWN",error);
+                    if(observe is null)throw new Win32Exception(error,"PROCESS_CENSUS_UNKNOWN");
+                    unknown=true;continue;
+                }
                 try
                 {
-                    Native.Check(Native.OpenProcessToken(process,8,out nint token));
-                    try {using var identity=new System.Security.Principal.WindowsIdentity(token);AdmissionPolicy.Require(identity.User is not null && identity.User.Value!=Native.Worker,"EXTRA_WORKER_PROCESS");}
+                    if(!Native.OpenProcessToken(process,8,out nint token))
+                    {
+                        int error=Marshal.GetLastWin32Error();observe?.Invoke(entry.Pid,entry.Name,"TOKEN_OPEN_UNKNOWN",error);
+                        if(observe is null)throw new Win32Exception(error,"PROCESS_TOKEN_CENSUS_UNKNOWN");
+                        unknown=true;continue;
+                    }
+                    try
+                    {
+                        using var identity=new System.Security.Principal.WindowsIdentity(token);
+                        observe?.Invoke(entry.Pid,entry.Name,identity.User is null?"SID_UNKNOWN":identity.User.Value==Native.Worker?"TARGET_SID_FOUND":"OTHER_SID_CONFIRMED",0);
+                        AdmissionPolicy.Require(identity.User is not null && identity.User.Value!=Native.Worker,"EXTRA_WORKER_PROCESS");
+                    }
                     finally{Native.CloseHandle(token);}
                 }
                 finally{Native.CloseHandle(process);}
             }while(Process32NextW(snapshot,ref entry));
             AdmissionPolicy.Require(Marshal.GetLastWin32Error()==18 && seenSelf && seenChild,"PROCESS_CENSUS_INCOMPLETE");
+            // 진단에서 후속 항목을 관측해도 미확인이 한 건이라도 남으면 전체 판정은 HOLD입니다.
+            AdmissionPolicy.Require(!unknown,"PROCESS_CENSUS_OBSERVATIONS_UNKNOWN");
         }
         finally{Native.CloseHandle(snapshot);}
     }
