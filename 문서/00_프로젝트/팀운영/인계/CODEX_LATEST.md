@@ -1,3 +1,4 @@
+<!-- 2026-10-28: 준비보고 commit8434ca79. Issue66 댓글은 자동승인검토가 민감정보 외부전송 승인부족으로 거부: 게시0/REPORT_PENDING_GITHUB_WRITE/우회0. 최종SHA는 채팅 참조. -->
 ## 2026-10-28 Issue66 Session0 경로 결정 — NO_GO / 준비 보고 후 중지
 
 기준 c04c17c99a5d71d387c9f36de0c697e16cf7a51e. Issue 최신6441915174 확인. 기존 r2 Disabled/IPC Host·소비 경로이므로 토큰 관측 시험 재사용 불가. 현재 Windows 조사 Session11/비상승1001; Task 접근거부0x80070005·서비스/계정조회오류로 LIVE UNKNOWN. 과거 관리자 근거는 10-28 19:36:51 KST 계정만료 예정(현재 재확인불가). 최소 변경 후보=별도 SID1010 Password 배치 Task/native 감독기1+대상1, 신규 Task/보호경로 ACL·PE 봉인/필요 만료연장·2프로세스 범위와 별도 실제실행 승인 필요. 기존 r2/암호/권리/ACL/소비 변경0. native PE/Job90 보장·현재주체/Session0 미확보, 실제시험명령 발급불가. 기존PASS재사용·신규모의/검증기0·실시험/IPC/AI/게임/Push0. 11-01 미검증이면 인계/복구상태 보존 후 게임복귀. [상세](../../Discord_Session0_ExecutionPath_Decision_20261028.md). 최종SHA는 Issue66 후속 / LOCAL_COMMITTED·REMOTE_NOT_PUSHED.

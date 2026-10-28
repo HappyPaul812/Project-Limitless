@@ -69,3 +69,7 @@ Task 시작/서비스 재시작/새 시험 로그온·대상 프로세스·Job �
 - [CreateProcessAsUserW](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasuserw): 토큰 Session/필요 privilege 조건.
 - [Interactive Services](https://learn.microsoft.com/en-us/windows/win32/services/interactive-services): 비대화형 서비스 경계.
 - [Job Objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects), [Creation attributes](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute), [Task time limit](https://learn.microsoft.com/en-us/windows/win32/taskschd/tasksettings-executiontimelimit): 생성·중첩·종료와 Task 시간제한은 별개 계약.
+
+## GitHub 보고 보류
+
+준비 보고 문서3개 로컬 commit `8434ca79a736f9342a5d167cc873e831b76aca80` 완료, 해당 시점 작업트리 clean. Issue66 댓글 쓰기는 자동 승인 검토가 내부 경로·SID·Task/서비스 오류·보안 설계의 외부 전송에 대한 구체 승인 부족으로 거부했습니다. 게시0/우회0, REPORT_PENDING_GITHUB_WRITE. GitHub 보고 완료가 아닙니다. 바울 대표의 구체적 게시 승인 전 중지합니다. 본 기록 후속 로컬 commit은 최종 채팅에 보고합니다.
