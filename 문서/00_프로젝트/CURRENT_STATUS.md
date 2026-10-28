@@ -1,3 +1,6 @@
+## 2026-10-28 IL2091 근본 계약 수정 — 관리형3 PASS / NativeAOT NOT_VERIFIED
+
+대표 안랩#745042에샘플제출/공식판정대기(추가전송0). Native.Info<T>에 PtrToStructure가요구하는 Public/NonPublicConstructors 보존선언만추가, 구조체/필드/버퍼/API·보안gate=false유지. 새메타데이터·int/TokenStats x64 메모리검사3 PASS0FAIL, Probe/Supervisor DLL전용compile 경고오류0(Probe오래된obj NU1100은새관리형obj로분리). [수정보고](Discord_V2_IL2091_ContractFix_20261028.md). 일반분석대조군도IL2091미발생→경고소멸/NativeAOT 링크·실행 NOT_VERIFIED, 경고억제/분석회피0. 기존52/17/Windows7 반복0·복원exe/제출zip접근/NativePublish/외부전송/계정TaskACLOnBootUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01유지, 회신후별도빌드승인/실행신뢰·등록시작정리승인필요. 마지막관련c7085cf4bdd4804784cd0f25d166ac132c900f22;최종SHA완료보고/Issue66.
 ## 2026-10-28 V3 공식진단 후 source·공급망 읽기 검토 — 실제 악성/오진 UNKNOWN
 
 대표 공식UI 전사 대상이 구분자OCR정규화 후 native Probe.exe copy원본과 일치, 동시각Trojan/Win.Overlord.C5916070 실시간삭제→MSB3021 주요직접차단 V3삭제로판정(원본CSV/샘플SHA미확보 한계). 입력20SHA·Git16blob·공식7 feed/cache·빌드payload855 일치. source에서 예상밖 외부통신/수집/주입경로 미발견, 승인된감독/Task/DACL 코드와구분·gate=false. 삭제PE/SDK전체미인증·오진확정0. [검토보고](Discord_V2_V3_SourceSupply_Review_20261028.md). 안랩공식오진분석검토권고·민감정보정제 문의초안만 로컬보관/미제출, sample/ARC추가수집은별도승인. 복원/예외/재빌드/실행/외부제출/계정TaskOnBootUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지, Probe1/Supervisor0. 마지막관련966b3bdf20699fa0a605599d8c2bb0973d5047a4;최종SHA 완료보고/Issue66.

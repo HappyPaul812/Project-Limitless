@@ -2,6 +2,7 @@
 // 로그온/계정 수정/Task 등록/IPC API를 포함하지 않습니다.
 using System;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
@@ -68,7 +69,8 @@ internal static partial class Native
     [DllImport("kernel32.dll", SetLastError = true)] internal static extern bool GetProcessTimes(nint process, out long created, out long exited, out long kernel, out long user);
     internal static void Need(bool value, string tag) { if (!value) throw new InvalidOperationException(tag); }
     internal static void Check(bool value) { if (!value) throw new Win32Exception(Marshal.GetLastWin32Error()); }
-    internal static T Info<T>(nint token, int kind) where T : struct
+    // PtrToStructure의 생성자 보존 요구를 실제 형식 T로 전달합니다. 네이티브 배치는 변경하지 않습니다.
+    internal static T Info<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors | DynamicallyAccessedMemberTypes.NonPublicConstructors)] T>(nint token, int kind) where T : struct
     {
         int length = Marshal.SizeOf<T>(); nint p = Marshal.AllocHGlobal(length);
         try { Check(GetTokenInformation(token, kind, p, (uint)length, out uint needed)); Need(needed <= length, "TOKEN_SIZE"); return Marshal.PtrToStructure<T>(p); }

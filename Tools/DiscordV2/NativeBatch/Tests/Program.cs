@@ -29,6 +29,7 @@ internal static partial class AdmissionTests
         if(args.FirstOrDefault()=="--windows-boundary")return WindowsBoundaryTests.Run(args.Skip(1).ToArray());
         if(args.FirstOrDefault()=="--windows-handle-peer")return WindowsBoundaryTests.Peer(args.Skip(1).ToArray());
         if(args is ["--fake-only-contract"])return FakeOnlyContracts();
+        if(args is ["--interop-trim-contract"])return InteropTrimContract();
         if(args.Length>0&&args[0]=="--windows-object-peer")return WindowsBoundaryTests.ObjectPeer(args.Skip(1).ToArray());
         filter=args.SingleOrDefault();
         Test("contract-valid-scope",()=>Policy(Contract()));
