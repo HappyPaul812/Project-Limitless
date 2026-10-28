@@ -1,3 +1,6 @@
+## 2026-10-28 Discord V2 native 준비 — source compile 확인 / native image 없음 / NO_GO
+
+기준 f8b5f4e1. 기존 배치 경로 하나의 C# 두프로젝트 준비본·미승인 계약·Task XML안을 Git제외 로컬에 보존. 일반컴파일 각각 오류0/경고0·생성이미지실행0, 소스9항목 archiveSHA검증 불일치0. NativeAOT 오프라인1회 NU1100(필수컴파일러·링커·런타임패키지공급미확보), native image0/SHA null·재시도/설치/다운로드0. 실유효권한·독점·배포보안/admission·관리자등록정리 모드 미완료로 준비본 실행차단. 과거계정만료를확인대상으로지정·현재상태UNKNOWN·최소읽기절차/별도승인범위먼저기록·실조회0. 과거PASS재사용·신규모의0/OS·실행·계정ACL·IPC·AI·게임변경0/Push0. 공개는상태/차단만, 보안상세는로컬만. [공개가능상태보고](../../Discord_V2_NativePreparation_Status_20261028.md). 마지막관련f8b5f4e165bde3765bdf56c45b9f655aa2ba8d47;최종SHA는후속보고. LOCAL_COMMITTED/REMOTE_NOT_PUSHED, 보고후중지·11-01후연장없이게임복귀.
 <!-- 최신: NO_GO 기본댓글6457892285 게시완료. 상세명세commit5221895d 후속댓글은 확장 보안payload 별도승인필요로 자동검토거부/게시0/우회0. 마지막 관련5221895dc4487818565da999292790ffc767f546; 최종상태commit 채팅참조. -->
 ## 2026-10-28 Issue66 게시 완료·최소 배치 경로 명세 — 실행 NO_GO
 
