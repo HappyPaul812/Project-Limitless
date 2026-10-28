@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-28 Chapter3 Main24 / Issue #71 — F2 첫눈의 숲·서리올빼미 1포즈 파일럿 **실물 납품**
+
+- **실물** `Limitless_Chapter3_Main24_F2_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.zip`, **SHA256 `e8b268617cc096ecb1f920c1f913a787ddbc234e247843d4e9a546fa12b09a53`**, 8,429,257 bytes/14 entries, ZIP CRC PASS / SHA256SUMS13/13 PASS. ChatGPT 생성 파일 다운로드로 납품. **사용자 F:\ PC 자동 저장 확인 아님, GitHub 바이너리 업로드0**.
+- **F2 환경**: 1448×1086 RGB 1장 콘셉트(`Concept/F2/FirstSnowForest_Environment_Concept_OFFLINE.png`, SHA `85928588798a1c3296546c94446f2d06872e2c3805ddf60c118e80167841075b`), 승인 Earth/ThinFrost/Gravel 실제 PNG 색·질감 vs 첫눈 F2 콘셉트 오프라인 비교(`Preview/F1ApprovedGround_vs_F2_FirstSnow_StyleCompare_OFFLINE.png`, 1600×850/SHA `cd94068a...`), 환경 신규 필요 자산 **8종 목록 CSV**. 경로는 중앙 흙·자갈·통행 형태로 명료하게 표현하되 실제 통행폭/PPU/Collider 확인 `TBD`. **환경 개별 타일 PNG0 / 맵 타일 대량 생산0**.
+- **서리올빼미**: 신규 독립 1포즈 `Candidate/Monster/FrostOwl_KeyPose_512_CANDIDATE.png`, **512×512 투명 RGBA**, SHA256 `f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1`; 실제 동일 512 파일에서 축소한128/40 PNG 및 보기판(`Preview/FrostOwl_512_128_40_ActualPNG_Readability_OFFLINE.png`, SHA `2a57f219...`). 청회색 큰 날개·또렷한 얼굴/꼬리·어두운 윤곽, 서리 기운 연출로 F2 첫 한기 사용 몬스터 표현. **Idle/Attack/Hit/Defeat 0**, 전투 상태·VFX·몬스터 공식 ID·스폰 변경0.
+- **Chapter2 스타일**: 이전 `필드09 몬스터 아트 프리뷰 보드.png`의 **기존 공식 5종 표시 부분**으로 비교판(`Preview/FrostOwl_vs_Chapter2_OfficialFive_PreviewReference_OFFLINE.png`, SHA `3828f3af...`). 원본 Chapter2 각 Sprite Sheet를 개별 추출해 동PPU Unity 검증한 것은 아님. F1 GameView 원본도 직접 열지 않음. **비교판은 전부 OFFLINE**.
+- **상세 보고서** [`Chapter3_Main24_Issue71_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.md`](../../Chapter3_Main24_Issue71_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.md) / `docs/art-new` **커밋 `694f6c751cc7580520994c86fb23c1532032cdc8`**.
+- **기존 KEEP/HOLD**: Main23 환경43·승인지면9·F1·서리들쥐·Wolf/Bear/Fox·공식몬스터/NPC/Save/Quest/Scene/GUID 불변. 오르나 **visible80px / canvas84.63px** 기획안, 기존 Residence·Inn 내장 간판 KEEP, 신 RoofGable/Trim/EntryDoor 및 Inn 단독 간판 HOLD. **최종 `ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`; 제품/main 직접 적용·Push·Merge0.** 다음은 대표님 시각 검토 후 Codex 별도 격리 화면 QA.
+
+
 ## 2026-10-23 Main23 #59 최종 표시 기획 규격 — 80px visible 우선 (82px canvas 과거 후보 대체)
 
 - **최신 정본 지시**: 바울 대표 + [Issue #65 기획 최신 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/65#issuecomment-6359021033) + [#59 기획 선택](https://github.com/HappyPaul812/Project-Limitless/issues/59#issuecomment-6359022163)에 따라 **오르나 보이는 alpha 인물 높이80px을 기획 기본안**으로 한다. **전체캔버스84.63px**은 별도 관측치이다. **96px visible**은 비교 대안(전체캔버스101.55px). `512×512 PNG / PPU512 / Pivot(256,0) / scale1.175390`, #65 실제 Unity23PASS/0FAIL은 Codex 검증치; 과거 **82px 전체캔버스 / alpha약77.5px**은 이전 시점 비교안으로 보존만 하고 **최신 기본값 아님**. 원화 Master·512·StableID·VoiceID·Quest 및 콜라이더·기능 변경0; 근접 이름표 하체 가림은 OPEN 관찰. **기획 추천 ≠ 사용자 최종 미술 승인**.
