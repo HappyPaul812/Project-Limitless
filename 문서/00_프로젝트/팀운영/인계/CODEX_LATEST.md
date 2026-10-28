@@ -1,3 +1,6 @@
+## 2026-10-28 V3 공식진단 후 source·공급망 읽기 검토 — 실제 악성/오진 UNKNOWN
+
+대표 공식UI 전사 대상이 구분자OCR정규화 후 native Probe.exe copy원본과 일치, 동시각Trojan/Win.Overlord.C5916070 실시간삭제→MSB3021 주요직접차단 V3삭제로판정(원본CSV/샘플SHA미확보 한계). 입력20SHA·Git16blob·공식7 feed/cache·빌드payload855 일치. source에서 예상밖 외부통신/수집/주입경로 미발견, 승인된감독/Task/DACL 코드와구분·gate=false. 삭제PE/SDK전체미인증·오진확정0. [검토보고](../../Discord_V2_V3_SourceSupply_Review_20261028.md). 안랩공식오진분석검토권고·민감정보정제 문의초안만 로컬보관/미제출, sample/ARC추가수집은별도승인. 복원/예외/재빌드/실행/외부제출/계정TaskOnBootUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지, Probe1/Supervisor0. 마지막관련966b3bdf20699fa0a605599d8c2bb0973d5047a4;최종SHA 완료보고/Issue66.
 ## 2026-10-28 V3·빌드 실패 조사 — 격리 시각 상관 / 직접 원인 UNKNOWN
 
 Probe 실패로그18:00:50.007과 V3격리 폴더/항목/DB18:00:50.712~.717 상관 확인. 독자기록으로 원래경로/hash/처리동작 미연결→Probe 격리·악성·오탐 확정0. 현재 부모DACL쓰기Allow·PDB생성근거, 당시exe ACL/점유자UNKNOWN. 공식클라우드분석은 파일전송 기능→비공개SID/경로·코드 노출우려, 실제업로드 완료/범위UNKNOWN·자격증명유출확정0. [원인조사](../../Discord_V2_V3_BuildFailure_Investigation_20261028.md). 최소후속=기존V3분석/치료/격리 기록 읽기용 내보내 원경로/hash/동작 대조; 백신설정·복원·우회/재빌드0. Probe1/Supervisor0·gate=false·NO_GO/MANUAL/HOLD/11-01 유지. 운영자원UnitySave/Push main 변경0. 마지막관련2e76527e8bbbbfba052efee66dc48dee5905741f;이번 최종SHA 완료보고/Issue66.
