@@ -8,6 +8,7 @@ using Microsoft.Win32.SafeHandles;
 // 실제 Windows 보안 API 어댑터입니다. 이번 단위 테스트에서는 호출하지 않습니다.
 internal static class AdmissionWindows
 {
+    internal enum KernelKind { Process,Thread,Token,Job }
     [StructLayout(LayoutKind.Sequential)] internal struct Attributes { internal uint Size; internal nint Descriptor; internal int Inherit; }
     [StructLayout(LayoutKind.Sequential)] internal struct Mapping { internal uint Read, Write, Execute, All; }
     [DllImport("kernel32.dll", CharSet=CharSet.Unicode, SetLastError=true)]
@@ -32,7 +33,8 @@ internal static class AdmissionWindows
 
     internal static byte[] Descriptor(nint handle, int kind)
     {
-        uint error = GetSecurityInfo(handle, kind, 5, out _, out _, out _, out _, out var descriptor);
+        // AccessCheck에는 Owner와 Group SID가 모두 필요합니다. DACL만 맞아도 Group 누락은1338입니다.
+        uint error = GetSecurityInfo(handle, kind, 7, out _, out _, out _, out _, out var descriptor);
         if (error != 0) throw new Win32Exception((int)error);
         try
         {
@@ -117,7 +119,7 @@ internal static class AdmissionWindows
             Check(ConvertStringSecurityDescriptorToSecurityDescriptorW((ownerAdmin?"O:BA":"")+"D:P(D;;0x000d0000;;;OW)(A;;GA;;;SY)(A;;GA;;;BA)"+workerAce,1,out Pointer,out _));
         }
         internal Attributes Attributes => new() { Size=(uint)Marshal.SizeOf<Attributes>(), Descriptor=Pointer, Inherit=0 };
-        internal void Harden(nint handle)
+        internal void Harden(nint handle,KernelKind kind)
         {
             Check(SetKernelObjectSecurity(handle,0x80000004,Pointer));
             byte[] actual=Descriptor(handle,6);
@@ -125,9 +127,18 @@ internal static class AdmissionWindows
             AdmissionPolicy.Require((sd.ControlFlags&ControlFlags.DiscretionaryAclProtected)!=0 && sd.DiscretionaryAcl is not null,"KERNEL_DACL_READBACK");
             // 정확한 DACL 바이트가 적용되지 않았다면 계속하지 않습니다.
             byte[] expected=new byte[GetSecurityDescriptorLength(Pointer)]; Marshal.Copy(Pointer,expected,0,expected.Length);
-            AdmissionPolicy.Require(sd.DiscretionaryAcl!.BinaryLength==new RawSecurityDescriptor(expected,0).DiscretionaryAcl!.BinaryLength,"KERNEL_DACL_LENGTH");
+            var mapped=new RawSecurityDescriptor(expected,0);
+            uint all=kind switch{KernelKind.Process or KernelKind.Thread=>0x1fffff,KernelKind.Token=>0xf01ff,KernelKind.Job=>0x1f003f,_=>throw new InvalidOperationException("KERNEL_OBJECT_KIND")};
+            // Windows가 객체별로 확장한 GENERIC_ALL과 같은 의미로 비교합니다. ACE를 허용/삭제하지 않습니다.
+            foreach(GenericAce item in mapped.DiscretionaryAcl!)
+            {
+                AdmissionPolicy.Require(item is CommonAce {IsCallback:false},"KERNEL_EXPECTED_ACE");var ace=(CommonAce)item;
+                uint mask=unchecked((uint)ace.AccessMask);
+                if((mask&0xf0000000)!=0){AdmissionPolicy.Require(mask==0x10000000,"KERNEL_UNEXPECTED_GENERIC_MASK");ace.AccessMask=unchecked((int)all);}
+            }
+            AdmissionPolicy.Require(sd.DiscretionaryAcl!.BinaryLength==mapped.DiscretionaryAcl!.BinaryLength,"KERNEL_DACL_LENGTH");
             byte[] a=new byte[sd.DiscretionaryAcl.BinaryLength], b=new byte[a.Length];
-            sd.DiscretionaryAcl.GetBinaryForm(a,0); new RawSecurityDescriptor(expected,0).DiscretionaryAcl!.GetBinaryForm(b,0);
+            sd.DiscretionaryAcl.GetBinaryForm(a,0);mapped.DiscretionaryAcl.GetBinaryForm(b,0);
             AdmissionPolicy.Require(a.SequenceEqual(b),"KERNEL_DACL_CHANGED");
         }
         public void Dispose(){if(Pointer!=0){LocalFree(Pointer);Pointer=0;}}

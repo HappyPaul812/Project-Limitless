@@ -26,6 +26,9 @@ internal static class AdmissionTests
     {byte[] raw=Raw(contract??Contract());return AdminController.Execute(mode,raw,Hash(raw),Binding,backend,instance,cancellation);}
     static int Main(string[] args)
     {
+        if(args.FirstOrDefault()=="--windows-boundary")return WindowsBoundaryTests.Run(args.Skip(1).ToArray());
+        if(args.FirstOrDefault()=="--windows-handle-peer")return WindowsBoundaryTests.Peer(args.Skip(1).ToArray());
+        if(args.Length>0&&args[0]=="--windows-object-peer")return WindowsBoundaryTests.ObjectPeer(args.Skip(1).ToArray());
         filter=args.SingleOrDefault();
         Test("contract-valid-scope",()=>Policy(Contract()));
         Test("contract-duplicate",()=>{string json=Encoding.UTF8.GetString(Raw(Contract()));Reject(()=>AdmissionPolicy.Contract(Encoding.UTF8.GetBytes(json.Insert(1,"\"Approved\":false,")),Now,Binding),"CONTRACT_UNKNOWN_OR_DUPLICATE");});

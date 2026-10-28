@@ -28,7 +28,7 @@ internal static class HandleCensus
         }
         return entries;
     }
-    internal static void Check(IReadOnlyDictionary<nint,uint> handles)
+    internal static void Check(IReadOnlyDictionary<nint,uint> handles,Action<int,uint>? observeQuery=null)
     {
         AdmissionPolicy.Require(nint.Size==8,"HANDLE_ABI_X64_REQUIRED");
         uint size=1024*1024;
@@ -39,6 +39,7 @@ internal static class HandleCensus
             try
             {
                 int status=NtQuerySystemInformation(64,p,size,out uint needed);
+                observeQuery?.Invoke(status,needed); // 실제 조회 오류/길이만 기록하며 권한·판정은 바꾸지 않습니다.
                 if(status==unchecked((int)0xc0000004)){size=checked(Math.Max(size*2,needed+65536));continue;}
                 AdmissionPolicy.Require(status==0 && needed>=16 && needed<=size,"HANDLE_QUERY_UNKNOWN");
                 byte[] bytes=new byte[needed];Marshal.Copy(p,bytes,0,bytes.Length);
@@ -61,6 +62,10 @@ internal static class HandleCensus
 
     internal static void Exclusive(uint? child)
     {
+        // AppContainer 목록은 필터링될 수 있으므로 전체 독점 증거로 사용하지 않습니다.
+        Native.Check(Native.OpenProcessToken(Native.GetCurrentProcess(),8,out nint callerToken));
+        try{AdmissionPolicy.Require(Native.Info<int>(callerToken,29)==0,"PROCESS_CENSUS_APPCONTAINER_VIEW_UNKNOWN");}
+        finally{Native.CloseHandle(callerToken);}
         nint snapshot=CreateToolhelp32Snapshot(2,0); AdmissionWindows.Check(snapshot!=new nint(-1));
         try
         {

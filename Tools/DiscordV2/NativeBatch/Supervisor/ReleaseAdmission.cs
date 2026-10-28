@@ -30,8 +30,8 @@ internal sealed class ReleaseAdmission : IDisposable
         token=AdmissionWindows.Token(Native.GetCurrentProcess());AdmissionWindows.LimitedToken(token);
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentProcess(),Native.GetCurrentProcess(),out process,0,false,2));
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentThread(),Native.GetCurrentProcess(),out thread,0,false,2));
-        Security.Harden(process);Security.Harden(thread);
-        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(token);
+        Security.Harden(process,AdmissionWindows.KernelKind.Process);Security.Harden(thread,AdmissionWindows.KernelKind.Thread);
+        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(token,AdmissionWindows.KernelKind.Token);
         watched.Add(process,AdmissionPolicy.ProcessDanger);watched.Add(thread,AdmissionPolicy.ThreadDanger);watched.Add(token,AdmissionPolicy.TokenDanger);
         foreach(var handle in watched.Keys)NonInherited(handle);
 
@@ -84,9 +84,9 @@ internal sealed class ReleaseAdmission : IDisposable
         // 승인 파일만 읽고 관리자 시작 순서를 건너뛰는 수동 실행은 허용하지 않습니다.
         // 응답 기록이 아직 없거나 유실됐으면 suspended Probe를 재개하지 않고 HOLD합니다.
         ReceiptPolicy.Instance(ControlRecord("instance"),startIntent);
-        Security.Harden(child.Process);Security.Harden(child.Thread);
+        Security.Harden(child.Process,AdmissionWindows.KernelKind.Process);Security.Harden(child.Thread,AdmissionWindows.KernelKind.Thread);
         AdmissionPolicy.Require(childToken==0,"CHILD_TOKEN_ALREADY_BOUND");childToken=AdmissionWindows.Token(child.Process);
-        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(childToken);
+        using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(childToken,AdmissionWindows.KernelKind.Token);
         AdmissionWindows.LimitedToken(childToken);
         watched.Add(job,AdmissionPolicy.JobDanger);watched.Add(child.Process,AdmissionPolicy.ProcessDanger);watched.Add(child.Thread,AdmissionPolicy.ThreadDanger);watched.Add(childToken,AdmissionPolicy.TokenDanger);
         foreach(var handle in watched.Keys)NonInherited(handle);

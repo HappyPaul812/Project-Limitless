@@ -84,7 +84,7 @@ internal static class Program
             securityAttributes = Marshal.AllocHGlobal(Marshal.SizeOf<AdmissionWindows.Attributes>());
             Marshal.StructureToPtr(security, securityAttributes, false);
             job = Native.CreateJobObjectW(securityAttributes, null); Native.Check(job != 0);
-            admission.Security.Harden(job);
+            admission.Security.Harden(job,AdmissionWindows.KernelKind.Job);
             Native.Check(Native.SetHandleInformation(job, 1, 0));
             Native.Check(Native.GetHandleInformation(job, out uint handleFlags)); Native.Need((handleFlags & 1) == 0, "INHERITABLE_JOB");
             var limits = new Native.ExtendedLimits(); limits.Basic.Flags = 0x2008; limits.Basic.Active = 1;

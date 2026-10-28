@@ -8,6 +8,7 @@
 #include <tlhelp32.h>
 #include <stddef.h>
 static_assert(sizeof(void*)==8);
+static_assert(PROCESS_ALL_ACCESS==0x1fffff && THREAD_ALL_ACCESS==0x1fffff && TOKEN_ALL_ACCESS==0xf01ff && JOB_OBJECT_ALL_ACCESS==0x1f003f);
 static_assert(sizeof(SECURITY_ATTRIBUTES)==24 && sizeof(VARIANT)==24);
 static_assert(sizeof(FILE_ATTRIBUTE_TAG_INFO)==8 && sizeof(LUID_AND_ATTRIBUTES)==12 && sizeof(SID_AND_ATTRIBUTES)==16 && offsetof(TOKEN_GROUPS,Groups)==8);
 static_assert(sizeof(GENERIC_MAPPING)==16 && sizeof(LSA_OBJECT_ATTRIBUTES)==48 && sizeof(LSA_UNICODE_STRING)==16);

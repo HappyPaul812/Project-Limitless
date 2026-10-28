@@ -1,3 +1,6 @@
+## 2026-10-28 실제 Windows 보안 경계 — 부분 PASS / NativeAOT HOLD
+
+새 격리 파일 공유 잠금·제한token거부·빈Job ABI/DACL·새token/thread/process DACL 실제 PASS. OWNER RIGHTS AccessCheck/커널 WRITE_DAC 비교 FAIL, 전체HANDLE/전체process/Task COM은 AppContainer 권한·필터링으로 UNKNOWN. Group누락1338·generic권리 매핑·AppContainer 전체성오판만 최소수정, 관련항목만 재확인/합성52 재실행0. 관리형시험/Supervisor 컴파일 경고오류0·gate=false, AOT각0/SHA없음. [실제검증보고](Discord_V2_WindowsBoundary_20261028.md). 관리자 직접 절차/SHA는 Git제외 로컬 보관·미실행, 별도승인 필요. 기존 운영자원/Unity/Save/승인기록/Push/main 변경0, NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련d6d8c007deb754c2685f2a9542c0f0a76612cb40;이번 최종SHA 완료보고/Issue66.
 ## 2026-10-28 Supervisor 핵심·관리자 CLI 구현 — 신규52PASS / AOT 보안 HOLD
 
 기준c97ef554/Issue6461020709. 기존두프로젝트에승인Scope·동작별승인/등록-start-instance기록검증·원자영구소비·AccessCheck/ACL/파일pinning·비상속HANDLE·외부독점과native관리자등록/시작/정리연결. Job루프취소/10초force·85/90초한도·실행중독점재검사구현. 신규실코드단위/모의52PASS0FAIL, SDK x64 ABI/COM슬롯구문컴파일PASS, Supervisor/Probe일반컴파일각경고오류0. Nt class64지원성/제한SID-PPL관측·실kernel DACL/OWNER RIGHTS·COM readback/cleanup미검증으로실행gate=false 및NativeAOT0/SHA없음. [구현보고](Discord_V2_Supervisor_CoreAndAdmin_20261028.md). 기존PASS반복/다운로드/실Task계정ACLOnBootJobSession0IPCAIUnitySave/Push0. SDK부수효과차단환경·새비공개checkpoint보존. NO_GO/MANUAL/HOLD·11-01기한유지후중지. 마지막관련c97ef5542bbe40e9388d01125a6d67de73dfd34b;최종SHA완료보고.
