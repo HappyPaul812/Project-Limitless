@@ -1,3 +1,6 @@
+## 2026-10-28 최종 독점성 계약 판정 — 현 계약 HOLD / 전용 범위 변경 승인 검토 권고
+
+대표 실제7 PASS/1 UNKNOWN 보존: HANDLE 외부zero-rights차단 PASS, 다른SID381·System token query오류5. PID4/기존PASS 반복0. 전역SID부재 snapshot은 지속적인 생성 차단이 아니며 현 제한·API로 전체관측/지속보장 불가. Job/lease/HANDLE/IgnoreNew는 해당 전용 실행 범위만 강제. 현재 계약·source·gate=false 유지·AOT0. [계약판정보고](Discord_V2_ExclusivityContract_Decision_20261028.md): 전용FAKE_ONLY 보장 축소와 전역UNKNOWN/비협조 동일SID 위험 수용은 대표 명시승인 필요; hostile 환경 필요 시 변경안도NO_GO. 검증기/권한상승/계정ACLTaskOnBoot운영UnitySave/Push/main 변경0. NO_GO/MANUAL/HOLD·11-01 유지후중지. 마지막관련54e924ad002ec5ac446e698507b8d5e6f2e28e1c;이번 최종SHA 완료보고/Issue66.
 ## 2026-10-28 잔여 HANDLE·프로세스 검증 — 파일 경쟁 수정 / 전체 독점 HOLD
 
 대표 관리자6 PASS·원본SHA 일치 보존, 기존6/합성52 재실행0. ready 쓰기중 최종경로 노출+양방향 공유충돌 원인확인, PID/nonce 임시·게시·release 분리 후 해당 실제 시험 PASS/peer_exit0. 외부HANDLE 실제 차단은 관리자 재확인 전 UNKNOWN. 프로세스 관측을 PID·단계별 분리/한 건이라도 미확인 시HOLD 유지. 기존Job/HANDLE/lease는 Job밖 동일SID 부재를 대체 입증 못함·범위축소0. 일반컴파일 경고오류0·AOT각0/gate=false. [잔여보고](Discord_V2_ResidualBoundary_20261028.md), 잔여2개만 관리자 직접 실행 준비는 Git제외 로컬 보관/미실행. NO_GO/MANUAL/HOLD·11-01 유지. 운영자원/기존승인/UnitySave/Push/main 변경0. 마지막관련6e211e6b57c1f0efb3fde04782935c26573655f8;이번 최종SHA 완료보고/Issue66.
