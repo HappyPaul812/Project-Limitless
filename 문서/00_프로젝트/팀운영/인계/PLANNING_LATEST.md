@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-28 밤 — 신규 메인 아트 #71·리뉴얼 #60 병렬 후속 인계
+
+- 바울 대표가 Main24 Codex #70 설계 완료 보고 후 **메인/리뉴얼 아트 병행 진행**을 질의. 기존 각 담당 최신 GitHub 인계 및 #59/#63/#60을 확인하고 **기존 승인분은 보존하며 다음 대상만 분리**.
+- 메인 신규 아트: [Issue #71](https://github.com/HappyPaul812/Project-Limitless/issues/71) — Chapter3 Main24 F2 첫눈의 숲 오프라인 스타일·필요자산 가이드, 서리올빼미 512RGBA **단일 키포즈 후보** 및 128/40 비교, 애니메이션/기술수치/Unity 적용0. 기존 #59 오르나 visible alpha80px 기획 기본안/대표 최종 미술승인대기, Residence 집·지붕·문 KEEP/신 3PNG 배치HOLD, Inn 내장 간판 하나 KEEP/신 독립간판HOLD 보존.
+- 리뉴얼: [Issue #60 신규 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6469495899) — 기존 OGA20 남문경비 vs 공식 태온 **128/40px 시각 구별판**과 forest_spider 출처·활성사용 계약 1페이지. NPC 후보3 및 #63 독침벌 단일포즈는 미술승인 전 HOLD/새20프레임0; 라이선스 CC BY3/4 버전 충돌 계속 OPEN. 기존54행 감사·NPC/펫/Ch2 공식몬스터·맵 중복제작 금지.
+- 두 담당 모두 작업 시작 때 자기 브랜치 최신본 확인, 시안 실물·SHA/CRC·OFFLINE vs 실제Unity 상태·유저 미술승인 여부를 보고. `docs/art-new`·`docs/art-renewal` 기록+각 latest 갱신+이슈 댓글 필수. 이번 기획 발주는 **상품/스킬 #70, 원본 Unity/Save, main 병합/Push 승인 아님**.
+
+---
 # PLANNING / 2026-10-28 밤 — Issue #70 거래 설계 검토·가격/무자금 대응 기획 권고 (대표 최종 승인 대기)
 
 - [Codex Issue #70 읽기 전용 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6468962827) 확인: 로컬 `codex/main24-skill-shop-contract-20261028`, SHA `0d4c50b819ae16c626fc06eade1f83d62e8985b1`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 설계 QA20건은 **미실행**, Unity/코드/원본 변경0.
