@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-28 밤 — Issue #70 거래 설계 검토·가격/무자금 대응 기획 권고 (대표 최종 승인 대기)
+
+- [Codex Issue #70 읽기 전용 완료보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6468962827) 확인: 로컬 `codex/main24-skill-shop-contract-20261028`, SHA `0d4c50b819ae16c626fc06eade1f83d62e8985b1`, `LOCAL_COMMITTED / REMOTE_NOT_PUSHED`. 설계 QA20건은 **미실행**, Unity/코드/원본 변경0.
+- 기존 #46 스킬 6슬롯 저장 격리 31 PASS/Continue12 PASS는 **유료 신규·강화 소유권 영속화/원자결제 PASS가 아님**. 현재 Import 기본 카탈로그 한정·일반 Save `.tmp → File.Copy`는 안전한 거래/정전 내구성 불충분. #46/#70 제품 통합 완료로 오해 금지.
+- 바울 대표 검토용 **가격 후보**: 일반 신규40, 강화30, 온기의 불꽃20, 부활50 탈렌트. Chapter2 퀘스트470/납품111은 실제 종료잔고가 아니라 정적 총보상; 실 경제 검증 전 **확정 금지**.
+- 추천(미승인): 캐릭터+직업+Save별 소유권 분리, 무단 환불·구버전 Writer로 소유권 유실 금지, 한기 첫 지정전투 전 무자금도 무료 대응도구2개 확보·재전투 부족분 재지급, 구매나 치유사·마도사 편성 강제0. 최종 수량/방식과 정확 상품ID·해금·스킬 효과는 별도 승인 및 QA.
+- [기획 검토 문서](../Main24_SkillShop_Issue70_PlanningReview_20261028.md)에 근거·개선안·다음 승인게이트 기록. **지금은 본편 판매·가격·스킬/한기 실제 코드 구현 지시 아님.** 다음 Codex 작업 지시문은 바울 대표에게 복붙용으로 제공. `main`/원본 Save/Discord #66 불변.
+
+---
+
 # PLANNING / 2026-10-28 저녁 — Main24 스킬6슬롯 영구 저장·Continue 격리구현 PASS, 상점 원자적 거래 계약 #70
 
 - 바울 대표가 Codex **“Main24 스킬 6슬롯 영구 저장·복원을 구현했습니다”** 완료 화면 전달. [Issue #46 Codex 직접 구현 보고](https://github.com/HappyPaul812/Project-Limitless/issues/46#issuecomment-6468440313)와 대조, [기획 상태·후속 #70 판정](https://github.com/HappyPaul812/Project-Limitless/issues/46#issuecomment-6468556392) 기록. 실제 Code/Unity/Windows UserData를 기획 채팅에서 직접 실행한 것은 아님.
