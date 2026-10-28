@@ -1,3 +1,6 @@
+## 2026-10-28 NativeAOT 공식 공급·용량 계획 확정 — 바이너리 미수신/승인 대기
+
+기준b7a5c9b1/Issue6458818054. 공식NuGet JSON7종10.0.10의URL/SHA512/크기/전개/추가dependency0확인, 동일VS18.8.2catalog에서MSVC14.51.36252·표시SDK10.0.26100.8249/내부package10.0.26100.16확인. 필수closure132node/359payload·공식URL/SHA목록로컬보존. NuGet134.8MB+MSVC602.4MB+SDK536.4MB+메타37MB=약1.31GB+layoutoverhead, 설치캐시약5.40GB+임시/권장여유10GB. 최종Installer차감견적아님. SDK묶음내x86/ARM64/UWP포함을명시,별도Optional추가0. 격리SDK핀/config/cache/원본보존Build입력5개·승인후4단계명령준비, 구문0오류·실행0. [공개보고](../../Discord_V2_NativeAOT_AcquisitionPlan_20261028.md). 바이너리다운로드/설치복원발행0·계정반복/운영게임/Push0. NO_GO/MANUAL/HOLD유지,공급→layout확인→설치→빌드별도승인대기. 마지막관련b7a5c9b1e1a4f5642a248584acc2c773d0a67057;최종SHA후속.11-01마감유지.
 ## 2026-10-28 계정 유한 만료 연장 결과 확인 — 계정 단계만 완료
 
 바울대표 직접실행 final/intent 판독·제공SHA일치. 지정유한만료목표와사후값일치/보고쓰기1회/오류0/보존계정metadata9개차이0확인. 정확대상·시간·원시증거는Git제외로컬보존. 계정연장단계만완료이며권리/그룹/ACL/Task전체감사·Session0Job실행PASS아님. agent추가계정조회쓰기0, NativeAOT다운로드설치복원0·다음단계로이관. NO_GO/MANUAL/HOLD유지·운영게임/Push변경0. 마지막관련d33bd2b452934424285328c08696ace3a4fcd27d;최종SHA후속.
