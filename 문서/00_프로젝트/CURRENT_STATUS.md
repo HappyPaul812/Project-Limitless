@@ -1,3 +1,6 @@
+## 2026-10-28 V3·빌드 실패 조사 — 격리 시각 상관 / 직접 원인 UNKNOWN
+
+Probe 실패로그18:00:50.007과 V3격리 폴더/항목/DB18:00:50.712~.717 상관 확인. 독자기록으로 원래경로/hash/처리동작 미연결→Probe 격리·악성·오탐 확정0. 현재 부모DACL쓰기Allow·PDB생성근거, 당시exe ACL/점유자UNKNOWN. 공식클라우드분석은 파일전송 기능→비공개SID/경로·코드 노출우려, 실제업로드 완료/범위UNKNOWN·자격증명유출확정0. [원인조사](Discord_V2_V3_BuildFailure_Investigation_20261028.md). 최소후속=기존V3분석/치료/격리 기록 읽기용 내보내 원경로/hash/동작 대조; 백신설정·복원·우회/재빌드0. Probe1/Supervisor0·gate=false·NO_GO/MANUAL/HOLD/11-01 유지. 운영자원UnitySave/Push main 변경0. 마지막관련2e76527e8bbbbfba052efee66dc48dee5905741f;이번 최종SHA 완료보고/Issue66.
 ## 2026-10-28 빌드 전용 NativeAOT — Probe1회 FAIL / Supervisor0회 중지
 
 대표 승인으로 신뢰근거와 빌드를 분리해 E격리/offline10.0.10·SDK10.0.403 사용. Probe restore/native code 단계 후 MSB3021 원본exe copy 접근거부 exit1, 이후 중간/최종exe 미발견→SHA/크기/실PE검증 불가. IL2091 annotation 경고 별도. 보안로그 읽기 권한거부로 세부원인UNKNOWN·격리/오탐 단정0. 실패 즉시중지·자동재시도0·Supervisor0. source gate=false/실행미승인/신뢰미검증 표식 유지·이미지실행0. [빌드결과](Discord_V2_NativeAOT_BuildOnly_Result_20261028.md), 기존17/52/실제7 반복0. 계정ACLTaskOnBootSession0JobIPCAIUnitySave/Push main 변경0. NO_GO/MANUAL/HOLD·11-01 유지. 마지막관련00141490b80c582509271b5f46801ef41a64cc37;이번 최종SHA 완료보고/Issue66.
