@@ -1,3 +1,6 @@
+## 2026-10-28 Supervisor Admission WIP 보존 — 컴파일0오류 / 5시간98%로안전중지
+
+기준6f9e81cd/Issue6460822429. 기존Supervisor프로젝트에Tools/DiscordV2/NativeBatch/Supervisor의실제승인/AccessCheck·ACL/handle pinning·kernel DACL/영구단발소비/외부handle·독점검사연결. flag=false유지/실행gate HOLD·미완료. SDK10.0.403일반컴파일오류경고0, 단위테스트미작성/미실행·AOT0. Nt 내부ABI·관측권한/TOCTOU/실경계검증·관리자CLI남음. 5시간98%확인후신규구현중단·재설정권0. SDKfirst-run개발HTTPS인증서자동설치메시지관측/실변경미확인·trust/삭제0. [WIP인계](../../Discord_V2_Supervisor_Admission_WIP_20261028.md). Task계정OnBootSession0JobIPCAIUnitySave/Push0. NO_GO/MANUAL/HOLD·11-01유지.
 ## 2026-10-28 설치 후 최소 확인 — 필수 구현 미완료로 빌드0
 
 Issue66최신6460171402/989d808d인계만확인. Community18.11.12324.101·MSVC14.51.36231 x64 cl/link·SDK10.0.26100.0 x64 lib/header존재, E NuGet7기존PASS재사용대상보존/재검증0. Supervisor ReleaseAdmissionImplemented=false·유효권한/handle/ACL/단발승인 경계미구현 gate확인. 지시6에따라빌드0·새이미지/SHA없음, 전체AOT환경PASS아님. [최소보고](../../Discord_V2_PostInstall_MinimalCheck_20261028.md). 소스수정/다운로드설치/RestorePublish/실행Task계정OnBootIPCAI/Push0. NO_GO/MANUAL/HOLD 유지후중지.
