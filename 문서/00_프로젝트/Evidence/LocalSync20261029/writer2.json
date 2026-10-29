@@ -1,0 +1,20 @@
+{
+    "Phase": "writer2",
+    "Unity": "6000.6.5f1",
+    "Status": "HOLD_INTEGRATION",
+    "Passed": [
+        "Writer2CandidateOnlyAssemblyPresent",
+        "SyntheticSeedSave1",
+        "Writer2.BeforeReplaceFailurePreservesMemoryAndDisk",
+        "Writer2.AfterReplaceExceptionRecognizesCommittedWholeJSON",
+        "Writer2.SeparateVersion2Readable",
+        "WriterForkReproducedBothFilesPreservedButNewerLegacyProgressHidden",
+        "WriterForkReaderDoesNotRaiseHold",
+        "Writer2.UnknownCatalogFailsClosedWithoutFallback",
+        "NoProductRuntimeErrors"
+    ],
+    "Errors": [],
+    "Findings": [
+        "HOLD_INTEGRATION: Writer1 level17/currency377 fork is silently hidden by Writer2 level14/currency189. Both files remain, but progress reconciliation is unresolved."
+    ]
+}

@@ -1,3 +1,15 @@
+## 2026-10-29 Issue #76 — LOCAL_SYNC_DONE (#46·#73만) / #70 HOLD
+
+실제 원본 `F:/study/codex/Project-Limitless`의 main을 ff-only 동기화했습니다. 시작 `bfd281545632877325f5d21e04cefb924042c465` → 제품 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. 통합 브랜치 `codex/local-sync-20261029`, #46 제품 commit `356f9226b8ed83120f828709045d50a5041055a7`, #73 제품 commit `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. main 신규 commit·Push·PR·원격 병합0.
+
+신규 정적11 + 격리 Unity29 PASS(실제 Continue 포함). #70 경계9개 재현 중 Writer1 최신 진행도가 Writer2에 숨겨지는 문제가 확인되어 HOLD_INTEGRATION·원본 제외했습니다. Version1 Save 유지, 퀘스트 재료·보상·중복방지 불변. BuildSettings25 Scene/GUID와 사용자 app-ui 보존, 원본 사용자 dirty status 동일, 제품 외7085 비개인 tracked SHA 동일. 개인 Save/UserData 열람·SHA·복사·수정0, 기존 worktree/Temp 삭제0, 화면포커스/Discord #66 변경0.
+
+Owl v3 외형·유기형 Spider 디자인 승인 유지, 각각 Attack/왼 앞다리 알파 보완 대기. 메카닉 Spider는 Chapter4 보존, F2/Bee/상품25종·가격·해금·무자금 한기 대응은 미적용·미승인 상태 유지. 다음: Writer 분기 안전성 → 원본 수동 import/지정Unity5.7 미검증 → 미술 국소 보완/상품 결정. 격리 검증 Unity6.5만 PASS, 원본 Editor 실행0·Search 환경 예외 OPEN.
+
+[상세 보고](../../Local_Integration_And_Original_Sync_Issue76_20261029.md) · [Issue #76](https://github.com/HappyPaul812/Project-Limitless/issues/76)
+
+---
+
 ## 2026-10-24 EOD 마감 — PR68 MERGED / 원본 동기화 PARTIAL·HOLD
 
 [PR68](https://github.com/HappyPaul812/Project-Limitless/pull/68) 실제 merge **`b0a666be631e87e451d8bc8d6549a6b664b03ee7`**. Main23 KEEP 기능20파일 + TTS162(Unity189파일/140교체22신규) + 재현도구3파일, 정본·인계·QA 근거241파일을 포함한 총453파일 통합 완료. 신규 정적472/격리 Unity25 PASS·compile0/제품runtime오류0, 기존 전수QA 재실행0. 기존 Search예외1/비음성GUID중복/지정Unity6000.5.7 직접검증은 OPEN. 미승인 아트·오디오 적용0, Main24 Save 미구현, Discord #66 MANUAL/HOLD·추론/재시도/설정변경0.

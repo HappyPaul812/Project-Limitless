@@ -1,0 +1,172 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using ProjectLimitless.Battle;
+using ProjectLimitless.Core;
+using ProjectLimitless.Player;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+namespace ProjectLimitless.EditorTools
+{
+    // 원본 Editor와 개인 저장 경로에서는 실행되지 않는 합성 통합 검증기입니다.
+    [InitializeOnLoad] public static class LocalSync76Audit
+    {
+        const string Key = "LocalSync76Audit";
+        static string Root => Path.GetFullPath(Path.Combine(Application.dataPath, "../../../../Results"));
+        static string Phase => SessionState.GetString(Key + ".phase", "");
+        static string Saves => Path.Combine(Root, "Synthetic", Phase == "writer2" ? "Writer2" : "Final");
+        static readonly List<string> passed = new List<string>(), errors = new List<string>(), findings = new List<string>();
+        static IEnumerator work; static double deadline; static bool expectedIOError;
+        static string Player => PartyResourceService.PlayerCharacterId;
+        static JobDefinition Job => Resources.LoadAll<JobDefinition>("JobDefinitions").First(j => j.JobId == "guardian");
+        [Serializable] public class Result { public string Phase, Unity, Status; public string[] Passed, Errors, Findings; }
+        [Serializable] public class Legacy
+        {
+            public int Version = 1, Level = 14, CurrentExperience = 0, Currency = 200;
+            public string PlayerName = "Issue76 Synthetic", PlayerVisualId = "Male", PathId = "path.mobility", JobId = "guardian", CurrentSceneId = "World_StarterVillage";
+        }
+        [Serializable] public class Expected { public string[] Slots; public string Quest; public int Currency, Experience; }
+        static LocalSync76Audit() { EditorApplication.playModeStateChanged += Changed; }
+        public static void Start()
+        {
+            if (!Application.isBatchMode || !Application.dataPath.Replace('\\','/').Contains("/Temp/LocalSync20261029/Runtime/Unity/Client/"))
+                throw new InvalidOperationException("격리 Issue76 프로젝트만 허용합니다.");
+            var args = Environment.GetCommandLineArgs(); int n = Array.IndexOf(args, "-sync76-phase");
+            string phase = n >= 0 && n + 1 < args.Length ? args[n+1] : "";
+            if (phase != "writer2" && phase != "write" && phase != "read") throw new Exception("검증 phase 누락");
+            Directory.CreateDirectory(Root); SessionState.SetString(Key + ".phase", phase); SessionState.SetBool(Key, true);
+            PlayerSettings.companyName = "LimitlessSyntheticAuditOnly"; PlayerSettings.productName = "LocalSync76_20261029";
+            Application.runInBackground = true; EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
+            EditorApplication.EnterPlaymode();
+        }
+        static void Changed(PlayModeStateChange state)
+        {
+            if (state != PlayModeStateChange.EnteredPlayMode || !SessionState.GetBool(Key, false)) return;
+            Directory.CreateDirectory(Saves); GameSaveService.AuditSaveDirectory = Saves;
+            UserSettingsService.BeginAudit(Path.Combine(Root, "SyntheticSettings")); UserSettingsService.SetMuteAll(true);
+            foreach (var device in UnityEngine.InputSystem.InputSystem.devices)
+                if (device is UnityEngine.InputSystem.Keyboard || device is UnityEngine.InputSystem.Mouse || device is UnityEngine.InputSystem.Gamepad)
+                    UnityEngine.InputSystem.InputSystem.DisableDevice(device);
+            Application.logMessageReceived += Log;
+            work = Flatten(Run()); deadline = EditorApplication.timeSinceStartup + 180;
+            EditorApplication.update += Tick;
+        }
+        static void Log(string message, string trace, LogType type)
+        {
+            if (type != LogType.Error && type != LogType.Exception && type != LogType.Assert) return;
+            if (expectedIOError && message.Contains("쓰지 못했습니다")) { findings.Add("EXPECTED_SYNTHETIC_IO_ERROR: " + message); return; }
+            if (trace.Contains("UnityEditor.Search")) File.AppendAllText(Path.Combine(Root,"EditorEnvironment_OPEN.txt"), message + "\n" + trace);
+            else errors.Add(message + "\n" + trace);
+        }
+        static void Check(bool ok, string name) { if (!ok) throw new Exception(name); passed.Add(name); }
+        static IEnumerator Wait(float seconds) { float end = Time.realtimeSinceStartup + seconds; while (Time.realtimeSinceStartup < end) yield return null; }
+        static void Seed(int slot)
+        {
+            GameSessionData.Reset(); GameSessionData.ConfigurePlayer(PlayerVisualType.Male, "Issue76 Synthetic");
+            GameSessionData.SelectPlayerPath("path.mobility"); GameSessionData.SelectJob("guardian"); GameSessionData.ConfigureProgress(14, 0);
+            GameSessionData.RecordLocation("World_StarterVillage", ""); EconomyService.AddCurrency(200);
+            Check(GameSaveService.SelectSlot(slot) && GameSaveService.SaveCurrentSession(), "SyntheticSeedSave" + slot);
+        }
+        static Type PurchaseType => typeof(GameSaveService).Assembly.GetType("ProjectLimitless.Battle.SkillPurchaseService");
+        static object Purchase(string product, string request) => PurchaseType.GetMethod("TryPurchase").Invoke(null, new object[] { request, Player, Job, "audit.product." + product });
+        static void Fault(Action<string,string> action) => typeof(GameSaveService).GetProperty("AuditWriteFault").SetValue(null, action);
+        static void Writer2()
+        {
+            Check(PurchaseType != null, "Writer2CandidateOnlyAssemblyPresent");
+            Seed(1); string baseline = GameSaveService.GetSaveFilePath(1); string before = File.ReadAllText(baseline);
+            foreach (string id in new[] { "new", "fail" })
+                PurchaseType.GetMethod("RegisterForAudit").Invoke(null, new object[] { "audit.product."+id, "guardian",
+                    new BattleSkillDefinition("audit.skill."+id, "합성", "출시상품 아님", true, BattleSkillEffectType.None, 0, 0), 11, null });
+            Fault((stage,path) => { if (stage == "BeforeReplace") throw new IOException("synthetic before replace"); });
+            Check(Purchase("fail","request.fail").ToString() == "SaveFailed" && EconomyService.Currency == 200 && File.ReadAllText(baseline) == before,
+                "Writer2.BeforeReplaceFailurePreservesMemoryAndDisk");
+            Fault((stage,path) => { if (stage == "AfterReplace") throw new IOException("synthetic after replace"); });
+            Check(Purchase("new","request.new").ToString() == "Committed" && EconomyService.Currency == 189,
+                "Writer2.AfterReplaceExceptionRecognizesCommittedWholeJSON");
+            Fault(null); string paid = GameSaveService.GetSaveFilePath(1); string paidBefore = File.ReadAllText(paid);
+            Check(paid.EndsWith(".writer2.json") && GameSaveService.TryLoadSlot(1,out var purchased) && purchased.Version == 2, "Writer2.SeparateVersion2Readable");
+            // 옛 writer의 진행 갱신을 별도 버전1 파일로 재현합니다. 실제 개인 저장은 접근하지 않습니다.
+            var oldWriter = new Legacy { Level = 17, Currency = 377 }; File.WriteAllText(baseline, JsonUtility.ToJson(oldWriter));
+            Check(GameSaveService.TryLoadSlot(1,out var selected) && selected.Level == 14 && selected.Currency == 189
+                && File.ReadAllText(paid) == paidBefore && JsonUtility.FromJson<Legacy>(File.ReadAllText(baseline)).Level == 17,
+                "WriterForkReproducedBothFilesPreservedButNewerLegacyProgressHidden");
+            Check(!(bool)typeof(GameSaveService).GetProperty("WritesHeld").GetValue(null), "WriterForkReaderDoesNotRaiseHold");
+            findings.Add("HOLD_INTEGRATION: Writer1 level17/currency377 fork is silently hidden by Writer2 level14/currency189. Both files remain, but progress reconciliation is unresolved.");
+            PurchaseType.GetMethod("ClearAuditCatalog").Invoke(null,null);
+            Check(!GameSaveService.TryLoadSlot(1,out _), "Writer2.UnknownCatalogFailsClosedWithoutFallback");
+        }
+        static void Write()
+        {
+            Check(PurchaseType == null, "FinalAssemblyExcludesWriter2Candidate");
+            File.WriteAllText(GameSaveService.GetSaveFilePath(3),JsonUtility.ToJson(new Legacy { Currency = 77 }));
+            Check(GameSaveService.TryLoadSlot(3,out var legacy), "Version1NoSkillStateReadable");
+            GameSaveService.RestoreSession(3,legacy);
+            Check(SkillLoadoutService.GetSlots(Player,Job).Count == 6 && SkillLoadoutService.GetSlots(Player,Job).Take(3).All(id=>!string.IsNullOrEmpty(id)), "LegacyDefaultsThreeWithinSixSlots");
+            Seed(1); var skills = BattleSkillCatalog.GetSkills(Job).Where(s=>s.IsImplemented).Select(s=>s.Id).ToArray();
+            for(int i=0;i<6;i++) Check(SkillLoadoutService.TrySetSlot(Player,Job,i,null), "ExplicitClearSlot"+i);
+            Check(SkillLoadoutService.TrySetSlot(Player,Job,3,skills[1]) && SkillLoadoutService.TrySetSlot(Player,Job,5,skills[0]), "SparseSixSlotEquipPersisted");
+            var quest = Resources.Load<QuestDefinition>("QuestDefinitions/side_c1_forest_first_aid");
+            QuestService.ImportSaveData(new QuestProgressSaveData { CompletedQuestIds = quest.PrerequisiteQuestIds.ToArray() });
+            Check(QuestService.TryStart(quest.QuestId) && !QuestService.TryDeliverSideQuest(quest.QuestId,quest.TurnInNpcId), "QuestRejectsMissingMaterials");
+            foreach(var obj in quest.Objectives) Check(InventoryService.TryAddItem(obj.TargetId,obj.RequiredCount), "QuestSyntheticMaterial"+obj.TargetId);
+            int wallet=EconomyService.Currency, experience=GameSessionData.CurrentExperience;
+            Check(QuestService.CanDeliverItems(quest) && QuestService.TryDeliverSideQuest(quest.QuestId,quest.TurnInNpcId), "ActualQuestCompletionAPI");
+            Check(quest.Objectives.All(o=>InventoryService.GetItemCount(o.TargetId)==0) && EconomyService.Currency==wallet+quest.Reward.Currency
+                && GameSessionData.CurrentExperience==experience+quest.Reward.Experience, "QuestConsumesOnceAndAwardsExactCurrencyExperience");
+            Check(!QuestService.TryDeliverSideQuest(quest.QuestId,quest.TurnInNpcId) && EconomyService.Currency==wallet+quest.Reward.Currency,
+                "QuestDuplicateRewardPrevented");
+            Check(GameSaveService.SaveCurrentSession(), "IntegratedQuestAndLoadoutSave");
+            var expected = new Expected { Slots=SkillLoadoutService.GetSlots(Player,Job).ToArray(), Quest=quest.QuestId, Currency=EconomyService.Currency, Experience=GameSessionData.CurrentExperience };
+            File.WriteAllText(Path.Combine(Root,"ExpectedFinal.json"),JsonUtility.ToJson(expected,true));
+            string savedPath=GameSaveService.GetSaveFilePath(1), saved=File.ReadAllText(savedPath);
+            Check(JsonUtility.FromJson<GameSaveData>(saved).Version==1, "FinalSaveSchemaVersionOnePreserved");
+            string blocked=Path.Combine(Root,"SyntheticBlockedDirectory");File.WriteAllText(blocked,"synthetic file, not a directory");
+            GameSaveService.AuditSaveDirectory=blocked;
+            expectedIOError=true; bool changed=SkillLoadoutService.TrySetSlot(Player,Job,4,skills[2]); expectedIOError=false;
+            Check(!changed && SkillLoadoutService.GetSlots(Player,Job).SequenceEqual(expected.Slots), "EquipIOFailureRollsBackMemory");
+            GameSaveService.AuditSaveDirectory=Saves;
+            Check(File.ReadAllText(savedPath)==saved, "EquipIOFailurePreservesPreviousDiskSave");
+        }
+        static IEnumerator Read()
+        {
+            Check(PurchaseType==null && SkillLoadoutService.ExportSaveData().Characters.Length==0,"FreshProcessFinalCodeHasNoPreviousLoadoutMemory");
+            var expected=JsonUtility.FromJson<Expected>(File.ReadAllText(Path.Combine(Root,"ExpectedFinal.json")));
+            SceneManager.LoadScene("Bootstrap"); yield return Wait(.6f);
+            var obj=GameObject.Find("StartMenuCanvas/Slot01/Action");Check(obj!=null && obj.GetComponent<Button>().interactable,"ActualBootstrapContinueButtonReady");
+            obj.GetComponent<Button>().onClick.Invoke();float end=Time.realtimeSinceStartup+20;
+            while(SceneManager.GetActiveScene().name!="World_StarterVillage" && Time.realtimeSinceStartup<end)yield return null;
+            yield return Wait(.4f);Check(SceneManager.GetActiveScene().name=="World_StarterVillage","ActualBootstrapContinueLoadsSavedWorld");
+            var actualSlots=SkillLoadoutService.GetSlots(Player,Job);
+            findings.Add("Actual continued slots: "+string.Join("|",actualSlots.Select(id=>id??"<empty>")));
+            // JsonUtility는 합성 기대값 배열의 null을 빈 문자열로 씁니다. 두 표현 모두 미장착 칸입니다.
+            Check(actualSlots.Select(id=>id??"").SequenceEqual(expected.Slots.Select(id=>id??"")),"ContinueRestoresExactSixSlotsWithExplicitEmptyPositions");
+            Check(EconomyService.Currency==expected.Currency && GameSessionData.CurrentExperience==expected.Experience
+                && QuestService.GetState(expected.Quest)==QuestState.Completed,"ContinuePreservesQuestCompletionAndRewards");
+            Check(GameSaveService.TryLoadSlot(3,out var old) && old.Version==1,"OldNoSkillStateSlotStillReadableAfterIntegration");
+        }
+        static IEnumerator Run()
+        {
+            if(Phase=="writer2")Writer2();else if(Phase=="write")Write();else yield return Read();
+            yield return Wait(.1f);Check(errors.Count==0,"NoProductRuntimeErrors");
+        }
+        static IEnumerator Flatten(IEnumerator task) { while(task.MoveNext()){if(task.Current is IEnumerator child){var flat=Flatten(child);while(flat.MoveNext())yield return null;}else yield return null;} }
+        static void Tick()
+        {
+            try {EditorApplication.QueuePlayerLoopUpdate();if(EditorApplication.timeSinceStartup>deadline)throw new TimeoutException("Issue76 isolated QA timeout");if(work.MoveNext())return;Finish(null);}
+            catch(Exception ex){Finish(ex);}
+        }
+        static void Finish(Exception ex)
+        {
+            if(ex!=null)errors.Add(ex.ToString());EditorApplication.update-=Tick;SessionState.SetBool(Key,false);Application.logMessageReceived-=Log;
+            File.WriteAllText(Path.Combine(Root,Phase+".json"),JsonUtility.ToJson(new Result{Phase=Phase,Unity=Application.unityVersion,Status=errors.Count>0?"FAIL":Phase=="writer2"?"HOLD_INTEGRATION":"PASS",Passed=passed.ToArray(),Errors=errors.ToArray(),Findings=findings.ToArray()},true));
+            EditorApplication.Exit(errors.Count==0?0:2);
+        }
+    }
+}

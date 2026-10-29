@@ -1,0 +1,33 @@
+{
+    "Phase": "write",
+    "Unity": "6000.6.5f1",
+    "Status": "PASS",
+    "Passed": [
+        "FinalAssemblyExcludesWriter2Candidate",
+        "Version1NoSkillStateReadable",
+        "LegacyDefaultsThreeWithinSixSlots",
+        "SyntheticSeedSave1",
+        "ExplicitClearSlot0",
+        "ExplicitClearSlot1",
+        "ExplicitClearSlot2",
+        "ExplicitClearSlot3",
+        "ExplicitClearSlot4",
+        "ExplicitClearSlot5",
+        "SparseSixSlotEquipPersisted",
+        "QuestRejectsMissingMaterials",
+        "QuestSyntheticMaterialmaterial_forest_spider_silk",
+        "QuestSyntheticMaterialmaterial_venom_snake_scale",
+        "ActualQuestCompletionAPI",
+        "QuestConsumesOnceAndAwardsExactCurrencyExperience",
+        "QuestDuplicateRewardPrevented",
+        "IntegratedQuestAndLoadoutSave",
+        "FinalSaveSchemaVersionOnePreserved",
+        "EquipIOFailureRollsBackMemory",
+        "EquipIOFailurePreservesPreviousDiskSave",
+        "NoProductRuntimeErrors"
+    ],
+    "Errors": [],
+    "Findings": [
+        "EXPECTED_SYNTHETIC_IO_ERROR: 슬롯 1을 쓰지 못했습니다. 기존 파일은 삭제하지 않습니다: Cannot create 'F:\\study\\codex\\Project-Limitless\\Temp\\LocalSync20261029\\Results\\SyntheticBlockedDirectory' because a file or directory with the same name already exists."
+    ]
+}

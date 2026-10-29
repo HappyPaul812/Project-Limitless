@@ -1,0 +1,16 @@
+{
+  "gate": "PASS",
+  "original_head": "bfd281545632877325f5d21e04cefb924042c465",
+  "integration_head": "27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1",
+  "protected_files_unchanged": 7089,
+  "project_settings_simulation_preserved": 27,
+  "final_unity_pass": 29,
+  "static_pass": 11,
+  "product_paths": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/SkillLoadoutService.cs",
+    "Unity/Client/Assets/_Project/Scripts/Core/GameSaveService.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/SkillManagementPresenter.cs"
+  ],
+  "personal_data_accessed": false
+}

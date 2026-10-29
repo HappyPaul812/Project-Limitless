@@ -1,0 +1,18 @@
+{
+    "Phase": "read",
+    "Unity": "6000.6.5f1",
+    "Status": "PASS",
+    "Passed": [
+        "FreshProcessFinalCodeHasNoPreviousLoadoutMemory",
+        "ActualBootstrapContinueButtonReady",
+        "ActualBootstrapContinueLoadsSavedWorld",
+        "ContinueRestoresExactSixSlotsWithExplicitEmptyPositions",
+        "ContinuePreservesQuestCompletionAndRewards",
+        "OldNoSkillStateSlotStillReadableAfterIntegration",
+        "NoProductRuntimeErrors"
+    ],
+    "Errors": [],
+    "Findings": [
+        "Actual continued slots: <empty>|<empty>|<empty>|guardian_iron_defense|<empty>|guardian_taunt"
+    ]
+}

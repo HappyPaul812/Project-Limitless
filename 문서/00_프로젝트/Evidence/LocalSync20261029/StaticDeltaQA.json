@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "source_46_is_ancestor_of_70": true,
+    "product_files_exactly_four": true,
+    "quest_exact_four_user_strings_only": true,
+    "root_target_files_clean": true,
+    "selected_source_exact_SkillLoadoutService.cs": true,
+    "selected_source_exact_GameSaveService.cs": true,
+    "selected_source_exact_SideQuestNpcPresenter.cs": true,
+    "selected_source_exact_SkillManagementPresenter.cs": true,
+    "build_scene_path_guid_list_same": true,
+    "build_user_app_ui_preserved": true,
+    "integration_changes_no_buildsettings_or_assets": true
+  },
+  "passed": 11,
+  "failed": 0,
+  "product_paths": [
+    "Unity/Client/Assets/_Project/Scripts/Battle/SkillLoadoutService.cs",
+    "Unity/Client/Assets/_Project/Scripts/Core/GameSaveService.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs",
+    "Unity/Client/Assets/_Project/Scripts/UI/SkillManagementPresenter.cs"
+  ],
+  "BuildSettings_original_sha256": "ec6529bc0f343fedb06cd08c99f7c5be475b0d3d061ef3e24379cbf02671245a",
+  "main_version": "m_EditorVersion: 6000.5.7f1",
+  "original_version": "m_EditorVersion: 6000.6.5f1",
+  "no_personal_data_access": true
+}

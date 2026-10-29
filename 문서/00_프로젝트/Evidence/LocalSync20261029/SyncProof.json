@@ -1,0 +1,30 @@
+{
+  "status": "LOCAL_SYNC_DONE",
+  "scope": "Issue46 + Issue73 only; Issue70 HOLD_INTEGRATION",
+  "original_head_before": "bfd281545632877325f5d21e04cefb924042c465",
+  "original_head_after_product_sync": "27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1",
+  "branch": "main",
+  "integration_branch": "codex/local-sync-20261029",
+  "origin_main": "bfd281545632877325f5d21e04cefb924042c465",
+  "method": "git merge --ff-only codex/local-sync-20261029",
+  "new_commit_created_on_main": false,
+  "protected_tracked_nonprivate_unchanged": 7085,
+  "unexpected_hash_changes": [],
+  "original_user_dirty_status_bytes_unchanged": true,
+  "original_index_staged_entries": 0,
+  "product_sha256": {
+    "Unity/Client/Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs": "f7fe6800ca7810effc92e6945e95686850534109e0d544ec85f54104b8e447c8",
+    "Unity/Client/Assets/_Project/Scripts/UI/SkillManagementPresenter.cs": "53a0c3dadfbf37fc945818ea92bf7126830ed9084491a4296bfe683427663084",
+    "Unity/Client/Assets/_Project/Scripts/Battle/SkillLoadoutService.cs": "f6878dad811bee378acf1362f6686fb8b04fbd9c68a1da4d33d6d95129aea540",
+    "Unity/Client/Assets/_Project/Scripts/Core/GameSaveService.cs": "454eaeba4b5fc8f2721d5e6e807c46faadac751bc74f9a13a2ee9f9cec1eef6a"
+  },
+  "BuildSettings_sha256_preserved": "ec6529bc0f343fedb06cd08c99f7c5be475b0d3d061ef3e24379cbf02671245a",
+  "existing_worktrees_preserved": 101,
+  "current_worktrees": 103,
+  "backup_source_config_count": 550,
+  "recovery_ref": "codex/recovery-before-local-sync-20261029",
+  "personal_save_userdata_read_hashed_copied_modified": false,
+  "original_unity_launched": false,
+  "foreground_operations": 0,
+  "push": false
+}
