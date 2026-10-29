@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-29 오후 — Issue #74 + #60/#63 신규 ZIP 통합검수 후속 기획 판정
+
+- [Codex 신규 2 ZIP 통합검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748), local `codex/art-integrated-review-20261029`, 보고 commit `6353caff95c7ee1f6b80335e9ce9acf254d3314a`, 최종 handoff `66644242373d2dd570b6c0c51b7ad2e183c4a5b3`, `LOCAL_COMMITTED/REMOTE_NOT_PUSHED`. **ZIP CRC/SHA/Manifest·PNG38 decode 정상 = 파일 기술 QA이지 미술 최종 승인/Unity 실전 적용 아님**. 실제 바이너리/이미지는 local ZIP만, GitHub text 보고와 같다고 이미지 직접 열람한 것으로 주장하지 않음.
+- 메인 신규아트 [#74 후속 기획 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488506287): F2 GroundOverlay, SnowPine, FrostShrub `KEEP_CANDIDATE`; PathEdge_LowFence 접지부 국소 `REVISE`, 나머지 3종 원본 보호. Frost Owl v2 파일/국소수정 TECH_PASS이나 40px 개선 체감은 미확정→새 v3가 필요하면 **얼굴·눈/부리·꼬리만 국소 후보1**, 충분하면 PNG 생성 없이 유지. 기존 v1/v2 보존, 전체 타일/모션 제작 금지, PPU/Pivot/휠체어 실동선 HOLD.
+- 리뉴얼 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6488513653)·[#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6488514255) 후속 기획: Spider 독창적 512 RGBA 1포즈 있으나 Ch2 대비 벡터색면·다리 관절 뭉침 → **국소 질감 보완 v2 1포즈** 후 대표 시각 검토; 기존32모션(Idle/Walk/Attack/Shoot×8) **아직 0장 신작**. Bee 새로운 **Idle10+Attack10 실제 파일 존재**는 인정, 다만 몸 전체 변형 위주라 관절 동작 미흡 → 정상20 원본보호하며 **Idle2/Attack3 정도의 표적 키포즈부터** 검토. 본편 전투 품질 승인/교체 아님. 현행 PilotBee CC BY3 vs4 출처 충돌 아직 HOLD.
+- 바울 대표 미술 최종 승인 아직 없음, Unity 실장/실전 QA/Save·UserData/Main23/Ch2 공식 아트/main 반영도 없음. **일반 NPC의 오리지널화 최소 투자, 외부 몬스터 원화 교체 우선** 정책 유지. 모든 팀 `docs/art-new`, `docs/art-renewal`에 공식 보고·latest 갱신, main 직접 Commit/Push/Merge0. 대표에게는 각 팀 짧은 지시문을 복붙용 제공.
+
+---
 # PLANNING / 2026-10-29 / 신규 메인 아트 다음 단계 #74 발주 — F2 환경4 + Owl40px 후보1
 
 - 바울 대표 요청 "메인 아트도 일 시켜줘"에 따라 [Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74) 정식 발주 생성. Chapter1·2 리뉴얼의 숲거미/독침벌 작업과 병렬·업무 격리.
