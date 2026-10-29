@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-29 Main24 F2 / Issue #74 후속 — 울타리 접지 v2 + Owl v3 표적 보완 파일 2개
+
+- **최신 기준**: [#74 Codex 통합 QA](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748) 및 [기획 표적 발주](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488506287). GroundOverlay·SnowPine·FrostShrub **3종 KEEP_CANDIDATE/원본 SHA 동결**. PathEdge v1과 Owl v1/v2도 원본 바이트 보존. 기존43 환경/승인지면9/F1/공식 몬스터·펫/Ch1·2 리뉴얼 원본, 오르나 visible80/Residence·Inn KEEP 등 변경0.
+- **새 2PNG만 실물 납품:** `Candidate/Environment/F2_PathEdge_LowFence_v2_CANDIDATE.png` **256×192 RGBA**, SHA `5a79c4ab41e5700dcaac1a68a0929323f10adf0643b7042bf0d3021ee26788ff` (울타리 윗부분 y<94 변경0, 바닥 접지 부분 alpha 변경 11,089px); `Candidate/Monster/FrostOwl_KeyPose_512_v3_CANDIDATE.png` **512×512 RGBA**, SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` (**Owl v2 alpha 262144px exact 동일**, RGB 얼굴/꼬리 지정 영역 내 25,114px만 차이, 영역 밖0).
+- **납품 ZIP** `Limitless_F2_Issue74_Followup.zip`, **1,560,774 bytes / 9 entries**, SHA256 `eee82ef0d9e0c8092f27258404aa12e1b917af68521128a6283b4ee5a3fba3a4`, ZIP CRC PASS, **SHA256SUMS 8/8 PASS**. 새 PNG2 + 오프라인 비교판3(`Issue74_Followup_OnePage_Review_OFFLINE.png`, `Fence_v1_vs_v2_256_128_40_OFFLINE.png`, `FrostOwl_v1_v2_v3_512_128_40_OFFLINE.png`) + Manifest·QA JSON·README·SHA 목록. ChatGPT 대화 파일 아티팩트로 제공; Windows F:\ 자동 배치/실복사본 hash 미확인, **GitHub PNG/ZIP 바이너리 미업로드**.
+- **판정**: `ART_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_FINAL_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표에게 기존 울타리 대비 접지/올빼미 40px 실제 축소를 시각 승인받기 전 미술 PASS 주장 금지. F2 PPU·Pivot·Footprint·Sorting·길/휠체어 Collider·동일 Unity 몬스터비율 **SPEC_PENDING/NOT_TESTED**. 맵 타일 대량 생산·Idle/Attack·게임 본편 적용0, main 직접 Commit/Push/Merge0.
+- **[새 Issue #74 표적 QA 보고](../../Chapter3_Main24_Issue74_F2_PathEdgeOwl_TargetedFollowup_QA_20261029.md)** `docs/art-new` 실제 보고 커밋 **`a734c1459f49acd3ae076559cd6e2fa8d3a66593`**. 다음: 바울 대표 두 시안 최종 미술 판정 → 승인 시 Codex 격리 Unity 두 파일만 최소 QA → 별도 정식 적용 승인. 원본 자동 교체 금지.
+
+
 ## 2026-10-29 Chapter3 Main24 / Issue #74 — 첫눈의 숲 환경 RGBA 4종 + 서리올빼미 v2 **실물 납품**
 
 - **실제 신규 PNG 후보5**: `Candidate/Environment/` 첫눈 지면 오버레이 **256×256**, 눈 소나무 **256×320**, 낮은 울타리 **256×192**, 낮은 서리 관목 **256×160**, `Candidate/Monster/FrostOwl_KeyPose_512_v2_CANDIDATE.png` **512×512**. 전부 **RGBA·투명 알파·bbox 검증 PASS**. 원본은 비파괴로 두고 ImageGen 아트 소품 분리·배경 마스킹, Owl 원화의 얼굴·꼬리 명암 표적 보완, 알파 exact unchanged; 실물 각 SHA와 정확한 상대경로는 아래 QA 보고.
