@@ -1,3 +1,13 @@
+## 2026-10-29 / 최우선 최신 결정 — Spider v3 Chapter4 기계형 후보 보관·Ch1/2 유기형 1포즈 신규 (현재 최신)
+
+- **정식 근거 보고서:** [Renewal_20261029_OrganicForestSpider_Ch12_MechanicSpiderCh4_Reclassification.md](../../Renewal_20261029_OrganicForestSpider_Ch12_MechanicSpiderCh4_Reclassification.md) / `docs/art-renewal` commit **`55d9dda6f9ba6d917286b2b79b017d7f9cec2606`**. 바울 대표의 최신 직접 미술 결정으로 이전 10/29 Spider v3의 Ch1·2 `DESIGN_READY_CANDIDATE` 검수는 기술적 관찰만 유지하고 **Ch1/2 미술 승인 후보에서는 철회**.
+- **Spider v3 → Chapter4 기계형 미래 후보 `CH4_MECHANIC_ARCHIVE_ONLY`**: 본편 애니메이션/색변경/미술 적용 전부 금지. 기존 Spider v1 `9a80f18c3793daa17aa2586c0effd19f9ecb72beaf654d70ba8f0af3392fb32e`, v2 `3dedf30e2d5e95e299016980bec1c31456f4c3c796cd2222da948eeab92784ca`, v3 `d7ad4062eea84d6520e672b46630a26cfa92f54e55d587d1da936ac33bc50fc4` **바이트·SHA 보존**, 신규 ZIP에도 원본 사본 수록. Chapter4 실 제작은 Chapter3+ 신규 아트 담당의 향후 별도 승인 영역.
+- **새 Ch1/2 forest_spider 유기형**: `ForestSpider_Organic_v1_512_RGBA_CANDIDATE.png` **512×512 RGBA** SHA256 **`692ee2a520c661f0ece5d9ba955d7de1ed32f3a44ed1fdc38d9d934b9e61e3c1`**, 실제 128/40 PNG와 기계형 v3 대비 OFFLINE 비교판. 이끼·거미줄·유기적 몸통/다리/독니/다수 눈. 단 **생성 콘셉트 RGB 보드에서 GrabCut 추출한 후보로 다리/바닥 매트 잔상 있음 = `ALPHA_MATTE_REVISE`**. 40px 디자인/Chapter2 화풍/Unity GameView는 사용자+Codex 검토 대기, 미술 최종 승인 처리 금지.
+- **실 ZIP** `Limitless_ForestSpider_OrganicCh12_MechanicCh4_Handoff_20261029.zip`: **4,184,421 bytes / 14 files / CRC PASS / SHA256 `4cb287994e069bd2f99b0fcff7517500fd504ce6b9ba13d16b0258f3bca68234`**. 내부 Manifest 파일 12/12·SHA256SUMS 기록. 채팅 다운로드만 존재하며 바울 대표 F: 자동 복사/원격 GitHub 바이너리 등록0.
+- **현행 Spider** Field02/03 Spawn, Resources Idle8/Walk8/Attack8/Shoot8=32PNG, 10FPS, 우향 PPU256·scale0.7 외부 CC0 원본 임시 KEEP. 신규 Ch1/2 Spider 애니메이션 **0/32** / 본편 적용0.
+- **VenomBee** 기존 마스터+Idle10/Attack10=20 RGBA/시트/GIF 및 최신 신규5키포즈·ZIP 원본·SHA 전부 보존. 최신 Codex QA는 KEYPOSE_IMPROVED지만 독침 축·관절·알파 `MOTION_REVISE_CONTINUE / RUNTIME_HOLD`; 이번 회차 Bee 작업0. PilotBee 웹 **CC BY3.0 / 동봉 CC BY4.0 충돌 미해결**. 기존 Ch2 공식/펫 WolfBearFox·환경/NPC·Unity/Save/Spawn·AI·독·드롭/GUID/meta·main 전부 미변경.
+- **다음 승인 게이트**: 바울 대표 유기형 숲거미 외형을 직접 보고 1포즈 승인·표적보완·반려 결정 → 알파 바닥 잔상 제거 → Codex 격리 동배율 QA → 승인 후에만 4×8 모션 제작 별도 발주. `FILE_TECH_PASS / ORGANIC_DESIGN_REVIEW / ALPHA_REVISE / CH4_ARCHIVE_ONLY / SPIDER_MOTION_HOLD / BEE_HOLD / UNITY_NOT_TESTED / MAIN_UNCHANGED`.
+
 ## 2026-10-29 / 숲거미 v3 · 독침벌 독립 5포즈 재묘사 납품 (최신)
 
 - [정식 통합 보고서](../../Renewal_20261029_ForestSpider_v3_VenomBee_FivePose_Redraw_Delivery.md) **`docs/art-renewal` commit `5075048ddae727c4113ce724cf90869cad61d7a9`**. 바울 대표 10/29 요청 및 [Codex #74 후속QA](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6489115424) 반영. **기존 v2와 Bee v1/20프레임 및 전 회차 5키포즈 소스는 그대로 보존**.
