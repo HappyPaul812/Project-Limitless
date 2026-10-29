@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-29 Chapter3 Main24 / Issue #74 — 첫눈의 숲 환경 RGBA 4종 + 서리올빼미 v2 **실물 납품**
+
+- **실제 신규 PNG 후보5**: `Candidate/Environment/` 첫눈 지면 오버레이 **256×256**, 눈 소나무 **256×320**, 낮은 울타리 **256×192**, 낮은 서리 관목 **256×160**, `Candidate/Monster/FrostOwl_KeyPose_512_v2_CANDIDATE.png` **512×512**. 전부 **RGBA·투명 알파·bbox 검증 PASS**. 원본은 비파괴로 두고 ImageGen 아트 소품 분리·배경 마스킹, Owl 원화의 얼굴·꼬리 명암 표적 보완, 알파 exact unchanged; 실물 각 SHA와 정확한 상대경로는 아래 QA 보고.
+- **납품 ZIP** `Limitless_Main24_F2_Issue74_v2.zip`, 실제 SHA256 **`892345e78b83f09c932f4f1e2eeb2bf311c331c7490b325bda04fbdbaee54c4e`**, **1,897,130 bytes / 15 entries** / ZIP CRC PASS·SHA256SUMS14/14 PASS. ChatGPT 대화 다운로드로 전달, Windows F:\ 저장 직접 확인X / GitHub 바이너리 업로드X. `Preview/Issue74_OnePage_Review_OFFLINE.png` 2050×1260 원페이지, Owl v1-v2 **512/128/40** 실제 파일 축소4 + 환경4, 승인 Frostway 지면3 실물 vs 새 F2 overlay 오프라인 합성 비교 포함.
+- **Owl v1 보호**: 기승인 전 원본 `FrostOwl_KeyPose_512_CANDIDATE.png` SHA **`f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1`** 재확인, byte modification0. v2 SHA `91d3e638a94e873064a2ed06ead333535865301691a77952c4ffa81f376b5000`, 512² RGBA/alpha bbox(19,19)-(499,481) same/alpha pixel exact same. 40px 얼굴 가독성은 사용자 미술 판단 후 추가 조정 가능, Idle/Attack/VFX/Spawn/전투 생성0.
+- **PPU/피벗 원격 메타 근거**: 기존 NorthF1 Transition/Path/Prop FrostShrub/Waymarker, 승인 Frostway Ground의 importer `PPU=128` 확인. Pivot은 ground(0.5,0), shrub(0.5,0.0546875), Path(0.5,0.5) 등 서로 달라 **이번 신규 후보별 import Pivot/Footprint/실 WU는 `SPEC_PENDING`**. 새 .meta/Collider/Unity Scene/본편 생성0, 길·휠체어 폭과 타일 접합은 `NOT_TESTED`; 현재 검수는 **OFFLINE RGBA/CRC/SHA**까지만.
+- **기존 보호**: Main23 승인43/승인지면9, F1·서리들쥐·Wolf/Bear/Fox, Ch1·2 리뉴얼 숲거미·독침벌, 공식 몬스터·오르나 alpha-visible80px/canvas84.63px, 북서 Residence/Inn KEEP 및 미승인3모듈+신간판 HOLD, Save/Quest/Scene/GUID/Open16 그대로. 기존 #71 F2/올빼미v1 원본 ZIP·콘셉트 변경0; 맵 타일 양산0.
+- **[Issue #74 상세 제작·검수 보고서](../../Chapter3_Main24_Issue74_F2_Environment4_FrostOwl_v2_ArtPilot_QA_20261029.md)** `docs/art-new` 보고 커밋 `943d90eefcc3201d12cb0d7ed68eb513a31733f5`. **`ART_CANDIDATE / OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / UNITY_SCALE_NOT_VERIFIED / NOT_UNITY_APPLIED`**, 바울 대표 최종 미술 승인 필요. 다음: 시안 5종 검토→Codex 격리 Unity PPU/Pivot·3비율/휠체어 경로/공식 Ch2 동일배율 QA→별도 본게임 적용 승인. `main` 직접 commit/Push/merge0.
+
+
 ## 2026-10-28 Chapter3 Main24 / Issue #71 — F2 첫눈의 숲·서리올빼미 1포즈 파일럿 **실물 납품**
 
 - **실물** `Limitless_Chapter3_Main24_F2_FirstSnowForest_FrostOwl_ArtPilot_v1_20261028.zip`, **SHA256 `e8b268617cc096ecb1f920c1f913a787ddbc234e247843d4e9a546fa12b09a53`**, 8,429,257 bytes/14 entries, ZIP CRC PASS / SHA256SUMS13/13 PASS. ChatGPT 생성 파일 다운로드로 납품. **사용자 F:\ PC 자동 저장 확인 아님, GitHub 바이너리 업로드0**.
