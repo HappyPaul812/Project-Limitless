@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-29 오전 — 바울 대표 간헐적 확인 모드, Main24 카탈로그25·아트 판정판 준비
+
+- 대표 지시: 오늘은 잠깐씩만 확인 가능, 어제 #70 거래기반 및 #71/#60 아트 통합 QA에서 이어갈 것. **승인 필요 항목과 읽기 전용으로 진행 가능한 작업을 분리**하고 대표의 실시간 개입을 최소화. 사용자 직접 미술승인·상품/가격 승인 없이 제품 변경/Push/병합/유료호출 없음.
+- [Issue #70 실제 Codex 거래기반 결과](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6469905906): 로컬 code `de084eae21643aa47347360811c0f883c384acb2`, 인계 `518ced262cfc8422021e0828d592c8e4c36d31bc`, 신규 **40 PASS/최종 FAIL0**(기존31PASS 재실행0), 원격/원본 미적용, 제품 실제 상품·가격·효과0. Writer2 Version2/Schema2는 옛 Writer1과 구버전진행 fork를 자동 합치지 않음. 정전·다중프로세스·별도 Player·지정6000.5.7 직접검증 HOLD. 기존 31PASS는 등록/출시 근거 아님. #46/#70 OPEN 유지.
+- [기획 신규 카탈로그 25종 표](../Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md): 직업당 신규2+기존3강화의 1차 승인된 *디자인 방향*만 집계. 가격 **신규40/강화30/온기의 불꽃20/부활50은 전부 미승인 후보**. 직업별 전체 구매 가정 수호자170/치유사180/사수170/투사170/마도사150; 25종 총후보840은 필수 구매액/실제 지갑 아님. 챕터2 Quest 보상470과 선택 납품111은 실잔고 NOT_MEASURED.
+- [Codex 2026-10-28 아트 통합 검수 #71](https://github.com/HappyPaul812/Project-Limitless/issues/71#issuecomment-6470841523) 및 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6470843053): 두ZIP CRC/SHA/Manifest PASS, F2 컨셉 KEEP_CANDIDATE/실동선HOLD, 서리올빼미 1포즈 기술PASS·40px 얼굴/꼬리 약함·미술 미승인; OGA20 실원본 미동봉으로 태온 공식본 동PPU 미술비교 HOLD; 숲거미 CC0/현재32프레임 원본 SHA일치·실사용 코드연결 확인→**KEEP_CURRENT/신규 그림 HOLD**. 독침벌 20프레임/권리 충돌 기존 HOLD.
+- [신규 Codex 준비 Issue #72](https://github.com/HappyPaul812/Project-Limitless/issues/72)에는 **한눈에 보는 오프라인 승인 비교판+현재 Skill/Writer2 실제 ID 충돌·경제 정적검토**만 읽기전용 발주. 대표가 Codex 지시문을 전달하기 전 로컬 작업 자동 실행0. 본편 코드/상품/원화 변경·전수 재검증·Unity Player/Editor 실행0.
+- 바울 대표에게 나중에 필요한 최소 확정: **(1) F2·Owl 및 GateGuard 실물 미술 판정 (2) 상품ID/목록·가격/해금 (3) 무자금 첫 한기 대응 도구·재지급**. 그 전까지 대표 응답 기다리며 진행 가능한 문서·참조조사만 수행.
+
+---
+
 # PLANNING / 2026-10-28 밤 — 신규 메인 아트 #71·리뉴얼 #60 병렬 후속 인계
 
 - 바울 대표가 Main24 Codex #70 설계 완료 보고 후 **메인/리뉴얼 아트 병행 진행**을 질의. 기존 각 담당 최신 GitHub 인계 및 #59/#63/#60을 확인하고 **기존 승인분은 보존하며 다음 대상만 분리**.
