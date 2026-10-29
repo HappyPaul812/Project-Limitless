@@ -1,3 +1,14 @@
+# PLANNING / 2026-10-29 저녁 마감 — 숲거미 디자인 승인, 로컬 통합·원본동기화 #76 준비
+
+- 바울 대표 요청: **“숲거미 좋구만. 오늘은 여기까지 하자. 나 내일 나가야 하니까... 지금까지 한 작업들 다 합치고 로컬 동기화 해줘.”** 숙면/다음날 외출 고려, 질문없이 할 수 있는 안전한 단계 처리 우선. **현재 이 기획 세션은 대표 PC Windows F: 직접 조작/로컬 git 실행 도구가 없어 로컬 동기화 실제 완료라고 주장할 수 없음.** GitHub 기록과 작업 지시까지 완료, 직접 파일 접근 가능한 Codex의 후속 실제 수행이 필요.
+- [숲거미 사용자 디자인 채택 #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6495054916): Ch1·2 유기형 `ForestSpider_Organic_v2_CLEAN_ALPHA_512_RGBA.png` SHA `c949f37ad5511753b064b83d521e79bb76409b0427cd0abf0c9742d6d9d46661` 외형 방향 승인. **왼 앞다리 아래 가는 회백/갈색 알파매트 잔상 `ALPHA_REVISE/HOLD`**, 모션32 0프레임, Unity 실제 적용0. 기존 기계형 v3는 Ch4 ARCHIVE_ONLY.
+- [이번 마감 안전 통합 Issue #76](https://github.com/HappyPaul812/Project-Limitless/issues/76) 작성. 본게임 **코드 통합 후보**: #73 퀘스트 UI `9c57c4fe7141ad267e8fbcd07ef27473e4ddf875`, #46 스킬6칸 `3380fe9d3fb98cd7547aa9c517197e41cb977745`, #70 거래Writer2 `de084eae21643aa47347360811c0f883c384acb2`(아직 상품등록0, Writer1 fork/구버전 호환 검증 필요). Codex 로컬 브랜치들 원격 미게시/제품원본 미적용, 코드 충돌 없는 순서·부작용 점검 후 격리 통합/기존 원본 사용자 수정 백업/최소QA→안전할 때만 로컬 동기화 요청. **원격 main commit/Push/PR merge 금지**.
+- 아트는 GitHub docs/art-new/docs/art-renewal에 문서/후보 인계만, 승인한 v3 Owl **정지 디자인**과 유기형 Spider **외형**을 실제 Unity 애니메이션·Sprite 교체 승인으로 확대하지 않음. [2026-10-29 마지막 Codex 델타 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6494817150): Owl Idle02/Attack02 상단 클리핑 OFFLINE 수정 PASS이나 **전체 Attack 동작 ART_HOLD**, F2 표지판 문자 제거 성공/채움 얼룩 및 횃대 스툴 느낌 ART_REVIEW, P1 울타리 접지 HOLD, Spider 얇은 잔상 HOLD; Bee 실제20파일+5키포즈 보존·전투모션 HOLD/원본 PilotBee CC BY3/4 권리 충돌 OPEN.
+- #72 25 상품 ID·가격/해금·온기의 불꽃20/부활50/기본신규40/강화30은 전부 사용자 미승인, 무자금 무료 물품2/재진입 보급도 미확정. 실상품 구매 UI/F2 한기 시스템 기능 추가0.
+- #66 Discord native/V3/Session0/Probe/OS계정 설정 `NO_GO/MANUAL/HOLD`, 회신 없이 안전한 코드 정리만 보존. 로컬 통합 중 이 worktree·ignored/Temp/증거 수정·삭제·실행·설정변경0.
+- 다음날 Codex 완료보고 **LOCAL_SYNC_DONE / STAGED_ONLY / NOT_DONE**로 구분, 실제 Git HEAD SHA 전후·원본 보존·BuildSettings 충돌·Unity QA/SaveContinue 상태를 수치와 SHA로 입증. 지역 경로/민감자료는 공개 Issue에 과다노출하지 말 것. 대표가 Codex 지시문을 전달하기 전 자동로컬처리는 시작되지 않았음.
+
+---
 # PLANNING / 2026-10-29 저녁 — Owl12/F2 P2/Organic Spider 3ZIP 검수·후속 세부 보완
 
 - 바울 대표 제공 Codex 최종 결과 로컬 브랜치 `codex/art-owl-anim-f2p2-organic-review-20261029`, 로컬 내용 SHA `0cadf20800df6ee527e76b5209695508fbe8f240`, 최종 인계 보고 SHA `d48ccb681bbc2f6c9e5edd25bc47635ec0909080`(사용자 캡처 기준). GitHub [#74 상세 통합보고](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6492706191): 세 ZIP CRC47/47·각 SHA/Manifest 일치, PNG35 decode PASS, **파일 TECH PASS만**. 실제 게임 새 애니메이션 Unity 실행·제품 적용/사용자 최종 미술 승인0.
