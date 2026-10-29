@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-29 저녁 — Owl12/F2 P2/Organic Spider 3ZIP 검수·후속 세부 보완
+
+- 바울 대표 제공 Codex 최종 결과 로컬 브랜치 `codex/art-owl-anim-f2p2-organic-review-20261029`, 로컬 내용 SHA `0cadf20800df6ee527e76b5209695508fbe8f240`, 최종 인계 보고 SHA `d48ccb681bbc2f6c9e5edd25bc47635ec0909080`(사용자 캡처 기준). GitHub [#74 상세 통합보고](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6492706191): 세 ZIP CRC47/47·각 SHA/Manifest 일치, PNG35 decode PASS, **파일 TECH PASS만**. 실제 게임 새 애니메이션 Unity 실행·제품 적용/사용자 최종 미술 승인0.
+- **Owl v3** 정적 외형은 사용자 승인·Codex 설치 Unity6000.6.5f1 81+22PASS 보호. 신규 Idle8/Attack4는 아직 **ANIM_REVISE**: Idle02 위쪽 alpha 접촉7, Attack02 상단접촉28(깃잘림). Attack 준비→발동 차이 미약. [#74 최소후속](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6493035987): 해당 날개 부분/공격 대비만 표적 작화, 원본 v3/정상프레임/PPU512/중앙Pivot/8FPS/Idle00 보호. 원화재설계·v4·전체 재양산 금지. 8FPS 실제 사용/새12프레임 Unity PASS는 미실시.
+- **F2 P2** 나뭇가지·약한 눈발 KEEP_CANDIDATE, 그루터기/횃대 상단 인공 원판·표지판 가상글자만 표적 REVISE. [#75 후속](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6493037627). 기존 P1 울타리 v2 접지 HOLD 불변. 새 PPU/Pivot/실길·휠체어 GameView 아직 NOT_VERIFIED.
+- **Organic forest_spider Ch1·2** 유기형 방향 `ORGANIC_DIRECTION_OK/DESIGN_IMPROVED`, 새 후보 `ForestSpider_Organic_v1` 본체 유지; 다리 사이 회백색 쐐기/바닥 갈색 매트 **알파 배경잔상만 제거**. [#60 후속](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6493038497). 종전 기계형 Spider v3는 Ch4 `ARCHIVE_ONLY`, 신규32프레임0, 대표 유기형 디자인 최종 승인대기. Bee 기존20/키포즈5/HOLD·권리 CC BY3/4 불일치 유지.
+- 이번에는 각각 메인 아트(#74/#75)·리뉴얼(#60)에 **실제 이미지 최소수정 지시문**을 보내고, 한 번만 Codex 통합 Delta 검수 후 사용자에게 비교판을 보여 판정. GitHub 이슈 댓글 및 기획인계 업데이트는 진행했지만 **아트팀 로컬 PNG 제작을 자동으로 수행한 것은 아님**. 타 팀/원본 Unity/Save/UserData/Scene/Quest/거래/TTS162/Discord66/포커스·main 반영/Push·병합 금지.
+
+---
 # PLANNING / 2026-10-29 오후 — Main24 F2 메인 신규 아트 다음 단계 P2 #75
 
 - 바울 대표 요청 **“메인 아트도 시켜.”** 현재 Owl v3 디자인은 사용자가 수용했고 Codex [#74 격리 Unity 검사](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6490161019) 결과에 따라 **Owl 512/PPU512/중앙Pivot/scale1/8FPS/Idle8+Attack4** 제작 지시가 이미 전달된 상태. 이 작업을 다시 시키거나 Owl v4 재제작하지 않음.
