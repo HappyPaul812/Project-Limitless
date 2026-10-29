@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-29 밤 최종 마감 — Issue #76 실제 로컬 동기화 완료 / #70 Writer 분기 HOLD
+
+- **대표 캡처 및 [#76 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495762654) 교차 확인:** `LOCAL_SYNC_DONE`은 **#46 6슬롯 저장·#73 퀘스트 UI 4문구 변경에 한정**. 로컬 원본 `main` 최종 HEAD `ab47b931fec92976170f9f50aabde1822d78bb90`, 시작 `bfd281545632877325f5d21e04cefb924042c465`. 원격 `origin/main`은 시작 SHA 그대로, Push/PR/원격 병합0. 통합 격리브랜치 `codex/local-sync-20261029`; 사용자 PC 로컬 직접 변경은 Codex가 실행했고 기획 세션은 GitHub 결과만 확인.
+- 제품 코드 선별 커밋 #46 `356f9226b8ed83120f828709045d50a5041055a7`, #73 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. 신규 정적 QA11 PASS + 격리 Unity **29 PASS**(write22/새 프로세스 Bootstrap Continue7). 지정 Unity **6000.5.7f1 미검증**, 설치 6000.6.5f1의 격리QA만. Quest 재료/경험치/탈렌트·중복보상 및 Save, 6슬롯 Continue OK. BuildSettings25 path/GUID·사용자 플러그인/설정 보호, 원본 개인 Save/UserData 미접근·원본 Unity 실행0.
+- **#70 Writer2 `HOLD_INTEGRATION` 최우선**: 별도 경계검증에서 기존 Writer1 최신 `Level17/Currency377` vs 신규 Writer2 `Level14/Currency189` 상태에서 Writer2가 옛 분기 데이터를 우선 읽고 `WritesHeld=false`가 되어 **최신 진행도 가림/잠재적 잘못된 재개** 발견. #70 기존 40PASS는 이 결합 경계 PASS가 아니다. Writer1/Writer2 분기 감지·권위파일 지정·쓰기중지·사용자 안전재개·구버전 호환 결정 없이 제품 적용/자동 migration/merge 금지. 스킬상점 25종 실상품·가격/ID/해금·첫 한기 대응도 아직 미승인.
+- 아트: 바울 대표 승인 **Owl v3 정적 디자인, Ch1·2 Organic Spider 디자인**만. Owl Attack 모션 `ANIM_STILL_REVISE`, Spider 왼 앞다리 알파 경계 잔상 HOLD, Bee 모션/CC BY3·4 출처 충돌, F2 P1/P2 일부 후보 ART_REVIEW/실 Unity 동선·PPU HOLD, 메카닉 Spider v3는 Ch4 `ARCHIVE_ONLY`. **미완성 아트 제품 반영0**.
+- 원본 복구 ref `codex/recovery-before-local-sync-20261029`, 상태 증거 `Temp/LocalSync20261029/FinalProof.LOCAL.json`, 101 기존 worktree·Temp 및 ignored 자료 보존, `reset --hard`·clean/강제 덮어쓰기0. 로컬 제품 4파일+보고/증거10=변경14; 기타 tracked7083 변경0, 사용자 dirty/untracked 동일·staged0. Discord #66/V3/Probe/계정·OS 설정 NO_GO/HOLD 원형보호.
+- 사용자 내일 외출/간헐적 확인: 2026-10-30 재개 최우선 **Writer1↔Writer2 저장 권위·세대 충돌 안전계약**, 이후 지정 Unity 미검증/원본 Import, Owl Attack/Spider alpha/F2 최소 미술 보완, 상품25·무자금 한기 공급은 별도 대표 결정. **오늘은 #76 완료 인계만 반영하고 별도 Codex 실행·원본 코드 변경·Push/병합 없이 마감**.
+
+---
 # PLANNING / 2026-10-29 저녁 마감 — 숲거미 디자인 승인, 로컬 통합·원본동기화 #76 준비
 
 - 바울 대표 요청: **“숲거미 좋구만. 오늘은 여기까지 하자. 나 내일 나가야 하니까... 지금까지 한 작업들 다 합치고 로컬 동기화 해줘.”** 숙면/다음날 외출 고려, 질문없이 할 수 있는 안전한 단계 처리 우선. **현재 이 기획 세션은 대표 PC Windows F: 직접 조작/로컬 git 실행 도구가 없어 로컬 동기화 실제 완료라고 주장할 수 없음.** GitHub 기록과 작업 지시까지 완료, 직접 파일 접근 가능한 Codex의 후속 실제 수행이 필요.
