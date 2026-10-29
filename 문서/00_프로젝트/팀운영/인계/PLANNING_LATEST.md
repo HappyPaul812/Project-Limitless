@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-29 / 바울 대표 UX 직접 결정 — 퀘스트 완료 문구 '납품' → '완료'
+
+- **사용자 명시 결정:** "퀘스트 완료할 때 '납품'이 뭐니? '완료'라고 바꿔." 퀘스트 NPC 화면에서 플레이어에게 보이는 동사·상태를 '완료'로 통일하며 재료 검증·소모/보상 수령 로직은 그대로 둠.
+- [Issue #73](https://github.com/HappyPaul812/Project-Limitless/issues/73) 생성. GitHub main `Unity/Client/Assets/_Project/Scripts/UI/SideQuestNpcPresenter.cs` 약65·107·108·114행 직접 확인. 바꿀 화면 문구: **납품 가능→완료 가능**, **재료를 납품하시겠습니까?→퀘스트를 완료하시겠습니까?**, **납품한다→완료**, **납품을 완료하지 못했습니다→퀘스트를 완료하지 못했습니다**. NPC별 대사·이야기·기능 내 변수/메서드 `TryDeliverSideQuest/CanDeliverItems/IsItemDelivery`는 자동 전역 바꾸기 금지.
+- **현재 제품 코드 미수정**(기획 브랜치 문서/이슈 발주만). 이미 Codex에 전달된 [Issue #72](https://github.com/HappyPaul812/Project-Limitless/issues/72)는 **읽기 전용**으로 유지하고, #72 작업 종료 이후 별도 `codex/quest-ui-complete-label-20261029` 최소 문자열 수정·Delta QA를 바울 대표가 추가로 Codex 지시할 수 있도록 복붙 지시문 제공. 승인 없는 main/원본 로컬 적용·Push/병합 금지.
+
+---
+
 # PLANNING / 2026-10-29 오전 — 바울 대표 간헐적 확인 모드, Main24 카탈로그25·아트 판정판 준비
 
 - 대표 지시: 오늘은 잠깐씩만 확인 가능, 어제 #70 거래기반 및 #71/#60 아트 통합 QA에서 이어갈 것. **승인 필요 항목과 읽기 전용으로 진행 가능한 작업을 분리**하고 대표의 실시간 개입을 최소화. 사용자 직접 미술승인·상품/가격 승인 없이 제품 변경/Push/병합/유료호출 없음.
