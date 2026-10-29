@@ -13,7 +13,7 @@ using UnityEngine.UI;
 
 namespace ProjectLimitless.UI
 {
-    /// <summary>전투 밖의 무료 스킬 장착 화면입니다. 6칸과 보관함을 분리하고 저장 미지원 범위를 직접 알립니다.</summary>
+    /// <summary>전투 밖의 무료 스킬 장착 화면입니다. 6칸과 보관함을 분리하고 저장 실패를 알립니다.</summary>
     public sealed class SkillManagementPresenter : MonoBehaviour
     {
         public static SkillManagementPresenter Instance { get; private set; }
@@ -168,10 +168,12 @@ namespace ProjectLimitless.UI
         {
             if (string.IsNullOrEmpty(selectedSkillId)) return;
             if (SkillLoadoutService.TrySetSlot(characterId, job, selectedSlot, selectedSkillId, this)) { Refresh(); slotButtons[selectedSlot].Select(); }
+            else detail.text = "장착을 변경하지 못했습니다. 전투·다른 창의 잠금 또는 저장 상태를 확인해주세요. 이전 구성은 유지됩니다.";
         }
         private void Unequip()
         {
             if (SkillLoadoutService.TrySetSlot(characterId, job, selectedSlot, null, this)) { Refresh(); slotButtons[selectedSlot].Select(); }
+            else detail.text = "장착을 해제하지 못했습니다. 전투·다른 창의 잠금 또는 저장 상태를 확인해주세요. 이전 구성은 유지됩니다.";
         }
         private void CreateUi()
         {
@@ -190,7 +192,7 @@ namespace ProjectLimitless.UI
             RectTransform rect = panel.GetComponent<RectTransform>(); rect.anchorMin = rect.anchorMax = rect.pivot = new Vector2(.5f, .5f);
             rect.sizeDelta = new Vector2(1040, 650);
             Label(panel.transform, "Title", "스킬 관리 · 무료 (K / 패드 메뉴)", new Vector2(24, -16), new Vector2(550, 36), 26);
-            Label(panel.transform, "SessionNotice", "임시 장착: 지도·전투 이동 동안 유지 / 새 게임·Save 로드·재시작 시 시작 3개로 복원", new Vector2(24, -54), new Vector2(990, 36), 17);
+            Label(panel.transform, "SessionNotice", "장착·해제는 현재 캐릭터 슬롯에 자동 저장됩니다. 스킬 상점·구매·강화는 아직 제공하지 않습니다.", new Vector2(24, -54), new Vector2(990, 36), 17);
             slotHeading = Label(panel.transform, "SlotsTitle", "장착 슬롯 1~6", new Vector2(24, -148), new Vector2(445, 32), 21);
             for (int i = 0; i < 6; i++)
             {
