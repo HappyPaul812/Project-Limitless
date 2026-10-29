@@ -1,3 +1,10 @@
+# PLANNING / 2026-10-29 — 바울 대표 Frost Owl v3 외형 시안 긍정 판정
+
+- 사용자 직접 발언: **“올배미 좋구만.”** 최신 #74 후속 ZIP `FrostOwl_KeyPose_512_v3_CANDIDATE.png` (SHA256 `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`)의 **외형 방향 수용, v3 KEEP**으로 기록. [#74 기획 판정 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6489269398). 이 판정은 **서리올빼미 v3에만** 해당하고 F2 다른 소품/Spider/Bee의 최종 미술 승인 아님.
+- 담당 아트는 v1/v2/v3 원본 보존, 불필요한 v4/전신·얼굴 수정 반복 금지. 다음은 사용자 별도 승인 전 **격리 Unity 동일 PPU·40px 실제 가독성/전투 표시·애니메이션 요구 계약** 확인만 고려. 40px/Unity/실제 스폰·Idle/Attack·제품 반영은 TECH_PENDING / NOT_APPLIED. #74 다른 HOLD 항목은 유지.
+- 2026-10-29 후속 통합검수 로컬 branch `codex/art-followup-spider-bee-keyposes-20261029` 최종 SHA `108016403e76024c223f2c7138c5f0ecd8e57fad`: 두 ZIP CRC/Manifest·PNG25 기술검사 정상. 울타리 접지는 반투명 관목 등 ART_REVIEW, Spider v2 거미 다리 분리 DESIGN_REVISE, Bee 5 keypose 관절형태차 부족/전투교체 HOLD. 원본 Unity/Main/Save/UserData/Push/병합0.
+
+---
 # PLANNING / 2026-10-29 오후 — Issue #74 + #60/#63 신규 ZIP 통합검수 후속 기획 판정
 
 - [Codex 신규 2 ZIP 통합검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748), local `codex/art-integrated-review-20261029`, 보고 commit `6353caff95c7ee1f6b80335e9ce9acf254d3314a`, 최종 handoff `66644242373d2dd570b6c0c51b7ad2e183c4a5b3`, `LOCAL_COMMITTED/REMOTE_NOT_PUSHED`. **ZIP CRC/SHA/Manifest·PNG38 decode 정상 = 파일 기술 QA이지 미술 최종 승인/Unity 실전 적용 아님**. 실제 바이너리/이미지는 local ZIP만, GitHub text 보고와 같다고 이미지 직접 열람한 것으로 주장하지 않음.
