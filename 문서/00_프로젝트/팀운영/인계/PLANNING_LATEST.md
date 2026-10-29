@@ -1,3 +1,10 @@
+# PLANNING / 2026-10-29 오후 — Main24 F2 메인 신규 아트 다음 단계 P2 #75
+
+- 바울 대표 요청 **“메인 아트도 시켜.”** 현재 Owl v3 디자인은 사용자가 수용했고 Codex [#74 격리 Unity 검사](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6490161019) 결과에 따라 **Owl 512/PPU512/중앙Pivot/scale1/8FPS/Idle8+Attack4** 제작 지시가 이미 전달된 상태. 이 작업을 다시 시키거나 Owl v4 재제작하지 않음.
+- 신규 [Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75): F2 첫눈의 숲 최초 필요 환경8종 중 P1(눈 오버레이/소나무/길 경계/낮은 관목) 4종의 후보를 보존하면서 미착수 P2 **쓰러진 눈 나뭇가지/그루터기(횃대)/숲길 표지판/약한 눈발 레이어** 각 1개 OFFLINE RGBA 후보(최대4) 제작 발주. 본편 맵 양산/Unity 등록·VFX런타임·게임 기능0. Owl 애니메이션 납품과 별도 ZIP/보고.
+- P1 중 첫눈 overlay/소나무/낮은 관목 KEEP_CANDIDATE, **울타리 v2 반투명 접지 문제 ART_REVIEW** 유지. 후속 PPU/Pivot/Collider/휠체어 실제 GameView는 별도 QA 미실시. v3 승인 Owl/서리들쥐/공식 몬스터/기존 승인환경43+9·TTS162/Chapter1·2 리뉴얼/Unity 원본/Save 보호. `docs/art-new` 보고+`SPRITE_ART_LATEST.md` 갱신, 바울 대표의 최종 미술 승인 전 본편/main 반영/Push·병합0.
+
+---
 # PLANNING / 2026-10-29 / 리뉴얼 숲거미·독침벌 별도 아트 후속 발주
 
 - 바울 대표가 메인 서리올빼미 v3 격리 Unity·모션계약 Codex 지시를 전달한 후 **리뉴얼 다음 업무**를 요청. 신규 리뉴얼 담당에게 독립 병렬 작업을 발주할 수 있도록 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6489575410)·[#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6489576030)에 기획 범위 기록.
