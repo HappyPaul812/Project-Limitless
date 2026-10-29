@@ -1,3 +1,11 @@
+# PLANNING / 2026-10-29 / 리뉴얼 숲거미·독침벌 별도 아트 후속 발주
+
+- 바울 대표가 메인 서리올빼미 v3 격리 Unity·모션계약 Codex 지시를 전달한 후 **리뉴얼 다음 업무**를 요청. 신규 리뉴얼 담당에게 독립 병렬 작업을 발주할 수 있도록 [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6489575410)·[#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6489576030)에 기획 범위 기록.
+- **Spider v2** 512 RGBA 원본 보존; v3는 Ch2 공식화풍 맞춤, 벡터색면/관절·8다리 분리 해결하는 **실질 국소 재작화 단일포즈**. 단순 노이즈·워프 반복 금지. 승인 전 Idle/Walk/Attack/Shoot 각8 신작 모션0.
+- **Bee** 기존 Idle10+Attack10 RGBA20 및 지난 Idle2/Attack3 후보 보존. 현재 5키포즈는 움직임이 약함 → 실제 날개/다리/복부·독침의 형태·관절 자체가 바뀌는 새 **Idle2·Attack3 키포즈**만 제작. 128/40 원종횡비, 10FPS GIF 검토. 기술적으로 재작화 불가능하면 ART_BLOCKED_NEEDS_DIFFERENT_METHOD 보고, 20개 재양산0. 현재 외부 PilotBee CC BY3/4 충돌 HOLD.
+- 사용자 최종 그림 승인과 본편 적용은 별개. 리뉴얼 docs/art-renewal 보고·WORLD_ART_RENEWAL_LATEST 인계·#60/#63 실제SHA 필수, 원본 Unity/Save/main/전투 AI/Spawn/Quest/TTS 등 무변경. 대표가 잠깐씩 확인하므로 새 원화 실물 1+5와 전후 비교만 간략 제시.
+
+---
 # PLANNING / 2026-10-29 — 바울 대표 Frost Owl v3 외형 시안 긍정 판정
 
 - 사용자 직접 발언: **“올배미 좋구만.”** 최신 #74 후속 ZIP `FrostOwl_KeyPose_512_v3_CANDIDATE.png` (SHA256 `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`)의 **외형 방향 수용, v3 KEEP**으로 기록. [#74 기획 판정 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6489269398). 이 판정은 **서리올빼미 v3에만** 해당하고 F2 다른 소품/Spider/Bee의 최종 미술 승인 아님.
