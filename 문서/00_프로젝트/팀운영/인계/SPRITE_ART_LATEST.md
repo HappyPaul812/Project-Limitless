@@ -1,5 +1,19 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-10-29 Main24 / #74 승인 Frost Owl v3 Idle8·Attack4 실물 애니메이션 파일럿
+
+- **바울 대표 v3 외형 승인/원본 동결**, Codex 기존 v3 정적 1포즈 6000.6.5f1 격리 Unity TECH PASS. 원본 PNG v3 SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` 바이트 그대로 보호. **지금 새로 제작한 모션12장에 그 기존 Unity TECH PASS를 확대 적용하지 않음**.
+- **실물 ZIP** `Limitless_FrostOwl_v3_Idle8_Attack4_8FPS.zip` **8,282,224 bytes / 24 entries / SHA256 `0caeeef60f325e1c7b76516b9596daad16f73466b4401968e81fa088101c4eb9`**, CRC PASS / SUMS23/23 PASS. `Frames/Idle/` **8개** / `Frames/Attack/` **4개** 모두512² RGBA SHA 고유; Idle00 승인 v3 원본 PNG와 바이트 동일. 시트 Idle 2048×1024, Attack 2048×512, 128/40 실축소 비교4, 8FPS GIF2 실제 주기 평균125ms(120/130ms 교차) 포함. PPU512 / Pivot(0.5,0.5) / Scale1.0은 **Unity Import 계약**이며 실제 새 Sprite.meta 생성/본편 적용0. 외형 재작화 아닌 v3 날개 외단·몸통 부유·꼬리 구역별 픽셀 변위/리샘플 모션.
+- **[제작/검수 정식 보고서](../../Chapter3_Main24_Issue74_FrostOwl_v3_Idle8_Attack4_AnimationPilot_20261029.md)** `docs/art-new` commit `815fc67d6e3dc037aa2400d56a200d9ba586a8ed`. `ART_ANIMATION_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / ANIMATION_UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표 모션 미술 승인 별도 필요; 기존 v3 외형 재승인 불필요. Hit/Defeat/Spawn/SkillVFX/BattleEffect0, MonsterDefinition/Save/Scene/Unity 본편0, main 직접 Push/병합0.
+
+## 2026-10-29 Main24 / #75 F2 첫눈의 숲 P2 환경 4종 독립 실 PNG 파일럿
+
+- P2 신규 후보4: `Candidate/F2_FallenSnowBranch_v1_CANDIDATE.png` **384×320**, `F2_SnowStumpPerch_v1_CANDIDATE.png` **320×384**, `F2_FirstSnowTrailSign_v1_CANDIDATE.png` **288×384**, `F2_GentleFirstSnow_Overlay_v1_CANDIDATE.png` **512×512**. 전부 투명 RGBA, 각각 단독 PNG; 바울 대표 미술 검토 전 후보만. 기존 F2 P1 셋 KEEP_CANDIDATE·울타리 v2 ART_HOLD·Owl v1/v2/v3 바이트 동결.
+- **ZIP** `F2_P2_Environment_4Assets_20261029.zip` 640,244 bytes / 9 entries, SHA256 `d749d7fd2937849326e9ecc3ca9f9e83f5646447e27d21fd1c3206ea0f650088`, CRC PASS / SUMS8/8 PASS. Preview 한장4종 및 실제128·40 종횡비 보존 축소. 포인트: 바닥길 바깥 낮은 눈나뭇가지·눈그루터기/빈횃대·화살표 표지판·정적 저불투명 눈발, 별도 Monster Spawn/Quest/ParticleSystem0. 미확정 가상 표지판 문양/눈접지 가장자리 정리는 최종 미술판정 **HOLD**.
+- **[P2 제작/검수 정식 보고서](../../Chapter3_Main24_Issue75_F2_P2_Environment4_ArtPilot_20261029.md)** `docs/art-new` commit `dbcc3796f01e01ce0a6f7d1db25163a5c82c259b`. 신규 PPU/Pivot/Sorting/Footprint·길·휠체어통행·실Unity QA `SPEC_PENDING / NOT_RUN`. 상태 `P2_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- **공통 보호/전달**: 본 ChatGPT 대화에서 ZIP2 각각 독립 납품, GitHub PNG/ZIP binary0, 사용자 PC F:\ 복사확인 전. 기존 Main23 환경43/지면9, F1·서리들쥐·Monster/펫·Ch1·2 리뉴얼숲거미/독침벌·Orna visible80·Residence/Inn KEEP/HOLD·Quest/Save/UserData/Scene/.meta·Main24 기능 변경0. 사용자 미술 승인 후 Codex 격리 최소 QA → 별도 Unity 본편 적용 승인. main 무단 적용·Push·병합0.
+
+
 ## 2026-10-29 Main24 F2 / Issue #74 후속 — 울타리 접지 v2 + Owl v3 표적 보완 파일 2개
 
 - **최신 기준**: [#74 Codex 통합 QA](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488218748) 및 [기획 표적 발주](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6488506287). GroundOverlay·SnowPine·FrostShrub **3종 KEEP_CANDIDATE/원본 SHA 동결**. PathEdge v1과 Owl v1/v2도 원본 바이트 보존. 기존43 환경/승인지면9/F1/공식 몬스터·펫/Ch1·2 리뉴얼 원본, 오르나 visible80/Residence·Inn KEEP 등 변경0.
