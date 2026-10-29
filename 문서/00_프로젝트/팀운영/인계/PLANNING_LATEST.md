@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-29 / 신규 메인 아트 다음 단계 #74 발주 — F2 환경4 + Owl40px 후보1
+
+- 바울 대표 요청 "메인 아트도 일 시켜줘"에 따라 [Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74) 정식 발주 생성. Chapter1·2 리뉴얼의 숲거미/독침벌 작업과 병렬·업무 격리.
+- #71 v1 RGB 콘셉트와 Owl512 원본, Codex #71 통합검수, #72 원페이지 읽기 전용 결과 중복 작업 금지. 첫눈 숲 **게임용 분리형 RGBA 파일럿 4종(첫눈 지면 오버레이/눈 소나무/길 가장자리/낮은 서리 관목 각1)** + **FrostOwl 512 v2 국소보완 후보1** 한 회차만. Owl v1 SHA `f60c41cfdc6f3d1bc1b05b62a2281d5f607dec322b9c5c4c3090cac725c09ab1` 보존. 40px 얼굴 명암·부리/눈·꼬리 분리·여백 개선, 원화 전신 무단 교체 금지.
+- **후보 제작 승인이지 미술 최종승인 아님**: 실제 PPU/Pivot/Tile/Collider/휠체어 동선 Unity QA 및 공식 3해상도는 HOLD. 스프라이트5개를 넘어 전체 타일/애니메이션/Spawn/Combat 기능·씬 변경0. 기존 F1/서릿길 환경43·지면9/오르나80/Residence·Inn KEEP, 리뉴얼 숲거미·독침벌, Save/TTS/Main23 보호.
+- 담당 보고는 `docs/art-new` Markdown commit → `SPRITE_ART_LATEST.md` 갱신 → #74 실제 PNG/ZIP SHA·비교판·대표 시각승인 대기 인계. 본편 Unity/main/원본 적용/Push·merge 금지. 대표는 잠깐씩 확인 중이므로 **한눈에 보는 한 장 비교와 최소 한 번 승인 요청** 준비.
+
+---
+
 # PLANNING / 2026-10-29 / 바울 대표 UX 직접 결정 — 퀘스트 완료 문구 '납품' → '완료'
 
 - **사용자 명시 결정:** "퀘스트 완료할 때 '납품'이 뭐니? '완료'라고 바꿔." 퀘스트 NPC 화면에서 플레이어에게 보이는 동사·상태를 '완료'로 통일하며 재료 검증·소모/보상 수령 로직은 그대로 둠.
