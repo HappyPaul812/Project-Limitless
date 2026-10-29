@@ -1,3 +1,12 @@
+## 2026-10-29 / 바울 대표 리뉴얼 방향 수정 — 숲거미 우선·NPC 최소 투자 (현재 최신)
+
+- **우선 결정 정본:** [Renewal_20261029_Original_Asset_Priority_Spider_Pilot_NPC_Minimal.md](../../Renewal_20261029_Original_Asset_Priority_Spider_Pilot_NPC_Minimal.md), 보고서 commit `4d53f67f07c7185074a63a2d1f44e8870d245474`; [WORLD_ART_RENEWAL 담당 행동요령](../담당/WORLD_ART_RENEWAL.md) 10/29 추가 commit `d8ad1e84935e5bff6c2c8c6cb6f1f6da519e37df`. 최신 사용자 결정으로 이전 '숲거미 HOLD/KEEP'의 **정책 의미가 수정**되었으나 기존 기록 삭제·조작 없음.
+- **P1 = forest_spider 오리지널 교체 확정**. 현재 사용되는 외부 ethanf30games/CC0 1.0 Spider 32 PNG (Idle8/Walk8/Attack8/Shoot8, 10FPS 우향, Field02 4+Field03 1 Spawn). Codex [#60 직접QA](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6470843053)에서 현행32/ThirdParty ZIP 대응SHA 32/32 일치 확인(보고 근거이며 이번 리뉴얼 세션 자체 F: 바이트 검사 아님). CC0은 사용 가능한 권리 성격이고 **오리지널 게임 아트임을 뜻하지 않음**. 이전 `KEEP_CURRENT`는 교체 전 현재 게임 보존 뜻; **리뉴얼 큐는 확정**.
+- **숲거미 실행 게이트:** 디자인 오리지널 **1포즈 파일럿** → **바울 대표 이미지 시각 승인** → 승인 뒤에만 기존 4동작/각8프레임/10FPS 호환 목표의 **단계별 애니메이션**. 현재 `SPIDER_PILOT_NOT_STARTED / NEW_SPIDER_ANIMATION_0 / NOT_UNITY_APPLIED`. Scene/AI/Spawn/기존 32PNG/GUID/meta 보호, 기존 공식 승인 자산 재제작 금지.
+- **P3 일반 NPC 최소 투자:** 초상화 없이 가만히 서 있는 상인·주민대표·남문 경비/퀘스트 NPC는 과도한 고급화와 반복 polishing 불필요. 오리지널화+역할 식별/스타일·기능만 검수. 기존 OGA03/09/20 후보 보존. 태온·경비 비슷하다는 피드백은 유효하지만 **새로운 전면 재제작·장기 미술 QA 발주 금지**. 공식 태온과 기존 OGA20 직접 A/B는 [#72 읽기전용 보고](https://github.com/HappyPaul812/Project-Limitless/issues/72#issuecomment-6485438666)에서도 OGA20 원본 미확보로 HOLD; 이 이슈가 P1 숲거미 파일럿을 막지 않는다.
+- **VenomBee #63 홀드 지속:** 좌향 1포즈 TECH PASS/기존 우향 Idle10+Attack10 실전 교체 ART HOLD, 바울 대표 승인 전 키포즈·20프레임 제작0, PilotBee CC BY3.0/4.0 버전 충돌 여전히 미해결. 기존 원화·조사·계약·ZIP 변경0.
+- **이번 작업 한정:** GitHub `docs/art-renewal`의 정책 보고·담당 행동요령·최신 인계·Issue #60 결과만 기록. 신규 PNG/ZIP 생성 0, 기존 게임 Unity/Save/Quest/몬스터·펫·환경·NPC 기능/main 변경0. 승인 필요: **향후 숲거미 파일럿 디자인(1포즈) 심사**, 애니메이션은 별도 명시 승인.
+ 
 ## 2026-10-28 / Issue #60 후속 — OGA20·태온 참고 비교판 및 숲거미 CC0 정적 조사 (현재 최신)
 
 - 담당 보고서: [Renewal_Issue60_GateGuard_Taeon_Spider_Review_20261028.md](../../Renewal_Issue60_GateGuard_Taeon_Spider_Review_20261028.md) commit fc23cd6fa9ed8aa9b03157c40dc4639a1297879c. 기존 #60 후보·#63 VenomBee 조사/제작 계약과 기존54행 감사 원형 보존.
