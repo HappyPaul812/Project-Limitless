@@ -1,3 +1,12 @@
+## 2026-10-29 / Issue #60 유기형 forest_spider v2 알파 매트 표적수정 — 현재 최신
+
+- **정식 보고 문서** [Renewal_ForestSpider_Organic_v2_CleanAlpha_TargetedFix_20261029.md](../../Renewal_ForestSpider_Organic_v2_CleanAlpha_TargetedFix_20261029.md), `docs/art-renewal` commit **`525d542fd1a696942baa42f0dae974776f764e2b`**. 기존 유기형 v1 디자인 그대로 보존, 원본 `ForestSpider_Organic_v1_512_RGBA_CANDIDATE.png` SHA256 `692ee2a520c661f0ece5d9ba955d7de1ed32f3a44ed1fdc38d9d934b9e61e3c1`.
+- **새 깨끗한 알파 후보** `ForestSpider_Organic_v2_CLEAN_ALPHA_512_RGBA.png` **512×512 RGBA / SHA256 `c949f37ad5511753b064b83d521e79bb76409b0427cd0abf0c9742d6d9d46661`**. v1 대비 **RGB 262,144/262,144 동일, 변경 RGB 0**, 알파 감소 32,433 pixel/증가0. 다리 사이 밝은 쐐기/하부 갈색 바닥 매트·오른쪽 잔상만 알파로 선택 제거. 털·이끼·거미줄의 원화 RGB 보존, 극세선 알파는 최종 미술 검토 필요.
+- **실 ZIP** `LIMITLESS_OrganicSpider_AlphaFix.zip` 3,118,909 bytes / 18 entries / CRC PASS / SHA256 **`716a7f800a2cd43fa316eb280607b614112a818637aaed086a73f6e91b0372bf`**. 내부 Original_KEEP 원본/수정512·128·40 PNG/실물 v1-v2 비교/밝은·어두운·**가상 합성 숲바닥** 3배경 QA, Manifest 16개 파일 기록 + SHA256SUMS/QA_Results. **OFFLINE 파일 PASS**로 Unity GameView/실제 Field02·03, PPU256, Combat Slot과 최종 미술승인 **NOT_TESTED/PENDING**.
+- **기존 메카닉 v3 → Chapter4 `ARCHIVE_ONLY`** 유지. Chapter1·2 기존 외부 Spider 32프레임(Idle8/Walk8/Attack8/Shoot8) 현재 게임 KEEP, **신규32프레임0**, 새 유기형 1포즈의 바울 대표 시각 승인 전 제작 금지. 기존 메카닉 v1/v2/v3, 공식 Ch2 몬스터·Wolf/Bear/Fox/환경, Quest·MonsterDefinition·Spawn·AI·독·Drop·Sprite GUID/meta, 원본 Unity/Save/UserData/`main` 변경0.
+- **VenomBee** 기존 Idle10+Attack10 총20 PNG/5키포즈·마스터 원본과 SHA 보존, 기존 `MOTION_REVISE_CONTINUE / RUNTIME_HOLD`. PilotBee 웹 CC BY3.0 vs 패키지 CC BY4.0 출처 충돌 미해결, 신규 Bee 그림 제작0.
+- 최종 상태 **`OFFLINE_FILE_TECH_PASS / ORGANIC_ALPHA_TARGETED_FIX / USER_DESIGN_REVIEW_PENDING / UNITY_NOT_TESTED / NO_SPIDER_ANIMATION / NO_MAIN_MERGE`**. 바울 대표가 외형 시각 검토 → Codex 격리 PPU·40px QA → 별도 승인 때만 본게임 교체 검토. `F:\Downloads` 자동 저장이나 원격 GitHub 바이너리 업로드는 하지 않았음.
+
 ## 2026-10-29 / 최우선 최신 결정 — Spider v3 Chapter4 기계형 후보 보관·Ch1/2 유기형 1포즈 신규 (현재 최신)
 
 - **정식 근거 보고서:** [Renewal_20261029_OrganicForestSpider_Ch12_MechanicSpiderCh4_Reclassification.md](../../Renewal_20261029_OrganicForestSpider_Ch12_MechanicSpiderCh4_Reclassification.md) / `docs/art-renewal` commit **`55d9dda6f9ba6d917286b2b79b017d7f9cec2606`**. 바울 대표의 최신 직접 미술 결정으로 이전 10/29 Spider v3의 Ch1·2 `DESIGN_READY_CANDIDATE` 검수는 기술적 관찰만 유지하고 **Ch1/2 미술 승인 후보에서는 철회**.
