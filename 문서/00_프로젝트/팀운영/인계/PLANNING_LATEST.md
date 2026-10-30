@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-31 아침 — #70 Writer1↔Writer2 분기 충돌 우선 수정
+
+- 사용자 명시 요청: **“굿모닝~ 오늘은 우선, #70 Writer1·Writer2 저장 충돌 해결부터 하자.”** Codex가 실 로컬에 접근 가능한 별도 worktree에서 **재현→분기 감지·쓰기 HOLD 수정→합성 Save 격리 QA** 실행. [Issue #70 새 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6534917320) 게시. **이번 GitHub 댓글/기획인계 작성 자체는 로컬 코드 수정/실행이 아님**; 바울 대표에게 복붙용 Codex 지시 제공.
+- 선행 [#76 최종 로컬 동기화](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495762654): 로컬 `main` 실제 HEAD **`ab47b931fec92976170f9f50aabde1822d78bb90`** (#46 6슬롯+ #73 퀘스트 UI만 제품 반영). 원격 `origin/main`은 당시 `bfd281...`, Push0. #70 로컬 code SHA **`de084eae21643aa47347360811c0f883c384acb2`**, 기존 40PASS는 writer fork 통합 경계 검증 아님·실제품 원본 미반영.
+- 재현 결함: Writer2에 Level14/Currency189 후 구형 Writer1에서 Level17/Currency377 진행하자 Reader가 이전 Writer2를 조용히 읽고 `WritesHeld=false`. **레벨/탈렌트/mtime으로 최신 단정 금지**; parent hash·save revision·원본 계보/거래 ID 증명이 안 되는 이전 Writer1 작성은 경합·분기로 표시. 양쪽 후보를 보존하고 `WritesHeld=true`로 결제·autosave·재개 불확정 게시 차단. 자동병합/환불/덮어쓰기/개인Save 접근 금지. 검증한 동일계보/동일 페이로드만 안전 경로 허용.
+- 후속 Codex QA 목표: Writer1-only/Writer2-only/동일계보·양방향분기·수치역전/시각변조·구버전/손상·temp·autoSave/거래ID/새 프로세스 Continue 및 구체 14/189→17/377 regression. **합성 Save·격리 Unity 6000.6.5f1** 범위, 제품 Unity 지정6000.5.7f1/정전·다중 실프로세스/비NTFS는 미검증으로 유지. 기존31/40 전수 재실행 금지.
+- 이번 변경은 **#70 기본 거래·Reader/Writer 정책만**이며 실제 스킬상점 상품25·가격/해금/효과·F2 한기 무료대응은 미승인. Owl/Spider 승인 디자인·미완성 모션/알파·F2·Bee 및 개인Save/UserData, Main23/TTS162·Discord #66 NO_GO/MANUAL/HOLD 보호. 원격 main Commit/Push/병합0, **원본 로컬 동기화는 새 QA와 별도 조건 만족 전 금지**.
+
+---
 # PLANNING / 2026-10-29 밤 최종 마감 — Issue #76 실제 로컬 동기화 완료 / #70 Writer 분기 HOLD
 
 - **대표 캡처 및 [#76 완료 보고](https://github.com/HappyPaul812/Project-Limitless/issues/76#issuecomment-6495762654) 교차 확인:** `LOCAL_SYNC_DONE`은 **#46 6슬롯 저장·#73 퀘스트 UI 4문구 변경에 한정**. 로컬 원본 `main` 최종 HEAD `ab47b931fec92976170f9f50aabde1822d78bb90`, 시작 `bfd281545632877325f5d21e04cefb924042c465`. 원격 `origin/main`은 시작 SHA 그대로, Push/PR/원격 병합0. 통합 격리브랜치 `codex/local-sync-20261029`; 사용자 PC 로컬 직접 변경은 Codex가 실행했고 기획 세션은 GitHub 결과만 확인.
