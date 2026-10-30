@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-31 오전 — #70 Writer 분기 감지·차단 85PASS / 복구 후속 #77
+
+- [Issue #70 85PASS Codex 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6535202556) 확인: Writer2 Level14/Currency189 → Writer1 Level17/Currency377 이후 낡은 Writer2를 Loaded=true/WriteHeld=false로 처리하던 기존 결함을 최초 FAIL 재현→LineageVersion/Id/ParentHash/LegacyAnchorHash + 기존 Revision/CommitId/Integrity 기반 분기 감지·안전권위 판정으로 수정. 불일치 시 Continue 차단·`WritesHeld=true`·모든 원본/임시/백업 보존. 계보 확인된 단일/동일/후손은 정상 로드. 레벨·재화·mtime 단독 우선순위 금지.
+- 신규 **격리 Unity 85 PASS, 정적16 PASS, 최종 FAIL0**(matrix65/Editor Continue10/고아 backup8/삭제보호2). 변경 브랜치 `codex/issue70-writer-fork-safety-20261031`, 코드 SHA `355b0d87363b7cc2ca773cd05082239cc2323be7`. GitHub 댓글 인계 SHA `ddab0090864f85edb32284da92ac950091ed82bb`와 사용자 캡처 최종 HEAD `a6f2b0d541e09cac9e9827d793589814762bc95c` 차이는 로컬 HEAD·선후관계 재검사 필요. **이 인계 업데이트를 로컬 원본 코드 반영으로 오인하지 않음**.
+- 핵심 상태 **DIVERGENCE_DETECTED_AND_WRITE_BLOCKED / RECOVERY_NOT_IMPLEMENTED / ISOLATED_QA_PASS / PRODUCT_NOT_APPLIED**. 신규 검증 85PASS는 '안전한 자동복구 완료' 아님. 지정 Unity6000.5.7f1·실시간 두 프로그램·정전/Standalone/비NTFS·실 UX 미검증, 기존 환경 Editor.Search 예외 OPEN.
+- 새 [Issue #77](https://github.com/HappyPaul812/Project-Limitless/issues/77): 사용자의 **명시적 복구 선택**과 경고, 두 원본 비파괴 보존, 복구 RecoveryId 멱등·선택 정보 손실 확인, 새 세대 파일로 복제 복구 + 격리 Unity 합성 Save QA. 구 Writer1/2 유료 증표 손실 가능성/불명확 계보는 `HOLD`; 자동 합산·환불·최신 결정 금지. 정책 시안/실복구 QA가 통과해도 원본 main·개인Save/유료상점 적용은 별도 승인.
+- 원본 로컬 main은 #76 최종 기준 `ab47b931fec92976170f9f50aabde1822d78bb90` (#46, #73만 적용), origin/main Push0. 스킬상점 상품25·가격/효과/해금/무료 한기 보급, Owl·Spider/Ch4메카닉 후보/F2/PilotBee 권리 및 Discord#66 보호·미변경 유지. 내일외출 등 기존 사용자 일정과 무관하게 신규 작업 지시는 Codex 별도 전달 후 시작.
+
+---
+
 # PLANNING / 2026-10-31 아침 — #70 Writer1↔Writer2 분기 충돌 우선 수정
 
 - 사용자 명시 요청: **“굿모닝~ 오늘은 우선, #70 Writer1·Writer2 저장 충돌 해결부터 하자.”** Codex가 실 로컬에 접근 가능한 별도 worktree에서 **재현→분기 감지·쓰기 HOLD 수정→합성 Save 격리 QA** 실행. [Issue #70 새 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6534917320) 게시. **이번 GitHub 댓글/기획인계 작성 자체는 로컬 코드 수정/실행이 아님**; 바울 대표에게 복붙용 Codex 지시 제공.
