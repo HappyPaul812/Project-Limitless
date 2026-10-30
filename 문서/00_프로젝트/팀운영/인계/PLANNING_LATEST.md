@@ -1,3 +1,13 @@
+# PLANNING / 2026-10-31 — #77 명시적 복구 72PASS 접수, 게임 연결 격리 게이트 #78
+
+- [Issue #77 Codex 복구 구현 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/77#issuecomment-6535559285): Writer1/Writer2 충돌 후보 Inspect→Choose(None default)→Confirm→양원본/backup SHA 보존→RecoveryId/새 generation 후보→전체 payload·구매증표·정확6칸 검증→독립 Activate. 원본 복제/자동 병합·환불·파일삭제0. 신규 **Unity 72PASS / 한글 UI headless9PASS / 정적22PASS, FAIL0**, 기존 #70 85PASS·40PASS·#46 31PASS 전수 반복0. **복구 후보는 UNITY_EDITOR 합성 경로 전용**, 본게임 UI 실제 연결·실사용 Save 복구 미구현. 원본/local main 적용0, Push/병합0.
+- 최종 코드 계보: #77 엔진 `db47cf1e83fc7ce84133ee3a7c8dd7b3303b474f`→QA `2793f452882e7de1a560f469ef79221d776268ea`→GitHub 본인 보고 HEAD `6f75f1c49fd0911e2fb680e2cf68223efb7312b6`; 사용자 캡처의 최종 HEAD는 `fed9248f751f12a5824cea71a813e1fb5d1addf8`로 이후 커밋 가능성이 있어 다음 로컬 Codex가 ancestry 확인. 이전 #70 인계 SHA와 최종HEAD 상이 이유는 문서 후속임 확인.
+- 미해결 시안·정책: 독립 분기에서도 레벨·탈렌트·mtime만으로 최신 후보 선정 금지. 구매 증표/유료 소유권·계보 의심 시 사용자 선택 후에도 `HELD_NO_CHANGE`, 두 원본 보존. 별도 지정 Unity6000.5.7f1·Standalone/정전/실다중게임/비NTFS/실 OS 접근성/본게임 UI/개인 Save 복구 미검증.
+- 기획 후속 [Issue #78](https://github.com/HappyPaul812/Project-Limitless/issues/78): **저장 경계·UI를 격리 Unity 게임용으로 구성·연결 검증하는 단계**, Editor 합성 복구 가드 해제/실 개인 Save 접근0. 별도 worktree에서 플레이어가 볼 수 있는 한글·키보드 중심 안전선택·미선택/취소/위험HOLD·정상Continue를 최소 구현/표적 Delta QA. 통합 후보까지만, 실제 로컬 원본 Unity/main/Save·게임 출시 반영은 **다음 승인 게이트**. 기획안 작성/Issue 게시가 Codex 작업 실행은 아님.
+- 상품25·미승인 가격40·30·20·50/해금/신규ID/스킬 효과/무자금 한기 보급은 별도 대표 결정 전 보류. #66 Discord NO_GO/MANUAL/HOLD 및 Owl/Spider 디자인 승인·모션/알파/환경/독침벌 별도 아트 HOLD 그대로.
+
+---
+
 # PLANNING / 2026-10-31 오전 — #70 Writer 분기 감지·차단 85PASS / 복구 후속 #77
 
 - [Issue #70 85PASS Codex 공식 보고](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6535202556) 확인: Writer2 Level14/Currency189 → Writer1 Level17/Currency377 이후 낡은 Writer2를 Loaded=true/WriteHeld=false로 처리하던 기존 결함을 최초 FAIL 재현→LineageVersion/Id/ParentHash/LegacyAnchorHash + 기존 Revision/CommitId/Integrity 기반 분기 감지·안전권위 판정으로 수정. 불일치 시 Continue 차단·`WritesHeld=true`·모든 원본/임시/백업 보존. 계보 확인된 단일/동일/후손은 정상 로드. 레벨·재화·mtime 단독 우선순위 금지.
