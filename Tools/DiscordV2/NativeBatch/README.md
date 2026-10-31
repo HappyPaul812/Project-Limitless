@@ -1,5 +1,7 @@
 # NativeBatch Supervisor 소스와 시험
 
+> **10/31 추가1회 후속:** Probe NativeAOT PASS,1,892,352bytes·PE32+AMD64·IL2091/warning0. Supervisor재발행0·기존SHA/크기보존, 원본소스/gate변경0. V3출력삭제미관측이나공식정상판정은NOT_VERIFIED. gate=false/NO_GO/MANUAL/EXECUTION_HOLD, 실실행은별도승인입니다. [최신 결과](../../../문서/00_프로젝트/Discord_V2_Probe_SingleRebuild_20261031.md). 아래최초실패는보존이력이며11-01이후승인재사용/자동연장금지입니다.
+
 > **2026-10-31 후속(아래10/28 이력보다 우선):** #745042 공식회신과 설치V3엔진2026.10.31.01을 확인한 뒤 승인된 빌드만 각1회 진행. Probe=MSB4191/컴파일전FAIL·재시도0, Supervisor=NativeAOT PASS·IL2091없음·PE/SHA봉인. 원인은 오래된 준비targets이며 제품소스/공식NuGet은 무변경. 새출력삭제미관측과V3정상판정미확인을구분합니다. gate=false, 생성EXE실행0·실제시험/Task계정ACL/IPC·AI금지는유지합니다. [최신 빌드 결과](../../../문서/00_프로젝트/Discord_V2_VendorCleared_BuildOnly_20261031.md).
 
 > 2026-10-28 최신 정책: 11-01은 안전한 독립 정리 범위이고 전체 기능 완성 강제기한이 아닙니다. 안랩 #745042 공식판정 대기와 무관하게11-02 게임 개발로 복귀합니다. IL2091 소스 보존계약 수정/관리형3 PASS와 NativeAOT NOT_VERIFIED를 구분하며 gate=false를 유지합니다. 복원 sample/제출zip 접근·실행/재빌드·V3예외/실 Session0·Job90초·FAKE_ONLY는 금지 또는 별도승인 HOLD입니다. 코드의 기존 승인 cutoff와 계정/승인 만료는 자동 연장하지 않았습니다. [최신 인계](../../../문서/00_프로젝트/Discord_V2_SafeCloseout_Handoff_20261028.md)를 먼저 읽으십시오.

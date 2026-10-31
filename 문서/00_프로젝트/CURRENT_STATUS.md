@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 Probe 추가 단발 PASS / 실행 HOLD
+
+Supervisor성공설정·컴파일전MSBuild평가exit0 후 승인된 Probe추가1회 NativeAOT PASS(warning/IL2091=0),1,892,352bytes·PE32+AMD64·SHA0BABC05A…C5E59322. Supervisor재발행0·기존SHA/7,536,640bytes보존. 원본소스/공식NuGet/보안계약/gate무변경, V3출력삭제미관측과정상판정NOT_VERIFIED구분. [상세/실제시험승인조건](Discord_V2_Probe_SingleRebuild_20261031.md). 브랜치codex/discord-v2-probe-single-rebuild-20261031. 실제EXE/Task계정ACL/Session0IPCAI/UnitySave/Push main변경0, NO_GO/MANUAL/EXECUTION_HOLD·gate=false,11-01이후승인재사용/자동연장금지 유지.
+
 ## 2026-10-31 Discord V2 안랩 회신 후 빌드 전용 결과
 
 대표 제공 공식 진단제외 회신 #745042 및 설치엔진2026.10.31.01 확인 후 각1회 발행했습니다. **Probe FAIL(MSB4191·준비설정·EXE미생성), Supervisor NativeAOT PASS**. Supervisor7,536,640bytes·PE32+AMD64·SHA CCA82024…08974ECD, warning/IL2091없음. 초기설정실패 보존·Probe재시도0, 기존소스/공식NuGet7종 유지. 출력삭제 미관측은 V3 공식정상판정이 아니며 후자는 NOT_VERIFIED입니다. [상세·FAKE_ONLY 승인조건](Discord_V2_VendorCleared_BuildOnly_20261031.md). 브랜치 codex/discord-v2-aot-resume-20261031, 구현기준fe5b22e6. 실제실행/Task계정ACL/Session0/IPC·AI/원본UnitySave/Push/main변경0, gate=false·NO_GO/MANUAL/HOLD 유지. Probe추가빌드·실제시험은 별도승인입니다.

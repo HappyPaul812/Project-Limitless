@@ -1,3 +1,11 @@
+## Codex 최신 인계 — 2026-10-31 / Probe 추가1회 NativeAOT PASS·실행 HOLD
+
+`codex/discord-v2-probe-single-rebuild-20261031`(시작29b7a7e2, 기준보고9227601c·구현fe5b22e6). 승인된 Probe추가1회 PASS, Supervisor재발행0입니다. Supervisor성공targets와SHA일치·컴파일전MSBuild평가exit0(Runtime/compiler/linker10.0.10), 공식NuGet7종/소스20봉인 확인. 원본소스/보안계약/gate변경0입니다.
+
+Probe **1,892,352bytes / PE32+AMD64·CLR없음**, SHA `0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322`, 실제NativeAOT warning/IL2091=0. Supervisor **7,536,640bytes**·SHA `CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD` 전후보존. V3엔진2026.10.31.01, 출력10초후/최종SHA유지·삭제미관측이나 새바이너리정상판정은NOT_VERIFIED입니다. [결과/실물/FAKE_ONLY조건](../../Discord_V2_Probe_SingleRebuild_20261031.md).
+
+두native확보는실행승인아님. **NO_GO/MANUAL/EXECUTION_HOLD·gate=false**, 실제신뢰근거/정확동작별새승인·Session0/Batch/HANDLE/Job검증은별도입니다. EXE/Task계정ACLOnBoot/Session0IPCAI/UnitySave/Push main변경0, 11-01마감후기존승인재사용·자동연장0. 과거MSB4191실패는그대로보존, 아래PARTIAL은추가승인전이력입니다.
+
 ## Codex 최신 인계 — 2026-10-31 / 안랩 회신 후 빌드 전용 PARTIAL
 
 - 바울 대표 제공 #745042 공식회신: 제출 Probe는 테스트 프로그램, 진단 제외 예정엔진2026.10.30.00. 설치 AscVersion/nosinfo **2026.10.31.01**, 업데이트10:13:13KST를 읽기 확인한 뒤에만 빌드했습니다. 제출 샘플/zip 접근·실행0, V3 예외/중지/설정변경0입니다.
