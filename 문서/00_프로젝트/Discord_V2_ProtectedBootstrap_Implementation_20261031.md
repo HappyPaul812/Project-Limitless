@@ -80,3 +80,9 @@ O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)
 작업 브랜치의 신규 코드/관리형 QA 산출물·문서만 작성했습니다. 원본 main `ab47b931fec92976170f9f50aabde1822d78bb90` 유지. cutoff **2026-11-01 23:59:59 KST** 자동 연장·이전 승인 재사용 금지. **NO_GO / MANUAL / EXECUTION_HOLD**로 검증 후 중지합니다.
 
 증거: [Summary](Evidence/DiscordV2ProtectedBootstrap20261031/Summary.json), [57PASS](Evidence/DiscordV2ProtectedBootstrap20261031/Initial57_Delta.log), [결합강화2PASS](Evidence/DiscordV2ProtectedBootstrap20261031/HostBinding2_Delta.log), [최종 관리형 컴파일](Evidence/DiscordV2ProtectedBootstrap20261031/HostBinding2_ManagedCompile.log), [최종 입력 SHA](Evidence/DiscordV2ProtectedBootstrap20261031/HostBinding2_InputsSHA.json). LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 바이너리/private binding/비밀정보 업로드 없음.
+
+### GitHub 보고 범위 및 실제 영수증
+
+최종코드 `5a105bcadedd8f75dfe0c864def4f42dfc921ecf`, 로컬 보고/증거 `6a36c89524141da46e18072ddbfcb7d7608a413c`. 상세 Issue66 댓글은 자동 승인 검토가 내부 보안 구조·로컬 경로·승인 경계·운영 상태의 외부 공개 위험으로 거부하여 게시하지 않았습니다. 우회하지 않고 민감 설계/경로를 제거한 최소 결과 요약으로 축소했습니다.
+
+[Issue #66 비민감 결과 요약](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6542279957) 실제 등록·전체본문재조회일치 확인. 원격에는 59PASS/0FAIL·컴파일경고오류0·실적용/제품실행없음·실환경미검증·로컬상세보존/코드미Push라는 요약만 있습니다. 상세 기술 보고가 GitHub에 게시됐다고 주장하지 않습니다. 후속 영수증은 로컬 문서뿐입니다. NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.

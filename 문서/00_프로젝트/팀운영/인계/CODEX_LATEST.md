@@ -1192,3 +1192,9 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 ### 실제 GitHub 보고 영수증
 
 읽기 조사/인계안 로컬커밋 `f5daf3ffa19723ef760ab926f5886a03cebf4492`. [Issue #66 C 대체 경로 조사](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541753116) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. C조상정적PASS/전체UNKNOWN·실Native이미지binding이미C·실제경로발급/코드/이미지/원장/폴더ACL/Task계정변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
+
+### GitHub 보고 범위 및 실제 영수증
+
+최종코드 `5a105bcadedd8f75dfe0c864def4f42dfc921ecf`, 로컬 보고/증거 `6a36c89524141da46e18072ddbfcb7d7608a413c`. 상세 Issue66 댓글은 자동 승인 검토가 내부 보안 구조·로컬 경로·승인 경계·운영 상태의 외부 공개 위험으로 거부하여 게시하지 않았습니다. 우회하지 않고 민감 설계/경로를 제거한 최소 결과 요약으로 축소했습니다.
+
+[Issue #66 비민감 결과 요약](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6542279957) 실제 등록·전체본문재조회일치 확인. 원격에는 59PASS/0FAIL·컴파일경고오류0·실적용/제품실행없음·실환경미검증·로컬상세보존/코드미Push라는 요약만 있습니다. 상세 기술 보고가 GitHub에 게시됐다고 주장하지 않습니다. 후속 영수증은 로컬 문서뿐입니다. NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
