@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 최초 staging 선행 의존성 HOLD / 11월7일 인계
+
+기준634f4a927a35ad198808b4111be67e5b94b0ec15·브랜치 codex/discord-v2-initial-staging-hold-20261031. 고정 대상 안 staging 선행 생성은 기존 Bootstrap의 대상 밖 입력/전체 부재 계약과 충돌합니다. Windows 초기SD 생성 API 재사용 가능성은 확인했으나 전체 최초 설치 절차는 미검증이므로 실제 명령 미발급·추가 우회 없이 HOLD. [선행 관계·공식 API 근거·보존 SHA·11월7일 순서](../../Discord_V2_InitialStaging_HOLD_Handoff_20261107.md). 이미지/소스/binding 변경·빌드/시험반복·Windows 적용·실행0. 신규 SID/승인자료 발급0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff11월1일자동연장금지·11월2일게임복귀/11월7일Discord재개. LOCAL_COMMITTED/REMOTE_NOT_PUSHED。
+
 ## 2026-10-31 Discord V2 Bootstrap 관리자 실행 준비 / 실행 HOLD
 
 기준83b5d15e·제품코드5a105bca무변경·브랜치 codex/discord-v2-bootstrap-admin-exec-prep-20261031. 이미지SHA/2,951,168바이트일치·기존35함수/10분기정적근거재사용·빌드/시험반복0. [명령템플릿·6경로·SDDL·UAC·실패절차](../../Discord_V2_Bootstrap_AdminExecution_Preparation_HOLD_20261031.md). E원본은보호staging아님·staging/관리자SID/부모native SDhash·filekey/신규승인원문SHA미확정→실행가능최종명령HOLD。V3공식정상NOT_VERIFIED。--review도동일생성승인필요·실승인미발급。실제Windows변경/EXE실행/복사/Push main변경0。NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지。마지막관련기준commit83b5d15e9be0158c13a2842476236f33fca97450。
