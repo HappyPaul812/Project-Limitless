@@ -1,0 +1,34 @@
+MOCK_EXPIRY_EVIDENCE rejected=True; registration_calls=0; WINDOWS_WRITES=0
+PASS native-register-must-deny-after-password-wait-expiry
+RESTRICTED_GATE_EXPIRY_RISK: 1 PASS / 0 FAIL; BUILD_BLOCKED; NATIVE_MAIN=0
+PASS mutation-register-valid-delay
+PASS mutation-register-expiry-between-password-and-COM
+PASS mutation-register-cutoff-during-password
+PASS mutation-register-operation-expiry-during-password
+PASS mutation-register-stale-trust-during-password
+PASS mutation-register-cancel-during-password
+PASS mutation-register-cancel-before-COM
+PASS mutation-register-revalidate-contract
+PASS mutation-register-revalidate-trial
+PASS mutation-register-revalidate-operation
+PASS mutation-register-revalidate-trust
+PASS mutation-register-revalidate-missing-trust
+PASS mutation-register-revalidate-account
+PASS mutation-register-revalidate-image
+PASS mutation-register-new-task-during-password-not-overwritten
+PASS mutation-register-after-password-authority-loss-before-COM
+PASS mutation-register-original-intent-remains-no-repeat
+PASS mutation-enable-expired-no-task-change
+PASS mutation-run-expired-still-safely-disables
+PASS mutation-run-cancel-still-safely-disables
+PASS mutation-run-trust-loss-still-safely-disables
+PASS mutation-run-response-loss-consumed-and-safely-disabled
+PASS mutation-stop-expired-instance-unchanged
+PASS mutation-stop-wrong-instance-during-query-denied
+PASS mutation-stop-fresh-approval-disabled-account-cleanup
+PASS mutation-remove-expired-task-retained
+PASS mutation-remove-task-changed-not-deleted
+PASS mutation-remove-fresh-exact-idle-task
+PASS mutation-safety-disable-cannot-be-new-authorization
+PASS mutation-valid-register-start-still-once
+TASK_MUTATION_DELTA: 31 PASS / 0 FAIL; NATIVE_MAIN=0; REAL_WINDOWS_MUTATIONS=0; PASSWORD_INPUT=0

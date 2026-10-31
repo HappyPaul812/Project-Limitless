@@ -1,3 +1,11 @@
+## Codex 최신 인계 — 2026-10-31 / Task 변경 직전 만료 회귀 수정·34PASS
+
+동일브랜치 `codex/discord-v2-restricted-gate-impl-20261031`, 시작8744763b·수정코드 **1717e443c9dfe89f2e82e7897d657dc99c7a0fa7**. 암호입력직후/COM등록직전과Enable/Run/Stop/Remove직전동일재검증경계연결. 정확계약/승인원문SHA·TrialId/mode/cutoff·현재계정/상승비위장·이미지/경로·신뢰·Task/receipt·instance를읽기검증후현재시각/취소를다시검사합니다. 기존승인의조용한교체/갱신없음. 유효시작lease/자기Task결합의안전재비활성화는만료/취소에도유지, 기존자기Job종료코드는무변경입니다.
+
+표적Delta **31+3=34PASS/FAIL0**, 이전차단FAIL1→PASS1(31에포함), 기존58전수재실행0. 최종관리형DLL컴파일경고오류0·실Windows변경/암호입력/NativeMain0·NativeAOT0. [수정/검증/잔여한계/단발빌드승인요청](../../Discord_V2_TaskMutation_ExpiryFix_20261031.md), Evidence/DiscordV2TaskMutationFix20261031. 기존2이미지보존PASS·Probe/NativeInterop/Job무변경, 전역gatefalse/명시HOLD가드유지·새SHA없음입니다.
+
+**NATIVE_BUILD_APPROVAL_PENDING / NO_GO / MANUAL / EXECUTION_HOLD**로중지. 새Supervisor단발빌드는별도승인필요, 실제배포/게이트개방/Task등록시작정리는별도. cutoff11-01 23:59:59KST·승인재사용/초기화/자동연장0·Task계정암호ACLOnBoot/V3/Session0IPCAI/UnitySave/Push main변경0. 아래FAIL은수정전이력으로보존합니다.
+
 ## Codex 최신 인계 — 2026-10-31 / 제한 정책 후보·만료 회귀FAIL / B빌드중지
 
 `codex/discord-v2-restricted-gate-impl-20261031`, 시작27b3b4bf·구현후보 `4323359ee75b23ec8d284d781cc812dbfa55690c`. 단일후보TrialId/profile/정확동작·계약/SHA/계정/시간/신뢰검증과Native어댑터분리, 인가전process/thread/token Harden재배치·배포조정기/Windowsbackend후보를구현했습니다. 전역ReleaseAdmissionImplemented=false유지, 실제Main/배포에는명시적HOLD 가드가있어새후보ID도실행불가입니다.

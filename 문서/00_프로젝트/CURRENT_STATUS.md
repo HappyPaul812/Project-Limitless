@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 만료 회귀 수정·표적34PASS / 새빌드승인대기
+
+암호입력직후/COM직전·Enable/Run/Stop/Remove직전정확계약/승인/신뢰/계정/이미지/시간/Task재검증, 실패시새변경차단·자기Task안전재비활성화/기존Job종료유지. 표적34PASS/0FAIL·이전차단FAIL1해소(34내포함), 기존58전수반복0·관리형컴파일경고오류0. [보고/새Supervisor단발빌드승인요청](Discord_V2_TaskMutation_ExpiryFix_20261031.md). 동일branch codex/discord-v2-restricted-gate-impl-20261031·수정코드1717e443. NativeAOT0·실Windows/암호/Task/계정ACL/OnBoot/Session0IPCAI/UnitySave/Push main변경0, gatefalse/실제HOLD유지·NO_GO/MANUAL/EXECUTION_HOLD·11-01cutoff/재사용자동연장금지입니다.
+
 ## 2026-10-31 Discord V2 제한 정책 구현 후보 / 만료 FAIL로Native빌드 HOLD
 
 단일trial제한정책·Native관리/감독검증·인가전Hardening재배치·보호배포도구후보구현, 새순수/모의58PASS·관리형컴파일경고오류0. **암호대기후만료등록거부회귀FAIL1**로필수검증미통과, **새Supervisor NativeAOT0/새SHA없음**. 실제Main/배포HOLD가드·전역gatefalse유지, 기존2이미지보존PASS·Probe/NativeInterop무변경. [상세/실패증거/후속새지시](Discord_V2_RestrictedGate_Implementation_HOLD_20261031.md), 브랜치codex/discord-v2-restricted-gate-impl-20261031·구현후보4323359e. 실배포/EXE/Task계정ACLOnBoot/V3/Session0IPCAI/UnitySave/Push main변경0·B자동재개/승인재사용/연장없음, NO_GO/MANUAL/EXECUTION_HOLD입니다.

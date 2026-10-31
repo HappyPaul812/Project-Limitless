@@ -1,0 +1,4 @@
+PASS mutation-register-expiry-during-image-account-refresh
+PASS mutation-register-trust-change-between-password-and-COM
+PASS mutation-register-cancel-during-final-refresh
+TASK_MUTATION_LATE_READ_DELTA: 3 PASS / 0 FAIL; NATIVE_MAIN=0; REAL_WINDOWS_MUTATIONS=0; PASSWORD_INPUT=0
