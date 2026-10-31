@@ -1,0 +1,307 @@
+{
+  "CheckedAt": "2026-10-31T18:29:23.7934737+09:00",
+  "StartHEAD": "89f79b83f49668c52981411343e7b443fcd79ce4",
+  "Branch": "codex/discord-v2-c-protected-path-survey-20261031",
+  "Candidate": "C:\\ProgramData\\Limitless\\DiscordV2",
+  "ExistingAncestors": [
+    {
+      "Path": "C:\\",
+      "Reparse": false,
+      "StaticAncestorPolicy": "PASS_STATIC",
+      "DaclProtected": false,
+      "OwnerAcceptedAsAncestor": true,
+      "Rules": [
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-5-11",
+          "Mask": "0x00000004"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-5-11",
+          "Mask": "0xe0010000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-18",
+          "Mask": "0x001f01ff"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-544",
+          "Mask": "0x001f01ff"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-545",
+          "Mask": "0x001200a9"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-15-3-65536-1888954469-739942743-1668119174-2468466756-4239452838-1296943325-355587736-700089176",
+          "Mask": "0x001000a1"
+        }
+      ],
+      "SDDL": "O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464G:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:(A;;LC;;;AU)(A;OICIIO;SDGXGWGR;;;AU)(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)(A;;0x1000a1;;;S-1-15-3-65536-1888954469-739942743-1668119174-2468466756-4239452838-1296943325-355587736-700089176)",
+      "OwnerSid": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464"
+    },
+    {
+      "Path": "C:\\ProgramData",
+      "Reparse": false,
+      "StaticAncestorPolicy": "PASS_STATIC",
+      "DaclProtected": true,
+      "OwnerAcceptedAsAncestor": true,
+      "Rules": [
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-3-0",
+          "Mask": "0x10000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-18",
+          "Mask": "0x001f01ff"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-544",
+          "Mask": "0x001f01ff"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-545",
+          "Mask": "0x001200a9"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ContainerInherit",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-545",
+          "Mask": "0x00000116"
+        }
+      ],
+      "SDDL": "O:SYG:SYD:PAI(A;OICIIO;GA;;;CO)(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)(A;CI;DCLCRPCR;;;BU)",
+      "OwnerSid": "S-1-5-18"
+    },
+    {
+      "Path": "C:\\Program Files",
+      "Reparse": false,
+      "StaticAncestorPolicy": "PASS_STATIC",
+      "DaclProtected": true,
+      "OwnerAcceptedAsAncestor": true,
+      "Rules": [
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-3-0",
+          "Mask": "0x10000000"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-5-18",
+          "Mask": "0x10000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-5-18",
+          "Mask": "0x001301bf"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-544",
+          "Mask": "0x10000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-544",
+          "Mask": "0x001301bf"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-545",
+          "Mask": "0xa0000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-5-32-545",
+          "Mask": "0x001200a9"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464",
+          "Mask": "0x10000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": true,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464",
+          "Mask": "0x001f01ff"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-15-2-1",
+          "Mask": "0x001200a9"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-15-2-1",
+          "Mask": "0xa0000000"
+        },
+        {
+          "AppliesToExistingObject": true,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "None",
+          "PolicyRisk": false,
+          "SID": "S-1-15-2-2",
+          "Mask": "0x001200a9"
+        },
+        {
+          "AppliesToExistingObject": false,
+          "Allow": true,
+          "TrustedPrincipal": false,
+          "Flags": "ObjectInherit, ContainerInherit, InheritOnly",
+          "PolicyRisk": false,
+          "SID": "S-1-15-2-2",
+          "Mask": "0xa0000000"
+        }
+      ],
+      "SDDL": "O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464G:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:PAI(A;OICIIO;GA;;;CO)(A;OICIIO;GA;;;SY)(A;;0x1301bf;;;SY)(A;OICIIO;GA;;;BA)(A;;0x1301bf;;;BA)(A;OICIIO;GXGR;;;BU)(A;;0x1200a9;;;BU)(A;CIIO;GA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;OICIIO;GXGR;;;AC)(A;;0x1200a9;;;S-1-15-2-2)(A;OICIIO;GXGR;;;S-1-15-2-2)",
+      "OwnerSid": "S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464"
+    }
+  ],
+  "CandidateExists": false,
+  "LimitlessParentExists": false,
+  "NativeRoles": [
+    {
+      "Role": "CodeRoot",
+      "Drive": "C:\\",
+      "UnderCandidate": false,
+      "Exists": false
+    },
+    {
+      "Role": "EvidenceRoot",
+      "Drive": "C:\\",
+      "UnderCandidate": false,
+      "Exists": false
+    }
+  ],
+  "Images": [
+    {
+      "CurrentBindingMatchesBuildInput": true,
+      "SHA256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "Name": "Supervisor",
+      "Bytes": 7559680
+    },
+    {
+      "CurrentBindingMatchesBuildInput": true,
+      "SHA256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "Name": "Probe",
+      "Bytes": 1892352
+    }
+  ],
+  "TokenEffectiveAccess": "UNKNOWN_NO_WORKER_LOGON_IMPERSONATION_OR_LIVE_TOKEN_ACCESSCHECK",
+  "DaclEffectiveUpperBound": "All applicable untrusted allow ACEs checked conservatively, ignoring denies; no DELETE/DELETE_CHILD/WRITE_DAC/WRITE_OWNER or applicable generic grants in observed ancestors",
+  "FileSystem": "NTFS",
+  "DriveType": "Fixed",
+  "AvailableCBytes": 51838447616,
+  "KnownImagesBytes": 9452032,
+  "KnownImagesMiB": 9.01416015625,
+  "NewToolBytes": "UNKNOWN_UNBUILT",
+  "MinimumFormula": "9452032 + tool T + control S + small durable records R + NTFS overhead",
+  "ProvisionalSpaceBudgetMiB": 64,
+  "BudgetIsMeasuredRequirement": false,
+  "OldEAncestorsRechecked": false,
+  "CodeBindingImagesChanged": false,
+  "WindowsConfigTaskAccountAclChanges": 0,
+  "FoldersCreated": 0,
+  "ExeExecutionsOrBuilds": 0,
+  "CandidateBindingIssued": false,
+  "OverallSafety": "UNKNOWN_FULL_DEPLOYMENT_HOLD; existing C ancestor DACL static checks pass",
+  "Status": "NO_GO / MANUAL / EXECUTION_HOLD",
+  "Cutoff": "2026-11-01T23:59:59+09:00"
+}

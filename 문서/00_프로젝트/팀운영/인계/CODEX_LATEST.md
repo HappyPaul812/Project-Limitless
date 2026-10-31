@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 C 대체 경로 읽기 조사 / 조상정적PASS·전체UNKNOWN
+
+기준89f79b83·브랜치 codex/discord-v2-c-protected-path-survey-20261031. 후보 C:\ProgramData\Limitless\DiscordV2 부재·C루트/ProgramData/Program Files의조상DACL위험비트없음/owner/reparse정적PASS, 실제Worker토큰AccessCheck/leaf보호UNKNOWN·NO_GO. **현Native CodeRoot/EvidenceRoot는이미C고정**이며두이미지빌드입력bindingSHA일치. 기존경로유지+후보Control(도구/승인/ledger)안은두이미지재빌드불필요;둘다후보로이전하면Probe/Supervisor새빌드필요. [전체보호범위/용량/승인/11월2일인계안](../../Discord_V2_C_Alternative_Path_Survey_20261031.md). 확인된C필요량두EXE9,452,032바이트+미빌드도구T/작은자료·기록/NTFS오버헤드·64MiB는잠정예산일뿐. E ACL위험HOLD보존/재검사0·코드/binding/원장/폴더ACL/이미지/Task계정변경0·새빌드/EXE실행0·Push main변경0·cutoff11-01 23:59:59KST/자동연장금지·마감미충족시11월2일은문서인계만권고.
 ## 2026-10-31 Discord V2 E드라이브 원장 후보 상위 ACL HOLD / binding 미발급
 
 기준95c5683a·브랜치 codex/discord-v2-ledger-candidate-review-20261031·최소시험코드 **a025888116c7cd13dede9d0c799e7ceb35f334e3**. 후보 E:\Program Files\Limitless\DiscordV2\Control\DeploymentLedger는고정NTFS·Native두Root중첩없음. 그러나 E루트/Program Files에적용AU ACE0x1301bf의DELETE가있어기존상위교체방지정책거부·하위4개부재→**채택/binding HOLD**. [ACL근거/최소6PASS/정확bootstrap별도승인범위](../../Discord_V2_Ledger_Candidate_Path_HOLD_20261031.md). 관리형컴파일exit0/경고오류0·6PASS는안전거부시험이며경로보호PASS아님·기존24/다른시험반복0. 부모ACL수정/4폴더생성/privatebinding/도구NativeAOT실행/실보호설정변경0·두이미지/제품소스보존·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지·Push main변경0.
