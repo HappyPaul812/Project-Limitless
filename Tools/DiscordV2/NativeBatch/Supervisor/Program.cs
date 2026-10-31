@@ -37,8 +37,8 @@ internal partial class ContractJson : JsonSerializerContext { }
 
 internal static class Program
 {
-    // 핵심 admission 구현은 아래 실제 어댑터에 연결되어 있습니다. 이 gate는 Windows 실검증 전 유지합니다.
-    // 관리자 모드도 같은 실행 봉인 뒤에서만 접근합니다. 이번 시험은 모의 backend만 사용합니다.
+    // 전역 운영 gate는 유지합니다. 별도 후보 TrialId의 보호된 단발 승인 경계만 아래 어댑터가 검사합니다.
+    // 후보 ID만으로 허용하지 않으며 관리자 동작/감독 모두 전체 승인 검증 전에 쓰기하지 않습니다.
     private static readonly bool ReleaseAdmissionImplemented = false;
     private static readonly byte[] Intent = Encoding.UTF8.GetBytes("TOKEN_PROBE_INTENT_ONLY\n");
     private static readonly byte[] Complete = Encoding.UTF8.GetBytes("TOKEN_PROBE_ONLY_COMPLETE\n");
@@ -49,16 +49,16 @@ internal static class Program
         var wall = Stopwatch.StartNew();
         try
         {
+            Native.Need(!ReleaseAdmissionImplemented, "HOLD_GLOBAL_RELEASE_NOT_SUPPORTED");
+            NativeTrialPolicy.RequireWindowsBoundary();
             if (args.Length > 0 && AdminController.IsMode(args[0]))
             {
-                Native.Need(ReleaseAdmissionImplemented, "HOLD_NATIVE_ADMIN_VALIDATION_PENDING");
                 return AdminWindows.Run(args);
             }
             Native.Need(args.Length == 5 && args[0] == "--supervise" && args[1] == "--contract" && args[3] == "--contract-sha", "MODE_NOT_IMPLEMENTED");
             Native.Need(Environment.ProcessPath == Path.Combine(Native.CodeRoot, "Supervisor.exe"), "SUPERVISOR_LOCATION");
             Native.Need(args[2] == Path.Combine(Native.CodeRoot, "TrialContract.json"), "CONTRACT_LOCATION");
-            // 핵심 구현은 연결했지만 실제 Windows admission/정리 검증 전에는 진입을 열지 않습니다.
-            Native.Need(ReleaseAdmissionImplemented, "HOLD_NATIVE_ADMISSION_VALIDATION_PENDING");
+            // Acquire는 읽기 승인 후에만 자기 객체 보안/영구 소비를 적용합니다.
             using var admission = ReleaseAdmission.Acquire(args[2], args[4]);
             Native.Need(wall.ElapsedMilliseconds < 5000, "PRECREATE_BUDGET");
             return Supervise(admission, admission.Identity, wall);

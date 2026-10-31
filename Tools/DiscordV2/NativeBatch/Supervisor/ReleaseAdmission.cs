@@ -13,6 +13,8 @@ internal sealed class ReleaseAdmission : IDisposable
     private IDisposable? consumption;
     private readonly Dictionary<string,byte[]> trustInputs=[];
     private nint token,process,thread,childToken;
+    private OperationApproval startOperation=null!;
+    private string expectedContractSha="";
     private ControlReceipt startIntent=null!;
     internal TrialContract Contract { get; private set; }=null!;
     internal Native.TokenStats Identity { get; private set; }
@@ -29,6 +31,27 @@ internal sealed class ReleaseAdmission : IDisposable
         AdmissionPolicy.Require(AdmissionPolicy.Sha(contractSha),"CONTRACT_HASH_FORMAT");
         Native.NoImpersonation();Identity=Native.Identity(Native.GetCurrentProcess());
         token=AdmissionWindows.Token(Native.GetCurrentProcess());AdmissionWindows.LimitedToken(token);
+
+        PinDirectoryTree(Native.CodeRoot,false);PinDirectoryTree(Native.EvidenceRoot,true);
+        var contract=PinFile(contractPath);byte[] raw=ReadSmall(contract,4096);
+        AdmissionPolicy.Require(Hash(raw)==contractSha,"CONTRACT_SHA");
+        AdmissionPolicy.Contract(raw,DateTimeOffset.UtcNow,AdmissionBinding.Current);
+        Contract=System.Text.Json.JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract) ?? throw new InvalidOperationException("CONTRACT_NULL");
+        NativeTrialPolicy.Shape(Contract,"--supervise",DateTimeOffset.UtcNow);
+        expectedContractSha=contractSha;
+        AdmissionPolicy.Require(Contract.Scope!.Start,"SUPERVISOR_START_NOT_APPROVED");
+        var startApproval=PinFile(Path.Combine(Native.CodeRoot,OperationApproval.FileName(Contract.TrialId,"--start-once")));
+        var operation=OperationApproval.Validate(ReadSmall(startApproval,4096),Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false);
+        startOperation=operation;
+        var registration=ControlRecord("registered");startIntent=ControlRecord("start-intent");
+        ReceiptPolicy.Start(registration,startIntent,operation,Contract.TrialId,contractSha);
+        var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
+        var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
+        AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
+        CheckScope(null);
+        // 계약·이미지·신뢰 자료·실제 계정을 읽기 검증하기 전에는 DACL을 바꾸지 않습니다.
+        NativeTrialPolicy.AuthorizeThen(Contract,contractSha,"--supervise",operation,AccountNative.Read(DateTimeOffset.UtcNow,false),
+            DateTimeOffset.UtcNow,AdmissionBinding.Current,()=> {
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentProcess(),Native.GetCurrentProcess(),out process,0,false,2));
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentThread(),Native.GetCurrentProcess(),out thread,0,false,2));
         Security.Harden(process,AdmissionWindows.KernelKind.Process);Security.Harden(thread,AdmissionWindows.KernelKind.Thread);
@@ -36,20 +59,9 @@ internal sealed class ReleaseAdmission : IDisposable
         watched.Add(process,AdmissionPolicy.ProcessDanger);watched.Add(thread,AdmissionPolicy.ThreadDanger);watched.Add(token,AdmissionPolicy.TokenDanger);
         foreach(var handle in watched.Keys)NonInherited(handle);
 
-        PinDirectoryTree(Native.CodeRoot,false);PinDirectoryTree(Native.EvidenceRoot,true);
-        var contract=PinFile(contractPath);byte[] raw=ReadSmall(contract,4096);
-        AdmissionPolicy.Require(Hash(raw)==contractSha,"CONTRACT_SHA");
-        AdmissionPolicy.Contract(raw,DateTimeOffset.UtcNow,AdmissionBinding.Current);
-        Contract=System.Text.Json.JsonSerializer.Deserialize(raw,ContractJson.Default.TrialContract) ?? throw new InvalidOperationException("CONTRACT_NULL");
-        AdmissionPolicy.Require(Contract.Scope!.Start,"SUPERVISOR_START_NOT_APPROVED");
-        var startApproval=PinFile(Path.Combine(Native.CodeRoot,OperationApproval.FileName(Contract.TrialId,"--start-once")));
-        var operation=OperationApproval.Validate(ReadSmall(startApproval,4096),Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false);
-        var registration=ControlRecord("registered");startIntent=ControlRecord("start-intent");
-        ReceiptPolicy.Start(registration,startIntent,operation,Contract.TrialId,contractSha);
-        var supervisor=PinFile(Path.Combine(Native.CodeRoot,"Supervisor.exe"));
-        var probe=PinFile(Path.Combine(Native.CodeRoot,"Probe.exe"));
-        AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
-        CheckScope(null);HandleCensus.Check(watched);
+        HandleCensus.Check(watched);
+        });
+        NativeTrialPolicy.Authorize(Contract,contractSha,"--supervise",operation,AccountNative.Read(DateTimeOffset.UtcNow,false),DateTimeOffset.UtcNow,AdmissionBinding.Current);
         // 검증을 모두 마친 뒤에만 영구 marker를 원자 생성하고 flush합니다.
         // 실패/취소/프로세스종료 후에도 남기며 기존 소비 기록은 건드리지 않습니다.
         consumption=AdmissionConsumption.Acquire(Native.EvidenceRoot,Encoding.UTF8.GetBytes(Contract.TrialId+"\n"+contractSha+"\n"),AdmissionWindows.CreateRecord);
@@ -90,6 +102,7 @@ internal sealed class ReleaseAdmission : IDisposable
         // 승인 파일만 읽고 관리자 시작 순서를 건너뛰는 수동 실행은 허용하지 않습니다.
         // 응답 기록이 아직 없거나 유실됐으면 suspended Probe를 재개하지 않고 HOLD합니다.
         ReceiptPolicy.Instance(ControlRecord("instance"),startIntent);
+        NativeTrialPolicy.Authorize(Contract,expectedContractSha,"--supervise",startOperation,AccountNative.Read(DateTimeOffset.UtcNow,false),DateTimeOffset.UtcNow,AdmissionBinding.Current);
         Security.Harden(child.Process,AdmissionWindows.KernelKind.Process);Security.Harden(child.Thread,AdmissionWindows.KernelKind.Thread);
         AdmissionPolicy.Require(childToken==0,"CHILD_TOKEN_ALREADY_BOUND");childToken=AdmissionWindows.Token(child.Process);
         using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(childToken,AdmissionWindows.KernelKind.Token);

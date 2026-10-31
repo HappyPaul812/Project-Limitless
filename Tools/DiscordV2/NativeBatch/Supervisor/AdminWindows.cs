@@ -34,7 +34,7 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
         byte[] raw=backend.Read(args[2],4096,false);
         using var cancel=new CancellationTokenSource();
         ConsoleCancelEventHandler handler=(_,e)=>{e.Cancel=true;cancel.Cancel();};Console.CancelKeyPress+=handler;
-        try{return AdminController.Execute(args[0],raw,args[4],AdmissionBinding.Current,backend,instance,cancel.Token);}
+        try{return AdminController.ExecuteNative(args[0],raw,args[4],AdmissionBinding.Current,backend,instance,cancel.Token);}
         finally{Console.CancelKeyPress-=handler;}
     }
     public void Preflight(TrialContract contract,bool cleanup)

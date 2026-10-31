@@ -61,6 +61,12 @@ internal static class AdminController
 {
     internal static bool IsMode(string mode) => mode is "--register-only" or "--start-once" or "--stop-owned-instance" or "--remove-owned-task";
     internal static int Execute(string mode, byte[] raw, string sha, AdmissionBinding binding, IAdminBackend backend, Guid? instance, CancellationToken cancellation)
+        => ExecuteCore(mode,raw,sha,binding,backend,instance,cancellation,null,null);
+    // 실제 Windows 어댑터는 이 진입점만 사용합니다. CLI/환경변수로 모의 경로를 선택할 수 없습니다.
+    internal static int ExecuteNative(string mode,byte[] raw,string sha,AdmissionBinding binding,IAdminBackend backend,Guid? instance,CancellationToken cancellation)
+        => ExecuteCore(mode,raw,sha,binding,backend,instance,cancellation,NativeTrialPolicy.Shape,NativeTrialPolicy.Authorize);
+    private static int ExecuteCore(string mode,byte[] raw,string sha,AdmissionBinding binding,IAdminBackend backend,Guid? instance,CancellationToken cancellation,
+        Action<TrialContract,string,DateTimeOffset>? shape,Action<TrialContract,string,string,OperationApproval,AccountObservation,DateTimeOffset,AdmissionBinding>? authorize)
     {
         AdmissionPolicy.Require(IsMode(mode), "ADMIN_MODE");
         bool cleanup = mode is "--stop-owned-instance" or "--remove-owned-task";
@@ -68,6 +74,7 @@ internal static class AdminController
         AdmissionPolicy.Contract(raw, backend.Now, binding, cleanup);
         var contract = System.Text.Json.JsonSerializer.Deserialize(raw, ContractJson.Default.TrialContract)!;
         var scope = contract.Scope!;
+        shape?.Invoke(contract,mode,backend.Now);
         AdmissionPolicy.Require(mode == "--register-only" ? scope.Register : mode == "--start-once" ? scope.Start : scope.Cleanup, "OPERATION_NOT_APPROVED");
         cancellation.ThrowIfCancellationRequested();
         FakeOnlyPolicy.Evidence(contract,backend.Now,backend.IsolationEvidence,cleanup);
@@ -78,6 +85,7 @@ internal static class AdminController
         if (!cleanup)
             AdmissionPolicy.Require(account.Enabled && !account.Locked && account.ExpiresUtc >= contract.ExpiresUtc && account.BatchKnown && account.BatchAllowed, "ACCOUNT_OR_BATCH_HOLD");
         var observation = backend.Observe();
+        authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
         string prefix = contract.TrialId + ".admin.";
         ControlReceipt Make(string status, string fingerprint = "", string id = "") => new() { TrialId=contract.TrialId,ContractSha=sha,Status=status,Fingerprint=fingerprint,Instance=id,ApprovalId=approval.ApprovalId };
         ControlReceipt Read(string suffix)
