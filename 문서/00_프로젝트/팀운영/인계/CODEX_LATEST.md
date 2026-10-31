@@ -1,3 +1,11 @@
+## Codex 최신 인계 — 2026-10-31 / 제한 정책 후보·만료 회귀FAIL / B빌드중지
+
+`codex/discord-v2-restricted-gate-impl-20261031`, 시작27b3b4bf·구현후보 `4323359ee75b23ec8d284d781cc812dbfa55690c`. 단일후보TrialId/profile/정확동작·계약/SHA/계정/시간/신뢰검증과Native어댑터분리, 인가전process/thread/token Harden재배치·배포조정기/Windowsbackend후보를구현했습니다. 전역ReleaseAdmissionImplemented=false유지, 실제Main/배포에는명시적HOLD 가드가있어새후보ID도실행불가입니다.
+
+신규격리관리형컴파일경고오류0, 순수/모의 **58PASS**(정책/관리자36·배포22). 별도암호대기만료회귀 **FAIL1**: 승인검사후시각을만료+1초로전진해도모의등록1회진행. 실제TaskSchedulerNative도암호입력후COM변경직전시간재검증없음확인. **필수검증전체통과아님·A_PARTIAL / B_NOT_ATTEMPTED**, 새NativeAOT0·새SHA없음. [실패/차단/파일/검증/후속](../../Discord_V2_RestrictedGate_Implementation_HOLD_20261031.md). 초기SDK설정실패·nullable경고2수정·초기57PASS도보존했습니다.
+
+기존Probe/기존Supervisor해시·크기보존PASS, Probe/NativeInterop무변경. 실제배포backend·EXE/NativeMain·Task/계정/ACL/OnBoot·V3·Session0IPCAI/UnitySave/Push main변경실행0. 후속은실제변경직전만료/권한경계보완·회귀검증새지시, B자동재개없음. cutoff11-01 23:59:59KST·승인재사용/초기화/자동연장금지, NO_GO/MANUAL/EXECUTION_HOLD로중지합니다.
+
 ## Codex 최신 인계 — 2026-10-31 / 보호 배포·one-trial 게이트 준비안
 
 `codex/discord-v2-protected-deploy-gate-plan-20261031`(시작ba8bb578). 두기존이미지SHA/크기보존PASS, 코드gate=false·추가빌드/이미지이동수정실행0. CodeRoot/EvidenceRoot부재유지, 기존상위경로각2개owner/ACE정적기준차단0이나제한token AccessCheck아님. 계정만료11-02 00:00KST/cutoff11-01 23:59:59KST 재확인, 권한설정변경0.

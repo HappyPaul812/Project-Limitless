@@ -18,6 +18,18 @@ internal static partial class AdmissionTests
     }
     private static int NativeAdmin(FakeBackend f,string mode,TrialContract c,Guid? instance=null)
     {byte[] raw=Raw(c);return AdminController.ExecuteNative(mode,raw,Hash(raw),Binding,f,instance,default);}
+    private static int RestrictedGateExpiryRisk()
+    {
+        // 실제 암호/콘솔/Task 없이 대기 후 시각만 전진시킵니다. 미해결 위험을 숨기지 않고 FAIL로 보존합니다.
+        Test("native-register-must-deny-after-password-wait-expiry",()=> {
+            var c=Candidate();var f=Trusted(c);f.BeforeRegister=()=>f.Clock=c.ExpiresUtc.AddSeconds(1);
+            bool rejected=false;try{NativeAdmin(f,"--register-only",c);}catch{rejected=true;}
+            Console.WriteLine($"MOCK_EXPIRY_EVIDENCE rejected={rejected}; registration_calls={f.RegisterCalls}; WINDOWS_WRITES=0");
+            Check(rejected&&f.RegisterCalls==0);
+        });
+        Console.WriteLine($"RESTRICTED_GATE_EXPIRY_RISK: {passed} PASS / {failed} FAIL; BUILD_BLOCKED; NATIVE_MAIN=0");
+        return failed==0?0:1;
+    }
     private static int RestrictedGateDelta()
     {
         Test("native-windows-boundary-stays-held",()=>Reject(NativeTrialPolicy.RequireWindowsBoundary,"HOLD_NATIVE_MUTATION_DEADLINE_REVIEW"));

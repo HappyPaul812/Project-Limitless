@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 제한 정책 구현 후보 / 만료 FAIL로Native빌드 HOLD
+
+단일trial제한정책·Native관리/감독검증·인가전Hardening재배치·보호배포도구후보구현, 새순수/모의58PASS·관리형컴파일경고오류0. **암호대기후만료등록거부회귀FAIL1**로필수검증미통과, **새Supervisor NativeAOT0/새SHA없음**. 실제Main/배포HOLD가드·전역gatefalse유지, 기존2이미지보존PASS·Probe/NativeInterop무변경. [상세/실패증거/후속새지시](Discord_V2_RestrictedGate_Implementation_HOLD_20261031.md), 브랜치codex/discord-v2-restricted-gate-impl-20261031·구현후보4323359e. 실배포/EXE/Task계정ACLOnBoot/V3/Session0IPCAI/UnitySave/Push main변경0·B자동재개/승인재사용/연장없음, NO_GO/MANUAL/EXECUTION_HOLD입니다.
+
 ## 2026-10-31 Discord V2 보호 배포·게이트 준비만 완료
 
 두이미지보존PASS·상위경로owner/ACE읽기확인, 실제배포/코드/빌드/실행0. [최소보호배포/one-trial게이트안·관리자명령/GUI·승인A~D](Discord_V2_ProtectedDeployment_Gate_Plan_20261031.md) 작성. 기존gatefalse는유지, 향후제한진입구현시인가전Hardening재배치·cleanup컷오프/새승인결합필요. 새SupervisorSHA/빌드/봉인·사용자승인은별도, Probe/binding그대로면Probe재빌드0. 브랜치codex/discord-v2-protected-deploy-gate-plan-20261031, NO_GO/MANUAL/EXECUTION_HOLD·권한/Task/계정OnBoot/UnitySave/Push main변경0·11-01이후승인재사용/자동연장금지 유지.

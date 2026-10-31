@@ -1,0 +1,3 @@
+MOCK_EXPIRY_EVIDENCE rejected=False; registration_calls=1; WINDOWS_WRITES=0
+FAIL native-register-must-deny-after-password-wait-expiry Exception:ASSERT
+RESTRICTED_GATE_EXPIRY_RISK: 0 PASS / 1 FAIL; BUILD_BLOCKED; NATIVE_MAIN=0
