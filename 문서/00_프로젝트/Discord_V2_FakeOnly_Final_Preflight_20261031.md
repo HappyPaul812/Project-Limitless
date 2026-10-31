@@ -63,3 +63,5 @@
 코드 cutoff는 **2026-11-01 23:59:59KST**(UTC14:59:59), 계정 만료는 그다음 **11-02 00:00KST**입니다. 계정 만료가1초늦다는이유로승인시각을넘기지않습니다. 시작/종료/정리예산·계약유효기간을확보할수없으면NO_GO, 11-01이후기존승인/소비재사용·자동연장0입니다. 90초는단조deadline/기존계약의한도이며OS정지·APIblock까지절대wall-clock보장을증명한것은아닙니다.
 
 **실제 실행은 새 별도 승인 대상**이며 이번 사전확인으로 등록/시작/정리 권한을 부여하지 않습니다. 계정/ACL/OnBoot/V3·IPC/AI/Discord업무/UnitySave·Push/main병합 변경0으로 중지합니다. 보고/증거는 LOCAL_COMMITTED / REMOTE_NOT_PUSHED입니다.
+
+보고commit `849e3e7e1ca8c12b6bb7dd3b135817768710e9f1`, [Issue66 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6538958076) 실제등록·전체본문재조회일치 확인. 후속영수증은문서만변경합니다. 원격에는댓글만게시했고 소스/이미지/비공개원문은로컬에만있습니다.

@@ -6,6 +6,10 @@
 
 기존V3전사/격리DB메타데이터읽기확인, 새이미지정상판정NOT_VERIFIED·전역SID/다른실행경로UNKNOWN유지. [보호배포·대표GUI조회·단계별GO/NO_GO](../../Discord_V2_FakeOnly_Final_Preflight_20261031.md)와Evidence/DiscordV2FinalPreflight20261031/Summary.json에분리기록. 정확private대상은ignored FinalPreflight20261031/GUI_Targets_PRIVATE.LOCAL.json, GUI는대표조회만이며등록/시작/정리승인아님. 새trial신뢰자료(15분내)/동작별승인·Batch4/Session0/HANDLE/Job90초/child·실패정리실증은미완료. cutoff11-01 23:59:59KST·기존승인재사용/소비초기화/자동연장금지, NO_GO/MANUAL/EXECUTION_HOLD·gatefalse 유지. V3/계정ACLOnBoot/Task/IPC·AI/UnitySave/Push main변경0입니다.
 
+### 최종 사전확인 실제 보고 영수증
+
+사전확인commit `849e3e7e1ca8c12b6bb7dd3b135817768710e9f1`. [Issue66 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6538958076) 실제등록·전체본문재조회일치 확인. 후속영수증은문서만변경, 원격은댓글만·소스/이미지/private원문미게시. NO_GO/MANUAL/EXECUTION_HOLD·gate=false·실행/빌드0 유지, 대표GUI조회와실제등록/시작/정리승인분리 후 중지합니다.
+
 ## Codex 최신 인계 — 2026-10-31 / Probe 추가1회 NativeAOT PASS·실행 HOLD
 
 `codex/discord-v2-probe-single-rebuild-20261031`(시작29b7a7e2, 기준보고9227601c·구현fe5b22e6). 승인된 Probe추가1회 PASS, Supervisor재발행0입니다. Supervisor성공targets와SHA일치·컴파일전MSBuild평가exit0(Runtime/compiler/linker10.0.10), 공식NuGet7종/소스20봉인 확인. 원본소스/보안계약/gate변경0입니다.
