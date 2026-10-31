@@ -1,0 +1,5 @@
+  복원할 프로젝트를 확인하는 중...
+  <ISOLATED_BUILD_ROOT>\Tools\DiscordV2\ProtectedBootstrap\ProtectedBootstrap.csproj을(를) 2.36초 동안 복원했습니다.
+  ProtectedBootstrap -> <ISOLATED_BUILD_ROOT>\Tools\DiscordV2\ProtectedBootstrap\bin\x64\Release\net10.0-windows\win-x64\Limitless.ProtectedBootstrap.dll
+  Generating native code
+  ProtectedBootstrap -> <ISOLATED_BUILD_ROOT>\artifacts\Bootstrap\

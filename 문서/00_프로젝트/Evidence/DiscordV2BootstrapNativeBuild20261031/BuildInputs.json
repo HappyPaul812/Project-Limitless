@@ -1,0 +1,22 @@
+[
+  {
+    "bytes": 10829,
+    "sha256": "5D8F5E879D37832B55D6E632A59AA66666BD7522BF874C6DBF23940F4034BA28",
+    "relative_path": "Tools/DiscordV2/ProtectedBootstrap/BootstrapPolicy.cs"
+  },
+  {
+    "bytes": 9790,
+    "sha256": "F49E071FA9939D35B0DAFC11010FE9933ECE0029E859A1A59C0B2335649E8494",
+    "relative_path": "Tools/DiscordV2/ProtectedBootstrap/WindowsBootstrapHost.cs"
+  },
+  {
+    "bytes": 1269,
+    "sha256": "0394C4E7016B594E13EDF32FBCA2EAFAC040064A168768782D1570EA5A11946B",
+    "relative_path": "Tools/DiscordV2/ProtectedBootstrap/Program.cs"
+  },
+  {
+    "bytes": 676,
+    "sha256": "CD6293066F1C5A1C294EC211C9ED5500FCD5DEA7305390B96964B56FC271DD23",
+    "relative_path": "Tools/DiscordV2/ProtectedBootstrap/ProtectedBootstrap.csproj"
+  }
+]

@@ -1,0 +1,511 @@
+Limitless_ProtectedBootstrap_ProtectedBootstrapProgram__Main:
+  0000000000001AD0: 55                 push        rbp
+  0000000000001AD1: 41 56              push        r14
+  0000000000001AD3: 57                 push        rdi
+  0000000000001AD4: 56                 push        rsi
+  0000000000001AD5: 53                 push        rbx
+  0000000000001AD6: 48 81 EC B0 00 00  sub         rsp,0B0h
+                    00
+  0000000000001ADD: 48 8D AC 24 D0 00  lea         rbp,[rsp+0D0h]
+                    00 00
+  0000000000001AE5: 0F 57 E4           xorps       xmm4,xmm4
+  0000000000001AE8: 0F 29 A5 70 FF FF  movaps      xmmword ptr [rbp-90h],xmm4
+                    FF
+  0000000000001AEF: 48 B8 A0 FF FF FF  mov         rax,0FFFFFFFFFFFFFFA0h
+                    FF FF FF FF
+  0000000000001AF9: 0F 29 64 05 E0     movaps      xmmword ptr [rbp+rax-20h],xmm4
+  0000000000001AFE: 0F 29 64 05 F0     movaps      xmmword ptr [rbp+rax-10h],xmm4
+  0000000000001B03: 0F 29 24 28        movaps      xmmword ptr [rax+rbp],xmm4
+  0000000000001B07: 48 83 C0 30        add         rax,30h
+  0000000000001B0B: 75 EC              jne         0000000000001AF9
+  0000000000001B0D: 48 8B D9           mov         rbx,rcx
+  0000000000001B10: 48 8D 0D 00 00 00  lea         rcx,[??_7Limitless_ProtectedBootstrap_ProtectedBootstrapProgram___c__DisplayClass1_0@@6B@]
+                    00
+  0000000000001B17: E8 00 00 00 00     call        RhpNewFast
+  0000000000001B1C: 48 89 85 68 FF FF  mov         qword ptr [rbp-98h],rax
+                    FF
+  0000000000001B23: 48 8D 4D C8        lea         rcx,[rbp-38h]
+  0000000000001B27: 48 8B D3           mov         rdx,rbx
+  0000000000001B2A: E8 91 FD FF FF     call        Limitless_ProtectedBootstrap_ProtectedBootstrapProgram__Arguments
+  0000000000001B2F: 0F B6 5D D8        movzx       ebx,byte ptr [rbp-28h]
+  0000000000001B33: 48 8D 0D 00 00 00  lea         rcx,[??_7Limitless_ProtectedBootstrap_WindowsBootstrapHost@@6B@]
+                    00
+  0000000000001B3A: E8 00 00 00 00     call        RhpNewFast
+  0000000000001B3F: 48 8B F0           mov         rsi,rax
+  0000000000001B42: 48 8B CE           mov         rcx,rsi
+  0000000000001B45: E8 16 66 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost___ctor
+  0000000000001B4A: 48 89 B5 60 FF FF  mov         qword ptr [rbp-0A0h],rsi
+                    FF
+  0000000000001B51: 48 8B CE           mov         rcx,rsi
+  0000000000001B54: 48 8B 55 C8        mov         rdx,qword ptr [rbp-38h]
+  0000000000001B58: E8 73 5F 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__ReadProtectedAuthorization
+  0000000000001B5D: 48 8B F8           mov         rdi,rax
+  0000000000001B60: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_Threading_CancellationTokenSource@@6B@]
+                    00
+  0000000000001B67: E8 00 00 00 00     call        RhpNewFast
+  0000000000001B6C: 4C 8B 85 68 FF FF  mov         r8,qword ptr [rbp-98h]
+                    FF
+  0000000000001B73: 49 8D 48 08        lea         rcx,[r8+8]
+  0000000000001B77: 48 8B D0           mov         rdx,rax
+  0000000000001B7A: E8 00 00 00 00     call        RhpAssignRef
+  0000000000001B7F: 90                 nop
+  0000000000001B80: 48 8D 0D 00 00 00  lea         rcx,[??_7System_Console_System_ConsoleCancelEventHandler@@6B@]
+                    00
+  0000000000001B87: E8 00 00 00 00     call        RhpNewFast
+  0000000000001B8C: 4C 8B F0           mov         r14,rax
+  0000000000001B8F: 49 8B CE           mov         rcx,r14
+  0000000000001B92: 48 8B 95 68 FF FF  mov         rdx,qword ptr [rbp-98h]
+                    FF
+  0000000000001B99: E8 00 00 00 00     call        __DelegateCtor_S_P_CoreLib_System_Delegate__InitializeClosedInstance__Limitless_ProtectedBootstrap_ProtectedBootstrapProgram___c__DisplayClass1_0___Main_b__0
+  0000000000001B9E: 4C 89 B5 58 FF FF  mov         qword ptr [rbp-0A8h],r14
+                    FF
+  0000000000001BA5: 49 8B CE           mov         rcx,r14
+  0000000000001BA8: E8 03 76 00 00     call        System_Console_System_Console__add_CancelKeyPress
+  0000000000001BAD: 90                 nop
+  0000000000001BAE: 48 8B 85 68 FF FF  mov         rax,qword ptr [rbp-98h]
+                    FF
+  0000000000001BB5: 48 8B 48 08        mov         rcx,qword ptr [rax+8]
+  0000000000001BB9: 80 79 24 00        cmp         byte ptr [rcx+24h],0
+  0000000000001BBD: 0F 85 F5 00 00 00  jne         0000000000001CB8
+  0000000000001BC3: 48 89 4C 24 20     mov         qword ptr [rsp+20h],rcx
+  0000000000001BC8: 48 8B CF           mov         rcx,rdi
+  0000000000001BCB: 48 8B 55 D0        mov         rdx,qword ptr [rbp-30h]
+  0000000000001BCF: 4C 8B C6           mov         r8,rsi
+  0000000000001BD2: 44 8B CB           mov         r9d,ebx
+  0000000000001BD5: E8 26 42 00 00     call        Limitless_ProtectedBootstrap_BootstrapController__Run
+  0000000000001BDA: 8B F8              mov         edi,eax
+  0000000000001BDC: 85 DB              test        ebx,ebx
+  0000000000001BDE: 0F 84 BE 00 00 00  je          0000000000001CA2
+  0000000000001BE4: 48 8D 8D 70 FF FF  lea         rcx,[rbp-90h]
+                    FF
+  0000000000001BEB: BA 1F 00 00 00     mov         edx,1Fh
+  0000000000001BF0: 41 B8 01 00 00 00  mov         r8d,1
+  0000000000001BF6: E8 A5 14 06 00     call        S_P_CoreLib_System_Runtime_CompilerServices_DefaultInterpolatedStringHandler___ctor
+  0000000000001BFB: 0F 10 85 70 FF FF  movups      xmm0,xmmword ptr [rbp-90h]
+                    FF
+  0000000000001C02: 0F 11 45 A0        movups      xmmword ptr [rbp-60h],xmm0
+  0000000000001C06: 0F 10 45 80        movups      xmm0,xmmword ptr [rbp-80h]
+  0000000000001C0A: 0F 11 45 B0        movups      xmmword ptr [rbp-50h],xmm0
+  0000000000001C0E: 48 8B 4D 90        mov         rcx,qword ptr [rbp-70h]
+  0000000000001C12: 48 89 4D C0        mov         qword ptr [rbp-40h],rcx
+  0000000000001C16: 8B 4D B0           mov         ecx,dword ptr [rbp-50h]
+  0000000000001C19: 8B 55 C0           mov         edx,dword ptr [rbp-40h]
+  0000000000001C1C: 3B CA              cmp         ecx,edx
+  0000000000001C1E: 0F 87 9F 00 00 00  ja          0000000000001CC3
+  0000000000001C24: 48 8B 45 B8        mov         rax,qword ptr [rbp-48h]
+  0000000000001C28: 44 8B C1           mov         r8d,ecx
+  0000000000001C2B: 4A 8D 1C 40        lea         rbx,[rax+r8*2]
+  0000000000001C2F: 2B D1              sub         edx,ecx
+  0000000000001C31: 83 FA 1F           cmp         edx,1Fh
+  0000000000001C34: 73 12              jae         0000000000001C48
+  0000000000001C36: 48 8D 4D A0        lea         rcx,[rbp-60h]
+  0000000000001C3A: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000001C41: E8 7A 16 06 00     call        S_P_CoreLib_System_Runtime_CompilerServices_DefaultInterpolatedStringHandler__GrowThenCopyString
+  0000000000001C46: EB 44              jmp         0000000000001C8C
+  0000000000001C48: 0F 10 05 00 00 00  movups      xmm0,xmmword ptr [__readonlydata_Limitless_ProtectedBootstrap_ProtectedBootstrapProgram__Main]
+                    00
+  0000000000001C4F: 0F 11 03           movups      xmmword ptr [rbx],xmm0
+  0000000000001C52: 0F 10 05 10 00 00  movups      xmm0,xmmword ptr [__readonlydata_Limitless_ProtectedBootstrap_ProtectedBootstrapProgram__Main+10h]
+                    00
+  0000000000001C59: 0F 11 43 10        movups      xmmword ptr [rbx+10h],xmm0
+  0000000000001C5D: 0F 10 05 20 00 00  movups      xmm0,xmmword ptr [__readonlydata_Limitless_ProtectedBootstrap_ProtectedBootstrapProgram__Main+20h]
+                    00
+  0000000000001C64: 0F 11 43 20        movups      xmmword ptr [rbx+20h],xmm0
+  0000000000001C68: 48 B9 52 00 49 00  mov         rcx,49004600490052h
+                    46 00 49 00
+  0000000000001C72: 48 89 4B 30        mov         qword ptr [rbx+30h],rcx
+  0000000000001C76: C7 43 38 45 00 44  mov         dword ptr [rbx+38h],440045h
+                    00
+  0000000000001C7D: 66 C7 43 3C 3D 00  mov         word ptr [rbx+3Ch],3Dh
+  0000000000001C83: 8B 4D B0           mov         ecx,dword ptr [rbp-50h]
+  0000000000001C86: 83 C1 1F           add         ecx,1Fh
+  0000000000001C89: 89 4D B0           mov         dword ptr [rbp-50h],ecx
+  0000000000001C8C: 48 8D 4D A0        lea         rcx,[rbp-60h]
+  0000000000001C90: 8B D7              mov         edx,edi
+  0000000000001C92: E8 09 D1 11 00     call        S_P_CoreLib_System_Runtime_CompilerServices_DefaultInterpolatedStringHandler__AppendFormatted<Int32>
+  0000000000001C97: 48 8D 4D A0        lea         rcx,[rbp-60h]
+  0000000000001C9B: E8 80 14 06 00     call        S_P_CoreLib_System_Runtime_CompilerServices_DefaultInterpolatedStringHandler__ToStringAndClear
+  0000000000001CA0: EB 07              jmp         0000000000001CA9
+  0000000000001CA2: 48 8D 05 00 00 00  lea         rax,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000001CA9: 48 8B C8           mov         rcx,rax
+  0000000000001CAC: E8 FF 76 00 00     call        System_Console_System_Console__WriteLine_12
+  0000000000001CB1: 33 C9              xor         ecx,ecx
+  0000000000001CB3: 89 4D 9C           mov         dword ptr [rbp-64h],ecx
+  0000000000001CB6: EB 11              jmp         0000000000001CC9
+  0000000000001CB8: B9 46 00 00 00     mov         ecx,46h
+  0000000000001CBD: E8 5E 5F 02 00     call        S_P_CoreLib_System_ThrowHelper__ThrowObjectDisposedException_1
+  0000000000001CC2: CC                 int         3
+  0000000000001CC3: E8 A8 59 02 00     call        S_P_CoreLib_System_ThrowHelper__ThrowArgumentOutOfRangeException
+  0000000000001CC8: CC                 int         3
+  0000000000001CC9: 49 8B CE           mov         rcx,r14
+  0000000000001CCC: E8 FF 75 00 00     call        System_Console_System_Console__remove_CancelKeyPress
+  0000000000001CD1: 90                 nop
+  0000000000001CD2: 48 8B 85 68 FF FF  mov         rax,qword ptr [rbp-98h]
+                    FF
+  0000000000001CD9: 48 8B 58 08        mov         rbx,qword ptr [rax+8]
+  0000000000001CDD: 48 85 DB           test        rbx,rbx
+  0000000000001CE0: 74 18              je          0000000000001CFA
+  0000000000001CE2: 48 8B CB           mov         rcx,rbx
+  0000000000001CE5: BA 01 00 00 00     mov         edx,1
+  0000000000001CEA: 39 09              cmp         dword ptr [rcx],ecx
+  0000000000001CEC: E8 8F 6D 04 00     call        S_P_CoreLib_System_Threading_CancellationTokenSource__Dispose_0
+  0000000000001CF1: 48 8B CB           mov         rcx,rbx
+  0000000000001CF4: E8 17 E5 00 00     call        S_P_CoreLib_System_GC__SuppressFinalize
+  0000000000001CF9: 90                 nop
+  0000000000001CFA: 48 8B CE           mov         rcx,rsi
+  0000000000001CFD: E8 9E 63 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__Dispose
+  0000000000001D02: 90                 nop
+  0000000000001D03: 8B 45 9C           mov         eax,dword ptr [rbp-64h]
+  0000000000001D06: 48 81 C4 B0 00 00  add         rsp,0B0h
+                    00
+  0000000000001D0D: 5B                 pop         rbx
+  0000000000001D0E: 5E                 pop         rsi
+  0000000000001D0F: 5F                 pop         rdi
+  0000000000001D10: 41 5E              pop         r14
+  0000000000001D12: 5D                 pop         rbp
+  0000000000001D13: C3                 ret
+  0000000000001D14: 48 83 EC 28        sub         rsp,28h
+  0000000000001D18: 48 8B 8D 58 FF FF  mov         rcx,qword ptr [rbp-0A8h]
+                    FF
+  0000000000001D1F: E8 AC 75 00 00     call        System_Console_System_Console__remove_CancelKeyPress
+  0000000000001D24: 90                 nop
+  0000000000001D25: 48 83 C4 28        add         rsp,28h
+  0000000000001D29: C3                 ret
+  0000000000001D2A: 48 83 EC 28        sub         rsp,28h
+  0000000000001D2E: 48 8B 85 68 FF FF  mov         rax,qword ptr [rbp-98h]
+                    FF
+  0000000000001D35: 48 83 78 08 00     cmp         qword ptr [rax+8],0
+  0000000000001D3A: 74 1B              je          0000000000001D57
+  0000000000001D3C: 48 8B 58 08        mov         rbx,qword ptr [rax+8]
+  0000000000001D40: 48 8B CB           mov         rcx,rbx
+  0000000000001D43: BA 01 00 00 00     mov         edx,1
+  0000000000001D48: 39 09              cmp         dword ptr [rcx],ecx
+  0000000000001D4A: E8 31 6D 04 00     call        S_P_CoreLib_System_Threading_CancellationTokenSource__Dispose_0
+  0000000000001D4F: 48 8B CB           mov         rcx,rbx
+  0000000000001D52: E8 B9 E4 00 00     call        S_P_CoreLib_System_GC__SuppressFinalize
+  0000000000001D57: 90                 nop
+  0000000000001D58: 48 83 C4 28        add         rsp,28h
+  0000000000001D5C: C3                 ret
+  0000000000001D5D: 48 83 EC 28        sub         rsp,28h
+  0000000000001D61: 48 8B 8D 60 FF FF  mov         rcx,qword ptr [rbp-0A0h]
+                    FF
+  0000000000001D68: E8 33 63 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__Dispose
+  0000000000001D6D: 90                 nop
+  0000000000001D6E: 48 83 C4 28        add         rsp,28h
+  0000000000001D72: C3                 ret
+  0000000000001D73: 48 83 EC 28        sub         rsp,28h
+  0000000000001D77: E8 04 73 00 00     call        System_Console_System_Console__get_Error
+  0000000000001D7C: 48 8B C8           mov         rcx,rax
+  0000000000001D7F: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000001D86: 48 8B 00           mov         rax,qword ptr [rax]
+  0000000000001D89: FF 50 38           call        qword ptr [rax+38h]
+  0000000000001D8C: C7 45 9C 46 00 00  mov         dword ptr [rbp-64h],46h
+                    00
+  0000000000001D93: 48 8D 05 69 FF FF  lea         rax,[1D03h]
+                    FF
+  0000000000001D9A: 48 83 C4 28        add         rsp,28h
+  0000000000001D9E: C3                 ret
+  0000000000001D9F: 90                 nop
+
+Limitless_ProtectedBootstrap_BootstrapController__Run:
+  0000000000005E00: 55                 push        rbp
+  0000000000005E01: 41 57              push        r15
+  0000000000005E03: 41 56              push        r14
+  0000000000005E05: 57                 push        rdi
+  0000000000005E06: 56                 push        rsi
+  0000000000005E07: 53                 push        rbx
+  0000000000005E08: 48 83 EC 28        sub         rsp,28h
+  0000000000005E0C: 48 8D 6C 24 50     lea         rbp,[rsp+50h]
+  0000000000005E11: 48 8B F1           mov         rsi,rcx
+  0000000000005E14: 48 8B FA           mov         rdi,rdx
+  0000000000005E17: 49 8B D8           mov         rbx,r8
+  0000000000005E1A: 45 8B F1           mov         r14d,r9d
+  0000000000005E1D: 48 8D 0D 00 00 00  lea         rcx,[??_7Limitless_ProtectedBootstrap_BootstrapWriteGate@@6B@]
+                    00
+  0000000000005E24: E8 00 00 00 00     call        RhpNewFast
+  0000000000005E29: 4C 8B F8           mov         r15,rax
+  0000000000005E2C: 48 8B CE           mov         rcx,rsi
+  0000000000005E2F: 48 8B D7           mov         rdx,rdi
+  0000000000005E32: E8 E9 E2 FF FF     call        Limitless_ProtectedBootstrap_BootstrapPolicy__Parse
+  0000000000005E37: 48 8B D0           mov         rdx,rax
+  0000000000005E3A: 49 8B CF           mov         rcx,r15
+  0000000000005E3D: 4C 8B C3           mov         r8,rbx
+  0000000000005E40: 4C 8B 4D 30        mov         r9,qword ptr [rbp+30h]
+  0000000000005E44: E8 07 F6 FF FF     call        Limitless_ProtectedBootstrap_BootstrapWriteGate___ctor
+  0000000000005E49: 49 8B CF           mov         rcx,r15
+  0000000000005E4C: E8 AF F6 FF FF     call        Limitless_ProtectedBootstrap_BootstrapWriteGate__Validate
+  0000000000005E51: 45 84 F6           test        r14b,r14b
+  0000000000005E54: 0F 84 C3 00 00 00  je          0000000000005F1D
+  0000000000005E5A: 48 8B CB           mov         rcx,rbx
+  0000000000005E5D: 49 8B D7           mov         rdx,r15
+  0000000000005E60: 39 09              cmp         dword ptr [rcx],ecx
+  0000000000005E62: E8 49 20 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__Bind
+  0000000000005E67: 48 8D 05 00 00 00  lea         rax,[?__NONGCSTATICS@Limitless_ProtectedBootstrap_BootstrapPolicy@@]
+                    00
+  0000000000005E6E: 48 83 78 F8 00     cmp         qword ptr [rax-8],0
+  0000000000005E73: 0F 85 B3 00 00 00  jne         0000000000005F2C
+  0000000000005E79: 48 8B 35 00 00 00  mov         rsi,qword ptr [?__GCSTATICS@Limitless_ProtectedBootstrap_BootstrapPolicy@@]
+                    00
+  0000000000005E80: 48 8B 4E 10        mov         rcx,qword ptr [rsi+10h]
+  0000000000005E84: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_Collections_Generic_IEnumerable_1<String>__GetEnumerator_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005E8B: 41 FF 13           call        qword ptr [r11]
+  0000000000005E8E: 48 89 45 D0        mov         qword ptr [rbp-30h],rax
+  0000000000005E92: 48 8B 4D D0        mov         rcx,qword ptr [rbp-30h]
+  0000000000005E96: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_Collections_IEnumerator__MoveNext_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005E9D: 41 FF 13           call        qword ptr [r11]
+  0000000000005EA0: 85 C0              test        eax,eax
+  0000000000005EA2: 74 47              je          0000000000005EEB
+  0000000000005EA4: 48 8B 4D D0        mov         rcx,qword ptr [rbp-30h]
+  0000000000005EA8: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_Collections_Generic_IEnumerator_1<String>__get_Current_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005EAF: 41 FF 13           call        qword ptr [r11]
+  0000000000005EB2: 48 8B F8           mov         rdi,rax
+  0000000000005EB5: 49 8B 57 08        mov         rdx,qword ptr [r15+8]
+  0000000000005EB9: 48 8B 52 28        mov         rdx,qword ptr [rdx+28h]
+  0000000000005EBD: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000005EC4: 4C 8D 05 00 00 00  lea         r8,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000005ECB: E8 30 D8 00 00     call        String__Concat_7
+  0000000000005ED0: 4C 8B C0           mov         r8,rax
+  0000000000005ED3: 48 8B D7           mov         rdx,rdi
+  0000000000005ED6: 48 8B CB           mov         rcx,rbx
+  0000000000005ED9: E8 42 20 00 00     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__CreateProtected
+  0000000000005EDE: 49 8B CF           mov         rcx,r15
+  0000000000005EE1: 48 8B D7           mov         rdx,rdi
+  0000000000005EE4: E8 D7 FD FF FF     call        Limitless_ProtectedBootstrap_BootstrapWriteGate__Accept
+  0000000000005EE9: EB A7              jmp         0000000000005E92
+  0000000000005EEB: 48 8B 4D D0        mov         rcx,qword ptr [rbp-30h]
+  0000000000005EEF: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_IDisposable__Dispose_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005EF6: 41 FF 13           call        qword ptr [r11]
+  0000000000005EF9: 49 8B CF           mov         rcx,r15
+  0000000000005EFC: E8 7F FE FF FF     call        Limitless_ProtectedBootstrap_BootstrapWriteGate__Finish
+  0000000000005F01: 48 8B 4E 10        mov         rcx,qword ptr [rsi+10h]
+  0000000000005F05: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_Collections_Generic_IReadOnlyCollection_1<String>__get_Count_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005F0C: 39 09              cmp         dword ptr [rcx],ecx
+  0000000000005F0E: 48 83 C4 28        add         rsp,28h
+  0000000000005F12: 5B                 pop         rbx
+  0000000000005F13: 5E                 pop         rsi
+  0000000000005F14: 5F                 pop         rdi
+  0000000000005F15: 41 5E              pop         r14
+  0000000000005F17: 41 5F              pop         r15
+  0000000000005F19: 5D                 pop         rbp
+  0000000000005F1A: 49 FF 23           jmp         qword ptr [r11]
+  0000000000005F1D: 33 C0              xor         eax,eax
+  0000000000005F1F: 48 83 C4 28        add         rsp,28h
+  0000000000005F23: 5B                 pop         rbx
+  0000000000005F24: 5E                 pop         rsi
+  0000000000005F25: 5F                 pop         rdi
+  0000000000005F26: 41 5E              pop         r14
+  0000000000005F28: 41 5F              pop         r15
+  0000000000005F2A: 5D                 pop         rbp
+  0000000000005F2B: C3                 ret
+  0000000000005F2C: E8 00 00 00 00     call        __GetGCStaticBase_Limitless_ProtectedBootstrap_BootstrapPolicy
+  0000000000005F31: E9 43 FF FF FF     jmp         0000000000005E79
+  0000000000005F36: 48 83 EC 28        sub         rsp,28h
+  0000000000005F3A: 48 83 7D D0 00     cmp         qword ptr [rbp-30h],0
+  0000000000005F3F: 74 0E              je          0000000000005F4F
+  0000000000005F41: 48 8B 4D D0        mov         rcx,qword ptr [rbp-30h]
+  0000000000005F45: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_IDisposable__Dispose_Limitless_ProtectedBootstrap_BootstrapController__Run]
+                    00
+  0000000000005F4C: 41 FF 13           call        qword ptr [r11]
+  0000000000005F4F: 90                 nop
+  0000000000005F50: 48 83 C4 28        add         rsp,28h
+  0000000000005F54: C3                 ret
+  0000000000005F55: 90                 nop
+  0000000000005F56: 90                 nop
+  0000000000005F57: 90                 nop
+  0000000000005F58: 90                 nop
+  0000000000005F59: 90                 nop
+  0000000000005F5A: 90                 nop
+  0000000000005F5B: 90                 nop
+  0000000000005F5C: 90                 nop
+  0000000000005F5D: 90                 nop
+  0000000000005F5E: 90                 nop
+  0000000000005F5F: 90                 nop
+
+Limitless_ProtectedBootstrap_WindowsBootstrapHost__CreateProtected:
+  0000000000007F20: 55                 push        rbp
+  0000000000007F21: 57                 push        rdi
+  0000000000007F22: 56                 push        rsi
+  0000000000007F23: 53                 push        rbx
+  0000000000007F24: 48 83 EC 48        sub         rsp,48h
+  0000000000007F28: 48 8D 6C 24 60     lea         rbp,[rsp+60h]
+  0000000000007F2D: 0F 57 E4           xorps       xmm4,xmm4
+  0000000000007F30: 0F 29 65 C0        movaps      xmmword ptr [rbp-40h],xmm4
+  0000000000007F34: 0F 29 65 D0        movaps      xmmword ptr [rbp-30h],xmm4
+  0000000000007F38: 33 C0              xor         eax,eax
+  0000000000007F3A: 48 89 45 E0        mov         qword ptr [rbp-20h],rax
+  0000000000007F3E: 48 8B DA           mov         rbx,rdx
+  0000000000007F41: 49 8B F0           mov         rsi,r8
+  0000000000007F44: 48 8B 79 10        mov         rdi,qword ptr [rcx+10h]
+  0000000000007F48: 48 85 FF           test        rdi,rdi
+  0000000000007F4B: 0F 84 B5 00 00 00  je          0000000000008006
+  0000000000007F51: 4C 8D 45 E0        lea         r8,[rbp-20h]
+  0000000000007F55: 4C 8D 4D D8        lea         r9,[rbp-28h]
+  0000000000007F59: 48 8B CE           mov         rcx,rsi
+  0000000000007F5C: BA 01 00 00 00     mov         edx,1
+  0000000000007F61: E8 1A E9 FF FF     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__ConvertStringSecurityDescriptorToSecurityDescriptorW
+  0000000000007F66: 85 C0              test        eax,eax
+  0000000000007F68: 0F 84 BF 00 00 00  je          000000000000802D
+  0000000000007F6E: E8 7D 23 10 00     call        S_P_CoreLib_System_Runtime_InteropServices_Marshal__SizeOf_2<Limitless_ProtectedBootstrap_WindowsBootstrapHost_Attributes>
+  0000000000007F73: 48 8B 4D E0        mov         rcx,qword ptr [rbp-20h]
+  0000000000007F77: 89 45 C0           mov         dword ptr [rbp-40h],eax
+  0000000000007F7A: 48 89 4D C8        mov         qword ptr [rbp-38h],rcx
+  0000000000007F7E: 33 C9              xor         ecx,ecx
+  0000000000007F80: 89 4D D0           mov         dword ptr [rbp-30h],ecx
+  0000000000007F83: 48 8B CF           mov         rcx,rdi
+  0000000000007F86: 48 8B D3           mov         rdx,rbx
+  0000000000007F89: 4C 8B C6           mov         r8,rsi
+  0000000000007F8C: E8 5F DC FF FF     call        Limitless_ProtectedBootstrap_BootstrapWriteGate__BeforeNativeCreate
+  0000000000007F91: 48 8D 55 C0        lea         rdx,[rbp-40h]
+  0000000000007F95: 48 8B CB           mov         rcx,rbx
+  0000000000007F98: E8 43 E0 FF FF     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__CreateDirectoryW
+  0000000000007F9D: 85 C0              test        eax,eax
+  0000000000007F9F: 75 52              jne         0000000000007FF3
+  0000000000007FA1: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_ComponentModel_Win32Exception@@6B@]
+                    00
+  0000000000007FA8: E8 00 00 00 00     call        RhpNewFast
+  0000000000007FAD: 48 8B D8           mov         rbx,rax
+  0000000000007FB0: 65 48 8B 0C 25 58  mov         rcx,qword ptr gs:[58h]
+                    00 00 00
+  0000000000007FB9: 8B 05 00 00 00 00  mov         eax,dword ptr [_tls_index]
+  0000000000007FBF: BA 00 00 00 00     mov         edx,offset tls_InlinedThreadStatics
+  0000000000007FC4: 48 03 14 C1        add         rdx,qword ptr [rcx+rax*8]
+  0000000000007FC8: 48 8B 32           mov         rsi,qword ptr [rdx]
+  0000000000007FCB: 48 85 F6           test        rsi,rsi
+  0000000000007FCE: 75 0F              jne         0000000000007FDF
+  0000000000007FD0: 48 8B CA           mov         rcx,rdx
+  0000000000007FD3: 48 8D 05 C6 7F 07  lea         rax,[S_P_CoreLib_Internal_Runtime_ThreadStatics__GetInlinedThreadStaticBaseSlow]
+                    00
+  0000000000007FDA: FF D0              call        rax
+  0000000000007FDC: 48 8B F0           mov         rsi,rax
+  0000000000007FDF: 8B 56 78           mov         edx,dword ptr [rsi+78h]
+  0000000000007FE2: 48 8B CB           mov         rcx,rbx
+  0000000000007FE5: E8 E6 B9 03 00     call        S_P_CoreLib_System_ComponentModel_Win32Exception___ctor_0
+  0000000000007FEA: 48 8B CB           mov         rcx,rbx
+  0000000000007FED: E8 00 00 00 00     call        RhpThrowEx
+  0000000000007FF2: CC                 int         3
+  0000000000007FF3: 48 8B 4D E0        mov         rcx,qword ptr [rbp-20h]
+  0000000000007FF7: E8 A4 E9 FF FF     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__LocalFree
+  0000000000007FFC: 90                 nop
+  0000000000007FFD: 48 83 C4 48        add         rsp,48h
+  0000000000008001: 5B                 pop         rbx
+  0000000000008002: 5E                 pop         rsi
+  0000000000008003: 5F                 pop         rdi
+  0000000000008004: 5D                 pop         rbp
+  0000000000008005: C3                 ret
+  0000000000008006: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  000000000000800D: E8 00 00 00 00     call        RhpNewFast
+  0000000000008012: 48 8B D8           mov         rbx,rax
+  0000000000008015: 48 8B CB           mov         rcx,rbx
+  0000000000008018: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000801F: E8 8C 92 01 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000008024: 48 8B CB           mov         rcx,rbx
+  0000000000008027: E8 00 00 00 00     call        RhpThrowEx
+  000000000000802C: CC                 int         3
+  000000000000802D: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_ComponentModel_Win32Exception@@6B@]
+                    00
+  0000000000008034: E8 00 00 00 00     call        RhpNewFast
+  0000000000008039: 48 8B D8           mov         rbx,rax
+  000000000000803C: 65 48 8B 0C 25 58  mov         rcx,qword ptr gs:[58h]
+                    00 00 00
+  0000000000008045: 8B 05 00 00 00 00  mov         eax,dword ptr [_tls_index]
+  000000000000804B: BA 00 00 00 00     mov         edx,offset tls_InlinedThreadStatics
+  0000000000008050: 48 03 14 C1        add         rdx,qword ptr [rcx+rax*8]
+  0000000000008054: 48 8B 32           mov         rsi,qword ptr [rdx]
+  0000000000008057: 48 85 F6           test        rsi,rsi
+  000000000000805A: 75 0F              jne         000000000000806B
+  000000000000805C: 48 8B CA           mov         rcx,rdx
+  000000000000805F: 48 8D 05 3A 7F 07  lea         rax,[S_P_CoreLib_Internal_Runtime_ThreadStatics__GetInlinedThreadStaticBaseSlow]
+                    00
+  0000000000008066: FF D0              call        rax
+  0000000000008068: 48 8B F0           mov         rsi,rax
+  000000000000806B: 8B 56 78           mov         edx,dword ptr [rsi+78h]
+  000000000000806E: 48 8B CB           mov         rcx,rbx
+  0000000000008071: E8 5A B9 03 00     call        S_P_CoreLib_System_ComponentModel_Win32Exception___ctor_0
+  0000000000008076: 48 8B CB           mov         rcx,rbx
+  0000000000008079: E8 00 00 00 00     call        RhpThrowEx
+  000000000000807E: CC                 int         3
+  000000000000807F: 48 83 EC 28        sub         rsp,28h
+  0000000000008083: 48 8B 4D E0        mov         rcx,qword ptr [rbp-20h]
+  0000000000008087: E8 14 E9 FF FF     call        Limitless_ProtectedBootstrap_WindowsBootstrapHost__LocalFree
+  000000000000808C: 90                 nop
+  000000000000808D: 48 83 C4 28        add         rsp,28h
+  0000000000008091: C3                 ret
+  0000000000008092: 90                 nop
+  0000000000008093: 90                 nop
+  0000000000008094: 90                 nop
+  0000000000008095: 90                 nop
+  0000000000008096: 90                 nop
+  0000000000008097: 90                 nop
+  0000000000008098: 90                 nop
+  0000000000008099: 90                 nop
+  000000000000809A: 90                 nop
+  000000000000809B: 90                 nop
+  000000000000809C: 90                 nop
+  000000000000809D: 90                 nop
+  000000000000809E: 90                 nop
+  000000000000809F: 90                 nop
+
+Limitless_ProtectedBootstrap_BootstrapWriteGate__VerifyNew:
+  0000000000005B50: 56                 push        rsi
+  0000000000005B51: 53                 push        rbx
+  0000000000005B52: 48 83 EC 28        sub         rsp,28h
+  0000000000005B56: 48 8B F1           mov         rsi,rcx
+  0000000000005B59: 48 8B DA           mov         rbx,rdx
+  0000000000005B5C: 48 8B CB           mov         rcx,rbx
+  0000000000005B5F: 49 8B D0           mov         rdx,r8
+  0000000000005B62: E8 B9 ED FF FF     call        Limitless_ProtectedBootstrap_BootstrapPolicy__Node
+  0000000000005B67: 48 8B 56 08        mov         rdx,qword ptr [rsi+8]
+  0000000000005B6B: 48 8B 52 28        mov         rdx,qword ptr [rdx+28h]
+  0000000000005B6F: 48 8B 4B 18        mov         rcx,qword ptr [rbx+18h]
+  0000000000005B73: E8 E8 F1 FF FF     call        Limitless_ProtectedBootstrap_BootstrapPolicy__AdministrativeSecurity
+  0000000000005B78: 48 8B 5B 20        mov         rbx,qword ptr [rbx+20h]
+  0000000000005B7C: 48 8B 76 20        mov         rsi,qword ptr [rsi+20h]
+  0000000000005B80: 48 8D 05 00 00 00  lea         rax,[?__NONGCSTATICS@Limitless_ProtectedBootstrap_BootstrapPolicy@@]
+                    00
+  0000000000005B87: 48 83 78 F8 00     cmp         qword ptr [rax-8],0
+  0000000000005B8C: 75 31              jne         0000000000005BBF
+  0000000000005B8E: 48 8B 0D 00 00 00  mov         rcx,qword ptr [?__GCSTATICS@Limitless_ProtectedBootstrap_BootstrapPolicy@@]
+                    00
+  0000000000005B95: 48 8B 49 08        mov         rcx,qword ptr [rcx+8]
+  0000000000005B99: 4C 8D 1D 00 00 00  lea         r11,[__InterfaceDispatchCell_S_P_CoreLib_System_Collections_Generic_IReadOnlyList_1<String>__get_Item_Limitless_ProtectedBootstrap_BootstrapWriteGate__VerifyNew]
+                    00
+  0000000000005BA0: 33 D2              xor         edx,edx
+  0000000000005BA2: 41 FF 13           call        qword ptr [r11]
+  0000000000005BA5: 48 8B D0           mov         rdx,rax
+  0000000000005BA8: 48 8B CE           mov         rcx,rsi
+  0000000000005BAB: 39 09              cmp         dword ptr [rcx],ecx
+  0000000000005BAD: E8 BE FD 0F 00     call        S_P_CoreLib_System_Collections_Generic_Dictionary_2<System___Canon__System___Canon>__get_Item
+  0000000000005BB2: 48 39 58 20        cmp         qword ptr [rax+20h],rbx
+  0000000000005BB6: 75 0E              jne         0000000000005BC6
+  0000000000005BB8: 48 83 C4 28        add         rsp,28h
+  0000000000005BBC: 5B                 pop         rbx
+  0000000000005BBD: 5E                 pop         rsi
+  0000000000005BBE: C3                 ret
+  0000000000005BBF: E8 00 00 00 00     call        __GetGCStaticBase_Limitless_ProtectedBootstrap_BootstrapPolicy
+  0000000000005BC4: EB C8              jmp         0000000000005B8E
+  0000000000005BC6: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  0000000000005BCD: E8 00 00 00 00     call        RhpNewFast
+  0000000000005BD2: 48 8B D8           mov         rbx,rax
+  0000000000005BD5: 48 8B CB           mov         rcx,rbx
+  0000000000005BD8: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000005BDF: E8 CC B6 01 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000005BE4: 48 8B CB           mov         rcx,rbx
+  0000000000005BE7: E8 00 00 00 00     call        RhpThrowEx
+  0000000000005BEC: CC                 int         3
+  0000000000005BED: 90                 nop
+  0000000000005BEE: 90                 nop
+  0000000000005BEF: 90                 nop

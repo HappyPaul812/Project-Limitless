@@ -1,0 +1,433 @@
+{
+  "native_bodies_pass": 35,
+  "native_bodies": [
+    {
+      "method": "ProtectedBootstrapProgram__Arguments",
+      "coff_address": "0x18c0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 7392,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "ProtectedBootstrapProgram__Main",
+      "coff_address": "0x1ad0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 7920,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapPolicy__Parse",
+      "coff_address": "0x4120",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 17728,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapPolicy__Authorization",
+      "coff_address": "0x4560",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 18816,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapPolicy__Ancestor",
+      "coff_address": "0x49a0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 19904,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 16,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapPolicy__AdministrativeSecurity",
+      "coff_address": "0x4d60",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 20864,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 13,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapWriteGate__Validate",
+      "coff_address": "0x5500",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 22816,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapWriteGate__VerifyNew",
+      "coff_address": "0x5b50",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 24432,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 12,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapWriteGate__BeforeNativeCreate",
+      "coff_address": "0x5bf0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 24592,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 16,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapWriteGate__Accept",
+      "coff_address": "0x5cc0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 24800,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 12,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapWriteGate__Finish",
+      "coff_address": "0x5d80",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 24992,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 27,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "BootstrapController__Run",
+      "coff_address": "0x5e00",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 25120,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Administrator",
+      "coff_address": "0x6d20",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 28992,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 12,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Canonical",
+      "coff_address": "0x7120",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 30016,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Open",
+      "coff_address": "0x71a0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 30144,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Security",
+      "coff_address": "0x7270",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 30352,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Read",
+      "coff_address": "0x73c0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 30688,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__PinAndRead",
+      "coff_address": "0x77c0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 31712,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Exists",
+      "coff_address": "0x7830",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 31824,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__ProtectedFile",
+      "coff_address": "0x78e0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 32000,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 24,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__ReadProtectedAuthorization",
+      "coff_address": "0x7ad0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 32496,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 6,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__ObserveActor",
+      "coff_address": "0x7be0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 32768,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Bind",
+      "coff_address": "0x7eb0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 33488,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 30,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__CreateProtected",
+      "coff_address": "0x7f20",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 33600,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__Dispose",
+      "coff_address": "0x80a0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 33984,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 16,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__CreateDirectoryW",
+      "coff_address": "0x5fe0",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 25600,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__ConvertStringSecurityDescriptorToSecurityDescriptorW",
+      "coff_address": "0x6880",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 27808,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetFileInformationByHandleEx",
+      "coff_address": "0x6210",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 26160,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetFileId",
+      "coff_address": "0x6350",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 26480,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetFinalPathNameByHandleW",
+      "coff_address": "0x6490",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 26800,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetHandleInformation",
+      "coff_address": "0x6620",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 27200,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetSecurityInfo",
+      "coff_address": "0x6740",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 27488,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__OpenThreadToken",
+      "coff_address": "0x6a50",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 28272,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__OpenProcessToken",
+      "coff_address": "0x6b40",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 28512,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 12,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "WindowsBootstrapHost__GetTokenInformation",
+      "coff_address": "0x6c20",
+      "coff_section": ".managedcode$I",
+      "pe_raw_offset": 28736,
+      "matched_prefix_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "status": "PASS_NATIVE_BODY_PREFIX_MATCH",
+      "pe_executable_section": ".text"
+    }
+  ],
+  "direct_pe_branches_pass": 10,
+  "direct_pe_branches": [
+    {
+      "caller": "ProtectedBootstrapProgram__Main",
+      "target": "BootstrapController__Run",
+      "instruction_raw_offset": 8181,
+      "target_raw_offset": 25120,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "BootstrapController__Run",
+      "target": "BootstrapWriteGate__Validate",
+      "instruction_raw_offset": 25196,
+      "target_raw_offset": 22816,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__CreateProtected",
+      "target": "BootstrapWriteGate__BeforeNativeCreate",
+      "instruction_raw_offset": 33708,
+      "target_raw_offset": 24592,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__CreateProtected",
+      "target": "WindowsBootstrapHost__CreateDirectoryW",
+      "instruction_raw_offset": 33720,
+      "target_raw_offset": 25600,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "BootstrapWriteGate__VerifyNew",
+      "target": "BootstrapPolicy__AdministrativeSecurity",
+      "instruction_raw_offset": 24467,
+      "target_raw_offset": 20864,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "BootstrapWriteGate__Accept",
+      "target": "BootstrapWriteGate__VerifyNew",
+      "instruction_raw_offset": 24902,
+      "target_raw_offset": 24432,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__Read",
+      "target": "WindowsBootstrapHost__Security",
+      "instruction_raw_offset": 31221,
+      "target_raw_offset": 30352,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__Administrator",
+      "target": "WindowsBootstrapHost__OpenThreadToken",
+      "instruction_raw_offset": 29077,
+      "target_raw_offset": 28272,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__Administrator",
+      "target": "WindowsBootstrapHost__OpenProcessToken",
+      "instruction_raw_offset": 29247,
+      "target_raw_offset": 28512,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    },
+    {
+      "caller": "WindowsBootstrapHost__Administrator",
+      "target": "WindowsBootstrapHost__GetTokenInformation",
+      "instruction_raw_offset": 29288,
+      "target_raw_offset": 28736,
+      "status": "PASS_FINAL_PE_DIRECT_BRANCH"
+    }
+  ],
+  "create_failure_exception_branch_present": true,
+  "main_hold_literal_in_final_pe": true,
+  "main_reaches_controller_not_unconditional_throw": true,
+  "method": "COFF native code prefix uniquely matched to executable final PE section; relocation fields masked. Direct branches resolved against final PE bytes.",
+  "runtime_proven": false
+}

@@ -1,3 +1,8 @@
+## 2026-10-31 Discord V2 Bootstrap 단발 NativeAOT PASS / 토요일 마감 인계
+
+기준48d3acc8·코드5a105bca무변경·브랜치 codex/discord-v2-bootstrap-native-build-20261031. E격리 **1회발행/exit0**, 새BootstrapSHA `2FF5669350A6761A7EB979F6133A4B0A85B44F5440F96A05644A57601026349E`·2,951,168바이트·PE32+AMD64/CLR없음·경고/IL2091 0. 최종PE35함수/10핵심분기정적PASS·실Windows/NATIVE실행NOT_VERIFIED·59PASS기록보존/재시험0. [빌드/보존/잔여조건/11월7일순서](../../Discord_V2_Bootstrap_NativeBuild_SaturdayClose_20261031.md). V3엔진2026.10.31.03·파일SHA유지·공식정상판정NOT_VERIFIED. 실제C보호폴더/ACL·EXE실행/계정TaskOnBootV3/UnitySave변경0·기존이미지/binding보존·NO_GO/MANUAL/EXECUTION_HOLD.
+
+**운영방침:** Discord개발은토요일만·이번미완료는HOLD보존·11월2일부터평일Limitless게임개발복귀·다음Discord작업일 **2026-11-07**. 기존cutoff **2026-11-01 23:59:59KST**/계정만료인계값11-02 00:00자동연장금지. 11/7에는현코드cutoff만료상태이므로새지시/시간창/계정신뢰검토·영향코드새빌드/새SHA승인없이오늘이미지/옛승인재사용불가. 보호staging·승인자료·실Bootstrap/배포/Task/FAKE_ONLY모두별도승인·자동예약재개0·Push main변경0.
 ## 2026-10-31 Discord V2 독립 Bootstrap 구현·신규59PASS / 실제 생성 HOLD
 
 기준871ee2c9·브랜치 codex/discord-v2-protected-bootstrap-20261031·최초코드b6c9786f/최종 **5a105bcadedd8f75dfe0c864def4f42dfc921ecf**. 기존배포/Task/계정과분리한고정6경로전용Bootstrap 구현: 생성시SECURITY_ATTRIBUTES/관리자전용D:P, full관리자·비위장/승인·selfSHA/부모pin·SDhash/filekey/단계별현재시각재검증·최종경로/owner/DACL/HANDLEreadback·기존항목/경합/부분실패시HOLD/삭제재시도없음. 관리형 **57+후속동일host결합2=59고유PASS/FAIL0**, 컴파일경고오류0·57재실행/기존시험반복0. [구현/단계별증거/추가승인](../../Discord_V2_ProtectedBootstrap_Implementation_20261031.md). 실제Windowsbackend/Main/대상폴더ACL변경/NativeAOT발행/EXE실행0·실Windows생성NOT_VERIFIED·새도구빌드/봉인/보호staging/관리자실행승인선행필요. 기존2이미지/Nativebinding/배포소스보존·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장·이전승인재사용금지·Push main변경0.
