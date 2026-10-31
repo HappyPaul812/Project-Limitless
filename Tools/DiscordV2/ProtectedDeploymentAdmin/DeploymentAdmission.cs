@@ -10,6 +10,7 @@ internal sealed class DeploymentRequest
     public string DeploymentId { get; set; }="";
     public string TrialId { get; set; }="";
     public string ToolSha256 { get; set; }="";
+    public string LedgerRoot { get; set; }="";
     public string ManifestPath { get; set; }="";
     public string ManifestSha256 { get; set; }="";
     public string ApprovalPath { get; set; }="";
@@ -38,6 +39,8 @@ internal interface IDeploymentHost:IProtectedDeployment
     byte[] ReadProtected(string path,int limit);
     DeploymentActor ObserveActor();
     void BindBoundary(DeploymentWriteBoundary boundary);
+    string LedgerRoot { get; }
+    void PinLedger();
 }
 
 internal sealed class DeploymentAdmission
@@ -77,6 +80,7 @@ internal sealed class DeploymentAdmission
     internal void Validate()
     {
         var r=Request;
+        DeploymentLedgerPolicy.Root(r.LedgerRoot,host.LedgerRoot,binding);host.PinLedger();
         AdmissionPolicy.Require(ProtectedDeployment.Hash(raw)==rawSha&&r.Approved&&r.Profile=="INDEPENDENT_ADMIN_DEPLOY_V1"
             && Guid.TryParseExact(r.DeploymentId,"N",out var id)&&id!=Guid.Empty&&id.ToString("N")==r.DeploymentId
             && r.TrialId==NativeTrialPolicy.CandidateTrialId,"DEPLOY_REQUEST_HOLD");

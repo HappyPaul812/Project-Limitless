@@ -16,6 +16,8 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
     private readonly List<SafeFileHandle> pins=[];
     private readonly Dictionary<string,SafeFileHandle> sources=new(StringComparer.Ordinal);
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
+    public string LedgerRoot=>DeploymentLedgerBinding.Root;
+    private SafeFileHandle? ledgerHandle;
     internal AdminDeploymentWindows(string path,string expectedSha)
     { requestPath=Path.GetFullPath(path);requestSha=expectedSha; }
     public void BindBoundary(DeploymentWriteBoundary value)
@@ -60,9 +62,9 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
     {
         internal nint Pointer;
         internal string Text;
-        internal Security(string mask)
+        internal Security(string mask,bool ledger=false)
         {
-            Text=DeploymentSecurityPolicy.Sddl(mask,Native.Worker);
+            Text=ledger?DeploymentLedgerPolicy.Sddl:DeploymentSecurityPolicy.Sddl(mask,Native.Worker);
             AdmissionWindows.Check(ConvertStringSecurityDescriptorToSecurityDescriptorW(Text,1,out Pointer,out _));
         }
         internal AdmissionWindows.Attributes Attributes=>new(){Size=(uint)Marshal.SizeOf<AdmissionWindows.Attributes>(),Descriptor=Pointer,Inherit=0};
@@ -92,12 +94,38 @@ internal sealed class AdminDeploymentWindows : IDeploymentHost,IDisposable
         // 원본 read 핸들은 전체 적용 동안 유지하여 write/delete 공유를 허용하지 않습니다.
         sources.Add(source.Name,file);
     }
+    public void PinLedger()
+    {
+        EnsureAdmin();DeploymentLedgerPolicy.Root(LedgerRoot,DeploymentLedgerBinding.Root,AdmissionBinding.Current);
+        for(string? p=Path.GetDirectoryName(LedgerRoot);p is not null;p=Path.GetDirectoryName(p))PinAncestor(p);
+        if(ledgerHandle is null){ledgerHandle=AdmissionWindows.Pin(LedgerRoot,true);pins.Add(ledgerHandle);}
+        DeploymentLedgerPolicy.Security(new RawSecurityDescriptor(AdmissionWindows.Descriptor(ledgerHandle.DangerousGetHandle(),1),0));
+    }
+    [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]
+    private static extern uint GetFinalPathNameByHandleW(SafeFileHandle handle,StringBuilder path,uint length,uint flags);
+    private sealed class LedgerIo(AdminDeploymentWindows owner,DeploymentStep step):IDeploymentLedgerIo
+    {
+        public void PinAndValidate()=>owner.PinLedger();
+        public Stream CreateNew(string path)
+        {
+            AdmissionPolicy.Require(path==DeploymentLedgerPolicy.RecordPath(owner.LedgerRoot,step.Target),"DEPLOY_LEDGER_REDIRECT_HOLD");
+            using var security=new Security("",ledger:true);var a=security.Attributes;
+            owner.Boundary(step);
+            var handle=CreateFileW(path,0x120003,0,ref a,1,0x80200000,0);
+            if(handle.IsInvalid){int error=Marshal.GetLastWin32Error();handle.Dispose();throw new Win32Exception(error);}
+            try {
+                DeploymentLedgerPolicy.Security(new RawSecurityDescriptor(AdmissionWindows.Descriptor(handle.DangerousGetHandle(),1),0));
+                Native.Check(Native.GetHandleInformation(handle.DangerousGetHandle(),out uint flags));AdmissionPolicy.Require((flags&1)==0,"DEPLOY_LEDGER_INHERIT_HANDLE");
+                var final=new StringBuilder(32768);uint length=GetFinalPathNameByHandleW(handle,final,(uint)final.Capacity,0);
+                AdmissionPolicy.Require(length>0&&length<final.Capacity&&string.Equals(final.ToString(),@"\\?\"+path,StringComparison.OrdinalIgnoreCase),"DEPLOY_LEDGER_FINAL_PATH");
+                return new FileStream(handle,FileAccess.ReadWrite);
+            } catch {handle.Dispose();throw;} // 생성된 기록은 삭제하지 않으며 불확실한 소비를 재사용하지 않습니다.
+        }
+    }
     public void ConsumeApproval(string id,string sha)
     {
         var step=new DeploymentStep(DeploymentStepKind.Consume,id,Sha:sha);Boundary(step);
-        string path=Path.Combine(Path.GetDirectoryName(requestPath)!,id+".deploy-consumed");
-        using var file=AdmissionWindows.CreateAdminRecord(path);
-        Boundary(step);file.Write(Encoding.UTF8.GetBytes(id+"\n"+sha+"\n"));((FileStream)file).Flush(true);
+        DeploymentLedger.Consume(LedgerRoot,id,sha,new LedgerIo(this,step),()=>Boundary(step));
     }
     public void CreateDirectoryNew(string path,bool evidence)
     {

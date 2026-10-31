@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Security.AccessControl;
 
 // 메모리 host만 실행합니다. 독립 도구 Main/Windows backend/실제 이미지·계정·Task를 호출하지 않습니다.
-internal static class DeploymentAdminTests
+internal static partial class DeploymentAdminTests
 {
     private static readonly DateTimeOffset Now=new(2026,10,31,6,0,0,TimeSpan.Zero);
     private static readonly AdmissionBinding Binding=new(Native.Worker,Native.TaskPath,Native.CodeRoot,Native.EvidenceRoot);
@@ -38,7 +38,7 @@ internal static class DeploymentAdminTests
                 Files=[new(){Name="Supervisor.exe",Source=@"X:\Images\Supervisor.exe",Sha256=DeploymentAdmission.SupervisorSha,Bytes=7559680},new(){Name="Probe.exe",Source=@"X:\Images\Probe.exe",Sha256=DeploymentAdmission.ProbeSha,Bytes=1892352},
                     new(){Name="TrialContract.json",Source=ContractPath},new(){Name=trial+".fake-only-trust.json",Source=trustPath,Sha256=Hash(trustRaw),Bytes=trustRaw.Length},new(){Name=trial+".fake-only-trust-basis.txt",Source=basisPath,Sha256=Hash(basis),Bytes=basis.Length}]};
             Approval=new(){Approved=true,Profile="PROTECTED_DEPLOYMENT_V1",DeploymentId="11111111111111111111111111111111",TrialId=trial,ExpiresUtc=expiry};
-            Request=new(){Approved=true,Profile="INDEPENDENT_ADMIN_DEPLOY_V1",DeploymentId=Approval.DeploymentId,TrialId=trial,ToolSha256=new('d',64),ManifestPath=ManifestPath,ApprovalPath=ApprovalPath,ContractPath=ContractPath,RiskBasisPath=RiskPath,ExpiresUtc=expiry,CreateRoots=true,CopyFiles=true,CredentialsReviewed=true,OtherLaunchPathsReviewed=true,ImageTrustReviewed=true,PrivilegedToolRiskAccepted=true};
+            Request=new(){Approved=true,Profile="INDEPENDENT_ADMIN_DEPLOY_V1",DeploymentId=Approval.DeploymentId,TrialId=trial,ToolSha256=new('d',64),LedgerRoot=Host.LedgerRoot,ManifestPath=ManifestPath,ApprovalPath=ApprovalPath,ContractPath=ContractPath,RiskBasisPath=RiskPath,ExpiresUtc=expiry,CreateRoots=true,CopyFiles=true,CredentialsReviewed=true,OtherLaunchPathsReviewed=true,ImageTrustReviewed=true,PrivilegedToolRiskAccepted=true};
             Seal();
         }
         internal void Seal()
@@ -57,7 +57,7 @@ internal static class DeploymentAdminTests
     {
         internal readonly Dictionary<string,byte[]> Inputs=[];
         internal HashSet<string> Directories=[@"X:\"],Files=[],Consumed=[];
-        internal DateTimeOffset Clock=Now;
+        internal DateTimeOffset Clock=DeploymentAdminTests.Now;
         internal DeploymentActor Actor=new(true,true,new('d',64));
         internal int Consumes,DirectoryWrites,Copies;
         internal int Deletes=>0;
@@ -66,6 +66,8 @@ internal static class DeploymentAdminTests
         internal Action? OnActor;
         private DeploymentWriteBoundary? boundary;
         public DateTimeOffset Now=>Clock;
+        public string LedgerRoot=>@"X:\FixedAdminLedger";
+        public void PinLedger()=>DeploymentLedgerPolicy.Root(LedgerRoot,LedgerRoot,Binding);
         public byte[] ReadProtected(string path,int limit){if(BadProtected||!Inputs.TryGetValue(path,out var b)||b.Length>limit)throw new IOException("PROTECTED_INPUT_HOLD");return (byte[])b.Clone();}
         public DeploymentActor ObserveActor(){OnActor?.Invoke();return Actor;}
         public void BindBoundary(DeploymentWriteBoundary b){if(boundary is not null)throw new IOException("BOUND");boundary=b;}
@@ -79,8 +81,10 @@ internal static class DeploymentAdminTests
         public void CreateDirectoryNew(string path,bool evidence){Guard(new(DeploymentStepKind.Directory,path,evidence));if(FailDirectory)throw new IOException("CREATE_FAILED");if(!Directories.Add(path))throw new IOException("EXISTS");DirectoryWrites++;}
         public void CopyNew(string root,DeploymentFile file){string path=Path.Combine(root,file.Name);Guard(new(DeploymentStepKind.Copy,path,File:file));if(!Files.Add(path))throw new IOException("EXISTS");Copies++;if(FailCopyReadback)throw new IOException("SHA_OR_DACL_READBACK_FAILED");}
     }
-    static int Main()
+    static int Main(string[] args)
     {
+        if(args is ["--ledger-delta"])return LedgerDelta();
+        if(args.Length>0&&args[0]=="--ledger-peer")return LedgerPeer(args);
         Test("review-full-plan-no-consume-or-writes",()=>{var f=new Fixture();Check(f.Run("--review")>5);f.NoWrites();});
         Test("apply-exact-plan-five-files-and-create-new",()=>{var f=new Fixture();f.Run();Check(f.Host.Consumes==1&&f.Host.DirectoryWrites==3&&f.Host.Copies==5&&f.Host.Deletes==0);});
         foreach(var change in new (string,Action<DeploymentRequest>)[]{("unapproved",r=>r.Approved=false),("profile",r=>r.Profile="OTHER"),("deployment-id",r=>r.DeploymentId=new('0',32)),("trial-id",r=>r.TrialId="11111111111111111111111111111111"),("tool-sha",r=>r.ToolSha256=new('a',64)),("manifest-sha",r=>r.ManifestSha256=new('a',64)),("approval-sha",r=>r.ApprovalSha256=new('a',64)),("contract-sha",r=>r.ContractSha256=new('a',64)),("risk-sha",r=>r.RiskBasisSha256=new('a',64)),("expired",r=>r.ExpiresUtc=Now),("create-scope",r=>r.CreateRoots=false),("copy-scope",r=>r.CopyFiles=false),("credentials-unknown",r=>r.CredentialsReviewed=false),("launch-paths-unknown",r=>r.OtherLaunchPathsReviewed=false),("image-trust-unknown",r=>r.ImageTrustReviewed=false),("tool-risk-unaccepted",r=>r.PrivilegedToolRiskAccepted=false)})
