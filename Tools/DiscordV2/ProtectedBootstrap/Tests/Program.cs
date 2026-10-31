@@ -31,7 +31,7 @@ internal static class BootstrapTests
         public BootstrapActor ObserveActor(){return Actor;}
         public bool Exists(string path)=>Nodes.ContainsKey(path);
         public BootstrapNode PinAndRead(string path){Reads++;OnRead?.Invoke(path);return Nodes.TryGetValue(path,out var node)?node:throw new IOException("PIN_NOT_FOUND");}
-        public void Bind(BootstrapWriteGate value){if(gate is not null)throw new IOException("BOUND");gate=value;}
+        public void Bind(BootstrapWriteGate value){if(gate is not null)throw new IOException("BOUND");value.RequireHost(this);gate=value;}
         public void CreateProtected(string path,string sddl)
         {
             BeforeCreate?.Invoke(path);(gate??throw new IOException("GATE_MISSING")).BeforeNativeCreate(path,sddl);
@@ -56,8 +56,14 @@ internal static class BootstrapTests
         internal int Run(bool create=true,CancellationToken cancellation=default){byte[] raw=Raw();return BootstrapController.Run(raw,BootstrapPolicy.Hash(raw),Host,create,cancellation);}
         internal void NoWrites()=>Check(Host.Creates==0&&Host.NativeAttempts==0&&Host.Nodes.Count==2);
     }
-    static int Main()
+    static int Main(string[] args)
     {
+        if(args is ["--host-binding-delta"])
+        {
+            Test("same-host-gate-binding-accepted-no-write",()=>{var f=new Fixture();var g=new BootstrapWriteGate(BootstrapPolicy.Parse(f.Raw(),BootstrapPolicy.Hash(f.Raw())),f.Host,default);g.Validate();f.Host.Bind(g);f.NoWrites();});
+            Test("different-host-gate-binding-denied-no-write",()=>{var f=new Fixture();using var other=new Fake();var g=new BootstrapWriteGate(BootstrapPolicy.Parse(f.Raw(),BootstrapPolicy.Hash(f.Raw())),f.Host,default);Deny(()=>other.Bind(g));Check(other.Creates==0&&other.NativeAttempts==0);f.NoWrites();});
+            Console.WriteLine($"BOOTSTRAP_HOST_BINDING_DELTA: {passed} PASS / {failed} FAIL; WINDOWS_BACKEND=0; REAL_CHANGES=0");return failed==0?0:1;
+        }
         Test("valid-exact-six-initial-descriptor-readback",()=>{var f=new Fixture();Check(f.Run()==6&&f.Host.Creates==6);foreach(string p in BootstrapPolicy.Targets)BootstrapPolicy.AdministrativeSecurity(f.Host.Nodes[p].Security,BootstrapPolicy.AdminSid);});
         Test("review-readonly-no-create-or-bind",()=>{var f=new Fixture();Check(f.Run(false)==0);f.NoWrites();});
         Test("system-owner-explicitly-authorized-model",()=>{var f=new Fixture();f.Auth.OwnerSid=BootstrapPolicy.SystemSid;Check(f.Run()==6);});

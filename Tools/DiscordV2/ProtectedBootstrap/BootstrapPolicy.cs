@@ -103,6 +103,7 @@ internal sealed class BootstrapWriteGate
     private bool attempted;
     internal BootstrapWriteGate(BootstrapAuthorization authorization,IBootstrapHost host,CancellationToken cancellation)
     {this.authorization=authorization;this.host=host;this.cancellation=cancellation;}
+    internal void RequireHost(IBootstrapHost expected)=>BootstrapPolicy.Need(ReferenceEquals(host,expected),"BOOTSTRAP_GATE_HOST_MISMATCH");
     internal string Sddl=>BootstrapPolicy.Sddl(authorization.OwnerSid);
     internal void Validate()
     {

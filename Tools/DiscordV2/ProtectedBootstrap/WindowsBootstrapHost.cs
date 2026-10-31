@@ -102,7 +102,7 @@ internal sealed class WindowsBootstrapHost:IBootstrapHost
         BootstrapPolicy.Need(Administrator()==user,"BOOTSTRAP_ADMIN_CHANGED_DURING_IMAGE_READ");
         return new(true,true,false,user,Convert.ToHexString(hash.GetHashAndReset()).ToLowerInvariant());
     }
-    public void Bind(BootstrapWriteGate value){BootstrapPolicy.Need(gate is null,"BOOTSTRAP_ALREADY_BOUND");gate=value;}
+    public void Bind(BootstrapWriteGate value){BootstrapPolicy.Need(gate is null,"BOOTSTRAP_ALREADY_BOUND");value.RequireHost(this);gate=value;}
     public void CreateProtected(string path,string sddl)
     {
         var boundary=gate??throw new InvalidOperationException("BOOTSTRAP_GATE_REQUIRED");
