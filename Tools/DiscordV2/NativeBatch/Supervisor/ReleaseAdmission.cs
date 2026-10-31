@@ -41,7 +41,8 @@ internal sealed class ReleaseAdmission : IDisposable
         expectedContractSha=contractSha;
         AdmissionPolicy.Require(Contract.Scope!.Start,"SUPERVISOR_START_NOT_APPROVED");
         var startApproval=PinFile(Path.Combine(Native.CodeRoot,OperationApproval.FileName(Contract.TrialId,"--start-once")));
-        var operation=OperationApproval.Validate(ReadSmall(startApproval,4096),Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false);
+        byte[] operationRaw=ReadSmall(startApproval,4096);
+        var operation=OperationApproval.Validate(operationRaw,Contract.TrialId,contractSha,"--start-once",DateTimeOffset.UtcNow,false);
         startOperation=operation;
         var registration=ControlRecord("registered");startIntent=ControlRecord("start-intent");
         ReceiptPolicy.Start(registration,startIntent,operation,Contract.TrialId,contractSha);
@@ -50,21 +51,26 @@ internal sealed class ReleaseAdmission : IDisposable
         AdmissionPolicy.Require(Hash(supervisor)==Contract.SupervisorSha256 && Hash(probe)==Contract.ProbeSha256,"IMAGE_SHA");
         CheckScope(null);
         // 계약·이미지·신뢰 자료·실제 계정을 읽기 검증하기 전에는 DACL을 바꾸지 않습니다.
-        NativeTrialPolicy.AuthorizeThen(Contract,contractSha,"--supervise",operation,AccountNative.Read(DateTimeOffset.UtcNow,false),
-            DateTimeOffset.UtcNow,AdmissionBinding.Current,()=> {
+        void ValidateEntry()=>TrialEntryGate.Validate(raw,contractSha,"--supervise",operationRaw,AdmissionBinding.Current,
+            ()=>DateTimeOffset.UtcNow,ReadTrust,c=> {
+                AdmissionPolicy.Require(Hash(supervisor)==c.SupervisorSha256 && Hash(probe)==c.ProbeSha256,"IMAGE_SHA");
+                CheckScope(null);
+            },()=>AccountNative.Read(DateTimeOffset.UtcNow,false));
+        // 읽기 HANDLE만 복제하여 외부 위험 HANDLE을 먼저 검사합니다. 아직 DACL/영구 기록은 바꾸지 않습니다.
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentProcess(),Native.GetCurrentProcess(),out process,0,false,2));
         AdmissionWindows.Check(AdmissionWindows.DuplicateHandle(Native.GetCurrentProcess(),Native.GetCurrentThread(),Native.GetCurrentProcess(),out thread,0,false,2));
+        watched.Add(process,AdmissionPolicy.ProcessDanger);watched.Add(thread,AdmissionPolicy.ThreadDanger);watched.Add(token,AdmissionPolicy.TokenDanger);
+        HandleCensus.Check(watched);
+        ValidateEntry();
+        // 완전한 읽기 승인 후 첫 영구 변경입니다. 중복은 CREATE_NEW에서 거부하여 DACL 변경도 하지 않습니다.
+        // 실패/취소/프로세스종료 후에도 남기며 기존 소비 기록은 삭제/초기화하지 않습니다.
+        consumption=AdmissionConsumption.Acquire(Native.EvidenceRoot,Encoding.UTF8.GetBytes(Contract.TrialId+"\n"+contractSha+"\n"),AdmissionWindows.CreateRecord);
+        ValidateEntry();
         Security.Harden(process,AdmissionWindows.KernelKind.Process);Security.Harden(thread,AdmissionWindows.KernelKind.Thread);
         using(var tokenSecurity=new AdmissionWindows.KernelSecurity(Native.Worker,queryToken:true))tokenSecurity.Harden(token,AdmissionWindows.KernelKind.Token);
-        watched.Add(process,AdmissionPolicy.ProcessDanger);watched.Add(thread,AdmissionPolicy.ThreadDanger);watched.Add(token,AdmissionPolicy.TokenDanger);
         foreach(var handle in watched.Keys)NonInherited(handle);
-
         HandleCensus.Check(watched);
-        });
-        NativeTrialPolicy.Authorize(Contract,contractSha,"--supervise",operation,AccountNative.Read(DateTimeOffset.UtcNow,false),DateTimeOffset.UtcNow,AdmissionBinding.Current);
-        // 검증을 모두 마친 뒤에만 영구 marker를 원자 생성하고 flush합니다.
-        // 실패/취소/프로세스종료 후에도 남기며 기존 소비 기록은 건드리지 않습니다.
-        consumption=AdmissionConsumption.Acquire(Native.EvidenceRoot,Encoding.UTF8.GetBytes(Contract.TrialId+"\n"+contractSha+"\n"),AdmissionWindows.CreateRecord);
+        ValidateEntry();
         if(Contract.FakeOnlyIsolation is not null)
         {
             using var evidence=AdmissionWindows.CreateRecord(Path.Combine(Native.EvidenceRoot,Contract.TrialId+".exclusivity"));

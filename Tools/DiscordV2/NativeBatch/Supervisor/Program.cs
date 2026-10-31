@@ -50,18 +50,14 @@ internal static class Program
         try
         {
             Native.Need(!ReleaseAdmissionImplemented, "HOLD_GLOBAL_RELEASE_NOT_SUPPORTED");
-            NativeTrialPolicy.RequireWindowsBoundary();
-            if (args.Length > 0 && AdminController.IsMode(args[0]))
-            {
-                return AdminWindows.Run(args);
-            }
-            Native.Need(args.Length == 5 && args[0] == "--supervise" && args[1] == "--contract" && args[3] == "--contract-sha", "MODE_NOT_IMPLEMENTED");
-            Native.Need(Environment.ProcessPath == Path.Combine(Native.CodeRoot, "Supervisor.exe"), "SUPERVISOR_LOCATION");
-            Native.Need(args[2] == Path.Combine(Native.CodeRoot, "TrialContract.json"), "CONTRACT_LOCATION");
-            // Acquire는 읽기 승인 후에만 자기 객체 보안/영구 소비를 적용합니다.
-            using var admission = ReleaseAdmission.Acquire(args[2], args[4]);
-            Native.Need(wall.ElapsedMilliseconds < 5000, "PRECREATE_BUDGET");
-            return Supervise(admission, admission.Identity, wall);
+            // 정확한 인자 분기 뒤에도 관리/감독의 보호 검증이 성공하기 전에는 변경하지 않습니다.
+            return TrialEntryGate.Dispatch(args, AdmissionBinding.Current,
+                () => AdminWindows.Run(args), () => {
+                    Native.Need(Environment.ProcessPath == Path.Combine(Native.CodeRoot, "Supervisor.exe"), "SUPERVISOR_LOCATION");
+                    using var admission = ReleaseAdmission.Acquire(args[2], args[4]);
+                    Native.Need(wall.ElapsedMilliseconds < 5000, "PRECREATE_BUDGET");
+                    return Supervise(admission, admission.Identity, wall);
+                });
         }
         catch { return 70; }
     }

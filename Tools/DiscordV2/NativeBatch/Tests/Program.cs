@@ -28,6 +28,7 @@ internal static partial class AdmissionTests
     {
         if(args.FirstOrDefault()=="--windows-boundary")return WindowsBoundaryTests.Run(args.Skip(1).ToArray());
         if(args.FirstOrDefault()=="--windows-handle-peer")return WindowsBoundaryTests.Peer(args.Skip(1).ToArray());
+        if(args is ["--entry-gate-delta"])return EntryGateDelta();
         if(args is ["--restricted-gate-delta"])return RestrictedGateDelta();
         if(args is ["--task-mutation-delta"])return TaskMutationDelta();
         if(args is ["--task-mutation-late-read-delta"])return TaskMutationLateReadDelta();

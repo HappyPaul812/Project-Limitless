@@ -5,7 +5,8 @@ using System.Security.Principal;
 using System.Text;
 using Microsoft.Win32.SafeHandles;
 
-// 실제 어댑터는 실행 봉인 뒤에 있습니다. 이번에는 controller + fake backend만 실행합니다.
+// 실제 진입은 TrialEntryGate 형식 검사와 ExecuteNative 전체 승인 검증 뒤에만 변경합니다.
+// 자동 검증에서는 이 객체를 만들지 않고 fake backend만 사용합니다.
 internal sealed class AdminWindows : IAdminBackend,IDisposable
 {
     private readonly List<SafeFileHandle> pins=[];

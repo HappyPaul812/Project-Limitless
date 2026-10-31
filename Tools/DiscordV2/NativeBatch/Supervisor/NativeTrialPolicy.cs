@@ -3,8 +3,8 @@
 internal static class NativeTrialPolicy
 {
     internal const string CandidateTrialId = "deef7539de5b4efcb30e062f9b734342";
-    // 변경 직전 만료 경계의 Delta 검증과 별개로 NativeAOT/실제 Windows/실행 승인은 아직 없습니다.
-    // 기존 차단 태그는 호환 보존하며 이번 단계에서도 실제 어댑터를 열지 않습니다.
+    // 배포 도구는 여전히 봉인합니다. 시험 실행은 TrialEntryGate와 실제 어댑터의 전체 검증으로 제한됩니다.
+    // 이 함수는 배포 전용이며 Main의 무조건 차단으로 사용하지 않습니다. NativeAOT/실행 검증은 별도입니다.
     internal static void RequireWindowsBoundary()
         => throw new InvalidOperationException("HOLD_NATIVE_MUTATION_DEADLINE_REVIEW");
     internal static void Shape(TrialContract c, string mode, DateTimeOffset now)

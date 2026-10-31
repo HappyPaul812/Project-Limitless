@@ -90,6 +90,20 @@ internal static class AdminController
         var observation = backend.Observe();
         authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
         if(authorize is not null)backend.BindMutationBoundary(new TaskMutationBoundary(mode,sha,raw,operationRaw,binding,backend,cancellation));
+        bool intentWritten=false;
+        void SaveIntent(string name,ControlReceipt receipt)
+        {
+            // 최초 승인 후 조회 중 만료/변조도 영구 소비 전에 다시 거부합니다.
+            if(authorize is not null)
+            {
+                byte[] latestApproval=backend.Approval(mode,contract.TrialId);
+                AdmissionPolicy.Require(SHA256.HashData(latestApproval).SequenceEqual(SHA256.HashData(operationRaw)),"ENTRY_APPROVAL_CHANGED");
+                TrialEntryGate.Validate(backend.CurrentContract(),sha,mode,latestApproval,binding,
+                    ()=>backend.Now,backend.IsolationEvidence,c=>backend.Preflight(c,cleanup),backend.Account,cancellation);
+            }
+            cancellation.ThrowIfCancellationRequested();
+            backend.Save(name,receipt);intentWritten=true;
+        }
         string prefix = contract.TrialId + ".admin.";
         ControlReceipt Make(string status, string fingerprint = "", string id = "") => new() { TrialId=contract.TrialId,ContractSha=sha,Status=status,Fingerprint=fingerprint,Instance=id,ApprovalId=approval.ApprovalId };
         ControlReceipt Read(string suffix)
@@ -102,7 +116,7 @@ internal static class AdminController
             if(mode=="--register-only")
             {
                 AdmissionPolicy.Require(observation is null,"TASK_ALREADY_EXISTS");
-                backend.Save(prefix+"register-intent",Make("REGISTER_INTENT"));
+                SaveIntent(prefix+"register-intent",Make("REGISTER_INTENT"));
                 cancellation.ThrowIfCancellationRequested();
                 backend.Register(TaskPolicy.Xml(contract,sha,binding),TaskPolicy.Sddl,cancellation);
                 cancellation.ThrowIfCancellationRequested();
@@ -119,7 +133,7 @@ internal static class AdminController
             {
                 AdmissionPolicy.Require(!observation!.Enabled && observation.Instances.Length==0,"TASK_NOT_DISABLED_IDLE");
                 // 이 기록을 먼저 영구 소비합니다. Run의 응답 유실/실패도 재실행 권리가 되지 않습니다.
-                backend.Save(prefix+"start-intent",Make("START_CONSUMED",current));
+                SaveIntent(prefix+"start-intent",Make("START_CONSUMED",current));
                 cancellation.ThrowIfCancellationRequested();
                 try
                 {
@@ -139,7 +153,7 @@ internal static class AdminController
                 var started=Read("instance");
                 AdmissionPolicy.Require(started.Status=="INSTANCE_RETURNED" && started.Fingerprint==current && Guid.TryParseExact(started.Instance,"D",out _) && instance.HasValue && instance.Value!=Guid.Empty && instance.Value.ToString("D")==started.Instance,"WRONG_INSTANCE");
                 AdmissionPolicy.Require(!observation!.Enabled && observation.Instances.Length==1 && observation.Instances[0]==instance,"INSTANCE_SET_CHANGED");
-                backend.Save(prefix+"stop-intent",Make("STOP_INTENT",current,started.Instance));
+                SaveIntent(prefix+"stop-intent",Make("STOP_INTENT",current,started.Instance));
                 cancellation.ThrowIfCancellationRequested();
                 backend.Stop(instance!.Value); // Task.Stop로 전체 instance를 중지하지 않습니다.
                 var after=backend.Observe() ?? throw new InvalidOperationException("STOP_READBACK_MISSING");
@@ -150,7 +164,7 @@ internal static class AdminController
             // 한 번이라도 시작 의도가 기록됐으면 정리 실증 없이는 삭제하지 않습니다.
             if(backend.Receipt(prefix+"start-intent") is not null)
                 AdmissionPolicy.Require(backend.CleanupProven(contract.TrialId),"CLEANUP_UNKNOWN_KEEP_TASK");
-            backend.Save(prefix+"remove-intent",Make("REMOVE_INTENT",current));
+            SaveIntent(prefix+"remove-intent",Make("REMOVE_INTENT",current));
             cancellation.ThrowIfCancellationRequested();backend.Remove();
             AdmissionPolicy.Require(backend.Observe() is null,"REMOVE_READBACK_PRESENT");
             backend.Save(prefix+"removed",Make("REMOVED_EVIDENCE_RETAINED",current));return 0;
@@ -158,7 +172,7 @@ internal static class AdminController
         catch
         {
             // 실패 증거 쓰기 실패로 기존 오류를 덮지 않으며, 어떠한 자동 재시도도 하지 않습니다.
-            try {backend.Save(prefix+"hold-"+Guid.NewGuid().ToString("N"),Make("HOLD"));}catch { }
+            try {if(intentWritten)backend.Save(prefix+"hold-"+Guid.NewGuid().ToString("N"),Make("HOLD"));}catch { }
             throw;
         }
     }

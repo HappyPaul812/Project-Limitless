@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0-windows</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><EnableDefaultCompileItems>false</EnableDefaultCompileItems><StartupObject>AdmissionTests</StartupObject><UseAppHost>false</UseAppHost><NuGetAudit>false</NuGetAudit></PropertyGroup>
   <Import Project="../Supervisor/Supervisor.Core.projitems"/>
-  <ItemGroup><Compile Include="Program.cs"/><Compile Include="RestrictedGateTests.cs"/><Compile Include="TaskMutationTests.cs"/><Compile Include="InteropTrimContractTests.cs"/><Compile Include="FakeOnlyContractTests.cs"/><Compile Include="WindowsBoundaryTests.cs"/><Compile Include="Native.TestBinding.cs" Condition="'$(NativeBindingFile)'==''"/><Compile Include="$(NativeBindingFile)" Condition="'$(NativeBindingFile)'!=''"/></ItemGroup>
+  <ItemGroup><Compile Include="Program.cs"/><Compile Include="EntryGateTests.cs"/><Compile Include="RestrictedGateTests.cs"/><Compile Include="TaskMutationTests.cs"/><Compile Include="InteropTrimContractTests.cs"/><Compile Include="FakeOnlyContractTests.cs"/><Compile Include="WindowsBoundaryTests.cs"/><Compile Include="Native.TestBinding.cs" Condition="'$(NativeBindingFile)'==''"/><Compile Include="$(NativeBindingFile)" Condition="'$(NativeBindingFile)'!=''"/></ItemGroup>
 </Project>
