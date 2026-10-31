@@ -1,3 +1,7 @@
+## 2026-10-31 staging 최종 정적 판정 HOLD / 스크립트·로더 SHA 확보
+
+기준142e67ad01726ef1c415f3315c159f58bcc2afa5·브랜치 codex/discord-v2-staging-final-readiness-hold-20261031. 기존25PASS/0FAIL보존·재시험0. 기존 문서로더를 데이터검증 전용 파일화/AST구문0오류·직접실행0. [정확한2SHA·미구현경계·승인/GUI·11월7일인계](../../Discord_V2_Staging_FinalReadiness_HOLD_20261031.md). 실제Windowsbackend/토큰부모HANDLE readback·영구재사용차단·출처독립승인미완→READY_FOR_USER_APPROVAL아님/HOLD·생성명령미발급. 기존제품/이미지/binding변경0·실폴더ACL/EXE/Task계정OnBootV3/UnitySave/빌드/Push변경0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지。
+
 ## 2026-10-31 최초 staging PowerShell 초안 / 모의25PASS·실적용 HOLD
 
 기준0d0c15a304bd76711c2e80cd88cfa63fa6121bef·브랜치 codex/discord-v2-staging-powershell-draft-20261031. 동일 메모리 원문SHA/엄격UTF8 및 고정staging 생성 경계 모형 초안 추가. AST추출 Fake 전용 신규25PASS/0FAIL·API선언 관리형컴파일PASS·실Native호출0. [정확한 범위·로더초안·승인조건·11월7일 인계](../../Discord_V2_Staging_PowerShell_Draft_QA_20261031.md). 제품실행 초안은무조건HOLD·실Windowsbackend/원본봉인/영구소비미구현·모의결과를실보안PASS로승격금지. 기존59/기타시험반복0·기존제품/이미지/binding무변경·폴더ACL/EXE실행/Task계정/V3/UnitySave/Push변경0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지。
