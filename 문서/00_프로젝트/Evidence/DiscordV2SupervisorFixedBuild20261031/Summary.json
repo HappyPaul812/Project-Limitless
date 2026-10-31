@@ -1,0 +1,50 @@
+{
+  "source_head": "3c481bc462c69ce613d2c1c2d81b952e38757d26",
+  "code_commit": "1717e443c9dfe89f2e82e7897d657dc99c7a0fa7",
+  "branch": "codex/discord-v2-supervisor-fixed-build-20261031",
+  "build": "PASS",
+  "attempts": 1,
+  "publish_exit_code": "NOT_PERSISTED_POSTPROCESS_SCRIPT_ERROR",
+  "postprocess_error": "PowerShell literal true instead of $true; publish was already complete; inspection only, no retry",
+  "sha256": "34D2B90A0EDE2BBA1BB8A848A80F30890B80ABB7463EE0118A35395B8BA5AB16",
+  "bytes": 3172352,
+  "architecture": "PE32+ AMD64 0x8664 / optional 0x20b / CLR directory absent",
+  "warnings": [],
+  "warning_count": 0,
+  "IL2091_count": 0,
+  "errors": 0,
+  "retained_after_10_seconds": true,
+  "old_images_preserved": true,
+  "old_images": [
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322"
+    },
+    {
+      "name": "Supervisor",
+      "bytes": 7536640,
+      "sha256": "CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD"
+    }
+  ],
+  "inputs_unchanged": true,
+  "input_count": 22,
+  "source_manifest_sha256": "21F6AC50E6C41457962D93E4B410AA39F6DFDF0BD572894734240CB420020308",
+  "official_nuget7_hashes": "PASS",
+  "offline_restore_only": true,
+  "static_evaluation": "PASS",
+  "v3_engine": "2026.10.31.01",
+  "v3_observation": "Image retained; no deletion or mutation observed",
+  "v3_official_verdict": "NOT_VERIFIED",
+  "prior_delta_pass": 34,
+  "prior_delta_fail": 0,
+  "tests_repeated": 0,
+  "probe_builds": 0,
+  "exe_executions": 0,
+  "windows_mutations": 0,
+  "global_gate": false,
+  "explicit_windows_hold": true,
+  "status": "NO_GO / MANUAL / EXECUTION_HOLD",
+  "cutoff": "2026-11-01T23:59:59+09:00",
+  "build_root": "E:\\LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorExpiryFix20261031-01748fd023c8406b9409e5aeaef24e1d"
+}

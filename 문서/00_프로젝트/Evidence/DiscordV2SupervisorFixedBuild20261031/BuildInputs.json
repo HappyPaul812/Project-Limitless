@@ -1,0 +1,107 @@
+[
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\AccountNative.cs",
+    "sha256": "293CBE00360EF72A0EF4A0D1C084AF047BBA4803665D8359721FF2825B323604",
+    "bytes": 8500
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\AdminController.cs",
+    "sha256": "77C1F8FD7138D66AED8B5AFD96BE533DD438AAAE62EE02117EFE94CE97E18424",
+    "bytes": 12207
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\AdminWindows.cs",
+    "sha256": "122DAA97C9098FC86EBBFC40B81E4EDDC889FEB04AAEB717B056A43CBF4AE923",
+    "bytes": 8961
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\AdmissionPolicy.cs",
+    "sha256": "5767A3A7F52CDA0C83C220C4FE1931F4DA7131112EB50DEFAAA0D1215D94EA5C",
+    "bytes": 9624
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\AdmissionWindows.cs",
+    "sha256": "31470EBFD86AD9388CDDE3CB5DCCD57C9D8D052294A0D44A72F99E50863CC686",
+    "bytes": 12754
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\FakeOnlyPolicy.cs",
+    "sha256": "72D13ED384F626FCE7BCF15B1EAC22107C41F679AC92455162A22EF88FEF61D9",
+    "bytes": 4763
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\HandleCensus.cs",
+    "sha256": "3762A58EC60E961DF4182C1E3532565369288353A2D60938CB849ABA5B645AC0",
+    "bytes": 6955
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\JobMonitor.cs",
+    "sha256": "8598D6E1668F42B8A9B959EAA2BD0671D69E5E8FEAD02F5562B83DC3CB3758C0",
+    "bytes": 3272
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\NativeInterop.cs",
+    "sha256": "F9B25EEF376CB02209442078F754B679BD77549638811337A2A30472F3A2568B",
+    "bytes": 8637
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\NativeTrialPolicy.cs",
+    "sha256": "F92DE03B57337287EC9A7769A93E2726935FC922A24FEA9033651EBB574DBD3D",
+    "bytes": 3731
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\OperationApproval.cs",
+    "sha256": "8AF6D64C25325358954C304314B87EEE1403118428E15D9D5D24C4EF8B1F2E77",
+    "bytes": 2389
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\Program.cs",
+    "sha256": "2650CFA9D4F73867527D0FBCFA1EA9ED2223503E5522D297147494CD728FE8CE",
+    "bytes": 9944
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\ProtectedDeployment.cs",
+    "sha256": "0ED8FF1E34672A742F8E136407A2905F35D22C220BDB1F3A907328B6A2951946",
+    "bytes": 8023
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\ProtectedDeploymentWindows.cs",
+    "sha256": "074157FF8AAB3B93C9BAF7E35E8CB6B246B3B14BE7658AE281A14EE3C0E1CF69",
+    "bytes": 8809
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\ReleaseAdmission.cs",
+    "sha256": "951229EB4DFB2FBC6CFEC118E67BBA04A0941CA1E1410F130C7CA9072098512B",
+    "bytes": 11837
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\Supervisor.Core.projitems",
+    "sha256": "3D8F8F099632125245D06E82F007F41A3268FFFA7129AC4F7735A748E53A579D",
+    "bytes": 1369
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\TaskMutationBoundary.cs",
+    "sha256": "43DDF76492F4C314C98C3E25B20F6B1DBB8FC703A687D672F30EF2123FC9E147",
+    "bytes": 6624
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\TaskPolicy.cs",
+    "sha256": "A614220887B7D5E58576C572AD08DF78BEDA4B86228B752C10C3F3CDDD7A10A9",
+    "bytes": 6243
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\TaskSchedulerNative.cs",
+    "sha256": "ACE7997583D49499ED1A33E613B29586F0CC995A1FAAC8614449389330F1FE8B",
+    "bytes": 9711
+  },
+  {
+    "relative_path": "Tools\\DiscordV2\\NativeBatch\\Supervisor\\TokenPolicy.cs",
+    "sha256": "466E14E697F05943C8349E44417BAB5FA092AA99FB2BC95672EB7AC2F10D68DD",
+    "bytes": 1513
+  },
+  {
+    "relative_path": "Temp/NativeBatchPreparation20261028/Supervisor/Supervisor.csproj",
+    "sha256": "7353690AEC5D444694A105581F137C4E4BB88C6AC65A47B21131539BCCE7F1BC",
+    "bytes": 572
+  }
+]

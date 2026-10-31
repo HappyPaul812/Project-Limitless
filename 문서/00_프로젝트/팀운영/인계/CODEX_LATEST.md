@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 보안 수정 Supervisor 단발 빌드 PASS
+
+시작3c481bc4·수정코드1717e443 유지, 브랜치 codex/discord-v2-supervisor-fixed-build-20261031. E격리 Supervisor NativeAOT **1회 BUILD PASS**, Probe0·EXE실행0. 새SHA `34D2B90A0EDE2BBA1BB8A848A80F30890B80ABB7463EE0118A35395B8BA5AB16`, 3,172,352바이트·AMD64·CLR없음·경고/IL2091 0. 기존2이미지/입력22개 보존PASS·기존34PASS/0FAIL 보존·시험반복0. [보고/후처리오류한계/증거/잔여승인](../../Discord_V2_Supervisor_FixedBuild_20261031.md). 발행후wrapper JSON표기오류·publish종료코드미보존, 재시도없이로그/PE/SHA읽기검증완료. V3엔진2026.10.31.01·삭제변조관측없음·새SHA공식정상판정NOT_VERIFIED. gatefalse/명시Windows HOLD·실배포Task계정ACLOnBoot/Session0IPCAI/UnitySave변경0, **NO_GO/MANUAL/EXECUTION_HOLD**. 새이미지신뢰·보호배포·후속게이트연결·실FAKE_ONLY동작별승인은별도·cutoff11-01 23:59:59KST/자동연장금지·Push main변경0。
 ## Codex 최신 인계 — 2026-10-31 / Task 변경 직전 만료 회귀 수정·34PASS
 
 동일브랜치 `codex/discord-v2-restricted-gate-impl-20261031`, 시작8744763b·수정코드 **1717e443c9dfe89f2e82e7897d657dc99c7a0fa7**. 암호입력직후/COM등록직전과Enable/Run/Stop/Remove직전동일재검증경계연결. 정확계약/승인원문SHA·TrialId/mode/cutoff·현재계정/상승비위장·이미지/경로·신뢰·Task/receipt·instance를읽기검증후현재시각/취소를다시검사합니다. 기존승인의조용한교체/갱신없음. 유효시작lease/자기Task결합의안전재비활성화는만료/취소에도유지, 기존자기Job종료코드는무변경입니다.
