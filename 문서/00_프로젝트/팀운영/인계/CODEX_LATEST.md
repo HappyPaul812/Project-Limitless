@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 보호 배포 연결 검토 HOLD / 구현 전 중지
+
+기준c8b2b4c7·브랜치 codex/discord-v2-protected-deployment-review-hold-20261031. 두이미지SHA/크기보존PASS·정적6관찰PASS, 제품배포진입부재/Windowsbackend4경계무조건HOLD/현재Nativeobject배포본문심볼없음 확인. Supervisor에연결하려면진입/승인경계수정·재발행필요하므로 **바울대표지시6에따라제품수정전중지**, 신규모의QA0(PASS0/FAIL0·NOT_RUN/HOLD)·기존36/34반복0. [원인/변경범위/독립도구대안/최소후속승인](../../Discord_V2_ProtectedDeployment_Connection_HOLD_20261031.md). 독립관리자도구로현2이미지를보존하는설계는가능하지만미구현/미승인·임의신설없음. 자격증명비공유/다른실행경로미사용/V3공식정상UNKNOWN·실제폴더ACL/복사/실행/빌드/Task계정OnBoot/UnitySave/Push main변경0·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지.
 ## 2026-10-31 Discord V2 연결 완료 Supervisor NativeAOT 단발 BUILD PASS
 
 기준ad58fbe2/코드4a3221b4 무변경·브랜치 codex/discord-v2-connected-supervisor-build-20261031. E격리 **1회발행/exit0**, 새SHA `6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7`·7,559,680바이트·PE32+AMD64/CLR없음·경고/IL2091 0. 네이티브21함수최종PE본문prefix일치·4실PE분기PASS, Main무조건throw재발없음. [상세/정적근거/잔여HOLD](../../Discord_V2_ConnectedSupervisor_NativeBuild_20261031.md). 기존3이미지/입력23개보존PASS·36/34재시험0·Probe빌드0·EXE실행0; V3엔진2026.10.31.01·삭제변조관측없음·새SHA공식정상판정/실런타임NOT_VERIFIED. 운영gatefalse·NO_GO/MANUAL/EXECUTION_HOLD·새이미지승인/보호배포/동작별신규승인/실시험별도·cutoff11-01 23:59:59KST/자동연장금지·실WindowsTask계정ACLOnBoot/UnitySave/Push main변경0.

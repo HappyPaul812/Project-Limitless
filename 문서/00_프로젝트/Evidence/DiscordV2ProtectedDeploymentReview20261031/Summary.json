@@ -1,0 +1,46 @@
+{
+  "start_head": "c8b2b4c7f47ce172ae3a6266e740baefbddfd8af",
+  "branch": "codex/discord-v2-protected-deployment-review-hold-20261031",
+  "status": "HOLD_SUPERVISOR_CHANGE_REQUIRES_NEW_DIRECTION / NO_GO / MANUAL / EXECUTION_HOLD",
+  "implementation_completed": false,
+  "product_source_changes": 0,
+  "native_builds": 0,
+  "exe_executions": 0,
+  "exe_copies": 0,
+  "protected_folders_created": 0,
+  "acl_task_account_mutations": 0,
+  "new_mock_tests": 0,
+  "new_mock_pass": 0,
+  "new_mock_fail": 0,
+  "new_mock_result": "NOT_RUN_STOP_CONDITION",
+  "static_observations": {
+    "supervisor_sources_include_deployment_candidates": true,
+    "main_routes_only_admin_and_supervise": true,
+    "dispatch_has_no_deployment_mode": true,
+    "windows_backend_four_unconditional_guard_calls": true,
+    "guard_still_unconditionally_throws": true,
+    "no_production_caller_or_windows_backend_construction": true
+  },
+  "static_observation_pass": 6,
+  "image_integrity_pass": 2,
+  "images": [
+    {
+      "name": "Supervisor",
+      "bytes": 7559680,
+      "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "preserved": true
+    },
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true
+    }
+  ],
+  "deployment_method_body_symbols_in_current_native_object": 0,
+  "prior36_and34_repeated": false,
+  "credentials_not_shared": "UNKNOWN",
+  "other_launch_paths_unused": "UNKNOWN",
+  "v3_new_images_official_normal_verdict": "UNKNOWN / NOT_VERIFIED",
+  "cutoff": "2026-11-01T23:59:59+09:00"
+}
