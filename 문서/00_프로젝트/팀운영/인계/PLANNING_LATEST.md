@@ -1,3 +1,12 @@
+# PLANNING / 2026-10-31 — 대표 Unity 버전 정정 / Codex 5시간 잔량8%
+
+- 바울 대표 **“이제 우리 게임 Unity 6000.5.7f1 아니잖아? ... 지금 5시간 8%야.”**. **현재 개발·QA 기준을 Unity 6000.6.5f1로 재확정**. Codex [#79 로컬 설치 근거](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536508762): `E:/Program Files/Unity/Hub/Editor/6000.6.5f1`만 설치. `6000.5.7f1` 설치0. GitHub main `Unity/Client/ProjectSettings/ProjectVersion.txt`의 `m_EditorVersion: 6000.5.7f1`은 **구버전 메타데이터 미정렬**이며 현재 사용자 PC 사용 에디터 의미 아님. **구버전 재설치/QA 요구 취소**. [#79 정정·후속 최소 범위 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536613960).
+- 잔량8%이므로 Codex 실작업은 빠른 버전 대조·짧은 문서만 우선. 필요할 때 격리 프로젝트에서 실제 Unity 6000.6.5f1이 작성한 revision을 확인하여 **ProjectVersion만 안전 수정 후보**로 제출. 임의로 revision을 지어내거나 수동 텍스트만 바꾸고 실제 에디터 정렬을 통과했다고 주장하지 않음. 다른 Settings/Packages/Scene/Prefab/BuildSettings/Meta 변화·전체 import가 필요하면 즉시 HOLD. 원본/local main/개인 Save/Editor 포커스/원격 Push 변경0.
+- 기존 Unity6000.6.5f1 #70 분기차단85, #77 복구72, #78 실제 Canvas72 신규 PASS 유효, 재시험 필요 없음. 그러나 Windows Standalone 실제 실행·원본 프로젝트/제품 Bootstrap·실개인 Save 복구/실다중프로세스·정전은 **미검증**. #79의 정확한 6000.5.7f1 부재로 인한 버전 QA HOLD는 **요구사항을 정정**하되 Standalone/운영 정책 HOLD는 계속.
+- 저장 복구 운영용 경로/보존/사용자 명시 선택·손실 경고/HOLD·구버전 다운그레이드 정책은 사용자 최종 승인 전 적용0. Codex 잔량 아끼기 위해 지금 재설치·풀빌드·기존85+72+72 전수반복 금지.
+
+---
+
 # PLANNING / 2026-10-31 오전 — #78 Unity 복구 화면 격리 통합 72PASS, 지정버전·운영 게이트 #79
 
 - [#78 Codex 실제 Unity UI·복구 저장경계 격리 결과](https://github.com/HappyPaul812/Project-Limitless/issues/78#issuecomment-6536056629): Unity6000.6.5f1의 새 72PASS/0FAIL(실 Canvas uGUI+가상InputSystem, 새 Editor Continue/World/Autosave), Windows Player용 Assembly-CSharp 컴파일1PASS, 정적18PASS. **기존 #70 85 / #77 72·UI9 / 거래40 / #46 31 전수재실행0**. 실제 Runtime SaveRecoveryEngine/RecoveryStorageBoundary 주입·RecoveryMenuController 후보 구현; 개인 실제 Save/본편 Bootstrap/원본 Unity/Scene/BuildSettings/Player 런타임 연결0. 사용자 샘플 캡처 최종HEAD `fd657384dc3d68a559760fc9bb9c27fe817606e7`; GitHub Codex 댓글 본문 보고 `a5439381d925d04a0661851d3d50cb05e1b07682` 차이는 이후 영수증 커밋으로 추정하되 Codex 로컬 ancestry 확인 필요. 제품 소스 SHA `d8bc62dcde2ce7ba0be7e4d6d6cb1ce1d1d1a0cf`. 원격 Push0·원본 Local main 기준 `ab47b931fec92976170f9f50aabde1822d78bb90` 미적용.
