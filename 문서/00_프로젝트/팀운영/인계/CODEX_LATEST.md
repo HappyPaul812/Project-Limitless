@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 FAKE_ONLY 진입 게이트 연결·모의36PASS
+
+기준5cb5512c·브랜치 codex/discord-v2-fake-only-entry-gate-20261031·코드 **4a3221b48a1f5df7530fb156e2eb058532075f61**. 작은3172352바이트이미지의Main→무조건throw→catch70을object/실EXE바이트로확인·관리자/감독본문object미생성, 실행후보부적합. 정확FAKE_ONLY만분기→전체읽기승인→영구소비/변경경계연결, 운영gatefalse·배포봉인유지. 새 **36PASS/0FAIL**, 정적8항목PASS·관리형컴파일경고오류0·기존34보존/전수반복0. [정적원인·게이트·증거·잔여승인](../../Discord_V2_FAKE_ONLY_EntryGate_20261031.md). 기존3이미지SHA/크기보존PASS·NativeAOT재빌드0/EXE실행0/실Windows변경0; 변경 코드NativeAOT포함·실행NOT_VERIFIED, 별도승인후Supervisor재빌드/새SHA검증필요. **NO_GO/MANUAL/EXECUTION_HOLD**, 11-01 23:59:59KST cutoff·자동연장/기존승인재사용금지·Push main변경0.
 ## 2026-10-31 Discord V2 보안 수정 Supervisor 단발 빌드 PASS
 
 시작3c481bc4·수정코드1717e443 유지, 브랜치 codex/discord-v2-supervisor-fixed-build-20261031. E격리 Supervisor NativeAOT **1회 BUILD PASS**, Probe0·EXE실행0. 새SHA `34D2B90A0EDE2BBA1BB8A848A80F30890B80ABB7463EE0118A35395B8BA5AB16`, 3,172,352바이트·AMD64·CLR없음·경고/IL2091 0. 기존2이미지/입력22개 보존PASS·기존34PASS/0FAIL 보존·시험반복0. [보고/후처리오류한계/증거/잔여승인](../../Discord_V2_Supervisor_FixedBuild_20261031.md). 발행후wrapper JSON표기오류·publish종료코드미보존, 재시도없이로그/PE/SHA읽기검증완료. V3엔진2026.10.31.01·삭제변조관측없음·새SHA공식정상판정NOT_VERIFIED. gatefalse/명시Windows HOLD·실배포Task계정ACLOnBoot/Session0IPCAI/UnitySave변경0, **NO_GO/MANUAL/EXECUTION_HOLD**. 새이미지신뢰·보호배포·후속게이트연결·실FAKE_ONLY동작별승인은별도·cutoff11-01 23:59:59KST/자동연장금지·Push main변경0。

@@ -1,0 +1,6 @@
+1F7 00000000 SECTB5 notype       External     | __ehinfo_Supervisor_Program__Main
+866 00000000 SECT2DA notype       External    | _unwind0Supervisor_NativeTrialPolicy__RequireWindowsBoundary
+8FC 00000000 SECT30C notype       External    | _unwind0Supervisor_Program__Main
+8FF 00000000 SECT30D notype       External    | _unwind1Supervisor_Program__Main
+A0A5 000017D0 SECT2  notype       External     | Supervisor_NativeTrialPolicy__RequireWindowsBoundary
+A0D7 00001B40 SECT2  notype       External     | Supervisor_Program__Main

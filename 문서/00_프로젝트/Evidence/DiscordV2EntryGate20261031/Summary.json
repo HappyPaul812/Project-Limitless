@@ -1,0 +1,31 @@
+{
+  "start_head": "5cb5512cd2ec9b50800cab3ead500c546663e4e8",
+  "code_commit": "4a3221b48a1f5df7530fb156e2eb058532075f61",
+  "branch": "codex/discord-v2-fake-only-entry-gate-20261031",
+  "delta_pass": 36,
+  "delta_fail": 0,
+  "prior34_preserved_not_repeated": true,
+  "native_builds": 0,
+  "native_executions": 0,
+  "windows_mutations": 0,
+  "real_approval_consumption": 0,
+  "global_release_gate": false,
+  "managed_compile_warnings": 0,
+  "managed_compile_errors": 0,
+  "static_wiring_checks": {
+    "global_gate_false": true,
+    "main_uses_shared_dispatch": true,
+    "main_has_no_unconditional_throw_gate": true,
+    "admin_uses_restricted_entry": true,
+    "supervisor_consumes_after_read_validation_before_hardening": true,
+    "all_four_admin_intents_revalidated": true,
+    "no_hold_record_before_intent": true,
+    "deployment_still_sealed": true
+  },
+  "test_copy_exact_input_matches": true,
+  "modified_native_aot_inclusion_and_execution": "NOT_VERIFIED",
+  "rebuild_required": true,
+  "existing_held_image_execution_candidate": false,
+  "status": "NO_GO / MANUAL / EXECUTION_HOLD",
+  "cutoff": "2026-11-01T23:59:59+09:00"
+}

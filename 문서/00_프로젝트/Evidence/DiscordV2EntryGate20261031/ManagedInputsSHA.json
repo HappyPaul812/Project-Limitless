@@ -1,0 +1,122 @@
+[
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/AccountNative.cs",
+    "sha256": "293cbe00360ef72a0ef4a0d1c084af047bba4803665d8359721ff2825b323604"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/AdminController.cs",
+    "sha256": "912df2d51ec9586e121568cdf995ad0554b1f2b3156176088d0c0b36207221c4"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/AdminWindows.cs",
+    "sha256": "e8cbf040f3293784875576ec8a908609dcde0ae92b8c45311b265dabbd351880"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/AdmissionPolicy.cs",
+    "sha256": "5767a3a7f52cda0c83c220c4fe1931f4da7131112eb50defaaa0d1215d94ea5c"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/AdmissionWindows.cs",
+    "sha256": "31470ebfd86ad9388cdde3cb5dccd57c9d8d052294a0d44a72f99e50863cc686"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/FakeOnlyPolicy.cs",
+    "sha256": "72d13ed384f626fce7bcf15b1eac22107c41f679ac92455162a22ef88fef61d9"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/HandleCensus.cs",
+    "sha256": "3762a58ec60e961df4182c1e3532565369288353a2d60938cb849aba5b645ac0"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/JobMonitor.cs",
+    "sha256": "8598d6e1668f42b8a9b959eaa2bd0671d69e5e8fead02f5562b83dc3cb3758c0"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/NativeInterop.cs",
+    "sha256": "f9b25eef376cb02209442078f754b679bd77549638811337a2a30472f3a2568b"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/NativeTrialPolicy.cs",
+    "sha256": "8122aa304f20a4bce9df65a3d541b1f133f58f182fcace60424beb0778d8067c"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/OperationApproval.cs",
+    "sha256": "8af6d64c25325358954c304314b87eee1403118428e15d9d5d24c4ef8b1f2e77"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/Program.cs",
+    "sha256": "0b777742447f897b5a1f4689557b721bdb70f0af64678b4fd1f5ab1b63ac7f0c"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/ProtectedDeployment.cs",
+    "sha256": "0ed8ff1e34672a742f8e136407a2905f35d22c220bdb1f3a907328b6a2951946"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/ProtectedDeploymentWindows.cs",
+    "sha256": "074157ff8aab3b93c9baf7e35e8cb6b246b3b14be7658ae281a14ee3c0e1cf69"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/ReleaseAdmission.cs",
+    "sha256": "b50b83052063326eca5c7d2b70c78ac5de867a591765857a63a0dd7e5265e3c6"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/Supervisor.Core.projitems",
+    "sha256": "91006ad24dbc9f3ce0e70ce56877563a22ba30c4540b49acf43d8ae84a92e589"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/TaskMutationBoundary.cs",
+    "sha256": "43ddf76492f4c314c98c3e25b20f6b1dbb8fc703a687d672f30ef2123fc9e147"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/TaskPolicy.cs",
+    "sha256": "a614220887b7d5e58576c572ad08df78beda4b86228b752c10c3f3cddd7a10a9"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/TaskSchedulerNative.cs",
+    "sha256": "ace7997583d49499ed1a33e613b29586f0cc995a1faac8614449389330f1fe8b"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/TokenPolicy.cs",
+    "sha256": "466e14e697f05943c8349e44417bab5fa092aa99fb2bc95672eb7ac2f10d68dd"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Supervisor/TrialEntryGate.cs",
+    "sha256": "f17b55c9aba78c944f886813ae8a18c9a461e8546c14cc609025f28f1f5c0a25"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/EntryGateTests.cs",
+    "sha256": "236c0f67af01f5186d0c778c51ea1f6f1f4ecd0635252cbd93e3fff981094828"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/FakeOnlyContractTests.cs",
+    "sha256": "b17a7de4440d76d823cf33e17f0143ba68397f4ea85e8d7920f9e6391ff3d3a3"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/InteropTrimContractTests.cs",
+    "sha256": "954b7f8bf6600bd3aa3314cfca959d54a3869a81b47e26779b13d14bf0acedcc"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/Native.TestBinding.cs",
+    "sha256": "05475cccea9fd85742b02ef05f0aaf14408a10c89457ee53d367df836a768d29"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/Program.cs",
+    "sha256": "72a349c129b4ce3f1f59bc722df30e61d32b1d4fe5e3305ea9a5e8e70c527cc7"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/RestrictedGateTests.cs",
+    "sha256": "a4f32c147b3c18b6a8b407318315b1273d64ed25b59347fefcaa293be298b165"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/Supervisor.Tests.csproj",
+    "sha256": "1e2d660d17efee550958a6036c68eea1882d977c215858bc7e5ced83ff8f1a73"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/TaskMutationTests.cs",
+    "sha256": "40505f3e6e44eae70af56f446f7dd802b56ba37f4031718be4e0fd15edad284b"
+  },
+  {
+    "path": "Tools/DiscordV2/NativeBatch/Tests/WindowsBoundaryTests.cs",
+    "sha256": "5458928088b66fb1d2b20c11fd19ec24a0c9f3e540e200540e2feadfd6e698f8"
+  }
+]

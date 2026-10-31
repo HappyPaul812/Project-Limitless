@@ -1,0 +1,37 @@
+PASS entry-dispatch-admin-register
+PASS entry-supervisor-full-read-validation-before-mock-effects
+PASS entry-deny-mode---force
+PASS entry-deny-mode---deploy
+PASS entry-deny-mode-LIVE
+PASS entry-deny-mode---register-only --force
+PASS entry-deny-extra-arguments-no-route
+PASS entry-deny-contract-path-no-route
+PASS entry-supervisor-deny-other-trial-no-effect
+PASS entry-supervisor-deny-profile-no-effect
+PASS entry-supervisor-deny-expired-no-effect
+PASS entry-supervisor-deny-unapproved-no-effect
+PASS entry-supervisor-deny-start-scope-no-effect
+PASS entry-supervisor-deny-ipc-no-effect
+PASS entry-supervisor-tampered-contract-sha
+PASS entry-supervisor-operation-deny-0
+PASS entry-supervisor-operation-deny-1
+PASS entry-supervisor-operation-deny-2
+PASS entry-supervisor-operation-deny-3
+PASS entry-supervisor-trust-tamper-no-effect
+PASS entry-supervisor-image-check-failure-no-effect
+PASS entry-supervisor-account-deny-no-effect
+PASS entry-supervisor-expiry-during-read-no-effect
+PASS entry-supervisor-trust-changed-during-read-no-effect
+PASS entry-register-expired-before-intent-no-record
+PASS entry-register-contract-swap-before-intent-no-record
+PASS entry-start-register-approval-cannot-start
+PASS entry-start-duplicate-consumption-not-reset
+PASS entry-cleanup-needs-distinct-operation
+PASS entry-cleanup-valid-own-task-only
+PASS entry-supervisor-duplicate-memory-marker-no-reset
+PASS entry-cutoff-denies-cleanup
+PASS entry-cancel-during-read-no-effect
+PASS entry-start-expired-before-consumption-no-record
+PASS entry-cleanup-expired-before-intent-no-record
+PASS entry-run-failure-keeps-consumption-and-safe-disables
+ENTRY_GATE_DELTA: 36 PASS / 0 FAIL; NATIVE_MAIN=0; WINDOWS_MUTATIONS=0; REAL_CONSUMPTION=0; NATIVEAOT_BUILDS=0

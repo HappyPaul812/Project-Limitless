@@ -1,0 +1,86 @@
+Supervisor_NativeTrialPolicy__RequireWindowsBoundary:
+  00000000000017D0: 53                 push        rbx
+  00000000000017D1: 48 83 EC 20        sub         rsp,20h
+  00000000000017D5: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  00000000000017DC: E8 00 00 00 00     call        RhpNewFast
+  00000000000017E1: 48 8B D8           mov         rbx,rax
+  00000000000017E4: 48 8B CB           mov         rcx,rbx
+  00000000000017E7: 48 8D 15 00 00 00  lea         rdx,[__Str_HOLD_NATIVE_MUTATION_DEADLINE__11001D23F3E907B816EEC26B57EF5385C818E5588EB63E72CB16EFC7BC2BD3FD]
+                    00
+  00000000000017EE: E8 9D 37 02 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  00000000000017F3: 48 8B CB           mov         rcx,rbx
+  00000000000017F6: E8 00 00 00 00     call        RhpThrowEx
+  00000000000017FB: CC                 int         3
+  00000000000017FC: 90                 nop
+  00000000000017FD: 90                 nop
+  00000000000017FE: 90                 nop
+  00000000000017FF: 90                 nop
+Supervisor_Program__Main:
+  0000000000001B40: 55                 push        rbp
+  0000000000001B41: 53                 push        rbx
+  0000000000001B42: 48 83 EC 38        sub         rsp,38h
+  0000000000001B46: 48 8D 6C 24 40     lea         rbp,[rsp+40h]
+  0000000000001B4B: 33 C0              xor         eax,eax
+  0000000000001B4D: 48 89 45 F0        mov         qword ptr [rbp-10h],rax
+  0000000000001B51: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_Diagnostics_Stopwatch@@6B@]
+                    00
+  0000000000001B58: E8 00 00 00 00     call        RhpNewFast
+  0000000000001B5D: 48 8B D8           mov         rbx,rax
+  0000000000001B60: 48 89 5D E8        mov         qword ptr [rbp-18h],rbx
+  0000000000001B64: 80 7B 18 00        cmp         byte ptr [rbx+18h],0
+  0000000000001B68: 75 28              jne         0000000000001B92
+  0000000000001B6A: 48 8D 4D F0        lea         rcx,[rbp-10h]
+  0000000000001B6E: E8 00 00 00 00     call        QueryPerformanceCounter
+  0000000000001B73: 48 8B 45 F0        mov         rax,qword ptr [rbp-10h]
+  0000000000001B77: 48 8B 5D E8        mov         rbx,qword ptr [rbp-18h]
+  0000000000001B7B: 48 89 43 10        mov         qword ptr [rbx+10h],rax
+  0000000000001B7F: C6 43 18 01        mov         byte ptr [rbx+18h],1
+  0000000000001B83: 83 3D FF FF FF FF  cmp         dword ptr [RhpTrapThreads+0FFFFFFFFh],0
+                    00
+  0000000000001B8A: 74 06              je          0000000000001B92
+  0000000000001B8C: E8 00 00 00 00     call        RhpGcPoll
+  0000000000001B91: 90                 nop
+  0000000000001B92: 48 8D 1D 00 00 00  lea         rbx,[?__NONGCSTATICS@Supervisor_Program@@]
+                    00
+  0000000000001B99: 48 83 7B F8 00     cmp         qword ptr [rbx-8],0
+  0000000000001B9E: 74 05              je          0000000000001BA5
+  0000000000001BA0: E8 00 00 00 00     call        __GetNonGCStaticBase_Supervisor_Program
+  0000000000001BA5: 80 3B 00           cmp         byte ptr [rbx],0
+  0000000000001BA8: 74 27              je          0000000000001BD1
+  0000000000001BAA: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  0000000000001BB1: E8 00 00 00 00     call        RhpNewFast
+  0000000000001BB6: 48 8B D8           mov         rbx,rax
+  0000000000001BB9: 48 8B CB           mov         rcx,rbx
+  0000000000001BBC: 48 8D 15 00 00 00  lea         rdx,[__Str_HOLD_GLOBAL_RELEASE_NOT_SUPPOR_4F3EBD963F89D1C0D01511F9226D2DD2FAB8AF11C7E38286E75FA5E375FE127D]
+                    00
+  0000000000001BC3: E8 C8 33 02 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000001BC8: 48 8B CB           mov         rcx,rbx
+  0000000000001BCB: E8 00 00 00 00     call        RhpThrowEx
+  0000000000001BD0: CC                 int         3
+  0000000000001BD1: E8 FA FB FF FF     call        Supervisor_NativeTrialPolicy__RequireWindowsBoundary
+  0000000000001BD6: CC                 int         3
+  0000000000001BD7: B8 46 00 00 00     mov         eax,46h
+  0000000000001BDC: 48 83 C4 38        add         rsp,38h
+  0000000000001BE0: 5B                 pop         rbx
+  0000000000001BE1: 5D                 pop         rbp
+  0000000000001BE2: C3                 ret
+  0000000000001BE3: 48 83 EC 28        sub         rsp,28h
+  0000000000001BE7: 48 8D 05 E9 FF FF  lea         rax,[1BD7h]
+                    FF
+  0000000000001BEE: 48 83 C4 28        add         rsp,28h
+  0000000000001BF2: C3                 ret
+  0000000000001BF3: 90                 nop
+  0000000000001BF4: 90                 nop
+  0000000000001BF5: 90                 nop
+  0000000000001BF6: 90                 nop
+  0000000000001BF7: 90                 nop
+  0000000000001BF8: 90                 nop
+  0000000000001BF9: 90                 nop
+  0000000000001BFA: 90                 nop
+  0000000000001BFB: 90                 nop
+  0000000000001BFC: 90                 nop
+  0000000000001BFD: 90                 nop
+  0000000000001BFE: 90                 nop
+  0000000000001BFF: 90                 nop

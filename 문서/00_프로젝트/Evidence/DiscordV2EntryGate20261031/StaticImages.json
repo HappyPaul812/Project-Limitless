@@ -1,0 +1,44 @@
+{
+  "images": [
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true
+    },
+    {
+      "name": "SupervisorOld",
+      "bytes": 7536640,
+      "sha256": "CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD",
+      "preserved": true
+    },
+    {
+      "name": "SupervisorHeld",
+      "bytes": 3172352,
+      "sha256": "34D2B90A0EDE2BBA1BB8A848A80F30890B80ABB7463EE0118A35395B8BA5AB16",
+      "preserved": true
+    }
+  ],
+  "coff_method_body_symbols": {
+    "old": {
+      "Program__Main": true,
+      "Program__Supervise": true,
+      "AdminWindows__Run": true,
+      "ReleaseAdmission__Acquire": true,
+      "TaskSchedulerNative__Register": true
+    },
+    "new": {
+      "Program__Main": true,
+      "Program__Supervise": false,
+      "AdminWindows__Run": false,
+      "ReleaseAdmission__Acquire": false,
+      "TaskSchedulerNative__Register": false
+    }
+  },
+  "held_exe_main_raw_offset": 8032,
+  "held_exe_guard_raw_offset": 7152,
+  "main_call_then_trap_and_catch_return70_matched_to_native_object": true,
+  "conclusion": "HELD_IMAGE_NOT_EXECUTION_CANDIDATE: unconditional throw makes admin/supervisor paths unreachable; bodies absent from NativeAOT object. Native presence of modified source NOT_VERIFIED.",
+  "native_executions": 0,
+  "native_builds": 0
+}
