@@ -1,0 +1,62 @@
+{
+  "start_head": "871ee2c97e471fd18e3ad4e7fe99cc6fc38c5e02",
+  "branch": "codex/discord-v2-protected-bootstrap-20261031",
+  "final_code_commit": "5a105bcadedd8f75dfe0c864def4f42dfc921ecf",
+  "implementation": "PASS_MANAGED_MOCK_SCOPE_ONLY",
+  "phases": [
+    {
+      "phase": "Initial57",
+      "code_commit": "b6c9786ffc7d7f9e2a1e62d237443ee65b433de2",
+      "pass_count": 57,
+      "fail_count": 0,
+      "compile_exit": 0,
+      "compile_warnings": 0,
+      "compile_errors": 0
+    },
+    {
+      "phase": "HostBinding2",
+      "code_commit": "5a105bcadedd8f75dfe0c864def4f42dfc921ecf",
+      "pass_count": 2,
+      "fail_count": 0,
+      "compile_exit": 0,
+      "compile_warnings": 0,
+      "compile_errors": 0
+    }
+  ],
+  "total_unique_pass": 59,
+  "total_fail": 0,
+  "initial57_rerun": false,
+  "old_suites_repeated": false,
+  "real_windows_backend_instances_or_calls": 0,
+  "product_main_executions": 0,
+  "bootstrap_product_or_native_aot_builds": 0,
+  "real_protected_directory_or_acl_changes": 0,
+  "exe_copies_or_executions": 0,
+  "real_approval_files_or_consumption": 0,
+  "operational_binding_issued": false,
+  "existing_records_changed": false,
+  "images": [
+    {
+      "name": "Supervisor",
+      "bytes": 7559680,
+      "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "preserved": true,
+      "native_binding_matches": true
+    },
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true,
+      "native_binding_matches": true
+    }
+  ],
+  "supervisor_probe_deployer_sources_changed": false,
+  "c_limitless_temp_and_e_acls_changed": false,
+  "static_native_api_audit": "Only CreateDirectoryW mutates filesystem; existing file handles read-only OPEN_EXISTING. No file write/copy/delete, existing ACL modification, Task/account APIs.",
+  "actual_native_creation_and_owner_dacl_handle_readback": "NOT_VERIFIED",
+  "tool_image_sha256": null,
+  "readiness": "NATIVE_TOOL_BUILD_SEAL_TRUST_AND_ADMIN_EXECUTION_APPROVAL_PENDING",
+  "status": "NO_GO / MANUAL / EXECUTION_HOLD",
+  "cutoff": "2026-11-01T23:59:59+09:00"
+}

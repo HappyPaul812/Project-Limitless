@@ -1,0 +1,10 @@
+PATH 환경 변수에 '<WORKTREE>\Temp\ProtectedBootstrapDelta20261031\dotnet-home\.dotnet\tools'을(를) 추가하지 못했습니다. 'dotnet tool install'로 설치한 도구를 사용하려면 이 디렉터리를 PATH에 추가하세요.
+  복원할 프로젝트를 확인하는 중...
+  <WORKTREE>\Temp\BootstrapHostBindingDelta20261031\ProtectedBootstrap\Tests\Bootstrap.Tests.csproj을(를) 49밀리초 동안 복원했습니다.
+  Bootstrap.Tests -> <WORKTREE>\Temp\BootstrapHostBindingDelta20261031\ProtectedBootstrap\Tests\bin\Release\net10.0-windows\Bootstrap.Tests.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:02.64
