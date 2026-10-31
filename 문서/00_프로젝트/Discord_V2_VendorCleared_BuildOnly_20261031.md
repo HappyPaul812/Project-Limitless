@@ -50,4 +50,4 @@ Supervisor 생성 직후 정적검사, **10초 후 SHA 재검사**, 추가 정�
 
 ## 증거와 인계
 
-원시 source 봉인/정확한 private binding·전체 로그·초기 targets/발행 표식/결과는 기존 worktree의 ignored `Temp/NativeBatchPreparation20261028/NativeResume20261031` 및 새 E 격리 루트에 보존했습니다. 샘플/격리물은 이 증거에 복사하지 않았습니다. 공개 가능한 요약은 `Evidence/DiscordV2VendorBuild20261031/Summary.json`에 있습니다. 관련 CODEX_LATEST/CURRENT_STATUS/NativeBatch README를 갱신하고 Issue66에 실제 상태를 보고합니다. commit SHA와 보고 영수증은 후속 인계에 기록하며 **LOCAL_COMMITTED / REMOTE_NOT_PUSHED**를 유지합니다.
+원시 source 봉인/정확한 private binding·전체 로그·초기 targets/발행 표식/결과는 기존 worktree의 ignored `Temp/NativeBatchPreparation20261028/NativeResume20261031` 및 새 E 격리 루트에 보존했습니다. 샘플/격리물은 이 증거에 복사하지 않았습니다. 공개 가능한 요약은 `Evidence/DiscordV2VendorBuild20261031/Summary.json`에 있습니다. 관련 CODEX_LATEST/CURRENT_STATUS/NativeBatch README를 갱신했습니다. 보고 commit `9227601ccc92b32db15e8a935a48bd64e954e8ee`, [Issue66 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6538682825) 실제 등록·본문 전체 재조회 일치 확인. 후속 영수증은 문서만 변경하며 **LOCAL_COMMITTED / REMOTE_NOT_PUSHED**를 유지합니다. 원본 main ab47b931/Git상태344항목 유지 확인, gate=false·실행0·Push0입니다.

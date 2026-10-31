@@ -5,6 +5,10 @@
 - Supervisor **7,536,640bytes / PE32+ AMD64 / CLR없음**, SHA256 `CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD`. NativeAOT warning/IL2091=0(실패Probe에는 적용 불가). 출력10초후/추가확인 SHA유지·삭제미관측, **새 바이너리 V3 공식정상판정 NOT_VERIFIED**. 프로그램 실행0, gate=false / NO_GO / MANUAL / EXECUTION_HOLD입니다.
 - [실제 결과·증거·FAKE_ONLY 조건](../../Discord_V2_VendorCleared_BuildOnly_20261031.md), Evidence/DiscordV2VendorBuild20261031/Summary.json. Probe 추가시도는 별도승인, 두이미지/AV·신뢰근거·유효기간/동작별승인·Batch/Session0/HANDLE/Job90초는 남은HOLD입니다. 기존위험수용승인과 실제신뢰사실을 구분합니다. cutoff11-01 23:59:59KST 자동연장0, Task/계정/ACL·Session0·IPC/AI·원본UnitySave·Push/main병합0. 원격에는 정제Issue보고만 게시합니다.
 
+### 10/31 실제 보고 영수증
+
+빌드 보고 commit `9227601ccc92b32db15e8a935a48bd64e954e8ee`. [Issue66 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6538682825)를 실제 등록하고 전체 본문 일치를 재조회했습니다. 후속 영수증은 문서만 변경합니다. 원격에는 댓글만 게시했고 소스/EXE/PDB/원시로그는 미게시입니다. 원본 main ab47b931 및 Git상태344항목 유지 확인, gate=false·실행0·Push0입니다.
+
 ## Codex 최신 인계 — 2026-10-28 / 안전 정리 완료
 
 - **담당/기준:** Codex, codex/discord-usage-diagnostics-20261026. 구현fe5b22e60a3c505961cead1b7b80089194f0a44a, 관련Issue #66. 이번문서최종SHA는완료보고/Issue댓글.
