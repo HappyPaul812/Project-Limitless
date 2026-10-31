@@ -1164,3 +1164,7 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 ### 실제 GitHub 보고 영수증
 
 보고/정적증거 로컬커밋 `df71e4b5ceaf139f2b4bef52862d63a0ed6edc9e`. [Issue #66 HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6540138211) 실제 등록·전체본문재조회일치 확인. 후속 영수증은 문서만 변경합니다. 두이미지보존PASS·정적6관찰PASS·신규모의QA미실행/HOLD·제품코드수정/빌드/복사실행/실Windows변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
+
+### 실제 GitHub 보고 영수증
+
+미검증후보코드 `ac0fb5955bb79763dbe1817546ba1983fb780b02`, 보고/실패증거 `675f67354fa1ca2de58ad2e295c7b00bdccf678d`. [Issue #66 실패/HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6540390424) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서만 변경합니다. 테스트DLL컴파일FAIL1·모의미실행·고정소비원장미완·두이미지/기존소스보존·제품도구빌드/실행/실Windows변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.

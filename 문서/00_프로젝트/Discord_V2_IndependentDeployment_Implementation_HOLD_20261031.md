@@ -59,3 +59,7 @@
 5. 실제 배포/도구 실행 및 Task/FAKE_ONLY 시험은 별도 승인 대상입니다. cutoff **2026-11-01 23:59:59 KST**, 만료 후 옛 승인 재사용/자동 연장 금지. NO_GO/MANUAL/EXECUTION_HOLD로 중지합니다.
 
 [실패 로그](Evidence/DiscordV2IndependentDeploy20261031/TestCompile_FAILED.log), [상태/원본 보존](Evidence/DiscordV2IndependentDeploy20261031/Summary.json), [미검증 후보 입력 SHA](Evidence/DiscordV2IndependentDeploy20261031/CandidateInputsSHA.json). 로컬 커밋만 보존/REMOTE_NOT_PUSHED. Push/main 병합/원본 적용·비공개 binding/바이너리/비밀정보 업로드 없음.
+
+### 실제 GitHub 보고 영수증
+
+미검증후보코드 `ac0fb5955bb79763dbe1817546ba1983fb780b02`, 보고/실패증거 `675f67354fa1ca2de58ad2e295c7b00bdccf678d`. [Issue #66 실패/HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6540390424) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서만 변경합니다. 테스트DLL컴파일FAIL1·모의미실행·고정소비원장미완·두이미지/기존소스보존·제품도구빌드/실행/실Windows변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
