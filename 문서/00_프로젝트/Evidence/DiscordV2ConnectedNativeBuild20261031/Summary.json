@@ -1,0 +1,58 @@
+{
+  "source_head": "ad58fbe2d051fd417ed616a00c9e69996162ff62",
+  "build_root": "E:\\LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorConnected20261031-f3e1426a2564435682ab72aec14ad2b6",
+  "attempts": 1,
+  "exit_code": 0,
+  "static_evaluation": "PASS",
+  "official_package_hashes": 7,
+  "input_count": 23,
+  "v3_engine": "2026.10.31.01",
+  "executions": 0,
+  "gate": false,
+  "restricted_gate_preserved": true,
+  "old_images_preserved": true,
+  "build_pass": true,
+  "warnings": [],
+  "IL2091_count": 0,
+  "v3_official_verdict": "NOT_VERIFIED",
+  "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+  "bytes": 7559680,
+  "architecture": "PE32+ AMD64 0x8664; CLR directory absent",
+  "retained_after_10_seconds": true,
+  "code_commit": "4a3221b48a1f5df7530fb156e2eb058532075f61",
+  "branch": "codex/discord-v2-connected-supervisor-build-20261031",
+  "native_body_matches": 21,
+  "main_calls_dispatch": true,
+  "main_unconditional_throw_gate": false,
+  "inputs_unchanged": true,
+  "manifest_sha256": "3E61F60ECFC2B31EFAB4CCCAB6306AB9BC0862FE742EBA2BEE0E2C0986485A84",
+  "restore_sources": [
+    "E:\\LimitlessBuildDependencies\\NativeAOT20261028\\nuget-feed"
+  ],
+  "old_images": [
+    {
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "bytes": 1892352,
+      "preserved": true
+    },
+    {
+      "sha256": "CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD",
+      "bytes": 7536640,
+      "preserved": true
+    },
+    {
+      "sha256": "34D2B90A0EDE2BBA1BB8A848A80F30890B80ABB7463EE0118A35395B8BA5AB16",
+      "bytes": 3172352,
+      "preserved": true
+    }
+  ],
+  "prior_36_and_34_tests_repeated": 0,
+  "runtime_verified": false,
+  "deployments": 0,
+  "windows_mutations": 0,
+  "real_approval_consumption": 0,
+  "v3_observation": "File retained unchanged at immediate, 10-second and later checks; no deletion or mutation observed. Official verdict NOT_VERIFIED.",
+  "status": "NO_GO / MANUAL / EXECUTION_HOLD",
+  "cutoff": "2026-11-01T23:59:59+09:00",
+  "final_pe_direct_branch_pass": 4
+}

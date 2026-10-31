@@ -1,0 +1,274 @@
+{
+  "native_body_matches": [
+    {
+      "method": "Program___c__DisplayClass4_0___Main_b__0",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x24af0",
+      "exe_raw_offset": 151312,
+      "matched_bytes": 9,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 9,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "Program___c__DisplayClass4_0___Main_b__1",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x24b00",
+      "exe_raw_offset": 151328,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "invariant_bytes": 88,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "Program__Main",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0xde00",
+      "exe_raw_offset": 57888,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 20,
+      "invariant_bytes": 76,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TrialEntryGate__Dispatch",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x71f0",
+      "exe_raw_offset": 30224,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "invariant_bytes": 88,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TrialEntryGate__Validate",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x7620",
+      "exe_raw_offset": 31296,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "NativeTrialPolicy__Shape",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x85b0",
+      "exe_raw_offset": 35280,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "invariant_bytes": 92,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "NativeTrialPolicy__Authorize",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x8960",
+      "exe_raw_offset": 36224,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "AdminWindows__Run",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x19f10",
+      "exe_raw_offset": 107312,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "invariant_bytes": 88,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "AdminController__ExecuteNative",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x18ab0",
+      "exe_raw_offset": 102096,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "invariant_bytes": 92,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "AdminController__ExecuteCore",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x18c00",
+      "exe_raw_offset": 102432,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "ReleaseAdmission__Acquire",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x11c90",
+      "exe_raw_offset": 73904,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 12,
+      "invariant_bytes": 84,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "ReleaseAdmission__Prepare",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x11d00",
+      "exe_raw_offset": 74016,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 2,
+      "invariant_bytes": 94,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "Program__Supervise",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0xe050",
+      "exe_raw_offset": 58480,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskMutationBoundary__Validate",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x7c40",
+      "exe_raw_offset": 32864,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskSchedulerNative__Register",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x1ff80",
+      "exe_raw_offset": 132000,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskSchedulerNative__Enable",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x20690",
+      "exe_raw_offset": 133808,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskSchedulerNative__Run",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x207d0",
+      "exe_raw_offset": 134128,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskSchedulerNative__Stop",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x20a60",
+      "exe_raw_offset": 134784,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "TaskSchedulerNative__Remove",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x20d50",
+      "exe_raw_offset": 135536,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 0,
+      "invariant_bytes": 96,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "JobMonitor__Run",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x22de0",
+      "exe_raw_offset": 143872,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 4,
+      "invariant_bytes": 92,
+      "pe_executable_section": ".text"
+    },
+    {
+      "method": "JobMonitor__Drain",
+      "status": "PASS_NATIVE_BODY_MATCH",
+      "coff_section": ".managedcode$I",
+      "coff_address": "0x23500",
+      "exe_raw_offset": 145696,
+      "matched_bytes": 96,
+      "relocation_bytes_masked": 8,
+      "invariant_bytes": 88,
+      "pe_executable_section": ".text"
+    }
+  ],
+  "native_body_pass": 21,
+  "main_calls_dispatch": true,
+  "main_no_unconditional_throw_gate": true,
+  "method": "COFF native-code body prefix matched uniquely in executable PE section (96 bytes; 9-byte admin thunk); relocation bytes masked; no binary execution",
+  "runtime_proven": false,
+  "final_pe_branch_checks": [
+    {
+      "caller": "Program__Main",
+      "target": "TrialEntryGate__Dispatch",
+      "kind": "call",
+      "pe_instruction_raw_offset": 58140,
+      "pe_target_raw_offset": 30224,
+      "status": "PASS_DIRECT_PE_BRANCH"
+    },
+    {
+      "caller": "Program___c__DisplayClass4_0___Main_b__0",
+      "target": "AdminWindows__Run",
+      "kind": "jmp",
+      "pe_instruction_raw_offset": 151316,
+      "pe_target_raw_offset": 107312,
+      "status": "PASS_DIRECT_PE_BRANCH"
+    },
+    {
+      "caller": "Program___c__DisplayClass4_0___Main_b__1",
+      "target": "ReleaseAdmission__Acquire",
+      "kind": "call",
+      "pe_instruction_raw_offset": 151439,
+      "pe_target_raw_offset": 73904,
+      "status": "PASS_DIRECT_PE_BRANCH"
+    },
+    {
+      "caller": "Program___c__DisplayClass4_0___Main_b__1",
+      "target": "Program__Supervise",
+      "kind": "call",
+      "pe_instruction_raw_offset": 151627,
+      "pe_target_raw_offset": 58480,
+      "status": "PASS_DIRECT_PE_BRANCH"
+    }
+  ]
+}

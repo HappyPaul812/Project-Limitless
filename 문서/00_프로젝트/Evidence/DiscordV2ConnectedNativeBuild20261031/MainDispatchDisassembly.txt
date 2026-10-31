@@ -1,0 +1,573 @@
+Supervisor_Program__Main:
+  000000000000DE00: 55                 push        rbp
+  000000000000DE01: 41 56              push        r14
+  000000000000DE03: 57                 push        rdi
+  000000000000DE04: 56                 push        rsi
+  000000000000DE05: 53                 push        rbx
+  000000000000DE06: 48 83 EC 60        sub         rsp,60h
+  000000000000DE0A: 48 8D AC 24 80 00  lea         rbp,[rsp+80h]
+                    00 00
+  000000000000DE12: 0F 57 E4           xorps       xmm4,xmm4
+  000000000000DE15: 0F 29 65 B0        movaps      xmmword ptr [rbp-50h],xmm4
+  000000000000DE19: 0F 29 65 C0        movaps      xmmword ptr [rbp-40h],xmm4
+  000000000000DE1D: 33 C0              xor         eax,eax
+  000000000000DE1F: 48 89 45 D0        mov         qword ptr [rbp-30h],rax
+  000000000000DE23: 48 8B D9           mov         rbx,rcx
+  000000000000DE26: 48 8D 0D 00 00 00  lea         rcx,[??_7Supervisor_Program___c__DisplayClass4_0@@6B@]
+                    00
+  000000000000DE2D: E8 00 00 00 00     call        RhpNewFast
+  000000000000DE32: 48 8B F0           mov         rsi,rax
+  000000000000DE35: 48 89 75 A8        mov         qword ptr [rbp-58h],rsi
+  000000000000DE39: 48 8D 4E 08        lea         rcx,[rsi+8]
+  000000000000DE3D: 48 8B D3           mov         rdx,rbx
+  000000000000DE40: E8 00 00 00 00     call        RhpAssignRef
+  000000000000DE45: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_Diagnostics_Stopwatch@@6B@]
+                    00
+  000000000000DE4C: E8 00 00 00 00     call        RhpNewFast
+  000000000000DE51: 48 8B D8           mov         rbx,rax
+  000000000000DE54: 48 89 5D A0        mov         qword ptr [rbp-60h],rbx
+  000000000000DE58: 80 7B 18 00        cmp         byte ptr [rbx+18h],0
+  000000000000DE5C: 74 06              je          000000000000DE64
+  000000000000DE5E: 48 8B 5D A0        mov         rbx,qword ptr [rbp-60h]
+  000000000000DE62: EB 26              jmp         000000000000DE8A
+  000000000000DE64: 48 8D 4D B0        lea         rcx,[rbp-50h]
+  000000000000DE68: E8 00 00 00 00     call        QueryPerformanceCounter
+  000000000000DE6D: 48 8B 45 B0        mov         rax,qword ptr [rbp-50h]
+  000000000000DE71: 48 8B 5D A0        mov         rbx,qword ptr [rbp-60h]
+  000000000000DE75: 48 89 43 10        mov         qword ptr [rbx+10h],rax
+  000000000000DE79: C6 43 18 01        mov         byte ptr [rbx+18h],1
+  000000000000DE7D: 83 3D FF FF FF FF  cmp         dword ptr [RhpTrapThreads+0FFFFFFFFh],0
+                    00
+  000000000000DE84: 0F 85 B8 00 00 00  jne         000000000000DF42
+  000000000000DE8A: 48 8B 75 A8        mov         rsi,qword ptr [rbp-58h]
+  000000000000DE8E: 48 8D 4E 10        lea         rcx,[rsi+10h]
+  000000000000DE92: 48 8B D3           mov         rdx,rbx
+  000000000000DE95: E8 00 00 00 00     call        RhpAssignRef
+  000000000000DE9A: 90                 nop
+  000000000000DE9B: 48 8D 1D 00 00 00  lea         rbx,[?__NONGCSTATICS@Supervisor_Program@@]
+                    00
+  000000000000DEA2: 48 83 7B F8 00     cmp         qword ptr [rbx-8],0
+  000000000000DEA7: 75 5D              jne         000000000000DF06
+  000000000000DEA9: 80 3B 00           cmp         byte ptr [rbx],0
+  000000000000DEAC: 75 5F              jne         000000000000DF0D
+  000000000000DEAE: 48 8B 5E 08        mov         rbx,qword ptr [rsi+8]
+  000000000000DEB2: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_Func_1<Int32>@@6B@]
+                    00
+  000000000000DEB9: E8 00 00 00 00     call        RhpNewFast
+  000000000000DEBE: 48 8B F8           mov         rdi,rax
+  000000000000DEC1: 48 8D 4D B8        lea         rcx,[rbp-48h]
+  000000000000DEC5: E8 86 39 00 00     call        Supervisor_AdmissionBinding__get_Current
+  000000000000DECA: 48 8B CF           mov         rcx,rdi
+  000000000000DECD: 48 8B D6           mov         rdx,rsi
+  000000000000DED0: E8 00 00 00 00     call        __DelegateCtor_S_P_CoreLib_System_Delegate__InitializeClosedInstance__Supervisor_Program___c__DisplayClass4_0___Main_b__0
+  000000000000DED5: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_Func_1<Int32>@@6B@]
+                    00
+  000000000000DEDC: E8 00 00 00 00     call        RhpNewFast
+  000000000000DEE1: 4C 8B F0           mov         r14,rax
+  000000000000DEE4: 49 8B CE           mov         rcx,r14
+  000000000000DEE7: 48 8B D6           mov         rdx,rsi
+  000000000000DEEA: E8 00 00 00 00     call        __DelegateCtor_S_P_CoreLib_System_Delegate__InitializeClosedInstance__Supervisor_Program___c__DisplayClass4_0___Main_b__1
+  000000000000DEEF: 48 8D 55 B8        lea         rdx,[rbp-48h]
+  000000000000DEF3: 48 8B CB           mov         rcx,rbx
+  000000000000DEF6: 4C 8B C7           mov         r8,rdi
+  000000000000DEF9: 4D 8B CE           mov         r9,r14
+  000000000000DEFC: E8 EF 92 FF FF     call        Supervisor_TrialEntryGate__Dispatch
+  000000000000DF01: 89 45 DC           mov         dword ptr [rbp-24h],eax
+  000000000000DF04: EB 2E              jmp         000000000000DF34
+  000000000000DF06: E8 00 00 00 00     call        __GetNonGCStaticBase_Supervisor_Program
+  000000000000DF0B: EB 9C              jmp         000000000000DEA9
+  000000000000DF0D: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  000000000000DF14: E8 00 00 00 00     call        RhpNewFast
+  000000000000DF19: 48 8B D8           mov         rbx,rax
+  000000000000DF1C: 48 8B CB           mov         rcx,rbx
+  000000000000DF1F: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000DF26: E8 65 63 0D 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  000000000000DF2B: 48 8B CB           mov         rcx,rbx
+  000000000000DF2E: E8 00 00 00 00     call        RhpThrowEx
+  000000000000DF33: CC                 int         3
+  000000000000DF34: 8B 45 DC           mov         eax,dword ptr [rbp-24h]
+  000000000000DF37: 48 83 C4 60        add         rsp,60h
+  000000000000DF3B: 5B                 pop         rbx
+  000000000000DF3C: 5E                 pop         rsi
+  000000000000DF3D: 5F                 pop         rdi
+  000000000000DF3E: 41 5E              pop         r14
+  000000000000DF40: 5D                 pop         rbp
+  000000000000DF41: C3                 ret
+  000000000000DF42: E8 00 00 00 00     call        RhpGcPoll
+  000000000000DF47: E9 3E FF FF FF     jmp         000000000000DE8A
+  000000000000DF4C: 48 83 EC 28        sub         rsp,28h
+  000000000000DF50: C7 45 DC 46 00 00  mov         dword ptr [rbp-24h],46h
+                    00
+  000000000000DF57: 48 8D 05 D6 FF FF  lea         rax,[0DF34h]
+                    FF
+  000000000000DF5E: 48 83 C4 28        add         rsp,28h
+  000000000000DF62: C3                 ret
+  000000000000DF63: 90                 nop
+  000000000000DF64: 90                 nop
+  000000000000DF65: 90                 nop
+  000000000000DF66: 90                 nop
+  000000000000DF67: 90                 nop
+  000000000000DF68: 90                 nop
+  000000000000DF69: 90                 nop
+  000000000000DF6A: 90                 nop
+  000000000000DF6B: 90                 nop
+  000000000000DF6C: 90                 nop
+  000000000000DF6D: 90                 nop
+  000000000000DF6E: 90                 nop
+  000000000000DF6F: 90                 nop
+
+Supervisor_TrialEntryGate__Dispatch:
+  00000000000071F0: 41 56              push        r14
+  00000000000071F2: 57                 push        rdi
+  00000000000071F3: 56                 push        rsi
+  00000000000071F4: 55                 push        rbp
+  00000000000071F5: 53                 push        rbx
+  00000000000071F6: 48 83 EC 50        sub         rsp,50h
+  00000000000071FA: 0F 57 E4           xorps       xmm4,xmm4
+  00000000000071FD: 0F 29 64 24 20     movaps      xmmword ptr [rsp+20h],xmm4
+  0000000000007202: 0F 29 64 24 30     movaps      xmmword ptr [rsp+30h],xmm4
+  0000000000007207: 0F 29 64 24 40     movaps      xmmword ptr [rsp+40h],xmm4
+  000000000000720C: 48 8B D9           mov         rbx,rcx
+  000000000000720F: 49 8B F0           mov         rsi,r8
+  0000000000007212: 49 8B F9           mov         rdi,r9
+  0000000000007215: 8B 6B 08           mov         ebp,dword ptr [rbx+8]
+  0000000000007218: 83 FD 05           cmp         ebp,5
+  000000000000721B: 0F 8C AC 03 00 00  jl          00000000000075CD
+  0000000000007221: 48 8B 4B 18        mov         rcx,qword ptr [rbx+18h]
+  0000000000007225: 48 8D 05 00 00 00  lea         rax,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000722C: 48 3B C8           cmp         rcx,rax
+  000000000000722F: 74 4E              je          000000000000727F
+  0000000000007231: 48 85 C9           test        rcx,rcx
+  0000000000007234: 0F 84 93 03 00 00  je          00000000000075CD
+  000000000000723A: 83 79 08 0A        cmp         dword ptr [rcx+8],0Ah
+  000000000000723E: 0F 85 89 03 00 00  jne         00000000000075CD
+  0000000000007244: 0F 10 41 0C        movups      xmm0,xmmword ptr [rcx+0Ch]
+  0000000000007248: 66 0F EF 05 00 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch]
+                    00 00
+  0000000000007250: 0F 10 49 10        movups      xmm1,xmmword ptr [rcx+10h]
+  0000000000007254: 66 0F EF 0D 10 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+10h]
+                    00 00
+  000000000000725C: 66 0F EB C1        por         xmm0,xmm1
+  0000000000007260: 0F 57 C9           xorps       xmm1,xmm1
+  0000000000007263: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  0000000000007267: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  000000000000726B: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  0000000000007271: 0F 94 C1           sete        cl
+  0000000000007274: 0F B6 C9           movzx       ecx,cl
+  0000000000007277: 85 C9              test        ecx,ecx
+  0000000000007279: 0F 84 4E 03 00 00  je          00000000000075CD
+  000000000000727F: 48 8B 4B 28        mov         rcx,qword ptr [rbx+28h]
+  0000000000007283: 48 8D 05 00 00 00  lea         rax,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000728A: 48 3B C8           cmp         rcx,rax
+  000000000000728D: 74 4E              je          00000000000072DD
+  000000000000728F: 48 85 C9           test        rcx,rcx
+  0000000000007292: 0F 84 35 03 00 00  je          00000000000075CD
+  0000000000007298: 83 79 08 0E        cmp         dword ptr [rcx+8],0Eh
+  000000000000729C: 0F 85 2B 03 00 00  jne         00000000000075CD
+  00000000000072A2: 0F 10 41 0C        movups      xmm0,xmmword ptr [rcx+0Ch]
+  00000000000072A6: 66 0F EF 05 00 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch]
+                    00 00
+  00000000000072AE: 0F 10 49 18        movups      xmm1,xmmword ptr [rcx+18h]
+  00000000000072B2: 66 0F EF 0D 20 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+20h]
+                    00 00
+  00000000000072BA: 66 0F EB C1        por         xmm0,xmm1
+  00000000000072BE: 0F 57 C9           xorps       xmm1,xmm1
+  00000000000072C1: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  00000000000072C5: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  00000000000072C9: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  00000000000072CF: 0F 94 C1           sete        cl
+  00000000000072D2: 0F B6 C9           movzx       ecx,cl
+  00000000000072D5: 85 C9              test        ecx,ecx
+  00000000000072D7: 0F 84 F0 02 00 00  je          00000000000075CD
+  00000000000072DD: 4C 8B 73 20        mov         r14,qword ptr [rbx+20h]
+  00000000000072E1: 48 8B 4A 10        mov         rcx,qword ptr [rdx+10h]
+  00000000000072E5: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  00000000000072EC: E8 BF AF 13 00     call        S_P_CoreLib_System_IO_Path__Combine
+  00000000000072F1: 48 8B D0           mov         rdx,rax
+  00000000000072F4: 49 8B CE           mov         rcx,r14
+  00000000000072F7: E8 C4 F9 0B 00     call        String__Equals_2
+  00000000000072FC: 85 C0              test        eax,eax
+  00000000000072FE: 0F 84 C9 02 00 00  je          00000000000075CD
+  0000000000007304: 48 8B 4B 30        mov         rcx,qword ptr [rbx+30h]
+  0000000000007308: E8 B3 7F 00 00     call        Supervisor_AdmissionPolicy__Sha
+  000000000000730D: 84 C0              test        al,al
+  000000000000730F: 0F 84 B8 02 00 00  je          00000000000075CD
+  0000000000007315: 4C 8B 73 10        mov         r14,qword ptr [rbx+10h]
+  0000000000007319: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000007320: 4C 3B F1           cmp         r14,rcx
+  0000000000007323: 74 45              je          000000000000736A
+  0000000000007325: 4D 85 F6           test        r14,r14
+  0000000000007328: 74 64              je          000000000000738E
+  000000000000732A: 41 83 7E 08 0F     cmp         dword ptr [r14+8],0Fh
+  000000000000732F: 75 5D              jne         000000000000738E
+  0000000000007331: 41 0F 10 46 0C     movups      xmm0,xmmword ptr [r14+0Ch]
+  0000000000007336: 66 0F EF 05 30 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+30h]
+                    00 00
+  000000000000733E: 41 0F 10 4E 1A     movups      xmm1,xmmword ptr [r14+1Ah]
+  0000000000007343: 66 0F EF 0D 40 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+40h]
+                    00 00
+  000000000000734B: 66 0F EB C1        por         xmm0,xmm1
+  000000000000734F: 0F 57 C9           xorps       xmm1,xmm1
+  0000000000007352: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  0000000000007356: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  000000000000735A: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  0000000000007360: 0F 94 C1           sete        cl
+  0000000000007363: 0F B6 C9           movzx       ecx,cl
+  0000000000007366: 85 C9              test        ecx,ecx
+  0000000000007368: 74 24              je          000000000000738E
+  000000000000736A: 83 FD 06           cmp         ebp,6
+  000000000000736D: 74 04              je          0000000000007373
+  000000000000736F: 33 ED              xor         ebp,ebp
+  0000000000007371: EB 12              jmp         0000000000007385
+  0000000000007373: 48 8B 4B 38        mov         rcx,qword ptr [rbx+38h]
+  0000000000007377: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000737E: E8 3D F9 0B 00     call        String__Equals_2
+  0000000000007383: 8B E8              mov         ebp,eax
+  0000000000007385: 40 0F B6 ED        movzx       ebp,bpl
+  0000000000007389: E9 ED 00 00 00     jmp         000000000000747B
+  000000000000738E: 49 8B CE           mov         rcx,r14
+  0000000000007391: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000007398: E8 23 F9 0B 00     call        String__Equals_2
+  000000000000739D: 85 C0              test        eax,eax
+  000000000000739F: 0F 84 E3 00 00 00  je          0000000000007488
+  00000000000073A5: 83 FD 07           cmp         ebp,7
+  00000000000073A8: 0F 85 CB 00 00 00  jne         0000000000007479
+  00000000000073AE: 48 8B 4B 38        mov         rcx,qword ptr [rbx+38h]
+  00000000000073B2: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  00000000000073B9: 48 3B CA           cmp         rcx,rdx
+  00000000000073BC: 74 4A              je          0000000000007408
+  00000000000073BE: 48 85 C9           test        rcx,rcx
+  00000000000073C1: 0F 84 B2 00 00 00  je          0000000000007479
+  00000000000073C7: 83 79 08 0A        cmp         dword ptr [rcx+8],0Ah
+  00000000000073CB: 0F 85 A8 00 00 00  jne         0000000000007479
+  00000000000073D1: 0F 10 41 0C        movups      xmm0,xmmword ptr [rcx+0Ch]
+  00000000000073D5: 66 0F EF 05 50 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+50h]
+                    00 00
+  00000000000073DD: 0F 10 49 10        movups      xmm1,xmmword ptr [rcx+10h]
+  00000000000073E1: 66 0F EF 0D 60 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+60h]
+                    00 00
+  00000000000073E9: 66 0F EB C1        por         xmm0,xmm1
+  00000000000073ED: 0F 57 C9           xorps       xmm1,xmm1
+  00000000000073F0: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  00000000000073F4: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  00000000000073F8: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  00000000000073FE: 0F 94 C1           sete        cl
+  0000000000007401: 0F B6 C9           movzx       ecx,cl
+  0000000000007404: 85 C9              test        ecx,ecx
+  0000000000007406: 74 71              je          0000000000007479
+  0000000000007408: 48 8B 4B 40        mov         rcx,qword ptr [rbx+40h]
+  000000000000740C: 48 85 C9           test        rcx,rcx
+  000000000000740F: 74 60              je          0000000000007471
+  0000000000007411: 48 8D 51 0C        lea         rdx,[rcx+0Ch]
+  0000000000007415: 8B 49 08           mov         ecx,dword ptr [rcx+8]
+  0000000000007418: 4C 8D 05 00 00 00  lea         r8,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000741F: 49 83 C0 0C        add         r8,0Ch
+  0000000000007423: 48 89 54 24 30     mov         qword ptr [rsp+30h],rdx
+  0000000000007428: 89 4C 24 38        mov         dword ptr [rsp+38h],ecx
+  000000000000742C: 4C 89 44 24 20     mov         qword ptr [rsp+20h],r8
+  0000000000007431: C7 44 24 28 01 00  mov         dword ptr [rsp+28h],1
+                    00 00
+  0000000000007439: 48 8D 4C 24 30     lea         rcx,[rsp+30h]
+  000000000000743E: 48 8D 54 24 20     lea         rdx,[rsp+20h]
+  0000000000007443: 4C 8D 44 24 40     lea         r8,[rsp+40h]
+  0000000000007448: E8 A3 B6 0D 00     call        S_P_CoreLib_System_Guid__TryParseExact_0
+  000000000000744D: 85 C0              test        eax,eax
+  000000000000744F: 74 28              je          0000000000007479
+  0000000000007451: 0F 10 44 24 40     movups      xmm0,xmmword ptr [rsp+40h]
+  0000000000007456: 0F 57 C9           xorps       xmm1,xmm1
+  0000000000007459: 66 0F 74 C1        pcmpeqb     xmm0,xmm1
+  000000000000745D: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  0000000000007461: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  0000000000007467: 40 0F 95 C5        setne       bpl
+  000000000000746B: 40 0F B6 ED        movzx       ebp,bpl
+  000000000000746F: EB 0A              jmp         000000000000747B
+  0000000000007471: 0F 57 C0           xorps       xmm0,xmm0
+  0000000000007474: 0F 11 44 24 40     movups      xmmword ptr [rsp+40h],xmm0
+  0000000000007479: 33 ED              xor         ebp,ebp
+  000000000000747B: 85 ED              test        ebp,ebp
+  000000000000747D: 0F 85 D3 00 00 00  jne         0000000000007556
+  0000000000007483: E9 6C 01 00 00     jmp         00000000000075F4
+  0000000000007488: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000748F: 4C 3B F1           cmp         r14,rcx
+  0000000000007492: 0F 84 B5 00 00 00  je          000000000000754D
+  0000000000007498: 4D 85 F6           test        r14,r14
+  000000000000749B: 74 40              je          00000000000074DD
+  000000000000749D: 41 83 7E 08 0C     cmp         dword ptr [r14+8],0Ch
+  00000000000074A2: 75 39              jne         00000000000074DD
+  00000000000074A4: 41 0F 10 46 0C     movups      xmm0,xmmword ptr [r14+0Ch]
+  00000000000074A9: 66 0F EF 05 70 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+70h]
+                    00 00
+  00000000000074B1: 41 0F 10 4E 14     movups      xmm1,xmmword ptr [r14+14h]
+  00000000000074B6: 66 0F EF 0D 80 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+80h]
+                    00 00
+  00000000000074BE: 66 0F EB C1        por         xmm0,xmm1
+  00000000000074C2: 0F 57 C9           xorps       xmm1,xmm1
+  00000000000074C5: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  00000000000074C9: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  00000000000074CD: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  00000000000074D3: 0F 94 C1           sete        cl
+  00000000000074D6: 0F B6 C9           movzx       ecx,cl
+  00000000000074D9: 85 C9              test        ecx,ecx
+  00000000000074DB: 75 70              jne         000000000000754D
+  00000000000074DD: 49 8B CE           mov         rcx,r14
+  00000000000074E0: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  00000000000074E7: E8 D4 F7 0B 00     call        String__Equals_2
+  00000000000074EC: 85 C0              test        eax,eax
+  00000000000074EE: 75 5D              jne         000000000000754D
+  00000000000074F0: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  00000000000074F7: 4C 3B F1           cmp         r14,rcx
+  00000000000074FA: 74 51              je          000000000000754D
+  00000000000074FC: 4D 85 F6           test        r14,r14
+  00000000000074FF: 0F 84 EF 00 00 00  je          00000000000075F4
+  0000000000007505: 41 83 7E 08 0B     cmp         dword ptr [r14+8],0Bh
+  000000000000750A: 0F 85 E4 00 00 00  jne         00000000000075F4
+  0000000000007510: 41 0F 10 46 0C     movups      xmm0,xmmword ptr [r14+0Ch]
+  0000000000007515: 66 0F EF 05 90 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+90h]
+                    00 00
+  000000000000751D: 41 0F 10 4E 12     movups      xmm1,xmmword ptr [r14+12h]
+  0000000000007522: 66 0F EF 0D A0 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+0A0h]
+                    00 00
+  000000000000752A: 66 0F EB C1        por         xmm0,xmm1
+  000000000000752E: 0F 57 C9           xorps       xmm1,xmm1
+  0000000000007531: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  0000000000007535: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  0000000000007539: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  000000000000753F: 0F 94 C1           sete        cl
+  0000000000007542: 0F B6 C9           movzx       ecx,cl
+  0000000000007545: 85 C9              test        ecx,ecx
+  0000000000007547: 0F 84 A7 00 00 00  je          00000000000075F4
+  000000000000754D: 83 FD 05           cmp         ebp,5
+  0000000000007550: 0F 85 9E 00 00 00  jne         00000000000075F4
+  0000000000007556: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000755D: 4C 3B F1           cmp         r14,rcx
+  0000000000007560: 74 45              je          00000000000075A7
+  0000000000007562: 4D 85 F6           test        r14,r14
+  0000000000007565: 74 53              je          00000000000075BA
+  0000000000007567: 41 83 7E 08 0B     cmp         dword ptr [r14+8],0Bh
+  000000000000756C: 75 4C              jne         00000000000075BA
+  000000000000756E: 41 0F 10 46 0C     movups      xmm0,xmmword ptr [r14+0Ch]
+  0000000000007573: 66 0F EF 05 90 00  pxor        xmm0,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+90h]
+                    00 00
+  000000000000757B: 41 0F 10 4E 12     movups      xmm1,xmmword ptr [r14+12h]
+  0000000000007580: 66 0F EF 0D A0 00  pxor        xmm1,xmmword ptr [__readonlydata_Supervisor_TrialEntryGate__Dispatch+0A0h]
+                    00 00
+  0000000000007588: 66 0F EB C1        por         xmm0,xmm1
+  000000000000758C: 0F 57 C9           xorps       xmm1,xmm1
+  000000000000758F: 66 0F 76 C1        pcmpeqd     xmm0,xmm1
+  0000000000007593: 66 0F D7 C8        pmovmskb    ecx,xmm0
+  0000000000007597: 81 F9 FF FF 00 00  cmp         ecx,0FFFFh
+  000000000000759D: 0F 94 C1           sete        cl
+  00000000000075A0: 0F B6 C9           movzx       ecx,cl
+  00000000000075A3: 85 C9              test        ecx,ecx
+  00000000000075A5: 74 13              je          00000000000075BA
+  00000000000075A7: 48 8B 4F 08        mov         rcx,qword ptr [rdi+8]
+  00000000000075AB: FF 57 20           call        qword ptr [rdi+20h]
+  00000000000075AE: 90                 nop
+  00000000000075AF: 48 83 C4 50        add         rsp,50h
+  00000000000075B3: 5B                 pop         rbx
+  00000000000075B4: 5D                 pop         rbp
+  00000000000075B5: 5E                 pop         rsi
+  00000000000075B6: 5F                 pop         rdi
+  00000000000075B7: 41 5E              pop         r14
+  00000000000075B9: C3                 ret
+  00000000000075BA: 48 8B 4E 08        mov         rcx,qword ptr [rsi+8]
+  00000000000075BE: FF 56 20           call        qword ptr [rsi+20h]
+  00000000000075C1: 90                 nop
+  00000000000075C2: 48 83 C4 50        add         rsp,50h
+  00000000000075C6: 5B                 pop         rbx
+  00000000000075C7: 5D                 pop         rbp
+  00000000000075C8: 5E                 pop         rsi
+  00000000000075C9: 5F                 pop         rdi
+  00000000000075CA: 41 5E              pop         r14
+  00000000000075CC: C3                 ret
+  00000000000075CD: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  00000000000075D4: E8 00 00 00 00     call        RhpNewFast
+  00000000000075D9: 48 8B D8           mov         rbx,rax
+  00000000000075DC: 48 8B CB           mov         rcx,rbx
+  00000000000075DF: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  00000000000075E6: E8 A5 CC 0D 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  00000000000075EB: 48 8B CB           mov         rcx,rbx
+  00000000000075EE: E8 00 00 00 00     call        RhpThrowEx
+  00000000000075F3: CC                 int         3
+  00000000000075F4: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  00000000000075FB: E8 00 00 00 00     call        RhpNewFast
+  0000000000007600: 48 8B D8           mov         rbx,rax
+  0000000000007603: 48 8B CB           mov         rcx,rbx
+  0000000000007606: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  000000000000760D: E8 7E CC 0D 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000007612: 48 8B CB           mov         rcx,rbx
+  0000000000007615: E8 00 00 00 00     call        RhpThrowEx
+  000000000000761A: CC                 int         3
+  000000000000761B: 90                 nop
+  000000000000761C: 90                 nop
+  000000000000761D: 90                 nop
+  000000000000761E: 90                 nop
+  000000000000761F: 90                 nop
+
+Supervisor_Program___c__DisplayClass4_0___Main_b__0:
+  0000000000024AF0: 48 8B 49 08        mov         rcx,qword ptr [rcx+8]
+  0000000000024AF4: E9 17 54 FF FF     jmp         Supervisor_AdminWindows__Run
+  0000000000024AF9: 90                 nop
+  0000000000024AFA: 90                 nop
+  0000000000024AFB: 90                 nop
+  0000000000024AFC: 90                 nop
+  0000000000024AFD: 90                 nop
+  0000000000024AFE: 90                 nop
+  0000000000024AFF: 90                 nop
+
+Supervisor_Program___c__DisplayClass4_0___Main_b__1:
+  0000000000024B00: 55                 push        rbp
+  0000000000024B01: 56                 push        rsi
+  0000000000024B02: 53                 push        rbx
+  0000000000024B03: 48 83 EC 70        sub         rsp,70h
+  0000000000024B07: 0F 29 74 24 60     movaps      xmmword ptr [rsp+60h],xmm6
+  0000000000024B0C: 48 8D AC 24 80 00  lea         rbp,[rsp+80h]
+                    00 00
+  0000000000024B14: 48 8B D9           mov         rbx,rcx
+  0000000000024B17: E8 F4 EB 09 00     call        S_P_CoreLib_System_Environment__get_ProcessPath
+  0000000000024B1C: 48 8B F0           mov         rsi,rax
+  0000000000024B1F: 48 8D 0D 00 00 00  lea         rcx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000024B26: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000024B2D: E8 7E D7 11 00     call        S_P_CoreLib_System_IO_Path__Combine
+  0000000000024B32: 48 8B D0           mov         rdx,rax
+  0000000000024B35: 48 8B CE           mov         rcx,rsi
+  0000000000024B38: E8 83 21 0A 00     call        String__Equals_2
+  0000000000024B3D: 85 C0              test        eax,eax
+  0000000000024B3F: 0F 84 38 01 00 00  je          0000000000024C7D
+  0000000000024B45: 48 8B 4B 08        mov         rcx,qword ptr [rbx+8]
+  0000000000024B49: 48 8B D1           mov         rdx,rcx
+  0000000000024B4C: 8B 42 08           mov         eax,dword ptr [rdx+8]
+  0000000000024B4F: 83 F8 02           cmp         eax,2
+  0000000000024B52: 0F 86 4C 01 00 00  jbe         0000000000024CA4
+  0000000000024B58: 48 8B 52 20        mov         rdx,qword ptr [rdx+20h]
+  0000000000024B5C: 83 F8 04           cmp         eax,4
+  0000000000024B5F: 0F 86 3F 01 00 00  jbe         0000000000024CA4
+  0000000000024B65: 48 8B 41 30        mov         rax,qword ptr [rcx+30h]
+  0000000000024B69: 48 8B CA           mov         rcx,rdx
+  0000000000024B6C: 48 8B D0           mov         rdx,rax
+  0000000000024B6F: E8 1C D1 FE FF     call        Supervisor_ReleaseAdmission__Acquire
+  0000000000024B74: 48 89 45 A0        mov         qword ptr [rbp-60h],rax
+  0000000000024B78: 48 8B 4B 10        mov         rcx,qword ptr [rbx+10h]
+  0000000000024B7C: 38 09              cmp         byte ptr [rcx],cl
+  0000000000024B7E: E8 2D 92 14 00     call        S_P_CoreLib_System_Diagnostics_Stopwatch__get_ElapsedTicks
+  0000000000024B83: 0F 57 F6           xorps       xmm6,xmm6
+  0000000000024B86: F2 48 0F 2A F0     cvtsi2sd    xmm6,rax
+  0000000000024B8B: 48 8D 35 00 00 00  lea         rsi,[?__NONGCSTATICS@S_P_CoreLib_System_Diagnostics_Stopwatch@@]
+                    00
+  0000000000024B92: 48 83 7E F8 00     cmp         qword ptr [rsi-8],0
+  0000000000024B97: 0F 85 97 00 00 00  jne         0000000000024C34
+  0000000000024B9D: F2 0F 59 76 10     mulsd       xmm6,mmword ptr [rsi+10h]
+  0000000000024BA2: 0F 28 C6           movaps      xmm0,xmm6
+  0000000000024BA5: F2 0F C2 C6 07     cmpordsd    xmm0,xmm6
+  0000000000024BAA: 66 0F 54 C6        andpd       xmm0,xmm6
+  0000000000024BAE: 48 B8 FF FF FF FF  mov         rax,7FFFFFFFFFFFFFFFh
+                    FF FF FF 7F
+  0000000000024BB8: F2 48 0F 2C D0     cvttsd2si   rdx,xmm0
+  0000000000024BBD: 66 0F 2E 35 00 00  ucomisd     xmm6,mmword ptr [__readonlydata_Supervisor_Program___c__DisplayClass4_0___Main_b__1]
+                    00 00
+  0000000000024BC5: 48 0F 42 C2        cmovb       rax,rdx
+  0000000000024BC9: 48 8B D0           mov         rdx,rax
+  0000000000024BCC: 49 B8 4B 59 86 38  mov         r8,346DC5D63886594Bh
+                    D6 C5 6D 34
+  0000000000024BD6: 49 8B C0           mov         rax,r8
+  0000000000024BD9: 48 F7 EA           imul        rdx
+  0000000000024BDC: 4C 8B C2           mov         r8,rdx
+  0000000000024BDF: 49 C1 E8 3F        shr         r8,3Fh
+  0000000000024BE3: 48 C1 FA 0B        sar         rdx,0Bh
+  0000000000024BE7: 49 03 D0           add         rdx,r8
+  0000000000024BEA: 48 81 FA 88 13 00  cmp         rdx,1388h
+                    00
+  0000000000024BF1: 7D 4B              jge         0000000000024C3E
+  0000000000024BF3: 48 8B 45 A0        mov         rax,qword ptr [rbp-60h]
+  0000000000024BF7: 0F 10 40 70        movups      xmm0,xmmword ptr [rax+70h]
+  0000000000024BFB: 0F 11 45 A8        movups      xmmword ptr [rbp-58h],xmm0
+  0000000000024BFF: 0F 10 80 80 00 00  movups      xmm0,xmmword ptr [rax+80h]
+                    00
+  0000000000024C06: 0F 11 45 B8        movups      xmmword ptr [rbp-48h],xmm0
+  0000000000024C0A: 0F 10 80 90 00 00  movups      xmm0,xmmword ptr [rax+90h]
+                    00
+  0000000000024C11: 0F 11 45 C8        movups      xmmword ptr [rbp-38h],xmm0
+  0000000000024C15: 48 8B 90 A0 00 00  mov         rdx,qword ptr [rax+0A0h]
+                    00
+  0000000000024C1C: 48 89 55 D8        mov         qword ptr [rbp-28h],rdx
+  0000000000024C20: 48 8D 55 A8        lea         rdx,[rbp-58h]
+  0000000000024C24: 4C 8B 43 10        mov         r8,qword ptr [rbx+10h]
+  0000000000024C28: 48 8B C8           mov         rcx,rax
+  0000000000024C2B: E8 20 94 FE FF     call        Supervisor_Program__Supervise
+  0000000000024C30: 8B D8              mov         ebx,eax
+  0000000000024C32: EB 31              jmp         0000000000024C65
+  0000000000024C34: E8 00 00 00 00     call        __GetNonGCStaticBase_S_P_CoreLib_System_Diagnostics_Stopwatch
+  0000000000024C39: E9 5F FF FF FF     jmp         0000000000024B9D
+  0000000000024C3E: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  0000000000024C45: E8 00 00 00 00     call        RhpNewFast
+  0000000000024C4A: 48 8B D8           mov         rbx,rax
+  0000000000024C4D: 48 8B CB           mov         rcx,rbx
+  0000000000024C50: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000024C57: E8 34 F6 0B 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000024C5C: 48 8B CB           mov         rcx,rbx
+  0000000000024C5F: E8 00 00 00 00     call        RhpThrowEx
+  0000000000024C64: CC                 int         3
+  0000000000024C65: 48 8B 4D A0        mov         rcx,qword ptr [rbp-60h]
+  0000000000024C69: E8 32 E9 FE FF     call        Supervisor_ReleaseAdmission__Dispose
+  0000000000024C6E: 8B C3              mov         eax,ebx
+  0000000000024C70: 0F 28 74 24 60     movaps      xmm6,xmmword ptr [rsp+60h]
+  0000000000024C75: 48 83 C4 70        add         rsp,70h
+  0000000000024C79: 5B                 pop         rbx
+  0000000000024C7A: 5E                 pop         rsi
+  0000000000024C7B: 5D                 pop         rbp
+  0000000000024C7C: C3                 ret
+  0000000000024C7D: 48 8D 0D 00 00 00  lea         rcx,[??_7S_P_CoreLib_System_InvalidOperationException@@6B@]
+                    00
+  0000000000024C84: E8 00 00 00 00     call        RhpNewFast
+  0000000000024C89: 48 8B D8           mov         rbx,rax
+  0000000000024C8C: 48 8B CB           mov         rcx,rbx
+  0000000000024C8F: 48 8D 15 00 00 00  lea         rdx,[__Str_REDACTED_LITERAL]
+                    00
+  0000000000024C96: E8 F5 F5 0B 00     call        S_P_CoreLib_System_InvalidOperationException___ctor_0
+  0000000000024C9B: 48 8B CB           mov         rcx,rbx
+  0000000000024C9E: E8 00 00 00 00     call        RhpThrowEx
+  0000000000024CA3: CC                 int         3
+  0000000000024CA4: E8 17 21 15 00     call        S_P_CoreLib_Internal_Runtime_CompilerHelpers_ThrowHelpers__ThrowIndexOutOfRangeException
+  0000000000024CA9: CC                 int         3
+  0000000000024CAA: 48 83 EC 28        sub         rsp,28h
+  0000000000024CAE: 48 83 7D A0 00     cmp         qword ptr [rbp-60h],0
+  0000000000024CB3: 74 09              je          0000000000024CBE
+  0000000000024CB5: 48 8B 4D A0        mov         rcx,qword ptr [rbp-60h]
+  0000000000024CB9: E8 E2 E8 FE FF     call        Supervisor_ReleaseAdmission__Dispose
+  0000000000024CBE: 90                 nop
+  0000000000024CBF: 48 83 C4 28        add         rsp,28h
+  0000000000024CC3: C3                 ret
+  0000000000024CC4: 90                 nop
+  0000000000024CC5: 90                 nop
+  0000000000024CC6: 90                 nop
+  0000000000024CC7: 90                 nop
+  0000000000024CC8: 90                 nop
+  0000000000024CC9: 90                 nop
+  0000000000024CCA: 90                 nop
+  0000000000024CCB: 90                 nop
+  0000000000024CCC: 90                 nop
+  0000000000024CCD: 90                 nop
+  0000000000024CCE: 90                 nop
+  0000000000024CCF: 90                 nop

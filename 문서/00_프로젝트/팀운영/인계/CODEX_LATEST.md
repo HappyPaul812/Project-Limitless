@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 연결 완료 Supervisor NativeAOT 단발 BUILD PASS
+
+기준ad58fbe2/코드4a3221b4 무변경·브랜치 codex/discord-v2-connected-supervisor-build-20261031. E격리 **1회발행/exit0**, 새SHA `6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7`·7,559,680바이트·PE32+AMD64/CLR없음·경고/IL2091 0. 네이티브21함수최종PE본문prefix일치·4실PE분기PASS, Main무조건throw재발없음. [상세/정적근거/잔여HOLD](../../Discord_V2_ConnectedSupervisor_NativeBuild_20261031.md). 기존3이미지/입력23개보존PASS·36/34재시험0·Probe빌드0·EXE실행0; V3엔진2026.10.31.01·삭제변조관측없음·새SHA공식정상판정/실런타임NOT_VERIFIED. 운영gatefalse·NO_GO/MANUAL/EXECUTION_HOLD·새이미지승인/보호배포/동작별신규승인/실시험별도·cutoff11-01 23:59:59KST/자동연장금지·실WindowsTask계정ACLOnBoot/UnitySave/Push main변경0.
 ## 2026-10-31 Discord V2 FAKE_ONLY 진입 게이트 연결·모의36PASS
 
 기준5cb5512c·브랜치 codex/discord-v2-fake-only-entry-gate-20261031·코드 **4a3221b48a1f5df7530fb156e2eb058532075f61**. 작은3172352바이트이미지의Main→무조건throw→catch70을object/실EXE바이트로확인·관리자/감독본문object미생성, 실행후보부적합. 정확FAKE_ONLY만분기→전체읽기승인→영구소비/변경경계연결, 운영gatefalse·배포봉인유지. 새 **36PASS/0FAIL**, 정적8항목PASS·관리형컴파일경고오류0·기존34보존/전수반복0. [정적원인·게이트·증거·잔여승인](../../Discord_V2_FAKE_ONLY_EntryGate_20261031.md). 기존3이미지SHA/크기보존PASS·NativeAOT재빌드0/EXE실행0/실Windows변경0; 변경 코드NativeAOT포함·실행NOT_VERIFIED, 별도승인후Supervisor재빌드/새SHA검증필요. **NO_GO/MANUAL/EXECUTION_HOLD**, 11-01 23:59:59KST cutoff·자동연장/기존승인재사용금지·Push main변경0.

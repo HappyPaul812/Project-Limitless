@@ -1,0 +1,56 @@
+{
+  "Properties": {
+    "TargetFramework": "net10.0-windows",
+    "PublishAot": "true",
+    "RuntimeFrameworkVersion": "10.0.10",
+    "TargetLatestRuntimePatch": "false"
+  },
+  "Items": {
+    "KnownILCompilerPack": [
+      {
+        "Identity": "Microsoft.DotNet.ILCompiler",
+        "TargetFramework": "net10.0",
+        "ILCompilerPackNamePattern": "runtime.**RID**.Microsoft.DotNet.ILCompiler",
+        "ILCompilerRuntimePackNamePattern": "Microsoft.NETCore.App.Runtime.NativeAOT.**RID**",
+        "ILCompilerPackVersion": "10.0.10",
+        "ILCompilerPortableRuntimeIdentifiers": "linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;win-arm64;win-x64;osx-x64;osx-arm64;freebsd-x64;freebsd-arm64;linux-arm;linux-musl-arm;linux-loongarch64;linux-musl-loongarch64;win-x86;linux-riscv64;linux-musl-riscv64",
+        "ILCompilerRuntimeIdentifiers": "linux-arm64;linux-musl-arm64;linux-musl-x64;linux-x64;win-arm64;win-x64;osx-x64;osx-arm64;freebsd-x64;freebsd-arm64;linux-arm;linux-musl-arm;linux-loongarch64;linux-musl-loongarch64;win-x86;linux-riscv64;linux-musl-riscv64",
+        "FullPath": "E:\\LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorConnected20261031-f3e1426a2564435682ab72aec14ad2b6\\Temp\\NativeBatchPreparation20261028\\Supervisor\\Microsoft.DotNet.ILCompiler",
+        "RootDir": "E:\\",
+        "Filename": "Microsoft.DotNet",
+        "Extension": ".ILCompiler",
+        "RelativeDir": "",
+        "Directory": "LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorConnected20261031-f3e1426a2564435682ab72aec14ad2b6\\Temp\\NativeBatchPreparation20261028\\Supervisor\\",
+        "RecursiveDir": "",
+        "ModifiedTime": "",
+        "CreatedTime": "",
+        "AccessedTime": "",
+        "DefiningProjectFullPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\Microsoft.NETCoreSdk.BundledVersions.props",
+        "DefiningProjectDirectory": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\",
+        "DefiningProjectName": "Microsoft.NETCoreSdk.BundledVersions",
+        "DefiningProjectExtension": ".props"
+      }
+    ],
+    "KnownILLinkPack": [
+      {
+        "Identity": "Microsoft.NET.ILLink.Tasks",
+        "TargetFramework": "net10.0",
+        "ILLinkPackVersion": "10.0.10",
+        "FullPath": "E:\\LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorConnected20261031-f3e1426a2564435682ab72aec14ad2b6\\Temp\\NativeBatchPreparation20261028\\Supervisor\\Microsoft.NET.ILLink.Tasks",
+        "RootDir": "E:\\",
+        "Filename": "Microsoft.NET.ILLink",
+        "Extension": ".Tasks",
+        "RelativeDir": "",
+        "Directory": "LimitlessBuildDependencies\\NativeAOT20261028\\SupervisorConnected20261031-f3e1426a2564435682ab72aec14ad2b6\\Temp\\NativeBatchPreparation20261028\\Supervisor\\",
+        "RecursiveDir": "",
+        "ModifiedTime": "",
+        "CreatedTime": "",
+        "AccessedTime": "",
+        "DefiningProjectFullPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\Microsoft.NETCoreSdk.BundledVersions.props",
+        "DefiningProjectDirectory": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\",
+        "DefiningProjectName": "Microsoft.NETCoreSdk.BundledVersions",
+        "DefiningProjectExtension": ".props"
+      }
+    ]
+  }
+}
