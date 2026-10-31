@@ -6,6 +6,10 @@
 
 대표GUI조회/자격증명사실확인과코드/새빌드/보호배포/등록/단발시작/정리승인은별개. Worker자기기록읽기쓰기를적대적동일SID변조방지로과장하지않음. V3정상NOT_VERIFIED·전역SIDUNKNOWN·실Batch4/Session0/HANDLE/Job90초미검증유지, NO_GO/MANUAL/EXECUTION_HOLD. A~D이번미승인·기존승인재사용/자동연장0, Task계정ACLOnBoot/V3/IPCAI/UnitySave/Push main변경0입니다.
 
+### 보호 배포·게이트 준비안 보고 영수증
+
+준비안commit `e1ab9f854ccdbc3edf67904fcd773c4c87275520`. [Issue66 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539095364) 실제등록·본문전체재조회일치 확인. 후속영수증은문서만변경. 제품코드/gate/이미지/보호경로/ACL/Task/계정무변경, 빌드실행0·원격Push0·준비범위종료후NO_GO/MANUAL/EXECUTION_HOLD유지입니다.
+
 ## Codex 최신 인계 — 2026-10-31 / FAKE_ONLY 최종 사전확인·NO_GO
 
 `codex/discord-v2-fakeonly-final-preflight-20261031`, 시작f5f8ea00·기준보고233a6431. **Probe/Supervisor SHA·크기·PE 보존2종PASS**, 추가빌드/EXE실행/이미지수정이동0. 코드gate=false가Admin/--supervise모두차단하므로현재이미지는추가실행승인만으로GO불가, 봉인처리는별도코드/이미지검토대상입니다.
