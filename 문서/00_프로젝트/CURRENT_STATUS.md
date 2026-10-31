@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 독립 관리자 배포 B안 후보 / 테스트 컴파일 FAIL·보안 HOLD
+
+기준e9fbba36·브랜치 codex/discord-v2-independent-deployer-20261031·미검증후보코드 **ac0fb5955bb79763dbe1817546ba1983fb780b02**. 기존Supervisor/Probe무변경으로별도진입/승인/Windows어댑터/보안정책/단위시험후보7파일추가. 첫테스트DLL컴파일 **CS0236 FAIL1**(Tests/Program.cs:60 Clock=Now 인스턴스속성결합)·경고0; 지시된실패중지조건에따라수정재시도/모의실행0·신규PASS0/FAIL0(NOT_RUN). 추가정적차단:소비marker가요청폴더종속이라다른보호폴더의동일DeploymentId재사용차단미완·고정보호ledger결합필요. [후보/실패근거/잔여보안/후속승인](Discord_V2_IndependentDeployment_Implementation_HOLD_20261031.md). 이미지2SHA/크기보존PASS·기존36/34반복0·도구제품빌드/실행/실Windows변경0·검증완료아님·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지·자격증명/다른경로/V3공식판정UNKNOWN·Push main변경0.
 ## 2026-10-31 Discord V2 보호 배포 연결 검토 HOLD / 구현 전 중지
 
 기준c8b2b4c7·브랜치 codex/discord-v2-protected-deployment-review-hold-20261031. 두이미지SHA/크기보존PASS·정적6관찰PASS, 제품배포진입부재/Windowsbackend4경계무조건HOLD/현재Nativeobject배포본문심볼없음 확인. Supervisor에연결하려면진입/승인경계수정·재발행필요하므로 **바울대표지시6에따라제품수정전중지**, 신규모의QA0(PASS0/FAIL0·NOT_RUN/HOLD)·기존36/34반복0. [원인/변경범위/독립도구대안/최소후속승인](Discord_V2_ProtectedDeployment_Connection_HOLD_20261031.md). 독립관리자도구로현2이미지를보존하는설계는가능하지만미구현/미승인·임의신설없음. 자격증명비공유/다른실행경로미사용/V3공식정상UNKNOWN·실제폴더ACL/복사/실행/빌드/Task계정OnBoot/UnitySave/Push main변경0·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지.

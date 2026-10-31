@@ -1,0 +1,44 @@
+{
+  "start_head": "e9fbba36369babb7611eddac64fb5d233fdbe769",
+  "candidate_code_commit": "ac0fb5955bb79763dbe1817546ba1983fb780b02",
+  "branch": "codex/discord-v2-independent-deployer-20261031",
+  "status": "IMPLEMENTATION_CANDIDATE_UNVERIFIED / TEST_COMPILE_FAIL / SECURITY_HOLD / NO_GO / MANUAL / EXECUTION_HOLD",
+  "tool_implementation_verified": false,
+  "new_test_compile_attempts": 1,
+  "test_compile_exit_code": 1,
+  "test_compile_warnings": 0,
+  "test_compile_errors": 1,
+  "error": "CS0236 Tests/Program.cs:60 Clock=Now binds instance Fake.Now",
+  "mock_tests_executed": 0,
+  "new_test_pass": 0,
+  "new_test_fail": 0,
+  "new_test_status": "NOT_RUN_COMPILE_BLOCKED",
+  "tool_product_builds": 0,
+  "tool_main_executions": 0,
+  "windows_backend_executions": 0,
+  "native_builds": 0,
+  "exe_copies": 0,
+  "protected_folder_or_acl_task_account_changes": 0,
+  "real_approval_files_created_or_consumed": 0,
+  "prior36_and34_repeated": false,
+  "supervisor_probe_sources_changed": false,
+  "images": [
+    {
+      "name": "Supervisor",
+      "bytes": 7559680,
+      "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "preserved": true
+    },
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true
+    }
+  ],
+  "unresolved_security_item": "Consumption marker depends on request parent directory; global same-DeploymentId replay across protected request folders not yet prevented/verified. Requires fixed protected ledger binding.",
+  "credentials_not_shared": "UNKNOWN",
+  "other_launch_paths_unused": "UNKNOWN",
+  "v3_images_official_normal": "UNKNOWN / NOT_VERIFIED",
+  "cutoff": "2026-11-01T23:59:59+09:00"
+}

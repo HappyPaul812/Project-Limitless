@@ -1,0 +1,11 @@
+  복원할 프로젝트를 확인하는 중...
+  <WORKTREE>\Temp\IndependentDeployDelta20261031\Tools\DiscordV2\ProtectedDeploymentAdmin\Tests\DeploymentAdmin.Tests.csproj을(를) 70밀리초 동안 복원했습니다.
+<WORKTREE>\Temp\IndependentDeployDelta20261031\Tools\DiscordV2\ProtectedDeploymentAdmin\Tests\Program.cs(60,39): error CS0236: 필드 이니셜라이저는 static이 아닌 필드, 메서드 또는 'DeploymentAdminTests.Fake.Now' 속성을 참조할 수 없습니다. [<WORKTREE>\Temp\IndependentDeployDelta20261031\Tools\DiscordV2\ProtectedDeploymentAdmin\Tests\DeploymentAdmin.Tests.csproj]
+
+빌드하지 못했습니다.
+
+<WORKTREE>\Temp\IndependentDeployDelta20261031\Tools\DiscordV2\ProtectedDeploymentAdmin\Tests\Program.cs(60,39): error CS0236: 필드 이니셜라이저는 static이 아닌 필드, 메서드 또는 'DeploymentAdminTests.Fake.Now' 속성을 참조할 수 없습니다. [<WORKTREE>\Temp\IndependentDeployDelta20261031\Tools\DiscordV2\ProtectedDeploymentAdmin\Tests\DeploymentAdmin.Tests.csproj]
+    경고 0개
+    오류 1개
+
+경과 시간: 00:00:04.43
