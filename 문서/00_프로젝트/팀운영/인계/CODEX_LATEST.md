@@ -1,3 +1,7 @@
+## 2026-10-31 최초 staging PowerShell 초안 / 모의25PASS·실적용 HOLD
+
+기준0d0c15a304bd76711c2e80cd88cfa63fa6121bef·브랜치 codex/discord-v2-staging-powershell-draft-20261031. 동일 메모리 원문SHA/엄격UTF8 및 고정staging 생성 경계 모형 초안 추가. AST추출 Fake 전용 신규25PASS/0FAIL·API선언 관리형컴파일PASS·실Native호출0. [정확한 범위·로더초안·승인조건·11월7일 인계](../../Discord_V2_Staging_PowerShell_Draft_QA_20261031.md). 제품실행 초안은무조건HOLD·실Windowsbackend/원본봉인/영구소비미구현·모의결과를실보안PASS로승격금지. 기존59/기타시험반복0·기존제품/이미지/binding무변경·폴더ACL/EXE실행/Task계정/V3/UnitySave/Push변경0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지。
+
 ## 2026-10-31 대상 밖 staging 검토 / 최초 로더 신뢰 경계 HOLD
 
 기준969f35df9a69291635934e85cf6832b40a0516c6·브랜치 codex/discord-v2-external-staging-boundary-20261031. 이번 대상 밖 검토 허용 반영: 별도ProgramData형제후보 부재/기존6대상과 경로충돌없음. Bootstrap 수정 없이 경로 모순 해소 가능하나 최초 생성/봉인 실행 주체의 신뢰 경계 미검증→최종 해결PASS아님/HOLD. [Windows기능 비교·정확한 최소 후속안·11월7일 인계](../../Discord_V2_ExternalStaging_TrustBoundary_20261031.md). 조건부 코드변경 착수조건 미충족으로 코드/모의QA NOT_RUN. 기존검증재사용·빌드/시험반복/실Windows변경0. 다음은 기존조사반복이 아닌 단일 관리자 설치스크립트의 최초 로더 경계 구체화. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지·LOCAL_COMMITTED/REMOTE_NOT_PUSHED。
