@@ -66,3 +66,7 @@
 자격증명 비공유·다른 실행 경로 미사용·새 이미지 V3 정상 판정은 여전히 **UNKNOWN / NOT_VERIFIED**, Windows 전체 동일 SID 부재 입증 주장은 없습니다. cutoff **2026-11-01 23:59:59 KST** 유지·만료 후 자동 연장/과거 승인 재사용/원장 초기화 금지. **NO_GO / MANUAL / EXECUTION_HOLD**로 보고 후 중지합니다. Push/main 병합·원본 적용 없음.
 
 증거: [Summary](Evidence/DiscordV2FixedLedgerDelta20261031/Summary.json), [24PASS](Evidence/DiscordV2FixedLedgerDelta20261031/Delta.log), [관리형 컴파일](Evidence/DiscordV2FixedLedgerDelta20261031/ManagedCompile.log), [입력 SHA](Evidence/DiscordV2FixedLedgerDelta20261031/InputsSHA.json), [합성 파일 SHA](Evidence/DiscordV2FixedLedgerDelta20261031/SyntheticQARecords.json). LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 실제 바이너리·private binding·비밀정보 업로드 없음.
+
+### 실제 GitHub 보고 영수증
+
+수정코드 `4117ca3670ac033b3bb88f226c610d5a78c60e5e`, 보고/증거 `0e4f45d16e86c6b103da24e6ec50572463c343ee`. [Issue #66 표적 수정 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541481822) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. CS0236해소·24PASS/0FAIL·production ledger위치/binding미승인HOLD·실도구빌드/Main/Windowsbackend/보호설정변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
