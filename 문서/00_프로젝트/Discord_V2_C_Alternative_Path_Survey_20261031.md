@@ -84,3 +84,7 @@
 Supervisor `6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7` / 7,559,680바이트와 Probe `0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322` / 1,892,352바이트 무결성 보존. 코드·binding·이미지·소비 원장 변경 0, 폴더 생성/ACL·owner/Task/계정/OnBoot/V3 변경 0, NativeAOT 빌드/EXE 실행 0, 기존 시험 반복 0. E ACL 재검사 0. Unity·Save 접근/변경 0. 원본 main `ab47b931fec92976170f9f50aabde1822d78bb90` 유지. Push/main 병합 없음.
 
 [읽기 조사 증거/ACL·용량·binding 입력 일치](Evidence/DiscordV2CPathReadOnlySurvey20261031.json). LOCAL_COMMITTED / REMOTE_NOT_PUSHED. 문서만 갱신하고 **NO_GO / MANUAL / EXECUTION_HOLD**로 중지합니다.
+
+### 실제 GitHub 보고 영수증
+
+읽기 조사/인계안 로컬커밋 `f5daf3ffa19723ef760ab926f5886a03cebf4492`. [Issue #66 C 대체 경로 조사](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541753116) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. C조상정적PASS/전체UNKNOWN·실Native이미지binding이미C·실제경로발급/코드/이미지/원장/폴더ACL/Task계정변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
