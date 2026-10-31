@@ -1,0 +1,41 @@
+{
+  "Branch": "codex/discord-v2-protected-deploy-gate-plan-20261031",
+  "Baseline": "ba8bb57821bdca3e35b1870818efae1f2f49bc18",
+  "Scope": "PREPARATION_AND_STATIC_REVIEW_ONLY",
+  "CheckedAtKST": "2026-10-31T13:30:49+09:00",
+  "Probe": {
+    "SHA256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+    "Bytes": 1892352,
+    "Preservation": "PASS"
+  },
+  "Supervisor": {
+    "SHA256": "CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD",
+    "Bytes": 7536640,
+    "Preservation": "PASS"
+  },
+  "ExistingAncestorObservationsIncludingDuplicates": 4,
+  "AncestorOwnersTrustedByStaticPredicate": true,
+  "AncestorUnsupportedOrMutationACECount": 0,
+  "WorkerEffectiveAccessVerified": false,
+  "CodeRootExists": false,
+  "EvidenceRootExists": false,
+  "AccountExpiryKST": "2026-11-02T00:00:00+09:00",
+  "ApprovalCutoffKST": "2026-11-01T23:59:59+09:00",
+  "DraftPowerShellASTSyntaxErrors": 0,
+  "DraftFirstStatementUnconditionalThrow": true,
+  "DraftCommandsExecuted": false,
+  "ProductionSourceChanged": false,
+  "GateFalseMaintained": true,
+  "BuildsOrEXEExecutions": 0,
+  "ProtectedFolderOrACLOrCopyActions": 0,
+  "TaskAccountOnBootAVChanges": 0,
+  "Session0IPCOrAI": false,
+  "UnitySaveChanges": false,
+  "PushOrMainMerge": false,
+  "NewTrustAttestationOrTrialApprovalIssued": false,
+  "ProposedSupervisorRebuildRequiredAfterSeparateApproval": true,
+  "ProbeRebuildRequiredIfUnchangedBindingAndSource": false,
+  "GlobalSidAbsence": "UNKNOWN",
+  "NewBinaryV3OfficialVerdict": "NOT_VERIFIED",
+  "Status": "PREPARED_ONLY / NOT_APPLIED / NO_GO / MANUAL / EXECUTION_HOLD"
+}

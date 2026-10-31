@@ -1,0 +1,34 @@
+throw 'PREPARED_ONLY_NOT_APPROVED_DO_NOT_RUN_OR_REMOVE_GUARD'
+
+# 문서용 명령 초안입니다. AST 구문검토만 하며 실행하지 않습니다.
+# 실제 배포는 원자적 보호 생성/CREATE_NEW 복제 도구 구현·검증 및 별도 승인 후입니다.
+$privateTargets = Get-Content -LiteralPath '<PRIVATE_GUI_TARGETS_JSON>' -Raw | ConvertFrom-Json
+$codeRoot = $privateTargets.CodeRoot
+$evidenceRoot = $privateTargets.EvidenceRoot
+$workerSid = '<EXACT_APPROVED_WORKER_SID>'
+$contractSha = '<NEW_APPROVED_CONTRACT_SHA256>'
+$instance = '<EXACT_NEW_INSTANCE_GUID>'
+
+# 읽기 확인 예시. 실제 private 값은 공개/로그로 출력하지 않습니다.
+Get-LocalUser -SID $workerSid | Select-Object Enabled, AccountExpires
+Get-Acl -LiteralPath $codeRoot | Select-Object Owner, AreAccessRulesProtected
+Get-Acl -LiteralPath $evidenceRoot | Select-Object Owner, AreAccessRulesProtected
+Get-FileHash -LiteralPath (Join-Path $codeRoot 'Supervisor.exe') -Algorithm SHA256
+Get-FileHash -LiteralPath (Join-Path $codeRoot 'Probe.exe') -Algorithm SHA256
+
+# 메모리상 SDDL 예시뿐입니다. Set-Acl/icacls/New-Item/Copy-Item은 호출하지 않습니다.
+$codeSddl = "O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;0x001200a9;;;$workerSid)"
+$evidenceSddl = "O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;0x001200ab;;;$workerSid)"
+$controlFileSddl = "O:BAG:SYD:P(A;;FA;;;SY)(A;;FA;;;BA)(A;;0x00120089;;;$workerSid)"
+# 승인 후 도구의 요구 API: CreateDirectoryW+명시 SECURITY_ATTRIBUTES, 이미 있으면 HOLD.
+# 이미지/자료는 CreateFileW+CREATE_NEW+명시 descriptor/share 제한, SHA·SDDL readback.
+# 기존 부모/소비/승인/증거의 권한·파일을 교체/삭제하지 않습니다.
+
+# 아래는 새 이미지·보호배포·각 동작 승인 후에만 가능한 CLI 형식입니다.
+# 현재 gate=false인 기존 EXE에 실행하지 않습니다. 암호는 인수로 넣지 않습니다.
+& (Join-Path $codeRoot 'Supervisor.exe') --register-only --contract (Join-Path $codeRoot 'TrialContract.json') --contract-sha $contractSha --password-console
+& (Join-Path $codeRoot 'Supervisor.exe') --start-once --contract (Join-Path $codeRoot 'TrialContract.json') --contract-sha $contractSha
+& (Join-Path $codeRoot 'Supervisor.exe') --stop-owned-instance --contract (Join-Path $codeRoot 'TrialContract.json') --contract-sha $contractSha --instance $instance
+& (Join-Path $codeRoot 'Supervisor.exe') --remove-owned-task --contract (Join-Path $codeRoot 'TrialContract.json') --contract-sha $contractSha
+
+# --supervise는 고정 Task Action 전용이며 수동 실행 예시를 제공하지 않습니다.

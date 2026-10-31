@@ -1,3 +1,11 @@
+## Codex 최신 인계 — 2026-10-31 / 보호 배포·one-trial 게이트 준비안
+
+`codex/discord-v2-protected-deploy-gate-plan-20261031`(시작ba8bb578). 두기존이미지SHA/크기보존PASS, 코드gate=false·추가빌드/이미지이동수정실행0. CodeRoot/EvidenceRoot부재유지, 기존상위경로각2개owner/ACE정적기준차단0이나제한token AccessCheck아님. 계정만료11-02 00:00KST/cutoff11-01 23:59:59KST 재확인, 권한설정변경0.
+
+[정확한준비안·승인A~D](../../Discord_V2_ProtectedDeployment_Gate_Plan_20261031.md): 명시초기DACL/CreateNew배포·상위교체방지·기존기록보존, 전역gatefalse유지+정확새TrialId/profile/mode·전체기존검증에종속되는제한진입제안. 현재계약전process/thread/token Harden을읽기승인뒤로옮길필요와cleanup만료예외의마감후재사용차단도기록. 자기SHA/ContractSHA를컴파일상수로넣는순환을피하고새Supervisor빌드→SHA→계약→동작승인순서. Probe/binding무변경이면Probe재빌드불필요. **제품코드미수정·게이트미활성화·빌드/배포도구미실행**, 명령초안은첫줄throw·AST검토만입니다.
+
+대표GUI조회/자격증명사실확인과코드/새빌드/보호배포/등록/단발시작/정리승인은별개. Worker자기기록읽기쓰기를적대적동일SID변조방지로과장하지않음. V3정상NOT_VERIFIED·전역SIDUNKNOWN·실Batch4/Session0/HANDLE/Job90초미검증유지, NO_GO/MANUAL/EXECUTION_HOLD. A~D이번미승인·기존승인재사용/자동연장0, Task계정ACLOnBoot/V3/IPCAI/UnitySave/Push main변경0입니다.
+
 ## Codex 최신 인계 — 2026-10-31 / FAKE_ONLY 최종 사전확인·NO_GO
 
 `codex/discord-v2-fakeonly-final-preflight-20261031`, 시작f5f8ea00·기준보고233a6431. **Probe/Supervisor SHA·크기·PE 보존2종PASS**, 추가빌드/EXE실행/이미지수정이동0. 코드gate=false가Admin/--supervise모두차단하므로현재이미지는추가실행승인만으로GO불가, 봉인처리는별도코드/이미지검토대상입니다.
