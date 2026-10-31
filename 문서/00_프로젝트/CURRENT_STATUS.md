@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 CS0236·고정 원장 재사용 표적 수정 24PASS / 실제 위치 HOLD
+
+동일브랜치 codex/discord-v2-independent-deployer-20261031·수정코드 **4117ca3670ac033b3bb88f226c610d5a78c60e5e**. Clock=DeploymentAdminTests.Now로CS0236해소·관리형컴파일exit0/경고오류0. 요청폴더종속marker제거·빌드시고정ledger binding/요청SHA결합·엄격owner/D:P/SY·BA전용권한/CREATE_NEW/readback/실패기록보존. 새 **24PASS/0FAIL**, 관리형QA자식5회/합성파일3개로교차프로세스동일ID거부확인·기존36/34/이전전체시험0. [수정/24PASS/실제위치미승인HOLD](Discord_V2_FixedLedger_Delta_20261031.md). 현Native계약의실원장위치미확정→private binding미발급이면failclosed·옛다른계약ApprovalRoot채택없음·실도구빌드승인준비아직HOLD. 두이미지/원본소스보존PASS·도구NativeAOT/Main/Windowsbackend·실보호경로ACL/Task계정변경0·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장·옛승인재사용금지·Push main변경0.
 ## 2026-10-31 Discord V2 독립 관리자 배포 B안 후보 / 테스트 컴파일 FAIL·보안 HOLD
 
 기준e9fbba36·브랜치 codex/discord-v2-independent-deployer-20261031·미검증후보코드 **ac0fb5955bb79763dbe1817546ba1983fb780b02**. 기존Supervisor/Probe무변경으로별도진입/승인/Windows어댑터/보안정책/단위시험후보7파일추가. 첫테스트DLL컴파일 **CS0236 FAIL1**(Tests/Program.cs:60 Clock=Now 인스턴스속성결합)·경고0; 지시된실패중지조건에따라수정재시도/모의실행0·신규PASS0/FAIL0(NOT_RUN). 추가정적차단:소비marker가요청폴더종속이라다른보호폴더의동일DeploymentId재사용차단미완·고정보호ledger결합필요. [후보/실패근거/잔여보안/후속승인](Discord_V2_IndependentDeployment_Implementation_HOLD_20261031.md). 이미지2SHA/크기보존PASS·기존36/34반복0·도구제품빌드/실행/실Windows변경0·검증완료아님·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지·자격증명/다른경로/V3공식판정UNKNOWN·Push main변경0.

@@ -1,0 +1,46 @@
+{
+  "start_head": "6645e5c7ff7aed3a877f0117b89ef9e76879e444",
+  "code_commit": "4117ca3670ac033b3bb88f226c610d5a78c60e5e",
+  "branch": "codex/discord-v2-independent-deployer-20261031",
+  "cs0236_fixed": true,
+  "managed_compile_exit": 0,
+  "managed_compile_warnings": 0,
+  "managed_compile_errors": 0,
+  "targeted_pass": 24,
+  "targeted_fail": 0,
+  "original36_and34_or_old_candidate_suite_executed": false,
+  "tool_native_aot_builds": 0,
+  "tool_main_executions": 0,
+  "windows_backend_executions": 0,
+  "protected_windows_acl_task_account_changes": 0,
+  "synthetic_qa_file_count": 3,
+  "synthetic_qa_peer_processes": 5,
+  "real_approval_consumption": 0,
+  "exe_copies_or_executions": 0,
+  "supervisor_probe_sources_changed": false,
+  "images": [
+    {
+      "name": "Supervisor",
+      "bytes": 7559680,
+      "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "preserved": true
+    },
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true
+    }
+  ],
+  "request_folder_relative_ledger_removed": true,
+  "production_ledger_binding": "UNISSUED_EMPTY_FAIL_CLOSED_HOLD",
+  "unrelated_older_approval_roots_adopted": false,
+  "production_root_owner_dacl_runtime_verified": false,
+  "actual_tool_build_eligible": "HOLD_PENDING_EXACT_LEDGER_LOCATION_AND_PRIVATE_BINDING_APPROVAL",
+  "entire_independent_tool_validation": "NOT_VERIFIED_BEYOND_TARGETED_24_CASES",
+  "status": "DELTA_24_PASS / NO_GO / MANUAL / EXECUTION_HOLD",
+  "cutoff": "2026-11-01T23:59:59+09:00",
+  "credentials_not_shared": "UNKNOWN",
+  "other_launch_paths_unused": "UNKNOWN",
+  "v3_images_official_normal": "NOT_VERIFIED"
+}

@@ -1,0 +1,26 @@
+PASS cs0236-clock-uses-outer-fixed-time
+PASS same-id-different-request-folders-denied-existing-bytes-unchanged
+PASS unique-deployment-id-uses-distinct-record
+PASS failure-after-create-keeps-consumed-marker-and-denies-reuse
+PASS flush-failure-keeps-original-record-immutable
+PASS expiry-tamper-nonadmin-impersonation-denied-0
+PASS expiry-tamper-nonadmin-impersonation-denied-1
+PASS expiry-tamper-nonadmin-impersonation-denied-2
+PASS expiry-tamper-nonadmin-impersonation-denied-3
+PASS unknown-or-missing-production-binding-holds
+PASS ledger-redirect-denied-X:\OtherLedger
+PASS ledger-redirect-denied-\\server\share\Ledger
+PASS ledger-redirect-denied-X:\FixedAdminLedger\..\Redirect
+PASS ledger-redirect-denied-X:\Unit\Code
+PASS weak-ledger-protection-blocks-before-create
+PASS ledger-owner-dacl-denial-unprotected
+PASS ledger-owner-dacl-denial-worker-ace
+PASS ledger-owner-dacl-denial-wrong-group
+PASS ledger-owner-dacl-denial-inherited
+PASS ledger-owner-dacl-denial-missing-admin
+PASS ledger-admin-system-full-only-accepted
+PASS same-id-concurrent-create-new-has-one-winner
+PASS real-managed-test-peer-same-id-denied-new-id-accepted-existing-sha-unchanged
+PASS existing-marker-not-reset-after-managed-peer-restart
+FIXED_LEDGER_DELTA: 24 PASS / 0 FAIL; TOOL_MAIN=0; WINDOWS_BACKEND=0; PROTECTED_WINDOWS_MUTATIONS=0; TOOL_BUILDS=0; OLD_SUITES=0
+PRODUCTION_LEDGER_LOCATION_UNAPPROVED_HOLD; synthetic workspace QA files only; protected root/ACL unchanged

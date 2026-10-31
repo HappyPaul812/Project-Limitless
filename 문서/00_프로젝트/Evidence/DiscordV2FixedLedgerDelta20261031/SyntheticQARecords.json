@@ -1,0 +1,17 @@
+[
+  {
+    "name": "0e4bfe84515142a78e701389e3a70fd2.deploy-consumed",
+    "bytes": 98,
+    "sha256": "3751AEE659F0B41A127E68C79F1ADCBCAAF16A42D24A51F112636E098483CF51"
+  },
+  {
+    "name": "6cf9613595b74c908960b07c269d652c.deploy-consumed",
+    "bytes": 98,
+    "sha256": "6B82B90F34C18E2E67A9913E72B490887602491BEB392A50AF8692D386721A0B"
+  },
+  {
+    "name": "f81a0078bec24fdba88a8f285a5c02bb.deploy-consumed",
+    "bytes": 98,
+    "sha256": "E7FDC7A1CEDCB5D696463E61BDEF630ADF20ED32FEF126C443325659EEC5A214"
+  }
+]
