@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0-windows</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><EnableDefaultCompileItems>false</EnableDefaultCompileItems><StartupObject>AdminDeploymentProgram</StartupObject><AssemblyName>Limitless.DeploymentAdmin</AssemblyName><UseAppHost>true</UseAppHost><PublishAot>true</PublishAot><RuntimeIdentifier>win-x64</RuntimeIdentifier><SelfContained>true</SelfContained><NuGetAudit>false</NuGetAudit></PropertyGroup>
+  <Import Project="../NativeBatch/Supervisor/Supervisor.Core.projitems"/>
+  <ItemGroup><Compile Include="Program.cs"/><Compile Include="DeploymentAdmission.cs"/><Compile Include="DeploymentSecurityPolicy.cs"/><Compile Include="AdminDeploymentWindows.cs"/><Compile Include="$(NativeBindingFile)" Condition="'$(NativeBindingFile)'!=''"/></ItemGroup>
+  <Target Name="RequirePrivateBinding" BeforeTargets="CoreCompile"><Error Condition="'$(NativeBindingFile)'==''" Text="HOLD: private reviewed binding required; no deployment tool build approved."/></Target>
+</Project>
