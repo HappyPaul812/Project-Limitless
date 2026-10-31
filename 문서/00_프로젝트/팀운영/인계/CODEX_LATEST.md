@@ -6,6 +6,10 @@
 
 **NATIVE_BUILD_APPROVAL_PENDING / NO_GO / MANUAL / EXECUTION_HOLD**로중지. 새Supervisor단발빌드는별도승인필요, 실제배포/게이트개방/Task등록시작정리는별도. cutoff11-01 23:59:59KST·승인재사용/초기화/자동연장0·Task계정암호ACLOnBoot/V3/Session0IPCAI/UnitySave/Push main변경0. 아래FAIL은수정전이력으로보존합니다.
 
+### 만료 표적 수정 실제 보고 영수증
+
+수정코드1717e443·보고/증거 `98b8f11114aec1e7636b3b19f87b69d45b392ead`. [Issue66 수정결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539632620) 실제등록·전체본문재조회일치 확인. 후속영수증은문서만변경. 표적34PASS/FAIL0·기존FAIL1해소·실Windows변경0·NativeAOT0, 새Supervisor단발빌드승인요청상태/NO_GO/MANUAL/EXECUTION_HOLD로중지합니다.
+
 ## Codex 최신 인계 — 2026-10-31 / 제한 정책 후보·만료 회귀FAIL / B빌드중지
 
 `codex/discord-v2-restricted-gate-impl-20261031`, 시작27b3b4bf·구현후보 `4323359ee75b23ec8d284d781cc812dbfa55690c`. 단일후보TrialId/profile/정확동작·계약/SHA/계정/시간/신뢰검증과Native어댑터분리, 인가전process/thread/token Harden재배치·배포조정기/Windowsbackend후보를구현했습니다. 전역ReleaseAdmissionImplemented=false유지, 실제Main/배포에는명시적HOLD 가드가있어새후보ID도실행불가입니다.

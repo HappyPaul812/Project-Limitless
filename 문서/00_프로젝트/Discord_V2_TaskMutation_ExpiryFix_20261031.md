@@ -59,3 +59,5 @@
 **새 Supervisor NativeAOT 단발 빌드 승인 요청 상태**입니다. 현재승인은코드/격리검증까지만이므로빌드를진행하지않습니다. 승인후에도격리발행최대1회·경고/PE/SHA·V3관측·Probe보존확인까지와실제보호배포/게이트개방/Task등록·시작·정리는별도입니다.
 
 cutoff **2026-11-01 23:59:59KST** 유지, 기존승인/소비재사용·초기화·계정/승인자동연장0입니다. 계정/암호/ACL/OnBoot·V3예외/종료·Task/Session0/IPC·AI/Discord업무·UnitySave·Push/main병합 변경0으로 보고후중지합니다. CODEX_LATEST/CURRENT_STATUS와Issue66을갱신하며 LOCAL_COMMITTED / REMOTE_NOT_PUSHED입니다.
+
+보고/증거commit `98b8f11114aec1e7636b3b19f87b69d45b392ead`, [Issue66 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539632620) 실제등록·전체본문재조회일치 확인. 후속영수증은문서만변경하고 원격에는정제댓글만게시했습니다. 새NativeAOT·실행은별도승인대기입니다.
