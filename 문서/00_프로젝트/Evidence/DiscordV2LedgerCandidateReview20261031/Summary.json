@@ -1,0 +1,45 @@
+{
+  "start_head": "95c5683a07724f92128636756091c18760e370d5",
+  "test_code_commit": "a025888116c7cd13dede9d0c799e7ceb35f334e3",
+  "branch": "codex/discord-v2-ledger-candidate-review-20261031",
+  "candidate": "E:\\Program Files\\Limitless\\DiscordV2\\Control\\DeploymentLedger",
+  "candidate_adoptable": false,
+  "status": "CANDIDATE_PATH_PROTECTION_HOLD / NO_GO / MANUAL / EXECUTION_HOLD",
+  "reason": "Both existing ancestors have applicable Authenticated Users DELETE grant 0x1301bf; existing ancestor policy rejects ANCESTOR_REPLACE_ACCESS",
+  "overlap_with_native_roots": false,
+  "managed_compile_exit": 0,
+  "managed_compile_warnings": 0,
+  "managed_compile_errors": 0,
+  "targeted_tests_pass": 6,
+  "targeted_tests_fail": 0,
+  "tests_are_safe_rejection_checks_not_path_security_pass": true,
+  "old24_or_other_suites_repeated": false,
+  "private_binding_written": false,
+  "production_binding": "UNISSUED_EMPTY_HOLD",
+  "tool_native_builds_or_main_executions": 0,
+  "actual_protected_folders_acl_task_account_changes": 0,
+  "approval_consumption_or_record_import_delete": 0,
+  "parent_acl_changes": 0,
+  "missing_components": [
+    "E:\\Program Files\\Limitless",
+    "E:\\Program Files\\Limitless\\DiscordV2",
+    "E:\\Program Files\\Limitless\\DiscordV2\\Control",
+    "E:\\Program Files\\Limitless\\DiscordV2\\Control\\DeploymentLedger"
+  ],
+  "images": [
+    {
+      "name": "Supervisor",
+      "bytes": 7559680,
+      "sha256": "6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7",
+      "preserved": true
+    },
+    {
+      "name": "Probe",
+      "bytes": 1892352,
+      "sha256": "0BABC05A2E0B24B1E6563D049B8FAABD7375F737B2ACD5AEDEAF840FC5E59322",
+      "preserved": true
+    }
+  ],
+  "private_snapshot_sha256": "5B93EFFD242BA33BF34D37C0DD5774609B01F0623D326F2BA6A79052CA9D9781",
+  "cutoff": "2026-11-01T23:59:59+09:00"
+}

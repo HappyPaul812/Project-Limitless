@@ -1,0 +1,7 @@
+PASS candidate-canonical-fixed-local-ntfs-and-no-native-root-overlap
+PASS observed-existing-parents-system-owned-no-reparse
+PASS existing-ancestor-replacement-policy-correctly-rejects-E:\
+PASS existing-ancestor-replacement-policy-correctly-rejects-E:\Program Files
+PASS candidate-descendants-missing-no-ledger-security-claim
+PASS unsafe-candidate-not-installed-in-production-binding
+LEDGER_CANDIDATE_REVIEW: 6 PASS / 0 FAIL; CANDIDATE_ADOPTION=HOLD; PRIVATE_BINDING_NOT_CREATED; WINDOWS_MUTATIONS=0; OLD_SUITES=0

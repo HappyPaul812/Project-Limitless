@@ -1,0 +1,42 @@
+[
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/AdminDeploymentWindows.cs",
+    "sha256": "258B813D574447E16280EF86EABAB31A80200220C2771076831CB6630B1B7487"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/DeploymentAdmin.csproj",
+    "sha256": "7E660D1F2B8DE144F4A9F9051F2FA39084BDBEBD54B0AB5B376B6D765875D82B"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/DeploymentAdmission.cs",
+    "sha256": "4921C071970B517C45E733E61F5E1629F3FACDE438125D01F5515BDBDE85DFDF"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/DeploymentLedger.cs",
+    "sha256": "4C33C274268DAC8D84AEA1FFA47CA62DD4112D04B1EDE372D556CA205FBC6C09"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/DeploymentSecurityPolicy.cs",
+    "sha256": "D2A48F02E53A5D53F5E6DE6A1CD99304D47ED7418603CED72E8053F8F16D7B83"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/Program.cs",
+    "sha256": "F2DDF01BBEC6063C839D6C709E03D03053C79E473C3650A7A19B56A5D6789EA3"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/Tests/CandidatePathReviewTests.cs",
+    "sha256": "6CE0665B1BE980C1978F098A35F3D6BA91265D7F999D66F99CAB77459B161081"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/Tests/DeploymentAdmin.Tests.csproj",
+    "sha256": "E8C876C09CE2C4306199A8EED748541696356D9021B9616D298F20971E9EA4BA"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/Tests/LedgerDeltaTests.cs",
+    "sha256": "BCDFCDDB48546A000FDEF5A6ADF822107B57562ED4C518AC6DE7D7AAF82D7DAC"
+  },
+  {
+    "path": "Tools/DiscordV2/ProtectedDeploymentAdmin/Tests/Program.cs",
+    "sha256": "6CCED17B58AE2A640DA19C6BCD7EF0A99987C26EC13A1C1C93288F4897D161CD"
+  }
+]

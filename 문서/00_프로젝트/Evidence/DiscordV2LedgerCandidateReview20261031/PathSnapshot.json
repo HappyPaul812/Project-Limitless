@@ -1,0 +1,33 @@
+{
+  "Candidate": "E:\\Program Files\\Limitless\\DiscordV2\\Control\\DeploymentLedger",
+  "DriveType": "Fixed",
+  "FileSystem": "NTFS",
+  "Parents": [
+    {
+      "Path": "E:\\",
+      "DaclProtected": false,
+      "Attributes": 22,
+      "Reparse": false,
+      "OwnerSid": "S-1-5-18",
+      "SDDL": "O:SYG:SYD:(A;OICIIO;SDGXGWGR;;;AU)(A;;0x1301bf;;;AU)(A;;FA;;;SY)(A;OICIIO;GA;;;SY)(A;OICIIO;GA;;;BA)(A;;FA;;;BA)(A;;0x1200a9;;;BU)(A;OICIIO;GXGR;;;BU)"
+    },
+    {
+      "Path": "E:\\Program Files",
+      "DaclProtected": false,
+      "Attributes": 16,
+      "Reparse": false,
+      "OwnerSid": "S-1-5-18",
+      "SDDL": "O:SYG:SYD:(A;ID;FA;;;BA)(A;OICIIOID;GA;;;BA)(A;ID;FA;;;SY)(A;OICIIOID;GA;;;SY)(A;ID;0x1301bf;;;AU)(A;OICIIOID;SDGXGWGR;;;AU)(A;ID;0x1200a9;;;BU)(A;OICIIOID;GXGR;;;BU)"
+    }
+  ],
+  "Missing": [
+    "E:\\Program Files\\Limitless",
+    "E:\\Program Files\\Limitless\\DiscordV2",
+    "E:\\Program Files\\Limitless\\DiscordV2\\Control",
+    "E:\\Program Files\\Limitless\\DiscordV2\\Control\\DeploymentLedger"
+  ],
+  "NativeCodeRootOverlap": false,
+  "NativeEvidenceRootOverlap": false,
+  "NativeScopePathsRedacted": true,
+  "ParentsSddlUnchangedAfterQA": true
+}

@@ -1,3 +1,6 @@
+## 2026-10-31 Discord V2 E드라이브 원장 후보 상위 ACL HOLD / binding 미발급
+
+기준95c5683a·브랜치 codex/discord-v2-ledger-candidate-review-20261031·최소시험코드 **a025888116c7cd13dede9d0c799e7ceb35f334e3**. 후보 E:\Program Files\Limitless\DiscordV2\Control\DeploymentLedger는고정NTFS·Native두Root중첩없음. 그러나 E루트/Program Files에적용AU ACE0x1301bf의DELETE가있어기존상위교체방지정책거부·하위4개부재→**채택/binding HOLD**. [ACL근거/최소6PASS/정확bootstrap별도승인범위](../../Discord_V2_Ledger_Candidate_Path_HOLD_20261031.md). 관리형컴파일exit0/경고오류0·6PASS는안전거부시험이며경로보호PASS아님·기존24/다른시험반복0. 부모ACL수정/4폴더생성/privatebinding/도구NativeAOT실행/실보호설정변경0·두이미지/제품소스보존·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장금지·Push main변경0.
 ## 2026-10-31 Discord V2 CS0236·고정 원장 재사용 표적 수정 24PASS / 실제 위치 HOLD
 
 동일브랜치 codex/discord-v2-independent-deployer-20261031·수정코드 **4117ca3670ac033b3bb88f226c610d5a78c60e5e**. Clock=DeploymentAdminTests.Now로CS0236해소·관리형컴파일exit0/경고오류0. 요청폴더종속marker제거·빌드시고정ledger binding/요청SHA결합·엄격owner/D:P/SY·BA전용권한/CREATE_NEW/readback/실패기록보존. 새 **24PASS/0FAIL**, 관리형QA자식5회/합성파일3개로교차프로세스동일ID거부확인·기존36/34/이전전체시험0. [수정/24PASS/실제위치미승인HOLD](../../Discord_V2_FixedLedger_Delta_20261031.md). 현Native계약의실원장위치미확정→private binding미발급이면failclosed·옛다른계약ApprovalRoot채택없음·실도구빌드승인준비아직HOLD. 두이미지/원본소스보존PASS·도구NativeAOT/Main/Windowsbackend·실보호경로ACL/Task계정변경0·NO_GO/MANUAL/EXECUTION_HOLD·cutoff11-01 23:59:59KST/자동연장·옛승인재사용금지·Push main변경0.
