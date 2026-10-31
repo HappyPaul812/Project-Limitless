@@ -6,6 +6,10 @@
 
 기존Probe/기존Supervisor해시·크기보존PASS, Probe/NativeInterop무변경. 실제배포backend·EXE/NativeMain·Task/계정/ACL/OnBoot·V3·Session0IPCAI/UnitySave/Push main변경실행0. 후속은실제변경직전만료/권한경계보완·회귀검증새지시, B자동재개없음. cutoff11-01 23:59:59KST·승인재사용/초기화/자동연장금지, NO_GO/MANUAL/EXECUTION_HOLD로중지합니다.
 
+### 제한 정책 후보·차단FAIL 실제 보고 영수증
+
+코드후보4323359e·실패회귀/보고 `398aa71163246b4fbf01c38c735f38b3f7d5a42a`. [Issue66 HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539490315) 실제등록·전체본문재조회일치 확인. 후속영수증은문서만변경합니다. 모의58PASS+차단FAIL1·BNativeAOT0·실제Main/배포가드닫힘·NO_GO/MANUAL/EXECUTION_HOLD로중지, 새지시전자동재개없음입니다.
+
 ## Codex 최신 인계 — 2026-10-31 / 보호 배포·one-trial 게이트 준비안
 
 `codex/discord-v2-protected-deploy-gate-plan-20261031`(시작ba8bb578). 두기존이미지SHA/크기보존PASS, 코드gate=false·추가빌드/이미지이동수정실행0. CodeRoot/EvidenceRoot부재유지, 기존상위경로각2개owner/ACE정적기준차단0이나제한token AccessCheck아님. 계정만료11-02 00:00KST/cutoff11-01 23:59:59KST 재확인, 권한설정변경0.
