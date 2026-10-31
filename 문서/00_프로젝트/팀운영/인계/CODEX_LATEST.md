@@ -1,3 +1,7 @@
+## 2026-10-31 대상 밖 staging 검토 / 최초 로더 신뢰 경계 HOLD
+
+기준969f35df9a69291635934e85cf6832b40a0516c6·브랜치 codex/discord-v2-external-staging-boundary-20261031. 이번 대상 밖 검토 허용 반영: 별도ProgramData형제후보 부재/기존6대상과 경로충돌없음. Bootstrap 수정 없이 경로 모순 해소 가능하나 최초 생성/봉인 실행 주체의 신뢰 경계 미검증→최종 해결PASS아님/HOLD. [Windows기능 비교·정확한 최소 후속안·11월7일 인계](../../Discord_V2_ExternalStaging_TrustBoundary_20261031.md). 조건부 코드변경 착수조건 미충족으로 코드/모의QA NOT_RUN. 기존검증재사용·빌드/시험반복/실Windows변경0. 다음은 기존조사반복이 아닌 단일 관리자 설치스크립트의 최초 로더 경계 구체화. NO_GO/MANUAL/EXECUTION_HOLD·cutoff자동연장금지·LOCAL_COMMITTED/REMOTE_NOT_PUSHED。
+
 ## 2026-10-31 Discord V2 최초 staging 선행 의존성 HOLD / 11월7일 인계
 
 기준634f4a927a35ad198808b4111be67e5b94b0ec15·브랜치 codex/discord-v2-initial-staging-hold-20261031. 고정 대상 안 staging 선행 생성은 기존 Bootstrap의 대상 밖 입력/전체 부재 계약과 충돌합니다. Windows 초기SD 생성 API 재사용 가능성은 확인했으나 전체 최초 설치 절차는 미검증이므로 실제 명령 미발급·추가 우회 없이 HOLD. [선행 관계·공식 API 근거·보존 SHA·11월7일 순서](../../Discord_V2_InitialStaging_HOLD_Handoff_20261107.md). 이미지/소스/binding 변경·빌드/시험반복·Windows 적용·실행0. 신규 SID/승인자료 발급0. NO_GO/MANUAL/EXECUTION_HOLD·cutoff11월1일자동연장금지·11월2일게임복귀/11월7일Discord재개. LOCAL_COMMITTED/REMOTE_NOT_PUSHED。
