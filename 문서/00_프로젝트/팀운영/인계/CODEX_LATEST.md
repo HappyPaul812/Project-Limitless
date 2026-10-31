@@ -1,3 +1,10 @@
+## Codex 최신 인계 — 2026-10-31 / 안랩 회신 후 빌드 전용 PARTIAL
+
+- 바울 대표 제공 #745042 공식회신: 제출 Probe는 테스트 프로그램, 진단 제외 예정엔진2026.10.30.00. 설치 AscVersion/nosinfo **2026.10.31.01**, 업데이트10:13:13KST를 읽기 확인한 뒤에만 빌드했습니다. 제출 샘플/zip 접근·실행0, V3 예외/중지/설정변경0입니다.
+- `codex/discord-v2-aot-resume-20261031`, 시작564e74e9·구현fe5b22e6(IL2091 수정) 무변경. 공식 NuGet7종10.0.10 SHA/크기·기존서명검증 대조, offline feed만 사용했습니다. 새 격리E 루트에서 **Probe1회 FAIL(MSB4191·컴파일 전·EXE없음)**, **Supervisor1회 NativeAOT PASS**. 오래된 준비targets 조건을 재사용한 오류를 보존·교정하되 Probe재시도0입니다.
+- Supervisor **7,536,640bytes / PE32+ AMD64 / CLR없음**, SHA256 `CCA8202417DD4D3A1E4F0D301143E9960EEFC3B984EAC79FC92DC6FA08974ECD`. NativeAOT warning/IL2091=0(실패Probe에는 적용 불가). 출력10초후/추가확인 SHA유지·삭제미관측, **새 바이너리 V3 공식정상판정 NOT_VERIFIED**. 프로그램 실행0, gate=false / NO_GO / MANUAL / EXECUTION_HOLD입니다.
+- [실제 결과·증거·FAKE_ONLY 조건](../../Discord_V2_VendorCleared_BuildOnly_20261031.md), Evidence/DiscordV2VendorBuild20261031/Summary.json. Probe 추가시도는 별도승인, 두이미지/AV·신뢰근거·유효기간/동작별승인·Batch/Session0/HANDLE/Job90초는 남은HOLD입니다. 기존위험수용승인과 실제신뢰사실을 구분합니다. cutoff11-01 23:59:59KST 자동연장0, Task/계정/ACL·Session0·IPC/AI·원본UnitySave·Push/main병합0. 원격에는 정제Issue보고만 게시합니다.
+
 ## Codex 최신 인계 — 2026-10-28 / 안전 정리 완료
 
 - **담당/기준:** Codex, codex/discord-usage-diagnostics-20261026. 구현fe5b22e60a3c505961cead1b7b80089194f0a44a, 관련Issue #66. 이번문서최종SHA는완료보고/Issue댓글.

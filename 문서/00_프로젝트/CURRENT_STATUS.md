@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 안랩 회신 후 빌드 전용 결과
+
+대표 제공 공식 진단제외 회신 #745042 및 설치엔진2026.10.31.01 확인 후 각1회 발행했습니다. **Probe FAIL(MSB4191·준비설정·EXE미생성), Supervisor NativeAOT PASS**. Supervisor7,536,640bytes·PE32+AMD64·SHA CCA82024…08974ECD, warning/IL2091없음. 초기설정실패 보존·Probe재시도0, 기존소스/공식NuGet7종 유지. 출력삭제 미관측은 V3 공식정상판정이 아니며 후자는 NOT_VERIFIED입니다. [상세·FAKE_ONLY 승인조건](Discord_V2_VendorCleared_BuildOnly_20261031.md). 브랜치 codex/discord-v2-aot-resume-20261031, 구현기준fe5b22e6. 실제실행/Task계정ACL/Session0/IPC·AI/원본UnitySave/Push/main변경0, gate=false·NO_GO/MANUAL/HOLD 유지. Probe추가빌드·실제시험은 별도승인입니다.
+
 ## 2026-10-28 Discord V2 안전 정리 완료 — 11-02 게임 복귀 독립
 
 바울 대표의 최신 결정:11-01은안전한정적검토/문서정리범위이며전체기능완성강제기한아님.안랩#745042회신지연과무관하게11-02게임개발복귀. [최신 인계](Discord_V2_SafeCloseout_Handoff_20261028.md)에완료/미완·보존/복구·후속순서정리. IL2091소스수정/관리형3 PASS·일반DLLcompile완료는보존, NativeAOT경고해소/링크/실행 NOT_VERIFIED. 기존52/17/Windows7 반복0. 실행gate=false·전역UNKNOWN·V3판정/신뢰근거/Session0·Job90초·FAKE_ONLY실행HOLD. 코드기존cutoff11-01 23:59:59KST/계정·승인만료자동연장0,후속재개시정합성검토필요. 이번source변경/시험/빌드/샘플접근/OS·UnitySave/Push main 변경0. 구현기준fe5b22e60a3c505961cead1b7b80089194f0a44a;이번정리최종SHA는완료보고/Issue66. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
