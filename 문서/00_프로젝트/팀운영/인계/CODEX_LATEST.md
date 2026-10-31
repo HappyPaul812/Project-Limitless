@@ -1143,3 +1143,7 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 ### 단발 빌드 실제 보고 영수증
 
 보고/증거 로컬 커밋 `ab1895e575f2d2c5babf24a4ca611b19c9984708`. [Issue #66 실제 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539760546) 등록·전체 본문 재조회 일치 확인. 최종 새 이미지 SHA 재확인 일치·작업트리 clean 확인 후 이 영수증만 추가합니다. Supervisor BUILD PASS/1회, 기존2이미지 보존PASS·실행0·배포0·NO_GO/MANUAL/EXECUTION_HOLD. 후속 영수증 commit은 문서뿐이며 코드/바이너리 변경·추가 빌드·Push 없습니다.
+
+### 실제 GitHub 보고 영수증
+
+코드 `4a3221b48a1f5df7530fb156e2eb058532075f61`, 보고/증거 `e96db28b622c9b47b4d2c46f8dee08549fad4670`. [Issue #66 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539930741) 실제 등록 및 전체 본문 재조회 일치 확인. 후속 영수증은 문서뿐입니다. 새경계36PASS/0FAIL·정적8항목PASS·실빌드/EXE/Windows변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.

@@ -47,3 +47,7 @@
 cutoff **2026-11-01 23:59:59 KST**, 기존 계정만료 확인값 **2026-11-02 00:00:00 KST** 유지. 자동 연장/소비 초기화 금지. **NO_GO / MANUAL / EXECUTION_HOLD**로 중지하며 Push/main 병합/원본 동기화는 하지 않습니다.
 
 증거: [Summary](Evidence/DiscordV2EntryGate20261031/Summary.json), [36PASS](Evidence/DiscordV2EntryGate20261031/Delta36PASS.log), [이미지/COFF 비교](Evidence/DiscordV2EntryGate20261031/StaticImages.json), [작은 Main 역어셈블](Evidence/DiscordV2EntryGate20261031/HeldMainDisassembly.txt), [관리형 입력 SHA](Evidence/DiscordV2EntryGate20261031/ManagedInputsSHA.json). 로컬 커밋/REMOTE_NOT_PUSHED, 바이너리·비공개 binding·비밀정보 업로드 없음.
+
+### 실제 GitHub 보고 영수증
+
+코드 `4a3221b48a1f5df7530fb156e2eb058532075f61`, 보고/증거 `e96db28b622c9b47b4d2c46f8dee08549fad4670`. [Issue #66 결과](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6539930741) 실제 등록 및 전체 본문 재조회 일치 확인. 후속 영수증은 문서뿐입니다. 새경계36PASS/0FAIL·정적8항목PASS·실빌드/EXE/Windows변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
