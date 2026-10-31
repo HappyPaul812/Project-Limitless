@@ -1,3 +1,7 @@
+## 2026-10-31 Discord V2 FAKE_ONLY 사전확인 / NO_GO 유지
+
+두native보존SHA/크기/PE PASS·빌드실행0. 고정보호루트/Task미생성·현재빌드이미지ACL은배포조건미충족. gate=false가관리자/감독진입차단, 봉인/배포는별도승인검토가필요합니다. SID1010만료11-02 00:00KST확인·자격증명공유/다른런처/전역SID부재UNKNOWN, 새V3정상판정NOT_VERIFIED. [대표GUI조회와등록/시작/정리승인분리·GO/NO_GO](Discord_V2_FakeOnly_Final_Preflight_20261031.md). 브랜치codex/discord-v2-fakeonly-final-preflight-20261031, cutoff11-01 23:59:59KST·승인재사용/자동연장금지·실행HOLD. 계정ACLTaskOnBoot/V3/Session0IPCAI/UnitySave/Push main변경0입니다.
+
 ## 2026-10-31 Discord V2 Probe 추가 단발 PASS / 실행 HOLD
 
 Supervisor성공설정·컴파일전MSBuild평가exit0 후 승인된 Probe추가1회 NativeAOT PASS(warning/IL2091=0),1,892,352bytes·PE32+AMD64·SHA0BABC05A…C5E59322. Supervisor재발행0·기존SHA/7,536,640bytes보존. 원본소스/공식NuGet/보안계약/gate무변경, V3출력삭제미관측과정상판정NOT_VERIFIED구분. [상세/실제시험승인조건](Discord_V2_Probe_SingleRebuild_20261031.md). 브랜치codex/discord-v2-probe-single-rebuild-20261031. 실제EXE/Task계정ACL/Session0IPCAI/UnitySave/Push main변경0, NO_GO/MANUAL/EXECUTION_HOLD·gate=false,11-01이후승인재사용/자동연장금지 유지.

@@ -1,3 +1,11 @@
+## Codex 최신 인계 — 2026-10-31 / FAKE_ONLY 최종 사전확인·NO_GO
+
+`codex/discord-v2-fakeonly-final-preflight-20261031`, 시작f5f8ea00·기준보고233a6431. **Probe/Supervisor SHA·크기·PE 보존2종PASS**, 추가빌드/EXE실행/이미지수정이동0. 코드gate=false가Admin/--supervise모두차단하므로현재이미지는추가실행승인만으로GO불가, 봉인처리는별도코드/이미지검토대상입니다.
+
+읽기확인: SID1010 Enabled=true·만료**11-02 00:00KST**, 로컬관리자그룹직접멤버아님. 직접SID/일반로컬명Task/서비스일치0이나전역부재아님. PasswordRequired=false/UserMayChangePassword=true는빈암호/공유증거아니며실제자격증명관리는대표직접확인필요. **고정CodeRoot/EvidenceRoot/Task부재**, 빌드이미지소유/상속DACL은보호배포조건미충족. 계정/ACL/Task는변경하지않았습니다.
+
+기존V3전사/격리DB메타데이터읽기확인, 새이미지정상판정NOT_VERIFIED·전역SID/다른실행경로UNKNOWN유지. [보호배포·대표GUI조회·단계별GO/NO_GO](../../Discord_V2_FakeOnly_Final_Preflight_20261031.md)와Evidence/DiscordV2FinalPreflight20261031/Summary.json에분리기록. 정확private대상은ignored FinalPreflight20261031/GUI_Targets_PRIVATE.LOCAL.json, GUI는대표조회만이며등록/시작/정리승인아님. 새trial신뢰자료(15분내)/동작별승인·Batch4/Session0/HANDLE/Job90초/child·실패정리실증은미완료. cutoff11-01 23:59:59KST·기존승인재사용/소비초기화/자동연장금지, NO_GO/MANUAL/EXECUTION_HOLD·gatefalse 유지. V3/계정ACLOnBoot/Task/IPC·AI/UnitySave/Push main변경0입니다.
+
 ## Codex 최신 인계 — 2026-10-31 / Probe 추가1회 NativeAOT PASS·실행 HOLD
 
 `codex/discord-v2-probe-single-rebuild-20261031`(시작29b7a7e2, 기준보고9227601c·구현fe5b22e6). 승인된 Probe추가1회 PASS, Supervisor재발행0입니다. Supervisor성공targets와SHA일치·컴파일전MSBuild평가exit0(Runtime/compiler/linker10.0.10), 공식NuGet7종/소스20봉인 확인. 원본소스/보안계약/gate변경0입니다.
