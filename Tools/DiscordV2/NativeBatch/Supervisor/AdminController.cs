@@ -45,6 +45,8 @@ internal interface IAdminBackend
     void Preflight(TrialContract contract, bool cleanup);
     byte[] IsolationEvidence(string name,int limit)=>throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
     byte[] Approval(string operation,string trialId);
+    byte[] CurrentContract()=>throw new InvalidOperationException("CURRENT_CONTRACT_REQUIRED");
+    void BindMutationBoundary(TaskMutationBoundary boundary)=>throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED");
     AccountObservation Account();
     TaskObservation? Observe();
     ControlReceipt? Receipt(string name);
@@ -79,13 +81,15 @@ internal static class AdminController
         cancellation.ThrowIfCancellationRequested();
         FakeOnlyPolicy.Evidence(contract,backend.Now,backend.IsolationEvidence,cleanup);
         backend.Preflight(contract, cleanup);
-        var approval=OperationApproval.Validate(backend.Approval(mode,contract.TrialId),contract.TrialId,sha,mode,backend.Now,cleanup);
+        byte[] operationRaw=backend.Approval(mode,contract.TrialId);
+        var approval=OperationApproval.Validate(operationRaw,contract.TrialId,sha,mode,backend.Now,cleanup);
         var account = backend.Account();
         AdmissionPolicy.Require(account.Sid == binding.WorkerSid, "ACCOUNT_SID_CHANGED");
         if (!cleanup)
             AdmissionPolicy.Require(account.Enabled && !account.Locked && account.ExpiresUtc >= contract.ExpiresUtc && account.BatchKnown && account.BatchAllowed, "ACCOUNT_OR_BATCH_HOLD");
         var observation = backend.Observe();
         authorize?.Invoke(contract,sha,mode,approval,account,backend.Now,binding);
+        if(authorize is not null)backend.BindMutationBoundary(new TaskMutationBoundary(mode,sha,raw,operationRaw,binding,backend,cancellation));
         string prefix = contract.TrialId + ".admin.";
         ControlReceipt Make(string status, string fingerprint = "", string id = "") => new() { TrialId=contract.TrialId,ContractSha=sha,Status=status,Fingerprint=fingerprint,Instance=id,ApprovalId=approval.ApprovalId };
         ControlReceipt Read(string suffix)

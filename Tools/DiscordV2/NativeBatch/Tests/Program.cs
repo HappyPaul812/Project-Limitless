@@ -29,6 +29,8 @@ internal static partial class AdmissionTests
         if(args.FirstOrDefault()=="--windows-boundary")return WindowsBoundaryTests.Run(args.Skip(1).ToArray());
         if(args.FirstOrDefault()=="--windows-handle-peer")return WindowsBoundaryTests.Peer(args.Skip(1).ToArray());
         if(args is ["--restricted-gate-delta"])return RestrictedGateDelta();
+        if(args is ["--task-mutation-delta"])return TaskMutationDelta();
+        if(args is ["--task-mutation-late-read-delta"])return TaskMutationLateReadDelta();
         if(args is ["--restricted-gate-expiry-risk"])return RestrictedGateExpiryRisk();
         if(args is ["--fake-only-contract"])return FakeOnlyContracts();
         if(args is ["--interop-trim-contract"])return InteropTrimContract();
@@ -149,11 +151,13 @@ internal static partial class AdmissionTests
         internal readonly Dictionary<string,ControlReceipt> Records=[];
         internal string Xml="";internal bool Present,Enabled,FailRun,Clean,BadReadback;
         internal Guid[] Instances=[];internal int RegisterCalls,RunCalls,StopCalls,RemoveCalls;internal int? StateOverride;internal Action? OnEnable;
-        internal string? ApprovalOperation;internal bool GrantApproved=true;internal DateTimeOffset? GrantExpiry;private TrialContract? contract;internal Action<TrialContract>? OnPreflight;internal Action? BeforeRegister;
+        internal string? ApprovalOperation;internal bool GrantApproved=true;internal DateTimeOffset? GrantExpiry;private TrialContract? contract;internal Action<TrialContract>? OnPreflight;internal Action? BeforeRegister;internal Action? BeforeRegisterCommit;internal Action<TaskMutation>? BeforeMutation;internal Func<byte[]>? CurrentContractOverride;internal TaskMutationBoundary? MutationBoundary;internal int EnableCalls,DisableCalls;
         internal readonly Dictionary<string,byte[]> IsolationFiles=[];
         public byte[] IsolationEvidence(string name,int limit)=>IsolationFiles.TryGetValue(name,out var raw)&&raw.Length<=limit?raw:throw new InvalidOperationException("FAKE_TRUST_EVIDENCE_MISSING_HOLD");
         public void Preflight(TrialContract value,bool cleanup) {contract=value;OnPreflight?.Invoke(value);}
         public byte[] Approval(string operation,string trial)=>JsonSerializer.SerializeToUtf8Bytes(new OperationApproval{Approved=GrantApproved,ApprovalId="abcdefabcdefabcdefabcdefabcdefab",TrialId=trial,ContractSha=Hash(Raw(contract!)),Operation=ApprovalOperation??operation,ExpiresUtc=GrantExpiry??contract!.ExpiresUtc},ApprovalJson.Default.OperationApproval);
+        public byte[] CurrentContract()=>CurrentContractOverride?.Invoke()??Raw(contract!);
+        public void BindMutationBoundary(TaskMutationBoundary boundary)=>MutationBoundary=boundary;
         public AccountObservation Account()=>AccountState;
         public TaskObservation? Observe()
         {
@@ -163,11 +167,11 @@ internal static partial class AdmissionTests
         }
         public ControlReceipt? Receipt(string name)=>Records.GetValueOrDefault(name);
         public void Save(string name,ControlReceipt receipt){if(!Records.TryAdd(name,receipt))throw new IOException("CREATE_NEW_COLLISION");}
-        public void Register(string xml,string sddl,CancellationToken cancellation){cancellation.ThrowIfCancellationRequested();BeforeRegister?.Invoke();Check(!Present);RegisterCalls++;Xml=BadReadback?xml.Replace("PT90S","PT91S"):xml;Present=true;}
-        public void Enable(bool value){Enabled=value;if(value)OnEnable?.Invoke();}
-        public Guid Run(){RunCalls++;Instances=[Guid.NewGuid()];if(FailRun)throw new IOException("run-response-lost");return Instances[0];}
-        public void Stop(Guid instance){Check(Instances.Length==1&&Instances[0]==instance);StopCalls++;Instances=[];}
+        public void Register(string xml,string sddl,CancellationToken cancellation){cancellation.ThrowIfCancellationRequested();BeforeRegister?.Invoke();MutationBoundary?.AfterPassword();BeforeRegisterCommit?.Invoke();MutationBoundary?.Check(TaskMutation.Register);Check(!Present);RegisterCalls++;Xml=BadReadback?xml.Replace("PT90S","PT91S"):xml;Present=true;}
+        public void Enable(bool value){var m=value?TaskMutation.Enable:TaskMutation.SafetyDisable;BeforeMutation?.Invoke(m);MutationBoundary?.Check(m);if(value)EnableCalls++;else DisableCalls++;Enabled=value;if(value)OnEnable?.Invoke();}
+        public Guid Run(){BeforeMutation?.Invoke(TaskMutation.Run);MutationBoundary?.Check(TaskMutation.Run);RunCalls++;Instances=[Guid.NewGuid()];if(FailRun)throw new IOException("run-response-lost");return Instances[0];}
+        public void Stop(Guid instance){BeforeMutation?.Invoke(TaskMutation.Stop);MutationBoundary?.Check(TaskMutation.Stop,instance);Check(Instances.Length==1&&Instances[0]==instance);StopCalls++;Instances=[];}
         public bool CleanupProven(string _)=>Clean;
-        public void Remove(){RemoveCalls++;Present=false;}
+        public void Remove(){BeforeMutation?.Invoke(TaskMutation.Remove);MutationBoundary?.Check(TaskMutation.Remove);RemoveCalls++;Present=false;}
     }
 }

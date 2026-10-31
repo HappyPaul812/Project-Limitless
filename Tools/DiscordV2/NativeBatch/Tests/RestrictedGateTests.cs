@@ -16,8 +16,8 @@ internal static partial class AdmissionTests
         var trust=new Dictionary<string,object?>{{"Approved",true},{"TrialId",c.TrialId},{"WorkerSid",Binding.WorkerSid},{"TaskPath",Binding.TaskPath},{"CodeRoot",Binding.CodeRoot},{"EvidenceRoot",Binding.EvidenceRoot},{"SupervisorSha256",c.SupervisorSha256},{"ProbeSha256",c.ProbeSha256},{"ObservedUtc",Now},{"ExpiresUtc",c.ExpiresUtc},{"BasisSha256",Hash(basis)},{"NoUntrustedSameSidCode",true},{"CredentialsNotShared",true},{"NoOtherLaunchers",true},{"ResidualRiskAccepted",true},{"GlobalSidAbsence","UNKNOWN"}};
         var raw=JsonSerializer.SerializeToUtf8Bytes(trust);f.IsolationFiles.Add(c.TrialId+".fake-only-trust.json",raw);f.IsolationFiles.Add(c.TrialId+".fake-only-trust-basis.txt",basis);c.FakeOnlyIsolation!.TrustEvidenceSha256=Hash(raw);return f;
     }
-    private static int NativeAdmin(FakeBackend f,string mode,TrialContract c,Guid? instance=null)
-    {byte[] raw=Raw(c);return AdminController.ExecuteNative(mode,raw,Hash(raw),Binding,f,instance,default);}
+    private static int NativeAdmin(FakeBackend f,string mode,TrialContract c,Guid? instance=null,CancellationToken cancellation=default)
+    {byte[] raw=Raw(c);return AdminController.ExecuteNative(mode,raw,Hash(raw),Binding,f,instance,cancellation);}
     private static int RestrictedGateExpiryRisk()
     {
         // 실제 암호/콘솔/Task 없이 대기 후 시각만 전진시킵니다. 미해결 위험을 숨기지 않고 FAIL로 보존합니다.

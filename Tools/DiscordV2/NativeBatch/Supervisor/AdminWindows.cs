@@ -10,11 +10,12 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
 {
     private readonly List<SafeFileHandle> pins=[];
     private TaskSchedulerNative? scheduler;
+    private TaskMutationBoundary? mutationBoundary;
     private AccountObservation? account;
     private TrialContract? preparedContract;
     private readonly string expectedSha;
     public DateTimeOffset Now=>DateTimeOffset.UtcNow;
-    private TaskSchedulerNative Scheduler=>scheduler??=new(Native.TaskPath);
+    private TaskSchedulerNative Scheduler=>scheduler??=new(Native.TaskPath,()=>mutationBoundary??throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED"));
     private AdminWindows(string sha){expectedSha=sha;}
     internal static int Run(string[] args)
     {
@@ -40,10 +41,17 @@ internal sealed class AdminWindows : IAdminBackend,IDisposable
     public void Preflight(TrialContract contract,bool cleanup)
     {
         preparedContract=contract;
+        // 암호 입력/COM 준비 사이에도 호출되므로 실제 변경 직전 관리자/비위장 상태를 다시 검사합니다.
+        Native.NoImpersonation();using var identity=WindowsIdentity.GetCurrent();
+        AdmissionPolicy.Require(new WindowsPrincipal(identity).IsInRole(WindowsBuiltInRole.Administrator),"ELEVATED_ADMIN_REQUIRED");
+        Native.Check(Native.OpenProcessToken(Native.GetCurrentProcess(),8,out nint token));
+        try{AdmissionPolicy.Require(Native.Info<int>(token,20)==1,"ADMIN_NOT_ELEVATED");}finally{Native.CloseHandle(token);}
         AdmissionPolicy.Require(Environment.ProcessPath==Path.Combine(Native.CodeRoot,"Supervisor.exe"),"ADMIN_IMAGE_LOCATION");
         AdmissionPolicy.Require(FileHash(Path.Combine(Native.CodeRoot,"Supervisor.exe"))==contract.SupervisorSha256 && FileHash(Path.Combine(Native.CodeRoot,"Probe.exe"))==contract.ProbeSha256,"ADMIN_IMAGE_SHA");
         account=AccountNative.Read(Now,!cleanup && contract.Scope!.Register);
     }
+    public byte[] CurrentContract()=>Read(Path.Combine(Native.CodeRoot,"TrialContract.json"),4096,false);
+    public void BindMutationBoundary(TaskMutationBoundary boundary)=>mutationBoundary=boundary;
     public AccountObservation Account()=>account??throw new InvalidOperationException("PREFLIGHT_REQUIRED");
     public byte[] IsolationEvidence(string name,int limit)
     {

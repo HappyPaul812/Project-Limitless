@@ -3,8 +3,8 @@
 internal static class NativeTrialPolicy
 {
     internal const string CandidateTrialId = "deef7539de5b4efcb30e062f9b734342";
-    // 암호 입력 대기 뒤 실제 Task 변경 직전의 시간 재검증이 아직 없습니다.
-    // 이 정적 위험이 해소/검증되기 전에는 순수 정책/모의 시험만 가능하고 실제 어댑터는 닫습니다.
+    // 변경 직전 만료 경계의 Delta 검증과 별개로 NativeAOT/실제 Windows/실행 승인은 아직 없습니다.
+    // 기존 차단 태그는 호환 보존하며 이번 단계에서도 실제 어댑터를 열지 않습니다.
     internal static void RequireWindowsBoundary()
         => throw new InvalidOperationException("HOLD_NATIVE_MUTATION_DEADLINE_REVIEW");
     internal static void Shape(TrialContract c, string mode, DateTimeOffset now)

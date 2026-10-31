@@ -20,6 +20,7 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
     private nint service,folder;
     private bool initialized;
     private readonly string task;
+    private readonly Func<TaskMutationBoundary> mutationBoundary;
     private static nint Slot(nint obj,int index) {AdmissionPolicy.Require(obj!=0,"COM_NULL");return (*(nint**)obj)[index];}
     private static void H(int error){if(error<0)Marshal.ThrowExceptionForHR(error);}
     private static void Release(ref nint obj){if(obj!=0){((delegate* unmanaged[Stdcall]<nint,uint>)Slot(obj,2))(obj);obj=0;}}
@@ -27,9 +28,10 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
     {nint b=0;H(((delegate* unmanaged[Stdcall]<nint,nint*,int>)Slot(obj,index))(obj,&b));try{return Marshal.PtrToStringBSTR(b);}finally{Marshal.FreeBSTR(b);}}
     private static short Short(nint obj,int index)
     {short value=0;H(((delegate* unmanaged[Stdcall]<nint,short*,int>)Slot(obj,index))(obj,&value));return value;}
-    internal TaskSchedulerNative(string taskPath)
+    internal TaskSchedulerNative(string taskPath):this(taskPath,()=>throw new InvalidOperationException("MUTATION_BOUNDARY_REQUIRED")) { }
+    internal TaskSchedulerNative(string taskPath,Func<TaskMutationBoundary> authorization)
     {
-        task=taskPath;
+        task=taskPath;mutationBoundary=authorization;
         try
         {
             H(CoInitializeEx(0,0));initialized=true;
@@ -109,12 +111,15 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
                 AdmissionPolicy.Require(secret.Length<256,"PASSWORD_LENGTH");
                 if(!char.IsControl(key.KeyChar))secret.AppendChar(key.KeyChar);
             }
-            AdmissionPolicy.Require(secret.Length>0,"EMPTY_PASSWORD");secret.MakeReadOnly();password=Marshal.SecureStringToBSTR(secret);
+            AdmissionPolicy.Require(secret.Length>0,"EMPTY_PASSWORD");secret.MakeReadOnly();
+            mutationBoundary().AfterPassword(); // 비밀값을 읽거나 기록하지 않고 승인 상태만 재검증합니다.
+            password=Marshal.SecureStringToBSTR(secret);
             H(((delegate* unmanaged[Stdcall]<nint,uint,nint*,int>)Slot(service,9))(service,0,&definition));
             xmlBstr=Marshal.StringToBSTR(xml);
             H(((delegate* unmanaged[Stdcall]<nint,nint,int>)Slot(definition,20))(definition,xmlBstr));
             name=Marshal.StringToBSTR(task);user=Marshal.StringToBSTR(Native.Worker);security=Marshal.StringToBSTR(sddl);
             cancellation.ThrowIfCancellationRequested();
+            mutationBoundary().Check(TaskMutation.Register);
             H(((delegate* unmanaged[Stdcall]<nint,nint,nint,int,Variant,Variant,int,Variant,nint*,int>)Slot(folder,17))
                 (folder,name,definition,0x12,Variant.Bstr(user),Variant.Bstr(password),1,Variant.Bstr(security),&registered));
         }
@@ -126,12 +131,13 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
         }
     }
     internal void Enable(bool enabled)
-    {nint t=Task();try{H(((delegate* unmanaged[Stdcall]<nint,short,int>)Slot(t,11))(t,enabled?(short)-1:(short)0));}finally{Release(ref t);}}
+    {nint t=Task();try{mutationBoundary().Check(enabled?TaskMutation.Enable:TaskMutation.SafetyDisable);H(((delegate* unmanaged[Stdcall]<nint,short,int>)Slot(t,11))(t,enabled?(short)-1:(short)0));}finally{Release(ref t);}}
     internal Guid Run()
     {
         nint t=Task(),running=0;
         try
         {
+            mutationBoundary().Check(TaskMutation.Run);
             H(((delegate* unmanaged[Stdcall]<nint,Variant,nint*,int>)Slot(t,12))(t,default,&running));
             AdmissionPolicy.Require(String(running,9)==task,"RUN_TASK_PATH");
             AdmissionPolicy.Require(Guid.TryParse(String(running,8),out var id)&&id!=Guid.Empty,"RUN_GUID_UNKNOWN");return id;
@@ -145,11 +151,12 @@ internal sealed unsafe class TaskSchedulerNative : IDisposable
         {
             running=Instances(t,true);
             AdmissionPolicy.Require(running.Count==1 && running[0].Id==instance && String(running[0].Pointer,9)==task,"STOP_INSTANCE_CHANGED");
+            mutationBoundary().Check(TaskMutation.Stop,instance);
             H(((delegate* unmanaged[Stdcall]<nint,int>)Slot(running[0].Pointer,12))(running[0].Pointer));
         }
         finally{foreach(var entry in running){nint ptr=entry.Pointer;Release(ref ptr);}Release(ref t);}
     }
     internal void Remove()
-    {nint name=Marshal.StringToBSTR(task);try{H(((delegate* unmanaged[Stdcall]<nint,nint,int,int>)Slot(folder,15))(folder,name,0));}finally{Marshal.FreeBSTR(name);}}
+    {nint name=Marshal.StringToBSTR(task);try{mutationBoundary().Check(TaskMutation.Remove);H(((delegate* unmanaged[Stdcall]<nint,nint,int,int>)Slot(folder,15))(folder,name,0));}finally{Marshal.FreeBSTR(name);}}
     public void Dispose(){Release(ref folder);Release(ref service);if(initialized){CoUninitialize();initialized=false;}}
 }
