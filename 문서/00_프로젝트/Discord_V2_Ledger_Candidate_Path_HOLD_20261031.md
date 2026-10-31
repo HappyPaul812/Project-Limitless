@@ -57,3 +57,7 @@ Supervisor `6DF94E47C301C20EAB537EB6AD49C680129B80787536358E6BDC78ED50A842E7` / 
 자격증명 비공유/다른 실행 경로 미사용·V3 공식 정상 판정 UNKNOWN/NOT_VERIFIED는 유지합니다. cutoff **2026-11-01 23:59:59 KST** 자동 연장/옛 승인 재사용 금지. **NO_GO / MANUAL / EXECUTION_HOLD**로 보고 후 중지합니다. Push/main 병합/원본 적용 없음.
 
 증거: [Summary](Evidence/DiscordV2LedgerCandidateReview20261031/Summary.json), [상위 ACL 공개 snapshot](Evidence/DiscordV2LedgerCandidateReview20261031/PathSnapshot.json), [6건 정책 시험](Evidence/DiscordV2LedgerCandidateReview20261031/Delta.log), [관리형 컴파일](Evidence/DiscordV2LedgerCandidateReview20261031/ManagedCompile.log), [입력 SHA](Evidence/DiscordV2LedgerCandidateReview20261031/InputsSHA.json). 실제 Native 경로를 포함한 원본 snapshot은 ignored 로컬 QA에만 보존했습니다. LOCAL_COMMITTED / REMOTE_NOT_PUSHED.
+
+### 실제 GitHub 보고 영수증
+
+최소시험코드 `a025888116c7cd13dede9d0c799e7ceb35f334e3`, 보고/증거 `342bfeb2f1bb93221589fd83a5bf970a5b15f82c`. [Issue #66 경로 HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541591838) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. 후보상위ACL미충족·6PASS는거부시험·privatebinding미발급·실Windows변경/도구빌드실행0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.

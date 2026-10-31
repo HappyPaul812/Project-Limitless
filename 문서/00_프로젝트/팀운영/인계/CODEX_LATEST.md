@@ -1178,3 +1178,7 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 ### 실제 GitHub 보고 영수증
 
 수정코드 `4117ca3670ac033b3bb88f226c610d5a78c60e5e`, 보고/증거 `0e4f45d16e86c6b103da24e6ec50572463c343ee`. [Issue #66 표적 수정 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541481822) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. CS0236해소·24PASS/0FAIL·production ledger위치/binding미승인HOLD·실도구빌드/Main/Windowsbackend/보호설정변경0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
+
+### 실제 GitHub 보고 영수증
+
+최소시험코드 `a025888116c7cd13dede9d0c799e7ceb35f334e3`, 보고/증거 `342bfeb2f1bb93221589fd83a5bf970a5b15f82c`. [Issue #66 경로 HOLD 보고](https://github.com/HappyPaul812/Project-Limitless/issues/66#issuecomment-6541591838) 실제등록·전체본문재조회일치 확인. 후속영수증은 문서뿐입니다. 후보상위ACL미충족·6PASS는거부시험·privatebinding미발급·실Windows변경/도구빌드실행0·NO_GO/MANUAL/EXECUTION_HOLD·LOCAL_COMMITTED/REMOTE_NOT_PUSHED로 중지합니다.
