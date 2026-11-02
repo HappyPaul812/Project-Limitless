@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 오전 — #81 3 ZIP OFFLINE 검수 완료 / 실제 수정 대상 분리
+
+- [#81 Codex 실제 3 ZIP 델타 QA](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705) 및 [기획 판단](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): F2 CRC·Manifest/SUMS 정상, Bee/Spider CRC 정상이나 전체 manifest/SUMS 동봉X. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtMain24ThreeZip20261103/Review/index.html`(브라우저기능18PASS)이며 **실 Unity 아님**. Codex #81 작업 branch `codex/art-main24-3zip-delta-20261103` 내용/인계 commit `3af7f08d4febf062865ef5b437e0951e80315bd6`; 제품변경0·원본Main24 #80 Unity81PASS 보존.
+- F2 국소 Sign_v3/Stump_v3/LowFence_v3 모두 REVISE. 독립 FULLREDRAW **Sign SHA `864e964ee4cc3868bd315af2249fe92d04e888937ae66f963232636cda8e4488`, Fence SHA `49c2969b8607d91b6bf15cb0e4485bcc3f25379669064b025d63b099c9c62e8c`**는 KEEP_CANDIDATE, 대표의 시각선택·게임 공식승인 대기. 그루터기 기존/전면대안 모두 원판·스툴 형상 HOLD → 상단 목재 형태만 새 1종 보완하도록 메인 아트에 지시. P1 기존3/나뭇가지·약한눈발 KEEP, 공식 Owl v3 정지 디자인 승인/Attack motion HOLD.
+- Ch1·2 Organic Spider 기승인 v2 디자인 그대로. v3 알파282 감소 후에도 x35..95/y304..353 주변 회백색 앞다리 아래 길쭉한 매트 남음 → **RGB 변경0·알파만 마지막 국소 정리 1포즈**. 32모션/게임교체0. 기계형 Spider v3 Ch4 ARCHIVE_ONLY.
+- Bee 개별 `LIMITLESS_BEE_ONLY.zip` 신규5포즈/GIF2는 **10/29 원본과 SHA7/7 완전히 동일, 새 아트 개선0**. 이전20프레임은 참고JSON에 SHA20 일치, 개별ZIP에 PNG20 자체없음. 이번에는 재비교·재납품을 진행으로 오인하지 말고 날개뿌리/6다리·독침 회수의 **실제 형상 재작화**, 머리우향/독침좌향 **공격축 불일치 해결** 소수 키포즈와 새 SHA 보고. 안되면 BLOCKED로 종료. PilotBee 원본 CC BY3.0/4.0 표시 충돌 계속.
+- 이슈 기록은 담당 작업 자동 시작이 아님. 메인/리뉴얼 담당에게 **복붙용 실 아트 수정 지시**를 제공하고, 다음 사용자 결정은 F2 **대안 표지판·울타리 시각 수용 여부**. 기존 저장복구·Main24·원본 Unity/Save·Discord66/main/Push/merge 보호.
+
+---
 # PLANNING / 2026-11-03 — Main24 81PASS 확인·F2/Spider/Bee 3 ZIP 통합델타 검수 #81
 
 - 대표 보고 [#80 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953): `codex/main24-first-playable-no-purchase-20261103`, 구현 `70e363bea43d72c7e68abb089952e2d6f6a77a8b`, 인계 `5b02b56e467e5712bbe184b6f21c8e4640b2c76d`, 새 Unity6000.6.5f1 **81PASS**/정적14PASS/FAIL0. Main23 체크포인트→상점 안내→무료 6슬롯/기본3→한기안내→북문→F2/올빼미 예고. **F2 실제 씬·전투/퀘스트 완료/보상/Main25 해금 미구현**. 로컬 격리만, 원본 본편·원격 Push0. 기존 #70/77/78 Writer 복구 코드는 미병합.
