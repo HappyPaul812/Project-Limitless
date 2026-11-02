@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 — Main24 81PASS 확인·F2/Spider/Bee 3 ZIP 통합델타 검수 #81
+
+- 대표 보고 [#80 Codex](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953): `codex/main24-first-playable-no-purchase-20261103`, 구현 `70e363bea43d72c7e68abb089952e2d6f6a77a8b`, 인계 `5b02b56e467e5712bbe184b6f21c8e4640b2c76d`, 새 Unity6000.6.5f1 **81PASS**/정적14PASS/FAIL0. Main23 체크포인트→상점 안내→무료 6슬롯/기본3→한기안내→북문→F2/올빼미 예고. **F2 실제 씬·전투/퀘스트 완료/보상/Main25 해금 미구현**. 로컬 격리만, 원본 본편·원격 Push0. 기존 #70/77/78 Writer 복구 코드는 미병합.
+- 바울 대표 새 로컬 ZIP 3개: `F:\Downloads\Limitless_F2_MinimalFollowup_20261103.zip`, `F:\Downloads\LIMITLESS_BEE_ONLY.zip`, `F:\Downloads\LIMITLESS_SPIDER_ONLY.zip`. 로컬 Windows F: 실제 ZIP은 이 세션이 못 열므로 **GitHub 문서 상태와 실물 상태를 혼동하지 말 것**. [신규 Issue #81](https://github.com/HappyPaul812/Project-Limitless/issues/81) 읽기전용 3 ZIP 단일 델타 검수 Codex 지시. 아트팀 보고의 합본 `LIMITLESS_Spider_AlphaFinal_Bee_MotionPrep_20261103.zip`와 별개인 Bee/Spider 개별ZIP이므로 SHA/내용 대조 필수.
+- 11/03 [F2 #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6590114495) 국소 후보 Sign_v3/Stump_v3/LowFence_v3, 대안 컨셉3은 분리·미승인, 나뭇가지/약한눈발KEEP, 이전OWLv3 정지 디자인 기승인/Attack 모션HOLD; F2 PPU·휠체어 실제 Scene QA미실시. [Spider #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6589960356) Organic v3 alpha282 감소 단일포즈(디자인 기승인, 최종알파 검토), 아직 모션32 새 제작0. [Bee #63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6589961291) 기존20+키포즈5 보존, 11/03 합본 보고는 **신규 모션 제작0**, 관절·독침방향/권리 CC BY3/4 HOLD. 개별 ZIP 실내용은 Codex 조사 전 `UNKNOWN`.
+- #81은 **문서 보고+128/40 OFFLINE 비교1판** 중심이며, 이미통과 Main24 81·Save85/72/72/Ch3Main23 148 대규모 QA 반복 금지. 대표 최종 아트 판단 전 Owl/Bee/Spider/F2 게임제품 적용0. 원본 Unity/Save/UserData/Quest/BuildSettings/Packages/Discord66/기본 main/원격 Push/병합0.
+
+---
 # PLANNING / 2026-11-03 오전 — Main24 게임 개발 재개 / #80 비결제 첫 플레이
 
 - 사용자 지시: **“굿모닝 게임 개발 이어서 하자.”** GitHub 공개 Issue/담당 인계를 확인하고 **Discord #66은 별도 NO_GO 작업으로 유지**, 게임 Chapter3 Main24로 복귀. [신규 Issue #80](https://github.com/HappyPaul812/Project-Limitless/issues/80) Codex 격리 MVP: **Main23 완료→Main24 스킬상점 안내/기존 무료3+장착6 사용→첫 한기·F2 서리올빼미 예고**의 플레이 가능한 절편, 유료 구매·화폐 차감0. F2 실씬/퀘스트 미구현이면 새 전체 맵/모션을 지어내지 않고 안전한 진입전 흐름까지 구현 후 HOLD.
