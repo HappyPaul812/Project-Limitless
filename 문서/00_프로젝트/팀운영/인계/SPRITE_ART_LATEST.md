@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 Main24 F2 / Issue #75 — 최소 국소 보완3 + 독립 신규 디자인 레퍼런스3 / 라이브러리 납품
+
+- **완료 실물 ZIP** `Limitless_F2_MinimalFollowup_20261103.zip` SHA256 **`310d1755b14ab67f744eea420dd1f8e6c41e397fb8689ea2f07b4d7981323a28`**, **1,604,092 bytes / 14 files**, CRC PASS / SHA256SUMS 13/13 PASS. 과거 대화 sandbox 다운로드가 반복 실패하여 **ChatGPT 파일 라이브러리 `/LIMITLESS/Main24_F2_Minimal_20261103/` 실제 업로드 성공**. PC `F:\Downloads` 자동 복사/PC SHA 확인 아님, GitHub PNG ZIP binary 업로드0.
+- **소스 원본 보호한 실제 국소 후보**: `Candidate/F2_FirstSnowTrailSign_v3_CANDIDATE.png` 288×384 RGBA SHA `70b8ed868d61b1abc37d8f775116613ea45352b80fd53fa0cacf7d29a61ce37c` (메움 자국 RGB1,512pix, alpha0 변경/화살표 KEEP), `Candidate/F2_SnowStumpPerch_v3_CANDIDATE.png` 320×384 RGBA SHA `eb32bf200da3f08023f0f83b32df9a2f75b9357fa8ffc1f2647b116a5f5b60b8` (오른쪽 횃대 상단1795pix만), `Candidate/F2_PathEdge_LowFence_v3_CANDIDATE.png` 256×192 RGBA SHA `3aa0a8081ff1a58a4ab7157a974a550fc0b6c57a8263e1a81774b0027edadd6e` (하단 접지 alpha13,146pix 감소/RGB0 변경). 기존 v2 바이트 그대로 보존. 실제 F2 길/휠체어/PPU·Pivot/Sorting·Collider NOT_TESTED.
+- **별도 `Reference_Alternative_Concept/` 아래 이미지3종은 새로 그린 전체 콘셉트**로서 바울 대표가 좋게 평가한 외형을 별도 용도 납품. **기존 v2→v3 국소 편집과 동일하지 않으며 공식 교체/본게임 적용 후보로 오인하면 안 됨.** 한 장 전후 보드 `Preview/F2_Minimal_OnePage_BeforeAfter_OFFLINE.png`에 원본 v2 / 국소수정 v3 / 신규 전체 콘셉트를 좌중우 3열로 분리, 각 128/40 축소 판과 승인 Owl v3 가독성 참고판 포함.
+- **[상세 산출·보존·SHA 보고서](../../Chapter3_Main24_F2_MinimalFollowup_ArtCandidate_Delivery_20261103.md)** `docs/art-new` 커밋 **`4d1409adafaee3503d5d8fa4f5442952409c7cdb`**. `ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`. 상용 자산 승격0. 기존 나뭇가지/눈발 KEEP·F2 P1·Owl v3 정적 SHA `81a31cf3...`/Attack ART_HOLD·Main23 43/지면9/F1/공식 Monster/Pet/Spider/Bee·Quest/Save/UserData/Scene/meta/BuildSettings 변경0, main 직접 commit/Push/merge0.
+- **다음 게이트**: 바울 대표 원페이지의 국소수정 v3 / 새 레퍼런스 시안 미술 방향을 비교하여 수용 여부 판단 → 승인받은 최소 후보만 Codex 격리 Unity에서 실제 F2 3화면비/길/휠체어·겹침 DeltaQA → 사용자 별도 본편 적용 승인. Owl Attack 모션은 이번 범위에서 수정0/HOLD 유지.
+
+
 ## 2026-10-29 Main24 최종 표적 보완 — #74 Owl Idle02/Attack02 + #75 F2 표지판/횃대
 
 - **최신 Codex 3ZIP 통합 검수 [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6492706191)** 및 후속 [#74 기획](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6493035987), [#75 기획](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6493037627) 반영. **기존 승인 FrostOwl v3 static 원화 SHA`81a31cf3...` 및 정상 프레임10 전부 바이트 동일**. 본 아트 세션은 새 Unity 런타임 검증하지 않음.
