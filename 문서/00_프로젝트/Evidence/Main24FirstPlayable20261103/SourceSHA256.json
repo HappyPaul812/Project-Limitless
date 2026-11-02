@@ -1,0 +1,11 @@
+{
+  "Tools/QA/main24_first_playable_scope.py": "6d34c9dacd77d674b8579dda500f10fce830a37db422e0bb60f5ea83259a4a46",
+  "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main24_FirstSnowWarning.asset": "affea459e4def66af3d36b103d91175d4771e964528671ec3af1b9a681d0cda7",
+  "Unity/Client/Assets/_Project/Resources/QuestDefinitions/Main24_FirstSnowWarning.asset.meta": "6b86a9affbfd102d1c158fcd179495bbe018b34b09e763c33e11fe25bf7d2584",
+  "Unity/Client/Assets/_Project/Scripts/Editor/Main24FirstPlayableQA.cs": "dcac5851f4be7d04e91aff6835db826b7f550874eee0c22b0bf6dbbe4eb1eccb",
+  "Unity/Client/Assets/_Project/Scripts/Editor/Main24FirstPlayableQA.cs.meta": "4bf887f9acf6378079471713c6897ac0828d2890a8fc774a6cfd3d0e5fba01a7",
+  "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main23Flow.cs": "ebf9eccba4b3251a014e18a347414cd57379ab2eaa9c2969e5557b048629551d",
+  "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main24Flow.cs": "cebde90e61e77ebd0d281928c3b75b73249da5b486278967829a2cb58abc4cfe",
+  "Unity/Client/Assets/_Project/Scripts/World/Chapter3Main24Flow.cs.meta": "b119734ee7f83c60bf54f426f48e3914c16524c2fd6231632082c52b1d3d6204",
+  "Unity/Client/Assets/_Project/Scripts/World/Main23GuidanceHud.cs": "227ef0e1d7e635227df860daf9eb12bf7ea4ca67ca3e20ffb0666fa5d99c8148"
+}

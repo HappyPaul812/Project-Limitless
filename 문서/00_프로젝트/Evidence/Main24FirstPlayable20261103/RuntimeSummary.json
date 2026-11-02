@@ -1,0 +1,29 @@
+{
+  "unity": "6000.6.5f1",
+  "revision": "3ff58d469c8a",
+  "passed": 81,
+  "failed": 0,
+  "input": "virtual InputSystem + actual Canvas button handlers; physical input not verified",
+  "render": "Unity Camera RenderTexture with scene and actual Canvas; not OS GameView screenshot",
+  "environmentOpen": "UnityEditor.Search.SearchDatabase startup ArgumentOutOfRangeException",
+  "initialAttempts": [
+    {
+      "attempt": 1,
+      "stage": "package compilation",
+      "reason": "QA cache copy excluded three package Search source folders; restored from prior synthetic QA cache",
+      "productRuntimeExecuted": false
+    },
+    {
+      "attempt": 2,
+      "stage": "new QA tool compilation",
+      "reason": "captureWidth declaration missing; corrected QA source",
+      "productRuntimeExecuted": false
+    },
+    {
+      "attempt": "static initial",
+      "passed": 6,
+      "failed": 8,
+      "reason": "CRLF checkout bytes vs LF Git blob comparison; corrected to filtered Git blob hash"
+    }
+  ]
+}

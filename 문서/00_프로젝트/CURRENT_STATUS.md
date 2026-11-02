@@ -1,3 +1,13 @@
+## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용
+
+- Main23 완료 뒤 기존 마을 표식으로 스킬 기본3무료/최대6칸/전투밖 무료 장착 안내→보급 한기2턴·해제수단 안내→북문 이동·서리올빼미 위험 예고를 구현했습니다. 기존6칸 UI·Save 재사용, 구매/탈렌트차감/소유권 변경/무료 아이템 지급0. 후보 ID 정의는 바울 대표 이번 채팅 허용 근거이며 정식 Story/TTS 잠금과 구분합니다.
+- F2 Scene/첫 전투는 미구현이므로 마지막 목표를 **F2 진입 대기**로 유지합니다. Main24 완료/보상/다음 Quest 해금0. 마을 자유이동·남문F1 왕복·체크포인트·Save/Continue 보존.
+- Unity **6000.6.5f1** 배치 격리 Play Mode **81 PASS/FAIL0**, 신규 정적14PASS/FAIL0·diff공백PASS. E/F/Esc/마우스는 가상입력, 실제6칸 UI 핸들러·휠체어/도보 경로·Continue 검증. Camera+Canvas PNG4장/3화면비 확인. 물리 입력/패드/발·스크린리더/본게임 적용 미검증, 기존 Search 초기화 예외OPEN.
+- 브랜치 `codex/main24-first-playable-no-purchase-20261103`, 제품 commit `70e363bea43d72c7e68abb089952e2d6f6a77a8b`. 로컬 main `ab47b931`, GitHub main `bfd28154` 실측. #70/77/78 미병합, #79 정렬후보/ProjectVersion/Packages/원본Save·아트·TTS·Discord#66/Editor포커스 보존. **FIRST_PLAYABLE_ISOLATED_PASS / MAIN_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
+- 다음: F2 공식Scene·첫 한기전/무자금 해제수단 승인, Owl Attack HOLD 해소, 상품25·가격/효과/ID 별도 승인. 기존85/72/72·Main23 148/136 전수 반복0. [상세 보고](Main24_FirstPlayable_NoPurchase_20261103.md).
+
+---
+
 ## 2026-10-29 Issue #76 — LOCAL_SYNC_DONE (#46·#73만) / #70 HOLD
 
 실제 원본 `F:/study/codex/Project-Limitless`의 main을 ff-only 동기화했습니다. 시작 `bfd281545632877325f5d21e04cefb924042c465` → 제품 `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. 통합 브랜치 `codex/local-sync-20261029`, #46 제품 commit `356f9226b8ed83120f828709045d50a5041055a7`, #73 제품 commit `27f7d1db9c3510fd39ca8bc34f09d8b8cb20e9f1`. LOCAL_COMMITTED / REMOTE_NOT_PUSHED. main 신규 commit·Push·PR·원격 병합0.

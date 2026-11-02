@@ -1,0 +1,63 @@
+{
+  "base": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "checks": [
+    {
+      "name": "Unity changes limited to approved Main24 source and quest",
+      "pass": true
+    },
+    {
+      "name": "Save writer unchanged",
+      "pass": true
+    },
+    {
+      "name": "Six slot persistence unchanged",
+      "pass": true
+    },
+    {
+      "name": "Skill UI unchanged",
+      "pass": true
+    },
+    {
+      "name": "Main23 quest unchanged",
+      "pass": true
+    },
+    {
+      "name": "ProjectVersion unchanged",
+      "pass": true
+    },
+    {
+      "name": "Package manifest unchanged",
+      "pass": true
+    },
+    {
+      "name": "Package lock unchanged",
+      "pass": true
+    },
+    {
+      "name": "BuildSettings unchanged",
+      "pass": true
+    },
+    {
+      "name": "Quest IDs unique",
+      "pass": true
+    },
+    {
+      "name": "Prerequisite and zero reward",
+      "pass": true
+    },
+    {
+      "name": "F2 remains explicit unissued waiting signal",
+      "pass": true
+    },
+    {
+      "name": "No payment item grant or F2 load APIs",
+      "pass": true
+    },
+    {
+      "name": "Runtime source is identical to tested QA copy",
+      "pass": true
+    }
+  ],
+  "pass": 14,
+  "fail": 0
+}
