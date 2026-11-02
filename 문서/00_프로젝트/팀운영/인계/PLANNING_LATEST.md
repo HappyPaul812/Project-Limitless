@@ -1,3 +1,14 @@
+# PLANNING / 2026-11-03 오전 — Main24 게임 개발 재개 / #80 비결제 첫 플레이
+
+- 사용자 지시: **“굿모닝 게임 개발 이어서 하자.”** GitHub 공개 Issue/담당 인계를 확인하고 **Discord #66은 별도 NO_GO 작업으로 유지**, 게임 Chapter3 Main24로 복귀. [신규 Issue #80](https://github.com/HappyPaul812/Project-Limitless/issues/80) Codex 격리 MVP: **Main23 완료→Main24 스킬상점 안내/기존 무료3+장착6 사용→첫 한기·F2 서리올빼미 예고**의 플레이 가능한 절편, 유료 구매·화폐 차감0. F2 실씬/퀘스트 미구현이면 새 전체 맵/모션을 지어내지 않고 안전한 진입전 흐름까지 구현 후 HOLD.
+- 최신 버전 **실 PC Unity6000.6.5f1(3ff58d469c8a)**, #79 [기존 ProjectVersion 구버전 표기 정정 *격리 후보*](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536643984): `codex/unity-version-align-20261031` code `5f619bc002a2b0725de65d154e377064884b5f43`, 원본 적용/Push0. **6000.5.7f1 신규 설치/QA 절대 재지시 금지.** main 원격 파일 내용이 구버전이어도 PC 현재 개발 버전과 구분. 과거 사용량6%는 10/31 시점 화면값이므로 11/03 현재 사용량이라고 추측하지 않고 Codex 시작시 사용자 실제 잔량 참고.
+- [#70 85PASS](https://github.com/HappyPaul812/Project-Limitless/issues/70#issuecomment-6535202556) fork 감지·자동저장차단, [#77 72PASS](https://github.com/HappyPaul812/Project-Limitless/issues/77#issuecomment-6535559285) 비파괴 명시 복구, [#78 72PASS](https://github.com/HappyPaul812/Project-Limitless/issues/78#issuecomment-6536056629) 실제 격리 Unity uGUI 시연은 **격리 기술후보/개인 Save미접근/본게임未적용** 상태. #79 실제 Standalone/운영경로·본편 복구 승인 HOLD. 기존85/72/72/40/31·Main23 148/136 전수 재검증X. 본편 저장 관련 추가 코딩/원본 동기화는 이번 #80 제외.
+- Main24 스킬상품 [25종 미승인 제안](../Main24_SkillShop_Catalog25_PriceAndUnlock_Proposal_20261029.md): 신규 일반40/강화30/부활50/온기20·StableID/전투효과/해금/무자금 무료 한기대응까지 **전부 USER_APPROVAL_PENDING**. Main24 프로토타입 상점은 실상품/결제 없음, 기존6칸·무료3 안내 재사용만. 2026-10-20 [#36 Main22~24 흐름](https://github.com/HappyPaul812/Project-Limitless/issues/36) 정본에 따라 F2 첫 한기·올빼미는 '예고'까지만, 신규 전투/Item 보급 자동생성 금지.
+- 아트 보존: Owl v3 정지원화와 Ch1·2 Organic Spider 외형은 사용자 긍정 채택, Owl Attack 모션 `ART_HOLD`, Spider 알파 잔상, F2 P1 LowFence/P2 SignStump/HOLD, Bee 모션·권리 HOLD. 이 자산들 본편 반영0, 이미 만들고 승인한 마을 지면9·기존 Main23 Scene/TTS162/몬스터/펫/원본 Save·BuildSettings·Unity 포커스 보호.
+- 담당: Codex에 **복사붙여넣기 가능한 실제 구현 지시** 제공; 별도 `codex/main24-first-playable-no-purchase-20261103` local worktree에서 Quest/UI 최소 변경+새 delta QA, branch/code SHA·PASS/HOLD·승인/적용 필요 여부 #80 보고. 메인/Push·원본 적용은 명시 승인 전 X. 기획 세션 GitHub Issue/인계 작성 ≠ Codex 로컬 실행.
+
+---
+
 # PLANNING / 2026-10-31 — 대표 Unity 버전 정정 / Codex 5시간 잔량8%
 
 - 바울 대표 **“이제 우리 게임 Unity 6000.5.7f1 아니잖아? ... 지금 5시간 8%야.”**. **현재 개발·QA 기준을 Unity 6000.6.5f1로 재확정**. Codex [#79 로컬 설치 근거](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536508762): `E:/Program Files/Unity/Hub/Editor/6000.6.5f1`만 설치. `6000.5.7f1` 설치0. GitHub main `Unity/Client/ProjectSettings/ProjectVersion.txt`의 `m_EditorVersion: 6000.5.7f1`은 **구버전 메타데이터 미정렬**이며 현재 사용자 PC 사용 에디터 의미 아님. **구버전 재설치/QA 요구 취소**. [#79 정정·후속 최소 범위 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/79#issuecomment-6536613960).
