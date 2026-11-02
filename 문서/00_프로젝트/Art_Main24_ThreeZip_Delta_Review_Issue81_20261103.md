@@ -100,3 +100,7 @@ v3는 담당 보고 SHA와 일치하며 **RGB 262,144/262,144 동일**, alpha282
 브랜치 `codex/art-main24-3zip-delta-20261103`, 출발점 `fd869f60c9fde438a3dd97885cb6f447efc4454b`(Main24 #80 최종 영수증). **이번 delta는 본 보고서와 CODEX_LATEST Markdown2개만 커밋**합니다. HTML·원본/비교PNG·JSON·도구는 Temp에 보존하며 원격 Push하지 않습니다. main 직접 커밋/Push/병합·본편 적용0.
 
 다음 최소 작업: ①대표가 F2 대안 표지판·울타리 선택, 그루터기 형태 HOLD 결정 ②Spider 앞다리 밑띠만 국소 보완 ③Bee 기존5포즈 공격축·회수·관절만 표적 보완. 새32/20프레임 양산이나 Unity 통합으로 자동 확대하지 않습니다. Main24 #80의81/14 PASS는 그대로 보존합니다.
+
+## GitHub 보고 영수증
+
+검수 보고/인계 commit `3af7f08d4febf062865ef5b437e0951e80315bd6` 기준으로 [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6590647264) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6590648055) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6590648852) 실제 댓글 등록 성공. 본 후속 commit은 영수증만 기록합니다. 원격에는 댓글만 게시했고 문서/HTML/PNG Push·게임 적용은 없습니다.

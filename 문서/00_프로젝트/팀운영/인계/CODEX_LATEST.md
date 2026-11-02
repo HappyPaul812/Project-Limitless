@@ -8,6 +8,8 @@ F2 국소v3 표지판/그루터기/울타리 REVISE; 독립전면대안 표지�
 
 브랜치 `codex/art-main24-3zip-delta-20261103`; 문서2개만로컬commit/Push·본편적용0. [상세보고](../../Art_Main24_ThreeZip_Delta_Review_Issue81_20261103.md). **LOCAL_ART_DELTA_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**. 다음은 F2대안2개선택+그루터기형태, Spider밑띠/Bee기존5포즈 표적보완뿐이며 양산승인 아님.
 
+실제 검수 commit `3af7f08d4febf062865ef5b437e0951e80315bd6`. GitHub 보고 영수증: [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6590647264) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6590648055) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6590648852). 댓글 등록 성공/파일Push0, 본 후속은 문서 영수증만 기록합니다.
+
 ---
 
 ## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용
