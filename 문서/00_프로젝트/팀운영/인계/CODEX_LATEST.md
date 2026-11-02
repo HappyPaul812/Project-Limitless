@@ -6,6 +6,8 @@
 - 브랜치 `codex/main24-first-playable-no-purchase-20261103`, 제품 commit `70e363bea43d72c7e68abb089952e2d6f6a77a8b`. 로컬 main `ab47b931`, GitHub main `bfd28154` 실측. #70/77/78 미병합, #79 정렬후보/ProjectVersion/Packages/원본Save·아트·TTS·Discord#66/Editor포커스 보존. **FIRST_PLAYABLE_ISOLATED_PASS / MAIN_NOT_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**.
 - 다음: F2 공식Scene·첫 한기전/무자금 해제수단 승인, Owl Attack HOLD 해소, 상품25·가격/효과/ID 별도 승인. 기존85/72/72·Main23 148/136 전수 반복0. [상세 보고](../../Main24_FirstPlayable_NoPurchase_20261103.md).
 
+- GitHub 보고 실제 등록 완료: [Issue #80 결과 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953). 제품 `70e363be`, QA/문서 `5b02b56e`; 파일 Push 없음. 이 영수증은 문서 후속 commit입니다.
+
 ---
 
 ## 2026-10-29 Issue #76 — LOCAL_SYNC_DONE (#46·#73만) / #70 HOLD

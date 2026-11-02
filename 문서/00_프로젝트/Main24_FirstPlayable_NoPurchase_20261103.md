@@ -66,3 +66,7 @@
 5. 격리 후보 Quest/Dialogue ID·문구의 정식 잠금 및 물리 입력/스크린리더·본게임 적용 검증.
 
 본게임 원본 적용/원격 Push/PR·병합 없음. 문서와 PNG는 로컬 브랜치에만 있으며 GitHub에는 Issue #80 결과 댓글만 게시합니다. 정식 적용은 이번 작업에 포함하지 않습니다.
+
+## GitHub 보고 영수증
+
+[Issue #80 실제 결과 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6590035953) 등록 성공. 제품 `70e363bea43d72c7e68abb089952e2d6f6a77a8b`, QA/문서 `5b02b56e467e5712bbe184b6f21c8e4640b2c76d`를 보고했습니다. 본 후속 commit은 영수증만 기록하며 제품 변경·Push·원본 적용은 없습니다.
