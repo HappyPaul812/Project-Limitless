@@ -58,6 +58,7 @@ public sealed class Main23GuidanceHud : MonoBehaviour
  }
  void Update(){if(group==null)return;bool show=Chapter3Main22Flow.Completed&&!WorldModalState.IsOpen;group.alpha=show?1:0;group.blocksRaycasts=group.interactable=show;if(!show)return;var target=Chapter3Main23Flow.CurrentSite();var p=FindAnyObjectByType<PlayerController>();string direction="";if(target!=null&&p!=null){var diff=target.transform.position-p.transform.position;direction=$"{(diff.y>.5f?"북":diff.y<-.5f?"남":"")}{(diff.x>.5f?"동":diff.x<-.5f?"서":"")}쪽 · {diff.magnitude:0.0}m → {target.DisplayTitle}";}
   text.text=$"Main23 · 따뜻한 땅을 떠난 자들 {(Chapter3Main23Flow.Completed?"완료":$"{Mathf.Max(0,Chapter3Main23Flow.Step+1)}/5")}\n{Chapter3Main23Flow.Hint}\n{direction}\n표식 클릭: 이동·선택 / E·F: 상호작용\nEsc: 이동·창 취소 / 우클릭: 이동 취소";
+  if(Chapter3Main23Flow.Completed)text.text=$"Main24 · 첫눈 아래의 경고\n{Chapter3Main24Flow.Hint}\n{direction}\n표식 클릭: 이동·선택 / E·F: 상호작용\nK: 무료 스킬 장착 / Esc: 취소";
   action.interactable=Chapter3Main23Flow.NearestInRange()!=null;actionText.text=action.interactable?"가까운 표시 조사 / 선택":"표시 가까이 이동하세요";
  }
  static RectTransform Rect(Transform parent,string name,Vector2 size,Vector2 pos){var t=new GameObject(name,typeof(RectTransform)).GetComponent<RectTransform>();t.SetParent(parent,false);t.anchorMin=t.anchorMax=Vector2.zero;t.pivot=Vector2.zero;t.sizeDelta=size;t.anchoredPosition=pos;return t;}
