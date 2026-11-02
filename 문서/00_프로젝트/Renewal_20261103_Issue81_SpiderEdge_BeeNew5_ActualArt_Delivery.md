@@ -37,7 +37,7 @@
 | Idle 날개 접힘 | `Idle_Folded_238x215.png` | `d17114176c13c2911cd533a0e7a363a1f4ae2ca110b540bcec5d63a2aa941605` | `aa4e85942704b9c14192ed787073f85c4bcca788d509a5c708be412e54dddd1f` |
 | Idle 날개 펼침 | `Idle_Spread_238x215.png` | `d35f4583c0fa119396a40a6637f48b36b677fe00327640c655d86bde3dd47820` | `fdba594ccaf3cc50f38e25d0e18487ced1b70b634c05f62239f15d009cbbc759` |
 | Attack 준비 | `Attack_Prepare_315x253.png` | `50c8047125e86bced17073fead14adaaa35545dea19beb9306f1c267481ea7e8` | `2b78256f9d8c2d6813447b4f65fb9fd4c5b466e0e6df9f1b121ef23e4141965e` |
-| Attack 찌르기 | `Attack_Sting_315x253.png` | `17bd20da372f7a75e2eb4953b32ca67c1a93f6db5ced85c37d7cc1f6919e62` | `03baaaf637dc196b6ca89b69efcf536799b813837b078ee6c93182d2b19b62c3` |
+| Attack 찌르기 | `Attack_Sting_315x253.png` | `17bd20da372f1453ec903228a0394148bf1a0000c3d6d714d0b2404c31863624` | `03baaaf637dc196b6ca89b69efcf536799b813837b078ee6c93182d2b19b62c3` |
 | Attack 회수 | `Attack_Recover_315x253.png` | `9002a76ffa2b35b8aa34c35178e3cae4967992878e2df2b72db3e96e068d18be` | `6ac34146367c5fcf7b35dba41788d61269149e7df2eb63836246928326b96fed` |
 
 - `Bee/Old5_KEEP` 폴더에 **기존 원본5장 그대로** 함께 납품, `Bee/New5`는 새 포즈 PNG5장과 128/40 프리뷰10장. `Evidence/Bee_Old_vs_New_5Poses_OFFLINE.png`에서 실제 이미지 비교.
