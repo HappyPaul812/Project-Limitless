@@ -1,3 +1,15 @@
+## 2026-11-03 Issue #81 — F2/Spider/Bee 개별3ZIP OFFLINE 델타 검수
+
+세 ZIP 실물 CRC·경로 PASS. F2 보고 ZIP SHA 일치/SUMS13·Manifest참조14 PASS. Bee/Spider 전체Manifest 미동봉은 NOT_SUPPLIED. Bee5PNG/GIF2는 이전과 SHA7/7동일·새개선0, 기존20 참고SHA는 실제 로컬20/20일치. 합본ZIP 자체는 로컬미확보/전체동일성미검증.
+
+F2 국소v3 표지판/그루터기/울타리 REVISE; 독립전면대안 표지판·울타리 KEEP후보/그루터기HOLD. Spider RGB262144동일·alpha282감소 확인에도 하단회백색띠잔존으로 ALPHA_FINAL_HOLD(완전제거OK 아님). Bee 공격축·관절·회수 REVISE, GIF2/3프레임 각100ms/10FPS·체커배경포함. PilotBee CC BY3/4권리HOLD 유지. 대표미술승인/실Unity길·Collider/휠체어/본편적용은 별도.
+
+단일 OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtMain24ThreeZip20261103/Review/index.html` SHA `12ee5ace73b2daef55c0dd8c4a9ab8e59ca3e2982d25a00c7eb851feefdb7e43`. 밝음/어둠/실Field03지면·128/40·GIF/PNG순서제어 제공, 브라우저18PASS. 입력70SHA변화0·원본main/status344동일·Main24 #80 HEAD fd869f60/81·14PASS보존·Unity/Save/Quest/버전/Discord변경0·전수QA반복0.
+
+브랜치 `codex/art-main24-3zip-delta-20261103`; 문서2개만로컬commit/Push·본편적용0. [상세보고](../../Art_Main24_ThreeZip_Delta_Review_Issue81_20261103.md). **LOCAL_ART_DELTA_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**. 다음은 F2대안2개선택+그루터기형태, Spider밑띠/Bee기존5포즈 표적보완뿐이며 양산승인 아님.
+
+---
+
 ## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용
 
 - Main23 완료 뒤 기존 마을 표식으로 스킬 기본3무료/최대6칸/전투밖 무료 장착 안내→보급 한기2턴·해제수단 안내→북문 이동·서리올빼미 위험 예고를 구현했습니다. 기존6칸 UI·Save 재사용, 구매/탈렌트차감/소유권 변경/무료 아이템 지급0. 후보 ID 정의는 바울 대표 이번 채팅 허용 근거이며 정식 Story/TTS 잠금과 구분합니다.
