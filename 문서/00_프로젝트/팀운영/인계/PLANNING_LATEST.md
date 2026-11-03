@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 — 독침벌 명목 .25초 Hit / .61초 복귀 vs 1초 Attack10
+
+- [Codex #63 실코드·출처 감사](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883): 적 좌→우(+X), Bee MeleePhysical/sourceFacesRight, x 위치 .14/.32 vs .68/.86, **명목 .25s(index02) 피해**·약 **.61s Attack→Idle 복귀**이나 기존 Attack10×10FPS=**1초**. 마지막 몇 프레임 잘릴 수 있는 **코드-모션 타이밍 충돌**이 명확한 병목. 직선 반폭 계산상 사각형끝 간격 31.2UI는 실 침끝·alpha 접촉측정이 아님. 공식 hit socket/ContactFrame 없음. 실제 물리 접촉 강요/가상 좌표 단정 금지.
+- OpenGameArt 원작 PilotBee source WEB CC BY3.0(2DPIXX/2016) vs 다운로드 ZIP LICENSE CC BY4.0 (Jana Ochse / 2D!PIXX), **RIGHTS_HOLD**. 활성 Monster Resources에서 기존 외부 Idle/Attack이 실제 사용됨, ThirdParty 보관만 된 파일과 다름. 새 ART SHA도 독립 저작권 증명 아님. 신규 독침벌 제품교체/기존 파일 고지 삭제 금지.
+- Owl Attack4 USER_ART_APPROVED/격리8FPSclip PASS, Organic Spider Walk8 USER_ART_APPROVED/격리10FPSclip PASS; Spider 발별 접지 계측 NOT_VERIFIED, Owl 분리VFX HOLD, 본편/원본 미적용. [#63 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598504114)은 **합성 격리 테스트에서 명목피해 .25 유지·정상 프레임재생 후 Idle 복귀 가능한지 최소 presenter Delta POC**(아니면 .61기준 새 모션 계약 비교), 실제 1회만 계산/녹화, 전체 #84/#83 QA 반복0. 확정 계약 이후에야 Bee Sting/Recover 2키포즈 최소 제작 지시.
+- 원본 Unity/Scene/Save/UserData/Packages/BuildSettings/main/Push/merge, Discord66 변경0; GitHub 이슈/문서 기록은 로컬 Codex POC 실행 전단계. 새 작업 branch `codex/bee-attack-timing-isolated-20261103` 후보.
+
+---
 # PLANNING / 2026-11-03 — Owl·Spider 최종 미술 승인 재확인, Bee 계약 조사 합본
 
 - 대표 최종 명시: **“올배미 거미 승인 한거니까 코덱스 시킬게 있으면 벌이랑 같이 줘.”** Owl Attack4(최신 Attack02 수정)와 Organic Spider v5 Walk8 **USER_ART_APPROVED** 확정. [Owl Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598037098), [Spider Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598038404), [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598039586). 이는 제품 Scene/MonsterDefinition/Animator 실 게임 적용이나 원본 로컬 game 병합·Push까지 일괄 승인한 뜻 아님.
