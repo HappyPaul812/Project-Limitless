@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 / Main24 F2 실제 RT 감사 접수 — 기존 재사용 가능·신규 환경 PNG 확정 0종
+
+- **Codex 실제 카메라 RT 열람 근거** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6602568367) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6602569428): `codex/f2-environment-readonly-audit-20261103` **로컬 commit `b70b14175b67dc8490ea8efc3bccf94eb1c22126`**. Codex가 #83 960/1280/1680 실제 Unity Camera RT, #85 F2 접근/귀환 RT를 **읽기 전용**으로 확인. 아트 세션은 원본 RT 이미지 실물 미수령·GitHub 기술보고를 접수한 것이지 직접 Unity GameView 확인이 아님.
+- **현장 확인 결과:** F2에는 `PLACEHOLDER_GROUND / PATH / TREE` 3종이 실제 남아 있고, 흙길 굽음이 인공적인 직각·나무 접지 그림자 약함·**하단 HUD가 남쪽 통행 길 일부 가림**. 그루터기 NaturalBroken v4는 지면 접지·전후 Sorting 기존 RT 확인. 3비율 길 경계 식별·플레이어 크기 유지, 도보/휠체어 물리 통행은 기존 #83 90 PASS 재사용이며 신규 교체후 QA 아님.
+- **최종 아트 제작 판정:** `NEW_PNG_REQUIRED=0`, `REUSE_OK`: 승인 Frostway Earth/ThinFrost/Gravel 9종 **256²**, NorthF1 WornTrail overlay **256²**, F2 P1 FirstSnow GroundOverlay **256²** / SnowPine **256×320** / FrostShrub **256×160** 기존 후보. 기존 F2 P1의 사용자 미술승인·Unity 적용이 완료됐다는 의미는 아님. 기존 소스로 가능한 배치 최우선; 직각 연결부를 늘리거나 나무를 왜곡해 억지로 맞추지 않는다. 교체후 눈 반복·곡선 seam·나무 Pivot/Sorting·HUD/Collider 길 경계·색감 동등 배율 `NOT_VERIFIED`.
+- **보호:** Owl v3 Idle8/Attack4 사용자 최종 미술승인·#85 격리 전투81PASS, NaturalBroken Stump v4 승인, #83 F2 왕복90PASS, 9지면/43환경, 기존 F1/P1/P2·Spider/Bee·Save/UserData·Scene/Prefab/BuildSettings·Packages/main 불변. Sign/Fence FULLREDRAW는 `KEEP_CANDIDATE / USER_ART_REVIEW_PENDING`; 냉기 VFX `HOLD`. 신규 아트0, Unity 실행0, 원본/main Push/merge0.
+- [**F2 재사용·부족 감사 최신 정본**](../../Chapter3_Main24_F2_Environment_ReuseGap_Audit_20261103.md) `docs/art-new` 현장 감사 접수 commit **`5def6fbbd68920bbe055ad1972fc7969cfbd8214`**. 현재 `F2_RT_AUDIT_REPORTED / REUSE_OK / NEW_GAME_PNG_0 / F2_VISUAL_DELTA_AFTER_REPLACEMENT_NOT_VERIFIED / NOT_UNITY_APPLIED`. 다음은 Codex가 별도 격리 장면에서 기존 참조 스프라이트만 이용해 동일 화면비 Delta 배치·HUD 겹침·길/휠체어 가시성 검토 후 남은 실결함을 증빙하는 작업, 바울 대표 별도 본편 승인 전 공식 교체 금지.
+
+
 ## 2026-11-03 Main24 F2 / #75 환경 아트 마감 **재사용 우선·실제 캡처 대기** / 신규 Sprite0
 
 - [#75 최신 기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6601880656) + [#83 실제 F2 이동 검수](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6594041936) + [#85 실제 Owl 전투 검수](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552)를 최신 현황으로 우선. 기존 SPRITE_ART_LATEST 아래 과거 `Owl Attack ART_HOLD`·Stump `USER_REVIEW_PENDING` 내용은 **이력**이며 **현재는 Owl v3/Idle8/Attack4 USER_ART_APPROVED**, NaturalBroken Stump v4 `USER_ART_APPROVED`. Owl 기본 전투 #85 격리 Unity81 PASS, #83 F2 왕복90 PASS / 정적23 PASS, 실제 제품 원본 미적용.
