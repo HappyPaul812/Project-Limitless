@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 — 서리올빼미 마무리: #85 실제 격리 F2 전투 연결
+
+- 대표 직접 요청 **“올배미 마무리 하자.”** [새 #85](https://github.com/HappyPaul812/Project-Limitless/issues/85) Codex **기존 승인 Owl v3 Idle8+Attack4를 실제 Battle UI Image와 #83 F2 격리 이동구간에 연결**해 공격/피격1회·승패/복귀까지 최소 구현. 승인 아트 반복 재제작·기존 QA 중복을 멈추고 플레이 가능한 Owl 전투 후보 제작에 집중. 정식 Scene/MonsterID/정본 수치가 미확정이면 격리 후보/HOLD로만 표시하고 임의 제품화 하지 않음.
+- Owl 정지원화·Idle8·Attack4 USER_ART_APPROVED. 최신 ZIP SHA d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Attack02 SHA 6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936, Attack03/Idle00 81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467. #84 Unity6000.6.5f1 Clip 8FPS PASS/37PASS, #83 F2왕복90PASS·정적23PASS 보존. #84 SpriteRenderer Clip을 현재 Battle UI Image에 직접 부착하면 안 됨; 기존 Resources/MonsterDefinition 명시 프레임 배열/공용 UI 재생 계약 우선.
+- Owl '한기' 전투 상태·미승인 냉기 VFX/별도 HitDefeat 아트/실 정식 Spawn·MonsterDefinition·Main24 완료보상/해금 미구현/불확정; 구현 시 공용 피격/퇴장 연출 재사용, 신규 아트·수치·아이템·정식ID 임의설정 금지. 한기 실등록 없으면 COLD_STATUS_HOLD. 다만 기본 전투 후보는 구현/델타QA. 원본 Scene/Prefab·Save/UserData·Packages/BuildSettings/ProjectVersion·main·Push/merge·다른몬스터/Discord #66 변경0.
+- 예상 로컬 branch codex/main24-frost-owl-finish-20261103, Codex가 실제 F: 승인 ZIP과 기존 격리 worktree를 검사하여 PlayMode F2 Owl 전투를 수행한 결과를 #85·#74·#83 및 CODEX_LATEST/CURRENT_STATUS로 인계. 본 이슈/문서화는 **현재 로컬 실제 게임 구현이 완료됐다는 뜻 아님**. 실본편 적용 별도 명시 승인.
+
+---
 # PLANNING / 2026-11-03 18:05 — 독침벌 공격 타이밍 후보A 153PASS / 아트 2키포즈 후속
 
 - [Codex #63 Unity 실증](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599482389) Bee 타이밍 격리 후보 A **153PASS/0FAIL**. 기존 피해 .250293s→.250806s(HP100→93 동일·중복0), 기존 조기 Idle .610958s→Attack10@10FPS 전체 재생 후 1.000337s, 약 **.393s 다음행동 연기**. 기타 몬스터·스킬과 원본 main 미적용. 후보 소스 로컬 SHA `461c816080709a13775a71bdf8eaf00438ed571e`, 인계 `4c6d5c53881313d874667daa0b28d8dcb30ac579`, local branch `codex/bee-attack-timing-isolated-20261103`.
