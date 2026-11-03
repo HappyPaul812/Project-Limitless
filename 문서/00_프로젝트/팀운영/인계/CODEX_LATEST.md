@@ -6,6 +6,8 @@
 
 [단일 보고·근거](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 비교판 `F:/study/codex/Project-Limitless/Temp/ArtOwlBeeSpiderReview20261103/Review/index.html` SHA `d08aea841659a8840d04aa9ddcf03605e9b392971e999212b4748eea560b9e20`, OFFLINE/Unity아님·실제 GIF순서9/9·브라우저37PASS. branch `codex/art-owl-bee-spider-review-20261103`, 출발24232ccd. 원본main/status344(상세858)·이전원본SHA·Save/UserData/Unity보호, Editor/기존모든QA재실행0·원본적용/Push/merge0. 다음은 Owl연속성/FX·SpiderWalk국소보완·Bee실표적/권리 계약, 미승인모션 양산/전투교체 금지.
 
+실제 검수 commit **`acf2031029741185d17190562a5ec0070d5d773b`** 기준 GitHub [#74 통합보고](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265) · [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6594793586) · [#63 Bee](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6594794350) · [#83 연결](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6594795090) 댓글 등록 성공. 원격에는 댓글만 게시했고 PNG/GIF/ZIP/HTML/문서파일 Push0입니다. 후속 커밋은 이 영수증과 보고서 끝 공백 정리만 포함합니다.
+
 ---
 
 ## 2026-11-03 Issue #83 — Main24 북문→F2→북문 실제 격리 왕복 PASS
