@@ -1,3 +1,9 @@
+## 2026-11-03 Issue #85 Owl 실제 F2 전투 격리 후보
+
+기존F2 선택형조우→실 Battle UI Idle8/Attack4·8FPS→단발피해/HP·승패→귀환 구현. 신규81PASS/FAIL0(#80기존81/다른QA 재실행0), 합성Save/Continue HP·Main24 보존. 승인12PNG불변·기존수치차용 CANDIDATE/보상0. 한기 COLD_STATUS_HOLD·공용피격/처치표시만 사용. [실제영상·근거·적용조건](Issue85_FrostOwl_F2_ActualBattle_DeltaQA_20261103.md). 다음은 정식 ID/밸런스·한기/대응기획·본편통합 승인. 원본Unity/개인Save/UserData/Scene/Prefab/BuildSettings/Packages·Push/merge0, 실제 관련커밋은 후속영수증 참조.
+
+---
+
 ## 2026-11-03 승인 자산 동결·Bee 계약 조사 (제품 미적용)
 
 Owl Attack4·Spider Walk8 USER_ART_APPROVED 확정, #84 Unity37PASS 재사용·재작화/QA 반복0. Spider 실제 발 접지 NOT_VERIFIED, Owl VFX HOLD. Bee 방향/명목피해.25초 확인, 접촉거리145 UI·프레임 동기화 미해결 및 웹BY3/ZIP BY4 충돌로 TARGET_CONTACT_HOLD / RIGHTS_HOLD / FULL_COMBAT_READY_NO. [승인·조사](OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md), [최소 지시서](VenomBee_Minimal_StingRecover_ArtBrief_20261103.md) 작성. 제품·개인 Save 변경/Unity 실행/Push0. 다음은 접점·거리/회수종료 계약과 권리 근거 확정입니다. 마지막 관련 커밋은 후속 영수증 참조.

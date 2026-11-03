@@ -278,7 +278,12 @@ namespace ProjectLimitless.Battle
             MonsterDefinition guardian = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_seal_guardian");
             MonsterDefinition warden = monsterDefinitions.FirstOrDefault(item => item.MonsterId == "monster_silent_warden");
             BattleEncounterSetup setup;
-            if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+                setup = BattlePrototypeEncounterFactory.CreateMain24OwlCandidate(playerName,
+                    GameSessionData.SelectedJobId,GameSessionData.SelectedPlayerPathId,
+                    CharacterGrowthCalculator.CalculateMaxHp(GameSessionData.SelectedJobId,growth),playerAttack,agility,
+                    BattleEncounterContext.Monster);
+            else if (BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightOneValidationId
                 || BattleEncounterContext.StoryEncounterId == BattlePrototypeEncounterFactory.GraveWightTwoValidationId)
                 setup = BattlePrototypeEncounterFactory.CreateGraveWightValidation(
                     playerName, GameSessionData.SelectedJobId, GameSessionData.SelectedPlayerPathId,
@@ -426,6 +431,11 @@ namespace ProjectLimitless.Battle
             Image background = MakeImage(canvasObject.transform, "Background", navy); Stretch(background.rectTransform);
 
             Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+            {
+                title.text="서리올빼미 · 격리 기본공격 / 한기 HOLD / 보상 없음";
+                title.fontSize=24;title.rectTransform.sizeDelta=new Vector2(1000,42);
+            }
             CreateTimeline(canvasObject.transform, font);
             Image battlefield = CreateBattlefield(canvasObject.transform);
             battlefieldTransform = battlefield.transform;
@@ -454,6 +464,14 @@ namespace ProjectLimitless.Battle
             // HP 정보는 바로 위의 전용 HUD가 맡습니다. 전장은 HUD 아래와 명령 패널 위에만 배치해
             // 참가자가 6명으로 늘어나도 HP 항목이 Sprite나 도발 표시 위에 그려지지 않게 합니다.
             Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .46f), new Vector2(1180, 320)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
+            if (ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+            {
+                // 새 후보의4:3 표시에서도 전장 테두리가 잘리지 않게 가로만 부모 폭에 맞춥니다.
+                // 다른 전투의 배치·판정·Sprite 크기는 그대로 두고 이 후보 Canvas에만 적용합니다.
+                battlefield.rectTransform.anchorMin=new Vector2(.04f,.46f);
+                battlefield.rectTransform.anchorMax=new Vector2(.96f,.46f);
+                battlefield.rectTransform.sizeDelta=new Vector2(0,320);
+            }
             Image sky = MakeImage(battlefield.transform, "NightSky", new Color(.055f, .105f, .16f, 1f)); sky.rectTransform.anchorMin = new Vector2(0, .42f); sky.rectTransform.anchorMax = Vector2.one; sky.rectTransform.offsetMin = Vector2.zero; sky.rectTransform.offsetMax = Vector2.zero;
             Image distance = MakeImage(battlefield.transform, "DistantField", new Color(.075f, .13f, .16f, 1f)); distance.rectTransform.anchorMin = new Vector2(0, .3f); distance.rectTransform.anchorMax = new Vector2(1, .55f); distance.rectTransform.offsetMin = Vector2.zero; distance.rectTransform.offsetMax = Vector2.zero;
             Image ground = MakeImage(battlefield.transform, "BattleGround", new Color(.055f, .095f, .105f, 1f)); ground.rectTransform.anchorMin = Vector2.zero; ground.rectTransform.anchorMax = new Vector2(1, .42f); ground.rectTransform.offsetMin = Vector2.zero; ground.rectTransform.offsetMax = Vector2.zero;
@@ -2967,7 +2985,8 @@ namespace ProjectLimitless.Battle
                 MainQuest07EncounterBridge.NotifyVictory(BattleEncounterContext.StoryEncounterId);
                 // 도망·패배 분기는 여기에 들어오지 않습니다. Chapter 2 검증 편성도 실제 출현한 종의
                 // MonsterDefinition ID를 승리 후에만 기록하며, 분양 목록은 등록된 네 종만 보여 줍니다.
-                BeastCompanionService.RecordVictory(participantSetups
+                if (!ProjectLimitless.World.Main24FrostOwlCandidate.IsEncounter)
+                    BeastCompanionService.RecordVictory(participantSetups
                     .Where(pair => pair.Key.Side == BattleSide.Enemies && pair.Value.MonsterDefinition != null)
                     .Select(pair => pair.Value.MonsterDefinition.MonsterId));
                 RecordAllyResources();

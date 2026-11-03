@@ -32,7 +32,7 @@ namespace ProjectLimitless.World
             Main21ChoicePanel.Show(enterForest
                 ? "F2 첫눈의 숲 · 안전 길 탐험 / 임시 환경"
                 : "남쪽 출구 · 서릿길 마을 북문으로", new[] {
-                    enterForest ? "첫눈의 숲으로 / 전투 없음" : "마을 북문으로 돌아가기", "머무른다"
+                    enterForest ? "첫눈의 숲으로 / 선택형 전투 후보" : "마을 북문으로 돌아가기", "머무른다"
                 }, choice => {
                     if (choice != 0) return;
                     string scene = enterForest ? SceneId : Chapter3Main23Flow.Village;

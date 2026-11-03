@@ -1,0 +1,36 @@
+{
+  "idle_unique": [
+    "FrostOwl_v3_Idle_00_512_RGBA",
+    "FrostOwl_v3_Idle_01_512_RGBA",
+    "FrostOwl_v3_Idle_02_512_RGBA",
+    "FrostOwl_v3_Idle_03_512_RGBA",
+    "FrostOwl_v3_Idle_04_512_RGBA",
+    "FrostOwl_v3_Idle_05_512_RGBA",
+    "FrostOwl_v3_Idle_06_512_RGBA",
+    "FrostOwl_v3_Idle_07_512_RGBA"
+  ],
+  "attack_unique": [
+    "FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE",
+    "FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE",
+    "FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE",
+    "FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE"
+  ],
+  "hp_events": [
+    "PlayerHP 169->159 @7.654247",
+    "PlayerHP 159->154 @11.33107",
+    "OwlHP 60->42 @12.77698",
+    "PlayerHP 154->144 @14.97508",
+    "OwlHP 42->24 @16.45231",
+    "PlayerHP 144->134 @18.58038",
+    "OwlHP 24->6 @20.1037",
+    "PlayerHP 134->124 @22.01618",
+    "OwlHP 6->0 @23.53755",
+    "PlayerHP 1->0 @34.40696"
+  ],
+  "runtime_frames": 925,
+  "actual_battle_scenes": [
+    "Battle"
+  ],
+  "passed_checks": 81,
+  "fail": 0
+}

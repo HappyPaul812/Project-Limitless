@@ -1,0 +1,1 @@
+mode=ProcessEventsInDynamicUpdate keyboard=Owl85VirtualKeyboard enabled=True pressed=False current=Owl85VirtualKeyboard site=(5.70, -2.00, 0.00) player=(4.16, -1.97, 0.00) modal=True choosing=True dialogue=False can=True action=True

@@ -82,6 +82,14 @@ namespace ProjectLimitless.Battle
     public static class BattlePrototypeEncounterFactory
     {
         private const int SlimeBaseAttack = 10;
+        /// <summary>정식 수치가 정해지기 전 F2 후보 한 마리만 기존 파티/기본 전투 규칙으로 검증합니다.</summary>
+        public static BattleEncounterSetup CreateMain24OwlCandidate(string name,string job,string path,
+            int hp,int attack,int agility,MonsterDefinition monster)
+        {
+            var party=CreateThreeVsThree(name,job,path,hp,attack,agility,null,null,monster);
+            return new BattleEncounterSetup(party.Allies,new[]{CreateMonster(monster,monster.MonsterId,
+                monster.DisplayName,FormationRow.Front,0,monster.BattleAgility)});
+        }
         public const string GraveWightOneValidationId = "validation_grave_wight_one";
         public const string GraveWightTwoValidationId = "validation_grave_wight_two";
 

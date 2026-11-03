@@ -1,0 +1,57 @@
+{
+  "original_main_head": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "original_status_count": 344,
+  "original_uall_status_count": 858,
+  "original_unity_read_or_modified": false,
+  "personal_save_access": 0,
+  "protected_worktree_paths_unchanged": {
+    "Unity/Client/ProjectSettings": true,
+    "Unity/Client/Packages": true,
+    "Unity/Client/Assets/_Project/Scenes": true,
+    "Unity/Client/Assets/_Project/Prefabs": true,
+    "Unity/Client/Assets/ThirdParty": true
+  },
+  "stump_sha": "22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8",
+  "approved_input_png12_byte_exact": true,
+  "code": {
+    "Battle/BattlePrototypeEncounter.cs": {
+      "candidate_sha": "888b4f4018c3d819e45e334403546ed7f983d9d5a60f72c099375469a3b90b1f",
+      "tested_fixture_sha": "888b4f4018c3d819e45e334403546ed7f983d9d5a60f72c099375469a3b90b1f",
+      "byte_exact": true
+    },
+    "Battle/BattleSceneController.cs": {
+      "candidate_sha": "83816a33aee1ed25a002487ebaf764f667064e0d0d95c4e1536586292998a4fa",
+      "tested_fixture_sha": "83816a33aee1ed25a002487ebaf764f667064e0d0d95c4e1536586292998a4fa",
+      "byte_exact": true
+    },
+    "Battle/BattleSceneFlow.cs": {
+      "candidate_sha": "41d42ca712346431eeeefdef592f7694e5466ab4097c35f88ea87d654aa0f2e9",
+      "tested_fixture_sha": "41d42ca712346431eeeefdef592f7694e5466ab4097c35f88ea87d654aa0f2e9",
+      "byte_exact": true
+    },
+    "World/Chapter3Main24Flow.cs": {
+      "candidate_sha": "1271c29557fa7813fd32eb0a1ca663df13c06b2fc66c076ab4a040fed4564f37",
+      "tested_fixture_sha": "1271c29557fa7813fd32eb0a1ca663df13c06b2fc66c076ab4a040fed4564f37",
+      "byte_exact": true
+    },
+    "World/Main24F2Traversal.cs": {
+      "candidate_sha": "9b72614e699a1cdd1356b27e17efe379e771eb8c5d6c53c5667f6c2b58df8ab0",
+      "tested_fixture_sha": "9b72614e699a1cdd1356b27e17efe379e771eb8c5d6c53c5667f6c2b58df8ab0",
+      "byte_exact": true
+    },
+    "World/Main24FrostOwlCandidate.cs": {
+      "candidate_sha": "15fbf725ecbf324be76a9943cf15976e085066038399f9d5c30dc174b7178850",
+      "tested_fixture_sha": "15fbf725ecbf324be76a9943cf15976e085066038399f9d5c30dc174b7178850",
+      "byte_exact": true
+    }
+  },
+  "cold_runtime_registered": false,
+  "hit_defeat_art_added": false,
+  "fixture_slot_directory": "F:\\study\\codex\\Project-Limitless\\Temp\\Main24FrostOwlFinish20261103\\QA\\SyntheticSaves",
+  "fixture_slot_currency": 77,
+  "fixture_slot_scene": "World_NorthF2_CANDIDATE",
+  "fixture_last_safe_scene": "World_FrostwayVillage",
+  "candidate_monster_id_not_persisted": true,
+  "push": 0,
+  "merge": 0
+}

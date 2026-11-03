@@ -1,0 +1,26 @@
+[
+  {
+    "file": "VictoryBattle.mp4",
+    "sha256": "14a20777a975640817d46b5855fb0963e8f6d7d24d7817e9c60febabe9276e23",
+    "source_frames": 235,
+    "decoded_frames": 235,
+    "width": 1280,
+    "height": 720,
+    "duration": "15.496000",
+    "avg_fps": "29375/1937",
+    "timing": "VFR derived from sequential Unity PNG filesystem write timestamps; not authored clip FPS",
+    "decode_pass": true
+  },
+  {
+    "file": "DefeatBattle.mp4",
+    "sha256": "a2491da851a0314e82169090d7b219fba8616d41fa7f9a0c2d868e61182a9c45",
+    "source_frames": 91,
+    "decoded_frames": 91,
+    "width": 1280,
+    "height": 720,
+    "duration": "4.921000",
+    "avg_fps": "13000/703",
+    "timing": "VFR derived from sequential Unity PNG filesystem write timestamps; not authored clip FPS",
+    "decode_pass": true
+  }
+]

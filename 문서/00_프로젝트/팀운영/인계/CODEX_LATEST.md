@@ -1,3 +1,15 @@
+## 2026-11-03 Issue #85 — F2 서리올빼미 실제 전투 후보 완료
+
+**F2_ENCOUNTER_PASS / OWL_BATTLE_RUNTIME_PASS / COLD_STATUS_HOLD / HIT_DEFEAT_GENERIC_FEEDBACK_ONLY / NOT_ORIGINAL_APPLIED**. 실제 Unity6000.6.5f1 F2→Battle UI→공격/HP·승패→귀환 **신규81 PASS/0 FAIL**. 이는 #80 기존81 재실행이 아니며 #83 90/#84 37/저장QA 반복0. 실제925샘플, 승리/패배 영상326프레임·세 비율·같은Battle Image40px 확인.
+
+승인 Idle8/Attack4 PNG12 바이트 보존·8FPS/PPU512/중앙/Scale1을 기존 MonsterDefinition 명시배열→UI Image 재생기에 연결. 정식 ID/수치 미확정이라 기존 슬라임 수치 차용 CANDIDATE 조우·보상0, 펫/Quest 해금0. E/F/마우스·취소/중복진입·도보/휠체어 실제Collider 접근, 승리F2안전복귀·패배기존회복/마을거점복귀→F2재진입, 합성Save/Continue HP/Main24 보존 확인. 기존 주사위/턴 순서는 그대로입니다. 한기/VFX·상품·해제템·Main24완료/보상/새HitDefeat아트 구현0.
+
+[기능·실제 UI·QA·적용조건](../../Issue85_FrostOwl_F2_ActualBattle_DeltaQA_20261103.md). 열람판 `F:/study/codex/Project-Limitless/Temp/Main24FrostOwlFinish20261103/Review/index.html` (OFFLINE/내용은실UnityRT/OSGameView아님), SHA250621e946a411de9fa55facd84ad5cf2d74aea27032b158f035fcb8a89210bd. branch `codex/main24-frost-owl-finish-20261103`, 출발 d3dae9c5; Bee 타이밍·저장복구 코드 병합0. Source6파일+승인12PNG/새Resources/meta/Tools QA/문서만 후보. 원본main ab47b931/status344(상세858), Scene/Prefab/BuildSettings/Packages/ProjectVersion·개인Save/UserData·TTS/Discord66/Push/merge 보호. F2Scene중복생성0·기존그루터기SHA보존.
+
+다음은 정식 Monster/Spawn ID·밸런스/보상·한기/대응수단 결정 및 원본 통합 범위 승인입니다. fixture BuildSettings만 연결했고 작업브랜치 BuildSettings는 변경하지 않았습니다. 실제커밋/Issue댓글은 후속영수증 참조. 기존 승인 Owl/Spider 모션 재작화 금지, Spider접지 NOT_VERIFIED 유지.
+
+---
+
 ## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
 
 **Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.

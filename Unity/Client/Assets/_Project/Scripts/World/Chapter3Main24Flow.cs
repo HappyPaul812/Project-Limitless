@@ -25,7 +25,7 @@ namespace ProjectLimitless.World
             : Step == 3 ? "북문을 선택해 F2 첫눈의 숲에 들어가세요. 구매 불필요."
             : Step == 4 ? "F2 흙길을 따라 북동쪽 관찰 표식까지 이동해 조사하세요."
             : Step == 5 ? "탐험 확인 · 남쪽 출구로 돌아가 마을 북문에 복귀하세요."
-            : Step >= 6 ? "안전 왕복 확인 · 첫 한기 전투 준비 중. 마을·숲 이동과 저장 가능."
+            : Step >= 6 ? "안전 왕복 확인 · 한기 준비 중 / 숲길 동쪽 기본공격 후보 별도 선택."
             : "Main24 시작 가능 · 남동쪽 스킬상점 안내를 선택하세요.";
 
         // Main23 완료 후에도 대화를 강제로 열지 않고, 기존 저장의 선행 완료 기록으로 시작 가능 여부를 판정합니다.
@@ -47,7 +47,7 @@ namespace ProjectLimitless.World
                 case Main23Site.Kind.Supply: return "보급 안내 · 한기 해제 수단 준비";
                 case Main23Site.Kind.LockedNorth: return "북문 → F2 첫눈의 숲 · 안전 왕복";
                 case Main23Site.Kind.F2Return: return "남쪽 출구 → 서릿길 마을 북문";
-                case Main23Site.Kind.F2Observe: return "첫눈 관찰 · 탐험 경계 / 전투 없음";
+                case Main23Site.Kind.F2Observe: return "첫눈 관찰 · 탐험 경계 / 기본공격 후보 별도";
                 case Main23Site.Kind.Guide: return "주민 안내 · 북쪽 탐험 준비";
                 default: return null;
             }
@@ -101,7 +101,7 @@ namespace ProjectLimitless.World
                 case Main23Site.Kind.F2Observe:
                     Show(new[] {
                         "첫눈이 얇게 쌓였지만 가운데 흙길은 이어집니다. 돌아갈 길은 남쪽, 서릿길 마을 북문입니다.",
-                        "여기서 더 깊은 숲과 서리올빼미의 기척을 살핍니다. 첫 한기 전투와 대응 물품은 준비 중입니다. 지금은 싸우지 않습니다.",
+                        "첫 한기 전투와 대응 물품은 준비 중입니다. 숲길 동쪽의 서리올빼미 조우는 보상 없는 기본공격 검증 후보로 선택할 수 있습니다.",
                         "관찰을 마쳤습니다. 남쪽 출구를 선택해 마을 북문으로 안전하게 돌아가세요. 구매는 필요 없습니다."
                     }, "main24_candidate_f2_observe", () => {
                         if (Step != 4) return;

@@ -1,0 +1,20 @@
+{
+  "asset_sha": "165256a4880ff8e9ac8a1956e46134d40d0a0f79a08639ab37d5da6032dc4dd7",
+  "fields": {
+    "monsterId": "CANDIDATE_frost_owl_basic_qa",
+    "monsterLevel": "1",
+    "maxHp": "60",
+    "baseExperience": "0",
+    "currencyReward": "0",
+    "battleAttackPercent": "100",
+    "battleAgility": "10",
+    "animationFramesPerSecond": "8",
+    "visualScale": "1",
+    "sourceFacesRight": "1",
+    "basicAttackPoisonActions": "0",
+    "directAreaAttackDamage": "0"
+  },
+  "borrowed_template": "MonsterDefinitions/01_GrassSlime",
+  "official_balance": "NOT_APPROVED",
+  "repeat_policy": "QA candidate only; zero reward; existing2s reentry suppression"
+}
