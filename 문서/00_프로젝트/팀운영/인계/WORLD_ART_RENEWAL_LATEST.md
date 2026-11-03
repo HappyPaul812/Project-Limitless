@@ -1,3 +1,11 @@
+## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. SpiderWalk00/04exactKEEP·6수정과정확10FPS확인. **WALK_CONTACT_REVISE / MOTION_REVISE_CONTINUE**:01/02오른쪽x511·06왼쪽x0 불투명발절단(최대255),07왼쪽반투명접촉(최대41)새결함.128/40지지/스윙·발접지계획표는실측아님. 시트수정6셀차이는완전투명RGB뿐/가시동일. 원화v5/Idle00c600cd…·Idle8KEEP, Bee재검수0/AttackShoot·Ch4기계형변경0.
+
+[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
+
+---
+
 ## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
 
 Spider v5/Idle00c600cd… byte KEEP, 새15프레임 확인. Idle호흡 후보/Walk8 지지·스윙/관절 보완으로 MOTION_REVISE_CONTINUE. 8FPS GIF 실120ms=8.333 정정 필요, 시트Idle00 차이는완전투명RGB뿐. Bee 새포즈0/Source_KEEP5 동일, TEST_ONLY보드만추가로 TARGET_CONTRACT_HOLD / RIGHTS_HOLD 유지.

@@ -1,0 +1,1238 @@
+[
+  {
+    "key": "Owl",
+    "zip": "F:\\Downloads\\Limitless_FrostOwl_Attack4_Continuity_20261103.zip",
+    "bytes": 4623041,
+    "sha256": "dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856",
+    "entries": 22,
+    "files": 22,
+    "uncompressed_bytes": 4651610,
+    "crc": "PASS",
+    "unsafe": [],
+    "duplicate_paths": 0,
+    "contents": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "bytes": 311819,
+        "sha256": "b6029c30bf76e8b3f32843184f812c7ca6254f07b79214eca4069cd42a8fe547",
+        "crc32": "b3ed60f7",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          62,
+          491,
+          450
+        ],
+        "alpha_zero": 134591,
+        "alpha_partial": 127190,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "bytes": 317181,
+        "sha256": "a98aab1c6a14caae1ed255882e90ec7fc3f1bdfa28693409d307a1cc1fed7142",
+        "crc32": "0c3e6963",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          21,
+          491,
+          491
+        ],
+        "alpha_zero": 147735,
+        "alpha_partial": 113191,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "bytes": 245954,
+        "sha256": "a7273d0d3c0b20d2a005b90f158906aa9760ef551dbba11aa3e80c5e692b9851",
+        "crc32": "a372db14",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          80,
+          490,
+          432
+        ],
+        "alpha_zero": 173663,
+        "alpha_partial": 87379,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "bytes": 302611,
+        "sha256": "81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467",
+        "crc32": "cab71255",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_00_512_RGBA.png"
+      },
+      {
+        "path": "Candidate/Sheet/FrostOwl_v3_Attack4_8FPS_2048x512_RGBA_CANDIDATE.png",
+        "bytes": 1183746,
+        "sha256": "c47dd4b64e659cc5a02d170491fac6d36adfb8f0618cc043178f317da1ffecfb",
+        "crc32": "31cff2b3",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          2048,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          19,
+          2035,
+          491
+        ],
+        "alpha_zero": 605974,
+        "alpha_partial": 438670,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Manifest.json",
+        "bytes": 7411,
+        "sha256": "5774607ef5c97f0e30bbd67f2762b6e89a60b59847e83afe7d7771348d7763d4",
+        "crc32": "48da7013",
+        "prior_identical": null
+      },
+      {
+        "path": "Preview/Attack03_to_ApprovedIdle00_SEAM_8FPS.gif",
+        "bytes": 124763,
+        "sha256": "71fe6ce3735ee70021e1dea063e6f1e86f4faff5cc380edbaf39273676bea9a0",
+        "crc32": "d275ddf7",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "durations_ms": [
+          250
+        ],
+        "mean_fps": 4.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "7160ca027cc3b6b9baa5ce072f89cf0cd809f6b295bf9734f0e00bce05f787ad"
+        ]
+      },
+      {
+        "path": "Preview/Attack03_to_Idle00_Continuity_OFFLINE.png",
+        "bytes": 255042,
+        "sha256": "09ee10faed07ca25150088ce2d7cd45de81015659dfe1894c814ce483cb31e57",
+        "crc32": "21d25f57",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1150,
+          510
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1150,
+          510
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Preview/Attack4_BeforeAfter_IdleContinuity_128_40_OFFLINE.png",
+        "bytes": 1118254,
+        "sha256": "ec12d0e3248cf214165a47346334c62d5be0827a2fd537a714f36c7d7cddec24",
+        "crc32": "e3f70f58",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1940,
+          1080
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1940,
+          1080
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_128px_RGBA_DERIVED.png",
+        "bytes": 27393,
+        "sha256": "f48f0b303217affa3fd7e78cfa12c1f19f75355064b07754f281a595b91d639b",
+        "crc32": "72ebc783",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          4,
+          14,
+          124,
+          114
+        ],
+        "alpha_zero": 8317,
+        "alpha_partial": 7769,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_40px_RGBA_DERIVED.png",
+        "bytes": 3586,
+        "sha256": "a6f9ddb828f326e94fb53b236e8e38d05d9c937a70bb1f5a9e68ae95d815db1d",
+        "crc32": "280b5340",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          3,
+          40,
+          37
+        ],
+        "alpha_zero": 697,
+        "alpha_partial": 841,
+        "edge_alpha_max": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_128px_RGBA_DERIVED.png",
+        "bytes": 28036,
+        "sha256": "9b4ed7712865347b21ab63ba0ff9a0bd60c0ebfc7af48c676961448049dd73e5",
+        "crc32": "65ca6d01",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          4,
+          4,
+          124,
+          125
+        ],
+        "alpha_zero": 8657,
+        "alpha_partial": 7286,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_40px_RGBA_DERIVED.png",
+        "bytes": 3845,
+        "sha256": "79a12d41996ce828d71afabfebda3a4b57a8d13eea2c61af46b3493c4efd974d",
+        "crc32": "7c3aa0ac",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          40,
+          40
+        ],
+        "alpha_zero": 677,
+        "alpha_partial": 839,
+        "edge_alpha_max": [
+          2,
+          4,
+          3,
+          3
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_128px_RGBA_DERIVED.png",
+        "bytes": 21762,
+        "sha256": "5581eee86154fee2e09bad8498670d6f10b4a59d8732d476fcefaa4bda926410",
+        "crc32": "beba3582",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          4,
+          18,
+          124,
+          110
+        ],
+        "alpha_zero": 10414,
+        "alpha_partial": 5602,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_40px_RGBA_DERIVED.png",
+        "bytes": 3026,
+        "sha256": "2791f582599bb3609f08714e0fd1224532f391cec16547f0a0d7d94349fa9572",
+        "crc32": "f12da340",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          4,
+          40,
+          36
+        ],
+        "alpha_zero": 893,
+        "alpha_partial": 642,
+        "edge_alpha_max": [
+          0,
+          0,
+          2,
+          2
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_128px_RGBA_DERIVED.png",
+        "bytes": 28546,
+        "sha256": "7e0edbb53a9401d0a639036788d8c5c1cb483042599dd059cffbde9866300ded",
+        "crc32": "1f9131fa",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          3,
+          3,
+          127,
+          122
+        ],
+        "alpha_zero": 8556,
+        "alpha_partial": 7374,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_40px_RGBA_DERIVED.png",
+        "bytes": 3847,
+        "sha256": "451e706211fc00b40f37d312717c206c48554dcd3f9598736ede91b5fb5bda30",
+        "crc32": "60953b54",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          40,
+          40
+        ],
+        "alpha_zero": 671,
+        "alpha_partial": 859,
+        "edge_alpha_max": [
+          1,
+          3,
+          3,
+          5
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack4_8FPS_CANDIDATE.gif",
+        "bytes": 462485,
+        "sha256": "f780cc56beb53f3eb6a0628f295dda9d26ff9d645b07e0cbdc4a5ff9e4458d87",
+        "crc32": "36f17004",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 4,
+        "durations_ms": [
+          120,
+          130,
+          120,
+          130
+        ],
+        "mean_fps": 8.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "07f7d40657d3cfc97825578003ac5b2294ebc9b8fb2ba8a9ad3014ddef6ce91b",
+          "f2a955be923175da07360fe8006df70ad53ba9071a31cb5ce362ea81dfa0cfa5",
+          "344953ed401720e1d04457429c7f84c435bae1f5927a2155e3948ca9746c1567",
+          "7160ca027cc3b6b9baa5ce072f89cf0cd809f6b295bf9734f0e00bce05f787ad"
+        ]
+      },
+      {
+        "path": "QA/DeltaQA.json",
+        "bytes": 2716,
+        "sha256": "ba14ad6ffbef4abdeb753e659bc98848705e1e7c6b623f61c49fcdeb3b91b352",
+        "crc32": "5c9a2453",
+        "prior_identical": null
+      },
+      {
+        "path": "README_KR.md",
+        "bytes": 1132,
+        "sha256": "342ba06a27624d40e9aca7825dce88e14563088a0d4a18da7529a6db4d5d3879",
+        "crc32": "f3f64e14",
+        "prior_identical": null
+      },
+      {
+        "path": "SHA256SUMS.txt",
+        "bytes": 2417,
+        "sha256": "f52dd5003e5ece8a89085690132beaa66c03af0c699aa9b402e396662f1af6a7",
+        "crc32": "ac6eb34b",
+        "prior_identical": null
+      },
+      {
+        "path": "VFX_UNAPPROVED_HOLD/FrostOwl_IceArc_Detached_VFX_HOLD_512_RGBA.png",
+        "bytes": 196038,
+        "sha256": "46215c1cf7fd3fa3f94af92f4dd457436cf70711ca95b1bed86dc527f49d761c",
+        "crc32": "b95b4f9d",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          101,
+          496,
+          410
+        ],
+        "alpha_zero": 164924,
+        "alpha_partial": 96561,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "manifest_checks": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Sheet/FrostOwl_v3_Attack4_8FPS_2048x512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/Attack03_to_ApprovedIdle00_SEAM_8FPS.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/Attack03_to_Idle00_Continuity_OFFLINE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/Attack4_BeforeAfter_IdleContinuity_128_40_OFFLINE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_128px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_40px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_128px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_40px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_128px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_40px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_128px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_40px_RGBA_DERIVED.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack4_8FPS_CANDIDATE.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "VFX_UNAPPROVED_HOLD/FrostOwl_IceArc_Detached_VFX_HOLD_512_RGBA.png",
+        "sha_match": true,
+        "bytes_match": true
+      }
+    ],
+    "sums_checks": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Sheet/FrostOwl_v3_Attack4_8FPS_2048x512_RGBA_CANDIDATE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Manifest.json",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/Attack03_to_ApprovedIdle00_SEAM_8FPS.gif",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/Attack03_to_Idle00_Continuity_OFFLINE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/Attack4_BeforeAfter_IdleContinuity_128_40_OFFLINE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_128px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_00_40px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_128px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_01_40px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_128px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_02_40px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_128px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack_03_40px_RGBA_DERIVED.png",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack4_8FPS_CANDIDATE.gif",
+        "sha_match": true
+      },
+      {
+        "path": "QA/DeltaQA.json",
+        "sha_match": true
+      },
+      {
+        "path": "README_KR.md",
+        "sha_match": true
+      },
+      {
+        "path": "VFX_UNAPPROVED_HOLD/FrostOwl_IceArc_Detached_VFX_HOLD_512_RGBA.png",
+        "sha_match": true
+      }
+    ]
+  },
+  {
+    "key": "Spider",
+    "zip": "F:\\Downloads\\LIMITLESS_WALK8_FIX.zip",
+    "bytes": 4687734,
+    "sha256": "d840e5ddd8ac2666e4b0c7a9f4b2d0bdfc688b5ff03e01a0019ba7808d6b86b8",
+    "entries": 18,
+    "files": 18,
+    "uncompressed_bytes": 4722144,
+    "crc": "PASS",
+    "unsafe": [],
+    "duplicate_paths": 0,
+    "contents": [
+      {
+        "path": "Manifest.json",
+        "bytes": 2807,
+        "sha256": "f70cbd75a1a7f1ae3d0c8a09845eac695eb4e94cd70c054e8ce45a5c41df228b",
+        "crc32": "2ee415fa",
+        "prior_identical": null
+      },
+      {
+        "path": "Preview/Walk8_128px_10FPS.gif",
+        "bytes": 68680,
+        "sha256": "38c53ccae6f63653e8a5381709bf22b75ddd9aec8f62a6f3ffcdcd6f46b6b98e",
+        "crc32": "f734d824",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "f93620e0f30543801d77f8b6faa1b6f0c2eb82a47c3b4344549e29b6c69185af",
+          "3894c8b72a2c327b0df54fe0a94063d3f6b4cc8bafc7e3d3a0f7f6a4306fb549",
+          "91ec07bcede156c1bc11df3d46201210934d60c4d24ef0e0f8af36afcaa56dd7",
+          "5a1fdca3c27a6c661710bce8898bd1c428773af4de9eb5a9d23d07d09cd3936b",
+          "252079643c3c6c7dca1ae2c26b866debb551cdd1f048902665a4e74a2a7455e0",
+          "6cd314cac6ec8f3c0edd596e6c60977460bc835f21e37b58054a08bde3efb73b",
+          "b0b086a8e5b16f1f6f3a5a36d10a56614e384edc41cb9a29c37ba2af00e8f59c",
+          "2200d951f8c86f6941de99ca217e6381a52a75edb271a274a8d63d999c4bc2ab"
+        ]
+      },
+      {
+        "path": "Preview/Walk8_40px_10FPS.gif",
+        "bytes": 13794,
+        "sha256": "735920b6cdf6aae5c89706c56b3580ba23924f17401012e68ca8fc60dd48b662",
+        "crc32": "7ecf4b40",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "e0037df1ade66ef6d319e358483d4ab85666be819a01e9feb0e41f7f703e97bc",
+          "2e065b4265d646f2d74dee3ec1b33a832ca354c2ecafec755bb5caa252db7b2e",
+          "dc70d9fb118f51c17fe7859fa720e6e08f6e8f7bbf9a574cfde80255563d32a4",
+          "d22bfecac5d7ec4e3b6d5561313d07ec2146d3045e4f42bb4b08be777ab10627",
+          "9927b195b624fb72ca0284fd40719f321a0c038422d02db9d59843f3dfe9ce74",
+          "0063a5ef709fe596ef76df4c18d9d7e445bf4d6f99419db37623d62e49d1641a",
+          "2e582110312d2d2b9c1a30e27325df1dfcaba17b8b53ca3263290ccbcaaecc2f",
+          "93966e401d68b1376c0748bb3f37d5cd475244c5e51991bdf95b5ff9de0a158c"
+        ]
+      },
+      {
+        "path": "QA/QA.json",
+        "bytes": 5721,
+        "sha256": "9329618031a8da5b1c4fa00aa90fdfcd771520352f18b83ae3564e83fee13a58",
+        "crc32": "dc9ff186",
+        "prior_identical": null
+      },
+      {
+        "path": "QA/Walk8_ChangedPixels_And_SHA.csv",
+        "bytes": 1625,
+        "sha256": "ab8c13e6550d7b75ec30c7d5ea6c40b5718f53a51ebdc70cfaefbdf0e32d082c",
+        "crc32": "fc164941",
+        "prior_identical": null
+      },
+      {
+        "path": "README_KO.md",
+        "bytes": 1280,
+        "sha256": "8c45ce4003c2d064e0a8634c87d8daad3ea5b3c6fa512cd5bb79c9aeb1161449",
+        "crc32": "332946c5",
+        "prior_identical": null
+      },
+      {
+        "path": "Review/Walk8_Old_vs_New_128_40.png",
+        "bytes": 352493,
+        "sha256": "2782decb773e762c251d5a7dd06c51e4cd7334ae50b1b46c8613a8ccc03fc6f0",
+        "crc32": "3e1c5136",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1440,
+          1030
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1440,
+          1030
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Review/Walk_8Leg_PhasePlan_OFFLINE.png",
+        "bytes": 777541,
+        "sha256": "33e135a93ea851d92ca34825d8cd735daaae6ce69a1d9efd7293bc22260373c7",
+        "crc32": "ee591832",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1460,
+          840
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1460,
+          840
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "SHA256SUMS.txt",
+        "bytes": 1591,
+        "sha256": "9e0d0618a777b1a60782075dd0d1d0fbfea78f549100cb0bd0d658adbf8067a2",
+        "crc32": "d0af3951",
+        "prior_identical": null
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_00.png",
+        "bytes": 233734,
+        "sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+        "crc32": "34d510db",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Walk\\ForestSpider_Walk_00.png"
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_01.png",
+        "bytes": 230109,
+        "sha256": "4dbd78009d3d6f6ee6a1ae1c0811f7d8684568cc1191c82a538602081d8c0bf8",
+        "crc32": "34851982",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          101,
+          512,
+          410
+        ],
+        "alpha_zero": 177676,
+        "alpha_partial": 14962,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_02.png",
+        "bytes": 226414,
+        "sha256": "168369181f890acaebef2c9e898df105ae29133953b03dae1c0cb6b9b997748b",
+        "crc32": "b8d528c1",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          19,
+          101,
+          512,
+          410
+        ],
+        "alpha_zero": 178959,
+        "alpha_partial": 14810,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_03.png",
+        "bytes": 229619,
+        "sha256": "64a7297d2e43cdde8376e2d99efef97b2468660e2d9d4c9fca2941e0469d83e9",
+        "crc32": "357dcf03",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          101,
+          511,
+          409
+        ],
+        "alpha_zero": 177969,
+        "alpha_partial": 15062,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_04.png",
+        "bytes": 231330,
+        "sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+        "crc32": "e31edc74",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\ArtOwlBeeSpiderReview20261103\\Extracted\\Spider\\Spider\\Walk\\ForestSpider_Walk_04.png"
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_05.png",
+        "bytes": 222578,
+        "sha256": "435ed6e6451a60f42670010b64cf78099ce1170fb925a11cb3e22bcc967b3785",
+        "crc32": "c1fddaaa",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          3,
+          102,
+          483,
+          408
+        ],
+        "alpha_zero": 180274,
+        "alpha_partial": 14244,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_06.png",
+        "bytes": 221246,
+        "sha256": "9ed5850db957e476888d04482f729af163bf06438622ae8be2d1cecfac942223",
+        "crc32": "94d768f7",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          100,
+          489,
+          398
+        ],
+        "alpha_zero": 180686,
+        "alpha_partial": 14260,
+        "edge_alpha_max": [
+          0,
+          0,
+          255,
+          0
+        ]
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_07.png",
+        "bytes": 226291,
+        "sha256": "9155976e57b82bddbae21d218f8a42a5d931bd7502b89a812b265b6dccd09c20",
+        "crc32": "67bc48d2",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          102,
+          494,
+          409
+        ],
+        "alpha_zero": 178667,
+        "alpha_partial": 14604,
+        "edge_alpha_max": [
+          0,
+          0,
+          41,
+          0
+        ]
+      },
+      {
+        "path": "Walk8_4x2_512_RGBA.png",
+        "bytes": 1675291,
+        "sha256": "45b3817103291c2761aac4166ce950a6e435e881d5550ea5ba2f9dd3a9af0e57",
+        "crc32": "272af6c8",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          2048,
+          1024
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          14,
+          101,
+          2047,
+          921
+        ],
+        "alpha_zero": 1432233,
+        "alpha_partial": 114404,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "manifest_checks": [
+      {
+        "path": "Preview/Walk8_128px_10FPS.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Preview/Walk8_40px_10FPS.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "QA/QA.json",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "QA/Walk8_ChangedPixels_And_SHA.csv",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Review/Walk8_Old_vs_New_128_40.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Review/Walk_8Leg_PhasePlan_OFFLINE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_00.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_01.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_02.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_03.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_04.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_05.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_06.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_07.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Walk8_4x2_512_RGBA.png",
+        "sha_match": true,
+        "bytes_match": true
+      }
+    ],
+    "sums_checks": [
+      {
+        "path": "Preview/Walk8_128px_10FPS.gif",
+        "sha_match": true
+      },
+      {
+        "path": "Preview/Walk8_40px_10FPS.gif",
+        "sha_match": true
+      },
+      {
+        "path": "QA/QA.json",
+        "sha_match": true
+      },
+      {
+        "path": "QA/Walk8_ChangedPixels_And_SHA.csv",
+        "sha_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "sha_match": true
+      },
+      {
+        "path": "Review/Walk8_Old_vs_New_128_40.png",
+        "sha_match": true
+      },
+      {
+        "path": "Review/Walk_8Leg_PhasePlan_OFFLINE.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_00.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_01.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_02.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_03.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_04.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_05.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_06.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk/ForestSpider_Walk_07.png",
+        "sha_match": true
+      },
+      {
+        "path": "Walk8_4x2_512_RGBA.png",
+        "sha_match": true
+      },
+      {
+        "path": "Manifest.json",
+        "sha_match": true
+      }
+    ]
+  }
+]

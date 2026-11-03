@@ -1,0 +1,76 @@
+{
+  "sequences": [
+    {
+      "title": "이전 Attack4 / 비교 기준",
+      "frames": 4,
+      "durations": [
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "title": "이번 Continuity Attack4",
+      "frames": 4,
+      "durations": [
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "title": "복귀 연결 상세 · 02→03→Idle00",
+      "frames": 3,
+      "durations": [
+        120,
+        130,
+        250
+      ]
+    },
+    {
+      "title": "승인 v3 정지 원화 / Idle00",
+      "frames": 1,
+      "durations": [
+        1000
+      ]
+    },
+    {
+      "title": "승인 유기형 v5 / 원형",
+      "frames": 1,
+      "durations": [
+        1000
+      ]
+    },
+    {
+      "title": "이전 Walk8",
+      "frames": 8,
+      "durations": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "title": "이번 Walk8 Fix",
+      "frames": 8,
+      "durations": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "html_sha256": "ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74"
+}

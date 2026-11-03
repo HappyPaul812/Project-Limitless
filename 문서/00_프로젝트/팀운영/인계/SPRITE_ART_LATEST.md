@@ -1,3 +1,11 @@
+## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl 새Continuity의 얼굴중심복원/큰VFX분리/03=승인Idle00바이트동일을 확인. 하지만00~02몸통/깃털비례·02→03급전환이남아 **DESIGN_CONTINUITY_REVISE**. 본체4GIF 평균8FPS정확·시트RGBA일치/clip0, 별도seamGIF는동일프레임병합으로1프레임/250ms. 분리VFX는계속UNAPPROVED_HOLD. 정상Idle재제작불필요.
+
+[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
+
+---
+
 ## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
 
 Owl Attack4 새4SHA/40px 대비 개선은 확인했으나 ANIM_REVISE_CONTINUE / DESIGN_CONTINUITY_HOLD / VFX_SCOPE_HOLD입니다. 기존 Idle8/81a31cf3 정지원화 보호, 새 냉기궤적은 별도 시각판단 필요. 기존 clip-safe 재작업 불필요.

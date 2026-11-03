@@ -1,3 +1,11 @@
+## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. 두ZIP CRC/SHA/Manifest/SUMS PASS(Owl18/21,Spider16/17), 새PNG24decode·동일3QA재사용·GIF4확인. **Owl DESIGN_CONTINUITY_REVISE**: 얼굴복원/새VFX분리/03=Idle00exact 개선,00~02몸통/깃질감·02→03연속성 보완. 별도VFX_HOLD. **Spider WALK_CONTACT_REVISE**:00/04KEEP·6실변경·정확10FPS, 접지교대미흡과새01/02오른쪽·06/07왼쪽캔버스접촉(최대255/255/255/41)발견. 승인v5/Idle8보호. seamGIF는실1프레임250ms정지자료,8FPS모션증거아님.
+
+[통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
+
+---
+
 ## 2026-11-03 Main24 후속 아트3ZIP 독립 읽기 검수
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl5ba6ecff(3153329B/18), Bee450b78e4(709946B/9), Spiderd4c7c73a(7953765B/33) CRC·경로/중복PASS, SUMS17/7/31 전부 일치. Owl Manifest신규4+Idle참조8 확인, Bee7/Spider31 독립Manifest일치. 새PNG34/GIF9만 decode, 동일SHA PNG7 QA재사용.
