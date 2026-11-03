@@ -85,3 +85,9 @@ HTML SHA256 **41e8e303062a29c753a55f2702940038b9b469e884e4f9e2f7570ecea9566173**
 원본main **ab47b931fec92976170f9f50aabde1822d78bb90**,기본status344/상세-uall858전후동일·이전승인/Idle참조28SHA동일·ZIP2/Import후입력12+승인참조2 PNG동일. [보호근거](Evidence/Issue84OwlSpiderUnityDelta20261103/ProtectionAfter.json). 개인Save/UserData접근0·원본Unity/Scene/Prefab/Packages/ProjectVersion/BuildSettings/MonsterDefinition/TTS/Discord66변경0·기존전체QA반복0·maincommit/Push/merge0.
 
 **적용준비판정:** Owl은클립/표시설정의격리기술준비PASS이나최종미술·본편렌더러/Battle UI연결승인필요. Spider는클립/경계기술PASS이나발별지지/접촉·이동속도동기화확인전전체보행준비HOLD입니다. 다음은대표의실제캡처미술검토와필요한발anchor/지지·스윙기준확정/실지면최소계측입니다. 이번작업에서본편적용/전투/새모션/Save복구를구현하지않고종료합니다.
+
+### Issue #84 로컬 커밋·GitHub 보고 영수증
+- 검증 코드·증거 커밋: `bde96a92e14c663e33ce7640f98f863d58a0d306` (`codex/owl-spider-unity-animation-delta-20261103`).
+- 실제 댓글: [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700), [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597702364), [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597703337).
+- GitHub에는 댓글만 보고했습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED / USER_VISUAL_REVIEW_PENDING`.
+- Owl 클립 기술 PASS, Spider 클립 기술 PASS / 실제 발 접지·미끄러짐 NOT_VERIFIED·WALK_CONTACT_HOLD. 최종 미술 승인은 별도입니다.

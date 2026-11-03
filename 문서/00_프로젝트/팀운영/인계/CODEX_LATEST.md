@@ -488,3 +488,9 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 - 다음 우선작업: (1)원본Editor정상재개후A자연Import확인 (2)바울대표B개별청취승인기록,특히007폭이/포기·008조사한/조사하는 (3)승인된B ID만신규GUID/WAV폴더Catalog연결후Field02/03·승인8·미엘·Player·SaveContinue재QA와별도허가된브랜치CommitPush. 확정TTS_REGEN_REQUIRED0, 청취에서본문불일치확정시해당ID만재조사.
 - 다른담당: 기획은B청취승인경계와Portal-나무/Teleport미구현OPEN유지, 아트담당신규PNG납품필요0. Main08대화중조우OPEN은QAfixture에서만억제했고수정하지않음.
 - 후임은각QA/인계·CURRENT_STATUS·최신원격Gate를대조하고원본dirty를reset/clean하거나원본Play/focus를조작하지말것. 재개자료 Temp/ArbelMain08Integration20261014 및A/B인계문서.
+
+### Issue #84 로컬 커밋·GitHub 보고 영수증
+- 검증 코드·증거 커밋: `bde96a92e14c663e33ce7640f98f863d58a0d306` (`codex/owl-spider-unity-animation-delta-20261103`).
+- 실제 댓글: [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700), [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597702364), [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597703337).
+- GitHub에는 댓글만 보고했습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED / USER_VISUAL_REVIEW_PENDING`.
+- Owl 클립 기술 PASS, Spider 클립 기술 PASS / 실제 발 접지·미끄러짐 NOT_VERIFIED·WALK_CONTACT_HOLD. 최종 미술 승인은 별도입니다.

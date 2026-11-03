@@ -2087,3 +2087,5 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 - 009/010 3.849417초 zero/zero 경계 분리·PCM재결합원본100% 동일. 011 선행1.079958초만 줄여 최종2.800042초, 마지막흡기0.19초/강한발화1.21초 남김·원본suffix동일·clipping0. 후보007 3.530초·008 4.810초·009 3.849417초·010 4.400583초.
 - 격리Unity6000.6.5f1 Field02 WheelTracks→Field03 Investigation→DeepZone5+3→실제BootstrapContinue 97PASS/FAIL0. 원본Clip/자막/PCM·미엘·Player무음·Next·SaveQuest보호. 전체PARTIAL: 기존Search startup 예외,007/008 ASR어휘차이,청취승인대기. 원본4,001파일SHA 변경0(B납품시).
 - 청취자료 [후보페이지](Evidence/Main08Taeon00701120261014/index.html), [QA·재개지점](Main08_Taeon007011_Content_Recovery_Candidates_QA_20261014.md). 다음: 바울 대표 개별청취승인 후 해당ID만 별도음성브랜치 연결·회귀QA. 최신확인 main314f7fbb(PR11완료), main직접변경0.
+
+- Issue #84 마지막 검증 커밋: `bde96a92e14c663e33ce7640f98f863d58a0d306`. #84/#74/#60 댓글 보고 완료, 로컬 커밋만 존재하며 원격 Push·본편 적용 없음.
