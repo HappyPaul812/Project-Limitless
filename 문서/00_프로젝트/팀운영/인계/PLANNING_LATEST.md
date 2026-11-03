@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-04 — #87 QA Clone36PASS, 다음 F2 시각판단·올빼미 표식 최소 보완
+
+- [Issue #87 실제 PlayMode 스모크](https://github.com/HappyPaul812/Project-Limitless/issues/87#issuecomment-6617542875): Unity6000.6.5f1/rev3ff58d469c8a 동일 원본파일 SHA QA 복제본 신규 **36PASS/제품FAIL0**, Main23→24·북문F2→마을·도보휠체어Collider·Owl Idle8 Attack4 피해1회·HP·승패F2/안전마을·합성SaveContinue·6슬롯·퀘스트 '완료'·26Scene GUID. 초기 QA 코드 모달 owner 인자1 오류는 테스트 코드만 수정 후 미검증 나머지26건 실행; 제품오류0. 원본 Editor 실행중/포커스보호로 `ORIGINAL_EDITOR_NOT_VERIFIED`, 사용자 실제 손/발 입력 및 저시력 시야 NOT_VERIFIED. 원본mainHEAD 634a91d3, 제품4547파일/Save/UserData/index/status 원형보호, 푸시0.
+- 신규 단일 UI 시각 결함: F2 Camera RT 하단 Owl 안내 **표식 일부 화면밖 잘림**. 전체 Owl Sprite/전투Clip·기존 GameUI QA를 다시 고치지 않음. 후속 Codex 할 일이 있다면 격리복제에서 그 표식 UI anchor/canvas clamp/3비율만 표적 delta 수정, 원본상품/QA회귀전수X. 별도 [#87 기획 접수](https://github.com/HappyPaul812/Project-Limitless/issues/87#issuecomment-6617905779).
+- F2 환경 기존재료 재사용 68PASS 비교판 `F:/study/codex/Project-Limitless/Temp/F2EnvironmentReuse20261103/Review/index.html` (18 실제 Unity RT)은 **사용자 최종 미술 검토 대기**: 눈 패치 반복·길 굽음·HUD 배경/가림 3영역. 대표 승인 전 원본 F2 환경 자동 적용0. 승인 후에도 최소 델타만. 정식 Owl 한기 상태/기획수치·보상·퀘스트 완료/공급정책, Bee RIGHTS_HOLD, Writer1/2 운영정책 HOLD 유지.
+- 지금은 Codex 대규모 기존 QA를 반복하지 않고 화면 결함에 한정한 소규모 후속 및 사용자 미술 판단으로 진행.
+
+---
 # PLANNING / 2026-11-04 오전 — 로컬 통합 후 첫 F2 실제 플레이 스모크 #87
 
 - 대표 “굿모닝~ 이어서 하자.” 현시점 [#86 최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974)에서 원본로컬 main HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f`, Unity6000.6.5f1/rev3ff58d469c8a, 기존25 Scene+F2 26번째, 승인자산·코드 로컬 sync 완료. 어제 통합QA44PASS/F2 Scene등록26PASS, Owl전투81/F2왕복90/SpiderOwl37/F2환경후보68/저장QA 보존·재실행 필요0. **원본 에디터에서 실제 손플레이는 미검증**.
