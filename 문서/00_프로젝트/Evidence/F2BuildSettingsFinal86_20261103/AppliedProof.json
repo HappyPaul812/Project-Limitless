@@ -1,0 +1,22 @@
+{
+  "head": "35b87d297392ba7d0e02c6657a94741c875abc10",
+  "branch": "main",
+  "product_commit": "35b87d297392ba7d0e02c6657a94741c875abc10",
+  "f2_registered": true,
+  "original25_exact": true,
+  "config_suffix_exact": true,
+  "working_bytes_exact_candidate": true,
+  "other_user_files_checked": 846,
+  "other_user_files_changed": [],
+  "user_unstaged_hunk_payload_exact": true,
+  "status_z_exact": true,
+  "staged_after": "",
+  "version_packages_unchanged": true,
+  "unity_auto_serialization_changed": false,
+  "qa_pass": 26,
+  "qa_fail": 0,
+  "original_editor_executed": false,
+  "qa_scope": "ISOLATED_CLONE_WITH_IDENTICAL_CANDIDATE_BUILDSETTINGS",
+  "original_local_sync": "DONE",
+  "remote_push": false
+}

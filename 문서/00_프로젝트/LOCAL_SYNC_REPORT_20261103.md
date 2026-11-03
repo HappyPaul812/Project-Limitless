@@ -1,5 +1,7 @@
 # Issue #86 완료 작업 통합·원본 로컬 동기화
 
+> **최신 후속: F2 등록 HOLD 해소 / ORIGINAL_LOCAL_SYNC_DONE.** 바울 대표 후속 승인으로 기존25/app-ui를 보존한 F2 단일등록을 원본에 반영했습니다. 제품 `35b87d297392ba7d0e02c6657a94741c875abc10`, 신규표적26PASS/0FAIL. [최종 등록 보고](F2_BUILDSETTINGS_FINAL_SYNC_20261103.md). 아래는 등록 전 당시 통합 기록이며 HOLD 표기는 역사 상태입니다.
+
 2026-11-03. **STAGING_INTEGRATION_PASS / APPROVED_FILES_LOCAL_SYNC_DONE / ORIGINAL_LOCAL_SYNC_HOLD(F2 BuildSettings 등록) / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO**.
 
 ## 실제 완료 범위와 남은 한 파일

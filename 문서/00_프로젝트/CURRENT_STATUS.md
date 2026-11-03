@@ -1,4 +1,10 @@
-## 2026-11-03 Issue #86 — 승인 파일 로컬 동기화 / F2 BuildSettings HOLD
+## 2026-11-03 Issue #86 — F2 단일등록 완료 / ORIGINAL_LOCAL_SYNC_DONE
+
+제품 `35b87d297392ba7d0e02c6657a94741c875abc10` 원본ff반영. 기존25 Scene path/GUID/order/enabled·app-ui·입력설정 원형보존, F2후보1개만추가해26개. Unity6000.6.5f1/rev3ff58d469c8a 신규표적26PASS/0FAIL·자동설정재직렬화0. 원본847보호파일 중846바이트불변·BuildSettings승인3줄만변경·사용자app-ui미커밋diff동일·status343/857/staged0. 버전/Packages수정0·기존44/81/90반복0·개인Save접근/원격Push0. 원본Editor손플레이미검증, 동일설정격리실경로/승패귀환/합성Continue검증PASS. [최종등록보고](F2_BUILDSETTINGS_FINAL_SYNC_20261103.md).
+
+---
+
+## HISTORY — 2026-11-03 Issue #86 승인 파일 로컬 동기화 / F2 등록 전 HOLD
 
 관련 QA/보고 커밋 `11e6c746166ecc967ae78a01b31617ab49251968`. [실제 원본 반영·GitHub 보고 영수증](Evidence/LocalSync86_20261103/Receipt.md).
 

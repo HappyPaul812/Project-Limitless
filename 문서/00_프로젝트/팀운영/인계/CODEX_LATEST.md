@@ -1,4 +1,10 @@
-## 2026-11-03 Issue #86 안전 통합·로컬 동기화
+## 2026-11-03 Issue #86 마지막 F2 등록 HOLD 해소
+
+**F2_BUILDSETTINGS_SCENE_REGISTERED_PASS / ORIGINAL_LOCAL_SYNC_DONE / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO**. 제품 `35b87d297392ba7d0e02c6657a94741c875abc10`을원본ff반영. 기존25개path/GUID/order/enabled·config전체바이트보존, 활성F2한건만추가. 격리Unity표적26PASS/0FAIL·실행전후BuildSettingsSHA동일·자동직렬화변경0. 원본사용자app-ui변경은미커밋상태그대로·846파일바이트불변/BuildSettings3줄허용변경·status343/857/staged0. 버전/Packages불변·개인Save/원격작업0. 원본Editor손플레이는미검증이며동일후보설정의격리실경로검증PASS. [최종등록/백업/QA](../../F2_BUILDSETTINGS_FINAL_SYNC_20261103.md). branch codex/f2-buildsettings-final-sync-20261103. 완료작업재통합/기존44전수재실행0.
+
+---
+
+## HISTORY — 2026-11-03 Issue #86 안전 통합·F2 등록 전 상태
 
 실제 QA/보고 커밋 `11e6c746166ecc967ae78a01b31617ab49251968`. [원본 반영·Issue #86 영수증](../../Evidence/LocalSync86_20261103/Receipt.md).
 
