@@ -2,7 +2,20 @@
 
 **담당:** 메인 신규 아트 / `docs/art-new`  
 **관련 Issue:** [#71](https://github.com/HappyPaul812/Project-Limitless/issues/71) · [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75) · [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85)  
-**최종 현재 상태:** `F2_EXISTING_ASSET_REUSE_AUDIT_DONE / CODEX_UNITY_TEXT_EVIDENCE_ONLY / NEW_GAME_PNG_0 / F2_ART_GAPS_NOT_VISUALLY_VERIFIED / SIGN_FENCE_USER_ART_REVIEW_PENDING / NOT_UNITY_APPLIED`
+**최신 현재 상태(실제 화면을 열람한 Codex 결과 접수):** `CODEX_F2_RT_READONLY_AUDIT_REPORTED / PLACEHOLDERS_CONFIRMED / EXISTING_ASSET_REUSE_OK / NEW_GAME_PNG_REQUIRED_0 / REPLACEMENT_VISUAL_QA_PENDING / SIGN_FENCE_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`
+
+
+## 0. Codex 실제 카메라 RT 현장 감사 추가 접수 — 2026-11-03
+
+- **근거:** Codex [#83 현장 감사](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6602568367) · [#85 현장 감사](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6602569428). 로컬 문서전용 브랜치 `codex/f2-environment-readonly-audit-20261103`, 실제 Codex 로컬 commit `b70b14175b67dc8490ea8efc3bccf94eb1c22126`. 이 결과는 **Codex가 기존 #83·#85 실제 Unity Camera RT 원본을 읽기 전용으로 검토하고 GitHub 댓글에 보고한 것**이다. 아트 담당이 로컬 F:의 RT PNG를 직접 수령해 픽셀 검증한 것은 아니다. Codex Unity 재실행0, 기존 90/81 PASS 재검사0, 수정파일 문서2개만, 원본 Scene/Save/main 변경0.
+- **실제 남은 임시 아트 3:** 눈바닥 `PLACEHOLDER_GROUND`, **직각 구간이 인공적인 흙길** `PLACEHOLDER_PATH`, **접지 음영이 약한 단순 침엽수** `PLACEHOLDER_TREE`. 따라서 다음 과제는 아트 생성보다 **기존 소스의 격리 장면 배치·시각 델타 QA**다. 교체가 완료됐다는 기록은 아직 없음.
+- **기존 아트로 재사용 가능(Codex REUSE_OK):** 승인 Frostway Earth/ThinFrost/Gravel **9개(각256×256)**, 기존 F1 `NorthF1_Path_WornTrail_Overlay_v2` **256×256**; F2 P1 `FirstSnow_GroundOverlay` **256×256**, `SnowPine` **256×320**, `FrostShrub` **256×160** 후보. **REUSE_OK는 디자인 승격/배치 완료/Unity 교체 후 PASS가 아니다**. F2 P1은 미승인 후보 상태 유지. 승인 NaturalBroken Stump v4는 F2 접지/앞뒤 Sorting 기존 실증 유지.
+- **기존 물리/화면 근거:** 960·1280·1680×720 실제 RT에서 길의 물리 폭·플레이어 표시 크기 유지, 경계 형태 식별. 그러나 남쪽 길 일부가 **좌하단 HUD**에 가려짐. 이 문제는 새 아트가 아니라 격리 HUD Safe Area/앵커 조정 문제로 **Codex 구현/UI 담당에 전달**. 휠체어 실제 Collider 통과는 이전 #83 결과를 재사용하며 새 교체 뒤 충돌 상태가 검증됐다는 뜻은 아님.
+- **교체 후 검증 필요(`NOT_VERIFIED`):** 눈 Overlay 반복/적설 분포, 흙길 굽음의 직각 seam/이음새 및 4.5WU 길폭 보존, 나무 Pivot·접지·Sorting·시야, 새 눈 지면↔그루터기 색감, 시각 경계와 Collider의 일치, 3개 비율에서 좌하단 HUD의 길 가림. 기존 길 PNG를 **4.5WU 통로에 일괄 늘리기 금지**, 나무를 기존 2×3WU 영역에 **비율 왜곡 금지**.
+- **신규 PNG 판정:** `NEW_PNG_REQUIRED = 0` 종. 결손 위치·규격의 확정 발주가 없으므로 환경 타일/나무 신규 그림을 제작하지 않는다. 더 필요한 경우에도 **기존 자산 배치가 불가능하다는 실제 동일배율 캡처 근거를 받은 뒤**에만 최대 2개를 별도 발주한다.
+- **동결·승인:** Owl v3 Idle8/Attack4 `USER_ART_APPROVED`, NaturalBroken Stump v4 `USER_APPROVED`, 기존 승인 9지면/43환경 불변. Sign·Fence FULLREDRAW `KEEP_CANDIDATE / USER_ART_REVIEW_PENDING` 및 냉기 VFX `HOLD`. Owl 전투 #85 81 PASS·왕복 #83 90 PASS 보호, 본편 적용·main 병합 없음.
+
+**권장 다음 Codex 격리 Delta 작업(별도 지시 전에는 실행 금지):** 임시 GROUND/PATH/TREE 3종의 실제 SpriteReference·위치·PPU/Pivot을 먼저 확인 → 기존 승인/후보를 별도 카피의 격리 장면에만 비파괴로 재사용 배치 → 960/1280/1680 RT 동배율 전후 및 휠체어·도보 길폭/경계/HUD 가림/나무 접지 최소 변경 QA → `REUSE_PRESENTATION_PASS` 또는 정확한 잔여 ArtGap만 보고. 해당 QA가 승인 없는 기존 F2 P1 후보를 공식 승격시키는 것은 아님.
 
 ## 1. 실증 범위와 왜 신규 PNG를 0종 제작했는가
 
