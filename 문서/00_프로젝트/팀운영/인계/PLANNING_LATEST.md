@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-03 16:21 — Owl·Spider 실제 Unity 영상 사용자 시각 수용 / Bee 미완 확인
+
+- 대표 직접 발언 **“다 봤는데 괜찮아. 근데 독침벌은 다 된거야?”** 에 따라 #84 격리 실제 Unity 캡처 Owl Attack4(수정Attack02)와 Organic Spider v5 Walk8를 **시각적으로 USER_VISUAL_ACCEPTED**로 인계. [#84 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597927363), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597929323), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597930854) 기록. 이는 본편 원본 Unity 적용 승인·새 QA PASS·Spider 실제 발접지 측정 PASS가 아니다. 기존 #84 37PASS 보존, Spider `ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl 분리 미승인 VFX HOLD, Spider Attack8/Shoot8 미제작.
+- [#63 독침벌 미완 판정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6597932159): 기존 Idle10+Attack10 실파일 존재, 새 공격키포즈 Prepare/Sting/Recover와 정상 Idle2 실파일 존재하나 **오리지널 전투 애니메이션 전체 완성 아님/실게임 미교체**. 최신 TargetReview는 기존 PNG5 SHA 동일, 새 공격 키포즈0/TEST_ONLY storyboard1. 실제 Battle 타깃·전열후열·접촉점·몸회전·찌르기회수 연결 미정 (`TARGET_CONTRACT_HOLD / MOTION_REVISE_CONTINUE`), 기존 PilotBee CC BY3 vs 동봉BY4 `RIGHTS_HOLD`.
+- 다음 **시간 절약 작업**: Codex 읽기전용 실제 Battle 공격좌표/전열후열·좌우/facing/Monster Animation 인터페이스와 기존 Bee 출처 원문/라이선스 메타 점검, **새 실제 모션 제작 금지**, 먼저 실표적 접촉 계약·권리 근거 보고→기획 확정 후 리뉴얼 아트 담당 Sting/Recover 필요한 2키포즈만 실재작화→최소 QA→대표 승인. Main24 #83 Unity90·#84 37, 저장 QA 85/72/72 전수반복0. 원본 Main/Unity/Save/BuildSettings·Discord#66·Push/merge0.
+
+---
 # PLANNING / 2026-11-03 오후 — #84 Owl Spider 실 Unity Clip 37PASS 접수
 
 - [#84 실제 Unity6000.6.5f1 격리 AnimationClip QA](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700) **37 PASS/0 FAIL**, 예전 Editor.Search 1건 환경OPEN·새 Runtime/컴파일 오류0, 실제 Camera RT 122장/영상4개. 검증 commit `bde96a92e14c663e33ce7640f98f863d58a0d306`, branch `codex/owl-spider-unity-animation-delta-20261103`. 원본 Unity/개인Save/UserData/Products/main/Push/merge0. HTML 열람판 `F:/study/codex/Project-Limitless/Temp/Issue84OwlSpiderUnityDelta20261103/Review/index.html` (로컬 Unity Camera 영상, 원본 GameView 아님).
