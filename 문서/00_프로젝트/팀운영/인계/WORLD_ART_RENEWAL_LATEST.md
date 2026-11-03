@@ -1,3 +1,11 @@
+## 2026-11-03 / Issue #60 — Organic Spider Walk8 4프레임 캔버스 끝단 교정 (현재 최신)
+
+- **최신 Codex 실제 결함**: [#60 경계 잘림 검수](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595712350) / [기획 4프레임 표적 범위](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595844892). 원본 승인 v5 `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`·기존 Idle8 **바이트 불변**.
+- [실제 Walk8 수정/검수 보고서](../../Renewal_20261103_ForestSpider_Walk8_EdgeCorrection_CodexFollowup.md) `docs/art-renewal` **commit `edd38a33dd48e9c42e868368c29945d8d45117bc`**. 바로 이전 6프레임 수정본 `LIMITLESS_WALK8_FIX.zip`에 새 **캔버스 경계 잘림** 발생했으므로, **이번 수정은 Walk01/02 오른쪽, Walk06/07 왼쪽의 발 끝 네 프레임만** 대상. 기존 Walk00·03·04·05 **모두 정확한 SHA·픽셀 KEEP**, 승인 원화/Idle8도 보호.
+- **신규 ZIP 실물** `LIMITLESS_WALK8_EDGE_FIX_20261103.zip`: **4,431,916 bytes / SHA256 `771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da` / 20 entries / ZIP CRC PASS / Manifest18/18 PASS**. 512 RGBA Walk8 PNG, 4×2(2048×1024) 시트, 10FPS(8×100ms) GIF128/40, 4문제부위 확대 Before/After, 128/40 전후판·지지/스윙 **계획표**, 개별 SHA/픽셀 변경 QA. **지정 경계 알파:** 01 26→0, 02 30→0, 06 58→0, 07 26→0. 01/02/06/07 변경 RGBA픽셀 8813/9413/10604/10446.
+- 실물 다운로드 오류에 대비한 [로컬 Codex 재현 Python 스크립트](../../Walk8_EdgeContact_Rebuild_20261103.py), `docs/art-renewal` **commit `8a6c16c068e71e57341e9a457583678dce0f60e1`**. 기존 검증 ZIP 두 개를 읽기전용으로 사용해 사용자의 격리 Temp에 4프레임·시트·GIF 출력. 파일이 없으면 추정 금지. 사용자 F: 자동 복사/원격 바이너리 업로드 없음.
+- **판정** `WALK_EDGE_CLIP_FILE_TECH_PASS / IDLE8_KEEP / V5_STATIC_APPROVED / WALK_GAIT_ART_REVIEW_PENDING / ACTUAL_GROUNDED_FOOT_LOCK_NOT_VERIFIED / UNITY_NOT_TESTED`. 사각형 알파 통삭제·원화 전신 축소 아님; 다리끝의 국소 리매핑/곡선테이퍼, 독립 IK나 자연스러운 보행까지 보증하지 않음. 다리 접지/40px 실제 시각 QA는 Codex 격리 후 대표 승인 필요. Attack8/Shoot8 신규0, Bee 신규0, PilotBee 권리 HOLD, Ch2 공식몬스터·펫 Wolf/Bear/Fox·Ch4 메카닉 v3·Unity/Scene/Save/UserData·main 미변경. 본게임 적용·Push/병합 금지.
+
 ## 2026-11-03 / Issue #60 유기형 ForestSpider Walk8 국소 수정 6프레임·10FPS 검토 (현재 최신)
 
 - **승인 원화 v5 고정:** `ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png` SHA256 **`c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`** 바이트 불변. Idle8은 Codex의 **`KEEP_CANDIDATE`** 판정 유지하며 원본 파일 모두 변경0.
