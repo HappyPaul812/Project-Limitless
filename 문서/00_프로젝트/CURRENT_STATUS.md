@@ -1,3 +1,13 @@
+## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD
+
+승인그루터기 SHA22f2f581…1PNG만 독립Unity6000.6.5f1 fixture로 Import: PPU128/Scale1·Pivot(0.5,11/384) 후보, alpha/접지·3화면비·Sortingproxy·대안크기 **21PASS/FAIL0**. 실제F2 Scene/길/Collider없어도보·휠체어·실배치 NOT_VERIFIED. 기존ProjectVersion/Packages·게임원본변경0.
+
+spider.zip SHA7f4622af…/13항목, bee.zip SHAa396a2be…/20항목 CRC/경로PASS. 합본Manifest가동봉되어각각미동봉참조16/9개는부분범위; 두ZIP합집합Manifest27/SUMS28PASS. v5c600cd22…RGB262144보존·alpha380감소·실Field03경계비교로 **ALPHA_FINAL_OK_CANDIDATE/최종미술승인대기**. 새32보류. Bee최신3SHA/실픽셀변경확인·Idle2exact, 실제Sting침끝우하향관찰은보고서'좌측'과차이로명시. 실표적·회수연속성 **BEE_MOTION_HOLD/RIGHTS_HOLD**, 전체20/교체0.
+
+단일결과판 `F:/study/codex/Project-Limitless/Temp/Issue82StumpSpiderBee20261103/Review/index.html` SHA `730c8481819d6dcbefdb3b6f772e3f6914d7f37358169f85b11414ba1de4a748`. OFFLINE비교와실제UnityCamera캡처7장구분·브라우저14PASS. [상세보고](Issue82_Stump_UnityDelta_SpiderV5_BeeAttack3_20261103.md). branch `codex/issue82-stump-spider-bee-delta-20261103`·문서3+격리QA스크립트1만로컬commit. 원본main/status344·Main24fd869f60/81·14PASS보존·Save/Unity원본/Discord/포커스/기존전수QA0. **STUMP_USER_APPROVED / STUMP_ISOLATED_UNITY_PASS / SPIDER_ALPHA_CANDIDATE / BEE_MOTION_HOLD / NOT_ORIGINAL_APPLIED / REMOTE_PUSH_NO**.
+
+---
+
 ## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용
 
 - Main23 완료 뒤 기존 마을 표식으로 스킬 기본3무료/최대6칸/전투밖 무료 장착 안내→보급 한기2턴·해제수단 안내→북문 이동·서리올빼미 위험 예고를 구현했습니다. 기존6칸 UI·Save 재사용, 구매/탈렌트차감/소유권 변경/무료 아이템 지급0. 후보 ID 정의는 바울 대표 이번 채팅 허용 근거이며 정식 Story/TTS 잠금과 구분합니다.

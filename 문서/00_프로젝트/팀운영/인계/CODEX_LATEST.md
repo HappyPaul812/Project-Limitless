@@ -1,3 +1,13 @@
+## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD
+
+승인그루터기 SHA22f2f581…1PNG만 독립Unity6000.6.5f1 fixture로 Import: PPU128/Scale1·Pivot(0.5,11/384) 후보, alpha/접지·3화면비·Sortingproxy·대안크기 **21PASS/FAIL0**. 실제F2 Scene/길/Collider없어도보·휠체어·실배치 NOT_VERIFIED. 기존ProjectVersion/Packages·게임원본변경0.
+
+spider.zip SHA7f4622af…/13항목, bee.zip SHAa396a2be…/20항목 CRC/경로PASS. 합본Manifest가동봉되어각각미동봉참조16/9개는부분범위; 두ZIP합집합Manifest27/SUMS28PASS. v5c600cd22…RGB262144보존·alpha380감소·실Field03경계비교로 **ALPHA_FINAL_OK_CANDIDATE/최종미술승인대기**. 새32보류. Bee최신3SHA/실픽셀변경확인·Idle2exact, 실제Sting침끝우하향관찰은보고서'좌측'과차이로명시. 실표적·회수연속성 **BEE_MOTION_HOLD/RIGHTS_HOLD**, 전체20/교체0.
+
+단일결과판 `F:/study/codex/Project-Limitless/Temp/Issue82StumpSpiderBee20261103/Review/index.html` SHA `730c8481819d6dcbefdb3b6f772e3f6914d7f37358169f85b11414ba1de4a748`. OFFLINE비교와실제UnityCamera캡처7장구분·브라우저14PASS. [상세보고](../../Issue82_Stump_UnityDelta_SpiderV5_BeeAttack3_20261103.md). branch `codex/issue82-stump-spider-bee-delta-20261103`·문서3+격리QA스크립트1만로컬commit. 원본main/status344·Main24fd869f60/81·14PASS보존·Save/Unity원본/Discord/포커스/기존전수QA0. **STUMP_USER_APPROVED / STUMP_ISOLATED_UNITY_PASS / SPIDER_ALPHA_CANDIDATE / BEE_MOTION_HOLD / NOT_ORIGINAL_APPLIED / REMOTE_PUSH_NO**.
+
+---
+
 ## 2026-11-03 바울 대표 승인 — F2 자연형 그루터기 v4 USER_APPROVED
 
 `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`를 이번 채팅 명시 승인으로 **USER_APPROVED / APPROVED_ART_CANDIDATE** 처리했습니다. 기존파일 SHA 재확인·바이트변경0. 예전 Stump v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**로 문서분류하고 삭제/이동하지 않습니다.
