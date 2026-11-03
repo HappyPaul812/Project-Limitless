@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 23:34 — #86 F2 BuildSettings 등록 HOLD 해소·원본 로컬 완전 동기화
+
+- [#86 최종 등록 검증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606419659) 및 [최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974): **`ORIGINAL_LOCAL_SYNC_DONE / F2_BUILDSETTINGS_SCENE_REGISTERED_PASS / REMOTE_PUSH_NO`**. 최종 원본 local main·통합 branch `codex/f2-buildsettings-final-sync-20261103` HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f` (제품등록 35b87d29, 마지막 보고 ff-only). main 직접커밋·원격Push/PR/merge0.
+- 정확한 Unity `6000.6.5f1` / revision `3ff58d469c8a`; 원본 `ProjectVersion.txt`와 실제 설치·엔진 로그 일치. 6000.5.7f1 구버전 설치/QA·다운그레이드 요구 폐기. 기존25 Scene/사용자 app-ui·input 설정 및 순서·enable·GUID **바이트보존**, `Assets/_Project/Scenes/World_NorthF2_CANDIDATE.unity` GUID `bcd0e6f38e69dc141b741fe5247855cf` 26번째에 **BuildSettings 3줄만** 추가. 승인 전후 파일 SHA/Unity import후 SHA 확인, 자동 재직렬화0.
+- 신규 **동일설정 격리 Unity 26 PASS/0 FAIL**, F2북문 왕복·승패/거점 복귀·합성Save/Continue·Main24 보상0. #86 이전 통합 Unity44PASS 및 #83·#85·#84·저장 QA 재실행0. **원본 에디터 사람이 직접 플레이 검증은 `NOT_VERIFIED`**, 실제 원본 Game/Standalone 출시는 별도 QA.
+- 기존 사용자파일847 중 BuildSettings만 승인3줄 변경, **나머지846파일 바이트 동일**, 사용자 app-ui 미커밋 diff·status기본343/상세857/staged0 및 개인Save/UserData 접근0 보존. 기존 Package/Scene/Prefab/Quest/게임코드·승인Art 건드리지 않음. #85 Owl 기본전투·#83 F2 원본 동기화는 완료했으나 공식 Owl 수치/한기상태·VFX·정식Main24 완료/상품/Writer복구/독침벌 v3·RIGHTS_HOLD·F2재사용환경 최종미술승인 등은 기존 HOLD 유지.
+- 새 업무를 무리하게 발주하지 않고 오늘 마감. 다음 시연·운영 QA 시에는 **원본 Editor 손플레이만 좁게** 검토하고, 최초 사용 전 개인 Save/백업 정책 승인 필요. Codex 사용량 보존, 추가 광범위 QA 금지.
+
+---
 # PLANNING / 2026-11-03 야간 종료 — 안전 로컬 통합·동기화 #86
 
 - 대표 지시: “오늘은 여기까지 하자, 지금까지 한 모든 작업들 합치고 로컬 동기화 해줘. 저번처럼 유니티 버전 실수 하지 말고.” **신규 [Issue #86](https://github.com/HappyPaul812/Project-Limitless/issues/86)** 통합 1회 Codex 로컬 실행 계약. GitHub에 지시/기획 인계를 남기는 것과 실제 대표 PC의 local `main`/worktree 통합 완료는 **별도**. 원격 Push·PR·병합 금지.
