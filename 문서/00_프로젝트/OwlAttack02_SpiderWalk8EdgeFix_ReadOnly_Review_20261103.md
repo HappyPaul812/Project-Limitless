@@ -102,3 +102,7 @@ HTML SHA256 **`26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`
 원본main **ab47b931fec92976170f9f50aabde1822d78bb90**,기본status344/상세-uall858전후동일. 입력ZIP2·사용한이전/승인·분리VFX참조28SHA보존,새Source_KEEPv5 SHA도기승인과동일. 문서4+JSON7만로컬커밋,HTML/PNG/GIF/ZIP은Temp보존·GitHub바이너리/파일Push0.
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED.**
+
+## GitHub 보고 영수증
+
+실제 검수 commit **`9efa30def1c86ee05b90ac1e7b1bfb6a17ca3ea5`** 기준 [#74 통합검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6596846762) · [#60 Edge수정후보](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6596853232) · [#83 보호/연결](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6596854163) 실제 댓글 등록 성공. 원격에는 댓글만 게시·파일Push0, 후속은 영수증만 로컬 기록합니다.
