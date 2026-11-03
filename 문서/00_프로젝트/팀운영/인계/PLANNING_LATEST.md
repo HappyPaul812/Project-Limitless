@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 18:05 — 독침벌 공격 타이밍 후보A 153PASS / 아트 2키포즈 후속
+
+- [Codex #63 Unity 실증](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599482389) Bee 타이밍 격리 후보 A **153PASS/0FAIL**. 기존 피해 .250293s→.250806s(HP100→93 동일·중복0), 기존 조기 Idle .610958s→Attack10@10FPS 전체 재생 후 1.000337s, 약 **.393s 다음행동 연기**. 기타 몬스터·스킬과 원본 main 미적용. 후보 소스 로컬 SHA `461c816080709a13775a71bdf8eaf00438ed571e`, 인계 `4c6d5c53881313d874667daa0b28d8dcb30ac579`, local branch `codex/bee-attack-timing-isolated-20261103`.
+- **기획 판정:** A를 독침벌 **새 아트의 시간표 참고로 잠정 유지**(Sting index02=.2~.3s +X 방향, Recover index04~08, 06~09 제자리 회수, 1초 후 Idle). 실제 게임 채택/출시·게임 템포는 별도 대표 승인·통합 QA 전 HOLD. 0.39s 길어진 턴 템포는 단점으로 분명히 보고, 기존 .25s 피해는 보호. B 약.61s/6프레임은 비교안으로만, 두 모드 동시 구현 금지.
+- 신규 리뉴얼 아트 작업 **Sting·Recover 2키포즈 국소 실재작화**만. 벌의 복부 뒤침 보존, 몸 각도/날개·다리 연결, 실제 새PNG SHA/40px/10FPS preview·오프라인 비교. 기존 Prepare·Idle2·기존20 보존. 강제 pixel-perfect 접촉은 현 공식 계약에 없음, `TARGET_CONTACT_HOLD` 유지. 기존 외부 PilotBee WEB CC BY3/원본 ZIP CC BY4 출처충돌 `RIGHTS_HOLD`, 저작자/출처/개작 관계 SourceDeclaration 명시 없으면 제품 교체 금지. [#63 기획 후속 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6599597527).
+- Owl Attack4/Organic Spider Walk8 USER_ART_APPROVED 고정, Spider 실제 발접지 계측 NOT_VERIFIED. Main24 F2 왕복 #83 Unity90, #84 37, 저장 #70/77/78 기존 QA 반복 금지. 원본 Unity/Save/UserData·Scene/Prefab·BuildSettings·Packages·main/Push/merge·Discord66 변경0. GitHub 기획 인계 변경은 로컬 아트/코드 작업 자동시작이 아님.
+
+---
 # PLANNING / 2026-11-03 — 독침벌 명목 .25초 Hit / .61초 복귀 vs 1초 Attack10
 
 - [Codex #63 실코드·출처 감사](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883): 적 좌→우(+X), Bee MeleePhysical/sourceFacesRight, x 위치 .14/.32 vs .68/.86, **명목 .25s(index02) 피해**·약 **.61s Attack→Idle 복귀**이나 기존 Attack10×10FPS=**1초**. 마지막 몇 프레임 잘릴 수 있는 **코드-모션 타이밍 충돌**이 명확한 병목. 직선 반폭 계산상 사각형끝 간격 31.2UI는 실 침끝·alpha 접촉측정이 아님. 공식 hit socket/ContactFrame 없음. 실제 물리 접촉 강요/가상 좌표 단정 금지.
