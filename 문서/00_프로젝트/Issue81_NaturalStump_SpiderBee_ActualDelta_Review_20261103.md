@@ -1,3 +1,5 @@
+> **현재 상태 갱신 / 2026-11-03:** 바울 대표가 자연형 그루터기v4 SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`만 **USER_APPROVED**했습니다. 예전 그루터기v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**. 표지판·울타리·Spider·Bee 승인은 포함하지 않습니다. [승인 정본](F2_NaturalStump_v4_UserApproval_And_UnityDeltaPrep_20261103.md). 아래 본문은 당시 검수 이력이며 Unity미적용 상태는 그대로입니다.
+
 # Issue #81 후속 — 자연형 그루터기 + Spider/Bee 실제 델타 검수 / 2026-11-03
 
 **LOCAL_ART_DELTA_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / LOCAL_COMMITTED / REMOTE_NOT_PUSHED**

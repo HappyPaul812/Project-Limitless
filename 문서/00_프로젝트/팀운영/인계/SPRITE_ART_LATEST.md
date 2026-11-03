@@ -1,3 +1,13 @@
+## 2026-11-03 바울 대표 승인 — F2 자연형 그루터기 v4 USER_APPROVED
+
+`F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`를 이번 채팅 명시 승인으로 **USER_APPROVED / APPROVED_ART_CANDIDATE** 처리했습니다. 기존파일 SHA 재확인·바이트변경0. 예전 Stump v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**로 문서분류하고 삭제/이동하지 않습니다.
+
+승인은 그루터기1PNG에만 해당합니다. Sign/Fence FULLREDRAW는 KEEP_CANDIDATE/미승인 그대로, Spider ALPHA_FINAL_HOLD·Bee MOTION_REVISE/RIGHTS_HOLD 미승인 유지. **UNITY_DELTA_PENDING / NOT_UNITY_APPLIED**. 다음은 별도 격리1PNG 최소 표시·알파·실비율/시야·통행 검증 필요. PPU/Pivot·Collider·휠체어는 SPEC_PENDING/NOT_VERIFIED. F2 미구현맵/전투 신규개발 허가 아님.
+
+[승인 정본·최소Delta 준비](../../F2_NaturalStump_v4_UserApproval_And_UnityDeltaPrep_20261103.md). 브랜치 `codex/f2-natural-stump-approval-20261103`, Markdown5개만로컬반영/Push·main·merge·Unity·Save/UserData변경0. Main24 81/14 및 기존QA 재실행0. 아래 KEEP/승인대기/HOLD는 과거 당시 기록이며 현재 승인 상태는 본 항목을 따릅니다.
+
+---
+
 # SPRITE_ART 최신 인계 — 2026-10-12
 
 ## 2026-10-23 Main23 #59 최종 표시 기획 규격 — 80px visible 우선 (82px canvas 과거 후보 대체)
