@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 Main24 F2 / Issue #81·#75 — 자연적으로 부러진 그루터기 후보 1 PNG 납품
+
+- **최신 Codex #81 델타 검수** [실물 판정](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705), [기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): Sign FULLREDRAW SHA`864e964e...`, Fence FULLREDRAW SHA`49c2969b...`는 **KEEP_CANDIDATE 원본 보호**, 사용자 시각선택 및 공식 Sprite 교체 금지. Stump v3 국소 SHA`eb32bf20...` 및 과거 full redraw SHA`251fad7f...`는 원판/직선지주로 **ART_HOLD** 유지. 기존 Main24 **81PASS/정적14PASS 보존**.
+- **신규 제작 1개만**: `Candidate/F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` **320×384 투명 RGBA**, SHA256 **`22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`**. 불규칙 부러진 수피·굽은 눈나뭇가지로 기존 작은 둥근 원판/곧은 지주 제거. 신규 자연형 1종은 **ART_CANDIDATE**이지 기존 국소본 픽셀 변경이 아닌 독립 생성 시안.
+- **실물 ZIP** `Limitless_F2_Stump_Natural_Issue81_20261103.zip`, SHA256 **`890013d4885319e1dc8a5a7f4ac2771c485b7ed2664617882cf535e6b48b70b5`**, **820,391 bytes / 6entries**, ZIP CRC PASS / SUMS5/5 PASS. ChatGPT 파일 라이브러리 `/LIMITLESS/Main24_Issue81_Stump_Natural_20261103/`에 ZIP **업로드 성공**. 개인 PC F:\ 직접 복사/해시 미확인, GitHub 바이너리 없음.
+- **오프라인 비교** `Preview/Issue81_Stump_Natural_OnePage_Compare_OFFLINE.png`(1410×1080, v3/HOLD vs 구대안/HOLD vs 새 자연형/CANDIDATE 및 각각 실제 PNG 128/40 폭 축소); `Preview/F2_Environment_Style_Wayfinding_Mockup_OFFLINE.png` (1440×650) 기존 F2 P1 소나무/관목·KEEP Sign/Fence 대안과 자연형 신규를 모의 배치한 색감/길의 외형 참고판. **Unity GameView/휠체어·Collider PASS가 아님**. 기존 후보·타일 전체 양산0, Owl/Attack ART_HOLD 유지·F2 나뭇가지/눈발/P1·승인43/지면9/F1/공식Monster/펫/SpiderBee/Unity/Save/UserData/BuildSettings 변경0.
+- [Issue #81 제작/보존·QA 정식 보고](../../Chapter3_Main24_Issue81_F2_NaturalBrokenStump_Candidate_20261103.md) `docs/art-new` 실제 보고 commit **`861bd63c8d0c680f86a589d5006a8619d6d31445`**. 현재 `OFFLINE_PNG_QA_PASS / USER_ART_REVIEW_PENDING / PPU_PIVOT_COLLIDER_NOT_VERIFIED / NOT_UNITY_APPLIED`. 바울 대표의 신규 그루터기 최종 미술 승인 후 Codex 격리 새1 PNG DeltaQA/휠체어 통행·게임 크기 확인, 별도 본게임 적용 승인. `main` 직접 commit/Push/merge 금지.
+
+
 ## 2026-11-03 Main24 F2 / Issue #75 — 최소 국소 보완3 + 독립 신규 디자인 레퍼런스3 / 라이브러리 납품
 
 - **완료 실물 ZIP** `Limitless_F2_MinimalFollowup_20261103.zip` SHA256 **`310d1755b14ab67f744eea420dd1f8e6c41e397fb8689ea2f07b4d7981323a28`**, **1,604,092 bytes / 14 files**, CRC PASS / SHA256SUMS 13/13 PASS. 과거 대화 sandbox 다운로드가 반복 실패하여 **ChatGPT 파일 라이브러리 `/LIMITLESS/Main24_F2_Minimal_20261103/` 실제 업로드 성공**. PC `F:\Downloads` 자동 복사/PC SHA 확인 아님, GitHub PNG ZIP binary 업로드0.
