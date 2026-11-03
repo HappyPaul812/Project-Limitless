@@ -1,3 +1,15 @@
+## 2026-11-03 Issue #81 후속 — 자연형 그루터기·Spider v4·Bee 새5 실제 델타
+
+ZIP2실물 CRC/경로·보고SHA일치. F2 820391bytes/6항목·Manifest3/SUMS5PASS, Renewal2444044bytes/35항목·Manifest33/SUMS34PASS. 미동봉F2큰source원화 자체는미검증.
+
+**자연형그루터기v4 KEEP_CANDIDATE**: 원판/가구지주 제거·불규칙 부러진 가지·40px실루엣 유지. Sign/Fence FULLREDRAW KEEP그대로. **Spider REVISE/ALPHA_FINAL_HOLD**: RGB262144동일·alpha491감소에도 밑띠잔존·ROI끝절단경계, 최종OK아님. **Bee NEW_ART_DELTA_CONFIRMED + REVISE/MOTION_REVISE_CONTINUE/FULL_COMBAT_READY_NO**: Old5정확보존·New5는 SHA/픽셀모두다르지만 머리우향/침좌향·관절/회수미완. GIF2/3포즈 각100ms·10FPS순서확인. RIGHTS_HOLD유지·양산/교체0.
+
+단일 OFFLINE(게임뷰아님): `F:/study/codex/Project-Limitless/Temp/Issue81ArtDeltaFollowup20261103/Review/index.html` SHA `83b32736108df60d66e401da7270e4ae8556ee5ffc27d74d95515e2fa0d5a6ef`. 512/128/40·실Field03배경·이전/신규순서제어, 브라우저18PASS. 입력48SHA·원본main/status344·Main24 fd869f60/81·14PASS보존. Unity/개인Save/Quest/버전/Discord변경0·전수QA0.
+
+[후속 실제 검수보고](../../Issue81_NaturalStump_SpiderBee_ActualDelta_Review_20261103.md). 브랜치 `codex/issue81-art-delta-review-20261103`, Markdown2개만로컬commit/Push·본편적용0. **LOCAL_ART_DELTA_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**. 다음은대표그루터기1개미술판단, Spider경계·Bee공격축최소보완뿐이며 32/20프레임 양산승인 아님.
+
+---
+
 ## 2026-11-03 Issue #81 — F2/Spider/Bee 개별3ZIP OFFLINE 델타 검수
 
 세 ZIP 실물 CRC·경로 PASS. F2 보고 ZIP SHA 일치/SUMS13·Manifest참조14 PASS. Bee/Spider 전체Manifest 미동봉은 NOT_SUPPLIED. Bee5PNG/GIF2는 이전과 SHA7/7동일·새개선0, 기존20 참고SHA는 실제 로컬20/20일치. 합본ZIP 자체는 로컬미확보/전체동일성미검증.
