@@ -6,6 +6,9 @@
 
 branch `codex/main24-f2-first-traversal-20261103`, 기능 **`e32d814f7f0dee8622cf386541eab94bf1fc1d69`**. 원본main ab47b931/status344 전후 동일·지정원본8SHA보호·개인Save/UserData열람/복사/해시0. 실제6000.6.5f1 숨김 PlayMode/Camera RT6장, OS GameView/사람 손플레이 NOT_VERIFIED. 기존 Editor.Search 예외1건 별도보존(게임Runtime오류0). [보고·근거](../../Main24_F2_FirstTraversal_Isolated_Issue83_20261103.md). 로컬 열람판 `F:/study/codex/Project-Limitless/Temp/Main24F2FirstTraversal20261103/Review/index.html`. GitHub 보고 영수증은 후속 문서로 기록합니다.
 
+
+GitHub 보고 영수증: 기능 `e32d814f7f0dee8622cf386541eab94bf1fc1d69`, QA/보고 `8cfd6d0cbffdd8fcdfac4501d6824d9f5d113b05` 기준 [Issue #83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6594041936) 실제 상세 댓글 및 [#80](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6594047044) · [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6594047914) 연결 댓글 등록 성공. 원격에는 댓글만 게시, 파일 Push/PR/원본 적용0. 본 후속 커밋은 보고 영수증만 추가합니다.
+
 ---
 
 ## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD

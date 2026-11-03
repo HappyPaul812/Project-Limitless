@@ -77,3 +77,6 @@ F2 후보는 32×24WU Bounds와 외곽 Collider, 폭4.5WU의 연결된 흙길/�
 4. 최신 기획의 Spider v5 최종 원화 승인은 확인했으나 신규 모션/제품 교체와 별개입니다. Bee 모션·표적/회수 연결 및 CC BY3/4 RIGHTS_HOLD 지속. 이번 F2 코드에서 양쪽 사용0.
 
 **현재 결과: 실제 격리 F2 왕복 PASS / USER_PLAY_REVIEW_PENDING / NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED.**
+
+
+GitHub 보고 영수증: 기능 `e32d814f7f0dee8622cf386541eab94bf1fc1d69`, QA/보고 `8cfd6d0cbffdd8fcdfac4501d6824d9f5d113b05` 기준 [Issue #83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6594041936) 실제 상세 댓글 및 [#80](https://github.com/HappyPaul812/Project-Limitless/issues/80#issuecomment-6594047044) · [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6594047914) 연결 댓글 등록 성공. 원격에는 댓글만 게시, 파일 Push/PR/원본 적용0. 본 후속 커밋은 보고 영수증만 추가합니다.
