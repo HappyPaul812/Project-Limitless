@@ -506,3 +506,9 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 - 실제 댓글: [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700), [#74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597702364), [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597703337).
 - GitHub에는 댓글만 보고했습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED / USER_VISUAL_REVIEW_PENDING`.
 - Owl 클립 기술 PASS, Spider 클립 기술 PASS / 실제 발 접지·미끄러짐 NOT_VERIFIED·WALK_CONTACT_HOLD. 최종 미술 승인은 별도입니다.
+## 실제 커밋·GitHub 보고 영수증
+
+- 승인·계약 조사 커밋: `ba8aa9749d37d8861a7cfa340a37fcf81ac9fa26` (문서·조사 근거14파일).
+- 실제 댓글: [#63 통합](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598417647), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598418547), [#84 QA 승인](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598419336).
+- 브랜치 `codex/bee-target-rights-and-art-approval-20261103`. GitHub 댓글만 게시했고 로컬 문서·커밋은 원격에 없습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED`.
+- Owl/Spider `USER_ART_APPROVED`, Spider 실제 접지 `NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl VFX HOLD. Bee `TARGET_CONTACT_HOLD / RIGHTS_HOLD / FULL_COMBAT_READY_NO`.

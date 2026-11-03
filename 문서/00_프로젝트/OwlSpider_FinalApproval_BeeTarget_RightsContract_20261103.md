@@ -109,3 +109,10 @@ PlayAttack 후 PlayMeleeAttack. 공격자A, 대상T, 수평 방향d=sign(T.x-A.x
 ① 방향/anchor 계획·SourceDeclaration → ② 기획·구현의 정확 접점/거리·동기화 계약 승인 → ③ Sting/Recover만 새 독립2후보·10FPS 비교 → ④ 최소 검증·대표 미술 판단 → ⑤ 별도 제품 적용. 승인 Owl/Spider는 추가 전수 재작화하지 않습니다.
 
 원본 main HEAD/status 유지, 개인 Save/UserData 열람·해시·복사·수정0. Unity 실행0, #84 37/#83 90/저장QA 반복0. worktree Unity/Client diff0. 원본 Scene/Prefab/BuildSettings/Packages/ProjectVersion/아트/TTS/Discord66 변경0. **LOCAL_DOCUMENTED / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. 실제 커밋·댓글 영수증은 후속 기록합니다.
+
+## 실제 커밋·GitHub 보고 영수증
+
+- 승인·계약 조사 커밋: `ba8aa9749d37d8861a7cfa340a37fcf81ac9fa26` (문서·조사 근거14파일).
+- 실제 댓글: [#63 통합](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598417647), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598418547), [#84 QA 승인](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598419336).
+- 브랜치 `codex/bee-target-rights-and-art-approval-20261103`. GitHub 댓글만 게시했고 로컬 문서·커밋은 원격에 없습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED`.
+- Owl/Spider `USER_ART_APPROVED`, Spider 실제 접지 `NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl VFX HOLD. Bee `TARGET_CONTACT_HOLD / RIGHTS_HOLD / FULL_COMBAT_READY_NO`.

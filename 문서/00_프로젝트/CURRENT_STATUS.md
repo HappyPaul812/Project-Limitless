@@ -2095,3 +2095,5 @@ Unity Play Mode에서 월드 안쪽으로 이동 후 5초 자동 저장과 Stop/
 - 청취자료 [후보페이지](Evidence/Main08Taeon00701120261014/index.html), [QA·재개지점](Main08_Taeon007011_Content_Recovery_Candidates_QA_20261014.md). 다음: 바울 대표 개별청취승인 후 해당ID만 별도음성브랜치 연결·회귀QA. 최신확인 main314f7fbb(PR11완료), main직접변경0.
 
 - Issue #84 마지막 검증 커밋: `bde96a92e14c663e33ce7640f98f863d58a0d306`. #84/#74/#60 댓글 보고 완료, 로컬 커밋만 존재하며 원격 Push·본편 적용 없음.
+
+- 승인·Bee 계약 조사 마지막 관련 커밋: `ba8aa9749d37d8861a7cfa340a37fcf81ac9fa26`. #63/#60/#74/#84 실제 댓글 보고 완료·로컬 문서만 커밋·Push/원본 적용 없음.
