@@ -89,3 +89,7 @@ F2 Manifest의 `source_image_sha256` 큰 생성 원화는 ZIP에 없으므로 **
 브랜치 `codex/issue81-art-delta-review-20261103`, 출발점 `6ea756d490dabf4b2c1a3fde1539bdb0d60b38ae`. 이번 delta는 **본 보고서와 CODEX_LATEST Markdown2개만** 로컬 커밋합니다. HTML/PNG/GIF/JSON/도구는 Temp에만 보존하고 원격 Push하지 않습니다. 게임 적용·main 직접commit/Push/merge0.
 
 대표 최종 판단은 새 자연형 그루터기1개의 미술 승인 여부입니다. Spider 밑띠·ROI경계와 Bee 공격축/관절/회수는 최소 보완 후 다시 비교할 항목이며, 승인 전 양산/게임교체로 확대하지 않습니다.
+
+## GitHub 보고 영수증
+
+검수/인계 commit `cae0d8efebbfbf12bec51e15dd7ea8746f03bacc` 기준 실제 GitHub 보고 [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6591984789) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6591993553) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6591994340) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6591995213) 등록 성공. 원격에는 댓글만 게시했고 파일Push/게임적용0. 본 후속 commit은 문서 영수증만 기록합니다.

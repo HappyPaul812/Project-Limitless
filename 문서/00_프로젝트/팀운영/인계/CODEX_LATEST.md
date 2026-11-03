@@ -8,6 +8,8 @@ ZIP2실물 CRC/경로·보고SHA일치. F2 820391bytes/6항목·Manifest3/SUMS5P
 
 [후속 실제 검수보고](../../Issue81_NaturalStump_SpiderBee_ActualDelta_Review_20261103.md). 브랜치 `codex/issue81-art-delta-review-20261103`, Markdown2개만로컬commit/Push·본편적용0. **LOCAL_ART_DELTA_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED**. 다음은대표그루터기1개미술판단, Spider경계·Bee공격축최소보완뿐이며 32/20프레임 양산승인 아님.
 
+검수/인계 commit `cae0d8efebbfbf12bec51e15dd7ea8746f03bacc` 기준 실제 GitHub 보고 [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6591984789) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6591993553) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6591994340) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6591995213) 등록 성공. 원격에는 댓글만 게시했고 파일Push/게임적용0. 본 후속 commit은 문서 영수증만 기록합니다.
+
 ---
 
 ## 2026-11-03 Issue #81 — F2/Spider/Bee 개별3ZIP OFFLINE 델타 검수
