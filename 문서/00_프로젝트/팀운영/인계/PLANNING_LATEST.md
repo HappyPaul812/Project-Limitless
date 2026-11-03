@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 오전 — #81 후속 2 ZIP 실물 델타 검수 접수
+
+- [#81 2 ZIP 델타 검수](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6591984789): F2 자연형 그루터기 PNG 신규 v4 `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`는 `KEEP_CANDIDATE`(인공 원판 사라지고 자연형 부러진 수피, 40px 판독), **바울 대표 최종 디자인 승인 대기**. F2 FULLREDRAW 표지판·울타리 두 후보도 미승인 KEEP_CANDIDATE, 실제 Unity 휠체어 길·PPU/Collider 검증0. 신규 추가 재작업 대신 비교판으로 선택받기.
+- 숲거미 유기형 디자인은 기승인. 새 v4 alpha491 감소/RGB 동일에도 **앞다리 아래 회백색 잔여 띠/직사각 ROI 경계/털 절단** 문제가 남아 `ALPHA_FINAL_HOLD`. 앞으로 동일 직사각 alpha 일괄 감소를 반복하지 말고 **털·다리 실제 외곽을 따라 수동/세밀 마스킹 단 1프레임**으로 해결. 성공 전 Idle/Walk/Attack/Shoot 32프레임 제품화 금지. 해결 불가 시 정확히 기술HOLD.
+- 독침벌 `New5` 진짜 신규 PNG5개 SHA 변화 확인; 이전 `Old5` 보존. 그러나 우향머리·좌향독침의 타격축 혼란, 공격 후 급격한 복귀 남음. 벌의 복부 뒤침 위치를 임의 머리앞으로 바꾸지 말고 **대상을 향한 몸 회전·후방 찌르기 자세 및 준비→찌르기→회수 연속성**을 공격 2~3키포즈 재작화로 확인. 기존20 PNG 전체양산0, PilotBee CC BY3/4 출처 충돌 계속 RIGHTS_HOLD.
+- 바울 대표에게 보여줄 단일 로컬 OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/Issue81ArtDeltaFollowup20261103/Review/index.html`, 이미지/GIF 내장·브라우저18 PASS이지만 Unity/GameView 아님. 신규 기획 [Issue #81 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592162086) 기록. 로컬 원본 Unity/Save/UserData/main·Discord #66 변경0. Main24 #80 Unity81/정적14 PASS 그대로.
+
+---
 # PLANNING / 2026-11-03 오전 — #81 3 ZIP OFFLINE 검수 완료 / 실제 수정 대상 분리
 
 - [#81 Codex 실제 3 ZIP 델타 QA](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705) 및 [기획 판단](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): F2 CRC·Manifest/SUMS 정상, Bee/Spider CRC 정상이나 전체 manifest/SUMS 동봉X. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtMain24ThreeZip20261103/Review/index.html`(브라우저기능18PASS)이며 **실 Unity 아님**. Codex #81 작업 branch `codex/art-main24-3zip-delta-20261103` 내용/인계 commit `3af7f08d4febf062865ef5b437e0951e80315bd6`; 제품변경0·원본Main24 #80 Unity81PASS 보존.
