@@ -89,3 +89,11 @@ HTML SHA256 **`250621e946a411de9fa55facd84ad5cf2d74aea27032b158f035fcb8a89210bd`
 수정 runtime C#6파일: BattlePrototypeEncounter/BattleSceneController/BattleSceneFlow, Main24FrostOwlCandidate(신규), Main24F2Traversal, Chapter3Main24Flow. 승인12PNG·새 Resources 정의/조우/meta만 추가. [QA Batch](../../Tools/QA/OwlBattle85Batch.cs)·[Probe](../../Tools/QA/OwlBattle85Probe.cs)·[fixture 준비](../../Tools/QA/OwlBattle85FixturePrepare.py)는 제품 Assets 밖 Tools에 있습니다. 준비 스크립트는 이 세션의 정확한 로컬 경로/선행 보호 레코드를 사용합니다. 새 세션은 경로를 먼저 확인하고 기존 QA를 무작정 재실행하지 마세요.
 
 원본 main **ab47b931fec92976170f9f50aabde1822d78bb90**, status344/상세858 유지. 원본 Unity·개인 Save/UserData 열람/해시/복사/수정0. 합성 데이터는 새 fixture의 SyntheticSaves/SyntheticSettings에만 있습니다. 승인 Owl/Spider·그루터기 SHA 보존, 미승인 Sign/Fence/VFX·TTS/Discord66 변경0. 후보 코드6파일은 실제 시험 fixture와 byte-exact입니다. **LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_ORIGINAL_APPLIED**.
+
+## 실제 기능 커밋·GitHub 보고 영수증
+
+- 기능·승인 자산 연결·QA 커밋: `61dce08b271bd2e801205a711a8af7d54400c84f`.
+- 실제 [Issue #85 구현·실증 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552) 게시 완료. GitHub에는 댓글만 있으며 코드·캡처·PNG 파일은 원격에 없습니다.
+- 브랜치 `codex/main24-frost-owl-finish-20261103`. 신규 #85 81 PASS/FAIL0, 기존 #80/#83/#84/저장QA 재실행0.
+- `F2_ENCOUNTER_PASS / OWL_BATTLE_RUNTIME_PASS / COLD_STATUS_HOLD / HIT_DEFEAT_GENERIC_FEEDBACK_ONLY / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_ORIGINAL_APPLIED`.
+- 원본 적용은 바울 대표 별도 승인 전 보류. 정식 ID·밸런스/보상·한기/대응수단·통합 범위 결정이 남습니다.

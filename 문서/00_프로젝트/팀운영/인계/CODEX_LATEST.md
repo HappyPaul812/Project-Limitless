@@ -524,3 +524,10 @@ LIMITLESS Unity 구현·검증 담당. AGENTS/팀운영 START_HERE·COMMON_RULES
 - 실제 댓글: [#63 통합](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598409883), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598417647), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598418547), [#84 QA 승인](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598419336).
 - 브랜치 `codex/bee-target-rights-and-art-approval-20261103`. GitHub 댓글만 게시했고 로컬 문서·커밋은 원격에 없습니다. `LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_UNITY_APPLIED`.
 - Owl/Spider `USER_ART_APPROVED`, Spider 실제 접지 `NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl VFX HOLD. Bee `TARGET_CONTACT_HOLD / RIGHTS_HOLD / FULL_COMBAT_READY_NO`.
+## 실제 기능 커밋·GitHub 보고 영수증
+
+- 기능·승인 자산 연결·QA 커밋: `61dce08b271bd2e801205a711a8af7d54400c84f`.
+- 실제 [Issue #85 구현·실증 보고](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552) 게시 완료. GitHub에는 댓글만 있으며 코드·캡처·PNG 파일은 원격에 없습니다.
+- 브랜치 `codex/main24-frost-owl-finish-20261103`. 신규 #85 81 PASS/FAIL0, 기존 #80/#83/#84/저장QA 재실행0.
+- `F2_ENCOUNTER_PASS / OWL_BATTLE_RUNTIME_PASS / COLD_STATUS_HOLD / HIT_DEFEAT_GENERIC_FEEDBACK_ONLY / LOCAL_COMMITTED / REMOTE_NOT_PUSHED / NOT_ORIGINAL_APPLIED`.
+- 원본 적용은 바울 대표 별도 승인 전 보류. 정식 ID·밸런스/보상·한기/대응수단·통합 범위 결정이 남습니다.
