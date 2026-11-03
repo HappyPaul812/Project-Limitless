@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 오전 — 승인 F2 그루터기 격리 Unity + Spider/Bee 분리 ZIP 검수 #82
+
+- 바울 대표 제공 Codex **승인 영수증**: [#81 그루터기 v4 USER_APPROVED](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200), 승인 PNG `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`. Markdown5개만 승인 동기화, 실제 Unity Sprite/Scene/Prefab/Main24 원본 적용0. 기존 그루터기 이전후보 archived, FULLREDRAW F2 표지판·울타리는 사용자 미승인 KEEP_CANDIDATE.
+- 바울 대표 신규 ZIP 경로 `F:\Downloads\spider.zip`, `F:\Downloads\bee.zip`. 내용물 직접 미열람. [리뉴얼 최근 제작댓글](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592667771)은 이전 합본 FINAL_TARGETED의 **OrganicSpider v5** SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`, **VenomBee 신규 Attack Prepare/Sting/Recover 3포즈** SHA `e3379212…`, `391ed94e…`, `2afc69e8…` 을 보고하지만 이번 spider.zip/bee.zip이 해당 바이트인지 전혀 확인되지 않음. Bee 후방찌르기 공격축/동작 전환 모호→MOTION_HOLD, PilotBee CC BY3.0/4.0 권리 HOLD, Spider v5 알파 최종 QA 미완.
+- 신규 [Codex Issue #82](https://github.com/HappyPaul812/Project-Limitless/issues/82) **한 번의 로컬 임무**: (1) 새 ZIP 두 개 ZIP/Manifest/PNG 실제 SHA 및 이전 결과와의 차이·밑띠/찌르기 방향만 읽기전용 Delta 검수; (2) 승인된 **그루터기 한 PNG만** 격리 Unity6000.6.5f1 Sprite/PPU/Pivot/Sorting/지면접지/3화면비 배치 최소 QA. 실제 F2 Scene/Collider 미구현이면 실휠체어통행·실씬PASS 금지, 분리된 테스트 스테이지만. Main24 #80 격리 Unity81/정적14와 저장 #70/77/78(85/72/72), Main23 과거 QA 반복 금지. 원본 Unity/Save/UserData/ProjectVersion·BuildSettings/다른 아트·Discord66/main/Push/Merge·상품 스킬 구현0.
+- 이번 기획 Issue·문서 작성은 로컬 F:파일 수정/검수 실행을 뜻하지 않음. 실제 로컬 작업은 사용자에게 아래 복붙 지시문을 전달하여 Codex가 진행할 때 실행.
+
+---
 # PLANNING / 2026-11-03 오전 — #81 후속 2 ZIP 실물 델타 검수 접수
 
 - [#81 2 ZIP 델타 검수](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6591984789): F2 자연형 그루터기 PNG 신규 v4 `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`는 `KEEP_CANDIDATE`(인공 원판 사라지고 자연형 부러진 수피, 40px 판독), **바울 대표 최종 디자인 승인 대기**. F2 FULLREDRAW 표지판·울타리 두 후보도 미승인 KEEP_CANDIDATE, 실제 Unity 휠체어 길·PPU/Collider 검증0. 신규 추가 재작업 대신 비교판으로 선택받기.
