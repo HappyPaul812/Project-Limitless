@@ -1,3 +1,11 @@
+## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
+
+Spider v5/Idle00c600cd… byte KEEP, 새15프레임 확인. Idle호흡 후보/Walk8 지지·스윙/관절 보완으로 MOTION_REVISE_CONTINUE. 8FPS GIF 실120ms=8.333 정정 필요, 시트Idle00 차이는완전투명RGB뿐. Bee 새포즈0/Source_KEEP5 동일, TEST_ONLY보드만추가로 TARGET_CONTRACT_HOLD / RIGHTS_HOLD 유지.
+
+[독립 통합 검수](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 세 ZIP 실물 무결성 확인, 바울 대표 최종 모션미술 승인 대기·Unity실행/본편적용0·기존QA반복0·Push/merge0. 이 기록은 아트 원본이나 담당 원격 문서를 덮어쓰지 않은 로컬 인계입니다.
+
+---
+
 ## 2026-10-23 / Issue #63·#65 Codex 최종 실물 비교판 인계 — 미술 승인 대기 (현재 최신)
 
 - **이번 새 보고서**: [Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md](../../Renewal_VenomBee_Issue65_FinalUnity_Evidence_Handoff_20261023.md), `docs/art-renewal` commit **`0b58085a48a43c7481d69d07f949b791ecd27817`**. 기존 [독침벌 PilotBee 원본·라이선스·모션 계약](../../Renewal_VenomBee_Codex64_65_Rights_Comparison_And_MotionContract_20261023.md) 및 v1 원화/ZIP은 **그대로 보존**.

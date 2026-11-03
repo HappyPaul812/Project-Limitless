@@ -1,0 +1,1937 @@
+[
+  {
+    "key": "Owl",
+    "zip": "F:\\Downloads\\Limitless_FrostOwl_Attack4_Review_20261103.zip",
+    "bytes": 3153329,
+    "sha256": "5ba6ecffad2e3ccf5a07c0fda00041073f1db6938a439fdeea170eae9abf250b",
+    "entries": 18,
+    "files": 18,
+    "uncompressed_bytes": 3175687,
+    "crc": "PASS",
+    "unsafe": [],
+    "duplicate_paths": 0,
+    "contents": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "bytes": 213351,
+        "sha256": "f6274c6c1bb343d9650d8b5537eabc84690c07bb90cf3af6b1d61846e2a592c6",
+        "crc32": "fedf1267",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          68,
+          112,
+          439,
+          413
+        ],
+        "alpha_zero": 190252,
+        "alpha_partial": 70950,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "bytes": 336621,
+        "sha256": "1915cfd62c4592711d8ffc29786d463d5709df5fda787401c96f0e1d48ca7cd5",
+        "crc32": "abc98fc3",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          20,
+          42,
+          492,
+          468
+        ],
+        "alpha_zero": 147910,
+        "alpha_partial": 113260,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "bytes": 254010,
+        "sha256": "79e238611a387ade3f245d7eacacfadd16eaba63abd9fb789d9f5ac1be0ad2b7",
+        "crc32": "89f8793f",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          26,
+          122,
+          484,
+          446
+        ],
+        "alpha_zero": 178506,
+        "alpha_partial": 82213,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "bytes": 234019,
+        "sha256": "187829c7237cda0bc85802069d3dd5d5bf1ad98266044143ae1756cace96005a",
+        "crc32": "fb0f494a",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          50,
+          104,
+          465,
+          443
+        ],
+        "alpha_zero": 184679,
+        "alpha_partial": 76750,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Candidate/FrostOwl_v3_Attack4_8FPS_Sheet_2048x512_RGBA.png",
+        "bytes": 1041953,
+        "sha256": "599891cbd84c78d97d21c1077859c7bedf8c49f9adffc8e7addd600ca020ca1f",
+        "crc32": "e6d10b8f",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          2048,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          68,
+          42,
+          2001,
+          468
+        ],
+        "alpha_zero": 701347,
+        "alpha_partial": 343173,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Manifest.json",
+        "bytes": 4604,
+        "sha256": "19bb2139aae7764db1e73ac09ddce13429d140b94ee6784707fab92654e006f2",
+        "crc32": "e7fcfa51",
+        "prior_identical": null
+      },
+      {
+        "path": "Preview/Attack4_BeforeAfter_OnePage_512_128_40_OFFLINE.png",
+        "bytes": 625155,
+        "sha256": "8f729839975b2e55a91de6f3cd63919ded12a432035971c43700915df8f249a9",
+        "crc32": "ba67d8bc",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1800,
+          1190
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1800,
+          1190
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_Attack4_8FPS_REVIEW.gif",
+        "bytes": 354317,
+        "sha256": "1397b2f9aeb5044b60cc627e9b12c8ce6e4faf50fd026e3e7f042341cd949afe",
+        "crc32": "abfd33ab",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 4,
+        "durations_ms": [
+          120,
+          130,
+          120,
+          130
+        ],
+        "mean_fps": 8.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "6c1560c5bb768be27b0f7e7480c12cda82a5d4f97ce88c30ab00f4d05c329a07",
+          "2ff881132917f80e74a5b3ffe620cfd01b0122a0495d7d4230afac0a668f6552",
+          "9b76eb7631c861ee2e9c645565d3cd183d31eb8399dc06c962b42210809993d7",
+          "ff12c390fcf8ea7275c0492aeaa3b8f6ac81d090e7768bb7a01d7ca492c49b95"
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_00_128px_Exact.png",
+        "bytes": 19250,
+        "sha256": "8b77f634cb1cc0aa57da29ead2f83ab4b087e8de0f0bc3c58b36a67ad22853d8",
+        "crc32": "0dfa9f9b",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          15,
+          26,
+          112,
+          105
+        ],
+        "alpha_zero": 11294,
+        "alpha_partial": 4831,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_00_40px_Exact.png",
+        "bytes": 2653,
+        "sha256": "120d105c7d975ac2fc6b04213d9d83b21875175421fcc7db243a5ed25ea571f7",
+        "crc32": "4ba69439",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          3,
+          6,
+          37,
+          35
+        ],
+        "alpha_zero": 982,
+        "alpha_partial": 566,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_01_128px_Exact.png",
+        "bytes": 31027,
+        "sha256": "bf2d52b8b29c4c1a9e6dc42965ded2fde0c17869c18641833a11cb72b8b5daf3",
+        "crc32": "afc8f3eb",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          3,
+          8,
+          125,
+          119
+        ],
+        "alpha_zero": 8111,
+        "alpha_partial": 7780,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_01_40px_Exact.png",
+        "bytes": 4003,
+        "sha256": "b9aa48f82cfe10b2e2238cfebf8c13428b072ea4d40e4c424128f7bcc1ceff5e",
+        "crc32": "83a2296d",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          1,
+          40,
+          39
+        ],
+        "alpha_zero": 624,
+        "alpha_partial": 898,
+        "edge_alpha_max": [
+          0,
+          0,
+          4,
+          3
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_02_128px_Exact.png",
+        "bytes": 24017,
+        "sha256": "98572815308f331749b518ace2392fe0a226a5fd6666421ef6e85b23749996bf",
+        "crc32": "fdddbb56",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          5,
+          29,
+          123,
+          114
+        ],
+        "alpha_zero": 10136,
+        "alpha_partial": 5886,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_02_40px_Exact.png",
+        "bytes": 3165,
+        "sha256": "c84a3567c7f418691886563da5452a0bd89656b3ef43862351256f6e3c3a6f36",
+        "crc32": "f3ed3777",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          7,
+          40,
+          37
+        ],
+        "alpha_zero": 853,
+        "alpha_partial": 682,
+        "edge_alpha_max": [
+          0,
+          0,
+          4,
+          4
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_03_128px_Exact.png",
+        "bytes": 21655,
+        "sha256": "1305ddedfa3e1b2a3e65990296c1d623fa2589d5a7efcbbc15d749c8d47de090",
+        "crc32": "b854c2d9",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          10,
+          24,
+          118,
+          113
+        ],
+        "alpha_zero": 10741,
+        "alpha_partial": 5294,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_03_40px_Exact.png",
+        "bytes": 2996,
+        "sha256": "facbed8cdf2f9d0b072209d224c599fd8c353e82daf40a7da64a2b0f41abc9ce",
+        "crc32": "87464c4a",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          2,
+          6,
+          39,
+          37
+        ],
+        "alpha_zero": 912,
+        "alpha_partial": 636,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "README_KR.md",
+        "bytes": 971,
+        "sha256": "5e3c0869c09db894a04e3fb1933b63e586ca7916ab15ada783d63aa3b38d67b6",
+        "crc32": "0b861eb6",
+        "prior_identical": null
+      },
+      {
+        "path": "SHA256SUMS.txt",
+        "bytes": 1920,
+        "sha256": "242c9614f8cab33add4f48107267192e7fff230fe40532606667ffc1c382b6a1",
+        "crc32": "fd72bc83",
+        "prior_identical": null
+      }
+    ],
+    "manifest_file": "Manifest.json",
+    "manifest_checks": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "sha_match": true,
+        "bytes_match": true
+      }
+    ],
+    "sums_file": "SHA256SUMS.txt",
+    "sums_checks": [
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/Attack/FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Candidate/FrostOwl_v3_Attack4_8FPS_Sheet_2048x512_RGBA.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Manifest.json",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/Attack4_BeforeAfter_OnePage_512_128_40_OFFLINE.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_Attack4_8FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_00_128px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_00_40px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_01_128px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_01_40px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_02_128px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_02_40px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_03_128px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Preview/FrostOwl_v3_Attack_03_40px_Exact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "README_KR.md",
+        "exists": true,
+        "sha_match": true
+      }
+    ],
+    "manifest_scope": "new Attack4 only; Idle8 hash references verified against previous local delivery"
+  },
+  {
+    "key": "Bee",
+    "zip": "F:\\Downloads\\LIMITLESS_VenomBee_TargetReview.zip",
+    "bytes": 709946,
+    "sha256": "450b78e4c68b812afff4f9b30d6ff0d54a5d74cb898feb5770cc308a0e9d7bd0",
+    "entries": 9,
+    "files": 9,
+    "uncompressed_bytes": 714583,
+    "crc": "PASS",
+    "unsafe": [],
+    "duplicate_paths": 0,
+    "contents": [
+      {
+        "path": "Bee/Source_KEEP/Attack_Prepare_REPAINT_v2_315x253.png",
+        "bytes": 106807,
+        "sha256": "e337921236b7b947f92bbb5d88824bc6729d6668a050a85fc2f519ff4df26212",
+        "crc32": "6b68659b",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Prepare_REPAINT_v2_315x253.png"
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Recover_REPAINT_v2_315x253.png",
+        "bytes": 104745,
+        "sha256": "2afc69e803334b1ededdadb39e786f297d8fe3d9918e72997943c9f1593c740e",
+        "crc32": "3bc8dcd5",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Recover_REPAINT_v2_315x253.png"
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Sting_REPAINT_v2_315x253.png",
+        "bytes": 91546,
+        "sha256": "391ed94e50ffc4ddcf3bc4442e9913e0b947cc9d5d9a57aaf865f46556e021ce",
+        "crc32": "21993ed4",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Sting_REPAINT_v2_315x253.png"
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Folded_238x215.png",
+        "bytes": 54400,
+        "sha256": "d17114176c13c2911cd533a0e7a363a1f4ae2ca110b540bcec5d63a2aa941605",
+        "crc32": "43ca2bd1",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\KEEP_Idle_Folded_238x215.png"
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Spread_238x215.png",
+        "bytes": 61573,
+        "sha256": "d35f4583c0fa119396a40a6637f48b36b677fe00327640c655d86bde3dd47820",
+        "crc32": "65e9a2c3",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\KEEP_Idle_Spread_238x215.png"
+      },
+      {
+        "path": "Bee/VenomBee_Attack_Target_Storyboard_TEST_ONLY.png",
+        "bytes": 291201,
+        "sha256": "d4ed4ba32de6b8656925f7b95afeb17ef7fcef7f7d1a2b72984a74b2d8723dc4",
+        "crc32": "449d3d0c",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1470,
+          660
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1470,
+          660
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "README_KO.md",
+        "bytes": 2220,
+        "sha256": "1dd219e359f5c91c27066923d839fbd3aa81be6a349e5afbe32cabe0e6437680",
+        "crc32": "f7a030d4",
+        "prior_identical": null
+      },
+      {
+        "path": "Manifest_standalone.json",
+        "bytes": 1314,
+        "sha256": "bd1c3ca525f64d8034bce393402b20ce01eead902554cba9400e0f7f36d385c3",
+        "crc32": "625dcec8",
+        "prior_identical": null
+      },
+      {
+        "path": "SHA256SUMS_standalone.txt",
+        "bytes": 777,
+        "sha256": "f2e706999cc25a10d33705d9e3f1befe8e8c779a547a76e1ae28b8cd91ecf344",
+        "crc32": "ec891861",
+        "prior_identical": null
+      }
+    ],
+    "manifest_file": "Manifest_standalone.json",
+    "manifest_checks": [
+      {
+        "path": "Bee/Source_KEEP/Attack_Prepare_REPAINT_v2_315x253.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Recover_REPAINT_v2_315x253.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Sting_REPAINT_v2_315x253.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Folded_238x215.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Spread_238x215.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Bee/VenomBee_Attack_Target_Storyboard_TEST_ONLY.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "sha_match": true,
+        "bytes_match": true
+      }
+    ],
+    "sums_file": "SHA256SUMS_standalone.txt",
+    "sums_checks": [
+      {
+        "path": "Bee/Source_KEEP/Attack_Prepare_REPAINT_v2_315x253.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Recover_REPAINT_v2_315x253.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/Attack_Sting_REPAINT_v2_315x253.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Folded_238x215.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Bee/Source_KEEP/KEEP_Idle_Spread_238x215.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Bee/VenomBee_Attack_Target_Storyboard_TEST_ONLY.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "exists": true,
+        "sha_match": true
+      }
+    ],
+    "manifest_scope": "all payload files except manifest and sums"
+  },
+  {
+    "key": "Spider",
+    "zip": "F:\\Downloads\\LIMITLESS_Spider_Idle8_Walk8.zip",
+    "bytes": 7953765,
+    "sha256": "d4c7c73a7c830f2e7884a664ec45759b673434ed5d70fcc49fc52458ea4524db",
+    "entries": 33,
+    "files": 33,
+    "uncompressed_bytes": 8015321,
+    "crc": "PASS",
+    "unsafe": [],
+    "duplicate_paths": 0,
+    "contents": [
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_10FPS_REVIEW.gif",
+        "bytes": 68923,
+        "sha256": "a03d3ebcc0a2ed1d2956a86ebcaf8487a14da0bcaed9534c070afa38d170b9a7",
+        "crc32": "dcde3a52",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "4a7bdfe28aacb09f8c9fac6e6b243e06909e88d3799cbdcc7718f0f73d8eefa7",
+          "add442ff4853188d9b009f26294ca5402efe32a8998e4d5be27ad3c65e9c96f1",
+          "7dbafaa0c73d2774d02ac04f96beb7cf5e51b2028e98a7a2b5b6e67e2e640b70",
+          "6fdd7112f3f8fae07ac09031fde962f08df0c3986437c323339a2b7449c99f69",
+          "a9ee51187a49e42a5591b790654b64e072bb4e7fa195a8730fbab542fa02ef3a",
+          "7a7e9732802392144a9517821d8445bae6d1defb17633fe696404f18405f3a3c",
+          "e07d8e96f68706fab5311035aef1e2ba6586de19784d10148a930795d866497d",
+          "9bf6743e3b665c6bd144f643164e85a09ff644d7211cf3e35d3143da85798377"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_8FPS_REVIEW.gif",
+        "bytes": 68923,
+        "sha256": "21f1b5dc8d538ab383ade168c02ffcc3ce511ccc29df5e8352af37ca128ad953",
+        "crc32": "509916d6",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 8,
+        "durations_ms": [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        "mean_fps": 8.333333333333334,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "4a7bdfe28aacb09f8c9fac6e6b243e06909e88d3799cbdcc7718f0f73d8eefa7",
+          "add442ff4853188d9b009f26294ca5402efe32a8998e4d5be27ad3c65e9c96f1",
+          "7dbafaa0c73d2774d02ac04f96beb7cf5e51b2028e98a7a2b5b6e67e2e640b70",
+          "6fdd7112f3f8fae07ac09031fde962f08df0c3986437c323339a2b7449c99f69",
+          "a9ee51187a49e42a5591b790654b64e072bb4e7fa195a8730fbab542fa02ef3a",
+          "7a7e9732802392144a9517821d8445bae6d1defb17633fe696404f18405f3a3c",
+          "e07d8e96f68706fab5311035aef1e2ba6586de19784d10148a930795d866497d",
+          "9bf6743e3b665c6bd144f643164e85a09ff644d7211cf3e35d3143da85798377"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_10FPS_REVIEW.gif",
+        "bytes": 13590,
+        "sha256": "a2768679f61d8a4372ea87782fe1b069b4190903e59bd461cdde7921790d13f2",
+        "crc32": "34b84b09",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "0f676d953b6cdfac2212776a53f7a76539ec21a7d0f295683bb483650bfa4780",
+          "6fb4193d7afe7f81b0a37f84b7074728f26d03fb5e2f7f8ca91fda34c1dc58ea",
+          "08fefc6dfcc2d75827e9140f7049389593097cf235bbdd768da3877a92c6c92c",
+          "42037f3fc6a9492afdd345d109637fc0bcf6160bea73034058fae4be46cd22ca",
+          "48e4170d8f0e058504279bc09387adc548a91a088b366f3ebda4bd3566631855",
+          "1bbd4c26771330d38ae5d11fcaa238d3e60dd08afa0f44fce578a2eac6bbdf1a",
+          "efadea57d80dd415d10e86533478179c2577303b7486b115755b45a2289155ab",
+          "35852d8c43f8a90c18e0d069008265b56d0ee10a14dbbda538a6830d2210fab1"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_8FPS_REVIEW.gif",
+        "bytes": 13590,
+        "sha256": "c866ad8188a5efbfb2f3fbaaebf88983be1b67df9a2d5990115425b0711c5a0a",
+        "crc32": "9bf561d1",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 8,
+        "durations_ms": [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        "mean_fps": 8.333333333333334,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "0f676d953b6cdfac2212776a53f7a76539ec21a7d0f295683bb483650bfa4780",
+          "6fb4193d7afe7f81b0a37f84b7074728f26d03fb5e2f7f8ca91fda34c1dc58ea",
+          "08fefc6dfcc2d75827e9140f7049389593097cf235bbdd768da3877a92c6c92c",
+          "42037f3fc6a9492afdd345d109637fc0bcf6160bea73034058fae4be46cd22ca",
+          "48e4170d8f0e058504279bc09387adc548a91a088b366f3ebda4bd3566631855",
+          "1bbd4c26771330d38ae5d11fcaa238d3e60dd08afa0f44fce578a2eac6bbdf1a",
+          "efadea57d80dd415d10e86533478179c2577303b7486b115755b45a2289155ab",
+          "35852d8c43f8a90c18e0d069008265b56d0ee10a14dbbda538a6830d2210fab1"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_10FPS_REVIEW.gif",
+        "bytes": 67699,
+        "sha256": "7b0389aadd33af933695a67acd4e442d779b3d8a67a6cfda4ce06fe63a63ce75",
+        "crc32": "38488a03",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "08690bd825d77aa67c0566b1b2268fd691e935646c3b678a25a60ee7a9e6dd1f",
+          "49536c4b60d717a56b4aa4dbf3d21f7b36ec3951cd471b95f15b0cec9ea98723",
+          "5fa7954def5edb6023b79399d2aeee37050075225e5ef8acd3d0daafaba209dd",
+          "42f71bfd01d1e4559e2537d4ceacdef38cfb5a12bf7d751718ca6ad322afa88e",
+          "267be3fdd2486dbf781459bccd99143ea16e24c3a530c952cb39ed112fa5af67",
+          "3ce1ac00cf627ad0a4a7a1cf1662de086632bfc72176e26e189bb382f39d071b",
+          "be9f6cac1528e8214f680ecac5c2a23858ef8d5933a6a2ad99f7ffe824a4400f",
+          "8b51e2eb1b7dbec9d7a7bea1120795d865fc97341754b1e8e3b651da93915777"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_8FPS_REVIEW.gif",
+        "bytes": 67699,
+        "sha256": "6ebdfa25d1f3eb88ed1c2f7ea4985de76f1cf0bd76ae74ad168b900871249a44",
+        "crc32": "ce369636",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          128,
+          128
+        ],
+        "frames": 8,
+        "durations_ms": [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        "mean_fps": 8.333333333333334,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "08690bd825d77aa67c0566b1b2268fd691e935646c3b678a25a60ee7a9e6dd1f",
+          "49536c4b60d717a56b4aa4dbf3d21f7b36ec3951cd471b95f15b0cec9ea98723",
+          "5fa7954def5edb6023b79399d2aeee37050075225e5ef8acd3d0daafaba209dd",
+          "42f71bfd01d1e4559e2537d4ceacdef38cfb5a12bf7d751718ca6ad322afa88e",
+          "267be3fdd2486dbf781459bccd99143ea16e24c3a530c952cb39ed112fa5af67",
+          "3ce1ac00cf627ad0a4a7a1cf1662de086632bfc72176e26e189bb382f39d071b",
+          "be9f6cac1528e8214f680ecac5c2a23858ef8d5933a6a2ad99f7ffe824a4400f",
+          "8b51e2eb1b7dbec9d7a7bea1120795d865fc97341754b1e8e3b651da93915777"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_10FPS_REVIEW.gif",
+        "bytes": 13485,
+        "sha256": "85b948ccee6b0be21173426f2b034422355a8732dc597575c99664963adbb438",
+        "crc32": "3d372d5c",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 8,
+        "durations_ms": [
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100,
+          100
+        ],
+        "mean_fps": 10.0,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "0332c7443cf01113890e581b818d416ceceb858b763611ff0e3ed2ab58e05462",
+          "85426cab26f580c2eb2f702e968234c714c743b2235091140e2077815842f403",
+          "4697cdc3e2e96187f2c8fe3e9518c65e84c069a86e4a5a41482b96130aace2f5",
+          "b1ea7282cefb41c10201d687f5c1d2259398d389ffcac466c13638a2f5d10c6c",
+          "5cd1d266ab19c7f6b4de8c3c30d14bf15aa53f0abbf7aed9ef94860a21415bd2",
+          "0ab858c71c6b0d8b46e7c27ad00beed731217f8aa4387e89c8b0d3f7252e401c",
+          "be00be35de2a3442f71cf7206c37b1d9c7927a39e62778483a04b2ac41cc6428",
+          "b36d219fd467c317c2363b4b0f0185506b9a5fbadc6cc2dd733c1ddd8b96aba4"
+        ]
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_8FPS_REVIEW.gif",
+        "bytes": 13485,
+        "sha256": "71ffde7c50c1cf8060490420738f55917e25e310cf61b7277bb4b1f284695393",
+        "crc32": "51339f35",
+        "prior_identical": null,
+        "format": "GIF",
+        "mode": "P",
+        "size": [
+          40,
+          40
+        ],
+        "frames": 8,
+        "durations_ms": [
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120,
+          120
+        ],
+        "mean_fps": 8.333333333333334,
+        "loop": 0,
+        "decoded_frame_sha": [
+          "0332c7443cf01113890e581b818d416ceceb858b763611ff0e3ed2ab58e05462",
+          "85426cab26f580c2eb2f702e968234c714c743b2235091140e2077815842f403",
+          "4697cdc3e2e96187f2c8fe3e9518c65e84c069a86e4a5a41482b96130aace2f5",
+          "b1ea7282cefb41c10201d687f5c1d2259398d389ffcac466c13638a2f5d10c6c",
+          "5cd1d266ab19c7f6b4de8c3c30d14bf15aa53f0abbf7aed9ef94860a21415bd2",
+          "0ab858c71c6b0d8b46e7c27ad00beed731217f8aa4387e89c8b0d3f7252e401c",
+          "be00be35de2a3442f71cf7206c37b1d9c7927a39e62778483a04b2ac41cc6428",
+          "b36d219fd467c317c2363b4b0f0185506b9a5fbadc6cc2dd733c1ddd8b96aba4"
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_00.png",
+        "bytes": 297879,
+        "sha256": "c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9",
+        "crc32": "03deedd9",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Spider\\Spider\\ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png"
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_01.png",
+        "bytes": 239207,
+        "sha256": "6980f07fd2efb9ab06bf152e4228a96cc4351d17445cf3b3ee957d3ccafec24c",
+        "crc32": "9e386d19",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          496,
+          411
+        ],
+        "alpha_zero": 177621,
+        "alpha_partial": 13053,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_02.png",
+        "bytes": 239012,
+        "sha256": "5d375d6a5a9941a9805a8a1d591c747b4e491081c9118fdc1393a9c03b285ec6",
+        "crc32": "bfd9a51d",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          495,
+          411
+        ],
+        "alpha_zero": 177710,
+        "alpha_partial": 13059,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_03.png",
+        "bytes": 239208,
+        "sha256": "d40c91a7d36e34602a10c86c61f7ab4e1e89efabb3909518b68e7060fbb23754",
+        "crc32": "a2720fa4",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          494,
+          411
+        ],
+        "alpha_zero": 177844,
+        "alpha_partial": 13200,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_04.png",
+        "bytes": 237857,
+        "sha256": "d9d2f25f1582e41646b3be28489ab8d5bac135bb0d5d8af659ac7013f2faed68",
+        "crc32": "dece0640",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          494,
+          411
+        ],
+        "alpha_zero": 177984,
+        "alpha_partial": 12840,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_05.png",
+        "bytes": 238610,
+        "sha256": "7d41fbe8e646d1906e81e46d4c1ec41b78346351b3adf913bc9ec73195a832e7",
+        "crc32": "0a3e2a31",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          102,
+          493,
+          411
+        ],
+        "alpha_zero": 177878,
+        "alpha_partial": 13098,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_06.png",
+        "bytes": 239001,
+        "sha256": "323f9a37c67b31edea1629393e4fe5b6f2ba364c1adc26acdac2ccfaa33e28eb",
+        "crc32": "f967a667",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          102,
+          494,
+          411
+        ],
+        "alpha_zero": 177780,
+        "alpha_partial": 13026,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_07.png",
+        "bytes": 239989,
+        "sha256": "e17609fe7c80e0686ea5dbb48d7351e25532441119d15e9af8646c0ba07c6962",
+        "crc32": "ada0b65e",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          102,
+          495,
+          411
+        ],
+        "alpha_zero": 177593,
+        "alpha_partial": 13087,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Idle_8_4x2_512_RGBA.png",
+        "bytes": 1611150,
+        "sha256": "6f72371914fba21ef9de7161d648fabbb5673e788d4d09a386c2b3bb4dffef74",
+        "crc32": "d9efc984",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          2048,
+          1024
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          2031,
+          923
+        ],
+        "alpha_zero": 1423540,
+        "alpha_partial": 100941,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Walk_8_4x2_512_RGBA.png",
+        "bytes": 1679808,
+        "sha256": "0ff9575215f3c358aa93e93753d20505afd4946b9fd5c237ba21519ee1316c62",
+        "crc32": "e3da9a11",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          2048,
+          1024
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          14,
+          102,
+          2031,
+          922
+        ],
+        "alpha_zero": 1432172,
+        "alpha_partial": 106057,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Source_KEEP/ForestSpider_v5_APPROVED_BYTE_KEEP.png",
+        "bytes": 297879,
+        "sha256": "c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9",
+        "crc32": "03deedd9",
+        "prior_identical": "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Spider\\Spider\\ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png"
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_00.png",
+        "bytes": 233734,
+        "sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+        "crc32": "34d510db",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          14,
+          102,
+          501,
+          409
+        ],
+        "alpha_zero": 178397,
+        "alpha_partial": 13348,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_01.png",
+        "bytes": 234998,
+        "sha256": "6fb3b65c716cfe55eaa5bbc29452e7e1704724965a37afa902ea77074a9b0d2a",
+        "crc32": "9b733198",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          16,
+          102,
+          503,
+          410
+        ],
+        "alpha_zero": 177975,
+        "alpha_partial": 13537,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_02.png",
+        "bytes": 233075,
+        "sha256": "85eb99c3c6ec445015d2070c792ac62cb49b5ad67dfe511b54fbe370ca6882ef",
+        "crc32": "3aae7fbc",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          18,
+          102,
+          501,
+          410
+        ],
+        "alpha_zero": 178570,
+        "alpha_partial": 13513,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_03.png",
+        "bytes": 230892,
+        "sha256": "6a4b6636d1e21a7f7a100bcd8ae3fc6954525c380f10179ccebcd399cb721586",
+        "crc32": "770de552",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          21,
+          102,
+          494,
+          409
+        ],
+        "alpha_zero": 179549,
+        "alpha_partial": 13283,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_04.png",
+        "bytes": 231330,
+        "sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+        "crc32": "e31edc74",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          17,
+          102,
+          488,
+          409
+        ],
+        "alpha_zero": 179605,
+        "alpha_partial": 13114,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_05.png",
+        "bytes": 231488,
+        "sha256": "4955cc56b1667769aeeaf14fe5230e0f985dd2374283584edd7292360c24f768",
+        "crc32": "70cdaad9",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          12,
+          102,
+          486,
+          410
+        ],
+        "alpha_zero": 179380,
+        "alpha_partial": 13028,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_06.png",
+        "bytes": 231284,
+        "sha256": "0ad5e1447e0fca32436bf4efff32940805b78b3a38a0430246953d55cd0a1f58",
+        "crc32": "e121912e",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          9,
+          102,
+          489,
+          410
+        ],
+        "alpha_zero": 179363,
+        "alpha_partial": 13106,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_07.png",
+        "bytes": 231268,
+        "sha256": "96cd74dfde3ffe2c1bce8973ab4d961bec6b8e57b2048fcb82d540b5b7edc782",
+        "crc32": "e3b714d4",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [
+          512,
+          512
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          10,
+          102,
+          495,
+          409
+        ],
+        "alpha_zero": 179333,
+        "alpha_partial": 13128,
+        "edge_alpha_max": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_128px_OFFLINE_Contact.png",
+        "bytes": 221287,
+        "sha256": "aa90fab8ac79c7b6ae41b84f07295f8ef3141bc7ce984fc813db2875ff3b8f94",
+        "crc32": "7a948904",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          1324,
+          486
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          1324,
+          486
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_40px_OFFLINE_Contact.png",
+        "bytes": 36626,
+        "sha256": "4e37c14827df0e5e5f795723a222dab5dae6d4683d2015f3a80308ed8d3e52d7",
+        "crc32": "d4852aac",
+        "prior_identical": null,
+        "format": "PNG",
+        "mode": "RGB",
+        "size": [
+          620,
+          310
+        ],
+        "frames": 1,
+        "alpha_bbox": [
+          0,
+          0,
+          620,
+          310
+        ],
+        "alpha_zero": 0,
+        "alpha_partial": 0,
+        "edge_alpha_max": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      {
+        "path": "Review/QA_Results.json",
+        "bytes": 1232,
+        "sha256": "30397f59532ec9ade4c635b870b2a785009ef3369b03f569c4992b03cd678695",
+        "crc32": "c8fafd77",
+        "prior_identical": null
+      },
+      {
+        "path": "README_KO.md",
+        "bytes": 2220,
+        "sha256": "1dd219e359f5c91c27066923d839fbd3aa81be6a349e5afbe32cabe0e6437680",
+        "crc32": "f7a030d4",
+        "prior_identical": null
+      },
+      {
+        "path": "Manifest_standalone.json",
+        "bytes": 5552,
+        "sha256": "95f7c4546cbf4d90c8de5d3dfa79ce3bc312b5eee1ba63b0295a642b4ce4b62e",
+        "crc32": "7d57d59a",
+        "prior_identical": null
+      },
+      {
+        "path": "SHA256SUMS_standalone.txt",
+        "bytes": 3341,
+        "sha256": "47b1448e611f9482fcea2c47774b9f152005726a1140896a84d5ec21e0144ada",
+        "crc32": "4f97c772",
+        "prior_identical": null
+      }
+    ],
+    "manifest_file": "Manifest_standalone.json",
+    "manifest_checks": [
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_10FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_8FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_10FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_8FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_10FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_8FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_10FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_8FPS_REVIEW.gif",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_00.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_01.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_02.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_03.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_04.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_05.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_06.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_07.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Idle_8_4x2_512_RGBA.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Walk_8_4x2_512_RGBA.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Source_KEEP/ForestSpider_v5_APPROVED_BYTE_KEEP.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_00.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_01.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_02.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_03.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_04.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_05.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_06.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_07.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_128px_OFFLINE_Contact.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_40px_OFFLINE_Contact.png",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "Review/QA_Results.json",
+        "sha_match": true,
+        "bytes_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "sha_match": true,
+        "bytes_match": true
+      }
+    ],
+    "sums_file": "SHA256SUMS_standalone.txt",
+    "sums_checks": [
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_10FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_128px_8FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_10FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Idle_40px_8FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_10FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_128px_8FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_10FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/GIF/ForestSpider_Walk_40px_8FPS_REVIEW.gif",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_00.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_01.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_02.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_03.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_04.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_05.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_06.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Idle/ForestSpider_Idle_07.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Idle_8_4x2_512_RGBA.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Sheets/ForestSpider_Walk_8_4x2_512_RGBA.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Source_KEEP/ForestSpider_v5_APPROVED_BYTE_KEEP.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_00.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_01.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_02.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_03.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_04.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_05.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_06.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Spider/Walk/ForestSpider_Walk_07.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_128px_OFFLINE_Contact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Review/Spider_Idle_Walk_40px_OFFLINE_Contact.png",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "Review/QA_Results.json",
+        "exists": true,
+        "sha_match": true
+      },
+      {
+        "path": "README_KO.md",
+        "exists": true,
+        "sha_match": true
+      }
+    ],
+    "manifest_scope": "all payload files except manifest and sums"
+  }
+]

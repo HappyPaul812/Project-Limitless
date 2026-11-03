@@ -1,0 +1,42 @@
+{
+  "png_total": 41,
+  "new_sha_png_decode": 34,
+  "prior_identical_png_qa_reused": 7,
+  "gif_decode": 9,
+  "owl_core_frame_edges": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "owl": "ANIM_REVISE_CONTINUE / DESIGN_CONTINUITY_HOLD / VFX_SCOPE_HOLD",
+  "bee": "TARGET_CONTRACT_HOLD / NEW_ATTACK_POSES_ZERO / FULL_COMBAT_READY_NO / RIGHTS_HOLD",
+  "spider": "MOTION_REVISE_CONTINUE / IDLE_BREATHING_CANDIDATE / WALK_CONTACT_HOLD / FPS_LABEL_REVISE",
+  "spider_sheet_idle00_difference": {
+    "rgba_pixels": 24661,
+    "alpha_pixels": 0,
+    "visible_pixels": 0,
+    "reason": "only RGB at alpha0 differs; visible render identical"
+  },
+  "all_9_gif_order_matches": true
+}

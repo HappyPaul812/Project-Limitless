@@ -1,0 +1,31 @@
+{
+  "zip_unchanged": true,
+  "compared_previous_reference_sha_unchanged": true,
+  "references": {
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Prepare_REPAINT_v2_315x253.png": "e337921236b7b947f92bbb5d88824bc6729d6668a050a85fc2f519ff4df26212",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Recover_REPAINT_v2_315x253.png": "2afc69e803334b1ededdadb39e786f297d8fe3d9918e72997943c9f1593c740e",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\Attack_Sting_REPAINT_v2_315x253.png": "391ed94e50ffc4ddcf3bc4442e9913e0b947cc9d5d9a57aaf865f46556e021ce",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\KEEP_Idle_Folded_238x215.png": "d17114176c13c2911cd533a0e7a363a1f4ae2ca110b540bcec5d63a2aa941605",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Bee\\Bee\\KEEP_Idle_Spread_238x215.png": "d35f4583c0fa119396a40a6637f48b36b677fe00327640c655d86bde3dd47820",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\Issue82StumpSpiderBee20261103\\Extracted\\Spider\\Spider\\ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png": "c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Attack\\FrostOwl_v3_Attack_00_512_RGBA.png": "74af1e685ff49f83e0f58afb0e2eb4e4fd5223bba6472e76fa7a750082b5a196",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Attack\\FrostOwl_v3_Attack_01_512_RGBA.png": "2588f8ebd1eb4e5b9a8b2c5b6ffb3dc21f4752dda7f6215f3e97fbe0ae6c29f0",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Attack\\FrostOwl_v3_Attack_02_512_RGBA.png": "6057b42ca0268b237e4930d8d2e1efbd93edddacf748700fc87e032e321d6064",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Attack\\FrostOwl_v3_Attack_03_512_RGBA.png": "7a5a680218f4063acfb572dc003c479557f3b5569bc8851086435278f4f02093",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_00_512_RGBA.png": "81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_01_512_RGBA.png": "3d3531e336a31420396f5ca8beaf16d7a9fcb759c7ffb33f096fa2f71987bc19",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_02_512_RGBA.png": "d9e64454812a95dcc05c16b8bb17daf6e28bb61f9a8eacd321a96ec67fc3f7e5",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_03_512_RGBA.png": "4977c96330eaa9927a2264ffeccb5ac508aece6a4088c48ab5d14cbeee270bd1",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_04_512_RGBA.png": "7ced3dd68726d31535042b9c036abb44214480b17682e4c7aa48810bb634946f",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_05_512_RGBA.png": "ec0c382bb5633b8f94311a38520e2410fc52dd605c8f882ec68408db693b17bb",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_06_512_RGBA.png": "aa4209aec15c9043ff686901f114eb58b48ec4e63b1e529877d75350698a0a20",
+    "F:\\study\\codex\\Project-Limitless\\Temp\\ArtDeltaSpiderOwlF2P220261029\\Extracted\\Owl\\Frames\\Idle\\FrostOwl_v3_Idle_07_512_RGBA.png": "0162ca5619763fd08231046b04e33baae30fe3218ed2edbbfa6f22696c559fea"
+  },
+  "original_main_head": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "original_status_default_count": 344,
+  "original_status_uall_count": 858,
+  "original_head_status_identical": true,
+  "original_status_sha256": "f2b1cdff225e9a0e46e9cb21c27d39daf7ccb2986e4611e6a6357396fd385e99",
+  "unity_executions": 0,
+  "personal_save_read_hash_copy_modify": 0
+}

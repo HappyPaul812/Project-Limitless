@@ -1,3 +1,11 @@
+## 2026-11-03 Codex 독립 실물 델타 검수 결과 (담당 제작 기록과 구분)
+
+Owl Attack4 새4SHA/40px 대비 개선은 확인했으나 ANIM_REVISE_CONTINUE / DESIGN_CONTINUITY_HOLD / VFX_SCOPE_HOLD입니다. 기존 Idle8/81a31cf3 정지원화 보호, 새 냉기궤적은 별도 시각판단 필요. 기존 clip-safe 재작업 불필요.
+
+[독립 통합 검수](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 세 ZIP 실물 무결성 확인, 바울 대표 최종 모션미술 승인 대기·Unity실행/본편적용0·기존QA반복0·Push/merge0. 이 기록은 아트 원본이나 담당 원격 문서를 덮어쓰지 않은 로컬 인계입니다.
+
+---
+
 ## 2026-11-03 바울 대표 승인 — F2 자연형 그루터기 v4 USER_APPROVED
 
 `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`를 이번 채팅 명시 승인으로 **USER_APPROVED / APPROVED_ART_CANDIDATE** 처리했습니다. 기존파일 SHA 재확인·바이트변경0. 예전 Stump v1/v2/v3·FULLREDRAW는 **SUPERSEDED / ARCHIVED_CANDIDATE**로 문서분류하고 삭제/이동하지 않습니다.

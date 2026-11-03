@@ -1,0 +1,93 @@
+{
+  "sequences": [
+    {
+      "title": "보존 Idle8 · 기존 승인 디자인",
+      "frames": 8,
+      "durations_ms": [
+        120,
+        130,
+        120,
+        130,
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "title": "기존 Attack4 · #74 HOLD",
+      "frames": 4,
+      "durations_ms": [
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "title": "이번 Attack4 · 준비→발동→후속→복귀",
+      "frames": 4,
+      "durations_ms": [
+        120,
+        130,
+        120,
+        130
+      ]
+    },
+    {
+      "title": "이전 #82 문제 포즈",
+      "frames": 3,
+      "durations_ms": [
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "title": "이번 Source_KEEP · 이전과 동일",
+      "frames": 3,
+      "durations_ms": [
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "title": "승인 v5 정지 원화",
+      "frames": 1,
+      "durations_ms": [
+        1000
+      ]
+    },
+    {
+      "title": "Idle8 · 호흡 파일럿",
+      "frames": 8,
+      "durations_ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    },
+    {
+      "title": "Walk8 · 다리·접지 검토",
+      "frames": 8,
+      "durations_ms": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ]
+    }
+  ],
+  "html_sha256": "d08aea841659a8840d04aa9ddcf03605e9b392971e999212b4748eea560b9e20",
+  "all_images_embedded": true
+}

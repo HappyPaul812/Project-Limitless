@@ -1,3 +1,13 @@
+## 2026-11-03 Main24 후속 아트3ZIP 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl5ba6ecff(3153329B/18), Bee450b78e4(709946B/9), Spiderd4c7c73a(7953765B/33) CRC·경로/중복PASS, SUMS17/7/31 전부 일치. Owl Manifest신규4+Idle참조8 확인, Bee7/Spider31 독립Manifest일치. 새PNG34/GIF9만 decode, 동일SHA PNG7 QA재사용.
+
+**Owl ANIM_REVISE_CONTINUE:** 새Attack4·40px 날개 대비 개선/클리핑0·8FPS정확, 승인v3 대비 얼굴·깃털/몸통·추가냉기궤적은 디자인/VFX_SCOPE_HOLD. Idle8/정지SHA보존. **Bee TARGET_CONTRACT_HOLD/RIGHTS_HOLD:** 기존Attack3/Idle2 byte exact, 새것은TEST_ONLY보드1장뿐/새StingRecover0. **Spider MOTION_REVISE_CONTINUE:** 승인v5/Idle00c600cd…KEEP·나머지15새PNG; Idle호흡후보, Walk8 독립관절/지지·스윙 가독성 보완. ‘8FPS’GIF4개 실제120ms=8.333FPS(명세와차이), 10FPS정확. Idle시트00 차이는alpha0 RGB만/가시동일.
+
+[단일 보고·근거](../../Art_OwlAttack4_BeeTarget_SpiderIdleWalk_Review_20261103.md). 비교판 `F:/study/codex/Project-Limitless/Temp/ArtOwlBeeSpiderReview20261103/Review/index.html` SHA `d08aea841659a8840d04aa9ddcf03605e9b392971e999212b4748eea560b9e20`, OFFLINE/Unity아님·실제 GIF순서9/9·브라우저37PASS. branch `codex/art-owl-bee-spider-review-20261103`, 출발24232ccd. 원본main/status344(상세858)·이전원본SHA·Save/UserData/Unity보호, Editor/기존모든QA재실행0·원본적용/Push/merge0. 다음은 Owl연속성/FX·SpiderWalk국소보완·Bee실표적/권리 계약, 미승인모션 양산/전투교체 금지.
+
+---
+
 ## 2026-11-03 Issue #83 — Main24 북문→F2→북문 실제 격리 왕복 PASS
 
 **MAIN24_F2_TRAVERSAL_ISOLATED_PASS / USER_PLAY_REVIEW_PENDING / NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED**. 기존 Main24 후보를 재사용해 `World_NorthF2_CANDIDATE` 안전길·관찰·북문 복귀 구현. 실제 Player/Collider 휠체어·도보·E/F/마우스·취소·반복출입·합성 SaveContinue·6번째 슬롯/화폐/마을거점·F1 연결 보호 **신규 Unity90 PASS + 정적23 PASS**. 기존81/저장85·72·72/Main23/그루터기21 재실행0.
