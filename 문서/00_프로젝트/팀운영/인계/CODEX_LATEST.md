@@ -1,3 +1,11 @@
+## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. ZIP2 CRC/SHA/Manifest/SUMS PASS(Owl17/19,Spider18/19),새PNG13decode·동일14QA재사용·GIF4순서/실시간확인. **Owl ATTACK02_CONTINUITY_OK_CANDIDATE:**02만126301px수정·00/01/03exactKEEP,03하단y345~511exact/01→02·02→03IoU개선·평균8FPS,미승인VFX재결합0. **Spider WALK8_EDGE_FIX_OK_CANDIDATE:**문제4장만8813/9413/10604/10446px수정·00/03/04/05KEEP,8장모든네변alpha>0접촉0·512/몸통보존·정확10FPS. 전체보행/실접지승인은별도대기.
+
+[정확SHA·통합보고](../../OwlAttack02_SpiderWalk8EdgeFix_ReadOnly_Review_20261103.md). OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html` SHA `26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`·브라우저34PASS. branch `codex/owl-spider-edge-review-20261103`,출발34f2ad88.원본main/status344(상세858)·28참조SHA/개인Save보호·Unity/기존QA·Bee재검수/원본적용/Push/merge0.
+
+---
+
 ## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. 두ZIP CRC/SHA/Manifest/SUMS PASS(Owl18/21,Spider16/17), 새PNG24decode·동일3QA재사용·GIF4확인. **Owl DESIGN_CONTINUITY_REVISE**: 얼굴복원/새VFX분리/03=Idle00exact 개선,00~02몸통/깃질감·02→03연속성 보완. 별도VFX_HOLD. **Spider WALK_CONTACT_REVISE**:00/04KEEP·6실변경·정확10FPS, 접지교대미흡과새01/02오른쪽·06/07왼쪽캔버스접촉(최대255/255/255/41)발견. 승인v5/Idle8보호. seamGIF는실1프레임250ms정지자료,8FPS모션증거아님.

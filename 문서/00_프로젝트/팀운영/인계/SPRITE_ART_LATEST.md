@@ -1,3 +1,11 @@
+## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
+
+**LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. **ATTACK02_CONTINUITY_OK_CANDIDATE**:00/01/03바이트보존·02만새6dcb1799…/126301px변경. y345~511은승인03exact,02→03몸통/꼬리·발/깃질감급전환감소.01→02IoU.4377→.6761,02→03.4415→.8654,40px대비유지·8FPS정확.움직이는주석GIF4단계확인,기존Idle8/분리VFX원형보호·본체재결합0.최종대표모션미술/Unity기술승인아님.
+
+[정확SHA·통합보고](../../OwlAttack02_SpiderWalk8EdgeFix_ReadOnly_Review_20261103.md). OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html` SHA `26aa98c601f8c19ba7916f9b5f1f627fc52483b5700dd3262bec4d9cf881565c`·브라우저34PASS. branch `codex/owl-spider-edge-review-20261103`,출발34f2ad88.원본main/status344(상세858)·28참조SHA/개인Save보호·Unity/기존QA·Bee재검수/원본적용/Push/merge0.
+
+---
+
 ## 2026-11-03 Owl Continuity + Spider Walk8 Fix 독립 읽기 검수
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. Owl 새Continuity의 얼굴중심복원/큰VFX분리/03=승인Idle00바이트동일을 확인. 하지만00~02몸통/깃털비례·02→03급전환이남아 **DESIGN_CONTINUITY_REVISE**. 본체4GIF 평균8FPS정확·시트RGBA일치/clip0, 별도seamGIF는동일프레임병합으로1프레임/250ms. 분리VFX는계속UNAPPROVED_HOLD. 정상Idle재제작불필요.

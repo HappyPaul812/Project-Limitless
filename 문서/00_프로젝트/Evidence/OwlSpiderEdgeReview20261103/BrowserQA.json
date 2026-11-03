@@ -1,0 +1,138 @@
+[
+  {
+    "name": "all embedded PNG/GIF decode",
+    "pass": true
+  },
+  {
+    "name": "OFFLINE and not Unity label",
+    "pass": true
+  },
+  {
+    "name": "three target sections",
+    "pass": true
+  },
+  {
+    "name": "no external images",
+    "pass": true
+  },
+  {
+    "name": "7 synchronized source sequences",
+    "pass": true
+  },
+  {
+    "name": "next frame 0",
+    "pass": true
+  },
+  {
+    "name": "previous frame 0",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 0",
+    "pass": true
+  },
+  {
+    "name": "next frame 1",
+    "pass": true
+  },
+  {
+    "name": "previous frame 1",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 1",
+    "pass": true
+  },
+  {
+    "name": "next frame 2",
+    "pass": true
+  },
+  {
+    "name": "previous frame 2",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 2",
+    "pass": true
+  },
+  {
+    "name": "next frame 3",
+    "pass": true
+  },
+  {
+    "name": "previous frame 3",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 3",
+    "pass": true
+  },
+  {
+    "name": "next frame 4",
+    "pass": true
+  },
+  {
+    "name": "previous frame 4",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 4",
+    "pass": true
+  },
+  {
+    "name": "next frame 5",
+    "pass": true
+  },
+  {
+    "name": "previous frame 5",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 5",
+    "pass": true
+  },
+  {
+    "name": "next frame 6",
+    "pass": true
+  },
+  {
+    "name": "previous frame 6",
+    "pass": true
+  },
+  {
+    "name": "128/40 native width 6",
+    "pass": true
+  },
+  {
+    "name": "background 0",
+    "pass": true
+  },
+  {
+    "name": "background 1",
+    "pass": true
+  },
+  {
+    "name": "background 2",
+    "pass": true
+  },
+  {
+    "name": "four-stage transition visible",
+    "pass": true
+  },
+  {
+    "name": "no horizontal overflow",
+    "pass": true
+  },
+  {
+    "name": "Owl actual timed sequence advances",
+    "pass": true
+  },
+  {
+    "name": "Spider actual timed sequence advances",
+    "pass": true
+  },
+  {
+    "name": "pause all works",
+    "pass": true
+  }
+]

@@ -1,0 +1,325 @@
+{
+  "frames": {
+    "Owl": [
+      {
+        "index": 0,
+        "name": "FrostOwl_v3_Attack_00_512_RGBA_CANDIDATE.png",
+        "old_sha256": "b6029c30bf76e8b3f32843184f812c7ca6254f07b79214eca4069cd42a8fe547",
+        "new_sha256": "b6029c30bf76e8b3f32843184f812c7ca6254f07b79214eca4069cd42a8fe547",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0
+      },
+      {
+        "index": 1,
+        "name": "FrostOwl_v3_Attack_01_512_RGBA_CANDIDATE.png",
+        "old_sha256": "a98aab1c6a14caae1ed255882e90ec7fc3f1bdfa28693409d307a1cc1fed7142",
+        "new_sha256": "a98aab1c6a14caae1ed255882e90ec7fc3f1bdfa28693409d307a1cc1fed7142",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0
+      },
+      {
+        "index": 2,
+        "name": "FrostOwl_v3_Attack_02_512_RGBA_CANDIDATE.png",
+        "old_sha256": "a7273d0d3c0b20d2a005b90f158906aa9760ef551dbba11aa3e80c5e692b9851",
+        "new_sha256": "6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936",
+        "same_bytes": false,
+        "changed_rgba_pixels": 126301,
+        "delta_bbox": [
+          21,
+          47,
+          490,
+          481
+        ],
+        "center_body_roi_128_100_400_270_exact": false,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0
+      },
+      {
+        "index": 3,
+        "name": "FrostOwl_v3_Attack_03_512_RGBA_CANDIDATE.png",
+        "old_sha256": "81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467",
+        "new_sha256": "81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0
+      }
+    ],
+    "Spider": [
+      {
+        "index": 0,
+        "name": "ForestSpider_Walk_00.png",
+        "old_sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+        "new_sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0,
+        "visible_delta_bbox": null,
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 0,
+        "alpha_decreased_pixels": 0
+      },
+      {
+        "index": 1,
+        "name": "ForestSpider_Walk_01.png",
+        "old_sha256": "4dbd78009d3d6f6ee6a1ae1c0811f7d8684568cc1191c82a538602081d8c0bf8",
+        "new_sha256": "550ad6615e5315ee2d4680bf2c885a03abd1b422a5d4fce5074a1ead971f0d64",
+        "same_bytes": false,
+        "changed_rgba_pixels": 8813,
+        "delta_bbox": [
+          16,
+          113,
+          512,
+          409
+        ],
+        "center_body_roi_128_100_400_270_exact": false,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 170,
+        "visible_delta_bbox": [
+          412,
+          166,
+          512,
+          379
+        ],
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 1434,
+        "alpha_decreased_pixels": 3493
+      },
+      {
+        "index": 2,
+        "name": "ForestSpider_Walk_02.png",
+        "old_sha256": "168369181f890acaebef2c9e898df105ae29133953b03dae1c0cb6b9b997748b",
+        "new_sha256": "c4935be601a362682711fec1824293b57f3215247daca4c62a85ae5b0cae3547",
+        "same_bytes": false,
+        "changed_rgba_pixels": 9413,
+        "delta_bbox": [
+          20,
+          101,
+          512,
+          409
+        ],
+        "center_body_roi_128_100_400_270_exact": false,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 220,
+        "visible_delta_bbox": [
+          412,
+          164,
+          512,
+          382
+        ],
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 1241,
+        "alpha_decreased_pixels": 3709
+      },
+      {
+        "index": 3,
+        "name": "ForestSpider_Walk_03.png",
+        "old_sha256": "64a7297d2e43cdde8376e2d99efef97b2468660e2d9d4c9fca2941e0469d83e9",
+        "new_sha256": "64a7297d2e43cdde8376e2d99efef97b2468660e2d9d4c9fca2941e0469d83e9",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 437,
+        "visible_delta_bbox": null,
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 0,
+        "alpha_decreased_pixels": 0
+      },
+      {
+        "index": 4,
+        "name": "ForestSpider_Walk_04.png",
+        "old_sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+        "new_sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 0,
+        "visible_delta_bbox": null,
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 0,
+        "alpha_decreased_pixels": 0
+      },
+      {
+        "index": 5,
+        "name": "ForestSpider_Walk_05.png",
+        "old_sha256": "435ed6e6451a60f42670010b64cf78099ce1170fb925a11cb3e22bcc967b3785",
+        "new_sha256": "435ed6e6451a60f42670010b64cf78099ce1170fb925a11cb3e22bcc967b3785",
+        "same_bytes": true,
+        "changed_rgba_pixels": 0,
+        "delta_bbox": null,
+        "center_body_roi_128_100_400_270_exact": true,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 385,
+        "visible_delta_bbox": null,
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 0,
+        "alpha_decreased_pixels": 0
+      },
+      {
+        "index": 6,
+        "name": "ForestSpider_Walk_06.png",
+        "old_sha256": "9ed5850db957e476888d04482f729af163bf06438622ae8be2d1cecfac942223",
+        "new_sha256": "29a0ae62f37f2044c8b3dcd206bc3456c2ee141484f79c5bfe224c35566edf49",
+        "same_bytes": false,
+        "changed_rgba_pixels": 10604,
+        "delta_bbox": [
+          0,
+          104,
+          489,
+          398
+        ],
+        "center_body_roi_128_100_400_270_exact": false,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 212,
+        "visible_delta_bbox": [
+          0,
+          143,
+          120,
+          394
+        ],
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 2048,
+        "alpha_decreased_pixels": 3453
+      },
+      {
+        "index": 7,
+        "name": "ForestSpider_Walk_07.png",
+        "old_sha256": "9155976e57b82bddbae21d218f8a42a5d931bd7502b89a812b265b6dccd09c20",
+        "new_sha256": "edf725d87aafafcb81d01f09b121bf1e20a71b4fbfd829dbd1b0b6a3abf1b189",
+        "same_bytes": false,
+        "changed_rgba_pixels": 10446,
+        "delta_bbox": [
+          0,
+          130,
+          494,
+          401
+        ],
+        "center_body_roi_128_100_400_270_exact": false,
+        "edge_max": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sheet_alpha_differences": 0,
+        "sheet_visible_differences": 0,
+        "sheet_rgba_difference": 221,
+        "visible_delta_bbox": [
+          0,
+          147,
+          120,
+          395
+        ],
+        "body_visible_roi_128_100_400_270_unchanged": true,
+        "alpha_increased_pixels": 2058,
+        "alpha_decreased_pixels": 3580
+      }
+    ]
+  },
+  "edges": {},
+  "owl_lower_y345_exact": true,
+  "owl_iou": {
+    "01_02": {
+      "before": 0.4376920347568755,
+      "after": 0.6760786981913024
+    },
+    "02_03": {
+      "before": 0.4415148900092353,
+      "after": 0.8654255319148936
+    }
+  }
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "index": 0,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 1,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      26
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 2,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      30
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 3,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 4,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 5,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 6,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      58,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "index": 7,
+    "previous_alpha_contacts_all_edges": [
+      0,
+      0,
+      26,
+      0
+    ],
+    "new_alpha_contacts_all_edges": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]
