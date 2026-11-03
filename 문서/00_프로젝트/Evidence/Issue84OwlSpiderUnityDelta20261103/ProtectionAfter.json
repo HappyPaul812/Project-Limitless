@@ -1,0 +1,16 @@
+{
+  "main_head": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "default_status_count": 344,
+  "detailed_status_count": 858,
+  "head_status_unchanged": true,
+  "status_sha256": "f2b1cdff225e9a0e46e9cb21c27d39daf7ccb2986e4611e6a6357396fd385e99",
+  "reference_count": 28,
+  "reference_sha_unchanged": true,
+  "zip_sha_unchanged": true,
+  "fixture_png_after_import_sha_matches": true,
+  "private_save_access": 0,
+  "original_unity_modified": false,
+  "game_qa_repeated": false,
+  "bee_reviewed": false,
+  "fixture_approved_reference_png_after_import_matches": true
+}

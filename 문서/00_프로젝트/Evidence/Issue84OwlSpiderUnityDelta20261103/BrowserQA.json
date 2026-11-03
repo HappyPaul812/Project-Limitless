@@ -1,0 +1,94 @@
+[
+  {
+    "name": "actual Unity evidence label",
+    "pass": true
+  },
+  {
+    "name": "ground not verified visible",
+    "pass": true
+  },
+  {
+    "name": "all images decode",
+    "pass": true
+  },
+  {
+    "name": "all media embedded",
+    "pass": true
+  },
+  {
+    "name": "4 actual Unity videos",
+    "pass": true
+  },
+  {
+    "name": "video metadata 0",
+    "pass": true
+  },
+  {
+    "name": "MP4 codec 0",
+    "pass": true
+  },
+  {
+    "name": "video metadata 1",
+    "pass": true
+  },
+  {
+    "name": "MP4 codec 1",
+    "pass": true
+  },
+  {
+    "name": "video metadata 2",
+    "pass": true
+  },
+  {
+    "name": "MP4 codec 2",
+    "pass": true
+  },
+  {
+    "name": "video metadata 3",
+    "pass": true
+  },
+  {
+    "name": "MP4 codec 3",
+    "pass": true
+  },
+  {
+    "name": "two actual native sequences",
+    "pass": true
+  },
+  {
+    "name": "next 0",
+    "pass": true
+  },
+  {
+    "name": "prev 0",
+    "pass": true
+  },
+  {
+    "name": "native image widths 0",
+    "pass": true
+  },
+  {
+    "name": "next 1",
+    "pass": true
+  },
+  {
+    "name": "prev 1",
+    "pass": true
+  },
+  {
+    "name": "native image widths 1",
+    "pass": true
+  },
+  {
+    "name": "no horizontal overflow",
+    "pass": true
+  },
+  {
+    "name": "native timer0",
+    "pass": true
+  },
+  {
+    "name": "native timer1",
+    "pass": true
+  }
+]

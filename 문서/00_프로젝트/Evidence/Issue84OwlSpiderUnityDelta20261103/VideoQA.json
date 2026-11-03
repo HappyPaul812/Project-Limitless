@@ -1,0 +1,70 @@
+[
+  {
+    "file": "OwlStage.mp4",
+    "decode_pass": true,
+    "spec": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "20/1",
+          "duration": "1.500000",
+          "nb_frames": "30"
+        }
+      ]
+    }
+  },
+  {
+    "file": "SpiderStage0.mp4",
+    "decode_pass": true,
+    "spec": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "20/1",
+          "duration": "1.600000",
+          "nb_frames": "32"
+        }
+      ]
+    }
+  },
+  {
+    "file": "SpiderStage1.mp4",
+    "decode_pass": true,
+    "spec": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "20/1",
+          "duration": "1.600000",
+          "nb_frames": "32"
+        }
+      ]
+    }
+  },
+  {
+    "file": "SpiderStage2.mp4",
+    "decode_pass": true,
+    "spec": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 640,
+          "height": 360,
+          "r_frame_rate": "20/1",
+          "duration": "1.600000",
+          "nb_frames": "32"
+        }
+      ]
+    }
+  }
+]

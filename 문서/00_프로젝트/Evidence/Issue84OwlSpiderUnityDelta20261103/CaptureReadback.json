@@ -1,0 +1,2008 @@
+{
+  "unity_samples": 504,
+  "checks_pass": 37,
+  "checks_fail": 0,
+  "owl_states_in_order": [
+    [
+      "Attack",
+      0
+    ],
+    [
+      "Attack",
+      1
+    ],
+    [
+      "Attack",
+      2
+    ],
+    [
+      "Attack",
+      3
+    ],
+    [
+      "Idle",
+      4
+    ],
+    [
+      "Attack",
+      0
+    ],
+    [
+      "Attack",
+      1
+    ],
+    [
+      "Attack",
+      2
+    ],
+    [
+      "Attack",
+      3
+    ],
+    [
+      "Idle",
+      4
+    ]
+  ],
+  "spider_speeds": {
+    "0": {
+      "samples": 128,
+      "position_start": -1.0,
+      "position_end": -1.0,
+      "loop_advance_WU": 0.0,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_frame_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "loop_order_verified": true
+    },
+    "0.65": {
+      "samples": 128,
+      "position_start": -1.0,
+      "position_end": 0.03187497705221176,
+      "loop_advance_WU": 0.52,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_frame_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "loop_order_verified": true
+    },
+    "1.3": {
+      "samples": 128,
+      "position_start": -1.0,
+      "position_end": 1.06374990940094,
+      "loop_advance_WU": 1.04,
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "actual_frame_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0
+      ],
+      "loop_order_verified": true
+    }
+  },
+  "native_pixel_readback": {
+    "40": {
+      "files": 61,
+      "capture_margin_pixels_per_side": 2,
+      "canvas_projection_pixels": 40,
+      "outer_capture_alpha_contacts": 0,
+      "visible": [
+        {
+          "file": "Owl_Cycle0_Step000_Owl_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            7,
+            40,
+            37
+          ],
+          "visible_width": 36,
+          "visible_height": 30
+        },
+        {
+          "file": "Owl_Cycle0_Step010_Owl_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            40,
+            40
+          ],
+          "visible_width": 36,
+          "visible_height": 36
+        },
+        {
+          "file": "Owl_Cycle0_Step020_Owl_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            6,
+            7,
+            40,
+            39
+          ],
+          "visible_width": 34,
+          "visible_height": 32
+        },
+        {
+          "file": "Owl_Cycle0_Step031_Owl_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            41,
+            39
+          ],
+          "visible_width": 37,
+          "visible_height": 35
+        },
+        {
+          "file": "Owl_Cycle0_Step041_Idle00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            41,
+            39
+          ],
+          "visible_width": 37,
+          "visible_height": 35
+        },
+        {
+          "file": "Owl_Cycle1_Step000_Owl_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            7,
+            40,
+            37
+          ],
+          "visible_width": 36,
+          "visible_height": 30
+        },
+        {
+          "file": "Owl_Cycle1_Step009_Owl_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            40,
+            40
+          ],
+          "visible_width": 36,
+          "visible_height": 36
+        },
+        {
+          "file": "Owl_Cycle1_Step019_Owl_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            6,
+            7,
+            40,
+            39
+          ],
+          "visible_width": 34,
+          "visible_height": 32
+        },
+        {
+          "file": "Owl_Cycle1_Step030_Owl_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            41,
+            39
+          ],
+          "visible_width": 37,
+          "visible_height": 35
+        },
+        {
+          "file": "Owl_Cycle1_Step040_Idle00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            4,
+            41,
+            39
+          ],
+          "visible_width": 37,
+          "visible_height": 35
+        },
+        {
+          "file": "Spider_Speed0_Step000_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step007_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step015_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step023_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step031_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step039_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step047_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed0_Step055_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step063_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step071_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step079_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step087_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step095_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step103_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step111_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed0_Step119_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed0_Step127_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step000_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step007_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step015_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step023_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step031_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step039_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step047_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed1_Step055_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step063_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step071_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step079_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step087_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step095_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step103_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step111_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed1_Step119_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed1_Step127_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step000_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step007_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step015_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step023_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step031_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step039_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step047_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed2_Step055_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step063_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step071_Spider_01.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step079_Spider_02.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step087_Spider_03.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            42,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step095_Spider_04.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step103_Spider_05.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            2,
+            10,
+            40,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step111_Spider_06.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            40,
+            33
+          ],
+          "visible_width": 36,
+          "visible_height": 23
+        },
+        {
+          "file": "Spider_Speed2_Step119_Spider_07.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            4,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 37,
+          "visible_height": 24
+        },
+        {
+          "file": "Spider_Speed2_Step127_Spider_00.png",
+          "render_size": [
+            44,
+            44
+          ],
+          "visible_bbox": [
+            3,
+            10,
+            41,
+            34
+          ],
+          "visible_width": 38,
+          "visible_height": 24
+        }
+      ]
+    },
+    "128": {
+      "files": 61,
+      "capture_margin_pixels_per_side": 2,
+      "canvas_projection_pixels": 128,
+      "outer_capture_alpha_contacts": 0,
+      "visible": [
+        {
+          "file": "Owl_Cycle0_Step000_Owl_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            18,
+            125,
+            115
+          ],
+          "visible_width": 118,
+          "visible_height": 97
+        },
+        {
+          "file": "Owl_Cycle0_Step010_Owl_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            125,
+            125
+          ],
+          "visible_width": 118,
+          "visible_height": 118
+        },
+        {
+          "file": "Owl_Cycle0_Step020_Owl_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            13,
+            14,
+            122,
+            122
+          ],
+          "visible_width": 109,
+          "visible_height": 108
+        },
+        {
+          "file": "Owl_Cycle0_Step031_Owl_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            127,
+            122
+          ],
+          "visible_width": 120,
+          "visible_height": 115
+        },
+        {
+          "file": "Owl_Cycle0_Step041_Idle00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            127,
+            122
+          ],
+          "visible_width": 120,
+          "visible_height": 115
+        },
+        {
+          "file": "Owl_Cycle1_Step000_Owl_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            18,
+            125,
+            115
+          ],
+          "visible_width": 118,
+          "visible_height": 97
+        },
+        {
+          "file": "Owl_Cycle1_Step009_Owl_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            125,
+            125
+          ],
+          "visible_width": 118,
+          "visible_height": 118
+        },
+        {
+          "file": "Owl_Cycle1_Step019_Owl_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            13,
+            14,
+            122,
+            122
+          ],
+          "visible_width": 109,
+          "visible_height": 108
+        },
+        {
+          "file": "Owl_Cycle1_Step030_Owl_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            127,
+            122
+          ],
+          "visible_width": 120,
+          "visible_height": 115
+        },
+        {
+          "file": "Owl_Cycle1_Step040_Idle00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            7,
+            127,
+            122
+          ],
+          "visible_width": 120,
+          "visible_height": 115
+        },
+        {
+          "file": "Spider_Speed0_Step000_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step007_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed0_Step015_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed0_Step023_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed0_Step031_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step039_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step047_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed0_Step055_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step063_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step071_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed0_Step079_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed0_Step087_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed0_Step095_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step103_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step111_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed0_Step119_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed0_Step127_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step000_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step007_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed1_Step015_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed1_Step023_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed1_Step031_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step039_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step047_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed1_Step055_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step063_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step071_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed1_Step079_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed1_Step087_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed1_Step095_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step103_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step111_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed1_Step119_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed1_Step127_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step000_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step007_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed2_Step015_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed2_Step023_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed2_Step031_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step039_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step047_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed2_Step055_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step063_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step071_Spider_01.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            27,
+            126,
+            105
+          ],
+          "visible_width": 120,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed2_Step079_Spider_02.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            125,
+            105
+          ],
+          "visible_width": 118,
+          "visible_height": 78
+        },
+        {
+          "file": "Spider_Speed2_Step087_Spider_03.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            130,
+            104
+          ],
+          "visible_width": 123,
+          "visible_height": 77
+        },
+        {
+          "file": "Spider_Speed2_Step095_Spider_04.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            6,
+            28,
+            124,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step103_Spider_05.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            3,
+            28,
+            122,
+            104
+          ],
+          "visible_width": 119,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step111_Spider_06.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            27,
+            124,
+            102
+          ],
+          "visible_width": 117,
+          "visible_height": 75
+        },
+        {
+          "file": "Spider_Speed2_Step119_Spider_07.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            7,
+            28,
+            125,
+            104
+          ],
+          "visible_width": 118,
+          "visible_height": 76
+        },
+        {
+          "file": "Spider_Speed2_Step127_Spider_00.png",
+          "render_size": [
+            132,
+            132
+          ],
+          "visible_bbox": [
+            5,
+            28,
+            127,
+            104
+          ],
+          "visible_width": 122,
+          "visible_height": 76
+        }
+      ]
+    }
+  },
+  "ground_lock": "NOT_VERIFIED",
+  "foot_collider_or_rig": "NOT_PRESENT",
+  "clips": "REAL_PLAYMODE_ANIMATOR"
+}

@@ -1,0 +1,44 @@
+{
+  "html_sha256": "41e8e303062a29c753a55f2702940038b9b469e884e4f9e2f7570ecea9566173",
+  "sequences": [
+    {
+      "frame_names": [
+        "Owl_Cycle0_Step000_Owl_00.png",
+        "Owl_Cycle0_Step010_Owl_01.png",
+        "Owl_Cycle0_Step020_Owl_02.png",
+        "Owl_Cycle0_Step031_Owl_03.png",
+        "Owl_Cycle0_Step041_Idle00.png"
+      ],
+      "captured_durations_ms": [
+        125.0,
+        125.0,
+        137.5,
+        125.0,
+        237.5
+      ]
+    },
+    {
+      "frame_names": [
+        "Spider_Speed1_Step000_Spider_00.png",
+        "Spider_Speed1_Step007_Spider_01.png",
+        "Spider_Speed1_Step015_Spider_02.png",
+        "Spider_Speed1_Step023_Spider_03.png",
+        "Spider_Speed1_Step031_Spider_04.png",
+        "Spider_Speed1_Step039_Spider_05.png",
+        "Spider_Speed1_Step047_Spider_06.png",
+        "Spider_Speed1_Step055_Spider_07.png"
+      ],
+      "captured_durations_ms": [
+        87.5,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        100.0,
+        112.5
+      ]
+    }
+  ],
+  "actual_unity_videos": 4
+}

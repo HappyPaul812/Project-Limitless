@@ -1,3 +1,9 @@
+## 2026-11-03 Issue #84 애니메이션 기술 Delta — 본편 미적용
+
+Owl Attack4(8FPS/.5초/PPU512/Scale1)와Spider Walk8(10FPS/.8초/PPU256/Scale.7)을독립Unity6000.6.5f1 실제PlayMode Animator로검증 **신규37PASS/FAIL0**. 실제40/128px·순서/전환/루프/경계·속도0/.65/1.3 비교통과. Spider발별접촉계측은없어 **ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD**,대표최종모션미술승인대기. 원본Unity/Save/기존QA·Bee재검수/Push·merge0. 다음은실캡처시각검토·필요한발지지기준/최소접지계측이며본편적용은별도승인. [실영상·설정·오류/보호](Issue84_OwlAttack4_SpiderWalk8_UnityAnimationDelta_20261103.md). branch `codex/owl-spider-unity-animation-delta-20261103`·출발3d61b491(실제검증커밋은CODEX_LATEST후속영수증참조).
+
+---
+
 ## 2026-11-03 Main24 F2 첫 왕복 — 격리 구현 완료
 
 북문→첫눈의 숲 짧은 임시 환경→관찰→마을 복귀를 실제 Player/Collider로 연결했습니다. 승인 그루터기1PNG PPU128/Pivot(.5,11/384)/Scale1 배치·줄기충돌/우회·앞뒤Sorting, 도보/휠체어·3비율 Unity RT·가상E/F/마우스·합성 이어하기·6번째 스킬/화폐/거점 보존 **신규90PASS + 정적23PASS**. 기존 전수QA 반복0. 기존 Main24 네 목표ID 보존, Main24는 마지막 대기 목표에서 Active/완료·보상0.

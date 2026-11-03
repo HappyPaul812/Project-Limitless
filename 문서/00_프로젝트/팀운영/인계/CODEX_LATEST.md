@@ -1,3 +1,11 @@
+## 2026-11-03 Issue #84 실제 Unity AnimationClip Delta
+
+**OWL_CLIP_DELTA_PASS / SPIDER_WALK_CLIP_DELTA_PASS / ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD / USER_FINAL_ART_REVIEW_PENDING / NOT_ORIGINAL_APPLIED / REMOTE_PUSH_NO**. 독립Unity6000.6.5f1 PlayMode/실제Animator·Clip으로신규37PASS/FAIL0. Owl8FPS/.5초/PPU512/중앙/Scale1→Idle00두회,Spider10FPS/.8초loop/PPU256/Scale.7/우향·0/.65/1.3WU/s각두loop·40/128투영확인. 실시간504샘플·RT122장외곽alpha0,실영상4개/126프레임. 발별rig/Collider·접촉계측없어실접지/미끄러짐은NOT_VERIFIED,전체보행승인아님.
+
+기존ZIP2SHA동일로파일품질QA재사용·기존게임전수QA/Bee재검수0. 새Runtime오류0/compile0,기존Editor.Search예외1환경로그분리. 초기생성기끝키길이오류수정/초기기록보존. [상세·설정·실영상](../../Issue84_OwlAttack4_SpiderWalk8_UnityAnimationDelta_20261103.md). 증거판 `F:/study/codex/Project-Limitless/Temp/Issue84OwlSpiderUnityDelta20261103/Review/index.html` SHA `41e8e303062a29c753a55f2702940038b9b469e884e4f9e2f7570ecea9566173`(OFFLINE열람/내용은실UnityRT/OSGameView아님),브라우저23PASS. branch `codex/owl-spider-unity-animation-delta-20261103`,출발3d61b491. Tools검증코드2+문서/근거만로컬commit,원본main/status344(상세858)·참조28SHA/Save보호·원본적용/Push/merge0.
+
+---
+
 ## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. ZIP2 CRC/SHA/Manifest/SUMS PASS(Owl17/19,Spider18/19),새PNG13decode·동일14QA재사용·GIF4순서/실시간확인. **Owl ATTACK02_CONTINUITY_OK_CANDIDATE:**02만126301px수정·00/01/03exactKEEP,03하단y345~511exact/01→02·02→03IoU개선·평균8FPS,미승인VFX재결합0. **Spider WALK8_EDGE_FIX_OK_CANDIDATE:**문제4장만8813/9413/10604/10446px수정·00/03/04/05KEEP,8장모든네변alpha>0접촉0·512/몸통보존·정확10FPS. 전체보행/실접지승인은별도대기.
