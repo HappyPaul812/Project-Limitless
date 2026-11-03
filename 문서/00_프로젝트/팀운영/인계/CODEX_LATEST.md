@@ -1,5 +1,7 @@
 ## 2026-11-03 Issue #86 안전 통합·로컬 동기화
 
+실제 QA/보고 커밋 `11e6c746166ecc967ae78a01b31617ab49251968`. [원본 반영·Issue #86 영수증](../../Evidence/LocalSync86_20261103/Receipt.md).
+
 **STAGING_INTEGRATION_PASS / APPROVED_FILES_LOCAL_SYNC_DONE / ORIGINAL_LOCAL_SYNC_HOLD(F2 BuildSettings) / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO**. 실제Unity44PASS/0FAIL·신규GUID/Quest중복0 후 원본main ab47b931→ac12abb0645f06fe84d4ae246b584a19d29ebba5 ff-only. 버전파일바이트유지하면서정확6.5/3ff58d469c8a Git기록반영. 승인코드80/83/85·Owl/Stump·Spider9참조통합,46/73중복0. 사용자847파일/기존148refs보존·개인Save열람0·원본status858→857(버전정리1). 원본F2등록은보류:25Scene/app-ui보존·26Scene은QA제안만, 원본전체플레이동기화완료아님.
 
 [통합보고·HOLD·백업](../../LOCAL_SYNC_REPORT_20261103.md). branch codex/local-sync-approved-20261103 / 제품ac12abb0. OFFLINE실제RT열람판 F:/study/codex/Project-Limitless/Temp/LocalSync20261103/Review/index.html. Bee v3 ART_OK_CANDIDATE/타이밍153·F2환경68·Writer70/77/78/미완몬스터·구매후속은기존branch보존/활성화0·Push0. 다음F2등록범위검토,44/기존QA전수반복금지.

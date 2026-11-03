@@ -1,5 +1,7 @@
 ## 2026-11-03 Issue #86 — 승인 파일 로컬 동기화 / F2 BuildSettings HOLD
 
+관련 QA/보고 커밋 `11e6c746166ecc967ae78a01b31617ab49251968`. [실제 원본 반영·GitHub 보고 영수증](Evidence/LocalSync86_20261103/Receipt.md).
+
 STAGING_INTEGRATION_PASS / APPROVED_FILES_LOCAL_SYNC_DONE / ORIGINAL_LOCAL_SYNC_HOLD(F2등록) / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO. 신규통합Unity44PASS/0FAIL 후 원본main ab47b931→제품ac12abb0645f06fe84d4ae246b584a19d29ebba5 실제ff-only. #46/#73중복0·#80/#83/#85기능/승인Owl·Stump·Spider참조9 통합. 버전HEAD·실파일6000.6.5f1/3ff58d469c8a 정확일치. 사용자847파일바이트보존·개인Save접근0·status858→857은승인버전1개정리뿐. 공식BuildSettings25Scene/app-ui그대로, F2등록26Scene은QA복제본에만: 원본북문→F2완료아님.
 
 Bee/환경재사용68/Writer복구·몬스터기획HOLD보존. 다음은F2후보Scene공식등록한항목검토이며 미승인기능자동활성화0. [전체보고·백업·QA](LOCAL_SYNC_REPORT_20261103.md). 후속문서HEAD/Issue보고는영수증참조.
