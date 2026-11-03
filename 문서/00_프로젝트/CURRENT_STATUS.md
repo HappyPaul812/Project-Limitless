@@ -6,6 +6,8 @@ spider.zip SHA7f4622af…/13항목, bee.zip SHAa396a2be…/20항목 CRC/경로PA
 
 단일결과판 `F:/study/codex/Project-Limitless/Temp/Issue82StumpSpiderBee20261103/Review/index.html` SHA `730c8481819d6dcbefdb3b6f772e3f6914d7f37358169f85b11414ba1de4a748`. OFFLINE비교와실제UnityCamera캡처7장구분·브라우저14PASS. [상세보고](Issue82_Stump_UnityDelta_SpiderV5_BeeAttack3_20261103.md). branch `codex/issue82-stump-spider-bee-delta-20261103`·문서3+격리QA스크립트1만로컬commit. 원본main/status344·Main24fd869f60/81·14PASS보존·Save/Unity원본/Discord/포커스/기존전수QA0. **STUMP_USER_APPROVED / STUMP_ISOLATED_UNITY_PASS / SPIDER_ALPHA_CANDIDATE / BEE_MOTION_HOLD / NOT_ORIGINAL_APPLIED / REMOTE_PUSH_NO**.
 
+실제 검증/보고 commit `b50ce140cf155900829bd167aefb6225f806fa9a`. GitHub [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6593303847) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593304719) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6593305654) · [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6593306460) 결과 댓글 등록 성공. 원격에는 댓글만 게시했고 파일Push/원본적용0. 이 후속 commit은 문서 영수증만 기록합니다.
+
 ---
 
 ## 2026-11-03 Issue #80 — Main24 비결제 첫 플레이 격리 PASS / 본게임 미적용

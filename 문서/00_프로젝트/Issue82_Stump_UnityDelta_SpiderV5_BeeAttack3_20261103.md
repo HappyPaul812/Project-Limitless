@@ -92,3 +92,7 @@ HTML SHA256: `730c8481819d6dcbefdb3b6f772e3f6914d7f37358169f85b11414ba1de4a748`.
 근거: `Audit.json`, `InputSHA256.json`, `GIFOrder.json`, `ProtectionAfter.json`, `UnityCaptureSHA256.json`, `QA/UnityEvidence/checks.txt/spec.txt/status.txt`, `Review/BrowserQA.json`. 원시 Unity로그는 라이선스정보/로컬경로가 있어 로컬에만 보존합니다.
 
 다음: 승인그루터기는 실제F2 Scene/길이 준비된 뒤1PNG 배치·시야·통행만별도검증/적용, Spider는v5최종알파미술승인 후다음제작범위결정, Bee는실제표적/공격축계약과회수연결보완·권리충돌해결이먼저입니다. 이번 결과를32/20프레임양산/게임교체/새F2구현승인으로확대하지 않습니다.
+
+## GitHub 보고 영수증
+
+실제 검증/보고 commit `b50ce140cf155900829bd167aefb6225f806fa9a`. GitHub [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) · [#75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6593303847) · [#60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593304719) · [#63](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6593305654) · [#81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6593306460) 결과 댓글 등록 성공. 원격에는 댓글만 게시했고 파일Push/원본적용0. 이 후속 commit은 문서 영수증만 기록합니다.
