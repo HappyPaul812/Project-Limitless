@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 정오 — Owl/Bee/Spider 3ZIP 최종 읽기전용 검수·다음 대상 제한
+
+- [#74 Codex 실물 3ZIP 결과](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265): ZIP3 CRC·각 Manifest/SUMS 확인 PASS, 새 PNG34만 decode, 7 SHA 같은 이전 자료 QA 재활용, GIF9. 로컬 branch `codex/art-owl-bee-spider-review-20261103` SHA `acf2031029741185d17190562a5ec0070d5d773b`; 본편/원본Unity/Save/UserData/Main24#83 90PASS/main/Push 변경0. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtOwlBeeSpiderReview20261103/Review/index.html`(Unity/GameView 아님).
+- Owl Attack4 실제 새4 프레임·40px 준비→발동 대비 개선하지만 승인 v3 얼굴/머리깃·깃털/몸통/꼬리 디자인 연속성과 03→Idle00 복귀 부족, Attack01 독립 냉기 궤적·입자 VFX 범위 혼합. **메인아트** 공격 4 프레임 내 문제부위만 국소수정/별도 FX 분리. Idle8·승인 v3 동결. [#74 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594916733). 사용자 모션 승인 대기.
+- Spider **기승인 v5 원화** 및 Idle00 원본 SHA 보존; Idle7+Walk8 신규15, 합계 Idle8+Walk8 **16장 누락0**. Idle8 호흡은 후보 KEEP, Walk8은 독립 다리 지지·스윙/접지미끄러짐·40px 보행가독성 미달. 기존 Runtime ForestSpider Idle/Walk **10FPS**, 제출 8FPS preview 일부는 실8.333FPS(120ms×8), **제품계약 변경 금지**. 리뉴얼아트는 Walk8 문제프레임만 재작화·10FPS 실제 GIF/발접지 phase 비교. 새 Attack8/Shoot8 보류. [#60 지시](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6594918071).
+- Bee TargetReview는 SHA 동일 Attack3+Idle2 5장 **새 포즈0**, TEST_ONLY 우측 표적 보드1장만 새 제작. 공격 대상 Slot/좌표·실 접점과 회수 동작이 미정이라 **기획/코덱스 최소 읽기전용 표적 계약 전 포즈 추가 지시 금지**. CC BY3.0/4.0 권리 충돌 HOLD, 20프레임 교체 금지. [#63 후속 기획판정](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6594918952).
+- #83 Main24 첫 F2 왕복 **격리 Unity90PASS/정적23 PASS** 보존; 원본 로컬 main에는 아직 미적용. F2 첫 한기전·무료대응·실판매 상품25/가격·Main24 완료/보상 및 Main25 해금 별도 결정. Owl/Spider/Bee 미승인 모션 본편 등록0. 기획담당은 다음 메인/리뉴얼 아트 지시문만 공급; Github 문서/이슈 등록=아트제작 완료가 아님.
+
+---
 # PLANNING / 2026-11-03 오전 — OrganicSpider v5 사용자 최종승인·메인/리뉴얼 새 아트 작업
 
 - 바울 대표: **“시켰고. 거미도 괜찮고. 아트 쪽 다음 일들 시켜.”** 앞서 #83 F2 입구 왕복 구현 Codex에 전달 확인. 이번 문구는 [#82](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) 델타 QA에서 `ALPHA_FINAL_OK_CANDIDATE`였던 **유기형 숲거미 v5 최종 알파/디자인 사용자 승인**으로 인계. 실 승인파일 `ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png` SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`. [Issue #60 승인·다음 작업 기록](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593591885). **신규 Idle/Walk 모션 및 제품 교체를 승인한 것은 아님**.
