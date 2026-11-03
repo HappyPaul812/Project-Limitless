@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 — Issue #82 21PASS, Main24 F2 첫 왕복 구간 #83
+
+- [#82 Codex 실제 세부 보고](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593291711) 및 [기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/82#issuecomment-6593417752): 바울 대표 승인 그루터기 `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8` 격리 **Unity6000.6.5f1 21PASS / 0FAIL**. 임시 테스트 PPU128/Scale1/Pivot(0.5,11/384), 3화면비/Alpha/접지/단순 proxy Sorting 확인. **F2 Scene/길·Collider 부재 때문에 실제 Player·도보·휠체어·YSort/길 시야 QA는 미검증**. 바울 대표 **디자인 승인 자체는 유지**, 제품/원본 Unity 적용0.
+- Spider `spider.zip` v5 SHA `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`: RGB262144픽셀 보존·Alpha380 감소, Field03 지면 PNG 오프라인에서 하부 긴 회백색 띠 해소 → `ALPHA_FINAL_OK_CANDIDATE` **v5 최종 미술 승인 대기**, 기존 Organic 디자인 방향 승인과 구별. 신규 32프레임 제작/Unity 제품교체0, Ch4 메카닉 거미 보존. Bee `bee.zip` Attack3 새SHA 일치·Sting 실제 침끝 **우하향** 관찰(담당 '좌측'서술과 다름); 실전 표적 위치·프레임의 급전환 미해결 `MOTION_CONTINUITY_HOLD / REAL_TARGET_NOT_VERIFIED / RIGHTS_HOLD`, 기존20 재양산0.
+- ZIP 두 개 동봉 Manifest는 합본용이라 **Spider 11/27+Bee18/27**, 합집합 Manifest27/27·SUMS28/28 PASS; 개별 full manifest PASS라고 보고 금지. Issue #82 worktree `codex/issue82-stump-spider-bee-delta-20261103` 코드/인계 `b50ce140cf155900829bd167aefb6225f806fa9a`; 실제 원본 Git/Save/Assets/Quest/Packages/BuildSettings/UI·Discord66/원격 Push 변경0.
+- **기획 새 [Issue #83](https://github.com/HappyPaul812/Project-Limitless/issues/83)**: #80 Main24 마을 첫구간 Unity81PASS를 재검증하지 않고 북문→F2 첫눈의 숲 임시안전길→북문으로 왕복하는 실제 Player/Collider/휠체어 세로절편을 **격리 Unity**에서 구현. 승인지면·그루터기만 SHA 확인 후 제한적으로 사용; 미승인 표지판/울타리·새 Owl Attack·Bee/Spider·상품25/무료 한기 지급/실전 전투·Main24 완료·Main25해금 전부 배제. F2 공식 Scene 미구현이면 승인 없이 본편공식 맵 생성·바로 게임 적용한 것으로 주장 금지. Unity 6000.6.5f1 기준, 구버전 재설치·원본 Save·main·Push/병합0.
+- 다음 대표 시각 선택: **숲거미 v5 최종 알파 외형**; Bee는 전투 표적 방향 계약 전 반복 재작화 지시 중단. 표지판·울타리 FULLREDRAW 2종은 여전히 `KEEP_CANDIDATE / USER_APPROVAL_PENDING`, 그루터기만 USER_APPROVED. 본 기획 기록/이슈생성은 Codex 실제 로컬 구현 완료를 의미하지 않음.
+
+---
 # PLANNING / 2026-11-03 오전 — 승인 F2 그루터기 격리 Unity + Spider/Bee 분리 ZIP 검수 #82
 
 - 바울 대표 제공 Codex **승인 영수증**: [#81 그루터기 v4 USER_APPROVED](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200), 승인 PNG `F2_SnowStumpPerch_NaturalBroken_v4_CANDIDATE_320x384_RGBA.png` SHA `22f2f5816b3fd2ffe45234ec807bb3d81a83f87440eb8eb1f338e0dff33404a8`. Markdown5개만 승인 동기화, 실제 Unity Sprite/Scene/Prefab/Main24 원본 적용0. 기존 그루터기 이전후보 archived, FULLREDRAW F2 표지판·울타리는 사용자 미승인 KEEP_CANDIDATE.
