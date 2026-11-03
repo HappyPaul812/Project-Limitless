@@ -5,6 +5,22 @@
 **최신 현재 상태(실제 화면을 열람한 Codex 결과 접수):** `CODEX_F2_RT_READONLY_AUDIT_REPORTED / PLACEHOLDERS_CONFIRMED / EXISTING_ASSET_REUSE_OK / NEW_GAME_PNG_REQUIRED_0 / REPLACEMENT_VISUAL_QA_PENDING / SIGN_FENCE_ART_APPROVAL_PENDING / NOT_UNITY_APPLIED`
 
 
+
+## 0-1. Codex 기존 아트 재사용 격리 Unity 68 PASS 접수 — 2026-11-03
+
+**근거:** [Issue #83 Codex 실 QA](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6603754190) · [Issue #85 동일 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6603755245). Codex 실제 브랜치 `codex/f2-environment-reuse-delta-20261103`, **로컬 commit `f6797d7ae8e744f0e22ac760df7778551188bb90`**. **Unity 6000.6.5f1 격리 PlayMode 변경분 68 PASS / 0 FAIL, Runtime 0 오류**. 기존 #83 90 / #85 81 / 저장 QA 재실행하지 않음. 본 신규 아트 담당은 Codex가 보고한 결과를 인수하였고 실제 RT 18장 실물을 이 채팅에서 직접 확인하지 못했으므로 현장 미술 최종 합격으로 표시하지 않는다.
+
+**실제 격리 후보 구성**: Frostway 공식 지면9·NorthF1 `WornTrail`·기존 F2 P1 GroundOverlay/SnowPine/FrostShrub로 **GROUND/PATH/TREE placeholder의 표시가 0**이 됨. 새 PNG 0, 비균일 스케일0, 원본파일/원본 Scene/Prefab/BuildSettings/Save/UserData/main 불변. UV 반복·회전·메시 알파로 길경계 완화, 기존 Collider 보존, **4.5WU 실제 Rigidbody2D 도보·휠체어 왕복** 통과. 나무 8개 PPU128·Scale1·알파 발 Pivot/발기준 Sorting, 관목4개 통로밖, 승인 Stump/Owl 보존. HUD 원래 폭304/글씨14/버튼12와 콜백을 유지한 좌하단·우상단 배치 후보에서 남쪽길 및 OwlSprite 가림0; **장식 나무 일부 HUD 뒤 가림은 디자인 판단 대기**.
+
+**실증 산출:** South(0,-7), Bend(2,0), North(3,5) × 960/1280/1680×720 동일 Camera/Player/ortho5 **전후 Camera RT 18장·9쌍**. 단일 오프라인 리뷰 `F:/study/codex/Project-Limitless/Temp/F2EnvironmentReuse20261103/Review/index.html`, SHA256 `577ee06e630fe613f1930e8f79aee65faa7d5e9c733f4e35695b2feafafee325`; 실제 RT 증거 파일은 `.../QA/Evidence/`. OS GameView나 사람 직접 입력 확인 아님. HTML 내부 이미지 decode/JS 문법 PASS, 브라우저 실제 조작 `NOT_VERIFIED`.
+
+**남은 미술 판단(1280×720 After_Bend 좌상단 기준):**
+- **눈패치 반복:** x180–350 / y100–650 (170×550px) — 기존 텍스처 배치·반복/밀도·회전 다양화로 해결 우선, **별도 새 PNG 발주 근거 없음**.
+- **길 굽음 질감:** x480–880 / y180–510 (400×330px) — 곡선/경계/시각 폭을 실제 4.5WU Collider와 비교하면서 기존 UV/경계 알파 조정 우선.
+- **HUD 뒤 배경:** x964–1268 / y90–326 (304×236px) — 좌하단·우상단 후보의 남쪽길 차폐0 결과를 유지하면서 장식나무 일부 가림이 수용 가능한지 **대표 시각 판단**. HUD 수정 자체는 UI/기획 담당의 별도 격리 작업이고 신규 아트 PNG 제작 과제는 아님.
+
+**상태·보호:** `F2_REUSE_ISOLATED_UNITY_TECH_68_PASS_0_FAIL / NEW_GAME_PNG_REQUIRED_0 / VISUAL_SNOW_PATH_HUD_USER_REVIEW_PENDING / NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED`. Sign/Fence FULLREDRAW `KEEP_CANDIDATE` 미승인, 승인 Owl v3 Idle8·Attack4 / Stump NaturalBroken v4·지면9·환경43 동결, 한기 VFX 미승인 HOLD. 기존 SearchDatabase 초기 환경 예외1은 Runtime 0과 구분. **아트 담당은 이번 판정에서 추가 PNG/게임 본편 적용/Unity 작업 수행0**. 다음은 기존 RT18장 동일위치 확대 비교 및 바울 대표 눈패치·굽음·HUD 아트 검토만 진행; 남은 결함을 기존 소스 배치로 해결할 수 없다는 격리 실증 전까지 신규 자산 발주0.
+
 ## 0. Codex 실제 카메라 RT 현장 감사 추가 접수 — 2026-11-03
 
 - **근거:** Codex [#83 현장 감사](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6602568367) · [#85 현장 감사](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6602569428). 로컬 문서전용 브랜치 `codex/f2-environment-readonly-audit-20261103`, 실제 Codex 로컬 commit `b70b14175b67dc8490ea8efc3bccf94eb1c22126`. 이 결과는 **Codex가 기존 #83·#85 실제 Unity Camera RT 원본을 읽기 전용으로 검토하고 GitHub 댓글에 보고한 것**이다. 아트 담당이 로컬 F:의 RT PNG를 직접 수령해 픽셀 검증한 것은 아니다. Codex Unity 재실행0, 기존 90/81 PASS 재검사0, 수정파일 문서2개만, 원본 Scene/Save/main 변경0.
