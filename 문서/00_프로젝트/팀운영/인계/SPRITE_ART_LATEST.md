@@ -1,5 +1,13 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 / Main24 F2 환경 재사용 격리 **68 PASS/0 FAIL** 인계
+
+- **Codex 실 Unity 6000.6.5f1 Delta** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6603754190) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6603755245): `codex/f2-environment-reuse-delta-20261103`, 로컬 SHA **`f6797d7ae8e744f0e22ac760df7778551188bb90`**. GROUND/PATH/TREE placeholder 표시0, 기존 Ground9/F1 WornTrail/F2 P1 눈Overlay·SnowPine·FrostShrub만 격리 조립, 신규 PNG0/불균일 스케일0. 실제 4.5WU 길과 Collider를 보호한 휠체어·도보 통행, 나무8 PPU128·발기준 Sorting 및 관목4 길바깥, 승인 Owl/Stump 그대로. HUD 두 배치 후보 길·Owl 차폐0, 장식나무 배경 일부 가림은 미술 검토.
+- **결과:** 68 PASS/0 FAIL, Runtime오류0, 기존 #83 90/#85 81/저장 QA 전수 재실행0. South/Bend/North × 960/1280/1680 **실제 카메라 RT18장/9쌍** 정확 동좌표 비교(ortho5). `F:/study/codex/Project-Limitless/Temp/F2EnvironmentReuse20261103/Review/index.html`, HTML SHA `577ee06e630fe613f1930e8f79aee65faa7d5e9c733f4e35695b2feafafee325`. **Codex만 RT 실물 확인, 본 아트 채팅은 보고만 접수**; OS GameView/사람 입력·원본 제품 적용 미실시.
+- **남은 바울 대표 미술 판단:** `After_Bend_1280` 기준 눈 패치 반복 `x180..350/y100..650`, 굽음 질감 `x480..880/y180..510`, 우상단 HUD 뒤 장식나무 `x964..1268/y90..326`. 신규 PNG 필요 확정0, 기존 배치·UV/밀도/접합만 검토 → 화면 아트 선택 후 Codex 격리 Delta 조정. Sign/Fence FULLREDRAW `KEEP_CANDIDATE / USER_ART_REVIEW_PENDING`, 분리 냉기 VFX `HOLD`, 기존 승인 Owl Idle8/Attack4·NaturalBroken Stump v4·Frostway Ground9/Environment43 보호. 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/main 변경0·Push/병합0.
+- [**F2 환경 재사용 감사 및 68PASS 근거 최신 정본**](../../Chapter3_Main24_F2_Environment_ReuseGap_Audit_20261103.md), `docs/art-new` 내용 보강 commit **`9ad4c5b02d8fa7e06bd09ed1201d116ddad9143e`**. 상태 `F2_ISOLATED_REUSE_TECH_PASS_68 / ART_SNOW_PATH_HUD_REVIEW_PENDING / NEW_PNG_0 / NOT_ORIGINAL_APPLIED`. 기존 결과를 환경 미술 최종 승인으로 확대 해석하지 않는다.
+
+
 ## 2026-11-03 / Main24 F2 실제 RT 감사 접수 — 기존 재사용 가능·신규 환경 PNG 확정 0종
 
 - **Codex 실제 카메라 RT 열람 근거** [#83](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6602568367) · [#85](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6602569428): `codex/f2-environment-readonly-audit-20261103` **로컬 commit `b70b14175b67dc8490ea8efc3bccf94eb1c22126`**. Codex가 #83 960/1280/1680 실제 Unity Camera RT, #85 F2 접근/귀환 RT를 **읽기 전용**으로 확인. 아트 세션은 원본 RT 이미지 실물 미수령·GitHub 기술보고를 접수한 것이지 직접 Unity GameView 확인이 아님.
