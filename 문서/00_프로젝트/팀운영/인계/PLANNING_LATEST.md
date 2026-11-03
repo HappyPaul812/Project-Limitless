@@ -1,3 +1,13 @@
+# PLANNING / 2026-11-03 야간 종료 — 안전 로컬 통합·동기화 #86
+
+- 대표 지시: “오늘은 여기까지 하자, 지금까지 한 모든 작업들 합치고 로컬 동기화 해줘. 저번처럼 유니티 버전 실수 하지 말고.” **신규 [Issue #86](https://github.com/HappyPaul812/Project-Limitless/issues/86)** 통합 1회 Codex 로컬 실행 계약. GitHub에 지시/기획 인계를 남기는 것과 실제 대표 PC의 local `main`/worktree 통합 완료는 **별도**. 원격 Push·PR·병합 금지.
+- **Unity 실제 목표 = 6000.6.5f1 / revision 3ff58d469c8a**. E:/Program Files/Unity/Hub/Editor/6000.6.5f1/Editor/Unity.exe 선행 실행로그 근거, #79 `codex/unity-version-align-20261031` 5f619bc0… 후보. 옛 #78 기준 6000.5.7f1 설치/QA요구는 오류·폐기. 실제 원본 ProjectVersion은 변경 안 됐을 수 있으므로 **격리 staging에서만 정확 값 정렬** 후 안전 동기화 승인을 받는 절차. Unity 설치 변경·ProjectVersion 강제 덮어쓰기·BuildSettings 교체 금지.
+- 실제 로컬 원본 main `ab47b931fec92976170f9f50aabde1822d78bb90`/dirty status가 최근 보고됨 → 실 HEAD·dirty 상세 재확인, 사용자 미커밋 344/858 변경 항목·개인Save/UserData·GUID/meta·Scene·Prefab 전량 보호. `reset --hard`·`clean -fd`·강제 checkout/stash/충돌 시 ours/theirs 일괄선택 금지. **원본변경과 staging 통합을 분리**, 명확한 파일 diff/충돌0일 때만 안전 로컬 동기화. 실패 시 `STAGING_PASS / ORIGINAL_LOCAL_SYNC_HOLD` 정직 보고.
+- 합칠 승인된 기초 후보: #46·#73, #80 Main24 마을 첫 구간, #83 F2 왕복(90PASS), #85 Owl 기본 전투(81PASS), 승인 Owl v3 Idle8 Attack4·Stump v4, Organic Spider v5+Walk8 (실 접지 정량 아직 HOLD). **F2 환경 재사용 68PASS** `f6797d7a...`는 새 프리뷰·기술성공이나 사용자 **미술 승인 대기**라 본편 자동 적용 X. 기존 F2 Owl 공식 몬스터ID·수치·첫한기전·보상/해금·상품25는 미확정/임의결정 금지. Bee 타이밍A153PASS·v3 StingRecover ART_OK_CANDIDATE/`RIGHTS_HOLD`, #70 Writer fork 운영/저장소 정책 `HOLD`는 별도 브랜치·증거보존하며 자동 제품 병합 금지.
+- 기존 #80 Unity81/#83 90+#83reuse68/#85 Owl81/#84 Clip37/Bee153/#70 Writer85/72/72 대규모 QA 반복 금지. 통합 교차 연결 지점만 Unity6000.6.5f1 합성 Save·Battle/F2·Quest·6슬롯·Scene/BuildSettings 좁은 Delta QA. 기존 원본 PC Save 파일 열람/복사/해시/변경0, 원격 push0. 변경파일·브랜치/코드커밋 SHA·정확한 버전 검사·백업/통합·최종HEAD/QA·HOLD 사유 #86 및 CODEX_LATEST로 보고.
+- 오늘 #63 Bee v3 Codex 실ZIP `1169aca1c46f4322b85e7247b33a6cbc1fb684e01e0f04fb2ea7f9e9c0194ff0` 315 Sting/Recover 실제 신규·CRC/Manifest8/8/SUMS9/9 PASS, `ART_OK_CANDIDATE`/index09 준비포즈 재사용, 대표 최종미술·실접촉·원권리 미승인. 제품 적용/새20 양산0.
+
+---
 # PLANNING / 2026-11-03 저녁 — 메인 아트 차기 업무 F2 실제 환경 결손 마감
 
 - 대표: **“메인 아트는 다음 일이 뭐니?”**. Owl v3 Idle8·Attack4 USER_ART_APPROVED, #85 격리 첫 Owl Battle UI 81PASS/0FAIL, #83 F2 탐험90PASS. 추가 Owl 재작화 필요0, Owl 냉기 상태 Runtime 미등록·분리 VFX 미승인 HOLD. [#75 신규 메인아트 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6601880656): 다음 작업은 **F2 첫눈의 숲 실제 탐험환경 결손 0~2개만 소량 보완**, 승인 P1/P2·NaturalBroken 그루터기·승인 Frostway 지면9 원형보존, #83/#85 실제 격리 화면과 P1/P2의 미흡한 동선/접합부만 갭표로 식별. 필요없으면 새 PNG0 정당화, 이전 전체 Tile 양산/미확정 Collider·PPU 짐작/원본Unity 적용 금지.
