@@ -1,5 +1,15 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 / Issue #74 — Owl Attack02→03 연결 **Attack02 단일 프레임** 표적 수정 납품
+
+- [#74 최신 Codex 본문·기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595843983) 및 [이전 Codex 통합 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479): 이전 Attack02의 몸통/발/꼬리/날개↔Attack03 변경이 급격하므로 단일 프레임만 수정. 이전 `02` SHA `a7273d0d3c0b20d2a005b90f158906aa9760ef551dbba11aa3e80c5e692b9851`는 과거 HOLD/Archive, 이번 **새 `02` SHA `6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936`는 ART_CANDIDATE**.
+- **방법/KEEP:** 승인 `Attack03`=`Idle00`=`FrostOwl v3` SHA `81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467` 바이트 그대로. Attack00 `b6029c30...`, Attack01 `a98aab1c...` byte exact, 기존 Idle8 바이트 미변경. 새 02는 승인 03을 근거로 **몸통·발·꼬리·얼굴 중심을 고정**하고 바깥 날개 끝만 비강체 공간 변형하여 중간 각도 형성. 기존02 대비 RGBA 차이126,301px이므로 작은 픽셀 보완으로 과장하지 않되 **수정 원본 게임 PNG는 정확히 1개**. 승인03과 신규02의 하단 y345..511 픽셀 배열 정확히 동일. 전체 512² RGBA/8FPS PPU512·중앙Pivot·Scale1 Import계약.
+- **오프라인 인접 실루엣 IoU (alpha>8):** 01→02 기존0.4377→신0.6761, 02→03 기존0.4415→신0.8654. 03→Idle00 완전 일치. 수치는 정량 참고이며 **최종 모션 미술/Unity 기술 PASS 아님**. Attack4 네 프레임 alpha>8 가장자리 접촉0, 시트4셀 exact. GIF 본편 공격 4프레임 120/130/120/130ms = **평균8FPS**, 별도 `Attack01_02_03_Idle00_TRUE_SEQUENCE_8FPS.gif`는 4단계 마커가 이동하는 **실4프레임 검토본**, 지난 단일정지 SEAM GIF와 구분.
+- **실물** `Limitless_FrostOwl_Attack02_Continuity_20261103.zip` **3,992,293 bytes / 20 entries / SHA256 `d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192`**, ZIP CRC PASS 및 SHA256SUMS19/19 PASS. **ChatGPT Library `/LIMITLESS/Main24_Issue74_Owl_Attack02_20261103/` ZIP+128/40 한장 비교 PNG 업로드 성공**. PC F:\ 사용자 복사본 QA 미확인·GitHub binary 미업로드.
+- **기존 미승인 분리 냉기 VFX**는 지난 Continuity ZIP `VFX_UNAPPROVED_HOLD` SHA `46215c1c...` **그대로 보존/이번 ZIP에는 미동봉**. Attack01 본체에 이펙트 재결합0. 이전 승인 F2 Stump·KEEP Sign/Fence/Monster/Pet/Spider/Bee 및 Main24 #83 통합90PASS/23PASS, Main23 43+지면9, Scene/Prefab/Save/UserData/BuildSettings/MonsterDefinition 원본 변경0.
+- [**정식 단일 Attack02 QA 보고**](../../Chapter3_Main24_Issue74_Owl_Attack02to03_TargetedContinuity_20261103.md) `docs/art-new` 보고 커밋 **`4ccb55b91440efdbb46c313f57588d510c074dda`**. 상태 **`ATTACK02_TARGETED_REVISED_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / UNITY_NOT_VERIFIED / NOT_UNITY_APPLIED`**. 바울 대표 미술 검토→(승인 시) Codex 격리 Unity Attack02 및 01→02→03→Idle00만 DeltaQA→사용자 별도 본게임 적용 승인. main 직접 commit/Push/merge 금지.
+
+
 ## 2026-11-03 Main24 / Issue #74 — Frost Owl v3 Attack4 얼굴 연속성·복귀·VFX 분리 후보 실물 납품
 
 - **Codex #74 최신 통합 판정** [실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265) + [기획 최종지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594916733) 반영. 이전 Attack4 네포즈의 날개 모음→확장→후속 대비는 유지하되, 승인 v3 정지 원화의 얼굴·머리깃 중심 RGB를 00~02에 국소 복원. **Attack03은 승인 v3/Idle00과 파일 바이트·SHA exact 동일** → 03→Idle00 경계 픽셀 점프0. 기존 승인 v3 원화·Idle8 원본 **변경0**; Idle8 SHA8개 Manifest 인계. **날개/몸통 전체 v3 원화와 완전 동일함은 미술 검토 전 미확정**, `DESIGN_CONTINUITY_USER_REVIEW_PENDING`.
