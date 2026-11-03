@@ -21,10 +21,13 @@ public sealed class Chapter3Main23Flow : MonoBehaviour
  public static string Hint=>Step==0?"심부의 길을 따라 북쪽으로 이동하세요.":Step==1?$"동물·짐수레 흔적 {ClueCount}/2 · 서로 다른 두 곳을 조사하세요.":Step==2?"북쪽 출구를 직접 선택해 서릿길 마을로 이동하세요.":Step==3?"주민 안내 표식에서 증언을 끝까지 들으세요.":Step==4?"중앙 안전거점을 직접 등록하세요.":Completed?"Main23 완료 · 북문 F2 미개통 · 남문 F1 왕복 가능":"쉼터에서 Main23 시작을 직접 선택하세요.";
  public static int ClueCount=>(Main23Progress.HasClue(0)?1:0)+(Main23Progress.HasClue(1)?1:0);
  [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)] static void Register(){SceneManager.sceneLoaded-=Install;SceneManager.sceneLoaded+=Install;}
- static void Install(Scene scene,LoadSceneMode mode){if(scene.name!=Field&&scene.name!=Village)return;var root=new GameObject("Chapter3_Main23",typeof(Chapter3Main23Flow));SceneManager.MoveGameObjectToScene(root,scene);}
+ static void Install(Scene scene,LoadSceneMode mode){if(scene.name!=Field&&scene.name!=Village&&scene.name!=Main24F2Traversal.SceneId)return;var root=new GameObject("Chapter3_Main23",typeof(Chapter3Main23Flow));SceneManager.MoveGameObjectToScene(root,scene);
+  // 북문 도착 표식과 2WU 떨어진 복귀 Spawn을 격리 런타임에 설치합니다. 기존 마을 Scene/GUID는 보존합니다.
+  if(scene.name==Village)Main24F2Traversal.InstallVillageSpawn(scene);}
  IEnumerator Start(){yield return null;
   if(DialoguePresenter.Instance==null)new GameObject("DialogueSystem").AddComponent<DialoguePresenter>();
   if(gameObject.scene.name==Field){Site(Main23Site.Kind.Start,new Vector2(0,8),"Main23 · 조사 시작");Site(Main23Site.Kind.TraceA,new Vector2(-2,15),"동물의 남하 흔적");Site(Main23Site.Kind.TraceB,new Vector2(2,18),"장작·짐수레 흔적");Site(Main23Site.Kind.NorthGate,new Vector2(0,22),"서릿길 마을 남문으로");Site(Main23Site.Kind.SouthGate,new Vector2(0,-10),"초보 마을로 복귀");}
+  else if(gameObject.scene.name==Main24F2Traversal.SceneId){Site(Main23Site.Kind.F2Return,new Vector2(0,-10),"남쪽 출구 · 마을 북문");Site(Main23Site.Kind.F2Observe,new Vector2(3,5),"첫눈 관찰 / 전투 미구현");}
   else{Site(Main23Site.Kind.SouthGate,new Vector2(0,-10),"남문 · F1로 복귀");Site(Main23Site.Kind.Guide,new Vector2(-3,-4),"주민 안내 · 증언 / 임시 외형");Site(Main23Site.Kind.Checkpoint,Vector2.zero,"중앙 안전거점 등록");Site(Main23Site.Kind.Rest,new Vector2(-6,2),"여관 · 휴식 / 임시 표식");Site(Main23Site.Kind.Party,new Vector2(6,2),"파티 관리 / 임시 표식");Site(Main23Site.Kind.LockedNorth,new Vector2(0,9),"북문 · F2 미개통");Site(Main23Site.Kind.Skill,new Vector2(6,-4),"스킬상점 · 안내 / 무료 장착");Site(Main23Site.Kind.Supply,new Vector2(-6,-4),"보급 안내 · 한기 대비");}
   // 미승인 건물의 충돌 영역을 선과 글자로 함께 표시합니다. 보이지 않는 장애물로 남기지 않습니다.
   if(gameObject.scene.name==Village){placeholderMaterial=new Material(Shader.Find("Sprites/Default"));foreach(var box in FindObjectsByType<BoxCollider2D>(FindObjectsSortMode.None).Where(x=>x.name.StartsWith("VISUAL_PLACEHOLDER"))){var line=box.gameObject.AddComponent<LineRenderer>();line.useWorldSpace=false;line.loop=true;line.positionCount=4;line.startWidth=line.endWidth=.08f;line.sharedMaterial=placeholderMaterial;line.startColor=line.endColor=Color.yellow;line.sortingOrder=1;var h=box.size*.5f;line.SetPositions(new[]{new Vector3(-h.x,-h.y),new Vector3(-h.x,h.y),new Vector3(h.x,h.y),new Vector3(h.x,-h.y)});}}
@@ -45,7 +48,7 @@ public sealed class Chapter3Main23Flow : MonoBehaviour
 /// <summary>선택한 표식 하나만 실행하며 대화를 끝낸 콜백에서 목표를 통지합니다. 취소는 Quest를 바꾸지 않습니다.</summary>
 public sealed class Main23Site:MonoBehaviour
 {
- public enum Kind{Start,TraceA,TraceB,NorthGate,SouthGate,Guide,Checkpoint,Rest,Party,LockedNorth,Skill,Supply}
+ public enum Kind{Start,TraceA,TraceB,NorthGate,SouthGate,Guide,Checkpoint,Rest,Party,LockedNorth,Skill,Supply,F2Return,F2Observe}
  public Kind SiteKind{get;private set;}public string Title{get;private set;}public const float Range=1.25f;
  UnityEngine.UI.Text label; Canvas labelCanvas; bool busy;
  public bool Available=>Chapter3Main22Flow.Completed&&(SiteKind!=Kind.Supply||Chapter3Main23Flow.Completed)&&(SiteKind!=Kind.Start||!Chapter3Main23Flow.Completed)&&(SiteKind!=Kind.TraceA&&SiteKind!=Kind.TraceB||Chapter3Main23Flow.Step==1&&!Main23Progress.HasClue(SiteKind==Kind.TraceA?0:1));

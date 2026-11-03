@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProjectLimitless.Core.QuestDefinition
   questId: main_24_first_snow_warning
   displayName: 첫눈 아래의 경고
-  description: 비결제 첫 플레이 격리 후보. 북문 준비까지 구현되었으며 F2 전투와 Main24 완료는 미구현입니다.
+  description: 비결제 첫 플레이 격리 후보. F2 안전 왕복까지 구현되었으며 첫 한기 전투와 Main24 완료는 미구현입니다.
   questType: 0
   objectives:
   - objectiveId: hear_skill_guidance
@@ -32,8 +32,23 @@ MonoBehaviour:
     objectiveType: 1
     targetId: frostway_main24_north_gate
     requiredCount: 1
+  - objectiveId: main24_candidate_enter_f2
+    description: 북문에서 첫눈의 숲으로 들어가세요. 스킬 구매는 필요 없습니다.
+    objectiveType: 1
+    targetId: main24_candidate_f2_entry
+    requiredCount: 1
+  - objectiveId: main24_candidate_observe_f2
+    description: 가운데 흙길을 따라 북동쪽 첫눈 관찰 표식을 조사하세요. 전투는 없습니다.
+    objectiveType: 3
+    targetId: main24_candidate_f2_observe
+    requiredCount: 1
+  - objectiveId: main24_candidate_return_village
+    description: 남쪽 출구로 돌아가 서릿길 마을 북문에 복귀하세요.
+    objectiveType: 1
+    targetId: main24_candidate_f2_return
+    requiredCount: 1
   - objectiveId: await_f2_opening
-    description: F2 첫눈의 숲 진입 대기. 현재 북문 안내까지 플레이할 수 있으며 전투는 준비 중입니다.
+    description: F2 안전 왕복 확인. 첫 한기 전투와 Main24 후속 이야기는 준비 중입니다. 완료·보상은 없습니다.
     objectiveType: 4
     targetId: frostway_main24_f2_ready
     requiredCount: 1

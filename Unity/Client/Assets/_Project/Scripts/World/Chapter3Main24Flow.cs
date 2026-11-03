@@ -22,12 +22,17 @@ namespace ProjectLimitless.World
         public static string Hint => Step == 0 ? "남동쪽 스킬상점에서 기본3·장착6 안내를 들으세요."
             : Step == 1 ? "남서쪽 보급 안내에서 한기 대비를 확인하세요. 구매 불필요."
             : Step == 2 ? "중앙 길을 따라 북문으로 이동하세요. 첫눈의 숲은 북쪽입니다."
-            : Step == 3 ? "북문 도착 · F2 진입/전투 준비 중. 마을 이동·저장 가능."
+            : Step == 3 ? "북문을 선택해 F2 첫눈의 숲에 들어가세요. 구매 불필요."
+            : Step == 4 ? "F2 흙길을 따라 북동쪽 관찰 표식까지 이동해 조사하세요."
+            : Step == 5 ? "탐험 확인 · 남쪽 출구로 돌아가 마을 북문에 복귀하세요."
+            : Step >= 6 ? "안전 왕복 확인 · 첫 한기 전투 준비 중. 마을·숲 이동과 저장 가능."
             : "Main24 시작 가능 · 남동쪽 스킬상점 안내를 선택하세요.";
 
         // Main23 완료 후에도 대화를 강제로 열지 않고, 기존 저장의 선행 완료 기록으로 시작 가능 여부를 판정합니다.
         public static Main23Site CurrentSite()
         {
+            if (SceneManager.GetActiveScene().name == Main24F2Traversal.SceneId)
+                return Object.FindObjectsByType<Main23Site>(FindObjectsSortMode.None).FirstOrDefault(x => x.SiteKind == (Step == 4 ? Main23Site.Kind.F2Observe : Main23Site.Kind.F2Return));
             Main23Site.Kind kind = SceneManager.GetActiveScene().name != Chapter3Main23Flow.Village
                 ? Main23Site.Kind.NorthGate : Step == 1 ? Main23Site.Kind.Supply
                 : Step >= 2 ? Main23Site.Kind.LockedNorth : Main23Site.Kind.Skill;
@@ -40,21 +45,28 @@ namespace ProjectLimitless.World
             {
                 case Main23Site.Kind.Skill: return "스킬상점 · 안내 / 무료 6칸 장착";
                 case Main23Site.Kind.Supply: return "보급 안내 · 한기 해제 수단 준비";
-                case Main23Site.Kind.LockedNorth: return "북문 → 첫눈의 숲 · 진입 준비 중";
+                case Main23Site.Kind.LockedNorth: return "북문 → F2 첫눈의 숲 · 안전 왕복";
+                case Main23Site.Kind.F2Return: return "남쪽 출구 → 서릿길 마을 북문";
+                case Main23Site.Kind.F2Observe: return "첫눈 관찰 · 탐험 경계 / 전투 없음";
                 case Main23Site.Kind.Guide: return "주민 안내 · 북쪽 탐험 준비";
                 default: return null;
             }
         }
 
-        /// <summary>실제 마을에서 북문까지 이동한 경우만 인정합니다. 로드 중 Spawn 좌표로 선완료하지 않습니다.</summary>
+        /// <summary>실제 Scene 도착과 북문 복귀만 인정합니다. PendingSpawn 처리 중에는 목표를 미리 채우지 않습니다.</summary>
         public static void UpdateArrival(PlayerController player)
         {
-            if (Step != 2 || player == null || WorldModalState.IsOpen
-                || SceneManager.GetActiveScene().name != Chapter3Main23Flow.Village
+            if (player == null || WorldModalState.IsOpen
                 || !string.IsNullOrEmpty(GameSessionData.PendingSpawnPointId)) return;
+            string scene = SceneManager.GetActiveScene().name;
+            if (scene == Main24F2Traversal.SceneId && Step == 3)
+            {
+                QuestService.NotifyLocationReached(Main24F2Traversal.EntryTarget); SaveProgress(); return;
+            }
+            if (scene != Chapter3Main23Flow.Village || (Step != 2 && Step != 5)) return;
             var gate = CurrentSite();
             if (gate == null || Vector2.Distance(player.transform.position, gate.transform.position) > Main23Site.Range) return;
-            QuestService.NotifyLocationReached(NorthGate);
+            QuestService.NotifyLocationReached(Step == 2 ? NorthGate : Main24F2Traversal.ReturnTarget);
             SaveProgress();
         }
 
@@ -75,14 +87,26 @@ namespace ProjectLimitless.World
                     Show(new[] {
                         "첫눈의 숲은 마을 북문 너머에 있습니다. 중앙 길을 따라 북쪽으로 이동하세요.",
                         "숲의 한기는 2턴 동안 행동을 막을 수 있습니다. 전투에 들어가기 전에 한기를 해제할 수단을 준비해야 합니다.",
-                        "스킬 구매는 진행 조건이 아닙니다. 현재는 대응 물품 지급과 F2 전투를 준비 중이므로 북문 안내까지만 확인할 수 있습니다."
+                        "스킬 구매는 진행 조건이 아닙니다. 현재는 숲의 안전한 첫 길을 탐험하고 돌아올 수 있습니다. 대응 물품 지급과 첫 전투는 준비 중입니다."
                     }, "main24_candidate_supply", () => AdvanceTalk(SupplyNpc, 1));
                     return true;
                 case Main23Site.Kind.LockedNorth:
+                    if (Step < 3)
+                        Show(new[] { "스킬상점·한기 안내를 끝까지 확인한 뒤 북문으로 오세요. 구매할 필요는 없습니다." }, "main24_candidate_north", null);
+                    else Main24F2Traversal.ChooseTravel(true);
+                    return true;
+                case Main23Site.Kind.F2Return:
+                    Main24F2Traversal.ChooseTravel(false);
+                    return true;
+                case Main23Site.Kind.F2Observe:
                     Show(new[] {
-                        "이 북문 너머가 F2 첫눈의 숲입니다. 서리올빼미가 한기를 일으킬 수 있으니 해제 수단을 먼저 준비하세요.",
-                        "현재는 숲 진입과 첫 전투를 준비 중입니다. 마을에서 자유롭게 이동하고 저장하거나, 남문으로 F1에 돌아갈 수 있습니다. 구매할 필요는 없습니다."
-                    }, "main24_candidate_north", null);
+                        "첫눈이 얇게 쌓였지만 가운데 흙길은 이어집니다. 돌아갈 길은 남쪽, 서릿길 마을 북문입니다.",
+                        "여기서 더 깊은 숲과 서리올빼미의 기척을 살핍니다. 첫 한기 전투와 대응 물품은 준비 중입니다. 지금은 싸우지 않습니다.",
+                        "관찰을 마쳤습니다. 남쪽 출구를 선택해 마을 북문으로 안전하게 돌아가세요. 구매는 필요 없습니다."
+                    }, "main24_candidate_f2_observe", () => {
+                        if (Step != 4) return;
+                        QuestService.NotifyInteraction(Main24F2Traversal.ObserveTarget); SaveProgress();
+                    });
                     return true;
                 case Main23Site.Kind.Guide:
                     Show(new[] { "남동쪽 스킬상점에서 무료 기본 스킬과 장착법을, 남서쪽 보급 안내에서 한기 대비를 확인하세요. 첫눈의 숲 방향은 중앙 길을 따라 북쪽입니다." },
