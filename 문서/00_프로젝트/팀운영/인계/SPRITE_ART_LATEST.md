@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 Main24 F2 / #74 Frost Owl v3 Attack4 새 포즈 실 PNG·8FPS 시안 전달
+
+- [#74 최신 모션 재작화 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6593592716), [#83 F2 탐험과 전투 분리](https://github.com/HappyPaul812/Project-Limitless/issues/83). 승인 정적 v3/Idle00 SHA **`81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`** 그대로 보호; 기존 Idle8과 과거 Attack4 바이트 수정0. 기존 북문↔F2 격리 탐험 81PASS/정적14PASS 보존, 새 Owl 전투 적용0.
+- **새 Attack 후보4** `Candidate/Attack/FrostOwl_v3_Attack_00~03_512_RGBA_CANDIDATE.png`, 모두 **512² RGBA**, 각각 준비(날개/몸통 수축)→발동(확장)→후속(날개 낮춤)→복귀의 상이한 포즈. 개별 SHA `f6274c6c...`, `1915cfd6...`, `79e23861...`, `187829c7...`는 상세 보고서/Manifest 전문 참조. 이전 원본 이미지의 단순 이동이 아닌 신규 그림 출력이며, 기존 정지/Idle 일괄축소는 하지 않음. alpha>8 기준 4면 접촉 모두0.
+- **실물 ZIP** `Limitless_FrostOwl_Attack4_Review_20261103.zip`, **3,153,329 bytes / 18 entries / SHA256 `5ba6ecffad2e3ccf5a07c0fda00041073f1db6938a439fdeea170eae9abf250b`**, CRC PASS·SHA256SUMS17/17 PASS. **ChatGPT 라이브러리 `/LIMITLESS/Main24_Issue74_Owl_Attack4_20261103/` 업로드 성공**. PNG4, 2048×512 4×1 sheet, 8FPS GIF1(120/130ms 교대, 500ms/4프레임), 기존↔신규 단일 보드 1800×1190과 128/40 실축소PNG8, Manifest+README 포함. Windows F:\ 사용자PC 수령/해시 미확인, GitHub 바이너리 없음.
+- **미술 리스크 반드시 보존**: 신규 이미지에는 기존 v3보다 세밀한 깃털과 **통합 냉기 궤적/입자**가 있어 동일 고유디자인·VFX 비추가를 확정하기 어렵다. `ATTACK4_POSE_ART_CANDIDATE / VFX_SCOPE_ART_REVIEW / USER_MOTION_ART_REVIEW_PENDING`이며 **`ANIM_ART_PASS` 아님**. 실제 Unity Attack 기술검증0, PPU512/중앙Pivot/Scale1은 Manifest import 계약. [#74 신규 실물 QA 보고](../../Chapter3_Main24_FrostOwl_v3_Attack4_MotionReview_Issue74_20261103.md) `docs/art-new` commit **`38a53da7f7edc9001ad9f7c3569df96ce87e3acb`**.
+- 기존 Stump 자연형 승인/격리 검수, Sign/Fence FULLREDRAW KEEP_CANDIDATE, Owl 디자인/Idle8, F2 P1/P2·Ch1·2 리뉴얼·Save/UserData/MonsterDefinition/Scene/Prefab/BuildSettings/Unity 원본 변경0. 바울 대표 미술 판정 후 Codex 격리 최소 모션DeltaQA → 별도 본편 적용 승인. `NOT_UNITY_APPLIED / NO_MAIN_PUSH_OR_MERGE`.
+
+
 ## 2026-11-03 Main24 F2 / Issue #81·#75 — 자연적으로 부러진 그루터기 후보 1 PNG 납품
 
 - **최신 Codex #81 델타 검수** [실물 판정](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590636705), [기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6590736542): Sign FULLREDRAW SHA`864e964e...`, Fence FULLREDRAW SHA`49c2969b...`는 **KEEP_CANDIDATE 원본 보호**, 사용자 시각선택 및 공식 Sprite 교체 금지. Stump v3 국소 SHA`eb32bf20...` 및 과거 full redraw SHA`251fad7f...`는 원판/직선지주로 **ART_HOLD** 유지. 기존 Main24 **81PASS/정적14PASS 보존**.
