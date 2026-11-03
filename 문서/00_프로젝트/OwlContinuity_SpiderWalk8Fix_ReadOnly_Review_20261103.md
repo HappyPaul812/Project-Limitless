@@ -109,3 +109,7 @@ HTML SHA256 **`ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74`
 원본main **ab47b931fec92976170f9f50aabde1822d78bb90**, 기본status344/상세-uall858 전후동일. 입력ZIP2/사용한승인·이전참조28SHA모두보존. 기존게임소스·설정/아트원본/Save/UserData보호, Bee/기존게임QA재검수0, main/Push/merge0. 문서와JSON검수기록만로컬커밋, ZIP/PNG/GIF/HTML실물은Temp보존·원격바이너리업로드0.
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED.**
+
+## GitHub 보고 영수증
+
+실제 검수 commit **`5fdc6201d9484967454e7aa53f7088460ac519c0`** 기준 [#74 통합결과](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479) · [#60 Spider 새경계결함](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595712350) · [#83 보호/연결](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6595713003) 실제 댓글 등록 성공. 원격에는 댓글만 게시·파일Push0. 후속은 보고 영수증만 로컬 기록합니다.

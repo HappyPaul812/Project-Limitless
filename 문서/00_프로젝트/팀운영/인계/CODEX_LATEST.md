@@ -4,6 +4,8 @@
 
 [통합 상세·전체SHA·근거](../../OwlContinuity_SpiderWalk8Fix_ReadOnly_Review_20261103.md). 단일OFFLINE/Unity아님 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` SHA `ca98de10c55e0ef0b4601fe44703780ec78ffef8c6dd4a73908c1e9763d02d74` · 브라우저34PASS. branch `codex/owl-spider-followup-review-20261103`, 출발ed95f352. 원본main/status344(상세858)·28참조SHA보호·Unity/Save접근/기존QA·Bee재검수0·Push/merge0. 최종미술승인과실제품적용은별도입니다.
 
+실제 검수 commit **`5fdc6201d9484967454e7aa53f7088460ac519c0`** 기준 [#74 통합결과](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479) · [#60 Spider 새경계결함](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595712350) · [#83 보호/연결](https://github.com/HappyPaul812/Project-Limitless/issues/83#issuecomment-6595713003) 실제 댓글 등록 성공. 원격에는 댓글만 게시·파일Push0. 후속은 보고 영수증만 로컬 기록합니다.
+
 ---
 
 ## 2026-11-03 Main24 후속 아트3ZIP 독립 읽기 검수
