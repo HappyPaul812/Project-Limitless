@@ -6,6 +6,8 @@
 
 [승인 정본·최소Delta 준비](../../F2_NaturalStump_v4_UserApproval_And_UnityDeltaPrep_20261103.md). 브랜치 `codex/f2-natural-stump-approval-20261103`, Markdown5개만로컬반영/Push·main·merge·Unity·Save/UserData변경0. Main24 81/14 및 기존QA 재실행0. 아래 KEEP/승인대기/HOLD는 과거 당시 기록이며 현재 승인 상태는 본 항목을 따릅니다.
 
+승인 문서 commit `fe92433aac1d5768a438f2dd3d5366f480f5cacb` 기준 [Issue #75](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6592422354) · [Issue #81](https://github.com/HappyPaul812/Project-Limitless/issues/81#issuecomment-6592423200) 실제 USER_APPROVED 보고 등록 성공. 로컬 Markdown만 반영/원격 파일Push0, 본 후속은 영수증 기록입니다.
+
 ---
 
 # SPRITE_ART 최신 인계 — 2026-10-12
