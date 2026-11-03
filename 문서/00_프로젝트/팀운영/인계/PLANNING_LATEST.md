@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 오후 — Owl Attack02→03 / Spider Walk01·02·06·07 캔버스 경계 수정
+
+- [Codex 두 ZIP 실제 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479) 확인. Owl ZIP dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856 CRC/Manifest18/18/SUMS21/21 PASS: Attack03=승인v3/Idle00 byte exact, 공격 대비·VFX분리/8FPS 정상. 하지만 02→03 체형/꼬리·발/머리·깃 질감 급전환. Seam_8FPS.gif는 1프레임 정지라 실제 연결검증 아님. [#74 최소수정](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595843983) : 02중심 재작화, 승인03/Idle8 및 미승인FX 원형 보호, Attack 전체 새 디자인/QA 전수반복 금지.
+- Spider ZIP d840e5ddd8ac2666e4b0c7a9f4b2d0bdfc688b5ff03e01a0019ba7808d6b86b8 CRC/Manifest16/16/SUMS17/17 PASS, 6실수정/정확10FPS. **Walk01·02 오른쪽 x511, Walk06·07 왼쪽 x0의 새 가시알파 발끝 절단**, 여전히 지지·스윙/접지 움직임 개선 필요. [#60 최소수정](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6595844892): 4프레임 경계 우선, 03·05 필요할 때만, 전신 일괄축소·캔버스확장/일괄투명 마스크 금지, 승인v5/Idle8/Walk00·04 보호. 기존 Runtime10FPS, Attack8/Shoot8 미승인 유지.
+- 두 ZIP 자체검수 `codex/owl-spider-followup-review-20261103` 커밋 5fdc6201d9484967454e7aa53f7088460ac519c0, OFFLINE 판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderFollowupReview20261103/Review/index.html` (실 Unity/GameView 아님). 둘 다 `REVISE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED`.
+- Bee는 실제 타깃 계약·권리 CC BY3/4 불일치 `TARGET_CONTRACT_HOLD/RIGHTS_HOLD` 지속. Main24#83 F2왕복 Unity90·정적23, #82 Stump21, 저장 #70/77/78 기존QA 전수반복 금지; 원본 Unity/Save/UserData/main/Push/Discord#66 변경 금지. GitHub 기록이 실제 담당세션의 로컬 파일 수정을 자동 실행하는 것은 아님.
+
+---
 # PLANNING / 2026-11-03 정오 — Owl/Bee/Spider 3ZIP 최종 읽기전용 검수·다음 대상 제한
 
 - [#74 Codex 실물 3ZIP 결과](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265): ZIP3 CRC·각 Manifest/SUMS 확인 PASS, 새 PNG34만 decode, 7 SHA 같은 이전 자료 QA 재활용, GIF9. 로컬 branch `codex/art-owl-bee-spider-review-20261103` SHA `acf2031029741185d17190562a5ec0070d5d773b`; 본편/원본Unity/Save/UserData/Main24#83 90PASS/main/Push 변경0. OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/ArtOwlBeeSpiderReview20261103/Review/index.html`(Unity/GameView 아님).
