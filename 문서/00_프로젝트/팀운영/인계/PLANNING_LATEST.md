@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-03 저녁 — 메인 아트 차기 업무 F2 실제 환경 결손 마감
+
+- 대표: **“메인 아트는 다음 일이 뭐니?”**. Owl v3 Idle8·Attack4 USER_ART_APPROVED, #85 격리 첫 Owl Battle UI 81PASS/0FAIL, #83 F2 탐험90PASS. 추가 Owl 재작화 필요0, Owl 냉기 상태 Runtime 미등록·분리 VFX 미승인 HOLD. [#75 신규 메인아트 기획 지시](https://github.com/HappyPaul812/Project-Limitless/issues/75#issuecomment-6601880656): 다음 작업은 **F2 첫눈의 숲 실제 탐험환경 결손 0~2개만 소량 보완**, 승인 P1/P2·NaturalBroken 그루터기·승인 Frostway 지면9 원형보존, #83/#85 실제 격리 화면과 P1/P2의 미흡한 동선/접합부만 갭표로 식별. 필요없으면 새 PNG0 정당화, 이전 전체 Tile 양산/미확정 Collider·PPU 짐작/원본Unity 적용 금지.
+- FULLREDRAW 표지판·울타리는 Codex KEEP_CANDIDATE, 대표 최종 선택 대기. 자연형 그루터기 v4만 USER_APPROVED. 두 대안을 기존 대비 단일 OFFLINE 판에 제시하되 무단 미술 승인·본편 적용 금지. F2 전체맵 신규지형 대량 생산 금지. 사용자 저시력·휠체어 동선·색상에 의존하지 않은 표식 유지.
+- 독침벌 후속 #63 신규 StingRecover2 포즈 art REVISE, Codex 실PNG delta QA 예정이며 메인 아트 담당 업무 아님. Owl 한기 상태이상·해제 아이템 및 냉기 VFX는 기획 정본·런타임 계약 확정 뒤만 발주. Main24 Owl #85 기본 전투 후보 제품 원본 미반영/원격Push0. 아트 업무 후 docs/art-new/SPRITE_ART_LATEST.md와 Issue#75 브랜치/SHA 보고.
+
+---
 # PLANNING / 2026-11-03 19:42 — Owl 기본 전투 #85 81PASS / 신규 Bee StingRecover 2PNG 델타 QA
 
 - [#85 실제 F2 Owl 격리 전투 결과](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601090552): 신규 Unity **81 PASS/0 FAIL**, Owl USER_ART_APPROVED Idle8+Attack4 실제 Battle UI Image, 기존 BattleSceneController 피해1회·HP/턴·승패·F2/안전거점 복귀·도보/휠체어Collider·합성 SaveContinue. branch `codex/main24-frost-owl-finish-20261103` 기능commit `61dce08b271bd2e801205a711a8af7d54400c84f` 최종 `47f479cce4fd282ac4c9e49ecfb75e2b1a25e461`. 기존 #83 90/#84 37 QA 반복X·원본/main/Push0. 정식 Owl 몬스터ID·밸런스/보상·한기 상태/해제 정책·Main24 완료 미확정. **GrassSlime Lv1 HP60 공격비율100 민첩10은 QA 차용수치**. OWL_BATTLE_RUNTIME_PASS와 COLD_STATUS_HOLD·NOT_ORIGINAL_APPLIED를 반드시 분리. [기획 후속](https://github.com/HappyPaul812/Project-Limitless/issues/85#issuecomment-6601546041).
