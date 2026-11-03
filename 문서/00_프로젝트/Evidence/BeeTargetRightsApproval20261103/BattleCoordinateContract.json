@@ -1,0 +1,177 @@
+{
+  "kind": "READ_ONLY_CODE_DERIVED_NOT_UNITY_MEASURED",
+  "battlefield_ui_size": [
+    1180,
+    320
+  ],
+  "slots": [
+    {
+      "side": "Enemies",
+      "row": "Rear",
+      "column": 0,
+      "anchor": [
+        0.14,
+        0.68
+      ],
+      "local_ui": [
+        -424.8,
+        57.600000000000016
+      ]
+    },
+    {
+      "side": "Enemies",
+      "row": "Rear",
+      "column": 1,
+      "anchor": [
+        0.14,
+        0.4700000000000001
+      ],
+      "local_ui": [
+        -424.8,
+        -9.599999999999973
+      ]
+    },
+    {
+      "side": "Enemies",
+      "row": "Rear",
+      "column": 2,
+      "anchor": [
+        0.14,
+        0.26000000000000006
+      ],
+      "local_ui": [
+        -424.8,
+        -76.79999999999998
+      ]
+    },
+    {
+      "side": "Enemies",
+      "row": "Front",
+      "column": 0,
+      "anchor": [
+        0.32,
+        0.68
+      ],
+      "local_ui": [
+        -212.4,
+        57.600000000000016
+      ]
+    },
+    {
+      "side": "Enemies",
+      "row": "Front",
+      "column": 1,
+      "anchor": [
+        0.32,
+        0.4700000000000001
+      ],
+      "local_ui": [
+        -212.4,
+        -9.599999999999973
+      ]
+    },
+    {
+      "side": "Enemies",
+      "row": "Front",
+      "column": 2,
+      "anchor": [
+        0.32,
+        0.26000000000000006
+      ],
+      "local_ui": [
+        -212.4,
+        -76.79999999999998
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Front",
+      "column": 0,
+      "anchor": [
+        0.68,
+        0.68
+      ],
+      "local_ui": [
+        212.40000000000006,
+        57.600000000000016
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Front",
+      "column": 1,
+      "anchor": [
+        0.68,
+        0.4700000000000001
+      ],
+      "local_ui": [
+        212.40000000000006,
+        -9.599999999999973
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Front",
+      "column": 2,
+      "anchor": [
+        0.68,
+        0.26000000000000006
+      ],
+      "local_ui": [
+        212.40000000000006,
+        -76.79999999999998
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Rear",
+      "column": 0,
+      "anchor": [
+        0.86,
+        0.68
+      ],
+      "local_ui": [
+        424.8,
+        57.600000000000016
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Rear",
+      "column": 1,
+      "anchor": [
+        0.86,
+        0.4700000000000001
+      ],
+      "local_ui": [
+        424.8,
+        -9.599999999999973
+      ]
+    },
+    {
+      "side": "Allies",
+      "row": "Rear",
+      "column": 2,
+      "anchor": [
+        0.86,
+        0.26000000000000006
+      ],
+      "local_ui": [
+        424.8,
+        -76.79999999999998
+      ]
+    }
+  ],
+  "target_gap": 145,
+  "approach_seconds": 0.16,
+  "impact_pause_seconds": 0.09,
+  "nominal_hit_seconds": 0.25,
+  "target_reaction_seconds": 0.18,
+  "return_seconds": 0.18,
+  "nominal_action_seconds": 0.61,
+  "bee_frame_fps": 10,
+  "nominal_current_hit_frame_index": 2,
+  "current_10frame_clip_natural_length": 1.0,
+  "presenter_can_stop_early": true,
+  "actual_stinger_contact": "HOLD"
+}

@@ -1,0 +1,26 @@
+{
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original.meta": {
+    "guid": "21000000000000000000000000000003",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  },
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\README.md.meta": {
+    "guid": "21000000000000000000000000000004",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  },
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\LICENSE.TXT.meta": {
+    "guid": "21000000000000000000000000000006",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  },
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee.zip.meta": {
+    "guid": "21000000000000000000000000000005",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  },
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee_attack.png.meta": {
+    "guid": "21000000000000000000000000000008",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  },
+  "Unity\\Client\\Assets\\ThirdParty\\2DPIXX\\PilotBee\\Original\\pilot_bee_idle.png.meta": {
+    "guid": "21000000000000000000000000000007",
+    "serialized_references_in_asset_scene_prefab_controller": []
+  }
+}

@@ -1,0 +1,360 @@
+
+## Scripts/Battle/BattleSceneController.cs
+417:         private void CreateInterface()
+418:         {
+419:             CreateCameraIfMissing();
+420:             Font font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+421:             battleFont = font;
+422:             GameObject canvasObject = new GameObject("BattleCanvas", typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
+423:             Canvas canvas = canvasObject.GetComponent<Canvas>(); canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+424:             battleCanvasRect = canvasObject.GetComponent<RectTransform>();
+425:             CanvasScaler scaler = canvasObject.GetComponent<CanvasScaler>(); scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize; scaler.referenceResolution = new Vector2(1280, 720); scaler.matchWidthOrHeight = .5f;
+426:             Image background = MakeImage(canvasObject.transform, "Background", navy); Stretch(background.rectTransform);
+427:
+428:             Text title = MakeText(canvasObject.transform, "Title", "전투", font, 31, new Vector2(.5f, .965f), new Vector2(260, 42)); title.color = gold; title.fontStyle = FontStyle.Bold;
+429:             CreateTimeline(canvasObject.transform, font);
+430:             Image battlefield = CreateBattlefield(canvasObject.transform);
+431:             battlefieldTransform = battlefield.transform;
+432:             bossTelegraphText = MakeText(battlefield.transform, "BossTelegraph", string.Empty, font, 20,
+433:                 new Vector2(.5f, .88f), new Vector2(680, 58));
+434:             bossTelegraphText.color = focusGold;
+435:             bossTelegraphText.fontStyle = FontStyle.Bold;
+436:             bossTelegraphText.gameObject.SetActive(false);
+437:             CreateFormationViews(battlefield.transform, canvasObject.transform, font, enemies);
+438:             CreateFormationViews(battlefield.transform, canvasObject.transform, font, allies);
+452:         private Image CreateBattlefield(Transform parent)
+453:         {
+454:             // HP 정보는 바로 위의 전용 HUD가 맡습니다. 전장은 HUD 아래와 명령 패널 위에만 배치해
+455:             // 참가자가 6명으로 늘어나도 HP 항목이 Sprite나 도발 표시 위에 그려지지 않게 합니다.
+456:             Image battlefield = MakeImage(parent, "SideViewBattlefield", new Color(.045f, .08f, .12f, 1f)); SetRect(battlefield.rectTransform, new Vector2(.5f, .46f), new Vector2(1180, 320)); AddOutline(battlefield.gameObject, new Color(.28f, .37f, .5f, 1f), 2);
+457:             Image sky = MakeImage(battlefield.transform, "NightSky", new Color(.055f, .105f, .16f, 1f)); sky.rectTransform.anchorMin = new Vector2(0, .42f); sky.rectTransform.anchorMax = Vector2.one; sky.rectTransform.offsetMin = Vector2.zero; sky.rectTransform.offsetMax = Vector2.zero;
+482:         private void CreateFormationViews(Transform battlefield, Transform canvas, Font font, Formation formation)
+483:         {
+484:             foreach (Combatant combatant in formation.Members)
+485:             {
+486:                 Vector2 anchor = GetBattlefieldAnchor(combatant.Side, combatant.Slot);
+487:                 CombatantView view = CreateCombatantView(battlefield, canvas, font, combatant, anchor);
+488:                 combatantViews.Add(combatant, view);
+489:             }
+490:         }
+491:
+492:         /// <summary>논리 2×3 슬롯을 사이드뷰 전장의 실제 화면 좌표로 변환합니다.</summary>
+493:         private static Vector2 GetBattlefieldAnchor(BattleSide side, FormationSlot slot)
+494:         {
+495:             float x;
+496:             if (side == BattleSide.Enemies) x = slot.Row == FormationRow.Rear ? .14f : .32f;
+497:             else x = slot.Row == FormationRow.Front ? .68f : .86f;
+498:             // 세로 공간이 줄어든 전장 안에서도 상태 Anchor가 위쪽 HUD와 닿지 않도록 첫 줄을 조금 내립니다.
+499:             float y = .68f - slot.Column * .21f;
+500:             return new Vector2(x, y);
+501:         }
+502:
+503:         private CombatantView CreateCombatantView(Transform battlefield, Transform canvas, Font font, Combatant combatant, Vector2 anchor)
+504:         {
+505:             GameObject hitObject = new GameObject($"Combatant_{combatant.Id}", typeof(Image), typeof(Button)); hitObject.transform.SetParent(battlefield, false); SetRect(hitObject.GetComponent<RectTransform>(), anchor, new Vector2(165, 150));
+506:             Image hitImage = hitObject.GetComponent<Image>(); hitImage.color = new Color(1f, 1f, 1f, .001f);
+507:             Button hitArea = hitObject.GetComponent<Button>(); hitArea.targetGraphic = hitImage; hitArea.interactable = false; hitArea.transition = Selectable.Transition.None; hitArea.onClick.AddListener(() => SelectTarget(combatant));
+508:
+509:             // GroundMarker의 RectTransform은 대상 표시 기준으로 계속 보관하지만 평상시 Graphic은 숨깁니다.
+510:             // 근거리 이동·Projectile·피격 연출은 ActionRoot/SpriteImage를 사용하므로 회색 발판을 없애도 좌표가 바뀌지 않습니다.
+511:             Image marker = MakeImage(hitObject.transform, "GroundMarker", Color.clear);
+512:             SetRect(marker.rectTransform, new Vector2(.5f, .12f), new Vector2(104, 7));
+513:             BattleParticipantSetup setup = participantSetups[combatant];
+514:             Sprite sprite = setup.VisualType == BattleParticipantVisualType.Player ? BattleEncounterContext.PlayerBattleSprite
+515:                 : setup.VisualType == BattleParticipantVisualType.EncounterMonster
+516:                     ? BattleVisualResolver.ResolveMonsterIdleSprite(setup.MonsterDefinition, BattleEncounterContext.MonsterBattleSprite)
+517:                     : null;
+518:             bool placeholder = setup.VisualType == BattleParticipantVisualType.PrototypeCompanion;
+519:             if (setup.Id == ProjectLimitless.World.Chapter2IntroFlow.SerinId)
+520:             {
+521:                 // 임시 편성에도 공식 초상화를 보여 주며, 정식 동료 해금 상태는 바꾸지 않습니다.
+522:                 sprite = Resources.Load<Sprite>("Chapter2/Serin_Portrait");
+523:                 placeholder = sprite == null;
+524:             }
+525:             Image spriteImage = MakeImage(hitObject.transform, "CharacterSprite", placeholder ? new Color(.12f, .3f, .48f, 1f) : sprite == null ? Color.clear : Color.white);
+526:             BattleCharacterSpriteAnimator characterAnimation = null;
+527:             if (BattleCharacterSpriteAnimator.TryAttach(setup.Id, spriteImage, out characterAnimation, out Sprite characterIdleSprite))
+528:             {
+529:                 sprite = characterIdleSprite;
+530:                 placeholder = false;
+531:                 spriteImage.color = Color.white;
+532:             }
+533:             spriteImage.sprite = sprite;
+534:             spriteImage.preserveAspect = true;
+535:             // Sprite를 HitArea 중앙보다 조금 아래에 두어 위쪽 StatusAnchor와 시각적으로 분리합니다.
+536:             Vector2 displaySize = characterAnimation != null ? new Vector2(145, 145) : placeholder ? new Vector2(82, 104) : combatant.Side == BattleSide.Allies
+537:                 ? new Vector2(112, 126) : new Vector2(136, 112);
+538:             if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
+539:                 displaySize *= setup.MonsterDefinition.VisualScale;
+540:             SetRect(spriteImage.rectTransform, new Vector2(.5f, .45f), displaySize);
+541:             MonsterSpriteSheetAnimation monsterAnimation = null;
+542:             if (setup.MonsterDefinition != null && setup.MonsterDefinition.UsesSpriteSheetAnimation)
+543:             {
+544:                 monsterAnimation = spriteImage.gameObject.AddComponent<MonsterSpriteSheetAnimation>();
+545:                 monsterAnimation.Configure(spriteImage, setup.MonsterDefinition);
+546:                 // 적은 화면 왼쪽에서 오른쪽의 아군을 바라봅니다. Pilot Bee 원본이 우향이므로 그대로 두고,
+547:                 // 반대 방향 원본인 새 몬스터만 X축을 런타임에 뒤집어 별도 PNG를 만들지 않습니다.
+548:                 float direction = setup.MonsterDefinition.SourceFacesRight ? 1f : -1f;
+549:                 spriteImage.rectTransform.localScale = new Vector3(direction, 1f, 1f);
+550:             }
+2728:         }
+2729:         /// <summary>
+2730:         /// 기본 공격 계산은 기존 Combatant에 맡기고, 공용 Presenter에는 표시 대상과 타격 시점만 전달합니다.
+2731:         /// 현재 1단계 범위에서는 플레이어와 초원 슬라임의 근거리 기본 공격에 같은 연출을 사용합니다.
+2732:         /// </summary>
+2733:         private void PlayBasicAttack(Combatant actor, Combatant target, int damagePercent = 100,
+2734:             string abilityName = null, bool inflictBurn = false, bool strongVisual = false)
+2735:         {
+2736:             actionPlaying = true;
+2737:             SetCommandButtons(false);
+2738:             RefreshCombatantViews(null);
+2739:             if (EventSystem.current != null) EventSystem.current.SetSelectedGameObject(null);
+2740:
+2741:             CombatantView actorView = combatantViews[actor];
+2742:             CombatantView targetView = combatantViews[target];
+2743:             actorView.CharacterAnimation?.PlayAttack();
+2744:             if (actionPresenter == null) actionPresenter = gameObject.AddComponent<BattleActionPresenter>();
+2745:             // 감전은 행동자의 "주는 피해"를 줄입니다. 기본 공격도 스킬과 같은 상태 저장소를 통과해야
+2746:             // 다음 행동 1회 감소가 공격 종류와 관계없이 일관되게 적용됩니다.
+2747:             Func<int> applyImpact = () => pathTraits.ApplyDirectDamage(statusEffects, actor, target,
+2777:                 actionPlaying = false;
+2778:                 FinishCurrentAction();
+2779:             };
+2780:
+2781:             // 독침벌처럼 Attack 시트를 가진 몬스터만 실제 공격 프레임으로 전환합니다.
+2782:             // 피해 계산과 이동 연출은 기존 Presenter가 그대로 담당하므로 독 효과를 미리 만들지 않습니다.
+2783:             if (strongVisual) actorView.MonsterAnimation?.PlaySkill();
+2784:             else actorView.MonsterAnimation?.PlayAttack();
+2785:
+2786:             if (actor.BasicRange == TargetRangeType.RangedPhysical)
+2787:             {
+2788:                 StartCoroutine(actionPresenter.PlayProjectileAttack(
+2789:                     actorView.ActionRoot,
+2790:                     targetView.ActionRoot,
+2828:
+2829:             StartCoroutine(actionPresenter.PlayMeleeAttack(
+2830:                 actorView.ActionRoot,
+2831:                 targetView.ActionRoot,
+2832:                 targetView.SpriteImage,
+2833:                 battleFont,
+2834:                 applyImpact,
+2835:                 onImpact,
+2836:                 onComplete));
+2837:         }
+2838:         /// <summary>파일명 순서로 추출된 Projectile 프레임을 불러와 공용 Presenter에 전달합니다.</summary>
+2839:         private static Sprite[] LoadProjectileFrames(string resourcesPath)
+2840:         {
+
+## Scripts/Battle/BattleActionPresenter.cs
+16:     {
+17:         private const float ApproachDuration = .16f;
+18:         private const float ImpactPause = .09f;
+19:         private const float ReturnDuration = .18f;
+20:         private const float TargetGap = 145f;
+185:         public IEnumerator PlayMeleeAttack(RectTransform attacker, RectTransform target, Image targetSprite, Font damageFont,
+186:             Func<int> applyImpact, Action<int> onImpact, Action onComplete)
+187:         {
+188:             if (attacker == null || target == null || targetSprite == null)
+189:             {
+190:                 int fallbackDamage = applyImpact == null ? 0 : applyImpact();
+191:                 onImpact?.Invoke(fallbackDamage);
+192:                 onComplete?.Invoke();
+193:                 yield break;
+194:             }
+195:
+196:             Vector3 attackerOrigin = attacker.localPosition;
+197:             Vector3 targetOrigin = target.localPosition;
+198:             Color targetOriginalColor = targetSprite.color;
+199:             Vector2 direction = targetOrigin.x >= attackerOrigin.x ? Vector2.right : Vector2.left;
+200:             Vector3 destination = targetOrigin - (Vector3)(direction * TargetGap);
+201:
+202:             yield return Move(attacker, attackerOrigin, destination, ApproachDuration);
+203:             yield return new WaitForSeconds(ImpactPause);
+204:
+205:             int damage = applyImpact == null ? 0 : applyImpact();
+206:             onImpact?.Invoke(damage);
+207:             if (damage > 0) StartCoroutine(ShowDamageNumber(target, damageFont, damage));
+208:             yield return PlayHitReaction(target, targetSprite, targetOrigin, targetOriginalColor);
+209:             yield return Move(attacker, attacker.localPosition, attackerOrigin, ReturnDuration);
+210:
+211:             attacker.localPosition = attackerOrigin;
+212:             target.localPosition = targetOrigin;
+213:             targetSprite.color = targetOriginalColor;
+214:             onComplete?.Invoke();
+1338:
+1339:         private static IEnumerator Move(RectTransform subject, Vector3 from, Vector3 to, float duration)
+1340:         {
+1341:             float elapsed = 0f;
+1342:             while (elapsed < duration)
+1343:             {
+1344:                 elapsed += Time.deltaTime;
+1345:                 float t = Mathf.Clamp01(elapsed / duration);
+1346:                 subject.localPosition = Vector3.LerpUnclamped(from, to, 1f - Mathf.Pow(1f - t, 3f));
+1347:                 yield return null;
+1348:             }
+1349:             subject.localPosition = to;
+1350:         }
+1351:
+1352:         private static IEnumerator PlayHitReaction(RectTransform target, Image sprite, Vector3 origin, Color originalColor)
+1353:         {
+1354:             const float duration = .18f;
+1355:             float elapsed = 0f;
+1356:             Color flashColor = new Color(originalColor.r, originalColor.g, originalColor.b, .35f);
+1357:             while (elapsed < duration)
+1358:             {
+1359:                 elapsed += Time.deltaTime;
+1360:                 float t = Mathf.Clamp01(elapsed / duration);
+1361:                 float shake = Mathf.Sin(t * Mathf.PI * 6f) * (1f - t) * 10f;
+1362:                 target.localPosition = origin + Vector3.right * shake;
+1363:                 sprite.color = t < .55f ? flashColor : Color.Lerp(flashColor, originalColor, (t - .55f) / .45f);
+1364:                 yield return null;
+1365:             }
+1366:             target.localPosition = origin;
+1367:             sprite.color = originalColor;
+1368:         }
+1369:
+1370:         private static IEnumerator ShowDamageNumber(RectTransform target, Font font, int damage)
+
+## Scripts/Monster/MonsterSpriteSheetAnimation.cs
+48:             idleFrames = CreateFrames(monster?.IdleSpriteSheet, monster?.IdleFrameSize ?? Vector2Int.zero,
+49:                 monster?.IdleColumns ?? 1, monster?.IdleFrameCount ?? 0, $"{monster?.MonsterId}_Idle");
+50:             attackFrames = CreateFrames(monster?.AttackSpriteSheet, monster?.AttackFrameSize ?? Vector2Int.zero,
+51:                 monster?.AttackColumns ?? 1, monster?.AttackFrameCount ?? 0, $"{monster?.MonsterId}_Attack");
+52:             if (monster != null && !string.IsNullOrWhiteSpace(monster.IdleFrameResourcePath))
+53:                 idleFrames = LoadFrames(monster.IdleFrameResourcePath);
+54:             if (monster != null) walkFrames = LoadFrames(monster.WalkFrameResourcePath);
+55:             if (monster != null && !string.IsNullOrWhiteSpace(monster.AttackFrameResourcePath))
+56:                 attackFrames = LoadFrames(monster.AttackFrameResourcePath);
+57:             if (monster != null) shootFrames = LoadFrames(monster.ShootFrameResourcePath);
+58:             if (monster != null && monster.ExplicitIdleFrames.Length > 0) idleFrames = monster.ExplicitIdleFrames;
+59:             if (monster != null && monster.ExplicitWalkFrames.Length > 0) walkFrames = monster.ExplicitWalkFrames;
+60:             if (monster != null && monster.ExplicitAttackFrames.Length > 0) attackFrames = monster.ExplicitAttackFrames;
+61:             if (monster != null) hitFrames = monster.ExplicitHitFrames;
+62:             if (monster != null) defeatFrames = monster.ExplicitDefeatFrames;
+63:             ShowFrame(idleFrames, 0);
+64:         }
+65:
+66:         public void SetFieldMoving(bool moving) => fieldMoving = moving;
+67:
+68:         /// <summary>
+69:         /// Battle 기본 공격이 시작될 때 Attack 프레임으로 전환합니다. 공격 연출이 끝나면
+70:         /// StopAttackAndReturnToIdle이 호출되어 같은 Image가 다시 Idle 반복으로 돌아갑니다.
+78:             attacking = true;
+79:             shooting = false;
+80:             usingSkill = false;
+81:             elapsed = 0f;
+82:             ShowFrame(attackFrames, 0);
+83:         }
+84:
+85:         /// <summary>4×4 시트의 세 번째 행을 강한 행동과 피격이 공유합니다. 원본에 없는 Walk 프레임은 만들지 않습니다.</summary>
+86:         public void PlaySkill()
+87:         {
+88:             if (hitFrames.Length == 0) { PlayAttack(); return; }
+89:             usingSkill = true; attacking = false; shooting = false; reacting = false; elapsed = 0f;
+90:             ShowFrame(hitFrames, 0);
+91:         }
+138:                 return;
+139:             }
+140:             ShowFrame(frames, defeated ? Mathf.Min(frameIndex, frames.Length - 1) : frameIndex % frames.Length);
+141:         }
+142:
+143:         private static Sprite[] LoadFrames(string resourcePath)
+144:         {
+145:             if (string.IsNullOrWhiteSpace(resourcePath)) return Array.Empty<Sprite>();
+146:             Sprite[] frames = Resources.LoadAll<Sprite>(resourcePath);
+147:             Array.Sort(frames, (left, right) => string.CompareOrdinal(left.name, right.name));
+148:             return frames;
+149:         }
+150:
+151:         private void ShowFrame(Sprite[] frames, int index)
+152:         {
+153:             if (frames == null || frames.Length == 0) return;
+154:             CurrentFrame = frames[index];
+155:             if (fieldRenderer != null) fieldRenderer.sprite = frames[index];
+156:             if (battleImage != null) battleImage.sprite = frames[index];
+157:         }
+158:
+159:         private static Sprite[] CreateFrames(Texture2D sheet, Vector2Int frameSize, int columns,
+160:             int frameCount, string prefix)
+161:         {
+162:             if (sheet == null || frameSize.x <= 0 || frameSize.y <= 0 || columns <= 0 || frameCount <= 0)
+
+## Scripts/Battle/BattlePrototypeEncounter.cs
+415:         private static BattleParticipantSetup CreateMonster(MonsterDefinition monster, string fallbackId,
+416:             string fallbackName, FormationRow row, int column, int agility, bool isBoss = false)
+417:         {
+418:             // Field의 스폰은 위치·리스폰을 나타내고 Battle 참가자는 이번 전투의 Formation 칸을 나타냅니다.
+419:             // 둘은 서로 다른 개념이지만 같은 MonsterDefinition을 참조하므로 이름과 외형은 한 데이터에서 공유합니다.
+420:             string name = monster == null || string.IsNullOrWhiteSpace(monster.DisplayName) ? fallbackName : monster.DisplayName;
+421:             if (fallbackId.EndsWith("_a", StringComparison.Ordinal)) name += " A";
+422:             else if (fallbackId.EndsWith("_b", StringComparison.Ordinal)) name += " B";
+423:             else if (fallbackId.EndsWith("_1", StringComparison.Ordinal)) name += " 1";
+424:             int attackPercent = monster == null ? 100 : monster.BattleAttackPercent;
+425:             int attack = (int)Math.Max(1L, ((long)SlimeBaseAttack * attackPercent + 99L) / 100L);
+426:             return new BattleParticipantSetup(fallbackId, name, string.Empty, BattleSide.Enemies,
+427:                 new FormationSlot(row, column), monster?.MaxHp ?? 60, attack,
+428:                 monster != null && monster.UseDefinitionBattleAgility ? monster.BattleAgility : agility, 0,
+429:                 monster?.MonsterId == "heatwind_hawk" ? TargetRangeType.RangedPhysical
+430:                     : monster?.MonsterId == "ember_wraith" ? TargetRangeType.Magic
+431:                     : TargetRangeType.MeleePhysical,
+432:                 false, BattleParticipantVisualType.EncounterMonster,
+433:                 monsterDefinition: monster, isBoss: isBoss);
+
+## Scripts/Battle/BattleCore.cs
+1: using System;
+2: using System.Collections.Generic;
+3: using System.Linq;
+4: using System.Runtime.CompilerServices;
+5:
+6: namespace ProjectLimitless.Battle
+7: {
+8:     /// <summary>전열과 후열을 구분합니다. 각 행은 왼쪽·가운데·오른쪽의 세 슬롯을 가집니다.</summary>
+9:     public enum FormationRow { Front, Rear }
+10:
+11:     /// <summary>기본 공격과 향후 스킬이 사용하는 공통 사거리 종류입니다.</summary>
+12:     public enum TargetRangeType { MeleePhysical, RangedPhysical, Magic }
+13:
+14:     /// <summary>전투 참가자가 아군인지 적인지 구분합니다.</summary>
+15:     public enum BattleSide { Allies, Enemies }
+16:
+17:     /// <summary>2×3 진형 안의 한 위치를 나타냅니다. Column은 왼쪽부터 0, 1, 2입니다.</summary>
+18:     public readonly struct FormationSlot : IEquatable<FormationSlot>
+19:     {
+20:         public FormationSlot(FormationRow row, int column)
+21:         {
+22:             if (column < 0 || column > 2) throw new ArgumentOutOfRangeException(nameof(column));
+
+## TargetResolver full excerpt
+207:     public static class TargetResolver
+208:     {
+209:         public static IReadOnlyList<Combatant> ResolveHostileTargets(Combatant actor, Formation opponents, TargetRangeType range, bool areaAttack = false)
+210:         {
+211:             if (actor == null || opponents == null || !actor.IsAlive) return Array.Empty<Combatant>();
+212:
+213:             // 광역이 아닌 행동은 도발 대상을 가장 먼저 확인하며 일반 사거리보다 우선합니다.
+214:             if (!areaAttack && actor.ForcedTargetActionsRemaining > 0 && actor.ForcedTarget != null && actor.ForcedTarget.IsAlive && opponents.Contains(actor.ForcedTarget))
+215:                 return new[] { actor.ForcedTarget };
+216:
+217:             List<Combatant> front = Enumerable.Range(0, 3).Select(column => opponents.Get(FormationRow.Front, column)).Where(item => item != null && item.IsAlive).ToList();
+218:             List<Combatant> rear = Enumerable.Range(0, 3).Select(column => opponents.Get(FormationRow.Rear, column)).Where(item => item != null && item.IsAlive).ToList();
+219:
+220:             if (range == TargetRangeType.Magic) return front.Concat(rear).ToArray();
+221:             if (range == TargetRangeType.RangedPhysical) return rear.Count > 0 ? rear : front;
+222:
+223:             List<Combatant> melee = new List<Combatant>(front);
+224:             for (int column = 0; column < 3; column++)
+225:             {
+226:                 Combatant rearTarget = opponents.Get(FormationRow.Rear, column);
+227:                 Combatant protector = opponents.Get(FormationRow.Front, column);
+228:                 if (rearTarget != null && rearTarget.IsAlive && (protector == null || !protector.IsAlive)) melee.Add(rearTarget);
+229:             }
+230:             return melee;
+231:         }
+232:     }
+233:
+234:     /// <summary>민첩과 행동 우선도로 한 라운드의 순서를 만들고 UI 타임라인에 남은 순서를 제공합니다.</summary>
+235:     public sealed class TurnOrderQueue
+236:     {
+237:         private readonly List<Combatant> order = new List<Combatant>();
+238:         private readonly Dictionary<Combatant, int> tieBreaks = new Dictionary<Combatant, int>(CombatantReferenceComparer.Instance);
+239:         private readonly Random random = new Random();

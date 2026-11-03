@@ -1,0 +1,36 @@
+{
+  "pilot_bee_idle.png": {
+    "active": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterValidation\\PilotBee\\pilot_bee_idle.png",
+    "active_sha": "febcca0316167d50d4638216d9534ed2974de01c62e1c0c2daaba849726b6c63",
+    "archive_sha": "febcca0316167d50d4638216d9534ed2974de01c62e1c0c2daaba849726b6c63",
+    "byte_exact": true
+  },
+  "pilot_bee_attack.png": {
+    "active": "Unity\\Client\\Assets\\_Project\\Resources\\MonsterValidation\\PilotBee\\pilot_bee_attack.png",
+    "active_sha": "0e8886c56d7670fb317d4cada41a03e4684f9cf97adf908f2b860740630c018e",
+    "archive_sha": "0e8886c56d7670fb317d4cada41a03e4684f9cf97adf908f2b860740630c018e",
+    "byte_exact": true
+  },
+  "original_zip_sha": "c979b691e76e850fb8c1949d8bf53fe55b0b085b0a5012d83d5f6262ae48a2b6",
+  "license_text": "This work is licensed under the Creative Commons Attribution 4.0  License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.\n\nAuthor: Jana Ochse, 2D!PIXX, www.2dpixx.de\n",
+  "zip_members": [
+    "p_bee/",
+    "p_bee/LICENSE.TXT",
+    "p_bee/pilot_bee_attack.png",
+    "p_bee/pilot_bee_idle.png"
+  ],
+  "zip_licenses": {
+    "p_bee/LICENSE.TXT": "This work is licensed under the Creative Commons Attribution 4.0  License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.\n\nAuthor: Jana Ochse, 2D!PIXX, www.2dpixx.de\n"
+  },
+  "zip_png_sha": {
+    "p_bee/pilot_bee_attack.png": "0e8886c56d7670fb317d4cada41a03e4684f9cf97adf908f2b860740630c018e",
+    "p_bee/pilot_bee_idle.png": "febcca0316167d50d4638216d9534ed2974de01c62e1c0c2daaba849726b6c63"
+  },
+  "new_keyposes": {
+    "Attack_Prepare_REPAINT_v2_315x253.png": "e337921236b7b947f92bbb5d88824bc6729d6668a050a85fc2f519ff4df26212",
+    "Attack_Recover_REPAINT_v2_315x253.png": "2afc69e803334b1ededdadb39e786f297d8fe3d9918e72997943c9f1593c740e",
+    "Attack_Sting_REPAINT_v2_315x253.png": "391ed94e50ffc4ddcf3bc4442e9913e0b947cc9d5d9a57aaf865f46556e021ce",
+    "KEEP_Idle_Folded_238x215.png": "d17114176c13c2911cd533a0e7a363a1f4ae2ca110b540bcec5d63a2aa941605",
+    "KEEP_Idle_Spread_238x215.png": "d35f4583c0fa119396a40a6637f48b36b677fe00327640c655d86bde3dd47820"
+  }
+}

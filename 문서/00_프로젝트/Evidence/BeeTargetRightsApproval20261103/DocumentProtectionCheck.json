@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md_links": true,
+    "VenomBee_Minimal_StingRecover_ArtBrief_20261103.md_links": true,
+    "approved_zip_sha_match": true,
+    "source_sha_unchanged": true,
+    "no_product_diff": true,
+    "root_main_head_preserved": true,
+    "root_default_status_344": true,
+    "root_detailed_status_858": true,
+    "all_evidence_json_parse": true
+  },
+  "scope": "Documentation integrity/static references only; no Unity/game QA rerun",
+  "private_save_access": 0,
+  "unity_execution": 0,
+  "new_png": 0,
+  "push": 0,
+  "original_applied": false
+}

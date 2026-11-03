@@ -1,3 +1,15 @@
+## 2026-11-03 Owl·Spider 최종 미술 승인 / Bee 표적·권리 계약 조사
+
+**Owl Attack4 / Spider Walk8 USER_ART_APPROVED** 확정. #84 기존 Unity37PASS 재사용·재실행0. Owl ZIP d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192 / Spider ZIP 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da 동결. 기존 Idle·정지원화 보호·추가 재작화 금지. Owl VFX HOLD, Spider 발 접지·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD, Organic Attack8/Shoot8 미제작. 과거 미술 승인 대기는 이번 승인으로 해소됐습니다.
+
+Bee 실제 코드: 적 좌측→아군 우측, 전열/후열·Column별 대상, 명목 .25초 피해(index02@10FPS), 정지거리145 UI. 기본 플레이어와 사각형 사이도 최소31.2 UI 간격이고 ContactFrame/socket 없음. Attack10은 약.61초에 조기 종료될 수 있어 **TARGET_CONTACT_HOLD / MOTION_REVISE_CONTINUE / FULL_COMBAT_READY_NO**. 필요한 보완은 Sting/Recover 두 후보뿐이며 정확 접점·거리/시간 승인 전 계획 문서까지만 진행합니다.
+
+PilotBee 원배포 웹BY3.0 vs 원본 ZIP 내부BY4.0 충돌 재확인. MonsterValidation의 활성2PNG가 Bee 정의에 참조되며 외부 보관 원본과 byte-exact여서 **RIGHTS_HOLD**. ThirdParty 보관 파일 직접참조0과 활성 사본 사용을 구분했습니다. 새 SHA만으로 독립 권리를 확정하지 않습니다.
+
+[승인·좌표·권리 근거](../../OwlSpider_FinalApproval_BeeTarget_RightsContract_20261103.md) / [리뉴얼 최소 지시서](../../VenomBee_Minimal_StingRecover_ArtBrief_20261103.md). branch `codex/bee-target-rights-and-art-approval-20261103`, 출발 c6eab1bb. 문서·조사 JSON/TXT만 변경, 원본 Unity/Save/UserData/Scene/Prefab/BuildSettings/Packages·Discord66·Push/merge0, Unity 실행/기존QA 반복/신규PNG0. NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED.
+
+---
+
 ## 2026-11-03 Owl Attack02 + Spider Edge Fix 독립 읽기 검수
 
 **LOCAL_ART_REVIEW_DONE / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED / REMOTE_NOT_PUSHED**. **WALK8_EDGE_FIX_OK_CANDIDATE(외곽한정)**:01/02/06/07실변경·00/03/04/05exactKEEP,지적한26/30/58/26개alpha>0경계접촉모두0/8장전체변0.512/몸통가시ROI보존·일괄축소/확장0·정확10FPS.발끝형태내부복원확인,승인v5/Idle8KEEP.전체지지/스윙·실제바닥고정/미끄러짐은WALK_CONTACT_ART_REVIEW_PENDING/NOT_VERIFIED,AttackShoot·Ch4·Bee변경/재검수0.
