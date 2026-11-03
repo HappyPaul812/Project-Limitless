@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 — Owl·Spider 최종 미술 승인 재확인, Bee 계약 조사 합본
+
+- 대표 최종 명시: **“올배미 거미 승인 한거니까 코덱스 시킬게 있으면 벌이랑 같이 줘.”** Owl Attack4(최신 Attack02 수정)와 Organic Spider v5 Walk8 **USER_ART_APPROVED** 확정. [Owl Issue #74](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6598037098), [Spider Issue #60](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6598038404), [#84](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6598039586). 이는 제품 Scene/MonsterDefinition/Animator 실 게임 적용이나 원본 로컬 game 병합·Push까지 일괄 승인한 뜻 아님.
+- Owl 최신 승인 ZIP SHA256 d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Attack02 SHA 6dcb1799e0970cd08ceadc111e7e2645f21eb973ae75f9b859c2ce356d07e936; 정지원화·Idle8·Attack00/01/03 보존. #84 격리 Unity8FPS 실Clip PASS, 미승인 냉기 분리 VFX는 여전히 HOLD/F2 실제 한기전 미구현.
+- Spider 승인 정지v5 SHA c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9, 최신 Walk8 EdgeFix ZIP SHA 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da, 기존 Idle8/Walk 원형보호. #84 격리 Unity10FPS/PPU256/scale0.7 우향 실재생 PASS. **발별 anchor·실 지면잠금·미끄러짐 NOT_VERIFIED / WALK_CONTACT_HOLD**, Attack8/Shoot8 미제작.
+- Bee [Issue #63 통합 Codex 다음 계약](https://github.com/HappyPaul812/Project-Limitless/issues/63#issuecomment-6598040972): 기존20 존재, 신규준비·찌르기·회수3포즈/Idle2 있음. 실 공격좌표/facing/ContactFrame·이동 및 리턴 모호·OpenGameArt PilotBee CC BY3/4 표시 충돌. 다음 Codex는 별도 문서전용 로컬 worktree에서 **실 Battle 코드/Scene/Prefab/라이선스 원문 읽기 조사만**, 출처/표적 미확정 시 HOLD; 근거 입증 후 Sting·Recover 두 프레임의 실재작화 지시계약 문서화. **이번에는 새 PNG/Unity 실행/원본Game·Save/UserData/BuildSettings/Packages·main Push·병합 금지**.
+- 승인 자산/지금까지 통과한 #84 Unity37PASS·#83 F2왕복90PASS·정적23PASS·저장QA는 전수반복하지 않는다. 현재 GitHub 이슈/인계 문서 갱신은 Codex 로컬 실제 실행을 의미하지 않으므로 대표에게 **통합 복붙 지시문 1개**를 전달. 최종 결과는 branch/codeSHA/권리·표적 근거/미검증 별도로 보고.
+
+---
 # PLANNING / 2026-11-03 16:21 — Owl·Spider 실제 Unity 영상 사용자 시각 수용 / Bee 미완 확인
 
 - 대표 직접 발언 **“다 봤는데 괜찮아. 근데 독침벌은 다 된거야?”** 에 따라 #84 격리 실제 Unity 캡처 Owl Attack4(수정Attack02)와 Organic Spider v5 Walk8를 **시각적으로 USER_VISUAL_ACCEPTED**로 인계. [#84 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597927363), [#74 Owl](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6597929323), [#60 Spider](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6597930854) 기록. 이는 본편 원본 Unity 적용 승인·새 QA PASS·Spider 실제 발접지 측정 PASS가 아니다. 기존 #84 37PASS 보존, Spider `ACTUAL_GROUND_LOCK_NOT_VERIFIED / WALK_CONTACT_HOLD`, Owl 분리 미승인 VFX HOLD, Spider Attack8/Shoot8 미제작.
