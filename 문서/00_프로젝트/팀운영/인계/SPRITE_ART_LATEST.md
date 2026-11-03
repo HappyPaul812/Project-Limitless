@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-03 Main24 / Issue #74 — Frost Owl v3 Attack4 얼굴 연속성·복귀·VFX 분리 후보 실물 납품
+
+- **Codex #74 최신 통합 판정** [실물 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594778265) + [기획 최종지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6594916733) 반영. 이전 Attack4 네포즈의 날개 모음→확장→후속 대비는 유지하되, 승인 v3 정지 원화의 얼굴·머리깃 중심 RGB를 00~02에 국소 복원. **Attack03은 승인 v3/Idle00과 파일 바이트·SHA exact 동일** → 03→Idle00 경계 픽셀 점프0. 기존 승인 v3 원화·Idle8 원본 **변경0**; Idle8 SHA8개 Manifest 인계. **날개/몸통 전체 v3 원화와 완전 동일함은 미술 검토 전 미확정**, `DESIGN_CONTINUITY_USER_REVIEW_PENDING`.
+- **실제 납품** `Limitless_FrostOwl_Attack4_Continuity_20261103.zip` **4,623,041 bytes / 22 entries / SHA256 `dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856`**, ZIP CRC PASS + SHA256SUMS21/21 PASS. `Candidate/Attack/` 512×512 RGBA 변경 Attack 4 PNG(SHA: 00 `b6029c30...`, 01 `a98aab1c...`, 02 `a7273d0d...`, 03 `81a31cf3...`)와 `Candidate/Sheet/` **2048×512 4×1**(시트셀 RGBA4/4 exact), 8FPS4 GIF(120/130/120/130ms), 128px·40px 실파일 파생8, 기존/신규 원페이지·03→Idle00 동일 픽셀 비교·Manifest/QA·SHA. **ChatGPT Library `/LIMITLESS/Main24_Issue74_Owl_Continuity_20261103/`에 ZIP+비교 PNG 업로드 성공**, 사용자 PC F: 자동복사 해시 미확인, GitHub 바이너리 업로드0.
+- Attack01에 기생한 추가 냉기궤적·입자는 **Attack 본체 PNG에서 제외**하고 `VFX_UNAPPROVED_HOLD/FrostOwl_IceArc_Detached_VFX_HOLD_512_RGBA.png`만 **미승인 참고 후보**로 따로 보관. 기존 승인 정지 v3의 원래 작은 냉기 디테일은 그대로 보호. VFX 사용/스폰/Unity 적용0.
+- **정식 제작·검수 보고** [`Chapter3_Main24_Issue74_FrostOwl_Attack4_ContinuityFix_20261103.md`](../../Chapter3_Main24_Issue74_FrostOwl_Attack4_ContinuityFix_20261103.md), `docs/art-new` 보고 commit **`fa080e64bf00c7b94dd78e3405b9a075567927e9`**. `OFFLINE_FILE_QA_PASS / USER_MOTION_ART_REVIEW_PENDING / UNITY_ANIMATION_NOT_VERIFIED / NOT_UNITY_APPLIED`. PPU512·중앙Pivot·scale1·8FPS Manifest Import 계약, Unity .meta/게임 본편 적용 X.
+- **보호**: 기존 Idle8+정적v3·F2 Stump(승인)·Sign/Fence KEEP_CANDIDATE·Main24 #83 왕복 90PASS/23PASS, Main23/F1·공식 43/9·Monster/Pet·Bee/Spider·Save/UserData/Scene/Prefab/BuildSettings 모두 변경0; main 직접 commit/Push/merge0. **다음:** 바울 대표 새 Attack4 미술 직접 검토→(승인 시) Codex 격리 Unity Attack4만 8FPS/clip/가독성/연결 DeltaQA→별도 본편 승인. 본 결과를 `ANIM_ART_PASS`라고 미리 기재하지 않음.
+
+
 ## 2026-11-03 Main24 F2 / #74 Frost Owl v3 Attack4 새 포즈 실 PNG·8FPS 시안 전달
 
 - [#74 최신 모션 재작화 지시](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6593592716), [#83 F2 탐험과 전투 분리](https://github.com/HappyPaul812/Project-Limitless/issues/83). 승인 정적 v3/Idle00 SHA **`81a31cf37cb834799ab5c9428da612ab13a5a496025805685daefed7b5d3c467`** 그대로 보호; 기존 Idle8과 과거 Attack4 바이트 수정0. 기존 북문↔F2 격리 탐험 81PASS/정적14PASS 보존, 새 Owl 전투 적용0.
