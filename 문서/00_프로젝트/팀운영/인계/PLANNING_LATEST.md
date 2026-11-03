@@ -1,3 +1,11 @@
+# PLANNING / 2026-11-03 오후 — #84 Owl Spider 실 Unity Clip 37PASS 접수
+
+- [#84 실제 Unity6000.6.5f1 격리 AnimationClip QA](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597692700) **37 PASS/0 FAIL**, 예전 Editor.Search 1건 환경OPEN·새 Runtime/컴파일 오류0, 실제 Camera RT 122장/영상4개. 검증 commit `bde96a92e14c663e33ce7640f98f863d58a0d306`, branch `codex/owl-spider-unity-animation-delta-20261103`. 원본 Unity/개인Save/UserData/Products/main/Push/merge0. HTML 열람판 `F:/study/codex/Project-Limitless/Temp/Issue84OwlSpiderUnityDelta20261103/Review/index.html` (로컬 Unity Camera 영상, 원본 GameView 아님).
+- Owl `OWL_CLIP_DELTA_PASS`: Attack4 8FPS/PPU512/centralPivot/scale1/01→02→03→Idle00·40px 실제 Clip+Sorting; 정적 v3/Idle8/미승인 냉기 VFX 보존. 아직 **바울 대표 최종 모션 미술 승인/본편 첫한기전 연결 미실시**. 되풀이 재작화 금지, 사용자 영상 확인 우선.
+- Spider `SPIDER_WALK_CLIP_DELTA_PASS / WALK_CONTACT_HOLD`: 10FPS/PPU256/scale0.7/우향, 0·0.65·1.3 WU/s 격리 이동·128/40 clip·가시알파 경계0 실제 통과. 그러나 8다리 개별 발 지지/스윙·실 접지/미끄러짐 계측0 → `NOT_VERIFIED`. user-approved v5 정지 디자인, Idle8 KEEP_CANDIDATE/Walk8 최종미술 미승인 유지. 사용자가 미끄러짐 인지 시에만 최소 표적 실측 QA·보완, 전체16/32 재제작 금지.
+- [#84 기획 판정](https://github.com/HappyPaul812/Project-Limitless/issues/84#issuecomment-6597852215) 기록. 다음은 사용자 로컬 캡처 확인→Owl 모션 승인여부/Spider Walk 시각판단. 기술 QA PASS/최종 미술 승인/제품 원본 적용은 서로 다르며 Main24 #83 F2왕복 90PASS·23 정적 보존. 첫 한기전·무료한기 대응·유료상품25·Main24완료/보상은 대표 결정 전 HOLD.
+
+---
 # PLANNING / 2026-11-03 15:21 — Owl/Spider 수정후보 기술통과·격리 Unity #84
 
 - [#74 Codex 마지막 ZIP 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6596846762): Owl Attack02 정확1 PNG만 변경하여 01→02→03→Idle00 연속성 개선, 00·01·03·Idle8 원본보호, 8FPS/alpha PASS → `ATTACK02_CONTINUITY_OK_CANDIDATE`. **최종 사용자 모션 승인·실 Unity clip/본편 적용은 별개.**
