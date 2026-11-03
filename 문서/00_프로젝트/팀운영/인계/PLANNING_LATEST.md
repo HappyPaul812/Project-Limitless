@@ -1,3 +1,12 @@
+# PLANNING / 2026-11-03 15:21 — Owl/Spider 수정후보 기술통과·격리 Unity #84
+
+- [#74 Codex 마지막 ZIP 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6596846762): Owl Attack02 정확1 PNG만 변경하여 01→02→03→Idle00 연속성 개선, 00·01·03·Idle8 원본보호, 8FPS/alpha PASS → `ATTACK02_CONTINUITY_OK_CANDIDATE`. **최종 사용자 모션 승인·실 Unity clip/본편 적용은 별개.**
+- Spider Walk8 01·02·06·07 네 PNG만 바꾸고 8장 네 변 가시 alpha 접촉 모두 0, 512RGBA/10FPS/00·03·04·05·승인v5/Idle8 보호 → `WALK8_EDGE_FIX_OK_CANDIDATE(경계결함만)`. 8다리 실제 지지/스윙·지면 미끄러짐/접지는 미검증, 전체보행 모션 승인 아님.
+- 두 ZIP 로컬 SHA Owl d6648b7451dc2184c2187c0b1c2f8e0f52fc800ac6975753d0f6d38f6fbf9192, Spider 771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da. 검수 코드커밋 `9efa30def1c86ee05b90ac1e7b1bfb6a17ca3ea5`, 로컬 OFFLINE 비교판 `F:/study/codex/Project-Limitless/Temp/OwlSpiderEdgeReview20261103/Review/index.html`(실 Unity/GameView 아님). 원본·Save·UserData·main·Push/merge 변경0.
+- [새 #84](https://github.com/HappyPaul812/Project-Limitless/issues/84): **실 F:입력SHA 확인 후 작은 격리 Unity6000.6.5f1 AnimationClip Delta QA 1회**. Owl 8FPS·전환·40px, Spider 기존10FPS/PPU256/scale0.7 우향 계약 실제 확인 + 임시 지면에서 발 지지/스윙·미끄러짐 구별. 기존 #80 81/#83 90+23/Stump21/저장85+72+72 QA 전수반복X. 원본 Scene/Assets·개인Save/UserData·BuildSettings·Packages·ProjectVersion·Discord66/main/Push/merge/미승인 Owl VFX·Bee·Spider Attack/Shoot 변경 금지. 기술 QA가 미술 최종승인 자동으로 의미하지 않음.
+- 기획 지시문은 Codex 실행을 자동 개시하지 않으며 대표가 실제 아트 영상을 볼 때 최종 미술 채택 여부를 결정.
+
+---
 # PLANNING / 2026-11-03 오후 — Owl Attack02→03 / Spider Walk01·02·06·07 캔버스 경계 수정
 
 - [Codex 두 ZIP 실제 검수](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595705479) 확인. Owl ZIP dd50da39530380047c8d4a6dd728d624ff828fc2dde089abc708be0558bc6856 CRC/Manifest18/18/SUMS21/21 PASS: Attack03=승인v3/Idle00 byte exact, 공격 대비·VFX분리/8FPS 정상. 하지만 02→03 체형/꼬리·발/머리·깃 질감 급전환. Seam_8FPS.gif는 1프레임 정지라 실제 연결검증 아님. [#74 최소수정](https://github.com/HappyPaul812/Project-Limitless/issues/74#issuecomment-6595843983) : 02중심 재작화, 승인03/Idle8 및 미승인FX 원형 보호, Attack 전체 새 디자인/QA 전수반복 금지.
