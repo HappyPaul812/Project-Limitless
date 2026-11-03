@@ -1,3 +1,13 @@
+## 2026-11-03 Issue #83 — Main24 북문→F2→북문 실제 격리 왕복 PASS
+
+**MAIN24_F2_TRAVERSAL_ISOLATED_PASS / USER_PLAY_REVIEW_PENDING / NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED**. 기존 Main24 후보를 재사용해 `World_NorthF2_CANDIDATE` 안전길·관찰·북문 복귀 구현. 실제 Player/Collider 휠체어·도보·E/F/마우스·취소·반복출입·합성 SaveContinue·6번째 슬롯/화폐/마을거점·F1 연결 보호 **신규 Unity90 PASS + 정적23 PASS**. 기존81/저장85·72·72/Main23/그루터기21 재실행0.
+
+승인 Stump SHA22f2f581… 그대로 PPU128/Pivot(.5,11/384)/Scale1, 실제 줄기충돌·우회·Player 앞뒤Sorting·3비율 RT 확인. 눈/흙길/나무3PNG는 명시 PLACEHOLDER, 미승인 표지판/울타리·전투·몬스터·구매·Main24 완료/보상·Main25/SpiderBee 적용0. 기존 네 목표ID와 마지막 대기 목표 보존. Scene BuildSettings 연결은 QA 복제본에만 추가, 원본/작업브랜치 설정 변경0.
+
+branch `codex/main24-f2-first-traversal-20261103`, 기능 **`e32d814f7f0dee8622cf386541eab94bf1fc1d69`**. 원본main ab47b931/status344 전후 동일·지정원본8SHA보호·개인Save/UserData열람/복사/해시0. 실제6000.6.5f1 숨김 PlayMode/Camera RT6장, OS GameView/사람 손플레이 NOT_VERIFIED. 기존 Editor.Search 예외1건 별도보존(게임Runtime오류0). [보고·근거](../../Main24_F2_FirstTraversal_Isolated_Issue83_20261103.md). 로컬 열람판 `F:/study/codex/Project-Limitless/Temp/Main24F2FirstTraversal20261103/Review/index.html`. GitHub 보고 영수증은 후속 문서로 기록합니다.
+
+---
+
 ## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD
 
 승인그루터기 SHA22f2f581…1PNG만 독립Unity6000.6.5f1 fixture로 Import: PPU128/Scale1·Pivot(0.5,11/384) 후보, alpha/접지·3화면비·Sortingproxy·대안크기 **21PASS/FAIL0**. 실제F2 Scene/길/Collider없어도보·휠체어·실배치 NOT_VERIFIED. 기존ProjectVersion/Packages·게임원본변경0.

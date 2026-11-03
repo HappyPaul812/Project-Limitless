@@ -1,0 +1,12 @@
+{
+  "original_main_head": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "original_status_entries": 858,
+  "original_status_sha256": "f2b1cdff225e9a0e46e9cb21c27d39daf7ccb2986e4611e6a6357396fd385e99",
+  "before_after_equal": true,
+  "specified_original_source_settings_sha_preserved": 8,
+  "personal_save_read_copy_hash_modify": 0,
+  "main_push_merge": 0,
+  "source_base": "09c73d2e3383dbe2fe8b9c18bc0ecc4b21adc594",
+  "feature_commit": "e32d814f7f0dee8622cf386541eab94bf1fc1d69",
+  "qa_editor": "6000.6.5f1 (3ff58d469c8a)"
+}

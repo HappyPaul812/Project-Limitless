@@ -1,0 +1,90 @@
+PASS|Fixture.Main24Start
+PASS|LegacyMain24.StableObjectiveIdsPreserved
+PASS|Fixture.SlotSixNonEmpty
+PASS|Fixture.ExistingSixSlots
+PASS|Wheelchair.VillageNorthGate.RouteFound
+PASS|Wheelchair.VillageNorthGate.Arrived
+PASS|Wheelchair.VillageNorthGate.WithinInteractionRadius position=(0.00, 8.45, 0.00) target=(0.00, 9.00, 0.00)
+PASS|NorthGate.KeyboardE
+PASS|NorthGate.CancelNoProgress
+PASS|NorthGate.EnterF2.OpenedChoice
+PASS|NorthGate.EnterF2.ActualChoicePanel
+PASS|F2.RealSceneArrivalAdvances
+PASS|F2.SafeSpawnSeparatedFromExit
+PASS|F2.SpawnNoStaticOverlap
+PASS|F2.SingleActualPlayer
+PASS|F2.ActualPlayerColliderAndBounds
+PASS|Stump.PPU128PivotAndScale
+PASS|Stump.ActualTrunkCollider
+PASS|Stump.CanvasPivotGroundLine
+PASS|Wheelchair.F2ActualColliderRoute.RouteFound
+PASS|Wheelchair.F2ActualColliderRoute.Arrived
+PASS|Wheelchair.F2ActualColliderRoute.WithinInteractionRadius position=(2.44, 4.49, 0.00) target=(3.00, 5.00, 0.00)
+PASS|F2.QuestDirectionVisible
+PASS|F2.KeyboardF.Observe
+PASS|F2.ObserveCancelNoProgress
+PASS|F2.Mouse.ReenterObservation
+PASS|Dialogue.Closed
+PASS|F2.ObservationOnlyTemporaryProgress
+PASS|Save.F2Observed
+PASS|Continue.Read.F2Observed
+PASS|Continue.F2ScenePositionAndProgress
+PASS|Continue.VillageCheckpointPreserved
+PASS|Camera.ViewportWithinF2.1280
+PASS|Hud.ReturnDirection.1280
+PASS|Camera.ViewportWithinF2.960
+PASS|Hud.ReturnDirection.960
+PASS|Camera.ViewportWithinF2.1680
+PASS|Hud.ReturnDirection.1680
+PASS|Stump.ActorBehindDepth
+PASS|Stump.ActorInFrontDepth
+PASS|Wheelchair.PhysicsBlockedByStumpNotPassingThrough
+PASS|Wheelchair.BypassStump.RouteFound
+PASS|Wheelchair.BypassStump.Arrived
+PASS|Wheelchair.BypassStump.ActualPosition
+PASS|Wheelchair.F2ReturnRoute.RouteFound
+PASS|Wheelchair.F2ReturnRoute.Arrived
+PASS|Wheelchair.F2ReturnRoute.WithinInteractionRadius position=(0.60, -9.50, 0.00) target=(0.00, -10.00, 0.00)
+PASS|F2.ReturnCancel.OpenedChoice
+PASS|F2.ReturnCancel.ActualChoicePanel
+PASS|F2.CancelReturnNoProgress
+PASS|F2.ReturnVillage.OpenedChoice
+PASS|F2.ReturnVillage.ActualChoicePanel
+PASS|Village.NorthReturnSpawn
+PASS|Wheelchair.NorthReturnArrival.RouteFound
+PASS|Wheelchair.NorthReturnArrival.Arrived
+PASS|Wheelchair.NorthReturnArrival.WithinInteractionRadius position=(0.00, 8.41, 0.00) target=(0.00, 9.00, 0.00)
+PASS|Village.RoundTripProgressOnly
+PASS|Save.ReturnedVillage
+PASS|Continue.Read.ReturnedVillage
+PASS|Continue.CompletedTraversalNotCompletedQuest
+PASS|Walking.ReenterF2.OpenedChoice
+PASS|Walking.ReenterF2.ActualChoicePanel
+PASS|RepeatedPortal.NoDuplicateProgress
+PASS|Walking.F2ActualColliderRoute.RouteFound
+PASS|Walking.F2ActualColliderRoute.Arrived
+PASS|Walking.F2ActualColliderRoute.WithinInteractionRadius position=(2.41, 4.50, 0.00) target=(3.00, 5.00, 0.00)
+PASS|Dialogue.Closed
+PASS|RepeatedObservation.NoCompletionOrReward
+PASS|Walking.RealKeyboardMovement
+PASS|Walking.F2ReturnRoute.RouteFound
+PASS|Walking.F2ReturnRoute.Arrived
+PASS|Walking.F2ReturnRoute.WithinInteractionRadius position=(0.58, -9.50, 0.00) target=(0.00, -10.00, 0.00)
+PASS|Walking.ReturnVillage.OpenedChoice
+PASS|Walking.ReturnVillage.ActualChoicePanel
+PASS|Delta.VillageSouthRoute.RouteFound
+PASS|Delta.VillageSouthRoute.Arrived
+PASS|Delta.VillageSouthRoute.WithinInteractionRadius position=(0.00, -9.40, 0.00) target=(0.00, -10.00, 0.00)
+PASS|Delta.F1Exit.OpenedChoice
+PASS|Delta.F1Exit.ActualChoicePanel
+PASS|Delta.F1LinkPreserved
+PASS|Delta.F1ReentryRoute.RouteFound
+PASS|Delta.F1ReentryRoute.Arrived
+PASS|Delta.F1ReentryRoute.WithinInteractionRadius position=(0.00, 21.44, 0.00) target=(0.00, 22.00, 0.00)
+PASS|Delta.VillageReentry.OpenedChoice
+PASS|Delta.VillageReentry.ActualChoicePanel
+PASS|Delta.VillageLinkPreserved
+PASS|Final.CurrencyOwnershipSixSlotsUnchanged
+PASS|Final.Main23PreservedMain24NoCompletion
+PASS|Final.SafeZonePreserved
+PASS|Console.NoRuntimeErrors

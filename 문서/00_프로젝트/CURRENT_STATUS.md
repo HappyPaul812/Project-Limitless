@@ -1,3 +1,11 @@
+## 2026-11-03 Main24 F2 첫 왕복 — 격리 구현 완료
+
+북문→첫눈의 숲 짧은 임시 환경→관찰→마을 복귀를 실제 Player/Collider로 연결했습니다. 승인 그루터기1PNG PPU128/Pivot(.5,11/384)/Scale1 배치·줄기충돌/우회·앞뒤Sorting, 도보/휠체어·3비율 Unity RT·가상E/F/마우스·합성 이어하기·6번째 스킬/화폐/거점 보존 **신규90PASS + 정적23PASS**. 기존 전수QA 반복0. 기존 Main24 네 목표ID 보존, Main24는 마지막 대기 목표에서 Active/완료·보상0.
+
+기능 commit `e32d814f7f0dee8622cf386541eab94bf1fc1d69`, branch `codex/main24-f2-first-traversal-20261103`. **NOT_ORIGINAL_APPLIED / REMOTE_NOT_PUSHED / USER_PLAY_REVIEW_PENDING**. 원본main/status344·설정/Scene·Save/UserData보호. 미승인 환경은 PLACEHOLDER, Sign/Fence/Owl/SpiderBee/구매/한기전 제외. BuildSettings F2연결은 QA 복제본에만 존재합니다. 다음은 대표 격리 화면/플레이 검토 후 정식환경·한기전/대응정책 승인, 명시 승인 전 원본 적용0. OS GameView/사람 손플레이는 NOT_VERIFIED. [상세·화면·남은 일](Main24_F2_FirstTraversal_Isolated_Issue83_20261103.md).
+
+---
+
 ## 2026-11-03 Issue #82 — 그루터기 독립 Unity21PASS / Spider v5 알파후보 / Bee 모션HOLD
 
 승인그루터기 SHA22f2f581…1PNG만 독립Unity6000.6.5f1 fixture로 Import: PPU128/Scale1·Pivot(0.5,11/384) 후보, alpha/접지·3화면비·Sortingproxy·대안크기 **21PASS/FAIL0**. 실제F2 Scene/길/Collider없어도보·휠체어·실배치 NOT_VERIFIED. 기존ProjectVersion/Packages·게임원본변경0.

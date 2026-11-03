@@ -1,0 +1,94 @@
+[
+  {
+    "status": "PASS",
+    "check": "Unity delta 90 PASS / no FAIL"
+  },
+  {
+    "status": "PASS",
+    "check": "Exact Unity check count"
+  },
+  {
+    "status": "PASS",
+    "check": "Unique 7 objective IDs"
+  },
+  {
+    "status": "PASS",
+    "check": "All legacy objective IDs preserved"
+  },
+  {
+    "status": "PASS",
+    "check": "No rewards or Main25 link"
+  },
+  {
+    "status": "PASS",
+    "check": "Legacy hold remains final objective"
+  },
+  {
+    "status": "PASS",
+    "check": "Settings/packages/save writer untouched"
+  },
+  {
+    "status": "PASS",
+    "check": "Approved PNG bytes exact"
+  },
+  {
+    "status": "PASS",
+    "check": "Scene bounds/colliders serialized"
+  },
+  {
+    "status": "PASS",
+    "check": "Unapproved art and battle absent from candidate Scene"
+  },
+  {
+    "status": "PASS",
+    "check": "New Scene has distinct GUID"
+  },
+  {
+    "status": "PASS",
+    "check": "Every new asset/script GUID unique within project"
+  },
+  {
+    "status": "PASS",
+    "check": "Original main HEAD/status344 exactly unchanged"
+  },
+  {
+    "status": "PASS",
+    "check": "8 specified original source/settings SHA preserved"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/World/Chapter3Main23Flow.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/World/Main23GuidanceHud.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/World/Main24F2Traversal.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/World/Main24F2StumpDepth.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/Editor/Main24F2ContentBuilder.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scripts/Editor/Main24F2TraversalQA.cs"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Resources/QuestDefinitions/Main24_FirstSnowWarning.asset"
+  },
+  {
+    "status": "PASS",
+    "check": "Tested source equivalent (line-end whitespace only): Scenes/World_NorthF2_CANDIDATE.unity"
+  },
+  {
+    "status": "PASS",
+    "check": "Main24 executable source identical; comments clarified only"
+  }
+]
