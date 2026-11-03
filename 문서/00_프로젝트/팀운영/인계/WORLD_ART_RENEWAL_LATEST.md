@@ -1,3 +1,11 @@
+## 2026-11-03 / Issue #60 유기형 ForestSpider Walk8 국소 수정 6프레임·10FPS 검토 (현재 최신)
+
+- **승인 원화 v5 고정:** `ForestSpider_Organic_v5_FORELEG_CONTOUR_ALPHA_512.png` SHA256 **`c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`** 바이트 불변. Idle8은 Codex의 **`KEEP_CANDIDATE`** 판정 유지하며 원본 파일 모두 변경0.
+- [Walk8 표적보완 통합 보고](../../Renewal_20261103_ForestSpider_Walk8_Targeted_Delta_Review.md) `docs/art-renewal` commit **`ae465f35460acc9faab935d3e6b5f7c55fab41d7`**. 채팅 다운로드 실패 대비 **[GitHub 텍스트 재현 스크립트](../../Walk8_Targeted_Rebuild_20261103.py)** commit **`7744145c3921a3076ee45b01eb506635264e1b6c`**. 이 스크립트는 Unity Assets가 아닌 Codex 격리 Temp에서만 사용. 사용자 Windows F: 자동 다운로드/게임 원본 업데이트를 주장하지 않음.
+- **실 ZIP** `LIMITLESS_WALK8_FIX.zip` **4,687,734 bytes / SHA256 `d840e5ddd8ac2666e4b0c7a9f4b2d0bdfc688b5ff03e01a0019ba7808d6b86b8` / 18 entries / CRC PASS / Manifest 16/16 SHA PASS**. `Walk00`, `Walk04` 기존 SHA 바이트 동일, 나머지 **Walk01·02·03·05·06·07 6개 파일만 픽셀 변형**. 8개 전부 512×512 RGBA, Sheet **2048×1024 4×2**, GIF128/40 **각 8프레임×100ms=기존 게임 10FPS 정확**. 128/40 Old/New 실제 비교판 + 지지/스윙 표시 계획도 + 픽셀별 변경량 CSV/QA/Manifest.
+- **Codex 최종 3ZIP 검사 근거**: [#60 검수](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6594793586), [기획 후속 지시](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6594918071). 기존 파일럿의 Idle `KEEP_CANDIDATE`, Walk `WALK_CONTACT_HOLD` 분리. 이번 것은 발끝/무릎 **서로 다른 국소 픽셀 워프**로 스윙 위치를 강화했지만 완전 수작업 8다리 독립 IK/발 지면 고정까지 검증한 것이 아님. **`WALK_TARGETED_FILE_QA_PASS / WALK_GAIT_ART_REVIEW_PENDING / ACTUAL_CONTACT_NOT_VERIFIED`**; 미술 PASS로 승격 금지. 반복 같은 방식으로 실패하면 다리별 레이어·관절 작화로 제작 방식 전환 필요.
+- 공격·발사 신규 Attack8/Shoot8 0. VenomBee 신규 작업0, 기존 Idle10+Attack10=20 및 키포즈5·출처 CC BY3/4 충돌 HOLD 유지. Chapter2 공식 몬스터·보스·Wolf/Bear/Fox·기승인 환경/NPC·Chapter4 메카닉 Spider·Unity/Scene/Prefab/GUID/meta·MonsterDefinition/Spawn/AI/독/Drop·Save/UserData·main 변경0. **승인 필요:** 바울 대표 Walk8 모션 미술 판정 및 Codex 실제 Unity 10FPS·PPU256 접지 격리 QA 후에만 후속 Attack8/Shoot8 검토.
+ 
 ## 2026-11-03 / 신규: 유기형 Spider v5 승인 후 Idle8·Walk8 16프레임 파일럿 / Bee 표적 계약 HOLD (최신)
 
 - 바울 대표 **ForestSpider Organic v5 원화 최종 미술 승인** [Issue #60 댓글](https://github.com/HappyPaul812/Project-Limitless/issues/60#issuecomment-6593591885). 승인 원화 `c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9` **바이트 보존**, 원화 재작업 0. 승인 범위는 **정지 원화**로 신규 모션 품질·Unity 본편 적용 승인 아님.
