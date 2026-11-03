@@ -1,0 +1,19 @@
+{
+  "package_refs": {
+    "a97c105638bdf8b4a8650670310a4cd3": "F:\\study\\codex\\Project-Limitless\\Temp\\LocalSync20261103\\QA\\Client\\Library\\PackageCache\\com.unity.render-pipelines.universal@2309ae255609\\Runtime\\Materials\\Sprite-Lit-Default.mat.meta"
+  },
+  "builtin_refs": [
+    "0000000000000000e000000000000000",
+    "0000000000000000f000000000000000"
+  ],
+  "preexisting_guid_duplicates": {
+    "ea7264dba5af46cda070ad3e3aa3eac3": [
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\GoldenArrow\\golden_arrow_00.png.meta",
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_00.png.meta",
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_01.png.meta",
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_02.png.meta",
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_03.png.meta",
+      "Unity\\Client\\Assets\\_Project\\Resources\\BattleProjectiles\\HealerMagicalProjectile\\healer_magical_projectile_04.png.meta"
+    ]
+  }
+}

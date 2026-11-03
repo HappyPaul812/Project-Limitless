@@ -1,0 +1,110 @@
+[
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Source_KEEP\\ForestSpider_v5_APPROVED_BYTE_KEEP.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_v5_APPROVED_BYTE_KEEP.png",
+    "sha256": "c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9",
+    "role": "STATIC_APPROVED_REFERENCE",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_00.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_00.png",
+    "sha256": "cc1b5670c27bda75ebe5e8dc720cfa893b97016f927e926caa3aa5c7aaa291e6",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_01.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_01.png",
+    "sha256": "550ad6615e5315ee2d4680bf2c885a03abd1b422a5d4fce5074a1ead971f0d64",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_02.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_02.png",
+    "sha256": "c4935be601a362682711fec1824293b57f3215247daca4c62a85ae5b0cae3547",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_03.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_03.png",
+    "sha256": "64a7297d2e43cdde8376e2d99efef97b2468660e2d9d4c9fca2941e0469d83e9",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_04.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_04.png",
+    "sha256": "7de4a98be27b2f7f2021b83742e788f0c6f5e7e21474d9ec6fccdac0083df7e9",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_05.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_05.png",
+    "sha256": "435ed6e6451a60f42670010b64cf78099ce1170fb925a11cb3e22bcc967b3785",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_06.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_06.png",
+    "sha256": "29a0ae62f37f2044c8b3dcd206bc3456c2ee141484f79c5bfe224c35566edf49",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  },
+  {
+    "source": "F:\\study\\codex\\Project-Limitless\\Temp\\OwlSpiderEdgeReview20261103\\Extracted\\Spider\\Walk\\ForestSpider_Walk_07.png",
+    "asset": "Unity\\Client\\Assets\\_Project\\Art\\ApprovedReferences\\ForestSpiderOrganicV5\\ForestSpider_Walk_07.png",
+    "sha256": "edf725d87aafafcb81d01f09b121bf1e20a71b4fbfd829dbd1b0b6a3abf1b189",
+    "role": "WALK8_USER_ART_APPROVED",
+    "ppu": 256,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "runtime_binding": "NOT_ACTIVATED"
+  }
+]

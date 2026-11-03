@@ -1,0 +1,15 @@
+{
+  "original_head": "ab47b931fec92976170f9f50aabde1822d78bb90",
+  "target": "ac12abb0645f06fe84d4ae246b584a19d29ebba5",
+  "protected_tracked_checked": 7092,
+  "protected_changed": [],
+  "backup_user_files_checked": 847,
+  "user_changed": [],
+  "dirty_overlap": [
+    "Unity/Client/ProjectSettings/ProjectVersion.txt"
+  ],
+  "version_semantics_exact": true,
+  "status_unchanged": true,
+  "index_staged_before": "",
+  "buildsettings_user_file_unchanged": true
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Integrated_F2.png",
+    "sha256": "f99185931409c895d5d7bfb2eff8d5ad06d1c7c71d9bddf16db911ddbd716aa9",
+    "bytes": 170378
+  },
+  {
+    "name": "Integrated_OwlDefeat.png",
+    "sha256": "86a2aec6ac88b5d41c7f4d33e89e2a7e3504bb7789ba96f3712a069b5a779139",
+    "bytes": 145625
+  },
+  {
+    "name": "Integrated_OwlVictory.png",
+    "sha256": "051e48ca62a0f22326d41bcd6fe787caf0036b93e4c9cdba498da3849eadd928",
+    "bytes": 127942
+  },
+  {
+    "name": "Integrated_QuestCompleteLabel.png",
+    "sha256": "e816f185e9f6aa1f0b584a129d71290a1feef6206db0e52fd541729ce6843f63",
+    "bytes": 1584080
+  },
+  {
+    "name": "Integrated_SixSlots.png",
+    "sha256": "0a1349bd44ef39447babcd36fe5f7f2d1e74eb87f1d9d9fe3e2c7491a50af054",
+    "bytes": 1074485
+  }
+]

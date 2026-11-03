@@ -1,0 +1,14 @@
+{
+  "unity": "6000.6.5f1",
+  "revision": "3ff58d469c8a",
+  "pass": 44,
+  "fail": 0,
+  "runtime_errors": 0,
+  "offline_viewer": "F:\\study\\codex\\Project-Limitless\\Temp\\LocalSync20261103\\Review\\index.html",
+  "viewer_sha256": "57a1b11b8359a25fe7bd1d8ae560193c83243a4995c8229b863450cce02e6e90",
+  "capture_count": 5,
+  "qa_log": "F:\\study\\codex\\Project-Limitless\\Temp\\LocalSync20261103\\unity-fixed.log",
+  "qa_log_sha256": "81c6b97900b8f91bea2f84048906136d931b94e676db848d0ef56f21ea0c97d5",
+  "official_buildsettings": "HOLD_NOT_MODIFIED",
+  "synthetic_save_only": true
+}

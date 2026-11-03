@@ -1,0 +1,9 @@
+{
+  "target": "ac12abb0645f06fe84d4ae246b584a19d29ebba5",
+  "add_exit": 0,
+  "merge_exit": 0,
+  "merge_stdout": "Updating ab47b931..ac12abb0\nFast-forward\n",
+  "merge_stderr": "",
+  "version_bytes_unchanged": true,
+  "head_after": "ac12abb0645f06fe84d4ae246b584a19d29ebba5"
+}

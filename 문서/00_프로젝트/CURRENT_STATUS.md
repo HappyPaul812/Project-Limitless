@@ -1,3 +1,11 @@
+## 2026-11-03 Issue #86 — 승인 파일 로컬 동기화 / F2 BuildSettings HOLD
+
+STAGING_INTEGRATION_PASS / APPROVED_FILES_LOCAL_SYNC_DONE / ORIGINAL_LOCAL_SYNC_HOLD(F2등록) / UNITY_VERSION_6000_6_5F1_CONFIRMED / REMOTE_PUSH_NO. 신규통합Unity44PASS/0FAIL 후 원본main ab47b931→제품ac12abb0645f06fe84d4ae246b584a19d29ebba5 실제ff-only. #46/#73중복0·#80/#83/#85기능/승인Owl·Stump·Spider참조9 통합. 버전HEAD·실파일6000.6.5f1/3ff58d469c8a 정확일치. 사용자847파일바이트보존·개인Save접근0·status858→857은승인버전1개정리뿐. 공식BuildSettings25Scene/app-ui그대로, F2등록26Scene은QA복제본에만: 원본북문→F2완료아님.
+
+Bee/환경재사용68/Writer복구·몬스터기획HOLD보존. 다음은F2후보Scene공식등록한항목검토이며 미승인기능자동활성화0. [전체보고·백업·QA](LOCAL_SYNC_REPORT_20261103.md). 후속문서HEAD/Issue보고는영수증참조.
+
+---
+
 ## 2026-11-03 Issue #85 Owl 실제 F2 전투 격리 후보
 
 기존F2 선택형조우→실 Battle UI Idle8/Attack4·8FPS→단발피해/HP·승패→귀환 구현. 신규81PASS/FAIL0(#80기존81/다른QA 재실행0), 합성Save/Continue HP·Main24 보존. 승인12PNG불변·기존수치차용 CANDIDATE/보상0. 한기 COLD_STATUS_HOLD·공용피격/처치표시만 사용. [실제영상·근거·적용조건](Issue85_FrostOwl_F2_ActualBattle_DeltaQA_20261103.md). 다음은 정식 ID/밸런스·한기/대응기획·본편통합 승인. 원본Unity/개인Save/UserData/Scene/Prefab/BuildSettings/Packages·Push/merge0, 실제 관련커밋은 후속영수증 참조.
