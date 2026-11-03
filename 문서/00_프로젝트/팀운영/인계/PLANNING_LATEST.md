@@ -1,3 +1,10 @@
+# PLANNING / 2026-11-04 오전 — 로컬 통합 후 첫 F2 실제 플레이 스모크 #87
+
+- 대표 “굿모닝~ 이어서 하자.” 현시점 [#86 최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974)에서 원본로컬 main HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f`, Unity6000.6.5f1/rev3ff58d469c8a, 기존25 Scene+F2 26번째, 승인자산·코드 로컬 sync 완료. 어제 통합QA44PASS/F2 Scene등록26PASS, Owl전투81/F2왕복90/SpiderOwl37/F2환경후보68/저장QA 보존·재실행 필요0. **원본 에디터에서 실제 손플레이는 미검증**.
+- 다음 [Issue #87](https://github.com/HappyPaul812/Project-Limitless/issues/87) Codex **첫 좁은 Unity 스모크**: 기존 Editor/UI 포커스·원본 dirty/개인Save 보호, 먼저 원본을 백그라운드에서 안전하게 확인 가능 여부 판정. 아니라면 동일환경 QA clone으로 실 북문→F2→마을 + Owl 승패/복귀·26 Scene/6슬롯/완료문구·합성SaveContinue 최소PlayMode 검증하고 **original_editor_verified와 clone_verified를 명확히 구분**. 정식 Owl 한기/MonsterID/밸런스/보상·Main24완료/상점/미술미승인 환경·Bee 권리·Writer 복구는 HOLD. 원격 Push/병합·main 직접commit·원본Unity/사용자Save 수정0.
+- QA가 확인되면 대표 미술 검토 대기인 F2 기존재료 재사용 68PASS 실제 RT의 눈 반복·굽음·HUD 가림부터 선택, 정식 첫 한기 상태이상/무료해제·Owl 밸런스는 다음 기획 결정. 독침벌 v3는 ART_OK_CANDIDATE, RIGHTS_HOLD 유지. 당장 대규모 신규 QA·아트 재작화 추가 발주하지 않음.
+
+---
 # PLANNING / 2026-11-03 23:34 — #86 F2 BuildSettings 등록 HOLD 해소·원본 로컬 완전 동기화
 
 - [#86 최종 등록 검증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606419659) 및 [최종 영수증](https://github.com/HappyPaul812/Project-Limitless/issues/86#issuecomment-6606519974): **`ORIGINAL_LOCAL_SYNC_DONE / F2_BUILDSETTINGS_SCENE_REGISTERED_PASS / REMOTE_PUSH_NO`**. 최종 원본 local main·통합 branch `codex/f2-buildsettings-final-sync-20261103` HEAD `634a91d3e4174c87761c0d377cfa5a695ca79e7f` (제품등록 35b87d29, 마지막 보고 ff-only). main 직접커밋·원격Push/PR/merge0.
