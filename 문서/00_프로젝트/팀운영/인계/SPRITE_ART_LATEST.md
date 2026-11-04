@@ -1,5 +1,14 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Issue #91 — Chapter3 BattleBG 2종 KEEP·동배율 Ch1 시각 검증 게이트
+
+- [#91 기획·Codex 실제 감사](https://github.com/HappyPaul812/Project-Limitless/issues/91) 및 [정식 스타일·전투 가독성 검토 보고](../../Chapter3_BattleBG_Issue91_Style_ReadabilityReview_20261104.md) — `docs/art-new` commit **`d0babe4b7448f2755d263c4822abe139084ec7ae`**. 신규 C3 `Snowroad` SHA **`a5f3bb960b5c5e6fe4140cb2de64e726f4bc7fabb8674f895789fed128adcd25`**, `F2 Forest` SHA **`93388ee52fd75da4a82df0b68e03b2083167a25f339d97b41dc71c807125282b`** 원본 바이트 유지 / 두 후보 `KEEP_CANDIDATE`, 수정 PNG0, 새 ZIP0.
+- **검수 정확성:** C3 신규2 원본 이미지 직접 시각 판독 및 로컬 SHA 재확인, 기존 OFFLINE 대체 UI/아군3·적1 실루엣 목업 확인. Snowroad 큰 타원 구름/설산 면/일직선 길 경계·균일한 설원, F2 전경 타원 수관·굵은 수간/좌측 아군 모형 간섭·평평한 접지 영역을 **표적 확인 후보**로 지정. PNG 원본 신규2 평균 BT709 명도 **166.2 / 128.5**로 서로 다름. **실제 Chapter1 원본 PNG 화소 수급 실패**라서 Ch1 vs C3 동일1672×941 시각 화풍/입자·명암 비교 **NOT_VERIFIED**. Ch1 .meta 스펙 일치만으로 화풍 PASS 주장 금지. 실제 Unity 정식 BattleUI·캐릭터/적·3해상도 접근성 검증0.
+- **Codex 로컬 Ch1/2 감사 수용** [#91 검수댓글](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6622600289): Ch1 PNG6 보유/카탈로그 고유4 연결, Toxic Swamp·Ancient Sanctuary 미연결. Ch2 Field04~10은 배경PNG가 아니라 기본 색상전장 패널, Main20/Field11만 기존 `DeepCore_Ground_Base` 512² PPU128 재사용; Field10 `BurningPulse_DistantFlameSilhouette`는 **월드 배경**, Battle Catalog 아님. F: 신규 C3 ZIP SHA `a8c02e9ab6189a6feb074d3f83c8cd6a8bce61ff1b8de110e7c8216934468eb9` 확인. Codex 로컬 브랜치 `codex/chapter2-battle-background-audit-20261104` commit `064448a8b52d92f1c506dd2b37c713814be4eb9d`, 원격 Push 없음.
+- **유지 상태:** `BATTLE_BG_CANDIDATE / KEEP_CANDIDATE_2 / TARGETED_STYLE_REVIEW_ONLY / CH1_STYLE_PARITY_NOT_VERIFIED / OFFLINE_MOCKUP_ONLY / USER_VISUAL_REVIEW_PENDING / NOT_UNITY_APPLIED`. 기존 Ch1 6 PNG/Ch2 지면/Ch3 2 후보·승인 Owl/Spider/VFX/환경 및 Unity·Scene·Prefab·Save/UserData·BattleUI/Packages/main 변경0, main Push/병합0.
+- **다음 게이트:** Ch1 원본 Forest/Grassland/Catacombs 실제 이미지 실물과 C3 2후보를 **정확히 동일 1672×941 1:1** 정리한 비교판을 만들되 PNG 바이트 변경금지 → 바울 대표 미술 결정 → 승인이 나면 Codex Unity6000.6.5f1 격리 실제 3인·적·BattleUI/화면비 최소QA → 본게임 적용은 별도 승인. 증거 없는 전면 재작업은 하지 않음.
+
+
 ## 2026-11-04 / Chapter3 전투 배경 2종 파일럿 — Chapter1·2 실물 사전 감사 포함
 
 - **사전 조사 (GitHub main 7,600 tree nodes)**: Chapter1 전용 배경 PNG **6종**, 카탈로그 참조 고유 PNG **4종**(Grassland Field01, Forest Field02/03, Silent Catacombs Dungeon01/B2, Silent Warden Boss). 나머지 Toxic Swamp·Ancient Sanctuary는 실 PNG 보유하나 해당 `Chapter1.asset` 연결 미확인. Chapter2 전용 `Art/Battle/Backgrounds/Chapter2`/전용 catalogue **원격 main에서 미발견**; Main20은 `BattleBackgroundCatalog.Find()`에서 기존 `DeepCore_Ground_Base` 지면 Sprite를 재사용. 원격 미발견 ≠ 바울 대표 PC Ch2 별도 파일 부재; `CH2_LOCAL_INVENTORY_NOT_VERIFIED`. Ch1 .meta 확인 PNG 실제 Sprite rect **1672×941**, PPU100/중앙 Pivot(참고치). Ch1·2 원본 재제작·수정0.
