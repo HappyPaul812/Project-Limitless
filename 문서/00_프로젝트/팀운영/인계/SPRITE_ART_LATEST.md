@@ -1,5 +1,12 @@
 # SPRITE_ART 최신 인계 — 2026-10-12
 
+## 2026-11-04 / Issue #89 냉기 정식 상태 HUD 아이콘 독립 PNG 3종 — 실물 납품
+
+- [#89 최신 기획 3종 아이콘 발주](https://github.com/HappyPaul812/Project-Limitless/issues/89#issuecomment-6624809345) 반영. 승인 **한기/동상/동결괴사 VFX 원본 3 PNG** 및 Codex B안 격리 HUD(40px 알파경계8px, 128px 캐릭터뒤·하향24px, 960 2행, 1680 HUD 경계8px) **바이트·코드 수정0**. 14UI≈12.12px 실표시를 고려해 아이콘 3종을 처음부터 64px 픽셀 도형으로 구성하여 128×128 투명 RGBA 게임용 후보로 출력.
+- **신규 후보 3** `Icons/ColdStatus_Chill_128_RGBA_CANDIDATE.png` SHA `1f3ac724590a2d490cbe4a7cd28856c8ce5d888b130dde46a7d0008e6a3d0a16`(육방 눈송이+흐름), `Icons/ColdStatus_Frostbite_128_RGBA_CANDIDATE.png` SHA `b814b1df3b0a5dbba46205d3b6edf91339cc4f45d118ec19ac53afab43c89a03`(붙은 세 얼음기둥), `Icons/ColdStatus_FrostNecrosis_128_RGBA_CANDIDATE.png` SHA `da2f175d50c47961df4c2fe6a227219a594ac9c3b0874c2c50e9edf39644be9d`(갈라진 검푸른 얼음/균열). **64px 보조3 + 실제 12/14/20/40px 축소12 PNG**. 상태명/남은턴/괴사중첩·KO 문자 PNG 비합성.
+- **실물 ZIP** `LIMITLESS_Cold_Status_Icons_3_GameReady_20261104.zip` **165,753bytes / 25entries**, SHA256 `f758b59b73847f18c13e0d48aafee2f58eac33802ec597a1c739078335b2baa3`, ZIP CRC PASS·SHA256SUMS 24/24 PASS. 실제 라이브러리 `/LIMITLESS/Chapter3_Issue89_ColdStatusIcons_20261104/`에 업로드 확인. `Preview/ColdStatus_12_14_20_40_HUD_Sizes_OFFLINE.png`, `Preview/ColdStatus_Snow_DarkHUD_SameSize_OFFLINE.png`, `Preview/ColdStatus_14px_GrayscaleShape_OFFLINE.png` 비교판 제공. 게임 내 14UI 실인식·B HUD Unity 검사 **NOT_RUN**, 사용자의 F:\Downloads 직접복사·해시 미확인, GitHub 바이너리 업로드0.
+- [**정식 #89 PNG/QA/SHA 보고서**](../../Chapter3_Issue89_ColdStatusIcons_3_GameReady_20261104.md) `docs/art-new` commit **`c2125d5258dcce8cc1eac81e76453e2e6e015c52`**. 상태 `OFFICIAL_ICON_ART_CANDIDATE / OFFLINE_FILE_QA_PASS / USER_ICON_ART_REVIEW_PENDING / UNITY_NOT_TESTED / NOT_ORIGINAL_APPLIED`. 승인시 Codex 격리B 실제 상태Badge만 신규 icon으로 교체한 DeltaQA 후 대표 별도 본편 승인. VFX원본/Owl/Spider/BG/F2/Scene/Prefab/Save/UserData/main 변경·Push/병합0.
+
 ## 2026-11-04 / Issue #91 — Chapter3 전투 배경 v2 표적 보완 실제 PNG 2장 납품
 
 - **최신 [#91 총괄 기획 실제 v2 제작 발주](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623743094)·[Codex 5장 원본1:1 분석](https://github.com/HappyPaul812/Project-Limitless/issues/91#issuecomment-6623246887) 반영**, 기존 Ch3 Snowroad/F2 두 배경 v1 전체 SHA 동결, 신규 후보 v2 RGB **1672×941 정확히 2개** 실제 제작. 기존 v1 자체 변경0/전면 재작화0, Ch1 원화 복사·트레이스0.
