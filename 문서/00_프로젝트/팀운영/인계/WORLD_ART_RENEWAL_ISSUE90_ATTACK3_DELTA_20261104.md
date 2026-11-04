@@ -1,0 +1,12 @@
+# WORLD_ART_RENEWAL / 2026-11-04 최신 증분 인계 — Issue #90 Organic ForestSpider Attack3
+
+**2026-11-04 최신 증분:** 기존 `WORLD_ART_RENEWAL_LATEST.md`의 102KB 이상 기존 승인·QA 이력은 덮어쓰지 않고 그대로 보호. 이 문서를 Issue #90 후속 인계로 사용하며, 기존 인계 본문의 직접 수정이 완료됐다고 주장하지 않는다.
+
+- **정식 보고서:** [Renewal_20261104_OrganicForestSpider_Attack3_Issue90_ArtPilot.md](../../Renewal_20261104_OrganicForestSpider_Attack3_Issue90_ArtPilot.md) · `docs/art-renewal` commit **`14495ecefc7d7db291e8389262c0807c97b2dc93`**.
+- **실 납품 ZIP:** `LIMITLESS_SPIDER_ATTACK3_ISSUE90.zip` · **4,122,683 bytes / SHA256 `91411d159d401f1772e80e848d78550dd62552f65c1a76d659c15d8b0df44d3e` / 21 entries / ZIP CRC PASS / Manifest 19/19 SHA PASS**. ZIP·PNG3·512 비교판·128/40 비교판·8슬롯 도식 총7개를 ChatGPT 라이브러리 **`/LIMITLESS_Art_Delivery/`** 에 직접 업로드 성공. 과거 채팅 다운로드 장애를 고려한 별도 전달 방식. 바울 대표 PC `F:\Downloads`에는 자동 저장되지 않음.
+- **신규 PNG3:** Prepare SHA **`439ef26e4528e9f57877b471f602f9cfaa2f7bcd2a86b2fce991ec2e17ae5bf2`**; Contact SHA **`4a4d4418590db7d3b0f4eeb32dc79bb620822991ab4d08c978f10e538307de04`**; Recover SHA **`9fad6682201222f90e8f908d3c4eb497012c9f567cf40504dc19d080c71609d6`**. 각 512×512 RGBA·가시 알파 캔버스4변 접촉0. 실제 128/40 축소 비교, 별도 512 기준 비교 및 `SourceDeclaration.md` 기록.
+- **절대 보호 승인 자산:** Organic ForestSpider v5 SHA **`c600cd2264f6a0323771288666d16b49aa213ad938036d0746ed6f7f1d50adb9`** / 승인 Idle8·Walk8(기존 Walk8 ZIP `771bd1813608aa3e350c6124ab0d43293c6d2988b1833014da64484d5272c8da`) / Ch2 공식 몬스터·펫/Chapter4 메카닉 후보/승인 Owl 모두 변경0. 원래 레퍼런스 v5·Idle00·Walk07을 ZIP 내부에 SHA 동일 참조 복사만 하고 원본을 덮어쓰지 않음.
+- **기술 계약** 기존 ForestSpider 10FPS·PPU256·scale0.7·우향. 3개 새 키포즈는 별도 생성 2172×724 3포즈 원화의 connected-alpha 추출·비율유지 리샘플 후보이며 **모델 동일성/8다리 독립 관절/실제 접지/타깃 접촉 미술 최종 PASS가 아님**. 8-slot 지도는 Prepare00, Contact03, Recover06만 제작, 나머지 5개 **NOT_PRODUCED**. Attack8 전체·Shoot8 새 프레임0.
+- **VenomBee v3** 기존 2포즈 및 20프레임/Prepare/Idle2 불변, `RIGHTS_HOLD / TARGET_CONTACT_NOT_VERIFIED` 유지. Unity/Scene/Prefab/Sprite GUID/meta·AI/Spawn·Save/UserData·main 직접 변경/Push/병합0. 본게임 적용0. Codex 기존 #84/#85/#63 대규모 QA 반복0.
+- **현재 상태:** `ART_PILOT_3_POSES / PNG_HASH_CRC_TECH_PASS / USER_VISUAL_REVIEW_PENDING / ATTACK8_NOT_COMPLETE / SHOOT8_NOT_STARTED / CONTACT_NOT_VERIFIED / NOT_UNITY_APPLIED`.
+- **다음 결정권:** 바울 대표가 세 포즈의 실제 비교판으로 미술 승인을 판단. 승인 전 나머지 Attack5/8 또는 Shoot8 제작과 Unity Import 금지.
